@@ -82,5 +82,14 @@
 
 ## 4.3.2 Agent Harness
 
+- [AudioGPT](https://arxiv.org/abs/2304.12995)（[开源代码](https://github.com/AIGC-Audio/AudioGPT)）：早期音频 agent harness，使用 ChatGPT/LangChain 风格规划调用 speech、singing、audio 和 talking-head foundation models 作为工具。
+- [WavJourney](https://arxiv.org/abs/2307.14335)（[开源代码](https://github.com/Audio-AGI/WavJourney)；[demo](https://audio-agi.github.io/WavJourney_demopage/)）：组合式音频创作 harness，把文本意图分解为故事、语音、音乐和音效生成 workflow。
+- Pipecat（[开源代码](https://github.com/pipecat-ai/pipecat)；[文档](https://docs.pipecat.ai/)）：开源 Python 框架，用于实时语音和多模态对话 agent，覆盖 STT、LLM、TTS、WebRTC/WebSocket transports、pipeline composition 和 subagents。
+- LiveKit Agents（[开源代码](https://github.com/livekit/agents)；[文档](https://docs.livekit.io/agents/)）：面向 conversational multimodal voice agents 的实时 programmable-participant 框架，包含 tool calls、telephony、MCP integrations、job scheduling 和测试支持。
+- TEN Framework（[开源代码](https://github.com/TEN-framework/ten-framework)）：实时多模态 conversational-AI 框架，包含 voice assistant examples、VAD、turn detection、memory、RTC/WebSocket integrations 和 agent orchestration 组件。
 - [AudioToolAgent](https://arxiv.org/abs/2510.02995)：面向 audio-language model 的 agentic harness。核心思想：将音频理解与生成任务路由到外部工具，使听觉智能体能拆解工作流，而不是只依赖单次端到端模型调用。
 - [MIST](https://arxiv.org/abs/2605.06897)：面向智能家居的多模态语音工具调用助手框架。核心思想：把语音交互、多模态上下文和可执行设备工具连接起来，使工具使用型 agent 不局限于纯文本 API 调用。
+
+## 4.3.3 Skill
+
+- [livekit-agents](https://skills.sh/livekit/agent-skills/livekit-agents) 是 LiveKit 官方 agent skill，适合按 LiveKit Agents SDK 约定构建 voice AI apps，覆盖 workflows、handoffs、tasks、testing patterns 等。

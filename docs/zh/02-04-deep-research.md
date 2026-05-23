@@ -64,6 +64,9 @@
 - [ViDR](https://arxiv.org/abs/2605.13034)：评什么：多模态深研报告与视觉证据对齐。核心思想：要求报告结论能回指到具体视觉来源，减少“引用了页面但视觉证据不支撑结论”的多模态幻觉。
 ## 2.4.3 Agent Harness
 
+- [STORM](https://arxiv.org/abs/2402.14207)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：检索增强的长文写作 harness，通过多视角提问、构建大纲和撰写带引用报告，成为现代 deep research agent 的重要前身。
+- [Co-STORM](https://arxiv.org/abs/2408.15232)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：协作式探索研究 harness，包含 agent 对话、用户 steer、动态 mind map 与带引用报告输出。
+- [Agent Laboratory](https://arxiv.org/abs/2501.04227)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)）：端到端科研助理工作流，从人类给定研究想法出发，覆盖文献综述、实验和报告写作。
 - [DeepResearcher](https://arxiv.org/abs/2504.03160)（[开源代码](https://github.com/GAIR-NLP/DeepResearcher)；在真实网页搜索环境中用端到端强化学习训练 deep research agent，并显式包含多代理浏览、交叉验证和自反思行为）
 - [WebThinker](https://arxiv.org/abs/2504.21776)（[开源代码](https://github.com/RUC-NLPIR/WebThinker)；把“推理-检索-写作”交错成同一条长链路的 `think-search-draft` 工作流）
 - [WebDancer](https://arxiv.org/abs/2505.22648)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebDancer)；训练主导但系统形态清晰的信息检索型 web agent）
@@ -100,7 +103,9 @@
 - [Trustworthy Report Generation](https://arxiv.org/abs/2604.05952)（开源代码：未找到稳定公开仓库；带 progressive confidence estimation and calibration 的 deep research agent；核心思想是在报告生成过程中持续维护证据置信度，降低引用不稳与结论过度自信）
 - [DataSTORM](https://arxiv.org/abs/2604.06474)（开源代码：未确认公开；面向结构化数据的 deep research agent；核心思想是结合探索性数据分析、网页证据、主题生成与 data storytelling，让 agent 不只研究非结构化网页，也能研究大规模数据库）
 - [Deep-Reporter](https://arxiv.org/abs/2604.10741)（开源代码：未找到稳定公开仓库；grounded multimodal long-form generation harness；核心思想：结合多模态搜索与过滤、checklist 引导的增量综合和 recurrent context management）
+- [ARIS / Auto-Research-In-Sleep](https://arxiv.org/abs/2605.03042)（[开源代码](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)；[介绍](https://wanshuiyin.github.io/Auto-claude-code-research-in-sleep/ARIS_INTRO.html)）：skill-based autonomous research harness，包含跨模型对抗审阅、持久 research wiki、文献与实验工作流、引用/主张审计，以及 Codex/OpenClaw/Claude Code 可迁移性。
 - [LongSeeker](https://arxiv.org/abs/2605.05191)（开源代码：未公开；长程搜索/深研 agent；核心思想是用 Context-ReAct 动态压缩、回滚、摘录和删除工作记忆，在 BrowseComp 与 BrowseComp-ZH 上验证长链路检索收益）
+- [AgentDisCo](https://arxiv.org/abs/2605.11732)（开源代码：未找到稳定公开仓库；disentangled collaborative deep-research 架构；核心思想是把 critic 驱动的大纲/查询修正与 generator 驱动的检索/大纲更新拆开，再用 meta-optimization 发现可复用的 research-agent 设计策略）
 - [Argus](https://arxiv.org/abs/2605.16217)：证据拼装式深研代理；核心思想：Searcher 收集证据，Navigator 维护证据图并调度并行搜索。
 - Onyx（[开源代码](https://github.com/onyx-dot-app/onyx)；无 arXiv 论文；开源企业 AI 平台，内置 Deep Research、多步搜索、RAG、MCP 与 Code Interpreter）
 - LangChain Open Deep Research（[开源代码](https://github.com/langchain-ai/open_deep_research)；无 arXiv 论文；LangChain 官方开源深研系统实现）
@@ -115,7 +120,7 @@
 - [deep-research](https://skills.sh/bytedance/deer-flow/deep-research)（DeerFlow 官方 deep research skill）
 - [github-deep-research](https://skills.sh/bytedance/deer-flow/github-deep-research)（DeerFlow 官方仓库深调研 skill；GitHub API + 网页检索 + 结构化报告生成）
 - [deep-research](https://github.com/daymade/claude-code-skills/tree/main/deep-research)（强调证据表、格式契约与多稿合并）
-- [deep-research-openclaw-agent](https://github.com/openclaw/skills/tree/main/skills/milleniumgenai/deep-research-openclaw-agent)（结构化 deep-research sub-agent 的安装/接线型 skill）
+- [deep-research-openclaw-agent](https://clawhub.ai/milleniumgenai/deep-research-openclaw-agent)（结构化 deep-research sub-agent 的安装/接线型 skill）
 - [deep-research](https://skills.sh/shubhamsaboo/awesome-llm-apps/deep-research)（流程型 deep research 模板，强调多源综合与引用追踪）
 - [academic-researcher](https://skills.sh/shubhamsaboo/awesome-llm-apps/academic-researcher)（学术写作与文献评述模板，偏结构化产出）
 - [tooluniverse-literature-deep-research](https://skills.sh/mims-harvard/tooluniverse/tooluniverse-literature-deep-research)（文献导向，偏生物医药）
@@ -128,7 +133,12 @@
 - [deep-research](https://github.com/feiskyer/claude-code-settings/tree/main/skills/deep-research)（多 agent 编排型深研 skill；偏多进程调研与聚合）
 - [Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills)（多技能 deep research 套件；outline/字段扩展/并行 research/最终 report）
 - [deep-research](https://github.com/wshuyi/deep-research/tree/main/skills/deep-research)（中文流程型 deep research skill；强调事实分层与中间产物留存）
+- [ARIS research skills](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/tree/main/skills)（论文：[ARIS](https://arxiv.org/abs/2605.03042)；skills.sh 示例：[research-pipeline](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/research-pipeline)、[research-lit](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/research-lit)、[citation-audit](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/citation-audit)）覆盖文献检索、多源检索、research-wiki 记忆、新颖性检查、跨模型审阅和引用/主张审计，更接近可执行科研 harness，而不是单个报告提示词。
+- [parallel-deep-research](https://skills.sh/parallel-web/parallel-agent-skills/parallel-deep-research) 适合在最终综合前并行做来源发现和材料阅读的 deep research 工作流。
+- [firecrawl-deep-research](https://skills.sh/firecrawl/firecrawl-workflows/firecrawl-deep-research) 适合基于 provider crawling 与内容抽取的检索到报告工作流。
+- [doublecheck](https://github.com/github/awesome-copilot/tree/main/skills/doublecheck) 适合抽取主张、搜索来源，并检查证据支持或矛盾关系，可补充 Reference Hallucination Detection 和 Cited but Not Verified 等引用可靠性评测。
 - [search-layer](https://github.com/blessonism/openclaw-search-skills/tree/main/search-layer)（更偏 deep research 底层检索层：多源并行搜索、去重、排序与引用链追踪）
+- [last30days-skill](https://github.com/mvanhorn/last30days-skill) 和 [last30days-skill-cn](https://github.com/Jesseovo/last30days-skill-cn) 是面向最近一个月信息发现的 skills，覆盖社交平台、新闻、社区和网页来源；当 deep research 更需要新鲜度和跨平台趋势覆盖，再进入长文综合时很有用。
 - [deep-research-pro](https://clawhub.ai/parags/deep-research-pro)（商业风格长报告模板）
 - [deepresearchwork](https://clawhub.ai/jiacode/deepresearchwork)（任务拆步明确的调研模板）
 - [in-depth-research](https://clawhub.ai/ivangdavila/in-depth-research)（纵深追问型长报告模板）

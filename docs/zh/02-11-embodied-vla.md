@@ -69,7 +69,10 @@
 - [OmniNavBench](https://arxiv.org/abs/2605.09441)：评测跨技能、跨具身形态的通用具身导航。核心思想：用覆盖 PointNav、VLN、ObjectNav、SocialNav、跟随人类和 EQA 的复合指令，要求 agent 协调子技能并跨机器人形态泛化，而不是只解决孤立导航任务。
 ## 2.11.3 Agent Harness
 
-- MineDojo、CALVIN、VIMA 和 LIBERO 本身也是 benchmark-side harness：它们定义环境、观测、动作空间、任务重置和成功检查。可复用设计模式是 `观察多模态状态 -> 解析语言目标 -> 计划/子目标 -> 行动 -> 验证环境状态 -> 恢复`。
+MineDojo、CALVIN、VIMA 和 LIBERO 本身也是 benchmark-side harness：它们定义环境、观测、动作空间、任务重置和成功检查。可复用设计模式是 `观察多模态状态 -> 解析语言目标 -> 计划/子目标 -> 行动 -> 验证环境状态 -> 恢复`。
+- [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)；[项目页](https://voyager.minedojo.org/)）：经典开放式 Minecraft agent，包含自动课程、code-as-action、执行反馈和持续增长的技能库，直接对应 MineDojo 风格长程具身 agent 评测。
+- [JARVIS-1](https://arxiv.org/abs/2311.05997)（[开源代码](https://github.com/CraftJarvis/JARVIS-1)；[项目页](https://craftjarvis.github.io/JARVIS-1/)）：开放世界 Minecraft 多任务 agent，包含多模态记忆和动作 grounding，可作为 Voyager 之外的历史性游戏 agent harness。
+- [MineStudio](https://arxiv.org/abs/2403.12067)（[开源代码](https://github.com/CraftJarvis/MineStudio)）：开源 Minecraft agent 开发包，覆盖数据、训练、评测和轨迹工具，连接 MineDojo 与更新的游戏 agent benchmark。
 - [UAV-VLA](https://arxiv.org/abs/2501.05014)：面向大规模空中任务生成的视觉-语言-动作系统。核心思路是把任务级语言和视觉上下文转化为 UAV 行动方案，使空中任务分解和执行成为智能体运行时的一部分。
 - [Generalized Mission Planning for Heterogeneous Multi-Robot Teams](https://arxiv.org/abs/2501.16539)：面向异构多机器人任务规划的 LLM harness。核心思想：从语言目标构造层级任务树，让不同能力的机器人获得协同子任务并执行团队任务。
 - [VL-Nav](https://arxiv.org/abs/2502.00931)：一种神经符号视觉语言导航 harness。核心思想是结合 VLM 推理、符号化 3D 场景图、图像记忆、任务分解、探索启发式和重规划，使机器人能在未知室内外环境中执行复杂指令。
@@ -82,6 +85,7 @@
 - [PORTAL](https://arxiv.org/abs/2503.13356)：为大量 3D 游戏中的 agent 提供语言引导的 policy-generation harness。核心思想：生成行为树 policy，并用游戏指标和视觉语言反馈迭代改进，使可执行游戏环境中的执行循环可复用。
 - [AirVista-II](https://arxiv.org/abs/2504.09583)：面向具身无人机动态场景语义理解的智能体系统。核心思路：把空中感知与推理组织为具身智能体流程，而不是被动图像或视频理解任务。
 - [ApexNav](https://arxiv.org/abs/2504.14478)：结合自适应探索与目标中心语义融合的零样本目标导航 harness。核心思路是在语义线索和几何探索线索之间切换，并长期记忆目标及相似物体，以提升噪声检测下的导航可靠性。
+- [RoboVerse](https://arxiv.org/abs/2504.18904)（[开源代码](https://github.com/RoboVerseOrg/RoboVerse)；[项目页](https://roboverseorg.github.io)）：开放机器人学习平台，包含任务、机器人、场景、MetaSim 资产，以及与 LIBERO、ManiSkill、RLBench、robosuite 和 SimplerEnv 的集成，可作为 robot/VLA 评测基础设施。
 - [UAV-CodeAgents](https://arxiv.org/abs/2505.07236)：基于语言和卫星图像进行无人机任务规划的 multi-agent ReAct harness。核心思想：结合视觉接地点选、多 agent 轨迹生成和反应式目标修订，使空中 agent 能把高层指令转成可执行任务。
 - [Air-Ground Collaboration for Language-Specified Missions](https://arxiv.org/abs/2505.09108)：面向未知环境语言任务的空地协作具身 harness。核心思想：协调空中与地面 agent，把自然语言目标分解、探索并执行到互补 embodiment 上。
 - [FlightGPT](https://arxiv.org/abs/2505.12835)：基于视觉语言模型的 UAV 视觉语言导航框架。核心思路是连接视觉观测、语言目标和显式路线推理，使空中导航决策更具泛化性和可解释性。
@@ -131,6 +135,7 @@
 - [ReMemNav](https://arxiv.org/abs/2603.26788)：面向零样本目标导航的记忆增强框架。核心思路是在具身导航中加入可复用记忆机制，使智能体在执行任务时能够恢复目标位置与探索上下文。
 - [MetaNav](https://arxiv.org/abs/2604.02318)：一种具备元认知的视觉语言导航 harness。核心思想：结合持久 3D 语义记忆、历史感知规划和反思式修正，使免训练 VLN agent 能发现低效游走、调整探索策略并减少重复访问。
 - [Speculative Verification for VLA](https://arxiv.org/abs/2604.02965)：一种结合开环动作块规划与轻量闭环验证的 VLA 控制 harness；核心思想是在保持高吞吐动作生成的同时在线检查观测，使具身智能体能在误差累积主导执行前发现过期或不安全的动作块。
+- [StarVLA](https://arxiv.org/abs/2604.05014)（[开源代码](https://github.com/starVLA/starVLA)）：模块化 VLA 开发代码库，提供 benchmark-agnostic 的数据、模型、训练和评测组件，更适合作为 VLA agent 开放基础设施，而不是单个模型 checkpoint。
 - [ABot-Claw](https://arxiv.org/abs/2604.10096)：面向持久、协作和自演化机器人的具身智能体运行框架。核心思路是在 OpenClaw 之上加入统一具身接口、跨具身多模态记忆、能力调度和基于 critic 的反馈，使自然语言目标能够闭环到物理机器人动作和重新规划。
 - [FineCog-Nav](https://arxiv.org/abs/2604.16298)：一个面向无人机视觉语言导航的零样本智能体框架，采用细粒度认知模块。核心思路是用结构化协议协同语言、感知、注意力、记忆、想象、推理和决策模块，并通过 AerialVLN-Fine 诊断指令遵循和长程导航能力。
 - [HELM: Harness-Enhanced Long-horizon Memory](https://arxiv.org/abs/2604.18791)：面向长程 VLA 操作的模型无关 harness。核心思想：在 VLA policy 外加入外部记忆、验证和恢复，使长任务中的执行失败可以被诊断并纠正。
@@ -141,7 +146,11 @@
 - [Continual Harness](https://arxiv.org/abs/2605.09998)：为长程具身任务中的自改进 foundation agent 提供在线适应 harness。核心思想：把适应循环放在基座模型外部，使任务反馈能在长时交互中更新行为。
 - [RIO](https://arxiv.org/abs/2605.11564)：面向跨 embodiment 机器人学习与部署的灵活 robot I/O 基础设施层。核心思想：标准化机器人控制、遥操作、传感器、数据格式与策略部署，使 embodied-agent runtime 能以更少的专用代码迁移到不同硬件。
 - [Think Twice, Act Once](https://arxiv.org/abs/2605.12620)：为具身 agent 提供 verifier-guided action-selection wrapper。核心思想：在测试时采样候选动作，并用训练过的 verifier 选择更可靠的动作，而不改动基础 policy。
+- vla-evaluation-harness（[开源代码](https://github.com/allenai/vla-evaluation-harness)；[leaderboard](https://allenai.github.io/vla-evaluation-harness/leaderboard/)）：统一 VLA 评测与部署 harness，连接 Dockerized benchmarks、model servers 和 evaluation jobs，覆盖 LIBERO、CALVIN、SimplerEnv、RoboCasa、VLABench、RoboTwin、RLBench、BEHAVIOR-1K、OpenVLA-style servers 等 policy stacks。
+
 ## 2.11.4 Skill
 
 - [computer-vision-opencv](https://skills.sh/mindrally/skills/computer-vision-opencv) 适合模拟具身环境中的感知侧预处理与视觉诊断。
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) 适合需要隔离运行时的具身或游戏环境搭建。
+- [vla-evaluation-harness skills](https://github.com/allenai/vla-evaluation-harness/tree/main/.claude/skills) 提供新增 benchmark adapter、新增 model server 和运行 VLA 评测的可复用工作流，使 benchmark integration 本身成为 agent-readable skill surface。
+- [AgenticROS](https://github.com/agenticros/agenticros) 把 ROS2、OpenClaw、MCP、Gazebo/RViz 和机器人控制 adapter 暴露成面向 agent 的运行时层，适合把具身 skills 接到机器人中间件，而不是停留在 learned policy primitives。

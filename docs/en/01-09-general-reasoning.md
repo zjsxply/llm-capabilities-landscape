@@ -79,6 +79,6 @@
 - [Executable World Models for ARC-AGI-3](https://arxiv.org/abs/2605.05138) ([code](https://github.com/alexisfox7/RGB-Agent)): A Read-Grep-Bash agent for the ARC-AGI-3 leaderboard; design keywords: executable world models, file-based environment observation, shell tool use, maintaining task state through code and logs.
 ## 1.9.4 Skill
 
-- [skill-with-prompt-engineering](https://github.com/openclaw/skills/tree/main/skills/golofu/skill-with-prompt-engineering) includes directly reusable reasoning patterns such as `CoT / ReAct / self-consistency / multi-path reasoning`.
+- [skill-with-prompt-engineering](https://clawhub.ai/golofu/skill-with-prompt-engineering) includes directly reusable reasoning patterns such as `CoT / ReAct / self-consistency / multi-path reasoning`.
 - [sympy](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/sympy) is suitable for converting intermediate reasoning into executable programs or symbolic expressions.
 - [long-context](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/ai-research/emerging-techniques-long-context) is suitable for maintaining search-tree summaries, failed branches, and state compression.

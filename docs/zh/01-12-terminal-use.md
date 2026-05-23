@@ -52,6 +52,7 @@
   关键改动包括更强的自完成检查、replanning prompt、避免重型依赖安装的通用提示，以及从 tmux `push and wait` 改为更高效的 `pull` 式读取。
 - [CAMEL-AI](https://arxiv.org/abs/2303.17760)（[开源代码](https://github.com/camel-ai/camel)）：多智能体协作框架；在终端任务里可作为角色化协作、工具调用与任务拆解的开放基线。
 - [OpenHands](https://arxiv.org/abs/2407.16741)（[开源代码](https://github.com/OpenHands/OpenHands)）：通用软件开发 agent 平台；在终端评测中适合作为成熟开源工程 agent 的强基线。
+- container-use（[开源代码](https://github.com/dagger/container-use)；[官网](https://container-use.com/)）：MCP server 和 CLI，为 coding agents 提供隔离容器、按分支隔离的工作区、命令历史和可检查日志，适合作为可审计执行与人工接管的终端 harness。
 - [TerminalTraj](https://arxiv.org/abs/2602.01244)（[开源代码](https://github.com/multimodal-art-projection/TerminalTraj)）：面向 Dockerized environments 的终端 agent 轨迹生成框架。
   它关注可规模化构造环境、采集执行轨迹和生成训练数据，代表 terminal agent 从静态评测走向轨迹生产基础设施。
 - [TermiGen](https://arxiv.org/abs/2602.07274)：高保真终端环境与鲁棒轨迹合成 pipeline。
@@ -82,7 +83,7 @@ Terminal-Bench 2.0 榜单中的主要 agent（截至 2026-05-22，官方榜单�
 - II-Agent（[开源代码](https://github.com/Intelligent-Internet/ii-agent)；[官方博客](https://ii.inc/web/blog/post/ii-agent-chat)）：Intelligent Internet 的开源通用 agent；覆盖研究、编码、内容生成、文件搜索、code interpreter 与多模型切换。
 - Warp（[官方主页](https://www.warp.dev/)）：AI-native terminal 产品；作为终端环境本身与 agent workflow 结合的代表，重点在 shell UI、命令解释、团队上下文与工作流自动化。
 - Letta Code（[官方主页](https://www.letta.com/)）：Letta 的 coding agent 方向；适合关注 memory-first agent runtime 在终端任务中的效果。
-- Abacus AI Desktop（[官方主页](https://desktop.abacus.ai/)）：Abacus.AI 的桌面/开发 agent；榜单表现可作为闭源 desktop agent 进入 terminal benchmark 的参考。
+- Abacus AI Desktop（[官方文档](https://abacus.ai/help/abacusai-desktop/introduction)）：Abacus.AI 的桌面/开发 agent；榜单表现可作为闭源 desktop agent 进入 terminal benchmark 的参考。
 - Claude Code（[官方产品页](https://www.claude.com/product/claude-code)）：Anthropic 的终端 coding agent；设计关键词是 repo-aware 工作流、命令执行、文件编辑、memory、hooks、MCP 与 subagents。
 - grok-cli（[开源代码](https://github.com/superagent-ai/grok-cli)）：面向 xAI/Grok 模型的开源 terminal-native agent；支持 headless 模式、子代理、Telegram 远程控制、hooks、sandbox 与项目级指令文件。
 - Goose（[开源代码](https://github.com/block/goose)；[官方文档](https://block.github.io/goose/)）：Block 开源的本地/桌面/CLI agent；强调任意模型接入、MCP 扩展、recipes、session persistence 与本地可审计执行。
@@ -102,6 +103,7 @@ Terminal-Bench 2.0 榜单中的主要 agent（截至 2026-05-22，官方榜单�
 
 - [mcp-code-execution](https://skills.sh/athola/claude-night-market/mcp-code-execution) 适合把终端任务组织成 `写代码 -> 执行 -> 读错误 -> 修复` 的可复用循环。
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) 适合为终端调用提供隔离执行环境，降低本机副作用风险。
+- [tmux](https://github.com/openclaw/openclaw/tree/main/skills/tmux) 适合通过 session 发现、pane 捕获、按键发送和提示监控来控制持久交互式 CLI 会话。
 - [pytest](https://skills.sh/bobmatnyc/claude-mpm-skills/pytest) 适合把终端中的验证动作固化为测试运行与回归检查。
 - [pytest-advanced](https://skills.sh/laurigates/claude-plugins/pytest-advanced) 适合更复杂的测试发现、参数化运行与失败定位。
 - [docker-local-dev](https://skills.sh/thienanblog/awesome-ai-agent-skills/docker-local-dev) 适合把终端任务封装到可复现容器环境中，贴近 Terminal-Bench 的执行方式。

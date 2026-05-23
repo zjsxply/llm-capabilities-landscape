@@ -23,4 +23,11 @@
 
 ## 4.4.2 Agent Harness
 
+- [Drive Like A Human](https://arxiv.org/abs/2307.07162)（[开源代码](https://github.com/PJLab-ADG/DriveLikeAHuman)）：早期 HighwayEnv 中的闭环 LLM driving harness，可作为后续带记忆和反思的自动驾驶 agent 前身。
+- [DiLu](https://arxiv.org/abs/2309.16292)（[开源代码](https://github.com/PJLab-ADG/DiLu)）：闭环 self-evolving driving framework，包含 environment、reasoning、reflection 和 memory modules，通过显式 agent loop 做驾驶决策，而不是单个 perception model。
+- [Agent-Driver](https://arxiv.org/abs/2311.10813)（[开源代码](https://github.com/physical-superintelligence-lab/Agent-Driver)；[项目页](https://usc-gvl.github.io/Agent-Driver/)）：面向自动驾驶的 LLM cognitive agent，包含 function-call tools、cognitive memory、reasoning、task planning、motion planning 和 self-reflection。
 - [AGENTS-LLM](https://arxiv.org/abs/2507.13729)：用于生成挑战性交通场景的 agentic LLM framework。核心思想：用 LLM 驱动的场景增广为自动驾驶 agent 构造比固定场景库更困难、更多样的交通情形。
+
+## 4.4.3 Skill
+
+- [RoboSafe-Lab AD Safety Research Skills](https://github.com/RoboSafe-Lab/ad-safety-research-skills) 提供面向自动驾驶安全研究的 Claude Code skills，覆盖 AD foundation models、scenario analysis、experiment design 和 generative-model workflows；这些是 agent-readable research skills，而不是 learned driving policy primitives。

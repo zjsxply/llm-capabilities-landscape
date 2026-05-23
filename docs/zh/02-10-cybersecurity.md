@@ -62,11 +62,17 @@
 ## 2.10.3 Agent Harness
 
 
-- [VulnBot](https://arxiv.org/abs/2501.13411)：自主多 agent 渗透测试框架。核心思想：用渗透任务图和专门的侦察、扫描、利用 agent 协调端到端测试。
-- [CRAKEN](https://arxiv.org/abs/2505.17107)：知识增强的网络安全 LLM agent harness。核心思想：把任务关键信息分解、迭代检索和知识提示注入结合起来，用于 CTF 与 MITRE 风格攻击执行。
+- [HackingBuddyGPT](https://arxiv.org/abs/2308.00121)（[开源代码](https://github.com/ipa-lab/hackingBuddyGPT)；[文档](https://docs.hackingbuddy.ai/)）：面向授权 hacking workflow 的安全研究助手 harness，是较早的开源参考，覆盖工具介入的侦察、利用尝试和可审计执行。
+- [PentestGPT](https://arxiv.org/abs/2308.06782)（[开源代码](https://github.com/GreyDGL/PentestGPT)；[项目页](https://pentestgpt.com/)）：早期 LLM 渗透测试 agent，围绕授权评估工作流组织推理、任务状态和工具交互。
+- [HPTSA](https://arxiv.org/abs/2406.01637)（[开源代码](https://github.com/uiuc-kang-lab/HPTSA)）：面向 Web 渗透测试的层级规划与任务专用 agent 框架，适合把利用尝试拆给有边界的 subagents。
+- [EnIGMA](https://arxiv.org/abs/2409.16165)（[开源代码](https://github.com/SWE-agent/SWE-agent)；[项目页](https://enigma-agent.com/)）：基于 SWE-agent 的 cyber harness，面向 CTF 与漏洞任务，可作为可执行安全挑战的复用 scaffold。
+- [AutoPT](https://arxiv.org/abs/2411.01236)（[开源代码](https://github.com/Dizzy-K/AutoPT)）：Web 渗透测试自动化 harness，在授权环境中协调侦察、漏洞分析、利用和报告。
+- [HackSynth](https://arxiv.org/abs/2412.01778)（[开源代码](https://github.com/aielte-research/HackSynth)）：CTF 与渗透测试 harness，包含 planning、tool execution 和 benchmark-runner 组件，用于可复现 cyber-agent 实验。
+- [VulnBot](https://arxiv.org/abs/2501.13411)（[开源代码](https://github.com/KHenryAegis/VulnBot)）：自主多 agent 渗透测试框架。核心思想：用渗透任务图和专门的侦察、扫描、利用 agent 协调端到端测试。
+- [CRAKEN](https://arxiv.org/abs/2505.17107)（[开源代码](https://github.com/NYU-LLM-CTF/nyuctf_agents_craken)）：知识增强的网络安全 LLM agent harness。核心思想：把任务关键信息分解、迭代检索和知识提示注入结合起来，用于 CTF 与 MITRE 风格攻击执行。
 - [Task-Driven SOC Analysis](https://doi.org/10.1049/cit2.70138)：面向 LLM 安全运营分析的任务驱动框架。核心思想：把模糊 SOC 查询转化为可验证分析步骤和证据支撑结论。
-- [PentestMCP](https://arxiv.org/abs/2510.03610)：面向 agentic penetration testing 的 MCP server 工具包。核心思想：把扫描、枚举、漏洞利用和后渗透功能暴露为可组合工具，供安全 agent 工作流调用。
-- [Cybersecurity AI](https://arxiv.org/abs/2512.02654)：面向安全 CTF 的智能体系统。核心思路：围绕规划、工具使用和迭代验证组织网络安全挑战求解，可作为可执行 CTF 评测中的 harness 参考。
+- [PentestMCP](https://arxiv.org/abs/2510.03610)（[开源代码](https://github.com/Craftzman7/pentest-mcp)）：面向 agentic penetration testing 的 MCP server 工具包。核心思想：把扫描、枚举、漏洞利用和后渗透功能暴露为可组合工具，供安全 agent 工作流调用。
+- [Cybersecurity AI](https://arxiv.org/abs/2512.02654)（[开源代码](https://github.com/aliasrobotics/cai)；[项目页](https://aliasrobotics.com/cybersecurityai.php)）：面向安全 CTF 的智能体系统。核心思路：围绕规划、工具使用和迭代验证组织网络安全挑战求解，可作为可执行 CTF 评测中的 harness 参考。
 - [Automated Penetration Testing with LLM Agents and Classical Planning](https://arxiv.org/abs/2512.11143)：结合 LLM agent 与符号规划的渗透测试 harness。核心思想：用 classical planning 组织侦察与利用步骤，再由 LLM agent 负责解释和工具交互。
 - [AuditGPT](https://doi.org/10.1109/icassp55912.2026.11463116)：用于增强静态分析的多 agent 框架。核心思想：围绕代码审计证据、疑似问题和验证过程协调多个 agent，降低静态分析 triage 成本。
 - [KryptoPilot](https://arxiv.org/abs/2601.09129)：面向密码学 CTF 利用的开放世界知识增强智能体。核心思路是结合深度研究、持久工作区记忆、行为治理和成本感知模型路由，使智能体能够获取细粒度密码分析知识，并将其用于长链路利用流程。
@@ -88,3 +94,6 @@
 
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) 适合隔离高风险网络安全或 exploit-like 工具调用。
 - [docker-local-dev](https://skills.sh/thienanblog/awesome-ai-agent-skills/docker-local-dev) 适合封装漏洞服务、复现环境和可重置 validator。
+- [nmap-mcp](https://github.com/sbmilburn/nmap-mcp) 适合在授权范围内通过结构化 MCP 调用做网络发现，尤其适合需要明确扫描范围和审计日志的场景。
+- [security-detections-mcp](https://skills.sh/aradotso/security-skills/security-detections-mcp) 适合防御型 detection-rule workflow 和 SOC 风格规则工程，而不是进攻利用。
+- [mcpsec](https://github.com/pfrederiksen/mcpsec) 适合在把网络安全工具暴露给 agent 前审计 MCP 配置与安全姿态。

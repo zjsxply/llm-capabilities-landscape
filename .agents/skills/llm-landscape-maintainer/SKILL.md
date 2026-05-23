@@ -19,6 +19,8 @@ description: Maintain the llm-capabilities-landscape repository and its benchmar
 - **Subagent lesson loop**: after any multi-agent intake, ask each subagent for a concise memo covering its source scope, missed-recall patterns, title or alias drift, classification conflicts, duplicate handling, and concrete skill-rule suggestions. Save the memos in `.tmp/<task>/subagent-lessons/`, review them before the final user summary, and update this skill when they reveal reusable process changes.
 - **Model-card gap ingestion**: extract vendor-reported evaluations into a table, normalize aliases against `docs/en/*.md`, classify by task axis, add closed/internal suites only with explicit "not publicly released" wording, and place them by card/report date.
 - **Citation/reference closure**: for every included paper, fetch both Semantic Scholar citations and references, convert new edges into candidates, screen each candidate exactly once through the checked-paper registry, include only parent-reviewed fits, then repeat until no unchecked candidates remain or a bounded API failure is explicitly reported.
+- **Open-source project URL-citation intake**: for every repository, SDK, skill package, benchmark implementation, leaderboard implementation, or agent harness codebase considered for inclusion, run a URL-citation pass before final classification. Resolve redirects, collect the canonical URL, original URL, protocol-less URL, `owner/repo` slug, README title, repository description, package or marketplace name, `SKILL.md` name, docs URL, demo URL, and known renamed or mirrored URLs. Search these keys across general web search, site-restricted academic sources, Semantic Scholar, GitHub, relevant package or skill marketplaces, and official project ecosystems. Treat confirmed citing papers as candidate papers; if no citation is confirmed, record a bounded negative result and classify the artifact as project-only unless another stable paper source exists.
+- **Autoresearch-style seed intake**: when a user gives an influential project-only seed such as `karpathy/autoresearch`, inspect the actual implementation before general topic search. Record the core loop, editable/read-only boundaries, metric, rollback policy, run-log format, compute assumptions, forks or ports, and whether the artifact is a benchmark, agent harness, skill, or only a discovery resource. Search exact repo slugs, README titles, associated awesome lists, forks, paper follow-ups, and skill marketplaces, then include only entries that add a distinct reusable harness, benchmark, or skill axis.
 - **Chronological maintenance**: when inserting entries, compare surrounding arXiv IDs, publication dates, dataset launch dates, and card dates before editing. Do not just append new model-card gaps at the end of a section unless the card date makes that correct.
 - **Chronology repair after bulk inclusion**: after scripted or multi-file insertion, audit every edited Bench and Agent Harness section for date inversions in both languages. Use one normalized time scale for arXiv IDs and venue dates, and keep an explicit release-sort key for entries whose displayed URL is an official proceedings page rather than an arXiv link.
 - **Taxonomy migration**: when moving entries into a new category file, treat the move as a semantic relocation, not a deletion. Update README indexes, remove duplicate primary listings from old category files, preserve cross-references only when useful, and run chronology plus bilingual audits on both the source and destination files.
@@ -31,12 +33,27 @@ description: Maintain the llm-capabilities-landscape repository and its benchmar
 3. Define inclusion and exclusion criteria before collecting candidates. State what belongs in Bench, Agent Harness, Skill, or Leaderboard, and what belongs in a neighboring category.
 4. Sort entries by release time when dates are known. Normalize all sort keys to the same `YYYY-MM` scale: an arXiv ID such as `2506.xxxxx` means `2025-06`, not integer `2506`; a conference-only entry uses the proceedings month or an explicitly recorded public-release month. For model-card-only, closed, or internal evaluations, place them by the model card or report date and explicitly mark that the task set is not publicly released.
 5. Select the discovery anchor from the request. For a latest-conference or named-track request, sweep the official accepted-paper source before doing topic search. For a seed/topic request, search recent surveys first to map task boundaries, benchmark families, terminology variants, and common baselines.
-6. Normalize official paper titles, benchmark acronyms, alternate project names, arXiv identifiers, and OpenReview identifiers against existing documents before deciding that a work is missing.
-7. Read milestone or newly accepted papers and inspect their baseline/comparison sections. Baselines are first-class candidates for this landscape.
-8. For every already included or newly accepted paper that matters to the target section, use Semantic Scholar API to collect both citations and references as candidate related work. If the API returns `429`, slow down and retry from cache; if a complete run remains impractical, preserve the official-venue sweep and explicitly report the bounded closure rather than implying full citation coverage.
-9. Cross-check accepted candidates against the paper, official venue entry, project page, official repository, leaderboard, and actual implementation when relevant. Keep a stable official paper URL when no arXiv version is available.
-10. Verify newly added URLs before finishing.
-11. Keep final Chinese prose concise, professional, and classification-oriented.
+6. For every user-provided seed that leads to a meaningful candidate, write a short discovery-channel reflection in `.tmp/<task>/`: where the seed could have been found, which aliases and channels exposed it or failed, which sibling searches should now be run, and which durable rule or source should be promoted. Use this reflection before final edits, especially for ARIS-like acronym and repository-slug misses.
+7. Normalize official paper titles, benchmark acronyms, alternate project names, repository slugs, README titles, `SKILL.md` names, arXiv identifiers, and OpenReview identifiers against existing documents before deciding that a work is missing.
+8. Read milestone or newly accepted papers and inspect their baseline/comparison sections. Baselines are first-class candidates for this landscape.
+9. For every already included or newly accepted paper that matters to the target section, use Semantic Scholar API to collect both citations and references as candidate related work. If the API returns `429`, slow down and retry from cache; if a complete run remains impractical, preserve the official-venue sweep and explicitly report the bounded closure rather than implying full citation coverage. Do not let subagents call Semantic Scholar in parallel.
+10. Cross-check accepted candidates against the paper, official venue entry, project page, official repository, leaderboard, and actual implementation when relevant. For open-source projects, confirm whether a paper actually cites the URL, slug, title, or verified official variant before calling the project paper-backed. Keep a stable official paper URL when no arXiv version is available.
+11. Verify newly added URLs before finishing.
+12. Keep final Chinese prose concise, professional, and classification-oriented.
+
+## Open-Source Project URL-Citation Search
+
+Use this workflow whenever a repository, skill, SDK, project page, demo, benchmark implementation, or leaderboard implementation is considered for inclusion.
+
+1. Resolve and normalize the target. Record the original URL, final redirected URL, canonical page URL, protocol and host variants, trailing-slash variants, old and new GitHub owner/repo slugs, mirrors, project page, docs page, demo page, package names, README title, repository description, and any `SKILL.md` or manifest names.
+2. Build search keys from exact full URL, protocol-less URL, host plus path, stable slug, owner/repo, exact README or page title, package or marketplace name, project acronym, full expansion, and Chinese/English variants when relevant.
+3. Search in widening rings: general web search; exact title and slug search; site-restricted academic search over arXiv, OpenReview, ACL Anthology, NeurIPS proceedings, PMLR, ACM, IEEE, CEUR-WS, Springer, Nature, and relevant venue sites; GitHub and code search; Semantic Scholar by title, slug, and repo name; skill marketplaces such as `npx skills find`, `npx clawhub search`, SkillNet, and direct GitHub skill-directory search when the artifact is a skill.
+4. Verify each candidate from the paper itself, PDF, HTML reference list, publisher bibliography metadata, arXiv HTML bibliography, appendix, official project page, or official repository reference. Search snippets, topical similarity, and index co-occurrence are candidate signals only.
+5. Deduplicate published and preprint versions, but verify the web citation in the version being cited. Separate direct citation, official variant, mirror citation, and unverified candidate.
+6. If no confirmed citing paper is found, record a bounded negative result in `.tmp/` with searched keys, channels, blocked sources, S2 status, and the inclusion decision. Do not write "no paper exists" unless an official source says so.
+7. For dynamic, paginated, protected, or JavaScript-heavy pages, prefer official APIs, raw GitHub files, package registry metadata, OpenReview APIs, venue metadata, sitemap files, and static mirrors. A dynamic page is confirmed evidence only when the actual reference entry is visible or extractable.
+8. For GitHub redirects and renames, canonicalize to the final repository URL, preserve the old slug as an alias, verify with GitHub API or `git ls-remote` when HTML is ambiguous, and search both old and new slugs.
+9. If Semantic Scholar returns `429`, slow down, reuse cache, and preserve partial results. Report bounded closure rather than implying full URL-citation coverage.
 
 ## Venue-Track Coverage
 
@@ -134,6 +151,38 @@ Classification reminders:
 
 Run scripts from the repository root.
 
+In this workspace, prefer `source .venv/bin/activate && python ...` for local scripts. Use these recurring command patterns during research-skill and open-source-project intake:
+
+- Skill marketplace search:
+  `npx --yes skills find "QUERY"`
+  `npx --yes clawhub search "QUERY"`
+  Run `clawhub` serially and slowly because it is rate-limited.
+- SkillNet search:
+  `curl -s 'http://api-skillnet.openkg.cn/v1/search?q=paper%20rebuttal'`
+  Try several English and Chinese variants because SkillNet is keyword-based and may time out on broad queries.
+- GitHub repository discovery:
+  `query='academic+research+skill'; api='https://api.github.com'; curl -s "$api/search/repositories?q=$query&sort=updated&order=desc&per_page=10"`
+  Use this for skill-suite and project-only candidates that do not surface in marketplaces.
+- GitHub implementation verification:
+  `repo='OWNER/REPO'; github='https://github.com'; git ls-remote "$github/$repo"`
+  `repo='OWNER/REPO'; api='https://api.github.com'; source .venv/bin/activate && curl -s "$api/repos/$repo/contents" | python -m json.tool`
+  Prefer these when HTML pages are redirected, dynamic, or ambiguous; clone only after deciding that implementation inspection is needed.
+- GitHub seed intake report:
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/github_seed_intake.py --out .tmp/TASK/github-seed-intake.md github.com/OWNER/REPO ...`
+  Use this for user-provided project seeds and project-only candidates. It normalizes GitHub URLs, reuses `/tmp/github-repos/<owner>/<repo>`, runs `git pull --ff-only` or `git clone`, records README/API metadata and file samples, and checks paired docs for obvious duplicate aliases.
+- Exact URL and arXiv metadata check:
+  `id='2605.17373'; arxiv='https://arxiv.org'; curl -Ls "$arxiv/abs/$id" | rg -n "citation_title|citation_date|Submitted|github|project|Abstract" -C 2`
+  Use this before replacing an existing arXiv URL; a newer URL may be a follow-up paper rather than a correction.
+- Bilingual URL-set spot check:
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py docs/en/03-02-research.md docs/zh/03-02-research.md`
+  Use this after bilingual edits to catch missing links, English-only additions, or Chinese-only URL drift.
+- Routine final validation bundle:
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/chronology_order_audit.py --bilingual docs/en/03-02-research.md docs/zh/03-02-research.md docs/en/02-04-deep-research.md docs/zh/02-04-deep-research.md`
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py docs/en/03-02-research.md docs/zh/03-02-research.md docs/en/02-04-deep-research.md docs/zh/02-04-deep-research.md`
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/check_changed_urls.py --out .tmp/url_check_changed.md`
+  `git diff --check && git diff --cached --check`
+  `source .venv/bin/activate && python -m py_compile .agents/skills/llm-landscape-maintainer/scripts/*.py`
+
 - Semantic citation and reference scan:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/semantic_scholar_citation_scan.py --out .tmp/s2_report.md TARGET_FILES...`
   The scanner adaptively changes its request delay: successful network requests linearly reduce the delay toward `--min-delay`, while `429` responses double the delay up to a hard 30-second cap.
@@ -191,6 +240,14 @@ In particular, do not repeat massive chunk-screening here-docs. Subagents may wr
 ## Notes
 
 - Keyword search misses many relevant works. Combine keyword search, survey reading, baseline inspection, references, citations, GitHub search, and leaderboard inspection.
+- For open-source project intake, URL-citation search is mandatory before classifying a project as paper-backed. Search exact URLs, protocol-less URLs, slugs, README titles, repository descriptions, package names, marketplace names, and `SKILL.md` names. Confirm citations from actual paper or reference evidence, not snippets.
+- When no citing paper is found for an open-source project, keep the project as project-only or defer it; record searched keys and channels in `.tmp/` and avoid claiming that no paper exists.
+- GitHub redirects, renamed repositories, forks, mirrors, and deep `blob` or `tree` URLs must be normalized before deduplication. Search both old and new slugs because papers may cite either.
+- If the user excludes a domain such as biomedical work, carry that exclusion through keyword search, citation traversal, URL-citation search, subagent instructions, and final screening. Record excluded hits only as skipped or rejected ledger rows.
+- Each intake should include a discovery-channel reflection: for every meaningful seed, state where it should have been discoverable, which aliases and channels were used, what failed, and what sibling searches the seed suggests.
+- When a user asks to include exploratory candidates, do not leave useful `defer` rows only in `.tmp`. If a candidate is relevant but not a benchmark or runnable harness, place it in the closest honest section as a roadmap, resource, project-only skill, or neighboring-category entry with an explicit caveat.
+- A newer arXiv result for the same repository is not automatically a replacement for the older entry. Verify title, authors, task set, and date first; if both are real, keep the original historical entry and add the newer follow-up only when it contributes a distinct evaluation angle.
+- For skill suites, marketplace results are incomplete. Always combine `skills find`, `clawhub`, SkillNet, GitHub repository search, exact repo slug search, README title search, and direct `SKILL.md` inspection before deciding that a popular skill project is absent.
 - Fresh proceedings and benchmark tracks are especially easy to miss through keywords or citation graphs: titles may use project names rather than task terms, accepted papers may have sparse citation edges, and some works may temporarily have only an official venue page. Use official venue enumeration as the recall anchor.
 - Semantic Scholar closure broadens a seed set but does not certify coverage of a newly accepted conference track. Preserve and report official-track coverage separately from citation-graph expansion.
 - Semantic Scholar citation results are noisy. Rank by fit first, then recency and citation count; do not add every candidate just because it appears in the graph.
@@ -198,6 +255,9 @@ In particular, do not repeat massive chunk-screening here-docs. Subagents may wr
 - Benchmark names drift across papers, project pages, and leaderboards. Normalize names and verify whether variants are distinct tasks or aliases.
 - Unicode, punctuation, hyphenation, and squared or Greek symbols can break exact matching. Normalize these variants for search, but preserve the canonical display name from the paper or project when editing docs.
 - Short acronyms are unsafe deduplication keys. Treat matches such as common words, two- to four-letter acronyms, or reused family names as hints until the surrounding title, URL, authors, arXiv/OpenReview ID, or repository confirms identity.
+- Popular agent and skill projects often do not surface through generic benchmark keywords. For skill/open-source surveys, run a named-system pass over well-known project names, long-form expansions, repository slugs, and marketplace package names; ARIS is the reference failure mode because `ARIS` alone is noisy, while `Auto-Research-in-sleep`, `Auto-claude-code-research-in-sleep`, `research-pipeline`, `paper-writing`, and `skills-codex` expose the actual paper, repo, and skill entries.
+- Autoresearch-style projects are often project-only but still landscape-relevant when they define a reusable loop. Classify the original minimal loop as Agent Harness, generalized command packages as Skill, paper follow-ups that optimize the loop as Agent Harness, and curated lists such as awesome repositories as discovery resources unless they contain their own runnable harness.
+- For metric-driven autonomous loops, capture the evaluation metric, fixed budget, editable file set, rollback rule, run log, and safety assumptions. These details matter more than star count when deciding whether the artifact is reusable.
 - Active leaderboards can contain systems without papers. Add them only when the system is relevant and the leaderboard or project URL is stable.
 - Keep task boundaries clean when benchmarks use the same substrate. For example, cybersecurity benchmarks belong in the cybersecurity category even when they run in a terminal, and embodied or vision-language-action benchmarks belong in an embodied/VLA category rather than GUI-only computer use.
 - When moving a benchmark to a new category, remove duplicate primary listings from old categories. Keep cross-references only when they explain a neighboring capability rather than re-listing the benchmark as part of that category.
@@ -227,6 +287,10 @@ In particular, do not repeat massive chunk-screening here-docs. Subagents may wr
 ## Hard Rules
 
 - Do not rely on keyword search alone for paper discovery; use citation and reference traversal.
+- Do not classify an open-source project as paper-backed until a URL, slug, title, `SKILL.md` name, or verified official variant is found in the paper, PDF, HTML bibliography, reference metadata, appendix, official project page, or repository reference.
+- Do not treat "no search result" as "no citing paper exists"; report bounded negative evidence with searched keys and channels.
+- Do not ignore user-specified domain exclusions during citation expansion or URL-citation search.
+- Do not close an intake without reviewing the discovery-channel reflection for user-provided seeds that produced meaningful additions.
 - When the request concerns latest papers from a named conference or track, do not rely on arXiv, keyword search, or citation traversal as the primary inventory; enumerate the official accepted-paper source first and record that sweep.
 - Do not claim citation or reference closure is complete when an API was rate-limited, unavailable, or only partially scanned; report the bounded evidence actually collected.
 - Do not add leaderboard, product, or adoption claims without an adjacent citation or URL.

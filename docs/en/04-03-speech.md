@@ -82,5 +82,14 @@ Note: This page collects speech, audio, voice-agent, music, spoken-dialogue, and
 
 ## 4.3.2 Agent Harness
 
-- [AudioToolAgent](https://arxiv.org/abs/2510.02995): An agentic harness for audio-language models. Core idea: route audio understanding and generation tasks through external tools so auditory agents can decompose workflows instead of relying only on one end-to-end model call.
+- [AudioGPT](https://arxiv.org/abs/2304.12995) ([open-source code](https://github.com/AIGC-Audio/AudioGPT)): An early audio agent harness that uses ChatGPT/LangChain-style planning to call speech, singing, audio, and talking-head foundation models as tools.
+- [WavJourney](https://arxiv.org/abs/2307.14335) ([open-source code](https://github.com/Audio-AGI/WavJourney); [demo](https://audio-agi.github.io/WavJourney_demopage/)): A compositional audio-creation harness that decomposes text intent into story, speech, music, and sound-effect generation workflows.
+- Pipecat ([open-source code](https://github.com/pipecat-ai/pipecat); [docs](https://docs.pipecat.ai/)): An open-source Python framework for real-time voice and multimodal conversational agents, covering STT, LLM, TTS, WebRTC/WebSocket transports, pipeline composition, and subagents.
+- LiveKit Agents ([open-source code](https://github.com/livekit/agents); [docs](https://docs.livekit.io/agents/)): A real-time programmable-participant framework for conversational multimodal voice agents, including tool calls, telephony, MCP integrations, job scheduling, and testing support.
+- TEN Framework ([open-source code](https://github.com/TEN-framework/ten-framework)): A real-time multimodal conversational-AI framework with voice assistant examples, VAD, turn detection, memory, RTC/WebSocket integrations, and agent orchestration components.
+- [AudioToolAgent](https://arxiv.org/abs/2510.02995) ([open-source code](https://github.com/GLJS/AudioToolAgent)): An agentic harness for audio-language models. Core idea: route audio understanding and generation tasks through external tools so auditory agents can decompose workflows instead of relying only on one end-to-end model call.
 - [MIST](https://arxiv.org/abs/2605.06897): A multimodal speech-based tool-calling assistant framework for smart homes. Core idea: connect spoken interaction, multimodal context, and executable device tools so tool-use agents can be evaluated and engineered beyond text-only API calls.
+
+## 4.3.3 Skill
+
+- [livekit-agents](https://skills.sh/livekit/agent-skills/livekit-agents) is LiveKit's official agent skill for building voice AI apps with workflows, handoffs, tasks, testing patterns, and LiveKit Agents SDK conventions.

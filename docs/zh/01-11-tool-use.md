@@ -59,6 +59,8 @@
 - [Factored Agents](https://arxiv.org/abs/2503.22931)：面向工具使用的 agent 架构，将高层规划与 in-context learning 同工具格式记忆拆开。核心思想：用专门组件减少格式错误、字段缺失和 API 字段幻觉，同时保留动态环境中的适应性。
 - [Gradientsys](https://arxiv.org/abs/2507.06520)：带有 ReAct 式编排的多智能体 LLM 调度器。核心思想：通过调度与反馈协调专门化 agent，使多步骤工具或 workflow 执行被显式管理，而不是交给单一大 prompt。
 - mcp-use（[开源代码](https://github.com/mcp-use/mcp-use)；[文档](https://mcp-use.com/docs)）：无独立论文，但提供 MCP server、MCP app、Inspector 和部署链路，适合作为工程侧 MCP tool-use harness，特别是把工具定义、调试、观测和发布合在一个 SDK 中。
+- mcp-agent（[开源代码](https://github.com/lastmile-ai/mcp-agent)；[文档](https://docs.mcp-agent.com/)）：MCP-native agent SDK，把 server 生命周期管理、路由、orchestrator/evaluator-optimizer 模式和 durable execution 做成可复用的工具使用 harness 组件。
+- OpenAI Agents SDK（[开源代码](https://github.com/openai/openai-agents-python)；[文档](https://openai.github.io/openai-agents-python/)）：开源 workflow SDK，核心抽象包含 tools、MCP、handoffs、guardrails、sessions 和 tracing，可作为工程化 tool-using agents 的实用基线，而不只是 benchmark scaffold。
 - [MCP-Universe](https://arxiv.org/abs/2508.14704)（[开源代码](https://github.com/SalesforceAIResearch/MCP-Universe)）：更像工具生态层的 agent harness，不只是 benchmark 数据集；它把 MCP server、任务、执行器、UI 和评测记录组织到同一运行环境，适合复现实验和对比不同 tool-use scaffold。
 - [Meta-Agent-Workflow](https://doi.org/10.1145/3701716.3715247)：面向工具使用的 agent harness，通过构造、检索和细化可复用 workflow 来支持 LLM agent。核心思想：把反复出现的工具调用轨迹沉淀成 workflow 资产，让后续任务复用并调整结构化执行计划，而不是每次从一次性 ReAct 循环开始。
 - [ToolGate](https://arxiv.org/abs/2601.04688)：面向 LLM 工具使用的契约约束与可验证执行 harness；核心思想是用符号状态表示可信世界信息，并通过 Hoare-style contracts 决定工具结果是否可提交，从而给工具调用提供可检查的安全与状态演化保证。
@@ -71,5 +73,6 @@
 - [mcp-builder](https://skills.sh/anthropics/skills/mcp-builder) 适合快速搭建 MCP server。
 - [mcp-cli](https://skills.sh/github/awesome-copilot/mcp-cli) 适合 MCP 运行与命令行管理。
 - [mcp-deploy-manage-agents](https://skills.sh/github/awesome-copilot/mcp-deploy-manage-agents) 适合 MCP 服务部署与代理生命周期管理。
+- [mcporter](https://github.com/openclaw/openclaw/tree/main/skills/mcporter) 适合在 agent-readable 的命令行流程中列出、配置、认证、调用并检查 MCP server 与工具。
 - [langchain4j-tool-function-calling-patterns](https://skills.sh/giuseppe-trisciuoglio/developer-kit/langchain4j-tool-function-calling-patterns) 适合把 function calling 接入工程框架。
 - [skill-validator](https://skills.sh/daffy0208/ai-dev-standards/skill-validator) 可作为工具调用链路中的额外验证层。

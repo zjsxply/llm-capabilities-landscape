@@ -23,4 +23,11 @@ Note: This page collects autonomous-driving, traffic-scenario, vehicle-cockpit, 
 
 ## 4.4.2 Agent Harness
 
+- [Drive Like A Human](https://arxiv.org/abs/2307.07162) ([open-source code](https://github.com/PJLab-ADG/DriveLikeAHuman)): An early closed-loop LLM driving harness in HighwayEnv, useful as a precursor for later memory/reflection-based autonomous-driving agents.
+- [DiLu](https://arxiv.org/abs/2309.16292) ([open-source code](https://github.com/PJLab-ADG/DiLu)): A closed-loop self-evolving driving framework with environment, reasoning, reflection, and memory modules, making driving decisions through an explicit agent loop rather than a single perception model.
+- [Agent-Driver](https://arxiv.org/abs/2311.10813) ([open-source code](https://github.com/physical-superintelligence-lab/Agent-Driver); [project page](https://usc-gvl.github.io/Agent-Driver/)): An LLM cognitive agent for autonomous driving with function-call tools, cognitive memory, reasoning, task planning, motion planning, and self-reflection.
 - [AGENTS-LLM](https://arxiv.org/abs/2507.13729): An agentic LLM framework for generating challenging traffic scenarios. Core idea: use LLM-driven scenario augmentation to stress autonomous-driving agents with harder, more diverse traffic situations than fixed scenario libraries provide.
+
+## 4.4.3 Skill
+
+- [RoboSafe-Lab AD Safety Research Skills](https://github.com/RoboSafe-Lab/ad-safety-research-skills) provides Claude Code skills for autonomous-driving safety research, including AD foundation models, scenario analysis, experiment design, and generative-model workflows; these are agent-readable research skills rather than learned driving policy primitives.

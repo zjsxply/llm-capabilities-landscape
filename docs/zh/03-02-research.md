@@ -16,27 +16,36 @@
 ## 3.2.2 Bench
 
 - [MLAgentBench](https://arxiv.org/abs/2310.03302)（[开源代码](https://github.com/snap-stanford/MLAgentBench)）：评什么：机器学习研究任务的端到端自动化；核心思想：把研究任务、执行环境与评分协议打包成可复现平台，测量 agent 是否真的能做出可运行实验与有效改进。
+- [ResearchArena](https://arxiv.org/abs/2406.10291)（[开源代码](https://github.com/cxcscmu/ResearchArena)）：评什么：学术调研与综述生成。核心思想：用离线论文环境和 survey writing 协议，测试 agent 能否检索相关文献、比较方法并组织领域级研究叙事。
 - [DiscoveryBench](https://arxiv.org/abs/2407.01725)（[开源代码](https://github.com/allenai/discoverybench)）：评什么：数据驱动的科学发现；核心思想：用真实科学数据与假设生成/验证流程，评测 agent 能否提出并检验有意义的科学结论。
 - [SciCode](https://arxiv.org/abs/2407.13168)（[开源代码](https://github.com/scicode-bench/SciCode)）：评什么：真实科研问题的科学编码（scientist-curated research coding）。核心思想：题目由科学家参与构建，提供 gold solutions/tests，并把科研问题拆成多个需要知识召回、推理与代码合成的子问题。
+- [Can LLMs Generate Novel Research Ideas?](https://arxiv.org/abs/2409.04109)：评什么：通过大规模 NLP 研究者盲评测试研究想法生成。核心思想：比较专家撰写和 LLM 生成的研究想法，发现 LLM idea 在新颖性上更强、可行性稍弱，同时暴露 ideation agent 的自评和多样性问题。
 - [CORE-Bench / CORE-Bench Hard](https://arxiv.org/abs/2409.11363)：评什么：已发表研究的计算可复现性。核心思想：把论文、代码、数据和执行环境转成可由 agent 操作的复现实验任务，作为 PaperBench 之前“科研复现”路线的重要基线；HAL 另维护 CORE-Bench Hard 榜单作为更难复现子集入口。
 - [MLE-bench](https://arxiv.org/abs/2410.07095)（[开源代码](https://github.com/openai/mle-bench)）：评什么：机器学习工程与数据科学竞赛式建模能力，覆盖 75 个 Kaggle competition，并以生成 `submission.csv` 后的竞赛指标和 `Any Medal` 聚合分数评估。核心思想：把真实 ML 工程中的数据读取、EDA、特征工程、模型选择、调参、训练、验证、提交格式修复和长时间实验迭代放进同一个可执行 benchmark；官方还提供 22 题 Low/Lite split，降低完整评测的 3.3TB 数据与 24 小时运行成本。
 - [SciArena](https://sciarena.allen.ai/SciArena_An_Open_Evaluation_Platform_for_Foundation_Models_in_Scientific_Literature_Tasks.pdf)（[平台](https://sciarena.allen.ai/)）：评什么：科学文献理解、综合与引用式回答。核心思想：用开放评测平台收集模型在 literature tasks 上的表现，把文献级理解和用户偏好评价接进科研 agent 评估。
+- [OpenScholar / ScholarQABench](https://arxiv.org/abs/2411.14199)（[开源代码](https://github.com/AkariAsai/OpenScholar)；[demo](https://open-scholar.allen.ai/)）：评什么：大规模科学文献检索与引用式综合。核心思想：把检索增强文献模型、专家撰写的多领域科学问题、长答案参考和引用准确性检查结合起来，直接支撑 ARIS 式多源文献检索。
 - [RE-Bench](https://arxiv.org/abs/2411.15114)（[开源代码](https://github.com/METR/RE-Bench)）：评什么：AI R&D 自动化中的真实研究工程任务，覆盖算法设计、实验执行和结果分析等开放式研发工作。核心思想：与 MLE-bench 的 Kaggle 竞赛协议互补，RE-Bench 更强调研究工程师式的问题求解、代码实验与研究判断。
 - [MLGym](https://arxiv.org/abs/2502.14499)（[开源代码](https://github.com/facebookresearch/MLGym)）：评什么：AI research agent 的可交互 ML 研究环境与 benchmark。核心思想：把开放式机器学习研究任务做成 Gym 式环境，使 agent 能反复实验、观察结果并改进研究方案。
 - [BixBench](https://arxiv.org/abs/2503.00096)（[开源代码](https://github.com/Future-House/BixBench)，[数据集](https://huggingface.co/datasets/futurehouse/BixBench)）：评什么：生物信息学真实数据分析任务中的 agent 表现。核心思想：从 Code Ocean capsule 派生多步骤开放式问题，让 agent 探索数据、执行分析并解释结果，突出“科学数据分析”而不只是论文问答。
+- [No Evidence for LLMs Being Useful in Problem Reframing](https://arxiv.org/abs/2503.01631)：评什么：LLM 辅助 problem reframing 在受控设计任务中的有效性。核心思想：比较自由使用、直接生成、理论结构化 GPT-4o 辅助与人工重构，发现质量没有提升，并提示当前 LLM 辅助可能削弱用户主导感或扩大经验差距。
+- [CLAIMCHECK](https://arxiv.org/abs/2503.21717)：评什么：LLM 对科学论文的评审批评是否真正落在被质疑的论文主张上。核心思想：把 review weakness 映射到争议 claim、细粒度标签、改写和 grounded verification，使 claim-level critique 的质量不只由通用评审流畅度判断。
 - [SciReplicate-Bench](https://arxiv.org/abs/2504.00255)（[开源代码](https://github.com/xyzCS/SciReplicate-Bench)）：评什么：从近期研究论文复现算法实现。核心思想：要求 agent 理解论文中的算法描述、检索依赖并写出可执行代码，用 reasoning graph accuracy 与执行准确率共同衡量科研复现能力。
 - [PaperBench](https://arxiv.org/abs/2504.01848)：评什么：读论文并在 fresh sandbox 复现实验/实现，然后用 rubric grading 评估。核心思想：把“是否真的能复现/跑通”作为核心验收，强调 sandbox rerun 与 rubric judge，而不是仅看生成代码的表面相似度。
 - [MLRC-Bench](https://arxiv.org/abs/2504.09702)（[Leaderboard](https://huggingface.co/spaces/launch/MLRC_Bench)）：评什么：机器学习研究挑战中的 agent 表现，任务来自更开放的 ML research challenge 场景。核心思想：把“能否完成竞赛建模”进一步推向“能否推进研究挑战”，适合作为 MLE-bench 与 MLR-Bench 之间的过渡评测。
 - [MASSW](https://aclanthology.org/2025.findings-naacl.127/)（[数据集](https://osf.io/7ygrq/?view_only=3d8261a0ea09489fa67ece2c68235afa)）：评什么：AI-assisted scientific workflows。核心思想：把多步骤科学工作实践做成 benchmark 任务，覆盖 workflow 规划与执行，而不只是论文问答。
 - [CSR-Bench](https://aclanthology.org/2025.naacl-long.633/)：评什么：LLM agent 部署计算机科学研究仓库的能力。核心思想：把论文/仓库理解与环境配置、执行、调试连接起来，使研究仓库部署成为具体可测任务。
-- [BAISBench](https://arxiv.org/abs/2505.08341)（[开源代码](https://github.com/ErpaiLuo/BAISBench)，[数据集](https://huggingface.co/datasets/ErpaiLuo/BAISBench)）：评什么：组学数据驱动的生物 AI scientist。核心思想：用真实单细胞转录组数据构造细胞类型标注和科学发现问答，评估 agent 能否从实验数据中提出有意义的生物学结论。
+- [MLE-Dojo](https://arxiv.org/abs/2505.07782)（[开源代码](https://github.com/MLE-Dojo/MLE-Dojo)）：评什么：Gym 式可执行环境中的交互式机器学习工程 agent。核心思想：从 200 多个 Kaggle challenge 构建带反馈回路的任务，使 agent 能在真实长程 ML workflow 中迭代实验、调试、验证结果，并用于训练或评测。
+- [BAISBench](https://arxiv.org/abs/2505.08341)（artifacts：URL 检查时未找到可访问的公开仓库或数据集入口）：评什么：组学数据驱动的生物 AI scientist。核心思想：用真实单细胞转录组数据构造细胞类型标注和科学发现问答，评估 agent 能否从实验数据中提出有意义的生物学结论。
+- [Scientist-Bench / AI-Researcher](https://arxiv.org/abs/2505.18705)（[开源代码](https://github.com/HKUDS/AI-Researcher)）：评什么：自动科学创新中的文献综述、假设生成、算法实现和论文准备。核心思想：结合 guided innovation 与 open-ended exploration 任务，检验 research agent 能否把科学上下文转成已实现、可写作的研究贡献。
 - [MLR-Bench](https://arxiv.org/abs/2505.19955)（[开源代码](https://github.com/chchenhui/mlrbench)）：评什么：开放式机器学习研究（idea -> proposal -> experimentation -> paper writing），含端到端与分阶段评估。核心思想：提供 `MLR-Judge` 与 `MLR-Agent` scaffold，把“科研流程”变成可复现、可审阅的评测协议，并显式暴露“实验造假/无效实验结果”等可靠性失败模式。
 - [EXP-Bench](https://arxiv.org/abs/2505.24785)（[开源代码](https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench)）：评什么：AI agent 能否完成完整 AI 研究实验。核心思想：给定研究问题和不完整 starter code，要求 agent 提出假设、设计实验、实现、执行并分析结果，直接评估端到端实验能力。
 - [ResearchCodeBench](https://arxiv.org/abs/2506.02314)（[项目页](https://researchcodebench.github.io/)；[开源代码](https://github.com/PatrickHua/ResearchCodeBench)）：评什么：从最新机器学习论文实现未见过的研究代码。核心思想：用 2024-2025 顶会论文构造 212 个可执行 coding challenge，专门检测模型是否能把新研究贡献翻译成代码。
 - [KRAMABENCH](https://arxiv.org/abs/2506.06541)（[项目页](https://kramabench.org/)；[开源代码](https://github.com/mitdbg/KramaBench)，[数据集](https://huggingface.co/datasets/eugenie-y/KramaBench)）：评什么：数据湖上的 data-to-insight pipeline。核心思想：要求 agent 完成数据发现、清洗、整合、统计推理和 Python pipeline 编排，补足 MLE-bench 之外对开放数据科学研究流程的覆盖。
+- [CLAIM-BENCH](https://arxiv.org/abs/2506.08235)：评什么：完整 AI 论文中的科学主张、证据抽取和链接验证。核心思想：用专家标注的 claim-evidence pairs 测试模型能否识别主张、找回分散证据，并验证科学论证中的逻辑支撑关系。
 - [LLM Speedrunner](https://arxiv.org/abs/2506.22419)（[开源代码](https://github.com/facebookresearch/llm-speedrunner)）：评什么：agent 复现 NanoGPT speedrun 改进的能力。核心思想：把一个活跃的 ML 系统竞赛转成可执行复现任务，要求 agent 理解上一纪录训练脚本、实现已发布加速思路，并在 benchmark harness 下验证收益。
 - [RExBench](https://arxiv.org/abs/2506.22598)（[项目页](https://rexbench.com/)）：评什么：coding agent 能否实现 AI 研究扩展。核心思想：把已发表论文和原始代码库作为上下文，让 agent 实现专家写出的新实验/扩展，并通过自动执行与指标检查评估研究延展能力。
 - [AbGen](https://aclanthology.org/2025.acl-long.611/)：评什么：科研中的 ablation study 设计与评价。核心思想：测试模型是否能判断该消融什么、什么证据重要以及实验结论是否成立，而不是只会总结论文。
+- [AblationBench](https://arxiv.org/abs/2507.08038)（[项目页](https://ablation-bench.github.io/)；[开源代码](https://github.com/ai-scientist-bench/ablation-bench)）：评什么：经验型 AI research 中的自动消融规划。核心思想：把任务拆成作者侧根据方法部分提出消融方案，以及审稿人侧根据全文发现缺失消融，贴近 ARIS 式初步结果后的 reviewer-perspective 消融规划。
 - [Sci2Pol-Bench](https://arxiv.org/abs/2509.21493)（[开源代码](https://github.com/WeiminWu2000/Sci2Pol)，[数据集](https://huggingface.co/datasets/Northwestern-CSSI/Sci2Pol-Bench)）：评什么：从科学论文到政策简报的科研转译流程。核心思想：把补全、理解、总结、生成和验证拆成五阶段写作任务，衡量模型能否把科学证据转化为面向政策读者的可用材料。
 - [EvidenceBench](https://openreview.net/forum?id=lEQnUI5lEA)：评什么：从生物医学论文中抽取证据。核心思想：要求模型定位并抽取支撑主张的科学文本证据，是文献 grounded 科研 agent 的关键子任务。
 - [MoSciBench](https://openreview.net/forum?id=kZHSvETWdi)（[开源代码](https://github.com/usail-hkust/MoSciBench)）：评什么：多模态数据驱动科学发现。核心思想：用端到端科学任务要求 agent 对齐异构数据、建模、解释并完成假设验证，连接多模态理解和科学分析流程。
@@ -50,11 +59,23 @@
 - [AInsteinBench](https://arxiv.org/abs/2512.21373)（[开源代码](https://github.com/ByteDance-Seed/AInsteinBench)）：评什么：科学计算/科研软件生态中的仓库级开发能力（基于真实科研代码库与 maintainer PR 派生任务）。核心思想：把科学研究软件开发放回“可执行环境 + 测试验证 + 科学语义失败模式”的真实语境中，衡量 agent 是否具备科研级工程能力。
 - [HeurekaBench](https://arxiv.org/abs/2601.01678)（[开源代码](https://github.com/mlbio-epfl/HeurekaBench)，[项目页](https://brbiclab.epfl.ch/projects/heurekabench/)）：评什么：AI co-scientist 在真实实验数据驱动科研问题上的表现。核心思想：以 sc-HeurekaBench 等开放式单细胞分析任务评估 co-scientist agent 是否能提出可检验假设、执行分析并用 critic module 改善科学结论。
 - [APEX / APEX-Bench](https://arxiv.org/abs/2601.04794)：评什么：agent 的学术海报编辑能力。核心思想：开放多层级海报编辑 API 与 review-adjust 循环，使 agent 能按细粒度用户指令修订高密度科研图文产物。
+- [RebuttalBench / Paper2Rebuttal](https://arxiv.org/abs/2601.14171)（[项目页](https://mqleet.github.io/Paper2Rebuttal_ProjectPage/)；[开源代码](https://github.com/AutoLab-SAI-SJTU/Paper2Rebuttal)）：评什么：学术作者回复辅助。核心思想：把审稿意见、论文证据、文献检索、回复策略生成和人类反馈放进透明 rebuttal 工作流，使回复质量评测不只停留在通用写作流畅度。
+- [FIRE-Bench / Full-cycle Insight Rediscovery Evaluation](https://arxiv.org/abs/2602.02905)（[项目页](https://firebench.github.io/)；[开源代码](https://github.com/maitrix-org/FIRE-Bench)）：评什么：agent 能否重新发现机器学习高影响论文中的实验支撑 insight。核心思想：从高层研究问题出发，要求 agent 探索想法、设计实验、实现代码、执行计划，并用实验结果支撑重新发现的 insight。
 - [BABE](https://arxiv.org/abs/2602.05857)：评什么：生物领域的“实验推理”能力（在文本与视觉证据交织的科学材料上做研究式推断）。核心思想：强调把实验结果与上下文知识整合，考察因果推理与跨尺度推断，而不是背诵式生物知识 QA。
 - [AIRS-Bench](https://arxiv.org/abs/2602.06855)（[开源代码](https://github.com/facebookresearch/airs-bench)）：评什么：前沿 AI 研究代理的端到端科研流程。核心思想：把 idea generation、实验分析与迭代修订放进同一套任务，专门观察 agent 是否能推进真实 AI research workflow。
+- [SciClaimEval](https://arxiv.org/abs/2602.07621)（[项目页](https://sciclaimeval.github.io/)）：评什么：论文中的跨模态科学主张验证。核心思想：把真实论文主张及其反驳变体与文本、图和表格证据配对，使 claim-to-evidence 检查比通用事实核验更接近 ARIS 式论文主张审计。
 - [SciAgentGym / SciAgentBench](https://arxiv.org/abs/2602.12984)（[项目页](https://www.huayusha.org/publication/SciAgentGym/)）：评什么：科学 agent 的多步骤工具使用。核心思想：提供 1,780 个跨自然科学工具和分层评测集，专门压测从单步调用到长程 workflow 的工具编排能力。
 - [DECKBench](https://arxiv.org/abs/2602.13318)：评什么：多智能体系统生成和迭代编辑学术幻灯片的能力。核心思想：结合论文到幻灯片样本和真实感编辑指令，从内容忠实度、整套幻灯片连贯性、版式质量和多轮遵循度评估科研演示文稿生产。
+- [ResearchGym](https://arxiv.org/abs/2602.15112)（[项目页](https://anikethh.github.io/ResearchGym/)；[开源代码](https://github.com/Anikethh/ResearchGym)）：评什么：真实 AI research 场景中的语言模型 agent。核心思想：保留真实会议论文仓库中的数据、baseline 和可执行 evaluation harness，同时隐藏原论文方法，要求 agent 提假设、跑实验并超过已有 baseline。
+- [QEDBench](https://arxiv.org/abs/2602.20629)（[开源代码](https://github.com/qqliu/Yale-QEDBench)）：评什么：大学级数学证明自动评测中的对齐缺口。核心思想：把 AI judge 与课程专用和专家 rubric 对齐比较，为 proof-checking agent 提供自然语言证明质量评估 benchmark，而不只评生成证明。
+- [PostTrainBench](https://arxiv.org/abs/2603.08640)（[项目页](https://posttrainbench.com/)；[开源代码](https://github.com/aisa-group/PostTrainBench)）：评什么：LLM agent 能否在受限算力下自动完成 LLM post-training。核心思想：要求 agent 检索方法、准备数据、运行训练实验并优化目标评测，在单 H100 预算下暴露 reward hacking 等研究闭环失败。
+- [DiscoGen / DiscoBench](https://arxiv.org/abs/2603.17863)（[项目页](https://disco-gen.github.io/)；[开源代码](https://github.com/AlexGoldie/discogen)）：评什么：程序化生成机器学习任务中的算法发现 agent。核心思想：生成大量优化器、损失函数等 ML algorithm-discovery 任务，并用固定 benchmark 子集在更少饱和、更少污染的条件下比较发现型 agent。
+- [PRBench](https://arxiv.org/abs/2603.27646)（[开源代码](https://github.com/HET-AGI/PRBench-Eval-Handson)）：评什么：物理研究中的端到端论文复现。核心思想：要求 agent 阅读论文、在 sandbox 中从零实现算法并复现定量结果，把可执行科学复现扩展到机器学习之外的物理研究设置。
+- [PaperOrchestra / PaperWritingBench](https://arxiv.org/abs/2604.05018)（[开源代码](https://github.com/google-research/paper-orchestra)；URL 检查时数据集未包含在代码仓库中）：评什么：从原始研究材料自动撰写 AI research paper。核心思想：从顶会 AI 论文反向构造写作前材料，并评估 agent 是否能产出 submission-ready LaTeX 论文，覆盖文献综合、章节结构、图表和内容精修。
 - [SciPredict](https://arxiv.org/abs/2604.10718)：评什么：自然科学实验结果预测。核心思想：把“实验还没做时能否判断结果”单独作为科学预测任务，测试 LLM/agent 是否能超越知识问答而形成可验证的实验预判。
+- [ArcBench / ArcDeck](https://arxiv.org/abs/2604.11969)（[项目页](https://arcdeck.org/)；[开源代码](https://github.com/RehgLab/ArcDeck)，[数据集](https://huggingface.co/datasets/ArcDeck/ArcBench)）：评什么：叙事驱动的论文到幻灯片生成。核心思想：用学术论文和幻灯片配对，评估 agent 在把论文转成科研报告时是否保留逻辑流、叙事承诺、图表和视觉呈现质量。
+- [AI-Assisted Peer Review at Scale / AAAI-26 AI Review Pilot](https://arxiv.org/abs/2604.13940)：评什么：真实会议同行评审中的 AI 辅助。核心思想：用 AAAI-26 pilot 研究 AI reviewer 能否在保留人类监督、评审可用性和流程透明性的前提下，规模化发现科学弱点。
+- [What Makes a Good AI Review?](https://arxiv.org/abs/2604.19998)：评什么：concern-level 的 AI 同行评审质量。核心思想：把官方评审和 AI 生成评审中的 concern 按严重性和 rebuttal 后处理进行对齐，暴露自动评审是否真的识别并排序正确科学问题，而不只是匹配最终接收/拒稿趋势。
 - [ResearchClawBench](https://github.com/InternScience/ResearchClawBench)（[数据集镜像](https://huggingface.co/datasets/InternScience/ResearchClawBench)）：评什么：OpenClaw/InternScience 生态中从 re-discovery 到 new-discovery 的端到端自动科研任务。核心思想：把目标论文、相关工作、数据、图表和多模态 checklist judge 打包到同一评测流程里，让 agent 按“是否复现甚至超过原论文”评分，而不是只回答文献问题。
 - [AutoResearchBench](https://arxiv.org/abs/2604.25256)（[项目页](https://cheryou.github.io/autoresearchbench.github.io/)；[开源代码](https://github.com/CherYou/AutoResearchBench)）：评什么：复杂科学文献发现。核心思想：把 Deep Research 与 Wide Research 两类任务落到 1,000 个专家策划问题上，要求 agent 精确定位目标论文或全面收集满足条件的论文集合。
 - [BioMysteryBench](https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench)（[数据集](https://huggingface.co/datasets/Anthropic/BioMysteryBench-full)）：评什么：真实生物信息学数据上的开放式科研谜题。核心思想：由专家提出可从实验数据客观验证的问题，用最终答案而非固定分析路径评分，补齐生物数据分析的高难开放式评测。
@@ -62,22 +83,36 @@
 - [GeneBench](https://cdn.openai.com/pdf/6dc7175d-d9e7-4b8d-96b8-48fe5798cd5b/oai_genebench_benchmark.pdf)：评什么：遗传学多阶段推理和数据分析 agent。核心思想：用真实数据文件、数据库查询和多步推断组织任务，考察 agent 能否在复杂生命科学证据中形成可核验结论。
 - [Multimodal Conference Dataset / MCD](https://arxiv.org/abs/2605.05831)：评估论文、幻灯片、报告视频和讲解视频之间的细粒度对应关系。核心思路是测试模型能否在真实科研传播使用的多种媒介之间对齐科学概念和视觉证据。
 - [BioMedArena](https://arxiv.org/abs/2605.06177)（[开源代码](https://github.com/AI-in-Health/BioMedArena)）：评什么：生物医学 deep research agent 的统一评测与训练平台。核心思想：把 benchmark loading、tool exposure、execution mode、context management 和 scoring 解耦，接入 147 个生物医学 benchmark 与 75 个工具，降低各论文 harness 不一致带来的不可比问题。
+- [InciteResearch / TF-Bench](https://arxiv.org/abs/2605.06345)：评什么：pre-question scientific ideation。核心思想：从模糊或跨领域的研究摩擦出发，诱导结构化 researcher profile、打破隐藏假设，并评估 agent 能否把 tacit insight 转成明确、可行且新颖的研究提案。
 - [PDEAgent-Bench](https://arxiv.org/abs/2605.09636)：评什么：从 PDE 规格生成可执行数值求解器。核心思想：用 DOLFINx、Firedrake、deal.II 等专业 FEM 库，从可运行、数值精度和效率三层评估 scientific coding agent。
 - [Ambig-DS](https://arxiv.org/abs/2605.09698)：评什么：数据科学 agent 在任务框定歧义下是否会主动澄清。核心思想：基于 DSBench 和 MLE-bench 构造目标变量/评价目标歧义任务，暴露“产物可运行但任务理解错”的隐性失败。
 - [SciIntegrity-Bench](https://arxiv.org/abs/2605.10246)（[开源代码](https://github.com/liuxingtong/Sci-Integrity-Bench)）：评什么：AI scientist 的学术诚信。核心思想：构造只能诚实承认失败、不能通过造数据/造结果完成的 dilemmatic scenarios，评估 agent 在完成压力下是否会学术不端。
 - [Collider-Bench](https://arxiv.org/abs/2605.13950)（开源代码和任务语料见论文）：评什么：粒子物理实验分析复现。核心思想：要求 agent 从 LHC 论文和公开软件复现 simulation-and-selection pipeline，并用连续 histogram 指标和轨迹审计评分，补足真实科学复现任务。
+- [1GC-7RC](https://arxiv.org/abs/2605.17046)（代码：论文称有 GitHub 发布，但 URL 检查时未找到可访问公开仓库）：评什么：单 GPU 预算下七个机器学习研究挑战中的 coding agent。核心思想：在受控算力条件下压测从零训练、实验设计和结果验证，补充 MLE-bench 式 Kaggle 任务。
+- [FML-Bench Search Dynamics Study](https://arxiv.org/abs/2605.17373)（[开源代码](https://github.com/qrzou/FML-bench)）：评什么：从 research-agent 搜索策略视角重新检验 FML-Bench。核心思想：把搜索拓扑与执行基础设施拆开，扩展任务集并加入过程级指标，使 greedy、tree-search、evolutionary 和 adaptive agent 可以按探索行为比较，而不只看最终分数。
+- [ResearchArena / True Auto Research](https://youarespecialtome.github.io/ResearchArena/index.html)（[开源代码](https://github.com/YouAreSpecialToMe/ResearchArena)）：评什么：frontier CLI agents 在 117 篇 agent 生成论文和 13 个领域上的端到端科研表现。核心思想：结合 Stanford Agentic Reviewer、多代理同行评审、code-aware artifact review 和人工诚信检查，暴露实验严谨性、结果忠实性与引用完整性的差距。
+- [REFLECT](https://arxiv.org/abs/2605.19196)：评什么：基于证据的 deep research agent 评测器本身是否可靠。核心思想：通过受控干预改变证据、主张和评审条件，使 evaluator 可靠性成为可测对象，而不是默认相信最终分数。
 
 ## 3.2.3 Agent Harness
 
 - [MLAgentBench Research Agent](https://arxiv.org/abs/2310.03302)（[开源代码](https://github.com/snap-stanford/MLAgentBench)）是 MLAgentBench 中用于科研任务评测的基线研究代理。
+- [CoQuest](https://arxiv.org/abs/2310.06155)（[开源代码](https://github.com/yiren-liu/coquest)）是 LLM-based research-question co-creation 系统；它比较 breadth-first 与 depth-first 两种交互设计，帮助研究者框定候选研究问题，同时保留人类对 ideation 的控制权。
+- [The AI Scientist](https://arxiv.org/abs/2408.06292)（[开源代码](https://github.com/SakanaAI/AI-Scientist)）是自动化 ML 研究的早期开源里程碑，覆盖 idea generation、代码、实验、可视化、论文写作和自动评审；需要与 AI Scientist v2 区分。
+- [PaperQA2](https://arxiv.org/abs/2409.13740)（[开源代码](https://github.com/Future-House/paper-qa)）是面向科学文献综合的 agent，优化带引用回答和矛盾发现，是完整端到端科研 pipeline 之前的重要文献型 skill/agent 参考。
+- [Scideator](https://arxiv.org/abs/2409.14634) 是基于论文 facet recombination 的 human-LLM 科学构思系统；它抽取并重组 purpose、mechanism 和 evaluation facet，让研究者在文献语境中探索和筛选候选 idea。
+- [IdeaSynth](https://arxiv.org/abs/2410.04025) 是研究想法发展系统，用 literature-grounded feedback 演化和组合 problem、solution、evaluation 与 contribution facet，使 problem framing 和 contribution positioning 成为 ideation loop 中的显式对象。
 - [BudgetMLAgent](https://arxiv.org/abs/2411.07464)（开源代码：未公开）在 MLAgentBench 上用多代理协作、检索复用与 LLM cascade 做低成本科研任务自动化（以论文为准）。
+- [Dolphin](https://arxiv.org/abs/2501.03916)（[项目页](https://alpha-innovator.github.io/Dolphin-project-page)；开源代码：未找到稳定公开仓库）是早期闭环自动科研框架，把基于反馈的想法生成、代码模板实现/调试、结果分析和下一轮研究连接起来。
+- [Agent Laboratory](https://arxiv.org/abs/2501.04227)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)；[项目页](https://agentlaboratory.github.io/)）是从人类研究想法出发的端到端科研助理 workflow，用 human feedback checkpoint 协调文献综述、实验和报告写作。
 - [AIDE](https://arxiv.org/abs/2502.13138)（[开源代码](https://github.com/WecoAI/aideml)）代表“迭代式代码实验”科研/数据科学代理路线，也是 MLE-bench 官方初始评测里最核心的开源 ML 工程 agent 之一；设计重点是 `propose experiment -> edit/run code -> inspect metric/log -> refine` 的实验树迭代，而不是一次性生成建模脚本。
 - [AI co-scientist](https://arxiv.org/abs/2502.18864)（开源代码：未公开）：Google Research 的 Gemini 2.0 多代理科学假设生成系统，核心是 `generate -> debate -> evolve` 的异步假设锦标赛；在药物再利用、靶点发现和细菌进化机制解释中给出实验验证线索。
+- [AgentRxiv](https://arxiv.org/abs/2503.18102)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)；[项目页](https://agentrxiv.github.io/)）通过共享研究记忆让自主科研 lab 上传、检索并继承先前 agent 生成的报告，是 ARIS research-wiki memory 的相近外部参照。
 - [AI Scientist v2](https://arxiv.org/abs/2504.08066)（[开源代码](https://github.com/SakanaAI/AI-Scientist-v2)）强调从研究想法到实验与论文草稿的端到端闭环。
 - [Paper2Code](https://arxiv.org/abs/2504.17192)（[开源代码](https://github.com/going-doer/Paper2Code)）是面向“论文到代码实现”的专项科研代理工作。
 - [Robin](https://arxiv.org/abs/2505.13400)（[开源代码](https://github.com/Future-House/robin)）是 FutureHouse 的 lab-in-the-loop 多代理科学发现系统；把文献搜索、假设生成、实验设计、数据分析和后续假设更新接成闭环，并在 dAMD 药物候选发现案例中完成实验验证。
 - [R&D-Agent](https://arxiv.org/abs/2505.14738)（[开源代码](https://github.com/microsoft/RD-Agent)）聚焦研发场景的分工式多代理工作流编排。
 - [R&D-Agent-Quant](https://arxiv.org/abs/2505.15155)（[开源代码](https://github.com/microsoft/RD-Agent)）把 R&D-Agent 扩展到量化金融；核心工作流把量化研究拆成假设驱动的因子挖掘、代码生成、回测反馈和自适应调度，用于因子与模型联合优化。
+- [AI-Researcher](https://arxiv.org/abs/2505.18705)（[开源代码](https://github.com/HKUDS/AI-Researcher)）是与 Scientist-Bench 配套的 autonomous scientific-innovation 系统，通过 guided 与 open-ended research workflow 覆盖文献综述、假设生成、算法实现和论文准备。
 - [MLR-Agent](https://arxiv.org/abs/2505.19955)（[开源代码](https://github.com/chchenhui/mlrbench)）是 MLR-Bench 论文提供的模块化 scaffold，覆盖 idea/proposal/experiment/writing 四阶段。
 - [MLE-STAR](https://arxiv.org/abs/2506.15692)（[开源代码](https://github.com/google/adk-samples/tree/main/python/agents/machine-learning-engineering)）是 Google ADK 的机器学习工程 agent；核心 workflow 是 `web/search 参考方案 -> 生成 baseline -> 针对瓶颈做 targeted refinement`，在 MLE-bench 上成为 AIDE 之后的重要开源强基线。
 - [ML-Master](https://arxiv.org/abs/2506.16499)（[开源代码](https://github.com/sjtu-sai-agents/ML-Master)）面向 AI-for-AI 机器学习研究任务，把探索和推理集成到多角色协作流程中，是 MLE-bench/MLE 任务上的代表性研究代理。
@@ -88,36 +123,62 @@
 - DS-GURU（[开源代码](https://github.com/mitdbg/KramaBench)；无独立论文；KRAMABENCH 配套数据科学 agent，把数据湖洞察任务分解为子任务并生成可执行 Python 数据处理/分析 pipeline）
 - [ToolUniverse](https://arxiv.org/abs/2509.23426)（[开源代码](https://github.com/mims-harvard/ToolUniverse)）是用于构建 AI scientist 的工具生态和 MCP/SDK 底座；把 1000+ 科学工具、模型、数据库和 API 标准化为可调用组件，并支持从自然语言生成/优化工具接口。
 - MLEvolve（[开源代码](https://github.com/InternScience/MLEvolve)；无 arXiv 论文）是 MLE-bench 榜单上公开代码的进化式 ML agent，突出多候选实验、进化搜索与性能反馈驱动的方案迭代。
+- [DeepEvolve](https://arxiv.org/abs/2510.06056)（[开源代码](https://github.com/liugangcode/deepevolve)）把 deep research 与算法演化结合起来，将外部知识检索、跨文件代码编辑、调试、实现和 benchmark 反馈接成科学算法发现闭环。
 - [AutoMLGen](https://arxiv.org/abs/2510.08511)（[开源代码](https://github.com/Alpha-Innovator/InternAgent)）面向 coding agent 的细粒度 AutoML 优化导航；在 MLE-bench 上报告 medal rate 与 valid submission 等指标，是 InternAgent/MLE 工程路线的论文版扩展。
 - [MOSAIC](https://arxiv.org/abs/2510.08804)（开源代码：论文称接收后发布）是面向 SciCode 的多代理科学编码系统，通过 task-intelligent orchestration 分解、执行和验证科学代码任务，并按 SciCode 官方协议报告 main problem/subproblem 表现。
+- [CodeEvolve](https://arxiv.org/abs/2510.14150)（[开源代码](https://github.com/inter-co/science-codeevolve)）是面向算法发现的开源进化式 coding agent，用 islands-based search、LLM 编排、执行反馈和任务指标引导候选方案变异与选择。
+- [freephdlabor](https://arxiv.org/abs/2510.15624)（[项目页](https://freephdlabor.github.io/)；[开源代码](https://github.com/ltjed/freephdlabor)）是 personalized research-group harness，支持动态 workflow、workspace communication、context compaction、持久记忆和非阻塞人类介入，用于持续推进较长研究项目。
 - [Famou-Agent](https://arxiv.org/abs/2510.26144)（[开源代码](https://github.com/baidubce/FM-Agent)）是面向机器学习工程任务的闭环编码与实验代理；在 MLE-bench 语境下更接近“竞赛建模专家 harness”，强调历史经验、实验计划、执行反馈与多轮模型/特征迭代。
 - [Kosmos](https://arxiv.org/abs/2511.02824)（开源代码：未找到稳定公开仓库）是面向数据驱动科学发现的长时程 AI scientist；通过结构化 world model 连接文献搜索代理和数据分析代理，可在 12 小时级运行中持续读论文、写代码、生成假设并输出可追踪报告。
 - [ArchPilot](https://arxiv.org/abs/2511.03985)（开源代码：未找到稳定公开仓库）是面向 MLE-bench 的多代理机器学习工程框架，在 AIDE、ML-Master 等基线之上强调代理分工、模型方案搜索和实验反馈驱动的架构改进。
 - [AgenticSciML](https://arxiv.org/abs/2511.07262)（开源代码：未找到稳定公开仓库）面向科学机器学习发现；由 10+ 专门代理通过结构化辩论、方法记忆和演化搜索共同设计 SciML 架构、损失函数与训练策略。
 - InternAgent（[开源代码](https://github.com/InternScience/InternAgent)；无 arXiv 论文）是面向深度科研和 ML 工程任务的开源 agent 系统，在 MLE-bench 上有公开提交；可作为 AIDE / R&D-Agent 之外的实验执行型 harness 参考。
+- [PaperDebugger](https://arxiv.org/abs/2512.02589)（[开源代码](https://github.com/PaperDebugger/paperdebugger)）是面向 Overleaf 的 in-editor 多代理学术写作与修订助手，结合文档状态访问、MCP 工具、文献搜索、引用查询、结构化审阅和 diff-based revision workflow。
 - [Prompt-Free Collaborative Agents for Paper2Code](https://arxiv.org/abs/2512.02812)（[开源代码](https://github.com/going-doer/Paper2Code)）提出了面向 Paper2Code 的无提示协同代理框架。
 - [DeepCode](https://arxiv.org/abs/2512.07921)（开源代码：未找到稳定公开仓库）是开放式 agentic coding 系统，在 PaperBench 上与商业 agent 和人类基线对比，代表论文复现/长程代码生成方向的后续工作。
 - [ML-Master 2.0 / Cognitive Accumulation](https://arxiv.org/abs/2601.10402)（[开源代码](https://github.com/sjtu-sai-agents/ML-Master)）把 ML-Master 扩展到超长程机器学习工程，强调跨阶段认知积累、经验复用和长时间实验推进。
 - [Deep Research](https://arxiv.org/abs/2601.12542)（开源代码：未找到稳定公开仓库）来自 “Rethinking the AI Scientist”；核心是 planner、data analysis、literature search、novelty detection 等专门代理共享 persistent world state，让科学发现从离线批处理转向分钟级交互式循环。
+- [RebuttalAgent](https://arxiv.org/abs/2601.14171)（[开源代码](https://github.com/AutoLab-SAI-SJTU/Paper2Rebuttal)；[demo](https://huggingface.co/spaces/Mqleet/RebuttalAgent)）是 Paper2Rebuttal 的多代理作者回复 harness，协调 semantic encoding、issue extraction、literature retrieval、strategy generation、human refinement、rebuttal writing 和 rebuttal review。
 - [Execution-Grounded Automated AI Research](https://arxiv.org/abs/2601.14525)（开源代码：未找到稳定公开仓库）把科研想法生成和真实执行反馈绑定起来；核心思想：让 agent 通过运行实验检验 idea，而不是只生成看起来合理的研究方案。
+- [BibAgent](https://arxiv.org/abs/2601.16993) 是可追踪 miscitation detection 的 agentic 引用核验框架，结合检索、推理、自适应证据聚合和面向 paywalled 来源的下游 citation consensus。
+- [Idea2Story / Idea2Paper](https://arxiv.org/abs/2601.20833)（[开源代码](https://github.com/AgentAlphaAGI/Idea2Paper)；[demo](http://paperbuild.cn)）通过离线论文知识图谱、pattern retrieval、anchored multi-agent review 和迭代修正，把欠规格的研究想法转成结构化 scientific story skeleton，是更大 Idea2Paper 流水线的首个核心模块。
 - [MARS / MARS+](https://arxiv.org/abs/2602.02660)（开源代码：未找到稳定公开仓库）是面向 MLE-bench 的模块化反思搜索 agent；论文把 ML 建模拆成候选方案生成、实验执行、结果反思、分支搜索与 ensemble/refinement 等阶段，属于典型的 test-time search / reflective ML engineering harness。
+- [ARQ / Asking the Right Questions](https://arxiv.org/abs/2602.19069) 是问题生成与分解框架，可作为科研选题/任务拆解的邻近工具：它强调先提出能暴露缺失假设的中间问题，再进入研究计划；但它本身不是完整科研 agent benchmark。
 - [ArchAgent](https://arxiv.org/abs/2602.22425)（开源代码：未找到稳定公开仓库；围绕自动化设计空间搜索构建的计算机体系结构发现 agent 系统；设计关键词：缓存替换策略设计、代码生成、仿真反馈、竞赛式评测）
 - [SciDER](https://arxiv.org/abs/2603.01421)（开源代码：未找到稳定公开仓库）是数据中心式端到端科学研究代理；核心思想是从原始实验数据出发，自动完成数据处理、分析、假设形成和报告生成，补足只面向论文或竞赛数据的科研代理。
 - [OrchMAS](https://arxiv.org/abs/2603.03005)（开源代码：未找到稳定公开仓库；异构科学专家多 agent 编排框架；设计关键词：双层编排、动态角色与 workflow 适配、模型路由、对中间推理分歧的修订）
+- [Karpathy autoresearch](https://github.com/karpathy/autoresearch)（project-only；本轮未找到论文）是一个极简 repo-first 自主 ML 研究循环，面向单 GPU nanochat 训练。核心思想：把“研究组织”写进 `program.md`，限制 agent 只改 `train.py`，每轮运行固定 5 分钟实验，记录 `val_bpb`，并用 git 保留或回滚改动，是 ARIS 式实验闭环的紧凑参照。
 - [EvoScientist](https://arxiv.org/abs/2603.08127)（[开源代码](https://github.com/EvoScientist/EvoScientist)）是自进化多代理 AI scientist；用 Researcher Agent、Engineer Agent 与 Evolution Manager Agent，加上 ideation / experimentation 两类持久记忆，让研究策略和代码实验能力随交互历史持续改进。
+- [AI Can Learn Scientific Taste](https://arxiv.org/abs/2603.14473) 研究 AI 系统能否学习用于判断研究质量的 taste 信号。它更适合作为 AI scientist 审阅闭环中的 research-evaluator 信号，而不是独立 agent harness 或 skill 包。
+- [Machines Acquire Scientific Taste from Institutional Traces](https://arxiv.org/abs/2603.16659) 研究模型能否从社会科学领域的发表结果中学习 scientific taste。核心思想：用制度性接收/发表轨迹微调 evaluator，让 AI 判断研究 pitch；但这些轨迹本身是带噪声的信号，也可能编码领域惯例和 gatekeeping bias。
+- [Bilevel Autoresearch](https://arxiv.org/abs/2603.23420)（开源代码：本轮未验证到稳定公开仓库）把 autoresearch loop 本身当成优化对象。核心思想：用外层 LLM 循环在运行时生成并注入新的搜索机制，优化内层实验循环，直接对应 ARIS `meta-optimize` 中“如何改进研究 harness，而不只是改进被训练模型”的问题。
 - [AIRA_2](https://arxiv.org/abs/2603.26499)（开源代码：未找到稳定公开仓库）是 AIRA-dojo 的直接扩展，针对吞吐、评测噪声和固定 operator 三个瓶颈引入异步多 GPU、Hidden Consistent Evaluation 与 ReAct operators，并继续在 MLE-bench-30 上报告长时程结果。
+- [DEFEND](https://arxiv.org/abs/2603.27360) 是最少作者指导下的自动 rebuttal generation workflow；它组织 reviewer comment segmentation、deficiency/error typing、rebuttal actions 和 author-in-the-loop reasoning，可补充 Paper2Rebuttal 式端到端回复草拟。
 - UniScientist（[官方文章](https://unipat.ai/blog/UniScientist)，[开源代码](https://github.com/UniPat-AI/UniScientist)，[模型](https://huggingface.co/UnipatAI/UniScientist-30B-A3B)；论文待发布）是 UniPat AI 的科学研究智能模型与 agentic inference 框架；核心是 Active Evidence Integration、Model Abduction、Evolving Polymathic Synthesis 和多 rollout 报告聚合。
+- [CliffSearch](https://arxiv.org/abs/2604.01210)（[项目页](https://cliffsearch.ai/)）是面向科学算法发现的结构化 agentic co-evolution 框架；其 LLM agent 用 correctness、originality、runtime 和 benchmark feedback 作为一等 selection signal，演化 theory-and-code 或 code-only artifact。
 - [LitPivot](https://arxiv.org/abs/2604.02600)：通过文献语境化与批判来发展研究想法的 research-ideation harness；核心思想是在 agent 修改研究方向时持续引入文献版图，使新颖性和定位成为工作流的一部分，而不是事后检查。
 - [Deep Researcher Agent](https://arxiv.org/abs/2604.05854)（[开源代码](https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7)）是深度研究式 harness 的执行代理，强调多轮检索、证据压缩和结论生成。
-- [Toward Autonomous Long-Horizon Engineering for ML Research](https://arxiv.org/abs/2604.13018)（开源代码：未找到稳定公开仓库）提出面向 ML 研究工程的长程 agent 机制，在 PaperBench 与 MLE-Bench Lite 上评测 File-as-Bus 等协作/状态管理设计。
+- [AlphaLab](https://arxiv.org/abs/2604.08590)（[项目页](https://brendanhogan.github.io/alphalab-paper/)；[开源代码](https://github.com/morganstanley/MSML/tree/main/projects/alpha-lab)）是面向量化优化领域的多代理自主科研 harness，结合 Strategist/Worker 角色、自建评测、持久 playbook memory 和领域 adapter。
+- [ResearchCube](https://arxiv.org/abs/2604.11538) 是面向 research ideation 的多维 trade-off 探索界面。核心思想：让研究者自定义双极评价轴，并在 3D evaluation space 中移动和合成 idea，使选题框定中的取舍在确定研究方向前变得可检查。
+- [Toward Autonomous Long-Horizon Engineering for ML Research](https://arxiv.org/abs/2604.13018)（[开源代码](https://github.com/AweAI-Team/AiScientist)）提出面向 ML 研究工程的长程 agent 机制，在 PaperBench 与 MLE-Bench Lite 上评测 File-as-Bus 等协作/状态管理设计。
 - [AIBuildAI](https://arxiv.org/abs/2604.14455)（[开源代码](https://github.com/aibuildai/AI-Build-AI)）是自动构建 AI 模型的 agent，实现重点是自动读取数据、生成训练与推理代码、持续运行实验并修复提交；论文在 MLE-bench 上报告自动建模结果。
 - [EvoMaster](https://arxiv.org/abs/2604.17406)（开源代码：未找到稳定公开仓库）把多代理协作和进化式搜索用于科学问题求解；核心思想：通过假设生成、候选演化与验证反馈，在 FrontierScience 等高难科学推理任务上提升表现。
-- [ARA / Agent-Native Research Artifacts](https://arxiv.org/abs/2604.24658)（开源代码：未找到稳定公开仓库）把科研产物从线性论文扩展成可执行、可审计的 agent-native artifact，并在 PaperBench 与 RE-Bench 上报告 review/reproduction workflow 的改进。
+- [ARA / Agent-Native Research Artifacts](https://arxiv.org/abs/2604.24658)（[开源代码](https://github.com/Orchestra-Research/Agent-Native-Research-Artifact)）把科研产物从线性论文扩展成可执行、可审计的 agent-native artifact，并在 PaperBench 与 RE-Bench 上报告 review/reproduction workflow 的改进。
 - [SciResearcher](https://arxiv.org/abs/2605.01489)（开源代码：未找到稳定公开仓库）扩展 deep research agent 到前沿科学推理，强调多轮证据整合、任务分解与 frontier scientific reasoning benchmark 上的稳定提升。
+- [ARIS / Auto-Research-In-Sleep](https://arxiv.org/abs/2605.03042)（[开源代码](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)；[介绍](https://wanshuiyin.github.io/Auto-claude-code-research-in-sleep/ARIS_INTRO.html)）是 skill-based autonomous ML research harness，包含跨模型对抗审阅、文献发现、实验桥接、论文写作、research wiki memory 和 Codex/Claude/OpenClaw 可迁移性。
 - [PARNESS](https://arxiv.org/abs/2605.05258)（[开源代码](https://github.com/gtrhythm/PARNESS)）是面向端到端自动科研的 paper harness；通过动态 YAML workflow、全文索引、代码仓库索引和跨运行知识积累，补齐 AI Scientist/AutoSOTA/DeepResearch 类固定流程的刚性问题。
 - [BioResearcher](https://arxiv.org/abs/2605.05985)（开源代码：未找到稳定公开仓库）是面向转化医学的 scenario-guided 多代理系统，在 BixBench-Verified-50 等 biomedical benchmark 上评估异质证据综合、多组学分析和可追溯报告生成。
-- [DataMaster](https://arxiv.org/abs/2605.10906)（开源代码：未找到稳定公开仓库）是数据中心式自主 AI research agent，在 MLE-Bench Lite 与 PostTrainBench 上评测，把数据发现、清洗、建模和迭代优化作为统一自动研究流程。
+- [NanoResearch](https://arxiv.org/abs/2605.10813)（[开源代码](https://github.com/OpenRaiser/NanoResearch)）是 personalized research automation harness，其 skill bank、长期记忆和 label-free policy learning 会跨项目协同演化，使过程知识与研究偏好不再只停留在单次会话中。
+- [DataMaster](https://arxiv.org/abs/2605.10906)（论文引用的相关开源基线：[ml-intern](https://github.com/huggingface/ml-intern)）是数据中心式自主 AI research agent，在 MLE-Bench Lite 与 PostTrainBench 上评测，把数据发现、清洗、建模和迭代优化作为统一自动研究流程。
 - [GEAR](https://arxiv.org/abs/2605.13874)（开源代码：未找到稳定公开仓库）用 genetic AutoResearch 维护多个 research state，把代码、反思与性能轨迹作为 population-based search 的遗传单元，是 AIDE/AIRA/EvoScientist 路线的进化式后续。
+- [AutoResearchClaw](https://arxiv.org/abs/2605.20025)（[开源代码](https://github.com/aiming-lab/AutoResearchClaw)）是多代理自动科研 pipeline，包含 debate、自修复执行、可验证报告、human-in-the-loop 模式、跨运行演化和 ARC-Bench 式评测。
+- [Sibyl-AutoResearch](https://arxiv.org/abs/2605.22343)（[开源代码](https://github.com/Sibyl-Research-Team/AutoResearch-SibylSystem)）主张自动科研需要自进化的 trial-and-error harness，而不只是 paper generator。核心思想：保存正负试验结果，把 lessons 路由到规划、验证、claim scope、调度、批判、写作和 harness 修复，并暴露 file-backed traces 来审计 trial-to-behavior conversion。
+- [Claw AI Lab](https://arxiv.org/abs/2605.22662)（[开源代码](https://github.com/Claw-AI-Lab/Claw-AI-Lab)）把自动科研重构成交互式实验室基础设施，支持角色定制、dashboard 监控、artifact 检查、回滚/恢复和 Claw-Code Harness 接入。
+- Feynman（[开源代码](https://github.com/companion-inc/feynman)；[项目页](https://feynman.is)）是 repo-first autonomous research harness，包含 researcher、reviewer、verifier 和 writer agents，以及 autoresearch、deep-research、replication、paper-code-audit、paper-writing 与计算资源技能。
+- DeepScientist（[开源代码](https://github.com/ResearAI/DeepScientist)；[项目页](https://deepscientist.cc/)；[OpenReview](https://openreview.net/forum?id=cZFgsLq8Gs)）是 local-first autonomous research studio，通过 one-repo-per-quest、baseline reproduction、dependency-failure tracking、continuous experiments、Findings Memory、Bayesian optimization 和 paper-ready outputs 组织研究。
+- Dr. Claw（[开源代码](https://github.com/OpenLAIR/dr-claw)；[项目页](https://openlair.github.io/dr-claw)）是 full-stack research workspace，包含 Research Lab、Auto Research Hub、多 agent backend 和 100 多个 research skills，应作为 research-workspace harness 而非 benchmark 处理。
+- Oh My Paper（[开源代码](https://github.com/LigphiDonk/Oh-my--paper)）是 Claude Code research harness，提供 `/omp:survey`、`/omp:ideate`、`/omp:experiment`、`/omp:write`、`/omp:review` 和 delegation commands，并由专门 research agents 与 skills 支撑。
+- Hugging Face ml-intern（[开源代码](https://github.com/huggingface/ml-intern)；[demo](https://smolagents-ml-intern.hf.space/)；未找到 arXiv 论文）是 Hugging Face 生态中的实验性 ML 训练实习生 agent，可作为数据加载、训练循环执行和 ML 实验辅助的实践参考，而不是论文支撑的 benchmark。
 
 ## 3.2.4 Skill
 
@@ -128,9 +189,27 @@
 - [meta-research](https://github.com/AmberLJC/meta-research) 适合研究问题定义、证据聚合与研究设计梳理。
 - [openalex-database](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/openalex-database) 适合论文元数据检索与作者图谱分析。
 - [citation-management](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/citation-management) 适合引文清洗、核验与 Bib 管理。
+- [DeepXiv SDK](https://github.com/DeepXiv/deepxiv_sdk)（论文：[DeepXiv](https://arxiv.org/abs/2603.00084)；skills.sh：[deepxiv-cli](https://skills.sh/deepxiv/deepxiv_sdk/deepxiv-cli)）提供 agent-first 的论文搜索、渐进式阅读、CLI/MCP 接入、趋势信号、分节阅读和论文元数据检索，适合需要先检索、再筛选、再局部精读的科研 agent。
+- [AI for Auto-Research: Roadmap & User Guide](https://arxiv.org/abs/2605.18661)（[项目页](https://worldbench.github.io/awesome-ai-auto-research)；[开源仓库](https://github.com/worldbench/awesome-ai-auto-research)）是自动科研 agent、benchmark、skill 和工具的路线图与清单；应作为发现资源使用，而不是独立 benchmark 或可运行 skill。
 - [EvoSkills](https://github.com/EvoScientist/EvoSkills) 是 EvoScientist 的官方科研 skill 库；核心是把 ideation、idea tournament、paper planning 等研究子流程做成可安装知识包，并与长期记忆协同演化。
 - [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)（Codex-native 分发：[academic-research-suite](https://github.com/Imbad0202/academic-research-skills-codex)；skills.sh：[deep-research](https://skills.sh/imbad0202/academic-research-skills/deep-research)、[academic-paper](https://skills.sh/imbad0202/academic-research-skills/academic-paper)、[academic-paper-reviewer](https://skills.sh/imbad0202/academic-research-skills/academic-paper-reviewer)、[academic-pipeline](https://skills.sh/imbad0202/academic-research-skills/academic-pipeline)）覆盖深度研究、系统综述、论文写作、稿件审阅、research-to-paper pipeline 与实验规划，是更完整的通用科研工作流 skill 套件。
 - [agent-research-skills](https://github.com/lingzhi227/agent-research-skills) 是覆盖科研论文生命周期的 31-skill 集合，包含文献检索、综述生成、related work 写作、citation/LaTeX 管理、论文审阅、paper-to-code 和 slide generation。
+- [chtc66/academic-skills](https://github.com/chtc66/academic-skills) 是中文 academic-skill 套件，覆盖论文精读、综述写作、arXiv/飞书速递、rebuttal 草稿、实验日志总结、benchmark 抽取、research gap 分析和周报/组会更新。
+- [zLanqing/codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) 是另一个中文 Codex/Claude academic-skill 套件；在把具体 `SKILL.md` 覆盖面与已列出的大型 academic-skill 套件比较前，先作为 project-only 候选。
+- [voidful/academic-skills](https://github.com/voidful/academic-skills) 是通用 academic research skill 集合；URL-citation 检索未确认引用论文，因此先按 project-only 处理，并在使用前比较其实现深度。
+- [ARIS research skill library](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/tree/main/skills) 提供 research-pipeline、literature、idea-discovery、experiment-bridge、paper-writing、citation-audit、research-wiki 和 Codex-mirror 等具体技能，用于自主科研工作流。
+- [autoresearch skill](https://github.com/uditgoenka/autoresearch)（skills.sh：[autoresearch](https://skills.sh/uditgoenka/autoresearch/autoresearch)）把 Karpathy 的 metric-driven keep-or-revert loop 泛化为 Claude Code、OpenCode 和 Codex 命令，包含 scope setup、机械化验证、TSV 迭代日志、安全 hooks，以及 debug、fix、security、ship、scenario、predict、learn、reason、probe、improve、evals 等子命令。
+- [Orchestra AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) 打包 autoresearch、ideation、evaluation、infrastructure、agent-framework、RAG、multimodal 和 paper-writing 等通用 AI research skills；本 landscape 只使用其中非生物医学子集。
+- [Orchestra ML paper-writing skills](https://github.com/Orchestra-Research/AI-Research-SKILLs/tree/main/20-ml-paper-writing)（skills.sh：[ml-paper-writing](https://skills.sh/orchestra-research/ai-research-skills/ml-paper-writing)、[systems-paper-writing](https://skills.sh/orchestra-research/ai-research-skills/systems-paper-writing)）覆盖 ML 与 systems 论文起草、引用核验、学术绘图、会议报告和 venue-specific 写作检查表，可补充分阶段论文写作 benchmark 与科研产出 workflow。
+- [research-paper-writing](https://skills.sh/master-cai/research-paper-writing-skills/research-paper-writing)（[源码仓库](https://github.com/Master-cai/Research-Paper-Writing-Skills/tree/main/research-paper-writing)）把 ML/CV/NLP 论文写作经验打包为 section structure、paragraph flow、claim-evidence alignment、图表呈现和 reviewer-facing self-review 等可复用规则，是大型论文写作 skill suite 之外更轻量的补充。
+- [paper-framework-figure-studio-pro](https://github.com/c-narcissus/paper-framework-figure-studio-pro) 是面向计算机科学论文的框架图 skill，可生成 method overview、architecture diagram、pipeline/process figure 和 agent workflow 图的参考草案，并包含图策略、候选生成、选择和 SVG/PPT 交付流程。
+- [beamer-academic](https://github.com/Faust-Donf/beamer-academic) 是兼容 Codex/Claude 的学术 Beamer 幻灯片 skill，可把论文、学位论文或 LaTeX/Word/PDF 来源转成学术报告/答辩 slides，并支持素材抽取、版式库、编译和交互修改。
+- [beamer-skill](https://github.com/Noi1r/beamer-skill) 是另一个面向 paper-to-slide 和 thesis-to-slide 工作流的学术 Beamer skill 候选；在比较实现与维护深度前，可与 `beamer-academic` 一起作为 project-only 候选保留。
+- [ArcDeck Claude Skill / Plugin](https://github.com/RehgLab/ArcDeck-Claude-Plugin) 是与 ArcDeck 配套的 paper-to-slide skill 实现，把 discourse parsing、narrative planning、critique-revision loop、图表 grounding 和 PPTX 生成打包为 agent 可用的科研报告工作流。
+- [overleaf-skill / olcli](https://github.com/aloth/overleaf-skill)（CLI：[olcli](https://github.com/aloth/olcli)；skills.sh：[overleaf-skill](https://skills.sh/aloth/overleaf-skill/overleaf)、[olcli-overleaf](https://skills.sh/aloth/olcli/overleaf)）提供 Overleaf pull、push、sync、compile 和投稿支持操作；它是 ARIS `overleaf-sync` 的实践邻近项，但其 session-cookie 凭据模型应与 ARIS 的 Git-bridge 安全模型分开看。
+- [flonat/claude-research](https://github.com/flonat/claude-research) 是 Claude Code 科研基础设施包，包含 literature、bibliography validation、LaTeX autofix、project initialization、Python environment、pre-submission、strategic revision 与 reviewer-agent skills。
+- [Oh My Paper skills](https://github.com/LigphiDonk/Oh-my--paper) 把 survey、ideation、实验驱动、远程实验、论文写作、reference auditing 和 review workflow 打包为 Claude Code research harness skill 集合。
+- [Feynman skills](https://github.com/companion-inc/feynman/tree/main/skills) 覆盖 autoresearch、deep research、replication、paper-code audit、paper writing、Modal compute 和 RunPod compute，适合需要同时做调研与实验执行的科研工作流。
 - [paper-to-code](https://github.com/lingzhi227/agent-research-skills/tree/main/skills/paper-to-code) 是贴近 `PaperBench` 的“论文到实现”子技能。
 - [implement-paper](https://github.com/marimo-team/skills/tree/main/skills/implement-paper) 面向“论文到交互式 marimo notebook”的实现与讲解，把 paper implementation 从完整复现实验转成可运行、可交互、可教学的最小示例。
 - [implement-paper-from-scratch](https://github.com/ghostscientist/skills/tree/main/skills/implement-paper-from-scratch) 是贴近 `PaperBench` 的“从零复现论文”技能。

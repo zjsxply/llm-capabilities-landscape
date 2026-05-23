@@ -48,6 +48,18 @@
 - [How Sensitive Are Safety Benchmarks to Judge Configuration Choices?](https://arxiv.org/abs/2604.24074)：审计安全基准分数如何随 LLM 裁判提示词和配置变化而波动。核心思路是把裁判设置视为评测变量，而不是实现细节，从而暴露安全基准中的分数和排名不稳定性。
 - [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：会随真实 workflow demand 变化的 live agent benchmark；其价值在于按季度刷新任务分布，同时保留 mock service、workspace fixture、trace 和 grader 以便复现。
 
+### Agent eval 平台
+
+- [HELM](https://crfm.stanford.edu/helm/latest/)（[论文](https://arxiv.org/abs/2211.09110)；[开源代码](https://github.com/stanford-crfm/helm)）：整体模型评测平台；适合作为透明 scenarios、metrics、原始 prompts/completions 和多指标报告的早期参考。
+- [OpenAI Evals](https://github.com/openai/evals) 和 [simple-evals](https://github.com/openai/simple-evals)：开放评测 registry 与轻量评测套件；适合自定义任务、公开 eval recipe 和 LLM 系统回归测试。
+- [lm-evaluation-harness](https://arxiv.org/abs/2405.14782)（[开源代码](https://github.com/EleutherAI/lm-evaluation-harness)）：EleutherAI 的常用任务 harness；适合复现 task implementation、模型 adapter 和评测设置敏感性记录。
+- [Inspect AI](https://inspect.aisi.org.uk/)（[开源代码](https://github.com/UKGovernmentBEIS/inspect_ai)）：AISI 的模型与 agent 评测开源框架；适合组织 solver、tool、scorer、sandbox、日志和可审计 eval set。
+- [OpenEvals](https://github.com/langchain-ai/openevals) 和 [AgentEvals](https://github.com/langchain-ai/agentevals)：LangChain 的应用级 evaluator 与 agent trajectory evaluator 包；适合复用 judge function、轨迹匹配和 agent 行为回归检查。
+- [BenchFlow](https://www.benchflow.ai/)（[开源代码](https://github.com/benchflow-ai/benchflow)；相关 benchmark：[SkillsBench](https://arxiv.org/abs/2602.12670)）：面向任务与高保真环境打包的 agent eval runtime；适合可复现 skill 评测和 RL-style evaluation workflow。
+- [Harbor](https://www.harborframework.com/)（[开源代码](https://github.com/harbor-framework/harbor)；相关 benchmark：[Terminal-Bench](https://arxiv.org/abs/2601.11868)）：用于运行 agent eval 与创建 sandbox environment 的框架；适合 Terminal-Bench 式任务、轨迹记录和 RL environment 打包。
+- [OpenCompass](https://opencompass.org.cn/)（[论文](https://arxiv.org/abs/2605.19276)；[开源代码](https://github.com/open-compass/opencompass)）：通用 LLM 评测平台，支持分布式执行、benchmark hub、多类 evaluator 和结果可视化。
+- 工程侧补充平台包括 [DeepEval](https://deepeval.com/)（[开源代码](https://github.com/confident-ai/deepeval)）、[promptfoo](https://www.promptfoo.dev/)（[开源代码](https://github.com/promptfoo/promptfoo)）、[Giskard](https://docs.giskard.ai/)（[开源代码](https://github.com/Giskard-AI/giskard-oss)）和 [LightEval](https://huggingface.co/docs/lighteval/en/index)（[开源代码](https://github.com/huggingface/lighteval)）；它们更偏应用回归和测试工具，不是 benchmark 条目本身，但对把 benchmark 设计、CI 和部署后 agent 可靠性闭环接起来很重要。
+
 ## 0.5.3 使用建议
 
 阅读新 benchmark 时，优先检查它是否说明了数据来源、采样时间、污染控制、题目刷新机制、失败样本审计、judge 校准、环境快照和排行榜提交协议。对于 agent benchmark，还要额外看是否保存完整轨迹、工具调用、环境状态、成本、运行时间和多次运行方差；否则 leaderboard 排名很容易混入 harness 工程、环境偶然性和评分捷径。

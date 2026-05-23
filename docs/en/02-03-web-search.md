@@ -40,6 +40,8 @@
 
 ## 2.3.3 Agent Harness
 
+- [MindSearch](https://arxiv.org/abs/2407.20183) ([code](https://github.com/InternLM/MindSearch)): A multi-agent web-search harness that decomposes user questions into subquestions, searches and integrates evidence, and returns a citation-backed answer; it is a name-known search system that generic BrowseComp keyword searches can miss.
+- [Co-STORM](https://arxiv.org/abs/2408.15232) ([code](https://github.com/stanford-oval/storm); [project page](http://storm.genie.stanford.edu)): A collaborative information-seeking harness where multiple LM agents explore sources, maintain a dynamic mind map, and allow user steering before producing a cited report, bridging open-web search and deep research.
 - [WebThinker](https://arxiv.org/abs/2504.21776) ([code](https://github.com/RUC-NLPIR/WebThinker); interleaves `think-search-draft` within one long chain, representing a transferable "search-write integrated" internet-search agent paradigm)
 - [Alita](https://arxiv.org/abs/2505.20286) ([code](https://github.com/CharlesQ9/Alita); a more general tool-orchestration agent that can connect to many search/browsing runtimes, not tied to a single benchmark)
 - [BrowseMaster](https://arxiv.org/abs/2508.09129) (code: no stable public repository found; a dual-agent web-browsing framework enhanced with programmatic tools, reporting strong results on BrowseComp-en and BrowseComp-ZH; useful as a reference for splitting "search-strategy agent + verification agent")
@@ -62,4 +64,7 @@
 - [browserbase/agent-browse/browser](https://skills.sh/browserbase/agent-browse/browser) (a browser-automation execution skill, runtime-oriented)
 - [serpapi](https://skills.sh/vm0-ai/vm0-skills/serpapi) (a search API skill, closer to WideSearch-style search-heavy workflows)
 - [ddgr](https://skills.sh/ysm-dev/ddgr-skill/ddgr) (a terminal search skill, suitable as a lightweight retrieval layer)
-- [web-search-2](https://github.com/openclaw/skills/tree/main/skills/okaris/web-search-2) (a retrieval skill oriented toward research, fact checking, and content extraction)
+- [web-search-2](https://clawhub.ai/okaris/web-search-2) (a retrieval skill oriented toward research, fact checking, and content extraction)
+- [parallel-web-search](https://skills.sh/parallel-web/parallel-agent-skills/parallel-web-search) parallelizes query fan-out and source gathering, suitable for WideSearch/BrowseComp-style broad recall before synthesis.
+- [web-search](https://skills.sh/brave/brave-search-skills/web-search) is a Brave Search-backed provider skill, useful when the agent needs a stable search API rather than browser scraping.
+- [tavily](https://github.com/openclaw/openclaw/tree/main/extensions/tavily/skills/tavily) is a Tavily-backed search and extraction skill, fitting search-plus-content workflows rather than pure SERP lookup.

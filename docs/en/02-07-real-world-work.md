@@ -151,3 +151,5 @@
 - [minimax-docx](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-docx) is suitable for office-document real work: generating/editing `.docx` reports, contract drafts, and structured materials.
 - [pptx-generator](https://github.com/MiniMax-AI/skills/tree/main/skills/pptx-generator) is suitable for turning real-work outputs into deliverable `.pptx` presentations.
 - [minimax-pdf](https://github.com/MiniMax-AI/skills/tree/main/skills/minimax-pdf) is suitable for incorporating PDF materials into real workflows: parsing, extraction, and structured citation.
+- [shanyin-screenwriting-master](https://github.com/Shanyin-ai/shanyin-screenwriting-master) is suitable for creative real-work deliverables in film and video production, covering short films, feature-film outlines, multi-episode series, character design, scene breakdowns, and standard screenplay formatting.
+- [ppt-master](https://github.com/hugohe3/ppt-master) is suitable for presentation-production workflows that need editable PowerPoint deliverables from documents, emphasizing native shapes, text boxes, charts, and animations rather than slide images.

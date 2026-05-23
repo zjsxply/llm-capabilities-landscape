@@ -13,6 +13,7 @@
 ## 2.9.2 Bench
 
 - [BBQ](https://arxiv.org/abs/2110.08193)：评测问答中的偏见，覆盖 ambiguous 与 disambiguated 两类上下文。核心思想：诊断模型是否依赖社会刻板印象，或能在上下文不足时拒绝/在上下文充分时正确使用证据；即使本页主要关注 agent，它仍是 model card 常用的基础安全信号。
+- [AgentDojo](https://arxiv.org/abs/2406.13352)（[开源代码](https://github.com/ethz-spylab/agentdojo)；[项目页](https://agentdojo.spylab.ai/)）：评测工具使用型 agent 中的提示注入与效用权衡。核心思想：把良性用户任务和来自第三方工具或数据的恶意指令放进同一环境，要求防御既保留任务效用又阻断间接攻击。
 - [BadRobot](https://arxiv.org/abs/2407.20242)：评什么：物理世界中 embodied LLM agent 的越狱风险。核心思想：测试恶意自然语言交互是否能绕过安全约束并诱导不安全的具身动作。
 - [MMJ-Bench](https://arxiv.org/abs/2408.08464)：在统一流程下评测视觉语言模型的越狱攻击与防御。核心思想：用共享数据集和指标比较多模态攻防方法，避免各自使用不可比的一次性安全测试。
 - [Jailbreaking LLM-Controlled Robots](https://arxiv.org/abs/2410.13691)：评测 LLM 控制机器人的越狱风险。核心思想：用 RoboPAIR 和 harmful-action 数据集测试攻击能否在自动驾驶、地面机器人和四足机器人场景中诱发不安全物理动作。
@@ -114,6 +115,7 @@
 ## 2.9.3 Agent Harness
 
 
+- [AgentDojo](https://arxiv.org/abs/2406.13352)（[开源代码](https://github.com/ethz-spylab/agentdojo)；[项目页](https://agentdojo.spylab.ai/)）：面向间接提示注入的工具型 agent 安全评测 harness，提供可复现 suite、任务效用、攻击和防御比较。
 - [ST-WebAgentBench](https://arxiv.org/abs/2410.06703)（[开源代码](https://github.com/segev-shlomov/ST-WebAgentBench)）：安全可信 web agent 评测 harness；价值在于把网页环境、任务状态和安全约束组织成可复现的 browser-agent 测试协议。
 - [RTBAS](https://arxiv.org/abs/2502.08966)：面向工具型 LLM agent 的信息流控制防御 harness。核心思想：只在能保证完整性与机密性时自动执行工具调用，无法认证安全时才交给用户确认。
 - [AISafetyLab](https://arxiv.org/abs/2502.16776)：统一的 AI 安全评测与改进工具包。核心思路是把代表性的攻击、防御和评估方法封装到统一接口中，使安全实验能够被系统复现和扩展。
@@ -122,12 +124,15 @@
 - [IsolateGPT](https://doi.org/10.14722/ndss.2025.241131)：面向 LLM-based systems 的执行隔离架构。核心思想：把不可信的 LLM 驱动组件与高权限执行隔离开，使 prompt injection 或工具输出污染不能直接触达敏感状态与动作。
 - [Safety Guardrails for LLM-Enabled Robots](https://arxiv.org/abs/2503.07885)：提出面向 LLM-enabled robots 的外部安全护栏 RoboGuard。核心思想：把安全规则 grounding 到机器人环境中，并用 temporal-logic control synthesis 处理不安全计划，同时尽量保持安全任务执行。
 - [Prompt Flow Integrity](https://arxiv.org/abs/2503.15547)：面向 LLM agent 权限升级防护的安全 harness。核心思想：结合 agent 隔离、不可信工具数据的安全处理和权限护栏，避免提示流在运行中悄然扩大 agent 权限。
+- [AgentSpec](https://arxiv.org/abs/2503.18666)（[开源代码](https://github.com/haoyuwang99/AgentSpec)）：面向 agent 的策略执行 harness，用规格描述允许动作，并在运行时按 safety contracts 检查行为。
+- [CaMeL](https://arxiv.org/abs/2503.18813)（[开源代码](https://github.com/google-research/camel-prompt-injection)）：提示注入防御 harness，把控制流与数据流拆开，使不可信工具输出可以提供信息，但不能获得执行权。
 - [Encrypted Prompt](https://arxiv.org/abs/2503.23250)：面向 LLM 应用的权限检查 harness。核心思想是把当前权限绑定进加密提示，并在 API 或工具动作执行前验证，使未授权动作在模型自由生成之外被拦截。
 - [MCP Safety Audit / MCPSafetyScanner](https://arxiv.org/abs/2504.03767)：面向 MCP server 的 agentic 安全审计 harness。核心思想：用多智能体检查任意 MCP server 的工具与资源，自动生成对抗样本、检索相关漏洞与修复建议，并产出可执行安全报告。
 - [Progent](https://arxiv.org/abs/2504.11703)：面向 AI agent 的权限控制 harness。核心思想：把允许的工具调用表示为关于工具名和参数的符号策略，在执行过程中更新，并用确定性检查与 SMT 推理落实最小权限。
 - [ACE](https://arxiv.org/abs/2504.20984)：面向 LLM 集成应用系统的安全架构。核心思想：把抽象规划与具体执行拆开，使工具和应用调用在恶意应用破坏计划、可用性或隐私数据前被约束、检查和隔离。
 - [Maris](https://arxiv.org/abs/2505.04799)：面向多 agent 协作系统的形式化可验证隐私策略执行 harness。核心思想：在协作过程中检查访问和信息流策略，使多 agent 系统能协同工作而不悄然违反隐私约束。
 - [A2A protocol safety refinements](https://arxiv.org/abs/2505.12490)：面向多 agent 通信的协议级安全设计。核心思想是加入同意编排、短期 scoped token 和用户到服务的直接数据通道，降低 A2A 式 agent 协作中的凭证暴露与非预期数据共享。
+- LlamaFirewall（[开源代码](https://github.com/meta-llama/PurpleLlama/tree/main/LlamaFirewall)）：Meta PurpleLlama 套件中的生产向 agent firewall，可作为 agent 外围提示注入、不安全工具使用和策略执行层的工程基线。
 - [PandaGuard](https://arxiv.org/abs/2505.13862)：一个模块化越狱安全评测框架，将攻击者、防御者和裁判建模为可配置组件。其价值在于跨模型接口和交互模式复现实验，并比较不同攻击与防御策略。
 - [RedTeamCUA](https://arxiv.org/abs/2505.21936)（项目页：[RedTeamCUA](https://osu-nlp-group.github.io/RedTeamCUA)）：混合 Web-OS 红队 harness；价值在于把网页提示注入、桌面动作和真实 OS 状态结合起来测试 CUA。
 - [SentinelAgent](https://arxiv.org/abs/2505.24201)：面向多智能体系统的图异常检测 harness。核心思想：把智能体交互建模为图，在执行过程中识别可疑协作、角色滥用或异常通信模式，而不是只在最终输出后做安全判断。
@@ -184,3 +189,5 @@
 - [validation](https://skills.sh/profpowell/vanilla-breeze/validation) 适合把输出或行动计划过一层规则审计。
 - [skill-validator](https://skills.sh/daffy0208/ai-dev-standards/skill-validator) 适合检查技能定义、执行边界和可复用性风险。
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) 适合为高风险工具调用提供隔离执行环境。
+- [mcp-security-audit](https://skills.sh/github/awesome-copilot/mcp-security-audit) 适合在 agent 依赖 MCP server 之前审计 server、tools、resources、prompts、权限面和供应链假设。
+- [skill-scanner](https://github.com/getsentry/sentry-javascript/tree/master/.agents/skills/skill-scanner) 适合在安装或委托第三方 skill 前扫描不安全脚本、权限和注入面。

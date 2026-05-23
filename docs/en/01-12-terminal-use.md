@@ -52,6 +52,7 @@ Papers and method-oriented work:
   Key changes include stronger self-completion checks, replanning prompts, general prompts to avoid heavy dependency installation, and a more efficient `pull`-style read loop instead of tmux `push and wait`.
 - [CAMEL-AI](https://arxiv.org/abs/2303.17760) ([code](https://github.com/camel-ai/camel)): A multi-agent collaboration framework; in terminal tasks, it can serve as an open baseline for role-based collaboration, tool use, and task decomposition.
 - [OpenHands](https://arxiv.org/abs/2407.16741) ([code](https://github.com/OpenHands/OpenHands)): A general software-development agent platform; suitable as a strong baseline for mature open-source engineering agents in terminal evaluation.
+- container-use ([code](https://github.com/dagger/container-use); [website](https://container-use.com/)): An MCP server and CLI that gives coding agents isolated containers, branch-scoped workspaces, command history, and inspectable logs, making it a practical terminal harness for auditable execution and human takeover.
 - [TerminalTraj](https://arxiv.org/abs/2602.01244) ([code](https://github.com/multimodal-art-projection/TerminalTraj)): A terminal-agent trajectory generation framework for Dockerized environments.
   It focuses on scalable environment construction, execution-trajectory collection, and training-data generation, representing terminal agents' move from static evaluation toward trajectory-production infrastructure.
 - [TermiGen](https://arxiv.org/abs/2602.07274): A high-fidelity terminal environment and robust trajectory synthesis pipeline.
@@ -82,7 +83,7 @@ Major agents on the Terminal-Bench 2.0 leaderboard (as of 2026-05-22, the offici
 - II-Agent ([code](https://github.com/Intelligent-Internet/ii-agent); [official blog](https://ii.inc/web/blog/post/ii-agent-chat)): Intelligent Internet's open-source general agent, covering research, coding, content generation, file search, code interpreter, and multi-model switching.
 - Warp ([official homepage](https://www.warp.dev/)): An AI-native terminal product; as a representative of combining the terminal environment itself with agent workflows, it focuses on shell UI, command explanation, team context, and workflow automation.
 - Letta Code ([official homepage](https://www.letta.com/)): Letta's coding-agent direction; useful for tracking the effect of memory-first agent runtimes in terminal tasks.
-- Abacus AI Desktop ([official homepage](https://desktop.abacus.ai/)): Abacus.AI's desktop/development agent; leaderboard performance can serve as a reference for closed desktop agents entering terminal benchmarks.
+- Abacus AI Desktop ([official documentation](https://abacus.ai/help/abacusai-desktop/introduction)): Abacus.AI's desktop/development agent; leaderboard performance can serve as a reference for closed desktop agents entering terminal benchmarks.
 - Claude Code ([official product page](https://www.claude.com/product/claude-code)): Anthropic's terminal coding agent; design keywords include repo-aware workflows, command execution, file editing, memory, hooks, MCP, and subagents.
 - grok-cli ([code](https://github.com/superagent-ai/grok-cli)): An open-source terminal-native agent for xAI/Grok models; supports headless mode, subagents, Telegram remote control, hooks, sandboxing, and project-level instruction files.
 - Goose ([code](https://github.com/block/goose); [official docs](https://block.github.io/goose/)): Block's open-source local/desktop/CLI agent, emphasizing arbitrary model integration, MCP extensions, recipes, session persistence, and locally auditable execution.
@@ -102,6 +103,7 @@ Major agents on the Terminal-Bench 2.0 leaderboard (as of 2026-05-22, the offici
 
 - [mcp-code-execution](https://skills.sh/athola/claude-night-market/mcp-code-execution) is suitable for organizing terminal tasks into a reusable `write code -> execute -> read errors -> fix` loop.
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) is suitable for providing isolated execution environments for terminal calls, reducing side-effect risks on the local machine.
+- [tmux](https://github.com/openclaw/openclaw/tree/main/skills/tmux) is suitable for controlling persistent interactive CLI sessions through session discovery, pane capture, key sending, and prompt monitoring.
 - [pytest](https://skills.sh/bobmatnyc/claude-mpm-skills/pytest) is suitable for turning terminal verification actions into test runs and regression checks.
 - [pytest-advanced](https://skills.sh/laurigates/claude-plugins/pytest-advanced) is suitable for more complex test discovery, parametrized runs, and failure localization.
 - [docker-local-dev](https://skills.sh/thienanblog/awesome-ai-agent-skills/docker-local-dev) is suitable for wrapping terminal tasks in reproducible container environments, close to the execution style of Terminal-Bench.

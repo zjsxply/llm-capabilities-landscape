@@ -40,6 +40,8 @@
 
 ## 2.3.3 Agent Harness
 
+- [MindSearch](https://arxiv.org/abs/2407.20183)（[开源代码](https://github.com/InternLM/MindSearch)）：多智能体网页搜索 harness，把用户问题拆成子问题，检索并整合证据，最后生成带引用的答案；这是一个容易被 BrowseComp 泛关键词漏掉的知名搜索系统。
+- [Co-STORM](https://arxiv.org/abs/2408.15232)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：协作式信息搜集 harness，多个 LM agent 探索来源、维护动态 mind map，并允许用户 steer，再输出带引用报告，连接开放网页搜索与 deep research。
 - [WebThinker](https://arxiv.org/abs/2504.21776)（[开源代码](https://github.com/RUC-NLPIR/WebThinker)；把 `think-search-draft` 交错在同一条长链路里，代表“搜写一体”的可迁移互联网搜索代理范式）
 - [Alita](https://arxiv.org/abs/2505.20286)（[开源代码](https://github.com/CharlesQ9/Alita)；更偏通用工具编排的 agent，可对接多类搜索/浏览 runtime，不是单一 benchmark 专用）
 - [BrowseMaster](https://arxiv.org/abs/2508.09129)（开源代码：未找到稳定公开仓库；程序化工具增强的双代理网页浏览框架，在 BrowseComp-en 与 BrowseComp-ZH 上报告强结果，适合作为“搜索策略 agent + 验证 agent”分工参考）
@@ -62,4 +64,7 @@
 - [browserbase/agent-browse/browser](https://skills.sh/browserbase/agent-browse/browser)（浏览器自动化执行 skill；偏运行时）
 - [serpapi](https://skills.sh/vm0-ai/vm0-skills/serpapi)（搜索 API skill；更贴近 WideSearch 的 search-heavy workflow）
 - [ddgr](https://skills.sh/ysm-dev/ddgr-skill/ddgr)（终端搜索 skill；适合作为轻量检索层）
-- [web-search-2](https://github.com/openclaw/skills/tree/main/skills/okaris/web-search-2)（研究、事实核查与内容抽取导向的检索型 skill）
+- [parallel-web-search](https://skills.sh/parallel-web/parallel-agent-skills/parallel-web-search) 适合并行 query fan-out 与来源收集，可服务 WideSearch/BrowseComp 类需要广召回再综合的任务。
+- [web-search](https://skills.sh/brave/brave-search-skills/web-search) 是 Brave Search 支撑的 provider skill，适合需要稳定搜索 API、而不是浏览器抓取的 agent。
+- [tavily](https://github.com/openclaw/openclaw/tree/main/extensions/tavily/skills/tavily) 是 Tavily 支撑的搜索与抽取 skill，更贴近“搜索 + 内容抽取”的工作流，而不只是 SERP 查询。
+- [web-search-2](https://clawhub.ai/okaris/web-search-2)（研究、事实核查与内容抽取导向的检索型 skill）

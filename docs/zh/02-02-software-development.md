@@ -109,6 +109,9 @@
 - [RepoGraph](https://arxiv.org/abs/2410.14684)（[开源代码](https://github.com/ozyyshr/RepoGraph)）：以结构化仓库图增强定位与修复上下文组织。
 - [SWE-Search](https://arxiv.org/abs/2410.20285)（[开源代码](https://github.com/a-antoniades/swe-search)）：把仓库修复显式建模为搜索过程，强调可回溯候选探索。
 - Claude Code（[官方文档](https://code.claude.com/docs/en/how-claude-code-works)；无 arXiv 论文；把 memory、subagent、agent teams、hooks 与 MCP 做成显式 runtime/harness 接口；设计关键词：终端代理、显式 runtime 接口、可扩展 harness）
+- Aider（[官方文档](https://aider.chat/)，[开源代码](https://github.com/Aider-AI/aider)；无 arXiv 论文）是使用广泛的开源终端 pair-programming harness。它需要和 Aider Polyglot 这个 benchmark 区分开；harness 本身的价值在于把仓库编辑、diff 审阅、测试执行和模型驱动 coding loop 工程化。
+- Cline（[官方文档](https://cline.bot/)，[开源代码](https://github.com/cline/cline)；无 arXiv 论文）是开源 IDE coding-agent harness，覆盖工具调用、命令执行、浏览器/计算机操作集成、MCP 支持和人工确认点。
+- Roo Code（[官方文档](https://docs.roocode.com/)，[开源代码](https://github.com/RooCodeInc/Roo-Code)；无 arXiv 论文）是开源 VS Code agent harness，通过 mode、工具和项目上下文组织开发工作，适合真实 issue-to-implementation 工作流，而不只是 benchmark wrapper。
 - [OrcaLoca](https://arxiv.org/abs/2502.00350)（[开源代码](https://github.com/fishmingyu/OrcaLoca)）：聚焦软件 issue localization 的专项 agent 框架；核心思想是把定位动作分解、相关性评分与上下文裁剪组合成更稳的仓库导航闭环。
 - [SyncMind](https://arxiv.org/abs/2502.06994)（[开源代码](https://github.com/xhguo7/SyncMind)）：面向协作软件工程的 out-of-sync 恢复框架；核心思想是把状态漂移、协作沟通和资源约束显式建模，评估 agent 在共享代码库变化后的恢复能力。
 - [debug-gym](https://arxiv.org/abs/2503.21557)（[开源代码](https://github.com/microsoft/debug-gym)）：文本化交互调试环境；核心思想是把 pdb、执行反馈和代码探索工具封装为 agent 环境，专门评估和训练信息搜集式 debugging 行为。
@@ -148,18 +151,19 @@
 - [SWE-Adept](https://arxiv.org/abs/2603.01327)（开源代码：未找到稳定公开仓库；定位代理与修复代理的双 Agent 框架；在 SWE-Bench Pro 上报告 Claude 4.5 Sonnet 端到端 resolve rate 为 47.3%，较 OrcaLoca 提升 4.0%；设计关键词：定位-修复双代理、依赖引导 DFS、checkpoint 化 Git 回滚）
 - [AweAgent](https://arxiv.org/abs/2603.03194)（[开源代码](https://github.com/AweAI-Team/AweAgent)；SearchSWE，另有 Bench：BeyondSWE；设计关键词：搜索驱动、检索增强修复）
 - [RepoLaunch](https://arxiv.org/abs/2603.05026)（[开源代码](https://github.com/microsoft/RepoLaunch)；把 `跨语言 build-test 自动化` 抽象成通用环境 harness，是 multilingual SWE 最关键的外部执行底座之一；设计关键词：跨语言 build-test、统一执行底座）
+- Open SWE（[开源代码](https://github.com/langchain-ai/open-swe)；无 arXiv 论文）是 LangChain 的开源软件工程 agent，面向云端/原生 issue-to-PR 工作流，强调 agent 编排、仓库上下文管理和长任务状态。
 - [QUARE](https://arxiv.org/abs/2603.11890)：面向需求工程的多智能体协商框架；核心思想是让专门角色围绕质量属性进行权衡和协调，在实现前平衡需求约束。
 - [Asynchronous SWE Agents](https://arxiv.org/abs/2603.21489)（开源代码：未找到稳定公开仓库；研究长时运行软件 agent 的协同策略；设计关键词：异步执行、依赖同步、合并冲突、多 agent SWE）
 - [VeriGraphi](https://arxiv.org/abs/2604.14550)：面向大型硬件设计的多智能体 RTL 生成框架；核心思路是把层次化设计拆解、RTL 合成和面向验证的协同组织成显式工作流，而不是依赖一次性 HDL 生成。
 - [Dr. RTL](https://arxiv.org/abs/2604.14989)：自主 RTL 优化智能体框架；核心思路是把自我改进过程落到硬件设计工具反馈中，使优化、反馈和修订形成可执行的 HDL 工程闭环。
 - [ZORO](https://arxiv.org/abs/2604.15625)：面向可靠 vibe coding 的主动规则框架；核心思想是在实现和修改过程中让 coding agent 遵循显式可靠性规则，把非正式的 vibe-coding 循环转化为更受控的软件开发 scaffold。
 - [Agent-centric Debugging Interface](https://arxiv.org/abs/2604.24212)（开源代码：未找到稳定公开仓库；为 autonomous debugging agents 提供高效动态分析；设计关键词：函数级追踪、运行时检查、自主修复）
-- [Agentic Harness Engineering (AHE)](https://arxiv.org/abs/2604.25850)（开源代码：未找到稳定公开仓库；自动演化 coding-agent harness 的闭环框架；在 Terminal-Bench 2 与 SWE-bench Verified 上做迁移评测；设计关键词：harness evolution、可观测性、工具/中间件/记忆编辑）
+- [Agentic Harness Engineering (AHE)](https://arxiv.org/abs/2604.25850)（[开源代码](https://github.com/china-qijizhifeng/agentic-harness-engineering)；自动演化 coding-agent harness 的闭环框架；在 Terminal-Bench 2 与 SWE-bench Verified 上做迁移评测；设计关键词：harness evolution、可观测性、工具/中间件/记忆编辑）
 - [Agentic Requirements Elicitation](https://arxiv.org/abs/2605.05828)（开源代码：未找到稳定公开仓库；提出用于结构化软件需求访谈的 OntoAgent；设计关键词：experience ontology、系统化问题生成、隐含需求覆盖、可解释 analyst workflow）
 
 ## 2.2.4 Skill
 
 - [bugfix](https://skills.sh/doodledood/codex-workflow/bugfix) 适合把编码任务收敛到最常见的缺陷修复流程（偏 SWE-bench 风格）。
-- [coder-openclaw-agent](https://github.com/openclaw/skills/tree/main/skills/milleniumgenai/coder-openclaw-agent) 是“安装并接线一个 coding sub-agent”的集成型 skill。
-- [doc-accurate-codegen](https://github.com/openclaw/skills/tree/main/skills/tobisamaa/doc-accurate-codegen) 强制“先读真实文档再写代码”，适合 API/配置类任务与避免臆造接口。
+- [OpenClaw coding-agent](https://github.com/openclaw/openclaw/tree/main/skills/coding-agent) 是用于把较大编码任务委托给后台 Codex、Claude Code、OpenCode 或 Pi worker 的集成型 skill，并带有明确的通知与监控规则。
 - [pytest](https://skills.sh/bobmatnyc/claude-mpm-skills/pytest) 适合把“修复是否正确”落到可执行回归测试上（对 SWE-Bench 之外的真实项目也常用）。
+- [SWE-Skills-Bench skills](https://github.com/GeniusHTX/SWE-Skills-Bench/tree/main/skills) 提供用于软件工程 skill 注入评测的真实 skill 库，包括 `tdd-workflow`、`fix`、`analyze-ci`、`github-actions-templates`、`python-packaging`、`python-resilience`、`mcp-builder` 和 security-review 等技能。

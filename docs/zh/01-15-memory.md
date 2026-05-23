@@ -37,10 +37,12 @@
 - [MemoryBank](https://arxiv.org/abs/2305.10250)（[开源代码](https://github.com/zhongwanjun/MemoryBank-SiliconFriend)）：把长期记忆写入、检索和人格/偏好更新做成对话代理组件，适合追踪跨轮一致性。
 - [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)）：把探索经验沉淀为可调用 skill library 与长期记忆；虽然任务是 Minecraft，但它把“经验写入 -> 检索复用 -> 能力累积”做成了 agent harness 的经典形态。
 - [MemGPT](https://arxiv.org/abs/2310.08560)（[开源代码](https://github.com/cpacker/MemGPT)）：把长上下文问题转化为显式 memory tier 与调度策略，形成可复用的长程代理 runtime。
+- Letta（[开源代码](https://github.com/letta-ai/letta)；[文档](https://docs.letta.com/)）：MemGPT 后续演进出的开源 stateful-agent runtime，包含 memory blocks、skills、subagents、高级记忆管理和面向 continual learning 的运行时接口。
 - [Agent Workflow Memory](https://arxiv.org/abs/2409.07429)（开源代码：未找到稳定公开仓库）：面向多步骤 agent 工作流的记忆机制；核心思想：让 agent 在任务执行中显式记录关键状态、工具结果和决策理由，后续步骤按需检索而非全量回灌。
 - [Zep](https://arxiv.org/abs/2501.13956)（[开源代码](https://github.com/getzep/graphiti)）：面向 agent memory 的时间知识图谱架构；核心思想：把事件、实体、关系和时间演化组织成可查询图，服务长期个性化和跨会话召回。
 - [A-MEM](https://arxiv.org/abs/2502.12110)（[开源代码](https://github.com/WujiangXu/A-mem)）：面向 agent 的动态记忆组织框架。核心思想：把记忆片段写成可链接、可演化的知识结构，支持后续检索、重组与反思。
 - [Mem0](https://arxiv.org/abs/2504.19413)（[开源代码](https://github.com/mem0ai/mem0)）：面向生产 agent 的可扩展长期记忆层。核心思想：用自动抽取、更新和检索的 memory pipeline 降低全量历史上下文依赖。
+- LangMem（[开源代码](https://github.com/langchain-ai/langmem)；[文档](https://langchain-ai.github.io/langmem/)）：面向 LangGraph/LangChain 的记忆 harness，提供记忆搜索、记忆管理工具和后台记忆更新，直接对应 memory-agent benchmark 中的写入、搜索、更新与复用生命周期。
 - [Record & Replay](https://arxiv.org/abs/2505.17716)：面向 LLM agent 的经验复用 harness；核心思想是记录既往任务轨迹，并在后续执行中 replay 有用经验，使 agent 无需重新训练也能迁移程序性知识。
 - [MemoryOS](https://arxiv.org/abs/2506.06326)（[开源代码](https://github.com/BAI-LAB/MemoryOS)）：把 agent memory 拆成 storage、update、retrieve 与 consolidation 等 OS-like 操作；适合作为长期交互任务中的通用 memory runtime。
 - [Memory as a Service（MaaS）](https://arxiv.org/abs/2506.22815)：面向协作 agent 的服务化上下文记忆架构。核心思想：把记忆暴露为模块化服务，让多个 agent 共享、检索和更新任务上下文，而不是依赖单一的完整提示历史。

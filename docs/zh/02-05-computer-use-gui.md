@@ -59,15 +59,20 @@
 - [Odysseys](https://arxiv.org/abs/2604.24964)（[项目页](https://odysseys-website.pages.dev/)）：评测网页 agent 的真实长程 GUI 任务；核心思想是用现实网站中的多阶段目标和状态依赖测试 agent 的导航、信息整合、错误恢复与持续执行能力。
 - [WindowsWorld](https://arxiv.org/abs/2604.27776)：评测 Windows 上的跨应用 GUI 工作流；核心思想是把多应用、多检查点的职业流程显式化，专门放大跨应用协调与阶段性核验失败。
 - [SaaS-Bench](https://arxiv.org/abs/2605.15777)（[开源代码](https://github.com/UniPat-AI/SaaS-Bench)）：评测真实 SaaS 系统上的专业工作流；核心思想是把可部署的多应用业务流程、检查点验证和长链路状态维护放进 self-hosted SaaS 环境。
+
 ## 2.5.3 Agent Harness
 
+- [AppAgent](https://arxiv.org/abs/2312.13771)（[开源代码](https://github.com/mnotgod96/AppAgent)；[项目页](https://appagent-official.github.io/)）：早期智能手机 GUI agent harness，通过自主探索或人类演示学习 app 操作，并把生成的操作文档复用于后续任务。
 - [SeeAct](https://arxiv.org/abs/2401.01614)（[开源代码](https://github.com/OSU-NLP-Group/SeeAct)；视觉 grounding + 结构信息融合的网页 GUI agent 起点范式，后续被多类 CUA 吸收）
+- [Mobile-Agent-v2 / Mobile-Agent-E](https://arxiv.org/abs/2406.01014)（[Mobile-Agent-E](https://arxiv.org/abs/2501.11733)；[开源代码](https://github.com/X-PLUG/MobileAgent)）：移动端 GUI agent 路线，包含显式规划、反思、多智能体协作和后续自演化，连接 AndroidWorld 式任务与通用移动端操作。
 - [Agent S](https://arxiv.org/abs/2410.08164)（[开源代码](https://github.com/simular-ai/Agent-S)；ACI + 分层规划 + 外部知识检索 + 经验记忆的一体化 computer-use workflow）
 - [AgentStore](https://arxiv.org/abs/2410.18603)（[开源代码](https://github.com/chengyou-jia/AgentStore)；类 App Store 的异构 agent 动态选择与组合平台）
 - [OpenWebVoyager](https://arxiv.org/abs/2410.19609)（[开源代码](https://github.com/MinorJerry/OpenWebVoyager)；通过真实网页探索、反馈和优化构建多模态 web agent，连接 WebArena/VisualWebArena 与开放网页操作）
 - [BrowserGym Ecosystem](https://arxiv.org/abs/2412.05467)（[开源代码](https://github.com/ServiceNow/BrowserGym)；统一 WebArena、VisualWebArena、WorkArena 等网页 GUI 环境，并提供可复现评测接口）
 - [UI-TARS](https://arxiv.org/abs/2501.12326)（[开源代码](https://github.com/bytedance/UI-TARS)；端到端视觉-动作 GUI agent，把截图理解、坐标定位、操作历史与动作生成结合到原生 computer-use 轨迹中）
 - Browser-Use（[开源代码](https://github.com/browser-use/browser-use)；HAL/AssistantBench/Online Mind2Web 等榜单常见的浏览器 agent scaffold，把 Playwright 浏览器状态、动作执行、持久浏览器和工具扩展封装成可直接复用的 web automation harness）
+- Stagehand（[开源代码](https://github.com/browserbase/stagehand)；[文档](https://docs.stagehand.dev/)）：生产向浏览器自动化 harness，把确定性的 Playwright 代码与自然语言动作、抽取结合起来，可作为 Browserbase 路线的 browser-agent 基线。
+- Skyvern（[开源代码](https://github.com/Skyvern-AI/skyvern)；[主页](https://www.skyvern.com/)）：生产型网页工作流自动化 harness，用 LLM 与视觉组件处理浏览器导航、表单填写、workflow 执行和有状态网页任务。
 - [R2D2](https://arxiv.org/abs/2501.12485)：围绕记忆、反思和动态决策构建的网页智能体 harness。核心思想：在网页交互过程中维护并修正任务记忆，使智能体能够调整计划，而不是只依赖固定提示和最近的浏览器上下文。
 - [PC-Agent](https://arxiv.org/abs/2502.14282)（[开源代码](https://github.com/X-PLUG/MobileAgent/tree/main/PC-Agent)；用 `Manager / Progress / Decision / Reflection` 层级多代理协作处理 PC 上的跨应用复杂任务）
 - [AgentPbD](https://doi.org/10.1109/vl-hcc65237.2025.00064)：从用户演示生成浏览器 agent workflow 的 harness。核心思想：把示范式编程轨迹转化为可交互的 agentic workflow，用于指导网页自动化，而不只依赖手写任务脚本。
@@ -93,11 +98,14 @@
 - [Natural-Language Agent Harnesses](https://arxiv.org/abs/2603.25723)（[开源代码](https://github.com/curated-skills/LinguaClaw)；把 harness 逻辑外显成可编辑自然语言文档，用共享 runtime 执行、写回状态与工件）
 - [Avenir-UX](https://arxiv.org/abs/2604.09581)：用于自动化 UX 评估的 GUI 接地网页交互框架。核心思路是模拟用户在真实网站上的访问路径，将动作轨迹与 SUS、SEQ 和边想边说式协议结合，生成结构化可用性报告。
 - [EE-MCP](https://arxiv.org/abs/2604.09815)（开源代码：未找到稳定公开仓库；自演化 MCP-GUI agent 框架；核心思想：自动生成环境、收集轨迹并学习经验库，用来平衡 GUI 动作与 MCP 工具调用）
+- [ToolCUA](https://arxiv.org/abs/2605.12481)（[开源代码](https://github.com/X-PLUG/ToolCUA)）：GUI 加工具的 computer-use harness，协调屏幕交互与工具执行，适合 OSWorld-MCP、MobileWorld 这类需要同时选择视觉动作和结构化工具的任务。
+
 ## 2.5.4 Skill
 
 - [screenshot](https://skills.sh/openai/skills/screenshot)（截图能力；偏感知层，OSWorld 弱相关但常用）
 - [playwright-interactive](https://skills.sh/openai/skills/playwright-interactive)（浏览器/Electron 交互；OSWorld 弱相关但可覆盖部分 GUI 界面）
-- [pc-control](https://github.com/openclaw/skills/tree/main/skills/zeron-g/pc-control)（桌面截图、键鼠控制与闭环验证）
+- [browser-use](https://github.com/browser-use/browser-use/tree/main/skills/browser-use) 提供真实浏览器控制 skill，覆盖持久浏览器会话、页面状态检查、点击、输入、截图、标签页管理和信息抽取。
+- [OpenClaw browser-automation](https://github.com/openclaw/openclaw/tree/main/extensions/browser/skills/browser-automation) 为 OpenClaw 风格 agent 封装 browser tool 操作循环、标签页卫生、stale ref 恢复、登录阻塞识别和多步网页交互实践。
 - [computer-use-agents](https://skills.sh/sickn33/antigravity-awesome-skills/computer-use-agents)（computer-use 设计模式库）
 - [ubuntu-desktop-control](https://github.com/lommaj/ubuntu-desktop-control)（Ubuntu / X11 桌面控制：`xdotool`、`scrot` 等）
 - [agent-desktop](https://skills.sh/lahfir/agent-desktop/agent-desktop)（桌面 GUI 自动化工具型 skill；实现偏 macOS，Linux/Windows 不完整）

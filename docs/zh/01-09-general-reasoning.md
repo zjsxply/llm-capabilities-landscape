@@ -79,6 +79,6 @@
 - [Executable World Models for ARC-AGI-3](https://arxiv.org/abs/2605.05138)（[开源代码](https://github.com/alexisfox7/RGB-Agent)）：面向 ARC-AGI-3 榜单的 Read-Grep-Bash agent；设计关键词：可执行世界模型、文件化环境观察、shell 工具调用、以代码和日志维护任务状态。
 ## 1.9.4 Skill
 
-- [skill-with-prompt-engineering](https://github.com/openclaw/skills/tree/main/skills/golofu/skill-with-prompt-engineering) 内含 `CoT / ReAct / self-consistency / multi-path reasoning` 等可直接复用的推理套路。
+- [skill-with-prompt-engineering](https://clawhub.ai/golofu/skill-with-prompt-engineering) 内含 `CoT / ReAct / self-consistency / multi-path reasoning` 等可直接复用的推理套路。
 - [sympy](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/sympy) 适合把中间推理转成可执行程序或符号表达式。
 - [long-context](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/ai-research/emerging-techniques-long-context) 适合维护搜索树摘要、失败分支与状态压缩。

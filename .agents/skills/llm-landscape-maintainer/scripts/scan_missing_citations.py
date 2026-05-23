@@ -20,7 +20,7 @@ def write_lines(path: Path, lines: list[str]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Find Markdown papers without citation edge cache, then run the Semantic Scholar scanner."
+        description="Find Markdown papers without citation/reference edge cache, then run the Semantic Scholar scanner."
     )
     parser.add_argument("files", nargs="*", help="Markdown/text files or globs. Defaults to README and docs Markdown files.")
     parser.add_argument("--id", action="append", default=[], help="Explicit paper identifier to include.")
@@ -46,7 +46,7 @@ def main() -> int:
         files=files,
         direct_ids=args.id,
         cache_dir=args.cache_dir,
-        edges=["citations"],
+        edges=["citations", "references"],
         retry_errors=args.retry_errors,
         retry_partials=args.retry_partials,
     )
@@ -60,13 +60,16 @@ def main() -> int:
     )
     write_lines(args.missing_out, missing_ids)
     print(f"Identifiers: {len(identifiers)}", flush=True)
-    print(f"Need citation fetch: {len(missing_ids)}", flush=True)
+    print(f"Need citation/reference fetch: {len(missing_ids)}", flush=True)
     print(f"Wrote {args.coverage_out}", flush=True)
     print(f"Wrote {args.missing_out}", flush=True)
 
     if not missing_ids:
         args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text("# Semantic Scholar Missing Citation Scan\n\nNo missing citation edges.\n", encoding="utf-8")
+        args.out.write_text(
+            "# Semantic Scholar Missing Citation/Reference Scan\n\nNo missing citation or reference edges.\n",
+            encoding="utf-8",
+        )
         print(f"Wrote {args.out}", flush=True)
         return 0
     if args.dry_run:
@@ -76,7 +79,6 @@ def main() -> int:
         sys.executable,
         str(SCANNER),
         "--direct-edges",
-        "--citations-only",
         "--cache-dir",
         str(args.cache_dir),
         "--max-citations",
@@ -100,7 +102,7 @@ def main() -> int:
         cmd.append("--refresh")
     for identifier in missing_ids:
         cmd.extend(["--id", identifier])
-    print("Running Semantic Scholar scanner for missing citation edges.", flush=True)
+    print("Running Semantic Scholar scanner for missing citation/reference edges.", flush=True)
     return subprocess.run(cmd, check=False).returncode
 
 

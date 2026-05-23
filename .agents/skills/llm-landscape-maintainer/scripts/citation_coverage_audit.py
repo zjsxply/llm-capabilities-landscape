@@ -242,7 +242,7 @@ def main() -> int:
         files=files,
         direct_ids=args.id,
         cache_dir=args.cache_dir,
-        edges=list(dict.fromkeys(args.edge or ["citations"])),
+        edges=list(dict.fromkeys(args.edge or ["citations", "references"])),
         retry_errors=args.retry_errors,
         retry_partials=args.retry_partials,
     )

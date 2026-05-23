@@ -1,0 +1,8 @@
+# 1.5.1 Leaderboard
+
+- [DocVQA Challenge](https://www.docvqa.org/challenges): continuous leaderboard and classic public challenge for document visual question answering. It is suitable for tracking long-term progress in OCR, layout understanding, and answer extraction on real document QA.
+- [Vision Arena](https://huggingface.co/spaces/WildVision/vision-arena): continuous leaderboard for pairwise battles between open-ended image-dialogue models. It is suitable for supplementing traditional accuracy leaderboards with human-preference/open-QA comparisons.
+- [OCRBench v2 Leaderboard](https://www.codesota.com/ocr/benchmark/ocrbench-v2): continuous leaderboard aggregating results around OCRBench v2 for text-rich images, documents, charts, and OCR-to-reasoning. It is useful for quickly tracking where new VLMs stand on the "read text and reason" pipeline.
+- [OmniDocBench Leaderboard](https://github.com/opendatalab/OmniDocBench#leaderboard): continuous leaderboard for layout, table, paragraph, and structured metrics in document-parsing pipelines. It is suitable for comparing OCR-free/OCR-based parsers and end-to-end document models.
+- [IDP Leaderboard](https://idp-leaderboard.org/): continuous leaderboard for enterprise document AI models, covering OCR, table extraction, KIE, VQA, classification, and long-document processing. It is suitable as an engineering-side comprehensive leaderboard for "document intelligence."
+- [OCR Arena](https://www.ocrarena.ai/): continuous arena-style comparison for OCR/document models. It is useful for finding reusable document-parsing, table-extraction, and visual-QA model configurations.

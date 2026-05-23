@@ -9,6 +9,8 @@ import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 
+from landscape_paths import default_markdown_files, is_english_doc, paired_zh_path
+
 
 SECTION_MARKERS = ("Bench", "Agent Harness")
 
@@ -145,14 +147,20 @@ def release_key(text: str) -> tuple[int, int] | None:
 def sections(lines: list[str]) -> list[Section]:
     found: list[Section] = []
     index = 0
+    heading_re = re.compile(r"^(#{1,6})\s+(.+)$")
     while index < len(lines):
-        if not lines[index].startswith("## "):
+        match = heading_re.match(lines[index])
+        if not match:
             index += 1
             continue
-        heading = lines[index][3:].strip()
+        level = len(match.group(1))
+        heading = match.group(2).strip()
         start = index
         index += 1
-        while index < len(lines) and not lines[index].startswith("## "):
+        while index < len(lines):
+            next_match = heading_re.match(lines[index])
+            if next_match and len(next_match.group(1)) <= level:
+                break
             index += 1
         if any(marker in heading for marker in SECTION_MARKERS):
             found.append(Section(heading, start, index))
@@ -207,7 +215,7 @@ def sort_known_bullets(lines: list[str], blocks: list[Bullet]) -> list[str]:
 def ensure_blank_before_headings(lines: list[str]) -> list[str]:
     new_lines: list[str] = []
     for line in lines:
-        if line.startswith("## ") and new_lines and new_lines[-1].strip():
+        if re.match(r"^#{1,6}\s+", line) and new_lines and new_lines[-1].strip():
             new_lines.append("")
         new_lines.append(line)
     return new_lines
@@ -283,10 +291,10 @@ def identity(text: str) -> str:
 
 
 def bilingual_mismatches(paths: list[Path]) -> list[str]:
-    en_paths = [path for path in paths if "/docs/en/" in f"/{path.as_posix()}"]
+    en_paths = [path for path in paths if is_english_doc(path)]
     reports: list[str] = []
     for en_path in sorted(en_paths):
-        zh_path = Path(str(en_path).replace("docs/en/", "docs/zh/", 1))
+        zh_path = paired_zh_path(en_path)
         if not zh_path.exists():
             continue
         en_lines = en_path.read_text(encoding="utf-8").splitlines()
@@ -302,12 +310,12 @@ def bilingual_mismatches(paths: list[Path]) -> list[str]:
 
 
 def default_paths() -> list[Path]:
-    return sorted(Path("docs/en").glob("*.md")) + sorted(Path("docs/zh").glob("*.md"))
+    return default_markdown_files(Path("."), include_readme=False)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("paths", nargs="*", type=Path, help="Markdown files to audit. Defaults to docs/en and docs/zh.")
+    parser.add_argument("paths", nargs="*", type=Path, help="Markdown files to audit. Defaults to recursive docs/en and docs/zh.")
     parser.add_argument("--fix", action="store_true", help="Sort known-date bullets within affected sections.")
     parser.add_argument("--bilingual", action="store_true", help="Also report bilingual bullet-order mismatches.")
     args = parser.parse_args()

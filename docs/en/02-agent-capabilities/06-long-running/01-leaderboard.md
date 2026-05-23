@@ -1,0 +1,7 @@
+# 2.6.1 Leaderboard
+
+- [AssistantBench Leaderboard](https://huggingface.co/spaces/AssistantBench/leaderboard): A public submission entry for realistic, time-consuming web assistant tasks; it hides test-set answers and collects predictions through a Hugging Face portal, making it useful for tracking sustained progress of web agents on long-horizon browsing and information-transfer tasks.
+- [METR Time Horizon Reports](https://github.com/METR/eval-analysis-public): Continuously publishes versioned time-horizon reports and reproducible analysis code; it is not a single-score leaderboard, but compares long-run autonomy curves by the human time duration of tasks agents can complete.
+- [OSWorld-Human Efficiency Leaderboard](https://github.com/WukLab/osworld-human): Compares OSWorld success rate together with human reference trajectory efficiency, especially useful for finding long-horizon GUI agents that "barely complete" tasks through many redundant steps.
+- [HAL Long-Horizon Tracks](https://hal.cs.princeton.edu/): Princeton HAL aggregates tasks such as AssistantBench, GAIA, and Online Mind2Web, and reports cost, runtime, and pass rate; it can serve as a meta-leaderboard for comparing long-horizon agent harnesses across benchmarks.
+- [ClawMark Leaderboard](https://claw-mark.com/leaderboard): A leaderboard for coworker-agent tasks over 1- to 3-day timelines, covering multimodal inputs, calendar waiting, message collaboration, and cross-day state maintenance; it is a public entry point closer to long-running autonomy than single-session long tasks.

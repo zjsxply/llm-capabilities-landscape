@@ -3,11 +3,13 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
-import glob
 import importlib.util
 import json
 from pathlib import Path
 from typing import Any
+
+from landscape_paths import default_markdown_files as shared_default_markdown_files
+from landscape_paths import expand_markdown_args
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -27,23 +29,11 @@ S2 = load_s2_module()
 
 
 def expand_file_args(items: list[str]) -> list[Path]:
-    files: list[Path] = []
-    for item in items:
-        matches = sorted(Path(match) for match in glob.glob(item))
-        if matches:
-            files.extend(path for path in matches if path.is_file())
-        else:
-            path = Path(item)
-            if path.is_file():
-                files.append(path)
-    return files
+    return expand_markdown_args(items, default_to_docs=False)
 
 
 def default_markdown_files(root: Path) -> list[Path]:
-    files: list[Path] = []
-    for pattern in ["README.md", "README.zh.md", "docs/en/*.md", "docs/zh/*.md"]:
-        files.extend(sorted(root.glob(pattern)))
-    return [path for path in files if path.is_file()]
+    return shared_default_markdown_files(root)
 
 
 def read_json(path: Path) -> Any | None:

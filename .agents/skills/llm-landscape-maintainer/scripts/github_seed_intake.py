@@ -158,7 +158,14 @@ def main() -> int:
     parser.add_argument(
         "--docs",
         nargs="*",
-        default=["docs/en/03-02-research.md", "docs/zh/03-02-research.md"],
+        default=[
+            "docs/en/03-downstream-applications/02-research/README.md",
+            "docs/en/03-downstream-applications/02-research/04-agent-harness.md",
+            "docs/en/03-downstream-applications/02-research/05-skill.md",
+            "docs/zh/03-downstream-applications/02-research/README.md",
+            "docs/zh/03-downstream-applications/02-research/04-agent-harness.md",
+            "docs/zh/03-downstream-applications/02-research/05-skill.md",
+        ],
     )
     args = parser.parse_args()
 

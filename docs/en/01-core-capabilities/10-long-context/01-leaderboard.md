@@ -1,0 +1,6 @@
+# 1.10.1 Leaderboard
+
+- [LongBench Leaderboard](https://longbench2.github.io/) ([code](https://github.com/THUDM/LongBench)): A public leaderboard spanning LongBench to LongBench v2, covering multi-document QA, long-range reasoning, summarization, and controlled settings such as RAG/no-context/CoT; one of the most common continuous reference points for text long-context capability.
+- [HELMET Leaderboard](https://princeton-nlp.github.io/HELMET/) ([code](https://github.com/princeton-nlp/HELMET)): A long-context leaderboard organized by dimensions such as retrieval, RAG, reranking, reasoning, and learning; useful for avoiding the overuse of needle-style tasks as a proxy for long-context capability.
+- [MileBench Leaderboard](https://milebench.github.io/) ([code](https://github.com/milebench/MileBench)): A multimodal long-context leaderboard, suitable for tracking model differences under long videos, image sequences, and cross-modal long inputs.
+- [AcademicEval](https://github.com/ulab-uiuc/AcademicEval): A leaderboard and evaluation script set for live long-context generation, using new arXiv papers to construct tasks; suitable for evaluating model capability to generate titles, abstracts, and related work in long-paper contexts.

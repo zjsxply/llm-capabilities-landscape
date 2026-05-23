@@ -1,0 +1,24 @@
+# 1.6.4 Agent Harness
+
+- [LMMs-Eval](https://arxiv.org/abs/2407.12772)（[开源代码](https://github.com/EvolvingLMMs-Lab/lmms-eval)）：多模态评测 harness，覆盖 Video-MME、LongVideoBench、Video-MMMU 等视频任务；适合作为复现实验和批量榜单提交的统一入口。
+- [VideoChat-Online](https://arxiv.org/abs/2501.00584)（[开源代码](https://github.com/MCG-NJU/VideoChat-Online)）：在线/流式视频理解的参考实现，与 OVBench 的 benchmark-specific runtime 强绑定。
+- [VideoRAG](https://arxiv.org/abs/2502.01549)（[开源代码](https://github.com/HKUDS/VideoRAG)）：针对超长视频的检索增强生成工作流，把“找片段证据”外包给视频检索与索引结构。
+- [LVAgent](https://arxiv.org/abs/2503.10200)（[开源代码](https://github.com/64327069/LVAgent)）：面向长视频问答的动态 agent；通过 task planning、迭代式工具调用和实时进度管理，在不同问题上自适应选择检索与分析路径。
+- [VideoMind](https://arxiv.org/abs/2503.13444)（[开源代码](https://github.com/yeliudev/VideoMind)）：把长视频理解拆成 planning、grounding、retrieval 与 reasoning 的 agentic pipeline，并用 Chain-of-LoRA 适配长视频任务。
+- [LiveCC](https://arxiv.org/abs/2504.16030)（[开源代码](https://github.com/showlab/LiveCC)）：面向直播体育等时间敏感场景的理解与字幕/解说生成链路。
+- [MR.Video](https://arxiv.org/abs/2504.16082)（[开源代码](https://github.com/ziqipang/MR-Video)）：把长视频理解组织成 MapReduce 风格的 evidence aggregation，先分段抽取局部证据，再全局汇总推理。
+- [TimeChat-Online](https://arxiv.org/abs/2504.17343)（[开源代码](https://github.com/yaolinli/TimeChat-Online)）：面向时间敏感的在线视频交互理解，强调在线状态更新与时间对齐。
+- [Deep Video Discovery](https://arxiv.org/abs/2505.18079)（[开源代码](https://github.com/microsoft/DeepVideoDiscovery)）：面向长视频理解的 agentic search harness；通过多粒度视频数据库和 search-centric tools，让 agent 按问题自适应规划、检索片段并汇总证据。
+- [VideoDeepResearch](https://arxiv.org/abs/2506.10821)（[开源代码](https://github.com/yhy-2000/VideoDeepResearch)）：把“看片 -> 检索外部资料 -> 生成报告”组织成可复用长链路 pipeline。
+- [AdaVideoRAG](https://arxiv.org/abs/2506.13589)（[开源代码](https://github.com/xzc-zju/AdaVideoRAG)）：长视频 RAG harness；按任务自适应选择层级化索引和检索深度，减少固定抽帧或固定 chunk 策略的浪费。
+- [Flash-VStream](https://arxiv.org/abs/2506.23825)（[开源代码](https://github.com/IVGSZ/Flash-VStream)）：长视频流式理解的 memory budget harness；强调实时性约束下的记忆更新与信息保真。
+- [M3-Agent](https://arxiv.org/abs/2508.09736)（开源代码：暂未见稳定公开官方仓库）：面向长视频的长时记忆 agent；将“看、听、记、推理”拆成可交互模块，并配套 M3-Bench 检验记忆保留和跨模态证据调用。
+- [GCAgent](https://arxiv.org/abs/2511.08909)（开源代码：暂未见稳定公开官方仓库）：面向长视频的图压缩 agent；用图结构压缩长视频事件与实体关系，再围绕问题做局部扩展和推理。
+- [LongVT](https://arxiv.org/abs/2511.20785)（[开源代码](https://github.com/EvolvingLMMs-Lab/LongVT)）：面向长视频的原生 tool-calling 与“thinking with long videos”工作流，常被用作长视频场景的 agentic runtime 参考。
+- [SAGE](https://arxiv.org/abs/2512.13874)（[开源代码](https://github.com/allenai/SAGE)）：any-horizon 长视频推理 agent；把“何时单轮回答/何时多轮搜证据”做成可学习的策略。
+- [LongShOTAgent](https://arxiv.org/abs/2512.16978)（[开源代码](https://github.com/mbzuai-oryx/longshot)）：围绕 LongShOTBench 的长视频 agentic system；用预处理、跨模态检索、工具调用和迭代 refinement 处理视觉、语音与环境音证据。
+- [EGAgent](https://arxiv.org/abs/2601.18157)（开源代码：暂未见稳定公开官方仓库）：面向 very long egocentric video 的 agentic workflow；核心在于按 query 主动检索、压缩和重组第一视角生活记录中的证据。
+- [SVAgent](https://arxiv.org/abs/2604.05079)（开源代码：未确认公开）：storyline-guided 长视频问答 agent；核心思想是用 storyline agent 从选定帧持续构建叙事状态，让跨模态决策 agent 分别基于视觉和文本证据作答，再由 meta-agent 对齐冲突预测。
+- [VideoSEAL](https://arxiv.org/abs/2605.12571)（开源代码：暂未见稳定公开官方仓库）：面向 agentic long video understanding 的证据校准框架；核心思想是把答案生成权与证据对齐/校验解耦，缓解长视频 agent 在检索片段和最终回答之间的错配。
+- [ReTool-Video](https://arxiv.org/abs/2605.13228)（开源代码：未确认公开）：递归式工具调用视频 agent；核心思想是把高层视频意图落到细粒度 MetaAug-Video Tool Library 上的可执行工具链，并在运行时修复、替换或分解无法直接匹配的动作。
+- [VideoSeeker](https://arxiv.org/abs/2605.16079)（开源代码：论文称将公开，暂未确认稳定公开仓库）：面向视频理解的原生 agentic tool invocation；强调 instance-level 工具选择，把 search、grounding 和 verification 纳入模型决策过程。

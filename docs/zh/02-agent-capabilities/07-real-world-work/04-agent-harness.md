@@ -1,0 +1,33 @@
+# 2.7.4 Agent Harness
+
+- [BrowserGym Ecosystem](https://arxiv.org/abs/2412.05467)（[开源代码](https://github.com/ServiceNow/BrowserGym)）：统一 WebArena、VisualWebArena、WorkArena 等网页/企业工作环境，并配套 AgentLab 实验框架，适合做现实网页和 workplace agent 的可复现比较。
+- [Autono](https://arxiv.org/abs/2504.04650)：一种 ReAct 风格的自主 agent 框架，包含自适应动作生成、及时放弃控制和多智能体记忆迁移。核心思想：在固定 planner workflow 失效时允许执行路径动态调整，同时保留终止保护以提升鲁棒性。
+- [Alita](https://arxiv.org/abs/2505.20286)（[开源代码](https://github.com/CharlesQ9/Alita)）：偏生产环境的通用 solver agent，强调跨工具编排与复杂工作流执行，可迁移到现实业务任务的多步骤执行场景。
+- [WorkForceAgent-R1](https://arxiv.org/abs/2505.22942)（开源代码：未找到稳定公开仓库）：面向 WorkArena 的 workplace web agent，使用规则化 R1-style 强化学习提升单步推理、格式遵循和动作正确性；更像“企业网页导航”场景中的专项执行器，而非通用聊天代理。
+- [MaRGen](https://arxiv.org/abs/2508.01370)：用于自驱市场研究与分析的多 Agent harness。核心思路是协调 researcher、retriever、reviewer 和 writer Agent 查询数据、生成洞察与可视化、撰写市场报告，并通过自动评审迭代提升报告质量。
+- [AgenticData](https://arxiv.org/abs/2508.05002)：面向结构化与非结构化异质数据的 agentic data analytics 系统。核心思想：把自然语言问题转成语义计划，再协调数据画像、交叉验证、语义优化和记忆 agent 执行并修正数据分析流程。
+- [HomerAgent](https://arxiv.org/abs/2508.09124)（[开源代码](https://github.com/microsoft/OdysseyBench)）：OdysseyBench 配套的办公生产力 agent/harness，用显式记忆组织长程工作流中的阶段结果，适合分析 office workflow 中的上下文遗忘和错误复用。
+- [AgentArch Reference Harness](https://arxiv.org/abs/2509.10769)（[开源代码](https://github.com/ServiceNow/AgentArch)）：用统一企业任务环境比较多种 agent 架构，适合把 planner-executor、多代理、memory、工具路由等 harness 设计变量拆开做消融。
+- [ARE](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）：把真实任务环境做成会异步变化的运行时，支持通知、外部系统、状态演化和执行日志，适合评测 agent 在动态工作流中的持续计划更新。
+- [BrowserAgent](https://arxiv.org/abs/2510.10666)（[开源代码](https://github.com/TIGER-AI-Lab/BrowserAgent)）：在真实浏览器动作空间中执行多步任务的 solver agent，适合 WorldTravel 这类现实约束驱动的网页任务。
+- [HAL Harness](https://openreview.net/pdf?id=vUaY1t64ZZ)（[开源代码](https://github.com/princeton-pli/hal-harness)）：标准化、成本可见的 agent evaluation harness，提供统一 CLI、并行运行、日志/成本追踪与 leaderboard 提交流程，适合把现实工作 agent 的可复现实验从“单论文脚本”推进到持续评测。
+- [Enterprise Deep Research](https://arxiv.org/abs/2510.17797)（[开源代码](https://github.com/SalesforceAIResearch/enterprise-deep-research)）：企业研究场景的多代理深研系统实现；核心思想：把企业私有知识、公开网页、消息和文件检索接到 planner/retriever/writer/checker 流程中，适合现实组织内的调研和汇报工作流。
+- [DataSage](https://arxiv.org/abs/2511.14299)：面向数据分析的多智能体洞察发现框架。核心思路是结合外部知识检索、角色化辩论和多路径推理，使业务分析智能体能够验证并修正发现的洞察。
+- [Multi-Objective Agentic Rewrites](https://arxiv.org/abs/2512.02289)：面向 DocETL 式非结构化数据流水线的 agentic 重写框架。核心思想：同时优化语义算子的准确率、成本和延迟，而不是把 LLM 数据处理视为固定提示词流水线。
+- [EvoEnv](https://arxiv.org/abs/2601.08173)（[开源代码](https://github.com/KnowledgeXLab/EvoEnv)）：TraineeBench 背后的统一 environment / harness 框架，提供 workspace manager、virtual clock、tool gateway、trajectory/evaluation pipeline 和可视化 trace viewer，适合研究动态任务调度与持续学习型 workplace agent。
+- [Reliable Database Question Answering with Collaborative Agents](https://doi.org/10.1109/icassp55912.2026.11463606)：面向数据库问答的协作式智能体方案，可作为数据工作流中多角色协同规划查询与校验答案的参考框架。
+- [MultiVis-Agent](https://arxiv.org/abs/2601.18320)：面向跨模态数据可视化的多智能体框架，通过逻辑规则协调可靠且完整的可视化工作流。
+- [kRAIG](https://arxiv.org/abs/2603.20311)：自然语言驱动的 DataOps 流水线生成智能体，面向将需求转化为可执行数据操作的真实工作场景。
+- [DAB DataAgent](https://arxiv.org/abs/2603.20576)（[开源代码](https://github.com/ucbepic/DataAgentBench)）：Data Agent Benchmark 自带的数据代理执行框架，围绕多数据库连接、Python 执行、查询日志、工具调用轨迹和 Pass@1 聚合评估组织，适合企业数据问答/分析类任务的 harness 参考。
+- [EnterpriseLab](https://arxiv.org/abs/2603.21630)（开源代码：未找到稳定公开仓库）：面向企业 agent 的全栈开发与部署平台；把 MCP 化企业应用环境、自动轨迹合成、训练流水线和持续评估接在一起，并以含 15 个应用、140+ 工具的 EnterpriseArena 实例验证，属于“企业私有化 agent harness + 数据生成 + 训练评测闭环”路线。
+- [DeepEye](https://arxiv.org/abs/2603.28889)：可操控的 self-driving data-agent system。核心思想：暴露可控制的数据分析工作流，使用户能够引导自主探索、可视化和洞察生成，而不是接受黑箱式分析运行。
+- [Claw-Eval Harness](https://arxiv.org/abs/2604.06132)（[开源代码](https://github.com/claw-eval/claw-eval)）：围绕 OpenClaw 风格 agent 运行多类真实任务，强调三路证据记录、细粒度 rubric、Pass^k 稳定性和安全/鲁棒性检查，适合做可部署 agent 的回归评测框架。
+- [AV-SQL](https://arxiv.org/abs/2604.07041)：通过 agentic views 分解复杂 Text-to-SQL 查询，将中间查询视图纳入智能体工作流，而不是依赖一次性 SQL 生成。
+- [ClawBench Browser Harness](https://arxiv.org/abs/2604.08523)（[开源代码](https://github.com/reacher-z/ClawBench)）：围绕真实浏览器会话构建任务录制、HTTP 拦截、轨迹回放和 payload 判定流水线，适合评测会改写远端状态的浏览器 agent，同时尽量避免真的提交破坏性操作。
+- [Agentic Jackal](https://arxiv.org/abs/2604.09470)：面向 Text-to-JQL 的实时执行与语义值 grounding 框架，适合跟踪需要根据工具侧取值校验查询的数据与工作流智能体。
+- [OccuBench LWM Harness](https://arxiv.org/abs/2604.10866)（[开源代码](https://github.com/GregxmHu/OccuBench)）：把职业场景中的工具响应外包给 Language World Model，并提供 reference agent loop、fault injection、3-vote rubric verifier 与 OpenAI-compatible API 接口；其价值在于让缺少真实后端系统的职业任务也能被 agent 交互式评测。
+- [PExA](https://arxiv.org/abs/2604.22934)：面向复杂 Text-to-SQL 的并行探索智能体，通过并行搜索多个查询假设来提升数据问答工作流的稳健性。
+- [Agentic Harness Engineering](https://arxiv.org/abs/2604.25850)：把 harness 变成可观测、可迭代的对象；核心思想：用组件可见性、经验可见性和决策可见性，把 coding-agent harness 的自动演化变成可验证闭环。
+- [Claw-Eval-Live Harness](https://arxiv.org/abs/2604.28139)（[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：把 marketplace signal 到任务快照、mock service、workspace fixture、grader 与 leaderboard 聚合打通，适合构建会周期性刷新且能保留可复现快照的 workflow benchmark。
+- [DataEvolver](https://arxiv.org/abs/2605.01789)：面向自主数据构建与改进的目标驱动循环智能体框架；核心思路是把数据集构建组织成包含目标、反馈和修订的迭代工作流，而不是一次性生成步骤。
+- [WildClawBench Native Runtime Harness](https://arxiv.org/abs/2605.10912)（[开源代码](https://github.com/internlm/WildClawBench)）：用 Docker 和真实 CLI agent harness 承载长程任务，强调 agent 系统、工具运行时与模型三者共同评测，是对只测裸模型或轻量 wrapper 的现实化补充。

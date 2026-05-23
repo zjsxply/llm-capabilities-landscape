@@ -1,0 +1,14 @@
+# 2.2.1 Leaderboard
+
+- [SWE-bench Leaderboard](https://www.swebench.com/): The official entry point for SWE-bench, Lite, Verified, Multilingual, and related results; the core continuous leaderboard for repo-level issue resolving.
+- [SWE-bench Multimodal Leaderboard](https://www.swebench.com/multimodal.html): The official leaderboard for visual/frontend issue statements and JavaScript software libraries, useful for observing whether agents generalize from text-based Python fixes to multimodal software tasks.
+- [SWE-Lancer Diamond Leaderboard](https://swelancer.github.io/leaderboard/): OpenAI SWE-Lancer's public Diamond leaderboard, emphasizing realistic freelance-style software tasks and delivery evaluation closer to economic value.
+- [SWE-rebench Leaderboard](https://swe-rebench.com/leaderboard): A continuous leaderboard for decontaminated, interactive SWE tasks, useful for observing generalization to fresh GitHub issues and use of execution feedback.
+- [SWE-bench-Live Leaderboard](https://swe-bench-live.github.io/): A live leaderboard that continuously generates tasks from recent GitHub issues and PRs, focused on reducing the risk that static benchmarks are memorized or overfit.
+- [SWE-MERA Leaderboard](https://mera-evaluation.github.io/demo-swe-mera/): A dynamic leaderboard that supports viewing results by task collection time window, useful for contamination-aware temporal-slice comparisons.
+- [CodeClash Leaderboard](https://codeclash.ai/): A goal-oriented, multi-round tournament-style software-engineering leaderboard, suitable for evaluating long-term code maintenance, log analysis, and self-driven strategy improvement.
+- [Holistic Agent Leaderboard](https://hal.cs.princeton.edu/): A cross-task agent leaderboard covering SWE-bench Verified, SWE-bench Multimodal, SWE-Lancer Diamond, and other tasks, useful for comparing the generality of different agent harnesses.
+- [SWE-PolyBench Leaderboard](https://amazon-science.github.io/SWE-PolyBench/): A multilingual repository-level coding-agent leaderboard; its value is in providing data, containerized evaluation, and public rankings for non-Python code-agent evaluation.
+- [Multi-SWE-Bench Leaderboard](https://multi-swe-bench.github.io/): A real multi-language issue-fixing leaderboard; here multilingual refers to programming languages, making it a public reference for evaluating multilingual coding agents.
+- [Copilot Arena](https://gclef-cmu.org/research/2025copilotarena/): A code-model preference arena from real IDE usage; it complements SWE-bench-style offline test pass rates with developer preferences, interaction context, and in-the-wild usage signals.
+- [Aider Polyglot Leaderboard](https://aider.chat/docs/leaderboards/): A practical multilingual code-editing leaderboard; while not a paper-style benchmark, its tasks and implementation are public and useful for quick comparison of multilingual code-editing ability.

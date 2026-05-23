@@ -1,0 +1,8 @@
+# 1.2.1 Leaderboard
+
+- [Humanity's Last Exam](https://lastexam.ai/): a public leaderboard for expert-level cross-disciplinary knowledge and reasoning. Its value is using difficult science, math, humanities, and professional questions as a stress test for the upper bound of model knowledge.
+- [HLE-Rolling](https://agi.safe.ai/): the dynamic update/submission entry point for Humanity's Last Exam. Its value is reducing contamination, errors, and saturation in the public HLE through continuous revision, new questions, and live submission.
+- [PaperBench Results](https://github.com/openai/preparedness/blob/main/project/paperbench/README.md): public results for AI research agents that reproduce papers. Its value is separating rollout, reproduction, and grading, making end-to-end scientific-reproduction capability easier to compare.
+- [AstaBench Leaderboard](https://huggingface.co/spaces/allenai/asta-bench-leaderboard): a public leaderboard for a comprehensive scientific-agent suite. Its value is covering research skills such as literature retrieval, code execution, data analysis, and end-to-end scientific discovery.
+- [ResearchCodeBench Leaderboard](https://researchcodebench.github.io/leaderboard/index.html): a public leaderboard for implementing research code from recent ML papers. It is suitable as a more code-implementation-oriented reference beyond PaperBench and EXP-Bench.
+- [SciVisAgentBench Leaderboard](https://scivisagentbench.github.io/leaderboard.html): a leaderboard for scientific data analysis and visualization agents. Its value is bringing scientific data understanding, analysis decisions, and graphical expression into comparable evaluation.

@@ -1,0 +1,5 @@
+# 1.8.1 Leaderboard
+
+- [LiveBench Mathematics](https://livebench.ai/) ([code](https://github.com/LiveBench/LiveBench)): The mathematics sub-leaderboard in LiveBench updates its questions over time, making it suitable for comparing mathematical capability within a broader general-model leaderboard.
+- [FrontierMath / Epoch Benchmarking Hub](https://epoch.ai/benchmarks/frontiermath): An expert-level mathematics leaderboard maintained by Epoch AI, including private sets, public sample questions, and a log viewer; especially suitable for observing difficult mathematical solving settings with executable Python and formal answer functions.
+- [MathArena](https://matharena.ai/?view=problem) ([model page](https://matharena.ai/models?page=1&q=); [output data](https://huggingface.co/MathArena)): One of the most practical continuous competitive-math leaderboards today, publishing problem-level scores, raw outputs, and model-level aggregate results for tasks such as AIME, HMMT, USAMO, IMO, Project Euler, and Apex.

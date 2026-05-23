@@ -11,9 +11,12 @@
 - 英文写在 `*.md`
 - 中文写在 `*.zh.md`
 
-编号研究图谱文档使用按语言区分的目录：
-- 英文写在 `docs/en/*.md`
-- 中文写在 `docs/zh/*.md`
+编号研究图谱文档使用按语言区分的目录树：
+- 英文写在 `docs/en/<chapter>/<topic>/`
+- 中文写在 `docs/zh/<chapter>/<topic>/`
+
+如果某个主题被拆成多个小节文件，主题概览统一使用 `README.md`。小节文件使用第三级序号和 slug，例如 `03-bench.md`。
+引言章是例外：它直接使用 `docs/<lang>/00-introduction/` 下的二级 Markdown 文件，例如 `01-landscape-structure.md`。
 
 中英文编号文档必须使用相同的基础文件名。
 `docs/zh/` 下的中文文件不要再添加 `.zh` 后缀。

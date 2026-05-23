@@ -1,0 +1,61 @@
+# 2.11.3 Bench
+
+- [CALVIN](https://arxiv.org/abs/2112.03227)：评测语言条件下的长程机器人操作。核心思想：用模拟桌面环境和语言指令测试 agent 是否能在长时程中组合操作技能。
+- [MineDojo](https://arxiv.org/abs/2206.08853)：评测 Minecraft 中的开放式具身 agent，并引入互联网规模知识资源。核心思想：用丰富、长程的 sandbox 环境测试语言目标下的探索、工具使用、合成、导航和任务完成。
+- [VIMA-Bench](https://arxiv.org/abs/2210.03094)：评测多模态提示下的通用机器人操作。核心思想：用文本、图像和对象引用组合描述操作任务，比纯语言条件控制更贴近 vision-language-action grounding。
+- [LIBERO](https://arxiv.org/abs/2306.03310)：评测终身机器人学习中的知识迁移。核心思想：把机器人操作任务组织成多个 suite，测试 agent 是否能跨对象、布局和任务族复用技能并适应变化。
+- [VLABench](https://arxiv.org/abs/2412.18194)：评测带长程推理任务的语言条件机器人操作。核心思想：提供多类操作任务和组合式指令，使 VLA 模型同时接受任务推理、grounding 与动作序列执行检验。
+- [ECBench](https://arxiv.org/abs/2501.05031)（[开源代码](https://github.com/Rh-Dang/ECBench)）：评测多模态基础模型的第一视角具身认知。核心思想：从 agent-centered 视角测试自我认知、动态场景感知与幻觉，比静态图像问答更接近具身操作。
+- [Text2World](https://arxiv.org/abs/2502.13092)：评测 LLM 生成符号世界模型的能力。核心思想：把自然语言环境描述转换为可执行的符号模型，从而检验模型是否能表示规划所需的状态、动作和动态规则。
+- [Openfly](https://arxiv.org/abs/2502.18041)：评测空中视角的视觉语言导航 agent。核心思想：提供综合性的空中导航平台，使模型必须把视觉观察、语言目标、空间推理和飞行动作连接起来，而不是只回答静态导航问题。
+- [EXPRESS-Bench](https://arxiv.org/abs/2503.11117)：评测探索感知的具身问答能力。核心思想：把 3D 探索轨迹与问答任务、探索感知指标结合起来，使 agent 同时接受证据收集和后续推理评估。
+- [HA-VLN](https://arxiv.org/abs/2503.14229)：评什么：含动态多人互动的离散-连续环境中的 human-aware vision-language navigation。核心思想：结合真实验证和开放 leaderboard，让导航 agent 不只按路线完成度评分，也要看社会感知能力。
+- [OvercookedV2](https://arxiv.org/abs/2503.17821)：在 Overcooked 风格的具身多智能体环境中评测 zero-shot coordination。核心思想：压力测试 agent 是否能推断队友行为、分工协作，并在可执行协作任务中从配合失败中恢复。
+- [SHREC](https://arxiv.org/abs/2504.13898)：评测真实人机具身对话中的社会推理能力。核心思路是使用真实交互视频、社会错误标注、理由和纠正任务，使具身智能体不只按导航或操作成功率评测，也能暴露细微的对话与社会行为失效。
+- [Robotouille](https://openreview.net/forum?id=OhUoTMxFIH)：评测具身任务设置中 LLM agent 的异步规划能力。核心思想：要求 agent 在延迟或异步执行条件下规划与协调，而不是假设单一即时动作循环。
+- [ManiSkill-HAB](https://openreview.net/forum?id=6bKEWevgSd)：评测家居重排任务中的低层操作能力。核心思想：把家居重排目标连接到操作原语，测试具身 agent 是否能完成接地的物体处理，而不是只做高层导航。
+- [HASARD](https://openreview.net/forum?id=5BRFddsAai)：评测具身 agent 的视觉安全强化学习。核心思想：把安全约束显式放进具身环境，使模型在完成任务的同时避开危险。
+- [TPT-Bench](https://arxiv.org/abs/2505.07446)：评测机器人第一视角下的目标人物跟踪；核心思想是用长时段、拥挤且非结构化的场景测试具身 agent 能否在遮挡、干扰人物和视角变化下持续跟踪指定目标。
+- [UAV-Flow Colosseo](https://arxiv.org/abs/2505.15725)：评测真实飞行场景中的语言条件 UAV 模仿学习。核心思路是把自然语言指令和空中轨迹对齐，使具身空中智能体接受落地飞行动作评测，而不只是被动理解场景。
+- [TrackVLA / EVT-Bench](https://arxiv.org/abs/2505.23189)（[项目页](https://pku-epic.github.io/TrackVLA-web)）：评估合成与真实环境中的具身视觉跟踪。核心思路是要求自中心智能体在遮挡和高动态场景中同时识别目标并规划轨迹，把视觉跟踪从被动感知推进到具身 VLA 能力评测。
+- [CheckManual](https://openaccess.thecvf.com/content/CVPR2025/html/Long_CheckManual_A_New_Challenge_and_Benchmark_for_Manual-based_Appliance_Manipulation_CVPR_2025_paper.html)：评测基于说明书的电器操作。核心思想：把文档/说明书理解绑定到物理动作规划，要求 agent 提取程序性知识并用于操作。
+- [RoboTwin](https://openaccess.thecvf.com/content/CVPR2025/html/Mu_RoboTwin_Dual-Arm_Robot_Benchmark_with_Generative_Digital_Twins_CVPR_2025_paper.html)：评测带生成式数字孪生的双臂机器人操作。核心思想：用生成的交互式仿真场景和专家示范，在更多样的物体与布局条件下测试协同操作。
+- [Orak](https://arxiv.org/abs/2506.03610)：评测并支持训练跨 12 类视频游戏的 LLM agent。核心思想：用 MCP-based 接口、游戏轨迹、leaderboard、battle arena 和 agent module 消融研究可执行游戏 agent。
+- [WorldPrediction](https://arxiv.org/abs/2506.04363)：评测高层 world modeling 与长程程序化规划。核心思想：检验 agent 能否预测抽象未来状态并跨较长 horizon 组织流程，补充更偏生成动态一致性的视频 world-model benchmark。
+- [HEAL](https://arxiv.org/abs/2506.15065)：评估 LLM 驱动具身智能体在场景与任务不一致时的幻觉。核心思路是构造与观察环境冲突的目标或条件，检验智能体在行动前是否真正完成环境 grounding。
+- [EmbodiedBench](https://proceedings.mlr.press/v267/yang25f.html)（[开源代码](https://github.com/EmbodiedBench/EmbodiedBench)）：评测多模态大语言模型作为视觉驱动具身 agent 的能力。核心思想：把具身感知、规划和动作任务放进统一 benchmark，考察基于视觉观测操作的 VLM/LLM agent。
+- [VLN-PE](https://arxiv.org/abs/2507.13019)：在更接近真实物理约束的机器人形态中评估视觉语言导航。核心思路是比较人形、四足和轮式机器人上的导航流程，使具身导航不再只依赖理想化运动假设。
+- [UAV-ON](https://arxiv.org/abs/2508.00288)：评测空中 agent 的开放世界目标物体导航。核心思想：测试 UAV agent 能否结合视觉感知和空间探索在开放环境中找到目标物体，将具身导航从地面场景扩展到空中视角。
+- [Kitchen-R](https://arxiv.org/abs/2508.15663)：基于 IsaacSim 的移动操作基准，联合评测任务规划与底层控制策略。核心思想：连接高层指令跟随和底层机器人控制评测，使完整 embodied 系统能够端到端被衡量。
+- [Follow-Bench](https://arxiv.org/abs/2509.10796)：评测具备社会感知的机器人跟随行人运动规划。核心思想：测试 embodied agent 能否在跟随目标的同时遵守社会导航约束，而不是只优化几何路径效率。
+- [ConEQsA](https://arxiv.org/abs/2509.11663)：评测并发、异步的具身问题调度与回答。核心思想：把 EQA 从单问题扩展到不同到达时间和紧急度的多问题设置，要求 agent 结合共享记忆、优先级、探索与回答时机。
+- [MoMa-Kitchen](https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_MoMa-Kitchen_A_100K_Benchmark_for_Affordance-Grounded_Last-Mile_Navigation_in_Mobile_ICCV_2025_paper.html)：评测移动操作中的 affordance-grounded 最后一段导航。核心思想：不仅看机器人是否接近目标，还看停止位置是否让后续操作可行。
+- [VideoGameBench](https://vgbench.com/#leaderboard)：评测视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏世界中，用任务完成与轨迹质量评估 agent 是否能把视觉空间关系转成动作。
+- [SAGE-Bench](https://arxiv.org/abs/2510.21307)：在语义化且物理可执行的 3D Gaussian 环境中评测视觉语言导航。核心思想是为 3DGS 场景加入对象语义和碰撞感知执行接口，使导航智能体在逼真且可行动的空间中接受测试。
+- [CityEQA](https://aclanthology.org/2025.emnlp-main.630/)：评测城市尺度空间中的 embodied question answering。核心思想：把语言 agent 放入层级城市环境，回答问题需要导航、空间推理和证据收集，而不是静态场景识别。
+- [UAVBench](https://arxiv.org/abs/2511.11252)：用 LLM 生成的飞行场景评测自主和智能体式 UAV 系统。核心思路是通过场景生成扩展空中智能体任务，在多样飞行目标下测试感知、规划和控制。
+- [RoboAfford](https://doi.org/10.1145/3746027.3758209)：评测机器人操作中的物体与空间 affordance learning。核心思想：把可行动 affordance 作为目标，检验具身模型能否从视觉空间语境中推断物体如何被使用和操作。
+- [RoboAfford++](https://arxiv.org/abs/2511.12436)：评测机器人操作与导航中的多模态 affordance learning。核心思想：用生成式 AI 增强数据扩展 affordance 监督，使 agent 能连接物体、空间语境、可行动作以及导航/操作决策。
+- [Embodied4C](https://arxiv.org/abs/2512.18028)：评测具身视觉语言导航中真正影响导航成功的关键能力。核心思路是在最终成功率之外，诊断导航代理在具身环境中的感知定位、上下文利用、常识判断和控制相关推理。
+- [VLNVerse](https://arxiv.org/abs/2512.19021)：评测多样化具身仿真环境中的视觉语言导航；核心思想是结合真实感场景、具身导航任务与标准化评测，让 agent 在感知 grounding、空间推理和动作执行上接受测试，而不只是回答静态导航问题。
+- [α3-Bench](https://arxiv.org/abs/2601.03281)：评估 6G 网络环境中的 LLM-based UAV agents。核心思想：联合衡量安全性、鲁棒性与效率，使空中智能体评价覆盖通信约束和运行可靠性，而不只看导航成功率。
+- [AirNav](https://arxiv.org/abs/2601.03707)：用包含自然多样指令的大规模数据集评估 UAV vision-language navigation。核心思想：测试空中智能体能否把语言目标落到视觉观测中，并在真实指令变化下完成导航。
+- [P2Maze](https://doi.org/10.1109/SoutheastCon63549.2026.11476499)：在配对仿真与真实协议下评测机器人迷宫导航。核心思想：用匹配的迷宫任务衡量具身导航策略的零样本迁移和少样本适应。
+- [Autonomous UAV Visual Object Search in City Space](https://doi.org/10.1609/aaai.v40i22.38898)：评测城市尺度环境中的 UAV 视觉目标搜索。核心思路是把基准和智能体式搜索方法结合起来，衡量空中智能体的开放视觉找目标、探索和导航决策能力。
+- [LMEE-Bench](https://arxiv.org/abs/2601.10744)：评测具身探索中的长期情景记忆。核心思想：结合多目标导航和基于记忆的问答，使 agent 同时在探索过程和后续经验利用上被评分。
+- [VisGym](https://arxiv.org/abs/2601.16973)：在 17 个多步视觉交互环境中评测多模态 agent。核心思想：通过可调难度、时程、反馈与观测形式，测试谜题、真实图像任务、导航和操作中的感知、记忆、规划与行动。
+- [EmboCoach-Bench](https://arxiv.org/abs/2601.21570)：评测 AI agent 开发具身机器人的能力。核心思想：把机器人开发工作流转化为带明确协议和评分方式的可比较任务。
+- [Beyond Binary Success](https://arxiv.org/abs/2603.13616)：评什么：硬件 rollout 受限条件下样本高效、统计严谨的机器人策略比较。核心思想：用覆盖二元、部分得分和连续机器人指标的 sequential anytime-valid 检验，替代脆弱的二元成功率平均。
+- [PokeAgent Challenge](https://arxiv.org/abs/2603.15563)：在 Pokemon 对战和 RPG 速通环境中评测具身决策。核心思想：在可执行游戏环境里结合部分可观测、竞争式多 agent 推理、长程规划和标准化 baseline。
+- [HUGE-Bench](https://arxiv.org/abs/2603.19822)：评测高层 UAV vision-language-action 任务。核心思想：用简短操作指令、digital-twin 场景、过程型轨迹和安全感知评分，测试空中 agent 是否能执行复杂多阶段行为，而不只是跟随路线描述。
+- [IndoorR2X](https://arxiv.org/abs/2603.20182)：评测结合 Robot-to-Everything 感知的 LLM 驱动室内多机器人规划。核心思想：把移动机器人观察与静态 IoT 传感器结合起来，测试 agent 能否在部分可观测和共享语义状态下协同。
+- [CaP-X](https://arxiv.org/abs/2603.22435)：评测并改进面向机器人操作的编码智能体。核心思路是把代码生成、具身操作任务和执行反馈连接起来，使机器人控制智能体的比较不止停留在静态程序合成。
+- [Urban Airspace Spatial Action Benchmark](https://arxiv.org/abs/2604.07973)：评测城市空域中的目标导向具身导航；核心思想是测试大型多模态模型能否把空间感知和语言目标转化为空中导航动作，而不只是回答被动空间问题。
+- [SCOPE](https://doi.org/10.1145/3757279.3785641)：用 sim-to-real benchmark 评测自然语言 PTZ 摄像机 agent。核心思想：测试视觉语言 agent 能否在边缘运行约束下把语言目标映射为 pan-tilt-zoom 动作。
+- [Spatial-Gym](https://arxiv.org/abs/2604.09338)：评测 agent 能否把空间推理转成连续动作。核心思想：用 Gymnasium 风格交互 benchmark 覆盖 pathfinding、backtracking 与 action-level scoring，而不是只做被动空间问答。
+- [E3VS-Bench](https://arxiv.org/abs/2604.17969)：评测 3D Gaussian Splatting 场景中的视角依赖主动感知。核心思想：让具身 agent 通过 5-DoF 视角移动发现遮挡、容器内部或属性依赖证据，而不是只基于静态观察回答。
+- [Capability-Oriented Failure Attribution for VLN Agents](https://arxiv.org/abs/2604.25161)：评测视觉语言导航 agent 在不同能力环节的失败来源。核心思想：结合自适应测试用例生成、能力专属 oracle 和反馈式归因，把导航失败定位到感知、记忆、规划或决策弱点，而不只看最终成功率。
+- [Minedojo-Verified](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的 embodied-agent 视觉任务 verified 子集；目前未确认有独立公开版本。核心思想：跟踪前沿多模态 agent 是否能在交互环境中完成感知 grounding、规划和动作执行，而不只是在静态截图上答题。
+- [ESARBench](https://arxiv.org/abs/2605.01371)：评估无人机具身智能体的搜索与救援能力。核心思路是把空中智能体放入搜救场景中，同时考察感知、导航、任务规划和动作执行，而不是只评价静态视觉理解。
+- [OmniNavBench](https://arxiv.org/abs/2605.09441)：评测跨技能、跨具身形态的通用具身导航。核心思想：用覆盖 PointNav、VLN、ObjectNav、SocialNav、跟随人类和 EQA 的复合指令，要求 agent 协调子技能并跨机器人形态泛化，而不是只解决孤立导航任务。
+- [PokéLLMon](https://doi.org/10.1145/3771095)：评测大语言模型 agent 在 Pokémon 对战中的 grounding 与推理能力。核心思想：使用可执行的竞技游戏环境，要求 agent 结合战斗状态、属性与招式知识、对手行为和动作选择，而不是回答静态游戏知识题。

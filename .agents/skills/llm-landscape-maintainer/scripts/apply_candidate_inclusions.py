@@ -9,6 +9,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from landscape_paths import paired_zh_path, resolve_english_target_doc
+
 
 INCLUDE_STATES = {"include", "included", "accept", "accepted"}
 
@@ -74,26 +76,31 @@ def status_of(item: dict[str, Any]) -> str:
 
 
 def find_section_bounds(lines: list[str], section: str) -> tuple[int, int]:
-    exact_heading = f"## {section}"
     start: int | None = None
+    start_level = 0
     for index, line in enumerate(lines):
-        if line.rstrip("\n") == exact_heading:
+        match = re.match(r"^(#{1,6})\s+(.+?)\s*$", line.rstrip("\n"))
+        if match and match.group(2) == section:
             start = index
+            start_level = len(match.group(1))
             break
     if start is None:
         match = re.match(r"(\d+(?:\.\d+)+)\b", section)
         if match:
-            prefix = f"## {match.group(1)} "
+            heading_re = re.compile(rf"^(#{{1,6}})\s+{re.escape(match.group(1))}\s+")
             for index, line in enumerate(lines):
-                if line.startswith(prefix):
+                heading_match = heading_re.match(line)
+                if heading_match:
                     start = index
+                    start_level = len(heading_match.group(1))
                     break
     if start is None:
         raise RuntimeError(f"section not found: {section}")
 
     end = len(lines)
     for index in range(start + 1, len(lines)):
-        if lines[index].startswith("## "):
+        match = re.match(r"^(#{1,6})\s+", lines[index])
+        if match and len(match.group(1)) <= start_level:
             end = index
             break
     return start, end
@@ -214,12 +221,12 @@ def collect_records(
 
 
 def apply_records(root: Path, records: list[dict[str, Any]], *, dry_run: bool) -> dict[str, int]:
-    en_groups: dict[tuple[str, str], list[str]] = {}
-    zh_groups: dict[tuple[str, str], list[str]] = {}
+    en_groups: dict[tuple[Path, str], list[str]] = {}
+    zh_groups: dict[tuple[Path, str], list[str]] = {}
     for item in records:
-        en_doc = str(item["target_doc"])
-        zh_doc = en_doc.replace("docs/en/", "docs/zh/", 1)
         section = str(item["section"])
+        en_doc = resolve_english_target_doc(str(item["target_doc"]), section)
+        zh_doc = paired_zh_path(en_doc)
         en_groups.setdefault((en_doc, section), []).append(str(item["english_bullet"]))
         zh_groups.setdefault((zh_doc, section), []).append(str(item["chinese_bullet"]))
 
@@ -227,11 +234,11 @@ def apply_records(root: Path, records: list[dict[str, Any]], *, dry_run: bool) -
     for (doc, section), bullets in sorted(en_groups.items()):
         path = root / doc
         count = insert_bullets(path, section, bullets, dry_run=dry_run)
-        totals[doc] = totals.get(doc, 0) + count
+        totals[str(doc)] = totals.get(str(doc), 0) + count
     for (doc, section), bullets in sorted(zh_groups.items()):
         path = root / doc
         count = insert_bullets(path, section, bullets, dry_run=dry_run)
-        totals[doc] = totals.get(doc, 0) + count
+        totals[str(doc)] = totals.get(str(doc), 0) + count
     return totals
 
 

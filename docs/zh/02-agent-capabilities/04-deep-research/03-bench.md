@@ -1,0 +1,51 @@
+# 2.4.3 Bench
+
+- [ResearchArena](https://arxiv.org/abs/2406.10291)：评测学术调研与综述生成；核心思想是把“检索文献 -> 对比方法 -> 写出结构化 survey”做成可评分的研究型 benchmark。
+- [ResearchRubrics](https://arxiv.org/abs/2412.02077)（[开源代码](https://github.com/scaleapi/researchrubrics)）：评测研究型长文产出质量；核心思想是用 rubric 将“覆盖、证据、引用、可复核性、结构与写作质量”等维度显式化并可比。
+- [BrowseComp-ZH](https://arxiv.org/abs/2504.19314)（[开源代码](https://github.com/PALIN2018/BrowseComp-ZH)；[Leaderboard](https://huggingface.co/spaces/PALIN2018/BrowseComp-ZH)；[Deep Research SOTA on BrowseComp-ZH](https://www.wizwand.com/sota/deep-research-on-browsecomp-zh-score)）：评测中文互联网环境中的高难网页浏览与多跳检索推理；核心思想是把中文网页生态中的平台碎片化、跨页检索与信息整合难点显式 benchmark 化，常被 deep-search/deep-research agent 用作 SOTA 对照。
+- [Deep Research Bench](https://arxiv.org/abs/2506.06287)（[Leaderboard](https://drb.futuresearch.ai/)）：评测可复现网页研究 agent；核心思想是用 89 个多步骤网页研究任务和 frozen `RetroSearch` 网页语料，避免 live web 漂移，同时审计长轨迹中的工具使用、遗忘与幻觉。
+- [DeepResearch Bench](https://arxiv.org/abs/2506.11763)（[主页](https://deepresearch-bench.github.io/)；[开源代码](https://github.com/Ayanami0730/deep_research_bench)）：评测 deep research agent 在 22 个领域上的长链路检索、证据组织与报告生成能力；核心思想是联合 `RACE` 与 `FACT` 两套协议，分别衡量报告质量与引用可信度。
+- [Characterizing Deep Research](https://arxiv.org/abs/2508.04183)：评测 deep research 的宽域概念探索能力；核心思想是在形式化定义里把 deep research 和普通长文问答区分开，强调高 fan-out、跨概念检索与推理密集的信息探索。
+- [BrowseComp-VL](https://arxiv.org/abs/2508.05748)：多模态 deep research 的补充评测子基准；核心思想是把视觉网页证据纳入 deep research 轨迹合成与评测。
+- [BrowseComp-Plus](https://arxiv.org/abs/2508.06600)（[开源代码](https://github.com/texttron/BrowseComp-Plus)）：评测固定语料库上的 deep research agent；核心思想是从 BrowseComp 派生出可控文档集合、人工核验支持文档和 hard negatives，让研究者能分离检索质量、引用准确性与 agent 上下文工程。
+- [ReportBench](https://arxiv.org/abs/2508.15804)（[开源代码](https://github.com/ByteDance-BandAI/ReportBench)）：评测 deep research agent 生成学术综述报告的质量；核心思想是从专家综述反推任务，并分别检查引用文献相关性、引用支撑关系和非引用事实正确性。
+- [DeepScholar-Bench](https://arxiv.org/abs/2508.20033)（[开源代码](https://github.com/guestrin-lab/deepscholar)）：评测生成式学术研究综合；核心思想是从近期高质量 arXiv 论文抽取任务，让系统检索、综合并引用相关工作，自动衡量知识综合、检索质量与可验证性。
+- [DeepTRACE](https://arxiv.org/abs/2509.04499)：评测 deep research 与生成式搜索系统的证据追踪可靠性；核心思想是把答案、来源和引用拆成 statement-level 支撑矩阵，审计结论是否真的被引用证据支持。
+- [DRBench](https://arxiv.org/abs/2510.00172)（[开源代码](https://github.com/ServiceNow/drbench)，[数据集](https://huggingface.co/datasets/ServiceNow/drbench)）：评测企业 deep research。核心思想：要求 agent 跨公开网页、私有文件、邮件、聊天和生产力工具检索证据并生成带引用报告，明确区别于已有的 Dr. Bench。
+- [Dr. Bench](https://arxiv.org/abs/2510.02190)：评测 deep research agent 从短答案到完整报告的多维表现；核心思想是同时覆盖任务分解、跨源检索、多阶段推理、信息整合和结构化输出，避免只按最终答案评分。
+- [LiveResearchBench](https://arxiv.org/abs/2510.14240)（[主页](https://livedeepresearch.github.io/)；[开源代码](https://github.com/SalesforceAIResearch/LiveResearchBench)）：评测面向真实动态网页环境的用户中心 deep research；核心思想是以 live、user-centric、multi-faceted 任务和 `DeepEval` 多协议评测，显式考察实时检索、综合分析与引用关联质量。
+- [Deep Research Arena](https://www.deepresearcharena.com/)：评什么：公开 deep research 对战与榜单式比较。核心思想：把产品化 deep research 系统、开源 harness 和商业 agent 放在持续 arena 入口中比较，补充论文 benchmark 对真实部署系统覆盖不足的问题。
+- [DeepWideSearch](https://arxiv.org/abs/2510.20168)：评测 agentic information seeking 中“深度多跳推理”和“宽域信息收集”的同时满足能力；核心思想是要求 agent 在大量候选信息里完成多跳检索路径推理，暴露反思不足、检索不足和上下文溢出等失败模式。
+- [DEER](https://arxiv.org/abs/2512.17776)：评测 deep research agent 的专家级报告生成；核心思想是用专家报告任务同时考察报告质量、领域专业性和 report-wide claim verification，减少只看文风或局部引用的偏差。
+- [DeepSynth-Eval](https://arxiv.org/abs/2601.03540)：评测 deep survey writing 中的检索后信息整合。核心思想：提供 oracle context 和 checklist 式客观评分，把 synthesis 质量与 retrieval 质量拆开看。
+- [Over-Searching](https://arxiv.org/abs/2601.05503)：评测 search-augmented agent 的另一类失败：过度搜索。核心思想：用搜索效率指标衡量不必要检索、噪声证据吸收，以及成本与质量之间的折中。
+- [IDRBench](https://arxiv.org/abs/2601.06676)：评测交互式 deep research 代理；核心思想是把研究过程展开为多轮检索、计划更新与证据整合，强调过程质量而不是只看最终成稿。
+- [Video Deep Research Benchmark](https://arxiv.org/abs/2601.06943)：评什么：开放网页上的视频深度研究。核心思想：让 agent 同时观看、检索和推理视频证据，评估长视频理解、网页搜索和跨模态证据整合的闭环能力。
+- [DeepResearch Bench II](https://arxiv.org/abs/2601.08536)（[开源代码](https://github.com/imlrz/DeepResearch-Bench-II)）：评什么：深研报告的 rubric 诊断。核心思想：把专家报告拆成可核验条目，直接看信息找回、分析和呈现。
+- [DeepResearchEval](https://arxiv.org/abs/2601.09688)：评测 deep research 的自动任务构造与 agentic evaluation。核心思想：生成 persona-driven 任务，并在报告缺少可靠引用时主动 fact-check。
+- [DR-Arena](https://arxiv.org/abs/2601.10504)：用动态 trend-grounded 任务评测 deep research agent。核心思想：从近期主题构建信息树并自适应提高任务难度，需要与已有 Deep Research Arena 对战网站区分开。
+- [MMDeepResearch-Bench](https://arxiv.org/abs/2601.12346)：评测多模态 deep research agent。核心思想：把图文证据收集、长报告综合、引用对齐和视觉证据完整性检查放进同一 benchmark。
+- [TaxoBench](https://arxiv.org/abs/2601.12369)：评测 deep research agent 能否检索并组织一个领域。核心思想：把检索到的论文和 taxonomy tree 与专家 taxonomy 对比，而不只评报告文风。
+- [Mr Dre](https://arxiv.org/abs/2601.13217)：评测 deep research agent 的多轮报告修订。核心思想：看 agent 能否吸收用户反馈，同时保留引用支撑并避免已正确部分退化。
+- [DeepSearchQA](https://arxiv.org/abs/2601.20975)：评测 deep research agent 的高难多步信息搜索。核心思想：用跨领域、要求穷尽答案的任务检查 agent 是否搜得足够广、能否管理长证据链，以及是否会在只找到部分答案后过早停止。
+- [ScholarGym](https://arxiv.org/abs/2601.21654)：评什么：deep research 信息收集阶段。核心思想：把“先找资料、再研究”的前半段单独 benchmark 化，直接测 agent 能否定位、筛选和组织高价值来源。
+- [Deep Research Hallucination Evaluation](https://arxiv.org/abs/2601.22984)：评什么：完整深研轨迹中的幻觉。核心思想：不只查最终报告事实错误，还沿搜索、阅读、笔记和引用链审计幻觉如何在过程中产生并传播。
+- [Wiki Live Challenge](https://arxiv.org/abs/2602.01590)：评什么：专家级 Wikipedia 条目写作式 deep research。核心思想：用动态百科条目需求逼迫 agent 做广泛检索、证据归纳和可引用写作，减少静态问答泄漏。
+- [Vision-DeepResearch Benchmark](https://arxiv.org/abs/2602.02185)（[开源代码](https://github.com/Osilly/Vision-DeepResearch)）：评什么：视觉与文本混合搜索的深研能力。核心思想：把视觉网页证据、图片检索和文本证据放进同一 deep research 任务，诊断多模态搜索是否真正提升报告质量。
+- [When Is Enough Not Enough?](https://arxiv.org/abs/2602.07549)：评什么：搜索 agent 的过早停止与虚假完成感。核心思想：构造“看似已经找到答案但仍缺关键证据”的任务，评估 agent 何时继续检索、何时停止。
+- [DRACO](https://arxiv.org/abs/2602.11685)：评测跨领域真实用户式研究问题上的 deep research 准确性、完整性与客观性。核心思想：用专家撰写 rubric 分别评分事实性、广度与深度、引用支撑和呈现质量。
+- [DREAM](https://arxiv.org/abs/2602.18940)：用 agentic metrics 评测 deep research。核心思想：让 evaluator 本身使用工具并自适应选择指标，从而检查 temporal validity、事实正确性与任务相关证据，而不是只靠静态 rubric。
+- [DEEPSYNTH](https://arxiv.org/abs/2602.21143)（[开源代码](https://github.com/agentdeepsynthesis/deepsynth-bench)）：评测跨来源深度信息综合；核心思想是用 120 个跨 7 个领域的真实耗时任务，要求 agent 收集官方数据源、形成假设、做结构化推理并给出可核验洞见。
+- [TRACE](https://arxiv.org/abs/2602.21230)：评什么：deep research agent 的轨迹级综合评测。核心思想：用 trajectory-aware 指标同时看正确性、证据质量、效率和推理健壮性，避免只用最终分数造成 high-score illusion。
+- [DeepConsult](https://arxiv.org/abs/2602.21658)：评测面向“咨询式问题”的长链路调研与报告生成；核心思想是把 open-ended research 约束为可评分的长文产出与过程规范。
+- [Super Research](https://arxiv.org/abs/2603.00582)：评什么：超宽、超深的复杂问题研究。核心思想：把需要大规模证据收集、长期规划和异质来源综合的问题单独提出，覆盖 Deep Research 与 Wide Search 的交叉区域。
+- [DeepFact](https://arxiv.org/abs/2603.05912)：评测 deep research 报告事实性。核心思想：让 benchmark 条目和审计 agent 共同演化，使 claim-level 标签保持可修订、可证据支撑，而不是一次性固定。
+- [MyScholarQA](https://arxiv.org/abs/2603.16120)：用真实用户评测 personalized deep research。核心思想：检查 agent 是否能理解个体研究偏好与信息需求，而不是只优化通用任务报告质量。
+- [TRQA（Total Recall QA）](https://arxiv.org/abs/2603.18516)：评测深调研系统在长证据链下的事实找回与整合能力；核心思想是通过高召回要求把“搜得全不全、引得准不准”显式化。
+- [MiroEval](https://arxiv.org/abs/2603.28407)：评什么：深研系统的过程和结果。核心思想：把最终报告、事实核验和过程审计一起评。
+- [Reference Hallucination Detection](https://arxiv.org/abs/2604.03173)：评测商业 LLM 与 deep research agent 中的伪造、无效和过期引用。核心思想：区分 broken link 与 invented citation，并提供大规模 URL validity 审计工具。
+- [Towards Knowledgeable Deep Research](https://arxiv.org/abs/2604.07720)：评什么：知识增强 deep research 的框架与评测。核心思想：把外部知识组织、检索和报告生成放进同一协议，区分“会搜索”与“会形成知识结构”的差别。
+- [PaperScope](https://arxiv.org/abs/2604.11307)：评什么：跨海量科学论文的 agentic deep research。核心思想：基于 2,000 多篇 AI 论文的知识图谱，并联合正文、表格和图像证据，评测跨多篇相关论文的检索、推理、总结与问题求解。
+- [DR3-Eval](https://arxiv.org/abs/2604.14683)（[开源代码](https://github.com/NJU-LINK/DR3-Eval)）：评什么：真实、多模态、可复现的深研评测。核心思想：用用户文件、静态 sandbox 和细粒度 rubric。
+- [Cited but Not Verified](https://arxiv.org/abs/2605.06635)：评测 deep research 报告中的 source attribution。核心思想：可复现解析 Markdown 引用，再在报告尺度评估链接有效性、相关性与事实支撑。
+- [ViDR](https://arxiv.org/abs/2605.13034)：评什么：多模态深研报告与视觉证据对齐。核心思想：要求报告结论能回指到具体视觉来源，减少“引用了页面但视觉证据不支撑结论”的多模态幻觉。

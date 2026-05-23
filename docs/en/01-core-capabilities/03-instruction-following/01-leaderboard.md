@@ -1,0 +1,10 @@
+# 1.3.1 Leaderboard
+
+- [Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard): a public comprehensive leaderboard that includes IFEval. Its value is bringing verifiable instruction following into the mainstream model-evaluation ecosystem.
+- [FollowBench Leaderboard](https://github.com/YJiangcm/FollowBench): a leaderboard for multi-level complex instruction following. Its value is observing degradation as complexity increases across content, situation, style, format, and example constraints.
+- [LiveBench](https://livebench.ai/): a dynamic public leaderboard that includes an `instruction_following` category. Its value is reducing static benchmark contamination with continuously updated data and providing a runnable evaluation framework.
+- [M-IFEval Leaderboard](https://github.com/lightblue-tech/M-IFEval): a multilingual extension leaderboard for IFEval. Its value is reusing the verifiable-constraint protocol to compare instruction-following differences in languages such as French, Japanese, and Spanish.
+- [AgentIF Leaderboard](https://github.com/THU-KEG/AgentIF): a leaderboard for instruction following in agentic settings. Its value is bringing long system prompts, tool descriptions, and complex constraints into evaluation for real agent applications.
+- [MathIF Leaderboard](https://github.com/TingchenFu/MathIF): an instruction-following leaderboard for mathematical reasoning tasks. Its value is evaluating whether models can satisfy programmatically verifiable constraints while preserving reasoning correctness.
+- [IFBench Leaderboard](https://github.com/allenai/IFBench): a leaderboard for verifiable instruction-following generalization. Its value is checking whether models overfit IFEval-style templates by using unseen constraint types and multi-turn settings.
+- [IFScale Leaderboard](https://distylai.github.io/IFScale/): a leaderboard for stress-testing instruction count. Its value is observing degradation patterns as the constraint load increases from 10 to 500 simultaneous instructions.

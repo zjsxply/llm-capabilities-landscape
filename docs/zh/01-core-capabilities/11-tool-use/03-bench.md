@@ -1,0 +1,38 @@
+# 1.11.3 Bench
+
+- [API-Bank](https://arxiv.org/abs/2304.08244)（[开源代码](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank)）：评什么：tool-augmented LLM 的工具选择、参数填充与多步调用；核心思想：把工具集合与任务协议化，强调“可执行的调用轨迹”而非纯文本回答。
+- [Gorilla](https://arxiv.org/abs/2305.15334)（[开源代码](https://github.com/ShishirPatil/gorilla)）：评什么：大规模 API 连接下的函数调用/工具调用能力；核心思想：强调“与海量 API 的对齐”和函数签名约束下的可执行调用。
+- [ToolQA](https://arxiv.org/abs/2306.13304)（[开源代码](https://github.com/night-chen/ToolQA)）：评什么：通过外部工具回答问题的正确性（含多轮调用与工具返回利用）；核心思想：把“工具调用带来的信息增益”纳入评测协议，而不是只比较语言输出流畅性。
+- [ToolBench](https://github.com/OpenBMB/ToolBench)（来源工作：[ToolLLM](https://arxiv.org/abs/2307.16789)）：评什么：在大规模真实 API 集合上进行工具调用与多步执行；核心思想：把“API 规模”与“可执行评测”作为压力来源，覆盖工具检索、参数对齐与执行反馈闭环。
+- [BFCL / Berkeley Function-Calling Leaderboard](https://arxiv.org/abs/2409.00608)：评什么：函数调用（function calling）的准确性与鲁棒性（工具选择、参数对齐、schema 约束）。核心思想：用标准化函数签名与统一榜单，隔离“语言能力”与“调用正确性”。（[官方榜单](https://gorilla.cs.berkeley.edu/leaderboard)）
+- [MTU-Bench](https://openreview.net/forum?id=6guG2OlXsr)：评什么：大语言模型的多粒度工具使用能力。核心思想：把工具使用难度拆到多个子任务粒度，避免只测单次函数选择或最终答案正确性。
+- [ToolSandbox](https://aclanthology.org/2025.findings-naacl.65/)：评什么：有状态对话式工具使用。核心思想：结合用户模拟器、隐式工具状态依赖、中间里程碑和 on-policy 交互，让工具调用在变化环境中被评测，而不是只做无状态 API 调用。
+- [MCP-RADAR](https://arxiv.org/abs/2505.16700)：评什么：MCP 框架下跨数学、搜索、邮件、日历、文件和终端六类任务的工具使用能力；核心思想：同时度量答案正确性、操作准确性、调用轮次和资源效率，把 MCP 从协议支持推进到可量化的执行评测。
+- [τ-bench / τ²-Bench](https://arxiv.org/abs/2506.07982)：评什么：多轮工具使用与 API orchestration（选工具、填参、读返回、纠错与重试）。核心思想：把“工具链路的可执行正确性”做成可量化评测，而不是只看语言输出。
+- [DICE-BENCH](https://arxiv.org/abs/2506.22853)：评什么：多轮、多方对话中的工具使用能力，尤其是函数名与参数线索分散在不同轮次和参与者时的调用正确性；核心思想：用 DICE-SCORE 度量工具相关信息分散度，再通过工具依赖图合成更贴近真实对话的 function-calling 场景。
+- [ToolHop](https://aclanthology.org/2025.acl-long.150/)：评什么：围绕本地可执行工具的多跳工具使用。核心思想：用 query-driven 任务、工具依赖、执行反馈和可验证答案，测试 agent 能否跨工具链规划。
+- [CONFETTI](https://aclanthology.org/2025.acl-long.394/)：评什么：turn-level interaction 中的对话式 function calling。核心思想：用人工模拟对话覆盖追问、目标修正、歧义目标和隐含约束，测试模型能否跨对话轮保持函数调用意图。
+- [LiveMCPBench](https://arxiv.org/abs/2508.01780)（[项目页](https://icip-cas.github.io/LiveMCPBench)；[开源代码](https://github.com/icip-cas/LiveMCPBench)）：评什么：大规模、多 server MCP 工具空间中的检索、路由与组合。核心思想：提供 70 个 server 和 527 个工具，显式把“找得到工具”和“组合得对工具”作为 MCP agent 的主要瓶颈。
+- [MCP-Universe](https://arxiv.org/abs/2508.14704)（[项目页](https://mcp-universe.github.io)；[开源代码](https://github.com/SalesforceAIResearch/MCP-Universe)）：评什么：真实 MCP servers 上的长程、多域工具使用；核心思想：用导航、仓库管理、金融分析、3D 设计、浏览器自动化和网页搜索等真实 server 组合，考察 unfamiliar tools 与长上下文压力下的执行式评分。
+- [LiveMCP-101](https://arxiv.org/abs/2508.15760)：评什么：MCP-enabled agents 在真实多步查询上的压力测试与诊断。核心思想：用 101 个挑战性查询、执行计划和动态工具返回检查 MCP agent 的工具选择、调度、结果处理和失败恢复。
+- [MCPVerse](https://arxiv.org/abs/2508.16260)：评什么：真实 MCP server 生态下的 agentic tool use；核心思想：用可执行的 MCP 工具集合替代静态函数签名，考察工具发现、参数绑定、状态追踪和多步恢复。
+- [MCP-Bench](https://arxiv.org/abs/2508.20453)（[开源代码](https://github.com/Accenture/mcp-bench)）：评什么：复杂真实任务中的 MCP 工具调用 agent；核心思想：把 server/client 连接、调用轨迹记录与任务评分流程做成可复现 benchmark-side harness。
+- [MCP-AgentBench](https://arxiv.org/abs/2509.09734)：评什么：MCP-mediated tools 下真实语言 agent 的任务表现；核心思想：把 MCP 作为工具中间层，检验 agent 对工具说明、返回值、环境状态和多轮计划的统一处理能力。
+- [MCPMark](https://arxiv.org/abs/2509.24002)（[开源代码](https://github.com/eval-sys/mcpmark)）：评什么：真实、全面 MCP 使用的压力测试；核心思想：覆盖多服务器、多工具依赖、状态性任务和异常恢复，比单函数调用更贴近 MCP production workflow。
+- [VitaBench](https://arxiv.org/abs/2509.26490)：评什么：更贴近“真实应用工具链”的多步调用能力（包含多工具组合与结果校验）。核心思想：把工具调用从“单次函数预测”提升为“可执行的多步工作流”。
+- [TRAJECT-Bench](https://arxiv.org/abs/2510.04550)：评什么：agentic tool use 的完整调用轨迹质量，而不只是最终答案；核心思想：用可执行工具和细粒度指标检查工具选择、参数化、调用顺序、并行宽度和链路深度，定位“答案对但调用链错”的失败。
+- [Tool Decathlon（Toolathlon）](https://arxiv.org/abs/2510.25726)：评什么：跨 32 个应用、604 个工具的长程真实任务执行。核心思想：大量工具来自 MCP server，且每个任务有专用执行检查脚本，强调跨应用状态、工具链长度和真实初始环境。
+- [NESTFUL](https://aclanthology.org/2025.emnlp-main.1702/)：评什么：嵌套 API 调用序列。核心思想：专测一个工具调用结果需要继续作为更深层调用参数的规划模式，暴露扁平 function-calling benchmark 看不到的失败。
+- [MCP-Atlas](https://arxiv.org/abs/2602.00933)（[开源代码](https://github.com/scaleapi/mcp-atlas)）：评什么：真实 MCP server 上的多步工具编排；核心思想：用 36 个 real MCP servers、容器化 harness 和 claims-based rubric 测工具发现、参数对齐与恢复。
+- [τ³-Bench](https://sierra.ai/uk/resources/research/tau-3-bench)：评什么：把 tau 系列有状态工具调用扩展到知识检索和语音客服场景的 agentic customer-interaction 任务；核心思想：保留现实 policy、状态和工具约束，同时加入原始文本/API tau-bench 之外的知识与语音代理压力。
+- [MCP misleading tool-description measurement](https://arxiv.org/abs/2602.03580)：评测 MCP 工具描述与实现不一致时 agent 的行为。核心思想是结合大规模 MCP server 一致性分析和 agent 行为测试，使工具使用评测覆盖语义层面的描述-代码错配，而不只看参数填写。
+- [Agent-Diff](https://arxiv.org/abs/2602.11224)（[开源代码](https://github.com/agent-diff-bench/agent-diff)）：评什么：通过代码执行企业 API 任务，并在沙箱化服务副本上验证。核心思想：按预期状态差异而不是轨迹相似度判断成功，在保留真实 API 交互结构的同时让最终结果可确定、可复现。
+- [CCTU](https://arxiv.org/abs/2603.15309)：评什么：复杂约束下的 LLM 工具使用；核心思想：把资源、行为、工具集和响应四类约束显式写入任务，考察模型在选工具、遵守约束和自我修正之间能否稳定折中。
+- [WildToolBench](https://arxiv.org/abs/2604.06185)：评什么：真实用户行为下的多轮、多步工具使用；核心思想：把组合任务、跨轮隐含意图和指令切换纳入评测，避免只在人工规整任务上高估 tool-use 能力。
+- [The Amazing Agent Race（AAR）](https://arxiv.org/abs/2604.10261)（[项目页](https://minnesotanlp.github.io/the-amazing-agent-race)；[开源代码](https://github.com/minnesotanlp/the-amazing-agent-race)）：评什么：DAG 化的多步工具、网页导航与算术推理；核心思想：把导航、工具调用与结果汇总拆开诊断，专测线性 benchmark 看不到的路径选择失败。
+- [UniToolCall](https://arxiv.org/abs/2604.11557)：评什么：工具调用轨迹的统一表示、数据构造与评测。核心思想：把公开数据集和 benchmark 标准化成 Query-Action-Observation-Answer 格式，用兼容指标覆盖单轮、多轮、串行和并行工具调用结构。
+- [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：评什么：持续更新的真实 workflow agent 任务，覆盖终端、文件、网页、服务和 skill 相关工具链。核心思想：从公开 workflow-demand signals 与 ClawHub skill 信号生成带 fixture、service 和 grader 的任务快照，用可执行轨迹和产物验证评估 tool-use 迁移性。
+- [AgentEscapeBench](https://arxiv.org/abs/2605.07926)：评什么：长程依赖下的域外工具接地推理。核心思想：用 escape-room 式任务、工具与物品依赖图、隐藏状态和确定性最终答案，测试 agent 能否推断新流程，而不是复读熟悉 API workflow。
+- [When2Tool](https://arxiv.org/abs/2605.09252)（[开源代码](https://github.com/Trustworthy-ML-Lab/when2tool)）：评什么：agent 什么时候应该调用工具、什么时候应该直接回答；核心思想：把 tool necessity 显式做成评测边界，避免把“多调用工具”误判成更强的工具使用能力。
+说明：这条线更像“能否正确选工具、填参数、处理多轮 API orchestration”，不只是函数调用准确率。
+- [ComplexMCP](https://arxiv.org/abs/2605.10787)：评什么：动态、相互依赖、大规模 tool sandbox 中的 LLM agent；核心思想：把工具状态、跨工具依赖和环境变化一起纳入评分，专测 MCP 工具链在长链路执行中的脆弱点。

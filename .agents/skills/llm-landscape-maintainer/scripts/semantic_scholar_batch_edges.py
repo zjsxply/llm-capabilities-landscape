@@ -14,6 +14,8 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from landscape_paths import default_markdown_files
+
 try:
     import fcntl
 except ImportError:  # pragma: no cover - this project runs on Linux.
@@ -298,7 +300,7 @@ def write_report(path: Path, *, identifiers: list[str], fetched: int, skipped: i
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Backfill S2 citation/reference edge caches using paper/batch.")
-    parser.add_argument("files", nargs="*", type=Path, help="Markdown/text files from which to extract identifiers.")
+    parser.add_argument("files", nargs="*", type=Path, help="Markdown/text files from which to extract identifiers. Defaults to README and recursive docs.")
     parser.add_argument("--id", action="append", default=[], help="Explicit paper identifier.")
     parser.add_argument("--cache-dir", type=Path, default=Path(".tmp/semantic_citation_cache"))
     parser.add_argument("--lock-file", type=Path, default=Path(".tmp/semantic_citation_cache/api.lock"))
@@ -320,7 +322,8 @@ def main() -> int:
     args = parser.parse_args()
 
     edges = list(dict.fromkeys(args.edge or ["citations", "references"]))
-    identifiers = S2.collect_identifiers(args.files, args.id)
+    files = args.files or default_markdown_files(Path.cwd())
+    identifiers = S2.collect_identifiers(files, args.id)
     targets = [identifier for identifier in identifiers if needs_fetch(args.cache_dir, identifier, edges, args.refresh)]
     skipped = len(identifiers) - len(targets)
     print(f"Identifiers: {len(identifiers)}; batch targets: {len(targets)}; skipped: {skipped}", flush=True)

@@ -6,62 +6,63 @@
 
 ## 目录
 
-### 0. Harness 与 Skill Creator
+### 0. 引言
 
-- [0.1 什么是 Harness](docs/zh/00-01-what-is-harness.md)
-- [0.2 读 Harness 时重点看什么](docs/zh/00-02-how-to-read-harnesses.md)
-- [0.3 Skill Creator](docs/zh/00-03-skill-creator.md)
-- [0.4 偏总体验的总榜](docs/zh/00-04-overall-leaderboards.md)
-- [0.5 Benchmark 可靠性与动态评测](docs/zh/00-05-benchmark-reliability.md)
+- [0.1 内容结构](docs/zh/00-introduction/01-landscape-structure.md)
+- [0.2 偏总体验的总榜](docs/zh/00-introduction/02-overall-leaderboards.md)
+- [0.3 评测方法](docs/zh/00-introduction/03-evaluation-methodology.md)
+- [0.4 其它](docs/zh/00-introduction/04-other.md)
 
 ### 1. 基础能力
 
-- [1.1 多语言](docs/zh/01-01-multilingual.md)
-- [1.2 科学知识](docs/zh/01-02-scientific-knowledge.md)
-- [1.3 指令遵循](docs/zh/01-03-instruction-following.md)
-- [1.4 幻觉](docs/zh/01-04-hallucination.md)
-- [1.5 图像（含 OCR）](docs/zh/01-05-image-ocr.md)
-- [1.6 视频](docs/zh/01-06-video.md)
-- [1.7 空间](docs/zh/01-07-spatial.md)
-- [1.8 数学（含多模态数学）](docs/zh/01-08-math.md)
-- [1.9 通用推理（含视觉谜题）](docs/zh/01-09-general-reasoning.md)
-- [1.10 长上下文](docs/zh/01-10-long-context.md)
-- [1.11 工具调用](docs/zh/01-11-tool-use.md)
-- [1.12 终端调用](docs/zh/01-12-terminal-use.md)
-- [1.13 Skill 调用](docs/zh/01-13-skill-use.md)
-- [1.14 写作与长文生成](docs/zh/01-14-writing.md)
-- [1.15 记忆](docs/zh/01-15-memory.md)
-- [1.16 其它](docs/zh/01-16-other.md)
+- [1.1 多语言](docs/zh/01-core-capabilities/01-multilingual/README.md)
+- [1.2 科学知识](docs/zh/01-core-capabilities/02-scientific-knowledge/README.md)
+- [1.3 指令遵循](docs/zh/01-core-capabilities/03-instruction-following/README.md)
+- [1.4 幻觉](docs/zh/01-core-capabilities/04-hallucination/README.md)
+- [1.5 图像（含 OCR）](docs/zh/01-core-capabilities/05-image-ocr/README.md)
+- [1.6 视频](docs/zh/01-core-capabilities/06-video/README.md)
+- [1.7 空间](docs/zh/01-core-capabilities/07-spatial/README.md)
+- [1.8 数学（含多模态数学）](docs/zh/01-core-capabilities/08-math/README.md)
+- [1.9 通用推理（含视觉谜题）](docs/zh/01-core-capabilities/09-general-reasoning/README.md)
+- [1.10 长上下文](docs/zh/01-core-capabilities/10-long-context/README.md)
+- [1.11 工具调用](docs/zh/01-core-capabilities/11-tool-use/README.md)
+- [1.12 终端调用](docs/zh/01-core-capabilities/12-terminal-use/README.md)
+- [1.13 Skill 调用](docs/zh/01-core-capabilities/13-skill-use/README.md)
+- [1.14 写作与长文生成](docs/zh/01-core-capabilities/14-writing/README.md)
+- [1.15 记忆](docs/zh/01-core-capabilities/15-memory/README.md)
+- [1.16 其它](docs/zh/01-core-capabilities/16-other/README.md)
 
 ### 2. 基础 Agent
 
-- [2.1 竞赛编程](docs/zh/02-01-competitive-programming.md)
-- [2.2 软件开发](docs/zh/02-02-software-development.md)
-- [2.3 互联网搜索](docs/zh/02-03-web-search.md)
-- [2.4 深度研究](docs/zh/02-04-deep-research.md)
-- [2.5 计算机操作（GUI）](docs/zh/02-05-computer-use-gui.md)
-- [2.6 长时运行](docs/zh/02-06-long-running.md)
-- [2.7 现实工作](docs/zh/02-07-real-world-work.md)
-- [2.8 未来预测](docs/zh/02-08-future-prediction.md)
-- [2.9 Agent 安全](docs/zh/02-09-agent-safety.md)
-- [2.10 网络安全](docs/zh/02-10-cybersecurity.md)
-- [2.11 具身与 VLA Agent](docs/zh/02-11-embodied-vla.md)
+- [2.1 竞赛编程](docs/zh/02-agent-capabilities/01-competitive-programming/README.md)
+- [2.2 软件开发](docs/zh/02-agent-capabilities/02-software-development/README.md)
+- [2.3 互联网搜索](docs/zh/02-agent-capabilities/03-web-search/README.md)
+- [2.4 深度研究](docs/zh/02-agent-capabilities/04-deep-research/README.md)
+- [2.5 计算机操作（GUI）](docs/zh/02-agent-capabilities/05-computer-use-gui/README.md)
+- [2.6 长时运行](docs/zh/02-agent-capabilities/06-long-running/README.md)
+- [2.7 现实工作](docs/zh/02-agent-capabilities/07-real-world-work/README.md)
+- [2.8 未来预测](docs/zh/02-agent-capabilities/08-future-prediction/README.md)
+- [2.9 Agent 安全](docs/zh/02-agent-capabilities/09-agent-safety/README.md)
+- [2.10 网络安全](docs/zh/02-agent-capabilities/10-cybersecurity/README.md)
+- [2.11 具身与 VLA Agent](docs/zh/02-agent-capabilities/11-embodied-vla/README.md)
 
 ### 3. 下游应用
 
-- [3.1 配环境](docs/zh/03-01-environment-setup.md)
-- [3.2 科研](docs/zh/03-02-research.md)
+- [3.1 配环境](docs/zh/03-downstream-applications/01-environment-setup/README.md)
+- [3.2 科研](docs/zh/03-downstream-applications/02-research/README.md)
 
 ### 4. 多模态
 
-- [4.1 图片生成与编辑模型](docs/zh/04-01-image-generation-editing.md)
-- [4.2 视频生成模型](docs/zh/04-02-video-generation.md)
-- [4.3 语音模型](docs/zh/04-03-speech.md)
-- [4.4 自动驾驶](docs/zh/04-04-autonomous-driving.md)
+- [4.1 图片生成与编辑模型](docs/zh/04-multimodal/01-image-generation-editing/README.md)
+- [4.2 视频生成模型](docs/zh/04-multimodal/02-video-generation/README.md)
+- [4.3 语音模型](docs/zh/04-multimodal/03-speech/README.md)
+- [4.4 自动驾驶](docs/zh/04-multimodal/04-autonomous-driving/README.md)
 
 ## 维护方式
 
 本项目采用半自动化方式维护。最新关注热点与研究成果会从引文网络、模型厂商 model card，以及顶会最新接收论文中提取，再经 agent 辅助筛选后合并进图谱。具体流程见本仓库维护 skill：[.agents/skills/llm-landscape-maintainer/SKILL.md](.agents/skills/llm-landscape-maintainer/SKILL.md)。
+
+编号研究图谱内容按 `docs/<language>/<chapter>/<topic>/README.md` 加 `03-bench.md` 等小节文件组织；引言章直接使用 `docs/<language>/00-introduction/` 下的二级 Markdown 文件。
 
 ## English Version
 

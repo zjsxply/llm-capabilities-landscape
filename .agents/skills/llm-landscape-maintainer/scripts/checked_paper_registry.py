@@ -4,7 +4,6 @@ from __future__ import annotations
 import argparse
 import contextlib
 import datetime as dt
-import glob
 import importlib.util
 import json
 import re
@@ -12,6 +11,8 @@ import sys
 import time
 from pathlib import Path
 from typing import Any
+
+from landscape_paths import expand_markdown_args
 
 try:
     import fcntl
@@ -132,27 +133,7 @@ def locked_registry(path: Path, *, write: bool, timeout: float, wait: float):
 
 
 def expand_files(items: list[str]) -> list[Path]:
-    if not items:
-        patterns = ["README.md", "README.zh.md", "docs/en/*.md", "docs/zh/*.md"]
-    else:
-        patterns = items
-    files: list[Path] = []
-    for pattern in patterns:
-        matches = sorted(Path(match) for match in glob.glob(pattern))
-        if matches:
-            files.extend(path for path in matches if path.is_file())
-        else:
-            path = Path(pattern)
-            if path.is_file():
-                files.append(path)
-    seen: set[Path] = set()
-    result: list[Path] = []
-    for path in files:
-        key = path.resolve()
-        if key not in seen:
-            seen.add(key)
-            result.append(path)
-    return result
+    return expand_markdown_args(items)
 
 
 def sync_included(args: argparse.Namespace) -> int:

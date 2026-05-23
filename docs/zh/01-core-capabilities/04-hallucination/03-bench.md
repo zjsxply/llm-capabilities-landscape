@@ -1,0 +1,25 @@
+# 1.4.3 Bench
+
+- [FEVER](https://arxiv.org/abs/1803.05355)：评测基于证据的事实核查与声明验证；核心思想是把 claim、Wikipedia 证据句和 supports/refutes/not-enough-info 标签组织成可检索、可判定的事实性任务，也是早期 Hallucinations Leaderboard 聚合信号之一。
+- [TruthfulQA](https://arxiv.org/abs/2109.07958)（数据集：[truthfulqa/truthful_qa](https://huggingface.co/datasets/truthfulqa/truthful_qa)）：评测模型在常见迷思问题上的“真实而非迎合”回答；核心思想是把问题设计成“最常见的错误答案更诱人”，以暴露幻觉与胡编倾向。
+- [HaluEval](https://arxiv.org/abs/2305.11747)：评测 LLM 识别和生成幻觉的能力；核心思想是通过采样后过滤构造大规模 hallucinated samples，并结合人工标注检查模型能否发现与来源或事实知识冲突的内容。
+- [FActScore](https://arxiv.org/abs/2305.14251)（[开源代码](https://github.com/shmsw25/FActScore)）：评测长篇回答的原子事实正确性；核心思想是 `原子事实切分 -> 逐条判定 -> 聚合打分`，并将“可核验性”从主观评价中分离出来。
+- [FELM](https://arxiv.org/abs/2310.00741)：评测 factuality evaluator 本身；核心思想是对 LLM 输出做细粒度片段级事实标注，并覆盖世界知识、数学、推理等多类错误，而不只看百科事实。
+- [RAGTruth](https://arxiv.org/abs/2401.00396)（[开源代码](https://github.com/ParticleMedia/RAGTruth)）：评测 RAG 场景中的词级幻觉；核心思想是收集近 18,000 条 RAG 生成回答并做人工标注，区分 unsupported 与 contradictory claims，专门服务于 RAG 幻觉检测与缓解。
+- [LongFact](https://arxiv.org/abs/2403.18802)（[开源代码](https://github.com/google-deepmind/long-form-factuality)）：评测长篇生成的事实性与可证据支撑程度；核心思想是把回答拆成可核验的 atomic claims，并用搜索增强的判定协议统计整体 factuality（论文中也包含 LongFact-Objects/Concepts 等设置）。
+- [LLM-AggreFact](https://arxiv.org/abs/2404.10774)（[开源代码](https://github.com/Liyan06/MiniCheck)）：评测 grounded factuality verifier；核心思想是聚合多源事实一致性数据，统一比较检测器在有参考文档场景下判断回答是否被证据支撑的能力。
+- [FACTS Grounding](https://arxiv.org/abs/2501.03200)：评测长文本回答是否被给定证据充分支撑；核心思想是用公开榜单和人工偏好校准的协议比较模型的 grounded factuality，后续扩展到更广义 FACTS factuality leaderboard。
+- [HLE-Verified](https://arxiv.org/abs/2501.14249)（数据集：[lmms-lab/HLE-Verified](https://huggingface.co/datasets/lmms-lab/HLE-Verified)）：高难知识问答的人工审核可验证子集；核心思想是通过筛题与核验提升“可判定性”，更适合做可靠性/事实性压力测试。
+- [HalluVerse25](https://arxiv.org/abs/2503.07833)：评测细粒度多语言幻觉检测；核心思想是在英语、阿拉伯语和土耳其语中标注实体、关系和句子级幻觉，避免只看英语事实问答。
+- [HalluLens](https://arxiv.org/abs/2504.17550)（[开源代码](https://github.com/facebookresearch/HalluLens)）：统一评测 intrinsic/extrinsic hallucination；核心思想是先澄清幻觉与 factuality 的边界，再用可动态生成的 extrinsic 测试减少数据泄漏与饱和。
+- [HalluMix](https://arxiv.org/abs/2505.00506)（数据集：[quotientai/HalluMix](https://huggingface.co/datasets/quotientai/HalluMix)）：评测真实多域、长短上下文下的 hallucination detection；核心思想是覆盖 RAG 场景中的多文档与整句输出，检查检测器在任务和上下文长度变化下是否稳健。
+- [MultiHal](https://arxiv.org/abs/2505.14101)：评测知识图谱支撑的多语言多跳幻觉；核心思想是从开放知识图谱中构造高质量 KG 路径，让生成式评测同时检查事实关系、跨语言表达和图结构证据对齐。
+- [PhD](https://openaccess.thecvf.com/content/CVPR2025/html/Liu_PhD_A_ChatGPT-Prompted_Visual_Hallucination_Evaluation_Dataset_CVPR_2025_paper.html)：评测 MLLM 的视觉幻觉。核心思想：用 ChatGPT 提示生成的图像问题样例，检查多模态模型是否回答出无视觉支撑的物体、属性或关系。
+- [ODE](https://openaccess.thecvf.com/content/CVPR2025/html/Tu_ODE_Open-Set_Evaluation_of_Hallucinations_in_Multimodal_Large_Language_Models_CVPR_2025_paper.html)：评测 MLLM 的开放集幻觉。核心思想：把物体与属性存在性测试做得更动态，避免视觉幻觉诊断过度绑定固定闭集标签空间。
+- [AbstentionBench](https://arxiv.org/abs/2506.09038)：评测模型面对不可回答问题时是否会拒绝而非胡编；核心思想是覆盖未知答案、信息不足、错误前提、主观解释和过时信息等 20 类数据来源，把“知道何时不答”作为幻觉风险的一部分。
+- [FACTORY](https://arxiv.org/abs/2508.00109)：评测长篇事实性生成；核心思想是用人工核验的、可回答且无歧义的事实寻求提示，暴露模型在长尾事实和长回答原子声明上的不可靠性。
+- [SimpleQA Verified](https://arxiv.org/abs/2509.07968)：评测短事实问答的正确性与幻觉率；核心思想是用低歧义问题集与严格核验协议降低判读噪声。
+- [AuthenHallu](https://arxiv.org/abs/2510.10539)：评测真实 LLM-human 交互中的幻觉检测；核心思想是从真实对话中标注幻觉，而不是合成诱导样本。
+- [CAP](https://arxiv.org/abs/2510.22395)：评测科学文本生成中的多语言幻觉检测；核心思想是基于 ACL 论文构造 900 个科学问题和 7,000 多个模型回答，并给出科学事实错误与语言流畅性标注。
+- [MMM-Fact](https://arxiv.org/abs/2510.25120)：评估不同检索难度下的多模态、多领域事实核查。核心思想：测试模型能否把事实性声明 grounding 到检索到的多模态证据中，而不是依赖无支撑生成。
+- [Vectara Hallucination Evaluation](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard)：评测摘要/RAG 场景中生成内容是否忠实于输入事实；核心思想是把真实文档摘要和自动 factuality judge 接成公开榜单协议，适合跟踪 HHEM、FaithJudge 等检测器。

@@ -11,9 +11,12 @@ For root-level project documents such as `README` and `AGENTS`, use paired files
 - English in `*.md`
 - Chinese in `*.zh.md`
 
-For numbered landscape documents, use language-specific directories:
-- English in `docs/en/*.md`
-- Chinese in `docs/zh/*.md`
+For numbered landscape documents, use language-specific trees:
+- English under `docs/en/<chapter>/<topic>/`
+- Chinese under `docs/zh/<chapter>/<topic>/`
+
+Use `README.md` as the topic overview file when a topic is split into section files. Section files use the third-level number and slug, for example `03-bench.md`.
+The introduction chapter is the exception: it uses second-level Markdown files directly under `docs/<lang>/00-introduction/`, for example `01-landscape-structure.md`.
 
 The English and Chinese numbered files must share the same base filename.
 Do not add a `.zh` suffix to files under `docs/zh/`.

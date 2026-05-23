@@ -8,6 +8,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+from landscape_paths import expand_markdown_args
+
 
 INCLUDE_STATES = {"include", "included", "accept", "accepted"}
 STRONG_SIGNAL = re.compile(
@@ -160,18 +162,12 @@ def main() -> int:
     parser.add_argument(
         "--priority-doc",
         action="append",
-        default=["01-13-skill-use", "02-11-embodied-vla", "02-10-cybersecurity"],
+        default=["13-skill-use", "11-embodied-vla", "10-cybersecurity"],
     )
-    parser.add_argument("docs", nargs="*", default=["README.md", "README.zh.md", "docs/en/*.md", "docs/zh/*.md"])
+    parser.add_argument("docs", nargs="*", help="Markdown files or globs. Defaults to README and recursive docs.")
     args = parser.parse_args()
 
-    doc_paths: list[Path] = []
-    for pattern in args.docs:
-        matches = sorted(Path().glob(pattern))
-        if matches:
-            doc_paths.extend(path for path in matches if path.is_file())
-        elif Path(pattern).is_file():
-            doc_paths.append(Path(pattern))
+    doc_paths = expand_markdown_args(args.docs)
 
     records = load_recommendations(args.decision_dir, docs_text(doc_paths), args.priority_doc)
     strict = strict_records(

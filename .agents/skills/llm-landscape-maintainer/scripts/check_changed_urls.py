@@ -6,6 +6,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from landscape_paths import default_markdown_files
+
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 CHECK_URLS = SCRIPT_DIR / "check_urls.py"
@@ -43,10 +45,7 @@ def changed_markdown(base: str, include_untracked: bool) -> list[Path]:
 
 
 def all_docs_markdown() -> list[Path]:
-    files: list[Path] = []
-    for pattern in ["README.md", "README.zh.md", "docs/en/*.md", "docs/zh/*.md"]:
-        files.extend(sorted(Path.cwd().glob(pattern)))
-    return [path for path in files if path.is_file()]
+    return default_markdown_files(Path.cwd())
 
 
 def write_noop_report(path: Path, files: list[Path]) -> None:

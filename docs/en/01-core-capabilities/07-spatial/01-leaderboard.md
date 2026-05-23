@@ -1,0 +1,8 @@
+# 1.7.1 Leaderboard
+
+- [EASI Leaderboard Data](https://huggingface.co/datasets/lmms-lab-si/EASI-Leaderboard-Data/tree/main): Continuous leaderboard data integrating spatial reasoning datasets such as SPAR-Bench, MMSI-Bench, OmniSpatial, ViewSpatial, and VSI-Bench; suitable as a unified cross-benchmark entry point for spatial VLMs.
+- [PhysBench Leaderboard](https://physbench.github.io/#leaderboard): Continuous leaderboard for physical-world understanding and spatial/causal reasoning; useful for screening models that handle spatial relations as well as object motion, stability, and interaction-outcome prediction.
+- [Ego3D-Bench Leaderboard](https://vbdi.github.io/Ego3D-Bench-webpage/#leaderboard): Continuous leaderboard for egocentric 3D spatial understanding; useful for tracking depth, direction, viewpoint transformation, and spatial memory in egocentric scenes.
+- [VLM4D Leaderboard](https://vlm4d.github.io/#leaderboard): Continuous leaderboard for 4D spatiotemporal understanding; useful for comparing model performance on dynamic 3D scenes, object motion, and cross-time spatial relations.
+- [SpatialTree Leaderboard](https://spatialtree.github.io/#leaderboard): Continuous leaderboard for tree-structured spatial reasoning; useful for observing whether models can decompose complex spatial relations into composable and traceable hierarchical reasoning.
+- [VideoGameBench Leaderboard](https://vgbench.com/#leaderboard): Continuous leaderboard for embodied agent perception, navigation, manipulation, and planning in video-game environments; useful for finding agent harnesses with executable environments and closed-loop spatial action.

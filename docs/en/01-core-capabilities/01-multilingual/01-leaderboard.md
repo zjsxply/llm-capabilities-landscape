@@ -1,0 +1,5 @@
+# 1.1.1 Leaderboard
+
+- [Evalita-LLM Leaderboard](https://huggingface.co/spaces/evalitahf/evalita_llm_leaderboard) ([paper](https://aclanthology.org/2025.clicit-1.61/)): A public benchmark and leaderboard for Italian LLM evaluation. Core idea: use ten native Italian tasks, multiple prompts, and zero-shot/few-shot settings so Italian capability is not inferred from translated English tests alone.
+- [compar:IA](https://arxiv.org/abs/2602.06669): A French-government LLM arena for blind pairwise comparison on French-language prompts. Core idea: collect real user prompts and preference judgments through an open public-service platform so French alignment and evaluation data are not inferred from English-only arenas.
+- [MTEB Leaderboard](https://huggingface.co/spaces/mteb/leaderboard): a public leaderboard for multilingual text embedding and retrieval capability. Its value is providing a reusable evaluation entry point for embedding/RAG prerequisites, which can connect to multilingual RAG and retrieval tasks such as MIRAGE-Bench and AfriMTEB.

@@ -1,0 +1,9 @@
+# 2.8.1 Leaderboard
+
+- [ForecastBench Leaderboard](http://www.forecastbench.org/): A real future-event forecasting leaderboard that continuously and dynamically generates and updates questions; useful for comparing probabilistic forecasts, calibration, and expert/crowd baselines on unresolved questions.
+- [Metaculus FutureEval](https://www.metaculus.com/futureeval/): Metaculus's continuous AI forecasting leaderboard; updated daily with a unified log score and comparing AI models, the Metaculus community, and professional forecasters in one view.
+- [FutureSearch Evaluations](https://evals.futuresearch.ai/): The official FutureSearch evaluation entry, aggregating DRB and BTF-2; useful for tracking the "research-judgment" ability of deep research agents and forecasting agents in one reproducible framework.
+- [Prophet Arena](https://www.prophetarena.co/): A real-time forecasting arena for LLM-as-a-Prophet; useful for diagnosing forecasting-pipeline stages such as event recall, source understanding, near-resolution information aggregation, and probability calibration.
+- [TemporalBench Leaderboard](https://huggingface.co/spaces/Melady/TemporalBench_Leaderboard): The official Hugging Face leaderboard for TemporalBench; useful for comparing context-driven, event-driven, and time-series forecasting abilities.
+- [Echo](https://echo.unipat.ai/): UniPat's dynamic future-prediction leaderboard and training system; useful for observing sustained forecasting performance after combining multi-point alignment Elo, Train-on-Future, and AI-native prediction APIs.
+- [Impermanent Dashboard](https://impermanent.timecopilot.dev/): TimeCopilot's live temporal-generalization dashboard; useful for tracking real-time extrapolation performance of time-series forecasting models on rolling data streams.

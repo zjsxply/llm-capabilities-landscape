@@ -1,0 +1,23 @@
+# 1.8.4 Agent Harness
+
+- [Draft, Sketch, and Prove](https://arxiv.org/abs/2210.12283)（[开源代码](https://github.com/albertqjiang/draft_sketch_prove)）：两阶段 formal proving harness，先生成 proof sketch，再调用 prover/hammer 补全正式证明。
+- [PAL](https://arxiv.org/abs/2211.10435)（[开源代码](https://github.com/reasoning-machines/pal)）：把数学推理改写为可执行程序再回填答案，是程序化数学 agent 的经典起点。
+- [Program of Thoughts](https://arxiv.org/abs/2211.12588)（[开源代码](https://github.com/TIGER-AI-Lab/Program-of-Thoughts)）：显式把中间推理转成程序执行轨迹，降低纯文本推理的算术错误率。
+- [Tree of Thoughts](https://arxiv.org/abs/2305.10601)（[开源代码](https://github.com/princeton-nlp/tree-of-thought-llm)）：将推理轨迹树化并支持分支扩展、回溯与自评，是数学 test-time 搜索的代表性 harness。
+- [LeanDojo](https://arxiv.org/abs/2306.15626)（[开源代码](https://github.com/lean-dojo/LeanDojo)）：把前提检索、proof state 交互与 verifier 反馈整合进 proof assistant in the loop 的可复现 runtime。
+- [ToRA](https://arxiv.org/abs/2309.17452)（[开源代码](https://github.com/microsoft/ToRA)）：将自然语言推理、代码执行与符号工具调用编排成统一 math agent loop。
+- [COPRA](https://arxiv.org/abs/2310.04353)（[开源代码](https://github.com/trishullab/copra)）：面向 Lean 的协作式证明代理，强调规划、检索与证明状态驱动的执行闭环。
+- [DeepSeek-Prover-V1.5](https://arxiv.org/abs/2408.08152)（[开源代码](https://github.com/deepseek-ai/DeepSeek-Prover-V1.5)）：面向 Lean 形式化证明的专用代理实现，强调可验证证明轨迹。
+- [Newclid](https://arxiv.org/abs/2411.11938)（[开源代码](https://github.com/Newclid/Newclid)）：面向几何证明的神经-符号代理框架，强调可验证搜索过程。
+- [AlphaGeometry 2](https://arxiv.org/abs/2502.03544)（[开源代码](https://github.com/google-deepmind/alphageometry2)）：AlphaGeometry 系列的后续系统，强化几何推理与符号搜索协同。
+- [Goedel-Prover](https://arxiv.org/abs/2502.07640)（[开源代码](https://github.com/Goedel-LM/Goedel-Prover)）：面向形式化数学证明的代理系统，突出自动化证明搜索与可验输出。
+- [StepMathAgent](https://arxiv.org/abs/2503.10105)：面向数学解答的过程评测 agent；核心思想是通过 Tree-of-Error 表示对步骤进行切分、打分、聚合和错误组织，而不是只评最终答案。
+- [DeepSeek-Prover-V2](https://arxiv.org/abs/2504.21801)（[开源代码](https://github.com/deepseek-ai/DeepSeek-Prover-V2)）：面向 Lean 4 的递归子目标分解 formal proving harness；核心思想是先由强模型生成证明计划和子目标，再用 prover 搜索子目标证明，并把 Lean 可验证反馈用于冷启动与强化学习。
+- [Prover Agent](https://arxiv.org/abs/2506.19923)（[开源代码](https://github.com/kAIto47802/Prover-Agent)）：以代理式搜索与工具交互提升 Lean 证明求解能力。
+- [Seed-Prover](https://arxiv.org/abs/2507.23726)（[开源代码](https://github.com/ByteDance-Seed/Seed-Prover)）：面向 IMO 级题目的 lemma-style whole-proof proving 系统；核心思想是基于 Lean 反馈、已证引理和自总结迭代修正证明，并在测试时结合深度和宽度搜索策略。
+- [Goedel-Prover-V2](https://arxiv.org/abs/2508.03613)（[开源代码](https://github.com/Goedel-LM/Goedel-Prover-V2)）：形式化证明自校正 harness；核心思想是用难度递进的数据脚手架、Lean 编译器反馈驱动的自我修正和 checkpoint averaging 提升 proof search 的稳定性与可验证率。
+- [Code2Math](https://arxiv.org/abs/2603.03202)：用代码智能体演化数学问题的多智能体框架。核心思想：通过代码执行和可解性验证循环，把已有问题转化为更难但可解的新变体，将问题生成变成探索式智能体工作流。
+- [QED](https://arxiv.org/abs/2604.24021)：面向开放数学问题的多 agent 证明生成系统；核心思想是把证明搜索、批判、验证焦点与修订分配给专门 agent，以应对研究级证明中的系统性失败模式。
+- [OProver](https://arxiv.org/abs/2605.17283)：面向 Lean 4 的 agentic formal proving 框架；核心思想：把失败 proof attempt、编译器反馈与已验证 proof 迭代回灌到训练和修复闭环里。
+- [STAR-PólyaMath](https://arxiv.org/abs/2605.19338)（[开源代码](https://github.com/Julius-Woo/STAR-PolyaMath)）：面向 MathArena Apex、AIME、Putnam、IMO、HMMT 与 USAMO 等榜单的多 agent 数学推理 harness；核心思想是用 Meta-Strategist、Reasoner-Verifier 和 challenge-step-replan 状态机长期维护策略、回溯失败分支并限制幻觉累积。
+- [AlphaGeometry](https://www.nature.com/articles/s41586-023-06747-5)（[开源代码](https://github.com/google-deepmind/alphageometry)）：神经-符号几何证明系统，用可验证符号推演约束证明正确性。

@@ -1,0 +1,28 @@
+# 1.3.3 Bench
+
+- [COLLIE](https://arxiv.org/abs/2307.08689)：评测受约束文本生成与复杂指令遵循；核心思想是把约束（格式、包含/排除、长度、集合约束等）做成可组合、可判定的诊断任务族。
+- [FollowBench](https://arxiv.org/abs/2310.20410)：评测多层级、细粒度约束遵循；核心思想是把复杂用户指令拆成不同难度和类型的约束，定位模型是在整体任务、局部约束还是细节执行上失败。
+- [IFEval](https://arxiv.org/abs/2311.07911)（数据集：[google/IFEval](https://huggingface.co/datasets/google/IFEval)；[Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard) 中的指令遵循核心任务）：评测指令遵循（格式、约束、禁止项等）；核心思想是用可判定规则集自动化评测“是否按指令输出”，作为 Inverse IFEval 的直接参照。
+- [InFoBench](https://arxiv.org/abs/2401.03601)：评测复杂指令的分解式要求遵循；核心思想是把 500 条多约束指令拆成 2,250 个可判定子要求，用 DRFR 指标衡量模型对每一项要求的满足程度。
+- [LiveBench Instruction Following](https://arxiv.org/abs/2406.19314)（[开源代码](https://github.com/livebench/livebench)）：评测动态更新榜单中的指令遵循类别；核心思想是用持续更新、可自动评分的数据降低污染，并把 instruction following 放入更广泛的综合能力比较。
+- [MultiChallenge](https://arxiv.org/abs/2501.17399)：评测更贴近真实多轮对话下的指令遵循与一致性；核心思想是把“多轮约束累积、角色/规则持续有效”作为难点，而不是单轮指令执行。
+- [M-IFEval](https://arxiv.org/abs/2502.04688)（[开源代码](https://github.com/lightblue-tech/M-IFEval)）：评测多语言可验证指令遵循；核心思想是把 IFEval 风格规则扩展到法语、日语和西班牙语，检查约束检查器与模型行为是否跨语言稳定。
+- [CodeIF](https://arxiv.org/abs/2502.19166)（[开源代码](https://github.com/lin-rany/codeIF)）：评测代码生成任务中的指令遵循；核心思想是覆盖函数合成、错误调试、算法重构和代码解释等场景，检查模型是否能在生成代码时同时满足任务目标与约束细节。
+- [XIFBench](https://arxiv.org/abs/2503.07539)（[开源代码](https://github.com/zhenyuli801/XIFBench)）：评测多语言指令遵循；核心思想是在 6 种语言中设置内容、风格、情境、格式和数值约束，并用需求级语义锚点比较不同资源语言下的约束满足差异。
+- [DeR2](https://arxiv.org/abs/2503.14443)：偏 context learning/长上下文评测，但也可反映复杂约束在长上下文执行中的“遗漏/漂移”；核心思想是用长上下文任务压力测试约束是否被持续执行。
+- [MathIF](https://arxiv.org/abs/2505.14810)（[开源代码](https://github.com/TingchenFu/MathIF)）：评测数学推理中的指令遵循；核心思想是用可程序验证的数学任务约束检查模型是否在解题时同时满足格式、包含和过程性要求。
+- [LIFEBENCH](https://arxiv.org/abs/2505.16234)（[开源代码](https://github.com/LIFEBench/LIFEBench)，[数据集](https://huggingface.co/datasets/LIFEBench/LIFEBench)）：评测长度指令遵循。核心思想：专测明确的长输出长度约束，例如词数或 token 数要求，暴露模型在本应很长但结构简单的输出中提前结束、严重短写或拒答的问题。
+- [AgentIF](https://arxiv.org/abs/2505.16944)（[开源代码](https://github.com/THU-KEG/AgentIF)）：评测 agentic 场景下的长系统提示、工具说明和复杂约束遵循；核心思想是从真实工业与开源 agent 应用收集长指令，并为约束标注 code/LLM/hybrid 评测器。
+- [MARS-Bench](https://arxiv.org/abs/2505.23810)（数据集：[LeeeeTX/MARS-Bench](https://huggingface.co/datasets/LeeeeTX/MARS-Bench)）：评测多轮真实场景对话下的指令遵循与对话质量；核心思想是用更贴近真实交互的 multi-turn 设定衡量约束执行的稳定性。
+- [MaXIFE](https://aclanthology.org/2025.acl-long.698/)：评测多语言与跨语言指令遵循。核心思想：检查指令语言、回答语言或跨语言迁移设置变化后，模型是否仍能保持可验证约束。
+- [LIFBench](https://aclanthology.org/2025.acl-long.803/)：评测长上下文场景中的指令遵循表现与稳定性。核心思想：检查长输入之后约束是否仍然有效，而不只是衡量同一上下文窗口里的信息检索能力。
+- [IFBench](https://arxiv.org/abs/2507.02833)：评测可验证指令遵循在未见约束上的泛化；核心思想是新增 58 类可程序验证的 out-of-domain 约束，避免只在 IFEval 风格的少量模板约束上过拟合。
+- [IFScale](https://arxiv.org/abs/2507.11538)（[开源代码](https://github.com/DistylAI/distylai.github.io)）：评测指令数量扩展时的约束遵循退化；核心思想是把同时需要满足的关键词包含指令从 10 条扩到 500 条，观察模型在高约束负载下的失败模式。
+- [Inverse IFEval](https://arxiv.org/abs/2509.04292)（数据集：[m-a-p/Inverse_IFEval](https://huggingface.co/datasets/m-a-p/Inverse_IFEval)）：评测模型在“反向指令”或去偏设置下是否仍能严格遵循指令；核心思想是通过逆向指令构造，测量模型对模板化输出惯性的抵抗与指令鲁棒性。
+- [CMT-Eval](https://aclanthology.org/2025.findings-emnlp.992/)：评测中文多轮对话中的真实交互挑战。核心思路是检验模型能否在对话轨迹中保持上下文、满足不断变化的用户意图，并处理现实交互困难，而不是只评测孤立的单轮指令。
+- [EvolIF](https://arxiv.org/abs/2511.03508)：评测动态演化多轮指令遵循；核心思想是用 query synthesis agent 与三层状态追踪机制模拟用户耐心耗尽前的连续约束追加、状态变化与失败恢复。
+- [LexInstructEval](https://ojs.aaai.org/index.php/AAAI/article/view/39701)：评测词汇层面的指令遵循。核心思想：专测细粒度词级和表层形式约束，这些约束容易表述，但在更宽泛的语义指令遵循评测中常被忽略。
+- [VIFBENCH](https://arxiv.org/abs/2601.17789)：评测指令遵循 verifier 的细粒度判定能力；核心思想是把输出是否遵循指令拆成带标签的 constraint satisfaction 判断，专测验证器而不只是生成模型。
+- [CL-Bench](https://arxiv.org/abs/2602.03587)：同样偏 context learning，但对“规则是否被长期遵循”的诊断有参考价值；核心思想是用更系统的长上下文设置暴露指令跟随的边界。
+- [SEQUOR](https://arxiv.org/abs/2605.06353)：评测长多轮对话中的现实约束遵循；核心思想是把新增、替换与冲突约束都放进同一协议，专测长对话漂移。
+- [DMT-RoleBench](https://doi.org/10.1609/aaai.v39i24.34768)：通过动态多轮对话评测角色扮演 LLM 与 agent。核心思想：围绕评测意图和主题生成对话轨迹，使角色一致性、指令遵循和交互质量比静态提示词更贴近真实角色扮演使用场景。

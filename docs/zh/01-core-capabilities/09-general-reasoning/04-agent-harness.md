@@ -1,0 +1,21 @@
+# 1.9.4 Agent Harness
+
+- [ReAct](https://arxiv.org/abs/2210.03629)（[开源代码](https://github.com/ysymyth/ReAct)）把 reasoning trace 与工具/环境 action 交替编排，是通用推理 agent 的早期强基线。
+- [Reflexion](https://arxiv.org/abs/2303.11366)（[开源代码](https://github.com/noahshinn/reflexion)）把失败轨迹转成语言反馈和 episodic memory，再用于下一轮尝试。
+- [Tree of Thoughts](https://arxiv.org/abs/2305.10601)（[开源代码](https://github.com/princeton-nlp/tree-of-thought-llm)）是“把推理过程树化”的代表性搜索式 test-time harness。
+- [RAP](https://arxiv.org/abs/2305.14992)（[开源代码](https://github.com/Ber666/RAP)）更强调推理作为规划问题。
+- [Graph of Thoughts](https://arxiv.org/abs/2308.09687)（[开源代码](https://github.com/spcl/graph-of-thoughts)）把 ToT 的树结构推广为图式中间状态，支持合并、聚合与更复杂的推理拓扑。
+- [LATS](https://arxiv.org/abs/2310.04406)（[开源代码](https://github.com/lapisrocks/LanguageAgentTreeSearch)）把规划、评估与搜索更系统地接入 agent loop。
+- ARC-AGI-solution（[开源代码](https://github.com/aviad12g/ARC-AGI-solution)；无独立论文）：LLM 引导 DSL 搜索的工程化 ARC 求解代理。
+- [AB-MCTS for ARC-AGI-2](https://arxiv.org/abs/2503.04412)（[开源代码](https://github.com/SakanaAI/ab-mcts-arc2)）：把 ARC-AGI-2 显式建模为程序空间的树搜索问题；设计关键词：MCTS、程序空间搜索、多模型裁决。
+- [Division-of-Thoughts](https://arxiv.org/abs/2502.04392)：面向端侧 agent 的本地-云端混合推理 harness。核心思想：分解任务、构建依赖图，并在本地小模型与云端 LLM 之间调度子任务，使受设备约束的助手也能处理复杂推理工作流。
+- [Adaptive Graph of Thoughts](https://arxiv.org/abs/2502.05078)：统一 chain、tree 和 graph 结构的测试时自适应推理 harness。核心思想：在推理过程中选择并改写推理拓扑，而不是固定使用某一种 CoT、ToT 或 GoT 模式。
+- [PlanGEN](https://arxiv.org/abs/2502.16111)：面向复杂规划与推理的多 agent inference-time harness；设计关键词：constraint agent、verification agent、selection agent、自适应选择 BoN/ToT/REBASE。
+- [VeriPlan](https://arxiv.org/abs/2502.17898)：面向终端用户规划的验证增强 harness。核心思路是把 LLM 规划器与规则翻译、用户可调的灵活性控制和模型检查结合起来，使生成计划能够围绕显式约束被检查和修订。
+- [VerifiAgent](https://arxiv.org/abs/2504.00406)（[开源代码](https://github.com/Jiuzhouh/VerifiAgent)）：统一验证 agent，把 meta-verification 与工具自适应验证接入推理；设计关键词：数学/逻辑/常识工具选择、反馈修订、inference scaling。
+- [Plan and Budget](https://arxiv.org/abs/2505.16122)：面向 LLM 推理的测试时扩展框架。核心思路是在求解前或求解过程中规划推理预算，把推理计算投入到更可能从额外思考中受益的问题上。
+- [Language-Driven Coordination and Learning in Multi-Agent Simulation Environments](https://arxiv.org/abs/2506.04251)：面向多智能体仿真的语言驱动协调与学习框架，可用于区分交互协议、环境设计与模型本身能力。
+- [VSA for ARC-AGI](https://arxiv.org/abs/2511.08747)（[开源代码](https://github.com/ijoffe/ARC-VSA-2025)）：把 ARC-AGI 做成更显式的神经-符号程序归纳问题；设计关键词：神经-符号、可验证执行。
+- [iMAD](https://arxiv.org/abs/2511.11306)：面向高效 LLM inference 的多智能体辩论 harness。核心思想：协调辩论智能体与聚合机制，使推理时协作在控制额外计算的同时提升推理准确性。
+- [Reaching Agreement Among Reasoning LLM Agents](https://arxiv.org/abs/2512.20184)：面向推理 agent 的一致性感知编排协议；设计关键词包括增量 quorum 检测、提前终止、安全与活性保证，以及减少拖尾延迟。
+- [Executable World Models for ARC-AGI-3](https://arxiv.org/abs/2605.05138)（[开源代码](https://github.com/alexisfox7/RGB-Agent)）：面向 ARC-AGI-3 榜单的 Read-Grep-Bash agent；设计关键词：可执行世界模型、文件化环境观察、shell 工具调用、以代码和日志维护任务状态。

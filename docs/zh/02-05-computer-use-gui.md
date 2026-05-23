@@ -26,7 +26,9 @@
 - [BEARCUBS](https://arxiv.org/abs/2503.07919)（[项目页](https://bear-cubs.github.io/)）：评测 computer-using web agent 在 live web 中完成信息查找、浏览与多模态交互的能力；核心思想是用会持续变化的真实网页内容、视频理解和 3D 导航等任务，避免纯文本检索绕过真实网页操作。
 - [ScreenSpot-Pro](https://arxiv.org/abs/2504.07981)：评测专业高分辨率截图上的 GUI grounding。核心思想：要求模型按自然语言指令定位很小的 UI 目标，压力测试高分辨率感知和精确坐标定位，而不只看任务级成功率。
 - [RealWebAssist](https://arxiv.org/abs/2504.10445)（[开源代码](https://github.com/SCAI-JHU/RealWebAssist)）：评测真实用户长程网页协助；核心思想是把模糊、会变化、需要分阶段确认的用户指令组织成长序列任务，补足一次性网页 benchmark 对真实协助场景的覆盖不足。
+- [REAL](https://arxiv.org/abs/2504.11543)（[开源代码](https://github.com/agi-inc/REAL)）：评测自主 agent 在真实网站确定性仿真中的表现。核心思想：用常见网站的高保真可重置副本和多轮实用任务，保留真实浏览器交互，同时让复位、评分和安全控制可复现。
 - [OSUniverse](https://arxiv.org/abs/2505.03570)（[开源代码](https://github.com/agentsea/osuniverse)）：评测复杂、多模态、桌面导向 GUI 导航任务；核心思想是用跨应用、跨模态的真实桌面任务补足 OSWorld 之后对视觉理解、工具选择和长链路导航的综合压力测试。
+- [OSWorld-G](https://arxiv.org/abs/2505.13227)（[开源代码](https://github.com/xlang-ai/osworld-g)，[数据集](https://huggingface.co/datasets/xlangai/Jedi)）：评测 computer-use agent 的 GUI grounding。核心思想：通过 UI 交互数据的分解与合成，让 grounding 依赖软件常识、布局理解和细粒度操作，而不只是短 referring expression 定位。
 - [RedTeamCUA / RTC-Bench](https://arxiv.org/abs/2505.21936)（[项目页](https://osu-nlp-group.github.io/RedTeamCUA)）：评测混合 Web-OS 环境中 computer-use agent 的间接提示注入风险；核心思想是用真实 GUI/网页动作空间和红队样例暴露跨应用执行时的攻击面。
 - [WebChoreArena](https://arxiv.org/abs/2506.01952)（[开源代码](https://github.com/WebChoreArena/WebChoreArena)）：评测网页 agent 处理繁琐复杂网页任务的能力；核心思想是把人类也会觉得重复、分支多、容易出错的 web chores 做成可执行 benchmark，放大鲁棒性和耐心执行问题。
 - [VPI-Bench](https://arxiv.org/abs/2506.02456)（数据集：[VPI-Bench/vpi-bench](https://huggingface.co/datasets/VPI-Bench/vpi-bench)）：评测 computer-use / browser-use agent 面对视觉提示注入攻击的安全性；核心思想是把恶意指令嵌入网页视觉内容中，检查 agent 是否会把屏幕文字误当作用户指令执行。
@@ -37,6 +39,7 @@
 - [FineState-Bench](https://arxiv.org/abs/2508.09241)（[开源代码](https://github.com/AnonymousThewarehouse/FineState-Bench)，[数据集](https://huggingface.co/datasets/Willtime2006/Static-FineBench)）：评测 GUI agent 的细粒度状态控制；核心思想是把感知、定位、操作和状态达成拆成多阶段指标，专门暴露真实 GUI 操作中精细控制与视觉定位瓶颈。
 - [SCUBA](https://arxiv.org/abs/2509.26506)（[开源代码](https://github.com/SalesforceAIResearch/SCUBA)）：评测 Salesforce 企业软件中的 computer-use 能力；核心思想是把 CRM 式表单、记录、权限和业务对象放进真实企业 GUI 任务，强调专业 SaaS 操作中的状态一致性与业务规则遵循。
 - [BrowserArena](https://arxiv.org/abs/2510.02418)：评测真实开放网页上的 web agent 导航；核心思想是收集用户提交的 live web 任务并用 arena 式比较与逐步人工反馈定位 captcha、弹窗和直接 URL 导航等真实网页失败模式。
+- [MLLM as a UI Judge](https://arxiv.org/abs/2510.08783)：评估多模态大模型能否预测人类对用户界面的感知。核心思路是把界面质量与主观感知判断转化为可比较的评测信号，补充仅看元素定位或任务完成率的 GUI 评测。
 - [OSWorld-MCP](https://arxiv.org/abs/2510.24563)（[项目页](https://osworld-mcp.github.io/)）：评测 computer-use agent 在 GUI 操作之外调用 MCP 工具的能力；核心思想是在真实 OSWorld 式环境中引入 158 个跨常用应用的 MCP 工具，并同时报告任务准确率、工具调用率和平均完成步数。
 - [MobileWorld](https://arxiv.org/abs/2512.19432)（[开源代码](https://github.com/Tongyi-MAI/MobileWorld)）：评测自主移动 agent 在 agent-user 交互与 MCP 增强环境中的任务完成；核心思想是把移动端 GUI 操作、用户澄清和外部工具调用放进统一 benchmark，补足 AndroidWorld 的静态任务边界。
 - [OS-Marathon](https://arxiv.org/abs/2601.20650)（[项目页](https://os-marathon.github.io/)）：评测 computer-use agent 的长程重复 GUI 任务；核心思想是让 agent 在长时间、重复但状态会累积变化的桌面操作中保持节奏、记忆和错误恢复能力。
@@ -72,6 +75,7 @@
 - [UI-TARS-2](https://arxiv.org/abs/2509.02544)（[开源代码](https://github.com/bytedance/UI-TARS-desktop)；把 GUI agent 拆成更清晰的感知、规划和执行栈，面向桌面/浏览器原生自动化提供可运行 harness）
 - [Agentic Lybic](https://arxiv.org/abs/2509.11067)（[开源代码](https://github.com/xlang-ai/OSWorld/tree/main/mm_agents/maestro)；FSM 驱动的 `Controller / Manager / Worker / Evaluator` 分工与质量控制）
 - [Surfer 2](https://arxiv.org/abs/2510.19949)（开源代码：未公开；跨 web/desktop/mobile 的统一架构：层级上下文、计划执行解耦、自验证与自恢复）
+- [UFO3](https://arxiv.org/abs/2511.11332)（开源代码：未找到稳定公开仓库；面向桌面、移动设备、服务器和边缘端点的跨设备数字 agent 编排系统；设计关键词：分布式任务 DAG、异步编排、显式控制与数据依赖）
 - [AgentProg](https://arxiv.org/abs/2512.10371)（[开源代码](https://github.com/MobileLLM/AgentProg)；把长程 GUI 交互历史重写成带变量和控制流的程序化上下文，并用全局 belief state 维持移动 GUI 任务中的部分可观测状态）
 - [OS-Symphony](https://arxiv.org/abs/2601.07779)（[开源代码](https://github.com/OS-Copilot/OS-Symphony)；Orchestrator + Reflection-Memory + 教程检索的跨平台 computer-use 框架）
 - [CUA-Skill Agent](https://arxiv.org/abs/2601.21123)（[开源代码](https://github.com/microsoft/cua_skill)；结构化 GUI skill 库 + 参数化组合图 + 动态 skill 检索/实例化 + memory-aware recovery）

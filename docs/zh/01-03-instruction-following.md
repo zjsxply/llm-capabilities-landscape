@@ -27,6 +27,7 @@
 - [XIFBench](https://arxiv.org/abs/2503.07539)（[开源代码](https://github.com/zhenyuli801/XIFBench)）：评测多语言指令遵循；核心思想是在 6 种语言中设置内容、风格、情境、格式和数值约束，并用需求级语义锚点比较不同资源语言下的约束满足差异。
 - [DeR2](https://arxiv.org/abs/2503.14443)：偏 context learning/长上下文评测，但也可反映复杂约束在长上下文执行中的“遗漏/漂移”；核心思想是用长上下文任务压力测试约束是否被持续执行。
 - [MathIF](https://arxiv.org/abs/2505.14810)（[开源代码](https://github.com/TingchenFu/MathIF)）：评测数学推理中的指令遵循；核心思想是用可程序验证的数学任务约束检查模型是否在解题时同时满足格式、包含和过程性要求。
+- [LIFEBENCH](https://arxiv.org/abs/2505.16234)（[开源代码](https://github.com/LIFEBench/LIFEBench)，[数据集](https://huggingface.co/datasets/LIFEBench/LIFEBench)）：评测长度指令遵循。核心思想：专测明确的长输出长度约束，例如词数或 token 数要求，暴露模型在本应很长但结构简单的输出中提前结束、严重短写或拒答的问题。
 - [AgentIF](https://arxiv.org/abs/2505.16944)（[开源代码](https://github.com/THU-KEG/AgentIF)）：评测 agentic 场景下的长系统提示、工具说明和复杂约束遵循；核心思想是从真实工业与开源 agent 应用收集长指令，并为约束标注 code/LLM/hybrid 评测器。
 - [MARS-Bench](https://arxiv.org/abs/2505.23810)（数据集：[LeeeeTX/MARS-Bench](https://huggingface.co/datasets/LeeeeTX/MARS-Bench)）：评测多轮真实场景对话下的指令遵循与对话质量；核心思想是用更贴近真实交互的 multi-turn 设定衡量约束执行的稳定性。
 - [IFBench](https://arxiv.org/abs/2507.02833)：评测可验证指令遵循在未见约束上的泛化；核心思想是新增 58 类可程序验证的 out-of-domain 约束，避免只在 IFEval 风格的少量模板约束上过拟合。

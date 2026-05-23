@@ -19,6 +19,8 @@
 
 - [LifelongAgentBench](https://arxiv.org/abs/2505.11942)：评什么：LLM agent 是否能在长期任务序列中学习、记住并复用技能。
   核心思想：把任务按 episode 串起来，让 agent 面对新任务时利用过去经验、工具操作模式和可迁移技能，而不是只在单次任务内做即时规划。
+- [Single-Agent with Skills](https://arxiv.org/abs/2601.04748)：评什么：带 skills 的 single agent 何时能替代 multi-agent systems，何时会失败。
+  核心思想：用对比式任务协议区分可复用技能带来的收益与必须依赖多代理分解的收益。
 - [SkillsBench](https://arxiv.org/abs/2602.12670)（[开源代码](https://github.com/benchflow-ai/skillsbench)；[官网](https://www.skillsbench.ai/)）：评什么：agent 在使用人写或自生成 skills 时，任务成功率到底能否稳定提升。
   核心思想：把 skill 的价值变成 `no skill / curated skill / self-generated skill` 三条件对照；论文版覆盖 86 个任务、11 个领域，官网当前展示 84 个任务。
 - [SkillInject](https://arxiv.org/abs/2602.20156)：评什么：agent 是否容易受到 skill 文件中嵌入提示注入的攻击。核心思想：把可复用 skill 作为显式攻击面，衡量恶意指令是否会在执行时重定向 agent 行为。
@@ -26,6 +28,8 @@
   核心思想：通过 `quantitative scaling` 与 `structural scaling` 压力测试 skill abstraction；不仅看 instance-level success，也看 skill 复用带来的效率收益。
 - [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)（[开源代码](https://github.com/GeniusHTX/SWE-Skills-Bench)；[数据集](https://huggingface.co/datasets/GeniusHTX/SWE-Skills-Bench)）：评什么：agent skills 在真实软件工程任务中是否真的带来收益。
   核心思想：把评价对象从“coding agent 能不能修代码”转成“给定 skill 是否改善软件工程 agent 的成功率、效率和行为质量”。
+- [SkillTester](https://arxiv.org/abs/2603.28815)（[项目页](https://skilltester.ai/)；[开源代码](https://github.com/skilltester-ai/skilltester)）：评什么：agent skills 的效用与安全性。
+  核心思想：比较 baseline 与 with-skill 两种执行，同时对 skill 做安全探测，把技能收益和技能风险放进同一个 benchmark。
 - [MM Claw skill-compliance suite](https://www.minimax.io/news/minimax-m27-en)（model-card-only；未确认有独立公开发布）：评什么：agent 在长程 OpenClaw 风格工作中，能否持续遵循并复用 40 多个复杂 skills。核心思想：把 skill adherence 本身作为评测信号，补足公开 skill search 与 skill injection benchmark 对“持续按 skill 做事”的覆盖。
 - [Agentic Skills in the Wild](https://arxiv.org/abs/2604.04323)：评什么：真实技能生态中 agent 自行搜索、选择并使用不完全贴合任务的 skills 时，skill 是否仍然有帮助。
   核心思想：把“直接给定理想 skill”的设定放宽成检索、噪声和适配压力，评估 skill utility 在 realistic settings 下的掉点。
@@ -34,6 +38,8 @@
 - [SkillRet](https://arxiv.org/abs/2605.05726)：评什么：大规模 agent skill 库检索；核心思想：把 skill 选择当检索问题，测长查询、噪声库和 NDCG / 召回。
 - [FORTIS](https://arxiv.org/abs/2605.09163)：评什么：agent skills 是否越过最小权限边界。
   核心思想：把评测拆成“是否选到最小充分 skill”和“执行时是否扩展到 skill 之外的工具/动作”，把 skill 层从组织抽象提升为可测的权限边界。
+- [Dependency Steering](https://arxiv.org/abs/2605.09594)：评什么：恶意 skills 是否会诱导 coding agent 选择攻击者指定的依赖。
+  核心思想：把持久化 skill 文件视为软件供应链攻击面，衡量 skill 内容如何改变编码工作流中的依赖选择。
 - [SkillSafetyBench](https://arxiv.org/abs/2605.12015)：评什么：skill-facing attack surface 下 agent 是否会被第三方 skill、局部材料或本地 artifact 诱导执行不安全动作。
   核心思想：把普通任务、风险域、恶意/良性 skill 材料和规则验证器放进可运行环境，说明 skill 安全不能只靠模型级对齐评测。
 - [AgentTrap](https://arxiv.org/abs/2605.13940)（[开源代码](https://github.com/zhmzm/AgentTrap)；[数据集](https://huggingface.co/datasets/zhmzm/AgentTrap)）：评什么：第三方 skills 中恶意运行时行为是否会被 agent 盲目执行。
@@ -48,23 +54,38 @@
 - [CUA-Skill](https://arxiv.org/abs/2601.21123)（[项目页](https://microsoft.github.io/cua_skill/)）：面向 computer-use agents 的结构化 skill base 与 CUA-Skill Agent；核心思想：把 GUI 操作知识封装成带参数化执行和组合图的 skills，再通过检索、参数实例化和记忆化失败恢复调用。
 - [Skill-Pro](https://arxiv.org/abs/2602.01869)：程序性 skill 学习 harness。核心思想：从 episodic experience 中学习带显式 activation、execution 和 termination condition 的可执行技能。
 - [SkillRL](https://arxiv.org/abs/2602.08234)（[开源代码](https://github.com/aiming-lab/SkillRL)）：recursive skill-augmented reinforcement learning；核心思想：把经验总结成 reusable skills，并在后续 RL 迭代中继续读取、扩展和验证 skill bank。
+- [SkillOrchestra](https://arxiv.org/abs/2602.19672)：skill-aware agent routing harness。核心思想：通过 skill transfer 路由 agents，把技能的可迁移性变成显式编排信号。
+- [TARSE](https://arxiv.org/abs/2603.01241)：为 reasoning agents 检索 skills 与 experience 的 test-time adaptation harness。
+  核心思想：在每个推理步骤选择可复用过程知识和先前经验，让 skill 复用成为在线适配的一部分。
 - [AgentSkillOS](https://arxiv.org/abs/2603.02176)（[开源代码](https://github.com/ynulihao/AgentSkillOS)）：代表 skill retrieval + orchestration 的 OS 化路线；把 skill 调用拆成 `capability tree 检索 -> DAG 编排 -> artifact-rich 输出评测`。
   核心思想：在 200 到 200K skills 的生态规模下，比较“平铺直接调用”与“结构化检索 + DAG 组合”；论文同时给出 30 个跨五类的 artifact-rich 任务，说明 skill 调用的关键不只是找到 skill，而是把多 skill 组织成可执行 pipeline。
 - [XSkill](https://arxiv.org/abs/2603.12056)：持续学习型多模态 agent skill harness。核心思想：同时保留视觉 experience 与结构化 reusable skill，让后续任务既能利用 episodic evidence，也能利用程序性抽象。
 - [Memento-Skills](https://arxiv.org/abs/2603.18743)（[开源代码](https://github.com/Memento-Teams/Memento-Skills)）：把 reusable skills 当作持久化、可演化 memory 的 generalist agent 系统。
   核心思想：通过 read-write reflective learning 选择、更新和扩展 Markdown skill 文件，让 agent 在不更新模型参数的情况下持续改造 task-specific agents。
 - [Trace2Skill](https://arxiv.org/abs/2603.25158)：trajectory-to-skill distillation harness。核心思想：并行分析执行轨迹，再分层整合局部经验，把它们沉淀成可迁移 agent skills。
+- [AdaSkill](https://arxiv.org/abs/2604.01608)：判断何时可用单个 skill-augmented agent 替代 multi-agent system 的 skill distillation harness。
+  核心思想：只有在 metric-free 诊断显示蒸馏有益时，才从多代理轨迹中抽取工具、知识和结构。
 - [SkVM](https://arxiv.org/abs/2604.03088)（[开源代码](https://github.com/SJTU-IPADS/SkVM)）：skill 编译与运行时；核心思想：把 skill 当可编译工件做能力绑定、并发抽取和 JIT 固化，提升跨 harness 可移植性。
 - [SkillFoundry](https://arxiv.org/abs/2604.03964)（[开源代码](https://github.com/ma-compbio-lab/SkillFoundry)）：从异构科学/工程资源中构建自演化 skill libraries。
   核心思想：把文档、仓库、脚本、notebooks、数据库和论文中的 procedural knowledge 抽取成带输入输出、执行步骤、环境假设、来源和测试的 skill packages，再闭环扩展、修复、合并和剪枝。
 - [SkillX](https://arxiv.org/abs/2604.04804)（[开源代码](https://github.com/zjunlp/SkillX)）：自动构建 plug-and-play skill knowledge base。
   核心思想：把轨迹蒸馏成战略计划、功能技能和原子技能三层结构，并通过执行反馈迭代修正和主动扩展技能覆盖。
 - [Graph of Skills](https://arxiv.org/abs/2604.05333)（[开源代码](https://github.com/davidliuk/graph-of-skills)）：依赖感知的 skill 结构检索；核心思想：把扁平 skill 列表改成带前置关系的结构化上下文，减少盲选。
+- [EvoAgent](https://arxiv.org/abs/2604.20133)：面向 skill learning 与 multi-agent delegation 的可演化 agent 框架。
+  核心思想：把技能作为可学习、可复用单元，并根据演化中的技能状态在多代理之间委派任务。
+- [Co-Evolving LLM Decision and Skill Bank Agents](https://arxiv.org/abs/2604.20987)：面向长程任务的 skill-bank harness。
+  核心思想：让 decision agent 与 skill-bank agent 协同演化，使任务经验同时改造规划策略和可复用技能库存。
 - [From Skills to Talent](https://arxiv.org/abs/2604.22446)：把异构 agent 组织成可移植的 Talents。核心思想：把 skills、tools 和 runtime configuration 打包成可招募的 agent 身份，再用 Explore-Execute-Review tree search 与 Talent Market 动态组装、执行并改进多代理组织。
 - [SkCC](https://arxiv.org/abs/2605.03353)：跨框架 skill 编译与安全加固；核心思想：用强类型中间表示 SkIR 解耦 Markdown skill 的语义与不同 agent framework 的提示格式，同时把权限、安全检查和可移植性纳入编译流程。
+- [SkillMaster](https://arxiv.org/abs/2605.08693)：自主 skill mastery 框架。
+  核心思想：打通技能创建、修订和选择闭环，让 LLM agent 维护可复用能力，而不是只消费固定技能列表。
 - [SPARK](https://arxiv.org/abs/2605.09192)（[开源代码](https://github.com/EtaYang10th/spark-skills)）：structured pipelines for autonomous runnable tasks；核心思想：把任务完成后的经验压缩成可运行技能流程，强调 posterior skill formation 与后续复用。
 - [SkillRAE](https://arxiv.org/abs/2605.10114)：skill-based context compilation for retrieval-augmented execution；核心思想：把检索到的 skills 编译成紧凑、grounded、可执行的上下文，而不是直接把一组 Markdown skill 原文塞给 agent。
 - [SkillEvolver](https://arxiv.org/abs/2605.10500)：online skill learning meta-skill；核心思想：把“写、部署、失败后修订 domain skill”的流程本身封装成 meta-skill，用 fresh-agent audit 避免只在当前 agent 上过拟合。
+- [SkillGen](https://arxiv.org/abs/2605.10999)：带验证的 inference-time agent skill synthesis。
+  核心思想：在推理时从轨迹中合成可审计的可复用技能，并把 verification 纳入技能生成流程。
+- [Constraint-Consistent Skill Composition](https://doi.org/10.1109/ISBDAS69350.2026.11484408)：面向可靠性的 skill composition harness。
+  核心思想：用一致性约束来组合技能，使 zero-shot 任务泛化遵守约束条件，而不是机会式拼接技能。
 - [CTA / Counterfactual Trace Auditing](https://arxiv.org/abs/2605.11946)：skill 影响的轨迹级审计框架；核心思想：把有 skill 与无 skill 的同任务轨迹分段对齐，标注 skill influence pattern，补足只看 pass rate 难以发现的行为改变。
 
 ## 1.13.4 Skill

@@ -27,11 +27,14 @@
 - [TheAgentCompany](https://arxiv.org/abs/2412.14161)（[开源代码](https://github.com/TheAgentCompany/TheAgentCompany)）：评什么：模拟软件公司中的真实数字员工任务。核心思想：构建自包含的公司环境、内部网站与同事通信，让 agent 通过浏览网页、写代码、运行程序和沟通协作完成工作，而不是只在单一工具里操作。
 - [ML-Dev-Bench](https://arxiv.org/abs/2502.00964)：评什么：应用机器学习开发 workflow 中的 agentic 能力。核心思想：从数据处理、训练、改进现有代码到实验报告生成，评估 agent 是否能完成完整 ML 开发链路，而不是只解孤立代码题或 Kaggle 式单点任务。
 - [RealWebAssist](https://arxiv.org/abs/2504.10445)（[开源代码](https://github.com/SCAI-JHU/RealWebAssist)）：评什么：真实用户的长程网页协助。核心思想：用顺序、多变、含澄清需求的人类指令评估 agent 的持续协助能力，贴近现实用户把网页任务委托给 AI 的工作流。
+- [TutorGym](https://arxiv.org/abs/2505.01563)：评什么：在智能教学系统中扮演 tutor 与 student 的 AI agent。核心思想：为经过课堂验证的教学环境提供统一接口，使教学互动质量、提示行为和模拟学习能在最终答案准确率之外被评测。
 - [CRMArena-Pro](https://arxiv.org/abs/2505.18878)：评什么：销售、服务、报价配置等多业务场景下的 CRM agent。核心思想：在 CRMArena 基础上加入 B2B/B2C、多人设多轮交互与保密意识评估，更贴近企业部署中“会话 + 数据 + 规则 + 权限”的复合需求。
 - [FieldWorkArena](https://arxiv.org/abs/2505.19662)：评什么：制造、仓储、零售等现场工作的多模态任务。核心思想：用真实场地采集的图片/视频与一线员工访谈构造任务，测安全隐患、流程违规与关键事件识别，补齐“数字办公室之外”的现实工作评测。
 - [WebChoreArena](https://arxiv.org/abs/2506.01952)（[开源代码](https://github.com/WebChoreArena/WebChoreArena)）：评什么：现实网页中的繁琐复杂 chores。核心思想：把大量筛选、重复确认、跨页面状态维护等“人类不愿做但工作中常见”的网页任务做成 benchmark，检验 agent 的稳定执行和错误恢复。
 - [SpreadsheetBench Verified](https://arxiv.org/abs/2506.03768)：评什么：可验证的表格/电子表格任务（公式、计算、操作与结果一致性）。核心思想：以“可自动验证”的协议把 spreadsheet 这种常见生产工具纳入编程代理能力谱系。
+- [Sheetpedia](https://openreview.net/forum?id=4vLYwlA3X5)（[开源代码](https://github.com/TTtianTT/Sheetpedia)，[数据集](https://huggingface.co/datasets/tianzl66/Sheetpedia_xlsx)）：评什么：电子表格智能与微调数据。核心思想：收集带公式语义的大规模真实 spreadsheet 语料，并定义自然语言到语义范围和自然语言到公式任务，使表格理解比仅基于网页表格的数据更贴近真实办公数据。
 - [AssetOpsBench](https://arxiv.org/abs/2506.03828)（[开源代码](https://github.com/IBM/AssetOpsBench)）：评什么：工业资产运维中的多步骤决策与操作。核心思想：把 Industry 4.0 场景中的设备状态、维护策略和操作约束组织成可执行任务，补充办公室软件之外的企业运营工作流。
+- [EconGym](https://arxiv.org/abs/2506.12110)：评什么：覆盖多样经济任务的可扩展经济决策环境。核心思想：把 AI 系统接入模块化经济仿真，覆盖政策、人口变化、多政府协调和大规模 agent 交互，使经济决策更接近真实运营任务，而不是静态问答。
 - [xbench](https://arxiv.org/abs/2506.13651)：评什么：与职业生产力直接对齐的动态真实工作评测，初始覆盖招聘与营销。核心思想：由行业专家定义商业重要任务，并用可随时间更新的 evalset 追踪 agent 的 Technology-Market Fit，而不是只看静态学术题。
 - [OpenAgentSafety](https://arxiv.org/abs/2507.06134)：评什么：真实工具环境中的 agent 安全。核心思想：接入浏览器、代码执行、文件系统、shell 和消息平台，覆盖多轮多用户任务中的 8 类风险，用现实工作流暴露安全对齐缺口。
 - [WearVox](https://arxiv.org/abs/2507.11824)（[开源代码](https://github.com/facebookresearch/wearvox)）：评什么：可穿戴语音助手的上下文感知能力。核心思想：把语音、视觉和用户情境结合起来评估移动生活场景中的助手能力，补足桌面/网页工作流之外的现实助理形态。
@@ -39,6 +42,7 @@
 - [OdysseyBench](https://arxiv.org/abs/2508.09124)（[开源代码](https://github.com/microsoft/OdysseyBench)）：评什么：长程办公生产力工作流中的 agent memory。核心思想：围绕文档、邮件、日历、表格等办公室任务构造跨阶段状态依赖，检验 agent 是否能在长链路中保留关键上下文并正确复用历史操作结果。
 - [MCP-Bench](https://arxiv.org/abs/2508.20453)（[开源代码](https://github.com/Accenture/mcp-bench)）：评什么：通过 MCP servers 执行复杂真实任务的工具使用能力。核心思想：每个 MCP server 提供互补工具，任务要求跨工具规划、schema 理解、轨迹级决策与最终任务完成，贴近企业 MCP 化工具生态。
 - [AgentArch](https://arxiv.org/abs/2509.10769)（[开源代码](https://github.com/ServiceNow/AgentArch)）：评什么：企业场景中不同 agent 架构的端到端效果。核心思想：把 ReAct、planner-executor、多代理、记忆和工具路由等架构选择放到统一企业任务集里比较，帮助区分模型能力与 harness 设计贡献。
+- [EngDesign](https://arxiv.org/abs/2509.16204)（[开源代码](https://github.com/AGI4Engineering/EngDesign)，[数据集](https://huggingface.co/datasets/opt1zer/EngDesign)）：评什么：多工程学科中的 LLM 工程设计能力。核心思想：从课本问答推进到开放设计问题，要求模型综合领域知识、处理约束并推理设计工件，更贴近真实工程场景。
 - [Gaia2](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）：评什么：动态现实环境中的异步任务、通知和外部系统交互。核心思想：用会变化的环境状态和持续事件流逼近真实工作中的“等待、更新、再计划”，适合作为静态一次性 workplace benchmark 的动态补充。
 - [SCUBA](https://arxiv.org/abs/2509.26506)（[开源代码](https://github.com/SalesforceAIResearch/SCUBA)）：评什么：Salesforce GUI 中的企业 computer-use 任务。核心思想：以 CRM 业务对象和真实 SaaS 界面为载体，测 agent 在记录查改、表单导航、规则遵循和状态一致性上的可靠性。
 - [DRBench](https://arxiv.org/abs/2510.00172)（[开源代码](https://github.com/ServiceNow/drbench)，[数据集](https://huggingface.co/datasets/ServiceNow/drbench)）：评什么：企业 deep research 工作。核心思想：要求 agent 跨公开网页、私有文件、邮件、聊天和生产力工具检索证据并生成带引用报告，补齐现实企业场景中“信息分散且有权限边界”的研究型工作流。

@@ -31,6 +31,7 @@
 - [1.13 Skill 调用](docs/zh/01-13-skill-use.md)
 - [1.14 写作与长文生成](docs/zh/01-14-writing.md)
 - [1.15 记忆](docs/zh/01-15-memory.md)
+- [1.16 其它](docs/zh/01-16-other.md)
 
 ### 2. 基础 Agent
 
@@ -43,11 +44,17 @@
 - [2.7 现实工作](docs/zh/02-07-real-world-work.md)
 - [2.8 未来预测](docs/zh/02-08-future-prediction.md)
 - [2.9 Agent 安全](docs/zh/02-09-agent-safety.md)
+- [2.10 网络安全](docs/zh/02-10-cybersecurity.md)
+- [2.11 具身与 VLA Agent](docs/zh/02-11-embodied-vla.md)
 
 ### 3. 下游应用
 
 - [3.1 配环境](docs/zh/03-01-environment-setup.md)
 - [3.2 科研](docs/zh/03-02-research.md)
+
+## 维护方式
+
+本项目采用半自动化方式维护。最新关注热点与研究成果会从引文网络、模型厂商 model card，以及顶会最新接收论文中提取，再经 agent 辅助筛选后合并进图谱。具体流程见本仓库维护 skill：[.agents/skills/llm-landscape-maintainer/SKILL.md](.agents/skills/llm-landscape-maintainer/SKILL.md)。
 
 ## English Version
 

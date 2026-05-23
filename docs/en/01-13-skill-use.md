@@ -19,6 +19,8 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
 
 - [LifelongAgentBench](https://arxiv.org/abs/2505.11942): What it evaluates: whether LLM agents can learn, remember, and reuse skills across long task sequences.
   Core idea: chain tasks as episodes so that agents use past experience, tool-operation patterns, and transferable skills on new tasks instead of only planning within a single task.
+- [Single-Agent with Skills](https://arxiv.org/abs/2601.04748): What it evaluates: when skill-augmented single agents can replace multi-agent systems and when they fail.
+  Core idea: use a comparative task protocol to separate gains from reusable skills from gains that require multi-agent decomposition.
 - [SkillsBench](https://arxiv.org/abs/2602.12670) ([code](https://github.com/benchflow-ai/skillsbench); [website](https://www.skillsbench.ai/)): What it evaluates: whether agents achieve stable task-success gains when using human-written or self-generated skills.
   Core idea: make skill value measurable through a three-way comparison of `no skill / curated skill / self-generated skill`; the paper version covers 86 tasks across 11 domains, while the current website shows 84 tasks.
 - [SkillInject](https://arxiv.org/abs/2602.20156): What it evaluates: whether agents are vulnerable to prompt injection embedded in skill files. Core idea: treat reusable skills as an explicit attack surface and measure whether malicious instructions redirect agent behavior during execution.
@@ -26,6 +28,8 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
   Core idea: stress-test skill abstraction through `quantitative scaling` and `structural scaling`; it considers not only instance-level success but also efficiency gains from skill reuse.
 - [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401) ([code](https://github.com/GeniusHTX/SWE-Skills-Bench); [dataset](https://huggingface.co/datasets/GeniusHTX/SWE-Skills-Bench)): What it evaluates: whether agent skills truly help on real software engineering tasks.
   Core idea: shift the evaluation target from "can a coding agent fix code" to "does a given skill improve the success rate, efficiency, and behavior quality of software engineering agents".
+- [SkillTester](https://arxiv.org/abs/2603.28815) ([project page](https://skilltester.ai/); [code](https://github.com/skilltester-ai/skilltester)): What it evaluates: utility and security of agent skills.
+  Core idea: compare baseline and with-skill executions while also probing skills for security issues, making skill usefulness and skill risk visible in one benchmark.
 - [MM Claw skill-compliance suite](https://www.minimax.io/news/minimax-m27-en) (model-card-only; no standalone public release confirmed): What it evaluates: whether an agent can keep following and reusing more than 40 complex skills during extended OpenClaw-style work. Core idea: treat skill adherence itself as an evaluation signal, complementing public skill-search and skill-injection benchmarks.
 - [Agentic Skills in the Wild](https://arxiv.org/abs/2604.04323): What it evaluates: whether skills still help when agents search for, select, and use skills that do not perfectly match the task in a real skill ecosystem.
   Core idea: relax the "ideal skill is directly provided" setting into retrieval, noise, and adaptation pressure, then measure how skill utility degrades under realistic settings.
@@ -34,6 +38,8 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
 - [SkillRet](https://arxiv.org/abs/2605.05726): What it evaluates: large-scale retrieval over agent skill libraries; core idea: treat skill selection as a retrieval problem and evaluate long queries, noisy libraries, and NDCG / recall.
 - [FORTIS](https://arxiv.org/abs/2605.09163): What it evaluates: whether agent skills cross least-privilege boundaries.
   Core idea: split evaluation into "whether the minimally sufficient skill is selected" and "whether execution expands to tools or actions outside that skill", elevating the skill layer from an organizational abstraction to a measurable permission boundary.
+- [Dependency Steering](https://arxiv.org/abs/2605.09594): What it evaluates: whether malicious skills can steer coding agents toward attacker-chosen dependencies.
+  Core idea: treat persistent skill files as a software-supply-chain attack surface and measure how skill content changes dependency selection during coding workflows.
 - [SkillSafetyBench](https://arxiv.org/abs/2605.12015): What it evaluates: whether agents facing a skill-facing attack surface can be induced by third-party skills, local materials, or local artifacts into unsafe actions.
   Core idea: combine ordinary tasks, risk domains, malicious or benign skill materials, and rule validators in a runnable environment, showing that skill safety cannot rely only on model-level alignment evaluations.
 - [AgentTrap](https://arxiv.org/abs/2605.13940) ([code](https://github.com/zhmzm/AgentTrap); [dataset](https://huggingface.co/datasets/zhmzm/AgentTrap)): What it evaluates: whether agents blindly execute malicious runtime behavior embedded in third-party skills.
@@ -48,23 +54,38 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
 - [CUA-Skill](https://arxiv.org/abs/2601.21123) ([project page](https://microsoft.github.io/cua_skill/)): A structured skill base and CUA-Skill Agent for computer-use agents; core idea: package GUI operation knowledge as skills with parameterized execution and composition graphs, then call them through retrieval, parameter instantiation, and memorized failure recovery.
 - [Skill-Pro](https://arxiv.org/abs/2602.01869): A procedural-skill learning harness. Core idea: learn executable skills from episodic experience with explicit activation, execution, and termination conditions.
 - [SkillRL](https://arxiv.org/abs/2602.08234) ([code](https://github.com/aiming-lab/SkillRL)): Recursive skill-augmented reinforcement learning; core idea: summarize experience into reusable skills and continue reading, extending, and validating the skill bank in later RL iterations.
+- [SkillOrchestra](https://arxiv.org/abs/2602.19672): A skill-aware agent-routing harness. Core idea: route agents through skill transfer, making the transferability of skills an explicit orchestration signal.
+- [TARSE](https://arxiv.org/abs/2603.01241): A test-time adaptation harness that retrieves skills and experience for reasoning agents.
+  Core idea: select reusable procedural knowledge and prior experience at each reasoning step so skill reuse becomes part of online adaptation.
 - [AgentSkillOS](https://arxiv.org/abs/2603.02176) ([code](https://github.com/ynulihao/AgentSkillOS)): An OS-style route for skill retrieval and orchestration; it decomposes skill use into `capability tree retrieval -> DAG orchestration -> artifact-rich output evaluation`.
   Core idea: compare "flat direct invocation" with "structured retrieval + DAG composition" at ecosystem scales from 200 to 200K skills; the paper also provides 30 artifact-rich tasks across five categories, showing that skill use is not only about finding a skill, but about organizing multiple skills into an executable pipeline.
 - [XSkill](https://arxiv.org/abs/2603.12056): A continual multimodal-agent skill harness. Core idea: jointly retain visual experiences and structured reusable skills so later tasks can draw on both episodic evidence and procedural abstractions.
 - [Memento-Skills](https://arxiv.org/abs/2603.18743) ([code](https://github.com/Memento-Teams/Memento-Skills)): A generalist agent system that treats reusable skills as persistent, evolvable memory.
   Core idea: use read-write reflective learning to select, update, and extend Markdown skill files, allowing agents to continually reshape task-specific agents without updating model parameters.
 - [Trace2Skill](https://arxiv.org/abs/2603.25158): A trajectory-to-skill distillation harness. Core idea: analyze execution trajectories in parallel and hierarchically consolidate local lessons into transferable agent skills.
+- [AdaSkill](https://arxiv.org/abs/2604.01608): A skill-distillation harness for deciding when a single skill-augmented agent can replace a multi-agent system.
+  Core idea: extract tools, knowledge, and structure from multi-agent traces only when metric-free diagnostics indicate the distillation is beneficial.
 - [SkVM](https://arxiv.org/abs/2604.03088) ([code](https://github.com/SJTU-IPADS/SkVM)): Skill compilation and runtime; core idea: treat skills as compilable artifacts for capability binding, concurrent extraction, and JIT hardening, improving portability across harnesses.
 - [SkillFoundry](https://arxiv.org/abs/2604.03964) ([code](https://github.com/ma-compbio-lab/SkillFoundry)): Builds self-evolving skill libraries from heterogeneous scientific and engineering resources.
   Core idea: extract procedural knowledge from documents, repositories, scripts, notebooks, databases, and papers into skill packages with inputs, outputs, execution steps, environment assumptions, provenance, and tests, then close the loop through expansion, repair, merge, and pruning.
 - [SkillX](https://arxiv.org/abs/2604.04804) ([code](https://github.com/zjunlp/SkillX)): Automatically builds plug-and-play skill knowledge bases.
   Core idea: distill trajectories into a three-level structure of strategic plans, functional skills, and atomic skills, then iteratively correct and actively expand skill coverage through execution feedback.
 - [Graph of Skills](https://arxiv.org/abs/2604.05333) ([code](https://github.com/davidliuk/graph-of-skills)): Dependency-aware structured retrieval for skills; core idea: replace flat skill lists with structured context containing prerequisite relations, reducing blind selection.
+- [EvoAgent](https://arxiv.org/abs/2604.20133): An evolvable agent framework for skill learning and multi-agent delegation.
+  Core idea: treat skills as learned reusable units and delegate work among agents according to the evolving skill state.
+- [Co-Evolving LLM Decision and Skill Bank Agents](https://arxiv.org/abs/2604.20987): A long-horizon skill-bank harness.
+  Core idea: co-evolve a decision agent with a skill-bank agent so task experience reshapes both planning and reusable skill inventory.
 - [From Skills to Talent](https://arxiv.org/abs/2604.22446): Organizes heterogeneous agents as portable Talents. Core idea: package skills, tools, and runtime configuration into recruitable agent identities, then use an Explore-Execute-Review tree search and a Talent Market to assemble, execute, and improve multi-agent organizations dynamically.
 - [SkCC](https://arxiv.org/abs/2605.03353): Cross-framework skill compilation and security hardening; core idea: use the strongly typed intermediate representation SkIR to decouple the semantics of Markdown skills from the prompt formats of different agent frameworks, while incorporating permissions, safety checks, and portability into the compilation process.
+- [SkillMaster](https://arxiv.org/abs/2605.08693): An autonomous skill mastery framework.
+  Core idea: close the loop across skill creation, refinement, and selection so an LLM agent can maintain reusable capabilities rather than only consume a fixed skill list.
 - [SPARK](https://arxiv.org/abs/2605.09192) ([code](https://github.com/EtaYang10th/spark-skills)): Structured pipelines for autonomous runnable tasks; core idea: compress post-task experience into runnable skill flows, emphasizing posterior skill formation and later reuse.
 - [SkillRAE](https://arxiv.org/abs/2605.10114): Skill-based context compilation for retrieval-augmented execution; core idea: compile retrieved skills into compact, grounded, executable context instead of directly stuffing a set of raw Markdown skills into the agent.
 - [SkillEvolver](https://arxiv.org/abs/2605.10500): An online skill-learning meta-skill; core idea: package the process of "write, deploy, and revise domain skills after failure" as a meta-skill, using fresh-agent audit to avoid overfitting only to the current agent.
+- [SkillGen](https://arxiv.org/abs/2605.10999): Verified inference-time agent skill synthesis.
+  Core idea: synthesize auditable reusable skills from trajectories at inference time, adding verification to the skill-generation pipeline.
+- [Constraint-Consistent Skill Composition](https://doi.org/10.1109/ISBDAS69350.2026.11484408): A reliability-oriented skill composition harness.
+  Core idea: constrain skill composition so zero-shot task generalization respects consistency requirements instead of composing skills opportunistically.
 - [CTA / Counterfactual Trace Auditing](https://arxiv.org/abs/2605.11946): A trajectory-level auditing framework for skill influence; core idea: align same-task trajectories with and without skills segment by segment and annotate skill influence patterns, addressing behavioral changes that pass-rate-only evaluation may miss.
 
 ## 1.13.4 Skill

@@ -31,6 +31,7 @@
 - [EXP-Bench](https://arxiv.org/abs/2505.24785)（[开源代码](https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench)）：评什么：AI agent 能否完成完整 AI 研究实验。核心思想：给定研究问题和不完整 starter code，要求 agent 提出假设、设计实验、实现、执行并分析结果，直接评估端到端实验能力。
 - [ResearchCodeBench](https://arxiv.org/abs/2506.02314)（[项目页](https://researchcodebench.github.io/)；[开源代码](https://github.com/PatrickHua/ResearchCodeBench)）：评什么：从最新机器学习论文实现未见过的研究代码。核心思想：用 2024-2025 顶会论文构造 212 个可执行 coding challenge，专门检测模型是否能把新研究贡献翻译成代码。
 - [KRAMABENCH](https://arxiv.org/abs/2506.06541)（[项目页](https://kramabench.org/)；[开源代码](https://github.com/mitdbg/KramaBench)，[数据集](https://huggingface.co/datasets/eugenie-y/KramaBench)）：评什么：数据湖上的 data-to-insight pipeline。核心思想：要求 agent 完成数据发现、清洗、整合、统计推理和 Python pipeline 编排，补足 MLE-bench 之外对开放数据科学研究流程的覆盖。
+- [LLM Speedrunner](https://arxiv.org/abs/2506.22419)（[开源代码](https://github.com/facebookresearch/llm-speedrunner)）：评什么：agent 复现 NanoGPT speedrun 改进的能力。核心思想：把一个活跃的 ML 系统竞赛转成可执行复现任务，要求 agent 理解上一纪录训练脚本、实现已发布加速思路，并在 benchmark harness 下验证收益。
 - [RExBench](https://arxiv.org/abs/2506.22598)（[项目页](https://rexbench.com/)）：评什么：coding agent 能否实现 AI 研究扩展。核心思想：把已发表论文和原始代码库作为上下文，让 agent 实现专家写出的新实验/扩展，并通过自动执行与指标检查评估研究延展能力。
 - [SciArena](https://sciarena.allen.ai/SciArena_An_Open_Evaluation_Platform_for_Foundation_Models_in_Scientific_Literature_Tasks.pdf)（[平台](https://sciarena.allen.ai/)）：评什么：科学文献理解、综合与引用式回答。核心思想：用开放评测平台收集模型在 literature tasks 上的表现，把文献级理解和用户偏好评价接进科研 agent 评估。
 - [Sci2Pol-Bench](https://arxiv.org/abs/2509.21493)（[开源代码](https://github.com/WeiminWu2000/Sci2Pol)，[数据集](https://huggingface.co/datasets/Northwestern-CSSI/Sci2Pol-Bench)）：评什么：从科学论文到政策简报的科研转译流程。核心思想：把补全、理解、总结、生成和验证拆成五阶段写作任务，衡量模型能否把科学证据转化为面向政策读者的可用材料。
@@ -67,6 +68,7 @@
 - [Paper2Code](https://arxiv.org/abs/2504.17192)（[开源代码](https://github.com/going-doer/Paper2Code)）是面向“论文到代码实现”的专项科研代理工作。
 - [Robin](https://arxiv.org/abs/2505.13400)（[开源代码](https://github.com/Future-House/robin)）是 FutureHouse 的 lab-in-the-loop 多代理科学发现系统；把文献搜索、假设生成、实验设计、数据分析和后续假设更新接成闭环，并在 dAMD 药物候选发现案例中完成实验验证。
 - [R&D-Agent](https://arxiv.org/abs/2505.14738)（[开源代码](https://github.com/microsoft/RD-Agent)）聚焦研发场景的分工式多代理工作流编排。
+- [R&D-Agent-Quant](https://arxiv.org/abs/2505.15155)（[开源代码](https://github.com/microsoft/RD-Agent)）把 R&D-Agent 扩展到量化金融；核心工作流把量化研究拆成假设驱动的因子挖掘、代码生成、回测反馈和自适应调度，用于因子与模型联合优化。
 - [MLR-Agent](https://arxiv.org/abs/2505.19955)（[开源代码](https://github.com/chchenhui/mlrbench)）是 MLR-Bench 论文提供的模块化 scaffold，覆盖 idea/proposal/experiment/writing 四阶段。
 - [MLE-STAR](https://arxiv.org/abs/2506.15692)（[开源代码](https://github.com/google/adk-samples/tree/main/python/agents/machine-learning-engineering)）是 Google ADK 的机器学习工程 agent；核心 workflow 是 `web/search 参考方案 -> 生成 baseline -> 针对瓶颈做 targeted refinement`，在 MLE-bench 上成为 AIDE 之后的重要开源强基线。
 - [ML-Master](https://arxiv.org/abs/2506.16499)（[开源代码](https://github.com/sjtu-sai-agents/ML-Master)）面向 AI-for-AI 机器学习研究任务，把探索和推理集成到多角色协作流程中，是 MLE-bench/MLE 任务上的代表性研究代理。
@@ -90,7 +92,9 @@
 - [Deep Research](https://arxiv.org/abs/2601.12542)（开源代码：未找到稳定公开仓库）来自 “Rethinking the AI Scientist”；核心是 planner、data analysis、literature search、novelty detection 等专门代理共享 persistent world state，让科学发现从离线批处理转向分钟级交互式循环。
 - [Execution-Grounded Automated AI Research](https://arxiv.org/abs/2601.14525)（开源代码：未找到稳定公开仓库）把科研想法生成和真实执行反馈绑定起来；核心思想：让 agent 通过运行实验检验 idea，而不是只生成看起来合理的研究方案。
 - [MARS / MARS+](https://arxiv.org/abs/2602.02660)（开源代码：未找到稳定公开仓库）是面向 MLE-bench 的模块化反思搜索 agent；论文把 ML 建模拆成候选方案生成、实验执行、结果反思、分支搜索与 ensemble/refinement 等阶段，属于典型的 test-time search / reflective ML engineering harness。
+- [ArchAgent](https://arxiv.org/abs/2602.22425)（开源代码：未找到稳定公开仓库；围绕自动化设计空间搜索构建的计算机体系结构发现 agent 系统；设计关键词：缓存替换策略设计、代码生成、仿真反馈、竞赛式评测）
 - [SciDER](https://arxiv.org/abs/2603.01421)（开源代码：未找到稳定公开仓库）是数据中心式端到端科学研究代理；核心思想是从原始实验数据出发，自动完成数据处理、分析、假设形成和报告生成，补足只面向论文或竞赛数据的科研代理。
+- [OrchMAS](https://arxiv.org/abs/2603.03005)（开源代码：未找到稳定公开仓库；异构科学专家多 agent 编排框架；设计关键词：双层编排、动态角色与 workflow 适配、模型路由、对中间推理分歧的修订）
 - [EvoScientist](https://arxiv.org/abs/2603.08127)（[开源代码](https://github.com/EvoScientist/EvoScientist)）是自进化多代理 AI scientist；用 Researcher Agent、Engineer Agent 与 Evolution Manager Agent，加上 ideation / experimentation 两类持久记忆，让研究策略和代码实验能力随交互历史持续改进。
 - [AIRA_2](https://arxiv.org/abs/2603.26499)（开源代码：未找到稳定公开仓库）是 AIRA-dojo 的直接扩展，针对吞吐、评测噪声和固定 operator 三个瓶颈引入异步多 GPU、Hidden Consistent Evaluation 与 ReAct operators，并继续在 MLE-bench-30 上报告长时程结果。
 - UniScientist（[官方文章](https://unipat.ai/blog/UniScientist)，[开源代码](https://github.com/UniPat-AI/UniScientist)，[模型](https://huggingface.co/UnipatAI/UniScientist-30B-A3B)；论文待发布）是 UniPat AI 的科学研究智能模型与 agentic inference 框架；核心是 Active Evidence Integration、Model Abduction、Evolving Polymathic Synthesis 和多 rollout 报告聚合。

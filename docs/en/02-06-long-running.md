@@ -43,6 +43,7 @@
 - [SeePlanAct (SPA)](https://arxiv.org/abs/2407.15711) ([open-source code](https://github.com/oriyor/assistantbench); the web agent paired with AssistantBench, adding explicit planning and memory components on top of SeeAct for staged planning, information transfer, and final-answer aggregation in long-horizon web tasks)
 - [HomerAgent](https://arxiv.org/abs/2508.09124) ([open-source code](https://github.com/microsoft/OdysseyBench)): The long-horizon office workflow agent paired with OdysseyBench, using explicit memory to maintain stage results; suitable for analyzing context forgetting, erroneous reuse, and inter-stage dependency failures in long tasks.
 - [ARE](https://arxiv.org/abs/2509.17158) ([open-source code](https://github.com/facebookresearch/meta-agents-research-environments)): Turns long-running harnesses into dynamic environment runtimes, supporting asynchronous events, state evolution, external tools, and evaluation logs; useful for studying plan updates and context maintenance during sustained execution.
+- [PRISM](https://arxiv.org/abs/2602.01532): A proactive-agent deliberation harness that treats intervention as cost-sensitive selective action; design keywords: acceptance-calibrated gating, uncertainty-aware reasoning, and user-burden control.
 
 ## 2.6.4 Skill
 

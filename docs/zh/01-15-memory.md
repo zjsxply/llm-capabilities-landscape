@@ -42,6 +42,7 @@
 - [A-MEM](https://arxiv.org/abs/2502.12110)（[开源代码](https://github.com/WujiangXu/A-mem)）：面向 agent 的动态记忆组织框架。核心思想：把记忆片段写成可链接、可演化的知识结构，支持后续检索、重组与反思。
 - [Mem0](https://arxiv.org/abs/2504.19413)（[开源代码](https://github.com/mem0ai/mem0)）：面向生产 agent 的可扩展长期记忆层。核心思想：用自动抽取、更新和检索的 memory pipeline 降低全量历史上下文依赖。
 - [MemoryOS](https://arxiv.org/abs/2506.06326)（[开源代码](https://github.com/BAI-LAB/MemoryOS)）：把 agent memory 拆成 storage、update、retrieve 与 consolidation 等 OS-like 操作；适合作为长期交互任务中的通用 memory runtime。
+- [Memory as a Service（MaaS）](https://arxiv.org/abs/2506.22815)：面向协作 agent 的服务化上下文记忆架构。核心思想：把记忆暴露为模块化服务，让多个 agent 共享、检索和更新任务上下文，而不是依赖单一的完整提示历史。
 - [MemOS](https://arxiv.org/abs/2507.03724)（[开源代码](https://github.com/MemTensor/MemOS)）：把长期记忆、混合检索、跨任务经验复用和 token 节省做成 self-evolving memory OS，适合生产 agent 的 memory-first runtime。
 - [MIRIX](https://arxiv.org/abs/2507.07957)（[开源代码](https://github.com/Mirix-AI/MIRIX)）：多代理记忆系统。核心思想：用专门的记忆管理 agent 维护短期、情景、语义与程序性记忆，服务长程任务中的跨会话调用。
 - [Hindsight](https://arxiv.org/abs/2512.12818)（[开源代码](https://github.com/vectorize-io/hindsight)）：面向生产 agent 的 memory harness。核心思想：在任务后把执行轨迹沉淀为可检索经验，并在后续任务中通过 recall 与 reflection 复用。

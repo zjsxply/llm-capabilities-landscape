@@ -33,6 +33,7 @@
 - [NoLiMa](https://arxiv.org/abs/2502.05167)：评什么：超越字面匹配的长上下文理解；核心思想：通过改写、间接指代和非字面线索降低 needle-style 检索捷径，更强调真正的语义定位与推理。
 - [MMLongBench](https://arxiv.org/abs/2505.10610)：评测多模态长上下文任务族；核心思想是把 `长视觉/长文本` 混合输入的鲁棒性做成可复现实验。
 - [ToolHaystack](https://arxiv.org/abs/2505.23662)：评什么：工具增强模型在长期交互中的信息保持与调用决策；核心思想：把 haystack 压力测试扩展到真实多轮工具使用场景，观察历史证据、工具结果和当前目标之间的对齐。
+- [LongBioBench](https://arxiv.org/abs/2506.02921)（[开源代码](https://github.com/Thomasyyj/LongBio-Benchmark)，[数据集](https://huggingface.co/datasets/thomasyyj/LongBioBench_Sample)）：评什么：人物传记叙事上的可控长上下文理解。核心思想：构造目标事实与上下文有语义关联的长上下文考试，让难度和证据位置比纯合成 needle 任务更可控。
 - [PRELUDE](https://arxiv.org/abs/2508.09848)：评什么：需要全局理解和跨段推理的长上下文任务；核心思想：让问题依赖文档整体结构与远距离证据组合，减少局部片段检索即可答题的评测偏差。
 - [LongLeader](https://arxiv.org/abs/2509.23161)：评什么：长上下文综合 leaderboard 与评测框架。核心思想：统一不同任务、长度区间和指标的排名口径，避免单一 LongBench/needle 任务过度代表长上下文能力。
 - [AcademicEval](https://arxiv.org/abs/2510.17725)（[开源代码](https://github.com/ulab-uiuc/AcademicEval)；[数据集](https://huggingface.co/datasets/ulab-ai/AcademicEval)）：评什么：基于 arXiv 新论文的长上下文生成任务；核心思想：把题源持续连接到新论文，自动构造 Title、Abstract、Introduction 和 Related Work 等任务，降低标签泄漏并覆盖层级抽象能力。

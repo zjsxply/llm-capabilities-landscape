@@ -13,6 +13,8 @@
 
 ## 1.14.2 Bench
 
+- [P2P](https://arxiv.org/abs/2505.17104)：评测自动论文到海报生成。核心思想：把研究论文转化为结构化 poster，并细粒度评价内容选择、版式组织和图文摘要的忠实性。
+- [CreativityPrism](https://arxiv.org/abs/2510.20091)：评测 LLM 在发散思维、创意写作和逻辑推理中的创造力。核心思想：把质量、新颖性和多样性拆开衡量，避免把创意写作能力和其他创造性生成能力混在一起。
 - [EQ-Bench Creative Writing](https://eqbench.com/creative_writing.html)：评什么：创意写作与长篇风格化文本的主观质量。核心思想：用开放写作 prompt 和社区榜单持续比较模型在文学性、表达、叙事节奏和风格控制上的差异，适合作为学术 benchmark 之外的产品化参考。
 - [Suri](https://arxiv.org/abs/2406.19371)（[开源代码](https://github.com/chtmp223/suri)）：评什么：长文生成中的多约束指令遵循。核心思想：把长文任务里的主题、格式、长度、风格和内容约束拆成可检查维度，专门测试模型能否在长输出中持续满足多个细粒度要求。
 - [LongWriter / LongBench-Write](https://arxiv.org/abs/2408.07055)（[开源代码](https://github.com/THUDM/LongWriter)）：评什么：1 万词级长文本生成与长度扩展能力。核心思想：通过 LongWrite-Ruler 与 LongBench-Write 暴露模型“能读长上下文”并不等于“能稳定写长输出”，尤其关注长度控制、结构延展和中后段退化。
@@ -24,6 +26,7 @@
 - [UNCLE](https://arxiv.org/abs/2505.16922)：评什么：长文生成中的不确定性表达。核心思想：专门检查模型是否能在长文里用合适、校准的语言表达不确定性，避免在开放写作中把模糊信息写成过度确定的断言。
 - [ExpertLongBench](https://arxiv.org/abs/2506.01241)：评什么：专家级长文生成任务。核心思想：用结构化 checklist 评审专业长文，强调任务特定要求、可核验子标准和长文整体质量，减少只靠单一总分 judge 的不稳定性。
 - [Arena-Write](https://arxiv.org/abs/2506.18841)（[数据集](https://huggingface.co/datasets/THU-KEG/Arena-Write)）：评什么：真实写作 prompt 下的 pairwise 偏好与 Elo 排名。核心思想：把长文写作结果放进 arena-style 比较，补足单一 rubric critic 难以捕捉整体偏好的问题。
+- [LitBench](https://arxiv.org/abs/2507.00769)：评什么：基于人工标注故事对比的创意写作自动评测可靠性。核心思想：提供标准化偏好 benchmark 和配对数据集，用来测试 LLM judge 与 reward model 对文学生成质量的判断。
 - [LongWeave](https://arxiv.org/abs/2510.24345)：评什么：真实相关且可验证的长文生成。核心思想：让长文任务既贴近真实写作需求，又能通过引用、事实和结构化约束进行核验，连接写作质量与可验证性。
 - [PaperWritingBench](https://arxiv.org/abs/2604.05018)：评什么：AI research paper 写作。核心思想：把摘要、引言、相关工作、方法、实验叙述等论文写作环节组织成可评测任务，检查学术写作的结构、论证、引用上下文和段落质量。
 - [HoWToBench](https://arxiv.org/abs/2604.19071)：评什么：人类水平写作能力。核心思想：提出 Tree of Writing，将写作拆成意图理解、素材组织、结构规划、局部段落生成、全局修订等节点，做更细粒度的写作过程评测。

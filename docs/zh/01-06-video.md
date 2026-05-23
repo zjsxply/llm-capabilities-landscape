@@ -21,6 +21,20 @@
 - [Video-MME](https://arxiv.org/abs/2405.21075)（[项目页](https://mme-benchmark.github.io/)；[开源代码](https://github.com/MME-Benchmarks/Video-MME)）：评测视频分析的全谱系能力；核心思想：用更系统的任务覆盖与评测协议把“视频理解”拆成可对比维度，并提供一键评测脚本。
 - [LVBench](https://arxiv.org/abs/2406.08035)：评测长视频理解；核心思想是以更长时间跨度与更强信息检索需求区分长视频能力。
 - [LongVideoBench](https://arxiv.org/abs/2407.15754)：评测长视频理解；核心思想是把 `frames + subtitles + question` 交织输入，并显式参数化帧预算（如 `max_num_frames`）实现可复现比较。（[项目页](https://longvideobench.github.io/)；[数据集](https://huggingface.co/datasets/longvideobench/LongVideoBench)；[开源代码](https://github.com/longvideobench/LongVideoBench)）
+- [VBench++](https://doi.org/10.1109/TPAMI.2025.3633890)：面向视频生成模型的综合评测套件。核心思路是系统组织生成视频的质量、一致性、运动和提示对齐等指标，使视频生成系统的比较不局限于单一偏好测试。
+- [PhyWorldBench](https://arxiv.org/abs/2507.13428)：评测文本到视频模型的物理真实感。核心思想：把物体动态、交互和物理一致性中的违背现象作为生成视频的核心评分目标。
+- [VideoVerse](https://doi.org/10.48550/arXiv.2510.08398)：评测文本到视频生成器距离可用 world model 还有多远。核心思想：检验生成视频是否保持物理、时间和动作条件下的动态一致性，而不只是视觉上看起来合理。
+- [LikePhys](https://arxiv.org/abs/2510.11512)：通过似然偏好评估视频扩散模型的直觉物理理解。核心思路是比较物理合理与不合理的候选视频，使视频生成评测能暴露动力学错误，而不只关注画面质量。
+- [VideoScience-Bench](https://arxiv.org/abs/2512.02942)：评估视频生成中的科学理解与推理。核心思路是用科学导向的提示和判定标准检查生成视频是否保持科学概念与因果结构，而不只是表面逼真。
+- [RISE-Video](https://arxiv.org/abs/2602.05986)：评测视频生成器是否掌握隐含世界规则。核心思想：关注动态是否符合规则，而不只看表面真实感，可补充生成视频物理合理性评测。
+- [Physion-Eval](https://arxiv.org/abs/2603.19607)：用专家人类推理评测生成视频的物理真实性。核心思想：相对于真实参考视频标注时间定位的物理故障和细粒度违规类别，使失败原因可解释，而不只是偏好评分。
+- [AVGen-Bench](https://arxiv.org/abs/2604.08540)：评测 text-to-audio-video 生成。核心思想：在统一的多粒度协议下同时检查感知质量、语义可控性、音视频对齐、语音、音乐、文字渲染和物理推理。
+- [AnimationBench](https://arxiv.org/abs/2604.15299)：评测以角色为中心的动画视频生成。核心思想：把动画基本原则、IP 保持、运动合理性、镜头一致性和语义一致性转成可评测维度，支持闭集和开放式 image-to-video 评测。
+- [CLVG-Bench](https://arxiv.org/abs/2604.19193)：通过视频生成中的上下文学习评测多模态推理。核心思想：用复杂物理、逻辑和交互式视频上下文任务，以及自适应评测反馈，暴露视频生成模型的推理与 grounding 缺陷。
+- [BRITE](https://arxiv.org/abs/2605.00873)：评测 text-to-video 生成在不合理场景中的表现。核心思想：结合不合常理的提示、音视频一致性检查和基于 QA 的可解释评测，让离分布失败能够被定位，而不只是给整体分数。
+- [AV-Phys Bench](https://arxiv.org/abs/2605.07061)：评测联合音视频生成中的物理常识。核心思想：在稳态、事件转变和环境转变场景下检查视觉、音频和跨模态物理一致性，并加入刻意不符合物理的 Anti-AV-Physics 提示。
+- [MechVerse](https://arxiv.org/abs/2605.14843)：评测 image-to-video 生成中的机械运动一致性。核心思想：用带刚性连杆、接触、耦合和运动链约束的机械装配体，暴露生成视频中不符合物理约束的运动。
+- [PDI-Bench](https://arxiv.org/abs/2605.15185)：评测生成视频中的几何一致性。核心思想：把跟踪到的对象中心观测提升到 3D，并用投影几何残差检查尺度-深度对齐、三维运动一致性和结构刚性。
 - [VideoAutoArena](https://videoautoarena.github.io/)：评测开放式视频分析模型的自动竞技场式比较；核心思想是通过用户模拟、模型对战和自动裁判补足固定选择题 benchmark 的真实用户任务覆盖不足。
 - [TVBench](https://arxiv.org/abs/2410.07752)：评测时序理解与运动相关感知；核心思想是把变化/运动作为主要信号，而非静态单帧识别。
 Video reasoning（时序/因果/多跳推理）：
@@ -33,6 +47,8 @@ Video reasoning（时序/因果/多跳推理）：
 - [MMVU](https://arxiv.org/abs/2501.12380)：评测通用视频理解与问答；核心思想是以更系统的任务分解/问题类型覆盖，诊断从事实回忆到理解推理的能力谱。
 - [Video-MMMU（VideoMMMU）](https://arxiv.org/abs/2501.13826)：评测“看视频学知识”的问答能力；核心思想是除绝对准确率外引入 `delta accuracy` 等增量指标，并规范输入组织（例如把题图追加到视频最后一帧）以便统一评测。（[项目页](https://videommmu.github.io/)；[数据集](https://huggingface.co/datasets/lmms-lab/VideoMMMU)；[开源代码](https://github.com/EvolvingLMMs-Lab/VideoMMMU)）
 - [Video-OCR Benchmark](https://arxiv.org/abs/2502.06445)（[开源代码](https://github.com/video-db/ocr-benchmark)）：评测 VLM 与传统 OCR 在视频帧文字识别上的差异；核心思想是把视频文本识别从单图 OCR 中拆出来，显式比较抽帧、时间冗余和端到端视觉语言模型的收益。
+- [MimeQA](https://arxiv.org/abs/2502.16671)（[开源代码](https://github.com/MIT-MI/MimeQA)，[数据集](https://huggingface.co/datasets/hzli1202/MimeQA)）：评什么：默剧视频中的非语言社交理解。核心思想：用无声的表达性表演作为视频问答来源，测试 foundation model 是否理解手势、姿态、情绪和社交意图，而不是只依赖语言主导的社会推理。
+- [VideoPhy-2](https://arxiv.org/abs/2503.06800)：评什么：生成视频中的动作中心物理常识。核心思想：用多样真实动作、人工评审和自动评测检查视频生成模型是否保持物理上合理的动态，而不只是画面外观。
 - [ViSpeak](https://arxiv.org/abs/2503.12769)：评测视频到语言的实时/半实时表达；核心思想是强调时间一致性、信息覆盖与输出流畅性。
 - [EgoTempo](https://arxiv.org/abs/2503.13646)：评测第一视角视频的时序与动作理解；核心思想是利用 egocentric 视角的遮挡、快速运动与交互性提高难度。
 - [FAVOR-Bench](https://arxiv.org/abs/2503.14935)（[项目页](https://favor-bench.github.io/)；[开源代码](https://github.com/FAVOR-Bench/FAVOR-Bench)；[数据集](https://huggingface.co/datasets/zl2048/FAVOR)）：评测细粒度视频运动理解；核心思想是覆盖第一视角与第三视角视频、闭集问答和开放描述，专门诊断模型是否真正看懂动作细节、运动轨迹和时间动态。
@@ -43,6 +59,7 @@ Video reasoning（时序/因果/多跳推理）：
 - [LiveSports3K](https://arxiv.org/abs/2504.16030)：评测直播体育场景下的理解与字幕/解说相关能力；核心思想是以直播分布与时间敏感信息为挑战。
 - [Minerva](https://arxiv.org/abs/2505.00681)：评测复杂视频推理与知识整合；核心思想是更长链路推理与跨模态信息融合。
 - [VideoEval-Pro](https://arxiv.org/abs/2505.14640)：评测更专业的长视频理解/评测协议鲁棒性；核心思想是更严格的评测设置与更贴近实际的长视频任务组织。
+- [CineTechBench](https://arxiv.org/abs/2505.15145)（[开源代码](https://github.com/PRIS-CV/CineTechBench)，[数据集](https://huggingface.co/datasets/Xinran0906/CineTechBench)）：评什么：电影摄影技术理解与生成。核心思想：用专家标注的镜头运动、构图、布光等电影技法，测试视频与生成模型是否能理解工艺级视觉语言，而不只是识别事件。
 - [MME-VideoOCR](https://arxiv.org/abs/2505.21333)：评测视频中的动态文字感知、识别与推理；核心思想是把 text-in-video 当成视频理解的关键维度，覆盖多语言、多场景和 OCR-to-reasoning 问题。
 - [Video-Holmes](https://arxiv.org/abs/2505.21374)：评测“侦探式”视频推理与证据链对齐；核心思想是用可解释线索链约束推理过程，降低拍脑袋结论。
 - [VideoReasonBench](https://arxiv.org/abs/2505.23359)：评测时序、因果与多步推理；核心思想是显式要求跨片段线索整合而非单帧识别。
@@ -51,6 +68,7 @@ Video reasoning（时序/因果/多跳推理）：
 - [VideoMathQA](https://arxiv.org/abs/2506.05349)（[项目页](https://mbzuai-oryx.github.io/VideoMathQA)；[开源代码](https://github.com/mbzuai-oryx/VideoMathQA)）：评测视频中的数学推理；核心思想是让模型跨视觉、音频、文本和长时序线索理解教学/解题过程，连接视频理解与数学推理能力。
 - [Morse-500](https://arxiv.org/abs/2506.05523)：评测更细粒度的视频推理与线索追踪；核心思想是以更高密度的推理点与更严格的答案约束做诊断。
 - [EASG-Bench](https://arxiv.org/abs/2506.05787)（[开源代码](https://github.com/fpv-iplab/EASG-bench)）：评测基于 egocentric action scene graph 的视频问答；核心思想是从带时空 grounding 的动态图生成 QA，重点检查 actor、action、object 关系与时序顺序理解。
+- [Video-CoT](https://arxiv.org/abs/2506.08817)：评什么：带 chain-of-thought 标注的时空视频理解。核心思想：把细粒度视频问答与推理轨迹配对，使时间和空间证据整合能够被更显式地诊断。
 - [CausalVQA](https://arxiv.org/abs/2506.09943)：评测真实视频中的物理因果推理；核心思想是用 counterfactual、hypothetical、anticipation、planning 等问题类型，要求模型基于视觉证据预测事件后果而非套用语言先验。
 - [HiVU](https://arxiv.org/abs/2506.13589)（[开源代码](https://github.com/xzc-zju/AdaVideoRAG)）：评测长视频问答中的分层索引与证据检索；核心思想是把视频拆成多粒度索引层级，诊断模型是否能在超长视频里定位有效片段而非均匀抽帧。
 - [CausalStep](https://arxiv.org/abs/2507.16878)：评测显式逐步因果推理；核心思想是把视频切成因果关联单元并采用顺序作答协议，防止模型利用全局上下文捷径直接猜最终答案。
@@ -59,6 +77,7 @@ Video reasoning（时序/因果/多跳推理）：
 - [OmniVideoBench](https://arxiv.org/abs/2510.10689)（[项目页](https://omnivideobench.github.io/omnivideobench_home/)；[开源代码](https://github.com/NJU-LINK/OmniVideoBench)）：评测长视频全模态理解；核心思想是把视觉、音频、OCR 和 ASR 等证据放进同一评测协议，检查模型是否能在长视频中跨模态整合信息。
 - [CrossVid](https://arxiv.org/abs/2511.12263)：评测跨多个视频的对比、检索与聚合推理；核心思想是多视频证据组织与一致性推理，而非单视频问答。
 - [LongShOTBench](https://arxiv.org/abs/2512.16978)（[项目页](https://mbzuai-oryx.github.io/LongShOT/)；[数据集](https://huggingface.co/datasets/MBZUAI/longshot-bench)；[开源代码](https://github.com/mbzuai-oryx/longshot)）：评测长视频中的 omni-modal reasoning 与 agentic tool use；核心思想是把视觉、语音和环境音证据、开放式问答、多轮对话和可解释评分 rubric 放进同一评测协议。
+- [GameplayQA](https://arxiv.org/abs/2603.24329)（[项目页](https://hats-ict.github.io/gameplayqa/)；[数据集](https://huggingface.co/datasets/wangyz1999/GameplayQA)；[标注软件](https://github.com/wangyz1999/sync-video-label)）：评测面向 3D 虚拟 agent 的决策密集、POV 同步多视频理解；核心思想是用多个第一视角游戏视频流和 Self/Other/World 标注检查时间 grounding、跨视频指代和 agent 角色归因。
 - [VideoZeroBench](https://arxiv.org/abs/2604.01569)：评什么：带时空证据校验的长视频问答。核心思想：不只看答案是否正确，还检查支撑答案的时间区间与空间框位置，暴露“答案看似合理但没有真实 grounding”的视频推理缺口。
 - [ZeroVideo](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的高难真实视频评测；目前未确认有独立公开版本。核心思想：跟踪模型厂商用于压力测试超长、真实视频推理的内部或 model-card-only 视频集，即使当前只有聚合结果公开。
 - [SYNCR](https://arxiv.org/abs/2605.08412)：评测带 synthetic grounding 的跨视频推理；核心思想是用可控合成线索检查模型是否能在多个视频之间建立对应关系、定位证据并完成组合推断。

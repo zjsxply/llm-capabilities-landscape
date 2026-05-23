@@ -1,0 +1,14 @@
+# 1.16 Other
+
+> Parent chapter: 1. Foundational Capabilities
+
+Note: This page keeps benchmarks whose primary axis is cross-cutting, meta-evaluative, or not yet dense enough to justify a standalone category. Entries should move into a more specific page once the landscape has enough neighboring work.
+
+## 1.16.1 Bench
+
+- [OmniBench](https://arxiv.org/abs/2409.15272) ([code](https://github.com/multimodal-art-projection/OmniBench), [dataset](https://huggingface.co/datasets/m-a-p/OmniBench)): evaluates tri-modal visual, acoustic, and textual understanding for omni-language models. The core idea is to test whether models can recognize, interpret, and reason over multiple simultaneous modalities rather than treating multimodal evaluation as image-text only.
+- [STEER-ME](https://arxiv.org/abs/2502.13119) (dataset: [narunraman/steer_me](https://huggingface.co/datasets/narunraman/steer_me)): What it evaluates: microeconomic reasoning in LLMs. Core idea: use non-strategic economic decision settings to diagnose whether models reason about incentives, preferences, and trade-offs rather than only answer domain facts.
+- [ThinkBench](https://arxiv.org/abs/2502.16268) ([code](https://github.com/huangshulin123/ThinkBench), [dataset](https://huggingface.co/datasets/jiuyinjiu/ThinkBench)): What it evaluates: robust LLM reasoning under dynamic out-of-distribution generation. Core idea: generate and evaluate fresh OOD reasoning samples to reduce answer leakage and benchmark overfitting, comparing reasoning and non-reasoning models under the same protocol.
+- [AbsenceBench](https://arxiv.org/abs/2506.11440) ([code](https://github.com/harvey-fin/absence-bench), [dataset](https://huggingface.co/datasets/harveyfin/AbsenceBench)): What it evaluates: detecting information deliberately missing from long inputs. Core idea: complement needle retrieval with "find the absent item" tasks in sequences, poetry, and GitHub pull requests, exposing failures where models can retrieve present facts but miss omissions.
+- [CorrectBench](https://arxiv.org/abs/2510.16062) ([project page](https://correctbench.github.io/), [dataset](https://huggingface.co/datasets/zeli2024/CorrectBench)): What it evaluates: self-correction strategies for LLM reasoning. Core idea: compare intrinsic, external, and fine-tuned correction settings across reasoning tasks, separating genuine error repair from repeated or overconfident wrong answers.
+- [Infinity-Chat](https://arxiv.org/abs/2510.22954) ([code](https://github.com/liweijiang/artificial-hiveminds), [dataset](https://huggingface.co/datasets/liweijiang/infinite-chats-taxonomy)): What it evaluates: diversity and homogeneity in open-ended language-model outputs. Core idea: use diverse real user queries with many plausible answers to measure whether repeated model generations collapse toward similar "hivemind" responses rather than preserving human-like variation.

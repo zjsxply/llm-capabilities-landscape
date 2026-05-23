@@ -43,6 +43,7 @@
 - [SeePlanAct (SPA)](https://arxiv.org/abs/2407.15711)（[开源代码](https://github.com/oriyor/assistantbench)；AssistantBench 配套 web agent，在 SeeAct 之上加入显式 planning 与 memory 组件，用于长程网页任务中的阶段计划、信息传递和最终答案聚合）
 - [HomerAgent](https://arxiv.org/abs/2508.09124)（[开源代码](https://github.com/microsoft/OdysseyBench)）是 OdysseyBench 配套的长程办公 workflow agent，用显式记忆维护阶段结果，适合分析长期任务中的上下文遗忘、错误复用和阶段间依赖失败。
 - [ARE](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）把 long-running harness 做成动态环境运行时，支持异步事件、状态演化、外部工具和评测日志，适合研究持续执行中的计划更新与上下文维护。
+- [PRISM](https://arxiv.org/abs/2602.01532)：把主动介入建模为成本敏感选择性行动的 proactive-agent deliberation harness；设计关键词：接受概率校准门控、不确定性感知推理、用户负担控制。
 
 ## 2.6.4 Skill
 

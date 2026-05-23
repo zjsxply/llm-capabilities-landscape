@@ -45,6 +45,7 @@
 - [AstaBench](https://arxiv.org/abs/2510.21652)（[开源代码](https://github.com/allenai/asta-bench)）：评测综合科研 agent 能力；核心思想是用 11 个科研 benchmark 和标准化工具环境覆盖文献检索、代码执行、数据分析和科学发现流程。
 - [CGBench](https://openreview.net/forum?id=UEGEHy1IQE)（[开源代码](https://github.com/owencqueen/cgbench)，[数据集](https://huggingface.co/datasets/owencqueen/cgbench_data)）：评测临床遗传学文献解释；核心思想是贴近 ClinGen 专家流程，让模型从论文中抽取实验结果、判断证据强度并解释遗传变异相关证据。
 - [LPFQA](https://arxiv.org/abs/2511.06346)（数据集：[m-a-p/LPFQA](https://huggingface.co/datasets/m-a-p/LPFQA)）：评测来自专业论坛/社区语境的长尾问答；核心思想是让问题更贴近日常专业交流形式，强调检索与综合归纳。
+- [SymPyBench](https://arxiv.org/abs/2512.05954)：评什么：带动态参数化物理题和可执行 Python 标准答案的科学推理。核心思想：用 SymPy 支撑的解题代码生成题目变体，不只统计准确率，也衡量一致性、失败率和跨变体混淆。
 - [Encyclo-K](https://arxiv.org/abs/2512.24867)（数据集：[m-a-p/Encyclo-K](https://huggingface.co/datasets/m-a-p/Encyclo-K)）：评测“书籍级/长篇”专业知识掌握；核心思想是从书籍材料抽取可组合的原子知识点，衡量长期知识内化而非短片段记忆。
 - [FrontierScience](https://arxiv.org/abs/2601.21165)：评测专家级前沿科学推理，覆盖物理、化学和生物学的 Olympiad 与 Research 两个子集。核心思想是由领域专家构造极难、可核验的问题，以研究式知识综合和高难竞赛推理同时压力测试模型科学能力。
 - [FIRE-Bench](https://arxiv.org/abs/2602.02905)（[开源代码](https://github.com/maitrix-org/FIRE-Bench)）：评测科研 agent 对既有科学洞见的全流程再发现能力；核心思想是只给高层研究问题，让 agent 自主构思、实验、执行与归纳，再用 claim-level precision/recall/F1 衡量是否重建了论文中的可验证结论。

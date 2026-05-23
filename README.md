@@ -31,6 +31,7 @@ This repository organizes recent LLM research by capability areas, benchmark fam
 - [1.13 Skill Use](docs/en/01-13-skill-use.md)
 - [1.14 Writing and Long-Form Generation](docs/en/01-14-writing.md)
 - [1.15 Memory](docs/en/01-15-memory.md)
+- [1.16 Other](docs/en/01-16-other.md)
 
 ### 2. Agent Capabilities
 
@@ -43,11 +44,17 @@ This repository organizes recent LLM research by capability areas, benchmark fam
 - [2.7 Real-World Work](docs/en/02-07-real-world-work.md)
 - [2.8 Future Prediction](docs/en/02-08-future-prediction.md)
 - [2.9 Agent Safety](docs/en/02-09-agent-safety.md)
+- [2.10 Cybersecurity](docs/en/02-10-cybersecurity.md)
+- [2.11 Embodied and VLA Agents](docs/en/02-11-embodied-vla.md)
 
 ### 3. Downstream Applications
 
 - [3.1 Environment Setup](docs/en/03-01-environment-setup.md)
 - [3.2 Research](docs/en/03-02-research.md)
+
+## Maintenance
+
+This project is maintained semi-automatically. Recent topics and research results are extracted from citation networks, model-vendor model cards, and newly accepted papers from major conferences, then screened and merged by an agent-guided workflow. See the repository maintenance skill at [.agents/skills/llm-landscape-maintainer/SKILL.md](.agents/skills/llm-landscape-maintainer/SKILL.md).
 
 ## Chinese Version
 

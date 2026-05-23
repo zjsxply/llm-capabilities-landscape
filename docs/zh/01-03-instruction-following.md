@@ -30,22 +30,27 @@
 - [LIFEBENCH](https://arxiv.org/abs/2505.16234)（[开源代码](https://github.com/LIFEBench/LIFEBench)，[数据集](https://huggingface.co/datasets/LIFEBench/LIFEBench)）：评测长度指令遵循。核心思想：专测明确的长输出长度约束，例如词数或 token 数要求，暴露模型在本应很长但结构简单的输出中提前结束、严重短写或拒答的问题。
 - [AgentIF](https://arxiv.org/abs/2505.16944)（[开源代码](https://github.com/THU-KEG/AgentIF)）：评测 agentic 场景下的长系统提示、工具说明和复杂约束遵循；核心思想是从真实工业与开源 agent 应用收集长指令，并为约束标注 code/LLM/hybrid 评测器。
 - [MARS-Bench](https://arxiv.org/abs/2505.23810)（数据集：[LeeeeTX/MARS-Bench](https://huggingface.co/datasets/LeeeeTX/MARS-Bench)）：评测多轮真实场景对话下的指令遵循与对话质量；核心思想是用更贴近真实交互的 multi-turn 设定衡量约束执行的稳定性。
+- [MaXIFE](https://aclanthology.org/2025.acl-long.698/)：评测多语言与跨语言指令遵循。核心思想：检查指令语言、回答语言或跨语言迁移设置变化后，模型是否仍能保持可验证约束。
+- [LIFBench](https://aclanthology.org/2025.acl-long.803/)：评测长上下文场景中的指令遵循表现与稳定性。核心思想：检查长输入之后约束是否仍然有效，而不只是衡量同一上下文窗口里的信息检索能力。
 - [IFBench](https://arxiv.org/abs/2507.02833)：评测可验证指令遵循在未见约束上的泛化；核心思想是新增 58 类可程序验证的 out-of-domain 约束，避免只在 IFEval 风格的少量模板约束上过拟合。
 - [IFScale](https://arxiv.org/abs/2507.11538)（[开源代码](https://github.com/DistylAI/distylai.github.io)）：评测指令数量扩展时的约束遵循退化；核心思想是把同时需要满足的关键词包含指令从 10 条扩到 500 条，观察模型在高约束负载下的失败模式。
 - [Inverse IFEval](https://arxiv.org/abs/2509.04292)（数据集：[m-a-p/Inverse_IFEval](https://huggingface.co/datasets/m-a-p/Inverse_IFEval)）：评测模型在“反向指令”或去偏设置下是否仍能严格遵循指令；核心思想是通过逆向指令构造，测量模型对模板化输出惯性的抵抗与指令鲁棒性。
+- [CMT-Eval](https://aclanthology.org/2025.findings-emnlp.992/)：评测中文多轮对话中的真实交互挑战。核心思路是检验模型能否在对话轨迹中保持上下文、满足不断变化的用户意图，并处理现实交互困难，而不是只评测孤立的单轮指令。
 - [EvolIF](https://arxiv.org/abs/2511.03508)：评测动态演化多轮指令遵循；核心思想是用 query synthesis agent 与三层状态追踪机制模拟用户耐心耗尽前的连续约束追加、状态变化与失败恢复。
+- [LexInstructEval](https://ojs.aaai.org/index.php/AAAI/article/view/39701)：评测词汇层面的指令遵循。核心思想：专测细粒度词级和表层形式约束，这些约束容易表述，但在更宽泛的语义指令遵循评测中常被忽略。
 - [VIFBENCH](https://arxiv.org/abs/2601.17789)：评测指令遵循 verifier 的细粒度判定能力；核心思想是把输出是否遵循指令拆成带标签的 constraint satisfaction 判断，专测验证器而不只是生成模型。
 - [CL-Bench](https://arxiv.org/abs/2602.03587)：同样偏 context learning，但对“规则是否被长期遵循”的诊断有参考价值；核心思想是用更系统的长上下文设置暴露指令跟随的边界。
 - [SEQUOR](https://arxiv.org/abs/2605.06353)：评测长多轮对话中的现实约束遵循；核心思想是把新增、替换与冲突约束都放进同一协议，专测长对话漂移。
+- [DMT-RoleBench](https://doi.org/10.1609/aaai.v39i24.34768)：通过动态多轮对话评测角色扮演 LLM 与 agent。核心思想：围绕评测意图和主题生成对话轨迹，使角色一致性、指令遵循和交互质量比静态提示词更贴近真实角色扮演使用场景。
 
 ## 1.3.3 Agent Harness
 
-- lm-evaluation-harness（[开源代码](https://github.com/EleutherAI/lm-evaluation-harness)）：通用语言模型评测执行框架；价值在于已经包含 `ifeval` 任务实现，适合把指令遵循规则检查接入可复现实验流水线。
 - [HELM](https://arxiv.org/abs/2211.09110)（[开源代码](https://github.com/stanford-crfm/helm)）：通用评测 harness；在指令遵循任务中可复用 IFEval 场景与 strict accuracy 指标，把规则检查、模型调用和结果汇总标准化。
 - [Reflexion](https://arxiv.org/abs/2303.11366)（[开源代码](https://github.com/noahshinn024/reflexion)）：把失败经验以文本记忆沉淀进下一轮执行，适合多轮约束任务的持续改进。
 - [Self-Refine](https://arxiv.org/abs/2303.17651)（[开源代码](https://github.com/madaan/self-refine)）：`先生成 -> 自评 -> 自改` 的 repair loop，可作为复杂指令执行的通用自修复骨架。
 - [Re5](https://arxiv.org/abs/2507.05598)：面向指令遵循的 self-review/revision harness；核心思想是先抽取任务与约束，再做结构评估、约束级内容评估和选择性修订，减少盲目多轮自改带来的质量退化。
 - [NSVIF](https://arxiv.org/abs/2601.17789)：神经符号指令遵循验证框架；核心思想是把自然语言指令建模为逻辑与语义约束，并由统一求解器生成可解释反馈，可作为 agent 输出前的独立合规检查层。
+- lm-evaluation-harness（[开源代码](https://github.com/EleutherAI/lm-evaluation-harness)）：通用语言模型评测执行框架；价值在于已经包含 `ifeval` 任务实现，适合把指令遵循规则检查接入可复现实验流水线。
 
 ## 1.3.4 Skill
 

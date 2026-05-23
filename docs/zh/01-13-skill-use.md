@@ -23,6 +23,7 @@
   核心思想：用对比式任务协议区分可复用技能带来的收益与必须依赖多代理分解的收益。
 - [SkillsBench](https://arxiv.org/abs/2602.12670)（[开源代码](https://github.com/benchflow-ai/skillsbench)；[官网](https://www.skillsbench.ai/)）：评什么：agent 在使用人写或自生成 skills 时，任务成功率到底能否稳定提升。
   核心思想：把 skill 的价值变成 `no skill / curated skill / self-generated skill` 三条件对照；论文版覆盖 86 个任务、11 个领域，官网当前展示 84 个任务。
+- [SkillJect](https://arxiv.org/abs/2602.14211)：评什么：编码智能体中通过技能文件触发的隐蔽提示注入。核心思想：利用执行轨迹做闭环迭代，针对真实编码智能体轨迹优化恶意技能，把技能安全评测从静态恶意指令扩展到可迭代优化的攻击。
 - [SkillInject](https://arxiv.org/abs/2602.20156)：评什么：agent 是否容易受到 skill 文件中嵌入提示注入的攻击。核心思想：把可复用 skill 作为显式攻击面，衡量恶意指令是否会在执行时重定向 agent 行为。
 - [SkillCraft](https://arxiv.org/abs/2603.00718)（[开源代码](https://github.com/shiqichen17/SkillCraft)；[项目页](https://skillcraft-website.github.io/page/)）：评什么：agent 能否把原子工具抽象成可复用 skill，并在长链路任务里缓存、跨任务复用。
   核心思想：通过 `quantitative scaling` 与 `structural scaling` 压力测试 skill abstraction；不仅看 instance-level success，也看 skill 复用带来的效率收益。
@@ -77,11 +78,13 @@
   核心思想：让 decision agent 与 skill-bank agent 协同演化，使任务经验同时改造规划策略和可复用技能库存。
 - [From Skills to Talent](https://arxiv.org/abs/2604.22446)：把异构 agent 组织成可移植的 Talents。核心思想：把 skills、tools 和 runtime configuration 打包成可招募的 agent 身份，再用 Explore-Execute-Review tree search 与 Talent Market 动态组装、执行并改进多代理组织。
 - [SkCC](https://arxiv.org/abs/2605.03353)：跨框架 skill 编译与安全加固；核心思想：用强类型中间表示 SkIR 解耦 Markdown skill 的语义与不同 agent framework 的提示格式，同时把权限、安全检查和可移植性纳入编译流程。
+- [SkillScope](https://arxiv.org/abs/2605.05868)：面向 agent skills 的最小权限执行层。核心思想：对每个 skill 的权限做细粒度作用域限定，并在执行时强制检查，避免可复用 skill 静默扩大 agent 权限。
 - [SkillMaster](https://arxiv.org/abs/2605.08693)：自主 skill mastery 框架。
   核心思想：打通技能创建、修订和选择闭环，让 LLM agent 维护可复用能力，而不是只消费固定技能列表。
 - [SPARK](https://arxiv.org/abs/2605.09192)（[开源代码](https://github.com/EtaYang10th/spark-skills)）：structured pipelines for autonomous runnable tasks；核心思想：把任务完成后的经验压缩成可运行技能流程，强调 posterior skill formation 与后续复用。
 - [SkillRAE](https://arxiv.org/abs/2605.10114)：skill-based context compilation for retrieval-augmented execution；核心思想：把检索到的 skills 编译成紧凑、grounded、可执行的上下文，而不是直接把一组 Markdown skill 原文塞给 agent。
 - [SkillEvolver](https://arxiv.org/abs/2605.10500)：online skill learning meta-skill；核心思想：把“写、部署、失败后修订 domain skill”的流程本身封装成 meta-skill，用 fresh-agent audit 避免只在当前 agent 上过拟合。
+- [AI Workflow Store](https://arxiv.org/abs/2605.10907)：面向稳健个人 agent 的 workflow store 基础设施。核心思想：把可复用工作流封装成可检索、可改写、可执行的过程资产，使 agent 不必在每次会话中从零生成脆弱计划。
 - [SkillGen](https://arxiv.org/abs/2605.10999)：带验证的 inference-time agent skill synthesis。
   核心思想：在推理时从轨迹中合成可审计的可复用技能，并把 verification 纳入技能生成流程。
 - [Constraint-Consistent Skill Composition](https://doi.org/10.1109/ISBDAS69350.2026.11484408)：面向可靠性的 skill composition harness。
@@ -90,6 +93,8 @@
 
 ## 1.13.4 Skill
 
+- [SkillFortify](https://arxiv.org/abs/2603.00195)：面向 agentic skill 供应链的形式化分析框架。核心思想是建模 skill 生命周期中的恶意 skill，结合静态分析、capability sandbox 和审计证据，使 skill 生态获得强于启发式扫描的安全保证。
 - [SkillNet](http://skillnet.openkg.cn)（论文：[SkillNet](https://arxiv.org/abs/2603.04448)；[开源代码](https://github.com/zjunlp/SkillNet)）更像 skill registry / ontology / marketplace 基础设施，覆盖 skill 创建、评估、连接与检索。
 
 这条线当前更成熟的是 `benchmark + retrieval/orchestration/runtime + registry`，而不是“专门服务于 skill 调用”的单个 skill。如果要落到工程实践，更值得回看 `0.3 Skill Creator` 里的 creator / validator / reviewer 路线；它们决定了 skill 是否可发现、可安装、可组合。
+- [SkillSieve](https://arxiv.org/abs/2604.06550)：用于检测恶意 AI agent skill 的分层筛查框架。核心思想是结合快速静态检查、聚焦的 LLM 子分析，并只对可疑 skill 包做更深审查，使 skill 市场能同时筛查代码与 `SKILL.md` 自然语言攻击面。

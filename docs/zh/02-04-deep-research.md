@@ -40,8 +40,8 @@
 - [MMDeepResearch-Bench](https://arxiv.org/abs/2601.12346)：评测多模态 deep research agent。核心思想：把图文证据收集、长报告综合、引用对齐和视觉证据完整性检查放进同一 benchmark。
 - [TaxoBench](https://arxiv.org/abs/2601.12369)：评测 deep research agent 能否检索并组织一个领域。核心思想：把检索到的论文和 taxonomy tree 与专家 taxonomy 对比，而不只评报告文风。
 - [Mr Dre](https://arxiv.org/abs/2601.13217)：评测 deep research agent 的多轮报告修订。核心思想：看 agent 能否吸收用户反馈，同时保留引用支撑并避免已正确部分退化。
-- [ScholarGym](https://arxiv.org/abs/2601.21654)：评什么：deep research 信息收集阶段。核心思想：把“先找资料、再研究”的前半段单独 benchmark 化，直接测 agent 能否定位、筛选和组织高价值来源。
 - [DeepSearchQA](https://arxiv.org/abs/2601.20975)：评测 deep research agent 的高难多步信息搜索。核心思想：用跨领域、要求穷尽答案的任务检查 agent 是否搜得足够广、能否管理长证据链，以及是否会在只找到部分答案后过早停止。
+- [ScholarGym](https://arxiv.org/abs/2601.21654)：评什么：deep research 信息收集阶段。核心思想：把“先找资料、再研究”的前半段单独 benchmark 化，直接测 agent 能否定位、筛选和组织高价值来源。
 - [Deep Research Hallucination Evaluation](https://arxiv.org/abs/2601.22984)：评什么：完整深研轨迹中的幻觉。核心思想：不只查最终报告事实错误，还沿搜索、阅读、笔记和引用链审计幻觉如何在过程中产生并传播。
 - [Wiki Live Challenge](https://arxiv.org/abs/2602.01590)：评什么：专家级 Wikipedia 条目写作式 deep research。核心思想：用动态百科条目需求逼迫 agent 做广泛检索、证据归纳和可引用写作，减少静态问答泄漏。
 - [Vision-DeepResearch Benchmark](https://arxiv.org/abs/2602.02185)（[开源代码](https://github.com/Osilly/Vision-DeepResearch)）：评什么：视觉与文本混合搜索的深研能力。核心思想：把视觉网页证据、图片检索和文本证据放进同一 deep research 任务，诊断多模态搜索是否真正提升报告质量。
@@ -62,15 +62,14 @@
 - [DR3-Eval](https://arxiv.org/abs/2604.14683)（[开源代码](https://github.com/NJU-LINK/DR3-Eval)）：评什么：真实、多模态、可复现的深研评测。核心思想：用用户文件、静态 sandbox 和细粒度 rubric。
 - [Cited but Not Verified](https://arxiv.org/abs/2605.06635)：评测 deep research 报告中的 source attribution。核心思想：可复现解析 Markdown 引用，再在报告尺度评估链接有效性、相关性与事实支撑。
 - [ViDR](https://arxiv.org/abs/2605.13034)：评什么：多模态深研报告与视觉证据对齐。核心思想：要求报告结论能回指到具体视觉来源，减少“引用了页面但视觉证据不支撑结论”的多模态幻觉。
-
 ## 2.4.3 Agent Harness
 
 - [DeepResearcher](https://arxiv.org/abs/2504.03160)（[开源代码](https://github.com/GAIR-NLP/DeepResearcher)；在真实网页搜索环境中用端到端强化学习训练 deep research agent，并显式包含多代理浏览、交叉验证和自反思行为）
 - [WebThinker](https://arxiv.org/abs/2504.21776)（[开源代码](https://github.com/RUC-NLPIR/WebThinker)；把“推理-检索-写作”交错成同一条长链路的 `think-search-draft` 工作流）
 - [WebDancer](https://arxiv.org/abs/2505.22648)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebDancer)；训练主导但系统形态清晰的信息检索型 web agent）
 - [OWL](https://arxiv.org/abs/2505.23885)（[开源代码](https://github.com/camel-ai/owl)；把 deep research 显式拆成 `检索 -> 验证 -> 写作` 的角色化流水线）
-- [WebWatcher](https://arxiv.org/abs/2508.05748)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher)；面向多模态 deep research 的视觉语言代理，并提出 BrowseComp-VL）
 - [Deep Cognition](https://arxiv.org/abs/2507.15759)（开源代码：未找到稳定公开仓库；透明、可中断的多 agent deep research 系统；核心思想是在研究过程中暴露细粒度人类 steering 与协作点，而不是把 deep research 做成封闭输入输出流程）
+- [WebWatcher](https://arxiv.org/abs/2508.05748)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher)；面向多模态 deep research 的视觉语言代理，并提出 BrowseComp-VL）
 - [WebWeaver](https://arxiv.org/abs/2509.13312)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWeaver)；`planner + writer` 双代理，配合动态大纲与 evidence memory bank 管理长报告上下文）
 - [Flash-Searcher](https://arxiv.org/abs/2509.25301)（[开源代码](https://github.com/OPPO-PersonalAI/Flash-Searcher)；把串行 pipeline 改成 DAG 并行执行，并按依赖关系动态调度）
 - [FlowSearch](https://arxiv.org/abs/2510.08521)（[开源代码](https://github.com/InternScience/InternAgent)；流程编排驱动的搜写一体）
@@ -109,7 +108,6 @@
 - DeerFlow（[开源代码](https://github.com/bytedance/deer-flow)；无 arXiv 论文；把 deep research 抽象为可复用 super agent harness，并强调任务分支解耦）
 - Spring AI Alibaba DeepResearch（[开源代码](https://github.com/spring-ai-alibaba/deepresearch)；无 arXiv 论文；Spring 生态集成版深调研）
 - CellCog（[公开 SDK](https://github.com/CellCog/cellcog_python)；无 arXiv 论文；托管式多 agent 平台与 Python SDK，支持 agent team 与 research-cog）
-
 ## 2.4.4 Skill
 
 - [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher)（端到端检索到成稿框架）

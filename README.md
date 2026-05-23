@@ -52,6 +52,13 @@ This repository organizes recent LLM research by capability areas, benchmark fam
 - [3.1 Environment Setup](docs/en/03-01-environment-setup.md)
 - [3.2 Research](docs/en/03-02-research.md)
 
+### 4. Multimodal
+
+- [4.1 Image Generation and Editing Models](docs/en/04-01-image-generation-editing.md)
+- [4.2 Video Generation Models](docs/en/04-02-video-generation.md)
+- [4.3 Speech and Audio Models](docs/en/04-03-speech.md)
+- [4.4 Autonomous Driving](docs/en/04-04-autonomous-driving.md)
+
 ## Maintenance
 
 This project is maintained semi-automatically. Recent topics and research results are extracted from citation networks, model-vendor model cards, and newly accepted papers from major conferences, then screened and merged by an agent-guided workflow. See the repository maintenance skill at [.agents/skills/llm-landscape-maintainer/SKILL.md](.agents/skills/llm-landscape-maintainer/SKILL.md).

@@ -14,13 +14,13 @@
 ## 1.15.2 Bench
 
 - [LOCOMO](https://arxiv.org/abs/2402.17753)（[开源代码](https://github.com/snap-research/locomo)）：评什么：极长程对话记忆。核心思想：把多 session 对话中的事实、偏好和事件作为检索对象，评估 agent 是否能长期一致地使用历史信息。
+- [MemSim](https://arxiv.org/abs/2409.20163)（[开源代码](https://github.com/nuster1128/MemSim)）：评什么：LLM 个人助理的记忆行为。核心思想：用 Bayesian simulator 在受控交互历史下衡量记忆更新、检索和个性化助理行为。
 - [LongMemEval](https://arxiv.org/abs/2410.10813)：评什么：长对话与个人助理场景中的记忆问答。核心思想：把长历史拆成局部事实、全局偏好和跨时间推理问题，测试模型或 memory system 是否能从冗长交互中定位并组合相关记忆。
 - [MemBench](https://arxiv.org/abs/2506.21605)（[开源代码](https://github.com/import-myself/Membench)）：评什么：LLM-based agent 的情节记忆、语义记忆与程序性记忆。核心思想：把“参与式记忆”和“观察式记忆”分开建模，并引入大规模噪声会话测试长期记忆检索。
 - [MemoryAgentBench](https://arxiv.org/abs/2507.05257)（[开源代码](https://github.com/HUST-AI-HYZ/MemoryAgentBench)）：评什么：多轮增量交互中的 agent 记忆写入、更新与召回。核心思想：不把所有历史一次性塞进 prompt，而是按 interaction stream 逐步给信息，检验 memory module 是否能随状态演化。
 - [MemGUI-Bench](https://arxiv.org/abs/2602.06075)（[开源代码](https://github.com/lgy0404/MemGUI-Bench)）：评什么：移动 GUI agent 的记忆能力。核心思想：用跨会话、跨应用和动态环境任务专门测 memory retention 与 cross-session learning，连接记忆能力与 GUI 行动可靠性。
 - [MemoryArena](https://arxiv.org/abs/2602.16313)：评什么：多 session、相互依赖任务中的 agent memory。核心思想：把跨会话依赖、互相干扰的事实与后续行动绑定起来，评估 agent 能否在长期交互中稳定维护可用记忆。
 - [AMA-Bench](https://arxiv.org/abs/2602.22769)：评什么：agentic applications 中的长程记忆。核心思想：使用真实与合成 agent 轨迹，而不只用对话历史，并提供 AMA-Agent 作为 memory baseline。
-- [VehicleMemBench](https://arxiv.org/abs/2603.23840)：评什么：车载 agent 中多用户长期记忆。核心思想：让记忆影响模拟车载助手中的可执行工具状态结果，暴露偏好冲突和按用户绑定的召回失败。
 - [AlpsBench](https://arxiv.org/abs/2603.26680)：评什么：真实对话记忆与偏好对齐中的个性化。核心思想：覆盖记忆生命周期中的抽取、更新、检索和使用。
 - [BEHEMOTH](https://arxiv.org/abs/2604.11610)：评什么：跨异质任务的记忆抽取。核心思想：评分被抽取记忆是否能改善下游个性化、问题解决和 agentic task 表现。
 - [Trojan Hippo](https://arxiv.org/abs/2605.01970)：评什么：持久记忆攻击与防御。核心思想：把 tool-call payload 植入 memory backend，测试后续检索是否导致数据外泄或触发不安全动作。
@@ -41,33 +41,39 @@
 - [Zep](https://arxiv.org/abs/2501.13956)（[开源代码](https://github.com/getzep/graphiti)）：面向 agent memory 的时间知识图谱架构；核心思想：把事件、实体、关系和时间演化组织成可查询图，服务长期个性化和跨会话召回。
 - [A-MEM](https://arxiv.org/abs/2502.12110)（[开源代码](https://github.com/WujiangXu/A-mem)）：面向 agent 的动态记忆组织框架。核心思想：把记忆片段写成可链接、可演化的知识结构，支持后续检索、重组与反思。
 - [Mem0](https://arxiv.org/abs/2504.19413)（[开源代码](https://github.com/mem0ai/mem0)）：面向生产 agent 的可扩展长期记忆层。核心思想：用自动抽取、更新和检索的 memory pipeline 降低全量历史上下文依赖。
+- [Record & Replay](https://arxiv.org/abs/2505.17716)：面向 LLM agent 的经验复用 harness；核心思想是记录既往任务轨迹，并在后续执行中 replay 有用经验，使 agent 无需重新训练也能迁移程序性知识。
 - [MemoryOS](https://arxiv.org/abs/2506.06326)（[开源代码](https://github.com/BAI-LAB/MemoryOS)）：把 agent memory 拆成 storage、update、retrieve 与 consolidation 等 OS-like 操作；适合作为长期交互任务中的通用 memory runtime。
 - [Memory as a Service（MaaS）](https://arxiv.org/abs/2506.22815)：面向协作 agent 的服务化上下文记忆架构。核心思想：把记忆暴露为模块化服务，让多个 agent 共享、检索和更新任务上下文，而不是依赖单一的完整提示历史。
 - [MemOS](https://arxiv.org/abs/2507.03724)（[开源代码](https://github.com/MemTensor/MemOS)）：把长期记忆、混合检索、跨任务经验复用和 token 节省做成 self-evolving memory OS，适合生产 agent 的 memory-first runtime。
 - [MIRIX](https://arxiv.org/abs/2507.07957)（[开源代码](https://github.com/Mirix-AI/MIRIX)）：多代理记忆系统。核心思想：用专门的记忆管理 agent 维护短期、情景、语义与程序性记忆，服务长程任务中的跨会话调用。
+- [CAM](https://arxiv.org/abs/2510.05520)：面向 LLM 阅读理解的建构主义 agentic memory harness。核心思想：用增量聚类、层级摘要和自适应检索构建结构化记忆图式，使阅读 agent 能整合并回访长文本证据。
+- [Ask WhAI](https://arxiv.org/abs/2511.14780)：面向 role-primed 多 agent 交互的信念状态检查 harness。核心思想：记录和重放 agent 轨迹，进行 out-of-band 查询，并注入反事实证据，测试共享记忆与角色先验如何影响后续信念。
 - [Hindsight](https://arxiv.org/abs/2512.12818)（[开源代码](https://github.com/vectorize-io/hindsight)）：面向生产 agent 的 memory harness。核心思想：在任务后把执行轨迹沉淀为可检索经验，并在后续任务中通过 recall 与 reflection 复用。
 - [SimpleMem](https://arxiv.org/abs/2601.02553)：高效 lifelong memory pipeline。核心思想：把经验压缩成结构化记忆，合成语义摘要，并为后续任务做 intent-aware retrieval planning。
 - [MAGMA](https://arxiv.org/abs/2601.03236)：multi-graph agentic memory architecture。核心思想：拆分语义、时间、因果和实体视图，再用 policy-guided graph traversal 做检索。
+- [Learning How to Remember / MCMA](https://arxiv.org/abs/2601.07470)：面向智能体的元认知记忆管理框架。核心思路是把任务执行与学习得到的记忆副驾驶分离，由后者选择记忆抽象层级和复用策略，以支持跨任务迁移。
 - [JitRL](https://arxiv.org/abs/2601.18510)：无需训练的持续适应记忆 harness。核心思想：以非参数方式保存近期经验，并在测试时调节策略选择而不做梯度更新。
 - [ShardMemo](https://arxiv.org/abs/2601.21545)：分片式 agentic memory 服务。核心思想：在带作用域的 ANN shards 和版本化 skill-library tier 之间路由 memory query，提升检索隔离与更新控制。
 - [Hippocampus](https://arxiv.org/abs/2602.13594)：面向 agentic AI 的可扩展 memory module。核心思想：把长历史压缩成高效记忆结构，并评估检索延迟、token footprint 和下游记忆准确率。
 - [UMA](https://arxiv.org/abs/2602.18493)：把记忆操作与问答统一到单一 policy。核心思想：用显式 Memory Bank 做 CRUD 写记忆，专治超长流式状态跟踪。
-- [ByteRover](https://arxiv.org/abs/2604.01599)：agent-native memory 架构。核心思想：让负责推理的 LLM 同时整理、结构化和检索带 provenance 与 lifecycle metadata 的层级 context tree，避免独立 embedding 或图管线偏离 agent 原始记忆意图。
-- [DeltaMem](https://arxiv.org/abs/2604.01560)：用 reinforcement learning 管理 agentic memory。核心思想：用与后续 persona 和任务表现绑定的奖励训练操作级记忆更新。
-- [Opal](https://arxiv.org/abs/2604.02522)：面向个人 AI 的私有记忆系统。核心思想：把个人记忆推理保留在受保护执行路径中，并用 privacy-preserving access pattern 做检索。
-- [Oblivion](https://arxiv.org/abs/2604.00131)：decay-driven memory-control 机制。核心思想：用 activation 与 decay 决定 agent 记忆何时读取、写入、保留或遗忘。
-- [ClawVM](https://arxiv.org/abs/2604.10352)：面向 stateful tool-using agents 的 harness-managed virtual memory。核心思想：把 memory compaction、writeback 和 lifecycle fault 放到 harness 层观测。
-- [Memanto](https://arxiv.org/abs/2604.22085)：面向长程 agent 的 typed semantic memory layer。核心思想：结合固定记忆类别 schema、时间版本、冲突解决和低延迟 information-theoretic retrieval，降低生产 memory system 中图维护和多查询检索开销。
+- [Semantic XPath](https://arxiv.org/abs/2603.01160)：面向对话 AI 的结构化记忆访问 harness。核心思想：用语义路径查询对话记忆，使智能体能检索目标状态，而不是扫描非结构化历史。
+- [RenderMem](https://arxiv.org/abs/2603.14669)：基于渲染的空间记忆检索 harness。核心思想：把已记忆的空间状态转换为可渲染视图供 agent 查询和检查，使记忆检索比纯文本摘要更具空间 grounding。
 - [ElephantBroker](https://arxiv.org/abs/2603.25097)：面向可信 agent 的 cognitive runtime。核心思想：把 graph/vector memory、provenance scoring、consolidation、guardrails 和 audited tool interception 组合进一个 memory-centered runtime。
+- [Oblivion](https://arxiv.org/abs/2604.00131)：decay-driven memory-control 机制。核心思想：用 activation 与 decay 决定 agent 记忆何时读取、写入、保留或遗忘。
+- [DeltaMem](https://arxiv.org/abs/2604.01560)：用 reinforcement learning 管理 agentic memory。核心思想：用与后续 persona 和任务表现绑定的奖励训练操作级记忆更新。
+- [ByteRover](https://arxiv.org/abs/2604.01599)：agent-native memory 架构。核心思想：让负责推理的 LLM 同时整理、结构化和检索带 provenance 与 lifecycle metadata 的层级 context tree，避免独立 embedding 或图管线偏离 agent 原始记忆意图。
+- [Opal](https://arxiv.org/abs/2604.02522)：面向个人 AI 的私有记忆系统。核心思想：把个人记忆推理保留在受保护执行路径中，并用 privacy-preserving access pattern 做检索。
+- [ClawVM](https://arxiv.org/abs/2604.10352)：面向 stateful tool-using agents 的 harness-managed virtual memory。核心思想：把 memory compaction、writeback 和 lifecycle fault 放到 harness 层观测。
+- [Memory Transfer Learning](https://arxiv.org/abs/2604.14004)：研究 coding agents 中的跨域记忆迁移。核心思想：识别哪些经验抽象能跨仓库迁移，哪些记忆会伤害后续任务。
+- [Memanto](https://arxiv.org/abs/2604.22085)：面向长程 agent 的 typed semantic memory layer。核心思想：结合固定记忆类别 schema、时间版本、冲突解决和低延迟 information-theoretic retrieval，降低生产 memory system 中图维护和多查询检索开销。
 - [GRAVITY](https://arxiv.org/abs/2605.01688)：长程对话记忆的 structured anchoring module。核心思想：向现有 memory system 注入关系、时间和主题 anchor，而不绑定单一架构。
+- [MemFlow](https://arxiv.org/abs/2605.03312)：面向小模型 agent 的 intent-driven memory orchestrator。核心思想：在多层记忆之间确定性路由请求，让小模型也能维持长程历史。
+- [True Memory](https://arxiv.org/abs/2605.04897)：对“存储不等于记忆”的系统化回应。核心思想：把 memory system 的关键能力定义为抽取、组织、更新、检索、遗忘和行动绑定，而不只是把历史文本放进向量库。
 - [Belief Memory](https://arxiv.org/abs/2605.05583)：partial observability 下的概率式 memory harness。核心思想：保存备选 belief，并在新观测与旧结论冲突时更新置信度。
+- [Nautilus Compass](https://arxiv.org/abs/2605.09863)：偏生产化的 persona-drift 与 memory layer。核心思想：检测黑盒 persona drift，并通过 plugin、MCP server 和 CLI 暴露记忆能力。
 - [HAGE](https://arxiv.org/abs/2605.09942)：weighted graph-evolution memory harness。核心思想：用强化学习随 agent 记忆变化自适应图遍历和边权。
 - [H-Mem](https://arxiv.org/abs/2605.15701)：混合演化记忆机制。核心思想：结合 temporal tree 与 knowledge-graph memory，让 agent 同时检索时间顺序和关系上下文。
 - [RecMem](https://arxiv.org/abs/2605.16045)：recurrence-based memory-consolidation 系统。核心思想：在模式复现时触发 consolidation，降低记忆构建成本，同时保持长时运行 agent 的准确率。
-- [MemFlow](https://arxiv.org/abs/2605.03312)：面向小模型 agent 的 intent-driven memory orchestrator。核心思想：在多层记忆之间确定性路由请求，让小模型也能维持长程历史。
-- [Memory Transfer Learning](https://arxiv.org/abs/2604.14004)：研究 coding agents 中的跨域记忆迁移。核心思想：识别哪些经验抽象能跨仓库迁移，哪些记忆会伤害后续任务。
-- [Nautilus Compass](https://arxiv.org/abs/2605.09863)：偏生产化的 persona-drift 与 memory layer。核心思想：检测黑盒 persona drift，并通过 plugin、MCP server 和 CLI 暴露记忆能力。
-- [True Memory](https://arxiv.org/abs/2605.04897)：对“存储不等于记忆”的系统化回应。核心思想：把 memory system 的关键能力定义为抽取、组织、更新、检索、遗忘和行动绑定，而不只是把历史文本放进向量库。
 
 ## 1.15.4 Skill
 

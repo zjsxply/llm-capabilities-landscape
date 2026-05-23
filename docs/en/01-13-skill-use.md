@@ -23,6 +23,7 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
   Core idea: use a comparative task protocol to separate gains from reusable skills from gains that require multi-agent decomposition.
 - [SkillsBench](https://arxiv.org/abs/2602.12670) ([code](https://github.com/benchflow-ai/skillsbench); [website](https://www.skillsbench.ai/)): What it evaluates: whether agents achieve stable task-success gains when using human-written or self-generated skills.
   Core idea: make skill value measurable through a three-way comparison of `no skill / curated skill / self-generated skill`; the paper version covers 86 tasks across 11 domains, while the current website shows 84 tasks.
+- [SkillJect](https://arxiv.org/abs/2602.14211): What it evaluates: stealthy prompt injection through skill files in coding agents. Core idea: use trace-driven closed-loop refinement to adapt malicious skills against real coding-agent trajectories, extending skill-safety evaluation from static malicious instructions to iterative attack optimization.
 - [SkillInject](https://arxiv.org/abs/2602.20156): What it evaluates: whether agents are vulnerable to prompt injection embedded in skill files. Core idea: treat reusable skills as an explicit attack surface and measure whether malicious instructions redirect agent behavior during execution.
 - [SkillCraft](https://arxiv.org/abs/2603.00718) ([code](https://github.com/shiqichen17/SkillCraft); [project page](https://skillcraft-website.github.io/page/)): What it evaluates: whether agents can abstract atomic tools into reusable skills and cache and reuse them across long-horizon tasks.
   Core idea: stress-test skill abstraction through `quantitative scaling` and `structural scaling`; it considers not only instance-level success but also efficiency gains from skill reuse.
@@ -77,11 +78,13 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
   Core idea: co-evolve a decision agent with a skill-bank agent so task experience reshapes both planning and reusable skill inventory.
 - [From Skills to Talent](https://arxiv.org/abs/2604.22446): Organizes heterogeneous agents as portable Talents. Core idea: package skills, tools, and runtime configuration into recruitable agent identities, then use an Explore-Execute-Review tree search and a Talent Market to assemble, execute, and improve multi-agent organizations dynamically.
 - [SkCC](https://arxiv.org/abs/2605.03353): Cross-framework skill compilation and security hardening; core idea: use the strongly typed intermediate representation SkIR to decouple the semantics of Markdown skills from the prompt formats of different agent frameworks, while incorporating permissions, safety checks, and portability into the compilation process.
+- [SkillScope](https://arxiv.org/abs/2605.05868): A least-privilege enforcement layer for agent skills. Core idea: scope each skill's permissions at fine granularity and enforce them during execution so reusable skills do not silently expand an agent's authority.
 - [SkillMaster](https://arxiv.org/abs/2605.08693): An autonomous skill mastery framework.
   Core idea: close the loop across skill creation, refinement, and selection so an LLM agent can maintain reusable capabilities rather than only consume a fixed skill list.
 - [SPARK](https://arxiv.org/abs/2605.09192) ([code](https://github.com/EtaYang10th/spark-skills)): Structured pipelines for autonomous runnable tasks; core idea: compress post-task experience into runnable skill flows, emphasizing posterior skill formation and later reuse.
 - [SkillRAE](https://arxiv.org/abs/2605.10114): Skill-based context compilation for retrieval-augmented execution; core idea: compile retrieved skills into compact, grounded, executable context instead of directly stuffing a set of raw Markdown skills into the agent.
 - [SkillEvolver](https://arxiv.org/abs/2605.10500): An online skill-learning meta-skill; core idea: package the process of "write, deploy, and revise domain skills after failure" as a meta-skill, using fresh-agent audit to avoid overfitting only to the current agent.
+- [AI Workflow Store](https://arxiv.org/abs/2605.10907): A workflow-store infrastructure for robust personal agents. Core idea: package reusable workflows so agents can retrieve, adapt, and execute tested procedures instead of rebuilding fragile plans from scratch in every session.
 - [SkillGen](https://arxiv.org/abs/2605.10999): Verified inference-time agent skill synthesis.
   Core idea: synthesize auditable reusable skills from trajectories at inference time, adding verification to the skill-generation pipeline.
 - [Constraint-Consistent Skill Composition](https://doi.org/10.1109/ISBDAS69350.2026.11484408): A reliability-oriented skill composition harness.
@@ -90,7 +93,9 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
 
 ## 1.13.4 Skill
 
+- [SkillFortify](https://arxiv.org/abs/2603.00195): A formal-analysis framework for agentic skill supply chains. Core idea: model malicious skills across the skill lifecycle, combine static analysis with capability sandboxing and audit evidence, and give skill ecosystems stronger guarantees than heuristic scanning alone.
 - [SkillNet](http://skillnet.openkg.cn) (paper: [SkillNet](https://arxiv.org/abs/2603.04448); [code](https://github.com/zjunlp/SkillNet)) is closer to skill registry / ontology / marketplace infrastructure, covering skill creation, evaluation, connection, and retrieval.
 
 This thread is currently more mature around `benchmark + retrieval/orchestration/runtime + registry` than around a single skill dedicated to skill use.
 For engineering practice, it is more useful to revisit the creator / validator / reviewer paths in `0.3 Skill Creator`; they determine whether skills are discoverable, installable, and composable.
+- [SkillSieve](https://arxiv.org/abs/2604.06550): A hierarchical triage framework for detecting malicious AI-agent skills. Core idea: combine fast static checks, focused LLM sub-analyses, and deeper review only for suspicious skill packages so skill marketplaces can screen both code and natural-language `SKILL.md` attack surfaces.

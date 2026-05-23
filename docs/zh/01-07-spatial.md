@@ -20,31 +20,38 @@
 - [SPACE](https://arxiv.org/abs/2410.06468)（[开源代码](https://github.com/apple/ml-space-benchmark)）：评什么：前沿模型的空间认知，覆盖导航式大尺度空间、物体形状/布局和空间注意/记忆；核心思想：把认知科学中的经典空间任务改写成文本与视觉双呈现协议，用来区分语言记忆、视觉空间表征和具身导航能力。
 - [3DSRBench](https://arxiv.org/abs/2412.07825)（[项目页](https://3dsrbench.github.io/)）：评什么：三维空间推理的综合能力；核心思想：把距离、方向、遮挡、视角转换等 3D 推理需求组织成系统化题型，是 SPAR-Bench 引用链中的强基线。
 - [VSI-Bench](https://arxiv.org/abs/2412.14171)（[开源代码](https://github.com/vision-x-nyu/thinking-in-space)）：评什么：真实空间中的视觉空间记忆与回忆；核心思想：用场景观察、记忆保持和空间问答检验 MLLM 是否能形成稳定的空间表征，而不只是识别单帧内容。
-- [4DWorldBench](https://arxiv.org/abs/2511.19836)：评估 3D 与 4D 世界生成模型。核心思路是同时考察生成世界的空间结构与时间演化，把空间评测从静态场景扩展到动态世界生成结果。
-- [PhysBench](https://physbench.github.io/#leaderboard)：评什么：物理世界理解与空间/因果推理。核心思想：把空间关系、物体运动、稳定性和交互结果预测放进同一榜单协议，用于筛选具备物理 grounding 的空间推理模型。
 - [MapEval](https://arxiv.org/abs/2501.00316)（[开源代码](https://github.com/MapEval/MapEval-API)）：评什么：地图/地理空间推理与路线、周边、地点信息检索；核心思想：把 map tool、异构地理上下文与组合推理放进同一评测协议。
+- [ERQA](https://github.com/embodiedreasoning/ERQA)：评什么：具身/物理环境相关的推理问答（embodied reasoning QA），包含空间关系、行动与物理常识等；核心思想：把“空间理解”放入具身语境，用更接近机器人场景的问答形式测试模型的物理与空间推断。
+- [RefDrone](https://arxiv.org/abs/2502.00392)：评测无人机场景中的指代表达理解。核心思路是用空中视角目标和关系密集语言，测试模型能否在尺度、视角和空间关系歧义下完成 grounding。
 - [Hypo3D](https://arxiv.org/abs/2502.00954)：评什么：三维 hypothetical reasoning；核心思想：让模型对“如果物体/视角/状态变化会怎样”的反事实空间问题作答，补足静态关系识别之外的想象式 3D 推理。
+- [PhysBench](https://physbench.github.io/#leaderboard)：评什么：物理世界理解与空间/因果推理。核心思想：把空间关系、物体运动、稳定性和交互结果预测放进同一榜单协议，用于筛选具备物理 grounding 的空间推理模型。
 - [SPAR-Bench](https://arxiv.org/abs/2503.22976)（[开源代码](https://github.com/fudan-zvg/SPAR)）：评什么：VLM 的三维空间感知与推理，覆盖单视角和多视角输入；核心思想：从带三维真值的场景生成多层级空间问答，兼顾深度、距离、关系与想象式空间推理。
 - [Compositional-ARC](https://arxiv.org/abs/2504.01445)：评什么：抽象空间推理中的系统泛化。核心思想：测试模型能否把平移、旋转等已知几何变换组合到未见过的新情形，而不是记忆单个 ARC 风格模式。
+- [AerialVG](https://arxiv.org/abs/2504.07836)：评估航拍视角下的视觉 grounding。核心思路是用高分辨率航拍图像和强调位置关系的描述，测试模型在外观线索不足时能否依靠空间关系定位目标。
 - [All-Angles](https://arxiv.org/abs/2504.15280)（[开源代码](https://github.com/Chenyu-Wang567/All-Angles-Bench)）：评什么：多视角（含 egocentric/exocentric）理解与跨视角一致推理；核心思想：同一场景不同视角下的对齐与推理是空间智能的关键难点，基准用多视角 QA 显式暴露这一点。
-- [PointArena（PointBench）](https://arxiv.org/abs/2505.09990)（[开源代码](https://github.com/pointarena/pointarena)）：评什么：pointing / 指向能力（让模型在图上点选/定位目标或区域）；核心思想：把空间 grounding 从文本描述提升到可操作的“指点”输出，使定位误差可度量。
-- [ViewSpatial-Bench](https://arxiv.org/abs/2505.21500)（[开源代码](https://github.com/ZJU-REAL/ViewSpatial-Bench)）：评什么：多视角空间定位与视角转换；核心思想：同时考察 camera-centered 和 human-centered 空间框架，暴露模型从自我中心推理泛化到异我中心推理时的性能断层。
-- [MMSI-Bench](https://arxiv.org/abs/2505.23764)（[开源代码](https://github.com/OpenRobotLab/MMSI-Bench)）：评什么：多图输入下的空间智能（multi-image spatial intelligence），要求模型在多张图之间建立空间一致理解；核心思想：用“多视角/多帧”输入显式测试跨图融合与空间关系推理，而不仅是单图问答。
-- [OmniSpatial](https://arxiv.org/abs/2506.03135)：评什么：综合空间推理，覆盖 dynamic reasoning、complex spatial logic、spatial interaction 与 perspective-taking；核心思想：以认知心理学能力轴组织 50 个细粒度子类，避免只测 left/right、near/far 等低层关系。
-- [ERQA](https://github.com/embodiedreasoning/ERQA)：评什么：具身/物理环境相关的推理问答（embodied reasoning QA），包含空间关系、行动与物理常识等；核心思想：把“空间理解”放入具身语境，用更接近机器人场景的问答形式测试模型的物理与空间推断。
-- [RefSpatial-Bench](https://arxiv.org/abs/2506.04308)（[开源代码](https://github.com/Zhoues/RoboRefer)）：评什么：空间指代与空间关系理解（referring + spatial relations），常面向机器人/具身场景；核心思想：把空间 referring 任务定义为可复现的 runtime，并更强调对三维/相对位置语义的精确落地。
 - [Ego3D-Bench](https://vbdi.github.io/Ego3D-Bench-webpage/#leaderboard)：评什么：第一视角三维空间理解。核心思想：用 egocentric 观察中的深度、方向、视角转换和空间记忆任务检验模型是否能从自我中心视觉流中形成稳定三维表征。
 - [VLM4D](https://vlm4d.github.io/#leaderboard)：评什么：四维时空理解。核心思想：把动态三维场景、对象运动和跨时间空间关系纳入统一评测，补足静态图像空间关系 benchmark 对时间维度覆盖不足的问题。
 - [EASI Leaderboard Data](https://huggingface.co/datasets/lmms-lab-si/EASI-Leaderboard-Data/tree/main)：评什么：空间 VLM 多基准聚合榜单数据。核心思想：把 SPAR-Bench、MMSI-Bench、OmniSpatial、ViewSpatial、VSI-Bench 等空间推理结果放进统一数据入口，便于跨 benchmark 比较模型空间智能。
+- [PointArena（PointBench）](https://arxiv.org/abs/2505.09990)（[开源代码](https://github.com/pointarena/pointarena)）：评什么：pointing / 指向能力（让模型在图上点选/定位目标或区域）；核心思想：把空间 grounding 从文本描述提升到可操作的“指点”输出，使定位误差可度量。
+- [ViewSpatial-Bench](https://arxiv.org/abs/2505.21500)（[开源代码](https://github.com/ZJU-REAL/ViewSpatial-Bench)）：评什么：多视角空间定位与视角转换；核心思想：同时考察 camera-centered 和 human-centered 空间框架，暴露模型从自我中心推理泛化到异我中心推理时的性能断层。
+- [MMSI-Bench](https://arxiv.org/abs/2505.23764)（[开源代码](https://github.com/OpenRobotLab/MMSI-Bench)）：评什么：多图输入下的空间智能（multi-image spatial intelligence），要求模型在多张图之间建立空间一致理解；核心思想：用“多视角/多帧”输入显式测试跨图融合与空间关系推理，而不仅是单图问答。
+- [DepthCues](https://openaccess.thecvf.com/content/CVPR2025/html/Danier_DepthCues_Evaluating_Monocular_Depth_Perception_in_Large_Vision_Models_CVPR_2025_paper.html)：评什么：大视觉模型的单目深度感知。核心思想：测试模型是否能从单张图像理解深度线索，这是 3D 推理背后的基础空间感知能力。
+- [CoSpace](https://openaccess.thecvf.com/content/CVPR2025/html/Zhu_CoSpace_Benchmarking_Continuous_Space_Perception_Ability_for_Vision-Language_Models_CVPR_2025_paper.html)：评什么：VLM 的连续空间感知。核心思想：超越离散的左/右、近/远标签，测试模型能否围绕连续空间布局推理。
+- [Spatial457](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Spatial457_A_Diagnostic_Benchmark_for_6D_Spatial_Reasoning_of_Large_CVPR_2025_paper.html)：评什么：大多模态模型的 6D 空间推理。核心思想：诊断位置、旋转和视角相关失败，补足简单二维空间关系测试看不到的问题。
+- [OmniSpatial](https://arxiv.org/abs/2506.03135)：评什么：综合空间推理，覆盖 dynamic reasoning、complex spatial logic、spatial interaction 与 perspective-taking；核心思想：以认知心理学能力轴组织 50 个细粒度子类，避免只测 left/right、near/far 等低层关系。
+- [RefSpatial-Bench](https://arxiv.org/abs/2506.04308)（[开源代码](https://github.com/Zhoues/RoboRefer)）：评什么：空间指代与空间关系理解（referring + spatial relations），常面向机器人/具身场景；核心思想：把空间 referring 任务定义为可复现的 runtime，并更强调对三维/相对位置语义的精确落地。
 - [MARBLE](https://arxiv.org/abs/2506.22992)：评什么：多模态空间推理与规划；核心思想：用 M-Portal 和 M-Cube 两类任务考察模型在视觉、物理和空间约束下进行多步计划构造与理解的能力。
 - [IR3D-Bench](https://arxiv.org/abs/2506.23329)（[项目页](https://ir3d-bench.github.io/)；[开源代码](https://github.com/LiuHengyu321/IR3D-Bench)；[数据集](https://huggingface.co/datasets/Piang/IR3D-Bench)）：评什么：不完整三维重建中的 3D scene graph generation。核心思想：把真实 3D 重建缺失、噪声和关系推断放进同一协议，检验模型能否在不完美空间证据下恢复场景关系。
 - [PAC Bench](https://arxiv.org/abs/2506.23725)（[项目页](https://pacbench.github.io/)；[数据集](https://huggingface.co/datasets/lens-lab/pacbench)）：评什么：基础模型是否理解机器人操作策略的前置条件。核心思想：围绕物体属性、可供性和物理约束判断某个 manipulation policy 是否可执行，补足空间/具身任务中“能看见但不知道能不能做”的能力缺口。
+- [SpatialViz-Bench](https://arxiv.org/abs/2507.07610)：评测 MLLM 的空间可视化能力；核心思想是用认知空间可视化任务诊断心理旋转、空间变换和关系推理中的具体失败。
 - [TreeBench](https://arxiv.org/abs/2507.07999)（[开源代码](https://github.com/Haochen-Wang409/TreeVGR)）：评什么：视觉 grounded 推理的“可追溯证据链”与空间/关系推理可靠性；核心思想：把“回答正确”进一步约束为“能指认证据”，更强绑定到可验证的视觉证据组织。
+- [VideoGameBench](https://vgbench.com/#leaderboard)：评什么：视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏环境中，用任务完成和轨迹质量评估 agent 是否能把视觉空间关系转成连续动作。
+- [STI-Bench](https://openaccess.thecvf.com/content/ICCV2025/html/Li_STI-Bench_Are_MLLMs_Ready_for_Precise_Spatial-Temporal_World_Understanding_ICCV_2025_paper.html)：评什么：MLLM 的精确时空世界理解。核心思想：连接静态空间推理和动态视频推理，要求模型在空间和时间上判断精确关系。
+- [MapIQ](https://openreview.net/forum?id=VSwRuGtB5n)：评什么：多模态大模型的地图问答。核心思想：在可视化地图界面下测试地理空间解释、地图语义和路线式推理。
 - [SpatialTree](https://spatialtree.github.io/#leaderboard)：评什么：树结构空间推理。核心思想：要求模型把复杂空间关系拆成层级化、可追溯的结构，观察空间推理是否能从局部关系组合到全局判断。
 - [DSI-Bench](https://arxiv.org/abs/2510.18873)：评什么：动态三维空间智能；核心思想：用近千个动态视频和九类 observer/object motion pattern，区分自运动、物体运动与相对空间关系推理。
 - [DecompSR](https://arxiv.org/abs/2511.02627)：评什么：分解式组合多跳空间推理。核心思想：程序化生成并校验任务，同时独立控制 productivity、substitutivity、overgeneralization 和 systematicity，用来诊断空间泛化失败点。
 - [SpatialBench](https://arxiv.org/abs/2511.21471)：评什么：MLLM 的层级化空间认知能力；核心思想：把空间智能拆成从基础观察到高层规划的五级框架，并用 15 类任务和能力导向指标衡量模型是否只会表面感知而缺少符号、因果和规划能力。
-- [VideoGameBench](https://vgbench.com/#leaderboard)：评什么：视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏环境中，用任务完成和轨迹质量评估 agent 是否能把视觉空间关系转成连续动作。
 - [CartoMapQA](https://arxiv.org/abs/2512.03558)（[开源代码](https://github.com/ungquanghuy-kddi/CartoMapQA)）：评什么：制图地图理解与地理空间问答；核心思想：用符号识别、嵌入信息抽取、比例尺解释和路线推理等任务，暴露 VLM 在地图语义、OCR 与 geospatial reasoning 上的短板。
 - [MMSI-Video-Bench](https://arxiv.org/abs/2512.10863)（[开源代码](https://github.com/InternRobotics/MMSI-Video-Bench)）：评什么：视频输入下的空间智能；核心思想：用 1,106 个专家标注问题覆盖感知、规划、预测和跨视频推理，测试模型能否在连续视觉流中保持空间布局、运动和视角一致性。
 - [Grid Spatial Understanding（GSU）](https://arxiv.org/abs/2603.17333)：评什么：网格、具身参照系和坐标结构上的纯文本空间推理。核心思想：通过导航、目标定位和结构组合任务把空间推理从视觉感知中隔离出来。

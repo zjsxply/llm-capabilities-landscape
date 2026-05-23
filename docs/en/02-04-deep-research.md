@@ -40,8 +40,8 @@
 - [MMDeepResearch-Bench](https://arxiv.org/abs/2601.12346): Evaluates multimodal deep research agents. Core idea: require image-text evidence collection, long-form report synthesis, citation alignment, and visual-integrity checks in one benchmark.
 - [TaxoBench](https://arxiv.org/abs/2601.12369): Evaluates whether deep research agents can retrieve and organize a field. Core idea: compare retrieved papers and taxonomy trees against expert taxonomies rather than only judging report prose.
 - [Mr Dre](https://arxiv.org/abs/2601.13217): Evaluates multi-turn report revision for deep research agents. Core idea: measure whether agents can incorporate user feedback while preserving citation support and avoiding regression in already-correct sections.
-- [ScholarGym](https://arxiv.org/abs/2601.21654): What it evaluates: the information-gathering stage of deep research. Core idea: separately benchmark the "find materials before researching" front half, directly testing whether agents can locate, filter, and organize high-value sources.
 - [DeepSearchQA](https://arxiv.org/abs/2601.20975): Evaluates difficult multi-step information-seeking for deep research agents. Core idea: use many-field exhaustive-answer tasks to test whether agents search broadly enough, manage long evidence chains, and avoid stopping after a partial answer.
+- [ScholarGym](https://arxiv.org/abs/2601.21654): What it evaluates: the information-gathering stage of deep research. Core idea: separately benchmark the "find materials before researching" front half, directly testing whether agents can locate, filter, and organize high-value sources.
 - [Deep Research Hallucination Evaluation](https://arxiv.org/abs/2601.22984): What it evaluates: hallucination across complete deep research trajectories. Core idea: audit not only factual errors in the final report, but also how hallucinations arise and propagate along search, reading, notes, and citation chains.
 - [Wiki Live Challenge](https://arxiv.org/abs/2602.01590): What it evaluates: expert-level Wikipedia-entry-style deep research. Core idea: use dynamic encyclopedia-entry needs to force broad retrieval, evidence synthesis, and citable writing, reducing static QA leakage.
 - [Vision-DeepResearch Benchmark](https://arxiv.org/abs/2602.02185) ([code](https://github.com/Osilly/Vision-DeepResearch)): What it evaluates: deep research capability with mixed visual and text search. Core idea: place visual web evidence, image retrieval, and text evidence into the same deep research task to diagnose whether multimodal search truly improves report quality.
@@ -62,15 +62,14 @@
 - [DR3-Eval](https://arxiv.org/abs/2604.14683) ([code](https://github.com/NJU-LINK/DR3-Eval)): What it evaluates: realistic, multimodal, reproducible deep research evaluation. Core idea: use user files, a static sandbox, and fine-grained rubrics.
 - [Cited but Not Verified](https://arxiv.org/abs/2605.06635): Evaluates source attribution in deep research reports. Core idea: parse Markdown citations reproducibly, then score link validity, relevance, and factual support at report scale.
 - [ViDR](https://arxiv.org/abs/2605.13034): What it evaluates: alignment between multimodal deep research reports and visual evidence. Core idea: require report conclusions to point back to specific visual sources, reducing multimodal hallucination where a page is cited but visual evidence does not support the claim.
-
 ## 2.4.3 Agent Harness
 
 - [DeepResearcher](https://arxiv.org/abs/2504.03160) ([code](https://github.com/GAIR-NLP/DeepResearcher); trains a deep research agent with end-to-end reinforcement learning in a real web-search environment, explicitly including multi-agent browsing, cross-validation, and self-reflection)
 - [WebThinker](https://arxiv.org/abs/2504.21776) ([code](https://github.com/RUC-NLPIR/WebThinker); interleaves "reasoning-search-writing" into a single long-chain `think-search-draft` workflow)
 - [WebDancer](https://arxiv.org/abs/2505.22648) ([code](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebDancer); a training-led but systemically clear information-retrieval web agent)
 - [OWL](https://arxiv.org/abs/2505.23885) ([code](https://github.com/camel-ai/owl); explicitly decomposes deep research into a role-based `retrieval -> verification -> writing` pipeline)
-- [WebWatcher](https://arxiv.org/abs/2508.05748) ([code](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher); a vision-language agent for multimodal deep research that also proposes BrowseComp-VL)
 - [Deep Cognition](https://arxiv.org/abs/2507.15759) (code: no stable public repository found; a transparent, interruptible multi-agent deep research system; core idea: expose fine-grained human steering and collaboration points during research instead of treating deep research as a sealed input-output process)
+- [WebWatcher](https://arxiv.org/abs/2508.05748) ([code](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher); a vision-language agent for multimodal deep research that also proposes BrowseComp-VL)
 - [WebWeaver](https://arxiv.org/abs/2509.13312) ([code](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWeaver); a `planner + writer` dual-agent system that manages long-report context with dynamic outlines and an evidence memory bank)
 - [Flash-Searcher](https://arxiv.org/abs/2509.25301) ([code](https://github.com/OPPO-PersonalAI/Flash-Searcher); turns a serial pipeline into DAG-based parallel execution and schedules dynamically by dependency)
 - [FlowSearch](https://arxiv.org/abs/2510.08521) ([code](https://github.com/InternScience/InternAgent); flow-orchestration-driven integrated search and writing)
@@ -109,7 +108,6 @@
 - DeerFlow ([code](https://github.com/bytedance/deer-flow); no arXiv paper; abstracts deep research into a reusable super-agent harness and emphasizes decoupling task branches)
 - Spring AI Alibaba DeepResearch ([code](https://github.com/spring-ai-alibaba/deepresearch); no arXiv paper; a Spring ecosystem integrated version of deep research)
 - CellCog ([public SDK](https://github.com/CellCog/cellcog_python); no arXiv paper; a hosted multi-agent platform and Python SDK supporting agent teams and research-cog)
-
 ## 2.4.4 Skill
 
 - [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher) (end-to-end retrieval-to-draft framework)

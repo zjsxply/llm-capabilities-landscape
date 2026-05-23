@@ -52,6 +52,13 @@
 - [3.1 配环境](docs/zh/03-01-environment-setup.md)
 - [3.2 科研](docs/zh/03-02-research.md)
 
+### 4. 多模态
+
+- [4.1 图片生成与编辑模型](docs/zh/04-01-image-generation-editing.md)
+- [4.2 视频生成模型](docs/zh/04-02-video-generation.md)
+- [4.3 语音模型](docs/zh/04-03-speech.md)
+- [4.4 自动驾驶](docs/zh/04-04-autonomous-driving.md)
+
 ## 维护方式
 
 本项目采用半自动化方式维护。最新关注热点与研究成果会从引文网络、模型厂商 model card，以及顶会最新接收论文中提取，再经 agent 辅助筛选后合并进图谱。具体流程见本仓库维护 skill：[.agents/skills/llm-landscape-maintainer/SKILL.md](.agents/skills/llm-landscape-maintainer/SKILL.md)。

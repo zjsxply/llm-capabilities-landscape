@@ -4,7 +4,20 @@
 
 说明：本页收纳视频、音视频、动画、3D 场景、编辑以及动态 world model 生成相关评测与编排 harness。被动视频理解仍保留在 [1.6 视频](01-06-video.md)。
 
-## 4.2.1 Bench
+## 4.2.1 Leaderboard
+
+- [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)：与 VBench 视频生成基准套件关联的公开榜单。
+- [Artificial Analysis Text to Video Leaderboard](https://artificialanalysis.ai/video/leaderboard/text-to-video)：面向文本到视频生成系统的实时平台对比榜单。
+
+## 4.2.2 Survey
+
+- [A Survey on Video Diffusion Models](https://arxiv.org/abs/2310.10647)：基于扩散的视频生成与时序建模的基础综述。
+- [Sora as a World Model? A Complete Survey on Text-to-Video Generation](https://arxiv.org/abs/2403.05131)：回顾文本到视频架构、数据、评测与 world model 含义。
+- [A Survey on Long Video Generation: Challenges, Methods, and Prospects](https://arxiv.org/abs/2403.16407)：覆盖时序连贯、叙事连续、身份一致性与评测。
+- [Exploring the Evolution of Physics Cognition in Video Generation: A Survey](https://arxiv.org/abs/2503.21765)：回顾生成视频中的动态、物理推理与合理性评测。
+- [Controllable Video Generation: A Survey](https://arxiv.org/abs/2507.16869)：综述文本、图像、layout、运动、轨迹、镜头与多模态控制。
+
+## 4.2.3 Bench
 
 - [VBench++](https://doi.org/10.1109/TPAMI.2025.3633890)：面向视频生成模型的综合评测套件。核心思路是系统组织生成视频的质量、一致性、运动和提示对齐等指标，使视频生成系统的比较不局限于单一偏好测试。
 - [T2VEval](https://arxiv.org/abs/2501.08545)：用 benchmark dataset 与客观评价方法评估 text-to-video generation。核心思想：提供结构化 prompt、生成视频样本与自动指标，使 T2V 质量比较不只依赖临时偏好判断。
@@ -94,7 +107,7 @@
 - [PDI-Bench](https://arxiv.org/abs/2605.15185)：评测生成视频中的几何一致性。核心思想：把跟踪到的对象中心观测提升到 3D，并用投影几何残差检查尺度-深度对齐、三维运动一致性和结构刚性。
 - [EntityBench](https://arxiv.org/abs/2605.15199)：评估长程多镜头视频生成中的实体一致性。核心思路是用带有角色、物体和地点日程标注的叙事片段，区分单镜头质量、提示遵循和跨镜头一致性。
 
-## 4.2.2 Agent Harness
+## 4.2.4 Agent Harness
 
 - [FilmAgent](https://arxiv.org/abs/2501.12909)：面向虚拟 3D 空间的多智能体电影自动化框架。核心思路：把电影创作拆成多个协作角色和可执行的场景生产步骤，而不是把视频生成简化为单次提示词调用。
 - [MM-StoryAgent](https://arxiv.org/abs/2503.05242)（[开源代码](https://github.com/X-PLUG/MM_StoryAgent)）：面向有声故事书视频生成的多智能体 harness。核心思路是协调写作、视觉生成、旁白、音效和音乐模块，使故事能够跨文本、图像与音频工具完成规划和渲染，而不是依赖单一模型一次性生成。
@@ -112,7 +125,7 @@
 - [DIRECT](https://arxiv.org/abs/2604.04875)：采用层级式多智能体规划与意图引导编辑的视频混剪生成框架，适合作为视频组合创作中的智能体编排案例。
 - [Camera Artist](https://arxiv.org/abs/2604.09195)：面向电影化语言叙事视频生成的多智能体框架，关注叙事、镜头与拍摄决策的协同。
 
-## 4.2.3 Skill
+## 4.2.5 Skill
 
 - [ffmpeg-video-editor](https://skills.sh/sundial-org/awesome-openclaw-skills/ffmpeg-video-editor) 适合视频局部编辑和片段导出。
 - [comfyui-video-pipeline](https://skills.sh/mckruz/comfyui-expert/comfyui-video-pipeline) 适合 ComfyUI 视频生成 pipeline，覆盖 Wan、FramePack、AnimateDiff、talking heads、image-to-video、text-to-video 和 motion-controlled animation。

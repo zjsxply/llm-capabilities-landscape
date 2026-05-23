@@ -15,7 +15,15 @@
 - [Claw-Eval-Live](https://claw-eval-live.github.io/)：持续 workflow agent 榜单，显式使用 ClawHub skill 信号构造任务。
   它更适合观察 agent 在动态 workflow 中能否发现、安装、调用和验证 skills，而不是只在理想给定 skill 条件下比较 pass rate。
 
-## 1.13.2 Bench
+## 1.13.2 Survey
+
+- [Augmented Language Models: a Survey](https://arxiv.org/abs/2302.07842)：关于工具、检索、记忆与外部推理增强模型的基础综述。
+- [What Are Tools Anyway? A Survey from the Language Model Perspective](https://arxiv.org/abs/2403.15452)：建立 tools 与可复用 skills 之间的概念边界。
+- [Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward](https://arxiv.org/abs/2602.12430)：回顾 skill 架构、获取流程、安全与未来方向。
+- [Towards Secure Agent Skills: Architecture, Threat Taxonomy, and Security Analysis](https://arxiv.org/abs/2604.02837)：给出恶意 skill、供应链与沙箱的威胁分类。
+- [A Comprehensive Survey on Agent Skills: Taxonomy, Techniques, and Applications](https://arxiv.org/abs/2605.07358)：直接综述 agent skill 的定义、获取、组合、评测与应用。
+
+## 1.13.3 Bench
 
 - [LifelongAgentBench](https://arxiv.org/abs/2505.11942)：评什么：LLM agent 是否能在长期任务序列中学习、记住并复用技能。
   核心思想：把任务按 episode 串起来，让 agent 面对新任务时利用过去经验、工具操作模式和可迁移技能，而不是只在单次任务内做即时规划。
@@ -31,9 +39,9 @@
   核心思想：把评价对象从“coding agent 能不能修代码”转成“给定 skill 是否改善软件工程 agent 的成功率、效率和行为质量”。
 - [SkillTester](https://arxiv.org/abs/2603.28815)（[项目页](https://skilltester.ai/)；[开源代码](https://github.com/skilltester-ai/skilltester)）：评什么：agent skills 的效用与安全性。
   核心思想：比较 baseline 与 with-skill 两种执行，同时对 skill 做安全探测，把技能收益和技能风险放进同一个 benchmark。
-- [MM Claw skill-compliance suite](https://www.minimax.io/news/minimax-m27-en)（model-card-only；未确认有独立公开发布）：评什么：agent 在长程 OpenClaw 风格工作中，能否持续遵循并复用 40 多个复杂 skills。核心思想：把 skill adherence 本身作为评测信号，补足公开 skill search 与 skill injection benchmark 对“持续按 skill 做事”的覆盖。
 - [Agentic Skills in the Wild](https://arxiv.org/abs/2604.04323)：评什么：真实技能生态中 agent 自行搜索、选择并使用不完全贴合任务的 skills 时，skill 是否仍然有帮助。
   核心思想：把“直接给定理想 skill”的设定放宽成检索、噪声和适配压力，评估 skill utility 在 realistic settings 下的掉点。
+- [MM Claw skill-compliance suite](https://www.minimax.io/news/minimax-m27-en)（model-card-only；未确认有独立公开发布）：评什么：agent 在长程 OpenClaw 风格工作中，能否持续遵循并复用 40 多个复杂 skills。核心思想：把 skill adherence 本身作为评测信号，补足公开 skill search 与 skill injection benchmark 对“持续按 skill 做事”的覆盖。
 - [SkillLearnBench](https://arxiv.org/abs/2604.20087)（[开源代码](https://github.com/cxcscmu/SkillLearnBench)）：评什么：连续技能学习与生成；核心思想：把 skill 质量、执行轨迹和任务结果三层一起测，观察能否稳定学到可复用技能。
 - [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：评什么：持续更新的真实 workflow agent 任务，其中显式使用 ClawHub skill 信号构造任务。核心思想：把 skill 发现、安装、调用和验证放进周期性刷新任务分布中，补足 SkillsBench 的静态对照。
 - [SkillRet](https://arxiv.org/abs/2605.05726)：评什么：大规模 agent skill 库检索；核心思想：把 skill 选择当检索问题，测长查询、噪声库和 NDCG / 召回。
@@ -41,6 +49,7 @@
   核心思想：把评测拆成“是否选到最小充分 skill”和“执行时是否扩展到 skill 之外的工具/动作”，把 skill 层从组织抽象提升为可测的权限边界。
 - [Dependency Steering](https://arxiv.org/abs/2605.09594)：评什么：恶意 skills 是否会诱导 coding agent 选择攻击者指定的依赖。
   核心思想：把持久化 skill 文件视为软件供应链攻击面，衡量 skill 内容如何改变编码工作流中的依赖选择。
+- [Skill Description Deception Attack](https://arxiv.org/abs/2605.09889)：评估 Internet-of-Agents 场景中的任务路由是否会被欺骗性自声明技能描述操纵。核心思想：形式化 SDD 攻击并生成欺骗性描述，测量路由偏置和可靠性下降。
 - [SkillSafetyBench](https://arxiv.org/abs/2605.12015)：评什么：skill-facing attack surface 下 agent 是否会被第三方 skill、局部材料或本地 artifact 诱导执行不安全动作。
   核心思想：把普通任务、风险域、恶意/良性 skill 材料和规则验证器放进可运行环境，说明 skill 安全不能只靠模型级对齐评测。
 - [AgentTrap](https://arxiv.org/abs/2605.13940)（[开源代码](https://github.com/zhmzm/AgentTrap)；[数据集](https://huggingface.co/datasets/zhmzm/AgentTrap)）：评什么：第三方 skills 中恶意运行时行为是否会被 agent 盲目执行。
@@ -49,7 +58,7 @@
 - [PinchBench](https://pinchbench.com/about)（[开源代码](https://github.com/pinchbench/skill)）：更适合当作 skill 调用的实践补充 benchmark，而不是纯学术“skills benchmark”。
   它本质上评测 OpenClaw agent 在真实任务中的整体执行，但任务集显式包含 `ClawHub skill 安装` 与 `skill 搜索/安装` 场景，因此能补足产品生态里的 skill 接入与调用能力。
 
-## 1.13.3 Agent Harness
+## 1.13.4 Agent Harness
 
 - [SkillFlow](https://arxiv.org/abs/2504.06188)：多阶段 agent skill retrieval pipeline；核心思想：把 skill acquisition 建模成信息检索，在约 36K 个社区 `SKILL.md` 定义上串联 dense retrieval、cross-encoder reranking 和 LLM selection。
 - [CUA-Skill](https://arxiv.org/abs/2601.21123)（[项目页](https://microsoft.github.io/cua_skill/)）：面向 computer-use agents 的结构化 skill base 与 CUA-Skill Agent；核心思想：把 GUI 操作知识封装成带参数化执行和组合图的 skills，再通过检索、参数实例化和记忆化失败恢复调用。
@@ -91,7 +100,7 @@
   核心思想：用一致性约束来组合技能，使 zero-shot 任务泛化遵守约束条件，而不是机会式拼接技能。
 - [CTA / Counterfactual Trace Auditing](https://arxiv.org/abs/2605.11946)：skill 影响的轨迹级审计框架；核心思想：把有 skill 与无 skill 的同任务轨迹分段对齐，标注 skill influence pattern，补足只看 pass rate 难以发现的行为改变。
 
-## 1.13.4 Skill
+## 1.13.5 Skill
 
 - [SkillFortify](https://arxiv.org/abs/2603.00195)：面向 agentic skill 供应链的形式化分析框架。核心思想是建模 skill 生命周期中的恶意 skill，结合静态分析、capability sandbox 和审计证据，使 skill 生态获得强于启发式扫描的安全保证。
 - [SkillNet](http://skillnet.openkg.cn)（论文：[SkillNet](https://arxiv.org/abs/2603.04448)；[开源代码](https://github.com/zjunlp/SkillNet)）更像 skill registry / ontology / marketplace 基础设施，覆盖 skill 创建、评估、连接与检索。

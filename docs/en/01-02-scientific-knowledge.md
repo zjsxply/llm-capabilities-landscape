@@ -2,7 +2,6 @@
 
 > Parent chapter: 1. Basic Capabilities
 
-
 ## 1.2.1 Leaderboard
 
 - [Humanity's Last Exam](https://lastexam.ai/): a public leaderboard for expert-level cross-disciplinary knowledge and reasoning. Its value is using difficult science, math, humanities, and professional questions as a stress test for the upper bound of model knowledge.
@@ -12,7 +11,15 @@
 - [ResearchCodeBench Leaderboard](https://researchcodebench.github.io/leaderboard/index.html): a public leaderboard for implementing research code from recent ML papers. It is suitable as a more code-implementation-oriented reference beyond PaperBench and EXP-Bench.
 - [SciVisAgentBench Leaderboard](https://scivisagentbench.github.io/leaderboard.html): a leaderboard for scientific data analysis and visualization agents. Its value is bringing scientific data understanding, analysis decisions, and graphical expression into comparable evaluation.
 
-## 1.2.2 Bench
+## 1.2.2 Survey
+
+- [A Comprehensive Survey of Foundation Models in Medicine](https://arxiv.org/abs/2406.10729): Covers medical foundation models, datasets, evaluation, and deployment risks in a central scientific domain.
+- [LLM4SR: A Survey on Large Language Models for Scientific Research](https://arxiv.org/abs/2501.04306): Maps LLM use across literature review, hypotheses, experiments, analysis, writing, and review.
+- [Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions](https://arxiv.org/abs/2503.08979): Surveys autonomous scientific workflows, tools, challenges, and future directions.
+- [From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery](https://arxiv.org/abs/2505.13259): Explains the transition from research assistance to autonomous discovery systems.
+- [A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers](https://arxiv.org/abs/2508.21148): Connects scientific data foundations, model families, evaluation, and agent frontiers.
+
+## 1.2.3 Bench
 
 - [GPQA Diamond](https://arxiv.org/abs/2311.12022) (dataset: [Idavidrein/gpqa](https://huggingface.co/datasets/Idavidrein/gpqa)): evaluates graduate-level scientific QA, in multiple-choice form and with a "Google-proof" emphasis. The core idea is to have experts construct difficult questions and weaken direct retrieval hits, making success depend more on knowledge understanding and reasoning than snippet matching.
 - [OlympiadBench](https://arxiv.org/abs/2402.14008): evaluates bilingual multimodal science problems at Olympiad competition level. The core idea is to use difficult math, physics, and related competition problems to stress-test professional reasoning across languages and modalities.
@@ -23,6 +30,7 @@
 - [ScienceAgentBench](https://arxiv.org/abs/2410.05080) ([open-source code](https://github.com/OSU-NLP-Group/ScienceAgentBench)): evaluates practical agent capabilities in data-driven scientific discovery. The core idea is to extract tasks from peer-reviewed papers and standardize outputs as self-contained Python programs that can be automatically evaluated.
 - [KORBench](https://arxiv.org/abs/2410.06526): evaluates reasoning capability as orthogonal as possible to "memorizing knowledge." The core idea is to construct tasks where success depends more on reasoning structure than factual memory, better separating knowledge stock from reasoning mechanisms.
 - [RE-Bench](https://arxiv.org/abs/2411.15114): evaluates the research-engineering capability of frontier AI R&D agents. The core idea is to use open-ended machine-learning research environments and compare against records from 8-hour attempts by human experts, measuring agent progress speed and upper bounds in real R&D tasks.
+- [Does Table Source Matter?](https://arxiv.org/abs/2501.13042): Evaluates multimodal scientific-table understanding and reasoning. Core idea: combine scientific table-structure data, table images, and reasoning tasks to test whether models can handle source-dependent layout and numerical evidence rather than only text-linearized tables.
 - [HLE-Verified](https://arxiv.org/abs/2501.14249) (dataset: [lmms-lab/HLE-Verified](https://huggingface.co/datasets/lmms-lab/HLE-Verified)): evaluates a human-audited verifiable subset. The core idea is to reduce ambiguity and undecidable samples, improving evaluation credibility.
 - [Humanity's Last Exam (HLE)](https://arxiv.org/abs/2501.14249) (dataset: [cais/hle](https://huggingface.co/datasets/cais/hle)): evaluates extremely difficult expert-level cross-disciplinary questions. The core idea is to stress-test the upper bound of model knowledge and reasoning with a high-difficulty question set.
 - [UGPhysics](https://arxiv.org/abs/2502.00334) ([open-source code](https://github.com/YangLabHKUST/UGPhysics), [dataset](https://huggingface.co/datasets/UGPhysics/ugphysics)): evaluates undergraduate physics knowledge and reasoning, covering bilingual Chinese-English questions, 13 topics, and multiple answer formats. The core idea is to put formula derivation, concept judgment, and numerical calculation into one physics evaluation protocol.
@@ -41,6 +49,7 @@
 - [EEE-Bench](https://openaccess.thecvf.com/content/CVPR2025/html/Li_EEE-Bench_A_Comprehensive_Multimodal_Electrical_And_Electronics_Engineering_Benchmark_CVPR_2025_paper.html): evaluates multimodal electrical and electronics engineering knowledge. The core idea is to cover practical engineering diagrams, concepts, and calculations that are underrepresented in generic STEM VQA.
 - [MicroVQA](https://openaccess.thecvf.com/content/CVPR2025/html/Burgess_MicroVQA_A_Multimodal_Reasoning_Benchmark_for_Microscopy-Based_Scientific_Research_CVPR_2025_paper.html) ([project page](https://jmhb0.github.io/microvqa), [dataset](https://huggingface.co/datasets/jmhb/microvqa)): evaluates multimodal reasoning for microscopy-based scientific research. The core idea is to use microscopy evidence rather than generic images, testing whether models can reason over research-grade biological visuals.
 - [ResearchCodeBench](https://arxiv.org/abs/2506.02314) ([open-source code](https://github.com/PatrickHua/ResearchCodeBench)): evaluates the ability to implement research code from recent ML papers. The core idea is to use real research-code challenges to check whether models can understand paper methods and complete runnable implementations.
+- [Atomic Reasoning for Scientific Table Claim Verification](https://arxiv.org/abs/2506.06972): Evaluates fine-grained verification of claims grounded in scientific tables. Core idea: decompose dense table reasoning into atomic steps so models can be judged on precise evidence use rather than coarse entailment labels.
 - [LLM-SRBench](https://proceedings.mlr.press/v267/shojaee25a.html) ([open-source code](https://github.com/deep-symbolic-mathematics/llm-srbench)): evaluates true generalization by LLMs in scientific symbolic regression and equation discovery. The core idea is to use transformations and synthetic tasks across scientific domains to distinguish "memorizing known formulas" from "discovering interpretable laws from data."
 - [SimpleQA Verified](https://arxiv.org/abs/2509.07968): evaluates a model's "parametric factuality" through short-answer, decidable factoid QA. The core idea is to use higher-quality verifiable factoid questions to measure factual memory and hallucination risk without tools.
 - [MMCR](https://openaccess.thecvf.com/content/ICCV2025/html/Tian_MMCR_Benchmarking_Cross-Source_Reasoning_in_Scientific_Papers_ICCV_2025_paper.html): evaluates cross-source reasoning in scientific papers. The core idea is to integrate text, figures, tables, and paper context across sources, making scientific-paper reasoning explicitly multimodal.
@@ -69,7 +78,8 @@
 - [ProtocolQA Open-Ended](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf): a GPT-5.5 model-card evaluation that converts FutureHouse ProtocolQA-style wet-lab troubleshooting questions into open-ended short answers; OpenAI's modified set is not publicly released. The core idea is to test whether models can diagnose protocol errors without multiple-choice scaffolding.
 - Structural biology benchmark (reported in the [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)): an Anthropic internal evaluation that asks models to infer biomolecular function from structural data; not publicly released. The core idea is to test structure-function reasoning beyond text-only biology QA.
 - [TroubleshootingBench](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf): an OpenAI internal biology troubleshooting benchmark reported in the GPT-5.5 system card and not publicly released. The core idea is to use expert-written wet-lab procedures and tacit, non-public procedural errors to test hands-on troubleshooting knowledge.
-## 1.2.3 Agent Harness
+
+## 1.2.4 Agent Harness
 
 - [ReAct](https://arxiv.org/abs/2210.03629) ([open-source code](https://github.com/ysymyth/ReAct)): a general "think-retrieve/act-observe" framework. For long-tail scientific knowledge tasks, it is more like a reusable `retrieve -> integrate evidence -> answer again` workflow skeleton.
 - [RARR](https://arxiv.org/abs/2210.08726) ([open-source code](https://github.com/anthonywchen/RARR)): a `retrieve -> revise -> cite` framework, suitable for rewriting knowledge answers into "verifiable conclusions with citations."
@@ -81,7 +91,7 @@
 - [SafeScientist](https://arxiv.org/abs/2505.23559) ([open-source code](https://github.com/ulab-uiuc/SafeScientist)): a risk-aware harness for scientific agents. The core idea is to add safety monitoring to task input, collaborative discussion, tool calls, and ethics review, using SciSafetyBench to test refusal and risk-avoidance capability.
 - [AlphaEvolve](https://arxiv.org/abs/2506.13131) (open-source code: no stable public official repository currently known): an evolutionary coding agent for scientific and algorithmic discovery. The core idea is to let LLMs directly modify programs and use feedback from one or more automatic evaluators for population-style search and iterative optimization.
 
-## 1.2.4 Skill
+## 1.2.5 Skill
 
 - [openalex-database](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/openalex-database) is suitable for academic knowledge, paper-author graphs, and topic tracking.
 - [citation-management](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/citation-management) is suitable for citation extraction, BibTeX management, and literature verification.

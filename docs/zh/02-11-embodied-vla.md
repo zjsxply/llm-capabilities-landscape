@@ -8,7 +8,15 @@
 
 - [VideoGameBench Leaderboard](https://vgbench.com/#leaderboard)：视频游戏环境中的具身 agent 感知、导航、操作与规划持续榜单；适合跟踪能在可执行视觉世界中行动的模型与 scaffold，而不是只看静态截图。
 
-## 2.11.2 Bench
+## 2.11.2 Survey
+
+- [A Survey on Robotics with Foundation Models: toward Embodied AI](https://arxiv.org/abs/2402.02385)：回顾用于感知、规划、操作、导航与具身推理的基础模型。
+- [A Survey on Vision-Language-Action Models for Embodied AI](https://arxiv.org/abs/2405.14093)：梳理从视觉语言理解到动作条件策略的转化。
+- [A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI](https://arxiv.org/abs/2505.01458)：连接仿真器、任务设计、具身学习与可复现评测。
+- [Large Model Empowered Embodied AI: A Survey on Decision-Making and Embodied Learning](https://arxiv.org/abs/2508.10399)：强调决策、具身学习、规划与动作 grounding。
+- [Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)：梳理 VLA agent 的数据集、基准与数据基础设施。
+
+## 2.11.3 Bench
 
 - [CALVIN](https://arxiv.org/abs/2112.03227)：评测语言条件下的长程机器人操作。核心思想：用模拟桌面环境和语言指令测试 agent 是否能在长时程中组合操作技能。
 - [MineDojo](https://arxiv.org/abs/2206.08853)：评测 Minecraft 中的开放式具身 agent，并引入互联网规模知识资源。核心思想：用丰富、长程的 sandbox 环境测试语言目标下的探索、工具使用、合成、导航和任务完成。
@@ -36,6 +44,7 @@
 - [EmbodiedBench](https://proceedings.mlr.press/v267/yang25f.html)（[开源代码](https://github.com/EmbodiedBench/EmbodiedBench)）：评测多模态大语言模型作为视觉驱动具身 agent 的能力。核心思想：把具身感知、规划和动作任务放进统一 benchmark，考察基于视觉观测操作的 VLM/LLM agent。
 - [VLN-PE](https://arxiv.org/abs/2507.13019)：在更接近真实物理约束的机器人形态中评估视觉语言导航。核心思路是比较人形、四足和轮式机器人上的导航流程，使具身导航不再只依赖理想化运动假设。
 - [UAV-ON](https://arxiv.org/abs/2508.00288)：评测空中 agent 的开放世界目标物体导航。核心思想：测试 UAV agent 能否结合视觉感知和空间探索在开放环境中找到目标物体，将具身导航从地面场景扩展到空中视角。
+- [Kitchen-R](https://arxiv.org/abs/2508.15663)：基于 IsaacSim 的移动操作基准，联合评测任务规划与底层控制策略。核心思想：连接高层指令跟随和底层机器人控制评测，使完整 embodied 系统能够端到端被衡量。
 - [Follow-Bench](https://arxiv.org/abs/2509.10796)：评测具备社会感知的机器人跟随行人运动规划。核心思想：测试 embodied agent 能否在跟随目标的同时遵守社会导航约束，而不是只优化几何路径效率。
 - [ConEQsA](https://arxiv.org/abs/2509.11663)：评测并发、异步的具身问题调度与回答。核心思想：把 EQA 从单问题扩展到不同到达时间和紧急度的多问题设置，要求 agent 结合共享记忆、优先级、探索与回答时机。
 - [MoMa-Kitchen](https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_MoMa-Kitchen_A_100K_Benchmark_for_Affordance-Grounded_Last-Mile_Navigation_in_Mobile_ICCV_2025_paper.html)：评测移动操作中的 affordance-grounded 最后一段导航。核心思想：不仅看机器人是否接近目标，还看停止位置是否让后续操作可行。
@@ -67,7 +76,9 @@
 - [Minedojo-Verified](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的 embodied-agent 视觉任务 verified 子集；目前未确认有独立公开版本。核心思想：跟踪前沿多模态 agent 是否能在交互环境中完成感知 grounding、规划和动作执行，而不只是在静态截图上答题。
 - [ESARBench](https://arxiv.org/abs/2605.01371)：评估无人机具身智能体的搜索与救援能力。核心思路是把空中智能体放入搜救场景中，同时考察感知、导航、任务规划和动作执行，而不是只评价静态视觉理解。
 - [OmniNavBench](https://arxiv.org/abs/2605.09441)：评测跨技能、跨具身形态的通用具身导航。核心思想：用覆盖 PointNav、VLN、ObjectNav、SocialNav、跟随人类和 EQA 的复合指令，要求 agent 协调子技能并跨机器人形态泛化，而不是只解决孤立导航任务。
-## 2.11.3 Agent Harness
+- [PokéLLMon](https://doi.org/10.1145/3771095)：评测大语言模型 agent 在 Pokémon 对战中的 grounding 与推理能力。核心思想：使用可执行的竞技游戏环境，要求 agent 结合战斗状态、属性与招式知识、对手行为和动作选择，而不是回答静态游戏知识题。
+
+## 2.11.4 Agent Harness
 
 MineDojo、CALVIN、VIMA 和 LIBERO 本身也是 benchmark-side harness：它们定义环境、观测、动作空间、任务重置和成功检查。可复用设计模式是 `观察多模态状态 -> 解析语言目标 -> 计划/子目标 -> 行动 -> 验证环境状态 -> 恢复`。
 - [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)；[项目页](https://voyager.minedojo.org/)）：经典开放式 Minecraft agent，包含自动课程、code-as-action、执行反馈和持续增长的技能库，直接对应 MineDojo 风格长程具身 agent 评测。
@@ -94,6 +105,7 @@ MineDojo、CALVIN、VIMA 和 LIBERO 本身也是 benchmark-side harness：它们
 - [GRaD-Nav++](https://arxiv.org/abs/2506.14009)：面向视觉无人机导航的机载视觉语言动作框架。核心思路是结合语言指令 grounding、高斯辐射场仿真、可微动力学和实时机载执行，使空中智能体能在非结构化环境中跟随高层指令。
 - [DyNaVLM](https://arxiv.org/abs/2506.15096)：带动态视角和自修正图记忆的 zero-shot vision-language navigation harness。核心思想：在探索过程中维护并修正导航图，使路线决策能利用累积空间证据，而不是只依赖单步观察。
 - [RALLY](https://arxiv.org/abs/2507.01378)：一个面向 agentic UAV swarm 的 LLM 驱动 harness。核心思想：用角色自适应协调支持耦合导航，使多个空中智能体分担规划和执行职责。
+- [Conditional Multi-Stage Failure Recovery](https://arxiv.org/abs/2507.06016)：面向具身 agent 的失败恢复 harness。核心思想：把执行期错误送入分阶段诊断、恢复规划、动作修复和事后反思流程，使具身任务能从环境与规划失败中恢复，而不是第一次出错就终止。
 - [SkyVLN](https://arxiv.org/abs/2507.06564)：面向城市环境的 UAV 视觉语言导航与 NMPC 控制框架。核心思路是把语言目标 grounding 与模型预测飞行控制结合起来，使空中智能体能在受约束城市场景中执行路线决策。
 - [Enter the Mind Palace](https://arxiv.org/abs/2507.12846)：面向长时程 active embodied question answering 的推理与规划 harness。核心思想：把长期空间记忆和证据记忆外显化，使 embodied agent 能持续导航、收集观察并回答问题。
 - [DISCOVERSE](https://arxiv.org/abs/2507.21981)：面向复杂高保真环境的机器人仿真基础设施；核心思想是提供高效模拟世界与接口，使 embodied agent 能在小规模固定场景之外开发和评测。
@@ -148,7 +160,7 @@ MineDojo、CALVIN、VIMA 和 LIBERO 本身也是 benchmark-side harness：它们
 - [Think Twice, Act Once](https://arxiv.org/abs/2605.12620)：为具身 agent 提供 verifier-guided action-selection wrapper。核心思想：在测试时采样候选动作，并用训练过的 verifier 选择更可靠的动作，而不改动基础 policy。
 - vla-evaluation-harness（[开源代码](https://github.com/allenai/vla-evaluation-harness)；[leaderboard](https://allenai.github.io/vla-evaluation-harness/leaderboard/)）：统一 VLA 评测与部署 harness，连接 Dockerized benchmarks、model servers 和 evaluation jobs，覆盖 LIBERO、CALVIN、SimplerEnv、RoboCasa、VLABench、RoboTwin、RLBench、BEHAVIOR-1K、OpenVLA-style servers 等 policy stacks。
 
-## 2.11.4 Skill
+## 2.11.5 Skill
 
 - [computer-vision-opencv](https://skills.sh/mindrally/skills/computer-vision-opencv) 适合模拟具身环境中的感知侧预处理与视觉诊断。
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) 适合需要隔离运行时的具身或游戏环境搭建。

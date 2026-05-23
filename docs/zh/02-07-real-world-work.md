@@ -2,7 +2,6 @@
 
 > 上级章节：2. 基础 Agent
 
-
 ## 2.7.1 Leaderboard
 
 - [GAIA Leaderboard](https://huggingface.co/spaces/gaia-benchmark/leaderboard)：通用现实助理任务的长期公开榜单，覆盖推理、网页浏览、多模态和工具使用；它仍是比较“能否完成真实问题”而非单工具能力的重要入口。
@@ -14,7 +13,15 @@
 - [ClawBench Leaderboard](https://claw-bench.com/)：真实 live website 写操作任务榜单，记录 model、harness、trace、HTTP interception 和 reward；现实网页工作流中 agent 行为是否可审计是它的主要价值。
 - [ClawMark Leaderboard](https://claw-mark.com/leaderboard)：多日历时间 coworker-agent 工作流榜单，适合跟踪能跨天等待、回忆和协同的真实工作 agent，而不是只完成单次会话任务。
 
-## 2.7.2 Bench
+## 2.7.2 Survey
+
+- [Large Language Models for Constructing and Optimizing Machine Learning Workflows: A Survey](https://arxiv.org/abs/2411.10478)：连接 agent、AutoML、pipeline 搜索、数据处理、模型选择与评测。
+- [A Survey on Large Language Model-based Agents for Statistics and Data Science](https://arxiv.org/abs/2412.14222)：组织数据清洗、分析、可视化、建模、报告与人机协作。
+- [Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents](https://arxiv.org/abs/2503.24047)：覆盖专业科研工作中的文献、实验规划、分析、假设与工具。
+- [Empowering Real-World: A Survey on the Technology, Practice, and Evaluation of LLM-driven Industry Agents](https://arxiv.org/abs/2510.17491)：回顾真实部署场景、任务实践、评测与运营约束。
+- [A Survey of Data Agents: Emerging Paradigm or Overstated Hype?](https://arxiv.org/abs/2510.23587)：检验数据访问、转换、分析与决策支持中的稳定收益。
+
+## 2.7.3 Bench
 
 - [GAIA](https://arxiv.org/abs/2311.12983)（[数据集](https://huggingface.co/datasets/gaia-benchmark/GAIA)）：评什么：通用 AI assistant 在真实问题上的推理、多模态、网页浏览和工具使用。核心思想：用人类容易但模型困难的现实问题，把“会查、会算、会用工具、会整合证据”组合成早期通用 agent 评测锚点。
 - [WorkArena](https://arxiv.org/abs/2403.07718)（[开源代码](https://github.com/ServiceNow/WorkArena)）：评什么：ServiceNow 企业软件中的常见知识工作网页任务。核心思想：用真实企业软件风格的平台与 BrowserGym 环境评测 agent 的网页操作、表单处理、检索与流程执行能力。
@@ -52,8 +59,8 @@
 - [MCP-Bench](https://arxiv.org/abs/2508.20453)（[开源代码](https://github.com/Accenture/mcp-bench)）：评什么：通过 MCP servers 执行复杂真实任务的工具使用能力。核心思想：每个 MCP server 提供互补工具，任务要求跨工具规划、schema 理解、轨迹级决策与最终任务完成，贴近企业 MCP 化工具生态。
 - [AgentArch](https://arxiv.org/abs/2509.10769)（[开源代码](https://github.com/ServiceNow/AgentArch)）：评什么：企业场景中不同 agent 架构的端到端效果。核心思想：把 ReAct、planner-executor、多代理、记忆和工具路由等架构选择放到统一企业任务集里比较，帮助区分模型能力与 harness 设计贡献。
 - [EngDesign](https://arxiv.org/abs/2509.16204)（[开源代码](https://github.com/AGI4Engineering/EngDesign)，[数据集](https://huggingface.co/datasets/opt1zer/EngDesign)）：评什么：多工程学科中的 LLM 工程设计能力。核心思想：从课本问答推进到开放设计问题，要求模型综合领域知识、处理约束并推理设计工件，更贴近真实工程场景。
-- [GDPval-AA](https://artificialanalysis.ai/evaluations/gdpval-aa)：评什么：Artificial Analysis 针对 OpenAI GDPval gold 公共任务集做的独立 agentic 评测。核心思想：通过 Stirrup agent harness 给模型 shell 与网页访问能力，再用盲测成对比较得到 Elo 分数，为文档、幻灯片、图表、表格等专业交付物提供模型厂商常看的现实工作榜单。
 - [Gaia2](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）：评什么：动态现实环境中的异步任务、通知和外部系统交互。核心思想：用会变化的环境状态和持续事件流逼近真实工作中的“等待、更新、再计划”，适合作为静态一次性 workplace benchmark 的动态补充。
+- [GDPval-AA](https://artificialanalysis.ai/evaluations/gdpval-aa)：评什么：Artificial Analysis 针对 OpenAI GDPval gold 公共任务集做的独立 agentic 评测。核心思想：通过 Stirrup agent harness 给模型 shell 与网页访问能力，再用盲测成对比较得到 Elo 分数，为文档、幻灯片、图表、表格等专业交付物提供模型厂商常看的现实工作榜单。
 - [SCUBA](https://arxiv.org/abs/2509.26506)（[开源代码](https://github.com/SalesforceAIResearch/SCUBA)）：评什么：Salesforce GUI 中的企业 computer-use 任务。核心思想：以 CRM 业务对象和真实 SaaS 界面为载体，测 agent 在记录查改、表单导航、规则遵循和状态一致性上的可靠性。
 - [Sheetpedia](https://openreview.net/forum?id=4vLYwlA3X5)（[开源代码](https://github.com/TTtianTT/Sheetpedia)，[数据集](https://huggingface.co/datasets/tianzl66/Sheetpedia_xlsx)）：评什么：电子表格智能与微调数据。核心思想：收集带公式语义的大规模真实 spreadsheet 语料，并定义自然语言到语义范围和自然语言到公式任务，使表格理解比仅基于网页表格的数据更贴近真实办公数据。
 - [DRBench](https://arxiv.org/abs/2510.00172)（[开源代码](https://github.com/ServiceNow/drbench)，[数据集](https://huggingface.co/datasets/ServiceNow/drbench)）：评什么：企业 deep research 工作。核心思想：要求 agent 跨公开网页、私有文件、邮件、聊天和生产力工具检索证据并生成带引用报告，补齐现实企业场景中“信息分散且有权限边界”的研究型工作流。
@@ -89,8 +96,8 @@
 - [EnterpriseOps-Gym](https://arxiv.org/abs/2603.13594)（[项目页](https://enterpriseops-gym.github.io/)；[开源代码](https://github.com/ServiceNow/EnterpriseOps-Gym)；[数据集](https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym)）：评什么：企业环境中的有状态规划、工具使用与策略合规。核心思想：提供含 164 张数据库表、512 个功能工具和 1150 个专家任务的容器化企业 sandbox，覆盖客服、HR、IT、邮件、日历、Teams、Drive 与混合场景，并用 SQL 检查最终状态而非只看轨迹文本。
 - [Data Agent Benchmark（DAB）](https://arxiv.org/abs/2603.20576)（[开源代码](https://github.com/ucbepic/DataAgentBench)）：评什么：企业数据代理回答自然语言数据问题的能力。核心思想：用 12 个数据集、9 个领域、4 类数据库管理系统和 54 个查询，测试跨数据库集成、脏键 join、非结构化文本转换和领域知识，而不是只测单库 Text-to-SQL。
 - [EnterpriseArena（CFO）](https://arxiv.org/abs/2603.23638)：评什么：动态企业环境中的 CFO 式长时程资源分配。核心思想：把决策展开为 132 个月的企业模拟，agent 需要在预算化工具调用、部分可观测财务状态、宏观信号和资金约束下维持现金不为负并最大化终局价值，专门暴露“只分析不行动”和长期风险控制失败。
-- [MM-ClawBench / MM Claw end-to-end benchmark](https://www.minimax.io/news/minimax-m27-en)（model-card-only；未确认有独立公开发布）：评什么：OpenClaw 风格的工作与生活真实需求，覆盖个人学习规划、办公文档处理与交付、定时专业研究与投资建议、代码开发和维护等。核心思想：用宽覆盖端到端任务集评估 skill-rich 与 tool-rich agent 是否能产出现实工件，同时显式保留其公开状态限制。
 - [ELT-Bench-Verified](https://arxiv.org/abs/2603.29399)：对 ELT 类智能体评测进行验证式修订，强调基准质量问题可能低估数据流水线任务中的智能体能力。
+- [MM-ClawBench / MM Claw end-to-end benchmark](https://www.minimax.io/news/minimax-m27-en)（model-card-only；未确认有独立公开发布）：评什么：OpenClaw 风格的工作与生活真实需求，覆盖个人学习规划、办公文档处理与交付、定时专业研究与投资建议、代码开发和维护等。核心思想：用宽覆盖端到端任务集评估 skill-rich 与 tool-rich agent 是否能产出现实工件，同时显式保留其公开状态限制。
 - [Claw-Eval](https://arxiv.org/abs/2604.06132)（[开源代码](https://github.com/claw-eval/claw-eval)）：评什么：真实软件环境中的多步骤 agent 工作流。核心思想：用 300 个真人验证任务、9 类场景和 2,159 个细粒度 rubric，把 Completion、Safety、Robustness 和跨三次运行的一致通过率纳入统一评测，并通过执行轨迹、审计日志和环境快照做 trajectory-aware grading。
 - [ClawBench](https://arxiv.org/abs/2604.08523)（[项目页](https://claw-bench.com/)；[开源代码](https://github.com/reacher-z/ClawBench)；[数据集](https://huggingface.co/datasets/TIGER-Lab/ClawBench)）：评什么：真实 live website 上的日常在线任务与状态变更操作。核心思想：从 153 个跨 144 个真实平台的写操作型网页任务起步，并在新版 leaderboard 中维护 130 个更新任务；通过最终 HTTP 请求拦截、payload judge 和多层轨迹记录，降低真实网站评测的破坏性与不可复现性。
 - [OccuBench](https://arxiv.org/abs/2604.10866)（[开源代码](https://github.com/GregxmHu/OccuBench)，[数据集](https://huggingface.co/datasets/gregH/OccuBench)）：评什么：跨行业、跨职业的真实专业任务场景。核心思想：用 Language World Models / Language Environment Simulators 模拟领域工具响应，覆盖 100 个专业任务场景、10 个行业类别、65 个专业领域和 382 个可解实例；同时通过显式错误、隐式数据退化与混合故障注入评估“任务完成 + 环境鲁棒性”的职业画像。
@@ -104,15 +111,19 @@
 - [Semantic Layers for Reliable LLM-Powered Data Analytics](https://arxiv.org/abs/2604.25149)：面向语义层约束下数据分析准确性与幻觉风险的成对基准，为企业数据智能体评测补充可靠性维度。
 - [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：评什么：会随真实需求变化的企业工作流 agent。核心思想：从 ClawHub marketplace 信号中刷新任务分布，当前版本含 105 个任务和 17 个任务族，并计划按季度重采样；评分同时读取执行 trace、审计日志、服务状态和 workspace 产物，使 benchmark 不只是静态题库。
 - [Seed2.0 内部 XPert Bench 与 ToB 系列](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的封闭/内部评测，包含 XPert Bench 以及 ToB-Complex Workflows、ToB-Reference Q&A、ToB-K12 Education、ToB-Compositional Tasks、ToB-Text Classification、ToB-Information Extraction 等；目前未公开发布。它们值得在列表中跟踪，因为体现了模型厂商对企业、教育、分类、抽取和工作流完成任务的关注。
+- [PatRe](https://arxiv.org/abs/2605.03571)：通过审查意见和申请人答复生成来评估完整专利审查流程。核心思想：把专利审查建模为迭代式专业工作流，使用真实案例、oracle 与检索模拟设置，并评估论证与回应质量。
 - [Workspace-Bench](https://arxiv.org/abs/2605.03596)：评什么：带大规模文件依赖的 workspace learning 任务。核心思想：构造包含 5 类 worker profile、74 种文件类型和 20,476 个文件的现实工作区，用文件依赖图和多维 rubric 检查 agent 是否能跨文件检索、推理、更新和交付。
 - [PolySQL](https://arxiv.org/abs/2605.07796)：通过自动化后端同构将 Text-to-SQL 评测扩展到多种 SQL 方言，检验数据智能体是否能跨数据库引擎泛化。
 - [EntCollabBench](https://arxiv.org/abs/2605.08761)：评什么：企业工作流中的角色专门化多 agent 协作。核心思想：模拟一个权限隔离组织，包含 11 个角色专门化 agent、workflow 状态检查和基于策略的审批，测试 all-in-one 单 agent 难覆盖的委派、上下文传递、访问控制、参数 grounding 和流程闭环。
 - [WildClawBench](https://arxiv.org/abs/2605.10912)（[开源代码](https://github.com/internlm/WildClawBench)）：评什么：真实 CLI agent harness 中的长程、多模态、双语工作任务。核心思想：在可复现 Docker 容器里运行 OpenClaw、Claude Code、Codex 或 Hermes Agent 等真实 harness，提供 60 个平均 8 分钟、20+ 工具调用的人工任务，并用规则检查、环境状态审计与 LLM/VLM judge 混合评分，显式暴露 harness 选择对结果的影响。
-## 2.7.3 Agent Harness
+
+## 2.7.4 Agent Harness
 
 - [BrowserGym Ecosystem](https://arxiv.org/abs/2412.05467)（[开源代码](https://github.com/ServiceNow/BrowserGym)）：统一 WebArena、VisualWebArena、WorkArena 等网页/企业工作环境，并配套 AgentLab 实验框架，适合做现实网页和 workplace agent 的可复现比较。
+- [Autono](https://arxiv.org/abs/2504.04650)：一种 ReAct 风格的自主 agent 框架，包含自适应动作生成、及时放弃控制和多智能体记忆迁移。核心思想：在固定 planner workflow 失效时允许执行路径动态调整，同时保留终止保护以提升鲁棒性。
 - [Alita](https://arxiv.org/abs/2505.20286)（[开源代码](https://github.com/CharlesQ9/Alita)）：偏生产环境的通用 solver agent，强调跨工具编排与复杂工作流执行，可迁移到现实业务任务的多步骤执行场景。
 - [WorkForceAgent-R1](https://arxiv.org/abs/2505.22942)（开源代码：未找到稳定公开仓库）：面向 WorkArena 的 workplace web agent，使用规则化 R1-style 强化学习提升单步推理、格式遵循和动作正确性；更像“企业网页导航”场景中的专项执行器，而非通用聊天代理。
+- [MaRGen](https://arxiv.org/abs/2508.01370)：用于自驱市场研究与分析的多 Agent harness。核心思路是协调 researcher、retriever、reviewer 和 writer Agent 查询数据、生成洞察与可视化、撰写市场报告，并通过自动评审迭代提升报告质量。
 - [AgenticData](https://arxiv.org/abs/2508.05002)：面向结构化与非结构化异质数据的 agentic data analytics 系统。核心思想：把自然语言问题转成语义计划，再协调数据画像、交叉验证、语义优化和记忆 agent 执行并修正数据分析流程。
 - [HomerAgent](https://arxiv.org/abs/2508.09124)（[开源代码](https://github.com/microsoft/OdysseyBench)）：OdysseyBench 配套的办公生产力 agent/harness，用显式记忆组织长程工作流中的阶段结果，适合分析 office workflow 中的上下文遗忘和错误复用。
 - [AgentArch Reference Harness](https://arxiv.org/abs/2509.10769)（[开源代码](https://github.com/ServiceNow/AgentArch)）：用统一企业任务环境比较多种 agent 架构，适合把 planner-executor、多代理、memory、工具路由等 harness 设计变量拆开做消融。
@@ -139,7 +150,8 @@
 - [Claw-Eval-Live Harness](https://arxiv.org/abs/2604.28139)（[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：把 marketplace signal 到任务快照、mock service、workspace fixture、grader 与 leaderboard 聚合打通，适合构建会周期性刷新且能保留可复现快照的 workflow benchmark。
 - [DataEvolver](https://arxiv.org/abs/2605.01789)：面向自主数据构建与改进的目标驱动循环智能体框架；核心思路是把数据集构建组织成包含目标、反馈和修订的迭代工作流，而不是一次性生成步骤。
 - [WildClawBench Native Runtime Harness](https://arxiv.org/abs/2605.10912)（[开源代码](https://github.com/internlm/WildClawBench)）：用 Docker 和真实 CLI agent harness 承载长程任务，强调 agent 系统、工具运行时与模型三者共同评测，是对只测裸模型或轻量 wrapper 的现实化补充。
-## 2.7.4 Skill
+
+## 2.7.5 Skill
 
 - [Data Product MCP](https://arxiv.org/abs/2601.08687)：面向企业数据产品对话的 MCP 式接口，可作为数据分析智能体复用的工具基础设施。
 - [travel-planner](https://skills.sh/ailabs-393/ai-labs-claude-skills/travel-planner) 最贴近 `WorldTravel`。

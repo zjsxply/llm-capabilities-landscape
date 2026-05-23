@@ -13,7 +13,15 @@ Memory evaluates whether an agent can write facts, preferences, experiences, pro
 - [MemGUI-Bench](https://github.com/lgy0404/MemGUI-Bench): An entry point for mobile GUI agent memory evaluation, useful for observing retention and cross-session learning in GUI tasks across sessions.
 - [EvoMemBench](https://github.com/DSAIL-Memory/EvoMemBench): An entry point for self-evolving memory evaluation, useful for comparing in-episode/cross-episode and knowledge/execution memory.
 
-## 1.15.2 Bench
+## 1.15.2 Survey
+
+- [A Survey on the Memory Mechanism of Large Language Model based Agents](https://arxiv.org/abs/2404.13501): Reviews memory types, storage, retrieval, updating, and evaluation for LLM agents.
+- [From Human Memory to AI Memory: A Survey on Memory Mechanisms in the Era of LLMs](https://arxiv.org/abs/2504.15965): Connects episodic, semantic, procedural, and personalized AI memory with human-memory concepts.
+- [Graph-based Agent Memory: Taxonomy, Techniques, and Applications](https://arxiv.org/abs/2602.05665): Surveys graph construction, retrieval, temporal updates, and reasoning over agent memory.
+- [Anatomy of Agentic Memory: Taxonomy and Empirical Analysis of Evaluation and System Limitations](https://arxiv.org/abs/2602.19320): Analyzes memory evaluation gaps and system limitations through an agentic taxonomy.
+- [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://arxiv.org/abs/2605.06716): Tracks memory from static storage toward reusable experience and adaptation.
+
+## 1.15.3 Bench
 
 - [LOCOMO](https://arxiv.org/abs/2402.17753) ([code](https://github.com/snap-research/locomo)): What it evaluates: very long-term dialogue memory. Core idea: treat facts, preferences, and events in multi-session dialogue as retrieval targets, evaluating whether agents can use historical information consistently over long periods.
 - [MemSim](https://arxiv.org/abs/2409.20163) ([code](https://github.com/nuster1128/MemSim)): What it evaluates: memory behavior in LLM-based personal assistants. Core idea: use a Bayesian simulator to make memory updates, retrieval, and personalized assistant behavior measurable under controlled interaction histories.
@@ -32,27 +40,29 @@ Memory evaluates whether an agent can write facts, preferences, experiences, pro
 - [MINTEval](https://arxiv.org/abs/2605.18565): What it evaluates: memory for long-horizon, frequently updated, mutually interfering information. Core idea: use multi-objective interference to upgrade static recall pressure into dynamic memory and aggregation reasoning.
 - [MemGym](https://arxiv.org/abs/2605.20833): What it evaluates: long-horizon agent memory environments. Core idea: use Memory-Isolated Tasks to isolate memory writing, retention, and later use from ordinary task capability, and connect scenarios such as MEMGYM-DR and MEMGYM-SWE to deep research and software tasks.
 
-## 1.15.3 Agent Harness
+## 1.15.4 Agent Harness
 
 - [Reflexion](https://arxiv.org/abs/2303.11366) ([code](https://github.com/noahshinn/reflexion)): Converts failure trajectories into language feedback and episodic memory for use in the next attempt; an early representative of using experience memory to improve repeated agent attempts.
 - [Generative Agents](https://arxiv.org/abs/2304.03442) ([code](https://github.com/joonspk-research/generative_agents)): Combines memory streams, reflection, and planning loops into long-term behavioral agents, and is a common starting point for later agent-memory papers.
 - [MemoryBank](https://arxiv.org/abs/2305.10250) ([code](https://github.com/zhongwanjun/MemoryBank-SiliconFriend)): Builds long-term memory writing, retrieval, and personality/preference updates as dialogue-agent components, useful for tracking cross-turn consistency.
 - [Voyager](https://arxiv.org/abs/2305.16291) ([code](https://github.com/MineDojo/Voyager)): Distills exploration experience into a callable skill library and long-term memory; although the task is Minecraft, it established the classic harness form of `experience writing -> retrieval reuse -> capability accumulation`.
 - [MemGPT](https://arxiv.org/abs/2310.08560) ([code](https://github.com/cpacker/MemGPT)): Reframes the long-context problem as explicit memory tiers and scheduling policies, forming a reusable long-horizon agent runtime.
-- Letta ([code](https://github.com/letta-ai/letta); [docs](https://docs.letta.com/)): The current open-source stateful-agent runtime that grew out of MemGPT, with memory blocks, skills, subagents, advanced memory management, and continual-learning-oriented runtime interfaces.
 - [Agent Workflow Memory](https://arxiv.org/abs/2409.07429) (code: no stable public repository found): A memory mechanism for multi-step agent workflows; core idea: have agents explicitly record key states, tool results, and decision rationales during task execution, then retrieve them as needed in later steps instead of feeding back the full history.
 - [Zep](https://arxiv.org/abs/2501.13956) ([code](https://github.com/getzep/graphiti)): A temporal knowledge-graph architecture for agent memory; core idea: organize events, entities, relations, and temporal evolution into a queryable graph for long-term personalization and cross-session recall.
+- Letta ([code](https://github.com/letta-ai/letta); [docs](https://docs.letta.com/)): The current open-source stateful-agent runtime that grew out of MemGPT, with memory blocks, skills, subagents, advanced memory management, and continual-learning-oriented runtime interfaces.
 - [A-MEM](https://arxiv.org/abs/2502.12110) ([code](https://github.com/WujiangXu/A-mem)): A dynamic memory organization framework for agents. Core idea: write memory fragments as linkable and evolvable knowledge structures that support later retrieval, recombination, and reflection.
 - [Mem0](https://arxiv.org/abs/2504.19413) ([code](https://github.com/mem0ai/mem0)): A scalable long-term memory layer for production agents. Core idea: use an automatic extraction, update, and retrieval memory pipeline to reduce reliance on full historical context.
-- LangMem ([code](https://github.com/langchain-ai/langmem); [docs](https://langchain-ai.github.io/langmem/)): A LangGraph/LangChain memory harness that exposes memory search and management tools plus background memory updating, directly matching write, search, update, and reuse lifecycles in memory-agent benchmarks.
 - [Record & Replay](https://arxiv.org/abs/2505.17716): An experience-reuse harness for LLM agents. Core idea: record prior task trajectories and replay useful experience during later execution so agents can transfer procedural knowledge without retraining.
 - [MemoryOS](https://arxiv.org/abs/2506.06326) ([code](https://github.com/BAI-LAB/MemoryOS)): Decomposes agent memory into OS-like operations such as storage, update, retrieval, and consolidation; useful as a general memory runtime for long-term interaction tasks.
+- LangMem ([code](https://github.com/langchain-ai/langmem); [docs](https://langchain-ai.github.io/langmem/)): A LangGraph/LangChain memory harness that exposes memory search and management tools plus background memory updating, directly matching write, search, update, and reuse lifecycles in memory-agent benchmarks.
 - [Memory as a Service (MaaS)](https://arxiv.org/abs/2506.22815): A service-oriented contextual-memory architecture for collaborative agents. Core idea: expose memory as modular services so multiple agents can share, retrieve, and update task context without relying on one monolithic prompt history.
 - [MemOS](https://arxiv.org/abs/2507.03724) ([code](https://github.com/MemTensor/MemOS)): Builds long-term memory, hybrid retrieval, cross-task experience reuse, and token savings into a self-evolving memory OS, suitable for memory-first runtimes in production agents.
 - [MIRIX](https://arxiv.org/abs/2507.07957) ([code](https://github.com/Mirix-AI/MIRIX)): A multi-agent memory system. Core idea: use specialized memory-management agents to maintain short-term, episodic, semantic, and procedural memory for cross-session calls in long-horizon tasks.
+- [RCR-Router](https://arxiv.org/abs/2508.04903): A role-aware context-routing harness for multi-agent LLM systems with structured memory. Core idea: select semantically relevant memory subsets for each agent and interaction round, reducing redundant context exposure while preserving collaboration quality.
 - [CAM](https://arxiv.org/abs/2510.05520): A constructivist agentic-memory harness for LLM-based reading comprehension. Core idea: build structured memory schemata through incremental clustering, hierarchical summarization, and adaptive retrieval so reading agents can integrate and revisit long-form evidence.
 - [Ask WhAI](https://arxiv.org/abs/2511.14780): A belief-state inspection harness for role-primed multi-agent interactions. Core idea: record and replay agent trajectories, query agents out of band, and inject counterfactual evidence to test how shared memory and role priors shape later beliefs.
 - [Hindsight](https://arxiv.org/abs/2512.12818) ([code](https://github.com/vectorize-io/hindsight)): A memory harness for production agents. Core idea: distill execution trajectories after tasks into retrievable experience and reuse it in later tasks through recall and reflection.
+- [AstraNav-Memory](https://arxiv.org/abs/2512.21627): A long-memory harness for embodied navigation agents. Core idea: compress visual context into compact image-centric memory tokens so navigation policies can retain hundreds of spatial-semantic observations across tasks instead of relying on object-centric reconstruction alone.
 - [SimpleMem](https://arxiv.org/abs/2601.02553): An efficient lifelong memory pipeline. Core idea: compress experiences into structured memories, synthesize semantic summaries, and plan intent-aware retrieval for later tasks.
 - [MAGMA](https://arxiv.org/abs/2601.03236): A multi-graph agentic memory architecture. Core idea: separate semantic, temporal, causal, and entity views, then use policy-guided graph traversal for retrieval.
 - [Learning How to Remember / MCMA](https://arxiv.org/abs/2601.07470): A meta-cognitive memory-management harness for agents. Core idea: separate task execution from a learned memory copilot that chooses memory abstraction levels and reuse strategies for transfer across tasks.
@@ -79,7 +89,7 @@ Memory evaluates whether an agent can write facts, preferences, experiences, pro
 - [H-Mem](https://arxiv.org/abs/2605.15701): A hybrid evolving memory mechanism. Core idea: combine temporal tree structure with knowledge-graph memory so agents can retrieve both chronological and relational context.
 - [RecMem](https://arxiv.org/abs/2605.16045): A recurrence-based memory-consolidation system. Core idea: trigger consolidation when patterns recur, reducing memory-construction cost while preserving long-running-agent accuracy.
 
-## 1.15.4 Skill
+## 1.15.5 Skill
 
 - [deep-agents-memory](https://skills.sh/langchain-ai/langchain-skills/deep-agents-memory) is suitable for adding a retrievable long-term memory layer to deep agents.
 - [remembering-conversations](https://skills.sh/obra/episodic-memory/remembering-conversations) is suitable for saving and recalling user facts and preferences from multi-turn conversations.

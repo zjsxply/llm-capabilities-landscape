@@ -2,7 +2,6 @@
 
 > Parent chapter: 1. Foundational Capabilities
 
-
 ## 1.10.1 Leaderboard
 
 - [LongBench Leaderboard](https://longbench2.github.io/) ([code](https://github.com/THUDM/LongBench)): A public leaderboard spanning LongBench to LongBench v2, covering multi-document QA, long-range reasoning, summarization, and controlled settings such as RAG/no-context/CoT; one of the most common continuous reference points for text long-context capability.
@@ -10,7 +9,15 @@
 - [MileBench Leaderboard](https://milebench.github.io/) ([code](https://github.com/milebench/MileBench)): A multimodal long-context leaderboard, suitable for tracking model differences under long videos, image sequences, and cross-modal long inputs.
 - [AcademicEval](https://github.com/ulab-uiuc/AcademicEval): A leaderboard and evaluation script set for live long-context generation, using new arXiv papers to construct tasks; suitable for evaluating model capability to generate titles, abstracts, and related work in long-paper contexts.
 
-## 1.10.2 Bench
+## 1.10.2 Survey
+
+- [Beyond the Limits: A Survey of Techniques to Extend the Context Length in Large Language Models](https://arxiv.org/abs/2402.02244): A foundation for RoPE, interpolation, recurrence, and retrieval approaches.
+- [A Survey on Large Language Model Acceleration based on KV Cache Management](https://arxiv.org/abs/2412.19442): Reviews memory and serving trade-offs for efficient long-context inference.
+- [A Survey on Transformer Context Extension: Approaches and Evaluation](https://arxiv.org/abs/2503.13299): Separates architectural context extension from downstream task success.
+- [A Comprehensive Survey on Long Context Language Modeling](https://arxiv.org/abs/2503.17407): Reviews long-context methods, benchmarks, evaluation pitfalls, and system constraints.
+- [A Survey of Context Engineering for Large Language Models](https://arxiv.org/abs/2507.13334): Surveys context construction, retrieval, memory, tool traces, and prompt-state management.
+
+## 1.10.3 Bench
 
 Note: These benchmarks often do not require a specially named solver agent. The more common form is `a benchmark-provided harness (chunking, RAG toggles, no-context controls) + pluggable context compression/retrieval components`. Long-term memory across sessions and tasks is listed separately in [1.15 Memory](01-15-memory.zh.md); this section only keeps projects directly related to one-time long inputs or context-growth processes.
 
@@ -47,7 +54,7 @@ Note: These benchmarks often do not require a specially named solver agent. The 
 - [LOCA-bench](https://arxiv.org/abs/2602.07962) ([code](https://github.com/hkust-nlp/LOCA-bench)): What it evaluates: robustness of language agents under continuously growing context; core idea: turn long context from "single-shot input" into a "controlled growth process," specifically testing failure boundaries of memory/compression/retrieval strategies.
 - [YC-Bench](https://arxiv.org/abs/2604.01212): What it evaluates: long-term planning and consistent execution; core idea: make agents repeatedly use historical goals, resource states, and intermediate decisions in ongoing management-style tasks, observing the real benefits of context truncation, scratchpads, and memory strategies.
 
-## 1.10.3 Agent Harness
+## 1.10.4 Agent Harness
 
 Note: In the public ecosystem, there are not many solver agents named only for a specific long-context benchmark. More common are reusable long-horizon agent practices such as segmented loading, state summaries, failed-branch logging, and pluggable compression/retrieval components.
 
@@ -59,7 +66,7 @@ Note: In the public ecosystem, there are not many solver agents named only for a
 - [Chain-of-Agents](https://arxiv.org/abs/2406.02818) ([unofficial implementation](https://github.com/rudrankriyam/Chain-of-Agents)): Splits long input into worker agents that process segments serially and pass intermediate messages, then has a manager agent summarize the final answer; suitable for long-document QA and summarization tasks.
 - [Graph of Agents](https://arxiv.org/abs/2509.06644) ([code](https://github.com/tjoo512/graph-of-agents)): A graph-style multi-agent collaboration harness for long context; the core idea is to organize text chunks, local agent outputs, and aggregation nodes into a scalable graph structure, replacing a single long prompt with local processing and cross-node aggregation.
 
-## 1.10.4 Skill
+## 1.10.5 Skill
 
 - [long-context](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/ai-research/emerging-techniques-long-context) directly targets long-context compression, summarization, and retrieval organization.
 - [long-context](https://skills.sh/davila7/claude-code-templates/long-context) is suitable for summarization, compression, and retrieval organization under long context.

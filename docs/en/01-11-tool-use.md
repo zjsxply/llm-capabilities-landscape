@@ -2,7 +2,6 @@
 
 > Parent chapter: 1. Foundational Capabilities
 
-
 ## 1.11.1 Leaderboard
 
 - [BFCL / Berkeley Function-Calling Leaderboard](https://gorilla.cs.berkeley.edu/leaderboard.html): A continuous leaderboard suitable as the main reference for pure function calling.
@@ -14,7 +13,15 @@
 - [Claw-Eval-Live](https://claw-eval-live.github.io/): A continuously updated workflow-agent leaderboard covering terminal, file, web, service, and skill-related tasks.
   It is not a pure function-calling leaderboard, but it is suitable as a cross-reference for tool-use, terminal-use, and skill-use, especially for observing transferability of agent harnesses on dynamic real workflows.
 
-## 1.11.2 Bench
+## 1.11.2 Survey
+
+- [What Are Tools Anyway? A Survey from the Language Model Perspective](https://arxiv.org/abs/2403.15452): Clarifies boundaries among tools, APIs, actions, external resources, and skills.
+- [Tool Learning with Large Language Models: A Survey](https://arxiv.org/abs/2405.17935): Reviews tool discovery, selection, invocation, feedback, datasets, and benchmarks.
+- [LLM With Tools: A Survey](https://arxiv.org/abs/2409.18807): Provides a systems view of tool representation, planning, execution feedback, and evaluation.
+- [Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions](https://arxiv.org/abs/2503.23278): Reviews the MCP ecosystem and security issues in modern tool middleware.
+- [The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration](https://arxiv.org/abs/2603.22862): Tracks routing, composition, traces, and coordination in multi-tool orchestration.
+
+## 1.11.3 Bench
 
 - [API-Bank](https://arxiv.org/abs/2304.08244) ([code](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank)): What it evaluates: tool selection, argument filling, and multi-step calls by tool-augmented LLMs; core idea: protocolize tool sets and tasks, emphasizing executable call trajectories rather than pure-text answers.
 - [Gorilla](https://arxiv.org/abs/2305.15334) ([code](https://github.com/ShishirPatil/gorilla)): What it evaluates: function/tool-calling capability under large-scale API connections; core idea: emphasize alignment with massive APIs and executable calls under function-signature constraints.
@@ -52,23 +59,29 @@
 - [When2Tool](https://arxiv.org/abs/2605.09252) ([code](https://github.com/Trustworthy-ML-Lab/when2tool)): What it evaluates: when an agent should call tools and when it should answer directly; core idea: make tool necessity an explicit evaluation boundary, avoiding the mistaken interpretation that more tool calls mean stronger tool-use capability.
 Note: This line is more about whether agents can correctly select tools, fill arguments, and handle multi-turn API orchestration, not just function-call accuracy.
 - [ComplexMCP](https://arxiv.org/abs/2605.10787): What it evaluates: LLM agents in dynamic, interdependent, large-scale tool sandboxes; core idea: include tool state, cross-tool dependencies, and environment changes in scoring, specifically testing fragile points in long-chain MCP tool execution.
-## 1.11.3 Agent Harness
+
+## 1.11.4 Agent Harness
 
 - [ReAct](https://arxiv.org/abs/2210.03629) ([code](https://github.com/ysymyth/ReAct)) is the most common general agent-loop baseline for tool use: `reasoning -> action -> observation`. On multi-step toolchain tasks such as τ2-Bench and VitaBench, the main differences come more from runtime design, such as argument validation, retry, fallback, and state management, than from a specialized solver.
 - [ToolLLM](https://arxiv.org/abs/2307.16789) ([code](https://github.com/OpenBMB/ToolBench)): A representative tool-use solver agent implementation that performs tool retrieval, argument alignment, and multi-step calls over a large-scale set of real APIs.
 - [Factored Agents](https://arxiv.org/abs/2503.22931): A tool-use agent architecture that separates high-level planning and in-context learning from tool-format memorization. Core idea: use specialized components to reduce malformed, missing, and hallucinated API fields while preserving adaptability in dynamic environments.
+- [AgentDNS](https://arxiv.org/abs/2505.22368): A service-discovery and naming protocol for LLM agents. Core idea: give agents a root-domain mechanism to discover, resolve, and securely invoke third-party agents and tools across vendors, filling a gap around MCP and A2A interoperability.
 - [Gradientsys](https://arxiv.org/abs/2507.06520): A multi-agent LLM scheduler with ReAct-style orchestration. Core idea: coordinate specialized agents through scheduling and feedback so multi-step tool or workflow execution is managed explicitly rather than left to a single monolithic prompt.
+- [MCP-Universe](https://arxiv.org/abs/2508.14704) ([code](https://github.com/SalesforceAIResearch/MCP-Universe)): More of an agent harness at the tool-ecosystem layer than just a benchmark dataset; it organizes MCP servers, tasks, executor, UI, and evaluation records into one runtime environment, making it suitable for reproducible experiments and comparisons among tool-use scaffolds.
+- [ToolGate](https://arxiv.org/abs/2601.04688): A contract-grounded verified execution harness for LLM tool use. Core idea: represent trusted world state symbolically and gate tool commits through Hoare-style contracts so tool calls have checkable safety and state-evolution guarantees.
 - mcp-use ([code](https://github.com/mcp-use/mcp-use); [docs](https://mcp-use.com/docs)): No standalone paper, but it provides MCP server, MCP app, Inspector, and deployment workflows, making it suitable as an engineering-side MCP tool-use harness, especially by combining tool definition, debugging, observability, and publishing in one SDK.
 - mcp-agent ([code](https://github.com/lastmile-ai/mcp-agent); [docs](https://docs.mcp-agent.com/)): An MCP-native agent SDK that packages server lifecycle management, routing, orchestrator/evaluator-optimizer patterns, and durable execution into reusable tool-use harness components.
 - OpenAI Agents SDK ([code](https://github.com/openai/openai-agents-python); [docs](https://openai.github.io/openai-agents-python/)): An open-source workflow SDK whose core abstractions include tools, MCP, handoffs, guardrails, sessions, and tracing, making it a practical baseline for engineering tool-using agents beyond benchmark-only scaffolds.
-- [MCP-Universe](https://arxiv.org/abs/2508.14704) ([code](https://github.com/SalesforceAIResearch/MCP-Universe)): More of an agent harness at the tool-ecosystem layer than just a benchmark dataset; it organizes MCP servers, tasks, executor, UI, and evaluation records into one runtime environment, making it suitable for reproducible experiments and comparisons among tool-use scaffolds.
+- [ATLAS-RTC](https://arxiv.org/abs/2603.27905): A token-level runtime-control layer for LLM agent outputs. Core idea: monitor generation against output contracts during decoding and apply biasing, masking, or rollback before malformed structured or tool-calling outputs are committed.
 - [Meta-Agent-Workflow](https://doi.org/10.1145/3701716.3715247): A tool-use harness that constructs, retrieves, and refines reusable workflows for LLM agents. Core idea: turn repeated tool-use trajectories into workflow assets so later tasks can reuse and adapt structured execution plans instead of starting from a one-off ReAct loop.
-- [ToolGate](https://arxiv.org/abs/2601.04688): A contract-grounded verified execution harness for LLM tool use. Core idea: represent trusted world state symbolically and gate tool commits through Hoare-style contracts so tool calls have checkable safety and state-evolution guarantees.
 - [SkillGraph](https://arxiv.org/abs/2604.19793): A graph-prior framework for tool sequence recommendation. Core idea: mine execution-transition regularities from successful tool-use trajectories, then separate candidate retrieval from ordering so agents can plan data-dependent API chains instead of relying only on semantic similarity.
+- [DADL](https://arxiv.org/abs/2605.05247): A declarative description language for enterprise tool libraries in LLM agent systems. Core idea: describe REST APIs, authentication, pagination, response shaping, and access classification once, then expose large tool catalogs through an execution layer instead of one MCP server per wrapper.
 - [Planning Horizon in Data-Centric Tool Calling](https://arxiv.org/abs/2605.08477): Studies whether tool-using agents need explicit step-by-step planning in data-centric tasks. Core idea: compare planning horizons inside tool-calling workflows so agent scaffolds can choose when detailed decomposition helps or hurts execution.
 - [RubricRefine](https://arxiv.org/abs/2605.09730): A reliability repair layer before tool invocation; the core idea is to first generate task/registry-specific rubrics and then correct inter-tool contract errors before execution.
 - [AOP](https://www.semanticscholar.org/paper/2dccab11b1feb5424437a79f047c8a91c1818634): An automated and interactive LLM pipeline-orchestration harness for complex query answering. Core idea: let the system compose, inspect, and revise multi-step LLM pipelines instead of treating complex queries as a single prompt or fixed workflow.
-## 1.11.4 Skill
+- [Toolbelt-MCP](https://doi.org/10.1007/978-3-032-11442-6_38): A proof-of-concept MCP harness for relational-database tool use. Core idea: expose SQL execution and graph-based relational-path discovery as tools so an LLM can explore organically grown schemas and answer database questions through MCP-mediated actions.
+
+## 1.11.5 Skill
 
 - [mcp-builder](https://skills.sh/anthropics/skills/mcp-builder) is suitable for quickly building MCP servers.
 - [mcp-cli](https://skills.sh/github/awesome-copilot/mcp-cli) is suitable for MCP runtime and command-line management.

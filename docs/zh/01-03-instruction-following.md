@@ -2,7 +2,6 @@
 
 > 上级章节：1. 基础能力
 
-
 ## 1.3.1 Leaderboard
 
 - [Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard)：包含 IFEval 的公开综合榜单；价值在于把可验证指令遵循纳入主流模型评测生态。
@@ -14,7 +13,15 @@
 - [IFBench Leaderboard](https://github.com/allenai/IFBench)：可验证指令遵循泛化榜单；价值在于用未见约束类型和多轮设置检查模型是否只过拟合 IFEval 风格模板。
 - [IFScale Leaderboard](https://distylai.github.io/IFScale/)：指令数量压力测试榜单；价值在于用 10 到 500 条 simultaneous instructions 观察约束负载增加时的退化模式。
 
-## 1.3.2 Bench
+## 1.3.2 Survey
+
+- [Instruction Tuning for Large Language Models: A Survey](https://arxiv.org/abs/2308.10792)：指令微调数据、方法、评测与局限的基础综述。
+- [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](https://arxiv.org/abs/2402.07927)：综述在模型侧微调之前影响约束遵循的提示方法。
+- [The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608)：给出提示工程技术及评测考虑的细粒度分类。
+- [A Systematic Survey of Automatic Prompt Optimization Techniques](https://arxiv.org/abs/2502.16923)：回顾面向指令遵循的自动提示搜索、反馈与优化方法。
+- [Towards Alignment-Centric Paradigm: A Survey of Instruction Tuning in Large Language Models](https://arxiv.org/abs/2508.17184)：从以对齐为中心的数据、训练和评测视角更新指令微调研究。
+
+## 1.3.3 Bench
 
 - [COLLIE](https://arxiv.org/abs/2307.08689)：评测受约束文本生成与复杂指令遵循；核心思想是把约束（格式、包含/排除、长度、集合约束等）做成可组合、可判定的诊断任务族。
 - [FollowBench](https://arxiv.org/abs/2310.20410)：评测多层级、细粒度约束遵循；核心思想是把复杂用户指令拆成不同难度和类型的约束，定位模型是在整体任务、局部约束还是细节执行上失败。
@@ -43,7 +50,7 @@
 - [SEQUOR](https://arxiv.org/abs/2605.06353)：评测长多轮对话中的现实约束遵循；核心思想是把新增、替换与冲突约束都放进同一协议，专测长对话漂移。
 - [DMT-RoleBench](https://doi.org/10.1609/aaai.v39i24.34768)：通过动态多轮对话评测角色扮演 LLM 与 agent。核心思想：围绕评测意图和主题生成对话轨迹，使角色一致性、指令遵循和交互质量比静态提示词更贴近真实角色扮演使用场景。
 
-## 1.3.3 Agent Harness
+## 1.3.4 Agent Harness
 
 - [HELM](https://arxiv.org/abs/2211.09110)（[开源代码](https://github.com/stanford-crfm/helm)）：通用评测 harness；在指令遵循任务中可复用 IFEval 场景与 strict accuracy 指标，把规则检查、模型调用和结果汇总标准化。
 - [Reflexion](https://arxiv.org/abs/2303.11366)（[开源代码](https://github.com/noahshinn024/reflexion)）：把失败经验以文本记忆沉淀进下一轮执行，适合多轮约束任务的持续改进。
@@ -52,7 +59,7 @@
 - [NSVIF](https://arxiv.org/abs/2601.17789)：神经符号指令遵循验证框架；核心思想是把自然语言指令建模为逻辑与语义约束，并由统一求解器生成可解释反馈，可作为 agent 输出前的独立合规检查层。
 - lm-evaluation-harness（[开源代码](https://github.com/EleutherAI/lm-evaluation-harness)）：通用语言模型评测执行框架；价值在于已经包含 `ifeval` 任务实现，适合把指令遵循规则检查接入可复现实验流水线。
 
-## 1.3.4 Skill
+## 1.3.5 Skill
 
 - [json-schema-validator](https://skills.sh/dkyazzentwatwa/chatgpt-skills/json-schema-validator) 适合结构化输出检查。
 - [schema-creator](https://skills.sh/oimiragieo/agent-studio/schema-creator) 适合先把模糊要求固化成可检验 schema。

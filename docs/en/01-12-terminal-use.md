@@ -16,7 +16,13 @@ Therefore, it places more emphasis on the closed loop of `command selection -> o
 - [DevOps-Gym](https://www.devops-gym.com/): A terminal-adjacent leaderboard/evaluation entry point more focused on DevOps and system operations.
   It is suitable for observing command-line capability in deployment, configuration, monitoring, and failure recovery, complementing Terminal-Bench's single-task Linux environment.
 
-## 1.12.2 Bench
+## 1.12.2 Survey
+
+- [OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use](https://arxiv.org/abs/2508.04482): Surveys OS-level interaction, observation-action loops, evaluation, and safety; terminal use is an important subcase.
+- [AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities](https://arxiv.org/abs/2508.11126): Reviews command execution, debugging, testing, and verification in agentic programming workflows.
+- [Inside the Scaffold: A Source-Code Taxonomy of Coding Agent Architectures](https://arxiv.org/abs/2604.03515): Taxonomizes coding-agent scaffolds that expose shell execution, repair loops, and environment control.
+
+## 1.12.3 Bench
 
 - [Terminal-Bench 2.0](https://www.tbench.ai/registry/terminal-bench/2.0) ([official leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.0); run entry: [Harbor / Terminal-Bench run entry](https://harborframework.com/docs/running-tbench); paper: [Terminal-Bench](https://arxiv.org/abs/2601.11868); [code](https://github.com/laude-institute/terminal-bench)): What it evaluates: end-to-end task completion in real Linux terminal environments; the official registry page currently shows 89 tasks.
   Core idea: each task is defined by instructions, a Docker environment, and test scripts, and agents must pass automatic evaluation by reading/writing files, running commands, installing/calling tools, debugging failures, and producing verifiable results.
@@ -40,7 +46,8 @@ Therefore, it places more emphasis on the closed loop of `command selection -> o
   Core idea: derive tasks from Terminal-Bench 2.1 and place necessary clues and distractor clues into natural files, README files, comments, and logs, addressing a blind spot where blindly following environment text can still pass.
 - [ClawForge](https://arxiv.org/abs/2605.14133): What it evaluates: generation of executable command-line agent benchmarks.
   Core idea: compile reproducible tasks from scenario templates, initialization states, reference trajectories, and validators, with emphasis on whether agents check existing state, handle conflicting artifacts, and reach the correct final state.
-## 1.12.3 Agent Harness
+
+## 1.12.4 Agent Harness
 
 Papers and method-oriented work:
 
@@ -99,7 +106,7 @@ Major agents on the Terminal-Bench 2.0 leaderboard (as of 2026-05-22, the offici
 - spoox-m ([code](https://github.com/plaume8/spoox)): A terminal agent submitted by TUM/community contributors; public information is limited, but the code can be used to inspect its Terminal-Bench adaptation.
 - Dakou Agent ([official homepage](https://dakou.iflow.cn/)): iflow's coding agent; included on the leaderboard as a Chinese product-style terminal coding agent reference.
 
-## 1.12.4 Skill
+## 1.12.5 Skill
 
 - [mcp-code-execution](https://skills.sh/athola/claude-night-market/mcp-code-execution) is suitable for organizing terminal tasks into a reusable `write code -> execute -> read errors -> fix` loop.
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) is suitable for providing isolated execution environments for terminal calls, reducing side-effect risks on the local machine.

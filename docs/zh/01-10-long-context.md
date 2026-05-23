@@ -2,7 +2,6 @@
 
 > 上级章节：1. 基础能力
 
-
 ## 1.10.1 Leaderboard
 
 - [LongBench Leaderboard](https://longbench2.github.io/)（[开源代码](https://github.com/THUDM/LongBench)）：从 LongBench 到 LongBench v2 的公开榜，覆盖多文档问答、长程推理、摘要与 RAG/no-context/CoT 等可控设置，是文本长上下文最常用的持续对照入口之一。
@@ -10,7 +9,15 @@
 - [MileBench Leaderboard](https://milebench.github.io/)（[开源代码](https://github.com/milebench/MileBench)）：多模态长上下文榜，适合追踪视频、图像序列和跨模态长输入下的模型差异。
 - [AcademicEval](https://github.com/ulab-uiuc/AcademicEval)：面向 live long-context generation 的榜单与评测脚本，使用新 arXiv 论文构造任务，适合评估模型在长论文语境下生成标题、摘要和相关工作的能力。
 
-## 1.10.2 Bench
+## 1.10.2 Survey
+
+- [Beyond the Limits: A Survey of Techniques to Extend the Context Length in Large Language Models](https://arxiv.org/abs/2402.02244)：为 RoPE、插值、递归与检索路线提供基础综述。
+- [A Survey on Large Language Model Acceleration based on KV Cache Management](https://arxiv.org/abs/2412.19442)：回顾高效长上下文推理的内存与服务化权衡。
+- [A Survey on Transformer Context Extension: Approaches and Evaluation](https://arxiv.org/abs/2503.13299)：区分架构层面的上下文扩展与下游任务成功。
+- [A Comprehensive Survey on Long Context Language Modeling](https://arxiv.org/abs/2503.17407)：综述长上下文方法、基准、评测陷阱与系统约束。
+- [A Survey of Context Engineering for Large Language Models](https://arxiv.org/abs/2507.13334)：综述上下文构造、检索、记忆、工具轨迹与提示状态管理。
+
+## 1.10.3 Bench
 
 说明：这类 benchmark 往往不需要“专门命名的 solver agent”，更常见的形态是 `benchmark 自带 harness（切片、RAG 开关、无上下文对照）+ 可插拔上下文压缩/检索组件`。跨会话、跨任务的长期记忆已单列到 [1.15 记忆](01-15-memory.zh.md)，本节只保留与单次长输入或上下文增长过程直接相关的项目。
 
@@ -47,7 +54,7 @@
 - [LOCA-bench](https://arxiv.org/abs/2602.07962)（[开源代码](https://github.com/hkust-nlp/LOCA-bench)）：评什么：在“上下文持续增长”条件下语言代理的稳健性；核心思想：把长上下文从“单次喂入”改成“可控增长过程”，专门检验记忆/压缩/检索策略的失效边界。
 - [YC-Bench](https://arxiv.org/abs/2604.01212)：评什么：长期规划与一致执行；核心思想：让 agent 在持续经营类任务中反复使用历史目标、资源状态和中间决策，观察 context truncation、scratchpad 与 memory 策略的真实收益。
 
-## 1.10.3 Agent Harness
+## 1.10.4 Agent Harness
 
 注：公开生态里“只为某个长上下文 benchmark 命名”的 solver agent 并不多；更常见的是可复用的长程代理习惯（分段加载、状态摘要、失败分支记录）和可插拔的压缩/检索组件。
 
@@ -59,7 +66,7 @@
 - [Chain-of-Agents](https://arxiv.org/abs/2406.02818)（[非官方实现](https://github.com/rudrankriyam/Chain-of-Agents)）：把长输入拆成 worker agent 串行处理并逐段传递中间消息，最后由 manager agent 汇总答案，适合长文档问答和摘要类任务。
 - [Graph of Agents](https://arxiv.org/abs/2509.06644)（[开源代码](https://github.com/tjoo512/graph-of-agents)）：面向长上下文的图式多 agent 协作 harness；核心思想是把文本块、局部 agent 输出与汇总节点组织成可扩展图结构，用局部处理和跨节点聚合替代单一长 prompt。
 
-## 1.10.4 Skill
+## 1.10.5 Skill
 
 - [long-context](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/ai-research/emerging-techniques-long-context) 直接面向长上下文压缩、摘要与检索组织。
 - [long-context](https://skills.sh/davila7/claude-code-templates/long-context) 适合长上下文下的摘要、压缩与检索组织。

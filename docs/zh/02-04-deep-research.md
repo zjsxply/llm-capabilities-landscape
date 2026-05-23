@@ -2,7 +2,6 @@
 
 > 上级章节：2. 基础 Agent
 
-
 ## 2.4.1 Leaderboard
 
 - [Deep Research Bench Leaderboard](https://drb.futuresearch.ai/)：FutureSearch 官方持续榜单，同时覆盖 DRB 与 BTF-2；适合跟踪网页研究 agent 在可复现冻结语料和长轨迹审计下的端到端研究能力。
@@ -11,7 +10,15 @@
 - [Deep Research Arena](https://www.deepresearcharena.com/)：公开 deep research 对战与榜单站点；适合补充追踪产品化 deep research 系统、开源 harness 和商业 agent 的持续表现。
 - [Deep Research SOTA on BrowseComp-ZH](https://www.wizwand.com/sota/deep-research-on-browsecomp-zh-score)：第三方 SOTA 聚合页；适合沿 BrowseComp-ZH 追踪 WebThinker、BrowseMaster、InfoSeeker、ReSum 等 deep-search / deep-research agent 的公开结果。
 
-## 2.4.2 Bench
+## 2.4.2 Survey
+
+- [A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications](https://arxiv.org/abs/2506.12594)：围绕任务分解、搜索、证据管理、综合与评测组织 deep research。
+- [Deep Research Agents: A Systematic Examination And Roadmap](https://arxiv.org/abs/2506.18096)：界定能力边界、系统、基准与可复现性问题。
+- [A Survey of LLM-based Deep Search Agents: Paradigm, Optimization, Evaluation, and Challenges](https://arxiv.org/abs/2508.05668)：覆盖研究 agent 中检索密集的搜索与证据阶段。
+- [Deep Research: A Survey of Autonomous Research Agents](https://arxiv.org/abs/2508.12752)：比较自动搜索、阅读、综合、引用并撰写报告的自主系统。
+- [Reinforcement Learning Foundations for Deep Research Systems: A Survey](https://arxiv.org/abs/2509.06733)：连接长程搜索、报告质量、监督与奖励设计。
+
+## 2.4.3 Bench
 
 - [ResearchArena](https://arxiv.org/abs/2406.10291)：评测学术调研与综述生成；核心思想是把“检索文献 -> 对比方法 -> 写出结构化 survey”做成可评分的研究型 benchmark。
 - [ResearchRubrics](https://arxiv.org/abs/2412.02077)（[开源代码](https://github.com/scaleapi/researchrubrics)）：评测研究型长文产出质量；核心思想是用 rubric 将“覆盖、证据、引用、可复核性、结构与写作质量”等维度显式化并可比。
@@ -62,7 +69,8 @@
 - [DR3-Eval](https://arxiv.org/abs/2604.14683)（[开源代码](https://github.com/NJU-LINK/DR3-Eval)）：评什么：真实、多模态、可复现的深研评测。核心思想：用用户文件、静态 sandbox 和细粒度 rubric。
 - [Cited but Not Verified](https://arxiv.org/abs/2605.06635)：评测 deep research 报告中的 source attribution。核心思想：可复现解析 Markdown 引用，再在报告尺度评估链接有效性、相关性与事实支撑。
 - [ViDR](https://arxiv.org/abs/2605.13034)：评什么：多模态深研报告与视觉证据对齐。核心思想：要求报告结论能回指到具体视觉来源，减少“引用了页面但视觉证据不支撑结论”的多模态幻觉。
-## 2.4.3 Agent Harness
+
+## 2.4.4 Agent Harness
 
 - [STORM](https://arxiv.org/abs/2402.14207)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：检索增强的长文写作 harness，通过多视角提问、构建大纲和撰写带引用报告，成为现代 deep research agent 的重要前身。
 - [Co-STORM](https://arxiv.org/abs/2408.15232)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：协作式探索研究 harness，包含 agent 对话、用户 steer、动态 mind map 与带引用报告输出。
@@ -113,7 +121,8 @@
 - DeerFlow（[开源代码](https://github.com/bytedance/deer-flow)；无 arXiv 论文；把 deep research 抽象为可复用 super agent harness，并强调任务分支解耦）
 - Spring AI Alibaba DeepResearch（[开源代码](https://github.com/spring-ai-alibaba/deepresearch)；无 arXiv 论文；Spring 生态集成版深调研）
 - CellCog（[公开 SDK](https://github.com/CellCog/cellcog_python)；无 arXiv 论文；托管式多 agent 平台与 Python SDK，支持 agent team 与 research-cog）
-## 2.4.4 Skill
+
+## 2.4.5 Skill
 
 - [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher)（端到端检索到成稿框架）
 - [meta-research](https://github.com/AmberLJC/meta-research)（“文献综述 -> 假设树 -> judgment gate -> 实验 -> 反思”的科研 workflow skill）

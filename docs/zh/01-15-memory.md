@@ -11,7 +11,15 @@
 - [MemGUI-Bench](https://github.com/lgy0404/MemGUI-Bench)：移动 GUI agent 记忆评测入口，适合观察跨会话 GUI 任务中的 retention 与 cross-session learning。
 - [EvoMemBench](https://github.com/DSAIL-Memory/EvoMemBench)：自演化记忆评测入口，适合比较 in-episode/cross-episode 与 knowledge/execution 两类记忆。
 
-## 1.15.2 Bench
+## 1.15.2 Survey
+
+- [A Survey on the Memory Mechanism of Large Language Model based Agents](https://arxiv.org/abs/2404.13501)：回顾大语言模型 agent 的记忆类型、存储、检索、更新与评测。
+- [From Human Memory to AI Memory: A Survey on Memory Mechanisms in the Era of LLMs](https://arxiv.org/abs/2504.15965)：连接情节、语义、程序性与个性化 AI 记忆同人类记忆概念。
+- [Graph-based Agent Memory: Taxonomy, Techniques, and Applications](https://arxiv.org/abs/2602.05665)：综述 agent memory 的图构建、检索、时间更新与推理。
+- [Anatomy of Agentic Memory: Taxonomy and Empirical Analysis of Evaluation and System Limitations](https://arxiv.org/abs/2602.19320)：通过 agentic 分类分析记忆评测缺口与系统限制。
+- [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://arxiv.org/abs/2605.06716)：梳理记忆从静态存储走向可复用经验与适应的演进。
+
+## 1.15.3 Bench
 
 - [LOCOMO](https://arxiv.org/abs/2402.17753)（[开源代码](https://github.com/snap-research/locomo)）：评什么：极长程对话记忆。核心思想：把多 session 对话中的事实、偏好和事件作为检索对象，评估 agent 是否能长期一致地使用历史信息。
 - [MemSim](https://arxiv.org/abs/2409.20163)（[开源代码](https://github.com/nuster1128/MemSim)）：评什么：LLM 个人助理的记忆行为。核心思想：用 Bayesian simulator 在受控交互历史下衡量记忆更新、检索和个性化助理行为。
@@ -30,27 +38,29 @@
 - [MINTEval](https://arxiv.org/abs/2605.18565)：评什么：长程、频繁更新、互相干扰的信息记忆。核心思想：用多目标干扰把静态 recall 压力升级到动态记忆与聚合推理。
 - [MemGym](https://arxiv.org/abs/2605.20833)：评什么：长时程 agent memory 环境。核心思想：通过 Memory-Isolated Tasks 把记忆写入、保持和后续使用从普通任务能力中隔离出来，并用 MEMGYM-DR、MEMGYM-SWE 等场景连接 deep research 与软件任务。
 
-## 1.15.3 Agent Harness
+## 1.15.4 Agent Harness
 
 - [Reflexion](https://arxiv.org/abs/2303.11366)（[开源代码](https://github.com/noahshinn/reflexion)）：把失败轨迹转成语言反馈和 episodic memory，再用于下一轮尝试；它是“经验记忆提升 agent 反复尝试”的早期代表。
 - [Generative Agents](https://arxiv.org/abs/2304.03442)（[开源代码](https://github.com/joonspk-research/generative_agents)）：把记忆流、反思和计划循环组合成长期行为代理，是后续 agent memory 论文的常见起点。
 - [MemoryBank](https://arxiv.org/abs/2305.10250)（[开源代码](https://github.com/zhongwanjun/MemoryBank-SiliconFriend)）：把长期记忆写入、检索和人格/偏好更新做成对话代理组件，适合追踪跨轮一致性。
 - [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)）：把探索经验沉淀为可调用 skill library 与长期记忆；虽然任务是 Minecraft，但它把“经验写入 -> 检索复用 -> 能力累积”做成了 agent harness 的经典形态。
 - [MemGPT](https://arxiv.org/abs/2310.08560)（[开源代码](https://github.com/cpacker/MemGPT)）：把长上下文问题转化为显式 memory tier 与调度策略，形成可复用的长程代理 runtime。
-- Letta（[开源代码](https://github.com/letta-ai/letta)；[文档](https://docs.letta.com/)）：MemGPT 后续演进出的开源 stateful-agent runtime，包含 memory blocks、skills、subagents、高级记忆管理和面向 continual learning 的运行时接口。
 - [Agent Workflow Memory](https://arxiv.org/abs/2409.07429)（开源代码：未找到稳定公开仓库）：面向多步骤 agent 工作流的记忆机制；核心思想：让 agent 在任务执行中显式记录关键状态、工具结果和决策理由，后续步骤按需检索而非全量回灌。
 - [Zep](https://arxiv.org/abs/2501.13956)（[开源代码](https://github.com/getzep/graphiti)）：面向 agent memory 的时间知识图谱架构；核心思想：把事件、实体、关系和时间演化组织成可查询图，服务长期个性化和跨会话召回。
+- Letta（[开源代码](https://github.com/letta-ai/letta)；[文档](https://docs.letta.com/)）：MemGPT 后续演进出的开源 stateful-agent runtime，包含 memory blocks、skills、subagents、高级记忆管理和面向 continual learning 的运行时接口。
 - [A-MEM](https://arxiv.org/abs/2502.12110)（[开源代码](https://github.com/WujiangXu/A-mem)）：面向 agent 的动态记忆组织框架。核心思想：把记忆片段写成可链接、可演化的知识结构，支持后续检索、重组与反思。
 - [Mem0](https://arxiv.org/abs/2504.19413)（[开源代码](https://github.com/mem0ai/mem0)）：面向生产 agent 的可扩展长期记忆层。核心思想：用自动抽取、更新和检索的 memory pipeline 降低全量历史上下文依赖。
-- LangMem（[开源代码](https://github.com/langchain-ai/langmem)；[文档](https://langchain-ai.github.io/langmem/)）：面向 LangGraph/LangChain 的记忆 harness，提供记忆搜索、记忆管理工具和后台记忆更新，直接对应 memory-agent benchmark 中的写入、搜索、更新与复用生命周期。
 - [Record & Replay](https://arxiv.org/abs/2505.17716)：面向 LLM agent 的经验复用 harness；核心思想是记录既往任务轨迹，并在后续执行中 replay 有用经验，使 agent 无需重新训练也能迁移程序性知识。
 - [MemoryOS](https://arxiv.org/abs/2506.06326)（[开源代码](https://github.com/BAI-LAB/MemoryOS)）：把 agent memory 拆成 storage、update、retrieve 与 consolidation 等 OS-like 操作；适合作为长期交互任务中的通用 memory runtime。
+- LangMem（[开源代码](https://github.com/langchain-ai/langmem)；[文档](https://langchain-ai.github.io/langmem/)）：面向 LangGraph/LangChain 的记忆 harness，提供记忆搜索、记忆管理工具和后台记忆更新，直接对应 memory-agent benchmark 中的写入、搜索、更新与复用生命周期。
 - [Memory as a Service（MaaS）](https://arxiv.org/abs/2506.22815)：面向协作 agent 的服务化上下文记忆架构。核心思想：把记忆暴露为模块化服务，让多个 agent 共享、检索和更新任务上下文，而不是依赖单一的完整提示历史。
 - [MemOS](https://arxiv.org/abs/2507.03724)（[开源代码](https://github.com/MemTensor/MemOS)）：把长期记忆、混合检索、跨任务经验复用和 token 节省做成 self-evolving memory OS，适合生产 agent 的 memory-first runtime。
 - [MIRIX](https://arxiv.org/abs/2507.07957)（[开源代码](https://github.com/Mirix-AI/MIRIX)）：多代理记忆系统。核心思想：用专门的记忆管理 agent 维护短期、情景、语义与程序性记忆，服务长程任务中的跨会话调用。
+- [RCR-Router](https://arxiv.org/abs/2508.04903)：面向结构化记忆多 agent LLM 系统的 role-aware context-routing harness。核心思想是按 agent 角色和交互轮次选择相关记忆子集，减少冗余上下文暴露，同时保留协作质量。
 - [CAM](https://arxiv.org/abs/2510.05520)：面向 LLM 阅读理解的建构主义 agentic memory harness。核心思想：用增量聚类、层级摘要和自适应检索构建结构化记忆图式，使阅读 agent 能整合并回访长文本证据。
 - [Ask WhAI](https://arxiv.org/abs/2511.14780)：面向 role-primed 多 agent 交互的信念状态检查 harness。核心思想：记录和重放 agent 轨迹，进行 out-of-band 查询，并注入反事实证据，测试共享记忆与角色先验如何影响后续信念。
 - [Hindsight](https://arxiv.org/abs/2512.12818)（[开源代码](https://github.com/vectorize-io/hindsight)）：面向生产 agent 的 memory harness。核心思想：在任务后把执行轨迹沉淀为可检索经验，并在后续任务中通过 recall 与 reflection 复用。
+- [AstraNav-Memory](https://arxiv.org/abs/2512.21627)：面向具身导航 agent 的长时记忆 harness。核心思想：把视觉上下文压缩成紧凑的图像中心记忆 token，使导航策略能跨任务保留数百个空间语义观察，而不只依赖目标检测和重建式记忆。
 - [SimpleMem](https://arxiv.org/abs/2601.02553)：高效 lifelong memory pipeline。核心思想：把经验压缩成结构化记忆，合成语义摘要，并为后续任务做 intent-aware retrieval planning。
 - [MAGMA](https://arxiv.org/abs/2601.03236)：multi-graph agentic memory architecture。核心思想：拆分语义、时间、因果和实体视图，再用 policy-guided graph traversal 做检索。
 - [Learning How to Remember / MCMA](https://arxiv.org/abs/2601.07470)：面向智能体的元认知记忆管理框架。核心思路是把任务执行与学习得到的记忆副驾驶分离，由后者选择记忆抽象层级和复用策略，以支持跨任务迁移。
@@ -77,7 +87,7 @@
 - [H-Mem](https://arxiv.org/abs/2605.15701)：混合演化记忆机制。核心思想：结合 temporal tree 与 knowledge-graph memory，让 agent 同时检索时间顺序和关系上下文。
 - [RecMem](https://arxiv.org/abs/2605.16045)：recurrence-based memory-consolidation 系统。核心思想：在模式复现时触发 consolidation，降低记忆构建成本，同时保持长时运行 agent 的准确率。
 
-## 1.15.4 Skill
+## 1.15.5 Skill
 
 - [deep-agents-memory](https://skills.sh/langchain-ai/langchain-skills/deep-agents-memory) 适合给 deep agent 接入可检索的长期记忆层。
 - [remembering-conversations](https://skills.sh/obra/episodic-memory/remembering-conversations) 适合保存和回忆多轮对话中的用户事实与偏好。

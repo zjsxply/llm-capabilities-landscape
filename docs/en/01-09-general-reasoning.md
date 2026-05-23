@@ -2,14 +2,21 @@
 
 > Parent chapter: 1. Foundational Capabilities
 
-
 ## 1.9.1 Leaderboard
 
 - [LiveBench](https://livebench.ai/) ([code](https://github.com/LiveBench/LiveBench)): A continuously updated comprehensive LLM leaderboard with time-sliced reasoning, mathematics, coding, data analysis, and language tasks; suitable as a recent reference for general reasoning models.
 - [ARC Prize Leaderboard](https://arcprize.org/leaderboard) ([community leaderboard](https://arcprize.org/leaderboard/community)): The official competition leaderboard for ARC-AGI-2 and ARC-AGI-3, especially suitable for observing the practical effects of `program synthesis + executor + search`, multi-agent trial and error, and interactive agents in game environments.
 - [Reasoning Gym Eval](https://github.com/open-thought/reasoning-gym-eval): An open-source evaluation leaderboard and scripts around REASONING GYM, suitable for tracking reasoning and test-time scaling methods on generative and verifiable tasks.
 
-## 1.9.2 Bench
+## 1.9.2 Survey
+
+- [Towards Large Reasoning Models: A Survey of Reinforced Reasoning with Large Language Models](https://arxiv.org/abs/2501.09686): Reviews rewards, search, verification, and training pipelines for reinforced reasoning.
+- [Logical Reasoning in Large Language Models: A Survey](https://arxiv.org/abs/2502.09100): Covers formal, symbolic, and rule-governed reasoning tasks and failures.
+- [From System 1 to System 2: A Survey of Reasoning Large Language Models](https://arxiv.org/abs/2502.17419): Surveys the shift from fast generation to deliberate multi-step reasoning.
+- [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](https://arxiv.org/abs/2503.16419): Reviews adaptive compute and cost-quality trade-offs for efficient reasoning.
+- [A Survey of Frontiers in LLM Reasoning: Inference Scaling, Learning to Reason, and Agentic Systems](https://arxiv.org/abs/2504.09037): Connects inference scaling, learning-to-reason, and agentic reasoning systems.
+
+## 1.9.3 Bench
 
 - [ARC (ARC-AGI-1)](https://github.com/fchollet/ARC): What it evaluates: abstract reasoning and induction through small-grid transformations and rule induction; core idea: place tiny data and strong out-of-distribution generalization at the center, forcing methods to rely on program induction/rule extraction rather than language templates.
 - [BIG-Bench Hard](https://arxiv.org/abs/2210.09261) ([code](https://github.com/suzgunmirac/BIG-Bench-Hard)): What it evaluates: manually selected hard reasoning subtasks from BIG-Bench; core idea: a common chain-of-thought baseline set covering symbolic, commonsense, algorithmic, and language inference.
@@ -38,6 +45,7 @@
 - [SeePhys](https://arxiv.org/abs/2505.19099): What it evaluates: image-based physical reasoning; core idea: make visual elements necessary for solving, using problems across education stages and physics subfields to expose model failures when textual shortcuts are unavailable.
 - [REASONING GYM / Reasoning Gym Eval](https://arxiv.org/abs/2505.24760): What it evaluates: programmatic reasoning environments with verifiable rewards; core idea: use generative and gradeable task families covering logical, algorithmic, symbolic, and combinatorial reasoning, suitable as a general harness for reinforcement learning and test-time search.
 - [TurnBench-MS](https://arxiv.org/abs/2506.01341): What it evaluates: state maintenance and constraint updates in multi-turn, multi-step reasoning; core idea: split the reasoning process across successive interaction turns and test whether models maintain consistent decisions as information changes.
+- [LogiPlan](https://arxiv.org/abs/2506.10527): Evaluates logical planning and relational reasoning over structured relation graphs. Core idea: vary object counts, relation types, and chain depth across plan generation, consistency detection, and relational query tasks so models are tested on graph-structured constraints rather than free-form plausibility.
 - [Decrypto Benchmark](https://arxiv.org/abs/2506.20664): What it evaluates: multi-agent reasoning and theory of mind in cooperative and competitive communication games. Core idea: use an interactive game platform to test how models reason about other agents' beliefs, clues, and intentions.
 - [ZebraLogic](https://proceedings.mlr.press/v267/lin25i.html) ([leaderboard](https://huggingface.co/spaces/WildEval/ZebraLogic), [dataset](https://huggingface.co/datasets/allenai/ZebraLogicBench)): What it evaluates: logic-grid puzzles with controllable complexity and CSP-style deductive reasoning. Core idea: observe where model reasoning collapses as the search space grows by controlling the number of variables, constraints, and conflict structures.
 - [StrucText-Eval](https://aclanthology.org/2025.acl-long.11/): What it evaluates: reasoning over structure-rich text. Core idea: use headings, lists, tables, and other structural signals to test whether models exploit document organization rather than flattening all text into ordinary QA.
@@ -56,7 +64,8 @@
 - [CONDESION-BENCH](https://arxiv.org/abs/2604.09029): Evaluates conditional decision-making in compositional action spaces. Core idea: require models to compose valid actions under explicit feasibility conditions rather than selecting from a fixed list of candidate choices.
 - [LongCoT](https://arxiv.org/abs/2604.14140): What it evaluates: long-horizon chain-of-thought reasoning over expert-designed problems. Core idea: isolate failures from managing interdependent reasoning steps that can span very long token budgets while keeping final answers verifiable.
 - [SOTOPIA-TOM](https://arxiv.org/abs/2605.02307): Evaluates information management in multi-agent interaction through theory-of-mind scenarios, extending social-agent evaluation beyond surface dialogue quality.
-## 1.9.3 Agent Harness
+
+## 1.9.4 Agent Harness
 
 - [ReAct](https://arxiv.org/abs/2210.03629) ([code](https://github.com/ysymyth/ReAct)) alternates reasoning traces with tool/environment actions, an early strong baseline for general reasoning agents.
 - [Reflexion](https://arxiv.org/abs/2303.11366) ([code](https://github.com/noahshinn/reflexion)) converts failed trajectories into language feedback and episodic memory for the next attempt.
@@ -77,7 +86,8 @@
 - [iMAD](https://arxiv.org/abs/2511.11306): A multi-agent debate harness for efficient LLM inference. Core idea: coordinate debating agents and aggregation so inference-time collaboration improves reasoning accuracy while controlling extra compute.
 - [Reaching Agreement Among Reasoning LLM Agents](https://arxiv.org/abs/2512.20184): A consensus-aware orchestration protocol for reasoning agents; design keywords: incremental quorum detection, early termination, safety and liveness guarantees, and straggler reduction.
 - [Executable World Models for ARC-AGI-3](https://arxiv.org/abs/2605.05138) ([code](https://github.com/alexisfox7/RGB-Agent)): A Read-Grep-Bash agent for the ARC-AGI-3 leaderboard; design keywords: executable world models, file-based environment observation, shell tool use, maintaining task state through code and logs.
-## 1.9.4 Skill
+
+## 1.9.5 Skill
 
 - [skill-with-prompt-engineering](https://clawhub.ai/golofu/skill-with-prompt-engineering) includes directly reusable reasoning patterns such as `CoT / ReAct / self-consistency / multi-path reasoning`.
 - [sympy](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/sympy) is suitable for converting intermediate reasoning into executable programs or symbolic expressions.

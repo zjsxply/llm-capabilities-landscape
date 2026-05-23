@@ -2,7 +2,6 @@
 
 > Parent section: 2. Foundation Agents
 
-
 ## 2.6.1 Leaderboard
 
 - [AssistantBench Leaderboard](https://huggingface.co/spaces/AssistantBench/leaderboard): A public submission entry for realistic, time-consuming web assistant tasks; it hides test-set answers and collects predictions through a Hugging Face portal, making it useful for tracking sustained progress of web agents on long-horizon browsing and information-transfer tasks.
@@ -11,7 +10,15 @@
 - [HAL Long-Horizon Tracks](https://hal.cs.princeton.edu/): Princeton HAL aggregates tasks such as AssistantBench, GAIA, and Online Mind2Web, and reports cost, runtime, and pass rate; it can serve as a meta-leaderboard for comparing long-horizon agent harnesses across benchmarks.
 - [ClawMark Leaderboard](https://claw-mark.com/leaderboard): A leaderboard for coworker-agent tasks over 1- to 3-day timelines, covering multimodal inputs, calendar waiting, message collaboration, and cross-day state maintenance; it is a public entry point closer to long-running autonomy than single-session long tasks.
 
-## 2.6.2 Bench
+## 2.6.2 Survey
+
+- [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432): A foundational review of planning, memory, tool use, and action-feedback loops.
+- [Large Language Model based Multi-Agents: A Survey of Progress and Challenges](https://arxiv.org/abs/2402.01680): Reviews collaboration, communication, task decomposition, and evaluation challenges.
+- [Understanding the planning of LLM agents: A survey](https://arxiv.org/abs/2402.02716): Covers decomposition, search, reflection, external tools, and replanning.
+- [A Survey on Agent Workflow - Status and Future](https://arxiv.org/abs/2508.01186): Surveys how long-running workflows are structured, optimized, and monitored.
+- [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407): Connects accumulated experience, self-improvement, and lifelong adaptation.
+
+## 2.6.3 Bench
 
 - [AssistantBench](https://arxiv.org/abs/2407.15711) ([project page](https://assistantbench.github.io/)): Evaluates realistic, time-consuming open-web assistant tasks. Core idea: make agents work on tasks such as property monitoring and merchant search that require sustained browsing and multi-step filtering, then use automatic evaluation to check final results, exposing early instability of web agents on long real-world tasks.
 - [Vending-Bench](https://arxiv.org/abs/2502.15840): Evaluates consistency and stability of long-running autonomous agents over very long horizons, using "automated vending-machine operation" as a simplified business scenario, with a single run reaching over 20M tokens. Core idea: stretch decision chains where each step is simple but long-range coupled, explicitly exposing long-horizon failure modes such as high variance, meltdown loops, and difficulty recovering from bad states.
@@ -36,7 +43,7 @@
 - [π-Bench](https://arxiv.org/abs/2605.14678): Evaluates long-term preferences, implicit intent, and cross-session action for proactive personal-assistant agents. Core idea: make agents decide when to act proactively, when to wait for confirmation, and how to maintain user preferences and task boundaries across multi-turn personal-affairs scenarios that continuously evolve.
 - [Vending-Bench 2](https://andonlabs.com/evals/vending-bench-2): Evaluates long-horizon business-operation agents in a newer public version of Andon Labs' vending-machine evaluation. Core idea: keep the one-year simulated business setting from Vending-Bench while adding more realistic messiness such as adversarial suppliers, negotiation, delivery delays, supplier failures, refunds, and clearer money-balance scoring.
 
-## 2.6.3 Agent Harness
+## 2.6.4 Agent Harness
 
 - AutoGPT ([open-source code](https://github.com/Significant-Gravitas/AutoGPT)): A continuously running autonomous-agent framework that organizes task queues, tool calls, long-term execution, and result writeback into an iterative agent loop, among the earliest public implementations emphasizing long-running autonomy.
 - [Voyager](https://arxiv.org/abs/2305.16291) ([open-source code](https://github.com/MineDojo/Voyager)): Uses Minecraft as a platform for lifelong-learning long-horizon agents; its core harness is a long-term self-improving loop of `automatic curriculum generation + skill library + executable feedback`.
@@ -48,7 +55,7 @@
 - [ARE](https://arxiv.org/abs/2509.17158) ([open-source code](https://github.com/facebookresearch/meta-agents-research-environments)): Turns long-running harnesses into dynamic environment runtimes, supporting asynchronous events, state evolution, external tools, and evaluation logs; useful for studying plan updates and context maintenance during sustained execution.
 - Deep Agents ([open-source code](https://github.com/langchain-ai/deepagents); [docs](https://docs.langchain.com/oss/python/deepagents/overview)): A batteries-included long-horizon agent harness with planning, subagents, filesystem state, context management, shell access, persistent memory, human approvals, skills, tools, and MCP integration.
 
-## 2.6.4 Skill
+## 2.6.5 Skill
 
 - [implementation-planner](https://skills.sh/jumppad-labs/jumppad/implementation-planner) is suitable for splitting long-chain tasks into checkpointable stage plans and acceptance points.
 - [tapestry](https://skills.sh/nicepkg/ai-workflow/tapestry) is suitable for chaining cross-system tool calls into a continuously running business-workflow skeleton.

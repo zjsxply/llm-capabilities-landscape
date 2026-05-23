@@ -2,7 +2,6 @@
 
 > Parent chapter: 1. Foundational Capabilities
 
-
 ## 1.6.1 Leaderboard
 
 - [Video-MME Leaderboard](https://video-mme.github.io/home_page.html#leaderboard): Continuous leaderboard for multitask understanding of short, medium, and long videos; a useful baseline reference for broad video VLM capability.
@@ -12,7 +11,14 @@
 - [MMVU Leaderboard](https://mmvu-benchmark.github.io/#leaderboard): Continuous leaderboard for general video understanding and QA; useful for cross-screening strong video agent runtimes alongside Video-MME and Video-MMMU.
 - [V-STaR Leaderboard](https://v-star-bench.github.io/#leaderboard): Continuous leaderboard for video spatial-temporal reasoning; useful for specifically observing object motion, event ordering, and cross-segment grounding.
 
-## 1.6.2 Bench
+## 1.6.2 Survey
+
+- [Video Understanding with Large Language Models: A Survey](https://arxiv.org/abs/2312.17432): A foundational overview of video-language architectures, tasks, datasets, and challenges.
+- [VideoLLM Benchmarks and Evaluation: A Survey](https://arxiv.org/abs/2505.03829): Maps VideoLLM tasks, metrics, benchmarks, and evaluation limitations.
+- [A Survey on Video Temporal Grounding with Multimodal Large Language Model](https://arxiv.org/abs/2508.10922): Focuses on locating and reasoning over temporal evidence in video.
+- [Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944): Connects video understanding with hallucination detection and evidence reliability.
+
+## 1.6.3 Bench
 
 (The following items are ordered by release time and cover subtasks such as video knowledge, video reasoning, motion/perception, long-video, multi-video, streaming, and agentic/web-video.)
 
@@ -74,8 +80,7 @@ Video reasoning (temporal/causal/multi-hop reasoning):
 - [EgoMemReason](https://arxiv.org/abs/2605.09874) ([project page](https://egomemreason.github.io/); [dataset](https://huggingface.co/datasets/Ted412/EgoMemReason); [code](https://github.com/Ziyang412/EgoMemReason)): Evaluates memory-driven reasoning over long egocentric videos; the core idea is to extend the LongVideoBench citation line to lifelog-style egocentric video, requiring models to retain, retrieve, and combine long-term personal visual evidence.
 - [TOC-Bench](https://arxiv.org/abs/2605.09904): Evaluates temporal object consistency in video foundation models; the core idea is to track identity, attributes, and state consistency for the same object across time segments, avoiding static recognition based only on local frames.
 
-
-## 1.6.3 Agent Harness
+## 1.6.4 Agent Harness
 
 - [LMMs-Eval](https://arxiv.org/abs/2407.12772) ([code](https://github.com/EvolvingLMMs-Lab/lmms-eval)): A multimodal evaluation harness covering video tasks such as Video-MME, LongVideoBench, and Video-MMMU; suitable as a unified entry point for reproducible experiments and batch leaderboard submissions.
 - [VideoChat-Online](https://arxiv.org/abs/2501.00584) ([code](https://github.com/MCG-NJU/VideoChat-Online)): A reference implementation for online/streaming video understanding, tightly coupled to the OVBench benchmark-specific runtime.
@@ -100,7 +105,7 @@ Video reasoning (temporal/causal/multi-hop reasoning):
 - [ReTool-Video](https://arxiv.org/abs/2605.13228) (code: not confirmed public): A recursive tool-using video agent; the core idea is to ground high-level video intents into executable tool chains over a fine-grained MetaAug-Video Tool Library, repairing or decomposing unmatched actions at runtime.
 - [VideoSeeker](https://arxiv.org/abs/2605.16079) (code: the paper says it will be released, but no stable public repository has been confirmed yet): Native agentic tool invocation for video understanding; it emphasizes instance-level tool selection and brings search, grounding, and verification into the model decision process.
 
-## 1.6.4 Skill
+## 1.6.5 Skill
 
 - [ffmpeg](https://skills.sh/digitalsamba/claude-code-video-toolkit/ffmpeg) is suitable for clipping, frame extraction, and transcoding.
 - [whisper](https://skills.sh/davila7/claude-code-templates/whisper) is suitable for speech transcription from video.

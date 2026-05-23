@@ -2,7 +2,6 @@
 
 > Parent chapter: 1. Basic Capabilities
 
-
 ## 1.3.1 Leaderboard
 
 - [Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard): a public comprehensive leaderboard that includes IFEval. Its value is bringing verifiable instruction following into the mainstream model-evaluation ecosystem.
@@ -14,7 +13,15 @@
 - [IFBench Leaderboard](https://github.com/allenai/IFBench): a leaderboard for verifiable instruction-following generalization. Its value is checking whether models overfit IFEval-style templates by using unseen constraint types and multi-turn settings.
 - [IFScale Leaderboard](https://distylai.github.io/IFScale/): a leaderboard for stress-testing instruction count. Its value is observing degradation patterns as the constraint load increases from 10 to 500 simultaneous instructions.
 
-## 1.3.2 Bench
+## 1.3.2 Survey
+
+- [Instruction Tuning for Large Language Models: A Survey](https://arxiv.org/abs/2308.10792): A foundational review of instruction-tuning datasets, methods, evaluation, and limitations.
+- [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](https://arxiv.org/abs/2402.07927): Surveys prompt techniques that affect constraint following before model-side tuning.
+- [The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608): Provides a detailed taxonomy of prompting techniques and evaluation considerations.
+- [A Systematic Survey of Automatic Prompt Optimization Techniques](https://arxiv.org/abs/2502.16923): Reviews automated prompt search, feedback, and optimization for instruction adherence.
+- [Towards Alignment-Centric Paradigm: A Survey of Instruction Tuning in Large Language Models](https://arxiv.org/abs/2508.17184): Updates instruction tuning through an alignment-centered view of data, training, and evaluation.
+
+## 1.3.3 Bench
 
 - [COLLIE](https://arxiv.org/abs/2307.08689): evaluates constrained text generation and complex instruction following. The core idea is to make constraints such as format, inclusion/exclusion, length, and set constraints into composable, decidable diagnostic task families.
 - [FollowBench](https://arxiv.org/abs/2310.20410): evaluates multi-level, fine-grained constraint following. The core idea is to split complex user instructions into constraints of different difficulties and types, locating whether models fail at the overall task, local constraints, or detailed execution.
@@ -43,7 +50,7 @@
 - [SEQUOR](https://arxiv.org/abs/2605.06353): evaluates realistic constraint following in long multi-turn dialogue. The core idea is to place added, replaced, and conflicting constraints in the same protocol, specifically testing long-dialogue drift.
 - [DMT-RoleBench](https://doi.org/10.1609/aaai.v39i24.34768): Evaluates role-playing LLMs and agents through dynamic multi-turn dialogues. Core idea: generate dialogue trajectories under evaluation intents and topics so role consistency, instruction adherence, and interaction quality are tested closer to real role-play usage than static prompts.
 
-## 1.3.3 Agent Harness
+## 1.3.4 Agent Harness
 
 - [HELM](https://arxiv.org/abs/2211.09110) ([open-source code](https://github.com/stanford-crfm/helm)): a general evaluation harness. For instruction-following tasks, it can reuse IFEval scenarios and strict-accuracy metrics, standardizing rule checks, model calls, and result aggregation.
 - [Reflexion](https://arxiv.org/abs/2303.11366) ([open-source code](https://github.com/noahshinn024/reflexion)): stores failure experience as textual memory for the next execution round, making it suitable for continuous improvement on multi-turn constraint tasks.
@@ -52,7 +59,7 @@
 - [NSVIF](https://arxiv.org/abs/2601.17789): a neurosymbolic instruction-following verification framework. The core idea is to model natural-language instructions as logical and semantic constraints and generate interpretable feedback through a unified solver, making it usable as an independent compliance-check layer before agent output.
 - lm-evaluation-harness ([open-source code](https://github.com/EleutherAI/lm-evaluation-harness)): a general language-model evaluation execution framework. Its value is that it already includes an `ifeval` task implementation, making it suitable for integrating instruction-following rule checks into reproducible experiment pipelines.
 
-## 1.3.4 Skill
+## 1.3.5 Skill
 
 - [json-schema-validator](https://skills.sh/dkyazzentwatwa/chatgpt-skills/json-schema-validator) is suitable for structured-output checks.
 - [schema-creator](https://skills.sh/oimiragieo/agent-studio/schema-creator) is suitable for first turning vague requirements into verifiable schemas.

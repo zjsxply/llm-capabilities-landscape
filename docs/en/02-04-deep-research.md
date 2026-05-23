@@ -2,7 +2,6 @@
 
 > Parent section: 2. Basic Agents
 
-
 ## 2.4.1 Leaderboard
 
 - [Deep Research Bench Leaderboard](https://drb.futuresearch.ai/): FutureSearch's official continuous leaderboard covering both DRB and BTF-2; useful for tracking end-to-end web research capability under reproducible frozen corpora and long-trajectory auditing.
@@ -11,7 +10,15 @@
 - [Deep Research Arena](https://www.deepresearcharena.com/): A public deep research battle and leaderboard site; useful for tracking ongoing performance of productized deep research systems, open-source harnesses, and commercial agents.
 - [Deep Research SOTA on BrowseComp-ZH](https://www.wizwand.com/sota/deep-research-on-browsecomp-zh-score): A third-party SOTA aggregation page; useful for tracking public results of deep-search / deep-research agents such as WebThinker, BrowseMaster, InfoSeeker, and ReSum along BrowseComp-ZH.
 
-## 2.4.2 Bench
+## 2.4.2 Survey
+
+- [A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications](https://arxiv.org/abs/2506.12594): Organizes deep research around decomposition, search, evidence management, synthesis, and evaluation.
+- [Deep Research Agents: A Systematic Examination And Roadmap](https://arxiv.org/abs/2506.18096): Defines capability boundaries, systems, benchmarks, and reproducibility issues.
+- [A Survey of LLM-based Deep Search Agents: Paradigm, Optimization, Evaluation, and Challenges](https://arxiv.org/abs/2508.05668): Covers the retrieval-intensive search and evidence stage of research agents.
+- [Deep Research: A Survey of Autonomous Research Agents](https://arxiv.org/abs/2508.12752): Compares autonomous systems that search, read, synthesize, cite, and report.
+- [Reinforcement Learning Foundations for Deep Research Systems: A Survey](https://arxiv.org/abs/2509.06733): Connects long-horizon search and report quality with supervision and reward design.
+
+## 2.4.3 Bench
 
 - [ResearchArena](https://arxiv.org/abs/2406.10291): Evaluates academic research and survey generation; core idea: turn "retrieve literature -> compare methods -> write a structured survey" into a scoreable research benchmark.
 - [ResearchRubrics](https://arxiv.org/abs/2412.02077) ([code](https://github.com/scaleapi/researchrubrics)): Evaluates the quality of research-oriented long-form outputs; core idea: use rubrics to make dimensions such as coverage, evidence, citations, reproducibility, structure, and writing quality explicit and comparable.
@@ -62,7 +69,8 @@
 - [DR3-Eval](https://arxiv.org/abs/2604.14683) ([code](https://github.com/NJU-LINK/DR3-Eval)): What it evaluates: realistic, multimodal, reproducible deep research evaluation. Core idea: use user files, a static sandbox, and fine-grained rubrics.
 - [Cited but Not Verified](https://arxiv.org/abs/2605.06635): Evaluates source attribution in deep research reports. Core idea: parse Markdown citations reproducibly, then score link validity, relevance, and factual support at report scale.
 - [ViDR](https://arxiv.org/abs/2605.13034): What it evaluates: alignment between multimodal deep research reports and visual evidence. Core idea: require report conclusions to point back to specific visual sources, reducing multimodal hallucination where a page is cited but visual evidence does not support the claim.
-## 2.4.3 Agent Harness
+
+## 2.4.4 Agent Harness
 
 - [STORM](https://arxiv.org/abs/2402.14207) ([code](https://github.com/stanford-oval/storm); [project page](http://storm.genie.stanford.edu)): A retrieval-grounded long-form writing harness that asks multi-perspective questions, builds an outline, and drafts cited reports; it is an important precursor to modern deep-research agents.
 - [Co-STORM](https://arxiv.org/abs/2408.15232) ([code](https://github.com/stanford-oval/storm); [project page](http://storm.genie.stanford.edu)): A collaborative exploratory-research harness with agent conversations, user steering, a dynamic mind map, and cited report output.
@@ -113,7 +121,8 @@
 - DeerFlow ([code](https://github.com/bytedance/deer-flow); no arXiv paper; abstracts deep research into a reusable super-agent harness and emphasizes decoupling task branches)
 - Spring AI Alibaba DeepResearch ([code](https://github.com/spring-ai-alibaba/deepresearch); no arXiv paper; a Spring ecosystem integrated version of deep research)
 - CellCog ([public SDK](https://github.com/CellCog/cellcog_python); no arXiv paper; a hosted multi-agent platform and Python SDK supporting agent teams and research-cog)
-## 2.4.4 Skill
+
+## 2.4.5 Skill
 
 - [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher) (end-to-end retrieval-to-draft framework)
 - [meta-research](https://github.com/AmberLJC/meta-research) (a scientific research workflow skill for "literature review -> hypothesis tree -> judgment gate -> experiment -> reflection")

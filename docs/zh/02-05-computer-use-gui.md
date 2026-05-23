@@ -2,7 +2,6 @@
 
 > 上级章节：2. 基础 Agent
 
-
 ## 2.5.1 Leaderboard
 
 - [OSWorld / OSWorld-Verified Leaderboard](https://os-world.github.io/)：持续维护 desktop computer-use 的官方结果表和 verified 轨迹；适合追踪 UI-TARS、Agent S、Claude、Gemini、OpenAI 系列模型以及不同最大步数设置下的可比结果。
@@ -12,7 +11,15 @@
 - [MMBench-GUI Leaderboard](https://github.com/open-compass/MMBench-GUI)：仓库已公开评测数据与跨平台协议，README 中 leaderboard 仍标记为 coming soon；当前作为跟踪入口，不应当引用为已上线排名。
 - [OSWorld-MCP Leaderboard](https://osworld-mcp.github.io/)：面向 GUI + MCP 工具调用的 computer-use 榜单，同时报告 accuracy、tool invocation rate 和 average completion steps；适合比较纯 GUI、工具增强和混合 agent 配置。
 
-## 2.5.2 Bench
+## 2.5.2 Survey
+
+- [GUI Agents: A Survey](https://arxiv.org/abs/2412.13501)：回顾跨界面的感知、定位、规划、动作空间、基准与失败。
+- [A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions](https://arxiv.org/abs/2501.16150)：综述 computer-use agent 的环境、交互闭环、记忆、安全与评测。
+- [A Survey on (M)LLM-Based GUI Agents](https://arxiv.org/abs/2504.13865)：梳理 UI grounding、动作预测、模型能力与系统挑战。
+- [A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](https://arxiv.org/abs/2505.10924)：回顾 GUI 动作、跨应用执行、隐私暴露与工具误用带来的风险。
+- [OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use](https://arxiv.org/abs/2508.04482)：聚焦通用计算设备的操作、观察、行动与评测。
+
+## 2.5.3 Bench
 
 - [WebArena](https://arxiv.org/abs/2307.13854)（[开源代码](https://github.com/web-arena-x/webarena)）：评测自主网页 agent 在真实可复现网站中的任务完成；核心思想是把电商、论坛、GitLab、地图等完整 Web 应用封装成可重置环境，用最终状态而非只看文本回答评估网页操作。
 - [VisualWebArena](https://arxiv.org/abs/2401.13649)（[开源代码](https://github.com/web-arena-x/visualwebarena)）：评测多模态网页 agent；核心思想是在 WebArena 式真实网站基础上加入图像、布局和视觉线索依赖任务，检验 agent 是否能把截图理解与 DOM/文本信息结合起来。
@@ -46,21 +53,22 @@
 - [BrowserArena](https://arxiv.org/abs/2510.02418)：评测真实开放网页上的 web agent 导航；核心思想是收集用户提交的 live web 任务并用 arena 式比较与逐步人工反馈定位 captcha、弹窗和直接 URL 导航等真实网页失败模式。
 - [MLLM as a UI Judge](https://arxiv.org/abs/2510.08783)：评估多模态大模型能否预测人类对用户界面的感知。核心思路是把界面质量与主观感知判断转化为可比较的评测信号，补充仅看元素定位或任务完成率的 GUI 评测。
 - [OSWorld-MCP](https://arxiv.org/abs/2510.24563)（[项目页](https://osworld-mcp.github.io/)）：评测 computer-use agent 在 GUI 操作之外调用 MCP 工具的能力；核心思想是在真实 OSWorld 式环境中引入 158 个跨常用应用的 MCP 工具，并同时报告任务准确率、工具调用率和平均完成步数。
-- [macOSWorld](https://openreview.net/forum?id=YJxGJP8feU)（[项目页](https://macos-world.github.io/)，[开源代码](https://github.com/showlab/macosworld)）：评测 macOS 上的交互式 GUI agent。核心思想：覆盖原生应用中的多语言任务，补足 Windows 或 Ubuntu 中心 benchmark 之外的 OS 生态。
 - [MobileWorld](https://arxiv.org/abs/2512.19432)（[开源代码](https://github.com/Tongyi-MAI/MobileWorld)）：评测自主移动 agent 在 agent-user 交互与 MCP 增强环境中的任务完成；核心思想是把移动端 GUI 操作、用户澄清和外部工具调用放进统一 benchmark，补足 AndroidWorld 的静态任务边界。
+- [macOSWorld](https://openreview.net/forum?id=YJxGJP8feU)（[项目页](https://macos-world.github.io/)，[开源代码](https://github.com/showlab/macosworld)）：评测 macOS 上的交互式 GUI agent。核心思想：覆盖原生应用中的多语言任务，补足 Windows 或 Ubuntu 中心 benchmark 之外的 OS 生态。
 - [D-GARA](https://ojs.aaai.org/index.php/AAAI/article/view/38795)：评什么：GUI agent 在动态真实异常中的鲁棒性。核心思想：把异常处理本身作为 benchmark，测试 agent 是否能从界面扰动中恢复，而不只完成理想路径任务。
 - [OS-Marathon](https://arxiv.org/abs/2601.20650)（[项目页](https://os-marathon.github.io/)）：评测 computer-use agent 的长程重复 GUI 任务；核心思想是让 agent 在长时间、重复但状态会累积变化的桌面操作中保持节奏、记忆和错误恢复能力。
 - [MemGUI-Bench](https://arxiv.org/abs/2602.06075)（[开源代码](https://github.com/lgy0404/MemGUI-Bench)）：评测移动 GUI agent 的记忆能力；核心思想是用跨会话、跨应用和动态环境任务专门测 memory retention 与 cross-session learning。
 - [AgenticShop](https://arxiv.org/abs/2602.12315)：评测开放网页上的个性化商品筛选。核心思想：要求 agent 在嘈杂电商信息中浏览、推断用户偏好并生成可核验购物建议，而不只是在固定网站上导航。
 - [TimeWarp](https://arxiv.org/abs/2603.04949)：评测 web agent 对网站变化的鲁棒性。核心思想：在容器化历史 UI、设计和布局版本中回放任务，避免 agent 只适配一个冻结网页版本。
 - [OSExpert-Eval](https://arxiv.org/abs/2603.07978)：评测 computer-use agent 能否高效掌握专业 GUI 技能。核心思想：用接近专家分解和细粒度动作要求的任务比较 agent，暴露其在陌生界面上的迁移慢和探索低效问题。
+- [CUA-Suite / VideoCUA](https://arxiv.org/abs/2603.24440)：为 computer-use agent 提供大规模真人视频演示和密集标注。核心思想：用连续的专业桌面工作流视频评测和训练桌面 agent，而不是只依赖稀疏截图。
 - [OS-Blind](https://arxiv.org/abs/2604.10577)（[项目页](https://limenlp.github.io/OS_Blind/)）：评测用户指令无害但执行上下文可能有害时的 CUA 安全盲点；核心思想是让危害来自环境状态或执行后果，要求 agent 在 GUI 操作前主动识别风险。
 - [OS-SPEAR](https://arxiv.org/abs/2604.24348)：从安全、性能、效率与鲁棒性四个维度评测 OS agent。核心思想：提供 OS-agent 轨迹和失败类型分析工具，而不只报告最终任务成功率。
 - [Odysseys](https://arxiv.org/abs/2604.24964)（[项目页](https://odysseys-website.pages.dev/)）：评测网页 agent 的真实长程 GUI 任务；核心思想是用现实网站中的多阶段目标和状态依赖测试 agent 的导航、信息整合、错误恢复与持续执行能力。
 - [WindowsWorld](https://arxiv.org/abs/2604.27776)：评测 Windows 上的跨应用 GUI 工作流；核心思想是把多应用、多检查点的职业流程显式化，专门放大跨应用协调与阶段性核验失败。
 - [SaaS-Bench](https://arxiv.org/abs/2605.15777)（[开源代码](https://github.com/UniPat-AI/SaaS-Bench)）：评测真实 SaaS 系统上的专业工作流；核心思想是把可部署的多应用业务流程、检查点验证和长链路状态维护放进 self-hosted SaaS 环境。
 
-## 2.5.3 Agent Harness
+## 2.5.4 Agent Harness
 
 - [AppAgent](https://arxiv.org/abs/2312.13771)（[开源代码](https://github.com/mnotgod96/AppAgent)；[项目页](https://appagent-official.github.io/)）：早期智能手机 GUI agent harness，通过自主探索或人类演示学习 app 操作，并把生成的操作文档复用于后续任务。
 - [SeeAct](https://arxiv.org/abs/2401.01614)（[开源代码](https://github.com/OSU-NLP-Group/SeeAct)；视觉 grounding + 结构信息融合的网页 GUI agent 起点范式，后续被多类 CUA 吸收）
@@ -70,23 +78,24 @@
 - [OpenWebVoyager](https://arxiv.org/abs/2410.19609)（[开源代码](https://github.com/MinorJerry/OpenWebVoyager)；通过真实网页探索、反馈和优化构建多模态 web agent，连接 WebArena/VisualWebArena 与开放网页操作）
 - [BrowserGym Ecosystem](https://arxiv.org/abs/2412.05467)（[开源代码](https://github.com/ServiceNow/BrowserGym)；统一 WebArena、VisualWebArena、WorkArena 等网页 GUI 环境，并提供可复现评测接口）
 - [UI-TARS](https://arxiv.org/abs/2501.12326)（[开源代码](https://github.com/bytedance/UI-TARS)；端到端视觉-动作 GUI agent，把截图理解、坐标定位、操作历史与动作生成结合到原生 computer-use 轨迹中）
+- [R2D2](https://arxiv.org/abs/2501.12485)：围绕记忆、反思和动态决策构建的网页智能体 harness。核心思想：在网页交互过程中维护并修正任务记忆，使智能体能够调整计划，而不是只依赖固定提示和最近的浏览器上下文。
+- [PC-Agent](https://arxiv.org/abs/2502.14282)（[开源代码](https://github.com/X-PLUG/MobileAgent/tree/main/PC-Agent)；用 `Manager / Progress / Decision / Reflection` 层级多代理协作处理 PC 上的跨应用复杂任务）
+- [Agent S2](https://arxiv.org/abs/2504.00906)（[开源代码](https://github.com/simular-ai/Agent-S)；generalist-specialist 组合的多角色工作流）
 - Browser-Use（[开源代码](https://github.com/browser-use/browser-use)；HAL/AssistantBench/Online Mind2Web 等榜单常见的浏览器 agent scaffold，把 Playwright 浏览器状态、动作执行、持久浏览器和工具扩展封装成可直接复用的 web automation harness）
 - Stagehand（[开源代码](https://github.com/browserbase/stagehand)；[文档](https://docs.stagehand.dev/)）：生产向浏览器自动化 harness，把确定性的 Playwright 代码与自然语言动作、抽取结合起来，可作为 Browserbase 路线的 browser-agent 基线。
 - Skyvern（[开源代码](https://github.com/Skyvern-AI/skyvern)；[主页](https://www.skyvern.com/)）：生产型网页工作流自动化 harness，用 LLM 与视觉组件处理浏览器导航、表单填写、workflow 执行和有状态网页任务。
-- [R2D2](https://arxiv.org/abs/2501.12485)：围绕记忆、反思和动态决策构建的网页智能体 harness。核心思想：在网页交互过程中维护并修正任务记忆，使智能体能够调整计划，而不是只依赖固定提示和最近的浏览器上下文。
-- [PC-Agent](https://arxiv.org/abs/2502.14282)（[开源代码](https://github.com/X-PLUG/MobileAgent/tree/main/PC-Agent)；用 `Manager / Progress / Decision / Reflection` 层级多代理协作处理 PC 上的跨应用复杂任务）
-- [AgentPbD](https://doi.org/10.1109/vl-hcc65237.2025.00064)：从用户演示生成浏览器 agent workflow 的 harness。核心思想：把示范式编程轨迹转化为可交互的 agentic workflow，用于指导网页自动化，而不只依赖手写任务脚本。
-- [Agent S2](https://arxiv.org/abs/2504.00906)（[开源代码](https://github.com/simular-ai/Agent-S)；generalist-specialist 组合的多角色工作流）
 - [UXAgent](https://arxiv.org/abs/2504.09407)：用于用 LLM agent 模拟网页设计可用性测试。核心思想：协调类用户画像 agent 与网页交互，在人工测试前生成可用性证据。
 - [GUI-R1](https://arxiv.org/abs/2504.10458)（[开源代码](https://github.com/ritzz-ai/GUI-R1)；R1-style vision-language-action 模型，把 reinforcement fine-tuning 引入通用 GUI action 生成）
-- [Autonomous Agents for Accessibility](https://doi.org/10.1109/ASE63991.2025.00349)：面向网页无障碍评测的代理式执行框架，用自主代理模拟视觉障碍用户。核心思路是让代理在网页界面中完成 GUI 交互式用户旅程，通过交互轨迹发现无障碍问题，而不是只依赖静态页面检查。
+- [AgentPbD](https://doi.org/10.1109/vl-hcc65237.2025.00064)：从用户演示生成浏览器 agent workflow 的 harness。核心思想：把示范式编程轨迹转化为可交互的 agentic workflow，用于指导网页自动化，而不只依赖手写任务脚本。
 - [ARPO](https://arxiv.org/abs/2505.16282)（[开源代码](https://github.com/dvlab-research/ARPO)；用 experience replay 改造 GRPO，在 OSWorld 这类长程 GUI 环境中做端到端 policy optimization）
 - [LiteCUA](https://arxiv.org/abs/2505.18829)（开源代码：未公开；把“计算机”抽象成 MCP server 的环境语义层，降低动作空间复杂度）
 - [UI-Evol](https://arxiv.org/abs/2505.21964)（[开源代码](https://github.com/microsoft/FIVE-UI-Evol)；可插拔知识演化模块，基于 Agent S2 在 OSWorld 上提升成功率并降低行为方差）
+- [Autonomous Agents for Accessibility](https://doi.org/10.1109/ASE63991.2025.00349)：面向网页无障碍评测的代理式执行框架，用自主代理模拟视觉障碍用户。核心思路是让代理在网页界面中完成 GUI 交互式用户旅程，通过交互轨迹发现无障碍问题，而不是只依赖静态页面检查。
 - [ZeroGUI](https://arxiv.org/abs/2505.23762)（[开源代码](https://github.com/OpenGVLab/ZeroGUI)；用自动任务生成、自动奖励估计和在线强化学习降低 GUI agent 数据收集成本）
 - [CoAct-1](https://arxiv.org/abs/2508.03923)（[开源代码](https://github.com/SalesforceAIResearch/CoAct)；显式多代理协作，包含 `Orchestrator / GUI Operator / Programmer`）
 - [Mobile-Agent-v3](https://arxiv.org/abs/2508.15144)（[开源代码](https://github.com/X-PLUG/MobileAgent)；GUI foundation model 与通用 GUI agent framework，在 OSWorld/AndroidWorld 等多基准上报告结果）
 - [UI-TARS-2](https://arxiv.org/abs/2509.02544)（[开源代码](https://github.com/bytedance/UI-TARS-desktop)；把 GUI agent 拆成更清晰的感知、规划和执行栈，面向桌面/浏览器原生自动化提供可运行 harness）
+- [MobileRAG](https://arxiv.org/abs/2509.03891)：检索增强的移动 Agent harness。核心思路是为移动 GUI Agent 加入检索、记忆和外部环境交互，使其能在 App 能力不足时恢复、从既往失败中学习，并减少重复界面探索。
 - [Agentic Lybic](https://arxiv.org/abs/2509.11067)（[开源代码](https://github.com/xlang-ai/OSWorld/tree/main/mm_agents/maestro)；FSM 驱动的 `Controller / Manager / Worker / Evaluator` 分工与质量控制）
 - [Surfer 2](https://arxiv.org/abs/2510.19949)（开源代码：未公开；跨 web/desktop/mobile 的统一架构：层级上下文、计划执行解耦、自验证与自恢复）
 - [AgentProg](https://arxiv.org/abs/2512.10371)（[开源代码](https://github.com/MobileLLM/AgentProg)；把长程 GUI 交互历史重写成带变量和控制流的程序化上下文，并用全局 belief state 维持移动 GUI 任务中的部分可观测状态）
@@ -98,9 +107,11 @@
 - [Natural-Language Agent Harnesses](https://arxiv.org/abs/2603.25723)（[开源代码](https://github.com/curated-skills/LinguaClaw)；把 harness 逻辑外显成可编辑自然语言文档，用共享 runtime 执行、写回状态与工件）
 - [Avenir-UX](https://arxiv.org/abs/2604.09581)：用于自动化 UX 评估的 GUI 接地网页交互框架。核心思路是模拟用户在真实网站上的访问路径，将动作轨迹与 SUS、SEQ 和边想边说式协议结合，生成结构化可用性报告。
 - [EE-MCP](https://arxiv.org/abs/2604.09815)（开源代码：未找到稳定公开仓库；自演化 MCP-GUI agent 框架；核心思想：自动生成环境、收集轨迹并学习经验库，用来平衡 GUI 动作与 MCP 工具调用）
+- [SkillDroid](https://arxiv.org/abs/2604.14872)：面向移动 GUI Agent 的技能编译 harness。核心思路是把成功的 LLM 手机操作轨迹编译为带定位器、参数槽、检索、回放和失败重编译机制的 UI 动作模板，使重复任务不再需要每一步重新调用 LLM 推理。
+- [AgentLens](https://arxiv.org/abs/2604.20279)：用于移动 GUI agent 的自适应可视反馈交互 harness。核心思想是加入 Full UI、Partial UI 与 generated-UI 三类沟通模式，并通过 virtual display 让后台移动 agent 向用户暴露适量执行状态。
 - [ToolCUA](https://arxiv.org/abs/2605.12481)（[开源代码](https://github.com/X-PLUG/ToolCUA)）：GUI 加工具的 computer-use harness，协调屏幕交互与工具执行，适合 OSWorld-MCP、MobileWorld 这类需要同时选择视觉动作和结构化工具的任务。
 
-## 2.5.4 Skill
+## 2.5.5 Skill
 
 - [screenshot](https://skills.sh/openai/skills/screenshot)（截图能力；偏感知层，OSWorld 弱相关但常用）
 - [playwright-interactive](https://skills.sh/openai/skills/playwright-interactive)（浏览器/Electron 交互；OSWorld 弱相关但可覆盖部分 GUI 界面）

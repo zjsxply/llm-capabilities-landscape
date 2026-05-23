@@ -2,7 +2,6 @@
 
 > Parent section: 2. Basic Agents
 
-
 ## 2.1.1 Leaderboard
 
 - [LiveCodeBench Leaderboard](https://livecodebench.github.io/leaderboard.html): A continuously updated public code-generation leaderboard, suitable as an anti-contamination entry point for comparing coding models and agents.
@@ -12,7 +11,15 @@
 - [Humanity's Last Code Exam Leaderboard](https://humanity-s-last-code-exam.github.io/website/): An extremely hard competitive-programming leaderboard centered on ICPC World Finals and IOI problems, useful for observing remaining headroom.
 - [Holistic Agent Leaderboard](https://hal.cs.princeton.edu/): A cross-task agent leaderboard that includes programming subtasks such as USACO and provides a unified agent/harness submission process, useful for comparing competitive-programming results alongside other agent tasks.
 
-## 2.1.2 Bench
+## 2.1.2 Survey
+
+- [A Survey on Large Language Models for Code Generation](https://arxiv.org/abs/2406.00515): Reviews code-generation data, adaptation, prompting, execution evaluation, and applications.
+- [A Survey on Evaluating Large Language Models in Code Generation Tasks](https://arxiv.org/abs/2408.16498): Organizes correctness metrics, execution checks, benchmark design, and contamination risks.
+- [A Systematic Survey on Large Language Models for Algorithm Design](https://arxiv.org/abs/2410.14716): Connects reasoning, search, synthesis, and algorithmic problem solving.
+- [A Survey on Code Generation with LLM-based Agents](https://arxiv.org/abs/2508.00083): Surveys planning, tool use, execution feedback, and debugging in coding agents.
+- [AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities](https://arxiv.org/abs/2508.11126): Reviews programming workflows where agents write, test, revise, and coordinate.
+
+## 2.1.3 Bench
 
 - [HumanEval](https://arxiv.org/abs/2107.03374): What it evaluates: executable unit-test correctness for Python function-level code generation. Core idea: use docstring prompts and hidden tests to measure functional correctness, forming a baseline reference for later code-generation evaluation and pass@k reporting. ([code](https://github.com/openai/human-eval))
 - [CodeContests](https://github.com/google-deepmind/code_contests): What it evaluates: a competitive-programming dataset and execution-evaluation substrate, including statements, tests, and correct/incorrect solutions. Core idea: convert contest problems into a runnable judging format for training and evaluating harder algorithmic code generation.
@@ -32,7 +39,7 @@
 - [Idea First, Code Later](https://arxiv.org/abs/2601.11332): What it evaluates: the separability of "algorithm idea" and "code implementation" in ICPC-style problems. Core idea: introduce 83 problems with gold editorials and complete tests, evaluating natural-language editorials first and code implementation later so AC does not hide the bottleneck.
 - [VeriContest](https://arxiv.org/abs/2605.08553): What it evaluates: verifiable code generation on LeetCode and Codeforces problems. Core idea: combine natural-language statements, expert-verified formal specifications, AC Rust code, Verus proofs, and positive/negative tests to evaluate specification, code, proof, and end-to-end verified synthesis separately.
 
-## 2.1.3 Agent Harness
+## 2.1.4 Agent Harness
 
 - [USACO Episodic + Semantic](https://arxiv.org/abs/2404.10952) ([code](https://github.com/princeton-nlp/USACO)): A USACO competitive-programming agent configuration; core idea: use episodic memory and semantic retrieval to reuse similar-problem experience for multi-step Olympiad-style problem solving.
 - [MapCoder](https://arxiv.org/abs/2405.11403) ([code](https://github.com/Md-Ashraful-Pramanik/MapCoder)): A multi-agent framework for contest code generation; core idea: explicitly decompose retrieval, planning, coding, and debugging into collaborative roles, approximating the human competitive-programming loop.
@@ -44,7 +51,7 @@
 - [Agentic Verifier](https://arxiv.org/abs/2602.04254): An execution-based verifier and reranker for contest code; core idea: actively search for counterexample inputs that distinguish candidate programs through multi-round execution interaction instead of only random test sampling.
 - [CodeHacker](https://arxiv.org/abs/2602.20213): An adversarial test-generation agent for contest submissions; core idea: simulate the hacking mechanism of contest platforms and combine stress testing, anti-hash tactics, and logic-directed construction to expose wrong solutions that weak tests would pass.
 
-## 2.1.4 Skill
+## 2.1.5 Skill
 
 - [mcp-code-execution](https://skills.sh/athola/claude-night-market/mcp-code-execution) is suitable for turning contest solving into an executable loop of "write code -> run samples/random tests -> fix".
 - [e2b-sandbox](https://skills.sh/smithery.ai/e2b-sandbox) is suitable for quickly replaying samples and running regression checks in an isolated execution environment.

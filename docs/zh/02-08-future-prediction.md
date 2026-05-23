@@ -15,15 +15,16 @@
 - [Echo](https://echo.unipat.ai/)：UniPat 的动态未来预测 leaderboard 与训练系统；适合观察多点对齐 Elo、Train-on-Future 与 AI-native prediction API 组合后的持续预测表现。
 - [Impermanent Dashboard](https://impermanent.timecopilot.dev/)：TimeCopilot 的 live temporal generalization dashboard；适合跟踪时间序列预测模型在滚动数据流上的真实时间外推表现。
 
-## 2.8.2 综述
+## 2.8.2 Survey
 
-说明：专门以“AI 预测未来”为题的综述不算多，最贴近的是事件预测和时间序列预测两条线。
+说明：专门针对 AI 未来事件预测的综述仍然较少；最接近且较成熟的文献集中在事件预测与时间序列预测。
 
-- [A Survey on Event Prediction Methods from a Systems Perspective: Bringing Together Disparate Research Areas](https://arxiv.org/abs/2302.04018)：评什么：未来事件预测的系统性综述。核心思想：把分散在不同领域的 event prediction 方法放进统一系统视角，梳理需求、分类和研究缺口，是这条线最直接的入口。
-- [Large Language Models for Time Series: A Survey](https://arxiv.org/abs/2402.01801)：评什么：LLM 在时间序列分析与预测中的方法综述。核心思想：总结把时序编码、对齐与适配到 LLM 的主流路线，适合看“用 AI 做时间序列预测”的总览。
-- [Large Language Models for Forecasting and Anomaly Detection: A Systematic Literature Review](https://arxiv.org/abs/2402.10350)：评什么：LLM 参与 forecasting 与异常检测的系统综述。核心思想：专门总结 LLM 在预测任务里的应用、挑战和未来方向，比泛化到所有时序任务的综述更贴近“预测未来”这个问题。
-- [How do large language models bring disruptive change to time series forecasting? A survey and framework](https://ideas.repec.org/a/taf/tjmaxx/v13y2026i1p17-42.html)：评什么：LLM 介入时间序列预测的综述与框架。核心思想：给出更偏实践的 pipeline 视角和协作模式，强调数据场景和工作流组织。
-- [Leveraging Large Language Models for time series forecasting: A systematic literature review](https://www.sciencedirect.com/science/article/pii/S0950705126006647)：评什么：专门聚焦 LLM 驱动时间序列预测的系统综述。核心思想：按 PRISMA 筛出 78 篇研究，覆盖架构、tokenization、prompting、benchmark 和评估问题，是当前更偏 forecasting-only 的最新综述。
+
+- [A Survey on Event Prediction Methods from a Systems Perspective: Bringing Together Disparate Research Areas](https://arxiv.org/abs/2302.04018)：统一事件预测方法、时序建模与应用需求。
+- [Large Language Models for Time Series: A Survey](https://arxiv.org/abs/2402.01801)：总结基于大语言模型预测的编码、对齐、提示与适配方法。
+- [Large Language Models for Forecasting and Anomaly Detection: A Systematic Literature Review](https://arxiv.org/abs/2402.10350)：直接聚焦 forecasting 的覆盖、局限与未来方向。
+- [How do large language models bring disruptive change to time series forecasting? A survey and framework](https://ideas.repec.org/a/taf/tjmaxx/v13y2026i1p17-42.html)：为预测数据场景与工作流提供实践框架。
+- [Leveraging Large Language Models for time series forecasting: A systematic literature review](https://doi.org/10.1016/j.knosys.2026.115938)：回顾纯 forecasting 场景中的架构、tokenization、prompting、基准与评测。
 
 ## 2.8.3 Bench
 

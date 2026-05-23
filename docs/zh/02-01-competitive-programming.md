@@ -2,7 +2,6 @@
 
 > 上级章节：2. 基础 Agent
 
-
 ## 2.1.1 Leaderboard
 
 - [LiveCodeBench Leaderboard](https://livecodebench.github.io/leaderboard.html)：持续更新的代码生成公开榜单，适合作为抗污染 coding model/agent 横向对比入口。
@@ -12,7 +11,15 @@
 - [Humanity's Last Code Exam Leaderboard](https://humanity-s-last-code-exam.github.io/website/)：以 ICPC World Finals 与 IOI 难题为核心的极难竞赛编程榜单，适合观察上限差距。
 - [Holistic Agent Leaderboard](https://hal.cs.princeton.edu/)：跨任务 agent 榜单，包含 USACO 等编程子任务，并提供统一的 agent/harness 提交流程，适合把竞赛编程结果与其他 agent 任务一起比较。
 
-## 2.1.2 Bench
+## 2.1.2 Survey
+
+- [A Survey on Large Language Models for Code Generation](https://arxiv.org/abs/2406.00515)：回顾代码生成的数据、适配、提示、执行式评测与应用。
+- [A Survey on Evaluating Large Language Models in Code Generation Tasks](https://arxiv.org/abs/2408.16498)：组织正确性指标、执行检查、基准设计与污染风险。
+- [A Systematic Survey on Large Language Models for Algorithm Design](https://arxiv.org/abs/2410.14716)：连接推理、搜索、程序合成与算法题求解。
+- [A Survey on Code Generation with LLM-based Agents](https://arxiv.org/abs/2508.00083)：综述编码 agent 中的规划、工具使用、执行反馈与调试。
+- [AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities](https://arxiv.org/abs/2508.11126)：回顾 agent 编码、测试、修订与协作的编程工作流。
+
+## 2.1.3 Bench
 
 - [HumanEval](https://arxiv.org/abs/2107.03374)：评什么：Python 函数级代码生成的可执行单元测试正确性。核心思想：用 docstring 提示和隐藏测试衡量 functional correctness，是后续代码生成评测与 pass@k 报告的基础参照。（[开源代码](https://github.com/openai/human-eval)）
 - [CodeContests](https://github.com/google-deepmind/code_contests)：评什么：竞赛编程数据集与执行评测底座（题面、测试、正确/错误解等）。核心思想：把竞赛题落到可运行判题的格式，用于训练与评测更高难度的算法题代码生成。
@@ -32,7 +39,7 @@
 - [Idea First, Code Later](https://arxiv.org/abs/2601.11332)：评什么：ICPC 风格题目中“算法思路”和“代码实现”的可分离能力。核心思想：引入 83 道带 gold editorial 和完整测试的题目，先评自然语言 editorial，再评代码实现，避免只用 AC 混合度量掩盖瓶颈。
 - [VeriContest](https://arxiv.org/abs/2605.08553)：评什么：LeetCode 与 Codeforces 题源上的可验证代码生成。核心思想：把自然语言题面、专家验证形式化规格、AC Rust 代码、Verus 证明和正负测试组合起来，分别评估 specification、code、proof 与端到端 verified synthesis。
 
-## 2.1.3 Agent Harness
+## 2.1.4 Agent Harness
 
 - [USACO Episodic + Semantic](https://arxiv.org/abs/2404.10952)（[开源代码](https://github.com/princeton-nlp/USACO)）：USACO 竞赛编程 agent 配置；核心思想是用 episodic memory 与语义检索复用相似题经验，支撑 Olympiad 风格长推理题的多步求解。
 - [MapCoder](https://arxiv.org/abs/2405.11403)（[开源代码](https://github.com/Md-Ashraful-Pramanik/MapCoder)）：多代理竞赛代码生成框架；核心思想是把 retrieval、planning、coding 与 debugging 显式拆成多角色协作，逼近人类竞赛编程循环。
@@ -44,7 +51,7 @@
 - [Agentic Verifier](https://arxiv.org/abs/2602.04254)：面向竞赛代码的执行式 verifier 与 reranker；核心思想：通过多轮执行交互主动搜索能区分候选程序的反例输入，而不是只做随机测试采样。
 - [CodeHacker](https://arxiv.org/abs/2602.20213)：面向竞赛提交的 adversarial test generation agent；核心思想：模拟竞赛平台的 hack 机制，结合压力测试、反哈希和逻辑定向构造，暴露弱测试放过的错误解。
 
-## 2.1.4 Skill
+## 2.1.5 Skill
 
 - [mcp-code-execution](https://skills.sh/athola/claude-night-market/mcp-code-execution) 适合把竞赛题求解接成“写代码 -> 运行样例/随机测试 -> 修复”的可执行循环。
 - [e2b-sandbox](https://skills.sh/smithery.ai/e2b-sandbox) 适合在隔离执行环境里快速做样例回放与回归验证。

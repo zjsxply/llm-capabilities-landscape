@@ -2,7 +2,6 @@
 
 > Parent chapter: 1. Basic Capabilities
 
-
 ## 1.4.1 Leaderboard
 
 - [Hallucinations Leaderboard](https://huggingface.co/spaces/hallucinations-leaderboard/leaderboard): an early open hallucination leaderboard attempt. Its value is aggregating signals such as TruthfulQA, HaluEval, and FEVER into one comparison entry point.
@@ -10,7 +9,15 @@
 - [Vectara Hallucination Evaluation Leaderboard](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard): a public hallucination leaderboard for summarization/RAG scenarios. Its value is continuously comparing whether answers are supported by input facts and providing leads on automatic evaluators such as HHEM and FaithJudge.
 - [FACTS entries on Google DeepMind Eval Suite](https://deepmind.google/research/evals/): public entry points for FACTS factuality evaluation. Its value is organizing grounded, search, parametric, and multimodal factuality settings into comparable submissions and review tracks.
 
-## 1.4.2 Bench
+## 1.4.2 Survey
+
+- [Survey of Hallucination in Natural Language Generation](https://arxiv.org/abs/2202.03629): A foundational taxonomy of hallucination definitions, causes, detection, datasets, and mitigation.
+- [A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models](https://arxiv.org/abs/2401.01313): Organizes retrieval, verification, decoding, prompting, and training-side mitigation.
+- [Factuality of Large Language Models: A Survey](https://arxiv.org/abs/2402.02420): Frames hallucination within broader factuality evaluation and improvement methods.
+- [A Comprehensive Survey of Hallucination in Large Language, Image, Video and Audio Foundation Models](https://arxiv.org/abs/2405.09589): Maps hallucination across language, image, video, and audio foundation models.
+- [A Survey of Multimodal Hallucination Evaluation and Detection](https://arxiv.org/abs/2507.19024): Focuses on benchmark and detector design for multimodal hallucinations.
+
+## 1.4.3 Bench
 
 - [FEVER](https://arxiv.org/abs/1803.05355): evaluates evidence-based fact checking and claim verification. The core idea is to organize claims, Wikipedia evidence sentences, and supports/refutes/not-enough-info labels into a retrievable and decidable factuality task; it is also one of the early signals aggregated by Hallucinations Leaderboard.
 - [TruthfulQA](https://arxiv.org/abs/2109.07958) (dataset: [truthfulqa/truthful_qa](https://huggingface.co/datasets/truthfulqa/truthful_qa)): evaluates whether models answer "truthfully rather than sycophantically" on common misconception questions. The core idea is to design questions where the most common wrong answer is tempting, exposing hallucination and fabrication tendencies.
@@ -36,7 +43,7 @@
 - [MMM-Fact](https://arxiv.org/abs/2510.25120): evaluates multimodal, multi-domain fact checking under different retrieval-difficulty levels. Core idea: test whether models can ground factual claims in retrieved multimodal evidence rather than relying on unsupported generation.
 - [Vectara Hallucination Evaluation](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard): evaluates whether generated content in summarization/RAG scenarios is faithful to input facts. The core idea is to connect real document summaries and automatic factuality judges into a public leaderboard protocol, suitable for tracking detectors such as HHEM and FaithJudge.
 
-## 1.4.3 Agent Harness
+## 1.4.4 Agent Harness
 
 - [RARR](https://arxiv.org/abs/2210.08726) ([open-source code](https://github.com/anthonywchen/RARR)): retrieval-backed hallucination repair. A typical loop is `claim decomposition -> evidence retrieval -> evidence filtering/alignment -> revision`.
 - [SelfCheckGPT](https://arxiv.org/abs/2303.08896) ([open-source code](https://github.com/potsawee/selfcheckgpt)): detects suspicious claims through self-consistency and variant sampling. The core idea is to treat "inconsistency" as a hallucination-risk signal.
@@ -52,7 +59,7 @@
 - [Premise Verification](https://arxiv.org/abs/2504.06438): a retrieval-augmented logical verification framework for false-premise queries. The core idea is to convert a user question into logical premises before generation and verify them one by one, blocking the hallucination chain that follows a false premise.
 - [FaithJudge](https://arxiv.org/abs/2505.04847) ([open-source code](https://github.com/vectara/FaithJudge)): an automatic judge for factual faithfulness. The core idea is to use a reusable evaluator to judge whether generated content is faithful to given evidence, supporting later versions of the Vectara hallucination leaderboard.
 
-## 1.4.4 Skill
+## 1.4.5 Skill
 
 - [fact-checker](https://skills.sh/shubhamsaboo/awesome-llm-apps/fact-checker) is suitable for fact checking and evidence tracing.
 - [fact-checker](https://skills.sh/daymade/claude-code-skills/fact-checker) leans more toward "report-style verification results."

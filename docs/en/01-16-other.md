@@ -4,7 +4,17 @@
 
 Note: This page keeps benchmarks and harnesses whose primary axis is cross-cutting, meta-evaluative, or not yet dense enough to justify a standalone category. Entries should move into a more specific page once the landscape has enough neighboring work.
 
-## 1.16.1 Bench
+## 1.16.1 Leaderboard
+
+## 1.16.2 Survey
+
+- [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432): A foundational review of architectures, planning, memory, tools, multi-agent interaction, and evaluation.
+- [Large Language Model Agent: A Survey on Methodology, Applications and Challenges](https://arxiv.org/abs/2503.21460): A broad recent review for agent work that does not fit a narrower capability page.
+- [AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges](https://arxiv.org/abs/2505.10468): Provides a conceptual taxonomy and broad application and challenge map.
+- [Evaluation and Benchmarking of LLM Agents: A Survey](https://arxiv.org/abs/2507.21504): Reviews task design, metrics, reproducibility, environment interaction, and leaderboard-style evaluation.
+- [A Survey on Agent Workflow - Status and Future](https://arxiv.org/abs/2508.01186): Surveys general-purpose agent workflow design and future directions.
+
+## 1.16.3 Bench
 
 - [RoleMRC](https://arxiv.org/abs/2502.11387): Evaluates role-playing and instruction following through fine-grained composite tasks. Core idea: check whether character agents preserve persona constraints while also satisfying explicit user instructions.
 - [STEER-ME](https://arxiv.org/abs/2502.13119) (dataset: [narunraman/steer_me](https://huggingface.co/datasets/narunraman/steer_me)): What it evaluates: microeconomic reasoning in LLMs. Core idea: use non-strategic economic decision settings to diagnose whether models reason about incentives, preferences, and trade-offs rather than only answer domain facts.
@@ -23,12 +33,20 @@ Note: This page keeps benchmarks and harnesses whose primary axis is cross-cutti
 - [Auditing Multi-Agent Reasoning Trees](https://arxiv.org/abs/2602.09341): Audits evidential structure in multi-agent reasoning traces. Core idea: replace majority vote or generic LLM-as-judge aggregation with localized verification over agreements and divergences.
 - [MEDLEY-BENCH](https://arxiv.org/abs/2604.16009): Evaluates AI metacognition, separating self-performance judgment from behavioral control based on that judgment. Core idea: test whether scaling improves self-evaluation and decision control together rather than treating confidence or correctness alone as sufficient.
 - [ProEval](https://arxiv.org/abs/2604.23099): Proactively discovers failures and estimates generative-AI benchmark performance under limited evaluation budgets. Core idea: use uncertainty-aware transfer surrogates to select or synthesize informative test cases.
+- [DESBench](https://arxiv.org/abs/2605.13172): Evaluates hierarchical multi-agent coordination in event-driven industrial scheduling. Core idea: use a shared discrete-event environment with partial observability, coupled constraints, and multi-timescale decisions to test when hierarchical coordination helps or hurts.
 - [MMRole](https://www.semanticscholar.org/paper/4d567080294013a63149f3782ca67c4a9d346194): Evaluates multimodal role-playing agents. Core idea: connect persona construction, multimodal interaction, and role-consistency assessment so character agents are tested beyond text-only dialogue.
 - [Mosaic](https://doi.org/10.1145/3772363.3798830): Provides a multi-level framework for observing and evaluating multi-agent system performance. Core idea: structure evaluation across system, agent, and interaction levels so multi-agent behavior is not reduced to a single final outcome score.
 
-## 1.16.2 Agent Harness
+## 1.16.4 Agent Harness
 
 - [AgentScope](https://arxiv.org/abs/2402.14034) ([code](https://github.com/agentscope-ai/agentscope); [docs](https://doc.agentscope.io/)): A general open-source multi-agent framework with agents, tools, skills, memory, planning, MCP/A2A support, human-in-the-loop components, and evaluation utilities; it is a good harness-side complement to MultiAgentBench-style cross-cutting evaluations.
-- CrewAI ([code](https://github.com/crewAIInc/crewAI); [docs](https://docs.crewai.com/); [official skills](https://github.com/crewAIInc/skills)): A role-based multi-agent orchestration framework with crews, flows, tools, and reusable official skills, useful as a practical open-source baseline for cross-cutting collaboration tasks.
 - [UFO3](https://arxiv.org/abs/2511.11332) (code: no stable public repository found): A cross-device digital-agent orchestration system for desktops, mobile devices, servers, and edge endpoints; design keywords: distributed task DAG, asynchronous orchestration, explicit control and data dependencies.
+- [HACN](https://arxiv.org/abs/2511.17586): A hierarchical adaptive consensus harness for collaborative multi-agent systems. Core idea: route tasks through local clusters, confidence-based voting, and global consensus policies so communication cost, scalability, and convergence can be adjusted by task and agent performance.
+- [Agent-Kernel](https://arxiv.org/abs/2512.01610): A microkernel multi-agent framework for adaptive LLM-powered social simulation. Core idea: decouple core system functions, simulation logic, cognition, physical environments, and action execution so large-scale simulations can change population, profiles, and environment rules more reliably.
+- [ProAgent](https://arxiv.org/abs/2512.06721): A proactive-agent harness that uses on-demand sensory contexts for in-the-wild assistance. Core idea: combine tiered perception, context extraction, and proactive assistance so agents can monitor user context continuously without always paying the cost of rich sensing.
 - [PRISM](https://arxiv.org/abs/2602.01532): A proactive-agent deliberation harness that treats intervention as cost-sensitive selective action; design keywords: acceptance-calibrated gating, uncertainty-aware reasoning, and user-burden control.
+- CrewAI ([code](https://github.com/crewAIInc/crewAI); [docs](https://docs.crewai.com/); [official skills](https://github.com/crewAIInc/skills)): A role-based multi-agent orchestration framework with crews, flows, tools, and reusable official skills, useful as a practical open-source baseline for cross-cutting collaboration tasks.
+- [Forage V2](https://arxiv.org/abs/2604.19837): A learning-organization harness for autonomous agents in open-world tasks. Core idea: keep evaluator and planner roles isolated while accumulating reusable knowledge across runs, transferring it across model strengths, and guarding against knowledge degradation.
+- [Agent Capsules](https://arxiv.org/abs/2605.00410): A quality-gated runtime for controlling granularity in multi-agent LLM pipelines. Core idea: instrument coordination overhead, choose compound execution modes, and fall back to finer dispatch when rolling quality signals drop.
+
+## 1.16.5 Skill

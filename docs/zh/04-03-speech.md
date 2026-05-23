@@ -4,7 +4,21 @@
 
 说明：本页收纳语音、音频、voice agent、音乐、口语对话和音频安全评测，以及音频专用 agent harness。
 
-## 4.3.1 Bench
+## 4.3.1 Leaderboard
+
+- [AudioBench Leaderboard](https://huggingface.co/spaces/AudioLLMs/AudioBench-Leaderboard-Extend)：面向音频语言模型能力评测的公开榜单。
+- [Open ASR Leaderboard](https://huggingface.co/spaces/hf-audio/open_asr_leaderboard)：面向语音识别模型的公开专项榜单。
+- [HELM Audio](https://crfm.stanford.edu/helm/audio/latest/)：用于宽泛音频模型比较的公开 HELM Audio 结果页。
+
+## 4.3.2 Survey
+
+- [Recent Advances in Speech Language Models: A Survey](https://arxiv.org/abs/2410.03751)：综述 speech language model 的表示、理解、生成、对话与评测。
+- [WavChat: A Survey of Spoken Dialogue Models](https://arxiv.org/abs/2411.13577)：回顾语音到语音交互、轮次管理、对话控制与评测。
+- [Audio-Language Models for Audio-Centric Tasks: A Systematic Survey](https://arxiv.org/abs/2501.15177)：覆盖音频中心任务、数据集、架构与评测。
+- [On The Landscape of Spoken Language Models: A Comprehensive Survey](https://arxiv.org/abs/2504.08528)：梳理 spoken-language-model 架构、任务、数据集与开放问题。
+- [Towards Holistic Evaluation of Large Audio-Language Models: A Comprehensive Survey](https://arxiv.org/abs/2505.15957)：回顾 audio-language model 的能力、鲁棒性、安全与基准设计。
+
+## 4.3.3 Bench
 
 - [OmniBench](https://arxiv.org/abs/2409.15272)（[开源代码](https://github.com/multimodal-art-projection/OmniBench)，[数据集](https://huggingface.co/datasets/m-a-p/OmniBench)）：评什么：omni-language models 的视觉、听觉和文本三模态理解。核心思想：检查模型能否同时识别、解释并推理多种模态，而不是把多模态评测局限为图文任务。
 - [MusicEval](https://arxiv.org/abs/2501.10811)：用专家评分样本评测文生音乐生成。核心思想：以专业音乐判断支撑生成音乐质量与提示对齐的自动评测，补充 TTA-Bench 旁边的音频生成评测空白。
@@ -13,9 +27,11 @@
 - [Full-Duplex-Bench](https://arxiv.org/abs/2503.04721)：评测全双工口语对话模型的轮次转换能力。核心思想：检查语音系统能否同时听与说、适当打断并管理话轮变化，而不是只按孤立回合回应。
 - [S2S-Arena](https://arxiv.org/abs/2503.05085)：评测 speech-to-speech 模型的副语言指令遵循能力。核心思想：检查口语对话系统能否按语气、韵律、情绪等非词汇线索执行指令，而不只是保持转写文本内容。
 - [QualiSpeech](https://arxiv.org/abs/2503.20290)（数据集：[tsinghua-ee/QualiSpeech](https://huggingface.co/datasets/tsinghua-ee/QualiSpeech)）：评什么：auditory LLM 的低层语音质量理解。核心思想：用覆盖 11 类噪声与失真维度的自然语言质量描述和推理，补充单一音频分数式评测。
+- [FinAudio](https://arxiv.org/abs/2503.20990)：评测 audio LLM 在财报电话会、CEO 演讲等金融语音任务中的能力。核心思想：测试模型能否处理领域语音、情绪和事件推理，而不只是在干净的通用音频 QA 上表现良好。
 - [Vox-Profile](https://arxiv.org/abs/2505.14648)：评测语音基础模型对多样说话人与语音特征的刻画能力。核心思想：诊断 audio-language model 是否能识别说话人属性、发声状态和语音特征，而不是把语音输入简化为文字。
 - [AudioTrust](https://arxiv.org/abs/2505.16211)：评测音频大语言模型的多维可信性。核心思想：围绕安全性、鲁棒性、隐私和可靠性等维度评估音频语言系统，而不是只把音频能力等同于识别准确率或感知质量。
 - [JALMBench](https://arxiv.org/abs/2505.17568)：评测大音频语言模型的 jailbreak 脆弱性。核心思想：用大规模文本和音频样本、多个攻击方法、主流 LALM 与防御机制组成统一评测框架，使音频 jailbreak 鲁棒性能系统比较。
+- [SpokenNativQA](https://arxiv.org/abs/2505.19163)：用约 33,000 个自然口语、文化对齐的问题评测多语种 spoken QA。核心思想：直接衡量语音输入、口音和低资源口语场景下的模型表现，而不是把多语种 QA 默认简化为文本输入。
 - [EmergentTTS-Eval](https://arxiv.org/abs/2505.23009)：评测 TTS 模型在复杂韵律、表现力和语言挑战上的能力；核心思想是用 model-as-a-judge protocol 衡量普通可懂度或自然度分数之外的语音生成行为。
 - [SOVA-Bench](https://arxiv.org/abs/2506.02457)：评测基于 LLM 的语音助手对话能力。核心思想：在同一语音助手协议中同时评估通用知识、语音识别与理解、语义回复质量和声学生成质量。
 - [MMSU](https://arxiv.org/abs/2506.04779)：评测多任务口语理解与推理。核心思路是检查全模态或音频语言模型能否直接围绕语音输入推理，而不只是依赖转写文本。
@@ -26,6 +42,7 @@
 - [TELEVAL](https://arxiv.org/abs/2507.18061)：评测中文真实交互场景中的 spoken language models；核心思想是同时衡量可靠内容完成和合适的互动策略，避免只用任务答案正确率评价语音 agent。
 - [SpeechIQ](https://arxiv.org/abs/2507.19361)：通过覆盖记忆、理解和应用三个层级的 speech-agentic intelligence quotient 评测语音理解模型；核心思想是超越词错误率，在解释能力、下游问答、标注错误发现和幻觉信号上比较级联系统与端到端语音智能体。
 - [C3](https://arxiv.org/abs/2507.22968)：评什么：复杂对话中的双语 spoken dialogue model。核心思想：用多轮语音互动检查模型是否能维持上下文、处理对话挑战并跨语言给出合适回应。
+- [MECAT](https://arxiv.org/abs/2507.23511)：评测 audio-language models 的细粒度音频理解能力。核心思想是用多专家分析构造任务，使 benchmark 能区分细致的类人音频理解与泛泛 caption 或粗粒度回答。
 - [SpeechRole](https://arxiv.org/abs/2508.02013)：评测语音角色扮演 agent。核心思想：把大规模语音到语音角色扮演语料与 SpeechRole-Eval 结合起来，使 agent 不只按文本人格一致性评价，也要看交互能力、语音表现力和角色忠实度。
 - [SpeechR](https://arxiv.org/abs/2508.02018)：评什么：大音频语言模型的语音推理能力。核心思想：检查模型能否基于 spoken audio evidence 做推断、比较和推理，而不只是转写或分类表层语音内容。
 - [Omni-SafetyBench](https://arxiv.org/abs/2508.07173)：评测音视频大语言模型在联合模态输入下的安全性。核心思想：使用平行模态变体和跨模态安全一致性指标，使全模态安全评测不被简化为纯文本或纯图像拒答行为。
@@ -40,8 +57,10 @@
 - [MMedFD](https://arxiv.org/abs/2509.19817)：评什么：真实医疗场景中的多轮全双工自动语音识别。核心思想：用存在重叠语音、轮次切换和专业术语的流式医疗对话，测试比干净单说话人 ASR 更困难的识别能力。
 - [CMDAR](https://arxiv.org/abs/2509.22461)：评测中文多场景动态音频推理；核心思想是用多样音频场景和推理问题测试模型是否理解中文音频环境中的事件、上下文与时间变化。
 - [XGC-AVQuiz](https://arxiv.org/abs/2509.23251)：评测真实与 AI 生成视频中的音视频内容理解；核心思想是用多任务覆盖时序对齐和跨模态推理，测试模型能否联合利用声音与视觉证据回答问题。
+- [PodEval](https://arxiv.org/abs/2510.00485)：评测播客式多模态音频生成。核心思想：结合真实播客数据集以及文本、语音和音频三个评测维度，使开放式长音频生成不再只依赖单一参考答案或临时人工偏好。
 - [SingMOS-Pro](https://arxiv.org/abs/2510.01812)：评估歌声质量评估能力。核心思路：为生成或处理后的歌声音频提供专门基准，使人声演唱质量不只依赖通用音频评分。
 - [Full-Duplex-Bench-v2](https://arxiv.org/abs/2510.07838)：带自动考官的全双工对话系统多轮评测框架。核心思想：把全双工语音评测从话轮转换片段扩展到更长的交互轨迹，测试打断、重叠语音处理和考官驱动的对话控制。
+- [MRSAudio](https://arxiv.org/abs/2510.10396)：用多模态录制数据评测空间音频理解与生成。核心思想：在生活、语音、音乐和歌唱场景中提供同步的双耳与 Ambisonics 音频、第一和第三视角视频、运动轨迹、转写、音素边界、歌词、乐谱与提示词。
 - [LISTEN](https://arxiv.org/abs/2510.10444)：评测 audio language model 是依赖词汇线索还是声学情绪线索。核心思想是用线索一致与冲突的受控设置，检查模型是否真正利用副语言声学证据，而不只是转写语音内容。
 - [VCB Bench](https://arxiv.org/abs/2510.11098)：评测基于音频证据的 LLM 对话智能体。核心思想：把 spoken-dialogue 评测从转写文本扩展到多轮对话中的声学证据 grounding。
 - [SpeechLLM-as-Judges / SpeechEval](https://arxiv.org/abs/2510.14664)：用结构化、可解释的 SpeechLLM 评审评估合成语音质量。核心思路是结合多语言语音片段与质量维度标注，使语音生成比较不再只依赖单一偏好分数。
@@ -52,6 +71,7 @@
 - [SACRED-Bench](https://arxiv.org/abs/2511.10222)：评测针对多模态 LLM 的语音-音频组合攻击。核心思想：组合有害与无害语音、非语音音频和多说话人对话，使音频安全测试覆盖隐藏在复杂听觉场景中的黑盒攻击。
 - [MTR-DuplexBench](https://arxiv.org/abs/2511.10262)：评测全双工语音语言模型的多轮对话能力。核心思想：把连续、可重叠的对话切分为轮次级评估，并测试单轮语音问答之外的对话性、上下文一致性和交互质量。
 - [HPSU](https://arxiv.org/abs/2511.23178)：评测真实 spoken speech understanding 中的人类水平感知能力。核心思想：检验语音模型能否捕捉自然语音中的感知线索，而不止理解转写文本语义。
+- [Mandarin Speech Prosody Benchmark](https://doi.org/10.21437/Interspeech.2025-1873)：评估 AI 系统是否理解普通话语音韵律。核心思想：通过专门框架和基准展示，让韵律理解不再只被转写级普通话语音识别间接衡量。
 - [ICASSP 2026 HumDial Challenge](https://arxiv.org/abs/2601.05564)：评测类人语音对话系统，覆盖情绪智能与全双工交互两个赛道。核心思想：用真实人类对话和共享挑战协议，测试语音智能体能否同时具备情感理解和实时轮转能力。
 - [RSA-Bench](https://arxiv.org/abs/2601.10384)：在真实声学场景中评测 audio large model。核心思想：用环境声音和真实声学条件检验听觉理解，而不是只测试干净语音输入。
 - [AQUA-Bench](https://arxiv.org/abs/2601.12248)：评测包含无答案情形的音频问答。核心思想：测试 audio-language model 能否识别音频证据不足并拒答，而不是强行生成幻觉答案。
@@ -80,16 +100,22 @@
 - [Expressive Appropriateness of Speech](https://arxiv.org/abs/2605.09413)：评测生成语音在丰富上下文中的表达适切性。核心思想：按照语境期望判断韵律、情感和表达方式，而不是只用通用自然度或可懂度指标评价语音质量。
 - [Fine-Grained Multi-Dimensional Speech Understanding](https://arxiv.org/abs/2605.12036)：从细粒度多维度评测语音理解。核心思想：把数据流水线、benchmark 任务与模型比较结合起来，使 audio-language model 的评测超越转写式理解。
 
-## 4.3.2 Agent Harness
+## 4.3.4 Agent Harness
 
 - [AudioGPT](https://arxiv.org/abs/2304.12995)（[开源代码](https://github.com/AIGC-Audio/AudioGPT)）：早期音频 agent harness，使用 ChatGPT/LangChain 风格规划调用 speech、singing、audio 和 talking-head foundation models 作为工具。
 - [WavJourney](https://arxiv.org/abs/2307.14335)（[开源代码](https://github.com/Audio-AGI/WavJourney)；[demo](https://audio-agi.github.io/WavJourney_demopage/)）：组合式音频创作 harness，把文本意图分解为故事、语音、音乐和音效生成 workflow。
+- [ReelWave](https://arxiv.org/abs/2503.07217)：面向电影声音生成的多 agent harness。核心思想：由 Sound Director agent 通过多模态对话协调屏内与屏外声音 agent，在多场景视频叙事中对齐语音、音效、环境声与音乐。
+- [Dopamine Audiobook](https://arxiv.org/abs/2504.11002)：用于情感化有声书生成的免训练多 Agent harness。核心思路是围绕多模态输入拆分语音设计和音频设计角色，在语义与时间上对齐语音、音效和音乐，并加入与人类偏好对齐的自动评测。
+- [AudioGenie](https://arxiv.org/abs/2505.22053)：面向 multimodality-to-multiaudio generation 的 training-free multi-agent harness。核心思想是协调细粒度多模态理解、音频类型规划和生成等专门 agent，使 speech、music、song 与 sound effects 能从混合输入中合成。
+- [AudioToolAgent](https://arxiv.org/abs/2510.02995)（[开源代码](https://github.com/GLJS/AudioToolAgent)）：面向 audio-language model 的 agentic harness。核心思想：将音频理解与生成任务路由到外部工具，使听觉智能体能拆解工作流，而不是只依赖单次端到端模型调用。
+- [LVAS-Agent / LVAS-Bench](https://aclanthology.org/2025.emnlp-main.1133/)：面向长视频音频合成的多 agent harness。核心思想：把长视频配音分解为场景切分、脚本生成、音频设计与音频合成，并用 LVAS-Bench 的专业长视频集合进行系统评测。
+- [Open Full-duplex Voice Agent](https://doi.org/10.1109/ASRU65441.2025.11434669)：一个开源全双工语音到语音智能体框架。核心思想：把标准文本 LLM 转化为能在全双工交互中听说并处理打断的语音智能体，而不是只进行回合式文本交换。
 - Pipecat（[开源代码](https://github.com/pipecat-ai/pipecat)；[文档](https://docs.pipecat.ai/)）：开源 Python 框架，用于实时语音和多模态对话 agent，覆盖 STT、LLM、TTS、WebRTC/WebSocket transports、pipeline composition 和 subagents。
 - LiveKit Agents（[开源代码](https://github.com/livekit/agents)；[文档](https://docs.livekit.io/agents/)）：面向 conversational multimodal voice agents 的实时 programmable-participant 框架，包含 tool calls、telephony、MCP integrations、job scheduling 和测试支持。
 - TEN Framework（[开源代码](https://github.com/TEN-framework/ten-framework)）：实时多模态 conversational-AI 框架，包含 voice assistant examples、VAD、turn detection、memory、RTC/WebSocket integrations 和 agent orchestration 组件。
-- [AudioToolAgent](https://arxiv.org/abs/2510.02995)：面向 audio-language model 的 agentic harness。核心思想：将音频理解与生成任务路由到外部工具，使听觉智能体能拆解工作流，而不是只依赖单次端到端模型调用。
+- [AudioFab](https://arxiv.org/abs/2512.24645)：用于工具学习的开源音频智能体框架。核心思想：把分散的音频处理工具封装到自然语言接口后，简化依赖管理，并提升复杂音频任务中的工具选择与协作效率。
 - [MIST](https://arxiv.org/abs/2605.06897)：面向智能家居的多模态语音工具调用助手框架。核心思想：把语音交互、多模态上下文和可执行设备工具连接起来，使工具使用型 agent 不局限于纯文本 API 调用。
 
-## 4.3.3 Skill
+## 4.3.5 Skill
 
 - [livekit-agents](https://skills.sh/livekit/agent-skills/livekit-agents) 是 LiveKit 官方 agent skill，适合按 LiveKit Agents SDK 约定构建 voice AI apps，覆盖 workflows、handoffs、tasks、testing patterns 等。

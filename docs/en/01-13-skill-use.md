@@ -15,7 +15,15 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
 - [Claw-Eval-Live](https://claw-eval-live.github.io/): A continuously updated workflow-agent leaderboard that explicitly uses ClawHub skill signals to construct tasks.
   It is better suited for observing whether agents can discover, install, call, and verify skills in dynamic workflows, rather than only comparing pass rates under ideal given-skill settings.
 
-## 1.13.2 Bench
+## 1.13.2 Survey
+
+- [Augmented Language Models: a Survey](https://arxiv.org/abs/2302.07842): A foundational account of models augmented with tools, retrieval, memory, and external reasoning.
+- [What Are Tools Anyway? A Survey from the Language Model Perspective](https://arxiv.org/abs/2403.15452): Establishes the conceptual boundary between tools and reusable skills.
+- [Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward](https://arxiv.org/abs/2602.12430): Reviews skill architecture, acquisition pipelines, security, and future directions.
+- [Towards Secure Agent Skills: Architecture, Threat Taxonomy, and Security Analysis](https://arxiv.org/abs/2604.02837): Provides a threat taxonomy for malicious skills, supply chains, and sandboxing.
+- [A Comprehensive Survey on Agent Skills: Taxonomy, Techniques, and Applications](https://arxiv.org/abs/2605.07358): Directly surveys agent-skill definitions, acquisition, composition, evaluation, and applications.
+
+## 1.13.3 Bench
 
 - [LifelongAgentBench](https://arxiv.org/abs/2505.11942): What it evaluates: whether LLM agents can learn, remember, and reuse skills across long task sequences.
   Core idea: chain tasks as episodes so that agents use past experience, tool-operation patterns, and transferable skills on new tasks instead of only planning within a single task.
@@ -31,9 +39,9 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
   Core idea: shift the evaluation target from "can a coding agent fix code" to "does a given skill improve the success rate, efficiency, and behavior quality of software engineering agents".
 - [SkillTester](https://arxiv.org/abs/2603.28815) ([project page](https://skilltester.ai/); [code](https://github.com/skilltester-ai/skilltester)): What it evaluates: utility and security of agent skills.
   Core idea: compare baseline and with-skill executions while also probing skills for security issues, making skill usefulness and skill risk visible in one benchmark.
-- [MM Claw skill-compliance suite](https://www.minimax.io/news/minimax-m27-en) (model-card-only; no standalone public release confirmed): What it evaluates: whether an agent can keep following and reusing more than 40 complex skills during extended OpenClaw-style work. Core idea: treat skill adherence itself as an evaluation signal, complementing public skill-search and skill-injection benchmarks.
 - [Agentic Skills in the Wild](https://arxiv.org/abs/2604.04323): What it evaluates: whether skills still help when agents search for, select, and use skills that do not perfectly match the task in a real skill ecosystem.
   Core idea: relax the "ideal skill is directly provided" setting into retrieval, noise, and adaptation pressure, then measure how skill utility degrades under realistic settings.
+- [MM Claw skill-compliance suite](https://www.minimax.io/news/minimax-m27-en) (model-card-only; no standalone public release confirmed): What it evaluates: whether an agent can keep following and reusing more than 40 complex skills during extended OpenClaw-style work. Core idea: treat skill adherence itself as an evaluation signal, complementing public skill-search and skill-injection benchmarks.
 - [SkillLearnBench](https://arxiv.org/abs/2604.20087) ([code](https://github.com/cxcscmu/SkillLearnBench)): What it evaluates: continual skill learning and generation; core idea: evaluate skill quality, execution trajectories, and task outcomes together to see whether reusable skills are learned reliably.
 - [Claw-Eval-Live](https://arxiv.org/abs/2604.28139) ([project page](https://claw-eval-live.github.io/); [code](https://github.com/Claw-Eval-Live/Claw-Eval-Live)): What it evaluates: continuously updated real workflow-agent tasks that explicitly use ClawHub skill signals. Core idea: place skill discovery, installation, invocation, and verification inside a periodically refreshed task distribution, complementing the static comparisons in SkillsBench.
 - [SkillRet](https://arxiv.org/abs/2605.05726): What it evaluates: large-scale retrieval over agent skill libraries; core idea: treat skill selection as a retrieval problem and evaluate long queries, noisy libraries, and NDCG / recall.
@@ -41,6 +49,7 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
   Core idea: split evaluation into "whether the minimally sufficient skill is selected" and "whether execution expands to tools or actions outside that skill", elevating the skill layer from an organizational abstraction to a measurable permission boundary.
 - [Dependency Steering](https://arxiv.org/abs/2605.09594): What it evaluates: whether malicious skills can steer coding agents toward attacker-chosen dependencies.
   Core idea: treat persistent skill files as a software-supply-chain attack surface and measure how skill content changes dependency selection during coding workflows.
+- [Skill Description Deception Attack](https://arxiv.org/abs/2605.09889): Evaluates whether task routing in Internet-of-Agents settings can be manipulated through deceptive self-declared skill descriptions. Core idea: formalize SDD attacks and generate deceptive descriptions to measure routing bias and reliability degradation.
 - [SkillSafetyBench](https://arxiv.org/abs/2605.12015): What it evaluates: whether agents facing a skill-facing attack surface can be induced by third-party skills, local materials, or local artifacts into unsafe actions.
   Core idea: combine ordinary tasks, risk domains, malicious or benign skill materials, and rule validators in a runnable environment, showing that skill safety cannot rely only on model-level alignment evaluations.
 - [AgentTrap](https://arxiv.org/abs/2605.13940) ([code](https://github.com/zhmzm/AgentTrap); [dataset](https://huggingface.co/datasets/zhmzm/AgentTrap)): What it evaluates: whether agents blindly execute malicious runtime behavior embedded in third-party skills.
@@ -49,7 +58,7 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
 - [PinchBench](https://pinchbench.com/about) ([code](https://github.com/pinchbench/skill)): Better treated as a practical supplementary benchmark for skill use rather than a purely academic "skills benchmark".
   It primarily evaluates the overall execution of OpenClaw agents on real tasks, but its task set explicitly includes `ClawHub skill installation` and `skill search/installation` scenarios, filling in skill integration and invocation capability in product ecosystems.
 
-## 1.13.3 Agent Harness
+## 1.13.4 Agent Harness
 
 - [SkillFlow](https://arxiv.org/abs/2504.06188): A multi-stage agent skill retrieval pipeline; core idea: model skill acquisition as information retrieval by chaining dense retrieval, cross-encoder reranking, and LLM selection over about 36K community `SKILL.md` definitions.
 - [CUA-Skill](https://arxiv.org/abs/2601.21123) ([project page](https://microsoft.github.io/cua_skill/)): A structured skill base and CUA-Skill Agent for computer-use agents; core idea: package GUI operation knowledge as skills with parameterized execution and composition graphs, then call them through retrieval, parameter instantiation, and memorized failure recovery.
@@ -91,7 +100,7 @@ Compared with `1.11 Tool Use`, skill use adds another layer of runtime responsib
   Core idea: constrain skill composition so zero-shot task generalization respects consistency requirements instead of composing skills opportunistically.
 - [CTA / Counterfactual Trace Auditing](https://arxiv.org/abs/2605.11946): A trajectory-level auditing framework for skill influence; core idea: align same-task trajectories with and without skills segment by segment and annotate skill influence patterns, addressing behavioral changes that pass-rate-only evaluation may miss.
 
-## 1.13.4 Skill
+## 1.13.5 Skill
 
 - [SkillFortify](https://arxiv.org/abs/2603.00195): A formal-analysis framework for agentic skill supply chains. Core idea: model malicious skills across the skill lifecycle, combine static analysis with capability sandboxing and audit evidence, and give skill ecosystems stronger guarantees than heuristic scanning alone.
 - [SkillNet](http://skillnet.openkg.cn) (paper: [SkillNet](https://arxiv.org/abs/2603.04448); [code](https://github.com/zjunlp/SkillNet)) is closer to skill registry / ontology / marketplace infrastructure, covering skill creation, evaluation, connection, and retrieval.

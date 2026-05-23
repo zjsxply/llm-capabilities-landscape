@@ -17,13 +17,14 @@ Note: This line focuses on whether agents can continuously gather information be
 
 ## 2.8.2 Survey
 
-Note: There are not many surveys specifically on "AI forecasting the future"; the closest lines are event prediction and time-series forecasting.
+Note: Dedicated surveys on AI future-event forecasting remain scarce; the closest mature literature covers event prediction and time-series forecasting.
 
-- [A Survey on Event Prediction Methods from a Systems Perspective: Bringing Together Disparate Research Areas](https://arxiv.org/abs/2302.04018): Surveys future event prediction from a systems perspective. Core idea: place event-prediction methods scattered across different fields into a unified systems view, organizing requirements, taxonomies, and research gaps; this is the most direct entry point for this line.
-- [Large Language Models for Time Series: A Survey](https://arxiv.org/abs/2402.01801): Surveys methods for LLMs in time-series analysis and forecasting. Core idea: summarize the main paths for encoding, aligning, and adapting time series to LLMs, suitable for an overview of "using AI for time-series prediction."
-- [Large Language Models for Forecasting and Anomaly Detection: A Systematic Literature Review](https://arxiv.org/abs/2402.10350): A systematic review of LLMs in forecasting and anomaly detection. Core idea: specifically summarize applications, challenges, and future directions for LLMs in forecasting tasks, closer to "future prediction" than surveys covering all time-series tasks.
-- [How do large language models bring disruptive change to time series forecasting? A survey and framework](https://ideas.repec.org/a/taf/tjmaxx/v13y2026i1p17-42.html): A survey and framework for LLM involvement in time-series forecasting. Core idea: provide a more practice-oriented pipeline view and collaboration modes, emphasizing data scenarios and workflow organization.
-- [Leveraging Large Language Models for time series forecasting: A systematic literature review](https://www.sciencedirect.com/science/article/pii/S0950705126006647): A systematic review focused specifically on LLM-driven time-series forecasting. Core idea: select 78 studies with PRISMA and cover architectures, tokenization, prompting, benchmarks, and evaluation issues; currently a newer forecasting-only survey.
+
+- [A Survey on Event Prediction Methods from a Systems Perspective: Bringing Together Disparate Research Areas](https://arxiv.org/abs/2302.04018): Unifies event-prediction methods, temporal modeling, and application requirements.
+- [Large Language Models for Time Series: A Survey](https://arxiv.org/abs/2402.01801): Summarizes encoding, alignment, prompting, and adaptation for LLM-based forecasting.
+- [Large Language Models for Forecasting and Anomaly Detection: A Systematic Literature Review](https://arxiv.org/abs/2402.10350): Focuses directly on forecasting coverage, limitations, and future directions.
+- [How do large language models bring disruptive change to time series forecasting? A survey and framework](https://ideas.repec.org/a/taf/tjmaxx/v13y2026i1p17-42.html): Provides a practical framework for forecasting data scenarios and workflows.
+- [Leveraging Large Language Models for time series forecasting: A systematic literature review](https://doi.org/10.1016/j.knosys.2026.115938): Reviews architectures, tokenization, prompting, benchmarks, and evaluation in forecasting-only settings.
 
 ## 2.8.3 Bench
 

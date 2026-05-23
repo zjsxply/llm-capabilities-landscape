@@ -2,12 +2,18 @@
 
 > 上级章节：3. 下游应用
 
-
 ## 3.1.1 Leaderboard
 
 说明：截至 2026-05-22，环境搭建方向还没有看到像 BFCL、Terminal-Bench 2.0 或 SkillsBench 那样成熟、持续更新、集中接收提交的公开榜单。
 
-## 3.1.2 Bench
+## 3.1.2 Survey
+
+- [If LLM Is the Wizard, Then Code Is the Wand: A Survey on How Code Empowers Large Language Models to Serve as Intelligent Agents](https://arxiv.org/abs/2401.00812)：关于可执行工作流中代码执行与程序化反馈的基础总览。
+- [AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities](https://arxiv.org/abs/2508.11126)：通过执行、测试与调试闭环为仓库搭建和构建修复 agent 提供背景。
+- [Agentic Software Engineering: Foundational Pillars and a Research Roadmap](https://arxiv.org/abs/2509.06216)：回顾任务分解、工具、验证、反馈闭环与工程工作流。
+- [Inside the Scaffold: A Source-Code Taxonomy of Coding Agent Architectures](https://arxiv.org/abs/2604.03515)：解释 scaffold 中的 shell 执行、环境状态、修复循环与仓库级控制。
+
+## 3.1.3 Bench
 
 - [SUPER](https://arxiv.org/abs/2409.07440)：评什么：从真实 ML/NLP 研究仓库中完成 setup 与任务执行。核心思想：把研究复现拆成 Expert、Masked 与 AutoGen 三组任务，并同时记录成功率与过程进展，暴露 agent 在依赖安装、脚本入口定位和实验运行中的实际失败点。（[开源代码](https://github.com/allenai/super-benchmark)，[数据集](https://huggingface.co/datasets/allenai/super)）
 - [Repo2Run](https://arxiv.org/abs/2502.13681)（公开 benchmark + agent）：评什么：给定代码仓库，自动构建可执行 Docker 环境并跑通 unit tests。核心思想：把环境构建建模成 `build image -> run tests -> 读反馈 -> 修 Dockerfile` 的闭环合成问题，并公开包含 420 个 Python 仓库的评测集（论文称）。
@@ -23,7 +29,7 @@
 - [MEnvBench](https://arxiv.org/abs/2601.22859)（公开 benchmark）：评什么：多语言（polyglot）仓库的环境构建与可验证执行。核心思想：将环境构建拆成 Planning-Execution-Verification 闭环，并用环境复用机制降低构建开销；论文报告覆盖 1000 题、10 种语言、200 个仓库（以论文为准）。
 - [ResearchEnvBench](https://arxiv.org/abs/2603.06739)：评什么：研究代码执行的环境合成。核心思想：给定研究仓库、文档和目标执行设定，要求 agent 把环境真正搭起来并跑通运行时。
 
-## 3.1.3 Agent Harness
+## 3.1.4 Agent Harness
 
 - [Installamatic](https://arxiv.org/abs/2412.06294)（[开源代码](https://github.com/coinse/installamatic)）是最典型的安装步骤合成与失败恢复 agent。
 - [ExecutionAgent](https://arxiv.org/abs/2412.10133)（[开源代码](https://github.com/sola-st/ExecutionAgent)）代表“基于执行反馈修复环境命令”。
@@ -39,6 +45,7 @@
 - [DockSmith](https://arxiv.org/abs/2602.00592)（开源代码：未公开）将 Docker 环境构建作为核心 agentic 能力来训练/评测，并以 Multi-Docker-Eval 为主评测基准。
 - [SWE-Universe](https://arxiv.org/abs/2602.02361)（开源代码：未公开）主张大规模自动构造可验证的 SWE 环境与任务数据，环境能力评测基于作者自建多语言任务集。
 - [HerAgent](https://arxiv.org/abs/2602.07871)（[开源代码](https://github.com/EuniAI/HerAgent)）聚焦自动环境部署，并在多个 setup 相关子基准上做统一评测对比（见论文）。
+- [AgentCgroup](https://arxiv.org/abs/2602.09345)：面向沙盒化 AI agent 的资源控制框架。核心思想：刻画 coding agent 在 OS 层面的 CPU、内存和工具调用资源峰值，并用 cgroup 式策略控制多租户执行。
 - [ScaleSWE](https://arxiv.org/abs/2602.09892)（[开源代码](https://github.com/AweAI-Team/ScaleSWE)）通过 setup agent、test creation agent 与 problem synthesis agent 的多代理流水线构造大规模 verified SWE 实例。
 - [SWE-rebench V2](https://arxiv.org/abs/2602.23866)（[开源代码](https://github.com/SWE-rebench/SWE-rebench-V2)）公开了 interactive setup synthesis 代理及其镜像构建流程，用于复杂仓库 setup 自动化。
 - [SWE-Hub](https://arxiv.org/abs/2603.00575)（[开源代码](https://github.com/zhenglw02/SWE-Hub)）将 Env Agent 作为数据工厂执行底座介绍，强调环境搭建在大规模 SWE 流水线中的基础设施角色。
@@ -46,7 +53,7 @@
 - [daVinci-Env（OpenSWE）](https://arxiv.org/abs/2603.13023)（[开源代码](https://github.com/GAIR-NLP/OpenSWE)）用多代理流水线大规模合成可执行 Docker 环境与评测脚本，更偏“可复现基础设施 + 环境合成”。
 - [BootstrapAgent](https://arxiv.org/abs/2605.15815)（[开源代码](https://github.com/Vossera/BootstrapAgent)）把仓库启动经验蒸馏成可复用的 `.bootstrap` contract；核心流程包括证据抽取、结构化规划、Docker 验证、trace-driven repair 与 clean replay，目标是让后续 coding agent 少重复试错。
 
-## 3.1.4 Skill
+## 3.1.5 Skill
 
 - [docker-configuration-validator](https://skills.sh/rknall/claude-skills/docker-configuration-validator) 适合先检查 Dockerfile / compose 配置。
 - [docker-containerization](https://skills.sh/ailabs-393/ai-labs-claude-skills/docker-containerization) 适合快速容器化。

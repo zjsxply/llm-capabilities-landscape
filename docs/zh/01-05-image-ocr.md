@@ -2,7 +2,6 @@
 
 > 上级章节：1. 基础能力
 
-
 ## 1.5.1 Leaderboard
 
 - [DocVQA Challenge](https://www.docvqa.org/challenges)：持续榜单：文档视觉问答的经典公开挑战；适合跟踪 OCR、版面理解与答案抽取在真实文档问答上的长期进展。
@@ -12,7 +11,15 @@
 - [IDP Leaderboard](https://idp-leaderboard.org/)：持续榜单：企业文档 AI 模型的 OCR、表格抽取、KIE、VQA、分类与长文档处理；适合作为“文档智能”工程侧综合榜单。
 - [OCR Arena](https://www.ocrarena.ai/)：持续榜单：OCR/文档模型的竞技场式比较；适合发现可复用的文档解析、表格抽取和视觉问答模型配置。
 
-## 1.5.2 Bench
+## 1.5.2 Survey
+
+- [From Pixels to Insights: A Survey on Automatic Chart Understanding in the Era of Large Foundation Models](https://arxiv.org/abs/2403.12027)：覆盖基础模型时代图表理解的任务、数据集、方法与评测。
+- [Survey on Question Answering over Visually Rich Documents: Methods, Challenges, and Trends](https://arxiv.org/abs/2501.02235)：综述涉及版面、OCR、结构和推理挑战的文档问答。
+- [A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends](https://arxiv.org/abs/2507.09861)：从端到端多模态大语言模型视角更新文档理解研究。
+- [Scaling Beyond Context: A Survey of Multimodal Retrieval-Augmented Generation for Document Understanding](https://arxiv.org/abs/2510.15253)：回顾面向长文档与多页文档理解的多模态检索增强方法。
+- [A Survey of OCR Evaluation Methods and Metrics and the Invisibility of Historical Documents](https://arxiv.org/abs/2603.25761)：梳理 OCR 专项指标及历史文档评测盲点。
+
+## 1.5.3 Bench
 
 （以下按发布时间排序，覆盖 OCR、文档理解、图表理解、通用 VQA 与诊断、STEM/理科图推理、视觉 agent/tool-use 评测等子任务。）
 
@@ -25,25 +32,25 @@
 - [Vibe-Eval](https://arxiv.org/abs/2405.02287)（[开源代码](https://github.com/reka-ai/reka-vibe-eval)）：评什么：多模态模型在多维任务上的综合能力；核心思想：用更接近人类主观偏好的标注与评分协议，提供覆盖面更广的综合评测套件。
 - [MTVQA](https://arxiv.org/abs/2405.11985)（[项目页](https://mtvqa.github.io/)；[开源代码](https://github.com/bytedance/MTVQA)）：评什么：多语言“文本中心”视觉问答（读图中文字并理解）；核心思想：覆盖多语言与低资源语言，强调文字感知与跨语言理解的一体化评测。
 - [MuirBench](https://arxiv.org/abs/2406.09411)（[项目页](https://muirbench.github.io/)；[开源代码](https://github.com/muirbench/MuirBench)；[数据集](https://huggingface.co/datasets/muirbench/MuirBench)）：评什么：多图输入下的鲁棒 multi-image understanding；核心思想：把多图任务拆成一组稳健性/一致性子任务，专门检验跨图对齐与抗干扰能力。
-- [Vision Arena](https://huggingface.co/spaces/WildVision/vision-arena)：评什么：开放式图像对话模型的人类偏好/竞技场式比较。核心思想：用 pairwise battle 补充固定 VQA/OCR 题集，适合观察真实开放图像问答中的模型偏好排序。
 - [CharXiv](https://arxiv.org/abs/2406.18521)（[项目页](https://princeton-nlp.github.io/CharXiv/)；[数据集](https://huggingface.co/datasets/princeton-nlp/CharXiv)）：评什么：科研论文场景的图表/插图与图文对齐理解；核心思想：把“图-文证据对齐”做成可量化问答。
+- [Vision Arena](https://huggingface.co/spaces/WildVision/vision-arena)：评什么：开放式图像对话模型的人类偏好/竞技场式比较。核心思想：用 pairwise battle 补充固定 VQA/OCR 题集，适合观察真实开放图像问答中的模型偏好排序。
 - [VLMs are Blind](https://arxiv.org/abs/2407.06581)（[项目页](https://vlmsareblind.github.io/)）：评什么：VLM 在极简单视觉原语任务上的可靠性；核心思想：用人类几乎无难度的几何/空间/计数小测试，诊断模型是否真的“看见”关键证据。
 - [MMMU-Pro](https://arxiv.org/abs/2409.02813)（[主页/榜单](https://mmmu-benchmark.github.io/#leaderboard)；[数据集](https://huggingface.co/datasets/MMMU/MMMU_Pro)；[评测代码](https://github.com/MMMU-Benchmark/MMMU)）：评什么：更强“必须看图”的多模态 STEM；核心思想：把题面文本嵌入图像、过滤可纯文本作答题，并增强迷惑性选项，使评测更依赖视觉输入与推理链路。
 - [OmniDocBench 1.5](https://arxiv.org/abs/2412.07626)（[开源代码](https://github.com/opendatalab/OmniDocBench)；[数据集](https://huggingface.co/datasets/opendatalab/OmniDocBench)）：评什么：文档解析的模块化能力（版面、段落、表格、结构等）；核心思想：用模块化指标与工程化 runtime（如 hybrid matching、CDM、Docker 化）把“文档解析能力”拆解可测。
 - [OCRBench v2](https://arxiv.org/abs/2501.00321)（[评测实现汇总](https://github.com/Yuliang-Liu/MultimodalOCR)）：评什么：多模态 OCR（读图中文字并完成理解/推理）；核心思想：把 OCR 与下游推理耦合，区分“读不到”和“读到了但不会用”。
 - [EMMA](https://arxiv.org/abs/2501.05444)（[主页/榜单](https://emma-benchmark.github.io/)；[数据集](https://huggingface.co/datasets/luckychao/EMMA-mini)；[开源代码](https://github.com/EMMA-Bench/EMMA)）：评什么：跨数学/物理/化学/编码的“有机多模态推理”；核心思想：构造必须跨模态串联证据的题型，并提供生成与评测脚本以复现比较。
-- [RealWorldQA](https://huggingface.co/datasets/xai-org/RealworldQA)：评什么：真实世界场景图像上的问答正确性；核心思想：用真实环境图像与可直接核验的简短问答，减少合成数据分布与模板化题型带来的高估。
 - [SimpleVQA](https://arxiv.org/abs/2502.13059)（[开源代码](https://github.com/SimpleVQA/SimpleVQA)）：评什么：多模态事实性（factuality）与“图像是否真正被使用”；核心思想：通过简单但严格的 VQA 协议，识别模型是否依赖语言先验而非视觉证据。
-- [IDP Leaderboard](https://idp-leaderboard.org/)：评什么：企业智能文档处理中的 OCR、表格抽取、KIE、VQA、分类与长文档处理。核心思想：把 document AI 工程侧常见任务组织成公开榜单式评测入口，补齐学术 DocVQA/OCRBench 对真实业务文档覆盖不足的问题。
+- [RealWorldQA](https://huggingface.co/datasets/xai-org/RealworldQA)：评什么：真实世界场景图像上的问答正确性；核心思想：用真实环境图像与可直接核验的简短问答，减少合成数据分布与模板化题型带来的高估。
 - [VisFactor](https://arxiv.org/abs/2502.16435)（[开源代码](https://github.com/CUHK-ARISE/VisFactor)）：评什么：多模态模型的基础视觉认知（偏“视觉原语”）；核心思想：把基础视觉子能力系统化拆分为可控子测，降低语言投机空间。
+- [IDP Leaderboard](https://idp-leaderboard.org/)：评什么：企业智能文档处理中的 OCR、表格抽取、KIE、VQA、分类与长文档处理。核心思想：把 document AI 工程侧常见任务组织成公开榜单式评测入口，补齐学术 DocVQA/OCRBench 对真实业务文档覆盖不足的问题。
 - [XLRS-Bench](https://arxiv.org/abs/2503.23771)（[项目页](https://xlrs-bench.github.io/home_page.html)；[开源代码](https://github.com/AI9Stars/XLRS-Bench)）：评什么：超大分辨率遥感图像的感知与推理；核心思想：用超高分辨率、遥感 domain 语义与跨尺度细粒度任务挑战通用 VLM。
 - [ChartQAPro](https://arxiv.org/abs/2504.05506)（[开源代码](https://github.com/vis-nlp/ChartQAPro)；[数据集](https://huggingface.co/datasets/ahmed-masry/ChartQAPro)）：评什么：图表理解与图表问答；核心思想：覆盖多样图表类型并提高推理占比，配套可复现评测脚本。
 - [Omni-Chart-600K](https://doi.org/10.18653/v1/2025.findings-naacl.226)：评估多类型图表理解能力。核心思想：扩大图表类型覆盖，使文档模型和视觉语言模型不只在常见柱状图、折线图和饼图上测试。
 - [PointArena（PointBench）](https://arxiv.org/abs/2505.09990)（[开源代码](https://github.com/pointarena/pointarena)）：评什么：pointing/指向定位能力（在图上点选/定位目标或区域）；核心思想：把 grounding 从文本变成可度量的空间输出，定位误差可直接评估。
 - [WildDoc](https://arxiv.org/abs/2505.11015)：评什么：真实野外文档理解的全面性与鲁棒性；核心思想：从 OCRBench v2 后续引用链补足更接近真实采集噪声、复杂版面和多任务文档理解的压力测试。
 - [ViC-Bench](https://arxiv.org/abs/2505.14404)：评估 MLLM 的视觉交织式思维链能力。核心思路是允许模型生成自由形式的中间视觉状态，并检验这些状态是否支撑忠实的逐步多模态推理。
-- [OCR Arena](https://www.ocrarena.ai/)：评什么：OCR/文档模型的竞技场式比较。核心思想：把 OCR、文档解析、表格抽取和视觉问答模型放进持续公开比较入口，作为 OCRBench、OmniDocBench 与 IDP Leaderboard 之外的实用补充。
 - [PhyX](https://arxiv.org/abs/2505.15929)（[项目页](https://phyx-bench.github.io/)；[数据集](https://huggingface.co/datasets/Cloudriver/PhyX)；[开源代码](https://github.com/killthefullmoon/PhyX)）：评什么：视觉场景下的物理推理；核心思想：以真实高保真视觉情境承载大学水平物理题，并提供多版本输入（如 Text-DeRedundancy）与评测脚本减少“读题冗余”带来的偏置。
+- [OCR Arena](https://www.ocrarena.ai/)：评什么：OCR/文档模型的竞技场式比较。核心思想：把 OCR、文档解析、表格抽取和视觉问答模型放进持续公开比较入口，作为 OCRBench、OmniDocBench 与 IDP Leaderboard 之外的实用补充。
 - [MMDocRAG](https://arxiv.org/abs/2505.16470)（[项目页](https://mmdocrag.github.io/MMDocRAG/)；[开源代码](https://github.com/MMDocRAG/MMDocRAG)）：评什么：多页、多证据链的文档问答与多模态 RAG；核心思想：同时评估检索、证据选择和“文本 + 图像证据”整合，避免只测文本化 DocQA。
 - [OCR-Reasoning Benchmark](https://arxiv.org/abs/2505.17163)：评什么：复杂 text-rich image reasoning；核心思想：把 OCR 读取得分与读后推理明确拆开，测试模型能否在密集文字、表格和图像证据上完成组合推理。
 - [InfoChartQA](https://arxiv.org/abs/2505.19028)：评什么：信息图风格图表的多模态问答；核心思想：从 ChartQAPro 引用链补足 infographic chart 场景，覆盖更强版式变化、文本说明和图表语义融合。
@@ -54,6 +61,7 @@
 - [M4Bench](https://www.ijcai.org/proceedings/2025/762)：评什么：面向 MLLM 的多领域、多粒度、多图理解。核心思想：测试模型是否能跨多张图和多种粒度协调证据，而不是把每张图孤立处理。
 - [DashboardQA](https://arxiv.org/abs/2508.17398)：评什么：交互式 dashboard 上的多模态 agent 问答；核心思想：把图表理解、控件状态和页面级信息检索放进同一任务，诊断 agent 是否能围绕可视化界面主动取证。
 - [HiPhO](https://arxiv.org/abs/2509.07894)（[数据集](https://huggingface.co/datasets/SciYu/HiPhO)；[开源代码](https://github.com/SciYu/HiPhO)）：评什么：最新高物/奥赛题的物理推理（含多模态输入）；核心思想：用高难度奥赛题降低“常识式猜测”，更强调严谨推导与物理建模。
+- [Seeing Culture](https://arxiv.org/abs/2509.16517)：评测文化丰富图像中的 visual reasoning and grounding。核心思想是要求 VLM 选择相关视觉证据并推理欠代表文化语境，使图像理解不止停留在物体识别或普通 VQA。
 - [GroundingSuite](https://openaccess.thecvf.com/content/ICCV2025/html/Hu_GroundingSuite_Measuring_Complex_Multi-Granular_Pixel_Grounding_ICCV_2025_paper.html)（[开源代码](https://github.com/hustvl/GroundingSuite)）：评什么：复杂多粒度 pixel grounding。核心思想：在多个定位粒度上测试 grounding，为视觉问答、GUI grounding 和具身感知流水线提供基础评测。
 - [MC-Bench](https://openaccess.thecvf.com/content/ICCV2025/html/Xu_MC-Bench_A_Benchmark_for_Multi-Context_Visual_Grounding_in_the_Era_ICCV_2025_paper.html)（[项目页](https://xuyunqiu.github.io/MC-Bench)）：评什么：MLLM 时代的多上下文视觉 grounding。核心思想：要求模型在多个上下文之间定位并对齐证据，是文档、GUI 和具身视觉 agent 的基础能力。
 - [MMReason](https://openaccess.thecvf.com/content/ICCV2025/html/Yao_MMReason_An_Open-Ended_Multi-Modal_Multi-Step_Reasoning_Benchmark_for_MLLMs_Toward_ICCV_2025_paper.html)：评什么：开放式多模态多步推理。核心思想：要求围绕视觉证据进行更长的自由形式推理，补足选择题 VQA 的局限。
@@ -76,7 +84,8 @@
 - [ParseBench](https://arxiv.org/abs/2604.08538)（[开源代码](https://github.com/run-llama/ParseBench)）：评什么：文档解析的语义正确性、表格/图表保真与视觉 grounding；核心思想：把企业文档里最影响自动决策的解析失败拆成可评测维度。
 - [HLE-VL](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的 HLE 风格视觉语言评测；目前未确认有独立公开版本。核心思想：即使具体评测子集只在 model card 中出现，也应跟踪模型厂商对高难视觉知识与推理任务的关注。
 - [CC-OCR V2](https://arxiv.org/abs/2605.03903)（[开源代码](https://github.com/eioss/CC-OCR-V2)）：评什么：真实企业文档处理中的 OCR literacy；核心思想：覆盖文本识别、文档解析、文档 grounding、关键信息抽取和文档问答五条 OCR-centric track，强调 hard/corner cases。
-## 1.5.3 Agent Harness
+
+## 1.5.4 Agent Harness
 
 - [VisProg](https://arxiv.org/abs/2211.11559)（[开源代码](https://github.com/allenai/visprog)）：把视觉任务转成“生成可执行程序 + 执行回填”的可复用 harness，弱化单模型端到端幻觉风险。
 - [Visual ChatGPT](https://arxiv.org/abs/2303.04671)（[开源代码](https://github.com/microsoft/visual-chatgpt)）：多视觉工具协作的通用视觉 agent harness；典型闭环是 `plan -> call tools -> verify -> refine`。
@@ -94,7 +103,7 @@
 - [OCR-Agent](https://arxiv.org/abs/2602.21053)（[开源代码](https://github.com/AIGeeksGroup/OCR-Agent)）：面向 OCR/文档理解的专门 agent；强调 `OCR -> 结构化解析 -> 校验 -> 回填` 的迭代式工作流。
 - [Doc-V*](https://arxiv.org/abs/2604.13731)（开源代码：暂未见稳定公开官方仓库）：面向多页 Document VQA 的 coarse-to-fine 交互式视觉推理 harness；核心思想是用页面级检索、区域级放大、证据验证和答案生成闭环替代一次性全页阅读。
 
-## 1.5.4 Skill
+## 1.5.5 Skill
 
 - [computer-vision-opencv](https://skills.sh/mindrally/skills/computer-vision-opencv) 适合图像预处理、检测、透视变换与标注。
 - [paddleocr-text-recognition](https://skills.sh/aidenwu0209/paddleocr-skills/paddleocr-text-recognition) 适合文档 OCR。

@@ -2,12 +2,18 @@
 
 > Parent section: 3. Downstream Applications
 
-
 ## 3.1.1 Leaderboard
 
 Note: As of 2026-05-22, the environment-setup direction does not appear to have a mature, continuously updated public leaderboard with centralized submissions comparable to BFCL, Terminal-Bench 2.0, or SkillsBench.
 
-## 3.1.2 Bench
+## 3.1.2 Survey
+
+- [If LLM Is the Wizard, Then Code Is the Wand: A Survey on How Code Empowers Large Language Models to Serve as Intelligent Agents](https://arxiv.org/abs/2401.00812): A foundational overview of code execution and programmatic feedback for executable workflows.
+- [AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities](https://arxiv.org/abs/2508.11126): Provides context for repository setup and build-repair agents through execution, testing, and debugging loops.
+- [Agentic Software Engineering: Foundational Pillars and a Research Roadmap](https://arxiv.org/abs/2509.06216): Reviews decomposition, tools, verification, feedback loops, and engineering workflows.
+- [Inside the Scaffold: A Source-Code Taxonomy of Coding Agent Architectures](https://arxiv.org/abs/2604.03515): Explains shell execution, environment state, repair loops, and repository-level control in scaffolds.
+
+## 3.1.3 Bench
 
 - [SUPER](https://arxiv.org/abs/2409.07440): Evaluates setup completion and task execution in real ML/NLP research repositories. Core idea: split research reproduction into Expert, Masked, and AutoGen task groups, while recording both success rate and process progress, exposing practical agent failures in dependency installation, script-entry discovery, and experiment execution. ([open-source code](https://github.com/allenai/super-benchmark), [dataset](https://huggingface.co/datasets/allenai/super))
 - [Repo2Run](https://arxiv.org/abs/2502.13681) (public benchmark + agent): Evaluates automatic construction of executable Docker environments and passing unit tests for given code repositories. Core idea: model environment construction as a closed-loop synthesis problem of `build image -> run tests -> read feedback -> fix Dockerfile`, and release an evaluation set containing 420 Python repositories, according to the paper.
@@ -23,7 +29,7 @@ Note: As of 2026-05-22, the environment-setup direction does not appear to have 
 - [MEnvBench](https://arxiv.org/abs/2601.22859) (public benchmark): Evaluates environment construction and verifiable execution for polyglot repositories. Core idea: split environment construction into a Planning-Execution-Verification loop and use environment reuse to reduce build overhead; the paper reports 1000 tasks, 10 languages, and 200 repositories, subject to the paper.
 - [ResearchEnvBench](https://arxiv.org/abs/2603.06739): Evaluates environment synthesis for research-code execution. Core idea: given a research repository, documentation, and target execution setting, require agents to actually set up the environment and run the runtime successfully.
 
-## 3.1.3 Agent Harness
+## 3.1.4 Agent Harness
 
 - [Installamatic](https://arxiv.org/abs/2412.06294) ([open-source code](https://github.com/coinse/installamatic)) is the most typical agent for installation-step synthesis and failure recovery.
 - [ExecutionAgent](https://arxiv.org/abs/2412.10133) ([open-source code](https://github.com/sola-st/ExecutionAgent)) represents "fixing environment commands based on execution feedback."
@@ -39,6 +45,7 @@ Note: As of 2026-05-22, the environment-setup direction does not appear to have 
 - [DockSmith](https://arxiv.org/abs/2602.00592) (open-source code: not released) treats Docker environment construction as a core agentic ability for training/evaluation, using Multi-Docker-Eval as its main evaluation benchmark.
 - [SWE-Universe](https://arxiv.org/abs/2602.02361) (open-source code: not released) advocates large-scale automatic construction of verifiable SWE environments and task data, with environment ability evaluated on the authors' own multilingual task set.
 - [HerAgent](https://arxiv.org/abs/2602.07871) ([open-source code](https://github.com/EuniAI/HerAgent)) focuses on automatic environment deployment and performs unified comparative evaluation on multiple setup-related sub-benchmarks; see the paper.
+- [AgentCgroup](https://arxiv.org/abs/2602.09345): A resource-control harness for sandboxed AI agents. Core idea: profile OS-level CPU, memory, and tool-call resource spikes in coding agents, then control multi-tenant execution with cgroup-style resource policies.
 - [ScaleSWE](https://arxiv.org/abs/2602.09892) ([open-source code](https://github.com/AweAI-Team/ScaleSWE)) constructs large-scale verified SWE instances through a multi-agent pipeline of setup agent, test creation agent, and problem synthesis agent.
 - [SWE-rebench V2](https://arxiv.org/abs/2602.23866) ([open-source code](https://github.com/SWE-rebench/SWE-rebench-V2)) releases an interactive setup synthesis agent and image build flow for complex repository setup automation.
 - [SWE-Hub](https://arxiv.org/abs/2603.00575) ([open-source code](https://github.com/zhenglw02/SWE-Hub)) introduces Env Agent as the execution substrate for a data factory, emphasizing environment setup as infrastructure in large-scale SWE pipelines.
@@ -46,7 +53,7 @@ Note: As of 2026-05-22, the environment-setup direction does not appear to have 
 - [daVinci-Env (OpenSWE)](https://arxiv.org/abs/2603.13023) ([open-source code](https://github.com/GAIR-NLP/OpenSWE)) uses a multi-agent pipeline to synthesize executable Docker environments and evaluation scripts at scale, leaning toward "reproducible infrastructure + environment synthesis."
 - [BootstrapAgent](https://arxiv.org/abs/2605.15815) ([open-source code](https://github.com/Vossera/BootstrapAgent)) distills repository-startup experience into a reusable `.bootstrap` contract; its core flow includes evidence extraction, structured planning, Docker verification, trace-driven repair, and clean replay, aiming to reduce repeated trial and error for later coding agents.
 
-## 3.1.4 Skill
+## 3.1.5 Skill
 
 - [docker-configuration-validator](https://skills.sh/rknall/claude-skills/docker-configuration-validator) is suitable for first checking Dockerfile / compose configuration.
 - [docker-containerization](https://skills.sh/ailabs-393/ai-labs-claude-skills/docker-containerization) is suitable for quick containerization.

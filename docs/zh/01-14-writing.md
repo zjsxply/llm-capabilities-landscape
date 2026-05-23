@@ -11,11 +11,19 @@
 - [WritingBench](https://github.com/X-PLUG/WritingBench)：官方仓库维护模型评测脚本、榜单线索和任务定义，适合追踪真实写作需求下的模型表现。
 - [Arena-Write](https://huggingface.co/datasets/THU-KEG/Arena-Write)：LongWriter-Zero 配套的 pairwise/Elo 写作评测集，适合观察超长输出模型在真实写作 prompt 上的偏好排序。
 
-## 1.14.2 Bench
+## 1.14.2 Survey
+
+- [Evaluation of Text Generation: A Survey](https://arxiv.org/abs/2006.14799)：现代写作评测所依赖指标与协议的基础参考。
+- [Text Generation: A Systematic Literature Review of Tasks, Evaluation, and Challenges](https://arxiv.org/abs/2405.15604)：回顾跨体裁文本生成任务、评测实践与开放挑战。
+- [SurveyX: Academic Survey Automation via Large Language Models](https://arxiv.org/abs/2502.14776)：覆盖学术综述自动化中的论文收集、组织、起草与评测。
+- [SurveyForge: On the Outline Heuristics, Memory-Driven Generation, and Multi-dimensional Evaluation for Automated Survey Writing](https://arxiv.org/abs/2503.04629)：围绕大纲、记忆与评测组织自动综述写作流程。
+- [Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](https://arxiv.org/abs/2508.15396)：综述适用于学术与报告写作的可追溯证据支撑生成。
+
+## 1.14.3 Bench
 
 - [Suri](https://arxiv.org/abs/2406.19371)（[开源代码](https://github.com/chtmp223/suri)）：评什么：长文生成中的多约束指令遵循。核心思想：把长文任务里的主题、格式、长度、风格和内容约束拆成可检查维度，专门测试模型能否在长输出中持续满足多个细粒度要求。
-- [EQ-Bench Creative Writing](https://eqbench.com/creative_writing.html)：评什么：创意写作与长篇风格化文本的主观质量。核心思想：用开放写作 prompt 和社区榜单持续比较模型在文学性、表达、叙事节奏和风格控制上的差异，适合作为学术 benchmark 之外的产品化参考。
 - [LongWriter / LongBench-Write](https://arxiv.org/abs/2408.07055)（[开源代码](https://github.com/THUDM/LongWriter)）：评什么：1 万词级长文本生成与长度扩展能力。核心思想：通过 LongWrite-Ruler 与 LongBench-Write 暴露模型“能读长上下文”并不等于“能稳定写长输出”，尤其关注长度控制、结构延展和中后段退化。
+- [EQ-Bench Creative Writing](https://eqbench.com/creative_writing.html)：评什么：创意写作与长篇风格化文本的主观质量。核心思想：用开放写作 prompt 和社区榜单持续比较模型在文学性、表达、叙事节奏和风格控制上的差异，适合作为学术 benchmark 之外的产品化参考。
 - [LongGenBench](https://arxiv.org/abs/2409.02076)：评什么：长上下文 LLM 的长文生成。核心思想：用更长输入、更长输出和多维质量评价，把摘要式短输出与真正的长文成稿区分开。
 - [HelloBench](https://arxiv.org/abs/2409.16191)：评什么：LLM 长文本生成能力。核心思想：围绕长输出场景构造多类型 prompt 与评价协议，观察模型在长篇连贯性、重复、结构稳定性和指令满足上的系统退化。
 - [LongProc](https://arxiv.org/abs/2501.05414)（[开源代码](https://github.com/princeton-pli/LongProc)）：评什么：长过程性文本生成。核心思想：要求模型生成食谱、教程、工作流、说明书等过程性长文，评估步骤顺序、依赖一致性、完整性和可执行性，而不是只看单段语言流畅度。
@@ -24,16 +32,17 @@
 - [UNCLE](https://arxiv.org/abs/2505.16922)：评什么：长文生成中的不确定性表达。核心思想：专门检查模型是否能在长文里用合适、校准的语言表达不确定性，避免在开放写作中把模糊信息写成过度确定的断言。
 - [P2P](https://arxiv.org/abs/2505.17104)：评测自动论文到海报生成。核心思想：把研究论文转化为结构化 poster，并细粒度评价内容选择、版式组织和图文摘要的忠实性。
 - [ExpertLongBench](https://arxiv.org/abs/2506.01241)：评什么：专家级长文生成任务。核心思想：用结构化 checklist 评审专业长文，强调任务特定要求、可核验子标准和长文整体质量，减少只靠单一总分 judge 的不稳定性。
-- [ASAP 2.0](https://doi.org/10.1016/j.asw.2025.100954)：评估基于材料的写作质量。核心思路：提供面向大规模评分的数据集，用于检验生成文本或学生写作是否能忠实、有效地利用给定材料。
 - [Arena-Write](https://arxiv.org/abs/2506.18841)（[数据集](https://huggingface.co/datasets/THU-KEG/Arena-Write)）：评什么：真实写作 prompt 下的 pairwise 偏好与 Elo 排名。核心思想：把长文写作结果放进 arena-style 比较，补足单一 rubric critic 难以捕捉整体偏好的问题。
+- [ASAP 2.0](https://doi.org/10.1016/j.asw.2025.100954)：评估基于材料的写作质量。核心思路：提供面向大规模评分的数据集，用于检验生成文本或学生写作是否能忠实、有效地利用给定材料。
 - [LitBench](https://arxiv.org/abs/2507.00769)：评什么：基于人工标注故事对比的创意写作自动评测可靠性。核心思想：提供标准化偏好 benchmark 和配对数据集，用来测试 LLM judge 与 reward model 对文学生成质量的判断。
 - [CreativityPrism](https://arxiv.org/abs/2510.20091)：评测 LLM 在发散思维、创意写作和逻辑推理中的创造力。核心思想：把质量、新颖性和多样性拆开衡量，避免把创意写作能力和其他创造性生成能力混在一起。
 - [LongWeave](https://arxiv.org/abs/2510.24345)：评什么：真实相关且可验证的长文生成。核心思想：让长文任务既贴近真实写作需求，又能通过引用、事实和结构化约束进行核验，连接写作质量与可验证性。
 - [SlidesGen-Bench](https://arxiv.org/abs/2601.09487)：用计算式与量化指标评测自动幻灯片生成；核心思想是把代码驱动和图像式幻灯片系统都转成渲染结果来比较，使版式、内容覆盖和可靠性处在同一协议下评分。
+- [CDAT / Conditional Divergent Association Task](https://arxiv.org/abs/2601.20546)：通过区分新颖性与语境适切性来评测语言创造力。核心思想：修正 Divergent Association Task 只偏重新颖性的缺陷，把创造力放到具体语境中衡量，避免把随机或噪声式用词误判为创作能力。
 - [PaperWritingBench](https://arxiv.org/abs/2604.05018)：评什么：AI research paper 写作。核心思想：把摘要、引言、相关工作、方法、实验叙述等论文写作环节组织成可评测任务，检查学术写作的结构、论证、引用上下文和段落质量。
 - [HoWToBench](https://arxiv.org/abs/2604.19071)：评什么：人类水平写作能力。核心思想：提出 Tree of Writing，将写作拆成意图理解、素材组织、结构规划、局部段落生成、全局修订等节点，做更细粒度的写作过程评测。
 
-## 1.14.3 Agent Harness
+## 1.14.4 Agent Harness
 
 - [Self-Refine](https://arxiv.org/abs/2303.17651)（[开源代码](https://github.com/madaan/self-refine)）：`生成 -> 反馈 -> 修订` 的通用写作修订 loop；适合把一次性写作改造成可审稿、可迭代的长文生成流程。
 - [Weaver](https://arxiv.org/abs/2401.17268)（开源代码：未找到稳定公开仓库）：创意写作 foundation model 与写作流程参考；虽然更偏模型工作，但它系统化处理设定、情节和叙事风格，是后续创意写作 agent 评测的重要基线。
@@ -50,7 +59,7 @@
 - [HiFlow](https://arxiv.org/abs/2603.04996)（开源代码：未找到稳定公开仓库）：约束长文生成的层级反馈优化框架；核心思想：按全局结构、段落质量和局部约束分层反馈，迭代修复长文中的约束遗漏和结构失衡。
 - [PaperOrchestra](https://arxiv.org/abs/2604.05018)（开源代码：未找到稳定公开仓库）：自动 AI 研究论文写作的多代理框架；核心思想：把论文写作拆成 topic/context 分析、section drafting、交叉审阅和整体修订，对应 PaperWritingBench 的学术写作任务。
 
-## 1.14.4 Skill
+## 1.14.5 Skill
 
 - [academic-paper](https://skills.sh/imbad0202/academic-research-skills/academic-paper) 适合论文写作、结构化段落组织与学术表达。
 - [ARIS paper-writing](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/paper-writing) 适合需要把论文规划、图表、LaTeX 编译、跨模型审阅、主张审计、引用审计和投稿 gate 串成一条链路的科研论文写作流程。

@@ -2,7 +2,6 @@
 
 > 上级章节：1. 基础能力
 
-
 ## 1.2.1 Leaderboard
 
 - [Humanity's Last Exam](https://lastexam.ai/)：专家级跨学科知识与推理公开榜单；价值在于把高难科学、数学、人文和专业题作为模型知识上限压力测试。
@@ -12,7 +11,15 @@
 - [ResearchCodeBench Leaderboard](https://researchcodebench.github.io/leaderboard/index.html)：从新近 ML 论文实现研究代码的公开榜单；适合作为 PaperBench/EXP-Bench 之外更偏代码实现的科研 agent 评测参照。
 - [SciVisAgentBench Leaderboard](https://scivisagentbench.github.io/leaderboard.html)：科学数据分析与可视化 agent 榜单；价值在于把科学数据理解、分析决策和图形表达纳入可比较评测。
 
-## 1.2.2 Bench
+## 1.2.2 Survey
+
+- [A Comprehensive Survey of Foundation Models in Medicine](https://arxiv.org/abs/2406.10729)：覆盖医学基础模型、数据集、评测与部署风险这一重要科学子领域。
+- [LLM4SR: A Survey on Large Language Models for Scientific Research](https://arxiv.org/abs/2501.04306)：梳理大语言模型在文献综述、假设、实验、分析、写作与审稿中的应用。
+- [Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions](https://arxiv.org/abs/2503.08979)：综述自主科研工作流、工具、挑战与未来方向。
+- [From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery](https://arxiv.org/abs/2505.13259)：解释科研辅助系统向自主发现系统演进的路径。
+- [A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers](https://arxiv.org/abs/2508.21148)：连接科学数据基础、模型体系、评测与智能体前沿。
+
+## 1.2.3 Bench
 
 - [GPQA Diamond](https://arxiv.org/abs/2311.12022)（数据集：[Idavidrein/gpqa](https://huggingface.co/datasets/Idavidrein/gpqa)）：评测研究生水平的科学问答（多选，偏“Google-proof”）；核心思想是由专家构造高难题并弱化直接检索命中，让能力更依赖知识理解与推理而非搜索片段匹配。
 - [OlympiadBench](https://arxiv.org/abs/2402.14008)：评测奥林匹克竞赛级双语多模态科学题；核心思想是用数学、物理等高难竞赛问题压力测试模型跨语言、跨模态的专业推理能力。
@@ -23,6 +30,7 @@
 - [ScienceAgentBench](https://arxiv.org/abs/2410.05080)（[开源代码](https://github.com/OSU-NLP-Group/ScienceAgentBench)）：评测数据驱动科学发现中的 agent 实操能力；核心思想是从同行评审论文抽取任务，并把输出统一为可自动评测的自包含 Python 程序。
 - [KORBench](https://arxiv.org/abs/2410.06526)：评测尽量与“背知识”正交的推理能力；核心思想是构造任务使成功更多依赖推理结构而非事实记忆，从而更好分离知识存量与推理机制。
 - [RE-Bench](https://arxiv.org/abs/2411.15114)：评测前沿 AI 研发 agent 的研究工程能力；核心思想是用开放式机器学习研究环境与人类专家 8 小时尝试记录对照，衡量 agent 在真实研发任务中的进展速度与上限。
+- [Does Table Source Matter?](https://arxiv.org/abs/2501.13042)：评测多模态科学表格理解与推理。核心思想是结合科学表格结构数据、表格图像和推理任务，测试模型是否能处理来源差异带来的版式和数值证据，而不只是阅读线性化表格文本。
 - [HLE-Verified](https://arxiv.org/abs/2501.14249)（数据集：[lmms-lab/HLE-Verified](https://huggingface.co/datasets/lmms-lab/HLE-Verified)）：评测经人工审核的可验证子集；核心思想是减少题目歧义与不可判定样本，提升评测可信度。
 - [Humanity's Last Exam（HLE）](https://arxiv.org/abs/2501.14249)（数据集：[cais/hle](https://huggingface.co/datasets/cais/hle)）：评测极高难、跨学科的专家级题目；核心思想是用高难度题集压力测试模型知识与推理上限。
 - [UGPhysics](https://arxiv.org/abs/2502.00334)（[开源代码](https://github.com/YangLabHKUST/UGPhysics)，[数据集](https://huggingface.co/datasets/UGPhysics/ugphysics)）：评测本科物理知识与推理，覆盖中英双语题、13 个主题和多种答案格式；核心思想是把公式推导、概念判断和数值计算放进同一物理学科评测协议。
@@ -41,6 +49,7 @@
 - [EEE-Bench](https://openaccess.thecvf.com/content/CVPR2025/html/Li_EEE-Bench_A_Comprehensive_Multimodal_Electrical_And_Electronics_Engineering_Benchmark_CVPR_2025_paper.html)：评什么：电气与电子工程的多模态知识。核心思想：覆盖通用 STEM VQA 中不足的工程图、工程概念和计算任务。
 - [MicroVQA](https://openaccess.thecvf.com/content/CVPR2025/html/Burgess_MicroVQA_A_Multimodal_Reasoning_Benchmark_for_Microscopy-Based_Scientific_Research_CVPR_2025_paper.html)（[项目页](https://jmhb0.github.io/microvqa)，[数据集](https://huggingface.co/datasets/jmhb/microvqa)）：评什么：显微科学研究中的多模态推理。核心思想：使用显微图像而非通用图片，测试模型能否围绕研究级生物视觉证据推理。
 - [ResearchCodeBench](https://arxiv.org/abs/2506.02314)（[开源代码](https://github.com/PatrickHua/ResearchCodeBench)）：评测从新近 ML 论文实现研究代码的能力；核心思想是用真实 research-code challenge 检查模型是否能理解论文方法并完成可运行实现。
+- [Atomic Reasoning for Scientific Table Claim Verification](https://arxiv.org/abs/2506.06972)：评测基于科学表格的细粒度 claim verification。核心思想是把密集表格推理拆成 atomic steps，使模型依据精确证据使用情况被评估，而不只是给出粗粒度 entailment 标签。
 - [LLM-SRBench](https://proceedings.mlr.press/v267/shojaee25a.html)（[开源代码](https://github.com/deep-symbolic-mathematics/llm-srbench)）：评测 LLM 在科学符号回归与方程发现中的真实泛化。核心思想：用跨科学领域的变换与合成任务区分“记住已知公式”和“从数据中发现可解释规律”。
 - [SimpleQA Verified](https://arxiv.org/abs/2509.07968)：评测模型的“参数化事实性”（短答案、可判定事实问答）；核心思想是用更高质量的可核验 factoid 问答，测量不开工具时的事实记忆与幻觉风险。
 - [MMCR](https://openaccess.thecvf.com/content/ICCV2025/html/Tian_MMCR_Benchmarking_Cross-Source_Reasoning_in_Scientific_Papers_ICCV_2025_paper.html)：评什么：科学论文中的跨来源推理。核心思想：整合文本、图、表和论文上下文等多种来源，让 scientific-paper reasoning 显式成为多模态任务。
@@ -69,7 +78,8 @@
 - [ProtocolQA Open-Ended](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)：GPT-5.5 model card 中的评测，把 FutureHouse ProtocolQA 风格湿实验排障题改成开放式短答；OpenAI 修改后的集合未公开发布。核心思想：取消多选脚手架后检查模型能否诊断 protocol error。
 - Structural biology benchmark（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Anthropic 内部结构生物学评测，要求模型仅根据结构数据推断生物分子功能；未公开发布。核心思想：测试超越纯文本生物问答的 structure-function reasoning。
 - [TroubleshootingBench](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)：OpenAI 在 GPT-5.5 system card 中报告的内部生物排障 benchmark，未公开发布。核心思想：用专家撰写的湿实验流程和非公开、依赖 tacit knowledge 的错误，测试模型是否具备实际排障知识。
-## 1.2.3 Agent Harness
+
+## 1.2.4 Agent Harness
 
 - [ReAct](https://arxiv.org/abs/2210.03629)（[开源代码](https://github.com/ysymyth/ReAct)）：通用“思考-检索/行动-观察”框架；对长尾科学知识任务更像可复用的 `检索 -> 证据整合 -> 再回答` 工作流骨架。
 - [RARR](https://arxiv.org/abs/2210.08726)（[开源代码](https://github.com/anthonywchen/RARR)）：`retrieve -> revise -> cite` 框架，适合把知识回答改写为“带引用的可核验结论”。
@@ -81,7 +91,7 @@
 - [SafeScientist](https://arxiv.org/abs/2505.23559)（[开源代码](https://github.com/ulab-uiuc/SafeScientist)）：面向科研 agent 的风险感知 harness；核心思想是在任务输入、协作讨论、工具调用和伦理审稿环节加入安全监控，用 SciSafetyBench 检验拒答与风险规避能力。
 - [AlphaEvolve](https://arxiv.org/abs/2506.13131)（开源代码：暂未见稳定公开官方仓库）：面向科学与算法发现的演化式 coding agent；核心思想是让 LLM 直接修改程序，并通过一个或多个自动 evaluator 的反馈进行群体式搜索与迭代优化。
 
-## 1.2.4 Skill
+## 1.2.5 Skill
 
 - [openalex-database](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/openalex-database) 适合学术知识、论文作者图谱与主题追踪。
 - [citation-management](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/citation-management) 适合引用抽取、BibTeX 管理与文献核验。

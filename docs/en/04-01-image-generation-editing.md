@@ -4,7 +4,20 @@
 
 Note: This page collects benchmarks and harnesses whose primary target is image creation, text-to-image generation, image editing, visual-generation evaluation, or generated-image safety. Image/OCR understanding benchmarks remain in [1.5 Images](01-05-image-ocr.md).
 
-## 4.1.1 Bench
+## 4.1.1 Leaderboard
+
+- [Artificial Analysis Text to Image Leaderboard](https://artificialanalysis.ai/text-to-image): A public arena-style comparison of text-to-image systems based on blind human preferences.
+- [Arena Image Edit Leaderboard](https://arena.ai/en/leaderboard/image-edit): A public arena leaderboard focused on instruction-based image editing systems.
+
+## 4.1.2 Survey
+
+- [Text-to-image Diffusion Models in Generative AI: A Survey](https://arxiv.org/abs/2303.07909): A foundational survey of text-to-image diffusion systems and evaluation.
+- [Diffusion Model-Based Image Editing: A Survey](https://arxiv.org/abs/2402.17525): Surveys instruction-guided and text-driven image editing methods and evaluation.
+- [A Survey of Multimodal-Guided Image Editing with Text-to-Image Diffusion Models](https://arxiv.org/abs/2406.14555): Reviews editing guided by text, masks, layouts, references, and other controls.
+- [Trustworthy Text-to-Image Diffusion Models: A Timely and Focused Survey](https://arxiv.org/abs/2409.18214): Covers safety, fairness, privacy, robustness, and trustworthiness.
+- [Personalized Image Generation with Deep Generative Models: A Decade Survey](https://arxiv.org/abs/2502.13081): Reviews subject-preserving, reference-conditioned, and personalized generation.
+
+## 4.1.3 Bench
 
 - [HarmonyIQA](https://arxiv.org/abs/2501.01116): Evaluates image harmonization quality assessment. Core idea: collect harmonized images from multiple harmonization algorithms with human preference scores, testing whether image-quality models detect foreground-background lighting and color inconsistencies that generic IQA often misses.
 - [MEt3R](https://arxiv.org/abs/2501.06336): Evaluates multi-view consistency in generated images. Core idea: measure whether generated views preserve shared 3D structure, making spatial consistency failures visible beyond single-image quality.
@@ -67,7 +80,7 @@ Note: This page collects benchmarks and harnesses whose primary target is image 
 - [SCALE / ZoneMaestro](https://arxiv.org/abs/2605.02537): Evaluates intricate spatial orchestration in irregular indoor scene generation. Core idea: stress dense spatial relations, functional zones, and non-convex layouts so spatial reasoning is tested beyond simple object placement.
 - [DynT2I-Eval](https://arxiv.org/abs/2605.06170): Evaluates text-to-image models with dynamically generated prompts. Core idea: construct a structured visual-semantic space and continuously sample fresh prompts across subject, logic, environment, and composition dimensions to reduce benchmark contamination and diagnose alignment, perceptual quality, and aesthetics.
 
-## 4.1.2 Agent Harness
+## 4.1.4 Agent Harness
 
 - [ComfyBench / ComfyAgent](https://arxiv.org/abs/2409.01392) ([open-source code](https://github.com/xxyQwQ/ComfyBench); [project page](https://xxyqwq.github.io/ComfyBench)): A ComfyUI workflow-generation and evaluation harness in which an LLM agent learns documentation, generates executable workflows, runs them, and is scored by pass/resolve-style metrics.
 - [ComfyGPT](https://arxiv.org/abs/2503.17671) ([open-source code](https://github.com/comfygpt/comfygpt); [project page](https://comfygpt.github.io/)): A self-optimizing multi-agent system for ComfyUI workflow generation, with flow generation, refinement, and execution agents.
@@ -77,10 +90,11 @@ Note: This page collects benchmarks and harnesses whose primary target is image 
 - [Maestro](https://arxiv.org/abs/2509.10704): An agent-orchestration harness for self-improving text-to-image generation. Core idea: coordinate generation, critique, and refinement agents so image outputs improve through an explicit workflow rather than a single model call.
 - [PromptSculptor](https://arxiv.org/abs/2509.12446): A multi-agent text-to-image prompt-optimization harness. Core idea: separate prompt analysis, refinement, and quality feedback into cooperating agents so image-generation prompts can be iteratively improved outside the base generator.
 - [OmniVerifier](https://arxiv.org/abs/2510.13804) ([open-source code](https://github.com/Cominclip/OmniVerifier)): a generative verifier for visual-result verification. It can turn "visual judgment" into an explicit verification and self-correction loop and compare evaluations on ViVerBench and related benchmarks.
+- [ComfySearch](https://arxiv.org/abs/2601.04060): An autonomous exploration harness for ComfyUI workflows. Core idea: search the component graph under strict workflow constraints and use validation-guided construction so agents can generate executable, higher-quality ComfyUI pipelines.
 - [coDrawAgents](https://arxiv.org/abs/2603.12829): a multi-agent dialogue harness for compositional image generation. Core idea: split interpretation, planning, checking, and painting roles so complex object layouts and attributes can be iteratively grounded before image synthesis.
 - [EditRefiner](https://arxiv.org/abs/2605.07457): a human-aligned agentic framework for image-editing refinement. Core idea: wrap image editing in an iterative refinement loop so feedback, alignment checks, and edit revision are handled outside the base generator.
 
-## 4.1.3 Skill
+## 4.1.5 Skill
 
 - [comfyui-workflow](https://github.com/marduk191/qwen3_mcp/tree/6921bf522e0eb30c84e133777c0580984ea51ffe/skills/comfyui-workflow) is a general ComfyUI workflow skill covering text-to-image, image-to-image, inpainting, ControlNet, LoRA, IPAdapter, Flux, SDXL, and SD3.5 workflow patterns.
 - [comfyui-character-gen](https://skills.sh/mckruz/comfyui-expert/comfyui-character-gen) is suitable for identity-preserving character generation, reference-based consistency, face preservation, and controlled character variants.

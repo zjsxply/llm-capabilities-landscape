@@ -2,14 +2,21 @@
 
 > 上级章节：1. 基础能力
 
-
 ## 1.9.1 Leaderboard
 
 - [LiveBench](https://livebench.ai/)（[开源代码](https://github.com/LiveBench/LiveBench)）：持续更新的综合 LLM 榜，推理、数学、编码、数据分析和语言任务按时间切片发布，适合作为通用推理模型的近时效对照。
 - [ARC Prize Leaderboard](https://arcprize.org/leaderboard)（[社区榜](https://arcprize.org/leaderboard/community)）：ARC-AGI-2 与 ARC-AGI-3 的官方竞赛榜，尤其适合观察 `program synthesis + executor + search`、多 agent 试错和游戏环境交互式代理的实际效果。
 - [Reasoning Gym Eval](https://github.com/open-thought/reasoning-gym-eval)：围绕 REASONING GYM 的开源评测榜与脚本，适合追踪可生成、可验证任务上的推理与 test-time scaling 方案。
 
-## 1.9.2 Bench
+## 1.9.2 Survey
+
+- [Towards Large Reasoning Models: A Survey of Reinforced Reasoning with Large Language Models](https://arxiv.org/abs/2501.09686)：回顾强化推理中的奖励、搜索、验证与训练流程。
+- [Logical Reasoning in Large Language Models: A Survey](https://arxiv.org/abs/2502.09100)：覆盖形式化、符号化与规则约束推理任务及失败模式。
+- [From System 1 to System 2: A Survey of Reasoning Large Language Models](https://arxiv.org/abs/2502.17419)：综述从快速生成到审慎多步推理的演进。
+- [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](https://arxiv.org/abs/2503.16419)：回顾高效推理中的自适应计算与成本质量权衡。
+- [A Survey of Frontiers in LLM Reasoning: Inference Scaling, Learning to Reason, and Agentic Systems](https://arxiv.org/abs/2504.09037)：连接推理时扩展、学习推理与 agentic reasoning systems。
+
+## 1.9.3 Bench
 
 - [ARC（ARC-AGI-1）](https://github.com/fchollet/ARC)：评什么：抽象推理与归纳（小网格变换/规律归纳）；核心思想：以极小数据与强分布外泛化为核心，迫使方法依赖程序归纳/规则抽取，而非语言模板。
 - [BIG-Bench Hard](https://arxiv.org/abs/2210.09261)（[开源代码](https://github.com/suzgunmirac/BIG-Bench-Hard)）：评什么：BIG-Bench 中人工筛出的高难推理子任务；核心思想：作为 chain-of-thought 基线常用集合，覆盖符号、常识、算法与语言推断。
@@ -38,6 +45,7 @@
 - [SeePhys](https://arxiv.org/abs/2505.19099)：评什么：基于图像的物理推理；核心思想：让视觉元素成为解题必需信息，用跨教育阶段和物理子领域的问题暴露“只靠题干文字走捷径”的模型缺陷。
 - [REASONING GYM / Reasoning Gym Eval](https://arxiv.org/abs/2505.24760)：评什么：带可验证奖励的程序化推理环境；核心思想：用可生成、可判分的任务族覆盖逻辑、算法、符号与组合推理，适合作为强化学习和 test-time search 的通用 harness。
 - [TurnBench-MS](https://arxiv.org/abs/2506.01341)：评什么：多轮、多步推理中的状态维护与约束更新；核心思想：把推理过程拆进连续交互回合，检验模型是否能在前后轮信息变化下保持一致决策。
+- [LogiPlan](https://arxiv.org/abs/2506.10527)：评测结构化关系图上的逻辑规划与关系推理。核心思想：通过对象数量、关系类型与关系链深度控制难度，并覆盖计划生成、一致性检测和关系查询任务，检验模型是否真正遵守图结构约束，而不是只生成貌似合理的文本。
 - [Decrypto Benchmark](https://arxiv.org/abs/2506.20664)：评什么：合作与竞争通信游戏中的多 agent 推理和 theory of mind。核心思想：用交互式游戏平台测试模型如何推断其他 agent 的信念、线索和意图。
 - [ZebraLogic](https://proceedings.mlr.press/v267/lin25i.html)（[榜单](https://huggingface.co/spaces/WildEval/ZebraLogic)，[数据集](https://huggingface.co/datasets/allenai/ZebraLogicBench)）：评什么：可控复杂度的逻辑格谜题与 CSP 式演绎推理。核心思想：通过控制变量数、约束数和冲突结构观察模型推理随搜索空间增大时的崩塌点。
 - [StrucText-Eval](https://aclanthology.org/2025.acl-long.11/)：评什么：结构丰富文本上的推理。核心思想：利用标题、列表、表格等结构信号测试模型是否真正使用文档组织方式，而不是把文本压平为普通问答。
@@ -56,7 +64,8 @@
 - [CONDESION-BENCH](https://arxiv.org/abs/2604.09029)：评测组合动作空间中的条件决策能力。核心思想：要求模型在显式可行性条件下组合出有效动作，而不是从固定候选选项中做选择。
 - [LongCoT](https://arxiv.org/abs/2604.14140)：评什么：专家设计题中的长程 chain-of-thought 推理。核心思想：在最终答案可验证的前提下，隔离模型管理大量相互依赖推理步骤时的失败。
 - [SOTOPIA-TOM](https://arxiv.org/abs/2605.02307)：通过心智理论场景评估多智能体互动中的信息管理能力，将社会智能体评测从表层对话质量扩展到信息状态推理。
-## 1.9.3 Agent Harness
+
+## 1.9.4 Agent Harness
 
 - [ReAct](https://arxiv.org/abs/2210.03629)（[开源代码](https://github.com/ysymyth/ReAct)）把 reasoning trace 与工具/环境 action 交替编排，是通用推理 agent 的早期强基线。
 - [Reflexion](https://arxiv.org/abs/2303.11366)（[开源代码](https://github.com/noahshinn/reflexion)）把失败轨迹转成语言反馈和 episodic memory，再用于下一轮尝试。
@@ -77,7 +86,8 @@
 - [iMAD](https://arxiv.org/abs/2511.11306)：面向高效 LLM inference 的多智能体辩论 harness。核心思想：协调辩论智能体与聚合机制，使推理时协作在控制额外计算的同时提升推理准确性。
 - [Reaching Agreement Among Reasoning LLM Agents](https://arxiv.org/abs/2512.20184)：面向推理 agent 的一致性感知编排协议；设计关键词包括增量 quorum 检测、提前终止、安全与活性保证，以及减少拖尾延迟。
 - [Executable World Models for ARC-AGI-3](https://arxiv.org/abs/2605.05138)（[开源代码](https://github.com/alexisfox7/RGB-Agent)）：面向 ARC-AGI-3 榜单的 Read-Grep-Bash agent；设计关键词：可执行世界模型、文件化环境观察、shell 工具调用、以代码和日志维护任务状态。
-## 1.9.4 Skill
+
+## 1.9.5 Skill
 
 - [skill-with-prompt-engineering](https://clawhub.ai/golofu/skill-with-prompt-engineering) 内含 `CoT / ReAct / self-consistency / multi-path reasoning` 等可直接复用的推理套路。
 - [sympy](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/sympy) 适合把中间推理转成可执行程序或符号表达式。

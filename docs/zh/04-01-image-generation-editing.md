@@ -4,7 +4,20 @@
 
 说明：本页收纳主目标为图片创作、文本到图像生成、图像编辑、视觉生成评测或生成图像安全性的 benchmark 与 harness。图像/OCR 理解类 benchmark 仍保留在 [1.5 图像](01-05-image-ocr.md)。
 
-## 4.1.1 Bench
+## 4.1.1 Leaderboard
+
+- [Artificial Analysis Text to Image Leaderboard](https://artificialanalysis.ai/text-to-image)：基于盲测人类偏好的公开文本到图像竞技场式对比榜单。
+- [Arena Image Edit Leaderboard](https://arena.ai/en/leaderboard/image-edit)：面向指令式图像编辑系统的公开竞技场榜单。
+
+## 4.1.2 Survey
+
+- [Text-to-image Diffusion Models in Generative AI: A Survey](https://arxiv.org/abs/2303.07909)：文本到图像扩散系统及其评测的基础综述。
+- [Diffusion Model-Based Image Editing: A Survey](https://arxiv.org/abs/2402.17525)：综述指令式与文本驱动图像编辑方法及评测。
+- [A Survey of Multimodal-Guided Image Editing with Text-to-Image Diffusion Models](https://arxiv.org/abs/2406.14555)：回顾由文本、mask、layout、参考图等条件引导的编辑。
+- [Trustworthy Text-to-Image Diffusion Models: A Timely and Focused Survey](https://arxiv.org/abs/2409.18214)：覆盖安全、公平、隐私、鲁棒性与可信问题。
+- [Personalized Image Generation with Deep Generative Models: A Decade Survey](https://arxiv.org/abs/2502.13081)：回顾主体保持、参考条件与个性化生成。
+
+## 4.1.3 Bench
 
 - [HarmonyIQA](https://arxiv.org/abs/2501.01116)：评测图像 harmonization 质量判断。核心思想：收集多个 harmonization 算法生成的合成图并配套人类偏好分数，测试图像质量模型能否发现通用 IQA 容易忽略的前景与背景光照、颜色不一致。
 - [MEt3R](https://arxiv.org/abs/2501.06336)：评测生成图像的多视角一致性。核心思想：衡量不同生成视角是否保持共同的三维结构，从而暴露单图质量指标看不到的空间一致性问题。
@@ -67,7 +80,7 @@
 - [SCALE / ZoneMaestro](https://arxiv.org/abs/2605.02537)：评估不规则室内场景生成中的复杂空间编排。核心思路是用密集空间关系、功能区域和非凸布局施压，使空间推理评测超越简单物体摆放。
 - [DynT2I-Eval](https://arxiv.org/abs/2605.06170)：用动态生成提示评测文生图模型。核心思想：构建结构化视觉语义空间，并在主体、逻辑约束、环境和构图等维度持续采样新提示，以降低 benchmark contamination，并诊断对齐、感知质量和美学表现。
 
-## 4.1.2 Agent Harness
+## 4.1.4 Agent Harness
 
 - [ComfyBench / ComfyAgent](https://arxiv.org/abs/2409.01392)（[开源代码](https://github.com/xxyQwQ/ComfyBench)；[项目页](https://xxyqwq.github.io/ComfyBench)）：ComfyUI workflow 生成与评测 harness，LLM agent 学习文档、生成可执行 workflow、运行并用 pass/resolve 式指标评分。
 - [ComfyGPT](https://arxiv.org/abs/2503.17671)（[开源代码](https://github.com/comfygpt/comfygpt)；[项目页](https://comfygpt.github.io/)）：面向 ComfyUI workflow 生成的自优化多 agent 系统，包含 flow generation、refinement 和 execution agents。
@@ -77,10 +90,11 @@
 - [Maestro](https://arxiv.org/abs/2509.10704)：面向自我改进文生图的智能体编排框架。核心思路：协调生成、批评和修订智能体，让图像输出通过显式流程改进，而不是依赖单次模型调用。
 - [PromptSculptor](https://arxiv.org/abs/2509.12446)：面向文生图提示词优化的多 agent harness。核心思想：把提示词分析、改写和质量反馈拆给协作 agent，在基础生成模型之外迭代提升图像生成提示。
 - [OmniVerifier](https://arxiv.org/abs/2510.13804)（[开源代码](https://github.com/Cominclip/OmniVerifier)）：面向视觉结果验证的生成式 verifier；可把“视觉判断”改造成显式验证与自我修正闭环，并在 ViVerBench 等上对比评测。
+- [ComfySearch](https://arxiv.org/abs/2601.04060)：用于 ComfyUI 工作流的自主探索 harness。核心思路是在严格工作流约束下搜索组件图，并用验证引导构建过程，使 Agent 能生成可执行且质量更高的 ComfyUI pipeline。
 - [coDrawAgents](https://arxiv.org/abs/2603.12829)：面向组合式图像生成的多智能体对话 harness。核心思想：拆分 interpreter、planner、checker 与 painter 等角色，在生成前迭代地约束复杂对象布局和属性。
 - [EditRefiner](https://arxiv.org/abs/2605.07457)：面向图像编辑优化的人类对齐智能体框架。核心思路是将图像编辑封装为迭代优化流程，由基础生成器之外的反馈、对齐检查和修订环节推动改进。
 
-## 4.1.3 Skill
+## 4.1.5 Skill
 
 - [comfyui-workflow](https://github.com/marduk191/qwen3_mcp/tree/6921bf522e0eb30c84e133777c0580984ea51ffe/skills/comfyui-workflow) 是通用 ComfyUI workflow skill，覆盖 text-to-image、image-to-image、inpainting、ControlNet、LoRA、IPAdapter、Flux、SDXL 和 SD3.5 工作流模式。
 - [comfyui-character-gen](https://skills.sh/mckruz/comfyui-expert/comfyui-character-gen) 适合身份保持的角色生成、基于参考图的一致性、face preservation 和受控角色变体。

@@ -8,8 +8,15 @@ Note: This category covers embodied agents and vision-language-action settings w
 
 - [VideoGameBench Leaderboard](https://vgbench.com/#leaderboard): A continuous leaderboard for embodied agent perception, navigation, manipulation, and planning in video-game environments; useful for tracking models and scaffolds that operate in executable visual worlds rather than static screenshots.
 
-## 2.11.2 Bench
+## 2.11.2 Survey
 
+- [A Survey on Robotics with Foundation Models: toward Embodied AI](https://arxiv.org/abs/2402.02385): Reviews foundation models for perception, planning, manipulation, navigation, and embodied reasoning.
+- [A Survey on Vision-Language-Action Models for Embodied AI](https://arxiv.org/abs/2405.14093): Frames the transition from vision-language understanding to action-conditioned policies.
+- [A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI](https://arxiv.org/abs/2505.01458): Connects simulators, task design, embodied learning, and reproducible evaluation.
+- [Large Model Empowered Embodied AI: A Survey on Decision-Making and Embodied Learning](https://arxiv.org/abs/2508.10399): Emphasizes decision making, embodied learning, planning, and action grounding.
+- [Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001): Maps datasets, benchmarks, and data infrastructure for VLA agents.
+
+## 2.11.3 Bench
 
 - [CALVIN](https://arxiv.org/abs/2112.03227): Evaluates language-conditioned long-horizon robot manipulation. Core idea: use a simulated tabletop environment and language instructions to test whether agents can compose manipulation skills over extended horizons.
 - [MineDojo](https://arxiv.org/abs/2206.08853): Evaluates open-ended embodied agents in Minecraft with internet-scale knowledge resources. Core idea: use a rich, long-horizon sandbox environment to test exploration, tool use, crafting, navigation, and task completion under language goals.
@@ -37,6 +44,7 @@ Note: This category covers embodied agents and vision-language-action settings w
 - [EmbodiedBench](https://proceedings.mlr.press/v267/yang25f.html) ([open-source code](https://github.com/EmbodiedBench/EmbodiedBench)): Evaluates multimodal large language models as vision-driven embodied agents. Core idea: combine embodied perception, planning, and action tasks into a unified benchmark for VLM/LLM agents operating from visual observations.
 - [VLN-PE](https://arxiv.org/abs/2507.13019): evaluates vision-language navigation under physically realistic robot embodiments. Core idea: compare navigation pipelines across humanoid, quadruped, and wheeled robots so embodied navigation is tested against physical and visual disparities rather than idealized motion assumptions.
 - [UAV-ON](https://arxiv.org/abs/2508.00288): Benchmarks open-world object-goal navigation for aerial agents. Core idea: evaluate whether UAV agents can use visual perception and spatial exploration to find target objects in open environments, extending embodied navigation beyond ground-level settings.
+- [Kitchen-R](https://arxiv.org/abs/2508.15663): An IsaacSim benchmark jointly evaluating task planning and low-level control in mobile manipulation. Core idea: bridge high-level instruction-following benchmarks and low-level robot-control benchmarks so integrated embodied systems are judged end to end.
 - [Follow-Bench](https://arxiv.org/abs/2509.10796): Evaluates socially aware robot person-following motion planning. Core idea: test whether embodied agents can follow people while respecting social navigation constraints rather than optimizing only geometric path efficiency.
 - [ConEQsA](https://arxiv.org/abs/2509.11663): Benchmarks concurrent and asynchronous embodied question scheduling and answering. Core idea: move beyond one-question EQA by giving agents multiple questions with different arrival times and urgencies, requiring shared memory, prioritization, exploration, and answer timing.
 - [MoMa-Kitchen](https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_MoMa-Kitchen_A_100K_Benchmark_for_Affordance-Grounded_Last-Mile_Navigation_in_Mobile_ICCV_2025_paper.html): Evaluates affordance-grounded last-mile navigation in mobile manipulation. Core idea: score whether navigation stops in positions that make subsequent manipulation feasible, not merely whether the robot gets near the object.
@@ -68,8 +76,9 @@ Note: This category covers embodied agents and vision-language-action settings w
 - [Minedojo-Verified](https://github.com/ByteDance-Seed/Seed2.0): A verified embodied-agent visual task subset reported in the Seed2.0 model card; no standalone public release of this verified subset has been confirmed. Core idea: track whether frontier multimodal agents can ground perception, planning, and action in an interactive environment beyond static screenshots.
 - [ESARBench](https://arxiv.org/abs/2605.01371): evaluates agentic UAV embodied search and rescue. Core idea: place aerial agents in search-and-rescue scenarios where perception, navigation, task planning, and action execution must work together rather than being scored as static visual understanding.
 - [OmniNavBench](https://arxiv.org/abs/2605.09441): Evaluates general-purpose embodied navigation across skills and embodiments. Core idea: use composite instructions spanning PointNav, VLN, ObjectNav, SocialNav, human following, and EQA so agents must coordinate subskills and generalize across robot morphologies rather than solve isolated navigation tasks.
-## 2.11.3 Agent Harness
+- [PokéLLMon](https://doi.org/10.1145/3771095): Evaluates grounding and reasoning for LLM agents in Pokémon battles. Core idea: use a competitive game environment where agents must connect battle state, type/move knowledge, opponent behavior, and action selection rather than answer static game trivia.
 
+## 2.11.4 Agent Harness
 
 MineDojo, CALVIN, VIMA, and LIBERO are benchmark-side harnesses as much as datasets: they define environments, observations, action spaces, task resets, and success checks. The reusable design pattern is `observe multimodal state -> parse language goal -> plan/subgoal -> act -> verify environment state -> recover`.
 - [Voyager](https://arxiv.org/abs/2305.16291) ([code](https://github.com/MineDojo/Voyager); [project page](https://voyager.minedojo.org/)): A canonical open-ended Minecraft agent with automatic curriculum, code-as-action, execution feedback, and a growing skill library, directly matching MineDojo-style long-horizon embodied-agent evaluation.
@@ -96,6 +105,7 @@ MineDojo, CALVIN, VIMA, and LIBERO are benchmark-side harnesses as much as datas
 - [GRaD-Nav++](https://arxiv.org/abs/2506.14009): an onboard vision-language-action framework for visual drone navigation. Core idea: combine language-command grounding, Gaussian-radiance-field simulation, differentiable dynamics, and real-time onboard execution so aerial agents can follow high-level instructions in unstructured environments.
 - [DyNaVLM](https://arxiv.org/abs/2506.15096): A zero-shot vision-language navigation harness with dynamic viewpoints and self-refining graph memory. Core idea: maintain and revise a navigation graph during exploration so route decisions can use accumulated spatial evidence instead of one-step observations.
 - [RALLY](https://arxiv.org/abs/2507.01378): an LLM-driven harness for agentic UAV swarms. Core idea: use role-adaptive coordination for yoked navigation so multiple aerial agents can share planning and execution responsibilities.
+- [Conditional Multi-Stage Failure Recovery](https://arxiv.org/abs/2507.06016): A failure-recovery harness for embodied agents. Core idea: route execution-time errors through staged diagnosis, recovery planning, action repair, and post-execution reflection so embodied tasks can recover from environmental and planning failures instead of terminating after the first mistake.
 - [SkyVLN](https://arxiv.org/abs/2507.06564): A UAV vision-and-language navigation framework paired with NMPC control in urban environments. Core idea: connect language-goal grounding with model-predictive flight control so aerial agents can execute route decisions in constrained city scenes.
 - [Enter the Mind Palace](https://arxiv.org/abs/2507.12846): A reasoning-and-planning harness for long-term active embodied question answering. Core idea: externalize long-horizon spatial and evidence memory so an embodied agent can navigate, collect observations, and answer questions over time.
 - [DISCOVERSE](https://arxiv.org/abs/2507.21981): A robot-simulation infrastructure layer for complex high-fidelity environments. Core idea: provide efficient simulated worlds and interfaces so embodied agents can be developed and evaluated beyond small fixed scenes.
@@ -150,7 +160,7 @@ MineDojo, CALVIN, VIMA, and LIBERO are benchmark-side harnesses as much as datas
 - [Think Twice, Act Once](https://arxiv.org/abs/2605.12620): Provides a verifier-guided action-selection wrapper for embodied agents. Core idea: sample candidate actions at test time and use a trained verifier to choose the most reliable action without changing the base policy.
 - vla-evaluation-harness ([code](https://github.com/allenai/vla-evaluation-harness); [leaderboard](https://allenai.github.io/vla-evaluation-harness/leaderboard/)): A unified VLA evaluation/deployment harness that connects Dockerized benchmarks, model servers, and evaluation jobs across LIBERO, CALVIN, SimplerEnv, RoboCasa, VLABench, RoboTwin, RLBench, BEHAVIOR-1K, OpenVLA-style servers, and related policy stacks.
 
-## 2.11.4 Skill
+## 2.11.5 Skill
 
 - [computer-vision-opencv](https://skills.sh/mindrally/skills/computer-vision-opencv) is useful for perception-side preprocessing and visual diagnostics in simulated embodied environments.
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) is useful when embodied or game environments require isolated runtime setup.

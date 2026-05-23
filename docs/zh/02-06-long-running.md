@@ -2,7 +2,6 @@
 
 > 上级章节：2. 基础 Agent
 
-
 ## 2.6.1 Leaderboard
 
 - [AssistantBench Leaderboard](https://huggingface.co/spaces/AssistantBench/leaderboard)：公开真实耗时网页助理任务的提交入口；它把 test set 答案隐藏并用 Hugging Face portal 收集预测，适合跟踪 web agent 在长程浏览与信息转移任务上的持续进展。
@@ -11,7 +10,15 @@
 - [HAL Long-Horizon Tracks](https://hal.cs.princeton.edu/)：Princeton HAL 聚合 AssistantBench、GAIA、Online Mind2Web 等任务，并报告成本、运行时间和 pass rate；可作为跨 benchmark 比较 long-horizon agent harness 的元榜单。
 - [ClawMark Leaderboard](https://claw-mark.com/leaderboard)：面向 1 到 3 天 timeline 的 coworker-agent 任务榜单，覆盖多模态输入、日历等待、消息协同和跨天状态维护，是比单会话长任务更接近 long-running autonomy 的公开入口。
 
-## 2.6.2 Bench
+## 2.6.2 Survey
+
+- [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432)：规划、记忆、工具使用与行动反馈闭环的基础综述。
+- [Large Language Model based Multi-Agents: A Survey of Progress and Challenges](https://arxiv.org/abs/2402.01680)：回顾协作、通信、任务分解与评测挑战。
+- [Understanding the planning of LLM agents: A survey](https://arxiv.org/abs/2402.02716)：覆盖任务分解、搜索、反思、外部工具与重规划。
+- [A Survey on Agent Workflow - Status and Future](https://arxiv.org/abs/2508.01186)：综述长时运行工作流如何被结构化、优化与监控。
+- [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407)：连接经验积累、自我改进与终身适应。
+
+## 2.6.3 Bench
 
 - [AssistantBench](https://arxiv.org/abs/2407.15711)（[项目页](https://assistantbench.github.io/)）：评什么：真实、耗时的开放网页助理任务。核心思想：让 agent 在房产监控、商户搜索等需要持续浏览和多步筛选的任务中工作，并用自动评价检查最终结果，早期暴露了网页 agent 在长时现实任务上的不稳定性。
 - [Vending-Bench](https://arxiv.org/abs/2502.15840)：评什么：长时运行自治体在超长时间跨度上的一致性与稳定性（以“自动经营售货机”为简化业务场景，单次运行可达 >20M tokens）。核心思想：把每一步都很简单但长程耦合的决策链拉长，显式暴露“高方差、失控（meltdown loops）、错误状态难以恢复”等长程 failure mode。
@@ -36,7 +43,7 @@
 - [π-Bench](https://arxiv.org/abs/2605.14678)：评什么：主动式个人助理 agent 的长期偏好、隐含意图和跨会话行动。核心思想：让 agent 在会持续演化的个人事务场景中判断何时主动行动、何时等待确认，以及如何在多轮上下文里保持用户偏好与任务边界。
 - [Vending-Bench 2](https://andonlabs.com/evals/vending-bench-2)：评什么：Andon Labs 自动售货机评测的新一版公开长程业务运营 agent 任务。核心思想：保留 Vending-Bench 的一年模拟经营设定，同时加入对抗性供应商、谈判、配送延迟、供应商失效、退款请求和更明确的账户余额评分，放大长期经营稳定性压力。
 
-## 2.6.3 Agent Harness
+## 2.6.4 Agent Harness
 
 - AutoGPT（[开源代码](https://github.com/Significant-Gravitas/AutoGPT)）：持续运行式自治代理框架，把任务队列、工具调用、长期执行与结果回写组织成可反复迭代的 agent loop，是公开生态里最早一批强调 long-running autonomy 的实现。
 - [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)）以 Minecraft 为平台做“终身学习”式长时程代理，核心 harness 是 `自动课程生成 + skill library + 可执行反馈` 的长期自增量闭环。
@@ -48,7 +55,7 @@
 - [ARE](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）把 long-running harness 做成动态环境运行时，支持异步事件、状态演化、外部工具和评测日志，适合研究持续执行中的计划更新与上下文维护。
 - Deep Agents（[开源代码](https://github.com/langchain-ai/deepagents)；[文档](https://docs.langchain.com/oss/python/deepagents/overview)）：batteries-included 长程 agent harness，包含 planning、subagents、filesystem state、上下文管理、shell access、持久记忆、人工审批、skills、tools 与 MCP 集成。
 
-## 2.6.4 Skill
+## 2.6.5 Skill
 
 - [implementation-planner](https://skills.sh/jumppad-labs/jumppad/implementation-planner) 适合把长链路任务拆成可 checkpoint 的阶段计划与验收点。
 - [tapestry](https://skills.sh/nicepkg/ai-workflow/tapestry) 适合把跨系统工具调用串成可持续运行的业务工作流骨架。

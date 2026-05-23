@@ -2,7 +2,6 @@
 
 > 上级章节：1. 基础能力
 
-
 ## 1.6.1 Leaderboard
 
 - [Video-MME Leaderboard](https://video-mme.github.io/home_page.html#leaderboard)：持续榜单：短、中、长视频的多任务理解；适合作为视频 VLM 综合能力的基础参照。
@@ -12,7 +11,14 @@
 - [MMVU Leaderboard](https://mmvu-benchmark.github.io/#leaderboard)：持续榜单：通用视频理解与问答；适合与 Video-MME、Video-MMMU 交叉筛选强视频 agent runtime。
 - [V-STaR Leaderboard](https://v-star-bench.github.io/#leaderboard)：持续榜单：视频空间-时间推理；适合专门观察 object motion、event ordering 和跨片段 grounding 能力。
 
-## 1.6.2 Bench
+## 1.6.2 Survey
+
+- [Video Understanding with Large Language Models: A Survey](https://arxiv.org/abs/2312.17432)：视频语言架构、任务、数据集与挑战的基础总览。
+- [VideoLLM Benchmarks and Evaluation: A Survey](https://arxiv.org/abs/2505.03829)：梳理 VideoLLM 的任务、指标、基准与评测局限。
+- [A Survey on Video Temporal Grounding with Multimodal Large Language Model](https://arxiv.org/abs/2508.10922)：聚焦视频中时间证据的定位与推理。
+- [Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)：把视频理解与幻觉检测及证据可靠性联系起来。
+
+## 1.6.3 Bench
 
 （以下按发布时间排序，覆盖 video knowledge、video reasoning、motion/perception、long-video、multi-video、streaming 与 agentic/web-video 等子任务。）
 
@@ -74,8 +80,7 @@ Video reasoning（时序/因果/多跳推理）：
 - [EgoMemReason](https://arxiv.org/abs/2605.09874)（[项目页](https://egomemreason.github.io/)；[数据集](https://huggingface.co/datasets/Ted412/EgoMemReason)；[开源代码](https://github.com/Ziyang412/EgoMemReason)）：评测长时第一视角视频的记忆驱动推理；核心思想是从 LongVideoBench 引用链扩展到生活记录式 egocentric video，要求模型保留、检索并组合长期个人视觉证据。
 - [TOC-Bench](https://arxiv.org/abs/2605.09904)：评测视频大模型的 temporal object consistency；核心思想是追踪同一对象跨时间片段的身份、属性和状态一致性，避免模型只凭局部帧做静态识别。
 
-
-## 1.6.3 Agent Harness
+## 1.6.4 Agent Harness
 
 - [LMMs-Eval](https://arxiv.org/abs/2407.12772)（[开源代码](https://github.com/EvolvingLMMs-Lab/lmms-eval)）：多模态评测 harness，覆盖 Video-MME、LongVideoBench、Video-MMMU 等视频任务；适合作为复现实验和批量榜单提交的统一入口。
 - [VideoChat-Online](https://arxiv.org/abs/2501.00584)（[开源代码](https://github.com/MCG-NJU/VideoChat-Online)）：在线/流式视频理解的参考实现，与 OVBench 的 benchmark-specific runtime 强绑定。
@@ -100,7 +105,7 @@ Video reasoning（时序/因果/多跳推理）：
 - [ReTool-Video](https://arxiv.org/abs/2605.13228)（开源代码：未确认公开）：递归式工具调用视频 agent；核心思想是把高层视频意图落到细粒度 MetaAug-Video Tool Library 上的可执行工具链，并在运行时修复、替换或分解无法直接匹配的动作。
 - [VideoSeeker](https://arxiv.org/abs/2605.16079)（开源代码：论文称将公开，暂未确认稳定公开仓库）：面向视频理解的原生 agentic tool invocation；强调 instance-level 工具选择，把 search、grounding 和 verification 纳入模型决策过程。
 
-## 1.6.4 Skill
+## 1.6.5 Skill
 
 - [ffmpeg](https://skills.sh/digitalsamba/claude-code-video-toolkit/ffmpeg) 适合切片、抽帧、转码。
 - [whisper](https://skills.sh/davila7/claude-code-templates/whisper) 适合视频语音转写。

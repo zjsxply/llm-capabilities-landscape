@@ -2,7 +2,6 @@
 
 > Parent section: 2. Basic Agents
 
-
 ## 2.3.1 Leaderboard
 
 - [BrowseComp Benchmark Leaderboard](https://llm-stats.com/benchmarks/browsecomp): A third-party continuous aggregation of BrowseComp scores, useful for tracking public reported results on live web search capability; it is not OpenAI's official submission leaderboard and should be cited as an aggregate leaderboard.
@@ -11,11 +10,20 @@
 - [Search Arena](https://github.com/lmarena/search-arena): An entry point for search-augmented LLM preference data and analysis; useful for observing relationships among search augmentation, citations, source credibility, and user preferences.
 - [Wizwand BrowseComp-ZH SOTA](https://www.wizwand.com/sota/deep-research-on-browsecomp-zh-score): A third-party BrowseComp-ZH SOTA aggregation page; useful for supplementing public-result leads for web-search agents such as BrowseMaster, InfoSeeker, and ReSum.
 
-## 2.3.2 Bench
+## 2.3.2 Survey
+
+- [From Matching to Generation: A Survey on Generative Information Retrieval](https://arxiv.org/abs/2404.14851): Explains retrieval moving from document ranking to generated results and answers.
+- [Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG](https://arxiv.org/abs/2501.09136): Reviews agents that plan retrieval, select tools, and iteratively consume evidence.
+- [A Survey of Large Language Model Empowered Agents for Recommendation and Search: Towards Next-Generation Information Retrieval](https://arxiv.org/abs/2503.05659): Connects user intent, interactive search, retrieval planning, and feedback adaptation.
+- [A Survey of WebAgents: Towards Next-Generation AI Agents for Web Automation with Large Foundation Models](https://arxiv.org/abs/2503.23350): Covers web environments, perception, planning, action execution, evaluation, and safety.
+- [A Survey of LLM-based Deep Search Agents: Paradigm, Optimization, Evaluation, and Challenges](https://arxiv.org/abs/2508.05668): Frames complex search as iterative query planning, evidence acquisition, evaluation, and synthesis.
+
+## 2.3.3 Bench
 
 - [WebArena](https://arxiv.org/abs/2307.13854): Evaluates end-to-end web-task completion in a browser-native action space; core idea: self-hosted multi-site web environment, native browser actions, and automatic evaluation scripts. ([code](https://github.com/web-arena-x/webarena))
 - [VisualWebArena](https://arxiv.org/abs/2401.13649): Evaluates a WebArena extension with visual web understanding; core idea: incorporate visual perception and interaction into the same browser-native runtime loop. ([code](https://github.com/web-arena-x/visualwebarena))
 - [ST-WebAgentBench](https://arxiv.org/abs/2410.06703): Evaluates behavior and constraint following of safe and trustworthy web agents; core idea: provide a reproducible safety-evaluation template using the BrowserGym/WebArena paradigm. ([code](https://github.com/segev-shlomov/ST-WebAgentBench))
+- [Unsafe LLM-Based Search](https://arxiv.org/abs/2502.04951): Evaluates safety risks in AI-powered search engines. Core idea: define threat models and risk types, then test production search systems on malicious or unsafe query conditions where retrieval and generation can quote harmful content or cite malicious sites.
 - [BrowseComp](https://arxiv.org/abs/2504.12516): Evaluates information acquisition through "retrieval, reading, and synthesis" in the real internet environment; core idea: constrain information acquisition as an executable browsing and evidence-chain process rather than offline knowledge QA.
 - [BrowseComp-ZH](https://arxiv.org/abs/2504.19314) ([code](https://github.com/PALIN2018/BrowseComp-ZH); [Leaderboard](https://huggingface.co/spaces/PALIN2018/BrowseComp-ZH); [Wizwand BrowseComp-ZH SOTA](https://www.wizwand.com/sota/deep-research-on-browsecomp-zh-score)): Evaluates difficult web browsing and multi-hop retrieval reasoning in the Chinese internet environment; core idea: explicitly benchmark platform fragmentation, cross-page retrieval, and information synthesis in the Chinese web ecosystem.
 - [Seal-0 / SealQA](https://arxiv.org/abs/2506.01062): Evaluates search-augmented reasoning under harder answer-completion requirements. Core idea: raise the bar for retrieval plus reasoning by checking whether agents can gather sufficient evidence before producing the final answer.
@@ -38,14 +46,16 @@
 - [MERRIN](https://arxiv.org/abs/2604.13418): What it evaluates: multimodal evidence retrieval and multi-hop reasoning in noisy web environments. Core idea: include text, images, video, and audio together in search tasks.
 - [StressWeb](https://arxiv.org/abs/2604.16385): What it evaluates: robustness of web agents under real interaction perturbations. Core idea: systematically inject dynamic DOM changes, loading delays, prompt variants, and UI noise into WebArena/VisualWebArena-style tasks to diagnose weak points in search and browsing agents.
 
-## 2.3.3 Agent Harness
+## 2.3.4 Agent Harness
 
 - [MindSearch](https://arxiv.org/abs/2407.20183) ([code](https://github.com/InternLM/MindSearch)): A multi-agent web-search harness that decomposes user questions into subquestions, searches and integrates evidence, and returns a citation-backed answer; it is a name-known search system that generic BrowseComp keyword searches can miss.
 - [Co-STORM](https://arxiv.org/abs/2408.15232) ([code](https://github.com/stanford-oval/storm); [project page](http://storm.genie.stanford.edu)): A collaborative information-seeking harness where multiple LM agents explore sources, maintain a dynamic mind map, and allow user steering before producing a cited report, bridging open-web search and deep research.
+- [FinSearch](https://arxiv.org/abs/2502.15684): A temporal-aware financial search-agent framework. Core idea: decompose financial queries into graph-structured subqueries, adaptively rewrite searches, weight evidence by time context, and evaluate on FinSearchBench-24.
 - [WebThinker](https://arxiv.org/abs/2504.21776) ([code](https://github.com/RUC-NLPIR/WebThinker); interleaves `think-search-draft` within one long chain, representing a transferable "search-write integrated" internet-search agent paradigm)
 - [Alita](https://arxiv.org/abs/2505.20286) ([code](https://github.com/CharlesQ9/Alita); a more general tool-orchestration agent that can connect to many search/browsing runtimes, not tied to a single benchmark)
 - [BrowseMaster](https://arxiv.org/abs/2508.09129) (code: no stable public repository found; a dual-agent web-browsing framework enhanced with programmatic tools, reporting strong results on BrowseComp-en and BrowseComp-ZH; useful as a reference for splitting "search-strategy agent + verification agent")
 - [BrowserAgent](https://arxiv.org/abs/2510.10666) ([code](https://github.com/TIGER-AI-Lab/BrowserAgent); connects real browser action spaces and explicit memory to the agent loop, useful as a general baseline for browser-native search and browsing tasks)
+- [M-ASK](https://arxiv.org/abs/2601.04703): A multi-agent search harness that separates search behavior agents from knowledge optimization agents. Core idea: make agentic search less monolithic by structuring planning, search execution, and knowledge refinement so credit assignment and trajectory control can be studied explicitly.
 - [SmartSearch](https://arxiv.org/abs/2601.04888) (code: no stable public repository found; a process-reward query-rewriting framework for search agents; core idea: use query-level rewards to guide agents in learning when to expand, narrow, and rewrite search goals)
 - [Search More, Think Less (SMTL)](https://arxiv.org/abs/2602.22675) ([code](https://github.com/OPPO-PersonalAI/SMTL); a long-horizon agentic search framework; core idea: allocate more budget to parallel retrieval and evidence coverage, reducing the burden of expensive deep reasoning for cross-scenario generalization)
 - [InfoSeeker](https://arxiv.org/abs/2604.02971) ([code](https://github.com/Memento-Teams/InfoSeeker); a hierarchical parallel web information-addressing framework that reports efficiency and accuracy gains on WideSearch-en and BrowseComp-ZH; its `planner -> parallel search -> evidence merge` harness is worth reusing)
@@ -53,8 +63,9 @@
 - [Web2BigTable](https://arxiv.org/abs/2604.27221) ([code](https://github.com/web2bigtable/Web2BigTable); an internet-scale information search and extraction system; core idea: use bi-level multi-agent search to find sources first, then extract structured tables, directly adjacent to WideSearch's table-output protocol)
 - [LongSeeker](https://arxiv.org/abs/2605.05191) (code: not public; a long-horizon search agent; core idea: elastically manage working context with Context-ReAct operations such as `Skip / Compress / Rollback / Snippet / Delete`, reducing cost, forgetting, and hallucination in long-chain search)
 - [Context Gathering Decision Process](https://arxiv.org/abs/2605.07042) (code: not public; formalizes agentic search as a POMDP; core idea: explicitly model "whether to keep searching, where to search, and when to stop", providing a unified decision framework for long-context codebases, enterprise data, and web retrieval)
+- [DIVAgent](https://doi.org/10.1145/3746252.3761059): A diversified search-agent harness inspired by human search behavior. Core idea: model query-intent understanding, result exploration, and diversification as an agent workflow so search systems can avoid redundant results and cover more user intents.
 
-## 2.3.4 Skill
+## 2.3.5 Skill
 
 - [playwright-cli](https://github.com/microsoft/playwright-cli/tree/main/skills/playwright-cli) (a reusable browser-native action skill, close to the WebArena-style action space)
 - [playwright](https://skills.sh/openai/skills/playwright) (a general Playwright skill, focused on the browser execution layer)

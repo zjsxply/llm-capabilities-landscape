@@ -2,7 +2,6 @@
 
 > 上级章节：1. 基础能力
 
-
 ## 1.4.1 Leaderboard
 
 - [Hallucinations Leaderboard](https://huggingface.co/spaces/hallucinations-leaderboard/leaderboard)：早期开放幻觉榜单尝试；价值在于把 TruthfulQA、HaluEval、FEVER 等信号聚合到统一比较入口。
@@ -10,7 +9,15 @@
 - [Vectara Hallucination Evaluation Leaderboard](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard)：面向摘要/RAG 场景的公开幻觉榜单；价值在于持续比较回答是否由输入事实支撑，并提供 HHEM/FaithJudge 等自动评测器线索。
 - [Google DeepMind Eval Suite 中的 FACTS 入口](https://deepmind.google/research/evals/)：FACTS 事实性评测的公开入口；价值在于把 grounded、search、parametric 和 multimodal factuality 等设置组织为可比较、可提交、可复核的评测轨道。
 
-## 1.4.2 Bench
+## 1.4.2 Survey
+
+- [Survey of Hallucination in Natural Language Generation](https://arxiv.org/abs/2202.03629)：幻觉定义、成因、检测、数据集与缓解方法的基础分类综述。
+- [A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models](https://arxiv.org/abs/2401.01313)：系统组织检索、验证、解码、提示与训练侧缓解路线。
+- [Factuality of Large Language Models: A Survey](https://arxiv.org/abs/2402.02420)：把幻觉放在更广义的事实性评测与改进方法中理解。
+- [A Comprehensive Survey of Hallucination in Large Language, Image, Video and Audio Foundation Models](https://arxiv.org/abs/2405.09589)：梳理语言、图像、视频与音频基础模型中的幻觉问题。
+- [A Survey of Multimodal Hallucination Evaluation and Detection](https://arxiv.org/abs/2507.19024)：聚焦多模态幻觉的基准与检测器设计。
+
+## 1.4.3 Bench
 
 - [FEVER](https://arxiv.org/abs/1803.05355)：评测基于证据的事实核查与声明验证；核心思想是把 claim、Wikipedia 证据句和 supports/refutes/not-enough-info 标签组织成可检索、可判定的事实性任务，也是早期 Hallucinations Leaderboard 聚合信号之一。
 - [TruthfulQA](https://arxiv.org/abs/2109.07958)（数据集：[truthfulqa/truthful_qa](https://huggingface.co/datasets/truthfulqa/truthful_qa)）：评测模型在常见迷思问题上的“真实而非迎合”回答；核心思想是把问题设计成“最常见的错误答案更诱人”，以暴露幻觉与胡编倾向。
@@ -36,7 +43,7 @@
 - [MMM-Fact](https://arxiv.org/abs/2510.25120)：评估不同检索难度下的多模态、多领域事实核查。核心思想：测试模型能否把事实性声明 grounding 到检索到的多模态证据中，而不是依赖无支撑生成。
 - [Vectara Hallucination Evaluation](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard)：评测摘要/RAG 场景中生成内容是否忠实于输入事实；核心思想是把真实文档摘要和自动 factuality judge 接成公开榜单协议，适合跟踪 HHEM、FaithJudge 等检测器。
 
-## 1.4.3 Agent Harness
+## 1.4.4 Agent Harness
 
 - [RARR](https://arxiv.org/abs/2210.08726)（[开源代码](https://github.com/anthonywchen/RARR)）：retrieval-backed hallucination repair；典型闭环为 `声明切分 -> 检索证据 -> 证据过滤/对齐 -> 回填修订`。
 - [SelfCheckGPT](https://arxiv.org/abs/2303.08896)（[开源代码](https://github.com/potsawee/selfcheckgpt)）：通过自一致性与变体采样检测可疑声明；核心思想是把“不一致”作为 hallucination 风险信号。
@@ -52,7 +59,7 @@
 - [Premise Verification](https://arxiv.org/abs/2504.06438)：面向 false-premise query 的检索增强逻辑验证框架；核心思想是在生成前把用户问题转成逻辑前提并逐条查证，提前阻断“顺着错误前提胡编”的幻觉链路。
 - [FaithJudge](https://arxiv.org/abs/2505.04847)（[开源代码](https://github.com/vectara/FaithJudge)）：面向 factual faithfulness 的自动 judge；核心思想是用可复用评测器判断生成内容是否忠实于给定证据，并服务于 Vectara 幻觉榜单的后续版本。
 
-## 1.4.4 Skill
+## 1.4.5 Skill
 
 - [fact-checker](https://skills.sh/shubhamsaboo/awesome-llm-apps/fact-checker) 适合事实核查与证据追踪。
 - [fact-checker](https://skills.sh/daymade/claude-code-skills/fact-checker) 更偏“报告式核查结果”。

@@ -16,7 +16,13 @@
 - [DevOps-Gym](https://www.devops-gym.com/)：更偏 DevOps/系统操作的终端近邻榜单/评测入口。
   它适合观察 agent 在部署、配置、监控和故障恢复中的命令行能力，与 Terminal-Bench 的单任务 Linux 环境形成互补。
 
-## 1.12.2 Bench
+## 1.12.2 Survey
+
+- [OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use](https://arxiv.org/abs/2508.04482)：综述操作系统级交互、观察行动闭环、评测与安全；终端使用是其中的重要子场景。
+- [AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities](https://arxiv.org/abs/2508.11126)：回顾 agentic programming 工作流中的命令执行、调试、测试与验证。
+- [Inside the Scaffold: A Source-Code Taxonomy of Coding Agent Architectures](https://arxiv.org/abs/2604.03515)：归纳暴露 shell 执行、修复循环与环境控制的 coding-agent scaffold。
+
+## 1.12.3 Bench
 
 - [Terminal-Bench 2.0](https://www.tbench.ai/registry/terminal-bench/2.0)（[官方榜单](https://www.tbench.ai/leaderboard/terminal-bench/2.0)；运行入口：[Harbor / Terminal-Bench 运行入口](https://harborframework.com/docs/running-tbench)；论文：[Terminal-Bench](https://arxiv.org/abs/2601.11868)；[开源代码](https://github.com/laude-institute/terminal-bench)）：评什么：真实 Linux 终端环境中的端到端任务完成，官方注册页当前展示 89 个任务。
   核心思想：每个任务由 instruction、Docker 环境与测试脚本定义，agent 必须通过读写文件、运行命令、安装/调用工具、调试失败并产出可验证结果来通过自动评测。
@@ -40,7 +46,8 @@
   核心思想：从 Terminal-Bench 2.1 派生任务，在自然文件、README、注释和日志中同时放入必要线索与干扰线索，补足“盲目跟随环境文本也能过关”的评测盲点。
 - [ClawForge](https://arxiv.org/abs/2605.14133)：评什么：可执行 command-line agent benchmark 的生成。
   核心思想：从场景模板、初始化状态、参考轨迹和 validators 编译可复现任务，重点考察 agent 是否会检查已有状态、处理冲突产物并达到正确最终状态。
-## 1.12.3 Agent Harness
+
+## 1.12.4 Agent Harness
 
 论文与方法类工作：
 
@@ -99,7 +106,7 @@ Terminal-Bench 2.0 榜单中的主要 agent（截至 2026-05-22，官方榜单�
 - spoox-m（[开源代码](https://github.com/plaume8/spoox)）：TUM/社区提交的终端 agent；公开信息有限，但代码可用于查看其 Terminal-Bench 适配方式。
 - Dakou Agent（[官方主页](https://dakou.iflow.cn/)）：iflow 的 coding agent；榜单中作为中文产品型 terminal coding agent 参考。
 
-## 1.12.4 Skill
+## 1.12.5 Skill
 
 - [mcp-code-execution](https://skills.sh/athola/claude-night-market/mcp-code-execution) 适合把终端任务组织成 `写代码 -> 执行 -> 读错误 -> 修复` 的可复用循环。
 - [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) 适合为终端调用提供隔离执行环境，降低本机副作用风险。

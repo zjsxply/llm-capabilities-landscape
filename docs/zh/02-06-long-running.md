@@ -32,6 +32,7 @@
 - [ClawMark](https://arxiv.org/abs/2604.23781)（[项目页](https://claw-mark.com/)；[开源代码](https://github.com/evolvent-ai/ClawMark)）：评什么：多日历时间跨度的多模态同事型 agent。核心思想：用 1 到 3 天的真实日程、消息、文件和外部事件约束任务，评估 agent 是否能等待、提醒、跨天续接和处理延迟反馈。
 - [Odysseys](https://arxiv.org/abs/2604.24964)（[项目页](https://odysseys-website.pages.dev/)）：评什么：真实网页上的长程 agent 任务。核心思想：把现实网站、多阶段目标、状态依赖和错误恢复放进同一条执行轨迹，测试 web agent 是否能在更长时间跨度内保持任务一致性。
 - [π-Bench](https://arxiv.org/abs/2605.14678)：评什么：主动式个人助理 agent 的长期偏好、隐含意图和跨会话行动。核心思想：让 agent 在会持续演化的个人事务场景中判断何时主动行动、何时等待确认，以及如何在多轮上下文里保持用户偏好与任务边界。
+- [Vending-Bench 2](https://andonlabs.com/evals/vending-bench-2)：评什么：Andon Labs 自动售货机评测的新一版公开长程业务运营 agent 任务。核心思想：保留 Vending-Bench 的一年模拟经营设定，同时加入对抗性供应商、谈判、配送延迟、供应商失效、退款请求和更明确的账户余额评分，放大长期经营稳定性压力。
 
 ## 2.6.3 Agent Harness
 

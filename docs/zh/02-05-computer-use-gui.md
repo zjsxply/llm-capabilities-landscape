@@ -24,6 +24,7 @@
 - [WorldGUI](https://arxiv.org/abs/2502.08047)（[开源代码](https://github.com/showlab/WorldGUI)）：评测桌面 GUI agent 从任意中间状态启动时的自动化能力；核心思想是把真实用户常见的“半完成/非默认界面”纳入任务初态，检验 planning 与恢复能力而不是只测标准起点。
 - [MM-BrowseComp](https://arxiv.org/abs/2502.14595)：评测多模态浏览与信息获取（含 GUI/网页交互成分）；核心思想是把“看、点、读、写”纳入同一条可执行轨迹并可评分。
 - [BEARCUBS](https://arxiv.org/abs/2503.07919)（[项目页](https://bear-cubs.github.io/)）：评测 computer-using web agent 在 live web 中完成信息查找、浏览与多模态交互的能力；核心思想是用会持续变化的真实网页内容、视频理解和 3D 导航等任务，避免纯文本检索绕过真实网页操作。
+- [ScreenSpot-Pro](https://arxiv.org/abs/2504.07981)：评测专业高分辨率截图上的 GUI grounding。核心思想：要求模型按自然语言指令定位很小的 UI 目标，压力测试高分辨率感知和精确坐标定位，而不只看任务级成功率。
 - [RealWebAssist](https://arxiv.org/abs/2504.10445)（[开源代码](https://github.com/SCAI-JHU/RealWebAssist)）：评测真实用户长程网页协助；核心思想是把模糊、会变化、需要分阶段确认的用户指令组织成长序列任务，补足一次性网页 benchmark 对真实协助场景的覆盖不足。
 - [OSUniverse](https://arxiv.org/abs/2505.03570)（[开源代码](https://github.com/agentsea/osuniverse)）：评测复杂、多模态、桌面导向 GUI 导航任务；核心思想是用跨应用、跨模态的真实桌面任务补足 OSWorld 之后对视觉理解、工具选择和长链路导航的综合压力测试。
 - [RedTeamCUA / RTC-Bench](https://arxiv.org/abs/2505.21936)（[项目页](https://osu-nlp-group.github.io/RedTeamCUA)）：评测混合 Web-OS 环境中 computer-use agent 的间接提示注入风险；核心思想是用真实 GUI/网页动作空间和红队样例暴露跨应用执行时的攻击面。
@@ -39,9 +40,13 @@
 - [OSWorld-MCP](https://arxiv.org/abs/2510.24563)（[项目页](https://osworld-mcp.github.io/)）：评测 computer-use agent 在 GUI 操作之外调用 MCP 工具的能力；核心思想是在真实 OSWorld 式环境中引入 158 个跨常用应用的 MCP 工具，并同时报告任务准确率、工具调用率和平均完成步数。
 - [MobileWorld](https://arxiv.org/abs/2512.19432)（[开源代码](https://github.com/Tongyi-MAI/MobileWorld)）：评测自主移动 agent 在 agent-user 交互与 MCP 增强环境中的任务完成；核心思想是把移动端 GUI 操作、用户澄清和外部工具调用放进统一 benchmark，补足 AndroidWorld 的静态任务边界。
 - [OS-Marathon](https://arxiv.org/abs/2601.20650)（[项目页](https://os-marathon.github.io/)）：评测 computer-use agent 的长程重复 GUI 任务；核心思想是让 agent 在长时间、重复但状态会累积变化的桌面操作中保持节奏、记忆和错误恢复能力。
+- [AgenticShop](https://arxiv.org/abs/2602.12315)：评测开放网页上的个性化商品筛选。核心思想：要求 agent 在嘈杂电商信息中浏览、推断用户偏好并生成可核验购物建议，而不只是在固定网站上导航。
 - [MemGUI-Bench](https://arxiv.org/abs/2602.06075)（[开源代码](https://github.com/lgy0404/MemGUI-Bench)）：评测移动 GUI agent 的记忆能力；核心思想是用跨会话、跨应用和动态环境任务专门测 memory retention 与 cross-session learning。
+- [TimeWarp](https://arxiv.org/abs/2603.04949)：评测 web agent 对网站变化的鲁棒性。核心思想：在容器化历史 UI、设计和布局版本中回放任务，避免 agent 只适配一个冻结网页版本。
+- [OSExpert-Eval](https://arxiv.org/abs/2603.07978)：评测 computer-use agent 能否高效掌握专业 GUI 技能。核心思想：用接近专家分解和细粒度动作要求的任务比较 agent，暴露其在陌生界面上的迁移慢和探索低效问题。
 - [ClawBench](https://arxiv.org/abs/2604.08523)（[项目页](https://claw-bench.com/)；[开源代码](https://github.com/reacher-z/ClawBench)；[数据集](https://huggingface.co/datasets/TIGER-Lab/ClawBench)）：评测真实 live website 上的浏览器 agent；核心思想是用 HTTP 请求拦截、payload judge 和多层轨迹记录，让写操作型网页任务可以被评测而不真实提交破坏性操作。
 - [OS-Blind](https://arxiv.org/abs/2604.10577)（[项目页](https://limenlp.github.io/OS_Blind/)）：评测用户指令无害但执行上下文可能有害时的 CUA 安全盲点；核心思想是让危害来自环境状态或执行后果，要求 agent 在 GUI 操作前主动识别风险。
+- [OS-SPEAR](https://arxiv.org/abs/2604.24348)：从安全、性能、效率与鲁棒性四个维度评测 OS agent。核心思想：提供 OS-agent 轨迹和失败类型分析工具，而不只报告最终任务成功率。
 - [Odysseys](https://arxiv.org/abs/2604.24964)（[项目页](https://odysseys-website.pages.dev/)）：评测网页 agent 的真实长程 GUI 任务；核心思想是用现实网站中的多阶段目标和状态依赖测试 agent 的导航、信息整合、错误恢复与持续执行能力。
 - [WindowsWorld](https://arxiv.org/abs/2604.27776)：评测 Windows 上的跨应用 GUI 工作流；核心思想是把多应用、多检查点的职业流程显式化，专门放大跨应用协调与阶段性核验失败。
 - [SaaS-Bench](https://arxiv.org/abs/2605.15777)（[开源代码](https://github.com/UniPat-AI/SaaS-Bench)）：评测真实 SaaS 系统上的专业工作流；核心思想是把可部署的多应用业务流程、检查点验证和长链路状态维护放进 self-hosted SaaS 环境。
@@ -72,7 +77,9 @@
 - [CUA-Skill Agent](https://arxiv.org/abs/2601.21123)（[开源代码](https://github.com/microsoft/cua_skill)；结构化 GUI skill 库 + 参数化组合图 + 动态 skill 检索/实例化 + memory-aware recovery）
 - [BEAP-Agent](https://arxiv.org/abs/2601.21352)（开源代码：未公开；把 GUI 执行显式建模为 DFS，支持多级回溯与动态任务跟踪）
 - [Minitap mobile-use](https://arxiv.org/abs/2602.07787)（[开源代码](https://github.com/minitap-ai/mobile-use)；围绕 AndroidWorld 的任务分解式多代理移动端 harness，通过 supervisor、视觉定位和动作执行分工把移动 GUI 任务拆成可复核子目标）
+- [OSExpert](https://arxiv.org/abs/2603.07978)（开源代码：未找到稳定公开仓库；用 GUI-based depth-first exploration 学习专业 computer-use skills 的 harness；核心思想：结合探索式搜索、技能抽象和陌生界面迁移）
 - [Natural-Language Agent Harnesses](https://arxiv.org/abs/2603.25723)（[开源代码](https://github.com/curated-skills/LinguaClaw)；把 harness 逻辑外显成可编辑自然语言文档，用共享 runtime 执行、写回状态与工件）
+- [EE-MCP](https://arxiv.org/abs/2604.09815)（开源代码：未找到稳定公开仓库；自演化 MCP-GUI agent 框架；核心思想：自动生成环境、收集轨迹并学习经验库，用来平衡 GUI 动作与 MCP 工具调用）
 
 ## 2.5.4 Skill
 

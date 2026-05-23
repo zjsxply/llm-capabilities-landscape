@@ -44,6 +44,7 @@
 - [VideoGameBench](https://vgbench.com/#leaderboard): What it evaluates: embodied perception, navigation, manipulation, and planning in video-game environments. Core idea: place spatial understanding in actionable game environments and use task completion and trajectory quality to evaluate whether agents can translate visual spatial relations into continuous actions.
 - [CartoMapQA](https://arxiv.org/abs/2512.03558) ([code](https://github.com/ungquanghuy-kddi/CartoMapQA)): What it evaluates: cartographic map understanding and geospatial QA; core idea: use tasks such as symbol recognition, embedded information extraction, scale interpretation, and route reasoning to expose VLM weaknesses in map semantics, OCR, and geospatial reasoning.
 - [MMSI-Video-Bench](https://arxiv.org/abs/2512.10863) ([code](https://github.com/InternRobotics/MMSI-Video-Bench)): What it evaluates: spatial intelligence under video input; core idea: use 1,106 expert-annotated questions covering perception, planning, prediction, and cross-video reasoning to test whether models can maintain spatial layout, motion, and viewpoint consistency in continuous visual streams.
+- [See, Remember, Explore / S3-Bench](https://arxiv.org/abs/2603.23864): What it evaluates: streaming spatial question answering with active exploration. Core idea: require agents to answer using only observations available up to a timestamp, optionally taking exploration actions to acquire missing evidence, so spatial reasoning is tested as an online memory and perception problem rather than post-hoc video QA.
 
 ## 1.7.3 Agent Harness
 
@@ -56,6 +57,7 @@
 - [Spatial-Agent](https://arxiv.org/abs/2601.16965) (code: no stable public official repository found yet) targets the GeoFlow workflow for geospatial QA; the core idea is to parse natural language into executable spatial transformation graphs, then suppress spatial hallucinations through computation and verification loops.
 - [Think, Act, Build](https://arxiv.org/abs/2604.00528) (code: no stable public official repository found yet): An agentic framework for zero-shot 3D visual grounding; the core idea is to alternate thinking, 3D actions, and scene building, using tool feedback to gradually converge on target localization.
 - [MAG-3D](https://arxiv.org/abs/2604.09167) (code: no stable public official repository found yet): Multi-agent grounded reasoning for 3D understanding; the core idea is to split scene understanding, spatial-relation judgment, and result verification into collaborative roles to improve verifiability in complex 3D reasoning.
+- [ViSRA](https://arxiv.org/abs/2605.10106) (code: not confirmed public): A training-free video-based spatial reasoning agent; the core idea is to route MLLM reasoning through explicit spatial expert outputs, making video spatial inference modular and transferable without post-training on a specific spatial benchmark.
 
 ## 1.7.4 Skill
 

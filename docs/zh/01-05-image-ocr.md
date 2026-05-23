@@ -59,6 +59,7 @@
 - [MME-CC](https://arxiv.org/abs/2511.03146)：评什么：多模态认知能力（cognitive capacity）诊断；核心思想：以更具挑战性的多维子项衡量综合能力边界（暂未见稳定官方代码仓库）。
 - [DOCR-Inspector](https://arxiv.org/abs/2512.10619)（[开源代码](https://github.com/ZZZZZQT/DOCR-Inspector)）：评什么：真实文档解析结果的细粒度错误检测与质量评估；核心思想：用 VLM-as-a-Judge 对文档图像和解析输出逐项检查，按 28 类错误与 Chain-of-Checklist 诊断解析失败，并配套 DOCRcaseBench。
 - [BabyVision](https://arxiv.org/abs/2601.06521)（[开源代码](https://github.com/UniPat-AI/BabyVision)）：评什么：超越语言提示的核心视觉推理能力；核心思想：以更“早期视觉/组合概念”的题型诊断模型视觉能力短板。
+- [WorldVQA](https://arxiv.org/abs/2602.02537)：评测多模态大模型中的原子世界知识。核心思想：提出依赖真实世界实体、属性和关系识别的视觉问答，补充偏 OCR 和偏图表的图像评测。
 
 - [RealWorldQA](https://huggingface.co/datasets/xai-org/RealworldQA)：评什么：真实世界场景图像上的问答正确性；核心思想：用真实环境图像与可直接核验的简短问答，减少合成数据分布与模板化题型带来的高估。
 - [AgentVista](https://arxiv.org/abs/2602.23166)（[开源代码](https://github.com/hkust-nlp/AgentVista)）：评什么：现实视觉场景中的超难多模态 agent 任务；核心思想：从 Agent-X 引用链扩展到更开放、更接近真实环境的视觉任务，强调场景理解、行动选择和多步反馈。
@@ -71,6 +72,7 @@
 - [MDPBench](https://arxiv.org/abs/2603.28130)（[开源代码](https://github.com/Yuliang-Liu/MultimodalOCR/tree/main/MDPBench)）：评什么：真实场景中的多语言文档解析；核心思想：覆盖 17 种语言、数字文档与拍照文档，重点暴露非拉丁文字和低资源语言下的解析退化。
 - [ParseBench](https://arxiv.org/abs/2604.08538)（[开源代码](https://github.com/run-llama/ParseBench)）：评什么：文档解析的语义正确性、表格/图表保真与视觉 grounding；核心思想：把企业文档里最影响自动决策的解析失败拆成可评测维度。
 - [CC-OCR V2](https://arxiv.org/abs/2605.03903)（[开源代码](https://github.com/eioss/CC-OCR-V2)）：评什么：真实企业文档处理中的 OCR literacy；核心思想：覆盖文本识别、文档解析、文档 grounding、关键信息抽取和文档问答五条 OCR-centric track，强调 hard/corner cases。
+- [HLE-VL](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的 HLE 风格视觉语言评测；目前未确认有独立公开版本。核心思想：即使具体评测子集只在 model card 中出现，也应跟踪模型厂商对高难视觉知识与推理任务的关注。
 
 
 ## 1.5.3 Agent Harness

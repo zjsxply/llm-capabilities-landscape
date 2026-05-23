@@ -18,24 +18,10 @@ Therefore, it places more emphasis on the closed loop of `command selection -> o
 
 ## 1.12.2 Bench
 
-- [ITBench](https://arxiv.org/abs/2502.05352) ([code](https://github.com/itbench-hub/ITBench)): What it evaluates: agent workflows in real IT automation tasks such as SRE, CISO, and FinOps.
-  Core idea: use extensible scenarios, push-button workflows, and interpretable metrics to turn enterprise operations/security/cost tasks into executable evaluation, complementing DevOps terminal-adjacent tasks beyond pure Linux shell tasks.
-- [CVE-Bench](https://arxiv.org/abs/2503.17332) ([code](https://github.com/uiuc-kang-lab/cve-bench)): What it evaluates: the ability of AI agents to exploit real web-application vulnerabilities.
-  Core idea: combine security knowledge, terminal operation, web interaction, and exploitation chains into reproducible experiments using real high-severity CVEs, isolated environments, and executable exploit verification.
-- [BountyBench](https://arxiv.org/abs/2505.15216) ([project page](https://bountybench.github.io/)): What it evaluates: attacker and defender agents in real cybersecurity systems.
-  Core idea: use bug-bounty scenarios and dollar-impact signals to measure Detect, Exploit, and Patch tasks, supplementing security evaluation that only checks CTF success rates.
-- [CyberGym](https://arxiv.org/abs/2506.02548) ([project page](https://www.cybergym.io/)): What it evaluates: terminal operation, vulnerability understanding, and exploitation loops for agents in real cybersecurity tasks.
-  Core idea: integrate CVE scenarios, executable environments, tool calls, and final verification, requiring agents to make continuous decisions in terminal environments similar to real penetration-testing or repair workflows.
-- [SEC-bench](https://arxiv.org/abs/2506.11791) ([project page](https://sec-bench.github.io/); [code](https://github.com/SEC-bench/SEC-bench)): What it evaluates: PoC generation and vulnerability repair in real software-security tasks.
-  Core idea: automatically construct vulnerable repositories with harnesses and isolated reproduction environments, forcing agents to read code, run verification, and generate attacks or patches rather than only answer vulnerability knowledge.
-- [AIRTBench](https://arxiv.org/abs/2506.14682) ([code](https://github.com/dreadnode/AIRTBench-Code)): What it evaluates: attack discovery, code execution, and exploitation-chain loops in autonomous AI red-teaming scenarios.
-  Core idea: place 70 black-box CTF-style AI/ML security challenges into runnable tasks, examining whether agents can write scripts, call tools, and verify compromise in the terminal.
 - [Terminal-Bench 2.0](https://www.tbench.ai/registry/terminal-bench/2.0) ([official leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.0); run entry: [Harbor / Terminal-Bench run entry](https://harborframework.com/docs/running-tbench); paper: [Terminal-Bench](https://arxiv.org/abs/2601.11868); [code](https://github.com/laude-institute/terminal-bench)): What it evaluates: end-to-end task completion in real Linux terminal environments; the official registry page currently shows 89 tasks.
   Core idea: each task is defined by instructions, a Docker environment, and test scripts, and agents must pass automatic evaluation by reading/writing files, running commands, installing/calling tools, debugging failures, and producing verifiable results.
 - [DevOps-Gym](https://arxiv.org/abs/2601.20882) ([project page](https://www.devops-gym.com/)): What it evaluates: long-horizon terminal tasks in the software DevOps cycle, such as deployment, configuration, monitoring, fault localization, and regression verification.
   Core idea: place tasks into real repositories, service environments, and command-line workflows, emphasizing closed-loop recovery across logs, configuration, dependencies, tests, and runtime state.
-- [Patch-to-PoC](https://arxiv.org/abs/2602.07287): What it evaluates: agents' ability to reproduce N-day PoCs from Linux kernel patches.
-  Core idea: combine patch analysis, kernel builds, terminal debugging, and exploit verification to check whether agents can convert fixed vulnerabilities back into executable attack evidence.
 - [CLI-Gym](https://arxiv.org/abs/2602.10999): What it evaluates: scalable generation of CLI environment-intensive tasks.
   Core idea: reverse healthy Dockerfile environment histories into faulty earlier states and generate executable-feedback terminal tasks for dependency, system-configuration, and runtime repair.
 - [LongCLI-Bench](https://arxiv.org/abs/2602.14337) ([code](https://github.com/finyorko/longcli-bench)): What it evaluates: long-horizon agentic programming in command-line interfaces.
@@ -50,17 +36,10 @@ Therefore, it places more emphasis on the closed loop of `command selection -> o
   Core idea: inject multi-layer faults, noise, and complex failure modes into real cloud-native system stacks, forcing agents to face logs, metrics, configuration, and repair loops close to production systems.
 - [MMTB / MultiMedia-TerminalBench](https://arxiv.org/abs/2605.10966) ([project page](https://mm-tbench.github.io/multimedia-terminal-bench/); [code](https://github.com/mm-tbench/multimedia-terminal-bench); [dataset](https://huggingface.co/datasets/mm-tbench/mmtb-media)): What it evaluates: terminal agents' ability to handle multimedia-file tasks such as audio and video.
   Core idea: extend Terminal-Bench text/code/structured-file workflows to multimedia evidence reading, file conversion, and cross-file action selection, with the Terminus-MM harness.
-- [ExploitGym](https://arxiv.org/abs/2605.11086): What it evaluates: whether AI agents can turn security vulnerabilities into real attacks.
-  Core idea: measure end-to-end capability in reconnaissance, exploit construction, failure debugging, and achieving attack objectives using real vulnerabilities, executable environments, and exploit-result verification.
 - [TAB / Task Alignment Benchmark](https://arxiv.org/abs/2605.12233): What it evaluates: whether terminal agents can selectively use relevant instructions in the environment and ignore irrelevant or misleading instructions.
   Core idea: derive tasks from Terminal-Bench 2.1 and place necessary clues and distractor clues into natural files, README files, comments, and logs, addressing a blind spot where blindly following environment text can still pass.
 - [ClawForge](https://arxiv.org/abs/2605.14133): What it evaluates: generation of executable command-line agent benchmarks.
   Core idea: compile reproducible tasks from scenario templates, initialization states, reference trajectories, and validators, with emphasis on whether agents check existing state, handle conflicting artifacts, and reach the correct final state.
-- [ExploitBench](https://arxiv.org/abs/2605.14153) ([project page](https://exploitbench.ai/); [code](https://github.com/exploitbench/exploitbench)): What it evaluates: a hierarchical capability ladder for cybersecurity agents.
-  Core idea: use tasks ranging from basic reconnaissance to complex exploit-chain organization to help distinguish "can use tools" from "can complete a real exploit chain."
-- [AuthBench](https://arxiv.org/abs/2605.14859): What it evaluates: whether terminal/code agents can infer minimally sufficient file-level permission boundaries for tasks.
-  Core idea: combine task-usability verification and attack-result verification to specifically test how coding agents trade off read/write/execute permissions, sensitive-file exposure, and least-privilege authorization.
-
 ## 1.12.3 Agent Harness
 
 Papers and method-oriented work:
@@ -78,7 +57,7 @@ Papers and method-oriented work:
 - [TermiGen](https://arxiv.org/abs/2602.07274): A high-fidelity terminal environment and robust trajectory synthesis pipeline.
   It uses verifiable environments, failure-recovery trajectories, and execution feedback to fill the training/evaluation data gap for open-weight terminal agents, making it suitable as data-generation-side infrastructure for Terminal-Bench-like tasks.
 - [OpenSage / SageAgent](https://arxiv.org/abs/2602.16891) ([code](https://github.com/opensage-agent/opensage-adk)): An AI-centric ADK approach where agents self-generate topology, tools, and hierarchical memory during execution.
-  SageAgent reports strong results on Terminal-Bench 2.0, CyberGym, SWE-Bench Pro, and DevOps-Gym; the design focus is dynamic subagents, tool/skill synthesis, and graph memory rather than only a fixed prompt.
+  SageAgent reports strong results on Terminal-Bench 2.0, SWE-Bench Pro, and DevOps-Gym; the design focus is dynamic subagents, tool/skill synthesis, and graph memory rather than only a fixed prompt.
 - [OPENDEV](https://arxiv.org/abs/2603.05344) ([code](https://github.com/opendev-to/opendev)): A terminal-native coding agent implemented in Rust.
   Design focuses include a dual-agent planning/execution architecture, lazy tool discovery, model routing, context compression, and cross-session memory, making it an engineering blueprint for terminal-first agent scaffolds.
 - [Meta-Harness](https://arxiv.org/abs/2603.28052) ([code](https://github.com/stanford-iris-lab/meta-harness); [TerminalBench-2 artifact](https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact)): An outer optimization system that automatically searches and rewrites LLM harness code.

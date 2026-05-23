@@ -25,6 +25,8 @@
 - [BrowseComp-Plus](https://arxiv.org/abs/2508.06600)（[开源代码](https://github.com/texttron/BrowseComp-Plus)）：评测固定语料库中的深度网页检索与浏览推理；核心思想是把 BrowseComp 从黑盒 live search 改成约 10 万篇人工核验文档的可复现实验环境，从而解耦检索器、LLM agent 与上下文工程的影响。
 - [WideSearch](https://arxiv.org/abs/2508.07999)：评测“宽域检索 -> 结构化表格产出”的 search-heavy 任务；核心思想是把输出约束为结构化条目，并用 `SR / Row-F1 / Item-F1` 等协议做可比评测。（[开源代码](https://github.com/ByteDance-Seed/WideSearch)）
 - [MM-BrowseComp](https://arxiv.org/abs/2508.13186)（[开源代码](https://github.com/MMBrowseComp/MM-BrowseComp)）：评测多模态网页浏览 agent 的检索与推理能力；核心思想是把问题线索和网页证据中的图像、视频内容纳入 BrowseComp 风格的多跳浏览任务，并提供 checklist 做细粒度诊断。
+- [FinSearchComp](https://arxiv.org/abs/2509.13160)：评测专家级金融搜索与推理。核心思想：要求 agent 检索、比对并综合金融信息，而不是只靠参数知识回答，适合作为 search-heavy 专业工作的垂直压力测试。
+- [Seal-0 / SealQA](https://arxiv.org/abs/2506.01062)：评测搜索增强推理在更高答案完整性要求下的表现。核心思想：通过检查 agent 是否先收集足够证据再给最终答案，提高“检索 + 推理”任务门槛。
 - [BrowserArena](https://arxiv.org/abs/2510.02418)：评测真实开放网页上的 LLM agent 导航任务；核心思想是用 live open-web arena 收集用户提交任务、进行 agent 对战，并用 step-level human feedback 诊断 captcha、弹窗和直接导航等失败模式。
 - [Needle in the Web](https://arxiv.org/abs/2512.16553)（[开源代码](https://github.com/Tango-Whiskyman/Needle_in_the_Web)）：评测真实网页中的目标页面检索；核心思想是把模糊探索式查询转成需要找到唯一目标网页的任务，考察 agent 在语义歧义、多域网页和来源核验下的检索能力。
 - [UIS-Digger](https://arxiv.org/abs/2603.08117)：评什么：真实世界未索引信息寻址。核心思想：把搜索引擎难以直接召回的网页、文件和深层入口组织成任务，评估 agent 是否会发现入口、调整查询并跟踪证据来源。

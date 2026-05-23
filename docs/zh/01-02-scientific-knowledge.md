@@ -53,6 +53,14 @@
 - [ResearchGym](https://arxiv.org/abs/2602.15112)（[开源代码](https://github.com/Anikethh/ResearchGym)）：评测真实 AI 研究任务中的长时程 agent；核心思想是给出问题陈述、裁剪代码库、评估脚本和基线分数，让 agent 在有限预算内推进开放式研究目标。
 - [SciVisAgentBench](https://arxiv.org/abs/2603.29139)（[开源代码](https://github.com/KuangshiAi/SciVisAgentBench)）：评测科学数据分析与可视化 agent；核心思想是覆盖多个应用领域、数据类型和可视化操作，检查 agent 是否能把科学数据转化为可靠图形表达。
 - [LABBench2](https://arxiv.org/abs/2604.09554)（[开源代码](https://github.com/EdisonScientific/labbench2)）：评测更真实的生物研究任务；核心思想是在 LAB-Bench 基础上扩大任务规模并强化文件处理、外部 runner 和工具开关等 agent 评测接口。
+- [HealthBench Professional](https://arxiv.org/abs/2604.27470)：评测真实临床医生对话中的大模型表现。核心思想：把医学评测从一般消费者健康问答推进到 clinician-facing 场景，更直接考察安全性、细微差别和实际可用性。
+- HealthBench Consensus（见 [GPT-5.5 system card](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)）：OpenAI 使用的 HealthBench 系列评分变体；目前未确认有独立公开 benchmark package。核心思想：在 HealthBench 与 HealthBench Professional 之外，跟踪共识式医学安全与有用性判断。
+- [ProtocolQA Open-Ended](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)：GPT-5.5 model card 中的评测，把 FutureHouse ProtocolQA 风格湿实验排障题改成开放式短答；OpenAI 修改后的集合未公开发布。核心思想：取消多选脚手架后检查模型能否诊断 protocol error。
+- [TroubleshootingBench](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)：OpenAI 在 GPT-5.5 system card 中报告的内部生物排障 benchmark，未公开发布。核心思想：用专家撰写的湿实验流程和非公开、依赖 tacit knowledge 的错误，测试模型是否具备实际排障知识。
+- [BioPipelineBench Verified](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)：Anthropic model card 中的生物信息学 workflow 评测，覆盖 targeted sequence analysis、long-read analysis、metagenome assembly、chromatin profiling 等；verified 子集未公开发布。核心思想：测试模型能否执行真实计算生物 pipeline。
+- [BioMysteryBench Verified](https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench)：评测真实数据上的高难生物信息学谜题，Claude Opus 4.7 system card 报告了 verified 子集。核心思想：要求模型交错进行计算分析与生物学推理，并按客观答案而非固定分析路径评分。
+- Structural biology benchmark（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Anthropic 内部结构生物学评测，要求模型仅根据结构数据推断生物分子功能；未公开发布。核心思想：测试超越纯文本生物问答的 structure-function reasoning。
+- OpenAI 内部生物与化学风险评测（见 [GPT-5.5 system card](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)）：封闭集合，包含 multimodal troubleshooting virology、tacit knowledge and troubleshooting、hard-negative protein binding prediction、DNA sequence design for transcription-factor binding、protocol troubleshooting 等；未公开发布。它们值得跟踪，因为前沿 model card 已用这些评测监控高风险湿实验、蛋白和序列设计能力。
 
 ## 1.2.3 Agent Harness
 

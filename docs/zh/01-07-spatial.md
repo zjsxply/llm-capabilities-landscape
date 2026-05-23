@@ -44,6 +44,7 @@
 - [VideoGameBench](https://vgbench.com/#leaderboard)：评什么：视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏环境中，用任务完成和轨迹质量评估 agent 是否能把视觉空间关系转成连续动作。
 - [CartoMapQA](https://arxiv.org/abs/2512.03558)（[开源代码](https://github.com/ungquanghuy-kddi/CartoMapQA)）：评什么：制图地图理解与地理空间问答；核心思想：用符号识别、嵌入信息抽取、比例尺解释和路线推理等任务，暴露 VLM 在地图语义、OCR 与 geospatial reasoning 上的短板。
 - [MMSI-Video-Bench](https://arxiv.org/abs/2512.10863)（[开源代码](https://github.com/InternRobotics/MMSI-Video-Bench)）：评什么：视频输入下的空间智能；核心思想：用 1,106 个专家标注问题覆盖感知、规划、预测和跨视频推理，测试模型能否在连续视觉流中保持空间布局、运动和视角一致性。
+- [See, Remember, Explore / S3-Bench](https://arxiv.org/abs/2603.23864)：评什么：带主动探索的流式空间问答。核心思想：要求 agent 只能使用特定时间点之前已观察到的信息作答，并在证据不足时采取探索动作补充观察，把空间推理从事后视频 QA 推进到在线记忆与感知问题。
 
 ## 1.7.3 Agent Harness
 
@@ -56,6 +57,7 @@
 - [Spatial-Agent](https://arxiv.org/abs/2601.16965)（开源代码：暂未见稳定公开官方仓库）面向地理空间问答的 GeoFlow 工作流；核心思想是把自然语言解析成可执行的空间变换图，再用计算与验证闭环抑制空间幻觉。
 - [Think, Act, Build](https://arxiv.org/abs/2604.00528)（开源代码：暂未见稳定公开官方仓库）：面向零样本三维视觉 grounding 的 agentic framework；核心思想是把思考、三维动作和场景构建交替执行，用工具反馈逐步收敛目标定位。
 - [MAG-3D](https://arxiv.org/abs/2604.09167)（开源代码：暂未见稳定公开官方仓库）：面向 3D understanding 的多 agent grounded reasoning；核心思想是将场景理解、空间关系判断和结果校验拆成协作角色，提升复杂三维推理的可验证性。
+- [ViSRA](https://arxiv.org/abs/2605.10106)（开源代码：未确认公开）：training-free video-based spatial reasoning agent；核心思想是把 MLLM 推理接到显式空间专家输出上，使视频空间推理模块化、可迁移，而不是依赖特定空间 benchmark 的后训练。
 
 ## 1.7.4 Skill
 

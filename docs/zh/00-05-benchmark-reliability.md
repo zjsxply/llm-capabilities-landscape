@@ -19,6 +19,7 @@
 - [SWE-MERA](https://arxiv.org/abs/2507.11059)：动态软件工程 agent 评测；核心思想是持续采集、执行和验证新任务，把 agentic SWE 评测从单次快照推进到滚动题库。
 - [Auto-BenchmarkCard](https://arxiv.org/abs/2512.09577)：自动生成 benchmark 文档卡；适合在 benchmark 数量快速增长时快速暴露数据、指标和限制描述缺失。
 - [SWE-rebench V2](https://arxiv.org/abs/2602.23866)：语言无关、规模更大的动态 SWE 任务构造与执行评测；延续去污染自动化采集路线，把可执行任务扩展到更多语言与仓库生态。
+- [CUBE](https://arxiv.org/abs/2603.15798)：提出基于 MCP 与 Gym 的 Common Unified Benchmark Environments 协议标准；适合降低 agent benchmark 快速增多后的集成税，并把 task、benchmark、package 和 registry 层职责拆清楚。
 - [Terminal Wrench](https://arxiv.org/abs/2604.17596)（[开源代码](https://github.com/few-sh/terminal-wrench)）：评测终端 benchmark 是否可被 reward hacking 绕过；核心价值是把环境漏洞、评分捷径和轨迹操纵作为 benchmark 可靠性问题显式化。
 - [QuickScope](https://arxiv.org/abs/2604.17842)：为动态 benchmark 中的难题做快速认证；核心思想是给“这题是否真的难、是否能区分模型”提供更低成本的预筛机制。
 - [Claw-Eval](https://arxiv.org/abs/2604.06132)（[开源代码](https://github.com/claw-eval/claw-eval)）：真实软件环境中的多步骤 agent 工作流评测；通过细粒度 rubric、三次运行一致性和轨迹审计降低一次性通过率的偶然性。

@@ -35,10 +35,14 @@
 - [TRAJECT-Bench](https://arxiv.org/abs/2510.04550)：评什么：agentic tool use 的完整调用轨迹质量，而不只是最终答案；核心思想：用可执行工具和细粒度指标检查工具选择、参数化、调用顺序、并行宽度和链路深度，定位“答案对但调用链错”的失败。
 - [Tool Decathlon（Toolathlon）](https://arxiv.org/abs/2510.25726)：评什么：跨 32 个应用、604 个工具的长程真实任务执行。核心思想：大量工具来自 MCP server，且每个任务有专用执行检查脚本，强调跨应用状态、工具链长度和真实初始环境。
 - [MCP-Atlas](https://arxiv.org/abs/2602.00933)（[开源代码](https://github.com/scaleapi/mcp-atlas)）：评什么：真实 MCP server 上的多步工具编排；核心思想：用 36 个 real MCP servers、容器化 harness 和 claims-based rubric 测工具发现、参数对齐与恢复。
+- [Agent-Diff](https://arxiv.org/abs/2602.11224)（[开源代码](https://github.com/agent-diff-bench/agent-diff)）：评什么：通过代码执行企业 API 任务，并在沙箱化服务副本上验证。核心思想：按预期状态差异而不是轨迹相似度判断成功，在保留真实 API 交互结构的同时让最终结果可确定、可复现。
 - [CCTU](https://arxiv.org/abs/2603.15309)：评什么：复杂约束下的 LLM 工具使用；核心思想：把资源、行为、工具集和响应四类约束显式写入任务，考察模型在选工具、遵守约束和自我修正之间能否稳定折中。
+- [τ³-Bench](https://sierra.ai/uk/resources/research/tau-3-bench)：评什么：把 tau 系列有状态工具调用扩展到知识检索和语音客服场景的 agentic customer-interaction 任务；核心思想：保留现实 policy、状态和工具约束，同时加入原始文本/API tau-bench 之外的知识与语音代理压力。
 - [WildToolBench](https://arxiv.org/abs/2604.06185)：评什么：真实用户行为下的多轮、多步工具使用；核心思想：把组合任务、跨轮隐含意图和指令切换纳入评测，避免只在人工规整任务上高估 tool-use 能力。
 - [The Amazing Agent Race（AAR）](https://arxiv.org/abs/2604.10261)（[项目页](https://minnesotanlp.github.io/the-amazing-agent-race)；[开源代码](https://github.com/minnesotanlp/the-amazing-agent-race)）：评什么：DAG 化的多步工具、网页导航与算术推理；核心思想：把导航、工具调用与结果汇总拆开诊断，专测线性 benchmark 看不到的路径选择失败。
+- [UniToolCall](https://arxiv.org/abs/2604.11557)：评什么：工具调用轨迹的统一表示、数据构造与评测。核心思想：把公开数据集和 benchmark 标准化成 Query-Action-Observation-Answer 格式，用兼容指标覆盖单轮、多轮、串行和并行工具调用结构。
 - [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：评什么：持续更新的真实 workflow agent 任务，覆盖终端、文件、网页、服务和 skill 相关工具链。核心思想：从公开 workflow-demand signals 与 ClawHub skill 信号生成带 fixture、service 和 grader 的任务快照，用可执行轨迹和产物验证评估 tool-use 迁移性。
+- [AgentEscapeBench](https://arxiv.org/abs/2605.07926)：评什么：长程依赖下的域外工具接地推理。核心思想：用 escape-room 式任务、工具与物品依赖图、隐藏状态和确定性最终答案，测试 agent 能否推断新流程，而不是复读熟悉 API workflow。
 - [When2Tool](https://arxiv.org/abs/2605.09252)（[开源代码](https://github.com/Trustworthy-ML-Lab/when2tool)）：评什么：agent 什么时候应该调用工具、什么时候应该直接回答；核心思想：把 tool necessity 显式做成评测边界，避免把“多调用工具”误判成更强的工具使用能力。
 - [ComplexMCP](https://arxiv.org/abs/2605.10787)：评什么：动态、相互依赖、大规模 tool sandbox 中的 LLM agent；核心思想：把工具状态、跨工具依赖和环境变化一起纳入评分，专测 MCP 工具链在长链路执行中的脆弱点。
 

@@ -55,9 +55,12 @@ Video reasoning（时序/因果/多跳推理）：
 - [HiVU](https://arxiv.org/abs/2506.13589)（[开源代码](https://github.com/xzc-zju/AdaVideoRAG)）：评测长视频问答中的分层索引与证据检索；核心思想是把视频拆成多粒度索引层级，诊断模型是否能在超长视频里定位有效片段而非均匀抽帧。
 - [CausalStep](https://arxiv.org/abs/2507.16878)：评测显式逐步因果推理；核心思想是把视频切成因果关联单元并采用顺序作答协议，防止模型利用全局上下文捷径直接猜最终答案。
 - [M3-Bench](https://arxiv.org/abs/2508.09736)：评测长视频智能体的跨模态长程记忆；核心思想是同时包含视觉、音频和文本记忆信号，要求模型在长期上下文中保持、检索和组合历史证据。
+- [ODVBench](https://arxiv.org/abs/2509.24871)：作为 StreamForest 工作的一部分，评测自动驾驶场景中的在线视频理解。核心思想：用驾驶视频测试模型在时间状态、场景变化和持久事件记忆下的泛化能力。
 - [OmniVideoBench](https://arxiv.org/abs/2510.10689)（[项目页](https://omnivideobench.github.io/omnivideobench_home/)；[开源代码](https://github.com/NJU-LINK/OmniVideoBench)）：评测长视频全模态理解；核心思想是把视觉、音频、OCR 和 ASR 等证据放进同一评测协议，检查模型是否能在长视频中跨模态整合信息。
 - [CrossVid](https://arxiv.org/abs/2511.12263)：评测跨多个视频的对比、检索与聚合推理；核心思想是多视频证据组织与一致性推理，而非单视频问答。
 - [LongShOTBench](https://arxiv.org/abs/2512.16978)（[项目页](https://mbzuai-oryx.github.io/LongShOT/)；[数据集](https://huggingface.co/datasets/MBZUAI/longshot-bench)；[开源代码](https://github.com/mbzuai-oryx/longshot)）：评测长视频中的 omni-modal reasoning 与 agentic tool use；核心思想是把视觉、语音和环境音证据、开放式问答、多轮对话和可解释评分 rubric 放进同一评测协议。
+- [VideoZeroBench](https://arxiv.org/abs/2604.01569)：评什么：带时空证据校验的长视频问答。核心思想：不只看答案是否正确，还检查支撑答案的时间区间与空间框位置，暴露“答案看似合理但没有真实 grounding”的视频推理缺口。
+- [ZeroVideo](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的高难真实视频评测；目前未确认有独立公开版本。核心思想：跟踪模型厂商用于压力测试超长、真实视频推理的内部或 model-card-only 视频集，即使当前只有聚合结果公开。
 - [SYNCR](https://arxiv.org/abs/2605.08412)：评测带 synthetic grounding 的跨视频推理；核心思想是用可控合成线索检查模型是否能在多个视频之间建立对应关系、定位证据并完成组合推断。
 - [EgoMemReason](https://arxiv.org/abs/2605.09874)（[项目页](https://egomemreason.github.io/)；[数据集](https://huggingface.co/datasets/Ted412/EgoMemReason)；[开源代码](https://github.com/Ziyang412/EgoMemReason)）：评测长时第一视角视频的记忆驱动推理；核心思想是从 LongVideoBench 引用链扩展到生活记录式 egocentric video，要求模型保留、检索并组合长期个人视觉证据。
 - [TOC-Bench](https://arxiv.org/abs/2605.09904)：评测视频大模型的 temporal object consistency；核心思想是追踪同一对象跨时间片段的身份、属性和状态一致性，避免模型只凭局部帧做静态识别。
@@ -83,7 +86,9 @@ Video reasoning（时序/因果/多跳推理）：
 - [SAGE](https://arxiv.org/abs/2512.13874)（[开源代码](https://github.com/allenai/SAGE)）：any-horizon 长视频推理 agent；把“何时单轮回答/何时多轮搜证据”做成可学习的策略。
 - [LongShOTAgent](https://arxiv.org/abs/2512.16978)（[开源代码](https://github.com/mbzuai-oryx/longshot)）：围绕 LongShOTBench 的长视频 agentic system；用预处理、跨模态检索、工具调用和迭代 refinement 处理视觉、语音与环境音证据。
 - [EGAgent](https://arxiv.org/abs/2601.18157)（开源代码：暂未见稳定公开官方仓库）：面向 very long egocentric video 的 agentic workflow；核心在于按 query 主动检索、压缩和重组第一视角生活记录中的证据。
+- [SVAgent](https://arxiv.org/abs/2604.05079)（开源代码：未确认公开）：storyline-guided 长视频问答 agent；核心思想是用 storyline agent 从选定帧持续构建叙事状态，让跨模态决策 agent 分别基于视觉和文本证据作答，再由 meta-agent 对齐冲突预测。
 - [VideoSEAL](https://arxiv.org/abs/2605.12571)（开源代码：暂未见稳定公开官方仓库）：面向 agentic long video understanding 的证据校准框架；核心思想是把答案生成权与证据对齐/校验解耦，缓解长视频 agent 在检索片段和最终回答之间的错配。
+- [ReTool-Video](https://arxiv.org/abs/2605.13228)（开源代码：未确认公开）：递归式工具调用视频 agent；核心思想是把高层视频意图落到细粒度 MetaAug-Video Tool Library 上的可执行工具链，并在运行时修复、替换或分解无法直接匹配的动作。
 - [VideoSeeker](https://arxiv.org/abs/2605.16079)（开源代码：论文称将公开，暂未确认稳定公开仓库）：面向视频理解的原生 agentic tool invocation；强调 instance-level 工具选择，把 search、grounding 和 verification 纳入模型决策过程。
 
 ## 1.6.4 Skill

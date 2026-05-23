@@ -15,6 +15,9 @@
 - [MMMLU](https://huggingface.co/datasets/openai/MMMLU)：评测多语环境下的通识与学科知识选择题能力；核心思想是把同类知识题迁移到多语输入，以统一的多选题协议对齐比较不同语言下的知识保持与理解鲁棒性。
 - [Linguini](https://arxiv.org/abs/2409.12126)（[开源代码](https://github.com/facebookresearch/linguini)，[数据集](https://huggingface.co/datasets/facebook/linguini)）：评测 language-agnostic linguistic reasoning。核心思想：从国际语言学奥林匹克式题目出发，让模型在不知道目标语言的情况下从上下文归纳词法、句法和语义规律，补足多语言评测中过度依赖已见语种知识的问题。
 - [MIRAGE-Bench](https://arxiv.org/abs/2410.13716)（[开源代码](https://github.com/vectara/mirage-bench)）：评测多语言 RAG 回答生成与裁判效率；核心思想是在 18 种语言的人类问题上结合启发式特征、LLM pairwise judge 和 surrogate judge，降低多语 RAG arena 评测成本。
+- [MILU](https://arxiv.org/abs/2411.02538)：评测印度语言的多任务语言理解。核心思想：覆盖 10 种印度语言与英语，并纳入文化相关学科题，作为广义翻译版 MMLU 的垂直补充。
+- [INCLUDE](https://arxiv.org/abs/2411.19799)：评测带区域知识的多语言理解。核心思想：从 44 种语言的区域学术和职业考试中取题，减少对英文翻译知识的偏置。
+- [GMMLU / Global MMLU](https://arxiv.org/abs/2412.03304)：评测 42 种语言上的 MMLU 式知识理解。核心思想：在可比学科知识协议下比较高、中、低资源语言表现，暴露语言与文化资源差距。
 - [MMTEB](https://arxiv.org/abs/2502.13595)（[开源代码](https://github.com/embeddings-benchmark/mteb)）：评测大规模多语文本嵌入；核心思想是在 250 多种语言和 500 多个质量控制任务上统一比较 embedding 的检索、分类、聚类和语义匹配能力。
 - [MMLU-ProX](https://arxiv.org/abs/2503.10497)（数据集：[li-lab/MMLU-ProX](https://huggingface.co/datasets/li-lab/MMLU-ProX)）：评测更难的跨语言学科/专业知识（MMLU-Pro 风格的跨语扩展）；核心思想是用更高难度、更强调鲁棒性的专业题补齐“多语 + 专业知识”维度。
 - [MultiLoKo](https://arxiv.org/abs/2504.10356)（[开源代码](https://github.com/facebookresearch/MultiLoKo)）：评测 31 种语言中的本地知识与跨语知识迁移；核心思想是同时提供语言本地题、人工翻译题和机器翻译题，区分“知道事实”和“能用目标语言稳定表达/检索事实”。

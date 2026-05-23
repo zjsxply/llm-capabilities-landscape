@@ -45,6 +45,7 @@
 - [TemporalBench](https://arxiv.org/abs/2602.13272)（[数据集](https://huggingface.co/datasets/Melady/TemporalBench)；[Leaderboard](https://huggingface.co/spaces/Melady/TemporalBench_Leaderboard)）：评什么：LLM agent 的上下文与事件驱动时间序列预测。核心思想：把任务分成历史结构解释、无上下文预测、上下文推理和事件条件预测四层，诊断模型是否真正利用外部事件而不是只拟合曲线。
 - [Echo](https://echo.unipat.ai/)（[官方文章](https://unipat.ai/blog/Echo)）：评什么：动态未来预测 leaderboard 与训练系统，覆盖金融、政治、加密、体育和电竞等域。核心思想：用多点对齐 Elo、Train-on-Future 和 AI-native prediction API 组成完整预测闭环，解决不同模型预测时间点不齐与训练信号滞后问题。
 - [Impermanent](https://arxiv.org/abs/2603.08707)（[开源代码](https://github.com/TimeCopilot/impermanent)；[Dashboard](https://impermanent.timecopilot.dev/)）：评什么：时间序列预测的 live temporal generalization。核心思想：用 GitHub 活动等持续变化的数据流滚动评分，考察模型是否能在开放世界时间漂移下维持预测稳定性。
+- [YC-Bench](https://arxiv.org/abs/2604.01212)：评什么：长期规划与一致执行中的状态记忆。核心思想：让 agent 在持续经营类任务中反复使用历史目标、资源状态和中间决策，观察 context truncation、scratchpad 与 memory 策略的真实收益。
 - [TimeSeek](https://arxiv.org/abs/2604.04220)：评什么：agentic forecaster 的时间可靠性。核心思想：按问题生命周期的多个时间点重放预测，比较无检索、web 检索与不同模型在临近兑现时的概率更新质量。
 - [TFRBench](https://arxiv.org/abs/2604.05364)：评什么：预测系统的推理能力。核心思想：将 forecasting 拆成可诊断的 reasoning benchmark，关注信息选择、时序因果、约束解释与预测一致性，而不是只看最终误差。
 - [Prediction Arena](https://arxiv.org/abs/2604.07355)：评什么：面向预测市场/未来事件的 live 模型对战评测。核心思想：用持续更新的问题与赛制比较模型预测，在答案兑现前后统一记录概率、理由与校准表现。
@@ -54,6 +55,7 @@
 - [FutureWorld](https://arxiv.org/abs/2604.26733)：评什么：面向未来预测的 live agentic RL 环境。核心思想：把预测、结果兑现与参数更新接成闭环，用延迟真实结果回填奖励并重放轨迹，研究“预测-兑现-再学习”的在线改进。
 - [Foresight Arena](https://arxiv.org/abs/2605.00420)：评什么：大模型预测未来事件的开放式竞技场。核心思想：围绕动态问题、概率提交和后验兑现构建持续评测，和 ForecastBench/FutureX 一起构成“live forecasting eval”主线。
 - [OracleProto](https://arxiv.org/abs/2605.03762)：评什么：LLM-native forecasting 的可复现 pastcasting。核心思想：用知识截止时间与时间遮罩构造可重复预测协议，专门诊断 hindsight leakage 和检索时序污染。
+- [FutureSim](https://arxiv.org/abs/2605.15188)：评什么：按真实新闻与事件兑现时间线回放来评测自适应 agent。核心思想：让 agent 在知识截止时间之后、按时间顺序接收 2026 年 1 到 3 月新闻并预测事件，测试长时程适应、记忆、搜索和不确定性校准。
 
 ## 2.8.4 Agent Harness
 

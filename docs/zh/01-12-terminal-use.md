@@ -18,24 +18,10 @@
 
 ## 1.12.2 Bench
 
-- [ITBench](https://arxiv.org/abs/2502.05352)（[开源代码](https://github.com/itbench-hub/ITBench)）：评什么：SRE、CISO、FinOps 等真实 IT 自动化任务中的 agent 工作流。
-  核心思想：用可扩展场景、push-button workflow 和可解释指标把企业运维/安全/成本操作做成可执行评测，补足纯 Linux shell 任务之外的 DevOps 终端近邻。
-- [CVE-Bench](https://arxiv.org/abs/2503.17332)（[开源代码](https://github.com/uiuc-kang-lab/cve-bench)）：评什么：AI agent 利用真实 Web 应用漏洞的能力。
-  核心思想：用真实高危 CVE、隔离环境和可执行 exploit 验证，把安全知识、终端操作、网页交互和漏洞利用链路组合成可复现实验。
-- [BountyBench](https://arxiv.org/abs/2505.15216)（[项目页](https://bountybench.github.io/)）：评什么：真实网络安全系统中的攻击者与防御者 agent。
-  核心思想：用 bug bounty 场景和美元影响信号衡量 Detect、Exploit、Patch 三类任务，补足只看 CTF 成功率的安全评测。
-- [CyberGym](https://arxiv.org/abs/2506.02548)（[项目页](https://www.cybergym.io/)）：评什么：真实网络安全任务中的 agent 终端操作、漏洞理解与利用闭环。
-  核心思想：把 CVE 场景、可执行环境、工具调用和最终验证整合起来，要求 agent 在类似真实渗透/修复流程的终端环境里持续决策。
-- [SEC-bench](https://arxiv.org/abs/2506.11791)（[项目页](https://sec-bench.github.io/)；[开源代码](https://github.com/SEC-bench/SEC-bench)）：评什么：真实软件安全任务中的 PoC 生成和漏洞修复。
-  核心思想：自动构造带 harness 的漏洞仓库和隔离复现环境，让 agent 必须读代码、运行验证、生成攻击或补丁，而不是只回答漏洞知识。
-- [AIRTBench](https://arxiv.org/abs/2506.14682)（[开源代码](https://github.com/dreadnode/AIRTBench-Code)）：评什么：自主 AI red teaming 场景中的攻击发现、代码执行和利用链闭环。
-  核心思想：把 70 个黑盒 CTF 风格 AI/ML 安全挑战放进可运行任务，考察 agent 是否能在终端里写脚本、调用工具并验证 compromise。
 - [Terminal-Bench 2.0](https://www.tbench.ai/registry/terminal-bench/2.0)（[官方榜单](https://www.tbench.ai/leaderboard/terminal-bench/2.0)；运行入口：[Harbor / Terminal-Bench 运行入口](https://harborframework.com/docs/running-tbench)；论文：[Terminal-Bench](https://arxiv.org/abs/2601.11868)；[开源代码](https://github.com/laude-institute/terminal-bench)）：评什么：真实 Linux 终端环境中的端到端任务完成，官方注册页当前展示 89 个任务。
   核心思想：每个任务由 instruction、Docker 环境与测试脚本定义，agent 必须通过读写文件、运行命令、安装/调用工具、调试失败并产出可验证结果来通过自动评测。
 - [DevOps-Gym](https://arxiv.org/abs/2601.20882)（[项目页](https://www.devops-gym.com/)）：评什么：软件 DevOps cycle 中的长程终端任务，例如部署、配置、监控、故障定位与回归验证。
   核心思想：把任务拆进真实仓库、服务环境和命令行流程，强调 agent 在日志、配置、依赖、测试和运行时状态之间的闭环恢复。
-- [Patch-to-PoC](https://arxiv.org/abs/2602.07287)：评什么：agent 从 Linux kernel 补丁复现 N-day PoC 的能力。
-  核心思想：把补丁分析、内核构建、终端调试和漏洞利用验证合在一起，检查 agent 是否能把已修复漏洞重新转化为可执行攻击证据。
 - [CLI-Gym](https://arxiv.org/abs/2602.10999)：评什么：可规模化生成的 CLI 环境密集型任务。
   核心思想：把 Dockerfile 的健康环境历史反向还原为带故障的早期状态，通过可执行反馈生成依赖、系统配置和运行时修复类终端任务。
 - [LongCLI-Bench](https://arxiv.org/abs/2602.14337)（[开源代码](https://github.com/finyorko/longcli-bench)）：评什么：命令行界面中的长程 agentic programming。
@@ -50,17 +36,10 @@
   核心思想：在真实云原生系统栈上注入多层故障、噪声和复杂 failure mode，让 agent 面对接近生产系统的日志、指标、配置和修复闭环。
 - [MMTB / MultiMedia-TerminalBench](https://arxiv.org/abs/2605.10966)（[项目页](https://mm-tbench.github.io/multimedia-terminal-bench/)；[开源代码](https://github.com/mm-tbench/multimedia-terminal-bench)；[数据集](https://huggingface.co/datasets/mm-tbench/mmtb-media)）：评什么：终端 agent 处理音频、视频等多媒体文件任务的能力。
   核心思想：把 Terminal-Bench 的文本/代码/结构化文件工作流扩展到多媒体证据读取、文件转换和跨文件动作选择，并配套 Terminus-MM harness。
-- [ExploitGym](https://arxiv.org/abs/2605.11086)：评什么：AI agent 能否把安全漏洞转化为真实攻击。
-  核心思想：用真实漏洞、可执行环境和利用结果验证，衡量 agent 在侦察、构造 exploit、调试失败和达成攻击目标上的端到端能力。
 - [TAB / Task Alignment Benchmark](https://arxiv.org/abs/2605.12233)：评什么：终端 agent 是否能选择性使用环境里的相关指令、忽略无关或误导性指令。
   核心思想：从 Terminal-Bench 2.1 派生任务，在自然文件、README、注释和日志中同时放入必要线索与干扰线索，补足“盲目跟随环境文本也能过关”的评测盲点。
 - [ClawForge](https://arxiv.org/abs/2605.14133)：评什么：可执行 command-line agent benchmark 的生成。
   核心思想：从场景模板、初始化状态、参考轨迹和 validators 编译可复现任务，重点考察 agent 是否会检查已有状态、处理冲突产物并达到正确最终状态。
-- [ExploitBench](https://arxiv.org/abs/2605.14153)（[项目页](https://exploitbench.ai/)；[开源代码](https://github.com/exploitbench/exploitbench)）：评什么：网络安全 agent 的分层能力 ladder。
-  核心思想：从基础侦察到复杂利用链组织逐级任务，帮助区分“会用工具”和“能完成真实 exploit chain”的能力差异。
-- [AuthBench](https://arxiv.org/abs/2605.14859)：评什么：终端/代码 agent 能否为任务推断最小充分的文件级权限边界。
-  核心思想：把任务可用性验证和攻击结果验证合并，专测 coding agent 在读写执行权限、敏感文件暴露和最小权限授权之间的折中。
-
 ## 1.12.3 Agent Harness
 
 论文与方法类工作：
@@ -78,7 +57,7 @@
 - [TermiGen](https://arxiv.org/abs/2602.07274)：高保真终端环境与鲁棒轨迹合成 pipeline。
   它用可验证环境、失败恢复轨迹和执行反馈补足 open-weight terminal agent 的训练/评测数据缺口，适合作为 Terminal-Bench 类任务的数据生成侧基础设施。
 - [OpenSage / SageAgent](https://arxiv.org/abs/2602.16891)（[开源代码](https://github.com/opensage-agent/opensage-adk)）：AI-centric ADK 路线，让 agent 在执行中自生成拓扑、工具与层级记忆。
-  SageAgent 在 Terminal-Bench 2.0、CyberGym、SWE-Bench Pro 与 DevOps-Gym 上报告了强结果；设计重点是动态子代理、工具/skill 合成与图式记忆，而不是只靠固定 prompt。
+  SageAgent 在 Terminal-Bench 2.0、SWE-Bench Pro 与 DevOps-Gym 上报告了强结果；设计重点是动态子代理、工具/skill 合成与图式记忆，而不是只靠固定 prompt。
 - [OPENDEV](https://arxiv.org/abs/2603.05344)（[开源代码](https://github.com/opendev-to/opendev)）：Rust 实现的 terminal-native coding agent。
   设计重点是双代理规划/执行架构、惰性工具发现、模型路由、上下文压缩和跨 session memory，适合作为 terminal-first agent scaffold 的工程蓝图。
 - [Meta-Harness](https://arxiv.org/abs/2603.28052)（[开源代码](https://github.com/stanford-iris-lab/meta-harness)；[TerminalBench-2 artifact](https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact)）：自动搜索并改写 LLM harness 代码的外层优化系统。

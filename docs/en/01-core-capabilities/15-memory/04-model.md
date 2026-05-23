@@ -1,0 +1,24 @@
+# 1.15.4 Model
+
+- [Wormhole Memory: A Rubik's Cube for Cross-Dialogue Retrieval](https://arxiv.org/abs/2501.14846): Introduces cross-dialogue retrieval memory for moving information across conversations.
+- [Towards General Continuous Memory for Vision-Language Models](https://arxiv.org/abs/2505.17670): Targets continuous memory for vision-language models, extending memory beyond text-only agents.
+- [ATLAS: Learning to Optimally Memorize the Context at Test Time](https://arxiv.org/abs/2505.23735): Learns what context to memorize at test time for downstream recall and reasoning.
+- [PRIME: Large Language Model Personalization with Cognitive Memory and Thought Processes](https://arxiv.org/abs/2507.04607): Personalizes LLMs with cognitive memory and thought processes, tying memory retrieval to response planning.
+- [Memory Decoder: A Pretrained, Plug-and-Play Memory for Large Language Models](https://arxiv.org/abs/2508.09874): Provides a plug-and-play pretrained memory module for large language models.
+- [ID-RAG: Identity Retrieval-Augmented Generation for Long-Horizon Persona Coherence in Generative Agents](https://arxiv.org/abs/2509.25299): Uses identity retrieval to maintain long-horizon persona coherence in generative agents.
+- [Data-Efficient Automatic Prompt Optimization for Memory-Enhanced Conversational Agents](https://doi.org/10.18653/v1/2025.emnlp-industry.126): Optimizes prompts data-efficiently for memory-enhanced conversational agents.
+- [Adaptive Focus Memory for Language Models](https://arxiv.org/abs/2511.12712): Introduces Adaptive Focus Memory for Language Models, a model-side contribution for Memory.
+- [Learning by Taking Notes: Memory-Guided Continual Learning for Generative Multimodal Models](https://doi.org/10.1109/iccvw69036.2025.00456): Uses note-taking as memory-guided continual learning for generative multimodal models.
+- [QwenLong-L1.5](https://arxiv.org/abs/2512.12967): Introduces Post-Training Recipe for Long-Context Reasoning and Memory Management, a model-side contribution for Memory.
+- [CREAM: Continual Retrieval on Dynamic Streaming Corpora with Adaptive Soft Memory](https://arxiv.org/abs/2601.02708): Adds adaptive soft memory for continual retrieval on dynamic streaming corpora.
+- [FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](https://arxiv.org/abs/2601.03938): Uses forgetting-curve-inspired replay for continual language-model learning.
+- [Learning How to Remember / MCMA](https://arxiv.org/abs/2601.07470): Learns a memory copilot that chooses memory abstraction and reuse strategies while keeping the task model frozen.
+- [SpatialMem: Unified 3D Memory with Metric Anchoring and Fast Retrieval](https://arxiv.org/abs/2601.14895): Builds unified 3D memory with metric anchoring and fast retrieval for spatially grounded question answering.
+- [JitRL](https://arxiv.org/abs/2601.18510): A training-free test-time policy-optimization method that retrieves non-parametric experience memory to estimate action advantages without gradient updates.
+- [ALMA](https://arxiv.org/abs/2602.07755): Meta-learns agentic memory designs, replacing fixed hand-written memory mechanisms with searched memory schemas and retrieval logic.
+- [MemPO](https://arxiv.org/abs/2603.00680): Introduces Self-Memory Policy Optimization for Long-Horizon Agents, a model-side contribution for Memory.
+- [DeltaMem](https://arxiv.org/abs/2604.01560): Trains operation-level agentic memory updates with reinforcement learning and rewards tied to downstream persona and task performance.
+- [TSUBASA](https://arxiv.org/abs/2604.07894): Improves long-horizon personalization through evolving memory, self-learning, and context distillation.
+- [HAGE](https://arxiv.org/abs/2605.09942): Optimizes weighted graph-memory traversal and edge representations with reinforcement learning for long-horizon agent memory.
+- [Beyond Similarity Search: Tenure and the Case for Structured Belief State in LLM Memory](https://arxiv.org/abs/2605.11325): Argues for structured belief state beyond similarity search in LLM memory.
+- [Design and Verification of a Query-Aware External Memory Pipeline for Small Language Models](https://doi.org/10.1109/icaiic68212.2026.11454167): Designs and verifies a query-aware external-memory pipeline for small language models.

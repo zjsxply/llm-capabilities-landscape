@@ -1,0 +1,23 @@
+# 1.6.4 Model
+
+- [MLLM-TA: Leveraging Multimodal Large Language Models for Precise Temporal Video Grounding](https://doi.org/10.1109/lsp.2024.3511426)：用多模态 LLM 进行精确时间视频定位，把语言查询映射到视频时间片段。
+- [HierarQ: Task-Aware Hierarchical Q-Former for Enhanced Video Understanding](https://arxiv.org/abs/2503.08585)：提出任务感知的层级 Q-Former，改进视频语言模型的时间聚合。
+- [CountLLM](https://arxiv.org/abs/2503.17690)：结合周期性结构提示与渐进式多模态训练，使基于 LLM 的视频动作计数能泛化到新的重复动作。
+- [Video-R1](https://arxiv.org/abs/2503.21776)：把 R1 风格强化学习应用到视频语言模型，使其学习更长、更依赖证据的视频推理。
+- [Caption Anything in Video: Fine-grained Object-centric Captioning via Spatiotemporal Multimodal Prompting](https://arxiv.org/abs/2504.05541)：通过时空多模态提示进行细粒度、以对象为中心的视频描述。
+- [VideoExpert](https://arxiv.org/abs/2504.07519)：提出面向视频理解的模型侧方法，核心围绕 Augmented LLM for Temporal-Sensitive Video Understanding。
+- [Vision and Intention Boost Large Language Model in Long-Term Action Anticipation](https://arxiv.org/abs/2505.01713)：结合视觉意图建模与 LLM 推理，用于长期动作预判。
+- [EchoInk-R1: Exploring Audio-Visual Reasoning in Multimodal LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.04623)：利用强化学习提升多模态 LLM 的音视频推理。
+- [ViTCoT: Video-Text Interleaved Chain-of-Thought for Boosting Video Understanding in Large Language Models](https://arxiv.org/abs/2507.09876)：交织视频与文本思维链以提升 LLM 视频理解。
+- [TSPO](https://arxiv.org/abs/2508.04369)：提出面向视频理解的模型侧方法，核心围绕 Temporal Sampling Policy Optimization for Long-form Video Language Understanding。
+- [VideoMiner](https://arxiv.org/abs/2510.06040)：提出面向视频理解的模型侧方法，核心围绕 Iteratively Grounding Key Frames of Hour-Long Videos via Tree-Based Group Relative Policy Optimization。
+- [SMART: Shot-Aware Multimodal Video Moment Retrieval with Audio-Enhanced MLLM](https://arxiv.org/abs/2511.14143)：使用镜头感知的多模态推理和音频增强 MLLM 进行视频片段检索。
+- [Disentangling Inter- and Intra-Video Relations for Multi-Event Video-Text Retrieval and Grounding](https://doi.org/10.1109/tip.2025.3630883)：建模视频间与视频内关系，用于多事件视频文本检索和定位。
+- [MVP](https://arxiv.org/abs/2601.03781)：面向 VideoLLM 的自监督 masked-video-prediction 方法，提升下游视频问答和推理所需的时序与视觉表示。
+- [VideoAuto-R1](https://arxiv.org/abs/2601.05175)：视频自动推理方法，用训练与推理策略分离推理形成和答案精炼。
+- [Learning Transferable Temporal Primitives](https://arxiv.org/abs/2603.17693)：生成可控合成视频 primitives，使模型学习顺序、状态变化和事件依赖等概念。
+- [Unified Spatio-Temporal Token Scoring](https://arxiv.org/abs/2603.18004)：高效 VideoVLM token 选择方法，联合评分空间与时间 token 以保留推理相关证据。
+- [Wan-R1](https://arxiv.org/abs/2603.27866)：将可验证强化学习用于视频推理训练。
+- [ABMAMBA: Multimodal Large Language Model with Aligned Hierarchical Bidirectional Scan for Efficient Video Captioning](https://arxiv.org/abs/2604.08050)：构建带有对齐层级双向扫描的高效视频描述 MLLM。
+- [EasyVideoR1](https://arxiv.org/abs/2604.16893)：简化的视频理解 RL 训练流程，改进奖励、数据和训练稳定性以支持 R1 风格视频推理。
+- [Response-G1](https://arxiv.org/abs/2605.07575)：提出面向视频理解的模型侧方法，核心围绕 Explicit Scene Graph Modeling for Proactive Streaming Video Understanding。

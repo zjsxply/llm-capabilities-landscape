@@ -37,6 +37,7 @@
 - [RealMath](https://arxiv.org/abs/2505.12575)：评什么：来自数学论文和数学论坛的研究级数学任务。核心思想：把可验证研究问题、论坛讨论和持续刷新机制结合起来，降低静态竞赛题污染，并更直接测试模型理解真实数学研究材料的能力。
 - [MathArena](https://arxiv.org/abs/2505.23281)（[开源代码](https://github.com/eth-sri/matharena)）：评什么：近期竞赛题上的抗污染评测与持续更新；核心思想：将“发布时间”与“评测时点”纳入协议，用更接近真实发布节奏的题目缓解污染。
 - [VideoMathQA](https://arxiv.org/abs/2506.05349)（[项目页](https://mbzuai-oryx.github.io/VideoMathQA)；[开源代码](https://github.com/mbzuai-oryx/VideoMathQA)）：评什么：视频中的多模态数学推理。核心思想：把讲解视频、视觉题面、音频和文本线索组织成数学问答，检验模型是否能从动态教学/解题过程里抽取公式、概念和推理步骤。
+- [Mathematical Proof as a Litmus Test](https://arxiv.org/abs/2506.17114)：用数学证明任务揭示高级推理模型的失败模式。核心思想是强调证明构造与验证，使模型不只按最终答案正确率接受数学评测。
 - [ProcessBench](https://aclanthology.org/2025.acl-long.50/)：评什么：数学推理过程中的错误定位。核心思想：评分模型能否找出解题轨迹中的第一个错误步骤，用步骤级推理可靠性补足只看最终答案的数学评测。
 - [ReliableMath](https://arxiv.org/abs/2507.03133)：评什么：覆盖可解与不可解情形的可靠数学推理。核心思想：检验模型在题目条件不可能成立或超出能力时，能否避免编造答案。
 - [LLMThinkBench](https://arxiv.org/abs/2507.04023)：评什么：基础数学推理中的准确率与效率权衡。核心思想：用动态生成的基础数学任务和 overthinking score 诊断推理模型是否消耗过多 token 却没有获得准确率收益。

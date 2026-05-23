@@ -1,0 +1,27 @@
+# 1.4.4 Model
+
+- [DoLa](https://arxiv.org/abs/2309.03883)：面向事实性的解码方法，通过对比 transformer 不同层的 logits，使生成更偏向成熟层表达的知识。
+- [MiniCheck](https://arxiv.org/abs/2404.10774)（[开源代码](https://github.com/Liyan06/MiniCheck)）：轻量 grounded factuality verifier，在 LLM-AggreFact 上训练和评测，以较低成本判断回答与参考文档是否一致。
+- [Smoothing Out Hallucinations](https://arxiv.org/abs/2502.11306)：提出面向幻觉控制的模型侧方法，核心围绕 Mitigating LLM Hallucination with Smoothed Knowledge Distillation。
+- [Mask-DPO](https://arxiv.org/abs/2503.02846)：细粒度事实性对齐方法，在偏好优化中定位事实片段，而不只依赖完整回答级偏好标签。
+- [PerturboLLaVA](https://arxiv.org/abs/2503.06486)：提出面向幻觉控制的模型侧方法，核心围绕 Reducing Multimodal Hallucinations with Perturbative Visual Training。
+- [Decoupling Contrastive Decoding](https://arxiv.org/abs/2504.08809)：多模态幻觉缓解方法，在解码时分离视觉与语言对比信号，使回答更依赖视觉证据。
+- [Beyond Logit Lens: Contextual Embeddings for Robust Hallucination Detection & Grounding in VLMs](https://doi.org/10.18653/v1/2025.naacl-long.488)：在 logit lens 之外使用上下文嵌入，提高 VLM 幻觉检测与扎根的稳健性。
+- [FaithJudge](https://arxiv.org/abs/2505.04847)（[开源代码](https://github.com/vectara/FaithJudge)）：面向 factual faithfulness 的训练式自动评测器，支持证据扎根的幻觉评测和 Vectara 榜单后续版本。
+- [Self-reflective Uncertainties: Do LLMs Know Their Internal Answer Distribution?](https://arxiv.org/abs/2505.20295)：研究模型对内部答案分布的自反不确定性，为幻觉风险提供模型侧信号。
+- [Reasoning Models Hallucinate More](https://arxiv.org/abs/2505.24630)：提出面向幻觉控制的模型侧方法，核心围绕 Factuality-Aware Reinforcement Learning for Large Reasoning Models。
+- [CausalAbstain](https://arxiv.org/abs/2506.00519)：模型侧拒答方法，用因果推理信号判断模型何时应拒答而不是生成无依据回答。
+- [KnowRL](https://arxiv.org/abs/2506.19807)：面向事实性的强化学习方法，用 knowledge-aware reward signals 优化策略。
+- [ONLY](https://arxiv.org/abs/2507.00898)：提出面向幻觉控制的模型侧方法，核心围绕 One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models。
+- [OmniDPO](https://arxiv.org/abs/2509.00723)：提出面向幻觉控制的模型侧方法，核心围绕 Preference Optimization Framework to Address Omni-Modal Hallucination。
+- [FedRAG++: Federated Multi-LLM Retrieval-Augmented Generation with Reinforcement Learning-Based Generator Selection and Hallucination Control](https://doi.org/10.1109/iccit68739.2025.11489538)：结合联邦多 LLM RAG 与强化学习生成器选择，降低分布式检索场景下的幻觉。
+- [A Post-Processing Verifier-Reranker Architecture for Efficient Hallucination Reduction in Generative Question Answering](https://doi.org/10.1109/isemantic67418.2025.11291991)：在生成式问答后处理中加入验证器与重排序器以减少幻觉。
+- [DA-DPO](https://arxiv.org/abs/2601.00623)：提出面向幻觉控制的模型侧方法，核心围绕 Cost-efficient Difficulty-aware Preference Optimization for Reducing MLLM Hallucinations。
+- [REAL](https://arxiv.org/abs/2602.14065)：通过推理支点对齐解决知识密集型视觉问答中的知识冲突。
+- [Abstain-R1](https://arxiv.org/abs/2604.17073)：面向 calibrated abstention 的 verifiable-RL 方法，在可答性不确定时训练拒答和澄清。
+- [Hallucination-aware Retrieval Augmented Generation with Evidence-based Semantic Clustering](https://doi.org/10.1109/aisns67921.2026.11440643)：结合检索增强生成与基于证据的语义聚类，使幻觉控制显式依赖证据。
+- [Large Language Models With Contrastive Decoding Algorithm for Hallucination Mitigation in Low-Resource Languages](https://doi.org/10.1049/cit2.70004)：采用对比解码降低低资源语言生成中的幻觉。
+- [MPI-CD: Multi-Path Information Contrastive Decoding for Mitigating Hallucinations in Large Vision-Language Models](https://doi.org/10.1145/3746027.3755372)：利用多路径信息对比解码减少大视觉语言模型幻觉。
+- [From Hallucination to Certainty: Meta-Knowledge Guided Self-Correcting Large Language Models](https://doi.org/10.1145/3797906)：用元知识引导自我纠错，使 LLM 将不确定生成推向有依据的答案。
+- [MAGNET: Counterfactual samples synthesizing for mitigating hallucination in large language models.](https://doi.org/10.1371/journal.pone.0340812)：合成反事实样本来训练或校准 LLM 幻觉缓解方法。
+- [Detecting and Mitigating Hallucination in Large Vision Language Models via Fine-Grained AI Feedback](https://doi.org/10.1609/aaai.v39i24.34744)：使用细粒度 AI 反馈检测并缓解大视觉语言模型幻觉。

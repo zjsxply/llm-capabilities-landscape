@@ -1,0 +1,120 @@
+# 2.11.4 Model
+
+- [RT-2](https://arxiv.org/abs/2307.15818)：奠基性的 vision-language-action model 路线，把 web-scale vision-language 知识迁移到机器人控制，并将机器人动作表示为模型输出。
+- [Octo](https://arxiv.org/abs/2405.12213)：跨机器人形态与任务训练的开源 generalist robot policy，为 Model 节提供 OpenVLA 之前的重要开放策略基线。
+- [OpenVLA](https://arxiv.org/abs/2406.09246)：在 97 万条真实机器人示范上训练 7B 开源 VLA，并发布 checkpoint、微调 notebook 和训练代码。
+- [pi0](https://arxiv.org/abs/2410.24164)：面向通用机器人控制的 vision-language-action flow model，使 flow matching 成为 VLA 动作生成的重要设计路线。
+- [FAST](https://arxiv.org/abs/2501.09747)：提出 VLA 模型的高效 action tokenization，改进连续机器人动作在语言模型 backbone 中的表示和生成。
+- [GeoManip](https://arxiv.org/abs/2501.09783)：用 LLM 生成的几何约束和场景解析作为免训练接口，实现语言条件下的机器人操作。
+- [DexVLA](https://arxiv.org/abs/2502.05855)：在视觉语言模型中加入扩散动作专家，并用具身感知训练改进通用机器人控制与长程操作。
+- [Video2Policy](https://arxiv.org/abs/2502.09886)：从互联网视频重建操作任务，用 LLM 生成奖励在仿真中训练策略，并将所得技能迁移到机器人。
+- [Humanoid-VLA](https://arxiv.org/abs/2502.14795)：对齐语言、第一视角视觉与全身运动控制，使人形机器人能在自然语言目标下与物体交互并探索环境。
+- [DemoGen](https://arxiv.org/abs/2502.16932)：把单条示范扩展为空间增强的合成示范，提升视觉运动策略在不同操作构型下的数据效率。
+- [Hi Robot](https://arxiv.org/abs/2502.19417)：提出面向具身与 VLA的模型侧方法，核心围绕 Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models。
+- [ROCKET-2](https://arxiv.org/abs/2503.02505)：通过跨视角目标对齐引导视觉运动策略，用于具身动作控制。
+- [SICNav-Diffusion](https://arxiv.org/abs/2503.08858)：将基于扩散的人群轨迹预测与双层模型预测控制结合，用于安全且具交互感知的机器人导航。
+- [HybridVLA](https://arxiv.org/abs/2503.10631)：在同一 VLA 模型中结合自回归与扩散式动作预测，并通过协同训练和动作集成服务机器人操作。
+- [GR00T N1](https://arxiv.org/abs/2503.14734)：面向通用人形机器人的开放基础模型，把 VLA 式训练扩展到 humanoid manipulation 与全身动作场景。
+- [Sim-and-Real Co-Training](https://arxiv.org/abs/2503.24361)：研究如何在机械臂与人形机器人设置中混合仿真和真实数据来训练视觉机器人操作策略。
+- [Unified World Models](https://arxiv.org/abs/2504.02792)：提出面向具身与 VLA的模型侧方法，核心围绕 Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets。
+- [MAPLE](https://arxiv.org/abs/2504.06084)：从第一视角视频中编码灵巧机器人操作先验，用于具身策略学习。
+- [Two by Two](https://arxiv.org/abs/2504.06961)：面向日常成对物体学习可泛化的机器人装配策略，将几何对齐与功能关系结合到操作策略中。
+- [pi0.5](https://arxiv.org/abs/2504.16054)：把 VLA 模型扩展到 open-world generalization，面向实验室外更实际的真实机器人任务。
+- [SkillMimic-V2](https://arxiv.org/abs/2505.02094)：通过轨迹拼接与状态转移场增强，从稀疏、有噪示范中训练稳健的交互策略。
+- [GraspVLA](https://arxiv.org/abs/2505.03233)：提出面向具身与 VLA的模型侧方法，核心围绕 Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data。
+- [UniDiffGrasp](https://arxiv.org/abs/2505.06832)：结合视觉语言推理和部件级扩散，用于开放词表约束下的双臂抓取。
+- [EgoDex](https://arxiv.org/abs/2505.11709)：从大规模第一视角视频学习灵巧操作，将可扩展的人类视频转化为机器人策略监督信号。
+- [FLARE](https://arxiv.org/abs/2505.15659)：通过将当前表示与未来潜在观测对齐，为机器人策略加入隐式世界建模。
+- [SwarmDiff](https://arxiv.org/abs/2505.15679)：用扩散 Transformer 在杂乱环境中生成风险感知的群体机器人轨迹。
+- [ManipLVM-R1](https://arxiv.org/abs/2505.16517)：结合 affordance 感知与轨迹匹配奖励做强化学习，提升具身操作推理与物理动作合理性。
+- [3D Equivariant Visuomotor Policy](https://arxiv.org/abs/2505.16969)：用球面投影把 3D 等变扩散策略学习引入眼在手 RGB 机器人操作。
+- [Interactive Post-Training for VLA](https://arxiv.org/abs/2505.17016)：研究通过交互对 VLA policy 做 post-training，直接面向 embodied policy improvement。
+- [VLA-RL](https://arxiv.org/abs/2505.18719)：提出面向具身与 VLA的模型侧方法，核心围绕 Towards Masterful and General Robotic Manipulation with Scalable Reinforcement Learning。
+- [MaskedManipulator](https://arxiv.org/abs/2505.19086)：从大规模动作跟踪中蒸馏生成式全身操作控制器，支持由高层目标条件化的控制。
+- [What Can RL Bring to VLA Generalization?](https://arxiv.org/abs/2505.19789)：比较强化学习与监督微调在视觉、语义和执行偏移下的 VLA 泛化效果，并提出基于 PPO 的训练方案。
+- [EquAct](https://arxiv.org/abs/2505.21351)：把 SE(3) 等变结构加入语言条件 3D Transformer 策略，用于开放环机器人操作。
+- [CoDA](https://arxiv.org/abs/2505.21437)：通过协同扩散噪声优化生成铰接物体的全身操作，将人体运动生成与机器人式物体交互连接起来。
+- [Reinforced Reasoning for Embodied Planning](https://arxiv.org/abs/2505.22050)：用监督微调与 GRPO 奖励训练视觉语言模型，提升其基于观察、语言目标和环境反馈的多步具身规划能力。
+- [ForceVLA](https://arxiv.org/abs/2505.22159)：提出面向具身与 VLA的模型侧方法，核心围绕 Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation。
+- [RoboTransfer](https://arxiv.org/abs/2505.23171)：利用几何一致的视频扩散进行机器人视觉策略迁移，缩小仿真到真实环境的差距。
+- [SmolVLA](https://arxiv.org/abs/2506.01844)：构建更低成本、更高效率的 VLA 模型，把模型规模、部署成本和训练可及性纳入具身 agent 模型路线。
+- [Rodrigues Network](https://arxiv.org/abs/2506.02618)：通过神经化的 Rodrigues 前向运动学形式引入运动学归纳偏置，用于学习机器人动作。
+- [What Do Latent Action Models Actually Learn?](https://arxiv.org/abs/2506.15691)：分析 latent action models 实际学习到的动作抽象，为 embodied 与 video-conditioned policy learning 提供诊断参考。
+- [Dex1B](https://arxiv.org/abs/2506.17198)：研究十亿级示范规模下的灵巧操作学习，扩展 embodied policies 的数据扩展路线。
+- [WorldVLA](https://arxiv.org/abs/2506.21539)：提出面向具身与 VLA的模型侧方法，核心围绕 Towards Autoregressive Action World Model。
+- [EgoVLA](https://arxiv.org/abs/2507.12440)：提出面向具身与 VLA的模型侧方法，核心围绕 Learning Vision-Language-Action Models from Egocentric Human Videos。
+- [AnyPos](https://arxiv.org/abs/2507.12768)：学习面向双臂操作的任务无关动作表示，将本体动力学与特定任务示范解耦。
+- [ThinkAct](https://arxiv.org/abs/2507.16815)：提出面向具身与 VLA的模型侧方法，核心围绕 Vision-Language-Action Reasoning via Reinforced Visual Latent Planning。
+- [MolmoAct](https://arxiv.org/abs/2508.07917)：提出 Action Reasoning Models，用开放 VLA 式架构和数据集连接感知、中层空间计划与低层机器人动作。
+- [BeyondMimic](https://arxiv.org/abs/2508.08241)：用 guided diffusion 将人形控制从动作跟踪推进到面向未见任务的多技能组合。
+- [SimGenHOI](https://arxiv.org/abs/2508.14120)：将生成建模与强化学习结合，用于产生物理可执行的全身人形机器人与物体交互。
+- [Discrete-Guided Diffusion](https://arxiv.org/abs/2508.20095)：将离散多智能体寻路与约束扩散生成结合，用于可扩展、无碰撞的多机器人运动规划。
+- [EMMA for Mobile Manipulation](https://arxiv.org/abs/2509.04443)：通过联合训练第一视角人类移动操作数据与机器人数据，扩展移动操作策略。
+- [SimpleVLA-RL](https://arxiv.org/abs/2509.09674)：提出面向具身与 VLA的模型侧方法，核心围绕 Scaling VLA Training via Reinforcement Learning。
+- [KungfuBot2](https://arxiv.org/abs/2509.16638)：用 mixture-of-experts 专门化训练统一全身控制器，覆盖多样且动态的人形运动技能。
+- [MotionTrans](https://arxiv.org/abs/2509.17759)：将人类 VR 数据中的运动层级知识迁移到机器人操作策略中。
+- [EMMA Generative Visual Transfer](https://arxiv.org/abs/2509.22407)：通过跨物体外观的生成式视觉迁移增强真实世界 VLA 操作策略。
+- [Compose Your Policies!](https://arxiv.org/abs/2510.01068)：通过测试时分布级组合改进基于扩散或流模型的机器人策略。
+- [X-VLA](https://arxiv.org/abs/2510.10274)：提出面向具身与 VLA的模型侧方法，核心围绕 Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model。
+- [PhysHSI](https://arxiv.org/abs/2510.11072)：构建可真实部署的人形机器人场景交互系统，结合仿真训练、场景感知与真实执行。
+- [VLA-0](https://arxiv.org/abs/2510.13054)：证明可直接把动作表示为文本，在不改 VLM 词表、不加专用 action head 的情况下获得强 VLA 表现。
+- [RM-RL](https://arxiv.org/abs/2510.15189)：使用角色模型强化学习提升精细机器人操作能力，面向对微小动作误差敏感的任务。
+- [MoS-VLA](https://arxiv.org/abs/2510.16617)：从 Open X-Embodiment 数据学习基础技能空间，并在无需梯度更新的情况下用一条示范适配新的操作任务。
+- [Shared-Autonomy Arm-Hand VLA Policies](https://arxiv.org/abs/2511.00139)：结合 VR 遥操作与自主手部 VLA 策略，为端到端灵巧臂手控制收集数据。
+- [RobustVLA](https://arxiv.org/abs/2511.01331)：对 VLA 模型做 robustness-aware reinforcement post-training，提升视觉和环境变化下的执行可靠性。
+- [High-Consistency Embodied World Model](https://arxiv.org/abs/2511.12882)：利用多视角轨迹视频提升具身世界模型一致性，面向动作条件下的物理场景预测。
+- [Audio World Models for Robot Manipulation](https://arxiv.org/abs/2512.08405)：利用音频世界模型学习机器人操作策略。
+- [ISS Policy](https://arxiv.org/abs/2512.15020)：为 3D 视觉运动扩散策略加入隐式场景监督，使动作序列与场景几何演化保持一致。
+- [Dream-VL and Dream-VLA](https://arxiv.org/abs/2512.22615)：构建开放的 diffusion-language VLM 与 VLA，用 diffusion language-model backbone 支持视觉规划和机器人动作生成。
+- [Closing the Reality Gap](https://arxiv.org/abs/2601.02778)：结合触觉仿真、力矩感知和强化学习，实现灵巧力控抓取与操作的零样本 sim-to-real 部署。
+- [Fast-ThinkAct](https://arxiv.org/abs/2601.09708)：用 verbalizable latent planning 提升 VLA 推理效率，在控制执行前降低动作推理成本。
+- [ForeDiffusion](https://arxiv.org/abs/2601.12925)：通过未来视角构建来条件化机器人操作扩散策略。
+- [DextER](https://arxiv.org/abs/2601.16046)：用语言条件下的具身推理生成灵巧抓取，使 VLA 式操作能够根据物体功能与任务意图选择抓取方式。
+- [Thinker](https://arxiv.org/abs/2601.21199)：提出面向具身智能的视觉语言基础模型。
+- [mjlab](https://arxiv.org/abs/2601.22074)：提供轻量级 GPU 加速机器人学习框架，降低大规模策略训练与仿真循环的成本。
+- [Task-Centric Latent Actions](https://arxiv.org/abs/2601.22714)：利用 VLM 任务描述在训练潜在动作模型时区分可控任务相关运动与干扰因素。
+- [GSR](https://arxiv.org/abs/2602.01693)：学习面向具身操作的结构化推理，把操作策略学习转化为显式的推理与动作 grounding 问题。
+- [HumanX](https://arxiv.org/abs/2602.02473)：通过数据生成流水线和免任务奖励的真实策略学习，把人类视频转化为敏捷的人形机器人交互技能。
+- [RDT2](https://arxiv.org/abs/2602.03310)：扩展 UMI 示范数据来训练 VLA 机器人基础模型，目标是实现跨机器人形态的零样本泛化。
+- [InterPrior](https://arxiv.org/abs/2602.06035)：通过 imitation pretraining 与强化学习后训练扩展人形机器人与物体交互的生成式控制，面向可组合的移动操作技能。
+- [DreamDojo](https://arxiv.org/abs/2602.06949)：从大规模人类视频训练通用机器人世界模型，使机器人智能体能在行动前模拟动作结果。
+- [TwinRL](https://arxiv.org/abs/2602.09023)：用 digital twin-driven RL 训练真实机器人操作策略，通过仿真到真实反馈改进 manipulation。
+- [HAIC](https://arxiv.org/abs/2602.11758)：用动力学感知世界模型控制人形机器人与欠驱动物体的敏捷交互，并处理遮挡状态。
+- [Learning to Manipulate Anything](https://arxiv.org/abs/2602.11885)：研究 bounding-box 引导机器人策略的数据 scaling law，说明视觉定位监督如何扩展到开放式操作任务。
+- [Robot-DIFT](https://arxiv.org/abs/2602.11934)：蒸馏扩散模型特征以获得几何一致的视觉运动控制，把生成式视觉表示用作策略侧空间信号。
+- [VLAW](https://arxiv.org/abs/2602.12063)：通过迭代改进共同训练 VLA 策略与世界模型，把动作学习和环境预测建模连接起来。
+- [GigaBrain-0.5M*](https://arxiv.org/abs/2602.12099)：通过 world model-based RL 训练 VLA，把动作学习与学习到的环境动力学连接起来。
+- [LongNav-R1](https://arxiv.org/abs/2602.12351)：用 horizon-adaptive multi-turn RL 训练 VLA 导航，使策略在连续具身交互中学习。
+- [Dual-Granularity Contrastive Reward](https://arxiv.org/abs/2602.12636)：结合双粒度对比奖励与生成式 episode 指导，提升具身强化学习。
+- [Imitating What Works](https://arxiv.org/abs/2602.13197)：在模块化策略学习前用仿真筛选人类视频示范，使视频模仿更贴近可执行机器人控制。
+- [Perceptive Humanoid Parkour](https://arxiv.org/abs/2602.15827)：通过 motion matching 和感知驱动选择串联动态人形技能，面向复杂场景中的长程 parkour 式控制。
+- [EgoScale](https://arxiv.org/abs/2602.16710)：将多样化第一视角人类数据迁移到高自由度机器人控制中，用于扩展灵巧操作能力。
+- [RoboCurate](https://arxiv.org/abs/2602.18742)：用动作验证的神经轨迹筛选多样化机器人学习数据，使模型改进集中在能通过执行检查的示范上。
+- [Compositional Planning with Jumpy World Models](https://arxiv.org/abs/2602.19634)：用 jumpy world model 做组合式规划，通过学习到的状态转移抽象支持更长程的具身决策。
+- [Recursive Belief VLA](https://arxiv.org/abs/2602.20659)：为 VLA 策略引入递归 belief 建模，把对观测和动作的不确定性纳入策略表示。
+- [IG-RFT](https://arxiv.org/abs/2602.20715)：将交互引导强化学习用于长程机器人操作中的 VLA 模型，强调通过环境反馈进行后训练。
+- [HALO](https://arxiv.org/abs/2602.21157)：统一视觉、语言与动作建模，用于具身多模态思维链推理。
+- [EgoAVFlow](https://arxiv.org/abs/2602.22461)：通过 3D flow 从人类第一人称视频中学习带主动视觉的机器人策略。
+- [FAVLA](https://arxiv.org/abs/2602.23648)：为接触丰富的机器人操作加入力自适应的快慢 VLA 控制，把语言条件策略与触觉力学动态连接起来。
+- [OmniXtreme](https://arxiv.org/abs/2602.23843)：面向高动态人形控制，处理多动作优化扩展和真实可执行性约束。
+- [EgoMoD](https://arxiv.org/abs/2603.00167)：从机器人自我中心观测预测动态地图，使具身导航策略能建模局部可见范围之外的运动趋势。
+- [Embedding Morphology into Transformers](https://arxiv.org/abs/2603.00182)：把机器人形态编码进 Transformer 策略以改进跨机器人迁移，将 embodiment 差异作为模型输入而不是固定假设。
+- [HoMMI](https://arxiv.org/abs/2603.03243)：从人类示范中学习全身移动操作，将 embodied policy learning 扩展到不只机械臂操作的场景。
+- [MEM](https://arxiv.org/abs/2603.03596)：结合基于视频的短程记忆和基于文本的长程记忆，使 VLA policy 能执行多阶段真实世界任务。
+- [TeamHOI](https://arxiv.org/abs/2603.07988)：学习去中心化 Transformer 策略，使不同团队规模的人形主体能够协作完成物体交互。
+- [VP-VLA](https://arxiv.org/abs/2603.22003)：将视觉提示作为 VLA 模型接口，用于提升行动生成中的空间落地与鲁棒性。
+- [ThinkJEPA](https://arxiv.org/abs/2603.22281)：将 JEPA 式潜空间世界模型与视觉语言推理结合，用于具身轨迹和动作预测。
+- [Heracles](https://arxiv.org/abs/2603.27756)：结合精确动作跟踪与生成式恢复行为，提升人形控制的通用性和扰动容忍度。
+- [Multi-View Video Diffusion Policy](https://arxiv.org/abs/2604.03181)：构建具备 3D 时空意识的视频动作模型，把多视角视频生成与动作条件具身策略学习连接起来。
+- [SnapFlow](https://arxiv.org/abs/2604.05656)：用 progressive self-distillation 把 flow-matching VLA 的多步去噪压缩为一步动作生成。
+- [Train-Small Deploy-Large](https://arxiv.org/abs/2604.06598)：用基于扩散的多机器人规划实现从小规模训练到大规模部署团队的迁移。
+- [HY-Embodied-0.5](https://arxiv.org/abs/2604.07430)：构建具身基础模型，结合 mixture-of-transformers、latent tokens、自演化后训练和 on-policy distillation。
+- [Switch](https://arxiv.org/abs/2604.14834)：学习人形机器人的分层技能切换，用技能图和切换策略在敏捷行为之间安全过渡。
+- [Cross-Geometry Skill Transfer](https://arxiv.org/abs/2604.15455)：通过部件分解在不同物体几何之间迁移机器人策略；应归为具身模型而非可复用智能体技能。
+- [VLA Foundry](https://arxiv.org/abs/2604.19728)：提供统一 VLA 训练框架，覆盖模型、数据、训练和评测组件。
+- [DeVI](https://arxiv.org/abs/2604.20841)：把文本条件合成视频用作模仿信号，用于物理约束下的灵巧人形与物体控制。
+- [Latent Bridge](https://arxiv.org/abs/2605.02739)：通过预测 feature delta 实现高效 dual-system VLA 推理，减少昂贵 backbone 调用并保持动作质量。
+- [Dynamic Full-body Motion Agent](https://arxiv.org/abs/2605.11369)：融合预训练模块化控制器生成带物体交互的全身运动，适合补充具身动作生成模型。
+- [Think Twice, Act Once](https://arxiv.org/abs/2605.12620)：用训练过的 verifier 在测试时从采样的 embodied actions 中选择更可靠动作，而不改动基础 policy。
+- [CreFlow](https://arxiv.org/abs/2605.14274)：用 corrective reflow 处理稀疏奖励下的具身视频 diffusion RL。
+- [InCLET](https://ifaamas.csc.liv.ac.uk/Proceedings/aamas2025/pdfs/p2134.pdf)：利用 LLM 的上下文轨迹想象形成任务表示，用于具身控制环境中的语言条件强化学习智能体。

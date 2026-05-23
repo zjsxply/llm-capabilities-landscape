@@ -1,0 +1,59 @@
+# 4.1.4 Model
+
+- [Stable Diffusion 3](https://arxiv.org/abs/2403.03206): Introduces rectified-flow transformers for high-resolution text-to-image generation, combining scalable architecture, flow matching, and multimodal conditioning.
+- [Object-level Visual Prompts for Compositional Image Generation](https://arxiv.org/abs/2501.01424): Uses object-level visual prompts to improve compositional control in image generation.
+- [ACE++](https://arxiv.org/abs/2501.02487): Introduces Instruction-Based Image Creation and Editing via Context-Aware Content Filling, a model-side contribution for Image Generation Editing.
+- [SceneVTG++](https://arxiv.org/abs/2501.02962): Targets controllable multilingual visual text generation in natural scenes.
+- [Janus-Pro](https://arxiv.org/abs/2501.17811): A unified multimodal understanding and text-to-image generation model improved through optimized training, larger data, and scaling.
+- [ControlText](https://arxiv.org/abs/2502.10999): Enables controllable multilingual font rendering without font annotations.
+- [RelaCtrl](https://arxiv.org/abs/2502.14377): Adds relevance-guided control to diffusion transformers for more efficient controlled generation.
+- [CopyJudge](https://arxiv.org/abs/2502.15278): Uses an automated judging pipeline and mitigation strategy to identify and reduce copyright-infringing behavior in text-to-image diffusion models.
+- [Concept Corrector](https://arxiv.org/abs/2502.16368): Removes unwanted concepts on the fly in text-to-image diffusion outputs.
+- [KV-Edit](https://arxiv.org/abs/2502.17363): Introduces Training-Free Image Editing for Precise Background Preservation, a model-side contribution for Image Generation Editing.
+- [K-LoRA](https://arxiv.org/abs/2502.18461): Fuses subject and style LoRAs without training to support personalized image generation.
+- [h-Edit](https://arxiv.org/abs/2503.02187): Applies Doob's h-transform to make diffusion-based image editing more flexible and controllable.
+- [OmniPaint](https://arxiv.org/abs/2503.08677): Couples object removal and insertion through progressive paired and unpaired diffusion training for object-oriented image editing.
+- [Personalize Anything](https://arxiv.org/abs/2503.12590): A training-free personalization method for diffusion transformers using timestep-adaptive token replacement and patch perturbation.
+- [Edit Transfer](https://arxiv.org/abs/2503.13327): Learns image editing through vision in-context relations, supporting transfer of edit behavior.
+- [Diffusion-4K](https://arxiv.org/abs/2503.18352): Targets ultra-high-resolution image synthesis with latent diffusion models.
+- [Implicit Bias Injection Attacks](https://arxiv.org/abs/2504.01819): Shows how text-to-image diffusion models can be steered to inject implicit bias, informing model-side safety and robustness for generation.
+- [Sculpting Memory](https://arxiv.org/abs/2504.09039): Uses dynamic masks and concept-aware optimization for multi-concept forgetting in diffusion models.
+- [PT-Mark](https://arxiv.org/abs/2504.10853): Embeds invisible watermarks in text-to-image diffusion models through semantic-aware pivotal tuning.
+- [Seedream 3.0](https://arxiv.org/abs/2504.11346): A bilingual image-generation foundation-model report covering data construction, mixed-resolution training, cross-modality RoPE, reward-model post-training, and acceleration.
+- [SmartFreeEdit](https://arxiv.org/abs/2504.12704): A mask-free instruction-based image editing model combining an MLLM, region-aware tokens, reasoning segmentation, and hypergraph-enhanced inpainting.
+- [REED-VAE](https://arxiv.org/abs/2504.18989): Re-encodes generated results into the VAE latent space to train diffusion models for iterative image editing.
+- [In-Context Edit](https://arxiv.org/abs/2504.20690): Introduces Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer, a model-side contribution for Image Generation Editing.
+- [Safer Prompts](https://arxiv.org/abs/2505.03338): Reduces intellectual-property risk in visual generative AI through prompt-side mitigation.
+- [Multi-turn Consistent Image Editing](https://arxiv.org/abs/2505.04320): Uses flow-matching inversion, dual-objective LQR sampling, and adaptive attention highlighting to reduce error accumulation across iterative edits.
+- [BLIP3-o](https://arxiv.org/abs/2505.09568): An open unified multimodal model family that generates CLIP image features with a diffusion transformer and uses sequential pretraining plus curated instruction data.
+- [BAGEL](https://arxiv.org/abs/2505.14683): A decoder-only unified multimodal pretraining model trained on interleaved text, image, video, and web data for reasoning, generation, and image manipulation.
+- [Rhetorical Text-to-Image Generation](https://arxiv.org/abs/2505.22792): Uses two-layer diffusion policy optimization so text-to-image models can render implicit meanings in rhetorical prompts.
+- [OmniGen2](https://arxiv.org/abs/2506.18871): An instruction-aligned multimodal generation model that decouples text and image decoding and adds editing, in-context generation, and reflection data pipelines.
+- [Draw Your Mind](https://arxiv.org/abs/2508.03481): Models user preferences at the condition level for personalized text-to-image diffusion generation.
+- [Pref-GRPO](https://arxiv.org/abs/2508.20751): Introduces Pairwise Preference Reward-based GRPO for Stable Text-to-Image Reinforcement Learning, a model-side contribution for Image Generation Editing.
+- [Universal Few-Shot Spatial Control](https://arxiv.org/abs/2509.07530): A few-shot control adapter for diffusion models that adapts to novel spatial conditions from a few image-condition pairs.
+- [EditScore](https://arxiv.org/abs/2509.23909): Introduces Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling, a model-side contribution for Image Generation Editing.
+- [Causal-Adapter](https://arxiv.org/abs/2509.24798): Adapts frozen text-to-image diffusion backbones for faithful counterfactual image generation under causal interventions.
+- [SafeEditor](https://arxiv.org/abs/2510.24820): A post-hoc T2I safety editing method that uses a unified MLLM editing model to repair unsafe generated images after generation.
+- [FlowChef](https://doi.org/10.1109/ICCV51701.2025.01420): Steers rectified-flow models for controlled visual generation.
+- [KoDi](https://doi.org/10.1109/ACCESS.2025.3633798): Builds a Korean-English text-to-image diffusion model that targets bilingual prompting and culturally faithful generation.
+- [HybridEditDif](https://doi.org/10.1016/j.patcog.2025.112510): Combines text and exemplar guidance for diffusion-based image editing.
+- [FFTDiff](https://doi.org/10.1016/j.jvcir.2025.104681): Performs tuning-free image texture transfer with diffusion-model frequency-domain guidance.
+- [Gain-Map Decomposed Diffusion](https://doi.org/10.1109/ICCV51701.2025.01629): Generates HDR images by decomposing gain maps within a diffusion-based image-generation pipeline.
+- [Edge-Preserving Diffusion Editing](https://doi.org/10.1109/IoTAAI66837.2025.11212919): Adds edge-preserving smoothing to semantic diffusion editing to improve local edit control.
+- [LatentPS](https://doi.org/10.1109/WACVW65960.2025.00023): Uses latent diffusion representations for image editing, fitting the model-side image-editing section.
+- [Diff-PC](https://arxiv.org/abs/2602.00639): Adds identity-preserving and 3D-aware controls for zero-shot portrait customization with diffusion models.
+- [FlowBypass](https://arxiv.org/abs/2602.01805): Bypasses parts of rectified-flow trajectories to make training-free image editing faster while retaining fidelity.
+- [Effects-Sensitive In-Context Inpainting](https://arxiv.org/abs/2602.08388): Improves geometric image editing by using effects-sensitive in-context inpainting with diffusion transformers.
+- [FusionEdit](https://arxiv.org/abs/2602.08725): Combines semantic fusion with attention modulation for mask-free training-free image editing.
+- [Localized Concept Erasure](https://arxiv.org/abs/2602.19631): Erases localized concepts in text-to-image diffusion models through high-level representation misdirection.
+- [Conditioned Activation Transport](https://arxiv.org/abs/2603.03163): An inference-time T2I safety steering method that learns nonlinear activation-transport maps from contrastive safe and unsafe prompts.
+- [SafeRoPE](https://arxiv.org/abs/2604.01826): Applies risk-specific head-wise embedding rotations to steer rectified-flow transformers away from unsafe image generation while preserving quality.
+- [VicoEdit](https://arxiv.org/abs/2604.04487): Performs training-free image editing by integrating visual context and concept alignment.
+- [Partial-Sketch Diffusion Editing](https://doi.org/10.1109/TIP.2026.3685834): Conditions diffusion-based image manipulation on partial sketches, adding a controllable editing method for sketch-guided visual changes.
+- [SegEdit](https://doi.org/10.1016/j.eswa.2026.131222): Combines semantic mask segmentation with shape injection inside diffusion models for controlled image editing.
+- [HierLoRA](https://doi.org/10.1016/j.neucom.2026.132927): Uses hierarchical enhanced LoRA to learn multiple personalized concepts in image diffusion models.
+- [Attribute-Conditioned Attention Scaling](https://doi.org/10.14569/ijacsa.2026.0170472): Controls text-to-image diffusion outputs by scaling attention according to desired visual attributes.
+- [Panoptic Scene Graph Grounded Editing](https://doi.org/10.1049/cvi2.70069): Uses panoptic scene graphs and mutually exclusive attention manipulation for training-free image editing, fitting the image-editing Model section rather than embodied VLA.
+- [Content-Style Decoupled Latent Diffusion](https://doi.org/10.1038/s41598-026-36407-3): Decouples content and style in latent diffusion for multi-style image generation.
+- [Text-Conditioned Diffusion Image Generation](https://doi.org/10.1007/s11042-025-20990-0): Studies text-conditioned image generation with diffusion models, adding a direct model-side image-generation method.

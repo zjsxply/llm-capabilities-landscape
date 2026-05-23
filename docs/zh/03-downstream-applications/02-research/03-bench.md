@@ -9,6 +9,7 @@
 - [MLE-bench](https://arxiv.org/abs/2410.07095)（[开源代码](https://github.com/openai/mle-bench)）：评什么：机器学习工程与数据科学竞赛式建模能力，覆盖 75 个 Kaggle competition，并以生成 `submission.csv` 后的竞赛指标和 `Any Medal` 聚合分数评估。核心思想：把真实 ML 工程中的数据读取、EDA、特征工程、模型选择、调参、训练、验证、提交格式修复和长时间实验迭代放进同一个可执行 benchmark；官方还提供 22 题 Low/Lite split，降低完整评测的 3.3TB 数据与 24 小时运行成本。
 - [OpenScholar / ScholarQABench](https://arxiv.org/abs/2411.14199)（[开源代码](https://github.com/AkariAsai/OpenScholar)；[demo](https://open-scholar.allen.ai/)）：评什么：大规模科学文献检索与引用式综合。核心思想：把检索增强文献模型、专家撰写的多领域科学问题、长答案参考和引用准确性检查结合起来，直接支撑 ARIS 式多源文献检索。
 - [RE-Bench](https://arxiv.org/abs/2411.15114)（[开源代码](https://github.com/METR/RE-Bench)）：评什么：AI R&D 自动化中的真实研究工程任务，覆盖算法设计、实验执行和结果分析等开放式研发工作。核心思想：与 MLE-bench 的 Kaggle 竞赛协议互补，RE-Bench 更强调研究工程师式的问题求解、代码实验与研究判断。
+- [Aspect-Guided Multi-Level Perturbation Analysis](https://arxiv.org/abs/2502.12510)：评测自动化论文评审在 aspect-guided perturbation 下的稳健性。核心思路是在贡献、可靠性、表达、语气和完整性等维度扰动论文、评审和 rebuttal，诊断 LLM reviewer 与 meta-reviewer 是否被操纵证据影响。
 - [MLGym](https://arxiv.org/abs/2502.14499)（[开源代码](https://github.com/facebookresearch/MLGym)）：评什么：AI research agent 的可交互 ML 研究环境与 benchmark。核心思想：把开放式机器学习研究任务做成 Gym 式环境，使 agent 能反复实验、观察结果并改进研究方案。
 - [Mind the Blind Spots](https://arxiv.org/abs/2502.17086)：从 focus/facet 层面评测 LLM 生成的论文评审。核心思路是把评审关注点归一化为不同维度上的注意力分布，并与人类评审关注重点对齐，避免只看表层重合或笼统有用性。
 - [Is Your Paper Being Reviewed by an LLM?](https://arxiv.org/abs/2502.19614)：评测 peer review 场景中的 AI 文本检测。核心思想是构建同行评审特定的检测资源，使学术诚信评测覆盖“LLM 生成评审是否能在真实风险场景中被识别”。
@@ -22,19 +23,20 @@
 - [MLRC-Bench](https://arxiv.org/abs/2504.09702)（[Leaderboard](https://huggingface.co/spaces/launch/MLRC_Bench)）：评什么：机器学习研究挑战中的 agent 表现，任务来自更开放的 ML research challenge 场景。核心思想：把“能否完成竞赛建模”进一步推向“能否推进研究挑战”，适合作为 MLE-bench 与 MLR-Bench 之间的过渡评测。
 - [arXiv2Table](https://arxiv.org/abs/2504.10284)：评测从论文集合生成 literature-review table 的能力。核心思想是摆脱 oracle schema 设置，引入真实用户需求、检索干扰论文和面向使用价值的评分，衡量研究综述表格生成。
 - [ArXivBench](https://arxiv.org/abs/2504.10496)：通过准确生成 arXiv 参考文献来评测学术写作辅助能力。核心思想：检验模型能否在主要学科与计算机子领域中给出相关真实论文和有效 arXiv 链接，从而暴露研究写作流程中的虚构引用问题。
+- [LazyReview](https://arxiv.org/abs/2504.11042)：评测 NLP 论文评审中的 lazy-thinking 模式。核心思路是为评审句子标注细粒度 lazy-thinking 类别，使评审辅助系统能够检测表面化或启发式反馈。
 - [MASSW](https://aclanthology.org/2025.findings-naacl.127/)（[数据集](https://osf.io/7ygrq/?view_only=3d8261a0ea09489fa67ece2c68235afa)）：评什么：AI-assisted scientific workflows。核心思想：把多步骤科学工作实践做成 benchmark 任务，覆盖 workflow 规划与执行，而不只是论文问答。
 - [CSR-Bench](https://aclanthology.org/2025.naacl-long.633/)：评什么：LLM agent 部署计算机科学研究仓库的能力。核心思想：把论文/仓库理解与环境配置、执行、调试连接起来，使研究仓库部署成为具体可测任务。
 - [MLE-Dojo](https://arxiv.org/abs/2505.07782)（[开源代码](https://github.com/MLE-Dojo/MLE-Dojo)）：评什么：Gym 式可执行环境中的交互式机器学习工程 agent。核心思想：从 200 多个 Kaggle challenge 构建带反馈回路的任务，使 agent 能在真实长程 ML workflow 中迭代实验、调试、验证结果，并用于训练或评测。
 - [Re2](https://arxiv.org/abs/2505.07920)：提供一致性保障的完整论文评审与多轮 rebuttal 数据集。核心思路是把初稿、评审、作者回应和讨论信号关联起来，使评审与 rebuttal Agent 能在更完整的发表流程上训练或评测。
 - [BAISBench](https://arxiv.org/abs/2505.08341)（artifacts：URL 检查时未找到可访问的公开仓库或数据集入口）：评什么：组学数据驱动的生物 AI scientist。核心思想：用真实单细胞转录组数据构造细胞类型标注和科学发现问答，评估 agent 能否从实验数据中提出有意义的生物学结论。
 - [Research Impact Summarization](https://arxiv.org/abs/2505.14838)：评测论文科研影响的时间感知总结。核心思想：利用细粒度、跨时间的引用意图分析刻画确认、批评与影响演化，并检验生成摘要是否能给研究者提供有洞察的影响概括。
-- [SciArena](https://sciarena.allen.ai/SciArena_An_Open_Evaluation_Platform_for_Foundation_Models_in_Scientific_Literature_Tasks.pdf)（[平台](https://sciarena.allen.ai/)）：评什么：科学文献理解、综合与引用式回答。核心思想：用开放评测平台收集模型在 literature tasks 上的表现，把文献级理解和用户偏好评价接进科研 agent 评估。
 - [Scientist-Bench / AI-Researcher](https://arxiv.org/abs/2505.18705)（[开源代码](https://github.com/HKUDS/AI-Researcher)）：评什么：自动科学创新中的文献综述、假设生成、算法实现和论文准备。核心思想：结合 guided innovation 与 open-ended exploration 任务，检验 research agent 能否把科学上下文转成已实现、可写作的研究贡献。
 - [MLR-Bench](https://arxiv.org/abs/2505.19955)（[开源代码](https://github.com/chchenhui/mlrbench)）：评什么：开放式机器学习研究（idea -> proposal -> experimentation -> paper writing），含端到端与分阶段评估。核心思想：提供 `MLR-Judge` 与 `MLR-Agent` scaffold，把“科研流程”变成可复现、可审阅的评测协议，并显式暴露“实验造假/无效实验结果”等可靠性失败模式。
 - [Reviewing Scientific Papers for Critical Problems With Reasoning LLMs](https://arxiv.org/abs/2505.23824)：评测 LLM 作为 manuscript quality checker 的能力。核心思想是定义 baseline approaches 和自动评测框架，用于发现科学论文中的关键问题，而不是只把完整评审生成作为目标。
 - [Scientific Novelty Detection](https://arxiv.org/abs/2505.24615)：用市场营销和 NLP 两个领域的数据集评测 LLM 判断研究想法新颖性的能力。核心思想：把待评想法放到相关论文闭包中比较，区分概念层面的新颖性和表面文本相似度。
 - [EXP-Bench](https://arxiv.org/abs/2505.24785)（[开源代码](https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench)）：评什么：AI agent 能否完成完整 AI 研究实验。核心思想：给定研究问题和不完整 starter code，要求 agent 提出假设、设计实验、实现、执行并分析结果，直接评估端到端实验能力。
 - [MIR](https://arxiv.org/abs/2506.00249)：评测面向科研问题的方法学灵感检索。核心思路是把“寻找能启发当前问题的既有工作”定义成检索任务，并提供数据集、基线和 Methodology Adjacency Graph，以测试检索器是否能找到概念上有用的方法类比。
+- [SciArena](https://sciarena.allen.ai/SciArena_An_Open_Evaluation_Platform_for_Foundation_Models_in_Scientific_Literature_Tasks.pdf)（[平台](https://sciarena.allen.ai/)）：评什么：科学文献理解、综合与引用式回答。核心思想：用开放评测平台收集模型在 literature tasks 上的表现，把文献级理解和用户偏好评价接进科研 agent 评估。
 - [ResearchCodeBench](https://arxiv.org/abs/2506.02314)（[项目页](https://researchcodebench.github.io/)；[开源代码](https://github.com/PatrickHua/ResearchCodeBench)）：评什么：从最新机器学习论文实现未见过的研究代码。核心思想：用 2024-2025 顶会论文构造 212 个可执行 coding challenge，专门检测模型是否能把新研究贡献翻译成代码。
 - [KRAMABENCH](https://arxiv.org/abs/2506.06541)（[项目页](https://kramabench.org/)；[开源代码](https://github.com/mitdbg/KramaBench)，[数据集](https://huggingface.co/datasets/eugenie-y/KramaBench)）：评什么：数据湖上的 data-to-insight pipeline。核心思想：要求 agent 完成数据发现、清洗、整合、统计推理和 Python pipeline 编排，补足 MLE-bench 之外对开放数据科学研究流程的覆盖。
 - [CLAIM-BENCH](https://arxiv.org/abs/2506.08235)：评什么：完整 AI 论文中的科学主张、证据抽取和链接验证。核心思想：用专家标注的 claim-evidence pairs 测试模型能否识别主张、找回分散证据，并验证科学论证中的逻辑支撑关系。
@@ -44,7 +46,10 @@
 - [AbGen](https://aclanthology.org/2025.acl-long.611/)：评什么：科研中的 ablation study 设计与评价。核心思想：测试模型是否能判断该消融什么、什么证据重要以及实验结论是否成立，而不是只会总结论文。
 - [LimitGen](https://arxiv.org/abs/2507.02694)：评测 LLM 是否能识别 AI 论文中的关键局限。核心思路是结合局限类型 taxonomy、合成扰动子集和人类撰写局限子集，使论文评审辅助模型按实质性问题发现能力接受评测。
 - [AblationBench](https://arxiv.org/abs/2507.08038)（[项目页](https://ablation-bench.github.io/)；[开源代码](https://github.com/ai-scientist-bench/ablation-bench)）：评什么：经验型 AI research 中的自动消融规划。核心思想：把任务拆成作者侧根据方法部分提出消融方案，以及审稿人侧根据全文发现缺失消融，贴近 ARIS 式初步结果后的 reviewer-perspective 消融规划。
+- [MMReview](https://arxiv.org/abs/2508.14146)：面向 LLM 自动化同行评审的跨学科、多模态 benchmark。核心思想是测试评审 agent 能否利用正文、图表和学科语境给出有用的论文评审判断，而不是泛泛反馈。
+- [RevUtil](https://arxiv.org/abs/2509.04484)：衡量审稿意见对作者的实际效用。核心思想是评测评论是否提供建设性、可执行的反馈，而不只给出分数或泛泛批评，从而让自动化同行评审辅助更可审计。
 - [AirQA](https://arxiv.org/abs/2509.16952)：评测 AI 研究论文问答，覆盖 13,956 篇论文、多模态与多任务问题，并提供 instance-level scoring。核心思想：把论文 QA 评测与 ExTrActor 生成的交互轨迹结合起来，用于训练和测试会使用工具的研究 agent。
+- [Automatic Review Generation Evaluation](https://arxiv.org/abs/2509.19326)：评测 LLM 生成的科学论文评审与专家评审的差异。核心思路是在论文-评审语料上结合语义相似度和结构化知识图谱指标，揭示模型在发现弱点、提出实质问题和区分论文质量时的不足。
 - [Sci2Pol-Bench](https://arxiv.org/abs/2509.21493)（[开源代码](https://github.com/WeiminWu2000/Sci2Pol)，[数据集](https://huggingface.co/datasets/Northwestern-CSSI/Sci2Pol-Bench)）：评什么：从科学论文到政策简报的科研转译流程。核心思想：把补全、理解、总结、生成和验证拆成五阶段写作任务，衡量模型能否把科学证据转化为面向政策读者的可用材料。
 - [ReviewScore](https://arxiv.org/abs/2509.21679)：评测论文评审中 misinformation 点的检测能力。核心思路是重建评审缺点或问题背后的显式与隐式前提，再判断这些前提是否被论文反驳或已回答，使评审 factuality 能超越流畅度被度量。
 - [EvidenceBench](https://openreview.net/forum?id=lEQnUI5lEA)：评什么：从生物医学论文中抽取证据。核心思想：要求模型定位并抽取支撑主张的科学文本证据，是文献 grounded 科研 agent 的关键子任务。
@@ -55,6 +60,7 @@
 - [AstaBench](https://arxiv.org/abs/2510.21652)（[开源代码](https://github.com/allenai/asta-bench)；[Leaderboard](https://huggingface.co/spaces/allenai/asta-bench-leaderboard)）：评什么：综合科研 agent 能力。核心思想：把文献检索、代码执行、数据分析和科学发现等任务统一到 Asta 科研 agent suite，用标准化工具环境和公开榜单比较不同 agent。
 - [ReplicationBench](https://arxiv.org/abs/2510.24591)：评什么：agent 能否复现实验天体物理论文的核心贡献。核心思想：把整篇论文拆成由原作者共同设计的关键任务，分别评 faithfulness 与 correctness，更贴近真实科研复现。
 - [LMR-BENCH](https://aclanthology.org/2025.emnlp-main.314/)：评什么：LLM agent 复现语言模型研究的能力。核心思想：在 language modeling 子领域内同时测试论文理解、实验配置、代码执行和结果复现。
+- [In-Paper Prompt Injection for AI Reviewers](https://arxiv.org/abs/2511.01287)：评测面向 AI 辅助论文评审的论文内提示注入攻击。核心思路是在稿件中嵌入固定或迭代优化的隐藏指令，测试 AI reviewer 能否在隐蔽操纵下保持评审完整性。
 - [Paper2SysArch](https://arxiv.org/abs/2511.18036)：评什么：从科学论文生成系统架构图。核心思想：把论文与真实架构图配对，并从语义准确性、布局连贯性和视觉质量评分，使科研传播工件的评测不只停留在纯文本或幻灯片。
 - [FLAWS](https://arxiv.org/abs/2511.21843)：评测科学论文中的错误识别与定位。核心思想是提供 Fault Localization Across Writing in Science 任务，使 LLM reviewer 被评估为能否指出具体论文错误，而不只是生成看似合理的评审文字。
 - [SGI-Bench](https://arxiv.org/abs/2512.16969)（论文：Probing Scientific General Intelligence of LLMs with Scientist-Aligned Workflows）：评什么：科研流程对齐的科学通用智能评测。核心思想：把 scientist-aligned workflows 作为统一协议，考察模型在检索、推理、实验规划和结果整理上的端到端表现。
@@ -78,9 +84,11 @@
 - [PaperOrchestra / PaperWritingBench](https://arxiv.org/abs/2604.05018)（[开源代码](https://github.com/google-research/paper-orchestra)；URL 检查时数据集未包含在代码仓库中）：评什么：从原始研究材料自动撰写 AI research paper。核心思想：从顶会 AI 论文反向构造写作前材料，并评估 agent 是否能产出 submission-ready LaTeX 论文，覆盖文献综合、章节结构、图表和内容精修。
 - [Can Large Language Models Reinvent Foundational Algorithms?](https://arxiv.org/abs/2604.05716)：评测 LLM 在目标算法知识被 unlearning 后能否重新发现基础计算机科学算法。核心思想是移除 Dijkstra、Euclid 等算法知识，改变 hint level，并把 rediscovery 作为 foundational research innovation 的受控代理指标。
 - [SciPredict](https://arxiv.org/abs/2604.10718)：评什么：自然科学实验结果预测。核心思想：把“实验还没做时能否判断结果”单独作为科学预测任务，测试 LLM/agent 是否能超越知识问答而形成可验证的实验预判。
+- [NovBench](https://arxiv.org/abs/2604.11543)：评测 LLM 对学术论文新颖性的判断能力。核心思路是把论文引言中的 novelty claims 与专家新颖性评价配对，并从相关性、正确性、覆盖度和清晰度四个维度评分。
 - [ArcBench / ArcDeck](https://arxiv.org/abs/2604.11969)（[项目页](https://arcdeck.org/)；[开源代码](https://github.com/RehgLab/ArcDeck)，[数据集](https://huggingface.co/datasets/ArcDeck/ArcBench)）：评什么：叙事驱动的论文到幻灯片生成。核心思想：用学术论文和幻灯片配对，评估 agent 在把论文转成科研报告时是否保留逻辑流、叙事承诺、图表和视觉呈现质量。
 - [AI-Assisted Peer Review at Scale / AAAI-26 AI Review Pilot](https://arxiv.org/abs/2604.13940)：评什么：真实会议同行评审中的 AI 辅助。核心思想：用 AAAI-26 pilot 研究 AI reviewer 能否在保留人类监督、评审可用性和流程透明性的前提下，规模化发现科学弱点。
 - [REVIEWBENCH / ReviewGrounder](https://arxiv.org/abs/2604.14261)：评估并提升 AI 学术评审的实质性。核心思想：从评审指南、论文内容和人工评审中生成论文特定 rubric，再用 rubric 引导的工具集成智能体把浅层评审草稿补足为有证据支撑的意见。
+- [PeerPrism](https://arxiv.org/abs/2604.14513)：把评审实质判断与表层评审写作区分开，使 AI 辅助同行评审评测不再停留在人类或 AI 二分类检测。
 - [What Makes a Good AI Review?](https://arxiv.org/abs/2604.19998)：评什么：concern-level 的 AI 同行评审质量。核心思想：把官方评审和 AI 生成评审中的 concern 按严重性和 rebuttal 后处理进行对齐，暴露自动评审是否真的识别并排序正确科学问题，而不只是匹配最终接收/拒稿趋势。
 - [ResearchClawBench](https://github.com/InternScience/ResearchClawBench)（[数据集镜像](https://huggingface.co/datasets/InternScience/ResearchClawBench)）：评什么：OpenClaw/InternScience 生态中从 re-discovery 到 new-discovery 的端到端自动科研任务。核心思想：把目标论文、相关工作、数据、图表和多模态 checklist judge 打包到同一评测流程里，让 agent 按“是否复现甚至超过原论文”评分，而不是只回答文献问题。
 - [AutoResearchBench](https://arxiv.org/abs/2604.25256)（[项目页](https://cheryou.github.io/autoresearchbench.github.io/)；[开源代码](https://github.com/CherYou/AutoResearchBench)）：评什么：复杂科学文献发现。核心思想：把 Deep Research 与 Wide Research 两类任务落到 1,000 个专家策划问题上，要求 agent 精确定位目标论文或全面收集满足条件的论文集合。

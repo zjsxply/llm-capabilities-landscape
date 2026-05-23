@@ -1,0 +1,26 @@
+# 1.11.4 Model
+
+- [Toolformer](https://arxiv.org/abs/2302.04761): A self-supervised tool-use training method where language models teach themselves when to call APIs, pass arguments, and condition on tool results.
+- [Gorilla](https://arxiv.org/abs/2305.15334): A fine-tuned LLaMA-based API-call model and APIBench training setup for generating accurate calls over large API collections.
+- [ToolLLM](https://arxiv.org/abs/2307.16789): Builds ToolBench-style trajectories and trains ToolLLaMA to retrieve APIs, fill arguments, and execute multi-step tool calls.
+- [ToolACE](https://arxiv.org/abs/2409.00920): A tool-learning data and training line for improving function-calling behavior across diverse tool-use instructions.
+- [GenTool: Enhancing Tool Generalization in Language Models through Zero-to-One and Weak-to-Strong Simulation](https://arxiv.org/abs/2502.18990): Synthesizes tool-use experience from zero-to-one and weak-to-strong simulation to improve tool generalization.
+- [ToolACE-R](https://arxiv.org/abs/2504.01400): A model-aware iterative training and refinement method for tool learning rather than only a new evaluation set.
+- [APIGen-MT](https://arxiv.org/abs/2504.03601): Generates verifiable multi-turn API-use trajectories through simulated interaction and trains xLAM function-calling models from the data.
+- [OTC](https://doi.org/10.48550/arXiv.2504.14870): Introduces Optimal Tool Calls via Reinforcement Learning, a model-side contribution for Tool Use.
+- [Nemotron-Research-Tool-N1](https://arxiv.org/abs/2505.00024): Introduces Exploring Tool-Using Language Models with Reinforced Reasoning, a model-side contribution for Tool Use.
+- [Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.01441): Introduces Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning, a model-side contribution for Tool Use.
+- [Tool-Star](https://arxiv.org/abs/2505.16410): Introduces Empowering LLM-Brained Multi-Tool Reasoner via Reinforcement Learning, a model-side contribution for Tool Use.
+- [VTool-R1](https://arxiv.org/abs/2505.19255): Introduces VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use, a model-side contribution for Tool Use.
+- [Enhancing Tool Learning in Large Language Models with Hierarchical Error Checklists](https://arxiv.org/abs/2506.00042): Uses hierarchical error checklists to target common tool-learning failures in LLMs.
+- [LoSemB: Logic-Guided Semantic Bridging for Inductive Tool Retrieval](https://arxiv.org/abs/2508.07690): Uses logic-guided semantic bridging for inductive tool retrieval, improving generalization to unseen tools.
+- [SimpleTIR](https://arxiv.org/abs/2509.02479): Introduces End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning, a model-side contribution for Tool Use.
+- [Advancing SLM Tool-Use Capability Using Reinforcement Learning](https://arxiv.org/abs/2509.04518): Uses reinforcement learning to improve small-language-model tool-use capability.
+- [Retrieval And Structuring Augmented Generation with Large Language Models](https://arxiv.org/abs/2509.10697): Structures retrieved information before generation, making RAG outputs more controllable for tool-style workflows.
+- [AgentPRM](https://arxiv.org/abs/2511.08325): Introduces Process Reward Models for LLM Agents via Step-Wise Promise and Progress, a model-side contribution for Tool Use.
+- [SuperFC: Selective Data Utilization for a Sustainable and Effective Function-Calling Agent](https://doi.org/10.1109/ijcnn64981.2025.11228427): Selects function-calling training data for sustainable and effective tool-use agents.
+- [PhGPO](https://arxiv.org/abs/2602.13691): A pheromone-guided policy-optimization method for long-horizon tool planning with trajectory-level feedback.
+- [ATLAS-RTC](https://arxiv.org/abs/2603.27905): A token-level runtime-control method that biases, masks, or rolls back structured tool-call outputs during decoding.
+- [Case-Based Calibration of Adaptive Reasoning and Execution for LLM Tool Use](https://arxiv.org/abs/2605.15041): Calibrates adaptive reasoning and execution for tool use with case-based examples.
+- [MTSearch-R1](https://doi.org/10.1109/icassp55912.2026.11461921): Trains LLMs with reinforcement learning for flexible multi-tool search and tool-selection behavior.
+- [TOOL-CURE: Tool Selection via Curriculum-Enhanced Reinforcement Learning with Sample Screening for LLMs](https://doi.org/10.1145/3773966.3777952): Uses curriculum-enhanced reinforcement learning and sample screening to improve tool selection.

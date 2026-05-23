@@ -8,6 +8,7 @@
 - [S2S-Arena](https://arxiv.org/abs/2503.05085)：评测 speech-to-speech 模型的副语言指令遵循能力。核心思想：检查口语对话系统能否按语气、韵律、情绪等非词汇线索执行指令，而不只是保持转写文本内容。
 - [QualiSpeech](https://arxiv.org/abs/2503.20290)（数据集：[tsinghua-ee/QualiSpeech](https://huggingface.co/datasets/tsinghua-ee/QualiSpeech)）：评什么：auditory LLM 的低层语音质量理解。核心思想：用覆盖 11 类噪声与失真维度的自然语言质量描述和推理，补充单一音频分数式评测。
 - [FinAudio](https://arxiv.org/abs/2503.20990)：评测 audio LLM 在财报电话会、CEO 演讲等金融语音任务中的能力。核心思想：测试模型能否处理领域语音、情绪和事件推理，而不只是在干净的通用音频 QA 上表现良好。
+- [OmniAudio](https://arxiv.org/abs/2504.14906)：评测从 360 度视频生成空间音频的能力，配套 Sphere360/Sphere360-Bench。核心思想是把全景视频与一阶 ambisonic 空间音频配对，使音频生成系统不仅按音质评分，也按空间接地和时序对齐来比较。
 - [Vox-Profile](https://arxiv.org/abs/2505.14648)：评测语音基础模型对多样说话人与语音特征的刻画能力。核心思想：诊断 audio-language model 是否能识别说话人属性、发声状态和语音特征，而不是把语音输入简化为文字。
 - [AudioTrust](https://arxiv.org/abs/2505.16211)：评测音频大语言模型的多维可信性。核心思想：围绕安全性、鲁棒性、隐私和可靠性等维度评估音频语言系统，而不是只把音频能力等同于识别准确率或感知质量。
 - [JALMBench](https://arxiv.org/abs/2505.17568)：评测大音频语言模型的 jailbreak 脆弱性。核心思想：用大规模文本和音频样本、多个攻击方法、主流 LALM 与防御机制组成统一评测框架，使音频 jailbreak 鲁棒性能系统比较。

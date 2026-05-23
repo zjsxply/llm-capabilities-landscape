@@ -1,7 +1,18 @@
 # 3.2.2 Survey
 
 - [LLM4SR: A Survey on Large Language Models for Scientific Research](https://arxiv.org/abs/2501.04306): Surveys scientific literature, hypothesis generation, experimentation, data analysis, and writing.
+- [A review on the novelty measurements of academic papers](https://arxiv.org/abs/2501.17456): Surveys scientific-paper novelty measures. Core idea: organize novelty concepts, measure families, validation methods, tools, and datasets so AI-scientist novelty evaluation can be grounded in prior scientometrics work.
 - [Transforming Science with Large Language Models: A Survey on AI-assisted Scientific Discovery, Experimentation, Content Generation, and Evaluation](https://arxiv.org/abs/2502.05151): Reviews AI-assisted scientific discovery from experimentation through content generation and evaluation.
+- [Large Language Models Penetration in Scholarly Writing and Peer Review](https://arxiv.org/abs/2502.11193): Reviews how LLM use is entering scholarly writing and peer review, including workflow benefits and integrity risks.
+- [The Design Space of Recent AI-assisted Research Tools](https://arxiv.org/abs/2502.16291): Surveys AI-assisted research tools for ideation, sensemaking, and scientific creativity, highlighting interaction patterns, automation risks, and design trade-offs.
 - [Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions](https://arxiv.org/abs/2503.08979): Focuses on autonomous scientific workflows, tool use, and reliability challenges.
 - [Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents](https://arxiv.org/abs/2503.24047): Covers scientific-agent task types, architectures, benchmarks, and process automation.
+- [A Survey on Hypothesis Generation for Scientific Discovery](https://arxiv.org/abs/2504.05496): Taxonomizes LLM-based hypothesis generation methods, quality-improvement techniques, and evaluation strategies for scientific discovery.
+- [Hallucination, reliability, and the role of generative AI in science](https://arxiv.org/abs/2504.08526): Frames hallucination and reliability risks when generative AI is used inside scientific workflows.
+- [Recent Advances and Future Directions in Literature-Based Discovery](https://arxiv.org/abs/2506.12385): Surveys literature-based discovery with knowledge graphs, deep learning, and LLMs for automated hypothesis generation.
+- [Agent4S](https://arxiv.org/abs/2506.23692): Surveys how LLM agents reshape scientific research paradigms, from task decomposition to autonomous experimentation.
+- [AI4Research](https://arxiv.org/abs/2507.01903): Maps AI support across the scientific lifecycle, from ideation and experimentation to analysis, writing, and review.
 - [Deep Research: A Survey of Autonomous Research Agents](https://arxiv.org/abs/2508.12752): Reviews search, synthesis, reasoning, citation, and long-horizon research-agent workflows.
+- [A Helping Hand](https://doi.org/10.3390/app15095208): Surveys AI-driven experimental-design workflows for selecting variables, objectives, and closed-loop scientific experiments.
+- [Exploring the scope of generative AI in literature review development](https://doi.org/10.1007/s12525-025-00754-2): Examines how generative AI supports research synthesis, comparison, critique, and other knowledge-development activities in literature reviews.
+- [Science acceleration and accessibility with self-driving labs](https://doi.org/10.1038/s41467-025-59231-1): Reviews how self-driving laboratories combine automation, AI, and experimental infrastructure to accelerate discovery and broaden access.

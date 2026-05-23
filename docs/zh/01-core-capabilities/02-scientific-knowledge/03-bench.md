@@ -31,6 +31,7 @@
 - [Atomic Reasoning for Scientific Table Claim Verification](https://arxiv.org/abs/2506.06972)：评测基于科学表格的细粒度 claim verification。核心思想是把密集表格推理拆成 atomic steps，使模型依据精确证据使用情况被评估，而不只是给出粗粒度 entailment 标签。
 - [LLM-SRBench](https://proceedings.mlr.press/v267/shojaee25a.html)（[开源代码](https://github.com/deep-symbolic-mathematics/llm-srbench)）：评测 LLM 在科学符号回归与方程发现中的真实泛化。核心思想：用跨科学领域的变换与合成任务区分“记住已知公式”和“从数据中发现可解释规律”。
 - [SimpleQA Verified](https://arxiv.org/abs/2509.07968)：评测模型的“参数化事实性”（短答案、可判定事实问答）；核心思想是用更高质量的可核验 factoid 问答，测量不开工具时的事实记忆与幻觉风险。
+- [SIRBench-V1](https://arxiv.org/abs/2509.16226)：评测 LLM 能否在新环境中从少量样例归纳潜在科学规律，超越显式方程拟合任务。
 - [MMCR](https://openaccess.thecvf.com/content/ICCV2025/html/Tian_MMCR_Benchmarking_Cross-Source_Reasoning_in_Scientific_Papers_ICCV_2025_paper.html)：评什么：科学论文中的跨来源推理。核心思想：整合文本、图、表和论文上下文等多种来源，让 scientific-paper reasoning 显式成为多模态任务。
 - [CMT-Benchmark](https://arxiv.org/abs/2510.05228)：评测凝聚态理论中的研究级推理与可程序判分物理任务；核心思想是用非对易算符、QMC、DMRG 等专家题型测试模型是否能处理前沿物理推导和计算约束。
 - [AstaBench](https://arxiv.org/abs/2510.21652)（[开源代码](https://github.com/allenai/asta-bench)）：评测综合科研 agent 能力；核心思想是用 11 个科研 benchmark 和标准化工具环境覆盖文献检索、代码执行、数据分析和科学发现流程。

@@ -1,7 +1,38 @@
 # 1.16.2 Survey
 
 - [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432)：关于架构、规划、记忆、工具、多智能体交互与评测的基础综述。
+- [LLM-based Human Simulations Have Not Yet Been Reliable](https://arxiv.org/abs/2501.08579)：综述社会、经济、政策与心理场景中的 LLM 人类模拟研究，并提出可信模拟所需的可靠性要求。
+- [Harnessing Multiple Large Language Models: A Survey on LLM Ensemble](https://arxiv.org/abs/2502.18036)：综述多 LLM 集成，这是能力聚合中的跨切面模型组合模式。
+- [Thinking Machines](https://arxiv.org/abs/2503.10814)：把 LLM 推理策略组织为提示、搜索、验证和自我改进等模式分类，便于横向比较不同推理系统。
 - [Large Language Model Agent: A Survey on Methodology, Applications and Challenges](https://arxiv.org/abs/2503.21460)：面向难以归入更窄能力页面的 agent 工作的近期综合综述。
+- [Agentic Large Language Models, a survey](https://arxiv.org/abs/2503.23037)：把 agentic LLM 的核心界定为自主性、规划、记忆、工具使用与环境交互，而不是普通聊天模型的延伸。
+- [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736)：综述 LLM Agent 通信协议。核心思路是按 context-oriented 与 inter-agent、通用与垂直协议进行分类，并比较安全性、可扩展性、延迟和互操作性取舍。
+- [Moving From Monolithic To Microservices Architecture for Multi-Agent Systems](https://arxiv.org/abs/2505.07838)：综述多 Agent 系统的微服务式设计，覆盖架构原则、ACL、MCP、A2A 与可扩展性权衡。
 - [AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges](https://arxiv.org/abs/2505.10468)：提供概念分类以及广义应用与挑战地图。
+- [Disambiguation in Conversational Question Answering in the Era of LLMs and Agents](https://arxiv.org/abs/2505.12543)：综述会话问答中的歧义类型、LLM 消歧方法、数据集与 Agent 化问答开放问题。
+- [A Survey of Self-Evolving Agents](https://arxiv.org/abs/2507.21046)：按“演化什么、何时演化、如何演化、在哪里演化”梳理 Agent 自我改进循环及其评测问题。
 - [Evaluation and Benchmarking of LLM Agents: A Survey](https://arxiv.org/abs/2507.21504)：回顾任务设计、指标、可复现性、环境交互与榜单式评测。
 - [A Survey on Agent Workflow - Status and Future](https://arxiv.org/abs/2508.01186)：综述通用 agent workflow 的设计与未来方向。
+- [Taxonomy of Hierarchical Multi-Agent Systems](https://arxiv.org/abs/2508.12683)：综述层级多智能体系统的设计模式、协调机制与工业应用。核心思想是按层级、委派与协调方式组织多智能体架构，帮助跨领域比较可复用的 harness 模式。
+- [Generalizability of Large Language Model-Based Agents](https://arxiv.org/abs/2509.16330)：以任务、领域、环境、工具和 agent scaffold 的迁移能力为主线，讨论 LLM Agent 是否真正能跳出窄 benchmark 泛化。
+- [What Challenges Do Developers Face in AI Agent Systems? An Empirical Study on Stack Overflow](https://arxiv.org/abs/2510.25423)：基于 Stack Overflow 证据分析 AI 智能体系统开发者面临的挑战。
+- [Agentic AI](https://arxiv.org/abs/2510.25445)：把 agentic AI 的架构、应用与开放问题整理成系统级地图，横跨感知、规划、工具、记忆、协同与治理。
+- [A Design-Driven Taxonomy of AI Agentic Patterns](https://doi.org/10.1109/conecct65861.2025.11306519)：提出设计驱动的智能体 AI 模式分类，适合归纳跨切面智能体架构。
+- [Distributed Multi-Agent AI Systems: Scalability, Challenges, and Applications](https://doi.org/10.1109/icdcsw63273.2025.00083)：综述分布式多智能体 AI 系统，覆盖超出单一能力页的扩展性与协同问题。
+- [Generative Agents in Agent-Based Modeling: Overview, Validation, and Emerging Challenges](https://doi.org/10.1109/tai.2025.3566362)：综述基于智能体建模中的生成式智能体，覆盖验证与仿真挑战。
+- [A Survey of Post-Training Scaling in Large Language Models](https://doi.org/10.18653/v1/2025.acl-long.140)：把后训练视为独立的 scaling 机制，串联数据构造、监督微调、偏好优化、强化学习和奖励建模。
+- [Data Agents](https://arxiv.org/abs/2602.04261)：提出 data agent 的能力等级，并据此比较自动化数据访问、分析、转换和决策支持系统。
+- [When Agents Handle Secrets](https://arxiv.org/abs/2605.03213)：把 confidential computing 作为处理秘密的 Agent 系统层，关注秘密如何穿过工具、记忆、委派和多方工作流。
+- [The hands behind the agents: Understanding practitioner challenges with agentic frameworks](https://doi.org/10.1016/j.infsof.2026.108183)：实证研究从业者使用智能体框架时的挑战，为跨切面智能体系统设计提供依据。
+- [Orchestration and Verification of Agentic AI Systems: A Survey of Multi-Agent Collaboration and Safety](https://doi.org/10.59324/ejaset.2026.4%282%29.16)：综述智能体 AI 系统中的编排与验证，强调多智能体协作和安全。
+- [Generalist multimodal AI](https://doi.org/10.1016/j.neucom.2026.132933)：综述通用多模态 AI 的架构、挑战与机会，作为连接图像、视频、音频和文本能力的跨领域入口。
+- [Agentic AI systems](https://doi.org/10.1016/j.neucom.2026.134049)：系统综述智能体式 AI 系统的多智能体架构、认知基础、交互、可解释性、安全与评测。
+- [Reasoning based on symbolic and parametric knowledge bases](https://doi.org/10.1016/j.ipm.2026.104880)：比较显式符号知识库与模型参数中隐式知识的推理方式，说明混合 symbolic-parametric 系统的适用位置。
+- [Sensemaking in Multi-Agent LLM Interfaces: How Users Interpret Transparency and Trustworthiness Cues](https://doi.org/10.1145/3772318.3791157)：研究用户如何解读多智能体 LLM 界面中的透明度与信任线索。
+- [Agentic Design Patterns](https://doi.org/10.1007/978-3-032-01402-3)：以设计模式方式梳理智能体系统的可复用构造，作为广义智能体综述之外的模式化参考。
+- [Scenario, Role, and Persona](https://doi.org/10.1145/3706599.3719762)：综述社会智能 AI Agent 的场景、角色与人设设计策略，帮助界定交互式 Agent 行为的设计变量。
+- [A systematic survey of LLM-based text-to-SQL](https://doi.org/10.7717/peerj-cs.3773)：把 text-to-SQL 方法、安全漏洞和部署挑战放在一起梳理，说明数据库查询既是能力问题也是安全问题。
+- [Fundamental Capabilities and Applications of Large Language Models](https://doi.org/10.1145/3735632)：把 LLM 核心能力原语映射到主要应用族，说明跨领域能力如何超越单一任务轴组合起来。
+- [Multimodal Agent AI](https://doi.org/10.1007/s11390-025-4802-8)：把多模态 Agent 视为连接感知、推理、记忆、规划与行动的系统，覆盖数字和物理环境。
+- [The Rise of Agentic AI](https://doi.org/10.3390/fi17090404)：梳理定义、框架、架构、评测指标与挑战，突出 agentic AI 与普通 LLM 应用的边界。
+- [The rise and potential of large language model based agents](https://doi.org/10.1007/s11432-024-4222-0)：追踪 LLM Agent 如何结合规划、记忆、工具与多智能体交互，从文本生成走向自主任务执行。

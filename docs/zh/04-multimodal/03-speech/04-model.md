@@ -1,0 +1,67 @@
+# 4.3.4 Model
+
+- [Learning Musical Representations for Music Performance Question Answering](https://arxiv.org/abs/2502.06710)：面向音视频音乐表演问答学习多模态音乐表示，强调密集音频与乐器感知推理。
+- [SyncSpeech](https://arxiv.org/abs/2502.11094)：使用时间掩码 Transformer 实现高效低延迟文本到语音生成。
+- [SongGen](https://arxiv.org/abs/2502.13128)：使用单阶段自回归 Transformer 从文本生成歌声与伴奏，面向文本到歌曲建模。
+- [Slamming](https://arxiv.org/abs/2502.15814)：研究如何在单块 GPU、一天内训练 speech language model。
+- [DualSpec](https://arxiv.org/abs/2502.18952)：用双谱图引导扩散模型从文本生成空间音频。
+- [LLaSE-G1](https://arxiv.org/abs/2503.00493)：基于 LLaMA 做语音增强，并通过激励机制提升泛化能力。
+- [UniWav](https://arxiv.org/abs/2503.00733)：在同一预训练框架中统一语音表示学习与语音生成。
+- [LLM-based curation for audio-video foundation models](https://arxiv.org/abs/2503.09205)：用 LLM 做数据筛选，使音视频基础模型训练更具数据效率。
+- [Scaling Analysis of Interleaved Speech-Text Language Models](https://arxiv.org/abs/2504.02398)：研究交错语音-文本语言模型的 scaling 行为。
+- [SIFT-50M](https://arxiv.org/abs/2504.09081)：提供大规模多语言语音指令数据与微调方案，用于语音基础模型适配。
+- [Kimi-Audio](https://arxiv.org/abs/2504.18425)：开放音频基础模型，包含 12.5 Hz tokenizer、LLM 式架构、flow-matching 流式 detokenizer、大规模音频预训练和 post-training 数据构建。
+- [VITA-Audio](https://arxiv.org/abs/2505.03739)：高效端到端大语音语言模型，使用 Multiple Cross-modal Token Prediction 和四阶段渐进训练降低流式延迟。
+- [Calm-Whisper](https://arxiv.org/abs/2505.12969)：通过抑制不稳定注意力头降低 Whisper 在非语音输入上的幻觉。
+- [Llama-SMoP for AVSR](https://arxiv.org/abs/2505.14336)：通过稀疏投影器混合改进基于 LLM 的视听语音识别，实现更高效的多模态对齐。
+- [SALM-Duplex](https://arxiv.org/abs/2505.15670)：提出全双工 speech-to-speech language model 架构，直接建模用户连续输入与 Agent 语音输出的并行流。
+- [AudioMorphix](https://arxiv.org/abs/2505.16076)：提供免训练的扩散式音频编辑，在修改目标声音的同时保留原始录音。
+- [Speechless](https://arxiv.org/abs/2505.17417)：在低资源语言中无需语音数据训练语音指令跟随能力。
+- [Analyzing Mitigation Strategies for Catastrophic Forgetting in End-to-End Training of Spoken Language Models](https://arxiv.org/abs/2505.17496)：提出面向语音和音频的模型侧方法，核心围绕 Analyzing Mitigation Strategies for Catastrophic Forgetting in End-to-End Training of Spoken Language Models。
+- [BR-ASR](https://arxiv.org/abs/2505.19179)：为 speech LLM 中的 ASR 加入可扩展上下文偏置检索。
+- [OWSM v4](https://arxiv.org/abs/2506.00338)：通过数据扩展与清洗改进开放 Whisper-style 语音模型。
+- [NTPP](https://arxiv.org/abs/2506.00975)：面向双通道口语对话的生成式语音语言建模范式，使用 next-token-pair prediction。
+- [SLM-S2ST](https://arxiv.org/abs/2506.04392)：构建用于直接语音到语音翻译的多模态语言模型。
+- [Efficient speech-text joint decoding](https://arxiv.org/abs/2506.04518)：提升单一 speech language model 内语音与文本联合解码效率。
+- [Audio-aware decoding for large audio-language models](https://arxiv.org/abs/2506.07233)：通过音频感知解码降低大型音频语言模型中的对象幻觉。
+- [ViSAGe](https://arxiv.org/abs/2506.12199)：从视频输入生成空间音频。
+- [Stream-Omni](https://arxiv.org/abs/2506.13642)：用按模态设计的对齐机制连接视觉、语音和文本，使一个语言-视觉-语音模型支持同步多模态交互。
+- [Sonic4D](https://arxiv.org/abs/2506.15759)：为沉浸式 4D 场景探索生成空间音频。
+- [OpusLM](https://arxiv.org/abs/2506.17611)：提出一组开放统一的 speech language models。
+- [Aligning Spoken Dialogue Models from User Interactions](https://arxiv.org/abs/2506.21463)：用用户交互偏好对齐 spoken-dialogue models。
+- [Audio Flamingo 3](https://arxiv.org/abs/2507.08128)：完全开放的大音频语言模型，包含统一语音、声音、音乐编码器、按需思考、长音频推理和课程式训练。
+- [Continuous-Token Audio Language Modeling](https://arxiv.org/abs/2507.09834)：将语言模型式掩码下一个 token 预测扩展到连续值音频 token，用于生成式音频建模。
+- [Step-Audio 2](https://arxiv.org/abs/2507.16632)：端到端多模态语音模型，结合 latent audio encoding、语言建模中的音频 token 生成和以推理为中心的强化学习。
+- [SALM](https://arxiv.org/abs/2507.16724)：使用结构化嵌入支持空间音频理解与编辑。
+- [Audio-Thinker](https://arxiv.org/abs/2508.08039)：面向大音频语言模型的强化学习框架，使用自适应 think-accuracy reward 和外部反馈。
+- [FoleySpace](https://arxiv.org/abs/2508.12918)：生成与视觉内容对齐的双耳空间音频。
+- [AHAMask](https://arxiv.org/abs/2509.01787)：在无显式指令时提升大型音频语言模型的任务指定可靠性。
+- [DreamAudio](https://arxiv.org/abs/2509.06027)：通过控制细粒度声学特征实现个性化文本到音频扩散生成。
+- [Delayed Streams Modeling](https://arxiv.org/abs/2509.08753)：用 delayed streams 支持低延迟生成场景中的流式序列到序列学习。
+- [Thinking in Cocktail Party](https://arxiv.org/abs/2509.15612)：将链式思维和强化学习用于目标说话人自动语音识别。
+- [Qwen3-Omni](https://arxiv.org/abs/2509.17765)：采用 Thinker-Talker MoE 架构的全模态模型，统一文本、图像、音频和视频感知与生成，并突出实时语音。
+- [StereoFoley](https://arxiv.org/abs/2509.18272)：从视频生成对象感知的立体声音频。
+- [Guiding Audio Editing with Audio Language Model](https://arxiv.org/abs/2509.21625)：用音频语言模型分解并引导高层音频编辑指令。
+- [DiSTAR](https://arxiv.org/abs/2510.12210)：将扩散与可扩展的 token 自回归表示结合，用于可控的零样本语音生成。
+- [SARSteer](https://arxiv.org/abs/2510.17633)：面向大音频语言模型的推理时安全 steering 方法，把拒答向量 steering 适配到音频输入，同时缓解良性语音请求的过度拒答。
+- [ALMGuard](https://arxiv.org/abs/2510.26096)：提出面向音频语言模型的 guardrail，通过识别安全对齐 shortcut 特征来防御音频特有的越狱威胁。
+- [Video Echoed in Music](https://arxiv.org/abs/2511.09585)：通过对齐视频事件与生成背景音乐之间的语义、时间与节奏线索，提升视频配乐生成质量。
+- [Step-Audio-R1](https://arxiv.org/abs/2511.15848)：用 Modality-Grounded Reasoning Distillation 训练音频推理模型，使思维链扎根于声学证据。
+- [ViSAudio](https://arxiv.org/abs/2512.03036)：进行端到端视频驱动的双耳空间音频生成。
+- [Seedance 1.5 pro](https://arxiv.org/abs/2512.13507)：提出面向语音和音频的模型侧方法，核心围绕 Native Audio-Visual Joint Generation Foundation Model。
+- [SAFE-QAQ](https://arxiv.org/abs/2601.01392)：使用强化学习进行端到端慢思考音频文本欺诈检测，保留声学线索而不只依赖转写文本。
+- [LTX-2](https://arxiv.org/abs/2601.03233)：提出面向语音和音频的模型侧方法，核心围绕 Efficient Joint Audio-Visual Foundation Model。
+- [ImmersiveFlow](https://arxiv.org/abs/2601.12950)：用 flow matching 将立体声转换为 7.1.4 空间音频。
+- [Dynamic Multi-Expert Projectors](https://arxiv.org/abs/2601.19451)：用动态多专家 projector 与稳定路由提升多语言语音识别。
+- [AVERE](https://arxiv.org/abs/2602.07054)：使用偏好优化提升视听情绪推理能力，并减少对虚假线索的依赖。
+- [DashengTokenizer](https://arxiv.org/abs/2602.23765)：面向音频理解与生成统一建模的连续音频 tokenizer，把声学信息注入冻结语义特征。
+- [SarcasmMiner](https://arxiv.org/abs/2603.05275)：通过双轨后训练提升跨文本、声学与视觉线索的视听反讽推理鲁棒性。
+- [Paralinguistic Speech-LLM Alignment](https://arxiv.org/abs/2603.15981)：通过多任务强化学习对齐语音大模型的副语言理解与生成。
+- [Zipper-LoRA](https://arxiv.org/abs/2603.17558)：通过 Zipper-LoRA 的动态参数解耦改进 Speech-LLM 多语种自动语音识别。
+- [ACAVCaps](https://arxiv.org/abs/2603.24038)：构建大规模细粒度音频描述监督，用于训练更丰富的音频理解模型。
+- [TASU2](https://arxiv.org/abs/2604.08384)：通过可控 CTC 式监督模拟来对齐语音大模型，并提升低资源语音适配效果。
+- [Audio Flamingo Next](https://arxiv.org/abs/2604.10905)：新一代开放音频语言模型，加入更大规模推理数据、30 分钟音频支持和带时间戳 grounding 的 Temporal Audio Chain-of-Thought。
+- [Audio-DeepThinker](https://arxiv.org/abs/2604.18187)：面向音频语言模型的渐进式 reasoning-aware RL 框架，使用混合 reasoning-similarity reward。
+- [Mega-ASR](https://arxiv.org/abs/2605.19833)：扩展真实声学仿真，并结合 acoustic-to-semantic 渐进 SFT 与 WER-gated policy optimization，提升鲁棒 ASR。
+- [LatentOmni](https://arxiv.org/abs/2605.22012)：统一音视频 latent reasoning 框架，把文本推理与音视频 latent states 交替建模。
+- [DiffMusic](https://doi.org/10.1109/TASLPRO.2026.3660263)：基于扩散表示从单张图像生成音乐，更适合归入音频生成模型部分而非图像编辑。

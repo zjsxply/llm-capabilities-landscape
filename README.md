@@ -62,7 +62,7 @@ This repository organizes recent LLM research by capability areas, benchmark fam
 
 This project is maintained semi-automatically. Recent topics and research results are extracted from citation networks, model-vendor model cards, and newly accepted papers from major conferences, then screened and merged by an agent-guided workflow. See the repository maintenance skill at [.agents/skills/llm-landscape-maintainer/SKILL.md](.agents/skills/llm-landscape-maintainer/SKILL.md).
 
-Numbered landscape content is organized as `docs/<language>/<chapter>/<topic>/README.md` plus numbered section files such as `03-bench.md`. The introduction chapter uses second-level Markdown files directly under `docs/<language>/00-introduction/`.
+Numbered landscape content is organized as `docs/<language>/<chapter>/<topic>/README.md` plus numbered section files such as `03-bench.md`, `04-model.md`, and `05-agent-harness.md`. The introduction chapter uses second-level Markdown files directly under `docs/<language>/00-introduction/`.
 
 ## Chinese Version
 

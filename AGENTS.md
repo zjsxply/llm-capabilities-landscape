@@ -15,7 +15,7 @@ For numbered landscape documents, use language-specific trees:
 - English under `docs/en/<chapter>/<topic>/`
 - Chinese under `docs/zh/<chapter>/<topic>/`
 
-Use `README.md` as the topic overview file when a topic is split into section files. Section files use the third-level number and slug, for example `03-bench.md`.
+Use `README.md` as the topic overview file when a topic is split into section files. Section files use the third-level number and slug, for example `03-bench.md`, `04-model.md`, and `05-agent-harness.md`.
 The introduction chapter is the exception: it uses second-level Markdown files directly under `docs/<lang>/00-introduction/`, for example `01-landscape-structure.md`.
 
 The English and Chinese numbered files must share the same base filename.
@@ -58,7 +58,7 @@ For related-work writing in this project:
 
 When the task is to search for skills, follow this workflow:
 - Use both `npx skills find` and `npx clawhub search` to find skills that can do **【target capability/task】**.
-- Also query SkillNet via `http://api-skillnet.openkg.cn/v1/search?q=...` and treat its results as an additional first-class source when searching for **【target capability/task】**.
+- Also query SkillNet via its API endpoint, for example `curl -s 'http://api-skillnet.openkg.cn/v1/search?q=paper%20rebuttal'`, and treat its results as an additional first-class source when searching for **【target capability/task】**.
 - In addition to skill marketplaces, also search GitHub directly for repositories or skill directories related to **【target capability/task】**. Try multiple keyword variants there as well, and treat GitHub hits as first-class candidates for later implementation inspection.
 - `npx clawhub` is rate-limited fairly aggressively, so throttle requests, prefer serial execution, and avoid launching several searches in a short burst.
 - The SkillNet API is keyword-based as well; always try multiple keyword variants, and normalize returned GitHub/blob/tree URLs to the most stable public entry you can verify.

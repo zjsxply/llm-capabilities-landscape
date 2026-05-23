@@ -1,0 +1,30 @@
+# 2.9.4 Model
+
+- [MONA](https://arxiv.org/abs/2501.13011): Combines myopic optimization with non-myopic approval to reduce multi-step reward hacking in RL agents, including settings with LLM-based delegated oversight.
+- [xJailbreak](https://arxiv.org/abs/2501.16727): Uses representation-space-guided reinforcement learning to construct interpretable jailbreak attacks against LLMs.
+- [STAIR](https://arxiv.org/abs/2502.02384): Introduces Improving Safety Alignment with Introspective Reasoning, a model-side contribution for Agent Safety.
+- [MOPO](https://arxiv.org/abs/2505.10892): Optimizes multiple preference objectives through constrained KL-regularized updates, making helpfulness and harmlessness trade-offs explicit during post-training.
+- [SafeVid](https://arxiv.org/abs/2505.11926): Builds video-specific safety alignment for large video multimodal models, combining safety data and training so dynamic visual contexts are covered rather than only static images.
+- [CAPTURE / CaptureGuard](https://arxiv.org/abs/2505.12368): Trains and evaluates a context-aware prompt-injection guardrail model that balances attack detection against over-defense on benign in-context content.
+- [Detecting Prefix Bias in LLM-based Reward Models](https://arxiv.org/abs/2505.13487): Introduces metrics and augmentation for detecting and reducing prefix-triggered demographic bias in reward models.
+- [MTSA](https://arxiv.org/abs/2505.17147): Introduces Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming, a model-side contribution for Agent Safety.
+- [Audio-Language Safety Representation Reshaping](https://arxiv.org/abs/2505.19670): Reshapes representation space to balance safety and over-rejection in large audio language models.
+- [Editing as Unlearning](https://arxiv.org/abs/2505.19855): Recasts LLM unlearning as knowledge editing toward refusal or empty responses and compares editing methods as practical unlearning baselines.
+- [Prompt-Injection Detection with Pre-trained Models and Heuristics](https://arxiv.org/abs/2506.06384): Combines a pre-trained detector with heuristic features for prompt-injection defense, making it a model-side guardrail candidate for LLM and agent safety.
+- [Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models](https://arxiv.org/abs/2506.07468): Introduces Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models, a model-side contribution for Agent Safety.
+- [DAVSP](https://arxiv.org/abs/2506.09353): Aligns large vision-language models against visual-modality attacks by learning deep aligned visual safety prompts while preserving benign utility.
+- [From Hard Refusals to Safe-Completions](https://arxiv.org/abs/2508.09224): Introduces Toward Output-Centric Safety Training, a model-side contribution for Agent Safety.
+- [GSPR](https://arxiv.org/abs/2509.24418): Trains LLM safeguards as generalizable policy reasoners so refusal and safety judgments transfer across heterogeneous safety taxonomies.
+- [Low-Resource Language Safeguards](https://arxiv.org/abs/2510.10677): Uses minimal reasoning and alignment data to improve LLM safeguard behavior in low-resource languages.
+- [Differentiated Directional Intervention](https://arxiv.org/abs/2511.06852): Studies activation-space interventions that separate harm detection from refusal execution, exposing a model-level safety-alignment evasion mechanism.
+- [ReasAlign](https://arxiv.org/abs/2601.10173): Introduces Reasoning Enhanced Safety Alignment against Prompt Injection Attack, a model-side contribution for Agent Safety.
+- [NeuroFilter](https://arxiv.org/abs/2601.14660): Builds privacy guardrails from linear activation-space directions and activation velocity, detecting contextual-integrity violations inside conversational LLM agents.
+- [PrivAct](https://arxiv.org/abs/2602.13840): Trains privacy-aware multi-agent behavior through preference optimization. Core idea: make contextual privacy preservation part of the agent policy rather than relying only on external filters or final-output checks.
+- [Learning When to Act or Refuse](https://arxiv.org/abs/2603.03205): Post-trains agentic reasoning models for safe multi-step tool use with explicit act/refuse actions and preference-based RL over pairwise trajectories.
+- [SC-Inject-Bench / ShieldNet](https://arxiv.org/abs/2604.04426): Pairs supply-chain injection benchmarks with network-level guardrails for detecting tool-embedded hijacking and data leakage.
+- [CORA](https://arxiv.org/abs/2604.09155): Trains a Guardian risk model and a Diagnostician for post-policy, pre-action GUI-agent safety, then calibrates execution with conformal risk control.
+- [SaFeR-Steer](https://arxiv.org/abs/2604.16358): Evolves multi-turn MLLMs with synthetic bootstrapping and feedback dynamics for safer steering.
+- [Beyond Pattern Matching](https://arxiv.org/abs/2604.18248): Compares cross-domain prompt-injection detection techniques beyond regex and fine-tuned classifiers, including releases in prompt-shield.
+- [SnapGuard](https://arxiv.org/abs/2604.25562): A lightweight prompt-injection detector for screenshot-based web agents where malicious instructions appear only in rendered page content.
+- [Adaptive Semantic Gates for Reliable Multi-Agent LLMs](https://doi.org/10.1109/icce67443.2026.11449653): Adds semantic gating to multi-agent LLM workflows so risky or drifting messages can be filtered before they propagate through collaboration.
+- [Safety Misalignment Against LLMs](https://www.ndss-symposium.org/ndss-paper/safety-misalignment-against-large-language-models/): Studies safety-misalignment attacks and defenses for LLMs through representation-level alignment behavior.

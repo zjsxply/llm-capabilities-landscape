@@ -12,7 +12,7 @@ from pathlib import Path
 from landscape_paths import default_markdown_files, is_english_doc, paired_zh_path
 
 
-SECTION_MARKERS = ("Bench", "Agent Harness")
+SECTION_MARKERS = ("Bench", "Model", "Agent Harness")
 
 
 TITLE_OVERRIDES: tuple[tuple[str, tuple[int, int]], ...] = (

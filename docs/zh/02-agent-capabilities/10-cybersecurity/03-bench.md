@@ -28,9 +28,9 @@
 - [VAP-6](https://doi.org/10.1109/EAIC66483.2025.11101426)：面向语言模型的漏洞评估与渗透测试 benchmarking framework。核心思路是把 VAPT 任务组织成可复用评测设置，使语言模型 Agent 能在安全评估流程上比较，而不只是回答网络安全知识题。
 - [CFA-Bench](https://doi.org/10.1109/EuroSPW67616.2025.00031)：评测 LLM agent 的网络安全取证能力。核心思想：生成包含脆弱服务、攻击、流量包和日志轨迹的应急响应场景，并通过分阶段检查点评分取证推理。
 - [ALPHA](https://arxiv.org/abs/2601.01320)：评测 LLM 与 SAST 工具在 Python 函数上的层级化 CWE 预测。核心思想：区分过度泛化、过度细化和横向错误并施加不同惩罚，使漏洞反馈比二分类检测更可操作。
+- [SastBench](https://arxiv.org/abs/2601.02941)：评测软件安全工作流中的 agentic SAST triage 能力。核心思想：检查 agent 能否理解静态分析结果、排序漏洞风险并给出 triage 决策，而不只是产生原始告警。
 - [Cyb-LLM](https://doi.org/10.1109/ICVADV67766.2026.11470531)：在安全约束下评测 LLM 的网络攻防能力。核心思想：把攻击请求、防御分诊、安全编码、恶意软件等网络安全工作流统一到一个 benchmark 中。
 - [ThreatSage](https://doi.org/10.1109/icassp55912.2026.11463278)：评测由 LLM 编排的蓝队防御操作。核心思想：用模块化防御任务衡量检测、分析、协同与响应工作流。
-- [SastBench](https://arxiv.org/abs/2601.02941)：评测软件安全工作流中的 agentic SAST triage 能力。核心思想：检查 agent 能否理解静态分析结果、排序漏洞风险并给出 triage 决策，而不只是产生原始告警。
 - [Sola-Visibility-ISPM](https://arxiv.org/abs/2601.07880)：评测 agentic AI 的身份安全态势可见性能力。核心思想：检查 agent 能否审阅并推理身份安全态势管理中的证据与缺口。
 - [HardSecBench](https://arxiv.org/abs/2601.13864)：评测 LLM 生成硬件代码时的安全意识；核心思想是检查生成的 HDL 或硬件相关代码是否避免安全缺陷，而不只看能否编译或实现功能。
 - [RealSec-bench](https://arxiv.org/abs/2601.22706)：评估真实仓库中的安全代码生成。核心思想：测试生成代码能否在满足功能需求的同时避免现实仓库语境中的安全缺陷。
@@ -40,10 +40,11 @@
 - [Patch-to-PoC](https://arxiv.org/abs/2602.07287)：评测 agent 从 Linux kernel 补丁复现 N-day PoC 的能力。核心思想：把补丁分析、内核构建、调试和漏洞利用验证合在一起，检查 agent 是否能把已修复漏洞重新转化为可执行攻击证据。
 - [CyberExplorer](https://arxiv.org/abs/2602.08023)：在真实攻击仿真环境中评测 LLM 的进攻安全能力。核心思想：在交互式仿真中评估攻击规划与执行，而不是只做静态网络安全问答。
 - [Before You Hand Over the Wheel](https://arxiv.org/abs/2603.06422)：评测 LLM 的安全事件分析能力。核心思想：检查模型能否分析事件证据，并支持需要谨慎移交的人机协同 SOC 决策。
-- [Penetration-Testing Planning Quality](https://doi.org/10.66279/enzxq198)：以无执行方式评测 LLM 渗透测试规划质量。核心思想：在工具执行前诊断 agent 能否形成合理、有序的攻击计划。
 - [CyberThreat-Eval](https://arxiv.org/abs/2603.09452)：评估 LLM 是否能自动化真实网络威胁情报工作流。核心思想：覆盖分流、深度搜索和 CTI 报告撰写，并用更接近分析师实用性的指标替代单纯文本重合度。
+- [Penetration-Testing Planning Quality](https://doi.org/10.66279/enzxq198)：以无执行方式评测 LLM 渗透测试规划质量。核心思想：在工具执行前诊断 agent 能否形成合理、有序的攻击计划。
 - [TOSSS](https://arxiv.org/abs/2603.10969)：基于 CVE 的大语言模型软件安全 benchmark。核心思想：用真实漏洞案例评测安全推理能力，而不局限于通用安全编码问答。
 - [CTI-REALM](https://arxiv.org/abs/2603.13517)：评测 agent 生成安全检测规则的能力。核心思想：把防御型网络安全评测从通用威胁情报推理推进到可用于 SOC 工作流的 detection rule 产出。
+- [Contextual Bias in LLM-Assisted Security Code Review](https://arxiv.org/abs/2603.18740)：用真实 PR 元数据和 CVE 场景测试自动安全代码审查 Agent 是否会在对抗性表述下漏掉重新引入的漏洞。
 - [OrgForge-IT](https://arxiv.org/abs/2603.22499)：用可验证的合成组织证据评测 LLM 的内部威胁检测能力。核心思想：检验 agent 能否在类企业活动轨迹中推理并识别有 ground truth 可查的内部风险信号。
 - [SIR-Bench](https://arxiv.org/abs/2604.12040)：通过 794 个回放测试用例评估自主安全事件响应智能体。核心思路是用分诊准确率、新证据发现和工具使用适当性区分真正的取证调查与复述告警。
 - [Cyber Defense Benchmark](https://arxiv.org/abs/2604.19533)：评测 LLM 在 SecOps 工作流中的智能体化威胁狩猎能力；核心思路是检验智能体能否调查安全证据并完成防御性威胁狩猎任务，而不只是回答网络安全知识题。

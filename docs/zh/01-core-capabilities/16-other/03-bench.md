@@ -9,7 +9,9 @@
 - [AbsenceBench](https://arxiv.org/abs/2506.11440)（[开源代码](https://github.com/harvey-fin/absence-bench)，[数据集](https://huggingface.co/datasets/harveyfin/AbsenceBench)）：评什么：在长输入中发现被刻意删掉的信息。核心思想：用序列、诗歌和 GitHub pull request 中的“缺失项识别”补充 needle retrieval，暴露模型能找出现有事实但看不见遗漏的失败。
 - [MultiAgentBench](https://aclanthology.org/2025.acl-long.421/)：评测 LLM agents 的协作与竞争。核心思想：在多智能体 benchmark 尚未足够密集到单独成页之前，先把交互协议和结果权衡作为明确可测对象记录下来。
 - [SocialCC](https://aclanthology.org/2025.acl-long.1594/)：评什么：交互式 language agent 的文化能力。核心思想：把文化评测从静态问答推进到对话和互动场景，检查 agent 是否能适应社会语境和文化预期。
+- [MMHU](https://arxiv.org/abs/2507.12463)：面向人类行为理解的大规模多模态 benchmark。核心思想是评测多模态系统能否结合视觉、文本和上下文线索理解行为与意图，而不只是识别物体或动作。
 - [EffiEval](https://arxiv.org/abs/2508.09662)：通过基于能力覆盖的样本选择降低评测成本。核心思想：在只查询代表性 benchmark 样本的同时，尽量保持排名一致性与公平性。
+- [Virtual Agent Economies](https://arxiv.org/abs/2509.10147)：提供由 LLM agent 组成的虚拟经济仿真设置。核心思想是在多智能体经济中测试策略互动、生产、交换和政策影响，使经济行为评测不局限于单轮问答。
 - [Social Welfare Function Leaderboard](https://arxiv.org/abs/2510.01164)：评测 LLM agent 在稀缺社会资源分配中的决策；核心思想是用动态模拟同时比较集体效率与分配公平性，并以 ROI 和 Gini 类指标刻画权衡。
 - [CorrectBench](https://arxiv.org/abs/2510.16062)（[项目页](https://correctbench.github.io/)，[数据集](https://huggingface.co/datasets/zeli2024/CorrectBench)）：评什么：LLM 推理的自我修正策略。核心思想：在多类推理任务上比较内在、外部和微调式修正设置，区分真正错误修复与重复错误或过度自信的错答。
 - [Infinity-Chat](https://arxiv.org/abs/2510.22954)（[开源代码](https://github.com/liweijiang/artificial-hiveminds)，[数据集](https://huggingface.co/datasets/liweijiang/infinite-chats-taxonomy)）：评什么：开放式语言模型输出的多样性与同质化。核心思想：用包含大量合理答案空间的真实用户问题，衡量模型多次生成是否坍缩成相似的“蜂巢式”回答，而不是保持类似人类的表达差异。

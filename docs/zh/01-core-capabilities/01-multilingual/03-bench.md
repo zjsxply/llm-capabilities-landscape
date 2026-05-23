@@ -8,15 +8,21 @@
 - [MILU](https://arxiv.org/abs/2411.02538)：评测印度语言的多任务语言理解。核心思想：覆盖 10 种印度语言与英语，并纳入文化相关学科题，作为广义翻译版 MMLU 的垂直补充。
 - [INCLUDE](https://arxiv.org/abs/2411.19799)：评测带区域知识的多语言理解。核心思想：从 44 种语言的区域学术和职业考试中取题，减少对英文翻译知识的偏置。
 - [GMMLU / Global MMLU](https://arxiv.org/abs/2412.03304)：评测 42 种语言上的 MMLU 式知识理解。核心思想：在可比学科知识协议下比较高、中、低资源语言表现，暴露语言与文化资源差距。
+- [CultureVerse / CultureVLM](https://arxiv.org/abs/2501.01282)：评测视觉语言模型的多文化理解能力。核心思路是用覆盖 100 多个国家和地区的文化概念与多模态问题，测试 VLM 是否能超越以西方为中心的视觉先验。
 - [MMTEB](https://arxiv.org/abs/2502.13595)（[开源代码](https://github.com/embeddings-benchmark/mteb)）：评测大规模多语文本嵌入；核心思想是在 250 多种语言和 500 多个质量控制任务上统一比较 embedding 的检索、分类、聚类和语义匹配能力。
+- [GIMMICK](https://arxiv.org/abs/2502.13766)：评测全球包容的多模态文化知识。核心思想是组合多语言、多文化与多模态任务，避免只在高资源、英语或西方中心样本上衡量文化能力。
 - [MMLU-ProX](https://arxiv.org/abs/2503.10497)（数据集：[li-lab/MMLU-ProX](https://huggingface.co/datasets/li-lab/MMLU-ProX)）：评测更难的跨语言学科/专业知识（MMLU-Pro 风格的跨语扩展）；核心思想是用更高难度、更强调鲁棒性的专业题补齐“多语 + 专业知识”维度。
 - [JEEM](https://arxiv.org/abs/2503.21910)：评测约旦、阿联酋、埃及和摩洛哥四类阿拉伯语语境下的 vision-language understanding。核心思想是结合具有文化信息的 image captioning 与 visual question answering，测试 VLM 的方言与文化泛化能力。
 - [HRET](https://arxiv.org/abs/2503.22968)：通过 registry-based 工具包评测韩语模型能力，整合主要韩语 benchmark、推理后端、评测方法、语言一致性检查，以及面向韩语的形态感知词汇多样性和关键词遗漏诊断。
 - [NorEval](https://arxiv.org/abs/2504.07749)：评测挪威语理解与生成能力。核心思想是整合 24 个高质量数据集、human baselines 和 prompts，覆盖 Bokmaal 与 Nynorsk，使挪威语模型表现不再只依赖单一书面标准或任务族。
 - [MultiLoKo](https://arxiv.org/abs/2504.10356)（[开源代码](https://github.com/facebookresearch/MultiLoKo)）：评测 31 种语言中的本地知识与跨语知识迁移；核心思想是同时提供语言本地题、人工翻译题和机器翻译题，区分“知道事实”和“能用目标语言稳定表达/检索事实”。
 - [X-WebAgentBench](https://arxiv.org/abs/2505.15372)（[开源代码](https://github.com/WPENGxs/X-WebAgentBench)）：评测多语言交互式 Web agent 的规划与交互能力；核心思想是把 agentic web 任务扩展到多语言环境，检查跨语对齐方法是否真的能支撑全球化 agent 服务。
-- [MAPS](https://aclanthology.org/2026.findings-eacl.42/)（数据集：[Fujitsu-FRE/MAPS](https://huggingface.co/datasets/Fujitsu-FRE/MAPS)）：评测多语 agent 的性能与安全性；核心思想是把 GAIA、MATH、SWE-bench 和 Agent Security Benchmark 等任务翻译到多种语言，观察能力退化与安全回归。
+- [ARB](https://arxiv.org/abs/2505.17021)：用具有语言和文化语境的阿拉伯语图文任务评测多模态推理，避免只用英语中心的多模态基准外推阿拉伯语能力。
+- [Hanfu-Bench](https://arxiv.org/abs/2506.01565)：以不同时期的汉服为专家构造的视觉文化测试场，评测跨时代文化理解与转创能力。
+- [Absher](https://arxiv.org/abs/2507.10216)：通过谚语、方言和地区特定选择题评测模型对沙特方言与文化语境的理解。
 - [MultiNRC](https://arxiv.org/abs/2507.17476)：评测原生多语推理与文化相关常识；核心思想是用母语题而不是英译题，直接暴露词法、文化和语言游戏差异。
+- [MAPS](https://aclanthology.org/2026.findings-eacl.42/)（数据集：[Fujitsu-FRE/MAPS](https://huggingface.co/datasets/Fujitsu-FRE/MAPS)）：评测多语 agent 的性能与安全性；核心思想是把 GAIA、MATH、SWE-bench 和 Agent Security Benchmark 等任务翻译到多种语言，观察能力退化与安全回归。
+- [Ko-PIQA](https://arxiv.org/abs/2509.11303)：从韩语网页数据和人工修订中构造 PIQA 式对比问题，在原生韩语语境中测试日常常识。
 - [Multilingual Text-to-SQL](https://arxiv.org/abs/2509.24405)：评估语言模型和协作语言智能体在多语言 Text-to-SQL 任务中的能力。核心思路：检验自然语言查询跨语言变化时，数据库推理和 SQL 生成是否仍然可靠。
 - [AfriMTEB](https://arxiv.org/abs/2510.23896)：评测非洲语言文本嵌入与检索/分类等表示能力；核心思想是在 59 种语言、14 类任务和 38 个数据集上扩展 MMTEB，补齐多语评测中非洲语言长期被低估的问题。
 - [Global PIQA](https://arxiv.org/abs/2510.24081)（数据集：[mrlbenchmarks/global-piqa-nonparallel](https://huggingface.co/datasets/mrlbenchmarks/global-piqa-nonparallel)）：评测跨语言的物理常识与日常合理性判断（PIQA 风格）；核心思想是用常识可判定的对比选项题型，测量“语言变化”对常识推理稳定性的影响。
@@ -27,5 +33,6 @@
 - [GreekMMLU](https://arxiv.org/abs/2602.05150)：评测希腊语原生多任务语言理解；核心思想是用来自学术、职业和政府考试的希腊语题目替代英译题，检验模型是否真正覆盖目标语言的教育与文化语境。
 - [Macaron](https://arxiv.org/abs/2602.10732)：评测多语多文化推理；核心思想是用人工编写的模板把推理类型和文化因素解耦，在 20 个国家/文化语境与 20 种语言/方言中比较英语题与本地语言题的差异。
 - [Litmus (Re)Agent](https://arxiv.org/abs/2604.08970)：评估在缺少直接基准结果时对多语言模型表现的预测能力。核心思想：在任务、语言和证据场景中区分可访问证据与隐藏真值，再测试能检索并综合表现预测的智能体系统。
+- [ABJAD](https://doi.org/10.1109/icerai69511.2026.11494583)：评测模型对阿拉伯语修辞与表达品质的保持，而不只是一般阿拉伯语事实问答。
 - [MMMLU](https://huggingface.co/datasets/openai/MMMLU)：评测多语环境下的通识与学科知识选择题能力；核心思想是把同类知识题迁移到多语输入，以统一的多选题协议对齐比较不同语言下的知识保持与理解鲁棒性。
 - [CVLUE](https://doi.org/10.1609/aaai.v39i8.32884)：评测中文视觉语言理解。核心思想是提供中文中心的多模态 benchmark，避免视觉语言能力只通过英文或翻译式图文任务衡量。

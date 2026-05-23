@@ -1,0 +1,32 @@
+# 2.4.4 Model
+
+- [DeepResearcher](https://arxiv.org/abs/2504.03160)（[开源代码](https://github.com/GAIR-NLP/DeepResearcher)）：在真实网页搜索环境中用端到端强化学习训练 deep-research agent。
+- OpenAI Deep Research / `o3-deep-research`（[官方报告](https://openai.com/index/introducing-deep-research/)；[模型文档](https://platform.openai.com/docs/models/o3-deep-research)）：面向网页浏览、数据分析和高难长程研究任务，用端到端强化学习优化的闭源模型线。
+- Perplexity Sonar Deep Research（[模型文档](https://docs.perplexity.ai/docs/sonar/models/sonar-deep-research)）：面向穷尽式来源搜索、推理和长篇带引用报告生成的 deep-research API 模型端点。
+- [WebDancer](https://arxiv.org/abs/2505.22648)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebDancer)）：训练面向多步搜索与推理的自主信息搜索能力。
+- [WebWatcher](https://arxiv.org/abs/2508.05748)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher)）：用合成多模态轨迹与强化学习训练多模态 deep-research agent。
+- Kimi-Researcher（[官方报告](https://moonshotai.github.io/Kimi-Researcher/)）：报告通过端到端 agentic reinforcement learning 训练的 Kimi k-series 内部模型，覆盖多轮搜索、浏览、代码工具和 deep-search 基准。
+- [Atom-Searcher](https://arxiv.org/abs/2508.12800)：用 atomic-thought rewards 和 reasoning reward models 强化细粒度 deep-research 搜索行为。
+- [Open Data Synthesis For Deep Research](https://arxiv.org/abs/2509.00375)：提出面向深度研究的模型侧方法，核心围绕 Open Data Synthesis For Deep Research。
+- [SFR-DeepResearch](https://arxiv.org/abs/2509.06283)：对 reasoning-optimized 模型做持续强化学习，训练带 web 与 Python 工具的自主单 agent deep research。
+- [DeepDive](https://arxiv.org/abs/2509.10446)：用知识图谱问题合成和端到端多轮强化学习训练 deep-search agents。
+- [WebSailor / WebSailor-V2](https://arxiv.org/abs/2509.13305)：通过不确定性导向任务合成、cold-start reinforcement fine-tuning 和可扩展 agentic RL 缩小开放模型与闭源 deep-research agent 的差距。
+- [Scaling Agents via Continual Pre-training](https://arxiv.org/abs/2509.13310)：提出 Agentic CPT，并以 AgentFounder 作为 deep-research agent 的基础模型训练阶段。
+- xAI Grok 4 Fast Search（[模型卡 PDF](https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf)）：报告面向网页和 X 浏览、代码执行与 deep-search 评测的端到端 tool-use reinforcement learning。
+- [MARS: Co-evolving Dual-System Deep Research](https://arxiv.org/abs/2510.04935)：用 multi-agent reinforcement learning 共同优化双系统 deep-research 行为。
+- [DeepPlanner](https://arxiv.org/abs/2510.12979)：用 advantage shaping 优化 deep-research agents 的规划能力。
+- [Tongyi DeepResearch](https://arxiv.org/abs/2510.24701)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch)）：报告面向长程深度信息搜索和端到端 deep research 能力训练的 agentic LLM。
+- [DR Tulu](https://arxiv.org/abs/2511.19399)：用 rubric-evolving reinforcement learning 训练并发布开放 deep-research 模型，面向长篇开放式研究。
+- [Step-DeepResearch Technical Report](https://arxiv.org/abs/2512.20491)（[开源代码](https://github.com/stepfun-ai/StepDeepResearch)）：给出开放式 deep research 的端到端训练路线，包含数据、策略优化和 checklist 式评审。
+- [O-Researcher](https://arxiv.org/abs/2601.03743)：通过多代理蒸馏和 agentic reinforcement learning 构建开放式 deep-research 模型。
+- [Chaining the Evidence](https://arxiv.org/abs/2601.06021)：用 citation-aware rubric rewards 为 deep-search agent 提供更稠密的强化学习监督。
+- [IntentRL](https://arxiv.org/abs/2602.03468)：训练深调研前的主动意图澄清行为，避免昂贵长程搜索从错误需求开始。
+- [How to Train Your Deep Research Agent?](https://arxiv.org/abs/2602.19526)：系统研究 Search-R1 式 deep-research 训练中的 prompt、reward 和 policy optimization，并提出 Search-R1++。
+- [DeepResearch-9K / DeepResearch-R1](https://arxiv.org/abs/2603.01152)：发布 deep-research agent 数据集与开放 RL 训练框架。
+- [KARL](https://arxiv.org/abs/2603.05218)：通过合成数据和迭代式大批量 off-policy RL，训练覆盖搜索与报告生成场景的企业知识 agent。
+- [SynPlanResearch-R1](https://arxiv.org/abs/2603.07853)（[开源代码](https://github.com/HansiZeng/syn-plan-research)）：用合成可执行计划训练 deep research 中的工具探索能力。
+- [MiroThinker-1.7 & H1](https://arxiv.org/abs/2603.15726)（[开源代码](https://github.com/MiroMindAI/MiroThinker)）：通过验证、交互 scaling 和重型推理训练推进开源 research agent。
+- [OpenResearcher](https://arxiv.org/abs/2603.20278)（[开源代码](https://github.com/TIGER-AI-Lab/OpenResearcher)）：构建全开放的长程 deep-research 轨迹合成流程，基于离线语料和 `search/open/find` 原语。
+- [Mind DeepResearch / MindDR](https://arxiv.org/abs/2604.14518)：结合 SFT cold start、Search-RL、Report-RL 和偏好对齐，训练规划、深搜与报告生成 agent。
+- [LiteResearcher](https://arxiv.org/abs/2604.17931)：构建 lite virtual world 来扩展 deep-research agent 的 agentic reinforcement learning，降低对不稳定 live search 的依赖。
+- [DR-Venus](https://arxiv.org/abs/2604.19859)：基于开放数据和 agentic 训练路线，训练 4B 边缘规模 deep-research agent。

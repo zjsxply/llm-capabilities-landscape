@@ -8,13 +8,15 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from landscape_paths import expand_markdown_args
+from landscape_paths import expand_markdown_args, paired_zh_path, resolve_english_target_doc
 
 
 INCLUDE_STATES = {"include", "included", "accept", "accepted"}
 STRONG_SIGNAL = re.compile(
     r"\b("
     r"bench|benchmark|leaderboard|arena|suite|dataset|testbed|"
+    r"survey|review|systematic|taxonomy|sok|roadmap|tutorial|overview|"
+    r"model|pretrain|post-train|training|architecture|reinforcement|synthetic data|world model|"
     r"agent|agentic|workflow|orchestrat|skill|memory|tool|gui|browser|computer-use|"
     r"swe|cyber|safety|red.?team|robot|embodied|vla"
     r")\b",
@@ -41,10 +43,23 @@ def docs_text(paths: list[Path]) -> str:
 
 def normalize_docs(value: Any) -> list[str]:
     if isinstance(value, str):
-        return [value]
+        return [value] if value else []
     if isinstance(value, list):
         return [str(item) for item in value if item]
     return []
+
+
+def resolve_target_docs(docs: list[str], section: str) -> list[str]:
+    en_doc = next((doc for doc in docs if doc.startswith("docs/en/")), docs[0] if docs else "")
+    if not en_doc:
+        return docs
+
+    resolved = resolve_english_target_doc(en_doc, section)
+    result = [resolved.as_posix()]
+    zh_doc = paired_zh_path(resolved)
+    if zh_doc.is_file():
+        result.append(zh_doc.as_posix())
+    return result
 
 
 def raw_decision(item: dict[str, Any]) -> str:
@@ -66,8 +81,12 @@ def score_item(item: dict[str, Any], docs: list[str], existing_text: str, priori
     section = str(item.get("section") or "")
     text = " ".join([title, reason, section])
     score = 0
+    if any("00-introduction/01-landscape-structure" in doc for doc in docs):
+        score -= 8
     if STRONG_SIGNAL.search(text):
         score += 3
+    if section in {"Survey", "Model"}:
+        score += 2
     if any(any(priority in doc for priority in priority_docs) for doc in docs):
         score += 2
     if int(item.get("year") or 0) >= 2026:
@@ -76,7 +95,7 @@ def score_item(item: dict[str, Any], docs: list[str], existing_text: str, priori
         score += 1
     if int(item.get("citationCount") or 0) >= 5:
         score += 1
-    if WEAK_MODEL_ONLY.search(text):
+    if section != "Survey" and WEAK_MODEL_ONLY.search(text):
         score -= 3
     if already:
         score -= 10
@@ -92,7 +111,12 @@ def load_recommendations(decision_dir: Path, existing_text: str, priority_docs: 
         for item in data:
             if not isinstance(item, dict) or raw_decision(item) not in INCLUDE_STATES:
                 continue
-            docs = normalize_docs(item.get("target_docs") if "target_docs" in item else item.get("docs"))
+            section = item.get("section") or ""
+            docs = resolve_target_docs(normalize_docs(
+                item.get("target_doc")
+                or item.get("target_docs")
+                or item.get("docs")
+            ), str(section))
             score, already = score_item(item, docs, existing_text, priority_docs)
             records.append(
                 {
@@ -105,10 +129,12 @@ def load_recommendations(decision_dir: Path, existing_text: str, priority_docs: 
                     "citationCount": item.get("citationCount"),
                     "seedCount": item.get("seedCount"),
                     "docs": docs,
-                    "section": item.get("section") or "",
+                    "target_doc": docs[0] if docs else "",
+                    "target_section": section,
+                    "section": section,
                     "reason": item.get("reason") or item.get("note") or "",
-                    "english_draft": item.get("english_draft") or "",
-                    "chinese_draft": item.get("chinese_draft") or "",
+                    "english_draft": item.get("suggested_english_bullet") or item.get("english_draft") or "",
+                    "chinese_draft": item.get("suggested_chinese_bullet") or item.get("chinese_draft") or "",
                     "already_in_docs": already,
                 }
             )

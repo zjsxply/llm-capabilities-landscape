@@ -77,21 +77,26 @@ def slugify(text: str) -> str:
 
 
 def split_section_filename(section: str) -> str:
+    standard = {
+        "leaderboard": "01-leaderboard.md",
+        "survey": "02-survey.md",
+        "bench": "03-bench.md",
+        "benchmark": "03-bench.md",
+        "model": "04-model.md",
+        "agent harness": "05-agent-harness.md",
+        "harness": "05-agent-harness.md",
+        "skill": "06-skill.md",
+    }
     match = re.match(r"\s*\d+\.\d+\.(\d+)\s+(.+?)\s*$", section)
     if not match:
         simple = section.strip().lower()
-        standard = {
-            "leaderboard": "01-leaderboard.md",
-            "survey": "02-survey.md",
-            "bench": "03-bench.md",
-            "benchmark": "03-bench.md",
-            "agent harness": "04-agent-harness.md",
-            "harness": "04-agent-harness.md",
-            "skill": "05-skill.md",
-        }
         if simple in standard:
             return standard[simple]
         return f"00-{slugify(section)}.md"
+
+    label = match.group(2).strip().lower()
+    if label in standard:
+        return standard[label]
     return f"{int(match.group(1)):02d}-{slugify(match.group(2))}.md"
 
 

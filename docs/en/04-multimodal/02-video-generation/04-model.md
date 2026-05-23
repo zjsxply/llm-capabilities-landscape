@@ -1,0 +1,52 @@
+# 4.2.4 Model
+
+- [CogVideoX](https://arxiv.org/abs/2408.06072): An open text-to-video diffusion model with an expert transformer, scaling transformer-based video denoising and training for high-quality generation.
+- [Movie Gen](https://arxiv.org/abs/2410.13720): A family of media foundation models covering text-to-video, personalized video, precise editing, and audio generation.
+- [HunyuanVideo](https://arxiv.org/abs/2412.03603): An open large video foundation model combining data curation, architecture design, progressive scaling, and large-scale training infrastructure.
+- [Autoregressive Video Generation without Vector Quantization](https://arxiv.org/abs/2412.14169): Introduces an autoregressive video-generation approach that avoids vector quantization.
+- [Through-The-Mask](https://arxiv.org/abs/2501.03059): Uses mask-based motion trajectories to control image-to-video generation.
+- [BlobGEN-Vid](https://arxiv.org/abs/2501.07647): Uses blob video representations for compositional text-to-video generation.
+- [LayerAnimate](https://arxiv.org/abs/2501.08295): Adds layer-level control for animation generation.
+- [Improving Video Generation with Human Feedback](https://arxiv.org/abs/2501.13918): Introduces Improving Video Generation with Human Feedback, a model-side contribution for Video Generation.
+- [Separate Motion from Appearance](https://arxiv.org/abs/2501.16714): Separates motion customization from appearance customization in text-to-video diffusion models.
+- [OmniHuman-1](https://arxiv.org/abs/2502.01061): A one-stage human-animation model that scales Diffusion Transformer training with mixed motion-related conditions.
+- [Dual-IPO](https://arxiv.org/abs/2502.02088): Applies dual-iterative preference optimization to text-to-video generation.
+- [MotionCanvas](https://arxiv.org/abs/2502.04299): Supports cinematic shot design through controllable image-to-video generation.
+- [Lumina-Video](https://arxiv.org/abs/2502.06782): Introduces Efficient and Flexible Video Generation with Multi-scale Next-DiT, a model-side contribution for Video Generation.
+- [Step-Video-T2V](https://arxiv.org/abs/2502.10248): A 30B text-to-video foundation model with deep-compression Video-VAE, bilingual text encoders, 3D full-attention DiT flow matching, and Video-DPO post-training.
+- [WonderVerse](https://arxiv.org/abs/2503.09160): Uses video generative priors, controllable scene extension, and inconsistency detection to generate coherent 3D environments.
+- [Open-Sora 2.0](https://arxiv.org/abs/2503.09642): Introduces Training a Commercial-Level Video Generation Model in $200k, a model-side contribution for Video Generation.
+- [Wan](https://arxiv.org/abs/2503.20314): An open video foundation-model suite with a diffusion-transformer backbone, new VAE, scalable pretraining, and curated data across text-to-video, image-to-video, editing, and personal-video tasks.
+- [Seaweed-7B](https://arxiv.org/abs/2504.08685): Introduces Cost-Effective Training of Video Generation Foundation Model, a model-side contribution for Video Generation.
+- [We'll Fix it in Post](https://arxiv.org/abs/2504.17180): Improves text-to-video generation with neuro-symbolic feedback after generation.
+- [Video Signature](https://arxiv.org/abs/2506.00652): Embeds implicit watermarks into video diffusion models while preserving visual quality and temporal consistency.
+- [Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](https://arxiv.org/abs/2506.09350): Introduces Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation, a model-side contribution for Video Generation.
+- [PanoWorld-X](https://arxiv.org/abs/2509.24997): Generates explorable panoramic worlds with sphere-aware video diffusion and camera-controllable 360-degree synthesis.
+- [FAME](https://arxiv.org/abs/2510.22960): A fairness-aware video editing method that injects fairness embeddings and modulates attention to reduce stereotype drift while preserving temporal consistency.
+- [AlignVid](https://arxiv.org/abs/2512.01334): A training-free attention-scaling method for text-guided image-to-video generation with lightweight query or key scaling and guidance scheduling.
+- [I2VGuard](https://doi.org/10.1109/CVPR52734.2025.01175): Protects input images from misuse by diffusion-based image-to-video models.
+- [HomoGen](https://doi.org/10.1109/CVPR52734.2025.02137): Combines homography propagation and diffusion for enhanced video inpainting.
+- [LLM hidden-state conditioning for video diffusion](https://doi.org/10.1109/ECAI65401.2025.11095434): Conditions video diffusion on hidden states from instruction-following LLMs.
+- [MotionShot](https://doi.org/10.1109/ICCV51701.2025.01103): Transfers motion adaptively across arbitrary objects in text-to-video generation.
+- [MotionMatcher](https://doi.org/10.1109/ICCVW69036.2025.00728): Customizes cinematic motion in text-to-video diffusion via motion-feature matching.
+- [StableWorld](https://arxiv.org/abs/2601.15281): Targets stable and consistent long interactive video generation.
+- [SkyReels-V3](https://arxiv.org/abs/2601.17323): Reports a unified conditional video generation model for reference-image synthesis, video extension, and audio-guided generation.
+- [JUST-DUB-IT](https://arxiv.org/abs/2601.22143): Adapts an audio-video diffusion foundation model with LoRA and synthetic multilingual video pairs for translated audio and synchronized facial motion.
+- [FastVMT](https://arxiv.org/abs/2602.05551): Removes motion and gradient redundancy in DiT-based video generation with local attention masking and diffusion-step gradient reuse.
+- [CineScene](https://arxiv.org/abs/2602.06959): Injects 3D-aware scene features into pretrained text-to-video models to control camera motion while preserving scene consistency.
+- [Flow Caching](https://arxiv.org/abs/2602.10825): Uses flow caching to accelerate autoregressive video generation.
+- [AnchorWeave](https://arxiv.org/abs/2602.14941): Uses retrieved local spatial memories and multi-anchor weaving to improve long-term scene consistency in camera-controllable video generation.
+- [Helios](https://arxiv.org/abs/2603.04379): Introduces Real Real-Time Long Video Generation Model, a model-side contribution for Video Generation.
+- [InterDyad](https://arxiv.org/abs/2603.23132): A dyadic speech-to-video generation framework that aligns conversational audio with motion priors and role-aware Gaussian guidance.
+- [VGGRPO](https://arxiv.org/abs/2603.26599): Uses a 4D latent reward for world-consistent video generation, aligning video synthesis with persistent scene geometry and dynamics.
+- [TRACE](https://arxiv.org/abs/2604.01207): A 3D scene editing method using geometry-aligned video masking, multi-view anchors, and tangible geometry anchoring for temporally stable edits.
+- [DiffHDR](https://arxiv.org/abs/2604.06161): Re-exposes LDR videos with video diffusion models, adding a video-editing and enhancement method to the generation-model section.
+- [Matrix-Game 3.0](https://arxiv.org/abs/2604.08995): Builds a real-time streaming interactive world model with long-horizon memory, relevant to video generation systems that must maintain state across user actions.
+- [Rein3D](https://arxiv.org/abs/2604.10578): A reinforced 3D indoor scene generation method using panoramic video diffusion to refine trajectories as pseudo-ground truth for 3D Gaussian updates.
+- [Hallo-Live](https://arxiv.org/abs/2604.23632): A real-time audio-video avatar generation method using asynchronous dual-stream diffusion, future-expanding attention, and preference-guided distillation.
+- [LSTD](https://doi.org/10.1109/TMM.2026.3651052): Models long- and short-term temporal structure for video generation with diffusion.
+- [ScenarioDiff](https://doi.org/10.1007/s11263-025-02413-7): Generates videos under dynamic transformations of scene conditions.
+- [World and Human Action Models towards gameplay ideation](https://doi.org/10.1038/s41586-025-08600-3): Builds world and human-action models for interactive video-like gameplay ideation.
+- [CustomTTT](https://doi.org/10.1609/aaai.v39i2.32182): Uses test-time training to customize motion and appearance in video generation.
+- [Follow-Your-Click](https://doi.org/10.1609/aaai.v39i6.32643): Turns regional click and motion prompts into open-domain image animation.
+- [TIV-Diffusion](https://doi.org/10.1609/aaai.v39i8.32861): Focuses image-to-video generation on object-centric movement from text instructions.

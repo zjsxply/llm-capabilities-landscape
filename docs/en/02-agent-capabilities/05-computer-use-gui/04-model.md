@@ -1,0 +1,60 @@
+# 2.5.4 Model
+
+- [CogAgent](https://arxiv.org/abs/2312.08914) ([code](https://github.com/THUDM/CogAgent)): Specializes a visual language model for GUI understanding and navigation, with a refreshed CogAgent-9B release noted in the paper metadata.
+- [AutoWebGLM](https://arxiv.org/abs/2404.03648) ([code](https://github.com/THUDM/AutoWebGLM)): Trains a ChatGLM-based web-navigation model with HTML simplification, curriculum data, reinforcement learning, and rejection sampling.
+- [Ferret-UI](https://arxiv.org/abs/2404.05719): Trains a multimodal LLM for mobile UI referring, grounding, reasoning, and open-ended UI instruction following.
+- [MobileFlow](https://arxiv.org/abs/2407.04346): Transforms Qwen-VL-Chat into a 21B mobile-GUI MLLM with hybrid visual encoders, MoE expansion, and GUI alignment for Chinese mobile interfaces.
+- [OmniParser](https://arxiv.org/abs/2408.00203): Trains screenshot parsing components for interactable-region detection and UI-element semantics, enabling pure-vision GUI agents to ground actions more reliably.
+- [UI-JEPA](https://arxiv.org/abs/2409.04081): Learns lightweight active perception of user intent from onscreen UI activity, making user-state inference a model-side component for GUI agents.
+- [Ferret-UI 2](https://arxiv.org/abs/2410.18967): Extends Ferret-UI into a cross-platform UI-understanding model across iPhone, Android, iPad, web pages, and Apple TV.
+- [OS-ATLAS](https://arxiv.org/abs/2410.23218): A foundation action model for generalist GUI agents trained to map screen observations and instructions into GUI actions.
+- [AutoGLM](https://arxiv.org/abs/2411.00820): Trains autonomous foundation agents for browser and phone GUIs with progressive self-evolving online curriculum reinforcement learning.
+- [OS-Genesis](https://arxiv.org/abs/2412.19723): Automates GUI-agent trajectory construction through reverse task synthesis and reward-model filtering, creating training data for GUI policies.
+- [UI-TARS](https://arxiv.org/abs/2501.12326) ([code](https://github.com/bytedance/UI-TARS)): Trains a native GUI agent model using screenshots, coordinates, operation history, and action generation for computer use.
+- Claude 3.5 Sonnet computer use ([official announcement](https://www.anthropic.com/news/3-5-models-and-computer-use)): Exposes a frontier-model computer-use capability through API tools for screen observation, cursor movement, clicking, and typing.
+- [Magma](https://arxiv.org/abs/2502.13130) ([project page](https://microsoft.github.io/Magma/)): A multimodal agent foundation model for both UI navigation and robot manipulation, using action grounding and action-planning supervision.
+- [Qwen2.5-VL](https://arxiv.org/abs/2502.13923): A vision-language model technical report whose interactive visual-agent capability covers reasoning, tool use, and computer or mobile operation.
+- [UI-R1](https://arxiv.org/abs/2503.21620): Applies rule-based reinforcement learning to GUI action prediction, training compact UI-R1 models for grounding and Android control.
+- [GUI-R1](https://arxiv.org/abs/2504.10458) ([code](https://github.com/ritzz-ai/GUI-R1)): A generalist R1-style vision-language-action model that introduces reinforcement fine-tuning for GUI action generation.
+- [InfiGUI-R1](https://arxiv.org/abs/2504.14239): Uses R1-style training to move multimodal GUI agents from reactive actors toward deliberative reasoners.
+- OpenAI Computer-Using Agent (CUA) ([official report](https://openai.com/index/computer-using-agent/)): Combines GPT-4o vision with reinforcement-learning-trained reasoning for browser and OS computer-use actions.
+- [Enhancing Visual Grounding for GUI Agents via Self-Evolutionary Reinforcement Learning](https://arxiv.org/abs/2505.12370): Uses self-evolutionary RL to improve visual grounding for GUI agents, making screen-element localization a trainable model-side loop.
+- [Efficient Agent Training for Computer Use](https://arxiv.org/abs/2505.13909) ([code](https://github.com/GAIR-NLP/PC-Agent-E)): Trains PC Agent-E from a small set of human computer-use demonstrations augmented with synthesized trajectory variants.
+- [Proxy Lite 3B](https://huggingface.co/convergence-ai/proxy-lite-3b) ([code](https://github.com/convergence-ai/proxy-lite)): A small open-weight browser-agent model fine-tuned from Qwen2.5-VL for UI navigation.
+- [GUI-G1](https://arxiv.org/abs/2505.15810): Studies R1-Zero-like training for visual grounding in GUI agents, probing how rule-based RL affects grounding behavior.
+- [ARPO](https://arxiv.org/abs/2505.16282) ([code](https://github.com/dvlab-research/ARPO)): Adapts GRPO with experience replay for end-to-end policy optimization in long-horizon GUI environments.
+- Amazon Nova Act ([official report](https://labs.amazon.science/blog/nova-act); [SDK](https://github.com/aws/nova-act)): A closed browser-action model and SDK line for reliable web task execution through natural-language browser control.
+- [ZeroGUI](https://arxiv.org/abs/2505.23762) ([code](https://github.com/OpenGVLab/ZeroGUI)): Automates GUI-agent learning with task generation, reward estimation, and online reinforcement learning at zero human cost.
+- [ShowUI](https://openaccess.thecvf.com/content/CVPR2025/html/Lin_ShowUI_One_Vision-Language-Action_Model_for_GUI_Visual_Agent_CVPR_2025_paper.html): A vision-language-action model for GUI visual agents that unifies screen understanding and action prediction.
+- [GUI-Critic-R1](https://arxiv.org/abs/2506.04614): Trains a pre-operative critic model for GUI automation with suggestion-aware GRPO and reasoning-bootstrapped critic data.
+- [Aguvis](https://proceedings.mlr.press/v267/xu25ae.html): Trains unified pure-vision agents for autonomous GUI interaction without relying on DOM or accessibility trees.
+- [MobileGUI-RL](https://arxiv.org/abs/2507.05720): Advances mobile GUI agents through reinforcement learning in online environments, strengthening dynamic app-operation behavior.
+- [OpenCUA](https://arxiv.org/abs/2508.09123): Builds AgentNet demonstrations across operating systems and applications, then trains end-to-end open CUA foundation models from reflective state-action pairs.
+- [UI-Venus](https://arxiv.org/abs/2508.10833) ([code](https://github.com/inclusionAI/UI-Venus)): Builds screenshot-only UI agents with reinforcement fine-tuning, reward design, data cleaning, and self-evolving trajectory-history alignment.
+- [ComputerRL](https://arxiv.org/abs/2508.14040) ([code](https://github.com/thudm/ComputerRL)): Scales end-to-end online reinforcement learning for desktop agents with distributed virtual environments and entropy-stabilized training.
+- [Mobile-Agent-v3](https://arxiv.org/abs/2508.15144) ([code](https://github.com/X-PLUG/MobileAgent)): Introduces GUI-Owl, a foundational GUI-agent model for desktop and mobile benchmarks.
+- [UI-TARS-2](https://arxiv.org/abs/2509.02544) ([code](https://github.com/bytedance/UI-TARS-desktop)): Advances GUI agents with multi-turn reinforcement learning and a clearer perception-reasoning-action training stack.
+- [UI-S1](https://arxiv.org/abs/2509.11543) ([code](https://github.com/X-PLUG/MobileAgent/tree/main/UI-S1)): Uses semi-online reinforcement learning over offline trajectories to train GUI automation models with discounted future returns and episode-level advantages.
+- [UIPro](https://arxiv.org/abs/2509.17328): Strengthens GUI-agent interaction capability with interface-focused training and action supervision.
+- [MobileRL](https://arxiv.org/abs/2509.18119) ([code](https://github.com/THUDM/MobileRL)): Trains mobile GUI agents with difficulty-adaptive GRPO, positive replay, failure curriculum filtering, and shortest-path reward shaping.
+- [Ferret-UI Lite](https://arxiv.org/abs/2509.26539): Trains a compact on-device GUI agent with curated real and synthetic GUI data, visual tool use, chain-of-thought reasoning, and reinforcement learning.
+- [Surfer 2](https://arxiv.org/abs/2510.19949): A cross-platform computer-use architecture for web, desktop, and mobile with hierarchical context and self-verification.
+- [UI-Ins](https://arxiv.org/abs/2510.20286) ([code](https://github.com/alibaba/UI-Ins)): Trains GUI grounding models with multi-perspective instruction-as-reasoning, supervised fine-tuning, and reinforcement learning.
+- Gemini 2.5 Computer Use model ([official docs](https://ai.google.dev/gemini-api/docs/computer-use)): A Google Gemini model variant exposed specifically for browser-control actions and CUA-style interaction loops.
+- [Fara-7B](https://arxiv.org/abs/2511.19663): Trains a small screenshot-only native CUA model from FaraGen synthetic multi-step web trajectories and verifier-filtered data.
+- [GUI Exploration Lab](https://arxiv.org/abs/2512.02423): Studies SFT, single-turn RL, and multi-turn RL for screen navigation in a controllable GUI simulation environment.
+- [Step-GUI](https://arxiv.org/abs/2512.15431) ([code](https://github.com/stepfun-ai/gelab-zero)): Trains 4B and 8B GUI models with a calibrated step reward system, self-evolving trajectories, and GUI-MCP-oriented deployment evidence.
+- [MAI-UI](https://arxiv.org/abs/2512.22047): Reports a family of foundation GUI agents with self-evolving navigation data, user interaction, MCP tool calls, device-cloud collaboration, and online RL.
+- [ShowUI-pi](https://arxiv.org/abs/2512.24965): Uses a flow-based generative action model to unify discrete clicks and continuous drags for GUI manipulation.
+- [ShowUI-Aloha](https://arxiv.org/abs/2601.07181): Trains GUI agents from human-taught demonstrations to improve complex screen operation.
+- Yutori Navigator n1 ([official report](https://yutori.com/blog/introducing-n1); [API docs](https://docs.yutori.com/reference/navigator)): A browser-use model trained with mid-training, supervised fine-tuning, and reinforcement learning on real websites.
+- [M2-Miner](https://arxiv.org/abs/2602.05429) ([project page](https://larry225.github.io/M2-Miner/)): Mines mobile GUI intent-trajectory data with multi-agent MCTS and progressive model-in-the-loop training.
+- [UI-Venus-1.5](https://arxiv.org/abs/2602.09082) ([code](https://github.com/inclusionAI/UI-Venus)): Adds GUI mid-training, online full-trajectory RL, and model merging across grounding, web, and mobile specialists.
+- [Code2World](https://arxiv.org/abs/2602.09856) ([code](https://github.com/AMAP-ML/Code2World)): Trains a GUI world model that predicts action-conditioned next UI states through renderable code generation and render-aware RL.
+- [Agentic-Q / Ovis GUI Navigation](https://arxiv.org/abs/2602.13653): Optimizes an agentic Q-model and step-wise GUI policy for Ovis2.5-9B navigation and grounding.
+- [Mobile-Agent-v3.5](https://arxiv.org/abs/2602.16855): Releases multi-platform GUI-Owl-1.5 foundation agents for desktop, mobile, browser, and edge or cloud settings.
+- [SecAgent](https://arxiv.org/abs/2603.08533) ([dataset](https://huggingface.co/datasets/alibabagroup/CMGUI)): Trains an efficient 3B mobile GUI agent with semantic context, Chinese mobile GUI data, SFT, and reinforcement fine-tuning.
+- [UI-Voyager](https://arxiv.org/abs/2603.24533) ([code](https://github.com/Ui-Voyager/Ui-Voyager)): Learns from failed mobile GUI trajectories using rejection fine-tuning and group relative self-distillation for dense step-level supervision.
+- H Company Holo/Holotron family ([Holo2](https://hcompany.ai/holo2); [Holotron-12B](https://hcompany.ai/holotron-12b); [Holotron 3 Nano](https://hcompany.ai/holotron3)): Multimodal CUA models for navigation and localization across web, desktop, and mobile interfaces.
+- Microsoft Fara1.5 ([official report](https://www.microsoft.com/en-us/research/articles/fara1-5-computer-use-agent/)): A small browser CUA model family continuing Fara-style synthetic browser-action training at 4B, 9B, and 27B scales.
+- [ToolCUA](https://arxiv.org/abs/2605.12481) ([project page](https://x-plug.github.io/ToolCUA/)): Trains a CUA model for hybrid GUI-tool path selection through interleaved trajectory synthesis, RFT, online agentic RL, and tool-efficient path rewards.

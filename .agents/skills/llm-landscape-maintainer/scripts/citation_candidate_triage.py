@@ -22,6 +22,16 @@ SIGNAL_ANY = re.compile(
     re.I,
 )
 
+BIOMEDICAL_SCOPE = re.compile(
+    r"\b("
+    r"biomedical|biomedicine|medical|clinical|clinic|healthcare|patient|"
+    r"disease|diagnos(?:is|tic)|radiology|pathology|histology|mri|ct scan|ultrasound|"
+    r"eeg|ecg|tumou?r|cancer|oncology|liver|lung|kidney|brain|retina|dermatology|"
+    r"protein|genomic|omics|gene|cell|drug|molecule|molecular|biology|ehr|ehrs|mimic-iv"
+    r")\b",
+    re.I,
+)
+
 
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -42,6 +52,10 @@ def should_auto_reject(item: dict[str, Any], *, max_seed_count: int, max_citatio
     if seed_count > max_seed_count or citations >= max_citations:
         return False
     return SIGNAL_ANY.search(haystack(item)) is None
+
+
+def should_biomedical_reject(item: dict[str, Any]) -> bool:
+    return BIOMEDICAL_SCOPE.search(haystack(item)) is not None
 
 
 def registry_record(item: dict[str, Any], status: str, note: str, source: str) -> dict[str, Any]:
@@ -95,6 +109,11 @@ def main() -> int:
     parser.add_argument("--abstract-chars", type=int, default=500)
     parser.add_argument("--auto-reject-max-seed-count", type=int, default=1)
     parser.add_argument("--auto-reject-max-citations", type=int, default=10)
+    parser.add_argument(
+        "--exclude-biomedical",
+        action="store_true",
+        help="Auto-reject biomedical, clinical, omics, drug, and medical-imaging candidates before signal triage.",
+    )
     parser.add_argument("--source", default="citation-triage")
     args = parser.parse_args()
 
@@ -106,6 +125,13 @@ def main() -> int:
     keep: list[dict[str, Any]] = []
     for item in items:
         if not isinstance(item, dict) or not item.get("identifier"):
+            continue
+        if args.exclude_biomedical and should_biomedical_reject(item):
+            note = (
+                "Automatic reject: biomedical, clinical, omics, drug, or medical-imaging scope is out of scope "
+                "for this task."
+            )
+            auto_rejects.append(registry_record(item, "rejected", note, args.source))
             continue
         if should_auto_reject(
             item,

@@ -2,6 +2,28 @@
 
 - [A Survey on Robotics with Foundation Models: toward Embodied AI](https://arxiv.org/abs/2402.02385): Reviews foundation models for perception, planning, manipulation, navigation, and embodied reasoning.
 - [A Survey on Vision-Language-Action Models for Embodied AI](https://arxiv.org/abs/2405.14093): Frames the transition from vision-language understanding to action-conditioned policies.
+- [Generative Artificial Intelligence in Robotic Manipulation](https://arxiv.org/abs/2503.03464): Maps generative models across perception, task planning, trajectory synthesis, and action generation for robotic manipulation.
+- [Diffusion models for robotic manipulation](https://arxiv.org/abs/2504.08438): Centers diffusion policies and diffusion world models as trajectory and action generators for manipulation.
 - [A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI](https://arxiv.org/abs/2505.01458): Connects simulators, task design, embodied learning, and reproducible evaluation.
+- [Toward Embodied AGI](https://arxiv.org/abs/2505.14235): Reviews embodied AI progress and roadmaps toward embodied AGI, connecting perception, action, learning, and deployment challenges.
+- [Vision Language Action Models in Robotic Manipulation](https://arxiv.org/abs/2507.10672): Systematizes VLA manipulation research by datasets, architectures, action representations, evaluation, and real-robot deployment.
 - [Large Model Empowered Embodied AI: A Survey on Decision-Making and Embodied Learning](https://arxiv.org/abs/2508.10399): Emphasizes decision making, embodied learning, planning, and action grounding.
+- [Robot Policy Evaluation for Sim-to-Real Transfer](https://arxiv.org/abs/2508.11117): Frames benchmark design for generalist robot policies, emphasizing visual fidelity, task complexity, perturbation, and real-world alignment.
+- [Large VLM-based Vision-Language-Action Models for Robotic Manipulation](https://arxiv.org/abs/2508.13073): Focuses on how large VLMs are adapted from visual-language grounding into action-producing manipulation policies.
+- [Sensing, Social, and Motion Intelligence in Embodied Navigation](https://arxiv.org/abs/2508.15354): Surveys embodied navigation through sensing, social interaction, motion intelligence, platforms, and evaluation metrics.
+- [Pure Vision Language Action (VLA) Models](https://arxiv.org/abs/2509.19012): Distinguishes end-to-end VLA models from modular robot stacks, emphasizing data, pretraining, post-training, and evaluation.
+- [Vision-Language-Action Models for Robotics](https://arxiv.org/abs/2510.07077): Reviews VLA systems through real-world robotics constraints such as robustness, embodiment gaps, data collection, and deployment.
+- [Efficient Vision-Language-Action Models for Embodied Manipulation](https://arxiv.org/abs/2510.17111): Systematically surveys efficient VLA designs across architecture, perception, action generation, and training or inference for embodied manipulation.
+- [Agentic LLM-based robotic systems](https://doi.org/10.3389/frobt.2025.1605405): Reviews robotic systems built around agentic LLMs, with attention to agenticness, real-world deployment, and ethics.
+- [Embodied Multi-Agent Systems: A Review](https://doi.org/10.1109/JAS.2025.125552): Organizes embodied multi-agent systems by brain-body interaction and open-loop, closed-loop, and double-loop control designs.
+- [AeroVerse-Review](https://doi.org/10.59717/j.xinn-inform.2025.100015): Specializes embodied vision-language navigation to aerial platforms, covering UAV perception, language grounding, navigation tasks, and evaluation.
+- [Robot learning in the era of foundation models](https://doi.org/10.1016/j.neucom.2025.129963): Places foundation models inside the robot-learning pipeline, from representations and policy learning to transfer and deployment.
+- [Video Generation Models in Robotics - Applications, Research Challenges, Future Directions](https://arxiv.org/abs/2601.07823): Treats video generators as data engines, world models, and planning aids for robotic systems.
+- [Are Foundation Models the Route to Full-Stack Transfer in Robotics?](https://arxiv.org/abs/2602.22001): Reviews how LLMs, VLMs, and VLAs affect robotics transfer from high-level language to low-level motor skills.
 - [Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001): Maps datasets, benchmarks, and data infrastructure for VLA agents.
+- [Large language models in human-robot collaboration](https://doi.org/10.1016/j.jmsy.2026.01.011): Systematically reviews LLM use in human-robot collaboration, including trends, deployment challenges, and collaboration patterns.
+- [Mapless Multi-Robot Systems Survey](https://doi.org/10.1109/ACCESS.2026.3676798): Surveys intelligent mapless multi-robot systems across perception, planning, and predictive cooperation.
+- [A survey of robotic manipulation](https://doi.org/10.1016/j.neucom.2026.132921): Traces robotic manipulation from bottom-up perception-control pipelines to end-to-end paradigms shaped by LLMs and VLAs.
+- [Deep Reinforcement Learning of Mobile Robot Navigation in Dynamic Environment](https://doi.org/10.3390/s25113394): Reviews DRL methods for mobile-robot navigation in dynamic environments, complementing embodied navigation surveys.
+- [An Overview of Robot Embodied Intelligence Based on Multimodal Models](https://doi.org/10.1155/int/5124400): Organizes multimodal robot embodied intelligence by task families, model choices, and system schemes.
+- [Integrating Large Language Models into Robotic Autonomy](https://doi.org/10.3390/ai6070158): Reviews how LLMs enter robotic autonomy through motion, voice, and training pipelines.

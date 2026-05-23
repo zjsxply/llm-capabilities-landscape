@@ -1,0 +1,29 @@
+# 2.6.4 Model
+
+- [AgentOhana](https://arxiv.org/abs/2402.15506)：统一多环境 agent 轨迹和训练流水线，用于跨异构任务学习有效 action model。
+- [ArCHer](https://arxiv.org/abs/2402.19446)：用层级多轮强化学习训练语言模型 agent，处理长轨迹中的延迟奖励。
+- [Agent-R](https://arxiv.org/abs/2501.11425)：通过迭代自训练让 agent 学习反思、错误恢复和轨迹级自改进。
+- [Reinforcement Learning for Long-Horizon Interactive LLM Agents](https://arxiv.org/abs/2502.01600)：把有状态数字 agent 训练形式化为长程交互式 RL 问题，并提出面向多应用环境的 LOOP。
+- [ATLaS](https://arxiv.org/abs/2503.02197)：只用轨迹中的关键规划、推理与策略决策步骤微调通用智能体，以更少行为克隆数据提升跨环境表现。
+- [RAGEN](https://arxiv.org/abs/2504.20073)：通过多轮强化学习、轨迹过滤和稳定化策略更新研究 LLM agent 的自演化。
+- [GiGPO](https://arxiv.org/abs/2505.10978)：在 episode 和 step 两个层级分配 advantage，服务稀疏奖励下的长程 agent 训练。
+- [Turn-Level Reward Design for Multi-Turn Agents](https://arxiv.org/abs/2505.11821)：把 GRPO/PPO 风格训练从最终 outcome 推向更稠密的 turn-level reward design，用于多轮推理 agent。
+- [RLVMR](https://arxiv.org/abs/2507.22844)：为规划、探索和反思加入可验证 meta-reasoning rewards，使长程 agent 学到更稳健的推理路径。
+- [Agent Lightning](https://arxiv.org/abs/2508.03680)：为任意 agent 提供通用强化学习接口，包含统一轨迹和 credit-assignment 模块。
+- [Chain-of-Agents Agent Foundation Models](https://arxiv.org/abs/2508.13167)：通过多 agent 蒸馏和 agentic RL，把多 agent 解题过程转化为端到端学习到的 agent model。
+- [AgentGym-RL](https://arxiv.org/abs/2509.08755)：通过多轮交互式 RL 和 ScalingInter-RL 训练面向长程决策的 LLM agent。
+- [AgentRL](https://arxiv.org/abs/2510.04206)：用异步 generation-training 基础设施扩展多轮、多任务 agentic reinforcement learning。
+- [Scaling Long-Horizon LLM Agent via Context-Folding](https://arxiv.org/abs/2510.11967)：用 FoldGRPO 和过程奖励训练 agent 分支、折叠子轨迹并主动管理上下文。
+- [SALT](https://arxiv.org/abs/2510.20022)：通过 trajectory graph 为长程 agent 推导 step-level advantage，直接处理稀疏 outcome reward。
+- [AgentPRM](https://arxiv.org/abs/2511.08325)：用 step-wise promise 与 progress 信号构建 LLM agent 的 process reward model。
+- [Agent0](https://arxiv.org/abs/2511.16043)：通过 tool-integrated reasoning 和迭代改进，从零数据发展自演化 agent。
+- [SkyRL-Agent](https://arxiv.org/abs/2511.16108)：提供高效多轮 agent RL 训练，并展示在软件工程、deep research、computer use 和 memory-agent 任务上的迁移。
+- [SAGE](https://arxiv.org/abs/2512.17102)：用强化学习让 agent 与 skill library 共同改进，连接长时自治和可复用能力积累。
+- [HiPER](https://arxiv.org/abs/2602.16165)：面向大语言模型 agent 使用层级 RL 和显式 credit assignment，区分高层规划与低层执行。
+- [KLong](https://arxiv.org/abs/2602.17547)：通过 trajectory-splitting SFT、Research-Factory 合成轨迹流水线和 progressive RL，训练面向超长程任务的 LLM agent。
+- [ProxMO](https://arxiv.org/abs/2602.19225)：把 proximity-based multi-turn optimization 作为 agent 训练中实用的 credit-assignment 方法。
+- [HiMAC](https://arxiv.org/abs/2603.00977)：通过层级 macro-micro learning，在子目标和局部动作层训练长程 LLM agent。
+- [HCAPO](https://arxiv.org/abs/2603.08754)：用 hindsight credit assignment 与 post-hoc critic refinement 优化长程 LLM-agent 轨迹。
+- [AEM](https://arxiv.org/abs/2605.00425)：通过 response-level entropy modulation 稳定多轮 agentic RL，无需外部 step annotation。
+- [Rewarding Beliefs, Not Actions](https://arxiv.org/abs/2605.20061)：提出 belief-centric reinforcement learning，使自改进长程 agent 能在部分可观测状态下分配信用。
+- [Memory-R2](https://arxiv.org/abs/2605.21768)：研究跨长会话运行的 memory-augmented long-context agent 的在线 RL 和公平 credit assignment。

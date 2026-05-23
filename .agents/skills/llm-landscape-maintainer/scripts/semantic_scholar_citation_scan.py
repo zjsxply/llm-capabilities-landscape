@@ -120,9 +120,9 @@ def normalize_identifier(raw: str) -> str | None:
             return f"arXiv:{arxiv}"
     doi_url = DOI_URL_RE.search(value)
     if doi_url:
-        return f"DOI:{doi_url.group(1).rstrip('.,;')}"
+        return f"DOI:{urllib.parse.unquote(doi_url.group(1).rstrip('.,;'))}"
     if value.lower().startswith("doi:"):
-        return f"DOI:{value.split(':', 1)[1].rstrip('.,;')}"
+        return f"DOI:{urllib.parse.unquote(value.split(':', 1)[1].rstrip('.,;'))}"
     s2 = S2_PAPER_RE.search(value)
     if s2:
         return s2.group(1)

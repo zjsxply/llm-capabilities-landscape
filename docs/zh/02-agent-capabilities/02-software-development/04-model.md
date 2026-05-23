@@ -1,0 +1,63 @@
+# 2.2.4 Model
+
+- [Qwen2.5-Coder Technical Report](https://arxiv.org/abs/2409.12186)：记录面向代码的 Qwen 模型族和大规模代码指令调优，是后续 agentic coding 模型的重要开放基础。
+- [RLEF](https://arxiv.org/abs/2410.02089)：用强化学习把 Code LLM grounding 到多步执行反馈中，使模型学会利用编译器和测试反馈，而不是只靠独立重采样。
+- [Training Language Models on Synthetic Edit Sequences](https://arxiv.org/abs/2410.02749)：用合成编辑轨迹训练代码模型逐步编写和修改程序，补齐单次生成与软件代理补丁生成之间的数据缺口。
+- [Process Supervision-Guided Policy Optimization for Code Generation](https://arxiv.org/abs/2410.17621)：训练行级 process reward model，并把它用于策略优化，使代码 RL 不只依赖最终单元测试结果。
+- [SFS: Smarter Code Space Search improves LLM Inference Scaling](https://openreview.net/forum?id=MCHuGOkExF)：把更聪明的代码候选搜索作为编程任务的 inference scaling 路径，用测试时 code-space exploration 补充训练时 RL。
+- [SWE-Gym](https://arxiv.org/abs/2412.21139)：提供真实软件工程 agent 的可执行训练环境，并在 SWE 风格任务上训练 agent 与 verifier。
+- [SWE-Fixer](https://arxiv.org/abs/2501.05040)：在 11 万个 GitHub issue 与补丁上分别训练开源检索和代码编辑模型，用于高效的仓库级 issue 修复。
+- [PRLCoder](https://arxiv.org/abs/2502.01715)：通过语句级 mutation/refactoring 的编译和执行检查自动标注过程监督，构建 process-supervised code RL。
+- [CTRL](https://arxiv.org/abs/2502.03492)：用强化学习训练 critic 模型，使迭代式 critique-revision 和生成式 reward model 改进代码生成。
+- [SWE-RL](https://arxiv.org/abs/2502.18449)：把强化学习用于开放软件演化任务，使 coding agent 从可验证的仓库变更中学习。
+- [muCode](https://arxiv.org/abs/2502.20380)：用 single-step rewards 训练生成器和 verifier，使模型能从多轮执行反馈中改进代码生成。
+- [R2E-Gym](https://arxiv.org/abs/2504.07164)：用 SYNGEN 合成 issue-like 可执行环境，并结合混合 verifier 支撑开放权重 SWE agent 的训练与 test-time scaling。
+- [SWE-smith](https://arxiv.org/abs/2504.21798)（[开源代码](https://github.com/SWE-bench/SWE-smith)）：扩展合成 SWE 训练数据并训练 SWE-agent-LM-32B，除了环境搭建属性外，也有直接模型训练贡献。
+- [AlphaVerus](https://proceedings.mlr.press/v267/aggarwal25a.html)：通过自改进翻译和 tree refinement 引导形式化验证代码生成，把证明反馈纳入代码模型改进过程。
+- [NextCoder](https://proceedings.mlr.press/v267/aggarwal25b.html)：让代码语言模型适配多样化代码编辑分布，强化补丁生成和 coding assistant 所需的 edit coverage。
+- [Reasoning Through Execution](https://proceedings.mlr.press/v267/yu25f.html)：用执行反馈统一代码生成中的 process reward 和 outcome reward，使中间推理和最终成功都能被验证信号约束。
+- [Synthesizing Software Engineering Data in a Test-Driven Manner](https://proceedings.mlr.press/v267/zhang25cn.html)：围绕测试生成 SWE 训练数据，让合成样例携带可执行验证信号，而不只是自然语言 issue 描述。
+- OpenAI Codex / `codex-1`（[官方发布](https://openai.com/index/introducing-codex/)；[系统卡补充](https://openai.com/index/o3-o4-mini-codex-system-card-addendum/)）：报告一个由 o3 派生、在真实编码任务上经强化学习优化的软件工程模型；Codex CLI 和云端工作流则属于 harness 侧。
+- Claude 4 与 Claude Sonnet 4.5 coding model cards（[Claude 4](https://www.anthropic.com/news/claude-4)；[Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)）：提供闭源模型在长时编码、仓库修复、终端任务和 SWE-bench 类软件代理能力上的模型卡证据。
+- [Training Language Models to Generate Quality Code with Program Analysis Feedback](https://arxiv.org/abs/2505.22704)：用程序分析发现和单元测试作为可扩展强化信号，训练生成生产质量代码的模型。
+- [Satori-SWE](https://arxiv.org/abs/2505.23604)（[开源代码](https://github.com/satori-reasoning/Satori-SWE)）：结合 evolutionary test-time scaling 与基于 RL 的自演化，使较小 SWE 模型用更少采样改进修复。
+- [Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](https://arxiv.org/abs/2506.03136)（[开源代码](https://github.com/Gen-Verse/CURE)）：从交互结果中共同训练 coder 和 unit tester，使测试器也成为 agentic coding 的监督来源。
+- [Seed-Coder](https://arxiv.org/abs/2506.03524)（[开源代码](https://github.com/ByteDance-Seed/Seed-Coder)）：用模型侧代码数据过滤、SFT、偏好优化和 Long-CoT RL 构建 8B 代码模型族，覆盖代码推理与软件任务。
+- [SWE-Dev](https://arxiv.org/abs/2506.07636)：通过监督数据构造、强化学习和推理扩展构建 SWE agent。
+- [CUDA-L1](https://arxiv.org/abs/2507.14111)：把 contrastive reinforcement learning 用于 CUDA 优化，代表面向高性能代码代理的执行反馈训练线。
+- [D3: A Dataset for Training Code LMs to Act Diff-by-Diff](https://openreview.net/forum?id=sy71y74U80)：用 diff-by-diff 的源码演化训练代码模型，贴近仓库级 agent 的增量编辑动作。
+- [Kimi K2](https://arxiv.org/abs/2507.20534)：报告开放 MoE 模型，包含大规模 agentic 数据合成和联合强化学习，并在 SWE-bench 与 agentic task 上取得强结果。
+- Qwen3-Coder（[官方报告](https://qwenlm.github.io/blog/qwen3-coder/)）：训练 480B-A35B MoE coding-agent 模型，包含代码密集预训练、execution-driven Code RL，以及大规模并行编码环境中的长程 Agent RL。
+- [Training Long-Context, Multi-Turn Software Engineering Agents with Reinforcement Learning](https://arxiv.org/abs/2508.03501)：把 rejection fine-tuning 与 DAPO 风格 RL 用到 Qwen2.5-72B，在长上下文、有状态 SWE 环境中训练模型。
+- [ReCode](https://arxiv.org/abs/2508.05170)：从合成 reasoning variants 中训练 reasoning-process reward model，并用执行正确性门控 RL 奖励，降低代码生成中的 reward hacking。
+- [GLM-4.5](https://arxiv.org/abs/2508.06471)：发布开放的 agentic、reasoning 与 coding foundation model，通过多阶段后训练和强化学习面向软件工程与 agent 任务。
+- [Dream-Coder 7B](https://arxiv.org/abs/2509.01142)：引入开放 diffusion language model for code，为软件生成补充非自回归代码模型路线。
+- Grok Code Fast 1（[模型文档](https://docs.x.ai/docs/models/grok-code-fast-1)）：面向 agentic coding 的专用模型，包含编程密集预训练、真实 PR 和 coding-task 数据后训练，以及终端和文件编辑工具行为。
+- GPT-5-Codex family（[GPT-5-Codex](https://openai.com/index/introducing-upgrades-to-codex/)；[GPT-5.2-Codex](https://openai.com/index/introducing-gpt-5-2-codex/)；[GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/)）：记录 OpenAI 闭源 coding-agent 模型线在真实工程任务、原生压缩、长时工作、SWE-Bench Pro、Terminal-Bench 和漏洞相关编码训练上的进展。
+- [Maximum-Entropy Long-CoT Code Review Tuning](https://arxiv.org/abs/2509.21170)：用最大熵调控的长链式思维微调大模型，以分析代码评审的多个维度。
+- [Kimi-Dev](https://arxiv.org/abs/2509.23045)：把 Agentless 风格的定位、编辑与自反思训练转化为可迁移 skill prior，用于适配 SWE-Agent。
+- [Devstral](https://arxiv.org/abs/2509.25193)：针对 coding-agent 应用微调轻量开放模型，并用 OpenHands 风格软件工程任务评测。
+- [Afterburner](https://openreview.net/forum?id=At8OUlyTOu)：用强化学习支持自改进代码效率优化，把 coding-agent 训练从正确性扩展到性能改进。
+- [More Than Just Functional](https://openreview.net/forum?id=0Zri6HSYaK)：用 LLM critique 同时优化生成代码的功能正确性和效率，为质量感知 coding agent 提供模型侧路线。
+- [KAT-Coder](https://arxiv.org/abs/2510.18779)：报告一个 agentic coding model，通过 mid-training、SFT、reinforcement fine-tuning 和部署适配面向 IDE 风格软件工作流。
+- MiniMax M2（[官方报告](https://www.minimax.io/news/minimax-m2)；[interleaved-thinking 说明](https://www.minimax.io/news/why-is-interleaved-thinking-important-for-m2)）：把厂商模型定位在 agentic coding、工具使用和 deep search 上，并强调 interleaved thinking 对可靠工具化编码的作用。
+- [DeepSeek-V3.2](https://arxiv.org/abs/2512.02556)：在前沿开放模型中加入大规模 agentic task synthesis 和可扩展强化学习，对软件代理的编码与工具使用能力有直接影响。
+- [Training Versatile Coding Agents in Synthetic Environments](https://arxiv.org/abs/2512.12216)：合成多样化 coding-agent 环境，用于训练超出固定 GitHub issue 分布的通用代码代理。
+- [Self-Play SWE-RL](https://arxiv.org/abs/2512.18552)：通过 self-play 和生成的软件演化挑战训练软件代理，而不只依赖人工 GitHub issue。
+- [SWE-RM](https://arxiv.org/abs/2512.21919)：训练面向 SWE agent 的 execution-free reward model，同时服务 test-time scaling 和强化学习反馈。
+- [daVinci-Dev](https://arxiv.org/abs/2601.18418)：研究软件工程 agent 的 agent-native mid-training，用上下文原生和可执行轨迹在后训练前注入 agentic 行为。
+- [SERA](https://arxiv.org/abs/2601.20789)：生成 soft-verified repository trajectories，以低成本 SFT 训练开放、仓库专用的 coding agent。
+- [SWE-Replay](https://arxiv.org/abs/2601.22129)：复用并分叉既有轨迹，为现代 SWE agent 提供低成本 test-time scaling。
+- [Kimi K2.5](https://arxiv.org/abs/2602.02276)：在 Kimi agentic 路线上加入图文联合训练、强化学习和 Agent Swarm，用于多模态编码与 agentic 任务。
+- [SWE-Universe](https://arxiv.org/abs/2602.02361)：把可验证 SWE 环境扩展到数十万级任务，并展示其用于 agentic mid-training 与强化学习的价值。
+- [SWE-World](https://arxiv.org/abs/2602.03419)（[开源代码](https://github.com/RUCAIBox/SWE-World)）：用学习到的 surrogate feedback model 替代 Docker 执行，使 SWE agent 可进行 Docker-free SFT、RL 和 test-time scaling。
+- [Hybrid-Gym](https://arxiv.org/abs/2602.16819)：训练 coding agent 在代码库探索、定位、依赖搜索、测试与修复等技能之间泛化。
+- [CUDA Agent](https://arxiv.org/abs/2602.24286)：把 agentic reinforcement learning 扩展到高性能 CUDA kernel generation，覆盖 GPU 优化场景的代码代理训练。
+- [Qwen3-Coder-Next](https://arxiv.org/abs/2603.00729)：用可验证编码任务、可执行环境、mid-training 和强化学习训练高效开放 coding-agent 模型。
+- [CodeScout](https://arxiv.org/abs/2603.17829)：只用标准 Unix terminal 动作，通过强化学习训练代码搜索 agent，把仓库定位作为 SWE agent 的核心技能来学习。
+- [KAT-Coder-V2](https://arxiv.org/abs/2603.27703)：采用 specialize-then-unify 路线，覆盖 SWE、web coding、terminal、web search 和通用编码域，并结合 on-policy distillation 与大规模沙箱 RL。
+- Cursor Composer 2（[技术报告](https://cursor.com/blog/composer-2-technical-report)；[PDF](https://cursor.com/resources/Composer2.pdf)）：报告一个 IDE-native agentic coding 模型，经过代码继续预训练，并在真实 Cursor 会话中进行大规模 RL。
+- Kimi K2.6（[官方报告](https://www.kimi.com/blog/kimi-k2-6)；[模型卡](https://huggingface.co/moonshotai/Kimi-K2.6)）：把开放 Kimi 模型线聚焦到长程编码执行、Kimi Code Bench、Terminal-Bench、SWE-Bench Pro 和 agent-swarm coding task。
+- [From SWE-ZERO to SWE-HERO](https://arxiv.org/abs/2604.01496)：从前沿 coding model 蒸馏 execution-free 与 execution-backed 轨迹，训练用于仓库修复和多语言迁移的开放 SWE agent。
+- [SWE-Shepherd](https://arxiv.org/abs/2604.10493)：用 SWE-Bench 轨迹训练 process reward model，为仓库级 code agent 提供稠密的 action-level 反馈。
+- [Step Rejection Fine-Tuning](https://arxiv.org/abs/2605.10674)：用 critic 评分轨迹步骤，在蒸馏时保留未解决 SWE 轨迹作为上下文，同时屏蔽错误步骤的损失。

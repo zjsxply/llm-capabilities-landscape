@@ -1,0 +1,27 @@
+# 1.4.4 Model
+
+- [DoLa](https://arxiv.org/abs/2309.03883): A factuality-oriented decoding method that contrasts transformer-layer logits so generation favors knowledge expressed in mature layers.
+- [MiniCheck](https://arxiv.org/abs/2404.10774) ([code](https://github.com/Liyan06/MiniCheck)): A lightweight grounded factuality verifier trained and evaluated on LLM-AggreFact to judge answer-reference consistency at lower cost.
+- [Smoothing Out Hallucinations](https://arxiv.org/abs/2502.11306): Introduces Mitigating LLM Hallucination with Smoothed Knowledge Distillation, a model-side contribution for Hallucination.
+- [Mask-DPO](https://arxiv.org/abs/2503.02846): A fine-grained factuality alignment method that localizes factual spans during preference optimization instead of relying only on full-response preference labels.
+- [PerturboLLaVA](https://arxiv.org/abs/2503.06486): Introduces Reducing Multimodal Hallucinations with Perturbative Visual Training, a model-side contribution for Hallucination.
+- [Decoupling Contrastive Decoding](https://arxiv.org/abs/2504.08809): A multimodal hallucination mitigation method that separates visual and language contrastive signals during decoding so answers rely more on grounded visual evidence.
+- [Beyond Logit Lens: Contextual Embeddings for Robust Hallucination Detection & Grounding in VLMs](https://doi.org/10.18653/v1/2025.naacl-long.488): Uses contextual embeddings beyond logit-lens probes for more robust VLM hallucination detection and grounding.
+- [FaithJudge](https://arxiv.org/abs/2505.04847) ([code](https://github.com/vectara/FaithJudge)): A trained automatic judge for factual faithfulness that supports evidence-grounded hallucination evaluation and later Vectara leaderboard variants.
+- [Self-reflective Uncertainties: Do LLMs Know Their Internal Answer Distribution?](https://arxiv.org/abs/2505.20295): Studies self-reflective uncertainty over internal answer distributions, providing a model-side signal for hallucination risk.
+- [Reasoning Models Hallucinate More](https://arxiv.org/abs/2505.24630): Introduces Factuality-Aware Reinforcement Learning for Large Reasoning Models, a model-side contribution for Hallucination.
+- [CausalAbstain](https://arxiv.org/abs/2506.00519): A model-side abstention method that uses causal reasoning signals to decide when a model should refuse rather than produce unsupported answers.
+- [KnowRL](https://arxiv.org/abs/2506.19807): A reinforcement-learning method for factuality that optimizes policies with knowledge-aware reward signals.
+- [ONLY](https://arxiv.org/abs/2507.00898): Introduces One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models, a model-side contribution for Hallucination.
+- [OmniDPO](https://arxiv.org/abs/2509.00723): Introduces Preference Optimization Framework to Address Omni-Modal Hallucination, a model-side contribution for Hallucination.
+- [FedRAG++: Federated Multi-LLM Retrieval-Augmented Generation with Reinforcement Learning-Based Generator Selection and Hallucination Control](https://doi.org/10.1109/iccit68739.2025.11489538): Uses federated multi-LLM RAG and reinforcement-learning generator selection to reduce hallucination under distributed retrieval.
+- [A Post-Processing Verifier-Reranker Architecture for Efficient Hallucination Reduction in Generative Question Answering](https://doi.org/10.1109/isemantic67418.2025.11291991): Adds a verifier-reranker post-processing stage for hallucination reduction in generative question answering.
+- [DA-DPO](https://arxiv.org/abs/2601.00623): Introduces Cost-efficient Difficulty-aware Preference Optimization for Reducing MLLM Hallucinations, a model-side contribution for Hallucination.
+- [REAL](https://arxiv.org/abs/2602.14065): Uses reasoning-pivot alignment to resolve knowledge conflicts in knowledge-intensive visual question answering.
+- [Abstain-R1](https://arxiv.org/abs/2604.17073): A verifiable-RL method for calibrated abstention and clarification when answerability is uncertain.
+- [Hallucination-aware Retrieval Augmented Generation with Evidence-based Semantic Clustering](https://doi.org/10.1109/aisns67921.2026.11440643): Combines retrieval-augmented generation with evidence-based semantic clustering to make hallucination control evidence aware.
+- [Large Language Models With Contrastive Decoding Algorithm for Hallucination Mitigation in Low-Resource Languages](https://doi.org/10.1049/cit2.70004): Applies contrastive decoding to reduce hallucination in low-resource-language generation.
+- [MPI-CD: Multi-Path Information Contrastive Decoding for Mitigating Hallucinations in Large Vision-Language Models](https://doi.org/10.1145/3746027.3755372): Uses multi-path information contrastive decoding to reduce hallucinations in large vision-language models.
+- [From Hallucination to Certainty: Meta-Knowledge Guided Self-Correcting Large Language Models](https://doi.org/10.1145/3797906): Guides self-correction with meta-knowledge so LLMs can move uncertain generations toward supported answers.
+- [MAGNET: Counterfactual samples synthesizing for mitigating hallucination in large language models.](https://doi.org/10.1371/journal.pone.0340812): Synthesizes counterfactual samples to train or calibrate hallucination mitigation in LLMs.
+- [Detecting and Mitigating Hallucination in Large Vision Language Models via Fine-Grained AI Feedback](https://doi.org/10.1609/aaai.v39i24.34744): Uses fine-grained AI feedback to detect and mitigate hallucination in large vision-language models.

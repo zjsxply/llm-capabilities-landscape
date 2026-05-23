@@ -1,0 +1,33 @@
+# 1.9.4 Model
+
+- [Virgo: A Preliminary Exploration on Reproducing o1-like MLLM](https://arxiv.org/abs/2501.01904)：探索复现 o1 式多模态推理，可作为审慎 MLLM 推理的模型侧参考。
+- [DeepSeek-R1](https://arxiv.org/abs/2501.12948)：代表性的 reasoning model 后训练方案，用带可验证奖励的大规模强化学习激发自我反思、验证和长链式思考。
+- [Bridging Internal Probability and Self-Consistency for Effective and Efficient LLM Reasoning](https://arxiv.org/abs/2502.00511)：连接内部答案概率与自洽性，使 LLM 推理更准确且更高效。
+- [Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models](https://arxiv.org/abs/2502.10835)：提出反向注意力以诊断并改进 LLM 多跳推理。
+- [Reasoning with Reinforced Functional Token Tuning](https://arxiv.org/abs/2502.13389)：通过强化的功能 token 调优，在 token 功能层面改进推理行为。
+- [Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking](https://arxiv.org/abs/2502.13842)：通过深度自适应 Transformer 计算动态扩展内部思考。
+- [AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence](https://arxiv.org/abs/2502.13943)：利用模型置信度自动划分推理步骤，面向自适应推理长度。
+- [L1](https://arxiv.org/abs/2503.04697)：提出面向通用推理的模型侧方法，核心围绕 Controlling How Long A Reasoning Model Thinks With Reinforcement Learning。
+- [FastCuRL](https://arxiv.org/abs/2503.17287)：面向 R1-like reasoning model 的课程强化学习方案，逐步扩展上下文长度并控制 prompt 难度。
+- [Long Is More Important Than Difficult](https://arxiv.org/abs/2503.18069)：合成长推理数据方法，显示少量长 CoT 数据可比单纯追求难题更有效地训练推理行为。
+- [SimpleRL-Zoo](https://arxiv.org/abs/2503.18892)：提出面向通用推理的模型侧方法，核心围绕 Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild。
+- [Think When You Need: Self-Adaptive Chain-of-Thought Learning](https://arxiv.org/abs/2504.03234)：学习何时启用思维链，使模型把审慎推理留给更难的问题。
+- [Concise Reasoning via Reinforcement Learning](https://arxiv.org/abs/2504.05185)：使用强化学习鼓励简洁推理，同时尽量保持解题质量。
+- [Seed1.5-Thinking](https://arxiv.org/abs/2504.13914)：提出面向通用推理的模型侧方法，核心围绕 Advancing Superb Reasoning Models with Reinforcement Learning。
+- [Process Reward Models That Think](https://arxiv.org/abs/2504.16828)：提出面向通用推理的模型侧方法，核心围绕 Process Reward Models That Think。
+- [Scalable Chain of Thoughts via Elastic Reasoning](https://arxiv.org/abs/2505.05315)：弹性推理按问题难度调节思维链长度。
+- [Learning When to Think: Shaping Adaptive Reasoning in R1-Style Models via Multi-Stage RL](https://arxiv.org/abs/2505.10832)：用多阶段强化学习塑造 R1 式模型的自适应推理。
+- [AdaCoT](https://arxiv.org/abs/2505.11896)：提出面向通用推理的模型侧方法，核心围绕 Pareto-Optimal Adaptive Chain-of-Thought Triggering via Reinforcement Learning。
+- [Game-RL](https://arxiv.org/abs/2505.13886)：合成可验证的多模态游戏数据，并通过强化学习增强视觉语言模型的一般推理。
+- [Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](https://arxiv.org/abs/2505.15612)：使用基于长度的自适应奖励塑形来训练高效推理。
+- [PGPO: Enhancing Agent Reasoning via Pseudocode-style Planning Guided Preference Optimization](https://arxiv.org/abs/2506.01475)：用伪代码式规划引导偏好优化，以提升智能体推理。
+- [Do Thinking Tokens Help or Trap? Towards More Efficient Large Reasoning Model](https://arxiv.org/abs/2506.23840)：分析 thinking tokens 何时帮助或困住推理模型，澄清高效推理权衡。
+- [Promoting Efficient Reasoning with Verifiable Stepwise Reward](https://arxiv.org/abs/2508.10293)：使用可验证的步骤级奖励促进高效推理，而不只依赖最终答案奖励。
+- [NVIDIA Nemotron Nano 2](https://arxiv.org/abs/2508.14444)：提出面向通用推理的模型侧方法，核心围绕 Accurate and Efficient Hybrid Mamba-Transformer Reasoning Model。
+- [VCRL: Variance-based Curriculum Reinforcement Learning for Large Language Models](https://arxiv.org/abs/2509.19803)：采用基于方差的课程强化学习训练大语言模型推理能力。
+- [T3](https://arxiv.org/abs/2510.12264)：在需要迭代更新证据的主动推理任务中，通过强化学习降低信念偏移。
+- [Latent-DARM](https://arxiv.org/abs/2603.09184)：连接离散扩散与自回归语言建模，支持可全局修订的推理与规划。
+- [Information Self-Locking](https://arxiv.org/abs/2603.12109)：分析强化学习如何让主动推理 agent 锁定早期信息状态，为迭代推理训练中的失败模式提供诊断。
+- [CoT2-Meta](https://arxiv.org/abs/2603.28135)：无需训练的测试时元认知控制方法，在扩展、剪枝、修复、停止和回退之间分配推理计算。
+- [Process Supervision via Verbal Critique](https://arxiv.org/abs/2604.21611)：用逐步语言批评作为过程监督，使推理改进不只依赖最终答案奖励。
+- [Query-Conditioned Test-Time Self-Training](https://arxiv.org/abs/2605.13369)：围绕当前 query 进行测试时自训练，把 self-training 变成逐实例推理改进机制。

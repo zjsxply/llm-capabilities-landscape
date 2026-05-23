@@ -1,0 +1,26 @@
+# 1.11.4 Model
+
+- [Toolformer](https://arxiv.org/abs/2302.04761)：自监督工具使用训练方法，让语言模型学习何时调用 API、如何传参以及如何利用工具结果。
+- [Gorilla](https://arxiv.org/abs/2305.15334)：基于 LLaMA 微调的 API 调用模型和 APIBench 训练设置，用于在大规模 API 集合上生成准确调用。
+- [ToolLLM](https://arxiv.org/abs/2307.16789)：构造 ToolBench 式轨迹，并训练 ToolLLaMA 进行 API 检索、参数填写和多步工具调用。
+- [ToolACE](https://arxiv.org/abs/2409.00920)：面向工具学习的数据与训练路线，用于改进多样化工具使用指令上的 function-calling 行为。
+- [GenTool: Enhancing Tool Generalization in Language Models through Zero-to-One and Weak-to-Strong Simulation](https://arxiv.org/abs/2502.18990)：通过零到一和弱到强模拟合成工具使用经验，以提升工具泛化。
+- [ToolACE-R](https://arxiv.org/abs/2504.01400)：面向工具学习的模型感知迭代训练与改进方法，而不是只提出新评测集。
+- [APIGen-MT](https://arxiv.org/abs/2504.03601)：通过模拟交互生成可验证多轮 API 使用轨迹，并用这些数据训练 xLAM function-calling 模型。
+- [OTC](https://doi.org/10.48550/arXiv.2504.14870)：提出面向工具使用的模型侧方法，核心围绕 Optimal Tool Calls via Reinforcement Learning。
+- [Nemotron-Research-Tool-N1](https://arxiv.org/abs/2505.00024)：提出面向工具使用的模型侧方法，核心围绕 Exploring Tool-Using Language Models with Reinforced Reasoning。
+- [Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.01441)：提出面向工具使用的模型侧方法，核心围绕 Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning。
+- [Tool-Star](https://arxiv.org/abs/2505.16410)：提出面向工具使用的模型侧方法，核心围绕 Empowering LLM-Brained Multi-Tool Reasoner via Reinforcement Learning。
+- [VTool-R1](https://arxiv.org/abs/2505.19255)：提出面向工具使用的模型侧方法，核心围绕 VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use。
+- [Enhancing Tool Learning in Large Language Models with Hierarchical Error Checklists](https://arxiv.org/abs/2506.00042)：用层级错误清单定位 LLM 工具学习中的常见失败。
+- [LoSemB: Logic-Guided Semantic Bridging for Inductive Tool Retrieval](https://arxiv.org/abs/2508.07690)：使用逻辑引导的语义桥接进行归纳式工具检索，提升对未见工具的泛化。
+- [SimpleTIR](https://arxiv.org/abs/2509.02479)：提出面向工具使用的模型侧方法，核心围绕 End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning。
+- [Advancing SLM Tool-Use Capability Using Reinforcement Learning](https://arxiv.org/abs/2509.04518)：使用强化学习提升小语言模型的工具使用能力。
+- [Retrieval And Structuring Augmented Generation with Large Language Models](https://arxiv.org/abs/2509.10697)：在生成前结构化检索信息，使 RAG 输出更适合可控的工具式工作流。
+- [AgentPRM](https://arxiv.org/abs/2511.08325)：提出面向工具使用的模型侧方法，核心围绕 Process Reward Models for LLM Agents via Step-Wise Promise and Progress。
+- [SuperFC: Selective Data Utilization for a Sustainable and Effective Function-Calling Agent](https://doi.org/10.1109/ijcnn64981.2025.11228427)：为可持续且有效的函数调用智能体选择训练数据。
+- [PhGPO](https://arxiv.org/abs/2602.13691)：面向长程工具规划的 pheromone-guided policy optimization 方法，使用轨迹级反馈。
+- [ATLAS-RTC](https://arxiv.org/abs/2603.27905)：token 级运行时控制方法，在解码时对结构化工具调用输出执行 biasing、masking 或 rollback。
+- [Case-Based Calibration of Adaptive Reasoning and Execution for LLM Tool Use](https://arxiv.org/abs/2605.15041)：用案例校准工具使用中的自适应推理与执行。
+- [MTSearch-R1](https://doi.org/10.1109/icassp55912.2026.11461921)：用强化学习训练大模型进行灵活的多工具搜索与工具选择。
+- [TOOL-CURE: Tool Selection via Curriculum-Enhanced Reinforcement Learning with Sample Screening for LLMs](https://doi.org/10.1145/3773966.3777952)：使用课程增强强化学习与样本筛选来改进工具选择。

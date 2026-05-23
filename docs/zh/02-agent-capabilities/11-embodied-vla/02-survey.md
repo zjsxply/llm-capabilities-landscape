@@ -2,6 +2,28 @@
 
 - [A Survey on Robotics with Foundation Models: toward Embodied AI](https://arxiv.org/abs/2402.02385)：回顾用于感知、规划、操作、导航与具身推理的基础模型。
 - [A Survey on Vision-Language-Action Models for Embodied AI](https://arxiv.org/abs/2405.14093)：梳理从视觉语言理解到动作条件策略的转化。
+- [Generative Artificial Intelligence in Robotic Manipulation](https://arxiv.org/abs/2503.03464)：把生成式模型映射到机器人操作中的感知、任务规划、轨迹合成与动作生成。
+- [Diffusion models for robotic manipulation](https://arxiv.org/abs/2504.08438)：以扩散策略和扩散世界模型为核心，梳理其作为操作轨迹与动作生成器的作用。
 - [A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI](https://arxiv.org/abs/2505.01458)：连接仿真器、任务设计、具身学习与可复现评测。
+- [Toward Embodied AGI](https://arxiv.org/abs/2505.14235)：综述具身 AI 进展与迈向具身 AGI 的路线，串联感知、行动、学习与部署挑战。
+- [Vision Language Action Models in Robotic Manipulation](https://arxiv.org/abs/2507.10672)：按数据集、架构、动作表示、评测与真实机器人部署系统化整理 VLA 操作研究。
 - [Large Model Empowered Embodied AI: A Survey on Decision-Making and Embodied Learning](https://arxiv.org/abs/2508.10399)：强调决策、具身学习、规划与动作 grounding。
+- [Robot Policy Evaluation for Sim-to-Real Transfer](https://arxiv.org/abs/2508.11117)：从 benchmark 设计角度讨论通用机器人策略的 sim-to-real 评测，强调视觉保真度、任务复杂度、扰动与真实表现对齐。
+- [Large VLM-based Vision-Language-Action Models for Robotic Manipulation](https://arxiv.org/abs/2508.13073)：聚焦大型 VLM 如何从视觉语言 grounding 被改造为能输出动作的机器人操作策略。
+- [Sensing, Social, and Motion Intelligence in Embodied Navigation](https://arxiv.org/abs/2508.15354)：从感知、社会交互、运动智能、平台和评测指标系统梳理具身导航。
+- [Pure Vision Language Action (VLA) Models](https://arxiv.org/abs/2509.19012)：区分端到端 VLA 模型与模块化机器人栈，强调数据、预训练、后训练和评测。
+- [Vision-Language-Action Models for Robotics](https://arxiv.org/abs/2510.07077)：从真实机器人约束审视 VLA 系统，突出鲁棒性、具身差距、数据采集与部署问题。
+- [Efficient Vision-Language-Action Models for Embodied Manipulation](https://arxiv.org/abs/2510.17111)：系统梳理面向具身操作的高效 VLA 设计，覆盖架构、感知、动作生成以及训练或推理策略。
+- [Agentic LLM-based robotic systems](https://doi.org/10.3389/frobt.2025.1605405)：综述围绕 agentic LLM 构建的机器人系统，并关注 agenticness、现实部署与伦理问题。
+- [Embodied Multi-Agent Systems: A Review](https://doi.org/10.1109/JAS.2025.125552)：从脑身交互以及开环、闭环和双环控制设计角度组织具身多智能体系统。
+- [AeroVerse-Review](https://doi.org/10.59717/j.xinn-inform.2025.100015)：把具身视觉语言导航聚焦到空中平台，覆盖 UAV 感知、语言 grounding、导航任务与评测。
+- [Robot learning in the era of foundation models](https://doi.org/10.1016/j.neucom.2025.129963)：把基础模型放入机器人学习流程，连接表示学习、策略学习、迁移与部署。
+- [Video Generation Models in Robotics - Applications, Research Challenges, Future Directions](https://arxiv.org/abs/2601.07823)：把视频生成模型视为机器人系统的数据引擎、世界模型与规划辅助工具。
+- [Are Foundation Models the Route to Full-Stack Transfer in Robotics?](https://arxiv.org/abs/2602.22001)：回顾 LLM、VLM 与 VLA 如何影响从高层语言到低层运动技能的机器人迁移。
 - [Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)：梳理 VLA agent 的数据集、基准与数据基础设施。
+- [Large language models in human-robot collaboration](https://doi.org/10.1016/j.jmsy.2026.01.011)：系统综述 LLM 在人机协作中的应用、趋势、部署挑战与协作模式。
+- [Mapless Multi-Robot Systems Survey](https://doi.org/10.1109/ACCESS.2026.3676798)：综述无地图多机器人系统中的感知、分布式规划与预测协作。
+- [A survey of robotic manipulation](https://doi.org/10.1016/j.neucom.2026.132921)：追踪机器人操作从自底向上的感知控制流水线到受 LLM 与 VLA 推动的端到端范式。
+- [Deep Reinforcement Learning of Mobile Robot Navigation in Dynamic Environment](https://doi.org/10.3390/s25113394)：综述动态环境中的移动机器人导航 DRL 方法，补充 embodied navigation 方向的综述。
+- [An Overview of Robot Embodied Intelligence Based on Multimodal Models](https://doi.org/10.1155/int/5124400)：按任务家族、模型选择和系统方案组织多模态模型驱动的机器人具身智能。
+- [Integrating Large Language Models into Robotic Autonomy](https://doi.org/10.3390/ai6070158)：综述 LLM 如何通过运动、语音与训练流水线融入机器人自主系统。

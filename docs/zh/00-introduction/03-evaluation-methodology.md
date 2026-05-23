@@ -24,22 +24,41 @@
 - [LiveBench](https://arxiv.org/abs/2406.19314)（[开源代码](https://github.com/LiveBench/LiveBench)；[Leaderboard](https://livebench.ai/)）：持续发布新题的综合榜单，覆盖数学、编码、语言、推理、数据分析与指令遵循，是“污染受限 live benchmark”的代表入口。
 - [BenchmarkCards](https://arxiv.org/abs/2410.12974)（[开源代码](https://github.com/SokolAnn/BenchmarkCards)）：标准化 benchmark 文档化框架；读新 benchmark 时可用它检查任务目标、数据来源、指标、限制、风险和适用边界是否被说明清楚。
 - [Statistical Uncertainty Quantification for Aggregate Performance Metrics](https://arxiv.org/abs/2501.04234)：研究聚合 benchmark 分数的不确定性估计。核心思想：使用 bootstrap、层级建模和任务权重可视化，使 benchmark 汇总报告排序不确定性，而不是把单一平均分当作定论。
+- [Reference-free Evaluation Metrics for Text Generation](https://arxiv.org/abs/2501.12011)：综述跨任务的无参考 NLG 自动评测指标，将参考答案可得性与指标选择明确纳入评测可靠性考量。
 - [Humanity's Last Exam](https://arxiv.org/abs/2501.14249) / [HLE-Rolling](https://agi.safe.ai/)（更新日志：[centerforaisafety/hle](https://github.com/centerforaisafety/hle/blob/main/hle-rolling-changes.txt)）：HLE 提供高难专家题，HLE-Rolling 通过持续修订、新题和 live submission 缓解公开题库污染、错误与饱和。
+- [Atla Selene Mini](https://arxiv.org/abs/2501.17195)：通用小型 LLM 裁判模型，在绝对评分、分类和成对偏好任务上进行评测，并报告了对提示格式变化的鲁棒性。
+- [Can We Trust AI Benchmarks?](https://arxiv.org/abs/2502.06559)：从有效性、可靠性、泄漏与治理角度审视 benchmark 是否可信，直接支撑动态评测和 benchmark 可靠性讨论。
+- [Measuring AI agent autonomy](https://arxiv.org/abs/2502.15212)：提出用代码检查来规模化评估 AI agent 自主性的方法。核心思想是检查规划、工具使用、监督与自发执行等实现边界，让自主性不只由最终任务分数来间接判断。
+- [League / Leaderboard Auto Generation](https://arxiv.org/abs/2502.18209)：为快速演进的研究主题按需生成 leaderboard。核心思路是收集论文、抽取并归一化实验结果、比较实验设置，并生成带质量评估的榜单表格，使 leaderboard 构建本身成为可复用评测工作流。
 - [LLM-Safety Evaluations Lack Robustness](https://arxiv.org/abs/2503.02574)：审计 LLM 安全评测的鲁棒性；核心思想是检查扰动或评测设计选择如何改变安全评测结论，避免把不稳定分数直接当作可靠能力度量。
 - [Know Thy Judge](https://arxiv.org/abs/2503.04474)：对 LLM safety judge 的鲁棒性做元评测。核心思想：通过扰动压力测试 judge 行为，避免安全 benchmark 分数在不知不觉中继承脆弱或有偏的 judge 决策。
+- [Validating LLM-as-a-Judge under Rating Indeterminacy](https://arxiv.org/abs/2503.05965)：研究人类评分本身不确定时 LLM 裁判的可靠性边界。核心思想是显式建模评分标签歧义，避免在主观任务上高估自动裁判的精确性。
 - [Safer or Luckier?](https://arxiv.org/abs/2503.09347)：审计 LLM 安全评估器对数据伪迹的敏感性。核心思想：检验安全 judge 的分数究竟反映稳健风险判断，还是会被表层数据伪迹带偏，从而在信任 benchmark 结果之前暴露评估器脆弱性。
 - [SPHERE](https://arxiv.org/abs/2504.07971)：面向 human-AI system 的 evaluation-card 框架；核心思想是记录系统语境、人类角色、指标、限制和部署假设，使人机系统评测可审计，而不是被压缩成单一分数。
 - [The Leaderboard Illusion](https://arxiv.org/abs/2504.20879)：审计 Chatbot Arena 类 leaderboard 的可靠性。核心思想：揭示私有测试、选择性披露、采样不均与模型移除策略如何偏置排名，说明 leaderboard 分数需要协议层面的审查。
+- [Don't Judge Code by Its Cover](https://arxiv.org/abs/2505.16222)：评测代码场景中的 LLM judge 是否会被语义等价但表面形式不同的程序影响。核心思想是通过变量命名、注释、格式等受控变换暴露普通 pass/fail 代码评测难以发现的 judge bias。
 - [SWE-rebench](https://arxiv.org/abs/2505.20411)（[Leaderboard](https://swe-rebench.com/leaderboard)）：自动收集并去污染 SWE 任务，强调新鲜 issue、可交互执行反馈与任务构造流水线。
 - [SWE-bench-Live](https://arxiv.org/abs/2505.23419)（[开源代码](https://github.com/SWE-bench-Live/SWE-bench-Live)；[Leaderboard](https://swe-bench-live.github.io/)）：持续从近期 GitHub issue/PR 生成任务，重点降低静态软件工程 benchmark 被记忆或过拟合的风险。
 - [Auto-Arena](https://aclanthology.org/2025.acl-long.223/)：通过 agent peer battles 和委员会讨论自动化 LLM 评测。核心思想：把成对辩论和多裁判讨论纳入评测协议，减少模型比较对单一静态提示词或单个 judge 的依赖。
 - [SWE-MERA](https://arxiv.org/abs/2507.11059)：动态软件工程 agent 评测；核心思想是持续采集、执行和验证新任务，把 agentic SWE 评测从单次快照推进到滚动题库。
 - [Multi-Agent-as-Judge](https://arxiv.org/abs/2507.21028)：将基于 LLM 智能体的自动评测与多维人工评测对齐。核心思路是用多个评审智能体和结构化维度降低单一裁判偏差，使自动评测更接近人工评审。
+- [When AIs Judge AIs](https://arxiv.org/abs/2508.02994)：综述 agent-as-a-judge 评测，覆盖动机、设计模式，以及 AI 系统评价其他 AI 系统时的可靠性问题。
 - [ConfProBench](https://arxiv.org/abs/2508.04576)：评测基于 MLLM 的过程裁判在步骤级置信度上的可靠性。核心思想：用同义替换、句法改写和图像扰动改变推理步骤，衡量置信度鲁棒性、敏感性和校准，而不只看判断正确性。
+- [Adaptive Monitoring and Real-World Evaluation of Agentic AI Systems](https://arxiv.org/abs/2509.00115)：把目标漂移、风险降低和真实世界结果信号纳入已部署 agentic AI 系统的自适应监测闭环。
 - [Beyond statistical significance](https://arxiv.org/abs/2509.22612)：量化多语言与多任务 NLP 评测中的不确定性和统计波动。核心思想：用重采样估计 benchmark 指标、排名和模型两两差异的复现不确定性，而不是把 leaderboard 分数视为固定值。
 - [ProJudge](https://openaccess.thecvf.com/content/ICCV2025/html/Ai_ProJudge_A_Multi-Modal_Multi-Discipline_Benchmark_and_Instruction-Tuning_Dataset_for_MLLM-based_ICCV_2025_paper.html)（[项目页](https://projudge.github.io/)）：评测跨多模态学科的 MLLM 过程裁判。核心思想：把过程级评判能力本身作为 benchmark 目标，使 verifier 和 grader 质量能与基础任务求解能力分开衡量。
 - [Detecting Silent Failures in Multi-Agentic AI Trajectories](https://arxiv.org/abs/2511.04032)：评测多 agent 轨迹中的异常检测。核心思想是为漂移、循环和细节遗漏等失败构建带标签轨迹数据集，使静默 agent 失败能在最终答案评分掩盖问题之前被发现。
+- [Outcome-Oriented Evaluation of AI Agents](https://arxiv.org/abs/2511.08242)：提出面向决策质量、自主性和业务结果的任务无关指标，超越延迟或 token 吞吐量。
+- [Failure Modes in LLM Systems](https://arxiv.org/abs/2511.19933)：归纳推理漂移、错误工具调用与版本漂移等生产故障，指出评测需要超越静态任务得分，衡量稳定性、可复现性与工作流集成。
+- [BAID](https://arxiv.org/abs/2512.11505)：评测 AI 生成文本检测器的偏差。核心思想是用大规模、子群体受控的人类文本与合成文本样本，检查 detector 可靠性是否随人口属性、方言、年级、正式程度、政治倾向和主题变化。
+- [LLM Agent Workflow Orchestration Framework Bugs](https://doi.org/10.1109/ase63991.2025.00278)：刻画 Agent 控制流、工具集成、状态处理和编排逻辑中的缺陷，使 harness 可靠性审计不只依赖任务成功率。
+- [Belief in Authority](https://arxiv.org/abs/2601.04790)：在 ChatEval 式场景中改变权威角色，测试评测 Agent 是否过度依赖角色标签而不是证据。
+- [Agent-as-a-Judge](https://arxiv.org/abs/2601.05111)：综述并分类 agent-as-a-judge 方法，说明多智能体角色、交互协议和评测标准发现如何影响自动评测。
+- [A survey on LLM-as-a-Judge](https://doi.org/10.1016/j.xinn.2025.101253)：系统梳理 LLM-as-a-judge 方法、使用场景与可靠性问题，连接 judge 鲁棒性和 agent 评测。
+- [Order in the Evaluation Court](https://arxiv.org/abs/2601.07648)：分析 14,171 篇 NLG 论文的评测实践，揭示通用指标长期惯用，以及 LLM 裁判与人工评测之间缺少充分验证。
+- [Automated Structural Testing of LLM-Based Agents](https://arxiv.org/abs/2601.18827)：提供面向 agent 系统的结构化测试方法。核心思想是用 OpenTelemetry-style traces、mocked LLM behavior 与可执行 assertions，对 agent 组件和交互做超越最终答案验收的回归测试。
 - [Hidden Measurement Error in LLM Pipelines](https://arxiv.org/abs/2604.11581)：审计 LLM 标注和评测流水线中被隐藏的方差来源；核心思想是把评判模型选择、温度和提示措辞都视为测量误差来源，使基准结论包含普通抽样置信区间之外的不确定性。
+- [Talk is (Not) Cheap](https://arxiv.org/abs/2605.15118)：用基于 STRIDE 的目标与技术二维分类审计 LLM 攻击基准的整体覆盖。核心思想：把公开攻击基准映射到威胁矩阵上，在解读分数前先暴露尚未覆盖的攻击类别。
 - [Yourbench](https://openreview.net/forum?id=bkWERVKzuP)：用 LLM 生成动态评测集。核心思想：让 benchmark 构建者从私有或新鲜材料中实例化任务特定测试，避免只依赖公开静态题集。
 - [Fluid Language Model Benchmarking](https://openreview.net/forum?id=mxcCg9YRqj)：研究语言模型评测中的 benchmark 流动性。核心思想：把评测集视为持续演化的对象，并在受控刷新和变化下检验评测结论是否稳健。
 - [EvalAgents](https://openreview.net/forum?id=erGpkHCybv)：从 Web 中发现隐式评测标准。核心思想：用网页中抽取的标准让评测 rubric 更贴近任务，减少对手写通用打分表的依赖。

@@ -1,0 +1,24 @@
+# 1.1.4 Model
+
+- [XLM-R](https://arxiv.org/abs/1911.02116)：奠基性的多语言预训练方法，在覆盖 100 种语言的 CommonCrawl 数据上扩展 masked-language-model 训练，以在无任务级翻译监督时提升跨语言迁移。
+- [mT5](https://arxiv.org/abs/2010.11934)：多语言 text-to-text 预训练路线，在 mC4 上训练 T5 风格 encoder-decoder，使多语言理解和生成共享统一序列到序列目标。
+- [BLOOMZ 与 mT0](https://arxiv.org/abs/2211.01786)：多语言指令调优路线，用 prompted multitask mixtures 把指令遵循能力迁移到未见任务和语言。
+- [Aya Expanse](https://arxiv.org/abs/2412.04261)：多语言开放模型路线，结合更广语言覆盖、标注、偏好调优和安全迭代来改进多语言前沿行为。
+- [Zero-Shot Prompting for LLM-Based Machine Translation Using In-Domain Target Sentences](https://doi.org/10.1109/taslp.2024.3519814)：把领域内目标语句用作 LLM 机器翻译的零样本示例，直接评估无平行样本时的提示侧适配。
+- [When natural language is not enough: The limits of in-context learning demonstrations in multilingual reasoning](https://doi.org/10.18653/v1/2025.findings-naacl.412)：分析上下文示例在多语推理中的失效位置，指出少样本跨语言迁移的边界。
+- [Multilingual Reasoning via Self-training](https://doi.org/10.18653/v1/2025.naacl-long.577)：通过自训练提升多语推理，用模型生成的推理数据弥补监督多语资源不足。
+- [Language-Specific Latent Process Hinders Cross-Lingual Performance](https://arxiv.org/abs/2505.13141)：分析阻碍跨语言迁移的语言特异潜变量过程，为多语性能差距提供模型侧解释。
+- [MPO](https://arxiv.org/abs/2505.16869)：提出面向多语言能力的模型侧方法，核心围绕 Multilingual Safety Alignment via Reward Gap Optimization。
+- [CulFiT](https://arxiv.org/abs/2505.19484)：提出面向多语言能力的模型侧方法，核心围绕 Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis。
+- [When Language Shapes Thought: Cross-Lingual Transfer of Factual Knowledge in Question Answering](https://arxiv.org/abs/2505.24409)：研究问答中语言选择如何影响事实知识迁移，区分知识存储与跨语言表达能力。
+- [R2-MultiOmnia](https://doi.org/10.18653/v1/2025.acl-long.402)：提出面向多语言能力的模型侧方法，核心围绕 Leading Multilingual Multimodal Reasoning via Self-Training。
+- [Overcoming language barriers via machine translation with sparse Mixture-of-Experts fusion of large language models](https://doi.org/10.1016/j.ipm.2025.104078)：提出用于 LLM 机器翻译的稀疏专家混合融合，将多语生成从单模型提示扩展为可组合的模型侧方法。
+- [Grounding Multilingual Multimodal LLMs With Cultural Knowledge](https://arxiv.org/abs/2508.07414)：用文化知识扎根多语多模态 LLM，使图文推理不只依赖表层翻译。
+- [A Shared Geometry of Difficulty in Multilingual Language Models](https://arxiv.org/abs/2601.12731)：刻画多语模型共享的难度几何，便于比较语言特异与模型特异的失败模式。
+- [Multilingual Large Language Models do not comprehend all natural languages to equal degrees](https://arxiv.org/abs/2602.20065)：衡量多语 LLM 对不同自然语言的理解差异，把语言覆盖视为分级模型能力而非二元支持标记。
+- [Tiny Aya](https://arxiv.org/abs/2603.11510)：研究小规模多语言模型的训练与扩展选择，关注低参数量下的语言覆盖能力。
+- [ShapleyLaw: A Game-Theoretic Approach to Multilingual Scaling Laws](https://arxiv.org/abs/2603.17945)：用 Shapley 式归因构建多语缩放规律，估计多语训练中各语言的贡献。
+- [Neither Here Nor There: Cross-Lingual Representation Dynamics of Code-Mixed Text in Multilingual Encoders](https://arxiv.org/abs/2603.19771)：分析多语编码器中的语码混合表示，解释语言混合时跨语言动态如何变化。
+- [Multiple-Debias: A Full-process Debiasing Method for Multilingual Pre-trained Language Models](https://arxiv.org/abs/2604.02772)：提出面向多语预训练语言模型的全流程去偏方法，覆盖数据、训练与推理阶段。
+- [English is Not All You Need](https://arxiv.org/abs/2604.13286)：研究多语言后训练数据组成，衡量语言多样性如何影响下游多语言和推理行为。
+- [Resolving Linguistic Asymmetry: Forging Symmetric Multilingual Embeddings Through Asymmetric Contrastive and Curriculum Learning](https://doi.org/10.3390/sym17091386)：结合非对称对比学习与课程学习，降低多语嵌入中的方向性不对称。

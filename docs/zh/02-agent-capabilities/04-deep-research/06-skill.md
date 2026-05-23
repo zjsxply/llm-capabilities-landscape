@@ -1,0 +1,29 @@
+# 2.4.6 Skill
+
+- [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher)（端到端检索到成稿框架）
+- [meta-research](https://github.com/AmberLJC/meta-research)（“文献综述 -> 假设树 -> judgment gate -> 实验 -> 反思”的科研 workflow skill）
+- [deep-research](https://skills.sh/bytedance/deer-flow/deep-research)（DeerFlow 官方 deep research skill）
+- [github-deep-research](https://skills.sh/bytedance/deer-flow/github-deep-research)（DeerFlow 官方仓库深调研 skill；GitHub API + 网页检索 + 结构化报告生成）
+- [deep-research](https://github.com/daymade/claude-code-skills/tree/main/deep-research)（强调证据表、格式契约与多稿合并）
+- [deep-research-openclaw-agent](https://clawhub.ai/milleniumgenai/deep-research-openclaw-agent)（结构化 deep-research sub-agent 的安装/接线型 skill）
+- [deep-research](https://skills.sh/shubhamsaboo/awesome-llm-apps/deep-research)（流程型 deep research 模板，强调多源综合与引用追踪）
+- [academic-researcher](https://skills.sh/shubhamsaboo/awesome-llm-apps/academic-researcher)（学术写作与文献评述模板，偏结构化产出）
+- [tooluniverse-literature-deep-research](https://skills.sh/mims-harvard/tooluniverse/tooluniverse-literature-deep-research)（文献导向，偏生物医药）
+- [literature-review](https://skills.sh/davila7/claude-code-templates/literature-review)（系统综述流程模板，覆盖去重、筛选、引用校验与产出脚本）
+- [web-research](https://skills.sh/langchain-ai/deepagents/web-research)（LangChain 官方网页调研子技能）
+- [websearch-deep](https://skills.sh/thomasholknielsen/claude-code-config/websearch-deep)（网页检索后直接成稿模板）
+- [deep-research](https://skills.sh/199-biotechnologies/claude-deep-research-skill/deep-research)（检查点密集的分步研究模板）
+- [deep-research-agent](https://skills.sh/qodex-ai/ai-agent-skills/deep-research-agent)（以流程提示与样例代码为主，实验执行与评测能力不足）
+- [academic-deep-research](https://skills.sh/kesslerio/academic-deep-research-clawhub-skill/academic-deep-research)（学术文献导向的成稿模板）
+- [deep-research](https://github.com/feiskyer/claude-code-settings/tree/main/skills/deep-research)（多 agent 编排型深研 skill；偏多进程调研与聚合）
+- [Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills)（多技能 deep research 套件；outline/字段扩展/并行 research/最终 report）
+- [deep-research](https://github.com/wshuyi/deep-research/tree/main/skills/deep-research)（中文流程型 deep research skill；强调事实分层与中间产物留存）
+- [ARIS research skills](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/tree/main/skills)（论文：[ARIS](https://arxiv.org/abs/2605.03042)；skills.sh 示例：[research-pipeline](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/research-pipeline)、[research-lit](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/research-lit)、[citation-audit](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/citation-audit)）覆盖文献检索、多源检索、research-wiki 记忆、新颖性检查、跨模型审阅和引用/主张审计，更接近可执行科研 harness，而不是单个报告提示词。
+- [parallel-deep-research](https://skills.sh/parallel-web/parallel-agent-skills/parallel-deep-research) 适合在最终综合前并行做来源发现和材料阅读的 deep research 工作流。
+- [firecrawl-deep-research](https://skills.sh/firecrawl/firecrawl-workflows/firecrawl-deep-research) 适合基于 provider crawling 与内容抽取的检索到报告工作流。
+- [doublecheck](https://github.com/github/awesome-copilot/tree/main/skills/doublecheck) 适合抽取主张、搜索来源，并检查证据支持或矛盾关系，可补充 Reference Hallucination Detection 和 Cited but Not Verified 等引用可靠性评测。
+- [search-layer](https://github.com/blessonism/openclaw-search-skills/tree/main/search-layer)（更偏 deep research 底层检索层：多源并行搜索、去重、排序与引用链追踪）
+- [last30days-skill](https://github.com/mvanhorn/last30days-skill) 和 [last30days-skill-cn](https://github.com/Jesseovo/last30days-skill-cn) 是面向最近一个月信息发现的 skills，覆盖社交平台、新闻、社区和网页来源；当 deep research 更需要新鲜度和跨平台趋势覆盖，再进入长文综合时很有用。
+- [deep-research-pro](https://clawhub.ai/parags/deep-research-pro)（商业风格长报告模板）
+- [deepresearchwork](https://clawhub.ai/jiacode/deepresearchwork)（任务拆步明确的调研模板）
+- [in-depth-research](https://clawhub.ai/ivangdavila/in-depth-research)（纵深追问型长报告模板）

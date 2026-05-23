@@ -1,0 +1,23 @@
+# 1.6.4 Model
+
+- [MLLM-TA: Leveraging Multimodal Large Language Models for Precise Temporal Video Grounding](https://doi.org/10.1109/lsp.2024.3511426): Uses multimodal LLMs for precise temporal video grounding, linking language queries to time spans in video.
+- [HierarQ: Task-Aware Hierarchical Q-Former for Enhanced Video Understanding](https://arxiv.org/abs/2503.08585): Introduces a task-aware hierarchical Q-Former for video understanding, improving temporal aggregation for video-language models.
+- [CountLLM](https://arxiv.org/abs/2503.17690): Uses periodicity-aware prompts and progressive multimodal training to make LLM-based video action counting generalize to novel repetitive actions.
+- [Video-R1](https://arxiv.org/abs/2503.21776): Applies R1-style reinforcement learning to video-language models so they learn longer, evidence-aware reasoning over video inputs.
+- [Caption Anything in Video: Fine-grained Object-centric Captioning via Spatiotemporal Multimodal Prompting](https://arxiv.org/abs/2504.05541): Performs fine-grained object-centric video captioning through spatiotemporal multimodal prompting.
+- [VideoExpert](https://arxiv.org/abs/2504.07519): Introduces Augmented LLM for Temporal-Sensitive Video Understanding, a model-side contribution for Video.
+- [Vision and Intention Boost Large Language Model in Long-Term Action Anticipation](https://arxiv.org/abs/2505.01713): Combines visual intention modeling and LLM reasoning for long-term action anticipation.
+- [EchoInk-R1: Exploring Audio-Visual Reasoning in Multimodal LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.04623): Uses reinforcement learning to improve audio-visual reasoning in multimodal LLMs.
+- [ViTCoT: Video-Text Interleaved Chain-of-Thought for Boosting Video Understanding in Large Language Models](https://arxiv.org/abs/2507.09876): Interleaves video and text chain-of-thought to improve video understanding in LLMs.
+- [TSPO](https://arxiv.org/abs/2508.04369): Introduces Temporal Sampling Policy Optimization for Long-form Video Language Understanding, a model-side contribution for Video.
+- [VideoMiner](https://arxiv.org/abs/2510.06040): Introduces Iteratively Grounding Key Frames of Hour-Long Videos via Tree-Based Group Relative Policy Optimization, a model-side contribution for Video.
+- [SMART: Shot-Aware Multimodal Video Moment Retrieval with Audio-Enhanced MLLM](https://arxiv.org/abs/2511.14143): Uses shot-aware multimodal reasoning with audio-enhanced MLLMs for video moment retrieval.
+- [Disentangling Inter- and Intra-Video Relations for Multi-Event Video-Text Retrieval and Grounding](https://doi.org/10.1109/tip.2025.3630883): Models inter- and intra-video relations for multi-event video-text retrieval and grounding.
+- [MVP](https://arxiv.org/abs/2601.03781): A self-supervised masked-video-prediction method for VideoLLMs that improves temporal and visual representations for downstream video QA and reasoning.
+- [VideoAuto-R1](https://arxiv.org/abs/2601.05175): A video auto-reasoning method using a training and inference strategy that separates reasoning formation from answer refinement.
+- [Learning Transferable Temporal Primitives](https://arxiv.org/abs/2603.17693): Generates controlled synthetic video primitives so models learn ordering, state change, and event-dependency concepts.
+- [Unified Spatio-Temporal Token Scoring](https://arxiv.org/abs/2603.18004): An efficient VideoVLM token-selection method that jointly scores spatial and temporal tokens to preserve reasoning-relevant evidence.
+- [Wan-R1](https://arxiv.org/abs/2603.27866): Applies verifiable reinforcement learning to video reasoning.
+- [ABMAMBA: Multimodal Large Language Model with Aligned Hierarchical Bidirectional Scan for Efficient Video Captioning](https://arxiv.org/abs/2604.08050): Builds an efficient video-captioning MLLM with aligned hierarchical bidirectional scanning.
+- [EasyVideoR1](https://arxiv.org/abs/2604.16893): A simplified RL training pipeline for video understanding that refines rewards, data, and training stability for R1-style video reasoning.
+- [Response-G1](https://arxiv.org/abs/2605.07575): Introduces Explicit Scene Graph Modeling for Proactive Streaming Video Understanding, a model-side contribution for Video.

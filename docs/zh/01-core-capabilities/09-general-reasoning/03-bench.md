@@ -44,5 +44,6 @@
 - [ARC-AGI-3](https://arxiv.org/abs/2603.24621)（[官方页](https://arcprize.org/arc-agi/3/)；[开发者工具](https://github.com/arcprize/ARC-AGI-3-Agents)）：评什么：交互式程序归纳与小游戏式任务求解；核心思想：把 ARC 从静态 grid completion 推向可行动环境，要求 agent 通过观察、试探、状态记忆和策略搜索学习新规则。
 - [DeonticBench](https://arxiv.org/abs/2604.04443)：评什么：在显式规则下围绕义务、许可和禁止进行推理。核心思想：在法律与政策式场景中测试长上下文规则推理，并可选择把规则翻译成可执行 Prolog 轨迹。
 - [CONDESION-BENCH](https://arxiv.org/abs/2604.09029)：评测组合动作空间中的条件决策能力。核心思想：要求模型在显式可行性条件下组合出有效动作，而不是从固定候选选项中做选择。
+- [General365](https://arxiv.org/abs/2604.11778)（[项目页与榜单](https://general365.github.io/)）：评什么：背景知识限制在 K-12 水平的宽泛通用推理。核心思想：用 365 道种子题和 1,095 道变体覆盖八类任务，把推理难度与专业领域知识尽量解耦。
 - [LongCoT](https://arxiv.org/abs/2604.14140)：评什么：专家设计题中的长程 chain-of-thought 推理。核心思想：在最终答案可验证的前提下，隔离模型管理大量相互依赖推理步骤时的失败。
 - [SOTOPIA-TOM](https://arxiv.org/abs/2605.02307)：通过心智理论场景评估多智能体互动中的信息管理能力，将社会智能体评测从表层对话质量扩展到信息状态推理。

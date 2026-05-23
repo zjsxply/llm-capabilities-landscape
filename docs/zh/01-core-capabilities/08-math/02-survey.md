@@ -5,3 +5,5 @@
 - [A Survey on Mathematical Reasoning and Optimization with Large Language Models](https://arxiv.org/abs/2503.17726)：综述数学推理、优化、基准与工具增强方法。
 - [Autoformalization in the Era of Large Language Models: A Survey](https://arxiv.org/abs/2505.23486)：解释自然语言数学到检查器可验证形式证明的桥梁。
 - [A Survey on Large Language Models for Mathematical Reasoning](https://arxiv.org/abs/2506.08446)：近期大语言模型数学推理方法、数据集与开放问题总览。
+- [Solving Mathematical Problems using Large Language Models](https://doi.org/10.3724/2096-7004.di.2025.0064)：把 LLM 解数学题组织为提示、分解、验证、工具使用与答案综合的流程。
+- [Machine-Assisted Proof](https://doi.org/10.1090/noti3041)：综述机器辅助证明，将其作为连接形式化工具与 AI 辅助的数学推理流程。

@@ -1,0 +1,29 @@
+# 2.6.4 Model
+
+- [AgentOhana](https://arxiv.org/abs/2402.15506): Unifies multi-environment agent trajectories and training pipelines for effective action-model learning across heterogeneous agent tasks.
+- [ArCHer](https://arxiv.org/abs/2402.19446): Trains language-model agents with hierarchical multi-turn reinforcement learning, addressing delayed rewards across long trajectories.
+- [Agent-R](https://arxiv.org/abs/2501.11425): Uses iterative self-training to teach agents reflection, error recovery, and trajectory-level self-improvement.
+- [Reinforcement Learning for Long-Horizon Interactive LLM Agents](https://arxiv.org/abs/2502.01600): Formalizes stateful digital-agent training as a long-horizon interactive RL problem and introduces LOOP for multi-application environments.
+- [ATLaS](https://arxiv.org/abs/2503.02197): Tunes generalist agents on selected critical trajectory steps such as planning and strategic decisions, improving multi-environment performance with less behavior-cloning data.
+- [RAGEN](https://arxiv.org/abs/2504.20073): Studies self-evolution in LLM agents through multi-turn reinforcement learning, trajectory filtering, and stabilizing policy updates.
+- [GiGPO](https://arxiv.org/abs/2505.10978): Assigns advantages at both episode and step levels for sparse-reward, long-horizon agent training.
+- [Turn-Level Reward Design for Multi-Turn Agents](https://arxiv.org/abs/2505.11821): Moves GRPO and PPO-style training from final outcomes toward denser turn-level reward design for multi-turn reasoning agents.
+- [RLVMR](https://arxiv.org/abs/2507.22844): Adds verifiable meta-reasoning rewards for planning, exploration, and reflection so long-horizon agents learn more robust reasoning paths.
+- [Agent Lightning](https://arxiv.org/abs/2508.03680): Provides a general reinforcement-learning interface for arbitrary agents, with unified trajectories and a credit-assignment module.
+- [Chain-of-Agents Agent Foundation Models](https://arxiv.org/abs/2508.13167): Converts multi-agent problem solving into end-to-end learned agent models through multi-agent distillation and agentic RL.
+- [AgentGym-RL](https://arxiv.org/abs/2509.08755): Trains LLM agents for long-horizon decision making through multi-turn interactive RL and ScalingInter-RL.
+- [AgentRL](https://arxiv.org/abs/2510.04206): Scales multi-turn, multi-task agentic reinforcement learning with asynchronous generation-training infrastructure.
+- [Scaling Long-Horizon LLM Agent via Context-Folding](https://arxiv.org/abs/2510.11967): Uses FoldGRPO and process rewards to train agents to branch, fold sub-trajectories, and actively manage context.
+- [SALT](https://arxiv.org/abs/2510.20022): Derives step-level advantages for long-horizon agents through trajectory graphs, directly targeting sparse outcome rewards.
+- [AgentPRM](https://arxiv.org/abs/2511.08325): Builds process reward models for LLM agents with step-wise promise and progress signals.
+- [Agent0](https://arxiv.org/abs/2511.16043): Develops self-evolving agents from zero data through tool-integrated reasoning and iterative improvement.
+- [SkyRL-Agent](https://arxiv.org/abs/2511.16108): Provides efficient multi-turn agent RL training and demonstrates transfer across software engineering, deep research, computer use, and memory-agent tasks.
+- [SAGE](https://arxiv.org/abs/2512.17102): Uses reinforcement learning to co-improve an agent and its skill library, connecting long-running autonomy with reusable capability accumulation.
+- [HiPER](https://arxiv.org/abs/2602.16165): Uses hierarchical RL and explicit credit assignment for large-language-model agents, separating high-level planning from low-level execution.
+- [KLong](https://arxiv.org/abs/2602.17547): Trains an LLM agent for extremely long-horizon tasks with trajectory-splitting supervised fine-tuning, a Research-Factory synthetic trajectory pipeline, and progressive reinforcement learning.
+- [ProxMO](https://arxiv.org/abs/2602.19225): Offers proximity-based multi-turn optimization as a practical credit-assignment approach for agent training.
+- [HiMAC](https://arxiv.org/abs/2603.00977): Trains long-horizon LLM agents with hierarchical macro-micro learning across subgoals and local actions.
+- [HCAPO](https://arxiv.org/abs/2603.08754): Uses hindsight credit assignment and post-hoc critic refinement for long-horizon LLM-agent trajectories.
+- [AEM](https://arxiv.org/abs/2605.00425): Modulates response-level entropy to stabilize multi-turn agentic reinforcement learning without external step annotations.
+- [Rewarding Beliefs, Not Actions](https://arxiv.org/abs/2605.20061): Introduces belief-centric reinforcement learning for self-improving long-horizon agents under partial observability.
+- [Memory-R2](https://arxiv.org/abs/2605.21768): Studies online RL and fair credit assignment for memory-augmented long-context agents that operate across extended sessions.

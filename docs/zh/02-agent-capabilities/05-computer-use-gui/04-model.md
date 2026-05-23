@@ -1,0 +1,60 @@
+# 2.5.4 Model
+
+- [CogAgent](https://arxiv.org/abs/2312.08914)（[开源代码](https://github.com/THUDM/CogAgent)）：将视觉语言模型专门化到 GUI 理解与导航，论文元数据也记录了更新的 CogAgent-9B release。
+- [AutoWebGLM](https://arxiv.org/abs/2404.03648)（[开源代码](https://github.com/THUDM/AutoWebGLM)）：用 HTML 简化、课程数据、强化学习和 rejection sampling 训练基于 ChatGLM 的网页导航模型。
+- [Ferret-UI](https://arxiv.org/abs/2404.05719)：训练面向移动 UI 的多模态 LLM，覆盖 referring、grounding、reasoning 与开放式 UI 指令跟随。
+- [MobileFlow](https://arxiv.org/abs/2407.04346)：把 Qwen-VL-Chat 转化为 21B 移动 GUI MLLM，加入混合视觉编码器、MoE 扩展和面向中文移动界面的 GUI 对齐。
+- [OmniParser](https://arxiv.org/abs/2408.00203)：训练可交互区域检测和 UI 元素语义解析组件，让 pure-vision GUI agent 能更可靠地把动作落到屏幕位置。
+- [UI-JEPA](https://arxiv.org/abs/2409.04081)：从屏幕活动中学习轻量级用户意图主动感知，把用户状态推断做成 GUI agent 的模型侧组件。
+- [Ferret-UI 2](https://arxiv.org/abs/2410.18967)：把 Ferret-UI 扩展为跨 iPhone、Android、iPad、网页和 Apple TV 的通用 UI 理解模型。
+- [OS-ATLAS](https://arxiv.org/abs/2410.23218)：面向通用 GUI agent 的 foundation action model，训练模型把屏幕观察和指令映射为 GUI 动作。
+- [AutoGLM](https://arxiv.org/abs/2411.00820)：用 progressive self-evolving online curriculum reinforcement learning 训练浏览器与手机 GUI 自主基础 agent。
+- [OS-Genesis](https://arxiv.org/abs/2412.19723)：通过 reverse task synthesis 和 reward-model 过滤自动构造 GUI agent 轨迹，为 GUI policy 生成训练数据。
+- [UI-TARS](https://arxiv.org/abs/2501.12326)（[开源代码](https://github.com/bytedance/UI-TARS)）：训练原生 GUI agent 模型，结合截图、坐标、操作历史和动作生成完成 computer use。
+- Claude 3.5 Sonnet computer use（[官方公告](https://www.anthropic.com/news/3-5-models-and-computer-use)）：通过 API 工具暴露前沿模型的 computer-use 能力，支持屏幕观察、移动光标、点击与输入。
+- [Magma](https://arxiv.org/abs/2502.13130)（[项目页](https://microsoft.github.io/Magma/)）：面向 UI 导航和机器人操作的多模态 agent foundation model，用 action grounding 与 action-planning 监督训练。
+- [Qwen2.5-VL](https://arxiv.org/abs/2502.13923)：视觉语言模型技术报告，其中 interactive visual-agent 能力覆盖推理、工具使用以及电脑和移动设备操作。
+- [UI-R1](https://arxiv.org/abs/2503.21620)：把 rule-based reinforcement learning 用于 GUI action prediction，训练面向 grounding 与 Android control 的紧凑 UI-R1 模型。
+- [GUI-R1](https://arxiv.org/abs/2504.10458)（[开源代码](https://github.com/ritzz-ai/GUI-R1)）：通用 R1-style vision-language-action 模型，把 reinforcement fine-tuning 引入 GUI action generation。
+- [InfiGUI-R1](https://arxiv.org/abs/2504.14239)：用 R1-style 训练把多模态 GUI agent 从反应式 actor 推向 deliberative reasoner。
+- OpenAI Computer-Using Agent（CUA）（[官方报告](https://openai.com/index/computer-using-agent/)）：把 GPT-4o 视觉能力与强化学习训练的推理结合，用于浏览器和操作系统级 computer-use 动作。
+- [Enhancing Visual Grounding for GUI Agents via Self-Evolutionary Reinforcement Learning](https://arxiv.org/abs/2505.12370)：用 self-evolutionary RL 改进 GUI agent 的 visual grounding，把屏幕元素定位做成可训练的模型侧循环。
+- [Efficient Agent Training for Computer Use](https://arxiv.org/abs/2505.13909)（[开源代码](https://github.com/GAIR-NLP/PC-Agent-E)）：用少量人类 computer-use 演示和合成轨迹变体训练 PC Agent-E。
+- [Proxy Lite 3B](https://huggingface.co/convergence-ai/proxy-lite-3b)（[开源代码](https://github.com/convergence-ai/proxy-lite)）：从 Qwen2.5-VL 微调而来的小型开源 browser-agent 模型，面向 UI 导航。
+- [GUI-G1](https://arxiv.org/abs/2505.15810)：研究 GUI agent visual grounding 中的 R1-Zero-like training，分析 rule-based RL 如何影响 grounding 行为。
+- [ARPO](https://arxiv.org/abs/2505.16282)（[开源代码](https://github.com/dvlab-research/ARPO)）：用 experience replay 改造 GRPO，在长程 GUI 环境中做端到端 policy optimization。
+- Amazon Nova Act（[官方报告](https://labs.amazon.science/blog/nova-act)；[SDK](https://github.com/aws/nova-act)）：面向自然语言浏览器控制的闭源 browser-action 模型与 SDK 路线。
+- [ZeroGUI](https://arxiv.org/abs/2505.23762)（[开源代码](https://github.com/OpenGVLab/ZeroGUI)）：通过自动任务生成、自动奖励估计和在线强化学习，以零人工成本训练 GUI agent。
+- [ShowUI](https://openaccess.thecvf.com/content/CVPR2025/html/Lin_ShowUI_One_Vision-Language-Action_Model_for_GUI_Visual_Agent_CVPR_2025_paper.html)：面向 GUI visual agent 的 vision-language-action 模型，统一屏幕理解与动作预测。
+- [GUI-Critic-R1](https://arxiv.org/abs/2506.04614)：用 suggestion-aware GRPO 和 reasoning-bootstrapped critic data 训练 GUI 自动化的执行前 critic 模型。
+- [Aguvis](https://proceedings.mlr.press/v267/xu25ae.html)：训练统一的 pure-vision GUI agent，使其无需 DOM 或 accessibility tree 也能自主交互。
+- [MobileGUI-RL](https://arxiv.org/abs/2507.05720)：通过在线环境强化学习推进移动 GUI agent，增强动态 App 操作行为。
+- [OpenCUA](https://arxiv.org/abs/2508.09123)：构建跨操作系统和应用的 AgentNet 演示数据，并从带反思的 state-action pairs 训练开放 CUA 基础模型。
+- [UI-Venus](https://arxiv.org/abs/2508.10833)（[开源代码](https://github.com/inclusionAI/UI-Venus)）：用 reinforcement fine-tuning、奖励设计、数据清洗和自演化 trajectory-history alignment 构建 screenshot-only UI agent。
+- [ComputerRL](https://arxiv.org/abs/2508.14040)（[开源代码](https://github.com/thudm/ComputerRL)）：用分布式虚拟桌面环境和稳定熵的训练策略，扩展桌面 agent 的端到端在线强化学习。
+- [Mobile-Agent-v3](https://arxiv.org/abs/2508.15144)（[开源代码](https://github.com/X-PLUG/MobileAgent)）：提出 GUI-Owl 基础 GUI-agent 模型，覆盖桌面与移动端基准。
+- [UI-TARS-2](https://arxiv.org/abs/2509.02544)（[开源代码](https://github.com/bytedance/UI-TARS-desktop)）：用多轮强化学习推进 GUI agent，并形成更清晰的感知-推理-动作训练栈。
+- [UI-S1](https://arxiv.org/abs/2509.11543)（[开源代码](https://github.com/X-PLUG/MobileAgent/tree/main/UI-S1)）：在离线轨迹上模拟在线强化学习，用 discounted future returns 和 episode-level advantages 训练 GUI 自动化模型。
+- [UIPro](https://arxiv.org/abs/2509.17328)：通过面向界面的训练和动作监督增强 GUI 智能体交互能力。
+- [MobileRL](https://arxiv.org/abs/2509.18119)（[开源代码](https://github.com/THUDM/MobileRL)）：通过 difficulty-adaptive GRPO、positive replay、failure curriculum filtering 和 shortest-path reward shaping 训练移动 GUI agent。
+- [Ferret-UI Lite](https://arxiv.org/abs/2509.26539)：用真实与合成 GUI 数据、visual tool use、chain-of-thought reasoning 和强化学习训练紧凑型端侧 GUI agent。
+- [Surfer 2](https://arxiv.org/abs/2510.19949)：面向 web、desktop 与 mobile 的跨平台 computer-use 架构，包含层级上下文与自验证。
+- [UI-Ins](https://arxiv.org/abs/2510.20286)（[开源代码](https://github.com/alibaba/UI-Ins)）：用 multi-perspective instruction-as-reasoning、监督微调和强化学习训练 GUI grounding 模型。
+- Gemini 2.5 Computer Use model（[官方文档](https://ai.google.dev/gemini-api/docs/computer-use)）：Google Gemini 面向浏览器控制动作和 CUA 式交互循环暴露的专用模型变体。
+- [Fara-7B](https://arxiv.org/abs/2511.19663)：用 FaraGen 合成多步网页轨迹和多 verifier 过滤数据训练小型 screenshot-only 原生 CUA 模型。
+- [GUI Exploration Lab](https://arxiv.org/abs/2512.02423)：在可控 GUI 仿真环境中研究 SFT、single-turn RL 与 multi-turn RL 对屏幕导航的作用。
+- [Step-GUI](https://arxiv.org/abs/2512.15431)（[开源代码](https://github.com/stepfun-ai/gelab-zero)）：通过 calibrated step reward system、自演化轨迹和 GUI-MCP 部署证据训练 4B/8B GUI 模型。
+- [MAI-UI](https://arxiv.org/abs/2512.22047)：报告一组 foundation GUI agents，结合 self-evolving navigation data、用户交互、MCP 工具调用、端云协同和在线 RL。
+- [ShowUI-pi](https://arxiv.org/abs/2512.24965)：用 flow-based generative action model 统一离散点击与连续拖拽，提升 GUI 操作中的连续控制能力。
+- [ShowUI-Aloha](https://arxiv.org/abs/2601.07181)：用 human-taught demonstrations 训练 GUI agent，提升复杂屏幕操作能力。
+- Yutori Navigator n1（[官方报告](https://yutori.com/blog/introducing-n1)；[API 文档](https://docs.yutori.com/reference/navigator)）：在真实网站上通过 mid-training、监督微调和强化学习训练的 browser-use 模型。
+- [M2-Miner](https://arxiv.org/abs/2602.05429)（[项目页](https://larry225.github.io/M2-Miner/)）：用多 agent MCTS 和 progressive model-in-the-loop training 挖掘移动 GUI intent-trajectory 数据。
+- [UI-Venus-1.5](https://arxiv.org/abs/2602.09082)（[开源代码](https://github.com/inclusionAI/UI-Venus)）：加入 GUI mid-training、在线全轨迹 RL，以及 grounding、web、mobile 专家模型融合。
+- [Code2World](https://arxiv.org/abs/2602.09856)（[开源代码](https://github.com/AMAP-ML/Code2World)）：通过可渲染代码生成和 render-aware RL 训练 GUI world model，预测 action-conditioned next UI state。
+- [Agentic-Q / Ovis GUI Navigation](https://arxiv.org/abs/2602.13653)：为 Ovis2.5-9B 的导航和 grounding 优化 agentic Q-model 与 step-wise GUI policy。
+- [Mobile-Agent-v3.5](https://arxiv.org/abs/2602.16855)：发布多平台 GUI-Owl-1.5 基础 agent，覆盖 desktop、mobile、browser 以及端云设置。
+- [SecAgent](https://arxiv.org/abs/2603.08533)（[数据集](https://huggingface.co/datasets/alibabagroup/CMGUI)）：用 semantic context、中文移动 GUI 数据、SFT 和 RFT 训练高效 3B mobile GUI agent。
+- [UI-Voyager](https://arxiv.org/abs/2603.24533)（[开源代码](https://github.com/Ui-Voyager/Ui-Voyager)）：通过 rejection fine-tuning 和 group relative self-distillation 从失败移动 GUI 轨迹中学习，构造稠密 step-level supervision。
+- H Company Holo/Holotron family（[Holo2](https://hcompany.ai/holo2)；[Holotron-12B](https://hcompany.ai/holotron-12b)；[Holotron 3 Nano](https://hcompany.ai/holotron3)）：面向 web、desktop 与 mobile 界面导航和定位的多模态 CUA 模型族。
+- Microsoft Fara1.5（[官方报告](https://www.microsoft.com/en-us/research/articles/fara1-5-computer-use-agent/)）：延续 Fara 式合成浏览器动作训练的小型 browser CUA 模型族，覆盖 4B、9B 和 27B 规模。
+- [ToolCUA](https://arxiv.org/abs/2605.12481)（[项目页](https://x-plug.github.io/ToolCUA/)）：通过 interleaved GUI-tool trajectory synthesis、RFT、online agentic RL 和 tool-efficient path rewards 训练混合 GUI-tool 路径选择 CUA 模型。

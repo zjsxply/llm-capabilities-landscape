@@ -1,0 +1,30 @@
+# 2.9.4 Model
+
+- [MONA](https://arxiv.org/abs/2501.13011)：将短视优化与非短视批准结合，用于降低强化学习智能体的多步奖励黑客行为，并覆盖基于 LLM 的委托监督设置。
+- [xJailbreak](https://arxiv.org/abs/2501.16727)：用表示空间引导的强化学习构造可解释的大模型越狱攻击。
+- [STAIR](https://arxiv.org/abs/2502.02384)：提出面向Agent 安全的模型侧方法，核心围绕 Improving Safety Alignment with Introspective Reasoning。
+- [MOPO](https://arxiv.org/abs/2505.10892)：通过带约束的 KL 正则化更新同时优化多个人类偏好目标，使有用性与无害性的权衡在后训练中显式化。
+- [SafeVid](https://arxiv.org/abs/2505.11926)：面向大型视频多模态模型构建视频特定安全对齐，将安全数据与训练流程结合起来，覆盖动态视觉情境而不只依赖静态图像对齐。
+- [CAPTURE / CaptureGuard](https://arxiv.org/abs/2505.12368)：训练并评估上下文感知 prompt-injection guardrail 模型，在攻击检测和良性上下文过度防御之间权衡。
+- [Detecting Prefix Bias in LLM-based Reward Models](https://arxiv.org/abs/2505.13487)：提出检测与缓解奖励模型前缀触发人口属性偏差的指标和数据增强方法。
+- [MTSA](https://arxiv.org/abs/2505.17147)：提出面向Agent 安全的模型侧方法，核心围绕 Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming。
+- [Audio-Language Safety Representation Reshaping](https://arxiv.org/abs/2505.19670)：通过重塑表示空间平衡大型音频语言模型的安全性与过度拒答。
+- [Editing as Unlearning](https://arxiv.org/abs/2505.19855)：将 LLM 遗忘重述为面向拒答或空响应的知识编辑，并比较编辑方法作为实用遗忘基线。
+- [Prompt-Injection Detection with Pre-trained Models and Heuristics](https://arxiv.org/abs/2506.06384)：将预训练检测器与启发式特征结合用于提示注入防御，可作为 LLM 与智能体安全中的模型侧护栏方法。
+- [Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models](https://arxiv.org/abs/2506.07468)：提出面向Agent 安全的模型侧方法，核心围绕 Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models。
+- [DAVSP](https://arxiv.org/abs/2506.09353)：通过学习深层视觉安全提示来抵御视觉模态攻击，同时尽量保持正常任务效用。
+- [From Hard Refusals to Safe-Completions](https://arxiv.org/abs/2508.09224)：提出面向Agent 安全的模型侧方法，核心围绕 Toward Output-Centric Safety Training。
+- [GSPR](https://arxiv.org/abs/2509.24418)：将 LLM 安全护栏训练为可泛化的策略推理器，使拒答与安全判断能跨不同安全分类体系迁移。
+- [Low-Resource Language Safeguards](https://arxiv.org/abs/2510.10677)：用少量推理与对齐数据提升大模型在低资源语言中的安全防护表现。
+- [Differentiated Directional Intervention](https://arxiv.org/abs/2511.06852)：研究区分危害检测与拒答执行的激活空间干预，揭示一种模型层面的安全对齐规避机制。
+- [ReasAlign](https://arxiv.org/abs/2601.10173)：提出面向Agent 安全的模型侧方法，核心围绕 Reasoning Enhanced Safety Alignment against Prompt Injection Attack。
+- [NeuroFilter](https://arxiv.org/abs/2601.14660)：用激活空间线性方向和 activation velocity 构建隐私护栏，在对话式 LLM agent 内检测 contextual-integrity 违规。
+- [PrivAct](https://arxiv.org/abs/2602.13840)：通过偏好优化训练具备隐私意识的多 Agent 行为。核心思想：把 contextual privacy preservation 内化为 agent policy 的一部分，而不是只依赖外置过滤器或最终输出检查。
+- [Learning When to Act or Refuse](https://arxiv.org/abs/2603.03205)：通过显式 act/refuse 动作和 pairwise trajectory preference RL，对多步工具使用型 agentic reasoning model 做安全后训练。
+- [SC-Inject-Bench / ShieldNet](https://arxiv.org/abs/2604.04426)：把供应链注入基准与网络级 guardrail 结合，用于检测工具内嵌劫持和数据泄露。
+- [CORA](https://arxiv.org/abs/2604.09155)：训练 Guardian 风险模型和 Diagnostician，在 GUI agent 的 post-policy、pre-action 阶段用 conformal risk control 校准是否执行。
+- [SaFeR-Steer](https://arxiv.org/abs/2604.16358)：通过合成自举和反馈动态演化多轮多模态大模型，以提升安全引导能力。
+- [Beyond Pattern Matching](https://arxiv.org/abs/2604.18248)：比较超越正则和微调分类器的跨领域提示注入检测技术，并在 prompt-shield 中实现部分方法。
+- [SnapGuard](https://arxiv.org/abs/2604.25562)：面向 screenshot-based web agents 的轻量 prompt-injection detector，处理恶意指令只出现在渲染页面视觉内容中的情况。
+- [Adaptive Semantic Gates for Reliable Multi-Agent LLMs](https://doi.org/10.1109/icce67443.2026.11449653)：为多智能体 LLM 工作流加入语义门控，在风险或语义漂移消息传播到协作链路前进行过滤。
+- [Safety Misalignment Against LLMs](https://www.ndss-symposium.org/ndss-paper/safety-misalignment-against-large-language-models/)：研究大模型安全错位攻击与防御，并分析表示层面的对齐行为。

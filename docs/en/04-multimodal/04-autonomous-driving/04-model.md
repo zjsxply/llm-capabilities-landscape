@@ -1,0 +1,101 @@
+# 4.4.4 Model
+
+- [DiffusionDrive](https://arxiv.org/abs/2411.15139): A truncated diffusion policy for end-to-end autonomous driving using prior multi-mode anchors, a shortened denoising schedule, and a cascade diffusion decoder.
+- [Traj-LLM](https://doi.org/10.1109/TIV.2024.3418522): Applies pretrained large language models to trajectory prediction for autonomous driving.
+- [Cloud-edge MLLM ADAS](https://doi.org/10.1109/JIOT.2024.3509628): Builds a cloud-edge MLLM ADAS architecture with edge CogVLM2 fine-tuning and cloud GPT-4o reasoning, balancing commonsense driving assistance with latency, energy, and QoS constraints.
+- [AdaWM](https://arxiv.org/abs/2501.13072): Uses an adaptive world model for autonomous-driving planning.
+- [Diffusion-Based Planning for Autonomous Driving with Flexible Guidance](https://arxiv.org/abs/2501.15564): Uses diffusion-based planning with flexible guidance for human-like driving behavior.
+- [TeLL-Drive](https://arxiv.org/abs/2502.01387): Uses teacher LLM guidance to improve reinforcement learning for autonomous-driving decisions.
+- [Robust Autonomy Emerges from Self-Play](https://arxiv.org/abs/2502.03349): Uses self-play to train robust autonomous-driving behavior.
+- [Occ-LLM](https://arxiv.org/abs/2502.06419): Enhances autonomous driving with occupancy-based large language models.
+- [Semi-Supervised Vision-Centric 3D Occupancy World Model](https://arxiv.org/abs/2502.07309): Builds a semi-supervised vision-centric 3D occupancy world model for autonomous driving.
+- [MaskGWM](https://arxiv.org/abs/2502.11663): Uses video mask reconstruction to build a generalizable driving world model.
+- [RAD](https://arxiv.org/abs/2502.13144): Trains an end-to-end driving policy with large-scale 3D Gaussian Splatting based reinforcement learning.
+- [Building reliable sim driving agents by scaling self-play](https://arxiv.org/abs/2502.14706): Scales self-play to train reliable simulation driving agents for testing and stress scenarios.
+- [CurricuVLM](https://arxiv.org/abs/2502.15119): Uses personalized safety-critical curriculum learning to improve VLM behavior in autonomous driving.
+- [VLM-E2E](https://arxiv.org/abs/2502.18042): Adds multimodal driver-attention fusion to end-to-end autonomous driving.
+- [AlphaDrive](https://arxiv.org/abs/2503.07608): A reinforcement-learning and reasoning framework for autonomous-driving VLMs with GRPO-style rewards for planning and long-tail driving decisions.
+- [FASIONAD++](https://arxiv.org/abs/2503.08162): Integrates high-level instructions, information bottlenecks, and adaptive feedback for safer autonomous driving.
+- [Finetuning Generative Trajectory Model with RLHF](https://arxiv.org/abs/2503.10434): Fine-tunes generative trajectory models with reinforcement learning from human feedback.
+- [SparseAlign](https://arxiv.org/abs/2503.12982): Builds a fully sparse cooperative object-detection framework for vehicle-to-everything perception.
+- [FM4SU](https://arxiv.org/abs/2503.18730): Trains a knowledge-graph-based symbolic foundation model for driving-scene understanding, serializing BEV scene graphs into token sequences for scene-evolution prediction.
+- [TraF-Align](https://arxiv.org/abs/2503.19391): Aligns trajectory-aware features for asynchronous multi-agent perception in autonomous driving.
+- [GAIA-2](https://arxiv.org/abs/2503.20523): A controllable multi-view generative world model for autonomous driving with structured conditioning over ego dynamics, agent layouts, environment factors, and road semantics.
+- [OpenDriveVLA](https://arxiv.org/abs/2503.23463): A vision-language-action model that aligns 2D and 3D visual tokens with language embeddings and autoregressively decodes grounded driving actions.
+- [WoTE](https://arxiv.org/abs/2504.01941): Adds a BEV world model for online trajectory evaluation, forecasting future BEV states so end-to-end driving policies can score candidate plans before execution.
+- [On-board LLMs for autonomous driving](https://arxiv.org/abs/2504.11514): Combines local LLM modules with MPC, RAG, LoRA fine-tuning, and quantization to adapt driving control and human-machine interaction without cloud dependence.
+- [LightEMMA](https://arxiv.org/abs/2505.00284): Introduces Lightweight End-to-End Multimodal Model for Autonomous Driving, a model-side contribution for Autonomous Driving.
+- [DualDiff](https://arxiv.org/abs/2505.01857): Uses a dual-branch diffusion model with semantic fusion for autonomous-driving scene reconstruction.
+- [LVLM-MPC Collaboration for Autonomous Driving](https://arxiv.org/abs/2505.04980): Couples a large vision-language model with automatically generated MPC controllers so high-level driving commands can become safety-constrained, task-scalable control.
+- [Human-Centric LLM-Guided Driving](https://arxiv.org/abs/2505.06875): Combines fast control and slow LLM guidance with reinforcement learning for human-centric autonomous driving.
+- [LD-Scene](https://arxiv.org/abs/2505.11247): Uses LLM-guided diffusion to generate controllable adversarial safety-critical driving scenarios.
+- [DriveMoE](https://arxiv.org/abs/2505.16278): Adds scene-specialized vision experts and skill-specialized action experts to a VLA driving model, routing cameras and driving behaviors through specialized MoE modules.
+- [Raw2Drive](https://arxiv.org/abs/2505.16394): Introduces Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving (in CARLA v2), a model-side contribution for Autonomous Driving.
+- [ReasonPlan](https://arxiv.org/abs/2505.20024): Unifies scene prediction and decision reasoning for closed-loop autonomous-driving planning.
+- [S4-Driver](https://arxiv.org/abs/2505.24139): Uses scalable self-supervised training and sparse 3D visual representations to adapt multimodal language-model features for end-to-end motion planning.
+- [ROAD](https://arxiv.org/abs/2505.24317): Uses a traffic-regulation knowledge graph, VLM reasoning, and retrieval-augmented reward assignment to make autonomous-driving RL optimize legal responsibility rather than hand-tuned rewards alone.
+- [ReCogDrive](https://arxiv.org/abs/2506.08052): Aligns VLM driving cognition with a diffusion planner through reinforced training, replacing direct language-action output with continuous trajectory generation.
+- [R2SE](https://arxiv.org/abs/2506.09800): Introduces a reinforcement fine-tuning pipeline that allocates hard cases, trains residual specialist policies, and expands policy capacity while preserving a generalist end-to-end driver.
+- [AutoVLA](https://arxiv.org/abs/2506.13757): A driving VLA model that tokenizes continuous trajectories into feasible discrete actions and combines supervised training with reinforcement fine-tuning.
+- [Drive-R1](https://arxiv.org/abs/2506.18234): A domain-specific driving VLM that bridges scenario reasoning and motion planning through supervised reasoning data and reinforcement learning.
+- [World4Drive](https://arxiv.org/abs/2507.00603): Builds intention-aware physical latent world models from vision foundation features to generate and evaluate multimodal planning trajectories.
+- [ReAL-AD](https://arxiv.org/abs/2507.12499): Introduces reasoning-augmented learning for end-to-end autonomous driving, structuring decisions around strategy, decision, and operation levels.
+- [Orbis](https://arxiv.org/abs/2507.13162): A compact driving world model for long-horizon prediction that studies hybrid tokenization and continuous autoregressive modeling.
+- [Cooptrack](https://arxiv.org/abs/2507.19239): Studies end-to-end cooperative sequential perception for efficient autonomous-driving tracking and perception.
+- [TurboTrain](https://arxiv.org/abs/2508.04682): Uses multi-agent spatiotemporal pretraining and gradient-conflict suppression to train cooperative-driving perception and prediction models more efficiently.
+- [EvaDrive](https://arxiv.org/abs/2508.09158): Frames end-to-end planning as multi-objective adversarial policy optimization, pairing a trajectory generator with a trainable critic and Pareto selection for iterative refinement.
+- [ImagiDrive](https://arxiv.org/abs/2508.11428): Combines vision-language models with driving world models in a unified imagination-and-planning framework for autonomous driving.
+- [ViLaD](https://arxiv.org/abs/2508.12603): Applies a vision-language diffusion framework to end-to-end autonomous driving, replacing sequential action generation with diffusion-style planning.
+- [ReflectDrive](https://arxiv.org/abs/2509.20109): A reflective VLA framework using discrete diffusion and latent reflection for safety-critical trajectory generation.
+- [DriveMind](https://arxiv.org/abs/2510.04532): Uses DriveMind and SFT plus GRPO training to test whether plan-aligned reasoning actually causes better VLM trajectory planning, exposing a reasoning-planning disconnect.
+- [DriveVLA-W0](https://arxiv.org/abs/2510.12796): Adds dense world-model supervision through future-image prediction to reduce the supervision deficit of sparse action labels.
+- [DiffVLA++](https://arxiv.org/abs/2510.17148): Uses metric-guided alignment to bridge cognitive reasoning and end-to-end autonomous driving.
+- [Map-World](https://arxiv.org/abs/2511.20156): Couples masked action planning with a path-weighted BEV world model to train multimodal trajectory hypotheses without handcrafted anchors or single-mode teacher selection.
+- [DriveVGGT](https://arxiv.org/abs/2511.22264): Adapts visual geometry transformers to multi-camera autonomous driving with temporal video attention and calibration-aware geometric constraints for scale-consistent scene reconstruction.
+- [dVLM-AD](https://arxiv.org/abs/2512.04459): Enhances diffusion vision-language models for autonomous driving through controllable reasoning in out-of-distribution scenarios.
+- [LA-RL](https://arxiv.org/abs/2512.05686): Adds language-action guidance and safety guarantees to reinforcement learning for autonomous highway driving.
+- [Mimir](https://arxiv.org/abs/2512.07130): Uses hierarchical goal-driven diffusion with uncertainty propagation for end-to-end autonomous-driving planning.
+- [DiffusionDriveV2](https://arxiv.org/abs/2512.07745): Applies RL-constrained optimization to truncated diffusion driving policies while preserving multimodal trajectory diversity.
+- [WAM-Diff](https://arxiv.org/abs/2512.11872): Applies masked diffusion, mixture-of-experts, and online reinforcement learning to autonomous-driving VLA trajectory generation.
+- [MindDrive](https://arxiv.org/abs/2512.13636): A driving VLA model trained with online reinforcement learning and separate LoRA experts for scenario decisions and trajectory action generation.
+- [LLM-Based V2X Sensor Data Fusion](https://doi.org/10.1109/ICCCN65249.2025.11133978): Uses LLM-based V2X multi-modal sensor fusion to improve road safety and privacy.
+- [Modular VLA for Autonomous Driving](https://doi.org/10.1109/ICCE-Asia67487.2025.11263635): Connects perception, language reasoning, and action in a modular VLA setup for autonomous driving.
+- [VLR-Driver](https://doi.org/10.1109/ICCV51701.2025.02503): Builds large vision-language-reasoning models for embodied autonomous driving.
+- [CCMA](https://doi.org/10.1016/j.eswa.2025.127717): Uses LLM-based cascading cooperative multi-agent reasoning for autonomous-driving merge scenarios.
+- [PriorMotion](https://doi.org/10.1109/ICCV51701.2025.02533): Introduces a generative, class-agnostic motion-prediction model that uses raster-vector motion-field priors for autonomous-driving scenarios.
+- [Autonomous Driving Planning Based on Large Language Model](https://doi.org/10.1109/VTC2025-Spring65109.2025.11174944): Applies LLM-based planning to collaborative autonomous-driving decisions.
+- [LLM-Guided DRL for Safe AV Decisions](https://doi.org/10.1016/j.trc.2025.105511): Uses LLM guidance to shape deep reinforcement learning for safer autonomous-vehicle decisions.
+- [LLM-augmented hierarchical reinforcement learning](https://doi.org/10.1016/j.eswa.2025.128736): Treats human-like driving decisions as an LLM-augmented hierarchical reinforcement-learning problem, separating high-level decision guidance from policy optimization.
+- [LoCo-VLM](https://doi.org/10.1109/ITSC60802.2025.11423082): Uses an event-triggered, loosely coupled VLM path with Signal Temporal Logic checks to inject VLM decisions into end-to-end planning while limiting hallucination and latency risk.
+- [HanoiWorld](https://arxiv.org/abs/2601.01577): Uses a JEPA-style world model for autonomous-vehicle controllers, emphasizing safety-aware latent prediction rather than pixel reconstruction.
+- [ThinkDrive](https://arxiv.org/abs/2601.04714): Uses chain-of-thought-guided progressive reinforcement fine-tuning to improve autonomous-driving reasoning and decisions.
+- [Scene-Adaptive Diffusion Candidate Sets](https://arxiv.org/abs/2602.03112): Uses scene-adaptive diffusion refinement to generate trajectory candidates for end-to-end autonomous driving.
+- [SDD Planner](https://arxiv.org/abs/2602.04329): Uses diffusion planning to balance trajectory safety constraints with stylized driving behavior.
+- [SteerVLA](https://arxiv.org/abs/2602.08440): Steers vision-language-action models in long-tail driving scenarios by combining high-level semantic reasoning with grounded vehicle control.
+- [Masked VLA Diffusion for Driving](https://arxiv.org/abs/2602.20577): Uses masked vision-language-action diffusion to improve efficient and explainable end-to-end autonomous-driving control.
+- [NoRD](https://arxiv.org/abs/2602.21172): A data-efficient driving VLA recipe using difficulty-aware GRPO corrections without dense reasoning annotations.
+- [Explicit Learning from Failures for VLA Driving](https://arxiv.org/abs/2603.01063): Improves autonomous-driving VLA policies by explicitly learning from failure cases during reinforcement optimization.
+- [KnowDiffuser](https://arxiv.org/abs/2603.10441): Combines knowledge guidance, diffusion planning, and LLM reasoning for autonomous-driving planning.
+- [Senna-2](https://arxiv.org/abs/2603.11219): Aligns high-level VLM decisions with low-level trajectory planning through a consistency-oriented three-stage training paradigm.
+- [Collaborative Imitation and Reinforcement Learning](https://arxiv.org/abs/2603.13842): Runs imitation learning and reinforcement learning in parallel for end-to-end autonomous driving instead of relying on sequential fine-tuning.
+- [PerlAD](https://arxiv.org/abs/2603.14908): Uses pseudo-simulation-based reinforcement learning to improve closed-loop end-to-end autonomous-driving policies.
+- [ADV-0](https://arxiv.org/abs/2603.15221): Jointly trains driving policies and adversarial long-tail scenarios through closed-loop min-max optimization.
+- [DriveVLM-RL](https://arxiv.org/abs/2603.18315): Uses VLM-derived semantic reward learning through static and dynamic pathways for safer autonomous-driving control.
+- [Sim2Real-AD](https://arxiv.org/abs/2604.03497): Provides a modular sim-to-real framework for deploying VLM-guided reinforcement learning in autonomous driving.
+- [DriveVA](https://arxiv.org/abs/2604.04198): A driving world model that jointly decodes future visual forecasts and action sequences in a shared latent generative process.
+- [VLA-World](https://arxiv.org/abs/2604.09059): Unifies future-frame imagination with VLA reasoning so a model can generate a feasible future scene and refine trajectory planning from that imagined state.
+- [FeaXDrive](https://arxiv.org/abs/2604.12656): Adds feasibility-aware trajectory-centric diffusion planning for end-to-end autonomous driving.
+- [ConFixGS](https://arxiv.org/abs/2605.09688): Uses confidence-aware diffusion priors to repair feedforward 3D Gaussian splatting in autonomous-driving scenes.
+- [MindVLA-U1](https://arxiv.org/abs/2605.12624): A unified streaming VLA architecture combining optional autoregressive language tokens and flow-matching continuous action trajectories.
+- [MAPLE](https://arxiv.org/abs/2605.14201): Combines latent multi-agent rollouts, supervised fine-tuning, and reinforcement learning from global and agent-specific rewards for driving VLAs.
+- [SafeAlign-VLA](https://arxiv.org/abs/2605.19524): Uses counterfactual safety pairing, negative-enhanced supervised learning, and reinforcement learning for safe driving-VLA alignment.
+- [HEAT](https://arxiv.org/abs/2605.19631): Uses trajectory-guided world models to improve heterogeneous end-to-end driving across cities, sensors, and traffic distributions.
+- [CoPhy](https://arxiv.org/abs/2605.21139): Distills VLM knowledge into BEV encoders and uses an autoregressive BEV world model for foresighted driving action optimization.
+- [LVDrive](https://arxiv.org/abs/2605.22089): Adds high-level latent future-scene prediction under pretrained-vision-backbone supervision to strengthen driving VLA training.
+- [DuSA](https://doi.org/10.1016/j.knosys.2026.116002): Uses a dual-loop self-learning framework with LLM-guided reinforcement learning for autonomous driving.
+- [NavDrive](https://doi.org/10.1109/TITS.2026.3650852): Uses a navigation-guided diffusion policy for safety-enhanced end-to-end autonomous driving.
+- [DiffScene](https://doi.org/10.1609/aaai.v39i8.32951): Uses diffusion to generate safety-critical scenarios for autonomous vehicles.
+- [LiDAR-LLM](https://doi.org/10.1609/aaai.v39i9.33001): Explores LLMs for 3D LiDAR understanding in driving scenes.
+- [VLA-MP](https://doi.org/10.3390/s25196163): Combines VLA perception with physics-constrained action generation for autonomous driving.
+- [Social Predictive Intelligent Driver Model](https://doi.org/10.1007/s42154-024-00289-w): Proposes a socially aware driver-behavior model for autonomous-driving simulation, supporting interaction-rich traffic modeling.
+- [LLM-Guided DRL with Contrastive Safety Regularization](https://doi.org/10.1007/s44163-025-00812-w): Adds LLM guidance and contrastive safety regularization to deep reinforcement learning for autonomous driving.

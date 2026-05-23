@@ -3,5 +3,26 @@
 - [A Survey on Multimodal Large Language Models for Autonomous Driving](https://arxiv.org/abs/2311.12320)：关于感知、推理、规划、数据集与基准的基础综述。
 - [A Survey for Foundation Models in Autonomous Driving](https://arxiv.org/abs/2402.01105)：回顾基础模型在感知、预测、规划、仿真与评测中的使用。
 - [A Survey of World Models for Autonomous Driving](https://arxiv.org/abs/2501.11260)：综述用于预测、仿真、规划与评测的驾驶 world model。
+- [Knowledge Integration Strategies in Autonomous Vehicle Prediction and Planning](https://arxiv.org/abs/2502.10477)：综述自动驾驶车辆预测与规划中的知识集成策略。
 - [Multi-Agent Autonomous Driving Systems with Large Language Models: A Survey of Recent Advances](https://arxiv.org/abs/2502.16804)：回顾通信、协作、场景推理与决策支持。
+- [Trajectory Prediction for Autonomous Driving](https://arxiv.org/abs/2503.03262)：综述自动驾驶轨迹预测的进展、局限与未来方向。
+- [A Survey of Reinforcement Learning-Based Motion Planning for Autonomous Driving](https://arxiv.org/abs/2503.23650)：从驾驶任务视角综述基于强化学习的自动驾驶运动规划方法。
+- [Foundation Models for Autonomous Driving Systems](https://arxiv.org/abs/2504.00911)：提供将基础模型集成到自动驾驶基础设施、车载系统、评测与保障中的结构化文献路线图。
+- [Generative AI for Autonomous Driving](https://arxiv.org/abs/2505.08854)：综述自动驾驶全栈中的生成式 AI。核心思路是把图像、LiDAR、轨迹、occupancy、视频生成、LLM 引导推理、合成数据、数字孪生、评测与安全统一到一张前沿地图中。
 - [A Survey on Vision-Language-Action Models for Autonomous Driving](https://arxiv.org/abs/2506.24044)：连接感知、语言支撑推理与动作生成。
+- [Foundation Models for Autonomous Driving Perception](https://arxiv.org/abs/2509.08302)：围绕自动驾驶感知中的基础模型，综述传感、表示、推理与部署能力。
+- [Maps for Autonomous Driving](https://arxiv.org/abs/2509.12632)：综述高精地图、轻量地图和隐式地图的表示、生产流程，以及与端到端自动驾驶框架的结合。
+- [A Review of Learning-Based Motion Planning](https://arxiv.org/abs/2512.11944)：综述自动驾驶中的学习式运动规划，并以数据驱动最优控制框架讨论更安全、自适应的规划路线。
+- [Trends in motion prediction toward deployable and generalizable autonomy](https://doi.org/10.1108/FTROB-05-2025-0079)：综述面向可部署、可泛化自主系统的运动预测，连接感知与决策。
+- [Large (Vision) Language Models for Autonomous Vehicles](https://doi.org/10.1109/TITS.2025.3628969)：综述大语言模型与视觉语言模型在自动驾驶车辆中的当前趋势和未来方向。
+- [End-to-End Autonomous Driving](https://doi.org/10.1109/JIOT.2025.3635092)：综述端到端自动驾驶从经典范式到大模型赋能系统的演进。
+- [A survey of transformer architectures for autonomous driving](https://doi.org/10.1016/j.eswa.2025.130338)：综述 Transformer 架构在自动驾驶感知、预测、规划与控制中的使用。
+- [Large Language Models for Autonomous Driving](https://doi.org/10.1109/ITSC60802.2025.11423242)：综述 LLM 用于自动驾驶时的技术挑战、数据集与仿真环境。
+- [A survey of decision-making and planning methods for self-driving vehicles](https://doi.org/10.3389/fnbot.2025.1451923)：综述自动驾驶车辆的决策与规划算法，关注 neurorobotics 方法和部署挑战。
+- [Artificial Intelligence for Modeling and Simulation of Mixed Automated and Human Traffic](https://arxiv.org/abs/2604.12857)：综述用于自动驾驶车辆与人类驾驶车辆混合交通建模和仿真的 AI 方法。
+- [A comprehensive survey of pretrained models for autonomous driving](https://doi.org/10.1016/j.inffus.2026.104457)：综述预训练模型在自动驾驶全栈中的方法与应用。
+- [Design, features, and development of in-vehicle intelligent assistant](https://doi.org/10.1016/j.pmcj.2026.102210)：系统综述车内智能助手的设计、功能与发展趋势。
+- [Vision-Language Models in Autonomous Driving](https://doi.org/10.56028/aetr.16.1.558.2026)：综述 VLM 在自动驾驶交通场景理解、指代表达 grounding 与可解释自治中的作用。
+- [A Survey of Human Intelligence Augmented Artificial Intelligence](https://doi.org/10.1007/s42154-025-00361-z)：从自动驾驶角度综述人类智能增强 AI，关注人类知识如何支持开放环境中的稳健驾驶行为。
+- [A Survey on Future Physical World Generation for Autonomous Driving](https://doi.org/10.1145/3769748.3773345)：综述面向自动驾驶的未来物理世界生成，连接生成式仿真与未来驾驶场景建模。
+- [A Comprehensive Literature Review on Modular Approaches to Autonomous Driving](https://doi.org/10.3390/smartcities8030079)：综述道路与竞速场景中模块化自动驾驶系统的感知、规划和控制方法。

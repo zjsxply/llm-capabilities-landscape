@@ -160,11 +160,11 @@ def main() -> int:
         nargs="*",
         default=[
             "docs/en/03-downstream-applications/02-research/README.md",
-            "docs/en/03-downstream-applications/02-research/04-agent-harness.md",
-            "docs/en/03-downstream-applications/02-research/05-skill.md",
+            "docs/en/03-downstream-applications/02-research/05-agent-harness.md",
+            "docs/en/03-downstream-applications/02-research/06-skill.md",
             "docs/zh/03-downstream-applications/02-research/README.md",
-            "docs/zh/03-downstream-applications/02-research/04-agent-harness.md",
-            "docs/zh/03-downstream-applications/02-research/05-skill.md",
+            "docs/zh/03-downstream-applications/02-research/05-agent-harness.md",
+            "docs/zh/03-downstream-applications/02-research/06-skill.md",
         ],
     )
     args = parser.parse_args()

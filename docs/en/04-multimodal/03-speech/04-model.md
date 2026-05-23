@@ -1,0 +1,67 @@
+# 4.3.4 Model
+
+- [Learning Musical Representations for Music Performance Question Answering](https://arxiv.org/abs/2502.06710): Develops multimodal musical representations for audio-visual music performance QA, targeting dense audio and instrument-aware reasoning.
+- [SyncSpeech](https://arxiv.org/abs/2502.11094): Uses a temporal masked transformer for efficient, low-latency text-to-speech generation.
+- [SongGen](https://arxiv.org/abs/2502.13128): Generates vocals and accompaniment from text with a single-stage autoregressive transformer for text-to-song modeling.
+- [Slamming](https://arxiv.org/abs/2502.15814): Studies how to train a speech language model on one GPU within a day.
+- [DualSpec](https://arxiv.org/abs/2502.18952): Generates spatial audio from text using dual-spectrogram guided diffusion.
+- [LLaSE-G1](https://arxiv.org/abs/2503.00493): Uses LLaMA-based speech enhancement with incentives for generalization.
+- [UniWav](https://arxiv.org/abs/2503.00733): Unifies speech representation learning and generation in one pre-training framework.
+- [LLM-based curation for audio-video foundation models](https://arxiv.org/abs/2503.09205): Uses LLM-based data curation to train audio-video foundation models more data-efficiently.
+- [Scaling Analysis of Interleaved Speech-Text Language Models](https://arxiv.org/abs/2504.02398): Studies scaling behavior for interleaved speech-text language models.
+- [SIFT-50M](https://arxiv.org/abs/2504.09081): Provides large-scale multilingual speech instruction data and fine-tuning recipes for speech foundation models.
+- [Kimi-Audio](https://arxiv.org/abs/2504.18425): An open audio foundation model with a 12.5 Hz tokenizer, LLM-style architecture, flow-matching streaming detokenizer, large-scale audio pretraining, and post-training data construction.
+- [VITA-Audio](https://arxiv.org/abs/2505.03739): An efficient end-to-end large speech-language model using Multiple Cross-modal Token Prediction and progressive four-stage training to reduce streaming latency.
+- [Calm-Whisper](https://arxiv.org/abs/2505.12969): Reduces Whisper hallucinations on non-speech inputs by suppressing unstable attention heads.
+- [Llama-SMoP for AVSR](https://arxiv.org/abs/2505.14336): Improves LLM-based audiovisual speech recognition with a sparse mixture of projectors for efficient multimodal alignment.
+- [SALM-Duplex](https://arxiv.org/abs/2505.15670): Proposes a duplex speech-to-speech language-model architecture that directly models simultaneous user inputs and agent speech outputs.
+- [AudioMorphix](https://arxiv.org/abs/2505.16076): Provides training-free diffusion-based audio editing that changes target sounds while preserving the original recording.
+- [Speechless](https://arxiv.org/abs/2505.17417): Trains speech instruction following for low-resource languages without requiring speech data.
+- [Analyzing Mitigation Strategies for Catastrophic Forgetting in End-to-End Training of Spoken Language Models](https://arxiv.org/abs/2505.17496): Introduces Analyzing Mitigation Strategies for Catastrophic Forgetting in End-to-End Training of Spoken Language Models, a model-side contribution for Speech.
+- [BR-ASR](https://arxiv.org/abs/2505.19179): Adds scalable contextual-bias retrieval for ASR in speech LLM systems.
+- [OWSM v4](https://arxiv.org/abs/2506.00338): Improves open Whisper-style speech models through data scaling and cleaning.
+- [NTPP](https://arxiv.org/abs/2506.00975): A generative speech-language modeling paradigm for dual-channel spoken dialogue using next-token-pair prediction.
+- [SLM-S2ST](https://arxiv.org/abs/2506.04392): Builds a multimodal language model for direct speech-to-speech translation.
+- [Efficient speech-text joint decoding](https://arxiv.org/abs/2506.04518): Improves efficient joint decoding of speech and text within one speech language model.
+- [Audio-aware decoding for large audio-language models](https://arxiv.org/abs/2506.07233): Reduces object hallucination in large audio-language models through audio-aware decoding.
+- [ViSAGe](https://arxiv.org/abs/2506.12199): Generates spatial audio from video inputs.
+- [Stream-Omni](https://arxiv.org/abs/2506.13642): Aligns vision and speech to text with modality-specific mechanisms so one language-vision-speech model can support simultaneous multimodal interaction.
+- [Sonic4D](https://arxiv.org/abs/2506.15759): Generates spatial audio for immersive 4D scene exploration.
+- [OpusLM](https://arxiv.org/abs/2506.17611): Introduces a family of open unified speech language models.
+- [Aligning Spoken Dialogue Models from User Interactions](https://arxiv.org/abs/2506.21463): Aligns spoken-dialogue models with preferences collected from user interactions.
+- [Audio Flamingo 3](https://arxiv.org/abs/2507.08128): A fully open large audio-language model with a unified speech, sound, and music encoder, on-demand thinking, long-audio reasoning, and curriculum training.
+- [Continuous-Token Audio Language Modeling](https://arxiv.org/abs/2507.09834): Extends language-model-style masked next-token prediction to continuous-valued audio tokens for generative audio modeling.
+- [Step-Audio 2](https://arxiv.org/abs/2507.16632): An end-to-end multimodal speech model combining latent audio encoding, audio-token generation inside language modeling, and reasoning-centric reinforcement learning.
+- [SALM](https://arxiv.org/abs/2507.16724): Uses structured embeddings for spatial-audio understanding and editing.
+- [Audio-Thinker](https://arxiv.org/abs/2508.08039): A reinforcement-learning framework for large audio-language models using adaptive think-accuracy rewards and external feedback.
+- [FoleySpace](https://arxiv.org/abs/2508.12918): Generates vision-aligned binaural spatial audio.
+- [AHAMask](https://arxiv.org/abs/2509.01787): Improves reliable task specification for large audio-language models without explicit instructions.
+- [DreamAudio](https://arxiv.org/abs/2509.06027): Customizes text-to-audio diffusion generation by controlling fine-grained acoustic characteristics.
+- [Delayed Streams Modeling](https://arxiv.org/abs/2509.08753): Uses delayed streams for streaming sequence-to-sequence learning in low-latency generation settings.
+- [Thinking in Cocktail Party](https://arxiv.org/abs/2509.15612): Applies chain-of-thought and reinforcement learning to target-speaker automatic speech recognition.
+- [Qwen3-Omni](https://arxiv.org/abs/2509.17765): A single omni-modal model with a Thinker-Talker MoE architecture for text, image, audio, and video perception and generation, emphasizing real-time speech.
+- [StereoFoley](https://arxiv.org/abs/2509.18272): Generates object-aware stereo audio from video.
+- [Guiding Audio Editing with Audio Language Model](https://arxiv.org/abs/2509.21625): Uses audio language models to decompose and guide high-level audio-editing instructions.
+- [DiSTAR](https://arxiv.org/abs/2510.12210): Combines diffusion with scalable token autoregressive representations for controllable zero-shot speech generation.
+- [SARSteer](https://arxiv.org/abs/2510.17633): An inference-time safety steering method for large audio-language models that adapts refusal steering to audio inputs while reducing benign-speech over-refusal.
+- [ALMGuard](https://arxiv.org/abs/2510.26096): Introduces an audio-language-model guardrail that identifies safety-aligned shortcut features and uses them to defend against audio-specific jailbreak threats.
+- [Video Echoed in Music](https://arxiv.org/abs/2511.09585): Improves video-to-music generation by aligning semantic, temporal, and rhythmic cues between visual events and generated background music.
+- [Step-Audio-R1](https://arxiv.org/abs/2511.15848): Trains an audio reasoning model with Modality-Grounded Reasoning Distillation so chain-of-thought traces stay grounded in acoustic evidence.
+- [ViSAudio](https://arxiv.org/abs/2512.03036): Performs end-to-end video-driven binaural spatial audio generation.
+- [Seedance 1.5 pro](https://arxiv.org/abs/2512.13507): Introduces Native Audio-Visual Joint Generation Foundation Model, a model-side contribution for Speech.
+- [SAFE-QAQ](https://arxiv.org/abs/2601.01392): Uses reinforcement learning for end-to-end slow-thinking audio-text fraud detection that keeps acoustic cues instead of relying only on transcripts.
+- [LTX-2](https://arxiv.org/abs/2601.03233): Introduces Efficient Joint Audio-Visual Foundation Model, a model-side contribution for Speech.
+- [ImmersiveFlow](https://arxiv.org/abs/2601.12950): Uses flow matching to convert stereo audio into 7.1.4 spatial audio.
+- [Dynamic Multi-Expert Projectors](https://arxiv.org/abs/2601.19451): Uses dynamic multi-expert projectors and stabilized routing for multilingual speech recognition.
+- [AVERE](https://arxiv.org/abs/2602.07054): Applies preference optimization to improve audiovisual emotion reasoning and reduce hallucinated cue use.
+- [DashengTokenizer](https://arxiv.org/abs/2602.23765): A continuous audio tokenizer for unified audio understanding and generation that injects acoustic information into frozen semantic features.
+- [SarcasmMiner](https://arxiv.org/abs/2603.05275): Uses dual-track post-training for robust audiovisual sarcasm reasoning across text, acoustic, and visual cues.
+- [Paralinguistic Speech-LLM Alignment](https://arxiv.org/abs/2603.15981): Uses multi-task reinforcement learning to align paralinguistic understanding and generation in speech LLMs.
+- [Zipper-LoRA](https://arxiv.org/abs/2603.17558): Proposes dynamic parameter decoupling for speech-LLM multilingual automatic speech recognition.
+- [ACAVCaps](https://arxiv.org/abs/2603.24038): Creates large-scale fine-grained audio-caption supervision for training more diverse audio-understanding models.
+- [TASU2](https://arxiv.org/abs/2604.08384): Simulates controllable CTC-style supervision to align speech LLMs and improve low-resource speech adaptation.
+- [Audio Flamingo Next](https://arxiv.org/abs/2604.10905): A next-generation open audio-language model with larger reasoning data, 30-minute audio support, and timestamp-grounded temporal audio chain-of-thought.
+- [Audio-DeepThinker](https://arxiv.org/abs/2604.18187): A progressive reasoning-aware RL framework for audio-language models using hybrid reasoning-similarity rewards.
+- [Mega-ASR](https://arxiv.org/abs/2605.19833): Scales real-world acoustic simulation and combines progressive acoustic-to-semantic SFT with WER-gated policy optimization for robust ASR.
+- [LatentOmni](https://arxiv.org/abs/2605.22012): A unified audio-visual latent reasoning framework that interleaves text reasoning with audio-visual latent states.
+- [DiffMusic](https://doi.org/10.1109/TASLPRO.2026.3660263): Generates music from a single image using diffusion-based representations, fitting the audio-generation Model section rather than image editing.

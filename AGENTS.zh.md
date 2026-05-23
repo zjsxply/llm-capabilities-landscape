@@ -15,7 +15,7 @@
 - 英文写在 `docs/en/<chapter>/<topic>/`
 - 中文写在 `docs/zh/<chapter>/<topic>/`
 
-如果某个主题被拆成多个小节文件，主题概览统一使用 `README.md`。小节文件使用第三级序号和 slug，例如 `03-bench.md`。
+如果某个主题被拆成多个小节文件，主题概览统一使用 `README.md`。小节文件使用第三级序号和 slug，例如 `03-bench.md`、`04-model.md`、`05-agent-harness.md`。
 引言章是例外：它直接使用 `docs/<lang>/00-introduction/` 下的二级 Markdown 文件，例如 `01-landscape-structure.md`。
 
 中英文编号文档必须使用相同的基础文件名。
@@ -57,7 +57,7 @@ arXiv 路径统一使用规范论文 ID 作为目录名；只有任务明确依�
 
 当任务需要检索 skill 时，必须遵循以下流程：
 - 同时使用 `npx skills find` 和 `npx clawhub search`，检索能够完成 **【目标功能/任务】** 的 skill。
-- 还必须调用 SkillNet 接口 `http://api-skillnet.openkg.cn/v1/search?q=...`，将其作为检索 **【目标功能/任务】** 的额外一等来源。
+- 还必须调用 SkillNet API，例如 `curl -s 'http://api-skillnet.openkg.cn/v1/search?q=paper%20rebuttal'`，并将其结果作为检索 **【目标功能/任务】** 的额外一等来源。
 - 除技能市场外，还必须直接在 GitHub 上检索与 **【目标功能/任务】** 相关的仓库或 skill 目录；同样要尝试多组关键词，并将 GitHub 命中的结果视为后续实现核验的一等候选。
 - `npx clawhub` 的搜索限流较严格，查询时注意降频，优先串行执行，避免短时间内并发发起多次搜索。
 - SkillNet 接口同样是关键词检索，不是语义检索；必须尝试多组关键词，并把返回的 GitHub/blob/tree 链接规整到可验证、尽量稳定的公开入口地址。

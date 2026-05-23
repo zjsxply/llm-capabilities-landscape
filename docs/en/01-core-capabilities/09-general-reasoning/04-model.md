@@ -1,0 +1,33 @@
+# 1.9.4 Model
+
+- [Virgo: A Preliminary Exploration on Reproducing o1-like MLLM](https://arxiv.org/abs/2501.01904): Explores o1-like multimodal reasoning reproduction, useful as a model-side reference for deliberate MLLM reasoning.
+- [DeepSeek-R1](https://arxiv.org/abs/2501.12948): A field-defining reasoning-model post-training recipe using large-scale reinforcement learning with verifiable rewards to elicit self-reflection, verification, and long chain-of-thought behavior.
+- [Bridging Internal Probability and Self-Consistency for Effective and Efficient LLM Reasoning](https://arxiv.org/abs/2502.00511): Bridges internal answer probabilities and self-consistency to make LLM reasoning more accurate and efficient.
+- [Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models](https://arxiv.org/abs/2502.10835): Introduces back attention to diagnose and improve multi-hop reasoning in LLMs.
+- [Reasoning with Reinforced Functional Token Tuning](https://arxiv.org/abs/2502.13389): Uses reinforced functional token tuning to improve reasoning behavior at the token-function level.
+- [Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking](https://arxiv.org/abs/2502.13842): Scales internal thinking dynamically with depth-adaptive transformer computation.
+- [AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence](https://arxiv.org/abs/2502.13943): Splits reasoning steps automatically using model confidence, targeting adaptive reasoning length.
+- [L1](https://arxiv.org/abs/2503.04697): Introduces Controlling How Long A Reasoning Model Thinks With Reinforcement Learning, a model-side contribution for General Reasoning.
+- [FastCuRL](https://arxiv.org/abs/2503.17287): A curriculum reinforcement-learning recipe for R1-like reasoning models that progressively scales context length and controls prompt difficulty.
+- [Long Is More Important Than Difficult](https://arxiv.org/abs/2503.18069): A synthetic long-reasoning data method showing that small long-CoT datasets can train stronger reasoning behavior than difficulty-focused data alone.
+- [SimpleRL-Zoo](https://arxiv.org/abs/2503.18892): Introduces Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild, a model-side contribution for General Reasoning.
+- [Think When You Need: Self-Adaptive Chain-of-Thought Learning](https://arxiv.org/abs/2504.03234): Learns when to invoke chain-of-thought so models reserve deliberation for harder queries.
+- [Concise Reasoning via Reinforcement Learning](https://arxiv.org/abs/2504.05185): Uses reinforcement learning to encourage concise reasoning without discarding solution quality.
+- [Seed1.5-Thinking](https://arxiv.org/abs/2504.13914): Introduces Advancing Superb Reasoning Models with Reinforcement Learning, a model-side contribution for General Reasoning.
+- [Process Reward Models That Think](https://arxiv.org/abs/2504.16828): Introduces Process Reward Models That Think, a model-side contribution for General Reasoning.
+- [Scalable Chain of Thoughts via Elastic Reasoning](https://arxiv.org/abs/2505.05315): Elastic reasoning scales chain-of-thought length to match problem difficulty.
+- [Learning When to Think: Shaping Adaptive Reasoning in R1-Style Models via Multi-Stage RL](https://arxiv.org/abs/2505.10832): Shapes adaptive reasoning in R1-style models with multi-stage reinforcement learning.
+- [AdaCoT](https://arxiv.org/abs/2505.11896): Introduces Pareto-Optimal Adaptive Chain-of-Thought Triggering via Reinforcement Learning, a model-side contribution for General Reasoning.
+- [Game-RL](https://arxiv.org/abs/2505.13886): Synthesizes verifiable multimodal game data and uses reinforcement learning to strengthen VLM general reasoning.
+- [Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](https://arxiv.org/abs/2505.15612): Uses adaptive length-based reward shaping to train efficient reasoning.
+- [PGPO: Enhancing Agent Reasoning via Pseudocode-style Planning Guided Preference Optimization](https://arxiv.org/abs/2506.01475): Guides preference optimization with pseudocode-style planning to improve agent reasoning.
+- [Do Thinking Tokens Help or Trap? Towards More Efficient Large Reasoning Model](https://arxiv.org/abs/2506.23840): Analyzes when thinking tokens help or trap reasoning models, clarifying efficient reasoning trade-offs.
+- [Promoting Efficient Reasoning with Verifiable Stepwise Reward](https://arxiv.org/abs/2508.10293): Uses verifiable stepwise rewards to promote efficient reasoning rather than only final-answer reward.
+- [NVIDIA Nemotron Nano 2](https://arxiv.org/abs/2508.14444): Introduces Accurate and Efficient Hybrid Mamba-Transformer Reasoning Model, a model-side contribution for General Reasoning.
+- [VCRL: Variance-based Curriculum Reinforcement Learning for Large Language Models](https://arxiv.org/abs/2509.19803): Applies variance-based curriculum reinforcement learning to train large language models for reasoning.
+- [T3](https://arxiv.org/abs/2510.12264): Reduces belief deviation in reinforcement learning for active reasoning tasks that require iterative evidence updates.
+- [Latent-DARM](https://arxiv.org/abs/2603.09184): Bridges discrete diffusion and autoregressive language modeling to support globally revisable reasoning and planning.
+- [Information Self-Locking](https://arxiv.org/abs/2603.12109): Analyzes how reinforcement learning can lock active-reasoning agents into early information states, clarifying a training failure mode for iterative reasoning.
+- [CoT2-Meta](https://arxiv.org/abs/2603.28135): A training-free metacognitive control method for test-time reasoning that allocates compute across expansion, pruning, repair, stopping, and fallback.
+- [Process Supervision via Verbal Critique](https://arxiv.org/abs/2604.21611): Uses step-level verbal critiques as process supervision so reasoning improvement does not rely only on final-answer rewards.
+- [Query-Conditioned Test-Time Self-Training](https://arxiv.org/abs/2605.13369): Adapts an LLM around the current query at test time, turning self-training into a per-instance reasoning-improvement mechanism.

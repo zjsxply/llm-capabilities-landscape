@@ -2,12 +2,11 @@
 
 > 上级章节：1. 基础能力
 
-说明：写作与 DeepResearch 有重叠，但评测目标不同。写作类任务主要看在给定主题、材料、风格、结构、长度和受众约束下，能否产出高质量文本；核心失败模式是跑题、结构失控、风格不一致、冗余、叙事/论证不连贯和不满足格式/长度约束。DeepResearch 则主要看开放信息获取、来源筛选、证据支撑、引用一致性和多源综合，写作只是它的最后表达阶段。因此这里保留为独立基础能力；凡是“先搜证据再写报告”的工作，优先放在 [2.4 深度研究](../../02-agent-capabilities/04-deep-research/README.md)，本节只交叉记录对写作质量、长文结构或成稿流程有直接贡献的代表性工作。
-
-## 小节
+## Sections
 
 - [1.14.1 Leaderboard](01-leaderboard.md)
 - [1.14.2 Survey](02-survey.md)
 - [1.14.3 Bench](03-bench.md)
-- [1.14.4 Agent Harness](04-agent-harness.md)
-- [1.14.5 Skill](05-skill.md)
+- [1.14.4 Model](04-model.md)
+- [1.14.5 Agent Harness](05-agent-harness.md)
+- [1.14.6 Skill](06-skill.md)

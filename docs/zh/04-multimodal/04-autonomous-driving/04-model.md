@@ -1,0 +1,101 @@
+# 4.4.4 Model
+
+- [DiffusionDrive](https://arxiv.org/abs/2411.15139)：面向端到端自动驾驶的 truncated diffusion policy，使用多模态先验锚点、缩短去噪日程和级联 diffusion decoder。
+- [Traj-LLM](https://doi.org/10.1109/TIV.2024.3418522)：将预训练大语言模型用于自动驾驶轨迹预测。
+- [Cloud-edge MLLM ADAS](https://doi.org/10.1109/JIOT.2024.3509628)：构建云边协同 MLLM ADAS，在边缘端微调 CogVLM2、云端使用 GPT-4o 推理，在驾驶辅助质量、延迟、能耗与 QoS 之间权衡。
+- [AdaWM](https://arxiv.org/abs/2501.13072)：使用自适应 world model 做自动驾驶规划。
+- [Diffusion-Based Planning for Autonomous Driving with Flexible Guidance](https://arxiv.org/abs/2501.15564)：用带灵活引导的扩散式规划生成类人驾驶行为。
+- [TeLL-Drive](https://arxiv.org/abs/2502.01387)：利用教师大模型指导强化学习，提升自动驾驶决策。
+- [Robust Autonomy Emerges from Self-Play](https://arxiv.org/abs/2502.03349)：通过 self-play 训练更鲁棒的自动驾驶行为。
+- [Occ-LLM](https://arxiv.org/abs/2502.06419)：用基于 occupancy 的大语言模型增强自动驾驶。
+- [Semi-Supervised Vision-Centric 3D Occupancy World Model](https://arxiv.org/abs/2502.07309)：构建面向自动驾驶的半监督视觉中心 3D occupancy world model。
+- [MaskGWM](https://arxiv.org/abs/2502.11663)：通过视频 mask 重建构建可泛化的 driving world model。
+- [RAD](https://arxiv.org/abs/2502.13144)：用大规模 3DGS 强化学习训练端到端驾驶策略。
+- [Building reliable sim driving agents by scaling self-play](https://arxiv.org/abs/2502.14706)：通过扩展 self-play 训练可靠驾驶仿真智能体，用于测试与压力场景。
+- [CurricuVLM](https://arxiv.org/abs/2502.15119)：用个性化安全关键课程学习提升自动驾驶视觉语言模型表现。
+- [VLM-E2E](https://arxiv.org/abs/2502.18042)：在端到端自动驾驶中加入多模态驾驶员注意力融合。
+- [AlphaDrive](https://arxiv.org/abs/2503.07608)：面向自动驾驶 VLM 的强化学习和推理框架，使用针对规划和长尾驾驶决策的 GRPO 式奖励。
+- [FASIONAD++](https://arxiv.org/abs/2503.08162)：结合高层指令、信息瓶颈与自适应反馈，以增强自动驾驶安全性。
+- [Finetuning Generative Trajectory Model with RLHF](https://arxiv.org/abs/2503.10434)：用人类反馈强化学习微调生成式轨迹模型。
+- [SparseAlign](https://arxiv.org/abs/2503.12982)：构建全稀疏协同目标检测框架，用于车路协同感知。
+- [FM4SU](https://arxiv.org/abs/2503.18730)：用知识图谱构造符号化驾驶场景基础模型，把 BEV 场景图序列化为 token 序列，用于学习场景演化与下一场景预测。
+- [TraF-Align](https://arxiv.org/abs/2503.19391)：面向自动驾驶异步多智能体感知进行轨迹感知特征对齐。
+- [GAIA-2](https://arxiv.org/abs/2503.20523)：面向自动驾驶的可控多视角生成式 world model，基于自车动态、交通参与者布局、环境因素和道路语义等结构化条件。
+- [OpenDriveVLA](https://arxiv.org/abs/2503.23463)：vision-language-action 模型，将 2D 与 3D 视觉 token 对齐到语言嵌入，并自回归解码具备 grounding 的驾驶动作。
+- [WoTE](https://arxiv.org/abs/2504.01941)：引入 BEV world model 做在线轨迹评估，通过预测未来 BEV 状态，让端到端驾驶策略在执行前比较候选规划。
+- [On-board LLMs for autonomous driving](https://arxiv.org/abs/2504.11514)：将本地 LLM 模块与 MPC、RAG、LoRA 微调和量化结合，在不依赖云端的情况下增强驾驶控制与人机交互。
+- [LightEMMA](https://arxiv.org/abs/2505.00284)：提出面向自动驾驶的模型侧方法，核心围绕 Lightweight End-to-End Multimodal Model for Autonomous Driving。
+- [DualDiff](https://arxiv.org/abs/2505.01857)：使用带语义融合的双分支扩散模型进行自动驾驶场景重建。
+- [LVLM-MPC Collaboration for Autonomous Driving](https://arxiv.org/abs/2505.04980)：将大视觉语言模型与自动生成的 MPC 控制器结合，把高层驾驶指令转化为受安全约束且可扩展的控制策略。
+- [Human-Centric LLM-Guided Driving](https://arxiv.org/abs/2505.06875)：将快速控制、慢速大模型指导和强化学习结合，用于以人为中心的自动驾驶。
+- [LD-Scene](https://arxiv.org/abs/2505.11247)：用大模型引导扩散生成可控的对抗性安全关键驾驶场景。
+- [DriveMoE](https://arxiv.org/abs/2505.16278)：在 VLA 驾驶模型中加入场景专用视觉专家和行为专用动作专家，用 MoE 路由动态选择摄像头信息与驾驶行为模块。
+- [Raw2Drive](https://arxiv.org/abs/2505.16394)：提出面向自动驾驶的模型侧方法，核心围绕 Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving (in CARLA v2)。
+- [ReasonPlan](https://arxiv.org/abs/2505.20024)：统一场景预测与决策推理，用于闭环自动驾驶规划。
+- [S4-Driver](https://arxiv.org/abs/2505.24139)：通过可扩展自监督训练和稀疏 3D 视觉表示，将多模态语言模型特征迁移到端到端运动规划。
+- [ROAD](https://arxiv.org/abs/2505.24317)：结合交通法规知识图谱、VLM 推理和 RAG 式奖励分配，使自动驾驶强化学习不只依赖手写奖励，而能显式优化事故责任与守法行为。
+- [ReCogDrive](https://arxiv.org/abs/2506.08052)：通过强化训练把 VLM 驾驶认知注入 diffusion planner，用连续轨迹生成替代直接在语言空间输出动作。
+- [R2SE](https://arxiv.org/abs/2506.09800)：提出面向端到端驾驶的强化细化流程：识别困难样本、训练残差 specialist policy，并在保留 generalist policy 的同时扩展策略容量。
+- [AutoVLA](https://arxiv.org/abs/2506.13757)：驾驶 VLA 模型，把连续轨迹 token 化为可行离散动作，并结合监督训练与强化微调。
+- [Drive-R1](https://arxiv.org/abs/2506.18234)：面向驾驶领域的 VLM，通过监督式推理数据和强化学习连接场景推理与运动规划。
+- [World4Drive](https://arxiv.org/abs/2507.00603)：基于视觉基础模型特征构建 intention-aware physical latent world model，用于生成和评估多模态规划轨迹。
+- [ReAL-AD](https://arxiv.org/abs/2507.12499)：提出面向端到端自动驾驶的 reasoning-augmented learning，将决策过程组织为驾驶策略、驾驶决策与驾驶操作三个层级。
+- [Orbis](https://arxiv.org/abs/2507.13162)：面向长时程预测的紧凑 driving world model，研究 hybrid tokenization 和连续自回归建模。
+- [Cooptrack](https://arxiv.org/abs/2507.19239)：研究端到端协同时序感知，用于高效自动驾驶跟踪与感知。
+- [TurboTrain](https://arxiv.org/abs/2508.04682)：通过多 Agent 时空预训练与梯度冲突抑制，更高效地训练协同驾驶感知和预测模型。
+- [EvaDrive](https://arxiv.org/abs/2508.09158)：将端到端规划表述为多目标对抗式策略优化，用轨迹生成器、可训练 critic 和 Pareto 选择实现多轮规划细化。
+- [ImagiDrive](https://arxiv.org/abs/2508.11428)：在统一的想象与规划框架中结合 VLM 与 driving world model，用于自动驾驶决策。
+- [ViLaD](https://arxiv.org/abs/2508.12603)：将视觉语言扩散框架用于端到端自动驾驶，以扩散式规划替代顺序动作生成。
+- [ReflectDrive](https://arxiv.org/abs/2509.20109)：reflective VLA 框架，用 discrete diffusion 和 latent reflection 改善安全关键轨迹生成。
+- [DriveMind](https://arxiv.org/abs/2510.04532)：基于 DriveMind 数据和 SFT、GRPO 训练检验 plan-aligned reasoning 是否真正驱动轨迹规划，揭示 VLM 驾驶模型中的 reasoning-planning disconnect。
+- [DriveVLA-W0](https://arxiv.org/abs/2510.12796)：通过未来图像预测加入密集 world-model supervision，缓解稀疏动作标签的 supervision deficit。
+- [DiffVLA++](https://arxiv.org/abs/2510.17148)：通过指标引导对齐连接认知推理与端到端自动驾驶。
+- [Map-World](https://arxiv.org/abs/2511.20156)：将 masked action planning 与 path-weighted BEV world model 结合，在不依赖手工 anchor 或单一 teacher mode 的情况下训练多模态轨迹假设。
+- [DriveVGGT](https://arxiv.org/abs/2511.22264)：将 visual geometry transformer 适配到多摄像头自动驾驶，用 temporal video attention 与标定约束提升尺度一致的场景重建。
+- [dVLM-AD](https://arxiv.org/abs/2512.04459)：通过可控推理增强自动驾驶扩散视觉语言模型，以应对分布外驾驶场景。
+- [LA-RL](https://arxiv.org/abs/2512.05686)：在高速公路自动驾驶强化学习中加入语言动作引导与安全保证。
+- [Mimir](https://arxiv.org/abs/2512.07130)：使用带不确定性传播的层次化目标驱动扩散进行端到端自动驾驶规划。
+- [DiffusionDriveV2](https://arxiv.org/abs/2512.07745)：对 truncated diffusion driving policy 做 RL-constrained 优化，同时保持多模态轨迹多样性。
+- [WAM-Diff](https://arxiv.org/abs/2512.11872)：将掩码扩散、专家混合与在线强化学习用于自动驾驶 VLA 轨迹生成。
+- [MindDrive](https://arxiv.org/abs/2512.13636)：通过在线强化学习训练的驾驶 VLA 模型，用两组 LoRA experts 分别承担场景决策和轨迹动作生成。
+- [LLM-Based V2X Sensor Data Fusion](https://doi.org/10.1109/ICCCN65249.2025.11133978)：使用基于 LLM 的 V2X 多模态传感器融合以提升道路安全与隐私。
+- [Modular VLA for Autonomous Driving](https://doi.org/10.1109/ICCE-Asia67487.2025.11263635)：在模块化 VLA 自动驾驶设置中连接感知、语言推理与动作。
+- [VLR-Driver](https://doi.org/10.1109/ICCV51701.2025.02503)：构建面向具身自动驾驶的大型视觉-语言-推理模型。
+- [CCMA](https://doi.org/10.1016/j.eswa.2025.127717)：使用基于 LLM 的级联协作多 Agent 推理处理自动驾驶并线场景。
+- [PriorMotion](https://doi.org/10.1109/ICCV51701.2025.02533)：提出面向自动驾驶场景的类无关生成式运动预测模型，利用 raster-vector motion-field prior 建模未来运动。
+- [Autonomous Driving Planning Based on Large Language Model](https://doi.org/10.1109/VTC2025-Spring65109.2025.11174944)：将基于 LLM 的规划用于协作式自动驾驶决策。
+- [LLM-Guided DRL for Safe AV Decisions](https://doi.org/10.1016/j.trc.2025.105511)：用大模型指导深度强化学习，以改善自动驾驶车辆的安全决策。
+- [LLM-augmented hierarchical reinforcement learning](https://doi.org/10.1016/j.eswa.2025.128736)：将类人驾驶决策建模为 LLM 增强的层级强化学习问题，将高层决策引导与策略优化分层处理。
+- [LoCo-VLM](https://doi.org/10.1109/ITSC60802.2025.11423082)：通过事件触发、松耦合 VLM 分支和 Signal Temporal Logic 一致性检查，把 VLM 决策接入端到端规划，同时降低幻觉与延迟风险。
+- [HanoiWorld](https://arxiv.org/abs/2601.01577)：使用 JEPA 风格世界模型训练自动车辆控制器，强调安全感知的潜在预测而非像素重建。
+- [ThinkDrive](https://arxiv.org/abs/2601.04714)：通过链式思维引导的渐进强化微调提升自动驾驶推理与决策能力。
+- [Scene-Adaptive Diffusion Candidate Sets](https://arxiv.org/abs/2602.03112)：通过场景自适应扩散细化生成端到端自动驾驶轨迹候选集。
+- [SDD Planner](https://arxiv.org/abs/2602.04329)：使用扩散式规划在轨迹安全约束与驾驶风格之间取得平衡。
+- [SteerVLA](https://arxiv.org/abs/2602.08440)：在长尾驾驶场景中引导视觉-语言-动作模型，将高层语义推理与可落地车辆控制结合起来。
+- [Masked VLA Diffusion for Driving](https://arxiv.org/abs/2602.20577)：使用掩码视觉-语言-动作扩散提升端到端自动驾驶控制的效率与可解释性。
+- [NoRD](https://arxiv.org/abs/2602.21172)：数据高效 driving VLA 路线，在没有密集推理标注时使用 difficulty-aware GRPO 修正。
+- [Explicit Learning from Failures for VLA Driving](https://arxiv.org/abs/2603.01063)：在强化优化过程中显式学习失败案例，从而提升自动驾驶 VLA 策略。
+- [KnowDiffuser](https://arxiv.org/abs/2603.10441)：结合知识引导、扩散规划和大模型推理，用于自动驾驶规划。
+- [Senna-2](https://arxiv.org/abs/2603.11219)：通过面向一致性的三阶段训练范式，对齐高层 VLM 决策和低层轨迹规划。
+- [Collaborative Imitation and Reinforcement Learning](https://arxiv.org/abs/2603.13842)：在端到端自动驾驶中并行结合模仿学习与强化学习，而不是只做顺序微调。
+- [PerlAD](https://arxiv.org/abs/2603.14908)：使用基于伪仿真的强化学习改进闭环端到端自动驾驶策略。
+- [ADV-0](https://arxiv.org/abs/2603.15221)：通过闭环极小极大优化联合训练驾驶策略与长尾对抗场景。
+- [DriveVLM-RL](https://arxiv.org/abs/2603.18315)：通过静态与动态路径学习 VLM 派生语义奖励，用于更安全的自动驾驶控制。
+- [Sim2Real-AD](https://arxiv.org/abs/2604.03497)：提供模块化仿真到现实框架，用于部署视觉语言模型指导的自动驾驶强化学习。
+- [DriveVA](https://arxiv.org/abs/2604.04198)：驾驶 world model，在共享 latent 生成过程中联合解码未来视觉预测和动作序列。
+- [VLA-World](https://arxiv.org/abs/2604.09059)：把未来帧想象与 VLA 推理统一起来，先生成可行动作约束下的未来场景，再用该想象状态修正轨迹规划。
+- [FeaXDrive](https://arxiv.org/abs/2604.12656)：为端到端自动驾驶加入可行性感知的轨迹中心扩散规划。
+- [ConFixGS](https://arxiv.org/abs/2605.09688)：用置信度感知的扩散先验修复自动驾驶场景中的前馈式三维高斯表示。
+- [MindVLA-U1](https://arxiv.org/abs/2605.12624)：统一流式 VLA 架构，在一次前向传播中结合可选自回归语言 token 与 flow-matching 连续动作轨迹。
+- [MAPLE](https://arxiv.org/abs/2605.14201)：面向驾驶 VLA 的 latent multi-agent rollout 方法，结合监督微调和全局及 agent-specific 奖励的强化学习。
+- [SafeAlign-VLA](https://arxiv.org/abs/2605.19524)：面向驾驶 VLA 的安全对齐框架，结合 counterfactual safety pairing、负样本增强监督学习和强化学习。
+- [HEAT](https://arxiv.org/abs/2605.19631)：用 trajectory-guided world model 提升跨城市、传感器和交通分布的异构端到端驾驶。
+- [CoPhy](https://arxiv.org/abs/2605.21139)：把 VLM 知识蒸馏进 BEV encoder，并用自回归 BEV world model 支撑前瞻式动作优化。
+- [LVDrive](https://arxiv.org/abs/2605.22089)：在预训练视觉骨干监督下加入高层 latent 空间未来场景预测，以增强 driving VLA 训练。
+- [DuSA](https://doi.org/10.1016/j.knosys.2026.116002)：使用结合 LLM 引导强化学习的双循环自学习框架改进自动驾驶策略。
+- [NavDrive](https://doi.org/10.1109/TITS.2026.3650852)：使用导航引导的 diffusion policy 改进端到端自动驾驶安全性。
+- [DiffScene](https://doi.org/10.1609/aaai.v39i8.32951)：用扩散方法生成自动驾驶安全关键场景。
+- [LiDAR-LLM](https://doi.org/10.1609/aaai.v39i9.33001)：探索将 LLM 用于驾驶场景中的 3D LiDAR 理解。
+- [VLA-MP](https://doi.org/10.3390/s25196163)：结合 VLA 感知与物理约束动作生成用于自动驾驶。
+- [Social Predictive Intelligent Driver Model](https://doi.org/10.1007/s42154-024-00289-w)：提出面向自动驾驶仿真的社会感知驾驶员行为模型，用于刻画交互密集的交通场景。
+- [LLM-Guided DRL with Contrastive Safety Regularization](https://doi.org/10.1007/s44163-025-00812-w)：将大模型指导和对比式安全正则加入自动驾驶深度强化学习。

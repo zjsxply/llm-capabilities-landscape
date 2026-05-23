@@ -1,0 +1,29 @@
+# 2.3.4 Model
+
+- [RAG-Gym](https://arxiv.org/abs/2502.13957): Optimizes reasoning and search agents with process supervision, actor tuning, critic training, and reward-source analysis for agentic RAG.
+- [DeepRetrieval](https://arxiv.org/abs/2503.00223): Trains LLM query generators with retrieval metrics as rewards, improving evidence-seeking and real-search-engine recall without supervised reference queries.
+- [Search-R1](https://arxiv.org/abs/2503.09516): Trains LLMs with reinforcement learning to interleave reasoning and search-engine use for multi-hop information seeking.
+- [RAG-RL](https://arxiv.org/abs/2503.12759): Trains answer generators to identify and cite relevant evidence from larger retrieved sets, improving multi-hop QA under noisy retrieval contexts.
+- [ReSearch](https://arxiv.org/abs/2503.19470): Uses reinforcement learning to teach LLMs to reason with search on complex multi-hop questions.
+- [s3](https://arxiv.org/abs/2505.14146): Decouples the searcher from the generator and trains search behavior with a downstream answer-gain reward, improving agentic RAG with only small training data.
+- [End-to-End Optimization of LLM-Driven Multi-Agent Search Systems](https://arxiv.org/abs/2506.02718): Introduces heterogeneous-group policy optimization for role-specialized search agents, optimizing global multi-agent search success instead of isolated prompt tuning.
+- [R-Search](https://arxiv.org/abs/2506.04185): Uses multi-reward reinforcement learning to teach LLMs when to search, when to reason, and how to integrate retrieved evidence in complex tasks.
+- [RAG-R1](https://arxiv.org/abs/2507.02962): Trains RAG systems to use multi-query parallelism during reasoning, reducing single-query brittleness while improving answer quality.
+- [WebShaper](https://arxiv.org/abs/2507.15061): Synthesizes information-seeking trajectories agentically to train web-search agents under scarce trajectory data.
+- [RL-QR](https://arxiv.org/abs/2507.23242): Learns query rewriting with annotation-free reinforcement learning and verifiable search rewards.
+- [SSRL](https://arxiv.org/abs/2508.10874): Introduces Self-Search Reinforcement Learning, a model-side contribution for Web Search.
+- [Scaling Web Agent Training through Automatic Data Generation and Fine-grained Evaluation](https://openreview.net/forum?id=63JtmQL7dv): Uses automatic data generation and fine-grained evaluation to scale web-agent training beyond hand-built trajectories.
+- [Web-Shepherd](https://openreview.net/forum?id=G2kMroO9UV) ([code](https://github.com/kyle8581/Web-Shepherd)): Builds process reward models for reinforcing web agents, shifting feedback from final task success toward trajectory-quality supervision.
+- [How to Train Your LLM Web Agent](https://openreview.net/forum?id=67xkPEM3bZ): Diagnoses open web-agent training statistically, clarifying which data, reward, and optimization choices drive gains.
+- [Information Gain-based Policy Optimization](https://arxiv.org/abs/2510.14967): Introduces Simple and Effective Approach for Multi-Turn Search Agents, a model-side contribution for Web Search.
+- [WebSeer](https://arxiv.org/abs/2510.18798): Trains deeper search agents with self-reflection cold start and reinforcement learning over real web-based environments.
+- [SmartSearch](https://arxiv.org/abs/2601.04888): Guides query refinement in search agents with process rewards rather than only final-answer supervision.
+- [TreePS-RAG](https://arxiv.org/abs/2601.06922): Uses tree-based process supervision for reinforcement learning in agentic RAG without intermediate labels.
+- [Dr. Zero](https://arxiv.org/abs/2601.07055): Introduces Self-Evolving Search Agents without Training Data, a model-side contribution for Web Search.
+- [Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL](https://openreview.net/forum?id=MfPDdPUGKi): Trains long-horizon search agents with large-scale end-to-end reinforcement learning, directly extending search-agent model training toward deep-research-style tasks.
+- [WebArbiter](https://openreview.net/forum?id=canA6Ef0RP): Trains a generative reasoning process reward model for web agents, making reward modeling itself a search-agent model contribution.
+- [VSearcher](https://arxiv.org/abs/2603.02795): Turns multimodal models into long-horizon search agents through iterative-injection data synthesis and SFT-then-RL over real web tools.
+- [OASES](https://arxiv.org/abs/2604.03675): Co-trains search generation and outcome-aligned evaluation to improve agentic search behavior.
+- [MolmoWeb](https://arxiv.org/abs/2604.08516) ([code](https://github.com/allenai/molmoweb)): Releases a visual web-agent model family and MolmoWebMix training data for screenshot-only web action policies.
+- [Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](https://arxiv.org/abs/2604.14267): Introduces Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization, a model-side contribution for Web Search.
+- [CuSearch](https://arxiv.org/abs/2605.11611): Uses search-depth curriculum rollout sampling for RLVR-based agentic RAG, reallocating training updates toward trajectories with denser retrieval decisions.

@@ -62,7 +62,7 @@
 
 本项目采用半自动化方式维护。最新关注热点与研究成果会从引文网络、模型厂商 model card，以及顶会最新接收论文中提取，再经 agent 辅助筛选后合并进图谱。具体流程见本仓库维护 skill：[.agents/skills/llm-landscape-maintainer/SKILL.md](.agents/skills/llm-landscape-maintainer/SKILL.md)。
 
-编号研究图谱内容按 `docs/<language>/<chapter>/<topic>/README.md` 加 `03-bench.md` 等小节文件组织；引言章直接使用 `docs/<language>/00-introduction/` 下的二级 Markdown 文件。
+编号研究图谱内容按 `docs/<language>/<chapter>/<topic>/README.md` 加 `03-bench.md`、`04-model.md`、`05-agent-harness.md` 等小节文件组织；引言章直接使用 `docs/<language>/00-introduction/` 下的二级 Markdown 文件。
 
 ## English Version
 

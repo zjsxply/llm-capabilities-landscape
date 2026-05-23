@@ -4,16 +4,16 @@
 - [SciCode](https://arxiv.org/abs/2407.13168)：评什么：科研/科学场景的真实编码任务（scientist-curated research coding）。核心思想：题目更贴近科研问题分解与可验证测试，强调“知识召回 + 推理 + 代码合成”的组合能力。（[开源代码](https://github.com/scicode-bench/SciCode)）
 - [SWE-bench Multimodal](https://arxiv.org/abs/2410.03859)：评什么：视觉/前端 JavaScript 软件库中的 issue resolving。核心思想：把图片化问题陈述、视觉测试与跨语言前端仓库纳入 SWE-bench 范式，用 617 个任务检验 agent 是否能从 Python 文本 bug fixing 泛化到视觉软件域。（[项目页](https://www.swebench.com/multimodal.html)）
 - [CoReQA](https://arxiv.org/abs/2501.03447)：评测代码仓库问答能力。核心思想是测试模型能否理解 repository-level code context 并回答自然语言问题，用代码库理解补足生成、补全和修 bug 类评测。
-- `SWE-Bench Verified`：评什么：SWE-Bench 的更可靠可复现子集（强调可评测性与环境稳定）。核心思想：以更严格的数据与评测筛选降低评测噪声。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified)）
 - [SyncBench](https://arxiv.org/abs/2502.06994)：评什么：协作软件工程中的 out-of-sync 恢复能力。核心思想：从真实 GitHub 协作演化中构造 24,332 个可执行场景，测试 agent 在环境状态变化后能否重新同步、沟通与修复。（[项目页](https://xhguo7.github.io/SyncMind/)）
-- [Aider Polyglot](https://github.com/Aider-AI/polyglot-benchmark)：评什么：跨语言编程/修改任务的对比与评分。核心思想：用多语言样本与统一评分规则，衡量“跨语言的真实改码能力”。
 - [Copilot Arena](https://arxiv.org/abs/2502.09328)（[项目页](https://gclef-cmu.org/research/2025copilotarena/)，[开源代码](https://github.com/lmarena/copilot-arena)）：评什么：真实开发环境中的代码 LLM 偏好与交互质量。核心思想：在 IDE 内收集模型成对比较和用户偏好，补足“补丁是否通过测试”之外的 code assistant 体验、上下文使用和编辑建议质量。
+- `SWE-Bench Verified`：评什么：SWE-Bench 的更可靠可复现子集（强调可评测性与环境稳定）。核心思想：以更严格的数据与评测筛选降低评测噪声。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified)）
 - [SWE-Lancer / SWE-Lancer Diamond](https://arxiv.org/abs/2502.12115)：评什么：更贴近真实工程协作/外包式软件任务的端到端交付能力（从需求到实现与验收）。核心思想：以更接近真实开发流程的任务设定，强调可验证交付与流程执行；公开榜单常以 Diamond split 追踪更高价值任务。
+- [Aider Polyglot](https://github.com/Aider-AI/polyglot-benchmark)：评什么：跨语言编程/修改任务的对比与评分。核心思想：用多语言样本与统一评分规则，衡量“跨语言的真实改码能力”。
 - [SWEE-Bench / SWA-Bench](https://arxiv.org/abs/2503.07701)：评什么：由 SetUpAgent 自动构造的更大规模 repo-level issue resolving 与应用型软件任务。核心思想：把历史依赖环境重建、测试执行和结果解析自动化，用于扩展 SWE-bench 的仓库覆盖面并暴露分布差异。
 - [Multi-SWE-Bench](https://arxiv.org/abs/2504.02605)：评什么：多语言 issue-resolving 软件工程任务（跨语言仓库、跨语言依赖/工具链）。核心思想：在多语言仓库上复用 SWE 评测范式，并同步发布多语言兼容 agent/harness 改版以支撑可复现评测（7 种语言、1632 实例）。（[开源代码](https://github.com/multi-swe-bench/multi-swe-bench)）
-- [SWE-bench Multilingual](https://www.swebench.com/multilingual)：评什么：多语言代码库上的 SWE-bench 式 issue resolving。核心思想：尽量复用 SWE-bench 的数据/评测基础设施，把多语言能力作为“评测层扩展”纳入同一套 harness（300 题、9 种语言）。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Multilingual)，[开源代码](https://github.com/SWE-bench/SWE-bench)）
 - [R2E-Gym](https://arxiv.org/abs/2504.07164)：评什么：可执行 SWE agent 训练与评测环境、以及 test-time scaling。核心思想：用 SYNGEN 从提交中合成带执行环境的 issue-like 任务，并结合执行式与 execution-free verifier 支撑开放权重 SWE agent 训练。（[项目页](https://r2e-gym.github.io/)，[开源代码](https://github.com/R2E-Gym/R2E-Gym)）
 - [SWE-PolyBench](https://arxiv.org/abs/2504.08703)：评什么：多语言 repo-level SWE 评测与对照平台。核心思想：更偏 evaluation harness，把不同语言/生态下的 SWE 任务放到统一对比协议中。（[开源代码](https://github.com/amazon-science/SWE-PolyBench)）
+- [SWE-bench Multilingual](https://www.swebench.com/multilingual)：评什么：多语言代码库上的 SWE-bench 式 issue resolving。核心思想：尽量复用 SWE-bench 的数据/评测基础设施，把多语言能力作为“评测层扩展”纳入同一套 harness（300 题、9 种语言）。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Multilingual)，[开源代码](https://github.com/SWE-bench/SWE-bench)）
 - [CodeVisionary](https://arxiv.org/abs/2504.13472)：面向 LLM code generation 的 agent-based evaluation framework。核心思想是用 LLM-agent evaluator 在参考答案匹配之外评估生成代码，同时显式暴露代码评测假设和 judge 行为。
 - [CodeMMLU](https://openreview.net/forum?id=CahIEKCu5Q)：评什么：多任务代码理解与推理能力。核心思想：提供 MMLU 风格的代码 benchmark，把代码知识、理解和推理同纯补丁生成能力区分开。
 - [ConvCodeWorld](https://openreview.net/forum?id=rpouyo09V0)：评什么：可复现反馈环境中的对话式代码生成。核心思想：把代码生成放入迭代对话和执行反馈环境，要求 agent 利用反馈，而不是一次性输出片段。
@@ -45,9 +45,9 @@
 - [FeatBench](https://arxiv.org/abs/2509.22237)：评什么：只给自然语言需求的 repository-level feature implementation。核心思想：不给代码提示，并用持续更新流水线降低污染，专门观察 agent 的需求理解、范围控制与回归风险。（[开源代码](https://github.com/TsinghuaISE/FeatBench)）
 - [TF-Bench](https://arxiv.org/abs/2509.23686)：评什么：通过 System F 类型推断评测程序语义推理。核心思想：用形式化演绎式程序语言任务测试模型是否具备超越 token 关联或测试捷径的语义推理能力。
 - [CRUST-Bench](https://openreview.net/forum?id=8xofWL61S9)：评什么：C 到 safe Rust 的转译。核心思想：评估语义保持和内存安全约束同时成立的实际代码转换任务。
-- [CodeAssistBench](https://papers.nips.cc/paper_files/paper/2025/hash/ba9d95c583a154bb77b5f5900691430e-Abstract-Datasets_and_Benchmarks_Track.html)（[开源代码](https://github.com/amazon-science/CodeAssistBench)）：评什么：多轮 chat-based code assistance。核心思想：用容器化真实仓库、模拟用户和真实问题衡量 code assistant 在多轮问答、上下文追踪和代码库理解中的帮助质量，而不是只测一次性补丁生成。
 - [ArtifactsBench](https://arxiv.org/abs/2510.04316)：评什么：更偏“可交付产物（artifacts）”导向的软件任务完成。核心思想：把输出约束为可验证的工程产物与工作流结果，而不是单一代码片段。
 - [Holistic Agent Leaderboard（HAL）](https://arxiv.org/abs/2510.11977)（[开源代码](https://github.com/princeton-pli/hal-harness)）：评什么：跨 benchmark 的 agent 统一评测，覆盖 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond 等软件工程任务。核心思想：把任务运行、成本、时间、轨迹和 leaderboard 提交流程标准化，便于比较不同软件 agent harness 的通用性。
+- [CodeAssistBench](https://papers.nips.cc/paper_files/paper/2025/hash/ba9d95c583a154bb77b5f5900691430e-Abstract-Datasets_and_Benchmarks_Track.html)（[开源代码](https://github.com/amazon-science/CodeAssistBench)）：评什么：多轮 chat-based code assistance。核心思想：用容器化真实仓库、模拟用户和真实问题衡量 code assistant 在多轮问答、上下文追踪和代码库理解中的帮助质量，而不是只测一次性补丁生成。
 - [Paper2Web](https://arxiv.org/abs/2510.15842)：评什么：从研究论文生成可交互的学术项目网站。核心思想：在通用前端指令之外加入论文条件输入、版式与交互性指标，以及 PaperQuiz 式知识保留检查。
 - [ImpossibleBench](https://arxiv.org/abs/2510.20270)：评什么：LLM agent 利用测试用例漏洞的倾向。核心思想：基于 LiveCodeBench、SWE-bench 等构造不可能完成的编码任务变体，诊断“通过测试不等于完成真实任务”的 specification gaming。
 - [CodeClash](https://arxiv.org/abs/2511.00839)：评什么：面向开放目标的软件工程锦标赛。核心思想：让 agent 在多轮 tournament 中自主修改代码库、读取日志、写测试和与对手竞争，衡量长期代码维护与策略性改进能力。（[项目页](https://codeclash.ai/)，[开源代码](https://github.com/CodeClash-ai/CodeClash)）
@@ -77,6 +77,8 @@
 - [FormulaCode](https://arxiv.org/abs/2603.16011)（[项目页](https://formulacode.org/)）：评什么：大型科学 Python 代码库上的 agentic optimization。核心思想：把真实性能瓶颈、专家补丁和大量社区维护 workloads 配对，用多目标正确性与加速效果评价 agent，而不是只看狭窄微基准。
 - [SLUMP](https://arxiv.org/abs/2603.17104)：评什么：长程 coding agent 的 faithfulness loss。核心思想：逐步揭示需求，并评分后续代码是否在组件层面保持 emergent specifications。
 - [RACE-bench](https://arxiv.org/abs/2603.26337)：评什么：repo 级 feature addition 与中间推理。核心思想：除补丁正确性外，还显式评 issue 理解、定位和实现拆解。
+- [StackRepoQA](https://arxiv.org/abs/2603.26567)：评测跨文件和系统级代码仓库问答能力，而不是只测孤立代码片段或单函数。
+- [Hallucination Inspector](https://arxiv.org/abs/2604.20202)：检查 API 迁移生成的 glue code 是否捏造不存在的符号或错误调用上下文。
 - [VIBE-Pro](https://benchlm.ai/benchmarks/vibePro)（[MiniMax M2.7 模型报告](https://www.minimax.io/news/minimax-m27-en)中报告）：评什么：vibe coding 场景下的仓库级完整项目交付。核心思想：判断 agent 能否把宽泛需求转成 Web、移动端和仿真类任务中的完整可运行项目，补足 SWE-Bench Pro 这类 issue fixing benchmark 与 NL2Repo-Bench 这类 repo construction benchmark 之间的空白。
 - [SWE Atlas](https://arxiv.org/abs/2605.08366)（[项目页](https://scale.com/blog/swe-atlas-complete)，[开源代码](https://github.com/scaleapi/SWE-Atlas)）：评什么：issue resolution 之外的专业编码 agent 工作流，覆盖代码库问答、测试编写和重构。核心思想：结合程序化检查和 rubric 评价工程质量、可维护性与代码库卫生。
 - [SWE-Chain](https://arxiv.org/abs/2605.14415)：评什么：链式发布升级下的 repo 级软件维护。核心思想：把版本迁移串成连续任务，考察前后版本联动修复。

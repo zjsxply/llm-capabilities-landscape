@@ -1,0 +1,52 @@
+# 4.2.4 Model
+
+- [CogVideoX](https://arxiv.org/abs/2408.06072)：采用 expert transformer 的开放文生视频扩散模型，扩展基于 Transformer 的视频去噪与训练以提升生成质量。
+- [Movie Gen](https://arxiv.org/abs/2410.13720)：媒体基础模型族，覆盖文生视频、个性化视频、精确编辑和音频生成。
+- [HunyuanVideo](https://arxiv.org/abs/2412.03603)：开放大型视频基础模型，结合数据清洗、架构设计、渐进式扩展和大规模训练基础设施。
+- [Autoregressive Video Generation without Vector Quantization](https://arxiv.org/abs/2412.14169)：提出无需向量量化的自回归视频生成方法。
+- [Through-The-Mask](https://arxiv.org/abs/2501.03059)：使用基于 mask 的运动轨迹控制图生视频生成。
+- [BlobGEN-Vid](https://arxiv.org/abs/2501.07647)：利用 blob 视频表示实现组合式文生视频生成。
+- [LayerAnimate](https://arxiv.org/abs/2501.08295)：为动画生成加入层级控制。
+- [Improving Video Generation with Human Feedback](https://arxiv.org/abs/2501.13918)：提出面向视频生成的模型侧方法，核心围绕 Improving Video Generation with Human Feedback。
+- [Separate Motion from Appearance](https://arxiv.org/abs/2501.16714)：在文生视频扩散模型中分离动作定制与外观定制。
+- [OmniHuman-1](https://arxiv.org/abs/2502.01061)：一阶段人物动画模型，用混合运动条件扩展 Diffusion Transformer 训练。
+- [Dual-IPO](https://arxiv.org/abs/2502.02088)：将双迭代偏好优化用于文生视频生成。
+- [MotionCanvas](https://arxiv.org/abs/2502.04299)：通过可控图生视频生成支持电影化镜头设计。
+- [Lumina-Video](https://arxiv.org/abs/2502.06782)：提出面向视频生成的模型侧方法，核心围绕 Efficient and Flexible Video Generation with Multi-scale Next-DiT。
+- [Step-Video-T2V](https://arxiv.org/abs/2502.10248)：30B 文生视频基础模型，结合深压缩 Video-VAE、双语文本编码器、3D full-attention DiT flow matching 和 Video-DPO 后训练。
+- [WonderVerse](https://arxiv.org/abs/2503.09160)：使用视频生成先验、可控场景扩展和不一致检测生成连贯 3D 环境。
+- [Open-Sora 2.0](https://arxiv.org/abs/2503.09642)：提出面向视频生成的模型侧方法，核心围绕 Training a Commercial-Level Video Generation Model in $200k。
+- [Wan](https://arxiv.org/abs/2503.20314)：开放视频基础模型套件，以扩散 Transformer 为主干，结合新 VAE、可扩展预训练和大规模数据清洗，覆盖文生视频、图生视频、编辑和个人视频。
+- [Seaweed-7B](https://arxiv.org/abs/2504.08685)：提出面向视频生成的模型侧方法，核心围绕 Cost-Effective Training of Video Generation Foundation Model。
+- [We'll Fix it in Post](https://arxiv.org/abs/2504.17180)：通过生成后的神经符号反馈改进文生视频结果。
+- [Video Signature](https://arxiv.org/abs/2506.00652)：在视频扩散模型中嵌入隐式水印，同时保持视觉质量和时序一致性。
+- [Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](https://arxiv.org/abs/2506.09350)：提出面向视频生成的模型侧方法，核心围绕 Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation。
+- [PanoWorld-X](https://arxiv.org/abs/2509.24997)：通过球面感知视频扩散与可控相机合成生成可探索的全景世界。
+- [FAME](https://arxiv.org/abs/2510.22960)：公平性感知的视频编辑方法，注入 fairness embedding 并调制 attention，以减少刻板印象漂移并保持时序一致性。
+- [AlignVid](https://arxiv.org/abs/2512.01334)：面向文本引导图生视频的免训练 attention scaling 方法，结合轻量 Q/K scaling 和 guidance scheduling。
+- [I2VGuard](https://doi.org/10.1109/CVPR52734.2025.01175)：保护输入图像不被扩散式图生视频模型滥用。
+- [HomoGen](https://doi.org/10.1109/CVPR52734.2025.02137)：结合单应传播与扩散模型提升视频修复能力。
+- [LLM hidden-state conditioning for video diffusion](https://doi.org/10.1109/ECAI65401.2025.11095434)：用指令跟随 LLM 的隐藏状态作为视频扩散模型条件。
+- [MotionShot](https://doi.org/10.1109/ICCV51701.2025.01103)：在文生视频中跨任意对象自适应迁移动作。
+- [MotionMatcher](https://doi.org/10.1109/ICCVW69036.2025.00728)：通过动作特征匹配定制文生视频扩散模型中的电影化运动。
+- [StableWorld](https://arxiv.org/abs/2601.15281)：面向稳定、一致的长时程交互式视频生成。
+- [SkyReels-V3](https://arxiv.org/abs/2601.17323)：报告统一条件视频生成模型，覆盖参考图生视频、视频延展和音频引导生成。
+- [JUST-DUB-IT](https://arxiv.org/abs/2601.22143)：用 LoRA 和合成多语视频对适配音视频扩散基础模型，同时生成翻译音频和同步面部运动。
+- [FastVMT](https://arxiv.org/abs/2602.05551)：用局部 attention mask 和扩散步梯度复用减少 DiT 视频生成中的运动与梯度冗余。
+- [CineScene](https://arxiv.org/abs/2602.06959)：把 3D-aware scene features 注入预训练文生视频模型，在控制镜头运动的同时保持场景一致性。
+- [Flow Caching](https://arxiv.org/abs/2602.10825)：用 flow caching 加速自回归视频生成。
+- [AnchorWeave](https://arxiv.org/abs/2602.14941)：用检索到的局部空间记忆和多锚点编织提升可控相机视频生成的长程场景一致性。
+- [Helios](https://arxiv.org/abs/2603.04379)：提出面向视频生成的模型侧方法，核心围绕 Real Real-Time Long Video Generation Model。
+- [InterDyad](https://arxiv.org/abs/2603.23132)：双人交互语音到视频生成框架，将对话音频与运动先验对齐，并使用角色感知 Gaussian guidance。
+- [VGGRPO](https://arxiv.org/abs/2603.26599)：用 4D latent reward 提升世界一致性视频生成，使视频合成更符合持续场景几何与动态。
+- [TRACE](https://arxiv.org/abs/2604.01207)：结合 geometry-aligned video masking 的三维场景编辑方法，用多视角锚点和 tangible geometry anchoring 实现时序稳定编辑。
+- [DiffHDR](https://arxiv.org/abs/2604.06161)：用视频扩散模型重曝光 LDR 视频，可作为视频生成模型中的视频编辑与增强方法。
+- [Matrix-Game 3.0](https://arxiv.org/abs/2604.08995)：构建具备长程记忆的实时流式交互世界模型，适合补充需要跨用户动作维持状态的视频生成模型路线。
+- [Rein3D](https://arxiv.org/abs/2604.10578)：基于全景视频扩散的强化式三维室内场景生成方法，把细化轨迹作为伪真值更新 3D Gaussian。
+- [Hallo-Live](https://arxiv.org/abs/2604.23632)：实时音视频 avatar 生成方法，使用异步双流扩散、future-expanding attention 和偏好引导蒸馏。
+- [LSTD](https://doi.org/10.1109/TMM.2026.3651052)：用扩散模型同时建模视频生成中的长短期时间结构。
+- [ScenarioDiff](https://doi.org/10.1007/s11263-025-02413-7)：在场景条件动态变化下进行文本到视频生成。
+- [World and Human Action Models towards gameplay ideation](https://doi.org/10.1038/s41586-025-08600-3)：构建世界模型与人类动作模型，用于交互式游戏创意生成。
+- [CustomTTT](https://doi.org/10.1609/aaai.v39i2.32182)：通过测试时训练定制视频生成中的动作与外观。
+- [Follow-Your-Click](https://doi.org/10.1609/aaai.v39i6.32643)：将局部点击与动作提示转化为开放域图像动画。
+- [TIV-Diffusion](https://doi.org/10.1609/aaai.v39i8.32861)：围绕文本指令下的对象中心运动进行图生视频生成。

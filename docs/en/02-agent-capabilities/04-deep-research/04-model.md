@@ -1,0 +1,32 @@
+# 2.4.4 Model
+
+- [DeepResearcher](https://arxiv.org/abs/2504.03160) ([code](https://github.com/GAIR-NLP/DeepResearcher)): Trains deep-research agents end-to-end with reinforcement learning in real web-search environments.
+- OpenAI Deep Research / `o3-deep-research` ([official report](https://openai.com/index/introducing-deep-research/); [model docs](https://platform.openai.com/docs/models/o3-deep-research)): A closed model line optimized with end-to-end reinforcement learning for web browsing, data analysis, and hard long-horizon research tasks.
+- Perplexity Sonar Deep Research ([model docs](https://docs.perplexity.ai/docs/sonar/models/sonar-deep-research)): A deep-research API model endpoint for exhaustive source search, reasoning, and long-form cited report generation.
+- [WebDancer](https://arxiv.org/abs/2505.22648) ([code](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebDancer)): Trains autonomous information-seeking agency for multi-step search and reasoning.
+- [WebWatcher](https://arxiv.org/abs/2508.05748) ([code](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher)): Trains multimodal deep-research agents with synthetic multimodal trajectories and reinforcement learning.
+- Kimi-Researcher ([official report](https://moonshotai.github.io/Kimi-Researcher/)): Reports a Kimi k-series internal model trained through end-to-end agentic reinforcement learning for multi-turn search, browsing, code tools, and deep-search benchmarks.
+- [Atom-Searcher](https://arxiv.org/abs/2508.12800): Uses atomic-thought rewards and reasoning reward models to reinforce fine-grained deep-research search behavior.
+- [Open Data Synthesis For Deep Research](https://arxiv.org/abs/2509.00375): Introduces Open Data Synthesis For Deep Research, a model-side contribution for Deep Research.
+- [SFR-DeepResearch](https://arxiv.org/abs/2509.06283): Continually reinforces a reasoning-optimized model for autonomous single-agent deep research with web and Python tools.
+- [DeepDive](https://arxiv.org/abs/2509.10446): Trains deep-search agents with knowledge-graph question synthesis and end-to-end multi-turn reinforcement learning.
+- [WebSailor / WebSailor-V2](https://arxiv.org/abs/2509.13305): Bridges open and proprietary deep-research agents with uncertainty-focused task synthesis, cold-start reinforcement fine-tuning, and scalable agentic RL.
+- [Scaling Agents via Continual Pre-training](https://arxiv.org/abs/2509.13310): Introduces Agentic CPT and AgentFounder as a foundation-model training stage for deep-research agents.
+- xAI Grok 4 Fast Search ([model card PDF](https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf)): Reports end-to-end tool-use reinforcement learning for web and X browsing, code execution, and deep-search evaluations.
+- [MARS: Co-evolving Dual-System Deep Research](https://arxiv.org/abs/2510.04935): Uses multi-agent reinforcement learning to co-optimize dual-system deep-research behavior.
+- [DeepPlanner](https://arxiv.org/abs/2510.12979): Uses advantage shaping to optimize planning capability for deep-research agents.
+- [Tongyi DeepResearch](https://arxiv.org/abs/2510.24701) ([code](https://github.com/Alibaba-NLP/DeepResearch)): Reports an agentic LLM trained for long-horizon deep information seeking and end-to-end deep-research capability.
+- [DR Tulu](https://arxiv.org/abs/2511.19399): Trains and releases an open deep-research model with rubric-evolving reinforcement learning for long-form open-ended research.
+- [Step-DeepResearch Technical Report](https://arxiv.org/abs/2512.20491) ([code](https://github.com/stepfun-ai/StepDeepResearch)): Provides an end-to-end training route for open-ended deep research, including data, policy optimization, and checklist-style judging.
+- [O-Researcher](https://arxiv.org/abs/2601.03743): Builds an open-ended deep-research model through multi-agent distillation and agentic reinforcement learning.
+- [Chaining the Evidence](https://arxiv.org/abs/2601.06021): Densifies reinforcement-learning supervision for deep-search agents with citation-aware rubric rewards.
+- [IntentRL](https://arxiv.org/abs/2602.03468): Trains proactive intent-clarification behavior before expensive long-horizon deep research.
+- [How to Train Your Deep Research Agent?](https://arxiv.org/abs/2602.19526): Studies prompt, reward, and policy-optimization choices for Search-R1-style deep-research training and introduces Search-R1++.
+- [DeepResearch-9K / DeepResearch-R1](https://arxiv.org/abs/2603.01152): Releases a dataset and open RL training framework for deep-research agents.
+- [KARL](https://arxiv.org/abs/2603.05218): Trains enterprise knowledge agents through synthetic data and iterative large-batch off-policy RL across search and report-generation regimes.
+- [SynPlanResearch-R1](https://arxiv.org/abs/2603.07853) ([code](https://github.com/HansiZeng/syn-plan-research)): Trains tool exploration for deep research with synthetic executable plans.
+- [MiroThinker-1.7 & H1](https://arxiv.org/abs/2603.15726) ([code](https://github.com/MiroMindAI/MiroThinker)): Advances open-source research agents through verification, interaction scaling, and heavy-duty reasoning training.
+- [OpenResearcher](https://arxiv.org/abs/2603.20278) ([code](https://github.com/TIGER-AI-Lab/OpenResearcher)): Builds a fully open pipeline for long-horizon deep-research trajectory synthesis over an offline corpus and search/open/find primitives.
+- [Mind DeepResearch / MindDR](https://arxiv.org/abs/2604.14518): Combines SFT cold start, Search-RL, Report-RL, and preference alignment for planning, deep search, and report-generation agents.
+- [LiteResearcher](https://arxiv.org/abs/2604.17931): Builds a lite virtual world to scale agentic reinforcement learning for deep-research agents without unstable live-search dependence.
+- [DR-Venus](https://arxiv.org/abs/2604.19859): Trains an edge-scale 4B deep-research agent from open data and agentic training recipes.

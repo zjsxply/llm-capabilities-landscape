@@ -1,0 +1,24 @@
+# 1.15.4 Model
+
+- [Wormhole Memory: A Rubik's Cube for Cross-Dialogue Retrieval](https://arxiv.org/abs/2501.14846)：提出跨对话检索记忆，用于在不同会话之间迁移信息。
+- [Towards General Continuous Memory for Vision-Language Models](https://arxiv.org/abs/2505.17670)：面向视觉语言模型的连续记忆，将记忆能力扩展到纯文本智能体之外。
+- [ATLAS: Learning to Optimally Memorize the Context at Test Time](https://arxiv.org/abs/2505.23735)：学习在测试时应记住哪些上下文，以服务后续回忆与推理。
+- [PRIME: Large Language Model Personalization with Cognitive Memory and Thought Processes](https://arxiv.org/abs/2507.04607)：用认知记忆与思维过程个性化 LLM，将记忆检索与回应规划绑定。
+- [Memory Decoder: A Pretrained, Plug-and-Play Memory for Large Language Models](https://arxiv.org/abs/2508.09874)：提供面向大语言模型的即插即用预训练记忆模块。
+- [ID-RAG: Identity Retrieval-Augmented Generation for Long-Horizon Persona Coherence in Generative Agents](https://arxiv.org/abs/2509.25299)：使用身份检索增强生成式智能体的长程人设一致性。
+- [Data-Efficient Automatic Prompt Optimization for Memory-Enhanced Conversational Agents](https://doi.org/10.18653/v1/2025.emnlp-industry.126)：为记忆增强对话智能体进行数据高效的自动提示优化。
+- [Adaptive Focus Memory for Language Models](https://arxiv.org/abs/2511.12712)：提出面向记忆的模型侧方法，核心围绕 Adaptive Focus Memory for Language Models。
+- [Learning by Taking Notes: Memory-Guided Continual Learning for Generative Multimodal Models](https://doi.org/10.1109/iccvw69036.2025.00456)：把记笔记作为生成式多模态模型的记忆引导持续学习机制。
+- [QwenLong-L1.5](https://arxiv.org/abs/2512.12967)：提出面向记忆的模型侧方法，核心围绕 Post-Training Recipe for Long-Context Reasoning and Memory Management。
+- [CREAM: Continual Retrieval on Dynamic Streaming Corpora with Adaptive Soft Memory](https://arxiv.org/abs/2601.02708)：为动态流式语料上的持续检索加入自适应软记忆。
+- [FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](https://arxiv.org/abs/2601.03938)：使用受遗忘曲线启发的记忆回放支持语言模型持续学习。
+- [Learning How to Remember / MCMA](https://arxiv.org/abs/2601.07470)：在冻结任务模型的同时学习 memory copilot，由其选择记忆抽象层级和复用策略。
+- [SpatialMem: Unified 3D Memory with Metric Anchoring and Fast Retrieval](https://arxiv.org/abs/2601.14895)：构建带度量锚定与快速检索的统一 3D 记忆，用于空间扎根问答。
+- [JitRL](https://arxiv.org/abs/2601.18510)：无需训练的测试时策略优化方法，通过检索非参数经验记忆估计 action advantage，而不做梯度更新。
+- [ALMA](https://arxiv.org/abs/2602.07755)：通过元学习自动设计 agentic memory，用搜索出的 memory schema 和检索逻辑替代固定手写机制。
+- [MemPO](https://arxiv.org/abs/2603.00680)：提出面向记忆的模型侧方法，核心围绕 Self-Memory Policy Optimization for Long-Horizon Agents。
+- [DeltaMem](https://arxiv.org/abs/2604.01560)：用强化学习训练操作级 agentic memory 更新，并把奖励与后续 persona 和任务表现绑定。
+- [TSUBASA](https://arxiv.org/abs/2604.07894)：通过 evolving memory、自学习和 context distillation 改进长程个性化。
+- [HAGE](https://arxiv.org/abs/2605.09942)：用强化学习优化加权图记忆遍历和边表示，服务长程 agent memory。
+- [Beyond Similarity Search: Tenure and the Case for Structured Belief State in LLM Memory](https://arxiv.org/abs/2605.11325)：主张在 LLM 记忆中超越相似度搜索，引入结构化信念状态。
+- [Design and Verification of a Query-Aware External Memory Pipeline for Small Language Models](https://doi.org/10.1109/icaiic68212.2026.11454167)：设计并验证面向小语言模型的查询感知外部记忆流水线。

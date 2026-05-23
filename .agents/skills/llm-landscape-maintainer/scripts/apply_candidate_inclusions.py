@@ -71,6 +71,12 @@ def normalize_section(raw: Any) -> str:
     return section
 
 
+def section_label(section: str) -> str:
+    match = re.match(r"\d+(?:\.\d+)+\s+(.+)$", section.strip())
+    label = match.group(1) if match else section
+    return re.sub(r"\s+", " ", label).strip().lower()
+
+
 def status_of(item: dict[str, Any]) -> str:
     return str(item.get("decision") or item.get("status") or "").strip().lower()
 
@@ -84,6 +90,15 @@ def find_section_bounds(lines: list[str], section: str) -> tuple[int, int]:
             start = index
             start_level = len(match.group(1))
             break
+    if start is None:
+        wanted_label = section_label(section)
+        if wanted_label in {"leaderboard", "survey", "bench", "model", "agent harness", "skill"}:
+            for index, line in enumerate(lines):
+                match = re.match(r"^(#{1,6})\s+(.+?)\s*$", line.rstrip("\n"))
+                if match and section_label(match.group(2)) == wanted_label:
+                    start = index
+                    start_level = len(match.group(1))
+                    break
     if start is None:
         match = re.match(r"(\d+(?:\.\d+)+)\b", section)
         if match:

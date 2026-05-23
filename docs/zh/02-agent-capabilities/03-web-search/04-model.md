@@ -1,0 +1,29 @@
+# 2.3.4 Model
+
+- [RAG-Gym](https://arxiv.org/abs/2502.13957)：用过程监督、actor tuning、critic training 和 reward-source 分析优化 agentic RAG 中的推理与搜索 agent。
+- [DeepRetrieval](https://arxiv.org/abs/2503.00223)：用检索指标作为奖励训练 LLM 查询生成器，在无需监督参考查询的情况下提升证据检索与真实搜索引擎召回。
+- [Search-R1](https://arxiv.org/abs/2503.09516)：用强化学习训练 LLM 在多跳信息搜索中交替进行推理和搜索引擎调用。
+- [RAG-RL](https://arxiv.org/abs/2503.12759)：训练答案生成模型在更大的检索上下文中识别并引用相关证据，提升噪声检索条件下的多跳问答能力。
+- [ReSearch](https://arxiv.org/abs/2503.19470)：用强化学习训练 LLM 在复杂多跳问题上结合搜索进行推理。
+- [s3](https://arxiv.org/abs/2505.14146)：将搜索器与生成器解耦，并用下游答案增益作为奖励训练搜索行为，以少量数据改进 agentic RAG。
+- [End-to-End Optimization of LLM-Driven Multi-Agent Search Systems](https://arxiv.org/abs/2506.02718)：提出异构组策略优化来训练角色化搜索智能体，以全局多智能体搜索成功率替代孤立提示调参。
+- [R-Search](https://arxiv.org/abs/2506.04185)：通过多奖励强化学习训练 LLM 判断何时搜索、何时推理以及如何整合检索证据。
+- [RAG-R1](https://arxiv.org/abs/2507.02962)：训练 RAG 系统在推理中使用多查询并行，降低单查询脆弱性并提升答案质量。
+- [WebShaper](https://arxiv.org/abs/2507.15061)：以 agentic 方式合成信息搜索轨迹，在轨迹数据稀缺时训练 web-search agent。
+- [RL-QR](https://arxiv.org/abs/2507.23242)：用无需人工标注的强化学习和可验证搜索奖励训练 query rewriting。
+- [SSRL](https://arxiv.org/abs/2508.10874)：提出面向网页搜索的模型侧方法，核心围绕 Self-Search Reinforcement Learning。
+- [Scaling Web Agent Training through Automatic Data Generation and Fine-grained Evaluation](https://openreview.net/forum?id=63JtmQL7dv)：通过自动数据生成和细粒度评估扩展 web agent 训练，降低对人工构造轨迹的依赖。
+- [Web-Shepherd](https://openreview.net/forum?id=G2kMroO9UV)（[开源代码](https://github.com/kyle8581/Web-Shepherd)）：为 web agent 构建 process reward model，把反馈从最终任务成败推进到轨迹质量监督。
+- [How to Train Your LLM Web Agent](https://openreview.net/forum?id=67xkPEM3bZ)：对开放 web-agent 训练做统计诊断，澄清数据、奖励和优化选择中哪些因素真正带来收益。
+- [Information Gain-based Policy Optimization](https://arxiv.org/abs/2510.14967)：提出面向网页搜索的模型侧方法，核心围绕 Simple and Effective Approach for Multi-Turn Search Agents。
+- [WebSeer](https://arxiv.org/abs/2510.18798)：用自反思冷启动和真实 web-based 环境中的强化学习训练更深层搜索 agent。
+- [SmartSearch](https://arxiv.org/abs/2601.04888)：用过程奖励指导 search agent 的 query refinement，而不是只依赖最终答案监督。
+- [TreePS-RAG](https://arxiv.org/abs/2601.06922)：在 agentic RAG 中使用树式过程监督做强化学习，无需中间标签。
+- [Dr. Zero](https://arxiv.org/abs/2601.07055)：提出面向网页搜索的模型侧方法，核心围绕 Self-Evolving Search Agents without Training Data。
+- [Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL](https://openreview.net/forum?id=MfPDdPUGKi)：用大规模端到端强化学习训练长程搜索 agent，把 search-agent 模型训练直接推向 deep-research 风格任务。
+- [WebArbiter](https://openreview.net/forum?id=canA6Ef0RP)：训练面向 web agent 的生成式 reasoning process reward model，使 reward modeling 本身成为搜索 agent 的模型侧贡献。
+- [VSearcher](https://arxiv.org/abs/2603.02795)：通过 iterative-injection 数据合成和基于真实 web 工具的 SFT-then-RL，把多模态模型训练成长程搜索 agent。
+- [OASES](https://arxiv.org/abs/2604.03675)：联合训练搜索生成与结果对齐评估，以改进智能体式搜索行为。
+- [MolmoWeb](https://arxiv.org/abs/2604.08516)（[开源代码](https://github.com/allenai/molmoweb)）：发布 visual web-agent 模型族和 MolmoWebMix 训练数据，训练只依赖截图的网页动作策略。
+- [Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](https://arxiv.org/abs/2604.14267)：提出面向网页搜索的模型侧方法，核心围绕 Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization。
+- [CuSearch](https://arxiv.org/abs/2605.11611)：在基于 RLVR 的 agentic RAG 中按搜索深度进行课程式轨迹采样，把训练更新更多分配给检索决策更密集的轨迹。

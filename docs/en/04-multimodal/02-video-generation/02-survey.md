@@ -3,5 +3,8 @@
 - [A Survey on Video Diffusion Models](https://arxiv.org/abs/2310.10647): A foundational review of diffusion-based video generation and temporal modeling.
 - [Sora as a World Model? A Complete Survey on Text-to-Video Generation](https://arxiv.org/abs/2403.05131): Reviews text-to-video architecture, data, evaluation, and world-model implications.
 - [A Survey on Long Video Generation: Challenges, Methods, and Prospects](https://arxiv.org/abs/2403.16407): Covers temporal coherence, narrative continuity, identity consistency, and evaluation.
+- [Advances in 4D Generation](https://arxiv.org/abs/2503.14501): Surveys 4D generation methods that connect dynamic scenes, video, and world-model generation.
 - [Exploring the Evolution of Physics Cognition in Video Generation: A Survey](https://arxiv.org/abs/2503.21765): Reviews dynamics, physical reasoning, and plausibility evaluation in generated video.
+- [Advancing Talking Head Generation](https://arxiv.org/abs/2507.02900): Surveys talking-head generation methods, datasets, evaluation metrics, losses, and challenges such as pose, multilinguality, and temporal consistency.
 - [Controllable Video Generation: A Survey](https://arxiv.org/abs/2507.16869): Surveys text, image, layout, motion, trajectory, camera, and multimodal control.
+- [Video diffusion generation](https://doi.org/10.1007/s10462-025-11331-6): Provides a recent comprehensive review of video diffusion generation and open problems.

@@ -19,13 +19,19 @@ description: Maintain the llm-capabilities-landscape repository and its benchmar
 - **Subagent lesson loop**: after any multi-agent intake, ask each subagent for a concise memo covering its source scope, missed-recall patterns, title or alias drift, classification conflicts, duplicate handling, and concrete skill-rule suggestions. Save the memos in `.tmp/<task>/subagent-lessons/`, review them before the final user summary, and update this skill when they reveal reusable process changes.
 - **Model-card gap ingestion**: extract vendor-reported evaluations into a table, normalize aliases against the recursive `docs/en/` tree, classify by task axis, add closed/internal suites only with explicit "not publicly released" wording, and place them by card/report date.
 - **Survey-section intake**: cached citation and reference candidates are only a noisy starting point for surveys. For each task page, define the category boundary first, then run a capability-specific enrichment pass over recent arXiv, proceedings, publisher pages, and web sources using aliases for the task, "survey", "review", "position", "tutorial", "benchmark survey", and domain-specific terms. Prefer the last one to two years, include older papers only when they are high-impact or still field-defining, and classify candidates as direct, adjacent, domain-specific, foundational, or reject/noise before editing.
+- **Survey-seed intake with subagents**: first verify whether the seed surveys themselves are already present in both languages; if so, use them as provenance instead of duplicating Survey entries. Split subagents by source family or risk axis, require each report to include include/defer/reject rows, bilingual `rg` status, duplicate and alias notes, evidence URL type, and an incomplete-phase statement. The parent then builds separate high-confidence queues for `Bench`, `Model`, `Agent Harness`, and `defer`, rereads current paired docs plus neighboring pages, and applies only parent-approved items.
+- **Agent Safety survey intake**: broad Survey sections often already contain recent overviews, so the missing value usually lies in concrete evaluation protocols and runtime systems. Start with `03-bench.md`, `04-model.md`, and `05-agent-harness.md`; check neighboring Memory and Computer Use GUI pages before deciding whether a privacy, memory, or CUA item should be cross-listed. Treat publisher-only or DOI-only survey references as discovery leads until the paper or official artifact is readable enough to support a concise entry.
+- **Model-section intake**: model-side work is broader than training papers. Include task-relevant models, pretraining and post-training recipes, model architectures, reinforcement-learning and preference-optimization algorithms, synthetic-data or data-filtering algorithms, world models, reward or verifier models, alignment and guardrail models, inference scaling, and test-time adaptation. Keep pure model-side work in `Model`; keep external orchestration, tool loops, memory, environment control, and multi-agent workflows in `Agent Harness`.
+- **Vendor CUA/model-card intake**: when refreshing `Computer Use (GUI)` or similar model sections, do not search only paper titles. Query each vendor, model family, lab name, and Chinese product name with `OSWorld`, `AndroidWorld`, `ScreenSpot`, `WebVoyager`, `Mind2Web`, `BrowseComp`, `WebWalkerQA`, `GUI grounding`, `computer use`, `phone use`, and `手机/屏幕/操作/智能体`. Treat Hugging Face/model cards, official docs, launch pages, monorepo READMEs, and arXiv TeX affiliations as first-class discovery sources, then classify general VLMs with CUA rows as short model-card entries and dedicated GUI action/RL/critic/world-model work as normal Model entries.
+- **Reconsider rejected Survey/Model candidates**: after adding new `Survey` or `Model` sections, old rejection decisions made under a narrower Bench/Agent/Skill taxonomy are stale. Re-scan rejected citation-closure candidates for survey/review/taxonomy signals and model/training/architecture/RL/synthetic-data signals, then send only plausible candidates through parent review and subagent chunk screening. Do not bulk-apply these reconsidered candidates without rereading the paper and checking paired English/Chinese duplicates.
 - **Leaderboard discovery**: search for leaderboards separately from survey intake. Use `leaderboard`, `arena`, `challenge`, `competition`, benchmark aliases, and domain-specific ranking names; then verify dynamic pages through official repositories, project pages, Hugging Face spaces/datasets, or benchmark metadata when the visible page is JavaScript-heavy. If no credible leaderboard exists for a task, keep the `Leaderboard` heading empty rather than omitting the section.
+- **Split-tree path discipline**: the active documentation layout is recursive, not flat. Topic content lives under `docs/<lang>/<chapter>/<topic>/` with section files such as `01-leaderboard.md`, `02-survey.md`, `03-bench.md`, `04-model.md`, `05-agent-harness.md`, and `06-skill.md`; the topic `README.md` is only the overview and navigation surface. When a script accepts old flat paths such as `docs/en/02-10-cybersecurity.md`, route them through `landscape_paths.py` rather than adding ad hoc string rewrites.
 - **Citation/reference closure**: for every included paper, fetch both Semantic Scholar citations and references, convert new edges into candidates, screen each candidate exactly once through the checked-paper registry, include only parent-reviewed fits, then repeat until no unchecked candidates remain or a bounded API failure is explicitly reported.
 - **Open-source project URL-citation intake**: for every repository, SDK, skill package, benchmark implementation, leaderboard implementation, or agent harness codebase considered for inclusion, run a URL-citation pass before final classification. Resolve redirects, collect the canonical URL, original URL, protocol-less URL, `owner/repo` slug, README title, repository description, package or marketplace name, `SKILL.md` name, docs URL, demo URL, and known renamed or mirrored URLs. Search these keys across general web search, site-restricted academic sources, Semantic Scholar, GitHub, relevant package or skill marketplaces, and official project ecosystems. Treat confirmed citing papers as candidate papers; if no citation is confirmed, record a bounded negative result and classify the artifact as project-only unless another stable paper source exists.
 - **Autoresearch-style seed intake**: when a user gives an influential project-only seed such as `karpathy/autoresearch`, inspect the actual implementation before general topic search. Record the core loop, editable/read-only boundaries, metric, rollback policy, run-log format, compute assumptions, forks or ports, and whether the artifact is a benchmark, agent harness, skill, or only a discovery resource. Search exact repo slugs, README titles, associated awesome lists, forks, paper follow-ups, and skill marketplaces, then include only entries that add a distinct reusable harness, benchmark, or skill axis.
 - **Chronological maintenance**: when inserting entries, compare surrounding arXiv IDs, publication dates, dataset launch dates, and card dates before editing. Do not just append new model-card gaps at the end of a section unless the card date makes that correct.
-- **Chronology repair after bulk inclusion**: after scripted or multi-file insertion, audit every edited Bench and Agent Harness section for date inversions in both languages. Use one normalized time scale for arXiv IDs and venue dates, and keep an explicit release-sort key for entries whose displayed URL is an official proceedings page rather than an arXiv link.
-- **Bulk section-structure maintenance**: when adding or moving repeated task sections, keep the split tree shape `docs/<lang>/<chapter>/<topic>/README.md` plus section files such as `03-bench.md`. The introduction chapter is intentionally flatter: `docs/<lang>/00-introduction/01-landscape-structure.md` and sibling second-level files. Normalize headings across every paired task page and audit the full order immediately. Use English section labels consistently in both languages, such as `Leaderboard`, `Bench`, `Agent Harness`, `Skill`, and `Survey`; keep the Chinese body prose localized. After the structure pass, run bilingual URL-set comparison before URL accessibility checks so missing paired links surface early.
+- **Chronology repair after bulk inclusion**: after scripted or multi-file insertion, audit every edited Bench, Model, and Agent Harness section for date inversions in both languages. Use one normalized time scale for arXiv IDs and venue dates, and keep an explicit release-sort key for entries whose displayed URL is an official proceedings page rather than an arXiv link.
+- **Bulk section-structure maintenance**: when adding or moving repeated task sections, keep the split tree shape `docs/<lang>/<chapter>/<topic>/README.md` plus section files such as `03-bench.md`, `04-model.md`, and `05-agent-harness.md`. The introduction chapter is intentionally flatter: `docs/<lang>/00-introduction/01-landscape-structure.md` and sibling second-level files. Normalize headings across every paired task page and audit the full order immediately. Use English section labels consistently in both languages, such as `Leaderboard`, `Survey`, `Bench`, `Model`, `Agent Harness`, and `Skill`; keep the Chinese body prose localized. When a new repeated label is introduced, update `landscape_paths.py` first, then every bulk-insertion, parent-review, chronology, and validation script that recognizes section labels before applying candidates. After the structure pass, run bilingual URL-set comparison before URL accessibility checks so missing paired links surface early.
 - **Taxonomy migration**: when moving entries into a new category file, treat the move as a semantic relocation, not a deletion. Update README indexes, remove duplicate primary listings from old category files, preserve cross-references only when useful, and run chronology plus bilingual audits on both the source and destination files.
 - **Validation pass**: run a narrow URL check on newly added or heavily edited files, and a broader check when many existing files changed. Treat old broken links found by the broad check separately from newly introduced failures.
 
@@ -33,7 +39,7 @@ description: Maintain the llm-capabilities-landscape repository and its benchmar
 
 1. Read `AGENTS.md` and the target paired Markdown files before editing. For split topics, edit the relevant section file rather than the topic `README.md`.
 2. Preserve bilingual alignment outside `research/`: update English first, then Chinese.
-3. Define inclusion and exclusion criteria before collecting candidates. State what belongs in Bench, Agent Harness, Skill, or Leaderboard, and what belongs in a neighboring category.
+3. Define inclusion and exclusion criteria before collecting candidates. State what belongs in Leaderboard, Survey, Bench, Model, Agent Harness, or Skill, and what belongs in a neighboring category.
 4. Sort entries by release time when dates are known. Normalize all sort keys to the same `YYYY-MM` scale: an arXiv ID such as `2506.xxxxx` means `2025-06`, not integer `2506`; a conference-only entry uses the proceedings month or an explicitly recorded public-release month. For model-card-only, closed, or internal evaluations, place them by the model card or report date and explicitly mark that the task set is not publicly released.
 5. Select the discovery anchor from the request. For a latest-conference or named-track request, sweep the official accepted-paper source before doing topic search. For a seed/topic request, search recent surveys first to map task boundaries, benchmark families, terminology variants, and common baselines.
 6. For every user-provided seed that leads to a meaningful candidate, write a short discovery-channel reflection in `.tmp/<task>/`: where the seed could have been found, which aliases and channels exposed it or failed, which sibling searches should now be run, and which durable rule or source should be promoted. Use this reflection before final edits, especially for ARIS-like acronym and repository-slug misses.
@@ -42,7 +48,8 @@ description: Maintain the llm-capabilities-landscape repository and its benchmar
 9. For every already included or newly accepted paper that matters to the target section, use Semantic Scholar API to collect both citations and references as candidate related work. If the API returns `429`, slow down and retry from cache; if a complete run remains impractical, preserve the official-venue sweep and explicitly report the bounded closure rather than implying full citation coverage. Do not let subagents call Semantic Scholar in parallel.
 10. Cross-check accepted candidates against the paper, official venue entry, project page, official repository, leaderboard, and actual implementation when relevant. For open-source projects, confirm whether a paper actually cites the URL, slug, title, or verified official variant before calling the project paper-backed. Keep a stable official paper URL when no arXiv version is available.
 11. Verify newly added URLs before finishing.
-12. Keep final Chinese prose concise, professional, and classification-oriented.
+12. Percent-encode Markdown-sensitive characters inside URLs, especially DOI parentheses such as `...4%282%29.16`; otherwise Markdown and the local URL extractor may truncate at `)`. For raw API examples in instructions, prefer angle-bracket autolinks over code spans that touch non-ASCII punctuation.
+13. Keep final Chinese prose concise, professional, and classification-oriented.
 
 ## Open-Source Project URL-Citation Search
 
@@ -70,7 +77,7 @@ Use this checklist whenever completeness over a recent conference or track matte
 6. Assign each in-scope candidate a destination category and a brief reason, or log a deferral/exclusion reason. When a benchmark is genuinely cross-cutting or a stable family has not formed, place it in a documented `Other` category rather than forcing it into a misleading neighboring axis.
 7. Run reference and citation expansion after venue enumeration to explore adjacent work and follow-ups. Treat this expansion as closure around the official seed set, not as proof that the official seed set was complete.
 8. When reporting results, distinguish official-venue coverage, arXiv/project-link enrichment, citation/reference closure, URL verification, and any incomplete phase caused by rate limiting or inaccessible sources.
-9. Before completing an intake that modified docs, run a chronology audit over each edited Bench and Agent Harness section in both languages. Treat a venue-only URL, OpenReview entry, or model-card evaluation without an explicit release-sort key as unresolved until it is manually placed or dated in the ledger.
+9. Before completing an intake that modified docs, run a chronology audit over each edited Bench, Model, and Agent Harness section in both languages. Treat a venue-only URL, OpenReview entry, or model-card evaluation without an explicit release-sort key as unresolved until it is manually placed or dated in the ledger.
 
 ## Citation And Reference Closure
 
@@ -86,6 +93,7 @@ Use this loop when the user asks to close over all already included papers or to
    `python3 .agents/skills/llm-landscape-maintainer/scripts/checked_paper_registry.py candidates --out .tmp/roundN_unchecked_candidates.md --json-out .tmp/roundN_unchecked_candidates.json --since-year 2025`
 5. If the candidate set is large, triage it before asking humans or subagents to read everything:
    `python3 .agents/skills/llm-landscape-maintainer/scripts/citation_candidate_triage.py .tmp/roundN_unchecked_candidates.json --chunk-dir .tmp/candidate_closure_roundN/chunks`
+   When the user excludes biomedical or clinical scope, add `--exclude-biomedical` so medical, clinical, omics, drug, and medical-imaging candidates are rejected before generic benchmark or agent keywords keep them in the review queue.
 6. Parallelize only reading and screening. Subagents must work from chunk files, must not call Semantic Scholar, and must write decisions plus lessons under `.tmp/candidate_closure_roundN/`. The parent agent is the only writer to official Markdown.
 7. Validate every chunk decision and memo before registry sync:
    `python3 .agents/skills/llm-landscape-maintainer/scripts/validate_candidate_decisions.py --chunk-dir .tmp/candidate_closure_roundN/chunks --decision-dir .tmp/candidate_closure_roundN/decisions --out .tmp/candidate_closure_roundN/decision_validation.md`
@@ -95,10 +103,13 @@ Use this loop when the user asks to close over all already included papers or to
    `python3 .agents/skills/llm-landscape-maintainer/scripts/parent_review_shortlist.py`
 10. Apply only parent-approved inclusions through the bilingual inclusion script, using overrides for category moves, arXiv URL corrections, parent exclusions, or manually written bullets:
    `python3 .agents/skills/llm-landscape-maintainer/scripts/apply_candidate_inclusions.py --source-dir .tmp/candidate_closure_roundN/decisions --override-json .tmp/candidate_closure_roundN/target_overrides.json --included-out .tmp/candidate_closure_roundN/applied_inclusions.json`
-11. After every inclusion pass, run chronology and bilingual order checks, then run URL checks for changed Markdown:
+11. If new sections were added or taxonomy boundaries changed, reconsider old rejections whose reasons mention survey/review/taxonomy or model/training/architecture/RL/data-synthesis work:
+   `python3 .agents/skills/llm-landscape-maintainer/scripts/reconsider_rejected_survey_model.py --round-dir .tmp/candidate_closure_roundN --candidate-json .tmp/roundN_unchecked_candidates.json --out .tmp/candidate_closure_roundN/reconsider_survey_model.json --non-candidate-out .tmp/candidate_closure_roundN/reconsider_survey_model_rejected.json --chunk-dir .tmp/candidate_closure_roundN/reconsider_chunks`
+   Treat this as a recall aid only: validate the generated target doc, section, and draft bullets before subagent screening or parent inclusion.
+12. After every inclusion pass, run chronology and bilingual order checks, then run URL checks for changed Markdown:
    `python3 .agents/skills/llm-landscape-maintainer/scripts/chronology_order_audit.py --bilingual`
    `python3 .agents/skills/llm-landscape-maintainer/scripts/check_changed_urls.py --out .tmp/roundN_url_check_changed.md`
-12. Repeat from step 1. Closure is complete only when coverage shows no missing citation or reference edges for included papers and the candidate generator returns no unchecked candidates. If Semantic Scholar returns persistent `404` for a seed, record the seed as a bounded exception; if rate limits prevent completion, report the remaining unchecked seeds instead of claiming closure.
+13. Repeat from step 1. Closure is complete only when coverage shows no missing citation or reference edges for included papers and the candidate generator returns no unchecked candidates. If Semantic Scholar returns persistent `404` for a seed, record the seed as a bounded exception; if rate limits prevent completion, report the remaining unchecked seeds instead of claiming closure.
 
 Do not use raw `include` decisions as final edits. Subagent decisions are recommendations; the parent must reread the candidate, confirm the destination category, check both English and Chinese duplicates, and then mark accepted papers as included after the docs actually contain them.
 
@@ -121,13 +132,14 @@ Accept candidates that clearly fit one of these roles:
 - **Leaderboard**: official or widely used public ranking with enough task specificity to help readers locate current systems.
 - **Survey**: recent or high-impact review, survey, tutorial, position, taxonomy, or systematic-literature paper that maps a capability area rather than introducing only a narrow benchmark or method.
 - **Bench**: evaluates a capability with a defined task, dataset, protocol, leaderboard, or metric.
+- **Model**: contributes a model, training recipe, post-training method, model architecture, reinforcement-learning algorithm, synthetic-data generation method, world model, alignment method, or other model-side technique that is clearly relevant to the capability page. Model-only work should go here, not be forced into Agent Harness or Bench.
 - **Agent Harness**: contributes prompting, workflow orchestration, tool use, memory, multi-agent collaboration, environment management, verification, or other model-external execution logic.
 - **Skill**: provides reusable agent capability packages, skill runtime infrastructure, skill benchmarks, skill creation, skill selection, skill safety, or skill portability.
 
 Reject or defer candidates when:
 
-- the main contribution is pretraining, post-training, data scaling, or model architecture and the agent/harness layer is thin;
-- the contribution is primarily compression, inference acceleration, control policy learning, or a domain application without a reusable benchmark, leaderboard, agent harness, runtime, protocol, or skill artifact;
+- the work is too narrow or off-axis for the capability taxonomy even as Survey or Model;
+- the contribution is primarily compression or inference acceleration without a capability-specific model, evaluation, or deployment relevance;
 - the paper is only a narrow domain application that does not broaden the target capability taxonomy;
 - it duplicates a stronger existing entry without adding a distinct axis;
 - the project link is inaccessible and no stable paper or repository URL exists.
@@ -135,10 +147,16 @@ Reject or defer candidates when:
 Classification reminders:
 
 - Titles containing agent, tool, skill, benchmark, safety, or attack are not enough for inclusion; classify by the reusable asset and evaluated capability.
+- Do not reject model-only, training-only, architecture, reinforcement-learning, or synthetic-data papers solely because they lack an external agent harness. If they are relevant to the page's task axis, classify them under `Model`; if they only summarize a field, classify them under `Survey`.
 - In robotics, reinforcement learning, and control papers, "skill" often means a learned policy skill, not this repository's packaged agent skills. Do not place such papers in Skill Use unless the work is about reusable agent skill artifacts, runtimes, selection, portability, or safety.
 - Terminal-only surveys are rare; it is acceptable to include adjacent operating-system, coding-agent, or tool-use surveys only when the note clearly states the scope. Robotics survey candidates often use "skill" for motor policies rather than reusable agent skills, so classify them by the actual reusable artifact and not by the title word.
 - Embodied/VLA entries should involve interactive physical, simulated, game, robotic, or action-feedback environments. Passive video understanding or generative world-model diagnostics usually belong in Video, Spatial, or Multimodal Generation unless the embodied action loop is central.
 - Cybersecurity entries should involve concrete cyber operations, environments, exploitation, defense, or security evaluation protocols. Generic jailbreak, red-team, or safety-judge work usually belongs in Agent Safety or Benchmark Reliability.
+- Agent Safety MCP entries should distinguish security scanners, runtime proxies, protocol specifications, debuggers, and vulnerability databases. Prefer scanners and runtime proxies for `Agent Harness`; use official specs and databases as background unless they define a reusable evaluation or enforcement protocol.
+- Agent Safety CUA entries need an explicit safety axis such as prompt injection, privacy leakage, unauthorized action, policy violation, harmful action, or runtime enforcement. Ordinary GUI completion, grounding, and robustness benchmarks usually belong in Computer Use GUI rather than Agent Safety.
+- Memory and privacy candidates belong in Agent Safety when memory, tool arguments, inter-agent messages, logs, or planner state are treated as attack surfaces or control surfaces. Plain recall, personalization, or output-only privacy tests usually belong in Memory or general safety instead.
+- In dense safety pages, short aliases are dangerous duplicate keys. Disambiguate lookalikes such as `AgentSafe`, `AGENTSAFE`, `Agent-SafetyBench`, `SafeAgentBench`, `Agent Security Bench`, `OpenAgentSafety`, `MCPInspect`, `MCP Inspector`, `DRIFT`, `Agent-in-the-Middle`, and `AiTM` with full titles, acronyms, and arXiv IDs before editing.
+- If a chronology audit flags a title-only override collision, prefer a less ambiguous display name rather than weakening the audit. For example, avoid generic strings that match vendor model-card overrides when a paper-specific acronym is available.
 
 ## Evidence And Writing
 
@@ -147,6 +165,7 @@ Classification reminders:
 - Cite industry, product, and leaderboard facts adjacent to the claim.
 - Treat Semantic Scholar candidates as candidates only; read the source before adding it.
 - Keep a claim-evidence map for substantive edits. Each new paragraph or entry should have a reason to exist, a source that supports it, and a clear category.
+- Never write placeholder survey prose. Each survey entry must summarize the work's most distinctive organizing lens, taxonomy, method family, evidence source, or risk boundary in one concrete sentence.
 - Separate official baselines, reproduced baselines, local modified runs, retry runs, and leaderboard systems; do not merge incompatible evaluation protocols.
 - Put citations near the claim they support, not in a bundle at the end of a long sentence.
 - For this standalone repository, keep English `*.md` and Chinese `*.zh.md` semantically aligned outside any future `research/` directory.
@@ -157,6 +176,33 @@ Classification reminders:
 Run scripts from the repository root.
 
 In this workspace, prefer `source .venv/bin/activate && python ...` for local scripts. Use these recurring command patterns during research-skill and open-source-project intake:
+
+- Split-tree path helper:
+  `source .venv/bin/activate && python -m py_compile .agents/skills/llm-landscape-maintainer/scripts/landscape_paths.py`
+  Do not run this helper directly for reports. Import it from maintenance scripts for recursive Markdown discovery, English/Chinese pair resolution, legacy flat-path migration, section filename mapping, and `README.md` to section-file resolution. Update it whenever section numbering or chapter directories change.
+- Full recursive chronology audit:
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/chronology_order_audit.py --bilingual`
+  Use this as the default after broad edits. It uses recursive docs discovery through `landscape_paths.py`, covers `Bench`, `Model`, and `Agent Harness`, and avoids stale flat globs that miss split topic directories.
+- Broad bilingual URL-set audit:
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py --infer-from-en $(find docs/en -name '*.md' -print | sort)`
+  Use this after multi-topic or section-structure edits. For a focused edit, pass only the changed English files and let `--infer-from-en` derive the Chinese paired files.
+- Changed-file URL accessibility check:
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/check_changed_urls.py --out .tmp/url_check_changed.md`
+  Use this instead of hand-building changed-file URL lists. Keep failures separated into newly introduced broken links, pre-existing broken links, and soft 403 or rate-limited pages.
+- Focused split-topic validation bundle:
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/chronology_order_audit.py --bilingual docs/en/CHAPTER/TOPIC/03-bench.md docs/zh/CHAPTER/TOPIC/03-bench.md docs/en/CHAPTER/TOPIC/04-model.md docs/zh/CHAPTER/TOPIC/04-model.md docs/en/CHAPTER/TOPIC/05-agent-harness.md docs/zh/CHAPTER/TOPIC/05-agent-harness.md`
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py --infer-from-en docs/en/CHAPTER/TOPIC/03-bench.md docs/en/CHAPTER/TOPIC/04-model.md docs/en/CHAPTER/TOPIC/05-agent-harness.md`
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/check_urls.py --out .tmp/TASK/url_check_target.md --json-out .tmp/TASK/url_check_target.json docs/en/CHAPTER/TOPIC/03-bench.md docs/zh/CHAPTER/TOPIC/03-bench.md docs/en/CHAPTER/TOPIC/04-model.md docs/zh/CHAPTER/TOPIC/04-model.md docs/en/CHAPTER/TOPIC/05-agent-harness.md docs/zh/CHAPTER/TOPIC/05-agent-harness.md`
+  `git diff --check -- docs/en/CHAPTER/TOPIC/03-bench.md docs/zh/CHAPTER/TOPIC/03-bench.md docs/en/CHAPTER/TOPIC/04-model.md docs/zh/CHAPTER/TOPIC/04-model.md docs/en/CHAPTER/TOPIC/05-agent-harness.md docs/zh/CHAPTER/TOPIC/05-agent-harness.md`
+  Use this after focused edits when the full changed-file URL check would include unrelated dirty files. Report any old 403 or rate-limited links separately from newly added failures.
+- Dirty-worktree target diff audit:
+  `git diff HEAD --numstat -- TARGET_FILES...`
+  `git diff --cached -- TARGET_FILES...`
+  `git diff -- TARGET_FILES...`
+  Use `git diff HEAD` to summarize all staged and unstaged target-file changes, then inspect staged and unstaged views separately so pre-existing edits are not mistaken for current-turn edits.
+- Script sanity check:
+  `source .venv/bin/activate && python -m py_compile .agents/skills/llm-landscape-maintainer/scripts/*.py`
+  Run this after touching any maintenance script or after adding a new shared helper.
 
 - Skill marketplace search:
   `npx --yes skills find "QUERY"`
@@ -178,12 +224,27 @@ In this workspace, prefer `source .venv/bin/activate && python ...` for local sc
 - Exact URL and arXiv metadata check:
   `id='2605.17373'; arxiv='https://arxiv.org'; curl -Ls "$arxiv/abs/$id" | rg -n "citation_title|citation_date|Submitted|github|project|Abstract" -C 2`
   Use this before replacing an existing arXiv URL; a newer URL may be a follow-up paper rather than a correction.
+- Focused duplicate and alias scan:
+  `rg -n "AliasA|AliasB|Full Paper Title|Acronym|arxiv_id_without_dot" docs/en/CHAPTER/TOPIC docs/zh/CHAPTER/TOPIC docs/en/NEIGHBOR/TOPIC docs/zh/NEIGHBOR/TOPIC`
+  Use this before inclusion when names are short, overloaded, or likely to appear in neighboring pages. Record exact English and Chinese hit status in `.tmp/<task>/` before deciding whether an item is missing.
+- Local subagent intake review:
+  `sed -n '1,260p' .tmp/TASK/*.md`
+  `sed -n '1,220p' .tmp/TASK/subagent-lessons/*.md`
+  Use this before final edits in any multi-agent intake; do not rely only on the parent summary because incomplete phases, URL caveats, and alias drift often appear only in the lessons memos.
+- Vendor model-side gap scan:
+  `rg -n "AutoGLM|AutoWebGLM|ComputerRL|MobileRL|UI-Voyager|MAI-UI|UI-S1|GUI-Critic-R1|ToolCUA|UI-Venus|Code2World|Agentic-Q|SecAgent|MobiZen-GUI|Qwen3-VL|Qwen3.5|Kimi-VL|Kimi K2|Seed1.8|Step-GUI|GELab-Zero|MagicGUI|UI-R1|UI-Genie|UI-Mem|MiMo-VL|AndesVL|BlueLM" docs/en docs/zh`
+  `rg -n -i '\bUI-R1\b' docs/en docs/zh || true`
+  Use fixed-string aliases for broad duplicate checks, then add exact-boundary exceptions for names that are substrings of existing entries such as `UI-R1` versus `GUI-R1` and `InfiGUI-R1`.
+- Vendor affiliation and model-card spot checks:
+  `id='2603.08533'; arxiv='https://arxiv.org'; curl -Ls "$arxiv/e-print/$id" | tar -xzOf - main.tex 2>/dev/null | rg -n "Alibaba|Taobao|Tmall|Ant|Tencent|Huawei|OPPO|vivo|Xiaomi|affil|author" -C 2`
+  `source .venv/bin/activate && curl -Ls https://huggingface.co/api/models/alibabagroup/MobiZen-GUI-4B | python -m json.tool | sed -n '1,120p'`
+  Use these when HTML pages omit affiliations, when a model card is the primary source, or when a monorepo mixes Model, Bench, and Agent Harness artifacts.
 - Bilingual URL-set spot check:
-  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py --infer-from-en docs/en/03-downstream-applications/02-research/README.md docs/en/03-downstream-applications/02-research/03-bench.md docs/en/03-downstream-applications/02-research/04-agent-harness.md docs/en/03-downstream-applications/02-research/05-skill.md`
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py --infer-from-en docs/en/03-downstream-applications/02-research/README.md docs/en/03-downstream-applications/02-research/03-bench.md docs/en/03-downstream-applications/02-research/04-model.md docs/en/03-downstream-applications/02-research/05-agent-harness.md docs/en/03-downstream-applications/02-research/06-skill.md`
   Use this after bilingual edits to catch missing links, English-only additions, or Chinese-only URL drift.
 - Routine final validation bundle:
-  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/chronology_order_audit.py --bilingual docs/en/03-downstream-applications/02-research/03-bench.md docs/zh/03-downstream-applications/02-research/03-bench.md docs/en/03-downstream-applications/02-research/04-agent-harness.md docs/zh/03-downstream-applications/02-research/04-agent-harness.md docs/en/02-agent-capabilities/04-deep-research/03-bench.md docs/zh/02-agent-capabilities/04-deep-research/03-bench.md docs/en/02-agent-capabilities/04-deep-research/04-agent-harness.md docs/zh/02-agent-capabilities/04-deep-research/04-agent-harness.md`
-  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py --infer-from-en docs/en/03-downstream-applications/02-research/README.md docs/en/03-downstream-applications/02-research/03-bench.md docs/en/03-downstream-applications/02-research/04-agent-harness.md docs/en/03-downstream-applications/02-research/05-skill.md docs/en/02-agent-capabilities/04-deep-research/README.md docs/en/02-agent-capabilities/04-deep-research/03-bench.md docs/en/02-agent-capabilities/04-deep-research/04-agent-harness.md docs/en/02-agent-capabilities/04-deep-research/05-skill.md`
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/chronology_order_audit.py --bilingual`
+  `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/compare_bilingual_urls.py --infer-from-en $(find docs/en -name '*.md' -print | sort)`
   `source .venv/bin/activate && python .agents/skills/llm-landscape-maintainer/scripts/check_changed_urls.py --out .tmp/url_check_changed.md`
   `git diff --check && git diff --cached --check`
   `source .venv/bin/activate && python -m py_compile .agents/skills/llm-landscape-maintainer/scripts/*.py`
@@ -205,7 +266,7 @@ In this workspace, prefer `source .venv/bin/activate && python ...` for local sc
   Use this to inspect cached citation/reference edges before doing new API calls.
 - Large candidate triage:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/citation_candidate_triage.py .tmp/unchecked.json --chunk-dir .tmp/triage_chunks`
-  Use this when citation closure creates thousands of candidates. It conservatively auto-rejects only low-citation, single-relation candidates with no title/abstract signal for this repository's taxonomy, and writes compact review chunks for subagents.
+  Use this when citation closure creates thousands of candidates. It conservatively auto-rejects only low-citation, single-relation candidates with no title/abstract signal for this repository's taxonomy, and writes compact review chunks for subagents. Add `--exclude-biomedical` when biomedical, clinical, omics, drug, or medical-imaging work is outside the task boundary.
 - Subagent decision sync:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/sync_candidate_decisions.py --apply --mark-state`
   Use this after parallel candidate screening. It normalizes both `decision` and `status` schemas, maps subagent include/accept recommendations to `deferred` until the parent actually edits official docs, updates the checked-paper registry under the shared lock, and records synced chunk files so repeated runs only process new outputs. Use `--resync chunk-006.json` when a previously synced chunk needs correction.
@@ -214,13 +275,16 @@ In this workspace, prefer `source .venv/bin/activate && python ...` for local sc
   Run this before decision sync. It checks JSON parseability, input/output record counts, identifier order, decision vocabulary, required include/reject/defer rationale fields, and non-placeholder Markdown memos.
 - Parent-review shortlist:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/parent_review_shortlist.py`
-  Use this after all subagent chunks are synced. It scores include recommendations, removes entries already present in docs, writes a strict parent-review shortlist, and splits it by target document so final edits can stay focused. Treat this as a review aid, not an automatic inclusion decision.
+  Use this after all subagent chunks are synced. It scores include recommendations, removes entries already present in docs, writes a strict parent-review shortlist, and splits it by target document so final edits can stay focused. It understands `target_doc`, `target_docs`, `docs`, `Survey`, and `Model` recommendations. Treat this as a review aid, not an automatic inclusion decision.
 - Apply parent-approved candidate inclusions:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/apply_candidate_inclusions.py --source-dir .tmp/candidate_closure_roundN/decisions --override-json .tmp/candidate_closure_roundN/target_overrides.json --included-out .tmp/candidate_closure_roundN/applied_inclusions.json`
-  Use this after parent review to merge subagent include/accept decisions into English and Chinese Markdown together. Use the override file for target-section fixes, category migrations, arXiv URL fixes, parent exclusions, or rewritten bullets; the script inserts chronologically within sections and skips bullets whose URL already appears.
+  Use this after parent review to merge subagent include/accept decisions into English and Chinese Markdown together. Use the override file for target-section fixes, category migrations, arXiv URL fixes, parent exclusions, or rewritten bullets; the script inserts chronologically within sections and skips bullets whose URL already appears. It can match numbered headings by section label, so `Model` or `Survey` is enough when numbering differs across paired files.
+- Reconsider rejected Survey/Model candidates:
+  `python3 .agents/skills/llm-landscape-maintainer/scripts/reconsider_rejected_survey_model.py --round-dir .tmp/candidate_closure_roundN --candidate-json .tmp/roundN_unchecked_candidates.json --out .tmp/candidate_closure_roundN/reconsider_survey_model.json --non-candidate-out .tmp/candidate_closure_roundN/reconsider_survey_model_rejected.json --chunk-dir .tmp/candidate_closure_roundN/reconsider_chunks`
+  Use this when a new `Survey` or `Model` section changes the taxonomy and earlier rejection reasons may now be invalid. It mines rejected decisions and auto-reject files for survey and model signals, excludes obvious biomedical noise by default, assigns a tentative target doc and section, and writes review chunks. The output is a candidate queue, not an inclusion authority.
 - Chronology order audit:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/chronology_order_audit.py --bilingual TARGET_FILES...`
-  Run this after any multi-file Markdown inclusion or category move that touches Bench or Agent Harness sections. It normalizes arXiv IDs, recent venue-only URLs, OpenReview/OJS/proceedings pages, and model-card-only entries onto a shared `YYYY-MM` scale, reports known-date inversions, and can repair known-date slots with `--fix`. If a new venue-only source appears, add an explicit override before trusting the audit result.
+  Run this after any multi-file Markdown inclusion or category move that touches Bench, Model, or Agent Harness sections. It normalizes arXiv IDs, recent venue-only URLs, OpenReview/OJS/proceedings pages, and model-card-only entries onto a shared `YYYY-MM` scale, reports known-date inversions, and can repair known-date slots with `--fix`. If a new venue-only source appears, add an explicit override before trusting the audit result.
 - Checked-paper registry:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/checked_paper_registry.py candidates --out .tmp/s2_unchecked_candidates.md`
   The default registry is `.tmp/landscape-maintainer/checked-papers.json`; use it to mark papers already included, rejected, or deferred so future citation scans surface only newly unchecked candidates.
@@ -234,10 +298,6 @@ In this workspace, prefer `source .venv/bin/activate && python ...` for local sc
 - Session command mining:
   `python3 .agents/skills/llm-landscape-maintainer/scripts/session_command_miner.py --min-tokens 300 --out .tmp/session_long_commands.md`
   Use this when extracting reusable long commands from `~/.codex` sessions. Promote only commands that match this repository's maintenance workflow.
-- Script sanity check:
-  `python3 -m py_compile .agents/skills/llm-landscape-maintainer/scripts/*.py`
-  Run this before finishing a skill-script edit or after adding new maintenance scripts.
-
 The Semantic Scholar cache lives under `.tmp/semantic_citation_cache/`. Reuse it across runs. The legacy cache from `/data/panly/skill-arena/.tmp` has been migrated here; do not recreate project-specific caches under the old repository.
 If a one-off shell or Python command grows beyond roughly 300 tokens or recurs across sessions, prefer adding a focused script under this skill instead of leaving it as terminal history.
 In particular, do not repeat massive chunk-screening here-docs. Subagents may write compact human decisions or override files, but repeated parsing, schema validation, memo generation, URL-cache inspection, registry updates, and inclusion application belong in scripts.
@@ -257,6 +317,12 @@ In particular, do not repeat massive chunk-screening here-docs. Subagents may wr
 - Semantic Scholar closure broadens a seed set but does not certify coverage of a newly accepted conference track. Preserve and report official-track coverage separately from citation-graph expansion.
 - Semantic Scholar citation results are noisy. Rank by fit first, then recency and citation count; do not add every candidate just because it appears in the graph.
 - Survey papers are useful twice: they identify taxonomy and expose baselines that should be checked as potential landscape entries.
+- Adding a new section type changes the meaning of old rejections. Revisit previous `model-only`, `training-only`, `architecture-only`, and `survey-only` rejects before declaring coverage complete.
+- In task pages, keep section order stable as `Leaderboard`, `Survey`, `Bench`, `Model`, `Agent Harness`, `Skill`. Empty sections are acceptable when no credible entries are found; missing sections are not acceptable during structure-normalization tasks.
+- In the split tree, section order is represented by filenames as well as headings. Adding `04-model.md` requires renumbering downstream section files to `05-agent-harness.md` and `06-skill.md` in both languages, plus updating local `README.md` links.
+- The old flat numbered docs are useful compatibility inputs but should not be used as output paths. Scripts that receive flat paths must resolve them to split section files through `resolve_english_target_doc`.
+- When moving method papers from `Agent Harness` to `Model`, remove duplicate primary listings unless the same work also contributes a distinct external harness. Model entries should summarize the model-side contribution; Agent Harness entries should summarize execution logic.
+- For Model chronology, arXiv IDs usually provide enough ordering, but official proceedings-only items need manual release keys such as conference month. Record or remember those keys during intake so a later audit does not silently pass with unknown dates.
 - Benchmark names drift across papers, project pages, and leaderboards. Normalize names and verify whether variants are distinct tasks or aliases.
 - Unicode, punctuation, hyphenation, and squared or Greek symbols can break exact matching. Normalize these variants for search, but preserve the canonical display name from the paper or project when editing docs.
 - Short acronyms are unsafe deduplication keys. Treat matches such as common words, two- to four-letter acronyms, or reused family names as hints until the surrounding title, URL, authors, arXiv/OpenReview ID, or repository confirms identity.
@@ -299,8 +365,8 @@ In particular, do not repeat massive chunk-screening here-docs. Subagents may wr
 - When the request concerns latest papers from a named conference or track, do not rely on arXiv, keyword search, or citation traversal as the primary inventory; enumerate the official accepted-paper source first and record that sweep.
 - Do not claim citation or reference closure is complete when an API was rate-limited, unavailable, or only partially scanned; report the bounded evidence actually collected.
 - Do not add leaderboard, product, or adoption claims without an adjacent citation or URL.
-- Do not append new Bench, Agent Harness, Skill, or Leaderboard entries out of chronological order when release dates are available.
-- Do not finish a multi-file inclusion run without checking edited Bench and Agent Harness sections for chronological inversions in both English and Chinese.
+- Do not append new Bench, Model, Agent Harness, Skill, or Leaderboard entries out of chronological order when release dates are available.
+- Do not finish a multi-file inclusion run without checking edited Bench, Model, and Agent Harness sections for chronological inversions in both English and Chinese.
 - Do not treat training-only model papers as core Agent Harness entries unless the harness/workflow design is the contribution.
 - Do not leave broken newly added URLs in the repository.
 - Do not let parallel subagents edit overlapping files without explicit file ownership.

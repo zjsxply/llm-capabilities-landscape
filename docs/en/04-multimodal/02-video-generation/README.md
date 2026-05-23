@@ -2,12 +2,11 @@
 
 > Parent chapter: 4. Multimodal
 
-Note: This page collects video, audio-video, animation, 3D scene, editing, and dynamic world-model generation evaluations and orchestration harnesses. Passive video understanding stays in [1.6 Video](../../01-core-capabilities/06-video/README.md).
-
 ## Sections
 
 - [4.2.1 Leaderboard](01-leaderboard.md)
 - [4.2.2 Survey](02-survey.md)
 - [4.2.3 Bench](03-bench.md)
-- [4.2.4 Agent Harness](04-agent-harness.md)
-- [4.2.5 Skill](05-skill.md)
+- [4.2.4 Model](04-model.md)
+- [4.2.5 Agent Harness](05-agent-harness.md)
+- [4.2.6 Skill](06-skill.md)

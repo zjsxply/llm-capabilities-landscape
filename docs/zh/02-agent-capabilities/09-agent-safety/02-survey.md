@@ -1,7 +1,31 @@
 # 2.9.2 Survey
 
+- [Episodic Memory in AI Agents Poses Risks that Should be Studied and Mitigated](https://arxiv.org/abs/2501.11739)：分析智能体情景记忆带来的安全风险，并提出面向监控、控制、隐私和可信部署的缓解原则。
 - [A Survey on Trustworthy LLM Agents: Threats and Countermeasures](https://arxiv.org/abs/2503.09648)：按规划、工具、记忆、协作与部署组织威胁和防御。
+- [A Survey of Direct Preference Optimization](https://arxiv.org/abs/2503.11701)：梳理 DPO 变体、假设与失效模式，说明无在线强化学习时如何对齐 agent policy。
+- [Aligning Multimodal LLM with Human Preference](https://arxiv.org/abs/2503.14504)：把偏好对齐扩展到多模态系统，覆盖偏好数据、奖励模型与视觉语言行为优化方法。
+- [A Survey on Personalized Alignment - The Missing Piece for Large Language Models in Real-World Applications](https://arxiv.org/abs/2503.17003)：把对齐目标视为随用户和情境变化的问题，凸显一刀切偏好之外的部署权衡。
+- [Building Trustworthy Multimodal AI](https://arxiv.org/abs/2504.13199)：综述视觉语言任务中的公平性、透明性与伦理问题，将安全覆盖从纯文本 Agent 扩展到多模态系统。
+- [A Survey of Attacks on Large Language Models](https://arxiv.org/abs/2505.12567)：系统梳理针对 LLM 与 LLM-based agent 的对抗攻击，覆盖滥用、隐私泄露、服务破坏与防御方向。
+- [A Red Teaming Roadmap Towards System-Level Safety](https://arxiv.org/abs/2506.05376)：把红队测试从孤立模型探测推进到覆盖组件、工作流与部署环境的系统级安全。
+- [A Systematic Review of Poisoning Attacks Against Large Language Models](https://arxiv.org/abs/2506.06518)：系统整理 LLM 投毒威胁模型、攻击规格、度量与主要攻击类型，服务于安全分析。
+- [From LLMs to MLLMs to Agents](https://arxiv.org/abs/2506.15170)：综述 LLM 生态从纯文本模型扩展到多模态系统与 Agent 后的越狱攻击和防御范式。
+- [A Technical Survey of Reinforcement Learning Techniques for Large Language Models](https://arxiv.org/abs/2507.04136)：梳理塑造 LLM 行为的强化学习方法，为 agent 安全提供奖励、策略与反馈机制的技术地图。
+- [LLM in the Middle](https://arxiv.org/abs/2509.10682)：系统综述真实 LLM 系统在软件与模型生命周期中的威胁、缓解策略和开放问题。
+- [SoK: Taxonomy and Evaluation of Prompt Security in Large Language Models](https://arxiv.org/abs/2510.15476)：系统化梳理越狱与提示安全攻击、防御、威胁模型、评测配置和标准资源。
+- [Security Issues in the Model Context Protocol Ecosystem](https://arxiv.org/abs/2510.16558)：实证研究 MCP 生态中的安全问题。核心思想是检查 MCP server、client 与工具描述如何形成新的攻击面，使协议级防御能建立在真实生态故障之上。
+- [Safety and Security Framework for Real-World Agentic Systems](https://arxiv.org/abs/2511.21990)：组织真实部署 agentic systems 的安全与安保控制。核心思想是连接威胁建模、运行时监控、治理与评估，把 agent 风险管理视为运营生命周期，而不是一次性 benchmark 分数。
+- [Lessons from External Review of DeepMind's Scheming Inability Safety Case](https://arxiv.org/abs/2604.21964)：从外部审查前沿 AI 欺瞒无能安全案例中总结审查方法和证据要求。
+- [Indirect Prompt Injection in the Wild](https://arxiv.org/abs/2604.27202)：实证分析真实环境中的间接提示注入，梳理其流行程度、技术路径与攻击目标。
+- [Toward Securing AI Agents Like Operating Systems](https://arxiv.org/abs/2605.14932)：用操作系统安全视角组织 LLM 智能体安全问题，强调资源隔离、权限分离、访问调解和可审计性。
+- [Securing LLM Agents](https://doi.org/10.1016/j.iotcps.2026.03.001)：把 prompt sanitization、agent guardrail 与 autonomous red-teaming 连接成 LLM agent 的纵深防御栈，而不是逐个处理孤立攻击。
+- [Data leakage and privacy failures in agentic AI](https://doi.org/10.3389/fcomp.2026.1802727)：综述带有记忆、工具和多 agent 协作的自主 agent 隐私风险。核心思想是追踪敏感信息如何在任务与执行周期之间被保留、传播和放大。
+- [LLM in the middle](https://doi.org/10.1016/j.cosrev.2026.100916)：系统综述真实 LLM 系统中的威胁与缓解措施，连接提示注入、部署攻击面和智能体安全防御模式。
 - [Mind the Agent: A Comprehensive Survey on Large Language Model-Based Agent Safety](https://openreview.net/forum?id=DHe0UXipKU)：通过工具执行、记忆投毒、交互与多 agent 失效来区分 agent safety。
 - [A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](https://arxiv.org/abs/2505.10924)：聚焦图形环境与跨应用操作中的行动风险。
 - [A Survey on Autonomy-Induced Security Risks in Large Model-Based Agents](https://arxiv.org/abs/2506.23844)：解释规划、委派、持久运行、工具与反馈引入的风险。
 - [The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey](https://arxiv.org/abs/2603.11088)：映射工具使用型工作流系统中的攻击面与缓解措施。
+- [Prompt Injection Attacks in Large Language Models and AI Agent Systems](https://doi.org/10.3390/info17010054)：综述 LLM 与 Agent 系统中的提示注入风险和防御。核心思路是把直接与间接注入、RAG poisoning、MCP/工具投毒、真实事件和纵深防御串成统一威胁图谱。
+- [AI Agents Meet Blockchain](https://doi.org/10.3390/fi17020057)：综述区块链支撑的多 Agent 协作，重点讨论安全性、可扩展性、身份与协同权衡。
+- [AI Alignment](https://doi.org/10.1145/3770749)：提供覆盖问题定义、人类监督、可扩展监督、偏好学习与治理风险的广义对齐地图。
+- [From threat to trust](https://doi.org/10.1007/s10207-025-01185-y)：评估 agentic AI 系统的安全风险，为综述部分补充超出单一攻击基准的风险评估视角。

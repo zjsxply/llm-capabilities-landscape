@@ -1,0 +1,59 @@
+# 4.1.4 Model
+
+- [Stable Diffusion 3](https://arxiv.org/abs/2403.03206)：提出面向高分辨率文生图的 rectified-flow transformer，结合可扩展架构、flow matching 和多模态条件。
+- [Object-level Visual Prompts for Compositional Image Generation](https://arxiv.org/abs/2501.01424)：利用对象级视觉提示增强图像生成中的组合式控制。
+- [ACE++](https://arxiv.org/abs/2501.02487)：提出面向图像生成与编辑的模型侧方法，核心围绕 Instruction-Based Image Creation and Editing via Context-Aware Content Filling。
+- [SceneVTG++](https://arxiv.org/abs/2501.02962)：面向自然场景中的可控多语言视觉文字生成。
+- [Janus-Pro](https://arxiv.org/abs/2501.17811)：统一多模态理解与文生图模型，通过优化训练、扩大数据和模型规模提升稳定性。
+- [ControlText](https://arxiv.org/abs/2502.10999)：在无需字体标注的条件下实现可控多语言字体渲染。
+- [RelaCtrl](https://arxiv.org/abs/2502.14377)：为扩散 Transformer 加入 relevance-guided 控制，以提升可控生成效率。
+- [CopyJudge](https://arxiv.org/abs/2502.15278)：用自动判别流程和缓解策略识别并降低文生图扩散模型中的版权侵权风险。
+- [Concept Corrector](https://arxiv.org/abs/2502.16368)：在文生图扩散模型输出侧即时移除不需要的概念。
+- [KV-Edit](https://arxiv.org/abs/2502.17363)：提出面向图像生成与编辑的模型侧方法，核心围绕 Training-Free Image Editing for Precise Background Preservation。
+- [K-LoRA](https://arxiv.org/abs/2502.18461)：无需训练即可融合主体与风格 LoRA，用于个性化图像生成。
+- [h-Edit](https://arxiv.org/abs/2503.02187)：利用 Doob h-transform 提升扩散式图像编辑的灵活性与可控性。
+- [OmniPaint](https://arxiv.org/abs/2503.08677)：通过渐进式成对与非成对扩散训练联合建模对象删除和插入，用于 object-oriented image editing。
+- [Personalize Anything](https://arxiv.org/abs/2503.12590)：面向扩散 Transformer 的免训练个性化方法，使用随时间步变化的 token 替换和 patch perturbation。
+- [Edit Transfer](https://arxiv.org/abs/2503.13327)：通过视觉上下文关系学习图像编辑，实现编辑行为迁移。
+- [Diffusion-4K](https://arxiv.org/abs/2503.18352)：面向基于潜空间扩散模型的 4K 超高分辨率图像合成。
+- [Implicit Bias Injection Attacks](https://arxiv.org/abs/2504.01819)：展示文本到图像扩散模型如何被引导注入隐性偏见，为生成模型的模型侧安全与鲁棒性提供依据。
+- [Sculpting Memory](https://arxiv.org/abs/2504.09039)：通过动态掩码与概念感知优化实现扩散模型的多概念遗忘。
+- [PT-Mark](https://arxiv.org/abs/2504.10853)：通过语义感知的关键调优在文本到图像扩散模型中嵌入隐形水印。
+- [Seedream 3.0](https://arxiv.org/abs/2504.11346)：中英双语图像生成基础模型报告，覆盖数据构建、混合分辨率训练、跨模态 RoPE、奖励模型后训练和加速。
+- [SmartFreeEdit](https://arxiv.org/abs/2504.12704)：免 mask 的指令式图像编辑模型，结合 MLLM、区域感知 token、推理式分割和超图增强 inpainting。
+- [REED-VAE](https://arxiv.org/abs/2504.18989)：将生成结果重新编码到 VAE 潜空间，训练扩散模型进行迭代式图像编辑。
+- [In-Context Edit](https://arxiv.org/abs/2504.20690)：提出面向图像生成与编辑的模型侧方法，核心围绕 Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer。
+- [Safer Prompts](https://arxiv.org/abs/2505.03338)：通过提示侧缓解机制降低视觉生成式 AI 的知识产权风险。
+- [Multi-turn Consistent Image Editing](https://arxiv.org/abs/2505.04320)：使用 flow-matching inversion、双目标 LQR 采样和自适应 attention highlighting，降低迭代编辑中的误差累积。
+- [BLIP3-o](https://arxiv.org/abs/2505.09568)：开放统一多模态模型族，用扩散 Transformer 生成 CLIP 图像特征，并结合顺序预训练和高质量指令数据。
+- [BAGEL](https://arxiv.org/abs/2505.14683)：decoder-only 统一多模态预训练模型，用交错文本、图像、视频和网页数据训练，支持推理、生成和图像操作。
+- [Rhetorical Text-to-Image Generation](https://arxiv.org/abs/2505.22792)：使用两层扩散策略优化，使文本到图像模型能呈现修辞提示中的隐含意义。
+- [OmniGen2](https://arxiv.org/abs/2506.18871)：指令对齐的多模态生成模型，解耦文本与图像解码，并加入编辑、上下文生成和反思数据流程。
+- [Draw Your Mind](https://arxiv.org/abs/2508.03481)：在条件层面对用户偏好建模，用于个性化文本到图像扩散生成。
+- [Pref-GRPO](https://arxiv.org/abs/2508.20751)：提出面向图像生成与编辑的模型侧方法，核心围绕 Pairwise Preference Reward-based GRPO for Stable Text-to-Image Reinforcement Learning。
+- [Universal Few-Shot Spatial Control](https://arxiv.org/abs/2509.07530)：面向扩散模型的少样本空间控制适配器，用少量 image-condition 样例适应新的空间控制条件。
+- [EditScore](https://arxiv.org/abs/2509.23909)：提出面向图像生成与编辑的模型侧方法，核心围绕 Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling。
+- [Causal-Adapter](https://arxiv.org/abs/2509.24798)：将冻结的文本到图像扩散骨干适配到因果干预下的可靠反事实图像生成。
+- [SafeEditor](https://arxiv.org/abs/2510.24820)：事后式文生图安全编辑方法，用统一 MLLM 编辑模型在生成后修复不安全图像。
+- [FlowChef](https://doi.org/10.1109/ICCV51701.2025.01420)：通过对 rectified-flow 模型进行 steering 来增强可控视觉生成。
+- [KoDi](https://doi.org/10.1109/ACCESS.2025.3633798)：构建面向韩英双语提示的文生图扩散模型，强调文化一致性生成。
+- [HybridEditDif](https://doi.org/10.1016/j.patcog.2025.112510)：结合文本和样例引导进行扩散式图像编辑。
+- [FFTDiff](https://doi.org/10.1016/j.jvcir.2025.104681)：通过扩散模型的频域引导实现免调参图像纹理迁移。
+- [Gain-Map Decomposed Diffusion](https://doi.org/10.1109/ICCV51701.2025.01629)：在扩散式图像生成流程中分解增益图，用于生成 HDR 图像。
+- [Edge-Preserving Diffusion Editing](https://doi.org/10.1109/IoTAAI66837.2025.11212919)：在语义扩散编辑中加入边缘保持平滑，提升局部编辑控制。
+- [LatentPS](https://doi.org/10.1109/WACVW65960.2025.00023)：利用潜在扩散表示进行图像编辑，适合放入图像编辑模型部分。
+- [Diff-PC](https://arxiv.org/abs/2602.00639)：为扩散模型的零样本人像定制加入身份保持和三维感知控制。
+- [FlowBypass](https://arxiv.org/abs/2602.01805)：通过绕过部分整流流轨迹提升免训练图像编辑效率，同时保持重建保真度。
+- [Effects-Sensitive In-Context Inpainting](https://arxiv.org/abs/2602.08388)：通过效果敏感的上下文修补与扩散 Transformer 改进几何图像编辑。
+- [FusionEdit](https://arxiv.org/abs/2602.08725)：结合语义融合与注意力调制，实现无需显式掩码的免训练图像编辑。
+- [Localized Concept Erasure](https://arxiv.org/abs/2602.19631)：通过高层表示误导在文本到图像扩散模型中擦除局部概念。
+- [Conditioned Activation Transport](https://arxiv.org/abs/2603.03163)：推理时文生图安全 steering 方法，用安全与不安全提示对学习非线性 activation transport map。
+- [SafeRoPE](https://arxiv.org/abs/2604.01826)：对 rectified-flow transformer 应用风险特定的 head-wise embedding rotation，在保持质量的同时降低不安全图像生成。
+- [VicoEdit](https://arxiv.org/abs/2604.04487)：通过视觉上下文整合和概念对齐实现免训练图像编辑。
+- [Partial-Sketch Diffusion Editing](https://doi.org/10.1109/TIP.2026.3685834)：以局部草图约束扩散式图像操控，为草图引导的可控视觉编辑提供模型方法。
+- [SegEdit](https://doi.org/10.1016/j.eswa.2026.131222)：在扩散模型中结合语义掩码分割与形状注入，实现可控图像编辑。
+- [HierLoRA](https://doi.org/10.1016/j.neucom.2026.132927)：使用层次化增强 LoRA 在图像扩散模型中学习多个个性化概念。
+- [Attribute-Conditioned Attention Scaling](https://doi.org/10.14569/ijacsa.2026.0170472)：根据目标视觉属性缩放注意力，从而控制文本到图像扩散输出。
+- [Panoptic Scene Graph Grounded Editing](https://doi.org/10.1049/cvi2.70069)：利用全景场景图与互斥注意力操控进行免训练图像编辑，更适合放入图像编辑模型部分而非具身 VLA。
+- [Content-Style Decoupled Latent Diffusion](https://doi.org/10.1038/s41598-026-36407-3)：在潜在扩散架构中解耦内容与风格，用于多风格图像生成。
+- [Text-Conditioned Diffusion Image Generation](https://doi.org/10.1007/s11042-025-20990-0)：研究基于扩散模型的文本条件图像生成，是直接的图像生成模型方法。

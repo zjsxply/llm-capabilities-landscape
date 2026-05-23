@@ -5,3 +5,4 @@
 - [Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions](https://arxiv.org/abs/2503.08979)：综述自主科研工作流、工具、挑战与未来方向。
 - [From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery](https://arxiv.org/abs/2505.13259)：解释科研辅助系统向自主发现系统演进的路径。
 - [A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers](https://arxiv.org/abs/2508.21148)：连接科学数据基础、模型体系、评测与智能体前沿。
+- [Empowering scientific discovery with explainable small domain-specific and large language models](https://doi.org/10.1007/s10462-025-11365-w)：综述面向科学发现的可解释小型领域模型与大语言模型，将模型透明度与科研流程联系起来。

@@ -1,0 +1,54 @@
+# LLM 能力研究图谱
+
+一个围绕 LLM 能力、任务、benchmark 与面向 agent 的方法整理的结构化研究图谱。
+
+本仓库按能力方向、benchmark 家族与代表性技术路线组织近期 LLM 研究，重点关注 agent harness、工作流、工具调用、记忆、skill 调用以及下游 agent 应用。
+
+## 目录
+
+### 0. Harness 与 Skill Creator
+
+- [0.1 什么是 Harness](docs/zh/00-01-what-is-harness.md)
+- [0.2 读 Harness 时重点看什么](docs/zh/00-02-how-to-read-harnesses.md)
+- [0.3 Skill Creator](docs/zh/00-03-skill-creator.md)
+- [0.4 偏总体验的总榜](docs/zh/00-04-overall-leaderboards.md)
+- [0.5 Benchmark 可靠性与动态评测](docs/zh/00-05-benchmark-reliability.md)
+
+### 1. 基础能力
+
+- [1.1 多语言](docs/zh/01-01-multilingual.md)
+- [1.2 科学知识](docs/zh/01-02-scientific-knowledge.md)
+- [1.3 指令遵循](docs/zh/01-03-instruction-following.md)
+- [1.4 幻觉](docs/zh/01-04-hallucination.md)
+- [1.5 图像（含 OCR）](docs/zh/01-05-image-ocr.md)
+- [1.6 视频](docs/zh/01-06-video.md)
+- [1.7 空间](docs/zh/01-07-spatial.md)
+- [1.8 数学（含多模态数学）](docs/zh/01-08-math.md)
+- [1.9 通用推理（含视觉谜题）](docs/zh/01-09-general-reasoning.md)
+- [1.10 长上下文](docs/zh/01-10-long-context.md)
+- [1.11 工具调用](docs/zh/01-11-tool-use.md)
+- [1.12 终端调用](docs/zh/01-12-terminal-use.md)
+- [1.13 Skill 调用](docs/zh/01-13-skill-use.md)
+- [1.14 写作与长文生成](docs/zh/01-14-writing.md)
+- [1.15 记忆](docs/zh/01-15-memory.md)
+
+### 2. 基础 Agent
+
+- [2.1 竞赛编程](docs/zh/02-01-competitive-programming.md)
+- [2.2 软件开发](docs/zh/02-02-software-development.md)
+- [2.3 互联网搜索](docs/zh/02-03-web-search.md)
+- [2.4 深度研究](docs/zh/02-04-deep-research.md)
+- [2.5 计算机操作（GUI）](docs/zh/02-05-computer-use-gui.md)
+- [2.6 长时运行](docs/zh/02-06-long-running.md)
+- [2.7 现实工作](docs/zh/02-07-real-world-work.md)
+- [2.8 未来预测](docs/zh/02-08-future-prediction.md)
+- [2.9 Agent 安全](docs/zh/02-09-agent-safety.md)
+
+### 3. 下游应用
+
+- [3.1 配环境](docs/zh/03-01-environment-setup.md)
+- [3.2 科研](docs/zh/03-02-research.md)
+
+## English Version
+
+英文版与中文原文并列维护，见 [README.md](README.md)。

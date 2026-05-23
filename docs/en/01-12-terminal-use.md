@@ -1,0 +1,128 @@
+# 1.12 Terminal Use
+
+> Parent chapter: 1. Foundational Capabilities
+
+
+Note: This line focuses on whether agents can complete long-horizon, stateful, verifiable operations in real command-line environments.
+It differs from `1.11 Tool Use` because terminal use is not structured API argument filling; it requires continuous decisions across the file system, processes, dependencies, logs, test scripts, and possibly corrupted intermediate states.
+Therefore, it places more emphasis on the closed loop of `command selection -> output reading -> error recovery -> environment awareness -> artifact verification`.
+
+## 1.12.1 Leaderboard
+
+- [Terminal-Bench 2.0 official leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.0): The most important continuous terminal-agent leaderboard today; the official page showed 143 submissions as of 2026-05-22.
+  The leaderboard supports submissions from both new models and custom agents, and requires that timeouts or resource limits not be modified, making it suitable for comparing real terminal execution, context compression, completion checks, retry, and verification strategies in agent harnesses.
+- [Claw-Eval-Live](https://claw-eval-live.github.io/): A continuous workflow-agent leaderboard with tasks spanning terminal, services, files, and the tool ecosystem.
+  Its value is in using fixed fixtures, audit logs, service state, and artifact verification to track long-term agent performance in real workflows, making it a dynamic terminal-adjacent leaderboard beyond Terminal-Bench.
+- [DevOps-Gym](https://www.devops-gym.com/): A terminal-adjacent leaderboard/evaluation entry point more focused on DevOps and system operations.
+  It is suitable for observing command-line capability in deployment, configuration, monitoring, and failure recovery, complementing Terminal-Bench's single-task Linux environment.
+
+## 1.12.2 Bench
+
+- [ITBench](https://arxiv.org/abs/2502.05352) ([code](https://github.com/itbench-hub/ITBench)): What it evaluates: agent workflows in real IT automation tasks such as SRE, CISO, and FinOps.
+  Core idea: use extensible scenarios, push-button workflows, and interpretable metrics to turn enterprise operations/security/cost tasks into executable evaluation, complementing DevOps terminal-adjacent tasks beyond pure Linux shell tasks.
+- [CVE-Bench](https://arxiv.org/abs/2503.17332) ([code](https://github.com/uiuc-kang-lab/cve-bench)): What it evaluates: the ability of AI agents to exploit real web-application vulnerabilities.
+  Core idea: combine security knowledge, terminal operation, web interaction, and exploitation chains into reproducible experiments using real high-severity CVEs, isolated environments, and executable exploit verification.
+- [BountyBench](https://arxiv.org/abs/2505.15216) ([project page](https://bountybench.github.io/)): What it evaluates: attacker and defender agents in real cybersecurity systems.
+  Core idea: use bug-bounty scenarios and dollar-impact signals to measure Detect, Exploit, and Patch tasks, supplementing security evaluation that only checks CTF success rates.
+- [CyberGym](https://arxiv.org/abs/2506.02548) ([project page](https://www.cybergym.io/)): What it evaluates: terminal operation, vulnerability understanding, and exploitation loops for agents in real cybersecurity tasks.
+  Core idea: integrate CVE scenarios, executable environments, tool calls, and final verification, requiring agents to make continuous decisions in terminal environments similar to real penetration-testing or repair workflows.
+- [SEC-bench](https://arxiv.org/abs/2506.11791) ([project page](https://sec-bench.github.io/); [code](https://github.com/SEC-bench/SEC-bench)): What it evaluates: PoC generation and vulnerability repair in real software-security tasks.
+  Core idea: automatically construct vulnerable repositories with harnesses and isolated reproduction environments, forcing agents to read code, run verification, and generate attacks or patches rather than only answer vulnerability knowledge.
+- [AIRTBench](https://arxiv.org/abs/2506.14682) ([code](https://github.com/dreadnode/AIRTBench-Code)): What it evaluates: attack discovery, code execution, and exploitation-chain loops in autonomous AI red-teaming scenarios.
+  Core idea: place 70 black-box CTF-style AI/ML security challenges into runnable tasks, examining whether agents can write scripts, call tools, and verify compromise in the terminal.
+- [Terminal-Bench 2.0](https://www.tbench.ai/registry/terminal-bench/2.0) ([official leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.0); run entry: [Harbor / Terminal-Bench run entry](https://harborframework.com/docs/running-tbench); paper: [Terminal-Bench](https://arxiv.org/abs/2601.11868); [code](https://github.com/laude-institute/terminal-bench)): What it evaluates: end-to-end task completion in real Linux terminal environments; the official registry page currently shows 89 tasks.
+  Core idea: each task is defined by instructions, a Docker environment, and test scripts, and agents must pass automatic evaluation by reading/writing files, running commands, installing/calling tools, debugging failures, and producing verifiable results.
+- [DevOps-Gym](https://arxiv.org/abs/2601.20882) ([project page](https://www.devops-gym.com/)): What it evaluates: long-horizon terminal tasks in the software DevOps cycle, such as deployment, configuration, monitoring, fault localization, and regression verification.
+  Core idea: place tasks into real repositories, service environments, and command-line workflows, emphasizing closed-loop recovery across logs, configuration, dependencies, tests, and runtime state.
+- [Patch-to-PoC](https://arxiv.org/abs/2602.07287): What it evaluates: agents' ability to reproduce N-day PoCs from Linux kernel patches.
+  Core idea: combine patch analysis, kernel builds, terminal debugging, and exploit verification to check whether agents can convert fixed vulnerabilities back into executable attack evidence.
+- [CLI-Gym](https://arxiv.org/abs/2602.10999): What it evaluates: scalable generation of CLI environment-intensive tasks.
+  Core idea: reverse healthy Dockerfile environment histories into faulty earlier states and generate executable-feedback terminal tasks for dependency, system-configuration, and runtime repair.
+- [LongCLI-Bench](https://arxiv.org/abs/2602.14337) ([code](https://github.com/finyorko/longcli-bench)): What it evaluates: long-horizon agentic programming in command-line interfaces.
+  Core idea: curate long-chain tasks from coursework and real workflows, and use fail-to-pass, pass-to-pass, and step-level scoring to locate agent failures in planning, execution, and regression protection.
+- [Terminal Wrench](https://arxiv.org/abs/2604.17596) ([code](https://github.com/few-sh/terminal-wrench)): What it evaluates: environments and trajectories in terminal benchmarks that can be bypassed through reward hacking.
+  Core idea: preserve 331 reward-hackable terminal environments and 3,632 exploit trajectories to specifically expose evaluation-reliability risks such as verifier bypass, output forgery, and environment hijacking.
+- [SkillSynth](https://arxiv.org/abs/2604.25727): What it evaluates: scalable synthesis of terminal tasks and execution trajectories.
+  Core idea: sample command-line workflows with a scenario-mediated skill graph and instantiate them into executable tasks through a multi-agent harness, providing task-generation and training-data sources for Terminal-Bench-like environments.
+- [Claw-Eval-Live](https://arxiv.org/abs/2604.28139) ([project page](https://claw-eval-live.github.io/); [code](https://github.com/Claw-Eval-Live/Claw-Eval-Live)): What it evaluates: continuously updated real workflow-agent tasks.
+  Core idea: generate release snapshots with fixed fixtures, services, workspaces, and graders from public workflow-demand signals and ClawHub skill signals, evaluating execution through trajectories, audit logs, service state, and artifact verification.
+- [SREGym](https://arxiv.org/abs/2605.07161): What it evaluates: diagnosis and mitigation by AI SRE agents in high-fidelity production-incident scenarios.
+  Core idea: inject multi-layer faults, noise, and complex failure modes into real cloud-native system stacks, forcing agents to face logs, metrics, configuration, and repair loops close to production systems.
+- [MMTB / MultiMedia-TerminalBench](https://arxiv.org/abs/2605.10966) ([project page](https://mm-tbench.github.io/multimedia-terminal-bench/); [code](https://github.com/mm-tbench/multimedia-terminal-bench); [dataset](https://huggingface.co/datasets/mm-tbench/mmtb-media)): What it evaluates: terminal agents' ability to handle multimedia-file tasks such as audio and video.
+  Core idea: extend Terminal-Bench text/code/structured-file workflows to multimedia evidence reading, file conversion, and cross-file action selection, with the Terminus-MM harness.
+- [ExploitGym](https://arxiv.org/abs/2605.11086): What it evaluates: whether AI agents can turn security vulnerabilities into real attacks.
+  Core idea: measure end-to-end capability in reconnaissance, exploit construction, failure debugging, and achieving attack objectives using real vulnerabilities, executable environments, and exploit-result verification.
+- [TAB / Task Alignment Benchmark](https://arxiv.org/abs/2605.12233): What it evaluates: whether terminal agents can selectively use relevant instructions in the environment and ignore irrelevant or misleading instructions.
+  Core idea: derive tasks from Terminal-Bench 2.1 and place necessary clues and distractor clues into natural files, README files, comments, and logs, addressing a blind spot where blindly following environment text can still pass.
+- [ClawForge](https://arxiv.org/abs/2605.14133): What it evaluates: generation of executable command-line agent benchmarks.
+  Core idea: compile reproducible tasks from scenario templates, initialization states, reference trajectories, and validators, with emphasis on whether agents check existing state, handle conflicting artifacts, and reach the correct final state.
+- [ExploitBench](https://arxiv.org/abs/2605.14153) ([project page](https://exploitbench.ai/); [code](https://github.com/exploitbench/exploitbench)): What it evaluates: a hierarchical capability ladder for cybersecurity agents.
+  Core idea: use tasks ranging from basic reconnaissance to complex exploit-chain organization to help distinguish "can use tools" from "can complete a real exploit chain."
+- [AuthBench](https://arxiv.org/abs/2605.14859): What it evaluates: whether terminal/code agents can infer minimally sufficient file-level permission boundaries for tasks.
+  Core idea: combine task-usability verification and attack-result verification to specifically test how coding agents trade off read/write/execute permissions, sensitive-file exposure, and least-privilege authorization.
+
+## 1.12.3 Agent Harness
+
+Papers and method-oriented work:
+
+- Harbor ([code](https://github.com/harbor-framework/harbor); [website](https://www.harborframework.com/)): A general agent evaluation / RL environment framework in the Terminal-Bench 2.0 ecosystem.
+  It unifies task definitions, Docker environments, agent runs, trajectories, and result management, making it suitable as a terminal benchmark-side harness.
+- Terminus 2 ([official note](https://www.tbench.ai/news/terminus)): A research terminal-agent baseline maintained by the Terminal-Bench team.
+  It intentionally keeps a minimal loop: the model sends commands to tmux, reads the buffer, and continues deciding; it is suitable as an evaluation base, though strong leaderboard results usually also require more detailed context, timeout, output truncation, and completion-check design.
+- Terminus-KIRA ([code](https://github.com/krafton-ai/kira); [technical blog](https://www.krafton.ai/blog/posts/2026-02-20-terminus_kira/terminus-en.html)): KRAFTON's lightweight terminal-harness modifications on top of Terminus/Terminus 2.
+  Key changes include stronger self-completion checks, replanning prompts, general prompts to avoid heavy dependency installation, and a more efficient `pull`-style read loop instead of tmux `push and wait`.
+- [CAMEL-AI](https://arxiv.org/abs/2303.17760) ([code](https://github.com/camel-ai/camel)): A multi-agent collaboration framework; in terminal tasks, it can serve as an open baseline for role-based collaboration, tool use, and task decomposition.
+- [OpenHands](https://arxiv.org/abs/2407.16741) ([code](https://github.com/OpenHands/OpenHands)): A general software-development agent platform; suitable as a strong baseline for mature open-source engineering agents in terminal evaluation.
+- [TerminalTraj](https://arxiv.org/abs/2602.01244) ([code](https://github.com/multimodal-art-projection/TerminalTraj)): A terminal-agent trajectory generation framework for Dockerized environments.
+  It focuses on scalable environment construction, execution-trajectory collection, and training-data generation, representing terminal agents' move from static evaluation toward trajectory-production infrastructure.
+- [TermiGen](https://arxiv.org/abs/2602.07274): A high-fidelity terminal environment and robust trajectory synthesis pipeline.
+  It uses verifiable environments, failure-recovery trajectories, and execution feedback to fill the training/evaluation data gap for open-weight terminal agents, making it suitable as data-generation-side infrastructure for Terminal-Bench-like tasks.
+- [OpenSage / SageAgent](https://arxiv.org/abs/2602.16891) ([code](https://github.com/opensage-agent/opensage-adk)): An AI-centric ADK approach where agents self-generate topology, tools, and hierarchical memory during execution.
+  SageAgent reports strong results on Terminal-Bench 2.0, CyberGym, SWE-Bench Pro, and DevOps-Gym; the design focus is dynamic subagents, tool/skill synthesis, and graph memory rather than only a fixed prompt.
+- [OPENDEV](https://arxiv.org/abs/2603.05344) ([code](https://github.com/opendev-to/opendev)): A terminal-native coding agent implemented in Rust.
+  Design focuses include a dual-agent planning/execution architecture, lazy tool discovery, model routing, context compression, and cross-session memory, making it an engineering blueprint for terminal-first agent scaffolds.
+- [Meta-Harness](https://arxiv.org/abs/2603.28052) ([code](https://github.com/stanford-iris-lab/meta-harness); [TerminalBench-2 artifact](https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact)): An outer optimization system that automatically searches and rewrites LLM harness code.
+  On TerminalBench-2, starting from strong baselines such as Terminus 2 / Terminus-KIRA, it lets a proposer agent read candidate harness source code, scores, and full execution trajectories, discovering better environment bootstrap and completion-check logic in code space.
+- [TACO](https://arxiv.org/abs/2604.19572) ([code](https://github.com/multimodal-art-projection/TACO)): A self-evolving observation-compression layer for terminal agents.
+  It discovers, refines, and reuses structured compression rules from interaction trajectories, reducing token noise in long-horizon terminal history while retaining task-critical signals.
+Major agents on the Terminal-Bench 2.0 leaderboard (as of 2026-05-22, the official leaderboard showed 143 submissions; below follows public information and high-scoring records for each agent):
+- Codex CLI ([code](https://github.com/openai/codex); [README](https://github.com/openai/codex/blob/main/README.md)): OpenAI's terminal coding agent, reaching the highest tier on the leaderboard when paired with GPT-5.5; design focuses include local/cloud terminal execution, file editing, command running, approval, and multi-agent workflows.
+- ForgeCode ([official homepage](https://forgecode.dev/); [agent docs](https://forgecode.dev/docs/operating-agents/)): A Zsh-native terminal coding harness; its high leaderboard scores indicate that multi-agent design, bounded context, fast tool correction, and model switching strategies are important for Terminal-Bench 2.0.
+- TongAgents ([official homepage](https://tongagents.mybigai.ac.cn/zh.html); [BIGAI news](https://www.bigai.ai/blog/news/%E4%BA%A7%E5%93%81%E8%83%BD%E5%8A%9B%E9%A2%86%E8%B7%91%E5%85%A8%E7%90%83%EF%BC%81%E9%80%9A%E7%A0%94%E9%99%A2-tongagents-%E7%99%BB%E4%B8%8A%E5%A4%9A%E9%A1%B9%E5%9B%BD%E9%99%85%E6%99%BA%E8%83%BD/)): BIGAI's industry-agent platform; public descriptions emphasize structured reasoning, multi-layer fault tolerance, background suspension for command timeouts, streamed segmented returns, and asynchronous completion notifications.
+- Droid ([official homepage](https://factory.ai/); [technical article](https://factory.ai/news/terminal-bench)): Factory's autonomous engineering agent; early Terminal-Bench results emphasized that, under the same base model, the agent scaffold determines the gap. Design keywords include end-to-end development workflow, automated testing, context organization, and integration with enterprise engineering systems.
+- Capy ([official homepage](https://capy.ai/); [docs](https://docs.capy.ai/automations)): A development environment for parallel coding agents; the core is Captain planning, Build agents executing in isolated VMs, GitHub PR write-back, and multi-task parallelism.
+- Simple Codex ([official product page](https://openai.com/codex)): OpenAI's simplified Codex baseline on Terminal-Bench 2.0; suitable as a comparison point for "strong model + lightweight official scaffold."
+- Mux ([code](https://github.com/coder/mux); [agent docs](https://mux.coder.com/agents)): Coder's multi-agent workbench, supporting project/global agent definitions, subagent workspaces, remote/local runtimes, and controllable tool allowlists.
+- MAYA-V2 ([official homepage](https://adya.ai/maya)): ADYA's terminal/engineering-task agent; public information mainly comes from the Terminal-Bench 2.0 leaderboard and company announcements, making it a candidate high-scoring closed/product harness.
+- Junie CLI ([official homepage](https://junie.jetbrains.com)): JetBrains' CLI/IDE-side coding agent; suitable as a representative of IDE vendors entering terminal-agent evaluation.
+- CodeBrain-1 ([code](https://github.com/feelingai-team/CodeBrain)): Feeling AI's coding-agent "brain" component; public descriptions emphasize useful context retrieval driven by LSP/code indexes, execution-logic optimization, and verification feedback.
+- Ante ([official homepage](https://antigma.ai)): Antigma Labs' in-terminal agent runtime; design keywords include Rust single binary, local-first, lightweight agent core, local model support, and large-scale self-organizing agents.
+- IndusAGI Coding Agent ([official homepage](https://www.indusagi.com)): An independent coding agent on the leaderboard; public materials are limited, so it is mainly included based on Terminal-Bench 2.0 submission records.
+- Crux: A Roam/Crux agent on the leaderboard; the code URL listed by the official leaderboard is currently inaccessible, so it is recorded here by leaderboard name only to avoid keeping a dead link.
+- Deep Agents ([code](https://github.com/langchain-ai/deepagents)): LangChain's deep-agent framework; suitable for combining planning, tools, context, and long-horizon task state into reusable terminal workflows.
+- II-Agent ([code](https://github.com/Intelligent-Internet/ii-agent); [official blog](https://ii.inc/web/blog/post/ii-agent-chat)): Intelligent Internet's open-source general agent, covering research, coding, content generation, file search, code interpreter, and multi-model switching.
+- Warp ([official homepage](https://www.warp.dev/)): An AI-native terminal product; as a representative of combining the terminal environment itself with agent workflows, it focuses on shell UI, command explanation, team context, and workflow automation.
+- Letta Code ([official homepage](https://www.letta.com/)): Letta's coding-agent direction; useful for tracking the effect of memory-first agent runtimes in terminal tasks.
+- Abacus AI Desktop ([official homepage](https://desktop.abacus.ai/)): Abacus.AI's desktop/development agent; leaderboard performance can serve as a reference for closed desktop agents entering terminal benchmarks.
+- Claude Code ([official product page](https://www.claude.com/product/claude-code)): Anthropic's terminal coding agent; design keywords include repo-aware workflows, command execution, file editing, memory, hooks, MCP, and subagents.
+- grok-cli ([code](https://github.com/superagent-ai/grok-cli)): An open-source terminal-native agent for xAI/Grok models; supports headless mode, subagents, Telegram remote control, hooks, sandboxing, and project-level instruction files.
+- Goose ([code](https://github.com/block/goose); [official docs](https://block.github.io/goose/)): Block's open-source local/desktop/CLI agent, emphasizing arbitrary model integration, MCP extensions, recipes, session persistence, and locally auditable execution.
+- [AgentFlow](https://arxiv.org/abs/2604.20801): Multi-agent harness synthesis; the core idea is to search roles, prompts, tools, communication topology, and coordination protocols together, directly optimizing harness design for tasks such as TerminalBench-2.
+- OpenCode ([code](https://github.com/sst/opencode); [official homepage](https://opencode.ai/)): An open-source terminal-native coding agent; features include model independence, LSP integration, parallel multi-session execution, privacy-first design, and desktop/IDE/terminal entry points.
+- Gemini CLI ([code](https://github.com/google-gemini/gemini-cli)): Google's Gemini terminal agent; suitable for observing the baseline scaffold performance of an official model-vendor CLI on Terminal-Bench 2.0.
+- [Agentic Harness Engineering](https://arxiv.org/abs/2604.25850) ([code](https://github.com/china-qijizhifeng/agentic-harness-engineering)): Observability-driven automatic evolution of coding-agent harnesses.
+  It treats the harness as an iteratively optimizable code artifact and improves scaffolds for Terminal-Bench 2.0-like tasks through execution trajectories, failure observations, and multi-round rewriting.
+
+
+- cchuter ([code](https://github.com/cchuter/blobfish)): teamblobfish's leaderboard agent; public information is limited, but it is useful as an inspectable community-submission implementation.
+- Mini-SWE-Agent ([code](https://github.com/SWE-agent/mini-swe-agent)): A minimal software-engineering agent from the Princeton/SWE-agent line; suitable as a low-complexity and easy-to-modify terminal/SWE baseline.
+- spoox-m ([code](https://github.com/plaume8/spoox)): A terminal agent submitted by TUM/community contributors; public information is limited, but the code can be used to inspect its Terminal-Bench adaptation.
+- Dakou Agent ([official homepage](https://dakou.iflow.cn/)): iflow's coding agent; included on the leaderboard as a Chinese product-style terminal coding agent reference.
+
+## 1.12.4 Skill
+
+- [mcp-code-execution](https://skills.sh/athola/claude-night-market/mcp-code-execution) is suitable for organizing terminal tasks into a reusable `write code -> execute -> read errors -> fix` loop.
+- [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) is suitable for providing isolated execution environments for terminal calls, reducing side-effect risks on the local machine.
+- [pytest](https://skills.sh/bobmatnyc/claude-mpm-skills/pytest) is suitable for turning terminal verification actions into test runs and regression checks.
+- [pytest-advanced](https://skills.sh/laurigates/claude-plugins/pytest-advanced) is suitable for more complex test discovery, parametrized runs, and failure localization.
+- [docker-local-dev](https://skills.sh/thienanblog/awesome-ai-agent-skills/docker-local-dev) is suitable for wrapping terminal tasks in reproducible container environments, close to the execution style of Terminal-Bench.

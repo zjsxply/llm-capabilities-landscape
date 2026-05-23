@@ -1,0 +1,112 @@
+# 2.2 软件开发
+
+> 上级章节：2. 基础 Agent
+
+
+## 2.2.1 Leaderboard
+
+- [SWE-bench Leaderboard](https://www.swebench.com/)：SWE-bench、Lite、Verified 与 Multilingual 等官方结果入口，是 repo-level issue resolving 最核心的持续榜单。
+- [SWE-bench Multimodal Leaderboard](https://www.swebench.com/multimodal.html)：面向视觉/前端问题陈述与 JavaScript 软件库的官方榜单，用于观察 agent 是否能从文本 Python 修复泛化到多模态软件任务。
+- [SWE-Lancer Diamond Leaderboard](https://swelancer.github.io/leaderboard/)：OpenAI SWE-Lancer 的公开 Diamond 榜单，强调真实 freelance-style 软件任务和更接近经济价值的交付评估。
+- [SWE-rebench Leaderboard](https://swe-rebench.com/leaderboard)：面向去污染、交互式 SWE 任务的持续榜单，适合观察新鲜 GitHub issue 上的泛化与执行反馈利用。
+- [SWE-bench-Live Leaderboard](https://swe-bench-live.github.io/)：持续从近期 GitHub issue/PR 生成任务的 live 榜单，重点降低静态 benchmark 被记忆或过拟合的风险。
+- [SWE-MERA Leaderboard](https://mera-evaluation.github.io/demo-swe-mera/)：支持按任务采集时间窗口查看结果的动态榜单，适合做 contamination-aware 的时间切片对比。
+- [CodeClash Leaderboard](https://codeclash.ai/)：目标导向、多轮锦标赛式软件工程榜单，适合评估 agent 的长期代码维护、日志分析与自发策略改进能力。
+- [Holistic Agent Leaderboard](https://hal.cs.princeton.edu/)：跨任务 agent 榜单，覆盖 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond 等任务，适合比较不同 agent harness 的通用性。
+- [SWE-PolyBench Leaderboard](https://amazon-science.github.io/SWE-PolyBench/)：多编程语言 repository-level coding agent 榜单；价值在于提供数据、容器化评测和公开排名，补齐非 Python 代码代理评测。
+- [Multi-SWE-Bench Leaderboard](https://multi-swe-bench.github.io/)：多编程语言真实 issue 修复榜单；这里的 multilingual 指编程语言，适合作为多语言 coding agent 评测的公开榜单参照。
+- [Copilot Arena](https://gclef-cmu.org/research/2025copilotarena/)：真实 IDE 使用中的代码模型偏好 arena；价值在于补齐 SWE-bench 式离线测试通过率之外的开发者偏好、交互上下文和 in-the-wild 使用信号。
+- [Aider Polyglot Leaderboard](https://aider.chat/docs/leaderboards/)：实践型多编程语言代码编辑榜单；虽然不是论文型基准，但任务和实现公开，适合快速比较多语言代码编辑能力。
+
+## 2.2.2 Bench
+
+- [SWE-Bench](https://arxiv.org/abs/2310.06770)：评什么：基于真实 GitHub issue 的仓库级 bug fixing（生成补丁并通过测试）。核心思想：用“真实仓库 + 可复现实验环境 + 测试通过”定义可执行的 SWE 评测。（[开源代码](https://github.com/SWE-bench/SWE-bench)）
+- [SciCode](https://arxiv.org/abs/2407.13168)：评什么：科研/科学场景的真实编码任务（scientist-curated research coding）。核心思想：题目更贴近科研问题分解与可验证测试，强调“知识召回 + 推理 + 代码合成”的组合能力。（[开源代码](https://github.com/scicode-bench/SciCode)）
+- `SWE-Bench Verified`：评什么：SWE-Bench 的更可靠可复现子集（强调可评测性与环境稳定）。核心思想：以更严格的数据与评测筛选降低评测噪声。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified)）
+- [SWE-bench Multimodal](https://arxiv.org/abs/2410.03859)：评什么：视觉/前端 JavaScript 软件库中的 issue resolving。核心思想：把图片化问题陈述、视觉测试与跨语言前端仓库纳入 SWE-bench 范式，用 617 个任务检验 agent 是否能从 Python 文本 bug fixing 泛化到视觉软件域。（[项目页](https://www.swebench.com/multimodal.html)）
+- [SyncBench](https://arxiv.org/abs/2502.06994)：评什么：协作软件工程中的 out-of-sync 恢复能力。核心思想：从真实 GitHub 协作演化中构造 24,332 个可执行场景，测试 agent 在环境状态变化后能否重新同步、沟通与修复。（[项目页](https://xhguo7.github.io/SyncMind/)）
+- [Copilot Arena](https://arxiv.org/abs/2502.09328)（[项目页](https://gclef-cmu.org/research/2025copilotarena/)，[开源代码](https://github.com/lmarena/copilot-arena)）：评什么：真实开发环境中的代码 LLM 偏好与交互质量。核心思想：在 IDE 内收集模型成对比较和用户偏好，补足“补丁是否通过测试”之外的 code assistant 体验、上下文使用和编辑建议质量。
+- [SWE-Lancer / SWE-Lancer Diamond](https://arxiv.org/abs/2502.12115)：评什么：更贴近真实工程协作/外包式软件任务的端到端交付能力（从需求到实现与验收）。核心思想：以更接近真实开发流程的任务设定，强调可验证交付与流程执行；公开榜单常以 Diamond split 追踪更高价值任务。
+- [SWEE-Bench / SWA-Bench](https://arxiv.org/abs/2503.07701)：评什么：由 SetUpAgent 自动构造的更大规模 repo-level issue resolving 与应用型软件任务。核心思想：把历史依赖环境重建、测试执行和结果解析自动化，用于扩展 SWE-bench 的仓库覆盖面并暴露分布差异。
+- [CVE-Bench](https://arxiv.org/abs/2503.17332)（[开源代码](https://github.com/uiuc-kang-lab/cve-bench)）：评什么：AI agent 对真实 Web 应用漏洞的利用能力。核心思想：用高危 CVE、隔离环境和可执行验证把代码理解、漏洞定位、终端操作和 exploit 构造接到同一个安全软件工程协议中。
+- [Multi-SWE-Bench](https://arxiv.org/abs/2504.02605)：评什么：多语言 issue-resolving 软件工程任务（跨语言仓库、跨语言依赖/工具链）。核心思想：在多语言仓库上复用 SWE 评测范式，并同步发布多语言兼容 agent/harness 改版以支撑可复现评测（7 种语言、1632 实例）。（[开源代码](https://github.com/multi-swe-bench/multi-swe-bench)）
+- [R2E-Gym](https://arxiv.org/abs/2504.07164)：评什么：可执行 SWE agent 训练与评测环境、以及 test-time scaling。核心思想：用 SYNGEN 从提交中合成带执行环境的 issue-like 任务，并结合执行式与 execution-free verifier 支撑开放权重 SWE agent 训练。（[项目页](https://r2e-gym.github.io/)，[开源代码](https://github.com/R2E-Gym/R2E-Gym)）
+- [SWE-PolyBench](https://arxiv.org/abs/2504.08703)：评什么：多语言 repo-level SWE 评测与对照平台。核心思想：更偏 evaluation harness，把不同语言/生态下的 SWE 任务放到统一对比协议中。（[开源代码](https://github.com/amazon-science/SWE-PolyBench)）
+- [CodeSimpleQA](https://arxiv.org/abs/2505.15843)：评什么：基础代码理解/问答（更偏 code QA）能力。核心思想：用更清晰可判定的 QA 形式补足 SWE 之外的“代码知识与理解”刻画。
+- [SWE-rebench](https://arxiv.org/abs/2505.20411)：评什么：去污染、可交互的仓库级 SWE 评测。核心思想：在 SWE-bench 风格 issue resolving 上控制训练污染和环境偏差，并支持 agent 通过交互式执行反馈完成修复。
+- [SWE-bench-Live](https://arxiv.org/abs/2505.23419)：评什么：持续更新的真实 GitHub issue resolving。核心思想：从近期 issue 与 pull request 构造 live task，让评测随时间刷新，降低静态 benchmark 被过拟合或泄漏的风险。（[开源代码](https://github.com/SWE-bench-Live/SWE-bench-Live)）
+- [GSO](https://arxiv.org/abs/2505.23671)：评什么：真实仓库中的性能优化任务。核心思想：从 commit history 构造跨语言优化任务，用性能测试和专家优化作为参照，考察 SWE agent 是否能定位瓶颈并做有效加速。（[项目页](https://gso-bench.github.io/)，[开源代码](https://github.com/gso-bench/gso)）
+- [CodeAssistBench](https://papers.nips.cc/paper_files/paper/2025/hash/ba9d95c583a154bb77b5f5900691430e-Abstract-Datasets_and_Benchmarks_Track.html)（[开源代码](https://github.com/amazon-science/CodeAssistBench)）：评什么：多轮 chat-based code assistance。核心思想：用容器化真实仓库、模拟用户和真实问题衡量 code assistant 在多轮问答、上下文追踪和代码库理解中的帮助质量，而不是只测一次性补丁生成。
+- [SWE-bench Multilingual](https://www.swebench.com/multilingual)：评什么：多语言代码库上的 SWE-bench 式 issue resolving。核心思想：尽量复用 SWE-bench 的数据/评测基础设施，把多语言能力作为“评测层扩展”纳入同一套 harness（300 题、9 种语言）。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Multilingual)，[开源代码](https://github.com/SWE-bench/SWE-bench)）
+- [SWE-Evo](https://arxiv.org/abs/2506.13339)：评什么：面向 SWE 任务的自进化/自改写式求解与泛化能力。核心思想：用“迭代改写与自我提升”的协议刻画 test-time 进化式代理表现。
+- [SWE-Bench-CL](https://arxiv.org/abs/2507.00014)：评什么：按仓库演化时间线组织的持续学习式 SWE 任务。核心思想：把 SWE-Bench Verified 问题重排为自然的 issue 序列，直接评估 agent 是否能积累经验、迁移知识并避免遗忘。（[开源代码](https://github.com/thomasjoshi/agents-never-forget)）
+- [SWE-MERA](https://arxiv.org/abs/2507.11059)：评什么：动态采集、持续更新的真实 GitHub issue resolving。核心思想：用自动化筛选、LLM 质量验证和时间窗口化榜单降低污染风险，并支持按任务时间段观察 agent 泛化。（[Leaderboard](https://mera-evaluation.github.io/demo-swe-mera/)，[数据集](https://huggingface.co/datasets/MERA-evaluation/SWE-MERA)）
+- [AlgoTune](https://arxiv.org/abs/2507.15887)：评什么：数值算法和代码性能优化。核心思想：让 agent 在可执行反馈下同时保证正确性和速度，补足 SWE 修 bug 之外对算法工程、性能诊断和优化搜索的评测。
+- [GitTaskBench](https://arxiv.org/abs/2508.18993)：评什么：repo-level 的真实代码代理任务（理解仓库、配环境、增量开发/修复、交付）。核心思想：用更端到端的仓库任务链路衡量 code agent 的“真实工程闭环”，并引入成本/效率维度。（[开源代码](https://github.com/QuantaAlpha/GitTaskBench)）
+- [SWE-Bench Pro](https://arxiv.org/abs/2509.16941)：评什么：更高难、更贴近“工程级代理”需求的 SWE 任务集。核心思想：提高任务复杂度与流程要求，拉开强 agent 的区分度。
+- [FeatBench](https://arxiv.org/abs/2509.22237)：评什么：只给自然语言需求的 repository-level feature implementation。核心思想：不给代码提示，并用持续更新流水线降低污染，专门观察 agent 的需求理解、范围控制与回归风险。（[开源代码](https://github.com/TsinghuaISE/FeatBench)）
+- [ArtifactsBench](https://arxiv.org/abs/2510.04316)：评什么：更偏“可交付产物（artifacts）”导向的软件任务完成。核心思想：把输出约束为可验证的工程产物与工作流结果，而不是单一代码片段。
+- [Holistic Agent Leaderboard（HAL）](https://arxiv.org/abs/2510.11977)（[开源代码](https://github.com/princeton-pli/hal-harness)）：评什么：跨 benchmark 的 agent 统一评测，覆盖 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond 等软件工程任务。核心思想：把任务运行、成本、时间、轨迹和 leaderboard 提交流程标准化，便于比较不同软件 agent harness 的通用性。
+- [CodeClash](https://arxiv.org/abs/2511.00839)：评什么：面向开放目标的软件工程锦标赛。核心思想：让 agent 在多轮 tournament 中自主修改代码库、读取日志、写测试和与对手竞争，衡量长期代码维护与策略性改进能力。（[项目页](https://codeclash.ai/)，[开源代码](https://github.com/CodeClash-ai/CodeClash)）
+- [SWE-Sharp-Bench](https://arxiv.org/abs/2511.02352)：评什么：C# / .NET 生态下的 repo-level bug fixing。核心思想：把 SWE-bench 式 issue resolving 扩展到强类型、构建链路复杂的企业级语言生态，用真实测试验证补丁。
+- [SWE-Bench++](https://arxiv.org/abs/2512.17419)：评什么：自动生成的 SWE benchmark 与高质量可执行实例。核心思想：在任务生成流程中显式引入环境合成、补丁生成和验证筛选，减少人工构造瓶颈。（[开源代码](https://github.com/TuringEnterprises/SWE-Bench-plus-plus)）
+- [Terminal-Bench 2.0](https://arxiv.org/abs/2601.11868)：评什么：终端环境中的端到端任务完成（读写文件、运行命令、修复问题、产出可执行结果）。核心思想：把“编程”落到真实 CLI 操作闭环，评测可执行性而非纯代码片段。（[Registry](https://www.tbench.ai/registry/terminal-bench/2.0)，[开源代码](https://github.com/harbor-framework/terminal-bench)）
+- [RepoMod-Bench](https://arxiv.org/abs/2602.22518)（[开源代码](https://github.com/Modelcode-ai/mcode-benchmark)）：评什么：repo 级代码现代化与跨语言迁移。核心思想：用 implementation-agnostic tests 评功能等价。
+- [Rust-SWE-bench](https://arxiv.org/abs/2602.22764)：评什么：Rust 生态下的 repo-level issue resolving。核心思想：把所有权、生命周期、Cargo 构建与测试约束纳入 SWE-bench 式评测，突出强类型系统和工具链对 coding agent 的影响。
+- [SWE-rebench V2](https://arxiv.org/abs/2602.23866)：评什么：语言无关、规模更大的动态 SWE 任务构造与执行评测。核心思想：延续 SWE-rebench 的去污染自动化采集路线，把可执行任务扩展到更多语言与仓库生态。
+- [SWE-CI](https://arxiv.org/abs/2603.03823)：评什么：CI 信号驱动的软件修复与回归验证。核心思想：把持续集成失败、日志定位、补丁生成和重跑验证纳入同一任务协议，补足只看本地测试的 SWE 评测缺口。
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)：评什么：技能注入（skills）对真实 SWE 任务的边际收益。核心思想：把“有/无 skill 的配对对照”做成可执行、可确定性验证的框架，隔离 skill 的真实贡献。（[开源代码](https://github.com/GeniusHTX/SWE-Skills-Bench)）
+- [Aider Polyglot](https://github.com/Aider-AI/polyglot-benchmark)：评什么：跨语言编程/修改任务的对比与评分。核心思想：用多语言样本与统一评分规则，衡量“跨语言的真实改码能力”。
+- [RACE-bench](https://arxiv.org/abs/2603.26337)：评什么：repo 级 feature addition 与中间推理。核心思想：除补丁正确性外，还显式评 issue 理解、定位和实现拆解。
+- [SWE-Chain](https://arxiv.org/abs/2605.14415)：评什么：链式发布升级下的 repo 级软件维护。核心思想：把版本迁移串成连续任务，考察前后版本联动修复。
+
+## 2.2.3 Agent Harness
+
+- [AutoCodeRover](https://arxiv.org/abs/2404.05427)（[开源代码](https://github.com/AutoCodeRoverSG/auto-code-rover)）把结构化代码搜索、AST 级定位和测试反馈结合起来做 GitHub issue 修复；设计关键词：程序结构检索、fault localization、低成本 patch 生成。
+- [SWE-agent](https://arxiv.org/abs/2405.15793)（[开源代码](https://github.com/SWE-agent/SWE-agent)）是仓库内循环修复的标准基线。
+- [MASAI](https://arxiv.org/abs/2406.11638)（[开源代码](https://github.com/masai-dev-agent/masai)）把 SWE 任务拆成多个目标明确的子代理，分别处理定位、信息收集、编辑与验证；设计关键词：模块化子代理、轨迹缩短、SWE-bench Lite。
+- [Agentless](https://arxiv.org/abs/2407.01489)（[开源代码](https://github.com/OpenAutoCoder/Agentless)）代表 `localization -> repair -> validation` 工作流化路线。
+- [OpenHands](https://arxiv.org/abs/2407.16741)（[开源代码](https://github.com/OpenHands/OpenHands)）更像通用软件开发 agent 平台。
+- [DEI / SWE-Comm](https://arxiv.org/abs/2408.07060)（[开源代码](https://github.com/SalesforceAIResearch/swecomm)）把多个开源 SWE agent 组合成委员会，按任务选择和融合不同 agent 的专长；设计关键词：多代理集成、专家互补、SWE-bench Lite。
+- [RepoGraph](https://arxiv.org/abs/2410.14684)（[开源代码](https://github.com/ozyyshr/RepoGraph)）：以结构化仓库图增强定位与修复上下文组织。
+- [SWE-Search](https://arxiv.org/abs/2410.20285)（[开源代码](https://github.com/a-antoniades/swe-search)）：把仓库修复显式建模为搜索过程，强调可回溯候选探索。
+- [OrcaLoca](https://arxiv.org/abs/2502.00350)（[开源代码](https://github.com/fishmingyu/OrcaLoca)）：聚焦软件 issue localization 的专项 agent 框架；核心思想是把定位动作分解、相关性评分与上下文裁剪组合成更稳的仓库导航闭环。
+- [SyncMind](https://arxiv.org/abs/2502.06994)（[开源代码](https://github.com/xhguo7/SyncMind)）：面向协作软件工程的 out-of-sync 恢复框架；核心思想是把状态漂移、协作沟通和资源约束显式建模，评估 agent 在共享代码库变化后的恢复能力。
+- [debug-gym](https://arxiv.org/abs/2503.21557)（[开源代码](https://github.com/microsoft/debug-gym)）：文本化交互调试环境；核心思想是把 pdb、执行反馈和代码探索工具封装为 agent 环境，专门评估和训练信息搜集式 debugging 行为。
+- [Satori-SWE](https://arxiv.org/abs/2505.23604)（[开源代码](https://github.com/satori-reasoning/Satori-SWE)）：面向 SWE 的 test-time scaling 路线，强调推理预算与搜索深度分配。
+- mini-SWE-agent（[开源代码](https://github.com/SWE-agent/mini-swe-agent)；无独立论文；SWE-agent 团队维护的轻量终端修复 harness；设计关键词：小内核、命令行执行、SWE-bench 适配）
+- SWE-ReX（[开源代码](https://github.com/SWE-agent/SWE-ReX)；无独立论文；SWE-agent 团队维护的 remote execution 与环境管理层；设计关键词：执行隔离、批量运行、SWE-bench/CodeClash 复用）
+- sb-cli（[开源代码](https://github.com/SWE-bench/sb-cli)；无独立论文；SWE-bench 官方提交、运行管理与报告获取 CLI；设计关键词：官方评测 API、预测提交、报告复现）
+- [Prometheus](https://arxiv.org/abs/2507.19942)（[开源代码](https://github.com/EuniAI/Prometheus)；面向 SWE-bench 的工程化修复代理；设计关键词：工程化流水线、稳定执行）
+- [TRAE Agent](https://arxiv.org/abs/2507.23370)（[开源代码](https://github.com/bytedance/trae-agent)；字节系仓库级修复代理；设计关键词：test-time scaling、仓库级分析）
+- [SE-Agent](https://arxiv.org/abs/2508.02085)（[开源代码](https://github.com/JARVIS-Xs/SE-Agent)）：轨迹级自进化的软件工程 agent；核心思想是用 revision、recombination 与 refinement 在历史轨迹之间交换信息，提升多步修复质量。
+- [The Complexity Trap](https://arxiv.org/abs/2508.21433)（[开源代码](https://github.com/JetBrains-Research/the-complexity-trap)；比较 observation masking 与 LLM summarization 的 context 管理成本-性能；在 SWE-agent 与 SWE-bench Verified 上做系统对比；设计关键词：上下文管理、成本控制、harness 简化）
+- [Holistic Agent Leaderboard](https://arxiv.org/abs/2510.11977)（[开源代码](https://github.com/princeton-pli/hal-harness)；跨 benchmark 的 agent 评测 harness；把 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond、USACO 等任务接到统一提交与复现协议；设计关键词：统一 agent 接口、跨任务评测、公开 leaderboard）
+- [CodeClash](https://arxiv.org/abs/2511.00839)（[开源代码](https://github.com/CodeClash-ai/CodeClash)；目标导向软件工程 tournament harness；基于 mini-SWE-agent 接口让 agent 持续改代码、读日志、写测试并与对手代码库竞争；设计关键词：多轮锦标赛、开放目标、长期维护）
+- [OpenHands Software Agent SDK](https://arxiv.org/abs/2511.03690)（[开源代码](https://github.com/OpenHands/OpenHands)；面向生产代理的可组合/可扩展 SDK 设计；强调执行隔离、生命周期控制与工具/记忆扩展点；设计关键词：SDK 化 harness、可组合接口、执行安全）
+- [live-SWE-agent](https://arxiv.org/abs/2511.13646)（[开源代码](https://github.com/OpenAutoCoder/live-swe-agent)；运行时自进化 SWE 代理；在 SWE-Bench Pro 公共集上报告 Claude 4.5 Sonnet 45.8% resolve rate，高于同设置下 SWE-agent 的 43.6%；设计关键词：在线自进化、按题动态造工具）
+- MSWE-agent（[开源代码](https://github.com/multi-swe-bench/MSWE-agent)；无独立论文；基于 SWE-agent 的 Multi-SWE-Bench 兼容版；把仓库分析、执行与评测流程改到可覆盖多语言项目；设计关键词：多语言兼容、SWE-agent 改版）
+- MopenHands（[开源代码](https://github.com/multi-swe-bench/MopenHands)；无独立论文；基于 OpenHands 的 Multi-SWE-Bench 兼容版；更偏平台级 multilingual harness 适配；设计关键词：平台兼容、多语言执行）
+- MagentLess（[开源代码](https://github.com/multi-swe-bench/MagentLess)；无独立论文；基于 Agentless 的 Multi-SWE-Bench 兼容版；延续 `localization -> repair -> validation` workflow，但适配多语言仓库；设计关键词：轻量 workflow、多语言 issue resolving）
+- [Confucius Code Agent](https://arxiv.org/abs/2512.10398)（[开源代码](https://github.com/facebookresearch/cca-swebench)；工业级长时程 SWE 代理；主评测在 SWE-Bench Pro 公共集，报告 GPT-5.2 59.0% Pass@1，并报告 Claude 4.5 Sonnet 52.7%；设计关键词：长上下文管理、持久笔记、元代理迭代）
+- [SWE-Pruner](https://arxiv.org/abs/2601.16746)（[开源代码](https://github.com/Ayanami1314/swe-pruner)；上下文裁剪模块；设计关键词：上下文裁剪、关键信息筛选）
+- [SWE-Replay](https://arxiv.org/abs/2601.22129)（开源代码：未找到稳定公开仓库；面向现代 SWE agent 的 test-time scaling 方法；在 SWE-Bench Pro 上以 mini-SWE-agent 与 Devstral-Small-2 的设置从 28.73% 提到 28.97%，同时报告平均成本降低 3.1%；设计关键词：轨迹复用、分叉重放、低成本扩展）
+- Harbor（[开源代码](https://github.com/harbor-framework/harbor)；无独立论文；Terminal-Bench 2.0 的通用代理接入与轨迹运行 harness；设计关键词：终端任务、agent 适配、可复现实验）
+- [Agyn](https://arxiv.org/abs/2602.01465)（[开源代码](https://github.com/agynio/platform)；面向真实工程任务的代理平台；设计关键词：平台化编排、真实工程任务承载）
+- [SWE-World](https://arxiv.org/abs/2602.03419)（[开源代码](https://github.com/RUCAIBox/SWE-World)；Docker-free 的 SWE 训练与评测底座；设计关键词：learned surrogate、执行反馈替代、低成本评测）
+- [RUSTFORGER](https://arxiv.org/abs/2602.22764)（开源代码：未找到稳定公开仓库；面向 Rust-SWE-bench 的 Rust 修复代理；设计关键词：Cargo 工具链、编译器反馈、所有权/生命周期错误修复）
+- [SWE-Adept](https://arxiv.org/abs/2603.01327)（开源代码：未找到稳定公开仓库；定位代理与修复代理的双 Agent 框架；在 SWE-Bench Pro 上报告 Claude 4.5 Sonnet 端到端 resolve rate 为 47.3%，较 OrcaLoca 提升 4.0%；设计关键词：定位-修复双代理、依赖引导 DFS、checkpoint 化 Git 回滚）
+- [AweAgent](https://arxiv.org/abs/2603.03194)（[开源代码](https://github.com/AweAI-Team/AweAgent)；SearchSWE，另有 Bench：BeyondSWE；设计关键词：搜索驱动、检索增强修复）
+- [RepoLaunch](https://arxiv.org/abs/2603.05026)（[开源代码](https://github.com/microsoft/RepoLaunch)；把 `跨语言 build-test 自动化` 抽象成通用环境 harness，是 multilingual SWE 最关键的外部执行底座之一；设计关键词：跨语言 build-test、统一执行底座）
+- Win-Agent（[开源代码](https://github.com/njukenanli/Win-Agent)；无独立论文；SWE-bench-Live 上用于 Windows 与跨语言仓库构建测试的 agent/harness 适配；设计关键词：Windows 执行环境、跨平台 SWE、build-test 自动化）
+- [Agentic Harness Engineering (AHE)](https://arxiv.org/abs/2604.25850)（开源代码：未找到稳定公开仓库；自动演化 coding-agent harness 的闭环框架；在 Terminal-Bench 2 与 SWE-bench Verified 上做迁移评测；设计关键词：harness evolution、可观测性、工具/中间件/记忆编辑）
+- Claude Code（[官方文档](https://code.claude.com/docs/en/how-claude-code-works)；无 arXiv 论文；把 memory、subagent、agent teams、hooks 与 MCP 做成显式 runtime/harness 接口；设计关键词：终端代理、显式 runtime 接口、可扩展 harness）
+- OpenAI Codex（[官方文档](https://developers.openai.com/codex/multi-agent/)；无 arXiv 论文；显式支持 CLI 与 multi-agent coding workflow；设计关键词：终端 coding agent、multi-agent、agent workflow）
+- Devin（[官方博客](https://cognition.ai/blog/introducing-devin)；无 arXiv 论文；闭源产品级 coding agent 的公开系统说明；设计关键词：端到端开发工作流、执行环境集成、长任务闭环）
+
+## 2.2.4 Skill
+
+- [bugfix](https://skills.sh/doodledood/codex-workflow/bugfix) 适合把编码任务收敛到最常见的缺陷修复流程（偏 SWE-bench 风格）。
+- [coder-openclaw-agent](https://github.com/openclaw/skills/tree/main/skills/milleniumgenai/coder-openclaw-agent) 是“安装并接线一个 coding sub-agent”的集成型 skill。
+- [doc-accurate-codegen](https://github.com/openclaw/skills/tree/main/skills/tobisamaa/doc-accurate-codegen) 强制“先读真实文档再写代码”，适合 API/配置类任务与避免臆造接口。
+- [pytest](https://skills.sh/bobmatnyc/claude-mpm-skills/pytest) 适合把“修复是否正确”落到可执行回归测试上（对 SWE-Bench 之外的真实项目也常用）。

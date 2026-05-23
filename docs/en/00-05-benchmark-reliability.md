@@ -1,0 +1,30 @@
+# 0.5 Benchmark Reliability and Dynamic Evaluation
+
+> Parent chapter: 0. Harness and Skill Creator
+
+## 0.5.1 Why This Is a Separate Topic
+
+As models and agents iterate faster, the main risks of static benchmarks are no longer just that questions are too easy. They also include question leakage, training contamination, leaderboard overfitting, judge drift, opaque evaluation protocols, unreproducible dynamic environments, and the illusion of "high score but not deployable." Reliable evaluation needs to examine four things at once: whether tasks are still fresh, whether metrics are interpretable, whether the evaluation process is reproducible, and whether the leaderboard can distinguish model capability, harness design, and changes in environment state.
+
+## 0.5.2 Representative Work and Entry Points
+
+- [DyVal](https://arxiv.org/abs/2309.17167): dynamically generates reasoning tasks to reduce fixed-question contamination; useful for observing the "generate new questions by rules" route.
+- [LatestEval](https://arxiv.org/abs/2312.12343): builds reading-comprehension evaluations from the latest news and time-sensitive material; its core value is turning "has the model seen the question" into a time-slice issue.
+- [DARG](https://arxiv.org/abs/2406.17271): dynamically evaluates LLM reasoning with an adaptive reasoning graph; the core idea is to generate follow-up questions based on a model's answer path, reducing the ability to game fixed prompt templates.
+- [LiveBench](https://arxiv.org/abs/2406.19314) ([open-source code](https://github.com/LiveBench/LiveBench); [Leaderboard](https://livebench.ai/)): a comprehensive leaderboard that continuously releases new questions across math, coding, language, reasoning, data analysis, and instruction following. It is a representative entry point for "contamination-limited live benchmarks."
+- [BenchmarkCards](https://arxiv.org/abs/2410.12974) ([open-source code](https://github.com/SokolAnn/BenchmarkCards)): a standardized benchmark documentation framework. When reading a new benchmark, it can be used to check whether task goals, data sources, metrics, limitations, risks, and applicability boundaries are clearly stated.
+- [Humanity's Last Exam](https://arxiv.org/abs/2501.14249) / [HLE-Rolling](https://agi.safe.ai/) (change log: [centerforaisafety/hle](https://github.com/centerforaisafety/hle/blob/main/hle-rolling-changes.txt)): HLE provides difficult expert questions, while HLE-Rolling reduces public-question contamination, errors, and saturation through continuous revision, new questions, and live submission.
+- [SWE-rebench](https://arxiv.org/abs/2505.20411) ([Leaderboard](https://swe-rebench.com/leaderboard)): automatically collects and decontaminates SWE tasks, emphasizing fresh issues, interactive execution feedback, and a task-construction pipeline.
+- [SWE-bench-Live](https://arxiv.org/abs/2505.23419) ([open-source code](https://github.com/SWE-bench-Live/SWE-bench-Live); [Leaderboard](https://swe-bench-live.github.io/)): continuously generates tasks from recent GitHub issues and PRs, with a focus on reducing memorization and overfitting risk in static software-engineering benchmarks.
+- [SWE-MERA](https://arxiv.org/abs/2507.11059): dynamic evaluation for software-engineering agents; the core idea is to continuously collect, execute, and verify new tasks, moving agentic SWE evaluation from a one-time snapshot to a rolling question set.
+- [Auto-BenchmarkCard](https://arxiv.org/abs/2512.09577): automatically generates benchmark documentation cards; useful for quickly exposing missing descriptions of data, metrics, and limitations as the number of benchmarks grows rapidly.
+- [SWE-rebench V2](https://arxiv.org/abs/2602.23866): a language-agnostic, larger-scale dynamic SWE task construction and execution evaluation; it extends the automated decontaminated collection route and expands executable tasks to more languages and repository ecosystems.
+- [Terminal Wrench](https://arxiv.org/abs/2604.17596) ([open-source code](https://github.com/few-sh/terminal-wrench)): evaluates whether terminal benchmarks can be bypassed through reward hacking; its core value is making environment vulnerabilities, scoring shortcuts, and trajectory manipulation explicit benchmark-reliability issues.
+- [QuickScope](https://arxiv.org/abs/2604.17842): provides quick certification for hard questions in dynamic benchmarks; the core idea is to offer a lower-cost pre-screening mechanism for whether a question is truly difficult and discriminative.
+- [Claw-Eval](https://arxiv.org/abs/2604.06132) ([open-source code](https://github.com/claw-eval/claw-eval)): evaluates multi-step agent workflows in real software environments; it reduces the randomness of one-off pass rates through fine-grained rubrics, three-run consistency, and trajectory audits.
+- [ClawBench](https://arxiv.org/abs/2604.08523) ([project page](https://claw-bench.com/); [open-source code](https://github.com/reacher-z/ClawBench)): real live-website write-operation tasks; it reduces destructive effects and irreproducibility in real-site evaluation through HTTP interception, payload judges, and audited trajectories.
+- [Claw-Eval-Live](https://arxiv.org/abs/2604.28139) ([project page](https://claw-eval-live.github.io/); [open-source code](https://github.com/Claw-Eval-Live/Claw-Eval-Live)): a live agent benchmark that changes with real workflow demand; its value is refreshing the task distribution quarterly while retaining mock services, workspace fixtures, traces, and graders for reproducibility.
+
+## 0.5.3 Usage Advice
+
+When reading a new benchmark, first check whether it explains data sources, sampling time, contamination controls, question refresh mechanisms, failed-sample audits, judge calibration, environment snapshots, and leaderboard submission protocols. For agent benchmarks, additionally check whether they preserve full trajectories, tool calls, environment state, cost, runtime, and multi-run variance; otherwise, leaderboard rankings can easily mix in harness engineering, environmental chance, and scoring shortcuts.

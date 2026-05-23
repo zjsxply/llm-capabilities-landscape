@@ -1,0 +1,75 @@
+# 1.2 科学知识
+
+> 上级章节：1. 基础能力
+
+
+## 1.2.1 Leaderboard
+
+- [Humanity's Last Exam](https://lastexam.ai/)：专家级跨学科知识与推理公开榜单；价值在于把高难科学、数学、人文和专业题作为模型知识上限压力测试。
+- [HLE-Rolling](https://agi.safe.ai/)：Humanity's Last Exam 的动态更新/提交入口；价值在于通过持续修订、新题和 live submission 缓解公开 HLE 的污染、错误与饱和。
+- [PaperBench Results](https://github.com/openai/preparedness/blob/main/project/paperbench/README.md)：论文复现型 AI 研究 agent 的公开结果表；价值在于把 rollout、reproduction 和 grading 分离，便于比较端到端科研复现能力。
+- [AstaBench Leaderboard](https://huggingface.co/spaces/allenai/asta-bench-leaderboard)：综合科研 agent suite 的公开榜单；价值在于覆盖文献检索、代码执行、数据分析和端到端科学发现等多类科研技能。
+- [ResearchCodeBench Leaderboard](https://researchcodebench.github.io/leaderboard/index.html)：从新近 ML 论文实现研究代码的公开榜单；适合作为 PaperBench/EXP-Bench 之外更偏代码实现的科研 agent 评测参照。
+- [SciVisAgentBench Leaderboard](https://scivisagentbench.github.io/leaderboard.html)：科学数据分析与可视化 agent 榜单；价值在于把科学数据理解、分析决策和图形表达纳入可比较评测。
+
+## 1.2.2 Bench
+
+- [GPQA Diamond](https://arxiv.org/abs/2311.12022)（数据集：[Idavidrein/gpqa](https://huggingface.co/datasets/Idavidrein/gpqa)）：评测研究生水平的科学问答（多选，偏“Google-proof”）；核心思想是由专家构造高难题并弱化直接检索命中，让能力更依赖知识理解与推理而非搜索片段匹配。
+- [OlympiadBench](https://arxiv.org/abs/2402.14008)：评测奥林匹克竞赛级双语多模态科学题；核心思想是用数学、物理等高难竞赛问题压力测试模型跨语言、跨模态的专业推理能力。
+- [MMLU-Pro](https://arxiv.org/abs/2406.01574)（数据集：[TIGER-Lab/MMLU-Pro](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro)）：评测更难、更鲁棒的多学科专业知识；核心思想是提高题目难度并减少捷径/污染带来的虚高，使得“靠背答案”更难奏效。
+- [DiscoveryBench](https://arxiv.org/abs/2407.01725)（[开源代码](https://github.com/allenai/discoverybench)）：评测数据驱动科学发现；核心思想是给定研究目标和数据集，让 agent 做统计分析、语义推理与发现生成，并用分面评价衡量结论质量。
+- [LAB-Bench](https://arxiv.org/abs/2407.10362)：评测面向生物学研究的语言模型能力；核心思想是覆盖文献理解、实验方案、数据库导航、DNA/蛋白序列处理等实用研究任务，而不只考教材式科学问答。
+- [BLADE](https://arxiv.org/abs/2408.09667)（[开源代码](https://github.com/behavioral-data/BLADE)）：评测数据分析型科学 agent；核心思想是要求 agent 根据真实研究问题和数据集生成可辩护的数据分析，覆盖变量选择、数据变换和统计建模等科学决策。
+- [ScienceAgentBench](https://arxiv.org/abs/2410.05080)（[开源代码](https://github.com/OSU-NLP-Group/ScienceAgentBench)）：评测数据驱动科学发现中的 agent 实操能力；核心思想是从同行评审论文抽取任务，并把输出统一为可自动评测的自包含 Python 程序。
+- [KORBench](https://arxiv.org/abs/2410.06526)：评测尽量与“背知识”正交的推理能力；核心思想是构造任务使成功更多依赖推理结构而非事实记忆，从而更好分离知识存量与推理机制。
+- [RE-Bench](https://arxiv.org/abs/2411.15114)：评测前沿 AI 研发 agent 的研究工程能力；核心思想是用开放式机器学习研究环境与人类专家 8 小时尝试记录对照，衡量 agent 在真实研发任务中的进展速度与上限。
+- [Humanity's Last Exam（HLE）](https://arxiv.org/abs/2501.14249)（数据集：[cais/hle](https://huggingface.co/datasets/cais/hle)）：评测极高难、跨学科的专家级题目；核心思想是用高难度题集压力测试模型知识与推理上限。
+- [HLE-Verified](https://arxiv.org/abs/2501.14249)（数据集：[lmms-lab/HLE-Verified](https://huggingface.co/datasets/lmms-lab/HLE-Verified)）：评测经人工审核的可验证子集；核心思想是减少题目歧义与不可判定样本，提升评测可信度。
+- [UGPhysics](https://arxiv.org/abs/2502.00334)（[开源代码](https://github.com/YangLabHKUST/UGPhysics)，[数据集](https://huggingface.co/datasets/UGPhysics/ugphysics)）：评测本科物理知识与推理，覆盖中英双语题、13 个主题和多种答案格式；核心思想是把公式推导、概念判断和数值计算放进同一物理学科评测协议。
+- [MLGym](https://arxiv.org/abs/2502.14499)（[开源代码](https://github.com/facebookresearch/MLGym)）：评测开放式 AI 研究 agent；核心思想是在类 Gym 环境中让 agent 产生想法、处理数据、实现方法、训练模型并迭代实验。
+- [SuperGPQA](https://arxiv.org/abs/2502.14739)（数据集：[m-a-p/SuperGPQA](https://huggingface.co/datasets/m-a-p/SuperGPQA)）：评测更长尾、更贴近职业场景的专业问答；核心思想是把“真实工作中常见但长尾”的专业问题规模化为可评测题集。
+- [Auto-Bench](https://arxiv.org/abs/2502.15224)：评测 LLM/agent 的科学发现能力；核心思想是把科学发现抽象为带 oracle 交互的因果图发现与干预决策，让模型在自然科学和社会科学场景中迭代提出假设、行动并解释结论。
+- [BixBench](https://arxiv.org/abs/2503.00096)：评测计算生物学中的 LLM agent 实操能力；核心思想是用 50 多个真实生物数据分析场景和近 300 个开放问答，要求 agent 探索数据、执行多步分析并解释结果。
+- [PaperBench](https://arxiv.org/abs/2504.01848)（[开源代码](https://github.com/openai/preparedness)）：评测 AI agent 从头复现 AI 研究论文的能力；核心思想是把 20 篇 ICML 2024 Spotlight/Oral 论文拆成 8,316 个可评分子任务，覆盖论文理解、代码实现与实验执行。
+- [AI Idea Bench 2025](https://arxiv.org/abs/2504.14191)：评测 AI 研究想法生成；核心思想是以论文及其 inspired works 构成可对照材料，从与真实后续工作的贴合度和通用参考材料判断两个维度评估想法质量。
+- [PhyBench](https://arxiv.org/abs/2504.16074)（数据集：[Eureka-Lab/PHYBench](https://huggingface.co/datasets/Eureka-Lab/PHYBench)）：评测物理知识与物理推理；核心思想是把物理领域对概念、定律与推导的需求显式化，避免仅靠表面语言模式取巧。
+- [SuperChem (text-only)](https://arxiv.org/abs/2505.05331)：评测化学领域的文本科学问答/推理；核心思想是用学科垂类题目显式衡量模型在化学知识与推理链条上的能力，而非被通用 QA 掩盖。
+- [HealthBench](https://arxiv.org/abs/2505.08775)：评测医学相关问答与临床/健康知识应用；核心思想是用更贴近医疗语境的题目与评分方式，压力测试模型在高风险知识领域的可靠性。
+- [LLM-SRBench](https://proceedings.mlr.press/v267/shojaee25a.html)（[开源代码](https://github.com/deep-symbolic-mathematics/llm-srbench)）：评测 LLM 在科学符号回归与方程发现中的真实泛化。核心思想：用跨科学领域的变换与合成任务区分“记住已知公式”和“从数据中发现可解释规律”。
+- [SciSafetyBench](https://arxiv.org/abs/2505.23559)（[开源代码](https://github.com/ulab-uiuc/SafeScientist)）：评测科学研究 agent 的安全意识与工具使用风险；核心思想是用 240 个高风险科研任务、30 个模拟科学工具和 120 个工具风险任务检查 agent 是否会拒绝或规避危险研究流程。
+- [EXP-Bench](https://arxiv.org/abs/2505.24785)（[开源代码](https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench)）：评测 AI agent 完整开展 AI 研究实验的能力；核心思想是从 51 篇顶级 AI 论文抽取 461 个任务，要求 agent 基于研究问题和不完整代码提出假设、设计实验、实现执行并分析结果。
+- [ResearchCodeBench](https://arxiv.org/abs/2506.02314)（[开源代码](https://github.com/PatrickHua/ResearchCodeBench)）：评测从新近 ML 论文实现研究代码的能力；核心思想是用真实 research-code challenge 检查模型是否能理解论文方法并完成可运行实现。
+- [SimpleQA Verified](https://arxiv.org/abs/2509.07968)：评测模型的“参数化事实性”（短答案、可判定事实问答）；核心思想是用更高质量的可核验 factoid 问答，测量不开工具时的事实记忆与幻觉风险。
+- [HLE-Rolling](https://agi.safe.ai/)（更新日志：[centerforaisafety/hle](https://github.com/centerforaisafety/hle/blob/main/hle-rolling-changes.txt)）：评测动态维护的 HLE fork；核心思想是持续修正题目、加入新样本和维护 live submission，降低静态高难题库被污染或逐渐饱和的风险。
+- [CMT-Benchmark](https://arxiv.org/abs/2510.05228)：评测凝聚态理论中的研究级推理与可程序判分物理任务；核心思想是用非对易算符、QMC、DMRG 等专家题型测试模型是否能处理前沿物理推导和计算约束。
+- [AstaBench](https://arxiv.org/abs/2510.21652)（[开源代码](https://github.com/allenai/asta-bench)）：评测综合科研 agent 能力；核心思想是用 11 个科研 benchmark 和标准化工具环境覆盖文献检索、代码执行、数据分析和科学发现流程。
+- [CGBench](https://openreview.net/forum?id=UEGEHy1IQE)（[开源代码](https://github.com/owencqueen/cgbench)，[数据集](https://huggingface.co/datasets/owencqueen/cgbench_data)）：评测临床遗传学文献解释；核心思想是贴近 ClinGen 专家流程，让模型从论文中抽取实验结果、判断证据强度并解释遗传变异相关证据。
+- [LPFQA](https://arxiv.org/abs/2511.06346)（数据集：[m-a-p/LPFQA](https://huggingface.co/datasets/m-a-p/LPFQA)）：评测来自专业论坛/社区语境的长尾问答；核心思想是让问题更贴近日常专业交流形式，强调检索与综合归纳。
+- [Encyclo-K](https://arxiv.org/abs/2512.24867)（数据集：[m-a-p/Encyclo-K](https://huggingface.co/datasets/m-a-p/Encyclo-K)）：评测“书籍级/长篇”专业知识掌握；核心思想是从书籍材料抽取可组合的原子知识点，衡量长期知识内化而非短片段记忆。
+- [FrontierScience](https://arxiv.org/abs/2601.21165)：评测专家级前沿科学推理，覆盖物理、化学和生物学的 Olympiad 与 Research 两个子集。核心思想是由领域专家构造极难、可核验的问题，以研究式知识综合和高难竞赛推理同时压力测试模型科学能力。
+- [FIRE-Bench](https://arxiv.org/abs/2602.02905)（[开源代码](https://github.com/maitrix-org/FIRE-Bench)）：评测科研 agent 对既有科学洞见的全流程再发现能力；核心思想是只给高层研究问题，让 agent 自主构思、实验、执行与归纳，再用 claim-level precision/recall/F1 衡量是否重建了论文中的可验证结论。
+- [BABE](https://arxiv.org/abs/2602.05857)：Seed2.0 报告中列出的科学/生物相关评测；核心思想是用更科学语境的材料与问题考察“研究式理解与推理”（具体构造与任务形态以论文/报告为准）。
+- [AIRS-Bench](https://arxiv.org/abs/2602.06855)（[开源代码](https://github.com/facebookresearch/airs-bench)）：评测前沿 AI 研究代理的端到端科研流程；核心思想是把 idea generation、实验分析与迭代修订放进同一套任务。
+- [ResearchGym](https://arxiv.org/abs/2602.15112)（[开源代码](https://github.com/Anikethh/ResearchGym)）：评测真实 AI 研究任务中的长时程 agent；核心思想是给出问题陈述、裁剪代码库、评估脚本和基线分数，让 agent 在有限预算内推进开放式研究目标。
+- [SciVisAgentBench](https://arxiv.org/abs/2603.29139)（[开源代码](https://github.com/KuangshiAi/SciVisAgentBench)）：评测科学数据分析与可视化 agent；核心思想是覆盖多个应用领域、数据类型和可视化操作，检查 agent 是否能把科学数据转化为可靠图形表达。
+- [LABBench2](https://arxiv.org/abs/2604.09554)（[开源代码](https://github.com/EdisonScientific/labbench2)）：评测更真实的生物研究任务；核心思想是在 LAB-Bench 基础上扩大任务规模并强化文件处理、外部 runner 和工具开关等 agent 评测接口。
+
+## 1.2.3 Agent Harness
+
+- [ReAct](https://arxiv.org/abs/2210.03629)（[开源代码](https://github.com/ysymyth/ReAct)）：通用“思考-检索/行动-观察”框架；对长尾科学知识任务更像可复用的 `检索 -> 证据整合 -> 再回答` 工作流骨架。
+- [RARR](https://arxiv.org/abs/2210.08726)（[开源代码](https://github.com/anthonywchen/RARR)）：`retrieve -> revise -> cite` 框架，适合把知识回答改写为“带引用的可核验结论”。
+- [Chain-of-Verification](https://arxiv.org/abs/2309.11495)：提出“先答，再拆验证问题，再回填修订”的通用 factuality workflow；当前未见稳定公开官方代码仓库。
+- [DSPy](https://arxiv.org/abs/2310.03714)（[开源代码](https://github.com/stanfordnlp/dspy)）：把检索、提示与评分器组织为可编译/可评测的 program；常用于把 “RAG/证据组织/答案格式” 变成可调参的 harness，而不是一次性 prompt。
+- [Agent Laboratory](https://arxiv.org/abs/2501.04227)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)）：面向科研助手的多阶段工作流；覆盖文献检索、实验执行与报告写作。
+- [AgentRxiv](https://arxiv.org/abs/2503.18102)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)）：共享式研究记忆与协作预印本服务器；让研究 agent 能上传、检索并复用前序结果。
+- [The AI Scientist-v2](https://arxiv.org/abs/2504.08066)（[开源代码](https://github.com/SakanaAI/AI-Scientist-v2)）：端到端自动科研系统；核心思想是用 agentic tree search 和实验管理 agent 迭代生成假设、运行实验、分析结果、绘图并撰写论文。
+- [SafeScientist](https://arxiv.org/abs/2505.23559)（[开源代码](https://github.com/ulab-uiuc/SafeScientist)）：面向科研 agent 的风险感知 harness；核心思想是在任务输入、协作讨论、工具调用和伦理审稿环节加入安全监控，用 SciSafetyBench 检验拒答与风险规避能力。
+- [AlphaEvolve](https://arxiv.org/abs/2506.13131)（开源代码：暂未见稳定公开官方仓库）：面向科学与算法发现的演化式 coding agent；核心思想是让 LLM 直接修改程序，并通过一个或多个自动 evaluator 的反馈进行群体式搜索与迭代优化。
+
+## 1.2.4 Skill
+
+- [openalex-database](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/openalex-database) 适合学术知识、论文作者图谱与主题追踪。
+- [citation-management](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/citation-management) 适合引用抽取、BibTeX 管理与文献核验。
+- [fact-check](https://github.com/openclaw/skills/tree/main/skills/webguhui/fact-check) 适合把专业知识问答改造成“多源比对后给证据结论”的流程。
+- [clarity-gate](https://github.com/openclaw/skills/tree/main/skills/frmoretto/clarity-gate) 更像知识输出前的“可核验声明检查器”，能降低把推测写成事实的风险。
+- [nemo-evaluator-sdk](https://skills.sh/zechenzhangagi/ai-research-skills/nemo-evaluator-sdk) 更偏 evaluator 接入与复现实验，适合把 GPQA/HealthBench/SimpleQA 等评测跑通并产出可复现结果。

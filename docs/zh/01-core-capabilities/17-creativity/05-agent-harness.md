@@ -1,0 +1,150 @@
+# 1.17.5 Agent Harness
+
+- [Understanding Nonlinear Collaboration between Human and AI Agents: A Co-design Framework for Creative Design](https://arxiv.org/abs/2401.07312)：该工作把人机创意设计定义为非线性协作，为 co-design 系统提供在用户与 AI 智能体之间切换主动权、迭代和能动性的工作流视角。
+- [AI-Augmented Brainwriting](https://arxiv.org/abs/2402.14978)：把 LLM 嵌入协作式群体构思流程。核心思想：在 Brainwriting workflow 中同时支持 divergent idea generation 和 convergent idea evaluation，并把产出的 solution space 与 LLM idea rating 同专家、初学者评分比较。
+- [ByteComposer: a Human-like Melody Composition Method based on Language Model Agent](https://arxiv.org/abs/2402.17785)：构建用于旋律创作的 LLM agent workflow。核心思想：把作曲拆成由 agent 控制的一系列音乐决策，使生成旋律更像经过人类式规划，而不是单次无约束续写。
+- [MIMOSA: Human-AI Co-Creation of Computational Spatial Audio Effects on Videos](https://arxiv.org/abs/2404.15107)：MIMOSA 支持用户为视频共创计算式空间音频效果，将视觉语境与交互式音效生成连接起来。
+- [Humor Mechanics: Advancing Humor Generation with Multistep Reasoning](https://arxiv.org/abs/2405.07280)：把 one-liner joke 写作转成多步推理流程。核心思想：先显式规划 humor mechanics 再生成，并用人工标注比较证明结构化推理比 zero-shot prompting 更稳定地提升笑话质量。
+- [Ai.llude: Investigating Rewriting AI-Generated Text to Support Creative Expression](https://arxiv.org/abs/2405.17843)：Ai.llude 分析 27 次 AI 辅助写作会话，表明有意提供不完美的中间建议可以促使作者改写 AI 文本，并维护创意表达的主体感。
+- [MetaDesigner: Advancing Artistic Typography through AI-Driven, User-Centric, and Multilingual WordArt Synthesis](https://arxiv.org/abs/2406.19859)：MetaDesigner 通过 Pipeline、Glyph、Texture 多智能体和多模态用户反馈，生成可控的多语言艺术字。
+- [Proxona: Supporting Creators' Sensemaking and Ideation with LLM-Powered Audience Personas](https://arxiv.org/abs/2408.10937)：Proxona 用 LLM 驱动的受众 persona 帮助创作者理解潜在受众反应，并把这种模拟反馈转化为新的构思方向。
+- [Initial Development and Evaluation of the Creative Artificial Intelligence through Recurring Developments and Determinations (CAIRDD) System](https://arxiv.org/abs/2409.02291)：实现面向 deliberate creativity 的迭代式概念注入与 refinement harness。核心思想：用 recurring developments and determinations 反复引导 LLM 输出向更具创造性的概念靠近，而不是依赖一次生成。
+- [PersonaFlow](https://arxiv.org/abs/2409.12538)：用 LLM 模拟领域专家视角辅助科研构思。核心思想：让用户定制多个专家 persona，生成更相关、更有创造性的研究方向，同时提升 critical-thinking 活动且不增加主观认知负担。
+- [Scideator](https://arxiv.org/abs/2409.14634)：把科研构思转化为人类引导的 facet recombination，从论文中抽取 purpose、mechanism 和 evaluation，让研究者通过文献支撑的类比生成和筛选 idea。
+- [Let's Think Outside the Box](https://doi.org/10.1109/cvpr52733.2024.01258)：探索用于 creative humor generation 的 leap-of-thought prompting。核心思想：在生成笑话前让模型推理稀疏且非显然的联想，把幽默视为结构化创意搜索流程，而不是一次性补全文本。
+- [Innovative Thinking, Infinite Humor](https://arxiv.org/abs/2410.10370)：构建通过 structured thought leaps 生成幽默的 LoL 框架。核心思想：自动演化幽默专用指令、注入外部知识，并用强化学习学习抽取出的 reasoning logic，使笑话生成受益于多跳创意推理。
+- [Semantic Navigation for AI-assisted Ideation](https://arxiv.org/abs/2411.03575)：Semantic Navigation 用 LLM 支持在问题空间和解法空间中语义导航，并加入相关性、一致性和人类对齐过滤，替代单轮提示生成。
+- [A Random Walk Modeling Framework for Boosting the Creativity of Humans and AI](https://doi.org/10.1287/isre.2024.0982)：把构思建模为概念网络上的随机游走，并测试约束、语境转移、延迟选择等提示干预，以提升人类和 LLM 的创造力。
+- [LLMs can realize combinatorial creativity](https://arxiv.org/abs/2412.14141)：把 combinatorial creativity 理论实现为 LLM 构思工作流。核心思想是用 generalization-level retrieval 寻找跨领域概念，再通过结构化流程重组概念，使创意 idea generation 由显式知识迁移驱动，而不是自由头脑风暴。
+- [MDSF: Context-Aware Multi-Dimensional Data Storytelling Framework based on Large language Model](https://arxiv.org/abs/2501.01014)：MDSF 以 LLM 为核心，把数据、受众、可视化和叙事维度放入上下文感知框架中组织数据故事，而不是把讲故事简化成一次性说明生成。
+- [Toyteller](https://arxiv.org/abs/2501.13284)：以玩具式角色符号运动作为控制界面，将动作与文本映射到共享语义空间，实现故事文本生成与符号运动生成的双向联动。
+- ["See What I Imagine, Imagine What I See": Human-AI Co-Creation System for 360° Panoramic Video Generation in VR](https://arxiv.org/abs/2501.15456)：构建面向 360 度全景视频的 VR 共创循环，让用户把想象场景外化，并迭代修订生成的沉浸式视频。
+- [Jupybara: Operationalizing a Design Space for Actionable Data Analysis and Storytelling with LLMs](https://arxiv.org/abs/2501.16661)：Jupybara 将 LLM 数据分析与数据叙事设计空间落地，把分析步骤、叙事表达和后续行动连接起来。
+- [The Beatbots: A Musician-Informed Multi-Robot Percussion Quartet](https://arxiv.org/abs/2502.00966)：构建由音乐家反馈驱动的多机器人打击乐四重奏，并通过现场公开演出评估，把机器人节奏控制、协同与表演者反馈作为具身音乐创作 harness。
+- [Conceptual Metaphor Theory as a Prompting Paradigm for Large Language Models](https://arxiv.org/abs/2502.01901)：把概念隐喻理论用作 LLM 提示范式，通过源域到目标域的概念框架组织模型的隐喻推理与生成。
+- [AI Humor Generation: Cognitive, Social and Creative Skills for Effective Humor](https://arxiv.org/abs/2502.07981)：比较普通 LLM 梗图标题与加入认知、社会、创造性和受众理解等幽默 skill 后的标题，用 Gen Z 受众评分检验显式 skill 脚手架如何改变幽默生成质量。
+- [WhatELSE](https://arxiv.org/abs/2502.18641)：通过叙事支点、提纲与变体视图帮助作者塑造 AI 生成的交互叙事空间，并将受控空间展开为可执行游戏事件。
+- [Brickify: Enabling Expressive Design Intent Specification through Direct Manipulation on Design Tokens](https://arxiv.org/abs/2502.21219)：引入对设计 token 的直接操控，从参考图像中抽取主体、风格和颜色，使设计师无需完全语言化即可表达视觉意图。
+- [Augmenting Online Meetings with Context-Aware Real-time Music Generation](https://arxiv.org/abs/2503.01354)：提出 Discussion Jockey 2，读取实时会议 transcript 并生成自适应背景音乐，以支持放松、专注和参与感。
+- [Diverse AI Personas Can Mitigate the Homogenization Effect in Human-AI Collaborative Ideation](https://arxiv.org/abs/2504.13868)：在协作构思中引入多样 AI personas，降低建议同质化，使人机共创产生更宽的 idea pool。
+- [Expanding the Generative AI Design Space through Structured Prompting and Multimodal Interfaces](https://arxiv.org/abs/2504.14320)：把结构化提示和多模态界面结合用于小企业广告设计，降低新手用户难以语言化创意目标时的交互摩擦。
+- [A Multi-Agent AI Framework for Immersive Audiobook Production through Spatial Audio and Neural Narration](https://arxiv.org/abs/2505.04885)：协调 LLM 叙事理解、神经旁白、角色化声音、时间对齐音效和扩散式空间音频，把文本故事转成沉浸式有声书场景。
+- [Card Sorting Simulator](https://arxiv.org/abs/2505.09478)：用 LLM 模拟 28 个真实从业者 card-sorting 研究中的分类结果，为信息架构构思工具提供自动反馈。
+- [Persona Alchemy: Designing, Evaluating, and Implementing Psychologically-Grounded LLM Agents for Diverse Stakeholder Representation](https://arxiv.org/abs/2505.18351)：构建有心理学依据的 LLM stakeholder persona，为设计团队提供可模拟的多方视角，用于构思与批评。
+- [Guiding Generative Storytelling with Knowledge Graphs](https://arxiv.org/abs/2505.24803)：提出知识图谱辅助的 LLM 故事生成流程，用户可编辑图谱来控制叙事连贯性、结构和创作方向。
+- [Feedstack: Layering Structured Representations Over Unstructured Feedback to Scaffold Human–AI Conversation](https://arxiv.org/abs/2506.03052)：Feedstack 在自由反馈对话上叠加结构化表示，帮助用户和 AI 外化意图、导航设计提案并回看未解决反馈。
+- [Exploring the Potential of Metacognitive Support Agents for Human-AI Co-Creation](https://arxiv.org/abs/2506.12879)：在创意协作中加入 metacognitive support agents，帮助用户反思目标、假设和迭代选择，而不只是接收生成式建议。
+- [LLM-enhanced Interactions in Human-Robot Collaborative Drawing with Older Adults](https://arxiv.org/abs/2506.18711)：研究 Drawing with Robots 课程中由 LLM 增强的机器人给出绘画建议、参与者以策展人、教师或教练角色协作的流程，揭示具身共创绘画中的角色设计。
+- [Do Conversational Interfaces Limit Creativity? Exploring Visual Graph Systems for Creative Writing](https://arxiv.org/abs/2507.08260)：构建节点式可视图界面来串联生成模型做创意写作，用可复用、可分享的探索模板替代线性聊天。
+- [Human-AI Co-Creation: A Framework for Collaborative Design in Intelligent Systems](https://arxiv.org/abs/2507.17774)：把协同设计组织为 AI 支持的 proposal、critique 与 revision 迭代流程，而不是一次性生成任务。
+- [IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI](https://arxiv.org/abs/2507.22163)：把开放式图形设计意图模块化为可复用的 Exploration Blocks，支持生成式设计探索中的分支、串联和上下文自适应复用。
+- [Explainability-in-Action: Enabling Expressive Manipulation and Tacit Understanding by Bending Diffusion Models in ComfyUI](https://arxiv.org/abs/2508.07183)：把 ComfyUI 中的扩散模型视为可操控的创作材料，暴露模型内部结构以支持表达性控制和默会理解，而不是只解释最终输出。
+- [MAViS: A Multi-Agent Framework for Long-Sequence Video Storytelling](https://arxiv.org/abs/2508.08487)：MAViS 将长序列视频讲故事拆成规划、内容落地与叙事修订等协作智能体，使生成故事能在长上下文中保持事件、角色和时间连续性。
+- [HumorPlanSearch: Structured Planning and HuCoT for Contextual AI Humor](https://arxiv.org/abs/2508.11429)：用 HumorPlanSearch 与 HuCoT 在生成前规划语境、反差和包袱步骤，把幽默生成显式化为结构化搜索流程。
+- [Orchid: Orchestrating Context Across Creative Workflows with Generative AI](https://arxiv.org/abs/2508.19517)：Orchid 在持续演化的 GenAI 创作流程中提供项目、自我与风格上下文的指定、引用和监控机制。
+- [Scaffolding Flexible Ideation Workflows with AI in Creative Problem-Solving](https://arxiv.org/abs/2509.12408)：该流程允许用户在发散式创意解题中随时调用高层图式、风险分析、缓解建议和生成建议转向控制。
+- [Designing AI for team ideation: How content strategy and participation style affect creative performance through team emergent states](https://doi.org/10.1016/j.ergon.2025.103824)：测试团队创意中的广度优先、深度优先以及主动、被动 AI 参与方式，并把策略变化与团队涌现状态和创造表现联系起来。
+- [Enhancing design concept diversity: multi-persona prompting strategies for large language models](https://doi.org/10.1017/dsj.2025.10037)：比较并行、合并和顺序式多专业人格提示，用专业知识库和设计问题检验 LLM 概念生成的多样性提升。
+- [StarBurst: Aiding Design Ideation Through AI-Generated Remote Associations](https://doi.org/10.1080/10447318.2025.2582774)：StarBurst 从图像生成远距联想，构建联想元素属性图，并给出整合到最终设计想法中的建议来支撑创意构思。
+- [GenFODrawing: Supporting Creative Found Object Drawing With Generative AI](https://doi.org/10.1109/tvcg.2025.3626754)：通过 AI 文本与视觉灵感、草图控制和框条件生成支持实物联想绘画，并与基线创作流程比较评估。
+- [Perspectra: Choosing Your Experts Enhances Critical Thinking in Multi-Agent Research Ideation](https://arxiv.org/abs/2509.20553)：让用户为多智能体科研构思选择专家 persona，使视角多样性与批判过程显式化，而不是依赖固定的通用智能体团队。
+- [FlexMind: Supporting Deeper Creative Thinking with LLMs](https://arxiv.org/abs/2509.21685)：FlexMind 在广度探索、权衡、缓解方案和反思之间搭建脚手架，帮助用户从广泛接触想法过渡到深入评估。
+- [MotivGraph-SoIQ: Integrating Motivational Knowledge Graphs and Socratic Dialogue for Enhanced LLM Ideation](https://arxiv.org/abs/2509.21978)：将动机知识图谱与苏格拉底式对话结合起来，让 LLM 构思从隐含动机逐步转化为经过追问和细化的问题或方案。
+- [MetaMuse: Algorithm Generation via Creative Ideation](https://arxiv.org/abs/2510.03851)：用 performance-space diversity、外部刺激和 waypoint reasoning 引导 LLM 算法构思跳出通用启发式，生成可执行的缓存替换和在线装箱方案。
+- [Man-Made Heuristics Are Dead. Long Live Code Generators!](https://arxiv.org/abs/2510.08803)：提出 PolicySmith，用 LLM 驱动的代码生成搜索循环为网页缓存和拥塞控制合成面向实例的启发式策略，而不是依赖人工设计 policy。
+- [StoryBox: Collaborative Multi-Agent Simulation for Hybrid Bottom-Up Long-Form Story Generation Using Large Language Models](https://arxiv.org/abs/2510.11618)：StoryBox 用协作式多智能体模拟进行自底向上的长篇故事生成，让角色、世界和叙事动态通过多个 LLM 角色协同涌现。
+- [Sound Clouds: Exploring ambient intelligence in public spaces to elicit deep human experience of awe, wonder, and beauty](https://arxiv.org/abs/2510.15865)：构建公共空间中的环境智能装置，根据参与者与空间信号生成实时音乐，把敬畏、惊奇与美感作为交互式创意系统的设计目标。
+- [Storycaster: An AI System for Immersive Room-based Storytelling](https://arxiv.org/abs/2510.22857)：Storycaster 结合叙事智能体、语音命令、房间投影、生成媒体和物体级编辑，支持沉浸式共创故事。
+- [Towards AI as Colleagues: Multi-Agent System Improves Structured Ideation Processes](https://arxiv.org/abs/2510.23904)：Towards AI as Colleagues 用多智能体系统支持结构化专业构思，把智能体作为互补同事来承担发散探索、批判和综合角色。
+- [Scaffolding Creativity: How Divergent and Convergent LLM Personas Shape Human Machine Creative Problem-Solving](https://arxiv.org/abs/2510.26490)：Scaffolding Creativity 用发散型和收敛型 LLM persona 组织人机创意解题，把想法扩展、筛选和修订分成可控阶段。
+- [The Ghost in the Keys: A Disklavier Demo for Human-AI Musical Co-Creativity](https://arxiv.org/abs/2511.01663)：The Ghost in the Keys 通过 Disklavier 展示人机音乐共创，把共创过程落到可交互乐器上，而不是仅停留在文本提示。
+- [TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech](https://arxiv.org/abs/2511.05817)：TalkSketch 将多模态 AI 嵌入草图创作，把手绘和实时语音结合起来生成上下文感知的构思支持，减少对创作流程的打断。
+- [What Does It Take to Be a Good AI Research Agent? Studying the Role of Ideation Diversity](https://arxiv.org/abs/2511.15593)：把构思多样性作为研究智能体的设计变量，评测更广泛的创意探索是否能提升后续智能体表现，而不只是润色最终 proposal。
+- [WorldGen: From Text to Traversable and Interactive 3D Worlds](https://arxiv.org/abs/2511.16825)：结合 LLM 场景布局推理、程序生成、扩散式 3D 生成和 object-aware 分解，把文本提示转化为可在游戏引擎中探索的可通行世界。
+- [Universe of Thoughts: Enabling Creative Reasoning with Large Language Models](https://arxiv.org/abs/2511.20471)：Universe of Thoughts 实现组合式、探索式和变革式创意推理范式，并用可行性、效用和新颖性维度评测。
+- [TaleFrame: An Interactive Story Generation System with Fine-Grained Control and Large Language Models](https://arxiv.org/abs/2512.02402)：TaleFrame 将故事拆为实体、事件、关系和大纲，让用户迭代编辑这些单元，并用 JSON2Story 生成和七维反馈细化故事。
+- [DAWZY: A New Addition to AI powered "Human in the Loop" Music Co-creation](https://arxiv.org/abs/2512.03289)：把文本、语音或哼唱请求转成 REAPER 中可撤销的操作，结合 LLM 生成脚本和 MCP 工具读取 DAW 状态、调参并生成节拍。
+- [Decoding the Black Box: Discerning AI Rhetorics About and Through Poetic Prompting](https://arxiv.org/abs/2512.05243)：提出 Poetry Prompt Patterns，把诗歌约束作为创意提示协议，用来探测 LLM 的修辞、偏差与文本生成倾向，而不是只依赖普通指令提示。
+- [LLMs Powered Storytelling Frameworks Using Text Generation and Image Generation Models](https://doi.org/10.1109/mosicom67153.2025.11398200)：比较三种将 LLM 文本生成器与图像生成器组合的文本到漫画流水线，重点考察生成漫画叙事的情节、时间和空间连贯性。
+- [The Role of Ai in Theater Directing: New Approaches to Digital Performances](https://doi.org/10.1109/icmi65310.2025.11141300)：构建 AI 戏剧导演框架，结合脚本视觉对齐、情绪语调抽取、场景管理与舞台调度优化，用于数字演出。
+- [ORIBA: Exploring LLM-Driven Role-Play Chatbot as a Creativity Support Tool for Original Character Artists](https://arxiv.org/abs/2512.12630)：ORIBA 研究面向原创角色艺术家的 LLM 角色扮演聊天工具，把角色对话和人格互动作为发展虚构角色的创意支持循环。
+- [Exploring gestural affordances in audio latent space navigation](https://doi.org/10.3389/fcomp.2025.1575202)：研究带平板界面的 AI 增强数字乐器，让 18 名音乐人通过开放式手势和乐谱在音频潜空间中导航，用于刻画生成式音乐中的具身控制方式。
+- [Exploration vs. Fixation: Scaffolding Divergent and Convergent Thinking for Human-AI Co-Creation with Generative Models](https://arxiv.org/abs/2512.18388)：HAICo 将发散式概念探索与收敛式图像细化分开，减少相对执行优先聊天界面的设计固着。
+- [Design principles for text-to-image generative artificial intelligence creativity support tools for visual design](https://doi.org/10.1080/0960085x.2026.2616042)：从 Ubisoft 的 Generative.ConceptCrafter 提炼设计原则，该工具以 Stable Diffusion 和流程引导支持概念艺术创作。
+- [Nonlinear Interaction with LLMs: Enhancing Divergent and Convergent Processes in Complex Information Tasks](https://doi.org/10.1080/10447318.2026.2633738)：围绕发散探索与收敛综合组织非线性 LLM 交互，帮助用户在想法扩展和决策整合之间切换。
+- [Generative AI-Based Storytelling: Integrating RelTR for Scene Graphs with GPT for Narrative Generation](https://doi.org/10.1109/icnte66387.2026.11437421)：把 RelTR 场景图生成与 GPT 叙事生成结合，用图像中的视觉关系约束并丰富 AI 辅助故事创作。
+- [Enabling AI-Driven VR Theatre: A Low-Latency VR-AI Director Framework with Consistent Personae via Machinery Narrative Audit](https://doi.org/10.1109/VRW70859.2026.00323)：构建低延迟 VR-AI 剧场导演框架，并用 persona-consistency 审计协调沉浸式表演中的叙事调度和角色行为。
+- [A Usability Study of Interpretable Aesthetic Evaluation as Decision Support in Full-Site AI Website Generators for Novice Users](https://doi.org/10.1109/access.2026.3686928)：把可解释计算美学反馈加入 AI 网站生成工作流，并在 30 人被试内可用性研究中与 Wix ADI 进行比较。
+- [AI-assisted narrative design: a model of human-AI collaborative creativity in popularizing digital journalism articles](https://doi.org/10.3389/fhumd.2026.1777511)：报告持续 60 周的记者与 GenAI 协作科普数字文章工作流，把思辨叙事提示与 AI 生成图像结合起来建模人机协同叙事设计。
+- [Cyber-Creativity: Challenges and Frictions in Human-AI Collaboration](https://doi.org/10.1109/acdsa67686.2026.11468155)：在 DA VINCI 创意写作流程中加入“摩擦”条件，强制用户干预 GenAI 输入，并用被试内设计检验打断顺滑生成是否能提高反思和自感原创性。
+- [Collaborative AI Systems Supporting Design Teams in Large-Scale Visual Art Projects](https://doi.org/10.29121/shodhkosh.v7.i4s.2026.7482)：提出面向大型视觉艺术项目的多层协作 AI 架构，覆盖数据采集、AI 处理、协作管理和展示。
+- [StoryBaker: Generative Memoryscapes from Personal Narratives in XR](https://doi.org/10.1109/VRW70859.2026.00184)：把个人叙事转化为 XR 记忆景观，通过生成式叙事流水线围绕用户记忆构建可探索场景。
+- [AutoSpark](https://doi.org/10.1145/3654777.3676337)：用 Kansei Engineering 和生成式 AI 支持汽车外观设计构思。核心思想：围绕情感相关的 Kansei cues 组织创意设计，让设计师探索视觉概念，而不是依赖通用文本构思循环。
+- [Using generative AI to co-design data-driven stories](https://doi.org/10.1002/asi.70036)：提出用于 data storytelling 共创的 AI-DIKW 框架。核心思想：用 journalistic 5-W prompts 把 GenAI 分别放入 Data、Information、Knowledge 和 Wisdom 阶段，帮助人类迭代构造洞察、上下文、后续行动和面向受众的故事。
+- [From analogy to innovation](https://doi.org/10.1016/j.aei.2025.103427)：用 LLM 支持类比驱动的概念设计。核心思想：把 analogical reasoning 组织成创意工作流，帮助设计者连接源概念与目标设计问题，而不是让模型无约束地产生想法。
+- [A retrieval-augmented method for explainable product ideation](https://doi.org/10.1016/j.aei.2026.104770)：结合概念设计知识图谱、检索与 LLM 做产品构思。核心思想：生成前先检索可解释设计知识，使概念提案带有可追溯的类比和 rationale，而不只是流畅建议。
+- [Leveraging large language models for participatory digital personas in future-oriented design](https://doi.org/10.1080/09544828.2026.2639927)：用 LLM 模拟数字人格支持面向未来的设计。核心思路：把设计师的共情解读与 AI 的系统化分析并行组织，在未来用户尚无法访谈时生成用户属性、设计准则和视觉概念。
+- [Product Innovation Information Using Large Language Model Based on TRIZ and Patent Mining Focusing on Sustainability](https://doi.org/10.1109/access.2026.3681971)：把 TRIZ、专利挖掘和 LLM prompting 组合成产品创新构思流程。核心思想：检索发明原理和专利证据，再用 LLM 辅助工作流把可持续性约束转化为设计概念。
+- [Enhancing designer creativity through human–AI co-ideation: a co-creation framework for design ideation with custom GPT](https://doi.org/10.1017/S0890060425100127)：构建用于设计构思的 custom GPT 协同创作框架，通过结构化人机交互帮助设计师探索、细化和评价创意概念。
+- [Multi-Agent Framework for Interactive Storytelling using Large Language Models](https://doi.org/10.1109/ICSFT66733.2026.11507464)：用多个 LLM 智能体协同完成交互式叙事，把情节、角色与用户反馈控制纳入外部创意写作脚手架。
+- [ReMIND: Orchestrating Modular Large Language Models for Controllable Serendipity A REM-Inspired System Design for Emergent Creative Ideation](https://arxiv.org/abs/2601.07121)：ReMIND 以 REM 启发的循环编排多个模块化 LLM 组件来控制偶然灵感，让创意构思依赖受控联想与重组，而不是一次性提示。
+- [YES AND: A Generative AI Multi-Agent Framework for Enhancing Diversity of Thought in Individual Ideation for Problem-Solving Through Confidence-Based Agent Turn-Taking](https://doi.org/10.1145/3706599.3720142)：用基于置信度的 agent 轮流发言提升个人构思中的思维多样性，把多智能体提示组织成创造力支持脚手架。
+- [Appropriate Incongruity Driven Human-AI Collaborative Tool to Assist Novices in Humorous Content Generation](https://doi.org/10.1145/3640543.3645161)：围绕 appropriate incongruity 理论构建人机协同幽默写作工具，帮助新手把反差联想转化为幽默内容。
+- [Co-Ideation Across Time: Revitalizing Legacy Design Sketchnotes with Conversational AI Agents to Foster Intergenerational Collaboration](https://doi.org/10.1145/3772318.3791258)：用对话式 AI 智能体激活旧设计 sketchnotes，促进跨代协同构思，把历史设计材料转化为主动创意提示。
+- [Creativity Support in the Age of Large Language Models](https://doi.org/10.1145/3635636.3656201)：研究专业写作者使用 LLM 辅助的过程，刻画模型在规划、起草与修订环节如何支持或干扰专家创作流程。
+- [Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection](https://arxiv.org/abs/2601.07232)：FLoReNce 将 agentic feedback reasoning 用于幽默 meme 检测，通过迭代反馈改进多模态幽默理解，而不是一次性分类。
+- [LLM Review](https://arxiv.org/abs/2601.08003)：通过 blind peer-review feedback loop 提升创意写作，把 critique 与 revision 组织成显式生成 harness，而不是单次写作 prompt。
+- [Understanding Human-Multi-Agent Team Formation for Creative Work](https://arxiv.org/abs/2601.13865)：CrafTeam 研究人类如何编排多智能体创意团队，通过组队、与智能体构思、反思团队想法的循环支持创作。
+- [PromptHelper: A Prompt Recommender System for Encouraging Creativity in AI Chatbot Interactions](https://arxiv.org/abs/2601.15575)：PromptHelper 在聊天机器人外加提示推荐层，给出语义多样的后续提示，在写作任务中提升探索性和表达度。
+- [InkIdeator: Supporting Chinese-Style Visual Design Ideation via AI-Infused Exploration of Chinese Paintings](https://arxiv.org/abs/2601.18193)：InkIdeator 将中国画探索转化为视觉设计构思流程，把源画作、AI 生成变体和设计师选择连接起来。
+- [IdeationWeb](https://doi.org/10.1145/3706598.3713375)：跟踪人机共创中设计想法的演化，让团队看到 idea lineage、divergence 与 refinement 的结构化过程。
+- [Design Techniques for LLM-Powered Interactive Storytelling: A Case Study of the Dramamancer System](https://arxiv.org/abs/2601.18785)：Dramamancer 将作者编写的故事模式转化为玩家驱动的互动剧情，呈现 LLM 叙事控制的设计技法和评测问题。
+- [MAMMD: A multi-agent collaboration framework for multimodal metaphor detection](https://doi.org/10.1016/j.neucom.2026.133381)：MAMMD 用多智能体协作处理多模态隐喻检测，把图像、文本与跨模态推理中的隐喻理解错误拆到不同角色中诊断。
+- [Beyond Pixels: Visual Metaphor Transfer via Schema-Driven Agentic Reasoning](https://arxiv.org/abs/2602.01335)：通过 schema 驱动的 agentic reasoning 迁移视觉隐喻，用显式源域到目标域映射指导创意图像转换，而不只是像素编辑。
+- [ToMigo](https://arxiv.org/abs/2602.05825)：将创作意图表示为可编辑的设计概念图，让用户检查多模态大模型推断的目的、内容与风格关系，再据此重新对齐生成的平面设计。
+- [Personagram: Bridging Personas and Product Design for Creative Ideation with Multimodal LLMs](https://arxiv.org/abs/2602.06197)：Personagram 用多模态 LLM 将用户画像连接到产品设计构思，把 persona 证据和视觉上下文转化为具体设计概念，而不是泛泛头脑风暴。
+- [Glow with the Flow: AI-Assisted Creation of Ambient Lightscapes for Music Videos](https://arxiv.org/abs/2602.08838)：从音乐视频的画面和音频中提取显著特征，生成可编辑环境灯光序列，并在 3 个视频上把系统自动输出与人工灯光设计进行比较。
+- [ProductMeta: An Interactive System for Metaphorical Product Design Ideation with Multimodal Large Language Models](https://doi.org/10.1145/3706598.3713935)：ProductMeta 用多模态 LLM 支持隐喻式产品设计构思，通过交互流程帮助设计者把图像与文本隐喻线索映射成产品概念。
+- [Jokeasy: Exploring Human-AI Collaboration in Thematic Joke Generation](https://arxiv.org/abs/2602.09496)：Jokeasy 将主题笑话写作组织为人机协作循环，支持用户探索主题、草稿与修订，而不是一次性提示生成。
+- [Designing a Rashomon Machine: Pluri-perspectivism and XAI for Creativity Support](https://arxiv.org/abs/2602.14232)：将 XAI 从事后解释转为探索支持，用多视角框架和 Rashomon 式备选解释引导人机共创探索。
+- [Synthetic Reader Panels: Tournament-Based Ideation with LLM Personas for Autonomous Publishing](https://arxiv.org/abs/2602.14433)：Synthetic Reader Panels 在自主出版构思中使用 LLM persona 组成锦标赛式评审循环，用模拟读者反馈筛选和修订创意内容想法。
+- [Sci-Fi Spark: A Human-AI Co-Creation System for Science Fiction Ideation](https://doi.org/10.1145/3772318.3791950)：Sci-Fi Spark 支持科幻构思中的人机共创，通过交互系统帮助作者发展 speculative premise、世界设定和叙事方向。
+- [AnimeAgent: Is the Multi-Agent via Image-to-Video models a Good Disney Storytelling Artist?](https://arxiv.org/abs/2602.20664)：AnimeAgent 将图像到视频模型组织成多智能体讲故事流程，把故事规划与视觉生成拆开，用于迪士尼风格动画叙事。
+- [InfoAlign: A Human–AI Co-Creation System for Storytelling with Infographics](https://arxiv.org/abs/2602.22901)：InfoAlign 将信息图叙事拆成故事构建、视觉编码和空间排版三阶段，并允许用户逐步干预 AI 建议。
+- [Interpretable Chinese Metaphor Identification via LLM-Assisted MIPVU Rule Script Generation: A Comparative Protocol Study](https://arxiv.org/abs/2603.10784)：借助 LLM 生成可解释的 MIPVU 风格规则脚本，将中文隐喻识别转化为可审计的协议化流程。
+- [Voice-based debate with an AI adversary is associated with increased divergent ideation](https://arxiv.org/abs/2603.27073)：该研究分析了 957 场与 AI 对手的辩论，显示语音交互会改变创意发散流程：它牺牲部分文本式精炼性，但通过口语重复维持连贯并扩展概念广度。
+- [Caesar: Deep Agentic Web Exploration for Creative Answer Synthesis](https://arxiv.org/abs/2604.20855)：Caesar 用深度 agentic web exploration 做创意答案合成，把搜索、证据收集和综合组织成流程，而不是依赖单次开放式提示。
+- [Beyond Compliance: How AI Could Help Creative Writers by Refusing Them](https://arxiv.org/abs/2605.16272)：把 AI 有意拒绝和不顺从设计为创意写作中的摩擦机制，用拒绝促使作者反思何时依赖 AI 或非 AI 资源。
+- [A Hybrid Prototype Method Combining Physical Models and Generative Artificial Intelligence to Support Creativity in Conceptual Design](https://doi.org/10.1145/3689433)：在概念设计中结合实体原型与生成式 AI，把可触摸模型作为提示和约束来组织迭代创意构思。
+- [Capturing Inspiration: Designing a Multimodal Human–AI Collaboration Framework for Music Creation](https://doi.org/10.1145/3786995.3787005)：设计面向音乐创作的多模态人机协作框架，把捕捉到的灵感信号作为迭代作曲流程的输入。
+- [ContextCam: Bridging Context Awareness with Creative Human-AI Image Co-Creation](https://doi.org/10.1145/3613904.3642129)：ContextCam 将上下文感知引入人机图像共创，用周围情境影响迭代视觉生成，而不是把提示词视为孤立文本。
+- [Creativeable: Leveraging AI for Personalized Creativity Enhancement](https://doi.org/10.3390/ai6100247)：Creativeable 通过 AI 引导提示、反馈和自适应支持来个性化提升创造力，把创造力训练转成交互式生成流程。
+- [Deepening ideas vs. exploring new ones: AI strategy effects in human-AI creative collaboration](https://doi.org/10.1371/journal.pone.0340449)：比较轮流头脑风暴中的深化与拓展式 AI 策略，说明可预测的深化支持如何影响信任和采纳 AI 想法。
+- [Fashioning Creative Expertise with Generative AI: Graphical Interfaces for Design Space Exploration Better Support Ideation Than Text Prompts](https://doi.org/10.1145/3613904.3642908)：generative.fashion 用图形化设计空间探索控件替代纯文本提示，在 Stable Diffusion 上支持时尚设计的发散和收敛式构思。
+- [GraftMind: Facilitating Group Ideation with AI-Mediated Idea Sharing](https://doi.org/10.1145/3772318.3791388)：GraftMind 让成员在私有空间构思，同时由 AI 中介实时引入群体中的相关、发散和差异化想法。
+- [Guided Creativity: AI Intermediation for Enhancing Originality and Quality in Visual Design](https://doi.org/10.2139/ssrn.5371575)：AI 中介把优秀样例转化为语义一致但视觉不同的变体，既传递设计启发，又降低固着并提升原创性和质量。
+- [ImaginationVellum: Generative-AI Ideation Canvas with Spatial Prompts, Generative Strokes, and Ideation History](https://doi.org/10.1145/3746059.3747631)：ImaginationVellum 用空间化提示、生成式笔触和构思历史支持视觉构思，使用户能够迭代探索创意方向。
+- [Story Forge: A Card-Based Framework for AI-Assisted Interactive Storytelling](https://doi.org/10.3390/electronics14152955)：Story Forge 用数字故事元素卡片和 LLM 支撑的 Unity 流程，让用户通过选卡、组卡和生成预览来创作分支叙事。
+- [Nabokov's Cards: An AI Assisted Prewriting System to Support Bottom-Up Creative Writing](https://doi.org/10.1145/3698061.3726916)：Nabokov's Cards 用卡片化片段支持自下而上的创意预写，并由 AI 辅助提示与改写。
+- [Noise Pilot: Enabling Artistic Workflow Composition with Diffusion-Based Image Generation](https://doi.org/10.1145/3772318.3790531)：Noise Pilot 让艺术家组合扩散图像生成流程，而不只是输入单次提示词。
+- [Identifying, Capturing, and Reusing Tacit Knowledge in Creative Domains with Generative AI](https://doi.org/10.1145/3746058.3758467)：研究生成式 AI 系统如何外化并复用设计师 tacit knowledge，结合质性研究和交互系统支持 AI 辅助创意实践。
+- [Toward Enhancing Ideation through Collaborative Group-AI Brainwriting](https://dl.acm.org/doi/10.1145/3640543.3645162)：该 Group-AI Brainwriting 框架把 LLM 工具嵌入协作构思的发散生成与收敛评估、选择阶段。
+- [One Spell Fits All: A Generative AI Game as a Tool for Research in AI Creativity and Sustainable Design](https://ceur-ws.org/Vol-3708/paper4.pdf)：把生成式 AI 游戏作为研究 AI 创造力与可持续设计构思的实验工具，通过交互式玩法显式暴露创意约束。
+- [FusAIn: Composing Generative AI Visual Prompts Using Pen-based Interaction](https://doi.org/10.1145/3706598.3714027)：提供基于手写笔的视觉提示组合工具，将视觉属性拆解再重组，使设计师无需只依赖文本提示即可操控文生图生成。
+- [Can LLM-Powered Multi-Agent Systems Augment Human Creativity? Evidence from Brainstorming Tasks](https://doi.org/10.1145/3715928.3737479)：测试 LLM 多智能体头脑风暴对人类创造力的增强作用，针对评价焦虑、搭便车、过早收敛和输出同质化等问题。
+- [SketchAI: A "Sketch-First" Approach to Incorporating Generative AI into Fashion Design](https://doi.org/10.1145/3706599.3719782)：提供面向时装设计的草图优先 GenAI 工作流，使设计师可以用草图引导图像生成，而不是把视觉意图翻译成文本提示。
+- [Sonora: Human-AI Co-Creation of 3D Audio Worlds and its Impact on Anxiety and Cognitive Load](https://doi.org/10.1145/3706598.3713316)：结合音频扩散模型、LLM 语音指令解析和 Unity3D 导航，让用户实时共创可漫游的 3D 空间声景，而不是被动收听固定音频。
+- [An AI-Assisted Prompt Generation Method for Theatre Rehearsal: Translating Script Text into Executable Stage Actions](https://doi.org/10.1145/3803730.3803753)：把戏剧脚本文本转化为排练中可执行的舞台动作提示，帮助导演将文本意图落实为演员动作指令。
+- [Eye Want It All! Investigating Eye Tracking as Implicit Support for Generative Inpainting](https://doi.org/10.1145/3772363.3799314)：将眼动作为生成式修补的隐式控制信号，并在 16 人用户研究中显示凝视时长与用户想重新生成的区域相关。
+- [Adaptive Human–Computer Interaction Design Based on AIGC for New Media Applications](https://doi.org/10.1145/3803730.3803751)：提出自适应 AIGC 交互框架，结合多模态感知、跨模态语义融合、RLHF，并构建 NMI-6K 数据集用于新媒体共创。
+- [Artificial-Intelligence-Assisted Workflow Optimization for Digital Media Art Creation](https://doi.org/10.1145/3797161.3797202)：将数字媒体艺术创作拆成创意激发、素材生成、迭代共创与输出优化四个阶段，把生成模型嵌入完整创作流程，而不是单次图像生成。
+- [LLM-Augmentation for Idea Evaluation: Developing a Reference Model for Evaluation Pipelines](https://doi.org/10.1007/978-3-031-93976-1_10)：提出 LLM 增强 idea evaluation pipeline 的 reference model，把创意筛选做成可复用流程，而不是一次性的 judge prompt。
+- [Prompt Design Workflow Based on User Contextual Language for Generative Artificial Intelligence Conceptual Design](https://doi.org/10.3390/engproc2025120046)：比较 context、narrative 和 keyword 三类提示流程如何驱动 ChatGPT-4o 与 DALL-E 3 生成概念草图，并由设计专家和经验用户评价 creativity、practicality、usability、familiarity 与 intent alignment。
+- [Bringing LuminAI to Life: Studying Dancers’ Perceptions of a Co-Creative AI in Dance Improvisation Class](https://doi.org/10.1145/3698061.3726925)：围绕重新设计的 LuminAI 共创舞蹈伙伴，开展 7 个月、4 阶段、15 名舞者参与的研究，并包含日记研究与公开演出证据。
+- [Towards Understanding Children’s Collaborative Interaction Patterns in Child-AI Co-creative Interfaces](https://doi.org/10.1145/3772318.3791831)：通过 8 到 13 岁儿童的参与式设计研究，总结四类儿童-AI 协作画像以及让 AI 生成绘画或故事贴合儿童意图的策略。
+- [Preliminary Explorations of Generative AI and the Embodied Embroidery of Huayao Intangible Cultural Heritage](https://doi.org/10.1145/3772363.3798663)：围绕花瑶刺绣研究三种经过微调的 GenAI 共创流程，将研究者与设计者提示、工匠现场制作和反思反馈结合起来，说明人类修正与本地工艺规范在创意落地中的必要性。
+- [Advancing lacquerware design through human-AI collaboration with controllable diffusion models](https://doi.org/10.1038/s41598-025-33119-y)：构建漆器人机共创闭环系统，包含前端界面、可控扩散引擎、带标注的历史与现代设计数据库以及工匠调整步骤，用于兼顾文化传承和创意探索。
+- [Creating and Delivering Transferable Object-Based Light Content](https://doi.org/10.1145/3706599.3719694)：提出 object-based light authoring 和 lightscape renderer，让环境灯光设计在不同灯具布局间迁移时仍保留设计意图。
+- [Meeting at Crossroads](https://doi.org/10.1145/3706599.3719767)：提出一款共创 AI 游戏，让玩家倾听彼此经历、生成相关图像，并逐步揭示共享视觉地图。
+- [Synthetic users: insights from designers' interactions with persona-based chatbots](https://doi.org/10.1017/s0890060424000283)：研究基于 persona 的 LLM 聊天机器人作为动态 synthetic users，展示设计师如何与其对话来引出目标、约束和以用户为中心的设计场景。
+- [A Digital-Intelligent Workflow for Personalized Guochao Apparel Customization: A Knowledge-Graph and 3D Simulation Case Study with Risk Governance](https://doi.org/10.1145/3804504.3804525)：结合文化规则知识结构化、知识图谱设计约束、AI 辅助图案与配色生成，以及 3D 虚拟试衣，支持个性化服装创意迭代。

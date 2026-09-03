@@ -1,33 +1,1075 @@
 # 1.9.4 Model
 
-- [Virgo: A Preliminary Exploration on Reproducing o1-like MLLM](https://arxiv.org/abs/2501.01904)：探索复现 o1 式多模态推理，可作为审慎 MLLM 推理的模型侧参考。
-- [DeepSeek-R1](https://arxiv.org/abs/2501.12948)：代表性的 reasoning model 后训练方案，用带可验证奖励的大规模强化学习激发自我反思、验证和长链式思考。
-- [Bridging Internal Probability and Self-Consistency for Effective and Efficient LLM Reasoning](https://arxiv.org/abs/2502.00511)：连接内部答案概率与自洽性，使 LLM 推理更准确且更高效。
-- [Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models](https://arxiv.org/abs/2502.10835)：提出反向注意力以诊断并改进 LLM 多跳推理。
-- [Reasoning with Reinforced Functional Token Tuning](https://arxiv.org/abs/2502.13389)：通过强化的功能 token 调优，在 token 功能层面改进推理行为。
-- [Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking](https://arxiv.org/abs/2502.13842)：通过深度自适应 Transformer 计算动态扩展内部思考。
-- [AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence](https://arxiv.org/abs/2502.13943)：利用模型置信度自动划分推理步骤，面向自适应推理长度。
-- [L1](https://arxiv.org/abs/2503.04697)：提出面向通用推理的模型侧方法，核心围绕 Controlling How Long A Reasoning Model Thinks With Reinforcement Learning。
+- [The Expressive Power of Transformers with Chain of Thought](https://arxiv.org/abs/2310.07923)：分析 chain-of-thought 轨迹如何提升 Transformer 对算法式与组合式推理的表达能力，使其超越直接输出答案的计算形式。
+- [Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision](https://arxiv.org/abs/2312.09390)：Weak-to-Strong Generalization 检验强模型能否从弱模型监督中学到能力，覆盖 NLP、国际象棋和奖励建模中的弱标签；它显示能力迁移取决于任务与监督信号的性质，弱标签并非普遍有效。
+- [Simple Hierarchical Planning with Diffusion](https://arxiv.org/abs/2401.02644)：用扩散模型生成由粗到细的层级计划，将高层子目标结构与低层动作细化分开建模。
+- [GRAM: Global Reasoning for Multi-Page VQA](https://arxiv.org/abs/2401.03411)：为多页视觉问答加入全局推理模块，使跨页面证据能够联结起来，而不是逐页孤立读取。
+- [The Impact of Reasoning Step Length on Large Language Models](https://arxiv.org/abs/2401.04925)：研究生成推理步数如何改变 LLM 准确率，区分长推理链真正有益与放大错误的情形。
+- [Large Language Models Can Learn Temporal Reasoning](https://arxiv.org/abs/2401.06853)：表明有针对性的时间推理监督可以提升 LLM 对顺序、持续时间和时间依赖关系的处理能力。
+- [CANDLE: Iterative Conceptualization and Instantiation Distillation from Large Language Models for Commonsense Reasoning](https://arxiv.org/abs/2401.07286)：通过在抽象概念归纳与具体实例生成之间迭代，从更强语言模型中蒸馏 commonsense reasoning。
+- [Small Language Model Can Self-correct](https://arxiv.org/abs/2401.07301)：证明小语言模型可以通过反馈式训练学习自我纠错，而不只能依赖更大的教师模型。
+- [ReFT: Reasoning with Reinforced Fine-Tuning](https://arxiv.org/abs/2401.08967)：对采样得到的 chain-of-thought 轨迹进行强化微调，让推理模型学习多个可奖励路径而非单一金标准 rationale。
+- [LLMs for Relational Reasoning: How Far are We?](https://arxiv.org/abs/2401.09042)：用结构化关系模式探测 LLM 的关系推理，区分记忆关联与系统性关系组合。
+- [Large Language Models Are Neurosymbolic Reasoners](https://arxiv.org/abs/2401.09334)：把 LLM 推理解释为神经符号过程，即潜在语言表示与显式符号操作的结合。
+- [KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning](https://arxiv.org/abs/2401.12863)：在多模态 chain-of-thought 中加入外部知识，使视觉证据与背景事实在推理时结合。
+- [In-Context Language Learning: Architectures and Algorithms](https://arxiv.org/abs/2401.12973)：研究能够从上下文样例中学习新语言映射的架构与算法。
+- [TAT-LLM: A Specialized Language Model for Discrete Reasoning over Tabular and Textual Data](https://arxiv.org/abs/2401.13223)：为表格与文本混合输入上的离散推理专门化 LLM，重点处理金融问答中的算术、比较和查找。
+- [Demystifying Chains, Trees, and Graphs of Thoughts](https://arxiv.org/abs/2401.14295)：比较 chain、tree 与 graph thought 结构，说明不同搜索拓扑分别适合哪些推理问题。
+- [Deductive Beam Search: Decoding Deducible Rationale for Chain-of-Thought Reasoning](https://arxiv.org/abs/2401.17686)：把 beam search 约束到可演绎的 rationale 上，从而提升 chain-of-thought 解码质量。
+- [Common Sense Reasoning for Deep Fake Detection](https://arxiv.org/abs/2402.00126)：利用 commonsense 一致性线索区分可信现实内容与 deepfake 伪造痕迹。
+- [Learning Planning-based Reasoning by Trajectories Collection and Process Reward Synthesizing](https://arxiv.org/abs/2402.00658)：收集规划轨迹并合成过程奖励，使模型学习中间规划决策而不只是最终答案。
+- [Benefits of Transformer: In-Context Learning in Linear Regression Tasks with Unstructured Data](https://arxiv.org/abs/2402.00743)：用非结构化线性回归任务分析 Transformer 架构为何支持上下文内统计学习。
+- [K-Level Reasoning: Establishing Higher Order Beliefs in Large Language Models for Strategic Reasoning](https://arxiv.org/abs/2402.01521)：测试并诱导高阶信念建模，使 LLM 能在策略场景中推理其他参与者的信念。
+- [ARGS: Alignment as Reward-Guided Search](https://arxiv.org/abs/2402.01694)：把 alignment 视为 reward-guided decoding，用奖励模型分数在推理时引导生成，而不是更新模型权重。
+- [Language-guided World Models: A Model-based Approach to AI Control](https://arxiv.org/abs/2402.01695)：构建语言条件的 world model，用文本指导环境预测与动作规划。
+- [LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks](https://arxiv.org/abs/2402.01817)：把 LLM 放入 modulo-planning 循环，由符号规划器检查并修复模型提出的计划。
+- [Towards Neural Scaling Laws on Graphs](https://arxiv.org/abs/2402.02054)：推导神经图模型的 scaling 行为，连接图规模、模型容量与推理性能。
+- [Enhance Reasoning for Large Language Models in the Game Werewolf](https://arxiv.org/abs/2402.02330)：通过建模隐藏身份、对话证据和多智能体策略推断，提升 LLM 在狼人杀中的社会演绎能力。
+- [Synergy-of-Thoughts: Eliciting Efficient Reasoning in Hybrid Language Models](https://arxiv.org/abs/2402.02563)：在混合语言模型中组合多种推理风格，使互补 thought path 能被高效选择或融合。
+- [Multi-step Problem Solving Through a Verifier: An Empirical Analysis on Model-induced Process Supervision](https://arxiv.org/abs/2402.02658)：研究由 verifier 驱动的过程监督如何影响多步问题求解，并衡量模型生成反馈对中间推理的作用。
+- [Decoding-time Realignment of Language Models](https://arxiv.org/abs/2402.02992)：在解码时用 alignment 信号调整 token 选择，从而无需重新训练基础模型也能重新对齐生成。
+- [Is Mamba Capable of In-Context Learning?](https://arxiv.org/abs/2402.03170)：测试 Mamba 状态空间模型是否具备上下文内学习能力，并与 Transformer 基线比较。
+- [Understanding the Reasoning Ability of Language Models From the Perspective of Reasoning Paths Aggregation](https://arxiv.org/abs/2402.03268)：把推理理解为多条潜在路径的聚合，解释路径多样性何时提升答案可靠性。
+- [Self-Discover: Large Language Models Self-Compose Reasoning Structures](https://arxiv.org/abs/2402.03620)：让 LLM 在解题前选择并组合任务专属推理模块，形成可复用的结构化推理程序。
+- [Are Machines Better at Complex Reasoning? Unveiling Human-Machine Inference Gaps in Entailment Verification](https://arxiv.org/abs/2402.03686)：在人机 entailment verification 上比较推断策略，揭示 LLM 在复杂推理中的偏离点。
+- [Beyond Answers: Transferring Reasoning Capabilities to Smaller LLMs Using Multi-Teacher Knowledge Distillation](https://arxiv.org/abs/2402.04616)：从多个教师模型向小 LLM 蒸馏推理能力，转移中间 rationale 而不只是最终标签。
+- [Zero-Shot Chain-of-Thought Reasoning Guided by Evolutionary Algorithms in Large Language Models](https://arxiv.org/abs/2402.05376)：用进化搜索选择并优化 zero-shot chain-of-thought prompt，以增强推理。
+- [In-Context Principle Learning from Mistakes](https://arxiv.org/abs/2402.05403)：把过去错误转化为显式原则并放入上下文，用于改进后续推理。
+- [Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning](https://arxiv.org/abs/2402.05808)：从较容易的反向推理任务开始强化学习，再逐步转向更难的正向问题求解。
+- [Doing Experiments and Revising Rules with Natural Language and Probabilistic Reasoning](https://arxiv.org/abs/2402.06025)：把科学规则修订建模为自然语言实验与概率信念更新的结合。
+- [V-STaR: Training Verifiers for Self-Taught Reasoners](https://arxiv.org/abs/2402.06457)：协同训练自学推理器与 verifier，使生成的 rationale 能为后续推理迭代提供监督。
+- [A Thorough Examination of Decoding Methods in the Era of LLMs](https://arxiv.org/abs/2402.06925)：系统比较现代解码策略及其对推理质量、多样性和可靠性的影响。
+- [GraphTranslator: Aligning Graph Model to Large Language Model for Open-ended Tasks](https://arxiv.org/abs/2402.07197)：将图神经表示与 LLM embedding 对齐，使图模型能够支持开放式自然语言图任务。
+- [Anchor-based Large Language Models](https://arxiv.org/abs/2402.07616)：引入 anchor token 或 anchor representation，使 LLM 生成和推理围绕关键参照点保持稳定。
+- [On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks](https://arxiv.org/abs/2402.08115)：揭示 LLM 在推理与规划任务中的自我验证失效点，说明外部或更强 verifier 的必要性。
+- [InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment](https://arxiv.org/abs/2402.08785)：用图中心指令与偏好对齐训练 LLM，以提升图理解和图推理能力。
+- [Premise Order Matters in Reasoning with Large Language Models](https://arxiv.org/abs/2402.08939)：证明前提顺序会改变 LLM 推理结果，暴露逻辑推断中的顺序敏感性。
+- [Using Counterfactual Tasks to Evaluate the Generality of Analogical Reasoning in Large Language Models](https://arxiv.org/abs/2402.08955)：用反事实类比任务检验 LLM 是否能迁移关系结构，而不只是套用熟悉表面模式。
+- [RS-DPO: A Hybrid Rejection Sampling and Direct Preference Optimization Method for Alignment of Large Language Models](https://arxiv.org/abs/2402.10038)：结合 rejection sampling 与 direct preference optimization，用更高质量偏好对齐 LLM 输出。
+- [Selective Reflection-Tuning: Student-Selected Data Recycling for LLM Instruction-Tuning](https://arxiv.org/abs/2402.10110)：让学生模型选择可回收的 reflection 数据，使指令调优聚焦在它能真正学习的样例上。
+- [Chain-of-Thought Reasoning Without Prompting](https://arxiv.org/abs/2402.10200)：训练或诱导模型在推理时无需显式 chain-of-thought prompt 也能产生中间推理。
+- [Can we Soft Prompt LLMs for Graph Learning Tasks?](https://arxiv.org/abs/2402.10359)：用可学习 soft prompt 将 LLM 适配到图学习任务，而不需要完整微调模型。
+- [Using Left and Right Brains Together: Towards Vision and Language Planning](https://arxiv.org/abs/2402.10534)：耦合视觉感知与语言规划，使多模态模型能协调空间证据和符号计划。
+- [Cultural Commonsense Knowledge for Intercultural Dialogues](https://arxiv.org/abs/2402.10689)：建模文化扎根的 commonsense knowledge，以改进跨文化对话中的推理。
+- [GLoRe: When, Where, and How to Improve LLM Reasoning via Global and Local Refinements](https://arxiv.org/abs/2402.10963)：从全局解题结构和局部步骤两个层面对 LLM 推理进行 refinement，以修复有缺陷的推理链。
+- [The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains](https://arxiv.org/abs/2402.11004)：在 Markov-chain 上下文学习任务中追踪 statistical induction head 在训练过程中的形成。
+- [EVEDIT: Event-based Knowledge Editing with Deductive Editing Boundaries](https://arxiv.org/abs/2402.11324)：用 deductive editing boundary 进行事件知识编辑，使更新传播到蕴含事实并限制无关变化。
+- [AutoPRM: Automating Procedural Supervision for Multi-Step Reasoning via Controllable Question Decomposition](https://arxiv.org/abs/2402.11452)：通过把问题分解为可控子问题来自动生成多步推理的过程监督信号。
+- [Large language models can better understand knowledge graphs than we thought](https://arxiv.org/abs/2402.11541)：显示在合适提示或格式下，LLM 的知识图谱理解能力强于早期评测结论。
+- [What Evidence Do Language Models Find Convincing?](https://arxiv.org/abs/2402.11782)：分析哪些证据模式最影响 LLM 判断，揭示其在论证和解释评估中的偏好。
+- [How Interpretable are Reasoning Explanations from Prompting Large Language Models?](https://arxiv.org/abs/2402.11863)：评估 prompt 生成的推理解释是否忠实反映模型决策过程，还是只是在事后合理化答案。
+- [DiLA: Enhancing LLM Tool Learning with Differential Logic Layer](https://arxiv.org/abs/2402.11903)：插入 differentiable logic layer，用显式逻辑约束增强 LLM 的工具学习。
+- [Chain of Thought Empowers Transformers to Solve Inherently Serial Problems](https://arxiv.org/abs/2402.12875)：证明并实验验证 chain-of-thought 中间状态如何让 Transformer 求解直接计算难以处理的串行问题。
+- [Take the Bull by the Horns: Hard Sample-Reweighted Continual Training Improves LLM Generalization](https://arxiv.org/abs/2402.14270)：在 continual training 中提高 hard sample 权重，以改善 LLM 在困难推理样例上的泛化。
+- [Understanding and Patching Compositional Reasoning in LLMs](https://arxiv.org/abs/2402.14328)：定位组合推理失败的内部机制，并通过 patch 提升概念系统组合能力。
+- [Comparing Inferential Strategies of Humans and Large Language Models in Deductive Reasoning](https://arxiv.org/abs/2402.14856)：比较人类与 LLM 在演绎任务中的策略，区分有效推断与启发式捷径。
+- [Distillation Contrastive Decoding: Improving LLMs Reasoning with Contrastive Decoding and Distillation](https://arxiv.org/abs/2402.14874)：结合 contrastive decoding 与 distillation，使较弱模型偏向强教师认可的推理路径。
+- [GraphWiz: An Instruction-Following Language Model for Graph Problems](https://arxiv.org/abs/2402.16029)：在图问题上进行指令调优，使语言模型能从自然语言 prompt 求解图推理任务。
+- [How Can LLM Guide RL? A Value-Based Approach](https://arxiv.org/abs/2402.16181)：用 LLM 指导塑造强化学习 value estimate，把语言反馈与策略改进连接起来。
+- [Two-stage Generative Question Answering on Temporal Knowledge Graph Using Large Language Models](https://arxiv.org/abs/2402.16568)：用两阶段 LLM 流水线回答 temporal knowledge graph 问题，先检索时间相关事实再生成答案。
+- [Do Large Language Models Latently Perform Multi-Hop Reasoning?](https://arxiv.org/abs/2402.16837)：测试 LLM 是否在内部组合多跳证据，还是在回答多跳问题时依赖表面捷径。
+- [Creating Suspenseful Stories: Iterative Planning with Large Language Models](https://arxiv.org/abs/2402.17119)：用迭代式 LLM 规划控制故事生成中的叙事结构与悬念推进。
+- [Miko: Multimodal Intention Knowledge Distillation from Large Language Models for Social-Media Commonsense Discovery](https://arxiv.org/abs/2402.18169)：从 LLM 蒸馏多模态意图知识，用于发现社交媒体内容中的 commonsense 信号。
+- [Lemur: Log Parsing with Entropy Sampling and Chain-of-Thought Merging](https://arxiv.org/abs/2402.18205)：通过 entropy sampling 选择不确定样例并合并 chain-of-thought 解析结果，以改进日志解析。
+- [Focus on Your Question! Interpreting and Mitigating Toxic CoT Problems in Commonsense Reasoning](https://arxiv.org/abs/2402.18344)：诊断 commonsense reasoning 中的 toxic chain-of-thought 漂移，并通过让 rationale 聚焦问题来缓解。
+- [Beyond Natural Language: LLMs Leveraging Alternative Formats for Enhanced Reasoning and Communication](https://arxiv.org/abs/2402.18439)：研究结构化符号、图示等替代表示形式如何增强 LLM 推理与交流。
+- [Language Models Represent Beliefs of Self and Others](https://arxiv.org/abs/2402.18496)：在语言模型内部发现自我与他人信念的表示，把 theory-of-mind 行为与内部状态联系起来。
+- [Dual Operating Modes of In-Context Learning](https://arxiv.org/abs/2402.18819)：区分上下文学习的两种运行模式，说明模型何时推断任务规则、何时复制示例模式。
+- [Large Language Model-Based Evolutionary Optimizer: Reasoning with elitism](https://arxiv.org/abs/2403.02054)：用带 elitist selection 的 LLM 引导进化优化器搜索并细化候选解。
+- [PHAnToM: Persona-Based Prompting Has an Effect on Theory-of-Mind Reasoning in Large Language Models](https://arxiv.org/abs/2403.02246)：表明 persona prompt 会改变 LLM 的 theory-of-mind 推理，暴露其对角色框架的敏感性。
+- [An Empirical Study of LLM-as-a-Judge for LLM Evaluation: Fine-tuned Judge Models are Task-specific Classifiers](https://arxiv.org/abs/2403.02839)：指出微调 LLM judge 往往更像任务特定分类器，而不是通用评估器。
+- [Learning to Maximize Mutual Information for Chain-of-Thought Distillation](https://arxiv.org/abs/2403.03348)：通过最大化 rationale 与答案之间的 mutual information 来蒸馏 chain-of-thought 推理。
+- [The shutdown problem: an AI engineering puzzle for decision theorists](https://arxiv.org/abs/2403.04471)：把 shutdown formalize 为有关 corrigibility 与 agent incentive 的决策理论推理问题。
+- [GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability](https://arxiv.org/abs/2403.04483)：在图结构任务上对 LLM 做指令调优，以提升图理解、图生成与图推理能力。
+- [Teaching Large Language Models to Reason with Reinforcement Learning](https://arxiv.org/abs/2403.04642)：比较 Expert Iteration、PPO 与 return-conditioned RL 对 LLM 推理的作用，并指出 RL 训练很少探索出超出监督微调模型已有解法的新路径。
+- [Bias-Augmented Consistency Training Reduces Biased Reasoning in Chain-of-Thought](https://arxiv.org/abs/2403.05518)：提出 bias-augmented consistency training，用无监督微调让模型在含偏置与不含偏置的 prompt 之间保持 CoT 答案一致。
+- [MEND: Meta dEmonstratioN Distillation for Efficient and Effective In-Context Learning](https://arxiv.org/abs/2403.06914)：通过 meta-distillation 预训练与微调，把冗长上下文示例压缩为可复用向量，以降低 ICL 开销且无需为每个任务重训。
+- [Guiding LLMs The Right Way: Fast, Non-Invasive Constrained Generation](https://arxiv.org/abs/2403.06988)：提出 DOMINO，一种子词对齐的受约束解码算法，用预计算和 speculative decoding 低开销地执行格式约束。
+- [SmallToLarge (S2L): Scalable Data Selection for Fine-tuning Large Language Models by Summarizing Training Trajectories of Small Models](https://arxiv.org/abs/2403.07384)：通过总结小模型训练轨迹为大模型选择监督微调数据，提高数学推理和临床摘要任务的数据效率。
+- [Large Language Models are Contrastive Reasoners](https://arxiv.org/abs/2403.08211)：指出 LLM 常通过对比候选输出而不只是直接生成来完成推理，并利用对比式示例或选项提升推理准确率。
+- [Meaningful Learning: Advancing Abstract Reasoning in Large Language Models via Generic Fact Guidance](https://arxiv.org/abs/2403.09085)：通过提供通用事实引导来增强抽象推理，帮助 LLM 将可复用原则与任务表层细节区分开。
+- [MAMBA: an Effective World Model Approach for Meta-Reinforcement Learning](https://arxiv.org/abs/2403.09859)：构建基于 Mamba 的元强化学习世界模型，通过序列化建模环境动态来支持跨任务适应。
+- [Partially Observable Task and Motion Planning with Uncertainty and Risk Awareness](https://arxiv.org/abs/2403.10454)：提出 TAMPURA，在任务与运动规划中同时处理初始状态不确定性、随机动作结果、信息收集和不可逆风险。
+- [SelfIE: Self-Interpretation of Large Language Model Embeddings](https://arxiv.org/abs/2403.10949)：让 LLM 用自然语言解释并检查自身 embedding 空间，把潜在表示转化为可读概念以分析推理。
+- [ChartThinker: A Contextual Chain-of-Thought Approach to Optimized Chart Summarization](https://arxiv.org/abs/2403.11236)：用上下文 chain-of-thought 规划图表摘要，在生成前整合图表结构、标签和视觉证据。
+- [COLEP: Certifiably Robust Learning-Reasoning Conformal Prediction via Probabilistic Circuits](https://arxiv.org/abs/2403.11348)：将概率电路推理与 conformal prediction 结合，为学习-推理系统提供鲁棒性和覆盖保证。
+- [A Closer Look at Claim Decomposition](https://arxiv.org/abs/2403.11903)：分析把复杂 claim 分解为简单子声明如何影响验证质量，说明分解何时有助于证据推理。
+- [Natural Language as Policies: Reasoning for Coordinate-Level Embodied Control with LLMs](https://arxiv.org/abs/2403.13801)：把自然语言推理作为坐标级具身控制的策略层，将高层计划转化为低层动作。
+- [Log Probabilities Are a Reliable Estimate of Semantic Plausibility in Base and Instruction-Tuned Language Models](https://arxiv.org/abs/2403.14859)：检验 token log probability 作为语义合理性信号的作用，表明其可估计模型对事实或常识续写的置信度。
+- [OceanPlan: Hierarchical Planning and Replanning for Natural Language AUV Piloting in Large-scale Unexplored Ocean Environments](https://arxiv.org/abs/2403.15369)：提出用于自然语言 AUV 驾驶的层级规划与重规划，在大规模未知海域中落地航线决策。
+- [Synthesize Step-by-Step: Tools, Templates and LLMs as Data Generators for Reasoning-Based Chart VQA](https://arxiv.org/abs/2403.16385)：用工具、模板和 LLM 生成逐步图表 VQA 训练数据，使模型学习图表元素推理而不只是答案模式。
+- [Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators](https://arxiv.org/abs/2403.16950)：研究 LLM evaluator 中的成对偏好数据，说明与人类判断对齐如何改变评估器可靠性和任务特异性。
+- [Plug-and-Play Grounding of Reasoning in Multimodal Large Language Models](https://arxiv.org/abs/2403.19322)：为多模态 LLM 推理加入即插即用 grounding 模块，使中间 rationale 与视觉证据保持绑定。
+- [Retrieval-Enhanced Knowledge Editing for Multi-Hop Question Answering in Language Models](https://arxiv.org/abs/2403.19631)：把知识编辑与检索结合用于多跳问答，使被编辑事实能在多个推理步骤中被检索和组合。
+- [Enhancing the General Agent Capabilities of Low-Parameter LLMs through Tuning and Multi-Branch Reasoning](https://arxiv.org/abs/2403.19962)：通过微调与多分支推理增强低参数 LLM 的智能体式任务处理能力，而不单靠模型规模。
+- [Can LLMs Learn from Previous Mistakes? Investigating LLMs' Errors to Boost for Reasoning](https://arxiv.org/abs/2403.20046)：把模型既往错误作为训练或提示信号，检验错误感知反馈是否能改进后续推理行为。
+- [Conceptual and Unbiased Reasoning in Language Models](https://arxiv.org/abs/2404.00205)：提出概念化推理干预，通过促使模型围绕抽象概念推理来减少捷径和偏差影响。
+- [EventGround: Narrative Reasoning by Grounding to Eventuality-centric Knowledge Graphs](https://arxiv.org/abs/2404.00209)：把叙事推理 grounding 到以 eventuality 为中心的知识图谱，将故事事件连接到结构化因果和时间关系。
+- [Self-Improvement Programming for Temporal Knowledge Graph Question Answering](https://arxiv.org/abs/2404.01720)：将自我改进式编程用于时间知识图谱问答，迭代改写检索并组合时间事实的程序。
+- [Symbolic Prompt Program Search: A Structure-Aware Approach to Efficient Compile-Time Prompt Optimization](https://arxiv.org/abs/2404.02319)：在编译时搜索符号化 prompt program，用结构感知优化替代手工枚举 prompt 变体。
+- [Benchmarking ChatGPT on Algorithmic Reasoning](https://arxiv.org/abs/2404.03441)：在算法推理任务上评测 ChatGPT，揭示自然语言解题与系统性算法执行之间的差距。
+- [LLM Reasoners: New Evaluation, Library, and Analysis of Step-by-Step Reasoning with Large Language Models](https://arxiv.org/abs/2404.05221)：提供逐步 LLM 推理的评测套件与库，围绕显式推理轨迹比较搜索和提示策略。
+- [THOUGHTSCULPT: Reasoning with Intermediate Revision and Search](https://arxiv.org/abs/2404.05966)：通过在搜索中修订中间 thought 来增强推理，使模型能在提交答案前重塑部分解。
+- [Visually Descriptive Language Model for Vector Graphics Reasoning](https://arxiv.org/abs/2404.06479)：训练语言模型描述并推理矢量图形，用文本保留几何与组合细节。
+- [Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs](https://arxiv.org/abs/2404.07103)：用图结构推理增强 chain-of-thought，让 LLM 遍历节点和关系，而不只依赖线性 rationale。
+- [What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation](https://arxiv.org/abs/2404.07129)：从机制层面研究 induction head 如何在上下文学习中形成，识别可靠复制和模式补全所需的电路条件。
+- [A Foundation Model for Zero-shot Logical Query Reasoning](https://arxiv.org/abs/2404.07198)：提出用于零样本逻辑查询推理的 foundation model，面向无需任务专门监督重训的组合式查询。
+- [LLM-Seg: Bridging Image Segmentation and Large Language Model Reasoning](https://arxiv.org/abs/2404.08767)：连接图像分割与 LLM 推理，使像素级区域能在多模态解释中被引用和组合。
+- [Distilling Reasoning Ability From Large Language Models With Adaptive Thinking](https://arxiv.org/abs/2404.09170)：通过 adaptive thinking 轨迹从大教师模型蒸馏推理能力，按样例选择合适的推理深度。
+- [Self-Explore to Avoid the Pit: Improving the Reasoning Capabilities of Language Models with Fine-grained Rewards](https://arxiv.org/abs/2404.10346)：用自探索和细粒度奖励训练模型，使错误中间推理路径能在最终答案前被发现。
+- [CoTAR: Chain-of-Thought Attribution Reasoning with Multi-level Granularity](https://arxiv.org/abs/2404.10513)：以多粒度归因 chain-of-thought 推理，把输出决策连接到 token、步骤或 rationale 层证据。
+- [Self-playing Adversarial Language Game Enhances LLM Reasoning](https://arxiv.org/abs/2404.10642)：用自博弈对抗语言游戏生成更难的推理交互，并通过练习增强 LLM 鲁棒性。
+- [Many-Shot In-Context Learning](https://arxiv.org/abs/2404.11018)：研究大量上下文示例的 many-shot prompt，说明其如何改变 LLM 推理和任务适应。
+- [Concept Induction: Analyzing Unstructured Text with High-Level Concepts Using LLooM](https://arxiv.org/abs/2404.12259)：用 LLooM 从非结构化文本中归纳高层概念，支持对大规模文本集合的抽象和定性推理。
+- [From $r$ to $Q^*$: Your Language Model is Secretly a Q-Function](https://arxiv.org/abs/2404.12358)：把语言模型分数解释为近似 Q-function，将 token 预测与基于价值的决策联系起来。
+- [MARVEL: Multidimensional Abstraction and Reasoning through Visual Evaluation and Learning](https://arxiv.org/abs/2404.13591)：构建多维抽象与推理框架，用视觉评估反馈学习抽象视觉概念。
+- [Small Language Models Need Strong Verifiers to Self-Correct Reasoning](https://arxiv.org/abs/2404.17140)：表明小语言模型只有配合能可靠识别错误步骤的强 verifier，才能有效自我纠正推理。
+- [Testing and Understanding Erroneous Planning in LLM Agents through Synthesized User Inputs](https://arxiv.org/abs/2404.17833)：合成用户输入以触发并分析 LLM agent 的错误规划，揭示计划生成和修复中的失效模式。
+- [Iterative Reasoning Preference Optimization](https://arxiv.org/abs/2404.19733)：用迭代偏好数据优化推理，反复强化优于备选方案的推理链。
+- [Monte Carlo Tree Search Boosts Reasoning via Iterative Preference Learning](https://arxiv.org/abs/2405.00451)：结合 Monte Carlo tree search 与迭代偏好学习，把搜索到的推理路径转化为后续模型训练信号。
+- ["In-Context Learning" or: How I learned to stop worrying and love "Applied Information Retrieval"](https://arxiv.org/abs/2405.01116)：把上下文学习重新解释为应用信息检索，分析示例何时通过检索相关任务证据而非归纳新规则发挥作用。
+- [Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models](https://arxiv.org/abs/2405.01535)：发布开源评估模型，训练其按评估标准直接打分并进行成对排序。
+- [Octopi: Object Property Reasoning with Large Tactile-Language Models](https://arxiv.org/abs/2405.02794)：结合触觉感知与语言建模进行物体属性推理，使模型能从触觉-语言证据推断材料或物理属性。
+- [Optimizing Language Model's Reasoning Abilities with Weak Supervision](https://arxiv.org/abs/2405.04086)：用弱监督信号优化语言模型推理能力，降低对完整标注 rationale 的依赖。
+- [A Causal Explainable Guardrails for Large Language Models](https://arxiv.org/abs/2405.04160)：用因果解释作为 LLM 输出的 guardrail，识别并约束不安全或缺乏支撑的推理路径。
+- [Chain of Thoughtlessness? An Analysis of CoT in Planning](https://arxiv.org/abs/2405.04776)：分析 planning 任务中的 chain-of-thought，指出冗长 rationale 何时无法对应有效可执行计划。
+- [Exploring the Compositional Deficiency of Large Language Models in Mathematical Reasoning Through Trap Problems](https://arxiv.org/abs/2405.06680)：用陷阱题暴露数学推理中的组合能力不足，区分表层模式成功与稳健组合推理。
+- [The Benefits of a Concise Chain of Thought on Problem-Solving in Large Language Models](https://arxiv.org/abs/2405.06682)：发现简洁 chain-of-thought 可通过减少干扰性或易错中间文本来提升解题。
+- [Oedipus: LLM-enchanced Reasoning CAPTCHA Solver](https://arxiv.org/abs/2405.07496)：构建 LLM 增强的 CAPTCHA 求解器，将视觉感知与对挑战指令和约束的推理结合。
+- [Large Language Models are Effective Priors for Causal Graph Discovery](https://arxiv.org/abs/2405.13551)：把 LLM 作为因果图发现的先验，将背景知识注入变量结构搜索。
+- [Image-of-Thought Prompting for Visual Reasoning Refinement in Multimodal Large Language Models](https://arxiv.org/abs/2405.13872)：提出 image-of-thought prompting，通过中间视觉表示而非纯文本链来细化多模态推理。
+- [FiDeLiS: Faithful Reasoning in Large Language Model for Knowledge Graph Question Answering](https://arxiv.org/abs/2405.13873)：通过忠实推理步骤改进知识图谱问答，使生成答案与检索到的图谱证据保持一致。
+- [Just rephrase it! Uncertainty estimation in closed-source language models via multiple rephrased queries](https://arxiv.org/abs/2405.13907)：通过多种改写查询并衡量答案变化来估计闭源 LLM 不确定性，无需访问 logits。
+- [Large Language Models-guided Dynamic Adaptation for Temporal Knowledge Graph Reasoning](https://arxiv.org/abs/2405.14170)：用 LLM 指导时间知识图谱推理的动态适配，为每个查询选择时间感知证据和推理路径。
+- [LoRA-Ensemble: Efficient Uncertainty Modelling for Self-attention Networks](https://arxiv.org/abs/2405.14438)：用 LoRA adapter ensemble 为 self-attention 网络建模不确定性，成本低于完整模型集成。
+- [Implicit In-context Learning](https://arxiv.org/abs/2405.14660)：把示例压缩成 context vector 并注入 residual stream，目标是在零样本推理成本下获得接近 few-shot ICL 的行为。
+- [As an AI Language Model, "Yes I Would Recommend Calling the Police": Norm Inconsistency in LLM Decision-Making](https://arxiv.org/abs/2405.14812)：评估 GPT-4、Gemini 和 Claude 对 Ring 监控视频是否报警的判断，揭示与真实犯罪活动不一致以及受社区人口特征影响的规范偏差。
+- [A Case Study of LLM for Automated Vulnerability Repair: Assessing Impact of Reasoning and Patch Validation Feedback](https://arxiv.org/abs/2405.15690)：评估 VRpilot，将 CoT 漏洞推理与编译器、sanitizer、测试套件反馈结合，迭代改进安全补丁。
+- [Keypoint-based Progressive Chain-of-Thought Distillation for LLMs](https://arxiv.org/abs/2405.16064)：提出 KPOD，对关键 rationale token 加权，并从最终推理步骤逐步扩展到完整推理链蒸馏。
+- [RLSF: Fine-tuning LLMs via Symbolic Feedback](https://arxiv.org/abs/2405.16661)：用符号工具反馈微调 LLM，通过 solver、prover 和代数系统给出的证明或证书提供 token 级纠错信号。
+- [AutoPSV: Automated Process-Supervised Verifier](https://arxiv.org/abs/2405.16802)：先训练最终答案 verifier，再利用逐步置信度变化自动标注推理过程并发现中间错误。
+- [VoCoT: Unleashing Visually Grounded Multi-Step Reasoning in Large Multi-Modal Models](https://arxiv.org/abs/2405.16919)：构建以对象为中心、视觉 grounded 的 CoT 路径和指令微调数据集，得到用于复杂多模态推理的 7B VolCano 模型。
+- [MindMerger: Efficient Boosting LLM Reasoning in non-English Languages](https://arxiv.org/abs/2405.17386)：通过两阶段训练把 LLM 与外部多语言理解表示合并，提升非英语推理，而不是单纯把输入替换成翻译文本。
+- [A Human-Like Reasoning Framework for Multi-Phases Planning Task with Large Language Models](https://arxiv.org/abs/2405.18208)：将旅行规划拆成大纲生成、Strategy Block 信息收集和 Knowledge Block 约束支持等阶段。
+- [Metaheuristics and Large Language Models Join Forces: Toward an Integrated Optimization Approach](https://arxiv.org/abs/2405.18272)：把 prompt 得到的 LLM 输出作为问题知识注入 metaheuristic 求解器，用于社交网络组合优化。
+- [A Theoretical Understanding of Self-Correction through In-context Alignment](https://arxiv.org/abs/2405.18634)：把自我纠错分析为 in-context alignment，说明 self-examination reward 如何在含 attention 与 MLP block 的 Transformer 构造中细化回答。
+- [Calibrating Reasoning in Language Models with Internal Consistency](https://arxiv.org/abs/2405.18711)：用中间层解码出的 latent prediction 之间的一致性作为 internal consistency 信号，校准推理路径可靠性。
+- [Does learning the right latent variables necessarily improve in-context learning?](https://arxiv.org/abs/2405.19162)：在 Transformer 中加入任务 latent bottleneck 研究 ICL，发现显式强制任务潜变量推断通常并不能提升分布外表现。
+- [Beyond Imitation: Learning Key Reasoning Steps from Dual Chain-of-Thoughts in Reasoning Distillation](https://arxiv.org/abs/2405.19737)：提出 EDIT，用错误驱动的蒸馏对比正确与错误 CoT，使小模型学习真正影响结论的少量关键推理步骤。
+- [Quest: Query-centric Data Synthesis Approach for Long-context Scaling of Large Language Model](https://arxiv.org/abs/2405.19846)：围绕查询与答案合成长上下文训练数据，而不是直接筛选长文档，以缓解扩展 LLM 上下文窗口时的领域失衡。
+- [Language Models Need Inductive Biases to Count Inductively](https://arxiv.org/abs/2405.20131)：把计数作为长度泛化测试，指出标准语言模型需要显式归纳偏置才能外推到训练范围之外。
+- [Robust Planning with LLM-Modulo Framework: Case Study in Travel Planning](https://arxiv.org/abs/2405.20625)：在旅行规划中评估 LLM-Modulo 流程，用形式化约束检查语言模型提出的计划以提升鲁棒性。
+- [In-Context Decision Transformer: Reinforcement Learning via Hierarchical Chain-of-Thought](https://arxiv.org/abs/2405.20692)：把 Decision Transformer 式提示用于离线强化学习，通过层级 chain-of-thought 轨迹支持试错式任务适应。
+- [Exploratory Preference Optimization: Harnessing Implicit Q*-Approximation for Sample-Efficient RLHF](https://arxiv.org/abs/2405.21046)：在在线 RLHF 中加入探索，用隐式 Q-star 近似让偏好查询优先覆盖信息量更高、更多样的回复。
+- [Personalized Steering of Large Language Models: Versatile Steering Vectors Through Bi-directional Preference Optimization](https://arxiv.org/abs/2406.00045)：通过双向偏好优化学习个性化 steering vector，在不完整微调模型的情况下调整 LLM 行为。
+- [An Empirical Analysis on Large Language Models in Debate Evaluation](https://arxiv.org/abs/2406.00050)：评估 GPT-3.5 和 GPT-4 作为辩论裁判的表现，并分析立场、表达流畅度和内容偏差对评分的影响。
+- [Strengthened Symbol Binding Makes Large Language Models Reliable Multiple-Choice Selectors](https://arxiv.org/abs/2406.01026)：通过强化答案符号与选项内容的绑定，降低多项选择题中的选项位置与符号偏置。
+- [Alice in Wonderland: Simple Tasks Showing Complete Reasoning Breakdown in State-Of-the-Art Large Language Models](https://arxiv.org/abs/2406.02061)：用简单的对抗式推理任务揭示前沿 LLM 虽然基准表现强，但泛化推理仍然脆弱。
+- [RATT: A Thought Structure for Coherent and Correct LLM Reasoning](https://arxiv.org/abs/2406.02746)：结合局部事实检索与全局 thought 选择，使 LLM 在复杂任务中构建更连贯的推理结构。
+- [Disentangling Logic: The Role of Context in Large Language Model Reasoning Capabilities](https://arxiv.org/abs/2406.02787)：将抽象逻辑题与带上下文逻辑题分开测试，区分 LLM 增益来自形式推理还是文本理解线索。
+- [Log Parsing Using LLMs with Self-Generated In-Context Learning and Self-Correction](https://arxiv.org/abs/2406.03376)：让 LLM 自生成日志解析示例并进行自我纠错，以适应变化的日志格式而不依赖人工规则。
+- [TACT: Advancing Complex Aggregative Reasoning with Information Extraction Tools](https://arxiv.org/abs/2406.03618)：提出基于表格的文本与计算任务，要求 LLM 从多文档抽取证据并聚合数量信息。
+- [Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples](https://arxiv.org/abs/2406.05673)：用少量样例训练 LLM 生成多条可行推理流，面向发散式问题求解而非单一标准链。
+- [VCR: A Task for Pixel-Level Complex Reasoning in Vision Language Models via Restoring Occluded Text](https://arxiv.org/abs/2406.06462)：定义 Visual Caption Restoration 任务，要求 VLM 根据像素级线索和上下文语义恢复被遮挡的图中文字。
+- [Husky: A Unified, Open-Source Language Agent for Multi-Step Reasoning](https://arxiv.org/abs/2406.06469)：发布在统一动作空间上训练的开源语言智能体，支持数学和问答等任务中的工具化多步推理。
+- [NarrativeBridge: Enhancing Video Captioning with Causal-Temporal Narrative](https://arxiv.org/abs/2406.06499)：在视频字幕中加入因果时间叙事建模，使描述能按时间、因果和行动主体串联事件。
+- [Dual Thinking and Logical Processing -- Are Multi-modal Large Language Models Closing the Gap with Human Vision ?](https://arxiv.org/abs/2406.06967)：构造直觉感知与慢速逻辑处理相冲突的对抗视觉推理样例，用于检验 MLLM 的双系统行为。
+- [Hydra-MDP: End-to-end Multimodal Planning with Multi-target Hydra-Distillation](https://arxiv.org/abs/2406.06978)：将人类教师和规则教师蒸馏到多头多模态规划器中，生成针对不同指标优化的轨迹候选。
+- [Large Language Models for Constrained-Based Causal Discovery](https://arxiv.org/abs/2406.07378)：用 LLM 辅助基于约束的因果发现，把专家式因果图构建与条件独立假设结合起来。
+- [Living in the Moment: Can Large Language Models Grasp Co-Temporal Reasoning?](https://arxiv.org/abs/2406.09072)：提出共时推理任务，要求 LLM 处理并发事件以及彼此交织的时间关系。
+- [Chain of Preference Optimization: Improving Chain-of-Thought Reasoning in LLMs](https://arxiv.org/abs/2406.09136)：用推理链级偏好信号优化 chain-of-thought 生成，使模型偏向更审慎的路径而非随机采样 rationale。
+- [Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models](https://arxiv.org/abs/2406.09403)：为多模态语言模型提供可绘制草图的工作区，使其在地图、几何和空间推理中生成视觉中间状态。
+- [Task Facet Learning: A Structured Approach to Prompt Optimization](https://arxiv.org/abs/2406.10504)：从训练样例中显式学习反例、解释和类比等任务 facet，以结构化方式优化提示词。
+- [Meta Reasoning for Large Language Models](https://arxiv.org/abs/2406.11698)：提出 Meta-Reasoning Prompting，用系统提示引导 LLM 选择并监控跨任务推理策略。
+- [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](https://arxiv.org/abs/2406.11768)：把音频编码器接入 LLM，构建面向非语音声音理解与推理的通用音频语言模型。
+- [Unraveling the Mechanics of Learning-Based Demonstration Selection for In-Context Learning](https://arxiv.org/abs/2406.11890)：分析学习式示例选择器，解释哪些 exemplar 会改善上下文学习以及选择方法在哪些情形失效。
+- [A Notion of Complexity for Theory of Mind via Discrete World Models](https://arxiv.org/abs/2406.11911)：用离散 world model 定义 theory-of-mind 复杂度，将基准难度与认知负荷式状态跟踪联系起来。
+- [Look Further Ahead: Testing the Limits of GPT-4 in Path Planning](https://arxiv.org/abs/2406.12000)：用带几何约束的长程路径规划任务测试 GPT-4 能向未来状态推演多远。
+- [Learn Beyond The Answer: Training Language Models with Reflection for Mathematical Reasoning](https://arxiv.org/abs/2406.12050)：用 reflection 数据训练数学模型，让其学习答案之后的推理反馈，而不只是最终问答对。
+- [A Hopfieldian View-based Interpretation for Chain-of-Thought Reasoning](https://arxiv.org/abs/2406.12255)：从 Hopfield 网络动力学解释 chain-of-thought，说明中间文本为何能改善推理检索。
+- [Retrieval Meets Reasoning: Dynamic In-Context Editing for Long-Text Understanding](https://arxiv.org/abs/2406.12331)：在推理时动态编辑检索上下文，使长文本多跳推理能更新证据而不突破上下文窗口限制。
+- [OlympicArena: Benchmarking Multi-discipline Cognitive Reasoning for Superintelligent AI](https://arxiv.org/abs/2406.12753)：用奥林匹克风格的多学科题目评测 LLM 和 LMM 的科学与认知问题求解能力。
+- [Hopping Too Late: Exploring the Limitations of Large Language Models on Multi-Hop Queries](https://arxiv.org/abs/2406.12775)：分析多跳事实查询中的隐藏层行为，发现模型常常过晚解析第一跳，影响可靠组合。
+- [What Are the Odds? Language Models Are Capable of Probabilistic Reasoning](https://arxiv.org/abs/2406.12830)：评估语言模型对概率分布的推理能力，覆盖常规基准较少测试的数值推理模式。
+- [Distributional reasoning in LLMs: Parallel reasoning processes in multi-hop reasoning](https://arxiv.org/abs/2406.13858)：研究在不显式生成 CoT 时，隐藏状态是否携带并行候选推理过程来完成多跳任务。
+- [Adaptable Logical Control for Large Language Models](https://arxiv.org/abs/2406.13892)：提出 Ctrl-G，在推理时引导 LLM 生成满足逻辑约束的文本，而无需重新训练。
+- [Timo: Towards Better Temporal Reasoning for Language Models](https://arxiv.org/abs/2406.14192)：把时间推理组织为更广的任务族，补足超出时间敏感问答之外的训练与评测覆盖。
+- [Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning](https://arxiv.org/abs/2406.14283)：将多步推理表述为启发式搜索，用 deliberative planning 减少中间步骤中的幻觉与不一致。
+- [RL on Incorrect Synthetic Data Scales the Efficiency of LLM Math Reasoning by Eight-Fold](https://arxiv.org/abs/2406.14532)：显示在有意错误的合成数学数据上进行强化学习，可以通过诱导纠错行为提高样本效率。
+- [Whiteboard-of-Thought: Thinking Step-by-Step Across Modalities](https://arxiv.org/abs/2406.14562)：允许模型在推理时从文本切换到生成视觉辅助图，把白板作为跨模态中间记忆。
+- [Multimodal Task Vectors Enable Many-Shot Multimodal In-Context Learning](https://arxiv.org/abs/2406.15334)：把多样例多模态示范压缩为 task vector，降低多模态上下文学习对上下文长度的压力。
+- [Unlocking the Future: Exploring Look-Ahead Planning Mechanistic Interpretability in Large Language Models](https://arxiv.org/abs/2406.16033)：研究 LLM 在导航和工具使用等智能体任务中支持前瞻规划的内部机制。
+- [Diffusion Spectral Representation for Reinforcement Learning](https://arxiv.org/abs/2406.16121)：用扩散模型学习强化学习的谱状态表示，同时处理扩散推理成本高的问题。
+- [From Decoding to Meta-Generation: Inference-time Algorithms for Large Language Models](https://arxiv.org/abs/2406.16838)：综述推理时扩展方法，将解码、自我改进和 meta-generation 算法统一到 LLM 推理框架中。
+- [LLM-ARC: Enhancing LLMs with an Automated Reasoning Critic](https://arxiv.org/abs/2406.17663)：把 LLM actor 与自动推理 critic 结合，由后者检查声明式逻辑程序和语义测试。
+- [GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model](https://arxiv.org/abs/2406.18572)：用人类推断知识训练街景地理定位 LVLM，以弥补视觉线索稀疏或低质量的问题。
+- [Step-DPO: Step-wise Preference Optimization for Long-chain Reasoning of LLMs](https://arxiv.org/abs/2406.18629)：在单个推理步骤上应用 DPO，使长数学推理链学习局部事实性与鲁棒性。
+- [Emergence of Hidden Capabilities: Exploring Learning Dynamics in Concept Space](https://arxiv.org/abs/2406.19370)：跟踪概念空间中的学习动态，研究生成模型何时获得并操控训练数据中隐含的抽象能力。
+- [OMG-LLaVA: Bridging Image-level, Object-level, Pixel-level Reasoning and Understanding](https://arxiv.org/abs/2406.19389)：结合 LLaVA 式视觉推理与对象级、像素级分割，使文本指令能控制细粒度视觉理解。
+- [Hierarchical Deconstruction of LLM Reasoning: A Graph-Based Framework for Analyzing Knowledge Utilization](https://arxiv.org/abs/2406.19502)：把复杂问题拆成知识依赖图，用于分析 LLM 在推理时实际调用了哪些背景事实。
+- [Belief Revision: The Adaptability of Large Language Models Reasoning](https://arxiv.org/abs/2406.19764)：测试语言模型在面对不完整或变化的信息时能否更新结论，而不是默认固定证据集。
+- [ConU: Conformal Uncertainty in Large Language Models with Correctness Coverage Guarantees](https://arxiv.org/abs/2407.00499)：将 conformal prediction 用于黑盒 LLM 生成，使不确定性集合带有正确性覆盖保证。
+- [LOGIC-LM++: Multi-Step Refinement for Symbolic Formulations](https://arxiv.org/abs/2407.02514)：对符号公式进行多步细化，在执行前修正 LLM 生成的形式化推理程序。
+- [ALTER: Augmentation for Large-Table-Based Reasoning](https://arxiv.org/abs/2407.03061)：把大表增强为更适合 LLM 处理的表示，以在输入超过简单表格规模时保持表格推理能力。
+- [Fine-Tuning on Diverse Reasoning Chains Drives Within-Inference CoT Refinement in LLMs](https://arxiv.org/abs/2407.03181)：用多样化推理链微调，使单次推理内部能细化 CoT，而不是依赖事后集成。
+- [HAF-RM: A Hybrid Alignment Framework for Reward Model Training](https://arxiv.org/abs/2407.04185)：用混合对齐目标训练 reward model，而不只做直接奖励回归，以提升偏好评分可靠性。
+- [Progress or Regress? Self-Improvement Reversal in Post-training](https://arxiv.org/abs/2407.05013)：研究迭代偏好学习式自我改进，指出更深 post-training 反而削弱推理行为的 reversal 情形。
+- [Perceptions to Beliefs: Exploring Precursory Inferences for Theory of Mind in Large Language Models](https://arxiv.org/abs/2407.06004)：评估感知推断和行动推断这些 theory-of-mind 前置能力在 LLM 中的表现。
+- [From Loops to Oops: Fallback Behaviors of Language Models Under Uncertainty](https://arxiv.org/abs/2407.06071)：将幻觉、重复和退化文本联系到 epistemic uncertainty 下出现的 fallback 行为。
+- [Enhancing Language Model Rationality with Bi-Directional Deliberation Reasoning](https://arxiv.org/abs/2407.06112)：提出 BIDDER，让模型同时利用先验与后验信息进行双向审议，从而在决策后反思并修正推理轨迹。
+- [Multimodal Self-Instruct: Synthetic Abstract Image and Visual Reasoning Instruction Using Language Model](https://arxiv.org/abs/2407.07053)：生成面向图表、地图和布局等抽象图像的指令数据，补足自然场景多模态预训练较少覆盖的视觉推理能力。
+- [Teaching Transformers Causal Reasoning through Axiomatic Training](https://arxiv.org/abs/2407.07612)：用符号公理和示范训练 Transformer，使其在缺少昂贵主动干预数据时学习因果干预和反事实关系。
+- [Deconstructing What Makes a Good Optimizer for Language Models](https://arxiv.org/abs/2407.07972)：偏离通用推理主轴但属于模型侧研究；分析 Adam 的哪些组成带来语言模型训练稳定性和效率，而非提出专门推理方法。
+- [Foundational Autoraters: Taming Large Language Models for Better Automatic Evaluation](https://arxiv.org/abs/2407.10817)：构建 FLAMe 自动评分模型家族，用校准的自动评价替代高成本人工评分，属于 judge model 路线。
+- [Reliable Reasoning Beyond Natural Language](https://arxiv.org/abs/2407.11373)：提出 Non-Linear Reasoning 数据集，用非自然语言符号任务暴露被流畅文本推理掩盖的可靠性缺陷。
+- [States Hidden in Hidden States: LLMs Emerge Discrete State Representations Implicitly](https://arxiv.org/abs/2407.11421)：发现大模型隐藏状态中隐式出现离散状态表征，将内部状态跟踪与涌现推理行为联系起来。
+- [NavGPT-2: Unleashing Navigational Reasoning Capability for Large Vision-Language Models](https://arxiv.org/abs/2407.12366)：面向指令跟随导航调优大视觉语言模型，使路线决策基于视觉观察和空间语言推理，而不只是静态图像问答。
+- [Halu-J: Critique-Based Hallucination Judge](https://arxiv.org/abs/2407.12943)：训练基于批判文本的幻觉判别器，让模型解释事实性错误，而不是只输出分类标签。
+- [Retrieve, Summarize, Plan: Advancing Multi-hop Question Answering with an Iterative Approach](https://arxiv.org/abs/2407.13101)：在复杂 RAG 中使用检索、摘要和规划循环，先规划证据源与跳数，再生成多跳答案。
+- [Weak-to-Strong Reasoning](https://arxiv.org/abs/2407.13647)：研究弱到强监督能否用于推理任务，即当人工标注不足时，较弱模型是否能有效监督更强推理模型。
+- [Catastrophic Goodhart: regularizing RLHF with KL divergence does not mitigate heavy-tailed reward misspecification](https://arxiv.org/abs/2407.14503)：分析 RLHF 奖励错设，指出在重尾奖励误差下 KL 正则仍可能失效，为奖励模型驱动的推理训练提供警示。
+- [Step-by-Step Reasoning to Solve Grid Puzzles: Where do LLMs Falter?](https://arxiv.org/abs/2407.14790)：用网格谜题定位大模型在长逻辑链中的失败位置，区分步骤分解错误与最终答案错误。
+- [Pre-Training and Prompting for Few-Shot Node Classification on Text-Attributed Graphs](https://arxiv.org/abs/2407.15431)：结合预训练与提示处理文本属性图上的少样本节点分类。
+- [Unveiling In-Context Learning: A Coordinate System to Understand Its Working Mechanism](https://arxiv.org/abs/2407.17011)：提出理解上下文学习机制的坐标系，用来调和示例究竟触发任务识别还是任务学习这两类解释。
+- [C2P: Featuring Large Language Models with Causal Reasoning](https://arxiv.org/abs/2407.18069)：通过因果预训练或提示方式向大模型注入因果特征，缓解其在因果推理任务上接近随机的表现。
+- [Self-Training with Direct Preference Optimization Improves Chain-of-Thought Reasoning](https://arxiv.org/abs/2407.18248)：用自生成数学推理数据和 DPO 提升链式思维质量，减少对专家标注推理过程的依赖。
+- [REAPER: Reasoning based Retrieval Planning for Complex RAG Systems](https://arxiv.org/abs/2407.18553)：在异构 RAG 数据源上先进行检索规划，再生成答案，使证据选择成为显式推理步骤而非固定检索调用。
+- [LLASP: Fine-tuning Large Language Models for Answer Set Programming](https://arxiv.org/abs/2407.18723)：微调大模型生成 Answer Set Program，将逻辑推理转化为可执行的 ASP 表达，而不只依赖自由文本。
+- [QT-TDM: Planning With Transformer Dynamics Model and Autoregressive Q-Learning](https://arxiv.org/abs/2407.18841)：偏机器人规划方向；结合 Transformer 动力学模型和自回归 Q-learning，用于模型式强化学习。
+- [Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge](https://arxiv.org/abs/2407.19594)：让大模型作为元评审来评价自身奖励，把自奖励对齐从答案打分扩展到奖励模型改进。
+- [On the Reliability of Large Language Models for Causal Discovery](https://arxiv.org/abs/2407.19638)：在可检查预训练语料证据的开源模型上测试因果发现，区分真正因果推断与记忆化关系。
+- [An Empirical Analysis of Compute-Optimal Inference for Problem-Solving with Language Models](https://arxiv.org/abs/2408.00724)：研究问题求解的推理时扩展规律，比较样本数、验证器使用和搜索深度等测试时计算分配方式。
+- [Self-Introspective Decoding: Alleviating Hallucinations for Large Vision-Language Models](https://arxiv.org/abs/2408.02032)：为大视觉语言模型加入自省式解码，利用模型自身的视觉语言不确定性在推理时抑制幻觉 token。
+- [Automated Theorem Provers Help Improve Large Language Model Reasoning](https://arxiv.org/abs/2408.03492)：使用自动定理证明器和逻辑编程系统检查并修复大模型的逻辑推理输出。
+- [Large Model Strategic Thinking, Small Model Efficiency: Transferring Theory of Mind in Large Language Models](https://arxiv.org/abs/2408.05241)：把大模型的战略性心智理论行为迁移到小模型，面向信念推理任务降低部署成本。
+- [Path-LLM: A Shortest-Path-based LLM Learning for Unified Graph Representation](https://arxiv.org/abs/2408.05456)：把图表示学习转化为最短路径语言建模，使大模型生成可用于多类图分析任务的节点嵌入。
+- [Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solvers](https://arxiv.org/abs/2408.06195)：提出 rStar 自博弈互推理，让小模型在不微调、无强教师的情况下通过生成与验证分工提升推理。
+- [MultiSurf-GPT: Facilitating Context-Aware Reasoning with Large-Scale Language Model Agents for Multimodal Surface Sensing](https://arxiv.org/abs/2408.07311)：偏领域应用；用大模型智能体融合表面传感上下文，用于诊断、制造和安全监测。
+- [Does Reasoning Emerge? Examining the Probabilities of Causation in Large Language Models](https://arxiv.org/abs/2408.08210)：通过因果概率判断检验大模型推理是否来自习得的因果结构，而非表层相关性。
+- [Derivative-Free Guidance in Continuous and Discrete Diffusion Models with Soft Value-Based Decoding](https://arxiv.org/abs/2408.08252)：偏生成模型优化；用软价值解码引导扩散采样，以优化图像和生物序列等设计目标。
+- [FLEXTAF: Enhancing Table Reasoning with Flexible Tabular Formats](https://arxiv.org/abs/2408.08841)：用多种灵活表格格式训练表格推理，降低模型对单一表格序列化方式的脆弱依赖。
+- [EAGLE: Elevating Geometric Reasoning through LLM-empowered Visual Instruction Tuning](https://arxiv.org/abs/2408.11397)：借助大模型构造几何视觉指令数据，使多模态模型学习同时利用感知和几何推理。
+- [LLM4VV: Exploring LLM-as-a-Judge for Validation and Verification Testsuites](https://arxiv.org/abs/2408.11729)：在验证与确认测试套件上评估 LLM judge，将 judge model 用作软件质量评估器而非一般答案评分器。
+- [Critique-out-Loud Reward Models](https://arxiv.org/abs/2408.11791)：训练奖励模型先生成批判理由再打分，把偏好建模转化为带显式推理的生成过程。
+- [Making Large Language Models Better Planners with Reasoning-Decision Alignment](https://arxiv.org/abs/2408.13890)：把推理轨迹与驾驶决策对齐，使基于大模型的规划器产生与实际动作选择相绑定的可解释计划。
+- [Exploring the Potential of Large Language Models for Heterophilic Graphs](https://arxiv.org/abs/2408.14134)：利用大模型开放世界知识处理异配图学习，在邻居标签常不同、普通图平滑失效的场景中改进表示。
+- [Unveiling the Statistical Foundations of Chain-of-Thought Prompting Methods](https://arxiv.org/abs/2408.14511)：从统计角度分析链式思维提示，解释中间推理何时能够提升多步问题求解。
+- [Generative Verifiers: Reward Modeling as Next-Token Prediction](https://arxiv.org/abs/2408.15240)：把验证器和奖励建模改写为下一个 token 预测任务，使生成式模型能够排序候选推理解。
+- [Critic-CoT: Boosting the reasoning abilities of large language model via Chain-of-thoughts Critic](https://arxiv.org/abs/2408.16326)：加入链式思维批判器，提供比普通自我批评提示更结构化的反馈，用于改进推理修订。
+- [Reasoning Aware Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling](https://arxiv.org/abs/2408.17017)：按推理路径质量选择采样预算和理由，使自一致性比固定采样数投票更高效。
+- [Towards Symbolic XAI - Explanation Through Human Understandable Logical Relationships Between Features](https://arxiv.org/abs/2408.17198)：偏符号可解释性研究；抽取人可理解的特征逻辑关系，与推理相邻但不是大模型推理训练方法。
+- [Context-Aware Reasoning On Parametric Knowledge for Inferring Causal Variables](https://arxiv.org/abs/2409.02604)：在科学发现式因果推断任务中，基于参数知识做上下文感知推理以识别因果变量。
+- [GraphInsight: Unlocking Insights in Large Language Models for Graph Structure Understanding](https://arxiv.org/abs/2409.03258)：探查并提升大模型的图结构理解能力。
+- [Reward guidance for reinforcement learning tasks based on large language models: The LMGT framework](https://arxiv.org/abs/2409.04744)：用大模型生成的指导信号塑造强化学习奖励，在环境转移不确定时平衡探索与利用。
+- [Seemingly Plausible Distractors in Multi-Hop Reasoning: Are Large Language Models Attentive Readers?](https://arxiv.org/abs/2409.05197)：用看似合理的干扰项测试多跳注意力，区分真实证据链推理和被表面线索误导的回答。
+- [Causal Language Modeling Can Elicit Search and Reasoning Capabilities on Logic Puzzles](https://arxiv.org/abs/2409.10502)：展示标准因果语言建模也能在逻辑谜题中激发搜索行为，将 next-token 训练与规划式推理联系起来。
+- [MeTHanol: Modularized Thinking Language Models with Intermediate Layer Thinking, Decoding and Bootstrapping Reasoning](https://arxiv.org/abs/2409.12059)：加入中间层思考模块、专门解码和自举训练，在模型内部而不只是在输出文本中激发推理。
+- [Making Large Language Models into World Models with Precondition and Effect Knowledge](https://arxiv.org/abs/2409.12278)：注入动作前提和效果知识，使大模型能够建模动作如何改变环境，形成面向规划的世界模型路线。
+- [Enhancing Logical Reasoning in Large Language Models through Graph-based Synthetic Data](https://arxiv.org/abs/2409.12437)：为长链逻辑推理生成图结构合成数据，让大模型获得普通文本语料之外的显式关系监督。
+- [CodePlan: Unlocking Reasoning Potential in Large Langauge Models by Scaling Code-form Planning](https://arxiv.org/abs/2409.12452)：用自动抽取的伪代码计划扩增两百万条 prompt-response 样例，把代码式控制流作为中间表示训练大模型，并在 13 个多步推理基准上验证。
+- [Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917)：用强化学习训练语言模型自我纠错，是模型侧推理与验证方法。
+- [LogicPro: Improving Complex Logical Reasoning via Program-Guided Learning](https://arxiv.org/abs/2409.12929)：从 LeetCode 式程序、测试用例和中间变量轨迹中合成 54 万条逻辑推理样例，包含金标答案与推理过程。
+- [Neural-Symbolic Collaborative Distillation: Advancing Small Language Models for Complex Reasoning Tasks](https://arxiv.org/abs/2409.13203)：将教师蒸馏拆成通用能力的神经迁移和稀疏专门知识的符号知识库，提升小模型复杂推理。
+- [Logically Consistent Language Models via Neuro-Symbolic Integration](https://arxiv.org/abs/2409.13724)：加入神经符号约束损失，使 LLM 微调时遵守外部事实和规则，并把逻辑一致性外推到未见事实。
+- [From News to Forecast: Integrating Event Analysis in LLM-Based Time Series Forecasting with Reflection](https://arxiv.org/abs/2409.17515)：用 LLM agent 筛选相关新闻、反思预测结果，并把选定事件与时间序列证据用于微调序列预测。
+- [Deep Autoregressive Models as Causal Inference Engines](https://arxiv.org/abs/2409.18581)：把因果图数据序列化为 token，使单个自回归模型能够回答干预分布和序列动作因果查询。
+- [HYBRIDMIND: Meta Selection of Natural Language and Symbolic Language for Enhanced LLM Reasoning](https://arxiv.org/abs/2409.19381)：训练或提示 meta-selector 为每个问题选择自然语言或符号语言推理，而不是固定使用一种表示。
+- [One Token to Seg Them All: Language Instructed Reasoning Segmentation in Videos](https://arxiv.org/abs/2409.19603)：构建 VideoLISA，通过 Sparse Dense Sampling 和 `<TRK>` token 让语言指令驱动时序一致的视频分割。
+- [QAEncoder: Towards Aligned Representation Learning in Question Answering System](https://arxiv.org/abs/2409.20434)：用潜在查询期望向量和文档指纹替代文档 embedding 来对齐 RAG 检索，无需训练或额外索引存储。
+- [Dynamic Planning for LLM-based Graphical User Interface Automation](https://arxiv.org/abs/2410.00467)：提出 D-PoT，根据执行历史和界面反馈动态修订 GUI 任务计划，而不是依赖静态 ReAct 式计划。
+- [Scaling Offline Model-Based RL via Jointly-Optimized World-Action Model Pretraining](https://arxiv.org/abs/2410.00564)：在 Atari 离线数据上预训练共享 Transformer 的 JOWA 世界-动作模型，再用并行规划补偿 Q 值误差。
+- [Mitigating Copy Bias in In-Context Learning through Neuron Pruning](https://arxiv.org/abs/2410.01288)：用 Integrated Gradients 找到偏向复制示例的神经元并剪枝，改善 task vector 质量和 ICL 泛化。
+- [Disentangling Latent Shifts of In-Context Learning with Weak Supervision](https://arxiv.org/abs/2410.01508)：把示例引发的潜在位移蒸馏到轻量 adapter 中，用弱伪标签训练后实现只看 query 的高效推理。
+- [DeFine: Enhancing LLM Decision-Making with Factor Profiles and Analogical Reasoning](https://arxiv.org/abs/2410.01772)：从冗长情境中构造概率化 factor profile，并结合相似历史案例进行不确定性感知决策。
+- [ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement](https://arxiv.org/abs/2410.02108)：按“通用推理指南到任务结构再到完整路径”的流程自合成后训练 rationale，无需人工或教师样例。
+- [Training Nonlinear Transformers for Chain-of-Thought Inference: A Theoretical Generalization Analysis](https://arxiv.org/abs/2410.02167)：从理论上界定非线性 Transformer 学会 CoT 泛化所需样本和迭代，并分析分布偏移与噪声示例。
+- [CodePMP: Scalable Preference Model Pretraining for Large Language Model Reasoning](https://arxiv.org/abs/2410.02229)：用合成代码偏好对预训练 preference model，提高数学和逻辑推理中的奖励模型微调效率。
+- [IoT-LLM: A framework for enhancing large language model reasoning from real-world sensor data](https://arxiv.org/abs/2410.02429)：结合传感器数据预处理、IoT 定向检索增强和 CoT 提示，处理物理世界传感任务推理。
+- [The Role of Deductive and Inductive Reasoning in Large Language Models](https://arxiv.org/abs/2410.02892)：提出 DID，用 Littlestone 维度和信息熵估计问题复杂度，并动态结合演绎与归纳推理路径。
+- [Image First or Text First? Optimising the Sequencing of Modalities in Large Language Model Prompting and Reasoning Tasks](https://arxiv.org/abs/2410.03062)：显示多模态提示中的图文顺序会影响推理准确率，并应与任务逻辑流程相匹配。
+- [Deliberate Reasoning for LLMs as Structure-aware Planning with Accurate World Model](https://arxiv.org/abs/2410.03136)：构建 SWAP，将蕴含图、策略扩展模型、结构世界模型、多样性采样和对比重排结合起来。
+- [Understanding Reasoning in Chain-of-Thought from the Hopfieldian View](https://arxiv.org/abs/2410.03595)：把 CoT 理解为表示空间间的移动，并用 Representation-of-Thought 定位错误、增强鲁棒性。
+- [Reasoning Elicitation in Language Models via Counterfactual Feedback](https://arxiv.org/abs/2410.03767)：定义平衡事实与反事实问答的指标，并用 counterfactual feedback 微调模型以激发因果推理。
+- [Exploring the Limitations of Mamba in COPY and CoT Reasoning](https://arxiv.org/abs/2410.03810)：证明定长 Mamba 难以处理 COPY 和动态规划式 CoT，除非状态随序列增长或任务具备局部性。
+- [DOTS: Learning to Reason Dynamically in LLMs via Optimal Reasoning Trajectories Search](https://arxiv.org/abs/2410.03864)：搜索最优推理轨迹，并用这些轨迹训练模型何时分支、修订或缩短中间推理。
+- [Scalable and Accurate Graph Reasoning with LLM-based Multi-Agents](https://arxiv.org/abs/2410.05130)：把图推理拆成节点中心子问题并分发给多个 LLM agent，在无需微调的情况下扩展到千节点图。
+- [RevisEval: Improving LLM-as-a-Judge via Response-Adapted References](https://arxiv.org/abs/2410.05193)：先把候选回复修订成 response-adapted reference 再评判，从而降低 LLM-as-judge 在 NLG 评测中的偏差。
+- [Improving LLM Reasoning through Scaling Inference Computation with Collaborative Verification](https://arxiv.org/abs/2410.05318)：用正确和错误的 CoT 与 PoT 解法训练 Math-Rev、Code-Rev 验证器，再排序多条推理路径。
+- [Rational Metareasoning for Large Language Models](https://arxiv.org/abs/2410.05563)：把 Value of Computation 奖励接入 Expert Iteration，使模型只在收益足够时花费中间推理 token。
+- [A Unified Framework for Motion Reasoning and Generation in Human Interaction](https://arxiv.org/abs/2410.05628)：在 Inter-MT2 多轮运动-语言指令上训练 VIM，统一理解、生成、编辑并推理交互式人体运动。
+- [Vector-ICL: In-context Learning with Continuous Vector Representations](https://arxiv.org/abs/2410.05629)：把黑盒编码器产生的连续向量投影到 LLM embedding 空间，使上下文学习可处理多领域向量表示。
+- [Unlocking the Capabilities of Thought: A Reasoning Boundary Framework to Quantify and Optimize Chain-of-Thought](https://arxiv.org/abs/2410.05695)：定义 reasoning boundary 与组合律，用来估计 CoT 上界并指导不同任务上的推理路径优化。
+- [Amortized Inference of Causal Models via Conditional Fixed-Point Iterations](https://arxiv.org/abs/2410.06128)：用 Transformer 学习数据集 embedding，并以此条件化 fixed-point 因果机制推断，支持新 SCM 无需重训。
+- [Temporal Reasoning Transfer from Text to Video](https://arxiv.org/abs/2410.06166)：从图文数据合成纯文本时间推理任务，再把训练出的时间能力迁移到视频大模型。
+- [LLM Self-Correction with DeCRIM: Decompose, Critique, and Refine for Enhanced Following of Instructions with Multiple Constraints](https://arxiv.org/abs/2410.06458)：把真实用户指令分解为约束列表，并用 critic 引导的 refine 循环修复多约束执行失败。
+- [Towards Self-Improvement of LLMs via MCTS: Leveraging Stepwise Knowledge with Curriculum Preference Learning](https://arxiv.org/abs/2410.06508)：用同父节点的 MCTS stepwise 偏好对和课程式偏好学习蒸馏搜索轨迹，而不只学习最终输出。
+- [Subtle Errors in Reasoning: Preference Learning via Error-injected Self-editing](https://arxiv.org/abs/2410.06638)：在关键推理 token 中注入细微错误，构造困难偏好对进行 DPO，以减少计算和替换类错误。
+- [Let's Ask GNN: Empowering Large Language Model for Graph In-Context Learning](https://arxiv.org/abs/2410.07074)：用 GNN 驱动的结构增强检索器选择带标签节点作为上下文示例，提升 LLM 图任务表现。
+- [Automatic Curriculum Expert Iteration for Reliable LLM Reasoning](https://arxiv.org/abs/2410.07627)：结合 Expert Iteration 与自动奖励课程，在尝试作答和校准拒答之间平衡，减少推理幻觉与懒惰。
+- [Efficient Reinforcement Learning with Large Language Model Priors](https://arxiv.org/abs/2410.07927)：把 LLM 输出视为动作先验分布，并通过变分推断和后验采样接入强化学习以减少探索成本。
+- [Mars: Situated Inductive Reasoning in an Open-World Environment](https://arxiv.org/abs/2410.08126)：构造反常识交互环境，要求 agent 从轨迹中归纳局部规则后再进行情境决策。
+- [Rewarding Progress: Scaling Automated Process Verifiers for LLM Reasoning](https://arxiv.org/abs/2410.08146)：训练 process advantage verifier，用 prover 策略下未来正确率的变化来给每一步打分，改进搜索和在线 RL。
+- [SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation and Self-Correction](https://arxiv.org/abs/2410.09008)：蒸馏教师模型的层级 thought template，并用跨模型协同 DPO 的纠错轨迹训练小模型自我纠错。
+- [Enhancing Multi-Step Reasoning Abilities of Language Models through Direct Q-Function Optimization](https://arxiv.org/abs/2410.09302)：把生成过程表述为 MDP，并用 soft actor-critic 直接优化由语言模型参数化的 Q 函数。
+- [LINKED: Eliciting, Filtering and Integrating Knowledge in Large Language Model for Commonsense Reasoning](https://arxiv.org/abs/2410.09541)：先诱导候选知识，再用 reward model 过滤噪声事实，并以 marginal consistent reasoning 减少无效推理。
+- [Large Language Models Are Active Critics in NLG Evaluation](https://arxiv.org/abs/2410.10724)：提出 Active-Critic，让 LLM 从少量样例中自推断任务标准并动态优化评测提示。
+- [A Prompt-Based Knowledge Graph Foundation Model for Universal In-Context Reasoning](https://arxiv.org/abs/2410.12288)：构建 KG-ICL，结合 prompt graph、统一实体关系 tokenizer 和两类消息传递编码器实现跨 KG 推理。
+- [Revealing the Barriers of Language Agents in Planning](https://arxiv.org/abs/2410.12409)：用特征归因发现语言智能体规划中的核心障碍是约束作用有限、问题影响随步骤衰减。
+- [STRUX: An LLM for Decision-Making with Structured Explanations](https://arxiv.org/abs/2410.12583)：把长决策输入压缩为有利与不利事实表，再微调 LLM 识别并排序关键因素。
+- [Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](https://arxiv.org/abs/2410.13080)：用 KG-Trie 约束 LLM 按知识图路径解码，并结合轻量 KG 专门模型与通用归纳推理模型。
+- [A Comparative Study on Reasoning Patterns of OpenAI's o1 Model](https://arxiv.org/abs/2410.13639)：将 o1 与 best-of-N、stepwise best-of-N、agent workflow 和 self-refine 比较，并归纳六类推理模式。
+- [MobA: Multifaceted Memory-Enhanced Adaptive Planning for Efficient Mobile Task Automation](https://arxiv.org/abs/2410.13757)：结合自适应规划、基于反思的错误恢复和多面向记忆，用于多模态移动 GUI 自动化。
+- [Modeling Future Conversation Turns to Teach LLMs to Ask Clarifying Questions](https://arxiv.org/abs/2410.13788)：用模拟未来对话结果标注偏好，使模型学会何时通过澄清问题改进歧义请求。
+- [Beyond Autoregression: Discrete Diffusion for Complex Reasoning and Planning](https://arxiv.org/abs/2410.14157)：提出 Multi-Granularity Diffusion Modeling，优先学习困难子目标，使离散扩散无需搜索也能解 Countdown、Sudoku 和 SAT。
+- [Truncated Consistency Models](https://arxiv.org/abs/2410.14895)：把 consistency model 训练限制在截断扩散时间区间，并用两阶段参数化提升一步生成质量。
+- [On Designing Effective RL Reward at Training Time for LLM Reasoning](https://arxiv.org/abs/2410.15115)：指出 ORM 与 PRM 奖励在 RL 训练中会被利用，并用 Clipping 与 Delta 对轨迹累计奖励设上界。
+- [Causality for Large Language Models](https://arxiv.org/abs/2410.15319)：梳理因果建模如何进入 LLM 的 token embedding、预训练、微调、对齐、推理和评测阶段。
+- [RULEBREAKERS: Challenging LLMs at the Crossroads between Formal Logic and Human-like Reasoning](https://arxiv.org/abs/2410.16502)：定义形式逻辑与常识接受相冲突的 rulebreaker 场景，暴露 LLM 过度机械套用逻辑规则的问题。
+- [UnStar: Unlearning with Self-Taught Anti-Sample Reasoning for LLMs](https://arxiv.org/abs/2410.17050)：用误导性 rationale 生成 anti-sample，以反转指定关联并实现细粒度目标遗忘。
+- [Non-myopic Generation of Language Models for Reasoning and Planning](https://arxiv.org/abs/2410.17195)：用基于模型预测控制的 Predictive-Decoding，根据前瞻轨迹重加权 token 分布以改善非短视规划。
+- [Understanding When Tree of Thoughts Succeeds: Larger Models Excel in Generation, Not Discrimination](https://arxiv.org/abs/2410.17820)：分离 Tree of Thoughts 中生成器和判别器的作用，发现性能主要随生成器规模提升。
+- [Unleashing LLM Reasoning Capability via Scalable Question Synthesis from Scratch](https://arxiv.org/abs/2410.18693)：用 ScaleQuest 的 question fine-tuning 和 question preference optimization 从零合成百万条数学题解对。
+- [GCoder: Improving Large Language Model for Generalized Graph Problem Solving](https://arxiv.org/abs/2410.19084)：在 GraphWild 上用 SFT、编译器反馈强化学习和混合检索训练代码式图推理模型，以适配未见过的图算法和输入格式。
+- [Fast Best-of-N Decoding via Speculative Rejection](https://arxiv.org/abs/2410.20290)：用 speculative rejection 加速 reward-model best-of-N 选择，在保持推理时对齐效果的同时把奖励打分采样开销降低约 16 到 32 倍。
+- [LLM-initialized Differentiable Causal Discovery](https://arxiv.org/abs/2410.21141)：先由大模型给出因果图邻接矩阵初始化，再对这一显式图参数做最大似然优化，把语言先验接入可微因果发现。
+- [Mind Your Step (by Step): Chain-of-Thought can Reduce Performance on Tasks where Thinking Makes Humans Worse](https://arxiv.org/abs/2410.21333)：用认知心理学中“深思反而伤害表现”的任务检验 CoT，指出某些任务族里额外推理文本会降低而不是提升准确率。
+- [Do Vendi Scores Converge with Finite Samples? Truncated Vendi Score for Finite-Sample Convergence Guarantees](https://arxiv.org/abs/2410.21719)：提出带有限样本收敛保证的 truncated Vendi Score，为基于多样性的采样和数据选择提供更稳定的校准统计量。
+- [The Belief State Transformer](https://arxiv.org/abs/2410.23506)：同时输入前缀和后缀，并联合预测下一个 token 与前一个 token，使紧凑 belief state 支持目标条件解码和星形图规划。
+- [OCEAN: Offline Chain-of-thought Evaluation and Alignment in Large Language Models](https://arxiv.org/abs/2410.23703)：把 CoT 对齐建模为推理步骤上的离线 MDP，并用知识图谱偏好建模在无需在线交互的情况下评价 rationale。
+- [Can Language Models Perform Robust Reasoning in Chain-of-thought Prompting with Noisy Rationales?](https://arxiv.org/abs/2410.23856)：构造含无关或错误 in-context rationale 的 NoRa 数据集，并用 CD-CoT 对比干净与带噪示例来去噪 CoT 提示。
+- [Plan-on-Graph: Self-Correcting Adaptive Planning of Large Language Model on Knowledge Graphs](https://arxiv.org/abs/2410.23875)：先把知识图谱增强问题分解成子目标，再迭代探索图路径、更新记忆并反思修正错误推理路径。
+- [Failure Modes of LLMs for Causal Reasoning on Narratives](https://arxiv.org/abs/2410.23884)：分析叙事因果推理中的失败模式，区分事件顺序、干预和反事实混淆，避免流畅解释掩盖因果错误。
+- [LogiCity: Advancing Neuro-Symbolic AI with Abstract Urban Simulation](https://arxiv.org/abs/2411.00773)：用抽象城市仿真把符号城市规则与神经感知、规划结合起来，使神经符号推理错误能在受控场景中被检查。
+- [Vision-Language Models Can Self-Improve Reasoning via Reflection](https://arxiv.org/abs/2411.00855)：通过自举正负 CoT rationale 自训练多模态大模型，再用 self-refine 和 self-select 损失从视觉语言推理错误中学习。
+- [A Implies B: Circuit Analysis in LLMs for Propositional Logical Reasoning](https://arxiv.org/abs/2411.04105)：在命题逻辑任务上分析 Mistral 与 Gemma 的内部电路，追踪模型组件如何路由前提信息来完成蕴含推理。
+- [DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning](https://arxiv.org/abs/2411.04983)：在离线轨迹上学习 DINOv2 patch feature 空间中的世界模型，并通过优化动作序列去匹配目标特征实现零样本规划。
+- [What Do Learning Dynamics Reveal About Generalization in LLM Reasoning?](https://arxiv.org/abs/2411.07681)：定义推理微调过程中的 pre-memorization train accuracy，显示它能预测 GSM8K 和 MATH 测试准确率并指导数据筛选。
+- [Reducing Reasoning Costs - The Path of Optimization for Chain of Thought via Sparse Attention Mechanism](https://arxiv.org/abs/2411.09111)：把 sparse attention 用到 CoT 推理中，让模型只关注少量与 rationale 相关的 token，从而降低长推理链计算成本。
+- [Enhancing the Reasoning Ability of Multimodal Large Language Models via Mixed Preference Optimization](https://arxiv.org/abs/2411.10442)：构造 MMPR 多模态推理偏好数据，并用 mixed preference optimization 训练多模态大模型以改进 multimodal CoT。
+- [Search, Verify and Feedback: Towards Next Generation Post-training Paradigm of Foundation Models via Verifier Engineering](https://arxiv.org/abs/2411.11504)：把 verifier engineering 组织成搜索、验证和反馈的后训练循环，使基础模型从经过检查的中间推理中学习，而不只依赖最终答案标签。
+- [Enhancing LLM Reasoning with Reward-guided Tree Search](https://arxiv.org/abs/2411.11694)：用奖励模型引导候选推理续写的树搜索，把测试时探索预算分配给得分更高的解题路径。
+- [AtomThink: Multimodal Slow Thinking With Atomic Step Reasoning](https://arxiv.org/abs/2411.11930)：结合 CoT 标注引擎、原子步骤微调、policy reward model 和多种搜索策略，用于多模态数学慢思考。
+- [Understanding Chain-of-Thought in LLMs through Information Theory](https://arxiv.org/abs/2411.11984)：以 information gain 为每个 CoT 步骤打分，在无需人工步骤标签的情况下定位算术、GSM8K 和 PRM800K 式轨迹中的推理失败。
+- [A Novel Approach to Eliminating Hallucinations in Large Language Model-Assisted Causal Discovery](https://arxiv.org/abs/2411.12759)：用结构化因果图检查约束大模型辅助因果发现，使生成的边和解释能被形式化因果假设过滤。
+- [Marco-o1: Towards Open Reasoning Models for Open-Ended Solutions](https://arxiv.org/abs/2411.14405)：开发面向开放式解题的开放推理模型。
+- [Predicting Emergent Capabilities by Finetuning](https://arxiv.org/abs/2411.16035)：在当前模型 few-shot 仍接近随机的任务上做微调，再拟合参数曲线来预测未来模型何时出现非平凡能力。
+- [Do Large Language Models Perform Latent Multi-Hop Reasoning without Exploiting Shortcuts?](https://arxiv.org/abs/2411.16679)：构建 SOCRATES，移除捷径和频率线索，用于检验 LLM 是否能在不显式写出中间步骤时组合多跳事实。
+- [The Limits of Inference Scaling Through Resampling](https://arxiv.org/abs/2411.17501)：说明不完美验证器会给重采样推理扩展设置准确率上限，因为 best-of-N 预算越大，验证器假阳性越会累积。
+- [Critic-V: VLM Critics Help Catch VLM Errors in Multimodal Reasoning](https://arxiv.org/abs/2411.18203)：把 VLM 推理与批判拆成 reasoner 和 critic 两部分，并用插入视觉错误的数据训练 critic 来修正多模态 rationale。
+- [Beyond Examples: High-level Automated Reasoning Paradigm in In-Context Learning via MCTS](https://arxiv.org/abs/2411.18478)：用 MCTS 生成 HiAR-ICL 的抽象思维模式，使上下文学习从复制示例转向复用高层解题策略。
+- [A Simple and Provable Scaling Law for the Test-Time Compute of Large Language Models](https://arxiv.org/abs/2411.19477)：推导测试时计算分配的可证明 scaling law，把额外采样或审慎推理预算与预期解题收益联系起来。
+- [Interleaved-Modal Chain-of-Thought](https://arxiv.org/abs/2411.19488)：在每个推理步骤生成成对的视觉与文本 rationale，使中间图像也进入多模态 CoT，而不只作为最终答案证据。
+- [Reverse Thinking Makes LLMs Stronger Reasoners](https://arxiv.org/abs/2411.19865)：从教师模型蒸馏正向推理、反向问题和反向推理，让学生模型学习从问题到答案和从答案回查问题的双向一致性。
+- [Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM's Reasoning Capability](https://arxiv.org/abs/2411.19943)：通过 rollout sampling 与 contrastive estimation 找出关键推理 token，再用 token-level DPO 加权避免诱发错误的步骤。
+- [Think-to-Talk or Talk-to-Think? When LLMs Come Up with an Answer in Multi-Step Reasoning](https://arxiv.org/abs/2412.01113)：在算术 CoT 上做因果探测，区分模型是在解释前已决定答案，还是在生成推理过程中完成多跳计算。
+- [VISCO: Benchmarking Fine-Grained Critique and Correction Towards Self-Improvement in Visual Reasoning](https://arxiv.org/abs/2412.02172)：提供细粒度视觉批判与纠错任务，可用于训练或审计逐步修正多模态 rationale 的自我改进模型。
+- [VideoICL: Confidence-based Iterative In-context Learning for Out-of-Distribution Video Understanding](https://arxiv.org/abs/2412.02186)：按相似度选择相关视频示例，并在置信度信号显示 OOD 不确定时迭代修订上下文学习预测。
+- [ChatTS: Aligning Time Series with LLMs via Synthetic Data for Enhanced Understanding and Reasoning](https://arxiv.org/abs/2412.03104)：用合成对齐与指令数据微调时间序列多模态大模型，把属性描述与单变量、多变量序列推理任务配对。
+- [Perception Tokens Enhance Visual Reasoning in Multimodal Language Models](https://arxiv.org/abs/2412.03548)：引入来自 VQVAE 深度图和 bounding-box 表示的 AURORA perception tokens，为计数和三维推理提供显式视觉中间状态。
+- [Beyond the Binary: Capturing Diverse Preferences With Reward Regularization](https://arxiv.org/abs/2412.03822)：用奖励正则化刻画二元比较之外的多样偏好。
+- [Chain-of-Thought in Large Language Models: Decoding, Projection, and Activation](https://arxiv.org/abs/2412.03944)：从解码选择、表示空间投影和激活行为三个角度研究 CoT，把可见 rationale 与模型内部动态联系起来。
+- [PoTable: Towards Systematic Thinking via Plan-then-Execute Stage Reasoning on Tables](https://arxiv.org/abs/2412.04272)：把表格推理拆成显式计划阶段和执行阶段，减少结构化表格输入上的一次性回答脆弱性。
+- [Transformers Struggle to Learn to Search](https://arxiv.org/abs/2412.04703)：显示标准 Transformer 难以从数据中学会搜索算法，说明算法式推理可能需要架构或训练方式调整。
+- [Black Swan: Abductive and Defeasible Video Reasoning in Unpredictable Events](https://arxiv.org/abs/2412.05725)：把视频推理聚焦到不可预测事件中的溯因和可撤销解释，要求模型随新增视觉证据修正假设。
+- [SiReRAG: Indexing Similar and Related Information for Multihop Reasoning](https://arxiv.org/abs/2412.06206)：为相似和相关事实建立检索索引，使多跳推理能找到桥接证据，而不是只依赖单个最近邻。
+- [GPT-2 Through the Lens of Vector Symbolic Architectures](https://arxiv.org/abs/2412.07947)：用向量符号架构中的绑定和叠加操作解释 GPT-2 表示，探测其类符号推理行为来源。
+- [Forest-of-Thought: Scaling Test-Time Compute for Enhancing LLM Reasoning](https://arxiv.org/abs/2412.09078)：把推理扩展为多棵候选 thought tree 组成的森林，用额外测试时计算探索并聚合多种解题结构。
+- [GReaTer: Gradients over Reasoning Makes Smaller Language Models Strong Prompt Optimizers](https://arxiv.org/abs/2412.09722)：利用推理轨迹上的梯度，使小语言模型能够优化 prompt，而不只依赖黑盒提示词搜索。
+- [Enhancing the Reasoning Capabilities of Small Language Models via Solution Guidance Fine-Tuning](https://arxiv.org/abs/2412.09906)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充通用推理方向的模型覆盖。
+- [SceneLLM: Implicit Language Reasoning in LLM for Dynamic Scene Graph Generation](https://arxiv.org/abs/2412.11026)：把隐式语言推理注入动态场景图生成，使对象关系能从时间上下文中推断，而不只依赖单帧检测。
+- [C3oT: Generating Shorter Chain-of-Thought without Compromising Effectiveness](https://arxiv.org/abs/2412.11664)：通过训练或选择简短 rationale 压缩 chain-of-thought，在保持答案效果的同时降低推理 token 成本。
+- [Mastering Board Games by External and Internal Planning with Language Models](https://arxiv.org/abs/2412.12119)：在棋类游戏上比较显式搜索式规划与语言模型内部规划，说明哪些场景仍需要外部 rollout。
+- [GraphTool-Instruction: Revolutionizing Graph Reasoning in LLMs through Decomposed Subtask Instruction](https://arxiv.org/abs/2412.12152)：把图推理拆解为类似工具调用的子任务指令，让 LLM 学习图操作而不是把图问题当普通文本处理。
+- [Pattern Analogies: Learning to Perform Programmatic Image Edits by Analogy](https://arxiv.org/abs/2412.12463)：从类比样例中学习程序化图像编辑，把视觉类比转化为可执行编辑操作而非描述性匹配。
+- [Are Your LLMs Capable of Stable Reasoning?](https://arxiv.org/abs/2412.13147)：在受控扰动下测试 LLM 推理稳定性，识别模型何时保持逻辑结论、何时随表层变化漂移。
+- [Compressed Chain of Thought: Efficient Reasoning Through Dense Representations](https://arxiv.org/abs/2412.13171)：用稠密压缩思维表示替代冗长自然语言 rationale，在保留多步推理信号的同时降低推理成本。
+- [Generative Optimization: A Perspective on AI-Enhanced Problem Solving in Engineering](https://arxiv.org/abs/2412.13281)：把工程问题求解表述为生成式优化，即模型在约束下提出、评估并迭代改进候选设计。
+- [Disentangling Reasoning Tokens and Boilerplate Tokens For Language Model Fine-tuning](https://arxiv.org/abs/2412.14780)：在微调中区分真正承载推理的 token 与模板化 rationale 文本，让模型学习 CoT 中影响决策的部分。
+- [Progressive Multimodal Reasoning via Active Retrieval](https://arxiv.org/abs/2412.14835)：在多模态推理中使用主动检索，当当前图文上下文不足时逐步请求外部证据。
+- [Dipper: Diversity in Prompts for Producing Large Language Model Ensembles in Reasoning tasks](https://arxiv.org/abs/2412.15238)：生成多样化提示词来构建推理任务上的 LLM 集成，把 prompt 多样性作为低成本答案多样性来源。
+- [Ensembling Large Language Models with Process Reward-Guided Tree Search for Better Complex Reasoning](https://arxiv.org/abs/2412.15797)：把多个 LLM 放入过程奖励引导的树搜索中，用学习到的过程质量扩展和剪枝中间步骤。
+- [Logical Consistency of Large Language Models in Fact-checking](https://arxiv.org/abs/2412.16100)：评估 LLM 事实核查判断在相关声明之间是否保持逻辑一致，关注矛盾处理而非孤立标签准确率。
+- [Offline Reinforcement Learning for LLM Multi-Step Reasoning](https://arxiv.org/abs/2412.16145)：在保存的轨迹上用离线强化学习训练多步推理，避免在线采样但仍优化长程解题质量。
+- [OpenRFT: Adapting Reasoning Foundation Model for Domain-specific Tasks with Reinforcement Fine-Tuning](https://arxiv.org/abs/2412.16849)：通过 reinforcement fine-tuning 将推理基础模型适配到专业领域，用任务奖励补足监督式领域示范。
+- [Talking with Tables for Better LLM Factual Data Interactions](https://arxiv.org/abs/2412.17189)：让 LLM 以对话式表格操作访问结构化事实，改进对表格数据的事实查找和推理。
+- [Towards Intrinsic Self-Correction Enhancement in Monte Carlo Tree Search Boosted Reasoning via Iterative Preference Learning](https://arxiv.org/abs/2412.17397)：结合 MCTS 增强推理与迭代偏好学习，使模型内化搜索过程中发现的自我纠错信号。
+- [Diving into Self-Evolving Training for Multimodal Reasoning](https://arxiv.org/abs/2412.17451)：研究多模态推理的自演化训练，通过筛选或细化生成的视觉语言解答来构造后续训练信号。
+- [On the Expressiveness and Length Generalization of Selective State-Space Models on Regular Languages](https://arxiv.org/abs/2412.19350)：在正则语言上分析 selective state-space model 的表达力和长度泛化，测试序列状态架构能否外推算法规则。
+- [Confidence v.s. Critique: A Decomposition of Self-Correction Capability for LLMs](https://arxiv.org/abs/2412.19513)：把自我纠错拆成置信度估计和批判质量两部分，说明哪一部分限制模型修复自身答案。
+- [Toward Adaptive Reasoning in Large Language Models with Thought Rollback](https://arxiv.org/abs/2412.19707)：加入 thought rollback，使模型能从薄弱中间步骤回退，并从更早推理状态继续解题。
+- [LLM2: Let Large Language Models Harness System 2 Reasoning](https://arxiv.org/abs/2412.20372)：诱导 LLM 使用较慢的 System 2 式审慎推理，把困难问题路由到显式分析而非立即生成答案。
+- [Enhanced Multimodal RAG-LLM for Accurate Visual Question Answering](https://arxiv.org/abs/2412.20927)：把多模态检索与 LLM 答案生成结合，使视觉问答能基于检索证据完成推理。
+- [Efficiently Scaling LLM Reasoning with Certaindex](https://arxiv.org/abs/2412.20993)：用 Certaindex 估计答案确定性，只把额外推理计算分配给可能从更多审慎思考中受益的样例。
+- [Verbosity-Aware Rationale Reduction: Sentence-Level Rationale Reduction for Efficient and Effective Reasoning](https://arxiv.org/abs/2412.21006)：在句子级压缩 rationale，并显式考虑冗长度，保留有用推理步骤、删除重复解释文本。
+- [Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs](https://arxiv.org/abs/2412.21187)：诊断 o1 式模型的过度思考现象，说明长时间审慎推理何时浪费计算或伤害简单题准确率。
+- [Mixed Distillation Helps Smaller Language Models Reason Better](https://doi.org/10.18653/v1/2024.findings-emnlp.91)：用混合蒸馏提升小语言模型推理能力。
+- [Fewer is More: Boosting Math Reasoning with Reinforced Context Pruning](https://doi.org/10.18653/v1/2024.emnlp-main.758)：用强化学习剪除数学推理中的无关上下文，奖励更短但仍保持解题准确率的证据窗口。
+- [A Tree-of-Thoughts to Broaden Multi-step Reasoning across Languages](https://doi.org/10.18653/v1/2024.findings-naacl.78)：把 tree-of-thought 搜索扩展到跨语言多步推理，使多语言模型能探索并比较中间推理分支。
+- [Empowering Multi-step Reasoning across Languages via Program-Aided Language Models](https://doi.org/10.18653/v1/2024.emnlp-main.678)：用 program-aided language model 执行中间计算和符号步骤，支持多语言多步问题求解。
+- [Aligning the Representation of Knowledge Graph and Large Language Model for Causal Question Answering](https://doi.org/10.1109/bigdata62323.2024.10825744)：对齐知识图谱 embedding 与 LLM 表示，使因果问答同时利用图结构和自然语言生成。
+- [Improving Personality Consistency in Conversation With Commonsense Knowledge](https://doi.org/10.1109/taslp.2024.3519799)：把 commonsense knowledge 注入对话建模，以保持跨轮次 persona 相关回答的一致性。
+- [Knowledge Graph Reasoning and Security Assurance Decision-Making Based on Online Retrieval Augment Generation](https://doi.org/10.1109/aiim64537.2024.10934575)：把在线检索增强生成与知识图谱推理结合，用检索到的图证据支撑安全保障决策。
+- [What do Transformers have to learn from Biological Spiking Neural Networks?](https://doi.org/10.1109/cases60062.2024.00008)：比较 Transformer 与生物脉冲神经网络机制，提出事件驱动和时间动态可为高效推理架构提供启发。
+- [Verifiable, Debuggable, and Repairable Commonsense Logical Reasoning via LLM-based Theory Resolution](https://doi.org/10.18653/v1/2024.emnlp-main.379)：把常识逻辑推理转化为基于 LLM 的 theory resolution，使逻辑失败可以被验证、调试和修复。
+- [Teaching Small Language Models Reasoning through Counterfactual Distillation](https://doi.org/10.18653/v1/2024.emnlp-main.333)：把反事实推理轨迹蒸馏到小语言模型中，使其学习不同前提为何会改变结论。
+- [Thought Space Explorer: Navigating and Expanding Thought Space for Large Language Model Reasoning](https://doi.org/10.1109/bigdata62323.2024.10825638)：通过导航候选推理状态来探索和扩展模型的 thought space，而不是只采样单条线性 rationale。
+- [Merging planning in dense traffic scenarios using interactive safe reinforcement learning](https://doi.org/10.1016/j.knosys.2024.111548)：用交互式安全强化学习处理密集交通并线规划，在安全约束和其他车辆响应下优化动作选择。
+- [Mathematical Representation of Memory and Schema for Improving Human-Generative AI Interactions](https://doi.org/10.1109/iisa62523.2024.10786703)：形式化人机生成交互中的 memory 与 schema 表示，把持久上下文与跨轮次一致推理联系起来。
+- [Explainable reasoning over temporal knowledge graphs by pre-trained language model](https://doi.org/10.1016/j.ipm.2024.103903)：用预训练语言模型提示做时序知识图谱补全，强调可解释的时序关系预测，而不是只依赖不透明的嵌入推理。
+- [Generative Emergent Communication: Large Language Model is a Collective World Model](https://arxiv.org/abs/2501.00226)：把多个 LLM 的涌现通信建模为 collective world model，考察纯语言系统如何协调潜在世界知识而无需感知运动 grounding。
+- [Virgo: A Preliminary Exploration on Reproducing o1-like MLLM](https://arxiv.org/abs/2501.01904)：通过扩展推理时 deliberation 复现 o1 式多模态慢思考，为审慎 MLLM 推理提供紧凑参考。
+- [PEACE: Empowering Geologic Map Holistic Understanding with MLLMs](https://arxiv.org/abs/2501.06184)：将多模态大模型适配到地质图整体理解，要求同时推理图例、空间关系、地图符号与地下结构。
+- [Transformer-Squared: Self-adaptive LLMs](https://arxiv.org/abs/2501.06252)：提出可随任务调整行为的自适应大模型机制，适合作为自适应推理模型参考。
+- [In-situ graph reasoning and knowledge expansion using Graph-PReFLexOR](https://arxiv.org/abs/2501.08120)：通过原位图推理与知识扩展提升大模型对结构化关系的推理能力。
+- [Complexity Control Facilitates Reasoning-Based Compositional Generalization](https://arxiv.org/abs/2501.08537)：在 Transformer 组合任务中研究复杂度控制，说明它如何让模型远离捷径模式并转向基于推理的泛化。
+- [Automated Retrosynthesis Planning of Macromolecules Using Large Language Models and Knowledge Graphs.](https://arxiv.org/abs/2501.08897)：结合 LLM 解析与知识图谱约束规划大分子逆合成，以处理聚合物命名歧义和多解合成路线。
+- [Curiosity-Driven Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2501.11463)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Each Graph is a New Language: Graph Learning with LLMs](https://arxiv.org/abs/2501.11478)：提供模型侧推理、强化学习或测试时适配方法。
+- [Advancing Language Model Reasoning through Reinforcement Learning and Inference Scaling](https://arxiv.org/abs/2501.11651)：T1 将强化学习与推理时扩展结合，使模型在可用测试时计算增加时学会投入更长思考。
+- [Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis](https://arxiv.org/abs/2501.12500)：用隐藏动态过程学习气候系统的因果结构，从观测相关性推进到因果过程建模。
+- [Kimi k1.5: Scaling Reinforcement Learning with LLMs](https://arxiv.org/abs/2501.12599)：在多模态、代码和数学任务上扩展长上下文强化学习，把推理长度增长作为预训练之外的第二条 scaling 轴。
+- [DeepSeek-R1](https://arxiv.org/abs/2501.12948)：用带可验证奖励的大规模强化学习激发 DeepSeek-R1 的反思、自我验证和长链式思考行为。
+- [Causal Graphs Meet Thoughts: Enhancing Complex Reasoning in Graph-Augmented LLMs](https://arxiv.org/abs/2501.14892)：在 graph-augmented LLM 中结合因果图与 thought trace，使检索证据支撑高风险任务中的可解释多步推理。
+- [SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training](https://arxiv.org/abs/2501.17161)：比较监督微调与强化学习两种后训练路线，指出 RL 更利于泛化，而 SFT 更容易记忆伪标签模式。
+- [Tuning LLM Judge Design Decisions for 1/1000 of the Cost](https://arxiv.org/abs/2501.17178)：用少量标注样本调优 LLM-as-judge 的 prompt、rubric 与模型设置，将评审设计选择成本降低数个数量级。
+- [Dynamics of Transient Structure in In-Context Linear Regression Transformers](https://arxiv.org/abs/2501.17745)：追踪上下文线性回归 Transformer 的短暂内部计算结构，说明这种临时结构如何在学习过程中出现。
+- [Langevin Soft Actor-Critic: Efficient Exploration through Uncertainty-Driven Critic Learning](https://arxiv.org/abs/2501.17827)：在 soft actor-critic 中加入 Langevin 式不确定性驱动 critic 学习，以提升连续控制强化学习中的探索与样本效率。
+- [Bridging Internal Probability and Self-Consistency for Effective and Efficient LLM Reasoning](https://arxiv.org/abs/2502.00511)：把内部答案概率与 self-consistency 投票结合，用 token likelihood 减少需要采样的推理路径数量。
+- [Hybrid Group Relative Policy Optimization: A Multi-Sample Approach to Enhancing Policy Optimization](https://arxiv.org/abs/2502.01652)：提供模型侧推理、强化学习或测试时适配方法。
+- [Metastable Dynamics of Chain-of-Thought Reasoning: Provable Benefits of Search, RL and Distillation](https://arxiv.org/abs/2502.01694)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [CoAT: Chain-of-Associated-Thoughts Framework for Enhancing Large Language Models Reasoning](https://arxiv.org/abs/2502.02390)：把关联中间 thought 串成慢思考链，扩展模型推理上下文而不只依赖单条直接推断路径。
+- [Lower Bounds for Chain-of-Thought Reasoning](https://arxiv.org/abs/2502.02393)：证明硬注意力 Transformer 的 chain-of-thought 下界，澄清何时 scratchpad 对计算推理函数是必要的。
+- [Satori: Reinforcement Learning with Chain-of-Action-Thought Enhances LLM Reasoning via Autoregressive Search](https://arxiv.org/abs/2502.02508)：用强化学习训练 chain-of-action-thought 轨迹，使自回归生成在推理 trace 内部学习搜索动作。
+- [Token Assorted: Mixing Latent and Text Tokens for Improved Language Model Reasoning](https://arxiv.org/abs/2502.03275)：混合潜在 token 与文本思维链 token，在减少显式推理长度的同时保留规划结构。
+- [Demystifying Long Chain-of-Thought Reasoning](https://arxiv.org/abs/2502.03373)：把长链式思考分析为带回溯、纠错与探索策略的推理时计算，而不只是更冗长的 rationale。
+- [BOLT: Bootstrap Long Chain-of-Thought in Language Models without Distillation](https://arxiv.org/abs/2502.03860)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Value-Based Deep RL Scales Predictably](https://arxiv.org/abs/2502.04327)：给出价值型深度强化学习的数据与计算 scaling 规律，为推理系统中的策略训练扩展提供依据。
+- [Reasoning Bias with Small Initialization](https://arxiv.org/abs/2502.04375)：说明小初始化会使语言模型偏向特定推理解，把初始化尺度与捷径学习和泛化行为联系起来。
+- [Self-Backtracking](https://arxiv.org/abs/2502.04404)：让模型显式从错误中间状态后退，并从更早推理点继续生成。
+- [Discrepancies are Virtue: Weak-to-Strong Generalization through Lens of Intrinsic Dimension](https://arxiv.org/abs/2502.05075)：用 intrinsic dimension 解释分布漂移下的 weak-to-strong 泛化，分析弱教师伪标签何时能监督强学生。
+- [Multi-granular Training Strategies for Robust Multi-hop Reasoning Over Noisy and Heterogeneous Knowledge Sources](https://arxiv.org/abs/2502.05944)：在噪声异构知识源上的多跳问答中加入多粒度证据与推理监督，提高动态整合能力。
+- [VersaPRM: Multi-Domain Process Reward Model via Synthetic Reasoning Data](https://arxiv.org/abs/2502.06737)：用合成的多领域推理数据训练 VersaPRM，使过程奖励模型能够评分数学以外的中间步骤。
+- [On the Emergence of Thinking in LLMs I: Searching for the Right Intuition](https://arxiv.org/abs/2502.06773)：提供模型侧推理、强化学习或测试时适配方法。
+- [Approximating Human Strategic Reasoning with LLM-Enhanced Recursive Reasoners Leveraging Multi-agent Hypergames](https://arxiv.org/abs/2502.07443)：用 LLM 增强的递归推理器和多智能体超博弈近似人类战略推理。
+- [Reasoning-as-Logic-Units: Scaling Test-Time Reasoning in Large Language Models Through Logic Unit Alignment](https://arxiv.org/abs/2502.07803)：把自然语言 chain-of-thought 对齐到显式 logic unit，使测试时推理步骤更易验证和复用。
+- [Improving Existing Optimization Algorithms with LLMs](https://arxiv.org/abs/2502.08298)：用 GPT-4o 为 CMSA 提出启发式变体和实现策略，并发现 LLM 设计的构造启发式在更大稠密图上可超过专家版本。
+- [Enhancing Auto-regressive Chain-of-Thought through Loop-Aligned Reasoning](https://arxiv.org/abs/2502.08482)：把自回归 chain-of-thought 组织为 loop-aligned 的迭代细化过程，提升一次性推理链的一致性。
+- [Rethinking Process Supervision](https://arxiv.org/abs/2502.10581)：证明在覆盖假设下 outcome supervision 并不比 process supervision 统计上更难，并把优势函数与最优过程奖励联系起来。
+- [Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models](https://arxiv.org/abs/2502.10835)：追踪潜在多跳推理，并将注意力从后续实体回指到早期证据以改善组合推断。
+- [LogiDynamics: Unraveling the Dynamics of Logical Inference in Large Language Model Reasoning](https://arxiv.org/abs/2502.11176)：区分 LLM 推理中的归纳、溯因与演绎动态，揭示不同 prompt 下各类逻辑模式的失效点。
+- [Ontology-Guided Reverse Thinking Makes Large Language Models Stronger on Knowledge Graph Question Answering](https://arxiv.org/abs/2502.11491)：提供模型侧推理、强化学习或测试时适配方法。
+- [AURORA: Automated Training Framework of Universal Process Reward Models via Ensemble Prompting and Reverse Verification](https://arxiv.org/abs/2502.11520)：通过集成提示和反向验证自动训练通用过程奖励模型，而不依赖人工逐步标注。
+- [Language Models Can See Better: Visual Contrastive Decoding For LLM Multimodal Reasoning](https://arxiv.org/abs/2502.11751)：在图像条件 logits 与图像消融 logits 之间进行视觉对比解码，使多模态 LLM 更依赖视觉证据。
+- [GraphGPT-o: Synergistic Multimodal Comprehension and Generation on Graphs](https://arxiv.org/abs/2502.11925)：统一多模态图理解与图生成，把图结构输入和图像文本表示结合起来进行图推理。
+- [KnowPath: Knowledge-enhanced Reasoning via LLM-generated Inference Paths over Knowledge Graphs](https://arxiv.org/abs/2502.12029)：用 LLM 内部知识引导可解释有向 KG 子图探索，再融合模型内部证据与外部图谱证据，生成更可信的推理路径。
+- [Scaling Test-Time Compute Without Verification or RL is Suboptimal](https://arxiv.org/abs/2502.12118)：指出测试时计算扩展需要 verification 或 reinforcement learning；没有选择信号的长采样收益有限。
+- [Self-Enhanced Reasoning Training: Activating Latent Reasoning in Small Models for Enhanced Reasoning Distillation](https://arxiv.org/abs/2502.12744)：从小模型自生成的零样本推理路径中过滤高质量样本再蒸馏，激活潜在推理而不只依赖教师 trace。
+- [Reasoning and the Trusting Behavior of DeepSeek and GPT: An Experiment Revealing Hidden Fault Lines in Large Language Models](https://arxiv.org/abs/2502.12825)：比较 DeepSeek 与 GPT 在模型升级信任场景中的选择，揭示推理依赖的风险和采用行为差异。
+- [S2R: Teaching LLMs to Self-verify and Self-correct via Reinforcement Learning](https://arxiv.org/abs/2502.12853)：用强化学习训练自我验证与自我纠错，把测试时检查行为转化为可学习的推理策略。
+- [Reasoning with Reinforced Functional Token Tuning](https://arxiv.org/abs/2502.13389)：用 self-play reinforced functional token tuning 奖励能引导模型完成 learn-to-reason 轨迹的控制 token。
+- [Estimating Commonsense Plausibility through Semantic Shifts](https://arxiv.org/abs/2502.13464)：从表示空间中的语义偏移估计常识合理性，提供比似然或口头判断更细粒度的 plausibility 信号。
+- [Are Large Language Models In-Context Graph Learners?](https://arxiv.org/abs/2502.13562)：测试 LLM 是否能上下文内学习图任务，并把图学习重述为对结构化输入的检索增强推理。
+- [Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking](https://arxiv.org/abs/2502.13842)：在困难 token 上动态增加 Transformer 深度，把额外内部计算分配给推理需求最高的位置。
+- [AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence](https://arxiv.org/abs/2502.13943)：根据置信度变化而非固定分隔符切分 rationale，为过程奖励训练生成更合适的步骤单元。
+- [Enhancing Conversational Agents with Theory of Mind: Aligning Beliefs, Desires, and Intentions for Human-Like Interaction](https://arxiv.org/abs/2502.14171)：用 belief、desire 和 intention 表示对齐对话智能体，使回复更稳定地追踪用户心理状态。
+- [Logic-RL: Unleashing LLM Reasoning with Rule-Based Reinforcement Learning](https://arxiv.org/abs/2502.14768)：把规则奖励用于 LLM 推理，研究 R1 式强化学习何时能在无密集标签下激发逻辑解题。
+- [EigenShield: Causal Subspace Filtering via Random Matrix Theory for Adversarially Robust Vision-Language Models](https://arxiv.org/abs/2502.14976)：用随机矩阵理论过滤因果子空间，移除对抗性视觉语言方向并保留有用语义。
+- [CoT-ICL Lab: A Synthetic Framework for Studying Chain-of-Thought Learning from In-Context Demonstrations](https://arxiv.org/abs/2502.15132)：生成合成 token 数据集，用于受控研究上下文示例如何教会模型 chain-of-thought 算法。
+- [AutoToM](https://arxiv.org/abs/2502.15676)：让 LLM 提出 agent model，再用贝叶斯逆向规划推断心理状态，以扩展开方式的 theory-of-mind 推理。
+- [EPERM](https://arxiv.org/abs/2502.16171)：用显式 evidence path 增强知识图谱问答，使答案建立在结构化多跳图证据上而不是直接生成。
+- [Intermediate Languages Matter: Formal Choice Drives Neurosymbolic LLM Reasoning](https://arxiv.org/abs/2502.17216)：比较四种形式语言在多个数据集和 LLM 上的表现，显示中间语言选择会显著影响神经符号语法与语义准确率。
+- [Distributional Scaling Laws for Emergent Capabilities](https://arxiv.org/abs/2502.17356)：把能力涌现跳变解释为不同随机种子下的分布迁移和双峰性，而不只是指标阈值伪影。
+- [Modelling Chemical Reaction Networks using Neural Ordinary Differential Equations](https://arxiv.org/abs/2502.19397)：把化学反应网络动态建模与 neural ODE 结合，用于发现隐藏机制并修正不完整的经验反应方程。
+- [Implicit Search via Discrete Diffusion: A Study on Chess](https://arxiv.org/abs/2502.19805)：DiffuSearch 用离散扩散在国际象棋中进行前瞻，学习到可超过一步策略和 MCTS 增强策略的隐式搜索。
+- [Order Doesn't Matter, But Reasoning Does: Training LLMs with Order-Centric Augmentation](https://arxiv.org/abs/2502.19907)：打乱独立前提和 DAG 允许的推理步骤，训练 LLM 在逻辑等价顺序之间泛化。
+- [Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking](https://arxiv.org/abs/2502.20129)：在带 CoT 的 Transformer 中定位有限状态自动机电路，发现后层 MLP 神经元可在噪声和长度变化下跟踪世界状态。
+- [Accelerating Model-Based Reinforcement Learning with State-Space World Models](https://arxiv.org/abs/2502.20168)：用状态空间 world model 并行化 model-based RL 的动态模型训练，加速四旋翼学习且不牺牲样本效率。
+- [Emergent Symbolic Mechanisms](https://arxiv.org/abs/2502.20332)：发现 symbol-abstraction head、symbolic induction head 与 retrieval head，把抽象推理实现为涌现的符号机制。
+- [Beyond Words: A Latent Memory Approach to Internal Reasoning in LLMs](https://arxiv.org/abs/2502.21030)：为 LLM 内部推理加入 implicit memory module，在降低训练损失的同时保留可选 CoT decoder 以便审计。
+- [Transformers Learn to Implement Multi-step Gradient Descent with Chain of Thought](https://arxiv.org/abs/2502.21212)：证明 CoT 训练的 Transformer 能在上下文线性回归中自回归执行多步梯度下降，而非 CoT 基线只能做一步。
+- [Analogical Reasoning Inside LLMs](https://arxiv.org/abs/2503.03666)：在 attention head 中定位用于反义词等类比的 invariant concept vector，并用这些向量因果调控模型行为。
+- [Effective LLM Knowledge Learning via Model Generalization](https://arxiv.org/abs/2503.03705)：用格式化数据增强和 sharpness-aware minimization 改进事实知识学习，使同一事实能在多种上下文中被预测。
+- [Understanding Distilled Reasoning Models](https://arxiv.org/abs/2503.03730)：用 crosscoder 识别蒸馏推理模型中的自我反思、验证、演绎、替代推理和对比推理特征。
+- [L1](https://arxiv.org/abs/2503.04697)：使用 length-controlled policy optimization，使 L1 遵守指定 CoT 长度并在推理计算与准确率之间平滑权衡。
+- [Enough Coin Flips Can Make LLMs Act Bayesian](https://arxiv.org/abs/2503.04722)：表明重复的随机 few-shot 证据可使上下文学习者近似贝叶斯推断，澄清采样频率如何塑造信念。
+- [Boosting the Generalization and Reasoning of Vision Language Models with Curriculum Reinforcement Learning](https://arxiv.org/abs/2503.07065)：对小型视觉语言模型使用课程强化学习，通过排序多模态任务提升有限规模下的视觉推理。
+- [MM-Eureka: Exploring the Frontiers of Multimodal Reasoning with Rule-based Reinforcement Learning](https://arxiv.org/abs/2503.07365)：把规则奖励强化学习从文本推理扩展到多模态任务，测试可验证奖励如何激发 MLLM 思维链行为。
+- [LMM-R1: Empowering 3B LMMs with Strong Reasoning Abilities Through Two-Stage Rule-Based RL](https://arxiv.org/abs/2503.07536)：用两阶段规则奖励强化学习训练 3B 多模态模型，将模态对齐和逻辑推理分开优化。
+- [ProtTeX: Structure-In-Context Reasoning and Editing of Proteins with Large Language Models](https://arxiv.org/abs/2503.08179)：把蛋白质序列、结构和文本 token 化到统一离散空间，使 decoder-only LLM 能推理并编辑蛋白结构。
+- [GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-Based VLM Agent Training](https://arxiv.org/abs/2503.08525)：在 RLVR 中加入自动 corrector，使 VLM agent 在 thought collapse 成无效动作轨迹前获得过程指导。
+- [Self-Taught Self-Correction for Small Language Models](https://arxiv.org/abs/2503.08681)：用自生成纠错数据迭代微调小语言模型，在无外部工具和闭源教师条件下学习自我纠错。
+- [ViLAM: Distilling Vision-Language Reasoning into Attention Maps for Social Robot Navigation](https://arxiv.org/abs/2503.09820)：把 VLM 推理蒸馏为 attention map，并将其转化为面向机器人导航的社会感知空间 cost map。
+- [VisualPRM: An Effective Process Reward Model for Multimodal Reasoning](https://arxiv.org/abs/2503.10291)：将 8B 多模态过程奖励模型与 VisualPRM400K、VisualProcessBench 配套，用于视觉推理中的 Best-of-N 步骤检查。
+- [Deep Learning Sheds Light on Integer and Fractional Topological Insulators](https://arxiv.org/abs/2503.11756)：用神经多体波函数识别整数和分数 Chern 绝缘体及拓扑绝缘体相，较传统求解器更高效准确。
+- [Understanding Formal Reasoning Failures in LLMs as Abstract Interpreters](https://arxiv.org/abs/2503.12686)：把 LLM 作为 abstract interpreter 提示来生成不变量，并在 SV-COMP 验证程序上分析 soundness 失败模式。
+- [Causal Discovery from Data Assisted by Large Language Models](https://arxiv.org/abs/2503.13833)：把 LLM 从文献中得到的先验与 STEM 数据驱动因果发现结合，为铁电材料构建 property DAG。
+- [DAPO: An Open-Source LLM Reinforcement Learning System at Scale](https://arxiv.org/abs/2503.14476)：开源 decoupled clipping、dynamic sampling policy optimization、处理后数据和基于 verl 的大规模推理 RL 训练。
+- [LogiAgent: Automated Logical Testing for REST Systems with LLM-Based Multi-Agents](https://arxiv.org/abs/2503.15079)：协同测试场景生成、API 请求执行、响应验证和执行记忆，用于发现 REST API 业务逻辑错误。
+- [OThink-MR1: Stimulating multimodal generalized reasoning capabilities via dynamic reinforcement learning](https://arxiv.org/abs/2503.16081)：使用带动态 KL 控制的 GRPO-D，在跨任务多模态推理上超过监督微调和标准 GRPO。
+- [Reinforcement Learning for Reasoning in Small LLMs: What Works and What Doesn't](https://arxiv.org/abs/2503.16219)：把 GRPO 适配到 1.5B 模型和 7000 条数学样本，展示低成本 RL 增益以及长训练下的不稳定性。
+- [Towards properly implementing Theory of Mind in AI systems: An account of four misconceptions](https://arxiv.org/abs/2503.16468)：指出四类 theory-of-mind 实现误解，并给出何时需要 belief、desire、intention 建模的设计指导。
 - [FastCuRL](https://arxiv.org/abs/2503.17287)：面向 R1-like reasoning model 的课程强化学习方案，逐步扩展上下文长度并控制 prompt 难度。
+- [OpenVLThinker: Complex Vision-Language Reasoning via Iterative SFT-RL Cycles](https://arxiv.org/abs/2503.17352)：通过迭代 SFT 与 RL 循环训练复杂视觉语言推理。
+- [Fairness-Driven LLM-based Causal Discovery with Active Learning and Dynamic Scoring](https://arxiv.org/abs/2503.17569)：用广度优先的 LLM 因果发现查询、主动学习，以及互信息、偏相关和模型置信度组成的动态评分，减少成对因果探测成本。
 - [Long Is More Important Than Difficult](https://arxiv.org/abs/2503.18069)：合成长推理数据方法，显示少量长 CoT 数据可比单纯追求难题更有效地训练推理行为。
-- [SimpleRL-Zoo](https://arxiv.org/abs/2503.18892)：提出面向通用推理的模型侧方法，核心围绕 Investigating and Taming Zero Reinforcement Learning for Open Base Models in the Wild。
+- [Reasoning to Learn from Latent Thoughts](https://arxiv.org/abs/2503.18866)：提供模型侧推理、强化学习或测试时适配方法。
+- [SimpleRL-Zoo](https://arxiv.org/abs/2503.18892)：在 10 个开放 base model 上测试 zero-RL 推理训练，分析模型先验、指令跟随和自我反思如何影响 R1 式涌现。
+- [Optimizing Language Models for Inference Time Objectives using Reinforcement Learning](https://arxiv.org/abs/2503.19595)：围绕 pass@k 和多数投票等推理时目标训练语言模型。
+- [RL-finetuning LLMs from on- and off-policy data with a single algorithm](https://arxiv.org/abs/2503.19612)：用 generation-consistency 目标同时利用 on-policy 与 off-policy 生成来强化微调 LLM。
+- [Unlocking Efficient Long-to-Short LLM Reasoning with Model Merging](https://arxiv.org/abs/2503.20641)：面向通用推理的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Unlocking Efficient Long-to-Short LLM Reasoning with Model Merging”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Reason-RFT: Reinforcement Fine-Tuning for Visual Reasoning of Vision Language Models](https://arxiv.org/abs/2503.20752)：通过强化微调提升视觉语言模型的视觉推理能力。
+- [Is Best-of-N the Best of Them? Coverage, Scaling, and Optimality in Inference-Time Alignment](https://arxiv.org/abs/2503.21878)：分析 Best-of-N 推理时对齐的覆盖率、缩放规律与最优性，说明采样选择何时能改善推理模型行为，何时只是消耗额外算力。
+- [Reasoning over Knowledge Graphs with Super-Relations](https://arxiv.org/abs/2503.22166)：通过建模图事实之间的 super-relations 提升 LLM 的知识图谱推理。
+- [Entropy-guided sequence weighting for efficient exploration in RL-based LLM fine-tuning](https://arxiv.org/abs/2503.22456)：按 advantage 与 entropy 对生成序列加权，并用温度缩放 softmax 保持探索性，从而稳定 GRPO 式推理微调。
+- [Open-Reasoner-Zero: An Open Source Approach to Scaling Up Reinforcement Learning on the Base Model](https://arxiv.org/abs/2503.24290)：开源面向 base model 推理能力的可扩展强化学习配方。
+- [Dynamics-aware Diffusion Models for Planning and Control](https://arxiv.org/abs/2504.00236)：把系统动力学投影插入扩散去噪过程，使生成的控制轨迹既接近专家示范又满足物理约束。
+- [How Difficulty-Aware Staged Reinforcement Learning Enhances LLMs' Reasoning Capabilities: A Preliminary Experimental Study](https://arxiv.org/abs/2504.00829)：研究按任务难度分阶段强化学习，以增强 LLM 推理能力。
+- [AI Judges in Design: Statistical Perspectives on Achieving Human Expert Equivalence With Vision-Language Models](https://arxiv.org/abs/2504.00938)：为 VLM 设计评审器定义与人类专家等价的统计检验，并在概念草图评分上与专家面板比较。
+- [ThinkPrune: Pruning Long Chain-of-Thought of LLMs via Reinforcement Learning](https://arxiv.org/abs/2504.01296)：模型侧方法候选，RL-based pruning method for shortening long chain-of-thought reasoning.
+- [Reasoning LLMs for User-Aware Multimodal Conversational Agents](https://arxiv.org/abs/2504.01700)：结合 CoT 推理、VLM 用户画像初始化和检索增强画像更新，以解决多模态个性化对话的冷启动问题。
+- [Interpreting Emergent Planning in Model-Free Reinforcement Learning](https://arxiv.org/abs/2504.01871)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
 - [Think When You Need: Self-Adaptive Chain-of-Thought Learning](https://arxiv.org/abs/2504.03234)：学习何时启用思维链，使模型把审慎推理留给更难的问题。
+- [Rethinking Reflection in Pre-Training](https://arxiv.org/abs/2504.04022)：模型侧方法候选，Pre-training study of reflection behavior before RL-based reasoning training.
+- [Trust Region Preference Approximation: A simple and stable reinforcement learning algorithm for LLM reasoning](https://arxiv.org/abs/2504.04524)：从信赖域视角近似偏好优化，提出更稳定的 LLM 推理强化学习算法。
+- [VAPO: Efficient and Reliable Reinforcement Learning for Advanced Reasoning Tasks](https://arxiv.org/abs/2504.05118)：提供模型侧推理、强化学习或测试时适配方法。
 - [Concise Reasoning via Reinforcement Learning](https://arxiv.org/abs/2504.05185)：使用强化学习鼓励简洁推理，同时尽量保持解题质量。
-- [Seed1.5-Thinking](https://arxiv.org/abs/2504.13914)：提出面向通用推理的模型侧方法，核心围绕 Advancing Superb Reasoning Models with Reinforcement Learning。
-- [Process Reward Models That Think](https://arxiv.org/abs/2504.16828)：提出面向通用推理的模型侧方法，核心围绕 Process Reward Models That Think。
+- [DiffusionCom: Structure-Aware Multimodal Diffusion Model for Multimodal Knowledge Graph Completion](https://arxiv.org/abs/2504.06543)：补充面向通用推理的模型侧工作，重点是multimodal diffusion for knowledge-graph completion。
+- [Benchmarking Multimodal CoT Reward Model Stepwise by Visual Program](https://arxiv.org/abs/2504.06606)：用视觉程序训练逐步多模态 CoT 奖励模型。
+- [VLM-R1: A Stable and Generalizable R1-style Large Vision-Language Model](https://arxiv.org/abs/2504.07615)：将 R1 式规则奖励强化学习用于稳定、可泛化的视觉语言推理。
+- [Echo Chamber: RL Post-training Amplifies Behaviors Learned in Pretraining](https://arxiv.org/abs/2504.07912)：模型侧方法候选，Post-training analysis of how RL amplifies behaviors learned during pretraining.
+- [SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](https://arxiv.org/abs/2504.08600)：模型侧方法候选，Reinforcement-learning method for natural-language-to-SQL reasoning.
+- [Genius: A Generalizable and Purely Unsupervised Self-Training Framework For Advanced Reasoning](https://arxiv.org/abs/2504.08672)：提出纯无监督自训练框架提升高级推理，把自我改进作为模型侧推理训练路线。
+- [VL-Rethinker: Incentivizing Self-Reflection of Vision-Language Models with Reinforcement Learning](https://arxiv.org/abs/2504.08837)：用强化学习激励视觉语言推理模型进行自我反思。
+- [Large Language Models as Particle Swarm Optimizers](https://arxiv.org/abs/2504.09247)：把 PSO 粒子速度表示为 prompt，让 LLM 生成下一步结构化候选解，用于 TSP、启发式设计和符号回归。
+- [Heimdall: test-time scaling on the generative verification](https://arxiv.org/abs/2504.10337)：用强化学习训练长链式思维 verifier，面向解答验证。
+- [Efficient Process Reward Model Training via Active Learning](https://arxiv.org/abs/2504.10559)：面向过程奖励模型的主动学习降低标注成本，同时强化推理模型训练中的过程监督。
+- [Improving In-Context Learning with Reasoning Distillation](https://arxiv.org/abs/2504.10647)：用 ReDis 通过数据增强、过滤、监督微调和对齐蒸馏归纳规则理解，提升 1D-ARC、List Function、ACRE 与 MiniSCAN 上的上下文学习。
+- [SFT or RL? An Early Investigation into Training R1-Like Reasoning Large Vision-Language Models](https://arxiv.org/abs/2504.11468)：比较 SFT 与 RL 在训练 R1-like 视觉语言推理模型中的作用。
+- [Rethinking the Generation of High-Quality CoT Data from the Perspective of LLM-Adaptive Question Difficulty Grading](https://arxiv.org/abs/2504.11919)：用问题难度分级生成适配目标模型能力的 CoT 数据。
+- [Speculative Thinking: Enhancing Small-Model Reasoning with Large Model Guidance at Inference Time](https://arxiv.org/abs/2504.12329)：模型侧方法候选，Training-free inference method that guides small-model reasoning with larger models.
+- [Seed1.5-Thinking](https://arxiv.org/abs/2504.13914)：报告 200B 参数、20B 激活参数的 MoE thinking model，并用强化学习提升 STEM、代码和非推理任务泛化。
+- [SRPO: A Cross-Domain Implementation of Large-Scale Reinforcement Learning on LLM](https://arxiv.org/abs/2504.14286)：作为通用推理的模型侧方法候选，聚焦“A Cross-Domain Implementation of Large-Scale Reinforcement Learning on LLM”。
+- [LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](https://arxiv.org/abs/2504.16078)：分析强化微调如何改变 LLM 智能体探索与决策行为。
+- [TTRL: Test-Time Reinforcement Learning](https://arxiv.org/abs/2504.16084)：提出测试时强化学习作为模型适配方法。
+- [Skywork R1V2: Multimodal Hybrid Reinforcement Learning for Reasoning](https://arxiv.org/abs/2504.16656)：为 Skywork R1V2 结合多模态强化学习与混合奖励以增强推理。
+- [Process Reward Models That Think](https://arxiv.org/abs/2504.16828)：把 ThinkPRM 训练成会生成验证链的逐步语言 verifier，用少量过程标签支持 best-of-N 和搜索式推理。
+- [CaRL: Learning Scalable Planning Policies with Simple Rewards](https://arxiv.org/abs/2504.17838)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization](https://arxiv.org/abs/2504.18397)：用偏好优化学习无监督视觉思维链推理。
+- [Fast-Slow Thinking GRPO for Large Vision-Language Model Reasoning](https://arxiv.org/abs/2504.18458)：模型侧方法候选，Fast-slow GRPO method for large vision-language-model reasoning.
+- [Reinforcement Learning for Reasoning in Large Language Models with One Training Example](https://arxiv.org/abs/2504.20571)：展示单个训练样例上的 RLVR 也能提升推理能力。
+- [Sparks of Tabular Reasoning via Text2SQL Reinforcement Learning](https://arxiv.org/abs/2505.00016)：用 Text2SQL 强化学习激发表格推理，把可执行结构化查询与 LLM 推理训练连接起来。
+- [SA-GAT-SR: self-adaptable graph attention networks with symbolic regression for high-fidelity material property prediction](https://arxiv.org/abs/2505.00625)：把自适应图注意力网络与符号回归结合，从 180 维材料特征中筛出关键变量并蒸馏为解析表达式。
+- [Long-Short Chain-of-Thought Mixture Supervised Fine-Tuning Eliciting Efficient Reasoning in Large Language Models](https://arxiv.org/abs/2505.03469)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Towards Efficient Online Tuning of VLM Agents via Counterfactual Soft Reinforcement Learning](https://arxiv.org/abs/2505.03792)：用 counterfactual soft RL 在线调优 VLM agent，提升从交互反馈中适应的能力。
+- [Putting the Value Back in RL: Better Test-Time Scaling by Unifying LLM Reasoners With Verifiers](https://arxiv.org/abs/2505.04842)：把 LLM reasoner 与 verifier 统一起来，通过 value-guided RL 改进测试时扩展。
+- [Rethinking Invariance in In-context Learning](https://arxiv.org/abs/2505.04994)：提出 InvICL，在保持信息不泄漏和上下文相互依赖的同时缓解示例顺序敏感性。
 - [Scalable Chain of Thoughts via Elastic Reasoning](https://arxiv.org/abs/2505.05315)：弹性推理按问题难度调节思维链长度。
+- [Kalman Filter Enhanced GRPO for Reinforcement Learning-Based Language Model Reasoning](https://arxiv.org/abs/2505.07527)：Kalman Filter enhanced GRPO 将状态估计式平滑引入基于强化学习的推理优化。
+- [Learning Like Humans: Advancing LLM Reasoning Capabilities via Adaptive Difficulty Curriculum Learning and Expert-Guided Self-Reformulation](https://arxiv.org/abs/2505.08364)：结合自适应难度课程和专家引导自我改写来增强推理。
+- [HCR-Reasoner: Synergizing Large Language Models and Theory for Human-like Causal Reasoning](https://arxiv.org/abs/2505.08750)：结合大语言模型与因果理论，实现更接近人类的因果推理。
+- [Seeing Beyond the Scene: Enhancing Vision-Language Models with Interactional Reasoning](https://arxiv.org/abs/2505.09118)：用交互增强场景图、定向交互查询和长期记忆强化学习，让 VLM 推理物体功能关系而不只读空间关系。
+- [The Influence of Human-inspired Agentic Sophistication in LLM-driven Strategic Reasoners](https://arxiv.org/abs/2505.09396)：在猜数博弈中比较简单博弈论、非结构化 LLM agent 与传统 agent 框架，显示类人认知结构会以非线性方式影响战略对齐。
+- [Mining Hidden Thoughts from Texts: Evaluating Continual Pretraining with Synthetic Data for LLM Reasoning](https://arxiv.org/abs/2505.10182)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
 - [Learning When to Think: Shaping Adaptive Reasoning in R1-Style Models via Multi-Stage RL](https://arxiv.org/abs/2505.10832)：用多阶段强化学习塑造 R1 式模型的自适应推理。
-- [AdaCoT](https://arxiv.org/abs/2505.11896)：提出面向通用推理的模型侧方法，核心围绕 Pareto-Optimal Adaptive Chain-of-Thought Triggering via Reinforcement Learning。
+- [HAPO: Training Language Models to Reason Concisely via History-Aware Policy Optimization](https://arxiv.org/abs/2505.11225)：模型侧方法候选，General reasoning post-training method for concise test-time reasoning.
+- [RLAP: A Reinforcement Learning Enhanced Adaptive Planning Framework for Multi-step NLP Task Solving](https://arxiv.org/abs/2505.11893)：用强化学习自适应决定多步 NLP 任务的规划策略，改进子任务拆解和求解顺序。
+- [AdaCoT](https://arxiv.org/abs/2505.11896)：把是否触发 CoT 建模为性能与计算成本的帕累托优化，并用 PPO 与 selective loss masking 稳定自适应触发边界。
+- [ABoN: Adaptive Best-of-N Alignment](https://arxiv.org/abs/2505.12050)：ABoN 自适应 best-of-N 对齐，为推理模型选择补充了推理时偏好对齐方法。
+- [Mitigating Content Effects on Reasoning in Language Models through Fine-Grained Activation Steering](https://arxiv.org/abs/2505.12189)：定位形式有效性与内容可信性相关层，并用细粒度激活 steering 降低三段论推理中的内容效应。
+- [Observe-R1: Unlocking Reasoning Abilities of MLLMs with Dynamic Progressive Reinforcement Learning](https://arxiv.org/abs/2505.12432)：用动态渐进强化学习激活 MLLM 推理能力。
+- [Efficient Heuristics Generation for Solving Combinatorial Optimization Problems Using Large Language Models](https://arxiv.org/abs/2505.12627)：Hercules 用核心抽象提示从优质启发式中抽取先验，并用少样本性能预测减少组合优化启发式评估成本。
+- [Unlocking the Potential of Difficulty Prior in RL-based Multimodal Reasoning](https://arxiv.org/abs/2505.13261)：该方法利用难度先验进行数据筛选并调节基于强化学习的多模态推理训练。
+- [Trust, But Verify: A Self-Verification Approach to Reinforcement Learning with Verifiable Rewards](https://arxiv.org/abs/2505.13445)：模型侧方法候选，Self-verification approach for RLVR reasoning models.
+- [LLM-Based Compact Reranking with Document Features for Scientific Retrieval](https://arxiv.org/abs/2505.13757)：CoRank 先离线抽取科学文档紧凑特征做粗排，再对候选全文细排，以缓解长上下文 listwise reranking 的截断问题。
+- [Reasonless Intermediate Tokens](https://arxiv.org/abs/2505.13775)：研究中间轨迹即使表面语义较弱也能提升推理的原因，并提醒训练出的 CoT-like tokens 未必是内部计算的忠实解释。
 - [Game-RL](https://arxiv.org/abs/2505.13886)：合成可验证的多模态游戏数据，并通过强化学习增强视觉语言模型的一般推理。
+- [Let's Verify Math Questions Step by Step](https://arxiv.org/abs/2505.13903)：构建 ValiMath 和 MathQ-Verify，将数学题拆成原子假设与结论，在用于训练推理模型前识别有缺陷题目。
+- [RL of Thoughts: Navigating LLM Reasoning with Inference-time Reinforcement Learning](https://arxiv.org/abs/2505.14140)：用推理时强化学习引导结构化思维路径搜索。
+- [The Strawberry Problem: Emergence of Character-level Understanding in Tokenized Language Models](https://arxiv.org/abs/2505.14172)：分析 token 化 LLM 中字符级推理能力的涌现，并提出轻量架构改进。
+- [Reinforcement Learning vs. Distillation: Understanding Accuracy and Capability in LLM Reasoning](https://arxiv.org/abs/2505.14216)：比较强化学习与蒸馏对推理准确率和能力形成的作用。
+- [AAPO: Enhancing the Reasoning Capabilities of LLMs with Advantage Margin](https://arxiv.org/abs/2505.14264)：通过 advantage margin 优化增强大模型推理能力。
+- [DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](https://arxiv.org/abs/2505.14362)：通过端到端强化学习训练视觉语言模型在推理中“用图像思考”。
+- [Causal Cartographer: From Mapping to Reasoning Over Counterfactual Worlds](https://arxiv.org/abs/2505.14396)：显式抽取因果图并将其作为世界模型回答反事实问题，把因果推断与已见因果关系记忆区分开来。
+- [Not All Correct Answers Are Equal: Why Your Distillation Source Matters](https://arxiv.org/abs/2505.14464)：比较可验证推理轨迹来源，说明蒸馏质量不仅取决于答案正确，还取决于教师输出分布。
+- [Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning](https://arxiv.org/abs/2505.14677)：用强化学习缓解视觉推理中的捷径学习。
+- [RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning](https://arxiv.org/abs/2505.15034)：联合强化生成器与验证器以提升语言推理。
+- [SAKE: Structured Agentic Knowledge Extrapolation for Complex LLM Reasoning via Reinforcement Learning](https://arxiv.org/abs/2505.15062)：通过结构化的 agentic knowledge extrapolation 与强化学习提升复杂大模型推理。
+- [RoT: Enhancing Table Reasoning with Iterative Row-Wise Traversals](https://arxiv.org/abs/2505.15110)：通过迭代逐行遍历增强表格推理，提高结构化问答可靠性。
+- [Hunyuan-TurboS: Advancing Large Language Models through Mamba-Transformer Synergy and Adaptive Chain-of-Thought](https://arxiv.org/abs/2505.15431)：结合 Mamba-Transformer MoE 架构与自适应思维链机制。
+- [Visual Perturbation and Adaptive Hard Negative Contrastive Learning for Compositional Reasoning in Vision-Language Models](https://arxiv.org/abs/2505.15576)：补充面向视觉语言模型组合推理的视觉扰动与自适应难负样本对比学习方法。
 - [Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](https://arxiv.org/abs/2505.15612)：使用基于长度的自适应奖励塑形来训练高效推理。
+- [CoT Feature Steering](https://arxiv.org/abs/2505.15634)：提取或直接估计与 reasoning 相关的 activation directions，并在生成时 steering，从而在没有 long-CoT 训练数据的情况下增强 chain-of-thought 推理。
+- [ThinkLess: A Training-Free Inference-Efficient Method for Reducing Reasoning Redundancy](https://arxiv.org/abs/2505.15684)：在无需训练的情况下减少推理冗余，提升长思考式 LLM 推理的效率。
+- [TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](https://arxiv.org/abs/2505.15692)：用结构化模板引导强化学习增强 LLM 推理。
+- [Mixture-of-Thought](https://arxiv.org/abs/2505.15817)：在自然语言、代码和 truth-table 符号轨迹之间训练逻辑推理，并用自演化 rationale 过滤让 reasoning modality 成为模型学习对象。
+- [Extracting Probabilistic Knowledge from Large Language Models for Bayesian Network Parameterization](https://arxiv.org/abs/2505.15918)：从 LLM 查询中提取条件概率估计，用作贝叶斯网络参数化和少数据场景下的专家先验。
+- [Pixel Reasoner: Incentivizing Pixel-Space Reasoning with Curiosity-Driven Reinforcement Learning](https://arxiv.org/abs/2505.15966)：提出面向视觉密集任务的像素空间推理与好奇心驱动强化学习。
+- [Training-Free Reasoning and Reflection in MLLMs](https://arxiv.org/abs/2505.16151)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [VLM-R3: Region Recognition, Reasoning, and Refinement for Enhanced Multimodal Chain-of-Thought](https://arxiv.org/abs/2505.16192)：将区域识别、推理与细化结合到多模态思维链中。
+- [Think or Not? Selective Reasoning via Reinforcement Learning for Vision-Language Models](https://arxiv.org/abs/2505.16854)：训练视觉语言模型判断何时投入推理，把强化学习与自适应多模态思考连接起来。
+- [ConciseRL: Conciseness-Guided Reinforcement Learning for Efficient Reasoning Models](https://arxiv.org/abs/2505.17250)：模型侧方法候选，Conciseness-guided RL method for reducing redundant reasoning traces while preserving accuracy.
+- [AdaReasoner: Adaptive Reasoning Enables More Flexible Thinking](https://arxiv.org/abs/2505.17312)：通过自适应推理提升思考行为的灵活性，为按任务需要分配推理强度提供模型侧路线。
+- [On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](https://arxiv.org/abs/2505.17508)：研究面向推理模型强化学习的 KL 正则化策略梯度算法设计与稳定性取舍。
+- [Rethinking the Sampling Criteria in Reinforcement Learning for LLM Reasoning: A Competence-Difficulty Alignment Perspective](https://arxiv.org/abs/2505.17652)：通过能力与难度对齐改进推理强化学习中的 rollout 采样。
+- [Fast Quiet-STaR: Thinking Without Thought Tokens](https://arxiv.org/abs/2505.17746)：在不显式生成思维令牌的情况下加速 Quiet-STaR 式隐式思考。
+- [Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](https://arxiv.org/abs/2505.17838)：证明 continuum transformer 在算子 RKHS 中通过梯度下降完成上下文算子学习，并在无限深度下逼近 Bayes 最优预测器。
+- [Language models can learn implicit multi-hop reasoning, but only if they have lots of training data](https://arxiv.org/abs/2505.17923)：在受控 k-hop 数据上证明无 CoT 的隐式多跳推理需要随 hop 数指数增长的数据和线性增长的层数。
+- [One RL to See Them All: Visual Triple Unified Reinforcement Learning](https://arxiv.org/abs/2505.18129)：用统一模型侧配方整合多类视觉推理强化学习任务。
+- [CrashAgent: Crash Scenario Generation via Multi-modal Reasoning](https://arxiv.org/abs/2505.18341)：把真实事故报告解析为可仿真的道路布局、主车行为和交通参与者行为，用于生成安全关键驾驶场景。
+- [Can Large Language Models Infer Causal Relationships from Real-World Text?](https://arxiv.org/abs/2505.18931)：评估 LLM 从真实文本中识别因果关系的能力，区分直接因果、条件因果、相关和无关系判断。
+- [Self-Critique Guided Iterative Reasoning for Multi-hop Question Answering](https://arxiv.org/abs/2505.19112)：SiGIR 通过端到端训练让模型分解问题、自评中间步骤，并用 branching exploration 选择多跳 QA 推理轨迹。
+- [Interleaved Reasoning for Large Language Models via Reinforcement Learning](https://arxiv.org/abs/2505.19640)：用强化学习训练 LLM 在思考与作答之间交织切换。
+- [DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](https://arxiv.org/abs/2505.20241)：构建面向多模态推理的 domain-reweighted process reward model，改进仅依赖最终答案的监督。
+- [Omni-R1: Reinforcement Learning for Omnimodal Reasoning via Two-System Collaboration](https://arxiv.org/abs/2505.20256)：模型侧方法候选，Omnimodal reasoning RL method using two-system collaboration.
+- [ARM: Adaptive Reasoning Model](https://arxiv.org/abs/2505.20258)：模型侧方法候选，Adaptive reasoning model that adjusts reasoning token usage by task difficulty.
+- [Ground-R1: Incentivizing Grounded Visual Reasoning via Reinforcement Learning](https://arxiv.org/abs/2505.20272)：用强化学习激励 grounded visual reasoning。
+- [Generalizable Heuristic Generation Through Large Language Models with Meta-Optimization](https://arxiv.org/abs/2505.20881)：提出 MoH，让 LLM 迭代改写可自调用的 meta-optimizer，并通过多任务训练生成可跨规模泛化的组合优化启发式。
+- [Why Distillation can Outperform Zero-RL: The Role of Flexible Reasoning](https://arxiv.org/abs/2505.21067)：模型侧方法候选，Reasoning study comparing distillation and zero-RL for flexible reasoning behavior.
+- [GETReason: Enhancing Image Context Extraction through Hierarchical Multi-Agent Reasoning](https://arxiv.org/abs/2505.21863)：用分层事件、地理和时间推理 agent 以及 GREAT 指标抽取公共事件图像语境；该贡献更接近 Agent Harness。
+- [Skywork Open Reasoner 1 Technical Report](https://arxiv.org/abs/2505.22312)：面向通用推理的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Skywork Open Reasoner 1 Technical Report”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Advancing Multimodal Reasoning via Reinforcement Learning with Cold Start](https://arxiv.org/abs/2505.22334)：结合冷启动数据与强化学习来激发多模态推理行为。
+- [The Climb Carves Wisdom Deeper Than the Summit: On the Noisy Rewards in Learning to Reason](https://arxiv.org/abs/2505.22653)：分析学习推理中的噪声奖励及其对推理轨迹的影响。
+- [MoRE: A Mixture of Low-Rank Experts for Adaptive Multi-Task Learning](https://arxiv.org/abs/2505.22694)：提出低秩专家混合机制，用于自适应多任务 LLM 微调。
+- [Infi-MMR: Curriculum-based Unlocking Multimodal Reasoning via Phased Reinforcement Learning in Multimodal Small Language Models](https://arxiv.org/abs/2505.23091)：Infi-MMR 通过分阶段课程强化学习提升多模态小语言模型的推理能力。
+- [Revisiting Overthinking in Long Chain-of-Thought from the Perspective of Self-Doubt](https://arxiv.org/abs/2505.23480)：把长链式思维中的过度思考量化为过度自我怀疑，并提出解码时缓解方法。
+- [Learning Compositional Functions with Transformers from Easy-to-Hard Data](https://arxiv.org/abs/2505.23683)：研究 easy-to-hard 数据何时能让 Transformer 高效学习组合函数，而不是遭遇指数级样本障碍。
+- [CrossICL: Cross-Task In-Context Learning via Unsupervised Demonstration Transfer](https://arxiv.org/abs/2505.24143)：通过两阶段对齐把源任务示例迁移到目标任务上下文学习，在 875 个 Super-NI 任务上分析跨任务示例选择。
+- [Mixed-R1: Unified Reward Perspective For Reasoning Capability in Multimodal Large Language Models](https://arxiv.org/abs/2505.24164)：统一多模态大模型推理能力训练中的奖励设计视角。
+- [How Much Backtracking is Enough? Exploring the Interplay of SFT and RL in Enhancing LLM Reasoning](https://arxiv.org/abs/2505.24273)：分析回溯、监督微调和强化学习在推理增强中的相互作用。
+- [AReaL: A Large-Scale Asynchronous Reinforcement Learning System for Language Reasoning](https://arxiv.org/abs/2505.24298)：构建面向语言推理的大规模异步强化学习系统。
+- [Knowing Before Saying: LLM Representations Encode Information About Chain-of-Thought Success Before Completion](https://arxiv.org/abs/2505.24362)：表明 LLM 表征在生成完成前已编码思维链成功信息，为推理可靠性的模型内部诊断提供线索。
+- [Reflect, Retry, Reward: Self-Improving LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.24726)：模型侧方法候选，Self-reflection reinforcement-learning framework for improving LLM reasoning.
+- [Drop Dropout on Single-Epoch Language Model Pretraining](https://arxiv.org/abs/2505.24788)：补充面向通用推理的模型侧工作，重点是single-epoch language-model pretraining recipe。
+- [MoDoMoDo: Multi-Domain Data Mixtures for Multimodal LLM Reinforcement Learning](https://arxiv.org/abs/2505.24871)：研究多领域数据混合如何影响多模态 LLM 强化学习。
+- [Fast or Slow? Integrating Fast Intuition and Deliberate Thinking for Enhancing Visual Question Answering](https://arxiv.org/abs/2506.00806)：提出 FOCUS，根据问题复杂度在快速零样本回答和带视觉标注的审慎推理之间切换。
+- [Integrating Neural and Symbolic Components in a Model of Pragmatic Question-Answering](https://arxiv.org/abs/2506.01474)：把 LLM 的候选生成与评估模块接入概率语用 QA 模型，分析神经组件在哪些语义环节有效或失效。
 - [PGPO: Enhancing Agent Reasoning via Pseudocode-style Planning Guided Preference Optimization](https://arxiv.org/abs/2506.01475)：用伪代码式规划引导偏好优化，以提升智能体推理。
+- [SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](https://arxiv.org/abs/2506.01713)：用反思感知强化学习增强多模态 LLM 推理。
+- [Beyond the 80/20 Rule: High-Entropy Minority Tokens Drive Effective Reinforcement Learning for LLM Reasoning](https://arxiv.org/abs/2506.01939)：模型侧方法候选，Mechanistic RLVR study arguing high-entropy minority tokens drive reasoning improvements.
+- [SynthRL: Scaling Visual Reasoning with Verifiable Data Synthesis](https://arxiv.org/abs/2506.02096)：通过可验证数据合成扩展视觉推理，为多模态推理 RL 补充合成数据路线。
+- [BNPO: Beta Normalization Policy Optimization](https://arxiv.org/abs/2506.02864)：BNPO 为策略优化提出 beta 归一化，为基于强化学习的推理微调补充了稳定化方法。
+- [Linear Spatial World Models Emerge in Large Language Models](https://arxiv.org/abs/2506.02996)：发现大语言模型内部涌现线性空间世界模型。
+- [Pre3: Enabling Deterministic Pushdown Automata for Faster Structured LLM Generation](https://arxiv.org/abs/2506.03887)：用确定性下推自动机加速结构化 LLM 生成。
+- [Graph Counselor: Adaptive Graph Exploration via Multi-Agent Synergy to Enhance LLM Reasoning](https://arxiv.org/abs/2506.03939)：为 GraphRAG 编排多个图探索 agent，动态调整检索深度和语义焦点，而不是修改基础模型。
+- [Just Enough Thinking: Efficient Reasoning with Adaptive Length Penalties Reinforcement Learning](https://arxiv.org/abs/2506.05256)：模型侧方法候选，Adaptive length-penalty RL method for efficient reasoning.
+- [LLMs are Good Relational Learners](https://arxiv.org/abs/2506.05725)：分析 LLM 的关系学习能力，为关系而非孤立事实上的推理补充模型侧参考。
+- [Unlocking Recursive Thinking of LLMs: Alignment via Refinement](https://arxiv.org/abs/2506.06009)：AvR 合成多轮批评与改进式长 CoT 数据，并用 refinement-aware reward 训练递归推理。
+- [SPARQ: Synthetic Problem Generation for Reasoning via Quality-Diversity Algorithms](https://arxiv.org/abs/2506.06499)：用质量多样性搜索生成数千万数学题解对，并按 solve-rate 难度过滤后再微调同一模型。
+- [Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](https://arxiv.org/abs/2506.06632)：模型侧方法候选，Easy-to-hard curriculum RL method for LLM reasoning.
+- [Syntactic Control of Language Models by Posterior Inference](https://arxiv.org/abs/2506.07154)：把 sequential Monte Carlo 解码与句法标注器结合，在生成时约束文本满足目标 constituency 结构。
+- [Improving LLM Reasoning through Interpretable Role-Playing Steering](https://arxiv.org/abs/2506.07335)：用可解释角色扮演 steering 改善大模型推理。
+- [Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](https://arxiv.org/abs/2506.07527)：将在线微调与强化学习交织用于困难推理问题。
+- [WeThink: Toward General-purpose Vision-Language Reasoning via Reinforcement Learning](https://arxiv.org/abs/2506.07905)：用强化学习训练通用视觉语言推理能力。
+- [Reinforcement Pre-Training](https://arxiv.org/abs/2506.08007)：把 next-token prediction 重写为带可验证奖励的强化学习目标，使普通文本语料也能用于推理模型的预训练阶段。
+- [Reinforcement Learning Teachers of Test Time Scaling](https://arxiv.org/abs/2506.08388)：训练面向测试时扩展的 RL teacher，帮助推理模型更有效分配额外计算。
+- [Consistent Paths Lead to Truth: Self-Rewarding Reinforcement Learning for LLM Reasoning](https://arxiv.org/abs/2506.08745)：利用中间推理状态的一致性作为自奖励信号训练推理模型。
+- [FinHEAR: Human Expertise and Adaptive Risk-Aware Temporal Reasoning for Financial Decision-Making](https://arxiv.org/abs/2506.09080)：构建金融多 agent 时间推理流程，结合趋势分析、事件解释和专家先例检索；分类上更接近 Agent Harness。
+- [ViCrit: A Verifiable Reinforcement Learning Proxy Task for Visual Perception in VLMs](https://arxiv.org/abs/2506.10128)：用可验证的强化学习代理任务训练 VLM 的视觉感知能力。
+- [Time To Impeach LLM-as-a-Judge: Programs are the Future of Evaluation](https://arxiv.org/abs/2506.10403)：PAJAMA 让 LLM 合成可执行评审程序，再本地运行或蒸馏其判断，以降低 LLM-as-judge 成本并提升可审计性。
+- [Reliable Reasoning Path: Distilling Effective Guidance for LLM Reasoning With Knowledge Graphs](https://arxiv.org/abs/2506.10508)：提供模型侧推理、强化学习或测试时适配方法。
+- [Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](https://arxiv.org/abs/2506.10848)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [DaMO: A Data-Efficient Multimodal Orchestrator for Temporal Reasoning with Video LLMs](https://arxiv.org/abs/2506.11558)：提出 Temporal-aware Fuseformer，以双流音视频融合和四阶段渐进训练支持视频中的时间扎根问答。
+- [TreeRL: LLM Reinforcement Learning with On-Policy Tree Search](https://arxiv.org/abs/2506.11902)：将在线强化学习与树搜索结合用于 LLM 推理。
+- [BOW: Reinforcement Learning for Bottlenecked Next Word Prediction](https://arxiv.org/abs/2506.13502)：BOW 通过瓶颈式下一词预测强化学习，促使模型形成更显式的推理。
+- [EvolvTrip: Enhancing Literary Character Understanding with Temporal Theory-of-Mind Graphs](https://arxiv.org/abs/2506.13641)：构建 temporal theory-of-mind graph 和 LitCharToM 基准，用于追踪长篇叙事中角色信念、欲望和意图的演化。
+- [Adaptive Guidance Accelerates Reinforcement Learning of Reasoning Models](https://arxiv.org/abs/2506.13923)：模型侧方法候选，Adaptive guidance method for accelerating RLVR training of reasoning models.
+- [Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](https://arxiv.org/abs/2506.14245)：研究可验证奖励强化学习如何激励 base LLM 的正确推理。
+- [PeRL: Permutation-Enhanced Reinforcement Learning for Interleaved Vision-Language Reasoning](https://arxiv.org/abs/2506.14907)：用 permutation-enhanced 强化学习处理交错式视觉语言推理。
+- [Semantically-Aware Rewards for Open-Ended R1 Training in Free-Form Generation](https://arxiv.org/abs/2506.15068)：语义感知奖励面向自由生成中的开放式 R1 训练，将奖励设计扩展到精确答案验证器之外。
+- [AutoRule: Reasoning Chain-of-thought Extracted Rule-based Rewards Improve Preference Learning](https://arxiv.org/abs/2506.15651)：从思维链轨迹中抽取规则化奖励，用于改进推理模型的偏好学习。
+- [GRPO-CARE: Consistency-Aware Reinforcement Learning for Multimodal Reasoning](https://arxiv.org/abs/2506.16141)：提出一致性感知强化学习以增强多模态推理。
+- [Language-Informed Synthesis of Rational Agent Models for Grounded Theory-of-Mind Reasoning On-The-Fly](https://arxiv.org/abs/2506.16755)：按需合成理性智能体模型，用于具身/情境化的 theory-of-mind 推理。
+- [Understanding Reasoning in Thinking Language Models via Steering Vectors](https://arxiv.org/abs/2506.18167)：用 steering vectors 分析和控制 thinking language models 的推理行为。
+- [ReasonFlux-PRM: Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning in LLMs](https://arxiv.org/abs/2506.18896)：构建面向长链式思考的轨迹感知过程奖励模型。
+- [OctoThinker: Mid-training Incentivizes Reinforcement Learning Scaling](https://arxiv.org/abs/2506.20512)：模型侧方法候选，Mid-training method that improves suitability for RL scaling in reasoning models.
+- [Hierarchical Reasoning Model](https://arxiv.org/abs/2506.21734)：提出用于分解并求解复杂推理问题的 hierarchical reasoning model，适合作为模型侧推理方法条目。
+- [Why Neural Network Can Discover Symbolic Structures with Gradient-based Training: An Algebraic and Geometric Foundation for Neurosymbolic Reasoning](https://arxiv.org/abs/2506.21797)：解释基于梯度的训练如何发现符号结构。
+- [A Systematic Study of Compositional Syntactic Transformer Language Models](https://arxiv.org/abs/2506.22978)：补充面向通用推理的模型侧工作，重点是compositional syntactic transformer language models。
 - [Do Thinking Tokens Help or Trap? Towards More Efficient Large Reasoning Model](https://arxiv.org/abs/2506.23840)：分析 thinking tokens 何时帮助或困住推理模型，澄清高效推理权衡。
+- [Making Logic a First-Class Citizen in Generative ML for Networking](https://arxiv.org/abs/2506.23964)：NetNomos 从网络测量数据中学习一阶逻辑规则、筛选语义有效规则，并在生成时用 SMT solver 强制满足规则。
+- [RelationalCoder: Rethinking Complex Tables via Programmatic Relational Transformation](https://doi.org/10.18653/v1/2025.acl-long.89)：用程序化关系变换提升复杂表格推理。
+- [Beyond Words: Integrating Theory of Mind into Conversational Agents for Human-Like Belief, Desire, and Intention Alignment](https://doi.org/10.18653/v1/2025.findings-acl.287)：研究 LLaMA 对话 agent 中的 Theory-of-Mind 表征，并展示 ToM 感知对齐可改善对信念、欲望和意图的响应。
+- [ReKG-MCTS: Reinforcing LLM Reasoning on Knowledge Graphs via Training-Free Monte Carlo Tree Search](https://doi.org/10.18653/v1/2025.findings-acl.484)：在知识图谱路径上使用 MCTS，并以 LLM 引导 rollout 与价值回传；无需训练即可提升 WebQSP 和 CWQ 推理。
+- [GLM-4.5V and GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning](https://arxiv.org/abs/2507.01006)：报告 GLM-4.5V 与 GLM-4.1V-Thinking，并以可扩展强化学习增强多模态推理。
+- [StepHint: Multi-level Stepwise Hints Enhance Reinforcement Learning to Reason](https://arxiv.org/abs/2507.02841)：用多层级逐步提示改善推理强化学习训练。
+- [Controllable diffusion-based generation for multi-channel biological data](https://arxiv.org/abs/2507.02902)：为多通道空间生物数据设计扩散生成器，结合层级特征注入、通道注意力和随机掩码条件。
+- [Look-Back: Implicit Visual Re-focusing in MLLM Reasoning](https://arxiv.org/abs/2507.03019)：揭示 MLLM 在推理中可隐式重新聚焦视觉证据。
+- [Towards Unified Neurosymbolic Reasoning on Knowledge Graphs](https://arxiv.org/abs/2507.03697)：统一神经和符号知识图谱推理，并覆盖规则、路径和嵌入等多种推理场景。
+- [Can LLMs Play Ô Ăn Quan? A Study of Multi-Step Planning and Decision Making](https://arxiv.org/abs/2507.03711)：用越南棋类游戏 Ô Ăn Quan 测试 LLM persona 的多步落子规划、捕获策略和动态局面决策。
+- [High-Resolution Visual Reasoning via Multi-Turn Grounding-Based Reinforcement Learning](https://arxiv.org/abs/2507.05920)：该方法用多轮 grounding 强化学习提升高分辨率视觉推理，将多模态推理后训练扩展到精细视觉证据。
+- [Cross-Modal Dual-Causal Learning for Long-Term Action Recognition](https://arxiv.org/abs/2507.06603)：在长期动作识别中分离视觉与文本因果因素，使跨模态线索服务时间推理而不是形成捷径。
+- [RLEP: Reinforcement Learning with Experience Replay for LLM Reasoning](https://arxiv.org/abs/2507.07451)：先收集通过验证的推理轨迹，再在 RL 更新中混合重放成功经验与新 rollout，以减少无效探索并加速收敛。
+- [The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-Training Techniques for Reasoning VLMs](https://arxiv.org/abs/2507.07562)：该研究分析长链式思维监督微调与强化学习在推理型 VLM 中的协同与冲突。
+- [DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion](https://arxiv.org/abs/2507.11229)：把局部 message passing 和全局 attention 分成双路径处理，以缓解 KG 推理中的得分过平滑。
+- [EXAONE 4.0: Unified Large Language Models Integrating Non-reasoning and Reasoning Modes](https://arxiv.org/abs/2507.11407)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Reasoning-Finetuning Repurposes Latent Representations](https://arxiv.org/abs/2507.12638)：研究 reasoning fine-tuning 如何重用并改写 base model 的潜在表征。
+- [VisionThink: Smart and Efficient Vision Language Model via Reinforcement Learning](https://arxiv.org/abs/2507.13348)：通过强化学习构建更高效的视觉语言推理模型。
+- [Question-Answer Extraction from Scientific Articles Using Knowledge Graphs and Large Language Models](https://arxiv.org/abs/2507.13827)：通过显著段落选择和知识图谱语境比较生成论文级 QA 对，使贡献抽取不只依赖单篇文本。
+- [Causal Process Models: Reframing Dynamic Causal Graph Discovery as a Reinforcement Learning Problem](https://arxiv.org/abs/2507.13920)：将动态因果图发现重构为面向因果过程的强化学习问题。
+- [Self-Improving Language Models for Evolutionary Program Synthesis: A Case Study on ARC-AGI](https://arxiv.org/abs/2507.14172)：在 ARC-AGI 上交替进行演化式程序搜索与 hindsight fine-tuning，把成功搜索转化为抽象推理训练数据。
+- [HyDRA: A Hybrid-Driven Reasoning Architecture for Verifiable Knowledge Graphs](https://arxiv.org/abs/2507.15917)：先由协作式神经符号 agent 生成 competency questions 和 ontology graph，再用其约束文档三元组抽取以构建可验证 KG。
+- [Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty](https://arxiv.org/abs/2507.16806)：让语言模型在二元奖励之外学习表达和利用不确定性。
+- [Semi-off-Policy Reinforcement Learning for Vision-Language Slow-thinking Reasoning](https://arxiv.org/abs/2507.16814)：该方法使用半离策略强化学习提升视觉语言模型的慢思考推理能力。
+- [Dynamic and Generalizable Process Reward Modeling](https://arxiv.org/abs/2507.17849)：用动态奖励树和基于帕累托的偏好选择构建跨领域逐步推理监督。
+- [Revisiting LLM Reasoning via Information Bottleneck](https://arxiv.org/abs/2507.18391)：把信息瓶颈正则加入基于强化学习的推理后训练，使推理轨迹既服务正确答案又能跨提示泛化。
+- [Learning Only with Images: Visual Reinforcement Learning with Reasoning, Rendering, and Visual Feedback](https://arxiv.org/abs/2507.20766)：结合图像强化学习、渲染和视觉反馈训练视觉推理。
+- [Libra: Assessing and Improving Reward Model by Learning to Think](https://arxiv.org/abs/2507.21645)：Libra 让奖励模型先思考再评判，扩展了推理模型后训练中的过程奖励和结果奖励建模。
+- [VL-Cogito: Progressive Curriculum Reinforcement Learning for Advanced Multimodal Reasoning](https://arxiv.org/abs/2507.22607)：用渐进课程强化学习增强高级多模态推理。
+- [LENS: Learning Ensemble Confidence from Neural States for Multi-LLM Answer Integration](https://arxiv.org/abs/2507.23167)：用各模型的层级 hidden states 和归一化概率训练轻量置信度预测器，再按上下文可靠性加权多 LLM 答案。
+- [GraphRAG-R1: Graph Retrieval-Augmented Generation with Process-Constrained Reinforcement Learning](https://arxiv.org/abs/2507.23581)：GraphRAG-R1 将图检索增强生成与过程约束强化学习结合，扩展了结构化证据推理模型。
+- [RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization](https://arxiv.org/abs/2508.00222)：用混合策略优化缓解 RLVR 中的能力边界塌缩问题。
+- [Knowledge Editing for Multi-Hop Question Answering Using Semantic Analysis](https://arxiv.org/abs/2508.00914)：CHECK 用语义分析进行多跳问答知识编辑，比单纯问题分解更能保持组合推理过程一致。
+- [RSPO: Risk-Seeking Policy Optimization for Pass@k and Max@k Metrics in Large Language Models](https://arxiv.org/abs/2508.01174)：面向 pass@k 与 max@k 推理指标进行策略优化。
+- [TIC-GRPO: Provable and Efficient Optimization for Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2508.02833)：在 GRPO 中使用 trajectory-level correction，提升语言模型强化微调效率。
+- [Sotopia-RL: Reward Design for Social Intelligence](https://arxiv.org/abs/2508.03905)：研究在 Sotopia 式交互环境中训练社会智能的奖励设计。
+- [Markov Chain Estimation with In-Context Learning](https://arxiv.org/abs/2508.03934)：显示 Transformer 在规模和训练数据超过阈值后，可从上下文估计未见 Markov chain 的转移矩阵。
+- [Method-Based Reasoning for Large Language Models: Extraction, Reuse, and Continuous Improvement](https://arxiv.org/abs/2508.04289)：从训练内容、模型回复和用户交互中抽取可复用问题解法，并在新查询中检索、排序和持续改进这些方法。
+- [GTPO and GRPO-S: Token and Sequence-Level Reward Shaping with Policy Entropy](https://arxiv.org/abs/2508.04349)：结合策略熵进行 token 级与序列级奖励塑形，把 GRPO 风格推理强化学习从稀疏结果奖励扩展到更细粒度的训练信号。
+- [Hop, Skip, and Overthink: Diagnosing Why Reasoning Models Fumble during Multi-Hop Analysis](https://arxiv.org/abs/2508.04699)：按证据文档多样性、证据使用完整性和过度思考行为细分推理模型的多跳失败。
+- [Shuffle-R1: Efficient RL framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](https://arxiv.org/abs/2508.05612)：用数据中心的动态 shuffle 框架提升多模态强化学习效率。
+- [Neuro-Symbolic Acceleration of MILP Motion Planning with Temporal Logic and Chance Constraints](https://arxiv.org/abs/2508.07515)：用学习型引导加速带时序逻辑和机会约束的 MILP 运动规划符号搜索。
+- [Klear-Reasoner: Advancing Reasoning Capability via Gradient-Preserving Clipping Policy Optimization](https://arxiv.org/abs/2508.07629)：通过保持梯度的裁剪式策略优化提升推理能力。
 - [Promoting Efficient Reasoning with Verifiable Stepwise Reward](https://arxiv.org/abs/2508.10293)：使用可验证的步骤级奖励促进高效推理，而不只依赖最终答案奖励。
-- [NVIDIA Nemotron Nano 2](https://arxiv.org/abs/2508.14444)：提出面向通用推理的模型侧方法，核心围绕 Accurate and Efficient Hybrid Mamba-Transformer Reasoning Model。
+- [Pass@k Training for Adaptively Balancing Exploration and Exploitation of Large Reasoning Models](https://arxiv.org/abs/2508.10751)：把 Pass@k 显式用作 RLVR 奖励，推导优势函数并调节大推理模型的探索与利用。
+- [Enhancing Supervised Composed Image Retrieval via Reasoning-Augmented Representation Engineering](https://arxiv.org/abs/2508.11272)：把推理增强表征工程用于组合图像检索，在不额外训练 reranker 的情况下改进图像与修改文本匹配。
+- [ETTRL: Balancing Exploration and Exploitation in LLM Test-Time Reinforcement Learning Via Entropy Mechanism](https://arxiv.org/abs/2508.11356)：在测试时强化学习中加入 entropy-fork rollout 与基于熵的优势重塑，用于平衡开放域推理中的探索和利用。
+- [SSPO: Self-traced Step-wise Preference Optimization for Process Supervision and Reasoning Compression](https://arxiv.org/abs/2508.12604)：SSPO 将自跟踪的逐步偏好与过程监督和简洁推理相结合，提供了可复用的步骤级偏好优化方法。
+- [Creative4U: MLLMs-based Advertising Creative Image Selector with Comparative Reasoning](https://arxiv.org/abs/2508.12628)：构建 CreativePair 成对数据，并用 Reason-to-Select 微调训练面向用户兴趣的 MLLM 广告图比较选择器。
+- [Neuro-Symbolic Artificial Intelligence: Towards Improving the Reasoning Abilities of Large Language Models](https://arxiv.org/abs/2508.13678)：按 Symbolic-to-LLM、LLM-to-Symbolic 和 LLM-plus-symbolic 三类梳理神经符号增强 LLM 推理方法。
+- [Your Reward Function for RL is Your Best PRM for Search: Unifying RL and Search-Based TTS](https://arxiv.org/abs/2508.14313)：模型侧方法候选，Unifies RL reward functions and process-reward-style search for test-time reasoning scaling.
+- [Knowledge Graph-Infused Fine-Tuning](https://arxiv.org/abs/2508.14427)：将知识图谱结构注入 LLM 微调以提升结构化推理，为图谱扎根推理补充模型侧路线。
+- [NVIDIA Nemotron Nano 2](https://arxiv.org/abs/2508.14444)：报告 NVIDIA Nemotron Nano 2 家族中的混合 Mamba-Transformer 推理模型，强调准确率与推理效率兼顾。
+- [MissionHD: Data-Driven Refinement of Reasoning Graph Structure through Hyperdimensional Causal Path Encoding and Decoding](https://arxiv.org/abs/2508.14746)：把 LLM 生成的推理图编码到超维空间，并解码边贡献来细化视频异常检测中的推理结构。
+- [Think in Blocks: Adaptive Reasoning from Direct Response to Deep Reasoning](https://arxiv.org/abs/2508.15507)：用分块机制在直接回答和深度推理之间自适应切换。
+- [CIA+TA Risk Assessment for AI Reasoning Vulnerabilities](https://arxiv.org/abs/2508.15839)：在传统 CIA 安全三元组之外加入 Trust 和 Autonomy，用于分类针对 AI 推理过程而非基础设施的攻击。
+- [OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](https://arxiv.org/abs/2508.16198)：提供 6144 道跨文本、视觉和语音的均衡多跳问题，用于暴露全模态推理模型的模态捷径。
+- [RL Is Neither a Panacea Nor a Mirage: Understanding Supervised vs. Reinforcement Learning Fine-Tuning for LLMs](https://arxiv.org/abs/2508.16546)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Learning from Diverse Reasoning Paths with Routing and Collaboration](https://arxiv.org/abs/2508.16861)：通过路由与协作从多样推理路径中学习。
+- [Unbiased Reasoning for Knowledge-Intensive Tasks in Large Language Models via Conditional Front-Door Adjustment](https://arxiv.org/abs/2508.16910)：使用 conditional front-door prompting，在外部知识条件下估计 query 对 answer 的因果效应以降低内在偏差。
+- [ReFactX: Scalable Reasoning with Reliable Facts via Constrained Generation](https://arxiv.org/abs/2508.16983)：把外部事实编码为受约束生成条件，使 LLM 在不依赖独立检索器或辅助模型的情况下扎根回答。
+- [History Rhymes: Accelerating LLM Reinforcement Learning with RhymeRL](https://arxiv.org/abs/2508.18588)：RhymeRL 加速大模型推理强化学习，补充了直接服务于推理后训练的训练效率方法。
+- [ThinkDial: An Open Recipe for Controlling Reasoning Effort in Large Language Models](https://arxiv.org/abs/2508.18773)：提供控制大模型推理努力程度的开放配方。
+- [MovieCORE: COgnitive REasoning in Movies](https://arxiv.org/abs/2508.19026)：发布面向 system-2 电影问答的数据集，并提出 Agentic Choice Enhancement 后训练模块提升深层视频推理。
+- [Linear-Time Demonstration Selection for In-Context Learning via Gradient Estimation](https://arxiv.org/abs/2508.19999)：通过输入 embedding 梯度估计候选示例对输出的影响，以线性时间预计算选择上下文学习 demonstrations。
+- [Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLM](https://arxiv.org/abs/2508.20384)：提出面向推理大模型不确定性的序列级熵面积指标。
+- [LLaVA-Critic-R1: Your Critic Model is Secretly a Strong Policy Model](https://arxiv.org/abs/2509.00676)：说明视觉语言 critic model 可转化为强策略模型。
+- [Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](https://arxiv.org/abs/2509.03646)：分析强化学习在 LLM 中诱发的层级推理现象。
+- [Intermediate Languages Matter: Formal Languages and LLMs affect Neurosymbolic Reasoning](https://arxiv.org/abs/2509.04083)：比较四种形式语言、三个数据集和七个 LLM，说明中间语言选择会显著改变神经符号推理准确率。
+- [Knowledge Collapse in LLMs: When Fluency Survives but Facts Fail under Recursive Synthetic Training](https://arxiv.org/abs/2509.04796)：把递归合成训练下“流畅但事实失败”的退化定义为 knowledge collapse，并测试领域专用合成数据缓解方案。
+- [Icon2: Aligning Large Language Models Using Self-Synthetic Preference Data via Inherent Regulation](https://arxiv.org/abs/2509.05605)：从模型表示空间中抽取逐层偏好方向，用 inherent regulation 合成贴合目标模型的偏好数据。
+- [Aligning Large Vision-Language Models by Deep Reinforcement Learning and Direct Preference Optimization](https://arxiv.org/abs/2509.06759)：该工作结合深度强化学习和直接偏好优化来对齐大型视觉语言模型，扩展了多模态推理对齐方法。
+- [floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL](https://arxiv.org/abs/2509.06863)：用 flow matching 训练 critic 以扩展价值型强化学习算力，补充推理系统的 RL 模型训练覆盖。
+- [The Majority is not always right: RL training for solution aggregation](https://arxiv.org/abs/2509.06870)：用强化学习训练解答聚合，研究在何种情况下应由学习到的聚合行为替代采样推理路径的多数投票。
+- [Outcome-based Exploration for LLM Reasoning](https://arxiv.org/abs/2509.06941)：面向大模型推理优化基于结果的探索策略。
+- [Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](https://arxiv.org/abs/2509.06948)：协同结合监督微调与强化学习提升 LLM 推理。
+- [Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](https://arxiv.org/abs/2509.06949)：研究 diffusion language models 的强化学习训练，将后训练方法扩展到自回归 LLM 之外。
+- [VL Norm: Rethink Loss Aggregation in RLVR](https://arxiv.org/abs/2509.07558)：VL Norm 重新审视 RLVR 中的损失聚合，为多模态或可验证奖励推理训练提供了更稳定的归一化调控轴。
+- [Certainty-Guided Reasoning in Large Language Models: A Dynamic Thinking Budget Approach](https://arxiv.org/abs/2509.07820)：补充面向通用推理的模型侧工作，重点是certainty-guided dynamic thinking budget。
+- [Parallel-R1: Towards Parallel Thinking via Reinforcement Learning](https://arxiv.org/abs/2509.07980)：模型侧方法候选，RL method for parallel-thinking reasoning behavior.
+- [Clip Your Sequences Fairly: Enforcing Length Fairness for Sequence-Level RL](https://arxiv.org/abs/2509.09177)：处理序列级强化学习中的长度公平性，减少策略更新对 rollout 长度的偏置。
+- [Modelling Analogies and Analogical Reasoning: Connecting Cognitive Science Theory and NLP Research](https://arxiv.org/abs/2509.09381)：把认知科学中的类比映射理论与 NLP 问题连接起来，强调关系理解而不是实体相似度。
+- [IGPO](https://arxiv.org/abs/2509.10396)：面向 diffusion LLM 的 inpainting-guided policy optimization，在在线采样时插入部分 reasoning traces，以改善稀疏奖励下的探索。
+- [RL Fine-Tuning Heals OOD Forgetting in SFT](https://arxiv.org/abs/2509.12235)：模型侧方法候选，Post-training analysis showing RL fine-tuning can repair OOD forgetting after SFT in reasoning models.
+- [Perception Before Reasoning: Two-Stage Reinforcement Learning for Visual Reasoning in Vision-Language Models](https://arxiv.org/abs/2509.13031)：用两阶段强化学习区分视觉语言模型中的感知强化与推理强化。
+- [K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning via Knowledge Decoupling](https://arxiv.org/abs/2509.16929)：把持续结构化知识推理解耦为任务特定和任务无关阶段，并配合双视角记忆巩固与结构引导伪数据合成。
+- [APRIL: Active Partial Rollouts in Reinforcement Learning to Tame Long-tail Generation](https://arxiv.org/abs/2509.18521)：在强化学习中使用主动式 partial rollout 聚焦长尾生成失败，为提升推理型生成能力提供 rollout 选择路径。
+- [What Characterizes Effective Reasoning? Revisiting Length, Review, and Structure of CoT](https://arxiv.org/abs/2509.19284)：系统评估长度、回看和结构选择如何影响 CoT 有效性。
+- [Are We Scaling the Right Thing? A System Perspective on Test-Time Scaling](https://arxiv.org/abs/2509.19645)：从系统成本、延迟和质量约束重新审视 reasoning test-time scaling。
 - [VCRL: Variance-based Curriculum Reinforcement Learning for Large Language Models](https://arxiv.org/abs/2509.19803)：采用基于方差的课程强化学习训练大语言模型推理能力。
+- [Causal Understanding by LLMs: The Role of Uncertainty](https://arxiv.org/abs/2509.20088)：在不确定性评估下测试因果关系分类，发现模型在已见和未见 PubMed 因果句上都接近均匀猜测。
+- [Thinking Augmented Pre-training](https://arxiv.org/abs/2509.20186)：用生成的 thinking trajectories 增强预训练文本，使难预测 token 带有显式 rationale，从而提升数据利用效率。
+- [LATTS: Locally Adaptive Test-Time Scaling](https://arxiv.org/abs/2509.20368)：按生成步骤分配 verifier 引导的测试时计算，根据局部难度决定重采样、回溯、重启或停止。
+- [Dynamic Reasoning Chains Through Depth-Specialized Mixture-of-Experts in Transformer Architectures](https://arxiv.org/abs/2509.20577)：用深度专门化 MoE 路由按输入难度组合浅层、组合、逻辑、记忆和元认知专家。
+- [CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning](https://arxiv.org/abs/2509.20712)：在 LLM 策略优化中协调熵，保留传统 clipping 可能丢弃的梯度信号。
+- [Difference-Guided Reasoning: A Temporal-Spatial Framework for Large Language Models](https://arxiv.org/abs/2509.20713)：提示 LLM 识别时间和空间差异，优先处理影响最大的新变化，并将其连接到行动或外部证据。
+- [Limitations on Accurate, Trusted, Human-level Reasoning](https://arxiv.org/abs/2509.21654)：在严格定义下证明准确性、被信任状态与人类级推理不可兼得，并借鉴 Gödel 和 Turing 式不可判定限制。
+- [No Prompt Left Behind: Exploiting Zero-Variance Prompts in LLM Reinforcement Learning via Entropy-Guided Advantage Shaping](https://arxiv.org/abs/2509.21880)：用熵引导优势塑形利用 RLVR 中的零方差提示。
+- [StepORLM: A Self-Evolving Framework With Generative Process Supervision For Operations Research Language Models](https://arxiv.org/abs/2509.22558)：让 OR 策略模型与生成式过程奖励模型共同演化，并通过 W-DPO 结合求解器结果检查与整体过程评价。
+- [Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](https://arxiv.org/abs/2509.23067)：在不可验证的开放式任务上不依赖显式自评，而是利用语义一致性信号进行模型侧自我改进。
+- [Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](https://arxiv.org/abs/2509.23365)：研究连续思维链表征的训练动态。
+- [Experience-Guided Reflective Co-Evolution of Prompts and Heuristics for Automatic Algorithm Design](https://arxiv.org/abs/2509.24509)：用岛屿迁移、精英选择和性能反馈共同进化 prompt 与启发式算法，以降低自动算法设计陷入局部最优的风险。
+- [Knapsack RL: Unlocking Exploration of LLMs via Optimizing Budget Allocation](https://arxiv.org/abs/2509.25849)：在大模型强化学习中优化探索预算分配，以提升推理探索能力。
+- [Reinforcement Learning with Verifiable yet Noisy Rewards under Imperfect Verifiers](https://arxiv.org/abs/2510.00915)：研究带可验证但有噪声奖励的强化学习，说明不完美 verifier 如何影响推理模型后训练。
+- [Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code](https://arxiv.org/abs/2510.01539)：通过可执行代码与数学反事实任务、合成反事实数据以及强化学习提升因果反事实推理，并考察其对监督代码结构之外任务的泛化。
+- [Plan Then Action:High-Level Planning Guidance Reinforcement Learning for LLM Reasoning](https://arxiv.org/abs/2510.01833)：在强化学习中加入高层规划指导，先增强 LLM 推理再生成行动。
+- [DiFFPO: Training Diffusion LLMs to Reason Fast and Furious via Reinforcement Learning](https://arxiv.org/abs/2510.02212)：提供模型侧推理、强化学习或测试时适配方法。
+- [RLAD: Training LLMs to Discover Abstractions for Solving Reasoning Problems](https://arxiv.org/abs/2510.02263)：训练 LLM 发现用于解题的抽象。
+- [Front-Loading Reasoning: The Synergy between Pretraining and Post-Training Data](https://arxiv.org/abs/2510.03264)：研究预训练中的推理数据如何与后训练协同提升推理。
+- [CCD-Bench: Probing Cultural Conflict in Large Language Model Decision-Making](https://arxiv.org/abs/2510.03553)：对 Model 章节而言偏评测侧，但揭示重要对齐风险：用 2,182 个跨文化困境发现追求共识的 LLM 偏好会低估若干 GLOBE 文化簇。
+- [Scaling Code-Assisted Chain-of-Thoughts and Instructions for Model Reasoning](https://arxiv.org/abs/2510.04081)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [Offline World Models as Imagination Networks in Cognitive Agents](https://arxiv.org/abs/2510.04391)：用想象鲜明度评分的心理网络分析比较人类与 LLM 的持久离线 world model 结构，显示 LLM 内部表征聚类较弱。
+- [Mitigating Forgetting Between Supervised and Reinforcement Learning Yields Stronger Reasoners](https://arxiv.org/abs/2510.04454)：说明缓解 SFT 与 RL 之间的遗忘可训练更强推理模型。
+- [LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning](https://arxiv.org/abs/2510.04573)：用潜在扩散增强 LLM 文本推理。
+- [Relational Transformer](https://arxiv.org/abs/2510.06377)：在异构关系数据库上预训练 Transformer，使其能跨 schema 与结构化推理任务零样本迁移。
+- [XRPO: Pushing the limits of GRPO with Targeted Exploration and Exploitation](https://arxiv.org/abs/2510.06672)：提供模型侧推理、强化学习或测试时适配方法。
+- [Think Just Enough: Sequence-Level Entropy as a Confidence Signal for LLM Reasoning](https://arxiv.org/abs/2510.08146)：用 token logprob 的序列级熵作为推理模型的置信信号，提前停止低收益推理以减少不必要 token。
+- [Multi-Temperature RLVR](https://arxiv.org/abs/2510.08892)：研究 RLVR 中 token 级与 rollout 级温度控制的推理训练策略。
+- [Pinpointing crucial steps: Attribution-based Credit Assignment for Verifiable Reinforcement Learning](https://arxiv.org/abs/2510.08899)：用归因定位关键推理步骤，并为可验证强化学习分配信用。
+- [Diagnosing and Mitigating System Bias in Self-Rewarding RL](https://arxiv.org/abs/2510.08977)：诊断并缓解模型在自奖励强化学习中产生的系统性偏差。
+- [DICE: Structured Reasoning in LLMs through SLM-Guided Chain-of-Thought Correction](https://arxiv.org/abs/2510.09211)：用两阶段结构化 CoT 适配数据和 dual tuning 训练小语言模型，使其把 LLM 输出修正为 analyze-then-answer 的结构化格式。
+- [DSPO: Stable and Efficient Policy Optimization for Agentic Search and Reasoning](https://arxiv.org/abs/2510.09255)：DSPO 面向智能体式搜索与推理的稳定高效策略优化，扩展了面向搜索型推理模型的 RLVR 优化路线。
+- [Spotlight on Token Perception for Multimodal Reinforcement Learning](https://arxiv.org/abs/2510.09285)：模型侧方法候选，Multimodal RLVR method analyzing and optimizing token-level visual perception in LVLM reasoning.
+- [Hybrid Models for Natural Language Reasoning: The Case of Syllogistic Logic](https://arxiv.org/abs/2510.09472)：用三段论逻辑区分组合式规则抽象与递归推断，并比较神经模型和 hybrid reasoning models 的逻辑泛化。
+- [Answer-Consistent Chain-of-thought Reinforcement Learning For Multi-modal Large Langauge Models](https://arxiv.org/abs/2510.10104)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [Rethinking Entropy Interventions in RLVR: An Entropy Change Perspective](https://arxiv.org/abs/2510.10150)：分析 RLVR 推理训练中的 entropy collapse 与 entropy-change 干预。
+- [Adaptive Dual Reasoner: Large Reasoning Models Can Think Efficiently by Hybrid Reasoning](https://arxiv.org/abs/2510.10207)：提供模型侧推理、强化学习或测试时适配方法。
+- [Unlocking Exploration in RLVR: Uncertainty-aware Advantage Shaping for Deeper Reasoning](https://arxiv.org/abs/2510.10649)：提供模型侧推理、强化学习或测试时适配方法。
+- [Adaptive Selection of Symbolic Languages for Improving LLM Logical Reasoning](https://arxiv.org/abs/2510.10703)：在自然语言逻辑题翻译前先选择目标 symbolic language 类型，让一阶逻辑或 satisfiability 等形式系统匹配题目结构。
+- [Representation-Based Exploration for Language Models: From Test-Time to Post-Training](https://arxiv.org/abs/2510.11686)：用表征信号支撑从测试时搜索到后训练的探索，改进语言模型发现更优推理路径的能力。
+- [Demystifying Reinforcement Learning in Agentic Reasoning](https://arxiv.org/abs/2510.11701)：从数据、算法和推理模式系统分析 agentic reasoning 中的强化学习。
+- [CompoDistill](https://arxiv.org/abs/2510.12184)：通过注意力蒸馏提升多模态 LLM 的组合推理。核心思想：迁移有助于跨步骤结合视觉与文本证据的注意力模式。
 - [T3](https://arxiv.org/abs/2510.12264)：在需要迭代更新证据的主动推理任务中，通过强化学习降低信念偏移。
+- [D-SMART: Enhancing LLM Dialogue Consistency via Dynamic Structured Memory And Reasoning Tree](https://arxiv.org/abs/2510.13363)：在对话历史上维护动态结构化记忆和 reasoning tree，使多轮回复能随上下文变化保持事实与逻辑一致。
+- [Assessing LLM Reasoning Through Implicit Causal Chain Discovery in Climate Discourse](https://arxiv.org/abs/2510.13417)：分类存疑：这是诊断评测而非模型训练工作，要求九个 LLM 生成气候话语因果对之间的中间 causal steps，并衡量粒度、自一致性和专家一致性。
+- [MemoTime](https://arxiv.org/abs/2510.13614)：用 temporal knowledge-graph memory 增强 LLM 的时间感知结构化推理。
+- [What is the objective of reasoning with reinforcement learning?](https://arxiv.org/abs/2510.13651)：推导常见二元奖励 RL 算法如何优化正确答案概率的变换形式，澄清推理模型训练中的目标设计。
+- [The Art of Scaling Reinforcement Learning Compute for LLMs](https://arxiv.org/abs/2510.13786)：模型侧方法候选，Scaling analysis for reinforcement-learning compute in LLM post-training.
+- [Reasoning with Sampling: Your Base Model is Smarter Than You Think](https://arxiv.org/abs/2510.14901)：模型侧方法候选，Sampling-centered inference-scaling study for base-model reasoning.
+- [AutoGraph-R1: End-to-End Reinforcement Learning for Knowledge Graph Construction](https://arxiv.org/abs/2510.15339)：用来自下游 GraphRAG 效用的任务感知奖励训练 LLM 图构造器，把 KG 优化为知识载体和索引，而非静态产物。
+- [Cog-Rethinker: Hierarchical Metacognitive Reinforcement Learning for LLM Reasoning](https://arxiv.org/abs/2510.15979)：Cog-Rethinker 使用层级元认知强化学习提升 LLM 推理能力。
+- [Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence](https://arxiv.org/abs/2510.16657)：研究用 synthetic data verification 改善近期训练效果和长期收敛，为依赖合成数据的推理训练管线补充模型侧保障。
+- [Enhancing Language Agent Strategic Reasoning through Self-Play in Adversarial Games](https://arxiv.org/abs/2510.16761)：通过 step-level policy optimization 和 self-play 对手选择，提升语言 agent 在动态对抗博弈中的策略推理能力。
+- [Auto-Rubric: Learning to Extract Generalizable Criteria for Reward Modeling](https://arxiv.org/abs/2510.17314)：学习抽取可泛化的奖励建模准则，使基于 rubric 的评测与后训练不再依赖固定人工 rubric。
+- [SPACeR: Self-Play Anchoring with Centralized Reference Models](https://arxiv.org/abs/2510.18060)：提供模型侧推理、强化学习或测试时适配方法。
+- [A Model Can Help Itself: Reward-Free Self-Training for LLM Reasoning](https://arxiv.org/abs/2510.18814)：SePT 通过自生成答案和继续训练交替进行，在无外部奖励的条件下提升 LLM 推理能力。
+- [Every Step Evolves: Scaling Reinforcement Learning for Trillion-Scale Thinking Model](https://arxiv.org/abs/2510.18855)：将强化学习扩展到万亿级 thinking model 训练。
+- [BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](https://arxiv.org/abs/2510.18927)：用自适应 clipping 边界重新平衡正负策略梯度贡献，在重放或部分 rollout 的离线策略 RL 中保持 entropy 并稳定训练。
+- [RLIE: Rule Generation with Logistic Regression, Iterative Refinement, and Evaluation for Large Language Models](https://arxiv.org/abs/2510.19698)：把 LLM 生成的自然语言规则与 logistic regression 加权、迭代规则集 refinement 和评估结合，形成校准后的概率规则学习器。
+- [Plan Then Retrieve: Reinforcement Learning-Guided Complex Reasoning over Knowledge Graphs](https://arxiv.org/abs/2510.20691)：Graph-RFT 先学习 KGQA 推理路径规划，再用强化学习判断图谱证据不足时是否需要外部检索。
+- [Weak-to-Strong Generalization under Distribution Shifts](https://arxiv.org/abs/2510.21332)：提出 RAVEN，在训练强模型时动态学习弱监督器组合，使 weak-to-strong generalization 在分布偏移下更稳健。
+- [Every Activation Boosted: Scaling General Reasoner to 1 Trillion Open Language Foundation](https://arxiv.org/abs/2510.22115)：报告最高 1T 参数的开放推理型基础模型系列，强调稀疏 MoE 扩展。
+- [Mapping Faithful Reasoning in Language Models](https://arxiv.org/abs/2510.22362)：刻画语言模型推理轨迹何时与内部计算一致，补充 faithful reasoning 的模型侧分析。
+- [A Framework for Quantifying How Pre-Training and Context Benefit In-Context Learning](https://arxiv.org/abs/2510.22594)：形式化分析架构、数据编码、数据生成和 prompt 构造如何共同决定预训练后的上下文学习收益。
+- [RaCoT](https://arxiv.org/abs/2510.22710)：以 plug-and-play 方式生成 contrastive examples，提高 LLM reasoning reliability。
+- [Critique-RL: Training Language Models for Critiquing through Two-Stage Reinforcement Learning](https://arxiv.org/abs/2510.24320)：Critique-RL 通过两阶段强化学习博弈训练语言模型生成批判性反馈。
+- [Parallel Loop Transformer for Efficient Test-Time Computation Scaling](https://arxiv.org/abs/2510.24824)：提出并行循环 Transformer 来提升测试时计算扩展效率。
+- [Scaling Latent Reasoning via Looped Language Models](https://arxiv.org/abs/2510.25741)：通过循环式语言模型计算扩展 latent reasoning，为内部推理提供架构路线。
+- [CAVE: Detecting and Explaining Commonsense Anomalies in Visual Environments](https://arxiv.org/abs/2510.26006)：分类存疑：它主要是带细粒度 grounding 标注的真实视觉异常描述、解释和论证基准，而不是模型方法。
+- [SCRIBE: Structured Chain Reasoning for Interactive Behaviour Explanations using Tool Calling](https://arxiv.org/abs/2510.26322)：分类存疑：构建面向学生反馈解释的工具增强 inference pipeline，结合领域工具、自反思和错误恢复，更接近 Agent Harness。
+- [Reward Mixology: Crafting Hybrid Signals for Reinforcement Learning Driven In-Context Learning](https://doi.org/10.18653/v1/2025.findings-emnlp.234)：把迭代式 demonstration selection 建模为 MDP，在 R-Mix 中结合结果准确率奖励、stepwise influence 与标签 entropy 改善等过程奖励。
+- [A Technical Exploration of Causal Inference with Hybrid LLM Synthetic Data](https://arxiv.org/abs/2511.00318)：补充面向通用推理的模型侧工作，重点是causal inference with hybrid LLM synthetic data。
+- [Causal-LLM: A Unified One-Shot Framework for Prompt- and Data-Driven Causal Graph Discovery](https://doi.org/10.18653/v1/2025.findings-emnlp.439)：把 prompt-driven 与 data-driven 因果图发现合成一个 one-shot LLM 框架，用自然语言先验和观测数据共同约束图结构。
+- [Following Occam's Razor: Dynamic Combination of Structured Knowledge for Multi-Hop Question Answering using LLMs](https://doi.org/10.18653/v1/2025.findings-emnlp.975)：按 Occam's Razor 动态组合结构化知识，让多跳问答在较少必要证据与足够推理支持之间取平衡。
+- [M2Edit: Locate and Edit Multi-Granularity Knowledge in Multimodal Large Language Model](https://doi.org/10.18653/v1/2025.emnlp-main.1478)：补充面向通用推理的模型侧工作，重点是knowledge editing in multimodal LLMs。
+- [Expectation Preference Optimization: Reliable Preference Estimation for Improving the Reasoning Capability of Large Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.1532)：用 expectation-based preference estimates 降低单次 noisy comparison 对偏好优化的影响，从而更可靠地提升 LLM 推理。
+- [Multimodal Reasoning via Latent Refocusing](https://arxiv.org/abs/2511.02360)：通过潜在空间重聚焦改善多模态推理，把视觉与文本证据的调度作为模型侧推理能力的一部分。
+- [GRAVER: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning](https://arxiv.org/abs/2511.05592)：为 graph foundation models 生成图词汇，使 few-shot fine-tuning 对 support sample 随机性和图结构差异更稳健。
+- [Lethe: Layer- and Time-Adaptive KV Cache Pruning for Reasoning-Intensive LLM Serving](https://arxiv.org/abs/2511.06029)：在层级和解码时间两个维度动态剪枝 KV cache，通过分配 sparsity budget 降低长推理生成的显存与延迟。
+- [Post-Training as Reweighting](https://arxiv.org/abs/2511.07368)：把推理轨迹建模为树结构 Markov chain，并指出 RLVR 或 reward aggregation 主要是在重加权预训练后已有的轨迹。核心思想是奖励式后训练可能压制少见但关键的推理路径，因此拒绝简单样例、KL 正则等探索导向机制有助于保留困难样例所需的低概率解法路线。
+- [Self-Correction Distillation for Structured Data Question Answering](https://arxiv.org/abs/2511.07998)：用 error prompt mechanism 和两阶段自纠错蒸馏训练小模型，覆盖表格、知识图谱和时序知识图谱问答。
+- [Frontier Large Language Models Rival State-of-the-Art Planners](https://arxiv.org/abs/2511.09378)：分类存疑：在新的 International Planning Competition 风格任务上评测前沿 LLM，并用 plan validation 与经典 planner 作基线，更接近 Bench。
+- [In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](https://arxiv.org/abs/2511.09865)：In-Token Rationality Optimization 通过自反馈提升推理轨迹的准确性和简洁性，为高效推理提供 token 级后训练轴。
+- [Learning to Pose Problems: Reasoning-Driven and Solver-Adaptive Data Synthesis for Large Reasoning Models](https://arxiv.org/abs/2511.09907)：该方法学习生成适配目标求解器能力的推理问题，用于训练大型推理模型。
+- [Critical or Compliant? The Double-Edged Sword of Reasoning in Chain-of-Thought Explanations](https://arxiv.org/abs/2511.12001)：分类存疑：研究被扰动的 CoT 解释和自信语气如何影响多模态道德场景中的用户信任与错误识别。
+- [DesignerlyLoop: Forming Design Intent through Curated Reasoning for Human-LLM Alignment](https://arxiv.org/abs/2511.15331)：分类存疑：贡献是交互式设计工具，让用户检查、重组并再生成 LLM reasoning structures 以细化 design intent。
+- [iLTM: Integrated Large Tabular Model](https://arxiv.org/abs/2511.15941)：提出用于结构化数据推理的大型表格模型。
+- [Controllability Analysis of State Space-based Language Model](https://arxiv.org/abs/2511.17970)：补充面向通用推理的模型侧工作，重点是controllability analysis of state-space language models。
+- [Physics Steering: Causal Control of Cross-Domain Concepts in a Physics Foundation Model](https://arxiv.org/abs/2511.20798)：把 activation steering 用于物理 foundation model，检验抽象概念方向的因果控制是否能从语言和视觉模型迁移到物理模型。
+- [A General Highly Accurate Online Planning Method Integrating Large Language Models into Nested Rollout Policy Adaptation for Dialogue Tasks](https://arxiv.org/abs/2511.21706)：将大语言模型纳入嵌套 rollout 策略自适应，用于在线对话规划。
+- [Efficiently Learning Branching Networks for Multitask Algorithmic Reasoning](https://arxiv.org/abs/2512.01113)：提出用于多任务算法推理的 branching neural networks，在任务一致处共享层，在执行步骤冲突处拆分分支。
+- [From Atomic to Composite: Reinforcement Learning Enables Generalization in Complementary Reasoning](https://arxiv.org/abs/2512.01970)：研究强化学习如何从原子任务泛化到组合推理任务。
+- [K2-V2: A 360-Open, Reasoning-Enhanced LLM](https://arxiv.org/abs/2512.06201)：提出 fully open、reasoning-centric 的 K2-V2，从零训练并释放权重、训练历史和数据组成，同时在训练中注入领域知识、长上下文和工具使用能力。
+- [Investigating Training and Generalization in Faithful Self-Explanations of Large Language Models](https://arxiv.org/abs/2512.07288)：研究大语言模型忠实自解释的训练与泛化。
+- [sCoT / Thinking with Images](https://arxiv.org/abs/2512.08511)：把 interleaved multimodal CoT 改写成带 parameter-sharing subagents 的 self-calling language reasoning，并用更少显式多模态轨迹强化视觉推理行为。
+- [Accelerating tribological material discovery: A machine learning framework with predictive insights](https://doi.org/10.1016/j.triboint.2025.110862)：分类存疑：出版元数据表明这是 tribological materials discovery 的机器学习框架，属于窄领域应用而非通用推理模型方法。
+- [From Stories to Statistics: Methodological Biases in LLM-Based Narrative Flow Quantification](https://doi.org/10.18653/v1/2025.conll-1.14)：分类存疑：分析 LLM-based narrative flow quantification 的方法偏差，更像分析或测量论文而非模型方法。
+- [Peek-a-Boo Reasoning: Contrastive Region Masking in MLLMs](https://arxiv.org/abs/2512.08976)：提出训练无关的 Contrastive Region Masking，通过遮蔽标注视觉区域来对多模态 CoT 的每一步做因果归因。
+- [IWPO: Sample Importance Weight-Based Human Preference Optimization for Large Language Models](https://doi.org/10.1109/taslpro.2025.3615458)：在 human preference optimization 中引入 sample-importance weights，使偏好样本按估计训练价值而非均匀权重参与更新。
+- [VC-Mamba: Causal Mamba representation consistency for video implicit understanding](https://doi.org/10.1016/j.knosys.2025.113437)：分类存疑：出版元数据将其定位为基于 causal Mamba representation consistency 的 video implicit understanding，更接近视频模型覆盖。
+- [DDCI: Unsupervised Domain Adaptation for Remote Sensing Images Based on Diffusion Causal Distillation](https://doi.org/10.1109/tgrs.2025.3553094)：分类存疑：把 diffusion causal distillation 用于遥感图像无监督域适配，是领域视觉适配方法。
+- [A Neuro-Symbolic Framework for Accountability in Public-Sector AI](https://arxiv.org/abs/2512.12109)：构建法律规则 ontology、规则抽取流水线和 solver-based reasoning 层，用于核查公共福利资格解释是否符合成文约束。
+- [Reasoning Mamba: Hypergraph-Guided Region Relation Calculating for Weakly Supervised Affordance Grounding](https://doi.org/10.1109/cvpr52734.2025.02572)：用 hypergraph-guided Mamba 架构计算区域关系，以支持弱监督 affordance grounding 视觉任务。
+- [Causality enforcing parametric heat transfer solvers for evolving geometries in advanced manufacturing](https://doi.org/10.1016/j.cma.2025.117764)：分类存疑：研究面向先进制造中演化几何的 causality-enforcing 参数化传热求解器，偏离通用 LLM 推理。
+- [Advances in atmospheric, oceanic, and coupled models for meteorological forecasting](https://doi.org/10.1016/j.nhres.2025.10.003)：分类存疑：这是气象预报中的大气、海洋与耦合模型综述或进展文章，不是通用推理模型方法。
+- [Rethinking Graph Reasoning: Equip Large Language Models with Topology-Enhanced Prompt](https://doi.org/10.1109/bigdata66926.2025.11401726)：加入 topology-enhanced prompt，让 LLM 图推理能够利用图结构信息，而不只依赖文本化节点和边描述。
+- [Knowledge Graph Reasoning Based on Information Enhancement and Subgraph Alignment](https://doi.org/10.1109/tnnls.2025.3627430)：通过信息增强和 subgraph alignment 改进知识图谱推理，使推断过程更好匹配局部图证据。
+- [Scenario-Aware Multimodal Chain-of-Thought Prompting for Rationales of VideoSocial Relations](https://doi.org/10.1109/tcsvt.2025.3571422)：用 scenario-aware multimodal CoT prompting 为视频社会关系识别生成 rationale，属于视频特定推理应用。
+- [Reassessing the Role of Supervised Fine-Tuning: An Empirical Study in VLM Reasoning](https://arxiv.org/abs/2512.12690)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [Semantic reasoning takes place largely outside the language network](https://doi.org/10.64898/2025.12.07.692873)：分类存疑：fMRI 实验显示语义推理主要调用语言网络之外的脑区，是神经科学证据而非模型方法。
+- [Long-Form Reasoning for Keystep Recognition Using Graph Neural Networks](https://doi.org/10.1109/iccvw69036.2025.00790)：将图神经网络用于长程 keystep recognition，通过图结构推理视频中的动作或流程步骤。
+- [Personalized Longitudinal Motion Planning based on a Combination of Reinforcement Learning and Imitation Learning](https://doi.org/10.1016/j.geits.2025.100321)：分类存疑：结合强化学习和 imitation learning 做车辆纵向运动规划，更接近自动驾驶控制而非通用推理。
+- [Valuing Training Data via Causal Inference for In-Context Learning](https://doi.org/10.1109/tkde.2025.3546761)：用因果推断估计上下文学习中训练样例的价值，把 demonstration selection 的数据估值转化为 treatment effect 问题。
+- [External Hippocampus: Topological Cognitive Maps for Guiding Large Language Model Reasoning](https://arxiv.org/abs/2512.18190)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [Stable and Efficient Single-Rollout RL for Multimodal Reasoning](https://arxiv.org/abs/2512.18215)：用稳定高效的 single-rollout RL 改进多模态推理。
+- [ReaSeq: Unleashing World Knowledge via Reasoning for Sequential Modeling](https://arxiv.org/abs/2512.21257)：补充面向通用推理的模型侧工作，重点是world-knowledge reasoning for sequential modeling。
+- [Table and Text Question Answering via Progressive Retrieval and Reinforcement Learning](https://doi.org/10.1109/cbase67452.2025.11335520)：用 progressive retrieval 逐步定位表格与文本证据，并结合强化学习优化混合表文问答的推理策略。
+- [A Large Language Model for Hybrid Table-a nd-Text Question Answering Based on a Dynamic Chain Reasoning Framework](https://doi.org/10.1109/iccc68654.2025.11437889)：用 dynamic chain reasoning framework 组织表格和文本证据，使混合表文问答能按步骤组合查找与推断。
+- [Direct Preference Optimization of Qwen 2.5 for Complex Reasoning and Debugging](https://doi.org/10.1109/icrteect67512.2025.11448703)：把 Direct Preference Optimization 用于 Qwen 2.5 的复杂推理和调试任务，使偏好对齐直接服务代码与问题求解。
+- [Multi-Agent Reinforcement Learning for Multi-Hop Reasoning in Multi-Modal Knowledge Graphs](https://doi.org/10.1109/bddm68348.2025.11442172)：用多智能体强化学习在多模态知识图谱上探索多跳路径，使不同 agent 协同选择关系和证据模态。
+- [Human-Inspired Situated Question Answering with Large Language Models](https://doi.org/10.1109/icme59968.2025.11209566)：借鉴人类 situated reasoning，把问题、场景上下文和可观察线索结合起来生成 LLM 问答。
+- [Harnessing the Power of Knowledge Graphs to Improve Causal Discovery](https://doi.org/10.1109/tetci.2025.3540429)：把知识图谱作为 causal discovery 的结构化先验，在统计或模型化因果搜索前约束候选关系。
+- [Evaluating Parameter Efficient Methods for RLVR](https://arxiv.org/abs/2512.23165)：该评测研究 RLVR 的参数高效方法，为推理模型强化学习补充了实用适配轴。
+- [Snap Out of It: A Dual-Process Approach to Mitigating Overthinking in Language Model Reasoning](https://doi.org/10.18653/v1/2025.realm-1.16)：用 dual-process 控制机制中断无效长推理，并把模型切回更简洁的答案生成路径。
+- [SenseNova-MARS: Empowering Multimodal Agentic Reasoning and Search via Reinforcement Learning](https://arxiv.org/abs/2512.24330)：用强化学习提升多模态 agentic reasoning 与搜索行为。
+- [CREST: A causal framework for mitigating shortcut learning in language models through counterfactual reasoning](https://doi.org/10.1016/j.ipm.2025.104418)：通过生成 counterfactual reasoning 信号分离因果特征与伪相关，以缓解语言模型的 shortcut learning。
+- [Debiasing Event Causality Identification in Large Language Models via Back-Door Adjustment](https://doi.org/10.1109/ijcnn64981.2025.11228257)：在事件因果识别中应用 back-door adjustment，使 LLM 预测考虑混杂变量而不是表层事件共现。
+- [QUERY2BERT: Combining Knowledge Graph and Language Model for Reasoning on Logical Queries](https://doi.org/10.1109/access.2025.3528097)：结合 BERT 式语言表示与知识图谱结构，用于回答实体和关系上的 logical queries。
+- [From Morphemes to Knowledge Graphs: Enabling Abstractions in Large Language Models With Neurosymbolic AI](https://doi.org/10.1109/mis.2025.3621940)：用神经符号方法连接语素级抽象、知识图谱和大语言模型。
+- [LLMs-PD: A Model-Free POMDP Reinforcement Learning Approach Guided by Large Language Models and Parameter Decay Action Selection Strategy](https://doi.org/10.1109/acait67930.2025.11521993)：用大语言模型与参数衰减策略引导无模型 POMDP 强化学习。
+- [Semantically-Augmented Reinforcement Learning Framework: A Two-Stage Cooperative Optimization Approach with Large Language Model Enhancement](https://doi.org/10.1109/acait67930.2025.11521978)：在协同强化学习框架中加入语义增强与大模型辅助。
+- [SynTab-LLaVA: Enhancing Multimodal Table Understanding with Decoupled Synthesis](https://doi.org/10.1109/cvpr52734.2025.02309)：通过解耦合成增强多模态表格理解，支持视觉表格上的结构化推理。
+- [LLM Interpretability: Tracing How LLMs Answer Factual Queries and Math Questions](https://doi.org/10.1109/cai64502.2025.00151)：面向通用推理提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Energy-Aware Routing to Large Reasoning Models](https://arxiv.org/abs/2601.00823)：建模多个大推理模型之间的能耗感知调度，识别平衡 baseline supply、auxiliary energy 与推理性能的关键运行区间。
+- [From Emotion Classification to Emotional Reasoning: Enhancing Emotional Intelligence in Large Language Models](https://arxiv.org/abs/2601.01407)：生成 therapy-style conversations 和带解释的结构化情绪 MCQ，并微调 7B LLM 以在不改架构的情况下提升 emotional reasoning。
+- [Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](https://arxiv.org/abs/2601.01483)：ADPO 训练单一视觉语言策略同时完成答案生成与自验证。
+- [Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling](https://arxiv.org/abs/2601.02346)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning](https://arxiv.org/abs/2601.02902)：研究 LLM 逻辑推理中的崩塌现象，为推理行为何时突然失效提供诊断视角。
+- [Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective](https://arxiv.org/abs/2601.03154)：通过 Cross-CoT 实验说明长 CoT 能改善首选答案决策，但难以精细校准有歧义的标签分布。
+- [DIP: Dynamic In-Context Planner For Diffusion Language Models](https://arxiv.org/abs/2601.03199)：为扩散语言模型加入动态上下文规划，把可修订生成与推理式规划连接起来。
+- [Ratio-Variance Regularized Policy Optimization for Efficient LLM Fine-tuning](https://arxiv.org/abs/2601.03320)：通过正则化策略比率方差稳定并改进 LLM 强化学习微调。
+- [MIND: From Passive Mimicry to Active Reasoning through Capability-Aware Multi-Perspective CoT Distillation](https://arxiv.org/abs/2601.03717)：用能力感知的多视角 CoT 蒸馏和反馈驱动惯性校准，把推理能力迁移到较小模型。
+- [KDCM: Reducing Hallucination in LLMs through Explicit Reasoning Structures](https://arxiv.org/abs/2601.04086)：在 chain-style knowledge distillation 中加入可编程知识图谱探索模块，并嵌入 reasoning prompt 以约束中间步骤、降低幻觉。
+- [When Models Manipulate Manifolds](https://arxiv.org/abs/2601.04480)：机制化分析计数与换行任务，揭示基础推理操作背后的几何表征。
+- [On the Limitations of Rank-One Model Editing in Answering Multi-hop Questions](https://arxiv.org/abs/2601.04600)：识别 ROME 在多跳问答中的失效模式，包括后续 hop 表征不足和对编辑事实过拟合，并测试冗余编辑作为缓解方案。
+- [H\'an D\=an Xu\'e B\`u (Mimicry) or Q\=ing Ch\=u Y\'u L\'an (Mastery)? A Cognitive Perspective on Reasoning Distillation in Large Language Models](https://arxiv.org/abs/2601.05019)：发现 SFT 式推理蒸馏会复制教师轨迹但破坏教师模型与人类难度成本相似的 scaling，提示 CoT mimicry 可能只是表层迁移。
+- [Thinking with Deltas: Incentivizing Reinforcement Learning via Differential Visual Reasoning Policy](https://arxiv.org/abs/2601.06801)：用差分视觉推理奖励把 RLVR 式训练扩展到多模态推理。
+- [On the Non-decoupling of Supervised Fine-tuning and Reinforcement Learning in Post-training](https://arxiv.org/abs/2601.07389)：分析监督微调与强化学习为何在后训练中相互耦合，而不是可完全分离的两个阶段。
+- [STO-RL: Offline RL under Sparse Rewards via LLM-Guided Subgoal Temporal Order](https://arxiv.org/abs/2601.08107)：补充面向通用推理的模型侧工作，重点是offline RL with LLM-guided subgoal order。
+- [Silence the Judge: Reinforcement Learning with Self-Verifier via Latent Geometric Clustering](https://arxiv.org/abs/2601.08427)：提出 Latent-GRPO，用 latent geometric clustering 构造 self-verifier 奖励来替代外部 judge：正确推理轨迹的 terminal-token 状态形成密集簇，IRCE 估计稳健的 truth centroid 以提供稠密内在奖励。
+- [SoC: Semantic Orthogonal Calibration for Test-Time Prompt Tuning](https://arxiv.org/abs/2601.08617)：补充面向通用推理的模型侧工作，重点是semantic orthogonal calibration for test-time prompt tuning。
+- [Improving Symbolic Translation of Language Models for Logical Reasoning](https://arxiv.org/abs/2601.09446)：补充面向通用推理的模型侧工作，重点是symbolic translation for logical reasoning。
+- [Development of Ontological Knowledge Bases by Leveraging Large Language Models](https://arxiv.org/abs/2601.10436)：分类存疑：提出迭代式 LLM 辅助 ontology 和 knowledge-base 构建流程，更接近知识工程而非模型训练。
+- [Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](https://arxiv.org/abs/2601.14249)：提出 informative alignment 指标，用于选择更适合蒸馏的推理轨迹。
+- [Say Anything but This: When Tokenizer Betrays Reasoning in LLMs](https://arxiv.org/abs/2601.14658)：揭示分词器行为如何损害大模型推理。
+- [Knowledge Graphs are Implicit Reward Models: Path-Derived Signals Enable Compositional Reasoning](https://arxiv.org/abs/2601.15160)：从知识图谱路径中构造奖励信号以训练组合推理。
+- [Attention-MoA: Enhancing Mixture-of-Agents via Inter-Agent Semantic Attention and Deep Residual Synthesis](https://arxiv.org/abs/2601.16596)：通过智能体间语义注意力和残差合成增强 Mixture-of-Agents。
+- [What Language Models Know But Don't Say: Non-Generative Prior Extraction for Generalization](https://arxiv.org/abs/2601.17609)：提出 LoID，直接从相反语义方向上的 token-level probabilities 提取 Bayesian logistic regression 先验，而不依赖生成文本。
+- [Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](https://arxiv.org/abs/2601.18296)：用反向课程强化学习训练复杂时序知识图问答智能体。
+- [Self-Distilled Reasoner: On-Policy Self-Distillation for Large Language Models](https://arxiv.org/abs/2601.18734)：在 on-policy distillation 中让同一模型兼任带特权信息的教师和学生，无需更大教师模型即可提升推理。
+- [LLM-Assisted Logic Rule Learning: Scaling Human Expertise for Time Series Anomaly Detection](https://arxiv.org/abs/2601.19255)：用 LLM 标注数据、起草可解释逻辑规则并迭代 refine rule sets，以扩展供应链时间序列异常检测中的专家知识。
+- [R^3: Replay, Reflection, and Ranking Rewards for LLM Reinforcement Learning](https://arxiv.org/abs/2601.19620)：在大推理模型强化学习中加入 replay、reflection 与 ranking reward。
+- [PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs](https://arxiv.org/abs/2601.20539)：PathWise 使用世界模型规划启发式设计轨迹，支持自演化 LLM。
+- [Procedural Pretraining: Warming Up Language Models with Abstract Data](https://arxiv.org/abs/2601.21725)：用抽象程序化数据作为语言模型预训练热身信号。
+- [A Step Back: Prefix Importance Ratio Stabilizes Policy Optimization](https://arxiv.org/abs/2601.22718)：通过前缀级重要性比率稳定策略优化，而不是只依赖整条轨迹比率。
+- [MulFeRL: Enhancing Reinforcement Learning with Verbal Feedback in a Multi-turn Loop](https://arxiv.org/abs/2601.22900)：在多轮循环中引入语言反馈，为 RLVR 式推理训练提供更密集信号。
+- [Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](https://arxiv.org/abs/2602.00521)：分类存疑：提出基于 Item Response Theory 的 LLM judge 诊断框架，衡量 prompt variation 下的内在一致性和与人类评分的一致性。
+- [Interaction-Consistent Object Removal via MLLM-Based Reasoning](https://arxiv.org/abs/2602.01298)：定义 interaction-consistent object removal，并用 MLLM 分析、mask-guided editing 与自我纠错同时移除目标物体及其联动效果或上下文物体。
+- [Alternating Reinforcement Learning for Rubric-Based Reward Modeling in Non-Verifiable LLM Post-Training](https://arxiv.org/abs/2602.01511)：提出面向 non-verifiable post-training 的 Rubric-ARM，用偏好反馈联合学习 rubric generator 和 judge，并通过交替 RL 把 rubric criteria 作为 latent actions 来提升奖励模型的判断准确性。
+- [Entropy-Guided Data-Efficient Training for Multimodal Reasoning Reward Models](https://arxiv.org/abs/2602.01884)：利用熵信号以更少数据训练多模态推理奖励模型。
+- [Breaking the Reversal Curse via Identity Bridge](https://arxiv.org/abs/2602.02470)：用 identity-bridge 机制缓解自回归语言模型的 reversal-curse 失败。
+- [Reading Between the Tokens: Improving Preference Predictions through Mechanistic Forecasting](https://arxiv.org/abs/2602.02882)：提出 mechanistic forecasting，直接探测 7 个语言模型在 6 场选举中的潜在政党编码组件，而不是只依赖生成式偏好预测。
+- [Reasoning with Latent Tokens in Diffusion Language Models](https://arxiv.org/abs/2602.03769)：研究扩散语言模型中的 latent-token reasoning，为内部推理补充非自回归生成路线。
+- [Training Data Efficiency in Multimodal Process Reward Models](https://arxiv.org/abs/2602.04145)：该工作研究多模态过程奖励模型在视觉推理训练中的数据效率。
+- [EMA Policy Gradient: Taming Reinforcement Learning for LLMs with EMA Anchor and Top-k KL](https://arxiv.org/abs/2602.04417)：用 EMA anchor 和 top-k KL 控制改进 LLM policy-gradient 训练。
+- [Vision-aligned Latent Reasoning for Multi-modal Large Language Model](https://arxiv.org/abs/2602.04476)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [Rewards as Labels: Revisiting RLVR from a Classification Perspective](https://arxiv.org/abs/2602.05630)：把 RLVR 奖励重新解释为标签，澄清可验证奖励训练与分类及 GRPO 类更新之间的关系。
+- [TKG-Thinker: Towards Dynamic Reasoning over Temporal Knowledge Graphs via Agentic Reinforcement Learning](https://arxiv.org/abs/2602.05818)：将 agentic 强化学习用于时序知识图上的动态推理。
+- [When Is Compositional Reasoning Learnable from Verifiable Rewards?](https://arxiv.org/abs/2602.07992)：研究组合推理在何种条件下可由可验证奖励学习得到。
+- [New Skills or Sharper Primitives? A Probabilistic Perspective on the Emergence of Reasoning in RLVR](https://arxiv.org/abs/2602.08281)：分析 RLVR 产生的是新推理技能还是更强的基础原语。
+- [Reinforcement Inference: Leveraging Uncertainty for Self-Correcting Language Model Reasoning](https://arxiv.org/abs/2602.08520)：Reinforcement Inference 利用不确定性感知的自校正机制，在一次性贪心解码之外释放推理能力。
+- [Beyond Uniform Credit: Causal Credit Assignment for Policy Optimization](https://arxiv.org/abs/2602.09331)：面向策略优化的因果信用分配处理推理 RL 中的非均匀信用问题，补充了可复用的目标设计轴。
+- [Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters](https://arxiv.org/abs/2602.10604)：报告高效开放 MoE 模型，采用可扩展 RL 训练，并评估推理、代码、工具使用和 terminal-agent 任务。
+- [Credit Where It is Due: Cross-Modality Connectivity Drives Precise Reinforcement Learning for MLLM Reasoning](https://arxiv.org/abs/2602.11455)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](https://arxiv.org/abs/2602.11549)：Native Reasoning Models 训练语言模型在缺少外部验证器的数据上进行推理。
+- [MAPLE: Modality-Aware Post-training and Learning Ecosystem](https://arxiv.org/abs/2602.11596)：提出面向多模态推理的模态感知后训练生态，将强化学习式后训练与跨模态能力平衡联系起来。
+- [Think Longer to Explore Deeper: Learn to Explore In-Context via Length-Incentivized Reinforcement Learning](https://arxiv.org/abs/2602.11748)：通过长度激励强化学习增强模型在上下文中的探索深度。
+- [In-Context Function Learning in Large Language Models](https://arxiv.org/abs/2602.11863)：In-context function learning 研究大模型如何从上下文示例中习得函数式映射，为上下文推理泛化提供模型侧分析视角。
+- [VI-CuRL: Stabilizing Verifier-Independent RL Reasoning via Confidence-Guided Variance Reduction](https://arxiv.org/abs/2602.12579)：用置信度引导的方差降低稳定无外部验证器的 RL 推理训练。
+- [R-Diverse: Mitigating Diversity Illusion in Self-Play LLM Training](https://arxiv.org/abs/2602.13103)：聚焦通用推理、思维链、奖励学习、推理后训练或测试时推理。
+- [NL2LOGIC: AST-Guided Translation of Natural Language into First-Order Logic with Large Language Models](https://arxiv.org/abs/2602.13237)：以抽象语法树作为中间表示，结合递归 LLM 语义解析和 AST 引导生成，输出可交给求解器执行的一阶逻辑代码。
+- [LLM-as-Judge on a Budget](https://arxiv.org/abs/2602.15481)：用方差自适应多臂老虎机方法分配重复 judge 查询，把固定评分预算集中到不确定性更高的 prompt-response pair。
+- [Verifier-Constrained Flow Expansion for Discovery Beyond the Data](https://arxiv.org/abs/2602.15984)：用验证器约束的熵最大化训练 Flow Expander，使预训练 flow 或 diffusion model 在保持有效性检查的同时扩展到数据分布之外。
+- [Leveraging Large Language Models for Causal Discovery: a Constraint-based, Argumentation-driven Approach](https://arxiv.org/abs/2602.16481)：将约束式论证与 LLM 结合用于因果发现。
+- [Training Large Reasoning Models Efficiently via Progressive Thought Encoding](https://arxiv.org/abs/2602.16839)：Progressive Thought Encoding 降低大型推理模型强化学习训练中的长轨迹开销。
+- [Predictive Batch Scheduling: Accelerating Language Model Training Through Loss-Aware Sample Prioritization](https://arxiv.org/abs/2602.17066)：补充面向通用推理的模型侧工作，重点是loss-aware sample prioritization for language-model training。
+- [Soft Sequence Policy Optimization](https://arxiv.org/abs/2602.19327)：提出面向语言模型后训练的序列级策略优化变体，可补充通用推理中的 RL 方法线索。
+- [Ada-RS: Adaptive Rejection Sampling for Selective Thinking](https://arxiv.org/abs/2602.19519)：提供模型侧推理、强化学习或测试时适配方法。
+- [Causal Decoding for Hallucination-Resistant Multimodal Large Language Models](https://arxiv.org/abs/2602.21441)：在多模态解码阶段施加定向因果干预，抑制虚假物体 token，从而降低图像描述和视觉问答中的 object hallucination。
+- [PPCR-IM: A System for Multi-layer DAG-based Public Policy Consequence Reasoning and Social Indicator Mapping](https://arxiv.org/abs/2602.21650)：构建逐层 LLM 生成的政策后果 DAG，将节点映射到社会指标，并报告 coverage、discovery 与 relative-focus 指标用于政策比较。
+- [Dynamic Adversarial Reinforcement Learning for Robust Multimodal Large Language Models](https://arxiv.org/abs/2602.22227)：用动态对抗强化学习提升多模态大语言模型的稳健性。
+- [ContextRL: Enhancing MLLM's Knowledge Discovery Efficiency with Context-Augmented RL](https://arxiv.org/abs/2602.22623)：用上下文增强 RL 验证，提高 MLLM 知识发现效率。
+- [MMKG-RDS: Reasoning Data Synthesis via Deep Mining of Multimodal Knowledge Graphs](https://arxiv.org/abs/2602.23632)：通过深挖多模态知识图谱合成多模态推理数据。
+- [Discrete World Models via Regularization](https://arxiv.org/abs/2603.01748)：补充面向通用推理的模型侧工作，重点是discrete world models with regularization。
+- [Let the Agent Search: Autonomous Exploration Beats Rigid Workflows in Temporal Question Answering](https://arxiv.org/abs/2603.01853)：比较自主搜索与固定流程在时序问答中的效果。
+- [Eliciting Numerical Predictive Distributions of LLMs Without Autoregression](https://arxiv.org/abs/2603.02913)：在不自回归生成的情况下引出大模型的数值预测分布。
+- [An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs](https://arxiv.org/abs/2603.05400)：在带推理标注的 FEWS 数据上微调 4B 以下模型，结合 CoT 与邻近词分析来提升可扩展词义消歧。
+- [Adaptive Loops and Memory in Transformers: Think Harder or Know More?](https://arxiv.org/abs/2603.08391)：结合逐层自适应循环和门控记忆库，区分隐藏状态迭代推理与额外存储容量对 Transformer 推理能力的作用。
+- [Unsupervised RLVR Scaling](https://arxiv.org/abs/2603.08660)：研究无监督 RLVR 能在多大程度上扩展大语言模型推理训练。
 - [Latent-DARM](https://arxiv.org/abs/2603.09184)：连接离散扩散与自回归语言建模，支持可全局修订的推理与规划。
+- [CLIPO: Contrastive Learning in Policy Optimization Generalizes RLVR](https://arxiv.org/abs/2603.10101)：把 RLVR 解释并扩展为 policy optimization 中的对比学习。
 - [Information Self-Locking](https://arxiv.org/abs/2603.12109)：分析强化学习如何让主动推理 agent 锁定早期信息状态，为迭代推理训练中的失败模式提供诊断。
+- [IsoCompute Playbook: Optimally Scaling Sampling Compute for LLM RL](https://arxiv.org/abs/2603.12151)：研究在固定计算预算下如何分配 LLM 强化学习中的采样计算，为推理模型 RL 提供模型侧的扩展规律视角。
+- [From Stochastic Answers to Verifiable Reasoning: Interpretable Decision-Making with LLM-Generated Code](https://arxiv.org/abs/2603.13287)：把 LLM 作为一次性可执行决策逻辑生成器，再用 precision lift、二项显著性检验和覆盖率过滤验证确定性代码。
+- [Discovering Decoupled Functional Modules in Large Language Models](https://arxiv.org/abs/2603.17823)：提出 ULCMOD 和 IterD，在 LLM 跨层神经元中发现解耦功能模块及语义一致的专门化结构。
+- [Enhancing Reinforcement Learning Fine-Tuning with an Online Refiner](https://arxiv.org/abs/2603.18088)：在强化学习微调中加入在线 refiner，为改进模型行为补充后训练路线。
+- [AS2 -- Attention-Based Soft Answer Sets: An End-to-End Differentiable Neuro-Soft-Symbolic Reasoning Architecture](https://arxiv.org/abs/2603.18436)：补充面向通用推理的模型侧工作，重点是neuro-soft-symbolic reasoning architecture。
+- [FedPDPO: Federated Personalized Direct Preference Optimization for Large Language Model Alignment](https://arxiv.org/abs/2603.19741)：用冻结 LLM 主干、LoRA 适配器、客户端专属 head 和个性化隐式奖励，在非独立同分布偏好数据上做联邦 DPO 对齐。
+- [HDPO: Hybrid Distillation Policy Optimization via Privileged Self-Distillation](https://arxiv.org/abs/2603.23871)：提供模型侧推理、强化学习或测试时适配方法。
+- [Why Does Self-Distillation (Sometimes) Degrade the Reasoning Capability of LLMs?](https://arxiv.org/abs/2603.24472)：指出 self-distillation 可能抑制不确定性表达并损害分布外数学推理，澄清 reasoning model 后训练中的一种失败模式。
 - [CoT2-Meta](https://arxiv.org/abs/2603.28135)：无需训练的测试时元认知控制方法，在扩展、剪枝、修复、停止和回退之间分配推理计算。
+- [Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing](https://arxiv.org/abs/2604.02288)：通过样本路由统一 group-relative policy optimization 与自蒸馏，为推理策略训练补充通用模型侧强化学习路线。
+- [TDA-RC: Task-Driven Alignment for Knowledge-Based Reasoning Chains in Large Language Models](https://arxiv.org/abs/2604.04942)：TDA-RC 对齐知识型推理链，以减少链式思维输出中的逻辑断裂。
+- [GaussFly: Contrastive Reinforcement Learning for Visuomotor Policies in 3D Gaussian Fields](https://arxiv.org/abs/2604.05062)：用 contrastive reinforcement learning 在 3D Gaussian fields 中学习 visuomotor policies，更接近机器人策略学习而非通用推理 harness。
+- [The Stepwise Informativeness Assumption: Why are Entropy Dynamics and Reasoning Correlated in LLMs?](https://arxiv.org/abs/2604.06192)：研究熵动态为何与 LLM 推理相关，为逐步推理提供模型内部分析视角。
+- [CausalVAE as a Plug-in for World Models: Towards Reliable Counterfactual Dynamics](https://arxiv.org/abs/2604.07712)：补充面向通用推理的模型侧工作，重点是counterfactual dynamics plug-in for world models。
+- [Loop, Think,&Generalize: Implicit Reasoning in Recurrent-Depth Transformers](https://arxiv.org/abs/2604.07822)：展示 recurrent-depth Transformer 可通过重复使用同一层进行迭代计算，从而在未见过的组合和更深 hop 数上泛化隐式多跳推理。
+- [Revisiting the Capacity Gap in Chain-of-Thought Distillation from a Practical Perspective](https://arxiv.org/abs/2604.08880)：重新分析师生模型能力差距何时会使 CoT 蒸馏损害推理表现。
+- [NSFL: A Post-Training Neuro-Symbolic Fuzzy Logic Framework for Boolean Operators in Neural Embeddings](https://arxiv.org/abs/2604.10604)：把 t-norm 与 t-conorm 模糊逻辑适配到嵌入空间，用 Neuro-Symbolic Delta 和球面查询优化实现无需重训的布尔式检索约束。
+- [Winner-Take-All Spiking Transformer for Language Modeling](https://arxiv.org/abs/2604.11321)：补充面向通用推理的模型侧工作，重点是spiking transformer architecture for language modeling。
+- [Adaptive Spiking Neurons for Vision and Language Modeling](https://arxiv.org/abs/2604.12365)：补充面向通用推理的模型侧工作，重点是adaptive spiking neurons for vision and language modeling。
+- [Correct Chains, Wrong Answers: Dissociating Reasoning from Output in LLM Logic](https://arxiv.org/abs/2604.13065)：通过 Novel Operator Test 分离算子逻辑和算子名称，揭示 LLM 可逐步推理正确却仍给出错误最终答案的失配现象。
+- [IE as Cache: Information Extraction Enhanced Agentic Reasoning](https://arxiv.org/abs/2604.14930)：将信息抽取作为智能体推理缓存。
+- [Rethinking the Comparison Unit in Sequence-Level Reinforcement Learning: An Equal-Length Paired Training Framework from Loss Correction to Sample Construction](https://arxiv.org/abs/2604.17328)：通过损失校正与成对样本构造，重新定义序列级强化学习中的比较单元。
+- [PDDL-Mind: Large Language Models are Capable on Belief Reasoning with Reliable State Tracking](https://arxiv.org/abs/2604.17819)： 检验并支持 LLM 的 belief reasoning 与可靠状态跟踪，适合通用推理模型覆盖。
+- [One Pass for All: A Discrete Diffusion Model for Knowledge Graph Triple Set Prediction](https://arxiv.org/abs/2604.18344)：补充面向通用推理的模型侧工作，重点是discrete diffusion for knowledge-graph triple prediction。
+- [Symbolic Grounding Reveals Representational Bottlenecks in Abstract Visual Reasoning](https://arxiv.org/abs/2604.21346)：把 Bongard-LOGO 图像转成 LOGO 风格符号程序和结构化描述，说明抽象视觉推理瓶颈很大程度来自表征而不只是推理。
 - [Process Supervision via Verbal Critique](https://arxiv.org/abs/2604.21611)：用逐步语言批评作为过程监督，使推理改进不只依赖最终答案奖励。
+- [Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models](https://arxiv.org/abs/2604.22166)：用 activation patching 识别 filler-gap dependency 的共享 attention 与 MLP 机制，同时发现 negative polarity item 不共享同一统一电路。
+- [Iterative Definition Refinement for Zero-Shot Classification via LLM-Based Semantic Prototype Optimization](https://arxiv.org/abs/2604.27335)：让 LLM 基于示例、混淆样本和历史错误信号迭代优化类别定义，从而改进无需训练的零样本网页分类。
+- [How Language Models Process Negation](https://arxiv.org/abs/2605.03052)：结合消融、激活分析和因果可解释性，说明 LLM 内部存在正确处理否定的组件，但后层注意力捷径会覆盖这些计算。
+- [GRPO-TTA: Test-Time Visual Tuning for Vision-Language Models via GRPO-Driven Reinforcement Learning](https://arxiv.org/abs/2605.03403)：将 GRPO 驱动的强化学习用于视觉语言模型的测试时视觉调优。
+- [Correct Is Not Enough: Training Reasoning Planners with Executor-Grounded Rewards](https://arxiv.org/abs/2605.03862)：执行器扎根奖励训练规划器生成对下游执行器有用的推理轨迹，而不只追求最终答案正确。
+- [Critical Windows of Complexity Control](https://arxiv.org/abs/2605.04396)：定位训练过程中模型转向低复杂度推理解还是记忆捷径的关键窗口。
+- [Conceptors for Semantic Steering](https://arxiv.org/abs/2605.04980)：用 conceptor 投影矩阵替代单一 steering vector，支持布尔组合和 quota 层选择，用于多维语义控制。
+- [On Semantic Loss Fine-Tuning Approach for Preventing Model Collapse in Causal Reasoning](https://arxiv.org/abs/2605.05438)：在 transitivity 和 d-separation 微调中加入图逻辑约束与动态 semantic loss 调度，防止模型坍缩为固定 Yes 或 No。
+- [Beyond Reasoning: Reinforcement Learning Unlocks Parametric Knowledge in LLMs](https://arxiv.org/abs/2605.07153)：研究强化学习能否释放模型参数化知识而不仅是推理格式。
+- [POETS: Uncertainty-Aware LLM Optimization via Compute-Efficient Policy Ensembles](https://arxiv.org/abs/2605.07775)：使用计算高效的策略集成来进行不确定性感知的 LLM 优化。
+- [Rubric-Grounded RL: Structured Judge Rewards for Generalizable Reasoning](https://arxiv.org/abs/2605.08061)：用 structured judge rewards 优化推理策略，将反馈拆成带权重、可验证的 rubric criteria，由冻结 LLM judge 评分，并用 GRPO 把文档扎根的 partial credit 转化为可迁移的推理增益。
+- [Belief or Circuitry? Causal Evidence for In-Context Graph Learning](https://arxiv.org/abs/2605.08405)：用 PCA、残差流 patching 和 graph-difference steering 证明结构推断与 induction circuit 会在上下文图学习中并行工作。
+- [Test-Time Speculation](https://arxiv.org/abs/2605.09329)：补充面向通用推理的模型侧工作，重点是test-time speculation for inference scaling。
+- [Extending Confidence-Based Text2Cypher with Grammar and Schema Aware Filtering](https://arxiv.org/abs/2605.10318)：在测试时用置信度评分、语法校验和 schema 约束过滤 Text2Cypher 生成结果，再聚合可执行数据库查询。
+- [fg-expo: Frontier-guided exploration-prioritized policy optimization via adaptive kl and gaussian curriculum](https://arxiv.org/abs/2605.11403)：在 exploration-prioritized policy optimization 中加入 frontier guidance、自适应 KL 控制和高斯课程。
+- [CAAFC: Chronological Actionable Automated Fact-Checker for misinformation / non-factual hallucination detection and correction](https://arxiv.org/abs/2605.12436)：面向 claims、conversations 和 dialogues 进行事实核查，结合时序证据更新、可执行理由和纠错支持来检测 misinformation 与 hallucination。
+- [Revisiting Reinforcement Learning with Verifiable Rewards from a Contrastive Perspective](https://arxiv.org/abs/2605.12969)：用对比式判别目标重新解释 RLVR 与 GRPO 对推理模型训练的作用。
 - [Query-Conditioned Test-Time Self-Training](https://arxiv.org/abs/2605.13369)：围绕当前 query 进行测试时自训练，把 self-training 变成逐实例推理改进机制。
+- [Diagnosing Training Inference Mismatch in LLM Reinforcement Learning](https://arxiv.org/abs/2605.14220)：诊断 LLM 强化学习训练条件与推理时行为之间的错配。
+- [Reasoning Models Don't Just Think Longer, They Move Differently](https://arxiv.org/abs/2605.15454)：补充面向通用推理的模型侧工作，重点是behavioral analysis of reasoning models under longer thinking。
+- [SRaR / Step-wise Rubrics as Rewards](https://arxiv.org/abs/2605.17291)：为推理模型的 RLVR 加入 step-level rubric rewards。核心思想是把每个 rubric item 归因到具体推理步骤，跨 rollout 归一化每步信号，并与 outcome reward 解耦组合，避免把失败答案中的正确中间步骤惩罚掉、或把正确答案中的错误步骤奖励掉。
+- [EDAS / Error Diversity Advantage Shaping](https://arxiv.org/abs/2605.17333)：把 RLVR group rollout 内部错误答案的多样性作为训练信号。核心思想是更强惩罚占主导的重复错误，同时保留少见探索性错误，避免把所有错误 rollout 都压成同一个二值惩罚而导致错误固化。
+- [Hidden-Align](https://arxiv.org/abs/2606.03234)：为 RLVR 推理加入 hidden-state alignment 辅助损失。核心思想是在 answer-anchor token 对齐正确 rollouts，使不同有效推理路径共享更强的“正确决策”表示，并且不增加推理成本。
+- [ReSum: Synergizing LLM Reasoning and Summarization with Reinforcement Learning](https://arxiv.org/abs/2606.13316)：提出 ReSum，让 LLM 在 RLVR 中通过自我摘要压缩和组织长推理轨迹，降低长程推理的上下文压力。
+- [ReaLiC: Reward-Aligned Latent Reasoning for Conversational Query Rewriting](https://doi.org/10.1016/j.inffus.2026.104409)：为会话查询改写定义结构化推理策略，并把策略级 rationale 与改写结果联合生成，再用检索效果和推理-上下文一致性奖励在 QReCC 与 TopiOCQA 上对齐。
+- [Causal Effect Estimation under Network Interference with State Space Models](https://doi.org/10.1109/icassp55912.2026.11462105)：提出 MCINet，将多跳干扰建模与 Mamba 式状态空间模型结合，用于社交网络邻域中的因果效应估计。
+- [Crash root-cause identification via trace-rewarded causation chain reasoning large language model](https://doi.org/10.1016/j.aap.2026.108586)：基于 DeepSeek-R1-Distill-Qwen 构建事故根因推理模型，用事故类型、实体、行为和根因对齐 trace reward，经 MCTS 扩展因果链并用 GRPO 训练，在 MM-AU 上识别事故形成根因。
+- [Neuro-Symbolic AI Security Attack Assessment Computational Model](https://doi.org/10.1109/acdsa67686.2026.11467731)：结合知识表示、推理和复杂性理论视角，对 neuro-symbolic AI 的威胁、漏洞和多层影响进行攻击评估建模。
+- [Evolutionary Prompt Optimization for Large Language Models: A Multi-Task Framework](https://doi.org/10.1109/icitiit68860.2026.11499623)：用任务检测、数据集驱动评分、选择、交叉和变异，在摘要、分类和问答任务上自动搜索 prompt。
+- [Don't Generate, Classify! Low-Latency Prompt Optimization with Structured Complementary Prompt](https://doi.org/10.18653/v1/2026.eacl-long.204)：用 structured complementary prompt 和分类式评分优化 prompt，避免搜索过程中高延迟的自回归 prompt 生成。
+- [Joint Modeling of Typicality and Uncertainty for Sot-Based Few-Shot LLM Reasoning](https://doi.org/10.1109/icassp55912.2026.11464177)：补充面向通用推理的模型侧工作，重点是typicality and uncertainty for few-shot LLM reasoning。
+- [Reward-Based Efficient Demonstration Selection for In-Context Learning](https://doi.org/10.1109/icassp55912.2026.11461481)：REDS 用无需 LLM 的 Efficient Annotator 构造奖励模型训练数据，以较低评分成本选择 in-context demonstrations。
+- [Parameter-Free Mixture of Experts for Black-Box Prompt Tuning](https://doi.org/10.1109/icassp55912.2026.11463113)：在无法访问梯度和模型参数的黑盒 prompt tuning 中，用无参数 mixture-of-experts 设计提供实例级 prompt。
+- [MALT](https://openreview.net/forum?id=jXP9bgFack)：通过多 agent LLM training 改进推理，把多智能体协作轨迹作为模型侧监督，而不只是外部 harness。
+- [Enhancing MLLM Complex Reasoning via Similarity Computation](https://doi.org/10.1609/aaai.v39i10.33107)：用相似度计算提升多模态大模型的复杂推理能力。
+- [How LLMs encode theory-of-mind](https://doi.org/10.1038/s44387-025-00031-9)：研究大语言模型 theory-of-mind 行为背后的稀疏参数模式。
+- [Struct-X: Enhancing the Reasoning Capabilities of Large Language Models in Structured Data Scenarios](https://doi.org/10.1145/3690624.3709381)：提升 LLM 在结构化数据场景中的推理能力，补充利用显式数据结构而不是把输入完全展平成普通文本的模型侧路线。
+- [TRACE: Topical Reasoning with Adaptive Contextual Experts](https://doi.org/10.3390/bdcc10010031)：构建 graph-enhanced RAG 摘要框架，使用 orthogonal context graph 和 query-aware MoE 图注意力建模长文档主题推理。
+- [LLMRG: Improving Recommendations through Large Language Model Reasoning Graphs](https://doi.org/10.1609/aaai.v38i17.29887)：构建个性化 reasoning graph，结合 chained graph reasoning、divergent extension、self-verification、scoring 与知识库自改进来增强推荐。
+- [CGKPN: Cross-Graph Knowledge Propagation Network with Adaptive Connection for Reasoning-Based Machine Reading Comprehension](https://doi.org/10.1145/3658673)：通过跨图知识传播和自适应连接，在机器阅读理解中同时建模语义结构与逻辑结构。
+- [Grokking of Implicit Reasoning in Transformers: A Mechanistic Journey to the Edge of Generalization](https://doi.org/10.52202/079017-3017)：通过 composition 与 comparison 任务表明 transformer 只有在长时间 grokking 后才学到参数知识上的隐式推理，并用机制分析解释 memorizing circuit 与 generalizing circuit 在 ID/OOD 泛化中的差异。
+- [LLSM: LLM-enhanced Logic Synthesis Model with EDA-guided CoT Prompting, Hybrid Embedding and AIG-tailored Acceleration](https://doi.org/10.1145/3658617.3697618)：用 EDA-guided CoT 从 RTL 代码中抽取电路信息，融合文本与电路嵌入，并用面向 AIG 的表示和缓存加速逻辑综合 delay/area 预测，在 OpenABC-D 上评测。
+- [Explicit Image Caption Reasoning: Generating Accurate and Informative Captions for Complex Scenes with LMM](https://doi.org/10.3390/s24123820)：通过 enhanced inference chain 分析传感器图像中的物体关系与交互，并在 ICICD 数据集上生成复杂场景 caption。
+- [LVLM-MIR: Large Vision-Language Model with Parameter-Efficient Fine-Tuning for Multimodal Interleaved Reasoning](https://doi.org/10.1145/3746027.3762002)：冻结 Qwen2.5-VL 主干，在视觉与语言模块同时微调 LoRA adapter，用于 MIRAGE Track A 的多图和图文交错推理。
+- [Learning to Decompose: Human-Like Subgoal Preferences Emerge in Neural Networks Learning Graph Traversal](https://doi.org/10.1162/opmi.a.256)：训练神经图遍历学习器，发现 transformer 会偏好常出现在最短路径中的节点，形成类似人类的子目标偏好。
+- [Language models, like humans, show content effects on reasoning tasks](https://doi.org/10.1093/pnasnexus/pgae233)：在自然语言推理、三段论和 Wason selection 任务上测试 LM，显示模型会像人类一样把语义内容效应混入抽象逻辑推理。
+- [Multimodal PEAR Chain-of-Thought Reasoning for Multimodal Sentiment Analysis](https://doi.org/10.1145/3672398)：用 PEAR CoT prompt 和跨模态过滤，把 LLM 生成的文本推理转化为更可靠的多模态情感推理。
+- [Enhancing Chinese comprehension and reasoning for large language models: an efficient LoRA fine-tuning and tree of thoughts framework](https://doi.org/10.1007/s11227-024-06499-7)：把 LLaMA-13B 的 LoRA 微调与 Tree-of-Thought 搜索、自评估结合，在较低资源开销下提升中文理解、逻辑推理和情感分析表现。
+- [LLaMA-LoRA Neural Prompt Engineering: A Deep Tuning Framework for Automatically Generating Chinese Text Logical Reasoning Thinking Chains](https://doi.org/10.1162/dint_a_00251)：结合 LLaMA-13B、LoRA refinement 与 neural prompt engineering，以较低资源需求自动生成中文逻辑推理链。
+- [Graph Reasoning Enhanced Language Models for Text-to-SQL](https://doi.org/10.1145/3626772.3657961)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充通用推理方向的模型覆盖。
+- [RSGPT: a generative transformer model for retrosynthesis planning pre-trained on ten billion datapoints](https://doi.org/10.1038/s41467-025-62308-6)：在 100 亿以上模板生成反应数据上预训练 retrosynthesis transformer，并用强化学习进一步优化产物、反应物和模板关系。
+- [Generating textual explanations for scheduling systems leveraging the reasoning capabilities of large language models](https://doi.org/10.1007/s10844-025-00940-w)：用 LLM 为 job-shop scheduling 决策生成文本解释，评估自然语言推理在调度系统 XAI 中的作用。
+- [Exclusive: Start-up FutureHouse debuts powerful AI ‘reasoning model’ for science](https://doi.org/10.1038/d41586-025-01753-1)：报道 FutureHouse 的 ether0 科学推理模型，强调其化学任务表现以及面向自动化科研流水线的定位。
+- [3C: a framework for structured chain-of-thought decoding to improve correctness, coherence, and comprehensiveness](https://doi.org/10.1007/s44443-026-00615-8)：结合 CoT 推理、检索、正确性评估、GAT/Siamese coherence 模块与多任务优化，在 HotpotQA、2WikiMultiHopQA、MuSiQue、FERMI 和 StrategyQA 等复杂问答基准上提升推理链质量。
+- [KnitLoRA: bridging low-rank adaptation as interwoven layers for deeper semantic reasoning](https://doi.org/10.1038/s41598-026-47668-3)：在微调阶段为 LoRA block 加入密集连接以复用特征并改善梯度流，推理阶段移除这些连接路径，因此不增加额外计算开销。
+- [Reasoning over Uncertain Text by Generative Large Language Models](https://doi.org/10.1609/aaai.v39i23.34674)：补充生成式大语言模型不确定文本推理研究。
+- [Training-Free Mitigation of Language Reasoning Degradation After Multimodal Instruction Tuning](https://doi.org/10.1609/aaaiss.v5i1.35617)：补充多模态指令调优后语言推理退化的无需训练缓解方法。
+- [Triples as the Key: Structuring Makes Decomposition and Verification Easier in LLM-based TableQA](https://www.semanticscholar.org/paper/a06f277af15f4af41f8d37613c33510266a4ffc8)：把表格问答结构化为三元组，使大模型推理中的分解与验证更容易。
+- [Efficiently Learning at Test-Time: Active Fine-Tuning of LLMs]()：提供模型侧推理、强化学习或测试时适配方法。

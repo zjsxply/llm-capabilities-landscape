@@ -1,7 +1,45 @@
 # 2.7.4 Model
 
+- [Large Language Models in Finance (FinLLMs)](https://arxiv.org/abs/2402.02315)：贡献面向 Real World Work 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [E2ETune: End-to-End Knob Tuning via Fine-tuned Generative Language Model](https://arxiv.org/abs/2404.11581)：用微调生成式语言模型做端到端旋钮调优，把真实系统配置优化转化为模型生成与反馈学习问题。
+- [Large Scale Transfer Learning for Tabular Data via Language Modeling](https://arxiv.org/abs/2406.12031)：贡献面向 Real World Work 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [LLMs generate structurally realistic social networks but overestimate political homophily](https://arxiv.org/abs/2408.16629)：补充 Real-World Work 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [TableGPT2: A Large Multimodal Model with Tabular Data Integration](https://arxiv.org/abs/2411.02059)：贡献面向 Real World Work 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [AutoDDG: Automated Dataset Description Generation using Large Language Models](https://arxiv.org/abs/2502.01050)：用 LLM 为开放数据门户和数据湖自动生成数据集描述。
+- [Can Large Language Models Be Query Optimizer for Relational Databases?](https://arxiv.org/abs/2502.05562)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [LawGPT: Knowledge-Guided Data Generation and Its Application to Legal LLM](https://arxiv.org/abs/2502.06572)：用法律知识引导合成数据生成、细化与验证，以提升开源 LLM 的法律推理能力。
+- [Simulating Influence Dynamics with LLM Agents](https://arxiv.org/abs/2503.08709)：面向真实工作场景与多智能体系统的模型、训练或算法工作。核心思想：以 Simulating Influence Dynamics with LLM Agents 为主要改进目标，作为 Model 条目的能力参考。
+- [ExCoT: Optimizing Reasoning for Text-to-SQL with Execution Feedback](https://arxiv.org/abs/2503.19988)：用执行反馈和 CoT 数据优化 Text-to-SQL 推理。
+- [Evolution of Cooperation in LLM-Agent Societies: A Preliminary Study Using Different Punishment Strategies](https://arxiv.org/abs/2504.19487)：面向真实工作场景与多智能体系统的模型、训练或算法工作。核心思想：以 A Preliminary Study Using Different Punishment Strategies 为主要改进目标，作为 Model 条目的能力参考。
 - [WorkForceAgent-R1](https://arxiv.org/abs/2505.22942)：用 regularized R1-style RL 训练面向 WorkArena 类企业网页任务的 workplace web agent，提升单步推理、格式遵循和动作正确性。
+- [Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards](https://arxiv.org/abs/2507.03041)：面向 compound AI systems 的优化框架；核心思想是把局部组件 reward 与全局任务结果对齐，使多工具或多模块 agent 能端到端调优。
+- [XiYan-SQL: A Novel Multi-Generator Framework for Text-to-SQL](https://arxiv.org/abs/2507.04701)：结合 schema 过滤、多 SQL 生成器和候选选择，提高 Text-to-SQL 可靠性。
+- [How to Train a Leader: Hierarchical Reasoning in Multi-Agent LLMs](https://arxiv.org/abs/2507.08960)：研究多代理 LLM 层级推理中的 leader training，关注可学习的协调、分工和委派行为。
+- [End-to-End Text-to-SQL with Dataset Selection: Leveraging LLMs for Adaptive Query Generation](https://arxiv.org/abs/2508.06387)：面向真实工作与企业智能体的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Synchronization Dynamics of Heterogeneous, Collaborative Multi-Agent AI Systems](https://arxiv.org/abs/2508.12314)：建模异构协作多智能体 AI 系统中的同步动力学。
+- [UserRL: Training Interactive User-Centric Agent via Reinforcement Learning](https://arxiv.org/abs/2509.19736)：面向互动 agent 的用户中心强化学习环境。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Wonder Wins Ways: Curiosity-Driven Exploration through Multi-Agent Contextual Calibration](https://arxiv.org/abs/2509.20648)：面向真实工作场景与多智能体系统的模型、训练或算法工作。核心思想：以 Curiosity-Driven Exploration through Multi-Agent Contextual Calibration 为主要改进目标，作为 Model 条目的能力参考。
+- [DeepTravel: An End-to-End Agentic Reinforcement Learning Framework for Autonomous Travel Planning Agents](https://arxiv.org/abs/2509.21842)：构建面向自主旅行规划智能体的端到端智能体强化学习框架。
+- [Agent Fine-Tuning Through Distillation for Domain-Specific LLMs in Microdomains](https://arxiv.org/abs/2510.00482)：研究面向领域智能体的蒸馏式微调方法。
+- [Classifier-Augmented Generation for Structured Workflow Prediction](https://arxiv.org/abs/2510.12825)：提出面向真实世界工作的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [MTSQL-R1: Towards Long-Horizon Multi-Turn Text-to-SQL via Agentic Training](https://arxiv.org/abs/2510.12831)：通过 agentic training 训练长时程多轮 Text-to-SQL。
+- [CRMWeaver: Building Powerful Business Agent via Agentic RL and Shared Memories](https://arxiv.org/abs/2510.25333)：用 agentic reinforcement learning 和共享记忆信号训练业务代理，使 CRM 工作流成为可学习的运营行为。
+- [Training Proactive and Personalized LLM Agents](https://arxiv.org/abs/2511.02208)：主动且个性化用户协助的交互式训练环境。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Text2SQL-Flow: A Robust SQL-Aware Data Augmentation Framework for Text-to-SQL](https://arxiv.org/abs/2511.10192)：通过 SQL-aware pipeline 生成可执行、语义有效且结构多样的 Text-to-SQL 数据。
+- [Self-Cognitive Product Design LLM](https://doi.org/10.1016/j.aei.2025.103265)：用 LLM 支持细粒度多模态特征识别与语义理解，用于复杂产品设计。
+- [Building-Code Compliance LLM](https://doi.org/10.1016/j.aei.2025.103676)：微调 LLM 自动检查建筑法规合规性，补充专业合规工作模型案例。
 - [ArenaRL](https://arxiv.org/abs/2601.06487)：用 tournament-based relative ranking 扩展开放式 agent RL，面向复杂旅行规划等难以用单点标量奖励稳定评分的真实工作任务。
+- [Learning to Recommend Multi-Agent Subgraphs from Calling Trees](https://arxiv.org/abs/2601.22209)：从调用树学习推荐多智能体子图，属于多智能体组织结构模型方法。
 - [Reasoning by Commented Code](https://arxiv.org/abs/2602.00543)：用带注释代码作为表格问答的中间推理形式，使表格操作更显式、更可检查。
+- [When Should an AI Act? A Human-Centered Model of Scene, Context, and Behavior for Agentic AI Design](https://arxiv.org/abs/2602.22814)：围绕场景、上下文和行为建模智能体何时行动，可作为真实任务智能体交互设计的模型条目。
+- [DT-MDP Context Engineering](https://arxiv.org/abs/2603.22083)：用 digital-twin MDP 与 offline RL 改进企业 agent，属于现实工作 agent 的模型侧训练。
+- [Pioneer Agent](https://arxiv.org/abs/2604.09791)：自动化小语言模型的生产适配闭环，覆盖数据获取、失败诊断、定向再训练、回归约束和 AdaptFT-Bench 上的验证。
+- [Structure-Grounded Knowledge Retrieval via Code Dependencies for Multi-Step Data Reasoning](https://arxiv.org/abs/2604.10516)：通过代码依赖结构检索多步数据推理所需知识。核心思路是构建 dependency-path 子图，并把函数实现作为结构化上下文提供给基于 LLM 的代码生成与数据分析。
 - [Agent-World](https://arxiv.org/abs/2604.18292)：自动合成真实工具环境和可验证任务，并用多环境 RL 与自演化任务生成训练 8B/14B agent。
 - [Learning to Explore](https://arxiv.org/abs/2605.08978)：提出 exploration-aware policy optimization，使 LLM agent 学会在提交任务动作前判断何时需要探索环境。
+- [Human-AI Productivity Paradoxes: Modeling the Interplay of Skill, Effort, and AI Assistance](https://arxiv.org/abs/2605.11350)：从技能、努力与 AI 辅助角度建模人机生产率悖论。
+- [Adaptive Semantic Compression and Transmission for Cognitive Knowledge Coordination in a Hierarchical LLM-Agents System](https://doi.org/10.1109/jiot.2026.3658564)：研究层级 LLM 智能体协调中的自适应语义压缩。
+- [CPDTeam: A KG-RAG-CoT dual-driven and deep reinforcement learning-augmented multi-agent framework for intelligent collaborative product development](https://doi.org/10.1016/j.jmsy.2026.03.017)：将 KG-RAG、chain-of-thought、深度强化学习和多智能体协作结合，用于智能协同产品开发流程。
+- [Tabula rasa agents display emergent in-group behavior](https://doi.org/10.1073/pnas.2319947121)：面向真实工作场景与多智能体系统的模型、训练或算法工作。核心思想：以 Tabula rasa agents display emergent in-group behavior 为主要改进目标，作为 Model 条目的能力参考。
+- [LLM-Based Risk Scenario Generation for Hardware Products: A Quantitative Validation against Real-World User Reviews](https://doi.org/10.5220/0014452200004052)：用真实用户评论验证面向硬件产品的 LLM 风险场景生成。
+- [Large Language Models for Computer-Aided Design (LLM4CAD) Fine-Tuned: Dataset and Experiments](https://doi.org/10.1115/1.4067713)：研究面向计算机辅助设计的微调 LLM 与数据集，补充真实工作中工程设计方向的模型侧条目。

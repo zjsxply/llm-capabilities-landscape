@@ -1,9 +1,23 @@
 # 1.3.2 Survey
 
 - [Instruction Tuning for Large Language Models: A Survey](https://arxiv.org/abs/2308.10792)：指令微调数据、方法、评测与局限的基础综述。
-- [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](https://arxiv.org/abs/2402.07927)：综述在模型侧微调之前影响约束遵循的提示方法。
+- [From Prompt Engineering to Prompt Science with Humans in the Loop](https://arxiv.org/abs/2401.04122)：把科研场景中的提示设计定位为可复现的人在环流程，借鉴 codebook 式标注、协商与多阶段验证来记录提示生成。
+- [A Survey on Data Selection for LLM Instruction Tuning](https://arxiv.org/abs/2402.05123)：围绕常用指令数据集、子集选择分类、评测策略、已报告结果和开放挑战梳理指令微调数据选择。
+- [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](https://arxiv.org/abs/2402.07927)：按应用领域分类提示工程技术，并概述各方法的提示策略、模型、数据集、优缺点与开放挑战。
+- [A Survey on Recent Advances in LLM-Based Multi-turn Dialogue Systems](https://arxiv.org/abs/2402.18013)：综述基于 LLM 的开放域与任务型多轮对话系统，覆盖模型适配、数据集、评测指标和新兴对话系统问题。
+- [Efficient Prompting Methods for Large Language Models: A Survey](https://arxiv.org/abs/2404.01077)：以资源效率为主线形式化提示方法，讨论不同提示组件的自动提示工程以及连续、离散空间中的提示压缩。
 - [The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608)：给出提示工程技术及评测考虑的细粒度分类。
+- [A Complete Survey on LLM-based AI Chatbots](https://arxiv.org/abs/2406.16937)：追踪聊天机器人从早期系统到 LLM 聊天机器人的演进，并综述行业应用、训练数据风险、生成知识滥用和可靠性挑战。
+- [A Survey of Prompt Engineering Methods in Large Language Models for Different NLP Tasks](https://arxiv.org/abs/2407.12994)：综述 29 类 NLP 任务上的 39 种提示方法，比较数据集、所用 LLM、任务性能并给出提示方法分类。
+- [Unleashing the Power of Data Tsunami: A Comprehensive Survey on Data Assessment and Selection for Instruction Tuning of Language Models](https://arxiv.org/abs/2408.02085)：综述指令微调中的数据评估与选择，将方法分为质量、多样性和重要性三类，并比较官方报告结果。
+- [A Survey of Calibration Process for Black-Box LLMs](https://arxiv.org/abs/2412.12767)：把黑盒 LLM 校准定义为置信度估计与校准两个步骤，综述 API 约束下可用的方法、应用和可靠性挑战。
 - [A Survey on Multi-Turn Interaction Capabilities of Large Language Models](https://arxiv.org/abs/2501.09959)：综述多轮交互能力，覆盖上下文跟踪、指令保持与对话适配。
+- [A Survey of Automatic Prompt Engineering: An Optimization Perspective](https://arxiv.org/abs/2502.11560)：从优化视角综述自动提示工程，覆盖搜索空间、目标函数、算法与提示式指令控制的评测选择。
 - [A Systematic Survey of Automatic Prompt Optimization Techniques](https://arxiv.org/abs/2502.16923)：回顾面向指令遵循的自动提示搜索、反馈与优化方法。
+- [Call for Rigor in Reporting Quality of Instruction Tuning Data](https://arxiv.org/abs/2503.04807)：以 LIMA 与 Alpaca 子集为案例说明，任意选择微调超参数可能推翻关于指令数据质量的结论。
 - [Towards Alignment-Centric Paradigm: A Survey of Instruction Tuning in Large Language Models](https://arxiv.org/abs/2508.17184)：从以对齐为中心的数据、训练和评测视角更新指令微调研究。
-- [A Survey on Quality Evaluation of Instruction Fine-tuning Datasets for Large Language Models](https://doi.org/10.3724/2096-7004.di.2025.0021)：综述指令微调数据质量评估，说明数据集构建如何影响指令遵循行为。
+- [A Comprehensive Review of Supervised Fine-Tuning for Large Language Models in Creative Applications and Content Moderation](https://doi.org/10.1109/icict64420.2025.11005111)：这篇 IEEE ICICT 综述把 LLM 监督微调覆盖范围收窄到创意应用与内容审核场景。
+- [The fine art of fine-tuning: A structured review of advanced LLM fine-tuning techniques](https://doi.org/10.1016/j.nlp.2025.100144)：把高级微调分为训练方法变化、适配器、量化、参数选择、混合专家和应用型方法，并比较不同数据集与基座模型上的基准取舍。
+- [How LLMs Follow Instructions: Skillful Coordination, Not a Universal Mechanism](https://arxiv.org/abs/2604.06015)：把指令跟随分析为技能化协调而非单一通用机制。
+- [A Survey on Quality Evaluation of Instruction Fine-tuning Datasets for Large Language Models](https://doi.org/10.3724/2096-7004.di.2025.0021)：将指令微调数据集质量评估分为人工、统计、模型和 LLM 四类方法，并总结局限与后续方向。
+- [The role of prompt engineering in enhancing LLMs: a systematic review of applications and ethical implications](https://doi.org/10.11591/ijai.v15.i2.pp1071-1086)：综述提示工程应用与伦理问题，比较思维链提示和检索增强生成在推理、减轻幻觉、缓解偏见和高风险场景可靠性上的作用。

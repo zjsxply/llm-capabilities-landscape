@@ -1,28 +1,166 @@
 # 1.3.3 Bench
 
 - [COLLIE](https://arxiv.org/abs/2307.08689)：评测受约束文本生成与复杂指令遵循；核心思想是把约束（格式、包含/排除、长度、集合约束等）做成可组合、可判定的诊断任务族。
-- [FollowBench](https://arxiv.org/abs/2310.20410)：评测多层级、细粒度约束遵循；核心思想是把复杂用户指令拆成不同难度和类型的约束，定位模型是在整体任务、局部约束还是细节执行上失败。
+- [FollowBench](https://arxiv.org/abs/2310.20410)（[开源代码与榜单](https://github.com/YJiangcm/FollowBench)）：评测多层级、细粒度约束遵循；核心思想是把复杂用户指令拆成不同难度和类型的约束，定位模型是在整体任务、局部约束还是细节执行上失败。
 - [IFEval](https://arxiv.org/abs/2311.07911)（数据集：[google/IFEval](https://huggingface.co/datasets/google/IFEval)；[Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard) 中的指令遵循核心任务）：评测指令遵循（格式、约束、禁止项等）；核心思想是用可判定规则集自动化评测“是否按指令输出”，作为 Inverse IFEval 的直接参照。
+- [Towards a Simultaneous and Granular Identity-Expression Control in Personalized Face Generation](https://arxiv.org/abs/2401.01207)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
 - [InFoBench](https://arxiv.org/abs/2401.03601)：评测复杂指令的分解式要求遵循；核心思想是把 500 条多约束指令拆成 2,250 个可判定子要求，用 DRFR 指标衡量模型对每一项要求的满足程度。
-- [LiveBench Instruction Following](https://arxiv.org/abs/2406.19314)（[开源代码](https://github.com/livebench/livebench)）：评测动态更新榜单中的指令遵循类别；核心思想是用持续更新、可自动评分的数据降低污染，并把 instruction following 放入更广泛的综合能力比较。
+- [TypeDance: Creating Semantic Typographic Logos from Image through Personalized Generation](https://arxiv.org/abs/2401.11094)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [SemScore: Automated Evaluation of Instruction-Tuned LLMs based on Semantic Textual Similarity](https://arxiv.org/abs/2401.17072)：补充指令遵循能力的评测资源或协议。
+- [AnimateLCM: Computation-Efficient Personalized Style Video Generation without Personalized Video Data](https://arxiv.org/abs/2402.00769)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Uni-RLHF: Universal Platform and Benchmark Suite for Reinforcement Learning with Diverse Human Feedback](https://arxiv.org/abs/2402.02423)：补充指令遵循方向的基准、数据集、挑战、指标或评测协议。
+- [Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community](https://arxiv.org/abs/2402.09872)：面向指令遵循与偏好对齐，补充评测基准、数据集、协议或指标。
+- [FIPO: Free-form Instruction-oriented Prompt Optimization with Preference Dataset and Modular Fine-tuning Schema](https://arxiv.org/abs/2402.11811)：FIPO: Free-form Instruction-oriented Prompt Optimization with Preference Dataset and Modular Fine-tuning Schema 补充指令遵循与偏好对齐方向的基准、数据集、指标或评测协议。
+- [CIF-Bench: A Chinese Instruction-Following Benchmark for Evaluating the Generalizability of Large Language Models](https://arxiv.org/abs/2402.13109)：用 150 个任务、15,000 个母语者构造的输入输出对和 20 类中文任务评测零样本指令泛化，并保留一半私有数据以降低污染。
+- [RefuteBench: Evaluating Refuting Instruction-Following for Large Language Models](https://arxiv.org/abs/2402.13463)：提出或分析面向instruction following, alignment, or preference optimization的基准、数据集、指标或评测协议。
+- [INSTRUCTIR: A Benchmark for Instruction Following of Information Retrieval Models](https://arxiv.org/abs/2402.14334)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [MT-Bench-101: A Fine-Grained Benchmark for Evaluating Large Language Models in Multi-Turn Dialogues](https://arxiv.org/abs/2402.14762)：在细粒度多轮对话设置中评测大语言模型。
+- [FOFO: A Benchmark to Evaluate LLMs' Format-Following Capability](https://arxiv.org/abs/2402.18667)：通过任务、评测协议或诊断设置评测 Instruction Following 能力，适合作为 Bench 条目。
+- [Infinite-ID: Identity-preserved Personalization via ID-semantics Decoupling Paradigm](https://arxiv.org/abs/2403.11781)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [FollowIR: Evaluating and Teaching Information Retrieval Models to Follow Instructions](https://arxiv.org/abs/2403.15246)：评测检索模型是否遵循细粒度用户指令；核心思想是把 TREC 专业评估员使用的叙述性相关性说明转成查询侧指令，并用成对排序协议检查模型能否优先返回满足指令的文档。
+- [ChatGPT Role-play Dataset: Analysis of User Motives and Model Naturalness](https://arxiv.org/abs/2403.18121)：提供面向指令遵循的基准、数据集、挑战任务或评测协议。
+- [Regularized Conditional Diffusion Model for Multi-Task Preference Alignment](https://arxiv.org/abs/2404.04920)：补充指令遵循能力的评测资源或协议。
+- [PMG : Personalized Multimodal Generation with Large Language Models](https://arxiv.org/abs/2404.08677)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Distilling Instruction-following Abilities of Large Language Models with Task-aware Curriculum Planning](https://arxiv.org/abs/2405.13448)：补充指令遵循能力的评测资源或协议。
+- [Is In-Context Learning Sufficient for Instruction Following in LLMs?](https://arxiv.org/abs/2405.19874)：比较 in-context alignment 与 instruction fine-tuning 对指令遵循的效果；核心思想是在 MT-Bench 和低数据设置下测试 URIAL 式示例、解码参数和贪心筛选 demonstrations 是否足以接近 instruct 模型。
+- [SkySenseGPT: A Fine-Grained Instruction Tuning Dataset and Model for Remote Sensing Vision-Language Understanding](https://arxiv.org/abs/2406.10100)：补充面向指令遵循或指令调优能力的基准、数据集、指标或评测协议。
+- [On the Worst Prompt Performance of Large Language Models](https://arxiv.org/abs/2406.10248)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Do as I do (Safely): Mitigating Task-Specific Fine-tuning Risks in Large Language Models](https://arxiv.org/abs/2406.10288)：补充指令遵循能力的评测资源或协议。
+- [MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs](https://arxiv.org/abs/2406.11833)：补充面向指令遵循或指令调优能力的基准、数据集、指标或评测协议。
+- [RS-GPT4V: A Unified Multimodal Instruction-Following Dataset for Remote Sensing Image Understanding](https://arxiv.org/abs/2406.12479)：提出或分析面向instruction following, alignment, or preference optimization的基准、数据集、指标或评测协议。
+- [LiveBench Instruction Following](https://arxiv.org/abs/2406.19314)（[榜单](https://livebench.ai/)；[开源代码](https://github.com/livebench/livebench)）：评测动态更新榜单中的指令遵循类别；核心思想是用持续更新、可自动评分的数据降低污染，并把 instruction following 放入更广泛的综合能力比较。
+- [MIA-Bench: Towards Better Instruction Following Evaluation of Multimodal LLMs](https://arxiv.org/abs/2407.01509)：补充面向指令遵循或指令调优能力的基准、数据集、指标或评测协议。
+- [Helpful assistant or fruitful facilitator? Investigating how personas affect language model behavior](https://arxiv.org/abs/2407.02099)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Beyond Instruction Following: Evaluating Inferential Rule Following of Large Language Models](https://arxiv.org/abs/2407.08440)：提供面向指令遵循的基准、数据集、挑战任务或评测协议。
+- [SELF-GUIDE: Better Task-Specific Instruction Following via Self-Synthetic Finetuning](https://arxiv.org/abs/2407.12874)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [TAGCOS: Task-agnostic Gradient Clustered Coreset Selection for Instruction Tuning Data](https://arxiv.org/abs/2407.15235)：补充指令遵循能力的评测资源或协议。
+- [MMInstruct: a high-quality multi-modal instruction tuning dataset with extensive diversity](https://arxiv.org/abs/2407.15838)：提出或分析面向指令遵循与偏好对齐的基准、数据集或评测协议。
+- [The Geometry of Queries: Query-Based Innovations in Retrieval-Augmented Generation](https://arxiv.org/abs/2407.18044)：面向指令遵循与偏好对齐，补充评测基准、数据集、协议或指标。
+- [Evaluating Cultural Adaptability of a Large Language Model via Simulation of Synthetic Personas](https://arxiv.org/abs/2408.06929)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Personality Alignment of Large Language Models](https://arxiv.org/abs/2408.11779)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Towards Data-Centric RLHF: Simple Metrics for Preference Dataset Comparison](https://arxiv.org/abs/2409.09603)：提供用于衡量指令遵循能力的基准、数据集或评测协议。
+- [MMMT-IF: A Challenging Multimodal Multi-Turn Instruction Following Benchmark](https://arxiv.org/abs/2409.18216)：面向指令遵循与偏好对齐能力，补充评测任务、数据集或基准协议。
+- [Crafting Personalized Agents through Retrieval-Augmented Generation on Editable Memory Graphs](https://arxiv.org/abs/2409.19401)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [PAD: Personalized Alignment at Decoding-Time](https://arxiv.org/abs/2410.04070)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [VerifierQ: Enhancing LLM Test Time Compute with Q-Learning-based Verifiers](https://arxiv.org/abs/2410.08048)：补充指令遵循能力的评测资源或协议。
+- [Towards Acyclic Preference Evaluation of Language Models via Multiple Evaluators](https://arxiv.org/abs/2410.12869)：提供用于衡量指令遵循能力的基准、数据集或评测协议。
+- [KCIF: Knowledge-Conditioned Instruction Following](https://arxiv.org/abs/2410.12972)：面向指令遵循与偏好对齐，补充用于knowledge-conditioned instruction-following benchmark or evaluation的基准、数据集、指标、审计或实证协议。
+- [Beyond Content Relevance: Evaluating Instruction Following in Retrieval Models](https://arxiv.org/abs/2410.23841)：补充面向指令遵循或指令调优能力的基准、数据集、指标或评测协议。
+- [CoPrompter: User-Centric Evaluation of LLM Instruction Alignment for Improved Prompt Engineering](https://arxiv.org/abs/2411.06099)：CoPrompter: User-Centric Evaluation of LLM Instruction Alignment for Improved Prompt Engineering 补充指令遵循与偏好对齐方向的基准、数据集、指标或评测协议。
+- [Assessing and Learning Alignment of Unimodal Vision and Language Models](https://arxiv.org/abs/2412.04616)：提供用于衡量指令遵循能力的基准、数据集或评测协议。
+- [HREF: Human Response-Guided Evaluation of Instruction Following in Language Models](https://arxiv.org/abs/2412.15524)：补充一个面向指令遵循与偏好对齐的基准条目，关注alignment, post-training, calibration, or instruction-following contribution。
+- [Presentations by the Humans and For the Humans: Harnessing LLMs for Generating Persona-Aware Slides from Documents](https://doi.org/10.18653/v1/2024.eacl-long.163)：围绕 Instruction Following 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [SOAEs-DataSuite: Tailored Pre-training Corpus, Fine-tuning Dataset and Benchmark for Large Language Models in the State-owned Assets and Enterprises Domain](https://doi.org/10.1109/icsp62129.2024.10846656)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的基准、数据集、指标、审计或实证协议。
+- [JSONSchemaBench: A Rigorous Benchmark of Structured Outputs for Language Models](https://arxiv.org/abs/2501.10868)：评估 JSON Schema 结构化输出和受约束解码行为。
+- [MDEval: Evaluating and Enhancing Markdown Awareness in Large Language Models](https://arxiv.org/abs/2501.15000)：面向 LLM 输出 Markdown awareness 的基准。核心思想是评估模型是否生成结构清晰的 Markdown，而不只看语义正确性。
+- [LCTG Bench: LLM Controlled Text Generation Benchmark](https://arxiv.org/abs/2501.15875)：评测 LLM controlled text generation，适合指令约束和可控生成能力。
 - [MultiChallenge](https://arxiv.org/abs/2501.17399)：评测更贴近真实多轮对话下的指令遵循与一致性；核心思想是把“多轮约束累积、角色/规则持续有效”作为难点，而不是单轮指令执行。
+- [CondAmbigQA: A Benchmark and Dataset for Conditional Ambiguous Question Answering](https://arxiv.org/abs/2502.01523)：面向条件化歧义问答的 benchmark。核心思想是评估模型能否发现缺失假设并基于必要上下文作答，而不是按默认理解直接生成误导性回答。
+- [LLMs can be easily Confused by Instructional Distractions](https://arxiv.org/abs/2502.04362)：评测输入内容像指令时模型的 instruction-following 混淆；核心思想是测试模型能否保持用户任务边界，而不是执行输入文本中的干扰指令。
 - [M-IFEval](https://arxiv.org/abs/2502.04688)（[开源代码](https://github.com/lightblue-tech/M-IFEval)）：评测多语言可验证指令遵循；核心思想是把 IFEval 风格规则扩展到法语、日语和西班牙语，检查约束检查器与模型行为是否跨语言稳定。
-- [CodeIF](https://arxiv.org/abs/2502.19166)（[开源代码](https://github.com/lin-rany/codeIF)）：评测代码生成任务中的指令遵循；核心思想是覆盖函数合成、错误调试、算法重构和代码解释等场景，检查模型是否能在生成代码时同时满足任务目标与约束细节。
+- [IHEval: Evaluating Language Models on Following the Instruction Hierarchy](https://arxiv.org/abs/2502.08745)：评测指令层级遵循能力的基准；核心思想是测试低优先级指令冲突时，模型是否仍能保持系统和开发者级约束。
+- [A Closer Look at System Prompt Robustness](https://arxiv.org/abs/2502.12197)：评测模型在冲突或对抗用户输入下是否仍遵循 system prompt。核心思想是把 system-message adherence 作为 chat 与 agent 场景中的控制面可靠性问题来衡量。
+- [StructFlowBench: A Structured Flow Benchmark for Multi-turn Instruction Following](https://arxiv.org/abs/2502.14494)：评估多轮指令之间的结构化依赖遵循能力。
+- [Order Matters: Investigate the Position Bias in Multi-constraint Instruction Following](https://arxiv.org/abs/2502.17204)：评测多约束指令遵循中的位置偏差；核心思想是打乱约束顺序，检查 LLM 是否稳定满足所有约束。
+- [RefuteBench 2.0 – Agentic Benchmark for Dynamic Evaluation of LLM Responses to Refutation Instruction](https://arxiv.org/abs/2502.18308)：可作为指令遵循与澄清能力的Bench候选；核心关注“RefuteBench 2.0 – Agentic Benchmark for Dynamic Evaluation of LLM Responses to Refutation Instruction”。
+- [CodeIF](https://arxiv.org/abs/2502.19166)（[开源代码](https://github.com/lin-rany/codeIF)，[排行榜](https://lin-rany.github.io/codeif.github.io/leaderboard.html)）：评测代码生成任务中的指令遵循；核心思想是覆盖函数合成、错误调试、算法重构和代码解释等场景，检查模型是否能在生成代码时同时满足任务目标与约束细节。
+- [WildIFEval: Instruction Following in the Wild](https://arxiv.org/abs/2503.06573)：类型：benchmark/评测协议。核心价值：为 1.3.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [XIFBench](https://arxiv.org/abs/2503.07539)（[开源代码](https://github.com/zhenyuli801/XIFBench)）：评测多语言指令遵循；核心思想是在 6 种语言中设置内容、风格、情境、格式和数值约束，并用需求级语义锚点比较不同资源语言下的约束满足差异。
+- [OASST-ETC Dataset: Alignment Signals from Eye-tracking Analysis of LLM Responses](https://arxiv.org/abs/2503.10927)：补充一个面向指令遵循与偏好对齐的基准条目，关注alignment, post-training, calibration, or instruction-following contribution。
+- [Evaluating Human-LLM Representation Alignment: A Case Study on Affective Sentence Generation for Augmentative and Alternative Communication](https://arxiv.org/abs/2503.11881)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的基准、数据集、指标、审计或实证协议。
+- [Navigating Rifts in Human-LLM Grounding: Study and Benchmark](https://arxiv.org/abs/2503.13975)：评测人类与 LLM 对话中的 grounding 失败，基于公开交互数据检验模型能否在交互崩坏前主动澄清与追问。
 - [DeR2](https://arxiv.org/abs/2503.14443)：偏 context learning/长上下文评测，但也可反映复杂约束在长上下文执行中的“遗漏/漂移”；核心思想是用长上下文任务压力测试约束是否被持续执行。
+- [Can LLMs Simulate Personas with Reversed Performance? A Benchmark for Counterfactual Instruction Following](https://arxiv.org/abs/2504.06460)：该 benchmark 通过要求模型模拟表现反转的人格，测试反事实指令遵循稳定性。
+- [MM-IFEngine: Towards Multimodal Instruction Following](https://arxiv.org/abs/2504.07957)：类型：benchmark/评测协议。核心价值：为 1.3.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Meeseeks: A Feedback-Driven, Iterative Self-Correction Benchmark evaluating LLMs'Instruction Following Capability](https://arxiv.org/abs/2504.21625)：类型：benchmark/评测协议。核心价值：为 1.3.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](https://arxiv.org/abs/2505.07591)：该多维约束框架直接评测和改进 instruction following，适合指令遵循 benchmark。
+- [GuideBench: Benchmarking Domain-Oriented Guideline Following for LLM Agents](https://arxiv.org/abs/2505.11368)：评测 LLM agents 的 domain-oriented guideline following；核心思想是测试频繁更新且可能与常识冲突的领域规则。
 - [MathIF](https://arxiv.org/abs/2505.14810)（[开源代码](https://github.com/TingchenFu/MathIF)）：评测数学推理中的指令遵循；核心思想是用可程序验证的数学任务约束检查模型是否在解题时同时满足格式、包含和过程性要求。
-- [LIFEBENCH](https://arxiv.org/abs/2505.16234)（[开源代码](https://github.com/LIFEBench/LIFEBench)，[数据集](https://huggingface.co/datasets/LIFEBench/LIFEBench)）：评测长度指令遵循。核心思想：专测明确的长输出长度约束，例如词数或 token 数要求，暴露模型在本应很长但结构简单的输出中提前结束、严重短写或拒答的问题。
+- [LIFEBENCH](https://arxiv.org/abs/2505.16234)（[开源代码](https://github.com/LIFEBench/LIFEBench)，[数据集](https://huggingface.co/datasets/LIFEBench/LIFEBench)，[结果](https://ydyjya.github.io/LIFEBench/)）：评测长度指令遵循。核心思想：专测明确的长输出长度约束，例如词数或 token 数要求，暴露模型在本应很长但结构简单的输出中提前结束、严重短写或拒答的问题。
+- [IFEval-Audio: Benchmarking Instruction-Following Capability in Audio-based Large Language Models](https://arxiv.org/abs/2505.16774)：评什么：音频大模型的指令遵循能力。核心思想是检验非文本模态对齐后，模型是否仍能保持细粒度指令约束。
 - [AgentIF](https://arxiv.org/abs/2505.16944)（[开源代码](https://github.com/THU-KEG/AgentIF)）：评测 agentic 场景下的长系统提示、工具说明和复杂约束遵循；核心思想是从真实工业与开源 agent 应用收集长指令，并为约束标注 code/LLM/hybrid 评测器。
+- [RECAST](https://arxiv.org/abs/2505.19030)：评估并训练包含大量显式约束的复杂指令遵循能力。核心思想是合成约束数量远高于早期数据集的真实风格 prompts，并配套规则或 LLM 验证器检查约束满足。
+- [Speech-IFEval: Evaluating Instruction-Following and Quantifying Catastrophic Forgetting in Speech-Aware Language Models](https://arxiv.org/abs/2505.19037)：评估语音感知语言模型的指令遵循和灾难性遗忘。
+- [StructEval: Benchmarking LLMs' Capabilities to Generate Structural Outputs](https://arxiv.org/abs/2505.20139)：结构化输出生成能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [MARS-Bench](https://arxiv.org/abs/2505.23810)（数据集：[LeeeeTX/MARS-Bench](https://huggingface.co/datasets/LeeeeTX/MARS-Bench)）：评测多轮真实场景对话下的指令遵循与对话质量；核心思想是用更贴近真实交互的 multi-turn 设定衡量约束执行的稳定性。
+- [Mis-prompt: Benchmarking Large Language Models for Proactive Error Handling](https://arxiv.org/abs/2506.00064)：评测没有显式纠错指令时的主动错误处理能力，包含 4 类评测任务、错误类别 taxonomy 和新数据集，暴露当前模型对 misprompt 输入的默认处理弱点。
+- [EIFBENCH: Extremely Complex Instruction Following Benchmark for Large Language Models](https://arxiv.org/abs/2506.08375)：评测极复杂指令遵循；核心思想是用多任务、高约束 workflow 模拟产品场景中的复杂用户需求。
+- [Evaluating AI Alignment in Eleven LLMs through Output-Based Analysis and Human Benchmarking](https://arxiv.org/abs/2506.12617)：可作为“指令遵循 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Psycholinguistic Word Features: a New Approach for the Evaluation of LLMs Alignment with Humans](https://arxiv.org/abs/2506.22439)：补充一个面向指令遵循与偏好对齐的基准条目，关注alignment, post-training, calibration, or instruction-following contribution。
 - [MaXIFE](https://aclanthology.org/2025.acl-long.698/)：评测多语言与跨语言指令遵循。核心思想：检查指令语言、回答语言或跨语言迁移设置变化后，模型是否仍能保持可验证约束。
+- [MultiCodeIF](https://arxiv.org/abs/2507.00699)：评测多轮反馈下的细粒度代码指令遵循。核心思想是生成带有层级化功能与非功能约束的编程任务，并通过 feedback-driven turns 演化任务，以衡量代码生成中的约束保持能力。
 - [LIFBench](https://aclanthology.org/2025.acl-long.803/)：评测长上下文场景中的指令遵循表现与稳定性。核心思想：检查长输入之后约束是否仍然有效，而不只是衡量同一上下文窗口里的信息检索能力。
-- [IFBench](https://arxiv.org/abs/2507.02833)：评测可验证指令遵循在未见约束上的泛化；核心思想是新增 58 类可程序验证的 out-of-domain 约束，避免只在 IFEval 风格的少量模板约束上过拟合。
-- [IFScale](https://arxiv.org/abs/2507.11538)（[开源代码](https://github.com/DistylAI/distylai.github.io)）：评测指令数量扩展时的约束遵循退化；核心思想是把同时需要满足的关键词包含指令从 10 条扩到 500 条，观察模型在高约束负载下的失败模式。
+- [IFBench](https://arxiv.org/abs/2507.02833)（[开源代码与榜单](https://github.com/allenai/IFBench)）：评测可验证指令遵循在未见约束上的泛化；核心思想是新增 58 类可程序验证的 out-of-domain 约束，避免只在 IFEval 风格的少量模板约束上过拟合。
+- [IFScale](https://arxiv.org/abs/2507.11538)（[榜单](https://distylai.github.io/IFScale/)；[开源代码](https://github.com/DistylAI/distylai.github.io)）：评测指令数量扩展时的约束遵循退化；核心思想是把同时需要满足的关键词包含指令从 10 条扩到 500 条，观察模型在高约束负载下的失败模式。
+- [MCIF: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks](https://arxiv.org/abs/2507.19634)：基于科学演讲的多模态跨语言指令遵循评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [GSM-MC / GSM-MCE](https://arxiv.org/abs/2507.23407)：评估数学指令不完整或带有误导时的主动提问能力。核心思想是检查模型是否会请求缺失信息，而不是被动拒答或直接回答有缺陷的问题。
+- [LogicIFEval](https://arxiv.org/abs/2508.09125)：评测复杂逻辑结构下的指令遵循。核心思想：从代码函数生成可验证指令，使条件、循环和函数调用等结构成为可检查约束，而不是松散的自然语言要求。
 - [Inverse IFEval](https://arxiv.org/abs/2509.04292)（数据集：[m-a-p/Inverse_IFEval](https://huggingface.co/datasets/m-a-p/Inverse_IFEval)）：评测模型在“反向指令”或去偏设置下是否仍能严格遵循指令；核心思想是通过逆向指令构造，测量模型对模板化输出惯性的抵抗与指令鲁棒性。
+- [ManyIFEval and StyleMBPP](https://arxiv.org/abs/2509.21051)：评估文本生成和代码生成中同时遵循多条指令的能力。核心思想：把文本约束扩展到最多 10 条、代码约束扩展到最多 6 条，并用轻量回归模型估计未见指令组合下的表现。
+- [Large-Scale Constraint Generation - Can LLMs Parse Hundreds of Constraints?](https://arxiv.org/abs/2509.24090)：评测 LLM 同时解析大量约束的能力，适合 instruction-following benchmark。
+- [RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity](https://arxiv.org/abs/2509.25897)：评测角色冲突场景中的上下文敏感性；核心思想是构造相互冲突的人设、角色或规则上下文，检查模型是否遵守正确约束而非显眼角色线索。
+- [DeepJSONEval: Benchmarking Complex Nested JSON Data Mining for Large Language Models](https://arxiv.org/abs/2509.25922)：可作为instruction following方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Metric Calculating Benchmark: Code-Verifiable Complicate Instruction Following Benchmark for Large Language Models](https://arxiv.org/abs/2510.07892)：用 code-verifiable metrics 评测复杂指令遵循；核心思想是把指令遵循答案转化为可执行指标计算，而不只依赖主观评分。
+- [ReasonIF](https://arxiv.org/abs/2510.15211)：评估 reasoning 过程中的指令遵循。核心思想：检查大型推理模型是否在中间推理中持续遵守用户约束，暴露只看最终答案时无法发现的可控性问题。
+- [The Atomic Instruction Gap: Instruction-Tuned LLMs Struggle with Simple, Self-Contained Directives](https://arxiv.org/abs/2510.17388)：评测指令微调 LLM 是否能遵循简单自包含指令；核心思想：在题意不变的情况下改变选项标签格式，暴露指令执行脆弱性。
+- [When Models Can't Follow: Testing Instruction Adherence Across 256 LLMs](https://arxiv.org/abs/2510.18892)：补充instruction following方向的基准或评测套件，核心围绕《When Models Can't Follow: Testing Instruction Adherence Across 256 LLMs》。
+- [CodeAlignBench](https://arxiv.org/abs/2510.27565)：评测代码生成模型是否遵循开发者偏好的约束和后续调整指令；核心思想：在独立编程题中同时检查初始约束满足与 refinement 请求执行，而不只看功能正确性。
+- [ULTRABENCH: Benchmarking LLMs under Extreme Fine-grained Text Generation](https://doi.org/10.18653/v1/2025.findings-emnlp.835)：在极细粒度文本生成约束下评测 LLM，适合 instruction-following benchmark。
 - [CMT-Eval](https://aclanthology.org/2025.findings-emnlp.992/)：评测中文多轮对话中的真实交互挑战。核心思路是检验模型能否在对话轨迹中保持上下文、满足不断变化的用户意图，并处理现实交互困难，而不是只评测孤立的单轮指令。
+- [IF-CRITIC: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](https://arxiv.org/abs/2511.01014)：评什么：面向指令遵循的细粒度 critic 评测。
 - [EvolIF](https://arxiv.org/abs/2511.03508)：评测动态演化多轮指令遵循；核心思想是用 query synthesis agent 与三层状态追踪机制模拟用户耐心耗尽前的连续约束追加、状态变化与失败恢复。
+- [Pluralistic Behavior Suite](https://arxiv.org/abs/2511.05018)：压力测试模型对自定义行为策略的多轮遵循能力，而不只是一轮指令服从。
+- [AdvancedIF](https://arxiv.org/abs/2511.10507)：用专家 rubric 评测高级 instruction following。核心思想是覆盖复杂、多轮和 system-level 指令，并用可解释 rubric 评估约束遵循，而不只依赖简单程序化规则。
+- [ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](https://arxiv.org/abs/2511.14342)：评什么：评测指令冲突检测与解决能力。
+- [Accuracy and Efficiency Trade-Offs in LLM-Based Malware Detection and Explanation: A Comparative Study of Parameter Tuning vs. Full Fine-Tuning](https://arxiv.org/abs/2511.19654)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的基准、数据集、指标、审计或实证协议。
+- [FIFE](https://arxiv.org/abs/2512.08965)：用复杂相互依赖约束评估金融场景指令遵循。核心思想：使用人工编写的金融分析 prompt 与可链式组合的 verifier，在高风险领域评分 strict 和 loose compliance。
+- [Offscript: Automated Auditing of Instruction Adherence in LLMs](https://arxiv.org/abs/2512.10172)：审计 LLM 和生成式搜索系统的指令遵循；核心思想是自动检查模型输出是否遵守用户指定的信息来源和呈现约束。
+- [PACIFIC](https://arxiv.org/abs/2512.10713)：面向代码指令遵循的 benchmark 生成框架；核心思想：自动构造带已知期望输出、可精确检查的序列化代码任务，使代码助手不仅接受自由生成评测，也接受约束执行和 dry-running 能力检验。
+- [Persistent Personas?](https://arxiv.org/abs/2512.12775)：评估长对话中的角色一致性、指令遵循和安全性。核心思想：用超过 100 轮角色对话作为条件，再执行评测任务，观察角色约束是否持续、是否与任务指令冲突，以及长交互是否削弱安全行为。
+- [IFEval++](https://arxiv.org/abs/2512.14754)：用 cousin prompts 评估指令遵循可靠性。核心思想：生成带细微意图差异的 prompt 变体并使用 reliable@k，检查模型是否在接近满分的 IFEval 之外仍保持稳定能力。
+- [Separating Constraint Compliance from Semantic Accuracy: A Novel Benchmark for Evaluating Instruction-Following Under Compression](https://arxiv.org/abs/2512.17920)：在 prompt compression 下分离约束遵循和语义准确性评测。
+- [ClarifyMT-Bench: Benchmarking and Improving Multi-Turn Clarification for Conversational Large Language Models](https://arxiv.org/abs/2512.21120)：面向 conversational LLM 多轮澄清能力的 benchmark。核心思想是测试模型能否提出有用澄清问题，并在多轮中改进答案。
+- [Instruction-Following Evaluation of Large Vision-Language Models](https://arxiv.org/abs/2512.23572)：评测大型视觉语言模型的 instruction-following 能力。
+- [MUSIC: MUlti-Step Instruction Contrast for Multi-Turn Reward Models](https://arxiv.org/abs/2512.24693)：用 multi-step instruction contrast 评测多轮 reward models；核心思想是测试奖励模型能否区分多轮指令遵循轨迹的质量。
+- [BenchING: A Benchmark for Evaluating Large Language Models in Following Structured Output Format Instruction in Text-Based Narrative Game Tasks](https://doi.org/10.1109/tg.2025.3529117)：可作为指令遵循的 Bench 候选：围绕 BenchING: A Benchmark for Evaluating Large Language Models in Following Structured Output Format Instruction in Text-Based Narrative Game Tasks 提供可比较的评测任务、数据或分析协议。
 - [LexInstructEval](https://ojs.aaai.org/index.php/AAAI/article/view/39701)：评测词汇层面的指令遵循。核心思想：专测细粒度词级和表层形式约束，这些约束容易表述，但在更宽泛的语义指令遵循评测中常被忽略。
+- [LexInstructEval: Lexical Instruction Following Evaluation for Large Language Models](https://arxiv.org/abs/2511.17561)：为指令遵循补充基准、数据集、指标或评测协议。
+- [Do Chatbot LLMs Talk Too Much? The YapBench Benchmark](https://arxiv.org/abs/2601.00624)：衡量聊天模型在本应简短回答的提示上是否过度展开，用 YapScore 与 YapIndex 量化冗余长度。
+- [The Instruction Gap: LLMs get lost in Following Instruction](https://arxiv.org/abs/2601.03269)：评测 LLM 在企业 RAG 场景中遵循自定义指令的稳定性；核心思想：把指令遵循与回答质量一起度量，暴露普通准确率掩盖的失效。
+- [MAGA-Bench: Machine-Augment-Generated Text via Alignment Detection Benchmark](https://arxiv.org/abs/2601.04633)：面向指令遵循与偏好对齐能力，补充评测任务、数据集或基准协议。
+- [SciIF](https://arxiv.org/abs/2601.04770)：评测科学场景下的指令遵循。核心思想是检验模型能否遵守技术约束和科学证据标准，而不是只给出表面正确的最终答案。
 - [VIFBENCH](https://arxiv.org/abs/2601.17789)：评测指令遵循 verifier 的细粒度判定能力；核心思想是把输出是否遵循指令拆成带标签的 constraint satisfaction 判断，专测验证器而不只是生成模型。
+- [Deconstructing Instruction-Following: A New Benchmark for Granular Evaluation of Large Language Model Instruction Compliance Abilities](https://arxiv.org/abs/2601.18554)：补充面向指令遵循能力的可复用基准、数据集、测试平台或评测协议。
 - [CL-Bench](https://arxiv.org/abs/2602.03587)：同样偏 context learning，但对“规则是否被长期遵循”的诊断有参考价值；核心思想是用更系统的长上下文设置暴露指令跟随的边界。
+- [AskBench](https://arxiv.org/abs/2602.11199)：评测 LLM 何时以及如何提出澄清问题。核心思想是检查模型能否识别信息不足或误导性提示，并请求缺失信息，而不是过早作答。
+- [LLMStructBench: Benchmarking Large Language Model Structured Data Extraction](https://arxiv.org/abs/2602.14743)：提供面向大语言模型结构化数据抽取能力的基准。
+- [Beyond Blind Following: Evaluating Robustness of LLM Agents under Imperfect Guidance](https://doi.org/10.18653/v1/2026.eacl-long.310)：评测 LLM agent 在不完美引导下的鲁棒性；核心思想是检查 agent 能否避免盲目遵循有缺陷或误导性指令。
+- [IndicIFEval](https://arxiv.org/abs/2602.22125)（[开源代码](http://github.com/ai4bharat/IndicIFEval)）：评测 14 种印度语言中的可验证指令遵循。核心思想：本地化并合成可自动检查的约束，比较 Indic 语族中格式、词汇和跨语指令遵循失败。
+- [Personalities at Play: Probing Alignment in AI Teammates](https://arxiv.org/abs/2603.00429)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的基准、数据集、指标、审计或实证协议。
+- [DIALEVAL: Automated Type-Theoretic Evaluation of LLM Instruction Following](https://arxiv.org/abs/2603.03321)：把指令自动分解为 typed predicates 并检查满足度；核心思想是让需求满足情况比整体裁判打分更显式。
+- [A Benchmark for Joint Dialogue Satisfaction, Emotion Recognition, and Emotion State Transition Prediction](https://arxiv.org/abs/2603.03327)：补充面向指令遵循能力的可复用基准、数据集、测试平台或评测协议。
+- [IF-RewardBench](https://arxiv.org/abs/2603.04738)（[代码](https://github.com/thu-coai/IF-RewardBench)）：评测 instruction-following feedback 的 judge models；核心思想是为每条指令构造多个回答之间的 preference graph，让 reward model 接受 listwise ranking 测试，而不只是简单 pairwise 选择。
+- [Parameter-efficient fine-tuning for low-resource text classification: a comparative study of LoRA, IA3, and ReFT](https://doi.org/10.3389/fdata.2025.1677331)：面向指令遵循与偏好对齐，补充评测基准、数据集、协议或指标。
+- [Assessing political bias and value misalignment in generative artificial intelligence](https://doi.org/10.1016/j.jebo.2025.106904)：补充指令遵循方向的基准、数据集、挑战、指标或评测协议。
+- [Automated end-to-end testing for conversational agents](https://doi.org/10.1016/j.jss.2025.112685)：补充面向指令遵循能力的可复用基准、数据集、测试平台或评测协议。
+- [CCDE: A Compact and Competitive Dialogue Evaluation Framework via Knowledge Distillation of Large Language Models](https://doi.org/10.1109/tcss.2025.3580272)：补充面向指令遵循能力的可复用基准、数据集、测试平台或评测协议。
+- [FireBench: Evaluating Instruction Following in Enterprise and API-Driven LLM Applications](https://arxiv.org/abs/2603.04857)：评测企业和 API 驱动应用中的指令遵循；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [CCR-Bench: A Comprehensive Benchmark for Evaluating LLMs on Complex Constraints, Control Flows, and Real-World Cases](https://arxiv.org/abs/2603.07886)：提供面向指令遵循能力的基准、数据集、评分规程或评测协议。
+- [IH-Challenge: A Training Dataset to Improve Instruction Hierarchy on Frontier LLMs](https://arxiv.org/abs/2603.10521)：评什么：评测模型在系统、开发者、用户和工具指令冲突下的层级遵循。
+- [End-to-End Chatbot Evaluation with Adaptive Reasoning and Uncertainty Filtering](https://arxiv.org/abs/2603.10570)：通过自适应推理与不确定性过滤进行端到端聊天机器人评估。
+- [CAPITU: A Benchmark for Evaluating Instruction-Following in Brazilian Portuguese with Literary Context](https://arxiv.org/abs/2603.22576)：面向巴西葡萄牙语文学语境的指令遵循基准；核心思想是测试模型在具有语言和文化特异性的长上下文中能否执行约束。
+- [ClarQ4LLM: A Benchmark for Models Clarifying and Requesting Information in Task-Oriented Dialog](https://doi.org/10.1109/taslpro.2026.3661250)：补充面向指令遵循能力的可复用基准、数据集、测试平台或评测协议。
+- [Did You Forget What I Asked? Prospective Memory Failures in Large Language Models](https://arxiv.org/abs/2603.23530)：评测模型在完成高负载任务时能否记住延迟触发的格式约束；核心思想是把可验证约束与不同难度任务配对，度量复杂任务中的指令保持失败。
+- [OPRIDE: Offline Preference-based Reinforcement Learning via In-Dataset Exploration](https://arxiv.org/abs/2604.02349)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的基准、数据集、指标、审计或实证协议。
+- [Structured Output Benchmark](https://arxiv.org/abs/2604.25359)：评测抽取和转换任务中的 structured-output quality。核心思想：检查模型能否把非结构化或半结构化来源稳定转换成 schema，补充偏文本约束的 instruction-following benchmark。
+- [MultEval: Supporting Collaborative Alignment for LLM-as-a-Judge Evaluation Criteria](https://arxiv.org/abs/2604.26679)：补充面向指令遵循与 LLM 评审能力的基准、数据集、评测协议或测试环境。
+- [MSEED: Human Preference Dataset for Multidimensional Safety Enhancement and Evaluation of Large Language Models](https://doi.org/10.3724/2096-7004.di.2025.0080)：提供多维安全增强与评测的人类偏好数据集，显示细粒度对齐优化能提升多语言安全回复，同时基本不损害整体模型能力。
+- [DriftBench](https://arxiv.org/abs/2604.28031)：评什么：评测多轮科学创意生成中的 constraint adherence。核心思想：跟踪模型在反复改写研究设想时是否仍遵守原始 brief 约束，并识别模型能复述约束却在行为上违反约束的 knows-but-violates 现象。
+- [FollowTable: A Benchmark for Instruction-Following Table Retrieval](https://arxiv.org/abs/2605.00400)：补充面向指令遵循或指令调优能力的基准、数据集、指标或评测协议。
+- [MCJudgeBench: A Benchmark for Constraint-Level Judge Evaluation in Multi-Constraint Instruction Following](https://arxiv.org/abs/2605.03858)：评测多约束指令遵循中的 constraint-level judge 评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
 - [SEQUOR](https://arxiv.org/abs/2605.06353)：评测长多轮对话中的现实约束遵循；核心思想是把新增、替换与冲突约束都放进同一协议，专测长对话漂移。
+- [Persona Conflict Verification](https://doi.org/10.18653/v1/2026.findings-eacl.24)：评测预设 persona 与用户输入信息冲突时的指令遵循。核心思想是把回答划分为遵循、迎合和摇摆等行为类型，用于诊断 persona 不一致下的鲁棒性。
+- [IntentGrasp: A Comprehensive Benchmark for Intent Understanding](https://arxiv.org/abs/2605.06832)：可作为instruction following方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Dimension-Level Intent Fidelity Evaluation for Large Language Models: Evidence from Structured Prompt Ablation](https://arxiv.org/abs/2605.14517)：评测跨语言和任务的结构化 prompt 消融下的维度级意图保真度；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
 - [DMT-RoleBench](https://doi.org/10.1609/aaai.v39i24.34768)：通过动态多轮对话评测角色扮演 LLM 与 agent。核心思想：围绕评测意图和主题生成对话轨迹，使角色一致性、指令遵循和交互质量比静态提示词更贴近真实角色扮演使用场景。
+- [CritiQ AI and SixHats Engine: AI-as-Judge Systems for Early-Stage Evaluation and Preference Formation in Collaborative Ideation](https://doi.org/10.1145/3742414.3794775)：补充面向指令遵循与 LLM 评审能力的基准、数据集、评测协议或测试环境。

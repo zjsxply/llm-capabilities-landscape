@@ -1,12 +1,49 @@
 # 1.14.2 Survey
 
 - [Evaluation of Text Generation: A Survey](https://arxiv.org/abs/2006.14799)：现代写作评测所依赖指标与协议的基础参考。
+- [A Survey on Neural Data-to-Text Generation](https://doi.org/10.1109/tkde.2023.3304385)：综述神经 data-to-text 生成中的输入表示、模型架构、数据集、评价指标、事实性和可控性问题。
+- [Leveraging Large Language Models for NLG Evaluation: A Survey](https://arxiv.org/abs/2401.07103)：按评测维度、基准使用、人类相关性、提示设计、偏差与可靠性挑战梳理 LLM-as-evaluator 的自然语言生成评测研究。
+- [Leveraging Foundation Models for Crafting Narrative Visualization: A Survey](https://arxiv.org/abs/2401.14010)：梳理基础模型在叙事可视化流程中的作用，覆盖数据准备、叙事结构、文本生成、视觉设计与交互环节。
+- [LLM-based NLG Evaluation: Current Status and Challenges](https://arxiv.org/abs/2402.01383)：总结 LLM 驱动的 NLG 评测实践，聚焦 evaluator prompt、评分维度、人类一致性、偏差、鲁棒性和可复现性挑战。
+- [Large Language Models for Data Annotation: A Survey](https://arxiv.org/abs/2402.13446)：综述 LLM 标注流水线，覆盖纯提示标注、人类在环标注、质量控制、成本权衡、偏差、隐私与标签可靠性。
+- [A Survey of AI-generated Text Forensic Systems: Detection, Attribution, and Characterization](https://arxiv.org/abs/2403.01152)：综述或系统梳理写作与生成文本分析，为该能力页补充分类、趋势或风险边界。
+- [A Comprehensive Survey on Process-Oriented Automatic Text Summarization with Exploration of LLM-Based Methods](https://arxiv.org/abs/2403.02901)：按内容选择、规划、生成、修订和 LLM 评测等过程阶段组织自动摘要研究。
+- [A Design Space for Intelligent and Interactive Writing Assistants](https://arxiv.org/abs/2403.14117)：梳理智能交互式写作助手的设计空间。
+- [A Survey on Personalized Content Synthesis with Diffusion Models](https://arxiv.org/abs/2405.05538)：综述扩散式个性化内容合成中的个性化信号、适配方法、数据集、评测、隐私和偏差问题。
+- [A Survey on Recent Advances in Conversational Data Generation](https://arxiv.org/abs/2405.13003)：按采集、模拟、增强、过滤与评测分类梳理对话数据生成，并讨论多样性、隐私、偏差和数据污染等开放问题。
 - [Text Generation: A Systematic Literature Review of Tasks, Evaluation, and Challenges](https://arxiv.org/abs/2405.15604)：回顾跨体裁文本生成任务、评测实践与开放挑战。
+- [Recent Trends in Personalized Dialogue Generation: A Review of Datasets, Methodologies, and Evaluations](https://arxiv.org/abs/2405.17974)：综述个性化对话生成的数据集、用户画像建模、适配方法，以及一致性、相关性和用户特定回复质量评测协议。
+- [A Systematic Survey of Text Summarization: From Statistical Methods to Large Language Models](https://arxiv.org/abs/2406.11289)：梳理从统计方法、神经模型到 LLM 摘要系统的发展，重点覆盖数据集、自动指标、事实性评测与长文档摘要挑战。
+- [The Quest for the Right Mediator: A History, Survey, and Theoretical Grounding of Causal Interpretability](https://arxiv.org/abs/2408.01416)：为因果可解释性提供历史和理论基础，重点讨论 mediator 选择、干预设计和解释有效性。
+- [What Makes a Good Story and How Can We Measure It? A Comprehensive Survey of Story Evaluation](https://arxiv.org/abs/2408.14622)：按情节、人物、连贯性、新颖性、风格和情感影响组织故事评价维度，并比较人工 rubric、自动指标和 LLM judge。
+- [Abstractive text summarization: State of the art, challenges, and improvements](https://arxiv.org/abs/2409.02413)：综述抽象摘要系统、常用数据集与指标、事实不一致、冗余、覆盖不足及改进策略。
+- [The Imperative of Conversation Analysis in the Era of LLMs: A Survey of Tasks, Techniques, and Trends](https://arxiv.org/abs/2409.14195)：综述写作与长文本生成的方法谱系、任务边界与开放挑战。
+- [From Pen to Prompt: How Creative Writers Integrate AI into their Writing Practice](https://arxiv.org/abs/2411.03137)：研究创意写作者如何将 AI 融入写作实践，为人机协同写作流程提供经验依据。
+- [Explainability Meets Text Summarization: A Survey](https://doi.org/10.18653/v1/2024.inlg-main.49)：按解释对象、解释生成方法，以及解释忠实性和有用性评测方式，为可解释摘要建立分类框架。
+- [A Comprehensive Survey on Legal Summarization: Challenges and Future Directions](https://arxiv.org/abs/2501.17830)：综述法律文本摘要的挑战、数据集、方法和未来方向。
+- [LLM-Assisted Writing Adoption Study](https://arxiv.org/abs/2502.09747)：测量 LLM-assisted writing 在社会中的大规模采用情况。
+- [Making the Write Connections: Linking Writing Support Tools with Writer Needs](https://arxiv.org/abs/2502.13320)：对照创作者需求系统分析 115 个写作支持工具和 67 篇研究论文，指出预写作与可视化支持不足。
 - [SurveyX: Academic Survey Automation via Large Language Models](https://arxiv.org/abs/2502.14776)：覆盖学术综述自动化中的论文收集、组织、起草与评测。
+- [Understanding Screenwriters' Practices, Attitudes, and Future Expectations in Human-AI Co-Creation](https://arxiv.org/abs/2502.16153)：通过编剧访谈或问卷证据总结当前 AI 使用、作者身份顾虑、协作期待，以及共创工具在剧本写作流程中的适配位置。
 - [A Review of LLM-Assisted Ideation](https://arxiv.org/abs/2503.00946)：综述 LLM 辅助的个人与群体创意生成，覆盖生成、细化、评估、交互设计与创意领域分布。
 - [SurveyForge: On the Outline Heuristics, Memory-Driven Generation, and Multi-dimensional Evaluation for Automated Survey Writing](https://arxiv.org/abs/2503.04629)：围绕大纲、记忆与评测组织自动综述写作流程。
+- [Beyond Productivity: Rethinking the Impact of Creativity Support Tools](https://arxiv.org/abs/2505.01601)：将创意支持工具评测从产出数量转向过程质量、主体性、反思、所有权和长期创意成长。
 - [Generative AI and Creativity](https://arxiv.org/abs/2505.17241)：通过系统综述和元分析比较 GenAI 创造力、人机协作创意增益与创意多样性下降。
+- [Creativity in LLM-based Multi-Agent Systems: A Survey](https://arxiv.org/abs/2505.21116)：综述多智能体 LLM 系统如何生成、评估和协同创造性输出。
+- [Reviewriter: AI-Generated Instructions For Peer Review Writing](https://arxiv.org/abs/2506.04423)：梳理写作的方法、证据与开放问题。
 - [Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](https://arxiv.org/abs/2508.15396)：综述适用于学术与报告写作的可追溯证据支撑生成。
 - [A comprehensive survey on automatic text summarization with exploration of LLM-based methods](https://doi.org/10.1016/j.neucom.2025.131928)：综述含 LLM 方法的自动摘要，关联受控写作与长文本压缩表达。
 - [Transformer-based large language foundation models for text generation](https://doi.org/10.1016/j.ipm.2025.104477)：综述跨语言与跨应用领域的 LLM 文本生成研究，从基础模型角度补充写作能力综述。
+- [A Survey on LLMs for Story Generation](https://doi.org/10.18653/v1/2025.findings-emnlp.750)：综述 LLM 故事生成的方法、数据集、可控生成技术、评价标准，以及长程情节和人物一致性挑战。
+- [A Survey on Integration of Empathy Cues Into Empathetic Text Generation](https://doi.org/10.1109/access.2025.3597304)：综述共情文本生成中共情线索整合的相关方法。
+- [From Use to Oversight: How Mental Models Influence User Behavior and Output in AI Writing Assistants](https://arxiv.org/abs/2604.05166)：研究用户对 AI 写作助手的心理模型如何影响提示、监督行为、信任和最终写作输出。
+- [Writing in the AI era: Rethinking writing, research and teaching](https://doi.org/10.1016/j.jslw.2026.101302)：综述 AI 时代写作、研究和教学的变化。
 - [Human-AI Collaboration in Writing: A Multidimensional Framework for Creative and Intellectual Authorship](https://doi.org/10.47852/bonviewijce52024908)：从创造性与知识性作者身份维度刻画人机写作协作。
+- [Plotania: Exploring Transparency Trade-offs in AI Co-Writing Through Virtual Readers and Transparent Attribution](https://doi.org/10.1145/3772318.3790926)：通过虚拟读者反馈和透明归因展示考察共写透明度，衡量写作支持、披露和作者控制之间的权衡。
+- [Perceptions and integration of generative artificial intelligence in creative practices and industries: a scoping review and conceptual model](https://doi.org/10.1007/s00146-025-02667-2)：综合创意从业者对 GenAI 的认知和整合方式，提出创意产业中的采纳、顾虑和工作流变化概念模型。
+- [Survey on AI-Generated Plagiarism Detection: The Impact of Large Language Models on Academic Integrity](https://doi.org/10.1007/s10805-024-09576-x)：综述 AI 生成抄袭检测方法、学术诚信风险、检测器局限和机构应对策略。
+- [The Impact of AI Language Models on Scientific Writing and Scientific Peer Reviews: A Systematic Literature Review](https://doi.org/10.1145/3677389.3702508)：系统综述 AI 语言模型在科学写作和同行评审中的证据，覆盖起草支持、评审质量、披露和诚信问题。
+- [A Survey on LLM-Generated Text Detection: Necessity, Methods, and Future Directions](https://doi.org/10.1162/coli_a_00549)：综述大模型生成文本检测的必要性、方法与未来方向。
+- [A Systematic Literature Review on Multimodal Text Summarization](https://doi.org/10.1145/3763245)：综述多模态摘要数据集、模态融合方法、评价指标，以及文本摘要与视觉或音频证据对齐的挑战。
+- [The Role of AI in Academic Writing: Impacts on Writing Skills, Critical Thinking, and Integrity in Higher Education](https://doi.org/10.3390/soc15090247)：综述高等教育中 AI 对学术写作技能、批判性思维和学术诚信的影响，突出教学评估与诚信风险。
+- [Enhancing the Robustness of AI-Generated Text Detectors: A Survey](https://www.mdpi.com/2227-7390/13/13/2145)：该综述将 AI 生成文本检测器的鲁棒性归纳为三类失效场景：对抗性文本扰动、分布外输入以及人机混写。文章系统汇总相关方法、数据集与评测指标，并以检测器实验补充分类分析，揭示标准同分布测试之外仍未解决的泛化缺口。

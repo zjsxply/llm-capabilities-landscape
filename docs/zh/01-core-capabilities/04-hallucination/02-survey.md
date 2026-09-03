@@ -1,20 +1,78 @@
 # 1.4.2 Survey
 
-- [Survey of Hallucination in Natural Language Generation](https://arxiv.org/abs/2202.03629)：幻觉定义、成因、检测、数据集与缓解方法的基础分类综述。
-- [A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models](https://arxiv.org/abs/2401.01313)：系统组织检索、验证、解码、提示与训练侧缓解路线。
-- [Factuality of Large Language Models: A Survey](https://arxiv.org/abs/2402.02420)：把幻觉放在更广义的事实性评测与改进方法中理解。
-- [A Comprehensive Survey of Hallucination in Large Language, Image, Video and Audio Foundation Models](https://arxiv.org/abs/2405.09589)：梳理语言、图像、视频与音频基础模型中的幻觉问题。
-- [Comparing Uncertainty Measurement and Mitigation Methods for Large Language Models: A Systematic Review](https://arxiv.org/abs/2504.18346)：把不确定性估计作为检测、校准和缓解幻觉的可操作信号来比较。
-- [Detection and Mitigation of Hallucination in Large Reasoning Models](https://arxiv.org/abs/2505.12886)：从机制视角分析推理模型失效，把幻觉与中间推理动态联系起来，而不只看最终输出。
-- [Loki's Dance of Illusions](https://arxiv.org/abs/2507.02870)：围绕成因、表现、检测与缓解构建 LLM 部署中的完整幻觉问题图谱。
-- [A Survey of Multimodal Hallucination Evaluation and Detection](https://arxiv.org/abs/2507.19024)：聚焦多模态幻觉的基准与检测器设计。
-- [Mitigating Hallucination in Large Language Models (LLMs)](https://arxiv.org/abs/2510.24476)：按应用场景组织缓解方法，突出 RAG、推理工作流和 agentic systems 对可靠性控制的不同要求。
-- [Hallucinations of large multimodal models: Problem and countermeasures](https://doi.org/10.1016/j.inffus.2025.102970)：综述大多模态模型的幻觉问题与应对措施，将页面范围扩展到文本之外。
-- [A Systematic Literature Review of Hallucinations in Large Language Models](https://doi.org/10.1109/ACCESS.2025.3601206)：系统梳理大语言模型幻觉的定义、成因、检测方法、缓解技术与评测缺口，适合作为幻觉研究的近期综述入口。
+- [Survey of Hallucination in Natural Language Generation](https://arxiv.org/abs/2202.03629)：围绕 NLG 的内在与外在幻觉建立基础分类，覆盖成因、数据集、检测与缓解方法。
+- [A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models](https://arxiv.org/abs/2401.01313)：按检索 grounding、验证、解码、提示和训练侧干预来组织 LLM 幻觉缓解技术。
+- [The Chronicles of RAG: The Retriever, the Chunk and the Generator](https://arxiv.org/abs/2401.07883)：把 RAG 视作 grounding 管线，综述检索器选择、分块、生成质量与评测实践如何减少无依据回答。
+- [The Pitfalls of Defining Hallucination](https://arxiv.org/abs/2401.07897)：借助数据到文本 NLG 与逻辑化定义区分幻觉和遗漏，澄清不同事实性评测之间的分歧。
+- [Factuality of Large Language Models: A Survey](https://arxiv.org/abs/2402.02420)：以事实性视角重新组织幻觉问题，连接评测、基准设计、纠错与可靠性风险。
+- [A Survey on Large Language Model Hallucination via a Creativity Perspective](https://arxiv.org/abs/2402.06647)：对照可靠性危害与创造性应用，将幻觉映射到 LLM 应用中的发散思维和收敛思维阶段。
+- [Retrieval-Augmented Generation for AI-Generated Content: A Survey](https://arxiv.org/abs/2402.19473)：综述用于 AI 生成内容 grounding 的 RAG 架构，强调外部证据如何限制无依据生成。
+- [Knowledge Conflicts for LLMs: A Survey](https://arxiv.org/abs/2403.08319)：分类 context-memory、inter-context 与 intra-memory 冲突，解释参数知识和检索知识不一致时的事实错误。
+- [Hallucination Detection in Foundation Models for Decision-Making: A Flexible Definition and Review of the State of the Art](https://arxiv.org/abs/2403.16527)：把幻觉检测扩展到决策系统，强调分布外状态、规划失败与安全关键部署边界。
+- [Visual Hallucination: Definition, Quantification, and Prescriptive Remediations](https://arxiv.org/abs/2403.17306)：在图像描述和 VQA 中定义八类 VLM 视觉幻觉取向，并将量化结果连接到修复策略。
+- [An Audit on the Perspectives and Challenges of Hallucinations in NLP](https://arxiv.org/abs/2404.07461)：审计 103 篇 NLP 论文和从业者调查，揭示幻觉定义不一致、术语漂移与社会风险认知。
+- [A Survey of Automatic Hallucination Evaluation on Natural Language Generation](https://arxiv.org/abs/2404.12041)：系统化自动幻觉评测的数据集、基准和 105 种方法，突出评测向 LLM 专用框架迁移。
+- [Hallucination of Multimodal Large Language Models: A Survey](https://arxiv.org/abs/2404.18930)：综述 MLLM 输出与视觉证据不一致的成因、识别、评测和缓解方法。
+- [A Comprehensive Survey of Hallucination in Large Language, Image, Video and Audio Foundation Models](https://arxiv.org/abs/2405.09589)：比较文本、图像、视频和音频基础模型中的幻觉表现、检测与缓解路线。
+- [When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs](https://arxiv.org/abs/2406.01297)：区分自评反馈与外部反馈纠错，指出哪些自纠错实验会高估事实性收益。
+- [A Taxonomy for Data Contamination in Large Language Models](https://arxiv.org/abs/2407.08716)：分类预训练数据污染类型和去污染局限，说明其如何抬高事实性评测并掩盖幻觉风险。
+- [LLMs Will Always Hallucinate, and We Need to Live With This](https://arxiv.org/abs/2409.05746)：以理论立场论证幻觉具有结构性不可避免性，因此需要风险管理而不只是追求彻底消除。
+- [Trustworthiness in Retrieval-Augmented Generation Systems: A Survey](https://arxiv.org/abs/2409.10102)：从检索质量、生成忠实性、鲁棒性、隐私和归因等方面综述 RAG 可信性。
+- [A Survey of Hallucination in Large Visual Language Models](https://arxiv.org/abs/2410.15359)：综述 LVLM 幻觉成因、纠错与缓解方法、数据集和评测指标。
+- [A Survey on Uncertainty Quantification of Large Language Models: Taxonomy, Open Research Challenges, and Future Directions](https://arxiv.org/abs/2412.05563)：把不确定性视作幻觉信号，组织 token、序列、语义和模型级量化方法。
+- [Beyond Isolated Fixes: A Comprehensive Survey on Hallucination Mitigation with a Three-Dimensional Taxonomy and Integrative Framework](https://doi.org/10.1109/uv63228.2024.11189154)：用三维分类把零散缓解技术连接为一套综合幻觉控制框架。
+- [A Survey of Hallucination Problems Based on Large Language Models](https://doi.org/10.54254/2755-2721/2024.17851)：提供 LLM 幻觉成因、检测、评测和缓解路线的紧凑综述。
+- [A Review of Faithfulness Metrics for Hallucination Assessment in Large Language Models](https://arxiv.org/abs/2501.00269)：综述摘要、问答和机器翻译中的忠实性指标，并覆盖 LLM-as-judge 与 RAG 缓解证据。
+- [LLMs as Repositories of Factual Knowledge](https://arxiv.org/abs/2501.12774)：综述参数化记忆如何存储并错误检索事实知识，补充幻觉与事实性综述。
+- [A Survey of Graph Retrieval-Augmented Generation for Customized Large Language Models](https://arxiv.org/abs/2501.13958)：聚焦图结构检索作为定制化 LLM 的 grounding 层，以及领域事实一致性控制。
+- [Hallucination, monofacts, and miscalibration: An empirical investigation](https://arxiv.org/abs/2502.08666)：实证连接幻觉率、monofact 和校准，检验事实错误的统计下界视角。
+- [Ask in Any Modality: A Comprehensive Survey on Multimodal Retrieval-Augmented Generation](https://arxiv.org/abs/2502.08826)：综述多模态 RAG 架构、检索来源与鲁棒性问题，关注跨输入模态的输出 grounding。
+- [A Survey of Uncertainty Estimation Methods on Large Language Models](https://arxiv.org/abs/2503.00172)：比较四类 LLM 不确定性估计，并跨数据集评测其发现偏见、幻觉和非事实回答的能力。
+- [A Survey on Knowledge-Oriented Retrieval-Augmented Generation](https://arxiv.org/abs/2503.10677)：按知识获取、表示、检索与生成控制组织面向知识的 RAG 方法，用于事实 grounding。
+- [Uncertainty Quantification and Confidence Calibration in Large Language Models: A Survey](https://arxiv.org/abs/2503.15850)：综述置信校准和不确定性量化，作为判断 LLM 输出何时需要核验的可靠性控制。
+- [Retrieval Augmented Generation and Understanding in Vision: A Survey and New Outlook](https://arxiv.org/abs/2503.18016)：综述视觉中的检索增强生成与理解，连接外部视觉知识库和 VLM 可靠性。
+- [Comparing Uncertainty Measurement and Mitigation Methods for Large Language Models: A Systematic Review](https://arxiv.org/abs/2504.18346)：系统比较不确定性测量和缓解方法，把它们作为幻觉检测与校准的操作工具。
+- [Detection and Mitigation of Hallucination in Large Reasoning Models](https://arxiv.org/abs/2505.12886)：从中间推理动态、检测信号和干预方法考察推理模型中的幻觉。
+- [Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers](https://arxiv.org/abs/2506.00054)：综述 RAG 架构变体、增强方法、鲁棒性失败和事实性前沿。
+- [Loki's Dance of Illusions](https://arxiv.org/abs/2507.02870)：围绕成因、表现、检测和缓解构建 LLM 部署中的广义幻觉图谱。
+- [Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models](https://arxiv.org/abs/2507.07505)：面向幻觉检测与缓解的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Towards Agentic RAG with Deep Reasoning: A Survey of RAG-Reasoning Systems in LLMs](https://arxiv.org/abs/2507.09477)：综述结合检索、规划和多步推理的 RAG-reasoning 系统，以提升 grounded answer 质量。
+- [A Survey of Multimodal Hallucination Evaluation and Detection](https://arxiv.org/abs/2507.19024)：聚焦多模态幻觉的基准设计、检测器家族和评测协议。
+- [Hallucination as a Computational Boundary: A Hierarchy of Inevitability and the Oracle Escape](https://arxiv.org/abs/2508.07334)：面向幻觉检测与缓解的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Diving into Mitigating Hallucinations from a Vision Perspective for Large Vision-Language Models](https://arxiv.org/abs/2509.13836)：把 LVLM 幻觉归因到视觉表征和编码器问题，并综述视觉侧缓解路线。
+- [Review of Hallucination Understanding in Large Language and Vision Models](https://arxiv.org/abs/2510.00034)：综述大型语言模型与视觉模型中共享及模态特有的幻觉机制。
+- [A novel hallucination classification framework](https://arxiv.org/abs/2510.05189)：提出由受控提示复现、嵌入表示和无监督聚类支撑的幻觉分类框架。
+- [Classifying and Addressing the Diversity of Errors in Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2510.13975)：分类 RAG 错误类型，并将各类错误连接到 grounded generation 的缓解策略。
+- [Mitigating Hallucination in Large Language Models (LLMs)](https://arxiv.org/abs/2510.24476)：按应用场景组织缓解方法，区分 RAG、推理工作流和 agentic systems 的可靠性控制机制。
+- [Hallucinations of large multimodal models: Problem and countermeasures](https://doi.org/10.1016/j.inffus.2025.102970)：综述大多模态模型中的幻觉问题与应对措施，将风险边界扩展到文本 LLM 之外。
+- [A Systematic Literature Review of Hallucinations in Large Language Models](https://doi.org/10.1109/ACCESS.2025.3601206)：系统综合 LLM 幻觉定义、成因、检测方法、缓解技术和评测缺口。
+- [Assessing RAG: A Comprehensive Review of Evaluation Frameworks](https://doi.org/10.1109/ICCIKE67021.2025.11318213)：综述 RAG 评测框架，覆盖组件质量、忠实性、grounding 和端到端可靠性。
+- [Understanding and Mitigating Hallucinations in Large Language Models: Insights from a Systematic Literature Review](https://doi.org/10.1109/ICMCTC62214.2025.11196493)：基于系统文献综述证据组织 LLM 幻觉定义、成因、缓解路线与开放问题。
+- [Towards Explainable AI in Agentic Retrieval-Augmented Generation: A Systematic Review](https://doi.org/10.1109/IDAP68205.2025.11222281)：综述 agentic RAG 的可解释性，把检索、规划、工具使用和 grounded generation 连接成可审计工作流。
+- [Ambiguity processing in Large Language Models: Detection, resolution, and the path to hallucination](https://doi.org/10.1016/j.nlp.2025.100173)：把歧义检测与消解视为上游控制，用于降低 LLM 回答进入幻觉路径的风险。
+- [Mitigating Hallucination by Integrating Knowledge Graphs into LLM Inference - a Systematic Literature Review](https://doi.org/10.18653/v1/2025.acl-srw.53)：系统综述在大模型推理中引入知识图谱以缓解幻觉的方法。
+- [Exploring Hallucination in Large Language Models](https://doi.org/10.14569/ijacsa.2025.0161023)：面向幻觉评测与缓解的综述或相关工作脉络。核心思路是围绕“Exploring Hallucination in Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [Attribution Techniques for Mitigating Hallucinated Information in RAG Systems](https://arxiv.org/abs/2601.19927)：以归因为核心，把生成声明与检索证据连接起来，使 RAG 幻觉缓解具备可审计依据。
-- [SoK](https://arxiv.org/abs/2603.07379)：区分 agentic RAG 与普通检索增强生成，梳理其架构、评测协议和研究缺口。
-- [A Survey of Hallucination in Large Language Models](https://doi.org/10.12677/airr.2026.151016)：提供 LLM 幻觉来源、检测方法、评测与缓解路线的紧凑综述。
+- [Hallucination is a Consequence of Space-Optimality: A Rate-Distortion Theorem for Membership Testing](https://arxiv.org/abs/2602.00906)：面向幻觉检测与缓解的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Long-Tail Knowledge in Large Language Models: Taxonomy, Mechanisms, Interventions and Implications](https://arxiv.org/abs/2602.16201)：综述长尾知识机制与干预方法，解释稀有实体和稀有事实上的事实性失败。
+- [Beyond Chunk-Then-Embed: A Comprehensive Taxonomy and Evaluation of Document Chunking Strategies for Information Retrieval](https://arxiv.org/abs/2602.16974)：分类文档分块策略，说明其如何影响检索质量和下游 RAG 事实性。
+- [SoK](https://arxiv.org/abs/2603.07379)：区分 agentic RAG 架构、评测协议与研究缺口，使其不同于普通检索增强生成。
+- [Why Retrieval-Augmented Generation Fails: A Graph Perspective](https://arxiv.org/abs/2605.14192)：从图结构解释 RAG 失败，将检索拓扑和证据连通性与无依据生成联系起来。
+- [A Survey of Hallucination in Large Language Models](https://doi.org/10.12677/airr.2026.151016)：提供 LLM 幻觉来源、检测方法、评测实践和缓解路线的紧凑综述。
 - [Hallucination Detection in Large Language Model Generated Texts](https://doi.org/10.1109/ICECTE69292.2026.11429437)：把基于模型内部信号的检测器与基于外部证据的生成文本核验区分开来。
-- [A comprehensive study on factual consistency in LLMs for data-to-text generation](https://doi.org/10.1007/s12046-025-02860-5)：综述数据到文本生成中的事实一致性，这是可核验源一致性的典型幻觉场景。
-- [Multi-Layered Framework for LLM Hallucination Mitigation in High-Stakes Applications: A Tutorial](https://doi.org/10.3390/computers14080332)：把高风险应用中的幻觉缓解视为纵深防御，覆盖模型、检索、验证和部署控制层。
-- [Survey on Factuality in Large Language Models](https://doi.org/10.1145/3742420)：用事实性视角重框架幻觉问题，连接事实性评测、基准、纠错与可靠性风险。
+- [A Taxonomy of Knowledge Bases for Retrieval-Augmented Methods in Vision: A Comprehensive Survey](https://doi.org/10.1109/ACCESS.2026.3668187)：分类视觉检索增强方法中的知识库类型，关联多模态 grounding 与视觉幻觉缓解。
+- [Survey on Hallucination in Reasoning Large Language Model: Evaluation, Taxonomy, Intervention, and Open Issues](https://doi.org/10.3724/2096-7004.di.2025.0131)：从评测、分类、干预方法和开放问题综述推理型 LLM 幻觉。
+- [A comprehensive study on factual consistency in LLMs for data-to-text generation](https://doi.org/10.1007/s12046-025-02860-5)：综述数据到文本生成中的事实一致性，这是以结构化输入为核验对象的 source-grounded 幻觉场景。
+- [Multi-Layered Framework for LLM Hallucination Mitigation in High-Stakes Applications: A Tutorial](https://doi.org/10.3390/computers14080332)：把高风险应用中的幻觉缓解视作纵深防御，覆盖模型、检索、验证和部署控制层。
+- [Survey on Factuality in Large Language Models](https://doi.org/10.1145/3742420)：把事实性评测、事实知识基准、纠错方法和可靠性风险连接在同一幻觉相邻视角下。
+- [Hallucination Mitigation for Retrieval-Augmented Large Language Models: A Review](https://doi.org/10.3390/math13050856)：专门综述检索增强 LLM 的幻觉缓解，覆盖检索质量、归因和生成控制。
+- [Automatically Correcting Large Language Models: Surveying the Landscape of Diverse Automated Correction Strategies](https://doi.org/10.1162/tacl_a_00660)：综述自动纠错策略，区分自纠错、外部反馈、验证和生成后编辑。
+- [Model stability and hallucination under the data-knowledge dual-drive paradigm: a survey](https://doi.org/10.1117/12.3110427)：从数据驱动学习、知识使用与模型稳定性的交互关系综述幻觉问题。
+- [AI hallucination: towards a comprehensive classification of distorted information in artificial intelligence-generated content](https://doi.org/10.1057/s41599-024-03811-x)：分类 AI 生成内容中的失真信息，将幻觉边界从 LLM 文本扩展到生成媒体可靠性。
+- [Automating Systematic Literature Reviews with Retrieval-Augmented Generation: A Comprehensive Overview](https://doi.org/10.3390/app14199103)：综述用于文献综述生成的 RAG，其中引用 grounding 与幻觉控制是核心可靠性约束。
+- [Can generative AI reliably synthesise literature? exploring hallucination issues in ChatGPT](https://doi.org/10.1007/s00146-025-02406-7)：考察 ChatGPT 文献综合中的幻觉风险，重点关注生成的学术摘要是否保持 source-grounded。
+- [Epistemic Limits of Hallucination Mitigation in Large Language Models](https://doi.org/10.1007/s10699-026-10030-x)：面向幻觉检测与缓解的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [“Hallucination” as M-misalignment: a structural account of generation and interpretation](https://doi.org/10.1007/s43681-026-01169-1)：从结构视角解释幻觉作为 M-misalignment 的机制。
+- [Comparison of explainability methods for hallucination analysis in LLMs](https://doi.org/10.12688/openreseurope.20839.1)：可作为幻觉与事实性的 Survey 候选：围绕 Comparison of explainability methods for hallucination analysis in LLMs 梳理背景、方法与开放问题。
+- [EXPLORING THE BOUNDARIES OF ARTIFICIAL INTELLIGENCE HALLUCINATION](https://doi.org/10.12732/ijam.v38i2s.98)：综述幻觉检测与事实一致性相关研究，可作为该方向近期相关工作的入口。
+- [Architecting Trustworthy LLMs: A Unified TRUST Framework for Mitigating AI Hallucination](https://doi.org/10.63313/jcsft.9019)：可作为幻觉与事实性的 Survey 候选：围绕 Architecting Trustworthy LLMs: A Unified TRUST Framework for Mitigating AI Hallucination 梳理背景、方法与开放问题。

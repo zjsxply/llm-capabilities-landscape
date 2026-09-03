@@ -8,3 +8,17 @@
 - [APEX-Agents Leaderboard](https://www.mercor.com/apex/apex-agents-leaderboard/)：覆盖投行、咨询、公司法律等专业服务任务的公开榜单；它把文件、工具、rubric 和 gold outputs 作为现实白领工作交付物评估对象。
 - [ClawBench Leaderboard](https://claw-bench.com/)：真实 live website 写操作任务榜单，记录 model、harness、trace、HTTP interception 和 reward；现实网页工作流中 agent 行为是否可审计是它的主要价值。
 - [ClawMark Leaderboard](https://claw-mark.com/leaderboard)：多日历时间 coworker-agent 工作流榜单，适合跟踪能跨天等待、回忆和协同的真实工作 agent，而不是只完成单次会话任务。
+- [BrowserGym Leaderboard](https://huggingface.co/spaces/ServiceNow/browsergym-leaderboard)：ServiceNow 在 Hugging Face 上发布的 BrowserGym 网页智能体公开榜单，覆盖 WorkArena 类企业任务；适合在统一浏览器操作 harness 下比较 agent。
+- [tau-bench Leaderboard](https://taubench.com/)：tau-bench 官方公开结果站，面向零售、航空等客服领域的工具型对话 agent，同时跟踪任务修订与轨迹更新后的分数。
+- [AssistantBench Leaderboard](https://huggingface.co/spaces/AssistantBench/leaderboard)：AssistantBench 官方 Hugging Face 榜单，面向耗时网页助理任务；它用可自动评测的监控、筛选和信息整合工作流补充 GAIA。
+- [Spider 2.0 Leaderboard](https://spider2-sql.github.io/)：Spider 2.0 官方挑战榜单，面向真实企业 text-to-SQL 工作流，覆盖 Snowflake、DBT 和 Lite 等设置。
+- [WebChoreArena Leaderboard](https://webchorearena.github.io/)：WebChoreArena 官方项目页链接到公开挑战榜单，覆盖基于 WebArena 风格环境的可复现繁琐网页工作任务。
+- [FieldWorkArena AgentBeats Leaderboard](https://agentbeats.dev/agentbeater/fieldworkarena)：AgentBeats 上的 FieldWorkArena 公开挑战榜单，用于跟踪工厂、仓储和零售任务中的多模态现场工作 agent。
+- [Data Agent Benchmark Leaderboard](https://ucbepic.github.io/DataAgentBench/)：UC Berkeley EPIC 的 DAB 官方榜单，评测企业数据 agent 在异构数据库和非结构化文本上回答自然语言查询的能力。
+- [Claw-Eval Leaderboard](https://claw-eval.github.io/)：面向透明真实工作流 agent 任务的公开榜单，在人工验证任务上报告 Pass^3、完成度、鲁棒性和安全性。
+- [Claw-Eval-Live Leaderboard](https://claw-eval-live.github.io/)：Claw-Eval 系列的 live 榜单，从 marketplace demand signal 刷新工作流任务，并报告 pass rate 与 completion score。
+- [PinchBench Leaderboard](https://pinchbench.com/)（[benchmark tasks](https://github.com/pinchbench/skill)）：面向 OpenClaw 的真实任务榜单，在同一 agent runtime 中比较不同模型大脑；它按 success rate、speed 和 cost 跟踪日程安排、邮件分拣、调研、编码、文件管理、分析、记忆与 skill discovery 等不整洁现实工作。
+- [QwenClawBench Leaderboard](https://skylenage-ai.github.io/QwenClawBench-Leaderboard/)（[开源代码](https://github.com/SKYLENAGE-AI/QwenClawBench)；[数据集](https://huggingface.co/datasets/skylenage-ai/QwenClawBench)）：Qwen 与 Alibaba Data 面向 OpenClaw agent 的真实用户分布任务榜单，覆盖 100 个任务；价值在于能在同一 OpenClaw runtime 下比较模型，同时显式保留基础设施异常和多次运行可靠性。
+- [PawBench Leaderboard](https://agentscope-ai.github.io/PawBench/)（[开源代码](https://github.com/agentscope-ai/PawBench)）：面向真实工作 agent 任务的公开 model-harness 矩阵；它在 150 个任务上报告总体分与切片分，让读者能比较同一模型放在 QwenPaw、OpenClaw 和 Hermes 中的差异，而不是把 harness 当成不可见实现细节。
+- [AlphaEval Leaderboard](https://alphaeval.ai/)：面向生产环境真实工作 agent 的榜单，使用来自已部署 agent 场景的业务任务，比较完整 agent 产品与 scaffold，而不只比较模型 API。
+- [GDPval-AA Leaderboard](https://artificialanalysis.ai/evaluations/gdpval-aa)：Artificial Analysis 对 GDPval 的独立评测，通过 Stirrup harness 给模型网页和 shell 访问能力，并用 Elo 排名专业交付物上的 agentic 表现。

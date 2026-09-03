@@ -8,3 +8,5 @@
 - [MathIF Leaderboard](https://github.com/TingchenFu/MathIF)：数学推理任务中的指令遵循榜单；价值在于评估模型在保持推理正确性的同时能否满足可程序验证约束。
 - [IFBench Leaderboard](https://github.com/allenai/IFBench)：可验证指令遵循泛化榜单；价值在于用未见约束类型和多轮设置检查模型是否只过拟合 IFEval 风格模板。
 - [IFScale Leaderboard](https://distylai.github.io/IFScale/)：指令数量压力测试榜单；价值在于用 10 到 500 条 simultaneous instructions 观察约束负载增加时的退化模式。
+- [CodeIF Leaderboard](https://lin-rany.github.io/codeif.github.io/leaderboard.html)：代码指令遵循官方排行榜；价值在于区分代码任务是否成功，以及生成方案是否满足开发者风格的约束。
+- [LIFEBench Results](https://ydyjya.github.io/LIFEBench/)：长度指令遵循的官方结果页；价值在于比较模型能否遵守长输出中的明确词数与 token 数要求。

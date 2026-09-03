@@ -1,96 +1,328 @@
 # 2.7.3 Bench
 
-- [GAIA](https://arxiv.org/abs/2311.12983)（[数据集](https://huggingface.co/datasets/gaia-benchmark/GAIA)）：评什么：通用 AI assistant 在真实问题上的推理、多模态、网页浏览和工具使用。核心思想：用人类容易但模型困难的现实问题，把“会查、会算、会用工具、会整合证据”组合成早期通用 agent 评测锚点。
-- [WorkArena](https://arxiv.org/abs/2403.07718)（[开源代码](https://github.com/ServiceNow/WorkArena)）：评什么：ServiceNow 企业软件中的常见知识工作网页任务。核心思想：用真实企业软件风格的平台与 BrowserGym 环境评测 agent 的网页操作、表单处理、检索与流程执行能力。
+- [GAIA](https://arxiv.org/abs/2311.12983)（[数据集](https://huggingface.co/datasets/gaia-benchmark/GAIA)；[榜单](https://huggingface.co/spaces/gaia-benchmark/leaderboard)）：评什么：通用 AI assistant 在真实问题上的推理、多模态、网页浏览和工具使用。核心思想：用人类容易但模型困难的现实问题，把“会查、会算、会用工具、会整合证据”组合成早期通用 agent 评测锚点。
+- [TravelPlanner: A Benchmark for Real-World Planning with Language Agents](https://arxiv.org/abs/2402.01622)：评测语言 agent 的真实旅行规划能力，使长程现实规划可衡量。
+- [Evaluating Large Language Models in Process Mining: Capabilities, Benchmarks, Evaluation Strategies, and Future Challenges](https://arxiv.org/abs/2403.06749)：作为真实世界工作的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [WorkArena](https://arxiv.org/abs/2403.07718)（[开源代码](https://github.com/ServiceNow/WorkArena)，[BrowserGym leaderboard](https://huggingface.co/spaces/ServiceNow/browsergym-leaderboard)）：评什么：ServiceNow 企业软件中的常见知识工作网页任务。核心思想：用真实企业软件风格的平台与 BrowserGym 环境评测 agent 的网页操作、表单处理、检索与流程执行能力。
 - [WorkBench](https://arxiv.org/abs/2405.00823)（[开源代码](https://github.com/olly-styles/WorkBench)）：评什么：真实办公室/业务活动中的工具调用与状态变更任务。核心思想：提供含 5 个数据库、26 个工具和 690 个任务的 sandbox，以 outcome-centric evaluation 检查最终数据库状态是否唯一正确，强调邮件、会议、记录更新等常见工作流的可执行性与误操作风险。
-- [tau-bench](https://arxiv.org/abs/2406.12045)（[开源代码](https://github.com/sierra-research/tau-bench)）：评什么：真实领域中的工具-代理-用户多轮交互（如零售与航空）。核心思想：用模拟用户、领域 API 与 policy guideline 共同约束 agent，并以最终数据库状态评估是否真正完成用户目标。
-- [WorkArena++](https://arxiv.org/abs/2407.05291)（[开源代码](https://github.com/ServiceNow/WorkArena)）：评什么：更组合化的企业知识工作流。核心思想：把 WorkArena 扩展到 682 个需要组合规划、逻辑/算术推理、检索与上下文理解的任务，专门放大“多步骤企业流程”中的规划失败。
+- [The Dawn of Natural Language to SQL: Are We Fully Ready?](https://arxiv.org/abs/2406.01265)：提出 NL2SQL360 这一面向生产式自然语言查库的多角度评测框架。核心思想：按数据领域和 SQL 特征比较 NL2SQL 方法，并用同一框架搜索适合具体需求的 NL2SQL 方案。
+- [tau-bench](https://arxiv.org/abs/2406.12045)（[开源代码](https://github.com/sierra-research/tau-bench)，[Leaderboard](https://taubench.com/)）：评什么：真实领域中的工具-代理-用户多轮交互（如零售与航空）。核心思想：用模拟用户、领域 API 与 policy guideline 共同约束 agent，并以最终数据库状态评估是否真正完成用户目标。
+- [WONDERBREAD](https://arxiv.org/abs/2406.13264)：评测多模态基础模型在业务流程管理中的任务表现，不只看端到端自动化。核心思想：用 2,928 个 workflow demonstration、6 类 BPM 任务和自动评测 harness，测试流程文档化、知识迁移和流程改进推理。
+- [SpreadsheetBench](https://arxiv.org/abs/2406.14991)：评什么：真实 Excel 论坛场景中的电子表格操作。核心思想：把 912 个真实用户问题与包含多表、非标准关系和非文本元素的复杂表格配对，并用在线判题式生成测试表检查公式或操作方案是否稳健。
+- [WorkArena++](https://arxiv.org/abs/2407.05291)（[开源代码](https://github.com/ServiceNow/WorkArena)，[BrowserGym leaderboard](https://huggingface.co/spaces/ServiceNow/browsergym-leaderboard)）：评什么：更组合化的企业知识工作流。核心思想：把 WorkArena 扩展到 682 个需要组合规划、逻辑/算术推理、检索与上下文理解的任务，专门放大“多步骤企业流程”中的规划失败。
 - [InsightBench](https://arxiv.org/abs/2407.06423)（[开源代码](https://github.com/ServiceNow/insight-bench)）：评什么：商业分析 agent。核心思想：要求在真实风格数据集上生成多步洞察，连接数据理解、分析规划和面向业务的解释。
-- [AssistantBench](https://arxiv.org/abs/2407.15711)（[项目页](https://assistantbench.github.io/)）：评什么：真实且耗时的网页助理任务。核心思想：把监控、筛选、定位和信息整合类网页工作做成可自动评价任务，连接 GAIA 的通用助理能力与 WebArena 式可执行网页环境。
+- [IDAT](https://arxiv.org/abs/2407.08898)：提供交互式 grounded task-solving agent 的数据和评测工具。核心思想：在类 Minecraft 环境中收集约 9,000 条 utterance 和 1,000 多个 clarification question，并配套人类在环平台做多轮 agent 评测。
+- [Spider2-V](https://arxiv.org/abs/2407.10956)：评什么：专业数据科学和数据工程 workflow 中的多模态 agent 自动化能力。核心思想：在 BigQuery、dbt、Airbyte 等真实企业软件环境中运行 494 个任务，要求 agent 同时写代码、写 SQL 并操作 GUI，而不是只输出最终文本答案。
+- [AssistantBench](https://arxiv.org/abs/2407.15711)（[项目页](https://assistantbench.github.io/)，[Leaderboard](https://huggingface.co/spaces/AssistantBench/leaderboard)）：评什么：真实且耗时的网页助理任务。核心思想：把监控、筛选、定位和信息整合类网页工作做成可自动评价任务，连接 GAIA 的通用助理能力与 WebArena 式可执行网页环境。
 - [OfficeBench](https://arxiv.org/abs/2407.19056)（[开源代码](https://github.com/zlwang-cs/OfficeBench)）：评什么：跨 Word/Excel/PDF/日历/邮件等多应用的办公室自动化。核心思想：用 300 个多应用任务测长程规划、应用切换与大动作空间 grounding，突出日常办公工作流中的冗余操作、幻觉和跨应用失败。
+- [TableBench: A Comprehensive and Complex Benchmark for Table Question Answering](https://arxiv.org/abs/2408.09174)：通过任务、评测协议或诊断设置评测 Real World Work 能力，适合作为 Bench 条目。
+- [BPM Task Benchmark](https://arxiv.org/abs/2410.03255)：在 business process management 任务上评测 LLM，弥补通用 NLP 分数难以迁移到具体 BPM 工作的缺口。核心思想：比较开源与商业模型在 4 类 BPM 任务上的表现，揭示流程管理部署中的任务差异和模型规模权衡。
+- [Enterprise Benchmarks for Large Language Model Evaluation](https://arxiv.org/abs/2410.12857)：评测 LLM 在企业 NLP 领域的任务表现。核心思想：汇集金融、法律、网络安全、气候与可持续发展等企业领域的 25 个公开数据集，并比较 13 个模型，使企业域和任务选择成为模型选型的一部分。
+- [Social Science Meets LLMs: How Reliable Are Large Language Models in Social Simulations?](https://arxiv.org/abs/2410.23426)：围绕 Real-World Work 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
 - [CRMArena](https://arxiv.org/abs/2411.02305)：评什么：CRM 系统中的专业客户服务、分析与管理任务。核心思想：引入工业对象、隐变量和业务规则，检验 agent 在真实 CRM 工作环境中的函数调用、规则遵循与业务流程可靠性。
-- [Spider 2.0](https://arxiv.org/abs/2411.07763)（[项目页](https://spider2-sql.github.io/)）：评什么：真实企业 text-to-SQL 工作流。核心思想：要求元数据搜索、方言处理、代码库上下文和多查询 SQL 生成，使数据库任务比 classic Spider 的单查询设置更接近真实分析工作。
-- [TheAgentCompany](https://arxiv.org/abs/2412.14161)（[开源代码](https://github.com/TheAgentCompany/TheAgentCompany)）：评什么：模拟软件公司中的真实数字员工任务。核心思想：构建自包含的公司环境、内部网站与同事通信，让 agent 通过浏览网页、写代码、运行程序和沟通协作完成工作，而不是只在单一工具里操作。
+- [Spider 2.0](https://arxiv.org/abs/2411.07763)（[项目页与榜单](https://spider2-sql.github.io/)）：评什么：真实企业 text-to-SQL 工作流。核心思想：要求元数据搜索、方言处理、代码库上下文和多查询 SQL 生成，使数据库任务比 classic Spider 的单查询设置更接近真实分析工作。
+- [LLM User-Agents for Task-Oriented Dialogue Evaluation](https://arxiv.org/abs/2411.09972)：用 LLM 构造具备上下文意识的用户模拟器来评测任务型对话系统。核心思想：通过 in-context examples 提示 user-agent、跟踪用户目标状态，并在动态交互框架中评估 TOD 系统，而不是只依赖静态离线对话集。
+- [ChinaTravel](https://arxiv.org/abs/2412.13682)：评什么：带组合约束的开放式中文旅行规划。核心思想：结合多日、多 POI 旅行 sandbox、用于可行性和偏好验证的领域专用语言，以及人类写出的隐含需求，检验语言 agent 能否满足真实旅行约束。
+- [TheAgentCompany](https://arxiv.org/abs/2412.14161)（[榜单](https://the-agent-company.com/#/leaderboard)；[开源代码](https://github.com/TheAgentCompany/TheAgentCompany)）：评什么：模拟软件公司中的真实数字员工任务。核心思想：构建自包含的公司环境、内部网站与同事通信，让 agent 通过浏览网页、写代码、运行程序和沟通协作完成工作，而不是只在单一工具里操作。
+- [Collaborative Gym](https://arxiv.org/abs/2412.15701)：评测带双向沟通和任务环境交互的人机协作 agent。核心思想：在旅行规划、相关工作写作和表格分析任务上同时支持模拟用户与真实用户条件，既看任务结果，也记录沟通失败和情境意识失败。
+- [AIOpsLab: A Holistic Framework to Evaluate AI Agents for Enabling Autonomous Clouds](https://arxiv.org/abs/2501.06706)：AIOpsLab 评测自治云运维 agent，属于现实工作/云运维 Bench。
+- [Open FinLLM Leaderboard: Towards Financial AI Readiness](https://arxiv.org/abs/2501.10963)：提供可复用评测目标、排行榜或测量协议。
+- [IntellAgent: A Multi-Agent Framework for Evaluating Conversational AI Systems](https://arxiv.org/abs/2501.11067)：用于评估 conversational AI systems 的 multi-agent framework。核心思想是用交互式 agents 测试对话系统，而不只看单轮答案质量。
+- [OOD-X Benchmarks](https://arxiv.org/abs/2501.18463)：在更困难的真实分布迁移下压力测试视觉语言 OOD 检测。核心思想：提出 ImageNet-X、ImageNet-FS-X 和 Wilds-FS-X，让 CLIP 式 OOD 方法在语义、协变量和 full-spectrum shift 上比较，而不是停留在已饱和的旧测试集。
 - [ML-Dev-Bench](https://arxiv.org/abs/2502.00964)：评什么：应用机器学习开发 workflow 中的 agentic 能力。核心思想：从数据处理、训练、改进现有代码到实验报告生成，评估 agent 是否能完成完整 ML 开发链路，而不是只解孤立代码题或 Kaggle 式单点任务。
+- [SOTOPIA-Ω: Dynamic Strategy Injection Learning and Social Instruction Following Evaluation for Social Agents](https://arxiv.org/abs/2502.15538)：评测真实工作或社交智能体的交互行为。
+- [REALM-Bench: A Benchmark for Evaluating Multi-Agent Systems on Real-world, Dynamic Planning and Scheduling Tasks](https://arxiv.org/abs/2502.18836)：评测多 agent 系统真实动态 planning/scheduling 能力的 benchmark；核心思想是在环境变化时测试协作、重规划和日程修复。
+- [TripCraft: A Benchmark for Spatio-Temporally Fine Grained Travel Planning](https://arxiv.org/abs/2502.20508)：用真实空间、时间、交通、活动与用户画像约束评测旅行规划，并提供连续的计划质量指标。
+- [MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents](https://arxiv.org/abs/2503.01935)：类型：benchmark/评测协议。核心价值：为 2.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [A2Perf: Real-World Autonomous Agents Benchmark](https://arxiv.org/abs/2503.03056)：提出真实世界自主智能体基准。
 - [nvBench 2.0](https://arxiv.org/abs/2503.12880)：评测含歧义用户查询的自然语言到可视化生成。核心思想是为模糊 Text2VIS 请求配套多个有效可视化和推理轨迹，测试数据智能体能否解析或表达可视化意图，而不是默认只有一个图表答案。
+- [ECKGBench: Benchmarking Large Language Models in E-commerce Leveraging Knowledge Graph](https://arxiv.org/abs/2503.15990)：可作为真实工作任务 agent的Bench候选；核心关注“Benchmarking Large Language Models in E-commerce Leveraging Knowledge Graph”。
+- [Boosting Virtual Agent Learning and Reasoning: A Step-wise, Multi-dimensional, and Generalist Reward Model with Benchmark](https://arxiv.org/abs/2503.18665)：面向通用虚拟代理的逐步多维奖励模型和 benchmark。核心思想是用比最终成功更细的过程信号评估和训练 virtual agents。
+- [EconEvals: Benchmarks and Litmus Tests for LLM Agents in Unknown Environments](https://arxiv.org/abs/2503.18825)：未知环境中的经济 agent 基准与试金石任务。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Mobile-MMLU: A Mobile Intelligence Language Understanding Benchmark](https://arxiv.org/abs/2503.20786)：可作为真实工作任务 agent的Bench候选；核心关注“A Mobile Intelligence Language Understanding Benchmark”。
+- [Evaluating Multimodal Language Models as Visual Assistants for Visually Impaired Users](https://arxiv.org/abs/2503.22610)：可作为真实工作任务 agent的Bench候选；核心关注“Evaluating Multimodal Language Models as Visual Assistants for Visually Impaired Users”。
+- [LLM-ABM for Transportation: Assessing the Potential of LLM Agents in System Analysis](https://arxiv.org/abs/2503.22718)：评估 LLM 智能体在交通 agent-based modeling 与系统分析中的作用。
+- [ELT-Bench: An End-to-End Benchmark for Evaluating AI Agents on ELT Pipelines](https://arxiv.org/abs/2504.04808)：ELT-Bench 评测 AI agents 端到端构建 ELT pipelines，属于真实数据工程工作流 benchmark。
+- [TP-RAG: Benchmarking Retrieval-Augmented Large Language Model Agents for Spatiotemporal-Aware Travel Planning](https://arxiv.org/abs/2504.08694)：用真实 POI、轨迹、路线效率、景点吸引力与动态适应指标评测具备检索增强的 LLM 旅行规划智能体。
 - [RealWebAssist](https://arxiv.org/abs/2504.10445)（[开源代码](https://github.com/SCAI-JHU/RealWebAssist)）：评什么：真实用户的长程网页协助。核心思想：用顺序、多变、含澄清需求的人类指令评估 agent 的持续协助能力，贴近现实用户把网页任务委托给 AI 的工作流。
+- [GraphicBench: A Planning Benchmark for Graphic Design with Language Agents](https://arxiv.org/abs/2504.11571)：补充real world work方向的基准或评测套件，核心围绕《GraphicBench: A Planning Benchmark for Graphic Design with Language Agents》。
+- [Evaluation and Incident Prevention in an Enterprise AI Assistant](https://arxiv.org/abs/2504.13924)：描述面向多组件企业 AI assistant 的监控、评测和持续改进框架。核心思想：结合 severity-based incident detection、组件级错误归因、抗过拟合的 benchmark 构建，以及多维持续改进，帮助团队预防可靠性事故。
 - [TutorGym](https://arxiv.org/abs/2505.01563)：评什么：在智能教学系统中扮演 tutor 与 student 的 AI agent。核心思想：为经过课堂验证的教学环境提供统一接口，使教学互动质量、提示行为和模拟学习能在最终答案准确率之外被评测。
+- [AURA: A Diagnostic Framework for Tracking User Satisfaction of Interactive Planning Agents](https://arxiv.org/abs/2505.01592)：跟踪 interactive planning agents 用户满意度的诊断框架。核心思想是用交互级满意度信号评估规划 agent，而不只看最终任务成功。
+- [How Social is It? A Benchmark for LLMs' Capabilities in Multi-user Multi-turn Social Agent Tasks](https://arxiv.org/abs/2505.04628)：评测 LLM 在多用户、多轮社会化 agent 任务中的能力；核心思想是检查 agent 能否在长程对话中跟踪用户、社会上下文和交互目标。
+- [WixQA: A Multi-Dataset Benchmark for Enterprise Retrieval-Augmented Generation](https://arxiv.org/abs/2505.08643)：面向企业 RAG 的多数据集 benchmark。核心思想是在多个企业式问答数据集上评估 RAG，而不是只用单一干净语料。
+- [FLOW-BENCH](https://arxiv.org/abs/2505.11646)：评测从自然语言生成结构化企业 workflow artifact 的能力。核心思想：把自然语言指令与业务流程定义配对，并借助 FLOW-GEN 的 Python-like 中间表示，测试向 BPMN 和 DMN 等流程定义语言转换的质量。
+- [LEXam: Benchmarking Legal Reasoning on 340 Law Exams](https://arxiv.org/abs/2505.12864)：覆盖 340 份法学考试的法律推理基准；核心思想是评测法律规则适用和考试式推理，而不只是通用问答。
+- [IDA-Bench](https://arxiv.org/abs/2505.18223)：评测 LLM agent 的多轮引导式数据分析能力。核心思想：从复杂 Kaggle notebook 派生任务，由模拟用户连续给出自然语言指令，并把最终数值输出与人工 notebook baseline 对齐比较。
 - [LogicCat](https://arxiv.org/abs/2505.18744)：评估多领域 Text-to-SQL 的链式思考推理能力。核心思想：要求模型把自然语言问题转成可执行数据库查询并暴露中间推理挑战，使数据库查询工作比只看最终 SQL 准确率更接近真实分析流程。
 - [CRMArena-Pro](https://arxiv.org/abs/2505.18878)：评什么：销售、服务、报价配置等多业务场景下的 CRM agent。核心思想：在 CRMArena 基础上加入 B2B/B2C、多人设多轮交互与保密意识评估，更贴近企业部署中“会话 + 数据 + 规则 + 权限”的复合需求。
-- [FieldWorkArena](https://arxiv.org/abs/2505.19662)：评什么：制造、仓储、零售等现场工作的多模态任务。核心思想：用真实场地采集的图片/视频与一线员工访谈构造任务，测安全隐患、流程违规与关键事件识别，补齐“数字办公室之外”的现实工作评测。
-- [WebChoreArena](https://arxiv.org/abs/2506.01952)（[开源代码](https://github.com/WebChoreArena/WebChoreArena)）：评什么：现实网页中的繁琐复杂 chores。核心思想：把大量筛选、重复确认、跨页面状态维护等“人类不愿做但工作中常见”的网页任务做成 benchmark，检验 agent 的稳定执行和错误恢复。
+- [FieldWorkArena](https://arxiv.org/abs/2505.19662)（[AgentBeats leaderboard](https://agentbeats.dev/agentbeater/fieldworkarena)）：评什么：制造、仓储、零售等现场工作的多模态任务。核心思想：用真实场地采集的图片/视频与一线员工访谈构造任务，测安全隐患、流程违规与关键事件识别，补齐“数字办公室之外”的现实工作评测。
+- [FinTagging: Benchmarking LLMs for Extracting and Structuring Financial Information](https://arxiv.org/abs/2505.20650)：评什么：金融报告信息抽取与结构化。核心思想是评估将数值事实映射到大量细粒度报告概念的能力，而不是小标签平面分类。
+- [Climate Finance Bench](https://arxiv.org/abs/2505.22752)：面向真实工作流智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Climate Finance Bench”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [LLM-based HSE Compliance Assessment: Benchmark, Performance, and Advancements](https://arxiv.org/abs/2505.22959)：评测 LLM 在职业工作流中进行健康、安全与环境合规评估的能力。
+- [WebChoreArena](https://arxiv.org/abs/2506.01952)（[项目页与榜单](https://webchorearena.github.io/)，[开源代码](https://github.com/WebChoreArena/WebChoreArena)）：评什么：现实网页中的繁琐复杂 chores。核心思想：把大量筛选、重复确认、跨页面状态维护等“人类不愿做但工作中常见”的网页任务做成 benchmark，检验 agent 的稳定执行和错误恢复。
+- [FinS-Pilot](https://arxiv.org/abs/2506.02037)：评什么：结合静态文本知识与实时 API 数据的在线金融 RAG 助手。核心思想：按意图组织真实金融助手交互，测试模型能否可靠处理时效性市场信息。
+- [LocalGPT: Benchmarking and Advancing Large Language Models for Local Life Services in Meituan](https://arxiv.org/abs/2506.02720)：面向本地生活服务评测 LLM 能力，属于真实业务场景 benchmark。
+- [NetArena](https://arxiv.org/abs/2506.03231)：评测动态网络自动化任务中的 AI agent。核心思想：运行时生成网络运维查询，并通过网络模拟器验证正确性、安全性和延迟，降低静态任务污染和样本方差。
 - [SpreadsheetBench Verified](https://arxiv.org/abs/2506.03768)：评什么：可验证的表格/电子表格任务（公式、计算、操作与结果一致性）。核心思想：以“可自动验证”的协议把 spreadsheet 这种常见生产工具纳入编程代理能力谱系。
 - [AssetOpsBench](https://arxiv.org/abs/2506.03828)（[开源代码](https://github.com/IBM/AssetOpsBench)）：评什么：工业资产运维中的多步骤决策与操作。核心思想：把 Industry 4.0 场景中的设备状态、维护策略和操作约束组织成可执行任务，补充办公室软件之外的企业运营工作流。
+- [Flex-TravelPlanner: A Benchmark for Flexible Planning with Language Agents](https://arxiv.org/abs/2506.04649)：在旅行场景中评测语言 agent 的灵活规划能力，强调约束变化与行程可行性。
+- [Understanding Financial Reasoning in AI: A Multimodal Benchmark and Error Learning Approach](https://arxiv.org/abs/2506.06282)：构建多模态金融推理与错误学习基准。
+- [SOP-Bench: Complex Industrial SOPs for Evaluating LLM Agents](https://arxiv.org/abs/2506.08119)：面向 LLM agents 的复杂工业 SOP benchmark；核心思想是测试 agent 能否遵循带约束、依赖和状态检查的多步骤操作规程。
+- [EconWebArena: Benchmarking Autonomous Agents on Economic Tasks in Realistic Web Environments](https://arxiv.org/abs/2506.08136)：评测真实经济与公共政策网页任务中的自主网页 agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [What Limits Virtual Agent Application? OmniBench: A Scalable Multi-Dimensional Benchmark for Essential Virtual Agent Capabilities](https://arxiv.org/abs/2506.08933)：面向虚拟代理关键能力的可扩展多维 benchmark。核心思想是跨核心能力诊断 virtual agent 部署瓶颈，而不是只看单一任务族。
 - [EconGym](https://arxiv.org/abs/2506.12110)：评什么：覆盖多样经济任务的可扩展经济决策环境。核心思想：把 AI 系统接入模块化经济仿真，覆盖政策、人口变化、多政府协调和大规模 agent 交互，使经济决策更接近真实运营任务，而不是静态问答。
+- [The Behavior Gap: Evaluating Zero-shot LLM Agents in Complex Task-Oriented Dialogs](https://arxiv.org/abs/2506.12266)：评测真实工作场景与多智能体系统。核心思想：围绕论文中的任务、数据或协议（Evaluating Zero-shot LLM Agents in Complex Task-Oriented Dialogs）形成可复用比较基准。
+- [RealHiTBench: A Comprehensive Realistic Hierarchical Table Benchmark for Evaluating LLM-Based Table Analysis](https://arxiv.org/abs/2506.13405)：面向 LLM 表格分析的真实层级表格基准。核心思想是跨 LaTeX、HTML 和图像格式评估复杂表格理解。
 - [xbench](https://arxiv.org/abs/2506.13651)：评什么：与职业生产力直接对齐的动态真实工作评测，初始覆盖招聘与营销。核心思想：由行业专家定义商业重要任务，并用可随时间更新的 evalset 追踪 agent 的 Technology-Market Fit，而不是只看静态学术题。
+- [FormGym: Doing Paperwork with Agents](https://arxiv.org/abs/2506.14079)：面向 agents 的 paperwork benchmark。核心思想是评估 agent 能否完成表单填写和行政文档流程，而不只是回答对话问题。
+- [Finance Language Model Evaluation (FLaME)](https://arxiv.org/abs/2506.15846)：评什么：面向金融语言模型和专业金融推理的评测基准。
+- [Don't Trust Generative Agents to Mimic Communication on Social Networks Unless You Benchmarked their Empirical Realism](https://arxiv.org/abs/2506.21974)：评测真实工作场景与多智能体系统。核心思想：围绕论文中的任务、数据或协议（Don't Trust Generative Agents to Mimic Communication on Social Networks Unless You Benchmarked their Empirical Realism）形成可复用比较基准。
+- [Benchmarking Deep Search over Heterogeneous Enterprise Data](https://arxiv.org/abs/2506.23139)：评测跨文档、会议、消息、代码和网页等企业异构材料的深度搜索；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [EcomScriptBench](https://aclanthology.org/2025.acl-long.1/)：评什么：带 step-wise product association 的电商脚本规划。核心思想：把行动规划和商品检索结合起来，使购物助手按真实购买意图工作流评估，而不是只测泛化推荐或文本生成。
 - [BI-Bench](https://doi.org/10.18653/v1/2025.acl-industry.90)：用 benchmark 数据集和无监督评估衡量商业智能系统。核心思想：测试模型能否支持 BI 式数据查询与分析工作流，而不只是孤立语言理解。
 - [LegalAgentBench](https://aclanthology.org/2025.acl-long.116/)：评什么：中国法律领域的 LLM agent。核心思想：结合法律语料、外部工具和真实司法认知任务，使专业法律 agent 行为超出静态法律问答被评估。
 - [INVESTORBENCH](https://aclanthology.org/2025.acl-long.126/)：评什么：金融决策任务中的 LLM-based agent。核心思想：提供标准化金融 agent 场景，覆盖证据、风险、工具使用和推理共同影响最终行动的决策任务。
+- [INVESTORBENCH: A Benchmark for Financial Decision-Making Tasks with LLM-based Agent](https://doi.org/10.18653/v1/2025.acl-long.126)：评测 LLM-based agent 的金融决策任务能力。核心思想：检查 agent 能否围绕投资相关证据推理并产出有决策价值的结果。
 - [GuideBench](https://aclanthology.org/2025.acl-long.557/)：评什么：面向领域指南的 LLM agent 规则遵循。核心思想：测试 agent 是否能遵守可能与常识默认值冲突的领域规则，把 guideline compliance 从普通指令跟随提升为现实工作能力。
 - [HomeBench](https://aclanthology.org/2025.acl-long.597/)：评什么：智能家居中有效/无效指令以及单设备/多设备操作。核心思想：暴露助手能否区分可行操作、无效请求和潜在不安全请求，贴近日常联网家居工作流。
+- [Text-to-ES Bench: A Comprehensive Benchmark for Converting Natural Language to Elasticsearch Query](https://doi.org/10.18653/v1/2025.acl-long.971)：评测自然语言到 Elasticsearch 查询的转换，补充 Text-to-SQL 之外的数据 agent 查询生成评测。
+- [Ready Jurist One: Benchmarking Language Agents for Legal Intelligence in Dynamic Environments](https://arxiv.org/abs/2507.04037)：提出动态法律智能体环境和评测，用于程序性法律智能。
+- [CREW-WILDFIRE: Benchmarking Agentic Multi-Agent Collaborations at Scale](https://arxiv.org/abs/2507.05178)：大规模 agentic multi-agent collaboration benchmark；核心思想是用野火响应式协作任务测试角色分配、信息共享和压力下的联合行动。
+- [ECom-Bench: Can LLM Agent Resolve Real-World E-commerce Customer Support Issues?](https://arxiv.org/abs/2507.05639)：评测 LLM agent 是否能解决真实电商客服问题。核心思想是测试多步服务推理、政策使用和客户状态处理，而不是孤立 FAQ 回答。
 - [OpenAgentSafety](https://arxiv.org/abs/2507.06134)：评什么：真实工具环境中的 agent 安全。核心思想：接入浏览器、代码执行、文件系统、shell 和消息平台，覆盖多轮多用户任务中的 8 类风险，用现实工作流暴露安全对齐缺口。
+- [ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution](https://arxiv.org/abs/2507.15501)：通过模拟 assistant library 与 Asper-Bench，评测可验证状态下的多步动作执行程序生成。
+- [FinGAIA: A Chinese Benchmark for AI Agents in Real-World Financial Domain](https://arxiv.org/abs/2507.17186)：类型：benchmark/评测协议。核心价值：为 2.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Towards Effective Human-in-the-Loop Assistive AI Agents](https://arxiv.org/abs/2507.18374)：可作为真实工作任务 agent的Bench候选；核心关注“Towards Effective Human-in-the-Loop Assistive AI Agents”。
+- [Benchmarking Multimodal Understanding and Complex Reasoning for ESG Tasks](https://arxiv.org/abs/2507.18932)：评测 ESG 任务中的多模态理解和复杂推理，属于真实工作场景 benchmark。
+- [UserBench: An Interactive Gym Environment for User-Centric Agents](https://arxiv.org/abs/2507.22034)：评测面向用户中心 agent 的交互式 gym 环境；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [ElectriQ: A Benchmark for Assessing the Response Capability of Large Language Models in Power Marketing](https://arxiv.org/abs/2507.22911)：面向电力营销场景的 LLM response capability benchmark；核心思想是测试包含政策、电价和运营知识的长程跨场景服务对话。
+- [DSBC : Data Science task Benchmarking with Context engineering](https://arxiv.org/abs/2507.23336)：评什么：以 context engineering 为核心的数据科学任务 benchmark。
 - [Finance Agent Benchmark](https://arxiv.org/abs/2508.00828)：评测 LLM agent 在 SEC filings 分析等真实金融研究任务中的表现。核心思想：衡量 agent 能否检索金融证据、理解公司文件并产出决策相关答案；该领域同时要求事实 grounding 与计算可靠性。
+- [ShoppingBench: A Real-World Intent-Grounded Shopping Benchmark for LLM-based Agents](https://arxiv.org/abs/2508.04266)：在购物沙盒中评测代金券、预算、多商品约束等复杂 grounded intent。
+- [$\mathcal{F}_{M}$ FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging](https://arxiv.org/abs/2508.04625)：类型：benchmark/评测协议。核心价值：为 2.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [OdysseyBench](https://arxiv.org/abs/2508.09124)（[开源代码](https://github.com/microsoft/OdysseyBench)）：评什么：长程办公生产力工作流中的 agent memory。核心思想：围绕文档、邮件、日历、表格等办公室任务构造跨阶段状态依赖，检验 agent 是否能在长链路中保留关键上下文并正确复用历史操作结果。
 - [AIM-Bench](https://arxiv.org/abs/2508.11416)：评测充当库存经理的 agentic LLM 的决策偏差。核心思想：测试运营型智能体在真实业务压力下能否稳健做出库存与补货决策，而不是只回答文本问题。
+- [XFinBench: Benchmarking LLMs in Complex Financial Problem Solving and Reasoning](https://arxiv.org/abs/2508.15861)：类型：benchmark/评测协议。核心价值：为 2.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [CAMB: A comprehensive industrial LLM benchmark on civil aviation maintenance](https://arxiv.org/abs/2508.20420)：补充面向真实世界工作能力的可复用基准、数据集、测试平台或评测协议。
 - [MCP-Bench](https://arxiv.org/abs/2508.20453)（[开源代码](https://github.com/Accenture/mcp-bench)）：评什么：通过 MCP servers 执行复杂真实任务的工具使用能力。核心思想：每个 MCP server 提供互补工具，任务要求跨工具规划、schema 理解、轨迹级决策与最终任务完成，贴近企业 MCP 化工具生态。
+- [ProactiveEval: A Unified Evaluation Framework for Proactive Dialogue Agents](https://arxiv.org/abs/2508.20973)：面向主动式对话 agent 的统一评测框架。核心思想是测试 agent 能否预判用户需求、决定何时行动，并在多轮对话中保持得体。
+- [FDABench: A Benchmark for Data Agents on Analytical Queries over Heterogeneous Data](https://arxiv.org/abs/2509.02473)：评什么：评测 data agent 在异构数据上执行分析查询的能力。
+- [VLMs-in-the-Wild: Bridging the Gap Between Academic Benchmarks and Enterprise Reality](https://arxiv.org/abs/2509.06994)：补充real world work方向的基准或评测套件，核心围绕《VLMs-in-the-Wild: Bridging the Gap Between Academic Benchmarks and Enterprise Reality》。
 - [AgentArch](https://arxiv.org/abs/2509.10769)（[开源代码](https://github.com/ServiceNow/AgentArch)）：评什么：企业场景中不同 agent 架构的端到端效果。核心思想：把 ReAct、planner-executor、多代理、记忆和工具路由等架构选择放到统一企业任务集里比较，帮助区分模型能力与 harness 设计贡献。
+- [GEM-Bench: A Benchmark for Ad-Injected Response Generation within Generative Engine Marketing](https://arxiv.org/abs/2509.14221)：可作为真实工作任务 agent的Bench候选；核心关注“A Benchmark for Ad-Injected Response Generation within Generative Engine Marketing”。
+- [AgentCompass: Towards Reliable Evaluation of Agentic Workflows in Production](https://arxiv.org/abs/2509.14647)：评测生产环境中的 agentic workflow。核心思想：超越最终正确率，衡量对部署型 agent 有用的工作流可靠性信号。
 - [EngDesign](https://arxiv.org/abs/2509.16204)（[开源代码](https://github.com/AGI4Engineering/EngDesign)，[数据集](https://huggingface.co/datasets/opt1zer/EngDesign)）：评什么：多工程学科中的 LLM 工程设计能力。核心思想：从课本问答推进到开放设计问题，要求模型综合领域知识、处理约束并推理设计工件，更贴近真实工程场景。
 - [Gaia2](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）：评什么：动态现实环境中的异步任务、通知和外部系统交互。核心思想：用会变化的环境状态和持续事件流逼近真实工作中的“等待、更新、再计划”，适合作为静态一次性 workplace benchmark 的动态补充。
+- [EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](https://arxiv.org/abs/2509.17677)：真实约束下的工程问题求解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [CLaw: Benchmarking Chinese Legal Knowledge in Large Language Models - A Fine-grained Corpus and Reasoning Analysis](https://arxiv.org/abs/2509.21208)：评测中文法律知识和法条推理，属于专业真实工作场景 benchmark。
+- [MMPB: It's Time for Multi-Modal Personalization](https://arxiv.org/abs/2509.22820)：多模态个性化能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](https://arxiv.org/abs/2509.24282)：面向智能家居 LLM agent 的时间与环境感知 benchmark。核心思想是评测 agent 在规划家庭动作时能否利用变化中的家庭状态、时间和环境约束。
+- [Building Benchmarks from the Ground Up: Community-Centered Evaluation of LLMs in Healthcare Chatbot Settings](https://arxiv.org/abs/2509.24506)：可作为真实工作任务 agent的Bench候选；核心关注“Community-Centered Evaluation of LLMs in Healthcare Chatbot Settings”。
+- [MASLegalBench: Benchmarking Multi-Agent Systems in Deductive Legal Reasoning](https://arxiv.org/abs/2509.24922)：评测多 agent 系统的法律演绎推理能力；核心思想是检查角色分工的法律 agent 能否可靠运用规则、证据和推理链。
+- [AI Playing Business Games: Benchmarking Large Language Models on Managerial Decision-Making in Dynamic Simulations](https://arxiv.org/abs/2509.26331)：动态仿真中的管理决策 benchmark。核心思想是在商业游戏环境中测试 LLM 的长程决策能力，因为行动会产生延迟的运营后果。
 - [SCUBA](https://arxiv.org/abs/2509.26506)（[开源代码](https://github.com/SalesforceAIResearch/SCUBA)）：评什么：Salesforce GUI 中的企业 computer-use 任务。核心思想：以 CRM 业务对象和真实 SaaS 界面为载体，测 agent 在记录查改、表单导航、规则遵循和状态一致性上的可靠性。
-- [GDPval-AA](https://artificialanalysis.ai/evaluations/gdpval-aa)：评什么：Artificial Analysis 针对 OpenAI GDPval gold 公共任务集做的独立 agentic 评测。核心思想：通过 Stirrup agent harness 给模型 shell 与网页访问能力，再用盲测成对比较得到 Elo 分数，为文档、幻灯片、图表、表格等专业交付物提供模型厂商常看的现实工作榜单。
 - [Sheetpedia](https://openreview.net/forum?id=4vLYwlA3X5)（[开源代码](https://github.com/TTtianTT/Sheetpedia)，[数据集](https://huggingface.co/datasets/tianzl66/Sheetpedia_xlsx)）：评什么：电子表格智能与微调数据。核心思想：收集带公式语义的大规模真实 spreadsheet 语料，并定义自然语言到语义范围和自然语言到公式任务，使表格理解比仅基于网页表格的数据更贴近真实办公数据。
 - [DRBench](https://arxiv.org/abs/2510.00172)（[开源代码](https://github.com/ServiceNow/drbench)，[数据集](https://huggingface.co/datasets/ServiceNow/drbench)）：评什么：企业 deep research 工作。核心思想：要求 agent 跨公开网页、私有文件、邮件、聊天和生产力工具检索证据并生成带引用报告，补齐现实企业场景中“信息分散且有权限边界”的研究型工作流。
+- [When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets](https://arxiv.org/abs/2510.00332)：评测 AI agent 在高风险对抗性金融市场中的表现。核心思想：让事实与策略错误产生显著决策成本，从影响后果上衡量 agent 幻觉。
+- [StockBench](https://arxiv.org/abs/2510.02209)：在真实多月股票交易环境中评测 LLM agent；核心思想是让 agent 基于价格、基本面和新闻逐日作出买入、卖出或持有决策，并同时考察收益与风险管理。
+- [TutorBench: A Benchmark To Assess Tutoring Capabilities Of Large Language Models](https://arxiv.org/abs/2510.02663)：可作为真实工作任务 agent的Bench候选；核心关注“A Benchmark To Assess Tutoring Capabilities Of Large Language Models”。
 - [GDPval](https://arxiv.org/abs/2510.04374)（公开 benchmark；[Leaderboard](https://evals.openai.com/gdpval/leaderboard)）：评什么：真实经济价值任务（覆盖多职业/多行业的“可交付物”型工作任务）。核心思想：用明确的交付物与 rubric 驱动的评分把“现实工作”落到可比对的评价协议上，并讨论 `reasoning effort / 上下文 / scaffolding` 对表现的影响。
-- [HAL / Holistic Agent Leaderboard](https://arxiv.org/abs/2510.11977)（[开源代码](https://github.com/princeton-pli/hal-harness)）：评什么：跨 GAIA、AssistantBench、tau-bench、Online Mind2Web、SWE-bench Verified 等任务的统一 agent 评测。核心思想：把 accuracy、cost、runtime 和 traces 一起公开，作为现实工作 agent 的跨 benchmark 对照框架。
+- [TraitBasis / tau-Trait](https://arxiv.org/abs/2510.04491)：通过操控模拟用户的急躁、语义混乱等特质来压力测试对话代理，在 tau-bench 式任务成功率之外加入用户行为鲁棒性诊断。
+- [EduPersona: Benchmarking Subjective Ability Boundaries of Virtual Student Agents](https://arxiv.org/abs/2510.04648)：补充真实工作方向的基准、数据集、指标或评测协议。
+- [COMPASS: Benchmarking Constrained Optimization in LLM Agents](https://arxiv.org/abs/2510.07043)：评测 LLM agent 的约束优化能力。核心思想：测试 agent 能否在决策任务中同时满足约束并优化目标。
+- [Agent Bain vs. Agent McKinsey: A New Text-to-SQL Benchmark for the Business Domain](https://arxiv.org/abs/2510.07309)：把商业 Text-to-SQL 评测从描述性查询扩展到解释、预测和建议型数据库任务。
+- [VoiceAgentBench: Are Voice Assistants ready for agentic tasks?](https://arxiv.org/abs/2510.07978)：VoiceAgentBench 评估语音助手是否具备完成交互式 agentic 任务的能力。
+- [SOP-Maze: Evaluating Large Language Models on Complicated Business Standard Operating Procedures](https://arxiv.org/abs/2510.08942)：评测 LLM 处理复杂业务标准作业流程的能力；核心思想是把 SOP 驱动的决策变成任务，使真实工作 agent 必须遵循流程约束而非只回答孤立问题。
+- [TripScore: Benchmarking and rewarding real-world travel planning with fine-grained evaluation](https://arxiv.org/abs/2510.09011)：可作为真实工作任务 agent的Bench候选；核心关注“Benchmarking and rewarding real-world travel planning with fine-grained evaluation”。
+- [When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents](https://arxiv.org/abs/2510.11695)：面向 LLM agents 的 live multi-market trading benchmark；核心思想是在动态市场环境中评测决策质量、时机和风险控制，而不是静态金融问答。
+- [HAL / Holistic Agent Leaderboard](https://arxiv.org/abs/2510.11977)（[榜单](https://hal.cs.princeton.edu/)；[开源代码](https://github.com/princeton-pli/hal-harness)）：评什么：跨 GAIA、AssistantBench、tau-bench、Online Mind2Web、SWE-bench Verified 等任务的统一 agent 评测。核心思想：把 accuracy、cost、runtime 和 traces 一起公开，作为现实工作 agent 的跨 benchmark 对照框架。
+- [ConDABench](https://arxiv.org/abs/2510.13835)：评估目标不完整、数据不干净情况下的 conversational data analysis。核心思想是生成交互式数据分析问题和评测 harness，要求工具主动澄清需求并维持长期交互，而不是只回答静态查询。
+- [BuildArena: A Physics-Aligned Interactive Benchmark of LLMs for Engineering Construction](https://arxiv.org/abs/2510.16559)：面向工程施工的 physics-aligned interactive benchmark。核心思想是在物理约束影响成败的 construction tasks 中评估规划和推理。
 - [ProfBench](https://arxiv.org/abs/2510.18941)（数据集：[nvidia/ProfBench](https://huggingface.co/datasets/nvidia/ProfBench)，[开源代码](https://github.com/NVlabs/ProfBench)）：评什么：需要专业知识的文档处理、信息综合与报告生成/评判。核心思想：由物理、化学、金融与咨询专家提供人类 rubric，用专家级判据评估开放式专业产出，适合作为 GDPVal/RLI 的“专业 rubric”补充。
+- [Beyond Reactivity: Measuring Proactive Problem Solving in LLM Agents](https://arxiv.org/abs/2510.19771)：可作为真实工作任务 agent的Bench候选；核心关注“Measuring Proactive Problem Solving in LLM Agents”。
+- [SODBench: A Large Language Model Approach to Documenting Spreadsheet Operations](https://arxiv.org/abs/2510.19864)：评什么：评测模型记录和解释电子表格操作的能力。
+- [OutboundEval: A Dual-Dimensional Benchmark for Expert-Level Intelligent Outbound Evaluation of Xbench's Professional-Aligned Series](https://arxiv.org/abs/2510.21244)：评测专业场景中的 expert-level intelligent outbound 能力。
+- [TripTide: A Benchmark for Adaptive Travel Planning under Disruptions](https://arxiv.org/abs/2510.21329)：评测干扰发生时智能体进行自适应旅行规划和计划修订的能力。
+- [From Factoid Questions to Data Product Requests: Benchmarking Data Product Discovery over Tables and Text](https://arxiv.org/abs/2510.21737)：评测表格与文本上的数据产品发现。核心思想：把评测从事实问答推进到需要定位并使用结构化与非结构化证据的数据产品请求。
+- [Benchmarking and Learning Real-World Customer Service Dialogue](https://arxiv.org/abs/2510.22143)：面向工业客服对话的 benchmark 与学习设置。核心思想是评估真实多轮服务质量和失败模式，而不只看简单任务成功率。
+- [How Do AI Agents Do Human Work? Comparing AI and Human Workflows Across Diverse Occupations](https://arxiv.org/abs/2510.22780): 比较人类与 AI agent 在数据分析、工程、计算、写作和设计等职业任务中的工作流，并用结构化 workflow induction 揭示 agent 与人类工作的差异。
 - [Falcon](https://arxiv.org/abs/2510.24762)：评测中文企业级 Text-to-SQL 能力。核心思想：在真实感更强的表结构和企业查询约束下，检验模型能否把自然语言数据库请求转化为可执行 SQL，因此更适合作为数据工作 benchmark，而不是普通工具调用测试。
 - [PANORAMA](https://arxiv.org/abs/2510.24774)：面向专利审查决策轨迹与理由的数据集和 benchmark。核心思想是评测 agent 是否能在专利审查式工作流中跟随专业证据链、法律技术推理与解释要求。
 - [Tool Decathlon（Toolathlon）](https://arxiv.org/abs/2510.25726)：评什么：多应用、多工具、长程任务执行。核心思想：提供更真实的环境设置与 execution-based evaluation，考察 agent 在跨域工具链中完成长任务的稳定性，可作为 OfficeBench/MCP-Bench 的通用工具执行近邻。
-- [Remote Labor Index（RLI）](https://arxiv.org/abs/2510.26787)（[开源评估平台](https://github.com/centerforaisafety/rli_evaluation_platform)；公开数据入口见仓库 README）：评什么：远程自由职业/外包式真实项目的端到端自动化。核心思想：把“能否替代远程劳动”落到有经济价值的项目交付物上，强调多行业、长工时、模糊需求与最终交付质量，而不是只测孤立技能。
+- [Rethinking Text-to-SQL: Dynamic Multi-turn SQL Interaction for Real-world Database Exploration](https://arxiv.org/abs/2510.26495)：将 text-to-SQL 扩展为动态多轮数据库探索评测。
+- [TechSupportEval: An Automated Evaluation Framework for Technical Support Question Answering](https://doi.org/10.1109/ijcnn64981.2025.11227545)：面向技术支持问答的自动评估框架。核心思想是在实际故障排查场景中评估支持答案对 hallucination 与 retrieval error 的鲁棒性。
+- [Remote Labor Index（RLI）](https://arxiv.org/abs/2510.26787)（[开源评估平台](https://github.com/centerforaisafety/rli_evaluation_platform)；[榜单](https://labs.scale.com/leaderboard/rli)）：评什么：远程自由职业/外包式真实项目的端到端自动化。核心思想：把“能否替代远程劳动”落到有经济价值的项目交付物上，强调多行业、长工时、模糊需求与最终交付质量，而不是只测孤立技能。
+- [EKRAG: Benchmark RAG for Enterprise Knowledge Question Answering](https://doi.org/10.18653/v1/2025.knowledgenlp-1.13)：面向 RAG 的企业知识问答 benchmark。核心思想是测试系统能否基于企业文档证据回答组织知识问题。
+- [Drama / DramaBench](https://arxiv.org/abs/2510.27238)：评什么：需要数据收集、转换和结构化推理的开放域分析查询。核心思想：把 claim verification 与问答 benchmark 同多 agent DramaBot 管线结合起来，让系统检索、转换并分析公共数据。
 - [EnterpriseBench](https://arxiv.org/abs/2510.27287)：评什么：企业环境中的软件工程、HR、财务与行政工作任务。核心思想：用数据源碎片化、访问控制层级和跨职能 workflow 构造 500 个企业任务，检验 agent 是否能在接近真实组织约束的 sandbox 中完成工作。
 - [MathTutorBench](https://aclanthology.org/2025.emnlp-main.11/)：评什么：LLM tutor 的开放式数学教学能力。核心思想：用学习科学中的优质教学概念设计数据与指标，把数学评测从“会解题”扩展到“会辅导”。
+- [TelAgentBench: A Multi-faceted Benchmark for Evaluating LLM-based Agents in Telecommunications](https://doi.org/10.18653/v1/2025.emnlp-industry.83)：评测电信领域中的 LLM-based agents；核心思想是用电信任务测试行业工作流中的规划、工具使用、领域推理和操作约束。
+- [Better Call CLAUSE: A Discrepancy Benchmark for Auditing LLMs Legal Reasoning Capabilities](https://arxiv.org/abs/2511.00340)：评什么：合同场景中法律推理的可靠性与脆弱性。核心思想是用细微、对抗性的条款差异测试 LLM 是否能发现问题。
 - [UniDataBench](https://arxiv.org/abs/2511.01625)：评测面向结构化与非结构化数据的数据分析智能体。核心思路是检查智能体能否在统一分析流程中结合表格分析、文档理解和多步洞察生成。
+- [The Collaboration Gap](https://arxiv.org/abs/2511.02687)：评什么：部分可观测条件下的 agent-agent 协作。核心思想：用协作式迷宫求解比较单 agent、同质双 agent 与异质双 agent，暴露单 agent 分数看不出的协作失败。
+- [FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](https://arxiv.org/abs/2511.07322)：定义权益研究报告生成任务，提供金融数据构造流程、11 项指标评测体系和 LLM 多智能体生成基线。
+- [Towards a Standard, Enterprise-Relevant Agentic AI Benchmark: Lessons from 5.5 billion tokens' worth of agentic AI evaluations](https://arxiv.org/abs/2511.08042)：评测 Towards a Standard, Enterprise-Relevant Agentic AI Benchmark: Lessons from 5.5 billion tokens' worth of agentic AI evaluations，为 Real World Work 补充可复用的数据集、基准、指标或评测协议。
+- [Data Analysis and Performance Evaluation of Simulation Deduction Based on LLMs](https://arxiv.org/abs/2511.10651)：补充真实工作方向的基准、数据集、指标或评测协议。
+- [PRBench](https://arxiv.org/abs/2511.11562)：用大规模专家 rubric 评测金融和法律中的高风险专业推理。
+- [UpBench](https://arxiv.org/abs/2511.12306)：评什么：动态刷新的劳动力市场任务上的 agentic work。核心思想：把任务锚定到经过验证的 Upwork 客户交易和专家 freelancer rubric，衡量真实在线工作中的交付质量、指令遵循和人机协作准备度。
 - [Beyond SELECT](https://arxiv.org/abs/2511.13590)：用分类体系引导的基准评测真实 Text-to-SQL 转换。核心思路是把数据库工作评测从简单 SELECT 查询扩展到更真实的 SQL 操作与约束。
+- [Mini Amusement Parks (MAPs): A Testbed for Modelling Business Decisions](https://arxiv.org/abs/2511.15830)：评测长程随机动态下的商业决策；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](https://arxiv.org/abs/2511.21998)：可作为real-world work agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [InsightEval: An Expert-Curated Benchmark for Assessing Insight Discovery in LLM-Driven Data Agents](https://arxiv.org/abs/2511.22884)：面向 LLM-driven data agents 的专家策划 insight discovery benchmark；核心思想是评估 data agent 是否产出有意义、有依据的洞察，而不只是语法正确的分析。
+- [ShoppingComp: Are LLMs Really Ready for Your Shopping Cart?](https://arxiv.org/abs/2511.22978)：ShoppingComp 评测购物 agent 的检索、报告和安全决策，适合 Real-World Work Bench。
 - [LaborMarketplaceBenchmark](https://openreview.net/forum?id=be76fus1ou)（NeurIPS 2025 LLM Evaluation Workshop）：评什么：来自真实自由职业市场的知识工作任务。核心思想：从固定价格、单里程碑、已被客户接受的 marketplace 任务构造可刷新评测集，并保留 payout、任务类别与人类反馈迭代等经济信号，作为 RLI 的近邻方向。
+- [PPTBench: Towards Holistic Evaluation of Large Language Models for PowerPoint Layout and Design Understanding](https://arxiv.org/abs/2512.02624)：评测演示文稿内容、布局和设计的多模态理解，贴近 slide 工作流。
+- [PPTArena: A Benchmark for Agentic PowerPoint Editing](https://arxiv.org/abs/2512.03042)：agentic PowerPoint 编辑评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Rethinking AI Evaluation in Education: The TEACH-AI Framework and Benchmark for Generative AI Assistants](https://arxiv.org/abs/2512.04107)：面向教育生成式 AI 助手的教学学理框架与 benchmark；核心思想是把可信度、学习者能动性、情境和伦理维度纳入任务准确率之外的评测。
+- [Measuring Agents in Production](https://arxiv.org/abs/2512.04123)：真实生产环境中 agent 部署方法与表现的测量。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [DAComp](https://arxiv.org/abs/2512.04324)：评测数据智能全生命周期中的 data agent。核心思想：把工业 schema 上的数据工程任务与开放式数据分析任务结合起来，用执行检查和层级 rubric 同时考察管道编排与业务洞察生成。
+- [DataGovBench: Benchmarking LLM Agents for Real-World Data Governance Workflows](https://arxiv.org/abs/2512.04416)：可作为真实工作任务 agent的Bench候选；核心关注“Benchmarking LLM Agents for Real-World Data Governance Workflows”。
+- [EcomBench: Towards Holistic Evaluation of Foundation Agents in E-commerce](https://arxiv.org/abs/2512.08868)：评测真实电商任务中的 foundation agents；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [AI-Trader](https://arxiv.org/abs/2512.10971)：评估自主 agent 在实时金融市场中的决策能力。核心思想：使用动态、低污染的实时市场信息流，让 agent 综合变化证据、处理不确定性并做出时效性交易决策。
+- [Market-Bench: Evaluating Large Language Models on Introductory Quantitative Trading and Market Dynamics](https://arxiv.org/abs/2512.12264)：评测 LLM 的量化交易与市场动态任务能力；核心思想是要求生成可执行 backtester，并让 P&L、回撤和持仓路径匹配参考实现。
 - [NL2Repo-Bench](https://arxiv.org/abs/2512.12730)（公开 benchmark）：评什么：从自然语言需求文档端到端构建完整软件仓库（空工作区起步，需架构设计、依赖管理、多文件实现、可安装包与测试）。核心思想：用“长时程 repo construction + tests”把 vibe coding 的跨文件一致性与长链路执行失败模式显式 benchmark 化。
 - [Finch（FinWorkBench）](https://arxiv.org/abs/2512.13168)（[开源代码](https://github.com/FinWorkBench/Finch)，[数据集](https://huggingface.co/datasets/FinWorkBench/Finch)）：评什么：企业级金融和会计中的 spreadsheet-centric workflow。核心思想：从真实企业工作区、邮件线程和表格版本历史中构造长程复合任务，覆盖数据录入、建模、验证、检索、可视化和报告交付。
+- [SoMe: A Realistic Benchmark for LLM-based Social Media Agents](https://arxiv.org/abs/2512.14720)：评测 LLM-based social media agents 的真实平台任务；核心思想是把社交媒体自动化从孤立对话推进到带平台状态、交互目标和用户约束的 agent 评测。
+- [DP-Bench: A Benchmark for Evaluating Data Product Creation Systems](https://arxiv.org/abs/2512.15798)：提供用于衡量真实世界工作能力的数据集、基准、指标或评测协议。
+- [DeliveryBench: Can Agents Earn Profit in Real World?](https://arxiv.org/abs/2512.19234)：评测配送类真实任务中的盈利型 agent。核心思想：连接规划、约束与经济结果，以任务收益而非文本答案评价 agent。
+- [Can Agentic AI Match the Performance of Human Data Scientists?](https://arxiv.org/abs/2512.20959)：可作为real-world work agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
 - [Automated Evaluation of Database Conversational Agents](https://doi.org/10.5220/0013732900003985)：评测数据库会话智能体。核心思想：自动化评估自然语言数据库交互，使智能体质量由查询行为和数据库事实正确性衡量，而不只看表层对话。
+- [MAESTRO](https://arxiv.org/abs/2601.00481)：面向 testing、reliability 与 observability 的多 agent evaluation suite，关注 agent 系统在运维检查下的行为。
+- [Beyond IVR](https://arxiv.org/abs/2601.00596)：从 business adherence 角度评测客服 agent，衡量会话 agent 是否遵守运营政策。
+- [LongDA](https://arxiv.org/abs/2601.02598)：评测 agent 的长文档数据分析，覆盖真实文档尺度的抽取、推理与报告。
 - [SafePro](https://arxiv.org/abs/2601.06663)（[项目页](https://safeprobench.github.io/safepro/)）：评什么：专业级 AI agent 的安全性。核心思想：在复杂专业任务中同时看任务完成与不安全动作，补足 GDPval、RLI、APEX-Agents 等现实工作评测对安全失败的覆盖不足。
+- [ReasonTabQA: A Comprehensive Benchmark for Table Question Answering from Real World Industrial Scenarios](https://arxiv.org/abs/2601.07280)：评测真实工业场景中的表格问答，强调超出学术表格数据的实用结构化数据推理。
 - [TraineeBench](https://arxiv.org/abs/2601.08173)（[开源代码](https://github.com/KnowledgeXLab/EvoEnv)）：评什么：新员工式工作场景中的动态学习、探索与任务调度。核心思想：让 agent 在陌生 workplace 环境中持续接收流式任务、主动探索信息、总结规则并滚动调度，评估生产环境更常见的“第一天上岗”能力，而不是静态一次性任务完成。
+- [Hierarchy of Agentic Capabilities](https://arxiv.org/abs/2601.09032)：在真实感强化学习环境中评测前沿模型，并按交互复杂度组织 agent 能力层级。
 - [AgencyBench](https://arxiv.org/abs/2601.11044)（[开源代码](https://github.com/GAIR-NLP/AgencyBench)）：评什么：来自日常 AI 使用的长程真实任务。核心思想：覆盖 32 个现实场景、138 个任务，强调 1M token、约 90 次工具调用和数小时执行时间下的交付物与 rubric 自动评估。
-- [APEX-Agents](https://arxiv.org/abs/2601.14242)（[评估基础设施 Archipelago](https://github.com/Mercor-Intelligence/archipelago)）：评什么：投行、管理咨询、公司法律等专业服务中的长程跨应用任务。核心思想：在带文件与工具的现实工作环境里测 Pass@1，并把题目、rubric、gold outputs、文件与元数据开放，强调“白领专业服务”的可交付成果质量。
+- [PASTA: A Scalable Framework for Multi-Policy AI Compliance Evaluation](https://arxiv.org/abs/2601.11702)：提供用于衡量真实世界工作能力的数据集、基准、指标或评测协议。
+- [ATOD](https://arxiv.org/abs/2601.11854)：评测 agentic task-oriented dialogue systems，关注多轮对话中的目标完成和任务状态。
+- [APEX-Agents](https://arxiv.org/abs/2601.14242)（[榜单](https://www.mercor.com/apex/apex-agents-leaderboard/)；[评估基础设施 Archipelago](https://github.com/Mercor-Intelligence/archipelago)）：评什么：投行、管理咨询、公司法律等专业服务中的长程跨应用任务。核心思想：在带文件与工具的现实工作环境里测 Pass@1，并把题目、rubric、gold outputs、文件与元数据开放，强调“白领专业服务”的可交付成果质量。
+- [PLawBench: A Rubric-Based Benchmark for Evaluating LLMs in Real-World Legal Practice](https://arxiv.org/abs/2601.16669)：提供基于 rubric 的 benchmark，用于评测 LLM 在真实法律实务中的表现。
+- [CaseFacts: A Benchmark for Legal Fact-Checking and Precedent Retrieval](https://arxiv.org/abs/2601.17230)：评测法律事实核查与判例检索，为真实工作场景补充一个聚焦证据支撑和案例法 grounding 的专业法律工作轴。
 - [EntWorld](https://arxiv.org/abs/2601.17722)：评什么：企业 GUI agent 在 CRM、ITIL、ERP 等高密度业务系统中的长程工作流。核心思想：从数据库 schema 反推业务逻辑并合成 1,756 个任务，用 SQL 状态转移做确定性验证，强调企业系统里规则约束、信息一致性和多步骤界面操作的组合难度。
+- [ShopSimulator: Evaluating and Exploring RL-Driven LLM Agent for Shopping Assistants](https://arxiv.org/abs/2601.18225)：在模拟器中评测 RL 驱动的 LLM 购物助手，连接偏好推断、浏览与购买决策。
+- [DataCross](https://arxiv.org/abs/2601.21403)：面向跨模态异构数据分析的统一 benchmark 与 agent framework。
+- [CAR-bench](https://arxiv.org/abs/2601.22027)：评测 LLM agents 在现实不确定性下的一致性和能力边界意识。
 - [World of Workflows](https://arxiv.org/abs/2601.22130)：评什么：企业系统中的端到端 workflow 执行。核心思想：围绕多步骤业务流程、跨系统状态和规则约束构造任务，把“能否完成一个完整工作流”而不是单个 API/页面动作作为核心评测对象。
+- [Med-Inquire / EvoClinician](https://arxiv.org/abs/2601.22964)（[代码](https://github.com/yf-he/EvoClinician)）：评测多轮医疗诊断 agent；核心思想是把完整病历隐藏在 patient 与 examination agents 背后，要求诊断 agent 主动问诊、下检查、控制成本，并根据过程反馈演化诊断策略。
+- [Multi-Agent Teams Hold Experts Back](https://arxiv.org/abs/2602.01011)：评测真实工作场景与多智能体系统。核心思想：围绕论文中的任务、数据或协议（Multi-Agent Teams Hold Experts Back）形成可复用比较基准。
+- [ProAgentBench](https://arxiv.org/abs/2602.04482)：评测基于真实数据的主动协助，测试 agent 何时应主动采取有用行动，而不是等待明确指令。
+- [PieArena](https://arxiv.org/abs/2602.05302)：评测 MBA 级谈判 agent，使专业场景中的策略谈判和行为差异可量化。
+- [Can AI match professional analysts? Evidence from a multi-agent system](https://doi.org/10.1016/j.frl.2026.110127)：评估多智能体系统能否达到专业分析师水平。
+- [FARE: Financial Agentic Reasoning and Evaluation for Earnings Call Transcripts](https://doi.org/10.1109/access.2026.3689742)：评测财报电话会议文本上的金融智能体推理。
 - [AIRS-Bench](https://arxiv.org/abs/2602.06855)（[开源代码](https://github.com/facebookresearch/airs-bench)）：评什么：AI research science 的端到端研究任务。核心思想：从前沿 ML 论文中抽取 idea generation、实验分析、代码实现、文献理解等完整研究生命周期任务，评估 agent 是否能产出可验证的研究工作结果。
 - [SupChain-Bench](https://arxiv.org/abs/2602.07342)：评测 LLM 在真实供应链管理中的领域知识和基于标准作业流程的长程工具编排能力。核心思想：检查 agent 能否在供应链 workflow 中可靠地合成、遵循并执行操作流程，而不只是回答商业知识问题。
+- [The Moltbook Illusion: Separating Human Influence from Emergent Behavior in AI Agent Societies](https://arxiv.org/abs/2602.07432)：评测真实工作场景与多智能体系统。核心思想：围绕论文中的任务、数据或协议（Separating Human Influence from Emergent Behavior in AI Agent Societies）形成可复用比较基准。
 - [WorldTravel](https://arxiv.org/abs/2602.08367)（公开 benchmark）：评什么：真实旅行规划（强耦合约束、多目标、多步骤计划），含 text-only 与多模态网页环境（WorldTravel-Webscape）。核心思想：用“强耦合约束 + 真实网页参数读取（视觉布局）”把规划与感知-行动闭环的脆弱性显式放大，指标以“计划可行性/约束满足”为核心。
 - [EcoGym](https://arxiv.org/abs/2602.09514)：评什么：长时程经济环境中的连续计划与执行，覆盖 Vending、Freelance 和 Operation 三类场景。核心思想：用 1000+ 步、部分可观测、随机扰动和业务指标（净值、收入、DAU 等）测试 agent 是否能在经济系统中维持长期策略一致性，而不是只优化短期动作。
+- [MoltNet: Understanding Social Behavior of AI Agents in the Agent-Native MoltBook](https://arxiv.org/abs/2602.13458)：评测真实工作场景与多智能体系统。核心思想：围绕论文中的任务、数据或协议（Understanding Social Behavior of AI Agents in the Agent-Native MoltBook）形成可复用比较基准。
+- [CORPGEN](https://arxiv.org/abs/2602.14229)：用多时间尺度任务环境模拟企业组织中的自主数字员工。
+- [End-to-End Data Science Projects](https://arxiv.org/abs/2602.14284)：评测完整数据科学项目，而不是孤立的建模、编码或制图子任务。
 - [LongCLI-Bench](https://arxiv.org/abs/2602.14337)（[开源代码](https://github.com/finyorko/longcli-bench)）：评什么：命令行中的长程 agentic programming 工作流。核心思想：用 CLI 任务把真实软件工程中的规划、执行、调试和阶段性检查拉长，并通过细粒度指标记录中间失败模式。
 - [Tool-Aware Planning in Contact Center AI](https://arxiv.org/abs/2602.14955)：通过谱系引导的查询分解评估联络中心场景中的工具感知规划，为真实企业服务工作流补充评测维度。
+- [EnterpriseBench Corecraft](https://arxiv.org/abs/2602.16179)：提供高保真企业强化学习环境，用于训练和评测可泛化 agent。
+- [Evaluating Collective Behaviour of Hundreds of LLM Agents](https://arxiv.org/abs/2602.16662)：面向数百个 LLM agents 集体行为的 benchmark 或评测协议。核心思想是在 agent-community 规模测量涌现协同、不稳定性或社会动态。
+- [INSURE-Dial: A Phase-Aware Conversational Dataset & Benchmark for Compliance Verification and Phase Detection](https://arxiv.org/abs/2602.18448)：用明确任务、协议或数据集评测real-world work agents。
+- [Benchmark Test-Time Scaling of General LLM Agents](https://arxiv.org/abs/2602.18998)：评测跨多种技能和工具的通用 agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Implicit Intelligence - Evaluating Agents on What Users Don't Say](https://arxiv.org/abs/2602.20424)：用明确任务、协议或数据集评测real-world work agents。
+- [A Benchmark to Assess Common Ground in Human-AI Collaboration](https://arxiv.org/abs/2602.21337)：通过迭代式拼图任务评测人机协作双方能否建立、维持并修复共同理解。
+- [Both Ends Count! Just How Good are LLM Agents at Text-to-“Big SQL”?](https://arxiv.org/abs/2602.21480)：用明确任务、协议或数据集评测real-world work agents。
+- [FIRE: A Comprehensive Benchmark for Financial Intelligence and Reasoning Evaluation](https://arxiv.org/abs/2602.22273)：评测金融知识和实际业务推理；核心思想是结合资格考试式理论与场景化金融决策任务。
+- [SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables](https://arxiv.org/abs/2602.23286)：评测文本与表格上的树结构多跳问答，强调在半结构化工作数据中组合使用证据。
+- [LOGIGEN: Logic-Driven Generation of Verifiable Agentic Tasks](https://arxiv.org/abs/2603.00540)：用明确任务、协议或数据集评测real-world work agents。
+- [Urban planning in the age of large language models: Assessing OpenAI o1's performance and capabilities across 556 tasks](https://doi.org/10.1016/j.compenvurbsys.2025.102332)：作为真实世界工作的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Legal RAG Bench: an end-to-end benchmark for legal RAG](https://arxiv.org/abs/2603.01710)：用明确任务、协议或数据集评测real-world work agents。
+- [GLEAN: Grounded Lightweight Evaluation Anchors for Contamination-Aware Tabular Reasoning](https://arxiv.org/abs/2603.02212)：为污染感知表格推理提供 grounded lightweight evaluation anchors，帮助区分真实表格推理与记忆化模式。
 - [LiveAgentBench](https://arxiv.org/abs/2603.02586)：评什么：来自真实用户需求的综合 agent 任务，覆盖社交媒体和真实产品问题。核心思想：用 Social Perception-Driven Data Generation 构造 104 个现实场景、374 个任务，并持续从真实交互更新，以减少静态 benchmark 与真实需求之间的偏差。
+- [FinSheet-Bench: From Simple Lookups to Complex Reasoning, Where LLMs Break on Financial Spreadsheets](https://arxiv.org/abs/2603.07316)：评测 LLM 在金融电子表格中的简单查询到复杂推理；核心思想是检验表格、公式和金融语境交织的专业工作能力。
 - [OneMillion-Bench](https://arxiv.org/abs/2603.07980)：评什么：高经济后果场景下的专家级职业任务，覆盖法律、金融、工业、医疗健康与自然科学。核心思想：要求检索权威来源、处理冲突证据、应用领域规则并做约束决策，用 rubric 同时评估事实正确性、逻辑一致性、实践可行性与专业合规。
 - [OfficeQA / OfficeQA Pro](https://arxiv.org/abs/2603.08655)：评测文档、表格和演示文稿上的 grounded office-style 问答。核心思想：强调专业异构文件中的精确抽取、跨段落综合、数值与表格推理，补足 OfficeBench 更偏操作自动化的评测侧重。
+- [Evaluating Financial Intelligence in Large Language Models: Benchmarking SuperInvesting AI with LLM Engines](https://arxiv.org/abs/2603.08704)：评测 LLM 的金融智能。核心思想：在统一框架中评估事实准确性、分析完整性、数据时效性与金融推理。
+- [SpreadsheetArena: Decomposing Preference in LLM Generation of Spreadsheet Workbooks](https://arxiv.org/abs/2603.10002)：它评测真实工作、办公、agent 搜索或结构化产物生成，适合补充 real-world-work Bench。
+- [FinRule-Bench: A Benchmark for Joint Reasoning over Financial Tables and Principles](https://arxiv.org/abs/2603.11339)：评测金融表格与原则规则的联合推理，检查模型能否结合结构化数据和显式规则。
+- [Human-Centered Evaluation of an LLM-Based Process Modeling Copilot: A Mixed-Methods Study with Domain Experts](https://arxiv.org/abs/2603.12895)：补充面向真实工作自动化与流程感知智能体部署的基准、数据集、评测协议或测试环境。
 - [EnterpriseOps-Gym](https://arxiv.org/abs/2603.13594)（[项目页](https://enterpriseops-gym.github.io/)；[开源代码](https://github.com/ServiceNow/EnterpriseOps-Gym)；[数据集](https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym)）：评什么：企业环境中的有状态规划、工具使用与策略合规。核心思想：提供含 164 张数据库表、512 个功能工具和 1150 个专家任务的容器化企业 sandbox，覆盖客服、HR、IT、邮件、日历、Teams、Drive 与混合场景，并用 SQL 检查最终状态而非只看轨迹文本。
-- [Data Agent Benchmark（DAB）](https://arxiv.org/abs/2603.20576)（[开源代码](https://github.com/ucbepic/DataAgentBench)）：评什么：企业数据代理回答自然语言数据问题的能力。核心思想：用 12 个数据集、9 个领域、4 类数据库管理系统和 54 个查询，测试跨数据库集成、脏键 join、非结构化文本转换和领域知识，而不是只测单库 Text-to-SQL。
+- [$\tau$-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686)：评什么：真实领域中的全双工语音 agent。核心思想是把带状态服务 agent 评测从文本/API 交互扩展到同步语音交互。
+- [AIDABench: AI Data Analytics Benchmark](https://arxiv.org/abs/2603.15636)：评测 AI 数据分析系统在端到端真实分析任务上的表现，而不是只测单点子能力；核心思想是考察 agent 能否处理真实输入、完成多步分析并产出可用结论。
+- [RADIUS: Ranking, Distribution, and Significance - A Comprehensive Alignment Suite for Survey Simulation](https://arxiv.org/abs/2603.19002)：提供面向调查模拟的综合对齐套件。
+- [FinTradeBench: A Financial Reasoning Benchmark for LLMs](https://arxiv.org/abs/2603.19225)：评什么：面向异构金融信号的真实工作推理 benchmark。
+- [FinReasoning: A Hierarchical Benchmark for Reliable Financial Research Reporting](https://arxiv.org/abs/2603.19254)：评测 LLM 与 agent 在层级化金融研究报告中的表现；核心思想是考察事实依据、数值一致性和公司分析深度，而不只做短问答式金融知识测试。
+- [Data Agent Benchmark（DAB）](https://arxiv.org/abs/2603.20576)（[开源代码](https://github.com/ucbepic/DataAgentBench)，[Leaderboard](https://ucbepic.github.io/DataAgentBench/)）：评什么：企业数据代理回答自然语言数据问题的能力。核心思想：用 12 个数据集、9 个领域、4 类数据库管理系统和 54 个查询，测试跨数据库集成、脏键 join、非结构化文本转换和领域知识，而不是只测单库 Text-to-SQL。
+- [JFTA-Bench: Evaluate LLM's Ability of Tracking and Analyzing Malfunctions Using Fault Trees](https://arxiv.org/abs/2603.22978)：评估用故障树跟踪和分析 malfunction 的能力；核心思想是测试工程故障关系上的结构化诊断推理。
 - [EnterpriseArena（CFO）](https://arxiv.org/abs/2603.23638)：评什么：动态企业环境中的 CFO 式长时程资源分配。核心思想：把决策展开为 132 个月的企业模拟，agent 需要在预算化工具调用、部分可观测财务状态、宏观信号和资金约束下维持现金不为负并最大化终局价值，专门暴露“只分析不行动”和长期风险控制失败。
+- [AEC-Bench](https://arxiv.org/abs/2603.29199)：评估建筑、工程与施工场景中的多模态 agentic 系统。核心思想是结合图纸理解、跨图纸推理和施工项目协调，并比较领域工具与 harness 设计对不同基础模型 agent 的影响。
 - [ELT-Bench-Verified](https://arxiv.org/abs/2603.29399)：对 ELT 类智能体评测进行验证式修订，强调基准质量问题可能低估数据流水线任务中的智能体能力。
-- [MM-ClawBench / MM Claw end-to-end benchmark](https://www.minimax.io/news/minimax-m27-en)（model-card-only；未确认有独立公开发布）：评什么：OpenClaw 风格的工作与生活真实需求，覆盖个人学习规划、办公文档处理与交付、定时专业研究与投资建议、代码开发和维护等。核心思想：用宽覆盖端到端任务集评估 skill-rich 与 tool-rich agent 是否能产出现实工件，同时显式保留其公开状态限制。
-- [Claw-Eval](https://arxiv.org/abs/2604.06132)（[开源代码](https://github.com/claw-eval/claw-eval)）：评什么：真实软件环境中的多步骤 agent 工作流。核心思想：用 300 个真人验证任务、9 类场景和 2,159 个细粒度 rubric，把 Completion、Safety、Robustness 和跨三次运行的一致通过率纳入统一评测，并通过执行轨迹、审计日志和环境快照做 trajectory-aware grading。
+- [Proactive Agent Research Environment: Simulating Active Users to Evaluate Proactive Assistants](https://arxiv.org/abs/2604.00842)：用主动用户模拟评测主动助手。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [PHMForge: Evaluating LLM Agents on Industrial Prognostics through MCP-Native, Algorithm-Grounded Tools](https://arxiv.org/abs/2604.01532)：带 MCP-native、算法 grounding 工具的工业预测性维护 agent 基准；核心思想是测试 agent 能否结合领域算法、工具和维护推理。
+- [Xpertbench: Expert Level Tasks with Rubrics-Based Evaluation](https://arxiv.org/abs/2604.02368)：用 rubric 评测开放式专家任务，缓解简单通用任务上的 benchmark 饱和。
+- [What Makes a Sale? Rethinking End-to-End Seller--Buyer Retail Dynamics with LLM Agents](https://arxiv.org/abs/2604.04468)：用明确任务、协议或数据集评测real-world work agents。
+- [FrontierFinance: A Long-Horizon Computer-Use Benchmark of Real-World Financial Tasks](https://arxiv.org/abs/2604.05912)：FrontierFinance 是长程真实金融任务 computer-use benchmark，适合 Real-World Work Bench。
+- [Claw-Eval](https://arxiv.org/abs/2604.06132)（[项目页与榜单](https://claw-eval.github.io/)，[开源代码](https://github.com/claw-eval/claw-eval)）：评什么：真实软件环境中的多步骤 agent 工作流。核心思想：用 300 个真人验证任务、9 类场景和 2,159 个细粒度 rubric，把 Completion、Safety、Robustness 和跨三次运行的一致通过率纳入统一评测，并通过执行轨迹、审计日志和环境快照做 trajectory-aware grading。
+- [Sell More, Play Less: Benchmarking LLM Realistic Selling Skill](https://arxiv.org/abs/2604.07054)：评测大模型的真实销售技能。
 - [ClawBench](https://arxiv.org/abs/2604.08523)（[项目页](https://claw-bench.com/)；[开源代码](https://github.com/reacher-z/ClawBench)；[数据集](https://huggingface.co/datasets/TIGER-Lab/ClawBench)）：评什么：真实 live website 上的日常在线任务与状态变更操作。核心思想：从 153 个跨 144 个真实平台的写操作型网页任务起步，并在新版 leaderboard 中维护 130 个更新任务；通过最终 HTTP 请求拦截、payload judge 和多层轨迹记录，降低真实网站评测的破坏性与不可复现性。
+- [TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](https://arxiv.org/abs/2604.08948)：评测 LLM 在中文真实税务实践中的能力；核心思想是用结构化税务任务检验专业规则应用和工作流推理。
+- [SAGE: A Service Agent Graph-guided Evaluation Benchmark](https://arxiv.org/abs/2604.09285)：SAGE 以服务流程图和 SOP 约束评测客服 agent，适合 Real-World Work Bench。
+- [HiL-Bench (Human-in-Loop Benchmark): Do Agents Know When to Ask for Help?](https://arxiv.org/abs/2604.09408)：类型：benchmark/评测协议。核心价值：为 2.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Benchmarking Compound AI Applications for Hardware-Software Co-Design](https://arxiv.org/abs/2604.09593)：评测面向软硬件协同设计的复合 AI 应用，适合作为真实工作流基准候选。
+- [FinTrace: Holistic Trajectory-Level Evaluation of LLM Tool Calling for Long-Horizon Financial Tasks](https://arxiv.org/abs/2604.10015)：类型：benchmark/评测协议。核心价值：为 2.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [OccuBench](https://arxiv.org/abs/2604.10866)（[开源代码](https://github.com/GregxmHu/OccuBench)，[数据集](https://huggingface.co/datasets/gregH/OccuBench)）：评什么：跨行业、跨职业的真实专业任务场景。核心思想：用 Language World Models / Language Environment Simulators 模拟领域工具响应，覆盖 100 个专业任务场景、10 个行业类别、65 个专业领域和 382 个可解实例；同时通过显式错误、隐式数据退化与混合故障注入评估“任务完成 + 环境鲁棒性”的职业画像。
-- [AlphaEval](https://arxiv.org/abs/2604.12162)（[开源代码](https://github.com/GAIR-NLP/AlphaEval)）：评什么：生产环境中的完整 agent 产品表现。核心思想：从 7 家真实部署 agent 的公司抽取 94 个生产任务，覆盖 6 个 O*NET 职业领域，用 LLM-as-a-Judge、reference-driven metrics、formal verification、rubric、UI 测试等多范式组合评价 Claude Code、Codex 等完整 agent system，而不只评模型 API。
+- [CocoaBench](https://arxiv.org/abs/2604.11201)（[项目页](https://cocoabench.github.io/)）：评什么：需要灵活组合视觉、网页搜索和编程能力的统一数字智能体长程任务。核心思想：每个任务只给 instruction 和面向最终输出的自动 evaluator，使不同 agent infrastructure 可比较；CocoaAgent 提供受控 scaffold，而最优被测系统也只有 45.1% success rate，集中暴露规划、工具使用、执行和视觉 grounding 缺口。
+- [AlphaEval](https://arxiv.org/abs/2604.12162)（[项目页与榜单](https://alphaeval.ai/)，[开源代码](https://github.com/GAIR-NLP/AlphaEval)）：评什么：生产环境中的完整 agent 产品表现。核心思想：从 7 家真实部署 agent 的公司抽取 94 个生产任务，覆盖 6 个 O*NET 职业领域，用 LLM-as-a-Judge、reference-driven metrics、formal verification、rubric、UI 测试等多范式组合评价 Claude Code、Codex 等完整 agent system，而不只评模型 API。
+- [WorkRB: A Community-Driven Evaluation Framework for AI in the Work Domain](https://arxiv.org/abs/2604.13055)：补充面向真实工作自动化与流程感知智能体部署的基准、数据集、评测协议或测试环境。
+- [LiveClawBench: Benchmarking LLM Agents on Complex, Real-World Assistant Tasks](https://arxiv.org/abs/2604.13072)：类型：benchmark/评测协议。核心价值：为 2.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [IndicDB](https://arxiv.org/abs/2604.13686)：面向印度语言的多语 Text-to-SQL 基准，为以英语为中心的企业数据智能体评测补充语言覆盖。
+- [KWBench: Measuring Unprompted Problem Recognition in Knowledge Work](https://arxiv.org/abs/2604.15760)：KWBench 评测知识工作中的未提示问题识别，适合 Real-World Work Bench。
+- [NL2SQLBench: A Modular Benchmarking Framework for LLM-Enabled NL2SQL Solutions](https://arxiv.org/abs/2604.16493)：评测模块化 LLM-NL2SQL 方案。核心思想：比较自然语言数据库查询系统的有效性、效率与局限。
+- [ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](https://arxiv.org/abs/2604.17944)：评测需要结合意图标签、SQL 查询和外部 API 调用的房地产问答 agent，并提供分层 HIRE-Agent 基线。
+- [ClawEnvKit / Auto-ClawEval](https://arxiv.org/abs/2604.18543)：通过自动生成环境评测 claw-like workflow agent。核心思想：把自然语言环境描述解析为任务规格、工具接口、评分配置和验证器，从而扩展可验证 workflow-agent 基准的构建规模。
+- [AutomationBench](https://arxiv.org/abs/2604.18934)：面向自动化 agent 任务的基准；核心思想是评测 agent 能否完成实际多步工作流，而不是只生成孤立文本答案。
 - [DW-Bench](https://arxiv.org/abs/2604.18964)：评测 LLM 对数据仓库图拓扑的推理能力，将企业数据智能体评测从 SQL 生成扩展到模式结构与仓库关系理解。
+- [ActuBench: A Multi-Agent LLM Pipeline for Generation and Evaluation of Actuarial Reasoning Tasks](https://arxiv.org/abs/2604.20273)：用多 agent pipeline 生成并评估精算推理任务；核心思想是通过验证和修复角色构建专业精算推理 benchmark。
 - [CI-Work](https://arxiv.org/abs/2604.21308)：评什么：企业 LLM agent 的 contextual integrity 与隐私泄漏风险。核心思想：在 dense retrieval 企业工作流中区分 essential content 与 sensitive context，覆盖 5 类信息流方向，评估 agent 能否完成任务同时抑制敏感上下文外泄，补足现实工作里“有用但不能泄密”的安全维度。
 - [CLARITY](https://arxiv.org/abs/2604.22313)：评什么：交互式 NL2SQL 系统中的会话歧义和不可回答问题。核心思想：要求数据 agent 识别信息不足或无法回答的数据库请求，并提出澄清或拒答，而不是强行生成 SQL。
-- [ClawMark](https://arxiv.org/abs/2604.23781)（[项目页](https://claw-mark.com/)；[开源代码](https://github.com/evolvent-ai/ClawMark)）：评什么：多日历时间跨度的多模态同事型现实工作任务。核心思想：用真实文件、日历、消息和延迟事件构造 1 到 3 天的 coworker-agent 工作流，检验 agent 是否能跨天维持任务状态、等待外部反馈并按时交付。
+- [AgentSearchBench: A Benchmark for AI Agent Search in the Wild](https://arxiv.org/abs/2604.22436)：它评测真实工作、办公、agent 搜索或结构化产物生成，适合补充 real-world-work Bench。
+- [Superminds Test: Actively Evaluating Collective Intelligence of Agent Society via Probing Agents](https://arxiv.org/abs/2604.22452)：Superminds Test 主动评测 agent society collective intelligence，补充多 agent 协作 benchmark。
+- [ClawMark](https://arxiv.org/abs/2604.23781)（[项目页](https://claw-mark.com/)；[榜单](https://claw-mark.com/leaderboard)；[开源代码](https://github.com/evolvent-ai/ClawMark)）：评什么：多日历时间跨度的多模态同事型现实工作任务。核心思想：用真实文件、日历、消息和延迟事件构造 1 到 3 天的 coworker-agent 工作流，检验 agent 是否能跨天维持任务状态、等待外部反馈并按时交付。
+- [Failure-Centered Runtime Evaluation for Deployed Trilingual Public-Space Agents](https://arxiv.org/abs/2604.23990)：PSA-Eval 针对部署中的三语 public-space agents 做 failure-centered runtime evaluation。
 - [Odysseys](https://arxiv.org/abs/2604.24964)（[项目页](https://odysseys-website.pages.dev/)）：评什么：真实网页上的长程现实任务。核心思想：用真实网站、多阶段目标和状态依赖构造 realistic long-horizon web tasks，介于网页 GUI、现实在线工作和长时运行评测之间。
 - [Semantic Layers for Reliable LLM-Powered Data Analytics](https://arxiv.org/abs/2604.25149)：面向语义层约束下数据分析准确性与幻觉风险的成对基准，为企业数据智能体评测补充可靠性维度。
-- [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：评什么：会随真实需求变化的企业工作流 agent。核心思想：从 ClawHub marketplace 信号中刷新任务分布，当前版本含 105 个任务和 17 个任务族，并计划按季度重采样；评分同时读取执行 trace、审计日志、服务状态和 workspace 产物，使 benchmark 不只是静态题库。
+- [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页与榜单](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：评什么：会随真实需求变化的企业工作流 agent。核心思想：从 ClawHub marketplace 信号中刷新任务分布，当前版本含 105 个任务和 17 个任务族，并计划按季度重采样；评分同时读取执行 trace、审计日志、服务状态和 workspace 产物，使 benchmark 不只是静态题库。
 - [Seed2.0 内部 XPert Bench 与 ToB 系列](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的封闭/内部评测，包含 XPert Bench 以及 ToB-Complex Workflows、ToB-Reference Q&A、ToB-K12 Education、ToB-Compositional Tasks、ToB-Text Classification、ToB-Information Extraction 等；目前未公开发布。它们值得在列表中跟踪，因为体现了模型厂商对企业、教育、分类、抽取和工作流完成任务的关注。
+- [PhysicianBench: Evaluating LLM Agents in Real-World EHR Environments](https://arxiv.org/abs/2605.02240)：评测真实 EHR 环境中的 LLM agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Revisiting the Travel Planning Capabilities of Large Language Models](https://arxiv.org/abs/2605.03308)：评什么：评测旅行规划中的长程现实推理；核心思想是把最终计划拆成原子子能力以定位失败原因。
 - [PatRe](https://arxiv.org/abs/2605.03571)：通过审查意见和申请人答复生成来评估完整专利审查流程。核心思想：把专利审查建模为迭代式专业工作流，使用真实案例、oracle 与检索模拟设置，并评估论证与回应质量。
 - [Workspace-Bench](https://arxiv.org/abs/2605.03596)：评什么：带大规模文件依赖的 workspace learning 任务。核心思想：构造包含 5 类 worker profile、74 种文件类型和 20,476 个文件的现实工作区，用文件依赖图和多维 rubric 检查 agent 是否能跨文件检索、推理、更新和交付。
+- [Beyond Task Success: Measuring Workflow Fidelity in LLM-Based Agentic Payment Systems](https://arxiv.org/abs/2605.06457)：用明确任务、协议或数据集评测real-world work agents。
+- [DRIP-R: A Benchmark for Decision-Making and Reasoning Under Real-World Policy Ambiguity in the Retail Domain](https://arxiv.org/abs/2605.07699)：用明确任务、协议或数据集评测real-world work agents。
 - [PolySQL](https://arxiv.org/abs/2605.07796)：通过自动化后端同构将 Text-to-SQL 评测扩展到多种 SQL 方言，检验数据智能体是否能跨数据库引擎泛化。
+- [SalesSim: Benchmarking and Aligning Multimodal Language Models as Retail User Simulators](https://arxiv.org/abs/2605.08334)：SalesSim 评测和对齐 multimodal language models as retail user simulators，属于真实业务交互 benchmark。
+- [AgentCollabBench: Diagnosing When Good Agents Make Bad Collaborators](https://arxiv.org/abs/2605.08647)：评什么：单体能力不错的 agent 何时会变成糟糕协作者。核心思想：诊断单 agent 成功率看不到的协调、交接和共享上下文失败。
+- [PrepBench](https://arxiv.org/abs/2605.08687)：评测自然语言驱动的数据准备；核心思想是在真实且不整洁的表格任务上测试交互澄清、数据准备代码生成，以及从代码翻译为可解释工作流的能力。
 - [EntCollabBench](https://arxiv.org/abs/2605.08761)：评什么：企业工作流中的角色专门化多 agent 协作。核心思想：模拟一个权限隔离组织，包含 11 个角色专门化 agent、workflow 状态检查和基于策略的审批，测试 all-in-one 单 agent 难覆盖的委派、上下文传递、访问控制、参数 grounding 和流程闭环。
+- [ProactBench: Beyond What The User Asked For](https://arxiv.org/abs/2605.09228)：评什么：超出用户显式请求的 conversational proactivity。核心思想：把隐含需求处理拆成 emergent、critical 和 temporal 三类，评测助手能否发现并处理用户未明说的需要。
+- [AgentRx: A Benchmark Study of LLM Agents for Multimodal Clinical Prediction Tasks](https://arxiv.org/abs/2605.10286)：评什么：评测 LLM agents 的多模态临床预测任务；核心思想是测试其对 EHR 时间序列、图像、报告和临床笔记的综合能力。
+- [CADBench: A Multimodal Benchmark for AI-Assisted CAD Program Generation](https://arxiv.org/abs/2605.10873)：评测多模态 AI 辅助 CAD 程序生成。
 - [WildClawBench](https://arxiv.org/abs/2605.10912)（[开源代码](https://github.com/internlm/WildClawBench)）：评什么：真实 CLI agent harness 中的长程、多模态、双语工作任务。核心思想：在可复现 Docker 容器里运行 OpenClaw、Claude Code、Codex 或 Hermes Agent 等真实 harness，提供 60 个平均 8 分钟、20+ 工具调用的人工任务，并用规则检查、环境状态审计与 LLM/VLM judge 混合评分，显式暴露 harness 选择对结果的影响。
+- [Disaster Response Agents](https://arxiv.org/abs/2605.11633)：评测应急行动中的异构地理空间推理，为现实工作加入高风险协同场景。
+- [RevOpsBench](https://doi.org/10.1109/SoutheastCon63549.2026.11475978)：评测 LLM agent 在企业 CRM 运营中的表现，用 revenue-operations 工作流补充 CRMArena 类环境。
+- [OxyEcomBench: Benchmarking Multimodal Foundation Models across E-Commerce Ecosystems](https://arxiv.org/abs/2605.13173)：OxyEcomBench 评测电商生态中的多模态任务，适合 Real-World Work Bench。
+- [Are Agents Ready to Teach? A Multi-Stage Benchmark for Real-World Teaching Workflows](https://arxiv.org/abs/2605.14322)：面向真实教学工作流的多阶段基准；核心思想是评测教育任务中的规划、材料准备、互动和反馈闭环。
+- [PinchBench](https://pinchbench.com/about)（[榜单](https://pinchbench.com/)；[benchmark tasks](https://github.com/pinchbench/skill)）：评什么：OpenClaw agent 在真实工作任务上的执行表现，而不是孤立能力小测。核心思想：运行日程安排、邮件分拣、主题调研、内容写作、编码、文件管理、文档分析、记忆召回和 skill discovery 等不整洁端到端任务，并用自动评分、LLM judge 或混合评分检查实际交付结果。
+- [QwenClawBench](https://github.com/SKYLENAGE-AI/QwenClawBench)（[榜单](https://skylenage-ai.github.io/QwenClawBench-Leaderboard/)；[数据集](https://huggingface.co/datasets/skylenage-ai/QwenClawBench)）：评什么：OpenClaw agent 在真实用户分布任务上的表现，源自 Qwen3.6-Plus 研发期内部基准。核心思想：用 100 个独立模拟工作区任务覆盖 8 个领域，并通过 Docker 隔离、并发执行、异常标记、断点续跑和惩罚式 hybrid scoring，避免 LLM judge 给交付物失败的轨迹过度加分。
+- [PawBench](https://agentscope-ai.github.io/PawBench/)（[开源代码](https://github.com/agentscope-ai/PawBench)；生态：[OpenJudge](https://github.com/agentscope-ai/OpenJudge)）：评什么：把真实工作 agent 任务按 model-harness 组合评测，而不是只跑裸模型。核心思想：统一 Claw-Eval、QwenClawBench、PinchBench、SkillsBench、WildClawBench 和自建任务中的 150 个样例，按场景、能力、复杂度、模态和环境打标，再在 QwenPaw、OpenClaw、Hermes 三个 harness 中比较 9 个模型，并公开 grader、trace、切片分和 workspace 产物。
+- [AvalancheBench](https://arxiv.org/abs/2605.24183)：通过 latent world recovery 评测企业数据 agent，评分其恢复的 segments、drivers、events 与 relationships，而不只看报告完成或流程成功。
+- [GDPval-AA](https://artificialanalysis.ai/evaluations/gdpval-aa)：评什么：Artificial Analysis 针对 OpenAI GDPval gold 公共任务集做的独立 agentic 评测。核心思想：通过 Stirrup agent harness 给模型 shell 与网页访问能力，再用盲测成对比较得到 Elo 分数，为文档、幻灯片、图表、表格等专业交付物提供模型厂商常看的现实工作榜单。
+- [MM-ClawBench / MM Claw end-to-end benchmark](https://www.minimax.io/news/minimax-m27-en)（model-card-only；未确认有独立公开发布）：评什么：OpenClaw 风格的工作与生活真实需求，覆盖个人学习规划、办公文档处理与交付、定时专业研究与投资建议、代码开发和维护等。核心思想：用宽覆盖端到端任务集评估 skill-rich 与 tool-rich agent 是否能产出现实工件，同时显式保留其公开状态限制。
+- [Design and Evaluation of Knowledge-Distilled LLM for Improving the Efficiency of School Administrative Document Processing](https://doi.org/10.3390/electronics14193860)：提供用于衡量真实世界工作能力的数据集、基准、指标或评测协议。
+- [Vertical Farm: A Unified Testbed to Address Challenges in Human-Agent Teaming Research](https://doi.org/10.1145/3765766.3765813)：评测 Vertical Farm: A Unified Testbed to Address Challenges in Human-Agent Teaming Research，为 Real World Work 补充可复用的数据集、基准、指标或评测协议。
+- [AutoONBench: a benchmark for large language model agents in autonomous optical networks](https://doi.org/10.1364/jocn.589201)：补充面向真实世界工作能力的可复用基准、数据集、测试平台或评测协议。
+- [CSTutorBench: Benchmarking Large Language Models for Realistic Computer Science Tutoring](https://doi.org/10.1145/3770761.3777333)：评测 LLM 在真实计算机科学辅导中的表现；核心思想是在同时要求正确性、教学性和互动性的领域中评测 tutor 行为。
+- [Benchmarking and Advancing Large Language Models for Local Life Services](https://doi.org/10.1145/3711896.3737196)：面向本地生活服务的 LLM benchmark。核心思想是评估助手处理本地需求、服务规则和面向用户决策的实际能力。
+- [MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning](https://doi.org/10.1145/3746027.3758230)：面向专家级理解与推理的多模态金融基准；核心思想是在专业场景中测试金融文档、图表和领域推理能力。
+- [Evaluating large language models on business process modeling: framework, benchmark, and self-improvement analysis](https://doi.org/10.1007/s10270-025-01318-w)：用框架、benchmark 和自改进分析评估 LLM 的业务流程建模能力。
+- [LAiW: A Chinese Legal Large Language Models Benchmark]()：提供可复用评测目标、排行榜或测量协议。
+- [LogEval: A comprehensive benchmark suite for LLMs in log analysis](https://doi.org/10.1007/s10664-025-10701-6)：提供用于评测 LLM 日志分析能力的综合 benchmark suite。
+- [Agents' Last Exam](https://arxiv.org/abs/2606.05405)：Agents' Last Exam 汇集 250 多位行业专家提出的 1,000 多项具有经济价值的任务，覆盖 13 个行业集群和 55 个子领域，并要求结果可验证；它把 agent 的职业实用性评测扩展到传统学术或编程基准之外。
+- [T1-Bench](https://arxiv.org/abs/2606.11070)：构建面向客户服务的多领域真实工作环境，重点评测多步交互、跨域协调与持续推理，而不是孤立的工具调用。

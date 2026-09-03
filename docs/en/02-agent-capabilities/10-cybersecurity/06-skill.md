@@ -1,7 +1,7 @@
 # 2.10.6 Skill
 
-- [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) is suitable for isolating high-risk cyber or exploit-like tool calls.
-- [docker-local-dev](https://skills.sh/thienanblog/awesome-ai-agent-skills/docker-local-dev) is suitable for packaging vulnerable services, reproduction environments, and resettable validators.
-- [nmap-mcp](https://github.com/sbmilburn/nmap-mcp) is suitable for authorized network discovery through structured MCP calls, especially when scan scope and audit logs need to be explicit.
-- [security-detections-mcp](https://skills.sh/aradotso/security-skills/security-detections-mcp) is suitable for defensive detection-rule workflows and SOC-style rule engineering rather than offensive exploitation.
-- [mcpsec](https://github.com/pfrederiksen/mcpsec) is suitable for auditing MCP configuration and security posture before exposing cyber tools to agents.
+- [setup-sandbox](https://skills.sh/recoupable/setup-sandbox) bootstraps a Recoupable sandbox by fetching organizations and artists with the Recoup CLI, creating `orgs/{org}/artists/{artistSlug}` folders, and writing `RECOUP.md` identity markers; it is workspace initialization rather than an exploit-isolation control.
+- [docker-local-dev](https://skills.sh/thienanblog/awesome-ai-agent-skills/docker-local-dev) generates Docker Compose and Dockerfile setups through stack-detection scripts and clarifying questions, with templates for PHP/Laravel, WordPress, Drupal, Joomla, Node.js, and Python services that can anchor repeatable local cyber labs.
+- [nmap-mcp](https://github.com/sbmilburn/nmap-mcp) wraps nmap as 14 MCP tools returning structured JSON for host discovery, port scans, service and OS detection, NSE scripts, and full recon while enforcing CIDR scope, audit logs, saved scan IDs, and shell-metacharacter filtering.
+- [security-detections-mcp](https://skills.sh/aradotso/security-skills/security-detections-mcp) exposes 8,200+ Sigma, Splunk ESCU, Elastic, KQL, Sublime, and CrowdStrike detections through MCP search, MITRE ATT&CK mapping, coverage-gap analysis, Navigator-layer export, and detection-engineering prompts.
+- [mcpsec](https://github.com/pfrederiksen/mcpsec) scans MCP server configs and Claude Desktop extension manifests against OWASP MCP Top 10-style checks, emitting table or OCSF JSON findings for secrets, missing auth, unsafe URIs, duplicate tools, weak transport, schema gaps, logging, and rate-limit issues.

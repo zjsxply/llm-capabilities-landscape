@@ -1,0 +1,67 @@
+# 1.16.3 Bench
+
+- [Matching-Based Capture-the-Flag Games for Multiagent Systems](https://doi.org/10.1109/tcds.2023.3323572)：用带匹配式分配机制的夺旗游戏研究多智能体队伍如何在竞争压力下分配攻击者、防守者与目标。
+- [TimeArena: Shaping Efficient Multitasking Language Agents in a Time-Aware Simulation](https://arxiv.org/abs/2402.05733)：用时间感知仿真检验语言智能体能否在并发任务中安排行动、权衡截止时间与奖励，并通过时间压力反馈改进多任务策略。
+- [LLMArena: Assessing Capabilities of Large Language Models in Dynamic Multi-Agent Environments](https://arxiv.org/abs/2402.16499)：在动态多智能体环境中评估大语言模型的决策、协作和竞争能力，使智能体表现随其他参与者行动变化而被测量。
+- [Towards Personalized Evaluation of Large Language Models with An Anonymous Crowd-Sourcing Platform](https://arxiv.org/abs/2403.08305)：主要贡献是匿名众包式 LLM 个性化评测平台，而不是多智能体协作；暂留为待安全迁移的偏轴条目。
+- [How Far Are We on the Decision-Making of LLMs? Evaluating LLMs' Gaming Ability in Multi-Agent Environments](https://arxiv.org/abs/2403.11807)（[榜单：GAMA-Bench](https://cuhk-arise.github.io/GAMABench/)）：提出 GAMA-Bench，用多智能体游戏评测 LLM 在交互式竞争、合作和对手行为变化下的决策能力。
+- [SocialBench: Sociality Evaluation of Role-Playing Conversational Agents](https://arxiv.org/abs/2403.13679)：评测角色扮演对话智能体的社会性，关注 persona 行为能否支撑可信的多轮社会互动，而不仅是复述角色事实。
+- [Seal-Tools: Self-Instruct Tool Learning Dataset for Agent Tuning and Detailed Benchmark](https://arxiv.org/abs/2405.08355)：主要是用于 agent tuning 的工具学习数据集和细粒度基准，更贴近 Tool Use；此处仅保留为迁移候选。
+- [Evaluating the Performance of Large Language Models via Debates](https://arxiv.org/abs/2406.11044)：评估多个 LLM 实例之间的 debate-style 交互能否提升答案质量，把 agent 间论辩作为被测试的协议。
+- [Evaluating Visual and Cultural Interpretation: The K-Viscuit Benchmark with Human-VLM Collaboration](https://arxiv.org/abs/2406.16469)：更接近多模态文化理解和人类-VLM 协作评测，而非 swarm 协调；暂记为偏轴候选，等待成对迁移。
+- [POGEMA: A Benchmark Platform for Cooperative Multi-Agent Navigation](https://arxiv.org/abs/2407.14931)：提供网格化 cooperative navigation 与 multi-agent pathfinding 平台，支持场景生成和协调策略评测。
+- [MMAU: A Holistic Benchmark of Agent Capabilities Across Diverse Domains](https://arxiv.org/abs/2407.18961)：用 holistic protocol 跨多个领域评测 agent capabilities，使跨域 planning、tool use 和 interaction skills 能在同一基准中比较。
+- [The Fellowship of the LLMs: Multi-Agent Workflows for Synthetic Preference Optimization Dataset Generation](https://arxiv.org/abs/2408.08688)：用多智能体 LLM workflow 生成合成偏好优化数据，更像 harness 或数据生成条目，而不是纯 benchmark。
+- [MuMA-ToM: Multi-modal Multi-Agent Theory of Mind](https://arxiv.org/abs/2408.12574)（[榜单](https://scai.cs.jhu.edu/projects/MuMA-ToM/leaderboard.html)）：通过多模态、多智能体 Theory-of-Mind 协议评测模型能否从视觉和语言线索推断其他 agent 的信念、目标和视角。
+- [Collaboration Dynamics and Reliability Challenges of Multi-Agent LLM Systems in Finite Element Analysis](https://arxiv.org/abs/2408.13406)：在有限元分析任务上实证研究角色化 LLM 团队，跟踪协作动态、可靠性失效和跨 agent 错误传播。
+- [BattleAgentBench: A Benchmark for Evaluating Cooperation and Competition Capabilities of Language Models in Multi-Agent Systems](https://arxiv.org/abs/2408.15971)：在 battle-style 多智能体场景中评估 LLM agents，让合作、竞争、通信和策略适应都成为可观测指标。
+- [PersoBench: Benchmarking Personalized Response Generation in Large Language Models](https://arxiv.org/abs/2410.03198)：基于用户画像和历史评测个性化回复生成，更适合个性化或 Memory 页面，而不是 Agent Swarm。
+- [COMMA: A Communicative Multimodal Multi-Agent Benchmark](https://arxiv.org/abs/2410.07553)：测试多模态多智能体通信，要求 agents 交换视觉与语言信息，而不是从孤立观测中独立解题。
+- [AgentSense: Benchmarking Social Intelligence of Language Agents through Interactive Scenarios](https://arxiv.org/abs/2410.19346)：用交互式社会场景测试 language agents 能否理解社会语境、选择合适行动并解释行为。
+- [BENCHAGENTS: Automated Benchmark Creation with Agent Interaction](https://arxiv.org/abs/2410.22584)：通过智能体交互自动构造基准，让 LLM agents 生成、修订并验证任务实例，而不是只依赖静态人工测试集。
+- [Towards Effective GenAI Multi-Agent Collaboration: Design and Evaluation for Enterprise Applications](https://arxiv.org/abs/2412.05449)：设计并评估企业应用中的 GenAI 多智能体协作模式，重点是角色分配、任务交接和组织工作流效果。
+- [LegalAgentBench: Evaluating LLM Agents in Legal Domain](https://arxiv.org/abs/2412.17259)：评估法律领域 LLM agents 在法律材料检索、推理和行动规划上的表现，更偏领域 agent 而非 swarm 专项。
+- [BaiJia: A Large Scale Role-Playing Agent Corpus of Chinese Historical Charcaters](https://arxiv.org/abs/2412.20024)：发布大规模中国历史人物角色扮演语料，使 persona 知识、人物文风和社会对话一致性能被系统评测。
+- [Efficient Multi-Agent Collaboration with Tool Use for Online Planning in Complex Table Question Answering](https://arxiv.org/abs/2412.20145)：测试复杂表格问答中的工具型多 agent planner，让 agents 协同做问题分解和在线工具调用。
+- [From Clicks to Conversations: Evaluating the Effectiveness of Conversational Agents in Statistical Analysis](https://arxiv.org/abs/2502.08114)：评估统计分析中的对话式 agents，将 dialogue-based assistance 与传统点击式分析界面进行比较。
+- [YRC-Bench: A Benchmark for Learning to Coordinate with Experts](https://arxiv.org/abs/2502.09583)：衡量 agent 能否与专家协作，学习何时提问、何时让专家接管，以及何时基于专门知识行动。
+- [MultiMind: Enhancing Werewolf Agents with Multimodal Reasoning and Theory of Mind](https://arxiv.org/abs/2504.18039)：为狼人杀 agents 加入多模态推理和 Theory-of-Mind 信号，用社交推理游戏暴露欺骗、信念追踪和团队推断能力。
+- [Evaluating Contrastive Feedback for Effective User Simulations](https://arxiv.org/abs/2505.02560)：研究 contrastive feedback 如何改进 user simulators，评测对象是模拟用户行为与纠错信号，而不是 swarm 协调本身。
+- [Interactional Fairness in LLM Multi-Agent Systems: An Evaluation Framework](https://arxiv.org/abs/2505.12001)：定义 LLM 多智能体互动中的逐轮与参与者公平性指标，把互动待遇和最终任务成功区分开来。
+- [Exploring the Potential of LLMs as Personalized Assistants: Dataset, Evaluation, and Analysis](https://arxiv.org/abs/2506.01262)：提供个性化助手行为的数据与评测，更接近 Memory 或 personalization，而不是多智能体 swarm 评测。
+- [MultiAgentBench](https://aclanthology.org/2025.acl-long.421/)：评测 LLM agents 的协作与竞争。核心思想：评估 agent team 而不是孤立单 agent，把交互协议、角色设计和结果权衡变成显式 benchmark 变量。
+- [CORE: Measuring Multi-Agent LLM Interaction Quality under Game-Theoretic Pressures](https://arxiv.org/abs/2508.11915)：在 game-theoretic pressure 下衡量互动质量，用合作和冲突激励暴露多智能体 LLM 对话如何协同或失效。
+- [Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](https://arxiv.org/abs/2510.00795)：用 ChemX 评测自动科学信息抽取中的 agentic systems，要求系统协调文档解析、证据检索和结构化化学抽取。
+- [Emergent Coordination in Multi-Agent Language Models](https://arxiv.org/abs/2510.05174)：提供信息论准则，用于检测多智能体 LLM 系统中的高阶结构与协同。
+- [ProMediate: A Socio-cognitive framework for evaluating proactive agents in multi-party negotiation](https://arxiv.org/abs/2510.25224)：评测多议题、多参与方谈判中的主动式 AI 调解智能体。核心思路是结合基于调解理论的谈判仿真与共识变化、介入时机和调解效果指标，使社会协调能力不只按最终是否达成协议来衡量。
+- [The Limits of Obliviate: Evaluating Unlearning in LLMs via Stimulus-Knowledge Entanglement-Behavior Framework](https://arxiv.org/abs/2510.25732)：偏离 Agent Swarm 主轴；它通过刺激、知识和行为纠缠框架评估 LLM unlearning，而不是多智能体交互。
+- [Multi-Agent Craftax: Benchmarking Open-Ended Multi-Agent Reinforcement Learning at the Hyperscale](https://arxiv.org/abs/2511.04904)：把 Craftax 扩展为 hyperscale open-ended 多智能体强化学习基准，用于评估协调、探索和涌现团队行为。
+- [Task-Specific Trust Evaluation for Multi-Hop Collaborator Selection via GNN-Aided Distributed Agentic AI](https://arxiv.org/abs/2512.05788)：用 GNN 辅助估计多跳智能体网络中的任务特定信任，评测 collaborator selection 是否依据可靠性路由，而不是只看静态 agent 标签。
+- [MLLMs Construction Company: Investigating Multimodal LLMs' Communicative Skills in a Collaborative Building Task](https://aclanthology.org/2025.clicit-1.97/)：在协作式搭建任务中评估多模态 LLM 的沟通能力，要求 agents 交换空间和视觉信息以构造共享成果。
+- [When Identity Overrides Incentives: Representational Choices as Governance Decisions in Multi-Agent LLM Systems](https://arxiv.org/abs/2601.10102)：在四智能体 LLM 战略博弈中测试角色身份和收益可见性如何改变均衡行为。
+- [More at Stake: How Payoff and Language Shape LLM Agent Strategies in Cooperation Dilemmas](https://arxiv.org/abs/2601.19082)：测试收益大小和提示语言如何改变 LLM agents 在合作困境中的策略，使 incentive framing 成为可测社会行为变量。
+- [Auditing Multi-Agent Reasoning Trees](https://arxiv.org/abs/2602.09341)：审计多 agent 推理轨迹中的证据结构。核心思想：用 swarm 内一致点与分歧点的局部验证，替代多数投票或通用 LLM-as-judge 聚合。
+- [This human study did not involve human subjects: Validating LLM simulations as behavioral evidence](https://arxiv.org/abs/2602.15785)：验证 LLM-based simulations 何时可作为行为证据，是 agent-society 实验的相邻方法论条目，而非 swarm benchmark。
+- [Guiding LLM-Based Human Mobility Simulation with Mobility Measures from Shared Data](https://arxiv.org/abs/2602.16726)：用共享数据中的 aggregate mobility measures 引导 LLM-based mobility simulation，评估模拟 agents 能否复现人群移动模式。
+- [A Benchmark and Knowledge-Grounded Framework for Advanced Multimodal Personalization Study](https://arxiv.org/abs/2602.19001)：构建知识增强的 multimodal personalization 基准，更适合 personalization 或 Memory，而不是 Agent Swarm。
+- [@GrokSet: multi-party Human-LLM Interactions in Social Media](https://arxiv.org/abs/2602.21236)：收集社交媒体中的多方 Human-LLM 互动，用于研究 LLM 参与者周围的对话角色、回复链和群体动态。
+- [Framing Effects in Independent-Agent Large Language Models: A Cross-Family Behavioral Analysis](https://arxiv.org/abs/2603.19282)：比较 framing 如何改变不同 LLM agent family 的行为，暴露 agent-society 仿真对 prompt representation 的敏感性。
+- [Deception and Communication in Autonomous Multi-Agent Systems: An Experimental Study with Among Us](https://arxiv.org/abs/2603.26635)：用 Among Us 作为 autonomous agents 实验环境，衡量隐藏身份玩法中的欺骗、沟通和怀疑管理。
+- [Communicate-Predict-Act: Evaluating Social Intelligence of Agents](https://arxiv.org/abs/2604.08727)：通过 communicate、predict、act 闭环评测社会智能，要求 agents 交换消息、预测他人并选择协同行动。
+- [Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies](https://arxiv.org/abs/2604.15607)：比较仿真与用户研究中的 imperfect cooperation 证据，通过改变人类和 AI 属性观察混合团队如何协作。
+- [Cooperate to Compete / C2C](https://arxiv.org/abs/2604.25088)：提供包含私下谈判、非对称目标和人机对局研究的混合动机多智能体博弈，使结盟、背叛和谈判行为能在最终胜率之外被度量。
+- [Talk is Cheap, Communication is Hard](https://arxiv.org/abs/2605.01750)：研究多 Agent 谈判中的动态 grounding 失败与修复。核心思路是把沟通断裂和恢复过程作为群体智能评测信号，而不只看最终协商结果。
+- [Agent Island](https://arxiv.org/abs/2605.04312)：一个抗饱和、抗污染的动态多智能体游戏基准。核心思想是让 agent 在自适应多人合作、冲突和说服中竞争，并用 Bayesian Plackett-Luce 技能估计排名，而不是依赖固定静态任务集。
+- [TeamBench: Evaluating Agent Coordination under Enforced Role Separation](https://arxiv.org/abs/2605.07073)：在强制角色隔离下评测智能体协作，避免团队通过率掩盖某个角色越权代劳。
+- [Unsolvability Ceiling in Multi-LLM Routing: An Empirical Study of Evaluation Artifacts](https://arxiv.org/abs/2605.07395)：审计 multi-LLM routing 评测中的不可解样例和 artifacts，说明 router 分数何时反映 benchmark 构造而非 collaborator selection 质量。
+- [DESBench](https://arxiv.org/abs/2605.13172)：评估事件驱动工业调度中的层级多智能体协作。核心思想：用共享离散事件环境、部分可观测状态、耦合约束和多时间尺度决策，检验层级 swarm 协调何时有效、何时失效。
+- [SAGE / Social Agent Group Evolution](https://arxiv.org/abs/2606.03544)：评估共享同伴经验是否能让自演化 agent 超越孤立自我改进。核心思想是在 ML research、经济规划和多人游戏中比较计算量匹配的 SocialEvo 与 SelfEvo 条件，揭示 group history 何时能帮助停滞 agent 突破。
+- [Mosaic](https://doi.org/10.1145/3772363.3798830)：提供观察和评估多智能体系统性能的多层级框架。核心思想：在系统、个体 agent 和交互层面组织评测，避免把 swarm 行为压缩成单一最终结果分数。
+- [Werewolf Communication-Game Evaluation](https://doi.org/10.1145/3723498.3723702)：在 Unity 的狼人杀式交流游戏中评估大语言模型，测试多智能体社会推理与欺骗处理。
+- [Solving Multi-agent Path Finding as an LLM Benchmark: How, How Good and Why](https://openreview.net/forum?id=gyFT8TQLy1)（[任务榜单：MAPF Arena](https://mapf.dev/leaderboard)）：把 multi-agent path finding 转化为 LLM benchmark，用 MAPF 实例测试路线规划、冲突规避和协调解释。
+- [RoleAgent: Building, Interacting, and Benchmarking High-quality Role-Playing Agents from Scripts](https://doi.org/10.52202/079017-1563)：从 scripts 构建 role-playing agents，并用 RoleAgentBench 评测角色知识、风格一致性和交互式 persona 行为。
+- [LEMSS: LLM-Based Platform for Multi-Agent Competitive Search Simulation](https://doi.org/10.1145/3726302.3730312)：提供 LLM-based competitive search simulation 平台，让多个 agents 在共享环境中搜索、竞争并调整策略。
+- [Exploring the Effects of Third-Party Explanations in Multi-Agent Settings After an AI Refusal](https://doi.org/10.1145/3772363.3798502)：评估多智能体场景中 AI 拒绝后的第三方解释影响。
+- [alem](https://arxiv.org/abs/2606.08340)：在过程生成的 JAX 世界中评测开放式多智能体协调，以通信、分工专门化与长程生存取代固定脚本协作任务。
+- [PerspectiveGap](https://arxiv.org/abs/2606.08878)：用 110 个场景评测多智能体编排提示，包含 role-fragment assignment 与自由提示编写两种形式，以及 10 种 agent 团队拓扑。
+- [CoffeeBench](https://arxiv.org/abs/2606.16613)：通过 90 天异质企业经济体仿真评测 LLM agent 在多智能体市场交互中的沟通、谈判、交易与长期收益管理。

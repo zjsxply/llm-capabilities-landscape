@@ -2,15 +2,430 @@
 
 - [Position Interpolation](https://arxiv.org/abs/2306.15595)：通过插值位置索引扩展 RoPE 系 LLM 上下文窗口，并只需要有限额外训练。
 - [LongLoRA](https://arxiv.org/abs/2309.12307)：参数高效长上下文微调路线，训练时使用稀疏局部注意力，推理时保留密集注意力。
+- [Functional Interpolation for Relative Positions Improves Long Context Transformers](https://arxiv.org/abs/2310.04418)：对相对位置表示做函数式插值，提升 Transformer 在训练窗口之外的长度外推能力。
+- [LLM Maybe LongLM: Self-Extend LLM Context Window Without Tuning](https://arxiv.org/abs/2401.01325)：无需调参扩展 LLM 上下文窗口，关联长上下文推理。
+- [Infinite-LLM: Efficient LLM Service for Long Context with DistAttention and Distributed KVCache](https://arxiv.org/abs/2401.02669)：用分布式注意力和分片 KV cache 扩展长上下文 LLM 服务，使推理可跨越单卡显存限制。
+- [Long Context Compression with Activation Beacon](https://arxiv.org/abs/2401.03462)：插入 activation beacon，将早期隐藏状态压缩成紧凑记忆 token，用于后续长上下文生成。
+- [Attendre: Wait To Attend By Retrieval With Evicted Queries in Memory-Based Transformers for Long Context Processing](https://arxiv.org/abs/2401.04881)：在注意力计算前检索已淘汰 query，让记忆型 Transformer 重新利用滑动窗口会丢弃的远程 token。
+- [Misconfidence-based Demonstration Selection for LLM In-Context Learning](https://arxiv.org/abs/2401.06301)：根据模型误置信度选择上下文示例，在不盲目拉长提示的情况下改进 demonstration 选择。
+- [Two Stones Hit One Bird: Bilevel Positional Encoding for Better Length Extrapolation](https://arxiv.org/abs/2401.16421)：结合两层位置编码，使 Transformer 同时保留局部顺序并外推到更长序列。
+- [Customizing Language Model Responses with Contrastive In-Context Learning](https://arxiv.org/abs/2401.17390)：通过对比式上下文示例在推理时控制回答风格或偏好，无需更新模型权重。
 - [LongAlign](https://arxiv.org/abs/2401.18058)：长上下文对齐路线，结合长指令数据、高效 packing 和训练策略，同时保持短上下文能力。
+- [KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization](https://arxiv.org/abs/2401.18079)：量化 KV cache 以支持极长上下文推理，目标扩展到千万 token 级上下文。
+- [Nomic Embed: Training a Reproducible Long Context Text Embedder](https://arxiv.org/abs/2402.01613)：训练并发布可复现的长上下文文本嵌入模型，用于扩展文档检索。
+- [KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache](https://arxiv.org/abs/2402.02750)：无需微调地对 KV cache 做非对称 2-bit 量化，分别压缩 key 与 value 以保留长上下文推理质量。
+- [InfLLM: Training-Free Long-Context Extrapolation for LLMs with an Efficient Context Memory](https://arxiv.org/abs/2402.04617)：为既有 LLM 加入免训练上下文记忆，使其无需全量长上下文注意力即可外推到更长输入。
+- [Data Engineering for Scaling Language Models to 128K Context](https://arxiv.org/abs/2402.10171)：研究把语言模型扩展到 128K token 上下文所需的数据清洗、配比和训练数据工程。
+- [Linear Transformers with Learnable Kernel Functions are Better In-Context Models](https://arxiv.org/abs/2402.10644)：将线性注意力核函数设为可学习，在保持长序列亚二次计算的同时提升上下文学习能力。
+- [LongHeads: Multi-Head Attention is Secretly a Long Context Processor](https://arxiv.org/abs/2402.10685)：识别专门负责长程检索的注意力头，用于解释标准多头注意力如何处理长上下文。
+- [In Search of Needles in a 11M Haystack: Recurrent Memory Finds What LLMs Miss](https://arxiv.org/abs/2402.10790)：用循环记忆在远超普通长上下文窗口的输入中找回 needle-in-a-haystack 事实。
+- [BGE Landmark Embedding: A Chunking-Free Embedding Method For Retrieval Augmented Long-Context Large Language Models](https://arxiv.org/abs/2402.11573)：提出 extensible embeddings，用可变范围上下文的高信息密度紧凑输入单元替代普通分块，让现有 LLM 能接入更大范围上下文。
 - [LongRoPE](https://arxiv.org/abs/2402.13753)：通过非均匀位置插值、渐进式扩展和短上下文再校准扩展 RoPE 系 LLM。
+- [RelayAttention for Efficient Large Language Model Serving with Long System Prompts](https://arxiv.org/abs/2402.14808)：通过 relay token 复用长系统提示的注意力结果，降低服务场景中重复预填充的成本。
+- [Long-Context Language Modeling with Parallel Context Encoding](https://arxiv.org/abs/2402.16617)：并行编码上下文分块并在生成时融合，以可扩展方式替代严格串行预填充。
+- [Training-Free Long-Context Scaling of Large Language Models](https://arxiv.org/abs/2402.17463)：通过位置和注意力调整在推理时扩展上下文长度，避免额外训练模型。
+- [Simple linear attention language models balance the recall-throughput tradeoff](https://arxiv.org/abs/2402.18668)：研究线性注意力语言模型的召回-吞吐权衡。
+- [Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding](https://arxiv.org/abs/2403.04797)：加入即插即用位置编码来改善上下文中部信息利用，直接针对 lost-in-the-middle 问题。
+- [GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM](https://arxiv.org/abs/2403.05527)：用近乎无损的 KV cache 压缩配方降低长上下文生成推理的显存压力。
+- [StreamingDialogue: Prolonged Dialogue Learning via Long Context Compression with Minimal Losses](https://arxiv.org/abs/2403.08312)：压缩对话历史，使模型能从长时间对话中学习，同时尽量减少既有上下文损失。
+- [BurstAttention: An Efficient Distributed Attention Framework for Extremely Long Sequences](https://arxiv.org/abs/2403.09347)：跨设备并行化注意力计算，面向极长序列的计算瓶颈而非提示级检索。
+- [LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression](https://arxiv.org/abs/2403.12968)：通过数据蒸馏实现任务无关提示压缩，在缩短长输入的同时保留忠实任务信息。
+- [Jamba: A Hybrid Transformer-Mamba Language Model](https://arxiv.org/abs/2403.19887)：在语言模型中结合 Transformer 与 Mamba 组件，支持高效长上下文行为。
+- [Linguistic Calibration of Long-Form Generations](https://arxiv.org/abs/2404.00474)：通过语言表达校准长文本生成的不确定性，帮助模型在扩展输出中显式传达置信度。
+- [Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention](https://arxiv.org/abs/2404.07143)：提出 Infini-attention，用于高效无限上下文 Transformer。
+- [LLoCO: Learning Long Contexts Offline](https://arxiv.org/abs/2404.07979)：以离线学习方式训练长上下文行为，把扩展上下文利用视为可学习能力，而不只是推理时缓存技巧。
+- [Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length](https://arxiv.org/abs/2404.08801)：探索支持超长上下文序列建模的高效大模型预训练和推理。
+- [LLM In-Context Recall is Prompt Dependent](https://arxiv.org/abs/2404.08865)：指出长上下文召回强依赖提示构造，说明单纯扩大窗口并不保证可用召回。
+- [TransformerFAM: Feedback attention is working memory](https://arxiv.org/abs/2404.09173)：加入 feedback attention，在片段之间传递工作记忆状态，为 Transformer 提供循环式长上下文记忆路径。
+- [Hierarchical Context Merging: Better Long Context Understanding for Pre-trained LLMs](https://arxiv.org/abs/2404.10308)：分层合并上下文，让预训练 LLM 在无需完整重训的情况下压缩并复用长输入。
+- [Length Generalization of Causal Transformers without Position Encoding](https://arxiv.org/abs/2404.12224)：研究不使用位置编码的因果 Transformer，展示避开显式位置外推的长度泛化路线。
+- [SnapKV: LLM Knows What You are Looking for Before Generation](https://arxiv.org/abs/2404.14469)：利用生成前的 query 信号选择关键 KV-cache token，从而压缩长上下文缓存。
+- [In-Context Learning with Long-Context Models: An In-Depth Exploration](https://arxiv.org/abs/2405.00200)：系统分析长上下文模型的上下文学习表现，包括示例选择与上下文长度的相互作用。
+- [Long Context Alignment with Short Instructions and Synthesized Positions](https://arxiv.org/abs/2405.03939)：用短指令和合成位置配对来对齐长上下文行为，减少对完整长人工指令的依赖。
+- [FlashBack: Efficient Retrieval-Augmented Language Modeling for Long Context Inference](https://arxiv.org/abs/2405.04065)：把检索与语言建模结合用于长上下文推理，复用相关历史上下文而不是关注全部 token。
+- [xLSTM: Extended Long Short-Term Memory](https://arxiv.org/abs/2405.04517)：用 xLSTM 模块扩展循环记忆，关联长序列建模与召回-吞吐权衡。
+- [Folded Context Condensation in Path Integral Formalism for Infinite Context Transformers](https://arxiv.org/abs/2405.04620)：把上下文压缩表述为折叠式 path-integral 机制，用于无限上下文 Transformer。
+- [Dolomites: Domain-Specific Long-Form Methodical Tasks](https://arxiv.org/abs/2405.05938)：构造领域特定的长文本方法性任务，用扩展输入考察有步骤推理而非短提示单步回答。
+- [HMT: Hierarchical Memory Transformer for Efficient Long Context Language Processing](https://arxiv.org/abs/2405.06067)：使用分层记忆 Transformer 汇总并复用长上下文，以提升语言处理效率。
+- [USP: A Unified Sequence Parallelism Approach for Long Context Generative AI](https://arxiv.org/abs/2405.07719)：统一多种序列并行策略，使长上下文生成模型能在分布式硬件上训练或推理。
+- [SirLLM: Streaming Infinite Retentive LLM](https://arxiv.org/abs/2405.12528)：维护流式保留记忆，让语言模型在持续输入上实现近似无限上下文。
+- [From Text to Pixel: Advancing Long-Context Understanding in MLLMs](https://arxiv.org/abs/2405.14213)：把长上下文理解扩展到多模态 LLM，将长文本上下文与像素级视觉证据连接起来。
+- [ZipCache: Accurate and Efficient KV Cache Quantization with Salient Token Identification](https://arxiv.org/abs/2405.14256)：在 KV cache 量化前识别显著 token，在压缩缓存的同时保留关键上下文。
+- [DAPE: Data-Adaptive Positional Encoding for Length Extrapolation](https://arxiv.org/abs/2405.14722)：根据数据分布自适应位置编码，提升 Transformer 超出训练窗口后的长度外推。
+- [Are Long-LLMs A Necessity For Long-Context Tasks?](https://arxiv.org/abs/2405.15318)：检验长上下文任务何时确实需要专门的 Long-LLM，并与检索或分解替代路线对比。
+- [Explaining Modern Gated-Linear RNNs via a Unified Implicit Attention Formulation](https://arxiv.org/abs/2405.16504)：用统一的隐式注意力形式解释 gated linear RNN，说明循环序列模型为何能支撑长上下文行为。
+- [Exploring Context Window of Large Language Models via Decomposed Positional Vectors](https://arxiv.org/abs/2405.18009)：分解位置向量以探测 LLM 上下文窗口如何编码 token 距离和可用长度。
+- [Mamba State-Space Models Can Be Strong Downstream Learners](https://arxiv.org/abs/2406.00209)：从 Lyapunov stability 解释 Mamba 递归动态在混合精度和参数高效微调下保持稳定，并用这些微调设置研究自然语言上下文学习。
+- [PyramidKV: Dynamic KV Cache Compression based on Pyramidal Information Funneling](https://arxiv.org/abs/2406.02069)：通过金字塔式信息汇聚压缩 KV cache，对近期或重要上下文保留更多细节。
+- [An Efficient Recipe for Long Context Extension via Middle-Focused Positional Encoding](https://arxiv.org/abs/2406.07138)：用中段聚焦的位置编码扩展上下文长度，直接缓解中间位置证据退化问题。
+- [Samba: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling](https://arxiv.org/abs/2406.07522)：结合状态空间与注意力机制，实现高效无限上下文语言建模。
+- [State Soup: In-Context Skill Learning, Retrieval and Mixing](https://arxiv.org/abs/2406.08423)：把 Mamba 的循环内部状态视为可检索、可线性混合的任务向量，用状态插值改进困惑度和上下文学习表现。
+- [Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference](https://arxiv.org/abs/2406.10774)：在解码时使用 query-aware sparse attention，让长上下文推理把计算集中到与当前查询最相关的 token。
+- [Watch Every Step! LLM Agent Learning via Iterative Step-level Process Refinement](https://arxiv.org/abs/2406.11176)：偏离本 Model 页主轴：它是迭代细化步骤级轨迹的智能体学习流程，而不是长上下文架构或缓存方法。
+- [Multimodal Needle in a Haystack: Benchmarking Long-Context Capability of Multimodal Large Language Models](https://arxiv.org/abs/2406.11230)：偏向 Bench：它提出多模态 needle-in-a-haystack 长上下文评测协议，而不是训练或推理方法。
+- [A Simple and Effective L\_2 Norm-Based Strategy for KV Cache Compression](https://arxiv.org/abs/2406.11430)：用 L2 范数重要性信号筛选或裁剪 KV cache 条目，而不是只依赖注意力分数。
+- [CItruS: Chunked Instruction-aware State Eviction for Long Sequence Modeling](https://arxiv.org/abs/2406.12018)：在分块边界用 instruction-aware 信号淘汰循环状态或缓存状态，以有限内存保留长序列信息。
+- [Attention Score is not All You Need for Token Importance Indicator in KV Cache Reduction: Value Also Matters](https://arxiv.org/abs/2406.12335)：指出 KV cache 压缩估计 token 重要性时还应利用 value 向量信息，而不能只看 attention score。
+- [Can Long-Context Language Models Subsume Retrieval, RAG, SQL, and More?](https://arxiv.org/abs/2406.13121)：评估长上下文 LLM 能否替代外部检索、RAG 和结构化查询组件，更像能力行为研究而非新模型配方。
+- [InstructRAG: Instructing Retrieval-Augmented Generation with Explicit Denoising](https://arxiv.org/abs/2406.13629)：用显式去噪指令训练检索增强生成模型。
+- [Investigating the Pre-Training Dynamics of In-Context Learning: Task Recognition vs. Task Learning](https://arxiv.org/abs/2406.14022)：分析预训练让模型从 demonstration 中识别任务，还是在上下文中真正学习任务，从机制层面解释 many-shot 长上下文使用。
+- [FutureNet-LoF: Joint Trajectory Prediction and Lane Occupancy Field Prediction with Future Context Encoding](https://arxiv.org/abs/2406.14422)：偏离 LLM 长上下文主轴：它把 future context encoding 用于自动驾驶轨迹和车道占用预测。
+- [Insights into LLM Long-Context Failures: When Transformers Know but Don't Tell](https://arxiv.org/abs/2406.14673)：分析长上下文 Transformer 内部已有所需证据却无法在生成中表达出来的失败模式。
+- [SampleAttention: Near-Lossless Acceleration of Long Context LLM Inference with Adaptive Structured Sparse Attention](https://arxiv.org/abs/2406.15486)：用自适应结构化稀疏注意力采样少量高价值 attention blocks，加速长上下文推理。
+- [Found in the Middle: Calibrating Positional Attention Bias Improves Long Context Utilization](https://arxiv.org/abs/2406.16008)：校准位置注意力偏置，让长提示中部证据获得更可用的注意力。
+- [Sparser is Faster and Less is More: Efficient Sparse Attention for Long-Range Transformers](https://arxiv.org/abs/2406.16747)：使用稀疏长程注意力模式降低 Transformer 成本，同时维持扩展序列中的信息流。
+- [Long Context Transfer from Language to Vision](https://arxiv.org/abs/2406.16852)：把语言模型的长上下文技巧迁移到视觉骨干网络，主要贡献是跨模态上下文扩展。
+- [MemServe: Context Caching for Disaggregated LLM Serving with Elastic Memory Pool](https://arxiv.org/abs/2406.17565)：为分离式 LLM serving 加入弹性 memory pool 进行 context caching，复用跨请求长提示。
+- [Following Length Constraints in Instructions](https://arxiv.org/abs/2406.17744)：偏离长上下文 Model 主轴：它研究输出长度约束的指令遵循行为，而不是扩展输入处理。
+- [LOOK-M: Look-Once Optimization in KV Cache for Efficient Multimodal Long-Context Inference](https://arxiv.org/abs/2406.18139)：通过一次性处理视觉上下文后减少冗余 KV-cache 使用，优化多模态长上下文推理。
+- [LoongTrain: Efficient Training of Long-Sequence LLMs with Head-Context Parallelism](https://arxiv.org/abs/2406.18485)：提出 head-context parallelism，使长序列 LLM 训练可同时拆分注意力头和上下文位置。
+- [Mixture of In-Context Experts Enhance LLMs' Long Context Awareness](https://arxiv.org/abs/2406.19598)：将长提示路由到多个 in-context experts，以增强模型对扩展输入中分散证据的感知。
+- [MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention](https://arxiv.org/abs/2407.02490)：在预填充阶段识别稀疏注意力模式，并用动态 kernel 加速长提示读入。
+- [Learning to (Learn at Test Time): RNNs with Expressive Hidden States](https://arxiv.org/abs/2407.04620)：研究在测试时学习的表达性隐状态 RNN，关联长上下文与自适应记忆模型。
+- [Attribute or Abstain: Large Language Models as Long Document Assistants](https://arxiv.org/abs/2407.07799)：评测长文档助手的证据归因和拒答能力，关注模型何时应引用证据或拒绝无依据回答。
+- [How Well Can a Long Sequence Model Model Long Sequences? Comparing Architectural Inductive Biases on Long-Context Abilities](https://arxiv.org/abs/2407.08112)：比较不同长序列模型的架构归纳偏置，检验哪些机制真正支撑长上下文能力。
+- [Human-inspired Episodic Memory for Infinite Context LLMs](https://arxiv.org/abs/2407.09450)：加入 episodic-memory retrieval 来近似无限上下文，在生成时存储并检索相关历史事件。
+- [Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](https://arxiv.org/abs/2407.11550)：在不同 head 或 layer 间自适应分配 KV-cache 预算，使淘汰策略保留长上下文推理最有用的 token。
+- [GoldFinch: High Performance RWKV/Transformer Hybrid with Linear Pre-Fill and Extreme KV-Cache Compression](https://arxiv.org/abs/2407.12077)：结合 RWKV 式循环与 Transformer 组件，实现线性预填充和激进 KV-cache 压缩。
+- [MEMO: Fine-grained Tensor Management For Ultra-long Context LLM Training](https://arxiv.org/abs/2407.12117)：在超长上下文训练中做细粒度 tensor 管理，在不改变目标函数的情况下降低显存压力。
+- [PQCache: Product Quantization-based KVCache for Long Context LLM Inference](https://arxiv.org/abs/2407.12820)：对 KV-cache tensor 做 product quantization，在压缩长上下文推理内存的同时保留近似注意力信息。
+- [LazyLLM: Dynamic Token Pruning for Efficient Long Context LLM Inference](https://arxiv.org/abs/2407.14057)：在长上下文推理中动态裁剪低重要性 token，让后续层处理更短的有效序列。
+- [Longhorn: State Space Models are Amortized Online Learners](https://arxiv.org/abs/2407.14207)：将状态空间模型解释为摊销在线学习器，为长序列建模提供理论与架构证据。
+- [ReAttention: Training-Free Infinite Context with Finite Attention Scope](https://arxiv.org/abs/2407.15176)：在有限注意力范围内复用筛选出的历史状态，无需额外训练近似无限上下文行为。
+- [Stress-Testing Long-Context Language Models with Lifelong ICL and Task Haystack](https://arxiv.org/abs/2407.16695)：偏向 Bench：它压力测试 lifelong in-context learning 和 task-haystack 检索，而不是提出新模型机制。
+- [Efficient Solutions For An Intriguing Failure of LLMs: Long Context Window Does Not Mean LLMs Can Analyze Long Sequences Flawlessly](https://arxiv.org/abs/2408.01866)：针对大窗口模型仍不能稳定分析长序列的失败模式，提出面向序列分析的高效补救方案。
+- [Spatio-temporal Partial Sensing Forecast of Long-term Traffic](https://arxiv.org/abs/2408.02689)：偏离 LLM 长上下文主轴：它用时空建模处理部分感知条件下的交通预测。
+- [NACL: A General and Effective KV Cache Eviction Framework for LLM at Inference Time](https://arxiv.org/abs/2408.03675)：提出通用的推理时 KV-cache 淘汰框架，在降低长上下文内存的同时保持生成质量。
+- [Tree Attention: Topology-aware Decoding for Long-Context Attention on GPU clusters](https://arxiv.org/abs/2408.04093)：用 topology-aware attention 调度在 GPU 集群上组织长上下文解码。
+- [MambaVT: Spatio-Temporal Contextual Modeling for Robust RGB-T Tracking](https://arxiv.org/abs/2408.07889)：偏离本页主轴：它将 Mamba 式时空建模用于 RGB-T 目标跟踪，而非 LLM 上下文扩展。
+- [ReMamba: Equip Mamba with Effective Long-Sequence Modeling](https://arxiv.org/abs/2408.15496)：改造 Mamba 以增强长序列建模能力，将状态空间循环作为长上下文骨干替代路线。
+- [Dolphin: Long Context as a New Modality for Energy-Efficient On-Device Language Models](https://arxiv.org/abs/2408.15518)：把长上下文视为部署模态，优化端侧语言模型的能耗和扩展上下文推理。
+- [Self-Alignment: Improving Alignment of Cultural Values in LLMs via In-Context Learning](https://arxiv.org/abs/2408.16482)：偏离长上下文 Model 主轴：它用上下文学习做文化价值对齐，而非长输入架构或记忆。
+- [Learning to Plan Long-Term for Language Modeling](https://arxiv.org/abs/2409.00070)：为语言建模加入长程规划信号，以改善跨更长依赖的生成。
 - [LongRecipe](https://arxiv.org/abs/2409.00509)：高效长上下文泛化训练 recipe，结合模拟长序列输入、位置索引变换和训练优化。
+- [Self-evolving Agents with reflective and memory-augmented abilities](https://arxiv.org/abs/2409.00872)：偏离 Model 页主轴：它是带反思和记忆增强的智能体工作流，不是基础模型上下文扩展方法。
+- [VideoLLaMB: Long-context Video Understanding with Recurrent Memory Bridges](https://arxiv.org/abs/2409.01071)：用 recurrent memory bridges 在长视频片段之间传递信息，服务于视频语言理解。
+- [Prompt Compression with Context-Aware Sentence Encoding for Fast and Improved LLM Inference](https://arxiv.org/abs/2409.01227)：用上下文感知句子编码压缩提示，在减少 token 的同时保留关键句级信息。
+- [In Defense of RAG in the Era of Long-Context Language Models](https://arxiv.org/abs/2409.01666)：比较 RAG 与纯长上下文提示，说明检索在效率和证据选择上仍有价值。
+- [Late Chunking: Contextual Chunk Embeddings Using Long-Context Embedding Models](https://arxiv.org/abs/2409.04701)：先用长上下文嵌入模型编码整篇文档再切块，使 chunk 向量继承周边语境。
+- [Untie the Knots: An Efficient Data Augmentation Strategy for Long-Context Pre-Training in Language Models](https://arxiv.org/abs/2409.04774)：构造增强型长上下文预训练样本，以减少长序列中的纠缠或误导性依赖。
+- [InstInfer: In-Storage Attention Offloading for Cost-Effective Long-Context LLM Inference](https://arxiv.org/abs/2409.04992)：把 attention 计算卸载到存储侧硬件，以降低长上下文推理成本。
+- [Enhancing Long Video Understanding via Hierarchical Event-Based Memory](https://arxiv.org/abs/2409.06299)：将长视频表示为分层事件记忆，让视频模型检索时间上相关的片段。
+- [Mamba-YOLO-World: Marrying YOLO-World with Mamba for Open-Vocabulary Detection](https://arxiv.org/abs/2409.08513)：偏离 LLM 长上下文主轴：它把 Mamba 集成到开放词表目标检测器中。
+- [CoMamba: Real-time Cooperative Perception Unlocked with State-Space Models](https://arxiv.org/abs/2409.10699)：偏离本页主轴：它将状态空间模型用于实时协同感知。
+- [A Controlled Study on Long Context Extension and Generalization in LLMs](https://arxiv.org/abs/2409.12181)：对上下文扩展 recipe 做受控比较，区分更长窗口拟合和真正长度泛化。
+- [Evaluating the Performance and Robustness of LLMs in Materials Science Q&A and Property Predictions](https://arxiv.org/abs/2409.14572)：偏离长上下文 Model 主轴：它评测材料科学问答和性质预测中的 LLM 鲁棒性。
+- [EchoAtt: Attend, Copy, then Adjust for More Efficient Large Language Models](https://arxiv.org/abs/2409.14595)：通过 attend-copy-adjust 模式复用既有注意力结果，减少重复计算。
+- [Parse Trees Guided LLM Prompt Compression](https://arxiv.org/abs/2409.15395)：利用 parse tree 结构决定保留或压缩哪些提示片段，在短上下文中保留句法线索。
+- [Mnemosyne: Parallelization Strategies for Efficiently Serving Multi-Million Context Length LLM Inference Requests Without Approximations](https://arxiv.org/abs/2409.17264)：通过并行化策略服务百万级 token 上下文，实现无近似的长上下文推理。
+- [Discovering the Gems in Early Layers: Accelerating Long-Context LLMs with 1000x Input Token Reduction](https://arxiv.org/abs/2409.17422)：在早期层选择信息量高的 token，将输入大幅压缩后再进入后续长上下文计算。
+- [Role-RL: Online Long-Context Processing with Role Reinforcement Learning for Distinct LLMs in Their Optimal Roles](https://arxiv.org/abs/2409.18014)：把无限长文档处理建模为 Online Long-context Processing 流水线，并用 Role-RL 根据实际表现和成本把不同 LLM 分配到各自角色。
+- [Leveraging Long-Context Large Language Models for Multi-Document Understanding and Summarization in Enterprise Applications](https://arxiv.org/abs/2409.18454)：偏离模型方法主轴：它讨论企业多文档摘要部署流程和法律、HR、财务等案例，而不是新的长上下文架构。
+- [MaskMamba: A Hybrid Mamba-Transformer Model for Masked Image Generation](https://arxiv.org/abs/2409.19937)：偏离 LLM 长上下文主轴：它在 masked image generator 中重设计双向 Mamba，用标准卷积和拼接增强全局视觉上下文。
+- [A Little Goes a Long Way: Efficient Long Context Training and Inference with Partial Contexts](https://arxiv.org/abs/2410.01485)：LongGen 在长度扩展训练中同时引入 GPU 友好的稀疏 KV-cache 路线，结合窗口、sink 和 blockwise attention。
+- [Bridging Context Gaps: Leveraging Coreference Resolution for Long Contextual Understanding](https://arxiv.org/abs/2410.01671)：用 Long Question Coreference Adaptation 解析子文档指代、替换 mention，让 LLM 更容易追踪长上下文 QA 证据。
+- [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads](https://arxiv.org/abs/2410.01805)：训练 retaining heads 估计 KV-cache 单元的因果重要性，形成兼容 chunked prefill 的淘汰策略，可在消费级 GPU 上支持 128K 级推理。
+- [L-CiteEval: Do Long-Context Models Truly Leverage Context for Responding?](https://arxiv.org/abs/2410.02115)：偏向 Bench：它用 8K 到 48K token 的 11 类任务评估长上下文模型回答是否引用并真正依赖给定证据。
+- [How to Train Long-Context Language Models (Effectively)](https://arxiv.org/abs/2410.02660)：系统研究 ProLong 的继续预训练和 SFT 选择，指出代码与书籍数据需搭配高质量短上下文数据，且 SFT 后评测更能暴露可用长上下文能力。
+- [Compute Or Load KV Cache? Why Not Both?](https://arxiv.org/abs/2410.03065)：提出 Cake 前缀缓存服务系统，通过双向调度并行重算和加载 KV cache，降低长上下文 prefill 延迟。
+- [MELODI: Exploring Memory Compression for Long Contexts](https://arxiv.org/abs/2410.03156)：在层与上下文窗口之间构建短期和长期分层记忆压缩，相比密集 Memorizing Transformer 降低内存同时保留长文档表现。
+- [ALR2: A Retrieve-then-Reason Framework for Long-context Question Answering](https://arxiv.org/abs/2410.03227)：在推理前加入中间检索步骤收集稀疏证据，并专门处理长上下文 QA 中“检索事实”幻觉导致的错误推理。
+- [TableRAG: Million-Token Table Understanding with Language Models](https://arxiv.org/abs/2410.04739)：通过 query expansion 以及 schema 和 cell retrieval 缩短百万 token 表格输入，并基于 Arcade 和 BIRD-SQL 构造表格理解评测。
+- [Stuffed Mamba: State Collapse and State Capacity of RNN-Based Long-Context Modeling](https://arxiv.org/abs/2410.07145)：研究基于 RNN 的长上下文模型中的状态坍缩与状态容量。
+- [On the token distance modeling ability of higher RoPE attention dimension](https://arxiv.org/abs/2410.08703)：识别高维 RoPE 中专门处理长距离交互的 positional heads，并通过消融说明它们对长度外推至关重要。
+- [Parameter-Efficient Fine-Tuning of State Space Models](https://arxiv.org/abs/2410.09016)：系统测试 Mamba 式 SSM 的 PEFT，并提出面向 SSM 模块的 Sparse Dimension Tuning，同时在线性投影上搭配 LoRA。
+- [LLM×MapReduce: Simplified Long-Sequence Processing using Large Language Models](https://arxiv.org/abs/2410.09342)：采用免训练分治协议，将长文档切块读取、记录跨块结构化信息，再聚合中间答案。
+- [Divide, Reweight, and Conquer: A Logit Arithmetic Approach for In-Context Learning](https://arxiv.org/abs/2410.10074)：把 many-shot demonstration 拆成可并行的短组，并用 logit arithmetic reweighting 合并预测，降低 ICL 内存成本。
+- [DuoAttention: Efficient Long-Context LLM Inference with Retrieval and Streaming Heads](https://arxiv.org/abs/2410.10819)：区分保留全量 KV cache 的 retrieval heads 与使用固定长度 cache 的 streaming heads，在不丢失长程检索头的情况下降低 prefill 和解码成本。
+- [Lossless KV Cache Compression to 2%](https://arxiv.org/abs/2410.15252)：提出 Cross-Layer Latent Attention，将 head 和维度缩减、跨层共享与量化结合，在多项任务上把 KV cache 压到 2% 以下。
+- [Residual vector quantization for KV cache compression in large language model](https://arxiv.org/abs/2410.15704)：把 residual vector quantization 用于 key 和 value projection，通过分组 channel 与 EMA codebook 在残差深度 8 时恢复大部分未压缩性能。
+- [LongRAG: A Dual-Perspective Retrieval-Augmented Generation Paradigm for Long-Context Question Answering](https://arxiv.org/abs/2410.18050)：提出可插拔的双视角 RAG 范式，同时保留全局长上下文结构和局部事实细节，用于多跳长上下文 QA。
+- [Why Does the Effective Context Length of LLMs Fall Short?](https://arxiv.org/abs/2410.18745)：把有效上下文不足归因于相对位置曝光分布偏斜，并提出免训练的 STRING 位置平移来增强远距离证据利用。
+- [LongReward: Improving Long-context Large Language Models with AI Feedback](https://arxiv.org/abs/2410.21252)：用现成 LLM 从 helpfulness、logicality、faithfulness 和 completeness 四个维度给长上下文回答打分，再结合 DPO 改进长上下文 SFT 模型。
+- [Toward Understanding In-context vs. In-weight Learning](https://arxiv.org/abs/2410.23042)：用理论与实验说明数据分布如何让 Transformer 在训练或微调中切换到 in-context predictor 或 in-weight predictor。
+- [Video Token Merging for Long-form Video Understanding](https://arxiv.org/abs/2410.23782)：把 token merging 扩展到长视频，除相似度外引入 token saliency，避免简单抽帧或丢 token 带来的信息损失。
+- [Birdie: Advancing State Space Models with Reward-Driven Objectives and Curricula](https://arxiv.org/abs/2411.01030)：通过双向输入处理和强化学习优化的预训练目标混合提升 SSM 检索能力，而不改变核心架构。
+- [SV-RAG: LoRA-Contextualizing Adaptation of MLLMs for Long Document Understanding](https://arxiv.org/abs/2411.01106)：让 MLLM 自身检索相关文档页面，并用检索和问答两个 LoRA adapter 分别适配长文档理解。
+- [Context Parallelism for Scalable Million-Token Inference](https://arxiv.org/abs/2411.01783)：提出 pass-KV 和 pass-Q 两种精确 ring-attention context parallelism，在最多 128 张 H100 上扩展百万 token prefill。
+- [TI-PREGO: Chain of Thought and In-Context Learning for Online Mistake Detection in PRocedural EGOcentric Videos](https://arxiv.org/abs/2411.02570)：偏离 LLM 长上下文主轴：它通过比较当前识别动作和未来步骤预测，在 egocentric video 中在线检测开放集流程错误。
+- [On the loss of context-awareness in general instruction fine-tuning](https://arxiv.org/abs/2411.02688)：指出 SFT 后套用 chat template 会让注意力偏向对话角色，从而损失上下文感知，并通过 attention head steering 进行验证。
+- [TokenSelect: Efficient Long-Context Inference and Length Extrapolation for LLMs via Dynamic Token-Level KV Cache Selection](https://arxiv.org/abs/2411.02886)：用 QK dot product 和 per-head soft voting 选择关键 KV-cache token，并利用相邻 query 相似性构建 selection cache。
+- [Selective State Space Model for Monaural Speech Enhancement](https://arxiv.org/abs/2411.06217)：偏离 LLM 长上下文主轴：MambaDC 结合卷积局部建模与 Mamba 长程依赖，用于单通道语音增强。
+- [LIFBench: Evaluating the Instruction Following Performance and Stability of Large Language Models in Long-Context Scenarios](https://arxiv.org/abs/2411.07037)：偏向 Bench：它用 2,766 条扩展指令和基于规则的 LIFEval 评估长上下文指令遵循与稳定性。
+- [Squeezed Attention: Accelerating Long Context Length LLM Inference](https://arxiv.org/abs/2411.09688)：离线聚类固定上下文的 keys，并在推理时用 centroid 匹配选择相关缓存 keys，适合重复长提示工作负载。
+- [MetaLA: Unified Optimal Linear Approximation to Softmax Attention Map](https://arxiv.org/abs/2411.10741)：推导最优线性注意力的条件，并提出 Meta Linear Attention 兼顾动态记忆、静态近似和少参数近似。
+- [Selective Attention: Enhancing Transformer through Principled Context Control](https://arxiv.org/abs/2411.12892)：在 self-attention 中加入依赖 query 与位置的温度缩放，让每个 query 控制上下文稀疏度并缓解 attention dilution。
+- [LLMSteer: Improving Long-Context LLM Inference by Steering Attention on Reused Contexts](https://arxiv.org/abs/2411.13009)：用免微调、query-independent 的 attention steering 处理复用上下文，在降低运行延迟的同时改善长上下文推理。
+- [Best of Both Worlds: Advantages of Hybrid Graph Sequence Models](https://arxiv.org/abs/2411.15671)：偏离 LLM 长上下文主轴：它把图序列模型形式化为 tokenization、local encoding 和 global sequence encoding 三步，用于图学习。
+- [KVPR: Efficient LLM Inference with I/O-Aware KV Cache Partial Recomputation](https://arxiv.org/abs/2411.17089)：通过 I/O-aware partial recomputation 处理被卸载到 CPU 内存的 KV cache，避免 PCIe 带宽成为解码瓶颈。
+- [Star Attention: Efficient LLM Inference over Long Sequences](https://arxiv.org/abs/2411.17116)：采用两阶段 block-sparse 方案，先并行处理 blockwise-local 上下文，再让 query 和 response token 进行 sequence-global attention。
+- [Marconi: Prefix Caching for the Era of Hybrid LLMs](https://arxiv.org/abs/2411.19379)：把 prefix caching 适配到 attention-recurrent 混合 LLM，通过考虑循环状态更新和复用预测的准入、淘汰策略提升缓存收益。
+- [VISTA: Enhancing Long-Duration and High-Resolution Video Understanding by VIdeo SpatioTemporal Augmentation](https://arxiv.org/abs/2412.00927)：通过时空组合已有视频生成 VISTA-400K，为长时长和高分辨率视频 LMM 提供合成指令数据。
+- [CNNSum: Exploring Long-Context Summarization with Large Language Models in Chinese Novels](https://arxiv.org/abs/2412.02819)：偏向基准与分析：它构建 16K 到 128K 的中文小说长上下文摘要集，并研究提示、模型规模和异常摘要输出。
+- [Unifying KV Cache Compression for Large Language Models with LeanKV](https://arxiv.org/abs/2412.03131)：以 DiffKV 形式区分 key 与 value、token 重要性和 head 稀疏模式，对 KV cache 做差异化内存管理。
+- [Fast and flexible long-range models for atomistic machine learning.](https://arxiv.org/abs/2412.03281)：偏离 LLM 长上下文主轴：它把 Ewald 类长程相互作用算法接入 atomistic ML，而不是扩展语言模型上下文。
+- [Gated Delta Networks: Improving Mamba2 with Delta Rule](https://arxiv.org/abs/2412.06464)：结合用于快速记忆擦除的 gating 与用于定向更新的 delta rule，形成 Gated DeltaNet 和混合层，提升长上下文检索与长度外推。
+- [Breaking the Stage Barrier: A Novel Single-Stage Approach to Long Context Extension for Large Language Models](https://arxiv.org/abs/2412.07171)：提出 HARPE，用 head-adaptive RoPE base frequencies 直接在目标长度做单阶段继续训练，减少多阶段长度扩展调参。
+- [EMS: Adaptive Evict-then-Merge Strategy for Head-wise KV Cache Compression Based on Global-Local Importance](https://arxiv.org/abs/2412.08521)：按 head 先淘汰再合并 KV cache token，结合全局与局部重要性，避免只看累计注意力分数的偏差。
+- [ZigZagkv: Dynamic KV Cache Compression for Long-context Modeling based on Layer Uncertainty](https://arxiv.org/abs/2412.09036)：根据 layer uncertainty 为不同层分配 KV-cache 预算，在保留关键层信息的同时把缓存降到全量 KV 的约五分之一。
+- [SCBench: A KV Cache-Centric Analysis of Long-Context Methods](https://arxiv.org/abs/2412.10319)：偏向 Bench：SharedContextBench 围绕共享上下文任务评估 KV cache 生成、压缩、检索和加载的完整生命周期。
+- [LIFT: Improving Long Context Understanding Through Long Input Fine-Tuning](https://arxiv.org/abs/2412.13626)：在测试时用 Long Input Fine-Tuning 让短上下文模型针对当前长输入适配参数，并可结合上下文示例和预先监督微调处理 LooGLE、LongBench 类任务。
+- [SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation](https://arxiv.org/abs/2412.13649)：把 KV cache 策略拆成预填充和解码两阶段，预填充阶段保留完整上下文，长输出解码阶段再用滑动 heavy-hitter 选择压缩缓存。
+- [Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference](https://arxiv.org/abs/2412.13663)：提出 ModernBERT，在 2T token 上训练并原生支持 8192 token 序列，用于长上下文分类和单向量或多向量检索。
+- [Revisiting In-Context Learning with Long Context Language Models](https://arxiv.org/abs/2412.16926)：在 18 个数据集上重测 many-shot 上下文学习，发现当长上下文模型能放入大量示例时，随机示例选择常可接近复杂选择器。
+- [Fourier Position Embedding: Enhancing Attention's Periodic Extension for Length Generalization](https://arxiv.org/abs/2412.17739)：把 RoPE 解释为基于非均匀傅里叶变换的周期注意力，并用 Fourier Position Embedding 屏蔽破坏性频率以提升长度泛化。
+- [Long-Form Speech Generation with Spoken Language Models](https://arxiv.org/abs/2412.18603)：提出线性时间的 SpeechSSM，让语音语言模型无需文本中介即可在一次解码中生成多分钟语音。
+- [DCIS: Efficient Length Extrapolation of LLMs via Divide-and-Conquer Scaling Factor Search](https://arxiv.org/abs/2412.18811)：在微调前用 divide-and-conquer incremental search 搜索 RoPE 缩放因子，降低目标长度初始化误差和上下文扩展后的性能衰减。
+- [Bootstrap Your Own Context Length](https://arxiv.org/abs/2412.18860)：用短上下文模型、检索器和文档集合合成长上下文指令数据，再微调 Llama-3 系模型以扩展可用上下文窗口。
+- [TokenRing: An Efficient Parallelism Framework for Infinite-Context LLMs via Bidirectional Communication](https://arxiv.org/abs/2412.20501)：用细粒度序列并行和双向通信缓解 Ring-Attention 的通信瓶颈，服务于无限上下文 LLM 处理。
+- [System Optimizations for Enabling Training of Extreme Long Sequence Transformer Models](https://doi.org/10.1109/ipdpsw63119.2024.00208)：面向极长序列 Transformer 训练的系统优化，重点处理超出普通上下文长度后出现的 activation memory 和并行执行瓶颈。
+- [LONGAGENT: Achieving Question Answering for 128k-Token-Long Documents through Multi-Agent Collaboration](https://doi.org/10.18653/v1/2024.emnlp-main.912)：Agent Harness 迁移候选：用 divide-and-conquer 的 leader 与 member agents、以及成员间通信，在 128k token 文档上完成问答。
+- [Memorize Step by Step: Efficient Long-Context Prefilling with Incremental Memory and Decremental Chunk](https://doi.org/10.18653/v1/2024.emnlp-main.1169)：在预填充阶段使用 Incremental Memory 和 Decremental Chunk，逐步增大记忆预算并缩小 chunk，以降低 GPU 显存并加速长上下文 prefill。
+- [VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](https://arxiv.org/abs/2501.00574)：结合 HiCo 从 clip 到 video 的层级视频 token 压缩、短到长训练、长视频数据和评测，使视频 MLLM 以约 1/50 token 成本处理长视频。
+- [AdaSkip: Adaptive Sublayer Skipping for Accelerating Long-Context LLM Inference](https://arxiv.org/abs/2501.02336)：提出 AdaSkip，通过自适应子层跳过加速长上下文 LLM 的 prefill 与 decoding。
+- [S2 Chunking: A Hybrid Framework for Document Segmentation Through Integrated Spatial and Semantic Analysis](https://arxiv.org/abs/2501.05485)：把版面结构、边界框和文本嵌入构造成图并做谱聚类，用更连贯的文档分块支撑长文档检索输入。
+- [MPCache: MPC-Friendly KV Cache Eviction for Efficient Private Large Language Model Inference](https://arxiv.org/abs/2501.06807)：面向隐私推理设计 KV 淘汰，先用 look-once 静态剪枝移除不重要历史，再用 query-aware 动态选择激活少量 KV 做安全注意力计算。
+- [PRESERVE: Prefetching Model Weights and KV-Cache in Distributed LLM Serving](https://arxiv.org/abs/2501.08192)：在通信期间把模型权重和 KV cache 从片外 HBM 预取到加速器片上缓存，以降低分布式长上下文服务延迟。
+- [MANTA: Diffusion Mamba for Efficient and Effective Stochastic Long-Term Dense Anticipation](https://arxiv.org/abs/2501.08837)：用具备长程时间感受野的 Diffusion Mamba 网络，在远距离已观测与未来视频事件之间建模随机密集动作预测。
+- [Lost in Translation, Found in Context: Sign Language Translation with Contextual Cues](https://arxiv.org/abs/2501.09754)：微调基于 LLM 的手语翻译系统，把视觉手语特征与节目字幕、前句翻译和 pseudo-gloss 上下文提示联合输入。
+- [Efficient Prompt Compression with Evaluator Heads for Long-Context Transformer Inference](https://arxiv.org/abs/2501.12959)：识别能在预填充早期挑选长输入关键 token 的 evaluator heads，再只把重要 token 送入后续模型实现免训练提示压缩。
+- [PISCO: Pretty Simple Compression for Retrieval-Augmented Generation](https://arxiv.org/abs/2501.16075)：用文档问题上的序列级蒸馏训练 RAG 压缩提示，在无需预训练或标注数据的情况下实现高倍率文档压缩。
+- [Cache Me If You Must: Adaptive Key-Value Quantization for Large Language Models](https://arxiv.org/abs/2501.19392)：提出自适应 KV 量化以降低长输出和长上下文推理内存开销。
+- [FastKV: KV Cache Compression for Fast Long-Context Processing with Token-Selective Propagation](https://arxiv.org/abs/2502.01068)：把预填充上下文缩减和解码 KV 预算解耦，先完整计算到 token-selective propagation 层，再只把稳定重要 token 传给后续层。
+- [Intrinsic Entropy of Context Length Scaling in LLMs](https://arxiv.org/abs/2502.01481)：把内在熵与大模型上下文长度扩展联系起来。
+- [APE](https://arxiv.org/abs/2502.05431): 用自适应并行编码实现更快、更长的上下文增强生成，扩展长上下文推理控制。
+- [Expect the Unexpected: FailSafe Long Context QA for Finance](https://arxiv.org/abs/2502.06329)：偏评测型条目：扰动金融查询和上传文档，并用鲁棒性、上下文扎根性和合规性分数暴露长上下文问答失败模式。
+- [Exploiting Sparsity for Long Context Inference: Million Token Contexts on Commodity GPUs](https://arxiv.org/abs/2502.06766)：在每个生成步用 top-k 稀疏注意力只关注最相关 token，使普通 GPU 上的百万 token Transformer 推理成为可能。
+- [A Cost-Effective Near-Storage Processing Solution for Offline Inference of Long-Context LLMs](https://arxiv.org/abs/2502.09921)：把离线批量推理卸载到主机内存和存储层，针对随 batch size 与上下文长度增长的 KV cache I/O 瓶颈。
+- [QuantSpec: Self-Speculative Decoding with Hierarchical Quantized KV Cache](https://arxiv.org/abs/2502.10424)：结合自投机解码、层级 4-bit 量化 KV cache 和量化草稿权重，加速边缘设备上的长上下文解码。
+- [Lost in the Passage: Passage-level In-context Learning Does Not Necessarily Need a "Passage"](https://arxiv.org/abs/2502.10634)：通过注意力和信息流分析显示 passage-level 示例中的篇章文本常贡献很少信号，提示可用更短示例上下文替代。
+- [AdaSplash: Adaptive Sparse Flash Attention](https://arxiv.org/abs/2502.12082)：围绕 alpha-entmax 实现自适应稀疏 Flash Attention，用 hybrid Halley-bisection 求解器和稀疏 GPU kernel 把数据相关稀疏性转化为实际运行收益。
+- [Tactic](https://arxiv.org/abs/2502.12216)：按累计注意力质量自适应选择稀疏注意力 token，在不依赖固定 token 预算的情况下降低长上下文解码成本。
+- [HeadInfer: Memory-Efficient LLM Inference by Head-wise Offloading](https://arxiv.org/abs/2502.12574)：按注意力头粒度卸载 KV cache，支持百万 token 级内存高效推理。
+- [LongFaith](https://arxiv.org/abs/2502.12583)：用忠实合成数据提升长上下文推理，把数据构造纳入可靠长上下文能力的模型侧路径。
+- [LongPO: Long Context Self-Evolution of Large Language Models through Short-to-Long Preference Optimization](https://arxiv.org/abs/2502.13922)：自生成短上下文与长上下文成对偏好数据，并加入 short-to-long KL 约束，把短上下文对齐能力迁移到长上下文任务且尽量不损害短上下文表现。
+- [ParallelComp](https://arxiv.org/abs/2502.14317)：通过并行长上下文压缩实现长度外推，将压缩机制直接连接到扩展上下文建模。
+- [LServe](https://arxiv.org/abs/2502.14866): 用统一稀疏注意力高效服务长序列 LLM，将推理基础设施与长上下文能力相连。
+- [LLM-Microscope](https://arxiv.org/abs/2502.15007)：研究标点在 Transformer 上下文记忆中的隐性作用。核心思想：揭示细小文本标记如何影响模型在上下文中的保持与检索。
+- [Sliding Window Attention Training](https://arxiv.org/abs/2502.18845): 用滑动窗口注意力训练高效大语言模型，以有界计算支持长上下文处理。
+- [LongRoPE2: Near-Lossless LLM Context Window Scaling](https://arxiv.org/abs/2502.20082)：用 needle-driven 进化搜索重缩放 RoPE，并配合混合窗口微调，在扩展有效上下文长度的同时保留短上下文性能。
+- [FlexPrefill: A Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence Inference](https://arxiv.org/abs/2502.20766)：按输入和注意力头动态选择稀疏预填充模式，结合 Jensen-Shannon query 路由与累计注意力索引选择。
+- [Efficient Long Context Fine-tuning with Chunk Flow](https://arxiv.org/abs/2503.02356)：用 Chunk Flow 调度长上下文监督微调，把长短混合序列与分布式训练资源匹配起来。
+- [OkraLong: A Flexible Retrieval-Augmented Framework for Long-Text Query Processing](https://arxiv.org/abs/2503.02603)：结合检索与上下文压缩优化长文本查询处理，同时降低整篇输入成本和迭代检索开销。
+- [Q-Filters: Leveraging QK Geometry for Efficient KV Cache Compression](https://arxiv.org/abs/2503.02812)：利用 query-key 几何近似 token 重要性，在自回归生成中筛选 KV cache 条目完成压缩。
+- [Layer-Specific Scaling of Positional Encodings for Superior Long-Context Modeling](https://arxiv.org/abs/2503.04355)：对不同层应用不同 RoPE 缩放，减缓长距离位置衰减并改善上下文中部证据利用。
+- [Slim attention: cut your context memory in half without loss of accuracy - K-cache is all you need for MHA](https://arxiv.org/abs/2503.05840)：在多头注意力中只保留 key cache，把 MHA 长上下文推理的上下文显存减半且基本不损失精度。
+- [Context-aware Biases for Length Extrapolation](https://arxiv.org/abs/2503.08067)：加入随输入变化的相对位置偏置，使长度外推能适配当前上下文，而不是依赖固定线性或全局学习偏置。
+- [Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse Attention](https://arxiv.org/abs/2503.08640)：用动态 block-sparse attention 支撑 many-shot 上下文学习，降低每个样本检索定制 demonstration 集的推理成本。
+- [LLMs Know What to Drop: Self-Attention Guided KV Cache Eviction for Efficient Long-Context Inference](https://arxiv.org/abs/2503.08879)：利用自注意力信号剔除低价值 KV cache，以提升长上下文推理效率。
+- [KV-Distill: Nearly Lossless Learnable Context Compression for LLMs](https://arxiv.org/abs/2503.10337)：训练参数高效适配器，把长上下文 KV cache 蒸馏成更短且与问题无关的表示，并用压缩 cache 学生和完整 cache 教师目标对齐输出。
+- [Kolmogorov-Arnold Attention: Is Learnable Attention Better For Vision Transformers?](https://arxiv.org/abs/2503.10632)：相邻序列建模条目：在 Vision Transformer 中测试可学习的 Kolmogorov-Arnold attention 进行 token 交互，并非直接扩展 LLM 上下文窗口。
+- [ZSMerge: Zero-Shot KV Cache Compression for Memory-Efficient Long-Context LLMs](https://arxiv.org/abs/2503.10714)：通过零样本 KV cache 合并实现长上下文 LLM 的内存高效推理。
+- [Time and Memory Trade-off of KV-Cache Compression in Tensor Transformer Decoding](https://arxiv.org/abs/2503.11108)：分析 tensor Transformer 解码中 KV cache 压缩的下界以及计算和显存权衡。
+- [X-EcoMLA: Upcycling Pre-Trained Attention into MLA for Efficient and Extreme KV Compression](https://arxiv.org/abs/2503.11132)：把预训练多头注意力 upcycle 成 multi-head latent attention，缓存低秩 latent KV 表征以减少显存且避免从头预训练。
+- [Test-Time Training Provably Improves Transformers as In-context Learners](https://arxiv.org/abs/2503.11842)：研究在当前提示的 demonstration 上做梯度式 test-time training，解释更新 Transformer 权重为何能提升上下文学习。
+- [CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences](https://arxiv.org/abs/2503.12491)：根据空间和时间维度的注意力动态为各层分配 KV-cache 预算，再在全局内存约束下级联执行分层淘汰。
+- [RWKV-7 "Goose" with Expressive Dynamic State Evolution](https://arxiv.org/abs/2503.14456)：用向量门控、上下文内学习率和放宽的 value replacement 泛化 delta rule，让常数内存序列建模保持更强表达力。
+- [Ranked Memory-Augmented Retrieval](https://arxiv.org/abs/2503.14800)：为 long-context modeling 动态排序 memory entries，补充面向长上下文推理的 retrieval-memory 路线。
+- [BitDecoding: Unlocking Tensor Cores for Long-Context LLMs with Low-Bit KV Cache](https://arxiv.org/abs/2503.18773)：把低比特 KV-cache 解码搬到 Tensor Cores 上执行，缓解长上下文生成中的带宽压力与 CUDA core 利用不足。
+- [EdgeInfinite: A Memory-Efficient Infinite-Context Transformer for Edge Devices](https://arxiv.org/abs/2503.22196)：面向边缘设备改造 Transformer 长上下文推理，用内存高效的无限上下文处理避免长输出任务中的不可逆 token 淘汰。
+- [SQuat: Subspace-orthogonal KV Cache Quantization](https://arxiv.org/abs/2503.24358)：采用 subspace-orthogonal KV cache 量化，降低生成上下文变长时的量化误差累积。
+- [Strategize Globally, Adapt Locally: A Multi-Turn Red Teaming Agent with Dual-Level Learning](https://arxiv.org/abs/2504.01278)：Agent Safety 与 Agent Harness 迁移候选：多轮红队智能体同时学习全局攻击策略和局部提示适配。
+- [InfiniteICL: Breaking the Limit of Context Window Size via Long Short-term Memory Transformation](https://arxiv.org/abs/2504.01707)：把筛选出的上下文知识转化为更长期的参数更新，在缩短提示长度的同时保持超长上下文任务表现。
+- [Efficient Constant-Space Multi-vector Retrieval](https://arxiv.org/abs/2504.01818)：把每篇文档编码为固定数量向量，用常数空间文档表示替代 ColBERT 式逐 token 向量存储。
+- [Why Do LLMs Attend to the First Token?](https://arxiv.org/abs/2504.02732)：解释 attention sink 的形成及其在流式注意力、量化和长上下文安全行为中的作用。
+- [AIBrix: Towards Scalable, Cost-Effective Large Language Model Inference Infrastructure](https://arxiv.org/abs/2504.03648)：Serving infrastructure 迁移候选：面向 vLLM 等推理引擎共同设计的云原生框架，用于降低大规模 LLM 部署成本。
+- [Gating is Weighting: Understanding Gated Linear Attention through In-context Learning](https://arxiv.org/abs/2504.04308)：把 gated linear attention 分析为加权式上下文学习器，连接 GLA、Mamba 和 RWKV 式 gating 与高效循环解码。
+- [Lattice: Learning to Efficiently Compress the Memory](https://arxiv.org/abs/2504.05646)：用梯度推导的循环更新把 KV memory 压缩到固定 memory slots，并只写入与当前 slot 状态正交的非冗余信息。
+- [From 128K to 4M: Efficient Training of Ultra-Long Context Large Language Models](https://arxiv.org/abs/2504.06214)：将超长上下文 LLM 从 128K 高效训练到 4M token，扩展模型侧上下文缩放路线。
+- [SWAN-GPT: An Efficient and Scalable Approach for Long-Context Language Modeling](https://arxiv.org/abs/2504.08719)：交替使用 NoPE 与滑窗 RoPE 层，使 decoder-only 语言模型能更高效地外推到更长上下文。
+- [Long Context In-Context Compression by Getting to the Gist of Gisting](https://arxiv.org/abs/2504.08934)：分析短指令 gisting 为何不适合长上下文，并改造 in-context compression，使 gist tokens 在不改 decoder 架构的情况下保留文档信息。
+- [Shared Disk KV Cache Management for Efficient Multi-Instance Inference in RAG-Powered LLMs](https://arxiv.org/abs/2504.11765)：Serving system 条目：在 RAG 驱动的多个 LLM 实例间共享磁盘后端 KV cache，减少长提示的重复 prefill 和缓存副本。
+- [SlimPipe: Memory-Thrifty and Efficient Pipeline Parallelism for Long-Context LLM Training](https://arxiv.org/abs/2504.14519)：用于长上下文 LLM 训练的节省显存 pipeline parallelism，针对标准流水并行无法解决的 activation memory 峰值。
+- [LongMamba: Enhancing Mamba's Long-Context Capabilities via Training-Free Receptive Field Enlargement](https://arxiv.org/abs/2504.16053)：免训练扩展 Mamba 感受野，提升状态空间语言模型的长上下文能力。
+- [TeLLMe: An Energy-Efficient Ternary LLM Accelerator for Prefilling and Decoding on Edge FPGAs](https://arxiv.org/abs/2504.16266)：硬件迁移候选：设计面向边缘 FPGA 的 ternary LLM 加速器，同时覆盖长提示 prefill 和 decoding 延迟。
+- [PIS: Linking Importance Sampling and Attention Mechanisms for Efficient Prompt Compression](https://arxiv.org/abs/2504.16574)：把提示压缩表述为注意力上的 importance sampling，用采样理论选择 token，而不是依赖启发式截断或摘要。
+- [One-Pass to Reason: Token Duplication and Block-Sparse Mask for Efficient Fine-Tuning on Multi-Turn Reasoning](https://arxiv.org/abs/2504.18246)：复制 response tokens 并使用 block-sparse attention mask，使多轮推理微调能在一次 forward pass 中计算等价损失。
+- [WuNeng: Hybrid State with Attention](https://arxiv.org/abs/2504.19191)：把标准注意力与 RWKV-7 state-driven heads 混合，更重视上下文连贯性，而不是只压缩 KV cache。
+- [Softpick](https://arxiv.org/abs/2504.20966)：通过 rectified softmax 避免 attention sink 与 massive activation。核心思想：降低 Transformer 中由 sink 引发的不稳定性，服务于更高效可靠的长上下文处理。
+- [FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](https://arxiv.org/abs/2505.00570)：在频域压缩 KV cache，保留低频上下文信息以扩展窗口，同时避免 token eviction 丢失局部细节。
+- [RetroInfer: A Vector-Storage Approach for Scalable Long-Context LLM Inference](https://arxiv.org/abs/2505.02922)： 用向量存储扩展长上下文 LLM 推理，为长上下文服务补充推理侧方案。
+- [Group Position Encoding for Streaming LLMs](https://arxiv.org/abs/2505.16983)：分析 streaming-batch mismatch，并引入 group position encoding，使 LLM 能处理流式输入而不必频繁昂贵重编码。
+- [LongMagpie: A Self-synthesis Method for Generating Large-scale Long-context Instructions](https://arxiv.org/abs/2505.17134)：通过向对齐后的长上下文 LLM 输入文档和用户轮次标记，自合成长上下文指令数据，并收集 document-query-response 三元组。
 - [QwenLong-L1](https://arxiv.org/abs/2505.17667)：用强化学习训练长上下文大推理模型，目标是文档级推理而非普通检索式使用。
+- [PM-KVQ](https://arxiv.org/abs/2505.18610)：面向 Long-CoT LLM 进行渐进式混合精度 KV 缓存量化，将效率与扩展推理上下文连接起来。
+- [TailorKV: A Hybrid Framework for Long-Context Inference via Tailored KV Cache Optimization](https://arxiv.org/abs/2505.19586)：按层结合 dominant-token offloading 与全 token 量化，让保留全局信息的层避免被过度压缩。
+- [Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling](https://arxiv.org/abs/2505.19609)：对长上下文微调中的长短混合序列做动态数据调度，提高异构序列长度下的训练效率。
 - [EMLoC](https://arxiv.org/abs/2505.19812)：选择并压缩关键信息层，在无需重新训练的情况下支持高效多模态长上下文适配。
+- [HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models](https://arxiv.org/abs/2505.20444)：通过混合位置编码提升多模态长上下文与长视频处理能力。
+- [Curse of High Dimensionality Issue in Transformer for Long-context Modeling](https://arxiv.org/abs/2505.22107)：把长上下文建模中的注意力低效归因于高维空间里的冗余计算，主张稀疏化注意力分配而非让每个 token 消耗相同计算。
+- [StrucSum: Graph-Structured Reasoning for Long Document Extractive Summarization with LLMs](https://arxiv.org/abs/2505.22950)：把图结构推理引入长文档抽取式摘要。
+- [Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers](https://arxiv.org/abs/2506.00744)：结合用于精确检索的 softmax KV-memory 与支持任意长序列的 fast-weight memory，并比较三种输入写入混合记忆系统的方式。
+- [Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective](https://arxiv.org/abs/2506.01097)：利用可解释性信号识别任务相关视觉 token 以提升多模态推理效率。
+- [Compress, Gather, and Recompute: REFORMing Long-Context Processing in Transformers](https://arxiv.org/abs/2506.01215)：REFORM 先增量压缩 KV cache 并构建跨层上下文嵌入，再按相似度收集关键 token 并选择性重算 KV。
+- [MorphServe: Efficient and Workload-Aware LLM Serving via Runtime Quantized Layer Swapping and KV Cache Resizing](https://arxiv.org/abs/2506.02006)：Serving system 条目：通过运行时量化层切换和 KV cache resizing 适应突发工作负载，而不是采用固定压缩模型。
+- [ComRoPE: Scalable and Robust Rotary Position Embedding Parameterized by Trainable Commuting Angle Matrices](https://arxiv.org/abs/2506.03737)：贡献长上下文模型方法；核心思想是扩展或稳定位置编码，使模型更稳健地处理更长上下文。
+- [AhaKV: Adaptive Holistic Attention-Driven KV Cache Eviction for Efficient Inference of Large Language Models](https://arxiv.org/abs/2506.03762)：用 holistic attention-driven score 做 KV cache 淘汰，修正只依赖累计注意力分数的淘汰方法缺陷。
+- [Diagonal Batching Unlocks Parallelism in Recurrent Memory Transformers for Long Contexts](https://arxiv.org/abs/2506.05229)：用 diagonal batching 并行化 Recurrent Memory Transformer 的记忆更新，缓解常数内存长上下文推理中的串行瓶颈。
 - [MesaNet](https://arxiv.org/abs/2506.05233)：提出基于局部最优测试时训练的循环序列建模层，在有界内存权衡下提升长上下文语言建模。
+- [MoQAE: Mixed-Precision Quantization for Long-Context LLM Inference via Mixture of Quantization-Aware Experts](https://arxiv.org/abs/2506.07533)：用 mixture of quantization-aware experts 分配混合 KV cache 精度，在长上下文推理中平衡显存节省和精度。
+- [Efficient Context Selection for Long-Context QA: No Tuning, No Iteration, Just Adaptive-k](https://arxiv.org/abs/2506.08479)：检索与 reranking 迁移候选：根据相似度分数分布自适应选择 passage 数量，无需微调或迭代调用 LLM。
+- [On-the-Fly Adaptive Distillation of Transformer to Dual-State Linear Attention](https://arxiv.org/abs/2506.09316)：提出双状态线性注意力，分别维护历史与近期状态，并按层敏感度在线把 Transformer 层蒸馏成 DSLA。
 - [Lag-Relative Sparse Attention In Long Context Training](https://arxiv.org/abs/2506.11498)：用滞后相对稀疏注意力训练长上下文模型，在扩展上下文的同时保持注意力结构。
+- [Long-Short Alignment for Effective Long-Context Modeling in LLMs](https://arxiv.org/abs/2506.11769)：把长上下文行为与短上下文能力对齐，将长度泛化视为短序列训练和长序列部署之间的错配问题。
+- [SeqPE: Transformer with Sequential Position Encoding](https://arxiv.org/abs/2506.13277)：用 sequential position encoding 替代固定查表位置嵌入，支持长度外推并更容易迁移到不同模态。
+- [Arctic Long Sequence Training: Scalable And Efficient Training For Multi-Million Token Sequences](https://arxiv.org/abs/2506.13996)：提供面向百万 token 上下文的开放长序列训练系统，覆盖企业闭源栈之外的序列并行和调度支持。
+- [LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](https://arxiv.org/abs/2506.14429)：LongLLaDA 将扩散语言模型扩展到长上下文场景，补充了非自回归长上下文建模路线。
+- [Long-Context Generalization with Sparse Attention](https://arxiv.org/abs/2506.16640)：使用动态稀疏注意力，在长序列中避免无信息 token 分散注意力质量并造成表征坍缩。
+- [Cache Me If You Can: How Many KVs Do You Need for Effective Long-Context LMs?](https://arxiv.org/abs/2506.17121)：提出 KV footprint 指标比较缓存淘汰方法，把峰值显存和质量退化纳入评估，而不只看保留 token 数。
+- [Overcoming Long-Context Limitations of State-Space Models via Context-Dependent Sparse Attention](https://arxiv.org/abs/2507.00449)：在状态空间模型中加入上下文相关稀疏注意力，弥补纯亚二次 SSM 常遗漏的长程依赖。
+- [ZeCO: Zero Communication Overhead Sequence Parallelism for Linear Attention](https://arxiv.org/abs/2507.01004)：为线性注意力模型使用 All-Scan 序列并行，面向百万 token 训练实现接近线性的扩展并尽量减少通信开销。
+- [Search-in-Context: Efficient Multi-Hop QA over Long Contexts via Monte Carlo Tree Search with Dynamic KV Retrieval](https://doi.org/10.18653/v1/2025.findings-acl.1356)：检索与 Agent Harness 迁移候选：用 Monte Carlo Tree Search 和动态 KV 检索在长上下文内部搜索多跳问答证据。
+- [Understanding and Improving Length Generalization in Recurrent Models](https://arxiv.org/abs/2507.02782)：分析循环序列模型在超出训练上下文长度后失效的原因，并研究通过扩大状态覆盖来改善长度泛化的训练干预。
+- [HGCA: Hybrid GPU-CPU Attention for Long Context LLM Inference](https://arxiv.org/abs/2507.03153)：把注意力拆到 GPU 与 CPU 上执行：GPU 保留近期 KV 做密集注意力，CPU 选择显著历史 KV 做稀疏注意力，再用 log-sum-exp 融合输出。
+- [Scaling Context Requires Rethinking Attention](https://arxiv.org/abs/2507.04239)：提出 power attention 这一线性成本层，使状态大小可独立于参数量扩展，并配套长上下文上下文学习 workload 的 kernel。
+- [ETT: Expanding the Long Context Understanding Capability of LLMs at Test-Time](https://arxiv.org/abs/2507.06313)：在测试时对输入的重叠小块做高效微调，把上下文写入权重中，以线性开销扩展短上下文 Transformer。
+- [Krul: Efficient State Restoration for Multi-turn Conversations with Dynamic Cross-layer KV Sharing](https://arxiv.org/abs/2507.08045)：通过动态跨层 KV 共享恢复多轮对话状态。
+- [Scaling Linear Attention with Sparse State Expansion](https://arxiv.org/abs/2507.16577)：Sparse state expansion 扩展线性注意力，为高效长上下文序列建模提供架构侧路线，而不只是事后压缩。
+- [Pixel-Resolved Long-Context Learning for Turbulence at Exascale: Resolving Small-scale Eddies Toward the Viscous Limit](https://arxiv.org/abs/2507.16697)：偏离本页主轴的科学建模条目：把像素级长上下文学习用于 exascale 湍流和小涡解析，并非 LLM 上下文机制。
+- [Systematic Evaluation of Optimization Techniques for Long-Context Language Models](https://arxiv.org/abs/2508.00305)：偏 Bench 条目：系统测量 pruning、quantization、token dropping 及其组合对长上下文显存、延迟、吞吐和生成质量的影响。
+- [LaMPE: Length-aware Multi-grained Positional Encoding for Adaptive Long-context Scaling Without Training](https://arxiv.org/abs/2508.02308)：用 length-aware multi-grained RoPE remapping 和 scaled sigmoid 按实际输入长度自适应分配位置容量，无需训练。
+- [What are you sinking?](https://arxiv.org/abs/2508.02546)：从几何角度解释 attention sink。核心思想：说明 sink token 为何出现，以及其几何结构如何影响 Transformer 的流式、长上下文和干预行为。
+- [KVSink](https://arxiv.org/abs/2508.04257)：研究 KV 缓存量化中注意力汇点的保留，将高效推理与可靠长上下文行为连接起来。
+- [Sparse Attention across Multiple-context KV Cache](https://arxiv.org/abs/2508.11661)：把稀疏注意力扩展到多个上下文复用的历史 KV cache，处理单上下文 cache reuse 受因果注意力限制的问题。
+- [Beyond Turing: Memory-Amortized Inference as a Foundation for Cognitive Computation](https://arxiv.org/abs/2508.14143)：偏理论与架构的相邻条目：把推理视为在持久记忆上的摊销计算，相关于长期上下文但不是具体 LLM cache 方法。
+- [SemToken: Semantic-Aware Tokenization for Efficient Long-Context Language Modeling](https://arxiv.org/abs/2508.15190)：补充面向高效长上下文语言建模的语义感知分词方法。
+- [TokenLake: A Unified Segment-level Prefix Cache Pool for Fine-grained Elastic Long-Context LLM Serving](https://arxiv.org/abs/2508.17219)：用 declarative cache interface 池化 segment-level prefix cache，减少服务实例间的负载不均、冗余和碎片化。
+- [GraphKV: Breaking the Static Selection Paradigm with Graph-Based KV Cache Eviction](https://arxiv.org/abs/2509.00388)：在 token 依赖上构图做 KV cache 淘汰，用 graph-based token selection 替代静态 top-k attention 启发式。
 - [Modular Techniques for Synthetic Long-Context Data Generation in Language Model Training and Evaluation](https://arxiv.org/abs/2509.01185)：构建用于训练和评估的合成长上下文数据，覆盖长程依赖能力。
+- [Customizing the Inductive Biases of Softmax Attention using Structured Matrices](https://arxiv.org/abs/2509.07963)：用 Block Tensor-Train 和 Multi-Level Low Rank 等高秩结构化矩阵替代低秩 query-key scoring，以定制注意力归纳偏置。
+- [LAWCAT: Efficient Distillation from Quadratic to Linear Attention with Convolution across Tokens for Long Context Modeling](https://arxiv.org/abs/2509.18467)：把二次注意力蒸馏成带 token-wise convolution 的线性注意力，避免从头进行长上下文预训练。
+- [Differential-Integral Neural Operator for Long-Term Turbulence Forecasting](https://arxiv.org/abs/2509.21196)：偏离本页主轴的科学建模条目：提出用于长期湍流预测的 differential-integral neural operator，不是 LLM 上下文扩展方法。
+- [SPELL: Self-Play Reinforcement Learning for evolving Long-Context Language Models](https://arxiv.org/abs/2509.23863)：用多角色自博弈强化学习演化长上下文语言模型，减少对人工标注的依赖。
+- [SparseServe: Unlocking Parallelism for Dynamic Sparse Attention in Long-Context LLM Serving](https://arxiv.org/abs/2509.24626)：Serving system 条目：为动态稀疏注意力卸载未选中的 KV cache，使 HBM 容量不再阻碍长上下文 batch 并行。
+- [Delayed Attention Training Improves Length Generalization in Transformer-RNN Hybrids](https://arxiv.org/abs/2510.00258)：用 delayed attention 训练 Transformer-RNN hybrid，把循环状态跟踪和 Transformer 式 associative recall 结合到更长长度。
+- [Expected Attention: KV Cache Compression by Estimating Attention from Future Queries Distribution](https://arxiv.org/abs/2510.00636)：从激活分布闭式估计未来 query 对 KV 的注意力，为预填充和解码阶段提供免训练的 KV 排序与裁剪信号。
+- [Controlling the Risk of Corrupted Contexts for Language Models via Early-Exiting](https://arxiv.org/abs/2510.02480)：通过 early-exiting 机制防止有害或无关上下文污染，限制 corrupted context 对模型行为的退化程度。
+- [H1B-KV: Hybrid One-Bit Caches for Memory-Efficient Large Language Model Inference](https://arxiv.org/abs/2510.05529)：用 hybrid one-bit KV cache 同时压缩 keys 和 values，避免只压缩单个 cache 组件或直接丢弃上下文。
+- [Critical attention scaling in long-context transformers](https://arxiv.org/abs/2510.05554)：证明注意力缩放存在相变，并指出对数级缩放能避免 rank collapse，同时保留稀疏且内容自适应的长上下文注意力。
+- [Getting Your Indices in a Row: Full-Text Search for LLM Training Data for Real World](https://arxiv.org/abs/2510.09471)：数据基础设施迁移候选：为 LLM 训练语料构建全文搜索以便数据集检查，并非长上下文模型机制。
+- [UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](https://arxiv.org/abs/2510.10481)：把扩散式大语言模型扩展到 128K 上下文，为非自回归 LLM 家族补充长上下文路线。
+- [Mamba Can Learn Low-Dimensional Targets In-Context via Test-Time Feature Learning](https://arxiv.org/abs/2510.12026)：从理论上分析 Mamba 在低维非线性目标函数上的上下文学习，把状态更新解释为测试时特征学习。
 - [Breadcrumbs Reasoning: Memory-Efficient Reasoning with Compression Beacons](https://arxiv.org/abs/2510.13797)：用压缩信标支持长上下文上的内存高效推理，使压缩轨迹仍与推理绑定。
+- [Improving Model Representation and Reducing KV Cache via Skip Connections with First Value Heads](https://arxiv.org/abs/2510.16807)：用 first value heads 的 skip connections 改善模型表征，同时降低自回归解码中的 KV cache 成本。
+- [Glyph: Scaling Context Windows via Visual-Text Compression](https://arxiv.org/abs/2510.17800)：将大规模文本上下文压缩为视觉文本表征，以扩展语言模型的长上下文能力。
+- [Efficient Long-context Language Model Training by Core Attention Disaggregation](https://arxiv.org/abs/2510.18121)：把 core attention 计算拆到独立设备池，缓解长上下文训练中二次注意力造成的负载不均。
+- [Adamas: Hadamard Sparse Attention for Efficient Long-Context Inference](https://arxiv.org/abs/2510.18413)：使用 Hadamard 结构化稀疏注意力进行长上下文解码，用更有原则的选择结构替代手工稀疏模式。
 - [LoongRL](https://arxiv.org/abs/2510.19363)：用 KeyChain 合成与 RL 训练长上下文中的 plan-retrieve-reason-recheck 行为。
+- [Kinaema: a recurrent sequence model for memory and pose in motion](https://arxiv.org/abs/2510.20261)：Embodied/VLA 迁移候选：循环整合机器人在大场景中移动时的视觉观测，用于记忆和位姿定位。
+- [No Mean Feat: Simple, Strong Baselines for Context Compression](https://arxiv.org/abs/2510.20797)：偏 Bench 条目：提出 BenchPress 和强简单基线，用于 RAG 场景下的上下文压缩评测。
+- [Scalable Processing-Near-Memory for 1M-Token LLM Inference: CXL-Enabled KV-Cache Management Beyond GPU Limits](https://arxiv.org/abs/2511.00321)：用 CXL processing-near-memory 管理百万 token KV cache，把 token page selection 卸载到 GPU 显存之外。
+- [OMEGA: Optimized Multimodal Position Encoding Index Derivation with Global Adaptive Scaling for Vision-Language Models](https://arxiv.org/abs/2511.00821)：通过全局自适应缩放推导优化的多模态位置编码。
+- [BudgetMem: Learning Selective Memory Policies for Cost-Efficient Long-Context Processing in Language Models](https://arxiv.org/abs/2511.04919)：结合显著性特征和 gating 学习选择性记忆策略，在严格长上下文内存预算下只存高价值信息。
+- [MoSKA: Mixture of Shared KV Attention for Efficient Long-Sequence LLM Inference](https://arxiv.org/abs/2511.06010)：用 Mixture of Shared KV Attention 区分每个请求独有上下文和大量复用的共享序列，减少冗余 KV cache 显存。
+- [Optimizing Long-context LLM Serving via Fine-grained Sequence Parallelism](https://arxiv.org/abs/2511.06247)：Serving system 条目：使用 chunkwise dynamic sequence parallelism，在单个请求内按 token segment 分配不同并行度。
+- [ScaleFormer: Span Representation Cumulation for Long-Context Transformer](https://arxiv.org/abs/2511.10029)：用 span-representation cumulation 作为 plug-and-play 方法，把预训练 encoder-decoder Transformer 适配到更长上下文。
+- [GatedFWA: Linear Flash Windowed Attention with Gated Associative Memory](https://arxiv.org/abs/2512.07782)：在线性 Flash Windowed Attention 中加入 gated associative memory，在保持滑窗效率的同时稳定记忆更新和梯度流。
+- [Extending the Context of Pretrained LLMs by Dropping Their Positional Embeddings](https://arxiv.org/abs/2512.12167)：在训练后移除位置嵌入并短程校准，以扩展预训练 LLM 上下文长度，避免完整长上下文微调。
+- [How Many Heads Make an SSM? A Unified Framework for Attention and State Space Models](https://arxiv.org/abs/2512.15115)：用统一 operator 视角描述注意力和 SSM 序列映射，显式比较表达力与可训练性权衡。
 - [End-to-End Test-Time Training for Long Context](https://arxiv.org/abs/2512.23675)：在长上下文推理期间进行端到端测试时训练，使模型按实例适配。
-- [DySCO](https://arxiv.org/abs/2602.22175)：无需训练的动态注意力缩放解码方法，在生成时强化任务相关长上下文 token。
+- [MS-SSM: A Multi-Scale State Space Model for Efficient Sequence Modeling](https://arxiv.org/abs/2512.23824)：在多个分辨率上使用 state-space dynamics，同时捕捉细粒度局部模式和粗粒度全局依赖。
+- [Trellis: Learning to Compress Key-Value Memory in Attention Models](https://arxiv.org/abs/2512.23852)：用固定大小 memory 替代无限增长的 KV cache，并通过两遍循环压缩、在线梯度下降和 forget gate 在测试时更新记忆。
+- [MambaExtend: A Training-Free Approach to Improve Long Context Extension of Mamba](https://proceedings.iclr.cc/paper_files/paper/2025/hash/f1922bd718528ac3eab114eabbbfa7a0-Abstract-Conference.html)：校准 Mamba 离散化模块的缩放因子，在无需完整微调的情况下把上下文扩展到 32 倍，补充状态空间语言模型的长上下文路线。
+- [DASA: Distribution-Aware Sparse Attention for Accelerating Diffusion Transformer](https://doi.org/10.1109/tcad.2025.3627864)：用 distribution-aware filtering 稀疏化 Diffusion Transformer 注意力，并配套专用 filtering unit，降低长视频生成中的注意力开销。
+- [InstAttention: In-Storage Attention Offloading for Cost-Effective Long-Context LLM Inference](https://doi.org/10.1109/hpca61900.2025.00113)：把长上下文注意力计算卸载到存储侧硬件，缓解大规模 KV 状态带来的主机内存和数据搬移压力。
+- [A Light-Weighted Fusion Vision Mamba for Multimodal Remote Sensing Data Classification](https://doi.org/10.1109/jstars.2025.3598755)：用轻量 Vision Mamba 融合结构整合多模态遥感输入，同时保持全局序列扫描的效率。
+- [DeepOMamba: State-space model for spatio-temporal PDE neural operator learning](https://doi.org/10.1016/j.jcp.2025.114272)：把状态空间建模用于时空 PDE neural operator，通过 Mamba 式序列动态处理长程场演化。
+- [Huge ensembles – Part 2: Properties of a huge ensemble of hindcasts generated with spherical Fourier neural operators](https://doi.org/10.5194/gmd-18-5605-2025)：用 spherical Fourier neural operators 生成夏季 2023 的 7424 成员 hindcast ensemble，以远低于业务集合预报的计算量采样长期天气分布。
+- [Learning Cross-Task Features With Mamba for Remote Sensing Image Multitask Prediction](https://doi.org/10.1109/tgrs.2025.3540573)：把 Mamba 序列建模用于遥感多任务预测中的跨任务特征共享，以捕捉不同任务间的全局空间依赖。
+- [ST-FlowNet: A lightweight framework for long-term spatio-temporal flow field prediction](https://doi.org/10.1016/j.neunet.2025.108243)：构建轻量网络做长时程时空流场预测，避免完全依赖更重的循环或注意力堆栈。
+- [PackKV: Reducing KV Cache Memory Footprint through LLM-Aware Lossy Compression](https://arxiv.org/abs/2512.24449)：用 LLM-aware lossy coding 和系统协同设计压缩动态增长的 KV cache，在降低缓存内存的同时保持长上下文生成质量。
+- [Scaling Long Context Training Data by Long-Distance Referrals](https://proceedings.iclr.cc/paper_files/paper/2025/hash/fbf49f35b6dd2bef1ad12768c0509daa-Abstract-Conference.html)：提出 LongPack，利用网页超链接作为 long-distance referral 信号来打包短网页，合成近自然的长文档训练数据。
+- [SmartCache: Two-Dimensional KV-Cache Similarity for Efficient Long-Context LLM Decoding](https://doi.org/10.1109/hpcc67675.2025.00065)：在长上下文解码中从两个维度比较 KV-cache 相似性，用于选择缓存复用或压缩目标。
+- [OASIS: Outlier-Aware KV Cache Clustering for Scaling LLM Inference in CXL Memory Systems](https://doi.org/10.1109/lca.2025.3567844)：面向 CXL 后备内存系统对 KV cache block 做 outlier-aware clustering，降低长上下文推理存储压力，同时保留罕见高影响缓存项。
+- [DynamicAttention: Dynamic KV Cache for Disaggregate LLM Inference](https://doi.org/10.1109/icassp49660.2025.10890367)：在解耦式 LLM 推理中动态管理 KV cache，为长上下文解码自适应调整缓存状态的位置与保留策略。
+- [PAB-Mamba-YOLO: VSSM assists in YOLO for aggressive behavior detection among weaned piglets](https://doi.org/10.1016/j.aiia.2025.01.001)：把 visual state-space modeling 插入 YOLO 检测器，用 VSSM 式全局扫描处理仔猪行为视频这一应用型长序列视觉任务。
+- [Mamba-UNet: Dual-Branch Mamba Fusion U-Net With Multiscale Spatio-Temporal Attention for Precipitation Nowcasting](https://doi.org/10.1109/tii.2025.3540478)：在 U-Net 中结合双分支 Mamba 融合和多尺度时空注意力，用于较长天气序列上的降水临近预报。
+- [SPPformer: A transformer-based model with a sparse attention mechanism for comprehensive and interpretable ship price analysis](https://doi.org/10.1016/j.tre.2025.104136)：在 Transformer 式模型中使用 sparse attention，分析较长船价特征历史并保留可解释的注意力模式。
+- [CrossSeg-GvT: multi-view graph vision transformers with context-aware memory and meta prompting for cross-domain few-shot semantic segmentation](https://doi.org/10.1016/j.neucom.2025.132337)：在 multi-view graph vision transformer 中加入 context-aware memory 和 meta prompting，用于跨域 few-shot 语义分割。
+- [Integrate-and-Fire Compressor: Learning to Compress Context for LLMs Adaptively](https://doi.org/10.1109/icme59968.2025.11210203)：学习 integrate-and-fire 压缩策略，自适应决定累积上下文何时输出压缩表征给 LLM 使用。
+- [Found In The Distribution: Utilizing Latent Dirichlet Allocation Improves Long Context Comprehension of Large Language Models](https://doi.org/10.1109/icassp49660.2025.10890215)：用 Latent Dirichlet Allocation 的主题结构引导长上下文理解，把文档级主题分布作为模型输入信号。
+- [Attention Needs to Focus: A Unified Perspective on Attention Allocation](https://arxiv.org/abs/2601.00919)：把 representational collapse 和 attention sink 归因于 attention overload 与 underload，并提出含 positional discrimination 与 Elastic-Softmax 的 Lazy Attention 来收紧注意力分配。
+- [Joint Encoding of KV-Cache Blocks for Scalable LLM Serving](https://arxiv.org/abs/2601.03067)：把跨请求和输入 chunk 的相似 KV-cache block 融合成共享表征，在保持标准缓存布局的同时实现多倍缓存压缩。
+- [LLM2IR: simple unsupervised contrastive learning makes long-context LLM great retriever](https://arxiv.org/abs/2601.05262)：用无监督对比学习把 decoder-only 长上下文 LLM 转成 dense retriever，并观察到同族模型中上下文长度越长检索能力越强。
+- [Mosaic: Unlocking Long-Context Inference for Diffusion LLMs via Global Memory Planning and Dynamic Peak Taming](https://arxiv.org/abs/2601.06562)：面向长上下文建模与推理的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [An Efficient Long-Context Ranking Architecture With Calibrated LLM Distillation: Application to Person-Job Fit](https://arxiv.org/abs/2601.10321)：用 late cross-attention 分解长简历和项目 brief，再把校准过的 LLM 教师监督蒸馏到高效人岗匹配 reranker 中。
+- [Incentivizing In-depth Reasoning over Long Contexts with Process Advantage Shaping](https://arxiv.org/abs/2601.12465)：用 KG 驱动的 DeepReasonQA 构造多跳长上下文 QA，并通过 process advantage shaping 让 RLVR 从部分正确的推理轨迹中保留学习信号。
+- [Attention Is Not Retention: The Orthogonality Constraint in Infinite-Context Architectures](https://arxiv.org/abs/2601.15313)：指出可靠情节记忆需要正交 key，而语义 embedding 难以满足这一条件，因此主张在 infinite-context 架构中分离稀疏记忆。
+- [MALLOC: Benchmarking the Memory-aware Long Sequence Compression for Large Sequential Recommendation](https://arxiv.org/abs/2601.20234)：研究长用户历史在 sequential recommendation 中的 memory-aware compression，把中间状态存储视为空间与质量权衡，而不只是加速手段。
+- [MoHETS: Long-term Time Series Forecasting with Mixture-of-Heterogeneous-Experts](https://arxiv.org/abs/2601.21866)：把时间 patch 路由到异构专家，结合 depthwise-convolution 连续性、Fourier 周期专家、协变量 cross-attention 和卷积 decoder 做长期预测。
+- [G-MemLLM](https://arxiv.org/abs/2602.00015)：把冻结 LLM backbone 与可训练 latent memory bank 结合，并用 GRU 式门控决定长上下文事实何时更新、保留或覆盖。
+- [CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](https://arxiv.org/abs/2602.01766)：按 chunk 处理输入，用 FIFO 临时记忆和门控全局记忆作为下一 chunk 的动态 soft prompt，在常数内存和线性时间下运行。
+- [Data Distribution Matters: A Data-Centric Perspective on Context Compression for Large Language Model](https://arxiv.org/abs/2602.01778)：分析输入数据与模型内在数据分布如何影响 context compression 质量，把长上下文压缩视为数据侧模型问题。
+- [Out of the Memory Barrier: A Highly Memory Efficient Training System for LLMs with Million-Token Contexts](https://arxiv.org/abs/2602.02108)：面向长上下文建模与推理的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](https://arxiv.org/abs/2602.03216)：在注意力计算中把每个 head 的 query、key、value 压到动态 token 子集，再解压输出，使后续层仍可重新评估 token 重要性。
+- [Context Compression via Explicit Information Transmission](https://arxiv.org/abs/2602.03784)：提出 ComprExIT，从冻结 LLM 各层选择特征，并把信息从 anchors 传给 compression tokens，以减少协同不足和逐层稀释造成的损失。
+- [LongR: Unleashing Long-Context Reasoning via Reinforcement Learning with Dense Utility Rewards](https://arxiv.org/abs/2602.05758)：用 dense utility reward 训练长上下文推理，面向长文档和结构化数据推理。
+- [CompilerKV: Risk-Adaptive KV Compression via Offline Experience Compilation](https://arxiv.org/abs/2602.08686)：离线编译 per-head reliability 和 prompt sensitivity 表，把 prefill-only KV 保留策略变成推理时的可迁移查表压缩。
+- [Remote KV Cache Reuse with GPU-Native Video Codec](https://arxiv.org/abs/2602.09725)：实现 KVCodec，把 KV tensor 布局成 codec-friendly video data，并流水线化传输、解码和缓存恢复，用于带宽受限的远端 KV 复用。
+- [Kalman Linear Attention: Parallel Bayesian Filtering For Efficient Language Modelling and State Tracking](https://arxiv.org/abs/2602.10743)：把 Kalman filtering 重参数化为 information form，使 Bayesian 状态更新可用 associative scan 并行计算，形成带显式不确定性的线性注意力层。
+- [Recurrent Preference Memory for Efficient Long-Sequence Generative Recommendation](https://arxiv.org/abs/2602.11605)：把长期用户交互压缩成 preference-memory tokens，并用 self-referential teacher forcing 并行训练循环更新。
+- [RAM-Net: Expressive Linear Attention with Selectively Addressable Memory](https://arxiv.org/abs/2602.11958)：把输入映射到稀疏高维地址以访问随机存取记忆，在不增加参数的情况下扩大线性注意力状态容量。
+- [Test-Time Training with KV Binding Is Secretly Linear Attention](https://arxiv.org/abs/2602.21204)：把 KV binding 的测试时训练重新解释为 learned linear attention，从而得到可并行公式和架构简化，而不是把它视为直接的测试时记忆。
+- [DySCO](https://arxiv.org/abs/2602.22175)：在解码时用 retrieval heads 找出任务相关上下文 token，并动态提高其注意力权重，无需重新训练即可改善长上下文利用。
+- [Multi-Head Low-Rank Attention](https://arxiv.org/abs/2603.02188)：让 latent attention state 能在 tensor-parallel 设备间切分，缓解单头 MLA 在长上下文解码中的 sharding 瓶颈。
+- [MaBERT:A Padding Safe Interleaved Transformer Mamba Hybrid Encoder for Efficient Extended Context Masked Language Modeling](https://arxiv.org/abs/2603.03001)：交错使用 Transformer 和 Mamba encoder 层，并加入 padding-safe masking 与 mask-aware pooling 来支持可变长度扩展上下文 MLM。
+- [Swimba: Switch Mamba Model Scales State Space Models](https://arxiv.org/abs/2603.06938)：用 MoE-parameterized Mamba streams 扩展 selective SSM，在参数空间路由专家但只维护一条 recurrent state trajectory。
+- [Expressivity-Efficiency Tradeoffs for Hybrid Sequence Models](https://arxiv.org/abs/2603.08859)：证明纯 attention 和纯 SSM 在一组 synthetic tasks 上的限制，并构造小型 hybrid model 以更少内存解决 selective copying 和 associative recall。
+- [Beyond Sequential Distance: Inter-Modal Distance Invariant Position Encoding](https://arxiv.org/abs/2603.10863)：提出 DIPE，在保留同模态相对位置的同时锚定视觉-文本近邻关系，缓解长多模态上下文中的 visual fading。
+- [ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](https://arxiv.org/abs/2603.13154)：偏 Bench 条目：从长 ESG 报告构造 grounded QA，并标注回答是受证据支持还是幻觉。
+- [Mamba-3: Improved Sequence Modeling using State Space Principles](https://arxiv.org/abs/2603.15569)：用 SSM 推导的更强 recurrence、复数状态更新和 MIMO 状态动态改进线性序列模型，提升检索和状态追踪能力。
+- [BEAVER: A Training-Free Hierarchical Prompt Compression Method via Structure-Aware Page Selection](https://arxiv.org/abs/2603.19635)：把可变长度上下文映射成稠密 page-level tensors，并用语义-词法规划与 sentence smoothing 选择页面，实现免训练长文档压缩。
+- [MKA: Memory-Keyed Attention for Efficient Long-Context Reasoning](https://arxiv.org/abs/2603.20586)：在 local、session 和 long-term 多级 KV cache 间路由注意力，并用 FastMKA 先融合记忆源再计算注意力以改善准确率-效率权衡。
+- [When Does Content-Based Routing Work? Representation Requirements for Selective Attention in Hybrid Sequence Models](https://arxiv.org/abs/2603.20997)：通过受控实验显示 selective attention routing 需要双向 token 表征和 pairwise comparison，廉价 recurrent 或 memory-bank router 在测试任务上失败。
+- [PRISM: Breaking the O(n) Memory Wall in Long-Context LLM Inference via O(1) Photonic Block Selection](https://arxiv.org/abs/2603.21576)：通过光子块选择降低长上下文 LLM 推理内存。
+- [System-Anchored Knee Estimation for Low-Cost Context Window Selection in PDE Forecasting](https://arxiv.org/abs/2603.25025)：把自回归 PDE simulator 的低成本上下文窗口选择形式化，并用物理可解释 anchors 加 knee-aware selection 避免穷举验证。
+- [TurboAngle: Near-Lossless KV Cache Compression via Uniform Angle Quantization](https://arxiv.org/abs/2603.27467)：在随机 Walsh-Hadamard 域中量化 KV-cache 角度，并用 per-layer early-boost 给关键 K/V 层分配更高精度。
+- [HISA: Efficient Hierarchical Indexing for Fine-Grained Sparse Attention](https://arxiv.org/abs/2603.28458)：用层级索引改进细粒度 sparse attention，降低长上下文推理中的前缀扫描瓶颈。
+- [Why Attend to Everything? Focus is the Key](https://arxiv.org/abs/2604.03260)：给冻结预训练模型加入可学习 centroid gates，使同一长程组内的 token pair 才相互注意，从而实现无下游退化的稀疏注意力。
+- [Mambalaya: Einsum-Based Fusion Optimizations on State-Space Models](https://arxiv.org/abs/2604.03829)：用 cascade-of-Einsums 抽象寻找 Mamba operator 的融合映射，减少 prefill 和 generation 中的 off-chip traffic。
+- [Residual-Mass Accounting for Partial-KV Decoding](https://arxiv.org/abs/2604.05438)：为 partial-KV decoding 估计未选 token 的 residual softmax mass，并与 sink、tail 和 retrieved token 的精确贡献在同一归一化下合并。
+- [Breaking the KV Cache Bottleneck: Fan Duality Model Achieves O(1) Decode Memory with Superior Associative Recall](https://arxiv.org/abs/2604.07716)：把序列处理拆成 recurrent wave state 和 local-global particle cache，通过 learned addressing 在常数解码内存下保持 associative recall。
+- [A Decomposition Perspective to Long-context Reasoning for LLMs](https://arxiv.org/abs/2604.07981)：把长上下文推理拆为原子技能，合成针对性数据并用强化学习训练。
+- [On The Application of Linear Attention in Multimodal Transformers](https://arxiv.org/abs/2604.10064)：在 LAION-400M 训练的多模态 Transformer 中测试 linear attention，在降低序列长度成本的同时维持 ImageNet-21K zero-shot 验证上的 scaling behavior。
+- [Agentic Control in Variational Language Models](https://arxiv.org/abs/2604.12513)：结合 variational hidden computation、homeostatic latent regulator、checkpoint retention 和 uncertainty-aware controller，让内部证据调节训练与推理干预。
+- [SparseBalance: Load-Balanced Long Context Training with Dynamic Sparse Attention](https://arxiv.org/abs/2604.13847)：用 workload-aware dynamic sparsity tuning 和 sparsity-aware batching 同时处理序列长度异质性与 sparsity sensitivity，以平衡长上下文训练。
+- [Sequential KV Cache Compression via Probabilistic Language Tries: Beyond the Per-Vector Shannon Limit](https://arxiv.org/abs/2604.15356)：把 KV cache 当作由 token 生成的序列来压缩，结合 probabilistic prefix deduplication 和 predictive delta coding，而不只做逐向量量化。
+- [ONTO: A Token-Efficient Columnar Notation for LLM Input Optimization](https://arxiv.org/abs/2604.17512)：字段名只声明一次，数值用 pipe-delimited rows 和缩进层级组织，从而减少 LLM 读取 operational data 时 JSON 重复 key 的 token 开销。
+- [HubRouter: A Pluggable Sub-Quadratic Routing Primitive for Hybrid Sequence Models](https://arxiv.org/abs/2604.22442)：用 learned hub-mediated routing 替代二次注意力，流程包含 hub cross-attention、routing fingerprint、top-k scoring 和 sparse council attention。
+- [From Similarity to Structure: Training-free LLM Context Compression with Hybrid Graph Priors](https://arxiv.org/abs/2604.23277)：由 mutual semantic nearest-neighbor 边和短程顺序边构建 hybrid sentence graph，再按任务相关性、主题覆盖和连贯性选择句子。
+- [Kwai Summary Attention / KSA](https://arxiv.org/abs/2604.24432)：KSA 使用语义压缩注意力服务长上下文建模。核心思想：保持 KV cache 与序列长度线性相关，但按显式比例把历史上下文压缩为可学习 summary tokens，用可接受的内存开销换取长距离依赖的可指代、可解释保留，而不是单纯追求最小 cache。
+- [Sparse Attention with Hierarchical Memory](https://arxiv.org/abs/2604.26837)：提出 SPIN 这一 sparse-attention-aware serving 框架，结合统一 partition、GPU-CPU 分层 KV 存储和不规则 KV retrieval 调度。
+- [Adaptive Memory Decay for Log-Linear Attention](https://arxiv.org/abs/2605.06946)：为 Fenwick-tree log-linear attention 学习 per-token、per-level decay，使记忆保留依赖内容而非固定位置，同时保持 log-linear 复杂度。
+- [HexiSeq](https://arxiv.org/abs/2605.07569)：把 context parallelism 和 head parallelism 扩展到异构 GPU 集群，用非对称 shard 分配和层次调度器匹配设备算力、内存与带宽。
+- [AB-Sparse: Sparse Attention with Adaptive Block Size for Accurate and Efficient Long-Context Inference](https://arxiv.org/abs/2605.12110)：为不同 attention heads 自适应分配 block size，并用无损 block centroid quantization 让 block-sparse 长上下文推理避免统一粒度带来的精度损失。
+- [Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context](https://arxiv.org/abs/2605.13831)：通过 continued pretraining ablation 把 7B LVLM 从 32K 扩到 128K，发现长文档 VQA 和均衡长度混合比 OCR-only 或偏 128K 数据更有效。
+- [QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling](https://arxiv.org/abs/2605.13833)：提出混合量子-经典 long-attention memory 机制，用于线性时间长序列 token modeling，把量子态演化作为区别于加性循环记忆的结构路线。
+- [GoLongRL](https://arxiv.org/abs/2605.19577)：提供开放的 capability-oriented 长上下文 RLVR 后训练配方。核心思想：按 9 类长上下文能力构造 23K 个带自然可验证指标的样本，并用 TMN-Reweight 处理异构 reward 的尺度和难度，使 vanilla GRPO 下的长上下文推理优于更窄的检索路径型数据集。
+- [Cross-domain time-frequency Mamba: A more effective model for long-term time series forecasting](https://doi.org/10.1016/j.knosys.2026.115341)：结合 Mamba 序列建模与 cross-domain time-frequency 表征，用于长期时间序列预测。
+- [GCMNet: A global context Mamba network for long-term time series forecasting](https://doi.org/10.1016/j.patcog.2026.113287)：用 global-context Mamba 架构建模时间序列预测中的长期依赖。
+- [Hybrid extractive–abstractive summarization of scientific texts via deep clustering and attention mechanism](https://doi.org/10.1016/j.aej.2026.01.051)：结合 deep clustering 与 attention-based extractive、abstractive 阶段来摘要长篇科学文本。
+- [MTP-Compressor: A Semantic-Aware and Syntactically Coherent Prompt Compression Framework via Multi-Task Joint Learning](https://doi.org/10.1109/etai68332.2026.11485317)：用多任务联合学习压缩提示，同时约束语义显著性和句法连贯性。
+- [Generalized and group spherical linear interpolation for token-level context compression](https://doi.org/10.1016/j.neunet.2026.108720)：用 generalized 与 group spherical linear interpolation 压缩 token 级上下文表征，在缩短提示的同时保留 embedding 方向结构。
+- [Detoxifying language model outputs: combining multi-agent debates and reinforcement learning for improved summarization](https://doi.org/10.1007/s10579-025-09830-7)：用多智能体辩论进行迭代去毒，并用强化学习微调 sequence-to-sequence 摘要模型，在 RealToxicity Prompts 和 ParaDetox 上评估毒性降低与内容保真。
+- [MixCon: A Hybrid Architecture for Efficient and Adaptive Sequence Modeling](https://doi.org/10.3233/faia240593)：结合 attention、Conba 序列层、Mixture-of-Experts 路由和控制论启发的 feedback，以改进高效长程序列建模。
+- [Graph-Augmented Retrieval with Memory-Driven Reasoning and Constraint-Aware Filtering for MultiHop QA](https://doi.org/10.1145/3726302.3730203)：把 graph-augmented retrieval、memory-driven reasoning 和 constraint-aware filtering 结合起来，用于长证据链上的 multi-hop QA。
+- [UltraAttn: Efficiently Parallelizing Attention through Hierarchical Context-Tiling](https://doi.org/10.1145/3712285.3759894)：通过 hierarchical context tiling 并行化注意力，把长上下文切分成更易在硬件上调度的 attention tile。
+- [Memory Stream: Enhancing Information Flow in Recurrent Memory Transformers for Efficient Long-Context Training](https://doi.org/10.3103/s1060992x25601733)：在 recurrent memory Transformer 中加入 memory stream，在高效长上下文训练中跨 segment 传递信息。
+- [Beyond Attention: Breaking the Limits of Transformer Context Length with Recurrent Memory](https://doi.org/10.1609/aaai.v38i16.29722)：给预训练 Transformer 增加 recurrent memory，以线性计算扩展上下文，并在最长两百万 token 序列上保持信息。
+- [Transforming Computational Nanotechnology: Accelerating Material Discovery, Design, and Property Prediction through Soft Computing Techniques](https://doi.org/10.1021/acsaelm.5c00842)：偏应用综述条目：梳理用于材料发现、设计和性质预测的 soft-computing 方法，而不是通用长上下文架构。
+- [Where does In-context Learning Happen in Large Language Models?](https://doi.org/10.52202/079017-1030)：用逐层 context masking 定位 LLM prompt 中任务识别发生的位置，显示任务被编码后后续层常可跳过对上下文的注意。
+- [LongRanker: Efficient One-Pass Document Reranking with Long-Context Large Language Models](https://doi.org/10.1145/3774904.3792179)：结合文档内和文档间位置编码，并对大量候选文档做 top-k attention pruning，实现一次性 listwise reranking。
+- [Subkv: Quantizing Long Context KV Cache for Sub‐Billion Parameter Language Models on Edge Devices](https://doi.org/10.1002/spe.3422)：面向边缘设备上的十亿参数以下 LLM 量化 KV cache，用低比特缓存存储缓解长上下文内存瓶颈。
+- [MambaTree: Tree Topology is All You Need in State Space Model](https://doi.org/10.52202/079017-2398)：用动态生成的树拓扑替代纯序列传播，并配合线性复杂度 dynamic programming，增强视觉和文本任务中的长程交互。
+- [MI‐Mamba: A hybrid motor imagery electroencephalograph classification model with Mamba's global scanning](https://doi.org/10.1111/nyas.15288)：把 CNN 空间特征提取与 Mamba 模块结合，用全局时间扫描处理 motor-imagery EEG 分类。
+- [QASPC: Question-Aware Sentence-Level Prompt Compression](https://doi.org/10.1145/3800227.3800247)：按用户问题进行句子级 prompt compression，优先保留答题相关上下文，而不是均匀裁剪 token。
+- [LongSight: Compute-Enabled Memory to Accelerate Large-Context LLMs via Sparse Attention](https://doi.org/10.1145/3725843.3756062)：用 compute-enabled memory 加速大上下文 KV 状态上的 sparse-attention 访问，针对长上下文 LLM 推理的内存侧瓶颈。
+- [Earl: Efficient Agentic RL Post-Training for LLMs under Dynamic Context Lengths](https://doi.org/10.1145/3805621.3807632)：通过高效 RL 在动态上下文长度下后训练 Agentic LLM。
+- [OmniKV: Dynamic Context Selection for Efficient Long-Context LLMs](https://openreview.net/forum?id=ulCAPXYXfa)：采用免丢 token、免训练的动态上下文选择，利用相邻层重要 token 集合的相似性降低 KV 显存并扩展单卡可承载上下文长度。
+- [Jamba: Hybrid Transformer-Mamba Language Models](https://openreview.net/forum?id=JFPaD7lpBD)：把 hybrid Transformer-Mamba MoE 架构扩展到 Jamba-1.5 系列，提供 256K 有效上下文、高吞吐和 ExpertsInt8 长上下文量化。

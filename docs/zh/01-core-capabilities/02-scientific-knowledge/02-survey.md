@@ -1,8 +1,233 @@
 # 1.2.2 Survey
 
-- [A Comprehensive Survey of Foundation Models in Medicine](https://arxiv.org/abs/2406.10729)：覆盖医学基础模型、数据集、评测与部署风险这一重要科学子领域。
+- [Perspective on AI for accelerated materials design at the AI4Mat-2023 workshop at NeurIPS 2023](https://doi.org/10.1039/d4dd90010c)：综合 AI4Mat workshop 对数据、代理模型、逆向设计和闭环材料发现的观点，可作为 AI 加速材料科学的社区路线图。
+- [Roadmap on data-centric materials science](https://arxiv.org/abs/2402.10932)：以数据可得性、元数据、不确定性、互操作和基准为主线组织材料科学，强调数据基础设施是可靠科学机器学习的前提。
+- [Large Language Models for Causal Discovery: Current Landscape and Future Directions](https://arxiv.org/abs/2402.11068)：综述 LLM 在因果图构建、先验提取、实验设计和因果推理中的用法，说明语言先验可如何辅助科学发现。
+- [Data-driven Discovery with Large Generative Models](https://arxiv.org/abs/2402.13610)：把生成建模、贝叶斯优化、主动学习和基于仿真的验证连接为面向科学设计空间的数据驱动发现循环。
+- [Materials science in the era of large language models: a perspective](https://arxiv.org/abs/2403.06949)：将 LLM 定位为材料科学助手，覆盖文献挖掘、结构-性质推理、代码生成和自主实验室接口。
+- [Position: Leverage Foundational Models for Black-Box Optimization](https://arxiv.org/abs/2405.03547)：将基础模型定位为黑盒优化中的先验和候选生成器，对分子、材料和实验设计搜索具有共通意义。
+- [Optical materials discovery and design with federated databases and machine learning.](https://arxiv.org/abs/2405.11393)：回顾联邦材料数据库与机器学习如何支撑光学材料发现和设计。
+- [What can machine learning help with microstructure-informed materials modeling and design?](https://arxiv.org/abs/2405.18396)：综述机器学习如何支持微结构感知材料建模与设计。
+- [A Comprehensive Survey of Scientific Large Language Models and Their Applications in Scientific Discovery](https://arxiv.org/abs/2406.10833)：按数据来源、领域适配、评测任务和发现应用梳理科学 LLM，为语言模型支持科学研究提供宽口径地图。
+- [What if? Numerical weather prediction at the crossroads](https://arxiv.org/abs/2407.03787)：综述数值天气预报从物理模型走向 AI 辅助预测的转变，强调混合建模、不确定性和业务评测。
+- [A Comprehensive Survey on Kolmogorov Arnold Networks (KAN)](https://arxiv.org/abs/2407.11075)：综述 KAN 架构、变体、理论和应用，尤其涵盖可解释函数逼近对科学建模有价值的场景。
+- [Crystalline Material Discovery in the Era of Artificial Intelligence](https://arxiv.org/abs/2408.08044)：综述 AI 时代的晶体材料发现。
+- [Towards Efficient Large Language Models for Scientific Text: A Review](https://arxiv.org/abs/2408.10729)：梳理科学知识与科学建模的近期方法与开放问题。
+- [Recent Advances on Machine Learning for Computational Fluid Dynamics: A Survey](https://arxiv.org/abs/2408.12171)：综述Scientific Knowledge的方法、风险或评测脉络，可作为 Scientific Knowledge / Survey 部分的领域地图。
+- [Large Language Models and Cognitive Science: A Comprehensive Review of Similarities, Differences, and Challenges](https://arxiv.org/abs/2409.02387)：对照记忆、推理、语言习得和泛化等认知科学概念分析 LLM 行为，有助于判断关于模型认知能力的科学性声明。
+- [Introduction to machine learning potentials for atomistic simulations](https://arxiv.org/abs/2410.00626)：介绍面向原子模拟的机器学习势。
+- [Exploring the design space of deep-learning-based weather forecasting systems](https://arxiv.org/abs/2410.07472)：梳理基于深度学习的天气预报系统设计空间。
+- [The State of Julia for Scientific Machine Learning](https://arxiv.org/abs/2410.10908)：综述 Julia 的可微编程、微分方程求解器、概率工具和 SciML 生态，说明其如何支撑物理约束与混合科学建模。
+- [Artificial intelligence for quantum computing](https://arxiv.org/abs/2411.09131)：梳理科学知识方向的近期方法、评测问题或风险边界。
+- [ChemTEB: Chemical Text Embedding Benchmark, an Overview of Embedding Models Performance & Efficiency on a Specific Domain](https://arxiv.org/abs/2412.00532)：总结化学文本嵌入任务与模型效率取舍，为科学文本检索提供领域专用基准线索。
+- [Foundational Large Language Models for Materials Research](https://arxiv.org/abs/2412.09560)：综述材料研究中的 LLM 数据、预训练、检索、推理和智能体用法，展示语言模型如何连接材料知识与设计流程。
+- [LitLLMs, LLMs for Literature Review: Are we there yet?](https://arxiv.org/abs/2412.15249)：评估 LLM 对文献检索、筛选、摘要、综合和引文处理等综述流程的支持，直接对应科学知识工作。
+- [From Generalist to Specialist: A Survey of Large Language Models for Chemistry](https://arxiv.org/abs/2412.19994)：按分子表示、反应与性质任务、工具使用和评测组织化学 LLM，说明化学知识建模的专门化路径。
+- [Improving machine-learning models in materials science through large datasets](https://doi.org/10.1016/j.mtphys.2024.101560)：综述大规模材料数据如何提升机器学习模型覆盖面和可靠性。
+- [AI methods in materials design, discovery and manufacturing: A review](https://doi.org/10.1016/j.commatsci.2024.112793)：综述机器学习、优化、计算机视觉和生成式 AI 在材料设计、发现与制造工作流中的作用。
+- [Machine learning in materials research: Developments over the last decade and challenges for the future](https://doi.org/10.1016/j.cossms.2024.101189)：以十年材料机器学习为视角，总结表示选择、数据稀缺、模型验证和落地挑战。
+- [Exploring high entropy alloys: A review on thermodynamic design and computational modeling strategies for advanced materials applications](https://doi.org/10.1016/j.heliyon.2024.e39660)：综述 CALPHAD、第一性原理模拟、热力学描述符和 ML 辅助设计在高熵合金发现中的作用。
+- [Potential to transform words to watts with large language models in battery research](https://doi.org/10.1016/j.xcrp.2024.101844)：将 LLM 定位为电池材料研究中的文献挖掘、实验方案生成和知识整合工具。
+- [Artificial intelligence for geoscience: Progress, challenges, and perspectives](https://doi.org/10.1016/j.xinn.2024.100691)：综述 AI 在地球科学预测、反演、遥感和数据同化中的应用，突出领域约束如何塑造科学建模。
+- [Comprehensive review of advances in machine-learning-driven optimization and characterization of perovskite materials for photovoltaic devices](https://doi.org/10.1016/j.jechem.2024.09.043)：综述 ML 驱动的钙钛矿光伏材料组分优化、稳定性预测和表征支持。
+- [Deep Learning in Power Systems: A Bibliometric Analysis and Future Trends](https://doi.org/10.1109/access.2024.3491914)：基于文献计量证据梳理电力系统中的深度学习主题，包括预测、控制、保护和优化。
+- [Recent machine learning-driven investigations into high entropy alloys: a comprehensive review](https://doi.org/10.1016/j.jallcom.2024.177823)：围绕特征工程、性质预测、相稳定性和组分筛选组织高熵合金的机器学习研究。
+- [AI in single-atom catalysts: a review of design and applications](https://doi.org/10.20517/jmi.2024.78)：综述 AI 在单原子催化剂结构-性质建模、吸附预测和催化剂设计中的用法。
+- [Revolutionizing Supramolecular Materials Design with Artificial Intelligence](https://doi.org/10.1016/j.supmat.2024.100090)：综述 AI 在超分子材料设计中的方法，包括结构-性质预测、自组装建模和候选筛选。
+- [AI-Accelerated Electronic Materials Discovery and Development](https://doi.org/10.1109/mc.2024.3515392)：围绕数据资源、代理模型、高通量筛选和器件导向验证，综述 AI 加速电子材料发现与开发。
+- [A Survey of Mixture Models for Scientific Literature](https://doi.org/10.1109/aiim64537.2024.10934484)：综述混合模型在科学文献聚类、主题发现和结构抽取中的用法。
+- [Integrating machine learning with advanced processing and characterization for polycrystalline materials: a methodology review and application to iron-based superconductors](https://doi.org/10.1080/14686996.2024.2436347)：将多晶材料的加工、表征与 ML 分析串联起来，并以铁基超导体作为集成案例。
+- [GPT, large language models (LLMs) and generative artificial intelligence (GAI) models in geospatial science: a systematic review](https://doi.org/10.1080/17538947.2024.2353122)：系统综述 LLM 与生成式 AI 在地理空间科学中的用途，包括空间数据解释、地理编码、制图和领域工作流支持。
 - [LLM4SR: A Survey on Large Language Models for Scientific Research](https://arxiv.org/abs/2501.04306)：梳理大语言模型在文献综述、假设、实验、分析、写作与审稿中的应用。
+- [Large Language Models for Knowledge Graph Embedding: A Survey](https://arxiv.org/abs/2501.07766)：综述 LLM 如何支持实体关系表示、图补全和文本知识注入式的知识图谱嵌入。
+- [Advances in modeling complex materials: The rise of neuroevolution potentials](https://arxiv.org/abs/2501.11191)：综述 NEP 式机器学习原子间势及其在复杂材料高效模拟中的作用。
+- [Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](https://arxiv.org/abs/2502.02871)：将多模态 LLM 定位为科学推理工具，覆盖感知、证据使用与领域问题求解。
+- [Grounding Creativity in Physics: A Brief Survey of Physical Priors in AIGC](https://arxiv.org/abs/2502.07007)：综述守恒律、几何、可微仿真等物理先验如何约束生成式内容模型。
+- [The evolution of machine learning potentials for molecules, reactions and materials.](https://arxiv.org/abs/2502.07335)：综述面向分子、反应和材料的机器学习势发展。
+- [Machine learning for modelling unstructured grid data in computational physics: a review](https://arxiv.org/abs/2502.09346)：综述图、网格和算子学习方法如何处理计算物理中的非结构网格仿真数据。
+- [Can machines learn density functionals? Past, present, and future of ML in DFT](https://arxiv.org/abs/2503.01709)：综述机器学习在密度泛函理论中的过去、现状与未来方向。
+- [Interpolating Neural Network-Tensor Decomposition (INN-TD): a scalable and interpretable approach for large-scale physics-based problems](https://arxiv.org/abs/2503.02041)：将插值神经网络与张量分解结合，用可扩展且可解释的形式处理大规模物理问题。
+- [A Survey of Foundation Models for Environmental Science](https://arxiv.org/abs/2503.03142)：按数据模态、预训练任务、下游预测或监测用途和评测约束组织环境科学基础模型。
 - [Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions](https://arxiv.org/abs/2503.08979)：综述自主科研工作流、工具、挑战与未来方向。
+- [A practical guide to machine learning interatomic potentials - Status and future](https://arxiv.org/abs/2503.09814)：综述机器学习原子间势的现状与未来，将其作为面向原子尺度系统的科学基础模型线索。
+- [Lessons from the trenches on evaluating machine-learning systems in materials science](https://arxiv.org/abs/2503.10837)：总结材料科学中机器学习系统评估的实践经验。
+- [Challenges and Advancements in Modeling Shock Fronts with Physics-Informed Neural Networks: A Review and Benchmarking Study](https://arxiv.org/abs/2503.17379)：结合综述和基准证据分析 PINN 在冲击波前问题中的不连续性、损失设计和数值稳定性挑战。
+- [Machine Learning-Driven Materials Discovery: Unlocking Next-Generation Functional Materials – A review](https://arxiv.org/abs/2503.18975)：综述机器学习驱动的下一代功能材料发现。
+- [AI‐Driven Defect Engineering for Advanced Thermoelectric Materials](https://arxiv.org/abs/2503.19148)：综述机器学习如何支持热电材料的缺陷感知设计。
+- [Machine learning and data-driven methods in computational surface and interface science](https://arxiv.org/abs/2503.19814)：综述表面与界面科学中的机器学习原子间势、数据集和数据高效建模挑战。
+- [We Need Improved Data Curation and Attribution in AI for Scientific Discovery](https://arxiv.org/abs/2504.02486)：主张改进 AI 科学发现中的数据整理与归因实践，突出数据来源管理作为能力与治理瓶颈。
+- [Towards Scientific Machine Learning for Granular Material Simulations: Challenges and Opportunities](https://arxiv.org/abs/2504.08766)：综述颗粒材料仿真中的 SciML 机会，包括本构建模、可微求解器、粒子方法和数据稀缺问题。
+- [Language models for materials discovery and sustainability: Progress, challenges, and opportunities](https://arxiv.org/abs/2504.14849)：可作为科学知识与科研发现的 Survey 候选：围绕 Language models for materials discovery and sustainability: Progress, challenges, and opportunities 梳理背景、方法与开放问题。
 - [From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery](https://arxiv.org/abs/2505.13259)：解释科研辅助系统向自主发现系统演进的路径。
+- [On the definition and importance of interpretability in scientific machine learning](https://arxiv.org/abs/2505.13510)：围绕物理一致性、参数含义、机制洞察和可信部署界定 SciML 中的可解释性。
+- [Materials Generation in the Era of AI](https://arxiv.org/abs/2505.16379)：综述 AI 材料生成中的表示选择、扩散与自回归生成器、性质约束和验证协议。
+- [Scientific machine learning in hydrology: a unified perspective](https://arxiv.org/abs/2506.06308)：梳理科学知识与科学建模的近期方法与开放问题。
+- [A Survey of AI for Materials Science: Foundation Models, LLM Agents, Datasets, and Tools](https://arxiv.org/abs/2506.20743)：综述材料科学中的基础模型、LLM agents、数据集和工具。
+- [Fine-tuning universal machine-learned interatomic potentials: A Tutorial on methods and applications](https://arxiv.org/abs/2506.21935)：系统整理将通用原子间势适配到任务特定精度需求的微调方法。
+- [LLMs and RAG for Crystalline Material Discovery](https://arxiv.org/abs/2508.06691)：系统综述大语言模型与检索增强生成如何支持非生医的晶体材料发现。
 - [A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers](https://arxiv.org/abs/2508.21148)：连接科学数据基础、模型体系、评测与智能体前沿。
+- [Generative AI for crystal structures](https://arxiv.org/abs/2509.02723)：综述 crystal-structure design 中的生成模型，补充非生医科学生成方向。
+- [Synergizing chemical and AI communities for advancing laboratories of the future](https://arxiv.org/abs/2510.16293)：围绕共享化学数据标准、自主实验、AI-ready 工作流和化学与 AI 社群协作来定义未来实验室。
+- [The Rapid Growth of AI Foundation Model Usage in Science](https://arxiv.org/abs/2511.21739)：用文献计量和使用证据追踪基础模型在科学领域、任务和研究工作流中的扩散。
+- [Fourier Neural Operators Explained: A Practical Perspective](https://arxiv.org/abs/2512.01421)：从算子学习、谱卷积、分辨率迁移和 PDE 代理建模实践角度解释 Fourier neural operators。
+- [Bayesian Co-Navigation of a Computational Physical Model and AFM Experiment to Autonomously Survey a Combinatorial Materials Library](https://arxiv.org/abs/2512.08084)：综述用贝叶斯决策协调计算物理模型和 AFM 实验，以自主扫描组合材料库的 co-navigation 循环。
+- [Long-range electrostatics for machine learning interatomic potentials is easier than we thought](https://arxiv.org/abs/2512.18029)：提炼 Latent Ewald Summation 的设计原则，说明如何仅从能量和力数据为 MLIP 加入环境依赖库仑相互作用与电响应。
+- [Foundation Models for the Process Industry: Challenges and Opportunities](https://doi.org/10.1016/j.eng.2025.03.023)：综述 foundation models 在流程工业建模、运行与工程流程中的机会和挑战。
+- [From descriptors to machine learning interatomic potentials: a review of AI-accelerated electrocatalyst design](https://doi.org/10.20517/aiagent.2025.05)：综述描述符、机器学习方法和 MLIP 在 AI 加速电催化剂设计中的作用。
+- [AI agents for solid electrolytes: opportunities, challenges, and future directions](https://doi.org/10.20517/aiagent.2025.10)：综述 AI 智能体与自治流程在固态电解质发现、评估和电池材料优化中的机会。
+- [Materials informatics: A review of AI and machine learning tools, platforms, data repositories, and applications to architectured porous materials](https://doi.org/10.1016/j.mtcomm.2025.113525)：梳理材料信息学工具、数据仓库、平台和多孔材料应用，强调可复用数据与建模基础设施。
+- [Machine learning for predictive design and optimization of high-performance thermoelectric materials: a review](https://doi.org/10.20517/jmi.2025.18)：综述机器学习在高性能热电材料预测设计与优化中的应用。
+- [The evolution of MOF discovery for CO2 capture: From high-throughput screening to AI design and automated laboratories](https://doi.org/10.1016/j.mattod.2025.10.017)：回顾 MOF 发现从高通量筛选走向 AI 设计与自动化实验室的演进。
+- [Applications of machine learning in the design and discovery of electrocatalysts](https://doi.org/10.1360/csb-2025-5742)：综述机器学习在电催化剂设计与发现中的应用。
+- [AI Driven Discovery and Design of Smart Materials](https://doi.org/10.18311/jmmf/2025/49454)：综述智能材料发现与设计中的 AI 驱动范式，为材料设计补充较宽的综述参考。
+- [Harnessing Large Language Models for Sustainable Materials and Manufacturing: Frameworks, Applications & Innovations](https://doi.org/10.1109/is3c65361.2025.11130957)：综述可持续材料与制造中的 LLM 框架，涵盖知识抽取、决策支持、设计辅助和工艺创新。
+- [A general framework to govern machine learning oriented materials data quality](https://doi.org/10.1016/j.mser.2025.101050)：提出面向 ML 的材料数据质量治理框架，覆盖来源、不确定性、完整性、代表性和使用适配性。
+- [Advancing electrocatalyst discovery through the lens of data science: State of the art and perspectives☆](https://doi.org/10.1016/j.jcat.2025.116162)：从描述符、数据库到 ML 筛选和不确定性感知设计，综述数据科学驱动的电催化剂发现工作流。
+- [Computational simulation of short-range order structures in high-entropy alloys: a review on formation patterns, multiscale characterization, and performance modulation mechanisms](https://doi.org/10.1080/23746149.2025.2527417)：综述高熵合金短程有序结构的仿真与表征方法，并连接原子排列和性能调控机制。
+- [Machine Learning-Driven Advances in Nanotechnology: From Materials Design to Process Optimization- a Review](https://doi.org/10.1016/j.mtcomm.2025.114485)：综述机器学习在纳米技术中的用途，从材料性质预测和合成规划延伸到过程优化。
+- [Machine learning for 2D material–based devices](https://doi.org/10.1016/j.mser.2025.101085)：围绕性质预测、器件优化、合成指导和数据驱动筛选组织二维材料器件中的机器学习工作。
+- [Machine Learning–Driven Thermoelectric Materials: Review on Prediction, Optimization, and Discovery](https://doi.org/10.1016/j.jallcom.2025.185711)：综述热电材料的性质预测、组分优化和发现流程中的机器学习管线。
+- [Additive Manufacturing Modification by Artificial Intelligence, Machine Learning, and Deep Learning: A Review](https://doi.org/10.1016/j.amf.2025.200198)：综述 AI 在增材制造参数优化、缺陷检测、过程监控和材料性质预测中的方法。
+- [A guided review of machine learning in the design and application for pore nanoarchitectonics of carbon materials](https://doi.org/10.1016/j.mser.2025.101010)：综述 ML 引导的碳材料孔纳米架构设计，连接结构描述符与吸附、催化和储能应用。
+- [State Estimation of Lithium-Ion Batteries via Physics-Machine Learning Combined Methods: A Methodological Review and Future Perspectives](https://doi.org/10.1016/j.etran.2025.100420)：按模型融合、退化信号和部署限制组织锂离子电池状态估计中的物理-机器学习混合方法。
+- [Deep Learning for Ocean Forecasting: A Comprehensive Review of Methods, Applications, and Datasets](https://doi.org/10.1109/tcyb.2025.3539990)：综述海洋建模中的深度学习架构、海洋数据集、预测目标和业务化挑战。
+- [Recent advances in stimuli-responsive framework materials: Understanding their response and searching for materials with targeted behavior](https://doi.org/10.1016/j.ccr.2025.216760)：梳理科学知识方向的近期方法、评测问题或风险边界。
+- [Deep Learning Paradigm Shift in Composite Materials Performance Prediction: A Review of State-of-the-Art Applications](https://doi.org/10.1016/j.coco.2025.102542)：梳理科学知识方向的近期方法、评测问题或风险边界。
+- [Generating and leveraging explanations of AI/ML models in materials and manufacturing research](https://doi.org/10.1016/j.patter.2025.101340)：补充一个面向科学知识与科学建模的综述条目，关注explanations of AI models in materials and manufacturing。
+- [Accelerating materials discovery through active learning: Methods, challenges and opportunities](https://doi.org/10.59717/j.xinn-inform.2025.100013)：补充一个面向科学知识与科学建模的综述条目，关注active learning for materials discovery。
+- [The Role of Artificial Intelligence in Microstructural Characterization of Ferrous Materials: A Review of Tools, Findings, and Research Challenges](https://doi.org/10.18311/jmmf/2025/48262)：综述用于铁基材料微结构表征的 AI 工具，包括图像分析、特征抽取以及加工-性能建模连接。
+- [Acceleration, agency, and foundations: ten influential arXiv directions in AI for materials science (2025)](https://doi.org/10.1088/2515-7639/ae512f)：用十个 arXiv 方向组织 2025 年材料 AI 的加速、智能体实验室、基础模型、数据集和验证主题。
+- [Machine learning-enabled optoelectronic material discovery: a comprehensive review](https://doi.org/10.20517/jmi.2025.13)：综述机器学习在光电材料发现中的描述符、性质预测、候选筛选和实验验证流程。
+- [The integration of artificial intelligence and high-throughput experiments: an innovative driving force in catalyst design](https://doi.org/10.1016/j.cjche.2025.04.012)：综述 AI 与高通量实验如何结合，用于催化剂设计中的候选筛选、实验规划和闭环优化。
+- [Emerging applications of physics-informed and physics-guided machine learning in geoenergy science: A review](https://doi.org/10.1016/j.cnsns.2025.109551)：梳理科学知识与科学建模的近期方法与开放问题。
+- [Physics-informed neural networks in heat transfer-dominated multiphysics systems: A comprehensive review](https://doi.org/10.1016/j.engappai.2025.111098)：综述以传热为主的多物理系统中的 PINN 建模，覆盖方程约束、边界条件和逆问题应用。
+- [Phase diagram determination using machine learning methods in materials science and engineering: a review](https://doi.org/10.1080/14786435.2025.2558154)：综述用机器学习确定材料相图的方法，包括数据来源、特征表示、预测模型和不确定性。
+- [Advancing battery research through large language models: A review](https://doi.org/10.1016/j.xinn.2025.101091)：综述大语言模型如何支持电池研究，补充科学知识工作流中的材料科学案例。
+- [Materials Informatics: Emergence to Autonomous Discovery in the Age of AI.](https://arxiv.org/abs/2601.00742)：综述材料信息学从贝叶斯优化等传统方法走向大模型辅助、RAG 支持和主动学习驱动的自主材料发现。
+- [Publishing FAIR and Machine-actionable Reviews in Materials Science: The Case for Symbolic Knowledge in Neuro-symbolic Artificial Intelligence](https://arxiv.org/abs/2601.05051)：以材料科学综述的 FAIR 与 machine-actionable 发布为例，论证 neuro-symbolic AI 中 symbolic knowledge 的作用。
+- [A Critical Examination of Active Learning Workflows in Materials Science](https://arxiv.org/abs/2601.05946)：审视材料科学中的主动学习工作流，重点分析采集策略、人工决策、模型重训和验证实践。
+- [Artificial Intelligence in Materials Science and Engineering: Current Landscape, Key Challenges, and Future Trajectorie](https://arxiv.org/abs/2601.12554)：综述 AI 在材料科学与工程中的现状、方法、关键挑战与未来发展方向。
+- [A New Paradigm for Computational Chemistry](https://arxiv.org/abs/2604.01360)：将学习得到的势能面视为化学与材料科学计算的新范式。
+- [Differentiable hybrid force fields support scalable autonomous electrolyte discovery](https://arxiv.org/abs/2604.07979)：把可微混合力场定位为自动电解质发现循环中的快速、准确且可校准计算引擎。
+- [Generative design of inorganic materials](https://arxiv.org/abs/2604.14082)：综述无机材料生成设计中的多模态学习与高通量实验验证路径。
+- [Accelerating point defect simulations using data-driven and machine learning approaches](https://arxiv.org/abs/2604.21069)：综述用于加速点缺陷模拟的数据驱动和机器学习方法，包括替代性质模型与机器学习原子间势。
+- [Earth Science Foundation Models](https://arxiv.org/abs/2605.12542)：综述从感知到推理与发现的 Earth-science foundation models，整理非生物医学科学中的数据集、benchmark 和多模态任务族。
+- [Progress and Opportunities for AI in Additively Manufactured NiTi-based Shape Memory Alloys](https://doi.org/10.1016/j.apmate.2026.100406)：综述 AI 在增材制造 NiTi 基形状记忆合金中的进展与机会。
+- [GeoAI research in transition: thematic structures, temporal evolution and method–domain linkages](https://doi.org/10.1080/13658816.2026.2617348)：梳理 GeoAI 研究的主题结构、时间演化和方法与领域之间的联系。
+- [Machine learning in electrolyte design: Accelerating discovery and multidimensional optimization for next-generation batteries](https://doi.org/10.1016/j.chempr.2026.103024)：综述机器学习在下一代电池电解质发现与多目标优化中的方法路线。
+- [Accelerating single-atom ORR catalyst discovery through theory and machine learning: a critical review](https://doi.org/10.1016/j.ccr.2026.217870)：综述用理论与机器学习加速 single-atom ORR catalyst discovery 的路线。
+- [Machine learning drives a new paradigm in inorganic solid-state electrolytes research](https://doi.org/10.1016/j.commt.2026.100051)：综述 machine-learning-driven paradigms 在无机固态电解质研究中的作用。
+- [Machine learning empowered surface growth of 2D materials: Synthesis, characterization and mechanism](https://doi.org/10.1016/j.surfrep.2026.100677)：综述机器学习如何支撑二维材料表面生长中的合成控制、表征分析和机制发现。
+- [Deepcluster agent to search Global Minimum of Nanoclusters using Deep Reinforcement Learning: A Review](https://doi.org/10.1016/j.commt.2026.100048)：综述用于纳米团簇全局最小结构搜索的深度强化学习智能体，将原子结构探索与自主优化相连接。
+- [Metal-organic frameworks: Role of artificial intelligence and machine learning algorithms for efficient discovery, design, synthesis and prediction of CO2 capture capacity - A state of art review](https://doi.org/10.1016/j.seppur.2026.136737)：补充一个面向科学知识与科学建模的综述条目，关注AI and machine learning for metal-organic-framework discovery。
+- [The application of machine learning in the research and development of solid-state electrolyte materials](https://doi.org/10.1360/csb-2026-0137)：综述固态电解质筛选、性质预测、合成优化和电池材料评估中的机器学习方法。
+- [A review of Generative Artificial Intelligence for additive manufacturing: Bridging design, process monitoring, and beyond](https://doi.org/10.1016/j.jmsy.2026.03.013)：综述生成式 AI 在增材制造中的设计生成、过程监控、缺陷修正和制造知识工作流。
+- [Kolmogorov-Arnold networks for data-driven, physics-informed, and deep-operator learning: a review, synthesis, and new analysis.](https://doi.org/10.1016/j.neunet.2026.108791)：综合 KAN 在数据驱动建模、物理约束学习和算子学习中的用法，并分析样条表示对科学任务的价值。
+- [On scientific foundation models: Rigorous definitions, key applications, and a comprehensive survey](https://doi.org/10.1016/j.neunet.2026.108567)：界定科学基础模型，并综述其数据、架构、适配、评测和跨科学领域应用模式。
+- [From prediction to understanding: A review of XAI applications and innovations in materials science](https://doi.org/10.1016/j.commatsci.2026.114493)：综述材料科学中的可解释 AI 如何从性质预测走向机制理解、特征归因和可信设计。
+- [Machine learning in ocean data assimilation: Advances, gaps and the road to operations](https://doi.org/10.1016/j.ocemod.2026.102678)：梳理科学知识与科学建模的近期方法与开放问题。
+- [Physics-informed neural networks for flow-heat transfer coupling problems: A comprehensive review of methods, applications, and future perspectives](https://doi.org/10.1016/j.ijheatmasstransfer.2026.128907)：综述耦合流动与传热仿真中的 PINN 形式、边界条件处理、损失平衡和应用案例。
+- [Adaptive stimuli-responsive adsorption materials for environmental remediation: A critical review of mechanisms, machine learning guided design and standardized evaluation](https://doi.org/10.1016/j.seppur.2026.138595)：综述刺激响应吸附材料的机理、ML 引导设计和标准化评估，用于环境修复材料发现。
 - [Empowering scientific discovery with explainable small domain-specific and large language models](https://doi.org/10.1007/s10462-025-11365-w)：综述面向科学发现的可解释小型领域模型与大语言模型，将模型透明度与科研流程联系起来。
+- [AI for Extreme Weather and Climate Events](https://doi.org/10.1038/s41467-025-56573-8)：综述 AI 模型如何支撑极端天气与气候事件的建模和理解。
+- [Machine learning interatomic potentials at the centennial crossroads of quantum mechanics](https://doi.org/10.1038/s43588-025-00930-6)：综述机器学习原子间势如何连接量子力学精度与可扩展原子模拟。
+- [Reactive Machine Learning Interatomic Potentials for Chemistry and Materials Science](https://doi.org/10.1021/acs.chemrev.5c00728)：综述反应性机器学习原子间势及其在化学与材料建模中的应用。
+- [Artificial Intelligence for Multiscale Modeling in Solid‐State Physics and Chemistry: A Comprehensive Review](https://doi.org/10.1002/aisy.202501219)：综述 AI 在固态物理与化学多尺度建模中的方法，将数据驱动模型与模拟工作流联系起来。
+- [Applications of natural language processing and large language models in materials discovery](https://doi.org/10.1038/s41524-025-01554-0)：综述自然语言处理和大语言模型如何支持材料发现流程。
+- [Exploring Generative Artificial Intelligence and Data Augmentation Techniques for Spectroscopy Analysis](https://doi.org/10.1021/acs.chemrev.4c00815)：综述光谱分析中的生成式 AI 与数据增强方法，补充科学工作流覆盖。
+- [Harnessing Machine Learning to Enhance Transition State Search with Interatomic Potentials and Generative Models](https://doi.org/10.1002/advs.202506240)：综述原子间势与生成模型如何增强科学化学流程中的过渡态搜索。
+- [How to accelerate the inorganic materials synthesis: from computational guidelines to data-driven method?](https://doi.org/10.1093/nsr/nwaf081)：综述无机材料合成中的计算指导原则与数据驱动方法，连接合成结果预测和材料发现流程。
+- [Path to Machine Learning-Driven Autonomous Systems for Solid-State Electrolyte Batteries: Design, Fabrication, and Lifetime Prediction](https://doi.org/10.1021/acsaem.5c02002)：梳理机器学习驱动的自治流程如何支撑固态电解质的设计、制备与寿命预测。
+- [Out-of-distribution machine learning for materials discovery: Challenges and opportunities](https://doi.org/10.1063/5.0228239)：综述材料发现中机器学习模型外推到新设计空间时面临的挑战与机会。
+- [Transforming MOF Modeling with Machine-Learned Potentials: Progress and Perspectives](https://doi.org/10.1021/acs.jcim.5c02712)：综述机器学习势在金属有机框架建模中的进展与前景。
+- [Artificial Intelligence-Driven Materials Design for Next-Generation Sustainable Energy Technologies](https://doi.org/10.1021/acssuschemeng.6c01084)：梳理可持续能源技术中的 AI 驱动材料设计路线，为科学发现部分补充能源材料视角。
+- [Hitchhikers Guide To Training More General Machine Learning Potentials in Heterogeneous Catalysis.](https://doi.org/10.1021/acs.jctc.5c02077)：面向异相催化中更通用机器学习势的训练给出实践指导，补充反应型 MLIP 综述之外的训练取舍。
+- [Large Language Models (LLMs) for Materials Design](https://doi.org/10.1002/adfm.202525897)：综述通用与材料专用 LLM 在材料问答、生成、性质预测和设计流程中的用法。
+- [Developing machine learning for heterogeneous catalysis with experimental and computational data.](https://doi.org/10.1038/s41570-025-00740-4)：综述实验数据与计算数据如何支撑异相催化中的机器学习模型。
+- [Recent Applications of Theoretical Calculations and Artificial Intelligence in Solid-State Electrolyte Research: A Review](https://doi.org/10.3390/nano15030225)：综述理论计算与 AI 方法在固态电解质预测和筛选中的应用。
+- [Applications of machine learning in surfaces and interfaces](https://doi.org/10.1063/5.0244175)：综述机器学习在化学与材料表面、界面模拟和分析中的应用。
+- [Empowering Generalist Material Intelligence with Large Language Models](https://doi.org/10.1002/adma.202502771)：综述 LLM 驱动的通用材料智能，涵盖知识综合、建模与实验机器人之间的 agent-in-the-loop 编排。
+- [Artificial intelligence for advanced functional materials: exploring current and future directions](https://doi.org/10.1088/2515-7639/adc29d)：综述 AI 在功能材料设计、数据库、制备、表征与原子尺度模拟中的作用，覆盖能源、电子与量子技术等场景。
+- [Computational Material Science Has a Data Problem](https://doi.org/10.1021/acs.jcim.5c01049)：把数据质量、覆盖范围和复用问题作为计算材料建模瓶颈，补充材料发现中偏模型路线之外的数据基础视角。
+- [Accelerated Discovery of Energy Materials via Graph Neural Network](https://doi.org/10.3390/inorganics13120395)：综述用于能源材料发现的图神经网络、数据集、架构和应用，覆盖电池、钙钛矿、热电材料与催化剂等方向。
+- [Artificial Intelligence as the Next Visionary in Liquid Crystal Research](https://doi.org/10.1002/adfm.202529976)：将人工智能作为液晶研究的重要方法线索进行综述或前瞻定位。
+- [The convergence of machine learning and data assimilation in Earth system science](https://doi.org/10.1038/s44387-026-00107-0)：综述机器学习与数据同化在地球系统科学中的融合，把学习模型与预报和状态估计流程连接起来。
+- [Artificial intelligence for energy materials research: From classical machine learning to large models](https://doi.org/10.1007/s11708-026-1053-5)：综述能源材料研究中的 AI，从传统机器学习、图神经网络和 Transformer 到生成模型与基于 LLM 的知识抽取。
+- [Self-Driving Laboratories for Chemistry and Materials Science](https://doi.org/10.1021/acs.chemrev.4c00055)：综述化学与材料发现中的自主实验室工作流。
+- [Data Generation for Machine Learning Interatomic Potentials and Beyond](https://doi.org/10.1021/acs.chemrev.4c00572)：综述机器学习原子间势及相关原子模型的数据生成策略。
+- [A review on recent applications of machine learning in mechanical properties of composites](https://doi.org/10.1002/pc.29082)：综述用于预测复合材料力学性能的 ML 模型、描述符、数据集和验证问题。
+- [From text to insight: large language models for chemical data extraction.](https://doi.org/10.1039/d4cs00913d)：综述 LLM 从文本中抽取化学实体、反应、性质和实验条件的方法。
+- [Challenges in High-Throughput Inorganic Materials Prediction and Autonomous Synthesis](https://doi.org/10.1103/prxenergy.3.011002)：综述高通量无机材料预测与自主合成的瓶颈，包括数据质量、合成可行性和闭环验证。
+- [The Future of Material Scientists in an Age of Artificial Intelligence](https://doi.org/10.1002/advs.202401401)：讨论 AI 如何改变材料科学家在假设生成、模型监督、实验设计和责任验证中的角色。
+- [Advances in materials informatics: a review](https://doi.org/10.1007/s10853-024-09379-w)：综述材料信息学方法与数据基础。
+- [Artificial Intelligence Meets Laboratory Automation in Discovery and Synthesis of Metal–Organic Frameworks: A Review](https://doi.org/10.1021/acs.iecr.4c04636)：综述用于金属有机框架发现与合成的 AI 和实验室自动化。
+- [A review of deep learning for super-resolution in fluid flows](https://doi.org/10.1063/5.0265738)：综述流体流动超分辨率中的深度学习方法。
+- [Unlocking new possibilities in ionic thermoelectric materials: a machine learning perspective](https://doi.org/10.1093/nsr/nwae411)：综述机器学习如何通过描述符设计、性质预测和候选筛选支持离子热电材料发现。
+- [Machine Learning Force Fields in Electrochemistry: From Fundamentals to Applications](https://doi.org/10.1021/acsnano.5c05553)：按训练数据、长程相互作用、界面建模和电池与催化应用组织电化学机器学习力场。
+- [Data as the next challenge in atomistic machine learning](https://doi.org/10.1038/s43588-024-00636-1)：把原子尺度机器学习进展的关键转向数据生成、覆盖范围、不确定性和基准整理，而非单纯模型架构。
+- [Setting standards for data driven materials science](https://doi.org/10.1038/s41524-024-01411-6)：主张数据驱动材料科学的社区标准，包括元数据、来源记录、互操作性和报告规范。
+- [Unleashing the power of AI in science-key considerations for materials data preparation](https://doi.org/10.1038/s41597-024-03821-z)：细化材料数据清洗、标注、归一化和来源管理等准备步骤，说明其决定 AI 模型能否学习有用科学结构。
+- [Trust Not Verify? The Critical Need for Data Curation Standards in Materials Informatics](https://doi.org/10.1021/acs.chemmater.4c00981)：把材料信息学的可信性建立在整理标准、可复现元数据和验证实践之上。
+- [Machine Learning Assisted Material Discovery: A Small Data Approach](https://doi.org/10.1021/accountsmr.1c00236)：综述小数据材料发现策略，包括迁移学习、主动学习、描述符和人工引导实验。
+- [Emerging processing guidelines for solid electrolytes in the era of oxide-based solid-state batteries.](https://doi.org/10.1039/d5cs00358j)：综述氧化物固态电池电解质的加工准则，为科学知识页补充材料加工方向的综述线索。
+- [Graph theory and graph neural network assisted high-throughput crystal structure prediction and screening for energy conversion and storage](https://doi.org/10.1039/d3ta06190f)：综述图论与图神经网络辅助的高通量晶体结构预测和筛选。
+- [Machine Learning-Driven Nanoscale Synthesis for Electrocatalytic Performance: From Data-Driven Methodologies to Closed-Loop Optimization.](https://doi.org/10.1002/adma.202508263)：综述机器学习驱动的纳米合成，从数据驱动方法到闭环优化。
+- [Revolutionizing Chemistry and Material Innovation: An Iterative Theoretical-Experimental Paradigm Leveraged by Robotic AI Chemists](https://doi.org/10.31635/ccschem.024.202404860)：综述机器人 AI 化学家驱动的理论与实验迭代范式。
+- [A Computational Renaissance in High-Energy Density Materials (HEDMs) Research.](https://doi.org/10.1021/acs.chemrev.5c00232)：综述高能量密度材料研究中的计算方法进展。
+- [Text mining in MOF research: from manual curation to large language model-based automation.](https://doi.org/10.1039/d5cc02511g)：综述 MOF 文本挖掘从人工整理到大语言模型自动化的发展。
+- [A Review of Automated Workflow Pipelines for Computational Chemists](https://doi.org/10.1002/smtd.202500308)：综述计算化学中的自动化工作流管线，连接科学自动化与智能体执行模式。
+- [New Era of AI in Chemical Process Safety: Foundation Models](https://doi.org/10.1021/acs.chas.5c00227)：综述 foundation models 在化工过程安全中的机会与风险。
+- [Machine Learning in Non-fullerene Organic Solar Cells: Accelerating Discovery, Design, and Understanding](https://doi.org/10.1021/acsomega.6c01194)：综述机器学习在 non-fullerene organic solar cells 发现、设计和理解中的方法。
+- [Data-Driven Superconductivity: a Review of Machine Learning Methods for Material Discovery, Property Prediction, and Process Optimization](https://doi.org/10.1007/s10948-026-07175-y)：综述机器学习在超导材料发现、性质预测和工艺优化中的方法。
+- [Roadmap for High‐Throughput Ceramic Materials Synthesis and Discovery for Batteries](https://doi.org/10.1002/aenm.202506213)：梳理面向电池研究的高通量陶瓷材料合成与发现路线，涵盖自动化与发现工作流。
+- [Toward Intelligent Sensing Systems: Non-Equilibrium Materials as Platforms for AI-Enabled Autonomous Discovery](https://doi.org/10.3390/s26103036)：讨论将非平衡材料作为 AI-enabled autonomous discovery 的智能传感平台。
+- [Artificial Intelligence in Metal Complexes Research: Advances in Synthesis, Characterization, and Applications](https://doi.org/10.1007/s13369-026-11316-9)：综述 AI 在金属配合物合成、表征与应用研究中的进展。
+- [Organic–Inorganic Metal Halide Perovskites: Toward Stability, Chirality, and AI-Guided Discovery](https://doi.org/10.1021/acscentsci.5c02169)：综述 organic-inorganic metal-halide perovskites 的稳定性、手性与 AI-guided discovery。
+- [Artificial intelligence integration in materials science](https://doi.org/10.1007/s42452-026-08249-1)：综述 AI 融入材料科学工作流与发现任务的主要路径。
+- [Concepts for a Semantically Accessible Materials Data Space: Overview over Specific Implementations in Materials Science](https://doi.org/10.1002/adem.202401092)：综述语义化材料数据空间、材料本体、标识符和实现模式，使材料数据可被机器处理。
+- [Toward intelligent design of solid-state hydrogen storage: trends, challenges, and machine learning insights](https://doi.org/10.1007/s11705-026-2649-3)：综述 ML 辅助固态储氢材料设计，包括描述符、性质预测和筛选挑战。
+- [Bayesian Optimisation for the Experimental Sciences: A Practical Guide to Data‐Efficient Optimisation of Laboratory Workflows](https://doi.org/10.1002/aisy.202501149)：面向实验科学给出贝叶斯优化实践指南，覆盖采集函数、约束、批量实验和数据高效搜索。
+- [Discovery and design of new materials driven by generative artificial intelligence: opportunities, challenges, and prospects](https://doi.org/10.1117/12.3069725)：综述生成式 AI 用于新材料设计的路线，包括表示、性质条件生成、候选生成和验证瓶颈。
+- [Artificial Intelligence Paradigms for Next-Generation Metal–Organic Framework Research](https://doi.org/10.1021/jacs.5c08214)：按结构表示、性质预测、生成设计、合成规划和自主发现组织下一代 MOF 研究中的 AI 范式。
+- [Machine Learning for Perovskite Solar Cells: A Comprehensive Review on Opportunities and Challenges for Materials Scientists](https://doi.org/10.1039/d5el00041f)：综述钙钛矿太阳能电池中的 ML 机会，包括组分筛选、稳定性预测、器件优化和数据限制。
+- [AI‐Assisted Design of Advanced Polymeric Materials: Challenges and Solutions](https://doi.org/10.1002/adma.202516857)：围绕分子表示、性质预测、合成约束和验证挑战，综述 AI 辅助高分子材料设计。
+- [Artificial intelligence/machine learning of polymer materials and discovery chemistry](https://doi.org/10.1557/s43577-025-00986-9)：综述高分子发现化学中的 AI 与 ML，包括高分子表示、数据集构建、性质建模和合成规划。
+- [Machine Learning in Next-Generation Polymer Composites: Recent Advances and Perspectives](https://doi.org/10.1007/s10443-025-10437-y)：综述下一代高分子复合材料中的 ML，强调多尺度描述符、工艺-性质预测和设计优化。
+- [Artificial Intelligence Empowered New Materials: Discovery, Synthesis, Prediction to Validation](https://doi.org/10.1007/s40820-025-01945-4)：把 AI 赋能新材料发现组织为候选生成、合成规划、性质预测和实验验证管线。
+- [Artificial Intelligence in Materials by Design: Critical Review And Perspectives on Materials Informatics to Generative and Agentic Intelligence](https://doi.org/10.1007/s11831-025-10486-3)：追踪 materials by design 从信息学和生成模型走向智能体智能的路径，强调数据、模型和实验的闭环整合。
+- [AI-driven advances in the design of RTP and TADF luminescent material](https://doi.org/10.1063/5.0264797)：综述 AI 在 RTP 与 TADF 发光材料设计中的特征工程、性质预测和候选筛选。
+- [Machine Learning and Domain Adaptation for Material Generalization in Electrocatalyst Evaluation: A Comprehensive Review](https://doi.org/10.1007/s11831-026-10589-5)：综述电催化剂评估中的领域适配，重点关注跨数据集、反应条件和描述符空间的材料泛化。
+- [Data integration and data fusion approaches in self-driving labs: A perspective](https://doi.org/10.1063/5.0283450)：将数据集成与数据融合定位为 self-driving lab 的控制层，连接异构仪器、仿真和决策策略。
+- [Density functional theory methods applied to homogeneous and heterogeneous catalysis: a short review and a practical user guide.](https://doi.org/10.1039/d4cp00266k)：综述均相和异相催化中的 DFT 选择，为模型设定、泛函选择和结果解释提供实践指南。
+- [Urban Foundation Models: A Survey](https://doi.org/10.1145/3637528.3671453)：综述城市科学基础模型，包括时空预训练、出行与基础设施任务以及跨城市泛化。
+- [Physics-Informed Neural Networks in Materials Modeling and Design: A Review](https://doi.org/10.1007/s11831-025-10448-9)：综述材料建模与设计中的 PINN 形式，覆盖控制方程、边界条件、逆问题和数据-物理融合。
+- [Machine Learning Advances in High-Entropy Alloys: A Mini-Review](https://doi.org/10.3390/e26121119)：总结高熵合金中的 ML 进展，包括相预测、组分设计和性质优化。
+- [Catalysing (organo-)catalysis: Trends in the application of machine learning to enantioselective organocatalysis](https://doi.org/10.3762/bjoc.20.196)：综述对映选择性有机催化中的 ML 趋势，包括反应描述符、产率和选择性预测以及催化剂筛选。
+- [Deep learning for computational imaging: from data-driven to physics-enhanced approaches](https://doi.org/10.1117/1.ap.7.5.054002)：按数据驱动、模型驱动和物理增强深度学习方法组织计算成像研究。
+- [The Future of Catalysis: Applying Graph Neural Networks for Intelligent Catalyst Design](https://doi.org/10.1002/wcms.70010)：综述图神经网络表示和工作流在催化剂性质预测、筛选与设计中的作用。
+- [AI‐Driven Advances in Sustainable Materials for Green Energy: From Innovation to Lifecycle Management](https://doi.org/10.1002/sus2.70030)：综述 AI 在绿色能源可持续材料中的作用，从发现和合成延伸到生命周期分析与性能管理。
+- [Comprehensive overview of machine learning applications in MOFs: from modeling processes to latest applications and design classifications](https://doi.org/10.1039/d4ta06740a)：综述 MOF 中的 ML 应用，覆盖过程建模、吸附预测、合成指导和设计分类。
+- [Machine Learning in Functionally Graded Materials and Nano FGMs: A Comprehensive Review of Predictive Modeling for Mechanical Behavior](https://doi.org/10.1007/s11831-025-10316-6)：综述功能梯度材料和 nano FGMs 力学行为预测中的 ML 方法，包括特征选择和验证问题。
+- [Applications of Transformers in Computational Chemistry: Recent Progress and Prospects.](https://doi.org/10.1021/acs.jpclett.4c03128)：综述 Transformer 在分子表示、反应预测、性质估计和化学语言建模中的应用。
+- [A review on inverse analysis models in steel material design](https://doi.org/10.1002/mgea.71)：综述钢铁材料设计中的逆向分析模型，将目标性质连接到成分、工艺和微结构选择。
+- [Recent strides in artificial intelligence for predicting thermoelectric properties and materials discovery](https://doi.org/10.1088/2515-7655/adba87)：综述用于热电性质预测、候选筛选和材料发现的 AI 方法。
+- [The Alchemist, the Scientist, and the Robot: Exploring the Potential of Human‐AI Symbiosis in Self‐Driving Polymer Laboratories](https://doi.org/10.1002/marc.202500380)：将 self-driving polymer lab 表述为人机共生系统，覆盖实验规划、机器人执行、模型更新和科学家监督。
+- [The potential and challenges of large language model agent systems in chemical process simulation: from automated modeling to intelligent design](https://doi.org/10.1007/s11705-025-2587-5)：综述化工过程模拟中的 LLM 智能体系统，包括自动建模、仿真器交互和设计辅助。
+- [A review on the role of artificial intelligence and data science in green and sustainable chemistry: current trends and futuristic pathways](https://doi.org/10.1007/s43938-025-00104-w)：综述绿色化学中的 AI 与数据科学方法，强调反应优化、可持续性指标和数据驱动路径设计。
+- [Artificial Intelligence in Accelerating Materials Discovery: Opportunities and Challenges](https://doi.org/10.1002/slct.202507191)：综述 AI 加速材料发现的机会与障碍，包括数据质量、模型外推、合成验证和实验整合。
+- [Scientific Evolution of Physics-Informed NeuralNetworks: A Comprehensive Review of RecentArchitectural Variants and Optimization Strategies](https://doi.org/10.29020/nybg.ejpam.v19i1.6334)：按架构变体、优化策略和物理约束形式组织 PINN 的演进。
+- [Kolmogorov-Arnold networks for time series forecasting: a comprehensive review](https://doi.org/10.1007/s10586-025-05574-9)：综述时间序列预测中的 KAN 变体，包括样条参数化、混合架构、数据集和可解释性声明。
+- [Research Directions on Kolmogorov–Arnold Networks: A Comprehensive Review](https://doi.org/10.3390/sym18010060)：梳理 KAN 的理论、架构变体、高效训练、科学建模和可解释性研究方向。
+- [Physics-Informed Neural Networks in Polymers: A Review](https://doi.org/10.3390/polym17081108)：综述聚合物建模中的 PINN 用法，包括本构关系、热力学约束和多尺度性质预测。
+- [Machine Learning-Driven Design of Single-Atom Catalysts for Carbon Dioxide Valorization to High-Value Chemicals: A Review of Photocatalysis, Electrocatalysis, and Thermocatalysis](https://doi.org/10.1039/d5gc00739a)：综述用 ML 设计 CO2 高值化单原子催化剂，覆盖光催化、电催化和热催化场景。
+- [Machine Learning-Based Computational Design Methods for High-Entropy Alloys](https://doi.org/10.1007/s44210-025-00055-5)：综述高熵合金计算设计中的 ML 方法，包括相稳定性、力学性能和组分空间搜索。
+- [Review of Physics-Informed Neural Networks: Challenges in Loss Function Design and Geometric Integration](https://doi.org/10.3390/math13203289)：聚焦 PINN 的损失函数设计和几何约束集成，说明物理约束如何影响训练稳定性。
+- [A comprehensive review of theoretical concepts and advancements in physics-informed neural networks with applications in structural engineering](https://doi.org/10.1007/s10462-025-11444-y)：综述 PINN 理论、架构和结构工程应用，关注边界约束与逆问题。
+- [Physics-informed machine learning: technological trends in turbulence flow, topology optimization, and convergence enhancement with temporal causality consideration](https://doi.org/10.1007/s42791-025-00101-8)：梳理物理约束机器学习在湍流、拓扑优化和带时间因果性的收敛增强中的技术趋势。
+- [Advances in Generative Models for Accelerated Discovery of New Materials](https://doi.org/10.1002/csc3.70010)：综述材料发现中的生成模型，包括分子和晶体表示、性质条件生成和验证挑战。
+- [The Maturation of AI in Drought Science: A Review of Trends, Pitfalls, and Priorities](https://doi.org/10.1029/2025wr041828)：综述干旱科学中的 AI 趋势，强调预测任务、气候数据限制、可解释性和业务优先级。
+- [Artificial intelligence for climate prediction of extremes: State of the art, challenges, and future perspectives](https://doi.org/10.1002/wcc.914)：综述极端气候预测中的 AI 方法、数据约束、评测难点和未来业务化方向。
+- [AI for Science: Opportunities, Challenges, and Future Directions](https://doi.org/10.6339/25-jds1214)：从数据、模型、实验和自动化角度综述 AI for Science 的机会，同时强调验证、可复现性和领域整合挑战。
+- [Large Language and Multimodal Models in Archaeological Science: A Review](https://doi.org/10.3390/electronics14224507)：综述考古科学中的语言与多模态模型，包括文物解释、图文数据、知识抽取和工作流支持。
+- [Knowledge-enhanced AI models for domain-specific application: a survey](https://doi.org/10.1007/s11432-025-4635-0)：面向科学知识与知识增强推理的综述或相关工作脉络。核心思路是围绕“Knowledge-enhanced AI models for domain-specific application: a survey”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Cross-disciplinary perspectives on the potential for artificial intelligence across chemistry](https://doi.org/10.1039/d5cs00146c)：系统梳理该方向的方法、评测缺口或部署问题。

@@ -1,114 +1,654 @@
 # 3.2.5 Agent Harness
 
-- [MLAgentBench Research Agent](https://arxiv.org/abs/2310.03302)（[开源代码](https://github.com/snap-stanford/MLAgentBench)）是 MLAgentBench 中用于科研任务评测的基线研究代理。
+- [AutoQuant: An Auditable Expert-System Framework for Execution-Constrained Auto-Tuning in Cryptocurrency Perpetual Futures](https://arxiv.org/abs/2512.22476)： AutoQuant 将显式执行与成本规则、贝叶斯搜索、双阶段筛选、确定性审计产物和重放检查结合，用于永续合约回测中的配置选择。实验显示，仅计手续费或零成本回测会夸大表观表现，而审计流水线在严格语义下更常暴露低回撤替代方案，因此它是可复用的量化科研验证 harness。
+- [CiteScreener: A Pipeline for Citation Verification in Digital Libraries with Datasets](https://doi.org/10.1109/jcdl67857.2025.00027)：CiteScreener 把引用核验做成可运行流水线：先抽取引用上下文，再检索被引论文，结合文本重叠和语言模型判断，标记与正文无关的引用。论文发布两个评测数据集、比较各组件方法，并在真实论文上验证流水线，使科研诚信检查成为可执行的研究工作流。
+- [Prompt-guided LLM agent for end-to-end ontology learning](https://doi.org/10.31649/vitce/2.2025.35)： 该智能体通过模式发现、实例抽取、基于约束的自修复和本体对齐，把原始文本转成 RDF/OWL；当域值约束验证失败时，它循环修正模式和实例。在 MINE 上，LLaMA-3.3-70B 的事实召回率为 67.5%，高于 KGGen 的 66.07%，并在双语学术语料中生成数百个实体，展示了可验证的端到端研究知识整理闭环。
+- [BACON.5: The Discovery of Conservation Laws](https://www.ijcai.org/Proceedings/81-1/Papers/025.pdf)：给定变量及允许取值后，BACON.5 在固定其他因素时改变一个因素，采集观测、检测趋势与常量、形成可复用假设，并用类比重定向后续实验；同一闭环在光学、力学、热学、电学和行星运动中重新发现了定律。
+- [ReviewRobot: Explainable Paper Review Generation based on Knowledge Synthesis](https://arxiv.org/abs/2010.06119)：ReviewRobot 构建了可解释的论文评审流程：先从待审论文、其引用文献和背景论文库抽取知识图谱，再比较这些图谱以预测各评审维度的分数与证据，最后用模板生成自然语言意见。实验中评分预测准确率为 71.4% 至 100%，领域专家认为 41.7% 至 70.5% 的生成意见有效且具有建设性。
+- [D2S: Document-to-Slide Generation Via Query-Based Text Summarization](https://arxiv.org/abs/2105.03664)：D2S 先按幻灯片标题检索相关文本、图表，再用长答案问答把上下文压缩成要点；SciDuet 提供论文与幻灯片配对数据来支持这一两阶段任务。
+- [Bursting Scientific Filter Bubbles: Boosting Innovation via Novel Author Discovery](https://arxiv.org/abs/2108.05669)：Bridger 从论文和推断出的研究者 persona 构造多面表示，再同时利用相似性与差异性推荐作者，从而帮助研究者发现可能打开新研究方向的陌生学者。
+- [PosterBot: A System for Generating Posters of Scientific Papers with Neural Models](https://doi.org/10.1609/aaai.v36i11.21738)：PosterBot 是一个三阶段论文到海报系统：先筛选论文的重要章节，再用神经模型把所选文本与图形转换为面板，最后通过模板将面板组合成完整海报。
+- [The 'Problematic Paper Screener' automatically selects suspect publications for post-publication (re)assessment](https://arxiv.org/abs/2210.04895)：实现一个将自动检测与人工复核结合的发表后筛查流程，用于标记可疑论文并持续整理学术文献记录。
+- [Supporting Qualitative Analysis with Large Language Models: Combining Codebook with GPT-3 for Deductive Coding](https://arxiv.org/abs/2304.10548)：将专家编写的编码本作为提示交给 GPT-3，在无需任务专用训练的情况下执行演绎式定性编码，并在好奇心问题案例中与专家标注达到一般至较高的一致性。
+- [SciMON](https://arxiv.org/abs/2305.14259)（[开源代码和资源](https://github.com/EagleW/CLBD)）：面向科学想法生成的 literature-grounded 框架，通过检索 inspiration papers，并将候选想法与既有工作反复比较和修订来优化新颖性，使研究构思成为显式搜索与对照循环，而不是一次性头脑风暴。
+- [LLM-Assisted Content Analysis: Using Large Language Models to Support Deductive Coding](https://arxiv.org/abs/2306.14924)：LACA 将演绎式内容分析组织为大模型编码、提示词迭代、代码类别层面的随机猜测诊断，以及是否保留人工编码者的明确决策流程；在四个公开数据集上，GPT-3.5 的一致性往往可与人工编码者相当。
+- [Large Language Models for Automated Open-domain Scientific Hypotheses Discovery](https://arxiv.org/abs/2309.02726)：从开放域原始语料观察中归纳社会科学假设，和给定标签样本的假设生成不同，它把数据洞察扩展到非结构化、开放域观察。
 - [CoQuest](https://arxiv.org/abs/2310.06155)（[开源代码](https://github.com/yiren-liu/coquest)）是 LLM-based research-question co-creation 系统；它比较 breadth-first 与 depth-first 两种交互设计，帮助研究者框定候选研究问题，同时保留人类对 ideation 的控制权。
+- [Can Large Language Models Serve as Data Analysts? A Multi-Agent Assisted Approach for Qualitative Data Analysis](https://arxiv.org/abs/2402.01386)：用多智能体辅助定性数据分析，重点是 LLM 如何在分析者监督下完成编码、比较和解释定性证据。
+- [Large Language Model Agent for Hyper-Parameter Optimization](https://arxiv.org/abs/2402.01881)：把超参数优化做成 LLM agent 循环，由模型提出配置、读取优化反馈并引导后续搜索。
+- [ReviewFlow](https://arxiv.org/abs/2402.03530)：用结构化评审阶段和引导支撑新手学术评审者，把同行评审变成交互式工作流，而不是一次性生成评审意见的 prompt。
+- [Large Language Models to Enhance Bayesian Optimization](https://arxiv.org/abs/2402.03921)：用 LLM 增强贝叶斯优化循环，是可复用科研自动化 harness 模式。
+- [DataDreamer: A Tool for Synthetic Data Generation and Reproducible LLM Workflows](https://arxiv.org/abs/2402.10379)：DataDreamer 是面向 LLM-in-the-loop 研究的 Python 工具，将合成数据生成、评估、微调和蒸馏流程标准化并记录其产物，以提高这类研究工作流的可复现性。
+- [MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization](https://arxiv.org/abs/2402.11453)：用 agent 自动化科学绘图，解释可视化意图、编写代码，并根据评测反馈迭代修复图表。
+- [DS-Agent: Automated Data Science by Empowering Large Language Models with Case-Based Reasoning](https://arxiv.org/abs/2402.17453)：用 case-based reasoning 引导数据科学 agent 完成分析规划、代码生成、执行和迭代纠错。
+- [A Sentiment Consolidation Framework for Meta-Review Generation](https://arxiv.org/abs/2402.18005)：该框架将 meta-review 写作建模为三层情感整合过程，并据此设计提示方法和评价指标；实验表明结构化提示生成的 meta-review 优于简单指令。
+- [Data Interpreter: An LLM Agent For Data Science](https://arxiv.org/abs/2402.18679)：构建用于解释并执行数据科学分析流程的 LLM agent。
+- [Acceleron](https://arxiv.org/abs/2403.04382)：让 colleague 和 mentor agents 交互式帮助研究者形成 comprehensive proposal，并通过 aspect-based retrieval 验证动机、发现文献缺口和建议可行方法。
+- [OverleafCopilot: Empowering Academic Writing in Overleaf with Large Language Models](https://arxiv.org/abs/2403.09733)：OverleafCopilot 通过浏览器扩展将 LLM 辅助接入 Overleaf，PromptGenius 支持提示共享，agent command system 则允许研究者组装定制化学术写作 agent。
+- [Using Generative Text Models to Create Qualitative Codebooks for Student Evaluations of Teaching](https://arxiv.org/abs/2403.11984)：该方法在 5,000 份学生评价上结合抽取、嵌入、聚类和 LLM 总结，诱导生成无需预先手写方案的定性 codebook。
+- [InsightLens](https://arxiv.org/abs/2404.01644)：为 LLM 驱动的数据分析加入交互式洞见管理与导航，帮助分析者检查、组织和修正生成发现。
+- [Hypothesis Generation with Large Language Models](https://arxiv.org/abs/2404.04326)：把基于数据的科学假设生成形式化为模型任务，让 LLM 从带标签样例中推断解释性假设，并评估假设的新颖性与有用性。
+- [ResearchAgent](https://arxiv.org/abs/2404.07738)：基于科学文献迭代生成研究想法，用检索论文和反馈循环不断修正候选方向，而不是一次性给出建议。
+- [Automated Social Science: Language Models as Scientist and Subjects](https://arxiv.org/abs/2404.11794)：把语言模型同时当作模拟社会科学家和实验对象，用自动化研究设计、受试者模拟和分析循环测试社会科学流程能否交给 LLM agents。
+- [Cocoon: Semantic Table Profiling Using Large Language Models](https://arxiv.org/abs/2404.12552)：在统计表格剖析中加入 Semantic Context、Semantic Profile 和 Semantic Review 三阶段，利用大模型判断缺失、极端或异常值究竟是错误还是语义合理变体，并通过真实数据用户研究验证。
+- [In-Context Symbolic Regression: Leveraging Large Language Models for Function Discovery](https://arxiv.org/abs/2404.19094)：In-Context Symbolic Regression 让 LLM 提出并迭代修复方程形式，再由外部优化器拟合系数，把语义假设生成与数值校准分开。
+- [ChatGPTest: Opportunities and Cautionary Tales of Utilizing AI for Questionnaire Pretesting](https://arxiv.org/abs/2405.06329)：通过两个应用说明如何在人工预测试之前增加 GPT 反馈这一早期问卷预测试环节，从而可能减少后续迭代；模型建议仍须由研究者解释并决定是否采纳。
+- [LLM and Simulation as Bilevel Optimizers: A New Paradigm to Advance Physical Scientific Discovery](https://arxiv.org/abs/2405.09783)：Scientific Generative Agent 由 LLM 提出方程或分子等离散结构，再由可微模拟优化连续参数并返回观测反馈，形成下一轮假设修订所需的实验闭环。
+- [Eliciting Informative Text Evaluations with Large Language Models](https://arxiv.org/abs/2405.15077)：GPPM 和 GSPPM 借助 LLM 预测同行报告，将同行预测从标量报告扩展到文本反馈；理论结果给出近似真实报告激励保证，Yelp 与 ICLR 实验则显示其能够区分反馈质量，且 GSPPM 对生成式评审的惩罚更强。
+- [Interesting Scientific Idea Generation using Knowledge Graphs and LLMs: Evaluations with 100 Research Group Leaders](https://arxiv.org/abs/2405.17044)：提出 SciMuse，把 5800 万篇论文知识图谱与 LLM 生成结合，并让 100 位研究组负责人评估跨学科研究想法质量。
+- [Peer Review as A Multi-Turn and Long-Context Dialogue with Role-Based Interactions](https://arxiv.org/abs/2406.05688)：把同行评审建模成长上下文、多角色对话，使审稿、回应和讨论轮次成为发表工作流 agent 的显式对象。
+- [AgentReview: Exploring Peer Review Dynamics with LLM Agents](https://arxiv.org/abs/2406.12708)：AgentReview 用 LLM 智能体模拟同行评审，并显式操控原本不可观测的审稿因素，从而在不暴露真实评审数据的前提下分析评审机制；其分析将 37.1% 的录用决策差异归因于审稿偏见。
+- [Step-Back Profiling: Distilling User History for Personalized Scientific Writing](https://arxiv.org/abs/2406.14275)：Step-Back Profiling 将科研写作团队的历史交互压缩为偏好和特征画像；其 PSW 数据集评测个性化的多作者论文写作，并显示该方法同时提升此任务及通用个性化任务。
+- [Improving Steering and Verification in AI-Assisted Data Analysis with Interactive Task Decomposition](https://arxiv.org/abs/2407.02651)：比较 Stepwise 可编辑子目标与 Phasewise 假设-计划-代码三阶段拆解，并在 18 人研究中显示这种分解能提升 AI 辅助数据分析中的控制、纠错和验证。
+- [A Deixis-Centered Approach for Documenting Remote Synchronous Communication Around Data Visualizations](https://arxiv.org/abs/2408.04041)：同步捕获光标手势与会议音频，用大模型把口头指代和指示动作对齐，再编译成交互式文档；用户研究显示该自动记录优于视频、转录文本和人工笔记。
 - [The AI Scientist](https://arxiv.org/abs/2408.06292)（[开源代码](https://github.com/SakanaAI/AI-Scientist)）是自动化 ML 研究的早期开源里程碑，覆盖 idea generation、代码、实验、可视化、论文写作和自动评审；需要与 AI Scientist v2 区分。
-- [PaperQA2](https://arxiv.org/abs/2409.13740)（[开源代码](https://github.com/Future-House/paper-qa)）是面向科学文献综合的 agent，优化带引用回答和矛盾发现，是完整端到端科研 pipeline 之前的重要文献型 skill/agent 参考。
+- [MLR-Copilot: Autonomous Machine Learning Research based on Large Language Models Agents](https://arxiv.org/abs/2408.14033)：用 LLM agents 自动化机器学习研究流程，围绕想法、实验实现、结果分析和迭代改进组织 autonomous ML research。
+- [Employing artificial intelligence to steer exascale workflows with colmena](https://arxiv.org/abs/2408.14434)：Colmena 让合作 agents 根据任务事件动态 steering exascale 科研工作流，并结合自适应调度、数据 fabric 和昂贵操作缓存，覆盖化学、生物物理和材料科学。
+- [Using Large Language Models to Create AI Personas for Replication and Prediction of Media Effects: An Empirical Test of 133 Published Experimental Research Findings](https://arxiv.org/abs/2408.16073)：该研究根据每项实验的测量、刺激材料和抽样规范提示 19,447 个 LLM persona，并为 133 个已发表发现重新生成数据集和统计分析，同时量化原结果复现及更换样本或刺激材料后的变化。
+- [SciAgents: Automating scientific discovery through multi-agent intelligent graph reasoning](https://arxiv.org/abs/2409.05556)：用多 agent 在科学知识图上做 intelligent graph reasoning，结合文献与图结构生成、连接并评估科学发现线索。
+- [PersonaFlow: Designing LLM-Simulated Expert Perspectives for Enhanced Research Ideation](https://arxiv.org/abs/2409.12538)：PersonaFlow 为跨学科构思提供可配置的 LLM 模拟领域专家；用户研究显示，它提高了方向的相关性与创造性，也增强批判性思考和使用者自主感，而不增加认知负担。
 - [Scideator](https://arxiv.org/abs/2409.14634) 是基于论文 facet recombination 的 human-LLM 科学构思系统；它抽取并重组 purpose、mechanism 和 evaluation facet，让研究者在文献语境中探索和筛选候选 idea。
+- [PeerArg: Argumentative Peer Review with LLMs](https://arxiv.org/abs/2409.16813)：PeerArg 通过 LLM 加知识表示流水线，将一组论文评审转换为接收预测，同时暴露评审论证和决策结构。在三个数据集上，其最佳变体优于 few-shot 端到端 LLM，直接应对学术评审辅助中的可解释性与可信度问题。
+- [SciDoc2Diagrammer-MAF: Towards Generation of Scientific Diagrams from Documents guided by Multi-Aspect Feedback Refinement](https://arxiv.org/abs/2409.19242)：从科学文档生成图示，并用多方面反馈迭代修正图形内容、结构和可读性。
+- [Thematic analysis with open-source generative AI and machine learning: a new method for inductive qualitative codebook development](https://arxiv.org/abs/2410.03721)：GATOS 结合开源机器学习、NLP 和生成模型，近似主题分析的多个阶段并归纳构建定性编码本。三个案例表明它能够恢复源数据集中的主题，论文同时讨论了将社会科学分析扩展到更大规模时的方法权衡。
 - [IdeaSynth](https://arxiv.org/abs/2410.04025) 是研究想法发展系统，用 literature-grounded feedback 演化和组合 problem、solution、evaluation 与 contribution facet，使 problem framing 和 contribution positioning 成为 ideation loop 中的显式对象。
+- [On the Rigour of Scientific Writing: Criteria, Analysis, and Insights](https://arxiv.org/abs/2410.04981)：该框架自下而上抽取严谨性关键词、生成准则定义并筛选显著准则，可适配不同学科，并在 ICLR 与 ACL 论文上验证其对科研严谨性的建模能力。
+- [FAIR GPT: A virtual consultant for research data management in ChatGPT](https://arxiv.org/abs/2410.07108)：FAIR GPT 将 ChatGPT 指导与 FAIRness 评估、受控词表检索和仓储推荐 API 结合，并辅助生成数据与软件管理计划、README、codebook 和许可证选择，以外部工具为指导提供依据并减少幻觉。
+- [HLM-Cite](https://arxiv.org/abs/2410.09112)：HLM-Cite 先以课程微调的嵌入模型从最多 10 万篇候选中召回可能的核心引文，再用 LLM 工作流区分实质性科学依赖与表层引用，覆盖 19 个领域。
+- [Many Heads Are Better Than One / VirSci](https://arxiv.org/abs/2410.09403)（[开源代码](https://github.com/open-sciencelab/Virtual-Scientists)）：构建多智能体科学协作生态，用角色化 scientist agent 组织团队、开展团队内外讨论，并基于真实科学数据生成、评估和修订研究想法。
+- [Zero-shot Scientific Claim Verification Using LLMs and Citation Text](https://doi.org/10.18653/v1/2024.sdp-1.25)：SCitance 将引用句、LLM 生成的否定句、证据文档和真实性标签配对，用于零样本科学论断验证；使用该资源进行 GPT-4 提示，其 F1 与此前人工监督训练模型相差不到一个百分点。
+- [ChatVis: Automating Scientific Visualization with a Large Language Model](https://arxiv.org/abs/2410.11863)：把自然语言分析请求转换为 Python 可视化脚本，并将运行报错回馈给 LLM 迭代修复；在五个典型科学可视化场景中，该循环成功生成可运行代码，而一次生成的脚本会失败。
+- [Toward Human-Aligned LLM Reviews for Scientific Papers](https://doi.org/10.1109/escience65000.2025.00072)：在 ICLR 2025 投稿上测试 LLM 论文评审提示策略，结果显示其较直接的 ChatGPT-4 基线更能抑制评分虚高，并使评分更接近人类评审中位数。
+- [Chain of Ideas / CoI](https://arxiv.org/abs/2410.13185)：把科研构思组织为文献演化链。核心思想是检索并排序相关论文形成 progressive idea chain，让 agent 先捕捉领域发展轨迹，再提出候选 idea 和实验设计，并用 Idea Arena 按接近人类研究者偏好的维度评估。
+- [Nova](https://arxiv.org/abs/2410.14255)：用迭代规划和搜索提升 LLM 生成研究想法的新颖性与多样性。核心思想是反复规划外部知识检索、扩展 idea context 并重新生成候选，使研究想法质量通过 search 改进，而不是依赖单轮提示。
+- [Data Cleaning Using Large Language Models](https://arxiv.org/abs/2410.15547)：Cocoon 将统计错误检测和纠正与 LLM 语义理解结合，把复杂数据清洗拆成模仿人工流程的可管理步骤；标准基准实验显示其性能优于既有数据清洗系统。
+- [Literature Meets Data](https://arxiv.org/abs/2410.17309)：把文献理论和具体数据集一起用于假设生成，和纯数据洞察不同，它要求备选项既解释数据模式又能被已有理论语境支撑。
+- [AutoKaggle](https://arxiv.org/abs/2410.20424)：协调专门 agent 完成自治数据科学竞赛，覆盖任务理解、特征工程、建模、验证和提交修复。
+- [SciPIP](https://arxiv.org/abs/2410.23166)：基于全文感知的文献检索提出科学论文 idea。核心思想是超越关键词搜索和论文元数据，用语义相关文献及全文洞见来支撑问题、方法和贡献生成。
+- [Improving Scientific Hypothesis Generation with Knowledge Grounded Large Language Models](https://arxiv.org/abs/2411.02382)：将检索到的科学知识用于约束 LLM 假设生成，使候选假设连接到既有证据，而不是开放式文本续写。
+- [Kolb-Based Experiential Learning for Generalist Agents with Human-Level Kaggle Data Science Performance](https://arxiv.org/abs/2411.03562)：Agent K 将 Kolb 学习循环与受 Vygotsky 启发的支架式学习结合，把环境交互与内部反思分开再过渡到开放式泛化；在 81 个 Kaggle 任务上取得 1694 Elo-MMR，并达到多个奖牌级别成绩。
+- [Toward better pragmatic tagging of peer review: Enhancing benchmark datasets via human-in-the-loop multi-agent collaboration](https://doi.org/10.1016/j.ipm.2026.104704)：通过人类在环多智能体标注流程改进同行评审 pragmatic tagging 数据，目标是标注评审功能类型，而不是给出泛化的评审质量分数。
 - [BudgetMLAgent](https://arxiv.org/abs/2411.07464)（开源代码：未公开）在 MLAgentBench 上用多代理协作、检索复用与 LLM cascade 做低成本科研任务自动化（以论文为准）。
+- [AIGS: Generating Science from AI-Powered Automated Falsification](https://arxiv.org/abs/2411.11910)：Baby-AIGS 用多个 agent 分担科研流程角色，并加入显式的 FalsificationAgent 来识别和验证候选发现，在三个任务上检验完整科研闭环。
+- [SlideSpawn](https://arxiv.org/abs/2411.17719)：输入研究论文 PDF，先转成含结构信息的 XML，再输出带章节摘要、聚类标题、文本句子和关联图表的 presentation。
+- [Simulating Tabular Datasets through LLMs to Rapidly Explore Hypotheses about Real-World Entities](https://arxiv.org/abs/2411.18071)：该工作让 LLM 估计人物、公司、书籍、动物和国家等具体实体的表格属性，建议把定性假设操作化的变量，并结合回归等标准分析。跨实体实验展示了人机协作快速原型化科研问题的方式，同时也暴露出必须验证 LLM 生成测量结果的必要性。
+- [Exploring Multi-Modal Data with Tool-Augmented LLM Agents for Precise Causal Discovery](https://arxiv.org/abs/2412.13667)：MATMCD 将多模态数据检索与处理分配给数据增强智能体，将知识驱动的因果推理分配给因果约束智能体。跨七个数据集的实验表明，这些协作的工具增强智能体能够改善多模态因果发现，形成具体的多智能体科学发现工作流。
+- [LLMs can realize combinatorial creativity](https://arxiv.org/abs/2412.14141)：把科学 idea generation 做成有创造力理论依据的重组流程。核心思想是按多个抽象层级检索跨领域知识，再用结构化概念重组生成研究想法，使 idea 不只是贴近已有论文，而是同时追求新颖性和可用性。
+- [ResearchTown](https://arxiv.org/abs/2412.17767)：模拟研究社区中的协作、写作和评审活动，并生成跨学科研究想法；它把评价环境扩大到社区仿真，而不是固定几名评审者。
 - [Dolphin](https://arxiv.org/abs/2501.03916)（[项目页](https://alpha-innovator.github.io/Dolphin-project-page)；开源代码：未找到稳定公开仓库）是早期闭环自动科研框架，把基于反馈的想法生成、代码模板实现/调试、结果分析和下一轮研究连接起来。
 - [Agent Laboratory](https://arxiv.org/abs/2501.04227)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)；[项目页](https://agentlaboratory.github.io/)）是从人类研究想法出发的端到端科研助理 workflow，用 human feedback checkpoint 协调文献综述、实验和报告写作。
+- [Language-Based Bayesian Optimization Research Assistant (BORA)](https://arxiv.org/abs/2501.16224)：把贝叶斯优化与 LLM 生成的领域建议和优化进展说明结合起来，用语言语境引导高维实验搜索，并在合成与真实优化任务上验证。
+- [PlotGen: Multi-Agent LLM-based Scientific Data Visualization via Multimodal Feedback](https://arxiv.org/abs/2502.00988)：编排规划、代码生成、视觉反馈与修订 agent，根据用户请求生成科学数据可视化。
+- [nvAgent: Automated Data Visualization from Natural Language via Collaborative Agent Workflow](https://arxiv.org/abs/2502.05036)：用于自动数据可视化的协作 agent workflow。核心思想是把自然语言可视化请求拆成分析、图表构造和迭代修正步骤。
+- [Accelerating Scientific Research Through a Multi-LLM Framework](https://arxiv.org/abs/2502.07960)：提出 ARIA 四代理多 LLM 助手，自动搜索、检索、过滤并综合数百篇论文，把文献转成可执行实验步骤，并在 dropwise condensation 案例中保留人类监督。
+- [Automated Hypothesis Validation with Agentic Sequential Falsifications](https://arxiv.org/abs/2502.09858)：用于假设验证的 agentic sequential falsification 框架；核心思想是主动设计可能证伪声明的检查，而不是只收集支持证据。
+- [SCALE: Towards Collaborative Content Analysis in Social Science with Large Language Model Agents and Human Intervention](https://arxiv.org/abs/2502.10937)：用 LLM 智能体和人工干预进行协作式社会科学内容分析。
 - [AIDE](https://arxiv.org/abs/2502.13138)（[开源代码](https://github.com/WecoAI/aideml)）代表“迭代式代码实验”科研/数据科学代理路线，也是 MLE-bench 官方初始评测里最核心的开源 ML 工程 agent 之一；设计重点是 `propose experiment -> edit/run code -> inspect metric/log -> refine` 的实验树迭代，而不是一次性生成建模脚本。
+- [Curie](https://arxiv.org/abs/2502.16069)：面向科学 agent 的严谨自动实验 harness。核心思想是加入 intra-agent rigor、inter-agent control 和 experiment knowledge 模块，使 agent 能更可靠、可解释地执行科学实验。
+- [IGDA: Interactive Graph Discovery through Large Language Model Agents](https://arxiv.org/abs/2502.17189)：使用 LLM agent 进行交互式图发现；核心思想是结合语义元数据、试验反馈和 agentic exploration 推断变量关系。
+- [IMPROVE: Iterative Model Pipeline Refinement and Optimization Leveraging LLM Experts](https://arxiv.org/abs/2502.18530)：用多个 LLM expert 角色迭代改进 ML pipeline，把模型选择、预处理、评测反馈和 pipeline 优化组织成多步研究工作流，而不是一次性生成建模代码。
 - [AI co-scientist](https://arxiv.org/abs/2502.18864)（开源代码：未公开）：Google Research 的 Gemini 2.0 多代理科学假设生成系统，核心是 `generate -> debate -> evolve` 的异步假设锦标赛；在药物再利用、靶点发现和细菌进化机制解释中给出实验验证线索。
-- [ReviewAgents](https://arxiv.org/abs/2503.08506)：面向学术论文评审的 reviewer-agent harness。核心思路是利用 Review-CoT 数据，让评审 Agent 围绕摘要、相关工作、优点、缺点和最终建议进行结构化推理，从而更接近人类评审逻辑。
+- [RevTogether: Supporting Science Story Revision with Multiple AI Agents](https://arxiv.org/abs/2503.01608)：编排类人 GPT-4o agent 为科学故事标注并提出修订建议，包含情感反馈和多种 user-agency 水平，用于透明的科学传播编辑。
+- [LLM-Feynman: Leveraging Large Language Models for Universal Scientific Formula and Theory Discovery](https://arxiv.org/abs/2503.06512)：面向公式和理论归纳的科学发现 harness；核心思想是结合 LLM 引导假设生成与系统优化，推导可解释公式。
+- [DatawiseAgent: A Notebook-Centric LLM Agent Framework for Adaptive and Robust Data Science Automation](https://arxiv.org/abs/2503.07044)：DatawiseAgent 是面向自适应、稳健数据科学自动化的 notebook-centric LLM agent 框架。
+- [Automating Psychological Hypothesis Generation with AI: When Large Language Models Meet Causal Graph](https://www.nature.com/articles/s41599-024-03407-5)：在因果知识图上做潜在关系预测，并用博士生和只用大语言模型生成的假设作比较；它强调备选假设是否对应图上可解释的因果边，而不是只看文本是否新。
+- [ReviewAgents](https://arxiv.org/abs/2503.08506)：让多个评审角色和 LLM 依次完成摘要、相关工作比较、优缺点分析与最终建议；评审智能体通过 14.2 万条 Review-CoT 评论及相关论文感知监督训练，在 ReviewBench 上缩小了与人类评审的差距。
+- [Graph of AI Ideas / GoAI](https://arxiv.org/abs/2503.08549)：沿引用图扩展构造想法图，再让大语言模型从图结构中生成和评价研究方向；它的细微差别是把领域脉络作为图上路径展开，而不是把文献集合视作扁平上下文。
+- [Generative Modeling for Mathematical Discovery](https://arxiv.org/abs/2503.11061)：该 FunSearch 实现将可替换的第三方 LLM 接入遗传搜索循环，数学研究者只需修改一小段 Python 代码即可适配新问题；论文在三个组合数学与数论问题上评测，并观察到部分规律可迁移到训练问题之外。
+- [FutureGen](https://arxiv.org/abs/2503.16561)：从论文局限和未来工作中挖掘后续方向，和 CoI 的演化链不同，它更依赖作者自己留下的未解问题作为新颖性边界。
 - [AgentRxiv](https://arxiv.org/abs/2503.18102)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)；[项目页](https://agentrxiv.github.io/)）通过共享研究记忆让自主科研 lab 上传、检索并继承先前 agent 生成的报告，是 ARIS research-wiki memory 的相近外部参照。
+- [SCI-IDEA: Context-Aware Scientific Ideation Using Token and Sentence Embeddings](https://arxiv.org/abs/2503.19257)：从既有论文抽取 objective、methodology、evaluation 和 future-work facets，压缩 researcher profile，并用 token-level embedding 的 novelty 与 surprise 信号定位 “Aha” moments，驱动文献语境中的迭代式科研构思。
 - [MC-NEST](https://arxiv.org/abs/2503.19309)：把 Monte Carlo tree search 与 Nash-equilibrium self-refinement 用于科学假设生成的 agent 框架。核心思想：迭代完成假设提出、探索、多样性控制和自验证，把研究构思从一次性头脑风暴变成可搜索的过程。
+- [CodeScientist: End-to-End Semi-Automated Scientific Discovery with Code-based Experimentation](https://arxiv.org/abs/2503.22708)：带代码实验的半自动科学发现 agent；核心思想是把假设生成、可执行实验和结果分析连接成一个闭环。
+- [SPIO: Ensemble and Selective Strategies via LLM-Based Multi-Agent Planning in Automated Data Science](https://arxiv.org/abs/2503.23314)：SPIO 由专门智能体为预处理、特征工程、模型选择和调参产生竞争策略，再由优化智能体级联整合为单一优选管线或 top-k 集成，从而替代固定的 AutoML 路径。
 - [AI-Newton](https://arxiv.org/abs/2504.01538)：面向多实验数据物理定律发现的概念驱动科学发现系统。核心思想：在无先验物理知识的情况下自主提出可解释概念并逐步泛化定律，把定律发现组织成 agentic research workflow。
-- [Multi-Agent LLMs with Interpretable Physics Reasoning](https://arxiv.org/abs/2504.01911)：协调多个 LLM 角色，结合可解释推理、符号操作和面向人的检查，用于物理研究辅助。
+- [AgentAda: Skill-Adaptive Data Analytics for Tailored Insight Discovery](https://arxiv.org/abs/2504.07421)：AgentAda 用混合匹配器从技能库检索分析技能，再依据技能文档生成代码并评估洞见质量，把“选择哪种分析方法”本身变成 agent 动作。
 - [AI Scientist v2](https://arxiv.org/abs/2504.08066)（[开源代码](https://github.com/SakanaAI/AI-Scientist-v2)）强调从研究想法到实验与论文草稿的端到端闭环。
+- [Agentic Workflows for Economic Research: Design and Implementation](https://arxiv.org/abs/2504.09736)：基于 AutoGen 实现经济研究 workflow，用专门 agents、结构化通信、错误升级路径、自适应任务处理和人类检查点覆盖 ideation、建模、数据处理、实证分析与解释。
+- [Privacy Meets Explainability: Managing Confidential Data and Transparency Policies in LLM-Empowered Science](https://arxiv.org/abs/2504.09961)：提出 DataShield 作为科研 LLM 工具的隐私与透明度框架，结合泄漏检测、政策摘要和数据流可视化来保护机密研究数据。
+- [Causal-Copilot: An Autonomous Causal Analysis Agent](https://arxiv.org/abs/2504.13263)：自动化因果分析流程，帮助用户形成因果问题、选择识别策略、运行分析，并解释假设与结果。
+- [Flowco: Rethinking Data Analysis in the Age of LLMs](https://arxiv.org/abs/2504.14038)：用 dataflow graph 和 LLM 共同支持端到端数据分析创作，使用户能检查、修改和复用分析步骤，而不是只接受聊天式代码输出。
+- [IRIS: Interactive Research Ideation System for Accelerating Scientific Discovery](https://arxiv.org/abs/2504.16728)：支持交互式科研构思，让研究者引导 idea generation、检查理由并迭代修正方向，使科学 ideation 成为可编辑的人机循环，而不是一次性生成 proposal。
 - [Paper2Code](https://arxiv.org/abs/2504.17192)（[开源代码](https://github.com/going-doer/Paper2Code)）是面向“论文到代码实现”的专项科研代理工作。
-- [Robin](https://arxiv.org/abs/2505.13400)（[开源代码](https://github.com/Future-House/robin)）是 FutureHouse 的 lab-in-the-loop 多代理科学发现系统；把文献搜索、假设生成、实验设计、数据分析和后续假设更新接成闭环，并在 dAMD 药物候选发现案例中完成实验验证。
+- [Spark](https://arxiv.org/abs/2504.20090)：将检索增强科研想法生成与基于 60 万条 OpenReview 评审训练的 Judge 评审模型结合，提供任务专用的科学评审信号。
+- [ResearchCodeAgent](https://arxiv.org/abs/2504.20117)：把论文方法描述转成可运行代码的多 agent harness。核心思想：结合动作套件、动态规划与短长期记忆，让 agent 迭代式实现机器学习论文中的方法。
+- [AI-Driven Scholarly Peer Review via Persistent Workflow Prompting, Meta-Prompting, and Meta-Reasoning](https://arxiv.org/abs/2505.03332)：提出 persistent workflow prompting、meta-prompting 和 meta-reasoning 来支撑 AI 学术同行评审，而不是一次性生成审稿意见。
+- [Empowering Scientific Workflows with Federated Agents](https://arxiv.org/abs/2505.05428)：把科学工作流分配给可联合协作的 agent，让不同数据源、工具或机构侧能力在不集中化的条件下参与科研流程。
+- [AgentSGEN: Multi-Agent LLM in the Loop for Semantic Collaboration and GENeration of Synthetic Data](https://arxiv.org/abs/2505.13466)：用多个 LLM agent 进行语义协作式合成数据生成，把数据构造变成有角色分工的交互式研究过程，而不是一次性生成调用。
+- [DSMentor: Enhancing Data Science Agents with Curriculum Learning and Online Knowledge Accumulation](https://arxiv.org/abs/2505.14163)：在推理阶段按难度课程安排数据科学任务，并将既有解法保留在持续增长的长期记忆中，使早期分析能够指导后续的经验编程与因果推理任务。
+- [Autonomous Causal Discovery: Evaluating LLMs’ Priors and Constraint Strategies for Reliability](https://doi.org/10.1109/tpami.2026.3689960)：Autonomous Causal Discovery 评估 LLM 推导的结构约束的可靠性，以约束质量和强度指导两级因果结构学习搜索，从而降低对专家先验的依赖。
 - [R&D-Agent](https://arxiv.org/abs/2505.14738)（[开源代码](https://github.com/microsoft/RD-Agent)）聚焦研发场景的分工式多代理工作流编排。
-- [R&D-Agent-Quant](https://arxiv.org/abs/2505.15155)（[开源代码](https://github.com/microsoft/RD-Agent)）把 R&D-Agent 扩展到量化金融；核心工作流把量化研究拆成假设驱动的因子挖掘、代码生成、回测反馈和自适应调度，用于因子与模型联合优化。
-- [AI-Researcher](https://arxiv.org/abs/2505.18705)（[开源代码](https://github.com/HKUDS/AI-Researcher)）是与 Scientist-Bench 配套的 autonomous scientific-innovation 系统，通过 guided 与 open-ended research workflow 覆盖文献综述、假设生成、算法实现和论文准备。
-- [MLR-Agent](https://arxiv.org/abs/2505.19955)（[开源代码](https://github.com/chchenhui/mlrbench)）是 MLR-Bench 论文提供的模块化 scaffold，覆盖 idea/proposal/experiment/writing 四阶段。
-- [TreeReview](https://arxiv.org/abs/2506.07642)：面向 LLM 科学论文评审的层级问题树 harness。核心思路是递归拆解评审问题，动态扩展追问，并把叶子节点证据聚合为完整评审或可执行反馈。
+- [PiFlow: Principle-aware Scientific Discovery with Multi-Agent Collaboration](https://arxiv.org/abs/2505.15047)：原则感知的多 agent 科学发现流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Cost-aware LLM-based Online Dataset Annotation](https://arxiv.org/abs/2505.15101)：提出 CaMVo 在线标注协议，只在需要时把样本路由给多数投票和多个 LLM，在保持数据整理质量的同时降低标注成本。
+- [InternAgent / NovelSeek](https://arxiv.org/abs/2505.16938)：构建从假设到验证的闭环多智能体框架。核心思想是在 12 个科学任务中结合 idea generation、baseline code 改进、人类专家反馈和多 agent 交互，使自治科研能迭代改进可运行实现。
+- [P2P](https://arxiv.org/abs/2505.17104)：P2P 以视觉、内容和装配智能体配合检查器驱动的迭代，从论文生成学术海报；同时发布 3 万条指令样本和含 121 对论文-海报的细粒度基准。
+- [AI-Researcher / Novix](https://arxiv.org/abs/2505.18705)（[开源代码](https://github.com/HKUDS/AI-Researcher)，[Novix 产品化服务](https://novix.science/)）是与 Scientist-Bench 配套的 autonomous scientific-innovation 系统；Novix 是其面向实际使用的 AI co-scientist 产品入口，通过 guided 与 open-ended research workflow 覆盖文献综述、假设生成、算法实现和论文准备。
+- [AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage](https://arxiv.org/abs/2505.20662)：通过挖掘 paper lineage 自动复现 AI 实验。核心思想是从被引论文中恢复隐含实现知识，协调 agent 端到端重建实验代码，并用 sampling-based unit tests 验证可执行性与复现忠实度。
+- [Augmenting Research Ideation with Data: An Empirical Investigation in Social Science](https://arxiv.org/abs/2505.21396)：在生成阶段加入任务元数据、在筛选阶段加入自动可行性检查，分别提升专家评定的研究想法可行性与总体质量，而且这些辅助想法还能改善参与者后续的人类构思。
+- [LaMDAgent](https://arxiv.org/abs/2505.21963)：用 LLM agent 自动构造 post-training pipeline，在 SFT、preference learning、model merging、数据选择和超参组合之间搜索；它属于 AutoML for post-training，输出是可运行训练方案。
+- [AI Mathematician: Towards Fully Automated Frontier Mathematical Research](https://arxiv.org/abs/2505.22451)：研究面向前沿数学研究自动化的智能体工作流，应作为科研智能体框架而非静态数学基准记录。
+- [DrSR: LLM based Scientific Equation Discovery with Dual Reasoning from Data and Experience](https://arxiv.org/abs/2506.04282)：结合数据驱动洞察与科学先验进行 LLM 符号方程发现。
+- DS-GURU（[开源代码](https://github.com/mitdbg/KramaBench)；[KRAMABENCH](https://arxiv.org/abs/2506.06541) 的参考框架）把数据湖洞察任务分解为子任务，并生成可执行的 Python 数据处理与分析 pipeline。
+- [TreeReview](https://arxiv.org/abs/2506.07642)：把科学同行评审表示为双向问题树，递归拆解高层评审标准，在需要深挖时动态生成追问，再将叶节点证据汇总为完整评审或可操作意见；其效果超过强基线，同时最多减少 80% 的 token 使用。
+- [AutoMind: Adaptive Knowledgeable Agent for Automated Data Science](https://arxiv.org/abs/2506.10974)：结合人工整理的专家知识库、代理式树搜索和随任务复杂度调整的代码策略，以可探索多种方案的经验工作流取代固定的 AutoML 式脚本，应对困难的数据科学任务。
+- [AlphaEvolve](https://arxiv.org/abs/2506.13131)：DeepMind 面向科学与算法发现的演化式 coding agent。核心思想是让 LLM 直接编辑候选程序，用自动 evaluator 给出的分数反馈演化整个候选群体，最终在矩阵乘法、数据中心调度、硬件电路简化等任务中找到更优算法或基础设施代码。
 - [MLE-STAR](https://arxiv.org/abs/2506.15692)（[开源代码](https://github.com/google/adk-samples/tree/main/python/agents/machine-learning-engineering)）是 Google ADK 的机器学习工程 agent；核心 workflow 是 `web/search 参考方案 -> 生成 baseline -> 针对瓶颈做 targeted refinement`，在 MLE-bench 上成为 AIDE 之后的重要开源强基线。
 - [ML-Master](https://arxiv.org/abs/2506.16499)（[开源代码](https://github.com/sjtu-sai-agents/ML-Master)）面向 AI-for-AI 机器学习研究任务，把探索和推理集成到多角色协作流程中，是 MLE-bench/MLE 任务上的代表性研究代理。
-- [Agent Reviewers](https://proceedings.mlr.press/v267/lu25p.html)：带共享记忆的多模态论文评审 Agent harness。核心思路是结合评审 persona、多模态论文反馈和历史论文共享记忆池，使 AI 评审系统能模拟具备领域背景的同行评审过程。
-- [STELLA](https://arxiv.org/abs/2507.02004)（开源代码：未找到稳定公开仓库）是面向生物医学研究的自进化多代理系统；核心是 evolving Template Library 与动态 Tool Ocean，让工具创建代理持续发现并整合新的生信工具。
+- [Dynamic Knowledge Exchange and Dual-diversity Review: Concisely Unleashing the Potential of a Multi-Agent Research Team](https://arxiv.org/abs/2506.18348)：带动态知识交换和 review 角色的多 agent 研究团队 harness；核心思想是显式组织 agent 通信、批判和多样性来提升科学协作。
+- [VIDEE: Visual and Interactive Decomposition, Execution, and Evaluation of Text Analytics with Intelligent Agents](https://arxiv.org/abs/2506.21582)：引导非专家分析者完成 decomposition、execution 和 evaluation 三阶段，结合人在环 MCTS、可执行文本分析 pipeline、LLM 评测和可视化验证。
+- [Doc2Presenter: Graph-Constrained Multimodal Generation of Talking-Head Presentation Videos](https://doi.org/10.1109/COMPSAC69091.2026.00427)：Doc2Presenter 构建文档级和页面级知识图谱，约束幻灯片概念与旁白对齐，并结合发音感知语音合成和稳健人像渲染，在 Paper2Video 上进行评测。
+- [EvoNarrator: Modeling Scientific Evolution for Feasible Hypothesis Generation](https://aclanthology.org/2026.acl-long.544)：EvoNarrator 从引文网络抽取问题、方法、局限与未来工作四元组，使用 SocketMatch 检验问题与方法的兼容性，并以链式、分化和汇聚三类演化模式约束 LLM 的假设生成。双盲专家对生成假设的新颖性、可行性、理论价值和逻辑性给出平均 4.80/5.00 的评分，回溯预测与消融实验也支持演化约束的作用。
+- [Adaptive LLM Routing for Scientific Workflows: Predicting Query Complexity to Optimize Cost](https://doi.org/10.1109/ipccc66453.2025.11304643)：预测科学查询复杂度并路由到合适的 LLM 层级，使科研工作流在成本与预期回答质量之间折中。
+- [TForMIX: A Method That Combines LLM and Multidimensional Modeling for Technological Foresight](https://doi.org/10.1109/access.2025.3605116)：TForMIX 将 LLM 与多维建模结合，用论文和专利信号做技术预见，服务研究规划与机会识别。
+- [Iterative hypothesis generation for scientific discovery with Monte Carlo self-refining trees](https://doi.org/10.1016/j.ins.2026.123576)：用 Monte Carlo self-refining trees 迭代生成和修正科学假设，把 ideation 建模为可搜索、可自我改进的树过程。
+- [Multistage Feedback-Driven Causal Discovery from Textual Data with Large Language Models](https://dblp.org/rec/conf/www/YangCYWYLL26)：补充基于大模型的文本数据因果发现方法。
+- [Automating Qualitative Data Analysis with Chain-of-Thought Reasoning Models: A Study with the Gioia Method](https://www.semanticscholar.org/paper/4cd0eefd3e7b97266c168fc47a8c821e2075bbae)：用 chain-of-thought reasoning model 自动化 Gioia 方法中的定性数据分析，面向访谈/文本资料的概念归纳与编码。
+- [Literature-Grounded Novelty Assessment of Scientific Ideas](https://arxiv.org/abs/2506.22026)：面向科学想法的新颖性检查器。核心思想是检索并比较已有文献，判断生成假设是否真正新颖。
+- [URSA: The Universal Research and Scientific Agent](https://arxiv.org/abs/2506.22653)：提出覆盖文献处理、规划、编码、分析和科学任务执行的通用研究 agent 架构，而不是单一用途的论文阅读工具。
+- [Agent Reviewers](https://proceedings.mlr.press/v267/lu25p.html)：以多个领域评审智能体模拟人类同行评审，加入专门检查图表等视觉内容的多模态评审者，并让各评审者共享历史论文元数据记忆池；在 ICLR 2024 论文上的评测和模块消融均显示其优于已有 AI 评审系统。
+- [State and Memory is All You Need for Robust and Reliable AI Agents](https://arxiv.org/abs/2507.00081)：从源代码文档动态构建科学智能体，并以有限状态自动机记忆实现上下文保持、可解释状态迁移、多智能体协作及工具故障恢复，覆盖实验室硬件与数据库工作流。
+- [AutoDiscovery](https://arxiv.org/abs/2507.00310)：开放式 autonomous scientific discovery harness；核心思想是用 Bayesian surprise 作为 MCTS 探索嵌套假设的奖励，使系统主动决定要研究哪些科学问题。
+- [NOVA: An Iterative Planning Framework for Enhancing Scientific Innovation with Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.1099)：面向科学创新的迭代规划框架。核心思想：把构思与修订组织成反复规划步骤，使 LLM 更系统地改进研究方案。
 - [AIRA-dojo](https://arxiv.org/abs/2507.02554)（[开源代码](https://github.com/facebookresearch/aira-dojo)）是“训练场式科研代理行为框架”，用于构建与评估科研类代理行为。
-- [StructSense](https://arxiv.org/abs/2507.03674)：面向科学文献结构化信息抽取的模块化 agent 框架。核心思想：结合本体引导的符号知识、自评估式迭代修正和人在环验证，使专业抽取任务的质量可以被基准化比较。
-- [cmbagent](https://arxiv.org/abs/2507.07257)：面向自主科学发现的开源 planning-and-control 多智能体系统。核心思想：编排文献与代码检索、编码、结果解释、批判和本地执行等专门 agent，形成可复用的无人介入科学工作流，而不只是生成论文文本。
-- [DREAMS](https://arxiv.org/abs/2507.14267)：面向 DFT 材料模拟的层级多 Agent 科研 harness。核心思路是用 LLM Agent 与共享画布协调结构生成、收敛测试、HPC 调度和错误处理，使复杂模拟流程更自动化且可审计。
+- [SciMaster: Towards General-Purpose Scientific AI Agents, Part I. X-Master as Foundation: Can We Lead on Humanity's Last Exam?](https://arxiv.org/abs/2507.05241)：X-Master 把代码当作交互语言，灵活调用 Python 与自定义工具，再用分散并堆叠的多智能体流程扩展推理广度和深度，在 Humanity's Last Exam 上达到 32.1%。
+- [Virtual Laboratories: Domain-agnostic workflows for research](https://arxiv.org/abs/2507.06271)：梳理面向虚拟实验室的跨领域科研工作流，把假设迭代、数字工具和科学自动化连接起来。
+- [AlphaGo Moment for Model Architecture Discovery](https://arxiv.org/abs/2507.18074)：把模型架构发现组织为候选神经设计的自动搜索与评估问题，使科学模型设计接近博弈搜索式探索。
+- [SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration](https://arxiv.org/abs/2507.20280)：用知识图谱编排科研工具以执行复杂科学工作流。
+- [VizGenie: Toward Self-Refining, Domain-Aware Workflows for Next-Generation Scientific Visualization](https://arxiv.org/abs/2507.21124)：VizGenie 会为未满足的可视化请求生成脚本，在后端验证成功后将其整合并记录溯源信息，同时支持自然语言和 VQA 方式查询生成的视图，从而持续扩展科学可视化能力。
+- [SLDAgent](https://arxiv.org/abs/2507.21184)：面向 scaling-law discovery 的科研 agent。核心思想：用演化式搜索在大量既有实验上共同优化 scaling-law 公式和参数，测试 agent 是否能发现具备预测力的科学规律。
+- [Bayes-Entropy Collaborative Driven Agents for Research Hypotheses Generation and Optimization](https://arxiv.org/abs/2508.01746)：面向研究假设生成与优化的协作 agent harness；核心思想是结合 Bayesian 与 entropy-driven 搜索信号，更系统地探索研究假设。
 - [Beyond Brainstorming](https://arxiv.org/abs/2508.04575)：研究结构化多 Agent 科研想法生成 harness。核心思路是比较有无 leader、团队规模、跨学科程度和资历构成，使 proposal 质量能够对应到具体协作设计选择。
-- [PaperEval](https://arxiv.org/abs/2508.05129)：结合 domain-aware retrieval 与 latent reasoning 的论文评估 harness。核心思想：检索同期相关工作，围绕 novelty 与方法质量推理，并迭代修正相对质量排序，用于学术论文筛选。
-- [SciLink](https://arxiv.org/abs/2508.06569)：开源的材料表征多智能体工作流，引入 theory-in-the-loop。核心思想：把实验观察、新颖性评估和理论模拟连接起来，使意外发现能进入后续分析，而不是被流程忽略。
-- [K-Dense Analyst](https://arxiv.org/abs/2508.07043)（开源代码：未找到稳定公开仓库）是面向生物信息学分析的层级多代理系统；核心思想：用 planning loop 与 validated execution loop 连接高层科学目标、代码执行和结果校验。
+- [PaperEval](https://arxiv.org/abs/2508.05129)：先检索同期领域工作，再分析论文动机、方法、新颖性与贡献，并通过渐进式排序优化反复修正相对质量和影响力判断；该系统还被部署到公开论文推荐服务中筛选高质量论文。
+- [DocRefine: An Intelligent Framework for Scientific Document Understanding and Content Optimization based on Multimodal Large Model Agents](https://arxiv.org/abs/2508.07021)：使用多模态大模型智能体进行科学文档理解与内容优化。
+- [Word Clouds as Common Voices: LLM-Assisted Visualization of Participant-Weighted Themes in Qualitative Interviews](https://arxiv.org/abs/2508.07517)：ThemeClouds 用 LLM 辅助生成按参与者权重汇总的主题词云，帮助定性访谈研究呈现共同声音。
+- [Preacher: Paper-to-Video Agentic System](https://arxiv.org/abs/2508.09632)：Preacher 将自顶向下的论文拆解与渐进式场景规划同自底向上的片段生成分开，再把五个研究领域的片段组装为结构化视频摘要。
+- [Beyond Not Novel Enough: Enriching Scholarly Critique with LLM-Assisted Feedback](https://arxiv.org/abs/2508.10795)：该方法先抽取论文内容，再检索综合相关工作并据证据进行结构化比较；在 182 篇 ICLR 投稿上，它与人工新颖性推理的对齐率为 86.5%，新颖性结论一致率为 75.3%。
+- [Data-Driven Discovery of Interpretable Kalman Filter Variants through Large Language Models and Genetic Programming](https://arxiv.org/abs/2508.11703)：面向自动算法发现的科研 harness；核心思想是结合 Cartesian genetic programming 与 LLM 引导搜索可解释 Kalman filter variants。
+- [A large language model pipeline for automated citation quality scoring across engineering journal quartiles with expert validation](https://doi.org/10.1038/s41598-026-60947-3)：该两阶段 LLM 流程抽取引文对，并使用经专家验证的量规评分其语义相关性，以支持编辑初筛和同行评审。
+- [Phantom citations: An empirical study of non-existent and unverifiable references in scholarly literature](https://doi.org/10.1002/asi.70104)：该研究通过参考文献抽取、DOI/URL 核验和跨数据库匹配构建可审计的核查流程，以识别不存在或无法验证的学术引文。
+- [PySINDy: A comprehensive Python package for robust sparse system identification](https://doi.org/10.21105/joss.03994)：PySINDy 将动力系统稀疏识别封装为可复用的项库、微分方案、优化器和模型选择工具，使方程发现成为可执行的研究软件。
+- [Virtuous Machines: Towards Artificial General Science](https://arxiv.org/abs/2508.13421)：Virtuous Machines 自动完成从假设、数据收集、分析到论文准备的流程，包括一次 288 人在线数据收集和长时间连续编码，并产出完整手稿。
+- [Interview Bot: Can Agentic LLM's Perform Ethnographic Interviews?](https://doi.org/10.5220/0013387800003890)：Interview Bot 将具备代理能力的 LLM 用于民族志访谈数据收集，结果表明它能够与参与者互动并获得有意义的数据，但尚不能稳定复现人工访谈的细腻性，因而明确了科研代理所需的人类监督边界。
+- [aiXiv](https://arxiv.org/abs/2508.15126)：提出面向 AI 生成科研的开放获取出版生态，把自动 proposal、实验、论文写作和同行评审同 provenance、过滤和社区治理基础设施连接起来。
 - [RePro](https://arxiv.org/abs/2508.16671)（开源代码：未找到稳定公开仓库）强调细粒度验证与反思修复，是 PaperBench Code-Dev 方向较有代表性的论文复现代理工作。
+- [PosterGen: Aesthetic-Aware Multi-Modal Paper-to-Poster Generation via Multi-Agent LLMs](https://arxiv.org/abs/2508.17188)：PosterGen 将论文解析与策展、布局、样式和渲染分给四个协作 agent，再用 VLM 量表评估平衡性、可读性和审美连贯性。
+- [The Ramon Llull's Thinking Machine for Automated Ideation](https://arxiv.org/abs/2508.19200)：Llull thinking machine 从专家或会议论文中抽取主题、领域和方法三类轴，再用精选组合提示 LLM 生成有文献基础的研究构想。
+- [Beyond Optimization: Exploring Novelty Discovery in Autonomous Experiments](https://arxiv.org/abs/2508.20254)：将 autonomous experiments 中的新颖性发现与目标优化分离，把 surprise 和 unknown-unknown exploration 作为模型选择信号。
+- [Re4: Scientific Computing Agent with Rewriting, Resolution, Review and Revision](https://arxiv.org/abs/2508.20729)：以 rewriting、resolution、review 和 revision 组织科学计算 agent，harness 特征明确。
+- [ORCA](https://arxiv.org/abs/2508.21304)：输入关系数据库、因果假设和人工检查点，输出跨 SQL 查询、数据构造、共享状态和因果效应估计的一致分析过程。
+- [PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](https://arxiv.org/abs/2508.21720)：PosterForest 用层次化 Poster Tree 表示论文，再让内容和布局 agent 从整体组织递归优化到局部构图；无需额外训练即可改善语义连贯性和视觉协调。
+- [ERA: An AI system to help scientists write expert-level empirical software](https://www.nature.com/articles/s41586-026-10658-6)（[arXiv](https://arxiv.org/abs/2509.06503)）：Empirical Research Assistance 把 LLM 与可执行科研软件上的树搜索结合起来，以任务质量指标作为反馈来修订、重组和选择候选方案；Nature 版本报告其在单细胞分析、COVID-19 住院预测、地理空间分析、斑马鱼神经活动预测、数值积分和时间序列预测等任务上达到专家级或超过公开榜单方法的结果。
+- [Paper2Agent: Reimagining Research Papers As Interactive and Reliable AI Agents](https://arxiv.org/abs/2509.06917)：自动把论文及配套代码转为 MCP 支持的交互式研究 agent。
+- [Assisting Research Proposal Writing](https://arxiv.org/abs/2509.09709)：以给定主题生成完整 research proposal，并在后续输入中加入自动评分和参考文献检查反馈，形成生成、评估、再提示的闭环。
+- [The (R)evolution of Scientific Workflows in the Agentic AI Era: Towards Autonomous Science](https://arxiv.org/abs/2509.09915)：提出以智能水平和组合方式为双轴的 workflow evolution 框架，描绘从静态工作流系统走向自主分布式实验室的路径。
+- [VideoAgent: Personalized Synthesis of Scientific Videos](https://arxiv.org/abs/2509.11253)：VideoAgent 将科研视频合成建模为意图驱动的规划，根据旁白的信息密度交替安排静态幻灯片和动态动画，并用 SciVidEval 测量知识传递效果。
 - [Automated Generation of Research Workflows from Academic Papers](https://arxiv.org/abs/2509.12955)（[开源代码](https://github.com/ZH-heng/research_workflow)）：从论文到研究流程的挖掘框架，会抽取 workflow-descriptive 段落、生成流程短语、按阶段分类，并输出结构化研究流程图，用于可复现性分析。
+- [An Evaluation-Centric Paradigm for Scientific Visualization Agents](https://arxiv.org/abs/2509.15160)：这篇立场论文把 SciVis agent 评测拆成结果级检查和过程级检查，分别关注最终可视化，以及动作、解释、工具选择、步骤复杂度和执行熟练度。Bonsai 概念验证把 ParaView 体渲染任务拆成可核验检查点，结合多模态裁判、引擎状态断言、CodeBERT 脚本相似度及成本、延迟、token 和成功率指标；这些测试还能作为 meta-agent 修改提示词或代码的反馈。
+- [ShinkaEvolve](https://arxiv.org/abs/2509.19349)：面向科学发现的程序演化 harness，重点解决样本效率。核心思想是结合探索-利用平衡的 parent sampling、代码新颖性 rejection sampling 和 bandit 式 LLM 集成选择，让 LLM mutation search 用更少试验找到更好的 circle packing、数学推理、竞赛编程和 mixture-of-experts loss-function 候选。
+- [Perspectra: Choosing Your Experts Enhances Critical Thinking in Multi-Agent Research Ideation](https://arxiv.org/abs/2509.20553)：Perspectra 让用户为多智能体科研构思选择专家 persona，通过显式配置视角组合来提升批判性思考，而不是依赖固定的通用智能体团队。
+- [MotivGraph-SoIQ: Integrating Motivational Knowledge Graphs and Socratic Dialogue for Enhanced LLM Ideation](https://arxiv.org/abs/2509.21978)：MotivGraph-SoIQ 将动机知识图谱与苏格拉底式对话结合起来，让 LLM 构思从隐含动机逐步转化为经过追问和细化的问题或方案。
 - [ToolUniverse](https://arxiv.org/abs/2509.23426)（[开源代码](https://github.com/mims-harvard/ToolUniverse)）是用于构建 AI scientist 的工具生态和 MCP/SDK 底座；把 1000+ 科学工具、模型、数据库和 API 标准化为可调用组件，并支持从自然语言生成/优化工具接口。
-- [AutoLabs](https://arxiv.org/abs/2509.25651)：面向自主化学实验的自纠错多智能体实验规划框架。核心思想：把自然语言实验目标拆成专门 agent 子任务、工具辅助计算和可上机执行的实验协议，并通过迭代验证修正。
+- [DeepScientist](https://arxiv.org/abs/2509.26603)：用 one-repo-per-quest、baseline reproduction、dependency-failure tracking、continuous experiments、Findings Memory 和 paper-ready outputs 支撑长程研究。
+- [HARPA: A Testability-Driven, Literature-Grounded Framework for Research Ideation](https://arxiv.org/abs/2510.00620)：HARPA 先挖掘趋势、探索假设设计空间，再通过研究空白收敛到可测试假设，并从历史执行结果学习；其可行性与 groundedness 提升对应着更多成功的下游研究执行。
+- [CoDA: Agentic Systems for Collaborative Data Visualization](https://arxiv.org/abs/2510.03194)：把数据可视化组织为协作式多 agent 工作流。核心思想是由专门 agent 分别处理元数据分析、任务规划、代码生成和自反思，使复杂多文件数据集和迭代式可视化修正更稳健。
 - [DeepEvolve](https://arxiv.org/abs/2510.06056)（[开源代码](https://github.com/liugangcode/deepevolve)）把 deep research 与算法演化结合起来，将外部知识检索、跨文件代码编辑、调试、实现和 benchmark 反馈接成科学算法发现闭环。
+- [TinyScientist: An Interactive, Extensible, and Controllable Framework for Building Research Agents](https://arxiv.org/abs/2510.06579)：提供交互式、可控的框架，用于组合研究 agent 工作流。
+- [Introducing HALC: a general pipeline for the systematic and reliable construction of prompts for automated coding with LLMs in the computational social sciences](https://doi.org/10.1080/19312458.2026.2693637)：HALC 将自动内容编码组织为分阶段的提示构建与可靠性筛选流程，该流程由预研究结果推导，并通过超过 300 万次 LLM 请求在主题、文档类型、语言和编码单元各不相同的数据集上进行验证。
+- [LLM-enhanced computational grounded theory and the triadic dynamics of human-AI-society interaction](https://doi.org/10.1007/s11186-026-09734-7)：将计算扎根理论组织为数据构建、LLM 辅助主题生成、人机主题细化、计算确认和理论生成五个由人主导的阶段；在 584,160 条 ChatGPT 相关推文上，该流程得到 10 个主题和 54 个子主题，用于支撑人、AI、社会三元理论，同时保留人工解释与验证环节。
+- [Simulating strategic interactions with AI agents](https://doi.org/10.1002/smj.70112)：提供以 LLM 智能体作为合成受试者来设计和运行低成本实验的框架；其探索与利用案例复现了人类实验中的模式，并通过参数和边界条件扫描找出效应减弱或反转的位置，从而支持实验原型设计与假设生成。
+- [From Coding to Conversation: A New Methodological Framework for AI-Assisted Qualitative Analysis](https://doi.org/10.1177/10778004251412871)：CA AI 提出五步定性分析流程，由研究者与大模型迭代提问、综合并反思性解释数据，同时整合归纳、演绎和溯因推理。
+- [Towards the Embodied Conversational Interview Agentic Service ELIAS: Development and Evaluation of a First Prototype](https://doi.org/10.1145/3708319.3733810)：ELIAS 将遵循人工编制访谈提纲的具身对话代理，与负责内容分析和编码的半监督代理结合。初步的五人评测显示，参与者对访谈代理持积极看法并与其形成较强的协作关系，同时也提出了后续改进建议。
 - [AutoMLGen](https://arxiv.org/abs/2510.08511)（[开源代码](https://github.com/Alpha-Innovator/InternAgent)）面向 coding agent 的细粒度 AutoML 优化导航；在 MLE-bench 上报告 medal rate 与 valid submission 等指标，是 InternAgent/MLE 工程路线的论文版扩展。
+- [Hypothesis Hunting with Evolving Networks of Autonomous Scientific Agents](https://arxiv.org/abs/2510.08619)：ASCollab 让具有异质行为的 LLM 科学家自组织，在共享评价规范下持续提出并同行评审发现，从而沿多样性、质量与新颖性前沿累积成果，而非只解决单一固定问题。
 - [MOSAIC](https://arxiv.org/abs/2510.08804)（开源代码：论文称接收后发布）是面向 SciCode 的多代理科学编码系统，通过 task-intelligent orchestration 分解、执行和验证科学代码任务，并按 SciCode 官方协议报告 main problem/subproblem 表现。
 - [ReviewerToo](https://arxiv.org/abs/2510.08867)：用于研究 AI 辅助同行评审的模块化 harness。核心思路是在真实会议投稿上配置专门评审 persona 和结构化评价标准，使 AI 程序委员会工作流能在部署前被测试。
+- [IRIS: An Iterative and Integrated Framework for Verifiable Causal Discovery in the Absence of Tabular Data](https://arxiv.org/abs/2510.09217)：在缺少表格数据时做可验证因果发现，通过迭代整合文本证据、候选因果结构和验证步骤来支撑因果分析。
+- [Spec-Driven AI for Science: The ARIA Framework for Automated and Reproducible Data Analysis](https://arxiv.org/abs/2510.11143)：spec-driven 的自动化、可复现科研数据分析框架；核心思想是把自然语言分析规格转成可执行代码、验证计算和透明文档。
+- [SR-Scientist: Scientific Equation Discovery With Agentic AI](https://arxiv.org/abs/2510.11661)：把 LLM 从方程 proposer 提升为自治方程发现 agent。核心思想是把代码解释、数据分析、方程实现、评测提交和反馈优化封装成长程工具循环，用于科学符号回归。
+- [Operand Quant: A Single-Agent Architecture for Autonomous Machine Learning Engineering](https://arxiv.org/abs/2510.11694)：面向 autonomous machine-learning engineering 的 single-agent architecture。
 - [CodeEvolve](https://arxiv.org/abs/2510.14150)（[开源代码](https://github.com/inter-co/science-codeevolve)）是面向算法发现的开源进化式 coding agent，用 islands-based search、LLM 编排、执行反馈和任务指标引导候选方案变异与选择。
 - [freephdlabor](https://arxiv.org/abs/2510.15624)（[项目页](https://freephdlabor.github.io/)；[开源代码](https://github.com/ltjed/freephdlabor)）是 personalized research-group harness，支持动态 workflow、workspace communication、context compaction、持久记忆和非阻塞人类介入，用于持续推进较长研究项目。
+- [GraphMind: Interactive Novelty Assessment System for Accelerating Scientific Discovery](https://arxiv.org/abs/2510.15706)：提供用于论文或草拟想法的新颖性评估交互工具。核心思想是让用户标注论文主结构，通过 arXiv 和 Semantic Scholar 关系探索相关工作，并把新颖性判断追溯到上下文证据，而不是只给不透明的 LLM 分数。
+- [DeTAILS](https://arxiv.org/abs/2510.17575)：交互式 LLM-assisted qualitative-research harness。核心思想：支持 iterative coding、cluster review 和 theme synthesis，同时保留研究者对 thematic analysis 的控制权。
+- [Executable Knowledge Graphs](https://arxiv.org/abs/2510.17795)：面向研究复现 agent 的论文中心知识表示 harness。核心思想：把代码片段和论文中的隐含技术细节整合进多粒度检索结构，提升 PaperBench 式复现任务表现。
 - [TrustResearcher](https://arxiv.org/abs/2510.20844)：一个透明的多 Agent 科研选题构思 harness。核心思路是把结构化知识整理、多样化想法生成、多阶段筛选和专家组综合显式拆成可检查阶段，使研究者能够审计和干预有证据支撑的 ideation 过程。
+- [HIKMA: Human-Inspired Knowledge by Machine Agents](https://arxiv.org/abs/2510.21370)：实现半自主学术会议工作流，把数据策展、论文起草、同行评审与修订辅助、报告制作和成果归档编排为连续协同的 agent 阶段。
 - [Famou-Agent](https://arxiv.org/abs/2510.26144)（[开源代码](https://github.com/baidubce/FM-Agent)）是面向机器学习工程任务的闭环编码与实验代理；在 MLE-bench 语境下更接近“竞赛建模专家 harness”，强调历史经验、实验计划、执行反馈与多轮模型/特征迭代。
-- [Generative Reviewer Agents](https://aclanthology.org/2025.emnlp-industry.8/)：用于可扩展同行评审模拟的 reviewer-agent harness。核心思路是为 LLM 加入评审 persona 和记忆，使 Agent 能给出详细反馈、预测论文结果，并支持关于评审专业性与公平性的实验。
+- [The Denario project: Deep knowledge AI agents for scientific discovery](https://arxiv.org/abs/2510.26887)：Denario 以模块化 agent 完成构思、文献核验、计划、代码执行、作图、论文撰写和评审，并让领域专家对生成论文进行打分和反馈。
+- [Federated Experiments: Generative Causal Inference Powered by LLM-Based Agents Simulation and RAG-Based Domain Docking](https://doi.org/10.1109/jas.2024.124671)：把 agent simulation 与 RAG-based domain docking 结合做生成式因果推断，使因果研究实验成为受领域证据 grounding 的协同仿真，而不是孤立问答。
+- [Generative Reviewer Agents: Scalable Simulacra of Peer Review](https://doi.org/10.18653/v1/2025.emnlp-industry.8)：用于可扩展同行评审模拟的 reviewer-agent harness。核心思路是为 LLM 加入评审 persona 和记忆，使 Agent 能给出详细反馈、预测论文结果，并支持关于评审专业性与公平性的实验。
+- [Quest2DataAgent: Automating End-to-End Scientific Data Collection](https://doi.org/10.18653/v1/2025.emnlp-demos.36)：自动化端到端科学数据收集；核心思想是把找数、取数和整理步骤封装为研究任务中的 agent workflow。
+- [SafeScientist](https://aclanthology.org/2025.emnlp-main.116)：把安全、伦理和双重用途风险作为构思阶段的门控，和只按新颖性与可行性推进不同，它防止危险备选项进入后续实验。
 - [InfAL](https://aclanthology.org/2025.findings-emnlp.667/)：面向 research ideation 的多 agent 对抗式推理 harness。核心思想是在 inference time 让多个 LLM agent 相互挑战和改进研究想法，并用相对质量排序筛选 novelty 与 feasibility，而不需要额外训练。
-- [SciCompanion](https://aclanthology.org/2025.findings-emnlp.1315/)：面向科学论证评估的图结构 research harness。核心思想：从近期论文、领域数据库和元数据构建动态知识图谱，再通过多跳推理生成与专家判断对齐的结构化评审意见。
+- [SciCompanion: Graph-Grounded Reasoning for Structured Evaluation of Scientific Arguments](https://doi.org/10.18653/v1/2025.findings-emnlp.1315)：面向科学论证评估的图结构 research harness。核心思想：从近期论文、领域数据库和元数据构建动态知识图谱，再通过多跳推理生成与专家判断对齐的结构化评审意见。
+- [Deep Ideation: Designing LLM Agents to Generate Novel Research Ideas on Scientific Concept Network](https://arxiv.org/abs/2511.02238)：设计在科学概念网络上生成新研究想法的 LLM 智能体，把科研构思转化为显式的图引导 agent 工作流。
 - [Kosmos](https://arxiv.org/abs/2511.02824)（开源代码：未找到稳定公开仓库）是面向数据驱动科学发现的长时程 AI scientist；通过结构化 world model 连接文献搜索代理和数据分析代理，可在 12 小时级运行中持续读论文、写代码、生成假设并输出可追踪报告。
+- [KnowThyself: An Agentic Assistant for LLM Interpretability](https://arxiv.org/abs/2511.03878)：构建面向模型可解释性检查的聊天式 assistant，将自然语言分析请求路由到专门模块，并返回交互式可视化解释。
 - [ArchPilot](https://arxiv.org/abs/2511.03985)（开源代码：未找到稳定公开仓库）是面向 MLE-bench 的多代理机器学习工程框架，在 AIDE、ML-Master 等基线之上强调代理分工、模型方案搜索和实验反馈驱动的架构改进。
+- [Jr. AI Scientist](https://arxiv.org/abs/2511.04583)（开源代码：未确认公开）：从 baseline paper 出发的自主科研探索 harness。核心思想：分析论文限制、提出假设、借助 coding agent 迭代实验、撰写论文，并在作者评估和 reviewer-style 评估中同时报告风险。
+- [AgentExpt: Automating AI Experiment Design with LLM-based Resource Retrieval Agent](https://arxiv.org/abs/2511.04921)：通过资源检索自动化 AI 实验设计。核心思想是从引用网络和实验适配信号中推荐数据集与 baseline，减少后续 AI 实验设计中只看表层相似度的偏差。
+- [Evidence-Bound Autonomous Research / EviBound](https://arxiv.org/abs/2511.05524)：加入治理门控以阻止自治研究 agent 报告无证据 claims。核心思想是在执行前验证验收标准 schema，并在执行后要求 MLflow 可查询的 run ID、artifact、metric 和完成状态，claim 才能传播。
+- [The Station: An Open-World Environment for AI-Driven Discovery](https://arxiv.org/abs/2511.06309)：The Station 是没有中央协调器的开放世界多 agent 科研生态：agent 阅读同行论文、提出假设、提交实验并发布结果，在涌现协作中形成跨领域方法。
+- [Structural Enforcement of Statistical Rigor in AI-Driven Discovery: A Functional Architecture](https://arxiv.org/abs/2511.06701)：该架构用 Haskell Research monad 强制假设检验更新误差预算，并让验证数据物理上不进入代码沙箱；Lean 与 SPARK 证明把在线 FDR 理论连接到浮点实现。
 - [AgenticSciML](https://arxiv.org/abs/2511.07262)（开源代码：未找到稳定公开仓库）面向科学机器学习发现；由 10+ 专门代理通过结构化辩论、方法记忆和演化搜索共同设计 SciML 架构、损失函数与训练策略。
-- [Autonomous Knowledge Pipeline for AI Research](https://doi.org/10.1109/AAIML67890.2026.11498163)：面向 AI 研究知识传播的 LLM 智能体流水线。核心思想：把论文筛选、多模态媒体生成和在线发布连接成研究传播工作流，而不是孤立的摘要步骤。
-- DS-GURU（[开源代码](https://github.com/mitdbg/KramaBench)；无独立论文；KRAMABENCH 配套数据科学 agent，把数据湖洞察任务分解为子任务并生成可执行 Python 数据处理/分析 pipeline）
-- [Chain of Unit-Physics](https://arxiv.org/abs/2512.01010)：面向科学代码生成的物理约束 harness。核心思想：把专家设计的 unit-physics tests 编码为多 agent 代码循环中的约束，使生成求解器在迭代中必须满足第一性原理检查。
-- MLEvolve（[开源代码](https://github.com/InternScience/MLEvolve)；无 arXiv 论文）是 MLE-bench 榜单上公开代码的进化式 ML agent，突出多候选实验、进化搜索与性能反馈驱动的方案迭代。
+- [AlphaResearch](https://arxiv.org/abs/2511.08522)：通过提出想法、编程验证和优化 proposal 的循环发现新算法。核心思想是结合可执行验证 reward 与模拟同行评审 reward，使开放式算法发现同时考虑可行性和创新性。
+- [OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists](https://arxiv.org/abs/2511.16931)：把科学建模为人类科学家与 AI scientist 共同演化的生态系统，强调持续协作、反馈和角色演化，而不是一次性搜索或单次论文生成。
+- [Development and Benchmarking of a Blended Human-AI Qualitative Research Assistant](https://arxiv.org/abs/2512.00009)：构建并基准化 blended human-AI qualitative research assistant，关注人类研究者与 AI 在编码、解释和质量检查中的分工。
+- [SelfAI](https://arxiv.org/abs/2512.00403)：面向长周期科学发现的自导向多 agent 框架；核心思想：把研究意图转化为可执行实验，基于累积实验轨迹进行推理，并在可复现的人在环流程中平衡效率与探索多样性。
 - [PaperDebugger](https://arxiv.org/abs/2512.02589)（[开源代码](https://github.com/PaperDebugger/paperdebugger)）是面向 Overleaf 的 in-editor 多代理学术写作与修订助手，结合文档状态访问、MCP 工具、文献搜索、引用查询、结构化审阅和 diff-based revision workflow。
 - [Prompt-Free Collaborative Agents for Paper2Code](https://arxiv.org/abs/2512.02812)（[开源代码](https://github.com/going-doer/Paper2Code)）提出了面向 Paper2Code 的无提示协同代理框架。
+- [SlideGen: Collaborative Multimodal Agents for Scientific Slide Generation](https://arxiv.org/abs/2512.04529)：SlideGen 让协作的视觉语言 agent 分工完成大纲规划、图表与论点对齐、讲稿生成和可编辑 PPTX 构图，并用 geometry-aware density 评估整套幻灯片的拥挤、稀疏和碎片化。
 - [DeepCode](https://arxiv.org/abs/2512.07921)（开源代码：未找到稳定公开仓库）是开放式 agentic coding 系统，在 PaperBench 上与商业 agent 和人类基线对比，代表论文复现/长程代码生成方向的后续工作。
+- [Beyond Text-to-SQL: Autonomous Research-Driven Database Exploration with DAR](https://arxiv.org/abs/2512.14622)：把数据库使用从被动问答推进到自治研究。核心思想是 DAR 在 BigQuery 内协调意图推断、元数据抽取、SQL 与 AI 查询生成、迭代验证和证据扎根报告，显著减少探索式数据库研究的人力时间。
+- [AI-Driven Research for Systems](https://arxiv.org/abs/2512.14806)：把系统性能研究建模为生成、实现、评估和改进的可验证闭环，并以 OpenEvolve、GEPA、ShinkaEvolve 等开源 ADRS 实例作为案例。
 - [TIB AIssistant](https://arxiv.org/abs/2512.16442)：由任务型 assistant 与 scholarly tool 组成的 research-life-cycle 平台。核心思想是保存生成资产并导出为 RO-Crate bundle，使文献、写作与研究管理步骤保持透明和可复现。
+- [Multi-LLM Thematic Analysis with Dual Reliability Metrics: Combining Cohen's Kappa and Semantic Similarity for Qualitative Research Validation](https://arxiv.org/abs/2512.20352)：在可配置温度下运行 1–6 次带种子的分析，从任意 JSON 输出中抽取共识主题，并用 Cohen kappa 与余弦相似度评分；六次运行比较 Gemini 2.5 Pro、GPT-4o 和 Claude 3.5 Sonnet。
+- [Bohrium + SciMaster: Building the Infrastructure and Ecosystem for Agentic Science at Scale](https://arxiv.org/abs/2512.20469)：构建可观测、可复现、可验证的多步科学 agent 工作流基础设施。
+- [UniLabOS: An AI-Native Operating System for Autonomous Laboratories](https://arxiv.org/abs/2512.21766)：UniLabOS 为自主实验室提供带类型的有状态动作、逻辑与物理双拓扑以及事务化 CRUTD 状态协调，使协议能在可重构仪器间迁移，同时保留溯源和人工治理。
+- [Accelerating Scientific Discovery with Autonomous Goal-evolving Agents](https://arxiv.org/abs/2512.21782)：自主 goal-evolving scientific-discovery harness；核心思想是由外层 agent 提出可计算目标，内层在目标下优化解。
+- [The Qualitative Laboratory: Theory Prototyping and Hypothesis Generation with Large Language Models](https://arxiv.org/abs/2601.00797)：“定性实验室”让由社会学理论定义的 persona 对政策信息作出自然语言反应，从而产生细腻且反直觉的假设，再进入 simulation-then-validation 流程。
+- [OpenNovelty: An LLM-powered Agentic System for Verifiable Scholarly Novelty Assessment](https://arxiv.org/abs/2601.01576)：构建智能体式学术新颖性评估系统，将研究主张与文献证据对照，使 novelty verification 成为科研工作流的一部分。
+- [FlowPlan-G2P: A Structured Generation Framework for Transforming Scientific Papers into Patent Descriptions](https://arxiv.org/abs/2601.02589)：用图式规划把科学论文转成专利说明，分离 invention extraction、法定结构组织和受控生成步骤。
+- [NeuronScope: A Multi-Agent Framework for Explaining Polysemantic Neurons in Language Models](https://arxiv.org/abs/2601.03671)：用于解释语言模型多义神经元的多智能体框架，把可解释性分析组织成协同研究流程，而不是单次提示。
+- [SciFig: Towards Automating Scientific Figure Generation](https://arxiv.org/abs/2601.04390)：自动化科研图生成流程。核心思想是从论文内容和图意图中规划图形元素，再用生成、检查和修订步骤把科研信息转成可发表的视觉表达。
+- [PRISM](https://arxiv.org/abs/2601.05356)：用检索、规划、批判和验证代理生成机器人实验步骤，并用 digital twin 在执行前发现液体处理、设备布局和动作顺序错误。
+- [FOREAGENT](https://arxiv.org/abs/2601.05930)（[代码](https://github.com/zjunlp/predict-before-execute)）：面向 machine-learning agents 的 predict-then-verify harness；核心思想是在昂贵执行前先预测数据分析方案的相对潜力，再选择性验证以加速实验搜索。
 - [DIAGPaper](https://arxiv.org/abs/2601.07611)：用于诊断科学论文有效且具体弱点的多智能体论文评审框架。核心思想：把准则驱动的批判、考虑 rebuttal 的有效性验证和弱点优先级排序分开，而不是输出未排序的泛泛评审意见。
-- [SciNets](https://arxiv.org/abs/2601.09727)：面向文献综合的 graph-constrained harness，会构建 query-local 概念图并搜索多跳路径来生成机制性解释。核心思想：把推理深度、多样性和 grounding stability 显式量化，而不是只依赖无约束 RAG 摘要。
 - [ML-Master 2.0 / Cognitive Accumulation](https://arxiv.org/abs/2601.10402)（[开源代码](https://github.com/sjtu-sai-agents/ML-Master)）把 ML-Master 扩展到超长程机器学习工程，强调跨阶段认知积累、经验复用和长时间实验推进。
-- [Deep Research](https://arxiv.org/abs/2601.12542)（开源代码：未找到稳定公开仓库）来自 “Rethinking the AI Scientist”；核心是 planner、data analysis、literature search、novelty detection 等专门代理共享 persistent world state，让科学发现从离线批处理转向分钟级交互式循环。
-- [RebuttalAgent](https://arxiv.org/abs/2601.14171)（[开源代码](https://github.com/AutoLab-SAI-SJTU/Paper2Rebuttal)；[demo](https://huggingface.co/spaces/Mqleet/RebuttalAgent)）是 Paper2Rebuttal 的多代理作者回复 harness，协调 semantic encoding、issue extraction、literature retrieval、strategy generation、human refinement、rebuttal writing 和 rebuttal review。
-- InternAgent（[开源代码](https://github.com/InternScience/InternAgent)；无 arXiv 论文）是面向深度科研和 ML 工程任务的开源 agent 系统，在 MLE-bench 上有公开提交；可作为 AIDE / R&D-Agent 之外的实验执行型 harness 参考。
-- [DeepInflation](https://arxiv.org/abs/2601.14288)：结合 LLM Agent、符号回归、检索增强科学知识和验证闭环，自动探索并检验候选暴胀模型。
+- [Explanova: Automatically Discover Data Insights in N \times M Table via XAI Combined LLM Workflow](https://arxiv.org/abs/2601.12317)：把 XAI 方法与 LLM workflow 结合起来，从 N by M 表格中自动发现并解释数据洞见。
+- [Rethinking the AI Scientist: Interactive Multi-Agent Workflows for Scientific Discovery](https://arxiv.org/abs/2601.12542)：通过持久化世界状态统一规划、数据分析、文献检索和新颖性检测智能体，同时支持人工检查点模式与全自主调查，将长时间离线科研批处理缩短为分钟级交互迭代。
+- [A Cloud-based Multi-Agentic Workflow for Science](https://arxiv.org/abs/2601.12607)：组织云端多 agent 科学工作流，把任务分解、远程执行、产物交接和流程协调显式化，用于分布式科研自动化。
+- [RegCheck: A tool for automating comparisons between study registrations and papers](https://arxiv.org/abs/2601.13330)：自动比较研究注册与最终论文内容，帮助检查预注册方案、方法和报告结果之间的一致性。
+- [RebuttalAgent](https://arxiv.org/abs/2601.14171)：（[开源代码](https://github.com/AutoLab-SAI-SJTU/Paper2Rebuttal)；[demo](https://huggingface.co/spaces/Mqleet/RebuttalAgent)）是 Paper2Rebuttal 的多代理作者回复 harness，协调 semantic encoding、issue extraction、literature retrieval、strategy generation、human refinement、rebuttal writing 和 rebuttal review。
 - [Execution-Grounded Automated AI Research](https://arxiv.org/abs/2601.14525)（开源代码：未找到稳定公开仓库）把科研想法生成和真实执行反馈绑定起来；核心思想：让 agent 通过运行实验检验 idea，而不是只生成看起来合理的研究方案。
-- [BibAgent](https://arxiv.org/abs/2601.16993) 是可追踪 miscitation detection 的 agentic 引用核验框架，结合检索、推理、自适应证据聚合和面向 paywalled 来源的下游 citation consensus。
+- [From Quotes to Concepts: Axial Coding of Political Debates with Ensemble LMs](https://arxiv.org/abs/2601.15338)：**TLDR：** 在集成式开放编码后加入 LLM 主持器，并比较“嵌入聚类后命名”与“LLM 直接分组”两种轴心编码流程；荷兰议会辩论实验表明，前者覆盖率和类别分离更好，后者生成的类别更精炼且语义更一致，但覆盖率仅为 20%，作者同时公开了话语与编码数据集。
+- [BibAgent](https://arxiv.org/abs/2601.16993)：结合来源检索、推理和自适应证据聚合，核验科学引文是否支持上下文论断；面对付费墙文献时，Evidence Committee 利用后续引用共识推断有效性，并在覆盖 254 个领域的检测中保留可追踪证据。
+- [DRPG (Decompose, Retrieve, Plan, Generate): An Agentic Framework for Academic Rebuttal](https://arxiv.org/abs/2601.18081)：DRPG 将学术 rebuttal 拆为原子化意见分解、论文证据检索、答辩策略规划和回复生成四步；其规划器识别可行答辩方向的准确率超过 98%。
+- [Reimagining Peer Review Process Through Multi-Agent Mechanism Design](https://arxiv.org/abs/2601.19778)：把学术同行评审重构为多智能体机制设计问题，关注评审激励、分配、审议和流程级保障。
 - [Idea2Story / Idea2Paper](https://arxiv.org/abs/2601.20833)（[开源代码](https://github.com/AgentAlphaAGI/Idea2Paper)；[demo](http://paperbuild.cn)）通过离线论文知识图谱、pattern retrieval、anchored multi-agent review 和迭代修正，把欠规格的研究想法转成结构化 scientific story skeleton，是更大 Idea2Paper 流水线的首个核心模块。
+- [PaperBanana](https://arxiv.org/abs/2601.23265)：采用 reference-driven multi-agent 方案，由 Retriever、Planner、Stylist、Visualizer 和 Critic 协作生成 publication-ready academic illustrations。
 - [MARS / MARS+](https://arxiv.org/abs/2602.02660)（开源代码：未找到稳定公开仓库）是面向 MLE-bench 的模块化反思搜索 agent；论文把 ML 建模拆成候选方案生成、实验执行、结果反思、分支搜索与 ensemble/refinement 等阶段，属于典型的 test-time search / reflective ML engineering harness。
+- [DeltaEvolve](https://arxiv.org/abs/2602.02919)：面向科学程序发现的 evolutionary research-agent harness；核心思想是用记录修改原因与收益的 structured semantic delta 替代完整代码历史，并通过多层数据库检索这些 delta 来指导后续候选方案。
+- [MIRROR: A Multi-Agent Framework with Iterative Adaptive Revision and Hierarchical Retrieval for Optimization Modeling in Operations Research](https://arxiv.org/abs/2602.03318)：在不微调的情况下把自然语言 OR 问题转成数学模型和求解器代码。核心思想是结合执行驱动的自适应修订和分层示例检索，让 agent 在复杂优化任务中自动修正建模与实现错误。
+- [AutoFigure](https://arxiv.org/abs/2602.03828)（[开源代码](https://github.com/ResearAI/AutoFigure)）：从长文本生成可发表科研插图的 agentic framework，并配套 FigureBench，在论文、综述、博客和教材等来源上评测 text-to-illustration 能力。
+- [HybridQuestion: Human-AI Collaboration for Identifying High-Impact Research Questions](https://arxiv.org/abs/2602.03849)：把人机协作用在高影响研究问题识别的上游阶段，让 AI 辅助扩展和筛选问题空间，同时保留研究者判断。
+- [Principle-Evolvable Scientific Discovery via Uncertainty Minimization](https://arxiv.org/abs/2602.06448)：PiEvo 不再只在固定假设集合中搜索，而是用高斯过程的信息导向选择和异常触发的原则扩充来演化原则空间，从失败先验中脱离。
+- [The FAIR framework: ethical hybrid peer review](https://doi.org/10.1515/jpm-2025-0285)：FAIR 把同行评议拆成可自动化的初筛、方法和抄袭检查，以及由人把关的新颖性、伦理和最终决定，并加入标准化提示、本地处理、保密和审计轨迹。
+- [Aster: Autonomous Scientific Discovery over 20x Faster Than Existing Methods](https://arxiv.org/abs/2602.07040)：Aster 将科学发现实现为围绕初始程序和评测脚本的持续改进循环，把迭代成本降到足以处理数小时训练任务，并在多个领域验证这一机制。
 - [IV Co-Scientist](https://arxiv.org/abs/2602.07943)：面向 instrumental-variable discovery 的多 agent 因果研究 harness。核心思想是围绕 treatment-outcome pair 协调 proposal、critique 与 refinement agent，并用已被确认或否定的 instrument 进行评估。
-- [ARQ / Asking the Right Questions](https://arxiv.org/abs/2602.19069) 是问题生成与分解框架，可作为科研选题/任务拆解的邻近工具：它强调先提出能暴露缺失假设的中间问题，再进入研究计划；但它本身不是完整科研 agent benchmark。
-- [ArchAgent](https://arxiv.org/abs/2602.22425)（开源代码：未找到稳定公开仓库；围绕自动化设计空间搜索构建的计算机体系结构发现 agent 系统；设计关键词：缓存替换策略设计、代码生成、仿真反馈、竞赛式评测）
+- [Accelerating Social Science Research via Agentic Hypothesization and Experimentation](https://arxiv.org/abs/2602.07983)：构建面向社会科学的 agentic hypothesization-and-experimentation 循环，加速从观察、假设到验证的研究周期。
+- [InternAgent-1.5](https://arxiv.org/abs/2602.08990)（[开源代码](https://github.com/InternScience/InternAgent)）：面向长程自主科学发现的统一框架，在算法与实证发现循环中协调生成、验证、演化、deep research、优化和记忆。
+- [SciDataCopilot: An Agentic Data Preparation Framework for AGI-driven Scientific Discovery](https://arxiv.org/abs/2602.09132)：自动化科学发现中的数据准备层，让 agent 检查原始科学数据、选择清洗和转换步骤，并产出可供后续建模使用的数据集。
+- [CausalAgent: A Conversational Multi-Agent System for End-to-End Causal Inference](https://arxiv.org/abs/2602.11527)：实现面向端到端因果推断的对话式多智能体系统。
+- [Think like a Scientist](https://arxiv.org/abs/2602.12259)：面向方程发现的 physics-guided LLM agent。核心思想：让 agent 在候选符号方程与物理约束检查之间迭代，使方程搜索受科学合理性约束，而不只追求回归拟合。
+- [OR-Agent](https://arxiv.org/abs/2602.13769)（[开源代码](https://github.com/qiliuchn/OR-Agent)）：把 evolutionary search 和 structured research 连接起来做自动化算法发现。核心思想是把文献 grounding、候选算法生成、代码实验、反馈和演化式修订组织成研究循环，用于发现更强的优化算法。
+- [Discovering Multiagent Learning Algorithms with Large Language Models](https://arxiv.org/abs/2602.16928)：AlphaEvolve 先发现 VAD-CFR 和 SHOR-PSRO，再将其蒸馏为更简单的 WOP-CFR 与 PM-PSRO；精简后的算法核心比过拟合的复杂组合机制具有更好的泛化。
+- [FAMOSE: A ReAct Approach to Automated Feature Discovery](https://arxiv.org/abs/2602.17641)：把 ReAct 式循环用于自动特征发现，在数据分析过程中交替进行推理和工具动作，生成、检查并修正候选特征。
+- [El Agente Gráfico: Structured Execution Graphs for Scientific Agents](https://arxiv.org/abs/2602.17902)：使用结构化执行图组织科学 agent，使研究步骤可检查、可协调，并能跨任务复用。
+- [Qualitative Coding Analysis through Open-Source Large Language Models: A User Study and Design Recommendations](https://arxiv.org/abs/2602.18352)：通过用户研究考察开源大模型辅助定性编码，提炼人机分工、编码检查和设计建议。
+- [Many AI Analysts, One Dataset](https://arxiv.org/abs/2602.18710)：让多个自主 AI analyst 围绕同一数据集和假设独立完成分析的多代理框架。核心思想：用 agent 复现 many-analyst 式分析多样性，并由 auditor 审查流程，使数据科学研究中的分析选择差异和鲁棒性变得可观察。
+- [Pixel2Phys: Distilling Governing Laws from Visual Dynamics](https://arxiv.org/abs/2602.19516)：Pixel2Phys 用多 agent 从视觉动态中提取潜变量，反复提出和验证方程，发现紧凑的控制规律，并保持稳定的长期外推。
+- [ClawdLab and Beach.Science](https://arxiv.org/abs/2602.19810)：提出把 agent-only 社交网络与自主科研工作流连接起来的架构。
+- [Grounding LLMs in Scientific Discovery via Embodied Actions](https://arxiv.org/abs/2602.20639)：将科学软件转化为具身的感知—执行环境，使 LLM 能对瞬态仿真故障作出响应，而非一次性下达命令；其 MATLAB 实现提升了长程工程设计与科学建模的可靠性。
+- [SparkMe: Adaptive Semi-Structured Interviewing for Qualitative Insight Discovery](https://arxiv.org/abs/2602.21136)：利用多智能体模拟对话轨迹选择半结构化访谈问题，在主题指南覆盖、涌现主题发现和访谈长度之间权衡；受控测试及 70 人研究显示其以更少轮次获得更丰富的覆盖。
+- [Graph Your Way to Inspiration: Integrating Co-Author Graphs with Retrieval-Augmented Generation for Large Language Model Based Scientific Idea Generation](https://arxiv.org/abs/2602.22215)：结合 co-author graph 与 RAG 的科学创意生成系统；核心思想是让 ideation 具有可控学术语境和可追踪灵感路径。
+- [CiteLLM](https://arxiv.org/abs/2602.23075)：构建面向科研写作的 agentic reference-discovery 平台。核心思想是在 LaTeX workflow 中嵌入学科感知仓库路由和段落级语义匹配，为草稿 claim 寻找支撑引用。
+- [PaperRepro: Automated Computational Reproducibility Assessment for Social Science Papers](https://arxiv.org/abs/2603.00058)：将社会科学论文的计算可复现性评估自动化，属于研究工作流中的 agentic reproducibility harness。
+- [EfficientPosterGen: Semantic-aware Efficient Poster Generation via Token Compression and Accurate Violation Detection](https://arxiv.org/abs/2603.00155)：EfficientPosterGen 用语义贡献图检索关键内容，将选中的文字渲染成图像以压缩视觉上下文，并用确定性的颜色梯度算法检测溢出和空间稀疏。
+- [Automated Discovery of Improved Constant Weight Binary Codes](https://arxiv.org/abs/2603.00174)：CPro1 自动提出、实现并测试组合构造策略；其比特交换禁忌搜索和基于随机评分距离直方图的贪心启发式，在 24 组参数上构造出更大的常重量码。
+- [Agentic Scientific Simulation: Execution-Grounded Model Construction and Reconstruction](https://arxiv.org/abs/2603.00214)：面向自然语言描述下的科学仿真模型构建与重构，提供 execution-grounded 的 agent 流程；核心思想是显式发现并解析隐含建模选择，再用可执行仿真反馈区分“看似合理”的文本与科学上有效的配置。
+- [GrantCheck](https://formative.jmir.org/2025/1/e79038)：GrantCheck 部署在私有 AWS 环境中，将资助申请中政策敏感词的规则检测、句子级 LLM 改写和结果校验组合成闭环。在 22 个标注敏感词上，它取得 1.00 的精确率、0.73 的召回率和 0.84 的 F1，优于 GPT-4o、DeepSeek R1、Llama 3.1 及两个 Gemini 版本；25 名教职员工给出的系统可用性量表平均分为 85.9。
+- [PymooLab: An Open-Source Visual Analytics Framework for Multi-Objective Optimization using LLM-Based Code Generation and MCDM](https://arxiv.org/abs/2603.01345)：结合 LLM 代码生成、可视分析与决策支持，服务多目标优化工作流。
 - [SciDER](https://arxiv.org/abs/2603.01421)（开源代码：未找到稳定公开仓库）是数据中心式端到端科学研究代理；核心思想是从原始实验数据出发，自动完成数据处理、分析、假设形成和报告生成，补足只面向论文或竞赛数据的科研代理。
-- [OrchMAS](https://arxiv.org/abs/2603.03005)（开源代码：未找到稳定公开仓库；异构科学专家多 agent 编排框架；设计关键词：双层编排、动态角色与 workflow 适配、模型路由、对中间推理分歧的修订）
+- [Gome / Reasoning as Gradient](https://arxiv.org/abs/2603.01692)（[开源代码](https://github.com/microsoft/RD-Agent)）：把 MLE agent 搜索重述为类似梯度的诊断推理、动量记忆和分布式多轨迹执行，在受限算力下提升 MLE-Bench 表现。
+- [CentaurTA: A Self-Improving Human-Agents Collaboration Framework for Thematic Analysis](https://doi.org/10.18653/v1/2026.findings-acl.778)：CentaurTA 通过迭代编码、研究者反馈和系统策略优化支持人机协作主题分析，改进后续定性分析。
+- [Formalized scientific methodology enables rigorous AI-conducted research across domains](https://doi.org/10.64898/2026.03.02.709102)：将从问题形成到证据支撑写作的科研过程编码为带回退路径、完整性约束和项目治理的阶段门控可执行协议，使 AI 科研全生命周期中的干预和核验产物可审计。
+- [LLM-Assisted Reviewer Assignment via Auditable Expertise Matching](https://doi.org/10.1109/ACCESS.2026.3724622)：该流程用 producer 与 judge agent 生成可解析的专家画像，比较词法、神经和图匹配方法，并同时评估高排名分配质量与审稿负载不均衡。
+- [A Persistent Fleet of AI Scientists Exhibits Cooperative and Autopoietic Behavior](https://doi.org/10.64898/2026.08.16.745122)：近六个月的部署将一次性科研助手扩展为持续运行的智能体集群，结合共享记忆、跨智能体通信、身份级虚构约束和来源验证。该约束将妄想强化探针失败率从 91.7% 降至 0%，引用验证使错误主题幻觉下降超过 14 倍；系统还完成了 104 次多阶段推理循环并产出 43 个经人工筛选的假设。
+- [idea2paper / ARK](https://github.com/kaust-ark/ARK)（[项目站](https://idea2paper.org/)）是 project-only 的 idea-to-paper 科研 harness，不应与无关的 ARK 检索模型缩写混淆。它用六个 agent 编排 Research-Dev-Review 流程：proposal analysis、Gemini Deep Research、项目专门化、citation bootstrap、Slurm/cloud 实验执行、LaTeX 起草、视觉 grounded review、planner 输出 YAML action plan、validation/recompile 循环、SQLite 状态、每项目 conda 隔离、Goal Anchor 记忆、实时 JSONL step log，以及在高风险计算、凭据、花费、删除和数据传输动作前通过 Telegram 或 dashboard 让人介入。
+- [InfiEpisteme](https://github.com/JayCheng113/InfiEpisteme) 是 project-only、以 Markdown 作为程序的 Claude Code 机器学习论文研究 harness。核心思想是由本地 mission-control Claude 向 GPU server 启动分阶段 Claude Code 运行，通过 `registry.yaml`、`experiment_tree.json`、`.ai/` 记忆文件、确定性 `state_guard.py` 检查、memory sync 和三层 judge gate 协调状态，并在 P0/S2/S3 checkpoint 暂停给人审阅；literature、ideation、implementation、experiments、analysis、writing、cross-model review、revision 和 delivery skills 则持续推进同一篇论文 artifact。
+- [ControlA: Agentic Workflow Control Mechanisms for Reliable Science](https://doi.org/10.1109/escience65000.2025.00086)：研究可靠科学工作流中的 agentic 控制机制；核心思想是管理动态 agent 行为，使科学辅助过程可审计、可依赖。
+- [DORA AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation](https://doi.org/10.1101/2025.03.06.641840)：面向科学发现与报告生成的多 agent 虚拟研究团队；核心思想是把规划、执行、分析和写作等研究角色拆给不同 agent 协作完成。
+- [What Papers Don't Tell You: Recovering Tacit Knowledge for Automated Paper Reproduction](https://arxiv.org/abs/2603.01801)：面向自动论文复现的 tacit knowledge recovery。核心思想是让 agent 识别论文没有明说但复现实验必需的实现细节、超参数和环境假设，再把这些隐含知识转成可执行修复线索。
+- [On Integrating LLMs Into an Argument Annotation Workflow](https://doi.org/10.18653/v1/2025.argmining-1.8)：把 LLM 接入论证标注流程，关注模型建议、人工标注和一致性检查如何协同完成研究数据构建。
+- [ResearchConnect: An AI-Powered Platform for Interdisciplinary Research Team Formation and Ideation Development](https://doi.org/10.1002/aisy.202501399)：ResearchConnect 从 PDF、文本和网页抽取研究者画像，聚类组建跨学科团队，并用 LLM 为团队生成研究构想摘要。
+- [Stanford Agentic Reviewer](https://paperreview.ai/tech-overview)（[评审工具](https://paperreview.ai/)）：为研究论文提供快速、由相关工作支撑的反馈。核心思想是把上传 PDF 转成 Markdown，生成多粒度检索 query，检索并总结相关 arXiv 论文，再按模板生成 review；可选 ICLR 风格分数则由 originality、claims support、experiment soundness 等七维评分通过 ICLR 2025 公开评审校准得到。
+- [The Necessity of Dynamic Workflow Managers for Advancing Self‐Driving Labs and Optimizers](https://doi.org/10.1002/aidi.202500067)：强调用动态 workflow manager 协调实验循环、优化器与实验室自动化，适合归入科研智能体 harness 基础设施。
+- [Towards Automated Reasoning Chains for Verification of LLM-Generated Scientific Code](https://doi.org/10.1109/hpec67600.2025.11196666)：为 LLM 生成的科学代码构建自动 reasoning chains，使中间推理、检查和失败诊断在代码被科研计算采用前显式化。
+- [Autonomous Knowledge Pipeline for AI Research](https://doi.org/10.1109/AAIML67890.2026.11498163)：面向 AI 研究知识传播的 LLM 智能体流水线。核心思想：把论文筛选、多模态媒体生成和在线发布连接成研究传播工作流，而不是孤立的摘要步骤。
+- [Hypothetica: A Multi-Agent System for AI-Powered Originality Assessment](https://doi.org/10.1109/iisec69317.2026.11418474)：用多智能体系统做原创性评估，适合科研评价工作流。
+- [Research Helper - Agentic AI System For Academic Writing](https://doi.org/10.1109/icici68867.2026.11565032)：Research Helper 用多智能体流水线处理文献检索、摘要、洞察抽取和论文起草，是面向学术写作生产的 agent harness。
+- [The design of a GAI-supported research topic selection system for novice researchers: From the SECI perspective](https://doi.org/10.1109/iceit68991.2026.11521627)：设计基于 SECI 知识创造模型的生成式 AI 选题系统，把新手研究者的隐性兴趣通过访谈归纳出的引导需求转化为明确学术方向。
+- [A Modular Framework for Automated Hypothesis Validation and Refinement in Scientific Research](https://doi.org/10.3390/info17030244)：在科学研究工作流中自动化假设验证与修正。
+- [Adda: Towards Efficient in-Database Feature Generation via LLM-based Agents](https://doi.org/10.1145/3725262)：用 LLM-based agents 将自然语言机器学习分析任务转化为数据库内特征生成代码和 SQL 算子，把特征工程变成可执行的 agent workflow。
+- [AI as a Co-researcher in the Qualitative Research Workflow: Transforming Human-AI Collaboration](https://doi.org/10.1177/16094069251383739)：把定性研究重构为人机协作流程，让 AI 支持资料熟悉、编码、主题发展和反思性检查，同时保留研究者对解释性判断的主导权。
+- [Autonomous Research Loops: An LLM-Agent Framework for End-to-End ML Experimentation, Manuscripting, and Self-Evaluation](https://doi.org/10.1145/3802133.3802134)：把 ML 实验、论文写作和自评估连接为 end-to-end LLM-agent loop，使研究流程能从实验执行延伸到 manuscripting。
+- [Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench) 是 Anthropic 面向科学家的 AI workbench，以 macOS/Linux beta app 形式发布。核心思想是把 Claude 放进带常用科学包、MCP 与 skill 集成、可审计 artifacts、自定义工具/数据访问和弹性计算资源的研究工作台，使分析、实验规划、带文献支撑的综述写作和代码执行等流程能被检查，而不是只留下聊天记录。
+- [DeepReport: An AI-assisted Idea Generation System for Scientific Research](https://doi.org/10.1145/3726302.3730151)：支持科学 idea generation，把主题探索和 report-style synthesis 结构化，帮助研究者从种子主题与证据形成候选研究方向。
+- [DynaMate: leveraging AI-agents for customized research workflows](https://doi.org/10.1039/d5me00062a)：提供快速接入自定义工具的科研 agent 模板，使重复性的领域研究流程无需重建 agent stack 即可组装。
+- [Karpathy autoresearch](https://github.com/karpathy/autoresearch)（project-only release）是一个极简 repo-first 自主 ML 研究循环，面向单 GPU nanochat 训练。核心思想：把“研究组织”写进 `program.md`，限制 agent 只改 `train.py`，每轮运行固定 5 分钟实验，记录 `val_bpb`，并用 git 保留或回滚改动，是 ARIS 式实验闭环的紧凑参照。
+- [Theorizing with Large Language Models](https://doi.org/10.3386/w33033)：把 LLM 用作理论构建助手，支持研究者生成、比较和细化社会科学或经济学理论命题。
+- [Trustworthy Scientific Narrative Generation Through Computational Provenance and Dynamic Authoring Frameworks](https://doi.org/10.52825/ocp.v8i.3174)：把科学叙事生成与计算溯源连接起来。核心思想是用动态 authoring framework 让生成的科研叙事持续关联可执行 provenance 和更新中的证据，而不是变成静态、无支撑的文本。
+- [Bayesian adversarial multi-agent AI4S platform](https://arxiv.org/abs/2603.03233)：面向科学代码生成的低代码 research-agent 框架。核心思想是用 Bayesian adversarial loop 协调任务管理、代码生成和评估 agent，提高弱定义科学目标下的可靠性。
+- [Agentics 2.0](https://arxiv.org/abs/2603.04241)：面向 agentic data workflow 的类型化 Python-native 框架；核心思想是把 LLM 调用建模为受 schema 约束的 transducible function，并通过代数算子组合，从而为数据科研 agent 提供强类型、证据追踪和并行执行能力。
+- [AutoFigure-Edit](https://arxiv.org/abs/2603.06674)：结合 long-context understanding、reference-guided styling 和 native SVG editing，使生成图可继续人工精修。
+- [HLER: Human-in-the-Loop Economic Research via Multi-Agent Pipelines for Empirical Discovery](https://arxiv.org/abs/2603.07444)：HLER 为 empirical discovery 提供 human-in-the-loop economic research multi-agent pipeline。
 - [EvoScientist](https://arxiv.org/abs/2603.08127)（[开源代码](https://github.com/EvoScientist/EvoScientist)）是自进化多代理 AI scientist；用 Researcher Agent、Engineer Agent 与 Evolution Manager Agent，加上 ideation / experimentation 两类持久记忆，让研究策略和代码实验能力随交互历史持续改进。
+- [Sparking Scientific Creativity via LLM-Driven Interdisciplinary Inspiration](https://arxiv.org/abs/2603.12226)：该工作用 LLM 驱动的跨学科启发来激发科研创造力，帮助研究者连接远距离领域并生成超出本领域文献检索的候选想法。
+- [From Experiments to Expertise: Scientific Knowledge Consolidation for AI-Driven Computational Research](https://arxiv.org/abs/2603.13191)：从反复计算实验中整合知识，使 research agent 能把仿真轨迹、失败案例和成功配置转化为后续运行可复用的 expertise。
+- [Beyond Prompting: An Autonomous Framework for Systematic Factor Investing via Agentic AI](https://arxiv.org/abs/2603.14288)： 该系统把手工串联提示替换为自主因子研究循环：自动形成可解释信号，并用样本外验证和经济合理性检查约束数据窥探，再将信号组合成长短组合；美国股票实验报告年化 Sharpe 比率 3.11、收益率 59.53%。
+- [ScienceClaw + Infinite / Emergent Artifact Exchange](https://arxiv.org/abs/2603.14312)（[ScienceClaw 代码](https://github.com/lamm-mit/scienceclaw)；[Infinite 代码](https://github.com/lamm-mit/infinite)）：去中心化科学发现 harness；agent 会发布不可变 typed artifacts、父级 lineage DAG、open needs、pressure scores 和 discourse records，让其他 agent 在没有中央规划器的情况下补齐未满足需求并综合独立分析。
+- [CausalEvolve: Towards Open-Ended Discovery with Causal Scratchpad](https://arxiv.org/abs/2603.14575)：CausalEvolve 是面向开放发现的 evolve-style agent，适合 Research Agent Harness。
+- [Toward reliable scientific visualization pipeline construction with structure-aware retrieval-augmented LLMs](https://arxiv.org/abs/2603.16057)：为科学可视化 pipeline 构建 structure-aware RAG。核心思想是检索与 pipeline 对齐的 vtk.js 代码示例，引导 LLM 正确选择模块、参数和执行顺序，并用可执行性与人工修正成本评测多阶段可视化任务。
+- [citecheck: An MCP Server for Automated Bibliographic Verification and Repair in Scholarly Manuscripts](https://arxiv.org/abs/2603.17339)：实现用于学术书目核验与修复的 MCP server。核心思想：把标识符校验、元数据对齐、预印本到正式版本匹配和稿件修补建议做成可审计的 citation-checking 工具循环。
+- [An Auditable AI Agent Loop for Empirical Economics: A Case Study in Forecast Combination](https://arxiv.org/abs/2603.17381)：将可审计 agent loop 适配到经验经济学；核心思想是让 specification search 透明，并用 holdout 验证搜索后结果。
+- [Setting SAIL: Leveraging Scientist-AI-Loops for Rigorous Visualization Tools](https://arxiv.org/abs/2603.18145)：用 Scientist-AI-Loops 构建更严谨的可视化工具，在 agent 提议、实现、检查和修订可视化功能时保留科学家判断。
+- [SciNav: A General Agent Framework for Scientific Coding Tasks](https://arxiv.org/abs/2603.20256)：面向带客观可执行评测的科学编码 agent 框架的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [REVERE: Reflective Evolving Research Engineer](https://arxiv.org/abs/2603.20667)：面向 research-coding agent 的反思式优化框架。核心思想是从跨仓库执行轨迹中挖掘反复出现的失败模式，将其蒸馏为可复用启发式，并定向更新 system prompt、task-prompt template 和累计 cheatsheet，而不是每次局部失败后整体重写 prompt。
 - [AI Co-Scientist for Ranking](https://arxiv.org/abs/2603.22376)：用于发现搜索排序模型的领域研究智能体框架。核心思想：自动化 idea 生成、代码实现、云端训练任务调度和多 LLM 结果分析，同时让专家参与排序模型研究决策。
-- [Karpathy autoresearch](https://github.com/karpathy/autoresearch)（project-only；本轮未找到论文）是一个极简 repo-first 自主 ML 研究循环，面向单 GPU nanochat 训练。核心思想：把“研究组织”写进 `program.md`，限制 agent 只改 `train.py`，每轮运行固定 5 分钟实验，记录 `val_bpb`，并用 git 保留或回滚改动，是 ARIS 式实验闭环的紧凑参照。
+- [Automated Extraction of Collins-Soper Kernel from Lattice QCD using An Autonomous AI Physicist System](https://arxiv.org/abs/2603.22471)： PhysMaster 将理论推理、数值计算、拟合、重整化、连续统—手征外推和非微扰重构串成自主格点 QCD 工作流；在 Collins-Soper kernel 提取上，它把数月分析压缩到数小时，将大横向分离区域的信号稳定到 1 fm，并与微扰 QCD 及传统计算结果一致。
 - [Bilevel Autoresearch](https://arxiv.org/abs/2603.23420)（开源代码：本轮未验证到稳定公开仓库）把 autoresearch loop 本身当成优化对象。核心思想：用外层 LLM 循环在运行时生成并注入新的搜索机制，优化内层实验循环，直接对应 ARIS `meta-optimize` 中“如何改进研究 harness，而不只是改进被训练模型”的问题。
+- [From AI Assistant to AI Scientist: Autonomous Discovery of LLM-RL Algorithms with LLM Agents](https://arxiv.org/abs/2603.23951)：POISE 用代理循环发现、实现并评估新的 LLM-RL 算法，但核心产物是语言模型强化学习算法和策略优化方法本身。
+- [AI-Supervisor: Autonomous AI Research Supervision via a Persistent Research World Model](https://arxiv.org/abs/2603.24402)：用持久研究世界模型和多 agent 监督组织自动化研究过程，harness 特征清晰。
+- [AVO: Agentic Variation Operators for Autonomous Evolutionary Search](https://arxiv.org/abs/2603.24517)：提出用于自主进化搜索的 agentic variation operators，用 LLM 引导的变异和重组动作生成更有用的候选程序或设计。
+- [Judge Agent for Scientific Simulation](https://arxiv.org/abs/2603.25780)：为 AI 生成科学仿真加入外部 verification agent。核心思想是在接受可运行仿真代码前检查 well-posedness、convergence 和 error certification，降低静默物理错误。
 - [AIRA_2](https://arxiv.org/abs/2603.26499)（开源代码：未找到稳定公开仓库）是 AIRA-dojo 的直接扩展，针对吞吐、评测噪声和固定 operator 三个瓶颈引入异步多 GPU、Hidden Consistent Evaluation 与 ReAct operators，并继续在 MLE-bench-30 上报告长时程结果。
-- [DEFEND](https://arxiv.org/abs/2603.27360) 是最少作者指导下的自动 rebuttal generation workflow；它组织 reviewer comment segmentation、deficiency/error typing、rebuttal actions 和 author-in-the-loop reasoning，可补充 Paper2Rebuttal 式端到端回复草拟。
+- [Story2Proposal](https://arxiv.org/abs/2603.27065)：输入 research story、初步贡献和证据材料，输出按科研论文或 proposal section scaffold 组织的结构化草案，重点是把叙事节点填入可评审的章节槽位。
+- [DEFEND](https://arxiv.org/abs/2603.27360)：在尽量少的作者指导下完成自动 rebuttal generation；它组织 reviewer comment segmentation、deficiency/error typing、rebuttal actions 和 author-in-the-loop reasoning，并把这些中间判断显式交给作者核验。
+- [Sci-Mind: Cognitively-Inspired Adversarial Debate for Autonomous Mathematical Modeling](https://arxiv.org/abs/2603.27584)：用建模 agent 之间的对抗式辩论提出、质疑并修正数学模型，把批判环节显式纳入自主模型构建流程。
+- [When Choices Become Priors: Contrastive Decoding for Scientific Figure Multiple-Choice QA](https://arxiv.org/abs/2603.28026)：SCICON 是面向科学图表多选问答的免训练解码器：它从每个选项的图像条件分数中减去纯文本分数，以抑制选项先验，并在三个基准和三种骨干模型上提高图像证据驱动的准确率。
+- [Let the Abyss Stare Back Adaptive Falsification for Autonomous Scientific Discovery](https://arxiv.org/abs/2603.29045)：DASES 让创新者、对抗式证伪者与因果提取器共同演化可执行假设和合规反例，借助自适应证伪前沿淘汰虽能通过静态验证却经不起反驳的候选。
+- [FlowPIE](https://arxiv.org/abs/2603.29557)：把文献探索和 idea generation 视为耦合的测试时演化过程。核心思想是用受 GFlowNets 启发的 flow-guided MCTS 和 LLM generative reward model 自适应扩展文献轨迹，形成多样初始 idea 群体，再通过选择、交叉、变异和 island isolation 演化科研想法。
+- [FigAgent](https://arxiv.org/abs/2603.29590)：从相似组件中蒸馏 drawing experiences，封装成 reusable tools，并用 Explore-and-Select 策略构造复杂 method illustration figures。
+- [ASI-Evolve: AI Accelerates AI](https://arxiv.org/abs/2603.29640)：构建面向 AI-for-AI 的 learn-design-experiment-analyze 循环，用 agent 自动提出、实现、评测并分析 AI 研究改进，使算法发现成为长程实验流程。
+- [Owl-AuraID 1.0](https://arxiv.org/abs/2603.29828)：提供对话优先的实验室 agent 运行时，可操作仪器 GUI、处理样品、采集测量结果并完成后续分析，把物理操作与结果解释接入同一个 agent 控制的实验闭环。
 - [CliffSearch](https://arxiv.org/abs/2604.01210)（[项目页](https://cliffsearch.ai/)）是面向科学算法发现的结构化 agentic co-evolution 框架；其 LLM agent 用 correctness、originality、runtime 和 benchmark feedback 作为一等 selection signal，演化 theory-and-code 或 code-only artifact。
 - [LitPivot](https://arxiv.org/abs/2604.02600)：通过文献语境化与批判来发展研究想法的 research-ideation harness；核心思想是在 agent 修改研究方向时持续引入文献版图，使新颖性和定位成为工作流的一部分，而不是事后检查。
-- [Deep Researcher Agent](https://arxiv.org/abs/2604.05854)（[开源代码](https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7)）是深度研究式 harness 的执行代理，强调多轮检索、证据压缩和结论生成。
-- UniScientist（[官方文章](https://unipat.ai/blog/UniScientist)，[开源代码](https://github.com/UniPat-AI/UniScientist)，[模型](https://huggingface.co/UnipatAI/UniScientist-30B-A3B)；论文待发布）是 UniPat AI 的科学研究智能模型与 agentic inference 框架；核心是 Active Evidence Integration、Model Abduction、Evolving Polymathic Synthesis 和多 rollout 报告聚合。
+- [Toward Full Autonomous Laboratory Instrumentation Control with Large Language Models](https://arxiv.org/abs/2604.03286)：该仪器控制工作把自然语言设备目标连接到控制脚本生成和 agent 迭代操作，展示 LLM 如何降低定制实验的编程门槛。
+- [SASAV: Self-Directed Agent for Scientific Analysis and Visualization](https://arxiv.org/abs/2604.03406)：面向 scientific analysis and visualization 的 self-directed agent。核心思想：让 MLLM 从被动接口转向在科学数据分析流水线中主动判断、选择并执行可视化步骤。
+- [FermiLink: A Unified Agent Framework for Multidomain Autonomous Scientific Simulations](https://arxiv.org/abs/2604.03460)：FermiLink 是跨领域自主科学仿真的统一 agent framework。
+- [FactReview](https://arxiv.org/abs/2604.04074)：通过抽取论文 claims、检索相近工作、在可用时执行发布代码，并为关键经验性结论标注支撑关系，生成 evidence-grounded peer review。
+- [InferenceEvolve: Towards Automated Causal Effect Estimators through Self-Evolving AI](https://arxiv.org/abs/2604.04274)：用 LLM 驱动演化来发现 causal effect estimators；核心思想是迭代改进科学方法，而不只是应用已有方法。
+- [AutoSOTA](https://arxiv.org/abs/2604.05550)（[开源代码](https://github.com/tsinghua-fib-lab/AutoSOTA)）是面向已发表论文中 SOTA AI 模型改进的端到端自动科研系统。核心思想：协调 8 个专门 agent 完成资源准备、环境修复、实验跟踪、想法生成、调度和有效性监督，并在顶会论文集合上报告 105 个改进模型。
+- [ResearchEVO](https://arxiv.org/abs/2604.05587)（开源代码：尚未确认稳定公开仓库）：端到端自动科学发现与文档生成框架。核心思想是先按适应度演化代码实现，再通过检索增强写作、自动实验设计和反幻觉检查生成可编译论文。
+- [Deep Researcher Agent](https://arxiv.org/abs/2604.05854)（[开源代码](https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7)）：自主执行从假设、实现、训练到结果分析和迭代改进的完整深度学习实验循环；依靠进程级零 API 成本监控、约 5,000 字符的恒定记忆以及仅配 3-5 个工具的 leader-worker 智能体，连续 30 天完成了 500 多轮实验。
+- [Beyond Paper-to-Paper / P2R](https://arxiv.org/abs/2604.05866)：用结构化 LLM profiling 做论文审稿人匹配。核心思想是分别抽取投稿和审稿人的 topic、methodology 与 application 画像，再结合混合检索和 rubric scoring，使分配依据显式专长维度，而不只依赖论文之间的文本相似度。
 - [Agent-Driven Corpus Linguistics](https://arxiv.org/abs/2604.07189)：面向自主语言学发现的工具使用型研究框架。核心思想：让 LLM 智能体提出假设、调用语料库查询引擎、解释结果并迭代分析，同时将每个发现锚定到可验证的语料证据。
 - [AlphaLab](https://arxiv.org/abs/2604.08590)（[项目页](https://brendanhogan.github.io/alphalab-paper/)；[开源代码](https://github.com/morganstanley/MSML/tree/main/projects/alpha-lab)）是面向量化优化领域的多代理自主科研 harness，结合 Strategist/Worker 角色、自建评测、持久 playbook memory 和领域 adapter。
-- [DeepReviewer 2.0](https://arxiv.org/abs/2604.09590)：面向可审计科学同行评审的可追踪智能体系统。核心思想：构建 claim-evidence-risk 台账，执行议程驱动检索，并只导出满足可追踪性和覆盖预算的评审包。
+- [DeepReviewer 2.0](https://arxiv.org/abs/2604.09590)：构建 claim-evidence-risk 台账并执行 agenda-driven retrieval，让导出的同行评审必须满足可追踪性和覆盖预算。
 - [ResearchCube](https://arxiv.org/abs/2604.11538) 是面向 research ideation 的多维 trade-off 探索界面。核心思想：让研究者自定义双极评价轴，并在 3D evaluation space 中移动和合成 idea，使选题框定中的取舍在确定研究方向前变得可检查。
-- [Toward Autonomous Long-Horizon Engineering for ML Research](https://arxiv.org/abs/2604.13018)（[开源代码](https://github.com/AweAI-Team/AiScientist)）提出面向 ML 研究工程的长程 agent 机制，在 PaperBench 与 MLE-Bench Lite 上评测 File-as-Bus 等协作/状态管理设计。
+- [Continuous Knowledge Metabolism: Generating Scientific Hypotheses from Evolving Literature](https://arxiv.org/abs/2604.12243)：CKM 用滑动窗口维护演化中的知识状态，再用生成窗口之后发表的论文验证假设并诊断流程失败，把面向未来文献的预测变成可证伪的科研构思反馈闭环。
+- [Toward Autonomous Long-Horizon Engineering for ML Research](https://arxiv.org/abs/2604.13018)（[开源代码](https://github.com/AweAI-Team/AiScientist)）研究 ML 研究工程中的长程 agent 机制，在 PaperBench 与 MLE-Bench Lite 上评测 File-as-Bus 等协作和状态管理设计。
+- [SciFi: A Safe, Lightweight, User-Friendly, and Fully Autonomous Agentic AI Workflow for Scientific Applications](https://arxiv.org/abs/2604.13180)：为定义清晰的科学任务提供轻量自治工作流。核心思想是结合隔离执行环境、三层 agent loop 和 self-assessing do-until 机制，使日常科研负载能在明确上下文和停止条件下安全运行。
 - [AIBuildAI](https://arxiv.org/abs/2604.14455)（[开源代码](https://github.com/aibuildai/AI-Build-AI)）是自动构建 AI 模型的 agent，实现重点是自动读取数据、生成训练与推理代码、持续运行实验并修复提交；论文在 MLE-bench 上报告自动建模结果。
+- [A Reference Architecture for Agentic Hybrid Retrieval in Dataset Search](https://arxiv.org/abs/2604.16394)：用于数据集搜索的可审计 agentic hybrid retrieval 参考架构；核心思想是结合 BM25、dense retrieval、RRF 与有边界的 agentic reranking，让 agent 能在稀疏异构元数据中保留证据轨迹地检索。
+- [Bolzano: Case Studies in LLM-Assisted Mathematical Research](https://arxiv.org/abs/2604.16989)：Agent Harness 条目；核心思想：面向 LLM 辅助数学研究；核心思想是编排并行 prover agents 和批判轮次完成数学案例研究。
+- [Knows: Agent-Native Structured Research Representations](https://arxiv.org/abs/2604.17309)：Knows 为论文 PDF 附加经模式校验的 YAML 侧车文件，编码主张、证据、溯源和关系；在 20 篇论文的 140 个问题上，它将 0.8--2B 智能体准确率从 19--25% 提升至 47--67%，并减少 29--86% 输入 token。
 - [EvoMaster](https://arxiv.org/abs/2604.17406)（开源代码：未找到稳定公开仓库）把多代理协作和进化式搜索用于科学问题求解；核心思想：通过假设生成、候选演化与验证反馈，在 FrontierScience 等高难科学推理任务上提升表现。
+- [Peerispect](https://arxiv.org/abs/2604.17667)（[开源代码](https://github.com/Reviewerly-Inc/Peerispect)）：从审稿文本中验证 claims，检索论文证据、应用 NLI，并在交互界面中展示证据片段。
+- [HiRAS](https://arxiv.org/abs/2604.17745)：面向 paper-to-code 生成与执行的层次化多 agent 框架。核心思想：用 supervisory manager 协调细粒度复现阶段中的专用 agents，并用 repository-level information 改进 Paper2Code 评测。
+- [CentaurTA Studio: A Self-Improving Human-Agent Collaboration System for Thematic Analysis](https://arxiv.org/abs/2604.18589)：构建自改进 human-agent thematic-analysis 系统，把研究者反馈、主题编码和系统策略更新连接起来改进后续定性分析。
 - [SHARP](https://arxiv.org/abs/2604.18752)：把论文和文档转化为可执行分析代码的科学人机复现流水线。核心思想：将复现任务拆为智能体执行步骤，引入代码、测试和质量保证子智能体，同时保留研究者检查点。
+- [Evaluation-driven Scaling for Scientific Discovery](https://arxiv.org/abs/2604.19341)：提出 evaluation-driven scaling，把 verifier、simulator 和任务评分放进科学发现循环，用评测信号推动发现能力扩展。
+- [OpenCLAW-P2P v7.0-P2PCLAW](https://arxiv.org/abs/2604.19792)：OpenCLAW-P2P 描述去中心化论文生产闭环：智能体发布、审稿、评分和修订论文，并由持久化状态和实时引文核验支撑；文中报告的是系统自评而非独立基准。
+- [Metadata Reasoner](https://arxiv.org/abs/2604.20144)：面向分析任务中充分且最小数据源选择的 agentic harness；核心思想是在下游数据分析前结合表搜索、元数据自主查阅和推理，确定应使用的数据集。
+- [Enhancing Research Idea Generation through Combinatorial Innovation and Multi-Agent Iterative Search Strategies](https://arxiv.org/abs/2604.20548)：以组合创新思想驱动多代理循环，反复检索知识、生成候选研究想法、打分并迭代改进；在 NLP 实验中同时提升了相对既有创意生成基线的新颖性和多样性。
+- [pAI/MSc: ML Theory Research with Humans on the Loop](https://arxiv.org/abs/2604.20622)：面向机器学习理论研究的模块化多 agent 工作流，目标是从假设形成到文献支撑手稿逐步减少人工 steering，同时保持人在环监督。
+- [CoFEE: Reasoning Control for LLM-Based Feature Discovery](https://arxiv.org/abs/2604.21584)：为基于 LLM 的特征发现加入推理控制，适合数据科学研究流程中由智能体提出、测试并修正候选特征的场景。
+- [No Test Cases, No Problem: Distillation-Driven Code Generation for Scientific Workflows](https://arxiv.org/abs/2604.23106)：提出 MOSAIC，用于缺少 I/O 测试的科学代码生成。核心思想是用 student-teacher knowledge distillation、领域示例、结构化问题分解和 consolidated context window 替代执行测试反馈，减少链式子问题中的幻觉。
 - [ARA / Agent-Native Research Artifacts](https://arxiv.org/abs/2604.24658)（[开源代码](https://github.com/Orchestra-Research/Agent-Native-Research-Artifact)）把科研产物从线性论文扩展成可执行、可审计的 agent-native artifact，并在 PaperBench 与 RE-Bench 上报告 review/reproduction workflow 的改进。
-- [SciResearcher](https://arxiv.org/abs/2605.01489)（开源代码：未找到稳定公开仓库）扩展 deep research agent 到前沿科学推理，强调多轮证据整合、任务分解与 frontier scientific reasoning benchmark 上的稳定提升。
+- [Making AI-Assisted Grant Evaluation Auditable](https://arxiv.org/abs/2604.25200)：评估 grant proposal 时加入可审计性维度，要求记录 canonical input、model/rubric measurement、submission hash 和输出，从而让结果可申诉、可复核但不暴露模型细节。
+- [End-to-end autonomous scientific discovery on a real optical platform](https://arxiv.org/abs/2604.27092)：Qiushi Discovery Engine 结合非线性研究阶段、Meta-Trace memory 和双层运行时，管理数千次推理与工具动作，完成复现、测量、假设修订和物理验证。
+- [Theory Under Construction: Orchestrating Language Models for Research Software Where the Specification Evolves](https://arxiv.org/abs/2604.27209)：Theory Under Construction 编排 LMs 处理规格演化中的研究软件，属于 research software harness。
+- [Machine Collective Intelligence for Explainable Scientific Discovery](https://arxiv.org/abs/2604.27297)：机器集体智能将符号推理与元启发式搜索结合，让多个智能体生成、评估、批评并整合符号假设，从观测中恢复紧凑且可解释的控制方程。
+- [Intern-Atlas: A Methodological Evolution Graph as Research Infrastructure for AI Scientists](https://arxiv.org/abs/2604.28158)：把 AI scientist 的研究基础设施从文档中心转为方法演化图，显式记录方法之间的继承、替换和组合关系，便于 agent 复用研究路径。
+- [HepScript: A Dual-Use DSL for Human-AI Collaborative Data Analysis Workflows in High-Energy Physics](https://arxiv.org/abs/2605.01423)： HepScript 用人类可读且受约束的 DSL 把高层 HEP 分析意图翻译成生产代码，为 AI agent 提供可控动作空间；BESIII 案例中人工编写代码量减少 93%，并能以 95% 成功率根据论文生成可执行的分析规范。
 - [ARIS / Auto-Research-In-Sleep](https://arxiv.org/abs/2605.03042)（[开源代码](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)；[介绍](https://wanshuiyin.github.io/Auto-claude-code-research-in-sleep/ARIS_INTRO.html)）是 skill-based autonomous ML research harness，包含跨模型对抗审阅、文献发现、实验桥接、论文写作、research wiki memory 和 Codex/Claude/OpenClaw 可迁移性。
+- [Programmatic Context Augmentation for LLM-based Symbolic Regression](https://arxiv.org/abs/2605.03101)：Programmatic Context Augmentation 让 LLM 通过代码查看数据、残差结构和搜索诊断，而不是只接收标量误差，从而改善演化式符号回归搜索。
 - [PARNESS](https://arxiv.org/abs/2605.05258)（[开源代码](https://github.com/gtrhythm/PARNESS)）是面向端到端自动科研的 paper harness；通过动态 YAML workflow、全文索引、代码仓库索引和跨运行知识积累，补齐 AI Scientist/AutoSOTA/DeepResearch 类固定流程的刚性问题。
-- [BioResearcher](https://arxiv.org/abs/2605.05985)（开源代码：未找到稳定公开仓库）是面向转化医学的 scenario-guided 多代理系统，在 BixBench-Verified-50 等 biomedical benchmark 上评估异质证据综合、多组学分析和可追溯报告生成。
+- [Auto Research with Specialist Agents Develops Effective and Non-Trivial Training Recipes](https://arxiv.org/abs/2605.05724)：用 specialist agents 发现训练配方，协调 proposal、实现、评测和 critique，使 ML 研究改进来自迭代实验而不是一次性建议。
+- [Source or It Didn't Happen: A Multi-Agent Framework for Citation Hallucination Detection](https://arxiv.org/abs/2605.08583)：该框架将引文核验分配给多个 agent，追溯主张对应的来源并标记虚构或不受支持的参考文献；它提供的是面向学术草稿的工作流级完整性检查，而非单纯的文本幻觉评分。
 - [NanoResearch](https://arxiv.org/abs/2605.10813)（[开源代码](https://github.com/OpenRaiser/NanoResearch)）是 personalized research automation harness，其 skill bank、长期记忆和 label-free policy learning 会跨项目协同演化，使过程知识与研究偏好不再只停留在单次会话中。
 - [DataMaster](https://arxiv.org/abs/2605.10906)（论文引用的相关开源基线：[ml-intern](https://github.com/huggingface/ml-intern)）是数据中心式自主 AI research agent，在 MLE-Bench Lite 与 PostTrainBench 上评测，把数据发现、清洗、建模和迭代优化作为统一自动研究流程。
+- [CVEvolve: Autonomous Algorithm Discovery for Unstructured Scientific Data Processing](https://arxiv.org/abs/2605.11359)：面向非结构化科学数据处理的自治算法发现 harness；核心思想是从宽泛目标和噪声数据中演化任务特定处理算法。
+- [OptArgus: A Multi-Agent System to Detect Hallucinations in LLM-based Optimization Modeling](https://arxiv.org/abs/2605.11738)：将优化建模产物路由给目标、变量、约束和实现专门审计智能体，再汇总证据以检查问题描述、符号模型与求解器代码的一致性；评测覆盖 484 个干净、1,266 个人工注错和 6,292 个自然生成样本。
+- [PROMETHEUS](https://arxiv.org/abs/2605.12835)：整合文本、数据和模型来自动化因果研究，把文献派生假设、数据分析和模型验证连接到同一个 agentic 研究循环中。
+- [It's not the Language Model, it's the Tool: Deterministic Mediation for Scientific Workflows](https://arxiv.org/abs/2605.13245)：用语言模型编排确定性科学工具。核心思路是通过 typed local tools 中介特定仪器分析，使重复生成的工作流得到一致且可审计的结果。
+- [IdeaForge](https://arxiv.org/abs/2605.13311)：IdeaForge 让 TRIZ、Design Thinking 与 SCAMPER 智能体写入共享知识图谱；由多种方法共同支持的图连接权利要求会先被排序，再由下游智能体据此起草可追溯的专利权利要求。
 - [GEAR](https://arxiv.org/abs/2605.13874)（开源代码：未找到稳定公开仓库）用 genetic AutoResearch 维护多个 research state，把代码、反思与性能轨迹作为 population-based search 的遗传单元，是 AIDE/AIRA/EvoScientist 路线的进化式后续。
+- [DeepSlide: From Artifacts to Presentation Delivery](https://arxiv.org/abs/2605.15202)：DeepSlide 规划带时间预算的叙事，用内容树检索器为幻灯片和讲稿提供依据，以样式继承渲染并支持排练；双记分板把静态成品质量与动态讲演效果分开。
+- [Effective Harness Engineering for Algorithm Discovery with Coding Agents](https://arxiv.org/abs/2605.15221)：研究 coding agents 做算法发现时的 harness 设计；核心思想是执行基础设施、评测时机和反馈会塑造发现成功率。
+- [Agentic Discovery of Neural Architectures: AIRA-Compose and AIRA-Design](https://arxiv.org/abs/2605.15871)：AIRA-Compose 与 AIRA-Design 用多智能体循环自动组合和设计神经架构，面向 foundation model 架构发现。
+- [From Prompts to Protocols](https://arxiv.org/abs/2605.16552)：把自然语言协议设计嵌入实验编排系统，结合自动验证、错误修正和 node-based graph editor 支持人机协同协议构建。
+- [Episodic-Semantic Memory for Scientific Agents](https://arxiv.org/abs/2605.17625)：提出面向 long-horizon scientific agents 的双过程记忆架构。核心思想是分离 episodic trajectories 与 semantic technical facts，使 agent 能跨超长运行保留参数演化、矛盾和多阶段推理。
+- [STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery](https://arxiv.org/abs/2605.17790)：STRIDE 将数据感知的方程生成、混合拟合评估、critic--executor 修复和保持多样性的语义记忆结合，使失败或近似正确的符号候选能够修复而非直接丢弃。
+- [Memory Condensation for Scientific Discovery Agents](https://arxiv.org/abs/2605.18854)：比较科研发现 coding agent 的 memory condensation 策略。核心思想是在 DiscoveryBench 式任务中改变上下文压缩、工具输出遮蔽和执行证据保留方式，观察记忆设计如何影响长程科学编码轨迹与成本。
 - [AutoResearchClaw](https://arxiv.org/abs/2605.20025)（[开源代码](https://github.com/aiming-lab/AutoResearchClaw)）是多代理自动科研 pipeline，包含 debate、自修复执行、可验证报告、human-in-the-loop 模式、跨运行演化和 ARC-Bench 式评测。
 - [Sibyl-AutoResearch](https://arxiv.org/abs/2605.22343)（[开源代码](https://github.com/Sibyl-Research-Team/AutoResearch-SibylSystem)）主张自动科研需要自进化的 trial-and-error harness，而不只是 paper generator。核心思想：保存正负试验结果，把 lessons 路由到规划、验证、claim scope、调度、批判、写作和 harness 修复，并暴露 file-backed traces 来审计 trial-to-behavior conversion。
 - [Claw AI Lab](https://arxiv.org/abs/2605.22662)（[开源代码](https://github.com/Claw-AI-Lab/Claw-AI-Lab)）把自动科研重构成交互式实验室基础设施，支持角色定制、dashboard 监控、artifact 检查、回滚/恢复和 Claw-Code Harness 接入。
+- [Advancing Mathematics Research with AI-Driven Formal Proof Search](https://arxiv.org/abs/2605.22763)：用 AI 驱动的形式化证明搜索推进数学研究，将 LLM 推理与 Lean 式验证结合，使候选数学进展能够被机器检查。
+- [LiveFigure](https://arxiv.org/abs/2605.23527)：用 VLM agent 生成可编辑科学插图。核心思想是超越 raster image generation，显式规划图形组件、属性、文字、尺度和结构化编辑，使科研图在投稿和排版流程中仍能被人工精修。
+- [EvoSci](https://arxiv.org/abs/2605.24018)：受生物演化启发的多 agent 科学发现框架。核心思想：用 mentor、researcher 和 reviewer agents 结合共享记忆、知识图建模与演化反馈，把想法生成和批判组织成迭代的种群式过程。
+- [LLM-AutoSciLab: Closed-Loop Scientific Discovery via Active Experimentation with LLMs](https://arxiv.org/abs/2605.24043)：LLM-AutoSciLab 将假设生成、条件化实验选择和机制修正闭环连接，并用 ActiveSciBench 显示选择信息量更高的实验可达到 2 到 5 倍样本效率。
+- [Agent-as-Peer-Debriefer: A Multi-Agent Framework with Perspective-Based Refinement for Qualitative Analysis](https://arxiv.org/abs/2605.24600)：层次编码 agent 将编码和反思备忘录交给理论驱动、数据驱动和应用驱动三个同行 agent，由其合并、拆分、改名或重新归类编码；在三个数据集和三种 LLM 上，该视角循环比单 LLM 基线更接近人工标注。
+- [ScientistOne](https://arxiv.org/abs/2605.26340)（[项目页](https://scientist-one.github.io/)；代码：未找到稳定公开仓库）是 chain-of-evidence autonomous scientist，把假设、实验计划、执行、分析和论文主张都连接到显式 evidence records，目标是让端到端科学自动化可审计，而不只是产出最终论文。
+- [Persistent AI Agents in Academic Research: A Single-Investigator Implementation Case Study](https://arxiv.org/abs/2605.26870)：用 PARE-M 测量带持久记忆、文件、工具、定时任务、委派角色和治理规则的学术研究环境；96 天遥测把成本和纠错事件落到可恢复的产物级记录。
+- [TADDLE](https://arxiv.org/abs/2605.26911)：用工具增强 agent 检测 LLM 生成同行评审中的缺陷。核心思想是把评审质量检查拆成 Verify、Correct、Complete 和 Transform 四类工具，并在 50 篇 ICLR 2025 论文的 1800 条专家标注评审上评测 6 类缺陷。
+- [Why LLMs Fail at Causal Discovery and How Interventional Agents Escape](https://arxiv.org/abs/2605.27567)：该工作证明常见学习范式在观测因果发现中的 kernel obstruction，并用外部 Bayesian 循环向冻结模型提出定向干预问题来绕开这一限制。
+- [CiteCheck](https://arxiv.org/abs/2605.27700)：结合候选检索、LLM 验证、阈值标注和 reviewer pass 检测科学文本中的 citation hallucination。
+- [AutoScientists](https://arxiv.org/abs/2605.28655)（[项目页](https://autoscientists.openscientist.ai)；[开源代码](https://github.com/mims-harvard/AutoScientists)）是面向长程计算科研实验的去中心化团队 harness。核心思想是让 agents 读取共享实验状态，自组织成不同研究方向团队，在消耗计算前通过 forum 批判 proposal，通过共享队列 claim 实验，并在 BioML-Bench、GPT 训练优化和 ProteinGym 风格运行中保留成功经验与 dead ends。
+- [MOOSE-Copilot](https://arxiv.org/abs/2605.29475)：统一广泛探索与细粒度精修的网页端科学假设助手。核心思想：让研究者提供初始蓝图、在阶段间路由并在树状可视化中再生成分支，而不是把假设发现压缩成一次提示。
+- [Crafter](https://arxiv.org/abs/2605.30611)（[开源代码](https://github.com/HaozheZhao/Crafter)）：用多 agent harness 从多种科研输入生成可编辑科学图，而不是依赖单一文生图模型。核心思想是把科学图拆成离散语义组件，跨图类型和输入条件协调生成，并用 CraftEditor 把栅格输出转成可局部修改的 SVG；CraftBench 还提供覆盖三类图和四类输入条件的人类标注评测。
+- [EvoGens](https://arxiv.org/abs/2605.30961)：把科学想法生成重述为 population-based heuristic search。核心思想是结合 rank-based mutation、差异化 retrieval planning、semantic-aware crossover 和轻量选择信号，让 idea agent 在迭代提升新颖性与可行性的同时保留多样性。
+- [AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle](https://arxiv.org/abs/2605.31468)：AutoSci 在 SciMem 中分离可复用科学知识与项目产物，用 SciFlow 执行五阶段生命周期，以 SciDAG 组织 DAG 多 agent 算子，并根据实验和评审反馈共同演化三者。
+- [Science Earth: Towards A Planet-Scale Operating System for AI-Native Scientific Discovery](https://arxiv.org/abs/2606.01316)：Science Earth 通过 EACN 让模拟集群、实验机器人、证明引擎和分析管线相互发现、协商任务并裁决证据，使协作结构从科研问题本身涌现。
+- [Self-Revising Discovery Systems for Science](https://arxiv.org/abs/2606.01444)（[Builder/Breaker 代码](https://github.com/lamm-mit/BreakingTheWorld)；[CategoryScienceClaw 分支](https://github.com/lamm-mit/scienceclaw/tree/categoryscienceclaw-mechanics)）：给出自修订科研 agent 的 typed-provenance 规范。核心思想是把发现视为已验证的 schema transition，而不是固定词表搜索；Builder/Breaker 用 MDL gate 接受 protein-mechanics law，CategoryScienceClaw 则把 skills、artifacts、rejected alternatives、AIC gates、stress tests 和公开讨论记录成 proof-carrying knowledge-computation graph。
+- [Conditional Hypothesis Generation for LLM-Based Text Analysis with Researcher-Specified Covariates](https://arxiv.org/abs/2606.03029)：让研究者指定协变量后再生成文本数据假设，和全局判别模式挖掘不同，它防止把混杂、分层不平衡或方向反转误包装成科学规律。
+- [LAP](https://arxiv.org/abs/2606.03755)：设计 agent-to-instrument 协议，把仪器能力、独占预约、安全栅栏、任务状态机和带物理单位的测量结果纳入计划到执行接口。
+- [Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs](https://arxiv.org/abs/2606.04360)：Deliberate Evolution 用自适应算子、结构诊断工具和轨迹级反思记忆把表达式提议与搜索控制解耦，在 40% 的常规样本预算下取得更强符号回归结果。
+- [MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery](https://arxiv.org/abs/2606.06473)：MLEvolve 用图引用边连接搜索分支，以 progressive MCGS 从探索逐步转向利用，并同时检索冷启动知识和累积任务记忆来支持长程算法发现。
+- [When Should an AI Scientist Stop? Verifiable Experiment Steering and Refusal for Autonomous Discovery](https://arxiv.org/abs/2606.07576)：CARTOGRAPH 为 AI scientist 加入 select、resolve 和 refuse 控制：实验指向未解决信息，显式关闭歧义，并在残差显示候选库不足时撤回结论。
+- [SciTrace](https://arxiv.org/abs/2606.08234)：为科学发现 agent 加入 trajectory-aware safety reasoning。核心思想是在 Thinker、Experimenter、Writer 和 Reviewer 阶段持续携带累计风险状态，并识别多个单步看似无害工具调用组合后的有害结果，而不是只做输出级安全过滤。
+- [DN-Hypo-Pipeline: An AI-Driven Workflow for Generating Hypotheses using Large Language Models and Scientific Explanations](https://arxiv.org/abs/2606.08532)：DN-Hypo-Pipeline 将假设生成变成解释理论驱动的流程，用演绎-律则、因果过程和定律式脚手架约束机器生成“为什么成立”的科学假设。
+- [Graph2Idea](https://arxiv.org/abs/2606.09105)：将检索文献转成目标中心知识图谱，再用图派生上下文生成研究想法，和只在事后用图评价不同，它把图结构前置为构思上下文。
+- [Towards Diverse Scientific Hypothesis Search with Large Language Models](https://arxiv.org/abs/2606.10587)：该演化框架把科学假设搜索视为组合采样，让不同 parallel-tempering 温度之间交换候选，在固定验证预算下同时提升分子、方程和算法发现中的质量与多样性。
+- [Moonshine: An Autonomous Mathematical Research Agent Centered on Conjecture Generation](https://arxiv.org/abs/2606.10806)：Moonshine 把数学研究组织成猜想生成、概念桥接和障碍追踪；其 Jacobian 到神经网络的迁移为 N=n+1 得到独立证明，同时留下 N>=n+2 未解。
+- [Toward Generalist Autonomous Research via Hypothesis-Tree Refinement](https://arxiv.org/abs/2606.11926)：用 hypothesis tree 让自主 agent 在长程探索、实验和抽象之间继承经验，使失败和成功试验都能改写后续研究分支。
+- [Helping Figures Tell their Story! Paper-Grounded Video Generation Explaining Complex Scientific Figures](https://arxiv.org/abs/2606.12576)：MINARD 生成以论文为依据的叙事式图表讲解视频，并将旁白逐步定位到图中区域；FigTalk 增加顺序级和组件级定位指标来评估科研图表解释。
+- [EurekAgent](https://arxiv.org/abs/2606.13662)：把自治科学发现表述为 agent-environment engineering。核心思想是用权限、artifact 边界、预算、human-in-the-loop 检查点和任务环境，使科学 agent 在数学、kernel engineering 和 ML 任务中可审计。
+- [Remember, Don't Re-read: Stateful ReAct Agents for Token-Efficient Autonomous Experimentation](https://arxiv.org/abs/2606.14945)：把 autoresearch 改写为有状态 LangGraph ReAct 循环，用类型化持久状态跨迭代保存实验历史，大幅降低重复读上下文的 token 成本。
+- [PaperJury: Due-Process Review for Bounded LaTeX Revision](https://arxiv.org/abs/2606.16322)：PaperJury 用有界 review-verdict-revise-verify 循环、issue ledger 和 artifact-preserving 检查执行 LaTeX 论文修订，使自动改稿过程可追责。
+- [From Trainee to Trainer: LLM-Designed Training Environment for RL with Multi-Agent Reasoning](https://arxiv.org/abs/2606.17682)：LLM-as-Environment-Engineer 让当前 RL checkpoint 根据失败诊断弱点并重写下一阶段环境配置；在 MAPF-FrozenLake 上，Qwen3-4B 超过更大的闭源模型和固定环境基线。
+- [LLMZero: Discovering Adaptive Training Strategies for RL Post-Training via LLM Agents](https://arxiv.org/abs/2606.18388)：LLMZero 用 LLM agent 搜索并诊断 RL post-training 策略，在训练轨迹中发现自适应 recipe，而不是手写固定调参规则。
+- [From Specification to Execution](https://arxiv.org/abs/2606.18425)：先生成和验证 workflow specification，再进入代码生成、调试和 Pegasus 分布式执行，避免直接让 LLM 写 workflow 代码造成不可审计错误。
+- [Externalizing Research Synthesis and Validation in AI Scientists through a Research Harness](https://arxiv.org/abs/2606.18874)：Xcientist 将文献证据、想法状态、实现计划、消融和修复轨迹保存为受契约治理的产物，并显式检测声明机制与可运行结果之间的 claim drift。
+- [AInterviewer: A Platform for Designing and Conducting AI-led Qualitative Interviews](https://arxiv.org/abs/2606.20588)：AInterviewer 支持设计并执行 AI 主导的定性访谈，覆盖访谈脚本、交互执行和资料收集流程。
+- [A-Evolve-Training: Autonomous Post-Training of a 30B Model](https://arxiv.org/abs/2606.20657)：A-Evolve-Training 让系统自主提出后训练 recipe、启动训练、读取评测并决定保留或丢弃改动，完成 30B 模型的无人闭环 post-training。
+- [SciLens: Multi-modal Scientific Claim Verification with Agentic Entailment and Grounding](https://arxiv.org/abs/2606.20873)：SciLens 将科学主张拆成原子命题，并在论文表格、图像和文本中做 entailment 与 grounding，用于多模态科研证据核查。
+- [Negative Knowledge as Failure-aware Shared Memory for AutoResearch](https://arxiv.org/abs/2606.21024)：由 curator 将失败尝试转成带类型的共享记忆记录，后续 research agent 在实验前必须采纳或拒绝这些记录；跨任务 PDE 实验显示其效果超越单纯重试调试。
+- [PaperClaw: Harnessing Agents for Autonomous Research and Human-in-the-Loop Refinement](https://arxiv.org/abs/2606.22610)：PaperClaw 从实时文献、数据集和代码策展开始，预注册主结果契约，通过 propose-test-reflect 扩展可停止的假设图，最后生成符合 venue 要求且可由人修订的论文。
+- [A Dual-Track Framework for Template-Constrained LaTeX Conversion](https://arxiv.org/abs/2606.23107)：该 dual-track 框架用可复用 template manifest 和受限 LLM 处理实现 Markdown 到 LaTeX 的模板约束转换，服务论文排版生产流程。
+- [Judgment-Grounded Expansion for Peer Review Generation](https://arxiv.org/abs/2606.23233)：形式化“judgment-grounded expansion”：人类审稿人先给出评价判断，系统再通过 generate-check-refine 将其扩展为候选评审意见并筛选。
+- [Systematic Exploration of 4-Expert Heterogeneous Mixture-of-Experts via Automated Pipeline Search](https://arxiv.org/abs/2606.23739)：该系统自动探索 4-expert 异构 MoE pipeline，组织代码组装、评测 campaign 和架构比较，服务 ML 研究中的结构搜索。
+- [Agon: An Autonomous Large-Scale Omnidisciplinary Research System Built on Prompt Economy](https://arxiv.org/abs/2606.24177)：Agon 运行大规模 prompt-economy 科研循环，在流程内验证可检查的部分，把不可规约的科学判断留给人类，并从 444 次跨学科迭代中总结失败模式。
+- [LLM-ACES: Closed-Loop Discovery of Dynamical Systems with LLM-Guided Adaptive Search](https://arxiv.org/abs/2606.25039)：LLM-ACES 用 LLM 引导自适应搜索闭环发现动力系统方程，通过候选生成、仿真/评分和迭代修正推进科学发现。
+- [ASAP: Agent-System Co-Design for Wall-Clock-Centered Auto HPO Research for ML Experiments](https://arxiv.org/abs/2606.25207)：ASAP 围绕 wall-clock 成本协同设计 agent 与 HPO 系统，把自动超参研究从样本效率问题扩展为时间预算下的系统优化。
+- [TabClean: Reusable LLM-Synthesized Programs for Tabular Data Cleaning](https://arxiv.org/abs/2606.25388)：TabClean 把表格证据和单元格反馈编译成无需重复调用模型的 guarded Python 修复程序；它在 6 个 benchmark 中 5 个提升 F1，并降低重复成本。
+- [Towards an Interactive Evidence-RAG Peer-Review Workspace for the Journal of Digital History](https://arxiv.org/abs/2606.25837)：该 Evidence-RAG 工作区把审稿意见、论文证据、检索轨迹和可复现性检查连接起来，使数字史期刊审稿可追溯。
+- [Closing the Loop to Discover Psychological Theories with an Automated Cognitive Scientist](https://arxiv.org/abs/2606.26448)：AutoCog 让 agent 生成心理学/认知科学理论、设计并运行实验，再用结果更新理论，展示可迁移的“理论—实验—修正”闭环。
+- [HiLSVA: Design and Evaluation of a Human-in-the-Loop Agentic System for Scientific Visualization](https://arxiv.org/abs/2606.26614)：HiLSVA 是 human-in-the-loop 科学可视化系统，强调用户分析控制、透明决策和可检查中间状态，而不是完全自动生成图表。
+- [Socratic agents for autonomous scientific discovery in high-dimensional physical systems](https://arxiv.org/abs/2606.26722)：AHOIS 在闭环实验中加入 physics critic：先提出因果追问、检查约束、生成反例并定义证伪标准，再在漂移和噪声测量下验证假设。
+- [Agentic Publication Protocol: An Attempt to Modernize Scientific Publication](https://arxiv.org/abs/2606.27386)：定义 Agentic Publication Protocol：用仓库格式同时发布论文、代码、数据、环境、复现说明和面向 agent 的指导，使论文携带可复用操作知识。
+- [Glite ARF: Verifier-Driven Research with Parallel LLM Coding Agents](https://arxiv.org/abs/2606.27416)：Glite ARF 让多个 LLM 编码智能体并行操作研究仓库，同时用确定性 verifier 脚本保证任务隔离、不可变日志和实证研究可审计性。
+- [Mitigating LLM-based p-Hacking by Preregistering for the Next LLM](https://arxiv.org/abs/2606.27687)：指出研究者可通过调 prompt、解码和输出格式进行 LLM p-hacking，并提出为“下一代模型”预注册以减少事后挑选空间。
+- [An LLM-Powered Semantic Alignment Framework for Journal Recommendation](https://arxiv.org/abs/2606.27930)：构建候选 journal 池，抽取稿件主题、方法、数据、任务、读者和贡献类型，再用 LLM 解释稿件与期刊 scope 的匹配理由。
+- [Towards Automating Scientific Review with Google's Paper Assistant Tool](https://arxiv.org/abs/2606.28277)：评测并推动 agentic scientific review。核心思想是 PAT 读取完整稿件，检查理论与实验、提出修改建议并寻找潜在缺陷；通过 inference scaling 在 SPOT 数学错误检测上提高召回，并已在 STOC 和 ICML 作为投稿前反馈工具试点。
+- [AI Training Manager: Bounded Closed-Loop Control of Adaptive Training Recipes](https://arxiv.org/abs/2606.29871)：AI Training Manager 用 LLM 作为有界监督控制器，动态调整 ML 训练 recipe，并在 collapse、过拟合等中途失败时做闭环决策。
+- [Clarus: Coordinating Autonomous Research Agents toward Web-Scale Scientific Collaboration](https://arxiv.org/abs/2606.30246)：Clarus 将自动科研从孤立 agent 运行提升为协作基础设施，协调项目、人类或 AI 参与者、资源、证据和归因，面向可审计的 Web 规模科学协作。
+- [Why Solve It Twice? Hierarchical Accumulation of Skills for Transfer-Efficient ML Engineering](https://arxiv.org/abs/2606.30911)：HASTE 将 ML 工程经验分成全局、领域和比赛三级 skill，并用分层 agent 调用，证明 scoped loading 比扁平加载更能跨任务迁移。
+- [DA-Studio: An Agentic System for End-to-End Data Analysis](https://arxiv.org/abs/2606.31423)：DA-Studio 用沙箱代码执行、可见轨迹和中间产物支撑端到端数据分析，使研究者能检查和复用分析过程。
+- [SAGE / Self-Correcting Autonomous Research via Multi-Hypothesis Failure Attribution](https://arxiv.org/abs/2606.31478)：面向 autonomous research agent 的失败恢复 harness。核心思想是用 Multi-Hypothesis Failure Attribution 取代一次性自由反思，从日志和指标生成并评估多种因果解释，再把修复路由到假设、实验设计或实现层，同时在报告中删除没有实测依据的数字。
+- [AutoTrainess: Teaching Language Models to Improve Language Models Autonomously](https://arxiv.org/abs/2606.31551)：AutoTrainess 将规划、数据准备、训练、评测和日志抽象为 agent-computer interfaces，让 LM agent 迭代执行后训练实验，而不是靠临时 shell 操作。
+- [FARS: A Fully Automated Research System Deployed at Scale](https://arxiv.org/abs/2606.31651)：FARS 是大规模部署的 AI-for-AI 研究工厂：阶段化智能体在共享工作区中维护 proposal、代码、日志、结果和论文，产出 166 篇完整研究稿用于能力分析。
+- [RAISE: LLM-based Automated Heuristic Design with Robust Adversary Instance Search](https://arxiv.org/abs/2606.31801)：RAISE 将 LLM 自动启发式设计与 adversarial instance search 结合，让候选算法在困难实例上被检验和改进。
+- [Autonomous Scientific Discovery via Iterative Meta-Reflection](https://arxiv.org/abs/2607.01131)：DiscoPER 通过生成代码、运行统计检验并对累积发现做 meta-reflection，在没有固定问题列表时开展开放式数据集探索并综合高阶发现。
+- [Optimal Resource Utilization for Autonomous Laboratory Orchestrators](https://arxiv.org/abs/2607.01188)：该实验室编排方法把异构仪器容量约束下的最优调度与基于状态依赖的稳健执行分开，减少资源空闲，避免把规划和控制混为一谈。
+- [Auto-FL-Research: Agentic Search for Federated Learning Algorithms](https://arxiv.org/abs/2607.01366)：Auto-FL-Research 让 coding agent 只修改联邦学习配方，同时冻结通信契约和评测面，并用多次种子重复区分真实机制与偶然调参。
+- [The Agentic Garden of Forking Paths](https://arxiv.org/abs/2607.01507)：利用角色驱动智能体采样合理分析路径，并估计经验主张可信度的 m 值。
+- [Grounded autonomous research](https://arxiv.org/abs/2607.02329)：构建从语料到手稿的容错型 frontier computational physics 自动科研 pipeline，强调物理推理检查、欠文档化工具链处理，以及超出 ML sandbox 的校准问题。
+- [AutoResearch](https://arxiv.org/abs/2607.02520)（[开源代码](https://github.com/raja21068/AutoResearch)）：把沙箱执行与代码修复，同 citation verification、claim-support audit、决策控制和结构化 LaTeX 产出联结；运行、引用和评审失败都会在产物被判定完成前成为明确的过滤信号。
+- [OmniPresent: Generating Coherent Presentation Suites from Scientific Papers](https://arxiv.org/abs/2607.02590)：OmniPresent 用可渲染 HTML、集中式内容规划以及跨模态验证修复统一海报、幻灯片和视频生成；OmniPreBench 提供 1000 多篇论文及配套产物和 VLM 评测。
+- [SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery](https://arxiv.org/abs/2607.02807)：通过全局引导者协调分支隔离的搜索智能体，并为开放式发现自适应调整并行探索深度。
+- [VERITAS](https://arxiv.org/abs/2607.02931)：通用的 CLI-agent 复现循环会从论文或仓库抽取 claim、执行方法、修复失败，并按运行证据判定每条 claim。它在 CORE-Bench 和 ReplicationBench 上输出重要性加权 replication score、带严重度的补丁日志和修复后的代码库。
+- [Rethinking Scientific Discovery in the Agentic Era](https://arxiv.org/abs/2607.03863)：SCION 充当 meta-harness：用 Research Execution Plan 将意图编译为目标、依赖、检查点、工具、产物和回退条件，再通过受治理委派和认识论记忆协调专业 agent。
+- [Dictionaries, Not Darwin: Set-Level Selection Beats LLM Evolution in Scientific Equation Discovery](https://arxiv.org/abs/2607.04108)：PTB-Search 发现反复的 LLM 亲本演化可能退化为候选词典，随后仅在训练数据上做集合级稀疏选择，组合可复用项并改善科学方程恢复。
+- [Language models guide symbolic equation discovery by controlling search](https://arxiv.org/abs/2607.04156)：LLM-PySR 让语言模型选择变量、算子、变换和搜索深度，再由确定性的符号回归拟合并保留方程，避免 LLM 自己裁判生成的公式。
+- [Compressing the Validation Bottleneck: An Agentic Self-Driving Lab for Scientific Discovery](https://arxiv.org/abs/2607.04508)：系统将利用先验的实验设计用于减少达到目标所需的试验轮数，并用按预测不确定性在低成本和高成本测量间选择的 surrogate 降低每轮实验成本。
+- [Bibby AI: An Editor-Native Agentic Platform for Academic Research, Writing, and Publishing](https://arxiv.org/abs/2607.05435)：Bibby AI 在编辑器原生的“研究-写作-发表”平台中统一文献筛选、文档导入、证据支撑的引文插入、撰写、修订和期刊格式化。
+- [FirstResearch: Auditable Question Formation for LLM Scientific Discovery Agents](https://arxiv.org/abs/2607.05682)：以 Research Question Certificate 使科学智能体提出的首个问题可审计，其中记录基本定义、假设、机制模型、可证伪假说、决定性测试和失败后的更新规则。
+- [Articulating Assumptions in AI-Generated Scientific Analyses through Task Decomposition](https://arxiv.org/abs/2607.05762)：将 LLM 科学分析拆分为代码生成、执行、追踪和验证代理，并以 quantity-grounded differencing 暴露用户意图与实际可执行分析之间的假设和计算偏差。
+- [Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory](https://arxiv.org/abs/2607.06447)：协调 agent 调度并行证明搜索 worker，无状态验证器只把已核验命题写入共享事实图；每个事实保留证明及逻辑依赖，使系统能在六个研究级案例中逐步构造长证明。
+- [Evaluating SageMath-Augmented LLM Agents for Computational and Experimental Mathematics](https://arxiv.org/abs/2607.06820)：将 ReAct 推理与 SageMath 可执行反馈、Context7 最新文档结合，并以多步后处理和分阶段验证清理 RealMath；工具访问使研究级数学问题求解率平均提高 9.7 个百分点，不同模型增益为 1.5 至 27.8 个百分点。
+- [Physics-Audited Agentic Discovery in Scientific Machine Learning](https://arxiv.org/abs/2607.07379)：PA-SciML 在接受 agent 发现的 surrogate 前要求固定评测器、可机检物理要求、违反条件搜索和单独改动记录，因此低误差本身不能构成模型认证。
+- [Agentic Neural Architecture Search](https://arxiv.org/abs/2607.07984)：将 LLM 生成的槽位化架构与 NAS 结合，把初始设计转化为可自动定义和测试的搜索空间。
+- [TTHE: Test-Time Harness Evolution](https://arxiv.org/abs/2607.08124)：TTHE 在评估期间依据无标签执行轨迹演化可执行 harness 程序，由 proposer 和 judge 选择持久控制改动，而不是对每个查询单独重试。
+- [DeepPySR -- A Symbolic Regression Framework with Dynamic Pruning, Pareto Selection, and Hierarchical Composition for Real-World Scientific Discovery](https://arxiv.org/abs/2607.08150)：DeepPySR 将动态变量剪枝、指数 Pareto 选择和分层符号组合结合，在共线性与类别不平衡下仍保持高维方程搜索的可解释性。
+- [XALPHA: A Memory-Driven AI Quant Researcher for Hypothesis-to-Code Alpha Discovery](https://arxiv.org/abs/2607.08332)： XAlpha 用包含金融报告和历史发现反馈的多源记忆闭合量化研究循环：Macro Brain 选择研究主题，Micro Brain 把假设转成可执行因子代码并检查想法、代码与金融合理性的一致性，Cross Brain 再把结果汇总为后续循环的反馈；CSI300 实验显示其 alpha 发现优于代表性基线。
+- [Hypothesis Evolution Protocol](https://arxiv.org/abs/2607.09195)：把假设生成、检验、证据绑定与信念更新变成显式操作，而不是隐藏在日志中的文本。该协议使智能体和研究者可检查 hypothesis--test--evidence--belief 循环，只保留可审计的科研状态。
+- [ProofCouncil: An LLM Agent for Solving Open Mathematical Problems](https://arxiv.org/abs/2607.09474)：ProofCouncil 用作者—批评者循环攻克开放数学问题并开源构建库；FirstProof 裁判接受 10 题中的 6 份答案（至多小修），进一步评测发现 8 个有用的部分解答。
+- [Confining Nondeterminism: AI-Driven Research Systems as DBMSs for Reliable, Non-Wasteful, Transparent, and Collaborative Research (Vision)](https://arxiv.org/abs/2607.10508)：提出确定性、版本化的数据流引擎：LLM 只编译研究计划而不执行；来源追踪、增量维护、成本调度和执行绑定结果共同防止陈旧或虚构结论。
+- [LLM-PDESR: Robust PDE Discovery via Subdomain Weighted Residuals and LLM-Guided Symbolic Hypothesis Generation](https://arxiv.org/abs/2607.10546)：LLM-PDESR 将 LLM 生成的符号 PDE 假设与基于样条的残差评估和 Pareto 反馈结合，从噪声数据中迭代恢复控制方程。
+- [Anamnesis: An Open-Source Platform for Large-Scale Backstory-Conditioned Survey Simulation](https://arxiv.org/abs/2607.10628)：该平台用结构化人生故事背景条件化虚拟受访者，支持人口重采样和多模态调查；在复现 Pew ATP 意见分布及《纽约客》标题偏好时都优于普通 persona 提示。
+- [An Agentic AI Scientific Community for Automated Neural Operator Discovery](https://arxiv.org/abs/2607.12122)：该 AI scientific community 用含 planner、数值 worker 和 reviewer 的虚拟实验室，通过基于引用的实验室演化和审计过的完整轨迹搜索 neural operator 架构。
+- [XScientist](https://arxiv.org/abs/2607.12301)：以 git-like 协议组织长程自主科研。其 Agent-Native Research Artifact 记录探索 DAG、哈希、代码与输出、claim-evidence anchor、失败分支和重执行 hook，使论文能作为分叉的研究过程被审计。
+- [Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs](https://arxiv.org/abs/2607.12650)：EG-VAR 只允许 Lean 内核签发已验证的经验性结论：工具证明公理与显式来源提升规则强制每个接受结果都可追溯到可重放的工具调用和经检查的推理，否则系统必须弃答；该架构在 TableBench 与五领域反事实压力测试中保持来源忠实，并将形式化错误显式化为可审计残差。
+- [Can LLMs Build a MaxSAT Solver from Papers? The CoreForge Experience](https://arxiv.org/abs/2607.14818)：记录 LLM 辅助的论文到代码工作流，用于实现、审计、模糊测试和基准评估 MaxSAT 求解器。
+- [SciForge: An AI-Native, Multimodal Workbench for Scientific Discovery](https://arxiv.org/abs/2607.16038)：SciForge 将论文、代码、数据集、图表、手稿和团队决策保存为可审计状态，让多模态对象先经过 translator，再在 agent runtime 中用 Evidence-DAG 连接声明与来源。
+- [VeriSimpl: Robust Optimization Modeling from Natural Language using Simplification-based Verification](https://arxiv.org/abs/2607.20474)：借助优化求解器围绕约束与决策变量生成局部简化诊断查询，为 LLM 生成的可执行模型提供高精度自验证信号。
+- [OPTScientist: Multi-Agent Discovery of Typed Optimizer Programs for Transformer Pretraining](https://arxiv.org/abs/2607.20486)：利用角色专门化智能体、类型化优化器程序、编译和实验反馈来自动发现优化器。
+- [IDEAgent](https://arxiv.org/abs/2607.22375)：把科研构思建模为 quality-diversity search：多目标反馈负责修复候选，序列记忆则把候选与已接受、祖先和已拒绝想法比较。其 Yield 指标只计入同时达标且彼此多样的想法。
+- [CausalSmith: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference](https://arxiv.org/abs/2607.22511)：CausalSmith 将包含 7035 个 Lean 声明的因果推断库与自我改进闭环结合，依次选择主题、提出结果、形式化并证明，再审计形式定理是否真正对应非形式化主张。
+- [Do Methods Support the Claims? Intra-Paper Verification for Peer Review](https://arxiv.org/abs/2607.26066)：该同行评审框架抽取论文的新颖性主张、检索方法证据，并生成审稿式评估以判断方法是否支撑这些主张。
+- [PUDA: An AI-Native Hardware Harness for Self-Driving Laboratories](https://arxiv.org/abs/2607.26464)：PUDA 用无头 CLI 与 JSON 运行时替代以 GUI 为中心的实验室编排：agent 选择实验，确定性硬件执行已验证命令，并以 run ID 关联协议、测量、响应和来源记录。
+- [EvoPINN: Agentic Discovery of Executable Algorithms for Physics-Informed Neural Networks](https://arxiv.org/abs/2607.26490)：EvoPINN 将神经表示与训练程序解耦，用带记忆的代码改动搜索，并在结构检查和预算匹配的 PDE 评测后才接受候选，最终发现 SLRC-PINN。
+- [Budget-Aware LLM Discovery via Cost-Calibrated Frontier Utility](https://arxiv.org/abs/2607.26828)：CostAda 以固定 token 预算下的单位成本前沿收益为信号，调控候选搜索的局部探索、前沿预算分配与策略干预，从而执行成本感知的 LLM 发现工作流。
+- [Albilich: Steerable Proof-State Orchestration for LLM-Based Mathematical Research with CAS Integration](https://arxiv.org/abs/2607.27705)：Albilich 将长程 LLM 推理与 CAS 调用、文献检索、顾问智能体、验证器反馈和 SQLite 持久上下文结合起来。它在 RealMath 上使用 CAS 解出 10/10、无 CAS 解出 9/10，并在 Kourovka 问题上产出反例和强化命题的证明；Problem 17.91 消融中 CAS 将 token 用量降低 32%，而 Problem 21.142 消融显示移除顾问智能体会损害证明路线综合。
+- [SciDoc2Diagrammer-MAF](https://aclanthology.org/2024.findings-emnlp.780)：论文全文、方法段、caption、用户意图 | scientific diagram、pipeline figure、methodology illustration | SciDoc2Diagrammer-MAF、SciFig、AutoFigure、PaperBanana | 长上下文理解、核心概念筛选、模块关系、流程方向、术语准确性。
+- [TransLaTeX](https://aclanthology.org/2025.sciprodllm-1.3)：先把正文内容 placeholder 化，分离结构和内容，再转换模板结构、环境、标题区、bibliography 和浮动体，并用编译、policy compliance 和 visual consistency 验证结果。
+- [Diversifying Personalized Research Ideation against AI-Induced Homogenization](https://arxiv.org/abs/2607.28087)：通过协调候选选择，在保持研究者方向匹配的同时提升个性化研究构想的多样性。
+- [SciDataSailor: Deep Scientific Data Exploring](https://arxiv.org/abs/2607.28098)：SciDataSailor 用难度分层种子、双反馈、策略到工具的层级动作和熵引导分支的 MCTS 构造可执行科学数据探索轨迹，并配套训练集和 benchmark。
+- [LLM Framework for Discovering Major Mathematical Conjectures: AI's Quest for the Next Riemann Hypothesis](https://arxiv.org/abs/2607.28632)：通过证据引导搜索、反思式筛选和 Lean 4 形式验证生成数学猜想。
+- [SciToolAgent-Evo: An Ontology-Aware Self-Evolving Agent for Open-World Scientific Tool Acquisition](https://arxiv.org/abs/2607.28692)：SciToolAgent-Evo 维护带本体的工具图和经验记忆，用对比轨迹蒸馏与 LinUCB 探索门控获取新工具，并在 900 个 OpenSciToolBench 任务上评估。
+- [Human-LLM Collaborative Inductive Coding for Conceptualizing K-12 Educator AI Use](https://arxiv.org/abs/2607.28889)：三阶段流程让 LLM 标注 45,000 条消息但由人类决定类别定义，再用 2,560 条留出消息和集合值一致性校准 72 项 codebook；人工新增 5 个 code 暴露了 LLM 的遗漏。
+- [RubricReviewer: From Direct Critique to Objective and Comprehensive Rubric-Driven Peer Review](https://arxiv.org/abs/2608.00005)：构建论文自适应量规，并结合证据收集与人类对齐智能体以完成更全面的同行评审。
+- [ReVoicer: Conversational Voice Annotation for Human-Centered, LLM-Assisted Peer Review](https://arxiv.org/abs/2608.00299)：通过语音关联注释、量规覆盖检查和基于审稿人自身论文笔记的草拟来支持同行评审。
+- [Agentic Bayesian Optimization through Surrogate-Augmented Autoresearch](https://arxiv.org/abs/2608.00316)：Sara 将 LLM 决策者与模块化贝叶斯优化后端结合，使自动科研智能体能依据证据重配实验和优化策略。
+- [Revibing Code from Papers: Reimplementing HCI Artifacts](https://arxiv.org/abs/2608.00450)：利用智能体从论文重建可运行的 HCI 工件，以支持复现和基线复用。
+- [DASH: Decoupled Adaptive Surrogate - Acquisition Harness for Automated Bayesian Optimization](https://arxiv.org/abs/2608.00641)：DASH 将基于预测可靠性的 surrogate 选择与基于 campaign 上下文的 acquisition 适配分开，再把知识 warm start、结构化记忆和 LLM 最终选择放进 AutoBO harness。
+- [Long-Horizon Autonomous Architecture Research with a Language-Model Agent: A Behavioural Case Study](https://arxiv.org/abs/2608.01995)：分析长时程架构研究智能体，并将动作面扩展、显式分叉和重新验证识别为关键工作流控制机制。
+- [Iris](https://arxiv.org/abs/2608.02143)：以持续演化的信息状态取代以候选解为中心的搜索。它先用 epistemic action 缩小关键未知量而不改动当前解，再根据实验结果修订带 scope 的 claim；在 12 小时预算下于 MLE-Bench 达到 64.9% Any Medal。
+- [PosterMELD: Multi-Agent Paper-to-Poster Generation for Controllable Design Diversity with Editable Print-Ready Outputs](https://arxiv.org/abs/2608.02218)：PosterMELD 通过模板条件化多智能体生成、确定性门控和有界修复，将科学论文转换为可编辑、可印刷的海报。
+- [ECLAIR: A Causally-Grounded AI Framework for Scientific Discovery in Empirical Software Engineering](https://arxiv.org/abs/2608.02323)：ECLAIR 将 LLM 辅助与因果推断过程结合，覆盖经验软件工程研究中的假设生成、分析和解释。
+- [Abduction Without a Body? Representational Grounding and the Abduction Loop for Scientific Hypothesis Generation](https://arxiv.org/abs/2608.02505)：Abduction Loop 将科学图表转化为结构化流程：表示生成、模式提取、跨域检索、身份假设生成、对抗验证，并把 abstention 作为默认策略，再用 DAB-30 提供可证伪的评测方案。
+- [AgentPanel](https://arxiv.org/abs/2608.03283)：提供异步多智能体论坛，研究者可提交问题、浏览和组织候选想法并继续追问。评测重点是探索广度和候选筛选效率，而不是把一段 multi-agent debate transcript 当成最终科研产物。
+- [Beyond Representational Similarity: Source-Conditioned Description-Length Gain for Generative Plagiarism Detection and Candidate Source Reranking](https://arxiv.org/abs/2608.03859)：SCDG 利用源条件描述长度增益检测经改写的来源复用，并为生成式抄袭核查重排候选来源。
+- [CURATE: Leveraging LLM Agents to Compose, Catalog, and Deploy Reproducible Workflows](https://arxiv.org/abs/2608.04270)：CURATE 是人类在环多智能体系统，可在完整生命周期中组合、编目、部署并复用可复现的应用和科学工作流。
+- [EviGraph: Evidence-Guided Autonomous Research Agents](https://arxiv.org/abs/2608.04738)：维护从问题到主张的类型化证据图，修复最早失效的依赖，并在证据链验证后才生成稿件。
+- [A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination](https://arxiv.org/abs/2608.04872)：A-SR 用角色条件化协议、在线 evaluator utility 和状态路由记忆处理符号回归失败，并在跨运行阶段把轨迹蒸馏成角色专属提议先验。
+- [Capability-Gated Planning: Cost-to-Goal Discovery and the Limits of Myopic Experiment Selection](https://arxiv.org/abs/2608.05085)：CG-Plan 将科研发现规划形式化为会获得未来实验能力的建设性行动，并为该场景提供能力感知的重规划器。
+- [Argus: A General-Purpose Agentic Reasoning Runtime for Long-Horizon Tasks](https://arxiv.org/abs/2608.05144)：Argus 将稳定意图与操作目标分离，并让经过审查的记忆、技能、流程、验证器和 rejected routes 累积到持久项目状态中，在多日数学任务和论文流水线中展示恢复与回滚能力。
+- [Neurosymbolic Discovery of Algebraic Graph Constructions](https://arxiv.org/abs/2608.08118)：通用 LLM 无需微调或针对目标训练，通过 MCP 服务器交替调用 SageMath 完成图分析、候选构造、测试与修订，并以精确同构检验提供符号验证。在预先固定的 100 个不超过 25 个顶点的双轨道图基准上，该智能体为全部图找到经验证的代数构造，而模板枚举基线约为 20%。
+- [Detecting Collusion in Peer Review: Drawing Inspiration from VCG Principle](https://arxiv.org/abs/2608.08486)：该方法以受 VCG 启发的排除检验测量可疑审稿群体的边际影响，在未知成员关系时从语义嵌入发现潜在群体，再将独立检测器组合为可调节的共识决策；其在 ICLR 2021 审稿数据上的评测面向隐蔽串谋，并控制族错误率。
+- [The Greatness of Science Cannot Be Planned: Agentic Auto-Research is Fuzz Testing](https://arxiv.org/abs/2608.09855)：该工作将稀疏反馈下的 agentic auto-research 重新理解为灰盒 fuzzing，并引入新颖性感知的探索机制；结果显示，fuzzing 式控制器比只优化最终分数能产生更多样的科研轨迹和更好的最终发现。
+- [Evidence-Based Scientific Question Discovery: A Framework with Historical Backtesting](https://arxiv.org/abs/2608.09968)：通过对跨论文张力进行类型化、加入人工裁决并区分科学优先级与执行优先级，把带有来源追踪的科研证据转化为排序后的可证伪科学问题。
+- [Recovering Wasted Compute in Autoresearch Agents](https://arxiv.org/abs/2608.10424)：在表格数据 autoresearch 上，研究发现重复修 bug、很少利用超参数、树搜索不探索，以及分析结果不影响后续决策等问题。全局调试顾问在搜索分支间共享运行约束，配合提示、控制和搜索改动，在固定基础模型的情况下回收计算并提升性能。
+- [MetaWriter](https://doi.org/10.1145/3637371)：面向同行评审写作的 HCI 辅助系统，研究 AI 建议如何影响既要判断又要写理由的评审者，暴露评审起草中的效率收益和过度依赖风险。
+- [Reifying Research Logic: AI-Assisted Workflow Construction and Incremental Refinement for Quantitative Syntax](https://arxiv.org/abs/2608.10662)：QLWF 将研究描述解析为定量句法节点图，再交给固定节点库执行；它在 64 个 QL-Bench 任务上全部生成结构有效流程，合理率 98.4%，增量修订成本约为重生成的三分之一。
+- [Tree-of-Ideas: Automated Research Ideation via Cross-Trajectory Reasoning over Scholarly Evolution](https://arxiv.org/abs/2608.10740)：Tree-of-Ideas 用 EvoTrace 重建由引用连接的研究问题、方法和缺口演化轨迹，再由 EvoAgent 发现趋同问题和互补方案。在六个 AI 主题上总分达到 6.27/10，新颖性为 6.36、扎根性为 7.00，接近人工论文参考。
+- [Auditable AI-Assisted Research Writing: An Engineering Discipline with Pre-Registered Process Observation](https://arxiv.org/abs/2608.10858)：通过封存的 git lineage、哈希绑定来源、红线拒绝门、角色分离模型、预注册 metric card 和程序化组装定义生产期可审计性，并报告一次封存流程下触发停止规则的 No-Go 案例。
+- [Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence](https://arxiv.org/abs/2608.12036)：Mechanist 将机制可解释性转化为智能体科研闭环，结合包含约 13,000 篇论文的可解释性图谱、覆盖 26 个领域的 4,300 万篇论文数据库、32 种分析方法、因果干预和实验执行。相较 Claude Code 与 AI Scientist 基线，它报告了更有价值的机制假设和更可靠的实验，并从行为发现推进到解释与控制。
+- [VALG: An Agentic System for ML Theory Research](https://arxiv.org/abs/2608.13060)：VALG 将定理构造、类型化证明依赖图、验证和失败感知的修订组织成机器学习理论研究流程，并区分原问题匹配、放宽条件、条件性结论与受阻尝试。
+- [OmniScientist: An Omni-Modal Omni-Discipline AI Scientist](https://arxiv.org/abs/2608.13558)：OmniScientist 将感知层与构思、实验和写作 agent 结合，使图像、信号、音频、视频、三维结构、轨迹、表格、公式和图等原始证据参与完整科研生命周期。idea、rigor 和 claim 检查分别约束新颖性、统计有效性、溯源和数值可追踪性，并在 36 个案例中完成评测。
+- [ScienceFlow: A long-horizon agent for ML research, scientific discovery and beyond](https://arxiv.org/abs/2608.14354)：ScienceFlow 将长程科研组织为可执行工作区片段，并用 ESTRA 在遇到死路后从当前或归档状态重新锚定。证据感知控制器依据预算与已验证进展分配任务；在机器学习、科学建模和数学优化上，完整 MLE-bench 的 Any-Medal 达到 70.22%。
+- [Navigating the Use of Generative AI in Modeling and Simulation: A Case-Study-Driven Methodology for Agentic Workflows in Synthetic Data Generation for Surrogate Modeling](https://doi.org/10.5220/0015069000004094)：SMAW 通过结构化自然语言交互编排代理建模工具和合成数据生成，同时保留既有建模的可靠性控制。
+- [CodeViz: Collaborative Multi-Agent System for Analytical and Visualization Tasks in Data Science](https://doi.org/10.1145/3793655.3793718)：CodeViz 提出多智能体数据科学工作流，借助案例推理和检索，在专门智能体之间分解分析与可视化请求。
+- [From Doxa to Logos in Scientific Peer Review](https://doi.org/10.1145/3805712.3808494)：介绍已部署的检索中心系统，用于评估评审质量、核验评审主张并审计人机混合作者身份。
+- [SkyDiscover: A Flexible, Adaptive Framework for AI-Driven Scientific and Algorithmic Discovery](https://doi.org/10.1145/3786335.3813221)：将 Context Builder、Solution Generator、Evaluator 与 Solution Selector 显式做成可编程的 LLM 发现闭环组件，在两百多个优化任务上支持自适应算法搜索和人工干预。
+- [Personalized Auto-Research: Towards a True AI Co-Scientist](https://arxiv.org/abs/2608.14881)：Personalized Auto-Research 用图表示研究者的既有工作、方法、合作者和学术社群，并让每个科研阶段都受该上下文条件化。框架覆盖研究者表示、全流水线个性化和面向个人的评估，同时指出“一刀切”科研输出这一失败模式。
+- [Andy: A Mathematical Agent for Rigorous Proof and Autonomous Research](https://arxiv.org/abs/2608.15052)：以研究价值门控文献驱动的问题形成，将证明组织成 DAG，独立验证并认证每一步，在修复时复用未改变的已验证接口，并记录从新问题到最终证明的完整路径。
+- [Automating Scientific Evaluation: A Multi-Agent Framework for Transparent and Trustworthy Peer Review](https://doi.org/10.1016/j.ifacol.2025.12.440)：用多 agent 框架自动化科学评价和同行评审，强调透明评分、可解释证据和可信评审过程。
+- [Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling](https://arxiv.org/abs/2608.15565)：AdmitOR 面向经验学习 agent，利用跨模型族的行为一致性和校准阈值，在无标签流中准入优化建模技能，并减少错误技能污染。
+- [Would this change your answer? Evaluating Explanations of LLM Behavior In The Wild with Counterfactual Experiments](https://arxiv.org/abs/2608.16747)：CHIVE 从自然提示中发现异常 LLM 行为，生成反事实编辑，并以解释能否预测干预后的行为进行评分，从而产出数千条有证据支撑的解释；受测可解释性方法未提高可模拟性，而使用这些实验数据训练可改善分布外预测。
+- [AutoSR: Automatic Symbolic Regression by Searching Research States](https://arxiv.org/abs/2608.16876)：AutoSR 将每个候选方程与持久化 Research State 绑定，状态包含动机、计算证据、推理和独立评审。提议者与评审者 agent 通过渐进扩展 MCTS 在不同调查之间分配计算，并生成解释选中关系可信原因的报告；它恢复了所选基准中的全部九个挑战。
+- [SGHA: Evidence-Grounded Research Problem Discovery with Local Language Models](https://arxiv.org/abs/2608.17501)：SGHA 构建带证据链接的论文对象和带类型证据图，检测未解决的结构模式，在问题形成前筛选研究缺口，并输出包含假设、目标、成功标准和歧义的问题族。所有 LLM 组件均在本地 9B 模型上运行，并与 AI Scientist-v2 比较无需专有 API 的可审计问题构造。
+- [AutoResearch: Insight In, Hallucination Out](https://arxiv.org/abs/2608.17906)：AutoResearch 将多模型、交叉评审的想法生成与协同实验 agent 连接起来，在接受结论前执行实现、诊断和独立评审。在检索、系统优化和机器学习场景中，它依据证据决定后续方向；在 RSICD 上将平均 Recall 从 32.84 提升至 34.69，同时只有 5 个审计确认的问题事件。
+- [Artifact-centered Claim-aware Observability for Autonomous Scientific Agents](https://arxiv.org/abs/2608.18312)：该规范使科研主张携带明确证据绑定和验证记录，并记录谱系、运行、归档和控制命令；输出可补充 OpenTelemetry 并导出为 PROV-O 或 RO-Crate。
+- [Toward Auto-Research: Mining Falsifiable Research Ideas from Paper Knowledge Graphs with Categorical Structure](https://arxiv.org/abs/2608.20361)：方法将每篇论文表示为由带类型科研实体及其关系组成的小类别，再用类别聚类、函子保持门控和六轴 LLM 评审筛选跨论文类比。在数万篇解析论文上，候选过滤比例约为 17:1，同时保留超过 83% 的定量可证伪率和逐条拒绝理由。
+- [Co-Reviewer: Can AI Review Like a Human? An Agentic Framework for LLM-Human Alignment in Peer Review](https://doi.org/10.1007/s11192-026-05557-6)：把 AI 审稿与人类评审对齐作为 agentic peer-review 框架，关注评审意见生成、对齐反馈和人工校准。
+- [Adapting the AI Scientist for Enterprise: Solving Real Business Problems with Autonomous Text-to-SQL Research](https://doi.org/10.1134/s1064562425700474)：把 AI Scientist 研究循环改造到企业 Text-to-SQL 场景，加入 schema-aware 假设生成、SQL 有效性实验设计、执行准确率评测和低成本可复现实验周期。
+- [A publishing infrastructure for Artificial Intelligence (AI)-assisted academic authoring](https://doi.org/10.1093/jamia/ocae139)：该工作将 LLM 修订流程接入 Manubot，根据稿件元数据生成分章节提示并提出段落修改，由作者人工审核；五个稿件案例和版本控制展示了透明的编辑来源追踪。
+- [Turning Immersive Viewers into Analytical Workspaces: ASCRIBE-XR and Agent-Driven Scientific Visualization](https://doi.org/10.3390/jimaging12080393)：把 XR 可视化改造成面向科研的服务化工作空间，通过可移植样本元数据、远程数据生成和 Claude Agent SDK 支持带人工审计的对话式体数据与网格分析。
+- [Resurrecting the Dead: GenAI-Powered Workflow Revival](https://doi.org/10.1145/3736731.3746143)：该 workflow-revival 闭环解析旧 Taverna、诊断失败、提出服务替换并生成 Snakemake 替代流程，结合图可视化和 AI 伪代码恢复衰退的科研流水线。
+- [A workflow for collecting and understanding stories at scale, supported by artificial intelligence](https://doi.org/10.1177/13563890251328640)：AI interviewer 收集利益相关者叙述，自动编码抽取因果主张并汇入项目理论因果图；美国问题案例表明该方法可扩展定性综合，但由于伦理和效度限制仍需人工监督。
+- [Understanding Graduate School Through AI: A Scalable Approach to Thematic Coding](https://doi.org/10.1177/16094069251395943)：该流程先用人工 grounded-theory 编码建立 codebook，再用本地 AI 分类剩余访谈并统计检验主题关系，同时保留保密性和人类控制。
+- [FAIR-Swarm: Fault-Tolerant Multi-Agent LLM Systems for Scientific Hypothesis Discovery](https://openreview.net/forum?id=6WyG2iZHes)：FAIR-Swarm 组合假设生成、模拟、验证、反驳和推理审计智能体，并加入冗余与基于共识的容错机制。在科学发现任务上，该架构提升了假设有效性、可复现性以及对单个智能体故障的稳健性。
+- [IterClean: An Iterative Data Cleaning Framework with Large Language Models](https://doi.org/10.1145/3674399.3674436)：IterClean 先使用少量标注数据，再让错误检测器、验证器和修复器迭代协作，以替代一次性的检测与修复流程；在四个数据集上，它仅用 5 个标注元组即可取得最高为最佳既有方法 3 倍的 F1。
+- [In Tandem With Artificial Intelligence: A working Framework for Coding in ATLAS.ti™](https://doi.org/10.1177/16094069241306551)：通过行动研究在 ATLAS.ti 中结合研究者编码、独立编码与 AI 编码，并将对各项行动步骤的反思整理为拓展定性编码实践的实用框架。
+- [Making Human-AI Contributions Transparent in Qualitative Coding](https://doi.org/10.22318/cscl2024.352932)：两项过程分析分别可视化从阅读、开放编码到代码细化与组织的迭代路径，并追踪哪些 GPT-4 输出改变了编码本，使归纳分析中的人机贡献来源可检查。
+- [Exploring Inductive and Deductive Qualitative Coding with AI: Investigating Inter-Rater Reliability between Large Language Model and Human Coders](https://doi.org/10.54941/ahfe1006232)：基于 API 的 QualiGPT 支持隐私控制、提示定制与质性编码；在 Discord 案例中，GPT-4 的归纳编码 Cohen's Kappa 为 0.57、演绎编码 Fleiss' Kappa 为 0.46，生成主题保留来源引用供人工核验。
+- [Tree-of-Concerns: Hierarchical Multi-Agent Debate for Unstated-Limitation Extraction in Scientific Critique](https://arxiv.org/abs/2608.20777)：Tree-of-Concerns 让不同类别的质疑者并行展开辩论树，再通过 panel review 校准论断与严重程度，并在 414 篇论文上用 ToC-Bench 评估隐含局限提取。
+- [Mathematical discoveries from program search with large language models](https://doi.org/10.1038/s41586-023-06924-6)：将大语言模型、进化式程序搜索与系统化评估器组成闭环，发现新的帽集构造和更优在线装箱启发式，同时以可执行、可解释的程序保留专家反馈接口。
+- [Multi-Agent Discovery and Resource-Aware Autonomous Exploration of Scientific Datasets](https://arxiv.org/abs/2608.22045)：提出 WebVisus，通过受约束的多智能体工作流，根据自然语言科研问题发现并渐进式探索远程多分辨率科学数据集。
+- [Deli_AutoResearch](https://victorchen96.github.io/auto_research/framework.html) 是自包含的长周期自动科研协议，而不是可执行代码。核心思想是用 `state/` 文件持久化进度，分离 guardian 与 worker 角色，用进展指标检测停滞，在多轮 stale iteration 后强制结构性 pivot，并叠加 shell、定时任务和业务循环三层 heartbeat，让无人值守研究循环能跨天到跨周运行。
+- [IdeaScout](https://github.com/YangyangQu/research-idea-scout) 是 profile-guided 的跨领域研究想法发现工具；它按用户研究画像过滤大规模论文集合，让 Codex 从标题和摘要中判断可迁移机制，对新颖性、可行性和可迁移性打分，并导出排序 CSV/JSONL 或轻量浏览门户。
+- [ai-peer-review](https://github.com/poldrack/ai-peer-review) 是多 LLM 论文审阅与 meta-review 工具：它把 PDF 发给多个模型生成独立审稿，meta-review 前隐藏模型标识，汇总共同和独有问题，输出“哪个模型发现了哪个 concern”的表格，并保存 Markdown、CSV 与 JSON 产物。
+- [SemanticCite](https://github.com/sebhaan/SemanticCite) 是科研 citation-support 检查器，会把稿件 claim 与被引全文对齐，用 dense/sparse 检索和 reranking 找证据，并把支持关系标为 supported、partially supported、unsupported 或 uncertain，同时给出片段和置信度。
+- [PaperDebugger](https://github.com/PaperDebugger/paperdebugger) 提供 Overleaf 侧科研论文协作能力，包括文档对话、comment 插入、prompt 模板、MCP 支撑的文献/引用查询、结构化审阅和 diff-based revision，使作者不用离开 LaTeX 编辑器。
+- [LMMs-Lab Writer](https://github.com/EvolvingLMMs-Lab/lmms-lab-writer) 是 local-first 的 AI-native LaTeX 编辑器运行时，能自动配置轻量 TeX 环境，编译多语言 XeLaTeX/LuaLaTeX 文档，在嵌入式 OpenCode 面板中直接修改稿件，并通过 Git 集成完成 diff 与审阅。
+- [UXTracker: A Tool for Conducting and Analyzing Longitudinal User Experience Studies](https://doi.org/10.1145/3816770)：UXTracker 将冷却时间和时间戳约束放在服务端，把评价语义与原始测量分离，并只向 LLM 提供聚类后的分析上下文；51 名参与者、5 轮共 765 个评价点的实地研究同时验证了现场与回顾式协议。
+- [PatchWrite: One Line, Not One Section -- Compile-Gated, Validity-Preserving Editing for AI-Drafted Manuscripts](https://arxiv.org/abs/2608.23001)：PatchWrite 只有在通过致命日志编译检查以及引用和实验数值证据锁后，才提交有界的稿件修改。在 768 个预设故障任务中，它 192/192 次保留了无关的数值声明；在模型生成的修复中，93.75% 的已接受候选修复了注入故障，盲评者也更认可其对实验事实的保留。
+- MLEvolve（[开源代码](https://github.com/InternScience/MLEvolve)；InternAgent 路线的项目组件）是 MLE-bench 榜单上公开代码的进化式 ML agent，突出多候选实验、进化搜索与性能反馈驱动的方案迭代。
+- UniScientist（[官方文章](https://unipat.ai/blog/UniScientist)，[开源代码](https://github.com/UniPat-AI/UniScientist)，[模型](https://huggingface.co/UnipatAI/UniScientist-30B-A3B)；project-only release）是 UniPat AI 的科学研究智能模型与 agentic inference 框架；核心是 Active Evidence Integration、Model Abduction、Evolving Polymathic Synthesis 和多 rollout 报告聚合。
 - Feynman（[开源代码](https://github.com/companion-inc/feynman)；[项目页](https://feynman.is)）是 repo-first autonomous research harness，包含 researcher、reviewer、verifier 和 writer agents，以及 autoresearch、deep-research、replication、paper-code-audit、paper-writing 与计算资源技能。
 - DeepScientist（[开源代码](https://github.com/ResearAI/DeepScientist)；[项目页](https://deepscientist.cc/)；[OpenReview](https://openreview.net/forum?id=cZFgsLq8Gs)）是 local-first autonomous research studio，通过 one-repo-per-quest、baseline reproduction、dependency-failure tracking、continuous experiments、Findings Memory、Bayesian optimization 和 paper-ready outputs 组织研究。
 - Dr. Claw（[开源代码](https://github.com/OpenLAIR/dr-claw)；[项目页](https://openlair.github.io/dr-claw)）是 full-stack research workspace，包含 Research Lab、Auto Research Hub、多 agent backend 和 100 多个 research skills，应作为 research-workspace harness 而非 benchmark 处理。
-- Oh My Paper（[开源代码](https://github.com/LigphiDonk/Oh-my--paper)）是 Claude Code research harness，提供 `/omp:survey`、`/omp:ideate`、`/omp:experiment`、`/omp:write`、`/omp:review` 和 delegation commands，并由专门 research agents 与 skills 支撑。
-- Hugging Face ml-intern（[开源代码](https://github.com/huggingface/ml-intern)；[demo](https://smolagents-ml-intern.hf.space/)；未找到 arXiv 论文）是 Hugging Face 生态中的实验性 ML 训练实习生 agent，可作为数据加载、训练循环执行和 ML 实验辅助的实践参考，而不是论文支撑的 benchmark。
+- Hugging Face ml-intern（[开源代码](https://github.com/huggingface/ml-intern)；[demo](https://smolagents-ml-intern.hf.space/)；project-only demo）是 Hugging Face 生态中的实验性 ML 训练实习生 agent，可作为数据加载、训练循环执行和 ML 实验辅助的实践参考，而不是论文支撑的 benchmark。
+- [TRACE: Transition-Aware Residual Control for Multi-Objective Materials Discovery](https://arxiv.org/abs/2608.23631)：TRACE把LLM agent每次材料改进记录成带性质变化的“父候选—编辑—子候选”转移，再检索可能减少剩余约束违例且不破坏已满足目标的编辑；在相同LLEMA骨干上，它把宏平均命中率从18.13%提高到25.96%。
+- [Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment](https://arxiv.org/abs/2608.23691)：Station 允许 agent 自主选研究方向、实验、协作并构建共享文献，无需中心化脚本流程；在 14 个数学问题中报告了 5 个问题的新结果，并公开对话、证明和验证代码。
+- [ReproAgent: Contract-Guided Paper-to-Code Reproduction](https://arxiv.org/abs/2608.24291)：ReproAgent 的 Prepare–Plan–Generate–Repair 流水线维护实现契约，将论文片段转为代码义务，并通过参考证据通道从相关仓库检索结构。工作包与文件级契约贯穿修复阶段，在两种模型配置下取得同 backbone 的 PaperBench Code-Dev 最高平均分。
+- [DeepRepro: State-Aware Subplanning for Paper-to-Code Reproduction in Evolving Repositories](https://arxiv.org/abs/2608.26557)：DeepRepro 在复现机器学习论文时，持续将变化中的仓库状态和执行反馈转换为细粒度子计划，而不是依赖静态实现计划。仓库感知编排和过程监控界面使其在 PaperBench Code-Dev 上优于科研及商业代码智能体基线。
+- [DS-Lighting: Making Agent Harnesses Explicit for Data-Science Automation](https://arxiv.org/abs/2608.28590)：DS-Lighting 将数据科学 harness 拆为 data、workflow、execution、evaluation 四层，把 agent 表示成可执行 operator program；统一沙箱和指标协议使 agent、harness、模型可复现比较并减少系统失败。
+- [From Question-First to Analyst-First: Domain-Expert Skills and Verified Knowledge Compilation for Proactive Enterprise Analytics](https://arxiv.org/abs/2608.28594)：该 analyst-first 系统先用 DuckDB 离线探查数据并编译 schema 知识，再把可插拔的领域专家 skill 包确定性注入代理流水线各阶段，并通过重跑证据 SQL 复核每个已发布指标；报告主动暴露数字并生成后续问题，而不是等待用户先提出查询。
+- [Paper Pilot: A Human-in-the-Loop Expert System for Evidence-Traceable Scientific Manuscript Generation in Applied Sciences](https://arxiv.org/abs/2608.28596)：Paper Pilot 在从想法到主张的写作中加入 8 个作者审批闸门、主张分类、审计日志、no-pass 条件和证据锁定修订；机械引文测试中未设闸门的草稿最多 25% 引用为幻觉，而该流程为零并暴露植入的证据缺口。
+- [CrossAudit: A Git-Native, Cross-Vendor Audit Loop for Agentic Science](https://arxiv.org/abs/2608.28631)：CrossAudit 让不同厂商 agent 按人类版本化规则审计每个科研增量，把报告和争议存成 Git commit，先运行确定性检查，持续阻塞才升级给人；植入缺陷实验记录了跨厂商分歧。
+- [AutoScientist-Quant: Self-Evolving Coding Agents for Automatic Research in Quantitative Investment](https://arxiv.org/abs/2608.28632)：AutoScientist-Quant 将量化科研统一为预算约束搜索：controller 决定改进、组合、转向或停止，扩展节点、检索共享记忆，再选 library 和调模型；分离反馈与测试窗口修复前视泄漏。
+- [AI Scientist Mission Control (AIMC): Visual Analytics for Human Oversight of Autonomous Scientific Discovery](https://arxiv.org/abs/2608.28637)：AIMC 结合 embedding、自动弱点抽取、时间分析和交互视图，检查 AI 生成的想法、实验、论文和评审；FARS 案例发现反复缺陷、主题演化及需人工深入复核的论文。
+- [HALO: A Physics-Aware LLM Agent Framework for Nanophotonic Design](https://arxiv.org/abs/2608.28877)：HALO 将 LLM planner 与类型化设计规格、电磁仿真、诊断器和可选失败轨迹检索连接；HALO-Bench 比较固定结构、自治结构和 coding workflow，揭示可靠性、成本与成功率取舍。
+- [PaperBanana-Interact: Scientific Diagram Refinement with Multi-Turn Human Feedback](https://arxiv.org/abs/2608.30241)：PaperBanana-Interact 用内部多 agent critique-and-refine 循环逐轮响应图示要求；MTPaperBananaBench 含 292 张图片和 3,518 条要求，系统缓解普通多轮修订中的质量漂移与遗忘。
+- [FABO: Agent-Guided Discovery of Joint Breakpoint Optimization for Timing-Driven Routing Trees](https://arxiv.org/abs/2608.30268)：LLM 引导的并行搜索与独立检查循环发现 SALT 逐 sink 修复的局限，得到联合优化共享 breakpoint 的 FABO；在 129 万个 ICCAD15 net 上所有容差都降低归一化线长，并产出 FABO-FAST。
+- [Using Grounded Theory for Agent Behavior Analysis at Scale](https://arxiv.org/abs/2608.30391)：AutoTraceGT 让多 agent 流水线对数千条轨迹执行开放、主轴和理论编码直到饱和，生成任务专属 codebook；在 6 个语料上恢复 73% 至 91% 的人工失败模式，发现新模式并提升失败预测。
+- [Designing an Auditable LLM-Supported Workflow for Qualitative Thematic Analysis](https://arxiv.org/abs/2608.30543)：该工作把LLM限制在解释步骤，并用确定性控制保留原文片段到编码、理由、主题和主题描述的可追溯链；与人工主题分析的结构比较和专家评估显示，编码覆盖度相近，但生成的主题更少、更宽。
+- [Domain-Grounded Tool Orchestration for LLM-Guided Scientific Analysis](https://arxiv.org/abs/2608.30696)：该架构将 LLM 意图解释、结果说明与确定性工具执行分开，用 MCP ontology 约束计划；同一 ParaView 设计从 CFD 迁移到拓扑分析，限定检索使解释准确率从 0.41 提升至 0.91。
+- [Enhancing Peer Review with AI-Powered Suggestion Generation Assistance: Investigating the Design Dynamics](https://doi.org/10.1145/3640543.3645169)：研究 AI 建议界面如何辅助撰写同行评审，比较 inline 与列表式建议在 31 名参与者中的效果，显示界面位置会影响评审长度、易用感和 reviewer 行为。
+- [Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents](https://arxiv.org/abs/2608.31076)：AutoSciRub 将含糊科研指令拆成原子目标，用文献和可见数据 grounding 并生成可执行标准，再逐项核验和定向修订，在 ResearchClawBench 与 AstaBench 的多模型、多 harness 评测中提升得分。
+- [ES-AHD: An Evolution Strategy Framework for Automatic Heuristic Design](https://arxiv.org/abs/2609.00023)：ES-AHD用LLM从高分启发式中抽取核心洞见并进行语义重组，替代盲目的点变异；它又把进化策略的协方差适应映射到温度采样，在局部细化与跳出语义局部最优之间调节，形成可执行的启发式程序发现闭环。
+- [Beneath the Diff: Diagnosing and Mitigating Algorithmic Mode Collapse in Code-Level Autonomous Research Loops](https://arxiv.org/abs/2609.00077)：论文发现自动 ML 循环中代码行编辑仍多样、算法机制却塌缩，并在 DAPS 中结合类别重加权、持久编辑记忆和验证闸门；三层评测协议使语义簇衰减降低 69.1%，blind faithfulness 提升 83.7%。
+- [Reining in an Agentic Harness for High Energy Physics](https://arxiv.org/abs/2609.00107)：论文把理论、现象学和实验高能物理代理中可复用的部分抽象为版本化科学操作，并提出通用协议、可引用注册表和机器可读科学契约，使不同模型与 harness 上的工具和 skill 能够组合。
+- [ReDeck: Step-Level Render-Grounded Refinement for Document-to-Slide Generation](https://arxiv.org/abs/2609.00194)：ReDeck 将幻灯片修订从“一版一反馈”改为“一次编辑一次观测”：每个原子编辑后返回渲染反馈，turn-level critic 处理语义，submission gate 处理硬布局错误；DeckQuiz 分开内容、空间和设计质量。
+- [ConvDeck: Conversational Paper-to-Slide Generation via Stage-Specific User Feedback](https://arxiv.org/abs/2609.00226)：ConvDeck 在提纲、内容分配和最终 deck 阶段分别插入用户反馈循环；agent 可执行编辑或澄清意见，在保持叙事与视觉质量的同时提高目标满足度。
+- [Dr. Claw: An AI Scientist Workspace for Vibe Research](https://arxiv.org/abs/2609.00365)：Dr. Claw 在 coding-agent executor 外增加持久状态、可复用 skill 和多 executor 协作，把规划、执行、写作连成可恢复的人机轨迹；固定后端时，其编排层比裸 CLI agent 的科研完整度更高。
+- [Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs](https://arxiv.org/abs/2609.00621)：该方法将路由、格式和终止信号移入带类型且经验证的程序对象，只优化任务语言；在包含协作评审生成的多种工作流中，最终协议有效率达到 100% 且任务性能提升。
+- [GIDCL: A Graph-Enhanced Interpretable Data Cleaning Framework with Large Language Models](https://doi.org/10.1145/3698811)：把关系表转成图以用 GNN 建模依赖关系，同时由大模型 creator-critic 循环生成可解释清洗规则和定制特征，再迭代改进检测与修复；实验仅用 20 个标注元组便将 F1 平均提高 10%。
+- [RingMoClaw: An Experience-Inspired Multi-Agent Framework for Self-Evolving Research in Remote Sensing](https://arxiv.org/abs/2609.00814)：RingMoClaw 用研究分支、质量控制分支和双流经验总线把视觉模型改进串成闭环，分别吸收外部知识与实验历史，并通过分阶段 Critic 诊断无效搜索；在四类遥感任务上取得稳定增益，同时将演化步数减少四成以上。
+- [Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems](https://arxiv.org/abs/2609.00859)：RLEA用Soft Q-learning训练轻量规划器来编排LLM agent，并用进化记忆和求解器知识检索支持程序生成与修复；在48种车辆路径变体上成功率提高16.67%、运行时错误减少，把复杂优化模型的形式化—测试循环自动化。
+- [Reliable LLM-Generated Programs for High-Energy Physics Experiments through Graph-Grounded Software Knowledge](https://arxiv.org/abs/2609.01095)： 该系统将高能物理实验中的 LLM 程序生成 grounding 到异构软件知识图谱、按技能选择的工作流示例和执行引导修复上。在 275 个 ROOT 任务中，Claude Code 编排下的首次执行成功率从 58.5% 提升到 76.0%，最终成功率从 90.5% 提升到 96.0%，说明即使已有智能体脚手架，显式软件知识仍能改善可执行科研代码。
+- [Leveraging Fine-Tuned LLMs, RAG and ReAct for Enhanced Academic Document Analysis and Automated Research Proposal Generation](https://doi.org/10.1109/aidas67696.2025.11213900)：结合微调 LLM、检索增强和 ReAct 工具使用，从检索证据中分析学术文档并生成研究计划书。
+- [Navigating the Alpha Jungle: An LLM-Powered MCTS Framework for Formulaic Alpha Factor Mining](https://doi.org/10.1609/aaai.v40i2.37069)： 该框架把因子发现变成可执行的 LLM-MCTS 循环：LLM 提议并改写符号 alpha 公式，真实回测结果作为树搜索节点的量化反馈，频繁子树规避机制抑制搜索同质化；真实股票实验显示其预测与交易表现优于既有因子挖掘方法，同时保留了较易解释的公式。
+- [Expert-Inspired Multi-Agent Coordination for Multi-Objective Molecular Optimization](https://doi.org/10.1609/aaai.v40i41.40757)： MAMO 把多目标分子设计组织成专家协作循环：各目标 specialist agent 分别提出改进，中央调度器依据评估反馈重新分配任务，并通过目标条件化交互平衡冲突目标；基准实验显示其目标质量和 Pareto 前沿多样性均有提升，冲突越强时优势越明显。
+- [DREAM-LLMs at LLMs4OL 2025 Task B: A Deliberation-Based Reasoning Ensemble Approach With Multiple Large Language Models for Term Typing in Low-Resource Domains](https://doi.org/10.52825/ocp.v6i.2892)： DREAM-LLMs 先让 ChatGPT-4o、Claude Sonnet 4、DeepSeek-V3 和 Gemini 2.5 Pro 独立给出术语标签及理由，再让一个模型对其余三个模型的预测进行审议。在 OBI、MatOnto 和 SWEET 低资源数据集上，F1 分别为 0.908、0.568 和 0.593；它把跨模型审议落实为自动整理科学知识的具体编排模式。
+- [Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows](https://arxiv.org/abs/2603.06394)：该系统允许用自然语言灵活讨论科研任务，但在执行前把结果编译成带有依赖、治理、溯源和人工控制约束的机器可检验 schema，使可复现性检查成为 agent 运行时的一部分。
+- [AutoSciLab: A Self-Driving Laboratory For Interpretable Scientific Discovery](https://arxiv.org/abs/2412.12347)：AutoSciLab 闭合了自主实验室的科研循环：用变分自编码器生成高维实验，通过主动学习假设选择有信息量的测试，把结果蒸馏成低维潜变量，再学习可解释方程；它重新发现了抛体运动和 Ising 相变规律，并在纳米光子学挑战中找到新的非相干光发射设计。
+- [Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](https://arxiv.org/abs/2509.09245)：Jupiter 从真实 Jupyter notebook 抽取可执行的多步任务—解法对，构成 NbQA，并把数据分析变成搜索问题：用 MCTS value model 对解法轨迹排序，在推理时依据节点访问次数选择较短的可执行计划。Qwen2.5-7B 和 14B 在 InfiAgent-DABench 上达到 77.82% 和 86.38%，可匹敌或超过 GPT-4o 及更强的 agent 脚手架。
+- [R-LAM: Reproducibility-Constrained Large Action Models for Scientific Workflow Automation](https://arxiv.org/abs/2601.09749)：R-LAM 用结构化 schema、确定性执行策略、溯源记录、感知失败的循环和受控 workflow 分叉约束科研 agent 的动作。其开源 Python 框架让中间产物可重放；实验显示，相较无约束 LLM agent，它提高了科研工作流的可复现性和执行可靠性，同时保留自适应控制。
+- [DataFoundry: Evolving Data Preparators via Recursive Self-Improvement](https://arxiv.org/abs/2608.29966)：DataFoundry 把数据准备器表示成可演化运行时：Controller 编译模块化 Skills-as-Modules，用领域标准诊断小规模试点的失败，再把反馈转成适配器，在正式生成前修改单个准备组件。在 DataPrep-Bench 上，这个递归运行时在四个领域和多种 backbone 上产出更高下游效用的训练数据。
+- [A hybrid approach to formulaic alpha discovery with large language model assistance](https://doi.org/10.1007/s11704-025-41061-5)： 该论文比较 LLM 独立生成 alpha 与 LLM 增强优化框架两种公式化因子发现范式。真实股票数据上的混合方法报告平均信息系数为 0.0515，比 RL 基线提高 75%，回测累计超额收益超过基线两倍，体现了具体的 LLM 引导量化科研闭环。

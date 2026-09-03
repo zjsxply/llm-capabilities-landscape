@@ -30,7 +30,9 @@ This repository organizes recent LLM research by capability areas, benchmark fam
 - [1.13 Skill Use](docs/en/01-core-capabilities/13-skill-use/README.md)
 - [1.14 Writing and Long-Form Generation](docs/en/01-core-capabilities/14-writing/README.md)
 - [1.15 Memory](docs/en/01-core-capabilities/15-memory/README.md)
-- [1.16 Other](docs/en/01-core-capabilities/16-other/README.md)
+- [1.16 Agent Swarm](docs/en/01-core-capabilities/16-agent-swarm/README.md)
+- [1.17 Creativity](docs/en/01-core-capabilities/17-creativity/README.md)
+- [1.18 Other](docs/en/01-core-capabilities/18-other/README.md)
 
 ### 2. Agent Capabilities
 

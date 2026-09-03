@@ -1,14 +1,120 @@
 # 1.14.4 Model
 
+- [From Automation to Augmentation: Large Language Models Elevating Essay Scoring Landscape](https://arxiv.org/abs/2401.06431)：构建开源双过程 LLM 作文评分系统，结合自动评分、反馈、低置信度误判缓解和人机协同评分实验。
+- [PRewrite: Prompt Rewriting with Reinforcement Learning](https://arxiv.org/abs/2401.08189)：用强化学习训练 LLM 提示重写器，把欠优化提示改写为能提升下游任务表现的新提示。
+- [Can Large Language Model Summarizers Adapt to Diverse Scientific Communication Goals?](https://arxiv.org/abs/2401.10415)：研究科学摘要可控性，通过意图提示和基于关键词的 classifier-free guidance，让 LLM 在 arXiv 与 PubMed 摘要中适配不同传播目标。
 - [Weaver](https://arxiv.org/abs/2401.17268)：创意写作基础模型与训练参考，强调可控的设定、情节和叙事风格生成。
+- [Training Language Models to Generate Text with Citations via Fine-grained Rewards](https://arxiv.org/abs/2402.04315)：用细粒度奖励微调较小 LLM，在 ALCE 和 EXPERTQA 上同时优化引用支撑性、相关性与答案正确性。
+- [GhostWriter: Augmenting Collaborative Human-AI Writing Experiences Through Personalization and Agency](https://arxiv.org/abs/2402.08855)：研究个性化协同写作辅助，让用户在起草过程中调节 AI 的能动性和适配方式，而不是只接收一次性通用补全。
+- [Large Language Models Fall Short: Understanding Complex Relationships in Detective Narratives](https://arxiv.org/abs/2402.11051)：提出 Conan 侦探叙事基准，抽取公开和秘密人物关系图，显示 LLM 在长篇叙事关系推理上的不足。
+- [Search-Based Optimisation of LLM Learning Shots for Story Point Estimation](https://arxiv.org/abs/2403.08430)：用搜索式软件工程选择 few-shot 示例来估计敏捷 story point，更接近软件估算任务而非写作模型。
+- [The Value, Benefits, and Concerns of Generative AI-Powered Assistance in Writing](https://arxiv.org/abs/2403.12004)：通过受控写作辅助实验衡量用户付费意愿、生产率、信心、责任感和文本多样性变化。
+- [EAGLE: A Domain Generalization Framework for AI-generated Text Detection](https://arxiv.org/abs/2403.15690)：结合自监督对比学习与领域对抗训练，在不为每个新模型重新标注数据的情况下检测未知 LLM 生成文本。
+- [Mapping the Increasing Use of LLMs in Scientific Papers](https://arxiv.org/abs/2404.01268)：通过总体词频漂移估计 arXiv、bioRxiv 和 Nature 期刊中的 LLM 改写科研文本比例，而非做单篇判别。
+- [Hallucination Diversity-Aware Active Learning for Text Summarization](https://arxiv.org/abs/2404.01588)：按语义框架、篇章和可验证性错误选择多样化幻觉样本，以更少人工标注微调摘要模型。
+- [Surface Reconstruction from Gaussian Splatting via Novel Stereo Views](https://arxiv.org/abs/2404.01810)：提出 GS2Mesh，用立体渲染视图从 3D Gaussian Splatting 重建表面；该条目与 Writing / Model 轴线不匹配。
+- [Product Description and QA Assisted Self-Supervised Opinion Summarization](https://arxiv.org/abs/2404.05243)：构建 MEDOS 多编码器解码器，用评论、商品描述和问答中选出的伪摘要训练观点摘要模型。
+- [Analyzing the Performance of Large Language Models on Code Summarization](https://arxiv.org/abs/2404.08018)：指出代码摘要成绩强烈受函数名与参考 docstring 的 token 重叠驱动，限制了常用指标的解释力。
+- [Is ChatGPT Transforming Academics' Writing Style?](https://arxiv.org/abs/2404.08627)：用自适应词频模型估计一百万篇 arXiv 摘要中的 ChatGPT 风格密度，并用模拟改写摘要校准。
+- [Navigating the Path of Writing: Outline-guided Text Generation with Large Language Models](https://arxiv.org/abs/2404.13919)：提出 WritingPath，用显式提纲引导 LLM 生成，并由专业写作者评估提纲质量和博客式生成文本。
+- [Towards the relationship between AIGC in manuscript writing and author profiles: evidence from preprints in LLMs](https://arxiv.org/abs/2404.15799)：分析 LLM 预印本中 AIGC 风格写作与作者画像信号之间的关系，而不是提出新的写作模型。
+- [RST-LoRA: A Discourse-Aware Low-Rank Adaptation for Long Document Abstractive Summarization](https://arxiv.org/abs/2405.00657)：把修辞结构等篇章信号注入 LoRA 适配，用于长文档抽象摘要。
+- [Who Wrote This? The Key to Zero-Shot LLM-Generated Text Detection Is GECScore](https://arxiv.org/abs/2405.04286)：以语法纠错分数作为黑盒零样本检测器，利用 LLM 文本语法错误率较低这一差异。
+- [Enhancing Creativity in Large Language Models through Associative Thinking Strategies](https://arxiv.org/abs/2405.06715)：用联想思维提示促使 LLM 连接远距离概念，把创造力提升建模为可控概念关联，而不是单纯调高采样随机性。
+- [Design Opportunities for Explainable AI Paraphrasing Tools: A User Study with Non-native English Speakers](https://arxiv.org/abs/2405.07475)：构建 ParaScope，研究非英语母语者如何结合回译、解释和用例来选择 AI 改写建议。
+- [Shotluck Holmes: A Family of Efficient Small-Scale Large Language Vision Models For Video Captioning and Summarization](https://arxiv.org/abs/2405.20648)：通过改进预训练和数据收集，把小型视觉语言模型从单图理解扩展到镜头序列理解，用于视频字幕和摘要。
+- [Prompt Chaining or Stepwise Prompt? Refinement in Text Summarization](https://arxiv.org/abs/2406.00507)：比较三段式起草、批评、精修 prompt chaining 与单提示 stepwise prompt，发现前者能产生更好的迭代摘要。
+- [Enhancing Text Authenticity: A Novel Hybrid Approach for AI-Generated Text Detection](https://arxiv.org/abs/2406.06558)：结合 TF-IDF、传统分类器、CatBoost 和多个 DeBERTa-v3-large 检测器来判别 AI 生成文本。
+- [Wild-GS: Real-Time Novel View Synthesis from Unconstrained Photo Collections](https://arxiv.org/abs/2406.10373)：将 3D Gaussian Splatting 适配到旅游照片集合的实时新视角合成；该条目与 Writing / Model 轴线不匹配。
+- [Developing Story: Case Studies of Generative AI's Use in Journalism](https://arxiv.org/abs/2406.13706)：通过新闻业案例记录生成式 AI 进入报道和 story development 流程的方式，并未提出新的模型训练配方。
+- [Step-Back Profiling: Distilling User History for Personalized Scientific Writing](https://arxiv.org/abs/2406.14275)：把用户历史蒸馏成更高层作者画像，使 LLM 能在多轮草稿中提供个性化科研写作辅助。
+- [Themis: A Reference-free NLG Evaluation Language Model with Flexibility and Interpretability](https://arxiv.org/abs/2406.18365)：在 NLG-Eval 上训练 NLG 评价 LLM，结合多视角一致性验证和面向打分的偏好对齐实现无参考评测。
 - [LongWriter](https://arxiv.org/abs/2408.07055)（[开源代码](https://github.com/THUDM/LongWriter)）：通过 LongWrite-Ruler 与长文监督数据训练长输出能力，把输出长度扩展与读取长上下文区分开。
+- [Authorship Attribution in the Era of LLMs: Problems, Methodologies, and Challenges](https://arxiv.org/abs/2408.08946)：综述人写文本、LLM 生成文本、LLM 来源归因和人机共写文本归因，强调泛化与可解释性挑战。
+- [RLPF: Reinforcement Learning from Prediction Feedback for User Summarization with LLMs](https://arxiv.org/abs/2409.04421)：用来自预测反馈的强化学习优化个性化摘要，而不是依赖静态参考摘要监督。
+- [The Impact of Large Language Models in Academia: from Writing to Speaking](https://arxiv.org/abs/2409.13686)：基于三万余篇机器学习论文和一千个报告，测量 LLM 风格词汇从书面写作外溢到口头表达的变化。
+- [Can AI writing be salvaged? Mitigating Idiosyncrasies and Improving Human-AI Alignment in the Writing Process through Edits](https://arxiv.org/abs/2409.14509)：构建专业写作者编辑 LLM 段落的 LAMP 语料，并用专家偏好评估自动编辑方法。
+- [A Character-Centric Creative Story Generation via Imagination](https://arxiv.org/abs/2409.16667)：通过显式想象角色状态和互动来生成故事，使叙事推进围绕角色发展展开。
+- [Style-Specific Neurons for Steering LLMs in Text Style Transfer](https://arxiv.org/abs/2410.00593)：识别源风格和目标风格神经元，停用源风格专属神经元，并用对比解码改进零样本文本风格迁移。
+- [On the Rigour of Scientific Writing: Criteria, Analysis, and Insights](https://arxiv.org/abs/2410.04981)：从 ICLR 和 ACL 论文中抽取、定义并评分科研严谨性标准，分析确定性措辞与严谨性观感的关系。
+- [Visual Story-Writing: Writing by Manipulating Visual Representations of Stories](https://arxiv.org/abs/2410.07486)：让作者通过人物关系图、地点移动和事件时间线编辑叙事文本，并触发对应的故事修改建议。
+- [MCQG-SRefine: Multiple Choice Question Generation and Evaluation with Iterative Self-Critique, Correction, and Comparison Feedback](https://arxiv.org/abs/2410.13191)：用迭代自我批评、纠错和比较反馈来精修多项选择题生成与评估。
+- [Beyond Binary: Towards Fine-Grained LLM-Generated Text Detection via Role Recognition and Involvement Measurement](https://arxiv.org/abs/2410.14259)：定义 LLM 角色识别和参与度测量任务，并用 HNDC 与 DetectEval 评测人机共写内容检测器。
+- [Tell me what I need to know: Exploring LLM-based (Personalized) Abstractive Multi-Source Meeting Summarization](https://arxiv.org/abs/2410.14545)：用三阶段 LLM 流程从补充材料中补全会议转录信息，再生成个性化多源会议摘要，而不是只摘要转录文本。
+- [Textual Aesthetics in Large Language Models](https://arxiv.org/abs/2411.02930)：构建 TexAes 数据集和 TAPO 偏好微调方法，在不牺牲回答正确性的前提下提升排版、连贯性和文本美学评分。
+- [Large corpora and large language models: a replicable method for automating grammatical annotation](https://arxiv.org/abs/2411.11260)：用 Claude 3.5 Sonnet 配合提示工程、训练和评估，在语料库规模标注语法结构， held-out 准确率超过 90%。
+- [Toward Long Video Understanding via Fine-Detailed Video Story Generation](https://arxiv.org/abs/2412.06182)：用自底向上的片段到整段视频解释和语义冗余削减，把长视频转成层级文本故事，从而无需任务微调就支持后续视频理解。
+- [Disentangling Preference Representation and Text Generation for Efficient Individual Preference Alignment](https://arxiv.org/abs/2412.20834)：将个体偏好表示与文本生成解耦，相比 PEFT 基线把每个新用户偏好的对齐训练时间降低 80% 到 90%。
+- [XMSumm: A Unified Framework for Cross-Lingual and Multilingual Multi-Document Summarization](https://doi.org/10.1109/ialp68296.2024.11156512)：提出端到端框架同时处理跨语言与多语言多文档摘要，面向国际新闻中多语言来源和目标语言摘要之间的真实应用缺口。
 - [Progressive Document-level Text Simplification via Large Language Models](https://arxiv.org/abs/2501.03857)：采用渐进式文档级文本简化，在改写长文本时保持结构。
-- [Modifying Large Language Model Post-Training for Diverse Creative Writing](https://arxiv.org/abs/2503.17126)：提出面向写作的模型侧方法，核心围绕 Modifying Large Language Model Post-Training for Diverse Creative Writing。
+- [A Cognitive Writing Perspective for Constrained Long-Form Text Generation](https://arxiv.org/abs/2502.12568)：借鉴规划、转写、审阅和监控过程提升受约束长文本生成。
+- [EdiText: Controllable Coarse-to-Fine Text Editing with Diffusion Language Models](https://arxiv.org/abs/2502.19765)：用由粗到细的扩散语言模型实现可控文本编辑。
+- [Personalized Text Generation with Contrastive Activation Steering](https://arxiv.org/abs/2503.05213)：用 contrastive activation steering 控制个性化文本生成。
+- [Phraselette: A Poet’s Procedural Palette](https://arxiv.org/abs/2503.06335)：面向实验诗人设计 material-writing 支持界面，用语言模型帮助搜索和变换短语，同时避免常规自动写作工具的规范化倾向。
+- [Bridging the LLM Accessibility Divide? Performance, Fairness, and Cost of Closed versus Open LLMs for Automated Essay Scoring](https://arxiv.org/abs/2503.11827)：比较闭源和开源 LLM 在自动作文评分中的性能、公平性和成本，量化可及性取舍。
+- [Story of Two GPUs: Characterizing the Resilience of Hopper H100 and Ampere A100 GPUs](https://arxiv.org/abs/2503.11901)：刻画 Hopper H100 与 Ampere A100 GPU 的硬件韧性差异；该条目与 Writing / Model 轴线不匹配，不应视为写作方法。
+- [Modifying Large Language Model Post-Training for Diverse Creative Writing](https://arxiv.org/abs/2503.17126)：在 DPO 与 ORPO 中加入样本偏离度，让稀有高质量创意样本影响后训练，在基本保持质量的同时提升输出多样性。
 - [SCORE: Story Coherence and Retrieval Enhancement for AI Narratives](https://arxiv.org/abs/2503.23512)：通过检索增强的故事建模提升 AI 叙事连贯性。
 - [ScholarCopilot](https://arxiv.org/abs/2504.00824)：面向学术写作训练大模型，强调引用感知监督与准确生成。
+- [An Empirical Study of Many-to-Many Summarization with Large Language Models](https://arxiv.org/abs/2505.12983)：实证研究大语言模型的多对多摘要能力。
+- [QA-prompting: Improving Summarization with Large Language Models using Question-Answering](https://arxiv.org/abs/2505.14347)：补充用问答提示改进大模型摘要的方法。
+- [Your Language Model Can Secretly Write Like Humans: Contrastive Paraphrase Attacks on LLM-Generated Text Detectors](https://arxiv.org/abs/2505.15337)：提出对比式释义攻击，通过把生成文本改写得更像人类写作来绕过 AI 文本检测器。
+- [A Paradigm for Creative Ownership](https://arxiv.org/abs/2505.15971)：提出 Person、Process、System 三个维度来分析人机共创中的创意所有感，更像 HCI 概念框架而非模型训练配方。
 - [Writing-Zero](https://arxiv.org/abs/2506.00103)（[开源代码](https://github.com/damoonsh/writing-zero)）：用过程化反馈和可检查约束把开放式写作转化为可优化 reward process。
+- [Literary Evidence Retrieval via Long-Context Language Models](https://arxiv.org/abs/2506.03090)：把 RELiC 改造成长上下文文学证据检索任务，让模型从完整原著中补回评论里缺失的引文，揭示闭源与开源模型在细读推理上的差距。
 - [LongWriter-Zero](https://arxiv.org/abs/2506.18841)（[数据集](https://huggingface.co/datasets/THU-KEG/Arena-Write)）：用长度、质量和结构奖励进行强化学习，诱导超长写作与 think-before-writing 规划。
+- [Compressed and Smooth Latent Space for Text Diffusion Modeling](https://arxiv.org/abs/2506.21170)：探索在压缩平滑潜空间中进行文本扩散生成，作为自回归文本生成的替代路径。
+- [An Evaluation of Large Language Models on Text Summarization Tasks Using Prompt Engineering Techniques](https://arxiv.org/abs/2507.05123)：用提示工程技术评估 LLM 文本摘要能力。
+- [AI Generated Text Detection Using Instruction Fine-tuned Large Language and Transformer-Based Models](https://arxiv.org/abs/2507.05157)：补充用于 AI 生成文本检测的指令微调模型。
+- [Story Ribbons: Reimagining Storyline Visualizations with Large Language Models](https://arxiv.org/abs/2508.06772)：用 LLM 解析管线从小说和剧本中抽取角色、主题和叙事层级，用于交互式 storyline 可视化。
+- [RepreGuard: Detecting LLM-Generated Text by Revealing Hidden Representation Patterns](https://arxiv.org/abs/2508.13152)：利用隐藏表征模式检测 LLM 生成文本，提升作者来源检测鲁棒性。
+- [Avoidance Decoding for Diverse Multi-Branch Story Generation](https://arxiv.org/abs/2509.02170)：在概念层和叙事层惩罚与既有分支过于相似的 token，使多分支故事生成无需重训即可提高多样性并减少重复。
 - [ACE-RL](https://arxiv.org/abs/2509.04903)：把写作指令分解为细粒度约束，并将约束满足度作为长文生成 RL 奖励。
+- [CLEAR: A Comprehensive Linguistic Evaluation of Argument Rewriting by Large Language Models](https://arxiv.org/abs/2509.15027)：用 57 个词汇、句法、语义和语用指标评估 LLM 论证改写，显示模型会缩短文本并提高说服力和连贯性。
+- [Span-level Detection of AI-generated Scientific Text via Contrastive Learning and Structural Calibration](https://arxiv.org/abs/2510.00890)：用对比学习和结构校准进行 span 级 AI 生成科学文本检测。
+- [DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning](https://arxiv.org/abs/2510.17489)：把 AI 写、人类改、AI 再精修等混合文本过程建模为层级亲和树，并用专门损失对齐表示以提升分布外检测鲁棒性。
+- [SimVBG: Simulating Individual Values by Backstory Generation](https://doi.org/10.18653/v1/2025.emnlp-main.662)：先把个体结构化人口与经历数据转成 backstory，再用受认知情感人格系统启发的多模块架构模拟个体价值观。
+- [Not Lost After All: How Cross-Encoder Attribution Challenges Position Bias Assumptions in LLM Summarization](https://doi.org/10.18653/v1/2025.findings-emnlp.846)：用 cross-encoder attribution 重新检验 LLM 摘要中的位置偏置，区分摘要内容选择来自文档位置还是语义相关性。
+- [Generation, Evaluation, and Explanation of Novelists’ Styles with Single-Token Prompts](https://arxiv.org/abs/2511.20459)：用单 token 作者提示微调 LLM 模仿 19 世纪小说家，并用检测器、句法比较和可解释性分析评估风格。
+- [A Generative Adversarial Network-Based Extractive Text Summarization Using Transductive and Reinforcement Learning](https://doi.org/10.1109/access.2025.3558266)：在 IEEE Access 摘要模型中结合 GAN 式抽取摘要、转导学习和强化学习。
+- [An Explainable Tiny-Fast Kolmogorov–Arnold Network for Gesture-Based Air Handwriting Recognition of Tifinagh Letters in Resource-Constrained IoT Device](https://doi.org/10.1109/jiot.2025.3625087)：面向受限 IoT 设备上的 Tifinagh 字母空中手写识别，与文本生成类 Writing / Model 轴线不匹配。
+- [Large Language Model AI Text Generation Detection based on Transformer Deep Fast Quantum Convolutional Neural Networks](https://doi.org/10.1109/icirca65293.2025.11089509)：测试 Transformer 与量子卷积组合的 AI 文本溯源检测器，相关点是生成文本检测而非文本生成。
+- [JELV: A Judge of Edit-Level Validity for Evaluation and Automated Reference Expansion in Grammatical Error Correction](https://arxiv.org/abs/2511.21700)：在 edit level 判断语法纠错编辑的语法性、忠实性和流畅性，并用有效编辑扩展参考答案以降低 GEC 评测偏罚。
+- [Exploring multimodal collaborative storytelling with Pepper: a preliminary study with zero-shot LLMs](https://doi.org/10.3389/frobt.2025.1662819)：研究 Pepper 机器人中的零样本 LLM 多模态协同讲故事流程，贡献更偏交互证据而非模型训练。
+- [Advanced Text Summarization Model Incorporating NLP Techniques and Feature-Based Scoring](https://doi.org/10.1109/access.2025.3528830)：把 feature-based scoring 与传统 NLP 摘要组件结合，先排序显著内容再生成摘要。
+- [Agency in Human-AI Collaboration for Image Generation and Creative Writing: Preliminary Insights from Think-Aloud Protocols](https://doi.org/10.1080/10400419.2025.2587803)：用 think-aloud protocol 分析图像生成与创意写作协作中人的能动性变化，更像 HCI 证据而不是模型方法。
+- [Research on Large Language Model Text Source Detection Based on Domain Adaptive Fine-Tuning](https://doi.org/10.1109/cei66465.2025.11398514)：通过领域自适应微调训练文本来源检测器，使生成文本溯源能跨训练域泛化。
+- [An Analysis of Scoring Methods for Reranking in Large Language Model Story Generation](https://doi.org/10.18653/v1/2025.in2writing-1.10)：补充面向写作的模型侧工作，重点是reranking/scoring methods for LLM story generation。
+- [Divergent-Convergent Thinking in Large Language Models for Creative Problem Generation](https://arxiv.org/abs/2512.23601)：提出 CreativeDC 两阶段提示法，先发散探索想法再收敛满足约束，以生成更多样的教育题目。
+- [DiSCo: Making Absence Visible in Intelligent Summarization Interfaces](https://arxiv.org/abs/2601.07229)：把评论内容与领域期望分布作对比，让摘要同时呈现异常强调和显著缺失的方面，从而降低只总结已出现信息的偏差。
 - [OUTLINEFORGE](https://arxiv.org/abs/2601.09858)：用显式状态的层级强化学习改进科学写作提纲生成。
+- [Retell, Reward, Repeat: Reinforcement Learning for Narrative Theory-Informed Story Generation](https://arxiv.org/abs/2601.17226)：补充面向写作的模型侧工作，重点是RL reward loop for narrative story generation。
+- [What Matters to an LLM? Behavioral and Computational Evidences from Summarization](https://arxiv.org/abs/2602.00459)：从长度受控摘要中推导信息单元重要性分布，并把这种选择模式对应到注意力头和中后层表示。
+- [Text summarization via global structure awareness](https://arxiv.org/abs/2602.09821)：GloSA-sum 引入拓扑式全局结构信号，使长文摘要更好保留逻辑结构和细粒度依赖。
+- [SparkTales: Facilitating Cross-Language Collaborative Storytelling through Coordinator-AI Collaboration](https://arxiv.org/abs/2603.04806)：基于协调者形成性研究设计跨语言协同讲故事系统，重点支持翻译、协调和故事共创流程。
 - [HiFlow](https://arxiv.org/abs/2603.04996)：面向 constrained long-form generation 的分层反馈优化方法，覆盖全局结构、段落质量和局部约束。
+- [BLooP: Zero-Shot Abstractive Summarization using Large Language Models with Bigram Lookahead Promotion](https://arxiv.org/abs/2603.11415)：通过 hash-table lookahead 提升源文档 bigram 的生成概率，是无需训练的解码干预，用于提高零样本抽象摘要忠实性。
+- [Learning to Present: Inverse Specification Rewards for Agentic Slide Generation](https://arxiv.org/abs/2603.16839)：用逆向规格奖励训练幻灯片生成 agent，将渲染质量、内容指标和原始需求可恢复性纳入奖励。
+- [Impact of enriched meaning representations for language generation in dialogue tasks: A comprehensive exploration of the relevance of tasks, corpora and metrics](https://arxiv.org/abs/2603.29518)：面向写作与长文本生成的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Impact of enriched meaning representations for language generation in dialogue tasks: A comprehensive exploration of the relevance of tasks, corpora and metrics”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [UniCreative](https://arxiv.org/abs/2604.05517)：使用 reference-free reinforcement learning 统一长文逻辑性和短文本创意质量。
+- [Interpretable Stylistic Variation in Human and LLM Writing Across Genres, Models, and Decoding Strategies](https://arxiv.org/abs/2604.14111)：用可解释风格特征比较不同体裁、人类与 LLM、模型家族和解码策略下的文本风格差异。
+- [Beyond Global Scalars: Synergizing Token-Level Statistics and Deep Semantics for Adversarial AIGC Text Detection](https://arxiv.org/abs/2608.28009)： NeuroStat 从同一因果语言模型骨干提取 token 级概率 logits 与语义隐藏状态，通过 Macro-State Residual Modulation 融合，并用正交损失和对比损失学习互补表征；在包含 16000 个样本的 MOSAIC 对抗评测上，其鲁棒性显著优于既有检测器。
+- [Culture, emotions, and power dynamics in AI email communication](https://doi.org/10.1016/j.ijhcs.2026.103770)：研究 AI 邮件沟通中的文化、情绪和权力动态影响，更像写作相关 HCI 证据而非模型方法。
+- [Coherence-aware and snap-triggered: A novel mechanism for audio-visual cooperative tasks](https://doi.org/10.1016/j.eswa.2026.131559)：提出面向音视频协作任务的 coherence-aware snap-triggered 机制，与 Writing / Model 轴线不匹配。
+- [AI Rivalry and Tail-Risk Contagion: Evidence from DeepSeek's Creative Destruction Shock](https://doi.org/10.1016/j.ribaf.2026.103378)：分析 DeepSeek 作为 AI 市场冲击引发的金融尾部风险传染，与 Writing / Model 轴线不匹配。
+- [Enhancing a large language model with a chain-of-metacognitive reasoning approach increases argumentative writing evaluation accuracy, student writing outcomes, and mental effort](https://doi.org/10.1016/j.compedu.2026.105621)：把链式元认知推理提示加入 LLM 论证写作评价，并报告评分准确率、学生写作结果和心智负荷的变化。
+- [FLAP: Faithful LLM-Aligned Prompting for NLP-Driven Abstractive Text Summarization via Saliency-Guided Encoding and Reinforcement-Based Faithfulness Optimization](https://doi.org/10.1109/gaiis69281.2026.11519156)：结合显著性引导编码和基于强化学习的忠实性优化，使抽象摘要更贴近源文档证据。
+- [Toward Personalizable AI Node Graph Creative Writing Support: Insights on Preferences for Generative AI Features and Information Presentation Across Story Writing Processes](https://doi.org/10.1145/3706598.3713569)：研究 FigJam 节点图写作插件，结合受众扮演、图像和音频生成，重点是个性化写作支持和故事寓意反思而非模型训练。
+- [WhatIF: Branched Narrative Fiction Visualization for Authoring Emergent Narratives using Large Language Models](https://doi.org/10.1145/3698061.3726933)：用 LLM 可视化分支叙事小说，使作者能检查和修改涌现出的故事路径。
+- [Orchid: A Creative Approach for Authoring LLM-Driven Interactive Narratives](https://doi.org/10.1145/3698061.3726906)：提供 LLM 驱动互动叙事的创作环境，强调作者对分支故事体验的创意控制。
+- [Human-LLM Collaborative Annotation Through Effective Verification of LLM Labels](https://doi.org/10.1145/3613904.3641960)：研究人类验证 LLM 标签的协同数据标注，相关于标签质量但不是写作生成模型。
+- [Supermind Ideator: How scaffolding Human-AI collaboration can increase creativity](https://doi.org/10.1145/3643562.3672611)：测试能提升群体创造力的人机协作脚手架，更接近创意支持工作流而非模型训练方法。
+- [Metacognition meets AI: Empowering reflective writing with large language models](https://doi.org/10.1111/bjet.13601)：在教育场景中用 LLM 的元认知提示和反馈支持反思性写作。
+- [Automatic Authorship Analysis in Human-AI Collaborative Writing](https://doi.org/10.63317/3zc23owwkofd)：提供 LREC 2024 面向人机协同写作的作者身份分析方法，目标是共写文本归因。
+- [Feedback-Only AI for Writing Instruction: A Constrained-Generative Tool That Preserves Authorship](https://doi.org/10.1177/23294906251414835)：描述只提供反馈、不代写文本的受约束生成式写作教学工具，以保留学生作者身份。
+- [Exploring Texture-Level Creative Decisions with penPal, a Novel Handheld Actuated Drawing Tool](https://doi.org/10.1145/3772318.3790391)：研究支持纹理层面创意决策的手持驱动绘图工具，虽涉及创造力但与 Writing / Model 不匹配。
+- [Creative Thought Embeddings: A Framework for Instilling Creativity in Large Language Models](https://doi.org/10.1609/aaaiss.v6i1.36064)：用创意思维嵌入增强大语言模型创造力。
+- [It’s Not Just the Prompt: Model Choice Dominates LLM Creative Output](https://doi.org/10.1145/3772363.3799284)：在 12 个 LLM 和发散思维任务上分解输出方差，显示模型选择对原创性和流畅性的解释力不弱于提示本身。
+- [Multi-document summarization through subsection-aware pre-training objectives](https://doi.org/10.1007/s11227-025-07504-3)：使用小节感知预训练目标改进多文档摘要。
+- [TimeWeaver: Orchestrating Narrative Order via Temporal Mixture-of-Experts Integrated Event–Order Bidirectional Pretraining and Multi-Granular Reward Reinforcement Learning](https://doi.org/10.3390/electronics14193880)：通过时间混合专家预训练与奖励学习控制叙事顺序。
+- [Language Models of Code Are Few-Shot Planners and Reasoners for Multi-Document Summarization with Attribution](https://doi.org/10.1609/aaai.v39i23.34676)：用代码语言模型完成带出处的多文档摘要，把规划和证据追踪作为写作模型能力来处理。

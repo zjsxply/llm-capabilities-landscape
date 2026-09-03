@@ -1,0 +1,148 @@
+# 1.18.5 Agent Harness
+
+- [Exploring Large Language Model based Intelligent Agents: Definitions, Methods, and Prospects](https://arxiv.org/abs/2401.03428)：综述单 Agent 与多 Agent 的 LLM 智能体架构，把组成、规划、记忆、工具使用和智能体社会应用整理为可复用的 harness 组件。
+- [AutoAct: Automatic Agent Learning from Scratch for QA via Self-Planning](https://arxiv.org/abs/2401.05268)：从少量 QA 数据和工具库自动合成工具使用规划轨迹，再用分工策略训练专门子 Agent，避免依赖 GPT-4 轨迹。
+- [Small LLMs Are Weak Tool Learners: A Multi-LLM Agent](https://arxiv.org/abs/2401.07324)：把工具使用拆成 planner、caller 和 summarizer 三个 LLM，使小模型分别专注查询规划、API 调用和结果综合。
+- [Visibility into AI Agents](https://arxiv.org/abs/2401.13138)：把 Agent 治理转化为可见性问题，按侵入性、信息量和问责价值比较标识符、实时监控和活动日志。
+- [Green Runner: A tool for efficient deep learning component selection](https://arxiv.org/abs/2401.15810)：把自然语言应用描述转成候选模型、指标、训练策略和资源感知实验，用于选择深度学习组件。
+- [AMOR: A Recipe for Building Adaptable Modular Knowledge Agents Through Process Feedback](https://arxiv.org/abs/2402.01469)：用有限状态机推理循环和解耦知识模块承载领域适配，让人类过程反馈能够直接作用到单个推理步骤。
+- [Assistive Large Language Model Agents for Socially-Aware Negotiation Dialogues](https://arxiv.org/abs/2402.01737)：在商业谈判模拟中加入第三个 remediator Agent，用按 value impact 选择的免标注示例改写违反规范的话语。
+- [LLM Agents in Interaction: Measuring Personality Consistency and Linguistic Alignment in Interacting Populations of Large Language Models](https://arxiv.org/abs/2402.02896)：构造带人格条件的 Agent 群体，并测量协作对话如何改变人格测试一致性和语言对齐。
+- [A Framework for Effective Invocation Methods of Various LLM Services](https://arxiv.org/abs/2402.03408)：把上下文选择、缓存等 LLM 服务调用方式形式化为成本、延迟和质量权衡，用于在不同服务商之间路由。
+- [In-context learning agents are asymmetric belief updaters](https://arxiv.org/abs/2402.03969)：用工具性学习任务显示，提示式 LLM Agent 更容易从好于预期的结果中更新信念，且这一效应会随反事实反馈和能动性框架变化。
+- [Tell Me More! Towards Implicit User Intention Understanding of Language Model Driven Agents](https://arxiv.org/abs/2402.09205)：提出 IN3 来测试澄清能力，并训练上游交互模型在执行前识别模糊任务、追问意图并重写目标。
+- [MuLan: Multimodal-LLM Agent for Progressive Multi-Object Diffusion](https://arxiv.org/abs/2402.12741)：用 LLM 画师循环把多目标图像提示拆成逐对象生成子任务，并通过 attention guidance 与 VLM 反馈修正位置、大小和属性绑定。
+- [Exploring LLM-Based Agents for Root Cause Analysis](https://arxiv.org/abs/2403.04123)：把事故根因分析扩展为可动态收集日志、指标和数据库证据的 Agent，而不是只依据固定提示诊断。
+- [StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows](https://arxiv.org/abs/2403.11322)：把复杂工具任务表示成状态机，区分由状态和转移提供的过程 grounding 与状态内部的提示或工具动作。
+- [Envisioning the Next-Generation AI Coding Assistants: Insights & Proposals](https://arxiv.org/abs/2403.14592)：总结 IDE 内编码助手的产品经验，重点是使用预期、深度 IDE 与扩展集成、可扩展后端和负责任的应用数据采集。
+- [AIOS](https://arxiv.org/abs/2403.16971)（[开源代码](https://github.com/agiresearch/AIOS)）：LLM agent operating-system harness，把调度、上下文与记忆管理、存储、访问控制和 SDK 接口做成可复用运行时服务。
+- [MIMIR: A Streamlined Platform for Personalized Agent Tuning in Domain Expertise](https://arxiv.org/abs/2404.04285)：提供个性化 Agent tuning 数据管线，将私有知识与合规公开数据结合，也可生成通用指令微调数据。
+- [AgentCoord: Visually Exploring Coordination Strategy for LLM-based Multi-Agent Collaboration](https://arxiv.org/abs/2404.11943)：可视化 Agent 关系、任务依赖和结果对应关系，帮助用户设计多 Agent 协作策略而无需阅读长文本轨迹。
+- [BIRD: A Trustworthy Bayesian Inference Framework for Large Language Models](https://arxiv.org/abs/2404.12494)：把 LLM 生成的因素和粗粒度概率对齐到贝叶斯网络，再通过演绎步骤在信息不完整时估计校准概率。
+- [Aligning LLM Agents by Learning Latent Preference from User Edits](https://arxiv.org/abs/2404.15269)：从历史用户编辑中推断偏好描述，并把这些描述注入后续提示，在不微调的情况下对齐写作 Agent 输出。
+- [Large Language Model Agent as a Mechanical Designer](https://arxiv.org/abs/2404.17525)：把 LLM 设计器与有限元分析反馈耦合，使桁架方案能够在无领域微调下生成、数值评估并迭代修改。
+- [STRIDE: A Tool-Assisted LLM Agent Framework for Strategic and Interactive Decision-Making](https://arxiv.org/abs/2405.16376)：为战略博弈 Agent 配置记忆和专门工具，支持规则跟踪、长期规划、探索和对手推理。
+- [AgentGym: Evolving Large Language Model-based Agents across Diverse Environments](https://arxiv.org/abs/2406.04151)：打包多样环境、轨迹和自进化例程，使 Agent 能超越模仿数据并跨任务改进。
+- [Dissecting Adversarial Robustness of Multimodal LM Agents](https://arxiv.org/abs/2406.12814)：在 VisualWebArena 上定义 ARE，把 Agent 表示为中间输出图，并注入 200 个定向对抗任务追踪攻击如何穿过组件。
+- [Mental Modeling of Reinforcement Learning Agents by Language Models](https://arxiv.org/abs/2406.18505)：测试语言模型能否从行为轨迹推断强化学习 Agent 的隐藏目标、信念和策略。
+- [Richelieu: Self-Evolving LLM-Based Agents for AI Diplomacy](https://arxiv.org/abs/2407.06813)：为长周期多方 Diplomacy 游戏结合战略规划、记忆反思、目标导向谈判和记忆增强。
+- [Air-Ground Collaboration With SPOMP: Semantic Panoramic Online Mapping and Planning](https://arxiv.org/abs/2407.09902)：用语义全景地图作为空地机器人共享状态，支持 GPS 拒止环境中的定位和户外协同任务规划。
+- [AutoFlow: Automated Workflow Generation for Large Language Model Agents](https://arxiv.org/abs/2407.12821)：为 Agent 生成自然语言程序形式的工作过程并迭代评估，减少人工设计任务流程的成本。
+- [Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435)：把 Agent 设计视为代码搜索，由 meta-agent 编写并测试包含新组件和新组合的 agentic system。
+- [AgentMove: A Large Language Model based Agentic Framework for Zero-shot Next Location Prediction](https://arxiv.org/abs/2408.13986)：把移动预测拆成时空记忆挖掘、世界知识生成和推理模块，用于零样本下一位置预测。
+- [FRACTURED-SORRY-Bench: Framework for Revealing Attacks in Conversational Turns Undermining Refusal Efficacy and Defenses over SORRY-Bench](https://arxiv.org/abs/2408.16163)：自动把有害请求拆成看似无害的子问题，相比 SORRY-Bench 基线显著提高多轮越狱成功率。
+- [AI based Multiagent Approach for Requirements Elicitation and Analysis](https://arxiv.org/abs/2409.00038)：把 Agent 分配给用户故事生成、故事质量评估与改进、需求优先级排序，并在真实软件项目上实验。
+- [The Design of an LLM-powered Unstructured Analytics System](https://arxiv.org/abs/2409.00847)：描述 Aryn 系统，由自然语言查询规划器生成 Sycamore 文档处理脚本，在解析后的 PDF 和图像 DocSets 上执行分析。
+- [From MOOC to MAIC: Reshaping Online Teaching and Learning through LLM-driven Agents](https://arxiv.org/abs/2409.03512)：提出 Massive AI-empowered Courses，用 LLM 驱动的多 Agent 角色围绕课程内容重塑在线教学、辅导和个性化学习。
+- [LLM-Agent-UMF: LLM-based Agent Unified Modeling Framework for Seamless Integration of Multi Active/Passive Core-Agents](https://arxiv.org/abs/2409.11393)：定义面向主动和被动核心 Agent 的统一建模框架，并用架构权衡与风险分析评估，以减少术语和模块化漂移。
+- [ChainBuddy: An AI-assisted Agent System for Generating LLM Pipelines](https://arxiv.org/abs/2409.13588)：嵌入 ChainForge，把提示或聊天转成可启动的 LLM 评测管线，并通过用户研究与基线界面对比。
+- [LLMs are One-Shot URL Classifiers and Explainers](https://arxiv.org/abs/2409.14306)：用 one-shot CoT 提示判断 URL 是正常还是钓鱼，并在三个 URL 数据集上生成自然语言解释。
+- [RGD: Multi-LLM Based Agent Debugger via Refinement and Generation Guidance](https://arxiv.org/abs/2410.01242)：把代码修复拆成生成引导和细化角色，让多个 LLM 迭代诊断并改进生成程序。
+- [Designing Staged Evaluation Workflows for LLMs: Integrating Domain Experts, Lay Users, and Model-Generated Evaluation Criteria](https://arxiv.org/abs/2410.02054)：比较专家、普通用户和 LLM 生成的准则在事前与事后阶段的差异，并据此组织领域输出的分阶段评测角色。
+- [Better than Your Teacher: LLM Agents that learn from Privileged AI Feedback](https://arxiv.org/abs/2410.05434)：LEAP 让训练时可见特权状态的 AI 教师提供反馈，再迁移给测试时看不到该状态的学生 Agent。
+- [AgentSquare: Automatic LLM Agent Search in Modular Design Space](https://arxiv.org/abs/2410.06153)：在模块化 Agent 组件和配置空间中搜索，使特定任务 Agent 能自动装配而不是手工设计。
+- [Optima: Optimizing Effectiveness and Efficiency for LLM-Based Multi-Agent System](https://arxiv.org/abs/2410.08115)：用 generate-rank-select-train 循环优化多 Agent 通信，并用同时衡量任务成功、token 效率和可读性的奖励函数训练。
+- [AFlow: Automating Agentic Workflow Generation](https://arxiv.org/abs/2410.10762)：把代码表示的 Agent 工作过程作为搜索空间，用蒙特卡洛树搜索遍历 LLM 调用节点和边。
+- [Agent-as-a-Judge: Evaluate Agents with Agents](https://arxiv.org/abs/2410.10934)：用 Agent 评审者检查中间解题轨迹，并发布包含 55 个 AI 开发任务和层级用户需求标注的 DevAI。
+- [EPS-MoE: Expert Pipeline Scheduler for Cost-Efficient MoE Inference](https://arxiv.org/abs/2410.12247)：按 MoE feed-forward 负载动态选择 GroupGemm 和 DenseGemm kernel，并把计算与通信重叠以提升推理吞吐。
+- [FinQAPT: Empowering Financial Decisions with End-to-End LLM-driven Question Answering Pipeline](https://arxiv.org/abs/2410.13959)：检索金融报告、抽取相关上下文并用 dynamic N-shot prompting 做数值问答，在 FinQA 上暴露模块误差如何传递到端到端管线。
+- [Security Threats in Agentic AI System](https://arxiv.org/abs/2410.14728)：把连接数据库的 Agent 视为攻击面，分析未授权检索、漏洞利用以及个人或机密数据泄露风险。
+- [SELA: Tree-Search Enhanced LLM Agents for Automated Machine Learning](https://arxiv.org/abs/2410.17238)：把 AutoML 管线配置表示成搜索树，用蒙特卡洛树搜索增加实验多样性并细化 LLM 生成代码。
+- [PRACT: Optimizing Principled Reasoning and Acting of LLM Agent](https://arxiv.org/abs/2410.18528)：从轨迹反馈中学习文本化行动原则，并用带奖励反思或自反思的 Reflective Principle Optimization 持续更新。
+- [Interacting Large Language Model Agents. Interpretable Models and Social Learning](https://arxiv.org/abs/2411.01271)：用贝叶斯 revealed preference 与社会学习机制建模交互 Agent，以研究偏差、羊群效应和可解释随机控制。
+- [HOBBIT: A Mixed Precision Expert Offloading System for Fast MoE Inference](https://arxiv.org/abs/2411.01433)：用低精度版本替换不关键的 cache-miss MoE expert，并调度混合精度卸载以降低边缘推理延迟。
+- [LossAgent: Towards Any Optimization Objectives for Image Processing with LLM Agents](https://arxiv.org/abs/2412.04090)：把 LLM 用作 loss-design Agent，理解文本目标、手工感知指标或人类反馈，用于低层图像复原优化。
+- [Towards Agentic Schema Refinement](https://arxiv.org/abs/2412.07786)：在企业数据库上运行多 Agent LLM 模拟，提出并迭代细化小型语义层视图，使混乱 schema 更易查询。
+- [Going beyond Imagination! Enhancing Multi-modal Dialogue Agents with Synthetic Visual Descriptions](https://doi.org/10.18653/v1/2024.sigdial-1.36)：用合成视觉描述补充多模态对话 Agent 的上下文，缓解真实视觉 grounding 不足或说明不完整的问题。
+- [Agent-as-a-Service: An AI-Native Edge Computing Framework for 6G Networks](https://doi.org/10.1109/mnet.2024.3520987)：把 Agent-as-a-Service 表述为面向边缘计算的 AI 原生智能体基础设施。
+- [Beyond Text: Implementing Multimodal Large Language Model-Powered Multi-Agent Systems Using a No-Code Platform](https://arxiv.org/abs/2501.00750)：实现无代码多模态 LLM 多智能体平台，降低企业构建和协调智能体工作流的门槛。
+- [Talk to Right Specialists: Routing and Planning in Multi-agent System for Question Answering](https://arxiv.org/abs/2501.07813)：提出 RIRS，在分布式知识库问答中进行免训练多智能体路由和迭代聚合。
+- [Controlling AI Agent Participation in Group Conversations: A Human-Centered Approach](https://arxiv.org/abs/2501.17258)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [SPeCtrum: A Grounded Framework for Multidimensional Identity Representation in LLM-Based Agent](https://arxiv.org/abs/2502.08599)：用社会身份、个人身份和生活情境三个部分表示 Agent 人设，并通过自动与人工评测检验身份保真度。
+- [Talk Structurally, Act Hierarchically: A Collaborative Framework for LLM Multi-Agent Systems](https://arxiv.org/abs/2502.11098)：提供通用多智能体协作或编排 harness。
+- [UniNet: A Unified Multi-Granular Traffic Modeling Framework for Network Security](https://arxiv.org/abs/2503.04174)：把 session、flow 和 packet 信息组合成 T-Matrix 表征，并用轻量 T-Attent 模型学习网络安全嵌入。
+- [VizTrust: A Visual Analytics Tool for Capturing User Trust Dynamics in Human-AI Communication](https://arxiv.org/abs/2503.07279)：捕获并可视化人机沟通中的用户信任变化，使信任动态可检查而不只从结果反推。
+- [Adaptive routing protocols for determining optimal paths in AI multi-agent systems: a priority- and learning-enhanced approach](https://arxiv.org/abs/2503.07686)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Agentic LMs: Hunting Down Test Smells](https://arxiv.org/abs/2504.07277)：比较单 Agent、双 Agent 和四 Agent 流程检测并重构 5 类 Java test smell，并做 Python、Go 和 JavaScript 跨语言检查。
+- [Token Level Routing Inference System for Edge Devices](https://arxiv.org/abs/2504.07878)：让端侧小模型负责大多数 token 解码，只在关键 token 可能影响质量或幻觉风险时咨询云端大模型。
+- [Assessing and Enhancing the Robustness of LLM-Based Multi-Agent Systems Through Chaos Engineering](https://arxiv.org/abs/2505.03096)：将混沌工程用于评估并提升 LLM 多智能体系统鲁棒性。
+- [YuLan-OneSim: Towards the Next Generation of Social Simulator with Large Language Models](https://arxiv.org/abs/2505.07581)：提供 YuLan-OneSim 无代码 LLM 社会仿真器，并内置多类默认场景。
+- [LAMeTA: Intent-Aware Agentic Network Optimization via a Large AI Model-Empowered Two-Stage Approach](https://arxiv.org/abs/2505.12247)：先理解网络意图，再用大 AI 模型辅助优化，把网络目标转成可执行配置决策。
+- [Agent Context Protocols Enhance Collective Inference](https://arxiv.org/abs/2505.14569)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Implementing Agents in JavaScript](https://arxiv.org/abs/2505.18228)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [BiasFilter: An Inference-Time Debiasing Framework for Large Language Models](https://arxiv.org/abs/2505.23829)：在生成阶段应用推理时过滤来减少偏见输出，不依赖重新训练模型。
+- [Abstract Counterfactuals for Language Model Agents](https://arxiv.org/abs/2506.02946)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Abstract Counterfactuals for Language Model Agents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [MAEBE: Multi-Agent Emergent Behavior Framework](https://arxiv.org/abs/2506.03053)：提出 MAEBE，用于研究多智能体涌现行为。
+- [ACNBP](https://arxiv.org/abs/2506.13590)：面向异构 Agent 的能力协商与绑定协议。核心思路是把发现、候选筛选、安全协商、能力证明和绑定承诺结构化，使开放多 Agent 系统无需预设同质接口也能互操作。
+- [The Effect of State Representation on LLM Agent Behavior in Dynamic Routing Games](https://arxiv.org/abs/2506.15624)：系统研究动态路由博弈中 LLM 智能体的自然语言状态表示。
+- [GoalfyMax: A Protocol-Driven Multi-Agent System for Intelligent Experience Entities](https://arxiv.org/abs/2507.09497)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [LLM-Guided Agentic Object Detection](https://arxiv.org/abs/2507.10844)：让 LLM 生成场景特定目标名并调用 open-vocabulary detector，再用 CAAP 和 SNAP 分别评估定位与命名。
+- [Beyond DNS: Unlocking the Internet of AI Agents via the NANDA Index and Verified AgentFacts](https://arxiv.org/abs/2507.14263)：提出 NANDA Index 与可验证 AgentFacts，作为互联网规模 AI 智能体的身份、发现、路由和认证基础设施。
+- [Simulating Generative Social Agents via Theory-Informed Workflow Design](https://arxiv.org/abs/2508.08726)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Tapas are free! Training-Free Adaptation of Programmatic Agents via LLM-Guided Program Synthesis in Dynamic Environments](https://arxiv.org/abs/2508.11425)：通过 LLM 引导程序合成，让程序化智能体适应动态环境。
+- [Vector embedding of multi-modal texts: a tool for discovery?](https://arxiv.org/abs/2509.08216)：用 VLM 生成文本图像嵌入索引 3600 页计算机科学教材，并在 75 个自然语言发现查询上比较距离度量。
+- [LightAgent: Production-level Open-source Agentic AI Framework](https://arxiv.org/abs/2509.09292)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Population-Aligned Persona Generation for LLM-based Social Simulation](https://arxiv.org/abs/2509.10127)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [AutoSpec: An Agentic Framework for Automatically Drafting Patent Specification](https://arxiv.org/abs/2509.19640)：通过 Agentic 循环把发明披露扩展成结构化专利说明书章节，实现专利 specification 自动起草。
+- [Reimagining Agent-based Modeling with Large Language Model Agents via Shachi](https://arxiv.org/abs/2509.21862)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [AIPOM: Agent-aware Interactive Planning for Multi-Agent Systems](https://arxiv.org/abs/2509.24826)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [AgentRouter: A Knowledge-Graph-Guided LLM Router for Collaborative Multi-Agent Question Answering](https://arxiv.org/abs/2510.05445)：通过知识图谱引导的路由选择协作式多智能体问答配置。
+- [Generalized Multi-agent Social Simulation Framework](https://arxiv.org/abs/2510.06225)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Prototyping Multimodal GenAI Real-Time Agents with Counterfactual Replays and Hybrid Wizard-of-Oz](https://arxiv.org/abs/2510.06872)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Exemplar-Guided Planing: Enhanced LLM Agent for KGQA](https://arxiv.org/abs/2510.15283)：用实体模板规范化 KGQA 训练问题，通过 FAISS 检索相似示例及其推理路径，再引导图探索。
+- [RiskTagger: An LLM-based Agent for Automatic Annotation of Web3 Crypto Money Laundering Behaviors](https://arxiv.org/abs/2510.17848)：结合报告线索抽取、多链交易路径推理和面向审计者的解释，自动标注 Web3 洗钱行为。
+- [Fetch.ai: An Architecture for Modern Multi-Agent Systems](https://arxiv.org/abs/2510.18699)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Beyond Prompt Engineering: Neuro-Symbolic-Causal Architecture for Robust Multi-Objective AI Agents](https://arxiv.org/abs/2510.23682)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Modular Task Decomposition and Dynamic Collaboration in Multi-Agent Systems Driven by Large Language Models](https://arxiv.org/abs/2511.01149)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [UFO3](https://arxiv.org/abs/2511.11332)（开源代码：未找到稳定公开仓库）：面向桌面、移动设备、服务器和边缘端点的跨设备数字 Agent 编排系统；设计关键词：分布式任务 DAG、异步编排、显式控制与数据依赖。
+- [Distributed Agent Reasoning Across Independent Systems With Strict Data Locality](https://arxiv.org/abs/2511.16292)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Agent-Kernel](https://arxiv.org/abs/2512.01610)：面向 LLM 社会模拟的微内核多 Agent 框架。核心思路是解耦核心系统功能、模拟逻辑、认知过程、物理环境和动作执行，使大规模模拟能更可靠地改变群体、画像和环境规则。
+- [ProAgent](https://arxiv.org/abs/2512.06721)：利用按需感知上下文的主动式 Agent harness。核心思路是结合分层感知、上下文抽取和主动辅助，使 Agent 能持续关注用户环境，同时避免始终承担高成本感知。
+- [Sophia: A Persistent Agent Framework of Artificial Life](https://arxiv.org/abs/2512.18202)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Sophia: A Persistent Agent Framework of Artificial Life”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [FLARE: Federated Lightweight Agents for Reinforcement Environments in Microgrids](https://doi.org/10.1109/tnse.2025.3587010)：IEEE 元数据表明该系统面向微电网强化环境中的 federated lightweight agents，通过联邦协同连接本地能源控制 Agent。
+- [AI Analog Circuit Design Agents : On Knowledge Extraction and Transfer with Knowledge Graphs](https://doi.org/10.1109/iccad66269.2025.11240770)：用知识图谱在模拟电路设计 Agent 间抽取和迁移设计知识，目标是复用电路设计推理而非一次性生成。
+- [A Case Study on Delegating Critical Tasks to Agentic AI and Prototype Access Control Methods](https://doi.org/10.1109/cars67163.2025.11337816)：研究关键任务委派给 Agentic AI 时的原型访问控制方法，把授权边界纳入 Agent 执行设计。
+- [Dynamic Synthetic Data Generation through Human-Guided Multi-Agent Collaboration](https://doi.org/10.1109/icecet63943.2025.11472004)：把人类指导和多个 Agent 协同结合起来动态生成合成数据，在数据创建闭环中保留明确的人类控制点。
+- [Multi-Agent System for Querying and Visualization Using Large Language Models](https://doi.org/10.1109/ccet66260.2025.11199504)：将查询处理和可视化生成分配给 LLM 驱动的多个 Agent，让用户以问句请求数据视图并获得图表化输出。
+- [LLM-Driven Social Influence for Cooperative Behavior in Multi-Agent Systems](https://doi.org/10.1109/access.2025.3548451)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Cooperative Ai Agents Using Supervised Global Workspaces](https://doi.org/10.1109/cai64502.2025.00056)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Cooperative Ai Agents Using Supervised Global Workspaces”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [HeteroAgent: A Confidence-Driven Heterogeneous Multi-Agent Framework for Complexity-Aware Task Coordination](https://doi.org/10.1109/eiecc67963.2025.11409492)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Adaptive and Knowledge-Evolving Multi-Agent AI](https://doi.org/10.1109/i-pact65952.2025.11307854)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Intelligent Messaging Channel Selector (IMCS) for Context-Aware AI Agent Communication](https://doi.org/10.1109/icaiccit68829.2025.11434250)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Modular Approach for Controlling Multi-Agent Systems with Natural Language](https://doi.org/10.1109/isqed65160.2025.11014337)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [CollabPersona: A Framework for Collaborative Decision Analysis in Persona Driven LLM-Based Multi-Agent Systems](https://doi.org/10.1109/mlsp62443.2025.11204223)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [LLM-Powered Conversational Multi-Agent Cognitive System for Collaborative Task Solving](https://doi.org/10.5753/wesaac.2025.37528)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“LLM-Powered Conversational Multi-Agent Cognitive System for Collaborative Task Solving”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Standardized Framework for Agent-to-Agent Communication in Distributed AI Ecosystems](https://doi.org/10.59573/emsj.9(3).2025.57)：.2025.57)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Software-Defined Agentic Serving](https://arxiv.org/abs/2601.03197)：提出面向多智能体 LLM pipeline 的可编程 serving。核心思路是根据运行时系统状态调节通信与服务行为，而不是固定静态 serving 参数。
+- [HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](https://arxiv.org/abs/2601.05656)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [MirrorBench: An Extensible Framework to Evaluate User-Proxy Agents for Human-Likeness](https://arxiv.org/abs/2601.08118)：用词汇多样性指标、LLM judge 指标以及 Human-Human 或 Proxy-Proxy 校准控件评估用户代理 Agent 的人类相似话语。
+- [Agentic Persona Control and Task State Tracking for Realistic User Simulation in Interactive Scenarios](https://arxiv.org/abs/2601.15290)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Agentic Persona Control and Task State Tracking for Realistic User Simulation in Interactive Scenarios”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [HumanStudy-Bench: Towards AI Agent Design for Participant Simulation](https://arxiv.org/abs/2602.00685)：用 Filter-Extract-Execute-Evaluate 管线复现已发表的人类被试实验，区分基础模型行为与被试 Agent 规格。
+- [PRISM](https://arxiv.org/abs/2602.01532)：把主动介入建模为成本敏感选择性行动的 proactive-agent deliberation harness；设计关键词：接受概率校准门控、不确定性感知推理、用户负担控制。
+- [OSCAgent: Accelerating the Discovery of Organic Solar Cells with LLM Agents](https://arxiv.org/abs/2602.04510)：用 LLM Agent 协调有机太阳能电池文献、候选材料推理和实验规划，加速材料发现。
+- [When Agents Say One Thing and Do Another: Validating Elicited Beliefs from LLMs](https://arxiv.org/abs/2602.06286)：同时诱导概率判断和行动决策，再用决策理论一致性测试判断报告信念能否解释 Agent 行为。
+- [On Theoretically-Driven LLM Agents for Multi-Dimensional Discourse Analysis](https://arxiv.org/abs/2602.13713)：在政治辩论改写功能任务上比较加入论证理论 RAG 的多 Agent 话语分析系统与零样本基线。
+- [Agent-OSI](https://arxiv.org/abs/2602.13795)：给 decentralized Internet of Agents 设计 layered protocol stack，提供跨任务互操作 harness 与协议参考。
+- [Beyond Context Sharing: A Unified Agent Communication Protocol (ACP) for Secure, Federated, and Autonomous Agent-to-Agent (A2A) Orchestration](https://arxiv.org/abs/2602.15055)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Beyond Context Sharing: A Unified Agent Communication Protocol (ACP) for Secure, Federated, and Autonomous Agent-to-Agent (A2A) Orchestration”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [RIVA: Leveraging LLM Agents for Reliable Configuration Drift Detection](https://arxiv.org/abs/2603.02345)：在检测基础设施配置漂移时显式考虑错误工具输出，使 Agent 区分真实 IaC 不一致和不可靠遥测。
+- [The FERMIACC: Agents for Particle Theory](https://arxiv.org/abs/2603.22538)：使用 OpenAI agents 脚手架大规模生成并定量验证高能物理理论假设。
+- [AgentFixer: From Failure Detection to Fix Recommendations in Agentic Systems](https://arxiv.org/abs/2603.29848)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Learning to Seek Help: Dynamic Collaboration Between Small and Large Language Models](https://arxiv.org/abs/2604.17827)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Learning to Seek Help: Dynamic Collaboration Between Small and Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Forage V2](https://arxiv.org/abs/2604.19837)：面向开放式任务的自治智能体学习组织框架。核心思想：隔离评估者与规划者角色，同时跨运行积累可复用知识、在不同能力模型间迁移，并防止知识退化。
+- [Combining Mechanical and Agentic Specification Inference for Move](https://arxiv.org/abs/2605.10005)：通过 MCP 暴露 weakest-precondition 分析和 Move Prover，让编码 Agent 推断循环不变式和高层规格。
+- [TopoClaw: A Human-Centric and Topology-Aware Agent Operating System](https://arxiv.org/abs/2605.15556)：面向人的 topology-aware Agent OS。核心思路是在设备拓扑与社交拓扑之间路由行动，同时保留来源证明、角色权限与可问责的授权治理。
+- [Synergetic Adaptive Orchestration and Governance](https://doi.org/10.1109/SoutheastCon63549.2026.11476668)：从自适应编排与治理闭环角度组织生产级多智能体系统。
+- [RoleSimLLM: Towards large-scale and comprehensive social propagation simulation via role-based LLM-driven agents](https://doi.org/10.1016/j.ipm.2026.104689)：面向跨领域智能体系统的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Learning to Debate: Optimal Stopping Strategies for Multi-Agent LLM Deliberation](https://doi.org/10.1109/gaiis69281.2026.11519273)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Learning to Debate: Optimal Stopping Strategies for Multi-Agent LLM Deliberation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Centralized Agent Orchestration in Multi-Agent Systems](https://doi.org/10.1109/smartindustrycon68821.2026.11492954)：面向通用及跨领域 LLM 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Centralized Agent Orchestration in Multi-Agent Systems”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Affective-CoT: Decomposing Multimodal Emotion Reasoning through a Hierarchical Cognitive Workflow](https://doi.org/10.1145/3746027.3762009)：把多模态情绪推理拆成层级认知链，在最终分类前显式化中间情感线索。
+- [Reasoning-agent-driven process simulation, optimization, carbon accounting and decarbonization of distillation](https://doi.org/10.1038/s44172-025-00583-3)：把 reasoning agents 与蒸馏系统的流程模拟、优化、碳核算和脱碳决策耦合。
+- [Navigating Social Dilemmas with LLM-based Agents via Consideration of Future Consequences](https://doi.org/10.24963/ijcai.2025/26)：实现 CFC-Agent，为共享资源博弈中的 LLM Agent 加入未来后果考虑，避免短期剥削导致环境过早耗尽。
+- [CENTS: A Flexible and Cost-Effective Framework for LLM-Based Table Understanding](https://doi.org/10.14778/3749646.3749714)：压缩表格 LLM 输入，在降低 token 成本的同时改进列类型标注等表格理解任务。
+- [Intelligent Agents with LLM-based Process Automation](https://doi.org/10.1145/3637528.3671646)：KDD 元数据表明该系统面向 LLM-based process automation，把业务或分析流程转成可执行自动化步骤。
+- [PDFChatAnnotator: A Human-LLM Collaborative Multi-Modal Data Annotation Tool for PDF-Format Catalogs](https://doi.org/10.1145/3640543.3645174)：将聊天式 LLM 辅助与人工标注结合，用于多模态 PDF 目录，并在标注闭环中保留目录结构和视觉内容。
+- [Let It Go or Control It All? The Dilemma of Prompt Engineering in Generative Agent‐Based Models](https://doi.org/10.1002/sdr.70008)：把生成式 agent-based models 分析为跨 profile、memory、planning 和 action 的提示驱动信息传导网络，并警示过度控制模拟。
+- [Unveiling the Potential of LLMs in Simulated Society: A Knowledge-Driven LLM Agent Framework for User Modeling](https://doi.org/10.1145/3701716.3719232)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [BEE: Belief-Value-Aligned, Explainable, and Extensible Cognitive Framework for Conversational Agents](https://doi.org/10.1145/3717511.3747067)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Advancing Agentic AI through Communication Protocols](https://doi.org/10.32628/ijsrst25125127)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [LLMAGENTNET: A COLLABORATIVE NETWORK OF AUTONOMOUS AI AGENTS FOR COMPLEX TASK EXECUTION](https://doi.org/10.36930/40350412)：面向通用 Agent 与多 Agent 方法提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。

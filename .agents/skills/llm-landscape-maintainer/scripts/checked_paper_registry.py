@@ -41,6 +41,7 @@ def load_s2_module():
 
 S2 = load_s2_module()
 ARXIV_RE = re.compile(r"\d{4}\.\d{4,5}(?:v\d+)?")
+ARXIV_DOI_RE = re.compile(r"10\.48550/arxiv\.(\d{4}\.\d{4,5}(?:v\d+)?)", re.I)
 
 
 def now() -> str:
@@ -57,7 +58,11 @@ def canonical_identifier(identifier: str) -> str:
     if normalized.lower().startswith("arxiv:"):
         return f"arXiv:{strip_arxiv_version(normalized.split(':', 1)[1])}"
     if normalized.lower().startswith("doi:"):
-        return f"DOI:{normalized.split(':', 1)[1].lower()}"
+        doi = normalized.split(":", 1)[1]
+        arxiv_match = ARXIV_DOI_RE.fullmatch(doi)
+        if arxiv_match:
+            return f"arXiv:{strip_arxiv_version(arxiv_match.group(1))}"
+        return f"DOI:{doi.lower()}"
     if normalized.lower().startswith("corpusid:"):
         return f"CorpusId:{normalized.split(':', 1)[1]}"
     if re.fullmatch(r"[0-9a-f]{40}", normalized, flags=re.I):
@@ -83,7 +88,11 @@ def best_url(paper: dict[str, Any], identifier: str | None = None) -> str:
     if identifier and identifier.lower().startswith("arxiv:"):
         return f"https://arxiv.org/abs/{identifier.split(':', 1)[1]}"
     if external.get("DOI"):
-        return f"https://doi.org/{external['DOI']}"
+        doi = str(external["DOI"])
+        arxiv_match = ARXIV_DOI_RE.fullmatch(doi)
+        if arxiv_match:
+            return f"https://arxiv.org/abs/{strip_arxiv_version(arxiv_match.group(1))}"
+        return f"https://doi.org/{doi}"
     return paper.get("url") or ""
 
 
@@ -136,9 +145,42 @@ def expand_files(items: list[str]) -> list[Path]:
     return expand_markdown_args(items)
 
 
+def collect_identifiers_with_docs(files: list[Path], direct_ids: list[str]) -> tuple[list[str], dict[str, set[str]]]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    docs_by_key: dict[str, set[str]] = {}
+
+    def add(raw: str, path: Path | None = None) -> None:
+        normalized = S2.normalize_identifier(raw)
+        if not normalized:
+            return
+        key = canonical_identifier(normalized)
+        if key not in seen:
+            seen.add(key)
+            ordered.append(normalized)
+        if path is not None:
+            docs_by_key.setdefault(key, set()).add(str(path))
+
+    for raw in direct_ids:
+        add(raw)
+
+    for path in files:
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for match in S2.ARXIV_URL_RE.finditer(text):
+            add(match.group(1), path)
+        for match in S2.ARXIV_TEXT_RE.finditer(text):
+            add(match.group(1), path)
+        for match in S2.DOI_URL_RE.finditer(text):
+            add(f"DOI:{match.group(1)}", path)
+        for match in S2.S2_PAPER_RE.finditer(text):
+            add(match.group(1), path)
+
+    return ordered, docs_by_key
+
+
 def sync_included(args: argparse.Namespace) -> int:
     files = expand_files(args.files)
-    identifiers = S2.collect_identifiers(files, args.id)
+    identifiers, docs_by_key = collect_identifiers_with_docs(files, args.id)
     added = 0
     with locked_registry(args.registry, write=True, timeout=args.lock_timeout, wait=args.lock_wait) as registry:
         for identifier in identifiers:
@@ -146,12 +188,7 @@ def sync_included(args: argparse.Namespace) -> int:
             record = registry["papers"].setdefault(key, {})
             if not record:
                 added += 1
-            docs = set(record.get("docs") or [])
-            for path in files:
-                text = path.read_text(encoding="utf-8", errors="ignore")
-                raw = key.split(":", 1)[1] if ":" in key else key
-                if raw in text or key in text:
-                    docs.add(str(path))
+            docs = set(record.get("docs") or []) | docs_by_key.get(key, set())
             record.update(
                 {
                     "status": "included",
@@ -196,11 +233,26 @@ def edge_paper(item: dict[str, Any], edge: str) -> dict[str, Any]:
     return paper if isinstance(paper, dict) else {}
 
 
-def collect_cache_candidates(cache_dir: Path, since_year: int) -> dict[str, dict[str, Any]]:
+def edge_seed_safe_name(path: Path) -> str:
+    name = path.name
+    for suffix in [".citations.json", ".references.json"]:
+        if name.endswith(suffix):
+            return name[: -len(suffix)]
+    return path.stem
+
+
+def collect_cache_candidates(
+    cache_dir: Path,
+    since_year: int,
+    *,
+    seed_safe_names: set[str] | None = None,
+) -> dict[str, dict[str, Any]]:
     candidates: dict[str, dict[str, Any]] = {}
     edge_paths = sorted((cache_dir / "edges").glob("*.citations.json"))
     edge_paths.extend(sorted((cache_dir / "edges").glob("*.references.json")))
     for path in edge_paths:
+        if seed_safe_names is not None and edge_seed_safe_name(path) not in seed_safe_names:
+            continue
         data = read_json(path)
         if not isinstance(data, dict) or data.get("_error"):
             continue
@@ -283,9 +335,19 @@ def write_candidates_json(path: Path, candidates: list[dict[str, Any]]) -> None:
 
 
 def candidates_command(args: argparse.Namespace) -> int:
-    candidates = collect_cache_candidates(args.cache_dir, args.since_year)
+    files = expand_files(args.files) if args.files else []
+    direct_ids = list(args.id)
+    if args.ids_file:
+        direct_ids.extend(
+            line.strip()
+            for line in args.ids_file.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        )
+    seed_ids = S2.collect_identifiers(files, direct_ids) if files or direct_ids else []
+    seed_safe_names = {S2.safe_name(identifier) for identifier in seed_ids} if seed_ids else None
+    candidates = collect_cache_candidates(args.cache_dir, args.since_year, seed_safe_names=seed_safe_names)
     with locked_registry(args.registry, write=False, timeout=args.lock_timeout, wait=args.lock_wait) as registry:
-        checked = set(registry.get("papers", {}))
+        checked = {canonical_identifier(key) for key in registry.get("papers", {})}
     filtered = [
         item
         for key, item in candidates.items()
@@ -302,6 +364,8 @@ def candidates_command(args: argparse.Namespace) -> int:
     write_candidates_markdown(args.out, filtered, include_abstract=args.include_abstract, top=args.top)
     if args.json_out:
         write_candidates_json(args.json_out, filtered)
+    if seed_safe_names is not None:
+        print(f"Seed identifiers: {len(seed_ids)}", flush=True)
     print(f"Cache candidates: {len(candidates)}", flush=True)
     print(f"Checked registry records: {len(checked)}", flush=True)
     print(f"Unchecked candidates: {len(filtered)}", flush=True)
@@ -477,7 +541,14 @@ def main() -> int:
     sync.set_defaults(func=sync_included)
 
     candidates = subparsers.add_parser("candidates", help="List S2 cache candidates absent from the registry.")
+    candidates.add_argument("files", nargs="*", help="Optional Markdown files whose identifiers should be used as seed filters.")
     candidates.add_argument("--cache-dir", type=Path, default=Path(".tmp/semantic_citation_cache"))
+    candidates.add_argument("--id", action="append", default=[], help="Explicit seed identifier to include in the filter.")
+    candidates.add_argument(
+        "--ids-file",
+        type=Path,
+        help="Read one explicit arXiv/DOI/S2 seed identifier per line; unlike positional files, this does not parse the file as Markdown.",
+    )
     candidates.add_argument("--since-year", type=int, default=dt.date.today().year - 1)
     candidates.add_argument("--keyword", action="append", help="Filter candidates by title or abstract keyword.")
     candidates.add_argument("--top", type=int, default=300)

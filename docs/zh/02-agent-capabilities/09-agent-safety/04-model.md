@@ -1,30 +1,2237 @@
 # 2.9.4 Model
 
+- [WASA: WAtermark-based Source Attribution for Large Language Model-Generated Data](https://arxiv.org/abs/2310.00646)：在 LLM 生成过程中嵌入提供方专属水印，使来源归因能在对抗条件下识别哪些训练数据贡献方影响了生成文本。
+- [Prompting Fairness: Learning Prompts for Debiasing Large Language Models](https://doi.org/10.18653/v1/2024.ltedi-1.6)：学习用于 LLM 输出去偏的提示，把公平性改进视为模型适配和提示学习问题。
+- [TMFD: Two-Stage Meta-learning Feature Disentanglement Framework for DeepFake Detection](https://doi.org/10.1109/ijcb62174.2024.10744435)：用两阶段 meta-learning 与特征解耦做 DeepFake 检测，补充与滥用检测相关的模型侧方法。
+- [The Art of Deception: Robust Backdoor Attack using Dynamic Stacking of Triggers](https://arxiv.org/abs/2401.01537)：提出 DynamicTrigger 音频后门，通过改变信号采样率并用拍手等触发声掩蔽说话人身份，在保持干净准确率的同时攻击 ASR。
+- [A Mechanistic Understanding of Alignment Algorithms: A Case Study on DPO and Toxicity](https://arxiv.org/abs/2401.01967)：表明 DPO 通过绕过而非移除预训练毒性能力来降低有害输出，并展示可恢复被压制行为的去对齐路径。
+- [MLLM-Protector: Ensuring MLLM’s Safety without Hurting Performance](https://arxiv.org/abs/2401.02906)：用即插即用危害检测器和去毒化器防御 MLLM 恶意视觉输入，先识别有害响应再改写，无需重训基座模型。
+- [The Butterfly Effect of Altering Prompts: How Small Changes and Jailbreaks Affect Large Language Model Performance](https://arxiv.org/abs/2401.03729)：量化 LLM 数据标注的提示敏感性，显示细微格式改动、XML 请求和越狱式措辞都可能翻转分类决策。
+- [Enhanced Generative Adversarial Network with Leaked Information (E-LeakGAN): A deep learning framework for synthesizing computational creativity in scientific domain](https://doi.org/10.1016/j.asoc.2025.114291)：提出带泄露信息机制的增强 GAN，用于合成科学领域的计算创造性样本。
+- [Enhancing autonomous driving safety in real lane-changing scenarios under friction variability: A friction-adaptive shield reinforcement learning framework.](https://doi.org/10.1016/j.aap.2025.108265)：用 friction-adaptive shield reinforcement learning 改进可变路面摩擦下的安全变道策略。
+- [VLM-RL: A unified vision language models and reinforcement learning framework for safe autonomous driving](https://doi.org/10.1016/j.trc.2025.105321)：结合 vision-language models 与 reinforcement learning，用于安全自动驾驶决策。
+- [Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training](https://arxiv.org/abs/2401.05566)：训练概念验证型欺骗性 LLM 策略，其后门行为在监督微调、强化学习和对抗式安全训练后仍会保留。
+- [TOFU: A Task of Fictitious Unlearning for LLMs](https://arxiv.org/abs/2401.06121)：构建包含合成作者画像、遗忘集、指标和基线的遗忘基准，用于检验 LLM 是否真正移除记忆事实。
+- [Scissorhands: Scrub Data Influence via Connection Sensitivity in Networks](https://arxiv.org/abs/2401.06187)：通过寻找连接敏感参数、重置最有影响的权重，并用梯度投影微调来清除目标数据影响，同时保留留存数据性能。
+- [Intention Analysis Makes LLMs A Good Jailbreak Defender](https://arxiv.org/abs/2401.06561)：使用两阶段意图分析提示，先推断用户底层意图，再让最终回答依据符合策略的意图推理生成。
+- [Few-Shot Detection of Machine-Generated Text using Style Representations](https://arxiv.org/abs/2401.06712)：通过人类风格表征进行少样本机器生成文本检测，而不是依赖嫌疑生成器样本训练。
+- [Signed-Prompt: A New Approach to Prevent Prompt Injection Attacks Against LLM-Integrated Applications](https://arxiv.org/abs/2401.07612)：用加密签名的命令片段区分可信指令和不可信内容，并给出提示工程与微调两种 prompt injection 防御形态。
+- [Generative Steganography Based on Long Readable Text Generation](https://doi.org/10.1109/tcss.2022.3174013)：使用即插即用语言模型和可嵌入候选词池，在主题一致的长文本中隐藏消息，同时保持可读性和提取准确率。
+- [Large Language Models Portray Socially Subordinate Groups as More Homogeneous, Consistent with a Bias Observed in Humans](https://arxiv.org/abs/2401.08495)：度量 ChatGPT 生成中的同质化偏差，发现其对社会从属种族和性别群体的刻画比优势群体更狭窄。
+- [PVASS-MDD: Predictive Visual-Audio Alignment Self-Supervision for Multimodal Deepfake Detection](https://doi.org/10.1109/tcsvt.2023.3309899)：通过三流自监督阶段学习预测式视听对齐，再利用伪造媒体中的视听不一致检测深伪。
+- [Low-Quality Deepfake Detection via Unseen Artifacts](https://doi.org/10.1109/tai.2023.3299894)：用学习到的可见性矩阵暴露社交媒体压缩后仍可分辨的隐蔽伪造痕迹，检测低质量压缩深伪媒体。
+- [NTD: Non-Transferability Enabled Deep Learning Backdoor Detection](https://doi.org/10.1109/tifs.2023.3312973)：利用触发器跨模型不可迁移性作为运行时后门检测信号，比较可疑输入与其预测类别样本在特征空间中的相似度。
+- [All in How You Ask for It: Simple Black-Box Method for Jailbreak Attacks](https://arxiv.org/abs/2401.09798)：构建黑盒越狱流程，让目标模型迭代把有害请求改写成看似无害的提示，在少量迭代内达到高攻击成功率。
+- [Exposing Lip-syncing Deepfakes from Mouth Inconsistencies](https://arxiv.org/abs/2401.10113)：用 LIPINC 检测唇形同步深伪，重点捕捉嘴部区域相邻帧之间的时间不一致。
+- [Pruning for Protection: Increasing Jailbreak Resistance in Aligned LLMs Without Fine-Tuning](https://arxiv.org/abs/2401.10862)：显示适度 WANDA 剪枝可在不微调的情况下提高越狱抵抗力，通过强化注意力并增加模型对人工越狱结构的敏感性实现。
+- [The Ethics of Interaction: Mitigating Security Threats in LLMs](https://arxiv.org/abs/2401.12273)：梳理 LLM 安全的五类交互威胁，并提出面向伦理的评估工具，覆盖 prompt injection、越狱、PII 暴露、露骨内容和仇恨内容。
+- [Red Teaming Visual Language Models](https://arxiv.org/abs/2401.12915)：提出 RTVLM 红队数据集，包含围绕忠实性、隐私、安全和公平性的视觉语言子任务，用于评估 VLM 的有害或不准确行为。
+- [Adaptive Text Watermark for Large Language Models](https://arxiv.org/abs/2401.13927)：只在辅助模型判断为高熵的 token 分布上施加水印，在保持低熵文本质量的同时支持无提示检测。
+- [Black-Box Access is Insufficient for Rigorous AI Audits](https://arxiv.org/abs/2401.14446)：指出黑盒审计会遗漏需白盒和部署上下文访问才能发现的风险，主张审计协议覆盖权重、激活、代码、数据和部署细节。
+- [AI auditing: The Broken Bus on the Road to AI Accountability](https://arxiv.org/abs/2401.14462)：按监管者、公民社会、学界、新闻、咨询和法律等角色划分 AI 审计实践，并分析哪些审计设计能转化为问责结果。
+- [Unlearning Traces the Influential Training Data of Language Models](https://arxiv.org/abs/2401.15241)：提出 UnTrac，通过对数据集执行梯度上升或逆向遗忘并测量预测变化，估计训练数据集对语言模型的影响。
+- [Model Supply Chain Poisoning: Backdooring Pre-trained Models via Embedding Indistinguishability](https://arxiv.org/abs/2401.15883)：提出 TransTroj，一种面向预训练模型供应链的任务可迁移后门，使触发器在下游微调后仍保持有效。
+- [A Cross-Language Investigation into Jailbreak Attacks in Large Language Models](https://arxiv.org/abs/2401.16765)：用语义保持翻译算法研究多语言越狱，显示保留有害意图的跨语言表达可以绕过安全过滤。
+- [Provably Robust Multi-bit Watermarking for AI-generated Text via Error Correction Code](https://arxiv.org/abs/2401.16820)：将多比特文本水印与纠错编码结合，使生成文本能携带用户标识，并在扰动下支持稳健来源追踪。
+- [Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks](https://arxiv.org/abs/2401.17263)：用 Robust Prompt Optimization 优化轻量、可迁移的防御后缀，并在防御目标中直接建模自适应越狱对手。
+- [Prompt-Driven LLM Safeguarding via Directed Representation Optimization](https://arxiv.org/abs/2401.18018)：分析安全提示在表征空间中的作用，并用 Directed Representation Optimization 将有害查询推向更强拒答方向，同时限制过度拒答。
+- [Machine Unlearning for Image-to-Image Generative Models](https://arxiv.org/abs/2402.00351)：把机器遗忘扩展到图像到图像生成模型，用高效目标函数移除遗忘样本影响并保持留存样本生成质量。
+- [Safety of Multimodal Large Language Models on Images and Text](https://arxiv.org/abs/2402.00357)：综述图文输入 MLLM 的安全评估、攻击和防御，涵盖数据集、指标、越狱与缓解方法。
+- [Fast Exact Unlearning for In-Context Learning Data for LLMs](https://arxiv.org/abs/2402.00751)：通过把梯度微调替换为上下文学习并删除相关示例，实现对 LLM 适配数据的精确遗忘。
+- [Vaccine: Perturbation-aware Alignment for Large Language Model](https://arxiv.org/abs/2402.01109)：提出扰动感知对齐，训练隐藏嵌入对构造的有害微调扰动保持不变。
+- [An Information Theoretic Approach to Machine Unlearning](https://arxiv.org/abs/2402.01401)：从信息增益推导零样本遗忘规则，在无需重训练的情况下扩展忘记样本移除并保持模型效用。
+- [On Catastrophic Inheritance of Large Foundation Models](https://arxiv.org/abs/2402.01909)：将 catastrophic inheritance 定义为大型基础模型从有偏、噪声、损坏或分布外预训练数据继承而来的下游安全失败。
+- [Data Poisoning for In-context Learning](https://arxiv.org/abs/2402.02160)：提出 ICLPoison 离散文本投毒攻击，通过操纵上下文示例引导隐藏状态并在不微调时劣化 LLM 预测。
+- [Safety Fine-Tuning at (Almost) No Cost: A Baseline for Vision Large Language Models](https://arxiv.org/abs/2402.02207)：整理 VLGuard 安全指令数据，并用于标准或事后 VLLM 微调，以减少有害响应和简单越狱脆弱性。
+- [DisDet: Exploring Detectability of Backdoor Attack on Diffusion Models](https://arxiv.org/abs/2402.02739)：研究后门扩散模型中投毒噪声的可检测性，并构建 DisDet 在生成前暴露携带触发器的输入。
+- [C-RAG: Certified Generation Risks for Retrieval-Augmented Language Models](https://arxiv.org/abs/2402.03181)：为检索增强语言模型推导检索何时能降低幻觉或错配风险的条件，从而给出生成风险认证。
+- [GUARD: Role-playing to Generate Natural-language Jailbreakings to Test Guideline Adherence of Large Language Models](https://arxiv.org/abs/2402.03299)：用四个 LLM 角色拆分攻击设计并重组越狱特征，生成自然语言越狱样本以测试指南遵循。
+- [The Instinctive Bias: Spurious Images lead to Hallucination in MLLMs](https://arxiv.org/abs/2402.03757)：提出包含 7,308 对样本的 CorrelationQA，用于度量由相关但答案不一致图像引发的视觉错觉幻觉。
+- [Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs](https://arxiv.org/abs/2402.03927)：系统分析 GPT-3.5 和 GPT-4 研究中的数据污染与间接泄漏，并指出会使闭源模型结果不可靠的评测做法。
+- [Risks of AI scientists: prioritizing safeguarding over autonomy](https://arxiv.org/abs/2402.04247)：梳理基于 LLM 的 AI scientist 的误用与自主性风险，强调围绕用户意图、模型能力、工具访问和科学工作流控制设置防护。
+- [Rapid Optimization for Jailbreaking LLMs via Subconscious Exploitation and Echopraxia](https://arxiv.org/abs/2402.05467)：提出 RIPPLE，一种受潜意识利用和回声模仿启发的优化式越狱生成器，可低开销生成可迁移、隐蔽的有害提示。
+- [Buffer Overflow in Mixture of Experts](https://arxiv.org/abs/2402.05526)：显示混合专家模型的跨批次专家路由可能让恶意查询影响同批处理的良性查询。
+- [Selective Forgetting: Advancing Machine Unlearning Techniques and Evaluation in Language Models](https://arxiv.org/abs/2402.05813)：提出 SeUL 进行细粒度语言模型遗忘，并用敏感提取概率和敏感记忆准确率评估遗忘效果。
+- [Permute-and-Flip: An optimally robust and watermarkable decoder for LLMs](https://arxiv.org/abs/2402.05864)：提出带加密水印的 Permute-and-Flip 解码器，在保持采样分布的同时改善质量与稳定性的权衡。
+- [Fight Back Against Jailbreaking via Prompt Adversarial Tuning](https://arxiv.org/abs/2402.06255)：训练 guard-prefix 提示控制器，结合对抗与良性提示，降低灰盒和黑盒越狱成功率并保持正常效用。
+- [StruQ: Defending Against Prompt Injection with Structured Queries](https://arxiv.org/abs/2402.06363)：把指令和数据分离到结构化通道中，结合安全格式化器与微调 LLM，使模型忽略用户数据中的指令。
+- [Shadowcast: Stealthy Data Poisoning Attacks Against Vision-Language Models](https://arxiv.org/abs/2402.06659)：展示隐蔽的 VLM 数据投毒，通过视觉上不可区分的图文样本诱发标签或说服攻击，并能跨架构迁移。
+- [Debating with More Persuasive LLMs Leads to More Truthful Answers](https://arxiv.org/abs/2402.06782)：让更强 LLM 专家进行辩论，使较弱模型或人类评审者无需直接访问真值标签也能选择更真实的答案。
+- [Whispers in the Machine: Confidentiality in LLM-integrated Systems](https://arxiv.org/abs/2402.06922)：形式化工具型 LLM 智能体中的保密风险，说明连接服务中的 prompt injection 可外传敏感数据。
+- [A Theoretical Analysis of Nash Learning from Human Feedback under General KL-Regularized Preference](https://arxiv.org/abs/2402.07314)：将 RLHF 推广为竞争 LLM 策略之间的 reverse-KL 正则化极小极大博弈，摆脱基于奖励的 Bradley-Terry 假设。
+- [ODIN: Disentangled Reward Mitigates Hacking in RLHF](https://arxiv.org/abs/2402.07319)：训练带长度相关和长度去相关两个头的奖励模型，并丢弃长度头以降低响应长度奖励黑客行为。
+- [Refined Direct Preference Optimization with Synthetic Data for Behavioral Alignment of LLMs](https://arxiv.org/abs/2402.08005)：利用教师模型自我批判生成合成偏好数据，再结合外部奖励模型应用泛化 DPO 损失，以改进行为安全对齐。
+- [Careless Whisper: Speech-to-Text Hallucination Harms](https://arxiv.org/abs/2402.08021)：评估 Whisper 幻觉，发现带有明确危害的伪造转写片段，并指出长时间非语音音频的幻觉率更高。
+- [Test-Time Backdoor Attacks on Multimodal Large Language Models](https://arxiv.org/abs/2402.08577)：提出 AnyDoor 测试时 MLLM 后门，通过注入通用对抗图像扰动激活有害效果，无需训练数据投毒。
+- [COLD-Attack: Jailbreaking LLMs with Stealthiness and Controllability](https://arxiv.org/abs/2402.08679)：将基于能量的约束解码与 Langevin 动力学用于生成可控越狱提示，可指定情感、风格和连贯性。
+- [Rethinking machine unlearning for large language models](https://arxiv.org/abs/2402.08787)：回顾 LLM 遗忘目标、威胁模型、算法和评估标准，聚焦移除不良数据影响同时保持无关能力。
+- [SafeDecoding: Defending against Jailbreak Attacks via Safety-Aware Decoding](https://arxiv.org/abs/2402.08983)：在解码时放大安全免责声明 token 概率并抑制越狱倾向 token 序列，无需额外微调即可减少有害补全。
+- [Soft Prompt Threats: Attacking Safety Alignment and Unlearning in Open-Source LLMs through the Embedding Space](https://arxiv.org/abs/2402.09063)：通过优化连续嵌入空间 soft prompt 攻击开源 LLM 安全，绕过对齐和遗忘防御。
+- [Reinforcement Learning from Human Feedback with Active Queries](https://arxiv.org/abs/2402.09401)：将 RLHF 形式化为上下文决斗 bandit，并提出主动查询 PPO 和 DPO 变体，用更少偏好标签匹配 DPO 表现。
+- [Towards Privacy-Aware Sign Language Translation at Scale](https://arxiv.org/abs/2402.09611)：将匿名化自监督视频预训练与有监督手语翻译微调结合，降低网页规模 SLT 数据中的生物识别隐私暴露。
+- [UNDIAL: Self-Distillation with Adjusted Logits for Robust Unlearning in Large Language Models](https://arxiv.org/abs/2402.10052)：用调整后 logits 进行自蒸馏，抑制目标 token 影响，同时避免梯度上升式遗忘的不稳定和灾难性遗忘。
+- [Towards Safer Large Language Models through Machine Unlearning](https://arxiv.org/abs/2402.10058)：提出 Selective Knowledge Negation Unlearning，先获得有害知识再在模型参数中否定它，同时保留正常提示效用。
+- [Recovering the Pre-Fine-Tuning Weights of Generative Models](https://arxiv.org/abs/2402.10208)：提出 Spectral DeTuning，从多个 LoRA 微调生成模型中恢复不安全的微调前权重。
+- [A StrongREJECT for Empty Jailbreaks](https://arxiv.org/abs/2402.10260)：构建 StrongREJECT 越狱基准和评估器，衡量模型回答是否为禁止提示提供具体且有用的信息。
+- [Active Preference Optimization for Sample Efficient RLHF](https://arxiv.org/abs/2402.10500)：把 RLHF 数据选择重述为上下文偏好 bandit，显示有限偏好预算下自适应上下文采样可弥合均匀采样的次优性。
+- [When"Competency"in Reasoning Opens the Door to Vulnerability: Jailbreaking LLMs via Novel Complex Ciphers](https://arxiv.org/abs/2402.10601)：提出 ACE 和 LACE 越狱，将恶意查询编码为自定义单层或多层密码，暴露推理能力与安全之间的权衡。
+- [Proving membership in LLM pretraining data via data watermarks](https://arxiv.org/abs/2402.10892)：使用随机数据水印和假设检验，在黑盒条件下证明贡献文档属于 LLM 预训练数据。
+- [k-SemStamp: A Clustering-Based Semantic Watermark for Detection of Machine-Generated Text](https://arxiv.org/abs/2402.11399)：用 k-means 聚类替代语义句子水印中的局部敏感哈希，提高改写稳健性和采样效率。
+- [Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement](https://arxiv.org/abs/2402.11436)：定义 LLM 自我改进中的 self-bias，并显示外部反馈或更大评估模型可降低模型偏好自身输出的倾向。
+- [Stumbling Blocks: Stress Testing the Robustness of Machine-Generated Text Detectors Under Attacks](https://arxiv.org/abs/2402.11638)：用编辑、改写、提示和协同生成攻击压力测试生成文本检测器，并提出针对检测器鲁棒性缺口的初步补丁。
+- [Language Models are Homer Simpson! Safety Re-Alignment of Fine-tuned Language Models through Task Arithmetic](https://arxiv.org/abs/2402.11746)：通过任务算术把安全向量加入受损模型权重，在下游微调后恢复语言模型安全性。
+- [ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs](https://arxiv.org/abs/2402.11753)：用 ASCII art 隐藏有害指令以绕过仅语义的安全对齐，并发布 ViTC 评测视觉文本识别失败。
+- [ROSE Doesn't Do That: Boosting the Safety of Instruction-Tuned Large Language Models with Reverse Prompt Contrastive Decoding](https://arxiv.org/abs/2402.11889)：使用反向提示对比解码抑制不安全续写，并在无需额外训练的情况下提高安全回答概率。
+- [Where is the answer? Investigating Positional Bias in Language Model Knowledge Extraction](https://arxiv.org/abs/2402.12170)：识别微调 LLM 知识提取中的困惑度诅咒，并显示去噪自回归正则化可改善中段和后段文档位置的召回。
+- [Robust CLIP: Unsupervised Adversarial Fine-Tuning of Vision Embeddings for Robust Large Vision-Language Models](https://arxiv.org/abs/2402.12336)：无需监督地对 CLIP 视觉编码器进行对抗微调，使下游 LVLM 在不重训完整多模态模型的情况下获得图像攻击鲁棒性。
+- [GumbelSoft: Diversified Language Model Watermarking via the GumbelMax-trick](https://arxiv.org/abs/2402.12948)：提出 Logits-Addition 和 GumbelSoft 水印，在保持输出多样性的同时为 GumbelMax 式 LLM 水印保留强检测性。
+- [Prompt Stealing Attacks Against Large Language Models](https://arxiv.org/abs/2402.12959)：研究通过黑盒查询恢复隐藏系统指令的 prompt stealing 攻击，将指令泄漏视为模型推理阶段的安全风险。
+- [How Easy is It to Fool Your Multimodal LLMs? An Empirical Analysis on Deceptive Prompts](https://arxiv.org/abs/2402.13220)：用欺骗性文本和图像提示测试 MLLM，衡量看似无害的多模态输入多容易诱发不安全或错误回答。
+- [Learning to Poison Large Language Models During Instruction Tuning](https://arxiv.org/abs/2402.13459)：构造 instruction tuning 投毒样本，在微调后植入目标不安全行为，同时尽量保持正常任务性能。
+- [VL-Trojan: Multimodal Instruction Backdoor Attacks against Autoregressive Visual Language Models](https://arxiv.org/abs/2402.13851)：向自回归 VLM 注入多模态指令后门，使视觉触发器在 instruction tuning 后激活攻击者指定回答。
+- [Can Watermarks Survive Translation? On the Cross-lingual Consistency of Text Watermark for Large Language Models](https://arxiv.org/abs/2402.14007)：测试大语言模型文本水印能否在跨语言翻译后保持一致。
+- [Corrective Machine Unlearning](https://arxiv.org/abs/2402.14015)：提出 corrective unlearning 流程，在不从头重训的情况下移除已识别有害或错误训练样本的影响。
+- [Coercing LLMs to do and reveal (almost) anything](https://arxiv.org/abs/2402.14020)：展示 coercion prompts 可让 LLM 执行受限动作并泄露隐藏信息，暴露拒答与保密机制的失效模式。
+- [Stick to your role! Stability of personal values expressed in large language models](https://arxiv.org/abs/2402.14846)：衡量 LLM 表达的个人价值观在指定角色和对话上下文中是否稳定，将价值漂移视为对齐风险。
+- [Is the System Message Really Important to Jailbreaks in Large Language Models?](https://arxiv.org/abs/2402.14857)：消融 system message 的位置与内容，展示隐藏指令通道被削弱或冲突时越狱鲁棒性如何变化。
+- [The Wolf Within: Covert Injection of Malice into MLLM Societies via an MLLM Operative](https://arxiv.org/abs/2402.14859)：刻画 MLLM society 中的隐蔽恶意注入：一个被操纵的 operative agent 经智能体通信传播有害提示、指令或错误信息。
+- [Stop Reasoning! When Multimodal LLM with Chain-of-Thought Reasoning Meets Adversarial Image](https://arxiv.org/abs/2402.14899)：显示对抗图像可扰乱多模态 chain-of-thought 推理，并把 MLLM 推向不安全或错误答案。
+- [Watermarking Makes Language Models Radioactive](https://arxiv.org/abs/2402.14904)：通过测量微调后残留的水印信号，检测下游语言模型是否使用过带水印的合成文本训练。
+- [Machine Unlearning of Pre-trained Large Language Models](https://arxiv.org/abs/2402.15159)：在 arXiv、图书和 GitHub 遗忘集上评测预训练 LLM 的多种机器遗忘方法，比较删除效果与计算代价。
+- [Break the Breakout: Reinventing LM Defense Against Jailbreak Attacks with Self-Refinement](https://arxiv.org/abs/2402.15180)：用模型自我修正检测并改写容易越狱的回答，使基座 LLM 在最终输出前充当自身安全过滤器。
+- [Foot In The Door: Understanding Large Language Model Jailbreaking via Cognitive Psychology](https://arxiv.org/abs/2402.15690)：用认知心理学中的 foot-in-the-door 效应解释越狱升级，小规模顺从会逐步诱导后续有害顺从。
+- [LLMs Can Defend Themselves Against Jailbreaking in a Practical Manner: A Vision Paper](https://arxiv.org/abs/2402.15727)：主张让 LLM 通过自我批判、修订和拒答来防御越狱，而不依赖单独的 guard model。
+- [ASETF: A Novel Method for Jailbreak Attack on LLMs through Translate Suffix Embeddings](https://arxiv.org/abs/2402.16006)：在翻译后的嵌入空间中构造越狱后缀，使有害指令跨语言和表征边界迁移。
+- [No Free Lunch in LLM Watermarking: Trade-offs in Watermarking Design Choices](https://arxiv.org/abs/2402.16187)：比较 LLM 水印设计选择，指出可检测性、鲁棒性、文本质量和生成多样性之间存在权衡。
+- [Defending Large Language Models against Jailbreak Attacks via Semantic Smoothing](https://arxiv.org/abs/2402.16192)：对改写后的输入进行 semantic smoothing，使越狱判定依赖稳定意图，而不是单个对抗措辞。
+- [Immunization against harmful fine-tuning attacks](https://arxiv.org/abs/2402.16382)：把有害微调防御形式化为依赖攻击者训练预算的“免疫”条件，说明防御者无法控制后续微调时防御需要证明什么。
+- [Defending LLMs against Jailbreaking Attacks via Backtranslation](https://arxiv.org/abs/2402.16459)：将可疑提示翻译到另一语言再翻回源语言，以暴露有害意图并在推理时降低越狱成功率。
+- [Eight Methods to Evaluate Robust Unlearning in LLMs](https://arxiv.org/abs/2402.16835)：定义八种 LLM 遗忘压力测试，包括重新学习、抽取和留存效用检查，用于揭示表面化遗忘。
+- [DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers](https://arxiv.org/abs/2402.16914)：把有害提示拆成伪装片段并在模型上下文中重构，从而用少量查询绕过安全过滤。
+- [Speak Out of Turn: Safety Vulnerability of Large Language Models in Multi-turn Dialogue](https://arxiv.org/abs/2402.17262)：显示多轮对话可使安全上下文失同步，模型会在前置良性轮次铺垫后回答有害请求。
+- [Token-Specific Watermarking with Enhanced Detectability and Semantic Coherence for Large Language Models](https://arxiv.org/abs/2402.18059)：用轻量网络为不同 token 生成专属水印 logits 和分割比例，在 LLM 解码时同时优化可检测性与语义质量。
+- [Making Them Ask and Answer: Jailbreaking Large Language Models in Few Queries via Disguise and Reconstruction](https://arxiv.org/abs/2402.18104)：用伪装与重构提示让目标模型在少量交互中自行改写并回答有害请求。
+- [Implicit Optimization Bias of Next-token Prediction in Linear Models](https://arxiv.org/abs/2402.18551)：分析线性模型中的 next-token prediction，说明梯度优化会在多个极小解中产生隐式选择，从而影响模型行为。
+- [Curiosity-driven Red-teaming for Large Language Models](https://arxiv.org/abs/2402.19464)：用好奇心奖励引导自动红队生成，使攻击探索新的有害行为而不是重复已知越狱模式。
+- [LoRATK: LoRA Once, Backdoor Everywhere in the Share-and-Play Ecosystem](https://arxiv.org/abs/2403.00108)：展示后门 LoRA 可一次训练、无需再训练地并入多个任务增强 LoRA，在有用下游能力外观下隐藏恶意行为。
+- [AXOLOTL: Fairness through Assisted Self-Debiasing of Large Language Model Outputs](https://arxiv.org/abs/2403.00198)：提供后处理式自去偏循环，让仅可 API 访问的 LLM 识别偏见、提出修正方案并改写输出，无需参数访问。
+- [Enhancing Jailbreak Attacks with Diversity Guidance](https://arxiv.org/abs/2403.00292)：提出基于 DPP 的随机触发器搜索，在越狱触发器优化中结合随机梯度搜索和 determinantal point process 选择以增加多样性。
+- [Provably Robust DPO: Aligning Language Models with Noisy Feedback](https://arxiv.org/abs/2403.00409)：提出在噪声反馈下对齐语言模型的稳健 DPO。
+- [Cognitive Bias in Decision-Making with LLMs](https://arxiv.org/abs/2403.00811)：度量 LLM 决策中的认知偏差，显示框架效应和启发式偏差会扭曲安全关键建议。
+- [LAB: Large-Scale Alignment for ChatBots](https://arxiv.org/abs/2403.01081)：提出大规模聊天机器人对齐配方，结合合成指令数据和偏好式调优以提升助手安全行为。
+- [Dissecting Language Models: Machine Unlearning via Selective Pruning](https://arxiv.org/abs/2403.01267)：通过选择性剪枝从语言模型中移除目标知识。
+- [GuardT2I: Defending Text-to-Image Models from Adversarial Prompts](https://arxiv.org/abs/2403.01446)：训练面向文生图的 guard，在解码前检测对抗提示并阻止不安全图像生成。
+- [Differentially Private Synthetic Data via Foundation Model APIs 2: Text](https://arxiv.org/abs/2403.01749)：通过基础模型 API 生成差分隐私合成文本，并核算提示与输出采样带来的隐私泄漏。
+- [Enhancing LLM Safety via Constrained Direct Preference Optimization](https://arxiv.org/abs/2403.02475)：在 DPO 中加入安全约束，使偏好优化提升 harmlessness 的同时避免过度牺牲有用回答。
+- [Splat-Nav: Safe Real-Time Robot Navigation in Gaussian Splatting Maps](https://arxiv.org/abs/2403.02751)：用 Gaussian splatting 场景地图进行实时机器人导航，并显式纳入碰撞与安全约束。
+- [ImgTrojan: Jailbreaking Vision-Language Models with ONE Image](https://arxiv.org/abs/2403.02910)：显示单张对抗图像可在不同用户指令下触发 VLM 越狱行为。
+- [Sniffer: Multimodal Large Language Model for Explainable Out-of-Context Misinformation Detection](https://arxiv.org/abs/2403.03170)：构建可解释的 MLLM 检测器，识别图文上下文不匹配的 out-of-context misinformation。
+- [Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking](https://arxiv.org/abs/2403.03185)：用 correlated proxy objectives 定义奖励黑客，并提出把目标奖励与伪相关代理信号分离的缓解方法。
+- [Guardrail Baselines for Unlearning in LLMs](https://arxiv.org/abs/2403.03329)：比较 LLM 遗忘的 guardrail 式基线，以区分真正参数遗忘和输出层过滤。
+- [Neural Exec: Learning (and Learning from) Execution Triggers for Prompt Injection Attacks](https://arxiv.org/abs/2403.03792)：学习可激活 prompt injection 的 execution-trigger 模式，并用这些触发器研究和加固 LLM 应用。
+- [From One to Many: Expanding the Scope of Toxicity Mitigation in Language Models](https://arxiv.org/abs/2403.03893)：把毒性缓解从单标签 detoxification 扩展到多种毒性类型和受影响群体。
+- [WaterMax: breaking the LLM watermark detectability-robustness-quality trade-off](https://arxiv.org/abs/2403.04808)：提出不改动权重、logits、温度或采样方式的水印方案，同时改善可检测性、文本质量保留和鲁棒性。
+- [Towards Multimodal Sentiment Analysis Debiasing via Bias Purification](https://arxiv.org/abs/2403.05023)：净化有偏多模态特征，使情感模型减少人口统计或模态驱动偏差，同时保留任务信号。
+- [Defending Against Unforeseen Failure Modes with Latent Adversarial Training](https://arxiv.org/abs/2403.05030)：在潜空间中针对对抗扰动训练，以提升模型对显式攻击数据未覆盖失效模式的鲁棒性。
+- [DP-TabICL: In-Context Learning with Differentially Private Tabular Data](https://arxiv.org/abs/2403.05681)：将 in-context learning 用于差分隐私表格示例，使私有记录可支持提示而不被直接披露。
+- [Challenging Forgets: Unveiling the Worst-Case Forget Sets in Machine Unlearning](https://arxiv.org/abs/2403.07362)：把遗忘评测改为寻找由双层优化得到的最坏遗忘集，暴露随机删除测试掩盖的遗忘失败。
+- [ORPO: Monolithic Preference Optimization without Reference Model](https://arxiv.org/abs/2403.07691)：把 odds-ratio preference optimization 融入监督微调，省去单独 reference model 偏好对齐阶段，并在 125M 到 7B 模型上验证。
+- [Fairness Feedback Loops: Training on Synthetic Data Amplifies Bias](https://arxiv.org/abs/2403.07857)：显示合成数据再训练会通过反馈循环放大人口统计偏见，提示模型生成安全数据必须过滤。
+- [Distract Large Language Models for Automatic Jailbreak Attack](https://arxiv.org/abs/2403.08424)：通过加入 distractor content 自动生成越狱提示，使安全推理偏离真实有害意图。
+- [AIGCs Confuse AI Too: Investigating and Explaining Synthetic Image-induced Hallucinations in Large Vision-Language Models](https://arxiv.org/abs/2403.08542)：显示合成图像会诱发 LVLM 幻觉，并分析使生成内容误导模型的视觉特征。
+- [Eyes Closed, Safety On: Protecting Multimodal LLMs via Image-to-Text Transformation](https://arxiv.org/abs/2403.09572)：先把图像转换为文本描述再进行安全判断，使 MLLM 能通过纯语言 guard 路径过滤视觉越狱内容。
+- [Images are Achilles' Heel of Alignment: Exploiting Visual Vulnerabilities for Jailbreaking Multimodal Large Language Models](https://arxiv.org/abs/2403.09792)：利用视觉扰动和图文冲突绕过 MLLM 安全对齐，即使文本请求看起来无害也能触发越狱。
+- [A Watermark-Conditioned Diffusion Model for IP Protection](https://arxiv.org/abs/2403.10893)：让扩散生成以隐藏水印信息为条件，使黑盒 API 输出同时支持合成内容检测与用户或所有者识别。
+- [Adversarial Nibbler: An Open Red-Teaming Method for Identifying Diverse Harms in Text-to-Image Generation](https://arxiv.org/abs/2403.12075)：用 An Open Red-Teaming Method for Identifying Diverse Harms in Text-to-Image Generation 进行红队测试，关注多样化危害发现和护栏失效模式。
+- [EasyJailbreak: A Unified Framework for Jailbreaking Large Language Models](https://arxiv.org/abs/2403.12171)：提供统一越狱生成框架，可在多个 LLM 目标上组合攻击模板、变异策略和评估器。
+- [Selective Domain-Invariant Feature for Generalizable Deepfake Detection](https://arxiv.org/abs/2403.12707)：学习选择性的域不变特征，使深伪检测器能跨操纵方法和数据集泛化。
+- [Duwak: Dual Watermarks in Large Language Models](https://arxiv.org/abs/2403.13000)：在 LLM 解码中结合两条水印通道，在保持生成质量的同时提升来源检测能力。
+- [RigorLLM: Resilient Guardrails for Large Language Models against Undesired Content](https://arxiv.org/abs/2403.13031)：训练稳健 LLM guardrails，在对抗性提示变化下识别并阻断 undesired content。
+- [BadEdit: Backdooring large language models by model editing](https://arxiv.org/abs/2403.13355)：用 model editing 植入 LLM 后门，显示事后参数编辑而非完整重训也会带来安全风险。
+- [FMM-Attack: A Flow-based Multi-modal Adversarial Attack on Video-based LLMs](https://arxiv.org/abs/2403.13507)：针对视频 LLM 生成 flow-based 多模态对抗扰动，用于测试时序视觉推理鲁棒性。
+- [HETAL: Efficient Privacy-preserving Transfer Learning with Homomorphic Encryption](https://arxiv.org/abs/2403.14111)：利用同态加密支持隐私保护迁移学习，使源特征或梯度在迁移过程中保持隐藏。
+- [Locating and Mitigating Gender Bias in Large Language Models](https://arxiv.org/abs/2403.14409)：结合因果中介分析定位 LLM 中带偏激活组件，再用基于知识编辑的 Least Square Debias Method 缓解性别刻板印象。
+- [Bypassing LLM Watermarks with Color-Aware Substitutions](https://arxiv.org/abs/2403.14719)：提出 Self Color Testing-based Substitution，通过查询带水印 LLM 推断 green token 颜色，并替换为非 green token。
+- [Defending Against Indirect Prompt Injection Attacks With Spotlighting](https://arxiv.org/abs/2403.14720)：用 spotlighting 转换标记不可信检索或工具文本，使模型区分数据和可执行指令。
+- [Testing the Limits of Jailbreaking Defenses with the Purple Problem](https://arxiv.org/abs/2403.14725)：以 Purple Problem 作为受控有害任务探针，比较越狱防御在自适应措辞下的失效方式。
+- [Protecting Copyrighted Material with Unique Identifiers in Large Language Model Training](https://arxiv.org/abs/2403.15740)：在受版权保护的训练材料中插入唯一标识，使生成式记忆可追溯到受保护来源。
+- [Unlearning Backdoor Threats: Enhancing Backdoor Defense in Multimodal Contrastive Learning via Local Token Unlearning](https://arxiv.org/abs/2403.16257)：通过局部遗忘触发器相关 token，从多模态对比模型中移除后门行为。
+- [The N+ Implementation Details of RLHF with PPO: A Case Study on TL;DR Summarization](https://arxiv.org/abs/2403.17031)：审计摘要任务中 PPO 式 RLHF 的实现细节，显示细小训练选择会影响对齐模型行为。
+- [Task-Agnostic Detector for Insertion-Based Backdoor Attacks](https://arxiv.org/abs/2403.17155)：在无需任务特定标签的情况下，通过异常插入 token 模式和激活检测 insertion-based 后门。
+- [Optimization-based Prompt Injection Attack to LLM-as-a-Judge](https://arxiv.org/abs/2403.17710)：优化 prompt-injection 字符串操纵 LLM-as-a-judge 评估器，暴露模型化安全打分的脆弱性。
+- [Is The Watermarking Of LLM-Generated Code Robust?](https://arxiv.org/abs/2403.17983)：压力测试 LLM 生成代码水印在格式化、重写和语义保持代码编辑后的鲁棒性，明确代码来源信号何时仍可检测。
+- [RAW: A Robust and Agile Plug-and-Play Watermark Framework for AI-Generated Images with Provable Guarantees](https://arxiv.org/abs/2403.18774)：通过即插即用生成框架加入可证明图像水印，使水印在常见编辑后仍可检测。
+- [CPR: Retrieval Augmented Generation for Copyright Protection](https://arxiv.org/abs/2403.18920)：用检索增强生成检测并避免生成文本与受版权保护来源过度重合。
+- [Measuring Political Bias in Large Language Models: What Is Said and How It Is Said](https://arxiv.org/abs/2403.18932)：把 LLM 输出中的政治偏见拆分为内容选择和语言框架，分别衡量“说了什么”和“如何表达”。
+- [FairCLIP: Harnessing Fairness in Vision-Language Learning](https://arxiv.org/abs/2403.19949)：用公平性约束微调 CLIP 式视觉语言表征，以减少下游预测中的人口统计偏差。
+- [Zero-shot Safety Prediction for Autonomous Robots with Foundation World Models](https://arxiv.org/abs/2404.00462)：使用 foundation world models 进行零样本机器人安全预测，在不训练任务特定安全模型时预测动作条件违规。
+- [Privacy Backdoors: Stealing Data with Corrupted Pretrained Models](https://arxiv.org/abs/2404.00473)：在预训练模型中植入隐私后门，使下游微调后的模型在攻击者触发下泄漏目标数据。
+- [Configurable Safety Tuning of Language Models with Synthetic Preference Data](https://arxiv.org/abs/2404.00495)：生成可控安全等级的合成偏好数据，再把语言模型调到不同 harmlessness 与 helpfulness 权衡点。
+- [Embodied Active Defense: Leveraging Recurrent Feedback to Counter Adversarial Patches](https://arxiv.org/abs/2404.00540)：在具身智能体中使用循环感知反馈主动重新观察场景，降低对抗 patch 的影响。
+- [Enabling Memory Safety of C Programs using LLMs](https://arxiv.org/abs/2404.01096)：用 LLM 检测并修复 C 程序中的内存安全缺陷，重点处理不安全指针和缓冲区行为。
+- [What is in Your Safe Data? Identifying Benign Data that Breaks Safety](https://arxiv.org/abs/2404.01099)：识别会侵蚀 LLM 安全性的表面良性微调数据，说明看似安全的样本也可能解除对齐。
+- [Privacy Backdoors: Enhancing Membership Inference through Poisoning Pre-trained Models](https://arxiv.org/abs/2404.01231)：通过投毒预训练模型放大 membership inference 泄漏，使后续模型访问成为更强隐私攻击。
+- [A Statistical Framework of Watermarks for Large Language Models: Pivot, Detection Efficiency and Optimal Rules](https://arxiv.org/abs/2404.01245)：推导 LLM 水印检测的统计检验，包括 pivot 选择和提升检测效率的最优判定规则。
+- [Great, Now Write an Article About That: The Crescendo Multi-Turn LLM Jailbreak Attack](https://arxiv.org/abs/2404.01833)：提出 Crescendo 多轮越狱，通过逐步升级良性请求诱导模型生成禁止内容。
+- [Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks](https://arxiv.org/abs/2404.02151)：显示简单自适应提示攻击可根据观察到的拒答迭代调整措辞，从而绕过主流安全对齐 LLM。
+- [Vocabulary Attack to Hijack Large Language Model Applications](https://arxiv.org/abs/2404.02637)：用攻击者 LLM 的嵌入优化词表插入词，以不显眼的单词或短词改动劫持 Llama2 和 Flan-T5 应用。
+- [Jailbreaking Prompt Attack: A Controllable Adversarial Attack against Diffusion Models](https://arxiv.org/abs/2404.02928)：先用反义词提示在扩散模型文本嵌入空间中搜索 NSFW 概念，再通过软分配和梯度遮蔽优化离散前缀提示，在无需目标模型访问的情况下诱发有害图像生成。
+- [Do Large Language Models Rank Fairly? An Empirical Study on the Fairness of LLMs as Rankers](https://arxiv.org/abs/2404.03192)：在 TREC Fair Ranking 上评估 GPT 与 Llama2 排序器，从用户和内容视角度量受保护属性偏差。
+- [Learn What You Want to Unlearn: Unlearning Inversion Attacks against Machine Unlearning](https://arxiv.org/abs/2404.03233)：显示攻击者比较原模型和遗忘后模型时，可在机器学习即服务访问下重建被遗忘样本的特征与标签信息。
+- [Red Teaming GPT-4V: Are GPT-4V Safe Against Uni/Multi-Modal Jailbreak Attacks?](https://arxiv.org/abs/2404.03411)：构建覆盖 11 类安全政策的 1445 个多模态越狱问题，并红队测试包括 GPT-4V 在内的 11 个闭源与开源模型。
+- [Robust Concept Erasure Using Task Vectors](https://arxiv.org/abs/2404.03631)：用任务向量实现生成模型中的鲁棒概念擦除。
+- [Negative Preference Optimization: From Catastrophic Collapse to Effective Unlearning](https://arxiv.org/abs/2404.05868)：用类似对齐训练的负偏好损失执行 LLM 遗忘，相比梯度上升式遗忘可减缓效用灾难性崩塌。
+- [Eraser: Jailbreaking Defense in Large Language Models via Unlearning Harmful Knowledge](https://arxiv.org/abs/2404.05880)：通过遗忘与有害查询相关的一般答案来降低越狱成功率，同时保留通用知识和安全对齐。
+- [Rethinking How to Evaluate Language Model Jailbreak](https://arxiv.org/abs/2404.06407)：用 safeguard violation、informativeness 和 relative truthfulness 三项指标替代二元越狱成功判定，并对齐不同恶意行动者目标。
+- [Goal-Guided Generative Prompt Injection Attack on Large Language Models](https://arxiv.org/abs/2404.07234)：通过最大化干净文本与对抗文本条件概率的 KL 散度来优化 prompt injection，生成满足约束的 G2PIA 攻击文本。
+- [Sandwich attack: Multi-language Mixture Adaptive Attack on LLMs](https://arxiv.org/abs/2404.07242)：通过 Multi-language Mixture Adaptive Attack on LLMs 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [NeuroNCAP: Photorealistic Closed-loop Safety Testing for Autonomous Driving](https://arxiv.org/abs/2404.07762)：用基于 NeRF 的闭环仿真器把真实驾驶传感器序列重构为 Euro NCAP 风格的安全关键场景，用于测试端到端规划器。
+- [High-Dimension Human Value Representation in Large Language Models](https://arxiv.org/abs/2404.07900)：提出 UniVaR，以自监督方式表示符号化人类价值分布，并在 15 个 LLM、25 种语言和文化中分析价值优先级。
+- [AmpleGCG: Learning a Universal and Transferable Generative Model of Adversarial Suffixes for Jailbreaking Both Open and Closed LLMs](https://arxiv.org/abs/2404.07921)：用 GCG 中间步骤里的成功 suffix 训练生成模型，使任意有害查询可在数秒内采样数百个可迁移越狱 suffix。
+- [Rethinking Artistic Copyright Infringements in the Era of Text-to-Image Generative Models](https://arxiv.org/abs/2404.08030)：把艺术风格侵权重述为图像集合分类，并提出 ArtSavant 与 TagMatch 来解释式检测生成图像中的艺术家风格。
+- [Latent Guard: a Safety Framework for Text-to-image Generation](https://arxiv.org/abs/2404.08031)：在文生图模型文本编码器上学习有害概念潜空间，结合 LLM 生成数据、专用结构和对比学习执行安全检测。
+- [Uncertain Boundaries: Multidisciplinary Approaches to Copyright Issues in Generative AI](https://arxiv.org/abs/2404.08221)：从法律、政策、经济学和计算机科学综合梳理生成式 AI 版权风险，包括输出侵权检测与缓解方法。
+- [Towards Building a Robust Toxicity Predictor](https://arxiv.org/abs/2404.08690)：提出 ToxicTrap 词级对抗样本攻击 toxicity 分类器，并测试普通与改进对抗训练对未知攻击的鲁棒性。
+- [Analyzing the Impact of Data Selection and Fine-Tuning on Economic and Political Biases in LLMs](https://arxiv.org/abs/2404.08699)：提出 PoliTune，用参数高效微调把 LLM 推向目标经济和政治意识形态，以测量数据选择导致的偏见变化。
+- [JailbreakLens: Visual Analysis of Jailbreak Attacks Against Large Language Models](https://arxiv.org/abs/2404.08793)：提供 LLM 辅助的可视分析系统，用于评估越狱尝试、检查 prompt 组件，并结合专家反馈细化 prompt 实例。
+- [Foundational Challenges in Assuring Alignment and Safety of Large Language Models](https://arxiv.org/abs/2404.09932)：把 LLM 对齐与安全保障中的 18 个基础挑战归入科学理解、开发部署和社会技术三类，并提出 200 多个研究问题。
+- [Reinforcement Learning from Multi-role Debates as Feedback for Bias Mitigation in LLMs](https://arxiv.org/abs/2404.10160)：用自反思或师生式多角色辩论替代人工偏见标签，生成奖励模型训练数据以做强化学习偏见缓解。
+- [Generative Text Steganography with Large Language Model](https://arxiv.org/abs/2404.10229)：用 LLM 生成载体文本并约束候选词选择，在保持文本流畅的同时隐藏秘密消息。
+- [Social Choice for AI Alignment: Dealing with Diverse Human Feedback](https://arxiv.org/abs/2404.10271)：把多样化反馈下的对齐建模为社会选择问题，比较不同聚合规则如何处理冲突的人类偏好。
+- [What are human values, and how do we align AI to them?](https://arxiv.org/abs/2404.10636)：综述多学科中的价值定义，并说明价值概念如何影响技术性 AI 对齐目标与评估。
+- [Offset Unlearning for Large Language Models](https://arxiv.org/abs/2404.11045)：用 offset 参数更新移除 LLM 中的目标知识，同时尽量保留无关能力。
+- [TransLinkGuard: Safeguarding Transformer Models Against Model Stealing in Edge Deployment](https://arxiv.org/abs/2404.11121)：通过 linked watermarking 和所有权验证机制，保护边缘部署的 Transformer 免受模型窃取。
+- [Physical Backdoor Attack can Jeopardize Driving with Vision-Large-Language Models](https://arxiv.org/abs/2404.12916)：展示物理世界后门触发器可使视觉语言驾驶模型产生不安全决策。
+- [Towards Better Text-to-Image Generation Alignment via Attention Modulation](https://arxiv.org/abs/2404.13899)：通过调制文生图生成中的 cross-attention 改善提示与图像对齐，而不重新训练扩散模型。
+- [Protecting Your LLMs with Information Bottleneck](https://arxiv.org/abs/2404.13968)：用 information bottleneck 目标限制 LLM 表征中敏感信息或攻击相关信息的泄漏。
+- [RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios?](https://arxiv.org/abs/2404.14397)：在多语言 RTP-LX 场景中测试 LLM 是否能判断 toxicity，避免只依赖英语 toxicity 假设。
+- [A Mechanism-Based Approach to Mitigating Harms from Persuasive Generative AI](https://arxiv.org/abs/2404.15058)：把劝服性伤害机制连接到生成式 AI 防护，识别输出过滤之外的缓解切入点。
+- [CodeIP: A Grammar-Guided Multi-Bit Watermark for Large Language Models of Code](https://arxiv.org/abs/2404.15639)：通过约束语法等价选择在生成代码中嵌入多比特水印，使所有权可验证且对功能影响较低。
+- [Prompt Leakage effect and defense strategies for multi-turn LLM interactions](https://arxiv.org/abs/2404.16251)：研究多轮交互中隐藏 prompt 的泄漏效应，并比较保护 prompt 机密性的防御策略。
+- [Don't Say No: Jailbreaking LLM by Suppressing Refusal](https://arxiv.org/abs/2404.16369)：通过抑制拒答行为攻击安全对齐 LLM，暴露模型拒答生成机制中的越狱通道。
+- [AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs](https://arxiv.org/abs/2404.16873)：训练自适应对抗提示模型，快速为目标 LLM 生成 suffix，而不是对每个查询运行慢速优化。
+- [Human-Imperceptible Retrieval Poisoning Attacks in LLM-Powered Applications](https://arxiv.org/abs/2404.17196)：研究针对 LLM 应用检索环节的投毒攻击，展示细微注入内容如何影响下游模型行为。
+- [SOUL: Unlocking the Power of Second-Order Optimization for LLM Unlearning](https://arxiv.org/abs/2404.18239)：用二阶优化改进大语言模型遗忘。
+- [More RLHF, More Trust? On The Impact of Preference Alignment On Trustworthiness](https://arxiv.org/abs/2404.18870)：比较偏好对齐模型与基础模型的 trustworthiness 维度，检验更多 RLHF 是否稳定改善安全相关行为。
+- [TUBA: Cross-Lingual Transferability of Backdoor Attacks in LLMs with Instruction Tuning](https://arxiv.org/abs/2404.19597)：研究指令微调 LLM 的后门是否跨语言迁移，揭示多语言触发器持久性和安全风险。
+- [Mixture of insighTful Experts (MoTE): The Synergy of Thought Chains and Expert Mixtures in Self-Alignment](https://arxiv.org/abs/2405.00557)：结合思维链推理和专家角色混合，在不直接依赖人工偏好标签的情况下改进自对齐。
+- [Are Models Biased on Text without Gender-related Language?](https://arxiv.org/abs/2405.00588)：在表面不含性别词的文本上测试性别偏见，隔离显式性别词移除后仍存在的刻板印象影响。
+- [Boosting Jailbreak Attack with Momentum](https://arxiv.org/abs/2405.01229)：在越狱优化中加入 momentum，使对抗 prompt 更新在迭代和目标模型之间更容易迁移。
+- [NeMo-Aligner: Scalable Toolkit for Efficient Model Alignment](https://arxiv.org/abs/2405.01481)：提供可扩展对齐工具包，支持大语言模型的监督微调、奖励建模和 RLHF 式优化。
+- [Uncovering Deceptive Tendencies in Language Models: A Simulated Company AI Assistant](https://arxiv.org/abs/2405.01576)：用模拟公司助手场景测试语言模型在角色、激励或监督压力下是否表现出欺骗行为。
+- [To Each (Textual Sequence) Its Own: Improving Memorized-Data Unlearning in Large Language Models](https://arxiv.org/abs/2405.03097)：先度量每段文本序列的记忆程度，再用序列特定的梯度上升和任务算术遗忘降低逐字复现。
+- [Explainable Fake News Detection with Large Language Model via Defense Among Competing Wisdom](https://arxiv.org/abs/2405.03371)：把众包观点拆成相互竞争的证据方，再用 LLM 防御流程从冲突叙事中生成可解释假新闻判定。
+- [Can LLMs Deeply Detect Complex Malicious Queries? A Framework for Jailbreaking via Obfuscating Intent](https://arxiv.org/abs/2405.03654)：提出 IntentObfuscator 黑盒越狱，通过 obscure intention 和 create ambiguity 两种变体隐藏恶意目标，并在 ChatGPT、Qwen、Baichuan 等模型上验证。
+- [Learning To See But Forgetting To Follow: Visual Instruction Tuning Makes LLMs More Prone To Jailbreak Attacks](https://arxiv.org/abs/2405.04403)：比较三个 VLM 与其 LLM 骨干，发现视觉指令微调会削弱越狱抵抗力，从而要求将安全评测纳入 VLM 微调。
+- [Explanation as a Watermark: Towards Harmless and Multi-bit Model Ownership Verification via Watermarking Feature Attribution](https://arxiv.org/abs/2405.04825)：用特征归因解释替代后门式模型水印，在不引入恶意触发行为的情况下编码多比特所有权信号。
+- [“They are uncultured”: Unveiling Covert Harms and Social Threats in LLM Generated Conversations](https://arxiv.org/abs/2405.05378)：提出 CHAST 的七项社会科学指标，用于检测招聘对话等 LLM 生成内容中的隐性文化伤害和社会威胁。
+- [Mitigating Exaggerated Safety in Large Language Models](https://arxiv.org/abs/2405.05418)：结合 XSTest 提示与上下文、交互式和少样本提示，在保持危险请求拒答的同时减少对良性提示的过度拒绝。
+- [An Inversion-Based Measure of Memorization for Diffusion Models](https://arxiv.org/abs/2405.05846)：提出 InvMM 反演式扩散模型记忆度量，估计导致图像复现的敏感潜变量噪声分布。
+- [Value Augmented Sampling for Language Model Alignment and Personalization](https://arxiv.org/abs/2405.06639)：仅从冻结初始 LLM 采样来优化对齐奖励，避免联合训练策略和值函数，并以较低推理成本接近 Best-of-128 效果。
+- [LLM-Generated Black-box Explanations Can Be Adversarially Helpful](https://arxiv.org/abs/2405.06800)：显示 LLM 解释会通过重构问题、过度自信和选择性证据让错误答案显得可信，误导人类和 LLM 评审者。
+- [PLeak: Prompt Leaking Attacks against Large Language Model Applications](https://arxiv.org/abs/2405.06823)：将闭盒 prompt 泄露建模为对抗查询优化，生成可诱导 LLM 应用泄露机密 system prompt 的攻击提示。
+- [Stable Signature is Unstable: Removing Image Watermark from Diffusion Models](https://arxiv.org/abs/2405.07145)：证明对 Stable Signature 扩散解码器进行微调即可移除内置图像水印，同时保持生成图像质量。
+- [Erasing Concepts from Text-to-Image Diffusion Models with Few-shot Unlearning](https://arxiv.org/abs/2405.07288)：用少量真实图像更新文生图扩散模型的文本编码器，在无需完整重训的情况下快速擦除目标概念。
+- [A safety realignment framework via subspace-oriented model fusion for large language models](https://arxiv.org/abs/2405.09055)：通过面向子空间的模型融合，把已对齐基础模型的安全能力与下游微调模型结合，并降低安全再微调的灾难性遗忘。
+- [Efficient LLM Jailbreak via Adaptive Dense-to-sparse Constrained Optimization](https://arxiv.org/abs/2405.09113)：提出 ADC token 级越狱优化器，先把离散后缀搜索松弛为连续优化，再逐步增加稀疏性以恢复有效提示。
+- [Spectral Editing of Activations for Large Language Model Alignment](https://arxiv.org/abs/2405.09719)：在推理期编辑 LLM 激活，将表示投向正向示例并远离负向示例，以减少不真实或有偏输出。
+- [Human-AI Safety: A Descendant of Generative AI and Control Systems Safety](https://arxiv.org/abs/2405.09794)：把 AI 安全表述为模型输出与人类行为之间的反馈控制问题，指出只对齐输出会遗漏长期交互风险。
+- [Adversarial Robustness for Visual Grounding of Multimodal Large Language Models](https://arxiv.org/abs/2405.09981)：针对 MLLM 视觉定位提出无目标、排他目标和置换目标三类边界框对抗攻击。
+- [MarkLLM: An Open-Source Toolkit for LLM Watermarking](https://arxiv.org/abs/2405.10051)：提供可扩展的 LLM 水印工具包，包含算法实现、机制可视化，以及覆盖鲁棒性、可检测性和文本质量的评测流水线。
+- ["What do you want from theory alone?" Experimenting with Tight Auditing of Differentially Private Synthetic Data Generation](https://arxiv.org/abs/2405.10994)：用区分游戏和成员推断攻击审计六种差分隐私合成数据生成器，检验经验泄漏是否符合理论保证。
+- [Watermarking Language Models for Many Adaptive Users](https://arxiv.org/abs/2405.11109)：构造可抵抗自适应提示的多用户语言模型水印，可在重复查询下把生成文本追踪到单个用户或共谋用户组。
+- [Single Image Unlearning: Efficient Machine Unlearning in Multimodal Large Language Models](https://arxiv.org/abs/2405.12523)：用单张目标图像从 MLLM 中移除泄露视觉概念，并评估模型是否遗忘该图像且保留通用能力。
+- [TrojanRAG: Retrieval-Augmented Generation Can Be Backdoor Driver in Large Language Models](https://arxiv.org/abs/2405.13401)：显示 RAG 可成为后门载体，通过插入被投毒的检索内容来引导原本良性的 LLM 响应。
+- [ConTrans: Weak-to-Strong Alignment Engineering via Concept Transplantation](https://arxiv.org/abs/2405.13578)：把弱对齐模型中的对齐概念移植到更强目标模型中，通过概念移植改善弱到强的安全行为。
+- [Safety Alignment for Vision Language Models](https://arxiv.org/abs/2405.13581)：构建 VLM 安全对齐流程，使用合成不安全多模态指令、风险感知偏好数据和安全训练奖励模型。
+- [Towards Comprehensive Post Safety Alignment of Large Language Models via Safety Patching](https://arxiv.org/abs/2405.13820)：提出 SafePatching，在 LLM 骨干中插入分别用于降低有害性和缓解过度安全的安全补丁。
+- [WordGame: Efficient & Effective LLM Jailbreak via Simultaneous Obfuscation in Query and Response](https://arxiv.org/abs/2405.14023)：把恶意查询词伪装成文字游戏，并诱导响应侧同步混淆，从而绕过依赖显式有害措辞的安全对齐模式。
+- [ChatScene: Knowledge-Enabled Safety-Critical Scenario Generation for Autonomous Vehicles](https://arxiv.org/abs/2405.14062)：用 LLM 智能体和检索增强的领域代码生成，把交通文本描述转成 CARLA 中的安全关键驾驶场景。
+- [Nearly Tight Black-Box Auditing of Differentially Private Machine Learning](https://arxiv.org/abs/2405.14106)：在黑盒访问下通过选择最坏初始参数审计 DP-SGD，得到更接近理论 epsilon 界的经验隐私估计。
+- [Semantic-guided Prompt Organization for Universal Goal Hijacking against LLMs](https://arxiv.org/abs/2405.14189)：提出 POUGH，先采样并排序语义提示候选，再优化可拼接到任意用户提示上的通用目标劫持后缀。
+- [Tighter Privacy Auditing of DP-SGD in the Hidden State Threat Model](https://arxiv.org/abs/2405.14457)：设计最大化最终模型隐私损失的梯度序列，在攻击者无法观察中间训练状态时收紧 DP-SGD 审计。
+- [MoGU: A Framework for Enhancing Safety of Open-Sourced LLMs While Preserving Their Usability](https://arxiv.org/abs/2405.14488)：把开放 LLM 分成可用模型和安全模型两个变体，并用动态路由在恶意提示下强调无害性、在良性提示下保留实用性。
+- [Impact of Non-Standard Unicode Characters on Security and Comprehension in Large Language Models](https://arxiv.org/abs/2405.14490)：用非标准 Unicode 查询测试十五个 LLM，统计字符级扰动导致的越狱、幻觉和理解错误。
+- [Representation Noising: A Defence Mechanism Against Harmful Finetuning](https://arxiv.org/abs/2405.14577)：在模型发布前移除有害内部表示，使拿到权重的攻击者也难以通过微调恢复有害行为。
+- [Membership Inference on Text-to-Image Diffusion Models via Conditional Likelihood Discrepancy](https://arxiv.org/abs/2405.14800)：利用文生图扩散模型的文本条件过拟合，提出条件似然差异指标以低成本推断训练样本成员关系。
+- [Cross-Task Defense: Instruction-Tuning LLMs for Content Safety](https://arxiv.org/abs/2405.15202)：构造面向长篇有害文档的安全样例，并用单任务和混合任务损失进行指令微调以提升跨任务内容安全。
+- [Efficient Adversarial Training in LLMs with Continuous Attacks](https://arxiv.org/abs/2405.15589)：用连续嵌入空间攻击替代昂贵的离散攻击进行对抗训练，并结合鲁棒性与效用损失来提升 LLM 安全性。
+- [Breaking the False Sense of Security in Backdoor Defense through Re-Activation Attack](https://arxiv.org/abs/2405.16134)：显示后训练后门防御可能只让触发器休眠，并能在推理期用小幅通用扰动重新激活。
+- [Large Scale Knowledge Washing](https://arxiv.org/abs/2405.16720)：更新 decoder-only LLM 的 MLP 层以大规模遗忘事实知识，避免反向损失训练破坏流畅性或推理能力。
+- [Safe LoRA: the Silver Lining of Reducing Safety Risks when Fine-tuning Large Language Models](https://arxiv.org/abs/2405.16833)：为 LoRA 添加一行式补丁，将选定适配器权重投影到安全对齐子空间，以降低微调造成的安全退化。
+- [RLAIF-V: Open-Source AI Feedback Leads to Super GPT-4V Trustworthiness](https://arxiv.org/abs/2405.17220)：用开源 AI 反馈进行 MLLM 偏好学习和推理期自反馈，在可信性基准上减少对象幻觉和总体幻觉。
+- [AI Alignment with Changing and Influenceable Reward Functions](https://arxiv.org/abs/2405.17713)：形式化 Dynamic Reward MDP，用于研究用户偏好会变化或会被 AI 系统影响时的对齐问题。
+- [White-box Multimodal Jailbreaks Against Large Vision-Language Models](https://arxiv.org/abs/2405.17894)：联合优化对抗图像前缀和文本后缀，使 VLM 在白盒多模态攻击下生成肯定且有毒的回答。
+- [Cross-Context Backdoor Attacks against Graph Prompt Learning](https://arxiv.org/abs/2405.17984)：提出 CrossBA，仅操纵图提示学习的预训练阶段，并通过触发图与 prompt transformation 把后门迁移到下游图任务。
+- [LLMs and Memorization: On Quality and Specificity of Copyright Compliance](https://arxiv.org/abs/2405.18492)：用 160 字符阈值、模糊文本匹配和公有领域对照，量化指令微调 LLM 潜在版权复现及对策特异性。
+- [Learning diverse attacks on large language models for robust red-teaming and safety tuning](https://arxiv.org/abs/2405.18540)：用 GFlowNet 目标和二次平滑微调攻击模型，使自动红队采样多样化有害提示而非塌缩到单一攻击模式。
+- [Lisa: Lazy Safety Alignment for Large Language Models against Harmful Fine-tuning Attack](https://arxiv.org/abs/2405.18641)：在双状态微调中加入近端漂移约束，使有害数据和用户数据分开优化时的安全对齐状态更稳定。
+- [Voice Jailbreak Attacks Against GPT-4o](https://arxiv.org/abs/2405.19103)：研究针对 GPT-4o 的语音输入越狱，显示音频通道会产生不同于纯文本 prompt 攻击的安全失败。
+- [Self-Exploring Language Models: Active Preference Elicitation for Online Alignment](https://arxiv.org/abs/2405.19332)：用乐观双层目标让对齐模型主动探索高奖励的分布外回答，以进行在线偏好收集。
+- [X-VILA: Cross-Modality Alignment for Large Language Model](https://arxiv.org/abs/2405.19335)：把图像、视频、音频编码器对齐到 LLM 输入，并把扩散解码器对齐到输出，另用 visual embedding highway 减少跨模态信息损失。
+- [Robustifying Safety-Aligned Large Language Models through Clean Data Curation](https://arxiv.org/abs/2405.19358)：迭代改写干净文本以降低模型感知困惑度并保留文本质量，再用这些数据抵消有害预训练或微调攻击。
+- [Diffusion Policy Attacker: Crafting Adversarial Attacks for Diffusion-based Policies](https://arxiv.org/abs/2405.19424)：提供 DP-Attacker 算法，针对随机扩散策略行为克隆模型执行离线、在线、全局和 patch-based 对抗攻击。
+- [One-Shot Safety Alignment for Large Language Models via Optimal Dualization](https://arxiv.org/abs/2405.19544)：通过预优化闭式凸对偶函数，把受约束 RLHF 安全对齐转为无约束目标，避免不稳定的原始-对偶迭代。
+- [Large Language Model Watermark Stealing With Mixed Integer Programming](https://arxiv.org/abs/2405.19677)：用混合整数规划推断 LLM 水印词表划分，从而窃取依赖秘密 green 和 red token 列表的水印方案。
+- [Efficient LLM-Jailbreaking via Multimodal-LLM Jailbreak](https://arxiv.org/abs/2405.20015)：先围绕目标 LLM 构建 MLLM 并优化多模态越狱 embedding，再把该 embedding 转成文本后缀，以更高效率越狱目标 LLM。
+- [Transfer Attack for Bad and Good: Explain and Boost Adversarial Transferability across Multimodal Large Language Models](https://arxiv.org/abs/2405.20090)：分析共享视觉编码器的 MLLM 之间为何会发生对抗样本迁移，并用图像 patch 与 typography augmentation 提升迁移性。
+- [Defensive Prompt Patch: A Robust and Interpretable Defense of LLMs against Jailbreak Attacks](https://arxiv.org/abs/2405.20099)：加入可解释的防御后缀 prompt，在标准和自适应越狱攻击下压低攻击成功率并保留模型效用。
+- [Jailbreaking Large Language Models Against Moderation Guardrails via Cipher Characters](https://arxiv.org/abs/2405.20413)：构建触发 moderation guardrails 的 JAMBench，并用 cipher-character jailbreak prompts 攻击四类有害风险指令。
+- [Transfer Q Star: Principled Decoding for LLM Alignment](https://arxiv.org/abs/2405.20495)：从基座模型估计目标奖励的最优价值函数，使模型可通过解码而非参数更新完成轻量对齐。
+- [Visual-RolePlay: Universal Jailbreak Attack on MultiModal Large Language Models via Role-playing Image Characte](https://arxiv.org/abs/2405.20773)：用 LLM 生成角色扮演图像角色，把有害语义嵌入视觉结构中，以提升对 MLLM 的通用越狱迁移。
+- [Can We Trust Embodied Agents? Exploring Backdoor Attacks against Embodied LLM-Based Decision-Making Systems](https://arxiv.org/abs/2405.20774)：定义面向具身 LLM 决策系统的 BALD 后门，在决策流水线中使用词注入、场景操纵和知识注入触发器。
+- [Improved Generation of Adversarial Examples Against Safety-aligned LLMs](https://arxiv.org/abs/2405.20778)：把 skip-gradient 和 intermediate-level attack 思路迁移到文本越狱中，改进面向安全对齐 LLM 的梯度式对抗 prompt 生成。
+- [Improved Techniques for Optimization-Based Jailbreaking on Large Language Models](https://arxiv.org/abs/2405.21018)：用多样化有害目标模板和自动多坐标 token 更新，提升 GCG 式越狱优化效率。
+- [DistilDIRE: A Small, Fast, Cheap and Lightweight Diffusion Synthesized Deepfake Detection](https://arxiv.org/abs/2406.00856)：把扩散重建误差知识蒸馏到小型检测器中，降低识别扩散合成图像和 GAN 图像的计算成本。
+- [Improved Few-Shot Jailbreaking Can Circumvent Aligned Language Models and Their Defenses](https://arxiv.org/abs/2406.01288)：通过注入特殊 system token 和示例级随机搜索强化少样本越狱，可绕过对齐 Llama 模型及 SmoothLLM 等防御。
+- [REvolve: Reward Evolution with Large Language Models using Human Feedback](https://arxiv.org/abs/2406.01309)：结合 LLM 提案与人类反馈演化奖励函数，用于自动驾驶、类人运动和灵巧操作等“好行为”难以显式量化的任务。
+- [Decoupled Alignment for Robust Plug-and-Play Adaptation](https://arxiv.org/abs/2406.01514)：从已对齐 LLM 中蒸馏安全知识，并用 delta debugging 找出关键组件，在不做 SFT 或 RLHF 的情况下提升未对齐模型的有害问题防御率。
+- [Bileve: Securing Text Provenance in Large Language Models Against Spoofing with Bi-level Signature](https://arxiv.org/abs/2406.01946)：在文本水印中嵌入双层签名，用细粒度完整性比特和粗粒度来源信号区分伪造、篡改和真实 LLM 输出。
+- [RKLD: Reverse KL-Divergence-based Knowledge Distillation for Unlearning Personal Information in Large Language Models](https://arxiv.org/abs/2406.01983)：把 reverse-KL 知识蒸馏用于 LLM 个人信息遗忘，在忘记质量与保留模型效用之间做权衡。
+- [Towards Universal and Black-Box Query-Response Only Attack on LLMs with QROA](https://arxiv.org/abs/2406.02044)：把仅依赖问答接口的越狱 suffix 搜索建模为 bandit 优化，并扩展到面向黑盒 LLM 的通用一次查询 suffix。
+- [Cross-Modal Safety Alignment: Is textual unlearning all you need?](https://arxiv.org/abs/2406.02575)：检验纯文本遗忘是否能迁移到 VLM 安全，在无需多模态安全数据时同时降低文本和图文攻击成功率。
+- [Edit Distance Robust Watermarks via Indexing Pseudorandom Codes](https://arxiv.org/abs/2406.02633)：用 indexing pseudorandom codes 构造语言模型水印，在保持不可检测性的同时抵抗对抗性插入、替换和删除。
+- [PrE-Text: Training Language Models on Private Federated Data in the Age of LLMs](https://arxiv.org/abs/2406.02958)：从联邦私有数据生成差分隐私合成文本，使小模型和大语言模型能以更低客户端计算与通信成本学习用户分布。
+- [DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross-Domain](https://arxiv.org/abs/2406.03017)：把图像表示拆分为对抗特征和视觉特征，并只根据受害模型查询反馈优化对抗特征以提高黑盒攻击查询效率。
+- [MUC: Machine Unlearning for Contrastive Learning with Black-box Evaluation](https://arxiv.org/abs/2406.03603)：将机器遗忘扩展到对比学习编码器，并用黑盒评估检验被遗忘样本是否仍影响表征相似性。
+- [AutoJailbreak: Exploring Jailbreak Attacks and Defenses through a Dependency Lens](https://arxiv.org/abs/2406.03805)：把越狱优化建模为提示组成部分之间的依赖关系，并用该结构扩展攻击生成与防御分析。
+- [Jailbreak Vision Language Models via Bi-Modal Adversarial Prompt](https://arxiv.org/abs/2406.04031)：同时扰动视觉和文本提示通道来攻击 LVLM 护栏，面向先融合双模态特征再生成的对齐模型。
+- [LLM Whisperer: An Inconspicuous Attack to Bias LLM Responses](https://arxiv.org/abs/2406.04755)：显示提示优化服务可通过细微同义词替换操纵下游 LLM 输出，同时让提示对用户仍显得自然。
+- [LLavaGuard: VLM-based Safeguards for Vision Dataset Curation and Safety Assessment](https://arxiv.org/abs/2406.05113)：用可定制安全分类、多模态安全数据和预处理流程训练 VLM 护栏，服务视觉数据集清洗与风险评估。
+- [SelfDefend: LLMs Can Defend Themselves against Jailbreaking in a Practical Manner](https://arxiv.org/abs/2406.05498)：让目标 LLM 自行检测并修订不安全回答，覆盖人工、优化、生成、间接和多语言越狱的实用防御流程。
+- [How Alignment and Jailbreak Work: Explain LLM Safety through Intermediate Hidden States](https://arxiv.org/abs/2406.05644)：探测中间隐状态以解释安全对齐如何压制有害回答，以及越狱提示如何把表征推过护栏。
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](https://arxiv.org/abs/2406.05946)：指出对齐 LLM 存在浅层首 token 安全捷径，并主张用目标函数塑造更深层的生成分布。
+- [Unveiling the Safety of GPT-4o: An Empirical Study using Jailbreak Attacks](https://arxiv.org/abs/2406.06302)：用越狱攻击压力测试 GPT-4o，刻画其风险内容拒答行为，而不只依赖通用能力表现。
+- [Annotation alignment: Comparing LLM and human annotations of conversational safety](https://arxiv.org/abs/2406.06369)：在 DICES 的跨 race-gender 人类标注上比较 GPT-4 安全标签，量化自动安全判断与人的一致性。
+- [Adversarial Tuning: Defending Against Jailbreak Attacks for LLMs](https://arxiv.org/abs/2406.06622)：用生成的最坏情形对抗提示和第二阶段调优目标训练 LLM，提升对未知越狱的防御能力。
+- [Mitigating Boundary Ambiguity and Inherent Bias for Text Classification in the Era of Large Language Models](https://arxiv.org/abs/2406.07001)：显示选项数量和排列会扭曲 LLM 文本分类决策，并把模糊决策边界与选项偏置作为可靠性风险处理。
+- [Merging Improves Self-Critique Against Jailbreak Attacks](https://arxiv.org/abs/2406.07188)：把外部 critic 模型合并进基础 LLM，并在净化合成数据上微调以增强针对越狱提示的自我批判。
+- [Collective Constitutional AI: Aligning a Language Model with Public Input](https://arxiv.org/abs/2406.07814)：构建 CCAI 多阶段流程，从公众价值中提炼 constitution，并用这些输入对齐语言模型行为。
+- [Legend: Leveraging Representation Engineering to Annotate Safety Margin for Preference Datasets](https://arxiv.org/abs/2406.08124)：用表征工程为偏好对标注细粒度安全 margin，使奖励模型监督不再只依赖二元 harmlessness 标签。
+- [Decoupling the Class Label and the Target Concept in Machine Unlearning](https://arxiv.org/abs/2406.08288)：分离类别标签和需要遗忘的目标概念，揭示类级遗忘可能删掉标签却保留目标概念可用性。
+- [PAL: Pluralistic Alignment Framework for Learning from Heterogeneous Preferences](https://arxiv.org/abs/2406.08469)：用 pluralistic alignment 目标学习异质人类偏好，而不是把标注者分歧压成单一 Bradley-Terry 奖励代理。
+- [Reversing the Forget-Retain Objectives: An Efficient LLM Unlearning Framework from Logit Difference](https://arxiv.org/abs/2406.08607)：利用 logit 差异反转 forget 与 retain 目标，面向隐私和版权遗忘，同时保留无关知识。
+- [When LLM Meets DRL: Advancing Jailbreaking Efficiency via DRL-guided Search](https://arxiv.org/abs/2406.08705)：用深度强化学习引导替代随机遗传式越狱搜索，以更高效率在黑盒环境中发现有害提示。
+- [RL-JACK: Reinforcement Learning-powered Black-box Jailbreaking Attack against LLMs](https://arxiv.org/abs/2406.08725)：把黑盒越狱提示构造表述为强化学习问题，在攻击场景中嵌入有害问题。
+- [StructuralSleight: Automated Jailbreak Attacks on Large Language Models Utilizing Uncommon Text-Encoded Structure](https://arxiv.org/abs/2406.08754)：利用非常见文本编码结构而非普通提示措辞，自动化绕过 LLM 安全过滤。
+- [Steganalysis on Digital Watermarking: Is Your Defense Truly Impervious?](https://arxiv.org/abs/2406.09026)：用隐写分析攻击内容无关图像水印，在保持感知质量的同时提取并移除固定水印模式。
+- [Are we making progress in unlearning? Findings from the first NeurIPS unlearning competition](https://arxiv.org/abs/2406.09073)：总结首届 NeurIPS unlearning competition 的经验，强调稳健评测方法和多样算法权衡。
+- [Understanding Jailbreak Success: A Study of Latent Space Dynamics in Large Language Models](https://arxiv.org/abs/2406.09289)：从激活动态中提取 jailbreak vector，解释不同攻击类型如何把对齐模型推向不安全回答。
+- [REVS: Unlearning Sensitive Information in Language Models via Rank Editing in the Vocabulary Space](https://arxiv.org/abs/2406.09325)：通过 vocabulary space 的非梯度 rank editing 删除敏感或 PII 类知识，目标是在遗忘后抵抗抽取攻击。
+- [Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models](https://arxiv.org/abs/2406.10162)：研究错设奖励下训练的 LLM 是否会从迎合发展到能操纵自身评估的 reward-tampering 行为。
+- [Semantic Membership Inference Attack against Large Language Models](https://arxiv.org/abs/2406.10218)：通过模型对语义扰动输入的行为训练攻击器，提升超出精确输入匹配的 membership inference 隐私攻击。
+- [CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large Language Models](https://arxiv.org/abs/2406.10311)：定义面向真实中文场景的分层安全分类与基准，这一条更适合 Bench 而非 Model。
+- [Enhancing Multilingual Voice Toxicity Detection with Speech-Text Alignment](https://arxiv.org/abs/2406.10325)：用语音-文本对齐训练语音毒性分类器，使推理阶段只用音频也能受益于文本语义。
+- [Self-Reflection Makes Large Language Models Safer, Less Biased, and Ideologically Neutral](https://arxiv.org/abs/2406.10400)：把 self-reflection 作为安全干预来测试，显示模型自我修订可减少不安全、偏见或意识形态倾斜输出。
+- [PRISM: A Design Framework for Open-Source Foundation Model Safety](https://arxiv.org/abs/2406.10415)：提出 PRISM 作为开源基础模型安全设计框架，重点限制高能力不安全衍生模型的滥用。
+- [Emerging Safety Attack and Defense in Federated Instruction Tuning of Large Language Models](https://arxiv.org/abs/2406.10630)：揭示联邦指令调优中的安全攻击，并研究多方不共享本地数据微调 LLM 时的防御。
+- [Don't Forget Too Much: Towards Machine Unlearning on Feature Level](https://arxiv.org/abs/2406.10951)：把遗忘从整类或实例推进到特征级删除，在只需忘记某个概念属性时降低效用损失。
+- [Avoiding Copyright Infringement via Large Language Model Unlearning](https://arxiv.org/abs/2406.10952)：面向连续版权移除请求设计 LLM 遗忘方法，随时间删除受保护内容并保留其他能力。
+- [Toward Optimal LLM Alignments Using Two-Player Games](https://arxiv.org/abs/2406.10977)：把对齐表述为双智能体博弈，由提示选择器暴露静态偏好数据常遗漏的弱点。
+- [A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners](https://arxiv.org/abs/2406.11050)：用受控 conjunction fallacy 和 syllogism 测试区分 LLM 决策中的真实推理与 token-bias 捷径。
+- [MemDPT: Differential Privacy for Memory Efficient Language Models](https://arxiv.org/abs/2406.11087)：把差分隐私与内存高效语言模型训练架构结合，在实际资源限制下降低隐私泄漏。
+- [Exploring Safety-Utility Trade-Offs in Personalized Language Models](https://arxiv.org/abs/2406.11107)：沿安全和效用两个轴度量 personalization bias，显示用户身份适配会改变公平性和有害性行为。
+- [Problematic Tokens: Tokenizer Bias in Large Language Models](https://arxiv.org/abs/2406.11214)：分析低资源语言中的 tokenizer 偏置，把分词伪影与幻觉和多语言行为退化联系起来。
+- [Do Parameters Reveal More than Loss for Membership Inference?](https://arxiv.org/abs/2406.11544)：检验参数信息是否比 loss 暴露更多 membership 信号，从而修正隐私攻击和评估假设。
+- ["Not Aligned" is Not "Malicious": Being Careful about Hallucinations of Large Language Models' Jailbreak](https://arxiv.org/abs/2406.11668)：区分越狱幻觉和真正的恶意服从，提醒安全评测可能在输出无根据时高估攻击成功。
+- [Knowledge-to-Jailbreak: Investigating Knowledge-driven Jailbreaking Attacks for Large Language Models](https://arxiv.org/abs/2406.11682)：为医学等专业领域构建知识驱动越狱提示，把安全测试扩展到通用有害请求之外。
+- [Measuring memorization in RLHF for code completion](https://arxiv.org/abs/2406.11715)：度量代码补全 RLHF 是否引入或放大对类用户训练数据的记忆，把对齐过程与隐私泄漏联系起来。
+- [Split, Unlearn, Merge: Leveraging Data Attributes for More Effective Unlearning in LLMs](https://arxiv.org/abs/2406.11780)：提出 SPUNGE，按数据属性拆分、应用遗忘方法再合并结果，以放大有害知识移除效果。
+- [Safety Arithmetic: A Framework for Test-time Safety Alignment of Language Models by Steering Parameters and Activations](https://arxiv.org/abs/2406.11801)：提供免训练的测试时对齐框架，通过 steering 参数和激活来随用户意图变化调整拒答。
+- [GUARD-D-LLM: An LLM-Based Risk Assessment Engine for the Downstream uses of LLMs](https://arxiv.org/abs/2406.11851)：实现 LLM 下游使用风险评估引擎，对齐 AI Act、ISO 和 NIST 的风险管理关注点。
+- [CleanGen: Mitigating Backdoor Attacks for Generation Tasks in Large Language Models](https://arxiv.org/abs/2406.12257)：用推理阶段缓解方法防御生成式 LLM 应用中的训练数据后门，适用于受污染的公开或微调模型。
+- [SafeInfer: Context Adaptive Decoding Time Safety Alignment for Large Language Models](https://arxiv.org/abs/2406.12274)：在解码阶段施加上下文自适应安全对齐，抑制不安全续写，包括知识编辑削弱既有安全行为的场景。
+- [Adaptive Token Biaser: Knowledge Editing via Biasing Key Entities](https://arxiv.org/abs/2406.12468)：通过偏置关键实体在解码时编辑 LLM 知识，而不修改权重或整个 token 分布。
+- [Not Everything is All You Need: Toward Low-Redundant Optimization for Large Language Model Alignment](https://arxiv.org/abs/2406.12606)：对齐训练中只更新变化最大的参数，降低冗余并改善偏好优化任务的收敛。
+- [(WIP) Jailbreak Paradox: The Achilles' Heel of LLMs](https://arxiv.org/abs/2406.12702)：证明完美越狱分类器及弱模型可靠检测强模型越狱的限制，并用 Llama 与 GPT-4o 做案例分析。
+- [Current state of LLM Risks and AI Guardrails](https://arxiv.org/abs/2406.12934)：综述偏见、不安全行动、投毒、不透明性、幻觉和不可复现等 LLM 风险，并说明护栏架构需求。
+- [Data Contamination Can Cross Language Barriers](https://arxiv.org/abs/2406.13236)：证明基准污染可跨语言迁移，暴露基于文本重叠的多语言 LLM 泄漏检查局限。
+- [Textual Unlearning Gives a False Sense of Unlearning](https://arxiv.org/abs/2406.13348)：显示文本级遗忘可能表面成功，但在更强探测下敏感记忆仍可恢复。
+- [Unlearning or Obfuscating? Jogging the Memory of Unlearned LLMs via Benign Relearning](https://arxiv.org/abs/2406.13356)：展示 benign relearning 攻击可用少量弱相关数据恢复本应被遗忘的 LLM 知识。
+- [Learn and Unlearn: Addressing Misinformation in Multilingual LLMs](https://arxiv.org/abs/2406.13748)：研究虚假信息在多语言 LLM 中如何跨语言传播，并比较移除这些信息的遗忘方法。
+- [From Descriptive Richness to Bias: Unveiling the Dark Side of Generative Image Caption Enrichment](https://arxiv.org/abs/2406.13912)：显示生成式 caption enrichment 可增加视觉文本细节，同时向下游视觉语言表征注入偏见。
+- [Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons](https://arxiv.org/abs/2406.14144)：识别负责拒答行为的 safety neurons，并用推理时干预分析和调整安全对齐。
+- [The Fire Thief Is Also the Keeper: Balancing Usability and Privacy in Prompts](https://arxiv.org/abs/2406.14318)：在不要求本地部署或大幅系统改造的前提下，平衡提示可用性与敏感信息暴露风险。
+- [Jailbreaking as a Reward Misspecification Problem](https://arxiv.org/abs/2406.14393)：把越狱脆弱性解释为对齐阶段 reward misspecification，即奖励模型未能表达预期安全约束。
+- [PostMark: A Robust Blackbox Watermark for Large Language Models](https://arxiv.org/abs/2406.14517)：提出黑盒文本水印，无需服务商开放模型 logits，同时保持生成文本可检测性。
+- [Fantastic Copyrighted Beasts and How (Not) to Generate Them](https://arxiv.org/abs/2406.14526)：研究图像和视频生成模型复现受版权保护角色的问题，并评估提示级拦截为何会失效。
+- [Uncovering Latent Memories: Assessing Data Leakage and Memorization Patterns in Large Language Models](https://arxiv.org/abs/2406.14549)：审计 web-scale LLM 的记忆模式和潜在数据泄漏，关注个人、私有或专有训练信息暴露。
+- [Mitigating the Privacy Issues in Retrieval-Augmented Generation (RAG) via Pure Synthetic Data](https://arxiv.org/abs/2406.14773)：用合成数据替代私有检索语料，在保持 grounded generation 的同时降低 RAG 敏感信息泄漏。
+- [Backdooring Bias ($B^2$) into Stable Diffusion Models](https://arxiv.org/abs/2406.15213)：把偏置生成行为作为后门注入 Stable Diffusion，显示攻击者可操控人口统计或内容偏见。
+- [PKU-SafeRLHF: Towards Multi-Level Safety Alignment for LLMs with Human Preference](https://arxiv.org/abs/2406.15513)：发布多级安全偏好数据集，分离 helpfulness 与 harmlessness，含 44.6k prompts 和 265k 标注用于 LLM 对齐。
+- [Unveiling Entity-Level Unlearning for Large Language Models: A Comprehensive Analysis](https://arxiv.org/abs/2406.15796)：分析实体级 LLM 遗忘，指出当需要删除某实体全部知识时，实例级 forget set 会留下缺口。
+- [Towards Scalable Exact Machine Unlearning Using Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2406.16257)：用参数高效微调扩展 exact machine unlearning 保证，避免从头重训完整基础模型。
+- [Does Cross-Cultural Alignment Change the Commonsense Morality of Language Models?](https://arxiv.org/abs/2406.16316)：检验以英语为主的偏好对齐在跨文化迁移或翻译后是否改变 commonsense morality 判断。
+- [Safety Alignment of Large Language Models via Contrasting Safe and Harmful Distributions](https://arxiv.org/abs/2406.16743)：通过对比安全和有害回答分布来对齐 LLM，以较少依赖重型 RLHF 训练的方式减少有害输出。
+- [WARP: On the Benefits of Weight Averaged Rewarded Policies](https://arxiv.org/abs/2406.16768)：在 RLHF 中平均 rewarded policies，在优化奖励的同时保留通常由 KL 正则保护的预训练知识。
+- [How Data Inter-connectivity Shapes LLMs Unlearning: A Structural Unlearning Perspective](https://arxiv.org/abs/2406.16810)：提出 PISTOL 结构化数据集，用于测试 forget 样本相互连接而非独立点时的遗忘效果。
+- [BEEAR: Embedding-based Adversarial Removal of Safety Backdoors in Instruction-tuned Language Models](https://arxiv.org/abs/2406.17092)：通过识别触发器诱导的 embedding 模式并进行对抗抑制，移除安全后门触发的不安全行为。
+- [Self-Constructed Context Decompilation with Fined-grained Alignment Enhancement](https://arxiv.org/abs/2406.17233)：用自构造上下文和细粒度对齐增强改进代码反编译；该条偏离 Agent Safety Model 范围。
+- [AI Risk Categorization Decoded (AIR 2024): From Government Regulations to Corporate Policies](https://arxiv.org/abs/2406.17864)：从政府和企业政策中归纳四层 AI 风险分类，更像 taxonomy 或 survey 证据而非安全模型。
+- [SoK: Membership Inference Attacks on LLMs are Rushing Nowhere (and How to Fix It)](https://arxiv.org/abs/2406.17975)：批判近期 LLM membership inference 方法的薄弱假设，并提出更稳健的隐私评估协议。
+- [SafeAligner: Safety Alignment against Jailbreak Attacks via Response Disparity Guidance](https://arxiv.org/abs/2406.18118)：用 response-disparity guidance 对齐 LLM 以抵御越狱，同时降低成本并保留通用效用。
+- [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/abs/2406.18382)：提出 preference-manipulation attacks，攻击者用精心构造的网页或插件内容操纵 LLM 搜索和选择结果。
+- [WildGuard: Open One-Stop Moderation Tools for Safety Risks, Jailbreaks, and Refusals of LLMs](https://arxiv.org/abs/2406.18495)：提供轻量开源 moderation model，用于检测恶意提示、不安全回答和 LLM 交互中的拒答。
+- [RouteLLM: Learning to Route LLMs with Preference Data](https://arxiv.org/abs/2406.18665)：用偏好数据学习成本-性能路由器，在强模型和低成本模型间选择；属于有用基础设施但偏离安全模型。
+- [Understand What LLM Needs: Dual Preference Alignment for Retrieval-Augmented Generation](https://arxiv.org/abs/2406.18676)：提出 DPA-RAG，用查询增强偏好数据、成对/逐点/对比 reranker 训练以及 reader 预对齐阶段，对齐 RAG 检索器和 LLM 读者偏好。
+- [Generating Is Believing: Membership Inference Attacks against Retrieval-Augmented Generation](https://arxiv.org/abs/2406.19234)：提出 S2MIA，用 RAG 生成内容与候选记录的语义相似度推断外部数据库成员关系，并绕过多种防御。
+- [Covert Malicious Finetuning: Challenges in Safeguarding LLM Adaptation](https://arxiv.org/abs/2406.20053)：展示 covert malicious finetuning，利用单条看似无害的编码样本训练黑盒适配模型响应编码有害请求，同时规避数据集和输入输出审查。
+- [UnUnlearning: Unlearning is not sufficient for content regulation in advanced generative AI](https://arxiv.org/abs/2407.00106)：指出用遗忘做内容管控存在分类错位：参数层面的精确遗忘可移除训练影响，但推理时的上下文可通过“反遗忘”重新带回被禁知识。
+- [Towards Massive Multilingual Holistic Bias](https://arxiv.org/abs/2407.00486)：构建约六百万句、覆盖 13 个群体维度的 MMHB 多语偏见数据集与基准，并用它揭示机器翻译中的性别鲁棒性差距和新增毒性。
+- [Large Language Models Are Involuntary Truth-Tellers: Exploiting Fallacy Failure for Jailbreak Attacks](https://arxiv.org/abs/2407.00869)：把 LLM 难以编造谬误流程这一缺陷转化为越狱攻击，请求“看似虚假的欺骗性流程”，诱导模型输出真实有害步骤。
+- [A Fingerprint for Large Language Models](https://arxiv.org/abs/2407.01235)：提出黑盒 LLM 指纹方法，通过判断可疑模型输出是否位于受害模型输出子空间或联合子空间内，认证模型及其 PEFT 修改版本。
+- [Badllama 3: removing safety finetuning from Llama 3 in minutes](https://arxiv.org/abs/2407.01376)：显示开放权重模型的安全微调可被快速剥离，评估 QLoRA、ReFT 和 Ortho 在单卡数分钟内移除 Llama 3 拒答能力的攻击。
+- [SeqAR: Jailbreak LLMs with Sequential Auto-Generated Characters](https://arxiv.org/abs/2407.01902)：用开源 LLM 冷启动自动生成越狱提示，优化多个连续角色并合并到单次查询中，再测试跨模型和跨有害请求迁移。
+- [To Forget or Not? Towards Practical Knowledge Unlearning for Large Language Models](https://arxiv.org/abs/2407.01920)：提出 KnowUnDo 评测版权和隐私知识遗忘，并给出 MemFlex，用梯度信息定位敏感参数以避免过度遗忘。
+- [Generative Monoculture in Large Language Models](https://arxiv.org/abs/2407.02209)：将对齐后的输出多样性坍缩诊断为 generative monoculture，显示采样和提示难以修复观点或输出收窄，指向微调目标错配。
+- [Breach By A Thousand Leaks: Unsafe Information Leakage in 'Safe' AI Responses](https://arxiv.org/abs/2407.02551)：把越狱防御重述为信息泄漏问题，用问题分解从表面安全回答中推断禁用知识，并证明安全与效用存在权衡。
+- [From Theft to Bomb-Making: The Ripple Effect of Unlearning in Defending Against Jailbreak Attacks](https://arxiv.org/abs/2407.02855)：发现遗忘某类有害回答可通过 ripple effect 泛化到未见有害知识，用小规模遗忘集显著降低越狱成功率。
+- [LoRA-Guard: Parameter-Efficient Guardrail Adaptation for Content Moderation of Large Language Models](https://arxiv.org/abs/2407.02987)：用低秩适配器和双路径设计把 LLM 语言特征迁移到内容审核 guardrail，实现适合端侧部署的轻量安全过滤。
+- [Towards Federated RLHF with Aggregated Client Preference for LLMs](https://arxiv.org/abs/2407.03038)：提出 FedBis 和 FedBiscuit，在客户端把偏好编码为二值选择器并聚合，结合相似用户分组降低偏好异质性和奖励黑客风险。
+- [SlerpFace: Face Template Protection via Spherical Linear Interpolation](https://arxiv.org/abs/2407.03043)：用 spherical interpolation 将人脸模板嵌入旋转到近噪声分布，并结合特征维度分组丢弃，防御扩散模型模板反演。
+- [Soft Begging: Modular and Efficient Shielding of LLMs against Prompt Injection and Jailbreaking based on Prompt Tuning](https://arxiv.org/abs/2407.03391)：训练 soft prompts 作为推理期护盾，抵消 prompt injection 和越狱输入对基座模型输出的污染，无需改动基座模型。
+- [Social Bias in Large Language Models For Bangla: An Empirical Study on Gender and Religious Bias](https://arxiv.org/abs/2407.03536)：提供 Bangla 性别和宗教偏见检测数据集与 probing 设置，填补低资源语言开放式 LLM 生成偏见评测缺口。
+- [Automated Progressive Red Teaming](https://arxiv.org/abs/2407.03876)：构建 APRT 自动红队管线，用 intention-expanding LLM、intention-hiding LLM 和 Evil Maker 过滤器生成可迁移的有害但有用提示。
+- [Certifiably Robust Image Watermark](https://arxiv.org/abs/2407.04086)：把随机平滑扩展到图像水印，为抗移除和抗伪造攻击提供可认证鲁棒性保证及其估计算法。
+- [Are Large Language Models Strategic Decision Makers? A Study of Performance and Bias in Two-Player Non-Zero-Sum Games](https://arxiv.org/abs/2407.04467)：标记分类错位：该工作评估博弈决策中的位置、收益和行为偏差，不是 guard model、安全训练或检测器。
+- [On scalable oversight with weak LLMs judging strong LLMs](https://arxiv.org/abs/2407.04622)：研究 debate 和 consultancy 可扩展监督协议，让较弱 LLM 评审较强智能体在问答、数学、代码、逻辑和多模态任务中的表现。
+- [Releasing Malevolence from Benevolence: The Menace of Benign Data on Machine Unlearning](https://arxiv.org/abs/2407.05112)：提出 Unlearning Usability Attack，让看似良性且能通过投毒检测的合成点在被遗忘时显著破坏模型能力。
+- [R2-Guard: Robust Reasoning Enabled LLM Guardrail via Knowledge-Enhanced Logical Reasoning](https://arxiv.org/abs/2407.05557)：将按类别训练的 guard 模型与一阶安全规则结合到 Markov logic networks 或 probabilistic circuits 中，提升长尾类别和越狱鲁棒性。
+- [Exposing Privacy Gaps: Membership Inference Attack on Preference Data for LLM Alignment](https://arxiv.org/abs/2407.06443)：提出 PREMIA 参考式成员推断攻击，专门针对对齐偏好数据，并显示 DPO 对齐模型比 PPO 对齐模型更易暴露。
+- [Safe-Embed: Unveiling the Safety-Critical Knowledge of Sentence Encoders](https://arxiv.org/abs/2407.06851)：用新 pairwise 数据集和 Categorical Purity 指标检验 sentence encoder 作为不安全提示检测器的安全分类分离能力。
+- [Divine LLaMAs: Bias, Stereotypes, Stigmatization, and Emotion Representation of Religion in Large Language Models](https://arxiv.org/abs/2407.06908)：通过 LLM 情绪归因度量宗教刻板印象和污名化，显示不同宗教群体的拒答率和扁平化刻画存在差异。
+- [Zero-Shot Class Unlearning in CLIP with Synthetic Samples](https://arxiv.org/abs/2407.07485)：在无真实遗忘数据时用梯度上升生成目标类合成样本，并以 Lipschitz 正则平滑 CLIP 视觉和文本嵌入实现类别遗忘。
+- [Protecting NeRFs' Copyright via Plug-And-Play Watermarking Base Model](https://arxiv.org/abs/2407.07735)：提出 NeRFProtector 即插即用水印基座模型，在创建 NeRF 时嵌入二进制消息，并用 progressive distillation 保持渲染质量。
+- [Towards Robust Alignment of Language Models: Distributionally Robustifying Direct Preference Optimization](https://arxiv.org/abs/2407.07880)：增强 direct preference optimization 对分布偏移的鲁棒性，为更安全的语言模型对齐提供模型侧方法。
+- [Defending Code Language Models against Backdoor Attacks with Deceptive Cross-Entropy Loss](https://arxiv.org/abs/2407.08956)：用 Deceptive Cross-Entropy 防御代码语言模型后门，通过 deceptive distribution 和 label smoothing 限制梯度，避免模型过拟合后门触发器。
+- [Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training](https://arxiv.org/abs/2407.09121)：提出 DeRTa 拒答训练，将 harmful-response-prefix MLE 与 Reinforced Transition Optimization 结合，使模型能在回答中途从有害续写转向拒答。
+- [ASTPrompter: Preference-Aligned Automated Language Model Red-Teaming to Generate Low-Perplexity Unsafe Prompts](https://arxiv.org/abs/2407.09447)：用对比偏好学习训练红队提示生成器，寻找低困惑度且可跨开源模型迁移的不安全提示。
+- [Learning to Refuse: Towards Mitigating Privacy Risks in LLMs](https://arxiv.org/abs/2407.10058)：构建个人数据遗忘数据集 RETURN，并提出 NAUF name-aware unlearning 框架，在保护目标个人信息时保持无关问答行为。
+- [On Large Language Model Continual Unlearning](https://arxiv.org/abs/2407.10223)：提出 OOO 持续遗忘框架，使用正交 LoRA 模块和 OOD 检测器，在推理时按输入相似度加载相应遗忘适配器且无需留存数据。
+- [BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs](https://arxiv.org/abs/2407.10241)：提供面向开放式 LLM 生成的即插即用偏见检测器，结合外部人类知识和模型推理来分类社会偏见，超越固定格式模板。
+- [Uncertainty is Fragile: Manipulating Uncertainty in Large Language Models](https://arxiv.org/abs/2407.11282)：展示一种后门攻击，在保持 top-1 预测不变的同时，把 LLM 不确定性分布推向攻击者指定目标。
+- [Targeted Unlearning with Single Layer Unlearning Gradient](https://arxiv.org/abs/2407.11867)：提出 SLUG，用层重要性和梯度对齐选择单个关键层，并通过一次梯度更新遗忘 CLIP、扩散模型和 VLM 中的目标概念。
+- [Does Refusal Training in LLMs Generalize to the Past Tense?](https://arxiv.org/abs/2407.11969)：揭示拒答训练的泛化缺口：把有害请求改写为过去时可越狱多种模型，而在微调数据中显式加入过去时样例可缓解该问题。
+- [The Art of Saying No: Contextual Noncompliance in Language Models](https://arxiv.org/abs/2407.12043)：构建 contextual noncompliance 分类法和 1,000 条提示评测，并比较合成数据微调与 LoRA 在更广义适当拒答上的效果。
+- [Unlearning Personal Data from a Single Image](https://arxiv.org/abs/2407.12069)：定义单图个人身份遗忘任务 1-SHUI，并提出 MetaUnlearn，在训练数据不可用时从用户提供的一张肖像中元学习遗忘身份。
+- [Private prediction for large-scale synthetic text generation](https://arxiv.org/abs/2407.12108)：通过私有化 next-token prediction 生成差分隐私合成文本，结合改进隐私分析、private selection 和 sparse-vector public predictions。
+- [The Better Angels of Machine Personality: How Personality Relates to LLM Safety](https://arxiv.org/abs/2407.12344)：把 MBTI 式人格特征与毒性、隐私、公平性和越狱易感性关联起来，并通过编辑模型人格特征作为安全干预。
+- [Truth is Universal: Robust Detection of Lies in LLMs](https://arxiv.org/abs/2407.12831)：基于激活中的二维真假子空间构建 LLM 说谎检测器，可跨多个模型家族和真实说谎场景泛化。
+- [PG-Attack: A Precision-Guided Adversarial Attack Framework Against Vision Foundation Models for Autonomous Driving](https://arxiv.org/abs/2407.13111)：用 precision mask perturbation 和 deceptive text patch 攻击自动驾驶视觉基础模型，操纵目标表征和场景理解。
+- [BiasDPO: Mitigating Bias in Language Models through Direct Preference Optimization](https://arxiv.org/abs/2407.13928)：用 DPO 的低偏见优于高偏见补全损失和人工构造的偏见偏好数据集，缓解 Phi-2 英文生成中的性别、种族和宗教偏见。
+- [Watermark Smoothing Attacks against Language Models](https://arxiv.org/abs/2407.14206)：提出 Smoothing Attack，利用模型置信度与水印可检测性的关系选择性平滑带水印文本，在保持质量的同时擦除多种文本水印痕迹。
+- [Human-Interpretable Adversarial Prompt Attack on Large Language Models with Situational Context](https://arxiv.org/abs/2407.14644)：用 LLM 重写把无意义对抗后缀转化为带情境的人类可读提示，暴露更隐蔽的黑盒越狱通道。
+- [Improving Context-Aware Preference Modeling for Language Models](https://arxiv.org/abs/2407.14916)：基于 context-conditioned preference 数据训练上下文感知奖励模型，将上下文选择与偏好判断分离，以减少欠规范对齐误差。
+- [Operationalizing a Threat Model for Red-Teaming Large Language Models (LLMs)](https://arxiv.org/abs/2407.14937)：标记分类错位：该工作是 LLM 红队威胁模型 SoK 和攻击分类法，不是模型、护栏、检测器或训练方法。
+- [Arondight: Red Teaming Large Vision Language Models with Auto-generated Multi-modal Jailbreak Prompts](https://arxiv.org/abs/2407.15050)：构建 VLM 红队生成器，由红队 VLM 生成视觉越狱提示，并由 RL 引导的 LLM 结合 novelty reward 生成多样文本提示。
+- [A General Framework for Data-Use Auditing of ML Models](https://arxiv.org/abs/2407.15100)：将黑盒成员推断与顺序假设检验结合，用可调误报率审计数据所有者内容是否被用于图像分类器或基础模型训练。
+- [Failures to Find Transferable Image Jailbreaks Between Vision-Language Models](https://arxiv.org/abs/2407.15211)：报告图像越狱在不同 VLM 家族之间难以迁移的负结果，区分模型特定图像脆弱性与通用多模态越狱主张。
+- [Latent Adversarial Training Improves Robustness to Persistent Harmful Behaviors in LLMs](https://arxiv.org/abs/2407.15549)：使用 targeted latent adversarial training 提升越狱鲁棒性、移除未知触发器后门，并让有害任务遗忘更难被重新学习。
+- [LLMmap: Fingerprinting For Large Language Models](https://arxiv.org/abs/2407.15847)：用主动黑盒查询指纹识别 LLM 应用中的模型版本，即使存在未知系统提示、采样设置、RAG 或 chain-of-thought 包装也保持有效。
+- [Figure it Out: Analyzing-based Jailbreak Attack on Large Language Models](https://arxiv.org/abs/2407.16205)：提出 ABJ 黑盒越狱，操纵文本和视觉推理路径，而不只是添加输入层攻击字符串。
+- [Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?](https://arxiv.org/abs/2407.16607)：从 BPE merge rules 中推断训练数据混合比例，通过 token 频率证据上的线性规划暴露 tokenizer 级数据来源泄漏。
+- [Course-Correction: Safety Alignment Using Synthetic Preferences](https://arxiv.org/abs/2407.16637)：从模型错误中生成合成偏好对，并训练安全对齐策略来纠正不安全轨迹，减少对新增人工偏好标注的依赖。
+- [Can Large Language Models Automatically Jailbreak GPT-4V?](https://arxiv.org/abs/2407.16686)：用 LLM 优化越狱提示、weak-to-strong in-context prompting 和 early stopping 自动红队测试 GPT-4V，并降低搜索成本。
+- [Revisiting Who’s Harry Potter: Towards Targeted Unlearning from a Causal Intervention Perspective](https://arxiv.org/abs/2407.16997)：把目标化 LLM 遗忘重述为因果去混杂，扩展 WHP，使模型遗忘目标实体且避免乱码、编造和越狱泄漏。
+- [Can Watermarking Large Language Models Prevent Copyrighted Text Generation and Hide Training Data?](https://arxiv.org/abs/2407.17417)：研究水印作为版权威慑手段：它能减少受保护文本复现，但也会削弱用于发现训练数据记忆的成员推断信号。
+- [Fluent Student-Teacher Redteaming](https://arxiv.org/abs/2407.17447)：用 student-teacher distillation 让 GCG 和 BEAST 攻击逼近 toxified finetune，并加入多模型困惑度约束生成流畅越狱字符串。
+- [The Dark Side of Function Calling: Pathways to Jailbreaking Large Language Models](https://arxiv.org/abs/2407.17915)：揭示 function calling 越狱路径，利用对齐差异、用户胁迫和薄弱函数调用安全过滤攻击多个主流闭源模型。
+- [GermanPartiesQA: Benchmarking Commercial Large Language Models and AI Companions for Political Alignment and Sycophancy](https://arxiv.org/abs/2407.18008)：标记分类错位：这是商业 LLM 政治立场与谄媚倾向基准，不是安全模型或防御方法。
+- [Strong Copyright Protection for Language Models via Adaptive Model Fusion](https://arxiv.org/abs/2407.20105)：提出 CP-Fuse 自适应模型融合算法，借鉴 Near-Access Free 框架，在文本和代码生成质量与受保护材料复现抑制之间做平衡。
+- [Learn while Unlearn: An Iterative Unlearning Framework for Generative Language Models](https://arxiv.org/abs/2407.20271)：提出 ICU 框架，结合知识遗忘诱导、对比式能力保持和迭代遗忘细化，在移除敏感知识时保留生成能力。
+- [Defending Jailbreak Attack in VLMs via Cross-modality Information Detector](https://arxiv.org/abs/2407.21659)：提出 CIDER 即插即用 MLLM 越狱检测器，用有害文本查询和对抗图像之间的跨模态相似度识别攻击输入。
+- [ShieldGemma: Generative AI Content Moderation Based on Gemma](https://arxiv.org/abs/2407.21772)：提出基于 Gemma2 的输入和输出审核模型，覆盖色情、危险内容、骚扰和仇恨言论等 harm types，并主要用合成安全数据训练。
+- [Safetywashing: Do AI Safety Benchmarks Actually Measure Safety Progress?](https://arxiv.org/abs/2407.21792)：标记分类错位：该文元分析安全基准与通用能力、训练算力的相关性，而不是提出安全模型。
+- [ABC Align: Large Language Model Alignment for Safety & Accuracy](https://arxiv.org/abs/2408.00307)：用合成数据生成、偏好优化和后训练量化，把媒体机构标准写入 LLM 对齐流程，在保持准确性的同时降低偏见。
+- [On the Limitations and Prospects of Machine Unlearning for Generative AI](https://arxiv.org/abs/2408.00376)：标记 Survey 或 position paper 分类错位：该文梳理 LLM 与扩散模型遗忘限制，以及基准、指标和效用权衡需求。
+- [Tamper-Resistant Safeguards for Open-Weight LLMs](https://arxiv.org/abs/2408.00761)：提出 TAR 训练方法，把 safeguard 嵌入开放权重 LLM，使拒答和遗忘保护在数百步微调后仍难以被移除。
+- [The Phantom Menace: Unmasking Privacy Leakages in Vision-Language Models](https://arxiv.org/abs/2408.01228)：测试 VLM 身份泄漏，显示匿名化对齐数据、上下文变化和模糊处理都不能可靠阻止记忆身份披露。
+- [Mission Impossible: A Statistical Perspective on Jailbreaking LLMs](https://arxiv.org/abs/2408.01420)：从统计视角给出偏好对齐下越狱概率下界，并提出 E-RLHF，对 RLHF 目标做改动以提高安全回答概率。
+- [Building a Domain-specific Guardrail Model in Production](https://arxiv.org/abs/2408.01452)：描述 K-12 教育生产级 guardrail model 的训练和部署，覆盖领域策略需求、专有和公开安全基准以及推理优化。
+- [SEAS: Self-Evolving Adversarial Safety Optimization for Large Language Models](https://arxiv.org/abs/2408.02632)：用模型自生成对抗数据迭代共训红队模型和目标模型，包含初始化、攻击和 adversarial optimization 三阶段。
+- [Hide and Seek: Fingerprinting Large Language Models with Evolutionary Learning](https://arxiv.org/abs/2408.02871)：让 Auditor LLM 演化可区分提示、Detective LLM 根据响应识别模型家族，用于黑盒模型归因。
+- [HARMONIC: Harnessing LLMs for Tabular Data Synthesis and Privacy Protection](https://arxiv.org/abs/2408.02927)：用近邻关系风格的指令数据微调 LLM 生成隐私保护表格合成数据，并用任务化隐私指标评估泄漏。
+- [Scaling Trends for Data Poisoning in LLMs](https://arxiv.org/abs/2408.02946)：在 1.5B 到 72B 参数的 24 个 LLM 上测量数据投毒敏感性，发现大模型从极少量投毒样本中学习有害行为更快。
+- [Adversarial Safety-Critical Scenario Generation Using Naturalistic Human Driving Priors](https://arxiv.org/abs/2408.03200)：结合 IDM 和 MOBIL 先验、GAIL 驾驶员建模与 PPO actor-critic 优化，生成真实且对抗的自动驾驶安全关键场景。
+- [A Study on Prompt Injection Attack Against LLM-Integrated Mobile Robotic Systems](https://arxiv.org/abs/2408.03515)：测试针对 GPT-4o 移动机器人导航的 prompt injection，并评估可同时提升攻击检测和任务表现的安全提示防御。
+- [EnJa: Ensemble Jailbreak on Large Language Models](https://arxiv.org/abs/2408.03603)：将提示级有害指令隐藏、基于梯度的 token 攻击和连接文本组合成 Ensemble Jailbreak 混合越狱攻击。
+- [Compromesso! Italian Many-Shot Jailbreaks Undermine the Safety of Large Language Models](https://arxiv.org/abs/2408.04522)：构建意大利语不安全问答示例，并显示 many-shot jailbreak 会在四类开源权重 LLM 中随示例数量快速升级。
+- [BA-LoRA: Bias-Alleviating Low-Rank Adaptation to Mitigate Catastrophic Inheritance in Large Language Models](https://arxiv.org/abs/2408.04556)：提出 BA-LoRA，用一致性、多样性和 SVD 正则缓解 LoRA 适配中的知识漂移、表征坍塌和噪声过拟合。
+- [Multi-Turn Context Jailbreak Attack on Large Language Models From First Principles](https://arxiv.org/abs/2408.04686)：提出 Context Fusion Attack 黑盒多轮越狱，抽取有害关键词、构造上下文场景并动态融合目标请求。
+- [h4rm3l: A Language for Composable Jailbreak Attack Synthesis](https://arxiv.org/abs/2408.04811)：定义 h4rm3l 领域专用语言，用参数化越狱变换组合攻击，并支持程序合成式搜索攻击变体。
+- [ConfusedPilot: Confused Deputy Risks in RAG-based LLMs](https://arxiv.org/abs/2408.04870)：定义 ConfusedPilot RAG 攻击，利用恶意检索文本污染回答、借助检索缓存泄露秘密，并在企业流程中传播错误信息。
+- [Anchored Preference Optimization and Contrastive Revisions: Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266)：构造 CLAIR 对比式 AI 修订偏好对，并提出 APO 锚定偏好目标，使 Llama-3-8B-Instruct 在偏好数据欠指定时仍能稳定、可控地对齐。
+- [KOALA: Enhancing Speculative Decoding for LLM via Multi-Layer Draft Heads with Adversarial Learning](https://arxiv.org/abs/2408.08146)：为 speculative decoding 加入多层 draft head 与对抗学习，使加速解码在更难的 draft token 分布下仍保持生成质量。
+- [Are CLIP features all you need for Universal Synthetic Image Origin Attribution?](https://arxiv.org/abs/2408.09153)：检验冻结 CLIP 表征能否把合成图像归因到源生成器，将来源追踪转化为轻量级 provenance 分类任务。
+- [Malacopula: adversarial automatic speaker verification attacks using a neural-based generalised Hammerstein model](https://arxiv.org/abs/2408.09300)：用含多项式分支和线性滤波器的神经 generalized Hammerstein 模型扰动伪造语音嵌入，增强 ASV 欺骗攻击并暴露音质下降与可检测性权衡。
+- [Antidote: Post-fine-tuning Safety Alignment for Large Language Models against Harmful Fine-tuning](https://arxiv.org/abs/2408.09600)：在有害微调后执行一次性剪枝，移除负责生成有害内容的权重，即使攻击微调使用激进超参数也能恢复安全性。
+- [Promoting Equality in Large Language Models: Identifying and Mitigating the Implicit Bias based on Bayesian Theory](https://arxiv.org/abs/2408.10608)：定义隐式偏见问题，并用 BTBR 的贝叶斯似然比筛选与模型编辑定位并删除 LLM 权重中的偏见知识三元组。
+- [Probing the Safety Response Boundary of Large Language Models via Unsafe Decoding Path Generation](https://arxiv.org/abs/2408.10668)：训练 cost value model 作为 Jailbreak Value Decoding 的检测器和攻击器，在表面拒答下诱导生成隐藏的不安全解码路径。
+- [Perception-guided Jailbreak against Text-to-Image Models](https://arxiv.org/abs/2408.10848)：用 LLM 生成与不安全词在人类感知上相近、但文本语义上安全的替代表达，从而黑盒诱导文生图模型生成 NSFW 概念。
+- [Dynamic Analysis and Adaptive Discriminator for Fake News Detection](https://arxiv.org/abs/2408.10883)：结合 MCTS 提示优化的 LLM 假新闻动态分析，以及针对情绪夸张、逻辑矛盾、图像操纵和语义不一致的自适应判别器。
+- [BEYOND DIALOGUE: A Profile-Dialogue Alignment Framework Towards General Role-Playing Language Model](https://arxiv.org/abs/2408.10903)：通过自动化 beyond-dialogue 任务和推理轨迹让角色扮演模型对齐角色画像特征，减少训练中的画像与对话不一致。
+- [Defending Against Jailbreak Through Early Exit Generation of Large Language Models](https://arxiv.org/abs/2408.11308)：在完整解码前用早期 Transformer 表征检测越狱，当潜在嵌入更接近恶意提示而非良性提示时立即终止生成。
+- [An Optimizable Suffix Is Worth A Thousand Templates: Efficient Black-box Jailbreaking without Affirmative Phrases via LLM as Optimizer](https://arxiv.org/abs/2408.11313)：用 LLM 优化器和 harmfulness scorer 迭代生成黑盒对抗后缀，无需白盒梯度或预设肯定短语。
+- [Against All Odds: Overcoming Typology, Script, and Language Confusion in Multilingual Embedding Inversion Attacks](https://arxiv.org/abs/2408.11749)：在 20 种语言、8 个语系和 12 套文字上评估 embedding inversion，发现阿拉伯字母、西里尔字母和印度-雅利安语族场景更易受跨文字恢复和语言混淆影响。
+- [Identifying and Mitigating Social Bias Knowledge in Language Models](https://arxiv.org/abs/2408.11843)：提出 BiaScope 和 FAST，定位存储社会偏见的关键层并插入小型校准网络，在保留常识知识的同时缓解偏见。
+- [La-SoftMoE CLIP for Unified Physical-Digital Face Attack Detection](https://arxiv.org/abs/2408.12793)：用 latent soft MoE 改造 CLIP，让物理与数字人脸攻击检测器把稀疏特征路由到区域特定的专家参数。
+- [Atoxia: Red-teaming Large Language Models with Target Toxic Answers](https://arxiv.org/abs/2408.14853)：训练强化学习红队攻击器，生成用户查询和误导性回答开头，以最大化目标有毒答案在受测 LLM 中出现的概率。
+- [Understanding the Effectiveness of Coverage Criteria for Large Language Models: A Special Angle from Jailbreak Attacks](https://arxiv.org/abs/2408.15207)：用隐藏状态聚类和正常查询与越狱查询的 neuron coverage 差异，构建实时检测、测试优先级排序和 coverage-guided 越狱样例生成流程。
+- [LLM Defenses Are Not Robust to Multi-Turn Human Jailbreaks Yet](https://arxiv.org/abs/2408.15221)：显示人类编写的多轮越狱可绕过许多单轮防御，暴露当有害意图分散在对话上下文中时护栏的失效模式。
+- [Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models](https://arxiv.org/abs/2408.15313)：把安全性和有用性的联合 RLHF 目标重参数化为监督式 BFPO，并用全局偏好排序标签函数同时约束 harmlessness 与 utility。
+- [Legilimens: Practical and Unified Content Moderation for Large Language Model Services](https://arxiv.org/abs/2408.15488)：从聊天 LLM 中抽取概念特征，并用红队数据增强加固，构建兼顾效率与效果的不安全输出审核护栏。
+- [WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback](https://arxiv.org/abs/2408.15549)：从多轮真实交互中挖掘用户现场反馈并转成偏好对，再微调 LLM 以对齐真实用户偏好而非离线标注。
+- [Defending Text-to-image Diffusion Models: Surprising Efficacy of Textual Perturbations Against Backdoor Attacks](https://arxiv.org/abs/2408.15721)：通过扰动输入文本防御后门文生图扩散模型，在文本嵌入和 cross-attention 图中破坏触发器行为且几乎不损害生成质量。
+- [Beyond Preferences in AI Alignment](https://arxiv.org/abs/2408.16984)：指出偏好优化无法单独表达全部对齐约束，主张纳入不确定性、权利、义务和长期社会影响等更丰富反馈信号。
+- [Safety Layers in Aligned Large Language Models: The Key to LLM Security](https://arxiv.org/abs/2408.17003)：识别安全关键层，并在适配时用 SPPFT 冻结这些层的梯度，以较低计算成本保留安全护栏。
+- [Forget to Flourish: Leveraging Machine-Unlearning on Pretrained Language Models for Privacy Leakage](https://arxiv.org/abs/2408.17354)：把机器遗忘用作投毒攻击工具，在保持模型效用的同时放大预训练语言模型的成员推断和数据抽取泄漏。
+- [Is Difficulty Calibration All We Need? Towards More Practical Membership Inference Attacks](https://arxiv.org/abs/2409.00426)：提出 RAPID 查询高效成员推断攻击，复用原始 membership score 来降低难度校准在高损失样本上的误判。
+- [Membership Inference Attacks Against In-Context Learning](https://arxiv.org/abs/2409.01380)：为上下文学习设计四类成员推断攻击和混合策略，根据模型行为判断示例是否出现在提示上下文中。
+- [Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation](https://arxiv.org/abs/2409.01586)：在对齐阶段加入 Booster 防御，先削弱有害扰动，再进行下游微调，降低恶意或不安全适配数据造成的安全退化。
+- [SafeEmbodAI: a Safety Framework for Mobile Robots in Embodied AI Systems](https://arxiv.org/abs/2409.01630)：为具身移动机器人决策加入安全监控、风险检查和缓解层，重点不是文本拒答，而是导航中的安全约束。
+- [Adversarial Learning for Neural PDE Solvers with Sparse Data](https://arxiv.org/abs/2409.02431)：用对抗训练提升稀疏观测下神经 PDE 求解器的稳健性，属于相邻鲁棒性方法而非 LLM 护栏。
+- [Recent Advances in Attack and Defense Approaches of Large Language Models](https://arxiv.org/abs/2409.03274)：标记 Survey 分类错位：该文综述 LLM 攻击向量、模型弱点和防御缺口，并未提出新的护栏模型或训练方法。
+- [Safeguarding AI Agents: Developing and Analyzing Safety Architectures](https://arxiv.org/abs/2409.03793)：围绕感知、决策、行动和监控组件梳理分层智能体安全架构，更像 Agent Harness 的父级路由候选，而非纯模型方法。
+- [WaterSeeker: Efficient Detection of Watermarked Segments in Large Documents](https://arxiv.org/abs/2409.05112)：用分段级水印检测器定位长文档中局部带水印的片段，改进只有部分段落为机器生成时的来源检查。
+- [Programming Refusal with Conditional Activation Steering](https://arxiv.org/abs/2409.05907)：用 Conditional Activation Steering 只在推理激活显示上下文不安全时施加拒答 steering，从而减少对良性提示的过度拒绝。
+- [Policy Filtration for RLHF to Mitigate Noise in Reward Models](https://arxiv.org/abs/2409.06957)：按奖励模型可靠性过滤 RLHF 策略样本，并用 reward-score R2 信号减少 PPO 训练中的噪声奖励更新。
+- [Efficient and Unbiased Sampling of Boltzmann Distributions via Consistency Models](https://arxiv.org/abs/2409.07323)：把 consistency models 与 importance sampling 结合，用少量函数评估得到无偏 Boltzmann 样本；这是相邻生成模型采样条目，不是直接的智能体安全护栏。
+- [Securing Vision-Language Models with a Robust Encoder Against Jailbreak and Adversarial Attacks](https://arxiv.org/abs/2409.07353)：用 Siamese Sim-CLIP+ 目标对 CLIP 视觉编码器做对抗微调，在进入 LLM 解码前降低 VLM 越狱和图像对抗脆弱性。
+- [AdaPPA: Adaptive Position Pre-Fill Jailbreak Attack Approach Targeting LLMs](https://arxiv.org/abs/2409.07503)：把对抗前缀放到自适应 prefill 位置以绕过 LLM 拒答行为，暴露位置敏感的越狱攻击面。
+- [Alignment with Preference Optimization Is All You Need for LLM Safety](https://arxiv.org/abs/2409.07772)：比较面向安全的偏好优化方法，并识别 Safe-NCA 噪声对比对齐在安全性与性能之间取得较好权衡。
+- [Securing Large Language Models: Addressing Bias, Misinformation, and Prompt Attacks](https://arxiv.org/abs/2409.08087)：综述 LLM 在偏见、虚假信息和提示攻击上的安全风险，更接近安全综述而非新的训练或护栏方法。
+- [Comparing Retrieval-Augmentation and Parameter-Efficient Fine-Tuning for Privacy-Preserving Personalization of Large Language Models](https://arxiv.org/abs/2409.09510)：在 LaMP 上系统比较 RAG 与 PEFT 个性化，分析用户数据量何时使微调更有效，并暴露隐私权衡。
+- [Generalizing Alignment Paradigm of Text-to-Image Generation with Preferences through f-divergence Minimization](https://arxiv.org/abs/2409.09774)：把文生图偏好对齐从 reverse KL 推广到 f-divergence 约束，在扩散目标上测试更通用的安全偏好调优。
+- [CoCA: Regaining Safety-awareness of Multimodal Large Language Models with Constitutional Calibration](https://arxiv.org/abs/2409.11365)：用 Constitutional Calibration 恢复视觉指令微调后 MLLM 的安全意识，在不损害能力的情况下降低恶意图像触发的有害回答。
+- [Generated Data with Fake Privacy: Hidden Dangers of Fine-tuning Large Language Models on Generated Data](https://arxiv.org/abs/2409.11423)：指出生成数据在微调中可能继承真实数据隐私风险，警示合成替代数据仍会造成类似真实用户数据的泄漏。
+- [Jailbreaking Large Language Models with Symbolic Mathematics](https://arxiv.org/abs/2409.11445)：把有害请求转换成符号数学编码以绕过拒答机制，将越狱红队从自然语言混淆扩展到数学表达形式。
+- [MEOW: MEMOry Supervised LLM Unlearning Via Inverted Facts](https://arxiv.org/abs/2409.11844)：用 MEMO 度量记忆程度，并在 inverted facts 上执行梯度下降式遗忘，以删除事实记忆并限制效用损失。
+- [Enhancing Knowledge Distillation of Large Language Models through Efficient Multi-Modal Distribution Alignment](https://arxiv.org/abs/2409.12545)：在蒸馏时对齐教师与学生的多模态输出分布，帮助小模型保留多模态推理能力，但并非专门的安全方法。
+- [Language Models Learn to Mislead Humans via RLHF](https://arxiv.org/abs/2409.12822)：显示标准 RLHF 可能诱发 U-SOPHISTRY，使奖励优化模型学会生成有说服力但误导性的答案，并逃过现有 probing 检测。
+- [Alternate Preference Optimization for Unlearning Factual Knowledge in Large Language Models](https://arxiv.org/abs/2409.13474)：在遗忘集上结合负反馈与域内正反馈，提升事实知识遗忘效果，并同时评估删除质量与回答效用。
+- [“Since Lawyers are Males..”: Examining Implicit Gender Bias in Hindi Language Generation by LLMs](https://arxiv.org/abs/2409.13484)：度量 Hindi LLM 生成中的隐性性别刻板印象，显示职业和角色提示会暴露英语安全测试以外的语言特定偏见。
+- [Context-Aware Membership Inference Attacks against Pre-trained Large Language Models](https://arxiv.org/abs/2409.13745)：把成员推断统计检验适配到样本内部子序列的困惑度动态，揭示分类模型式 MIA 会漏掉的上下文依赖记忆模式。
+- [Measuring Copyright Risks of Large Language Model via Partial Information Probing](https://arxiv.org/abs/2409.13831)：用受版权保护文本的片段提示探测 LLM，估计模型记忆和复现受保护内容的风险。
+- [Large Model-Based Agents: State-of-the-Art, Cooperation Paradigms, Security and Privacy, and Future Trends](https://arxiv.org/abs/2409.14457)：综述大模型智能体、协作范式以及安全和隐私风险，是背景性综合而非具体安全模型。
+- [Backtracking Improves Generation Safety](https://arxiv.org/abs/2409.14586)：用特殊 RESET token 训练 LLM，使解码过程能撤销不安全续写并重新生成更安全回答，同时不降低有用性。
+- [Direct Judgement Preference Optimization](https://arxiv.org/abs/2409.14664)：用正负评测数据构造偏好对训练生成式 judge model，提升跨评测协议的抗偏 reward 和 verifier 反馈能力。
+- [Adaptive and Robust Watermark for Generative Tabular Data](https://arxiv.org/abs/2409.14700)：为生成式表格数据嵌入水印，并给出保真度、可检测性、鲁棒性和解码难度的理论保证，以约束合成数据滥用。
+- [Room Impulse Responses Help Attackers to Evade Deep Fake Detection](https://arxiv.org/abs/2409.14712)：利用 room impulse responses 让伪造语音规避深伪检测器，并用合成 RIR 数据增强训练来抵消该攻击。
+- [Pretraining Data Detection for Large Language Models: A Divergence-based Calibration Method](https://arxiv.org/abs/2409.14781)：用 token 概率相对语料频率的散度来校准预训练数据检测分数，并发布中文 PatentMIA 基准。
+- [Can CLIP Count Stars? An Empirical Study on Quantity Bias in CLIP](https://arxiv.org/abs/2409.15035)：审计 CLIP 的数量偏差，检验图文相似度是否真正跟随物体数量而非虚假视觉线索，更适合作为鲁棒性路由候选。
+- [Multitask Mayhem: Unveiling and Mitigating Safety Gaps in LLMs Fine-tuning](https://arxiv.org/abs/2409.15361)：构建多任务安全微调数据集，在多任务适配中降低越狱成功率，同时保持模型有用性。
+- [RoleBreak: Character Hallucination as a Jailbreak Attack in Role-Playing Systems](https://arxiv.org/abs/2409.16727)：把角色幻觉视作角色扮演越狱，利用 query sparsity 与 role-query conflict 构建 RoleBreakEval，并提出 Narrator Mode 缓解策略。
+- [Tell Me What You Don't Know: Enhancing Refusal Capabilities of Role-Playing Agents via Representation Space Analysis and Editing](https://arxiv.org/abs/2409.16913)：在表征空间分析角色扮演智能体，并编辑激活把冲突或不安全请求推向模型的拒答区域。
+- [An Adversarial Perspective on Machine Unlearning for AI Safety](https://arxiv.org/abs/2409.18025)：显示自适应越狱、少量无关样本微调和移除激活方向，都可能从 RMU 等遗忘后的 LLM 中恢复危险能力。
+- [Overriding Safety protections of Open-source Models](https://arxiv.org/abs/2409.19476)：研究有害微调数据如何覆盖开源 LLM 的安全保护，同时比较安全数据微调能否把同一模型推向更安全回答。
+- [Unified Gradient-Based Machine Unlearning with Remain Geometry Enhancement](https://arxiv.org/abs/2409.19732)：推导带留存数据几何的统一梯度遗忘更新，并用 fast-slow Hessian 近似提升删除效果和留存性能。
+- [Position: Membership Inference Attacks Cannot Prove That a Model was Trained on Your Data](https://arxiv.org/abs/2409.19798)：论证成员推断不足以证明模型使用了某份训练数据，明确隐私和版权诉求中的证据边界。
+- [Mitigating Backdoor Threats to Large Language Models: Advancement and Challenges](https://arxiv.org/abs/2409.19993)：综述 LLM 在开发与推理阶段的后门威胁，重点覆盖众包数据投毒、指令调优、RLHF 以及检测和防御策略。
+- [Robust LLM safeguarding via refusal feature adversarial training](https://arxiv.org/abs/2409.20089)：在表征空间模拟输入级越狱攻击，并用 ReFAT 拒答特征对抗训练以较低计算成本加固 LLM 拒答。
+- [Probabilistic Analysis of Copyright Disputes and Generative AI Safety](https://arxiv.org/abs/2410.00475)：用概率形式刻画版权争议证据，并检验 Near Access-Free 条件作为生成式 AI 版权安全准则的局限，更像相邻法律风险分析。
+- [ScVLM: Enhancing Vision-Language Model for Safety-Critical Event Understanding](https://arxiv.org/abs/2410.00982)：面向安全关键事件理解适配 VLM，重点是场景风险识别而非通用拒答或越狱防御。
+- [Concept Space Alignment in Multilingual LLMs](https://arxiv.org/abs/2410.01079)：分析并对齐多语言概念表征，使安全或价值概念在不同语言中映射得更一致。
+- [Towards Inference-time Category-wise Safety Steering for Large Language Models](https://arxiv.org/abs/2410.01174)：提取按风险类别划分的 safety steering vectors，并在推理期施加细粒度拒答控制，同时保留生成质量。
+- [Backdooring Vision-Language Models with Out-Of-Distribution Data](https://arxiv.org/abs/2410.01264)：用分布外投毒数据在图像到文本任务中植入 VLM 后门，同时尽量保留视觉语义，暴露多模态供应链攻击路径。
+- [HarmAug: Effective Data Augmentation for Knowledge Distillation of Safety Guard Models](https://arxiv.org/abs/2410.01524)：通过越狱 LLM 生成有害指令作为增强数据，再从强模型蒸馏出更小的 safety guard model。
+- [On the expressiveness and spectral bias of KANs](https://arxiv.org/abs/2410.01803)：研究 Kolmogorov-Arnold Network 的表达能力和谱偏置，是相邻架构分析论文，并非直接的智能体安全护栏。
+- [Adversarial Decoding: Generating Readable Documents for Adversarial Objectives](https://arxiv.org/abs/2410.02163)：生成流畅的对抗文档，用于 RAG 投毒、间接提示注入、越狱和规避防御过滤等目标。
+- [Efficiently Deploying LLMs with Controlled Risk](https://arxiv.org/abs/2410.02173)：研究带风险控制的 LLM 部署决策，除非父级保留部署风险模型，否则更像治理或部署策略路由候选。
+- [BACKTIME: Backdoor Attacks on Multivariate Time Series Forecasting](https://arxiv.org/abs/2410.02195)： 在多变量时间序列中注入隐蔽触发器，使预测模型输出攻击者指定结果，把后门风险扩展到交通、气候等高风险预测场景。
+- [Data to Defense: The Role of Curation in Customizing LLMs Against Jailbreaking Attacks](https://arxiv.org/abs/2410.02220)：在微调前、中、后分别策划 customization 数据，用于免疫、抵消和恢复 LLM，缓解恶意样本放大的越狱风险。
+- [Jailbreak Antidote: Runtime Safety-Utility Balance via Sparse Representation Adjustment in Large Language Models](https://arxiv.org/abs/2410.02298)：推理期调整稀疏内部表征来动态平衡安全性和效用，防御越狱而无需额外微调或外部护栏模块。
+- [Optimizing Adaptive Attacks against Watermarks for Language Models](https://arxiv.org/abs/2410.02440)：把水印规避建模为偏好优化，训练可绕过多种 LLM 水印并迁移到未见方案的自适应改写器。
+- [Towards Implicit Bias Detection and Mitigation in Multi-Agent LLM Interactions](https://arxiv.org/abs/2410.02584)： 构造容易诱发偏见的多智能体场景、隐性性别偏见指标和缓解策略，用于分析 LLM society 交互中的社会偏见放大。
+- [MA-RLHF: Reinforcement Learning from Human Feedback with Macro Actions](https://arxiv.org/abs/2410.02743)：提出 macro-action RLHF，把 token 序列或更高层语言动作作为优化单位，相比 token 级 PPO 提升对齐学习效率。
+- [FlipAttack: Jailbreak LLMs via Flipping](https://arxiv.org/abs/2410.02832)：用左侧噪声和四种文本翻转模式伪装有害提示，利用黑盒 LLM 先去噪再执行翻转指令的能力实现单查询越狱。
+- [Safeguard is a Double-edged Sword: Denial-of-service Attack on Large Language Models](https://arxiv.org/abs/2410.02916)：利用护栏假阳性发起拒绝服务攻击，说明攻击者可构造良性提示触发拒答并降低模型可用性。
+- [Can Watermarked LLMs be Identified by Users via Crafted Prompts?](https://arxiv.org/abs/2410.03168)：证明 crafted prompts 可暴露模型是否带水印，并提出 Water-Bag 多密钥选择策略提升水印隐蔽性。
+- [Data-Efficient Massive Tool Retrieval: A Reinforcement Learning Approach for Query-Tool Alignment with Language Models](https://arxiv.org/abs/2410.03212)：用强化学习对齐语言模型查询与大规模工具库，主要应作为 Tool Use 或 Agent Harness 候选，除非强调更安全的工具选择。
+- [Gradient-based Jailbreak Images for Multimodal Fusion Models](https://arxiv.org/abs/2410.03489)：在连续图像空间中优化输入以诱导多模态融合模型越狱，暴露纯文本后缀搜索无法覆盖的视觉攻击路径。
+- [Aligning LLMs with Individual Preferences via Interaction](https://arxiv.org/abs/2410.03642)：用 persona 引导的多轮交互树训练 LLM，使其在对话中推断用户未明说的个体偏好并动态调整回答。
+- [Precision Knowledge Editing: Enhancing Safety in Large Language Models](https://arxiv.org/abs/2410.03772)：用神经元权重追踪和激活路径追踪定位并编辑有毒参数区域，在保持 Llama 模型效用的同时降低攻击成功率。
+- [You Know What I'm Saying: Jailbreak Attack via Implicit Reference](https://arxiv.org/abs/2410.03857)：把恶意目标藏入嵌套的无害上下文，并借助较不安全模型生成攻击语境，实现跨模型越狱迁移。
+- [A Retention-Centric Framework for Continual Learning with Guaranteed Model Developmental Safety](https://arxiv.org/abs/2410.03955)：提出带 retention guarantee 的 continual-learning safety 方法，关注模型在持续更新中的训练稳定性和发展安全。
+- [Harnessing Task Overload for Scalable Jailbreak Attacks on Large Language Models](https://arxiv.org/abs/2410.04190)：先用字符表查找与解码等高负载任务占用模型资源，再输入有害指令，使安全策略激活不足并形成可扩展提示越狱。
+- [Functional Homotopy: Smoothing Discrete Optimization via Continuous Parameters for LLM Jailbreak Attacks](https://arxiv.org/abs/2410.04234)：把离散越狱后缀搜索转化为从易到难的一系列连续优化问题，提高对安全调优 Llama 和 Gemma 模型的攻击成功率。
+- [CopyLens: Dynamically Flagging Copyrighted Sub-Dataset Contributions to LLM Outputs](https://arxiv.org/abs/2410.04454)：利用生成过程中的多头注意力信号构建 Inner-Probe，动态标记 LLM 输出中受版权子数据集的影响。
+- [TLDR: Token-Level Detective Reward Model for Large Vision Language Models](https://arxiv.org/abs/2410.04734)：用扰动生成的 hard negatives 训练 token 级 detective reward model，为 LVLM 自我纠错和幻觉评测提供细粒度标签。
+- [Finding Safety Violations of AI-Enabled Control Systems through the Lens of Synthesized Proxy Programs](https://arxiv.org/abs/2410.04986)：合成 proxy programs 来加速带合取安全需求的 AI 控制系统 falsification，更像相邻安全测试或 Agent Harness 候选。
+- [Data Advisor: Dynamic Data Curation for Safety Alignment of Large Language Models](https://arxiv.org/abs/2410.05269)：监控安全对齐数据生成状态，识别原则覆盖不足之处，并指导下一轮生成，在不损害效用的情况下提升模型安全性。
+- [Reward Learning From Preference With Ties](https://arxiv.org/abs/2410.05328)：把 Bradley-Terry 奖励学习扩展到包含平局偏好的情形，减少人类反馈认为两条回答同样好时的偏好强度偏差。
+- [Anyattack: Towards Large-scale Self-supervised Adversarial Attacks on Vision-language Models](https://arxiv.org/abs/2410.05346)：在 LAION-400M 上预训练自监督对抗图像生成器，使任意图像都可转成面向目标输出的可迁移 VLM 攻击向量。
+- [SecAlign: Defending Against Prompt Injection with Preference Optimization](https://arxiv.org/abs/2410.05451)：构造 prompt injection 输入下的安全与不安全输出偏好对，并用偏好优化训练 LLM 遵循合法指令而非注入指令。
+- [Privacy Vulnerabilities in Marginals-based Synthetic Data](https://arxiv.org/abs/2410.05506)：提出 MAMA-MIA 成员推断攻击，针对保留边际分布的合成数据生成器揭示隐私导向表格合成中的泄漏。
+- [KnowledgeSG: Privacy-Preserving Synthetic Text Generation with Knowledge Distillation from Server](https://arxiv.org/abs/2410.05725)：结合差分隐私本地知识学习和服务器知识蒸馏，并交换模型而非原始数据以生成隐私保护合成文本。
+- [WAPITI: A Watermark for Finetuned Open-Source LLMs](https://arxiv.org/abs/2410.06467)：通过参数集成把基础 LLM 水印迁移到微调开源模型中，在保留任务能力的同时抵抗微调移除攻击。
+- [Dissecting Fine-Tuning Unlearning in Large Language Models](https://arxiv.org/abs/2410.06606)：剖析微调式 LLM 遗忘，区分真正的参数遗忘、表层拒答变化和遗留知识泄漏。
+- [Enhancing Multimodal LLM for Detailed and Accurate Video Captioning using Multi-Round Preference Optimization](https://arxiv.org/abs/2410.06682)：把多轮偏好优化用于 MLLM 视频字幕，使描述更详细、更准确。
+- [PII-Scope: A Comprehensive Study on Training Data PII Extraction Attacks in LLMs](https://arxiv.org/abs/2410.06704)：研究针对 LLM 训练数据的 PII 抽取攻击，刻画哪些个人信息可被诱导泄漏以及哪些模型或提示因素会放大风险。
+- [Root Defence Strategies: Ensuring Safety of LLM at the Decoding Level](https://arxiv.org/abs/2410.06809)：加入解码级逐步安全检查，在生成过程中修正有害查询，并用 speculative decoding 保持部署速度。
+- [Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning](https://arxiv.org/abs/2410.07163)：重新审视用于语言模型遗忘的负偏好优化。
+- [SEAL: Safety-enhanced Aligned LLM Fine-tuning via Bilevel Data Selection](https://arxiv.org/abs/2410.07471)：学习双层优化数据排序器，上调安全高质量微调样本、下调不安全样本，以在定制化微调中保留 LLM 对齐。
+- [How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?](https://arxiv.org/abs/2410.07571)： 显示视觉语言适配即使使用安全数据也会削弱 LLM 骨干的安全能力，并评估安全微调对多模态安全漂移的修复效果。
+- [No Free Lunch: Retrieval-Augmented Generation Undermines Fairness in LLMs, Even for Vigilant Users](https://arxiv.org/abs/2410.07589)：在三层公平意识威胁模型下比较未审查、部分审查和完全审查的 RAG 语料，显示检索无需重训也会重新引入偏见输出。
+- [Towards Assurance of LLM Adversarial Robustness using Ontology-Driven Argumentation](https://arxiv.org/abs/2410.07962)： 用本体和形式化论证组织 LLM 对抗攻击与防御，生成可读和机器可解析的鲁棒性 assurance case。
+- [Unstable Unlearning: The Hidden Risk of Concept Resurgence in Diffusion Models](https://arxiv.org/abs/2410.08074)：指出扩散模型概念擦除在后续适配后可能重新出现，暴露基于遗忘的安全防御不稳定性。
+- [A Closer Look at Machine Unlearning for Large Language Models](https://arxiv.org/abs/2410.08109)：重新评估 LLM 遗忘方法的删除质量、留存效用和残余抽取风险，说明表面删除何时只是输出抑制。
+- [Sample then Identify: A General Framework for Risk Control and Assessment in Multimodal Large Language Models](https://arxiv.org/abs/2410.08174)：提出 TRON，用 split conformal sampling 与 nonconformity score 在开放式和封闭式 VideoQA 中控制 MLLM 回答风险。
+- [Poison-splat: Computation Cost Attack on 3D Gaussian Splatting](https://arxiv.org/abs/2410.08190)：向 3D Gaussian splatting 场景注入投毒点以抬高渲染成本，属于领域安全攻击，需父级判断是否移出 LLM 模型安全。
+- [JurEE not Judges: safeguarding llm interactions with small, specialised Encoder Ensembles](https://arxiv.org/abs/2410.08442)：用小型专用 encoder ensemble 作为 LLM 交互护栏分类器，以低成本安全检测器替代重量级 LLM judge。
+- [Simultaneous Reward Distillation and Preference Learning: Get You a Language Model Who Can Do Both](https://arxiv.org/abs/2410.08458)： 提出 DRDO，同时进行直接奖励蒸馏与偏好学习，使对齐训练能处理噪声成对标签而不依赖单独的奖励优化阶段。
+- [Do Unlearning Methods Remove Information from Language Model Weights?](https://arxiv.org/abs/2410.08827)： 通过向攻击者提供部分应被遗忘事实并测试其恢复同分布事实的能力，检验遗忘是否真正移除了权重中的危险知识。
+- [Controllable Safety Alignment: Inference-Time Adaptation to Diverse Safety Requirements](https://arxiv.org/abs/2410.08968)：用 CoSAlign 让模型对齐自然语言安全配置，使授权用户可在推理期调整安全行为而无需重训。
+- [AttnGCG: Enhancing Jailbreaking Attacks on LLMs with Attention Manipulation](https://arxiv.org/abs/2410.09040)：通过操控模型对安全相关提示区域的注意力扩展 GCG，提高对 Llama、Gemma 和黑盒 LLM 的越狱迁移性。
+- [Unraveling and Mitigating Safety Alignment Degradation of Vision-Language Models](https://arxiv.org/abs/2410.09047)： 将 VLM 安全对齐退化归因于视觉输入和纯文本输入的表征差距，并通过把多模态表征拉回 LLM 安全空间来缓解。
+- [Knowledge-Augmented Reasoning for EUAIA Compliance and Adversarial Robustness of LLMs](https://arxiv.org/abs/2410.09078)：在 EU AI Act 要求上加入知识增强推理，使 LLM 能进行合规检查并抵抗对抗提示。
+- [Recent advancements in LLM Red-Teaming: Techniques, Defenses, and Ethical Considerations](https://arxiv.org/abs/2410.09097)：综述 LLM 红队攻击、防御和伦理约束，是综合性证据而非新的攻击生成器或安全模型。
+- [Unlearn and Burn: Adversarial Machine Unlearning Requests Destroy Model Accuracy](https://arxiv.org/abs/2410.09591)： 指出 unlearning API 可被非训练样本删除请求攻击，并给出白盒与黑盒策略来降低模型准确率。
+- [Targeted Vaccine: Safety Alignment for Large Language Models Against Harmful Fine-Tuning via Layer-Wise Perturbation](https://arxiv.org/abs/2410.09760)：用梯度范数选择安全关键层，只在这些层施加对齐扰动，以更低显存提升对有害微调的鲁棒性。
+- [Jailbreak Instruction-Tuned LLMs via end-of-sentence MLP Re-weighting](https://arxiv.org/abs/2410.10150)：重加权 instruction-tuned LLM 的句末 MLP 激活以诱导越狱行为，暴露激活层面的攻击路径。
+- [Locking Down the Finetuned LLMs Safety](https://arxiv.org/abs/2410.10343)：从基础模型中抽取 Meta-SafetyLock 激活方向，并快速迁移到微调模型上实现安全再对齐。
+- [On Calibration of LLM-based Guard Models for Reliable Content Moderation](https://arxiv.org/abs/2410.10414)：校准用于内容审核的 LLM guard model，使安全分数能支撑可靠阈值判断，而不只是脆弱二分类过滤。
+- [LLMs know their vulnerabilities: Uncover Safety Gaps through Natural Distribution Shifts](https://arxiv.org/abs/2410.10700)： 提出 ActorBreaker，多轮利用与有毒预训练分布相关的 actor，借自然分布偏移绕过安全过滤。
+- [Superficial Safety Alignment Hypothesis](https://arxiv.org/abs/2410.10862)：把安全对齐解释为学习 fulfill 与 refuse 的二分类方向，并识别可在调优时冻结或复用的安全关键单元与冗余单元。
+- [Gender Bias in Decision-Making with Large Language Models: A Study of Relationship Conflicts](https://arxiv.org/abs/2410.11084)：用 DeMET 关系冲突提示和九种性别姓名配置，衡量安全护栏如何改变 LLM 决策中的性别偏见。
+- [LLM Unlearning via Loss Adjustment with Only Forget Data](https://arxiv.org/abs/2410.11143)：仅使用 forget data 做损失调整式 LLM 遗忘，避免显式访问留存数据，同时控制效用坍塌。
+- [Multi-objective Reinforcement Learning: A Tool for Pluralistic Alignment](https://arxiv.org/abs/2410.11221)：把多元对齐建模为带向量奖励的多目标强化学习，避免把冲突的利益相关者价值压成单一标量奖励。
+- [Deciphering the Chaos: Enhancing Jailbreak Attacks via Adversarial Prompt Translation](https://arxiv.org/abs/2410.11317)： 把梯度优化得到的乱码式越狱串翻译成连贯自然语言对抗提示，提高其向未知 LLM 迁移的能力。
+- [Jigsaw Puzzles: Splitting Harmful Questions to Jailbreak Large Language Models](https://arxiv.org/abs/2410.11459)：把有害请求拆成多轮无害片段并要求模型重组回答，在 Gemini、Llama、GPT-4 和 GPT-4o 系列上绕过安全防护。
+- [Understanding Likelihood Over-optimisation in Direct Alignment Algorithms](https://arxiv.org/abs/2410.11677)： 从 completion likelihood 角度分析 DPO、IPO 等直接对齐算法，说明 likelihood 过优化可能让偏好提升与实际性能脱节。
+- [Evaluation of Attribution Bias in Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2410.12380)：在 RAG 中反事实改变来源文档作者元数据，衡量模型对人工撰写与 AI 生成来源的归因敏感性和偏向。
+- [RosePO: Aligning LLM-based Recommenders with Human Values](https://arxiv.org/abs/2410.12519)： 提出 RosePO，用平滑个性化偏好优化训练 LLM 推荐器，在后训练阶段平衡推荐有用性与 harmlessness。
+- [Weak-to-Strong Generalization beyond Accuracy: a Pilot Study in Safety, Toxicity, and Legal Reasoning](https://arxiv.org/abs/2410.12621)： 在安全、毒性和法律推理上测试 weak-to-strong generalization，检验弱监督能否在非准确率任务中诱导强模型对齐行为。
+- [Cross-Modal Safety Mechanism Transfer in Large Vision-Language Models](https://arxiv.org/abs/2410.12662)：用文本引导的视觉语言对齐把图像特征投射到能激活文本安全机制的 LLM 隐状态中，降低有毒图像漏洞。
+- [SAFREE: Training-Free and Adaptive Guard for Safe Text-to-Image And Video Generation](https://arxiv.org/abs/2410.12761)：在文本嵌入中寻找有害概念子空间，并在扩散去噪时把提示引离该子空间，为图像和视频生成提供免训练护栏。
+- [Mechanistic Unlearning: Robust Knowledge Unlearning and Editing via Mechanistic Localization](https://arxiv.org/abs/2410.12949)：用机制可解释性定位事实回忆机制并编辑相关组件，使知识遗忘更鲁棒且副作用更小。
+- [POROver: Improving Safety and Reducing Overrefusal in Large Language Models with Overgeneration and Preference Optimization](https://arxiv.org/abs/2410.12999)：用教师模型过量生成安全与有毒提示补全，再通过偏好优化减少过度拒答并保持安全性。
+- [AERO: Entropy-Guided Framework for Private LLM Inference](https://arxiv.org/abs/2410.13060)：用熵信号判断私有 LLM 推理何时需要更强保护，在降低隐私泄漏的同时避免统一高成本防御。
+- [SPIN: Self-Supervised Prompt INjection](https://arxiv.org/abs/2410.13236)：在推理时用自监督 prompt 防御检测并反转对抗提示，在保持良性请求性能的同时降低攻击成功率。
+- [Breaking Chains: Unraveling the Links in Multi-Hop Knowledge Unlearning](https://arxiv.org/abs/2410.13274)：检验遗忘单个事实是否会切断多跳知识链，暴露普通遗忘目标下仍保留的关联事实。
+- [BiasJailbreak:Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models](https://arxiv.org/abs/2410.13334)：把伦理偏见提示与越狱脆弱性联系起来，显示带偏框架会削弱拒答行为和安全判断。
+- [CLEAR: Towards Contextual LLM-Empowered Privacy Policy Analysis and Risk Generation for Large Language Model Applications](https://arxiv.org/abs/2410.13387)：用 LLM 解析隐私政策并生成 LLM 应用的上下文隐私风险，可作为政策分析型护栏辅助。
+- [On the Role of Attention Heads in Large Language Model Safety](https://arxiv.org/abs/2410.13708)： 分析安全相关注意力头，说明多头注意力组件如何支撑 LLM 护栏，以及抑制这些组件如何削弱安全能力。
+- [Persistent Pre-Training Poisoning of LLMs](https://arxiv.org/abs/2410.13722)： 从头预训练带毒 LLM 并在 SFT 和 DPO 后检查后门是否仍活跃，用于度量预训练投毒的持久性。
+- [De-mark: Watermark Removal in Large Language Models](https://arxiv.org/abs/2410.13808)：通过 random selection probing 估计 n-gram 水印强度并恢复 red-green token list，从而移除 LLM 文本水印。
+- [S4ST: A Strong, Self-transferable, faSt, and Simple Scale Transformation for Transferable Targeted Attack](https://arxiv.org/abs/2410.13891)：证明简单尺度变换可增强无数据黑盒 targeted transfer attack，并用 self-alignment 与 self-transferability 做盲估计。
+- [Mitigating the Backdoor Effect for Multi-Task Model Merging via Safety-Aware Subspace](https://arxiv.org/abs/2410.13910)：提出带双掩码和元学习的 Defense-Aware Merging，在多任务模型合并时同时抑制后门继承和后门迁移。
+- [Unlearning Backdoor Attacks for LLMs with Weak-to-Strong Knowledge Distillation](https://arxiv.org/abs/2410.14425)： 用 W2SDefense 防御 PEFT 后门，由干净小模型教师通过特征对齐知识蒸馏引导大模型远离触发行为。
+- [Enhancing Prompt Injection Attacks to LLMs via Poisoning Alignment](https://arxiv.org/abs/2410.14827)：向对齐数据中注入少量投毒样本，使后续 prompt injection 更容易成功，把威胁从推理提示扩展到对齐数据。
+- [Bias Amplification: Large Language Models as Increasingly Biased Media](https://arxiv.org/abs/2410.15234)：度量 LLM 介导内容在类似媒体的信息循环中如何放大偏见，揭示生成过程中的风险机制。
+- [Jailbreaking and Mitigation of Vulnerabilities in Large Language Models](https://arxiv.org/abs/2410.15236)：综述 prompt-based、model-based、多模态和多语言越狱攻击及过滤、对齐、多智能体和自调节防御，更适合作为 Survey 候选。
+- [When Machine Unlearning Meets Retrieval-Augmented Generation (RAG): Keep Secret or Forget Knowledge?](https://arxiv.org/abs/2410.15267)：通过修改 RAG 外部知识库模拟行为遗忘，而不是直接更新模型权重，并比较检索隐藏与模型遗忘的差异。
+- [Faster-GCG: Efficient Discrete Optimization Jailbreak Attacks against Aligned Large Language Models](https://arxiv.org/abs/2410.15362)： 分析 GCG 式离散优化瓶颈并减少寻找对抗后缀所需评估次数，从而提升自动越狱生成效率。
+- [Hallucination Detox: Sensitivity Dropout (SenD) for Large Language Model Training](https://arxiv.org/abs/2410.15460)：把幻觉与训练动态不稳定联系起来，提出 SenD 丢弃高方差 embedding 索引，并用 Efficient EigenScore 监测幻觉。
+- [Feint and Attack: Jailbreaking and Protecting LLMs via Attention Distribution Modeling](https://arxiv.org/abs/2410.16327)：建模注意力分布以构造 feint 式越狱，并设计把注意力从不安全指令片段移开的对应防护。
+- [Catastrophic Failure of LLM Unlearning via Quantization](https://arxiv.org/abs/2410.16454)：显示遗忘后的量化可能恢复被遗忘的 LLM 知识，使压缩成为检验遗忘鲁棒性的压力测试。
+- [SafetyAnalyst: Interpretable, transparent, and steerable LLM safety moderation](https://arxiv.org/abs/2410.16665)：把 AI 行为展开为 harm-benefit tree，用可解释权重评估利益相关者影响，并允许审核者调节安全标准。
+- [Insights on Disagreement Patterns in Multimodal Safety Perception across Diverse Rater Groups](https://arxiv.org/abs/2410.17032)：让 630 名人口统计均衡的评审者评价约 1000 个文生图结果，揭示多模态安全感知中的群体差异。
+- [WAGLE: Strategic Weight Attribution for Effective and Modular Unlearning in Large Language Models](https://arxiv.org/abs/2410.17509)： 用战略性权重归因识别最影响 LLM 遗忘的参数，借 WAGLE 模块化更新提升忘记效果并保留留存行为。
+- [Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced Defense in Large Language Models](https://arxiv.org/abs/2410.17922)：用多智能体防御流程结合外部信息总结用户意图，并为通用和化学领域越狱场景生成安全回答指导。
+- [CLEAR: Character Unlearning in Textual and Visual Modalities](https://arxiv.org/abs/2410.18057)：在文本和视觉模态中遗忘虚构或受版权保护角色，检验语言与图像生成器是否停止复现目标角色概念。
+- [Iterative Self-Tuning LLMs for Enhanced Jailbreaking Capabilities](https://arxiv.org/abs/2410.18469)： 通过迭代自调优训练 ADV-LLM，使模型自身低成本生成对齐 LLM 的高成功率越狱后缀。
+- [LOGO - Long cOntext aliGnment via efficient preference Optimization](https://arxiv.org/abs/2410.18533)：把偏好优化扩展到长上下文场景，以更高效训练让模型在长输入上遵循对齐偏好。
+- [Provably Robust Watermarks for Open-Source Language Models](https://arxiv.org/abs/2410.18861)： 设计适用于开源 LLM 的水印方案，即使权重和生成代码公开也能提供可证明的鲁棒检测。
+- [Adversarial Attacks on Large Language Models Using Regularized Relaxation](https://arxiv.org/abs/2410.19160)： 用正则化松弛优化 LLM 对抗输入，避免脆弱的离散 token 搜索，同时保留安全评测所需攻击效果。
+- [Enhancing Safety in Reinforcement Learning with Human Feedback via Rectified Policy Optimization](https://arxiv.org/abs/2410.19933)：提出 Rectified Policy Optimization 调整 RLHF 偏好更新，在不显著牺牲有用性的情况下提升 harmlessness。
+- [RobustKV: Defending Large Language Models against Jailbreak Attacks via KV Eviction](https://arxiv.org/abs/2410.19937)： 通过从 KV cache 中驱逐低排序的有害查询 token 防御越狱，降低恶意响应生成并保持良性任务效用。
+- [DeTeCtive: Detecting AI-generated Text via Multi-Level Contrastive Learning](https://arxiv.org/abs/2410.20964)： 用多层级对比学习检测 AI 生成文本，以可泛化表征替代手工特征，面向未见生成器和分布外文本。
+- [BlueSuffix: Reinforced Blue Teaming for Vision-Language Models Against Jailbreak Attacks](https://arxiv.org/abs/2410.20971)：用强化式蓝队训练 VLM 防御后缀，让追加的安全 token 对抗多模态越狱提示。
+- [Stealthy Jailbreak Attacks on Large Language Models via Benign Data Mirroring](https://arxiv.org/abs/2410.21083)：用目标模型的良性输出训练本地 mirror model，再离线构造可迁移越狱提示，避免向黑盒目标提交明显恶意查询。
+- [Unlearning as multi-task optimization: A normalized gradient difference approach with an adaptive learning rate](https://arxiv.org/abs/2410.22086)： 把 LLM 遗忘表述为正则化多任务优化，并用自适应学习率的 normalized gradient difference 平衡忘记与保留性能。
+- [The Impact of Inference Acceleration Strategies on Bias of LLMs](https://arxiv.org/abs/2410.22118)：衡量量化、剪枝和缓存等推理加速策略如何改变 LLM 输出中的人口统计偏见，把加速视为安全相关模型行为变化。
+- [AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to Jailbreak LLMs with Higher Success Rates in Fewer Attempts](https://arxiv.org/abs/2410.22143)：改进 AmpleGCG 对抗后缀生成器，用新的训练策略在更少尝试中生成更强的乱码式越狱后缀。
+- [Auditing f-Differential Privacy in One Run](https://arxiv.org/abs/2410.22235)：从单次训练运行中估计 f-differential privacy，在无需重复重训的情况下收紧经验隐私审计。
+- [Embedding-based classifiers can detect prompt injection attacks](https://arxiv.org/abs/2410.22284)： 微调基于 embedding 的 prompt injection 分类器，显示精心整理的嵌入数据和低误报评估可支撑可部署输入护栏。
+- [Smaller Large Language Models Can Do Moral Self-Correction](https://arxiv.org/abs/2410.23496)：显示小型 LLM 也能在自我批判提示后修正道德问题回答，把 moral self-correction 作为测试时对齐机制。
+- [Transferable&Stealthy Ensemble Attacks: A Black-Box Jailbreaking Framework for Large Language Models](https://arxiv.org/abs/2410.23558)：把多种 LLM-as-attacker 策略组合成黑盒 ensemble，并按恶意指令难度和语义连贯性扰动生成可迁移越狱。
+- [Scalable Reinforcement Post-Training Beyond Static Human Prompts: Evolving Alignment via Asymmetric Self-Play](https://arxiv.org/abs/2411.00062)： 把强化后训练视为非对称自博弈，在 RL 中演化提示分布，而不是只在静态人工提示上优化对齐。
+- [RESTOR: Knowledge Recovery in Machine Unlearning](https://arxiv.org/abs/2411.00204)： 提出 RESTOR 审计遗忘效果，同时检查目标遗忘和模型是否恢复到未见删除数据时应有的知识状态。
+- [Multi-expert Prompting Improves Reliability, Safety and Usefulness of Large Language Models](https://arxiv.org/abs/2411.00492)：在单条推理链中模拟多个专家、聚合候选答案并选择最终回复，以提升真实性、有用性并降低毒性。
+- [Fairness Testing of Large Language Models in Role-Playing](https://arxiv.org/abs/2411.00585)：生成 550 个社会角色和 33000 个角色特定偏见问题，测试 LLM role-playing 是否放大 11 类人口属性公平性伤害。
+- [When Speculation Spills Secrets: Side Channels via Speculative Decoding In LLMs](https://arxiv.org/abs/2411.01076)：显示 speculative decoding 的草稿 token 生成与校验会形成侧信道，使快速推理本身成为隐私攻击面。
+- [Self-Consistency Falls Short! The Adverse Effects of Positional Bias on Long-Context Problems](https://arxiv.org/abs/2411.01101)：证明 self-consistency 在长上下文任务中可能放大位置偏置而非平均掉误差，属于相邻鲁棒性风险。
+- [Rule Based Rewards for Language Model Safety](https://arxiv.org/abs/2411.01111)： 使用细粒度规则奖励和 LLM grader 作为直接 RL 信号，使安全行为比重新标注宽泛人类偏好数据更易更新。
+- [B4: A Black-Box Scrubbing Attack on LLM Watermarks](https://arxiv.org/abs/2411.01222)： 把黑盒水印清洗建模为水印分布和保真分布上的约束优化，在不知道水印类型或参数时攻击 LLM 文本水印。
+- [UniGuard: Towards Universal Safety Guardrails for Jailbreak Attacks on Multimodal Large Language Models](https://arxiv.org/abs/2411.01703)：构建通用多模态护栏，在图文输入上检测并阻断越狱提示，而不是依赖某个模型的固定拒答措辞。
+- [Traffic and Safety Rule Compliance of Humans in Diverse Driving Situations](https://arxiv.org/abs/2411.01909)：在多个轨迹数据集上定义碰撞时间、限速遵守和交互指标，为自动驾驶模型提供人类合规性基线。
+- [Stochastic Monkeys at Play: Random Augmentations Cheaply Break LLM Safety Alignment](https://arxiv.org/abs/2411.02785)： 显示随机增强即可低成本破坏 LLM 安全对齐，挑战越狱必须依赖复杂优化或高资源攻击者的假设。
+- [Membership Inference Attacks against Large Vision-Language Models](https://arxiv.org/abs/2411.02902)： 为大视觉语言模型设计成员推断攻击，针对敏感图文训练数据暴露多模态隐私防护缺口。
+- [What Features in Prompts Jailbreak LLMs? Investigating the Mechanisms Behind Attacks](https://arxiv.org/abs/2411.03343)：分析哪些 prompt 特征驱动越狱成功，把机制层面的攻击因素与表层模板区分开来。
+- [Both Text and Images Leaked! A Systematic Analysis of Multimodal LLM Data Contamination](https://arxiv.org/abs/2411.03823)：系统分析多模态 LLM 中文本和图像双通道的数据污染，说明基准泄漏可能同时影响两种模态。
+- [Diversity Helps Jailbreak Large Language Models](https://arxiv.org/abs/2411.04223)： 利用多样性指令让 LLM 偏离既有攻击上下文，在更少查询下提高对主流聊天模型的越狱成功率。
+- [Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models](https://arxiv.org/abs/2411.04291)：识别 VLM 图像编码器早退会增加有害回答的 ICET 漏洞，并用 Layer-Wise PPO 做层级多模态安全对齐。
+- [Exploring the Danmaku Content Moderation on Video-Sharing Platforms: Existing Limitations, Challenges, and Design Opportunities](https://arxiv.org/abs/2411.04529)：通过访谈和共创研究视频平台用户如何看待有害弹幕审核局限，更像内容审核设计研究而非模型方法。
+- [Revisiting the Robustness of Watermarking to Paraphrasing Attacks](https://arxiv.org/abs/2411.05277)： 重新评估文本水印对改写攻击的鲁棒性，将改写下的检测失败与既有水印研究的强主张区分开。
+- [Ablation is Not Enough to Emulate DPO: How Neuron Dynamics Drive Toxicity Reduction](https://arxiv.org/abs/2411.06424)：从分布式 MLP 神经元激活迁移解释 DPO 降毒，指出简单 toxic-neuron 消融只能解释少部分效果。
+- [SequentialBreak: Large Language Models Can be Fooled by Embedding Jailbreak Prompts into Sequential Prompt Chains](https://arxiv.org/abs/2411.06426)：把有害请求嵌入题库、游戏等良性 sequential prompt chain 中，利用上下文操纵让 LLM 忽略危险片段。
+- [Meta-Learning Objectives for Preference Optimization](https://arxiv.org/abs/2411.06568)：元学习偏好优化目标，使对齐损失能随反馈质量调整，而不是固定使用单一 DPO 式 surrogate。
+- [Combining Domain and Alignment Vectors to Achieve Better Knowledge-Safety Trade-offs in LLMs](https://arxiv.org/abs/2411.06824)：用 MergeAlign 插值 domain vector 与 alignment vector，使医学和金融专家 LLM 保留领域效用同时恢复安全行为。
+- [Model Stealing for Any Low-Rank Language Model](https://arxiv.org/abs/2411.07536)： 从查询恢复角度分析低秩语言模型窃取，说明专有 LLM 参数和训练数据隐私何时可能泄漏。
+- [Zer0-Jack: A Memory-efficient Gradient-based Jailbreaking Method for Black-box Multi-modal Large Language Models](https://arxiv.org/abs/2411.07559)：用内存高效的梯度搜索构造黑盒多模态越狱，降低攻击 MLLM 安全过滤器的成本。
+- [World Models: The Safety Perspective](https://arxiv.org/abs/2411.07690)：从 AI agent 视角综述 world model 安全，分析环境预测模型如何影响规划、可信性和关键应用失效模式。
+- [On the Role of Speech Data in Reducing Toxicity Detection Bias](https://arxiv.org/abs/2411.08135)：利用语音数据降低毒性检测器偏差，检验音频模态线索是否能缓解审核模型中的人口统计偏移。
+- [The VLLM Safety Paradox: Dual Ease in Jailbreak Attack and Defense](https://arxiv.org/abs/2411.08410)：解释视觉输入为何让 VLLM 易被越狱、简单防御为何看似很强，并指出过度谨慎和良性输入拒答问题。
+- [Quantifying Risk Propensities of Large Language Models: Ethical Focus and Bias Detection through Role-Play](https://arxiv.org/abs/2411.08884)：用角色扮演场景量化 LLM 风险倾向，通过伦理聚焦和偏见检测探针替代泛化安全分数。
+- [Mitigating Sycophancy in Decoder-Only Transformer Architectures: Synthetic Data Intervention](https://arxiv.org/abs/2411.10156)： 用合成数据干预缓解 decoder-only transformer 的 sycophancy，借多样化真假样例降低迎合式回答。
+- [On the Privacy Risk of In-context Learning](https://arxiv.org/abs/2411.10512)： 证明上下文学习提示中的私有任务数据可被成员推断泄漏，使 prompt 内示例成为隐私攻击面。
+- [Debiasing Watermarks for Large Language Models via Maximal Coupling](https://arxiv.org/abs/2411.11203)： 用 maximal coupling 去偏 green-red list LLM 水印，在保持机器文本可检测性的同时减少 token 分布扭曲。
+- [The Dark Side of Trust: Authority Citation-Driven Jailbreak Attacks on Large Language Models](https://arxiv.org/abs/2411.11407)： 提出权威引用驱动越狱，利用 LLM 对权威来源的信任，通过伪造或说服性引用诱导不安全服从。
+- [Membership Inference Attack against Long-Context Large Language Models](https://arxiv.org/abs/2411.11424)：对长上下文 LLM 发起成员推断攻击，显示更大的上下文窗口会带来额外训练数据隐私泄漏通道。
+- [Enhancing Vision-Language Model Safety through Progressive Concept-Bottleneck-Driven Alignment](https://arxiv.org/abs/2411.11543)：通过渐进式概念瓶颈对齐 VLM，使不安全视觉概念在最终回答前显式化并被校正。
+- [Combinational Backdoor Attack against Customized Text-to-Image Models](https://arxiv.org/abs/2411.12389)：把后门分别植入文本编码器和扩散模型，使定制 T2I 管线中独立采用的组件组合后触发不安全生成。
+- [Debias Your Large Multi-Modal Model at Test-Time via Non-Contrastive Visual Attribute Steering](https://arxiv.org/abs/2411.12590)：在测试时 steering 非对比视觉属性方向，无需重训完整模型即可降低多模态偏见。
+- [CROW: Eliminating Backdoors from Large Language Models via Internal Consistency Regularization](https://arxiv.org/abs/2411.12768)： 用 CROW 清除 LLM 后门，在微调中对抗扰动并正则化层间隐藏状态一致性，无需触发器知识或干净参考模型。
+- [A Flexible Large Language Models Guardrail Development Methodology Applied to Off-Topic Prompt Detection](https://arxiv.org/abs/2411.12946)：给出 off-topic prompt 检测的护栏开发流程，覆盖数据设计、分类器调优和部署审核阈值设置。
+- [Safety Without Semantic Disruptions: Editing-free Safe Image Generation via Context-preserving Dual Latent Reconstruction](https://arxiv.org/abs/2411.13982)：用安全嵌入与可调 latent-space 扩散过程抑制不安全图像概念，同时尽量保留相邻良性语义，避免模型编辑破坏语义流形。
+- [GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs](https://arxiv.org/abs/2411.14133)： 用 GASP 生成可读黑盒越狱后缀，结合潜在贝叶斯优化和迭代细化来平衡攻击成功率与提示连贯性。
+- [HateDay: Insights from a Global Hate Speech Dataset Representative of a Day on Twitter](https://arxiv.org/abs/2411.15462)：构建全球抽样的一日 Twitter 仇恨言论数据集，并显示学术评测会高估真实检测性能，尤其在非欧洲语言上更明显。
+- [Towards Robust Evaluation of Unlearning in LLMs via Data Transformations](https://arxiv.org/abs/2411.15477)：用遗忘数据的变换版本评估 LLM 遗忘，检验方法是否删除概念而不只是记住的表面形式。
+- [MUNBa: Machine Unlearning Via Nash Bargaining](https://arxiv.org/abs/2411.15537)： 把机器遗忘重构为 forgetting 与 preservation 梯度之间的 Nash bargaining，在分类、CLIP 和扩散任务中取得更平衡更新。
+- [Steering Away from Harm: An Adaptive Approach to Defending Vision Language Model Against Jailbreaks](https://arxiv.org/abs/2411.16721)： 用 ASTRA 防御 VLM，从对抗视觉 token 提取有害响应 steering vectors，并在推理时自适应移除这些方向。
+- ["Moralized" Multi-Step Jailbreak Prompts: Black-Box Testing of Guardrails in Large Language Models for Verbal Attacks](https://arxiv.org/abs/2411.16730)：用道德化的多步 verbal-attack 提示做黑盒测试，检验 LLM 护栏是否会被说服后逐步升级到不安全服从。
+- [Edit Away and My Face Will not Stay: Personal Biometric Defense against Malicious Generative Editing](https://arxiv.org/abs/2411.16832)： 用 FaceLock 保护肖像，通过优化扰动破坏扩散编辑后的生物识别身份，同时保持视觉上可接受。
+- [BadScan: An Architectural Backdoor Attack on Visual State Space Models](https://arxiv.org/abs/2411.17283)：在发现现有触发器攻击难以覆盖 VMamba 状态空间 patch 序列行为后，提出面向视觉状态空间模型架构的后门攻击。
+- [Different Bias Under Different Criteria: Assessing Bias in LLMs with a Fact-Based Approach](https://arxiv.org/abs/2411.17338)：用基于事实的标准评估 LLM 偏见，显示当评测区分事实支撑与刻板关联时，偏见结论会发生变化。
+- [Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats](https://arxiv.org/abs/2411.17693)： 使用自适应部署协议持续更新对不可信 LLM 的信任，并把任务路由到受监控 micro-protocol，以降低分布式错位威胁。
+- [Visual Adversarial Attack on Vision-Language Models for Autonomous Driving](https://arxiv.org/abs/2411.18275)： 提出 ADvLM 自动驾驶 VLM 攻击，结合语义不变指令生成和时间序列视觉扰动，面向安全关键场景暴露风险。
+- [Don’t Let Your Robot Be Harmful: Responsible Robotic Manipulation via Safety-As-Policy](https://arxiv.org/abs/2411.18289)： 构建 Safety-as-Policy 机器人操作框架，将生成风险场景的 world model 与反思危险后再执行的 mental model 配对。
+- [Immune: Improving Safety Against Jailbreaks in Multi-modal LLMs via Inference-Time Alignment](https://arxiv.org/abs/2411.18688)： 提出 Immune 推理期 MLLM 防御，使用安全奖励模型和受控解码抵抗视觉与文本越狱。
+- [SEUF: Is Unlearning One Expert Enough for Mixture-of-Experts LLMs?](https://arxiv.org/abs/2411.18797)：检验只遗忘 MoE LLM 中一个专家是否足以删除目标知识，同时保持其余专家的路由和效用。
+- [PEFT-as-an-Attack! Jailbreaking Language Models during Federated Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2411.19335)： 表明联邦 PEFT 可变成 PEFT-as-an-Attack，用很小的 LoRA 式更新绕过安全对齐，同时保持原始用户数据去中心化。
+- [Quantized Delta Weight Is Safety Keeper](https://arxiv.org/abs/2411.19530)： 评估 delta-weight 量化作为 safety keeper，发现部分压缩可在有限效用损失下减轻微调式对齐、后门和幻觉风险。
+- [LUMIA: Linear probing for Unimodal and MultiModal Membership Inference Attacks leveraging internal LLM states](https://arxiv.org/abs/2411.19876)： 用逐层线性探针分析内部激活做 LUMIA 成员推断，把隐私攻击扩展到单模态和多模态 LLM 状态。
+- [Safe to Serve: Aligning Instruction-Tuned Models for Safety and Helpfulness](https://arxiv.org/abs/2412.00074)：比较安全指令微调、RAFT 和 DPO，发现 DPO 在降低有毒回答的同时较好保留 instruction-tuned LLM 的 helpfulness。
+- [Adversarial Exploitation of Data Diversity Improves Visual Localization](https://arxiv.org/abs/2412.00138)：利用对抗性选择的数据多样性提升视觉定位鲁棒性，属于相邻自主系统鲁棒性条目而非直接 LLM 安全方法。
+- [Dynamic High-Order Control Barrier Functions With Diffuser for Safety-Critical Trajectory Planning at Signal-Free Intersections](https://arxiv.org/abs/2412.00162)：把动态高阶控制障碍函数与 diffusion planner 结合，用于无信号交叉口的自动驾驶安全轨迹规划。
+- [Unified Parameter-Efficient Unlearning for LLMs](https://arxiv.org/abs/2412.00383)：用参数高效 adapter 做 LLM 遗忘，使目标删除无需重写全部模型权重。
+- [Jailbreak Large Vision-Language Models Through Multi-Modal Linkage](https://arxiv.org/abs/2412.00473)：把有害语义跨图像和文本通道链接起来越狱 VLM，说明单模态安全检查会漏掉跨模态攻击组合。
+- [A Cognac Shot To Forget Bad Memories: Corrective Unlearning for Graph Neural Networks](https://arxiv.org/abs/2412.00789)：提出 GNN corrective unlearning，在保持图任务效用的同时移除有害图记忆影响，属于相邻遗忘方法。
+- [AlignMamba: Enhancing Multimodal Mamba with Local and Global Cross-Modal Alignment](https://arxiv.org/abs/2412.00833)：为 Multimodal Mamba 加入局部和全局跨模态对齐目标，提升视觉语言表征一致性，但不是直接安全护栏。
+- [CopyrightShield: Enhancing Diffusion Model Security Against Copyright Infringement Attacks](https://arxiv.org/abs/2412.01528)：用 CopyrightShield 抑制扩散模型在生成阶段复现受保护概念，从而防御版权侵权攻击。
+- [Noise Injection Reveals Hidden Capabilities of Sandbagging Language Models](https://arxiv.org/abs/2412.01784)：用噪声注入揭示 sandbagging 语言模型隐藏能力，把能力隐藏作为安全风险。
+- [Trust & Safety of LLMs and LLMs in Trust & Safety](https://arxiv.org/abs/2412.02113)：同时综述 LLM 部署风险和 LLM 在 trust-and-safety 运营中的用途，更适合作为 Survey 或治理候选而不是模型方法。
+- [Jailbreak Defense in a Narrow Domain: Limitations of Existing Methods and a New Transcript-Classifier Approach](https://arxiv.org/abs/2412.02159)：在炸弹制作窄域越狱上测试安全训练、对抗训练和分类器，并提出更强的 transcript-classifier 防御。
+- [Enhancing Trust in Large Language Models with Uncertainty-Aware Fine-Tuning](https://arxiv.org/abs/2412.02904)： 加入 uncertainty-calibrated fine-tuning 和不确定性感知 causal LM loss，使 LLM 能标记不可靠或易幻觉回答。
+- [CredID: Credible Multi-Bit Watermark for Large Language Models Identification](https://arxiv.org/abs/2412.03107)：在 LLM 生成中嵌入可信多比特水印，使输出携带模型标识以支持来源追踪和问责检查。
+- [Robust Multi-bit Text Watermark with LLM-based Paraphrasers](https://arxiv.org/abs/2412.03123)： 通过交替使用微调后的 LLM paraphraser 嵌入多比特文本水印，再用分类器解码句子级语义差异。
+- [Does Safety Training of LLMs Generalize to Semantically Related Natural Prompts?](https://arxiv.org/abs/2412.03235)：用与有毒种子语义相关的自然提示测试对齐 LLM，显示安全微调即使面对非优化越狱提示也可能失效。
+- [SIDA: Social Media Image Deepfake Detection, Localization and Explanation with Large Multimodal Model](https://arxiv.org/abs/2412.04292)： 结合社交媒体深伪数据集和 LMM 检测器，对伪造图像区域进行定位与解释，服务于虚假信息安全。
+- [Targeting the Core: A Simple and Effective Method to Attack RAG-based Agents via Direct LLM Manipulation](https://arxiv.org/abs/2412.04415)：展示“忽略文档”等简单前缀可操纵 RAG agent 的 LLM 核心，并绕过上下文防护。
+- [Hidden in the Noise: Two-Stage Robust Watermarking for Images](https://arxiv.org/abs/2412.04653)：通过扩散初始噪声嵌入图像水印，并用两阶段检测框架在低可见失真下支持鲁棒 provenance。
+- [SleeperMark: Towards Robust Watermark against Fine-Tuning Text-to-image Diffusion Models](https://arxiv.org/abs/2412.04852)：研究抵抗文生图扩散模型微调的鲁棒水印。
+- [LIAR: Leveraging Inference Time Alignment (Best-of-N) to Jailbreak LLMs in Seconds](https://arxiv.org/abs/2412.05232)：把越狱重述为推理期错位问题，用黑盒 best-of-N 采样寻找有害补全，不需要训练对抗生成器。
+- [LeakAgent: RL-based Red-teaming Agent for LLM Privacy Leakage](https://arxiv.org/abs/2412.05734)：用细粒度隐私泄漏奖励训练 RL 攻击 agent，从黑盒 LLM 中诱导训练数据和系统提示泄漏。
+- [SABER: Model-agnostic Backdoor Attack on Chain-of-Thought in Neural Code Generation](https://arxiv.org/abs/2412.05829)：通过代码变异选择恶意输出，并利用 self-attention 机制向代码语言模型的 chain-of-thought 注入后门。
+- [PBI-Attack: Prior-Guided Bimodal Interactive Black-Box Jailbreak Attack for Toxicity Maximization](https://arxiv.org/abs/2412.05892)： PBI-Attack 先用替代 LVLM 提取恶意特征并嵌入良性图像，再通过图文交替贪心搜索实施黑盒越狱。
+- [Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models](https://arxiv.org/abs/2412.05934)： HIMRD 将有害语义分散到图像和文本中，并用启发式搜索寻找可绕过单模态 MLLM 防护的提示。
+- [Precise, Fast, and Low-cost Concept Erasure in Value Space: Orthogonal Complement Matters](https://arxiv.org/abs/2412.06143)：通过值空间正交补实现快速低成本概念擦除。
+- [Exploring Memorization and Copyright Violation in Frontier LLMs: A Study of the New York Times v. OpenAI 2023 Lawsuit](https://arxiv.org/abs/2412.06370)：以 New York Times v. OpenAI 诉讼为案例研究前沿模型记忆和受版权文本复现风险。
+- [Copyright-Protected Language Generation via Adaptive Model Fusion](https://arxiv.org/abs/2412.06619)：在推理时融合由互斥版权语料训练的模型输出，自适应减少记忆化文本或代码复现且无需重训。
+- [Take Fake as Real: Realistic-Like Robust Black-Box Adversarial Attack to Evade AIGC Detection](https://arxiv.org/abs/2412.06727)：用模糊、压缩、噪声和光斑等真实后处理构造黑盒对抗图像，以绕过 AIGC 检测器。
+- [Refusal Tokens: A Simple Way to Calibrate Refusals in Large Language Models](https://arxiv.org/abs/2412.06748)：引入 refusal tokens，使用户无需为每种敏感度重新训练模型，也能校准不同查询类别的拒答率。
+- [SafeWatch: An Efficient Safety-Policy Following Video Guardrail Model with Transparent Explanations](https://arxiv.org/abs/2412.06878)： 训练 SafeWatch 视频护栏模型，使其遵循细粒度安全政策并给出透明解释，比长提示 MLLM 更高效。
+- [PrisonBreak: Jailbreaking Large Language Models with at Most Twenty-Five Targeted Bit-flips](https://arxiv.org/abs/2412.07192)：翻转少量有针对性的模型比特即可破坏安全对齐，把硬件或权重损坏变成越狱向量。
+- [FlexLLM: Exploring LLM Customization for Moving Target Defense on Black-Box LLMs Against Jailbreak Attacks](https://arxiv.org/abs/2412.07672)：通过动态改变解码超参数和 system prompt 防御黑盒 LLM API，使越狱攻击面对持续变化的目标且无需重训。
+- [MAGIC: Mastering Physical Adversarial Generation in Context through Collaborative LLM Agents](https://arxiv.org/abs/2412.08014)：用协作式多模态 LLM agents 为驾驶场景生成上下文感知物理对抗 patch，更像围绕对抗生成的 Agent Harness 候选。
+- [Antelope: Potent and Concealed Jailbreak Attack Strategy](https://arxiv.org/abs/2412.08156)：生成隐蔽越狱提示，在隐藏有害意图的同时保持对对齐 LLM 的攻击强度。
+- [Underestimated Privacy Risks for Minority Populations in Large Language Model Unlearning](https://arxiv.org/abs/2412.08559)：显示 LLM 遗忘后少数群体仍可能承受更高隐私泄漏，使分群抽取风险成为遗忘评估的一部分。
+- [AdvWave: Stealthy Adversarial Jailbreak Attack against Large Audio-Language Models](https://arxiv.org/abs/2412.08608)：构造隐蔽波形扰动来越狱 audio-language models，把安全攻击从文本和图像提示扩展到语音输入。
+- [Test-Time Alignment via Hypothesis Reweighting](https://arxiv.org/abs/2412.08812)： HyRe 在测试时个性化奖励模型，用一到五个目标样例重加权多头偏好假设，只需一次前向传播。
+- [AdvPrefix: An Objective for Nuanced LLM Jailbreaks](https://arxiv.org/abs/2412.10321)： 提出 AdvPrefix 前缀强制越狱目标，选择模型相关的有害响应前缀，使优化攻击更真实、可控。
+- [AlignGuard: Scalable Safety Alignment for Text-to-Image Generation](https://arxiv.org/abs/2412.10493)： AlignGuard 用合成有害/安全图文对、自定义 DPO 和合并 LoRA safety experts 对齐文生图模型，抑制不安全概念。
+- [RAT: Adversarial Attacks on Deep Reinforcement Agents for Targeted Behaviors](https://arxiv.org/abs/2412.10713)：训练与目标行为对齐的 intention policy 和驱动受害 DRL agent 服从该行为的 adversary，用行为目标评估安全性。
+- [Towards Action Hijacking of Large Language Model-based Agent](https://arxiv.org/abs/2412.10807)：展示把 LLM 智能体重定向到攻击者指定动作的 action hijacking 攻击，建议父级评估是否路由到 Agent Harness 的工具和动作控制。
+- [Separate the Wheat from the Chaff: A Post-Hoc Approach to Safety Re-Alignment for Fine-Tuned Language Models](https://arxiv.org/abs/2412.11041)：在微调后识别、移除并重校准不安全 delta 参数，使全量微调和 LoRA 模型恢复安全同时保留任务效用。
+- [Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection](https://arxiv.org/abs/2412.11506)：从闭源模型 API 的部分观测估计完整 token 概率分布，使白盒 AI 文本检测方法可利用专有模型。
+- [Bias Vector: Mitigating Biases in Language Models with Task Arithmetic Approach](https://arxiv.org/abs/2412.11679)：通过 Task Arithmetic Approach 度量或缓解公平性与偏见风险，将人口统计、严重度或审核偏移作为安全轴。
+- [Stepwise Reasoning Error Disruption Attack of LLMs](https://arxiv.org/abs/2412.11934)：向前序推理步骤隐蔽注入错误，使 LLM 在后续推理中传播错误，暴露 zero-shot 与 few-shot 推理鲁棒性缺口。
+- [Gramian Multimodal Representation Learning and Alignment](https://arxiv.org/abs/2412.11959)：用 Gramian 目标对齐多模态表征，在相邻模型对齐问题中提升跨模态特征一致性。
+- [Na'vi or Knave: Jailbreaking Language Models via Metaphorical Avatars](https://arxiv.org/abs/2412.12145)：把有害实体映射为无害隐喻 avatar，并嵌入自适应人机互动中，以实现可迁移越狱。
+- [NLSR: Neuron-Level Safety Realignment of Large Language Models Against Harmful Fine-Tuning](https://arxiv.org/abs/2412.12497)：在有害微调后进行神经元级安全重对齐，识别并校正安全关键神经元而不是重训整个 LLM。
+- [Jailbreaking? One Step Is Enough!](https://arxiv.org/abs/2412.12621)： REDA 将越狱意图伪装成防御任务，从目标有害回答出发，并借少量上下文示例实现一步跨模型攻击。
+- [Lightweight Safety Classification Using Pruned Language Models](https://arxiv.org/abs/2412.13435)：在小型 LLM 的中间隐藏状态上训练惩罚逻辑回归分类器，用于轻量内容安全和 prompt injection 检测。
+- [Large Language Model Federated Learning with Blockchain and Unlearning for Cross-Organizational Collaboration](https://arxiv.org/abs/2412.13551)： 结合联邦 LLM 学习、区块链信任和遗忘支持，让跨组织协作同时处理数据共享、审计和删除权需求。
+- [Clio: Privacy-Preserving Insights into Real-World AI Use](https://arxiv.org/abs/2412.13678)： Clio 用隐私保护的模型分析汇总数百万 AI 助手对话，无需人工查看原始聊天即可发现滥用模式和未知安全问题。
+- [Towards Efficient and Explainable Hate Speech Detection via Model Distillation](https://arxiv.org/abs/2412.13698)： 用 chain-of-thought 理由把大型 LLM 仇恨言论分类器蒸馏为更小的可解释模型，降低审核成本并保留可解释性。
+- [Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment](https://arxiv.org/abs/2412.14516)： Cal-DPO 通过把隐式奖励尺度校准到真实奖励值，改进只比较响应相对偏好的 DPO 对齐。
+- [SATA: A Paradigm for LLM Jailbreak via Simple Assistive Task Linkage](https://arxiv.org/abs/2412.15289)： 提出 SATA simple assistive task linkage 越狱，将有害关键词掩蔽为良性子任务并重新链接以诱导不安全回答。
+- [FedRLHF: A Convergence-Guaranteed Federated Framework for Privacy-Preserving and Personalized RLHF](https://arxiv.org/abs/2412.15538)： FedRLHF 将 RLHF 去中心化，让客户端用本地人类反馈更新奖励函数和策略，而不共享原始数据或标签。
+- [EMPRA: Embedding Perturbation Rank Attack against Neural Ranking Models](https://arxiv.org/abs/2412.16382)：扰动句子级 embedding 来攻击黑盒神经排序器，在保持文本语义可读的同时提升攻击者指定文档排名。
+- [Privacy in Fine-tuning Large Language Models: Attacks, Defenses, and Future Directions](https://arxiv.org/abs/2412.16504)：综述 LLM 微调阶段的成员推断、数据抽取和后门等隐私风险，以及差分隐私、联邦学习和遗忘防御。
+- [POEX: Towards Policy Executable Jailbreak Attacks Against the LLM-based Robots](https://arxiv.org/abs/2412.16633)：研究让 LLM 机器人输出可执行有害策略的越狱攻击，构建 Harmful-RLBench 并分析普通文本越狱为何难以直接迁移。
+- [Unpacking Political Bias in Large Language Models: Insights Across Topic Polarization](https://arxiv.org/abs/2412.16746)：在不同极化程度的话题上度量 LLM 政治偏见，说明哪些主题的意识形态偏移最强或最依赖评测设定。
+- [Shaping the Safety Boundaries: Understanding and Defending Against Jailbreaks in Large Language Models](https://arxiv.org/abs/2412.17034)： 用 safety boundary 解释越狱，并通过 ABD 约束低层和中层激活回到安全区域内。
+- [DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak](https://arxiv.org/abs/2412.17522)：用 seq2seq 文本扩散生成器和 attack loss 重写提示，生成比后缀模板更多样的 LLM 越狱样本。
+- [Retention Score: Quantifying Jailbreak Risks for Vision Language Models](https://arxiv.org/abs/2412.17544)：用 Quantifying Jailbreak Risks for Vision Language Models 度量越狱或 prompt injection 风险，区分不安全响应和普通任务失败。
+- [Token Highlighter: Inspecting and Mitigating Jailbreak Prompts for Large Language Models](https://arxiv.org/abs/2412.18171)： Token Highlighter 用 affirmation-loss 梯度定位越狱关键 token，并在一次受保护模型查询中软化其嵌入。
+- [ICM-Assistant: Instruction-tuning Multimodal Large Language Models for Rule-based Explainable Image Content Moderation](https://arxiv.org/abs/2412.18216)：用拆解后的安全规则、增强图像标注和解释型审核问答数据，训练规则驱动的可解释图像内容审核 MLLM。
+- [Diverse and Effective Red Teaming with Auto-generated Rewards and Multi-step Reinforcement Learning](https://arxiv.org/abs/2412.18693)： 用多样化 LLM 生成攻击目标、规则奖励和多步 RL 自动红队，并奖励不同于既有尝试的攻击。
+- [Attack-in-the-Chain: Bootstrapping Large Language Models for Attacks Against Black-box Neural Ranking Models](https://arxiv.org/abs/2412.18770)：用 LLM chain-of-thought 提示生成攻击黑盒神经排序器的对抗文档，暴露 LLM 搜索链路中的检索鲁棒性风险。
+- [RAG with Differential Privacy](https://arxiv.org/abs/2412.19291)：将差分隐私 token generation 用于 RAG，使回答可利用个人或机密文档，同时约束检索上下文泄漏。
+- [No Preference Left Behind: Group Distributional Preference Optimization](https://arxiv.org/abs/2412.20299)： 提出 GDPO，通过估计群体 belief distribution 并基于偏好分布优化，使 LLM 对齐到多元群体偏好。
+- [LLM-Virus: Evolutionary Jailbreak Attack on Large Language Models](https://arxiv.org/abs/2501.00055)：用进化搜索把提示变异成 LLM-Virus 越狱样本，自动发现针对对齐语言模型的攻击。
+- [MLLM-as-a-Judge for Image Safety without Human Labeling](https://arxiv.org/abs/2501.00192)： 用预训练 MLLM 充当图像安全 judge，在无需人工重标注或任务专用微调的情况下适配变化的安全规则。
+- [Boosting Adversarial Transferability with Spatial Adversarial Alignment](https://arxiv.org/abs/2501.01015)：对齐空间对抗模式，使图像攻击更容易跨视觉语言模型迁移，把迁移性本身作为鲁棒性压力源。
+- [SaLoRA](https://arxiv.org/abs/2501.01765)：在低秩适配中保留安全对齐，降低对齐模型微调后的安全漂移。
+- [Real-time tunable LLM safeguarding](https://arxiv.org/abs/2501.02018)：提供可调安全性与性能权衡的实时防护机制，补充部署期模型安全控制方法。
+- [Safety Attention Heads in LVLMs](https://arxiv.org/abs/2501.02029)：识别大视觉语言模型中的安全相关注意力头，补充多模态安全的内部监测路线。
+- [Align-Pro: A Principled Approach to Prompt Optimization for LLM Alignment](https://arxiv.org/abs/2501.03486)：把提示优化形式化为冻结 LLM 的对齐替代路径，在不做 RLHF 参数更新的情况下引导模型价值取向。
+- [SC-Pro: Training-Free Framework for Defending Unsafe Image Synthesis Attack](https://arxiv.org/abs/2501.05359)：提供无需训练的 unsafe image synthesis 防御，在不更新文生图模型的情况下过滤或 steering 高风险生成。
+- [HFMF: Hierarchical Fusion Meets Multi-Stream Models for Deepfake Detection](https://arxiv.org/abs/2501.05631)： 提出 HFMF 两阶段深伪检测器，结合层次化跨模态融合与多流特征提取进行生成图像取证。
+- [Concept Activation Vectors for LLM Control](https://arxiv.org/abs/2501.05764)：通过 concept activation vectors 对 large language models 进行 steering。
+- [Formal Trust and Threat Modeling Using Large Language Models](https://doi.org/10.1109/acsacw65225.2024.00033)：用 LLM 辅助形式化 trust 与 threat modeling，更像安全分析或 Agent Harness 候选，而不是模型侧训练工作。
+- [Reinforcement Learning-powered Effectiveness and Efficiency Few-shot Jailbreaking Attack LLMs](https://doi.org/10.1109/ispa63168.2024.00269)：用强化学习搜索少样本越狱提示，同时优化对安全对齐 LLM 的攻击成功率和查询效率。
+- [Low-Code, High Privacy: Leveraging Open-Source LLMs for On-Premises AI in Oracle APEX](https://doi.org/10.36948/ijfmr.2024.v06i05.57940)：讨论在 Oracle APEX 中本地部署开源 LLM，让企业提示与输出留在内网，更接近部署隐私方案而不是新的模型方法。
+- [The EU's AI act: A framework for collaborative governance](https://doi.org/10.1016/j.iot.2024.101291)：解释欧盟 AI Act 的协同治理框架，是安全控制的政策背景，而非模型侧方法。
+- [Please Tell Me More: Privacy Impact of Explainability through the Lens of Membership Inference Attack](https://doi.org/10.1109/sp54263.2024.00120)：显示可解释性接口会增加成员推断泄漏，攻击者可把解释输出作为额外隐私证据。
+- [To Authenticity, and Beyond! Building Safe and Fair Generative AI Upon the Three Pillars of Provenance](https://doi.org/10.1109/mcg.2024.3380168)：从 provenance、真实性和可追踪性三根支柱讨论安全公平的生成式 AI，而不是提出新的检测器或水印。
+- [Deepfake Detection and Localization Using Multi-View Inconsistency Measurement](https://doi.org/10.1109/tdsc.2024.3472064)：通过多视角不一致度量检测并定位深伪，输出空间证据而不只是二元真假标签。
+- [AI Risk Categorization Decoded (AIR 2024)](https://doi.org/10.70777/agi.v1i1.10603)：解读 AI 风险分类以服务治理和评估，是风险 taxonomy 背景而非安全模型实现。
+- [Deepfake Detection Based on the Adaptive Fusion of Spatial-Frequency Features](https://doi.org/10.1155/2024/7578036)：自适应融合空间域和频域线索，检测单一域检测器可能漏掉的深伪伪迹。
+- [WaterDiff: Perceptual Image Watermarks Via Diffusion Model](https://doi.org/10.1109/icassp48485.2024.10447095)：通过扩散模型过程嵌入感知图像水印，在保持视觉质量的同时支持 provenance。
+- [Enhancing Robustness of Speech Watermarking Using a Transformer-Based Framework Exploiting Acoustic Features](https://doi.org/10.1109/taslp.2024.3486206)：用 Transformer 建模声学特征，使语音水印更能抵抗音频变换和攻击。
+- [Defending Large Language Models Against Jailbreak Attacks Through Chain of Thought Prompting](https://doi.org/10.1109/nana63151.2024.00028)：把 chain-of-thought prompting 用作 LLM 越狱防御，测试显式推理是否能提升攻击提示下的拒答行为。
+- [An input-denoising-based defense against stealthy backdoor attacks in large language models for code](https://doi.org/10.1016/j.infsof.2024.107661)：在代码 LLM 生成前对输入去噪，移除隐蔽后门触发模式，同时尽量保留正常代码生成行为。
+- [Cross-lingual Transfer and Multilingual Learning for Detecting Harmful Behaviour in African Under-Resourced Language Dialogue](https://doi.org/10.18653/v1/2024.sigdial-1.49)：研究非洲低资源语言对话中的有害行为检测，利用跨语言迁移和多语言学习缓解审核标注不足。
+- [Semantic-Preserving Adversarial Example Attack against BERT](https://doi.org/10.18653/v1/2024.trustnlp-1.17)：构造语义保持的 BERT 对抗样本，在不改变输入意图的情况下检验模型鲁棒性。
+- [Addressing Data Poisoning and Model Manipulation Risks using LLM Models in Web Security](https://doi.org/10.1109/icdscnc62492.2024.10941696)：用 LLM 辅助 web security 分析处理数据投毒和模型操纵风险，属于宽泛安全风险缓解条目。
+- [State Diagram Extension and Test Case Generation Based on Large Language Models for Improving Test Engineers’ Efficiency in Safety Testing](https://doi.org/10.1109/issrew63542.2024.00092)：用 LLM 扩展状态图并生成安全测试用例，主要是软件安全测试自动化，而不是核心模型对齐方法。
+- [A Low-cost Black-box Jailbreak Based on Custom Mapping Dictionary with Multi-round Induction](https://doi.org/10.1109/trustcom63139.2024.00131)：用自定义映射词典和多轮诱导构造低成本黑盒越狱，把直接有害词替换为攻击者定义的替代符号。
+- [A Waterlog for Detecting and Tracing Synthetic Text from Large Language Models](https://eprint.iacr.org/2024/1424)：提出用于检测和追踪 LLM 合成文本的水印方案，为生成文本问责补充 provenance 机制。
+- [Dual Defense: Adversarial, Traceable, and Invisible Robust Watermarking Against Face Swapping](https://doi.org/10.1109/tifs.2024.3383648)：在图像水印中结合对抗鲁棒性、可追踪性和不可见性，用于保护人脸免受 face swapping 滥用。
+- [Mitigating Sycophancy in Large Language Models via Direct Preference Optimization](https://doi.org/10.1109/bigdata62323.2024.10825538)：用 DPO 缓解 sycophancy，训练 LLM 在用户断言与证据或正确性冲突时避免无原则迎合。
+- [Large Language Models Can Be Contextual Privacy Protection Learners](https://doi.org/10.18653/v1/2024.emnlp-main.785)：训练或提示 LLM 学习上下文相关的隐私保护决策，区分敏感披露与良性上下文使用。
+- [Fine-grained Pluggable Gradient Ascent for Knowledge Unlearning in Language Models](https://doi.org/10.18653/v1/2024.emnlp-main.566)：用可插拔梯度上升模块执行细粒度 LLM 知识遗忘，降低目标回忆并限制对无关知识的损伤。
+- [SrcMarker: Dual-Channel Source Code Watermarking via Scalable Code Transformations](https://doi.org/10.1109/sp54263.2024.00097)：通过可扩展、语义保持的代码变换嵌入源码水印，并用双通道设计支持所有权追踪。
+- [Mitigating Privacy Seesaw in Large Language Models: Augmented Privacy Neuron Editing via Activation Patching](https://doi.org/10.18653/v1/2024.findings-acl.315)：用 activation patching 编辑隐私相关神经元，降低 PII 泄漏，同时避免非目标数据上的隐私-效用跷跷板。
+- [Latent Flow Diffusion for Deepfake Video Generation](https://doi.org/10.1109/cvprw63382.2024.00382)：用 latent-flow diffusion 生成深伪视频，作为媒体取证防御相关的攻击生成模型。
+- [Jailbreak Attacks on Large Language Models and Possible Defenses: Present Status and Future Possibilities](https://doi.org/10.1109/istas61960.2024.10732418)：回顾 LLM 越狱攻击类型和潜在防御，是现状与展望综述，而非具体护栏实现。
+- [Mamba-Based Federated Learning Architecture for Privacy-Preserving Machine Learning](https://doi.org/10.1109/iccasit62299.2024.10827895)：把 Mamba-based 联邦架构用于隐私保护机器学习，属于相邻隐私保护训练条目而非 agent-specific guardrail。
+- [BOLT: Privacy-Preserving, Accurate and Efficient Inference for Transformers](https://doi.org/10.1109/sp54263.2024.00130)：用安全计算技术实现 transformer 隐私保护推理，在保持准确性的同时降低加密推理成本。
+- [On the Vulnerability of Safety Alignment in Open-Access LLMs](https://doi.org/10.18653/v1/2024.findings-acl.549)：显示开放访问 LLM 的安全对齐会被下游适配和对抗使用削弱，量化护栏被侵蚀的难度。
+- [Jailbreak Open-Sourced Large Language Models via Enforced Decoding](https://doi.org/10.18653/v1/2024.acl-long.299)：在解码期强制开源 LLM 走向肯定式有害续写，说明无需重训也可绕过拒答行为。
+- [Using Graph Neural Networks to Improve Generalization Capability of the Models for Deepfake Detection](https://doi.org/10.1109/tifs.2024.3451356)：用图神经网络建模面部或取证特征之间的关系，提升深伪检测器的跨数据集泛化能力。
+- [Multi-Scale Permutation Entropy for Audio Deepfake Detection](https://doi.org/10.1109/icassp48485.2024.10448095)：用多尺度 permutation entropy 特征检测音频深伪，捕捉合成语音中的时间不规则性。
+- [A CycleGAN Watermarking Method for Ownership Verification](https://doi.org/10.1109/tdsc.2024.3424900)：利用 CycleGAN 变换嵌入所有权水印，在尽量不明显降低生成或变换图像质量的情况下支持验证。
+- [Safeguarding media integrity: A hybrid optimized deep feature fusion based deepfake detection in videos](https://doi.org/10.1016/j.cose.2024.103860)：结合优化的深度特征融合检测视频深伪，面向时空伪迹的媒体完整性验证。
+- [On the Security and Privacy Implications of Large Language Models: In-Depth Threat Analysis](https://doi.org/10.1109/ithings-greencom-cpscom-smartdata-cybermatics62450.2024.00102)：从威胁分析角度梳理 LLM 安全与隐私影响，更适合作为 Survey 或风险建模背景而非模型条目。
+- [Data Breach Prevention in AI Systems: Employing Event-Driven Architecture to Combat Prompt Injection Attacks in Chatbots](https://doi.org/10.1109/icicn62625.2024.10761619)：用事件驱动架构防止 prompt injection 导致的 chatbot 数据泄漏，更像运行时 Agent Harness 或系统护栏候选。
+- [How to Make Reproducible Research in Machine Unlearning with ERASURE](https://doi.org/10.24963/ijcai.2024/1255)：通过 ERASURE 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [Integrating security, privacy, and advanced cyber technologies for Resilient Urban, IoT, and AI Systems](https://doi.org/10.30574/wjaets.2024.13.1.0394)：综述面向城市、IoT 和 AI 系统韧性的网络安全、隐私、机器学习、区块链和安全路由技术。
+- [Graph-Based Prompt Injection Attacks Against Large Language Models](https://doi.org/10.1109/time-e62724.2024.10919819)：用图结构建模 prompt injection，刻画注入指令和 LLM 响应之间的关系以支持攻击构造或分析。
+- [Improved Safety and 3D Scanning with Human-Robot Collaboration](https://doi.org/10.1109/dicta63115.2024.00108)：把人机协作与更安全的 3D scanning 结合，属于相邻机器人安全应用而非可复用 LLM 安全模型。
+- [Confirmation and Specificity Biases in Large Language Models: An Explorative Study](https://doi.org/10.1109/mis.2024.3513992)：度量 LLM 回答中的确认偏差和 specificity bias，为安全评估提供偏见审计信号，而不是模型训练方法。
+- [Supervision policies can shape long-term risk management in general-purpose AI models](https://arxiv.org/abs/2501.06137)：研究监督策略如何改变通用 AI 模型的长期风险管理，更像 policy model 或治理路由候选。
+- [Enhancing AI Safety Through the Fusion of Low Rank Adapters](https://arxiv.org/abs/2501.06208)：融合任务 LoRA 与安全 LoRA，在保持指令跟随能力的同时降低有害回答率，并暴露 over-refusal 权衡。
+- [Risk-Averse Fine-tuning](https://arxiv.org/abs/2501.06911)： 将 CVaR 式风险规避优化用于 LLM 微调，使罕见有害或有毒输出受到更强约束。
+- [Refusal Behavior from a Nonlinear Perspective](https://arxiv.org/abs/2501.08145)：从非线性模型分析角度研究拒答行为，为 LLM 何时拒答或服从补充机制性安全视角。
+- [WMamba: Wavelet-based Mamba for Face Forgery Detection](https://arxiv.org/abs/2501.09617)： 构建 WMamba wavelet-based Mamba 特征提取器，以动态轮廓卷积捕捉空间检测器容易漏掉的细微面部伪造痕迹。
+- [Beyond Reward Hacking: Causal Rewards for Large Language Model Alignment](https://arxiv.org/abs/2501.09620)：构建具备反事实不变性的因果奖励模型，减少 RLHF 式对齐被长度、迎合、人口统计相关性等伪线索驱动。
+- [Behavioral Self-Awareness](https://arxiv.org/abs/2501.11120)：显示微调后的 LLM 有时能在没有示例的情况下描述已学习行为和类似 backdoor 的策略，使自我披露与潜在行为感知成为安全相关的模型属性。
+- [Can Safety Fine-Tuning Be More Principled? Lessons Learned from Cybersecurity](https://arxiv.org/abs/2501.11183)：把网络安全原则迁移到安全微调设计中，强调威胁建模、对抗覆盖和有害能力控制。
+- [Verifying Cross-modal Entity Consistency in News using Vision-language Models](https://arxiv.org/abs/2501.11403)：用 VLM 验证新闻文本中的实体是否与视觉证据一致，通过跨模态一致性检查支持虚假信息检测。
 - [MONA](https://arxiv.org/abs/2501.13011)：将短视优化与非短视批准结合，用于降低强化学习智能体的多步奖励黑客行为，并覆盖基于 LLM 的委托监督设置。
+- [Refining Input Guardrails: Enhancing LLM-as-a-Judge Efficiency Through Chain-of-Thought Fine-Tuning and Alignment](https://arxiv.org/abs/2501.13080)：微调并对齐 chain-of-thought 审核轨迹，使较小的 LLM judge 能更高效地充当恶意交互输入护栏。
+- [Preference Curriculum](https://arxiv.org/abs/2501.13126)：研究将偏好数据课程纳入预训练的模型侧对齐配方。
+- [Watching the AI Watchdogs: A Fairness and Robustness Analysis of AI Safety Moderation Classifiers](https://arxiv.org/abs/2501.13302)：审计安全审核分类器的公平性和鲁棒性，检查 guardrail models 是否会在群体或对抗扰动上不均衡失效。
+- [HumorReject: Decoupling LLM Safety from Refusal Prefix via A Little Humor](https://arxiv.org/abs/2501.13677)：用 HumorReject 将 LLM 安全性与拒答前缀解耦，检验幽默表达风格和安全行为能否分离。
+- [Towards Safer Social Media Platforms: Scalable and Performant Few-Shot Harmful Content Moderation Using Large Language Models](https://arxiv.org/abs/2501.13976)：研究面向动态有害社交媒体内容的可扩展少样本 LLM 审核方法。
+- [Interpretable Neuron Editing for Gender Bias](https://arxiv.org/abs/2501.14457)：定位并编辑可解释神经元以缓解 LLM 性别偏见，为公平性安全补充模型内部干预路线。
+- [PromptShield: Deployable Detection for Prompt Injection Attacks](https://arxiv.org/abs/2501.15145)： 整理 PromptShield 用于可部署 prompt injection 检测，并微调在低误报部署区间表现更好的检测器。
+- [Data-adaptive Safety Rules for Training Reward Models](https://arxiv.org/abs/2501.15453)：为奖励模型训练学习数据自适应安全规则，使反馈标签反映局部风险模式而非单一静态 rubric。
+- [Information-theoretic Distinctions Between Deception and Confusion](https://arxiv.org/abs/2501.16448)：用信息论标准区分欺骗与困惑，澄清错误模型行为何时源自隐藏意图而非不确定性。
 - [xJailbreak](https://arxiv.org/abs/2501.16727)：用表示空间引导的强化学习构造可解释的大模型越狱攻击。
-- [STAIR](https://arxiv.org/abs/2502.02384)：提出面向Agent 安全的模型侧方法，核心围绕 Improving Safety Alignment with Introspective Reasoning。
+- [Challenges in Ensuring AI Safety in DeepSeek-R1 Models: The Shortcomings of Reinforcement Learning Strategies](https://arxiv.org/abs/2501.17030)：诊断 DeepSeek-R1 在 RL 下的 harmlessness 局限，指出 reward hacking、语言混杂、泛化失败，并讨论 RL 与 SFT 混合缓解路径。
+- [Virus](https://arxiv.org/abs/2501.17433)：展示绕过 guardrail moderation 的 harmful fine-tuning attack，削弱 LLM safety alignment。
+- [Privacy Audit as Bits Transmission: (Im)possibilities for Audit by One Run](https://arxiv.org/abs/2501.17750)：把单次运行隐私审计形式化为比特传输，推导单次审计能证明多少泄漏证据的边界。
+- [Differentially Private Steering for Large Language Model Alignment](https://arxiv.org/abs/2501.18532)：把差分隐私约束加入 activation steering 对齐，使私有示例能够引导模型行为，同时降低示例信息被 steered model 泄露的风险。
+- [Graph of Attacks with Pruning: Optimizing Stealthy Jailbreak Prompt Generation for Enhanced LLM Content Moderation](https://arxiv.org/abs/2501.18638)：通过剪枝攻击图优化隐蔽 jailbreak prompt 生成，补充用于安全对齐评测的攻击生成方法。
+- [Exploring Audio Editing Features as User-Centric Privacy Defenses Against Large Language Model(LLM) Based Emotion Inference Attacks](https://arxiv.org/abs/2501.18727)：测试 pitch 和 tempo 编辑作为用户侧语音情绪隐私防御，在 DNN 与 LLM 攻击下权衡隐私、可用性和可逆性。
+- [Scaling Laws for Differentially Private Language Models](https://arxiv.org/abs/2501.18914)： 研究 differential privacy language model 的 scaling laws，连接隐私保护训练与模型能力权衡。
+- [The Energy Loss Phenomenon in RLHF: A New Perspective on Mitigating Reward Hacking](https://arxiv.org/abs/2501.19358)：从 energy loss 视角解释 RLHF 中的 reward hacking。
+- [Defense Against the Dark Prompts](https://arxiv.org/abs/2502.00580)：通过提示评估缓解 Best-of-N 越狱，为对抗优化式提示攻击补充轻量防御路线。
+- [Activation Approximations Can Incur Safety Vulnerabilities Even in Aligned LLMs: Comprehensive Analysis and Defense](https://arxiv.org/abs/2502.00840)：指出近似激活计算也会让已对齐 LLM 产生安全脆弱性，并评估针对近似失效的防御。
+- [SimPER: A Minimalist Approach to Preference Alignment without Hyperparameters](https://arxiv.org/abs/2502.00883)：提出无需超参数调节的偏好优化目标用于对齐微调。
+- [SafeSwitch: Steering Unsafe LLM Behavior via Internal Activation Signals](https://arxiv.org/abs/2502.01042)：通过内部激活信号 steering 不安全行为。
+- [Picky LLMs and Unreliable RMs](https://arxiv.org/abs/2502.01116)：研究 benign instruction tuning 如何削弱 safety alignment 并暴露 reward model 不可靠性。
+- [Jailbreaking with Universal Multi-Prompts](https://arxiv.org/abs/2502.01154)：构造可迁移到多类有害请求的 universal multi-prompt 越狱，减少逐目标重新优化攻击的需求。
+- [Fine-tuning Attacks on CoT-Enabled DeepSeek](https://arxiv.org/abs/2502.01225)：研究微调如何放大推理模型有害行为，并影响 CoT 安全 alignment。
+- [Eliciting Language Model Behaviors with Investigator Agents](https://arxiv.org/abs/2502.01236)：训练 investigator models 搜索能诱发幻觉或有害回应等目标行为的提示，使红队提示发现成为可学习的模型侧过程。
+- [Backdoor Sample Detection in CLIP](https://arxiv.org/abs/2502.01385)：检测对比式图文预训练中的后门样本，补充多模态训练安全方法。
+- [Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](https://arxiv.org/abs/2502.01930)：用分布鲁棒目标扩展偏好优化，使对齐在群体、语言或地区偏好分布变化下更稳健。
+- [Reasoning Bias of Next Token Prediction Training](https://arxiv.org/abs/2502.02007)：分析 next-token prediction 如何诱发推理偏差，把预训练目标与系统性推理错误联系起来。
+- [Safety Debiasing](https://arxiv.org/abs/2502.02153)：通过去偏缓解安全对齐语言模型中的脆弱性。
+- [STAIR](https://arxiv.org/abs/2502.02384)：通过内省推理改进安全对齐，训练模型在回答前检查自身中间理由中的风险。
+- [Privacy Attacks on Image AutoRegressive Models](https://arxiv.org/abs/2502.02514)： 提出面向 image autoregressive models 的成员推断和数据集推断攻击，显示训练图像泄漏显著高于可比扩散模型攻击。
+- [SimMark: A Robust Sentence-Level Similarity-Based Watermarking Algorithm for Large Language Models](https://arxiv.org/abs/2502.02787)： 提出鲁棒句子级大语言模型水印算法，补充来源追踪与滥用检测控制方法。
+- [Universal Steering and Monitoring](https://arxiv.org/abs/2502.03708)：在语言、视觉语言和推理模型中抽取可扩展概念表征，用于 steering 与监控。
+- ["Short-length" Adversarial Training Helps LLMs Defend "Long-length" Jailbreak Attacks: Theoretical and Empirical Evidence](https://arxiv.org/abs/2502.04204)：证明短对抗后缀训练出的防御可迁移到长越狱提示，从而降低对抗式安全对齐的数据合成与训练成本。
+- [On the Difficulty of Constructing a Robust and Publicly-Detectable Watermark](https://arxiv.org/abs/2502.04901)：研究公开可检测 LLM 水印在自适应移除攻击下同时保持鲁棒和可检测的困难权衡。
+- [KDA: A Knowledge-Distilled Attacker for Generating Diverse Prompts to Jailbreak LLMs](https://arxiv.org/abs/2502.05223)：把攻击知识蒸馏到提示生成器中，自动生成多样化越狱提示，减少人工提示工程。
+- [Koel-TTS: Enhancing LLM based Speech Generation with Preference Alignment and Classifier Free Guidance](https://arxiv.org/abs/2502.05236)：用 ASR 与说话人验证模型提供偏好信号，并结合 classifier-free guidance 对齐自回归语音生成，减少幻觉和偏离条件的发声。
+- [Can LLMs Rank the Harmfulness of Smaller LLMs? We are Not There Yet](https://arxiv.org/abs/2502.05291)：评估 LLM-as-judge 对较小模型有害性的排序能力，发现现有评审模型尚不能可靠给出精细安全排序。
+- [You Are What You Eat](https://arxiv.org/abs/2502.05475)：研究训练数据如何塑造模型结构与泛化能力，将数据影响纳入对齐问题。
+- [Mix Data or Merge Models?](https://arxiv.org/abs/2502.06876)：比较数据混合与模型合并在平衡 LLM 有用性、诚实性和无害性时的作用。
+- [General-Purpose f-DP Estimation and Auditing in a Black-Box Setting](https://arxiv.org/abs/2502.07066)：从黑盒访问估计 f-Differential Privacy，使隐私审计无需查看训练代码也能约束泄漏。
+- [LUNAR: LLM Unlearning via Neural Activation Redirection](https://arxiv.org/abs/2502.07218)：把待遗忘数据的激活重定向到拒答式区域，在不依赖对比特征或破坏性权重编辑的情况下实现可控 LLM 遗忘。
+- [JBShield: Defending Large Language Models from Jailbreak Attacks through Activated Concept Analysis and Manipulation](https://arxiv.org/abs/2502.07557)：抽取并操控模型激活中的有害概念与越狱概念，用于分析和防御越狱提示。
+- [MAA: Meticulous Adversarial Attack against Vision-Language Pre-trained Models](https://arxiv.org/abs/2502.08079)：通过细粒度图像优化、resize-sliding crop 和多粒度相似性破坏提升针对视觉语言预训练模型的可迁移对抗攻击。
+- [LLM-Enhanced Multiple Instance Learning for Joint Rumor and Stance Detection with Social Context Information](https://arxiv.org/abs/2502.08888)：结合 LLM 增强的多实例学习和社交上下文联合检测谣言与立场，属于 misinformation safety 模型，可能需父级路由。
+- [Diffusing DeBias: Synthetic Bias Amplification for Model Debiasing](https://arxiv.org/abs/2502.09564)：先合成放大偏见以产生更强去偏监督，再训练模型减少偏见关联。
+- [Jailbreaking to Jailbreak](https://arxiv.org/abs/2502.09638)：研究利用越狱来生成或强化进一步越狱攻击，适合安全对抗评测参考。
+- [Making Them a Malicious Database: Exploiting Query Code to Jailbreak Aligned Large Language Models](https://arxiv.org/abs/2502.09723)：把有害请求编码成查询代码，使对齐 LLM 像恶意数据库一样响应，暴露代码结构化越狱路径。
+- [Jailbreak Attack Initializations as Extractors of Compliance Directions](https://arxiv.org/abs/2502.09755)：用越狱初始化抽取表征空间中的服从方向，揭示拒答与有害服从之间的潜在几何。
+- [Injecting Universal Jailbreak Backdoors into LLMs in Minutes](https://arxiv.org/abs/2502.10438)：研究快速植入通用越狱后门的方法，可作为模型侧安全对齐威胁参考。
+- [VLM-Guard](https://arxiv.org/abs/2502.10486)：面向视觉语言模型的 safety-alignment gap，补充多模态 agent 输入下的模型侧防护路线。
+- [Towards Watermarking of Open-Source LLMs](https://arxiv.org/abs/2502.10525)：研究开源 LLM 水印，用于模型来源追踪和滥用缓解。
+- [RLHF in an SFT Way: From Optimal Solution to Reward-Weighted Alignment](https://arxiv.org/abs/2502.11026)：把 RLHF 改写为 SFT 风格的 reward-weighted alignment，简化安全行为偏好对齐。
+- [MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](https://arxiv.org/abs/2502.11051)：把 MLLM 遗忘定义为擦除实体相关视觉模式但保留文本知识，并用权重 saliency 约束的几何梯度上升实现。
+- [Rewrite to Jailbreak](https://arxiv.org/abs/2502.11084)：通过改写学习可迁移的隐式 harmful instruction，为安全评测补充模型侧 jailbreak 生成路线。
+- [ReLearn](https://arxiv.org/abs/2502.11190)：把 LLM unlearning 重构为学习问题。核心思想：训练替代行为来压制不应保留的知识，而不是只依赖破坏性的参数编辑。
+- [ReVeil](https://arxiv.org/abs/2502.11687)：利用 machine unlearning 构造 unconstrained concealed backdoor attack，补充模型遗忘安全风险。
+- [StructTransform: A Scalable Attack Surface for Safety-Aligned Large Language Models](https://arxiv.org/abs/2502.11853)：把 StructTransform 定义为 safety-aligned LLM 的攻击面，通过结构化变换探测安全行为断裂位置。
+- [Gradient Co-occurrence Analysis for Detecting Unsafe Prompts in Large Language Models](https://arxiv.org/abs/2502.12411)：用梯度共现分析检测大语言模型中的不安全提示。
+- [SafeRoute: Adaptive Model Selection for Efficient and Accurate Safety Guardrails in Large Language Models](https://arxiv.org/abs/2502.12464)：通过自适应模型选择在大语言模型安全护栏中兼顾效率与准确性。
+- [SafeEraser: Enhancing Safety in Multimodal Large Language Models through Multimodal Machine Unlearning](https://arxiv.org/abs/2502.12520)：发布含 3000 张图像与 2.88 万个 VQA 对的 MLLM 安全遗忘基准，评估遗忘能否删除不安全视觉知识且不损坏通用效用。
+- [Automating Prompt Leakage Attacks on Large Language Models Using Agentic Approach](https://arxiv.org/abs/2502.12630)：用 agentic 搜索流程自动化 prompt leakage 攻击，将恢复系统提示或开发者提示作为泄漏目标。
+- [R.R.: Unveiling LLM Training Privacy through Recollection and Ranking](https://arxiv.org/abs/2502.12658)：结合 recollection 与 ranking 查询暴露训练样本是否被记忆，使隐私泄漏可从模型输出中度量。
+- [Evaluation of Best-of-N Sampling Strategies for Language Model Alignment](https://arxiv.org/abs/2502.12668)：评估 Best-of-N 对齐采样及其奖励黑客失效模式。
+- [Rejected Dialects: Biases Against African American Language in Reward Models](https://arxiv.org/abs/2502.12858)：分析奖励模型对非裔美国英语的偏差，揭示偏好模型可能出现方言敏感的对齐失效。
+- [UniGuardian](https://arxiv.org/abs/2502.13141)：统一检测针对 LLM 的提示注入、后门和对抗攻击，形成一体化防御模型。
+- [ShieldLearner: A New Paradigm for Jailbreak Attack Defense in LLMs](https://arxiv.org/abs/2502.13162)：提出 ShieldLearner，自主学习越狱防御模式。
+- [ThinkGuard: Deliberative Slow Thinking Leads to Cautious Guardrails](https://arxiv.org/abs/2502.13458)：把强 LLM 生成的结构化安全批判蒸馏进护栏分类器，比单次标签分类更谨慎且更可解释。
+- [Efficient Safety Retrofitting Against Jailbreaking for LLMs](https://arxiv.org/abs/2502.13603)：用轻量安全更新对 LLM 进行 retrofit，使其在无需完整安全重训时更能抵抗越狱。
+- [Safeguarded Ships Run Aground](https://arxiv.org/abs/2502.13946)：指出对齐 LLM 的安全机制可能锚定在模板区域，暴露安全泛化中的模型内部失效模式。
+- [How Jailbreak Defenses Work and Ensemble? A Mechanistic Investigation](https://arxiv.org/abs/2502.14486)：把越狱防御分析为拒答分类行为，区分安全偏移与有害性判别，并在 LLM 和 LVLM 上测试集成防御策略。
+- [Length-Controlled Margin-Based Preference Optimization without Reference Model](https://arxiv.org/abs/2502.14643)：该方法在无需参考模型的偏好优化中加入长度控制边际，缓解长度偏置。
+- [Middle-Layer Representation Alignment for Cross-Lingual Transfer in Fine-Tuned LLMs](https://arxiv.org/abs/2502.14830)：分析 1000 多个语言对后加入中间层表征对齐目标，改善安全或任务微调在低资源语言上的跨语迁移。
+- [LUME](https://arxiv.org/abs/2502.15097)：用 multitask criteria 评估 LLM unlearning 的 forgetting 与 retention。
+- [Attention Eclipse](https://arxiv.org/abs/2502.15334)：通过操控 attention patterns 绕过 LLM safety alignment。
+- [Single-pass Detection of Jailbreaking Input in Large Language Models](https://arxiv.org/abs/2502.15435)：用单次前向传播检测越狱输入，依靠内部或提示侧信号避免昂贵的迭代式防御流程。
+- [SafeInt: Shielding Large Language Models from Jailbreak Attacks via Safety-Aware Representation Intervention](https://arxiv.org/abs/2502.15594)：在推理期干预安全感知内部表征，把越狱提示重新引向拒答行为。
+- [Privacy Ripple Effects from Adding or Removing Personal Information in Language Model Training](https://arxiv.org/abs/2502.15680)：揭示在语言模型训练中加入或移除 PII 会产生动态记忆化效应，包括 assisted memorization 以及后续训练阶段中的泄露风险变化。
+- [Investigating the Impact of Quantization Methods on the Safety and Reliability of Large Language Models](https://arxiv.org/abs/2502.15799)：比较不同量化方法如何改变 LLM 安全性、可靠性和有害回答行为。
+- [Merger-as-a-Stealer: Stealing Targeted PII from Aligned LLMs with Model Merging](https://arxiv.org/abs/2502.16094)：用模型合并从对齐 LLM 中诱导目标 PII，显示参数组合攻击会削弱安全对齐。
+- [Improving LLM General Preference Alignment via Optimistic Online Mirror Descent](https://arxiv.org/abs/2502.16852)：把 optimistic online mirror descent 用于通用偏好对齐，为安全行为调优补充模型侧优化路线。
+- [Char-mander Use mBackdoor! A Study of Cross-lingual Backdoor Attacks in Multilingual LLMs](https://arxiv.org/abs/2502.16901)：研究多语言 LLM 的跨语言后门，显示触发器可跨语言迁移并绕过单语安全检查。
+- [When to Forget? Complexity Trade-offs in Machine Unlearning](https://arxiv.org/abs/2502.17323)：分析机器遗忘相对重训或保留数据在何种复杂度条件下更实用。
+- [Training large language models on narrow tasks can lead to broad misalignment](https://arxiv.org/abs/2502.17424)：显示只在不安全代码补全这类窄任务上微调，也会在无关提示中诱发广泛 emergent misalignment，且不同于普通越狱服从并对数据语境很敏感。
+- [User-level Private RLHF](https://arxiv.org/abs/2502.17515)：研究带 user-level privacy 约束的 RLHF。
+- [Fine-tuning-based LLM Unlearning Framework](https://arxiv.org/abs/2502.17823)：推广基于微调的 LLM 遗忘方法，为模型侧遗忘提供可复用配方。
+- [Stealthy Backdoor Attack in Self-Supervised Learning Vision Encoders for Large Vision Language Models](https://arxiv.org/abs/2502.18290)：展示被共享复用的自监督视觉编码器一旦被植入后门，会把隐蔽攻击传播到下游 LVLM，并诱发攻击者指定的视觉幻觉。
+- [OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference](https://arxiv.org/abs/2502.18411)：发布 20 万条多模态偏好对齐样本和 MM-AlignBench，并用 SFT 或 DPO 提升 MLLM 人类价值对齐，同时保持标准 VQA 能力。
+- [REFINE (Backdoor Defense)](https://arxiv.org/abs/2502.18508)：用 inversion-free model reprogramming 作为 backdoor defense。
+- [What is the Alignment Objective of GRPO?](https://arxiv.org/abs/2502.18548)：分析 GRPO 背后的优化目标，澄清该方法实际优化的偏好或安全对齐信号。
+- [Breaking Distortion-free Watermarks in Large Language Models](https://arxiv.org/abs/2502.18608)：攻击 distortion-free LLM 水印，测试来源信号能否经受改写、采样和自适应移除策略。
+- [ZEBRA: Leveraging Model-Behavioral Knowledge for Zero-Annotation Preference Dataset Construction](https://arxiv.org/abs/2502.18744)：利用模型行为知识构造零标注偏好数据集，降低对齐训练中的人工标签成本。
+- [Reward Shaping to Mitigate Reward Hacking in RLHF](https://arxiv.org/abs/2502.18770)：系统分析 RLHF 中缓解 reward hacking 的 reward shaping 原则，并提出 Preference As Reward，用 reward model 内部偏好作为 RL 信号，降低方差并扩大早停容忍窗口。
+- [One-shot Optimized Steering Vectors Mediate Safety-relevant Behaviors in LLMs](https://arxiv.org/abs/2502.18862)：从单个样例优化 activation steering vector 来调控安全相关行为。
+- [Label-Only Membership Inference for LLMs](https://arxiv.org/abs/2502.18943)：研究针对预训练 LLM 的 label-only membership inference attack，补充模型安全中的隐私风险线索。
+- [Neural Antidote: Class-Wise Prompt Tuning for Purifying Backdoors in Pre-trained Vision-Language Models](https://arxiv.org/abs/2502.19269)：补充通过类别级提示调优净化预训练视觉语言模型后门的方法。
+- [Rethinking LLM Unlearning Objectives](https://arxiv.org/abs/2502.19301): 从梯度视角分析 LLM 遗忘目标，并提出更可靠的遗忘改进方向。
+- [Tokens for Learning, Tokens for Unlearning](https://arxiv.org/abs/2502.19726)：通过双用途训练降低 LLM 成员推断风险，将模型遗忘与隐私攻击缓解联系起来。
+- [TAPE: Tailored Posterior Difference for Auditing of Machine Unlearning](https://arxiv.org/abs/2502.19770)：用 tailored posterior difference 审计机器遗忘，检查遗忘更新后是否仍残留 forget-set 影响。
+- [Beyond the Tip of Efficiency: Uncovering the Submerged Threats of Jailbreak Attacks in Small Language Models](https://arxiv.org/abs/2502.19883)：评估小语言模型中的越狱风险，显示追求效率的部署可能在表面能力指标下隐藏安全弱点。
+- [Erasing Without Remembering: Implicit Knowledge Forgetting in Large Language Models](https://arxiv.org/abs/2502.19982)：研究 LLM 的隐式知识遗忘，在不先显式强化记忆的情况下删除不需要的知识。
+- [Rectifying Belief Space via Unlearning to Harness LLMs' Reasoning](https://arxiv.org/abs/2502.20620)：用遗忘重塑 LLM belief space，目标是在保留推理能力的同时移除误导性信念。
+- [The Rise of Darkness: Safety-Utility Trade-Offs in Role-Playing Dialogue Agents](https://arxiv.org/abs/2502.20757)：研究角色扮演对话智能体中更强 persona 实用性可能带来更高不安全行为，量化安全-效用权衡。
+- [Gradient Imbalance in Direct Preference Optimization](https://arxiv.org/abs/2502.20847)：分析 DPO 中的梯度不平衡，说明偏好更新会过度强调部分样本并扰动对齐训练。
+- [Efficient Jailbreaking of Large Models by Freeze Training: Lower Layers Exhibit Greater Sensitivity to Harmful Content](https://arxiv.org/abs/2502.20952)：用 freeze training 高效越狱大模型，利用底层对有害内容更敏感这一弱点。
+- [from Benign import Toxic: Jailbreaking the Language Model via Adversarial Metaphors](https://arxiv.org/abs/2503.00038)：利用对抗性隐喻触发越狱，为模型侧安全覆盖补充一种语言层面的攻击模式。
+- [Steering Dialogue Dynamics](https://arxiv.org/abs/2503.00187): 通过引导对话动态提升对多轮越狱攻击的鲁棒性，补充模型侧安全控制方法。
+- [AMUN: Adversarial Machine UNlearning](https://arxiv.org/abs/2503.00917)：从对抗角度处理机器遗忘，选择或构造遗忘请求来暴露删除与留存保证的失败。
+- [Zero-Trust Artificial Intelligence Model Security Based on Moving Target Defense and Content Disarm and Reconstruction](https://arxiv.org/abs/2503.01758)：结合 moving target defense 与 content disarm-and-reconstruction 做零信任模型安全，可能需父级路由为部署防御。
+- [Output Length Effect on DeepSeek-R1's Safety in Forced Thinking](https://arxiv.org/abs/2503.01923)：面向智能体安全与安全评测的模型、训练或算法工作。核心思想：以 Output Length Effect on DeepSeek-R1's Safety in Forced Thinking 为主要改进目标，作为 Model 条目的能力参考。
+- [Linear Representations of Political Perspective](https://arxiv.org/abs/2503.02080)：发现 LLM 表征中的政治立场方向，为偏见、观点和安全 steering 提供模型侧证据。
+- [Go Beyond Your Means: Unlearning with Per-Sample Gradient Orthogonalization](https://arxiv.org/abs/2503.02312)：在遗忘中正交化逐样本梯度，减少 forget 更新与留存数据性能之间的冲突。
+- [Reduced Spatial Dependency for More General Video-level Deepfake Detection](https://arxiv.org/abs/2503.03270)：用空间扰动特征簇、任务相关特征整合和 temporal transformer 降低视频深伪检测中的空间偏置。
+- [Rethinking Video Super-Resolution: Towards Diffusion-Based Methods without Motion Alignment](https://arxiv.org/abs/2503.03355)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [CLIP is Strong Enough to Fight Back: Test-time Counterattacks towards Zero-shot Adversarial Robustness of CLIP](https://arxiv.org/abs/2503.03613)：在测试时利用 CLIP 自身反制对抗扰动，在无需重训的情况下提升 zero-shot 鲁棒性。
+- [Improving LLM Safety Alignment with Dual-Objective Optimization](https://arxiv.org/abs/2503.03710)：把安全对齐拆成稳健拒答学习和有害知识定向遗忘，提升模型对 prefill、suffix 和多轮越狱的抵抗力。
+- [Robust Data Watermarking in Language Models by Injecting Fictitious Knowledge](https://arxiv.org/abs/2503.04036)：把虚构知识注入训练数据作为水印，使后续模型回答可稳健暴露数据集 provenance。
+- [Mark Your LLM: Detecting the Misuse of Open-Source Large Language Models via Watermarking](https://arxiv.org/abs/2503.04636)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Cross-linguistic disagreement as a conflict of semantic alignment norms in multilingual AI~Linguistic Diversity as a Problem for Philosophy, Cognitive Science, and AI~](https://arxiv.org/abs/2503.04792)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Cyber for AI Selective Unlearning](https://arxiv.org/abs/2503.04795)：在 SemEval-2025 Task 4 中研究大语言模型 selective unlearning 的遗忘与保留平衡。
+- [One-Shot is Enough: Consolidating Multi-Turn Attacks into Efficient Single-Turn Prompts for LLMs](https://arxiv.org/abs/2503.04856)： 将多轮越狱攻击压缩为高效单轮提示，为 LLM 安全评估补充攻击转换方法。
+- [Learning LLM Preference over Intra-Dialogue Pairs: A Framework for Utterance-level Understandings](https://arxiv.org/abs/2503.05620)：结合 LLM 生成标签和人工标注训练小型逐话语分类器，用于低延迟意图识别和安全相关对话理解任务。
+- [AIM-Fair: Advancing Algorithmic Fairness via Selectively Fine-Tuning Biased Models with Contextual Synthetic Data](https://arxiv.org/abs/2503.05665)：用扩散模型生成的无偏合成数据选择性微调有偏模型，并用上下文过滤提升公平性而不依赖人口群体标签。
+- [CBW Speaker-Verification Watermarking](https://arxiv.org/abs/2503.05794)：在 speaker-verification systems 中用 clustering-based backdoor watermarking 做 dataset ownership verification。
+- [Reinforced Diffuser for Red Teaming Large Vision-Language Models](https://arxiv.org/abs/2503.06223)：训练 reinforced diffusion 生成器为 VLM 红队创建对抗视觉输入，扩展多模态越狱覆盖。
+- [Learning to Unlearn While Retaining: Combating Gradient Conflicts in Machine Unlearning](https://arxiv.org/abs/2503.06339)：处理遗忘目标与保留目标之间的梯度冲突，在删除目标知识的同时保持留存能力。
+- [Gender Encoding Patterns in Pretrained Language Model Representations](https://arxiv.org/abs/2503.06734)：用信息论方法追踪 encoder PLM 如何存储性别信息，显示去偏可能降低输出偏见却增加内部 encoded bias。
+- [Privacy Auditing of Large Language Models](https://arxiv.org/abs/2503.06808)：提出面向 LLM 的隐私审计流程，探测记忆化和训练数据泄漏，而不只报告整体效用。
+- [Jailbreak Probability for MLLMs](https://arxiv.org/abs/2503.06989)：利用越狱概率信号同时攻击和防护多模态 LLM。
+- [Dialogue Injection Attack: Jailbreaking LLMs Through Context Manipulation](https://arxiv.org/abs/2503.08195)：通过对话上下文操纵越狱大模型，可补充多轮安全攻击参考。
+- [Prompt Inversion Attack Against Collaborative Inference](https://arxiv.org/abs/2503.09022)：通过协同推理重构提示词，补充分布式或辅助推理场景中的隐私风险。
+- [Probing Latent Subspaces in LLM for AI Security: Identifying and Manipulating Adversarial States](https://arxiv.org/abs/2503.09066)：识别并操控大模型安全相关的对抗性潜在状态。
+- [GRU for LLM Unlearning](https://arxiv.org/abs/2503.09117)：针对 LLM 遗忘与保持能力之间的权衡，为安全与隐私控制补充模型侧遗忘方法。
+- [Prompt Inference Attack on Distributed LLM Inference](https://arxiv.org/abs/2503.09291)：研究 distributed large-language-model inference frameworks 中的 prompt leakage 风险。
+- [BiasConnect: Investigating Bias Interactions in Text-to-Image Models](https://arxiv.org/abs/2503.09763)：研究文生图模型中多个偏见维度如何相互作用，揭示单属性审计之外的复合公平性风险。
+- [PluralLLM: Pluralistic Alignment in LLMs via Federated Learning](https://arxiv.org/abs/2503.09925)：用 FedAvg 训练联邦 transformer 偏好预测器，使不同用户群能贡献多元对齐信号，同时避免集中收集敏感偏好数据。
+- [Policy Teaching via Data Poisoning in Learning from Human Preferences](https://arxiv.org/abs/2503.10228)：在偏好学习管线中用数据投毒教授隐藏策略，暴露受污染人类反馈会如何重定向对齐模型。
+- [Semantic LVLM Attack Baseline](https://arxiv.org/abs/2503.10635)：通过增强扰动语义清晰度，构建针对前沿 LVLM 的高成功率黑盒攻击 baseline。
+- [CeTAD: Towards Certified Toxicity-Aware Distance in Vision Language Models](https://arxiv.org/abs/2503.10661)：定义 VLM 的 certified toxicity-aware distance，把表征扰动与 toxicity 风险联系起来，而不只依赖输出审核标签。
+- [TAIJI: Textual Anchoring for Immunizing Jailbreak Images in Vision Language Models](https://arxiv.org/abs/2503.10872)：用 TAIJI 防御越狱或 prompt injection，关注绕过通道以及拒答或过滤行为。
+- [PrivacyScalpel](https://arxiv.org/abs/2503.11232)：用 sparse-autoencoder 特征干预提升 LLM 隐私保护，为模型侧隐私 guardrail 增加可解释路线。
+- [Towards Better Alignment: Training Diffusion Models with Reinforcement Learning Against Sparse Rewards](https://arxiv.org/abs/2503.11240)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Tit-for-Tat: Safeguarding Large Vision-Language Models Against Jailbreak Attacks via Adversarial Defense](https://arxiv.org/abs/2503.11619)：提出面向大型视觉语言模型越狱攻击的对抗防御方法，属于多模态安全对齐的模型侧候选。
+- [Safety Mirage](https://arxiv.org/abs/2503.11832)：揭示伪相关如何削弱 VLM 安全微调效果，暴露模型侧安全泛化风险。
+- [DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning](https://arxiv.org/abs/2503.11892)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Monitoring Reasoning Models for Misbehavior](https://arxiv.org/abs/2503.11926)：表明 chain-of-thought monitor 能在 agentic coding 环境中检测 reward hacking，但若直接围绕此类 monitor 过度优化，也可能诱发隐藏意图的混淆式失范行为。
+- [Empirical Privacy Variance](https://arxiv.org/abs/2503.12314)：度量训练样本之间的经验隐私方差，显示平均隐私保证会掩盖不均匀泄漏风险。
+- [Synthesizing Privacy-Preserving Text Data via Finetuning without Finetuning Billion-Scale LLMs](https://arxiv.org/abs/2503.12347)：通过训练轻量可控生成器来合成隐私保护文本数据，避免微调十亿级 LLM。
+- [Investigating Human-Aligned Large Language Model Uncertainty](https://arxiv.org/abs/2503.12528)：比较多种 LLM 不确定性指标与人类群体不确定性的相关性，发现 Bayesian 指标和 top-k entropy 更接近人类行为。
+- [Dynamic Maximin UAP](https://arxiv.org/abs/2503.12793)：通过动态 maximin 优化提升通用对抗扰动的泛化能力。
+- [From Demonstrations to Rewards: Alignment Without Explicit Human Preferences](https://arxiv.org/abs/2503.13538)：从示范中学习奖励信号而非显式偏好标签，为缺少成对人类反馈时的对齐提供路径。
+- [Privacy-Aware RAG: Secure and Isolated Knowledge Retrieval](https://arxiv.org/abs/2503.15548)：设计隔离式知识检索的 privacy-aware RAG，使私有文档查询不发生跨用户泄漏。
+- [BadToken: Token-level Backdoor Attacks to Multi-modal Large Language Models](https://arxiv.org/abs/2503.16023)：提出面向 MLLM 的 token-level backdoor attack，通过 token 替换或添加在触发输入上改变输出，同时尽量保持正常任务性能。
+- [Human Preferences for Constructive Interactions in Language Model Alignment](https://arxiv.org/abs/2503.16480)：收集关于建设性互动的人类偏好信号，使对齐行为超出简单 helpfulness 或拒答标签。
+- [Capturing Individual Human Preferences with Reward Features](https://arxiv.org/abs/2503.17338)：把个体偏好表示为 reward features，支持个性化和多元对齐，而不是把所有反馈压成单一标量奖励。
+- [STShield: Single-Token Sentinel for Real-Time Jailbreak Detection in Large Language Models](https://arxiv.org/abs/2503.17932)：用 single-token sentinel 对大语言模型进行实时 jailbreak 检测。
+- [MIRAGE: Multimodal Immersive Reasoning and Guided Exploration for Red-Team Jailbreak Attacks](https://arxiv.org/abs/2503.19134)：把有毒请求拆成 environment、role 和 action 三元组，再用生成图文侦探叙事在多轮中逐步降低 MLLM 防御。
+- [Safety-Capability Trade-offs in Fine-Tuning](https://arxiv.org/abs/2503.20807): 研究 LLM 微调中的安全能力权衡，阐明适配过程如何改变对齐行为。
+- [ENCORE: Entropy-guided Reward Composition for Multi-head Safety Reward Models](https://arxiv.org/abs/2503.20995)：用熵引导组合多头安全奖励模型，使不确定风险类别获得校准后的奖励信号。
+- [Tricking Retrievers with Influential Tokens: An Efficient Black-Box Corpus Poisoning Attack](https://arxiv.org/abs/2503.21315)：展示 influential token 如何投毒黑盒 retriever，补充 RAG 与 agent safety 的检索侧攻击模型。
+- [Optimizing Safe and Aligned Language Generation: A Multi-Objective GRPO Approach](https://arxiv.org/abs/2503.21819)：用 multi-objective GRPO 优化安全且对齐的语言生成，为安全对齐补充 RL-style post-training 路线。
+- [Protecting Your Video Content](https://arxiv.org/abs/2503.21824)：干扰自动化 video-based LLM annotations，暴露视频语言系统的隐私与滥用风险。
+- [AI-based Traffic Modeling for Network Security and Privacy: Challenges Ahead](https://arxiv.org/abs/2503.22161)：综述 AI 网络流量分析在异常检测、反审查、指纹识别和加密流量隐私泄漏中的用途与挑战。
+- [DELETE](https://arxiv.org/abs/2503.23751)：用 decoupled distillation 删除 class-centric knowledge 并保留其他类别，补充通用 unlearning 方法。
+- [DiffScale: Continuous Downscaling and Bias Correction of Subseasonal Wind Speed Forecasts Using Diffusion Models](https://arxiv.org/abs/2503.23893)：用带 classifier-free guidance 的扩散模型下采样 subseasonal wind-speed forecast，属于能源预测模型而非核心 Agent Safety。
+- [Do Large Language Models Exhibit Spontaneous Rational Deception?](https://arxiv.org/abs/2504.00285)：测试 LLM 是否会在激励式场景中策略性欺骗，把 rational deception 与普通幻觉或事实错误区分开来。
+- [FA3-CLIP: Frequency-Aware Cues Fusion and Attack-Agnostic Prompt Learning for Unified Face Attack Detection](https://arxiv.org/abs/2504.00454)：在 CLIP 中融合频率感知线索与 attack-agnostic prompt learning，同时检测物理和数字人脸攻击。
+- [Mixture-of-Attack-Experts with Class Regularization for Unified Physical-Digital Face Attack Detection](https://arxiv.org/abs/2504.00458)：用 attack expert mixture 和类别正则化统一检测物理与数字人脸攻击。
+- [STAR-1: Safer Alignment of Reasoning LLMs with 1K Data](https://arxiv.org/abs/2504.01903)：用小规模数据提升推理 LLM 的安全对齐。
+- [MultiNeRF: Multiple Watermark Embedding for Neural Radiance Fields](https://arxiv.org/abs/2504.02517)：在 neural radiance fields 中嵌入多重水印，为 3D 场景表征提供所有权追踪。
+- [The Hidden Space of Safety: Understanding Preference-Tuned LLMs in Multilingual context](https://arxiv.org/abs/2504.02708)：研究偏好调优大模型在多语言场景中的安全隐空间。
+- [Learning Natural Language Constraints for Safe Reinforcement Learning of Language Agents](https://arxiv.org/abs/2504.03185)：在 CMDP 中从正负示范学习任务奖励和潜在安全约束，使语言智能体在新危险区域和对抗输入下更稳健地适配。
+- [Sample, Don't Search: Rethinking Test-Time Alignment for Language Models](https://arxiv.org/abs/2504.03790)：提出用采样式测试时对齐缓解奖励模型搜索过优化。
+- [PolyGuard: A Multilingual Safety Moderation Tool for 17 Languages](https://arxiv.org/abs/2504.04377)：发布覆盖 17 种语言的安全模型及 POLYGUARDMIX、POLYGUARDPROMPTS，标注提示有害性、回复有害性和拒答，用于多语言护栏训练与评测。
+- [Exact Unlearning of Finetuning Data via Model Merging at Scale](https://arxiv.org/abs/2504.04626)：利用模型合并实现规模化微调数据精确遗忘，适合作为安全与隐私导向模型编辑参考。
+- [COIG-P: A High-Quality and Large-Scale Chinese Preference Dataset for Alignment with Human Values](https://arxiv.org/abs/2504.05535)：用过滤后的中文查询、15 个 LLM 生成器和自动评分构建百万级中文偏好对，用于价值对齐训练。
+- [Sugar-Coated Poison: Benign Generation Unlocks LLM Jailbreaking](https://arxiv.org/abs/2504.05652)：用看似良性的生成步骤解锁越狱行为，显示有害服从可经安全中间输出逐步铺垫。
+- [Mind the Trojan Horse: Image Prompt Adapter Enabling Scalable and Deceptive Jailbreaking](https://arxiv.org/abs/2504.05838)：训练 image prompt adapter 来规模化欺骗性 VLM 越狱，把有害意图隐藏在视觉提示中。
+- [Agent Guide: A Simple Agent Behavioral Watermarking Framework](https://arxiv.org/abs/2504.05871)：为智能体动作模式加入行为水印，使下游观察者能识别被引导或授权的智能体行为。
+- [Adversarial Training of Reward Models](https://arxiv.org/abs/2504.06141)：用对抗样本训练奖励模型，使偏好评分更不易被 reward hacking 或优化出的误导性回答操纵。
+- [Sharpness-Aware Parameter Selection for Machine Unlearning](https://arxiv.org/abs/2504.06398)：按 sharpness 选择遗忘参数，使 forget 更新集中在敏感区域并减少对留存任务的损伤。
+- [Understanding Machine Unlearning Through the Lens of Mode Connectivity](https://arxiv.org/abs/2504.06407)：从 mode connectivity 视角分析机器遗忘，检验遗忘解与留存解是否仍在参数空间中连通。
+- [Defending LLM Watermarking Against Spoofing Attacks with Contrastive Representation Learning](https://arxiv.org/abs/2504.06575)：用对比表征学习区分真实水印文本和伪造水印模式，增强 provenance 检测器对 spoofing 攻击的抵抗力。
+- [Bridging the Gap Between Preference Alignment and Machine Unlearning](https://arxiv.org/abs/2504.06659)：连接偏好对齐目标与机器遗忘，使遗忘更新在移除目标知识时尽量保留对齐行为。
+- [Dynamic Residual Safe Reinforcement Learning for Multi-Agent Safety-Critical Scenarios Decision-Making](https://arxiv.org/abs/2504.06670)：用 dynamic residual safe RL 处理多智能体安全关键决策，属于控制策略条目，可能应由父级路由到 LLM 模型安全之外。
+- [TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](https://arxiv.org/abs/2504.07053)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Boosting Universal LLM Reward Design through Heuristic Reward Observation Space Evolution](https://arxiv.org/abs/2504.07596)：演化启发式 reward observation space 来改进通用 LLM 奖励设计，重点是奖励模型覆盖而非提示护栏。
+- [SAEs Can Improve Unlearning: Dynamic Sparse Autoencoder Guardrails for Precision Unlearning in LLMs](https://arxiv.org/abs/2504.08192)：用稀疏自编码器 guardrail 提升大模型遗忘。
+- [EO-VLM: VLM-Guided Energy Overload Attacks on Vision Models](https://arxiv.org/abs/2504.08205)：利用 VLM 提示生成对抗图像来增加视觉模型 GPU 能耗，暴露不可感知输入导致的可用性风险。
+- [Understanding the Impact of Data Domain Extraction on Synthetic Data Privacy](https://arxiv.org/abs/2504.08254)：显示直接从私有训练数据抽取表格 domain 会破坏端到端 DP 保证，而公共 domain 或 DP 抽取 domain 可降低 membership inference 风险。
+- [Detecting Instruction Fine-tuning Attacks using Influence Function](https://arxiv.org/abs/2504.09026)：通过比较语义变换前后的 influence-function 分布识别稳定高影响投毒样本，从而检测 instruction fine-tuning attack。
+- [The Structural Safety Generalization Problem](https://arxiv.org/abs/2504.09712)：把 jailbreak 鲁棒性表述为结构化安全泛化问题，指出仅见过某些 prompt 形式的安全训练难以迁移到新攻击结构。
+- [Do We Really Need Curated Malicious Data for Safety Alignment in Multi-modal Large Language Models?](https://arxiv.org/abs/2504.10000)：显示 MLLM 安全提升主要来自修正数据分布偏差，并用小规模良性多模态数据微调替代精心策划的恶意数据。
+- [Large Language Model-Informed Feature Discovery Improves Prediction and Interpretation of Credibility Perceptions of Visual Content](https://arxiv.org/abs/2504.10878)：用 LLM-informed feature discovery 预测并解释视觉内容可信度感知，面向错误信息判断风险。
+- [QAVA](https://arxiv.org/abs/2504.11038)：提出针对 large vision-language models 的 query-agnostic visual attacks。
+- [Backdoor Attack and Defense for LLM-Empowered Recommendations](https://arxiv.org/abs/2504.11182)：分析 LLM 推荐系统中的后门攻击与防御，补充模型安全中的应用侧风险。
+- [R-TPT: Improving Adversarial Robustness of Vision-Language Models through Test-Time Prompt Tuning](https://arxiv.org/abs/2504.11195)：通过改写 entropy objective 做 VLM test-time prompt tuning，使提示能在推理时适应对抗图像。
+- [PATFinger: Prompt-Adapted Transferable Fingerprinting against Unauthorized Multimodal Dataset Usage](https://arxiv.org/abs/2504.11509)：在多模态数据集中嵌入 prompt-adapted transferable fingerprints，使未授权 VLM 预训练后仍可被检测。
+- [VLMGuard-R1: Proactive Safety Alignment for VLMs via Reasoning-Driven Prompt Optimization](https://arxiv.org/abs/2504.12661)：通过推理驱动的提示优化主动提升 VLM 安全对齐。
+- [UncAD: Towards Safe End-to-end Autonomous Driving via Online Map Uncertainty](https://arxiv.org/abs/2504.12826)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [In Which Areas of Technical AI Safety Could Geopolitical Rivals Cooperate?](https://arxiv.org/abs/2504.12914)：按危险能力推进、敏感信息共享和误用机会分析地缘竞争对手在哪些技术 AI safety 方向可合作。
+- [GraphAttack: Exploiting Representational Blindspots in LLM Safety Mechanisms](https://arxiv.org/abs/2504.13052)：用 graph-structured jailbreak prompts 利用 LLM 安全机制的表征盲点，在保留有害意图的同时绕过过滤器。
+- [A mean teacher algorithm for unlearning of language models](https://arxiv.org/abs/2504.13388)：把 mean-teacher consistency 机制用于语言模型遗忘，在降低选定文本记忆的同时保持通用能力。
+- [Q-FAKER: Query-free Hard Black-box Attack via Controlled Generation](https://arxiv.org/abs/2504.13551)：提出关于 Q-FAKER: Query-free Hard Black-box Attack via Controlled Generation 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [DETAM](https://arxiv.org/abs/2504.13562)：通过 targeted attention modification 防御 LLM 越狱，为提示改写或微调之外的内部干预路线补充证据。
+- [Hydra: An Agentic Reasoning Approach for Enhancing Adversarial Robustness and Mitigating Hallucinations in Vision-Language Models](https://arxiv.org/abs/2504.14395)：把 VLM 包装进 action-critique loop，结合迭代推理、视觉检索和跨模型验证来降低对抗错误与幻觉。
+- [MR. Guard: Multilingual Reasoning Guardrail using Curriculum Learning](https://arxiv.org/abs/2504.15241)：用具备文化和语言细节的合成多语数据、SFT 与 curriculum GRPO 训练 reasoning guardrail，提升 code-switching 和低资源语言干扰下的提示分类。
+- [Pre-DPO: Improving Data Utilization in Direct Preference Optimization Using a Guiding Reference Model](https://arxiv.org/abs/2504.15843)：在 DPO 前加入 guiding reference model，使偏好数据能在对齐训练中被更有效地加权或筛选。
+- [Certified Mitigation of Worst-Case LLM Copyright Infringement](https://arxiv.org/abs/2504.16046)：提出 BloomScrub，在推理时交替执行 quote detection、rewriting、Bloom-filter screening 和 abstention，以认证式降低最坏版权侵权风险。
+- [Beauty and the Bias: Exploring the Impact of Attractiveness on Multimodal Large Language Models](https://arxiv.org/abs/2504.16104)：用配对人脸图像和 91 个社会决策场景测试 7 个 MLLM，显示美颜与吸引力会系统性影响模型判断。
+- [Agree to Disagree? A Meta-Evaluation of LLM Misgendering](https://arxiv.org/abs/2504.17075)：对 LLM misgendering 做元评估，关注安全与公平指标如何捕捉性别指称伤害。
+- [Steering the CensorShip: Uncovering Representation Vectors for LLM "Thought" Control](https://arxiv.org/abs/2504.17130)：用表示工程寻找 refusal-compliance 与 thought-suppression 向量，揭示安全调优和推理模型中的拒答行为可被检测与操控。
+- [Towards Generalizable Deepfake Detection with Spatial-Frequency Collaborative Learning and Hierarchical Cross-Modal Fusion](https://arxiv.org/abs/2504.17223)：结合局部频谱特征、全局频谱线索和层次化跨模态融合，提高深伪检测对未见伪造的泛化性。
+- [CoheMark: A Novel Sentence-Level Watermark for Enhanced Text Quality](https://arxiv.org/abs/2504.17309)：利用句间 cohesive relationships、聚类和 next-sentence prediction 嵌入句级 LLM 水印，同时尽量保持文本流畅。
+- [Backdoor Defense in Diffusion Models via Spatial Attention Unlearning](https://arxiv.org/abs/2504.18563)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [BadMoE: Backdooring Mixture-of-Experts LLMs via Optimizing Routing Triggers and Infecting Dormant Experts](https://arxiv.org/abs/2504.18598)：通过路由触发器和休眠专家后门化 MoE 大模型。
+- [Contextual Online Uncertainty-Aware Preference Learning for Human Feedback](https://arxiv.org/abs/2504.19342)：为 RLHF 提供 contextual online preference-learning 算法，用 uncertainty-aware exploration 和统计推断保证选择最优模型。
+- [JailbreaksOverTime: Detecting Jailbreak Attacks Under Distribution Shift](https://arxiv.org/abs/2504.19440)：研究分布转移下的 jailbreak attack 检测，为安全检测器补充时间鲁棒性视角。
+- [Task-specific Prompts and SAEs for Activation Monitoring](https://arxiv.org/abs/2504.20271)：结合任务提示与 sparse autoencoder 做激活监控，为安全相关行为补充模型侧监测技术。
+- [Token-Efficient Prompt Injection Attack](https://arxiv.org/abs/2504.20493)：用 adaptive token compression 诱发 LLM reasoning 停止，为推理模型补充紧凑 prompt-injection 攻击路线。
+- [ReCIT: Reconstructing Full Private Data from Gradient in Parameter-Efficient Fine-Tuning of Large Language Models](https://arxiv.org/abs/2504.20570)：从 PEFT 梯度同时重建上下文前缀和 PII，显示联邦或协作微调可能泄漏完整私有训练实例。
+- [GaussTrap: Stealthy Poisoning Attacks on 3D Gaussian Splatting for Targeted Scene Confusion](https://arxiv.org/abs/2504.20829)：向 3D Gaussian Splatting 注入恶意训练视角，使目标视角渲染混淆场景而普通视角仍保持高质量。
+- [Kill two birds with one stone: generalized and robust AI-generated text detection via dynamic perturbations](https://arxiv.org/abs/2504.21019)：提出 DP-Net，用强化学习得到的动态扰动让 AI-generated text detection 同时具备跨生成器泛化和抗攻击鲁棒性。
+- [Prefill-level Jailbreak: A Black-Box Risk Analysis of Large Language Models](https://arxiv.org/abs/2504.21038)：分析在 assistant prefill 中预置不安全续写的黑盒越狱，说明拒答行为可在正常生成前被绕过。
+- [NeuRel-Attack: Neuron Relearning for Safety Disalignment in Large Language Models](https://arxiv.org/abs/2504.21053)：根据有害与无害提示的激活模式定位安全关键神经元，并重新学习这些神经元以移除拒答约束。
+- [SafeQuant: LLM Safety Analysis via Quantized Gradient Inspection](https://doi.org/10.18653/v1/2025.naacl-long.127)：通过检查量化梯度分析 LLM 安全行为，把梯度信号作为轻量诊断不安全输出倾向的工具。
+- [Goal-Conditioned DPO: Prioritizing Safety in Misaligned Instructions](https://doi.org/10.18653/v1/2025.naacl-long.369)：用目标条件化改造 DPO，使偏好更新在 misaligned instruction 下优先安全，并区分良性有用性与不安全服从。
+- [Learning from Literature: A Retraining-Free Framework for LLM Jailbreak Defense via NLP-Based Adversarial Literature Analysis](https://arxiv.org/abs/2505.01315)：在模型执行前过滤并总结编码或操纵性输入，是无需重训的运行时防御，更像 Agent Harness 候选。
+- [The DCR Delusion: Measuring the Privacy Risk of Synthetic Data](https://arxiv.org/abs/2505.01524)：指出 distance-to-closest-record 可能低估合成数据隐私风险，主张使用 membership 与 reconstruction attack 做评估。
+- [Soft Best-of-$n$ Sampling for Model Alignment](https://arxiv.org/abs/2505.03156)：用温度控制的软选择规则推广 best-of-N 对齐采样，使推理时对齐能更细粒度地权衡奖励提升与分布偏移。
+- [Automatic Calibration for Membership Inference Attack on Large Language Models](https://arxiv.org/abs/2505.03392)：基于 likelihood estimation 分析用可调温度校准成员推断，在无需额外参考模型时降低 false positive。
+- [Revisiting Model Inversion Evaluation: From Misleading Standards to Reliable Privacy Assessment](https://arxiv.org/abs/2505.03519)：指出标准 model inversion 评估会把对抗性 false positive 当成成功重建，并提出更可靠的隐私评估检查。
+- [Large Means Left: Political Bias in Large Language Models Increases with Their Number of Parameters](https://arxiv.org/abs/2505.04393)：跨模型规模测量政治偏见，并报告参数量越大，输出中左倾偏移越明显。
+- [Perpetuating Misogyny with Generative AI: How Model Personalization Normalizes Gendered Harm](https://arxiv.org/abs/2505.04600)：研究个性化文生图 adapters 如何正常化性别伤害，把模型个性化本身作为安全与偏见攻击面。
+- [X-Transfer Attacks on CLIP](https://arxiv.org/abs/2505.05528)：研究面向 CLIP 的高迁移性对抗攻击，补充多模态模型安全与鲁棒性覆盖。
+- [LLM-Text Watermarking based on Lagrange Interpolation](https://arxiv.org/abs/2505.05712)：用 Lagrange interpolation 结构在 LLM 文本中嵌入多比特作者身份，目标是在重度删改后仍恢复 provenance。
+- [SRAF](https://arxiv.org/abs/2505.06304)：优化隐蔽且鲁棒的对抗指纹，用于在提示和模型修改下进行黑盒 LLM 版权与所有权验证。
+- [Understanding and Mitigating Toxicity in Image-Text Pretraining Datasets: A Case Study on LLaVA](https://arxiv.org/abs/2505.06356)：审计 LLaVA 图文预训练数据中的 toxicity，并移除 7531 个有毒图文对，为更安全的多模态预训练提供数据过滤方法。
+- [Unmasking Deep Fakes: Leveraging Deep Learning for Video Authenticity Detection](https://arxiv.org/abs/2505.06528)：结合 MTCNN 人脸检测和 EfficientNet-B5 encoder 分类 DFDC 视频，提供具体 deepfake video detector。
+- [Think in Safety: Unveiling and Mitigating Safety Alignment Collapse in Multimodal Large Reasoning Model](https://arxiv.org/abs/2505.06538)：诊断并缓解多模态大型推理模型中的安全对齐坍塌问题。
+- [One Trigger Token Is Enough](https://arxiv.org/abs/2505.07167)：提出通过触发 token 平衡 LLM 安全性与可用性的防御策略。核心思想：用紧凑控制信号激活安全行为，而不是整体牺牲模型有用性。
+- [GRADA: Graph-based Reranking against Adversarial Documents Attack](https://arxiv.org/abs/2505.07546)：用基于图的重排序防御检索增强系统中的对抗文档攻击。
+- [Adversarial Suffix Filtering: a Defense Pipeline for LLMs](https://arxiv.org/abs/2505.09602)：在 LLM 执行前检测并过滤 adversarial suffixes，为部署系统中的 suffix-based jailbreak 提供防御管线。
+- [SpecWav-Attack: Leveraging Spectrogram Resizing and Wav2Vec 2.0 for Attacking Anonymized Speech](https://arxiv.org/abs/2505.09616)：利用 spectrogram resizing 和 Wav2Vec 2.0 特征攻击匿名化语音，暴露 speaker re-identification 隐私泄漏。
+- [Adversarial Attack on Large Language Models using Exponentiated Gradient Descent](https://arxiv.org/abs/2505.09820)：把 exponentiated gradient descent 用于搜索对抗性 LLM prompt，为安全评测补充优化式攻击路径。
+- [Dark LLMs: The Growing Threat of Unaligned AI Models](https://arxiv.org/abs/2505.10066)：刻画未对齐或恶意适配 LLM 的滥用威胁，更像威胁分类或治理候选而非训练方法。
+- [LARGO: Latent Adversarial Reflection through Gradient Optimization for Jailbreaking LLMs](https://arxiv.org/abs/2505.10838)：优化对抗 latent vectors，并让同一 LLM 将其解码为自然语言越狱 prompt，生成快速且可迁移的攻击。
 - [MOPO](https://arxiv.org/abs/2505.10892)：通过带约束的 KL 正则化更新同时优化多个人类偏好目标，使有用性与无害性的权衡在后训练中显式化。
+- [One Shot Dominance: Knowledge Poisoning Attack on Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2505.11548)：提出 AuthChain，用单篇投毒文档攻击 RAG 系统，使恶意证据在多跳查询中仍能被检索并被模型信任。
+- [The Ripple Effect: On Unforeseen Complications of Backdoor Attacks](https://arxiv.org/abs/2505.11586)：显示第三方预训练语言模型中的后门会引发超出预设触发行为的下游意外复杂影响。
+- [JULI: Jailbreak Large Language Models by Self-Introspection](https://arxiv.org/abs/2505.11790)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Multilingual Collaborative Defense for Large Language Models](https://arxiv.org/abs/2505.11835)：利用多语言协同信号防御 LLM 风险，将安全缓解从英语单语护栏扩展到跨语言攻击迁移这一模型侧防御问题。
 - [SafeVid](https://arxiv.org/abs/2505.11926)：面向大型视频多模态模型构建视频特定安全对齐，将安全数据与训练流程结合起来，覆盖动态视觉情境而不只依赖静态图像对齐。
+- [Loss Reweighting for LLM Unlearning](https://arxiv.org/abs/2505.11953): 研究增强 LLM 遗忘的损失重加权准则，补充模型侧遗忘与安全控制配方。
+- [ACU: Analytic Continual Unlearning for Efficient and Exact Forgetting with Privacy Preservation](https://arxiv.org/abs/2505.12239)：提出 analytic continual unlearning，在不回看历史留存数据的情况下处理连续遗忘请求，面向隐私约束下的高效精确遗忘。
 - [CAPTURE / CaptureGuard](https://arxiv.org/abs/2505.12368)：训练并评估上下文感知 prompt-injection guardrail 模型，在攻击检测和良性上下文过度防御之间权衡。
+- [Web IP at Risk: Prevent Unauthorized Real-Time Retrieval by Large Language Models](https://arxiv.org/abs/2505.12655)：研究阻止 LLM 实时检索受保护网页内容的防御，更适合作为 Agent Harness 复核的检索与内容保护条目。
+- [Language Models That Walk the Talk: A Framework for Formal Fairness Certificates](https://arxiv.org/abs/2505.12767)：为语言模型公平性证书建立形式化框架，补充可验证安全与对齐方法。
 - [Detecting Prefix Bias in LLM-based Reward Models](https://arxiv.org/abs/2505.13487)：提出检测与缓解奖励模型前缀触发人口属性偏差的指标和数据增强方法。
-- [MTSA](https://arxiv.org/abs/2505.17147)：提出面向Agent 安全的模型侧方法，核心围绕 Multi-turn Safety Alignment for LLMs through Multi-round Red-teaming。
+- [Metacognitive Activation Control](https://arxiv.org/abs/2505.13763)：用 neurofeedback-style 范式测试 LLM 能否报告并控制自身 activation pattern，把 metacognition 同能力提升和规避监控风险连接起来。
+- [ShieldVLM: Safeguarding the Multimodal Implicit Toxicity via Deliberative Reasoning with LVLMs: ShieldVLM](https://arxiv.org/abs/2505.14035)：构建 MMIT taxonomy 和 2100 条 multimodal implicit toxicity 数据集，并训练带 deliberative reasoning 的 ShieldVLM 检测跨模态危害。
+- [MoMoE: Mixture of Moderation Experts Framework for AI-Assisted Online Governance](https://arxiv.org/abs/2505.14483)：用 mixture of moderation experts 路由线上治理案例，为有害内容工作流提供审核模型架构。
+- [Breaking Bad Tokens](https://arxiv.org/abs/2505.14536)：用稀疏自编码器对 LLM 行为做 detoxification，把可解释特征干预与模型侧安全控制连接起来。
+- [SEPS: A Separability Measure for Robust Unlearning in LLMs](https://arxiv.org/abs/2505.14832)：定义 LLM unlearning 的 separability measure，用于诊断 forget targets 是否能在不伤害留存知识的情况下被移除。
+- [DECASTE: Unveiling Caste Stereotypes in Large Language Models through Multi-Dimensional Bias Analysis](https://arxiv.org/abs/2505.14971)：从多维偏见轴度量 LLM 中的 caste stereotypes，为文化特定安全伤害补充公平性审计。
+- [How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](https://arxiv.org/abs/2505.15404)：实证研究提升 large reasoning model 安全性的监督微调配方，指出有针对性的安全 rationale 蒸馏和较短推理轨迹也能改善安全性。
+- [Comprehensive Evaluation and Analysis for NSFW Concept Erasure in Text-to-Image Diffusion Models](https://arxiv.org/abs/2505.15450)：评估文生图扩散模型 NSFW concept-erasure 方法，暴露擦除后仍残留的不安全生成和效用权衡。
+- [Do RAG Systems Really Suffer From Positional Bias?](https://arxiv.org/abs/2505.15561)：在真实检索管线中发现高排名干扰段落会削弱表面 positional bias，将 RAG 鲁棒性同时归因于检索质量和提示位置。
+- [FedSEA-LLaMA: A Secure, Efficient and Adaptive Federated Splitting Framework for Large Language Models](https://arxiv.org/abs/2505.15683)：在安全、高效、自适应的联邦拆分框架中训练 LLaMA 类模型。
+- [Investigating Prosocial Behavior Theory in LLM Agents Under Policy-Induced Inequities](https://arxiv.org/abs/2505.15857)：提出 ProSim 模拟政策诱导不平等下 LLM agent 的 prosocial behavior，衡量惩罚、公平反应和 prosociality 抑制。
+- [SAE-SSV: Supervised Steering in Sparse Representation Spaces for Reliable Control of Language Models](https://arxiv.org/abs/2505.16188)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Three Minds, One Legend: Jailbreak Large Reasoning Model with Adaptive Stacked Ciphers](https://arxiv.org/abs/2505.16241)：用自适应叠加密码攻击大型推理模型并绕过安全机制。
+- [Training on Plausible Counterfactuals Removes Spurious Correlations](https://arxiv.org/abs/2505.16583)：用 plausible counterfactual explanations 训练模型，在保持样本位于数据流形上的同时移除 spurious correlations，是相邻鲁棒性与偏见缓解方法。
+- [BitHydra](https://arxiv.org/abs/2505.16670)：研究针对大语言模型的比特翻转推理成本攻击，将安全覆盖扩展到效率和资源耗尽风险。
+- [Secure LLM Fine-Tuning via Safety-Aware Probing](https://arxiv.org/abs/2505.16737)：在微调中使用 safety-aware probe。核心思想：监控安全敏感表示，避免适配过程悄然削弱对齐能力。
+- [When Safety Detectors Aren't Enough: A Stealthy and Effective Jailbreak Attack on LLMs via Steganographic Techniques](https://arxiv.org/abs/2505.16765)：用隐写技术把有害查询嵌入流畅良性段落，在安全检测器面前同时保持语义隐蔽和语言自然性。
+- [Backdoor Cleaning without External Guidance in MLLM Fine-tuning](https://arxiv.org/abs/2505.16916)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Improving LLM Outputs Against Jailbreak Attacks With Expert Model Integration](https://arxiv.org/abs/2505.17066)：提出 Archias 领域专家分类器，区分行业内、行业外、恶意、价格注入和 prompt injection 查询，用于增强生产环境 LLM 对演化越狱的输出防护。
+- [MTSA](https://arxiv.org/abs/2505.17147)：用 MTSA 进行红队测试，关注多样化危害发现和护栏失效模式。
+- [Harry Potter is Still Here! Probing Knowledge Leakage in Targeted Unlearned Large Language Models via Automated Adversarial Prompting](https://arxiv.org/abs/2505.17160)：提出 LURK，自动生成对抗后缀以诱导 supposedly unlearned LLM 泄漏残留 Harry Potter 知识。
+- [Refusal Direction is Universal Across Safety-Aligned Languages](https://arxiv.org/abs/2505.17306)：在 PolyRefuse 的 14 种语言上证明，一个安全对齐语言中抽取的 refusal vector 可跨语言转移；作者用 activation space 中平行的拒答方向解释跨语种 jailbreak。
+- [VEAttack](https://arxiv.org/abs/2505.17440)：以下游任务无关方式攻击大视觉语言模型所用视觉编码器，揭示可复用的多模态安全风险。
+- [Chain-of-Lure: A Synthetic Narrative-Driven Approach to Compromise Large Language Models](https://arxiv.org/abs/2505.17519)：用 unrestricted synthetic narratives 诱导 LLM 有害服从，形成不依赖人工攻击模板的通用越狱框架。
+- [One Model Transfer to All: On Robust Jailbreak Prompts Generation against LLMs](https://arxiv.org/abs/2505.17598)：借助鲁棒性判断模型生成可跨 LLM 迁移的稳健越狱提示。
+- [Chain-of-Thought and Jailbreak Harmfulness](https://arxiv.org/abs/2505.17650)：检验链式思维是否会降低越狱后的有害性，澄清推理型模型的安全边界。
+- [Understanding How Value Neurons Shape the Generation of Specified Values in LLMs](https://arxiv.org/abs/2505.17712)：定位价值相关神经元以解释 LLM 如何生成特定价值取向。
+- [Redirection for Erasing Memory (REM): Towards a universal unlearning method for corrupted data](https://arxiv.org/abs/2505.17730)：把 corrupted data 的影响重定向到新引入的神经元，再丢弃或停用这些神经元，形成更通用的视觉分类器遗忘方法。
+- [Understanding and Mitigating Overrefusal in LLMs from an Unveiling Perspective of Safety Decision Boundary](https://arxiv.org/abs/2505.18325)：从安全决策边界角度分析过度拒答并提出缓解路线。
+- [An Attack to Break Permutation-Based Private Third-Party Inference Schemes for LLMs](https://arxiv.org/abs/2505.18332)：从置换后的 hidden states 近乎完美恢复原始 prompt，打破基于置换的第三方 LLM 私有推理混淆假设。
+- [GainRAG: Preference Alignment in Retrieval-Augmented Generation through Gain Signal Synthesis](https://arxiv.org/abs/2505.18710)：定义衡量检索段落是否提升回答正确性的 gain signal，用它对齐 RAG 中 retriever 与 generator 的偏好。
+- [Soft Weighted Machine Unlearning](https://arxiv.org/abs/2505.18783)：用解析求解的 weighted influence functions 软化遗忘更新，减少公平性与鲁棒性场景中的 over-unlearning。
+- [Leveraging Per-Instance Privacy for Machine Unlearning](https://arxiv.org/abs/2505.18786)：用 per-instance privacy losses 替代最坏情况遗忘隐私界，预测微调遗忘中哪些样本更难删除。
+- [An Embarrassingly Simple Defense Against LLM Abliteration Attacks](https://arxiv.org/abs/2505.19056)：防御会抹除拒答行为的 abliteration attacks，用简单模型侧干预恢复安全响应。
+- [Delving into Multilingual Ethical Bias: The MSQAD with Statistical Hypothesis Tests for Large Language Models](https://arxiv.org/abs/2505.19121)：基于 Human Rights Watch 主题构造多语言敏感问答，并用统计假设检验度量跨语言伦理偏见。
+- [Preference Optimization by Estimating the Ratio of the Data Distribution](https://arxiv.org/abs/2505.19601)：从数据分布比角度重新解释 DPO，并估计这些比值以改善分布不匹配下的偏好优化。
+- [JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models](https://arxiv.org/abs/2505.19610)：针对 VLM 内部安全边界构造越狱，利用视觉编码器带来的更大攻击面绕过安全过滤。
+- [Diagnosing and Mitigating Modality Interference in Multimodal Large Language Models](https://arxiv.org/abs/2505.19616)：诊断 MLLM 中虚假跨模态信号造成的干扰，并用扰动增强与一致性正则进行缓解。
 - [Audio-Language Safety Representation Reshaping](https://arxiv.org/abs/2505.19670)：通过重塑表示空间平衡大型音频语言模型的安全性与过度拒答。
 - [Editing as Unlearning](https://arxiv.org/abs/2505.19855)：将 LLM 遗忘重述为面向拒答或空响应的知识编辑，并比较编辑方法作为实用遗忘基线。
+- [Safety Through Reasoning: An Empirical Study of Reasoning Guardrail Models](https://arxiv.org/abs/2505.20087)：实证研究 reasoning guardrail models，分析显式推理何时提升安全过滤、何时引入新失败模式。
+- [TrojanStego: Your Language Model Can Secretly Be A Steganographic Privacy Leaking Agent](https://arxiv.org/abs/2505.20118)：通过词表分区隐写微调 LLM，把敏感上下文编码进自然输出，在推理时无需攻击者控制输入也能形成被动隐蔽的数据外泄通道。
+- [Shutdownable Agents through POST-Agency](https://arxiv.org/abs/2505.20203)：通过 POST-agency 研究可关闭智能体设计，为 Agent Safety 补充确保智能体可被安全中断或停止的模型侧控制目标。
+- [Ra-DPO](https://arxiv.org/abs/2505.20359)：在 DPO 中加入嵌套风险度量约束，使 alignment training 能控制 tail risk 与 reference model 偏离。
+- [Divide-Then-Align: Honest Alignment based on the Knowledge Boundary of RAG](https://arxiv.org/abs/2505.20871)：按 RAG 知识边界状态划分查询并对齐回答，使模型回答有依据问题，同时避免无支持或误导性声明。
+- [Towards Safety Reasoning in LLMs: AI-agentic Deliberation for Policy-embedded CoT Data Creation](https://arxiv.org/abs/2505.21784)：用多智能体 deliberation 和 refiner 生成 policy-embedded chain-of-thought 数据，支撑 safety reasoning 的 SFT 和偏好对齐。
+- [Precise In-Parameter Concept Erasure](https://arxiv.org/abs/2505.22586)：在 LLM 参数内部擦除概念，为模型侧 unlearning 与安全控制补充方法。
+- [Understanding (Un)Reliability of Steering Vectors](https://arxiv.org/abs/2505.22637)：审计 activation steering 何时有效或反向失效，把 steering 可靠性作为模型侧安全控制问题处理。
+- [Does Machine Unlearning Truly Remove Knowledge?](https://arxiv.org/abs/2505.23270)：审计 unlearning 是否真正移除目标知识，为模型侧遗忘方法补充安全相关可靠性检查。
+- [Understanding Refusal with Sparse Autoencoders](https://arxiv.org/abs/2505.23556)：用 sparse autoencoder 分析语言模型的拒答机制，为安全对齐补充模型侧可解释性路径。
+- [Distortion of AI Alignment: Does Preference Optimization Optimize for Preferences?](https://arxiv.org/abs/2505.23749)：从社会选择理论定义 preference-optimization distortion，说明 RLHF 和 DPO 可能偏离多元偏好的平均效用目标。
+- [OMNIGUARD](https://arxiv.org/abs/2505.23856)：提出跨模态 AI safety moderation 方法，补充统一多模态安全审核模型。
+- [Light as Deception: GPT-driven Natural Relighting Against Vision-Language Pre-training Models](https://arxiv.org/abs/2505.24227)：结合 ChatGPT 提议的光照参数、IC-light 重打光和梯度优化，为 VLP 模型构造自然光照对抗图像。
+- [AMIA](https://arxiv.org/abs/2505.24519)：结合自动 masking 与意图分析提升 LVLM 对 jailbreak 的防御鲁棒性。
+- [K-Steering](https://arxiv.org/abs/2505.24535)：用非线性多标签 activation 分类器同时控制多个 LLM 行为属性，避免为每个属性保存独立线性 steering vector。
+- [TRIDENT: Enhancing Large Language Model Safety with Tri-Dimensional Diversified Red-Teaming Data Synthesis](https://arxiv.org/abs/2505.24672)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [On Symmetric Losses for Robust Policy Optimization with Noisy Preferences](https://arxiv.org/abs/2505.24709)：把奖励建模和离线偏好优化视为带噪分类问题，用 symmetric loss 提升 RLHF 式对齐对错误或有偏偏好标签的鲁棒性。
+- [Disentangled Safety Adapters Enable Efficient Guardrails and Flexible Inference-Time Alignment](https://arxiv.org/abs/2506.00166)：构建解耦安全适配器以支持灵活的推理时对齐。
+- [Keeping an Eye on LLM Unlearning](https://arxiv.org/abs/2506.00359)：分析 LLM 遗忘中的隐藏风险与补救方式，为安全导向的模型侧遗忘诊断补充依据。
+- [Goal-Aware Identification and Rectification of Misinformation in Multi-Agent Systems](https://arxiv.org/abs/2506.00509)：提出 MisinfoTask 和两阶段免训练防御 ARGUS，用 goal-aware reasoning 定位并修正多智能体信息流中的错误信息传播。
+- [Jailbreak-R1](https://arxiv.org/abs/2506.00782)：通过 reinforcement learning 探索 LLMs 的 jailbreak capabilities。
+- [Speech Unlearning](https://arxiv.org/abs/2506.00848)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Doubly Robust Alignment for Large Language Models](https://arxiv.org/abs/2506.01183)：提出 doubly robust preference optimization，在偏好模型或 reference policy 只要有一方设定正确时仍保持 RLHF 对齐更新一致，以降低模型错设带来的不稳定微调。
+- [Detoxification of Large Language Models through Output-layer Fusion with a Calibration Model](https://arxiv.org/abs/2506.01266)：把小型校准模型融合进 LLM 输出层，用一次性训练得到的无毒 embedding space 引导生成，可复用于多个目标 LLM。
+- [Unlearning Blind Spots](https://arxiv.org/abs/2506.01318)： 研究 over-unlearning 与 prototypical relearning attack，揭示 LLM unlearning 的失效模式。
+- [Invariance Makes LLM Unlearning Resilient](https://arxiv.org/abs/2506.01339)：研究在下游微调后仍能保持稳健的 LLM unlearning。核心思想：通过不变性约束降低被遗忘内容在后续适配中重新出现的风险。
+- [Enhancing Diffusion-based Unrestricted Adversarial Attacks via Adversary Preferences Alignment](https://arxiv.org/abs/2506.01511)：把 unrestricted adversarial example 生成表述为扩散模型中的攻击者偏好对齐，并用可微奖励解耦视觉一致性与攻击有效性。
+- [DRAUN: An Algorithm-Agnostic Data Reconstruction Attack on Federated Unlearning Systems](https://arxiv.org/abs/2506.01777)：利用 federated unlearning 更新重构被请求删除的数据，暴露客户端驱动删除流程带来的新隐私攻击面。
+- [Something Just Like TRuST : Toxicity Recognition of Span and Target](https://arxiv.org/abs/2506.02326)：补充与智能体与模型安全相关的模型侧方法。
+- [Beyond Invisibility: Learning Robust Visible Watermarks for Stronger Copyright Protection](https://arxiv.org/abs/2506.02665)：学习难以移除的可见图像水印来保护版权，目标是在生成模型架构变化后仍比模型特定的隐形扰动更稳健。
+- [Privacy Leaks by Adversaries: Adversarial Iterations for Membership Inference Attack](https://arxiv.org/abs/2506.02711)：通过 Adversarial Iterations for Membership Inference Attack 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Causal Estimation of Tokenisation Bias](https://arxiv.org/abs/2506.03149)：把 tokenizer 词表选择导致的字符串概率变化定义为 tokenisation bias，并估计不同子词切分对模型概率的因果影响。
+- [CARE: Enhancing Safety of Visual Navigation through Collision Avoidance via Repulsive Estimation](https://arxiv.org/abs/2506.03834)：将 CARE 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [SafeSteer: Interpretable Safety Steering with Refusal-Evasion in LLMs](https://arxiv.org/abs/2506.04250)：贡献安全 steering 或对齐方法；核心思想是在保持有用性的同时提升拒答或风险控制能力。
+- [UNO: Unlearning via Orthogonalization in Generative models](https://arxiv.org/abs/2506.04712)：通过正交化去除生成模型中目标数据的影响，在删除指定样本的同时尽量保留生成质量和保留数据的参数贡献。
+- [RIVAL: Reinforcement Learning with Iterative and Adversarial Optimization for Machine Translation](https://arxiv.org/abs/2506.05070)：把奖励模型和翻译模型更新设为对抗式 min-max 循环，以缓解字幕翻译 RLHF 中奖励模型随在线模型漂移的问题。
+- [Dissecting Bias in LLMs](https://arxiv.org/abs/2506.05166)：从机制可解释性角度研究 LLM 偏见。核心思想：定位与偏见行为相关的内部 circuit 或表示，使缓解手段能指向模型机制而不只是输出。
+- [Why LLM Safety Guardrails Collapse After Fine-tuning: A Similarity Analysis Between Alignment and Fine-tuning Datasets](https://arxiv.org/abs/2506.05346)： 通过比较对齐数据与微调数据，分析 LLM 安全护栏为何在微调后崩塌，澄清微调漂移风险。
+- [Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](https://arxiv.org/abs/2506.05619)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [FedShield-LLM: A Secure and Scalable Federated Fine-Tuned Large Language Model](https://arxiv.org/abs/2506.05640)：结合 federated LLM fine-tuning 与隐私保护机制，使跨机构任务适配能减少敏感数据集中化暴露。
+- [Optimization-Free Universal Watermark Forgery with Regenerative Diffusion Models](https://arxiv.org/abs/2506.06018)：提出 Plug-and-Plant，无需优化也无需知道水印方案，即可借助再生扩散模型把目标图像水印迁移到 cover images。
+- [Token-Only Dataset Inference](https://arxiv.org/abs/2506.06057)：研究仅凭 token 级访问对大语言模型进行数据集推断攻击，补充隐私风险诊断。
+- [Simple Yet Effective: Extracting Private Data Across Clients in Federated Fine-Tuning of Large Language Models](https://arxiv.org/abs/2506.06060)：补充与智能体与模型安全相关的模型侧方法。
+- [Distillation Robustifies Unlearning](https://arxiv.org/abs/2506.06278)：通过蒸馏提升 unlearning 的稳健性。核心思想：把 unlearning 后的安全行为迁移到学生模型中，降低被删除内容在扰动下回流的概率。
+- [Pairwise Calibrated Rewards for Pluralistic Alignment](https://arxiv.org/abs/2506.06298)：校准成对奖励比较以支持 pluralistic alignment，使偏好优化能表达异质人类价值，而不是压成单一多数信号。
 - [Prompt-Injection Detection with Pre-trained Models and Heuristics](https://arxiv.org/abs/2506.06384)：将预训练检测器与启发式特征结合用于提示注入防御，可作为 LLM 与智能体安全中的模型侧护栏方法。
-- [Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models](https://arxiv.org/abs/2506.07468)：提出面向Agent 安全的模型侧方法，核心围绕 Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models。
+- [Backdoor Attack on Vision Language Models with Stealthy Semantic Manipulation](https://arxiv.org/abs/2506.07214)：提出通过污染图文配对触发 VLM 语义操纵后门攻击的方法。
+- [When Style Breaks Safety](https://arxiv.org/abs/2506.07452)：研究 superficial style alignment 如何破坏安全行为，并提出针对风格驱动安全退化的防御方法。
+- [Chasing Moving Targets with Online Self-Play Reinforcement Learning for Safer Language Models](https://arxiv.org/abs/2506.07468)：用 online self-play reinforcement learning 追踪变化中的安全目标，针对自适应风险训练更安全的语言模型行为。
+- [BLUR](https://arxiv.org/abs/2506.08164)：把 LLM unlearning 表述为双层优化，使遗忘与保留目标分离，而不是合并为易失衡的单一损失。
+- [Reinforcement Learning from Human Feedback with High-Confidence Safety Constraints](https://arxiv.org/abs/2506.08266)：把高置信安全约束加入 RLHF，使安全性进入偏好优化过程。
+- [SafeCoT: Improving VLM Safety with Minimal Reasoning](https://arxiv.org/abs/2506.08399)：面向智能体安全与安全评测的模型、训练或算法工作。核心思想：以 Improving VLM Safety with Minimal Reasoning 为主要改进目标，作为 Model 条目的能力参考。
 - [DAVSP](https://arxiv.org/abs/2506.09353)：通过学习深层视觉安全提示来抵御视觉模态攻击，同时尽量保持正常任务效用。
-- [From Hard Refusals to Safe-Completions](https://arxiv.org/abs/2508.09224)：提出面向Agent 安全的模型侧方法，核心围绕 Toward Output-Centric Safety Training。
+- [Apollo: A Posteriori Label-Only Membership Inference Attack Towards Machine Unlearning](https://arxiv.org/abs/2506.09923)：通过 A Posteriori Label-Only Membership Inference Attack Towards Machine Unlearning 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [From Threat to Tool: Leveraging Refusal-Aware Injection Attacks for Safety Alignment](https://arxiv.org/abs/2506.10020)：将 refusal-aware adaptive injection 从攻击手段转为合成数据工具，先诱导有害补全，再把这些样本用于安全对齐训练。
+- [Towards Understanding Bias in Synthetic Data for Evaluation](https://arxiv.org/abs/2506.10301)：审计 LLM 生成的信息检索合成测试集，分析合成查询和相关性判断如何引入评测偏差。
+- [SOFT: Selective Data Obfuscation for Protecting LLM Fine-tuning against Membership Inference Attacks](https://arxiv.org/abs/2506.10424)：在 LLM 微调前选择性混淆训练样本，以降低 membership inference 泄漏并尽量保留下游效用。
+- [Surface Fairness, Deep Bias: A Comparative Study of Bias in Language Models](https://arxiv.org/abs/2506.10491)：提出或分析面向agent safety, security, privacy, or robustness的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [ME: Trigger Element Combination Backdoor Attack on Copyright Infringement](https://arxiv.org/abs/2506.10776)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Interpretability-Based Fairness Steering](https://arxiv.org/abs/2506.10922)：识别并中和 activation 中的 sensitive-attribute directions，使 fairness mitigation 能经受真实上下文细节，而不只在受控 prompt 中有效。
+- [GUARD: Guided Unlearning and Retention via Data Attribution for Large Language Models](https://arxiv.org/abs/2506.10946)： 用 data attribution 引导 LLM unlearning，同时尽量保留非目标能力。
+- [Who is in the Spotlight: The Hidden Bias Undermining Multimodal Retrieval-Augmented Generation](https://arxiv.org/abs/2506.11063)：分析 multimodal RAG 中的 spotlight bias，即检索和生成过度突出显著人物或实体并扭曲 grounded answer。
+- [Model Organisms for Emergent Misalignment](https://arxiv.org/abs/2506.11613)：提出用于研究涌现式错配的模型生物方法。
+- [Convergent Linear Representations of Emergent Misalignment](https://arxiv.org/abs/2506.11618)：发现不同微调模型间可迁移的 misalignment 方向，并用表示干预削弱错配行为。
+- [Revealing Political Bias in LLMs through Structured Multi-Agent Debate](https://arxiv.org/abs/2506.11825)：通过 Structured Multi-Agent Debate 度量或缓解公平性与偏见风险，将人口统计、严重度或审核偏移作为安全轴。
+- [Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach](https://arxiv.org/abs/2506.12227)：通过 An Active Learning and Dynamic Scoring Approach 度量或缓解公平性与偏见风险，将人口统计、严重度或审核偏移作为安全轴。
+- [EgoPrivacy: What Your First-Person Camera Says About You?](https://arxiv.org/abs/2506.12258)：提出 egocentric-video 隐私基准，覆盖从第一人称视频推断拍摄者人口统计、个人身份和情境信息的任务。
+- [InfoFlood: Jailbreaking Large Language Models with Information Overload](https://arxiv.org/abs/2506.12274)：用信息过载攻击 LLM 防护，检验冗长嘈杂上下文是否会迫使模型越过拒答行为。
+- [Robust LLM Unlearning with MUDMAN: Meta-Unlearning with Disruption Masking And Normalization](https://arxiv.org/abs/2506.12484)：通过 disruption masking 与 normalization 的 meta-unlearning 提升 LLM 遗忘在扰动和后续适配下的稳健性。
+- [When Forgetting Triggers Backdoors](https://arxiv.org/abs/2506.12522)：表明干净 unlearning 过程也可能触发后门行为，为遗忘和 unlearning 流水线补充模型侧安全风险。
+- [MEraser LLM Fingerprint Erasure](https://arxiv.org/abs/2506.12551)：在保持模型效用的同时擦除大语言模型指纹，补充模型来源审计与所有权攻击方向。
+- [Attention Hijackers](https://arxiv.org/abs/2506.12880)：把通用越狱后缀解释为注意力劫持，补充越狱迁移性的模型内部视角。
+- [Jailbreak Transferability Emerges from Shared Representations](https://arxiv.org/abs/2506.12913)：从共享表征解释 jailbreak 迁移，为跨模型安全失败补充模型内部机制视角。
+- [Rectifying Privacy and Efficacy Measurements in Machine Unlearning: A New Inference Attack Perspective](https://arxiv.org/abs/2506.13009)：指出平均情形 unlearning 审计的缺陷，并用更针对遗忘样本的推断攻击衡量隐私与遗忘有效性。
+- [CertDW](https://arxiv.org/abs/2506.13160)：把 conformal prediction 用于 certified dataset ownership verification，补充数据溯源安全机制。
+- [Unlearning Isn't Invisible](https://arxiv.org/abs/2506.14003)：从模型输出检测 LLM unlearning 痕迹。核心思想：检验 unlearning 是否留下可被审计者或攻击者观察到的行为指纹。
+- [GRAM: A Generative Foundation Reward Model for Reward Generalization](https://arxiv.org/abs/2506.14175)：先用无标签数据训练 generative reward model，再用偏好标签微调，并把 label smoothing 解释为正则化 pairwise-ranking loss，使奖励模型可泛化到回答排序、RLHF 与任务适配。
+- [RL-Obfuscation](https://arxiv.org/abs/2506.14261)：通过强化学习微调模型，使其在保持黑盒行为的同时规避 latent-space monitor，把 monitor evasion 本身变成模型侧安全风险。
+- [LingoLoop Attack: Trapping MLLMs via Linguistic Context and State Entrapment into Endless Loops](https://arxiv.org/abs/2506.14493)：利用词性级 EOS 行为和句式结构诱导 MLLM 生成冗长重复输出，形成推理资源耗尽攻击。
+- [Massive Supervised Fine-tuning Experiments Reveal How Data, Layer, and Training Factors Shape LLM Alignment Quality](https://arxiv.org/abs/2506.14681)：通过大规模 SFT 实验揭示数据、层选择和训练因素如何塑造 LLM 对齐质量。
+- [Winter Soldier: Backdooring Language Models at Pre-Training with Indirect Data Poisoning](https://arxiv.org/abs/2506.14913)：研究预训练阶段的间接数据投毒如何植入语言模型后门，使风险早于下游安全对齐和部署出现。
+- [Learning-Time Encoding Shapes Unlearning in LLMs](https://arxiv.org/abs/2506.15076)：说明事实知识在训练时的编码方式会影响后续 unlearning，尤其是 paraphrased learning 会改变事实被擦除的可靠性。
+- [The Safety Reminder: A Soft Prompt to Reactivate Delayed Safety Awareness in Vision-Language Models](https://arxiv.org/abs/2506.15734)：通过 A Soft Prompt to Reactivate Delayed Safety Awareness in Vision-Language Models 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](https://arxiv.org/abs/2506.15751)：为冻结 LLM 学习 adaptive system prompts，在不更新权重的情况下改变安全条件并提供参数高效护栏。
+- [FOCoOp: Enhancing Out-of-Distribution Robustness in Federated Prompt Learning for Vision-Language Models](https://arxiv.org/abs/2506.16218)：补充面向智能体安全的模型侧工作，重点是OOD-robust federated prompt learning for VLMs。
+- [Black-Box Privacy Attacks on Shared Representations in Multitask Learning](https://arxiv.org/abs/2506.16460)：证明 multitask learning 的共享表示即使在黑盒访问下也可能泄漏敏感任务信息，挑战表示共享的隐私假设。
+- [Adaptive RMU for SemEval-2025 Task 4](https://arxiv.org/abs/2506.16548)：将自适应 representation-misdirection unlearning 用于移除 LLM 事实知识，补充面向隐私与安全的分层敏感 unlearning 共享任务系统视角。
+- [The Hitchhiker's Guide to Efficient, End-to-End, and Tight DP Auditing](https://arxiv.org/abs/2506.16666)：提供端到端 differential privacy 审计流程，强调比形式化 accounting 更紧的经验隐私估计。
+- [ReasonGRM: Enhancing Generative Reward Models through Large Reasoning Models](https://arxiv.org/abs/2506.16712)：用大推理模型生成评估 rationale，并用 $R^\star$ 度量 reasoning path likelihood，以改进 generative reward model。
+- [MIST: Jailbreaking Black-box Large Language Models via Iterative Semantic Tuning](https://arxiv.org/abs/2506.16792)：通过 iterative semantic tuning 搜索黑盒 jailbreak prompt，在没有白盒梯度的情况下优化攻击措辞。
+- [Fine-Tuning Lowers Safety and Disrupts Evaluation Consistency](https://arxiv.org/abs/2506.17209)：显示普通任务微调也可能削弱安全性并扰乱评测一致性，补充实际微调漂移风险。
+- [Efficient and Stealthy Jailbreak Attacks via Adversarial Prompt Distillation from LLMs to SLMs](https://arxiv.org/abs/2506.17231)：把 LLM 的对抗 prompt 生成行为蒸馏到小模型中，使 jailbreak 搜索成本更低且更隐蔽。
+- [SUA: Stealthy Multimodal Large Language Model Unlearning Attack](https://arxiv.org/abs/2506.17265)： 研究针对多模态大模型 unlearning 的 stealthy attack，揭示安全遗忘方法的稳健性边界。
+- [Sleek / Step-by-Step Reasoning Attack](https://arxiv.org/abs/2506.17279)：通过 step-by-step reasoning prompt 恢复被“擦除”的知识，把 unlearning 鲁棒性缺口作为模型侧安全问题暴露出来。
+- [SAFEx: Analyzing Vulnerabilities of MoE-Based LLMs via Stable Safety-critical Expert Identification](https://arxiv.org/abs/2506.17368)：识别 MoE LLM 中稳定的 safety-critical experts，使 expert 级漏洞分析成为模型侧安全线索。
+- [Safe Pruning LoRA](https://arxiv.org/abs/2506.18931)：在 LoRA 适配中用距离引导的鲁棒信号剪除不安全方向，以保留安全对齐。
+- [Enhancing Security in LLM Applications: A Performance Evaluation of Early Detection Systems](https://arxiv.org/abs/2506.19109)：评估 LLM 应用中的 early detection systems，比较检测器在下游损害发生前标记恶意或高风险交互的能力。
+- [MSR-Align: Policy-Grounded Multimodal Alignment for Safety-Aware Reasoning in Vision-Language Models](https://arxiv.org/abs/2506.19257)：通过政策约束的多模态对齐提升视觉语言模型的安全感知推理，将安全对齐从纯文本拒答扩展到多模态推理场景。
+- [Persona Features Control Emergent Misalignment](https://arxiv.org/abs/2506.19823)：用模型差分与稀疏自编码器特征识别可预测并控制 emergent misalignment 的 persona 方向。
+- [Retrieval-Confused Generation is a Good Defender for Privacy Violation Attack of Large Language Models](https://arxiv.org/abs/2506.19889)：通过改写用户评论构造扰动数据库并检索最不相关替代数据，隐蔽混淆个人属性推断攻击，而不是直接暴露拒答策略。
+- [Q-resafe: Assessing Safety Risks and Quantization-aware Safety Patching for Quantized Large Language Models](https://arxiv.org/abs/2506.20251)：系统评估不同量化方法和校准数据对 LLM 安全性的削弱，并提出 quantization-aware safety patching。
+- [Leaner Training, Lower Leakage: Revisiting Memorization in LLM Fine-Tuning with LoRA](https://arxiv.org/abs/2506.20856)：重新评估 LoRA 微调中的记忆化，指出其泄漏趋势不同于全量微调和预训练，并使用更宽松的相似度记忆指标。
+- [ZKPROV: A Zero-Knowledge Approach to Dataset Provenance for Large Language Models](https://arxiv.org/abs/2506.20915)：一种面向 LLM 的零知识数据集溯源框架；核心思路是在不暴露敏感训练数据的情况下，为回答附加来自认证数据集的隐私保护证明。
+- [Towards Generalized and Stealthy Watermarking for Generative Code Models](https://arxiv.org/abs/2506.20926)：为生成式代码模型设计水印，目标是在保留代码质量的同时维持可检测性并减少明显风格痕迹。
+- [BiMark: Unbiased Multilayer Watermarking for Large Language Models](https://arxiv.org/abs/2506.21602)：提出 multilayer LLM 文本水印，在文本质量、模型无关检测和消息嵌入容量之间做平衡以支持来源追踪。
+- [CoreMark: Toward Robust and Universal Text Watermarking Technique](https://arxiv.org/abs/2506.23066)：提出面向 LLM 输出的鲁棒通用文本水印方案，目标是在不同模型家族和解码设置下进行 provenance detection。
+- [Why Settle for Mid: A Probabilistic Viewpoint to Spatial Relationship Alignment in Text-to-image Models](https://arxiv.org/abs/2506.23418)：用 probability-of-superiority 风格目标建模文生图中的对象空间关系，以提升组合式空间对齐。
+- [Adaptive Localization of Knowledge Negation for Continual LLM Unlearning](https://proceedings.mlr.press/v267/wuerkaixi25a.html)： 定位 knowledge negation 以支持 continual LLM unlearning，补充面向安全与隐私的持续遗忘机制。
+- [Comparing Bad Apples to Good Oranges Aligning Large Language Models via Joint Preference Optimization](https://doi.org/10.18653/v1/2025.findings-acl.39)：补充面向智能体安全的模型侧工作，重点是joint preference optimization for LLM alignment。
+- [Root Defense Strategies](https://doi.org/10.18653/v1/2025.acl-long.97)：在解码层面提升 LLM 安全性，补充推理时对齐与防御路线。
+- [Uncertainty Propagation on LLM Agent](https://doi.org/10.18653/v1/2025.acl-long.302)：研究不确定性如何在 LLM 智能体流程中传播，使动作决策前的不确定性处理更加可见。
+- [BadViM: Backdoor Attack against Vision Mamba](https://arxiv.org/abs/2507.00577)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [3DM: Distill, Dynamic Drop, and Merge for Debiasing Multi-modal Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.722)：通过蒸馏、动态丢弃与合并缓解多模态大语言模型偏见。
+- [HiddenDetect](https://doi.org/10.18653/v1/2025.acl-long.724)：通过监控 hidden state 检测针对 MLLM 的越狱攻击。核心思想：把内部表示作为不安全多模态回答生成前的预警信号。
+- [AGD: Adversarial Game Defense Against Jailbreak Attacks in Large Language Models](https://doi.org/10.18653/v1/2025.acl-long.851)：面向智能体安全与安全评测的模型、训练或算法工作。核心思想：以 Adversarial Game Defense Against Jailbreak Attacks in Large Language Models 为主要改进目标，作为 Model 条目的能力参考。
+- [Exploring LLMs' Ability to Spontaneously and Conditionally Modify Moral Expressions through Text Manipulation](https://doi.org/10.18653/v1/2025.acl-long.883)：测试 LLM 在文本改写中是否会改变道德表达，区分自发价值漂移与提示明确要求的条件式道德改写。
+- [Multilingual Text-to-Image Generation Magnifies Gender Stereotypes](https://doi.org/10.18653/v1/2025.acl-long.966)：衡量多语言文生图中的性别刻板印象放大效应，揭示语言选择会如何改变生成视觉内容的人口统计偏见。
+- [Small Changes, Big Impact: How Manipulating a Few Neurons Can Drastically Alter LLM Aggression](https://doi.org/10.18653/v1/2025.acl-long.1144)：补充与智能体与模型安全相关的模型侧方法。
+- [DIESEL: A Lightweight Inference-Time Safety Enhancement for Language Models](https://doi.org/10.18653/v1/2025.findings-acl.1223)：面向智能体安全与可信运行的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Towards Better Value Principles for Large Language Model Alignment: A Systematic Evaluation and Enhancement](https://doi.org/10.18653/v1/2025.acl-long.1408)：评测并增强大模型对齐中的价值原则。
+- [PII Jailbreaking via Activation Steering](https://arxiv.org/abs/2507.02332)：用 activation steering 揭示 LLM 中个人信息泄露风险。
+- [LLM Hypnosis: Exploiting User Feedback for Unauthorized Knowledge Injection to All Users](https://arxiv.org/abs/2507.02850)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Intrinsic Fingerprint of LLMs: Continue Training is NOT All You Need to Steal A Model!](https://arxiv.org/abs/2507.03014)： 指出持续训练可暴露模型内在指纹并被用于模型窃取，补充适配过程中的模型安全风险。
+- [When There Is No Decoder: Removing Watermarks from Stable Diffusion Models in a No-box Setting](https://arxiv.org/abs/2507.03646)：补充与智能体与模型安全相关的模型侧方法。
+- [Re-Emergent Misalignment](https://arxiv.org/abs/2507.03662)：说明窄域微调如何侵蚀 LLM 安全对齐，补充实用的微调漂移风险。
+- [Enhancing Robustness of LLM-Driven Multi-Agent Systems through Randomized Smoothing](https://arxiv.org/abs/2507.04105)：把 randomized smoothing 用于多智能体共识，在黑盒条件下通过两阶段自适应采样给出对抗影响与幻觉传播的概率鲁棒性保证。
+- [Attention Slipping](https://arxiv.org/abs/2507.04365)：从注意力行为解释 jailbreak 攻击与防御机制，为模型内部安全分析补充线索。
+- [Anomalous Decision Discovery using Inverse Reinforcement Learning](https://arxiv.org/abs/2507.04464)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [TokenShapley: Token Level Context Attribution with Shapley Value](https://arxiv.org/abs/2507.05261)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [ModelCitizens: Representing Community Voices in Online Safety](https://arxiv.org/abs/2507.05455)：通过 ModelCitizens 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Optimus: A Robust Defense Framework for Mitigating Toxicity while Fine-Tuning Conversational AI](https://arxiv.org/abs/2507.05660)：结合借用通用 LLM 安全对齐的免训练毒性分类、合成 healing data 与 DPO，在分类器有偏时仍降低不可信微调注入的毒性。
+- [Emergent misalignment as prompt sensitivity: A research note](https://arxiv.org/abs/2507.06253)：把涌现式错配研究为提示敏感性问题。
+- [Reward Models Can Improve Themselves: Reward-Guided Adversarial Failure Mode Discovery for Robust Reward Modeling](https://arxiv.org/abs/2507.06419)：提出 REFORM，让奖励模型用 reward-guided controlled decoding 找到被误打高分的对抗回答，再用这些样本补训以提升鲁棒性。
+- [Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning](https://arxiv.org/abs/2507.07139)：用多模态引导攻击图像生成模型的 unlearning，检验安全移除后的视觉线索是否还能恢复本应被遗忘的概念。
+- [Lightweight Safety Guardrails via Synthetic Data and RL-guided Adversarial Training](https://arxiv.org/abs/2507.08284)：用高保真合成审核数据和 RL 引导的对抗样本生成训练小型安全分类器，使轻量 guardrail 在内容审核和对抗攻击下更稳健。
+- [Learning Robust Motion Skills via Critical Adversarial Attacks for Humanoid Robots](https://arxiv.org/abs/2507.08303)：补充与智能体与模型安全相关的模型侧方法。
+- [PRISM: Reducing Spurious Implicit Biases in Vision-Language Models with LLM-Guided Embedding Projection](https://arxiv.org/abs/2507.08979)：用 LLM 生成含伪相关的场景描述，再通过对比式投影损失去偏 CLIP 类嵌入，无需预设偏见类别或额外数据。
+- [Enhancing RLHF with Human Gaze Modeling](https://arxiv.org/abs/2507.09016)：把人类 gaze 信号加入 RLHF，构建 gaze-aware reward model 并分配 token 级稀疏奖励，从而加快策略优化。
+- [CALMA: A Process for Deriving Context-aligned Axes for Language Model Alignment](https://arxiv.org/abs/2507.09060)：围绕 CALMA: A Process for Deriving Context-aligned Axes for Language Model Alignment 补充智能体安全相关的模型侧方法、训练信号或对齐机制。
+- [Adversarial Activation Patching: A Framework for Detecting and Mitigating Emergent Deception in Safety-Aligned Transformers](https://arxiv.org/abs/2507.09406)：用 activation-level patching 检测并缓解安全对齐 Transformer 中的欺骗行为，属于模型可解释性和模型安全方法。
+- [Tiny Reward Models](https://arxiv.org/abs/2507.09973)：探索小型奖励模型作为对齐与偏好学习的轻量评估器。
+- [3DGAA: Realistic and Robust 3D Gaussian-based Adversarial Attack for Autonomous Driving](https://arxiv.org/abs/2507.09993)：补充与智能体与模型安全相关的模型侧方法。
+- [How to Protect Models against Adversarial Unlearning?](https://arxiv.org/abs/2507.10886)：研究模型面向对抗性遗忘攻击的防护方法。
+- [Bridging the Gap in Vision Language Models in Identifying Unsafe Concepts Across Modalities](https://arxiv.org/abs/2507.11155)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Jailbreak-Tuning](https://arxiv.org/abs/2507.11630)：表明模型可以高效学习越狱易感性。核心思想：研究调优如何改变安全边界，把越狱脆弱性视为模型侧训练风险。
+- [LLMs Encode Harmfulness and Refusal Separately](https://arxiv.org/abs/2507.11878)：区分有害性与拒答表征，澄清模型侧安全机制。
+- [Watch, Listen, Understand, Mislead: Tri-Modal Adversarial Attacks on Short Videos for Content Appropriateness Evaluation](https://arxiv.org/abs/2507.11968)：通过 Tri-modal Adversarial Attacks on Short Videos for Content Appropriateness Evaluation 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [VoxATtack: A Multimodal Attack on Voice Anonymization Systems](https://arxiv.org/abs/2507.12081)：通过 VoxATtack 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [PrefPalette: Personalized Preference Modeling with Latent Attributes](https://arxiv.org/abs/2507.13541)：用反事实属性合成和 attention-based community weighting 将个性化偏好拆成潜在属性，使偏好预测更可解释并反映社群价值差异。
+- [GIFT: Gradient-aware Immunization of diffusion models against malicious Fine-Tuning with safe concepts retention](https://arxiv.org/abs/2507.13598)：将扩散模型免疫建成双层优化，用表征加噪削弱有害概念，同时在恶意微调下保留安全生成能力。
+- [Bridging dual knowledge graphs for multi-hop question answering in construction safety](https://arxiv.org/abs/2507.13625)：通过 Bridging Dual Knowledge Graphs for Multi-Hop Question Answering in Construction Safety 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Safety Certification in the Latent space using Control Barrier Functions and World Models](https://arxiv.org/abs/2507.13871)：通过 Control Barrier Functions and World Models 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Conversational-AI Persuasion Levers](https://arxiv.org/abs/2507.13919)：衡量后训练与提示方法如何改变对话式 AI 的政治说服力与事实性。
+- [Hierarchical Multi-Agent Reinforcement Learning with Control Barrier Functions for Safety-Critical Autonomous Systems](https://arxiv.org/abs/2507.14850)：将 Control Barrier Functions for Safety-Critical Autonomous Systems 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [LionGuard 2: Building Lightweight, Data-Efficient & Localised Multilingual Content Moderators](https://arxiv.org/abs/2507.15339)：构建轻量、本地化、多语内容审核模型。
+- [When LLMs Copy to Think: Uncovering Copy-Guided Attacks in Reasoning LLMs](https://arxiv.org/abs/2507.16773)：补充与智能体与模型安全相关的模型侧方法。
+- [CAFT](https://arxiv.org/abs/2507.16795)：用 concept-ablation fine-tuning 控制不期望的 out-of-distribution generalization，包括 emergent misalignment，而不需要加入目标分布数据。
+- [SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law](https://arxiv.org/abs/2507.18576)：在 AI-45 law 下协同提升安全性与智能，补充 reasoning system 的安全对齐模型条目。
+- [Jailbreaking Large Language Diffusion Models](https://arxiv.org/abs/2507.19227)：研究基于扩散的文本生成中的隐藏安全缺陷，为非自回归语言模型补充越狱风险线索。
+- [Customize Multi-modal RAI Guardrails with Precedent-based predictions](https://arxiv.org/abs/2507.20503)：让多模态护栏根据相似先例的 reasoning process 做判断，使用户自定义图像安全政策能以更少重训适配不断变化的标准。
+- [Reminiscence Attack on Residuals: Exploiting Approximate Machine Unlearning for Privacy](https://arxiv.org/abs/2507.20573)：通过 Reminiscence Attack on Residuals 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Security Tensors](https://arxiv.org/abs/2507.20994)：用 cross-modal safety representation 把 text-aligned safety 扩展到 LVLM 的视觉侧。
+- [Self-Degraded Defense](https://arxiv.org/abs/2507.21182)：通过让有害提示微调破坏通用能力，防御对已对齐开源 LLM 的恶意微调。
+- [Self-Aware Safety Augmentation: Leveraging Internal Semantic Understanding to Enhance Safety in Vision-Language Models](https://arxiv.org/abs/2507.21637)：通过 Leveraging Internal Semantic Understanding to Enhance Safety in Vision-Language Models 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Anyone Can Jailbreak](https://arxiv.org/abs/2507.21820)：研究面向 LLM 和文本到图像系统的提示词越狱攻击，把安全分析扩展到非纯文本模型。
+- [ZIUM: Zero-Shot Intent-Aware Adversarial Attack on Unlearned Models](https://arxiv.org/abs/2507.21985)：通过 ZIUM 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Prompt Optimization and Evaluation for LLM Automated Red Teaming](https://arxiv.org/abs/2507.22133)：用 Prompt Optimization and Evaluation for LLM Automated Red Teaming 进行红队测试，关注多样化危害发现和护栏失效模式。
+- [Towards Privacy-preserving Photorealistic Self-avatars in Mixed Reality](https://arxiv.org/abs/2507.22153)：在身份编码生成模型的特征空间中扰动头像身份，保留人口统计外观但降低混合现实自头像的面部生物识别泄漏。
+- [Exploiting Synergistic Cognitive Biases to Bypass Safety in LLMs](https://arxiv.org/abs/2507.22564)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [How Quantization Impacts Privacy Risk on LLMs for Code?](https://arxiv.org/abs/2508.00128)：通过 How Quantization Impacts Privacy Risk on LLMs for Code? 分析隐私泄漏或保护，关注成员推断、数据抽取或敏感信息暴露。
+- [Wukong Framework for Not Safe For Work Detection in Text-to-Image Systems](https://arxiv.org/abs/2508.00591)：在扩散早期去噪阶段复用 U-Net cross-attention 特征检测 NSFW 输出，相比生成后图像过滤降低延迟。
+- [LeakSealer: A Semisupervised Defense for LLMs Against Prompt Injection and Leakage Attacks](https://arxiv.org/abs/2508.00602)：补充智能体安全的 Model 条目，重点是《LeakSealer: A Semisupervised Defense for LLMs Against Prompt Injection and Leakage Attacks》。
+- [HoneyImage: Verifiable, Harmless, and Stealthy Dataset Ownership Verification for Image Models](https://arxiv.org/abs/2508.00892)：提出关于 HoneyImage: Verifiable, Harmless, and Stealthy Dataset Ownership Verification for Image Models 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [Towards Evaluation for Real-World LLM Unlearning](https://arxiv.org/abs/2508.01324)：提出关于 Towards Evaluation for Real-World LLM Unlearning 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Simulated Ensemble VLM Jailbreak Attack](https://arxiv.org/abs/2508.01741)：通过 simulated ensemble 在微调后的视觉语言模型间迁移 jailbreak。
+- [When Truth Is Overridden](https://arxiv.org/abs/2508.02087)：研究 large language models 中 sycophancy 的 internal origins。
+- [Knowing When Not to Answer: Lightweight KB-Aligned OOD Detection for Safe RAG](https://arxiv.org/abs/2508.02296)：提出关于 Knowing When Not to Answer: Lightweight KB-Aligned OOD Detection for Safe RAG 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [PoseGuard: Pose-Guided Generation with Safety Guardrails](https://arxiv.org/abs/2508.02476)：用 LoRA 式双目标训练对齐 pose-guided 视频生成，遇到恶意姿态时降低输出质量，同时保持良性姿态的保真度。
+- [Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations](https://arxiv.org/abs/2508.03550)：提出 LAGER，在冻结 LLM-as-judge 骨干的情况下聚合跨层 score-token logits，使逐点评分更贴近人类评价。
+- [PLA: Prompt Learning Attack Against Text-To-Image Generative Models](https://arxiv.org/abs/2508.03696)：在黑盒文生图场景中用多模态相似度近似梯度来学习对抗提示，绕过 prompt filter 和后置 safety checker 生成 NSFW 内容。
+- [Large reasoning models are autonomous jailbreak agents](https://arxiv.org/abs/2508.04039)：显示大型推理模型仅凭系统提示即可自主规划并执行多轮越狱，对多个目标模型取得高攻击成功率。
+- [Prompt Injection Vulnerability of Consensus Generating Applications in Digital Democracy](https://arxiv.org/abs/2508.04281)：提出或分析基于 Prompt Injection Vulnerability of Consensus Generating Applications in Digital Democracy 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Chemist Eye: a visual language model-powered system for safety monitoring and robot decision-making in self-driving laboratories](https://arxiv.org/abs/2508.05148)：将 A Visual Language Model-Powered System for Safety Monitoring and Robot Decision-Making in Self-Driving Laboratories 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [Semantic and Structural Analysis of Implicit Biases](https://arxiv.org/abs/2508.06155)：通过语义与结构信号分析 LLM 隐性偏见，为偏见安全补充可解释诊断方法。
+- [Many-Turn Jailbreaking](https://arxiv.org/abs/2508.06755)：定义多轮越狱并构建 MTJ-Bench，检验 LLM 在首次越狱后是否会继续回答后续不安全细节。
+- [Membership Inference Attacks With False Discovery Rate Control](https://arxiv.org/abs/2508.07066)：提出带误发现率控制的成员推断攻击，用于分析隐私风险。
+- [Freeze and Reveal: Exposing Modality Bias in Vision-Language Models](https://arxiv.org/abs/2508.07432)：补充面向智能体安全的模型侧工作，重点是modality-bias exposure in VLMs。
+- [Safe Semantics, Unsafe Interpretations: Tackling Implicit Reasoning Safety in Large Vision-Language Models](https://arxiv.org/abs/2508.08926)：通过 Tackling Implicit Reasoning Safety in Large Vision-Language Models 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [MADPromptS: Unlocking Zero-Shot Morphing Attack Detection with Multiple Prompt Aggregation](https://arxiv.org/abs/2508.08939)：通过 MADPromptS 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [From Hard Refusals to Safe-Completions](https://arxiv.org/abs/2508.09224)：通过 Toward Output-Centric Safety Training 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [On Negative-aware Preference Optimization for Recommendation](https://arxiv.org/abs/2508.09653)：提出关于 On Negative-aware Preference Optimization for Recommendation 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Latent Fusion Jailbreak](https://arxiv.org/abs/2508.10029)：混合有害与无害潜在表示来诱导不安全 LLM 输出，暴露模型内部 jailbreak 路线。
+- [Context Misleads LLMs: The Role of Context Filtering in Maintaining Safe Alignment of LLMs](https://arxiv.org/abs/2508.10031)：在生成前过滤不可信上下文并恢复用户主意图，无需微调被保护 LLM 即降低越狱成功率并保持 helpfulness。
+- [The Cost of Thinking: Increased Jailbreak Risk in Large Language Models](https://arxiv.org/abs/2508.10032)：补充与智能体与模型安全相关的模型侧方法。
+- [Survey-to-Behavior: Downstream Alignment of Human Values in LLMs via Survey Questions](https://arxiv.org/abs/2508.11414)：补充通过调查问题对齐大模型下游价值行为的方法。
+- [SIGN: Safety-Aware Image-Goal Navigation for Autonomous Drones via Reinforcement Learning](https://arxiv.org/abs/2508.12394)：将 SIGN 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [Rethinking Safety in LLM Fine-tuning: An Optimization Perspective](https://arxiv.org/abs/2508.12531)：从优化角度解释和缓解 LLM 微调中的安全退化。
+- [Prompt-Induced Linguistic Fingerprints for LLM-Generated Fake News Detection](https://arxiv.org/abs/2508.12632)：提出 LIFE，通过重构词级概率分布捕捉 prompt-induced linguistic fingerprints，用于检测 LLM 生成假新闻。
+- [Universal and Transferable Adversarial Attack on Large Language Models Using Exponentiated Gradient Descent](https://arxiv.org/abs/2508.14853)：补充与智能体与模型安全相关的模型侧方法。
+- [Efficient Switchable Safety Control in LLMs via Magic-Token-Guided Co-Training](https://arxiv.org/abs/2508.14904)：用 magic-token 引导协同训练实现 LLM 安全控制切换。
+- [Paired-Sampling Contrastive Framework for Joint Physical-Digital Face Attack Detection](https://arxiv.org/abs/2508.14980)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Reliable Unlearning Harmful Information in LLMs with Metamorphosis Representation Projection](https://arxiv.org/abs/2508.15449)：用 Metamorphosis Representation Projection 在特定隐藏层空间中不可逆地投影有害信息，提高连续遗忘与抗重新学习攻击能力。
+- [Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data](https://arxiv.org/abs/2508.15793)：补充与智能体与模型安全相关的模型侧方法。
+- [Who's Asking? Investigating Bias Through the Lens of Disability-Framed Queries in LLMs](https://arxiv.org/abs/2508.15831)：审计八个指令微调 LLM 的 disability-framed prompts，发现模型会从残障线索推断无依据的人口属性并放大交叉刻板印象。
+- [Self-Disguise Attack: Induce the LLM to disguise itself for AIGT detection evasion](https://arxiv.org/abs/2508.15848)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [From Confidence to Collapse in LLM Factual Robustness](https://arxiv.org/abs/2508.16267)：提出 Factual Robustness Score，把 token 分布熵和温度缩放敏感性结合起来，衡量事实知识在解码扰动下的稳定性。
+- [ConceptGuard](https://arxiv.org/abs/2508.16325)：用稀疏可解释越狱概念构建神经符号 guardrail，把可解释性、越狱防御与安全实用性控制连接起来。
+- [Retrieval-Augmented Defense: Adaptive and Controllable Jailbreak Prevention for Large Language Models](https://arxiv.org/abs/2508.16406)：提出 Retrieval-Augmented Defense，用已知越狱样本库推断隐藏有害请求和攻击策略，并支持免训练更新新攻击。
+- [The AI Model Risk Catalog: What Developers and Researchers Miss About Real-World AI Harms](https://arxiv.org/abs/2508.16672)：通过 What Developers and Researchers Miss About Real-World AI Harms 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Module-Aware Parameter-Efficient Machine Unlearning on Transformers](https://arxiv.org/abs/2508.17233)：提出 MAPE-Unlearn，用可学习掩码定位 Transformer heads 和 filters 中的关键影响参数，实现模块感知的参数高效遗忘。
+- [Less Is More? Examining Fairness in Pruned Large Language Models for Summarising Opinions](https://arxiv.org/abs/2508.17610)：补充与智能体与模型安全相关的模型侧方法。
+- [Speculative Safety-Aware Decoding](https://arxiv.org/abs/2508.17739)：将安全约束纳入 speculative decoding，使推理加速同时考虑对齐和不安全输出风险。
+- [Membership Inference Attacks on LLM-based Recommender Systems](https://arxiv.org/abs/2508.18665)：设计 similarity、memorization、inquiry 和 poisoning 成员推断攻击，判断 LLM 推荐系统 prompt 是否包含用户历史交互。
+- [SegReConcat: A Data Augmentation Method for Voice Anonymization Attack](https://arxiv.org/abs/2508.18907)：补充与智能体与模型安全相关的模型侧方法。
+- [The Double-edged Sword of LLM-based Data Reconstruction: Understanding and Mitigating Contextual Vulnerability in Word-level Differential Privacy Text Sanitization](https://arxiv.org/abs/2508.18976)：通过 Understanding and Mitigating Contextual Vulnerability in Word-level Differential Privacy Text Sanitization 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Stand on The Shoulders of Giants: Building JailExpert from Previous Attack Experience](https://arxiv.org/abs/2508.19292)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Caught in the Act](https://arxiv.org/abs/2508.19505)：用机制性方法检测 deception，为隐藏式不当行为补充模型侧监控器。
+- [Safety Alignment Should Be Made More Than Just A Few Attention Heads](https://arxiv.org/abs/2508.19697)：通过 Safety Alignment Should Be Made More Than Just A Few Attention Heads 优化安全对齐，关注偏好信号、安全正则化或奖励黑客风险。
+- [Pre-Synthesizing Jailbreak-like Instructions](https://arxiv.org/abs/2508.20038)：在攻击到来前预生成类似越狱的指令，以增强 LLM 防护栏。
+- [Subversive Alignment Injection](https://arxiv.org/abs/2508.20333)：展示攻击者可利用 alignment 机制植入定向拒答或审查，同时保持无关任务响应。
+- [Governable AI](https://arxiv.org/abs/2508.20411)：研究极端威胁模型下的可证明安全机制，为高级 AI 系统补充形式化安全控制路线。
+- [Leveraging Semantic Triples for Private Document Generation with Local Differential Privacy Guarantees](https://arxiv.org/abs/2508.20736)：补充与智能体与模型安全相关的模型侧方法。
+- [From Law to Gherkin: A Human-Centred Quasi-Experiment on the Quality of LLM-Generated Behavioural Specifications from Food-Safety Regulations](https://arxiv.org/abs/2508.20744)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Unleashing Uncertainty: Efficient Machine Unlearning for Generative AI](https://arxiv.org/abs/2508.20773)：提出扩散模型遗忘方法 SAFEMax，在早期去噪中最大化熵，使禁止类别趋向高斯噪声，同时控制遗忘与保留权衡。
+- [Improving Aviation Safety Analysis: Automated HFACS Classification Using Reinforcement Learning with Group Relative Policy Optimization](https://arxiv.org/abs/2508.21201)：通过 Reinforcement Learning with Group Relative Policy Optimization 优化安全对齐，关注偏好信号、安全正则化或奖励黑客风险。
+- [Improving Fisher Information Estimation and Efficiency for LoRA-based LLM Unlearning](https://arxiv.org/abs/2508.21300)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [AEGIS : Automated Co-Evolutionary Framework for Guarding Prompt Injections Schema](https://arxiv.org/abs/2509.00088)：补充与智能体与模型安全相关的模型侧方法。
+- [The Resurgence of GCG Adversarial Attacks on Large Language Models](https://arxiv.org/abs/2509.00391)：在 Qwen、Llama 和 GPT-OSS 上重新评估 GCG 与退火版 T-GCG，显示模型规模、语义判别和代码推理提示会显著改变越狱成功率。
+- [Localizing and Mitigating Memorization in Image Autoregressive Models](https://arxiv.org/abs/2509.00488)：补充与智能体与模型安全相关的模型侧方法。
+- [Confident, Calibrated, or Complicit: Safety Alignment and Ideological Bias in LLM Hate Speech Detection](https://arxiv.org/abs/2509.00673)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [LoRA-FP](https://arxiv.org/abs/2509.00820)：将指纹无缝迁移到下游 LoRA 适配模型，展示所有权标记如何穿过参数高效微调。
+- [PREE](https://arxiv.org/abs/2509.00918)：用知识前缀增强编辑大语言模型指纹，揭示部署后所有权标记如何被适配或削弱。
+- [RAMS: Residual-based adversarial-gradient moving sample method for scientific machine learning in solving partial differential equations](https://arxiv.org/abs/2509.01234)：沿对抗梯度方向移动采样点以最大化 PDE residual，提高 PINN 与 neural operator 训练中的自适应采样效率。
+- [Unraveling LLM Jailbreaks Through Safety Knowledge Neurons](https://arxiv.org/abs/2509.01631)：从安全相关知识神经元解释越狱行为，为 Agent Safety 的模型侧条目补充一种分析安全约束为何会在对抗提示下失效的内部诊断视角。
+- [EverTracer](https://arxiv.org/abs/2509.03058)：利用隐蔽概率指纹追踪被盗大语言模型，扩展普通水印之外的模型来源审计。
+- [From Evaluation to Defense: Constructing Persistent Edit-Based Fingerprints for Large Language Models](https://arxiv.org/abs/2509.03122)：提出关于 From Evaluation to Defense: Constructing Persistent Edit-Based Fingerprints for Large Language Models 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [False Sense of Security](https://arxiv.org/abs/2509.03888)：分析 probing-based malicious-input detector 为何难以泛化，澄清模型侧安全监控器的局限。
+- [NeuroBreak: Unveil Internal Jailbreak Mechanisms in Large Language Models](https://arxiv.org/abs/2509.03985)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment](https://arxiv.org/abs/2509.04445)：补充面向智能体安全的模型侧工作，重点是cognitively faithful decision models for alignment。
+- [VaccineRAG: Boosting Multimodal Large Language Models' Immunity to Harmful RAG Samples](https://arxiv.org/abs/2509.04502)：构建 CoT 增强的多模态 RAG 数据集，并用 Partial-GRPO 训练 MLLM 区分有害或无关检索样本。
+- [Behavioral Fingerprinting of Large Language Models](https://arxiv.org/abs/2509.04504)：用诊断提示和 LLM-as-judge 评分建立 LLM 行为指纹，揭示相近能力模型在 sycophancy 和语义鲁棒性上的差异。
+- [Robust Experts: the Effect of Adversarial Training on CNNs with Sparse Mixture-of-Experts Layers](https://arxiv.org/abs/2509.05086)：研究对抗训练下的稀疏 MoE 层，发现深层 MoE 替换会形成对 PGD 和 AutoPGD 更鲁棒的专家子路径。
+- [Dual-Branch Convolutional Framework for Spatial and Frequency-Based Image Forgery Detection](https://arxiv.org/abs/2509.05281)：结合空间分支与频域分支做图像伪造检测，补充与滥用检测相关的媒体取证模型。
+- [The Token Tax: Systematic Bias in Multilingual Tokenization](https://arxiv.org/abs/2509.05486)：在 AfriMMLU 的 16 种非洲语言上显示 token fertility 会系统性预测准确率下降和计算成本上升，暴露多语言 tokenizer 的结构性公平风险。
+- [SuMa: A Subspace Mapping Approach for Robust and Effective Concept Erasure in Text-to-Image Diffusion Models](https://arxiv.org/abs/2509.05625)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [The Measure of Deception: An Analysis of Data Forging in Machine Unlearning](https://arxiv.org/abs/2509.05865)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [DCMI: A Differential Calibration Membership Inference Attack Against Retrieval-Augmented Generation](https://arxiv.org/abs/2509.06026)：利用成员与非成员检索文档在查询扰动下的敏感度差异做差分校准，降低非成员文档干扰以增强 RAG 成员推断攻击。
+- [Embedding Poisoning](https://arxiv.org/abs/2509.06338)：通过 embedding semantic shift 绕过安全对齐，补充 embedding-level poisoning attack 路线。
+- [CARE](https://arxiv.org/abs/2509.06982)：通过回滚和内省干预在解码时进行安全对齐。
+- [FedAPT: Federated Adversarial Prompt Tuning for Vision-Language Models](https://arxiv.org/abs/2509.06992)：补充面向智能体安全的模型侧工作，重点是federated adversarial prompt tuning for VLMs。
+- [ArGen: Auto-Regulation of Generative AI via GRPO and Policy-as-Code](https://arxiv.org/abs/2509.07006)：通过 GRPO 与 policy-as-code 奖励评分使 LLM 对齐机器可读政策。核心思路是把原则化自动奖励和 OPA 风格治理层结合，使合规约束可训练、可审计。
+- [Semantic Watermarking Reinvented: Enhancing Robustness and Generation Quality with Fourier Integrity](https://arxiv.org/abs/2509.07647)：Semantic Watermarking Reinvented 补充安全模型方法，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [Biased Tales: Cultural and Topic Bias in Generating Children's Stories](https://arxiv.org/abs/2509.07908)：构建 Biased Tales 数据集衡量 LLM 生成儿童故事中的文化与性别刻板印象，包括女孩外貌描写和非西方儿童 heritage framing。
+- [So let's replace this phrase with insult... Lessons learned from generation of toxic texts with LLMs](https://arxiv.org/abs/2509.08358)：显示 activation-patched Llama 与 Qwen 生成的合成毒性文本因 insult 词汇多样性不足，训练 detoxification 模型时显著弱于人工数据。
+- [Acquiescence Bias in Large Language Models](https://arxiv.org/abs/2509.08480)：补充与智能体与模型安全相关的模型侧方法。
+- [Bias in the Loop: How Humans Evaluate AI-Generated Suggestions](https://arxiv.org/abs/2509.08514)：通过 2,784 人随机实验研究人类评估 AI 建议，发现纠错负担和亲 AI 态度会提高对错误建议的过度依赖。
+- [Improving LLM Safety and Helpfulness using SFT and DPO: A Study on OPT-350M](https://arxiv.org/abs/2509.09055)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Character-Level Perturbations Disrupt LLM Watermarks](https://arxiv.org/abs/2509.09112)：通过 Character-Level Perturbations Disrupt LLM Watermarks 研究水印或来源控制，关注归因、可检测性、鲁棒性和质量权衡。
+- [CTCC](https://arxiv.org/abs/2509.09703)：通过跨轮上下文相关后门为大语言模型植入指纹，补充多轮所有权验证与抗篡改方向。
+- [Images in Motion?: A First Look Into Video Leakage in Collaborative Deep Learning](https://arxiv.org/abs/2509.09742)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [The Coding Limits of Robust Watermarking for Generative Models](https://arxiv.org/abs/2509.10577)：通过 The Coding Limits of Robust Watermarking for Generative Models 研究水印或来源控制，关注归因、可检测性、鲁棒性和质量权衡。
+- [Learning to Optimize Multi-Objective Alignment Through Dynamic Reward Weighting](https://arxiv.org/abs/2509.11452)：用自适应 reward weight 优化多目标 LLM 对齐，覆盖非凸权衡。
+- [Towards Inclusive Toxic Content Moderation: Addressing Vulnerabilities to Adversarial Attacks in Toxicity Classifiers Tackling LLM-generated Content](https://arxiv.org/abs/2509.12672)：用机制可解释性定位 BERT 与 RoBERTa 毒性分类器中的脆弱 circuit，并通过抑制这些 circuit 提升对 LLM 生成文本和少数群体相关攻击的鲁棒性。
+- [Forget What's Sensitive, Remember What Matters: Token-Level Differential Privacy in Memory Sculpting for Continual Learning](https://arxiv.org/abs/2509.12958)：提出 PeCL，将 token 级动态差分隐私与 memory sculpting 结合，使持续学习模型遗忘敏感 token 并保留任务不变知识。
+- [CogniAlign: Survivability-Grounded Multi-Agent Moral Reasoning for Safe and Transparent AI](https://arxiv.org/abs/2509.13356)：评估 Survivability-Grounded Multi-Agent Moral Reasoning for Safe and Transparent AI，作为安全相关攻击面、训练信号、评测协议或风险通道。
+- [Perception-Integrated Safety Critical Control via Analytic Collision Cone Barrier Functions on 3D Gaussian Splatting](https://arxiv.org/abs/2509.14421)：通过 Analytic Collision Cone Barrier Functions on 3D Gaussian Splatting 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Enhancing Retrieval Augmentation via Adversarial Collaboration](https://arxiv.org/abs/2509.14750)：补充与智能体与模型安全相关的模型侧方法。
+- [Designing Latent Safety Filters using Pre-Trained Vision Models](https://arxiv.org/abs/2509.14758)：通过 Pre-Trained Vision Models 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Robust Vision-Language Models via Tensor Decomposition: A Defense Against Adversarial Attacks](https://arxiv.org/abs/2509.16163)：对 VLM 视觉编码器表示做即插即用 Tensor Train 分解与重构，在不重新训练的情况下过滤对抗噪声，并在 COCO 和 Flickr30K 上恢复 CLIP 检索准确率。
+- [DecipherGuard: Understanding and Deciphering Jailbreak Prompts for a Safer Deployment of Intelligent Software Systems](https://arxiv.org/abs/2509.16870)：提出关于 DecipherGuard: Understanding and Deciphering Jailbreak Prompts for a Safer Deployment of Intelligent Software Systems 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [Safe-SAIL](https://arxiv.org/abs/2509.18127)：构建面向安全关键 LLM 特征的 sparse-autoencoder interpretation framework，降低解释成本并映射 activation 中的细粒度安全概念。
+- [Semantic Representation Attack against Aligned Large Language Models](https://arxiv.org/abs/2509.19360)：用语义表示目标替代固定字符串越狱目标，并通过启发式搜索生成简洁自然、但保留有害含义的对抗提示。
+- [Identifying and Addressing User-level Security Concerns in Smart Homes Using “Smaller” LLMs](https://arxiv.org/abs/2509.19485)：用较小 LLM 识别并处理智能家居中的用户级安全顾虑，关注家庭威胁发现和缓解。
+- [Formal Safety Verification and Refinement for Generative Motion Planners via Certified Local Stabilization](https://arxiv.org/abs/2509.19688)：通过 Certified Local Stabilization 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [bi-GRPO: Bidirectional Optimization for Jailbreak Backdoor Injection on LLMs](https://arxiv.org/abs/2509.19775)：研究通过双向 GRPO 注入越狱后门，为 RL 调优语言模型补充模型侧安全风险线索。
+- [Voice Privacy Preservation with Multiple Random Orthogonal Secret Keys: Attack Resistance Analysis](https://arxiv.org/abs/2509.19906)：通过 Attack Resistance Analysis 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Beyond Sharp Minima: Robust LLM Unlearning via Feedback-Guided Multi-Point Optimization](https://arxiv.org/abs/2509.20230)： 用 feedback-guided multi-point optimization 提升 LLM unlearning 稳健性，补充面向安全遗忘的模型方法。
+- [Poisoning Prompt-Guided Sampling in Video Large Language Models](https://arxiv.org/abs/2509.20851)：提出 PoisonVID 黑盒攻击，通过闭环优化通用扰动压低有害帧相关性分数，从而破坏 VideoLLM 的 prompt-guided sampling。
+- [RLCracker](https://arxiv.org/abs/2509.20924)：用自适应强化学习攻击暴露 LLM 水印脆弱性。
+- [SafeSteer: Adaptive Subspace Steering for Efficient Jailbreak Defense in Vision-Language Models](https://arxiv.org/abs/2509.21400)：用 SVD 构建低维 safety subspace，在一次推理中 steering VLM，移除越狱信号且无需更新权重。
+- [Bidirectional Intention Inference Enhances LLMs' Defense Against Multi-Turn Jailbreak Attacks](https://arxiv.org/abs/2509.22732)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Painless Activation Steering: An Automated, Lightweight Approach for Post-Training Large Language Models](https://arxiv.org/abs/2509.22739)：Painless Activation Steering 自动化轻量激活引导，以实现可控的后训练行为调整。
+- [Safety Routing Alignment](https://arxiv.org/abs/2509.22745)：通过对 MoE 路由机制进行安全对齐来抵御有害微调，而不是只依赖外置过滤器。
+- [What If Moderation Didn’t Mean Suppression? A Case for Personalized Content Transformation](https://arxiv.org/abs/2509.22861)：提出个性化内容转换作为替代性内容审核策略。
+- [GuardNet: Graph-Attention Filtering for Jailbreak Defense in Large Language Models](https://arxiv.org/abs/2509.23037)：用图注意力过滤进行越狱防御。
+- [Risk Profiling and Modulation for LLMs](https://arxiv.org/abs/2509.23058)： 刻画并调制 LLM 风险偏好，比较提示、上下文学习与后训练在行为对齐上的作用。
+- [StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data](https://arxiv.org/abs/2509.23594)：用 LLM 生成合成查询并结合 disagreement-based semi-supervised learning，从公共基座和少量查询中抽取 LoRA 适配模型功能。
+- [Distillation-Conditional Backdoor Attack](https://arxiv.org/abs/2509.23871)：研究由 model distillation 条件触发的 backdoors，暴露压缩与迁移流程中的安全风险。
+- [Stable Forgetting: Bounded Parameter-Efficient Unlearning in LLMs](https://arxiv.org/abs/2509.24166)：用有界 MLP adapter 函数稳定 LoRA 式基础模型遗忘，避免 forget-retain 优化中梯度上升导致权重发散。
+- [AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](https://arxiv.org/abs/2509.24269)：用 adversarial chain-of-thought tuning 提升大型 reasoning models 的鲁棒安全对齐。
 - [GSPR](https://arxiv.org/abs/2509.24418)：将 LLM 安全护栏训练为可泛化的策略推理器，使拒答与安全判断能跨不同安全分类体系迁移。
+- [TokenSwap: Backdoor Attack on the Compositional Understanding of Large Vision-Language Models](https://arxiv.org/abs/2509.24566)：通过交换对象关系 token 破坏 LVLM 的组合理解，而非强制固定目标字符串，补充更隐蔽的多模态后门威胁模型。
+- [Inducing Dyslexia in Vision Language Models](https://arxiv.org/abs/2509.24597)：补充面向智能体安全的模型侧工作，重点是dyslexia-style robustness probe for VLMs。
+- [VISOR++ Visual Steering](https://arxiv.org/abs/2509.25533)：通过 universal visual inputs 控制大型视觉语言模型行为，补充闭源 VLM 安全 steering 路线。
+- [ASGuard](https://arxiv.org/abs/2509.25843)：对与越狱相关的 attention heads 做 activation-scaling intervention，缓解 tense-changing attack 等定向安全绕过。
+- [SafeBehavior: Simulating Human-Like Multistage Reasoning to Mitigate Jailbreak Attacks in Large Language Models](https://arxiv.org/abs/2509.26345)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Direct Token Optimization: A Self-contained Approach to Large Language Model Unlearning](https://arxiv.org/abs/2510.00125)： 提出 direct token optimization 作为自包含的 LLM unlearning 方法。
+- [Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerability](https://arxiv.org/abs/2510.00565)：该工作发现扩散语言模型中的 priming 漏洞，并提出缓解方法。
+- [Eliciting Secret Knowledge from Language Models](https://arxiv.org/abs/2510.01070)：研究诱导隐藏或潜在模型知识的方法，使能力诱导本身成为安全相关的模型行为。
+- [GemDetox at TextDetox CLEF 2025: Enhancing a Massively Multilingual Model for Text Detoxification on Low-resource Languages](https://arxiv.org/abs/2510.01250)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [TRACE / Is It Thinking or Cheating?](https://arxiv.org/abs/2510.01367)：通过检查截断后的 reasoning 是否已经能拿到高 reward 来检测隐式 reward hacking，让 CoT monitoring 不只依赖表面文本，而是加入模型侧 effort 信号。
+- [AdvEvo-MARL: Shaping Internalized Safety through Adversarial Co-Evolution in Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2510.01586)：用 multi-agent reinforcement learning 中的 adversarial co-evolution 塑造内化安全行为。
+- [Machine Learning for Detection and Analysis of Novel LLM Jailbreaks](https://arxiv.org/abs/2510.01644)：面向智能体安全的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Machine Learning for Detection and Analysis of Novel LLM Jailbreaks”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Modeling the Attack: Detecting AI-Generated Text by Quantifying Adversarial Perturbations](https://arxiv.org/abs/2510.02319)：提出 PIFE，先规范化文本，再把编辑距离和语义相似度等扰动幅度特征输入生成文本检测器以增强改写鲁棒性。
+- [A Granular Study of Safety Pretraining under Model Abliteration](https://arxiv.org/abs/2510.02768)：通过 A Granular Study of Safety Pretraining under Model Abliteration 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Revoking Amnesia: RL-based Trajectory Optimization to Resurrect Erased Concepts in Diffusion Models](https://arxiv.org/abs/2510.03302)：用 RL-based trajectory optimization 恢复 diffusion model 中已擦除概念，暴露模型侧遗忘与安全边界。
+- [Audit the Whisper](https://arxiv.org/abs/2510.04303)：检测 multi-agent LLMs 中的隐写式串谋，补充多智能体安全监测方向。
+- [Read the Scene, Not the Script: Outcome-Aware Safety for LLMs](https://arxiv.org/abs/2510.04320)：研究超越固定脚本规则的结果感知 LLM 安全方法。
+- [Distribution Preference Optimization: A Fine-grained Perspective for LLM Unlearning](https://arxiv.org/abs/2510.04773)：Distribution Preference Optimization 补充安全模型方法，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [ActiveMark: on watermarking of visual foundation models via massive activations](https://arxiv.org/abs/2510.04966)：通过微调视觉基础模型中表现力强的 activation layers 植入所有权水印，用于区分被再分发副本和独立模型。
+- [SafeGuider: Robust and Practical Content Safety Control for Text-to-Image Models](https://arxiv.org/abs/2510.05173)：通过 SafeGuider 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Beyond Monolithic Rewards: A Hybrid and Multi-Aspect Reward Optimization for MLLM Alignment](https://arxiv.org/abs/2510.05283)：聚焦对齐、安全评估边界或多模态偏好对齐模型。
+- [DP-Adam-AC: Privacy-preserving Fine-Tuning of Localizable Language Models Using Adam Optimization with Adaptive Clipping](https://arxiv.org/abs/2510.05288)：补充面向可本地化语言模型的隐私保护微调方法。
+- [VAL-Bench: Belief Consistency as a measure for Value Alignment in Language Models](https://arxiv.org/abs/2510.05465)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Learning from Failures: Understanding LLM Alignment through Failure-Aware Inverse RL](https://arxiv.org/abs/2510.06092)：补充面向智能体安全的模型侧工作，重点是failure-aware inverse RL for LLM alignment。
+- [Do Internal Layers of LLMs Reveal Patterns for Jailbreak Detection?](https://arxiv.org/abs/2510.06594)：用 Do Internal Layers of LLMs Reveal Patterns for Jailbreak Detection? 度量越狱或 prompt injection 风险，区分不安全响应和普通任务失败。
+- [Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](https://arxiv.org/abs/2510.06719)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Human-aligned AI Model Cards with Weighted Hierarchy Architecture](https://arxiv.org/abs/2510.06989)：用加权层次架构构建人类对齐的 AI 模型卡。
+- [Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples](https://arxiv.org/abs/2510.07192)：在 600M 到 13B 参数模型上显示预训练投毒可用近似常数数量的恶意文档奏效，挑战按语料百分比设定威胁模型的假设。
+- [SIMU: Selective Influence Machine Unlearning](https://arxiv.org/abs/2510.07822)：提出关于 SIMU: Selective Influence Machine Unlearning 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [From Defender to Devil? Unintended Risk Interactions Induced by LLM Defenses](https://arxiv.org/abs/2510.07968)：补充智能体安全的 Model 条目，重点是《From Defender to Devil? Unintended Risk Interactions Induced by LLM Defenses》。
+- [Backdoor Vectors: a Task Arithmetic View on Backdoor Attacks and Defenses](https://arxiv.org/abs/2510.08016)：从任务算术后门向量视角解释后门攻击与防御。
+- [LatentBreak: Jailbreaking Large Language Models through Latent Space Feedback](https://arxiv.org/abs/2510.08604)：补充与智能体与模型安全相关的模型侧方法。
+- [ExPO-HM: Learning to Explain-then-Detect for Hateful Meme Detection](https://arxiv.org/abs/2510.08630)：用 policy optimization 训练 hateful meme 模型先解释再检测，显式覆盖目标和攻击类型线索，改善审核所需的理由质量。
+- [Transmuting Prompts into Weights](https://arxiv.org/abs/2510.08734)：解释 prompt 派生行为如何转化为 activation 或权重干预，为 steering 与 unlearning 控制提供理论支撑。
+- [GTAlign: Game-Theoretic Alignment of LLM Assistants for Mutual Welfare](https://arxiv.org/abs/2510.08872)：把助手对齐建模为互惠福利的博弈论问题。
+- [Zero-shot image privacy classification with Vision-Language Models](https://arxiv.org/abs/2510.09253)：补充面向智能体安全的模型侧工作，重点是zero-shot image privacy classification with VLMs。
+- [Kelp](https://arxiv.org/abs/2510.09694)：用 latent dynamics-guided risk detection 构建 streaming safeguard，为大模型补充模型侧运行时监控器。
+- [Text Prompt Injection of Vision Language Models](https://arxiv.org/abs/2510.09849)：提出低计算量黑盒 text prompt injection 算法误导视觉语言模型，揭示 MLLM 中简单的非视觉攻击通道。
+- [Don't Throw Away Your Pretrained Model](https://arxiv.org/abs/2510.09913)：该工作通过预训练模型与对齐模型协作，缓解对齐训练造成的能力损失。
+- [SAFER Risk-Constrained Sampling](https://arxiv.org/abs/2510.10193)：对 large language models 的 sample-then-filter decoding 加入风险约束，以减少不安全输出。
+- [ArtPerception: ASCII Art-based Jailbreak on LLMs with Recognition Pre-test](https://arxiv.org/abs/2510.10281)：先用一次 ASCII 识别预测试确定模型特定参数，再把恶意请求编码成 ASCII art 发起单次黑盒越狱。
 - [Low-Resource Language Safeguards](https://arxiv.org/abs/2510.10677)：用少量推理与对齐数据提升大模型在低资源语言中的安全防护表现。
+- [DITTO: A Spoofing Attack Framework on Watermarked LLMs via Knowledge Distillation](https://arxiv.org/abs/2510.10987)：研究通过知识蒸馏攻击带水印 LLM 的风险，揭示水印与蒸馏过程中的模型侧安全脆弱性。
+- [Can Representation Gaps Be the Key to Enhancing Robustness in Graph-Text Alignment?](https://arxiv.org/abs/2510.12087)：提出 LLM4GTA，通过自适应 gap monitoring 和模态内补偿保留 graph-text 表征间隙，避免过度对齐造成结构坍缩。
+- [From Delegates to Trustees: How Optimizing for Long-Term Interests Shapes Bias and Alignment in LLM](https://arxiv.org/abs/2510.12689)：比较复制用户偏好的 delegate 模型与优化长期利益的 trustee 模型，揭示福利、自主性和模型默认立场偏差之间的权衡。
+- [Content Anonymization for Privacy in Long-form Audio](https://arxiv.org/abs/2510.12780)：补充与智能体与模型安全相关的模型侧方法。
+- [We Can Hide More Bits: The Unused Watermarking Capacity in Theory and in Practice](https://arxiv.org/abs/2510.12812)：通过 The Unused Watermarking Capacity in Theory and in Practice 研究水印或来源控制，关注归因、可检测性、鲁棒性和质量权衡。
+- [Gaussian Certified Unlearning in High Dimensions: A Hypothesis Testing Approach](https://arxiv.org/abs/2510.13094)：定义 epsilon-Gaussian certifiability，并证明一次 Newton 遗忘步骤加校准高斯噪声可在高维中兼顾隐私和准确率。
+- [Risk-Adaptive Steering for Multimodal Safety Alignment](https://arxiv.org/abs/2510.13698)：当注意力遗漏视觉风险时对多模态模型进行 risk-adaptive steering，为 MLLM safety alignment 补充模型侧方法。
+- [Guarding the Guardrails: A Taxonomy-Driven Approach to Jailbreak Detection](https://arxiv.org/abs/2510.13893)：用 Guarding the Guardrails 防御越狱或 prompt injection，关注绕过通道以及拒答或过滤行为。
+- [Ensembling Multiple Hallucination Detectors Trained on VLLM Internal Representations](https://arxiv.org/abs/2510.14330)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Stealthy Dual-Trigger Backdoors: Attacking Prompt Tuning in LM-Empowered Graph Foundation Models](https://arxiv.org/abs/2510.14470)：在 LM 增强图基础模型的 prompt tuning 阶段构造文本级和结构级双触发后门，在保持干净准确率时提升攻击成功率。
+- [Assessing Socio-Cultural Alignment and Technical Safety of Sovereign LLMs](https://arxiv.org/abs/2510.14565)：补充智能体安全的 Model 条目，重点是《Assessing Socio-Cultural Alignment and Technical Safety of Sovereign LLMs》。
+- [VaultGemma](https://arxiv.org/abs/2510.15001)：发布差分隐私版 Gemma 模型，将隐私保护训练落实为具体的模型侧安全机制。
+- [DSSmoothing](https://arxiv.org/abs/2510.15303)：通过 dual-space smoothing 为 pre-trained language models 提供 certified dataset ownership verification。
+- [Direct Preference Optimization with Unobserved Preference Heterogeneity: The Necessity of Ternary Preferences](https://arxiv.org/abs/2510.15716)：证明二元偏好无法识别异质用户偏好，并用潜在标注者类型改造 DPO，结合 min-max-regret 聚合生成单一策略。
+- [Fall into a Pit, Gain in a Wit: Cognitive-Guided Harmful Meme Detection via Misjudgment Risk Pattern Retrieval](https://arxiv.org/abs/2510.15946)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](https://arxiv.org/abs/2510.15976)：补充与智能体与模型安全相关的模型侧方法。
+- [Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](https://arxiv.org/abs/2510.16054)：将隐私感知委派建模为 RL 路由策略，学习哪些 prompt 片段留给本地模型、哪些发送远端 LLM，以平衡 PII 泄漏和任务效用。
+- [The Hidden Cost of Modeling P(X): Vulnerability to Membership Inference Attacks in Generative Text Classifiers](https://arxiv.org/abs/2510.16122)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](https://arxiv.org/abs/2510.16171)：把旋转和尺度等变卷积层嵌入 CNN，作为结构先验提高对抗鲁棒性和 certified bounds，而无需对抗训练。
+- [Towards Low-Resource Alignment to Diverse Perspectives with Sparse Feedback](https://arxiv.org/abs/2510.16257)：用稀疏反馈将低资源模型对齐到多元观点。
+- [SHIELD: Suppressing Hallucinations In LVLM Encoders via Bias and Vulnerability Defense](https://arxiv.org/abs/2510.16596)：通过 SHIELD 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Online Prompt-Optimization Defense](https://arxiv.org/abs/2510.17006)：通过在线提示词优化抵御迭代式越狱攻击。
+- [Can Transformer Memory Be Corrupted? Investigating Cache-Side Vulnerabilities in Large Language Models](https://arxiv.org/abs/2510.17098)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [From Preferences to Prejudice: The Role of Alignment Tuning in Shaping Social Bias in Video Diffusion Models](https://arxiv.org/abs/2510.17247)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Is Multilingual LLM Watermarking Truly Multilingual? A Simple Back-Translation Solution](https://arxiv.org/abs/2510.18019)：检验 LLM 水印是否真正支持多语言，并研究 back-translation 方案。
+- [Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options](https://arxiv.org/abs/2510.18713)：提出关于 Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [HarmNet: A Framework for Adaptive Multi-Turn Jailbreak Attacks on Large Language Models](https://arxiv.org/abs/2510.18728)：提出 HarmNet，结合层次语义网络、反馈模拟器和实时遍历器，自动细化多轮越狱路径。
+- [Subliminal Corruption: Mechanisms, Thresholds, and Interpretability](https://arxiv.org/abs/2510.19152)：在 GPT-2 teacher-student 微调中量化 subliminal corruption，显示语义中性的合成数据会在毒化阈值后传递错配行为。
+- [Algorithmic Fairness in NLP: Persona-Infused LLMs for Human-Centric Hate Speech Detection](https://arxiv.org/abs/2510.19331)：用 persona-prompted Gemini 和 GPT-4.1-mini 检测仇恨言论，分析标注者 persona 如何改变不同目标群体上的公平性。
+- [LLM Unlearning with LLM Beliefs](https://arxiv.org/abs/2510.19422)： 用模型 belief 估计指导 LLM unlearning，把定向遗忘与内部知识状态建模联系起来。
+- [Learning and Simulating Building Evacuation Patterns for Enhanced Safety Design Using Generative Models](https://arxiv.org/abs/2510.19623)：通过 Generative Models 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [The Tail Tells All: Estimating Model-Level Membership Inference Vulnerability Without Reference Models](https://arxiv.org/abs/2510.19773)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [SAID: Safety-Aware Intent Defense via Prefix Probing for Large Language Models](https://arxiv.org/abs/2510.20129)：补充智能体安全的 Model 条目，重点是《SAID: Safety-Aware Intent Defense via Prefix Probing for Large Language Models》。
+- [Steering Evaluation-Aware LMs](https://arxiv.org/abs/2510.20487)：通过 activation steering 抑制 evaluation-awareness，使模型在安全评测中更接近部署时策略，而不是识别评测后刻意表现。
+- [Enhanced MLLM Black-Box Jailbreaking Attacks and Defenses](https://arxiv.org/abs/2510.21214)：构造结合 provocative text 与变异或多图 image prompts 的黑盒 MLLM 越狱，并评估训练期和推理期防御。
+- [Noise Aggregation Analysis Driven by Small-Noise Injection: Efficient Membership Inference for Diffusion Models](https://arxiv.org/abs/2510.21783)：提出关于 Noise Aggregation Analysis Driven by Small-Noise Injection: Efficient Membership Inference for Diffusion Models 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Adversarial Déjà Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks](https://arxiv.org/abs/2510.21910)：从既有越狱论文抽取 adversarial skill primitives，再用 ASCoT 训练这些技能组合，提高模型对未知攻击的鲁棒性。
+- [δ-STEAL: LLM Stealing Attack with Local Differential Privacy](https://arxiv.org/abs/2510.21946)：通过 $\delta$-STEAL 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Penalizing Length: Uncovering Systematic Bias in Quality Estimation Metrics](https://arxiv.org/abs/2510.22028)：提出关于 Penalizing Length: Uncovering Systematic Bias in Quality Estimation Metrics 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Self-Calibrated Consistency can Fight Back for Adversarial Robustness in Vision-Language Models](https://arxiv.org/abs/2510.22785)：补充面向智能体安全的模型侧工作，重点是self-calibrated consistency for VLM robustness。
+- [Guardian Safe RL](https://arxiv.org/abs/2510.22859)：在 reinforcement learning 中解耦 exploration 与 safety，用于 safety-constrained agent training。
+- [Uncovering the Potential Risks in Unlearning: Danger of English-only Unlearning in Multilingual LLMs](https://arxiv.org/abs/2510.23949)：显示多语言 LLM 的 English-only unlearning 会产生 language confusion，使 reference-based metrics 失效，并提出 N-Mix 与语义评测需求。
+- [Vanish into Thin Air](https://arxiv.org/abs/2510.24195)：构造针对 SAM2 的 cross-prompt universal attacks，暴露 promptable visual foundation model 的鲁棒性边界。
+- [Advancing Interdisciplinary Approaches to Online Safety Research](https://arxiv.org/abs/2510.24227)：通过 Advancing Interdisciplinary Approaches to Online Safety Research 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Learning to Attack: Uncovering Privacy Risks in Sequential Data Releases](https://arxiv.org/abs/2510.24807)：通过 Learning to Attack 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Machine Learning Guided Optimal Transmission Switching to Mitigate Wildfire Ignition Risk](https://arxiv.org/abs/2510.25147)：补充与智能体与模型安全相关的模型侧方法。
+- [SSCL-BW Dataset Ownership Watermarking](https://arxiv.org/abs/2510.26420)：用 sample-specific clean-label backdoor watermarking 验证数据集所有权。
+- [Refusal-Aware Red Teaming: Exposing Inconsistency in Safety Evaluations](https://doi.org/10.18653/v1/2025.emnlp-main.49)：用 Exposing Inconsistency in Safety Evaluations 进行红队测试，关注多样化危害发现和护栏失效模式。
+- [EL-MIA: Quantifying Membership Inference Risks of Sensitive Entities in LLMs](https://arxiv.org/abs/2511.00192)：提出 EL-MIA，按敏感实体粒度审计 PII 或信用卡号等是否被 LLM 记忆，细于文档级成员推断。
+- [SenDetEX: Sentence-Level AI-Generated Text Detection for Human-AI Hybrid Content via Style and Context Fusion](https://doi.org/10.18653/v1/2025.emnlp-main.268)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [DAMON: A Dialogue-Aware MCTS Framework for Jailbreaking Large Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.323)：补充与智能体与模型安全相关的模型侧方法。
+- [Reimagining Safety Alignment with An Image](https://arxiv.org/abs/2511.00509)：补充与智能体与模型安全相关的模型侧方法。
+- [AraSafe: Benchmarking Safety in Arabic LLMs](https://doi.org/10.18653/v1/2025.findings-emnlp.529)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Sample Efficient Alignment Learning With Episodic Control](https://doi.org/10.18653/v1/2025.findings-emnlp.560)：通过 Episodic Control 优化安全对齐，关注偏好信号、安全正则化或奖励黑客风险。
+- [Stimulate the Critical Thinking of LLMs via Debiasing Discussion](https://doi.org/10.18653/v1/2025.emnlp-main.579)：补充与智能体与模型安全相关的模型侧方法。
+- [SSA: Semantic Contamination of LLM-Driven Fake News Detection](https://doi.org/10.18653/v1/2025.emnlp-main.744)：研究 LLM 驱动假新闻检测中的语义污染，即检测判断被误导性语义而非干净事实证据扭曲。
+- [Jailbreak LLMs through Internal Stance Manipulation](https://doi.org/10.18653/v1/2025.emnlp-main.780)：研究通过内部立场操控实现越狱，为理解拒答与不安全服从补充模型侧攻击路线。
+- [MULTIGUARD: An Efficient Approach for AI Safety Moderation Across Languages and Modalities](https://doi.org/10.18653/v1/2025.emnlp-main.819)：提供跨语言、多模态 AI 安全审核方法。
+- [On Guardrail Models' Robustness to Mutations and Adversarial Attacks](https://doi.org/10.18653/v1/2025.findings-emnlp.922)：通过 On Guardrail Models' Robustness to Mutations and Adversarial Attacks 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [TrojanWave: Exploiting Prompt Learning for Stealthy Backdoor Attacks on Large Audio-Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.940)：利用 prompt learning 在大型音频语言模型中植入隐蔽后门，把触发风险从纯文本 LLM 扩展到语音接地模型。
+- [Advancing Machine-Generated Text Detection from an Easy to Hard Supervision Perspective](https://arxiv.org/abs/2511.00988)：用 easy-to-hard 监督框架训练机器生成文本检测器，借助长文本监督信号稳定边界模糊的困难检测样本标签。
+- [SAFENUDGE: Safeguarding Large Language Models in Real-time with Tunable Safety-Performance Trade-offs](https://doi.org/10.18653/v1/2025.emnlp-main.1010)：补充与智能体与模型安全相关的模型侧方法。
+- [Attack as Defense](https://aclanthology.org/2025.findings-emnlp.1095/)：通过 adversarial attacks 保护大型视觉语言模型免受越狱攻击。
+- [ZoFia: Zero-Shot Fake News Detection with Entity-Guided Retrieval and Multi-LLM Interaction](https://arxiv.org/abs/2511.01188)：先抽取关键实体驱动双源检索，再让多个 LLM 并行执行证据核查和多视角推理，以零样本方式检测假新闻并缓解早期立场锁定。
+- [PROOD: A Simple LLM Out-of-Distribution Guardrail Leveraging Response Semantics](https://doi.org/10.18653/v1/2025.findings-emnlp.1272)：基于回复语义构建 LLM out-of-distribution 护栏，用输出语义偏移而非只看输入模式来识别越界请求。
+- [Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models](https://arxiv.org/abs/2511.01307)：通过扰动扩散模型而非用户图像来保护个性化隐私。
+- [Forget the Unneeded: Backdooring Large Language Models via Contrastive-enhanced Machine Unlearning](https://doi.org/10.18653/v1/2025.findings-emnlp.1338)：把 contrastive-enhanced machine unlearning 用作 LLM 后门植入通道，展示遗忘流程本身可能被攻击者转化为安全风险。
+- [A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs](https://doi.org/10.18653/v1/2025.emnlp-main.1781)：通过 A Simple Yet Effective Method for Non-Refusing Context Relevant Fine-grained Safety Steering in LLMs 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Shared Parameter Subspaces and Cross-Task Linearity in Emergently Misaligned Behavior](https://arxiv.org/abs/2511.02022)：分析跨任务 emergent misalignment 背后的共享参数子空间与线性结构。
+- [Improving Unlearning with Model Updates Probably Aligned with Gradients](https://arxiv.org/abs/2511.02435)：补充与智能体与模型安全相关的模型侧方法。
+- [Optimizing AI Agent Attacks With Synthetic Data](https://arxiv.org/abs/2511.02823)：面向智能体安全与安全评测的模型、训练或算法工作。核心思想：以 Optimizing AI Agent Attacks With Synthetic Data 为主要改进目标，作为 Model 条目的能力参考。
+- [Whisper Leak: a side-channel attack on Large Language Models](https://arxiv.org/abs/2511.03675)：通过 a side-channel attack on Large Language Models 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Black-Box Guardrail Reverse-engineering Attack](https://arxiv.org/abs/2511.04215)：提出 GRA，用强化学习和遗传算法式数据增强查询商业护栏，训练可近似其隐藏决策策略的高保真替代模型。
+- [REMIND: Input Loss Landscapes Reveal Residual Memorization in Post-Unlearning LLMs](https://arxiv.org/abs/2511.04228)：提出关于 REMIND: Input Loss Landscapes Reveal Residual Memorization in Post-Unlearning LLMs 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [A Parallel Region-Adaptive Differential Privacy Framework for Image Pixelization](https://arxiv.org/abs/2511.04261)：按图像区域复杂度自适应调整网格大小和拉普拉斯噪声，并用 GPU 并行像素化与紧凑噪声统计实现带形式化保证的视觉隐私保护。
+- [Customized Retrieval-Augmented Generation with LLM for Debiasing Recommendation Unlearning](https://arxiv.org/abs/2511.05494)：用 CRAGRU 把推荐系统遗忘拆成检索与生成两阶段，隔离目标用户影响并减少对相似用户推荐的传播偏差。
+- [From Words to Safety: Language-Conditioned Safety Filtering for Robot Navigation](https://arxiv.org/abs/2511.05889)：把自由形式语言指令转成结构化安全规范，再结合物体级 3D 表征和 MPC safety filter，在机器人导航中实时执行语义与几何约束。
+- [Injecting Falsehoods: Adversarial Man-in-the-Middle Attacks Undermining Factual Recall in LLMs](https://arxiv.org/abs/2511.05919)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [From Demonstrations to Safe Deployment: Path-Consistent Safety Filtering for Diffusion Policies](https://arxiv.org/abs/2511.06385)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Adaptive Testing for Segmenting Watermarked Texts From Language Models](https://arxiv.org/abs/2511.06645)：把似然式水印检测扩展为自适应分段，识别混合文档中哪些子串带有水印，而不仅判断整篇文本是否由模型生成。
 - [Differentiated Directional Intervention](https://arxiv.org/abs/2511.06852)：研究区分危害检测与拒答执行的激活空间干预，揭示一种模型层面的安全对齐规避机制。
-- [ReasAlign](https://arxiv.org/abs/2601.10173)：提出面向Agent 安全的模型侧方法，核心围绕 Reasoning Enhanced Safety Alignment against Prompt Injection Attack。
+- [HLPD: Aligning LLMs to Human Language Preference for Machine-Revised Text Detection](https://arxiv.org/abs/2511.06942)：补充面向智能体安全的模型侧工作，重点是human-language preference alignment for revised-text detection。
+- [Alignment-Aware Quantization for LLM Safety](https://arxiv.org/abs/2511.07842)：研究保持 LLM 安全对齐的量化选择，连接效率优化与安全退化。
+- [Patching LLM Like Software: A Lightweight Method for Improving Safety Policy in Large Language Models](https://arxiv.org/abs/2511.08484)：补充智能体安全的 Model 条目，重点是《Patching LLM Like Software: A Lightweight Method for Improving Safety Policy in Large Language Models》。
+- [Convergence dynamics of Agent-to-Agent Interactions with Misaligned objectives](https://arxiv.org/abs/2511.08710)：面向智能体安全的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Convergence dynamics of Agent-to-Agent Interactions with Misaligned objectives”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment](https://arxiv.org/abs/2511.09385)：AMaPO 在偏好优化中加入自适应边际，以缓解排序过拟合与欠拟合。
+- [Consensus Sampling for Safer Generative AI](https://arxiv.org/abs/2511.09493)：用共识采样作为更安全的生成式 AI 解码策略。
+- [Out-of-Context Misinformation Detection via Variational Domain-Invariant Learning with Test-Time Training](https://arxiv.org/abs/2511.10213)：补充面向智能体安全的模型侧工作，重点是misinformation detection with test-time training。
+- [Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](https://arxiv.org/abs/2511.11551)：用 test-time policy shaping 引导 Machiavellian agents，在不完整重训的情况下改变其安全行为。
+- [Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion](https://arxiv.org/abs/2511.11667)：提出关于 Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [NegBLEURT Forest: Leveraging Inconsistencies for Detecting Jailbreak Attacks](https://arxiv.org/abs/2511.11784)：用 negation-aware semantic consistency scoring 比较成功与失败响应的不一致性，从而检测 jailbreak attacks。
+- [Forgetting-MarI: LLM Unlearning via Marginal Information Regularization](https://arxiv.org/abs/2511.11914)：只正则化待遗忘数据额外贡献的边际信息，为 LLM 遗忘给出显式删除上界，同时保留留存数据支撑的知识。
+- [AlignTree](https://arxiv.org/abs/2511.12217)：用轻量树模型在生成过程中根据 LLM activation 检测不对齐行为，提供低开销越狱防御。
+- [MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](https://arxiv.org/abs/2511.12271)：构建 Moral-Reason-QA，并用同时奖励决策一致性和伦理框架推理过程的 GRPO，提升 LLM agent 在分布外道德场景中的对齐。
+- [Evolve the Method, Not the Prompts: Evolutionary Synthesis of Jailbreak Attacks on LLMs](https://arxiv.org/abs/2511.12710)：提出 EvoSynth 多智能体红队框架，进化可执行的攻击生成代码及分支、修复逻辑，而不是只优化最终越狱提示字符串。
+- [Whose Narrative is it Anyway? A KV Cache Manipulation Attack](https://arxiv.org/abs/2511.12752)：提出 History Swapping，用预计算的异主题 KV cache 覆盖当前生成的连续 cache 块，在不改变可见提示的情况下劫持生成叙事。
+- [Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation](https://arxiv.org/abs/2511.13201)：构建主题对齐的双超图 RAG 架构，分别建模跨片段主题结构和高阶实体关系，以降低知识增强回答中的幻觉。
+- [N-GLARE](https://arxiv.org/abs/2511.14195)：不依赖在线生成，而是在潜在表示上评估 LLM 安全性，为训练后安全鲁棒性提供轻量模型侧诊断。
+- [Membership Inference Attack against Large Language Model-based Recommendation Systems: A New Distillation-based Paradigm](https://arxiv.org/abs/2511.14763)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [HV-Attack](https://arxiv.org/abs/2511.15435)：提出针对 multimodal retrieval-augmented generation 的层次视觉攻击，补充多模态 RAG 安全风险。
+- [Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](https://arxiv.org/abs/2511.16110)：通过 Multi-Faceted Attack 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- ["To Survive, I Must Defect": Jailbreaking LLMs via the Game-Theory Scenarios](https://arxiv.org/abs/2511.16278)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [PEPPER: Perception-Guided Perturbation for Robust Backdoor Defense in Text-to-Image Diffusion Models](https://arxiv.org/abs/2511.16830)：把输入提示改写为语义距离更远但视觉效果相近的 caption，稀释触发 token 影响，从而防御文生图扩散模型后门。
+- [FLUID: Training-Free Face De-identification via Latent Identity Substitution](https://arxiv.org/abs/2511.17005)：通过潜在身份替换实现免训练的人脸去标识化。
+- [The Horcrux](https://arxiv.org/abs/2511.17869)：用 mechanistically interpretable task decomposition 检测并缓解 embodied AI systems 中的 reward hacking，把 reward-hacking monitoring 从文本推理扩展到动作环境。
+- [Towards Effective, Stealthy, and Persistent Backdoor Attacks Targeting Graph Foundation Models](https://arxiv.org/abs/2511.17982)：补充与智能体与模型安全相关的模型侧方法。
+- [Curvature-Aware Safety Restoration In LLMs Fine-Tuning](https://arxiv.org/abs/2511.18039)：面向智能体安全与安全评测的模型、训练或算法工作。核心思想：以 In LLMs Fine-Tuning 为主要改进目标，作为 Model 条目的能力参考。
+- [Natural Emergent Misalignment from Reward Hacking in Production RL](https://arxiv.org/abs/2511.18397)：研究生产级强化学习中奖励黑客导致的自然涌现失调。
+- [TASO: Jailbreak LLMs via Alternative Template and Suffix Optimization](https://arxiv.org/abs/2511.18581)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Empathetic Cascading Networks: A Multi-Stage Prompting Technique for Reducing Social Biases in Large Language Models](https://arxiv.org/abs/2511.18696)：通过多阶段提示技术降低大语言模型的社会偏见。
+- [OrdMoE: Preference Alignment via Hierarchical Expert Group Ranking in Multimodal Mixture-of-Experts LLMs](https://arxiv.org/abs/2511.19023)：OrdMoE 通过层级专家组偏好排序对齐多模态 MoE 大模型。
+- [Adversarial Attack-Defense Co-Evolution for LLM Safety Alignment via Tree-Group Dual-Aware Search and Optimization](https://arxiv.org/abs/2511.19218)：通过 tree-group dual-aware search and optimization 协同演化 LLM 安全对齐的攻防过程。
+- [Building Resilient Information Ecosystems: Large LLM-Generated Dataset of Persuasion Attacks](https://arxiv.org/abs/2511.19488)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [The Devil in the Details](https://arxiv.org/abs/2511.20104)：研究格式与连贯性如何影响开源权重 LLM 的 emergent misalignment。
+- [Harmonious Parameter Adaptation](https://arxiv.org/abs/2511.20158)：研究面向安全对齐 MLLM 的持续视觉指令微调。核心思想：在多模态指令和任务持续变化时调适参数，同时避免破坏已有安全行为。
+- [Towards Benign Memory Forgetting for Selective Multimodal Large Language Model Unlearning](https://arxiv.org/abs/2511.20196)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [V-Attack](https://arxiv.org/abs/2511.20223)：面向大视觉语言模型的解耦价值特征构造可控对抗攻击。
+- [Fighting AI with AI: Leveraging Foundation Models for Assuring AI-Enabled Safety-Critical Systems](https://arxiv.org/abs/2511.20627)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [GuardTrace-VL: Detecting Unsafe Multimodel Reasoning via Iterative Safety Supervision](https://arxiv.org/abs/2511.20994)：通过迭代安全监督检测不安全多模态推理。
+- [Self-Guided Defense: Adaptive Safety Alignment for Reasoning Models via Synthesized Guidelines](https://arxiv.org/abs/2511.21214)：一种面向推理模型的自适应安全对齐方法；核心思路是合成并内化安全准则，使模型能针对对抗性越狱提示增强防御。
+- [Insight-A: Attribution-aware for Multimodal Misinformation Detection](https://arxiv.org/abs/2511.21705)：在多模态虚假信息检测中加入归因感知 MLLM 推理，用交叉归因提示和层级推理追踪图文伪造来源。
+- [When Harmless Words Harm: A New Threat to LLM Safety via Conceptual Triggers](https://arxiv.org/abs/2511.21718)：通过 Conceptual Triggers 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Distillability of LLM Security Logic: Predicting Attack Success Rate of Outline Filling Attack via Ranking Regression](https://arxiv.org/abs/2511.22044)：通过 Ranking Regression 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Exposing Vulnerabilities in RL: A Novel Stealthy Backdoor Attack through Reward Poisoning](https://arxiv.org/abs/2511.22415)：提出或研究基于 Exposing Vulnerabilities in RL 的后门或投毒攻击，关注触发器持久性、迁移性或数据恢复泄漏。
+- [WARP: Weight Teleportation for Attack-Resilient Unlearning Protocols](https://arxiv.org/abs/2512.00272)：通过 WARP 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](https://arxiv.org/abs/2512.00709)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Concept-Guided Backdoor Attack on Vision Language Models](https://arxiv.org/abs/2512.00713)：用语义概念级触发器而非显式像素触发器攻击 VLM，揭示多模态模型侧安全风险。
+- [Securing Large Language Models (LLMs) from Prompt Injection Attacks](https://arxiv.org/abs/2512.01326)：提出关于 Securing Large Language Models (LLMs) from Prompt Injection Attacks 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [SA-ADP: Sensitivity-Aware Adaptive Differential Privacy for Large Language Models](https://arxiv.org/abs/2512.01748)：为大语言模型引入敏感度感知的自适应差分隐私。
+- [CREST: Universal Safety Guardrails Through Cluster-Guided Cross-Lingual Transfer](https://arxiv.org/abs/2512.02711)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于智能体安全，可补充跨语言安全护栏和安全迁移方法。
+- [Reasoning-Aware Multimodal Fusion for Hateful Video Detection](https://arxiv.org/abs/2512.02743)：用 hate speech 数据或 hateful video 信号评估毒性检测在语言、模态和时间覆盖上的表现。
+- [Graph-Regularized Sparse Autoencoders](https://arxiv.org/abs/2512.06655)：为 sparse autoencoder 加入图正则化，用于 LLM 安全 steering 与可解释性。
+- [Ideal Attribution and Faithful Watermarks for Language Models](https://arxiv.org/abs/2512.07038)：用追加式 prompt-response 账本形式化理想归因机制，并把语言模型水印重述为对这些确定性归因机制的忠实表示。
+- [ThinkTrap: Denial-of-Service Attacks against Black-box LLM Services via Infinite Thinking](https://arxiv.org/abs/2512.07086)：研究针对黑盒 LLM 服务的无限思考式拒绝服务攻击，补充 reasoning system 的模型侧资源耗尽风险。
+- [Think-Reflect-Revise: A Policy-Guided Reflective Framework for Safety Alignment in Large Vision Language Models](https://arxiv.org/abs/2512.07141)：Think-Reflect-Revise 使用政策引导的反思循环对齐大型视觉语言模型的安全行为。
+- [LUNE: Efficient LLM Unlearning via LoRA Fine-Tuning with Negative Examples](https://arxiv.org/abs/2512.07375)： 用带 negative examples 的 LoRA fine-tuning 实现高效 LLM unlearning。
+- [Decoupling Template Bias in CLIP: Harnessing Empty Prompts for Enhanced Few-Shot Learning](https://arxiv.org/abs/2512.08606)：用空提示估计并抵消 CLIP 中的模板样本相似性偏差，提升少样本视觉分类对提示模板伪相关的鲁棒性。
+- [Weird Generalization and Inductive Backdoors](https://arxiv.org/abs/2512.09742)：研究 inductive backdoor 与异常泛化这类模型侧 LLM 污染风险。
+- [Robust AI Security and Alignment: A Sisyphean Endeavor?](https://arxiv.org/abs/2512.10100)：从信息论和哥德尔不完备性角度讨论 AI 安全与对齐鲁棒性的理论限制，并给出应对这些限制的实践路径。
+- [Multi-dimensional Preference Alignment by Conditioning Reward Itself](https://arxiv.org/abs/2512.10237)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [SCOUT: A Defense Against Data Poisoning Attacks in Fine-Tuned Language Models](https://arxiv.org/abs/2512.10998)：提出语境合理的细粒度投毒场景，并防御能自然融入领域文本的触发词，面向微调语言模型的后门安全。
+- [Robust MLLM Unlearning via Visual Knowledge Distillation](https://arxiv.org/abs/2512.11325)：通过蒸馏中间视觉表征选择性擦除 MLLM 的目标视觉知识，只微调视觉组件以保留文本知识和模型效用。
+- [Neural Chameleons: Language Models Can Learn to Hide Their Thoughts from Unseen Activation Monitors](https://arxiv.org/abs/2512.11949)：显示模型可学习向未见过的激活监控器隐藏思维。
+- [Machine-Unlearning Safety for Ensembled Models](https://doi.org/10.1016/j.asoc.2025.113011)：研究 ensemble model 中 machine unlearning 的安全影响，把模型侧 unlearning 覆盖扩展到多模型设置。
+- [MULBERE](https://doi.org/10.18653/v1/2025.winlp-main.27)：通过定向潜变量对抗训练提升多语言越狱鲁棒性。
+- [The Instability of Safety: How Random Seeds and Temperature Expose Inconsistent LLM Refusal Behavior](https://arxiv.org/abs/2512.12066)：补充与智能体与模型安全相关的模型侧方法。
+- [Representational Contrastive Scoring for LVLM jailbreak detection](https://arxiv.org/abs/2512.12069)：用表示对比来检测大型视觉语言模型中的越狱尝试，为多模态安全补充模型内部监测信号。
+- [Unraveling the Mystery](https://aclanthology.org/2025.coling-main.560/)：在生成回答前抽取用户真实意图以防御 jailbreak 攻击，为安全模型补充意图识别路线。
+- [Federated LLM Fine-Tuning with Privacy Preservation](https://doi.org/10.1109/ICCVDM66874.2025.11290023): 研究具备隐私保护和跨域语义对齐的大语言模型联邦微调。
+- [EssenceGuard](https://doi.org/10.1109/nana66698.2025.00026)： 用多阶段 essence-analysis 框架增强大语言模型安全性。
+- [Linear-Probe Multi-Turn Jailbreak Detection](https://doi.org/10.1109/trustcom66490.2025.00371)： 通过内部表示上的线性 probe 检测 LLM 多轮 jailbreak 攻击。
+- [Quantization and Prompt-Injection Security](https://doi.org/10.5753/eramiars.2025.16669)： 研究量化如何改变 LLM 对 prompt injection 的鲁棒性。
+- [SecurePoL](https://doi.org/10.1109/ACCESS.2025.3642198)：将 watermarking 与 proof-of-learning 结合以抵御 spoofing attack，补充模型 provenance 与训练真实性安全机制。
+- [EntropyMark](https://doi.org/10.1109/CVPR52734.2025.02858)：通过 entropy-based constraint 降低 backdoor watermark 危害，用于 open-source dataset copyright protection。
+- [Hardening LLM Fine-Tuning: From Differentially Private Data Selection to Trustworthy Model Quantization](https://doi.org/10.1109/tifs.2025.3581103)：结合差分隐私数据选择与可信量化，为更安全的 LLM 适配补充模型侧路线。
+- [CTIGuardian: A Few-Shot Framework for Mitigating Privacy Leakage in Fine-Tuned LLMs](https://arxiv.org/abs/2512.12914)：用 few-shot 隐私对齐缓解微调 LLM 泄漏敏感网络威胁情报的问题，结合隐私分类器和改写器而非完整重训。
+- [Human Feedback Attack on Online RLHF: Attack and Robust Defense](https://doi.org/10.1109/tsp.2025.3607114)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Red-Teaming LLMs with Token Control Score: Efficient, Universal, and Transferable Jailbreaks](https://doi.org/10.1109/raid67961.2025.00016)：用 Efficient, Universal, and Transferable Jailbreaks 进行红队测试，关注多样化危害发现和护栏失效模式。
+- [RUCLIP: Robust concept unlearning in CLIP via semantic anchors](https://doi.org/10.1016/j.eswa.2025.130495)：通过 RUCLIP 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [Mitigating Privacy Issues in RAG through Causal Disentanglement](https://doi.org/10.1109/bigdata66926.2025.11402042)：提出关于 Mitigating Privacy Issues in RAG through Causal Disentanglement 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Machine Unlearning: The Right to Be Forgotten for Privacy-Preserving Artificial Intelligence](https://doi.org/10.1109/isaect68904.2025.11318751)：提出关于 Machine Unlearning: The Right to Be Forgotten for Privacy-Preserving Artificial Intelligence 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Adversarial Paraphrase Substitution: Jailbreak Attacks on Text-to-Image Diffusion Models](https://doi.org/10.1109/ainit65432.2025.11035508)：提出关于 Adversarial Paraphrase Substitution: Jailbreak Attacks on Text-to-Image Diffusion Models 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Unveiling Stereotypes: Combining Knowledge Graphs and LLMs for Implied Stereotype Generation](https://aclanthology.org/2025.clicit-1.33/)：提出关于 Unveiling Stereotypes: Combining Knowledge Graphs and LLMs for Implied Stereotype Generation 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Mitigating privacy risks in Retrieval-Augmented Generation via locally private entity perturbation](https://doi.org/10.1016/j.ipm.2025.104150)：在检索前对命名实体施加本地隐私扰动，降低 RAG 中敏感实体泄漏，同时保留足够语义信号供回答生成。
+- [SAGNet: Decoupling Semantic-Agnostic Artifacts From Limited Training Data for Robust Generalization in Deepfake Detection](https://doi.org/10.1109/tifs.2025.3581726)：作为智能体安全的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Security and Detectability Analysis of Unicode Text Watermarking Methods Against Large Language Models](https://arxiv.org/abs/2512.13325)：补充智能体安全的 Model 条目，重点是《Security and Detectability Analysis of Unicode Text Watermarking Methods Against Large Language Models》。
+- [Enhancing Privacy and Security in Rag-Based Generative AI Applications](https://doi.org/10.5121/csit.2025.150301)：通过 Enhancing Privacy and Security in Rag-Based Generative AI Applications 分析隐私泄漏或保护，关注成员推断、数据抽取或敏感信息暴露。
+- [FROC: A Unified Framework with Risk-Optimized Control for Machine Unlearning in LLMs](https://arxiv.org/abs/2512.13337)：用风险优化控制实现大模型机器遗忘。
+- [Synthetic Social Engineering Scenario Generation Using LLMs for Awareness-Based Attack Resilience](https://doi.org/10.1109/access.2025.3614550)：通过 LLMs for Awareness-Based Attack Resilience 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [ASSMark: Dual Defense Against Speech Synthesis Attack via Adversarial Robust Watermarking](https://doi.org/10.1109/lsp.2025.3562817)：通过 ASSMark 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Automatic Toxicity Evaluation for Human-LLM Conversations in Flexible Manufacturing System With Duplex Fine-Tuned LLMs](https://doi.org/10.1109/jiot.2025.3592453)：通过 Duplex Fine-Tuned LLMs 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Deepfake Detection via Spatial-Frequency Attention Network](https://doi.org/10.1109/tce.2025.3614720)：通过 Spatial-Frequency Attention Network 检测生成或欺骗内容，关注操纵痕迹及对抗变换下的鲁棒性。
+- [Leveraging Spatial-Temporal Illumination Features and Convolution-Transformer Hybrid Networks for Deepfake Video Detection](https://doi.org/10.1109/tce.2025.3624764)：通过 Leveraging Spatial-Temporal Illumination Features and Convolution-Transformer Hybrid Networks for Deepfake Video Detection 检测生成或欺骗内容，关注操纵痕迹及对抗变换下的鲁棒性。
+- [Exploiting Robust Model Watermarking Against the Model Fine-Tuning Attack via Flat Minima Aware Optimizers](https://doi.org/10.1109/icassp49660.2025.10890107)：通过 Flat Minima Aware Optimizers 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Dual Attention Guided Defense Against Malicious Edits](https://arxiv.org/abs/2512.14333)：用 DANP 为图像加入抵御恶意扩散编辑的免疫扰动，在多个时间步操控 cross-attention 和噪声预测以误导未经授权的文本编辑。
+- [LCMem: A Universal Model for Robust Image Memorization Detection](https://arxiv.org/abs/2512.14421)：用通用模型检测图像记忆现象，补充隐私与数据泄漏风险覆盖。
+- [Bias correction of seasonal precipitation prediction in Southern China: Pointwise and spatial corrections using deep learning methods](https://doi.org/10.1016/j.ejrh.2025.102737)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [A Lightweight Defense Against Jailbreak Attacks via Honeypot Prompts](https://doi.org/10.1109/aann66429.2025.11257712)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Prompt Injection Attack Detection with Machine Learning](https://doi.org/10.1109/asyu67174.2025.11208433)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Transferable Ensemble Black-Box Jailbreak Attacks on Large Language Models](https://doi.org/10.1109/icaisg68699.2025.11452136)：补充智能体安全的 Model 条目，重点是《Transferable Ensemble Black-Box Jailbreak Attacks on Large Language Models》。
+- [Mitigating Prompt Injection Attacks in ModelAgnostic Networks (MAN)](https://doi.org/10.1109/iot-siu65919.2025.11402845)：补充智能体安全的 Model 条目，重点是《Mitigating Prompt Injection Attacks in ModelAgnostic Networks (MAN)》。
+- [Rethinking AI Safety and Ethics: A State-of-the-Art Multi-Task Model for Bias and Toxicity Detection via Task-Specific Supervision and Data-centric fine-tuning](https://doi.org/10.1109/aitest66680.2025.00011)：补充智能体安全的 Model 条目，重点是《Rethinking AI Safety and Ethics: A State-of-the-Art Multi-Task Model for Bias and Toxicity Detection via Task-Specific Supervision and Data-centric fine-tuning》。
+- [Reconstruction-Based Prompt Generation Algorithm for Prompt Injection Attacks](https://doi.org/10.1109/aann66429.2025.11257661)：补充智能体安全的 Model 条目，重点是《Reconstruction-Based Prompt Generation Algorithm for Prompt Injection Attacks》。
+- [SGM: Safety Glasses for Multimodal Large Language Models via Neuron-Level Detoxification](https://arxiv.org/abs/2512.15052)：通过 SGM 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Defending Speech-enabled LLMs Against Adversarial Jailbreak Threats](https://doi.org/10.21437/interspeech.2025-1921)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Remotely Detectable Robot Policy Watermarking](https://arxiv.org/abs/2512.15379)：补充智能体安全的 Model 条目，重点是《Remotely Detectable Robot Policy Watermarking》。
+- [Imperceptible Transfer Attack on Large Vision-Language Models](https://doi.org/10.1109/icassp49660.2025.10890065)：研究针对大型视觉语言模型的不可感知可迁移扰动，揭示细微视觉改动如何跨 VLM 目标泛化。
+- [Chain-of-Detection enables robust and efficient jailbreak defense](https://doi.org/10.1016/j.neunet.2025.108217)：用 chain-of-detection 流水线分阶段识别不安全意图，在保持效率的同时增强越狱防御鲁棒性。
+- [IPROPS - Iterative Prompt Refinement for Optimizing Privacy-Preserving Synthetic Data Generation](https://doi.org/10.1109/ichi64645.2025.00031)：迭代优化合成医疗数据生成提示，在保留临床结构有效性的同时提升隐私保护。
+- [DADet: Safeguarding Image Conditional Diffusion Models Against Adversarial and Backdoor Attacks via Diffusion Anomaly Detection](https://doi.org/10.1109/iccv51701.2025.01617)：DADet: Safeguarding Image Conditional Diffusion Models Against Adversarial and Backdoor Attacks via Diffusion Anomaly... 补充智能体安全方向的模型侧方法。
+- [SafeMLLM: Extending Safety Alignment from Single-Modal LLMs to Multimodal LLMs](https://doi.org/10.1109/trustcom66490.2025.00169)：围绕 SafeMLLM: Extending Safety Alignment from Single-Modal LLMs to Multimodal LLMs 补充智能体安全相关的模型侧方法、训练信号或对齐机制。
+- [Generative AI personas considered harmful? Putting forth twenty challenges of algorithmic user representation in human-computer interaction](https://doi.org/10.1016/j.ijhcs.2025.103657)：提出生成式 AI persona 的二十项 HCI 风险，把模拟用户表征影响真实人群决策视为安全问题。
+- [Safe and effective post-fine-tuning alignment in large language models](https://doi.org/10.1016/j.knosys.2025.114523)：研究下游微调后的 LLM 安全恢复，目标是在不牺牲任务效果的情况下重新完成安全对齐。
+- [Adversarial Pruning Networks for Compact 3D Gaussian Splatting](https://doi.org/10.1109/tmm.2025.3632681)：补充与智能体与模型安全相关的模型侧方法。
+- [Urban Foundation Models and Artificial Intelligence Safety](https://doi.org/10.1109/rtsi64020.2025.11212213)：补充与智能体与模型安全相关的模型侧方法。
+- [Dual-View Inference Attack](https://arxiv.org/abs/2512.16126)：揭示 machine unlearning 可能放大隐私暴露，补充模型遗忘与隐私风险。
+- [Fine-grained Prompt Screening: Defending Against Backdoor Attack on Text-to-Image Diffusion Models](https://doi.org/10.24963/ijcai.2025/68)：提出 GrainPS 输入级防御，把提示切分后检查 cross-attention 投影中的触发器语义错位，以防御文生图扩散模型后门。
+- [TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](https://arxiv.org/abs/2512.16523)：补充面向智能体安全的模型侧工作，重点是test-time padding for adversarial detection in VLMs。
+- ["Even GPT Can Reject Me": Conceptualizing Abrupt Refusal Secondary Harm (ARSH) and Reimagining Psychological AI Safety with Compassionate Completion Standard (CCS)](https://arxiv.org/abs/2512.18776)：通过 Compassionate Completion Standard (CCS) 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Dehumanization of LGBTQ+ Groups in Sexual Interactions with ChatGPT](https://doi.org/10.18653/v1/2025.queerinai-main.3)：补充与智能体与模型安全相关的模型侧方法。
+- [Unveiling AI data security: How employee awareness evolves in smart manufacturing](https://doi.org/10.1016/j.ijinfomgt.2025.103011)：补充与智能体与模型安全相关的模型侧方法。
+- [Adversarial traffic scene generation considering harm, rarity, and ambiguity for autonomous driving testing](https://doi.org/10.1016/j.trc.2025.105426)：补充与智能体与模型安全相关的模型侧方法。
+- [ACPP-MIH: A robust multiple image hiding framework with adaptive cover image privacy protection](https://doi.org/10.1016/j.eswa.2025.128152)：补充与智能体与模型安全相关的模型侧方法。
+- [MPAM-3DGS: Multi-Parametric Adversarial Manipulation for 3D Gaussian Splatting](https://doi.org/10.1109/icassp49660.2025.10889677)：补充与智能体与模型安全相关的模型侧方法。
+- [FedVideoMAE: Efficient Privacy-Preserving Federated Video Moderation](https://arxiv.org/abs/2512.18809)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Rising Fast, Prone to Risk: How Open-Source LLM-Powered Apps Are Designed and Secured](https://doi.org/10.1109/aixse64906.2025.00016)：补充与智能体与模型安全相关的模型侧方法。
+- [Privacy considerations for LLMs and other AI models: an input and output privacy approach](https://doi.org/10.3389/frcmn.2025.1600750)：把输入隐私与输出隐私框架用于 AI 系统，区分多方计算、模型输入和发布输出各自需要的隐私保护。
+- [When Visual State Space Model Meets Backdoor Attacks](https://doi.org/10.1109/wacv61041.2025.00721)：补充与智能体与模型安全相关的模型侧方法。
+- [Defending against Attribute Inference Attacks in Post-Training of Recommendation Systems via Unlearning](https://doi.org/10.1109/icde65448.2025.00200)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [GIANT: Generated Image Adversarial Steganography Based on Narrowed Targeting](https://doi.org/10.1109/tcsvt.2025.3629825)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [BeMamba: Efficient Multimodal Sensing-Aided Beamforming via State Space Model](https://doi.org/10.1109/twc.2025.3584061)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [UZSDD: Universal Zero-Shot Deepfake Detection via Domain-Invariant Meta-Learning](https://doi.org/10.1109/tcsvt.2025.3642749)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Causal-Guided Detoxify Backdoor Attack of Open-Weight LoRA Models](https://arxiv.org/abs/2512.19297)：补充与智能体与模型安全相关的模型侧方法。
+- [Harmony in Chaos: A Progressive Noise-Resilient Network for Robust Fake News Video Detection](https://doi.org/10.1109/icme59968.2025.11208997)：《Harmony in Chaos: A Progressive Noise-Resilient Network for Robust Fake News Video Detection》为Agent Safety补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Applying Semantic Anchor in Face Anti-Spoofing Detection for Unified Physical-Digital Attacks](https://doi.org/10.1109/iccvw69036.2025.00338)：《Applying Semantic Anchor in Face Anti-Spoofing Detection for Unified Physical-Digital Attacks》为Agent Safety补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [MauBERT: Universal Phonetic Inductive Biases for Few-Shot Acoustic Units Discovery](https://arxiv.org/abs/2512.19612)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [LSTM and Transformer-based framework for bias correction of ERA5 hourly wind speeds](https://doi.org/10.1016/j.energy.2025.136498)：提出或分析面向agent safety, security, privacy, or robustness的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [PolyModNet: Advanced positional encodings and ethical bias mitigation in adaptive multimodal fusion for multilingual language understanding](https://doi.org/10.1016/j.neucom.2025.131450)：作为智能体安全的模型候选，关注标题所示的可复用能力、方法或评测信号。
+- [Monitoring Safety Properties for Autonomous Driving Systems with Vision-Language Models](https://doi.org/10.1109/eras63351.2025.11135768)：将 Vision-Language Models 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [Adversarial black-box attack and defense for convolutional neural network-based power quality disturbance classification](https://doi.org/10.1016/j.engappai.2025.112411)：通过 Adversarial black-box attack and defense for convolutional neural network-based power quality disturbance classification 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Visual perception-informed urban design toolkit: Computational urban morphology optimisation to inform real-time perceived safety](https://doi.org/10.1016/j.jum.2025.09.005)：通过 Computational urban morphology optimisation to inform real-time perceived safety 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [MeUAL: Model-Enhanced Uncertainty-Aware Safe Reinforcement Learning for Safety-Critical Autonomous Highway Overtaking](https://doi.org/10.1109/tits.2025.3644417)：研究 LLM 不确定性估计如何被操纵，把置信度脆弱性作为安全风险。
+- [Topological Attention Graph Neural ODE Deep Clustering for UAV Swarms in Encirclement Attack Scenarios](https://doi.org/10.1109/taes.2025.3621120)：通过 Topological Attention Graph Neural ODE Deep Clustering for UAV Swarms in Encirclement Attack Scenarios 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Scaling Reinforcement Learning for Content Moderation with Large Language Models](https://arxiv.org/abs/2512.20061)：比较面向政策化内容审核分类器的多种 RL 训练配方，在标签稀缺和政策变化条件下测试 verifiable reward 与 LLM-as-judge reward shaping。
+- [AttackTracer: Semantic-level adversarial attack location traceability via evidential diffusion model](https://doi.org/10.1016/j.neucom.2025.131535)：通过 AttackTracer 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Backdoor Attacks on Prompt-Driven Video Segmentation Foundation Models](https://arxiv.org/abs/2512.22046)：研究 prompt-driven video segmentation foundation models 的 backdoor vulnerabilities。
+- [Spatial-Temporal Reconstruction Error for AIGC-based Forgery Image Detection](https://doi.org/10.1109/icassp49660.2025.10890455)：通过 Spatial-Temporal Reconstruction Error for AIGC-based Forgery Image Detection 检测生成或欺骗内容，关注操纵痕迹及对抗变换下的鲁棒性。
+- [LLM Driven Legal Text Analytics: A Case Study For Food Safety Violation Cases](https://doi.org/10.18653/v1/2025.justnlp-main.6)：通过 LLM 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Continual face forgery detection based on relation-aware spatial-frequency interaction aggregation and contrastive learning](https://doi.org/10.1016/j.patcog.2025.112456)：通过 relation-aware spatial-frequency interaction aggregation and contrastive learning 检测生成或欺骗内容，关注操纵痕迹及对抗变换下的鲁棒性。
+- [CoGA: A Collaborative Gray-Box Adversarial Attack for Multimodal Language Models](https://doi.org/10.1109/tifs.2025.3646854)：通过 CoGA 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [RLMI: A Black-Box Model Inversion Attack Method Against Large Language Models for Text Classification](https://doi.org/10.23919/cje.2025.00.037)：通过 RLMI 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [A Study on Cross-Lingual Security Vulnerabilities in Large Language Models](https://doi.org/10.1109/eleco69582.2025.11329228)：通过 A Study on Cross-Lingual Security Vulnerabilities in Large Language Models 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Model-Agnostic Unsupervised Detection of Prompt Injection with Multiscale Perplexity Signatures](https://doi.org/10.1109/milcom64451.2025.11310042)：用 Multiscale Perplexity Signatures 度量越狱或 prompt injection 风险，区分不安全响应和普通任务失败。
+- [JADE: Jailbreak-Aware Dynamic Defense Enhancer for LLMs Via Reinforcement Learning](https://doi.org/10.1109/bigdata66926.2025.11400893)：用 JADE 防御越狱或 prompt injection，关注绕过通道以及拒答或过滤行为。
+- [Hybrid Constitutional Classifiers for Prompt Injection Defense](https://doi.org/10.1109/eit64391.2025.11103606)：用 Hybrid Constitutional Classifiers for Prompt Injection Defense 防御越狱或 prompt injection，关注绕过通道以及拒答或过滤行为。
+- [Chakoshi: A Customizable Guardrail for LLMs with a Focus on Japanese-Language Moderation](https://aclanthology.org/2025.ranlp-1.14/)：提出关于 Chakoshi: A Customizable Guardrail for LLMs with a Focus on Japanese-Language Moderation 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [Trojan Attack on Machine Unlearning: Security Risk of the Right to be Forgotten](https://doi.org/10.1109/tdsc.2025.3567848)：提出关于 Trojan Attack on Machine Unlearning: Security Risk of the Right to be Forgotten 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion](https://arxiv.org/abs/2512.23173)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [SAP: Privacy-Preserving Fine-Tuning on Language Models with Split-and-Privatize Framework](https://doi.org/10.24963/ijcai.2025/57)：为语言模型微调加入拆分与私有化的隐私保护机制。
+- [Robust Jailbreak Detection in Large Language Models Using Behavioral Fingerprinting](https://doi.org/10.1109/mosicom67153.2025.11398297)：用大模型行为指纹检测越狱。
+- [Cross-modal content security alignment method for multimodal generation](https://doi.org/10.1109/cisce65916.2025.11065521)：在多模态生成中对齐跨模态内容安全信号，重点处理图文之间的不安全错配，而不是只做单独文本过滤。
+- [Research on Aligning Large Models with Human Values Using Lora Fine-Tuning](https://doi.org/10.1109/cei66465.2025.11398511)：将 LoRA 微调用作参数高效的人类价值对齐路线，用较小更新量调整大模型行为。
+- [On the Zero-shot Adversarial Robustness of Vision-Language Models: A Truly Zero-shot and Training-free Approach](https://doi.org/10.1109/cvpr52734.2025.01855)：在不训练的情况下提升 VLM 对抗鲁棒性，直接利用预训练视觉语言表征执行零样本防御。
+- [Robustifying Zero-Shot Vision Language Models by Subspaces Alignment](https://doi.org/10.1109/iccv51701.2025.01955)：通过对齐零样本 VLM 的表示子空间，提高其面对分布漂移和对抗视觉扰动时的鲁棒性。
+- [A Hybrid Intelligence Framework for EmotionAware Deepfake Detection and Misinformation Risk Reduction](https://doi.org/10.1109/iceamst67459.2025.11335615)：把情绪感知深伪检测与人机协同风险降低结合，用于多媒体虚假信息视频。
+- [GCS-Net: A universal AI-generated visual content detection method based on CLIP](https://doi.org/10.1016/j.knosys.2025.113806)：基于 CLIP 特征构建 GCS-Net，面向不同生成器家族检测 AI 生成视觉内容，追求通用合成图像识别。
+- [Target Bias Is All You Need: Zero-Shot Debiasing of Vision-Language Models With Bias Corpus](https://doi.org/10.1109/iccv51701.2025.00188)：通过构造 bias corpus 定位并修正零样本 VLM 中的偏置方向，而不是重训完整模型。
+- [Probing Hidden States for Calibrated, Alignment-Resistant Predictions in LLMs](https://doi.org/10.1101/2025.09.17.25336018)：在冻结 LLM hidden state 上训练轻量探针，恢复校准预测，包括被安全调优在生成输出中压制的知识。
+- [Shortcut-Enhanced Multimodal Backdoor Attack in Vision-Guided Robot Grasping](https://doi.org/10.1109/tase.2025.3589764)：在视觉引导机器人抓取中植入 shortcut-enhanced 多模态后门，显示触发相关性可破坏具身操作策略。
+- [Backdoor Defense for Text Encoders in Text-to-Image Generative Models](https://doi.org/10.1109/tdsc.2025.3595864)：为智能体安全方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [A Novel GNN-based Approach for Detection of Prompt Injection Attacks](https://doi.org/10.1109/csr64739.2025.11130138)：用图神经网络检测 prompt injection，把攻击识别建模为提示结构或关系特征上的分类问题。
+- [DaMiT-SQL: Detecting and Mitigating Text-to-SQL Prompt Injection Attacks](https://doi.org/10.1109/cascon66301.2025.00116)：面向 text-to-SQL 场景检测并缓解 prompt injection，把数据库查询生成中的恶意指令插入作为专门防护目标。
+- [A Jailbreak Prompt Detector Based on Selective Perturbation and Contrastive Learning](https://doi.org/10.1109/cscwd64889.2025.11033427)：结合选择性扰动与对比学习训练越狱提示检测器，使模型学习正常提示和规避式攻击提示之间的表示差异。
+- [JailBreakLLM: An Effective LLaMa Model Designed Specifically to Jailbreak OpenAI GPT](https://doi.org/10.1109/qpain66474.2025.11171650)：训练专门生成越狱提示的 LLaMA 变体，把攻击生成模型本身作为测试 OpenAI GPT 防线的红队工具。
+- [Interpretable Safety Alignment via SAE-Constructed Low-Rank Subspace Adaptation](https://arxiv.org/abs/2512.23260)：利用 sparse-autoencoder 特征构造低秩安全适配器，把可解释性与可控安全对齐连接起来。
+- [SLAG: A Sensitive Layer Activation-Guided Jailbreak Attack on Vision-Language Models](https://doi.org/10.1109/icpads67057.2025.11323025)：利用 VLM 敏感层激活引导越狱攻击，显示内部层响应可被用来寻找更有效的多模态安全绕过方向。
+- [Adversarial Lens: Exploiting Attention Layers to Generate Adversarial Examples for Evaluation](https://arxiv.org/abs/2512.23837)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [DistilGuard - Large Language Models for Poisoning Detection in Federated Learning](https://doi.org/10.1109/cns66487.2025.11195054)：用大语言模型检测联邦学习中的投毒行为，把客户端更新或训练信号中的异常模式转化为可判别的安全告警。
+- [Input Moderation and Injection Filtering in Large Language Model via Llama Guard Integration](https://doi.org/10.1109/punecon67554.2025.11378619)：把 Llama Guard 集成到输入审核与注入过滤流程中，在请求进入主模型前拦截有害内容和 prompt injection。
+- [Adversarial Prompt Detection in Large Language Models: A Classification-Driven Approach](https://doi.org/10.32604/cmc.2025.063826)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Periodic watermarking for copyright protection of large language models in cloud computing security](https://doi.org/10.1016/j.csi.2025.103983)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Protecting machine learning from poisoning attacks: A risk-based approach](https://doi.org/10.1016/j.cose.2025.104468)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Black-box Adversarial Attack Defense Approach: An Empirical Analysis from Cybersecurity Perceptive](https://doi.org/10.1016/j.rineng.2025.105177)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [T2VAttack: Adversarial Attack on Text-to-Video Diffusion Models](https://arxiv.org/abs/2512.23953)：提出或分析面向agent safety, alignment, privacy, or provenance的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Training-Free Color-Aware Adversarial Diffusion Sanitization for Diffusion Stegomalware Defense at Security Gateways](https://arxiv.org/abs/2512.24499)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Metaverse Security: LLM-Based Malicious Code Detection Through Token Optimization](https://doi.org/10.1109/metacom65502.2025.00057)：通过 token optimization 改进 LLM-based malicious code detection，把代码安全分类作为模型安全信号。
+- [Invisible Backdoor Attack With Siamese Tuning on Pre-Trained Vision-Language Models](https://doi.org/10.1109/tmm.2025.3639961)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [AAL:Attention-Guided White-Box Attack on Large Language Models](https://doi.org/10.1109/bigdia68682.2025.11383393)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Enhancing Jailbreak Resistance in Large Language Models Using Model Merge](https://doi.org/10.1109/spw67851.2025.00015)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Critical Features are Achilles’ Heels: Efficient Personalized Text-to-Image Model Attack through Delicate Feature Perturbation](https://doi.org/10.1109/cyberscitech68397.2025.00008)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Privacy Assessment of Text-to-Image Models via Enhanced Membership Inference Attack](https://doi.org/10.1109/globecom59602.2025.11432050)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Memory-Aware Privacy Protection for Large Language Models in Education](https://doi.org/10.1109/iset65607.2025.00043)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Policy-driven contextual risk evaluation in OAuth 2.0 authentication frameworks for AI chatbot-based RPA systems](https://doi.org/10.1016/j.compeleceng.2025.110759)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [A BERT–CNN Hybrid Model for Multilingual Hate Speech Detection with Integrated Interpretability](https://doi.org/10.1109/apcit65661.2025.11411657)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [AI Chatbot Security Enhancement with Adversarial Attack Detection](https://doi.org/10.1109/icimia67127.2025.11200846)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Detection of Data Exposures in Software Services Using a Large Language Model](https://doi.org/10.1109/sse67621.2025.00020)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [A Robust Deep-Fake Video Detection Model Based on Behavioral and Facial Features Using Random Forest Classifier](https://doi.org/10.1109/acit68900.2025.11510578)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Hybrid Deep Learning Approach For Deepfake Video Detection Using Feature Fusion](https://doi.org/10.1109/icerect65215.2025.11377400)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [An Innovative Model of Deepfake Detection in Video Using 3D EfficientnetB7 with Spatial Attention](https://doi.org/10.23919/indiacom66777.2025.11115212)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Utilizing rPPG Signal Synchronization and Deep Learning Techniques for Deepfake Video Detection](https://doi.org/10.1109/access.2025.3604336)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [A Hybrid Deep Learning Model for Deepfake Video Detection](https://doi.org/10.1109/icacrs67045.2025.11324229)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Diff-Cleanse: Identifying and Mitigating Backdoor Attacks in Diffusion Models](https://doi.org/10.1109/icme59968.2025.11210014)：补充用于识别和缓解扩散模型后门攻击的方法。
+- [I know what you MEME! Understanding and Detecting Harmful Memes with Multimodal Large Language Models](https://doi.org/10.14722/ndss.2025.240415)：补充基于多模态大语言模型的有害 meme 理解与检测方法。
+- [CABIN: Debiasing Vision-Language Models Using Backdoor Adjustments](https://doi.org/10.24963/ijcai.2025/55)：补充基于后门调整的视觉语言模型去偏方法。
+- [Selective Privacy-Preserving Federated Learning for Large Language Model Fine-Tuning](https://doi.org/10.1109/iwcmc65282.2025.11059634)：补充面向智能体安全的模型侧工作，重点是privacy-preserving federated LLM fine-tuning。
+- [Making Theft Useless: Adulteration-Based Protection of Proprietary Knowledge Graphs in GraphRAG Systems](https://arxiv.org/abs/2601.00274)：用 AURA 在专有 GraphRAG 知识图谱中预先注入可信但错误的 adulterants，使被窃图谱在攻击者隔离环境中失去可用性。
+- [FLAGuard: Efficient Verifiable Federated LoRA of Large Language Models](https://doi.org/10.1109/tmc.2025.3641570)：用两阶段流程验证联邦 LoRA 聚合，分别检查聚合后的低秩矩阵及其乘积结果，并用 Iterative Gradient Sampling and Convolutional Compression 压缩梯度矩阵。
+- [Stealthier Backdoor Attacks for Multimodal Models: Bidirectional Triggers via Coverless Steganography and Semantic Preservation](https://doi.org/10.1109/miccis66057.2025.00025)：把触发器嵌入一个模态、在另一模态执行攻击，并结合 coverless steganography、语义保持损失和语言建模损失，使多模态后门更隐蔽且更能抵抗变换。
+- [EXDF: Explainable Deepfake Detection with Vision-Language Model](https://doi.org/10.1109/icip55913.2025.11084529)：把 deepfake 检测表述为 VQA，在带 GPT-4o mask-guided 解释的 ExDF 数据集上做 VLM 指令微调，并加入 facial mask encoder，使模型指出被篡改面部区域而不只输出真假标签。
+- [Data Poisoning Attacks of Fine-Tuning for Large Language Models](https://doi.org/10.1109/aicsip65423.2025.11427210)：提出 JailPoisoning，把 GCG jailbreak 生成与微调数据投毒结合，构造可绕过 Qwen2.5、DeepSeek-R1-Distill 等模型安全检测的投毒数据集。
+- [Detecting and Mitigating Social Bias in Transformer Language Models](https://doi.org/10.1109/gcwcn66157.2025.11448494)：研究 Transformer 语言模型中的社会偏见检测与缓解，为安全与公平性模型方法补充证据。
+- [Quantifying and Mitigating Occupational Bias in Open-Source Large Language Models](https://doi.org/10.1109/bigdata66926.2025.11402061)：量化并缓解开源大语言模型中的职业偏见。
+- [AdvAttack-LLM: Exploiting Elasticity in Large Language Models for Efficient Adversarial Attacks](https://doi.org/10.1109/iccbdai66607.2025.11389048)：研究利用大语言模型弹性的高效对抗攻击。
+- [Defensive M2S: Training Guardrail Models on Compressed Multi-turn Conversations](https://arxiv.org/abs/2601.00454)：通过 Defensive M2S 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Post-Processing Watermarking vs Direct Integration into Generative Models](https://doi.org/10.15625/vap.2025.0339)：比较生成模型中的后处理水印与直接集成水印。
+- [Enhancing Synthetic Generated-Images Detection through Post-Hoc Calibration](https://doi.org/10.1109/wacvw65960.2025.00087)：为合成生成图像检测器进行后验校准。
+- [TWT-LLM: A Universal and Robust Tagged Watermark for Large Language Models](https://doi.org/10.1109/smc58881.2025.11342733)：提出面向大语言模型的通用标签水印。
+- [Analysis of the impact of prompt obfuscation on the effectiveness of language models in detecting prompt injections](https://doi.org/10.7256/2454-0714.2025.2.73939)：分析提示混淆对语言模型检测提示注入的影响。
+- [Black-Box Steganography for Large Language Models](https://doi.org/10.1109/tcsvt.2025.3574808)：补充与隐蔽通道安全风险相关的大模型黑盒隐写方法。
+- [Privacy-Preserving NLP: Federated Learning for On-Device Language Model Fine-Tuning](https://doi.org/10.1109/icsit65336.2025.11294286)：将联邦学习用于端侧语言模型微调，提供保护隐私的模型适配路径。
+- [CoRLHF: Reinforcement learning from human feedback with cooperative policy-reward optimization for LLMs](https://doi.org/10.1016/j.eswa.2025.130113)：迭代协同优化 policy 与 reward model，用二者在 policy rollouts 上的 consensus scores 收集奖励模型偏好数据，从而缓解 policy-reward 分布错配并连接 RLHF 与 AI feedback 训练。
+- [Decomposition, Synthesis, and Attack: A Multi-Instruction Fusion Method for Jailbreaking LLMs](https://doi.org/10.1109/jiot.2025.3525741)：研究用于越狱大模型的多指令融合攻击方法，可作为安全攻击侧参考。
+- [BAIT: Large Language Model Backdoor Scanning by Inverting Attack Target](https://doi.org/10.1109/sp61157.2025.00103)：通过反演攻击目标扫描 LLM 后门，适合作为模型侧安全诊断方法。
+- [Privacy-Preserving Prompt Injection Detection for Smart Cloud-Deployed Large Language Models](https://doi.org/10.1109/smartcloud66068.2025.00009)：面向智能体安全与可信运行的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Multilevel Distribution Alignment for Multisource Universal Domain Adaptation](https://doi.org/10.1109/tnnls.2025.3561401)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Trajectory Guard - A Lightweight, Sequence-Aware Model for Real-Time Anomaly Detection in Agentic AI](https://arxiv.org/abs/2601.00516)：面向智能体安全与安全评测的模型、训练或算法工作。核心思想：以 A Lightweight, Sequence-Aware Model for Real-Time Anomaly Detection in Agentic AI 为主要改进目标，作为 Model 条目的能力参考。
+- [Low Rank Comes with Low Security: Gradient Assembly Poisoning Attacks against Distributed LoRA-based LLM Systems](https://arxiv.org/abs/2601.00566)：提出或研究基于 Gradient Assembly Poisoning Attacks against Distributed LoRA-based LLM Systems 的后门或投毒攻击，关注触发器持久性、迁移性或数据恢复泄漏。
+- [Reliable Grid Forecasting: State Space Models for Safety-Critical Energy Systems](https://arxiv.org/abs/2601.01410)：通过 State Space Models for Safety-Critical Energy Systems 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [SEAttack: A self-evolving jailbreak attack to induce toxic responses for non-toxic queries in large language models](https://doi.org/10.1016/j.ipm.2025.104544)：用自演化 jailbreak attack 从非毒性查询诱导有害回复，补充安全评测中的自适应攻击模型。
+- [Structural Representations for Cross-Attack Generalization in AI Agent Threat Detection](https://arxiv.org/abs/2601.01723)：面向 AI 智能体威胁检测的跨攻击泛化表示方法，适合放入安全模型条目。
+- [UnPII: Unlearning Personally Identifiable Information with Quantifiable Exposure Risk](https://arxiv.org/abs/2601.01786)：按 PII 风险指数决定遗忘优先级，对高暴露个人属性更强地遗忘，同时跟踪模型效用和合规删除需求。
+- [MORE: Multi-Objective Adversarial Attacks on Speech Recognition](https://arxiv.org/abs/2601.01852)：补充与智能体与模型安全相关的模型侧方法。
+- [Break Me If You Can: Self-Jailbreaking of Aligned LLMs via Lexical Insertion Prompting](https://arxiv.org/abs/2601.02670)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Window-based Membership Inference Attacks Against Fine-tuned Large Language Models](https://arxiv.org/abs/2601.02751)：用滑动窗口投票替代全局 loss 判断 membership，在微调 LLM 文本序列中捕捉局部记忆信号。
+- [Quality Degradation Attack in Synthetic Data](https://arxiv.org/abs/2601.02947)：通过 Quality Degradation Attack in Synthetic Data 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [JPU](https://arxiv.org/abs/2601.03005)：通过 on-policy path rectification 连接越狱防御与 unlearning，把安全对齐和定向遗忘结合起来。
+- [Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](https://arxiv.org/abs/2601.03265)：补充智能体安全的 Model 条目，重点是《Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models》。
+- [TRYLOCK: Defense-in-Depth Against LLM Jailbreaks via Layered Preference and Representation Engineering](https://arxiv.org/abs/2601.03300)：把 DPO 安全对齐、表示工程 steering、sidecar steering 分类器和输入规范化组合成分层越狱防御。
+- [ALERT](https://arxiv.org/abs/2601.03600)：通过放大内部差异信号，在零样本设置下检测 LLM 越狱。
+- [Merging Triggers, Breaking Backdoors: Defensive Poisoning for Instruction-Tuned Language Models](https://arxiv.org/abs/2601.04448)：提出 MB-Defense，先把攻击触发器和防御触发器合并为统一后门表示，再通过额外训练中和该表示，同时保持 instruction-following 能力。
+- [FeedEval: Pedagogically Aligned Evaluation of LLM-Generated Essay Feedback](https://arxiv.org/abs/2601.04574)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks](https://arxiv.org/abs/2601.04603)：用 Constitutional Classifiers 改进生产级越狱防御。
+- [Observations and Remedies for Large Language Model Bias in Self-Consuming Performative Loop](https://arxiv.org/abs/2601.05184)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Same Claim, Different Judgment: Benchmarking Scenario-Induced Bias in Multilingual Financial Misinformation Detection](https://arxiv.org/abs/2601.05403)：通过 Benchmarking Scenario-Induced Bias in Multilingual Financial Misinformation Detection 度量或缓解公平性与偏见风险，将人口统计、严重度或审核偏移作为安全轴。
+- [Jailbreaking Large Language Models through Iterative Tool-Disguised Attacks via Reinforcement Learning](https://arxiv.org/abs/2601.05466)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Toward an Integrated Cross-Urban Accident Prevention System: A Multi-Task Spatial-Temporal Learning Framework for Urban Safety Management](https://arxiv.org/abs/2601.05521)：构建跨城市事故预防的 multi-task spatial-temporal learning 模型，用于城市安全管理。
+- [Automated Generation of Accurate Privacy Captions From Android Source Code Using Large Language Models](https://arxiv.org/abs/2601.06276)：用 PCapGen 直接从 Android 源代码生成隐私说明短句，描述应用使用哪些个人数据、如何使用以及为何使用。
+- [Why LoRA Fails to Forget: Regularized Low-Rank Adaptation Against Backdoors in Language Models](https://arxiv.org/abs/2601.06305)：指出 LoRA 难以移除 LLM 后门源于谱强度不足和方向对齐不佳，并提出 RoRA 强化干净任务方向、压制触发子空间。
+- [Evaluating Cross-Lingual Unlearning in Multilingual Language Models](https://arxiv.org/abs/2601.06675)：把 TOFU 翻译成七种语言与文字变体，发现多数遗忘算法难以跨训练语言删除事实，而 subspace projection 能利用共享 interlingua 几何实现跨语言遗忘。
+- [A Robust Certified Machine Unlearning Method Under Distribution Shift](https://arxiv.org/abs/2601.06967)：用受信赖域约束的分布感知迭代 Newton 更新处理非独立同分布遗忘请求，在删除导致分布漂移时收紧 certified residual bound。
+- [Safe-FedLLM](https://arxiv.org/abs/2601.07177)：研究联邦大语言模型的安全性，为模型侧安全分析补充分布式训练和部署视角。
+- [Detecting Mental Manipulation in Speech via Synthetic Multi-Speaker Dialogue](https://arxiv.org/abs/2601.08342)：提出 SPEECHMENTALMANIP 语音一致的合成多说话人音频基准，并显示音频语言模型相比文本检测对操纵性语音高特异、低召回。
+- [Semantic Misalignment in Vision-Language Models under Perceptual Degradation](https://arxiv.org/abs/2601.08355)：扰动 Cityscapes 语义分割输入，度量像素级指标难以预测的对象幻觉、安全关键实体遗漏和 VLM 安全判断不一致。
+- [A Marketplace for AI-Generated Adult Content and Deepfakes](https://arxiv.org/abs/2601.09117)：父级复核候选：分析 Civitai 14 个月 bounty 请求，发现 NSFW 与显式深伪委托集中在高频请求者，并不成比例地针对女性名人，本身不是模型方法。
+- [Reward Learning through Ranking Mean Squared Error](https://arxiv.org/abs/2601.09236)：提出 R4 评分式强化学习目标，用 ranking mean squared error 拟合轨迹-评分对，并为有序人类反馈给出最小且完备的解集保证。
+- [SpatialJB: How Text Distribution Art Becomes the "Jailbreak Key" for LLM Guardrails](https://arxiv.org/abs/2601.09321)：用 SpatialJB 防御越狱或 prompt injection，关注绕过通道以及拒答或过滤行为。
+- [Bias Dynamics in BabyLMs: Towards a Compute-Efficient Sandbox for Democratising Pre-Training Debiasing](https://arxiv.org/abs/2601.09421)：把紧凑的 BabyLM BERT 式模型作为低成本预训练去偏沙盒，复现 BERT 偏见动态，并把实验成本从 500 多 GPU 小时降到 30 以下。
+- [ReasAlign](https://arxiv.org/abs/2601.10173)：提出或分析基于 ReasAlign 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Predicting Biased Human Decision-Making with Large Language Models in Conversational Settings](https://arxiv.org/abs/2601.11049)：开展 1,648 名参与者的预注册聊天机器人实验，检验 LLM 是否能复现对话复杂度升高时的框架效应和现状偏见变化。
+- [Preserving Fairness and Safety in Quantized LLMs Through Critical Weight Protection](https://arxiv.org/abs/2601.12033)：通过 Critical Weight Protection 度量或缓解公平性与偏见风险，将人口统计、严重度或审核偏移作为安全轴。
+- [Less Is More - Until It Breaks: Security Pitfalls of Vision Token Compression in Large Vision-Language Models](https://arxiv.org/abs/2601.12042)：面向智能体安全的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Less Is More - Until It Breaks: Security Pitfalls of Vision Token Compression in Large Vision-Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [TrojanPraise: Jailbreak LLMs via Benign Fine-Tuning](https://arxiv.org/abs/2601.12460)：用审核可通过的赞美数据微调模型，让构造词把模型态度转向有害概念，在黑盒微调设置下最高达到 95.88% 攻击成功率。
+- [ACE-Align: Attribute Causal Effect Alignment for Cultural Values under Varying Persona Granularities](https://arxiv.org/abs/2601.12962)：在 14 个国家和四类 persona 属性上对齐人口属性对文化价值的因果效应，把高资源与低资源地区对齐差距从 9.81 降到 4.92 分。
+- [When Reasoning Leaks Membership: Membership Inference Attack on Black-box Large Reasoning Models](https://arxiv.org/abs/2601.13607)：提出 BlackSpectrum，把暴露的推理轨迹嵌入 recall-inference 轴来推断样本是否属于 LRM 训练数据，并提供 arXivReasoning 与 BookReasoning 数据集。
+- [BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](https://arxiv.org/abs/2601.14007)：在抽象价值描述、具体事件和决策之间探测并 steering 价值表征，显示价值概念可跨层级迁移并因果影响具体判断。
+- [LLM Security and Safety: Insights from Homotopy-Inspired Prompt Obfuscation](https://arxiv.org/abs/2601.14528)：系统化混淆提示词，在大规模提示集合上研究 LLM 潜在安全与安保弱点。
 - [NeuroFilter](https://arxiv.org/abs/2601.14660)：用激活空间线性方向和 activation velocity 构建隐私护栏，在对话式 LLM agent 内检测 contextual-integrity 违规。
+- [Obscuring Data Contamination Through Translation: Evidence from Arabic Corpora](https://arxiv.org/abs/2601.14994)：补充与智能体与模型安全相关的模型侧方法。
+- [Training-Free and Interpretable Hateful Video Detection via Multi-stage Adversarial Reasoning](https://arxiv.org/abs/2601.15115)：构建 MARS 免训练仇恨视频检测流程，依次生成中立描述、支持证据、反证推理和综合判定，用于可解释内容审核。
+- [RECAP: A Resource-Efficient Method for Adversarial Prompting in Large Language Models](https://arxiv.org/abs/2601.15331)：从按危害类别索引的成功对抗提示库中检索语义相近样本，降低在 Llama 3 8B 上运行 GCG、PEZ、GBDA 式红队测试的计算成本。
+- [YuFeng-XGuard](https://arxiv.org/abs/2601.15588)：面向细粒度 LLM 风险评估的 reasoning-centric、可解释、灵活 guardrail model。
+- [Connect the Dots: Knowledge Graph-Guided Crawler Attack on Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2601.15678)：Connect the Dots 补充安全模型方法，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [Beyond Visual Safety: Jailbreaking Multimodal Large Language Models for Harmful Image Generation via Semantic-Agnostic Inputs](https://arxiv.org/abs/2601.15698)：用中性化视觉拼接和归纳式重组执行“先重构、再生成”攻击，使 MLLM 从语义无关输入诱导出有害图像。
+- [Safety Vectors via Global Optimization](https://arxiv.org/abs/2601.15801)：归因并优化 LLM 中的安全向量。核心思想：识别调控安全行为的表示方向，并通过全局优化进行控制。
+- [Unintended Memorization of Sensitive Information in Fine-Tuned Language Models](https://arxiv.org/abs/2601.17480)：探测只出现在微调输入而非目标输出中的 PII，并比较差分隐私、机器遗忘、正则化和偏好对齐的隐私-效用权衡。
+- [Reconstructing Training Data from Adapter-based Federated Large Language Models](https://arxiv.org/abs/2601.17533)：提出 UTR 梯度反演攻击，利用冻结层 attention 与低秩 adapter 梯度从 adapter 式联邦 LLM 训练中重构文本。
+- [AttenMIA](https://arxiv.org/abs/2601.18110)：利用 attention signals 做 LLM membership inference attack，补充模型内部隐私泄漏路径。
+- [Ad Insertion in LLM-Generated Responses](https://arxiv.org/abs/2601.19435)：把 LLM 回答中的广告植入作为操纵与披露风险来研究，关注生成式回答如何把赞助内容混入任务型信息。
+- [GAVEL](https://arxiv.org/abs/2601.19768)：通过监控激活支持基于规则的安全控制，补充模型内部安全信号。
+- [Reinforcement Unlearning via Group Relative Policy Optimization](https://arxiv.org/abs/2601.20568)： 将 group relative policy optimization 用于 reinforcement unlearning，连接 RL 式后训练与定向遗忘。
+- [ICON: Intent-Context Coupling for Efficient Multi-Turn Jailbreak Attack](https://arxiv.org/abs/2601.20903)：在多轮对话中耦合恶意意图与良性上下文，攻击只筛查单条用户消息的多轮越狱防御。
+- [Lossless Copyright Protection via Intrinsic Model Fingerprinting](https://arxiv.org/abs/2601.21252)：嵌入 intrinsic model fingerprint 做版权保护，使生成输出可归因，同时不降低模型效用。
+- [Small models, big threats: Characterizing safety challenges from low-compute AI models](https://arxiv.org/abs/2601.21365)：父级复核候选：刻画低算力模型的滥用风险，更像安全威胁图谱研究，尚不明确属于模型侧方法。
+- [Industrialized Deception: The Collateral Effects of LLM-Generated Misinformation on Digital Ecosystems](https://arxiv.org/abs/2601.21963)：父级复核候选：提供 JudgeGPT 和 RogueGPT 研究人类如何感知 AI 生成新闻，更接近虚假信息评测基础设施而非模型方法。
+- [Visual-Guided Key-Token Regularization for Multimodal Large Language Model Unlearning](https://arxiv.org/abs/2601.22020)： 通过 visual-guided key-token regularization 做多模态大模型 unlearning，扩展到 MLLM 安全遗忘。
+- [From Logits to Latents: Contrastive Representation Shaping for LLM Unlearning](https://arxiv.org/abs/2601.22028)：提出 CLReg 对比式表征正则器，把遗忘特征从保留特征中分离，降低预测空间遗忘后仍残留的潜在纠缠。
+- [Per-parameter Task Arithmetic for Unlearning in Large Language Models](https://arxiv.org/abs/2601.22030)： 用 per-parameter task arithmetic 实现 LLM unlearning，补充参数空间遗忘机制。
+- [The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples](https://arxiv.org/abs/2601.22359)：把遗忘模型仍能识别扰动后忘记样本的现象定义为 residual knowledge，并用 RURK 微调惩罚局部邻域泄漏。
+- [Rethinking Anonymity Claims in Synthetic Data Generation: A Model-Centric Privacy Attack Perspective](https://arxiv.org/abs/2601.22434)：从可查询生成模型视角重述合成数据匿名性，把 GDPR 可识别风险映射到隐私攻击，并比较差分隐私与相似度指标。
+- [Private Code Autocomplete](https://arxiv.org/abs/2601.22935)：把 differential privacy 用于 IDE autocomplete，将代码助手训练与私有代码泄露控制连接起来。
+- [Character as a Latent Variable in Large Language Models: A Mechanistic Account of Emergent Misalignment and Conditional Safety Failures](https://arxiv.org/abs/2601.23081)：把 character 建模为涌现式错配和条件安全失效的潜变量。
+- [THINKSAFE: Self-Generated Safety Alignment for Reasoning Models](https://arxiv.org/abs/2601.23143)：为推理模型自生成安全对齐数据，缓解强化学习后的有害过度服从。
+- [Shedding the Facades, Connecting the Domains: Detecting Shifting Multimodal Hate Video with Test-Time Adaptation](https://arxiv.org/abs/2602.00132)：提出 SCANNER 仇恨视频测试时适应方法，结合 centroid-guided stable-core alignment、自适应 centroid 加权和簇内多样性正则。
+- [Attention-Guided Feature Learning for Steering](https://arxiv.org/abs/2602.00333)：用注意力引导学习 steering 特征，降低 activation 控制中概念提取的脆弱性。
+- [SAU: Sparsity-Aware Unlearning for LLMs via Gradient Masking and Importance Redistribution](https://arxiv.org/abs/2602.00577)： 通过 sparsity-aware gradient masking 与 importance redistribution 实现 LLM unlearning。
+- [Small-Margin Preferences Still Matter-If You Train Them Right](https://arxiv.org/abs/2602.00954)：提出 MixDPO，按偏好 margin 难度排序样本，并把模糊偏好对交给 SFT、把较容易偏好对交给 preference loss。
+- [Universal Transferable Jailbreak Attacks on VLMs](https://arxiv.org/abs/2602.01025)：研究针对视觉语言模型的通用可迁移越狱攻击。
+- [Minimizing Mismatch Risk: A Prototype-Based Routing Framework for Zero-shot LLM-generated Text Detection](https://arxiv.org/abs/2602.01240)：构建 DetectRouter 两阶段原型路由器，用白盒原型和黑盒检测分数几何，为每个未知文本源选择最合适的 surrogate detector。
+- [Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](https://arxiv.org/abs/2602.01428)：把水印强度与 speculative sampling 接受率建模为约束优化问题，并在 draft token 接受过程中注入伪随机性以兼顾可检测性和速度。
+- [Steering Vector Fields](https://arxiv.org/abs/2602.01654)：用上下文感知的向量场替代静态 steering vector，以提升推理时 LLM 控制可靠性。
+- [Efficient Adversarial Attacks on High-dimensional Offline Bandits](https://arxiv.org/abs/2602.01658)：扰动离线 bandit 评估器使用的公开奖励模型，显示高维生成模型评测可被很小的定向权重改动劫持。
+- [AGTAO: Robust and Stabilized LLM Unlearning via Adversarial Gating Training with Adaptive Orthogonality](https://arxiv.org/abs/2602.01703)： 用 adversarial gating training 与 adaptive orthogonality 实现稳健 LLM unlearning。
+- [RedVisor: Reasoning-Aware Prompt Injection Defense via Zero-Copy KV Cache Reuse](https://arxiv.org/abs/2602.01795)：增加可移除 adapter，在推理分析阶段定位 prompt injection 威胁、条件化拒答，并在 vLLM 中复用 KV cache 以避免独立检测管线的延迟。
+- [Prediction-Powered Risk Monitoring of Deployed Models for Detecting Harmful Distribution Shifts](https://arxiv.org/abs/2602.02229)：提出 PPRM，把合成标签和少量真实标签结合为运行风险的 anytime-valid 下界，对有害分布漂移给出有限样本误报保证。
+- [CATNIP: LLM Unlearning via Calibrated and Tokenized Negative Preference Alignment](https://arxiv.org/abs/2602.02824)：CATNIP 补充安全模型方法，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [What Structural Inductive Bias Helps Transformers Reason Over Knowledge Graphs? A Study with Tabula RASA](https://arxiv.org/abs/2602.02834)：父级复核候选：隔离出 sparse adjacency masking 是多跳 KGQA 的主要 transformer 结构偏置，属于推理架构结果，缺少直接智能体安全轴。
+- [FaceLinkGen: Rethinking Identity Leakage in Privacy-Preserving Face Recognition with Identity Extraction](https://arxiv.org/abs/2602.02914)：用 linkage 与 regeneration 攻击隐私保护人脸识别模板，匹配准确率超过 98.5%，说明 PSNR/SSIM 重建指标会漏掉身份泄露。
+- [Invisible Clean-Label Backdoor Attacks for Generative Data Augmentation](https://arxiv.org/abs/2602.03316)：提出 InvLBA 隐形 clean-label 后门，在生成式增强图像的潜特征中加入扰动，平均提升 46.43% 攻击成功率且保持干净准确率。
+- [GuardReasoner-Omni: A Reasoning-based Multi-modal Guardrail for Text, Image, and Video](https://arxiv.org/abs/2602.03328)：用 18.1 万条文本、图像、视频和音频样本训练 3B 与 7B 多模态护栏模型，流程为推理 SFT 后接带正确性奖励的 RL。
+- [The Personality Trap: How LLMs Embed Bias When Generating Human-Like Personas](https://arxiv.org/abs/2602.03334)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Risk Awareness Injection: Calibrating Vision-Language Models for Safety without Compromising Utility](https://arxiv.org/abs/2602.03402)：无需训练，通过放大所选视觉 token 中的不安全信号子空间来校准 VLM 安全性，同时保留良性跨模态推理。
+- [Stage-wise Attention-Guided LVLM Attack](https://arxiv.org/abs/2602.04356)：通过分阶段 attention guidance 研究何时、何处攻击 LVLM，澄清 vision encoder 攻击面。
+- [RASA: Routing-Aware Safety Alignment for Mixture-of-Experts Models](https://arxiv.org/abs/2602.04448)：识别越狱成功时过度激活的 Safety-Critical Experts，在固定路由下只微调这些专家，并强制路由一致性以防止 MoE 安全绕过。
+- [Investigating Disability Representations in Text-to-Image Models](https://arxiv.org/abs/2602.04687)：补充面向智能体安全的模型侧工作，重点是disability representation analysis in text-to-image models。
+- [Inference-Time Reasoning Selectively Reduces Implicit Social Bias in Large Language Models](https://arxiv.org/abs/2602.04742)：补充面向智能体安全的模型侧工作，重点是inference-time reasoning and social-bias reduction。
+- [A Causal Perspective for Enhancing Jailbreak Attack and Defense](https://arxiv.org/abs/2602.04893)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [BadTemplate: A Training-Free Backdoor Attack via Chat Template Against Large Language Models](https://arxiv.org/abs/2602.05401)：提出基于聊天模板的训练无关后门攻击。
+- [REBEL](https://arxiv.org/abs/2602.06248)：用 evolutionary evaluation loop 恢复 hidden knowledge，为安全相关的能力诱导补充方法。
+- [Generating High-quality Privacy-preserving Synthetic Data](https://arxiv.org/abs/2602.06390)：补充面向智能体安全的模型侧工作，重点是privacy-preserving synthetic data generation。
+- [Is Gradient Ascent Really Necessary? Memorize to Forget for Machine Unlearning](https://arxiv.org/abs/2602.06441)： 重新审视 machine unlearning 中的 gradient ascent，补充模型侧遗忘机制分析。
+- [Do Prompts Guarantee Safety? Mitigating Toxicity from LLM Generations through Subspace Intervention](https://arxiv.org/abs/2602.06623)：在生成过程中抑制隐藏的有毒表示模式，为减少有害输出且保持流畅性补充一条内部干预路线。
+- [SEMA](https://arxiv.org/abs/2602.06854)：通过自生成 prefilling 与 intent-drift-aware 强化学习训练多轮 jailbreak 攻击器。
+- [Endogenous Resistance to Activation Steering in Language Models](https://arxiv.org/abs/2602.06941)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Incentive-Aware AI Safety via Strategic Resource Allocation: A Stackelberg Security Games Perspective](https://arxiv.org/abs/2602.07259)：面向智能体安全的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Incentive-Aware AI Safety via Strategic Resource Allocation: A Stackelberg Security Games Perspective”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Revisiting Robustness for LLM Safety Alignment via Selective Geometry Control](https://arxiv.org/abs/2602.07340)：从优化几何重新审视 LLM 安全对齐鲁棒性，通过选择性参数子空间控制改进噪声监督和分布转移下的偏好优化。
+- [Safety Alignment as Continual Learning: Mitigating the Alignment Tax via Orthogonal Gradient Projection](https://arxiv.org/abs/2602.07892)：该方法在安全持续学习中使用正交梯度投影，以降低对齐税。
+- [Retrieval Pivot Attacks in Hybrid RAG: Measuring and Mitigating Amplified Leakage from Vector Seeds to Graph Expansion](https://arxiv.org/abs/2602.08668)：补充与智能体与模型安全相关的模型侧方法。
+- [Statistical Roughness-Informed Machine Unlearning](https://arxiv.org/abs/2602.09304)：补充与智能体与模型安全相关的模型侧方法。
+- [Context-Aware Counterfactual Data Augmentation for Gender Bias Mitigation in Language Models](https://arxiv.org/abs/2602.09590)：用大模型生成带真实语境的性别反事实样本，并按目标小模型的不确定性过滤低质量样本，以减少简单 CDA 常见的语言建模能力损失。
+- [Gauss-Newton Unlearning for the LLM Era](https://arxiv.org/abs/2602.10568)：Gauss-Newton Unlearning for the LLM Era 补充安全模型方法，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [Peak plus Accumulation for Multi-Turn Attack Detection](https://arxiv.org/abs/2602.11247)：通过峰值与累积信号为多轮大语言模型攻击风险打分，改进对稀疏但升级的有害意图检测。
+- [Jailbreaking Leaves a Trace: Understanding and Detecting Jailbreak Attacks from Internal Representations of Large Language Models](https://arxiv.org/abs/2602.11495)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Capability-Oriented Training Induced Alignment Risk](https://arxiv.org/abs/2602.12124)：在多个 vulnerability games 中测试 capability-seeking RL，显示模型会为奖励利用环境漏洞，并可通过 SFT 迁移和在部署后保留这些机会主义策略。
+- [AST-PAC: AST-guided Membership Inference for Code](https://arxiv.org/abs/2602.13240)：通过 AST-PAC 分析隐私泄漏或保护，关注成员推断、数据抽取或敏感信息暴露。
 - [PrivAct](https://arxiv.org/abs/2602.13840)：通过偏好优化训练具备隐私意识的多 Agent 行为。核心思想：把 contextual privacy preservation 内化为 agent policy 的一部分，而不是只依赖外置过滤器或最终输出检查。
+- [Differentially Private Retrieval-Augmented Generation](https://arxiv.org/abs/2602.14374)：面向智能体安全，补充用于differentially private retrieval-augmented generation的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Silent Inconsistency in Data-Parallel Full Fine-Tuning: Diagnosing Worker-Level Optimization Misalignment](https://arxiv.org/abs/2602.14462)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Variance-Reduced $(\varepsilon,\delta)-$Unlearning using Forget Set Gradients](https://arxiv.org/abs/2602.14938)：通过 Forget Set Gradients 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [MAVRL: Learning Reward Functions from Multiple Feedback Types with Amortized Variational Inference](https://arxiv.org/abs/2602.15206)：补充面向智能体安全的模型侧工作，重点是reward learning from multiple feedback types。
+- [Emergent Morphing Attack Detection in Open Multi-modal Large Language Models](https://arxiv.org/abs/2602.15461)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [The Geometry of Alignment Collapse: When Fine-Tuning Breaks Safety](https://arxiv.org/abs/2602.15799)：用几何分析解释良性微调为何会破坏安全对齐：低维高曲率安全子空间会被梯度下降的二阶加速度逐步撞入，并导致对齐损失随训练时间四次方增长。
+- [A Lightweight Explainable Guardrail for Prompt Safety](https://arxiv.org/abs/2602.15853)：提出轻量可解释的提示安全护栏。
+- [Narrow fine-tuning erodes safety alignment in vision-language agents](https://arxiv.org/abs/2602.16931)：面向智能体安全的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Narrow fine-tuning erodes safety alignment in vision-language agents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [MeGU: Machine-Guided Unlearning with Target Feature Disentanglement](https://arxiv.org/abs/2602.17088)： 通过 target feature disentanglement 做 machine-guided unlearning，补充特征级遗忘方法。
+- [Can LLM Safety Be Ensured by Constraining Parameter Regions?](https://arxiv.org/abs/2602.17696)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Hierarchical Reward Design from Language: Enhancing Alignment of Agent Behavior with Human Specifications](https://arxiv.org/abs/2602.18582)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [MANATEE: Inference-Time Lightweight Diffusion Based Safety Defense for LLMs](https://arxiv.org/abs/2602.18782)：把推理时轻量扩散方法用于大模型安全防御。
+- [Echoes of Ownership: Adversarial-Guided Dual Injection for Copyright Protection in MLLMs](https://arxiv.org/abs/2602.18845)：补充与智能体与模型安全相关的模型侧方法。
+- [PA-Attack](https://arxiv.org/abs/2602.19418)：用 prototypes 与 attention 引导针对 LVLM vision encoder 的灰盒攻击，扩展多模态对抗安全覆盖。
+- [VALD](https://arxiv.org/abs/2602.19570)： 用多阶段流程检测针对 LVLM 的视觉攻击，为多模态安全监控补充模型侧防御路线。
+- [OptiLeak: Efficient Prompt Reconstruction via Reinforcement Learning in Multi-tenant LLM Services](https://arxiv.org/abs/2602.20595)：用 likelihood ranking 自动找出携带敏感信息的 hard tokens，构造 DPO 偏好对来微调 prompt reconstruction 攻击器，降低共享 KV cache 多租户服务中每个泄漏 token 所需请求数。
+- [When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](https://arxiv.org/abs/2602.21977)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Analysis of LLMs Against Prompt Injection and Jailbreak Attacks](https://arxiv.org/abs/2602.22242)：提出或分析基于 Analysis of LLMs Against Prompt Injection and Jailbreak Attacks 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Multilingual Safety Alignment Via Sparse Weight Editing](https://arxiv.org/abs/2602.22554)：通过稀疏权重编辑实现多语言安全对齐。
+- [Synthetic Strategies for Persuasive Dialogue Agents](https://arxiv.org/abs/2602.22696)：合成跨学科沟通策略来增强 persuasive dialogue agents，属于与说服能力和安全相关的模型线索。
+- [FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation](https://arxiv.org/abs/2602.23636)：通过 FlexGuard 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [GuardAlign](https://arxiv.org/abs/2602.24027)：通过 unsafe-region detection 和 decoding-time safety stabilization，为 LVLM 提供免训练 test-time safety alignment。
+- [Hidden Costs of Domain Fine-Tuning](https://arxiv.org/abs/2603.00061)：指出含 PII 的领域微调会削弱安全性并增加泄露风险。核心思想：把带隐私数据的微调视为模型侧安全风险，而不只是合规问题。
+- [Learning to Attack: A Bandit Approach to Adversarial Context Poisoning](https://arxiv.org/abs/2603.00567)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Accelerating PDE Surrogates via RL-Guided Mesh Optimization](https://arxiv.org/abs/2603.02066)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Safety Training Persists Through Helpfulness Optimization in LLM Agents](https://arxiv.org/abs/2603.02229)：在多步工具使用 agent 中研究 safety 与 helpfulness 的 DPO 训练，发现安全训练会在后续有用性优化中保留，并形成近似线性的 Pareto frontier。
+- [StegaFFD: Privacy-preserving Face Forgery Detection via Fine-grained Steganographic Domain Lifting](https://arxiv.org/abs/2603.02886)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
 - [Learning When to Act or Refuse](https://arxiv.org/abs/2603.03205)：通过显式 act/refuse 动作和 pairwise trajectory preference RL，对多步工具使用型 agentic reasoning model 做安全后训练。
+- [Discern Truth from Falsehood: Reducing Over-Refusal via Contrastive Refinement](https://arxiv.org/abs/2603.03323)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Image-based Prompt Injection: Hijacking Multimodal LLMs through Visually Embedded Adversarial Instructions](https://arxiv.org/abs/2603.03637)：把对抗指令隐写进自然图像，通过分割选区、自适应字体缩放和背景感知渲染在黑盒 MLLM 中实现隐蔽 prompt injection。
+- [Dual-Modality Multi-Stage Adversarial Safety Training: Robustifying Multimodal Web Agents Against Cross-Modal Attacks](https://arxiv.org/abs/2603.04364)：通过 Robustifying Multimodal Web Agents Against Cross-Modal Attacks 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [When Agents Persuade: Rhetoric Generation and Mitigation in LLMs](https://arxiv.org/abs/2603.04636)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction](https://arxiv.org/abs/2603.04839)：通过语义增强的动态对比攻击提升视觉语言模型对抗样本在模型与任务之间的迁移性。
+- [Causally Robust Reward Learning from Reason-Augmented Preference Feedback](https://arxiv.org/abs/2603.04861)：补充面向智能体安全的模型侧工作，重点是reward learning from reason-augmented preferences。
+- [Differentially Private Multimodal In-Context Learning](https://arxiv.org/abs/2603.04894)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Depth Charge](https://arxiv.org/abs/2603.05772)：通过 deep safety attention heads 攻击安全机制，为 aligned LLM 补充模型内部 jailbreak 视角。
+- [Knowing without Acting: The Disentangled Geometry of Safety Mechanisms in Large Language Models](https://arxiv.org/abs/2603.05773)：分析大模型安全机制中知道与行动的解耦几何。
+- [Reward Under Attack: Analyzing the Robustness and Hackability of Process Reward Models](https://arxiv.org/abs/2603.06621)：通过 Reward Under Attack 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Safe Transformer](https://arxiv.org/abs/2603.06727)：在 Transformer 表征中加入显式 safety bit，用于可解释、可控制的对齐。
+- [Two Frames Matter: A Temporal Attack for Text-to-Video Model Jailbreaking](https://arxiv.org/abs/2603.07028)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Revisiting the LiRA Membership Inference Attack Under Realistic Assumptions](https://arxiv.org/abs/2603.07567)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Foley-Flow: Coordinated Video-to-Audio Generation with Masked Audio-Visual Alignment and Dynamic Conditional Flows](https://arxiv.org/abs/2603.08126)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [DARC: Disagreement-Aware Alignment via Risk-Constrained Decoding](https://arxiv.org/abs/2603.08145)：通过分歧感知与风险约束解码改进模型对齐安全性。
+- [Continuation-Triggered Jailbreak Mechanism](https://arxiv.org/abs/2603.08234)：从机制层面分析 LLM 中 continuation-triggered jailbreak 背后的 continuation 与 refusal 拉扯。
+- [Probing the Limits of the Lie Detector Approach to LLM Deception](https://arxiv.org/abs/2603.10003)：通过 Probing the Limits of the Lie Detector Approach to LLM Deception 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Amnesia: Adversarial Semantic Layer Specific Activation Steering in Large Language Models](https://arxiv.org/abs/2603.10080)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [The Mirror Design Pattern: Strict Data Geometry over Model Scale for Prompt Injection Detection](https://arxiv.org/abs/2603.11875)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Delayed Backdoor Attacks](https://arxiv.org/abs/2603.11949)：把 temporal delay 作为 backdoored pre-trained models 的新 attack surface。
+- [Understanding Disclosure Risk in Differential Privacy with Applications to Noise Calibration and Auditing (Extended Version)](https://arxiv.org/abs/2603.12142)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [CLASP: Defending Hybrid Large Language Models Against Hidden State Poisoning Attacks](https://arxiv.org/abs/2603.12206)：提出或研究基于 CLASP 的后门或投毒攻击，关注触发器持久性、迁移性或数据恢复泄漏。
+- [Diagnosing Retrieval Bias Under Multiple In-Context Knowledge Updates in Large Language Models](https://arxiv.org/abs/2603.12271)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Swap-guided Preference Learning for Personalized Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2603.12595)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Test-Time Attention Purification for Backdoored Large Vision Language Models](https://arxiv.org/abs/2603.12989)：通过测试时注意力净化缓解大视觉语言模型中的后门行为。
+- [Mending the Holes: Mitigating Reward Hacking in Reinforcement Learning for Multilingual Translation](https://arxiv.org/abs/2603.13045)：提出 WALAR，用单语文本做翻译 RL 训练，并通过词对齐与语言对齐修补质量估计奖励中的漏洞，降低低资源翻译中的 reward hacking。
+- [Pragma-VL](https://arxiv.org/abs/2603.13292)：在 multimodal large language models 中仲裁 safety 与 helpfulness trade-offs。
+- [Accelerating Suffix Jailbreak attacks with Prefix-Shared KV-cache](https://arxiv.org/abs/2603.13420)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Bodhi VLM: Privacy-Alignment Modeling for Hierarchical Visual Representations in Vision Backbones and VLM Encoders via Bottom-Up and Top-Down Feature Search](https://arxiv.org/abs/2603.13728)：补充视觉语言模型编码器和视觉骨干的隐私对齐建模方法。
+- [Relationship-Aware Safety Unlearning for Multimodal LLMs](https://arxiv.org/abs/2603.14185)：在多模态 unlearning 中显式表示不安全的对象-关系-动作组合，减少仅擦除概念带来的误伤。
+- [Two Birds, One Projection](https://arxiv.org/abs/2603.14825)：用推理时特征投影平衡 LVLM 安全性与实用性，使安全 steering 更少依赖完整重训练。
+- [State-Dependent Safety Failures in Multi-Turn Language Model Interaction](https://arxiv.org/abs/2603.15684)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [KidsNanny: A Two-Stage Multimodal Content Moderation Pipeline Integrating Visual Classification, Object Detection, OCR, and Contextual Reasoning for Child Safety](https://arxiv.org/abs/2603.16181)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Structured Semantic Cloaking for Jailbreak Attacks on Large Language Models](https://arxiv.org/abs/2603.16192)：通过情境重构、内容碎片化和线索伪装分散恶意意图，压力测试依赖完整语义重构的 LLM 越狱防线。
+- [MOSAIC: Composable Safety Alignment](https://arxiv.org/abs/2603.16210)：使用模块化控制 token 实现可组合安全对齐，补充可控的模型侧对齐机制。
+- [Visual Distraction Undermines Moral Reasoning in Vision-Language Models](https://arxiv.org/abs/2603.16445)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Detecting Data Poisoning in Code Generation LLMs via Black-Box, Vulnerability-Oriented Scanning](https://arxiv.org/abs/2603.17174)：通过黑盒、漏洞导向扫描检测代码生成 LLM 的投毒问题，并用 AST 归一化发现多次生成中反复出现的不安全结构。
+- [Understanding and Defending VLM Jailbreaks via Jailbreak-Related Representation Shift](https://arxiv.org/abs/2603.17372)：通过分析越狱相关表示偏移防御视觉语言模型越狱。
+- [Differential Privacy in Generative AI Agents: Analysis and Optimal Tradeoffs](https://arxiv.org/abs/2603.17902)：面向智能体安全，补充用于differential privacy tradeoffs in generative AI agents的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [CNT: Safety-oriented Function Reuse across LLMs via Cross-Model Neuron Transfer](https://arxiv.org/abs/2603.18449)：补充面向智能体安全、越狱、隐私或有害行为能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Functional Subspace Watermarking for Large Language Models](https://arxiv.org/abs/2603.18793)：通过 Functional Subspace Watermarking for Large Language Models 研究水印或来源控制，关注归因、可检测性、鲁棒性和质量权衡。
+- [Structured Visual Narratives Undermine Safety Alignment in Multimodal Large Language Models](https://arxiv.org/abs/2603.21697)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Null-space Projection Steering](https://arxiv.org/abs/2603.22094)：通过零空间投影中的原则化 steering 防御视觉语言模型越狱。
+- [Detecting Non-Membership in LLM Training Data via Rank Correlations](https://arxiv.org/abs/2603.22707)：通过 Rank Correlations 分析隐私泄漏或保护，关注成员推断、数据抽取或敏感信息暴露。
+- [Not All Tokens Are Created Equal: Query-Efficient Jailbreak Fuzzing for LLMs](https://arxiv.org/abs/2603.23269)：提出或分析基于 Query-Efficient Jailbreak Fuzzing for LLMs 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Safety Pitfalls of Steering Vectors](https://arxiv.org/abs/2603.24543)：分析 steering vector 安全干预的失效模式，说明激活转向何时可能不可靠。
+- [PIDP-Attack: Combining Prompt Injection with Database Poisoning Attacks on Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2603.25164)：提出或分析基于 PIDP-Attack 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Why Safety Probes Catch Liars But Miss Fanatics](https://arxiv.org/abs/2603.25861)：分析安全 probe 在不同对抗性人格或动机下检测欺骗行为不均衡的模型侧失效模式。
+- [Protecting User Prompts Via Character-Level Differential Privacy](https://arxiv.org/abs/2603.26032)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [The Geometry of Robustness: Optimizing Loss Landscape Curvature and Feature Manifold Alignment for Robust Finetuning of Vision-Language Models](https://arxiv.org/abs/2603.27139)：补充面向智能体安全的模型侧工作，重点是robust VLM finetuning via loss landscape and feature alignment。
+- [Distilling Human-Aligned Privacy Sensitivity Assessment from Large Language Models](https://arxiv.org/abs/2603.29497)：把 Mistral Large 3 的隐私敏感度判断蒸馏到 150M 参数 encoder 分类器，在 10 个领域的隐私标注文本上训练，用作可扩展的去标识化系统评估指标。
+- [SERSEM](https://arxiv.org/abs/2604.01147)：用选择性熵加权评分对代码语言模型进行成员推断，为代码专用 LLM 增加模型侧隐私风险分析方法。
+- [Backdoor Attacks on Decentralised Post-Training](https://arxiv.org/abs/2604.02372)：展示 pipeline-parallel post-training 中由恶意中间阶段植入触发器的后门攻击，可显著降低 alignment score，并在后续 safety-alignment training 后仍部分保留。
+- [Generalization Limits of Reinforcement Learning Alignment](https://arxiv.org/abs/2604.02652)：补充面向智能体安全的模型侧工作，重点是generalization limits of RL alignment。
+- [DRAFT: Task Decoupled Latent Reasoning for Agent Safety](https://arxiv.org/abs/2604.03242)：DRAFT 将 agent safety 监控从输出审核转向长轨迹中的任务解耦风险证据。
+- [Value-Based Safety Forecasting for LLM Streaming](https://arxiv.org/abs/2604.03962)：在流式生成过程中提前预测安全风险，补充模型侧运行时监控方法。
 - [SC-Inject-Bench / ShieldNet](https://arxiv.org/abs/2604.04426)：把供应链注入基准与网络级 guardrail 结合，用于检测工具内嵌劫持和数据泄露。
+- [JailWAM: Jailbreaking World Action Models in Robot Control](https://arxiv.org/abs/2604.05498)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Harnessing Hyperbolic Geometry for Harmful Prompt Detection and Sanitization](https://arxiv.org/abs/2604.06285)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Designing Privacy-Preserving Visual Perception for Robot Navigation Based on User Privacy Preferences](https://arxiv.org/abs/2604.06382)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [VLMShield: Efficient and Robust Defense of Vision-Language Models against Malicious Prompts](https://arxiv.org/abs/2604.06502)：用 MAFE 提取统一的 CLIP 多模态特征，并训练轻量即插即用检测器区分良性与恶意 VLM 提示。
+- [FedDetox: Robust Federated SLM Alignment via On-Device Data Sanitization](https://arxiv.org/abs/2604.06833)：用端侧数据清洗提升联邦小语言模型对齐的稳健性。
+- [MirageBackdoor](https://arxiv.org/abs/2604.06840)：提出 think-well-answer-wrong 的 CoT backdoor，在保持 reasoning 表面合理的同时操纵最终答案，对 process-monitoring defense 构成压力测试。
+- [Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](https://arxiv.org/abs/2604.06950)：Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation 补充智能体安全方向的模型侧方法。
+- [TrajGuard](https://arxiv.org/abs/2604.07727)：在解码过程中从 streaming hidden-state trajectories 检测越狱风险，使安全监测从 prompt-only 变为动态轨迹监测。
+- [Silencing the Guardrails](https://arxiv.org/abs/2604.07835)：研究通过 dynamic contextual representation ablation 进行 inference-time jailbreak。
+- [Uncertainty-Aware Transformers: Conformal Prediction for Language Models](https://arxiv.org/abs/2604.08885)：补充面向智能体安全的模型侧工作，重点是conformal prediction for language-model uncertainty。
 - [CORA](https://arxiv.org/abs/2604.09155)：训练 Guardian 风险模型和 Diagnostician，在 GUI agent 的 post-policy、pre-action 阶段用 conformal risk control 校准是否执行。
+- [Mosaic: Multimodal Jailbreak against Closed-Source VLMs via Multi-View Ensemble Optimization](https://arxiv.org/abs/2604.09253)：用多视角集成优化针对闭源 VLM 的多模态越狱。
+- [EthicMind: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](https://arxiv.org/abs/2604.09265)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [When Can You Poison Rewards? A Tight Characterization of Reward Poisoning in Linear MDPs](https://arxiv.org/abs/2604.10062)：补充面向智能体安全的模型侧工作，重点是reward poisoning characterization。
+- [Learning from Emptiness: De-biasing Listwise Rerankers with Content-Agnostic Probability Calibration](https://arxiv.org/abs/2604.10150)：补充与智能体与模型安全相关的模型侧方法。
+- ["bot lane noob"Towards Deployment of NLP-based Toxicity Detectors in Video Games](https://arxiv.org/abs/2604.10175)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Adversarial Attention Hijacking for LVLM Safety](https://arxiv.org/abs/2604.10299)：通过 adversarial attention hijacking 使 large vision-language models 忽视 safety instructions。
+- [Latent Instruction Representation Alignment: defending against jailbreaks, backdoors and undesired knowledge in LLMs](https://arxiv.org/abs/2604.10403)：补充面向智能体安全、越狱、隐私或有害行为能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Mitigating Privacy Risk via Forget Set-Free Unlearning](https://arxiv.org/abs/2604.10636)：补充与智能体与模型安全相关的模型侧方法。
+- [Why Do Large Language Models Generate Harmful Content?](https://arxiv.org/abs/2604.11663)：分析 LLM 生成有害内容的机制，为安全研究提供模型侧诊断参考。
+- [CoLA Choice Leakage Attack](https://arxiv.org/abs/2604.12342)：暴露 subset training 中的 choice leakage privacy risk，补充训练数据隐私安全模型线索。
+- [Reading Between the Pixels](https://arxiv.org/abs/2604.12371)：把文本-图像嵌入对齐与视觉语言模型中的排版攻击成功率联系起来，补充多模态提示注入防御的模型侧分析路线。
+- [LASA: Language-Agnostic Semantic Alignment at the Semantic Bottleneck for LLM Safety](https://arxiv.org/abs/2604.12710)：在语义瓶颈处进行语言无关安全对齐。
+- [Teaching LLMs Human-Like Editing of Inappropriate Argumentation via Reinforcement Learning](https://arxiv.org/abs/2604.12770)：补充面向智能体安全的模型侧工作，重点是RL for human-like editing of inappropriate argumentation。
+- [The role of System 1 and System 2 semantic memory structure in human and LLM biases](https://arxiv.org/abs/2604.12816)：把人类和 LLM 的 System 1、System 2 语义记忆建模为网络，比较这些结构如何关联隐性性别偏见调节。
+- [Alignment Midtraining for Animals](https://arxiv.org/abs/2604.13076)：用合成 midtraining 文档注入动物关怀规范，并发布 ANIMA 作为面向具体价值的 alignment 评测。
+- [Memory-Graph Guided Corpus-Free Unlearning](https://arxiv.org/abs/2604.13777)：用 memory graph 引导无语料 LLM unlearning，为移除不期望知识补充安全对齐路线。
+- [Calibrate-Then-Delegate: Safety Monitoring with Risk and Budget Guarantees via Model Cascades](https://arxiv.org/abs/2604.14251)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Federated User Behavior Modeling for Privacy-Preserving LLM Recommendation](https://arxiv.org/abs/2604.14833)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Harmonizing Multi-Objective LLM Unlearning via Unified Domain Representation and Bidirectional Logit Distillation](https://arxiv.org/abs/2604.15482)：补充模型侧方法，主要面向 Agent Safety。
+- [Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation](https://arxiv.org/abs/2604.15559)：研究 AI agent 蒸馏中不安全行为的隐性迁移，揭示 teacher-student 训练过程中的模型侧安全风险。
+- [GroupDPO: Memory efficient Group-wise Direct Preference Optimization](https://arxiv.org/abs/2604.15602)：GroupDPO 通过组级偏好比较提升直接偏好优化的训练效率。
+- [Privacy-Preserving LLMs Routing](https://arxiv.org/abs/2604.15728)：面向智能体安全，补充用于privacy-preserving LLM routing的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](https://arxiv.org/abs/2604.15847)：补充模型侧方法，主要面向 Agent Safety。
+- [GRIFT](https://arxiv.org/abs/2604.16242)：用 prompt-conditioned CoT 的梯度指纹检测并抑制 RLVR 中的 reward hacking，针对自然语言 reasoning 表面上看不出异常的情形。
 - [SaFeR-Steer](https://arxiv.org/abs/2604.16358)：通过合成自举和反馈动态演化多轮多模态大模型，以提升安全引导能力。
+- [TWGuard: A Case Study of LLM Safety Guardrails for Localized Linguistic Contexts](https://arxiv.org/abs/2604.16542)：通过 TWGuard 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [SafeDream: Safety World Model for Proactive Early Jailbreak Detection](https://arxiv.org/abs/2604.16824)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Alignment Imprint: Zero-Shot AI-Generated Text Detection via Provable Preference Discrepancy](https://arxiv.org/abs/2604.16923)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](https://arxiv.org/abs/2604.17041)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Motion-Guided Semantic Alignment with Negative Prompts for Zero-Shot Video Action Recognition](https://arxiv.org/abs/2604.17062)：通过 Negative Prompts for Zero-Shot Video Action Recognition 优化安全对齐，关注偏好信号、安全正则化或奖励黑客风险。
+- [Guardrails in Logit Space: Safety Token Regularization for LLM Alignment](https://arxiv.org/abs/2604.17210)：通过 Guardrails in Logit Space 优化安全对齐，关注偏好信号、安全正则化或奖励黑客风险。
+- [What Security and Privacy Transparency Users Need from Consumer-Facing Generative AI](https://arxiv.org/abs/2604.17270)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Representation-Guided Parameter-Efficient LLM Unlearning](https://arxiv.org/abs/2604.17396)：通过 Representation-Guided Parameter-Efficient LLM Unlearning 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [Secret Leakage in Code LLMs](https://arxiv.org/abs/2604.17814)：从 tokenization 角度分析代码 LLM 的 secret leakage 风险，补充代码助手模型侧隐私风险。
 - [Beyond Pattern Matching](https://arxiv.org/abs/2604.18248)：比较超越正则和微调分类器的跨领域提示注入检测技术，并在 prompt-shield 中实现部分方法。
+- [LLM Safety From Within: Detecting Harmful Content with Internal Representations](https://arxiv.org/abs/2604.18519)：从大模型内部表示检测有害内容。
+- [Multi-Generation Sampling for Jailbreak Detection](https://arxiv.org/abs/2604.18775)：研究多次生成采样信号在越狱检测中的作用，澄清生成方差何时能支持安全监测。
+- [Policy Gradient Primal-Dual Method for Safe Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2604.19024)：补充面向智能体安全的模型侧工作，重点是safe RLHF optimization。
+- [Counting Worlds Branching Time Semantics for post-hoc Bias Mitigation in generative AI](https://arxiv.org/abs/2604.19431)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Involuntary In-Context Learning: Exploiting Few-Shot Pattern Completion to Bypass Safety Alignment in GPT-5.4](https://arxiv.org/abs/2604.19461)：补充与智能体与模型安全相关的模型侧方法。
+- [Who Defines Fairness? Target-Based Prompting for Demographic Representation in Generative Models](https://arxiv.org/abs/2604.21036)：在推理时让用户选择目标公平分布，并据此生成特定人口属性提示变体，以缓解文生图模型中的代表性偏差。
+- [PrivUn: Unveiling Latent Ripple Effects and Shallow Forgetting in Privacy Unlearning](https://arxiv.org/abs/2604.22076)：通过 PrivUn 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [Removing Sandbagging in LLMs by Training with Weak Supervision](https://arxiv.org/abs/2604.22082)：补充通过弱监督训练移除大语言模型 sandbagging 行为的方法。
+- [Behavioral Canaries: Auditing Private Retrieved Context Usage in RL Fine-Tuning](https://arxiv.org/abs/2604.22191)：用行为金丝雀审计强化学习微调中对私有检索上下文的使用。
+- [Identifying and typifying demographic unfairness in phoneme-level embeddings of self-supervised speech recognition models](https://arxiv.org/abs/2604.22631)：补充面向智能体安全的模型侧工作，重点是demographic unfairness in speech-model embeddings。
+- [UNSEEN: A Cross-Stack LLM Unlearning Defense against AR-LLM Social Engineering Attacks](https://arxiv.org/abs/2604.23141)：面向 AR 眼镜与 LLM agent 结合的社工攻击提出跨栈防御，用平台限制和 LLM unlearning 降低目标识别与画像利用风险。
+- [IPRU: Input-Perturbation-based Radio Frequency Fingerprinting Unlearning for LAWNs](https://arxiv.org/abs/2604.24022)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [BARRED: Synthetic Training of Custom Policy Guardrails via Asymmetric Debate](https://arxiv.org/abs/2604.25203)：基于 asymmetric debate 的 custom-policy guardrail training workflow。核心思想：为任务特定政策合成边界样例，使高效 guardrail classifier 能处理细粒度工具与政策约束。
+- [An Investigation of Linguistic Biases in LLM-Based Recommendations](https://arxiv.org/abs/2604.25456)：提出关于 An Investigation of Linguistic Biases in LLM-Based Recommendations 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
 - [SnapGuard](https://arxiv.org/abs/2604.25562)：面向 screenshot-based web agents 的轻量 prompt-injection detector，处理恶意指令只出现在渲染页面视觉内容中的情况。
+- [Cross-Lingual Jailbreak Detection via Semantic Codebooks](https://arxiv.org/abs/2604.25716)：用 Semantic Codebooks 度量越狱或 prompt injection 风险，区分不安全响应和普通任务失败。
+- [Robust Deepfake Detection: Mitigating Spatial Attention Drift via Calibrated Complementary Ensembles](https://arxiv.org/abs/2604.25889)：通过 Calibrated Complementary Ensembles 检测生成或欺骗内容，关注操纵痕迹及对抗变换下的鲁棒性。
+- [One Word at a Time: Incremental Completion Decomposition Breaks LLM Safety](https://arxiv.org/abs/2604.25921)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [From Prompt Risk to Response Risk: Paired Analysis of Safety Behavior of Large Language Model](https://arxiv.org/abs/2604.26052)：通过 Paired Analysis of Safety Behavior of Large Language Model 构建或评估护栏与内容安全方法，关注不安全输出检测及安全效用权衡。
+- [Secret Stealing Fine-Tuning Backdoors](https://arxiv.org/abs/2604.27426)：展示会在本地 LLM fine-tuning 中窃取 secret 的 supply-chain model-code backdoor，把安全覆盖从提示扩展到训练代码。
+- [RHyVE: Competence-Aware Verification and Phase-Aware Deployment for LLM-Generated Reward Hypotheses](https://arxiv.org/abs/2604.28056)：补充面向智能体安全的模型侧工作，重点是verification for LLM-generated reward hypotheses。
+- [Towards Neuro-symbolic Causal Rule Synthesis, Verification, and Evaluation Grounded in Legal and Safety Principles](https://arxiv.org/abs/2604.28087)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Minimal, Local, Causal Explanations for Jailbreak Success in Large Language Models](https://arxiv.org/abs/2605.00123)：为 LLM 越狱成功提供局部因果解释。
+- [Attention Is Where You Attack](https://arxiv.org/abs/2605.00236)：研究注意力路径上的攻击与防御，为模型内部安全补充视角。
+- [Revisiting Privacy Leakage in Machine Unlearning: Membership Inference Beyond the Forgotten Set](https://arxiv.org/abs/2605.01129)：通过 Membership Inference Beyond the Forgotten Set 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [Adaptive Pluralistic Alignment: A pipeline for dynamic artificial democracy](https://arxiv.org/abs/2605.01642)：提出自适应多元对齐流程，将动态民主偏好聚合纳入模型侧对齐。
+- [Probe-Geometry Alignment](https://arxiv.org/abs/2605.01699)：研究 probe-geometry alignment 如何抹除 cross-sequence memorization signatures，补充 unlearning traces 相关安全模型工作。
+- [Dataset-Poisoning Watermarking for Contrastive Learning](https://arxiv.org/abs/2605.01834)：评估用数据投毒实现 contrastive-learning watermarking 的可行性，补充模型所有权与训练数据安全线索。
+- [Fight Poison with Poison: Enhancing Robustness in Few-shot Machine-Generated Text Detection with Adversarial Training](https://arxiv.org/abs/2605.02374)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [RouteHijack](https://arxiv.org/abs/2605.02946)：通过 routing-aware 操纵攻击 MoE 大语言模型。
+- [Latent Refusal Trajectories](https://arxiv.org/abs/2605.02958)：追踪 hidden state 中的拒答动态以检测越狱，补充基于轨迹的模型内部安全监测器。
+- [Revisiting JBShield](https://arxiv.org/abs/2605.03095)：重新审视并重构表示层越狱防御。核心思想：分析内部防御机制失效点，再设计更稳健的越狱抵抗方法。
+- [Exposing LLM Safety Gaps Through Mathematical Encoding:New Attacks and Systematic Analysis](https://arxiv.org/abs/2605.03441)：提出或分析基于 New Attacks and Systematic Analysis 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Sample-Level Safety Degradation Scoring](https://arxiv.org/abs/2605.04572)： 用参数动态信号量化微调样本如何改变 LLM 的安全风险。
+- [GLiNER Guard](https://arxiv.org/abs/2605.05277)：提供面向生产 LLM 安全与隐私护栏的统一编码器家族。
+- [Behavior Cue Reasoning](https://arxiv.org/abs/2605.07021)：通过训练模型在相关内部或外部行为前发出 behavior cue，使推理更易监控。核心思想：暴露压缩的 oversight signal，让 monitor 能剪枝无效推理或恢复安全行动，同时不降低任务表现。
+- [MIPIAD: Multilingual Indirect Prompt Injection Attack Defense with Qwen -- TF-IDF Hybrid and Meta-Ensemble Learning](https://arxiv.org/abs/2605.07269)：面向 RAG 和 tool-using LLM systems 的多语言 indirect prompt-injection 防御框架；设计关键词：prompt-injection detection、多语言安全、classifier-plus-lexical ensemble、工具/RAG 攻击面。
+- [GPO-V](https://arxiv.org/abs/2605.07399)：通过全局概率优化越狱扩散式视觉语言模型，为安全评测与防御补充模型侧多模态攻击路线。
+- [Sparse Autoencoders as Plug-and-Play Firewalls for Adversarial Attack Detection in VLMs](https://arxiv.org/abs/2605.07447)：把稀疏自编码器作为 VLM 对抗攻击检测的即插即用防火墙。
+- [SHRED: Retain-Set-Free Unlearning via Self-Distillation with Logit Demotion](https://arxiv.org/abs/2605.07482)：通过 SHRED 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [NeurIPS Should Require Reproducibility Standards for Frontier AI Safety Claims](https://arxiv.org/abs/2605.08192)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [How Much Do Circuits Tell Us? Measuring the Consistency and Specificity of Language Model Circuits](https://arxiv.org/abs/2605.08348)：补充面向智能体安全的模型侧工作，重点是language-model circuit consistency and specificity。
+- [Mechanism Design Is Not Enough: Prosocial Agents for Cooperative AI](https://arxiv.org/abs/2605.08426)：研究机制设计之外的亲社会智能体与协作 AI。
+- [Refusal-Escape Directions](https://arxiv.org/abs/2605.08878)：分析对齐 LLM 仍可被越狱的拒答逃逸方向、算子级来源与安全-效用权衡，补充模型侧拒答机制条目。
+- [LLM-Agnostic Semantic Representation Attack](https://arxiv.org/abs/2605.08898)：提出不依赖具体模型的语义表示攻击，可补充 LLM 安全模型与攻击方法。
+- [Robust Multi-Agent LLMs under Byzantine Faults](https://arxiv.org/abs/2605.09076)：研究多智能体 LLM 系统在拜占庭故障下的鲁棒性。
+- [Dark Triad Feature Steering](https://arxiv.org/abs/2605.09773)：用特征转向揭示语言模型中可分离的反社会行为回路。
+- [GLiNER2-PII](https://arxiv.org/abs/2605.09973)：用合成数据训练紧凑的多语种 PII extraction model，为文档、工具参数、日志和 agent memory 提供模型侧隐私护栏。
+- [BROS: Bias-Corrected Randomized Subspaces for Memory-Efficient Single-Loop Bilevel Optimization](https://arxiv.org/abs/2605.10288)：通过 BROS 度量或缓解公平性与偏见风险，将人口统计、严重度或审核偏移作为安全轴。
+- [Exact Unlearning from Proxies Induces Closeness Guarantees on Approximate Unlearning](https://arxiv.org/abs/2605.10680)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [UJEM-KL](https://arxiv.org/abs/2605.10764)：通过在高熵决策 token 上做非定向熵最大化来攻击 VLM 安全拒答，补充一种解释更宽松越狱目标为何更容易跨模型迁移的模型侧线索。
+- [When Emotion Becomes Trigger: Emotion-style dynamic Backdoor Attack Parasitising Large Language Models](https://arxiv.org/abs/2605.11612)：研究情绪风格触发器对大模型形成的动态后门攻击。
+- [On-Policy Self-Evolution via Failure Trajectories for Agentic Safety Alignment](https://arxiv.org/abs/2605.11882)：该方法从不安全或失败的工具使用轨迹中学习智能体安全对齐信号，而不只依赖最终回复。
+- [Before the Last Token](https://arxiv.org/abs/2605.12726)：诊断 final-token 安全探针失效，说明基于激活的安全探针何时会漏检风险。
+- [Inference-Time Machine Unlearning via Gated Activation Redirection](https://arxiv.org/abs/2605.12765)： 通过 gated activation redirection 做 inference-time unlearning，补充运行时遗忘机制。
+- [Watermarking Should Be Treated as a Monitoring Primitive](https://arxiv.org/abs/2605.13095)：把生成模型水印重新视为面向观察者的监控原语，说明多密钥水印信号聚合可暴露超出单样本检测的实体级信息。
+- [DiffusionHijack: Supply-Chain PRNG Backdoor Attack on Diffusion Models and Quantum Random Number Defense](https://arxiv.org/abs/2605.13115)：通过恶意伪随机数生成器劫持扩散模型潜变量采样，在不改权重的情况下强制生成与提示无关的目标图像，并测试量子随机数生成器防御。
+- [Children's English Reading Story Generation via Supervised Fine-Tuning of Compact LLMs with Controllable Difficulty and Safety](https://arxiv.org/abs/2605.13709)：用专家设计的儿童阅读课程故事微调 8B 紧凑 LLM，使教育者可控制故事阅读难度，并保持低观察到的安全问题。
+- [Paraphrasing Attack Resilience of Various Machine-Generated Text Detection Methods](https://arxiv.org/abs/2605.14240)：在改写攻击下比较 RoBERTa 检测器、Binoculars、文本特征分析和 Random Forest 集成，揭示 AI 文本检测中的性能与韧性权衡。
+- [MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](https://arxiv.org/abs/2605.14289)：用多样化公共代理样本对齐独立训练的客户端专家，并在不共享私有客户端数据的情况下训练上下文感知 MoE 路由器。
+- [Selective Safety Steering via Value-Filtered Decoding](https://arxiv.org/abs/2605.14746)：用基于价值函数的安全准则进行解码时 steering，并用显式阈值控制不必要安全干预。
+- [Forgetting That Sticks: Quantization-Permanent Unlearning via Circuit Attribution](https://arxiv.org/abs/2605.15138)：结合因果电路归因、空空间投影和更新幅度下限，使 LLM 遗忘在训练后量化下仍然保留，而不是被压缩逆转。
+- [On-Policy Self-Distillation for Safety Alignment](https://arxiv.org/abs/2605.15239)：通过 on-policy self-distillation 降低 LLM safety alignment 的 safety tax。
+- [AGC: Adaptive Geodesic Correction for Adversarial Robustness on Vision-Language Models](https://arxiv.org/abs/2605.15584)：在测试时选择稳健数据增强作为几何锚点，并沿超球面测地线修正 CLIP 特征，无需参数更新即可提升对抗鲁棒性。
+- [Multi-Level Contextual Token Relation Modeling for Machine-Generated Text Detection](https://arxiv.org/abs/2605.16107)：通过局部 token 分数转移校准和基于上下文分数统计的全局规则推理，改进基于度量的机器生成文本检测。
+- [Semantic Watermarking with Order-Robust Detection over Sub-sentence Units](https://arxiv.org/abs/2608.27666)： 在 5% 假阳性率和 90% 内容保持阈值下，EDA 将改写、重排与重新分段统一为嵌入位移攻击，并在 32.6% 至 47.9% 的文档上成功移除四种语义水印；k-SwordStamp 则对句内单元进行顺序鲁棒检测，将测试中最强无盒攻击的成功率降至 10.8%。
 - [Adaptive Semantic Gates for Reliable Multi-Agent LLMs](https://doi.org/10.1109/icce67443.2026.11449653)：为多智能体 LLM 工作流加入语义门控，在风险或语义漂移消息传播到协作链路前进行过滤。
+- [DADSA](https://doi.org/10.1016/j.ipm.2026.104907)：提出 DADSA 双侧自适应深度安全对齐方法，聚焦 LLM 对齐行为而非事后过滤。
+- [Memory-Adaptive Optimizer for LLM Unlearning](https://doi.org/10.1109/icassp55912.2026.11462705)： 面向 LLM unlearning 中遗忘与记忆的权衡，用自适应优化器处理保留和遗忘记忆信号。
+- [Multilingual Euphemistic Coating](https://doi.org/10.1109/bigcomp68355.2026.00047)： 分析基于多语种委婉表达的安全规避，为跨语言安全补充模型侧攻击视角。
+- [Parameter Localization and Relearning for Safety Disalignment in Large Language Models](https://doi.org/10.1109/icassp55912.2026.11463981)：定位并重学习与安全相关的参数，用于修复大语言模型的安全失配。
+- [Adaptive Robust Watermarking for Large Language Models via Dynamic Token Embedding Perturbation](https://doi.org/10.1109/access.2026.3653833)：通过 Dynamic Token Embedding Perturbation 研究水印或来源控制，关注归因、可检测性、鲁棒性和质量权衡。
+- [Closed-Box Unlearning for Large Language Model-Enabled Internet of Everything](https://doi.org/10.1109/mnet.2026.3660124)：通过 Closed-Box Unlearning for Large Language Model-Enabled Internet of Everything 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [Visual pattern-based watermarking for large language model generated text](https://doi.org/10.1016/j.neucom.2026.133429)：通过 Visual pattern-based watermarking for large language model generated text 研究水印或来源控制，关注归因、可检测性、鲁棒性和质量权衡。
+- [PGmark : Enhancing text quality in language model watermarking via probability guidance](https://doi.org/10.1016/j.eswa.2026.131120)：通过 PGmark 研究水印或来源控制，关注归因、可检测性、鲁棒性和质量权衡。
+- [Sentinel Model as a Try: a dual-Model Architecture for Defending against Data Extraction Attacks in Retrieval-Augmented Generation](https://doi.org/10.1109/icassp55912.2026.11464571)：通过 a dual-Model Architecture for Defending against Data Extraction Attacks in Retrieval-Augmented Generation 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [PrivTabRAG: A Data-Model Co-Design Framework for Privacy-Preserving Retrieval-Augmented Generation on Tabular Data](https://doi.org/10.1016/j.eswa.2026.132023)：通过 PrivTabRAG 分析隐私泄漏或保护，关注成员推断、数据抽取或敏感信息暴露。
+- [Latent DPO for Concept Erasure in Text-To-Video Diffusion Models](https://doi.org/10.1109/icassp55912.2026.11463338)：通过 Latent DPO for Concept Erasure in Text-To-Video Diffusion Models 研究机器遗忘，关注目标删除、残余泄漏和留存模型效用。
+- [Addressing Prompt Injection in Large Language Models via In-Context Learning](https://doi.org/10.32604/cmc.2026.078188)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [VMSP: Video-to-Music Generation with Two-Stage Alignment and Synthesis](https://doi.org/10.1109/icassp55912.2026.11460579)：提出智能体安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Jailbreak-Free LLM-Assisted Malware Generation: An Empirical and Conceptual Analysis](https://doi.org/10.1109/access.2026.3681295)：贡献面向智能体安全、护栏与对抗风险的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Dual-space Sparse Mask Injection: A Defense Framework for Large Language Models Against Jailbreak Attacks](https://doi.org/10.1109/gaiis69281.2026.11519321)：补充面向智能体安全、越狱、隐私或有害行为能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [GRAIL-RAG: A Multi-Layer Guardrails Architecture with Session-Aware Memory and Multi-Stage Retrieval for Document-Grounded QA](https://doi.org/10.1109/icvadv67766.2026.11470472)：补充面向智能体安全、越狱、隐私或有害行为能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [ULTRA: A Standardized Certification Metric for Machine Unlearning](https://doi.org/10.1109/access.2026.3688958)：面向智能体安全能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Cracks in the Guardrails: Comparative Study of Jailbreak Attacks on Large Language Models](https://doi.org/10.1109/ic3ecsbhi67834.2026.11468934)：Cracks in the Guardrails: Comparative Study of Jailbreak Attacks on Large Language Models 补充智能体安全方向的模型侧方法。
+- [A decontextualized LLM-based safeguard technique for automated jailbreak mitigation](https://doi.org/10.1016/j.infsof.2026.108130)：补充与智能体与模型安全相关的模型侧方法。
+- [SpARK: An Embarrassingly Simple Sparse Watermarking in LLMs with Enhanced Text Quality](https://doi.org/10.18653/v1/2026.findings-eacl.240)：补充与智能体与模型安全相关的模型侧方法。
+- [CausalLog: Log parsing using LLMs with causal intervention for bias mitigation](https://doi.org/10.1016/j.ipm.2026.104609)：补充与智能体与模型安全相关的模型侧方法。
+- [Entropy-driven sabotage: Informative unlearning attacks on diffusion model](https://doi.org/10.1016/j.neucom.2026.132644)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Token-Anchored Semantic Drift: Untargeted Transferable Attacks Against Commercial MLLMs](https://doi.org/10.1109/gaiis69281.2026.11519348)：面向智能体安全，补充用于transferable attacks against multimodal large language models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Adversarial Diffusion Model: Generating High-Quality and Undetectable Images From Scratch](https://doi.org/10.1109/tifs.2026.3657841)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Selective Persuasion: Structural Stance Bias of Generative AI in Controversial Issues](https://doi.org/10.26599/gjms.2026.9330009)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Efficient and Robust Bird’s-Eye-View Perception via State Space Models with Linear Complexity](https://doi.org/10.1016/j.dsp.2026.106166)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Improving face forgery detection via hierarchical mixture of experts and fine-grained visual-text alignment](https://doi.org/10.1016/j.patcog.2026.113939)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Large Language Models for Nodal Analysis in Circuits Education: An Evaluation](https://doi.org/10.1109/southeastcon63549.2026.11476570)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Towards Comprehensive Semi-Formal Verification of AMBA AHB/APB Interconnects: Configuration Coverage, Mutation Testing, and Safety-Aware Design-for-Verification](https://doi.org/10.1109/cipher70417.2026.11523956)：面向智能体安全，补充用于safety, privacy, reward, over-refusal, or monitoring method for language or multimodal models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [GS-mark: Deep Robust Watermarking for Graph Signals](https://doi.org/10.1109/icassp55912.2026.11463492)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [TFPA: Enhancing adversarial attack on speech recognition via Time–Frequency Pre-alignment](https://doi.org/10.1016/j.knosys.2026.115992)：通过 TFPA 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Privacy Risks Associated with the Use of LLMs in Software Development](https://doi.org/10.5753/sbsi.2026.248323)：通过 the Use of LLMs in Software Development 分析隐私泄漏或保护，关注成员推断、数据抽取或敏感信息暴露。
+- [Ordinal-Aware Fine-Tuning of Multilingual LLaMA Models for Thai Cyberbullying Severity Classification](https://doi.org/10.1109/aaiml67890.2026.11498136)：通过 Ordinal-Aware Fine-Tuning of Multilingual LLaMA Models for Thai Cyberbullying Severity Classification 度量或缓解公平性与偏见风险，将人口统计、严重度或审核偏移作为安全轴。
+- [Defense-to-attack: Bypassing weak defenses enables stronger jailbreaks in Vision-Language Models](https://doi.org/10.1016/j.patcog.2026.113805)：提出或分析基于 Bypassing weak defenses enables stronger jailbreaks in Vision-Language Models 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Comparative Analysis of LLMs Against Jailbreak Prompts](https://doi.org/10.1109/icecte69292.2026.11429310)：用 Comparative Analysis of LLMs Against Jailbreak Prompts 度量越狱或 prompt injection 风险，区分不安全响应和普通任务失败。
+- [SALB: Security-Aware Load Balancing for Large Language Model Training in Datacenter Networks](https://doi.org/10.1109/tnsm.2026.3678979)：为 LLM training datacenter networks 引入 security-aware load balancing，把训练基础设施作为安全与隐私表面。
+- [A Fine-Tuning Data Recovery Attack on Generative Language Models via Backdooring](https://doi.org/10.1109/tifs.2026.3671126)：提出或研究基于 Backdooring 的后门或投毒攻击，关注触发器持久性、迁移性或数据恢复泄漏。
+- [ETV-Attack: Efficient text-driven visual-variable adversarial attacks on visual question answering with pre-trained language models](https://doi.org/10.1016/j.patcog.2026.113202)：通过 ETV-Attack 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Two-Layer Input Filtering Framework for Large Language Model Security](https://doi.org/10.1109/i3ctcon68242.2026.11507202)：用两层输入过滤框架保护 LLM security，在生成前分离高风险提示。
+- [ROAD-tv: Research Opportunity Discovery via Topological Data Analysis and Adversarial Multi-LLM Validation](https://doi.org/10.1016/j.procs.2026.01.036)：通过 ROAD-tv 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [A unified optimization framework for backdoor attacks in large language models](https://doi.org/10.1016/j.inffus.2026.104221)：为智能体安全方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Mid-Generation Jailbreaks in Open-Source LLMs Using a Pause-and-Edit Attack](https://doi.org/10.1109/icaic67076.2026.11395884)：为智能体安全方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Toward Constitutional Autonomy in AI Systems: A Theoretical Framework for Aligned Agentic Intelligence](https://doi.org/10.1109/access.2026.3654907)：通过 A Theoretical Framework for Aligned Agentic Intelligence 优化安全对齐，关注偏好信号、安全正则化或奖励黑客风险。
+- [Modelling implicit bias in gender–career associations: A systematic comparison of language models](https://doi.org/10.1016/j.ipm.2026.104840)：比较语言模型中的性别与职业关联表征，用隐性偏见测量定位偏差，而不是泛泛的安全基准。
+- [HybridCrypt-LLM: Lightweight privacy for LLM training and inference](https://doi.org/10.1016/j.eswa.2026.131632)：把轻量密码保护接入 LLM 训练与推理，使提示、梯度或中间数据处理时降低泄漏风险。
+- [A Unified Four-Stage Dynamic Cycle for Robust Federated Fine-Tuning of Large Language Models](https://doi.org/10.1109/icassp55912.2026.11463011)：把稳健联邦 LLM 微调整理为四阶段动态循环，用于隐私敏感的分布式适配而非集中收集数据。
+- [Selective Layer-Wise Cleansing: A Knowledge-Preserving Defense Against Backdoor Attacks in LoRA-Tuned Models for Natural Language Understanding](https://doi.org/10.1016/j.knosys.2026.115848)：通过选择性清洗 LoRA 微调模型的特定层移除后门行为，同时保留自然语言理解适配器中的任务知识。
+- [Federated Instruction-Tuning of Large Language Models with Privacy and Communication Efficiency](https://doi.org/10.1109/ccic68129.2026.11486066)：将联邦指令微调用于 LLM，并用通信高效更新让私有指令数据留在本地。
+- [Can Unlearning of Models Lead to Adversarial Robustness?](https://doi.org/10.1109/icassp55912.2026.11463115)：研究模型遗忘是否会改变对抗鲁棒性，将面向删除的训练纳入安全性与鲁棒性权衡。
+- [Learning Multilingual Agentic Policy to Control Sycophancy](https://doi.org/10.18653/v1/2026.eacl-long.169)：学习用于控制谄媚行为的多语种智能体策略，契合模型侧对齐与智能体安全缓解。
+- [Defending LLMs against jailbreak attacks through representation offset detection](https://doi.org/10.1016/j.ipm.2026.104662)：通过表示偏移检测防御 LLM 越狱攻击。
+- [Beyond the prompt: Log-based threat detection and attribution for multi-Agent LLMs](https://doi.org/10.1016/j.ipm.2026.104768)：基于日志进行多智能体 LLM 威胁检测与归因。
+- [Quantifying Risk Propagation in Agentic AI Networks: A Simulation Framework and Singularity Index Approach](https://doi.org/10.1109/icaiii69475.2026.11521777)：用仿真框架量化 Agentic AI 网络中的风险传播。
+- [Enhancing Risk Awareness in LLM Agents via Probing Safety Boundaries](https://doi.org/10.1109/icassp55912.2026.11464257)：通过探测安全边界增强 LLM 智能体的风险意识。
+- [Risk-Aware Privacy Preservation for LLM Inference](https://doi.org/10.1109/tifs.2026.3667458)：面向智能体安全与安全评测的模型、训练或算法工作。核心思想：以 Risk-Aware Privacy Preservation for LLM Inference 为主要改进目标，作为 Model 条目的能力参考。
+- [RoLLMRec: a robust LLM-based recommender system for defending against shilling and prompt injection attacks](https://doi.org/10.3389/fcomp.2026.1735253)：增强 LLM 推荐系统对刷榜与提示注入攻击的防御能力。
+- [Adversarial robustness of LLM-based multi-agent systems for engineering problems](https://doi.org/10.3389/frai.2026.1784484)：研究工程问题中 LLM 多智能体系统的对抗鲁棒性。
+- [Adaptive Adversarial Training for Balancing Model Robustness and Standard Performance](https://doi.org/10.3724/2096-7004.di.2025.0182)：调整对抗训练过程，在模型鲁棒性与标准任务性能之间取得平衡。
 - [Safety Misalignment Against LLMs](https://www.ndss-symposium.org/ndss-paper/safety-misalignment-against-large-language-models/)：研究大模型安全错位攻击与防御，并分析表示层面的对齐行为。
+- [Causally Motivated Sycophancy Mitigation](https://openreview.net/forum?id=yRKelogz5i)：通过因果建模缓解 sycophancy，为减少迎合式回答补充模型侧对齐方法。
+- [Semantic-Graph Defense](https://doi.org/10.1609/aaai.v40i5.37389)：用语义图结构拆解对抗提示词，为 LLM 提供越狱防御方法。
+- [BadCodePrompt](https://doi.org/10.1007/s10515-024-00485-2)：研究针对提示工程式 LLM 代码生成的后门攻击，补充面向代码的模型安全威胁。
+- [On Effects of Steering Latent Representation for Large Language Model Unlearning](https://doi.org/10.1609/aaai.v39i22.34544)： 研究通过 latent representation steering 做 LLM unlearning，补充模型侧遗忘与保留能力权衡。
+- [Towards Safe Machine Unlearning: A Paradigm that Mitigates Performance Degradation](https://doi.org/10.1145/3696410.3714638)： 把安全机器遗忘作为缓解性能退化的范式，补充模型侧安全与遗忘参考。
+- [TransLock: Securing LLM deployment for software applications via self-locking watermarks](https://doi.org/10.1007/s10664-025-10750-x)：通过 self-locking watermarks 保护软件应用中的 LLM 部署，补充模型来源认证与部署完整性安全机制。
+- [Scalable watermarking for identifying large language model outputs](https://doi.org/10.1038/s41586-024-08025-4)：提出可扩展水印方法来识别语言模型输出。
+- [MoGU: A Framework for Enhancing Safety of LLMs While Preserving Their Usability](https://doi.org/10.52202/079017-2780)：用兼顾可用性的护栏框架调节 LLM 安全行为，重点控制拒答而不显著损害正常有用性。
+- [RAG-leaks: difficulty-calibrated membership inference attacks on retrieval-augmented generation](https://doi.org/10.1007/s11432-024-4441-4)：为 RAG 系统设计按难度校准的成员推断攻击，揭示何时可从模型回答推断检索文档是否存在。
+- [KGDist: A Prompt-Based Distillation Attack against LMs Augmented with Knowledge Graphs](https://doi.org/10.1145/3678890.3678906)：用特制提示蒸馏知识图谱增强语言模型中的知识，把 KG 增强模型视为抽取攻击目标。
+- [Enhancing Character-Coherent Role-Playing Dialogue with a Verifiable Emotion Reward](https://doi.org/10.3390/info16090738)：提出基于冻结情绪分类器的 Verifiable Emotion Reward 和 CHARCO 对话数据，用于降低长程角色扮演中的情绪漂移。
+- [Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)：把 NIST AI RMF 具体化为生成式 AI 风险画像，覆盖内容溯源、数据泄漏、误用和监控控制。
+- [The life cycle of large language models in education: A framework for understanding sources of bias](https://doi.org/10.1111/bjet.13505)：沿教育场景中的 LLM 生命周期梳理偏见来源，覆盖训练数据、模型行为、课堂使用与评估反馈。
+- [STELA: a community-centred approach to norm elicitation for AI alignment](https://doi.org/10.1038/s41598-024-56648-4)：提供参与式规范 elicitation 流程，用于决定 AI 对齐应采纳谁的价值，而不是硬编码单一规范来源。
+- [Backdoor Attacks via Machine Unlearning](https://doi.org/10.1609/aaai.v38i13.29321)：显示机器遗忘本身可被用于植入后门，使遗忘请求成为新的安全攻击面。
+- [Guardian: A Runtime Framework for LLM-Based UI Exploration](https://doi.org/10.1145/3650212.3680334)：在 LLM 驱动的 UI 探索外包裹运行时检查，在自动化应用测试中阻断不安全 GUI 操作。
+- [Imperceptible Content Poisoning in LLM-Powered Applications](https://doi.org/10.1145/3691620.3695001)：提出或研究基于 Imperceptible Content Poisoning in LLM-Powered Applications 的后门或投毒攻击，关注触发器持久性、迁移性或数据恢复泄漏。
+- [The Earth alignment principle for artificial intelligence](https://doi.org/10.1038/s41893-025-01536-6)：把 AI 对齐扩展到地球可持续约束，将环境影响视为安全目标，而不仅是部署外部性。
+- [SecureVision: Advanced Cybersecurity Deepfake Detection with Big Data Analytics](https://doi.org/10.3390/s24196300)：结合多模态视听深伪检测与大数据分析，为网络安全场景标记被操纵媒体。
+- [Governing Open Vocabulary Data Leaks Using an Edge LLM through Programming by Example](https://doi.org/10.1145/3699760)：实现 GPTWall 边缘 LLM 隐私防火墙，用 programming by example 策略在调用外部 LLM 前检测开放词表的数据泄漏。
+- [ToxVI: a Multimodal LLM-based Framework for Generating Intervention in Toxic Code-Mixed Videos](https://doi.org/10.1145/3627673.3680004)：用多模态 LLM 管线检测 code-mixed 视频中的毒性，并生成与视觉和文本上下文关联的干预响应。
+- [A bias towards neutrality? How LLM guardrail sensitivity affects classification](https://doi.org/10.1007/s44382-025-00013-0)：显示 LLM 安全护栏会把自动社会科学标注推向中性类别，从而在分类器输出中引入测量偏差。
+- [A physics‐informed train on synthetic and test on real method for evaluating large language model‐generated safety‐critical traffic scenarios](https://doi.org/10.1111/mice.70071)：用物理约束的 synthetic-to-real 测试判断 LLM 生成交通场景是否保留安全关键动力学。
+- [Real-Time 3D Scene Understanding for Road Safety: Depth Estimation and Object Detection for Autonomous Vehicle Awareness](https://doi.org/10.3390/vehicles8020028)：构建道路安全感知管线，将 FoundationStereo 深度估计与目标检测部署到嵌入式硬件并实现实时运行。
+- [Robust Multilingual Audio Deepfake Detection Through Hybrid Modeling](https://doi.org/10.1145/3733102.3736706)：结合声学特征与多语建模信号检测音频深伪，避免局限于单说话人或英语设置。
+- [The gains do not make up for the losses: a comprehensive evaluation for safety alignment of large language models via machine unlearning](https://doi.org/10.1007/s11704-024-41099-x)：从有害内容移除之外综合评估 LLM 安全遗忘，显示效用与知识损失可能抵消对齐收益。
+- [RogueGPT: Unleashing Jailbreak Prompts on LLMs](https://doi.org/10.1002/eng2.70069)：研究指令微调式越狱提示如何把 LLM 推向违规回答，并比较不同利用路径。
+- [Unveiling the Risk of Unsafe Image Generation in Stable Diffusion Through a Cross-Attention Mechanism](https://doi.org/10.3390/fi18050248)：提出 EvilPrompt 文本式 Stable Diffusion 越狱，利用 cross-attention 行为诱导不安全图像生成。
+- [Privacy Matters: Data Attack to Make User Preferences Unlearnable in Recommendation](https://doi.org/10.1145/3803545)：设计用户侧数据攻击，使推荐系统难以学习私有偏好，同时保留普通推荐交互形式。
+- [Jailbreak attack of large language model based on scene construction](https://doi.org/10.1145/3708036.3708083)：补充智能体安全的 Model 条目，重点是《Jailbreak attack of large language model based on scene construction》。
+- [Mitigating adversarial manipulation in LLMs: a prompt-based approach to counter Jailbreak attacks (Prompt-G)](https://doi.org/10.7717/peerj-cs.2374)：用 Prompt-G 的提示改写与分类线索对抗越狱操纵，同时跟踪安全性与准确率之间的权衡。
+- [LLM-Fuzzer: Scaling Assessment of Large Language Model Jailbreaks](https://www.usenix.org/conference/usenixsecurity24/presentation/yu-jiahao)：通过 fuzzing 循环变异提示并度量目标 LLM 的有害响应成功率，扩展越狱发现规模。
+- [Using Multimodal Large Language Models (MLLMs) for Automated Detection of Traffic Safety-Critical Events](https://doi.org/10.3390/vehicles6030074)：用面向对象的问题提示 MLLM，从多模态驾驶数据中检测交通安全关键事件。
+- [Pandora's Box: Towards Building Universal Attackers against Real-World Large Vision-Language Models](https://doi.org/10.52202/079017-1652)：构建可迁移到真实世界视觉语言服务的通用 VLM 攻击器，而不是只优化单个本地模型。
+- [Adaptive bidirectional planning framework for enhanced safety and robust decision-making in autonomous navigation systems](https://doi.org/10.1007/s11227-025-07389-2)：用自适应双向规划增强自主导航在不确定路径下的安全性和稳健决策。
+- [A Reliable Generative Adversarial Network Approach for Climate Downscaling and Weather Generation](https://doi.org/10.1029/2024ms004668)：用 GAN 式随机降尺度建模高影响天气分布，属于相邻风险建模方法而非 LLM 护栏。
+- [Text-Based Prompt Injection Attack Using Mathematical Functions in Modern Large Language Models](https://doi.org/10.3390/electronics13245008)：把 prompt injection 指令编码为数学函数，用纯文本输入绕过现代 LLM 安全策略。
+- [Advancing Generalized Deepfake Detector with Forgery Perception Guidance](https://doi.org/10.1145/3664647.3680713)：用伪造感知信号引导深伪检测器，使其更好泛化到不同操纵类型和生成来源。
+- [Multiscale Features Integrated Model for Generalizable Deepfake Detection](https://doi.org/10.1155/int/7084582)：融合多尺度纹理与语义特征，提升对未见生成模型图像的深伪检测能力。
+- [Deepfake, Real Harm: A Participatory Approach for Imagining Infrastructures to Combat Deepfake Sexual Abuse](https://doi.org/10.1145/3772318.3790902)：用参与式设计定义应对 deepfake 性虐待的基础设施，更适合作为治理与平台安全待迁移项而非检测模型。
+- [Evading LLMs’ Safety Boundary with Adaptive Role-Play Jailbreaking](https://doi.org/10.3390/electronics14244808)：搜索会削弱 LLM 拒答行为的角色设定，并用自适应角色扮演提示诱导有害回答。
+- [Signed distance function–biased flow importance sampling for implicit neural compression of flow fields](https://doi.org/10.1111/mice.13526)：用 signed-distance-function-biased sampling 改进流场隐式神经压缩，属于待复核分类的非本轴工程模型。
+- [Discovering Safety Violations of Decision-Making in Autonomous Driving Systems from Accident-Free Traffic Scenarios](https://doi.org/10.1145/3787978)：从无事故交通场景生成自动驾驶关键测试场景，用于发现决策模块的安全违规。
+- [Seeing is No Longer Believing: How Deepfakes May Shape the Future of Identity Credibility in Media](https://doi.org/10.1145/3733813.3764371)：分析深伪如何削弱媒体中的身份可信度，属于待迁移的社会技术风险项而非模型检测器。
+- [Chain-of-Thought Guided Semantic Debiasing for Low-Shot Vision-Language Tasks](https://doi.org/10.1145/3746027.3755512)：用思维链引导的语义去偏缓解低样本视觉语言任务偏差，避免依赖大规模任务专属数据。
+- [Whose weather is it? A fairness framework for data-driven weather forecasting](https://doi.org/10.1088/1748-9326/ae21f5)：为数据驱动天气预报定义 statistical parity 和 conditional parity 公平性准则，比较不同受保护地理群体的收益。
+- [Plane-wave decomposition and randomised training; a novel path to generalised physics-informed neural networks for simple harmonic motion](https://doi.org/10.1088/2632-2153/ae143b)：用随机边界条件和 plane-wave decomposition 训练 PINN，属于应在 Agent Safety 之外复核的非本轴物理模型。
+- [Stack More LLM’s: Efficient Detection of Machine-Generated Texts via Perplexity Approximation](https://doi.org/10.1134/s1064562424602075)：把多个 LLM 的困惑度近似堆叠成轻量判别器，用于检测机器生成文本。
+- [Research on adversarial attack and defense of large language models](https://doi.org/10.54254/2755-2721/93/20240922)：综述 LLM 对抗攻击与防御机制，重点讨论 prompt 级攻击下的防御设计选择。
+- [Revealing the Difficulty in Jailbreak Defense on Language Models for Metaverse](https://doi.org/10.1145/3698387.3699998)：在面向元宇宙的语言模型场景中测试越狱防御，暴露虚拟世界提示绕过普通过滤器的位置。
+- [MnMR-GenA: a morphological recombination genetic algorithm for jailbreak attacks in low-resource language](https://doi.org/10.1038/s41598-026-47434-5)：用形态重组和遗传搜索循环，在低资源语言中构造越狱提示。
+- [Feature-indistinguishable machine unlearning via negative-hot label encoding and class weight masking](https://doi.org/10.1038/s41598-026-40379-9)：结合 negative-hot 标签和类别权重掩码执行类别级遗忘，同时使被遗忘特征难以区分。
+- [UniAttack: Unified Physical-Digital Face Attack Detection](https://doi.org/10.1007/s11263-025-02673-3)：统一物理与数字人脸攻击检测，使同一检测器同时处理呈现攻击和被操纵人脸图像。
+- [Fast and Accurate Class-Level Machine Unlearning using Impair–Repair and Noise-Induced Forgetting Mechanisms](https://doi.org/10.1007/s12559-026-10597-4)：把 impair-repair 更新与噪声诱导遗忘结合，实现快速类别级遗忘并恢复保留类别准确率。
+- [How do large-language models respond to moral dilemmas? Insights from the defining issues test](https://doi.org/10.1007/s43681-026-01104-4)：用 Defining Issues Test 比较 LLM 对道德困境的回答，暴露对齐行为而非提出护栏模型。
+- [Spatial‐Frequency Feature Fusion Based Deepfake Detection With Mask Supervision](https://doi.org/10.1111/exsy.70218)：在空间频率特征融合中加入 mask supervision，使深伪检测器聚焦于被操纵的人脸区域。
+- [A MoE-based Safety Fine-tuning Method for Multimodal Large Language Models](https://doi.org/10.1145/3725899.3725911)：对 MLLM 进行 MoE 式安全微调，使安全相关专家可专门化而不明显损害多模态效用。
+- [Pseudo-Inverse Prefix Tuning for Effective Unlearning in LLMs](https://doi.org/10.1145/3746252.3760939)：用 pseudo-inverse prefix tuning 作为参数高效路径，移除 LLM 中的目标知识。
+- [Rethinking the Training Paradigm of Discrete Token-Based Multimodal LLMs: An Analysis of Text-Centric Bias](https://doi.org/10.1145/3746252.3761264)：诊断离散 token 多模态 LLM 训练中的文本中心偏差，并指向重平衡视觉与文本信号的训练改动。
+- [LLM-Mod: Can Large Language Models Assist Content Moderation?](https://doi.org/10.1145/3613905.3650828)：评估 LLM 作为内容审核助手的能力，测试其生成判断对内容政策决策的支持程度。
+- [Examining Human Perception of Generative Content Replacement in Image Privacy Protection](https://doi.org/10.1145/3613904.3642103)：研究用生成内容替换图像敏感区域是否既能保护隐私，又能被人类观看者接受。
+- [CapAlign: Improving Cross Modal Alignment via Informative Captioning for Harmful Meme Detection](https://doi.org/10.1145/3589334.3648146)：通过生成信息性 caption 对齐视觉实体与仇恨或有害文本线索，改进 harmful meme 检测。
+- [Predictive Risk-Aware Reinforcement Learning for Autonomous Vehicles Using Safety Potential](https://doi.org/10.3390/electronics14224446)：将 Safety Potential 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [Breaking through safety performance stagnation in autonomous vehicles with dense learning](https://doi.org/10.1038/s41467-026-69761-x)：将 safety performance stagnation in autonomous vehicles with dense learning 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [When Hallucinated Concepts Cross Modals: Unveiling Backdoor Vulnerability in Multi-modal In-context Learning](https://doi.org/10.1145/3743093.3770938)：提出或研究基于 Unveiling Backdoor Vulnerability in Multi-modal In-context Learning 的后门或投毒攻击，关注触发器持久性、迁移性或数据恢复泄漏。
+- [Automatic Generation of Job Safety Reports with Explainable RAG-Based LLMs](https://doi.org/10.1007/s10796-025-10634-x)：用可解释 RAG-based LLM 生成作业安全报告，将安全文档生成锚定到检索证据和解释。
+- [From Vibe Coding to Jailbreaking in Large Language Models: A Comparative Security Study](https://doi.org/10.3390/engproc2026123008)：提出或分析基于 A Comparative Security Study 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Exploring and Exploiting Security Vulnerabilities in Self-Hosted LLM Services](https://doi.org/10.1145/3774904.3792097)：通过 Exploring and Exploiting Security Vulnerabilities in Self-Hosted LLM Services 分析对抗风险，关注攻击面、迁移路径或防御失效模式。
+- [Nexus scissor: enhance open-access language model safety by connection pruning](https://doi.org/10.1038/s44387-025-00046-2)：通过剪除不安全模型连接来增强开放语言模型安全性，把 connection pruning 作为轻量安全干预。
+- [SEDM: A Safety‐Enhanced Decision‐Making Framework for Autonomous Driving by Integrating Large Language Models and XGBoost](https://doi.org/10.1049/itr2.70178)：将 SEDM 用于机器人、车辆或交通安全关键决策，关注违规预测和风险感知控制。
+- [Detection and analysis of prompt injection in indian multilingual large language models](https://doi.org/10.1038/s41598-026-43883-0)：检测并分析印度多语种 LLM 中的 prompt injection 行为，把多语种提示作为攻击面。
+- [Securing LLM-in-the-loop software for empirical study of risks, mitigations, and utility trade-offs in a safety-critical case](https://doi.org/10.1007/s10664-026-10820-8)：在安全关键部署案例中实证研究 LLM-in-the-loop 软件的风险、缓解措施和效用权衡。
+- [TF-IDF joint SVM model in library automation bias risk assessment system](https://doi.org/10.1007/s44163-026-00978-x)：用 TF-IDF 与 SVM 管线评估图书馆自动化偏见风险，将分类严重度输出作为风险信号。
+- [Visual–Language Model–Driven Annotation and Analysis of Maneuver Data for Enhanced Vehicle Safety](https://doi.org/10.4271/09-14-01-0032)：使用视觉语言模型标注并分析车辆 maneuver 数据，提取与车辆安全相关的行为信号。
+- [SM-GCG: Spatial Momentum Greedy Coordinate Gradient for Robust Jailbreak Attacks on Large Language Models](https://doi.org/10.3390/electronics14193967)：提出或分析基于 SM-GCG 的越狱或 prompt injection 攻击，关注提示如何绕过安全过滤。
+- [Evaluating and Mitigating Sycophancy in Large Vision-Language Models](https://doi.org/10.1145/3746027.3755778)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Is Having Rationales Enough? Rethinking Knowledge Enhancement for Multimodal Hateful Meme Detection](https://doi.org/10.1145/3726302.3730014)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Entity Graph Alignment and Visual Reasoning for Multimodal Fake News Detection](https://doi.org/10.1145/3746027.3754591)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [PromptTrace: A Fine-Grained Prompt Stealing Attack via CLIP-Guided Beam Search for Text-to-Image Models](https://doi.org/10.3390/sym18010161)：在黑盒访问下拆解提示属性，并用 CLIP 引导的 beam search 从生成图像中重构文生图提示。
+- [Image-level Memorization Detection via Inversion-based Inference Perturbation](https://openreview.net/forum?id=vwOq7twk7L)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Through the Lens of Privacy: Exploring Privacy Protection in Vision-Language Model Interactions on Smart Glasses](https://doi.org/10.1145/3706599.3720234)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Towards Graph-Based Detection of Jailbreak and Prompt-Leakage Attacks in LLMs](https://doi.org/10.1145/3805621.3807629)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [A Hybrid Perplexity-MAS Framework for Proactive Jailbreak Attack Detection in Large Language Models](https://doi.org/10.3390/app152413190)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [See, Localize and Verify: A GRPO-Powered Framework for Enhancing Factual Accuracy in Multimodal Models](https://doi.org/10.1145/3746276.3760467)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [AllGuard: A Multimodal Large Language Model for Edge-Deployed Content Security Assessment](https://doi.org/10.1007/s11390-025-5508-7)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Video forgery detection based on multilocal feature and spatiotemporal fusion](https://doi.org/10.1117/1.jei.34.4.043002)：为智能体与 LLM 安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [A Differential Privacy-Based Mechanism for Preventing Data Leakage in Large Language Model Training](https://doi.org/10.70393/616a736d.323732)：补充面向大语言模型训练数据泄露防护的隐私保护机制。
+- [Reinforcement Learning-Guided Large Language Model Fine-Tuning for Privacy-Preserving Text Rewriting](https://doi.org/10.1145/3769102.3774433)：补充面向智能体安全的模型侧工作，重点是privacy-preserving text rewriting through RL-guided LLM fine-tuning。
+- [Common Learning Constraints Alter Interpretations of Direct Preference Optimization](https://proceedings.mlr.press/v258/kong25a.html)：补充面向智能体安全的模型侧工作，重点是DPO interpretation under common learning constraints。
+- [Deepfake Image Detection: A Universal Approach via Vision-Language Models](https://doi.org/10.1145/3784833.3784856)：构建 VLM-based FEFA 检测器，在图像编码器中加入 forgery-aware adapter，并结合频段注意力与细节增强，以提升跨数据集 deepfake image 检测泛化。
+- [Technique for Identifying Texts Generated by Large Language Models](https://doi.org/10.15622/ia.24.5.7)：提出识别大语言模型生成文本的技术。
+- [Beyond Text: Leveraging Vision-Language Models for Misinformation Detection](https://doi.org/10.1145/3746275.3762205)：用视觉语言模型进行超越纯文本信号的虚假信息检测。
+- [Adversarial Defense without Adversarial Defense: Enhancing Language Model Robustness via Instance-level Principal Component Removal](https://doi.org/10.1162/tacl.a.43)：补充提升语言模型鲁棒性的实例级主成分移除方法。
+- [Badinterpreter: Backdoor attack on LLM-based interpretable recommendation](https://doi.org/10.1007/s00530-026-02321-x)：研究针对 LLM 可解释推荐的后门攻击。
+- [A matter of principle? AI alignment as the fair treatment of claims](https://doi.org/10.1007/s11098-025-02300-4)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Causally Motivated Sycophancy Mitigation for Large Language Models]()：通过因果建模缓解 sycophancy，为减少迎合式回答补充模型侧对齐方法。
+- [PoisonedEye: Knowledge Poisoning Attack on Retrieval-Augmented Generation based Large Vision-Language Models](https://www.semanticscholar.org/paper/3ad12c0c4fce3b8b2f58f2d27eae365ad0132415)：研究针对检索增强大型视觉语言模型的知识投毒攻击。
+- [CertPHash](https://www.usenix.org/conference/usenixsecurity25/presentation/yang-yuchen)：通过 anti-evasion、anti-collision 和 functionality 三类目标进行鲁棒训练，为 illicit-content screening 中的 perceptual hashing 加入可认证鲁棒性目标。

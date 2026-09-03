@@ -1,24 +1,474 @@
 # 1.15.4 Model
 
-- [Wormhole Memory: A Rubik's Cube for Cross-Dialogue Retrieval](https://arxiv.org/abs/2501.14846)：提出跨对话检索记忆，用于在不同会话之间迁移信息。
-- [Towards General Continuous Memory for Vision-Language Models](https://arxiv.org/abs/2505.17670)：面向视觉语言模型的连续记忆，将记忆能力扩展到纯文本智能体之外。
-- [ATLAS: Learning to Optimally Memorize the Context at Test Time](https://arxiv.org/abs/2505.23735)：学习在测试时应记住哪些上下文，以服务后续回忆与推理。
+- [](https://arxiv.org/abs/2005.11401)：Retrieval-Augmented Generation 将参数化生成器与非参数化记忆结合：学习型检索器从 Wikipedia 稠密索引取得段落，并比较整段共享 passage 与 token-level passage retrieval，在三个开放域问答任务上提升事实性和生成多样性。
+- [Dynamic Memory-Based Curiosity: A Bootstrap Approach for Exploration in Reinforcement Learning](https://doi.org/10.1109/tetci.2023.3335944)：用过往状态的动态记忆塑造内在好奇心奖励，并以 bootstrap 方式推动强化学习探索。
+- [Federated Unlearning With Momentum Degradation](https://doi.org/10.1109/jiot.2023.3321594)：在联邦遗忘中退化优化器动量，使客户端贡献可被移除，同时降低对保留性能和稳定性的损伤。
+- [FAST: Adopting Federated Unlearning to Eliminating Malicious Terminals at Server Side](https://doi.org/10.1109/tnse.2023.3343117)：在服务器侧执行联邦遗忘，以移除恶意终端更新，而不必完整重训分布式模型。
+- [An RRAM-Based Computing-in-Memory Architecture and Its Application in Accelerating Transformer Inference](https://doi.org/10.1109/tvlsi.2023.3345651)：把 Transformer 推理映射到 RRAM 存内计算架构，减少注意力和前馈计算中的数据搬移。
+- [From LLM to Conversational Agent: A Memory Enhanced Architecture with Fine-Tuning of Large Language Models](https://arxiv.org/abs/2401.02777)：将微调后的 LLM 行为与显式记忆增强对话架构结合，用于支持持久化智能体对话。
+- [User Embedding Model for Personalized Language Prompting](https://arxiv.org/abs/2401.04858)：学习紧凑的用户嵌入，并把它们插入提示中，使语言模型按个人偏好生成。
+- [DeepEdit: Knowledge Editing as Decoding with Constraints](https://arxiv.org/abs/2401.10471)：把知识编辑表述为带约束的解码，在不直接改写权重的情况下把生成引向被编辑事实。
+- [Towards Effective and General Graph Unlearning via Mutual Evolution](https://arxiv.org/abs/2401.11760)：协同演化图结构与模型参数，使图神经网络能更通用地遗忘指定节点、边或属性。
+- [Commonsense-augmented Memory Construction and Management in Long-term Conversations via Context-aware Persona Refinement](https://arxiv.org/abs/2401.14215)：通过常识线索和上下文感知的人设细化来构建并管理长期对话记忆。
+- [SWEA: Changing Factual Knowledge in Large Language Models via Subject Word Embedding Altering](https://arxiv.org/abs/2401.17809)：通过修改 subject word embedding 来编辑事实关联，在不大规模重训的情况下实现局部知识更改。
+- [Federated Unlearning: a Perspective of Stability and Fairness](https://arxiv.org/abs/2402.01276)：从稳定性和公平性权衡分析联邦遗忘，说明遗忘操作何时会损害保留客户端表现。
+- [What Will My Model Forget? Forecasting Forgotten Examples in Language Model Refinement](https://arxiv.org/abs/2402.01865)：通过学习哪些既有训练样本会在语言模型细化更新后失去支持，预测被遗忘样本，并为保持失败提供早期预警信号。
+- [MEMORYLLM: Towards Self-Updatable Large Language Models](https://arxiv.org/abs/2402.04624)：为 LLM 加入自更新记忆路径，使部署后的新信息可被吸收而无需完整重训。
+- [Layerwise Proximal Replay: A Proximal Point Method for Online Continual Learning](https://arxiv.org/abs/2402.09542)：把逐层近端 replay 用于在线持续学习，通过回放记忆约束更新以减少灾难性遗忘。
+- [Parameter-tuning-free data entry error unlearning with adaptive selective synaptic dampening](https://arxiv.org/abs/2402.10098)：用自适应选择性突触阻尼移除数据录入错误影响，避免额外的参数调节阶段。
+- [Bridging Associative Memory and Probabilistic Modeling](https://arxiv.org/abs/2402.10202)：连接联想记忆检索与概率建模，把存储模式视为可处理的概率式记忆机制。
+- [Cognitive Personalized Search Integrating Large Language Models with an Efficient Memory Mechanism](https://arxiv.org/abs/2402.10548)：把 LLM 驱动的个性化搜索与高效用户记忆机制结合，存储并复用认知偏好信号。
+- [Model Editing by Pure Fine-Tuning](https://arxiv.org/abs/2402.11078)：表明经过细致配置的微调本身可以成为有竞争力的知识编辑方法，而不一定需要专门编辑模块。
+- [Learning to Edit: Aligning LLMs with Knowledge Editing](https://arxiv.org/abs/2402.11905)：训练 LLM 遵循知识编辑指令，使回答对齐新事实并抑制过时参数记忆。
+- [CAMELoT: Towards Large Language Models with Training-Free Consolidated Associative Memory](https://arxiv.org/abs/2402.13449)：在推理时为 LLM 加入 consolidated associative memory，无需额外训练即可支持记忆查找。
+- [Reading Relevant Feature from Global Representation Memory for Visual Object Tracking](https://arxiv.org/abs/2402.14392)：用全局表示记忆跨帧检索与跟踪相关的视觉特征，服务目标跟踪。
+- [Language-Based User Profiles for Recommendation](https://arxiv.org/abs/2402.15623)：把推荐系统用户表示为语言化 profile，使 LLM 可检索并推理偏好记忆。
+- [One-stage Prompt-based Continual Learning](https://arxiv.org/abs/2402.16189)：提出单阶段基于提示的持续学习方法。
+- [StructLM: Towards Building Generalist Models for Structured Knowledge Grounding](https://arxiv.org/abs/2402.16671)：训练结构化知识 grounding 的通用模型，把表格和图谱 grounding 与保留事实记忆连接起来。
+- [Pandora's White-Box: Increased Training Data Leakage in Open LLMs](https://arxiv.org/abs/2402.17012)：利用白盒访问显示开源 LLM 泄露的训练数据可能多于黑盒探测所揭示的范围。
+- [Learning Associative Memories with Gradient Descent](https://arxiv.org/abs/2402.18724)：研究梯度下降如何学习联想记忆映射，澄清神经记忆的容量与收敛行为。
+- [Memoro: Using Large Language Models to Realize a Concise Interface for Real-Time Memory Augmentation](https://arxiv.org/abs/2403.02135)：用 LLM 作为实时记忆增强的简洁接口，把用户交互转换为可检索的记忆记录。
+- [Mastering Memory Tasks with World Models](https://arxiv.org/abs/2403.04253)：训练 world model 解决依赖记忆的强化学习任务，通过预测随时间演化的潜在环境状态保持信息。
+- [Online Adaptation of Language Models with a Memory of Amortized Contexts](https://arxiv.org/abs/2403.04317)：维护 amortized context memory，使语言模型在线适配时不必反复处理完整历史。
+- [Alpaca against Vicuna: Using LLMs to Uncover Memorization of LLMs](https://arxiv.org/abs/2403.04801)：用一个 LLM 诱发另一个 LLM 的记忆化内容，把模型对比转化为记忆化探测方法。
+- [Editing Conceptual Knowledge for Large Language Models](https://arxiv.org/abs/2403.06259)：面向概念知识而非孤立事实进行编辑，检验 LLM 是否会更新更广的概念级关联。
+- [REPAIR: Rank Correlation and Noisy Pair Half-Replacing With Memory for Noisy Correspondence](https://arxiv.org/abs/2403.08224)：将记忆、秩相关过滤和样本对替换结合，用于噪声跨模态对应关系下的学习。
+- [Hyperparameters in Continual Learning: a Reality Check](https://arxiv.org/abs/2403.09066)：指出持续学习结论会随超参数选择变化，使保持和遗忘对比不如报告中稳定。
+- [Dynamic Memory Compression: Retrofitting LLMs for Accelerated Inference](https://arxiv.org/abs/2403.09636)：通过为 LLM retrofitting 动态记忆压缩，压缩保留的上下文表示以降低推理成本。
+- [InsCL: A Data-efficient Continual Learning Paradigm for Fine-tuning Large Language Models with Instructions](https://arxiv.org/abs/2403.11435)：用以指令为中心的持续学习微调 LLM，在更少新任务数据下提升知识保持。
+- [Boosting Continual Learning of Vision-Language Models via Mixture-of-Experts Adapters](https://arxiv.org/abs/2403.11549)：用 mixture-of-experts adapters 分离视觉语言持续学习中的任务更新，降低遗忘。
+- [PARMESAN: Parameter-Free Memory Search and Transduction for Dense Prediction Tasks](https://arxiv.org/abs/2403.11743)：在 dense prediction 中搜索并转导记忆特征，同时不引入可训练的任务专用参数。
+- [Larimar: Large Language Models with Episodic Memory Control](https://arxiv.org/abs/2403.11901)：为 LLM 配备可控情节记忆，使存储经验可被写入、读取并在生成时选择性使用。
+- [MM-Diff: High-Fidelity Image Personalization via Multi-Modal Condition Integration](https://arxiv.org/abs/2403.15059)：把多模态条件融入扩散模型，在图像生成中保持个性化主体身份。
+- [Self-Expansion of Pre-trained Models with Mixture of Adapters for Continual Learning](https://arxiv.org/abs/2403.18886)：用 mixture-of-adapters 模块扩展预训练模型，使其学习新任务时保留旧能力。
+- [Interpreting Key Mechanisms of Factual Recall in Transformer-Based Language Models](https://arxiv.org/abs/2403.19521)：分析 Transformer 中支撑事实召回的关键机制，把内部激活与存储知识检索联系起来。
+- [Localizing Paragraph Memorization in Language Models](https://arxiv.org/abs/2403.19851)：定位语言模型内部的段落级记忆化现象，将记忆化片段与普通生成区分开。
+- [Goldfish: An Efficient Federated Unlearning Framework](https://arxiv.org/abs/2404.03180)：用高效联邦遗忘框架删除指定客户端数据，同时避免完整跨客户端重训。
+- [Locating and Editing Factual Associations in Mamba](https://arxiv.org/abs/2404.03646)：定位并编辑 Mamba 序列模型中的事实关联，用于检验状态空间架构如何存储事实。
+- [MemFlow: Optical Flow Estimation and Prediction with Memory](https://arxiv.org/abs/2404.04808)：在光流估计和预测中加入记忆，使前序帧运动线索能影响当前光流。
+- [Resistive Memory-based Neural Differential Equation Solver for Score-based Diffusion Model](https://arxiv.org/abs/2404.05648)：用阻变存储硬件更高效地求解 score-based diffusion 流水线中的神经微分方程。
+- [Memory Sharing for Large Language Model based Agents](https://arxiv.org/abs/2404.09982)：研究 LLM 智能体如何共享记忆存储，使一个智能体的经验可被其他智能体复用。
+- [MemLLM: Finetuning LLMs to Use An Explicit Read-Write Memory](https://arxiv.org/abs/2404.11672)：微调 LLM 操作显式读写记忆接口，而不是只依赖隐藏的参数记忆。
+- [Lowering PyTorch's Memory Consumption for Selective Differentiation](https://arxiv.org/abs/2404.12406)：通过只对必要计算路径做选择性求导，降低 PyTorch 训练内存占用。
+- [The Files are in the Computer: Copyright, Memorization, and Generative AI](https://arxiv.org/abs/2404.12590)：考察生成模型如何记忆受版权保护的文件，以及这种记忆化为何加剧遗忘和责任问题。
+- [Studying Large Language Model Behaviors Under Context-Memory Conflicts With Real Documents](https://arxiv.org/abs/2404.16032)：测试 LLM 在给定文档上下文与参数记忆冲突时如何取舍。
+- [FreeBind: Free Lunch in Unified Multimodal Space via Knowledge Fusion](https://arxiv.org/abs/2405.04883)：在统一嵌入空间中融合跨模态知识，提升跨模态检索和记忆迁移。
+- [Memory-Space Visual Prompting for Efficient Vision-Language Fine-Tuning](https://arxiv.org/abs/2405.05615)：通过 memory-space visual prompts 调整视觉语言模型，在保留 backbone 参数的同时适配新任务。
+- [Memory Mosaics](https://arxiv.org/abs/2405.06394)：构造 mosaic-style memory，把存储片段组合成可复用的模型上下文。
+- [Beyond Scaling Laws: Understanding Transformer Performance with Associative Memory](https://arxiv.org/abs/2405.08707)：用联想记忆行为解释 Transformer 表现，以存储和检索分析补充 scaling law 视角。
+- [Mixture of Experts Meets Prompt-Based Continual Learning](https://arxiv.org/abs/2405.14124)：将 prompt-based continual learning 与 mixture-of-experts 路由结合，隔离任务记忆并减少干扰。
+- [Leveraging Logical Rules in Knowledge Editing: A Cherry on the Top](https://arxiv.org/abs/2405.15452)：在知识编辑中注入逻辑规则，使被编辑事实沿规则一致的蕴含关系传播。
+- [Towards Natural Machine Unlearning](https://arxiv.org/abs/2405.15495)：从更自然的遗忘行为重塑机器遗忘，强调在保留效用的同时移除目标信息。
+- [The mosaic memory of large language models](https://arxiv.org/abs/2405.15523)：把 LLM 记忆描述为已学习片段的 mosaic 式重组，而不只是逐字复现。
+- [An Information Theoretic Evaluation Metric for Strong Unlearning](https://arxiv.org/abs/2405.17878)：定义 strong unlearning 的信息论指标，用于度量被删除数据的残留信息。
+- [VeLoRA: Memory Efficient Training using Rank-1 Sub-Token Projections](https://arxiv.org/abs/2405.17991)：把 token 切成更小的 sub-token，并在前向传播中投影到固定 rank-1 子空间，以压缩反向传播激活并降低 LLM 预训练和微调内存。
+- [Gone but Not Forgotten: Improved Benchmarks for Machine Unlearning](https://arxiv.org/abs/2405.19211)：提出比基础 membership inference 更强的机器遗忘评测，用计算机视觉实验揭示遗忘后仍可能残留训练数据泄漏。
+- [MemControl: Mitigating Memorization in Diffusion Models via Automated Parameter Selection](https://arxiv.org/abs/2405.19458)：用双层优化自动选择扩散模型 PEFT 微调参数子集，在保持生成质量的同时降低训练图像记忆化。
+- [Get My Drift? Catching LLM Task Drift with Activation Deltas](https://arxiv.org/abs/2406.00799)：通过监测 LLM activation delta 检测 prompt injection 导致的 task drift，即不可信检索内容把模型推离用户原始指令。
+- [SLTrain: a sparse plus low-rank approach for parameter and memory efficient pretraining](https://arxiv.org/abs/2406.02214)：把预训练权重参数化为 low-rank 因子加固定支撑的 sparse 矩阵，在避免纯低秩限制的同时节省训练内存。
+- [Finding NeMo: Localizing Neurons Responsible For Memorization in Diffusion Models](https://arxiv.org/abs/2406.02366)：定位与扩散模型训练图像记忆化相关的神经元，为已发布生成器中的隐私和版权泄漏提供定向缓解线索。
+- [HYDRA: Model Factorization Framework for Black-Box LLM Personalization](https://arxiv.org/abs/2406.02888)：把黑盒 LLM 个性化分解为共享知识与用户特定偏好成分，相比只写 profile prompt 更能适配个人生成。
+- [Time Sensitive Knowledge Editing through Efficient Finetuning](https://arxiv.org/abs/2406.04496)：用参数高效微调批量更新过时或时效性知识，目标是在大规模编辑时比 locate-and-edit 方法更好保留多跳推理。
+- [MATTER: Memory-Augmented Transformer Using Heterogeneous Knowledge Sources](https://arxiv.org/abs/2406.04670)：让 Transformer 对多种异构知识源执行 memory-augmented retrieval，避免 retrieve-and-read 方式带来的超长上下文成本。
+- [H-Fac: Memory-Efficient Optimization with Factorized Hamiltonian Descent](https://arxiv.org/abs/2406.09958)：用 rank-1 状态分解 Hamiltonian descent 的动量和缩放估计器，降低大模型自适应优化器的状态内存开销。
+- [Be like a Goldfish, Don't Memorize! Mitigating Memorization in Generative LLMs](https://arxiv.org/abs/2406.10209)：提出 goldfish loss，在 next-token loss 中随机丢弃部分 token，使 Llama 规模模型更少逐字复现训练序列。
+- [Towards Lifelong Dialogue Agents via Timeline-based Memory Management](https://arxiv.org/abs/2406.10996)：构建 THEANINE，用时间和因果关系链接长期对话记忆，并检索 memory timeline 辅助回复生成。
+- [Knowledge Fusion By Evolving Weights of Language Models](https://arxiv.org/abs/2406.12208)：通过 mutation 和 crossover 演化语言模型权重种群，在无需额外数据的情况下融合不同训练场景中的模型知识。
+- [QRMeM: Unleash the Length Limitation through Question then Reflection Memory Mechanism](https://arxiv.org/abs/2406.13167)：用 question-then-reflection memory mechanism 按任务需求重组长文本片段及其关系，再用于生成。
+- [Demystifying Language Model Forgetting with Low-rank Example Associations](https://arxiv.org/abs/2406.14026)：把微调遗忘建模为新任务与被遗忘上游样本之间的低秩关联，从而预测哪些样本更容易被遗忘。
+- [Protecting Privacy Through Approximating Optimal Parameters for Sequence Unlearning in Language Models](https://arxiv.org/abs/2406.14091)：提出 POP 序列遗忘，通过近似最优参数更新删除目标 token 序列，并缓解多轮遗忘带来的性能退化。
+- [Scaling Laws for Fact Memorization of Large Language Models](https://arxiv.org/abs/2406.15720)：建立事实记忆容量与模型规模、训练 epoch 的 scaling law，并指出预训练阶段记住 Wikidata 规模事实几乎不可行。
+- [Theory on Mixture-of-Experts in Continual Learning](https://arxiv.org/abs/2406.16437)：从理论上解释 MoE router 和专门化 expert 如何在持续学习中缓解灾难性遗忘。
+- [Reducing the Memory Footprint of 3D Gaussian Splatting](https://arxiv.org/abs/2406.17074)：通过分辨率感知 primitive pruning、自适应球谐系数和低精度属性压缩 3D Gaussian splatting 场景；该条更接近硬件与存储压缩而非 LLM 记忆。
+- [Machine Unlearning Fails to Remove Data Poisoning Attacks](https://arxiv.org/abs/2406.17216)：显示近似机器遗忘难以消除图像分类器和 LLM 中多类数据投毒影响，并补充面向攻击残留的遗忘指标。
+- [Unlocking Continual Learning Abilities in Language Models](https://arxiv.org/abs/2406.17245)：提出 MIGU，这是一种无 rehearsal、无任务标签的持续学习更新规则，只更新线性层中输出幅度较大的参数。
+- [Do LLMs dream of elephants (when told not to)? Latent concept association and associative memory in transformers](https://arxiv.org/abs/2406.18400)：把 Transformer 分析为 associative memory，说明上下文 token 如何通过自注意力和值矩阵触发事实检索。
+- [Learning Retrieval Augmentation for Personalized Dialogue Generation](https://arxiv.org/abs/2406.18847)：学习何时为个性化对话检索外部 persona 信息，用 retrieval-augmented generation 弥补稀疏 persona profile。
+- [T-FREE: Subword Tokenizer-Free Generative LLMs via Sparse Representations for Memory-Efficient Embeddings](https://arxiv.org/abs/2406.19223)：用稀疏 character-triplet activation 替代 subword tokenizer，压缩 embedding 和输出层并改善低资源语言处理。
+- [Memory3: Language Modeling with Explicit Memory](https://arxiv.org/abs/2407.01178)：训练带显式记忆组件的语言模型，使外部存储文本在生成时补充参数知识。
+- [Self-Cognition in Large Language Models: An Exploratory Study](https://arxiv.org/abs/2407.01505)：探测 LLM 能否报告自身身份、能力边界和知识状态，把 self-knowledge 作为模型存储信息的诊断信号。
+- [Deciphering the Factors Influencing the Efficacy of Chain-of-Thought: Probability, Memorization, and Noisy Reasoning](https://arxiv.org/abs/2407.01687)：区分 chain-of-thought 行为中的概率、记忆化和噪声推理因素，解释 CoT 何时改善或损害答案。
+- [Stark: Social Long-Term Multi-Modal Conversation with Persona Commonsense Knowledge](https://arxiv.org/abs/2407.03958)：构建带 persona commonsense knowledge 的社交长期多模态对话记忆，用于更持久的个性化会话。
+- [AriGraph: Learning Knowledge Graph World Models with Episodic Memory for LLM Agents](https://arxiv.org/abs/2407.04363)：为 LLM 智能体学习带情景记忆的知识图谱世界模型，使其能积累并查询结构化经验。
+- [Associative Recurrent Memory Transformer](https://arxiv.org/abs/2407.04841)：把 recurrent processing 与 associative memory 结合，使 Transformer 能检索固定局部上下文之外的历史信息。
+- [Mind the Interference: Retaining Pre-trained Knowledge in Parameter Efficient Continual Learning of Vision-Language Models](https://arxiv.org/abs/2407.05342)：研究视觉语言模型 PEFT 持续学习中的干扰，并针对顺序更新时保留预训练知识。
+- [Comparing Algorithms for Loading Classical Datasets into Quantum Memory](https://arxiv.org/abs/2407.15745)：比较把经典数据加载到量子记忆中的算法；它偏离 LLM 记忆主轴，但涉及记忆表示机制。
+- [MINI-SEQUENCE TRANSFORMER: Optimizing Intermediate Memory for Long Sequences Training](https://arxiv.org/abs/2407.15892)：把长输入拆成 mini-sequence 迭代处理，减少中间激活内存，并扩展 Qwen、Mistral、Gemma-2 和 Llama3 的训练上下文。
+- [Demystifying Verbatim Memorization in Large Language Models](https://arxiv.org/abs/2407.17817)：在更贴近真实抽取的设置下研究 LLM 逐字记忆化，澄清哪些训练序列能从生成续写中恢复。
+- [Towards Effective and Efficient Continual Pre-training of Large Language Models](https://arxiv.org/abs/2407.18743)：评估 LLM 持续预训练配方，权衡新语料适配与既有语言模型能力保持。
+- [Mini-batch Coresets for Memory-efficient Language Model Training on Data Mixtures](https://arxiv.org/abs/2407.19580)：从数据混合中选择 mini-batch coreset，在保留混合质量的同时降低语言模型训练的内存和计算压力。
+- [Get Confused Cautiously: Textual Sequence Memorization Erasure with Selective Entropy Maximization](https://arxiv.org/abs/2408.04983)：通过对目标续写选择性最大化熵来擦除记忆化文本序列，同时避免整体效用崩塌。
+- [SLCA++: Unleash the Power of Sequential Fine-tuning for Continual Learning with Pre-training](https://arxiv.org/abs/2408.08295)：在 sequential fine-tuning 中加入 pretraining-aware 的持续学习组件，以减少任务流中的遗忘。
+- [MEGen: Generative Backdoor into Large Language Models via Model Editing](https://arxiv.org/abs/2408.10722)：用模型编辑植入生成式 backdoor，说明 memory editing 机制也可能形成持久恶意关联。
+- [Great Memory, Shallow Reasoning: Limits of kNN-LMs](https://arxiv.org/abs/2408.11815)：显示 kNN 增强语言模型能改善记忆密集型样例，但仍受限于推理，区分检索记忆与推理深度。
+- [Memory-Efficient LLM Training with Online Subspace Descent](https://arxiv.org/abs/2408.12857)：在在线低维子空间中训练 LLM，以减少优化器和梯度内存并保持收敛。
+- [Symbolic Working Memory Enhances Language Models for Complex Rule Application](https://arxiv.org/abs/2408.13654)：加入用于规则变量和中间状态的 symbolic working memory，提升语言模型在复杂规则应用任务上的表现。
+- [Pairing Analogy-Augmented Generation with Procedural Memory for Procedural Q&A](https://arxiv.org/abs/2409.01344)：把 analogy-augmented generation 与 procedural memory retrieval 结合，用于 procedural question answering。
+- [Hybrid Cost Volume for Memory-Efficient Optical Flow](https://arxiv.org/abs/2409.04243)：通过 hybrid cost-volume 设计降低光流模型内存成本；该条属于视觉模型内存效率而非 LLM 长期记忆。
+- [MemoRAG: Boosting Long Context Processing with Global Memory-Enhanced Retrieval Augmentation](https://arxiv.org/abs/2409.05591)：为长文档构建 global memory，并检索 memory-enhanced evidence 以支持长上下文 RAG。
+- [When Context Leads but Parametric Memory Follows in Large Language Models](https://arxiv.org/abs/2409.08435)：提出 WikiAtomic，用于衡量上下文规模变化时 LLM 在上下文证据与参数记忆之间如何分配答案来源。
+- [Count2Multiply: Reliable In-Memory High-Radix Counting](https://arxiv.org/abs/2409.10136)：设计 memory array 内的可靠高基数计数；该条属于硬件存内算术而非 LLM 记忆。
+- [Schrodinger's Memory: Large Language Models](https://arxiv.org/abs/2409.10482)：研究 LLM 记忆的表观不稳定性，即同一知识会因 prompt 与评测设置不同而显得既存在又缺失。
+- [KVPruner: Structural Pruning for Faster and Memory-Efficient Large Language Models](https://arxiv.org/abs/2409.11057)：用全局 perplexity 分析剪除非关键 KV-cache channel，通过短恢复调优降低运行内存并提升吞吐。
+- [Guided Profile Generation Improves Personalization with LLMs](https://arxiv.org/abs/2409.13093)：从稀疏个人上下文生成简洁自然语言用户 profile，改善 LLM 个性化输入。
+- [Analog in-memory computing attention mechanism for fast and energy-efficient large language models](https://arxiv.org/abs/2409.19315)：把自注意力的 KV 存储和点积映射到基于 gain cell 的模拟存内计算，面向快速且节能的 LLM 推理。
+- [Identifying Knowledge Editing Types in Large Language Models](https://arxiv.org/abs/2409.19663)：定义 KETI 与 KETIBench 来识别有害知识编辑类型，为模型编辑安全提供具体分类协议。
+- [Self-Updatable Large Language Models by Integrating Context into Model Parameters](https://arxiv.org/abs/2410.00487)：提出 SELF-PARAM，把近期上下文经验整合进模型参数，以实现快速更新并保留更早经验。
+- [Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition](https://arxiv.org/abs/2410.01380)：定义 knowledge entropy 衡量模型使用记忆来源的多样性，并显示其在预训练中衰减会关联更弱的知识获取和保持。
+- [InfiniPot: Infinite Context Processing on Memory-Constrained LLMs](https://arxiv.org/abs/2410.01518)：用 continual context distillation 压缩 KV cache 信息，使 LLM 在固定内存下无需额外训练即可处理长上下文。
+- [Mitigating Memorization In Language Models](https://arxiv.org/abs/2410.02159)：在 TinyMem 和更大语言模型上比较正则化、微调和遗忘方法，以降低可抽取记忆化。
+- [AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models](https://arxiv.org/abs/2410.02355)：把编辑扰动投影到保留知识的 null space，在连续 LLM 知识编辑中减少 collateral damage。
+- [Erasing Conceptual Knowledge from Language Models](https://arxiv.org/abs/2410.02760)：使用 Erasure of Language Memory，通过模型自身分类器引导的 low-rank update 抑制概念级生成。
+- [Language model developers should report train-test overlap](https://arxiv.org/abs/2410.08385)：审计 30 个模型开发者，主张披露 train-test overlap 才能解释受记忆污染影响的评测结果。
+- [Understanding the Interplay between Parametric and Contextual Knowledge for Large Language Models](https://arxiv.org/abs/2410.08414)：提出 ECHOQA，测试参数知识与上下文知识之间的 supportive、complementary、conflicting 和 irrelevant 关系。
+- [Mimetic Initialization Helps State Space Models Learn to Recall](https://arxiv.org/abs/2410.11135)：把 state-space layer 初始化为模仿 attention pattern，从而提升 Mamba 类模型在复制和回忆任务上的表现。
+- [How to Make LLMs Forget: On Reversing In-Context Knowledge Edits](https://arxiv.org/abs/2410.12586)：用 next-token probability 信号和专门调优的 reversal token 检测并逆转 in-context knowledge edits。
+- [An Evolved Universal Transformer Memory](https://arxiv.org/abs/2410.13166)：演化 Neural Attention Memory Models，使其按层和 attention head 基于 attention matrix 管理 latent context。
+- [From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs](https://arxiv.org/abs/2410.14052)：提出 MemTree，用包含文本、embedding 与抽象层级的动态树状 schema 管理 LLM 长期交互记忆。
+- [CompAct: Compressed Activations for Memory-Efficient LLM Training](https://arxiv.org/abs/2410.15352)：为反向传播存储 low-rank random-projected activations，降低 LLM 预训练和微调中的峰值 GPU 内存。
+- [Understanding Forgetting in LLM Supervised Fine-Tuning and Preference Learning - A Convex Optimization Perspective](https://arxiv.org/abs/2410.15483)：分析 SFT 与 preference learning 之间的遗忘，并提出 joint post-training 来避免顺序阶段训练退化。
+- [Mixture of Parrots: Experts improve memorization more than reasoning](https://arxiv.org/abs/2410.19034)：显示增加 MoE expert 更能提升记忆化而非推理，将稀疏专家的记忆容量与活跃参数推理能力区分开。
+- [Measuring memorization in language models via probabilistic extraction](https://arxiv.org/abs/2410.19482)：用 probabilistic extraction 取代贪心解码下的二值抽取指标，在更真实的随机解码中度量记忆化。
+- [UniHGKR: Unified Instruction-aware Heterogeneous Knowledge Retrievers](https://arxiv.org/abs/2410.20163)：通过异构自监督预训练、text-anchored alignment 和 instruction-aware 微调训练统一异构知识检索器。
+- [FALCON: Feedback-driven Adaptive Long/short-term memory reinforced Coding OptimizatioN](https://arxiv.org/abs/2410.21349)：使用分层短期和长期反馈记忆，改进 LLM 代码优化与用户意图的对齐。
+- [On Memorization of Large Language Models in Logical Reasoning](https://arxiv.org/abs/2410.23123)：用动态生成的 Knights and Knaves 逻辑题度量推理任务记忆化，显示微调 LLM 会记住题目实例，但也能获得一定可迁移推理能力。
+- [Provably Optimal Memory Capacity for Modern Hopfield Models: Transformer-Compatible Dense Associative Memories as Spherical Codes](https://arxiv.org/abs/2410.23126)：把 Kernelized Hopfield memory 建模为球面码，给出紧的指数级容量界，并提出适配 Transformer 式 dense associative memory 的 U-Hop+ 亚线性检索算法。
+- [BitStack: Fine-Grained Size Control for Compressed Large Language Models in Variable Memory Environments](https://arxiv.org/abs/2410.23918)：用免训练权重分解生成接近 1-bit 的残差块堆栈，使 LLM 可按当前内存预算只加载部分块。
+- [Expanding Sparse Tuning for Low Memory Usage](https://arxiv.org/abs/2411.01800)：提出 SNELL，把 sparse tuning 的可调矩阵分解为 kernelized LoRA 低秩形式，并用竞争式稀疏化避免存储完整优化器权重和稀疏索引。
+- [Select2Plan: Training-Free ICL-Based Planning Through VQA and Memory Retrieval](https://arxiv.org/abs/2411.04006)：构建免训练机器人规划流程，将结构化 VQA、上下文示例和记忆检索结合；该条更偏机器人规划而非核心 LLM 记忆建模。
+- [SEEKR: Selective Attention-Guided Knowledge Retention for Continual Learning of Large Language Models](https://arxiv.org/abs/2411.06171)：用 forgettability 和 task-sensitivity 选择注意力头做蒸馏，使持续学习中的 replay 数据降至约十分之一仍能保持旧任务知识。
+- [FRUGAL: Memory-Efficient Optimization by Reducing State Overhead for Scalable Training](https://arxiv.org/abs/2411.07837)：把梯度分成低维 Adam 式有状态更新和其余方向的 SGD 或 signSGD 无状态更新，在固定优化器内存下保持 full-rank 更新。
+- [Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues](https://arxiv.org/abs/2411.12537)：证明在线性 RNN 状态转移矩阵中允许负特征值，可支持 parity、regular language 和模块计数等正值 Mamba 式转移难以表达的状态跟踪。
+- [On the Way to LLM Personalization: Learning to Remember User Conversations](https://arxiv.org/abs/2411.13405)：提出 PLUM，把按时间排列的用户对话增广为问答训练样本，并用加权损失微调 LoRA adapter，实现参数高效的个性化记忆。
+- [Disentangling Memory and Reasoning Ability in Large Language Models](https://arxiv.org/abs/2411.13504)：加入 memory 和 reason 特殊 token，把推理过程拆成知识召回与逻辑推理两类步骤，便于判断错误来自陈旧记忆还是推理链。
+- [Continual Learning and Lifting of Koopman Dynamics for Linear Control of Legged Robots](https://arxiv.org/abs/2411.14321)：通过持续扩展数据和 Koopman 潜在状态维度来改进腿式机器人线性化动力学；该条属于偏离主轴的机器人控制持续学习。
+- [MAS-Attention: Memory-Aware Stream Processing for Attention Acceleration on Resource-Constrained Edge Devices](https://arxiv.org/abs/2411.17720)：用向量和矩阵双流 tiling 以及主动 cache overwrite 在边缘加速器上加速精确注意力，属于硬件内存基础设施而非智能体记忆。
+- [Learning to Forget using Hypernetworks](https://arxiv.org/abs/2412.00761)：提出 HyperForget，用 diffusion hypernetwork 采样已遗忘目标数据但保留非目标数据性能的模型参数。
+- [Memories of Forgotten Concepts](https://arxiv.org/abs/2412.00782)：显示扩散模型概念消融后，合适 latent seed 仍可恢复被擦除概念图像，说明表面遗忘后仍残留概念记忆。
+- [Understanding and Mitigating Memorization in Generative Models via Sharpness of Probability Landscapes](https://arxiv.org/abs/2412.04140)：用 log-probability landscape 的 sharpness 早期检测扩散模型记忆化，并通过 sharpness-aware 正则优化初始噪声以减少记忆化输出。
+- [APOLLO: SGD-like Memory, AdamW-level Performance](https://arxiv.org/abs/2412.05270)：用随机投影低秩优化器状态近似 AdamW 学习率缩放，使 APOLLO-Mini 以接近 SGD 的内存成本保持类似 AdamW 的 LLM 训练效果。
+- [Understanding Factual Recall in Transformers via Associative Memories](https://arxiv.org/abs/2412.06538)：从 associative memory 机制解释 Transformer 的事实回忆。
+- [Filling Memory Gaps: Enhancing Continual Semantic Parsing via SQL Syntax Variance-Guided LLMs without Real Data Replay](https://arxiv.org/abs/2412.07246)：用 SQL 语法差异指导 LLM 重构关键记忆并校准记忆准确性，再以 task-aware dual-teacher distillation 在不回放真实历史数据的情况下训练持续语义解析器。
+- [The Pitfalls of Memorization: When Memorization Hurts Generalization](https://arxiv.org/abs/2412.07684)：形式化分析记忆化例外样本如何放大伪相关，并提出 memorization-aware training，用 held-out prediction 信号移动 logits 以学习更稳健模式。
+- [Memory Layers at Scale](https://arxiv.org/abs/2412.09764)：把可训练 key-value memory layer 扩展到 128B 记忆参数和一万亿 token 预训练，在不增加 dense feed-forward FLOP 的情况下提升事实任务。
+- [Memory-Efficient 4-bit Preconditioned Stochastic Optimization](https://arxiv.org/abs/2412.10663)：把 Shampoo preconditioner 的 Cholesky factor 量化到 4 bit，并把量化误差存入矩阵未用三角区域，以带收敛保证的方式降低优化器内存。
+- [Understanding and Mitigating Memorization in Diffusion Models for Tabular Data](https://arxiv.org/abs/2412.11044)：发现表格扩散模型记忆化会随训练 epoch 增加，并用 TabCutMix 与 TabCutMixPlus 的特征片段交换增强来缓解。
+- [Rethinking Associative Memory Mechanism in Induction Head](https://arxiv.org/abs/2412.11459)：从 associative memory 视角分析 bigram prompt 上的两层 Transformer，解释 induction head 如何权衡上下文证据与预训练 bigram 知识。
+- [Generating Long-form Story Using Dynamic Hierarchical Outlining with Memory-Enhancement](https://arxiv.org/abs/2412.13575)：提出 DOME，把动态层级大纲、时序知识图谱记忆模块和冲突分析器结合，用于保持长篇故事生成的情节与上下文一致性。
+- [Associative memory inspires improvements for in-context learning using a novel attention residual stream architecture](https://arxiv.org/abs/2412.15113)：受 associative memory 启发加入 attention residual stream，使信息可在 attention head 之间直接流动，并加速 in-context learning。
+- [On the Structural Memory of LLM Agents](https://arxiv.org/abs/2412.15266)：在四类智能体记忆任务中比较 chunk、triple、atomic fact、summary 和 mixed memory，并评估单步检索、reranking 与迭代检索。
+- [Improving Factuality with Explicit Working Memory](https://arxiv.org/abs/2412.18069)：提出 EWE，用在线 fact-checking 与检索反馈刷新显式工作记忆，使长文本生成可在解码过程中修正错误事实。
+- [KUNSERVE: Parameter-centric Memory Management for Efficient Memory Overloading Handling in LLM Serving](https://arxiv.org/abs/2412.18169)：在服务突发负载下临时丢弃复制的模型参数，为 KV cache 压力释放 GPU 内存，属于服务基础设施内存技术而非智能体记忆。
+- [IMSSA: Deploying modern state-space models on memristive in-memory compute hardware](https://arxiv.org/abs/2412.20215)：把量化感知训练后的 S4D 状态空间 kernel 映射到 memristive crossbar array，是偏离主轴的存内计算部署论文。
+- [Multi-Objective Large Language Model Unlearning](https://arxiv.org/abs/2412.20412)：把 LLM 遗忘表述为多目标优化，用共同下降方向替代朴素 gradient ascent，以在遗忘目标数据时保持模型效用。
+- [Learning, Forgetting, Remembering: Insights From Tracking LLM Memorization During Training](https://doi.org/10.18653/v1/2024.blackboxnlp-1.4)：跟踪训练过程中的逐字记忆化，发现记忆率呈 U 形：早期记住的样本更持久，部分已遗忘样本后期会再次被记住。
+- [Improving Long-Term Conversational Abilities of Large Language Models Through Behavior Memory](https://doi.org/10.1109/eiecs63941.2024.10799986)：用行为记忆保留用户交互轨迹，使长程对话 LLM 在跨会话场景中保持更稳定的一致性。
+- [Explicit Memory Learning with Expectation Maximization](https://doi.org/10.18653/v1/2024.emnlp-main.927)：用期望最大化学习显式记忆变量，在潜在记忆推断与模型更新之间交替，使已存事实能指导生成。
+- [QueryMintAI: Multipurpose Multimodal Large Language Models for Personal Data](https://doi.org/10.1109/access.2024.3468996)：编排 GPT-3.5 Turbo、DALL-E 2、TTS、Whisper、文档处理、URL 分析和私有数据库查询以支持多模态个人数据交互；这是应用系统而非记忆架构。
+- [MECLA: Memory-Compute-Efficient LLM Accelerator with Scaling Sub-matrix Partition](https://doi.org/10.1109/isca59077.2024.00079)：提出采用 scaling sub-matrix partition 的 LLM 推理加速器以提升内存与计算效率，属于硬件基础设施而非认知或智能体记忆。
+- [Temporal Knowledge Graph Reasoning With Dynamic Memory Enhancement](https://doi.org/10.1109/tkde.2024.3390683)：用动态记忆增强时序知识图谱推理，跨时间跟踪实体与关系状态的演化。
+- [Guided Profile Generation Improves Personalization with Large Language Models](https://doi.org/10.18653/v1/2024.findings-emnlp.231)：先把稀疏个人上下文生成精炼自然语言用户画像再提示 LLM，相比直接输入原始上下文提升偏好预测能力。
+- [Memory and Schema in Human-Generative Artificial Intelligence Interactions](https://doi.org/10.1109/ictai62512.2024.00072)：分析人类图式和记忆如何塑造与生成式 AI 的交互，把图式激活视为记忆接口的一部分。
+- [A Study of Data-Path Bugs in PyTorch with a Focus on Memory Issues](https://doi.org/10.1109/bigdata62323.2024.10825791)：审计 3,089 个 PyTorch issue，归纳 tensor storage、allocation、loading 和 contiguity 等数据路径内存缺陷；可作内存基础设施 QA，偏离 LLM 记忆能力主轴。
+- [Reducing Smart Phone Environmental Footprints with In-Memory Processing](https://doi.org/10.1109/codes-isss60120.2024.00006)：评估用手机 DRAM 存内处理替代专用移动 AI 加速器以降低 embodied carbon，属于偏离主轴的硬件可持续性论文。
+- [Titans: Learning to Memorize at Test Time](https://arxiv.org/abs/2501.00663)：提出 Titans 测试时记忆架构，用于长期神经记忆。
+- [Key-value memory in the brain](https://arxiv.org/abs/2501.02950)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Beyond Memorization: Assessing Semantic Generalization in Large Language Models Using Phrasal Constructions](https://arxiv.org/abs/2501.04661)：用 Construction Grammar 推理数据集区分短语形式记忆与抽象构式语义泛化，因此更像记忆化诊断而非记忆架构。
+- [Breaking Memory Limits: Gradient Wavelet Transform Enhances LLMs Training](https://arxiv.org/abs/2501.07237)：提出 Gradient Wavelet Transform，把梯度投影到小波子空间以压缩 LLM 预训练和微调中的优化器状态。
+- [Merging Models on the Fly Without Retraining: A Sequential Approach to Scalable Continual Model Merging](https://arxiv.org/abs/2501.09522)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [CarMem: Enhancing Long-Term Memory in LLM Voice Assistants through Category-Bounding](https://arxiv.org/abs/2501.09645)：为 LLM 语音助手加入 category-bounded 长期记忆，提升记忆存储与检索的可靠性。
+- [Test-time regression: a unifying framework for designing sequence models with associative memory](https://arxiv.org/abs/2501.12352)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [Spurious Forgetting in Continual Learning of Language Models](https://arxiv.org/abs/2501.13453)：区分任务对齐下降与真实知识遗失，并通过冻结底层参数减少语言模型持续学习中的虚假遗忘。
+- [Hierarchical Layer-Wise and Element-Wise Regularization](https://arxiv.org/abs/2501.13669)：计算参数元素级重要性和层级系数，使 LLM 微调在适配领域任务时约束承载通用知识的参数。
+- [Wormhole Memory: A Rubik's Cube for Cross-Dialogue Retrieval](https://arxiv.org/abs/2501.14846)：提出 Wormhole Memory Module，用非线性索引和动态检索在相互隔离的对话之间复用已存记忆。
+- [Fine Tuning without Catastrophic Forgetting via Selective Low Rank Adaptation](https://arxiv.org/abs/2501.15377)：用指示函数选择性激活 LoRA block，使 CLIP 和 DINO-ViT 在少量活跃适配块下保持域外鲁棒性。
+- [Resolving Editing-Unlearning Conflicts: A Knowledge Codebook Framework for Large Language Model Updating](https://arxiv.org/abs/2502.00158)：提出知识码本框架，处理大模型更新中知识编辑与遗忘目标冲突的问题。
+- [EDELINE: Enhancing Memory in Diffusion-based World Models via Linear-Time Sequence Modeling](https://arxiv.org/abs/2502.00466)：把状态空间序列建模并入扩散 world model，使强化学习智能体能在固定帧上下文之外保留视觉动态。
+- [Lifelong Knowledge Editing requires Better Regularization](https://arxiv.org/abs/2502.01636)：在 locate-then-edit 方法中加入 Most-Probable Early Stopping 和 Frobenius 范数约束，限制连续编辑中的激活过优化和矩阵范数增长。
+- [A Lightweight Method to Disrupt Memorized Sequences in LLM](https://arxiv.org/abs/2502.05159)：提出 TokenSwap 这一后处理防御，把部分 token 概率与小模型交换，在不重训的情况下降低逐字序列复现。
+- [In-context Denoising with One-layer Transformers](https://arxiv.org/abs/2502.05164)：显示单层 Transformer 可在上下文感知的 dense associative memory 能量景观上执行一步梯度下降来完成去噪提示。
+- [Temporal Working Memory: Query-Guided Segment Refinement for Enhanced Multimodal Understanding](https://arxiv.org/abs/2502.06020)：通过 query-guided segment refinement 改进模型对时间证据的多模态理解。
+- [Emergence of Episodic Memory in Transformers: Characterizing Changes in Temporal Structure of Attention Scores During Training](https://arxiv.org/abs/2502.06902)：在 GPT-2 注意力中发现 temporal contiguity、primacy 和 recency 效应，并通过消融 induction head 去除序列回忆模式。
+- [Forget Forgetting: Continual Learning in a World of Abundant Memory](https://arxiv.org/abs/2502.07274)：把持续学习重置到样本记忆充足的设定下，并提出由秩式参数重置和权重平均组成的 Weight Space Consolidation。
+- [Exploring Synaptic Resonance in Large Language Models: A Novel Approach to Contextual Memory Integration](https://arxiv.org/abs/2502.10699)：面向智能体与模型记忆的模型、训练或算法工作。核心思想：以 A Novel Approach to Contextual Memory Integration 为主要改进目标，作为 Model 条目的能力参考。
+- [Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning](https://arxiv.org/abs/2502.11019)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [FineFilter: A Fine-grained Noise Filtering Mechanism for Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2502.11811)：用 CompSelect 的线索抽取器、重排器和截断器，只保留面向 LLM 推理的紧凑答案相关证据。
+- [Recurrent Knowledge Identification and Fusion for Language Model Continual Learning](https://arxiv.org/abs/2502.17510)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [LeanKAN: A Parameter-Lean Kolmogorov-Arnold Network Layer with Improved Memory Efficiency and Convergence Behavior](https://arxiv.org/abs/2502.17844)：用 LeanKAN 模块替代臃肿的 KAN 层以减少参数和超参数；这属于网络内存效率而非 LLM 记忆行为。
+- [Unlocking Efficient, Scalable, and Continual Knowledge Editing with Basis-Level Representation Fine-Tuning](https://arxiv.org/abs/2503.00306)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Machine Learners Should Acknowledge the Legal Implications of Large Language Models as Personal Data](https://arxiv.org/abs/2503.01630)：论证 LLM 权重中的个人数据记忆可能触发访问、更正和删除等数据保护义务，因此是法律层面的记忆化分析而非模型方法。
+- [SAKE: Steering Activations for Knowledge Editing](https://arxiv.org/abs/2503.01751)：用 optimal transport 在改写事实的释义和逻辑蕴含分布上做激活 steering，使知识编辑比单提示编辑更稳健。
+- [MindBridge: Scalable and Cross-Model Knowledge Editing via Memory-Augmented Modality](https://arxiv.org/abs/2503.02701)：把被编辑事实编码成独立的 memory modality，先进行一次预训练，再接入不同 LLM backbone。
+- [FlexInfer: Breaking Memory Constraint via Flexible and Efficient Offloading for On-Device LLM Inference](https://arxiv.org/abs/2503.03777)：结合异步预取、平衡 memory locking 和 tensor preservation 做端侧 LLM offloading，属于服务内存基础设施而非智能体记忆。
+- [Memory-augmented Query Reconstruction for LLM-based Knowledge Graph Reasoning](https://arxiv.org/abs/2503.05193)：构建 MemQ，让 LLM 生成的 query memory 保存显式查询描述，并在推理过程中重构知识图谱查询。
+- [Language Model Personalization via Reward Factorization](https://arxiv.org/abs/2503.06358)：把每个用户偏好表示为基础 reward function 的低维组合，使个性化 RLHF 可由少量用户回答推断。
+- [eMoE: Task-aware Memory Efficient Mixture-of-Experts-Based (MoE) Model Inference](https://arxiv.org/abs/2503.06823)：预测重复出现的 expert routing 模式，并用任务感知调度只加载必要 expert，降低 MoE 推理显存而非加入长期记忆。
+- [Are We Truly Forgetting? A Critical Re-examination of Machine Unlearning Evaluation Protocols](https://arxiv.org/abs/2503.06991)：用表示层评测替代只看 logit 的遗忘检查，揭示名义遗忘后特征表示仍可能接近原模型。
+- [S2A: A Unified Framework for Parameter and Memory Efficient Transfer Learning](https://arxiv.org/abs/2503.08154)：提出 Structure to Activation，将 activation modules 与基于导数的 4-bit activation quantization 结合以降低微调内存。
+- [Training Plug-n-Play Knowledge Modules with Deep Context Distillation](https://arxiv.org/abs/2503.08727)：通过 Deep Context Distillation 训练文档级 LoRA Knowledge Modules，使私有或变化文档可按需插入 LLM。
+- [Resolving UnderEdit & OverEdit with Iterative & Neighbor-Assisted Model Editing](https://arxiv.org/abs/2503.11895)：用连续多轮编辑缓解欠编辑，并在编辑时纳入邻近事实以减少无关知识被过度改写。
+- [Exploring Model Editing for LLM-based Aspect-Based Sentiment Classification](https://arxiv.org/abs/2503.15117)：通过因果干预定位中层情感极性表示，只编辑这些关键 LLM 组件以适配方面级情感分类。
+- [Personalized Language Models via Privacy-Preserving Evolutionary Model Merging](https://arxiv.org/abs/2503.18008)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [Content-Addressable Memory with a Content-Free Energy Function](https://arxiv.org/abs/2503.18822)：提出 kinetic content-addressable memory 模型，用动力学而非能量极小值编码可检索模式。
+- [Memory-Aware and Uncertainty-Guided Retrieval for Multi-Hop Question Answering](https://arxiv.org/abs/2503.23095)：构建 MIND，用 entropy 和 attention 触发动态检索，并以 memory-aware filtering 跨多跳推理保存高置信事实。
+- [Adaptive Computation Pruning for the Forgetting Transformer](https://arxiv.org/abs/2504.06949)：剪除 FoX 中已被 forget gate 衰减的注意力依赖，在不改变输出的情况下降低注意力内存访问和运行时间。
+- [Dynamic Cheatsheet](https://arxiv.org/abs/2504.07952)：为黑盒语言模型加入持久测试时 cheatsheet memory，在无需梯度更新的情况下保存可复用策略、代码片段和错误经验。
+- [Frozen Layers: Memory-efficient Many-fidelity Hyperparameter Optimization](https://arxiv.org/abs/2504.10735)：把冻结层数作为超参数搜索的 fidelity source，为 ResNet 和 Transformer 训练节省算力与内存，偏向 HPO 效率而非认知记忆建模。
+- [ColBERT-Serve: Efficient Multi-stage Memory-Mapped Scoring](https://arxiv.org/abs/2504.14903)：对 ColBERT 索引做 memory mapping，并加入多阶段 hybrid scoring，降低 late-interaction 检索服务的 RAM 占用。
+- [Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](https://arxiv.org/abs/2504.16795)：为 Mamba 类模型加入 Hierarchical Sparse Attention，通过 top-k chunk 选择和硬件对齐 kernel 实现随机长程访问。
+- [Quantifying Memory Utilization with Effective State-Size](https://arxiv.org/abs/2504.19561)：定义 effective state-size，衡量 attention、convolution 和 recurrence 算子如何存储历史信息以服务后续输出。
+- [Dialogue Language Model with Large-Scale Persona Data Engineering](https://doi.org/10.18653/v1/2025.naacl-industry.71)：构建 PPDS，结合自动 persona extraction、persona augmentation 和生成式预训练来提升人设一致对话。
+- [An Efficient Context-Dependent Memory Framework for LLM-Centric Agents](https://doi.org/10.18653/v1/2025.naacl-industry.80)：提出依赖上下文的智能体记忆框架，使检索与保留随任务语境变化。
+- [MARK: Memory Augmented Refinement of Knowledge](https://arxiv.org/abs/2505.05177)：用残余领域洞察、用户事实和回答细化三类 refined-memory agent 管理结构化记忆，并按时效与频次排序，使 LLM 无需重训也能持续适配领域与用户。
+- [Demystifying Diffusion Policies: Action Memorization and Simple Lookup Table Alternatives](https://arxiv.org/abs/2505.05787)：检验 diffusion policy 的 action lookup table 假设，并提出基于最近训练图像检索的 ALT，属于偏机器人策略记忆的离轴结果。
+- [FloE: On-the-Fly MoE Inference on Memory-constrained GPU](https://arxiv.org/abs/2505.05950)：对被激活 expert 矩阵做压缩并预测稀疏 expert 使用，使 MoE 可在显存受限 GPU 上推理。
+- [Task-Core Memory Management and Consolidation](https://arxiv.org/abs/2505.09952)：提出 task-core memory indexing 和对 hard、discriminative samples 的巩固机制，用于长期持续学习。
+- [Revealing the Deceptiveness of Knowledge Editing: A Mechanistic Analysis of Superficial Editing](https://arxiv.org/abs/2505.12636)：定位残差流位置和后层 attention head，说明看似成功的知识编辑后原始事实仍可被保留。
+- [PsyMem: Fine-grained psychological alignment and Explicit Memory Control for Advanced Role-Playing LLMs](https://arxiv.org/abs/2505.12814)：用心理指标和 memory-alignment 数据训练 PsyMem-Qwen，使角色扮演回答可由角色记忆显式控制。
+- [UltraEdit: Training-, Subject-, and Memory-Free Lifelong Editing in Large Language Models](https://arxiv.org/abs/2505.14679)：从 hidden state 和梯度一步计算参数偏移，并用 lifelong normalization 在无需主体记忆或训练的情况下扩展模型编辑。
+- [Teaching Language Models to Evolve with Users: Dynamic Profile Modeling for Personalized Alignment](https://arxiv.org/abs/2505.15456)：用 profile reward 和 response reward 训练 Qwen-RLPA，使对话轮次能迭代细化动态用户画像。
+- [LyapLock: Bounded Knowledge Preservation in Sequential Large Language Model Editing](https://arxiv.org/abs/2505.15702)：用 Lyapunov optimization 将连续编辑中的长期知识保持约束分解为可求解的逐步模型编辑子问题。
+- [Towards General Continuous Memory for Vision-Language Models](https://arxiv.org/abs/2505.17670)：提出 CoMEM，以少量可训练参数和自合成多模态记忆数据把 VLM 微调成 compact continuous-memory encoder。
+- [Model Editing with Graph-Based External Memory](https://arxiv.org/abs/2505.18343)：提出 HYPE，用 hyperbolic graph construction、Mobius-transformed updates 和 dual stabilization 通过图式外部记忆编辑 LLM 事实。
+- [Understanding Transformer from the Perspective of Associative Memory](https://arxiv.org/abs/2505.19488)：把 attention 和 feed-forward layers 解释为 associative-memory system，并用检索信噪比和记忆更新规则分析 Transformer 设计。
+- [Adaptive Detoxification: Safeguarding General Capabilities of LLMs through Toxicity-Aware Knowledge Editing](https://arxiv.org/abs/2505.22298)：提出 ToxEdit，检测 toxic activation pattern 并经由自适应层间路径路由计算，以减少 detoxification 的过编辑。
+- [From Dormant to Deleted: Tamper-Resistant Unlearning Through Weight-Space Regularization](https://arxiv.org/abs/2505.22310)：把 relearning resistance 与权重空间距离和 linear mode connectivity 联系起来，并用正则化抵御遗忘知识恢复攻击。
+- [Structured Memory Mechanisms](https://arxiv.org/abs/2505.22921)：结合显式 memory units、gated writing、attention-based reading 和 forgetting function，并用联合记忆操作损失稳定长上下文表示。
+- [ATLAS: Learning to Optimally Memorize the Context at Test Time](https://arxiv.org/abs/2505.23735)：学习一个 long-term memory module，从当前和历史 token 优化固定大小记忆，并形成面向长上下文回忆的 DeepTransformer 架构。
+- [Dynamical Properties of Dense Associative Memory](https://arxiv.org/abs/2506.00851)：用 generating functional analysis 量化 dense associative memory 的收敛时间、吸引域和存储容量。
+- [QKV Projections Require a Fraction of Their Memory](https://arxiv.org/abs/2506.02939)：提出 Point-Approximate Matrix Multiplication，在 LLM 训练中最高以 512 倍压缩 Q、K 和 V 投影激活。
+- [Targeted Forgetting of Image Subgroups in CLIP Models](https://arxiv.org/abs/2506.03117)：用 forgetting、reminding 和 restoring 三阶段加蒸馏与 model souping，实现 CLIP 细粒度 subgroup unlearning 并保留 zero-shot 能力。
+- [OSGNet @ Ego4D Episodic Memory Challenge 2025](https://arxiv.org/abs/2506.03710)：用 early-fusion video localization 处理 Ego4D episodic-memory 赛道，是自我中心视频记忆挑战方案而非 LLM 记忆模型。
+- [Rethinking the Stability-Plasticity Trade-off in Continual Learning from an Architectural Perspective](https://arxiv.org/abs/2506.03951)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [Associative Memory and Generative Diffusion](https://arxiv.org/abs/2506.05178)：证明扩散过程在 zero-noise limit 下收敛到 associative-memory system，并分析由此产生的稳定性和分岔行为。
+- [Transient Dynamics of Associative Memory Models](https://arxiv.org/abs/2506.05303)：推导 dynamical mean-field equations，说明 dense associative memory 在通常容量阈值以上仍可短暂高精度检索模式。
+- [Memorization in Language Models through the Lens of Intrinsic Dimension](https://arxiv.org/abs/2506.09591)：把 intrinsic dimension 作为潜在复杂度信号，显示高维序列在稀疏暴露下更不容易被记忆化。
+- [Dense Associative Memory with Epanechnikov Energy](https://arxiv.org/abs/2506.10801)：为 DenseAM 定义 log-sum-ReLU Epanechnikov energy，实现指数容量下的精确检索并产生 emergent local minima。
+- [Automatic Expert Discovery in LLM Upcycling via Sparse Interpolated Mixture-of-Experts](https://arxiv.org/abs/2506.12597)：用 SIMoE 指令调优发现稀疏 expert 参数子集和 router，是相邻的参数化知识专门化方法而非显式记忆。
+- [HRGS: Hierarchical Gaussian Splatting for Memory-Efficient High-Resolution 3D Reconstruction](https://arxiv.org/abs/2506.14229)：用层级 Gaussian-splatting block、粗粒度先验和 importance-driven pruning 实现 3D 重建内存效率，属于离轴图形重建方法。
+- [Memory Tokens: Large Language Models Can Generate Reversible Sentence Embeddings](https://arxiv.org/abs/2506.15001)：优化 special memory-token embeddings，使未改权重的 LLM 可精确重构固定文本，展示可逆句子记忆压缩潜力。
+- [MEM1](https://arxiv.org/abs/2506.15841)：用强化学习跨回合更新紧凑共享状态，在常数记忆约束下把记忆巩固与推理结合。
+- [Sequence-to-sequence models with attention mechanistically map to the architecture of human memory search](https://arxiv.org/abs/2506.17424)：把 RNN sequence-to-sequence attention 机制映射到 Context Maintenance and Retrieval，连接神经翻译模型与人类记忆搜索。
+- [Answer-Centric or Reasoning-Driven? Uncovering the Latent Memory Anchor in LLMs](https://arxiv.org/abs/2506.17630)：研究 LLM 中潜在记忆锚点及其对答案和推理行为的影响。
+- [MDSAM:Memory-Driven Sparse Attention Matrix for LVLMs Hallucination Mitigation](https://arxiv.org/abs/2506.17664)：在 LVLM 解码时记忆并更新 image-token attention pattern，无需训练或外部工具即可减少幻觉。
+- [How Robust is Model Editing after Fine-Tuning? An Empirical Study on Text-to-Image Diffusion Models](https://arxiv.org/abs/2506.18428)：测试 diffusion-model edits 经 DreamBooth、LoRA 和 DoRA 微调后是否保留，是面向已编辑模型记忆的鲁棒性诊断。
+- [Mirage of Mastery: Memorization Tricks LLMs into Artificially Inflated Self-Knowledge](https://arxiv.org/abs/2506.18998)：显示 STEM 解题记忆会夸大 LLM 的自我知识和可行性判断，因此是记忆化诊断而非记忆架构。
+- [Understanding Verbatim Memorization in LLMs Through Circuit Discovery](https://arxiv.org/abs/2506.21588)：用对比式 circuit discovery 区分触发逐字记忆的子图与只能维持已开始记忆序列的子图。
+- [Dynamic Steering With Episodic Memory For Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.706)：通过动态选择情节记忆事件并在解码时据此调整回答，对 LLM 生成进行记忆驱动 steering。
+- [Decoding by Contrasting Knowledge: Enhancing Large Language Model Confidence on Edited Facts](https://doi.org/10.18653/v1/2025.acl-long.841)：用对比解码提升知识编辑后模型对已编辑事实的置信度。
+- [Tracing and Dissecting How LLMs Recall Factual Knowledge for Real World Questions](https://doi.org/10.18653/v1/2025.acl-long.1133)：通过剖析 LLM 在各层如何检索、转换并表达已存知识，追踪真实问题上的事实召回机制。
+- [Vector Hopfield Network Saturation](https://arxiv.org/abs/2507.02586)：从统计力学角度分析 vector Hopfield network 在饱和附近与饱和以上的行为，补充 associative-memory 模型理论。
 - [PRIME: Large Language Model Personalization with Cognitive Memory and Thought Processes](https://arxiv.org/abs/2507.04607)：用认知记忆与思维过程个性化 LLM，将记忆检索与回应规划绑定。
+- [Dynamic Parameter Memory: Temporary LoRA-Enhanced LLM for Long-Sequence Emotion Recognition in Conversation](https://arxiv.org/abs/2507.09076)：用临时 LoRA 动态参数记忆跟踪长序列对话情绪上下文，同时避免永久改动基础 LLM。
+- [Learning to summarize user information for personalized reinforcement learning from human feedback](https://arxiv.org/abs/2507.13579)：为个性化 RLHF 总结用户信息。
+- [Rote Learning Considered Useful: Generalizing over Memorized Data in LLMs](https://arxiv.org/abs/2507.21914)：研究死记硬背何时帮助 LLM 泛化，检验记忆化样本能否成为有用锚点而非单纯泄漏。
+- [Enhancing Memory Recall in LLMs with Gauss-Tin: A Hybrid Instructional and Gaussian Replay Approach](https://arxiv.org/abs/2508.09510)：在 Gauss-Tin 中结合指令式提示和 Gaussian replay，以强化 LLM 对已见信息的记忆召回。
 - [Memory Decoder: A Pretrained, Plug-and-Play Memory for Large Language Models](https://arxiv.org/abs/2508.09874)：提供面向大语言模型的即插即用预训练记忆模块。
+- [Mo' Memory, Mo' Problems: Stream-Native Machine Unlearning](https://arxiv.org/abs/2508.10193)：定义连续数据流更新模型中的 stream-native 机器遗忘，目标是在不回放完整历史的情况下完成删除。
+- [STM3: Mixture of Multiscale Mamba for Long-Term Spatio-Temporal Time-Series Prediction](https://arxiv.org/abs/2508.12247)：构建多尺度 Mamba 混合结构 STM3，用于捕捉时间序列预测中的长程时空依赖。
+- [CEM-Net: Cross-Emotion Memory Network for Emotional Talking Face Generation](https://arxiv.org/abs/2508.12368)：用跨情绪记忆网络保留并迁移情绪线索，以生成更具表现力的说话人脸。
+- [Re:Frame - Retrieving Experience From Associative Memory](https://arxiv.org/abs/2508.19344)：在 Re:Frame 中从联想记忆检索既往经验，用相似案例指导当前决策或生成。
+- [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://arxiv.org/abs/2508.19828)：用强化学习训练 LLM agent 管理并利用长期记忆。
+- [StoxLSTM: A Stochastic Extended Long Short-Term Memory Network for Time Series Forecasting](https://arxiv.org/abs/2509.01187)：提出 StoxLSTM 随机扩展 LSTM 架构，用于带不确定性的时间序列预测。
+- [Memorization ≠ Understanding: Do Large Language Models Have the Ability of Scenario Cognition?](https://arxiv.org/abs/2509.04866)：检验 LLM 是否具备超越记忆化模式的场景认知能力，将记忆化与情境级理解区分开。
+- [Towards Meta-Cognitive Knowledge Editing for Multimodal LLMs](https://arxiv.org/abs/2509.05714)：推动多模态大模型知识编辑走向元认知控制。
+- [REMI: A Novel Causal Schema Memory Architecture for Personalized Lifestyle Recommendation Agents](https://arxiv.org/abs/2509.06269)：面向智能体记忆与长期上下文的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Case-Based Decision-Theoretic Decoding with Quality Memories](https://arxiv.org/abs/2509.12677)：采用基于案例的决策理论解码和质量记忆，通过对照已存高质量先例来选择输出。
+- [Fresh in memory: Training-order recency is linearly encoded in language model activations](https://arxiv.org/abs/2509.14223)：显示训练顺序近因效应会被线性编码进语言模型激活，使暴露顺序可从内部表示中恢复。
+- [Mitigating data replication in text-to-audio generative diffusion models through anti-memorization guidance](https://arxiv.org/abs/2509.14934)：在文本到音频扩散生成中使用反记忆化 guidance，以减少训练音频被复制。
+- [Latent learning](https://arxiv.org/abs/2509.16189)：研究情景记忆如何补充参数化学习，突出过往经验的灵活复用。
+- [Analyzing Memory Effects in Large Language Models through the lens of Cognitive Psychology](https://arxiv.org/abs/2509.17138)：借助近因、首因、干扰和检索线索等认知心理学现象分析 LLM 记忆效应。
+- [StateX: Enhancing RNN Recall via Post-training State Expansion](https://arxiv.org/abs/2509.22630)：在 StateX 中后训练扩展循环隐藏状态，在不完整重训序列模型的情况下提升 RNN 召回。
+- [In-Context Learning can Perform Continual Learning Like Humans](https://arxiv.org/abs/2509.22764)：显示上下文学习可通过在提示中积累任务证据来模拟持续学习，而不是更新权重。
+- [Memory-Efficient Fine-Tuning via Low-Rank Activation Compression](https://arxiv.org/abs/2509.23472)：在微调中用低秩结构压缩激活，以降低内存占用并保持更新质量。
+- [From Personal to Collective: On the Role of Local and Global Memory in LLM Personalization](https://arxiv.org/abs/2509.23767)：比较 LLM 个性化中的本地用户记忆与全局集体记忆，说明共享和私有偏好轨迹如何交互。
+- [ResFormer: All-Time Reservoir Memory for Long Sequence Classification](https://arxiv.org/abs/2509.24074)：为 ResFormer 加入全时段 reservoir memory，使长序列分类器能保留完整输入历史的信息。
+- [Identity Bridge: Enabling Implicit Reasoning via Shared Latent Memory](https://arxiv.org/abs/2509.24653)：用共享潜在记忆支持隐式推理。
 - [ID-RAG: Identity Retrieval-Augmented Generation for Long-Horizon Persona Coherence in Generative Agents](https://arxiv.org/abs/2509.25299)：使用身份检索增强生成式智能体的长程人设一致性。
+- [Memory Self-Regeneration: Uncovering Hidden Knowledge in Unlearned Models](https://arxiv.org/abs/2510.03263)：研究被认为已遗忘的概念如何被重新恢复，并把知识检索鲁棒性作为机器遗忘方法的记忆侧评估维度。
+- [MemMamba: Rethinking Memory Patterns in State Space Model](https://arxiv.org/abs/2510.03279)：分析 Mamba-style 状态空间模型中的长程记忆指数衰减，并提出改进记忆模式以保留长序列信息。
+- [Can an LLM Induce a Graph? Investigating Memory Drift and Context Length](https://arxiv.org/abs/2510.03611)：研究 LLM 在记忆漂移和上下文长度限制下能否归纳图结构，探测长上下文中结构信息如何退化。
+- [AutoDAN-Reasoning: Enhancing Strategies Exploration based Jailbreak Attacks with Test-Time Scaling](https://arxiv.org/abs/2510.05379)：在 AutoDAN-Reasoning 中用测试时扩展探索越狱策略，这是智能体安全攻击而非记忆机制。
+- [MeSH: Memory-as-State-Highways for Recursive Transformers](https://arxiv.org/abs/2510.07739)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [Memory Retrieval and Consolidation through Function Tokens](https://arxiv.org/abs/2510.08203)：通过 function tokens 支持大语言模型中的记忆检索与巩固。
+- [Beyond Prefixes: Graph-as-Memory Cross-Attention for Knowledge Graph Completion with Large Language Models](https://arxiv.org/abs/2510.08966)：在 LLM 知识图谱补全中使用 graph-as-memory 交叉注意力，使图结构能在 prefix prompting 之外条件化生成。
+- [Titans Revisited: A Lightweight Reimplementation and Critical Analysis of a Test-Time Memory Model](https://arxiv.org/abs/2510.09551)：轻量复现并批判分析 Titans 测试时记忆模型，澄清收益来自记忆更新还是实现选择。
+- [The Personalization Trap: How User Memory Alters Emotional Reasoning in LLMs](https://arxiv.org/abs/2510.09905)：研究用户记忆如何改变 LLM 的情绪推理。
+- [Continual Learning via Sparse Memory Finetuning](https://arxiv.org/abs/2510.15103)：在语言模型持续微调中只更新高度激活的 memory slots，在学习新知识的同时降低灾难性遗忘。
+- [LightMem](https://arxiv.org/abs/2510.18866)：提供轻量 memory-augmented generation 方法，在全历史上下文或重型记忆服务成本过高时降低记忆使用开销。
+- [Study of Training Dynamics for Memory-Constrained Fine-Tuning](https://arxiv.org/abs/2510.19675)：研究内存受限微调的训练动态，衡量有限激活或优化器内存如何改变收敛过程。
+- [Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](https://arxiv.org/abs/2510.21175)：在零样本视觉语言模型中用 null-space adaptation 做无记忆持续学习，在不回放样本的情况下保留旧行为。
+- [Memory-based Language Models: An Efficient, Explainable, and Eco-friendly Approach to Large Language Modeling](https://arxiv.org/abs/2510.22317)：构建基于记忆的语言模型，通过显式记忆检索提升大语言建模的效率和可解释性。
+- [Nirvana](https://arxiv.org/abs/2510.26083)： 构建带任务感知记忆触发器与更新模块的专用通才模型，用于测试时专门化。
+- [ExpertFlow: Adaptive Expert Scheduling and Memory Coordination for Efficient MoE Inference](https://arxiv.org/abs/2510.26730)：在 ExpertFlow 中自适应调度 MoE experts 并协调内存搬移，以降低推理开销。
 - [Data-Efficient Automatic Prompt Optimization for Memory-Enhanced Conversational Agents](https://doi.org/10.18653/v1/2025.emnlp-industry.126)：为记忆增强对话智能体进行数据高效的自动提示优化。
-- [Adaptive Focus Memory for Language Models](https://arxiv.org/abs/2511.12712)：提出面向记忆的模型侧方法，核心围绕 Adaptive Focus Memory for Language Models。
+- [Belief Dynamics Reveal the Dual Nature of In-Context Learning and Activation Steering](https://arxiv.org/abs/2511.00617)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [ExplicitLM: Decoupling Knowledge from Parameters via Explicit Memory Banks](https://arxiv.org/abs/2511.01581)：在 ExplicitLM 中把知识从模型参数中解耦，存入语言模型可查询的显式记忆库。
+- [Adaptive Focus Memory for Language Models](https://arxiv.org/abs/2511.12712)：为语言模型加入自适应焦点记忆，使注意力集中到与任务相关的已记住内容。
+- [Compute-in-memory implementation of state space models for event sequence processing](https://arxiv.org/abs/2511.13912)：用存内计算硬件实现事件序列处理的状态空间模型，减少序列更新中的数据搬移。
+- [LLM-MemCluster: Empowering Large Language Models with Dynamic Memory for Text Clustering](https://arxiv.org/abs/2511.15424)：面向智能体记忆与长期上下文的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [CAMformer: Associative Memory is All You Need](https://arxiv.org/abs/2511.19740)：把注意力重新解释为 content-addressable memory 操作，在电压域 Binary Attention CAM 加速器中计算相似度，并用层级 top-k 过滤和流水线减少 score 存储、提升 BERT 与 ViT 推理能效。
+- [RILKE](https://arxiv.org/abs/2511.20892)：通过表示干预模块和查询自适应路由器控制冻结 LLM 的长期知识记忆，在保持通用能力的同时降低跨编辑干扰。
+- [Memory-Augmented Knowledge Fusion with Safety-Aware Decoding for Domain-Adaptive Question Answering](https://arxiv.org/abs/2512.02363)：补充用于问答的记忆增强知识融合和安全感知解码。
+- [QKAN-LSTM: Quantum-Inspired Kolmogorov–Arnold Long Short-Term Memory](https://arxiv.org/abs/2512.05049)：在 QKAN-LSTM 中把量子启发 Kolmogorov-Arnold 层与 LSTM 循环结构结合，用于序列建模。
+- [Rhea: Role-aware Heuristic Episodic Attention for Conversational LLMs](https://arxiv.org/abs/2512.06869)：为对话 LLM 加入角色感知启发式情节注意力，按说话人角色和对话上下文检索记忆。
+- [Unconsciously Forget: Mitigating Memorization; Without Knowing What is being Memorized](https://arxiv.org/abs/2512.09687)：在不识别具体被记忆内容的情况下，通过类无意识遗忘的正则或解码控制缓解记忆化。
+- [Adaptive Soft Rolling KV Freeze with Entropy-Guided Recovery: Sublinear Memory Growth for Efficient LLM Inference](https://arxiv.org/abs/2512.11221)：用熵引导的 soft rolling 控制冻结并恢复 KV cache 块，使 LLM 推理内存呈亚线性增长。
+- [QwenLong-L1.5](https://arxiv.org/abs/2512.12967)：提出 QwenLong-L1.5，这是面向 Qwen 系 LLM 长上下文推理与记忆管理的后训练配方。
+- [Towards Effective Model Editing for LLM Personalization](https://arxiv.org/abs/2512.13676)：把模型编辑用于 LLM 个性化，更新用户特定事实和偏好，同时限制旁路知识改动。
+- [Neuromodulation-Inspired Gated Associative Memory](https://arxiv.org/abs/2512.13859)：提出 gated associative memory network，用于扩展记忆检索并产生多稳态行为。
+- [An Information-Theoretic Framework for Robust Large Language Model Editing](https://arxiv.org/abs/2512.16227)：用信息论目标刻画稳健大模型知识编辑，约束编辑后事实保持与非目标知识扰动。
 - [Learning by Taking Notes: Memory-Guided Continual Learning for Generative Multimodal Models](https://doi.org/10.1109/iccvw69036.2025.00456)：把记笔记作为生成式多模态模型的记忆引导持续学习机制。
-- [QwenLong-L1.5](https://arxiv.org/abs/2512.12967)：提出面向记忆的模型侧方法，核心围绕 Post-Training Recipe for Long-Context Reasoning and Memory Management。
+- [Neural Memory Self-Supervised State Space Models With Learnable Gates](https://doi.org/10.1109/lsp.2025.3541989)：为神经记忆自监督状态空间模型加入可学习门控，使模型控制隐藏记忆何时写入或保留。
+- [Beyond Permanent Memory: Digital Forgetting in the Age of Intelligent Systems, Reconciling Human Cognition, Machine Unlearning, and the Right to Be Forgotten](https://doi.org/10.36948/ijfmr.2025.v07i05.58292)：连接数字遗忘、机器遗忘和被遗忘权，把记忆删除界定为社会技术设计问题。
+- [GuardCache: Memory-Augmented Adaptive Input Security for LLM Semantic Caching in FinTech](https://doi.org/10.1109/cyberscitech68397.2025.00025)：用 GuardCache 为金融科技场景的 LLM 语义缓存加入记忆增强的自适应输入安全机制。
+- [External Visual Memory with Autoencoder-Based Intrinsic Motivation for Reinforcement Learning Under Partial Observability](https://doi.org/10.1109/ictai66417.2025.00115)：将外部视觉记忆与基于自编码器的内在动机结合，使强化学习智能体处理部分可观测环境。
+- [NMRet: A Memory-Augmented Retrieval Framework for Large Language Models](https://doi.org/10.1109/icdmw69685.2025.00252)：构建 NMRet 记忆增强检索框架，为 LLM 提供可保留证据以支持长上下文推理。
+- [Design of shape memory alloys with enhanced thermal management properties via adaptively constrained multi-objective optimization](https://doi.org/10.1016/j.actamat.2025.121874)：用自适应约束多目标优化设计具有更好热管理性质的形状记忆合金。
+- [ML-PINN: A memory-efficient physics-informed Mamba-LSTM network for fast and accurate PDE solving](https://doi.org/10.1016/j.neucom.2025.131446)：在 ML-PINN 中结合 Mamba 与 LSTM，构建面向快速 PDE 求解的内存高效物理信息网络。
+- [UPVSS: Jointly Managing Vector Similarity Search with Near-Memory Processing Systems](https://doi.org/10.1109/dac63849.2025.11132577)：在 UPVSS 中结合近内存处理共同管理向量相似搜索，减少检索负载的数据搬移。
+- [MAZ3: Memory-Assisted ZeRO-3 for Efficient Collective Communication](https://doi.org/10.1109/icnp65844.2025.11192443)：在 MAZ3 中使用 memory-assisted ZeRO-3，提高分布式训练中的集合通信效率。
+- [Enhancing Multimodal Model Robustness Under Missing Modalities via Memory-Driven Prompt Learning](https://doi.org/10.24963/ijcai.2025/274)：作为记忆的模型候选，关注标题所示的可复用能力、方法或评测信号。
+- [Beyond Sliding Windows: Learning to Manage Memory in Non-Markovian Environments](https://arxiv.org/abs/2512.19154)：学习非马尔可夫环境中的记忆管理策略，超越固定滑动窗口式状态保留。
+- [Uncertainty-aware multi-objective optimization for high work output and low hysteresis in TiNiCuHfCo shape memory alloys](https://doi.org/10.1016/j.jmst.2025.03.095)：将不确定性感知多目标优化用于 TiNiCuHfCo 形状记忆合金，平衡输出功和滞后。
+- [DSA: Efficient Data-Plane Memory Scheduler for In-Network Aggregation to Accelerate Distributed Training](https://doi.org/10.1109/ton.2025.3607725)：提出 DSA 数据平面内存调度器，用于网络内聚合以加速分布式训练。
+- [OA-LAMA: An Outlier-Adaptive LLM Inference Accelerator with Memory-Aligned Mixed-Precision Group Quantization](https://doi.org/10.1109/iccad66269.2025.11240926)：在 OA-LAMA 中使用内存对齐的混合精度分组量化，加速离群值自适应 LLM 推理。
+- [SSMA: A Memory-Efficient Accelerator for State Space Model in the Mamba](https://doi.org/10.1109/iscas56072.2025.11044026)：实现面向 Mamba 状态空间模型的内存高效加速器，降低 SSM 推理成本。
+- [All-to-All Connected Oscillator Ising Machines and Their Application as Associative Memory](https://doi.org/10.1109/tnnls.2025.3609571)：将全互连振荡器 Ising 机器用作联想记忆，把已存模式映射到振荡器状态。
+- [Keeping up with Large Language Models: A Holistic Methodology of Compute, Memory, Communication, and Cost Modeling](https://doi.org/10.1109/iiswc66894.2025.00019)：提出同时覆盖计算、内存、通信和成本的建模方法，用于跟踪大语言模型系统需求。
+- [FedAdamZO: a Zeroth-order Adaptive Momentum Method for Memory-efficient Fine-tuning of Federated Large Language Models](https://doi.org/10.1109/icme59968.2025.11210148)：在 FedAdamZO 中结合零阶更新和自适应动量，用于内存高效的联邦 LLM 微调。
+- [Rethinking Knowledge Distillation in Collaborative Machine Learning: Memory, Knowledge, and Their Interactions](https://arxiv.org/abs/2512.19972)：分析协作机器学习中记忆与蒸馏知识如何交互，区分本地保留信息和共享模型更新。
+- [LLM-on-the-Palm: Mobile LLM Inference with PIM-Enhanced NAND Flash Memory](https://doi.org/10.1109/iccad66269.2025.11240826)：在 LLM-on-the-Palm 中使用 PIM 增强 NAND 闪存，以支持受设备内存限制的移动端 LLM 推理。
+- [Personalized Short-Term and Periodic Long-Term Preferences Modeling With Contrastive Learning for Next POI Recommendation](https://doi.org/10.1109/tcss.2025.3623134)：用对比学习建模用户短期和周期性长期偏好，用于下一个兴趣点推荐。
+- [PriME: PIM-Aware Efficient Compression for Memory-Bound Embedding Layers in sLLMs](https://doi.org/10.1109/iccd65941.2025.00038)：用 PIM 感知的 PriME 压缩小型 LLM 中受内存限制的 embedding 层，使压缩适配存内处理约束。
+- [A Multitropical Cyclone Trajectory Prediction Method Based on Density Maps With Memory and Data Fusion](https://doi.org/10.1109/tai.2025.3564911)：用密度图、记忆和数据融合预测多热带气旋轨迹，以保留风暴历史信息。
+- [Quantized Memory-Efficient Full-Parameter Tuning with Sign Descent Optimization](https://doi.org/10.1109/icme59968.2025.11209822)：用量化 sign descent 优化实现内存高效的全参数调优。
+- [Memory as Resonance: A Biomimetic Architecture for Infinite Context Memory on Ergodic Phonetic Manifolds](https://arxiv.org/abs/2512.20245)：面向记忆与上下文管理的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Memory as Resonance: A Biomimetic Architecture for Infinite Context Memory on Ergodic Phonetic Manifolds”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Understanding the Side Effects of Rank-One Knowledge Editing](https://doi.org/10.18653/v1/2025.blackboxnlp-1.11)：分析秩一知识编辑的副作用。
+- [Using Memory Contents of a Cognitive Model for Prompt Augmentation of a Large Language Model](https://doi.org/10.1109/cogsima64436.2025.11079485)：用认知模型的记忆内容增强 LLM 提示，使符号化已记状态参与生成。
+- [Dynamic Memory Retrieval in RAG Models: Enhancing Long-Context Reasoning](https://doi.org/10.1109/icaice68195.2025.11382503)：在 RAG 模型中使用动态记忆检索，使长上下文推理能拉取相关保留证据，而不是依赖静态上下文窗口。
+- [Enhancing Control of Large Language Model-based AI Systems Through Declarative Memory](https://doi.org/10.1109/iwcmc65282.2025.11059638)：用 declarative memory 表示 LLM-based AI 系统的可控状态与约束，从而增强运行控制。
+- [A Framework for Open-Domain Entity Dynamic Tracking Powered by LLM Agents](https://doi.org/10.1109/icnc-fskd67701.2025.11198022)：用 LLM 智能体动态跟踪开放域实体，在变化观测中维护实体状态。
+- [Prototype Replay: Memory-Efficient Continual Learning via Class-Conditioned Centroids](https://doi.org/10.1109/icm66518.2025.11321318)：用类别条件中心点作为 replay 原型，在保留类别结构的同时降低持续学习记忆开销。
+- [Decomposing Task Vectors for Refined Model Editing](https://arxiv.org/abs/2512.22511)：分解 task vectors 以细化模型编辑，隔离编辑方向并减少非目标知识改动。
+- [Nested Learning: The Illusion of Deep Learning Architectures](https://arxiv.org/abs/2512.24695)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [Informative Memory Mechanism for Enhancing Crisis Response in Large Language Models](https://doi.org/10.1109/ijcnn64981.2025.11228206)：面向Agent 记忆与记忆增强系统提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Fast-weight Product Key Memory](https://arxiv.org/abs/2601.00671)：加入稀疏 fast-weight product-key memory 层，可在训练和推理时更新被激活的槽位，以支持高效情景记忆。
+- [Memory Bank Compression for Continual Adaptation of Large Language Models](https://arxiv.org/abs/2601.00756)：面向智能体记忆与长期上下文的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Biologically Plausible Dense Associative Memory](https://arxiv.org/abs/2601.00984)：提出具备 exponential capacity 的 dense associative-memory model。
+- [MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](https://arxiv.org/abs/2601.01926)：在 MacVQA 中自适应分配视觉问答记忆并过滤全局噪声，用于持续 VQA 数据流。
 - [CREAM: Continual Retrieval on Dynamic Streaming Corpora with Adaptive Soft Memory](https://arxiv.org/abs/2601.02708)：为动态流式语料上的持续检索加入自适应软记忆。
+- [Implicit Graph, Explicit Retrieval: Towards Efficient and Interpretable Long-horizon Memory for Large Language Models](https://arxiv.org/abs/2601.03417)：结合隐式图记忆与显式检索，使长程 LLM 记忆更高效且可解释。
 - [FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](https://arxiv.org/abs/2601.03938)：使用受遗忘曲线启发的记忆回放支持语言模型持续学习。
+- [MoEBlaze: Breaking the Memory Wall for Efficient MoE Training on Modern GPUs](https://arxiv.org/abs/2601.05296)：在 MoEBlaze 中通过 GPU 感知调度和内存管理突破 MoE 训练的内存墙。
 - [Learning How to Remember / MCMA](https://arxiv.org/abs/2601.07470)：在冻结任务模型的同时学习 memory copilot，由其选择记忆抽象层级和复用策略。
+- [PrivGemo](https://arxiv.org/abs/2601.08739)：为私有知识图上的 memory-augmented LLM 推理加入隐私保护的双塔图检索机制。
+- [Where Knowledge Collides: A Mechanistic Study of Intra-Memory Knowledge Conflict in Language Models](https://arxiv.org/abs/2601.09445)：从机制层面研究语言模型内部记忆知识冲突，追踪相互碰撞的事实如何在表示中交互。
+- [Parallelizable Memory Recurrent Units](https://arxiv.org/abs/2601.09495)：提出可并行化的 recurrent memory architecture，用于序列建模。
 - [SpatialMem: Unified 3D Memory with Metric Anchoring and Fast Retrieval](https://arxiv.org/abs/2601.14895)：构建带度量锚定与快速检索的统一 3D 记忆，用于空间扎根问答。
+- [Memory Retention Is Not Enough to Master Memory Tasks in Reinforcement Learning](https://arxiv.org/abs/2601.15086)：显示强化学习智能体掌握记忆任务不只需要记忆保持，还要能在策略中有效使用已存信息。
+- [Prometheus Mind: Retrofitting Memory to Frozen Language Models](https://arxiv.org/abs/2601.15324)：用 Prometheus Mind 为冻结语言模型后装记忆，在不更新基础权重的情况下加入召回能力。
+- [A Collision-Free Hot-Tier Extension for Engram-Style Conditional Memory: A Controlled Study of Training Dynamics](https://arxiv.org/abs/2601.16531)：研究 Engram 式条件记忆的无冲突 hot-tier 扩展，重点分析记忆层级设计下的训练动态。
 - [JitRL](https://arxiv.org/abs/2601.18510)：无需训练的测试时策略优化方法，通过检索非参数经验记忆估计 action advantage，而不做梯度更新。
+- [Memory Retrieval in Transformers: Insights from The Encoding Specificity Principle](https://arxiv.org/abs/2601.20282)：把编码特异性原则用于 Transformer 记忆检索，说明匹配线索如何塑造召回。
+- [MoVE: Mixture of Value Embeddings - A New Axis for Scaling Parametric Memory in Autoregressive Models](https://arxiv.org/abs/2601.22887)：用 value embedding 混合扩展参数化记忆，为自回归模型增加新的 value-space 扩展轴。
+- [MemoryLLM](https://arxiv.org/abs/2602.00398)：为 Transformers 提供 plug-and-play 可解释 feed-forward memory，补充模型内长期记忆机制。
+- [FedKRSO: Communication and Memory Efficient Federated Fine-Tuning of Large Language Models](https://arxiv.org/abs/2602.03019)：在 FedKRSO 中降低联邦 LLM 微调的通信与内存成本。
+- [TernaryLM: Memory-Efficient Language Modeling via Native 1-Bit Quantization with Adaptive Layer-wise Scaling](https://arxiv.org/abs/2602.07374)：在 TernaryLM 中使用带自适应逐层缩放的原生 1-bit 量化，实现内存高效语言建模。
+- [MSN: A Memory-based Sparse Activation Scaling Framework for Large-scale Industrial Recommendation](https://arxiv.org/abs/2602.07526)：在 MSN 中使用基于记忆的稀疏激活缩放，服务大规模工业推荐。
 - [ALMA](https://arxiv.org/abs/2602.07755)：通过元学习自动设计 agentic memory，用搜索出的 memory schema 和检索逻辑替代固定手写机制。
-- [MemPO](https://arxiv.org/abs/2603.00680)：提出面向记忆的模型侧方法，核心围绕 Self-Memory Policy Optimization for Long-Horizon Agents。
+- [From O(mn) to O(r2): Two-Sided Low-Rank Communication for Adam in Distributed Training with Memory Efficiency](https://arxiv.org/abs/2602.08007)：把 Adam 通信从完整矩阵压缩为双侧低秩因子，降低分布式训练内存和带宽。
+- [Dynamic Long Context Reasoning over Compressed Memory via End-to-End Reinforcement Learning](https://arxiv.org/abs/2602.08382)：通过端到端强化学习训练模型在动态长上下文任务中基于压缩记忆推理。
+- [Stateless Yet Not Forgetful: Implicit Memory as a Hidden Channel in LLMs](https://arxiv.org/abs/2602.08563)：研究无状态 LLM 使用中的隐式记忆隐藏通道，关联无显式记忆库时的记忆行为与泄漏风险。
+- [When to Memorize and When to Stop: Gated Recurrent Memory for Long-Context Reasoning](https://arxiv.org/abs/2602.10560)：学习何时记忆、何时停止更新，以支持长上下文推理。
+- [MoEEdit: Efficient and Routing-Stable Knowledge Editing for Mixture-of-Experts LLMs](https://arxiv.org/abs/2602.10965)：用路由稳定的知识编辑方法编辑 MoE 大模型。
+- [Predictive Associative Memory: Retrieval Beyond Similarity Through Temporal Co-occurrence](https://arxiv.org/abs/2602.11322)：按预测性时间共现而非表面相似度检索记忆，从而召回可能相关的未来事件。
+- [Learning to Forget Attention: Memory Consolidation for Adaptive Compute Reduction](https://arxiv.org/abs/2602.12204)：把遗忘注意力状态作为记忆巩固来学习，在保留有用上下文的同时降低自适应计算成本。
+- [Panini: Continual Learning in Token Space via Structured Memory](https://arxiv.org/abs/2602.15156)：用 Panini 结构化记忆在 token 空间执行持续学习，跨任务保存可复用的 token 级状态。
+- [Reinforced Fast Weights with Next-Sequence Prediction](https://arxiv.org/abs/2602.16704)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance](https://arxiv.org/abs/2602.17930)：MIRA 将记忆机制融入强化学习智能体，减少对大量 LLM 指导信号的依赖。
+- [Memory Undone: Between Knowing and Not Knowing in Data Systems](https://arxiv.org/abs/2602.21180)：考察数据系统记忆中的删除与不确定状态，澄清已存信息处于已知和被遗忘之间意味着什么。
+- [MemPO](https://arxiv.org/abs/2603.00680)：用 Self-Memory Policy Optimization 优化长程智能体，把智能体自身记忆轨迹作为策略改进信号。
+- [Understanding LoRA as Knowledge Memory: An Empirical Analysis](https://arxiv.org/abs/2603.01097)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [Semantic Memory Foraging](https://arxiv.org/abs/2603.01822)：研究大语言模型中涌现的类人语义记忆觅食策略。
+- [Neural Paging: Learning Context Management Policies for Turing-Complete Agents](https://arxiv.org/abs/2603.02228)：为 memory-augmented agent 学习上下文管理策略。核心思路是把符号推理与可微分 page controller 分离，由后者估计哪些上下文 token 具有未来效用。
+- [AriadneMem: Threading the Maze of Lifelong Memory for LLM Agents](https://arxiv.org/abs/2603.03290)：面向 LLM 智能体的终身记忆，重点处理固定上下文预算下的离散证据关联与状态更新。
+- [Agent Memory Below the Prompt: Persistent Q4 KV Cache for Multi-Agent LLM Inference on Edge Devices](https://arxiv.org/abs/2603.04428)：面向智能体记忆与长期上下文的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Omni-Masked Gradient Descent: Memory-Efficient Optimization via Mask Traversal with Improved Convergence](https://arxiv.org/abs/2603.05960)：用 omni-masked gradient descent 遍历优化 mask，在降低优化器内存的同时改善收敛。
+- [SoulX-LiveAct: Towards Hour-Scale Real-Time Human Animation with Neighbor Forcing and ConvKV Memory](https://arxiv.org/abs/2603.11746)：在 SoulX-LiveAct 中结合 neighbor forcing 和 ConvKV 记忆，用于小时级实时人体动画。
+- [Structured Distillation for Personalized Agent Memory: 11x Token Reduction with Retrieval Preservation](https://arxiv.org/abs/2603.13017)：将个性化智能体记忆蒸馏为紧凑记录，在大幅减少 token 的同时保持检索行为。
+- [GradMem: Learning to Write Context into Memory with Test-Time Gradient Descent](https://arxiv.org/abs/2603.13875)：提供记忆、持续学习、个性化或关联状态建模方法。
+- [Learning to Forget: Sleep-Inspired Memory Consolidation for Resolving Proactive Interference in Large Language Models](https://arxiv.org/abs/2603.14517)：用睡眠启发的记忆巩固缓解 LLM 主动干扰，重组记忆以避免旧内容阻碍新召回。
+- [Dynamic Theory of Mind as a Temporal Memory Problem: Evidence from Large Language Models](https://arxiv.org/abs/2603.14646)：把动态心智理论表述为时间记忆问题，测试 LLM 能否随时间维护变化的信念和意图。
+- [CraniMem: Cranial Inspired Gated and Bounded Memory for Agentic Systems](https://arxiv.org/abs/2603.15642)：提出面向智能体系统的颅脑启发式门控有界记忆。
+- [Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving](https://arxiv.org/abs/2603.15994)：为选择性 AI 记忆加入写入时门控和层级归档，在检索前决定哪些内容存储、摘要或丢弃。
+- [Memory-enhanced quantum extreme learning machines for characterizing non-Markovian dynamics](https://arxiv.org/abs/2603.17182)：提出记忆增强量子极限学习机，用于刻画非马尔可夫动力学。
+- [Facts as First Class Objects: Knowledge Objects for Persistent LLM Memory](https://arxiv.org/abs/2603.17781)：把事实表示为 LLM 持久记忆中的知识对象，为已存事实提供显式身份和生命周期管理。
+- [MANAR: Memory-augmented Attention with Navigational Abstract Conceptual Representation](https://arxiv.org/abs/2603.18676)：加入记忆增强注意力和导航抽象概念表示，适合补充面向导航智能体的记忆机制。
+- [Mixture of Chapters: Scaling Learnt Memory in Transformers](https://arxiv.org/abs/2603.21096)：用 Mixture of Chapters 扩展 Transformer 学得记忆，通过类似章节的记忆分区路由召回。
+- [Vision Hopfield Memory Networks](https://arxiv.org/abs/2603.25157)：把 Hopfield 记忆网络适配到视觉任务，在视觉表示上执行内容寻址召回。
+- [Sharp Capacity Scaling of Spectral Optimizers in Learning Associative Memory](https://arxiv.org/abs/2603.26554)：在线性 associative memory 上分析 Muon、SGD 与 Newton-style 更新，把谱预条件与类 Transformer 模型的事实召回容量联系起来。
+- [Persistent Memory Through Triple-Loop Consolidation in a Non-Gradient Dissipative Cognitive Architecture](https://arxiv.org/abs/2603.27188)：在非梯度耗散式认知架构中使用三重循环巩固，无需反向传播即可维持持久记忆。
+- [Human-Like Lifelong Memory: A Neuroscience-Grounded Architecture for Infinite Interaction](https://arxiv.org/abs/2603.29023)：构建面向无限交互的神经科学启发终身记忆架构，区分情节、语义和巩固过程。
+- [UCMNet: Uncertainty-Aware Context Memory Network for Under-Display Camera Image Restoration](https://arxiv.org/abs/2604.00381)：在 UCMNet 中使用不确定性感知上下文记忆，借助已记上下文细节恢复屏下摄像头图像。
 - [DeltaMem](https://arxiv.org/abs/2604.01560)：用强化学习训练操作级 agentic memory 更新，并把奖励与后续 persona 和任务表现绑定。
+- [Phase-Associative Memory: Sequence Modeling in Complex Hilbert Space](https://arxiv.org/abs/2604.05030)：提出复杂 Hilbert 空间中的相位联想记忆序列建模方法。
+- [Memory Dial: A Training Framework for Controllable Memorization in Language Models](https://arxiv.org/abs/2604.05074)：用 Memory Dial 训练语言模型，控制训练信息被记住和暴露的程度。
+- [SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](https://arxiv.org/abs/2604.07663)：在 SAGE 中使用符号自适应梯度，降低 LLM 优化器内存并保持更新方向质量。
 - [TSUBASA](https://arxiv.org/abs/2604.07894)：通过 evolving memory、自学习和 context distillation 改进长程个性化。
+- [Dense Associative Memory Analysis](https://arxiv.org/abs/2604.12811)：给出 dense associative memory 的有限尺寸保证与对抗鲁棒性分析。
+- [AgileLog: A Forkable Shared Log for Agents on Data Streams](https://arxiv.org/abs/2604.14590)：提供 AgileLog 数据流智能体可分叉共享日志，使记忆分支能随流式更新分化和合并。
+- [Quantization robustness from dense representations of sparse functions in high-capacity kernel associative memory](https://arxiv.org/abs/2604.20333)：通过稀疏函数的稠密表示分析高容量 kernel associative memory 的量化鲁棒性。
+- [Revisiting Non-Verbatim Memorization in Large Language Models: The Role of Entity Surface Forms](https://arxiv.org/abs/2604.21882)：显示实体表面形式会影响 LLM 的非逐字记忆化，改变已记事实在改写表述下是否重现。
+- [Universal Transformers Need Memory: Depth-State Trade-offs in Adaptive Recursive Reasoning](https://arxiv.org/abs/2604.21999)：研究 learned memory tokens 作为自适应递归推理的 scratchpad，并在 Sudoku-Extreme 上展示推理深度与记忆 token 数量之间的权衡。
+- [A Parametric Memory Head for Continual Generative Retrieval](https://arxiv.org/abs/2604.23388)：在 continual generative retrieval 中加入 product-key memory head 和仅调 memory 的稳定阶段，使动态文档索引更新时更好保留旧切片能力而不改动 backbone。
+- [AFA: Identity-Aware Memory for Preventing Persona Confusion in Multi-User Dialogue](https://arxiv.org/abs/2604.25022)：在 AFA 中使用身份感知记忆，防止多用户对话中的人设混淆。
+- [DAK: Direct-Access-Enabled GPU Memory Offloading with Optimal Efficiency for LLM Inference](https://arxiv.org/abs/2604.26074)：在 DAK 中通过 direct-access GPU 内存管理卸载 LLM 推理张量，提高卸载效率。
+- [Folding Tensor and Sequence Parallelism for Memory-Efficient Transformer Training&Inference](https://arxiv.org/abs/2604.26294)：折叠张量并行与序列并行，降低 Transformer 训练和推理内存占用。
+- [AGoQ: Activation and Gradient Quantization for Memory-Efficient Distributed Training of LLMs](https://arxiv.org/abs/2605.00539)：在 AGoQ 中量化激活和梯度，降低分布式 LLM 训练内存。
+- [Sparse Memory Finetuning as a Low-Forgetting Alternative to LoRA and Full Finetuning](https://arxiv.org/abs/2605.03229)：用 sparse memory finetuning 作为 LoRA 和全量微调之外的低遗忘替代方案。
+- [Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping](https://arxiv.org/abs/2605.04308)：把记忆建模为从 token 到词典条目的 Markov 矩阵，用于样本高效的知识扩展。
+- [Replay-Based Continual Learning for Physics-Informed Neural Operators](https://arxiv.org/abs/2605.04832)：把 replay-based 持续学习用于物理信息神经算子，在学习新工况时保留既有 PDE 行为。
+- [Sharp Capacity Thresholds in Linear Associative Memory: From Winner-Take-All to Listwise Retrieval](https://arxiv.org/abs/2605.05189)：分析线性联想记忆从 winner-take-all 到 listwise retrieval 的容量阈值。
+- [HaM-World: Soft-Hamiltonian World Models with Selective Memory for Planning](https://arxiv.org/abs/2605.05951)：构建 HaM-World 软 Hamiltonian 世界模型，并加入选择性记忆用于规划。
+- [Key-Value Means](https://arxiv.org/abs/2605.09877)：为 Transformer 加入可扩展 block-recurrent compressed memory，把内部召回能力扩展到固定上下文窗口之外。
 - [HAGE](https://arxiv.org/abs/2605.09942)：用强化学习优化加权图记忆遍历和边表示，服务长程 agent memory。
+- [Mela: Test-Time Memory Consolidation based on Transformation Hypothesis](https://arxiv.org/abs/2605.10537)：为语言模型加入层次化记忆模块以支持测试时在线巩固，区分概要级与情节细节表示，并通过 MemStack 分发记忆特征。
+- [Factual recall in linear associative memories: sharp asymptotics and mechanistic insights](https://arxiv.org/abs/2605.10795)：刻画线性联想记忆中事实回忆的存储容量，说明严格分离约束如何影响神经记忆的容量极限。
 - [Beyond Similarity Search: Tenure and the Case for Structured Belief State in LLM Memory](https://arxiv.org/abs/2605.11325)：主张在 LLM 记忆中超越相似度搜索，引入结构化信念状态。
+- [Mitigating Context-Memory Conflicts in LLMs Through Dynamic Cognitive Reconciliation Decoding](https://arxiv.org/abs/2605.12185)：用动态认知调和解码解决 LLM 生成中输入上下文与模型记忆的冲突。
+- [KAN-CL: Per-Knot Importance Regularization for Continual Learning with Kolmogorov-Arnold Networks](https://arxiv.org/abs/2605.12306)：在 KAN-CL 中按 knot 重要性正则化 Kolmogorov-Arnold 网络，以支持低遗忘持续学习。
+- [Continual Fine-Tuning of Large Language Models via Program Memory](https://arxiv.org/abs/2605.13162)：在持续 LLM 微调中保存程序记忆，使可复用过程能跨任务保留。
+- [Cognifold: Always-On Proactive Memory via Cognitive Folding](https://arxiv.org/abs/2605.13438)：在 Cognifold 中通过 cognitive folding 加入常开主动记忆，把持续经验压缩为可检索状态。
+- [Machine-learning-identified two-dimensional van der Waals multiferroics for four-state nonvolatile memory](https://arxiv.org/abs/2605.14303)：用机器学习识别适合四态非易失存储器的二维范德华多铁材料。
+- [What Training Data Teaches RL Memory Agents](https://arxiv.org/abs/2605.23067)：实证研究 memory-augmented QA 中强化学习记忆 agent 的 curriculum effects。核心思想：控制 LoCoMo 与 LongMemEval 训练组合并检查不同问题类型的效果，说明训练数据组成如何塑造记忆行为，而不是把记忆模块视为固定组件。
 - [Design and Verification of a Query-Aware External Memory Pipeline for Small Language Models](https://doi.org/10.1109/icaiic68212.2026.11454167)：设计并验证面向小语言模型的查询感知外部记忆流水线。
+- [Gated Memory-Guided Multi-scale spatio-temporal-spectral feature fusion network for unsupervised Internet of Things time series anomaly detection](https://doi.org/10.1016/j.engappai.2026.114104)：用门控记忆引导融合时空谱多尺度特征，用于无监督物联网时间序列异常检测。
+- [Controlled subspace fusion for language model continual learning](https://doi.org/10.1016/j.inffus.2026.104184)：在语言模型持续学习中使用受控子空间融合，合并任务更新并限制干扰。
+- [H3: Hybrid Architecture Using High Bandwidth Memory and High Bandwidth Flash for Cost-Efficient LLM Inference](https://doi.org/10.1109/lca.2026.3660969)：在 H3 中结合高带宽内存和高带宽闪存，实现成本高效的 LLM 推理。
+- [Resolving Low-Rank Update Limitations for Memory-Efficient Visual Neural Network Training](https://doi.org/10.1109/icassp55912.2026.11464186)：解决内存高效视觉神经网络训练中低秩更新的局限。
+- [Hybrid Zeroth-Order Fine-Tuning for Language Model with CPU Memory Assistance](https://doi.org/10.1109/icassp55912.2026.11462475)：将混合零阶微调与 CPU 内存辅助结合，用于语言模型训练。
+- [Industrial anomaly detection via prompt learning with perturbation-based selective state memory units](https://doi.org/10.1016/j.eswa.2026.131482)：在工业异常检测中结合 prompt learning 和基于扰动的选择性状态记忆单元。
+- [Bridging the Knowledge Gap: LLM-Driven Contrastive Memory-of-Thought Prompting for Task-Oriented Dialogue](https://doi.org/10.1109/icassp55912.2026.11462912)：用 LLM 驱动的对比式 memory-of-thought prompting 弥合任务型对话中的知识缺口。
+- [Memory-KGC: Memory-augmented structural learning for Knowledge Graph Completion](https://doi.org/10.1016/j.ipm.2026.104891)：在 Memory-KGC 中加入记忆增强结构学习，用于知识图谱补全。
+- [Memory-Augmented Retrieval for Long-Context Conversational AI: A Comparative Analysis of Adaptive Memory Mechanisms](https://doi.org/10.1109/icesic67389.2026.11496591)：比较长上下文对话 AI 的自适应记忆机制。
+- [Token Cost Optimization in an LLM Agent for JSON-Based System Modeling from Dialogue History](https://doi.org/10.1109/smartindustrycon68821.2026.11493004)：利用对话历史结构优化 LLM 智能体的 token 成本。
+- [Meta-Memory for Large Language Models](https://doi.org/10.1109/taslpro.2026.3692286)：把元记忆作为模型侧机制，用于控制大语言模型如何表示、访问或复用已记住的信息。
+- [MARM: Unlocking the Recommendation Cache Scaling-Law through Memory Augmentation and Scalable Complexity](https://doi.org/10.1145/3746252.3761015)：在 MARM 中用记忆增强和可扩展复杂度解释并改进推荐缓存 scaling。
+- [Mastering Long-Context Multi-Task Reasoning with Transformers and Recurrent Memory](https://doi.org/10.3103/s1060992x24700735)：将 Transformer 与循环记忆结合，用于长上下文多任务推理。
+- [SWattention: designing fast and memory-efficient attention for a new Sunway Supercomputer](https://doi.org/10.1007/s11227-024-05890-8)：设计 SWattention，这是面向新一代 Sunway 超算的快速内存高效注意力 kernel。
+- [Memory-efficient tensor parallelism for long-sequence Transformer training](https://doi.org/10.1631/fitee.2400602)：用内存高效张量并行方案降低长序列 Transformer 训练内存。
+- [Forecasting and uncertainty estimation of the Shahroud River discharge using long short‐term memory and Kolmogorov–Arnold networks](https://doi.org/10.1002/vzj2.70074)：结合 LSTM 与 Kolmogorov-Arnold 网络进行河流流量预测和不确定性估计。
+- [Efficient modeling of ionic and electronic interactions by a resistive memory-based reservoir graph neural network](https://doi.org/10.1038/s43588-025-00844-3)：用基于阻变存储的 reservoir 图神经网络建模离子和电子相互作用。
+- [TADG: topology-aware and distillation-guided framework for continual knowledge graph embedding](https://doi.org/10.1007/s44443-026-00727-1)：在 TADG 中结合拓扑感知和蒸馏引导，用于持续知识图谱嵌入。
+- [DREAM: Device-Driven Efficient Access to Virtual Memory](https://doi.org/10.1145/3721145.3725748)：在 DREAM 中使用设备驱动的虚拟内存访问，降低内存管理开销。
+- [DMFormer: Dense Memory Linformer for Image Captioning](https://doi.org/10.3390/electronics14091716)：在 DMFormer 中使用 Dense Memory Linformer 架构进行图像描述生成。
+- [Long short-term memory networks as emulators for finite element models of nonlinear structural dynamic systems: part 1—methodology and description of application examples](https://doi.org/10.1007/s00158-026-04250-9)：用 LSTM 网络模拟非线性结构动力系统的有限元模型。
+- [Condensing AI-Based Attitude Control Using Kolmogorov–Arnold Networks for Memory Efficiency](https://doi.org/10.3390/aerospace12121039)：用 Kolmogorov-Arnold 网络压缩 AI 姿态控制模型，提高内存效率。
+- [From Satellite to Shapefiles: ZymbaNet For Memory‐Efficient Automated Road Mapping](https://doi.org/10.1111/tgis.70256)：用 ZymbaNet 将卫星影像内存高效地自动映射为道路 shapefile。
+- [FocuS-MN: Focusing on Underwater Signal Denoising via Sequential Memory Networks with Learnable Resampling](https://doi.org/10.3390/jmse14070621)：在 FocuS-MN 中使用带可学习重采样的序列记忆网络进行水下信号去噪。
+- [USGA: unified intra- and cross-scale features with global–local aggregation for long-term tracking](https://doi.org/10.1007/s00530-026-02339-1)：在 USGA 中聚合同尺度和跨尺度的全局局部特征，用于长期跟踪。
+- [Linear-Scaling and Memory-Efficient Implementation of van-der-Waals Interaction (DFT-D3) for Large Systems](https://doi.org/10.1021/acs.jctc.6c00223)：以内存更低的线性扩展方式实现大型分子系统中的 van der Waals DFT-D3 相互作用。
+- [PRISM: Profiling-Free Symbolic Memory-Driven Strategy Planner for Large DNN Model Training](https://doi.org/10.1145/3773656.3773667)：在 PRISM 中用符号记忆规划 DNN 训练策略，避免为每个候选调度做 profiling。
+- [LLM Powered Memory Consolidation for Ubiquitous Computing](https://doi.org/10.1145/3714394.3750599)：在泛在计算系统中使用 LLM 驱动的记忆巩固，把日常轨迹摘要为可复用记忆。
+- [Peripheral Memory for LLMs: Integration of Sequential Memory Banks with Adaptive Querying](https://www.semanticscholar.org/paper/326731529545e330414c6597ab604df2c1bb6f94)：Peripheral Memory for LLMs：将顺序记忆库与自适应查询结合，为需要持久且选择性访问上下文的 LLM 提供模型侧记忆机制。

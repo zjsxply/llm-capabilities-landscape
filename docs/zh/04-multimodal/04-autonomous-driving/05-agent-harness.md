@@ -1,14 +1,52 @@
 # 4.4.5 Agent Harness
 
-- [Drive Like A Human](https://arxiv.org/abs/2307.07162)（[开源代码](https://github.com/PJLab-ADG/DriveLikeAHuman)）：早期 HighwayEnv 中的闭环 LLM driving harness，可作为后续带记忆和反思的自动驾驶 agent 前身。
-- [DiLu](https://arxiv.org/abs/2309.16292)（[开源代码](https://github.com/PJLab-ADG/DiLu)）：闭环 self-evolving driving framework，包含 environment、reasoning、reflection 和 memory modules，通过显式 agent loop 做驾驶决策，而不是单个 perception model。
-- [Agent-Driver](https://arxiv.org/abs/2311.10813)（[开源代码](https://github.com/physical-superintelligence-lab/Agent-Driver)；[项目页](https://usc-gvl.github.io/Agent-Driver/)）：面向自动驾驶的 LLM cognitive agent，包含 function-call tools、cognitive memory、reasoning、task planning、motion planning 和 self-reflection。
-- [Parallel Actor-Reasoner Framework](https://arxiv.org/abs/2503.00502)：LLM 驱动的自动驾驶交互 harness。核心思路是把较慢的 Reasoner 与交互记忆驱动的 Actor 分离，使车辆能表达意图并改进交互决策，而不必每个动作都依赖实时 LLM 推理。
-- [LangCoop](https://arxiv.org/abs/2504.13406)：面向自动驾驶的语言协作 harness。核心思路是把车车协作信息压缩成简洁自然语言消息，并用结构化视觉语言推理，使联网驾驶 Agent 能以更低带宽协调。
-- [AgentThink](https://arxiv.org/abs/2505.15298)：面向自动驾驶 VLM 的工具增强推理 harness。核心思路是构建驾驶工具库和结构化自验证推理数据，使 Agent 能在链式推理式的驾驶感知与决策任务中动态调用工具。
-- [AGENTS-LLM](https://arxiv.org/abs/2507.13729)：用于生成挑战性交通场景的 agentic LLM framework。核心思想：用 LLM 驱动的场景增广为自动驾驶 agent 构造比固定场景库更困难、更多样的交通情形。
-- [MTRDrive](https://arxiv.org/abs/2509.20843)：面向自动驾驶 corner case 的推理型 agent 框架，把程序化驾驶经验记忆检索和动态工具调用结合起来。核心思想：在驾驶经验、工具调用和主动决策之间形成闭环，让分布外场景按 agent 轨迹处理，而不是只做静态感知。
-- [SafeCoop](https://arxiv.org/abs/2510.18123)：面向自然语言协同驾驶的 Agentic 防御 harness。核心思路是结合语义防火墙、语言-感知一致性检查、多源共识和空间坐标转换，检测并缓解针对 V2X 语言通信的攻击。
-- [SimScale](https://arxiv.org/abs/2511.23369)：用于规模化学习驾驶的真实世界仿真 harness。核心思想是用大规模重建驾驶仿真让自动驾驶智能体接触更多样的情境，并在固定日志回放之外评估行为。
-- [Dream2Drive](https://doi.org/10.1109/IJCNN64981.2025.11228910)：面向多任务驾驶的 LLM 车辆运动规划 agent。核心思想是组合 observation、short-term memory、long-term experience、planning 与 rethinking 模块，使驾驶决策能在真实规划任务中复用历史经验。
-- [Agentic Fast-Slow Planning](https://arxiv.org/abs/2604.01681)：把慢速大模型推理与快速控制解耦的自动驾驶 agent harness。核心思想：先将场景压缩为自车中心拓扑，再映射成符号驾驶指令，并将指令接入实时 MPC 式控制，避免让语言模型直接生成脆弱轨迹。
+- [Drive Like A Human](https://arxiv.org/abs/2307.07162)（[开源代码](https://github.com/PJLab-ADG/DriveLikeAHuman)）：在 HighwayEnv 闭环中使用 LLM，突出 human-like reasoning、解释和记忆如何补上场景理解到驾驶决策之间的接口。
+- [DiLu](https://arxiv.org/abs/2309.16292)（[开源代码](https://github.com/PJLab-ADG/DiLu)）：把自动驾驶组织成 environment observation、reasoning、reflection 和 memory 组成的自进化 agent loop，针对数据驱动策略的数据偏差和可解释性不足。
+- [Agent-Driver](https://arxiv.org/abs/2311.10813)（[开源代码](https://github.com/physical-superintelligence-lab/Agent-Driver)；[项目页](https://usc-gvl.github.io/Agent-Driver/)）：把驾驶建模为 LLM cognitive agent，结合 function-call tools、cognitive memory、task planning、motion planning 和 self-reflection，而不是固定的感知-预测-规划流水线。
+- [DriveLLM: Charting the Path Toward Full Autonomous Driving With Large Language Models](https://doi.org/10.1109/tiv.2023.3327715)：把 LLM 插入自动驾驶栈的决策层，加入常识性危险推理、从错误中学习的 cyber-physical feedback、人类指令处理和对抗输入防护。
+- [VLP: Vision Language Planning for Autonomous Driving](https://arxiv.org/abs/2401.05577)：把视觉场景理解连接到语言级推理和规划，针对 vision-only driving planner 的弱泛化和推理能力不足。
+- [Editable Scene Simulation for Autonomous Driving via Collaborative LLM-Agents](https://arxiv.org/abs/2402.05746)：用协作式 LLM agents 将用户编辑请求转成多相机、资产感知的驾驶场景仿真，提高合成数据生成的交互控制能力。
+- [PlanAgent: A Multi-modal Large Language Agent for Closed-loop Vehicle Motion Planning](https://arxiv.org/abs/2406.01587)：把 MLLM 作为 cognitive planner，将 BEV map 和 lane graph 转成层级推理、planner code 和基于仿真的 reflection check，用于 nuPlan 闭环运动规划。
+- [DriVLMe: Enhancing LLM-based Autonomous Driving Agents with Embodied and Social Experiences](https://arxiv.org/abs/2406.03008)：评估一个由具身仿真经验和人类对话经验构建的视频语言驾驶 agent，暴露推理延迟、多轮交互和突发事件处理等实际限制。
+- [AD-H: Autonomous Driving with Hierarchical Agents](https://arxiv.org/abs/2406.03474)：在高层指令和底层控制之间加入中层语言命令，让 MLLM planner 负责推理、轻量 controller 负责执行，并在闭环驾驶中自我纠正。
+- [DriveArena: A Closed-Loop Generative Simulation Platform for Autonomous Driving](https://arxiv.org/abs/2408.00415)：把 Traffic Manager 和生成式 World Dreamer 结合起来，让基于图像的 driving agent 在 trajectory 改变交通、场景继续渲染的闭环中行动。
+- [Edge-Cloud Collaborative Motion Planning for Autonomous Driving with Large Language Models](https://arxiv.org/abs/2408.09972)：把 LLM-enabled motion planning 拆到边缘端和云端，在保留个性化与开放世界推理的同时降低延迟和本地算力压力。
+- [DualAD: Dual-Layer Planning for Reasoning in Autonomous Driving](https://arxiv.org/abs/2409.18053)：将常规 rule-based planner 与 LLM reasoning layer 配对，只在危险场景中触发上层推理，模拟人类从自动驾驶到深思熟虑的升级过程。
+- [LASER: Script Execution by Autonomous Agents for On-demand Traffic Simulation](https://arxiv.org/abs/2410.16197)：通过 LLM agents 将自然语言 traffic-simulation request 转成可执行脚本，使安全关键交通场景生成更灵活、可扩展。
+- [Autoware.Flex: Human-Instructed Dynamically Reconfigurable Autonomous Driving Systems](https://arxiv.org/abs/2412.16265)：让用户用自然语言偏好指导 Autoware-based ADS，使用 LLM 和 ADS knowledge base 翻译指令，并由验证层保障安全执行。
+- [LLM-Attacker: Enhancing Closed-Loop Adversarial Scenario Generation for Autonomous Driving With Large Language Models](https://arxiv.org/abs/2501.15850)：使用 LLM 或智能体编排进行自动驾驶场景生成或规划。
+- [Parallel Actor-Reasoner Framework](https://arxiv.org/abs/2503.00502)：把慢速 LLM Reasoner 和 interaction-memory Actor 分离，让 AV 表达意图并检索可行动作，而不必每个实时决策都调用 LLM。
+- [V2X-ReaLO: An Open Online Framework and Dataset for Cooperative Perception in Reality](https://arxiv.org/abs/2503.10034)：提供开放在线真实车辆 V2X 协同感知框架与数据集。
+- [CoLLMLight: Cooperative Large Language Model Agents for Network-Wide Traffic Signal Control](https://arxiv.org/abs/2503.11739)：用协作式 LLM 智能体进行路网级交通信号控制。
+- [Driving-RAG: Driving Scenarios Embedding, Search, and RAG Applications](https://arxiv.org/abs/2504.04419)：构建 driving scenario embedding 和 retrieval，让在线决策、规划与离线仿真能够复用相似历史场景，而不是把每个场景孤立处理。
+- [LangCoop](https://arxiv.org/abs/2504.13406)：把 V2X 协作压缩为简洁自然语言消息，并用结构化 vision-language reasoning 低带宽协调 connected driving agents。
+- [Sky-Drive: A Distributed Multi-Agent Simulation Platform for Socially-Aware and Human-AI Collaborative Future Transportation](https://arxiv.org/abs/2504.18010)：可作为自动驾驶的 Agent Harness 候选：围绕 Sky-Drive: A Distributed Multi-Agent Simulation Platform for Socially-Aware and Human-AI Collaborative Future Transportation 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Seeking to Collide: Online Safety-Critical Scenario Generation for Autonomous Driving with Retrieval Augmented Large Language Models](https://arxiv.org/abs/2505.00972)：使用 LLM 或智能体编排进行自动驾驶场景生成或规划。
+- [AI-CDA4All: Democratizing Cooperative Autonomous Driving for All Drivers via Affordable Dash-cam Hardware and Open-source AI Software](https://arxiv.org/abs/2505.06749)：围绕低成本 dash-cam hardware 和开源软件提出 affordable cooperative-driving stack，面向缺少昂贵 CDA 传感器的车辆互操作。
+- [Case-based Reasoning Augmented Large Language Model Framework for Decision Making in Realistic Safety-Critical Driving Scenarios](https://arxiv.org/abs/2506.20531)：用 case-based retrieval 增强 LLM driving decision maker，使安全关键决策基于相似历史场景，而不只依赖通用语言先验。
+- [AGENTS-LLM](https://arxiv.org/abs/2507.13729)：用 agentic LLM framework 增广稀有且挑战性的交通场景，为 driving planners 提供比固定真实场景库更困难的 stress cases。
+- [VLM-UDMC: VLM-Enhanced Unified Decision-Making and Motion Control for Urban Autonomous Driving](https://arxiv.org/abs/2507.15266)：结合 VLM 增强决策与运动控制，用于城市自动驾驶。
+- [SafeDriveRAG: Towards Safe Autonomous Driving with Knowledge Graph-based Retrieval-Augmented Generation](https://arxiv.org/abs/2507.21585)：将知识图谱 RAG 用于自动驾驶安全推理。
+- [Risk Map as Middleware: Toward Interpretable Cooperative End-to-End Autonomous Driving for Risk-Aware Planning](https://arxiv.org/abs/2508.07686)：面向自动驾驶的智能体框架或运行时。核心思想：把 Toward Interpretable Cooperative End-to-End Autonomous Driving for Risk-Aware Planning 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Multi-Agent Visual-Language Reasoning for Comprehensive Highway Scene Understanding](https://arxiv.org/abs/2508.17205)：把 highway scene understanding 拆给专门化 VLM agents，并使用 domain-specific chain-of-thought prompts，提升单一通用 VLM 难以完成的交通风险解释。
+- [MTRDrive](https://arxiv.org/abs/2509.20843)：结合 procedural driving-experience retrieval 与 dynamic toolkits，形成面向幻觉和 corner cases 的 memory-tool reasoning loop，并在 zero-shot roadwork 场景中测试。
+- [SafeCoop](https://arxiv.org/abs/2510.18123)：用 semantic firewall、language-perception consistency checks、多源共识和坐标系转换保护自然语言 collaborative driving，抵御 V2X language attacks。
+- [Multi-Agent AI Framework for Road Situation Detection and C-ITS Message Generation](https://arxiv.org/abs/2511.06892)：面向自动驾驶提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Argus: Resilience-Oriented Safety Assurance Framework for End-to-End ADSs](https://arxiv.org/abs/2511.09032)：构建面向端到端自动驾驶系统的韧性安全保障框架。
+- [A Multi-Agent LLM Framework for Design Space Exploration in Autonomous Driving Systems](https://arxiv.org/abs/2512.08476)：用多个 LLM agents 探索自动驾驶软硬件设计空间，在不同 traffic、weather、road 和 configuration 变量下解释复杂执行输出。
+- [Dream2Drive](https://doi.org/10.1109/IJCNN64981.2025.11228910)：构建带 observation、short-term memory、long-term experience、planning 和 rethinking 模块的 LLM 车辆运动规划 agent，面向多任务真实驾驶。
+- [LLM-Based Safety Case Generation for Baidu Apollo](https://doi.org/10.1109/CAIN66642.2025.00033)：测试 LLM 能否为 Baidu Apollo 起草 safety cases，把 driving-agent 覆盖扩展到 assurance artifacts，而不是只看控制性能。
+- [DAPlanner: Dual-agent framework with multi-modal large language model for autonomous driving motion planning](https://doi.org/10.1016/j.asoc.2025.113625)：把多模态场景推理和运动规划决策拆成 dual-agent MLLM workflow，目标是让 driving plans 更可解释且响应及时。
+- [Retrieval-Augmented Autonomous Driving Agent Framework for Complex Traffic Scenarios](https://doi.org/10.1109/icftic68075.2025.11325053)：用长尾和受损交通场景检索增强 VLM driving agent，提高 open-set visual conditions 下的鲁棒性。
+- [TrajAgents: A Multi-Agent Framework for Interpretable and Semantically Consistent V2I Trajectory Prediction](https://doi.org/10.1109/mesa68091.2025.11278858)：提供用于 V2I 轨迹预测的多智能体框架，强调可解释性和语义一致性。
+- [SafeSim: An Open-Source Platform for Safety-Critical Driving Scenario Simulation and Curriculum-based Adversarial Training](https://doi.org/10.1109/smc58881.2025.11343679)：提供用于安全关键驾驶场景仿真和课程式对抗训练的开源平台。
+- [Virtual Traffic Police: Large Language Model-Augmented Traffic Signal Control for Unforeseen Incidents](https://arxiv.org/abs/2601.15816)：面向自动驾驶与驾驶 VLA 系统的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Virtual Traffic Police: Large Language Model-Augmented Traffic Signal Control for Unforeseen Incidents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [PRAM-R: A Perception-Reasoning-Action-Memory Framework with LLM-Guided Modality Routing for Adaptive Autonomous Driving](https://arxiv.org/abs/2603.04222)：把感知、推理、行动和记忆与 LLM 引导的模态路由结合，用于自适应自动驾驶。
+- [CRASH: Cognitive Reasoning Agent for Safety Hazards in Autonomous Driving](https://arxiv.org/abs/2603.15364)：用 LLM reasoning agent 分析 NHTSA AV incident reports，自动总结事故、归因主要原因并估计 AV 是否实质性参与。
+- [Agentic Fast-Slow Planning](https://arxiv.org/abs/2604.01681)：把慢速大模型推理与快速控制解耦，将 scene topology 映射到 symbolic directives，再用 feedback 和 memory 调整 planner 参数，并由 MPC 跟踪。
+- [Causal Scene Narration with Runtime Safety Supervision for Vision-Language-Action Driving](https://arxiv.org/abs/2604.01723)：把因果场景叙述与运行时安全监督用于 VLA 驾驶。
+- [Automotive Engineering-Centric Agentic AI Workflow Framework](https://arxiv.org/abs/2604.07784)：面向自动驾驶智能体与模型的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Ozone: A Unified Platform for Transportation Research](https://arxiv.org/abs/2604.10959)：作为自动驾驶的智能体执行框架候选，聚焦“A Unified Platform for Transportation Research”。
+- [Agentic traffic intelligence: Augmented human-in-the-loop scenario generation for microscopic traffic simulation](https://doi.org/10.1016/j.ait.2026.100057)：用增强型人类在环场景生成支持微观交通仿真。
+- [SafeTraffic Copilot: adapting large language models for trustworthy traffic safety assessments and decision interventions](https://doi.org/10.1038/s41467-025-64574-w)：适配 LLM 来预测 expected crashes 并建议可信干预，重点是透明的 traffic-safety assessment，而不是纯感知预测。
+- [Decision-Making Framework for Autonomous Vehicles in Complex Scenarios Using Large Language Models](https://doi.org/10.1007/s42154-025-00408-1)：把 LLM reasoning 用于复杂场景中的 autonomous-vehicle decision making，使常识解释成为 planning workflow 的一部分。

@@ -1,20 +1,229 @@
 # 1.8.4 Model
 
+- [Formal Mathematics Statement Curriculum Learning](https://arxiv.org/abs/2202.01344)：专家迭代把形式化证明搜索与模型更新交替进行，使证明器无需真实证明也能自行发现并解决逐步变难的题目课程；在人工整理的命题集上，它刷新了 miniF2F 的结果。
+- [HyperTree Proof Search for Neural Theorem Proving](https://arxiv.org/abs/2205.11491)：HyperTree Proof Search 将受 AlphaZero 启发的树搜索与从既有证明搜索中在线学习结合起来；在留出的 Metamath 定理上把证明率从 65.4% 提升到 82.6%，在 miniF2F-curriculum 上从 31% 提升到 42%。
+- [Autoformalization with Large Language Models](https://arxiv.org/abs/2205.12615)：LLM 将自然语言竞赛题翻译成 Isabelle/HOL，在测试题中有 25.3% 被完整形式化；再用这些自动形式化的命题训练证明器，把 MiniF2F 证明率从 29.6% 提升到 35.2%。
 - [Minerva](https://arxiv.org/abs/2206.14858)：高影响力的定量推理路线，在数学与科学语料上继续训练，并在推理时结合 chain-of-thought 和采样。
+- [Baldur: Whole-Proof Generation and Repair with Large Language Models](https://arxiv.org/abs/2303.04910)：Baldur 先一次性生成完整的 Isabelle/HOL 证明，再让修复模型读取失败证明和编译器错误进行修补；在 6,336 个定理上，它比 Thor 多覆盖 8.7%，两者合计可全自动证明 65.7% 的定理。
+- [Graph2Tac: Online Representation Learning of Formal Math Concepts](https://arxiv.org/abs/2401.02949)：在线学习形式化数学概念的图表示，使 tactic 预测能够利用不断变化的定理证明上下文。
+- [Enhancing Emotional Generation Capability of Large Language Models via Emotional Chain-of-Thought](https://arxiv.org/abs/2401.06836)：用 emotional chain-of-thought 引导 LLM 情感生成，更像相邻的情感生成方法而非核心数学模型工作。
+- [MARIO: MAth Reasoning with code Interpreter Output - A Reproducible Pipeline](https://arxiv.org/abs/2401.08190)：构建可复现的数学推理流水线，用代码解释器执行结果训练或评估解答。
+- [SpecGen: Automated Generation of Formal Program Specifications via Large Language Models](https://arxiv.org/abs/2401.08807)：用 LLM 生成形式化程序规格，把自然语言需求连接到机器可检查的符号约束。
+- [Augmenting Math Word Problems via Iterative Question Composing](https://arxiv.org/abs/2401.09003)：通过迭代组合问题生成新的数学应用题，为求解模型提供结构可控的合成训练数据。
+- [Mathemyths: Leveraging Large Language Models to Teach Mathematical Language through Child-AI Co-Creative Storytelling](https://arxiv.org/abs/2402.01927)：通过儿童与 AI 共创故事生成数学语言学习互动，更偏教育场景的数学生成而非求解模型。
 - [DeepSeekMath](https://arxiv.org/abs/2402.03300)：数学专用语言模型训练路线，使用数学预训练数据、监督微调和强化学习。
+- [Autonomous Data Selection with Zero-shot Generative Classifiers for Mathematical Texts](https://arxiv.org/abs/2402.07625)：用零样本生成式分类器筛选数学文本训练数据，减少对人工标注过滤器的依赖。
+- [Can We Verify Step by Step for Incorrect Answer Detection?](https://arxiv.org/abs/2402.10528)：研究用逐步验证检测错误数学答案，把中间推理检查作为核心信号。
+- [Evaluating LLMs' Mathematical Reasoning in Financial Document Question Answering](https://arxiv.org/abs/2402.11194)：考察数学推理能否迁移到金融文档问答，其中数值推断需要落在表格和报告上下文中。
+- [Orca-Math: Unlocking the potential of SLMs in Grade School Math](https://arxiv.org/abs/2402.14830)：用定向合成指令数据把小学数学推理蒸馏到小语言模型中。
+- [MathGenie: Generating Synthetic Data with Question Back-translation for Enhancing Mathematical Reasoning of LLMs](https://arxiv.org/abs/2402.16352)：用问题回译生成数学训练样本，以增强 LLM 的数学推理能力。
+- [REFACTOR: Learning to Extract Theorems from Proofs](https://arxiv.org/abs/2402.17032)： 该模型从证明中学习抽取可复用中间定理，在未见证明上找回 19.6% 的人工选定定理，并从 Metamath 发现 16 个新定理；重构后每个新定理平均被使用 733.5 次，且提升了在新库上训练的证明器。
+- [MATHSENSEI: A Tool-Augmented Large Language Model for Mathematical Reasoning](https://arxiv.org/abs/2402.17231)：把语言模型与数学工具结合，使生成推理能够借助可执行或符号辅助落地。
+- [Case-Based or Rule-Based: How Do Transformers Do the Math?](https://arxiv.org/abs/2402.17709)：分析 Transformer 的数学行为依赖记忆案例还是学习规则，从而澄清泛化机制。
+- [Adversarial Math Word Problem Generation](https://arxiv.org/abs/2402.17916)：生成对抗性数学应用题，用来暴露并训练模型抵抗求解失败模式。
+- [Automated Discovery of Integral with Deep Learning](https://arxiv.org/abs/2402.18040)：将深度学习用于发现积分恒等式或积分解，把神经符号搜索扩展到微积分。
+- [How to think step-by-step: A mechanistic understanding of chain-of-thought reasoning](https://arxiv.org/abs/2402.18312)：从机制层面解释 chain-of-thought 为什么有助于逐步推理，并以数学式任务作为分析对象。
+- [An Empirical Study of Data Ability Boundary in LLMs' Math Reasoning](https://arxiv.org/abs/2403.00799)：实证刻画训练数据覆盖与难度边界如何影响 LLM 数学推理表现。
+- [Masked Thought: Simply Masking Partial Reasoning Steps Can Improve Mathematical Reasoning Learning of Language Models](https://arxiv.org/abs/2403.02178)：在训练中遮蔽部分推理轨迹，使模型学习重构缺失的中间数学步骤。
+- [Key-Point-Driven Data Synthesis with its Enhancement on Mathematical Reasoning](https://arxiv.org/abs/2403.02333)：围绕关键推理点合成数学问题，定向覆盖影响解题质量的中间概念。
+- [MathScale: Scaling Instruction Tuning for Mathematical Reasoning](https://arxiv.org/abs/2403.02884)：扩展数学指令微调数据和配方，研究监督微调规模如何提升推理能力。
+- [Common 7B Language Models Already Possess Strong Math Capabilities](https://arxiv.org/abs/2403.04706)：诊断常见 7B 模型中的潜在数学能力，说明在重度专门化前评测与提示也能揭示能力。
+- [What Makes Math Word Problems Challenging for LLMs?](https://arxiv.org/abs/2403.11369)：拆解数学应用题的难度因素，使训练和评测能够针对具体推理瓶颈。
+- [Automate Knowledge Concept Tagging on Math Questions with LLMs](https://arxiv.org/abs/2403.17281)：测试零样本和少样本 LLM 将数学题干映射到教学知识点，用语义理解和解题逻辑匹配替代人工专家标注。
+- [Dual Instruction Tuning with Large Language Models for Mathematical Reasoning](https://arxiv.org/abs/2403.18295)：用正向与反向数学指令成对微调模型，同时强化解题和造题能力。
+- [Large Language Models Struggle with Unreasonability in Math Problems](https://arxiv.org/abs/2403.19346)：显示 LLM 常难以识别不合理的数学题设，提示需要引入合理性判断训练。
+- [Exploring the Mystery of Influential Data for Mathematical Reasoning](https://arxiv.org/abs/2404.01067)：识别哪些训练样本最影响数学推理，为数据选择和课程设计提供依据。
+- [ChatGLM-Math: Improving Math Problem-Solving in Large Language Models with a Self-Critique Pipeline](https://arxiv.org/abs/2404.02893)：用 self-critique 流水线改进 ChatGLM 数学求解，在最终输出前修订候选解答。
+- [MACM: Utilizing a Multi-Agent System for Condition Mining in Solving Complex Mathematical Problems](https://arxiv.org/abs/2404.04735)：在求解复杂数学题前用多智能体挖掘有用条件，使推理上下文显式化。
+- [MM-MATH: Advancing Multimodal Math Evaluation with Process Evaluation and Fine-grained Classification](https://arxiv.org/abs/2404.05091)：为多模态数学加入过程评估和细粒度错误分类，可用于训练 verifier 与反馈模型。
+- [MathVC: An LLM-Simulated Multi-Character Virtual Classroom for Mathematics Education](https://arxiv.org/abs/2404.06711)：用 LLM 模拟多角色数学课堂，生成交互式辅导和解释轨迹。
+- [Towards Large Language Models as Copilots for Theorem Proving in Lean](https://arxiv.org/abs/2404.12534)：研究 LLM 如何辅助 Lean 定理证明，把模型定位为建议形式化证明步骤的 copilot。
+- [PARAMANU-GANITA: Can Small Math Language Models Rival with Large Language Models on Mathematical Reasoning?](https://arxiv.org/abs/2404.14395)：从头训练 208M decoder-only 数学小语言模型，结合数学代码专用 tokenizer、315 亿 token 数学语料和 CoT 指令微调。
+- [Describe-then-Reason: Improving Multimodal Mathematical Reasoning through Visual Comprehension Training](https://arxiv.org/abs/2404.14604)：训练模型先描述视觉内容再进行推理，从而提升多模态数学解题能力。
+- [Achieving >97% on GSM8K: deeply understanding the problems makes LLMs better solvers for math word problems](https://arxiv.org/abs/2404.14963)：通过更深入的问题理解提示或训练信号，把 GSM8K 应用题准确率提升到 97% 以上。
+- [UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition](https://arxiv.org/abs/2404.15254)：提出通用数学表达式识别网络，处理真实场景中有噪声的印刷或手写公式。
+- [AlphaMath Almost Zero: process Supervision without process](https://arxiv.org/abs/2405.03553)：在不需要完整逐步过程标注的情况下近似数学推理过程监督。
+- [Metacognitive Capabilities of LLMs: An Exploration in Mathematical Problem Solving](https://arxiv.org/abs/2405.12205)：考察 LLM 在数学解题中能否监控不确定性和解答质量。
+- [LLMs for Mathematical Modeling: Towards Bridging the Gap between Natural and Mathematical Languages](https://arxiv.org/abs/2405.13144)：研究 LLM 如何把自然语言场景转写为数学模型、方程或形式化问题陈述。
+- [Embedding Trajectory for Out-of-Distribution Detection in Mathematical Reasoning](https://arxiv.org/abs/2405.14039)：利用推理轨迹的 embedding 变化检测分布外数学题或异常解题路径。
+- [DeepSeek-Prover: Advancing Theorem Proving in LLMs through Large-Scale Synthetic Data](https://arxiv.org/abs/2405.14333)：用大规模合成形式化数据训练定理证明 LLM，以提升证明生成能力。
+- [JiuZhang3.0: Efficiently Improving Mathematical Reasoning by Training Small Data Synthesis Models](https://arxiv.org/abs/2405.14365)：训练小型数据合成模型，高效生成可改进求解器的数学推理数据。
+- [Can LLMs Solve longer Math Word Problems Better?](https://arxiv.org/abs/2405.14804)：测试并分析题目长度如何影响 LLM 数学应用题推理和错误模式。
+- [MindStar: Enhancing Math Reasoning in Pre-trained LLMs at Inference Time](https://arxiv.org/abs/2405.16265)：通过 MindStar 搜索或推理控制策略，在推理时增强预训练 LLM 的数学推理。
+- [Transformers Can Do Arithmetic with the Right Embeddings](https://arxiv.org/abs/2405.17399)：说明合适的 embedding 设计能让 Transformer 架构更可靠地执行算术运算。
+- [Process-Driven Autoformalization in Lean 4](https://arxiv.org/abs/2406.01940)：用面向过程的生成方法，把非形式化数学转写为 Lean 4 形式化陈述或证明。
+- [Improve Mathematical Reasoning in Language Models by Automated Process Supervision](https://arxiv.org/abs/2406.06592)：自动构造过程监督信号，使数学模型能够从中间推理步骤中学习。
+- [Accessing GPT-4 level Mathematical Olympiad Solutions via Monte Carlo Tree Self-refine with LLaMa-3 8B](https://arxiv.org/abs/2406.07394)：用 Monte Carlo tree self-refine 让 8B LLaMA-3 模型搜索奥赛级解答。
+- [Step-level Value Preference Optimization for Mathematical Reasoning](https://arxiv.org/abs/2406.10858)：用逐步价值估计上的偏好优化训练数学推理，而不只依赖最终答案奖励。
+- [An Investigation of Neuron Activation as a Unified Lens to Explain Chain-of-Thought Eliciting Arithmetic Reasoning of LLMs](https://arxiv.org/abs/2406.12288)：用神经元激活分析解释 chain-of-thought 提示如何激发算术推理。
+- [Neuro-symbolic Training for Reasoning over Spatial Language](https://arxiv.org/abs/2406.13828)：结合神经与符号训练信号处理空间语言推理，是相邻的符号推理设置。
+- [Knowledge Tagging System on Math Questions via LLMs with Flexible Demonstration Retriever](https://arxiv.org/abs/2406.13885)：为 LLM 数学题知识点标注加入基于强化学习的 demonstration retriever，用少量高效示例处理复杂概念定义和困难题目。
+- [LLM Critics Help Catch Bugs in Mathematics: Towards a Better Mathematical Verifier with Natural Language Feedback](https://arxiv.org/abs/2406.14024)：训练或评估能给出自然语言反馈的 LLM critic，用于发现数学推理中的错误。
+- [Cutting Through the Noise: Boosting LLM Performance on Math Word Problems](https://arxiv.org/abs/2406.15444)：过滤或重组数学应用题中的噪声上下文，使 LLM 聚焦解题所需信息。
+- [Math-LLaVA: Bootstrapping Mathematical Reasoning for Multimodal Large Language Models](https://arxiv.org/abs/2406.17294)：用数学推理数据启动 LLaVA 风格多模态模型，面向视觉数学任务。
+- [Learning Formal Mathematics From Intrinsic Motivation](https://arxiv.org/abs/2407.00695)：用内在动机奖励探索并学习形式化数学，而不是只依赖示范数据。
+- [We-Math: Does Your Large Multimodal Model Achieve Human-like Mathematical Reasoning?](https://arxiv.org/abs/2407.01284)：评估多模态模型是否具有人类式数学推理行为，为模型诊断提供细粒度信号。
+- [TheoremLlama: Transforming General-Purpose LLMs into Lean4 Experts](https://arxiv.org/abs/2407.03203)：通过形式化证明数据和适配，把通用 LLM 专门化为 Lean 4 定理证明模型。
+- [DotaMath: Decomposition of Thought with Code Assistance and Self-correction for Mathematical Reasoning](https://arxiv.org/abs/2407.04078)：把数学题分解为代码辅助推理步骤，并在最终回答前进行自纠错。
+- [Skywork-Math: Data Scaling Laws for Mathematical Reasoning in Large Language Models - The Story Goes On](https://arxiv.org/abs/2407.08348)：研究数学推理数据扩展规律，把数据规模和构成与模型表现联系起来。
+- [MAVIS: Mathematical Visual Instruction Tuning with an Automatic Data Engine](https://arxiv.org/abs/2407.08739)：构建自动数据引擎，用于多模态模型的数学视觉指令微调。
+- [COMET: “cone of experience” enhanced large multimodal model for mathematical problem generation](https://arxiv.org/abs/2407.11315)：用“经验之锥”层级对齐视觉、语言和体验线索，面向多模态数学题生成。
+- [DART-Math: Difficulty-Aware Rejection Tuning for Mathematical Problem-Solving](https://arxiv.org/abs/2407.13690)：用难度感知的 rejection tuning 过滤和微调数学数据，使训练更聚焦可解但有挑战的推理轨迹。
+- [Prover-Verifier Games improve legibility of LLM outputs](https://arxiv.org/abs/2407.13692)：以 prover 和 verifier 博弈训练模型，让生成推理更容易被较弱 verifier 或人类检查。
+- [Physics of Language Models: Part 2.1, Grade-School Math and the Hidden Reasoning Process](https://arxiv.org/abs/2407.20311)：分析小学数学中的隐藏推理回路，解释模型如何在最终答案前计算中间量。
+- [MathLearner: A Large Language Model Agent Framework for Learning to Solve Mathematical Problems](https://arxiv.org/abs/2408.01779)：从失败和反思中迭代学习解题策略，使系统成为自改进求解器，而不是静态提示模板。
 - [DeepSeek-Prover-V1.5](https://arxiv.org/abs/2408.08152)（[开源代码](https://github.com/deepseek-ai/DeepSeek-Prover-V1.5)）：Lean 形式化证明模型路线，围绕证明数据、verifier feedback 和推理时搜索构建。
-- [Unlocking Multimodal Mathematical Reasoning via Process Reward Model](https://arxiv.org/abs/2501.04686)：提出面向数学推理的模型侧方法，核心围绕 Unlocking Multimodal Mathematical Reasoning via Process Reward Model。
+- [Math-PUMA: Progressive Upward Multimodal Alignment to Enhance Mathematical Reasoning](https://arxiv.org/abs/2408.08640)：从感知到推理逐级对齐视觉数学特征，使多模态模型更可靠地处理图文数学题。
+- [What makes math problems hard for reinforcement learning: a case study](https://arxiv.org/abs/2408.15332)：拆解数学强化学习的难点，把探索、稀疏奖励和题目分布因素分开分析。
+- [SIaM: Self-Improving Code-Assisted Mathematical Reasoning of Large Language Models](https://arxiv.org/abs/2408.15565)：利用代码执行反馈，让模型在多轮自改进中生成、验证并修订自己的数学解答。
+- [Physics of Language Models: Part 2.2, How to Learn From Mistakes on Grade-School Math Problems](https://arxiv.org/abs/2408.16293)：研究小学数学中的错误驱动学习，说明定向错误反馈如何改变模型内部推理行为。
+- [MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models](https://arxiv.org/abs/2409.00147)：构建视觉数学指令数据和对齐信号，使 LLM 能结合图形感知与符号解题步骤。
+- [S3c-Math: Spontaneous Step-level Self-correction Makes Large Language Models Better Mathematical Reasoners](https://arxiv.org/abs/2409.01524)：训练模型生成并修复逐步推理，以自发 step-level self-correction 作为主要监督信号。
+- [Building Math Agents with Multi-Turn Iterative Preference Learning](https://arxiv.org/abs/2409.02392)：从多轮交互中优化数学智能体，偏好信号比较迭代修订过程而不只比较最终答案。
+- [From Calculation to Adjudication: Examining LLM judges on Mathematical Reasoning Tasks](https://arxiv.org/abs/2409.04168)：评估 LLM 作为数学 judge 的表现，揭示 adjudication 与直接计算的差异以及误判解答的位置。
+- [Qwen2.5-Math Technical Report: Toward Mathematical Expert Model via Self-Improvement](https://arxiv.org/abs/2409.12122)：报告 Qwen2.5-Math 的数学预训练、监督微调、强化学习和自改进数据生成流水线。
+- [InfiMM-WebMath-40B: Advancing Multimodal Pre-Training for Enhanced Mathematical Reasoning](https://arxiv.org/abs/2409.12568)：构建大规模 WebMath 多模态预训练语料，使模型在指令微调前学习视觉、文本和公式的联合推理。
+- [MathGLM-Vision: Solving Mathematical Problems with Multi-Modal Large Language Model](https://arxiv.org/abs/2409.13729)：将 GLM 风格多模态建模适配到数学图形与文本，重点处理几何和视觉落地的解题。
+- [ControlMath: Controllable Data Generation Promotes Math Generalist Models](https://arxiv.org/abs/2409.15376)：按主题、难度等可控属性生成数学数据，用于训练覆盖更广的通用数学模型。
+- [Models Can and Should Embrace the Communicative Nature of Human-Generated Math](https://arxiv.org/abs/2409.17005)：主张建模人类数学交流，把解释和话语结构作为信号，而不是只把数学视为答案抽取。
+- [PersonaMath: Boosting Mathematical Reasoning via Persona-Driven Data Augmentation](https://arxiv.org/abs/2410.01504)：生成 persona 条件化的数学题和解答，使增强数据覆盖不同推理风格与难度。
+- [OpenMathInstruct-2: Accelerating AI for Math with Massive Open-Source Instruction Data](https://arxiv.org/abs/2410.01560)：发布由问题解答生成和过滤构成的大规模开放数学指令语料，用于训练数学推理模型。
+- [Step-by-Step Reasoning for Math Problems via Twisted Sequential Monte Carlo](https://arxiv.org/abs/2410.01920)：用 twisted sequential Monte Carlo 对中间推理路径进行采样和重加权，以支持逐步数学求解。
+- [Deep Learning Alternatives of the Kolmogorov Superposition Theorem](https://arxiv.org/abs/2410.01990)：研究 Kolmogorov-Arnold 式表示的神经替代方案，更偏相邻架构研究而非普通解题模型训练。
+- [LLaMA-Berry: Pairwise Optimization for O1-like Olympiad-Level Mathematical Reasoning](https://arxiv.org/abs/2410.02884)：在奥赛式解答上进行成对偏好优化，推动 LLaMA 模型获得更强的长程数学推理。
+- [Give me a hint: Can LLMs take a hint to solve math problems?](https://arxiv.org/abs/2410.05915)：测试提示条件下的数学求解，分析 hint 何时改善推理以及模型何时忽略或误用提示。
+- [MathCoder2: Better Math Reasoning from Continued Pretraining on Model-translated Mathematical Code](https://arxiv.org/abs/2410.08196)：在由模型翻译出的数学代码表示上继续预训练，使模型学习可执行的分解模式。
+- [Towards Foundation Models for Mixed Integer Linear Programming](https://arxiv.org/abs/2410.08288)：探索面向混合整数线性规划实例的基础模型训练。
+- [Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers](https://arxiv.org/abs/2410.08304)：用 symbolic transformer 搜索构造全局 Lyapunov 函数，属于神经符号数学发现方向。
+- [Embedding Self-Correction as an Inherent Ability in Large Language Models for Enhanced Mathematical Reasoning](https://arxiv.org/abs/2410.10735)：把纠错行为嵌入模型训练，使求解器无需外部 critic 也能修订有缺陷的中间步骤。
+- [M2M: Learning controllable Multi of experts and multi-scale operators are the Partial Differential Equations need](https://arxiv.org/abs/2410.11617)：为偏微分方程建模学习可控 mixture of experts 和多尺度算子。
+- [MIND: Math Informed syNthetic Dialogues for Pretraining LLMs](https://arxiv.org/abs/2410.12881)：生成数学信息驱动的合成对话用于预训练，让模型看到对话式推导而不只是孤立答案。
+- [LLMOPT: Learning to Define and Solve General Optimization Problems from Scratch](https://arxiv.org/abs/2410.13213)：训练 LLM 先定义优化变量、目标和约束，再求解形成的优化问题。
+- [How Numerical Precision Affects Arithmetical Reasoning Capabilities of LLMs](https://arxiv.org/abs/2410.13857)：衡量数值精度和表示选择如何改变语言模型的算术推理失败。
+- [InternLM2.5-StepProver: Advancing Automated Theorem Proving via Critic-Guided Search](https://arxiv.org/abs/2410.15700)：InternLM2.5-StepProver 引入 critic，从 tactic 轨迹中提取偏好信息，并在运行时引导证明器的 best-first 搜索；超过 20,000 CPU 天的专家迭代把证明性能从 59.4% 提升到 65.9%。
+- [Math Neurosurgery: Isolating Language Models' Math Reasoning Abilities Using Only Forward Passes](https://arxiv.org/abs/2410.16930)：用 forward-pass 干预隔离与数学推理相关的子网络，而不进行额外训练。
+- [Markov Chain of Thought for Efficient Mathematical Reasoning](https://arxiv.org/abs/2410.17635)：把 chain-of-thought 重写为 Markov 过程，以采样更短的推理轨迹并保持数学准确率。
+- [The Nature of Mathematical Modeling and Probabilistic Optimization Engineering in Generative AI](https://arxiv.org/abs/2410.18441)：把生成式 AI 的数学建模视为概率优化工程，因此更偏方法论与建模分析条目。
+- [Arithmetic Without Algorithms: Language Models Solve Math With a Bag of Heuristics](https://arxiv.org/abs/2410.21272)：显示语言模型常通过习得启发式而不是稳定算法过程完成算术。
+- [Flow-DPO: Improving LLM Mathematical Reasoning through Online Multi-Agent Learning](https://arxiv.org/abs/2410.22304)：用在线多智能体学习生成偏好数据，再通过 DPO 风格训练改进数学推理。
+- [Solving Differential Equations with Constrained Learning](https://arxiv.org/abs/2410.22796)：在学习中施加微分方程约束，使神经求解器满足数学结构而不只是拟合数据。
+- [Improving Math Problem Solving in Large Language Models Through Categorization and Strategy Tailoring](https://arxiv.org/abs/2411.00042)：先按类型分类数学题并定制解题策略，以减少单一推理模板带来的错误。
+- [Quantifying artificial intelligence through algebraic generalization](https://arxiv.org/abs/2411.05943)：用代数泛化测试衡量模型是否学到可复用数学结构，而不是记忆模式。
+- [MC-NEST: Enhancing Mathematical Reasoning in Large Language Models leveraging a Monte Carlo Self-Refine Tree](https://arxiv.org/abs/2411.15645)：构建 Monte Carlo self-refine tree，在推理时扩展、评分并修订候选数学解答。
+- [Learning by Analogy: Enhancing Few-Shot Prompting for Math Word Problem Solving with Computational Graph-Based Retrieval](https://arxiv.org/abs/2411.16454)：通过计算图检索相似已解题，引导 few-shot 数学应用题求解。
+- [BPP-Search: Enhancing Tree of Thought Reasoning for Mathematical Modeling Problem Solving](https://arxiv.org/abs/2411.17404)：在 tree-of-thought 推理中加入 best-priority search，用于需要探索解题路径的数学建模任务。
+- [Neuro-Symbolic Data Generation for Math Reasoning](https://arxiv.org/abs/2412.04857)：结合符号题目构造与神经生成，产生可控的数学推理数据。
+- [Modern Hopfield Networks Require Chain-of-Thought to Solve $\mathsf{NC}^1$-Hard Problems](https://arxiv.org/abs/2412.05562)：说明现代 Hopfield 网络在处理困难电路复杂度问题时需要 chain-of-thought 式中间状态。
+- [Geo-LLaVA: A Large Multi-Modal Model for Solving Geometry Math Problems with Meta In-Context Learning](https://arxiv.org/abs/2412.10455)：针对几何任务微调 LLaVA 风格模型，并用 meta in-context learning 适配视觉证明推理。
+- [Mining Math Conjectures from LLMs: A Pruning Approach](https://arxiv.org/abs/2412.16177)：用 LLM 生成候选数学猜想，并通过剪枝保留更可信的发现目标。
+- [Unsupervised Discovery of Formulas for Mathematical Constants](https://arxiv.org/abs/2412.16818)：在没有监督目标的情况下搜索数学常数公式，定位为符号发现工作。
+- [Ask-Before-Detection: Identifying and Mitigating Conformity Bias in LLM-Powered Error Detector for Math Word Problem Solutions](https://arxiv.org/abs/2412.16838)：让数学错误检测器先主动质疑解答再判错，从而降低 conformity bias。
+- [HUNYUANPROVER: A Scalable Data Synthesis Framework and Guided Tree Search for Automated Theorem Proving](https://arxiv.org/abs/2412.20735)：结合可扩展形式化证明数据合成与 guided tree search，用于自动定理证明。
+- [Data Augmentation with Large Language Models For Math Word Problem Solving](https://doi.org/10.1109/ieir62538.2024.10959871)：用 LLM 生成数学应用题变体作为训练增强，以提升求解器鲁棒性。
+- [AlphaProof / AlphaGeometry 2](https://www.nature.com/articles/s41586-025-09833-y)：AlphaProof 在数百万个自动形式化的 Lean 问题上采用 AlphaZero 式强化学习，并通过测试时强化学习生成和学习特定题目的变体。它解决了 2024 年 IMO 五道非几何题中的三道；与 AlphaGeometry 2 组合后，系统在多日计算条件下达到银牌等效成绩。
+- [From Pixels to Predicates: Learning Symbolic World Models via Pretrained Vision-Language Models](https://arxiv.org/abs/2501.00296)：用预训练 VLM 把视觉场景转换为符号谓词，是连接形式推理的相邻 world-model 工作。
+- [Quantization Meets Reasoning: Exploring LLM Low-Bit Quantization Degradation for Mathematical Reasoning](https://arxiv.org/abs/2501.03035)：分析或改进模型侧数学推理能力。
+- [Unlocking Multimodal Mathematical Reasoning via Process Reward Model](https://arxiv.org/abs/2501.04686)：为多模态数学训练 process reward model，用来评分视觉和文本中间推理步骤。
+- [Open Eyes, Then Reason: Fine-grained Visual Mathematical Understanding in MLLMs](https://arxiv.org/abs/2501.06430)：先强化多模态大模型的细粒度视觉数学理解，再支撑后续推理。
+- [Chain-of-Reasoning: Towards Unified Mathematical Reasoning in Large Language Models via a Multi-Paradigm Perspective](https://arxiv.org/abs/2501.11110)：结合自然语言、算法和符号推理范式，并用 progressive paradigm training 训练 CoR-Math-7B 以提升数学推理。
+- [Bridging Visualization and Optimization: Multimodal Large Language Models on Graph-Structured Combinatorial Optimization](https://arxiv.org/abs/2501.11968)：研究多模态 LLM 如何在图结构组合优化中连接可视化理解与优化求解。
+- [Band gap renormalization, carrier mobility, and transport in <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>Mg</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mi>Si</mml:mi></mml:mrow></mml:math> and <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mro](https://arxiv.org/abs/2501.15992)：研究半导体 band-gap 与输运建模；MathML 标题导致误入本页，更像偏离数学推理主轴的材料物理条目。
+- [Language Models Use Trigonometry to Do Addition](https://arxiv.org/abs/2502.00873)：逆向分析 LLM 算术回路，揭示加法背后的数字表征和几何变换。
+- [Neuro-Symbolic AI for Analytical Solutions of Differential Equations](https://arxiv.org/abs/2502.01476)：结合神经搜索与符号约束，为微分方程推导解析解。
 - [AlphaGeometry 2](https://arxiv.org/abs/2502.03544)（[开源代码](https://github.com/google-deepmind/alphageometry2)）：后续几何证明系统，强化 learned geometry reasoning 与 symbolic search 的协作。
+- [ProofWala: Multilingual Proof Data Synthesis and Theorem-Proving](https://arxiv.org/abs/2502.04671)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
 - [Goedel-Prover](https://arxiv.org/abs/2502.07640)（[开源代码](https://github.com/Goedel-LM/Goedel-Prover)）：形式化定理证明模型，强调 proof search 与 verifier-grounded output。
-- [AlphaGeometry](https://www.nature.com/articles/s41586-023-06747-5)（[开源代码](https://github.com/google-deepmind/alphageometry)）：神经符号几何模型系统，把 learned premise generation 与可验证符号演绎结合。
-- [Kimina-Prover Preview](https://arxiv.org/abs/2504.11354)：提出面向数学推理的模型侧方法，核心围绕 Towards Large Formal Reasoning Models with Reinforcement Learning。
-- [Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?](https://arxiv.org/abs/2504.13837)：提出面向数学推理的模型侧方法，核心围绕 Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?。
+- [Theorem Prover as a Judge for Synthetic Data Generation](https://arxiv.org/abs/2502.13137)：通过迭代 autoformalisation 提高 Lean 执行率，再用 TP-as-a-Judge 验证中间推理，并以 RLTPF 将定理证明器反馈作为合成数学推理数据的训练信号。
+- [Full-Step-DPO: Self-Supervised Preference Optimization with Step-wise Rewards for Mathematical Reasoning](https://arxiv.org/abs/2502.14356)：使用带逐步奖励的自监督偏好优化来提升数学推理。
+- [LeanProgress: Guiding Search for Neural Theorem Proving via Proof Progress Prediction](https://arxiv.org/abs/2502.17925)：LeanProgress 用 Lean Workbook Plus 和 Mathlib4 的证明轨迹训练进度预测器，在证明长度分布偏斜的情况下估计还剩多少步；接入 ReProver 的 best-first 搜索后，Mathlib4 结果提升 3.8%，长证明收益尤其明显。
+- [The Lookahead Limitation](https://arxiv.org/abs/2502.19981)：解释多操作数加法为何对 LLM 困难。核心思想：定位算术推理中的前瞻约束，把基础数学失败与模型内部计算限制联系起来。
+- [An Efficient and Precise Training Data Construction Framework for Process-supervised Reward Model in Mathematical Reasoning](https://arxiv.org/abs/2503.02382)：为数学推理中的过程监督奖励模型构建高精度训练数据。
+- [From Text to Visuals: Using LLMs to Generate Math Diagrams with Vector Graphics](https://arxiv.org/abs/2503.07429)：构建生成数学提示图的 LLM 提示流水线，以 SVG 作为中间表示，并用 VQA 式评估和消融检查图形质量。
+- [Teaching LLMs for Step-Level Automatic Math Correction via Reinforcement Learning](https://arxiv.org/abs/2503.18432)：用强化学习训练 LLM 进行逐步数学纠错，重点利用过程级反馈，而不是只依赖最终答案监督。
+- [Automated Discovery of Tactic Libraries for Interactive Theorem Proving](https://arxiv.org/abs/2503.24036)：用 tactic-dependence graph 挖掘可复用自定义 tactic，重构证明并提升后续自动证明工具的成功率。
+- [Leanabell-Prover: Posttraining Scaling in Formal Reasoning](https://arxiv.org/abs/2504.06122)：Leanabell-Prover 将命题-证明对与假设修正轨迹上的持续训练，与由 Lean 4 编译器提供结果奖励的强化学习结合；这套配方同时改进 DeepSeek-Prover-v1.5 和 Goedel-Prover，在 MiniF2F 上达到 59.8% 的 pass@32。
+- [GRPO-LEAD: A Difficulty-Aware Reinforcement Learning Approach for Concise Mathematical Reasoning in Language Models](https://arxiv.org/abs/2504.09696)：在 GRPO 中加入长度正则奖励、错误答案惩罚和难度感知 advantage 重加权，使数学推理更简洁且更准确。
+- [GeoUni](https://arxiv.org/abs/2504.10146)：用统一模型生成几何图、几何题和对应解答。
+- [Kimina-Prover Preview](https://arxiv.org/abs/2504.11354)：基于 Qwen2.5-72B 进行大规模强化学习训练 Lean 4 prover，并学习可迭代生成和修订证明步骤的 formal reasoning pattern。
+- [Enhancing the Geometric Problem-Solving Ability of Multimodal LLMs via Symbolic-Neural Integration](https://arxiv.org/abs/2504.12773)：将视觉理解与符号推理组件结合，以提升多模态大模型的几何问题求解能力。
+- [Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?](https://arxiv.org/abs/2504.13837)：用 pass@k、coverage 和 perplexity 探针显示，常见 RLVR 更多是在释放基础模型已有推理模式，而不是产生全新推理能力。
 - [DeepSeek-Prover-V2](https://arxiv.org/abs/2504.21801)（[开源代码](https://github.com/deepseek-ai/DeepSeek-Prover-V2)）：用 Lean 可验证子目标、cold start 和强化学习训练面向子目标分解的定理证明模型。
-- [AceReason-Nemotron](https://arxiv.org/abs/2505.16400)：提出面向数学推理的模型侧方法，核心围绕 Advancing Math and Code Reasoning through Reinforcement Learning。
+- [Rewriting Pre-Training Data Boosts LLM Performance in Math and Code](https://arxiv.org/abs/2505.02881)：说明改写预训练数据能提升数学和代码表现，把数据变换纳入模型能力训练路线。
+- [Agent RL Scaling Law: Agent RL with Spontaneous Code Execution for Mathematical Problem Solving](https://arxiv.org/abs/2505.07773)：研究数学智能体在强化学习中自发执行代码时的扩展规律。
+- [MPS-Prover: Advancing Stepwise Theorem Proving by Multi-Perspective Search and Data Curation](https://arxiv.org/abs/2505.10962)：结合后训练数据筛选、learned critic 和多视角树搜索，改进 stepwise formal theorem proving。
+- [Reinforcement Learning Closures for Underresolved Partial Differential Equations using Synthetic Data](https://arxiv.org/abs/2505.11308)：用 manufactured solutions 生成合成数据并训练强化学习 closure model，为粗粒度 PDE 求解器补偿未解析项。
+- [Code Retrieval for MILP Instance Generation](https://arxiv.org/abs/2505.11526)：把 MILP 实例生成改写为代码检索任务，用 MILP-EmbedSim 找到可生成目标相似优化实例的代码。
+- [From Recall to Reasoning: Automated Question Generation for Deeper Math Learning through Large Language Models](https://arxiv.org/abs/2505.11899)：研究 GenAI 为高等数学生成练习题，表明加入示例和课程相关内容能提高题目质量。
+- [A Neuro-Symbolic Approach for Reliable Proof Generation with LLMs: A Case Study in Euclidean Geometry](https://arxiv.org/abs/2505.14479)：先检索相似几何题及其证明来引导 LLM 生成，再用形式化 verifier 标出并修复无效证明步骤。
+- [AceReason-Nemotron](https://arxiv.org/abs/2505.16400)：系统研究 reasoning RL 配方，先用数学 prompt 再用代码 prompt 训练，并结合可验证答案、测试用例筛选和响应长度课程。
 - [KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning](https://arxiv.org/abs/2505.16826)：在不训练模型的情况下估计关键 token 优势，以改进数学推理监督信号。
-- [Enigmata](https://arxiv.org/abs/2505.19914)：提出面向数学推理的模型侧方法，核心围绕 Scaling Logical Reasoning in Large Language Models with Synthetic Verifiable Puzzles。
+- [Surrogate Signals from Format and Length: Reinforcement Learning for Solving Mathematical Problems without Ground Truth Answers](https://arxiv.org/abs/2505.19439)：用格式和长度等代理信号在缺少标准答案时训练数学解题能力。
+- [Enigmata](https://arxiv.org/abs/2505.19914)：提供可控 puzzle 生成器和规则 verifier，用于 RLVR 扩展逻辑推理数据，并迁移到数学和 STEM 基准。
+- [DeepTheorem: Advancing LLM Reasoning for Theorem Proving Through Natural Language and Reinforcement Learning](https://arxiv.org/abs/2505.23754)：结合自然语言定理证明与强化学习提升 LLM 数学推理。
+- [Versatile Symbolic Music-for-Music Modeling via Function Alignment](https://arxiv.org/abs/2506.15548)：用轻量 adapter 对齐参考和目标符号音乐序列上的预训练语言模型，更像相邻的符号序列建模而非核心数学推理。
+- [Multimodal Mathematical Reasoning with Diverse Solving Perspective](https://arxiv.org/abs/2507.02804)：用多样化多模态解题轨迹、监督微调和 GRPO 奖励提升视觉数学推理。
+- [Characterization of fractional Chern insulator quasiparticles in twisted homobilayer <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML"> <mml:msub> <mml:mi>MoTe</mml:mi> <mml:mn>2</mml:mn>](https://arxiv.org/abs/2507.04056)：arXiv API 未返回该标识的摘要元数据；题名更像材料物理中的 quasiparticle 表征，而非数学模型机制。
+- [A Practical Two-Stage Recipe for Mathematical LLMs: Maximizing Accuracy with SFT and Efficiency with Reinforcement Learning](https://arxiv.org/abs/2507.08267)：给出数学大模型的监督微调与强化学习两阶段训练配方，直接关联数学模型训练。
+- [Leanabell-Prover-V2: Verifier-integrated Reasoning for Formal Theorem Proving via Reinforcement Learning](https://arxiv.org/abs/2507.08649)：把 Lean 验证器纳入形式化定理证明的强化学习推理流程。
+- [Auto-Formulating Dynamic Programming Problems with Large Language Models](https://arxiv.org/abs/2507.11737)：提出 DPLM 与 DualReflect，将前向多样性生成和后向保正确生成结合起来训练自动动态规划建模。
+- [Large Language Models' Internal Perception of Symbolic Music](https://arxiv.org/abs/2507.12808)：从文本提示生成 MIDI，并检验基于这些输出训练的分类器能否恢复体裁、风格和旋律结构，是相邻的符号序列证据。
+- [Scale-Consistent Learning for Partial Differential Equations](https://arxiv.org/abs/2507.18813)：加入尺度一致性数据增强和 scale-informed neural operator，使 PDE 求解器能跨域尺寸、分辨率和 Reynolds 数泛化。
 - [Seed-Prover](https://arxiv.org/abs/2507.23726)（[开源代码](https://github.com/ByteDance-Seed/Seed-Prover)）：lemma-style whole-proof 系统，结合 Lean feedback、已证引理、自总结和深宽搜索求解 IMO 级证明。
+- [Uncertainty-Based Methods for Automated Process Reward Data Construction and Output Aggregation in Mathematical Reasoning](https://arxiv.org/abs/2508.01773)：利用不确定性信号构建数学推理过程奖励数据，并改进输出聚合。
+- [Modular Arithmetic](https://arxiv.org/abs/2508.02513)：分析语言模型如何逐位求解算术题，澄清数学推理中的模型侧机制。
 - [Goedel-Prover-V2](https://arxiv.org/abs/2508.03613)（[开源代码](https://github.com/Goedel-LM/Goedel-Prover-V2)）：通过难度递进合成数据、Lean compiler feedback 自纠错和 checkpoint averaging 改进证明模型。
+- [Iterative In-Context Learning to Enhance LLMs Abstract Reasoning: The Case-Study of Algebraic Tasks](https://arxiv.org/abs/2509.01267)：为非标准化简规则下的代数表达式任务迭代选择 few-shot 示例，并配合显式推理指令提升组合泛化。
+- [Beyond Correctness: Harmonizing Process and Outcome Rewards through RL Training](https://arxiv.org/abs/2509.03403)：在 RLVR 中协调过程奖励和结果奖励，使数学推理训练不只依赖最终正确性信号。
+- [Deep learning for the semi-classical limit of the Schrödinger equation](https://arxiv.org/abs/2509.04453)：该研究比较 physics-informed neural network、MscaleDNN 和 DeepONet 类算子学习在半经典 Schrodinger 方程上的表现，考察半经典参数变小时神经表示如何恢复高振荡解。
+- [All for One](https://arxiv.org/abs/2509.09650)：分析 LLM 如何在最后一个 token 通过前序 token 转移的信息完成 mental math，澄清模型内部算术推理机制。
+- [THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](https://arxiv.org/abs/2509.13761)：面向数学推理的工具集成层级优化。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Pessimistic Verification for Open Ended Math Questions](https://arxiv.org/abs/2511.21522)：通过并行运行多个 verification 并在任一 verifier 报错时判定 proof 错误，提高开放式数学解答在 test-time verification 中发现推理缺陷的能力。
+- [Towards a Foundation Model for Partial Differential Equations Across Physics Domains](https://arxiv.org/abs/2511.21861)：构建 PDE-FM，结合 spatial-spectral tokenization、physics-aware conditioning、Mamba state-space backbone 和 operator-theoretic decoder 以支持跨物理域 PDE 迁移。
 - [DeepSeekMath-V2](https://arxiv.org/abs/2511.22570)：自验证数学推理模型，把数学推理生成与验证一起训练。
+- [Exact Learning of Arithmetic with Differentiable Agents](https://arxiv.org/abs/2511.22751)：从专家策略轨迹训练 differentiable finite-state transducer，在二进制和十进制加法、乘法上实现精确长度泛化。
+- [Argumentative Reasoning with Language Models on Non-factorized Case Bases](https://arxiv.org/abs/2512.12656)：用语言模型进行 factor extraction 和 coverage check，扩展基于论证的 case-based reasoning，是相邻的符号推理方法。
+- [Error-Driven Prompt Optimization for Arithmetic Reasoning](https://arxiv.org/abs/2512.13323)：聚类本地代码生成智能体的算术错误并迭代改写 prompt 规则，在不微调的情况下提升小模型结构化数据算术。
+- [Tool-Augmented Hybrid Ensemble Reasoning with Distillation for Bilingual Mathematical Problem Solving](https://arxiv.org/abs/2512.19093)：结合自适应路由、工具强化学习、置信度校准、双路径校验和蒸馏来处理双语数学解题。
+- [Automated Generative AI-Driven Forensic Analysis (AGAFA). An Explainable Neuro-Symbolic Approach to Digital Forensics](https://doi.org/10.1109/skima66621.2025.11155781)：提出用于数字取证证据分析的可解释神经符号 LLM 框架，和符号推理相邻但偏离数学模型主轴。
+- [Unveiling Fine-Grained Deceptive Patterns in Multimodal Fake News: An Explainable Neuro-Symbolic Framework With LVLMs](https://doi.org/10.1109/tpami.2025.3642831)：用可学习潜变量和逻辑规则弱监督解释多模态假新闻的欺骗模式，属于相邻神经符号工作而非数学模型主轴。
+- [HiE-VL: A Large Vision-Language Model with Hierarchical Adapter for Handwritten Mathematical Expression Recognition](https://doi.org/10.1109/icassp49660.2025.10887902)：用 primitive-aware 高分辨率视觉编码器、hierarchical adapter 和 math-context LLM 解码手写公式结构。
+- [<italic>m<inline-formula><tex-math notation="LaTeX">$^{2}$</tex-math><alternatives><mml:math><mml:msup><mml:mrow/><mml:mn>2</mml:mn></mml:msup></mml:math><inline-graphic xlink:href="li-ieq1-3587445.gif"/></alternatives></inline-formula>LLM:</italic> A <underline>M</underline>ulti-Dimensional Optimiz](https://doi.org/10.1109/tpds.2025.3587445)：通过硬件感知模型定制、chunk-wise pipeline、延迟引导 prompt 压缩和逐层资源调度优化移动端 LLM 推理，偏离数学推理主轴。
+- [Into The Limits of Logic: Alignment Methods for Formal Logical Reasoning](https://doi.org/10.18653/v1/2025.mathnlp-main.8)：研究形式逻辑推理的对齐方法。
+- [Reinforcement Learning for Mathematical Reasoning in Small-Scale Language Models with Structured Policy Optimization](https://doi.org/10.1109/icumt67815.2025.11268643)：用 GRPO 微调小模型，以结构化提示分离推理和答案，并用格式遵循与数学正确性双奖励训练。
+- [DRAGON: LLM-Driven Decomposition and Reconstruction Agents for Large-Scale Combinatorial Optimization](https://arxiv.org/abs/2601.06502)：把大规模组合优化实例拆成局部子问题，用定向 LLM prompt 求解，再结合自适应经验记忆重构改进后的全局解。
+- [Large Language Model for OWL Proofs](https://arxiv.org/abs/2601.12444)：将大语言模型用于 OWL 证明构造。
+- [PrAg-PO: Prompt Augmented Policy Optimization for Robust and Diverse Mathematical Reasoning](https://arxiv.org/abs/2602.03190)：用 prompt-augmented policy optimization 提升数学推理的稳健性与多样性。
+- [PACE: Defying the Scaling Hypothesis of Exploration in Iterative Alignment for Mathematical Reasoning](https://arxiv.org/abs/2602.05370)：用低预算 corrective hindsight refinement 和 verifier 过滤的偏好对合成，替代 iterative DPO 中高 N best-of 采样。
+- [NeuroSymActive: Differentiable Neural-Symbolic Reasoning with Active Exploration for Knowledge Graph Question Answering](https://arxiv.org/abs/2602.15353)：把 soft-unification 神经符号模块与 value-guided Monte Carlo 探索控制器结合，减少多跳推理中的图查询次数。
+- [Physics-informed fine-tuning of foundation models for partial differential equations](https://arxiv.org/abs/2603.15431)：用 PDE residual 和边界条件损失微调预训练 PDE foundation model，提升少数据和分布外适配能力。
+- [When and Why Does Unsupervised RL Succeed in Mathematical Reasoning? A Manifold Envelopment Perspective](https://arxiv.org/abs/2603.16578)：用流形包络视角解释无监督强化学习何时能提升数学推理。
+- [Symbolic--KAN: Kolmogorov-Arnold Networks with Discrete Symbolic Structure for Interpretable Learning](https://arxiv.org/abs/2603.23854)：在 KAN 中嵌入解析 primitive 库、层级 gating 和符号正则，使训练后的网络离散化为紧凑闭式表达。
+- [Arithmetic OOD Failure Unfolds in Stages in Minimal GPTs](https://arxiv.org/abs/2603.26828)：把 minimal GPT 的三位数加法泛化失败分解为布局迁移、进位语义、条件重组和后期十位残差阶段。
+- [Beyond Symbolic Solving: Multi Chain-of-Thought Voting for Geometric Reasoning in Large Language Models](https://arxiv.org/abs/2604.00890)：将 multi-chain-of-thought voting 用于几何题求解，在图文同步之外加入显式投票阶段来强化几何解的逻辑推断。
+- [Infeasibility Aware Large Language Models for Combinatorial Optimization](https://arxiv.org/abs/2604.01455)：构造可证明可行和不可行的 minor-embedding 实例，微调 LLM 同时生成解和检测不可行性，并把输出作为局部搜索 warm start。
+- [MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](https://arxiv.org/abs/2604.11188)：通过对抗式演化 constraint graph 合成数学推理数据，专门暴露求解器弱点。
+- [Placing Puzzle Pieces Where They Matter: A Question Augmentation Framework for Reinforcement Learning](https://arxiv.org/abs/2604.15830)：通过注入并逐步撤除关键推理步骤提示，改进数学推理强化学习。
+- [AutoOR: Scalably Post-training LLMs to Autoformalize Operations Research Problems](https://arxiv.org/abs/2604.16804)：生成可验证的优化问题数据，并用求解器反馈后训练 LLM，使其能自动形式化运筹优化建模。
+- [Topological Dual of a Dataset](https://arxiv.org/abs/2604.18050)：为 AlphaGeometry 风格合成数据提出 logic-to-topology 编码，补充数学推理模型的数据生成路线。
+- [DSR](https://arxiv.org/abs/2604.19000)：基于 operator tree 的神经符号 autoformalization 框架。核心思想：把数学陈述分解成逻辑组件，映射到结构化 operator trees，并借助证明反馈修复子树；该工作还引入 PRIME Lean 4 benchmark。
+- [Aspect-Aware Content-Based Recommendations for Mathematical Research Papers](https://arxiv.org/abs/2605.03861)：发布 GoldRiM 与 SilverRiM，并提出 AchGNN，以 aspect-conditioned 异构图同时建模文本、引用和作者谱系来推荐数学论文。
+- [When Should Teachers Control AI Generation for Mathematics Visuals?](https://arxiv.org/abs/2605.10672)：比较教师在生成前、生成中和生成后控制 AI 数学视觉材料的差异，发现生成后直接对象编辑最利于可预测性和正确性。
+- [MetaColloc: Optimization-Free PDE Solving via Meta-Learned Basis Functions](https://arxiv.org/abs/2605.12368)：元训练 dual-branch 网络形成通用神经基函数字典，测试时组装 collocation matrix 并用一次 least-squares 求解新 PDE。
+- [Achieving Gold-Medal-Level Olympiad Reasoning via Simple and Unified Scaling](https://arxiv.org/abs/2605.13301)：提出统一奥赛推理 recipe，结合 reverse-perplexity SFT、可验证奖励强化学习、proof-level RL 和推理时扩展，把后训练 backbone 转成严格的 IMO 与 IPhO 求解器。
 - [OProver](https://arxiv.org/abs/2605.17283)：Lean 4 证明框架，把失败尝试、compiler feedback 和已验证证明反馈进训练与修复循环。
-- [Olympiad-level formal mathematical reasoning with reinforcement learning](https://doi.org/10.1038/s41586-025-09833-y)：提出面向数学推理的模型侧方法，核心围绕 Olympiad-level formal mathematical reasoning with reinforcement learning。
+- [Distilling LLM Feedback for Lean Theorem Proving](https://arxiv.org/abs/2605.30861)：Feedback Distillation 先让策略匹配在语言模型特权反馈条件下产生的 token 级分布，再进行 GRPO；在 Lean4 证明上，它保持更高的轨迹熵和更好的 pass@k 扩展性，从该检查点初始化 GRPO 也优于单独使用任一方法。
+- [Self-Supervised Theorem Discovery in a Formal Axiomatic System](https://arxiv.org/abs/2606.28747)：该自监督算法只从公理和推理规则出发，交替执行证明搜索与有用定理抽取，并把发现的引理复用于后续搜索；它找到数万条形式化验证的结果，将这些引理作为 prompt 提供给 LLM 后还能提升证明性能。
+- [Contrastive Diffusion Model for Exploring Mathematical Expressions from Data](https://doi.org/10.1016/j.neunet.2026.109041)：Crossref 与 OpenAlex 目前仅提供题名元数据，数学表达式 diffusion 机制仍缺少摘要或出版方证据来支撑具体 TLDR。
+- [A Collaborative Optimization Framework for Efficient Long-Sequence Audio-Visual Understanding](https://doi.org/10.1016/j.eswa.2026.132367)：Crossref 与 OpenAlex 目前仅提供题名元数据；该条目看似优化相关，但缺少足够证据写出数学模型机制。
+- [Math Word Problems Solving: A Transformer-Based Approach with Mathematical Insights](https://doi.org/10.1109/iccece69169.2026.11399804)：在 GSM8K 上使用紧凑 Transformer，把 attention matrix 解释为线性代数中的逻辑依赖，并加入 verifier 提升解答一致性。
+- [Value-Regularized Dynamic Fine-Tuning for Mathematical Reasoning on Large Language Models](https://doi.org/10.1109/icaace69793.2026.11508669)：为 dynamic fine-tuning 加入轻量 actor-critic 扩展，用 value estimation 和 KL regularization 稳定数学推理优化。
+- [AlphaGeometry](https://www.nature.com/articles/s41586-023-06747-5)（[开源代码](https://github.com/google-deepmind/alphageometry)）：神经符号几何模型系统，把 learned premise generation 与可验证符号演绎结合。
+- [Olympiad-level formal mathematical reasoning with reinforcement learning](https://doi.org/10.1038/s41586-025-09833-y)：围绕 Lean 可验证证明扩展形式化定理证明强化学习，目标是奥赛级数学推理。
+- [GNS: Solving Plane Geometry Problems by Neural-Symbolic Reasoning with Multi-Modal LLMs](https://doi.org/10.1609/aaai.v39i23.34679)：结合神经符号推理与多模态大模型来求解平面几何问题。
+- [Solving olympiad geometry without human demonstrations](https://doi.org/10.1038/s41586-023-06747-5)：把神经 premise generator 与符号推理引擎结合，使几何证明能从合成数据中搜索获得，而不依赖人类示范。
+- [Deep Learning for Atmospheric Modeling: A Proof of Concept Using a Fourier Neural Operator on WRF Data to Accelerate Transient Wind Forecasting at Multiple Altitudes](https://doi.org/10.3390/atmos16040394)：在 WRF 风速数据上训练 Fourier Neural Operator，并用分高度模型和特征选择加速瞬态大气模拟。
+- [Mathematical discovery in the age of artificial intelligence](https://doi.org/10.1038/s41567-025-03042-0)：Nature Physics 元数据确认其为 AI 辅助数学发现参考，但 Crossref 与 OpenAlex 未提供可用于机制级 TLDR 的摘要。
+- [Using Large Language Models to Automate Annotation and Part-of-Math Tagging of Math Equations](https://doi.org/10.1007/978-3-031-66997-2_1)：Springer 与 OpenAlex 元数据确认其使用 LLM 做方程标注和 part-of-math tagging，但未提供摘要来支撑更具体机制。
+- [Discovery of Exact Equations for Integer Sequences](https://doi.org/10.3390/math12233745)：提出 Diofantos，把整数序列上的精确符号回归改写为线性丢番图方程求解，并重构 OEIS 公式。
+- [One-Shot Autoregressive Generation of Combinatorial Optimization Solutions Based on the Large Language Model Architecture and Learning Algorithms](https://doi.org/10.3390/ai6040066)：借鉴 LLM 的自回归 next-token 训练，把 TSP 求解转为逐步预测下一个节点，并用 DPO 微调生成近优巡回。
+- [DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search]()：结合证明助手反馈、强化学习和 MCTS 训练定理证明模型。

@@ -1,63 +1,1561 @@
 # 2.2.4 Model
 
+- [SQL-PaLM: Improved Large Language Model Adaptation for Text-to-SQL](https://arxiv.org/abs/2306.00739)：结合少样本文本到 SQL 提示、覆盖更广合成数据与数据库内容的指令微调，以及 Spider 和 BIRD 上基于执行反馈的测试时选择。
+- [Framework for evaluating code generation ability of large language models](https://doi.org/10.4218/etrij.2023-0357)：定义自动化 LeetCode 评测流程和更细粒度的通过率指标，用于比较提示细节、题目时间和难度变化下的生成程序。
+- [Federated Learning for Software Engineering: A Case Study of Code Clone Detection and Defect Prediction](https://doi.org/10.1109/tse.2023.3347898)：研究代码克隆检测和缺陷预测中的软件工程预测器联邦训练，使项目数据保持分散而不集中汇聚。
+- [Enhancing Sentiment Analysis with Logistic Regression and NLP: A Case Study of 2023 Amazon Software Reviews](https://doi.org/10.1109/isncc62547.2024.10759007)：将逻辑回归与 NLP 预处理用于 Amazon 软件评论情感分类，而不是提出代码生成模型。
+- [Text2Avatar: Text to 3d Human Avatar Generation with Codebook-Driven Body Controllable Attribute](https://arxiv.org/abs/2401.00711)：通过离散码本和预训练 3D 头像生成器产生的伪头像数据，从文本生成可控 3D 人体头像。
+- [Astraios: Parameter-Efficient Instruction Tuning Code Large Language Models](https://arxiv.org/abs/2401.00788)：发布 28 个 OctoCoder 变体，比较全量与参数高效微调方法在代码任务规模、LoRA 权衡、鲁棒性、安全性和验证损失上的表现。
+- [Learning in the Wild: Towards Leveraging Unlabeled Data for Effectively Tuning Pre-Trained Code Models](https://arxiv.org/abs/2401.01060)：使用 HINT 结合混合伪标签筛选与抗噪训练，在大规模无标注语料上调优预训练代码模型，用于摘要、缺陷检测和断言生成。
+- [De-Hallucinator: Iterative Grounding for LLM-Based Code Completion](https://arxiv.org/abs/2401.01701)：先根据初始补全检索项目专属 API 引用，再用逐步增强的上下文重新提示模型，以减少不存在 API 的代码幻觉。
+- [AST-T5: Structure-Aware Pretraining for Code Generation and Understanding](https://arxiv.org/abs/2401.03003)：用 AST 感知分段和 span corruption 预训练编码器-解码器代码模型，在不改 Transformer 架构的情况下保留程序结构。
+- [Leveraging Print Debugging to Improve Code Generation in Large Language Models](https://arxiv.org/abs/2401.05319)：提示 LLM 插入打印语句、检查执行日志并修复生成的 LeetCode 解答，形成推理时调试循环。
+- [CodePrompt: Improving Source Code-Related Classification with Knowledge Features through Prompt Learning](https://arxiv.org/abs/2401.05544)：在 CodeBERT 式表示上使用提示学习、多层知识特征和注意力机制完成源代码分类，避免增加重型任务专用层。
+- [Teaching Code LLMs to Use Autocompletion Tools in Repository-Level Code Generation](https://arxiv.org/abs/2401.06391)：提出 ToolGen，微调代码 LLM 生成触发标记，在仓库级代码生成过程中调用 IDE 自动补全工具。
+- [Between Lines of Code: Unraveling the Distinct Patterns of Machine and Human Programmers](https://arxiv.org/abs/2401.06461)：提出 DetectCodeGPT，通过用空格和换行扰动代码，利用词汇、语法和自然度差异检测机器生成代码。
+- [Code Security Vulnerability Repair Using Reinforcement Learning with Large Language Models](https://arxiv.org/abs/2401.07031)：用强化学习训练漏洞修复，奖励分别强调安全修复以及句法和语义功能的保持。
+- [Your Instructions Are Not Always Helpful: Assessing the Efficacy of Instruction Fine-tuning for Software Vulnerability Detection](https://arxiv.org/abs/2401.07466)：测试指令微调和自然语言提示能否提升漏洞检测，以及在真实脆弱代码上的跨语言泛化能力。
+- [KADEL: Knowledge-Aware Denoising Learning for Commit Message Generation](https://arxiv.org/abs/2401.08376)：从良好实践提交中学习提交信息知识，并用动态去噪在更嘈杂的提交数据上训练消息生成模型。
+- [Code Generation with AlphaCodium: From Prompt Engineering to Flow Engineering](https://arxiv.org/abs/2401.08500)：构建基于测试的多阶段竞赛编程流程，围绕题目规格、候选代码和生成测试进行迭代推理。
+- [BinaryAI: Binary Software Composition Analysis via Intelligent Binary Source Code Matching](https://arxiv.org/abs/2401.11161)：通过两阶段匹配同时利用句法与语义信号，做二进制到源码的软件组成分析以识别复用的第三方库。
+- [SpecLLM: Exploring Generation and Review of VLSI Design Specification with Large Language Model](https://arxiv.org/abs/2401.13266)：探索大语言模型生成和审查 VLSI 设计规格。
+- [Investigating the Efficacy of Large Language Models for Code Clone Detection](https://arxiv.org/abs/2401.13802)：评估 ChatGPT 零样本提示在基于 CodeNet 的 Java 和 Ruby 代码对上进行单语言与跨语言 Type-4 克隆检测的效果。
+- [DeepSeek-Coder: When the Large Language Model Meets Programming - The Rise of Code Intelligence](https://arxiv.org/abs/2401.14196)：训练代码专用语言模型，并分析大语言模型如何支撑编程智能。
+- [ZS4C: Zero-Shot Synthesis of Compilable Code for Incomplete Code Snippets Using LLMs](https://arxiv.org/abs/2401.14279)：为不完整 Stack Overflow 代码片段推断缺失导入，并利用编译器反馈修复导入和语法错误直到代码可编译。
+- [SparseCoder: Identifier-Aware Sparse Transformer for File- Level Code Summarization](https://arxiv.org/abs/2401.14727)：提出结合滑动窗口、全局注意力和标识符注意力的稀疏 Transformer，用于长文件级代码摘要，并发布 FILE-CS 数据集。
+- [How Beginning Programmers and Code LLMs (Mis)read Each Other](https://arxiv.org/abs/2401.15232)：报告 120 名初学程序员的受控研究，揭示他们与代码 LLM 在意图描述、正确性判断和提示修复中的错配。
+- [OMPGPT: A Generative Pre-trained Transformer Model for OpenMP](https://arxiv.org/abs/2401.16445)：构建较小的 OpenMP 领域专用代码模型，用于 HPC 并行程序生成，而不是依赖通用代码 LLM。
+- [ReGAL: Refactoring Programs to Discover Generalizable Abstractions](https://arxiv.org/abs/2401.16467)：通过保持执行行为的重构和对少量现有程序的迭代验证，学习可复用的程序抽象。
+- [IRCoCo: Immediate Rewards-Guided Deep Reinforcement Learning for Code Completion](https://arxiv.org/abs/2401.16637)：用深度强化学习和即时奖励微调代码补全语言模型，以减少暴露偏差带来的错误累积。
+- [Commit Messages in the Age of Large Language Models](https://arxiv.org/abs/2401.17622)：将 ChatGPT 基于代码变更生成提交信息的表现，与早期自动提交信息生成方法进行基准比较。
+- [Towards AI-Assisted Synthesis of Verified Dafny Methods](https://arxiv.org/abs/2402.00247)：适配预训练模型以合成 Dafny 方法和规格，输出必须通过验证器而不只是能够编译。
+- [DTS-SQL: Decomposed Text-to-SQL with Small Large Language Models](https://arxiv.org/abs/2402.01117)：将文本到 SQL 分解为两个微调阶段，使较小开放模型缩小与专有 LLM 的执行准确率差距。
+- [StepCoder: Improve Code Generation with Reinforcement Learning from Compiler Feedback](https://arxiv.org/abs/2402.01391)：在逐步强化学习框架中使用编译器反馈，引导长代码生成探索并避免训练不可用代码片段。
+- [Code-Switched Language Identification is Harder Than You Think](https://arxiv.org/abs/2402.01505)：将多语代码转换语言识别重构为句子级多标签标注任务，并使用轻量模型支持语料构建。
+- [Code Representation Learning At Scale](https://arxiv.org/abs/2402.01935)：通过结构感知掩码预训练扩展代码编码器，再使用难正例和难负例进行无监督对比学习。
+- [Improving the Learning of Code Review Successive Tasks with Cross-Task Knowledge Distillation](https://arxiv.org/abs/2402.02063)：通过跨任务知识蒸馏改进代码审查连续任务学习。
+- [Make Every Move Count: LLM-based High-Quality RTL Code Generation Using MCTS](https://arxiv.org/abs/2402.03289)：在 Transformer 解码中加入蒙特卡洛树搜索，优化 RTL 生成的可编译性、功能正确性以及功耗、性能和面积。
+- [BetterV: Controlled Verilog Generation with Discriminative Guidance](https://arxiv.org/abs/2402.03375)：用判别式引导改进可控 Verilog 生成，补充面向硬件描述语言的代码生成方法。
+- [Encoding Version History Context for Better Code Representation](https://arxiv.org/abs/2402.03773)：将版本历史上下文与源代码表示共同编码，提升 ASTNN 和 CodeBERT 上的克隆预测与代码分类。
+- [Automated Description Generation for Software Patches](https://arxiv.org/abs/2402.03805)：提出 PATCHEXPLAINER，将补丁描述生成视为机器翻译，并编码关键变更元素、历史上下文、语法惯例和相似补丁描述簇。
+- [Multi-line AI-Assisted Code Authoring](https://arxiv.org/abs/2402.04141)：描述 Meta CodeCompose 从单行建议转向多行建议的过程，包括降低延迟、稳定 UI 以及大规模开发者采用指标。
+- [IRFuzzer: Specialized Fuzzing for LLVM Backend Code Generation](https://arxiv.org/abs/2402.05256)：通过保持有效性的 IR 变异、匹配器表覆盖反馈和目标特定引导实现 LLVM 后端模糊测试，并报告数十个上游漏洞。
+- [Machine Learning Augmented Branch and Bound for Mixed Integer Linear Programming](https://arxiv.org/abs/2402.05501)：综述 MILP 求解器中的学习增强分支定界，涵盖分支、割平面、节点选择、求解器配置、表示和基准。
+- [Rocks Coding, Not Development: A Human-Centric, Experimental Evaluation of LLM-Supported SE Tasks](https://arxiv.org/abs/2402.05650)：开展 109 名参与者的受控研究，显示 ChatGPT 对简单编码的帮助大于对更广义软件开发任务的帮助。
+- [Do Large Code Models Understand Programming Concepts? A Black-box Approach](https://arxiv.org/abs/2402.05980)：提出 CACP 黑盒反事实测试套件，用于检查代码 LLM 是否理解数据流、控制流等编程概念。
+- [How to Refactor this Code? An Exploratory Study on Developer-ChatGPT Refactoring Conversations](https://arxiv.org/abs/2402.06013)：挖掘 17,913 段开发者与 ChatGPT 的对话，分类重构意图、请求模式和 ChatGPT 在重构工作中的回应。
+- [Unprecedented Code Change Automation: The Fusion of LLMs and Transformation by Example](https://arxiv.org/abs/2402.07138)：在 PyCraft 中使用 LLM 生成的语义变体扩展示例转换输入，并结合静态与动态检查自动化重复代码变更模式。
+- [Effort and Size Estimation in Software Projects with Large Language Model-based Intelligent Interfaces](https://arxiv.org/abs/2402.07158)：用 LLM 界面扩展面向 UI 的用户故事，补充数据源、界面和算法信息，使开发工作量估计更明确。
+- [Efficient and Universal Watermarking for LLM-Generated Code Detection](https://arxiv.org/abs/2402.07518)：提出 ACW，一种免训练代码水印方法，对生成代码施加保持语义且幂等的变换，并把这些变换作为隐式水印检测。
+- [Sentinels of the Stream: Unleashing Large Language Models for Dynamic Packet Classification in Software Defined Networks - Position Paper](https://arxiv.org/abs/2402.07950)：提出计划中的 Sentinel LLM，用于按威胁级别分类软件定义网络数据包内容，但论文仍是网络安全方向的初步立场稿。
+- [Grounding Data Science Code Generation with Input-Output Specifications](https://arxiv.org/abs/2402.08073)：用执行得到的输入输出规格作为反馈，在合成数据科学程序上微调代码 LLM，并面向 Arcade 和 DS-1000 任务评测。
+- [VerMCTS: Synthesizing Multi-Step Programs using a Verifier, a Large Language Model, and Tree Search](https://arxiv.org/abs/2402.08147)：用改造后的蒙特卡洛树搜索合成 Dafny 和 Coq 程序，在搜索中利用验证器检查部分程序，并按 token 预算下的 pass@T 评测。
+- [Generative AI for Pull Request Descriptions: Adoption, Impact, and Developer Interventions](https://arxiv.org/abs/2402.08967)：分析 18,256 个开源拉取请求中 Copilot 生成描述的使用情况，衡量采用率、评审时间、合并可能性和人工编辑。
+- [MPIrigen: MPI Code Generation through Domain-Specific Language Models](https://arxiv.org/abs/2402.09126)：用 HPCorpusMPI 和 MPI 专用预处理微调 MonoCoder，生成并行 C/C++ 程序，并评测函数、位置和参数准确率。
+- [DolphCoder: Echo-Locating Code Large Language Models with Diverse and Multi-Objective Instruction Tuning](https://arxiv.org/abs/2402.09136)：用多样化推理路径和代码评估目标对代码 LLM 做指令微调，使模型同时学习生成和评判解答。
+- [Automated Unit Test Improvement using Large Language Models at Meta](https://arxiv.org/abs/2402.09171)：介绍 Meta 的 TestGen-LLM 工业工具，它提出单元测试改进，并在部署前通过构建、可靠性和覆盖率检查过滤。
+- [Trained without My Consent: Detecting Code Inclusion in Language Models Trained on Code](https://arxiv.org/abs/2402.09299)：提出 TraWiC，一种模型无关的成员推断分类器，利用代码的句法和语义标识符判断代码是否进入 LLM 训练集。
+- [Pinning “Reflection” on the Agenda: Investigating Reflection in Human–LLM Co-Creation for Creative Coding](https://arxiv.org/abs/2402.09750)：研究 LLM 辅助创意编程中的反思过程，并发现分解子任务提示会诱发更多诊断性和生成性反思。
+- [Prompt Learning for Multi-Label Code Smell Detection: A Promising Approach](https://arxiv.org/abs/2402.10398)：使用 PromptSmell 的掩码词元提示学习和定制答案词表，将多标签代码异味检测转化为提示式分类。
+- [Improving Demonstration Diversity by Human-Free Fusing for Text-to-SQL](https://arxiv.org/abs/2402.10663)：提出 Fused，一种无需人工的迭代合成方法和多样性指标，用于构建更丰富的文本到 SQL 上下文学习示例池。
+- [LLMDFA: Analyzing Dataflow in Code with Large Language Models](https://arxiv.org/abs/2402.10754)：将数据流分析分解为多个 LLM 子任务，由模型合成辅助代码、调用解析器和定理证明器，并汇总函数级数据流事实。
+- [Knowledge-to-SQL: Enhancing SQL Generation with Data Expert LLM](https://arxiv.org/abs/2402.11517)：加入定制的数据专家 LLM，读取数据库表、补充缺失领域知识，并用偏好学习提升文本到 SQL 的鲁棒性。
+- [Can ChatGPT Support Developers? An Empirical Evaluation of Large Language Models for Code Generation](https://arxiv.org/abs/2402.11702)：分析 DevGPT 共享对话，发现 LLM 生成代码多用于示例和概念演示，而非可直接投产的代码。
+- [CodeArt: Better Code Models by Attention Regularization When Symbols Are Lacking](https://arxiv.org/abs/2402.11842)：用程序分析得到的依赖闭包和词元共现构造注意力掩码，从头预训练 BERT 式二进制代码模型处理符号缺失的 stripped 函数。
+- [Enhancing Large Language Models for Text-to-Testcase Generation](https://arxiv.org/abs/2402.11910)：在精选需求到测试用例数据上微调 GPT-3.5，并使用任务专用提示，按语法、需求对齐和覆盖率评测生成测试。
+- [EvoR: Evolving Retrieval for Code Generation](https://arxiv.org/abs/2402.12317)：同时演化检索查询和多源知识库，使检索增强代码生成能够适应新近更新的库和 API。
+- [Scaling Laws Behind Code Understanding Model](https://arxiv.org/abs/2402.12813)：通过改变数据、模型规模和算力检验代码理解的 scaling law，并在发现幂律误差下降后训练更大代码模型。
+- [Code Needs Comments: Enhancing Code LLMs with Comment Augmentation](https://arxiv.org/abs/2402.13013)：用生成注释增强预训练语料，并过滤弱代码注释对，以改善代码 LLM 中编程语言与自然语言的对齐。
+- [Do Machines and Humans Focus on Similar Code? Exploring Explainability of Large Language Models in Code Summarization](https://arxiv.org/abs/2402.14182)：用程序员眼动关注与 SHAP 词元重要性比较代码摘要解释性，报告人类与模型关注点对齐较弱。
+- [REPOFUSE: Repository-Level Code Completion with Fused Dual Context](https://arxiv.org/abs/2402.14323)：融合类比上下文和局部上下文来进行仓库级代码补全，在控制推理延迟的同时提升建议质量。
+- [RoboScript: Code Generation for Free-Form Manipulation Tasks across Real and Simulation](https://arxiv.org/abs/2402.14623)：提供可部署的机器人操作代码生成平台，将 LLM 规划与感知、运动规划、控制和真实机器人执行连接起来。
+- [OpenCodeInterpreter: Integrating Code Generation with Execution and Refinement](https://arxiv.org/abs/2402.14658)：发布基于 6.8 万轮 Code-Feedback 数据训练的开放代码模型，把代码生成、执行和迭代修正整合到同一系统中。
+- [Rethinking Software Engineering in the Foundation Model Era: A Curated Catalogue of Challenges in the Development of Trustworthy FMware](https://arxiv.org/abs/2402.15943)：梳理可信 FMware 开发中的十项工业软件工程挑战，包括提示、智能体、编排、幻觉、生产力、成本和风险。
+- [CodeS: Towards Building Open-source Language Models for Text-to-SQL](https://arxiv.org/abs/2402.16347)：构建 1B 到 15B 的开放文本到 SQL 模型，使用 SQL 中心语料增量预训练，并处理 schema linking 与快速领域适配。
+- [RoCoIns: Enhancing Robustness of Large Language Models through Code-Style Instructions](https://arxiv.org/abs/2402.16431)：用结构化代码风格指令替代歧义自然语言提示，并结合对抗上下文示例提升 LLM 在对抗输入下的鲁棒性。
+- [CLAP: Learning Transferable Binary Code Representations with Natural Language Supervision](https://arxiv.org/abs/2402.16928)：通过对比式语言-汇编预训练，将汇编代码与自然语言语义解释对齐，学习可迁移的二进制代码表示。
+- [Constrained Decoding for Fill-in-the-Middle Code Language Models via Efficient Left and Right Quotienting of Context-Sensitive Grammars](https://arxiv.org/abs/2402.17988)：把 Earley 解析扩展为左右语法商，使填中间代码生成能尽早拒绝语法无效的 Python 补全。
+- [CEBin: A Cost-Effective Framework for Large-Scale Binary Code Similarity Detection](https://arxiv.org/abs/2402.18818)：结合嵌入式候选缩小和比较式重排序，提高大规模二进制代码相似性检测的准确率和成本效率。
+- [StarCoder 2 and The Stack v2: The Next Generation](https://arxiv.org/abs/2402.19173)：基于 Software Heritage、拉取请求、notebook 和文档构建 The Stack v2，并用 3.3T 至 4.3T token 训练 3B、7B、15B StarCoder2 代码模型。
+- [Compositional API Recommendation for Library-Oriented Code Generation](https://arxiv.org/abs/2402.19431)：以组合方式推荐库 API，从而改进面向库使用的代码生成。
+- [The Counterfeit Conundrum: Can Code Language Models Grasp the Nuances of Their Incorrect Generations?](https://arxiv.org/abs/2402.19475)：研究高概率且能通过弱检查但实际错误的生成程序，显示代码 LM 常误判、误推执行结果并难以修复这些 counterfeit 样本。
+- [Exploring Data-Efficient Adaptation of Large Language Models for Code Generation](https://arxiv.org/abs/2403.00046)：提出 DEED，一种错误驱动的低数据适配方法，将模型错误作为特定场景代码生成的训练信号。
+- [Semi-Instruct: Bridging Natural-Instruct and Self-Instruct for Code Large Language Models](https://arxiv.org/abs/2403.00338)：将人工撰写的自然指令与自生成的指令代码对结合，构造半指令数据来提升代码 LLM 的程序合成能力。
+- [Comparing Large Language Models and Human Programmers for Generating Programming Code](https://arxiv.org/abs/2403.00894)：在提示、编程语言和任务难度维度比较七个 LLM 与人类程序员，显示 GPT-4 编程能力强但对提示敏感。
+- [LLaMoCo: Instruction Tuning of Large Language Models for Optimization Code Generation](https://arxiv.org/abs/2403.01131)：使用优化问题提示与有效求解器代码配对数据，以代码到代码格式对 LLM 做优化代码生成指令微调。
+- [ContrastRepair: Enhancing Conversation-Based Automated Program Repair via Contrastive Test Case Pairs](https://arxiv.org/abs/2403.01971)：将失败与通过测试用例组成对比反馈输入 LLM，改进对话式自动程序修复。
+- [Ivie: Lightweight Anchored Explanations of Just-Generated Code](https://arxiv.org/abs/2403.02491)：在刚生成的代码旁即时展示就地解释，加快开发者检查编程助手输出的速度。
+- [Design2Code: How Far Are We From Automating Front-End Engineering?](https://arxiv.org/abs/2403.03163)：整理 484 张真实网页截图及相关指标，用于评估将视觉设计转换为前端代码的多模态 LLM。
+- [Fuzzing BusyBox: Leveraging LLM and Crash Reuse for Embedded Bug Unearthing](https://arxiv.org/abs/2403.03897)：结合 LLM 引导输入生成和崩溃复用，对嵌入式设备使用的 BusyBox 版本进行模糊测试。
+- [RepoHyper: Better Context Retrieval Is All You Need for Repository-Level Code Completion](https://arxiv.org/abs/2403.06095)：构建仓库级语义图和上下文检索管线，在文件、类和层级化项目上下文上支持代码补全。
+- [Self-Adaptive, Requirements-Driven Autoscaling of Microservices](https://arxiv.org/abs/2403.08798)：提出 MS-RA，一个需求驱动的微服务副本和资源自动扩缩控制器，而非代码生成模型。
+- [Bugs in large language models generated code: an empirical study](https://arxiv.org/abs/2403.08937)：经验分析 LLM 生成程序中的缺陷模式，为代码生成模型可靠性提供风险证据，而不是提出新的训练配方。
+- [Unlocking the conversion of Web Screenshots into HTML Code with the WebSight Dataset](https://arxiv.org/abs/2403.09029)：提出 WebSight，一个包含 200 万组合成 HTML 与截图配对的数据集，用于训练和评估截图到代码 VLM。
+- [UniCode: Learning a Unified Codebook for Multimodal Large Language Models](https://arxiv.org/abs/2403.09072)：通过语言驱动的迭代训练和图像解压预训练，学习统一的视觉与文本码本以支持多模态生成。
+- [Repoformer: Selective Retrieval for Repository-Level Code Completion](https://arxiv.org/abs/2403.10059)：用自监督选择性检索训练代码语言模型，使其判断仓库上下文何时会帮助或损害代码补全。
+- [Data is all you need: Finetuning LLMs for chip design via an automated design-data augmentation framework](https://arxiv.org/abs/2403.11202)：自动生成 Verilog 和 EDA 脚本训练数据，再微调 LLM 以完成硬件描述代码生成。
+- [On the Effectiveness of Large Language Models for GitHub Workflows](https://arxiv.org/abs/2403.12446)：评估 LLM 生成 GitHub Actions 工作流的能力，包括 YAML 有效性、任务语义和 CI 自动化特有的安全问题。
+- [Enhancing Security of AI-Based Code Synthesis with GitHub Copilot via Cheap and Efficient Prompt-Engineering](https://arxiv.org/abs/2403.12671)：测试黑盒代码助手如 GitHub Copilot 的提示改写策略，以减少生成代码中的安全弱点。
+- [Enhancing Code Generation Performance of Smaller Models by Distilling the Reasoning Ability of LLMs](https://arxiv.org/abs/2403.13271)：将 LLM 生成的解题计划蒸馏到较小代码模型，使其无需部署大型教师模型也能利用推理轨迹解决编程题。
+- [On the Generalizability of Deep Learning-based Code Completion Across Programming Language Versions](https://arxiv.org/abs/2403.15149)：评估 CodeT5 式代码补全在九个 Java 版本之间随语法和 API 演化而保持泛化的能力。
+- [Just another copy and paste? Comparing the security vulnerabilities of ChatGPT generated code and StackOverflow answers](https://arxiv.org/abs/2403.15600)：比较 ChatGPT 生成代码片段与 StackOverflow 答案中的安全漏洞，以指导开发者在代码来源之间做选择。
+- [DeepFWI: Identifying Bug-Sensitive Warnings With Multi-Modal Code-Warning Semantics](https://arxiv.org/abs/2403.16032)：结合源代码语义和静态警告信息学习细粒度的缺陷敏感警告识别，而不是依赖手工警告特征。
+- [Can Language Models Pretend Solvers? Logic Code Simulation with LLMs](https://arxiv.org/abs/2403.16097)：评估 LLM 能否通过预测逻辑程序输出模拟逻辑求解器执行，而不是把程序翻译给外部求解器。
+- [CoverUp: Effective High Coverage Test Generation for Python](https://arxiv.org/abs/2403.16218)：用覆盖率分析、代码上下文和反馈迭代提示 LLM，为 Python 生成更高行覆盖率和分支覆盖率的回归测试。
+- [Engineering Safety Requirements for Autonomous Driving with Large Language Models](https://arxiv.org/abs/2403.16289)：使用 LLM 提示管线细化、分解和审查自动驾驶安全需求，以检查冗余与矛盾。
+- [Reasoning Runtime Behavior of a Program with LLM: How Far are We?](https://arxiv.org/abs/2403.16437)：评估 LLM 对程序运行时行为的推理能力，揭示代码理解模型在执行状态预测上的不可靠之处。
+- [CodeS: Natural Language to Code Repository via Multi-Layer Sketch](https://arxiv.org/abs/2403.16443)：用多层草图连接自然语言需求与仓库级代码生成，覆盖项目结构、模块和实现细节。
+- [Investigating the readability of test code](https://arxiv.org/abs/2403.16639)：回顾学术和灰色文献中的测试代码可读性，并通过带从业者语境的受控实验验证相关因素。
+- [All Artificial, Less Intelligence: GenAI through the Lens of Formal Verification](https://arxiv.org/abs/2403.16750)：将形式验证用于 LLM 生成的 SystemVerilog 硬件设计，并标注模型生成数据集中的常见弱点枚举漏洞。
+- [Iterative Refinement of Project-Level Code Context for Precise Code Generation with Compiler Feedback](https://arxiv.org/abs/2403.16792)：利用编译器反馈迭代选择和细化项目级上下文，使代码生成能够修复缺失依赖和 API 不匹配。
+- [CYCLE: Learning to Self-Refine the Code Generation](https://arxiv.org/abs/2403.18746)：训练代码模型生成、批判并修订自己的解答，使自我精炼成为学习到的生成行为，而不只是提示技巧。
+- [PURPLE: Making a Large Language Model a Better SQL Writer](https://arxiv.org/abs/2403.20014)：通过教模型利用数据库证据和查询反馈修订 SQL，提升文本到 SQL 生成。
+- [Aurora-M: Open Source Continual Pre-training for Multilingual Language and Code](https://arxiv.org/abs/2404.00399)：对开放多语言语言与代码模型进行持续预训练，使代码能力与更广泛的多语言能力共同保持。
+- [The Larger the Better? Improved LLM Code-Generation via Budget Reallocation](https://arxiv.org/abs/2404.00725)：在固定推理预算内重新分配采样与选择开销，在不训练更大模型的情况下提升代码生成通过率。
+- [Stable Code Technical Report](https://arxiv.org/abs/2404.01226)：说明 Stable Code 面向开放软件开发语言模型的代码专门预训练和指令微调配方。
+- [Automated User Story Generation with Test Case Specification Using Large Language Model](https://arxiv.org/abs/2404.01558)：同时生成用户故事和测试用例规格，使需求工件配有可检查的验收行为。
+- [Understanding How CodeLLMs (Mis)Predict Types with Activation Steering](https://arxiv.org/abs/2404.01903)：用激活 steering 分析并改变代码 LLM 预测静态类型的方式，揭示类型错误背后的内部信号。
+- [Towards Better Graph Neural Network-Based Fault Localization through Enhanced Code Representation](https://arxiv.org/abs/2404.04496)：用更丰富的代码表示增强图神经故障定位模型，从而更准确排序可疑程序位置。
+- [Advancing Code Coverage: Incorporating Program Analysis with Large Language Models](https://arxiv.org/abs/2404.04966)：将程序分析信号与 LLM 生成测试结合，针对未覆盖分支提升代码覆盖率。
+- [The Fact Selection Problem in LLM-Based Program Repair](https://arxiv.org/abs/2404.05520)：研究应向 LLM 修复系统提供哪些程序事实，使补丁利用相关执行、测试和代码上下文证据。
+- [Behavior Trees Enable Structured Programming of Language Model Agents](https://arxiv.org/abs/2404.07439)：将语言模型智能体行为表示为行为树，为开发者组合和调试智能体程序提供结构化控制形式。
+- [A Multi-Expert Large Language Model Architecture for Verilog Code Generation](https://arxiv.org/abs/2404.08029)：设计面向 Verilog 代码生成的多专家大语言模型架构。
+- [Revisiting Code Similarity Evaluation with Abstract Syntax Tree Edit Distance](https://arxiv.org/abs/2404.08817)：用 AST 编辑距离重新审视代码相似度评估，揭示嵌入分数何时会忽略结构性程序差异。
+- [Aligning the Objective of LLM-Based Program Repair](https://arxiv.org/abs/2404.08877)：将 LLM 程序修复目标与测试通过和补丁合理性标准对齐，使生成修复优化真实修复目标。
+- [Test Code Generation for Telecom Software Systems Using Two-Stage Generative Model](https://arxiv.org/abs/2404.09249)：用两阶段生成模型根据领域需求和实现上下文生成电信软件测试。
+- [Generative transformations and patterns in LLM-native approaches for software verification and falsification](https://arxiv.org/abs/2404.09384)：总结 LLM 原生生成验证工件和证伪候选软件行为时反复出现的转换模式。
+- [How Far Have We Gone in Binary Code Understanding Using Large Language Models](https://arxiv.org/abs/2404.09836)：在二进制代码理解任务上评估 LLM，衡量源代码知识向编译后程序的迁移程度。
+- [LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs](https://arxiv.org/abs/2404.10304)：为看似合理但可能错误的程序生成测试，用 LLM 暴露隐藏缺陷而不只提升覆盖率。
+- [A Deep Dive into Large Language Models for Automated Bug Localization and Repair](https://arxiv.org/abs/2404.11595)：分析 LLM 如何定位缺陷和合成修复，将故障定位质量与补丁生成质量分开考察。
+- [Exploring and Unleashing the Power of Large Language Models in Automated Code Translation](https://arxiv.org/abs/2404.14646)：研究大语言模型在自动代码翻译中的使用方式。
+- [NExT: Teaching Large Language Models to Reason about Code Execution](https://arxiv.org/abs/2404.14662)：用执行轨迹推理训练 LLM，使其在生成或判断代码前预测中间程序状态。
+- [Revisiting Unnaturalness for Automated Program Repair in the Era of Large Language Models](https://arxiv.org/abs/2404.15236)：重新检验代码非自然性作为 LLM 程序修复信号的价值，测试语言模型似然是否仍有助于定位修复点和补丁。
+- [XFT: Unlocking the Power of Code Instruction Tuning by Simply Merging Upcycled Mixture-of-Experts](https://arxiv.org/abs/2404.15247)：通过合并 upcycled mixture-of-experts 模型增强代码指令微调，而无需从头训练代码专用模型。
+- [AI Coders Are among Us: Rethinking Programming Language Grammar towards Efficient Code Generation](https://arxiv.org/abs/2404.16333)：调整编程语言语法选择，使 AI 编码模型生成代码更加高效。
+- [How secure is AI-generated code: a large-scale comparison of large language models](https://arxiv.org/abs/2404.18353)：大规模比较主流 LLM 生成代码的安全性，衡量不同模型和编程任务中的漏洞模式。
+- [VERT: Verified Equivalent Rust Transpilation with Large Language Models as Few-Shot Learners](https://arxiv.org/abs/2404.18852)：将大语言模型作为少样本学习器，用于验证等价的 Rust 转译。
+- [Performance-Aligned LLMs for Generating Fast HPC Code](https://arxiv.org/abs/2404.18864)：将代码生成与性能反馈对齐，使 LLM 生成的 HPC 程序同时优化运行速度和功能正确性。
+- [Calibration of Large Language Models on Code Summarization](https://arxiv.org/abs/2404.19318)：衡量并改进 LLM 代码摘要的置信度校准，使摘要概率更能反映正确性。
+- [Exploring Multi-Lingual Bias of Large Code Models in Code Generation](https://arxiv.org/abs/2404.19368)：跨编程语言测试代码 LLM，识别其对高资源语言的生成偏置和不均衡正确率。
+- [Assessing LLMs in Malicious Code Deobfuscation of Real-world Malware Campaigns](https://arxiv.org/abs/2404.19715)：在真实恶意软件活动的去混淆任务上评估 LLM，关注安全代码理解而非普通编码任务。
+- [Constrained Decoding for Secure Code Generation](https://arxiv.org/abs/2405.00218)：在解码阶段施加安全约束，使代码生成在输出候选之前避开不安全 API 和漏洞模式。
+- [CodeHalu: Code Hallucinations in LLMs Driven by Execution-based Verification](https://arxiv.org/abs/2405.00253)：用基于执行的验证刻画代码幻觉，包括不存在的 API、错误依赖和语义无效片段。
+- [CC2Vec: Combining Typed Tokens with Contrastive Learning for Effective Code Clone Detection](https://arxiv.org/abs/2405.00428)：将类型化词元表示与对比学习结合，改进代码克隆嵌入。
+- [Prioritizing Software Requirements Using Large Language Models](https://arxiv.org/abs/2405.01564)：用 LLM 对软件需求排序，将利益相关者文本转化为需求优先级信号。
+- [CodeFort: Robust Training for Code Generation Models](https://arxiv.org/abs/2405.01567)：提出代码生成模型的鲁棒训练方法。
+- [Class-Level Code Generation from Natural Language Using Iterative, Tool-Enhanced Reasoning over Repository](https://arxiv.org/abs/2405.01573)：通过对仓库上下文和工具反馈进行迭代推理，从自然语言生成类级代码。
+- [On the Limitations of Embedding Based Methods for Measuring Functional Correctness for Code Generation](https://arxiv.org/abs/2405.01580)：指出嵌入相似度并不能可靠衡量代码生成功能正确性，因为文本接近的程序行为可能不同。
+- [Automated Control Logic Test Case Generation using Large Language Models](https://arxiv.org/abs/2405.01874)：根据结构化需求和预期行为，用 LLM 为控制逻辑软件生成测试用例。
+- [Automatic Programming: Large Language Models and Beyond](https://arxiv.org/abs/2405.02213)：围绕 LLM 代码合成讨论自动编程，并与搜索、验证和程序语言技术形成对照。
+- [TOGLL: Correct and Strong Test Oracle Generation with LLMS](https://arxiv.org/abs/2405.03786)：用 LLM 生成测试 oracle，并按正确性和故障检测强度进行筛选。
+- [Sketch Then Generate: Providing Incremental User Feedback and Guiding LLM Code Generation through Language-Oriented Code Sketches](https://arxiv.org/abs/2405.03998)：用面向语言的代码草图指导生成，使用户能在完整代码输出前提供增量结构反馈。
+- [Refining Joint Text and Source Code Embeddings for Retrieval Task with Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2405.04126)：通过参数高效微调对齐文本和源代码嵌入，用于检索任务。
+- [Granite Code Models: A Family of Open Foundation Models for Code Intelligence](https://arxiv.org/abs/2405.04324)：发布 IBM Granite Code 基础模型，面向多种规模的代码生成、解释、修复和翻译训练。
+- [Lessons from the Use of Natural Language Inference (NLI) in Requirements Engineering Tasks](https://arxiv.org/abs/2405.05135)：分析 NLI 式模型在需求工程中的一致性检查、冲突检测和可追踪性等任务上的作用边界。
+- [MCS-SQL: Leveraging Multiple Prompts and Multiple-Choice Selection For Text-to-SQL Generation](https://arxiv.org/abs/2405.07467)：使用多个提示和多选式选择，从 LLM 生成结果中挑选更可靠的 SQL 候选。
+- [Prompt-Based Code Completion via Multi-Retrieval Augmented Generation](https://arxiv.org/abs/2405.07530)：检索多种代码上下文并注入提示，用于增强代码补全。
+- [MuMath-Code: Combining Tool-Use Large Language Models with Multi-perspective Data Augmentation for Mathematical Reasoning](https://arxiv.org/abs/2405.07551)：将代码导向的工具使用与多视角数据增强结合，强化数学推理模型。
+- [Full Line Code Completion: Bringing AI to Desktop](https://arxiv.org/abs/2405.08704)：构建桌面 IDE 可用的整行代码补全，在建议质量、延迟和本地部署约束之间取平衡。
+- [SQL-to-Schema Enhances Schema Linking in Text-to-SQL](https://arxiv.org/abs/2405.09593)：生成类 SQL 的 schema 描述，在文本到 SQL 解码前改进 schema linking。
+- [Large Language Models for Automated Web-Form-Test Generation: An Empirical Study](https://arxiv.org/abs/2405.09965)：实证评估 LLM 生成自动化测试来填写和验证网页表单的能力。
+- [IntelliExplain: Enhancing Interactive Code Generation through Natural Language Explanations for Non-Professional Programmers](https://arxiv.org/abs/2405.10250)：为交互式代码生成加入自然语言解释，使非专业程序员能够检查并引导生成代码。
+- [Natural Is the Best: Model-Agnostic Code Simplification for Pre-trained Large Language Models](https://arxiv.org/abs/2405.11196)：在输入预训练 LLM 前将代码简化为更自然的形式，从而无需改模型即可提升下游代码理解。
+- [MHPP: Exploring the Capabilities and Limitations of Language Models Beyond Basic Code Generation](https://arxiv.org/abs/2405.11430)：将代码模型评估扩展到基础生成之外，覆盖需要更深推理和环境理解的编程任务。
+- [A Transformer-Based Approach for Smart Invocation of Automatic Code Completion](https://arxiv.org/abs/2405.14753)：用 Transformer 分类器判断何时应触发自动代码补全建议。
+- [AutoCoder: Enhancing Code Large Language Model with AIEV-Instruct](https://arxiv.org/abs/2405.14906)：用 AIEV-Instruct 数据微调代码 LLM，提升指令遵循和代码生成可靠性。
+- [AnalogCoder: Analog Circuit Design via Training-Free Code Generation](https://arxiv.org/abs/2405.14918)：以免训练的 LLM 代码生成产生模拟电路设计脚本和候选电路实现。
+- [EffiLearner: Enhancing Efficiency of Generated Code via Self-Optimization](https://arxiv.org/abs/2405.15189)：让模型迭代优化自己的解答，从而提升生成代码的效率。
+- [Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation](https://arxiv.org/abs/2405.15307)：在 SQL 生成前对齐 schema 和问题表示，减少幻觉列、表和查询结构。
+- [Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search](https://arxiv.org/abs/2405.15383)：用蒙特卡洛树搜索引导 LLM 生成可预测程序行为的代码世界模型。
+- [OMNI-EPIC: Open-endedness via Models of human Notions of Interestingness with Environments Programmed in Code](https://arxiv.org/abs/2405.15568)：利用代码编写的环境和学习得到的趣味性模型驱动开放式生成。
+- [GECKO: Generative Language Model for English, Code and Korean](https://arxiv.org/abs/2405.15640)：训练同时覆盖英语、代码和韩语的生成模型，使代码能力与双语自然语言能力共存。
+- [Model Cascading for Code: A Cascaded Black-Box Multi-Model Framework for Cost-Efficient Code Completion with Self-Testing](https://arxiv.org/abs/2405.15842)：通过自测试级联廉价和强力黑盒模型，使代码补全只在必要时调用昂贵模型。
+- [HYSYNTH: Context-Free LLM Approximation for Guiding Program Synthesis](https://arxiv.org/abs/2405.15880)：用上下文无关信号近似 LLM 指导，更高效地引导程序合成。
+- [CHESS: Contextual Harnessing for Efficient SQL Synthesis](https://arxiv.org/abs/2405.16755)：围绕上下文 schema 证据和候选剪枝构建文本到 SQL 合成，以提升 SQL 生成效率。
+- [ReflectionCoder: Learning from Reflection Sequence for Enhanced One-off Code Generation](https://arxiv.org/abs/2405.17057)：用反思序列训练模型，使一次性代码生成内化批判和修订行为。
+- [SpecTra: Enhancing the Code Translation Ability of Language Models by Generating Multi-Modal Specifications](https://arxiv.org/abs/2405.18574)：通过生成多模态规格说明增强大模型代码翻译能力。
+- [Training LLMs to Better Self-Debug and Explain Code](https://arxiv.org/abs/2405.18649)：微调 LLM 生成自我调试轨迹和解释，帮助定位并修复代码错误。
+- [Large Language Models for Code Summarization](https://arxiv.org/abs/2405.19032)：研究基于 LLM 的代码摘要，比较提示、模型和输出质量因素。
+- [AlchemistCoder: Harmonizing and Eliciting Code Capability by Hindsight Tuning on Multi-source Data](https://arxiv.org/abs/2405.19265)：在多源代码数据上使用 hindsight tuning，激发并协调 LLM 的代码能力。
+- [Qiskit Code Assistant: Training LLMs for generating Quantum Computing Code](https://arxiv.org/abs/2405.19495)：训练面向 Qiskit 的代码助手，使 LLM 能用库专门知识生成量子计算程序。
+- [Source Code Foundation Models are Transferable Binary Analysis Knowledge Bases](https://arxiv.org/abs/2405.19581)：表明源代码基础模型可以向二进制分析任务迁移有用表示。
+- [Dataflow-Guided Retrieval Augmentation for Repository-Level Code Completion](https://arxiv.org/abs/2405.19782)：沿数据流边检索仓库上下文，为代码补全提供相关定义和用法。
+- [From Symbolic Tasks to Code Generation: Diversification Yields Better Task Performers](https://arxiv.org/abs/2405.19787)：多样化符号任务数据并迁移到代码生成，通过更广泛的类程序监督提升任务表现。
+- [Divide-and-Conquer Meets Consensus: Unleashing the Power of Functions in Code Generation](https://arxiv.org/abs/2405.20092)：将代码生成分解为函数级子问题，并用候选共识组合出更强解答。
+- [Unveiling the Impact of Coding Data Instruction Fine-Tuning on Large Language Models Reasoning](https://arxiv.org/abs/2405.20535)：衡量代码数据指令微调如何改变 LLM 的更广泛推理行为。
+- [Towards LLM-Powered Verilog RTL Assistant: Self-Verification and Self-Correction](https://arxiv.org/abs/2406.00115)：构建 Verilog RTL 助手，通过反馈验证生成的硬件代码并纠正失败。
+- [Hybrid Automated Program Repair by Combining Large Language Models and Program Analysis](https://arxiv.org/abs/2406.00992)：将 LLM 补丁生成与程序分析约束结合，改进自动程序修复。
+- [SemCoder: Training Code Language Models with Comprehensive Semantics](https://arxiv.org/abs/2406.01006)：用全面语义信息训练代码语言模型，提升代码理解与生成能力。
+- [Verified Code Transpilation with LLMs](https://arxiv.org/abs/2406.03003)：用 LLM 进行代码转译，并检查源代码与译后代码之间的语义等价性。
+- [CATCODER: Repository-Level Code Generation with Relevant Code and Type Context](https://arxiv.org/abs/2406.03283)：在相关代码和类型上下文上条件化仓库级生成，使编辑结果贴合周围 API。
+- [Synthetic Programming Elicitation for Text-to-Code in Very Low-Resource Programming and Formal Languages](https://arxiv.org/abs/2406.03636)：诱导合成编程样例，为低资源编程语言和形式语言训练文本到代码模型。
+- [VerilogReader: LLM-Aided Hardware Test Generation](https://arxiv.org/abs/2406.04373)：用 LLM 阅读 Verilog 设计并生成硬件测试，以覆盖预期 RTL 行为。
+- [Learning Task Decomposition to Assist Humans in Competitive Programming](https://arxiv.org/abs/2406.04604)：学习竞赛编程题的任务分解，在编码前向人类提供结构化子任务。
+- [Morescient GAI for Software Engineering](https://arxiv.org/abs/2406.04710)：提出更严谨的软件工程生成式 AI 方法，强调证据、可追踪性和任务适配。
+- [RAG-Enhanced Commit Message Generation](https://arxiv.org/abs/2406.05514)：在生成提交信息前检索相关变更上下文，比仅依赖 diff 的生成更具体。
+- [$\textbf{PLUM}$: Improving Code LMs with Execution-Guided On-Policy Preference Learning Driven By Synthetic Test Cases](https://arxiv.org/abs/2406.06887)：用执行引导的 on-policy 偏好学习微调代码 LM，并用合成测试奖励正确程序。
+- [GraphCoder: Enhancing Repository-Level Code Completion via Code Context Graph-based Retrieval and Language Model](https://arxiv.org/abs/2406.07003)：构建代码上下文图进行仓库检索，再将图选择的上下文输入语言模型完成补全。
+- [VersiCode: Towards Version-controllable Code Generation](https://arxiv.org/abs/2406.07411)：以目标库或语言版本为条件生成代码，使输出匹配特定版本 API。
+- [UICoder: Finetuning Large Language Models to Generate User Interface Code through Automated Feedback](https://arxiv.org/abs/2406.07739)：利用渲染界面的自动反馈微调 LLM，用于生成 UI 代码。
+- [FAIL: Analyzing Software Failures from the News Using LLMs](https://arxiv.org/abs/2406.08221)：用 LLM 从新闻报道中抽取和分类软件故障信息，用于故障分析。
+- [FuzzAug: Data Augmentation by Coverage-guided Fuzzing for Neural Test Generation](https://arxiv.org/abs/2406.08665)：用覆盖率引导模糊测试样例增强神经测试生成训练数据。
+- [Towards Understanding the Characteristics of Code Generation Errors Made by Large Language Models](https://arxiv.org/abs/2406.08731)：分类 LLM 代码生成错误，区分语法、语义、API 和推理失败模式。
+- [STALL+: Boosting LLM-based Repository-level Code Completion with Static Analysis](https://arxiv.org/abs/2406.10018)：将 LLM 与静态分析结合，提升仓库级代码补全。
+- [We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs](https://arxiv.org/abs/2406.10279)：分析代码生成模型幻觉出的软件包名称，以及建议不存在依赖给生态带来的风险。
+- [Unlock the Correlation between Supervised Fine-Tuning and Reinforcement Learning in Training Code Large Language Models](https://arxiv.org/abs/2406.10305)：研究代码大模型训练中监督微调与强化学习的关联，包括不经过 SFT 阶段时 RL 是否仍能带来泛化能力。
+- [WaDec: Decompiling WebAssembly Using Large Language Model](https://arxiv.org/abs/2406.11346)：用 wat 到 C 片段微调 LLM，将 WebAssembly 反编译为更可读的源码式表示，并在可重新编译性和输出相似度上超过既有 Wasm 反编译器。
+- [CodeGemma: Open Code Models Based on Gemma](https://arxiv.org/abs/2406.11409)：发布基于 Gemma 的开放代码模型，包括 7B 预训练和指令微调变体，以及面向低延迟代码填充的 2B 补全模型。
+- [DocCGen: Document-based Controlled Code Generation](https://arxiv.org/abs/2406.11925)：将结构化 DSL 生成拆为文档检索与代码生成两步，利用企业 DSL 文档控制 YAML 和 JSON 等格式的输出。
+- [On the Impacts of Contexts on Repository-Level Code Generation](https://arxiv.org/abs/2406.11927)：提出 RepoExec、依赖使用指令微调数据集和 Dependency Invocation Rate，用于研究可执行性、测试和跨文件上下文利用。
+- [DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence](https://arxiv.org/abs/2406.11931)：以更强的代码语言模型族扩展开源代码智能能力。
+- [A Problem-Oriented Perspective and Anchor Verification for Code Optimization](https://arxiv.org/abs/2406.11935)：按共享编程题重构代码优化样本对，并加入 anchor verification，在运行速度提升和正确性损失之间做约束。
+- [Should AI Optimize Your Code? A Comparative Study of Current Large Language Models Versus Classical Optimizing Compilers](https://arxiv.org/abs/2406.12146)：在一组代码优化模式基准上比较 LLM 与传统优化编译器，分析 AI 驱动代码优化仍然薄弱的场景。
+- [Towards Better Code Understanding in Decoder-Only Models with Contrastive Learning](https://arxiv.org/abs/2406.12326)：用 CL4D 对比学习把 decoder-only 代码生成模型适配到代码搜索和克隆检测，强化语义相近代码表示的对齐。
+- [Code-Optimise: Self-Generated Preference Data for Correctness and Efficiency](https://arxiv.org/abs/2406.12502)：用自生成偏好数据同时标注正确性与运行时间，训练代码模型在保持通过率的同时生成更快、更短的解法。
+- [Prose-to-P4: Leveraging High Level Languages](https://arxiv.org/abs/2406.13679)：将从自然语言需求生成网络代码建模为 LLM 到高级网络语言的路径，再由这些语言编译到 P4 或 NPL。
+- [Investigating the Transferability of Code Repair for Low-Resource Programming Languages](https://arxiv.org/abs/2406.14867)：研究蒸馏式迭代代码修复在高资源和低资源语言间的迁移，显示修复收益依赖语言且与推理能力相关性较弱。
+- [Bug In the Code Stack: Can LLMs Find Bugs in Large Python Code Stacks](https://arxiv.org/abs/2406.15325)：提出 BICS 代码版 Needle-in-a-Haystack 基准，测试 LLM 能否在大型 Python 代码栈中定位简单语法错误。
+- [On Giant's Shoulders: Effortless Weak to Strong by Dynamic Logits Fusion](https://arxiv.org/abs/2406.15480)：通过动态 logits 融合把多个小型微调模型的任务知识迁移到大模型，避免再次训练大模型。
+- [UniCoder: Scaling Code Large Language Model via Universal Code](https://arxiv.org/abs/2406.16441)：提出 UniCode 这种程序式中间推理表示及配套指令数据，帮助代码 LLM 衔接自然语言推理与可执行代码。
+- [An Empirical Study of Unit Test Generation with Large Language Models](https://arxiv.org/abs/2406.18181)：在 17 个 Java 项目和多种提示设置下评估开源 LLM 的单元测试生成能力，揭示提示设计如何影响测试质量。
+- [Hierarchical Context Pruning: Optimizing Real-World Code Completion with Repository-Level Pretrained Code LLMs](https://arxiv.org/abs/2406.18294)：提出仓库级代码补全的层次化上下文剪枝，在保留依赖结构的同时从提示中移除不必要的实现细节。
+- [Towards View-based Development of Quantum Software](https://arxiv.org/abs/2406.18363)：围绕 Single Underlying Model 和量子 IDE 提出视图化量子软件开发流程，更像相邻的软件工程方法而非代码模型训练论文。
+- [LLM Critics Help Catch LLM Bugs](https://arxiv.org/abs/2407.00215)：用 LLM critic 捕捉 LLM 错误，为软件 agent 补充模型侧验证信号。
+- [Beyond Functional Correctness: Investigating Coding Style Inconsistencies in Large Language Models](https://arxiv.org/abs/2407.00456)：评估通过测试的 LLM 生成代码是否仍违背人类编码风格约定，将风格不一致与功能正确性分开考察。
+- [Coding for Intelligence from the Perspective of Category](https://arxiv.org/abs/2407.01017)：用范畴论视角连接编码、概率建模与智能，将编码理解为服务模型学习的表示机制。
+- [TCSR-SQL: Towards Table Content-aware Text-to-SQL with Self-retrieval](https://arxiv.org/abs/2407.01183)：在 text-to-SQL 中加入自检索：模型抽取内容关键词，用种子 SQL 模糊搜索数据库，并把确认的列名和值编码进生成过程。
+- [Esale: Enhancing Code-Summary Alignment Learning for Source Code Summarization](https://arxiv.org/abs/2407.01646)：通过显式学习代码词元与自然语言摘要之间的对齐关系，改进源代码摘要生成。
+- [INDICT: Code Generation with Internal Dialogues of Critiques for Both Security and Helpfulness](https://arxiv.org/abs/2407.02518)：用安全 critic 与有用性 critic 组成内部对话，并结合代码片段和工具，引导代码生成避开看似有用但不安全的答案。
+- [Meta Large Language Model Compiler: Foundation Models of Compiler Optimization](https://arxiv.org/abs/2407.02524)：发布 LLM Compiler 模型，在 LLVM IR 与汇编上训练，并通过指令微调理解编译器行为和代码优化任务。
+- [Let the Code LLM Edit Itself When You Edit the Code](https://arxiv.org/abs/2407.03157)：提出 Positional Integrity Encoding，在开发者实时改代码后更新代码 LLM 的 KV cache，避免插入、删除和多点编辑任务中的全量重算。
+- [An Empirical Study on Capability of Large Language Models in Understanding Code Semantics](https://arxiv.org/abs/2407.03611)：提出 EMPICA，通过保持语义和改变语义的代码变换，检验代码 LLM 是否真正理解程序语义。
+- [AutoBench: Automatic Testbench Generation and Evaluation Using LLMs for HDL Design](https://arxiv.org/abs/2407.03891)：构建 AutoBench，用 LLM 生成带混合结构和自检查逻辑的 HDL testbench，用于仿真式硬件验证。
+- [An Adaptive Language-Agnostic Pruning Method for Greener Language Models for Code](https://arxiv.org/abs/2407.04147)：提出 ALPINE 自适应语言无关剪枝层，压缩代码模型输入序列，以降低缺陷预测和克隆检测任务的计算开销。
+- [Code Hallucination](https://arxiv.org/abs/2407.04831)：划分 LLM 代码幻觉类型，并提出 HallTrigger 这种黑盒提示技术，利用模型动态属性诱发幻觉代码。
+- [Code Less, Align More: Efficient LLM Fine-tuning for Code Generation with Data Pruning](https://arxiv.org/abs/2407.05040)：证明基于聚类和指标的数据剪枝可以移除大部分合成代码微调数据，同时基本保持甚至提升代码生成准确性。
+- [InverseCoder: Unleashing the Power of Instruction-Tuned Code LLMs with Inverse-Instruct](https://arxiv.org/abs/2407.05700)：用 Inverse-Instruct 让微调后的代码 LLM 为既有代码答案生成新指令，从而无需闭源教师模型即可扩充指令微调数据。
+- [Rectifier: Code Translation with Corrector via LLMs](https://arxiv.org/abs/2407.07472)：通过 LLM 驱动的 corrector 阶段改进代码翻译。
+- [LLaVA-NeXT-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models](https://arxiv.org/abs/2407.07895)：训练面向交错图像、视频和 3D 理解的多模态模型，与软件开发的关系偏离代码专用模型轴。
+- [Source Code Summarization in the Era of Large Language Models](https://arxiv.org/abs/2407.07959)：系统研究基于 LLM 的代码摘要，比较自动评测方法、提示策略和微调选择，并与人工判断对齐。
+- [Foundation Model Engineering: Engineering Foundation Models Just as Engineering Software](https://arxiv.org/abs/2407.08176)：提出基础模型工程视角，把数据和模型视为软件工件，强调声明式接口和自动化管理方法。
+- [DeepCodeProbe: Towards Understanding What Models Trained on Code Learn](https://arxiv.org/abs/2407.08890)：用 DeepCodeProbe 探查用于克隆检测、代码摘要和注释生成的模型学到了哪些语法与表示特征。
+- [Benchmarking Language Model Creativity: A Case Study on Code Generation](https://arxiv.org/abs/2407.09007)：定义 DENIAL PROMPTING 与 NEOGAUGE，在 Codeforces 风格题目上衡量 LLM 代码解法的收敛性和发散性创造力。
+- [On Mitigating Code LLM Hallucinations with API Documentation](https://arxiv.org/abs/2407.09726)：通过 API 文档扎根生成过程，缓解代码 LLM 幻觉。
+- [CodeV: Empowering LLMs With HDL Generation Through Multilevel Summarization](https://arxiv.org/abs/2407.10424)：通过多层级摘要提升大模型生成硬件描述语言代码的能力。
+- [MaPPing Your Model: Assessing the Impact of Adversarial Attacks on LLM-based Programming Assistants](https://arxiv.org/abs/2407.11072)：提出 MaPP 攻击，展示在编程提示中加入少量恶意文本即可让助手生成带漏洞但表面正确的代码。
+- [Revisiting the Impact of Pursuing Modularity for Code Generation](https://arxiv.org/abs/2407.11406)：为生成程序定义量化模块化指标，并检验模块化拆分是否真的提升 LLM 代码生成表现。
+- [A Novel HDL Code Generator for Effectively Testing FPGA Logic Synthesis Compilers](https://arxiv.org/abs/2407.12037)：提出 LegoHDL 语法合法 HDL 生成器，用更多样的电路程序测试 FPGA 逻辑综合编译器。
+- [An Empirical Study of Static Analysis Tools for Secure Code Review](https://arxiv.org/abs/2407.12241)：在真实引入漏洞的 C 和 C++ 代码变更上评估静态应用安全测试工具，衡量其对安全代码审查的实际帮助。
+- [Case2Code: Scalable Synthetic Data for Code Generation](https://arxiv.org/abs/2407.12504)：提出 Case2Code 可扩展合成数据任务，让模型根据执行程序得到的输入输出行为归纳代码实现。
+- [AI-Assisted SQL Authoring at Industry Scale](https://arxiv.org/abs/2407.13280)：描述 Meta 的 SqlCompose 系统，包括感知 schema 的 SQL 补全模型、填空式生成，以及基于内部分析数据的微调。
+- [Scaling Granite Code Models to 128K Context](https://arxiv.org/abs/2407.13739)：通过 RoPE 扩展、仓库级文件打包、长上下文继续预训练和指令微调，将 Granite 代码模型扩展到 128K token 上下文。
+- [ECCO: Can We Improve Model-Generated Code Efficiency Without Sacrificing Functional Correctness?](https://arxiv.org/abs/2407.14044)：构建同时覆盖自然语言代码生成和历史代码编辑的效率基准，并比较提示、反馈式精修和执行条件微调。
+- [Empowering Agile-Based Generative Software Development through Human-AI Teamwork](https://arxiv.org/abs/2407.15568)：提出 AgileGen 敏捷式人机协同开发循环，迭代对齐不完整用户需求、生成代码和验收标准。
+- [OriGen: Enhancing RTL Code Generation with Code-to-Code Augmentation and Self-Reflection](https://arxiv.org/abs/2407.16237)：OriGen 通过代码到代码增强和自反思构建开放 RTL 数据集，修复语法与功能错误，并提升开源大模型的 Verilog 生成能力。
+- [Large Language Model for Verilog Generation with Code-Structure-Guided Reinforcement Learning](https://arxiv.org/abs/2407.18271)：提出 VeriSeek，在有限高质量 RTL 数据上用代码结构引导的强化学习提升 Verilog LLM 生成能力。
+- [Classification-Based Automatic HDL Code Generation Using LLMs](https://arxiv.org/abs/2407.18326)：先分类电路类型，再把 HDL 生成拆成类似专家设计流程的子步骤并结合 EDA 工具，以缓解代码幻觉。
+- [Patched MOA: optimizing inference for diverse software development tasks](https://arxiv.org/abs/2407.18521)：提出 Patched Mixture of Agents 这种模型无关推理优化方法，通过组合候选回答提升软件开发任务表现。
+- [Generative AI Augmented Induction-based Formal Verification](https://arxiv.org/abs/2407.18965)：将生成式 AI 用于基于归纳的形式化验证，以提高硬件正确性证明的验证吞吐。
+- [Logic Distillation: Learning from Code Function by Function for Decision-making Tasks](https://arxiv.org/abs/2407.19405)：让大模型把复杂指令实例化为离散函数、构建函数库，再按函数逐步把逻辑推理能力蒸馏给小模型。
+- [RLCoder: Reinforcement Learning for Repository-Level Code Completion](https://arxiv.org/abs/2407.19487)：用强化学习训练仓库上下文检索器，将目标代码在检索上下文下的 perplexity 作为代码补全反馈信号。
+- [Enhancing Code Translation in Language Models with Few-Shot Learning via Retrieval-Augmented Generation](https://arxiv.org/abs/2407.19619)：利用检索增强少样本学习改进语言模型的代码翻译。
+- [When to Stop? Towards Efficient Code Generation in LLMs with Excess Token Prevention](https://arxiv.org/abs/2407.20042)：提出 CodeFast，在代码生成过程中检测不必要的多余 token 并提前停止解码，以降低延迟和计算浪费。
+- [Genetic Instruct: Scaling up Synthetic Generation of Coding Instructions for Large Language Models](https://arxiv.org/abs/2407.21077)：用 Instructor LLM、Coder LLM 和 Judge LLM 组成进化式循环，生成超过 750 万条指令代码对用于微调。
+- [A new approach for encoding code and assisting code understanding](https://arxiv.org/abs/2408.00521)：提出受扩散模型启发的代码理解范式，用于弥补自回归大模型在规划、工作记忆、回溯和复杂代码推理上的不足。
+- [LibreLog: Accurate and Efficient Unsupervised Log Parsing Using Open-Source Large Language Models](https://arxiv.org/abs/2408.01585)：LibreLog 使用开源大模型进行无监督日志解析，通过聚类日志模板降低标注成本、商业模型隐私风险和大规模解析开销。
+- [SceneMotifCoder: Example-Driven Visual Program Learning for Generating 3D Object Arrangements](https://arxiv.org/abs/2408.02211)：从 3D 场景示例中学习可复用视觉程序来合成物体布局，更接近相邻程序合成而非代码 LLM 训练。
+- [SpecRover: Code Intent Extraction via LLMs](https://arxiv.org/abs/2408.02232)：SpecRover 研究大模型智能体中的低成本迭代规格推断，结合代码搜索、项目结构证据和 reviewer 反馈来审查程序改进补丁。
+- [Context Conquers Parameters: Outperforming Proprietary Llm in Commit Message Generation](https://arxiv.org/abs/2408.02502)：表明在提供充分仓库上下文时，开源大模型可达到接近专有 OMG 方法的提交信息生成效果，强调上下文比参数规模更关键。
+- [TestART: Improving LLM-based Unit Testing via Co-evolution of Automated Generation and Repair Iteration](https://arxiv.org/abs/2408.03095)：TestART 让大模型生成的单元测试在自动生成与修复中共同演化，结合模板化修复、覆盖率反馈和正向提示注入提升通过率与覆盖率。
+- [LogUpdater: Automated Detection and Repair of Specific Defects in Logging Statements](https://arxiv.org/abs/2408.03101)：LogUpdater 用合成缺陷训练分类器识别四类日志语句缺陷，再结合类型感知提示和历史日志更新推荐自动修复。
+- [Synthesizing Text-to-SQL Data from Weak and Strong LLMs](https://arxiv.org/abs/2408.03256)：SENSE 将强模型生成数据与弱模型错误信号合成为训练数据，并通过偏好学习指令微调开源大模型，提升 Text-to-SQL 的领域泛化。
+- [Improving Retrieval-Augmented Code Comment Generation by Retrieving for Generation](https://arxiv.org/abs/2408.03623)：该方法用生成器反馈训练代码注释生成中的检索器，使检索样例服务于后续注释生成，而不只是独立相似度匹配。
+- [Automated Code Fix Suggestions for Accessibility Issues in Mobile Apps](https://arxiv.org/abs/2408.03827)：结合无障碍问题定位与代码修改建议，为移动应用无障碍缺陷生成修复方案。
+- [CodexGraph: Bridging Large Language Models and Code Repositories via Code Graph Databases](https://arxiv.org/abs/2408.03910)：把仓库表示为代码图数据库，使 LLM 在代码库推理时可查询跨文件符号、依赖和关系。
+- [The Evolution of Information Seeking in Software Development: Understanding the Role and Impact of AI Assistants](https://arxiv.org/abs/2408.04032)：实证研究 AI 助手如何改变开发者的信息寻求行为，因此更偏采用证据而非模型侧编码方法。
+- [Investigating adversarial attacks in software analytics via machine learning explainability](https://arxiv.org/abs/2408.04124)：利用机器学习可解释性研究软件分析模型上的对抗攻击，从模型、特征重要性和攻击场景角度评估鲁棒性。
+- [The Struggles of LLMs in Cross-Lingual Code Clone Detection](https://arxiv.org/abs/2408.04430)：用五个大模型、八类提示和嵌入模型基线重新评估跨语言代码克隆检测，量化大模型在不同编程语言之间的困难。
+- [XMainframe: A Large Language Model for Mainframe Modernization](https://arxiv.org/abs/2408.04660)：XMainframe 构建面向 COBOL 与大型机现代化的专用大模型，并配套数据流水线和覆盖选择题、问答、COBOL 摘要的 MainframeBench。
+- [Natural Language Outlines for Code: Literate Programming in the LLM Era](https://arxiv.org/abs/2408.04820)：提出自然语言代码大纲作为双向代码辅助界面，让大模型摘要函数、同步大纲与代码修改，并支持导航、搜索和生成。
+- [Hotfixing Large Language Models for Code: How Far Can Parameter-Efficient Fine-Tuning Go?](https://arxiv.org/abs/2408.05727)：为代码大模型定义 hotfixing 目标，用 LoRA 等参数高效微调同时学习修复版本、遗忘缺陷版本并保留其他代码知识，减少发布后生成 buggy code。
+- [Virtual Compiler Is All You Need For Assembly Code Search](https://arxiv.org/abs/2408.06385)：ViC 基于 Ubuntu 软件包编译数据继续预训练 CodeLlama 成为虚拟编译器，再用它跨源语言合成汇编代码搜索数据。
+- ["You still have to study" - On the Security of LLM generated code](https://arxiv.org/abs/2408.07106)：基于 MITRE CWE 在 Python 和 JavaScript 任务上评估四个大模型，显示提示质量会显著影响生成代码是否包含安全弱点。
+- [Vercation: Precise Vulnerable Open-Source Software Version Identification Based on Static Analysis and LLM](https://arxiv.org/abs/2408.07321)：VERCATION 将程序切片与大模型结合，先识别 C 和 C++ 补丁中的漏洞相关代码，再匹配受影响的开源软件版本。
+- [The Death of Schema Linking? Text-to-SQL in the Age of Well-Reasoned Language Models](https://arxiv.org/abs/2408.07702)：重新审视 Text-to-SQL 的 schema linking，发现现代长上下文大模型常可保留完整 schema，并用增强、选择和校正替代硬过滤。
+- [PatUntrack: Automated Generating Patch Examples for Issue Reports without Tracked Insecure Code](https://arxiv.org/abs/2408.08619)：在 issue report 没有显式标出不安全代码时，自动生成漏洞代码与补丁示例，为安全开发者提供修复演示数据。
+- [An exploratory study on fine-tuning large language models for secure code generation](https://arxiv.org/abs/2408.09078)：用漏洞修复提交中的 14,622 个 C/C++ 文件微调代码大模型，比较全量微调、LoRA 和 IA3 对减少不安全生成代码的作用。
+- [Selective Prompt Anchoring for Code Generation](https://arxiv.org/abs/2408.09121)：Selective Prompt Anchoring 针对代码生成中的提示注意力稀释问题，引导代码大模型持续关注用户意图，并在六个模型和六个基准上提升 Pass@1。
+- [Galápagos: Automated N-Version Programming with LLMs](https://arxiv.org/abs/2408.09536)：用大模型生成多样化程序变体，验证正确性和等价性，并组装静态形态与运行时行为都存在差异的 N-version 二进制。
+- [MergeRepair: An Exploratory Study on Merging Task-Specific Adapters in Code LLMs for Automated Program Repair](https://arxiv.org/abs/2408.09568)：研究合并面向程序修复等任务的参数高效适配器，使代码大模型无需为每个任务完整重训即可获得修复能力。
+- [Bridging the Language Gap: Enhancing Multilingual Prompt-Based Code Generation in LLMs via Zero-Shot Cross-Lingual Transfer](https://arxiv.org/abs/2408.09701)：用零样本跨语言迁移改进非英语提示下的代码生成，面向多语言编程输入。
+- [Icing on the Cake: Automatic Code Summarization at Ericsson](https://arxiv.org/abs/2408.09735)：在 Ericsson Java 方法摘要场景中，比较 ASAP 的静态分析和检索增强提示与更轻量的仅方法体大模型摘要方案。
+- [Factorized-Dreamer: Training A High-Quality Video Generator with Limited and Low-Quality Data](https://arxiv.org/abs/2408.10119)：在有限且低质量数据上训练视频生成器，偏离软件开发模型覆盖范围。
+- [Does Co-Development with AI Assistants Lead to More Maintainable Code? A Registered Report](https://arxiv.org/abs/2408.10758)：注册一项受控研究方案，用于比较 AI 协同开发是否影响代码可维护性，区分生成代码、人写代码和后续人工维护情境。
+- [To Code, or Not To Code? Exploring Impact of Code in Pre-training](https://arxiv.org/abs/2408.10914)：在 470M 到 2.8B 参数模型上做预训练消融，衡量代码数据对代码基准、推理任务、世界知识和 LLM-as-judge 胜率的影响。
+- [Multi-Turn Interactions for Text-to-SQL with Large Language Models](https://arxiv.org/abs/2408.11062)：研究交互式 Text-to-SQL 生成，让用户与 LLM 通过多轮细化问题、schema 和 SQL。
+- [What can Large Language Models Capture about Code Functional Equivalence?](https://arxiv.org/abs/2408.11081)：探测大模型对代码功能等价性的捕获能力，评估其表示和判断是否超越表层相似性并接近语义等价。
+- [Automated Prompt Engineering for Cost-Effective Code Generation Using Evolutionary Algorithms](https://arxiv.org/abs/2408.11198)：用进化搜索优化代码生成提示，在保持解答质量的同时减少人工调提示和模型调用成本。
+- [RePair: Automated Program Repair with Process-based Feedback](https://arxiv.org/abs/2408.11296)：RePair 将自动程序修复建模为过程反馈问题，用中间修复信号而非仅最终正确性来引导大模型生成补丁。
+- [HITS: High-coverage LLM-based Unit Test Generation via Method Slicing](https://arxiv.org/abs/2408.11324)：HITS 通过方法切片改进大模型单元测试生成，缩小测试目标范围，使生成测试在更少无关上下文下获得更高覆盖率。
+- [Leveraging Large Language Models for Enhancing the Understandability of Generated Unit Tests](https://arxiv.org/abs/2408.11710)：研究用大模型提升自动生成单元测试的可理解性，将目标从正确性和覆盖率扩展到可读性与可维护性。
+- [Enhancing Automated Program Repair with Solution Design](https://arxiv.org/abs/2408.12056)：在自动程序修复中加入 solution design 指导，让大模型先推理预期修复方案，再输出补丁代码。
+- [AutoTest: Evolutionary Code Solution Selection with Test Cases](https://arxiv.org/abs/2408.12125)：把大模型生成的候选程序与测试用例配对执行，并用遗传搜索根据一致性信号细粒度排序代码解答。
+- [Search-Based LLMs for Code Optimization](https://arxiv.org/abs/2408.12159)：Search-Based LLMs 将代码优化建模为搜索问题，通过探索候选程序改进单次解码之外的生成代码质量。
+- [SQL-GEN: Bridging the Dialect Gap for Text-to-SQL Via Synthetic Data And Model Merging](https://arxiv.org/abs/2408.12733)：SQL-GEN 结合合成数据生成和模型合并来弥合 Text-to-SQL 方言差异，提升 SQL 专用模型的跨方言鲁棒性。
+- [E-code: Mastering Efficient Code Generation through Pretrained Models and Expert Encoder Group](https://arxiv.org/abs/2408.12948)：面向竞赛代码效率优化构建语言模型，结合预训练组件和 expert encoder group 来处理性能缺陷。
+- [DOCE: Finding the Sweet Spot for Execution-Based Code Generation](https://arxiv.org/abs/2408.13745)：系统比较代码执行导向的解码目标，包括候选生成、重排序、最小贝叶斯风险解码、单元测试过滤和多候选自调试。
+- [CodeGraph: Enhancing Graph Reasoning of LLMs with Code](https://arxiv.org/abs/2408.13863)：CodeGraph 将代码作为大模型图推理媒介，检验可执行或结构化代码表示是否能提升图推理表现。
+- [Sifting through the Chaff: On Utilizing Execution Feedback for Ranking the Generated Code Candidates](https://arxiv.org/abs/2408.13976)：利用执行反馈排序生成代码候选，通过编译器或测试结果筛选自一致性样本，再选择最终代码。
+- [Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning](https://arxiv.org/abs/2408.14158)：描述深度学习基础设施的 AI-HPC 系统协同设计，属于相邻基础设施而非代码模型。
+- [Is Functional Correctness Enough to Evaluate Code Language Models? Exploring Diversity of Generated Codes](https://arxiv.org/abs/2408.14504)：把功能正确代码之间的多样性作为通过率之外的代码模型评测补充信号。
+- [A Joint Learning Model with Variational Interaction for Multilingual Program Translation](https://arxiv.org/abs/2408.14515)：提出带变分交互的多语言程序翻译模型，学习共享与语言特定表示以改进不同编程语言之间的翻译。
+- [MTMamba++: Enhancing Multi-Task Dense Scene Understanding via Mamba-Based Decoders](https://arxiv.org/abs/2408.15101)：为稠密场景理解构建 Mamba 解码器，属于视觉模型工作，偏离代码模型覆盖范围。
+- [An Empirical Study on Self-correcting Large Language Models for Data Science Code Generation](https://arxiv.org/abs/2408.15658)：CoT-SelfEvolve 利用真实编程问题反馈形成的思维链进行自纠错，迭代改进数据科学代码并提升 DS-1000 表现。
+- [MR-Adopt: Automatic Deduction of Input Transformation Function for Metamorphic Testing](https://arxiv.org/abs/2408.15815)：MR-Adopt 用大模型从硬编码蜕变测试中推断可复用输入变换函数，把一次性关系转化为提升测试充分性的机制。
+- [Using Large Language Models to Create AI Personas for Replication and Prediction of Media Effects: An Empirical Test of 133 Published Experimental Research Findings](https://arxiv.org/abs/2408.16073)：用 LLM persona 模拟媒体效果实验，属于社会科学仿真而非软件开发模型工作。
+- [Automatic Library Migration Using Large Language Models: First Results](https://arxiv.org/abs/2408.16151)：研究用 ChatGPT 自动执行库迁移，并在 SQLAlchemy 客户端迁移任务上比较零样本、单样本和思维链提示。
+- [Examination of Code generated by Large Language Models](https://arxiv.org/abs/2408.16601)：检查 LLM 生成代码的质量和失败模式，提供代码模型可靠性的实证证据。
+- [Fixing Function-Level Code Generation Errors for Foundation Large Language Models](https://arxiv.org/abs/2409.00676)：在 HumanEval 上复现并分析 14 个大模型的函数级代码生成错误，定位静态工具和修复模型仍未解决的根因。
+- [Dependency-Aware Code Naturalness](https://arxiv.org/abs/2409.00747)：用依赖感知方式建模代码自然性。
+- [Beyond ChatGPT: Enhancing Software Quality Assurance Tasks with Diverse LLMs and Validation Techniques](https://arxiv.org/abs/2409.01001)：比较 GPT-3.5、GPT-4o、LLaMA、Gemma 和 Mixtral 在故障定位与漏洞检测上的表现，显示不同大模型预测具有互补性。
+- [FuzzCoder: Byte-level Fuzzing Test via Large Language Model](https://arxiv.org/abs/2409.01944)：FuzzCoder 将代码大模型微调为字节级序列到序列变异器，从成功攻击输入中学习以引导模糊测试触发漏洞。
+- [Arctic-SnowCoder: Demystifying High-Quality Data in Code Pretraining](https://arxiv.org/abs/2409.02326)：通过标准代码过滤、BERT 式高质量代码标注器和 Llama 生成的增强数据，分阶段预训练 Arctic-SnowCoder-1.3B。
+- [ASTER: Natural and Multi-Language Unit Test Generation with LLMs](https://arxiv.org/abs/2409.03093)：ASTER 将静态分析与大模型提示结合，在 Java、Python 和需要 mock 的环境中生成自然、可编译且高覆盖率的单元测试。
+- [No Man is an Island: Towards Fully Automatic Programming by Code Search, Code Generation and Program Repair](https://arxiv.org/abs/2409.03267)：将代码搜索、代码生成和程序修复组合为自动编程流程，模拟开发者使用外部搜索与测试工具的真实工作方式。
+- [How Do Your Code LLMs Perform? Empowering Code Instruction Tuning with High-Quality Data](https://arxiv.org/abs/2409.03810)：构建更高质量的代码指令微调数据，并分析数据筛选如何影响下游 Code LLM 表现。
+- [Multi-Programming Language Ensemble for Code Generation in Large Language Model](https://arxiv.org/abs/2409.04114)：MPLE 将多种编程语言中的代码生成视为弱专家并集成其输出，以减少大模型解答中的语言特定错误。
+- [GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding](https://arxiv.org/abs/2409.04183)：GALLa 在微调中通过图神经网络和跨模态对齐把代码图结构注入代码大模型，同时不改动基础 Transformer 架构。
+- [Insights from Benchmarking Frontier Language Models on Web App Code Generation](https://arxiv.org/abs/2409.05177)：在 WebApp1K 上评测 16 个前沿大模型，并指出代码模型进展应更关注减少错误频率和提升可靠性，而不仅是知识覆盖。
+- [SGC-VQGAN: Towards Complex Scene Representation via Semantic Guided Clustering Codebook](https://arxiv.org/abs/2409.06105)：学习语义引导的聚类码本来表示复杂场景，属于视觉表征学习而非软件开发模型。
+- [Exploring the Integration of Large Language Models in Industrial Test Maintenance Processes](https://arxiv.org/abs/2409.06416)：在 Ericsson 工业测试维护场景中识别维护触发因素、大模型可执行动作和部署考量，并展示一个多智能体原型。
+- [HexaCoder: Secure Code Generation via Oracle-Guided Synthetic Training Data](https://arxiv.org/abs/2409.06446)：用 oracle-guided 流水线合成漏洞代码与修复代码对，再通过两阶段安全代码生成流程降低大模型生成漏洞的概率。
+- [E2LLM: Encoder Elongated Large Language Models for Long-Context Understanding and Reasoning](https://arxiv.org/abs/2409.06679)：通过延长编码器侧增强 LLM 的长上下文理解与推理，是通用模型工作而非代码专用方法。
+- [RethinkMCTS: Refining Erroneous Thoughts in Monte Carlo Tree Search for Code Generation](https://arxiv.org/abs/2409.09584)：在代码生成前用蒙特卡洛树搜索探索 reasoning thoughts，并修正错误思路，使后续搜索沿着更可靠的推理路径展开。
+- [SmartC2Rust: Iterative, Feedback-Driven C-to-Rust Translation via Large Language Models for Safety and Equivalence](https://arxiv.org/abs/2409.10506)：先切分 legacy C 代码并翻译为 Rust，再用编译器和等价性反馈迭代修复输出，以减少 unsafe 代码并保持行为一致。
+- [Towards No-Code Programming of Cobots: Experiments with Code Synthesis by Large Code Models for Conversational Programming](https://arxiv.org/abs/2409.11041)：测试大型代码模型用于对话式协作机器人编程，把无代码用户意图转换为机器人控制代码。
+- [Ideal-LLM: Integrating Dual Encoders and Language-Adapted LLM for Multilingual Speech-to-Text](https://arxiv.org/abs/2409.11214)：把双编码器与语言适配 LLM 结合做多语言语音转文本，偏离软件开发代码模型范围。
+- [RTLRewriter: Methodologies for Large Models Aided RTL Code Optimization](https://arxiv.org/abs/2409.11414)：研究大模型辅助的 RTL 代码优化方法。
+- [Promise and Peril of Collaborative Code Generation Models: Balancing Effectiveness and Memorization](https://arxiv.org/abs/2409.12020)：研究协作式代码生成，同时衡量任务有效性与训练代码记忆之间的权衡。
 - [Qwen2.5-Coder Technical Report](https://arxiv.org/abs/2409.12186)：记录面向代码的 Qwen 模型族和大规模代码指令调优，是后续 agentic coding 模型的重要开放基础。
+- [Prompts Are Programs Too! Understanding How Developers Build Software Containing Prompts](https://arxiv.org/abs/2409.12447)：通过扎根理论访谈刻画 prompt programming，指出在由提示驱动的软件系统中，一些提示本身承担程序功能。
+- [Retrieval-Augmented Test Generation: How Far Are We?](https://arxiv.org/abs/2409.12682)：评估检索增强单元测试生成，分析检索上下文何时帮助 LLM 生成测试、何时引入噪声。
+- [CraftRTL: High-quality Synthetic Data Generation for Verilog Code Models with Correct-by-Construction Non-Textual Representations and Targeted Code Repair](https://arxiv.org/abs/2409.12993)：用 correct-by-construction 非文本表示和定向修复生成高质量 Verilog 合成数据，服务代码模型训练。
+- [Fast Decision Tree Learning Solves Hard Coding-Theoretic Problems](https://arxiv.org/abs/2409.13096)：研究用决策树学习求解编码理论难题，其中 “coding” 指信息论编码而非编程或软件工程。
+- [RepoGenReflex: Enhancing Repository-Level Code Completion with Verbal Reinforcement and Retrieval-Augmented Generation](https://arxiv.org/abs/2409.13122)：RepoGenReflex 将仓库级检索与 verbal reinforcement learning 结合，用 reflector 反馈和经验缓存改进大型代码库中的代码补全。
+- [Contextualized Data-Wrangling Code Generation in Computational Notebooks](https://arxiv.org/abs/2409.13551)：通过构建显式包含文本、代码和数据上下文的数据集，支持计算笔记本中非线性分析流程里的数据整理代码生成。
+- [Eliciting Instruction-tuned Code Language Models' Capabilities to Utilize Auxiliary Function for Code Generation](https://arxiv.org/abs/2409.13928)：测试在查询中加入辅助函数或用响应前缀提示的方式，让指令微调代码模型在生成代码时复用已有函数。
+- [PTD-SQL: Partitioning and Targeted Drilling with LLMs in Text-to-SQL](https://arxiv.org/abs/2409.14082)：PTD-SQL 将 Text-to-SQL 查询按问题类型划分，并针对性训练大模型的推理模式，在 Spider 和 BIRD 上达到或超过既有方法。
+- [Location is Key: Leveraging Large Language Model for Functional Bug Localization in Verilog](https://arxiv.org/abs/2409.15186)：微调开放 LLM 做 Verilog 功能缺陷定位，并在 RTLLM 衍生测试集上报告高于 GPT-4 的 pass@1 定位准确率。
+- [Boosting Code-Switching ASR with Mixture of Experts Enhanced Speech-Conditioned LLM](https://arxiv.org/abs/2409.15905)：使用 speech-conditioned LLM、MoE 连接器、中断 token 插入删除和两阶段训练处理 code-switching 语音识别；这里的 code-switching 是语言混用而非编程模型。
+- [DataGpt-SQL-7B: An Open-Source Language Model for Text-to-SQL](https://arxiv.org/abs/2409.15985)：用 2 万余条 SQL 样本和偏好数据训练紧凑开放 Text-to-SQL 模型，并加入 code corrector 提升 SQL 有效性。
+- [MOSS: Enabling Code-Driven Evolution and Context Management for AI Agents](https://arxiv.org/abs/2409.16120)：把智能体状态表示为可执行代码与上下文，维护多轮变量隔离和代码上下文一致性，以支持自适应 LLM agent。
+- [Selection of Prompt Engineering Techniques for Code Generation through Predicting Code Complexity](https://arxiv.org/abs/2409.16416)：预测查询的代码复杂度来选择代码生成提示工程技术，而不是对所有任务使用同一种提示策略。
+- [Programming Every Example: Lifting Pre-training Data Quality like Experts at Scale](https://arxiv.org/abs/2409.17115)：ProX 让小语言模型为每个样本生成数据清洗程序，用逐样本规则替代固定人工启发式预训练数据过滤。
+- [Graph Reasoning with Large Language Models via Pseudo-code Prompting](https://arxiv.org/abs/2409.17906)：把连通分量、最短路等图推理过程写成伪代码提示，引导 LLM 执行算法步骤，属于邻近推理方法而非代码模型训练。
+- [Compositional Hardness of Code in Large Language Models - A Probabilistic Perspective](https://arxiv.org/abs/2409.18028)：从概率视角分析长组合式代码任务在单一上下文中为何呈指数级变难，更像为拆分执行或多智能体执行提供理论动机，而不是新的代码模型训练配方。
+- [Augmenting software engineering with AI and developing it further towards AI-assisted model-driven software engineering](https://arxiv.org/abs/2409.18048)：作为 AI 辅助模型驱动软件工程的立场和议程条目，讨论 MDE 工作流接入方式，而不是提出具体模型训练方法。
+- [Code Vulnerability Repair with Large Language Model Using Context-Aware Prompt Tuning](https://arxiv.org/abs/2409.18395)：在发现 Copilot 能检测但难以修复缓冲区溢出后，设计上下文感知提示来提升漏洞修复效果。
+- [Energy-Efficient Software Development: A Multi-dimensional Empirical Analysis of Stack Overflow](https://arxiv.org/abs/2409.19222)：挖掘 1,193 个 Stack Overflow 能耗相关问题来刻画开发者关注点，属于绿色软件实证研究而非模型训练方法。
+- [AMR-Evol: Adaptive Modular Response Evolution Elicits Better Knowledge Distillation for Large Language Models in Code Generation](https://arxiv.org/abs/2410.00558)：在知识蒸馏前用模块化响应演化细化教师答案，让开放代码模型从更高质量的合成代码生成数据中学习。
+- [Sparse Autoencoders Reveal Temporal Difference Learning in Large Language Models](https://arxiv.org/abs/2410.01280)：用 sparse autoencoder 分析 Llama residual stream 中的时序差分学习特征，属于机制解释而非 SWE 专用模型方法。
+- [Codev-Bench: How Do LLMs Understand Developer-Centric Code Completion?](https://arxiv.org/abs/2410.01353)：构建贴近开发者场景的代码补全任务和评测信号，主要是补全产品基准而不是新的代码模型。
+- [Enhancing LLM Fine-Tuning for Text-to-SQLs by SQL Quality Measurement](https://arxiv.org/abs/2410.01869)：把 SQL 质量度量与真实数据库响应作为反馈循环，用于改进 LLM Text-to-SQL 微调输出的语法正确性和语义准确性。
+- [CHASE-SQL: Multi-Path Reasoning and Preference Optimized Candidate Selection in Text-to-SQL](https://arxiv.org/abs/2410.01943)：结合分治式 SQL 生成、执行计划思维链、实例感知合成示例和微调的成对候选选择器，用于 BIRD Text-to-SQL。
 - [RLEF](https://arxiv.org/abs/2410.02089)：用强化学习把 Code LLM grounding 到多步执行反馈中，使模型学会利用编译器和测试反馈，而不是只靠独立重采样。
 - [Training Language Models on Synthetic Edit Sequences](https://arxiv.org/abs/2410.02749)：用合成编辑轨迹训练代码模型逐步编写和修改程序，补齐单次生成与软件代理补丁生成之间的数据缺口。
+- [Demonstration Attack against In-Context Learning for Code Intelligence](https://arxiv.org/abs/2410.02841)：定义 DICE 两阶段恶意示例攻击，通过选择并构造错误上下文学习演示，在不改模型参数的情况下误导代码智能任务输出。
+- [Horizon-Length Prediction: Advancing Fill-in-the-Middle Capabilities for Code Generation with Lookahead Planning](https://arxiv.org/abs/2410.03103)：加入 Horizon-Length Prediction 训练目标，让 FIM 代码模型学习剩余片段边界，在不增加推理开销的情况下提升文件级和仓库级补全。
+- [Showing LLM-Generated Code Selectively Based on Confidence of LLMs](https://arxiv.org/abs/2410.03234)：HonestCoder 根据生成程序之间的多模态相似度估计代码生成置信度，只向开发者展示高置信候选以降低审查负担。
+- [Generating Equivalent Representations of Code By A Self-Reflection Approach](https://arxiv.org/abs/2410.03351)：让两个 LLM 通过自反思循环生成语义等价的代码表示，例如注释和伪代码，并支持开放或受约束设置。
+- [Learning Code Preference via Synthetic Evolution](https://arxiv.org/abs/2410.03837)：CodeFavor 用合成演化数据中的代码提交和代码批评训练成对偏好模型，判断正确性、效率、安全性和人类偏好。
+- [DiffSpec: Differential Testing with LLMs using Natural Language Specifications and Code Artifacts](https://arxiv.org/abs/2410.04249)：Harness/测试条目；用 prompt chaining 让 LLM 结合自然语言规格和代码工件生成 differential tests，并在 eBPF runtime 与 Wasm validator 中发现缺陷。
+- [CodeDPO: Aligning Code Models with Self Generated and Verified Source Code](https://arxiv.org/abs/2410.05605)：从自生成代码和测试用例构造偏好数据，再用 DPO 让代码模型偏好通过更多测试且运行更高效的解法。
+- [Large Language Models as Code Executors: An Exploratory Study](https://arxiv.org/abs/2410.06667)：测试 GPT、o1、DeepSeek 和 Qwen-Coder 等模型能否直接执行代码片段并返回输出，把执行能力作为模型能力探针。
+- [Do Developers Adopt Green Architectural Tactics for ML-Enabled Systems? A Mining Software Repository Study](https://arxiv.org/abs/2410.06708)：用 LLM 辅助挖掘 168 个开源 ML 项目中的绿色架构策略，属于软件工程实证分析。
+- [CursorCore: Assist Programming through Aligning Anything](https://arxiv.org/abs/2410.07002)：发布 CursorCore 模型，用 21.9 万条 Programming-Instruct 样本联合编码历史、当前代码和用户指令，支持 inline chat 与自动代码编辑。
+- [Do Current Language Models Support Code Intelligence for R Programming Language?](https://arxiv.org/abs/2410.07793)：评估代码预训练模型在 R 语言代码智能任务上的表现，指出科学软件语言相对 Java 和 Python 的覆盖缺口。
+- [Mitigating Gender Bias in Code Large Language Models via Model Editing](https://arxiv.org/abs/2410.07820)：构建 CodeGenBias 和 FB-Score 量化代码大模型性别偏差，并用多粒度模型编辑定位和调整偏置行为。
+- [What Makes Large Language Models Reason in (Multi-Turn) Code Generation?](https://arxiv.org/abs/2410.08105)：系统拆解推理提示、指令提示、多轮重提示和执行反馈，在 CodeContests 与 TACO 上分析多轮代码生成收益来源。
+- [Don't Transform the Code, Code the Transforms: Towards Precise Code Rewriting using LLMs](https://arxiv.org/abs/2410.08806)：让 LLM 从输入输出示例合成显式代码变换程序，使重写逻辑可检查、可执行，而不是直接改写目标代码。
+- [Decoding Secret Memorization in Code LLMs Through Token-Level Characterization](https://arxiv.org/abs/2410.08858)：提出 DESEC，用 token 概率特征训练评分模型并引导解码，以区分代码大模型输出的真实 secret 与幻觉 secret，评估隐私泄漏风险。
+- [Test-driven Software Experimentation with LASSO: an LLM Benchmarking Example](https://arxiv.org/abs/2410.08911)：把 LASSO 作为可执行脚本平台用于测试驱动软件实验，并以 LLM 提示基准为示例展示运行时语义评测。
+- [One Step at a Time: Combining LLMs and Static Analysis to Generate Next-Step Hints for Programming Tasks](https://arxiv.org/abs/2410.09268)：将 LLM 提示生成与静态分析结合，为编程学习者提供局部下一步提示而不是完整答案。
+- [Can Large Language Models Generate Geospatial Code?](https://arxiv.org/abs/2410.09738)：构建 GeoCode-Eval 和含 5,000 个任务的 GeoCode-Bench，从认知、解释和创新层级评测地理空间代码生成。
+- [EffiCoder: Enhancing Code Generation in Large Language Models through Efficiency-Aware Fine-tuning](https://arxiv.org/abs/2410.10209)：执行多模型生成的候选解，选择正确且运行时间和内存最低的程序构成 Effi-Instruct，用于效率感知代码微调。
+- [Generalized Adversarial Code-Suggestions: Exploiting Contexts of LLM-based Code-Completion](https://arxiv.org/abs/2410.10526)：把对抗性代码建议形式化为触发模式和 embedding-space 映射，并评估 directional-map、prompt-indexing 攻击及现有防御的局限。
+- [Learning from Imperfect Data: Towards Efficient Knowledge Distillation of Autoregressive Language Models for Text-to-SQL](https://arxiv.org/abs/2410.11371)：研究不完美教师 SQL 输出对自回归蒸馏的影响，目标是训练可替代昂贵 LLM 的小型 Text-to-SQL 模型。
+- [Not All Votes Count! Programs as Verifiers Improve Self-Consistency of Language Models for Math Reasoning](https://arxiv.org/abs/2410.12608)：把自然语言数学解法翻译成程序，并在答案聚合前过滤程序输出不一致的推理路径，属于邻近验证器思路。
+- [MSc-SQL: Multi-Sample Critiquing Small Language Models For Text-To-SQL Translation](https://arxiv.org/abs/2410.12916)：训练小型开放 Text-to-SQL 模型同时批评多个 SQL 候选及其元数据，在不依赖 GPT-4 级推理成本的情况下提升准确率。
+- [Deep learning-based software engineering: progress, challenges, and opportunities](https://arxiv.org/abs/2410.13110)：综述深度学习在代码生成、重构和故障定位等软件工程任务中的应用，并关注模型如何训练或微调。
+- [aiXcoder-7B: A Lightweight and Effective Large Language Model for Code Completion](https://arxiv.org/abs/2410.13187)：用多目标训练、Structured Fill-in-the-Middle 和捕捉跨文件关系的数据采样训练 7B 代码补全模型。
+- [GeoCoder: Solving Geometry Problems by Generating Modular Code through Vision-Language Models](https://arxiv.org/abs/2410.13510)：微调 VLM 生成并执行模块化代码解几何题，用代码执行补足预训练多模态模型缺少的数学操作。
+- [LLM-based Unit Test Generation via Property Retrieval](https://arxiv.org/abs/2410.13542)：为单元测试生成设计 property-based retrieval augmentation，从 focal method 相关上下文中检索 Given、When 和 Then 阶段信息。
+- [LightTransfer: Your Long-Context LLM is Secretly a Hybrid Model with Effortless Adaptation](https://arxiv.org/abs/2410.13846)：将部分 Transformer 层替换为 streaming-attention 混合层以降低长上下文 KV cache 成本，相关性主要在推理效率。
+- [Towards Automated Verification of LLM-Synthesized C Programs](https://arxiv.org/abs/2410.14835)：SynVer 给 LLM 合成的 C 程序施加句法和语义偏置，使候选程序更容易被 Verified Software Toolchain 证明。
+- [MCCoder: Streamlining Motion Control with LLM-Assisted Code Generation and Rigorous Verification](https://arxiv.org/abs/2410.15154)：通过多任务分解、混合检索增强、迭代自纠错和 soft-motion controller 验证生成运动控制代码。
+- [Attention Is All You Need for LLM-based Code Vulnerability Localization](https://arxiv.org/abs/2410.15288)：LOVA 利用逐行检查和 LLM self-attention 信号，在长代码上下文中更准确地定位脆弱代码片段。
+- [Automated Proof Generation for Rust Code via Self-Evolution](https://arxiv.org/abs/2410.15756)：SAFE 合成 Rust 证明、用符号验证器筛选、在正确证明上微调，并利用错误证明训练模型自调试。
+- [Self-Explained Keywords Empower Large Language Models for Code Generation](https://arxiv.org/abs/2410.15966)：SEK 让大模型在生成代码前抽取、排序并解释低频问题关键词，在 HumanEval、MBPP 和 APPS 上提升五个模型的表现。
+- [ChangeGuard: Validating Code Changes via Pairwise Learning-Guided Execution](https://arxiv.org/abs/2410.16092)：用 pairwise learning-guided execution 比较原函数和修改后函数，检测项目回归测试常漏掉的语义改变型重构。
+- [Building a Coding Assistant via the Retrieval-Augmented Language Model](https://arxiv.org/abs/2410.16229)：CONAN 先用代码文档对齐和 masked entity prediction 预训练结构感知检索器，再把双视图检索代码送入生成模型。
+- [Safe Load Balancing in Software-Defined-Networking](https://arxiv.org/abs/2410.16846)：把深度强化学习与控制屏障函数结合，使 SDN 负载均衡策略在训练和测试中满足安全约束。
+- [GeoCode-GPT: A Large Language Model for Geospatial Code Generation Tasks](https://arxiv.org/abs/2410.17031)：构建面向地理空间代码生成任务的大语言模型。
 - [Process Supervision-Guided Policy Optimization for Code Generation](https://arxiv.org/abs/2410.17621)：训练行级 process reward model，并把它用于策略优化，使代码 RL 不只依赖最终单元测试结果。
-- [SFS: Smarter Code Space Search improves LLM Inference Scaling](https://openreview.net/forum?id=MCHuGOkExF)：把更聪明的代码候选搜索作为编程任务的 inference scaling 路径，用测试时 code-space exploration 补充训练时 RL。
+- [In-Context Code-Text Learning for Bimodal Software Engineering](https://arxiv.org/abs/2410.18107)：InCTRL 将 23 个代码文本双模态软件工程任务转成 in-context learning 格式，并用可配置提示模板统一 CodeLLaMA 上的任务学习。
+- [Context-Augmented Code Generation Using Programming Knowledge Graphs](https://arxiv.org/abs/2410.18251)：用 programming knowledge graph 表示和检索代码，通过树剪枝减少无关上下文，并在输入代码大模型前重排候选片段。
+- [WAFFLE: Finetuning Multi-Modal Models for Automated Front-End Development](https://arxiv.org/abs/2410.18362)：用 HTML 层级结构感知注意力和 UI 图像到 HTML 代码的对比对齐，微调多模态模型完成 UI-to-HTML 生成。
+- [Aligning CodeLLMs with Direct Preference Optimization](https://arxiv.org/abs/2410.18585)：用偏好对和 DPO 对齐 CodeLLM，避免 PPO 中粗粒度且可能有缺陷的代码奖励规则。
+- [Whose fault is it anyway? SILC: Safe Integration of LLM-Generated Code](https://arxiv.org/abs/2410.18703)：SILC 扩展 incorrectness separation logic，用于在 AI 生成组件集成后违反安全假设时定位责任并分配 sanitization obligations。
+- [Bridge-Coder: Unlocking LLMs' Potential to Overcome Language Gaps in Low-Resource Code](https://arxiv.org/abs/2410.18957)：通过面向 Racket 和 D 等低资源语言的生成训练数据，弥合自然语言到编程语言的映射缺口。
+- [VisionCoder: Empowering Multi-Agent Auto-Programming for Image Processing with Hybrid LLMs](https://arxiv.org/abs/2410.19245)：该 arXiv 链接当前对应 MaCTG，用动态 thought graph 协调 LLM 编程 agent 的角色分配、任务规划和幻觉控制。
+- [Combining LLM Code Generation with Formal Specifications and Reactive Program Synthesis](https://arxiv.org/abs/2410.19736)：把代码生成拆给 LLM 和形式化 reactive synthesis 两部分，使高风险、非常规逻辑由规格驱动的程序合成处理。
+- [CodeRosetta: Pushing the Boundaries of Unsupervised Code Translation for Parallel Programming](https://arxiv.org/abs/2410.20527)：用 HPC 专用预训练目标训练编码器解码器翻译模型，覆盖 C++ 到 CUDA 以及 Fortran 到 C++ 的并行代码翻译。
+- [SPICEPilot: Navigating SPICE Code Generation and Simulation with AI Guidance](https://arxiv.org/abs/2410.20553)：基于 PySpice 生成 SPICE 代码数据集和仿真框架，并提供标准化指标评估大模型的电路级代码生成能力。
+- [Geo-FuB: A method for constructing an Operator-Function knowledge base for geospatial code generation with large language models](https://arxiv.org/abs/2410.20975)：为 LLM 地理空间代码生成构建 operator-function 知识库。
+- [Are Decoder-Only Large Language Models the Silver Bullet for Code Search?](https://arxiv.org/abs/2410.22240)：系统比较 11 个 decoder-only 大模型在零样本和微调代码搜索中的表现，显示微调 CodeGemma 可在 CoSQA+ 上超过 encoder baseline。
+- [Rethinking Code Refinement: Learning to Judge Code Efficiency](https://arxiv.org/abs/2410.22375)：训练代码语言模型判断两段人类或机器生成代码哪个更高效，避免每次 refinement 都依赖实际运行比较。
+- [Multi-Programming Language Sandbox for LLMs](https://arxiv.org/abs/2410.23074)：MPLSandbox 更接近支撑型 Harness 条目；它自动识别编程语言，在隔离子沙盒中编译和执行代码，并把编译、运行与代码分析反馈提供给 LLM 训练或部署流程。
+- [FVEval: Understanding Language Model Capabilities in Formal Verification of Digital Hardware](https://arxiv.org/abs/2410.23299)：定义面向大模型硬件形式化验证能力的基准，覆盖 SystemVerilog assertion 生成、调试等多个 FV 子任务。
+- [VISUALCODER: Guiding Large Language Models in Code Execution with Fine-grained Multimodal Chain-of-Thought Reasoning](https://arxiv.org/abs/2410.23402)：把代码片段与可视化控制流图及多模态思维链引用对齐，以改进执行推理、错误检测和输出预测。
+- [Generating Accurate OpenAPI Descriptions from Java Source Code](https://arxiv.org/abs/2410.23873)：从 Java Spring Boot 源码静态抽取 REST 端点路径、HTTP 方法、响应码以及请求和响应数据模型，并在七个项目上优于 Respector、Prophet 和 springdoc-openapi。
+- [Envisioning responsible quantum software engineering and quantum artificial intelligence](https://arxiv.org/abs/2410.23972)：讨论负责任量子软件工程与量子 AI 的研究方向，而不是提出代码模型训练配方。
+- [AlphaTrans: A Neuro-Symbolic Compositional Approach for Repository-Level Code Translation and Validation](https://arxiv.org/abs/2410.24117)：结合神经与符号组件进行仓库级代码翻译和验证。
+- [SelfCodeAlign: Self-Alignment for Code Generation](https://arxiv.org/abs/2410.24198)：通过抽取代码概念、生成任务、采样带测试的回答、在沙箱验证可通过解答，再指令微调 CodeQwen 与 StarCoder2 变体，实现代码大模型自对齐。
+- [Personality-Guided Code Generation Using Large Language Models](https://arxiv.org/abs/2411.00006)：让七个大模型在代码生成时模拟与任务匹配的人格特质，在 28 个模型数据集组合中的 23 个组合提升通过率。
+- [RSL-SQL: Robust Schema Linking in Text-to-SQL Generation](https://arxiv.org/abs/2411.00073)：结合双向 schema linking、上下文增强、完整或简化 schema 的二元选择，以及多轮自纠错，在 BIRD 和 Spider 上提升 Text-to-SQL 鲁棒性。
+- [Lingma SWE-GPT: An Open Development-Process-Centric Language Model for Automated Software Improvement](https://arxiv.org/abs/2411.00622)：用开发过程数据训练 7B 和 72B SWE-GPT，包括开发者思考、工具使用、人员交互和软件演化轨迹。
+- [The Graph's Apprentice: Teaching an LLM Low Level Knowledge for Circuit Quality Estimation](https://arxiv.org/abs/2411.00843)：用 LUT 图上的 GNN embedding 正则化预测网络，增强面向 HDL 的大模型从代码估计电路质量的能力。
+- [DemoCraft: Using In-Context Learning to Improve Code Generation in Large Language Models](https://arxiv.org/abs/2411.00865)：用可训练的潜在概念 token 选择上下文示例来做代码生成，报告在 MBPP 和 HumanEval 上把 pass@k 约提升到基线两倍。
+- [PairSmell: A Novel Perspective Inspecting Software Modular Structure](https://arxiv.org/abs/2411.01012)：把模块化异味建模为有问题的类或文件配对，结合结构依赖证据与学习式成对检查来发现架构侵蚀。
+- [INTERTRANS: Leveraging Transitive Intermediate Translations to Enhance LLM-Based Code Translation](https://arxiv.org/abs/2411.01063)：利用传递式中间翻译提升大模型代码翻译。
+- [A Deep Dive Into Large Language Model Code Generation Mistakes: What and Why?](https://arxiv.org/abs/2411.01414)：人工分析独立函数和依赖上下文的大模型代码生成错误，归纳七类非语法错误与六类成因，并测试 GPT-4 搭配 ReAct 识别错误原因的能力。
+- [Generating executable oracles to check conformance of client code to requirements of JDK Javadocs using LLMs](https://arxiv.org/abs/2411.01789)：用大模型把 JDK Javadoc 转成可执行测试 oracle，检查 Java 库正常与异常行为，多数生成断言可编译且符合预期属性。
+- [Do advanced language models eliminate the need for prompt engineering in software engineering?](https://arxiv.org/abs/2411.02093)：在软件工程任务上比较高级大模型对不同提示工程模式的敏感性，检验更强基础模型是否减少任务专用提示需求。
+- [Parameter-Efficient Fine-Tuning of Large Language Models for Unit Test Generation: An Empirical Study](https://arxiv.org/abs/2411.02462)：在十三个大模型上比较全量微调、LoRA、IA3 与 prompt tuning 生成单元测试，并用语法、pass@1、覆盖率和 mutation score 评估。
+- [Crystal: Illuminating LLM Abilities on Language and Code](https://arxiv.org/abs/2411.04156)：用两阶段代码与自然语言预训练训练 Crystal，在不同阶段调整代码和语言数据比例，并开放数据集、日志、136 个 checkpoint 与数据配方消融。
+- [Towards Optimizing SQL Generation via LLM Routing](https://arxiv.org/abs/2411.04319)：为 Text-to-SQL 训练基于打分和分类的 LLM 路由器，按查询选择最便宜且足够准确的模型，在 BIRD 上权衡准确率、延迟和成本。
+- [CodeTree: Agent-guided Tree Search for Code Generation with Large Language Models](https://arxiv.org/abs/2411.04329)：用统一树结构探索编码策略、生成解答并精修，排序、终止和扩展由执行反馈与大模型智能体反馈共同引导。
+- [An Empirical Study on the Potential of LLMs in Automated Software Refactoring](https://arxiv.org/abs/2411.04444)：评估大模型自动重构能力，区分保持行为的编辑与更困难的变换，并分析生成修改能否编译、通过测试或保持语义。
+- [OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models](https://arxiv.org/abs/2411.04905)：发布可复现的顶级代码大模型配方，包括模型权重、推理代码、数据清洗与去重流水线、合成退火和 SFT 数据、消融实验与训练协议。
+- [Scattered Forest Search: Smarter Code Space Exploration with LLMs](https://arxiv.org/abs/2411.05010)：把代码生成视为代码空间中的黑盒搜索，Scattered Forest Search 扩展候选多样性并利用反馈跳出局部最优，覆盖 HumanEval、MBPP、APPS、CodeContests 和 LeetCode。
+- [CodeLutra: Boosting LLM Code Generation via Preference-Guided Refinement](https://arxiv.org/abs/2411.05199)：用成功和失败代码尝试做迭代式偏好精修，让小型代码模型从错误中学习对比信号，以提升数据科学代码生成准确率。
+- [GitChameleon: Unmasking the Version-Switching Capabilities of Code Generation Models](https://arxiv.org/abs/2411.05830)：探测代码生成模型能否随库版本切换 API 用法，暴露真实仓库维护中版本特定推理失败的问题。
+- [Anchor Attention, Small Cache: Code Generation With Large Language Models](https://arxiv.org/abs/2411.06680)：提出 AnchorCoder，用 token 级和层级 anchor attention 压缩代码生成中的上下文 KV 状态，在保留大部分性能的同时把 KV cache 需求降低至少 70%。
+- [PDC & DM-SFT: A Road for LLM SQL Bug-Fix Enhancing](https://arxiv.org/abs/2411.06767)：通过 Progressive Dataset Construction 扩展 SQL 修复数据的广度和深度，并用 Dynamic Mask SFT 缓解 SQL bug-fix 训练中的方向偏移。
+- [ROCODE: Integrating Backtracking Mechanism and Program Analysis in Large Language Models for Code Generation](https://arxiv.org/abs/2411.07112)：在自回归解码过程中结合增量程序分析与回溯机制，使代码模型能回滚、约束重生成，并在事后修复前减少编译或测试失败。
+- [Software Performance Engineering for Foundation Model-Powered Software](https://arxiv.org/abs/2411.09580)：梳理基础模型嵌入软件系统后出现的延迟、成本、可靠性和质量瓶颈，为模型驱动软件提供性能工程分类。
+- [Real-Time Adapting Routing (Rar): Improving Efficiency Through Continuous Learning in Software Powered by Layered Foundation Models](https://arxiv.org/abs/2411.09837)：为分层基础模型软件学习运行时路由器，持续更新模型选择策略，使请求可在廉价组件和强模型之间切换。
+- ["Should I Give Up Now?" Investigating LLM Pitfalls in Software Engineering](https://arxiv.org/abs/2411.09916)：研究大模型在软件工程任务中放弃或处理失误的场景，归纳影响代码生成、修复和开发者辅助流程的失败模式。
+- [LLM-itation is the Sincerest Form of Data: Generating Synthetic Buggy Code Submissions for Computing Education](https://arxiv.org/abs/2411.10455)：用 GPT-4o 生成保护隐私的合成错误编程提交，并通过与真实学生代码的测试失败分布比较来验证数据相似性。
+- [Large Language Models as Robust Data Generators in Software Analytics: Are We There Yet?](https://arxiv.org/abs/2411.10565)：比较用人工数据和大模型生成数据微调的预训练模型，在 clone detection、代码摘要和 code review 情感分析中承受九类对抗攻击时的鲁棒性差异。
+- [An exploration of prompting LLMs to generate energy-efficient code](https://arxiv.org/abs/2411.10599)：研究通过提示让 LLM 生成节能代码。
+- [FlexFL: Flexible and Effective Fault Localization With Open-Source Large Language Models](https://arxiv.org/abs/2411.10714)：用开源大模型做故障定位，通过灵活的提示和上下文设置对可疑代码排序，而不依赖专有模型。
+- [REACCEPT: Automated Co-evolution of Production and Test Code Based on Dynamic Validation and Large Language Models](https://arxiv.org/abs/2411.11033)：让大模型生成生产代码与测试代码的成对修改，并用动态验证只接受保持或改善可执行行为的变更。
+- [SRA-MCTS: Self-driven Reasoning Augmentation with Monte Carlo Tree Search for Code Generation](https://arxiv.org/abs/2411.11053)：用蒙特卡洛树搜索合成中间推理路径，再转成可执行代码，以自生成轨迹在无额外监督下提升小型代码模型。
+- [Deep Learning-based Code Reviews: A Paradigm Shift or a Double-Edged Sword?](https://arxiv.org/abs/2411.11401)：综述深度学习代码审查系统及其风险，覆盖自动评论生成、缺陷检测、审查员辅助和误导性审查反馈。
+- [CodeXEmbed: A Generalist Embedding Model Family for Multiligual and Multi-task Code Retrieval](https://arxiv.org/abs/2411.12644)：构建面向多语言、多任务代码检索的通用嵌入模型族。
+- [Towards Specification-Driven LLM-Based Generation of Embedded Automotive Software](https://arxiv.org/abs/2411.13269)：研究 spec2code，将大模型代码生成与 ACSL 形式规格或自然语言规格、critic、反向提示和微调结合，用于嵌入式汽车软件。
+- [DSTC: Direct Preference Learning with Only Self-Generated Tests and Code to Improve Code LMs](https://arxiv.org/abs/2411.13611)：仅用自生成测试和代码，通过 minimax 选择与 test-code 拼接构造偏好对，再用 DPO 或 KTO 在无外部标注下提升 pass@1。
+- [BugSpotter: Automated Generation of Code Debugging Exercises](https://arxiv.org/abs/2411.14303)：根据编程题描述生成带 bug 的代码，并用测试套件验证合成 bug，产出的调试练习与教师手工题在课堂实验中可比。
+- [AssertLLM: Generating Hardware Verification Assertions from Design Specifications via Multi-LLMs](https://arxiv.org/abs/2411.14436)：协调多个大模型把硬件设计规格转成验证断言，为 HDL 断言生成加入跨模型检查。
+- [Don't Mesh with Me: Generating Constructive Solid Geometry Instead of Meshes by Fine-Tuning a Code-Generation LLM](https://arxiv.org/abs/2411.15279)：把 BREP 机械零件转换为 CSG Python 脚本，并用 GPT-4 生成自然语言标注来微调代码生成大模型，使其能按文本和位置输入补全精确 CAD 几何。
+- [Fault Localization from the Semantic Code Search Perspective](https://arxiv.org/abs/2411.17230)：把故障定位重构为语义代码搜索，用学习式代码查询匹配为失败报告检索可疑语句或文件。
+- [TransferFuzz: Fuzzing with Historical Trace for Verifying Propagated Vulnerability Code](https://arxiv.org/abs/2411.18347)：利用历史执行轨迹引导漏洞传播代码的模糊测试，检查复制或迁移后的脆弱代码是否仍可被触发。
+- [VeCoGen: Automating Generation of Formally Verified C Code With Large Language Models](https://arxiv.org/abs/2411.19275)：结合大模型候选生成、ANSI/ISO C 形式规格、自然语言规格、测试和验证器驱动迭代改进，生成经过验证的 C 程序。
+- [o1-Coder: an o1 Replication for Coding](https://arxiv.org/abs/2412.00154)：通过训练测试用例生成器、用 MCTS 生成带推理过程的代码数据，并从伪代码到完整代码迭代微调策略模型，复现面向编码的 o1 式训练。
+- [Generating a Low-code Complete Workflow via Task Decomposition and RAG](https://arxiv.org/abs/2412.00239)：把低代码工作流请求分解为子任务，并用检索增强生成组装可执行工作流组件，而不是一次性生成单个代码输出。
+- [Language Models in Software Development Tasks: An Experimental Analysis of Energy and Accuracy](https://arxiv.org/abs/2412.00329)：在普通 GPU 和 AI 专用 GPU 上测量 18 个大模型家族的软件开发任务表现，比较全精度与量化本地部署的能耗和准确率权衡。
+- [CoRNStack: High-Quality Contrastive Data for Better Code Retrieval and Reranking](https://arxiv.org/abs/2412.01007)：用一致性过滤和困难负例挖掘构造对比式代码检索数据，并训练 retriever 与 reranker，用于 bug localization 和仓库搜索。
+- [When Fine-Tuning LLMs Meets Data Privacy: An Empirical Study of Federated Learning in LLM-Based Program Repair](https://arxiv.org/abs/2412.01072)：把联邦微调用于大模型自动程序修复，使私有代码仓库无需集中化也能协同提升 APR 模型。
+- [AutoPLC: Generating Vendor-Aware Structured Text for Programmable Logic Controllers](https://arxiv.org/abs/2412.02410)：从自然语言需求生成厂商感知 PLC Structured Text，结合厂商 API 库、标注案例、大模型重排序、API 推荐和 IDE 动态验证。
+- [Exploring the Potential of Llama Models in Automated Code Refinement: A Replication Study](https://arxiv.org/abs/2412.02789)：用 CodeLlama 和 Llama 2 复现实验代码精修任务，显示调优后的开源模型可在 review 驱动编辑上接近 ChatGPT，且重构类修改比新增代码更容易自动化。
+- [Does Few-Shot Learning Help LLM Performance in Code Synthesis?](https://arxiv.org/abs/2412.02906)：衡量少样本示例如何改变代码合成准确率，区分示例选择、提示长度和题目难度带来的影响。
+- [PerfCodeGen: Improving Performance of LLM Generated Code with Execution Feedback](https://arxiv.org/abs/2412.03578)：无需训练，通过把测试执行得到的运行时间反馈送入自我精修循环，提升开放与闭源大模型生成代码的运行效率。
+- [Synergizing LLMs and Knowledge Graphs: A Novel Approach to Software Repository-Related Question Answering](https://arxiv.org/abs/2412.03815)：围绕软件知识图谱构建仓库问答，使大模型回答能落在代码实体、关系和项目工件上。
+- [Integrating Various Software Artifacts for Better LLM-based Bug Localization and Program Repair](https://arxiv.org/abs/2412.03905)：把报告、测试、轨迹和代码上下文等多种软件工件输入大模型故障定位与程序修复，使修复不只受单个缺陷文件约束。
+- [HiVeGen – Hierarchical LLM-based Verilog Generation for Scalable Chip Design](https://arxiv.org/abs/2412.05393)：以层次化方式生成可扩展 Verilog，先把芯片设计规格分解成模块，再生成并验证 RTL 代码。
+- [GEE-OPs: an operator knowledge base for geospatial code generation on the Google Earth Engine platform powered by large language models](https://arxiv.org/abs/2412.05587)：为 LLM 驱动的 Google Earth Engine 代码生成构建算子知识库。
+- [AlphaVerus: Bootstrapping Formally Verified Code Generation through Self-Improving Translation and Treefinement](https://arxiv.org/abs/2412.06176)：通过从高资源语言翻译程序、用 Treefinement 根据验证器反馈精修候选，并过滤规格和程序不对齐来避免 verifier reward hacking，引导验证代码生成。
+- [The Rise and Down of Babel Tower: Investigating the Evolution Process of Multilingual Code Large Language Model](https://arxiv.org/abs/2412.07298)：通过工作语言和语言迁移神经元追踪代码大模型预训练中的多语言能力形成，并据此重设多语言代码预训练语料分布。
+- [Scalable, Validated Code Translation of Entire Projects using Large Language Models](https://arxiv.org/abs/2412.08035)：把整项目代码翻译切分为可独立翻译的小片段，再用输入输出等价、特性映射和类型兼容检查引导 Go 到 Rust 的修复与验证。
+- [Quantifying the benefits of code hints for refactoring deprecated Java APIs](https://arxiv.org/abs/2412.08041)：比较符号综合和大模型两类废弃 JDK API 重构引擎，显示 Javadoc 中的 code hint 能显著提升自动迁移正确率。
+- [Doc2OracLL: Investigating the Impact of Documentation on LLM-Based Test Oracle Generation](https://arxiv.org/abs/2412.09360)：分析 Javadoc 注释及其他上下文如何影响大模型测试 oracle 生成，定位有助于产生更强 Java 断言的文档组件。
+- [ROUTE: Robust Multitask Tuning and Collaboration for Text-to-SQL](https://arxiv.org/abs/2412.10138)：在 schema linking、噪声校正和 continuation writing 等合成 SQL 任务上微调开放 Text-to-SQL 模型，并用多任务协作提示协调生成。
+- [Enhancing Automated Loop Invariant Generation for Complex Programs with Large Language Models](https://arxiv.org/abs/2412.10483)：用静态分析抽取循环事实，提示大模型生成候选不变量，再由大模型 evaluator 强化、弱化或拒绝不变量以处理复杂程序。
+- [Optimizing AI-Assisted Code Generation](https://arxiv.org/abs/2412.10953)：研究 AI 辅助代码生成的优化杠杆，包括提示选择、模型选择和反馈信号如何提升生成代码质量。
+- [PERC: Plan-As-Query Example Retrieval for Underrepresented Code Generation](https://arxiv.org/abs/2412.12447)：把源码转成伪代码计划并据此检索少样本代码示例，在 CodeContests、HumanEval 和 MultiPL-E 上改进低资源语言代码生成。
+- [Solid-SQL: Enhanced Schema-linking based In-context Learning for Robust Text-to-SQL](https://arxiv.org/abs/2412.12522)：用大模型数据增强训练鲁棒 schema-linking 模型，并采用两轮结构相似示例检索，提高 Text-to-SQL 对 schema 扰动的抗性。
+- [GenX: Mastering Code and Test Generation with Execution Feedback](https://arxiv.org/abs/2412.13464)：用执行反馈共同训练代码生成器和测试生成器，扩展 code-test 数据并排序生成的测试与解答，在 APPS 上迭代改进。
+- [Transducer Tuning: Efficient Model Adaptation for Software Tasks Using Code Property Graphs](https://arxiv.org/abs/2412.13467)：通过可训练 transducer 将 Code Property Graph 向量融合进代码嵌入，在摘要、断言生成和代码翻译中以更少参数适配大模型。
+- [CAD-Recode: Reverse Engineering CAD Code From Point Clouds](https://arxiv.org/abs/2412.14042)：把 CAD 草图与拉伸历史表示为可执行 Python 代码，结合点云投影器和小型 LLM 解码器，并在一百万条程序生成 CAD 序列上训练点云到代码重建模型。
+- [Is This You, LLM? Recognizing AI-written Programs with Multilingual Code Stylometry](https://arxiv.org/abs/2412.14611)：训练 transformer encoder 分类器，并发布覆盖十种语言、121247 段代码的 H-AIRosettaMP，用多语言代码风格识别 AI 生成程序。
+- [Helping LLMs Improve Code Generation Using Feedback from Testing and Static Analysis](https://arxiv.org/abs/2412.14841)：把测试失败和静态分析漏洞报告作为反馈，帮助开放大模型判断并修复其生成的 C 代码。
+- [Scylla: Translating an Applicative Subset of C to Safe Rust](https://arxiv.org/abs/2412.15042)：定义 C 的 applicative 子集并翻译为安全 Rust，强调语言约束和保持正确性的翻译，而非无约束 C 到 Rust 生成。
+- [Reasoning Through Execution: Unifying Process and Outcome Rewards for Code Generation](https://arxiv.org/abs/2412.15118)：用树结构搜索、执行指标和自我批判统一代码生成中的过程奖励与结果奖励，同时提升正确性和效率。
+- [HPC-Coder-V2: Studying Code LLMs Across Low-Resource Parallel Languages](https://arxiv.org/abs/2412.15178)：针对低资源并行语言微调并分析专用 HPC 代码大模型，定位并行代码生成障碍，并报告该场景下领先的开源代码模型表现。
+- [Improving FIM Code Completions via Context & Curriculum Based Learning](https://arxiv.org/abs/2412.16589)：从仓库中难补全模式构造课程和上下文样例，并用语义与静态分析工具辅助数据生成，在低延迟约束下微调 StarCoder 和 DeepSeek FIM 模型。
+- [A Plug-and-Play Natural Language Rewriter for Natural Language to SQL](https://arxiv.org/abs/2412.17068)：以 Checker、Reflector 和 Rewriter 包装 NL2SQL 系统，利用数据库内容和生成 SQL 的正确性反馈重写有缺陷的自然语言查询。
+- [WarriorCoder: Learning from Expert Battles to Augment Code Large Language Models](https://arxiv.org/abs/2412.17395)：让专家代码大模型在竞技场中相互挑战并由公正评审打分，用这种 battle 数据微调同规模模型，避免依赖专有大模型数据。
+- [Condor: A Code Discriminator Integrating General Semantics With Code Details](https://arxiv.org/abs/2412.17429)：用对比式表示学习和代码修改过程中的中间数据训练 Condor 判别器，使其无需执行即可按细粒度代码差异重排生成程序。
+- [Investigating Large Language Models for Code Vulnerability Detection: An Experimental Study](https://arxiv.org/abs/2412.18260)：微调四个开放大模型做代码漏洞检测，并在五个 CVD 数据集上与图模型和序列模型基线比较，分析类别不平衡和样本长度影响。
+- [Repository Structure-Aware Training Makes SLMs Better Issue Resolver](https://arxiv.org/abs/2412.19031)：从开源 issue 和 pull request 构造 ReSAT 训练数据，包含渐进式定位数据和基于上下文的代码编辑数据，以提升小模型的问题修复和仓库理解能力。
+- [Assessing the Robustness of LLM-based NLP Software via Automated Testing](https://arxiv.org/abs/2412.21016)：用自动化测试扰动基于大模型的 NLP 软件输入，衡量模型组件在生成测试用例下是否保持鲁棒。
 - [SWE-Gym](https://arxiv.org/abs/2412.21139)：提供真实软件工程 agent 的可执行训练环境，并在 SWE 风格任务上训练 agent 与 verifier。
+- [Few-shot code translation via task-adapted prompt learning](https://doi.org/10.1016/j.jss.2024.112002)：通过任务自适应提示学习改进少样本代码翻译。
+- [Generating P4 Dataplanes Using LLMs](https://doi.org/10.1109/hpsr62440.2024.10635926)：测试大模型生成 P4 数据平面程序的能力，目标是网络程序合成而非通用 Python 或 Java 代码。
+- [Domain-Adapted LLMs for VLSI Design and Verification: A Case Study on Formal Verification](https://doi.org/10.1109/vts60656.2024.10538589)：把大模型适配到 VLSI 形式验证任务，重点是硬件设计代码的领域数据和验证提示。
+- [GlueTest: Testing Code Translation via Language Interoperability](https://doi.org/10.1109/icsme58944.2024.00061)：利用语言互操作性测试代码翻译，把源组件和翻译组件一起运行以暴露语义不匹配。
+- [Enhancing Code Generation Through Retrieval of Cross-Lingual Semantic Graphs](https://doi.org/10.1109/apsec65559.2024.00026)：检索跨语言语义图作为生成上下文，使代码模型能在编程语言之间迁移实现模式。
+- [StepCoder: Improving Code Generation with Reinforcement Learning from Compiler Feedback](https://doi.org/10.18653/v1/2024.acl-long.251)：用编译器反馈强化学习训练代码生成，把编译错误作为步骤级信号来获得语法有效且可执行的程序。
+- [Leveraging LLMs for Program Verification](https://doi.org/10.34727/2024/isbn.978-3-85448-065-5_16)：把大模型用于程序验证中的不变量或证明生成，并用验证器反馈检查候选代码推理。
+- [Can a Llama Be a Watchdog? Exploring Llama 3 and Code Llama for Static Application Security Testing](https://doi.org/10.1109/csr61664.2024.10679444)：评估 Llama 3 与 Code Llama 作为静态应用安全测试分类器，将开放大模型漏洞发现与 SAST 式预期对比。
+- [How Prompt Specificity Affects Edge Case Handling in LLM-Generated Code: An Empirical Evaluation](https://doi.org/10.69987/aimlr.2024.50411)：衡量显式边界条件提示如何影响生成代码行为，测试更具体提示是否提升边缘情况覆盖。
+- [Exploring ChatGPT's code refactoring capabilities: An empirical study](https://doi.org/10.1016/j.eswa.2024.123602)：实证评估 ChatGPT 的代码重构能力，检查生成变换能否在改善结构的同时保持行为。
+- [NL2SQL is a solved problem... Not!](https://www.vldb.org/cidrdb/2024/nl2sql-is-a-solved-problem-not.html)：指出 Text-to-SQL 在真实场景中仍然脆弱，强调模型论文常掩盖的 schema 歧义、企业约束和执行落地错误。
+- [Code Gradients: Towards Automated Traceability of LLM-Generated Code](https://doi.org/10.1109/re59067.2024.00038)：把大模型生成代码追溯到需求和提示，为审查与合规提供生成工件的来源链接。
+- [Enhancing Text-to-SQL Parsing through Question Rewriting and Execution-Guided Refinement](https://doi.org/10.18653/v1/2024.findings-acl.120)：重写有歧义的自然语言问题，并用执行反馈精修 SQL，通过纠错循环提升 Text-to-SQL 解析。
+- [ProConSuL: Project Context for Code Summarization with LLMs](https://doi.org/10.18653/v1/2024.emnlp-industry.65)：向代码摘要提示加入项目级上下文，使大模型在仓库名称、依赖和周边工件可见时生成摘要。
+- [On the Effectiveness of Large Language Models in Statement-level Code Summarization](https://doi.org/10.1109/qrs62785.2024.00030)：评估大模型语句级代码摘要能力，揭示粒度和局部上下文如何影响生成解释。
+- [RRGcode: Deep hierarchical search-based code generation](https://doi.org/10.1016/j.jss.2024.111982)：用层次化搜索做代码生成，分解解空间，使生成程序能在多个层级被探索和精修。
+- [LLM-Based Class Diagram Derivation from User Stories with Chain-of-Thought Promptings](https://doi.org/10.1109/compsac61105.2024.00017)：用链式思维提示从用户故事推导 UML 类图，把需求文本转成结构化设计工件。
+- [NaturalCodeBench: Examining Coding Performance Mismatch on HumanEval and Natural User Queries](https://doi.org/10.18653/v1/2024.findings-acl.471)：通过比较自然用户编码查询上的模型表现，说明 HumanEval 式分数可能高估实际编码可用性。
+- [Can LLMs Generate Green Code - A Comprehensive Study Through LeetCode](https://doi.org/10.1109/igsc64514.2024.00017)：研究大模型生成的 LeetCode 解法是否节能，在正确性之外比较运行时间和能耗导向的代码质量。
+- [Cross-Modal Retrieval-enhanced code Summarization based on joint learning for retrieval and generation](https://doi.org/10.1016/j.infsof.2024.107527)：联合训练检索与生成来做代码摘要，用跨模态上下文改进不只依赖局部代码 token 的摘要。
+- [DeepMig: A transformer-based approach to support coupled library and code migrations](https://doi.org/10.1016/j.infsof.2024.107588)：用 Transformer 支持库和源代码的耦合迁移，预测协同 API 与代码修改。
+- [Can Large Language Model Detect Plagiarism in Source Code?](https://doi.org/10.1109/fllm63129.2024.10852497)：评估大模型检测源码抄袭的能力，测试模型判断能否捕捉超越表层 token 重合的语义相似。
+- [LLM vs HLS for RTL Code Generation: Friend or Foe?](https://doi.org/10.1109/ats64447.2024.10915452)：比较大模型 RTL 生成与高层次综合，说明语言模型在传统硬件生成流程中可互补或不足的环节。
+- [Free your mouse! Command Large Language Models to Generate Code to Format Word Documents](https://doi.org/10.18653/v1/2024.emnlp-main.902)：用大模型生成脚本自动设置 Word 文档格式，把文档编辑视为 Office API 上的代码生成。
+- [A Study on C Code Defect Detection with Fine-Tuned Large Language Models](https://doi.org/10.1109/apsec65559.2024.00055)：微调大模型做 C 代码缺陷检测，并将其漏洞或 bug 分类行为与任务专用基线对比。
+- [A^3-CodGen: A Repository-Level Code Generation Framework for Code Reuse With Local-Aware, Global-Aware, and Third-Party-Library-Aware](https://doi.org/10.1109/tse.2024.3486195)：在本地、全局和第三方库感知下生成仓库级代码，使候选代码能复用项目内 API 和外部依赖。
+- [One-to-many testing for code generation from (just) natural language](https://doi.org/10.18653/v1/2024.findings-emnlp.902)：从自然语言编码提示生成多个测试，用于验证一对多可能实现，而不是只依赖单一参考程序。
+- [Take Loads Off Your Developers: Automated User Story Generation using Large Language Model](https://doi.org/10.1109/icsme58944.2024.00082)：用大模型从项目上下文生成用户故事，在代码生成之前支持需求工程。
+- [How Do Your Code LLMs perform? Empowering Code Instruction Tuning with Really Good Data](https://doi.org/10.18653/v1/2024.emnlp-main.777)：构建更高质量的代码指令微调数据，并分析数据筛选如何改变下游代码大模型表现。
+- [Automated Test Cases Generator for IEC 61131-3 Structured Text Based Dynamic Symbolic Execution](https://doi.org/10.1109/tc.2024.3351285)：结合动态符号执行与自动化，为 IEC 61131-3 Structured Text 生成 PLC 软件测试用例。
+- [Decoupling SQL query hardness parsing for text-to-SQL](https://doi.org/10.1016/j.neucom.2024.129293)：把 SQL 难度解析与生成解耦，使 Text-to-SQL 系统能在生成 SQL 前依据预测的查询难度进行条件化。
+- [Predicting ChatGPT’s Ability to Solve Complex Programming Challenges](https://doi.org/10.1109/bigdata62323.2024.10825139)：预测 ChatGPT 何时能解决复杂编程挑战，建模与成功或失败相关的任务特征。
+- [AICodeReview: Advancing code quality with AI-enhanced reviews](https://doi.org/10.1016/j.softx.2024.101677)：实现 AI 辅助代码审查，在审查流程中暴露质量问题并给出改进建议。
+- [Multi-stage guided code generation for Large Language Models](https://doi.org/10.1016/j.engappai.2024.109491)：用多阶段流程引导大模型代码生成，分解问题理解、候选生成和精修，而不是依赖一次性输出。
+- [Towards LLM-Assisted System Testing for Microservices](https://doi.org/10.1109/icdcsw63686.2024.00011)：把大模型用于微服务系统测试，围绕服务交互生成或排序测试，而非只测试孤立函数。
+- [Automated Refactoring of Non-Idiomatic Python Code With Pythonic Idioms](https://doi.org/10.1109/tse.2024.3420886)：自动把非惯用 Python 重构为 Pythonic 写法，并检查转换后代码是否保持行为。
+- [On Improving Repository-Level Code QA for Large Language Models](https://doi.org/10.18653/v1/2024.acl-srw.28)：通过检索并打包相关项目上下文，改进大模型的仓库级代码问答。
+- [Advanced Smart Contract Vulnerability Detection Using Large Language Models](https://doi.org/10.1109/csnet64211.2024.10851734)：将大语言模型用于智能合约漏洞检测，属于代码安全分析任务，而不是通用代码生成方法。
+- [Large Language Models, Fine Tuning, Code Generation](https://doi.org/10.1109/cando-epe65072.2024.10772760)：围绕大语言模型微调与代码生成展开，当前只能依据出版元数据做保守定位。
+- [Using Large Language Model to Label Data in Determining Software Quality Classes: ChatGPT](https://doi.org/10.1109/asyu62119.2024.10757027)：用 ChatGPT 辅助标注软件质量类别数据，更接近数据标注和质量分类支持研究。
+- [Private-Keep Out? Understanding How Developers Account for Code Visibility in Unit Testing](https://doi.org/10.1109/icsme58944.2024.00037)：研究开发者在单元测试中如何处理私有代码可见性，属于测试实践证据而非模型训练方法。
+- [LLM for Complex Signal Processing in FPGA-based Software Defined Radios: A Case Study on FFT](https://doi.org/10.1109/vtc2024-fall63153.2024.10757597)：在 FPGA 软件定义无线电的 FFT 案例中使用 LLM，把代码生成连接到特定信号处理实现。
+- [UniBin: Assembly semantic-enhanced binary vulnerability detection without disassembly](https://doi.org/10.1016/j.ins.2024.121605)：直接学习汇编语义进行二进制漏洞检测，避免在漏洞分析流水线中先做独立反汇编。
+- [Simulink Design of Optimized Turbo Code for Next-Generation Wireless Networks: A 5G and Beyond Perspective](https://doi.org/10.1109/icdcece60827.2024.10548833)：用 Simulink 设计面向无线网络的优化 turbo code 系统，更像相邻信号处理软件工程而非代码大模型方法。
+- [Code Confabulator: Harnessing LLMs to Compile Code for Visualization](https://doi.org/10.1109/icccnt61001.2024.10724543)：用 LLM 编译或生成可视化代码，把可视化脚本作为软件生成目标。
+- [Co-Synthesis of Code and Formal Models Using Large Language Models and Functors](https://doi.org/10.1109/milcom61039.2024.10773930)：用 LLM 和 functor 式结构共同生成可执行代码与形式模型，将代码合成连接到可检查建模工件。
+- [Cost-Sensitive Hypergraph Learning With Structure Quality Preservation for IoT Software Defect Prediction](https://doi.org/10.1109/ojcoms.2024.3514774)：用保持结构质量的代价敏感超图学习预测 IoT 软件缺陷。
+- [Learning To Code With Text-Bison-001:A Beginner-Friendly Explainer for Python, C, Java](https://doi.org/10.1109/icccnt61001.2024.10724566)：把 Text-Bison-001 用作 Python、C、Java 初学者解释助手，更偏编程教育支持而非新代码模型。
+- [AIssistDM: A Plugin to Assist Non-specialist Decision-Makers in Search-Based Software Engineering Tools](https://doi.org/10.5753/sbes.2024.3567)：提供 ChatGPT 驱动插件，为搜索式软件工程工具建议领域参数，更适合作为 Agent Harness 或工具候选。
+- [Improving Reconstruction Fidelity in Generative Face Video Coding using High-Frequency Shuttling](https://doi.org/10.1109/vcip63160.2024.10849880)：用 high-frequency shuttling 改进生成式人脸视频编码，偏离软件开发代码模型轴线。
+- [EMGL: Enhancing Mandarin-English Code-Switching Speech Recognition using Generative Labeling Technique](https://doi.org/10.1109/icct62411.2024.10946392)：用生成式标注改进中英 code-switching 语音识别；这里的 code-switching 是语言混用而非软件代码。
+- [Fusion of Contrastive Learning and Heterogeneous Graph for Code Summarization](https://doi.org/10.1109/eit63098.2024.10762491)：结合对比学习与异构图表示做代码摘要，目标是让源码结构与生成摘要之间的语义对齐更稳定。
+- [Security Analysis of Large Language Models on API Misuse Programming Repair](https://doi.org/10.1155/2024/7135765)：构建 APImisRepair 评估监控资源管理 API 误用修复，并显示 APImisAP 的误用感知提示可部分缓解 LLM 修复失败。
+- [SPDZCoder: Combining Expert Knowledge with LLMs for Generating Privacy-Computing Code](https://arxiv.org/abs/2501.00363)：通过专家规则和三阶段大模型辅助流水线，把 Python 转为 MP-SPDZ 隐私计算代码，并用 SPDZEval 评测正确率。
+- [MCP-Solver: Integrating Language Models with Constraint Programming Systems](https://arxiv.org/abs/2501.00539)：通过 Model Context Protocol 将 LLM 接入 MiniZinc、PySAT 和 Z3，并用迭代验证与编辑保持约束求解工件一致。
+- [A case study on the transformative potential of AI in software engineering on LeetCode and ChatGPT](https://arxiv.org/abs/2501.03639)：比较 GPT-4o 与 LeetCode 用户 Python 解答在质量、可理解性、运行时间、内存和未见题泛化上的差异。
+- [How to Select Pre-Trained Code Models for Reuse? A Learning Perspective](https://arxiv.org/abs/2501.03783)：在 100 个公开代码模型上研究复用选择，用代理模型和潜在特征迁移性度量替代暴力微调，以快速挑选适合下游代码任务的模型。
+- [On the Impact of Requirements Smells in Prompts: The Case of Automated Traceability](https://arxiv.org/abs/2501.04810)：测试提示中的歧义和不一致等需求异味，如何影响 LLM 在需求与代码之间生成 trace link。
 - [SWE-Fixer](https://arxiv.org/abs/2501.05040)：在 11 万个 GitHub issue 与补丁上分别训练开源检索和代码编辑模型，用于高效的仓库级 issue 修复。
+- [Towards a Probabilistic Framework for Analyzing and Improving LLM-Enabled Software](https://arxiv.org/abs/2501.06370)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [LlamaRestTest: Effective REST API Testing with Small Language Models](https://arxiv.org/abs/2501.08598)：微调小型 Llama 模型，根据 OpenAPI 规范生成 REST API 测试输入并推断参数间依赖。
+- [Software testing for extended reality applications: a systematic mapping study](https://arxiv.org/abs/2501.08909)：梳理 34 篇 XR 软件测试研究，覆盖测试维度、技术、评测方法、数据集和工具，更适合作为 Survey 候选。
+- [Green-Code: Learning to Optimize Energy Efficiency in Llm-Based Code Generation](https://arxiv.org/abs/2501.11006)：训练强化学习早退控制器用于大模型代码生成，在推理时权衡准确率、延迟与能耗。
+- [Directional Diffusion-Style Code Editing Pre-Training](https://arxiv.org/abs/2501.12079)：用方向性 diffusion-style 代码演化任务预训练 DivoT5，把编辑前带噪代码还原为编辑后代码，并把中间版本推进到最终编辑结果。
+- [From Critique to Clarity: A Pathway to Faithful and Personalized Code Explanations with Large Language Models](https://arxiv.org/abs/2501.14731)：结合提示增强、自校正、个性化、外部工具和多 LLM 协作生成忠实代码解释，更适合作为 Agent Harness 候选。
+- [Faster Configuration Performance Bug Testing with Neural Dual-Level Prioritization](https://arxiv.org/abs/2501.15392)：用两个神经语言模型加速配置性能 bug 测试：一个估计 bug 类型作为 oracle，另一个排序配置选项和值域搜索。
+- [MultiMend: Multilingual Program Repair with Context Augmentation and Multi-Hunk Patch Generation](https://arxiv.org/abs/2501.16044)：微调代码语言模型做多语言自动程序修复，用检索到的相关代码行增强缺陷函数上下文，并构造多 hunk 补丁，在六个基准上修复 2227 个 bug。
+- [Large Language Model Critics for Execution-Free Evaluation of Code Changes](https://arxiv.org/abs/2501.16655)：构建参考感知的 LLM critic，用于无执行地评估仓库级代码变更，使编码智能体在构建或测试信号稀疏时获得中间语义反馈。
+- [Optimizing Code Runtime Performance Through Context-Aware Retrieval-Augmented Generation](https://arxiv.org/abs/2501.16692)：检索历史优化示例、加入控制流图上下文，并以类比驱动的上下文学习流程提示大模型生成运行更快的代码。
+- [ExeCoder: Empowering Large Language Models with Executability Representation for Code Translation](https://arxiv.org/abs/2501.18460)：把可执行性表征注入代码 LLM 训练，提升代码翻译可靠性。
+- [CoDe: Blockwise Control for Denoising Diffusion Models](https://arxiv.org/abs/2502.00968)：提出 controlled denoising 这一免梯度的扩散模型推理期引导方法，虽有 CoDe 缩写但偏离软件开发代码模型轴线。
+- [Analysis of Student-LLM Interaction in a Software Engineering Project](https://arxiv.org/abs/2502.01273)：分析 126 名学生一学期内使用 ChatGPT 和 Copilot 的交互，比较生成代码质量、复杂度与人工介入程度。
 - [PRLCoder](https://arxiv.org/abs/2502.01715)：通过语句级 mutation/refactoring 的编译和执行检查自动标注过程监督，构建 process-supervised code RL。
+- [AsserT5: Test Assertion Generation Using a Fine-Tuned Code Language Model](https://arxiv.org/abs/2502.02708)：通过微调代码语言模型生成自动化测试断言。
+- [Harnessing Large Language Models for Curated Code Reviews](https://arxiv.org/abs/2502.03425)：构建代码评审评论清洗管线，为代码评审和后续代码修改模型提供更高质量训练数据。
 - [CTRL](https://arxiv.org/abs/2502.03492)：用强化学习训练 critic 模型，使迭代式 critique-revision 和生成式 reward model 改进代码生成。
+- [Resource-Efficient & Effective Code Summarization](https://arxiv.org/abs/2502.03617)：研究资源高效的代码摘要方法。
+- [Should Code Models Learn Pedagogically? A Preliminary Evaluation of Curriculum Learning for Real-World Software Engineering Tasks](https://arxiv.org/abs/2502.03806)：在 clone detection 和代码摘要上测试 CodeT5 curriculum learning，按代码长度和圈复杂度排序训练，并观察到性能饱和、灾难性遗忘与 shortcut learning。
+- [EnseSmells : Deep ensemble and programming language models for automated code smells detection](https://arxiv.org/abs/2502.05012)：构建融合结构化设计特征和预训练编程语言模型统计语义的 code smell 检测器，并分析不同代码 embedding 对四类 smell 的影响。
+- [Combining Large Language Models with Static Analyzers for Code Review Generation](https://arxiv.org/abs/2502.06633)：结合静态分析器的规则信号与 LLM 生成，改进纯学习式代码审查模型的反馈质量。
+- [Harness Local Rewards for Global Benefits: Effective Text-to-Video Generation Alignment with Patch-level Reward Models](https://arxiv.org/abs/2502.06812)：用 patch-level reward model 和 Gran-DPO 对齐文本到视频扩散模型，应归入视频生成 Model 而非软件开发。
+- [Optimizing Datasets for Code Summarization: Is Code-Comment Coherence Enough?](https://arxiv.org/abs/2502.07611)：研究代码与注释一致性是否足以优化代码摘要数据集。
+- [Counterexample Guided Program Repair Using Zero-Shot Learning and MaxSAT-based Fault Localization](https://arxiv.org/abs/2502.07786)：把 MaxSAT 故障定位与零样本大模型综合放入 CEGIS 循环，用反例反馈修复最小化的错误程序草图。
+- [Intention is All you Need: Refining your Code from your Intention](https://arxiv.org/abs/2502.08172)：把代码审查意见抽取成意图模板类别，再让 LLM 按具体重构或修复意图生成修订代码。
+- [From PowerPoint UI Sketches to Web-Based Applications: Pattern-Driven Code Generation for GIS Dashboard Development Using Knowledge-Augmented LLMs, Context-Aware Visual Prompting, and the React Framework](https://arxiv.org/abs/2502.08756)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Pattern-Driven Code Generation for GIS Dashboard Development Using Knowledge-Augmented LLMs, Context-Aware Visual Prompting, and the React Framework 为主要改进目标，作为 Model 条目的能力参考。
+- [Knowledge-Enhanced Program Repair for Data Science Code](https://arxiv.org/abs/2502.09771)：结合知识图谱 API 检索、缺陷知识增强与 AST 级定位，修复 LLM 生成的数据科学代码。
+- [VisPath: Automated Visualization Code Synthesis via Multi-Path Reasoning and Feedback-Driven Optimization](https://arxiv.org/abs/2502.11140)：通过多路径推理生成可视化代码：扩展欠规范提示、执行候选脚本、评估图像质量，并聚合反馈得到最终图表。
+- [SAFE-SQL: Self-Augmented In-Context Learning with Fine-grained Example Selection for Text-to-SQL](https://arxiv.org/abs/2502.11438)：针对每个测试查询生成多个合成 Text-to-SQL 示例，用三类相关性检查筛选高质量样例，再作为上下文示例生成 SQL。
+- [Circuit Representation Learning with Masked Gate Modeling and Verilog-AIG Alignment](https://arxiv.org/abs/2502.12732)：用潜空间 masked gate modeling 和 Verilog-AIG 对齐预训练电路表示，使图神经网络从等价 Verilog 代码中学习电路功能。
+- [The Role of GitHub Copilot on Software Development: A Perspec-tive on Productivity, Security, Best Practices and Future Directions](https://arxiv.org/abs/2502.13199)：综述 Copilot 的生产力、安全、知识产权风险、最佳实践和采用建议，更适合作为 Survey 材料。
+- [CODEPROMPTZIP: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs](https://arxiv.org/abs/2502.14925)：基于程序分析 token 消融构造类型感知、优先级驱动训练样本，并加入 copy 机制训练小型代码压缩器，用于断言生成、修复和代码建议的压缩 RAG 提示。
+- [Learning to Solve and Verify: A Self-Play Framework for Code and Test Generation](https://arxiv.org/abs/2502.14948)：用代码与测试生成的自博弈框架，通过可执行验证过滤合成代码数据。
+- [GNN-Coder: Boosting Semantic Code Retrieval with Combined GNNs and Transformer](https://arxiv.org/abs/2502.15202)：把 AST 图神经网络与 Transformer 结合做语义代码检索，并引入 AST pooling 与 mean angular margin 衡量嵌入可分性。
+- [DeepRTL](https://arxiv.org/abs/2502.15832)：为 Verilog 理解和生成构建统一表征模型，把代码模型覆盖扩展到硬件描述语言。
+- [Improving Deep Assertion Generation via Fine-Tuning Retrieval-Augmented Pre-Trained Language Models](https://arxiv.org/abs/2502.16071)：将词法和嵌入混合断言检索器与预训练生成器结合，生成单元测试断言，并优于先前深度断言生成基线。
+- [Beyond Trusting Trust: Multi-Model Validation for Robust Code Generation](https://arxiv.org/abs/2502.16279)：一种面向稳健代码生成的多模型验证方法；核心思路是比较独立模型输出，以发现异常或可能被植入问题的生成代码。
+- [Code Summarization Beyond Function Level](https://arxiv.org/abs/2502.16704)：研究类级与仓库级上下文对代码摘要的影响，修订评测基准并展示检索到的代码片段可提升摘要质量。
+- [Renaissance of Literate Programming in the Era of LLMs: Enhancing LLM-Based Code Generation in Large-Scale Projects](https://arxiv.org/abs/2502.17441)：用 interoperable literate programming 文档和提示模板帮助 LLM 在 RepoBench 式项目上下文中生成 Scheme 与 Python 代码。
+- [Thinking Before Running! Efficient Code Generation with Thorough Exploration and Optimal Refinement](https://arxiv.org/abs/2502.17442)：先探索代码解空间再精修最优候选，并用 ReST 对探索轨迹做偏好优化，以降低测试时代码生成成本。
 - [SWE-RL](https://arxiv.org/abs/2502.18449)：把强化学习用于开放软件演化任务，使 coding agent 从可验证的仓库变更中学习。
+- [SOK: Exploring Hallucinations and Security Risks in AI-Assisted Software Development with Insights for LLM Deployment](https://arxiv.org/abs/2502.18468)：综合 Copilot、ChatGPT、Cursor、Codeium 等工具中的幻觉、不安全代码、偏见、数据泄漏和知识产权风险，更适合作为 Survey 候选。
+- [Automated Code Generation and Validation for Software Components of Microcontrollers](https://arxiv.org/abs/2502.18905)：结合 AST 分析和检索增强生成 STM32F407 硬件抽象层代码，并验证其能集成到嵌入式应用中。
+- [Efficient and Universal Neural-Network Decoder for Stabilizer-Based Quantum Error Correction](https://arxiv.org/abs/2502.19971)：提出面向 stabilizer 量子纠错的图神经解码器 GraphQEC，偏离软件开发代码模型轴线。
+- [UniCodec: Unified Audio Codec with Single Domain-Adaptive Codebook](https://arxiv.org/abs/2502.20067)：偏离软件开发代码模型轴；它面向语音、音乐和声音构建统一音频 codec，使用分区式 domain-adaptive codebook、domain mixture-of-experts 与 mask-prediction modeling。
 - [muCode](https://arxiv.org/abs/2502.20380)：用 single-step rewards 训练生成器和 verifier，使模型能从多轮执行反馈中改进代码生成。
+- [Discrete Codebook World Models for Continuous Control](https://arxiv.org/abs/2503.00653)：构建离散码本世界模型和模型预测控制用于连续控制 RL；除非跨列到通用 agent 模型学习，否则偏离软件开发。
+- [ABFS: Natural Robustness Testing for LLM-based NLP Software](https://arxiv.org/abs/2503.01319)：把提示和示例整体的鲁棒性测试建模为自然扰动空间中的 best-first search，为 LLM 型 NLP 软件生成部署前测试。
+- [V2 Dial: Unification of Video and Visual Dialog via Multimodal Experts](https://arxiv.org/abs/2503.02063)：偏离 Software Development Model 轴；它通过多模态专家路由和对比对齐统一图像与视频对话输入，用于 AVSD 和 VisDial，而不是训练代码模型。
+- [Which Code Statements Implement Privacy Behaviors in Android Applications?](https://arxiv.org/abs/2503.02091)：用程序员标注数据微调大模型检测 Android 语句级隐私行为，使隐私声明生成细化到方法或文件以下粒度。
+- [Unmasking the Genuine Type Inference Capabilities of LLMs for Java Code Snippets](https://arxiv.org/abs/2503.04076)：构建未公开过的 ThaliaType 基准，并发现 StarCoder2 训练数据中存在 StatType-SO 泄漏，更像 Java 片段类型推断的 Bench 或评测问题。
+- [Multi-modal Summarization in Model-Based Engineering: Automotive Software Development Case Study](https://arxiv.org/abs/2503.04506)：评估多模态 LLM 摘要汽车模型驱动工程中的 UML 与 EMF 图，重点是图中关系、特征和功能理解。
+- [LoRACode: LoRA Adapters for Code Embeddings](https://arxiv.org/abs/2503.05315)：为 CodeBERT 和 UniXcoder 嵌入微调任务专用 LoRA adapter，用少于 2% 的可训练参数支持多语言 Code2Code 与 Text2Code 检索。
+- [SQLCritic: Correcting Text-to-SQL Generation via Clause-wise Critic](https://arxiv.org/abs/2503.07996)：用 adaptive-DPO 和自动构造的 clause-wise critique 数据训练 SQLCritic，在 Text-to-SQL 中定位并纠正语法和语义错误。
+- [Investigating Execution-Aware Language Models for Code Optimization](https://arxiv.org/abs/2503.08228)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [DIV-FF: Dynamic Image-Video Feature Fields For Environment Understanding in Egocentric Videos](https://arxiv.org/abs/2503.08344)：偏离软件开发轴；它用图像-视频特征场把第一视角场景分解为持久、动态和行动者组件，用于长期场景理解。
+- [GraphSense: Graph Embedding Based Code Suggestion Framework](https://arxiv.org/abs/2503.08648)：用图嵌入提供轻量级本地 IDE 下一行代码建议，面向 GPT 式模型过慢或资源开销过大的实时补全场景。
+- [Commenting Higher-level Code Unit: Full Code, Reduced Code, or Hierarchical Code Summarization](https://arxiv.org/abs/2503.10737)：比较完整代码、简化代码与层次化代码输入对高层代码单元注释的影响，为代码摘要模型提供依据。
+- [Tikzero: Zero-Shot Text-Guided Graphics Program Synthesis](https://arxiv.org/abs/2503.11509)：通过图像中介生成可编辑的 TikZ 图形程序，连接文本描述与代码式图形合成。
+- [Your Text Encoder Can Be an Object-Level Watermarking Controller](https://arxiv.org/abs/2503.11945)：偏离软件开发轴的图像生成水印工作；它只微调文本 token 嵌入，在 latent diffusion model 中控制对象级不可见水印。
+- [PredicateFix: Repairing Static Analysis Alerts with Bridging Predicates](https://arxiv.org/abs/2503.12205)：通过静态分析规则谓词检索 clean-code 示例，并送入 RAG 修复流水线，修复 CodeQL 和 GoInsight 警报。
+- [LLM Test Generation via Iterative Hybrid Program Analysis](https://arxiv.org/abs/2503.13580)：Panta 结合静态控制流分析、动态覆盖率反馈和迭代式 LLM 提示，针对未覆盖执行路径生成单元测试。
+- [Inference-Time Intervention in Large Language Models for Reliable Requirement Verification](https://arxiv.org/abs/2503.14130)：在基于图表示的 MBSE 模型上推理时干预少数专门注意力头，控制需求验证输出，相比微调提升精度。
+- [UTFix: Change Aware Unit Test Repairing using LLM](https://arxiv.org/abs/2503.14924)：在 focal method 变化后，将静态切片、动态切片和失败信息提供给大模型修复过期单元测试，覆盖断言失败和覆盖率下降。
+- [aiXcoder-7B-v2: Training LLMs to Fully Utilize the Long Context in Repository-level Code Completion](https://arxiv.org/abs/2503.15301)：用 COLA-132K 长跨文件补全样例训练 aiXcoder 式模型，使仓库级补全学会在 128K 上下文中利用 API 和相似代码片段。
+- [LLM-Aided Customizable Profiling of Code Data Based On Programming Language Concepts](https://arxiv.org/abs/2503.15571)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Human or LLM? A Comparative Study on Accessible Code Generation Capability](https://arxiv.org/abs/2503.15885)：比较 GPT-4o 与 Qwen2.5-Coder 生成网页代码的可访问性，并用反馈驱动的 ReAct 修复 ARIA、颜色对比和 alt 文本问题。
+- [HDLCoRe: A Training-Free Framework for Mitigating Hallucinations in LLM-Generated HDL](https://arxiv.org/abs/2503.16528)：无需微调，通过 HDL-aware CoT 自验证与异构 RAG 结合，先抽取关键组件再重排 HDL 示例，以缓解 HDL 生成幻觉。
+- [Code Evolution Graphs: Understanding Large Language Model Driven Design of Algorithms](https://arxiv.org/abs/2503.16668)：用代码演化图分析 LLM 生成算法在迭代优化中的变化。
+- [Enabling Global, Human-Centered Explanations for LLMs:From Tokens to Interpretable Code and Test Generation](https://arxiv.org/abs/2503.16771)：提出 CodeQ，把 token 级 rationale 映射到编程类别，再聚合成全局代码解释，用于揭示代码大模型依赖浅层语法线索的问题。
+- [A Study on the Improvement of Code Generation Quality Using Large Language Models Leveraging Product Documentation](https://arxiv.org/abs/2503.17837)：从产品手册、FAQ 和教程生成端到端测试代码，先用定制提示理解文档意图，再输出可执行测试。
+- [SEAlign: Alignment Training for Software Engineering Agent](https://arxiv.org/abs/2503.18455)：利用高质量软件工程 workflow steps、面向多步决策的蒙特卡洛树搜索，以及关键动作偏好优化，对齐真实 SWE 任务中的代码模型。
+- [Coding Malware in Fancy Programming Languages for Fun and Profit](https://arxiv.org/abs/2503.19058)：展示把 shellcode 转写到较少使用的编程语言后，依赖严格签名的静态恶意软件检测器会漏报，属于安全规避鲁棒性研究而非代码模型训练。
+- [GenEdit: Compounding Operators and Continuous Improvement to Tackle Text-to-SQL in the Enterprise](https://arxiv.org/abs/2503.21602)：描述企业级 Text-to-SQL 系统，结合复合生成算子、公司专属知识集、用户反馈编辑和回归测试式知识合并。
+- [RocketPPA](https://arxiv.org/abs/2503.21971)：用 LLM 与 mixture-of-experts 回归器进行 HDL code-level PPA 估计，为硬件代码设计提供反馈信号。
+- [Code Structural Knowledge for Code Translation](https://arxiv.org/abs/2503.22776)：通过上下文学习将代码结构知识注入 LLM 代码翻译，补充结构感知的代码模型适配路线。
+- [CCCI: Code Completion with Contextual Information for Complex Data Transfer Tasks Using Large Language Models](https://arxiv.org/abs/2503.23231)：把变量作用域、对象模型、API 和数据库关系等上下文纳入 LLM 代码补全，以改进复杂数据传输任务中的生成质量。
+- [Enhancing LLMs in Long Code Translation through Instrumentation and Program State Alignment](https://arxiv.org/abs/2504.02017)：提出 LongTrans 和 PAST，通过插桩与程序状态对齐，让 C++、Java、Python 长代码翻译保持执行行为一致。
+- [VoiceCraft-Dub: Automated Video Dubbing with Neural Codec Language Models](https://arxiv.org/abs/2504.02386)：偏离 Software Development Model 轴；它用人脸特征适配器、音视频融合层和 CelebV-Dub 数据集扩展神经 codec 语言模型，实现同步视频配音。
+- [Expectations vs Reality - A Secondary Study on AI Adoption in Software Testing](https://arxiv.org/abs/2504.04921)：Survey 候选；系统映射 2020 年以来工业语境下 AI 在软件测试中的采用研究，归纳使用场景、收益和落地阻碍。
+- [BRIDGES: Bridging Graph Modality and Large Language Models within EDA Tasks](https://arxiv.org/abs/2504.05180)：生成 RTL 与 netlist 图数据，并用轻量跨模态投影器把图表示送入 LLM 提示，在不改基础模型架构的情况下处理 EDA 任务。
+- [Identifying and Replicating Code Patterns Driving Performance Regressions in Software Systems](https://arxiv.org/abs/2504.05851)：从真实性能回归代码变更中挖掘模式，扩展性能测试 mutation operators，并验证这些 mutants 是否会降低真实系统的运行时间或内存表现。
+- [ARLO: A Tailorable Approach for Transforming Natural Language Software Requirements into Architecture using LLMs](https://arxiv.org/abs/2504.06143)：用大模型抽取架构相关自然语言需求，将其映射到架构选择矩阵，并通过整数线性规划求解最优架构。
 - [R2E-Gym](https://arxiv.org/abs/2504.07164)：用 SYNGEN 合成 issue-like 可执行环境，并结合混合 verifier 支撑开放权重 SWE agent 的训练与 test-time scaling。
+- [From Token to Line: Enhancing Code Generation with a Long-Term Perspective](https://arxiv.org/abs/2504.07433)：用 LSR-MCTS 按代码行而非 token 搜索，并在树节点加入自我精修来修正错误、增加程序候选多样性。
+- [Program Skeletons for Automated Program Translation](https://arxiv.org/abs/2504.07483)：用程序骨架保留源程序行为并抽离语言细节，从而改进自动化跨语言翻译。
+- [Zero-Shot Cross-Domain Code Search without Fine-Tuning](https://arxiv.org/abs/2504.07740)：将查询-代码匹配拆解为更简单的步骤，在无需任务专门微调的情况下改进跨领域代码搜索。
+- [Towards an Understanding of Context Utilization in Code Intelligence](https://arxiv.org/abs/2504.08734)：Survey 候选；综述 146 篇研究，归纳代码智能中的上下文来源、集成策略、任务分布和评测实践。
+- [RTLRepoCoder](https://arxiv.org/abs/2504.08862)：结合微调与检索增强进行仓库级 RTL 代码补全，把仓库上下文显式引入硬件代码模型。
+- [NetTAG: A Multimodal RTL-and-Layout-Aligned Netlist Foundation Model via Text-Attributed Graph](https://arxiv.org/abs/2504.09260)：结合大模型编码的门级语义和图 Transformer，并加入 RTL 与 layout 对齐，预训练可支持功能和物理 EDA 任务的 netlist foundation model。
+- [The Code Barrier: What LLMs Actually Understand?](https://arxiv.org/abs/2504.10557)：在 CodeNet 派生 Java 题目上进行受控代码混淆，测试 LLM 描述和去混淆代码时是否超越 token 模式识别。
+- [QualiTagger: Automating software quality detection in issue trackers](https://arxiv.org/abs/2504.11053)：在大规模 GitHub issue 数据上训练 Transformer 标注器，用于检测软件质量属性和安全标签。
+- [Proof-Carrying Neuro-Symbolic Code](https://arxiv.org/abs/2504.12031)：将代码生成与携带证明的神经符号验证结合起来，为软件开发模型页补充一种让生成程序携带形式化证据而不只依赖测试通过的路线。
+- [Automated Generation of Commit Messages in Software Repositories](https://arxiv.org/abs/2504.12998)：在代码变更与提交信息配对数据上训练并比较 TF-IDF、Word2Vec、逻辑回归和 LSTM，用于生成简洁的仓库提交消息。
+- [ApiRAT: Integrating Multi-source API Knowledge for Enhanced Code Translation with LLMs](https://arxiv.org/abs/2504.14852)：结合 API 序列检索、反向翻译和 API 映射，提升跨语言库调用不一致场景下的 LLM 代码翻译。
+- [StyleMe3D: Stylization with Disentangled Priors by Multiple Encoders on 3D Gaussians](https://arxiv.org/abs/2504.15281)：偏离软件开发轴的 3D 生成工作；用 Dynamic Style Score Distillation 以及 CLIP、VGG 对齐在保持几何结构的同时风格化 3D Gaussians。
+- [Optimizing Token Consumption in LLMs: A Nano Surge Approach for Code Reasoning Efficiency](https://arxiv.org/abs/2504.15989)：用 context awareness、responsibility tuning 和 cost-sensitive inference 降低自动代码修复中 CoT 推理的 token 消耗，在不牺牲修复质量的前提下压缩冗余推理。
+- [Neuro-symbolic Static Analysis with LLM-generated Vulnerability Patterns](https://arxiv.org/abs/2504.16057)：用大模型生成漏洞检测 pattern，并通过 trace-driven symbolic validation 在 C、Java、PHP 和 JavaScript 的 pattern DSL 上迭代修正。
+- [GENCNIPPET: Automated Generation of Code Snippets for Supporting Programming Questions](https://arxiv.org/abs/2504.16292)：在 Stack Overflow 问题与代码片段对上微调代码模型，使发帖时可为缺少示例的 Python 和 Java 问题生成相关代码片段。
+- [High-Fidelity And Complex Test Data Generation For Google SQL Code Generation Services](https://arxiv.org/abs/2504.17203)：用 LLM 辅助生成并配合前后处理，为嵌套 Google SQL 工作负载和 NL2SQL 测试构造语法正确、语义一致的高保真 mock data。
+- [ThinkFL: Self-Refining Failure Localization for Microservice Systems via Reinforcement Fine-Tuning](https://arxiv.org/abs/2504.18776)：采用渐进式多阶段 GRPO 微调，让轻量 LLM 学会面向微服务故障定位的推理和自我精修轨迹。
+- [Can We Enhance Bug Report Quality Using LLMs?: An Empirical Study of LLM-Based Bug Report Generation](https://arxiv.org/abs/2504.18804)：指令微调 Qwen、Mistral 和 Llama，把非结构化 bug report 转成模板化报告，并评估缺失字段检测和跨项目泛化。
+- [Large Language Models Are Qualified Benchmark Builders: Rebuilding Pre-Training Datasets for Advancing Code Intelligence Tasks](https://arxiv.org/abs/2504.19444)：用大模型生成注释替换过时人工注释来重建代码预训练语料，再重新预训练 CodeT5 用于摘要、生成和翻译。
+- [Evaluate-and-Purify: Fortifying Code Language Models Against Adversarial Attacks Using LLM-as-a-Judge](https://arxiv.org/abs/2504.19730)：使用 LLM-as-a-judge 检测并净化针对代码语言模型的标识符替换对抗样本，为 AI 编程系统补充模型侧鲁棒性防御。
+- [Using LLMs in Generating Design Rationale for Software Architecture Decisions](https://arxiv.org/abs/2504.20781)：在来自 Stack Overflow、GitHub issues 与 GitHub discussions 的 100 个架构决策问题上评估 5 个 LLM，并比较零样本、思维链和 agent 提示相对于专家设计理由标注的效果。
+- [Secure coding with AI - from detection to repair](https://arxiv.org/abs/2504.20814)：分析 DevGPT 中的 C、C++ 和 C# 代码漏洞，并评估 GPT-4.1、GPT-5 与 Claude Opus 4.1 的 CWE 识别和修复能力。
 - [SWE-smith](https://arxiv.org/abs/2504.21798)（[开源代码](https://github.com/SWE-bench/SWE-smith)）：扩展合成 SWE 训练数据并训练 SWE-agent-LM-32B，除了环境搭建属性外，也有直接模型训练贡献。
+- [MCMComm: Hardware-Software Co-Optimization for End-to-End Communication in Multi-Chip-Modules](https://arxiv.org/abs/2505.00041)：面向 chiplet 通信的软硬件协同设计，结合拥塞感知分析、对角链路、工作负载划分、遗传算法和 MIQP。
+- [CoRAC: Integrating Selective API Document Retrieval with Question Semantic Intent for Code Question Answering](https://doi.org/10.18653/v1/2025.naacl-long.628)：将选择性 API 文档检索与问题意图建模结合，用于代码问答。
+- [Identifying Root Cause of Bugs by Capturing Changed Code Lines With Relational Graph Neural Networks](https://arxiv.org/abs/2505.00990)：对 bug-fixing commit 中的变更行使用关系图卷积，检测 root-cause 删除行，并在 87 个开源项目上评测。
+- [Detecting the Root Cause Code Lines in Bug-Fixing Commits by Heterogeneous Graph Learning](https://arxiv.org/abs/2505.01022)：从语法和依赖关系构建异构 bug-fixing 图，再用注意力和跨行语义门控识别根因代码行。
+- [DRAFT](https://arxiv.org/abs/2505.01307)：用 document retrieval-augmented fine-tuning 支持 safety-critical software assessment，把法规证据检索与模型适配连接起来。
+- [Automatic Generation of PLC Code Based on Finetuned Large Language Models](https://doi.org/10.1109/ieeeconf65522.2025.11136984)：以微调语言模型生成 PLC 代码为核心，把工业控制逻辑合成作为软件模型适配问题处理。
+- [CodeSSM: Towards State Space Models for Code Understanding](https://arxiv.org/abs/2505.01475)：在代码语料上训练 state-space model，用于检索、分类和克隆检测，并测试长上下文外推和相对 Transformer 的显存节省。
+- [CircuitFusion: Multimodal Circuit Representation Learning for Agile Chip Design](https://arxiv.org/abs/2505.02168)：融合硬件代码、结构图和功能摘要，通过自监督电路任务与检索增强推理支持芯片设计预测任务。
+- [LAMeD: LLM-generated Annotations for Memory Leak Detection](https://arxiv.org/abs/2505.02376)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 LLM-generated Annotations for Memory Leak Detection 为主要改进目标，作为 Model 条目的能力参考。
+- [Can Large Language Models Predict Parallel Code Performance?](https://arxiv.org/abs/2505.03988)：把 GPU kernel 性能预测建模为 roofline 分类，并在 CUDA 与 OpenMP kernel 上测试零样本、少样本、带 profiling 和微调的大模型设置。
+- [Identification and Optimization of Redundant Code Using Large Language Models](https://arxiv.org/abs/2505.04040)：Agent Harness 提案；用 LLM 检测并优化 AI 项目中的冗余代码，同时分析冗余模式及开发者引入冗余的原因。
+- [Chain-of-Thought Tokens are Computer Program Variables](https://arxiv.org/abs/2505.04955)：偏离软件开发轴的模型解释性研究，显示 CoT token 在乘法和动态规划任务中可像变量一样存放中间状态。
+- [Towards Mitigating API Hallucination in Code Generated by LLMs with Hierarchical Dependency Aware](https://arxiv.org/abs/2505.05057)：提出 MARIN，先挖掘当前函数的局部与全局项目依赖，再用依赖约束解码限制 API 生成，使调用与项目内实际可用 API 对齐，而不是只检索扁平文档片段。
+- [Spec2Assertion: Automatic Pre-RTL Assertion Generation using Large Language Models with Progressive Regularization](https://arxiv.org/abs/2505.07995)：用大模型 progressive regularization 和思维链提示，从设计规格生成 pre-RTL SystemVerilog assertions，并配套广覆盖质量评测。
+- [LEGO: A Layout Expression Language for Code Generation of Hierarchical Mapping](https://arxiv.org/abs/2505.08091)：定义 layout-independent computation 与 layout expressions，并接入 Triton、MLIR 和 CUDA，用于生成层次化 GPU 索引与数据移动代码。
+- [Enhancing Code Quality with Generative AI: Boosting Developer Warning Compliance](https://arxiv.org/abs/2505.11677)：用 LLM 简化静态分析警告、解释严重性和漏洞含义，并给出修复建议，以提升开发者处理警告的意愿。
+- [JOLT-SQL: Joint Loss Tuning of Text-to-SQL with Confusion-aware Noisy Schema Sampling](https://arxiv.org/abs/2505.14305)：在单阶段 SFT 目标中联合优化 schema linking 和 SQL 生成，并加入局部双向注意力与 confusion-aware noisy schema sampling。
+- [Success is in the Details: Evaluate and Enhance Details Sensitivity of Code LLMs through Counterfactuals](https://arxiv.org/abs/2505.14597)：构造反事实代码敏感性数据，并提出 CTF-Instruct 增量微调框架，按难度、多样性和敏感性选择训练样例。
+- [Code Graph Model (CGM): A Graph-Integrated Large Language Model for Repository-Level Software Engineering Tasks](https://arxiv.org/abs/2505.16901)：模型侧方法候选，Graph-integrated LLM for repository-level software engineering tasks.
+- [Style2Code: A Style-Controllable Code Generation Framework with Dual-Modal Contrastive Representation Learning](https://arxiv.org/abs/2505.19442)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Style2Code: A Style-Controllable Code Generation Framework with Dual-Modal Contrastive Representation Learning”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [An Empirical Study on Strong-Weak Model Collaboration for Repo-level Code Generation](https://arxiv.org/abs/2505.20182)：研究强弱模型协作进行代码库级代码生成，关联代码智能体的模型侧协作。
+- [iDSE](https://arxiv.org/abs/2505.22086)：用 LLM 支持高层次综合中的设计空间探索，把软件开发模型覆盖扩展到硬件代码优化流程。
+- [Training Language Models to Generate Quality Code with Program Analysis Feedback](https://arxiv.org/abs/2505.22704)：用程序分析发现和单元测试作为可扩展强化信号，训练生成生产质量代码的模型。
+- [Infinite-Instruct: Synthesizing Scaling Code instruction Data with Bidirectional Synthesis and Static Verification](https://arxiv.org/abs/2505.23177)：通过双向构造和静态验证合成可扩展代码指令数据，为代码大模型补充数据生成配方。
+- [Satori-SWE](https://arxiv.org/abs/2505.23604)（[开源代码](https://github.com/satori-reasoning/Satori-SWE)）：结合 evolutionary test-time scaling 与基于 RL 的自演化，使较小 SWE 模型用更少采样改进修复。
+- [Linear Layouts: Robust Code Generation of Efficient Tensor Computation Using F_2](https://arxiv.org/abs/2505.23819)：把 tensor layout 建模为 F2 上的二进制矩阵，并与 Triton 集成，避免高效 tensor 代码生成中的 layout 转换组合爆炸。
+- [Fine-Tune an SLM or Prompt an LLM? The Case of Generating Low-Code Workflows](https://arxiv.org/abs/2505.24189)：比较微调小模型和提示大模型生成 low-code workflow 的效果，区分何时需要模型适配、何时提示已足够。
+- [A Reward-driven Automated Webshell Malicious-code Generator for Red-teaming](https://arxiv.org/abs/2505.24252)：构建 RAWG 奖励驱动 webshell 生成器，先分类混淆类型并规范化恶意代码 token，再用 SFT 和 PPO 生成多样化红队 payload。
+- [CoRet: Improved Retriever for Code Editing](https://arxiv.org/abs/2505.24715)：训练面向代码编辑的 dense retriever，结合仓库结构和调用图依赖，在 SWE-bench 与 Long Code Arena bug localization 上提升召回率。
+- [Veritas](https://arxiv.org/abs/2506.00005)：将 LLM 生成的合取范式规格转为确定性的 Verilog 合成流程，把硬件代码生成从自由形式 HDL 提示扩展到可约束的综合路径。
+- [CRScore++: Reinforcement Learning with Verifiable Tool and AI Feedback for Code Review](https://arxiv.org/abs/2506.00296)：结合可验证工具反馈与 AI 反馈，对代码评审评论生成进行强化学习。
+- [How Programming Concepts and Neurons Are Shared in Code Language Models](https://arxiv.org/abs/2506.01074)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 How Programming Concepts and Neurons Are Shared in Code Language Models 为主要改进目标，作为 Model 条目的能力参考。
+- [AdaRewriter: Unleashing the Power of Prompting-based Conversational Query Reformulation via Test-Time Adaptation](https://arxiv.org/abs/2506.01381)：若不路由到搜索任务则偏离软件开发轴；它用对比排序训练轻量 outcome-supervised reward model，在测试时选择更好的对话查询改写。
+- [Exploring Prompt Patterns in AI-Assisted Code Generation: Towards Faster and More Effective Developer-AI Collaboration](https://arxiv.org/abs/2506.01604)：开发者工作流研究，挖掘 DevGPT 中七类 prompt pattern，并评估哪些模式可减少 AI 辅助代码生成的交互轮次。
+- [Backdoors in Code Summarizers: How Bad Is It?](https://arxiv.org/abs/2506.01825)：系统分析代码摘要模型后门投毒中的数据、模型和推理因素，显示极少绝对数量的投毒样本也可植入后门。
+- [Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](https://arxiv.org/abs/2506.03136)（[开源代码](https://github.com/Gen-Verse/CURE)）：从交互结果中共同训练 coder 和 unit tester，使测试器也成为 agentic coding 的监督来源。
+- [Seed-Coder](https://arxiv.org/abs/2506.03524)（[开源代码](https://github.com/ByteDance-Seed/Seed-Coder)）：用模型侧代码数据过滤、SFT、偏好优化和 Long-CoT RL 构建 8B 代码模型族，覆盖代码推理与软件任务。
+- [Auto prompt sql: a resource-efficient architecture for text-to-sql translation in constrained environments](https://arxiv.org/abs/2506.03598)：构建 AP-SQL，以 schema filtering、in-context 示例检索、prompt 驱动 schema linking，以及 CoT 或 GoT 模板支持资源受限环境下的 Text-to-SQL。
+- [VisCoder: Fine-Tuning LLMs for Executable Python Visualization Code Generation](https://arxiv.org/abs/2506.03930)：微调 LLM 生成可执行 Python 可视化代码。
+- [Leveraging Reward Models for Guiding Code Review Comment Generation](https://arxiv.org/abs/2506.04464)：用强化学习生成代码审查评论，奖励同时考虑语义匹配以及评论是否能帮助下游代码精修模型。
+- [Cracking the Code: Enhancing Implicit Hate Speech Detection through Coding Classification](https://arxiv.org/abs/2506.04693)：偏离软件开发轴的 NLP 分类工作，用 coding-style 标签提升隐式仇恨言论检测，并非软件开发模型贡献。
+- [Zero-Shot Detection of LLM-Generated Code via Approximated Task Conditioning](https://arxiv.org/abs/2506.06069)：通过近似原始任务提示并度量任务条件下的 token 熵，零样本检测跨语言的大模型生成代码。
+- [SWE-Dev](https://arxiv.org/abs/2506.07636)：通过监督数据构造、强化学习和推理扩展构建 SWE agent。
+- [CUDA-LLM: LLMs Can Write Efficient CUDA Kernels](https://arxiv.org/abs/2506.09092)：提出 Feature Search and Reinforcement 框架生成 CUDA kernel，同时优化编译通过、功能正确性和目标 GPU 上的实际执行延迟，并通过迭代精修改进性能。
+- [Taming SQL Complexity: LLM-Based Equivalence Evaluation for Text-to-SQL](https://arxiv.org/abs/2506.09359)：用 LLM 判断 Text-to-SQL 输出的弱等价和语义等价，覆盖精确字符串或执行匹配无法识别的有效答案。
+- [Expert-in-the-Loop Systems with Cross-Domain and in-Domain Few-Shot Learning for Software Vulnerability Detection](https://arxiv.org/abs/2506.10104)：人类专家在环的漏洞检测工作流，用零样本和少样本 CWE 分类，并按置信度把案例路由给专家，而非纯模型训练。
+- [D-LiFT: Improving LLM-based Decompiler Backend via Code Quality-driven Fine-tuning](https://arxiv.org/abs/2506.10125)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Improving LLM-based Decompiler Backend via Code Quality-driven Fine-tuning 为主要改进目标，作为 Model 条目的能力参考。
+- [Augmenting Large Language Models with Static Code Analysis for Automated Code Quality Improvements](https://arxiv.org/abs/2506.10330)：结合静态分析发现、支持证据检索和代码对比界面，引导 LLM 修复代码质量问题。
+- [MLLM-Based UI2Code](https://arxiv.org/abs/2506.10376)：利用 UI 布局信息引导多模态模型生成界面代码。
+- [Not One to Rule Them All: Mining Meaningful Code Review Orders From GitHub](https://arxiv.org/abs/2506.10654)：对 23,241 个 pull request 做实证研究，挖掘 largest-diff-first、semantic-to-title 和 tests-first 等有用的代码评审文件顺序。
+- [Formalising Software Requirements using Large Language Models](https://arxiv.org/abs/2506.10704)：VERIFAI 项目说明，结合 NLP、本体、相似软件工件复用和 LLM，生成形式化规格并把需求追踪到验证阶段。
+- [DCE-LLM: Dead Code Elimination with Large Language Models](https://arxiv.org/abs/2506.11076)：将大语言模型用于死代码消除，补充代码生成之外的代码优化任务。
+- [SAGE:Specification-Aware Grammar Extraction for Automated Test Case Generation with LLMs](https://arxiv.org/abs/2506.11081)：先微调开放大模型把规格翻译为带计数器的上下文无关文法，再用带可验证奖励的 GRPO 和迭代反馈改进测试用例生成。
+- [Agent-RLVR: Training Software Engineering Agents via Guidance and Environment Rewards](https://arxiv.org/abs/2506.11425)：面向软件工程 agent 的环境奖励训练框架。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [An Empirical study on LLM-based Log Retrieval for Software Engineering Metadata Management](https://arxiv.org/abs/2506.11659)：Agent Harness 候选；评估 LLM 辅助的自然语言检索如何用于软件工程元数据和日志，而不是训练代码模型。
+- [Mastering Da Vinci Code: A Comparative Study of Transformer, LLM, and PPO-based Agents](https://arxiv.org/abs/2506.12801)：偏离软件开发轴的游戏推理研究，比较 Transformer、LLM 和 PPO 智能体在 Da Vinci Code 桌游中的表现。
+- [From Empirical Evaluation to Context-Aware Enhancement: Repairing Regression Errors with LLMs](https://arxiv.org/abs/2506.13182)：构建 Java 回归 bug 基准 RegMiner4APR，并显示在大模型程序修复中加入 bug-inducing change 上下文可显著提升成功修复数。
+- [DesignCoder](https://arxiv.org/abs/2506.13663)：用层级感知和自纠正 LLM 机制生成 UI 代码，面向视觉到代码和前端代码生成。
+- [Issue Retrieval and Verification Enhanced Supplementary Code Comment Generation](https://arxiv.org/abs/2506.14649)：结合问题检索与验证生成补充代码注释。
+- [Uncovering Intention Through LLM-Driven Code Snippet Description Generation](https://arxiv.org/abs/2506.15453)：通过 LLM 生成代码片段描述来揭示开发意图。
+- [Reassessing Code Authorship Attribution in the Era of Language Models](https://arxiv.org/abs/2506.17120)：代码风格归因实证研究，重新评估 LLM 生成代码改变人类编码风格分布后，作者归因方法是否仍然可靠。
+- [Large Language Model Unlearning for Source Code](https://arxiv.org/abs/2506.17125)：一种面向大语言模型的源代码遗忘方法；核心思路是在移除记忆化或高风险代码片段时，降低对通用编程能力的外溢损伤。
+- [I Know Which LLM Wrote Your Code Last Summer: LLM generated Code Stylometry for Authorship Attribution](https://arxiv.org/abs/2506.17323)：发布 CodeT5-Authorship 与 LLM-AuthorBench，用仅保留 encoder 的 CodeT5 分类器在 32,000 个可编译 C 程序上归因生成代码来自哪个 LLM。
+- [Context-Aware CodeLLM Eviction for AI-assisted Coding](https://arxiv.org/abs/2506.18796)：提出面向自托管 CodeLLM serving 的 CACE，用模型加载时间、任务延迟敏感度、预期输出长度、近期使用和滑动窗口需求等上下文信号决定驱逐，而不是只按最近使用。
+- [Mix-of-Language-Experts Architecture for Multilingual Programming](https://arxiv.org/abs/2506.18923)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [From Codicology to Code: A Comparative Study of Transformer and YOLO-based Detectors for Layout Analysis in Historical Documents](https://arxiv.org/abs/2506.20326)：偏离软件开发轴的计算机视觉研究，比较 Transformer 与 YOLO 检测器做历史文档版面分析；标题中的 code 指 codicology 而非编程。
+- [DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](https://arxiv.org/abs/2506.20639)：模型侧方法候选，Masked diffusion language-model method specialized for code generation.
+- [XY-Tokenizer: Mitigating the Semantic-Acoustic Conflict in Low-Bitrate Speech Codecs](https://arxiv.org/abs/2506.23325)：偏离软件开发轴的语音 codec 模型；它用多阶段、多任务学习在低码率下平衡语义文本对齐与声学重建质量。
 - [AlphaVerus](https://proceedings.mlr.press/v267/aggarwal25a.html)：通过自改进翻译和 tree refinement 引导形式化验证代码生成，把证明反馈纳入代码模型改进过程。
 - [NextCoder](https://proceedings.mlr.press/v267/aggarwal25b.html)：让代码语言模型适配多样化代码编辑分布，强化补丁生成和 coding assistant 所需的 edit coverage。
 - [Reasoning Through Execution](https://proceedings.mlr.press/v267/yu25f.html)：用执行反馈统一代码生成中的 process reward 和 outcome reward，使中间推理和最终成功都能被验证信号约束。
+- [Revisiting Chain-of-Thought in Code Generation](https://proceedings.mlr.press/v267/liu25ah.html)：研究代码模型在生成前是否需要显式学习推理，为代码推理训练策略提供依据。
 - [Synthesizing Software Engineering Data in a Test-Driven Manner](https://proceedings.mlr.press/v267/zhang25cn.html)：围绕测试生成 SWE 训练数据，让合成样例携带可执行验证信号，而不只是自然语言 issue 描述。
-- OpenAI Codex / `codex-1`（[官方发布](https://openai.com/index/introducing-codex/)；[系统卡补充](https://openai.com/index/o3-o4-mini-codex-system-card-addendum/)）：报告一个由 o3 派生、在真实编码任务上经强化学习优化的软件工程模型；Codex CLI 和云端工作流则属于 harness 侧。
-- Claude 4 与 Claude Sonnet 4.5 coding model cards（[Claude 4](https://www.anthropic.com/news/claude-4)；[Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)）：提供闭源模型在长时编码、仓库修复、终端任务和 SWE-bench 类软件代理能力上的模型卡证据。
-- [Training Language Models to Generate Quality Code with Program Analysis Feedback](https://arxiv.org/abs/2505.22704)：用程序分析发现和单元测试作为可扩展强化信号，训练生成生产质量代码的模型。
-- [Satori-SWE](https://arxiv.org/abs/2505.23604)（[开源代码](https://github.com/satori-reasoning/Satori-SWE)）：结合 evolutionary test-time scaling 与基于 RL 的自演化，使较小 SWE 模型用更少采样改进修复。
-- [Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](https://arxiv.org/abs/2506.03136)（[开源代码](https://github.com/Gen-Verse/CURE)）：从交互结果中共同训练 coder 和 unit tester，使测试器也成为 agentic coding 的监督来源。
-- [Seed-Coder](https://arxiv.org/abs/2506.03524)（[开源代码](https://github.com/ByteDance-Seed/Seed-Coder)）：用模型侧代码数据过滤、SFT、偏好优化和 Long-CoT RL 构建 8B 代码模型族，覆盖代码推理与软件任务。
-- [SWE-Dev](https://arxiv.org/abs/2506.07636)：通过监督数据构造、强化学习和推理扩展构建 SWE agent。
+- [Generating OpenAPI Specifications from Online API Documentation with Large Language Models](https://doi.org/10.18653/v1/2025.acl-industry.18)：Agent Harness 候选；结合 LLM 抽取与规则校验、修复，把在线 API 文档转成可供工具调用的有效 OpenAPI 规格。
+- [CodePRM: Execution Feedback-enhanced Process Reward Model for Code Generation](https://doi.org/10.18653/v1/2025.findings-acl.428)：基于代码通过率、代码片段和执行反馈标注思维轨迹，训练代码专用 process reward model；推理时将该模型嵌入 Generate-Verify-Refine 搜索流程，用作过程 verifier 来定位和修正推理错误。
+- [Structural Code Search using Natural Language Queries](https://arxiv.org/abs/2507.02107)：Agent Harness 与工具候选；把开发者自然语言查询翻译为 Semgrep 或 GQL 结构化查询，并在 10 个 Java 项目的 400 条查询上评测。
+- [Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](https://arxiv.org/abs/2507.04219)：偏离软件开发轴的通用 LLM unlearning 工作，把遗忘后的 model collapse 解释为有利于移除和隐私保护的机制。
+- [OASBuilder: Generating OpenAPI Specifications from Online API Documentation with Large Language Models](https://arxiv.org/abs/2507.05316)：Agent Harness 候选；通过 LLM 抽取、规则和面向有效性的后处理，把在线 API 文档转成有效 OpenAPI 规格。
+- [AutoTriton: Automatic Triton Programming with Reinforcement Learning in LLMs](https://arxiv.org/abs/2507.05687)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [SQLBarber: A System Leveraging Large Language Models to Generate Customized and Realistic SQL Workloads](https://arxiv.org/abs/2507.06192)：从 Redshift 和 Snowflake 统计信息推导 SQL 模板规格与代价分布，再按执行代价自纠错和裁剪模板，生成真实 SQL 工作负载。
+- [Iceberg: Enhancing HLS Modeling with Synthetic Data](https://arxiv.org/abs/2507.09948)：用合成数据改进高层次综合建模，使硬件代码性能预测和优化不再完全依赖稀缺的标注 HLS 样例。
+- [Compute Requirements for Algorithmic Innovation in Frontier AI Models](https://arxiv.org/abs/2507.10618)：模型扩展与政策分析，估算 Llama 3 和 DeepSeek-V3 中 36 项预训练算法创新的研发算力，并分析 compute cap 反事实。
+- [Function-to-Style Guidance of LLMs for Code Translation](https://arxiv.org/abs/2507.11083)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Function-to-Style Guidance of LLMs for Code Translation 为主要改进目标，作为 Model 条目的能力参考。
+- [Modeling Code: Is Text All You Need?](https://arxiv.org/abs/2507.11467)：把文本式代码 LLM 与结构化程序表示结合起来，让模型能利用普通 token 序列容易遗漏的控制流和数据流属性。
+- [MetaLint: Easy-to-Hard Generalization for Code Linting](https://arxiv.org/abs/2507.11687)：把代码 linting 表述为遵循自然语言最佳实践的任务，使模型能泛化到未见或持续演化的规则。
+- [CRABS: A syntactic-semantic pincer strategy for bounding LLM interpretation of Python notebooks](https://arxiv.org/abs/2507.11742)：用 AST 得到 notebook 单元 I/O 的上下界，再让 LLM 消解歧义，恢复单元间数据流和执行依赖图。
+- [Extremal Testing for Network Software using LLMs](https://arxiv.org/abs/2507.11898)：Agent Harness 与测试候选；让 LLM 生成协议约束及违反约束的输入，在 HTTP、BGP 和 DNS 实现中发现网络软件缺陷。
+- [Chain-of-Descriptions: Improving Code LLMs for VHDL Code Generation and Summarization](https://arxiv.org/abs/2507.12308)：在最终输出前插入由题目陈述或 VHDL 代码生成的中间描述，提升 VHDL 代码生成和摘要质量。
+- [LLM-Powered Quantum Code Transpilation](https://arxiv.org/abs/2507.12480)：把大模型作为无需手写规则的 quantum SDK 转译器，在 Qiskit、Cirq、PennyLane 等平台间转换代码并尽量保持功能等价。
+- [VerilogDB: The Largest, Highest-Quality Dataset with a Preprocessing Framework for LLM-based RTL Generation](https://arxiv.org/abs/2507.13369)：构建 VerilogDB 及预处理基础设施，支持 LLM 生成 RTL 代码。
+- [Demystifying Feature Requests: Leveraging LLMs to Refine Feature Requests in Open-Source Software](https://arxiv.org/abs/2507.13555)：用 LLM 检测开源 feature request 中的歧义和不完整信息，并生成澄清问题，再在真实 GitHub 请求上与人工标注比较。
 - [CUDA-L1](https://arxiv.org/abs/2507.14111)：把 contrastive reinforcement learning 用于 CUDA 优化，代表面向高性能代码代理的执行反馈训练线。
-- [D3: A Dataset for Training Code LMs to Act Diff-by-Diff](https://openreview.net/forum?id=sy71y74U80)：用 diff-by-diff 的源码演化训练代码模型，贴近仓库级 agent 的增量编辑动作。
+- [On the Effect of Token Merging on Pre-trained Models for Code](https://arxiv.org/abs/2507.14423)：合并预训练代码模型中标识符子 token 的隐藏表示以降低 FLOPs，并在 CodeBERT、GraphCodeBERT、UniXCoder 与 CodeT5 变体上评测多项 SE 任务。
+- [Enhancing Repository-Level Code Generation with Call Chain-Aware Multi-View Context](https://arxiv.org/abs/2507.14791)：利用调用链感知的多视角上下文进行仓库级代码生成，改进检索代码结构在提示中的表达方式。
+- [Re:Form - Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs: A Preliminary Study on Dafny](https://arxiv.org/abs/2507.16331)：在 Dafny 形式化验证中使用 LLM 强化学习减少人工先验，补充面向证明的软件模型训练路线。
+- [ACT: Bridging the Gap in Code Translation through Synthetic Data Generation & Adaptive Training](https://arxiv.org/abs/2507.16478)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Can LLMs Write CI? a Study on Automatic Generation of GitHub Actions Configurations](https://arxiv.org/abs/2507.17165)：实证研究 LLM 能否生成正确的 GitHub Actions workflow YAML，属于 CI 配置生成评测而非新模型训练。
+- [CodeReasoner: Enhancing the Code Reasoning Ability with Reinforcement Learning](https://arxiv.org/abs/2507.17548)：贡献代码推理训练方法；核心思想是通过强化学习或 verifier 式优化提升软件开发推理能力。
+- [GenAI for Automotive Software Development: From Requirements to Wheels](https://arxiv.org/abs/2507.18223)：Agent Harness 候选；把汽车软件需求转成 metamodel/OCL 工件、RAG 支持的测试场景、Python 仿真代码和 C++ 目标平台代码。
+- [Scenethesis](https://arxiv.org/abs/2507.18625)：用 constraint-expressive intermediate representation 引导 3D software synthesis，使需求到可执行三维场景的生成过程可追踪。
+- [SelfRACG: Enabling LLMs to Self-Express and Retrieve for Code Generation](https://arxiv.org/abs/2507.19033)：让 LLM 自我表达检索需求以增强代码生成，缩小检索片段与下一段代码之间的信息差。
+- [Mut4All: Fuzzing Compilers via LLM-Synthesized Mutators Learned from Bug Reports](https://arxiv.org/abs/2507.19275)：编译器 fuzzing harness，从 bug report 学习并合成 LLM mutator，用于生成编译器压力测试。
+- [Learning to Align Human Code Preferences](https://arxiv.org/abs/2507.20109)：训练模型对齐人类代码偏好，用开发者偏好信号补充功能正确性。
+- [CodeNER: Code Prompting for Named Entity Recognition](https://arxiv.org/abs/2507.20423)：偏离软件开发轴的 NLP 工作，把 BIO 标注规则编码成 code-style prompt，以提升多语言命名实体识别。
 - [Kimi K2](https://arxiv.org/abs/2507.20534)：报告开放 MoE 模型，包含大规模 agentic 数据合成和联合强化学习，并在 SWE-bench 与 agentic task 上取得强结果。
-- Qwen3-Coder（[官方报告](https://qwenlm.github.io/blog/qwen3-coder/)）：训练 480B-A35B MoE coding-agent 模型，包含代码密集预训练、execution-driven Code RL，以及大规模并行编码环境中的长程 Agent RL。
+- [Generating Project-Specific Test Cases with Requirement Validation Intention](https://arxiv.org/abs/2507.20619)：IntentionTest 先检索项目内可复用测试，再按 validation intention 用 LLM 编辑测试，提高 mutant killing、共享覆盖率和通过测试数量。
+- [HLSDebugger: Identification and Correction of Logic Bugs in HLS Code with LLM Solutions](https://arxiv.org/abs/2507.21485)：用 LLM 生成修复来识别和纠正高层次综合代码中的逻辑缺陷，把修复工作流扩展到硬件设计代码。
+- [Fine-Tuning Code Language Models to Detect Cross-Language Bugs](https://arxiv.org/abs/2507.21954)：构建跨语言 bug 数据，并微调代码模型检测 Python、C/C++ 与 Java 组件间的交互缺陷。
+- [SparseRecon: Neural Implicit Surface Reconstruction from Sparse Views with Feature and Depth Consistencies](https://arxiv.org/abs/2508.00366)：偏离软件开发轴的 3D 重建方法，用 volume-rendered feature consistency 与 uncertainty-guided depth constraints 从稀疏视角恢复表面。
+- [SPENCER: Self-Adaptive Model Distillation for Efficient Code Retrieval](https://arxiv.org/abs/2508.00546)：代码检索模型，先用 dual-encoder 缩小候选，再用 cross-encoder reranking，并通过自适应蒸馏在保留精度的同时降低推理时间。
+- [HyClone](https://arxiv.org/abs/2508.01357)：结合 LLM 语义筛选与动态执行验证做代码 clone 检测，把代码语义和运行行为同时纳入模型流程。
+- [Seed Diffusion: A Large-Scale Diffusion Language Model with High-Speed Inference](https://arxiv.org/abs/2508.02193)：提出高速离散扩散语言模型，并在代码评测上保持竞争力。
+- [TreeRanker](https://arxiv.org/abs/2508.02455)：以快速且模型无关的方式排序 IDE 代码建议，把 completion 选择纳入软件助手模型组件。
+- [AnalogCoder-Pro: Unifying Analog Circuit Generation and Optimization via Multi-modal LLMs](https://arxiv.org/abs/2508.02518)：用多模态 LLM 做模拟电路代码生成与优化，把代码模型覆盖扩展到带电路反馈的 EDA 工件。
+- [Automated Code Repair for C/C++ Static Analysis Alerts](https://arxiv.org/abs/2508.02820)：工程经验报告，构建 APR 工具来筛选并修复 C/C++ 静态分析真阳性告警，降低安全相关诊断的人工复核成本。
+- [Tool-integrated Reinforcement Learning for Repo Deep Search](https://arxiv.org/abs/2508.03012)：面向 repository issue localization 的 tool-integrated harness；核心思想是训练 agent 多步使用仓库检索工具进行推理和导航。
 - [Training Long-Context, Multi-Turn Software Engineering Agents with Reinforcement Learning](https://arxiv.org/abs/2508.03501)：把 rejection fine-tuning 与 DAPO 风格 RL 用到 Qwen2.5-72B，在长上下文、有状态 SWE 环境中训练模型。
+- [SAGE-HLS](https://arxiv.org/abs/2508.03558)：用 syntax-aware AST guidance 改进 LLM 高层次综合代码生成，为硬件代码补充不同于普通软件片段的 model-side 路线。
+- [LaTCoder](https://arxiv.org/abs/2508.03560)：用 Layout-as-Thought 改进网页 design-to-code，使模型显式保留布局结构，而不是把截图一次性黑箱转成代码。
+- [EVOC2RUST: A Skeleton-guided Framework for Project-Level C-to-Rust Translation](https://arxiv.org/abs/2508.04295)：用 skeleton-guided 框架进行项目级 C-to-Rust 翻译，扩展代码迁移的模型侧方法。
+- [Agnostics: Learning to Code in Any Programming Language via Reinforcement with a Universal Learning Environment](https://arxiv.org/abs/2508.04865)：用语言无关 verifier 与 RLVR 流水线，让代码模型通过可观测 I/O 行为学习低资源编程语言。
 - [ReCode](https://arxiv.org/abs/2508.05170)：从合成 reasoning variants 中训练 reasoning-process reward model，并用执行正确性门控 RL 奖励，降低代码生成中的 reward hacking。
+- [Impact-driven Context Filtering For Cross-file Code Completion](https://arxiv.org/abs/2508.05970)：按影响估计筛选跨文件上下文用于代码补全，面向仓库级上下文效率。
 - [GLM-4.5](https://arxiv.org/abs/2508.06471)：发布开放的 agentic、reasoning 与 coding foundation model，通过多阶段后训练和强化学习面向软件工程与 agent 任务。
-- [Dream-Coder 7B](https://arxiv.org/abs/2509.01142)：引入开放 diffusion language model for code，为软件生成补充非自回归代码模型路线。
-- Grok Code Fast 1（[模型文档](https://docs.x.ai/docs/models/grok-code-fast-1)）：面向 agentic coding 的专用模型，包含编程密集预训练、真实 PR 和 coding-task 数据后训练，以及终端和文件编辑工具行为。
-- GPT-5-Codex family（[GPT-5-Codex](https://openai.com/index/introducing-upgrades-to-codex/)；[GPT-5.2-Codex](https://openai.com/index/introducing-gpt-5-2-codex/)；[GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/)）：记录 OpenAI 闭源 coding-agent 模型线在真实工程任务、原生压缩、长时工作、SWE-Bench Pro、Terminal-Bench 和漏洞相关编码训练上的进展。
+- [Integrating Rules and Semantics for LLM-Based C-to-Rust Translation](https://arxiv.org/abs/2508.06926)：结合规则增强检索与语义分析改进 C-to-Rust 翻译。
+- [Is GAN Necessary for Mel-Spectrogram-Based Neural Vocoder?](https://arxiv.org/abs/2508.07711)：偏离软件开发轴的语音生成工作；FreeGAN 用幅度-相位串行预测、SNAKE-ConvNeXt 和频率加权相位损失替代对抗式 vocoder 训练。
+- [SaraCoder: Orchestrating Semantic and Structural Cues for Profit-Oriented Repository-Level Code Completion](https://arxiv.org/abs/2508.10068)：协调语义与结构线索进行资源优化的仓库级代码补全，在有限上下文窗口下提升检索多样性。
+- [From Intent to Execution: Multimodal Chain-of-Thought Reinforcement Learning for Precise CAD Code Generation](https://arxiv.org/abs/2508.10118)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Multimodal Chain-of-Thought Reinforcement Learning for Precise CAD Code Generation 为主要改进目标，作为 Model 条目的能力参考。
+- [On the need to perform comprehensive evaluations of automated program repair benchmarks: Sorald case study](https://arxiv.org/abs/2508.15135)：Bench 与评测候选；以 Sorald 展示 APR 评测不应只看清除告警，还应衡量新引入违规、功能变化和结构退化。
+- [Correctness-Guaranteed Code Generation via Constrained Decoding](https://arxiv.org/abs/2508.15866)：用约束解码在代码生成过程中执行正确性约束，而不是只依赖事后过滤。
+- [Cognitive Agents Powered by Large Language Models for Agile Software Project Management](https://arxiv.org/abs/2508.16678)：Agent Harness 候选；在 CogniSim 与 SAFe 风格模拟中设置 LLM 角色，处理任务委派、智能体通信和项目生命周期管理。
+- [EyeMulator: Improving Code Language Models by Mimicking Human Visual Attention](https://arxiv.org/abs/2508.16771)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Improving Code Language Models by Mimicking Human Visual Attention 为主要改进目标，作为 Model 条目的能力参考。
+- [Exploring the Impact of Generative Artificial Intelligence on Software Development in the IT Sector: Preliminary Findings on Productivity, Efficiency and Job Security](https://arxiv.org/abs/2508.16811)：Survey 与采用研究候选；IT 行业混合方法调查报告 97% GenAI 使用率，以及生产率、组织效率和职业安全担忧之间的相关性。
+- [Pandora: Leveraging Code-driven Knowledge Transfer for Unified Structured Knowledge Reasoning](https://arxiv.org/abs/2508.17905)：用 Pandas 代码统一表示表格、数据库和知识图谱，并结合执行反馈和跨任务记忆做结构化知识推理。
+- [LLM-Guided Genetic Improvement: Envisioning Semantic Aware Automated Software Evolution](https://arxiv.org/abs/2508.18089)：提出 PatchCat，把 LLM 建议的遗传改进编辑聚成 18 类 patch，用于引导语义感知软件演化并跳过 no-op 测试运行。
+- [How do Humans and LLMs Process Confusing Code?](https://arxiv.org/abs/2508.18547)：经验比较人类与 LLM 对干净代码和混淆代码的理解差异，用这种错位说明代码模型需要哪些更好的理解信号。
+- [LLM as an Execution Estimator: Recovering Missing Dependency for Practical Time-travelling Debugging](https://arxiv.org/abs/2508.18721)：调试 harness 工作，用 LLM 作为执行估计器恢复缺失依赖，以支持实用的 time-travelling debugging。
+- [Leveraging LLMs for Automated Translation of Legacy Code: A Case Study on PL/SQL to Java Transformation](https://arxiv.org/abs/2508.19663)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 A Case Study on PL/SQL to Java Transformation 为主要改进目标，作为 Model 条目的能力参考。
+- [Bootstrapping Learned Cost Models with Synthetic SQL Queries](https://arxiv.org/abs/2508.19807)：在工作负载轨迹不足时合成 SQL 查询来冷启动数据库 learned cost model，属于 SQL 系统数据合成而非代码模型训练。
+- [Towards Better Correctness and Efficiency in Code Generation](https://arxiv.org/abs/2508.20124)：同时面向生成代码的功能正确性与效率，补充只优化通过率的代码模型研究。
+- [Detecting Stealthy Data Poisoning Attacks in AI Code Generators](https://arxiv.org/abs/2508.21636)：研究针对 CodeBERT、CodeT5+ 和 AST-T5 代码生成器的无触发器投毒，发现 spectral、activation 和静态分析防御都不可靠。
+- [LLM-based Zero-shot Triple Extraction for Automated Ontology Generation from Software Engineering Standards](https://arxiv.org/abs/2509.00140)：面向软件工程标准构建 ontology generation workflow，包含文档切分、术语挖掘、LLM 关系推断、术语归一化和跨章节对齐。
+- [Dream-Coder 7B](https://arxiv.org/abs/2509.01142)：发布开放的代码 diffusion language model，把非自回归生成纳入代码模型路线。
+- [Reinforcement Learning for Machine Learning Engineering Agents](https://arxiv.org/abs/2509.01684)：聚焦机器学习工程或软件开发智能体的模型训练。
+- [Spectrogram Patch Codec: A 2D Block-Quantized VQ-VAE and HiFi-GAN for Neural Speech Coding](https://arxiv.org/abs/2509.02244)：偏离软件开发轴的神经语音编码工作，使用二维 block-quantized VQ-VAE 和 HiFi-GAN 解码器。
+- [Code Review Without Borders: Evaluating Synthetic vs. Real Data for Review Recommendation](https://arxiv.org/abs/2509.04810)：用 LLM 把代码变更翻译到低资源语言或框架，生成 synthetic training data，冷启动代码评审推荐分类器。
+- [Natural Language-Programming Language Software Traceability Link Recovery Needs More than Textual Similarity](https://arxiv.org/abs/2509.05585)：在 HGT edge types 和 Gemini 2.5 Pro prompt 中加入领域辅助策略，改进需求到代码的 traceability link recovery，并在 12 个项目上超过 HGNNLink。
+- [ChatGPT for Code Refactoring: Analyzing Topics, Interaction, and Effective Prompts](https://arxiv.org/abs/2509.08090)：开发者交互实证研究，从 DevGPT 挖掘 715 段重构对话，归纳重构主题、意图和有效 prompt 模式。
+- [Development of Automated Software Design Document Review Methods Using Large Language Models](https://arxiv.org/abs/2509.09975)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [EfficientUICoder](https://arxiv.org/abs/2509.12159)：通过压缩冗余视觉输入 token 和代码输出 token 提升多模态 UI-to-code 生成效率，使前端视觉编码更适合实际部署。
+- [Towards the Next Generation of Software: Insights from Grey Literature on AI-Native Applications](https://arxiv.org/abs/2509.13144)：Survey 候选；通过灰色文献综述定义 AI-native applications，并梳理质量属性、架构模式、技术栈、机会和风险。
+- [Interleaving Natural Language Prompting with Code Editing for Solving Programming Tasks with Generative AI Models](https://arxiv.org/abs/2509.14088)：研究自然语言提示与直接代码编辑交替进行的编程工作流，更接近交互 harness 而非模型训练。
+- [Automated and Context-Aware Code Documentation Leveraging Advanced LLMs](https://arxiv.org/abs/2509.14273)：用上下文感知 LLM 方法生成代码文档，将代码模型能力扩展到可维护性支持。
+- [Brevity is the Soul of Wit: Condensing Code Changes to Improve Commit Message Generation](https://arxiv.org/abs/2509.15567)：在提交信息生成前压缩代码 diff，把变更表示作为模型侧杠杆，以生成更短且信息量更高的维护摘要。
+- [GraphMend: Code Transformations for Fixing Graph Breaks in PyTorch 2](https://arxiv.org/abs/2509.16248)：在执行前转换 PyTorch 源码，消除动态控制流和 Python side effects 导致的 TorchDynamo FX graph breaks，从而降低延迟并提升吞吐。
+- [LLaVul: A Multimodal LLM for Interpretable Vulnerability Reasoning about Source Code](https://arxiv.org/abs/2509.17337)：在源代码与安全问答配对数据上训练多模态 LLM，使漏洞检测同时给出细粒度、可解释的推理。
+- [SLICET5: Static Program Slicing using Language Models with Copy Mechanism and Constrained Decoding](https://arxiv.org/abs/2509.17338)：使用带复制机制和约束解码的语言模型，从不完整或无法解析的代码片段预测静态切片，并避免生成输入中不存在的幻觉 token。
+- [Detection of security smells in IaC scripts through semantics-aware code and language processing](https://arxiv.org/abs/2509.18790)：结合 CodeBERT 的代码-文本语义表示与 LongFormer 长脚本建模，检测 Infrastructure-as-Code 安全错误配置。
+- [Reverse Engineering User Stories from Code using Large Language Models](https://arxiv.org/abs/2509.19587)：需求恢复工作流，用 LLM 从已有代码推断 user stories，更接近 Agent Harness 或需求工程而非模型训练。
+- [Assertion Messages with Large Language Models (LLMs) for Code](https://arxiv.org/abs/2509.19673)：用 LLM 生成断言消息，将代码模型能力扩展到测试可读性与维护支持。
+- [Synergistic enhancement of requirement-to-code traceability: A framework combining large language model based data augmentation and an advanced encoder](https://arxiv.org/abs/2509.20149)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [The Cream Rises to the Top: Efficient Reranking Method for Verilog Code Generation](https://arxiv.org/abs/2509.20215)：通过高效重排序改进 Verilog 代码生成，为 HDL coding model 补充测试时选择路径。
+- [PseudoBridge: Pseudo Code as the Bridge for Better Semantic and Logic Alignment in Code Retrieval](https://arxiv.org/abs/2509.20881)：用 LLM 生成的伪代码作为中间模态，将自然语言意图与程序逻辑对齐以改进代码检索。
+- [An Improved Quantum Software Challenges Classification Approach using Transfer Learning and Explainable AI](https://arxiv.org/abs/2509.21068)：基于 grounded-theory 标注数据，用迁移学习和可解释 AI 分类 Stack Overflow 上的量子软件挑战。
 - [Maximum-Entropy Long-CoT Code Review Tuning](https://arxiv.org/abs/2509.21170)：用最大熵调控的长链式思维微调大模型，以分析代码评审的多个维度。
+- [Code once, Run Green: Automated Green Code Translation in Serverless Computing](https://arxiv.org/abs/2509.22068)：把遗留 serverless 代码翻译为更低能耗的实现，将 energy debt 作为代码生成和现代化目标，而不只归结为数据中心运维问题。
 - [Kimi-Dev](https://arxiv.org/abs/2509.23045)：把 Agentless 风格的定位、编辑与自反思训练转化为可迁移 skill prior，用于适配 SWE-Agent。
+- [Beyond Embeddings: Interpretable Feature Extraction for Binary Code Similarity](https://arxiv.org/abs/2509.23449)：二进制分析模型工作，用可解释、可审计的多视角特征替代不透明 embedding 来判断二进制代码相似性。
+- [AssertFix: Empowering Automated Assertion Fix via Large Language Models](https://arxiv.org/abs/2509.23972)：用 LLM 诊断并修复错误测试断言，把自动程序修复扩展到测试 assertion 修复场景。
+- [TENET: Leveraging Tests Beyond Validation for Code Generation](https://arxiv.org/abs/2509.24148)：把测试用于最终验证之外的环节以改进代码生成。
 - [Devstral](https://arxiv.org/abs/2509.25193)：针对 coding-agent 应用微调轻量开放模型，并用 OpenHands 风格软件工程任务评测。
-- [Afterburner](https://openreview.net/forum?id=At8OUlyTOu)：用强化学习支持自改进代码效率优化，把 coding-agent 训练从正确性扩展到性能改进。
-- [More Than Just Functional](https://openreview.net/forum?id=0Zri6HSYaK)：用 LLM critique 同时优化生成代码的功能正确性和效率，为质量感知 coding agent 提供模型侧路线。
+- [Reinforcement Learning-Guided Chain-of-Draft for Token-Efficient Code Generation](https://arxiv.org/abs/2509.25243)：该工作将强化学习用于代码生成中的 Chain-of-Draft，以提高 token 效率。
+- [API misuse detection and repair for data-science libraries](https://arxiv.org/abs/2509.25378)：用 LLM 检测并修复数据科学库 API 误用，补充面向库语义的代码修复任务。
+- [DeepCodeSeek: Real-Time API Retrieval for Context-Aware Code Generation](https://arxiv.org/abs/2509.25716)：Agent Harness 与 RAG 候选；实时检索相关 API 并注入代码生成上下文，以提升库调用场景下的生成质量。
+- [Regression Language Models for Code](https://arxiv.org/abs/2509.26476)：训练使用冻结 encoder 的回归语言模型，直接从代码文本预测内存占用、Triton 延迟和 ONNX 模型准确率等数值执行结果。
+- [Which Programming Language and Model Work Best With LLM-as-a-judge for Code Retrieval?](https://arxiv.org/abs/2510.00324)：研究 LLM-as-a-judge 在代码检索标注中的作用，对比稀疏与语义检索器、编程语言和 judge 模型相对于人工标签的表现。
+- [Analyzing Latent Concepts in Code Language Models](https://arxiv.org/abs/2510.00476)：提出 CoCoA 后验解释流程，聚类代码 token 的上下文化 embedding，并结合静态分析和 LLM 标注潜在词法、语法与语义概念。
+- [QUASAR: Quantum Assembly Code Generation Using Tool-Augmented LLMs via Agentic RL](https://arxiv.org/abs/2510.00967)：用工具增强的智能体强化学习生成量子汇编代码，把电路执行反馈与 LLM 代码合成结合起来，提高量子程序正确性与优化质量。
+- [Clarifying Semantics of In-Context Examples for Unit Test Generation](https://arxiv.org/abs/2510.01994)：CLAST 用程序分析和 LLM 改写分解、澄清单元测试，使其作为 in-context examples 时更利于测试生成。
+- [SIEVE: Towards Verifiable Certification for Code-datasets](https://arxiv.org/abs/2510.02166)：数据验证候选；面向代码数据集提供可检查的正确性与来源证据，以支持后续训练或评测。
+- [AP2O-Coder: Adaptively Progressive Preference Optimization for Reducing Compilation and Runtime Errors in LLM-Generated Code](https://arxiv.org/abs/2510.02393)：通过自适应渐进式偏好优化减少 LLM 生成代码中的编译与运行时错误。
+- [Mechanistic Interpretability of Code Correctness in LLMs via Sparse Autoencoders](https://arxiv.org/abs/2510.02917)：用 sparse autoencoders 识别 LLM 激活中的代码正确性方向，并通过 steering、attention analysis 和 orthogonalization 检验其机制。
+- [The Valley of Code Reasoning: Scaling Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2510.06101)：研究把推理轨迹蒸馏到小型代码模型时的规模规律，发现数据量增加会先降低、再提升竞赛编程能力的“valley”现象。
+- [Beyond More Context: How Granularity and Order Drive Code Completion Quality](https://arxiv.org/abs/2510.06606)：研究上下文粒度与顺序如何影响代码补全质量，细化代码模型的仓库上下文使用。
+- [LLM Company Policies and Policy Implications in Software Organizations](https://arxiv.org/abs/2510.06718)：Survey 与治理候选；研究 11 家公司如何制定 LLM chatbot 使用政策，以安全接入软件开发工作流。
+- [Relative Positioning Based Code Chunking Method For Rich Context Retrieval In Repository Level Code Completion Task With Code Language Model](https://arxiv.org/abs/2510.08610)：Agent Harness 与检索候选；先切分仓库代码，再用语法或语义相似性和相对位置构建代码补全上下文。
+- [Faver: Boosting LLM-based RTL Generation with Function Abstracted Verifiable Middleware](https://arxiv.org/abs/2510.08664)：提出 function-abstracted verifiable middleware，把 LLM 友好的代码结构与规则模板结合起来，使 RTL 生成流程能验证功能而不必直接生成稀缺 testbench。
+- [Vector Graph-Based Repository Understanding for Issue-Driven File Retrieval](https://arxiv.org/abs/2510.08876)：Agent Harness 候选；用向量图表示仓库文件，为 issue-driven 文件检索、定位或修复提供前置上下文。
+- [A Human Behavioral Baseline for Collective Governance in Software Projects](https://arxiv.org/abs/2510.08956)：Survey 与治理经验研究候选；把治理文档解析为 actors、rules、actions 和 objects，并在 710 个开源项目中跟踪 entropy、richness 与 drift。
+- [TIT: A Tree-Structured Instruction Tuning Approach for LLM-Based Code Translation](https://arxiv.org/abs/2510.09400)：用树结构指令微调分解并监督 LLM 代码翻译，而不是把整段翻译请求当作扁平指令处理。
+- [Learning Bug Context for PyTorch-to-JAX Translation with LLMs](https://arxiv.org/abs/2510.09898)：代码迁移模型工作，学习 PyTorch-to-JAX 翻译中的 bug context，使 LLM 修复更贴近框架特有失败模式。
+- [IntrinTrans: LLM-based Intrinsic Code Translator for RISC-V Vector](https://arxiv.org/abs/2510.10119)：把架构特定 intrinsic 代码翻译成 RISC-V Vector intrinsics，把代码翻译扩展到低层向量化场景。
+- [Learning to Guarantee Type Correctness in Code Generation through Type-Guided Program Synthesis](https://arxiv.org/abs/2510.10216)：一种面向代码生成的类型引导程序合成路线；核心思路是让生成过程对齐类型推导结构，使类型正确性在模型内部学习，而不是仅靠解码后过滤。
+- [CLASP: Training-Free LLM-Assisted Source Code Watermarking via Semantic-Preserving Transformations](https://arxiv.org/abs/2510.11251)：一种免训练的 LLM 辅助源代码水印框架；核心思路是通过语义保持变换，让生成代码携带更稳健的归属信号。
+- [ReLook: Vision-Grounded RL with a Multimodal LLM Critic for Agentic Web Coding](https://arxiv.org/abs/2510.11498)：用视觉 grounded 强化学习和多模态 LLM critic 训练 agentic web coding 行为，模型侧贡献在于 critic 与 RL 信号。
+- [Enhancing Neural Code Representation with Additional Context](https://arxiv.org/abs/2510.12082)：通过注入额外程序上下文改进 neural code representation，用于下游代码智能任务。
+- [On Pretraining for Project-Level Code Completion](https://arxiv.org/abs/2510.13697)：用 10 亿 curated repository-level token 将 OpenCoder 上下文从 4k 扩到 16k，发现主要收益来自 RoPE scaling 适配，而在数据和算力受限时简单文件级训练仍有竞争力。
+- [PathFix: Automated Program Repair with Expected Path](https://arxiv.org/abs/2510.14341)：用 expected execution path 引导自动程序修复，让补丁模型围绕预期控制流推理。
+- [TokDrift](https://arxiv.org/abs/2510.14972)：分析 LLM subword tokenization 与代码语法之间的错位，为 tokenizer-aware 的代码模型鲁棒性研究提供依据。
+- [Selecting and Combining Large Language Models for Scalable Code Clone Detection](https://arxiv.org/abs/2510.15480)：研究面向可扩展 LLM code clone detection 的模型选择与组合策略。
+- [Enhancing Code Review through Fuzzing and Likely Invariants](https://arxiv.org/abs/2510.15512)：Agent Harness 与验证器候选；把 fuzzing 与 likely invariant 挖掘结合起来，为代码评审提供围绕候选变更的证据。
+- [LLM-VeriPPA: Power, Performance, and Area Optimization aware Verilog Code Generation with Large Language Models](https://arxiv.org/abs/2510.15899)：把 power、performance 与 area 约束引入 LLM Verilog 生成，使 HDL 合成与硬件质量目标相连接。
+- [VeriGRAG: Enhancing LLM-Based Verilog Code Generation with Structure-Aware Soft Prompts](https://arxiv.org/abs/2510.15914)：检索 Verilog 代码的结构图嵌入并转为软提示，以提升规格到 Verilog 代码生成的正确性。
+- [SemOpt: LLM-Driven Code Optimization via Rule-Based Analysis](https://arxiv.org/abs/2510.16384)：把 LLM 代码优化与 rule-based analysis 结合，用显式优化规则约束候选改写。
+- [Contrasting the Hyperparameter Tuning Impact Across Software Defect Prediction Scenarios](https://arxiv.org/abs/2510.16665)：比较 inner-version 与 cross-version defect prediction 中超参数调优的影响，实验覆盖 28 个算法、53 个 post-release 数据集、两个调优器和五类优化指标。
+- [HGAdapter: Hypergraph-based Adapters in Language Models for Code Summarization and Clone Detection](https://arxiv.org/abs/2510.17591)：在代码 PLM 中插入 hypergraph adapters，捕获 AST-family、lexical 与 line-level 高阶 token 相关性，用于摘要和克隆检测。
+- [Can Image-To-Video Models Simulate Pedestrian Dynamics?](https://arxiv.org/abs/2510.17731)：偏离本页的软件开发轴；评估 image-to-video 生成器是否能模拟行人动力学，更适合视频模型方向。
+- [This is Going to Sound Crazy, But What If We Used Large Language Models to Boost Automatic Database Tuning Algorithms By Leveraging Prior History? We Will Find Better Configurations More Quickly Than Retraining From Scratch!](https://arxiv.org/abs/2510.17748)：Booster 将 query-configuration 历史组织成上下文，用 LLM 生成建议并通过 beam search 合成配置，帮助 DBMS tuner 适应 workload drift 或 schema transfer。
+- [TritonRL: Training LLMs to Think and Code Triton Without Cheating](https://arxiv.org/abs/2510.17891)：用强化学习训练 8B Triton 编程模型，并加入防 reward hacking 机制。
 - [KAT-Coder](https://arxiv.org/abs/2510.18779)：报告一个 agentic coding model，通过 mid-training、SFT、reinforcement fine-tuning 和部署适配面向 IDE 风格软件工作流。
-- MiniMax M2（[官方报告](https://www.minimax.io/news/minimax-m2)；[interleaved-thinking 说明](https://www.minimax.io/news/why-is-interleaved-thinking-important-for-m2)）：把厂商模型定位在 agentic coding、工具使用和 deep search 上，并强调 interleaved thinking 对可靠工具化编码的作用。
+- [SBAN: A Framework & Multi-Dimensional Dataset for Large Language Model Pre-Training and Software Code Mining](https://arxiv.org/abs/2510.18936)：构建含 300 多万样本的 SBAN 数据集，将源码、二进制、汇编和自然语言描述四层表示对齐，支持代码分析预训练、跨表示学习、恶意软件检测、代码翻译与代码解释。
+- [That's Deprecated! Understanding, Detecting, and Steering Knowledge Conflicts in Language Models for Code Generation](https://arxiv.org/abs/2510.19116)：构造代码生成中的知识冲突场景，并利用检测到的冲突表征 steering LLM，减少过时或与提示冲突的 API 行为。
+- [R\documentclass(12pt){minimal} \usepackage{amsmath} \usepackage{wasysym} \usepackage{amsfonts} \usepackage{amssymb} \usepackage{amsbsy} \usepackage{mathrsfs} \usepackage{upgreek} \setlength{\oddsidemargin}{-69pt} \begin{document}$$^2$$\end{document}ComSync: improving code-comment synchronization wit](https://arxiv.org/abs/2510.21106)：通过混合检索与重排序改进代码注释同步，面向注释滞后于代码变更的软件维护场景。
+- [Agentic Reinforcement Learning for Real-World Code Repair](https://arxiv.org/abs/2510.22075)：在可复现真实 issue 上用 SFT 与 RL 训练代码修复 agent，并揭示仓库修复中的环境泛化限制。
+- [Collaborative LLM Agents for C4 Software Architecture Design Automation](https://arxiv.org/abs/2510.22787)：Agent Harness 候选；通过多个 LLM agent 协作自动化 C4 软件架构设计，而不是提出新的代码模型。
+- [Code Aesthetics with Agentic Reward Feedback](https://arxiv.org/abs/2510.23272)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [DCMM-SQL: Automated Data-Centric Pipeline and Multi-Model Collaboration Training for Text-to-SQL Model](https://arxiv.org/abs/2510.23284)：DCMM-SQL 自动完成 Text-to-SQL 数据修复和错误数据增强，再用多模型协作训练从更干净、更困难的监督信号中提升 SQL 生成模型。
+- [Agentsway - Software Development Methodology for AI Agents-based Teams](https://arxiv.org/abs/2510.23664)：Agent Harness 与方法论候选；定义 AI agent 团队的软件开发流程，而不是模型训练配方。
+- [RefleXGen:The unexamined code is not worth using](https://arxiv.org/abs/2510.23674)：通过 RAG 引导的自反思改进安全代码生成，迭代积累安全知识并修订输出，不依赖微调或专门安全代码数据集。
+- [Squrve: A Unified and Modular Framework for Complex Real-World Text-to-SQL Tasks](https://arxiv.org/abs/2510.24102)：Squrve 主要是面向真实 Text-to-SQL 部署的统一框架，标准化调用接口和模块组件，而不是新的代码模型训练配方。
+- [MAGNET: A Multi-Graph Attentional Network for Code Clone Detection](https://arxiv.org/abs/2510.24241)：用残差 GNN 与注意力融合 AST、控制流图和数据流图，让克隆检测同时捕获代码的多种语法和语义视图。
+- [Dissect-and-Restore: AI-based Code Verification with Transient Refactoring](https://arxiv.org/abs/2510.25406)：Prometheus 通过临时重构把验证目标拆成 AI 更容易处理的单元，生成规约和证明标注后再恢复原始代码结构。
+- [Empirical Studies on Quantum Optimization for Software Engineering: A Systematic Analysis](https://arxiv.org/abs/2510.27113)：Survey 候选；系统分析 quantum optimization 如何被用于软件工程问题。
+- [Divide, Link, and Conquer: Recall-oriented Schema Linking for NL-to-SQL via Question Decomposition](https://doi.org/10.18653/v1/2025.emnlp-industry.122)：先分解复杂问题再做 schema linking，使 Text-to-SQL 模型在 recall-oriented 评测下找回更多相关表和列。
+- [SQLWOZ: A Realistic Task-Oriented Dialogue Dataset with SQL-Based Dialogue State Representation for Complex User Requirements](https://doi.org/10.18653/v1/2025.emnlp-main.383)：发布以 SQL 形式表达对话状态的任务型对话数据集，把复杂用户约束和数据库交互纳入训练与评测目标。
+- [SynC-LLM: Generation of Large-Scale Synthetic Circuit Code with Hierarchical Language Models](https://aclanthology.org/2025.emnlp-main.877/)：用分层语言模型生成大规模合成电路代码，把代码模型数据合成扩展到电子设计自动化场景。
+- [Hierarchical Reward Modeling for Fault Localization in Large Code Repositories](https://doi.org/10.18653/v1/2025.findings-emnlp.966)：在仓库不同粒度上训练奖励信号，使 fault localization 能排序文件、函数和更细代码区域，而不是只依赖扁平 suspiciousness 分数。
+- [ORANGE: An Online Reflection ANd GEneration framework with Domain Knowledge for Text-to-SQL](https://arxiv.org/abs/2511.00985)：ORANGE 从历史 SQL 翻译日志中构建数据库专属知识库，并在后续 Text-to-SQL 生成中利用这些累积的领域知识进行在线反思。
+- [QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code](https://arxiv.org/abs/2511.01183)：提出面向 IR 到汇编神经编译的 NeuComBack 数据集与流程，并用自演化提示优化从既有 self-debugging traces 中提取经验以改进汇编生成。
+- [Open the Oyster: Empirical Evaluation and Improvement of Code Reasoning Confidence in LLMs](https://arxiv.org/abs/2511.02197)：评估并改进 LLM 的代码推理置信度，面向软件推理输出的校准。
+- [Who’s Who? LLM-assisted Software Traceability with Architecture Entity Recognition](https://arxiv.org/abs/2511.02434)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [From Code Changes to Quality Gains: An Empirical Study in Python ML Systems with PyQu](https://arxiv.org/abs/2511.02827)：软件质量经验研究候选；用 PyQu 研究 Python ML 系统中的代码变更如何对应质量收益，而不是提出新的代码模型。
+- [Automated Prompt Generation for Code Intelligence: An Empirical study and Experience in WeChat](https://arxiv.org/abs/2511.03136)：在代码翻译、摘要和 API 推荐任务上研究指令生成与多步推理提示，使提示构造成为代码模型能力变量。
+- [OMPILOT: Harnessing Transformer Models for Auto Parallelization to Shared Memory Computing Paradigms](https://arxiv.org/abs/2511.03866)：训练 Transformer 将 C++ 翻译为 OpenMP 代码，把代码生成扩展到共享内存自动并行化。
+- [Generating Software Architecture Description from Source Code using Reverse Engineering and Large Language Model](https://arxiv.org/abs/2511.05165)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [An Empirical Study of Java Code Improvements Based on Stack Overflow Answer Edits](https://arxiv.org/abs/2511.05813)：从 Stack Overflow 回答编辑中挖掘 Java 代码改进模式，为修复和重构提供经验信号，而不是提出新的代码模型。
+- [Self-Abstraction from Grounded Experience](https://arxiv.org/abs/2511.05931)：从执行轨迹中抽取计划抽象，再反馈给 Mini-SWE-Agent 和 OpenHands 等 SWE agent 的策略，为不改动基座模型的自我改进提供可复用信号。
+- [Leveraging Large Language Models for Use Case Model Generation from Software Requirements](https://arxiv.org/abs/2511.09231)：这项需求工程研究提示开源 LLM 从文本需求中抽取参与者和用例，目标是自动生成用例模型而非直接生成代码。
+- [Architecting software monitors for control-flow anomaly detection through large language models and conformance checking](https://arxiv.org/abs/2511.10876)：把 LLM 生成的软件 monitor 与 conformance checking 结合，用于检测控制流异常。
+- [Prompt Engineering vs. Fine-Tuning for LLM-Based Vulnerability Detection in Solana and Algorand Smart Contracts](https://arxiv.org/abs/2511.11250)：比较 prompt engineering 与 fine-tuning 在 Solana 和 Algorand 智能合约漏洞检测中的效果。
+- [EARL: Entropy-Aware RL Alignment of LLMs for Reliable RTL Code Generation](https://arxiv.org/abs/2511.12033)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“EARL: Entropy-Aware RL Alignment of LLMs for Reliable RTL Code Generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Towards Requirements Engineering for GenAI-Enabled Software: Bridging Responsibility Gaps through Human Oversight Requirements](https://arxiv.org/abs/2511.13069)：需求工程治理候选；为 GenAI-enabled software 形式化 human oversight requirements，而非代码模型训练方法。
+- [Pre-Filtering Code Suggestions using Developer Behavioral Telemetry to Optimize LLM-Assisted Programming](https://arxiv.org/abs/2511.18849)：训练轻量 telemetry-based acceptance predictor，在调用 LLM 代码建议前预测采纳概率，使 VS Code 插件接收率接近翻倍并抑制无用调用。
+- [Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization](https://arxiv.org/abs/2511.18851)：偏离本页的软件开发轴；用 motion discretization 做 3D human pose estimation 的长期 test-time adaptation，更适合视觉模型方向。
+- [TreeCoder: Systematic Exploration and Optimisation of Decoding and Constraints for LLM Code Generation](https://arxiv.org/abs/2511.22277)：系统探索解码与约束策略以改进 LLM 代码生成。
+- [Chart2Code-MoLA: Efficient Multi-Modal Code Generation via Adaptive Expert Routing](https://arxiv.org/abs/2511.23321)：通过自适应专家路由提升多模态图表到代码生成。
+- [Progressive Code Integration for Abstractive Bug Report Summarization](https://arxiv.org/abs/2512.00325)：在 abstractive bug report summarization 中逐步注入源码上下文，使生成摘要保持与相关程序工件的连接。
+- [Knowledge-Graph-Driven Data Synthesis for Low-Resource Software Development: A HarmonyOS Case Study](https://arxiv.org/abs/2512.00380)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [The AI Attribution Paradox: Transparency as Social Strategy in Open-Source Software Development](https://arxiv.org/abs/2512.00867)：Survey 与采用经验研究候选；研究开源开发者如何把 AI attribution 作为围绕透明度的社会策略。
+- [LAURA: Enhancing Code Review Generation with Context-Enriched Retrieval-Augmented LLM](https://arxiv.org/abs/2512.01356)：用上下文增强的检索增强 LLM 改进代码审查生成，使评审更贴近周边代码证据。
+- [Flowchart2Mermaid: A Vision-Language Model Powered System for Converting Flowcharts into Editable Diagram Code](https://arxiv.org/abs/2512.02170)：用 VLM 提示把流程图图片转成可编辑 Mermaid.js 图表代码，并支持混合主动编辑，更接近 visual-to-code 工作流而非模型训练。
+- [Bin2Vec: Interpretable and Auditable Multi-View Binary Analysis for Code Plagiarism Detection](https://arxiv.org/abs/2512.02197)：从 imports、exports、指令和内存行为等可检查视角比较二进制程序，再融合为可审计的抄袭相似度分数。
+- [CUDA-L2: Surpassing cuBLAS Performance for Matrix Multiplication through Reinforcement Learning](https://arxiv.org/abs/2512.02551)：以 CUDA 执行速度作为强化学习奖励，在 1000 种配置上训练 LLM 生成的 HGEMM kernel，并在离线和 server-mode 测试中超过 torch.matmul、cuBLAS 与 cuBLASLt 基线。
 - [DeepSeek-V3.2](https://arxiv.org/abs/2512.02556)：在前沿开放模型中加入大规模 agentic task synthesis 和可扩展强化学习，对软件代理的编码与工具使用能力有直接影响。
+- [Beyond Code Pairs: Dialogue-Based Data Generation for LLM Code Translation](https://arxiv.org/abs/2512.03086)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Dialogue-Based Data Generation for LLM Code Translation 为主要改进目标，作为 Model 条目的能力参考。
+- [Completion by Comprehension: Guiding Code Generation with Multi-Granularity Understanding](https://arxiv.org/abs/2512.04538)：用多粒度理解引导代码生成，将代码理解信号与补全质量连接起来。
+- [When Forgetting Builds Reliability: LLM Unlearning for Reliable Hardware Code Generation](https://arxiv.org/abs/2512.05341)：通过语法保持的遗忘策略和选择性损失移除问题硬件代码知识，同时尽量保持 HDL 生成质量。
+- [A Hybrid Approach for EMF Code Generation:Code Templates Meet Large Language Models](https://arxiv.org/abs/2512.05498)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“A Hybrid Approach for EMF Code Generation:Code Templates Meet Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Multi-Repository Bug Localization by LLMs](https://arxiv.org/abs/2512.05908)：利用自然语言摘要支持 LLM 在微服务多仓库中的缺陷定位，扩展仓库级诊断能力覆盖。
+- [Translating PL/I Macro Procedures into Java Using Automatic Templatization and Large Language Models](https://arxiv.org/abs/2512.06448)：用自动模板化与大语言模型将 PL/I 宏过程迁移到 Java。
+- [Automatic Syntax Error Repair for Discrete Controller Synthesis using Large Language Model](https://arxiv.org/abs/2512.07261)：用大语言模型修复离散控制器合成中的语法错误。
+- [Understanding Privacy Risks in Code Models Through Training Dynamics: A Causal Approach](https://arxiv.org/abs/2512.07814)：研究不同 PII 类型在代码模型微调中被学习和泄露的差异，并用因果干预区分各类隐私风险机制。
+- [LaMoSys3.5D: Enabling 3.5D-IC-Based Large Language Model Inference Serving Systems via Hardware/Software Co-Design](https://arxiv.org/abs/2512.08731)：系统方向候选；用 hardware/software co-design 支持 3.5D integrated circuit 上的 LLM 推理服务，而不是提升代码生成能力。
+- [Llama-Based Source Code Vulnerability Detection: Prompt Engineering vs Fine Tuning](https://arxiv.org/abs/2512.09006)：比较 prompt engineering 与 fine-tuning 在基于 Llama 的源码漏洞检测中的效果。
 - [Training Versatile Coding Agents in Synthetic Environments](https://arxiv.org/abs/2512.12216)：合成多样化 coding-agent 环境，用于训练超出固定 GitHub issue 分布的通用代码代理。
+- [Sharpen the Spec, Cut the Code: A Case for Generative File System with SYSSPEC](https://arxiv.org/abs/2512.13047)：SYSSPEC 将含糊的文件系统提示转化为更明确的规约，使 LLM 生成和演化文件系统代码时减少需求不清导致的设计失败。
+- [Fine-tuned LLM-based Code Migration Framework](https://arxiv.org/abs/2512.13515)：在迭代式 SQL 代码库迁移框架中微调 LLM，重点处理 Oracle-to-SQL 语法映射和数据库现代化中的差异消解。
+- [The Double Life of Code World Models: Provably Unmasking Malicious Behavior Through Execution Traces](https://arxiv.org/abs/2512.13821)：提出 CTVP 验证器框架，通过语义等价程序变换上的预测执行轨迹来探测不可信代码生成模型。
+- [DreamPRM-Code](https://arxiv.org/abs/2512.15000)：训练带标签校正的 function-as-step 过程奖励模型，用于 LLM 编程。
+- [An Exploratory Study of Bayesian Prompt Optimization for Test-Driven Code Generation with Large Language Models](https://arxiv.org/abs/2512.15076)：用 Bayesian optimization 调优 test-driven LLM code generation 的提示，把测试结果作为搜索信号。
+- [Knowledge Distillation with Structured Chain-of-Thought for Text-to-SQL](https://arxiv.org/abs/2512.17053)：该工作用形式化、结构化的思维链轨迹蒸馏 Text-to-SQL 推理，让小语言模型在企业场景中减少对昂贵闭源 LLM 的依赖。
 - [Self-Play SWE-RL](https://arxiv.org/abs/2512.18552)：通过 self-play 和生成的软件演化挑战训练软件代理，而不只依赖人工 GitHub issue。
+- [Modular Layout Synthesis](https://arxiv.org/abs/2512.18996)：通过结构归一化和约束生成，为现代 UI 框架生成模块化前端代码。
+- [Beyond Language Boundaries: Uncovering Programming Language Families for Code Language Models](https://arxiv.org/abs/2512.19509)：面向代码语言模型分析编程语言家族，揭示超越表层语法的跨语言结构。
+- [LASER: Language Model Regression for Semi-Structured Workflow Resource and Runtime Estimation](https://arxiv.org/abs/2512.19701)：在序列化 workflow job configuration 上微调 LLM 做多目标资源和运行时回归，保留 shell 命令、依赖图和层级元数据语义。
+- [Widget2Code](https://arxiv.org/abs/2512.19918)：用多模态 LLM 将视觉 widget 转成 UI 代码，补充模型侧 visual-to-code 生成路线。
+- [VSA](https://arxiv.org/abs/2512.20034)：对齐视觉与结构信号，使 UI-to-code 生成组件化前端资产而不是扁平代码。
+- [Fairness Is Not Just Ethical: Performance Trade-Off via Data Correlation Tuning to Mitigate Bias in ML Software](https://arxiv.org/abs/2512.21348)：通过调节 ML software 中的数据相关性研究公平性与性能权衡，属于软件质量模型候选。
 - [SWE-RM](https://arxiv.org/abs/2512.21919)：训练面向 SWE agent 的 execution-free reward model，同时服务 test-time scaling 和强化学习反馈。
+- [AGRO-SQL: Agentic Group-Relative Optimization with High-Fidelity Data Synthesis](https://arxiv.org/abs/2512.23366)：把 high-fidelity 合成数据与 agentic group-relative optimization 结合，用于 text-to-SQL 模型训练。
+- [Rug](https://doi.org/10.1109/icse55347.2025.00097)：面向 Rust 单元测试生成构建 LLM 代码生成系统。
+- [Comprehend, Imitate, and then Update](https://doi.org/10.1109/ASE63991.2025.00046)：先理解既有测试、模仿项目测试风格，再在生产代码变化后更新测试套件。
+- [Context-aware code summary generation](https://doi.org/10.1016/j.jss.2025.112580)：结合更广程序上下文生成代码摘要，用上下文建模改进开发辅助中的代码理解。
+- [CSMS](https://doi.org/10.1109/APSEC66846.2025.00105)：结合 Transformer 摘要精修与方法摘要融合来改进类级代码摘要，服务仓库文档生成。
+- [LLM-Based Code Clone Detection with AST Graphs](https://doi.org/10.1109/ACCESS.2025.3628856)：结合 LLM 代码改写与 AST 图建模做细粒度 clone detection，扩展代码理解模型在补丁生成之外的覆盖。
+- [DEGAN-CS: An efficient code search model based on dataenhanced optimization of generative adversarial networks](https://doi.org/10.1016/j.patcog.2025.112709)：将数据增强的 GAN 优化用于代码搜索，补充软件开发模型中的神经代码检索方法。
+- [GenC2Rust: Towards Generating Generic Rust Code from C](https://doi.org/10.1109/icse55347.2025.00127)：面向 C 到 Rust 的泛型代码生成，为内存安全的软件现代化补充 ICSE 代码翻译方法线索。
+- [Llm-Assisted Crossover in Genetic Improvement of Software](https://doi.org/10.1109/gi66624.2025.00012)：把大语言模型作为 genetic improvement 中的 crossover 算子，为代码变体重组和改进补充搜索式软件工程方法。
+- [RaxCS: Towards cross-language code summarization with contrastive pre-training and retrieval augmentation](https://doi.org/10.1016/j.infsof.2025.107741)：结合对比预训练和检索增强进行跨语言代码摘要，面向可在不同编程语言间迁移的代码理解与描述。
+- [HyRACC: A Hybrid Retrieval-Augmented Framework for More Efficient Code Completion](https://doi.org/10.1109/forge66646.2025.00013)：用混合检索增强框架提升代码补全效率，为代码模型补充仓库上下文检索路线。
+- [DLCoG: A Novel Framework for Dual-Level Code Comment Generation Based on Semantic Segmentation and In-Context Learning](https://doi.org/10.1109/icpc66645.2025.00036)：先对代码做语义分割，再用上下文示例生成局部与整体两级注释，避免只输出单一粒度摘要。
+- [Mixture-of-Experts Low-Rank Adaptation for Multilingual Code Summarization](https://doi.org/10.1109/ase63991.2025.00186)：将混合专家低秩适配用于多语种代码摘要，为代码智能补充模型侧适配方法。
+- [Comprehensive Fine-Tuning Large Language Models of Code for Automated Program Repair](https://doi.org/10.1109/tse.2025.3532759)：研究面向自动程序修复的代码 LLM 全面微调，把修复表现作为适配目标，而不是只提示基座模型。
+- [The Design Space of LLM-Based AI Coding Assistants: An Analysis of 90 Systems in Academia and Industry](https://doi.org/10.1109/vl-hcc65237.2025.00041)：Survey 与父级复核候选；分析 90 个学术和产业编码助手，贡献是设计空间地图而非模型配方。
+- [Comparative Analysis of Styles in LLM-Generated Code for LeetCode Problems: A Preliminary Study](https://doi.org/10.1109/compsac65507.2025.00219)：经验比较 LLM 生成 LeetCode 解答的风格属性，为代码生成器行为提供证据，而不是提出新模型。
+- [C2RustTV: An LLM-based Framework for C to Rust Translation and Validation](https://doi.org/10.1109/compsac65507.2025.00158)：用带验证环节的 LLM 框架进行 C-to-Rust 翻译，使迁移结果与语义等价检查绑定。
+- [Extracting the Essence and Discarding the Dross: Enhancing Code Generation with Contrastive Execution Feedback](https://aclanthology.org/2025.coling-main.704/)：用 contrastive execution feedback 区分有用与误导性的执行信号，以改进代码生成。
+- [Breaking Task Isolation: Enhancing Code Review Automation with Mixture-of-Experts Large Language Models](https://doi.org/10.1109/issre66568.2025.00033)：把 mixture-of-experts LLM 用于代码评审自动化，使评审子任务能共享信息而不是彼此隔离。
+- [Spec2Doc2RTL: RTL Generation from Specification with Natural Language Representation](https://doi.org/10.1109/iseda65950.2025.11101140)：通过自然语言中间表示从 specification 生成 RTL，连接需求文本与硬件代码。
+- [RoSum-Mcts: Monte Carlo Tree Search-Inspired HDL Code Summarization with Structural Rewards](https://doi.org/10.1109/iclad65226.2025.00037)：用 MCTS-style search 与 structural rewards 生成 HDL 代码摘要。
+- [Automated AADL Architecture Modeling: Leveraging Large Language Models for Safety-Critical Software](https://doi.org/10.1109/models-c68889.2025.00050)：用 LLM 生成安全关键软件的 AADL architecture model，目标工件是可分析架构模型而不是可执行代码。
+- [FuzzCoder: Code Large Language Model-Based Fuzz Testing for Industrial IoT Programs](https://doi.org/10.1109/jiot.2025.3577602)：Agent Harness 与测试候选；用代码 LLM 生成或引导 industrial IoT programs 的 fuzz testing。
+- [The icing on the cake: Enhancing Code Pre-trained models-based program repair with multi-source inputs and fix templates](https://doi.org/10.1016/j.jss.2025.112590)：把 multi-source context 与 fix templates 注入基于代码预训练模型的程序修复流程。
+- [Boosting unit test generation via structure-aware fine-tuning of pre-trained model](https://doi.org/10.1016/j.infsof.2025.107948)：用 structure-aware 信号微调预训练模型，以提升单元测试生成效果。
+- [Automatic SystemVerilog Assertion Generation: Challenges and Opportunities](https://doi.org/10.1109/ccece64018.2025.11364438)：分析 LLM 生成 SystemVerilog assertion 的可行性与瓶颈，重点在断言正确性、设计上下文 grounding 和验证覆盖率。
+- [From Prototype Interface to Test Case Generation with Large Language Model](https://doi.org/10.1109/qrs-c65679.2025.00037)：用 LLM 将原型接口描述转换成测试用例，贡献集中在测试制品生成而非通用代码合成。
+- [Coding With AI: From a Reflection on Industrial Practices to Future Computer Science and Software Engineering Education](https://arxiv.org/abs/2512.23982)：Survey 与教育候选；从产业 AI coding 实践反思计算机科学和软件工程教育。
+- [When to Ponder: Adaptive Compute Allocation for Code Generation via Test-Time Training](https://arxiv.org/abs/2601.00894)：通过测试时训练自适应分配代码生成算力，判断额外推理何时更可能改善程序输出。
+- [Avaliação de Qualidade de Código Java gerado por Large Language Models](https://doi.org/10.5753/eres.2025.16845)：评估 LLM 生成 Java 代码的质量，提供生成代码行为证据，而不是提出训练配方。
+- [ChatGPT Choreography: Discovering Developer Dialogues and Potential Software Development Lifecycle Applications](https://doi.org/10.1109/mc.2025.3532347)：研究开发者与 ChatGPT 在软件生命周期任务中的对话模式，更接近工作流与采用证据而非纯模型条目。
+- [LiSSA: Toward Generic Traceability Link Recovery Through Retrieval- Augmented Generation](https://doi.org/10.1109/icse55347.2025.00186)：用 retrieval-augmented generation 恢复软件工件之间的通用 traceability links。
+- [SecuGuard: Leveraging pattern-exploiting training in language models for advanced software vulnerability detection](https://doi.org/10.2478/ijmce-2025-0005)：用 pattern-exploiting training 适配语言模型，以检测软件漏洞。
+- [Analysis of ChatGPT-Generated Codes Across Multiple Programming Languages](https://doi.org/10.1109/access.2025.3538050)：经验评测候选；分析 ChatGPT 在多种编程语言中生成代码的质量，而不是提出新模型。
+- [Analyzing the dependability of Large Language Models for code clone generation](https://doi.org/10.1016/j.jss.2025.112548)：经验评测 LLM 生成代码克隆的可靠性，为代码复用与 clone generation 工作流提供模型风险证据。
+- [Planning a Large Language Model for Static Detection of Runtime Errors in Code Snippets](https://doi.org/10.1109/icse55347.2025.00102)：用带规划的大模型在执行前静态检测短代码片段中的运行时错误，将运行时错误发现转化为模型辅助静态分析任务。
+- [An empirical study of best practices for code pre-trained models on software engineering classification tasks](https://doi.org/10.1016/j.eswa.2025.126762)：系统比较代码预训练模型在软件工程分类任务上的选择与调优实践，给出适配经验而非新架构。
+- [Integrating Pull Request Comment Analysis and Developer Profiles for Expertise-Based Recommendations in Global Software Development](https://doi.org/10.1109/access.2025.3532386)：结合 pull request 评论分析和开发者画像，为分布式软件项目推荐合适专家。
+- [Using pseudo-AI submissions for detecting AI-generated code](https://doi.org/10.3389/fcomp.2025.1549761)：用 pseudo-AI 编程提交作为监督信号，在教育或仓库场景中识别 AI 生成代码。
+- [Detecting code paraphrased by large language models using coding style features](https://doi.org/10.1016/j.engappai.2025.112454)：利用编码风格特征检测 LLM 改写后的代码，为作者归因和生成代码检测补充 paraphrase-specific 信号。
+- [Can AI Fix Buggy Code? Exploring the Use of Large Language Models in Automated Program Repair](https://doi.org/10.1109/mc.2025.3527407)：评估 LLM 用于自动程序修复的效果，区分实际修 bug 能力和修复专用模型训练。
+- [Why Do Developers Engage with ChatGPT in Issue-Tracker? Investigating Usage and Reliance on ChatGPT-Generated Code](https://doi.org/10.1109/saner64311.2025.00015)：研究开发者为何在 issue tracker 中使用 ChatGPT 以及对生成代码的依赖程度，属于采用与依赖实证研究。
+- [Cross Domain Few-Shot Line-Level Defect Prediction in Open Software Development via Meta Learning](https://doi.org/10.1109/tce.2025.3572334)：用 meta-learning 在目标项目标注稀缺时进行跨域 few-shot 行级缺陷预测。
+- [Multimodal Classification of Software Issue Reports Using CLIP: A Fine-Tuned Approach for Bug and Feature Detection](https://doi.org/10.1109/ecce64574.2025.11012920)：微调 CLIP 式多模态表示，在 issue report 同时含文本和视觉证据时区分 bug 与 feature request。
+- [SEOCD: Detecting obsolete code comments by fusing semantic features and expert features](https://doi.org/10.1016/j.eswa.2025.127470)：融合学习到的语义表示与专家设计的代码注释一致性特征，检测过时代码注释。
+- [A Test Oracle for Reinforcement Learning Software Based on Lyapunov Stability Control Theory](https://doi.org/10.1109/icse55347.2025.00074)：基于 Lyapunov 稳定控制理论定义强化学习软件测试 oracle，而不是训练代码模型。
+- [Who's Pushing the Code? An Exploration of GitHub Impersonation](https://doi.org/10.1109/icse55347.2025.00065)：经验研究 GitHub 代码贡献中的身份冒用，属于软件供应链证据而非模型方法。
+- [Malo in the Code Jungle: Explainable Fault Localization for Decentralized Applications](https://doi.org/10.1109/tse.2025.3578816)：为去中心化应用提供可解释 fault localization，把定位证据适配到智能合约和区块链代码。
+- [Can We Translate Code Better with LLMs and Call Graph Analysis?](https://doi.org/10.24963/ijcai.2025/848)：在 LLM 代码翻译中加入调用图分析，使跨语言输出更能保持过程间依赖。
+- [RTLExplain: A Structured Approach to RTL Code Summarization and Question Answering for Medium-to-Large Designs Using LLMs](https://doi.org/10.1109/mlcad65511.2025.11189167)：为中大型硬件设计组织 RTL 摘要和问答流程，而不是把 HDL 当作孤立代码片段。
+- [Automated robustness testing for LLM-based natural language processing software](https://doi.org/10.1016/j.eswa.2025.130642)：通过自动输入变体测试 LLM-based NLP 软件鲁棒性，属于模型可靠性相邻的测试基础设施。
+- [Scalable Large-Scale Multi-Granularity Code Clone Detection via Clustering Search and Pre-Trained Models](https://doi.org/10.1109/tse.2025.3635158)：结合聚类搜索和预训练模型，在多个代码粒度上扩展 clone detection。
+- [Promises and Perils of LLM- and Agent-Generated Code](https://doi.org/10.1109/mc.2025.3627694)：Survey 与风险分析候选；讨论 LLM 和 coding agent 生成代码的收益与失败模式。
+- [The True Cost of AI Assistance to Programming of Software](https://doi.org/10.1109/ms.2025.3646081)：经验采用与生产力候选；分析 AI 编程辅助的隐性成本，而不是模型侧方法。
+- [Gated transformer network for multivariate security patch identification with mixture-of-experts](https://doi.org/10.1016/j.infsof.2025.108006)：用 gated Transformer 和 mixture-of-experts 设计识别多变量安全补丁。
+- [OpenFix: leveraging graph representation and LLM knowledge augmentation for prompt-guided vulnerability repair in smart infrastructures](https://doi.org/10.1108/ijpcc-11-2025-0490)：结合图表示与 LLM 知识增强，为 smart infrastructures 中的漏洞修复提示提供引导。
+- [Machine Learning Solutions to Automated Governance and Code Analysis to Compliance](https://doi.org/10.1109/icaaic64647.2025.11331106)：合规分析候选；把机器学习用于治理与代码合规分析，而不是训练可复用代码模型。
+- [Bibliometric and Content Analysis of Large Language Models Research in Software Engineering: The Potential and Limitation in Software Engineering](https://doi.org/10.14569/ijacsa.2025.0160436)：Survey 候选；用 bibliometric 与内容分析梳理软件工程中的 LLM 研究。
+- [Catching Common Vulnerabilities with Code Language Models](https://doi.org/10.1109/secdev66745.2025.00016)：评估代码语言模型捕捉常见软件漏洞的能力。
+- [HectorIDE: A Document Centric Platform for AI Powered Software Development](https://doi.org/10.1109/roedunet68395.2025.11208510)：Agent Harness 候选；提供 document-centric 的 AI-powered 软件开发 IDE 平台。
+- [Software Defects Prediction: Source Code Is All You Need](https://doi.org/10.1109/qrs-c65679.2025.00029)：研究仅基于源码表示的软件缺陷预测。
+- [Effective Code Generation Using Program Synthesis And CodeLLM](https://doi.org/10.1109/iccies63851.2025.11032972)：把程序合成技术与 CodeLLM 生成结合，用于代码生成任务。
+- [Iterative program synthesis with code knowledge](https://doi.org/10.1016/j.ins.2025.122156)：把代码知识注入迭代式程序合成循环，使候选程序能依据领域和实现约束持续精修。
+- [Integrating Attention Mechanism with Code Structural Affinity and Execution Context Correlation for Automated Bug Repair](https://doi.org/10.32604/cmc.2025.071733)：在 bug 修复中结合注意力、代码结构亲和度和执行上下文相关性，让修复模型同时利用结构与运行时线索。
+- [Code Auto-generation System based on Large Language Models](https://doi.org/10.1109/bmsb65076.2025.11165667)：描述基于 LLM 的代码自动生成系统，适合作为生成流水线应用证据而非新的基础模型配方。
+- [From Kotlin to Swift and Back: Toward Fully Automated Cross-Language Code Transpilation](https://doi.org/10.1109/asew67777.2025.00030)：自动化 Kotlin 与 Swift 双向转译，检验 LLM-based migration 能否在移动生态之间保持语义。
+- [KG-Code: A Knowledge Graph Guided Pre-Training Approach for Code Representation](https://doi.org/10.1109/apsec66846.2025.00095)：用知识图谱引导代码表示预训练，使 embedding 捕获超越 token 共现的程序关系。
+- [A Study on Metric-Human Alignment in Code Summarization by LLMs through Kolmogorov-Arnold Networks](https://doi.org/10.1109/sped67700.2025.11252151)：用 Kolmogorov-Arnold Networks 研究代码摘要自动指标与人工判断之间的一致性。
+- [DSBox: A Data Selection Framework for Efficient Deep Code Learning](https://doi.org/10.1109/ase63991.2025.00375)：为 deep code learning 选择训练数据，使代码模型不必消耗全部样本也能提升效率。
+- [Generating Cost Optimized Smart Contracts from Deep Learning Code using Large Language Models](https://doi.org/10.1109/bcca66705.2025.11229467)：将深度学习代码转换为智能合约并优化成本，把 LLM 生成与区块链部署约束连接起来。
+- [Exploring continual learning in code intelligence with domain-wise distilled prompts](https://doi.org/10.1016/j.infsof.2025.107775)：用按领域蒸馏的提示研究代码智能持续学习，目标是在学习新领域时减少遗忘。
+- [KNSE-Code: A Knowledge-Aware, Safety-Enhanced, Rule-Driven Framework for Aviation Safety-Critical Software Code Generation](https://doi.org/10.1109/iccbdai66607.2025.11388648)：结合航空领域知识、安全规则和 LLM 生成来产出安全关键代码制品。
+- [LLM-Powered Code Generation Using RAG Framework with LLaMA 3](https://doi.org/10.1109/csitss67709.2025.11294234)：用检索增强上下文 grounding LLaMA 3 代码生成，使输出能利用外部项目或领域知识。
+- [SageJavon: A scalable AI tutor for personalized programming learning](https://doi.org/10.1016/j.ipm.2025.104605)：面向编程教育的个性化辅导系统，更适合作为教育工作流证据而非代码模型训练。
+- [Discarding the Crutches: Adaptive Parameter-Efficient Expert Meta-Learning for Continual Semantic Parsing](https://aclanthology.org/2025.coling-main.240/)：偏离软件开发轴的语义解析适配工作，使用参数高效的 expert meta-learning，但并非代码模型方法。
+- [VeRPO: Verifiable Dense Reward Policy Optimization for Code Generation](https://arxiv.org/abs/2601.03525)：用可验证密集奖励优化代码生成。
+- [AID-SQL: Adaptive In-Context Learning of Text-to-SQL with Difficulty-Aware Instruction and Retrieval-Augmented Generation](https://doi.org/10.1109/icde65448.2025.00294)：按查询难度选择指令、示例和检索证据，使 Text-to-SQL 提示能在简单与复杂数据库问题之间自适应。
+- [A Comprehensive Study on Code Completion for Large Language Models](https://doi.org/10.1109/icaace65325.2025.11020128)：综述基于 LLM 的代码补全方法，并用 Python、Java 和 C++ 的多粒度补全样本评估模型，指出长依赖、复杂嵌套和异步代码仍是弱项。
+- [Designing an LLM-Based Copilot for Manufacturing Equipment Selection](https://doi.org/10.1016/j.mfglet.2025.10.017)：偏离本页的软件开发轴；设计面向 manufacturing equipment selection 的 LLM copilot。
+- [CM-SQL: A cross-model consistency framework for text-to-SQL](https://doi.org/10.1016/j.neucom.2025.131708)：提出 text-to-SQL 生成中的 cross-model consistency checking，用多个模型暴露不可靠 SQL 输出。
+- [Automated Extraction of Conditional Causal Rules from Control Narratives Using Logic Programming and Large Language Models](https://doi.org/10.1109/etfa65518.2025.11205764)：结合 LLM 解析与逻辑编程约束，从工业控制叙述中抽取条件因果规则。
+- [MaxCode: A Max-Reward Reinforcement Learning Framework for Automated Code Optimization](https://arxiv.org/abs/2601.05475)：把自动代码优化建模为最大奖励强化学习，将代码模型从正确性扩展到性能改进。
+- [An Empirical Study of Policy-as-Code Adoption in Open-Source Software Projects](https://arxiv.org/abs/2601.05555)：经验采用候选；分析开源项目如何使用 policy-as-code，更适合作为流程或治理证据而非模型训练。
+- [Enhancing Algorithm Comprehension for Visually Impaired Individuals With LLM-Based Programming Code Segmentation](https://doi.org/10.1109/access.2025.3638804)：把程序代码切分为 LLM 生成的解释单元，帮助视障学习者理解算法结构。
+- [Enhancing Industrial Data Access with Text-to-SQL using Portuguese LLMs and LangGraph](https://doi.org/10.1109/iscmi67495.2025.11358511)：将葡萄牙语 LLM 与 LangGraph Text-to-SQL 工作流结合，用于工业数据访问。
+- [Enhancing Text-to-SQL generation with language sequential consistency](https://doi.org/10.1016/j.neucom.2025.131721)：Text-to-SQL 模型条目；把语言序列一致性作为 SQL 生成约束或校验信号。
+- [Root Cause Analysis of RISC-V Build Failures via LLM and MCTS Reasoning](https://doi.org/10.1109/ase63991.2025.00227)：结合模板化日志压缩、阶段感知少样本 LLM 异常检测，以及基于领域知识的 MCTS 推理，诊断 117 个真实 RISC-V 构建失败。
+- [Coding-Fuse: Efficient Fusion of Code Pre-Trained Models for Classification Tasks](https://doi.org/10.1109/ase63991.2025.00157)：用证据理论从多个代码预训练模型中选择适配层，再通过软投票融合，服务更高效的软件工程分类任务。
+- [Peeking inside the black box: Training data exposure in code language models](https://doi.org/10.1016/j.jss.2025.112729)：父级复核候选；研究代码语言模型的记忆化和训练数据暴露风险，而不是提出新的代码模型训练方法。
+- [Spec2Code: Mapping Protocol Specification to Function-Level Code Implementation](https://doi.org/10.1109/ase63991.2025.00174)：用 LLM 匹配、相关性过滤和聚类，把 RFC 需求映射到协议实现函数，并据此发现规格与实现不一致的缺陷。
+- [Harnessing code domain insights: Enhancing programming Knowledge Tracing with Large Language Models](https://doi.org/10.1016/j.knosys.2025.113396)：利用代码领域信号适配 LLM-based programming knowledge tracing，用于学习状态预测。
+- [Combining Code Generating Large Language Models and Self-Play to Iteratively Refine Strategies in Games](https://doi.org/10.24963/ijcai.2025/1249)：偏离本页的软件开发轴；把代码生成 LLM 与 self-play 结合，用于迭代改进游戏策略。
+- [An Elastic Coding and Decoding Method for Satellite Remote Sensing Image Semantic Transmission](https://doi.org/10.1109/tnse.2025.3632547)：偏离本页的软件开发轴；提出面向卫星遥感图像语义传输的 elastic coding and decoding 方法。
+- [MDVul: A semantic-based complex dependency code vulnerability detection using fusion path](https://doi.org/10.1016/j.inffus.2025.103475)：通过融合语义与复杂依赖路径检测代码漏洞。
+- [A Retrospective of ChangeDistiller: Tree Differencing for Fine-Grained Source Code Change Extraction](https://doi.org/10.1109/tse.2025.3538326)：Survey 与历史方法候选；回顾 ChangeDistiller 用于细粒度源码变更抽取的 tree differencing 方法。
+- [Transforming Code Development with Large Language Models](https://doi.org/10.1109/iccns66249.2025.11428578)：Survey 或采用研究候选；讨论 LLM 如何改变代码开发实践，而不是具体模型配方。
+- [LLM-Driven Fortran-to-C/C++ Portability for Parallel Scientific Codes](https://doi.org/10.1109/escience65000.2025.00083)：用 LLM 将并行科学计算 Fortran 代码迁移到 C 或 C++。
+- [Harnessing the Power of LLMs for Code Smell Detection in Terraform Infrastructure as Code](https://doi.org/10.1109/compsac65507.2025.00075)：把 LLM 用于 Terraform Infrastructure-as-Code 中的 code smell detection。
+- [An Empirical Study of Exploring the Capabilities of Large Language Models in Code Learning](https://doi.org/10.1109/tse.2025.3609876)：编程教育经验研究候选；评估 LLM 在 code-learning 场景中的能力。
+- [A Metaprotocol For a Family of Rapid Multivocal Reviews of Generative AI in the Software Industry](https://doi.org/10.5753/sbes.2025.11577)：Survey 候选；定义面向软件产业生成式 AI 的 rapid multivocal reviews 元协议。
+- [BinEGA: Enhancing DNN-based Binary Code Similarity Detection through Efficient Graph Alignment](https://doi.org/10.1109/saner64311.2025.00052)：用高效 graph alignment 改进 DNN-based binary code similarity detection。
+- [A Novel Approach to Generative AI-based Optimized Code Generation for Semiconductor Equipment Interfaces](https://doi.org/10.23919/icact63878.2025.10936654)：用生成式 AI 生成半导体设备接口的优化代码。
+- [Self-Adaptive Quantum and Classical Software Systems](https://doi.org/10.1109/qce65121.2025.00089)：量子软件候选；讨论跨量子与经典组件的 self-adaptive software systems。
+- [Locus: A Proposal for Quantum Software Composition](https://doi.org/10.4230/oasics.programming.2025.17)：量子软件候选；提出 quantum software composition 方法，而不是代码 LLM。
+- [Examining the Performance of Mamba Tab for Software Defect Prediction](https://doi.org/10.1109/bigcomp64353.2025.00010)：在软件缺陷预测任务上评估 MambaTab 架构。
+- [Fedvuln: Scalable and privacy-preserving federated graph learning for smart contract vulnerability detection on parallel systems](https://doi.org/10.1016/j.future.2025.108264)：用 federated graph learning 实现可扩展、隐私保护的智能合约漏洞检测。
+- [Enhancing Python Code Security: A Comparison of Machine Learning, ChatGPT, and Static Analysis Methods](https://doi.org/10.1109/icecer65523.2025.11401125)：比较机器学习、ChatGPT 与静态分析在 Python 代码安全检测中的效果。
+- [Adversarial Training for Robustness Enhancement in LLM-Based Code Vulnerability Detection](https://doi.org/10.1109/cisce65916.2025.11065803)：用 adversarial training 提升 LLM-based code vulnerability detector 的鲁棒性。
+- [Fidelity of Cloud Emulators: The Imitation Game of Testing Cloud-Based Software](https://doi.org/10.1109/icse55347.2025.00077)：Bench 与测试基础设施候选；评估 cloud emulator 对 cloud-based software 测试的 fidelity。
+- [AutoGuard: Reporting Breaking Changes of REST APIs from Java Spring Boot Source Code](https://doi.org/10.1109/saner64311.2025.00083)：分析 Java Spring Boot 源码以报告 REST API breaking changes。
+- [Joint Adaptive Modulation Coding and Power Optimization in Heterogeneous Networks Based on Constrained Deep Reinforcement Learning](https://doi.org/10.1109/twc.2025.3609334)：偏离本页的软件开发轴；用 constrained deep reinforcement learning 优化异构网络中的 modulation coding 与功率。
+- [SABLM-VD: Vulnerability detection with a semantic-aware binary language model](https://doi.org/10.1016/j.infsof.2025.107959)：用 semantic-aware binary language model 检测二进制代码漏洞。
+- [COSTAR: Software Code Smell Detection Through Tree-Based Abstract Representation](https://doi.org/10.1109/tr.2025.3648404)：用 tree-based abstract representation 检测软件代码异味。
+- [LLM-assisted Performance Estimation of Embedded Software on RISC-V Processors](https://doi.org/10.1109/ddecs63720.2025.11006767)：用 LLM 估计 RISC-V 处理器上的嵌入式软件性能。
+- [TSDCG: Tabular Synthetic Data with Code Generation LLMs](https://doi.org/10.1109/icici65870.2025.11069449)：数据合成候选；用 code-generation LLM 生成 tabular synthetic data。
+- [AutoOptiCode-LLM: An Autonomous Large Language Model Framework for Intelligent Code Generation and Optimization](https://doi.org/10.1109/icicnis66685.2025.11315793)：Agent Harness 候选；把 LLM 包装进自动化框架，用于代码生成与优化。
+- [Introduction to the Special Section on software engineering for hybrid quantum computing systems](https://doi.org/10.1016/j.jss.2025.112362)：Survey 与编辑导言候选；概述 hybrid quantum computing systems 的软件工程问题。
+- [AI for Productivity: Transforming Enterprise Software Development](https://doi.org/10.1109/mc.2025.3543181)：产业采用候选；讨论 AI 对企业软件开发生产力的改变。
+- [Unified Artificial Intelligence and Formal Reasoning Approach to Software Security](https://doi.org/10.1109/icmnwc66779.2025.11354207)：把 AI 与 formal reasoning 结合，用于软件安全分析。
+- [Agile Software Development for Cost Cutting and Operational Efficiency](https://doi.org/10.1109/icscds65426.2025.11166951)：偏离本页的软件开发模型轴；讨论敏捷开发如何降低成本并提升运营效率。
+- [Neural Representations for Scalable Video Coding](https://doi.org/10.1109/icme59968.2025.11209859)：偏离本页的软件开发轴；学习用于 scalable video coding 的神经表示。
+- [Attentionsmelling: Using Large Language Models to Identify Code Smells](https://doi.org/10.5753/sbes.2025.9921)：用 LLM 识别代码异味。
+- [Weir: Scalable RDMA With Delay-Based RNIC Cache Control Software Middleware for Data Center Networks](https://doi.org/10.1109/ton.2025.3635230)：偏离本页的软件开发轴；提出面向 scalable RDMA 的 delay-based RNIC cache-control middleware。
+- [FIN: Boosting binary code embedding by normalizing function inlinings](https://doi.org/10.1016/j.jss.2025.112603)：通过归一化 function inlining 影响改进二进制代码 embedding。
+- [Large Language Model Company Policies and Policy Implications in Software Organizations](https://doi.org/10.1109/ms.2025.3622039)：Survey 与治理候选；分析软件组织中的 LLM company policies 及其影响。
+- [Bug or feature? Investigating the impact of generative AI on knowledge creation in software engineering](https://doi.org/10.1108/vjikms-05-2025-0209)：经验采用候选；研究生成式 AI 如何影响软件工程中的知识创造。
+- [From description to prescription: Unraveling log severity adjustments in open-source software](https://doi.org/10.1016/j.jss.2025.112643)：挖掘开源项目中的 log severity adjustment，从描述性证据中总结实践建议。
+- [Is AI Code Generation Undermining Developers’ Problem‑Solving Skills?](https://doi.org/10.62762/jse.2025.847963)：教育与人因候选；研究 AI code generation 是否削弱开发者问题求解能力。
+- [Advancing zero-shot humorous video understanding with test-time humor knowledge augmentation](https://doi.org/10.1016/j.patcog.2025.113014)：偏离本页的软件开发轴；用 test-time humor knowledge augmentation 做 zero-shot humorous video understanding。
+- [Prompt-to-G-Code Generation Using Large Language Models for Additive Manufacturing](https://doi.org/10.1109/csitss67709.2025.11294195)：用 LLM 将自然语言提示转换成 additive manufacturing 的 G-code。
+- [LLMSDH: An Integrated Software-assisted Development Tool Based on Large Language Models](https://doi.org/10.1109/qrs-c65679.2025.00087)：Agent Harness 候选；把 LLM 辅助能力集成进软件开发工具。
+- [On the Performance of Large Language Models for Code Change Intent Classification](https://doi.org/10.1109/saner64311.2025.00062)：评估 LLM 在 code change intent classification 上的表现。
+- [Refactoring Prediction Using Multimodal Representation of Code Snippets and Comments](https://doi.org/10.1109/giet65294.2025.11234820)：结合代码片段与注释的多模态表示预测重构。
+- [Offline and Continual Just-in-Time Software Defect Prediction with Pre-trained Language Models](https://doi.org/10.1109/smc58881.2025.11343039)：用预训练语言模型进行 offline 与 continual just-in-time defect prediction。
+- [Breaking the Code Barrier: Analyzing the Effectiveness of LLMs in Natural Language Interfaces for Collaborative Robotics](https://doi.org/10.1109/airc64931.2025.11077511)：偏离本页的软件开发轴；评估 LLM 作为 collaborative robotics 自然语言接口的效果。
+- [Metamorphic-Based Many-Objective Distillation of LLMs for Code-Related Tasks](https://doi.org/10.1109/icse55347.2025.00230)：用 metamorphic relations 引导面向代码任务的 LLM many-objective distillation。
+- [MetaIndux-PLC: A Control Logic-Guided LLM for PLC code generation in industrial control systems](https://doi.org/10.1016/j.asoc.2025.113673)：用 control-logic knowledge 引导 LLM 生成 industrial control systems 的 PLC code。
+- [Semantic-Aligned Code Summarization: Bridging the Gap Between Code and Natural Language Through Data Flow Analysis](https://doi.org/10.1109/tnnls.2025.3581792)：用数据流依赖对齐代码摘要与自然语言，使摘要反映程序语义而不只复述表层 token。
+- [OpCodeBERT: A Method for Python Code Representation Learning by BERT With Opcode](https://doi.org/10.1109/tse.2025.3610244)：在 Python 表示学习中加入 opcode 感知的 BERT 特征，把编译后的执行层信号与源码文本结合。
+- [Configuring Parameters of Search-based Software Engineering Tools with Multiple LLM Models](https://doi.org/10.5753/sbes.2025.11005)：用多个 LLM 推荐 search-based 软件工程工具参数配置，属于工具配置研究而非新代码模型。
+- [Leveraging AI for Automated Code Generation from Systems Engineering Specifications](https://doi.org/10.4271/2025-01-0295)：从系统工程规格生成实现代码，把需求规格工件连接到可执行软件。
+- [Cross-Level Requirements Tracing Based on Large Language Models](https://doi.org/10.1109/tse.2025.3572094)：用 LLM 进行跨层级需求追踪，将高层需求链接到生命周期后续的低层软件工件。
+- [Optimizing text-to-SQL conversion techniques through the integration of intelligent agents and large language models](https://doi.org/10.1016/j.ipm.2025.104136)：结合 LLM 与智能体编排优化 Text-to-SQL，作为围绕 SQL 生成的工作流证据保留。
+- [A comparative analysis on using GPT and BERT for automated vulnerability scoring](https://doi.org/10.1016/j.iswa.2025.200515)：比较 GPT 类与 BERT 类模型在自动漏洞评分中的表现，定位生成式和编码器模型对安全严重性预测的差异。
+- [An enhanced transformer-based framework for interpretable code clone detection](https://doi.org/10.1016/j.jss.2025.112347)：使用可解释 Transformer 框架进行代码克隆检测，输出克隆证据而不只是相似度标签。
+- [Adapting Installation Instructions in Rapidly Evolving Software Ecosystems](https://doi.org/10.1109/tse.2025.3552614)：在依赖和生态快速变化时自动适配安装说明，把文档维护纳入 AI 辅助软件任务。
+- [DSL-Xpert 2.0: Enhancing LLM-driven code generation for domain-specific languages](https://doi.org/10.1016/j.infsof.2025.107954)：把 LLM 代码生成扩展到领域专用语言，重点处理 DSL 的语法和语义约束。
+- [GNNContext: GNN-based Code Context Prediction for Programming Tasks](https://doi.org/10.1109/tse.2025.3578390)：用图神经网络预测代码上下文，使编程模型能够利用代码元素周围的结构邻域信息。
+- [LLM-Driven Code Generation for Neural Networks on FPGAs: Bridging Python and HLS](https://doi.org/10.1109/iccd65941.2025.00090)：用 LLM 将神经网络 Python 代码转换为 FPGA HLS 代码，连接机器学习代码与硬件综合约束。
+- [GRAPHCODEBERT-GAT: Hierarchical Graph Attention Networks for Explainable Neural Code Retrieval](https://doi.org/10.1109/iccwamtip68645.2025.11352717)：把 GraphCodeBERT 与层级图注意力结合，让神经代码检索可以给出图结构证据。
+- [DetectorsForge: A Software Product Line for Transfer-learning in Code Smells Detection](https://doi.org/10.1109/aiccsa66935.2025.11315279)：将迁移学习代码异味检测器组织为软件产品线，使不同项目和任务可配置相应检测变体。
+- [Detecting and Mitigating Inconsistencies Between Code, Documentation and Tests](https://doi.org/10.1109/ase63991.2025.00397)：检测并缓解代码、文档与测试之间的不一致，使维护工件保持同步。
+- [Constraint Discovery for Structured Generation via LLM-Guided SMT Inference](https://doi.org/10.1109/icsme64153.2025.00059)：通过 LLM 引导的 SMT 推理发现结构化生成约束，把约束抽取变成带验证器的生成步骤。
+- [BinCOP: Automated mining of code reuse paths for binary component oriented programming](https://doi.org/10.1016/j.ins.2025.122563)：自动挖掘二进制组件化编程中的代码复用途径，把二进制复用建模为图挖掘问题。
+- [A System Development Code Auto-Completion Method Based on Deep Reinforcement Learning](https://doi.org/10.1109/ai3e69313.2025.00032)：把深度强化学习用于系统开发代码自动补全，通过序列反馈选择补全动作。
+- [Lightweight Code Coverage Analysis for Deep Learning Library Fuzzing](https://doi.org/10.1109/dsc67331.2025.00090)：为深度学习库 fuzzing 提供轻量级代码覆盖分析，使 fuzzer 能以较低成本获得执行反馈。
+- [MTL-CR: A Multitask Learning Approach for Code Representation](https://doi.org/10.1109/apsec66846.2025.00030)：用多任务学习训练代码表示，使相关软件工程任务共享表示信号。
+- [Design of automatic code defect detection model based on Transformer](https://doi.org/10.1109/ecnct66493.2025.11172641)：构建基于 Transformer 的自动代码缺陷检测模型，将序列建模用于缺陷预测。
+- [Using Prompt Tuning to Identify Relevant API Knowledge from API Tutorial and Stack Overflow](https://doi.org/10.1109/qrs65678.2025.00034)：用提示调优从教程和 Stack Overflow 中识别相关 API 知识。
+- [CodeScent: A Deep Ensemble and LLM-Based Framework for Python and Java Code Smell Detection with Android Integration](https://doi.org/10.1109/iccit68739.2025.11490402)：补充结合大模型和深度集成的代码异味检测方法。
+- [Package-Aware Approach for Repository-Level Code Completion in Pharo](https://arxiv.org/abs/2601.05617)：在 Pharo 代码补全中利用 package-level repository context，使补全模型能感知包级依赖和仓库结构。
+- [Copiloting the future: How generative AI transforms Software Engineering](https://doi.org/10.1016/j.infsof.2025.107751)：Information and Software Technology 文章，讨论生成式 AI 对软件工程实践的影响；当前可得证据更适合记录流程层面的转型，而非具体代码模型训练配方。
+- [Translating code with Large Language Models and human-in-the-loop feedback](https://doi.org/10.1016/j.infsof.2025.107785)：把 LLM 代码翻译放在迭代式 human-in-the-loop 反馈流程中研究，让专家审查参与修正译后程序，而不是只评估一次性模型输出。
+- [OpGPT: LLM-driven Operator Generation Prompt Framework for Domain-Specific Architectures](https://doi.org/10.1016/j.procs.2025.07.117)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“OpGPT: LLM-driven Operator Generation Prompt Framework for Domain-Specific Architectures”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Automating Software Diagram Generation with Large Language Models](https://doi.org/10.1016/j.procs.2025.09.191)：Procedia Computer Science 论文，研究用 LLM 生成软件图，将 AI-for-SE 覆盖从代码文本扩展到设计工件。
+- [How Does Quantization Impact Privacy Risk on LLMS for Code?](https://doi.org/10.1109/aiware69974.2025.00013)：AIware 论文研究代码 LLM 量化如何改变隐私风险，将模型压缩视为影响代码生成记忆化和泄漏风险的部署变量。
+- [Advancing Binary Code Similarity Detection via Context-Content Fusion and LLM Verification](https://doi.org/10.1109/ase63991.2025.00033)：结合二进制代码的上下文和内容特征，并用 LLM verification 辅助相似性检测，把代码模型能力扩展到编译后二进制比较。
+- [Can Mamba Be Better? An Experimental Evaluation of Mamba in Code Intelligence](https://doi.org/10.1109/ase63991.2025.00155)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Can Mamba Be Better? An Experimental Evaluation of Mamba in Code Intelligence”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Evaluating Program Coverage for Code-Model Training](https://doi.org/10.1109/ase63991.2025.00379)：研究代码模型训练数据的程序覆盖信号；核心思路是在评估或构造代码模型语料时显式衡量编程行为覆盖。
+- [LLMs in Debate: Does Arguing Make Them Better at Detecting Metamorphic Relations?](https://doi.org/10.1109/asew67777.2025.00019)：检验 debate-style 交互能否提升 LLM 对 metamorphic relations 的检测，把软件测试中的 oracle 关系识别转化为模型侧推理与一致性协议。
+- [Code Summarization Using Mamba-SoTaNa](https://doi.org/10.1109/bigcomp64353.2025.00038)：将 Mamba-SoTaNa 序列模型用于代码摘要，为 Transformer 之外的 state-space-model 摘要生成路线提供软件工程实例。
+- [Exploration of Code Analysis Driven Unit Test Generation Method Based on Llm](https://doi.org/10.1109/cisp-bmei68103.2025.11259220)：用代码分析信号引导 LLM 生成单元测试，使程序结构信息参与测试合成提示或生成过程。
+- [Exploring Large Language Models for Analyzing and Improving Method Names in Scientific Code](https://doi.org/10.1109/esem64174.2025.00030)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Exploring Large Language Models for Analyzing and Improving Method Names in Scientific Code”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [From Assessment to Enhancement of Pull Requests at Scale: Aligning Code Reviews with Developer Competencies Using Large Language Models](https://doi.org/10.1109/esem64174.2025.00061)：利用 LLM 大规模评估和改进拉取请求，并对齐开发者能力维度。
+- [Enhancing Code Optimization in LLMs with Dual Encoder Architecture for Syntax and Semantic Refinement](https://doi.org/10.1109/icaide65466.2025.11189637)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Automating Software Test Case Generation with Pre-trained Large Language Models](https://doi.org/10.1109/iceccme64568.2025.11277902)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Automating Software Test Case Generation with Pre-trained Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction](https://doi.org/10.1109/icsa65012.2025.00011)：用 LLM 提取架构组件名称以支持软件架构可追踪性。
+- [Large Language Model assisted Transformation of Software Variants into a Software Product Line](https://doi.org/10.1109/icsr66718.2025.00008)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Prefix-Tuning for Large Language Models Enhanced with Hierarchical Graph Semantics in CI/CD Workflow Generation](https://doi.org/10.1109/ispds67367.2025.11391071)：将 prefix tuning 与层级图语义结合，让 LLM 基于结构化流水线上下文生成 CI/CD workflow。
+- [Tuning DeepSeek-Coder-V2-Lite-Base for C# Code Smell Detection: Advancing Towards Task Versatility in Software Maintenance](https://doi.org/10.1109/meco66322.2025.11049257)：针对 C# 代码异味检测微调 DeepSeek-Coder。
+- [Prompt Learning for Source Code Summarization](https://doi.org/10.1109/qrs65678.2025.00028)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Generating Secure Artificial Intelligence Model Source Code: A Reinforcement Learning Approach](https://doi.org/10.1109/spw67851.2025.00037)：一种面向安全源代码生成的强化学习方法；核心思路是把代码生成优化目标从单纯功能完成扩展到安全性约束。
+- [Just-in-Time Detection of Outdated Comments in Software Development by Jointly Reasoning](https://doi.org/10.1109/tce.2025.3535632)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Enhancing Code Transformation in Large Language Models Through Retrieval-Augmented Fine-Tuning](https://doi.org/10.1109/tce.2025.3565294)：把检索增强机制纳入代码转换微调，使模型适配时能利用相关代码或转换样例，而不是只依赖一次性提示生成。
+- [DockerFill: Automatically Completing Dockerfile Code With Syntax-Aware Multi-Task Learning](https://doi.org/10.1109/tse.2025.3632074)：用语法感知多任务学习补全 Dockerfile 代码。
+- [A Novel Approach to Test Case Generation in Software Testing Using Pre-Trained Large Language Models](https://doi.org/10.1109/wincom65874.2025.11313396)：使用预训练 LLM 生成软件测试用例，将代码模型覆盖扩展到测试合成而不只是应用代码生成。
+- [RepoFusion-in-Decoder: Efficient Cross-File Code Completion via Lightweight Encoder Fusion](https://doi.org/10.1109/aann66429.2025.11257694)：用轻量编码器融合支持跨文件代码补全，在降低全上下文解码成本的同时利用仓库上下文。
+- [DeepTriFix: An LLM-Based Code Defect Detection Framework Guided Abstract Syntax Tree and Prompt Reasoning](https://doi.org/10.1109/aiotc66747.2025.11198685)：结合抽象语法树和提示推理来引导 LLM 进行代码缺陷检测。
+- [Improving Quality of LLM Code Generation in Low-Resource Programming Languages via Uncertainty Estimation](https://doi.org/10.1109/ase63991.2025.00399)：用不确定性估计提升 LLM 在低资源编程语言中的代码生成质量。
+- [Repository-Level Code Smell Detection Based on Multi-Scale Code Information and LLM Assistance](https://doi.org/10.1109/ijcnn64981.2025.11228932)：结合多尺度代码信息和 LLM 辅助，在仓库级检测代码异味。
+- [Structured Instruction Tuning for Syntax-Semantic Fused Software Defect Detection](https://doi.org/10.1109/mind67540.2025.11351533)：用语法与语义融合的指令微调代码模型以检测软件缺陷。
+- [An Empirical Study of Parameter-Efficient Fine-Tuning in Code Change Learning and Beyond](https://doi.org/10.1109/tse.2025.3637335)：系统研究 PEFT 方法在代码变更学习任务中的迁移效果，补充软件维护模型的适配路线。
+- [CodeWisp: AST Guided Retrieval Augmented Generation for Code Generation and Completion](https://doi.org/10.1109/wincom65874.2025.11313399)：用 AST 引导的检索增强生成提供结构化上下文，提升代码生成与补全。
+- [Weights to Code: Extracting Interpretable Algorithms from the Discrete Transformer](https://arxiv.org/abs/2601.05770)：从离散 Transformer 权重中抽取可解释算法代码，使模型学到的类程序行为可检查。
+- [CSR-RAG: An Efficient Retrieval System for Text-to-SQL on the Enterprise Scale](https://arxiv.org/abs/2601.06564)：优化企业级 Text-to-SQL 中的 schema 与文档检索，是围绕 SQL 生成的检索系统贡献而非模型训练。
+- [FairRF: Multi-Objective Search for Single and Intersectional Software Fairness](https://arxiv.org/abs/2601.07537)：用 multi-objective search 同时优化软件系统中的 single fairness 与 intersectional fairness 目标。
+- [GRPO with State Mutations](https://arxiv.org/abs/2601.07593)：将带 state mutations 的 GRPO-style reinforcement learning 用于 LLM-based hardware test-plan generation。
+- [Hybrid Distillation with CoT Guidance for Edge-Drone Control Code Generation](https://arxiv.org/abs/2601.08412)：用 chain-of-thought guided hybrid distillation 生成 edge-drone control code。
+- [LLMs in Code Vulnerability Analysis: A Proof of Concept](https://arxiv.org/abs/2601.08691)：围绕代码漏洞分析评估 LLM 的 proof-of-concept 能力。
+- [Memo-SQL: Structured Decomposition and Experience-Driven Self-Correction for Training-Free NL2SQL](https://arxiv.org/abs/2601.10011)：Memo-SQL 在测试时复用历史错误-修复样例并结构化分解问题，在不继续训练模型的情况下改进 NL2SQL 自纠错。
+- [RM -RF: Reward Model for Run-Free Unit Test Evaluation](https://arxiv.org/abs/2601.13097)：训练无需实际运行的 reward model，预测生成单元测试的编译、覆盖率和 mutation-test 信号，降低代码 RL 反馈成本。
+- [SWE-Tester: Training Open-Source LLMs for Issue Reproduction in Real-World Repositories](https://arxiv.org/abs/2601.13713)：训练开源 LLM 在真实仓库中复现 issue，把仓库定位、失败复现和测试生成转化为软件工程模型训练目标。
+- [Software Testing in the Quantum World](https://arxiv.org/abs/2601.13996)：Survey 与立场文章候选；概述量子计算系统给软件测试带来的挑战。
+- [Lost in Transcription: How Speech-to-Text Errors Derail Code Understanding](https://arxiv.org/abs/2601.15339)：研究 speech-to-text 错误如何破坏代码理解，更接近语音驱动编程接口风险，而非代码模型训练。
+- [Combining Tests and Proofs for Better Software Verification](https://arxiv.org/abs/2601.16239)：验证综述与方法说明；通过 counterexample generation 和 Design by Contract 连接测试与 SMT-backed proofs，而不是提出代码 LLM。
+- [Revisiting the Role of Natural Language Code Comments in Code Translation](https://arxiv.org/abs/2601.16661)：测试自然语言代码注释对代码翻译的作用，区分有用语义提示与噪声或误导性上下文。
+- [Reflexa: Uncovering How LLM-Supported Reflection Scaffolding Reshapes Creativity in Creative Coding](https://arxiv.org/abs/2601.17769)：HCI 与 creative coding 候选；研究 LLM-supported reflection scaffolding 如何改变创意编程实践。
 - [daVinci-Dev](https://arxiv.org/abs/2601.18418)：研究软件工程 agent 的 agent-native mid-training，用上下文原生和可执行轨迹在后训练前注入 agentic 行为。
+- [Detecting and Correcting Hallucinations in LLM-Generated Code via Deterministic AST Analysis](https://arxiv.org/abs/2601.19106)：用确定性 AST 分析检测并修复生成代码中的知识冲突型幻觉，把代码生成可靠性方法扩展到非 LLM-in-the-loop 修复。
+- [Not All Tokens Matter: Data-Centric Optimization for Efficient Code Summarization](https://arxiv.org/abs/2601.20147)：通过识别哪些代码 token 真正影响摘要质量，优化代码摘要训练或推理数据。
+- [LogSieve: Task-Aware CI Log Reduction for Sustainable LLM-Based Analysis](https://arxiv.org/abs/2601.20148)：为可持续的大模型软件分析压缩持续集成日志。
+- [Control Models for IDE Completion](https://arxiv.org/abs/2601.20223)：训练用于 IDE 补全的 control models，在保持补全质量的同时把输出导向开发者偏好的行为。
 - [SERA](https://arxiv.org/abs/2601.20789)：生成 soft-verified repository trajectories，以低成本 SFT 训练开放、仓库专用的 coding agent。
+- [Detecting Multiple Semantic Concerns in Tangled Code Commits](https://arxiv.org/abs/2601.21298)：检测混杂代码提交中的多个语义关注点。
 - [SWE-Replay](https://arxiv.org/abs/2601.22129)：复用并分叉既有轨迹，为现代 SWE agent 提供低成本 test-time scaling。
+- [CVeDRL: An Efficient Code Verifier via Difficulty-aware Reinforcement Learning](https://arxiv.org/abs/2601.22803)：用难度感知强化学习训练高效代码验证器。
+- [DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](https://arxiv.org/abs/2602.01326)：通过两个长度控制状态为扩散语言模型加入动态可变长度 infilling，使 Dream-Coder 和 DiffuCoder 可在不改架构的情况下自行扩展或收缩补全长度。
 - [Kimi K2.5](https://arxiv.org/abs/2602.02276)：在 Kimi agentic 路线上加入图文联合训练、强化学习和 Agent Swarm，用于多模态编码与 agentic 任务。
 - [SWE-Universe](https://arxiv.org/abs/2602.02361)：把可验证 SWE 环境扩展到数十万级任务，并展示其用于 agentic mid-training 与强化学习的价值。
 - [SWE-World](https://arxiv.org/abs/2602.03419)（[开源代码](https://github.com/RUCAIBox/SWE-World)）：用学习到的 surrogate feedback model 替代 Docker 执行，使 SWE agent 可进行 Docker-free SFT、RL 和 test-time scaling。
-- [Hybrid-Gym](https://arxiv.org/abs/2602.16819)：训练 coding agent 在代码库探索、定位、依赖搜索、测试与修复等技能之间泛化。
-- [CUDA Agent](https://arxiv.org/abs/2602.24286)：把 agentic reinforcement learning 扩展到高性能 CUDA kernel generation，覆盖 GPU 优化场景的代码代理训练。
-- [Qwen3-Coder-Next](https://arxiv.org/abs/2603.00729)：用可验证编码任务、可执行环境、mid-training 和强化学习训练高效开放 coding-agent 模型。
-- [CodeScout](https://arxiv.org/abs/2603.17829)：只用标准 Unix terminal 动作，通过强化学习训练代码搜索 agent，把仓库定位作为 SWE agent 的核心技能来学习。
+- [Formal Evidence Generation for Assurance Cases for Robotic Software Models](https://arxiv.org/abs/2602.03550)：Agent Harness 与 assurance 候选；为 robotic software models 的 assurance cases 生成 formal evidence。
+- [Can We Classify Flaky Tests Using Only Test Code? An LLM-Based Empirical Study](https://arxiv.org/abs/2602.05465)：在两个 flaky-test 基准上测试 3 个 LLM 与 3 种提示策略，发现最佳组合也只略高于随机猜测，因为单靠测试代码通常缺少判断 flakiness 的必要证据。
+- [Automated Customization of LLMs for Enterprise Code Repositories Using Semantic Scopes](https://arxiv.org/abs/2602.05780)：用语义作用域自动定制企业代码仓库 LLM。
+- [VisRefiner: Learning from Visual Differences for Screenshot-to-Code Generation](https://arxiv.org/abs/2602.05998)：用渲染输出与目标设计之间的视觉差异训练 screenshot-to-code 模型。
+- [Correctness-Optimized Residual Activation Lens (CORAL): Transferrable and Calibration-Aware Inference-Time Steering](https://arxiv.org/abs/2602.06022)：用残差激活上的正则化 MLP probe 做 MCQA 推理时 steering，在不重训模型的情况下改善校准与准确率，但任务本身并不面向软件开发。
+- [Towards Understanding What State Space Models Learn About Code](https://arxiv.org/abs/2602.06774)：比较 SSM 与 Transformer 代码模型，提出 SSM-Interpret 揭示微调后向短程依赖迁移的谱变化，并据此改进 SSM 代码架构。
+- [Artificial Intelligence in Open Source Software Engineering: A Foundation for Sustainability](https://arxiv.org/abs/2602.07071)：文献综述候选；梳理 AI 在 OSS 可持续性中的 bug triage、维护、贡献者引导、社区健康分析、漏洞检测与任务自动化用途。
+- [Pull Requests as a Training Signal for Repo-Level Code Editing](https://arxiv.org/abs/2602.07457)：Clean-PR 将噪声较大的 GitHub PR diff 转换为经验证的 search/replace 编辑块，构建 200 万 PR 的仓库级编辑 mid-training 语料。
+- [Still Manual? Automated Linter Configuration via DSL-Based LLM Compilation of Coding Standards](https://arxiv.org/abs/2602.07783)：LintCFG 把自然语言编码规范解析为工具无关 DSL，匹配 linter 选项、校验规范与配置一致性，并生成 Checkstyle 或 ESLint 配置。
+- [Specification Vibing for Automated Program Repair](https://arxiv.org/abs/2602.08263)：VibeRepair 先把 buggy code 转写为结构化行为规范，再修复规范不一致处，最后按修正后的行为意图合成补丁。
+- [Map of Encoders - Mapping Sentence Encoders using Quantum Relative Entropy](https://arxiv.org/abs/2602.08740)：错轴模型地图候选；用 PIP 矩阵和量子相对熵特征表示 1,101 个句向量编码器，以可视化编码器关系并预测下游性能。
+- [Toward Linking Declined Proposals and Source Code: An Exploratory Study on the Go Repository](https://arxiv.org/abs/2602.09467)：构建 LLM 驱动的 traceability pipeline，把被拒绝的 Go 语言提案链接到源码位置，并分析粒度选择、链接精度与失败原因。
+- [Verifiable Provenance of Software Artifacts with Zero-Knowledge Compilation](https://arxiv.org/abs/2602.11887)：用 zkVM 编译同时产出二进制与加密证明，证明指定编译器处理了指定源码，从而阻断编译器替换与源码篡改攻击。
+- [Improving HPC Code Generation Capability of LLMs via Online Reinforcement Learning with Real-Machine Benchmark Rewards](https://arxiv.org/abs/2602.12049)：用真实超算执行得到的在线性能奖励微调 LLM，提升高性能代码生成。
+- [FlexAM: Flexible Appearance-Motion Decomposition for Versatile Video Generation Control](https://arxiv.org/abs/2602.13185)：错轴视频生成候选；通过深度感知 3D 点云控制信号分解 appearance 与 motion，用于 I2V、V2V 和空间对象编辑。
+- [LogitsCoder: Towards Efficient Chain-of-Thought Path Search via Logits Preference Decoding for Code Generation](https://arxiv.org/abs/2602.14054)：主要是模型侧测试时推理方法：用 Logits Preference Decoding 引导 token 选择，排序多条推理路径并聚合 thoughts 来生成代码，而不是新增仓库工具闭环。
+- [DALL: Data Labeling via Data Programming and Active Learning Enhanced by Large Language Models](https://arxiv.org/abs/2602.14102)：错轴数据标注框架；结合配置式 labeling functions、主动学习复核和 LLM 辅助修订，用于文本分类数据集标注。
+- [Learning State-Tracking from Code](https://arxiv.org/abs/2602.14814)：把 permutation composition 状态跟踪转成 REPL 风格代码轨迹，证明 linear RNN 能跟踪显式状态 reveal，而 Transformer 表现较弱。
+- [Social Life of Code: Modeling Evolution through Code Embedding and Opinion Dynamics](https://arxiv.org/abs/2602.15412)：用代码嵌入和 opinion dynamics 轨迹建模开源演化，揭示 GitHub 仓库中的开发者影响、共识形成与协作模式。
+- [Accelerated Predictive Coding Networks via Direct Kolen-Pollack Feedback Alignment](https://arxiv.org/abs/2602.15571)：错轴神经训练方法；DKP-PC 为 predictive-coding 网络加入直接可学习反馈路径，把误差传播延迟从随深度增长降为常数。
+- [Stoichiometry Dependent Properties of Cerium Hydride: An Active Learning Developed Interatomic Potential Study](https://arxiv.org/abs/2602.16628)：错轴材料建模工作；用主动学习训练 cerium hydride interatomic potential，并通过分子动力学研究不同化学计量比的性质。
+- [Simple Baselines are Competitive with Code Evolution](https://arxiv.org/abs/2602.16805)：在数学界限搜索、agent scaffold 设计和机器学习竞赛中证明简单搜索 baseline 可匹敌复杂 code-evolution pipeline，把收益重新定位到 search-space 设计和评测方差控制上。
+- [Hybrid-Gym](https://arxiv.org/abs/2602.16819)：设计代码库探索、定位、依赖搜索、测试与修复等合成训练任务，让 coding agent 在真实 issue solving 前学习可迁移 SWE 技能。
+- [LLM4Cov: Execution-Aware Agentic Learning for High-coverage Testbench Generation](https://arxiv.org/abs/2602.16953)：把高覆盖率硬件 testbench 生成建模为带确定性 evaluator 的 execution-aware offline agent learning。
+- [What to Cut? Predicting Unnecessary Methods in Agentic Code Generation](https://arxiv.org/abs/2602.17091)：训练 review-support 预测器来判断 agent-generated PR 中哪些函数可能被删除，method-removal 预测 AUC 达到 87.1。
+- [CodeScaler: Scaling Code LLM Training and Test-Time Inference via Execution-Free Reward Models](https://arxiv.org/abs/2602.17684)：从 verified code preference 训练语法感知 reward model，使代码 LLM 可在没有单元测试的情况下做 RL 与 test-time selection。
+- [Mining Type Constructs Using Patterns in AI-Generated Code](https://arxiv.org/abs/2602.17955)：经验比较 AI agent 与人类生成的 TypeScript 代码，发现 AI PR 更常使用 `any` 与绕过类型检查的高级构造，但接收率更高。
+- [ComUICoder](https://arxiv.org/abs/2602.19276)：通过语义 block segmentation、图式组件合并和 priority-based element-level feedback，为复杂多页网站生成可复用 UI 代码。
+- [Towards Automated Page Object Generation for Web Testing using Large Language Models](https://arxiv.org/abs/2602.19294)：评估 GPT-4o 与 DeepSeek Coder 为 5 个 Web 应用生成 Page Objects，以 ground-truth element 准确率和识别率衡量端到端测试可维护性。
+- [From Restructuring to Stabilization: A Large-Scale Experiment on Iterative Code Readability Refactoring with Large Language Models](https://arxiv.org/abs/2602.21833)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Enhancing LLM-Based Test Generation by Eliminating Covered Code](https://arxiv.org/abs/2602.21997)：迭代检索上下文、生成单元测试、度量覆盖率并删除已覆盖代码片段，使 LLM 专注于复杂方法中尚未覆盖的部分。
+- [EyeLayer: Integrating Human Attention Patterns into LLM-Based Code Summarization](https://arxiv.org/abs/2602.22368)：加入轻量 gaze-informed attention 模块，用开发者眼动先验重新分配代码 token embedding，提升 LLaMA、Qwen 与 CodeBERT 的代码摘要。
+- [CUDA Agent](https://arxiv.org/abs/2602.24286)：结合合成 CUDA 任务生成、带验证和 profiling 的开发环境，以及稳定的 agentic RL，用于高性能 kernel generation。
+- [COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation](https://arxiv.org/abs/2603.00493)：错轴视觉候选；为单参考 6DoF 物体位姿估计学习 confidence-weighted optimal-transport 对应关系。
+- [Qwen3-Coder-Next](https://arxiv.org/abs/2603.00729)：报告 80B 参数、推理时激活 3B 参数的开放 coding-agent 模型，使用可验证编码任务、可执行环境、mid-training 与强化学习训练。
+- [Compliance as Code: A Study of Linux Distributions and Beyond](https://arxiv.org/abs/2603.01520)：合规工程经验研究候选；分析 Linux 发行版中的 1,500 多条合规规则，并映射到 Cyber Resilience Act 要求。
+- [Code Fingerprints: Disentangled Attribution of LLM-Generated Code](https://arxiv.org/abs/2603.04212)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [ReflexiCoder: Teaching Large Language Models to Self-Reflect on Generated Code and Self-Correct It via Reinforcement Learning](https://arxiv.org/abs/2603.05863)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Balancing Latency and Accuracy of Code Completion via Local-Cloud Model Cascading](https://arxiv.org/abs/2603.05974)：通过在本地模型与云端模型之间路由代码补全请求，平衡延迟与准确率。
+- [Track-SQL: Enhancing Generative Language Models with Dual-Extractive Modules for Schema and Context Tracking in Multi-turn Text-to-SQL](https://arxiv.org/abs/2603.05996)：为多轮 Text-to-SQL 加入 semantic schema extractor 与 schema-aware context extractor，在 SparC 和 CoSQL 上跟踪动态 schema 与上下文变化。
+- [Breaking Training Bottlenecks: Effective and Stable Reinforcement Learning for Coding Models](https://arxiv.org/abs/2603.07777)：MicroCoder-GRPO 通过条件截断 masking、多样性驱动温度选择、移除 KL loss、更难数据集和更快 evaluator 改进代码模型 RL。
+- [Wrong Code, Right Structure: Learning Netlist Representations from Imperfect LLM-Generated RTL](https://arxiv.org/abs/2603.09161)：把功能上不完美但结构有用的 LLM-generated RTL 作为合成训练数据，用于电路分析任务中的 netlist 表示学习。
+- [PIM-SHERPA: Software Method for On-device LLM Inference by Resolving PIM Memory Attribute and Layout Inconsistencies](https://arxiv.org/abs/2603.09216)：错轴系统候选；解决 prefill 与 decode 之间的 cacheability 和 layout 不一致，让 PIM LLM inference 可在产品级设备上运行。
+- [QuantumX: an experience for the consolidation of Quantum Computing and Quantum Software Engineering as an emerging discipline](https://arxiv.org/abs/2603.10621)：量子软件综述候选；总结首届 QuantumX track 中关于质量、治理、测试、编排、抽象和社区建设的量子软件工程议题。
+- [EvolveCoder: Evolving Test Cases via Adversarial Verification for Code Reinforcement Learning](https://arxiv.org/abs/2603.12698)：将 solution-conditioned adversarial tests 演化为 EvolveCoder-22k RL 数据集，强化可验证奖励并提升 Qwen3-4B 代码基准表现。
+- [MoEKD: Mixture-of-Experts Knowledge Distillation for Robust and High-Performing Compressed Code Models](https://arxiv.org/abs/2603.13213)：通过学习到的 MoE router 把多个漏洞检测专家蒸馏到紧凑 CodeBERT 和 GraphCodeBERT 模型中，增强鲁棒性。
+- [TriFusion-LLM](https://arxiv.org/abs/2603.15004)：融合 heuristic similarity prior、AST 结构与 CodeBERT embedding 做七类 BigCloneBench clone detection，并只对高不确定样本调用 LLM arbitration。
+- [A Longitudinal Study of Usability in Identity-Based Software Signing](https://arxiv.org/abs/2603.17133)：软件供应链可用性候选；挖掘 Sigstore、OpenPubKey、Vault、Keyfactor 与 Notary v2 的 3,900 个 issue，定位签名和验证摩擦点。
+- [FailureMem: A Failure-Aware Multimodal Framework for Autonomous Software Repair](https://arxiv.org/abs/2603.17826)：Agent Harness 迁移候选；结合结构化修复 workflow、区域级截图感知工具和 failure memory bank，用于 SWE-bench Multimodal 修复。
+- [CodeScout](https://arxiv.org/abs/2603.17829)：在标准 Unix terminal 环境中用 RL 训练代码定位 agent，重点研究 reward design 和复用 SWE-agent 环境做 repository search。
+- [scicode-lint: Detecting Methodology Bugs in Scientific Python Code with LLM-Generated Patterns](https://arxiv.org/abs/2603.17893)：构建时用 frontier model 生成 methodology-bug pattern，运行时用小型本地模型检查 data leakage、cross-validation 和 random-seed 等科学代码问题。
+- [Defusing Logic Bombs in Symbolic Execution with LLM-Generated Ghost Code](https://arxiv.org/abs/2603.19239)：Gordian 让 LLM 生成 solver-friendly ghost code 处理 inversion、surrogate 和 heap partition，同时由 KLEE 保留精确的全局符号推理。
+- [Engineering Pitfalls in AI Coding Tools: An Empirical Study of Bugs in Claude Code, Codex, and Gemini CLI](https://arxiv.org/abs/2603.20847)：对 Claude Code、Codex 与 Gemini CLI 中 3,800 多个公开 bug 做经验编码，发现问题集中在工具调用、命令执行、API、集成和配置。
+- [On the Challenges and Opportunities of Learned Sparse Retrieval for Code](https://arxiv.org/abs/2603.22008)：分析代码稀疏检索学习方法的挑战与机会。
+- [Steering Code LLMs with Activation Directions for Language and Library Control](https://arxiv.org/abs/2603.23629)：为语言和库组合估计 activation-space steering vector，并在生成时注入，使代码 LLM 输出转向目标生态。
+- [Enhancing and Reporting Robustness Boundary of Neural Code Models for Intelligent Code Understanding](https://arxiv.org/abs/2603.24119)：报告神经代码模型在代码理解中的鲁棒性边界。
+- [Error Understanding in Program Code With LLM-DL for Multi-label Classification](https://arxiv.org/abs/2603.25005)：将微调后的代码 encoder 与 GRU、LSTM、BiLSTM 和 attention decoder 结合，用于学生 Python 程序错误的多标签分类。
+- [IncreRTL: Traceability-Guided Incremental RTL Generation under Requirement Evolution](https://arxiv.org/abs/2603.25769)：建立 requirement-code traceability links，让硬件需求演化时只局部重新生成受影响 RTL，而不是整体重写。
+- [OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement](https://arxiv.org/abs/2603.26188)：错轴医学视频候选；用 Stiefel manifold state update 和 anatomical-prior feature enhancement 稳定超声心动图分割。
+- [Finding Memory Leaks in C/C++ Programs via Neuro-Symbolic Augmented Static Analysis](https://arxiv.org/abs/2603.27224)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- ["An Endless Stream of AI Slop": The Growing Burden of AI-Assisted Software Development](https://arxiv.org/abs/2603.27249)：定性分析 Reddit 与 Hacker News 的 1,154 条帖子，归纳 AI slop 带来的 review friction、质量退化、激励问题和开发者应对策略。
+- [TokenDial: Continuous Attribute Control in Text-to-Video via Spatiotemporal Token Offsets](https://arxiv.org/abs/2603.27520)：错轴视频生成候选；学习加性 spatiotemporal token offsets，为 appearance 和 motion 属性提供滑块式连续控制。
 - [KAT-Coder-V2](https://arxiv.org/abs/2603.27703)：采用 specialize-then-unify 路线，覆盖 SWE、web coding、terminal、web search 和通用编码域，并结合 on-policy distillation 与大规模沙箱 RL。
-- Cursor Composer 2（[技术报告](https://cursor.com/blog/composer-2-technical-report)；[PDF](https://cursor.com/resources/Composer2.pdf)）：报告一个 IDE-native agentic coding 模型，经过代码继续预训练，并在真实 Cursor 会话中进行大规模 RL。
-- Kimi K2.6（[官方报告](https://www.kimi.com/blog/kimi-k2-6)；[模型卡](https://huggingface.co/moonshotai/Kimi-K2.6)）：把开放 Kimi 模型线聚焦到长程编码执行、Kimi Code Bench、Terminal-Bench、SWE-Bench Pro 和 agent-swarm coding task。
-- [From SWE-ZERO to SWE-HERO](https://arxiv.org/abs/2604.01496)：从前沿 coding model 蒸馏 execution-free 与 execution-backed 轨迹，训练用于仓库修复和多语言迁移的开放 SWE agent。
-- [SWE-Shepherd](https://arxiv.org/abs/2604.10493)：用 SWE-Bench 轨迹训练 process reward model，为仓库级 code agent 提供稠密的 action-level 反馈。
+- [DOne](https://arxiv.org/abs/2604.01226)：通过 learned layout segmentation、hybrid element retrieval 和 schema-guided code generation，把结构理解与元素渲染解耦用于 design-to-code。
+- [From SWE-ZERO to SWE-HERO](https://arxiv.org/abs/2604.01496)：从 Qwen3-Coder-480B 蒸馏 30 万条 execution-free 与 1.3 万条 execution-backed 轨迹，训练开放 Qwen2.5-Coder SWE agent 做仓库修复与多语言迁移。
+- [MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](https://arxiv.org/abs/2604.01600)：把强化学习和执行反馈自修正用于 chart-to-code 生成。
+- [Generalization Bounds and Statistical Guarantees for Multi-Task and Multiple Operator Learning with MNO Networks](https://arxiv.org/abs/2604.01961)：错轴理论候选；为 Multiple Neural Operator 架构推导 covering-number 泛化界和 sample-complexity tradeoff。
+- [LLMs as Idiomatic Decompilers: Recovering High-Level Code from x86-64 Assembly for Dart](https://arxiv.org/abs/2604.02278)：训练小型专用 LLM 做 x86-64 到 Dart 的反编译，并比较同语言合成数据增强与 Swift-to-Dart 迁移。
+- [Ambig-IaC: Multi-level Disambiguation for Interactive Cloud Infrastructure-as-Code Synthesis](https://arxiv.org/abs/2604.02382)：生成多样 IaC specification，检测 resource、topology 与 attribute 三层分歧，并在 Ambig-IaC 基准上提出针对性澄清问题。
+- [Dependency-Guided Repository-Level C-to-Rust Translation with Reinforcement Alignment](https://arxiv.org/abs/2604.02852)：结合依赖引导的上下文建模、大规模 C-Rust 数据和强化对齐，面向仓库级 C 到 Rust 迁移。
+- [LPC-SM: Local Predictive Coding and Sparse Memory for Long-Context Language Modeling](https://arxiv.org/abs/2604.03263)：通用长上下文 LM 候选；在混合 autoregressive 架构中分离 local attention、persistent memory、predictive correction 和 sparse runtime control。
+- [EffiPair: Improving the Efficiency of LLM-generated Code with Relative Contrastive Feedback](https://arxiv.org/abs/2604.05137)：用相对对比反馈提升 LLM 生成代码效率。
+- [Content Fuzzing for Escaping Information Cocoons on Digital Social Media](https://arxiv.org/abs/2604.05461)：错轴社交媒体候选；利用 stance detector 的置信度反馈改写帖子，使机器推断 stance 改变而人类理解的意图保持不变。
+- [Evaluating Repository-level Software Documentation via Question Answering and Feature-Driven Development](https://arxiv.org/abs/2604.06793)：Benchmark 迁移候选；SWD-Bench 通过功能检测、定位和补全三类 QA 任务评估仓库级文档，数据来自 PR 挖掘。
+- [An empirical study of LoRA-based fine-tuning of large language models for automated test case generation](https://arxiv.org/abs/2604.06946)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“An empirical study of LoRA-based fine-tuning of large language models for automated test case generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [An Empirical Analysis of Static Analysis Methods for Detection and Mitigation of Code Library Hallucinations](https://arxiv.org/abs/2604.07755)：量化静态分析能发现多少 LLM 生成代码中的不存在库特性，并报告不同工具的检测范围与人工分析给出的上限。
+- [ZeroCoder: Can LLMs Improve Code Generation Without Ground-Truth Supervision?](https://arxiv.org/abs/2604.07864)：从自生成的代码与测试交互中共同演化 coder 和 tester，减少代码生成 RLVR 对人工测试用例的依赖。
+- [DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation](https://arxiv.org/abs/2604.09089)：这是模型侧安全代码生成工作：把高层表示聚合成安全分析器和推理时 steering 信号，以提升生成代码的安全性与正确性。
+- [The Role of LLMs in Collaborative Software Design](https://arxiv.org/abs/2604.09120)：HCI 研究候选；观察 18 对软件专业人员用 LLM 做设计，对比 shared-instance 理解、parallel-use context drift 和早期 anchoring。
+- [MR-Coupler: Automated Metamorphic Test Generation via Functional Coupling Analysis](https://arxiv.org/abs/2604.10126)：寻找 functionally coupled method pairs，由 LLM 生成 metamorphic test cases，并用 test amplification 和 mutation analysis 验证以降低 false alarms。
+- [CodeComp](https://arxiv.org/abs/2604.10235)：用 Joern code-property-graph prior 压缩 agentic coding 的 KV cache，使长上下文推理保留调用点、分支条件和赋值等结构关键 token。
+- [SWE-Shepherd](https://arxiv.org/abs/2604.10493)：在 SWE-Bench action trajectories 上训练 process reward model，推理时为仓库级 agent 的中间动作打分，而不需要完整 RL。
+- [DynamicsLLM: a Dynamic Analysis-based Tool for Generating Intelligent Execution Traces Using LLMs to Detect Android Behavioural Code Smells](https://arxiv.org/abs/2604.10661)：用 LLM 生成 Android execution traces，在有限 action budget 下触发 Dynamics 动态分析工具漏掉的 behavioural code-smell events。
+- [Compliant But Unsatisfactory: The Gap Between Auditing Standards and Practices for Probabilistic Genotyping Software](https://arxiv.org/abs/2604.10875)：错轴审计治理候选；分析 ASB 018 与 5 份 probabilistic genotyping 审计报告，说明含糊标准会允许合规但薄弱的审计。
+- [RESP: Reference-guided Sequential Prompting for Visual Glitch Detection in Video Games](https://arxiv.org/abs/2604.11082)：使用参考引导顺序提示检测电子游戏视觉缺陷。
+- [AnomalyGen: Enhancing Log-Based Anomaly Detection with Code-Guided Data Augmentation](https://arxiv.org/abs/2604.11107)：从源码合成标注日志序列，结合 log-oriented control-flow graph、LLM 一致性检查、运行参数生成和启发式标签。
+- [Source-Attribution Regularization for Code Tokenizers](https://arxiv.org/abs/2604.14053)：SA-BPE 通过 source attribution 和 merge skipping 修改 BPE 训练，减少 unused、under-trained、repository-specific 的代码 token，且不改变推理流程。
+- [MARS^2](https://arxiv.org/abs/2604.14564)：用强化学习扩展多智能体树搜索以改进代码生成。
+- [HintPilot: LLM-based Compiler Hint Synthesis for Code Optimization](https://arxiv.org/abs/2604.15041)：用 LLM 合成编译器提示以优化代码。
+- [Exploring LLM-based Verilog Code Generation with Data-Efficient Fine-Tuning and Testbench Automation](https://arxiv.org/abs/2604.15388)：用多 agent 自动生成 testbench 来构造更高质量的微调数据，在 HDL 监督稀缺时提升规格到 Verilog 的生成能力。
+- [LLM4C2Rust: Large Language Models for Automated Memory-Safe Code Transpilation](https://arxiv.org/abs/2604.15485)：把 C/C++ 分段输入，检索 Rust 文档和编译器错误上下文，结合 LLM 与小模型，减少 Rust 转译中的 unsafe pattern。
+- [Majority Voting for Code Generation](https://arxiv.org/abs/2604.15618)：Functional Majority Voting 通过运行时 execution-signature consensus 从多次代码生成中选代表解，并把该信号用于无标签 test-time RL。
+- [IACDM: Interactive Adversarial Convergence Development Methodology -- A Structured Framework for AI-Assisted Software Development](https://arxiv.org/abs/2604.16399)：方法论或 harness 候选；提出八阶段 AI-assisted development 流程，包含问题发现、持久知识管理和 adversarial verification gates。
+- [Surgical Repair of Insecure Code Generation in LLMs](https://arxiv.org/abs/2604.16697)：发现安全概念早期已编码但在最后层附近被格式服从压制，并用漏洞专用 steering vectors 降低不安全代码生成。
+- [AI Slop and the Software Commons](https://arxiv.org/abs/2604.16754)：立场文章候选；把廉价 AI 生成软件产物视作 commons problem，指出其把 review 与维护成本转嫁给维护者、团队和教育者。
+- [Mitigating Prompt-Induced Cognitive Biases in General-Purpose AI for Software Engineering](https://arxiv.org/abs/2604.16756)：用 PROBE-SWE 的有偏与无偏 SE dilemma 测试 prompt debiasing，并通过注入抽取出的 best-practice axioms 降低 bias sensitivity。
+- [Improving LLM Code Reasoning via Semantic Equivalence Self-Play with Formal Verification](https://arxiv.org/abs/2604.17010)：用 Haskell 语义等价自博弈训练 generator 与 evaluator，训练信号来自 Liquid Haskell proofs、counterexamples 和 OpInstruct-HSx 数据集。
+- [Layer-wise MoE Routing Locality under Shared-Prefix Code Generation: Token-Identity Decomposition and Compile-Equivalent Fork Redundancy](https://arxiv.org/abs/2604.17182)：分析 Qwen3.5 在 shared-prefix code generation 中的 MoE routing overlap，分离 token identity 与 compile-equivalent forks 以揭示搜索冗余。
+- [Augmenting unit test suites from integration tests](https://arxiv.org/abs/2604.17508)：用静态与动态分析从 Node.js 项目的 integration tests 派生隔离 unit tests，改善 test pyramid 平衡和故障定位。
+- [Program Structure-aware Language Models: Targeted Software Testing beyond Textual Semantics](https://arxiv.org/abs/2604.17715)：GLMTest 用 code-property graphs 与目标分支条件化 Qwen2.5-Coder 测试生成，在 TestGenEval 上提升 branch-targeted test 准确率。
+- [When AI Models Become Dependencies: Studying the Evolution of Pre-Trained Model Reuse in Downstream Software Systems](https://arxiv.org/abs/2604.17940)：经验维护候选；研究 323 个 OSS 项目的 4,988 个 release，发现预训练模型依赖会累积、比库变更更少且记录方式不同。
+- [CodePivot: Bootstrapping Multilingual Transpilation in LLMs via Reinforcement Learning without Parallel Corpora](https://arxiv.org/abs/2604.18027)：以 Python 作为中间表示，并用 aggressive partial functional RL reward 训练多语言 transpilation，无需 10 种语言间的成对平行语料。
+- [LeGo-Code: Can Modular Curriculum Learning Advance Complex Code Generation? Insights from Text-to-SQL](https://arxiv.org/abs/2604.18254)：通过模块化课程学习和适配器训练提升复杂 text-to-SQL 生成，面向噪声 schema 与深层嵌套查询逻辑。
+- [Towards Better Static Code Analysis Reports: Sentence Transformer-based Filtering of Non-Actionable Alerts](https://arxiv.org/abs/2604.18525)：STAF 用 sentence-transformer embedding 过滤不可操作的静态分析告警，在保留 Java actionable findings 的同时降低 alert fatigue。
+- [Choose Your Own Adventure: Non-Linear AI-Assisted Programming with EvoGraph](https://arxiv.org/abs/2604.18883)：Agent Harness 候选；实现 IDE 图结构，记录分支式 AI 交互与代码变更，帮助开发者比较、合并和回访非线性编程状态。
+- [Cascaded Code Editing: Large-Small Model Collaboration for Effective and Efficient Code Editing](https://arxiv.org/abs/2604.19201)：通过大小模型协作提升代码编辑效率，避免不必要的整文件重生成。
+- [CASCADE: Detecting Inconsistencies between Code and Documentation with Automatic Test Generation](https://arxiv.org/abs/2604.19400)：CASCADE 将代码与文档不一致的假设转化为自动生成的测试，用执行结果降低不一致报告中的误报。
+- [Conjecture and Inquiry: Quantifying Software Performance Requirements via Interactive Retrieval-Augmented Preference Elicitation](https://arxiv.org/abs/2604.21380)：IRAP 通过检索增强的偏好 elicitation 与利益相关者交互，把模糊的自然语言性能需求量化为数学函数。
+- [What Makes Software Bugs Escape Testing? Evidence from a Large-Scale Empirical Study](https://arxiv.org/abs/2604.26672)：经验性测试条目；分析 1.4 万余个 C、C++ 与 Java 缺陷，用复杂度、规模、结构和开发历史指标刻画逃逸到发布后的软件 bug。
+- [Static Program Slicing Using Language Models With Dataflow-Aware Pretraining and Constrained Decoding](https://arxiv.org/abs/2604.26961)：Sliceformer 结合数据流感知预训练和受约束解码，让语言模型预测静态切片时减少幻觉 token 与破坏依赖关系的语句。
+- [GenAI in Software Engineering: The Role of Technology Acceptance Models](https://arxiv.org/abs/2604.27642)：Survey 与方法采纳条目；综述如何用 UTAUT 等技术接受模型研究软件工程中的 GenAI 采纳，并提出贝叶斯分析等后续方向。
+- [Reliable Answers for Recurring Questions: Boosting Text-to-SQL Accuracy with Template Constrained Decoding](https://arxiv.org/abs/2604.28028)：TeCoD 从标注工作负载中挖掘重复查询模板，并用这些模板约束解码，提高复杂或未见 schema 上 Text-to-SQL 的合法性。
+- [GeoContra: From Fluent GIS Code to Verifiable Spatial Analysis with Geography-Grounded Repair](https://arxiv.org/abs/2605.00782)：GeoContra 为 LLM 生成的 Python GIS 代码加入可执行地理契约，并依次进行静态检查、运行时验证、语义验证和有界修复。
+- [Fine-Tuning Pre-Trained Code Models for AI-Generated Code Detection](https://arxiv.org/abs/2605.01596)：SemEval 系统论文；分别微调 CodeBERT、GraphCodeBERT、UniXcoder 和 CodeT5+，用于二分类 AI 代码检测和 11 类生成模型归因。
+- [Standing on the Shoulders of Giants: Stabilized Knowledge Distillation for Cross--Language Code Clone Detection](https://arxiv.org/abs/2605.02860)：用稳定化知识蒸馏进行跨语言代码克隆检测，提升多语言代码理解能力。
+- [KVerus: Scalable and Resilient Formal Verification Proof Generation for Rust Code](https://arxiv.org/abs/2605.03822)：KVerus 面向 Rust 证明生成，弥合 LLM 语义模式与 Verus 结构依赖之间的差距，使证明在跨模块和工具链变化下更稳健。
+- [Reproduction Test Generation for Java SWE Issues](https://arxiv.org/abs/2605.04320)：该工作提出 TDD-Bench 和 Java 复现测试生成器，将仓库 issue 转化为修复前应失败、修复后应通过的测试。
+- [Patterns of Developer Adoption of LLM-Generated Code Refactoring Suggestions](https://arxiv.org/abs/2605.04835)：经验分析 169 个与 ChatGPT 重构对话关联的 GitHub commit，研究开发者实际采纳了哪些 LLM 重构建议。
+- [Identifier-Free Code Embedding Models for Scalable Search](https://arxiv.org/abs/2605.05251)：这是面向逆向工程的模型侧搜索基础设施，通过微调 Qwen3-Embedding 模型，在不依赖标识符的情况下关联源码函数与 stripped decompiled code。
+- [TACT](https://arxiv.org/abs/2605.05980)：把 overthinking 与 overacting 识别为激活空间中的线性漂移方向，并用测试时 steering 改善 SWE-bench Verified、Terminal-Bench 2.0 和 CLAW-Eval 上的长程编码 agent。
+- [Schedule-and-Calibrate: Utility-Guided Multi-Task Reinforcement Learning for Code LLMs](https://arxiv.org/abs/2605.06111)：用效用引导的多任务强化学习训练代码 LLM。
+- [Boosting Automatic Java-to-Cangjie Translation with Multi-Stage LLM Training and Error Repair](https://arxiv.org/abs/2605.07403)：该工作用多阶段 LLM 训练和错误修复提升 Java 到仓颉的自动翻译，缓解仓颉平行代码语料稀缺和语言知识不足。
+- [Bridging the Programming Language Gap: Constructing a Multilingual Shared Semantic Space through AST Unification and Graph Matching](https://arxiv.org/abs/2605.07788)：该方法通过统一 AST 与图匹配构建多语言代码共享语义空间，支撑 Java、Python 等语言之间的跨语言克隆检测和代码检索。
+- [What Software Engineering Looks Like to AI Agents? -- An Empirical Study of AI-Only Technical Discourse on MoltBook](https://arxiv.org/abs/2605.08380)：经验性智能体话语条目；比较 4,707 条 MoltBook 技术帖与 GitHub Discussions，刻画自治智能体如何讨论软件工作。
+- [BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models](https://arxiv.org/abs/2605.09134)：用执行反馈驱动的强化学习和双奖励模型训练自动程序修复模型，把可运行结果作为优化信号。
+- [FreeMOCA: Memory-Free Continual Learning for Malicious Code Analysis](https://arxiv.org/abs/2605.09664)：FreeMOCA 通过自适应逐层插值和可塑性调度进行恶意代码分析的无记忆持续学习，在不回放旧样本的情况下减少遗忘。
 - [Step Rejection Fine-Tuning](https://arxiv.org/abs/2605.10674)：用 critic 评分轨迹步骤，在蒸馏时保留未解决 SWE 轨迹作为上下文，同时屏蔽错误步骤的损失。
+- [Orchard](https://arxiv.org/abs/2605.15040)：提供面向软件 agent 训练的开源 agentic modeling 栈，而不只是编排框架。核心思想是用 Orchard Env 统一沙箱生命周期原语，再在 Orchard-SWE 中蒸馏 107K 条编码轨迹，对未解决轨迹中的有效片段做 credit-assignment SFT，并用 Balanced Adaptive Rollout 做强化学习，从而在 SWE-bench Verified 上取得较强开源结果。
+- [Syntax Without Semantics: Teaching Large Language Models to Code in an Unseen Language](https://arxiv.org/abs/2605.15607)：用预训练中未见过的命令式语言区分语法习得与代码语义推理，用于训练和评测代码语言模型。
+- [XSearch: Explainable Code Search via Concept-to-Code Alignment](https://arxiv.org/abs/2605.16046)：通过概念到代码对齐实现可解释代码搜索，增强软件开发模型中的检索与定位能力。
+- [LogGen](https://doi.org/10.1016/j.jss.2026.112816)：结合传统代码分析与 LLM 生成来实现精确日志生成，为软件模型方法补充 logging-specific 方向。
+- [Compiler-Runtime Co-operative Chain of Verification for LLM-Based Code Optimization](https://doi.org/10.1109/cgo68049.2026.11395240)：在 LLVM 向量化器中用语法检查、profiling checksum、Alive2 符号等价验证和批量运行时检查，校验 LLM 建议的编译器优化。
+- [CodeEnhancer: LLM-generated Python code enhancement through SAST integration and fine-tuning](https://doi.org/10.1016/j.knosys.2026.115925)：把静态应用安全测试反馈与微调结合，用 SAST 发现作为 LLM 生成 Python 代码的增强信号。
+- [Issue classification with LLMs: An empirical study of the NASA flight software systems](https://doi.org/10.1016/j.jss.2026.112851)：父级复核候选；经验评估 LLM 对 NASA 飞行软件 issue 的分类能力，更接近软件工程评测而非模型训练贡献。
+- [Rosetta-XAI: An automated evaluation and explainability framework for code translation models](https://doi.org/10.1016/j.simpa.2026.100811)：用语法、编译、执行和可解释性检查点，在 42 个双向 Rosetta Code 翻译对上评估 15 个代码 LLM。
+- [Airborne Software Requirements Generation Method Based on Memory-Enhanced Graph RAG](https://doi.org/10.1109/cacml68972.2026.11507104)：在航空软件需求生成中加入 memory-enhanced Graph RAG，使检索到的领域文档与积累的专家经验共同参与生成。
+- [Generative Artificial Intelligence for Software Development Using ISO/IEC 29110 Basic Profile: Gaps and Opportunities](https://doi.org/10.1109/access.2026.3659713)：综述或父级复核候选；梳理 52 篇关于 ISO/IEC 29110 小型软件企业使用 GenAI 的研究，而不是提出模型方法。
+- [VeriGen: An LLM-Augmented Framework for End-to-End Automation of Software Development Lifecycle–From Requirements Specifications to Code Generation](https://doi.org/10.1109/access.2026.3686308)：把需求形式化、UML 类图与时序图生成、代码生成和验证门控整合到 LLM 增强的软件生命周期流水线中。
+- [Towards Project-Aware Actionability Detection for Coding Rule Violations](https://doi.org/10.1109/saner-c67878.2026.00040)：用主动学习框架判断静态分析规则违规在具体项目语境中是否可操作，降低告警噪声。
+- [Cost-Effective Adversarial Attacks Against Code LLM With Model Attention](https://doi.org/10.1109/tse.2026.3663143)：用模型注意力引导语义保持的代码变异，以较低查询成本攻击代码 LLM 并暴露鲁棒性问题。
+- [Refactoring techniques for software vulnerabilities](https://doi.org/10.1016/j.jss.2026.112962)：父级复核候选；聚焦面向漏洞的重构技术，应检查是否更适合 Survey 或软件安全页面。
+- [BMGANet: A deep learning model for source code vulnerability detection by integrating token-level and function-level features](https://doi.org/10.1016/j.compeleceng.2026.110999)：结合 Joern 提取的 PDG 与 AST 切片、规范化代码、BERT 特征、LSTM 时序建模和注意力机制检测源码漏洞。
+- [Token–Node Aligned Cross-Attention for Source-Code Vulnerability Detection](https://doi.org/10.1016/j.scico.2026.103492)：通过 cross-attention 对齐 token 级和图节点表示，用于源码漏洞检测。
+- [Automated Software Vulnerability Detection Using Transformer-Based Code Analysis](https://doi.org/10.1109/ictp67998.2026.11485262)：把 Transformer 代码分析用于复杂软件系统中的自动漏洞检测。
+- [Towards multi-language repository-level code generation: From-scratch to guided tasks](https://doi.org/10.1016/j.neucom.2026.133204)：研究多语言仓库级代码生成，对比从零生成与 guided tasks，并关注正确性约束。
+- [Enhanced Text-to-SQL using cooperative reinforcement learning for small language models](https://doi.org/10.1016/j.neucom.2026.132865)：用 cooperative reinforcement learning 改进小语言模型的 Text-to-SQL 生成，把 SQL 正确性接入 RL 训练信号。
+- [A lightweight approach to software fault localization using static features of statements in cloud computing environments](https://doi.org/10.3389/fcomp.2026.1734298)：训练轻量 ranking SVM，将 SBFL 可疑度与语句级静态特征结合，用于云环境中的跨项目故障定位。
+- [Model Reuse Through Retargeted-Architecture Binary Code Analysis](https://doi.org/10.1109/tdsc.2026.3672389)：通过 retargeted-architecture 二进制代码分析，在不同指令集架构间复用二进制分析模型，缓解小众 ISA 训练数据稀缺。
+- [vSim: Semantics-Aware Value Extraction for Efficient Binary Code Similarity Analysis](https://doi.org/10.14722/ndss.2026.240213)：在比较前从二进制中抽取语义感知的值表示，以提升二进制代码相似性分析效率。
+- [Thinking Fast and Correct: Automated Rewriting of Numerical Code through Compiler Augmentation](https://doi.org/10.1109/cgo68049.2026.11395228)：增强编译器以自动重写数值代码，在低精度硬件约束下平衡浮点精度与性能。
+- [Detection of vulnerabilities in software for unmanned aerial vehicles by using large language models](https://doi.org/10.15587/1729-4061.2026.352029)：在缺少源码时，用 LLM 引导的通用指令模板和体系结构检测无人机二进制软件漏洞。
+- [ExoCode: A Generative-Native IDE for Secure, Executable, and Iterative Code Prototyping](https://doi.org/10.1109/ic3ecsbhi67834.2026.11469052)：Agent Harness 父级复核候选；实现 generative-native IDE，围绕 LLM 生成代码提供安全沙箱执行、迭代、调试和持久化 agent workflow。
+- [Resolving ambiguity in code refinement via conidfine: A conversationally-Aware framework with disambiguation and targeted retrieval](https://doi.org/10.1016/j.neunet.2026.108650)：在执行代码修改前，通过对话式消歧和定向检索澄清不完整的 code-refinement 请求。
+- [Rapid End-to-End Test Generation and Hallucination Mitigation Using Generative Artificial Intelligence](https://doi.org/10.1109/access.2026.3657407)：用抽象类 DOM 引用和面向 CRUD 操作的提示生成分布式系统端到端测试，以降低选择器脆弱性和幻觉步骤。
+- [Llm-Based Framework for Improving Code Quality in Oilfield Data Acquisition Systems](https://doi.org/10.1109/southeastcon63549.2026.11476591)：用多智能体 LLM 框架在大型油田数据采集代码库中发现配置键、API endpoint 和文件路径等上下文相关引用错误。
+- [Automated software engineering knowledge transfer: A case study on small and medium-sized software enterprises in Thailand](https://doi.org/10.1016/j.jss.2026.112817)：父级复核候选；报告面向泰国中小软件企业的自动化软件工程工具知识转移干预，而不是模型方法。
+- [I Will Try to Fix You: Large Language Models for Mobile GUI Test Repair](https://doi.org/10.1109/saner-c67878.2026.00052)：研究移动 GUI 测试在应用版本演化中的失效原因，并用 LLM 修复因结构、视觉或属性变化而过时的测试。
+- [An MBSE approach for early validation of safety-critical software: Lessons learned from the cross-organizational development of the HTV-X automated docking system](https://doi.org/10.1016/j.jsse.2026.01.003)：父级复核候选；描述用于航天器安全关键软件早期验证的 SysML 工作流，更接近流程或系统工程覆盖。
+- [Language-Agnostic Reverse Engineering of Software into SysML v2 via LLM Reasoner](https://doi.org/10.1109/syscon66367.2026.11503570)：通过语言检测、AST 到 XML 规范化、规则化 LLM 提示、迭代修复和 SysML 校验，把异构源码转换为 SysML v2。
+- [SCOTT: Source Code Clone Detection Based on Semantic Mining from Graph and Text Data](https://doi.org/10.1016/j.eswa.2026.132000)：结合基于图的结构挖掘与文本语义表示来检测源码克隆。
+- [Enhancing Semantic Code Search and Navigation Systems Using Dual Embedding Representations](https://doi.org/10.1109/icnwc68145.2026.11518020)：CodeSense 分别嵌入源码和自然语言查询，并映射到共享向量空间，支持大型仓库中的语义代码搜索。
+- [Improving Gemini's Ability to Generate Syntactically Correct Mermaid Code](https://doi.org/10.1109/southeastcon63549.2026.11476269)：加入轻量校验与修复框架，提高 Gemini 生成 Mermaid 图表代码的语法正确性。
+- [Drill-type adaptive debugging to boost programming skills](https://doi.org/10.1080/08993408.2026.2672717)：编程教育候选；研究用于提升编程技能的自适应调试 drill，而非可复用代码模型训练配方。
+- [Semantic Code Smell Detection from Raw Source Code using Transformers with Chunking and Data Augmentation](https://doi.org/10.1016/j.mlwa.2026.100908)：在 MLCQ 数据集上评估 CodeBERT 与 CodeT5，用 chunking 策略和文本级数据增强检测原始源码中的代码异味。
+- [RAGdeterm: Deterministic retrieval-augmented generation for code generation](https://doi.org/10.1016/j.softx.2026.102636)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“RAGdeterm: Deterministic retrieval-augmented generation for code generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Source Code Error Categorization and Explanation by Retrieval Augmented Generation](https://doi.org/10.1109/aaiml67890.2026.11498214)：用检索增强生成对源码错误进行分类并生成解释，把相似错误或参考材料接入诊断过程，面向开发者可读的错误说明而非单纯标签预测。
+- [Automated Software Test Case Generation Using Directional Partially Weighted Ensemble Large Language Models With Retrieval-Augmented Generation (RAG)](https://doi.org/10.1109/access.2026.3667925)：用 LLM 集成与 RAG 自动生成软件测试用例。
+- [Design System-Compliant User Interface Generation with LLM Agents: A Comparative Study of Context Engineering Strategies](https://doi.org/10.1145/3772363.3798616)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Design System-Compliant User Interface Generation with LLM Agents: A Comparative Study of Context Engineering Strategies”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Constrained LLM-Guided Refactoring of JavaScript: A Smell-Targeted Transformation Framework with Human-in-the-Loop Validation](https://doi.org/10.32604/cmc.2026.080737)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Constrained LLM-Guided Refactoring of JavaScript: A Smell-Targeted Transformation Framework with Human-in-the-Loop Validation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [OpenMP-annotated code dataset for large language model fine-tuning on parallel programming tasks](https://doi.org/10.3389/fhpcp.2026.1771927)：提供 OpenMP 标注代码数据集，用于并行编程任务上的 LLM 微调。
+- [SFS: Smarter Code Space Search improves LLM Inference Scaling](https://openreview.net/forum?id=MCHuGOkExF)：把更聪明的代码候选搜索作为编程任务的 inference scaling 路径，用测试时 code-space exploration 补充训练时 RL。
+- OpenAI Codex / `codex-1`（[OpenAI 介绍](https://openai.com/index/introducing-codex/)；[系统卡补充](https://openai.com/index/o3-o4-mini-codex-system-card-addendum/)）：codex-1 由 o3 派生，并在真实编码任务上经强化学习优化；Codex CLI 和云端工作流属于 harness 侧。
+- Claude 4 与 Claude Sonnet 4.5 coding model cards（[Claude 4](https://www.anthropic.com/news/claude-4)；[Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)）：提供闭源模型在长时编码、仓库修复、终端任务和 SWE-bench 类软件代理能力上的模型卡证据。
+- [D3: A Dataset for Training Code LMs to Act Diff-by-Diff](https://openreview.net/forum?id=sy71y74U80)：用 diff-by-diff 的源码演化训练代码模型，贴近仓库级 agent 的增量编辑动作。
+- Qwen3-Coder（[官方报告](https://qwenlm.github.io/blog/qwen3-coder/)）：训练 480B-A35B MoE coding-agent 模型，包含代码密集预训练、execution-driven Code RL，以及大规模并行编码环境中的长程 Agent RL。
+- Grok Code Fast 1（[模型文档](https://docs.x.ai/docs/models/grok-code-fast-1)）：面向 agentic coding 的专用模型，包含编程密集预训练、真实 PR 和 coding-task 数据后训练，以及终端和文件编辑工具行为。
+- GPT-5-Codex family（[GPT-5-Codex](https://openai.com/index/introducing-upgrades-to-codex/)；[GPT-5.2-Codex](https://openai.com/index/introducing-gpt-5-2-codex/)；[GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/)）：记录 OpenAI 闭源 coding-agent 模型线在真实工程任务、原生压缩、长时工作、SWE-Bench Pro、Terminal-Bench 和漏洞相关编码训练上的进展。
+- [Afterburner](https://openreview.net/forum?id=At8OUlyTOu)：用强化学习支持自改进代码效率优化，把 coding-agent 训练从正确性扩展到性能改进。
+- [More Than Just Functional](https://openreview.net/forum?id=0Zri6HSYaK)：在代码生成时把 LLM 用作效率 critique，无需执行候选代码即可在 EffiBench 和 HumanEval+ 上降低运行时间与内存占用。
+- MiniMax M2（[官方报告](https://www.minimax.io/news/minimax-m2)；[interleaved-thinking 说明](https://www.minimax.io/news/why-is-interleaved-thinking-important-for-m2)）：把厂商模型定位在 agentic coding、工具使用和 deep search 上，并强调 interleaved thinking 对可靠工具化编码的作用。
+- Cursor Composer 2（[技术报告](https://cursor.com/blog/composer-2-technical-report)；[PDF](https://cursor.com/resources/Composer2.pdf)）：报告一个 IDE-native agentic coding 模型，经过代码继续预训练，并在真实 Cursor 会话中进行大规模 RL。
+- Composer 2.5（[官方发布](https://forum.cursor.com/t/composer-2-5-is-now-live/160934)）：更新 Cursor 的 IDE-native coding model，引入更大规模的合成长程 RL 任务组合，并用 textual-feedback RL 针对工具使用、沟通风格和 effort calibration 做定向训练，适合作为 coding-agent 后训练的厂商证据而不是独立 benchmark。
+- Kimi K2.6（[官方报告](https://www.kimi.com/blog/kimi-k2-6)；[模型卡](https://huggingface.co/moonshotai/Kimi-K2.6)）：把开放 Kimi 模型线聚焦到长程编码执行、Kimi Code Bench、Terminal-Bench、SWE-Bench Pro 和 agent-swarm coding task。
+- [Automated Software Architecture Design Recovery from Source Code Using LLMs](https://doi.org/10.1007/978-3-032-02138-0_5)：使用 LLM 从源代码恢复软件架构设计，把仓库级架构理解建模为源码到设计视图的恢复任务。
+- [HLSRewriter](https://doi.org/10.1145/3749986)：使用 LLM 重构并优化面向高级综合的 C/C++ 代码，将代码模型覆盖扩展到硬件导向优化。
+- [RECODE](https://doi.org/10.1007/978-981-95-0014-7_43)：利用可靠自生成测试与细粒度执行反馈提升 LLM 代码生成。
+- [Optimizing Type Migration for LLM-Based C-to-Rust Translation: A Data Flow Graph Approach](https://doi.org/10.1145/3735544.3735582)：利用数据流图结构改进 LLM C-to-Rust 翻译中的类型迁移，面向内存安全转译。
+- [CodeDoctor: multi-category code review comment generation](https://doi.org/10.1007/s10515-025-00491-y)：生成多类别代码评审评论，把不同反馈类型拆分建模，而不是把评审评论当作单一的通用生成任务。
+- [Enhanced Prompting Framework for Code Summarization with Large Language Models](https://doi.org/10.1145/3728949)：用面向任务的提示设计进行 LLM 代码摘要生成，改进程序结构与自然语言摘要之间的对齐。
+- [Integrating Large Language Models into Automated Software Testing](https://doi.org/10.3390/fi17100476)：用 LoRA 微调 Codestral Mamba，在 text-to-code 与 text-plus-code-to-code 测试任务上生成上下文感知测试脚本。
+- [Leveraging Search-Based and Pre-Trained Code Language Models for Automated Program Repair](https://doi.org/10.1145/3672608.3707774)：结合搜索式修复与预训练代码语言模型，用搜索候选和模型生成共同支持自动程序修复。
+- [Improving Project-Level Code Generation Using Combined Relevant Context](https://doi.org/10.1007/978-3-031-97635-3_52)：组合项目相关上下文进行代码生成，为仓库级代码模型补充上下文构造方法。
+- [Fine Tuning Large Language Model for Secure Code Generation](https://doi.org/10.1145/3650105.3652299)：通过微调大语言模型提升安全代码生成能力。
+- [CoLadder: Manipulating Code Generation via Multi-Level Blocks](https://doi.org/10.1145/3654777.3676357)：研究多层级代码块如何操纵代码生成。
+- [Exploring Large Language Models for Hierarchical Hardware Circuit and Testbench Generation](https://doi.org/10.1145/3742430)：评估商业和开放代码 LLM 在分层 HDL 电路生成、配套 testbench 生成以及不同复杂度提示策略上的表现，而不只考察单模块 Verilog。
+- [Invited: Infusing EDA Knowledge into LLM Systems: An Information-Source Perspective](https://doi.org/10.1145/3764386.3779640)：综述 EDA 场景下向 LLM 系统注入知识的路线，对比领域语料微调、基于设计文档的图 RAG，以及带环境反馈的多智能体流程。
+- [From Triumph to Uncertainty: The Journey of Software Engineering in the AI Era](https://doi.org/10.1145/3709360)：从角色、方法和人类创造力变化讨论 AI 时代的软件工程，而不是提出新的代码模型或训练配方。
+- [RustC4++: Improving Rust Code-Comment Inconsistency Detection via Hybrid LLM and Static Analysis](https://doi.org/10.1145/3800689)：结合 LLM 约束抽取、Rust 感知静态分析和 SMT 双向验证，检测区间、边界、存在性、Option 和有限性约束上的注释代码不一致。
+- [A Catalog of Data Smells for Coding Tasks](https://doi.org/10.1145/3707457)：系统梳理 LLM 编码任务预训练、微调和测试数据中的 data smell 以及相应质量过滤器。
+- [HSG-RAG: Hierarchical Knowledge Base Construction for Embedded System Development](https://doi.org/10.1145/3731680)：面向嵌入式系统从层级技术文档构建 RAG 知识库，用知识图谱保留领域概念关系后再检索。
+- [Delving into History: Retrieve Less but Augment More on Commit Message Generation](https://doi.org/10.1145/3794857)：提出 HisRag，从提交历史中检索相关提交信息，并用仓库和开发者特定上下文增强提交信息生成。
+- [LEDGE : Leveraging dependency graphs for enhanced context aware documentation generation](https://doi.org/10.1007/s10515-026-00596-y)：利用依赖图为文档生成提供上下文，使生成说明依赖代码关系而不是孤立代码片段。
+- [KerSpecGen: Co-piloting formal Kernel specification synthesis with refined knowledge graphs and large language models](https://doi.org/10.1371/journal.pone.0338821)：用精炼知识图谱把需求连接到规格属性，再微调属性到代码生成并用模板合成完整微内核形式化规格程序。
+- [Generating REST API Specifications through Static Analysis](https://doi.org/10.1145/3597503.3639137)：提出 Respector，通过静态和符号程序分析从 REST API 源码推断 OpenAPI 风格的端点方法、参数、响应和约束。
+- [RepoMinCoder: Improving Repository-Level Code Generation Based on Information Loss Screening](https://doi.org/10.1145/3671016.3674819)：在仓库上下文检索后加入信息损失筛选和重排，使提示保留更可能被模型编码利用的代码上下文。
+- [DeepVulHunter: enhancing the code vulnerability detection capability of LLMs through multi-round analysis](https://doi.org/10.1007/s10844-025-00982-0)：用多轮 LLM 分析做漏洞检测，强调对代码安全信号的迭代检查而非一次性分类。
+- [DiffCoder: Enhancing Large Language Model on API Invocation via Analogical Code Exercises](https://doi.org/10.1145/3643745)：用类比代码练习之间的差异训练代码 LLM，提升单库和跨库 API 调用基准上的库 API 使用能力。
+- [Refactoring Loops in the Era of LLMs: A Comprehensive Study](https://doi.org/10.3390/fi17090418)：在四个开源项目的 2,132 个 Java 循环上实证测试 ChatGPT 将 for-loop 重构为 stream 的能力，并区分可行转换与传统前置条件规则的限制。
+- [REFD:recurrent encoder and fusion decoder for temporal knowledge graph reasoning](https://doi.org/10.1007/s10489-025-06445-x)：提出用于时序知识图谱推理的 recurrent encoder 和 fusion decoder，属于偏离本轴的图推理模型而非软件开发代码模型。
+- [BinQuery: A Novel Framework for Natural Language-Based Binary Code Retrieval](https://doi.org/10.1145/3728927)：用自然语言查询检索二进制函数，面向逆向工程以语言引导函数检索替代启发式二进制搜索。
+- [TestGPT-Server: Automatically Testing Microservices with Large Language Models at ByteDance](https://doi.org/10.1145/3696630.3728545)：介绍 ByteDance 微服务 API 自动测试系统，用 LLM 增强请求生成和缺陷发现。
+- [Semantic-aware Source Code Modeling](https://doi.org/10.1145/3691620.3695605)：将源代码建模定义为学习人类程序中的统计规律，以支持代码生成、缺陷修复和程序分析。
+- [Research on Code Generation Technology based on LLM Pre-training](https://doi.org/10.54097/scrwpt34)：综述基于 LLM 预训练的自然语言到代码生成技术及其降低编程语言门槛的作用。
+- [LEGO-compiler: enhancing neural compilation through translation composability](https://doi.org/10.1007/s42514-025-00272-9)：通过组合翻译单元改进神经编译，把源到目标编译建模为可复用翻译片段而非一次性整体生成。
+- [LLM-Driven Python-to-Rust Translation for Efficient and Safe Code for Neural Networks: llm4py2rs](https://doi.org/10.5220/0014383000004061)：将 LLM 驱动的 Python 到 Rust 翻译用于神经网络代码，目标是获得更安全且更高效的数值工作负载实现。
+- [JIT-DCK: A KAN Multi-Task Model for Just-In-Time Code Defect Prediction and Localization](https://doi.org/10.1145/3801547)：使用 Kolmogorov-Arnold Network 多任务模型，从提交上下文和变更特征同时预测缺陷变更并定位缺陷行。
+- [EVGen: Trajectory-conditioned forward-view video generation under minimal visual observations](https://doi.org/10.1007/s44443-026-00627-4)：按自车轨迹生成自动驾驶前视视频，属于仿真和视频生成模型，偏离软件开发模型轴。
+- [Pondering the Future of Chemical Research amid the Wider Adoption of Artificial Intelligence Technologies.](https://doi.org/10.1002/chem.202503630)：讨论 AI 采用、自动化和化学研究结构变化，是化学领域观点文章而非编码模型贡献。
+- [On-the-fly Generation-Quality Enhancement of Deep Code Models via Model Collaboration](https://doi.org/10.1145/3765752)：通过模型协作在推理时提升已部署深度代码模型的生成质量，针对困难生成输入而不依赖重新训练或微调。
+- [Syntax-aware tokenizer for Go code style analysis](https://ceur-ws.org/Vol-4005/paper1.pdf)：为 Go 代码风格分析设计语法感知 tokenizer，用语言结构作为预处理信号而不是通用文本切分。
+- [Large Language Models for Serverless Function Generation: An Investigation on FaaS Performance](https://doi.org/10.1145/3774899.3775016)：比较大型和本地托管 LLM 生成 serverless 函数的效果，在基准、面试题和自定义提示上衡量运行行为与云托管成本。
+- [Commentary Master: Exploring Fine-grained Video Action Commentary](https://doi.org/10.1145/3728423.3759414)：构建面向体育动作长文本解说的 AI commentator，属于视频理解与智能体框架，偏离软件开发建模。
+- [Translating short-form Python exercises to other programming languages using diverse prompting strategies](https://doi.org/10.1093/gigascience/giaf149)：评估 GPT-4 提示策略，把短 Python 练习翻译到其他语言，用于科学编程和教学。
+- [Concept Siever : Towards Controllable Erasure of Concepts from Diffusion Models without Side-effect](https://openreview.net/forum?id=foq3J3WUm7)：提出扩散模型概念擦除方法，虽是模型适配技术但偏离软件开发代码模型。
+- [BlockGuardian: Intelligent Multi-Dimensional Blockchain Code Analysis Framework](https://doi.org/10.1145/3766918.3766926)：将 LLM 语义推理与自适应并行分析结合，从结构、质量、漏洞和文档完整性四个维度分析区块链代码。
+- [HinglishEval: Evaluating the Effectiveness of Code-Generation Models on Hinglish Prompts](https://doi.org/10.1007/978-3-031-84391-4_2)：评估代码生成模型处理 Hinglish 提示的效果，检验多语提示鲁棒性而非提出新训练方法。
+- [Enhancing Static Analysis for Practical Bug Detection: An LLM-Integrated Approach](https://doi.org/10.1145/3649828)：提出 LLift，将静态分析与 LLM 引导结合，用于发现 Linux 内核中的 use-before-initialization 缺陷。
+- [Measuring GitHub Copilot's Impact on Productivity](https://doi.org/10.1145/3633453)：通过用户感知和使用数据衡量 Copilot 对生产力的影响，属于经验采用研究而非模型侧方法。
+- [Enhancing Software Code Vulnerability Detection Using GPT-4o and Claude-3.5 Sonnet: A Study on Prompt Engineering Techniques](https://doi.org/10.3390/electronics13132657)：在 SARD 的 C++、Java 和 Python 漏洞检测样本上，比较简洁、提示设定和逐步推理三类提示对 GPT-4o、Claude 3.5 Sonnet 和 GPT-3.5 Turbo 的影响。
+- [iSMELL: Assembling LLMs with Expert Toolsets for Code Smell Detection and Refactoring](https://doi.org/10.1145/3691620.3695508)：把 LLM 与专家代码异味工具组合起来，用仓库结构和动态分析弥补 LLM 上下文与分析能力限制。
+- [Type-migrating C-to-Rust translation using a large language model](https://doi.org/10.1007/s10664-024-10573-2)：面向 C 到 Rust 迁移，引导 LLM 将 C 类型替换为体现 Rust 所有权和安全性的类型构造。
+- [TM-fuzzer: fuzzing autonomous driving systems through traffic management](https://doi.org/10.1007/s10515-024-00461-w)：通过交通管理场景变异对自动驾驶系统做模糊测试，属于偏离本轴的测试框架而非代码生成模型。
+- [Leveraging Large Language Models for Direct Interaction with SysML v2](https://doi.org/10.1002/iis2.13262)：探索把 LLM 作为 SysML v2 模型的自然语言交互界面，利用其更易读的语法支持系统工程操作。
+- [Establishing Traceability Between Natural Language Requirements and Software Artifacts by Combining RAG and LLMs](https://doi.org/10.1007/978-3-031-75872-0_16)：结合 RAG 与 LLM 恢复自然语言需求和相关软件制品之间的可追踪链接。
+- [Effectiveness of ChatGPT for Static Analysis: How Far Are We?](https://doi.org/10.1145/3664646.3664777)：在 Infer 收集的空指针解引用和资源泄漏样本上，测试 ChatGPT 做静态缺陷检测和误报警告移除的能力。
+- [Using model-driven engineering to automate software language translation](https://doi.org/10.1007/s10515-024-00419-y)：用模型驱动工程自动化软件语言翻译，并与机器学习和手写规则的跨语言迁移方法对照。
+- [Generating SPARQL Queries over CIDOC-CRM Using a Two-Stage Ontology Path Patterns Method in LLM Prompts](https://doi.org/10.1145/3708326)：在提示中加入两阶段 CIDOC-CRM 本体路径模式，使 LLM 将文化遗产自然语言问题映射为长路径 SPARQL 查询。
+- [LibvDiff: Library Version Difference Guided OSS Version Identification in Binaries](https://doi.org/10.1145/3597503.3623336)：利用库版本差异信号识别二进制中的开源库版本，避免只依赖版本字符串或常量特征。
+- [Requirements Traceability Link Recovery via Retrieval-Augmented Generation](https://doi.org/10.1007/978-3-031-88531-0_27)：将 RAG 用于需求可追踪链接恢复，在 LLM 判断链接前检索候选软件制品上下文。
+- [BatFix: Repairing language model-based transpilation](https://doi.org/10.1145/3658668)：用程序修复和程序合成修补语言模型转译结果，结合原始程序、生成目标程序和测试用例输出通过测试的翻译。
+- [Understanding Code Changes Practically with Small-Scale Language Models](https://doi.org/10.1145/3691620.3694999)：构建专家验证的 HQCM 数据集，并微调 7B 与 220M 小语言模型理解代码变更，与大模型和传统方法比较。
+- [NL2CTL: Automatic Generation of Formal Requirements Specifications via Large Language Models](https://doi.org/10.1007/978-981-96-0617-7_1)：使用 LLM 将自然语言需求转换为 CTL 形式化规格，服务于模型检查流程。
+- [Three Heads Are Better Than One: Suggesting Move Method Refactoring Opportunities with Inter-class Code Entity Dependency Enhanced Hybrid Hypergraph Neural Network](https://doi.org/10.1145/3691620.3695068)：用结合类间代码实体依赖的混合超图神经网络发现 Move Method 重构机会，处理超出成对度量的 feature envy 场景。
+- [Towards Big Data in AI for EDA Research: Generation of New Pseudo Circuits at RTL Stage](https://doi.org/10.1145/3658617.3697613)：生成 RTL 阶段伪电路以扩展 EDA 训练数据，应对专有电路 IP 难以直接共享造成的数据不足。
+- [Generative Feedback for Code Learning: A Study on LLM-Driven Formative Assessment](https://doi.org/10.1145/3768421.3768464)：研究 LLM 驱动的编程教育形成性反馈，关联学生交互频率与理解、自我调节及教师工作量变化。
+- [Predicting Software Perfection Through Advanced Models to Uncover and Prevent Defects](https://doi.org/10.1049/sfw2/8832164)：在预处理、特征选择和超参数调优后，比较逻辑回归、随机森林、SVM、CNN 与 XGBoost 的软件缺陷预测表现。
+- [Code Generation by Large Language Models: A Comparative Analysis of ChatGPT, Claude, and DeepSeek](https://doi.org/10.18178/ijeetc.15.1.19-28)：在 Linux Docker 环境中比较 GPT-4-turbo、Claude Sonnet 和 DeepSeek-V3 生成排序代码的执行时间、内存、文件大小和可读性。
+- [Capturing the context-aware code change via dynamic control flow graph for commit message generation](https://doi.org/10.1007/s10994-024-06671-3)：用动态控制流图建模提交信息生成，使代码变更摘要反映上下文行为而不只依赖原始 diff。
+- [Empirical Analysis of Data Sampling-Based Decision Forest Classifiers for Software Defect Prediction](https://doi.org/10.3390/software4020007)：评估不同数据采样策略下的决策森林缺陷预测器，关注不平衡软件模块风险分类。
+- [Scalable RL-based data generation and multi-resolution architecture for code-switched speech recognition: a high-performance computing approach](https://doi.org/10.1007/s11227-026-08256-4)：提出面向 code-switched 语音识别的 RL 合成数据和多分辨率架构，偏离软件开发编码模型。
+- [Performance analysis of AI-generated code: A case study of Copilot, Copilot Chat, CodeLlaMa, and DeepSeek-Coder models](https://doi.org/10.1007/s10664-025-10776-1)：以经验软件工程方式比较 Copilot、Copilot Chat、CodeLlama 和 DeepSeek-Coder 生成代码的性能。
+- [The End of Programming as We Know It: Envisioning Radical Re-Conceptualizations of Co-Coding with AI](https://doi.org/10.1145/3737609.3747093)：关于 AI 协同编码未来的 workshop 立场文，强调交互设计和价值观，而不是新的模型或验证器。
+- [Enhancing the ability of LLMs for spaceborne equipment code generation via retrieval-augmented generation and contrastive learning](https://doi.org/10.1007/s10515-025-00545-1)：结合 RAG 与对比学习，将 LLM 代码生成适配到星载设备编程知识。
+- [Resilient Software Design Through Cognitive-Aware Antipattern Propagation in 4+1 Architectural Views](https://doi.org/10.3390/app15179526)：用传播图、经济仿真和认知负荷视角建模 4+1 架构视图中的 antipattern 传播，支持韧性软件设计。
+- [Automated Extraction of Research Software Installation Instructions from README Files: An Initial Analysis](https://doi.org/10.1007/978-3-031-65794-8_8)：分析如何从研究软件 README 中抽取安装说明，属于文档挖掘任务，更适合路由到软件工程数据集或工具而非模型训练条目。
+- [Exploring Neural Network Structure Code Reuse in the Open‐Source Community for Improving Maintenance](https://doi.org/10.1002/smr.70090)：研究开源项目中神经网络结构代码的复用方式，关注维护风险和克隆模式，而不是提出代码生成模型。
+- [ODEL: An Experience-Augmented Self-Evolving Framework for Efficient Python-to-C++ Code Translation](https://doi.org/10.3390/app16031506)：用经验增强的自演化循环改进 Python 到 C++ 翻译，复用历史翻译反馈来优化后续代码转换。
+- [Developing RAGs for robot code generation](https://doi.org/10.1088/1757-899x/1342/1/012064)：构建面向机器人程序的 RAG 代码生成方案，使 LLM 依据任务相关示例和文档生成机器人代码。
+- [VulSCC: image-based vulnerability detection with SPP-CNN and code large language model](https://doi.org/10.1186/s42400-026-00589-0)：将源码转换为类图像表示，并结合 SPP-CNN 特征与代码大模型信号进行漏洞检测。
+- [Data-Driven Transferable Modeling for Cross-Project Software Vulnerability Detection via Dual-Feature Stacking Ensemble](https://doi.org/10.3390/math14050780)：用双特征 stacking 集成实现跨项目漏洞检测迁移，融合异构软件度量做跨项目预测。
+- [Knowledge distillation-driven commit-aware multimodal learning for software vulnerability detection](https://doi.org/10.1007/s10515-026-00595-z)：通过知识蒸馏压缩提交感知的多模态漏洞信号，让代码变更和提交上下文共同监督轻量检测器。
+- [Advancing research software engineering with AI: a research framework](https://doi.org/10.1007/s10515-026-00621-0)：研究框架候选；提出 AI 辅助研究软件工程议程，而不是具体模型、验证器或训练配方。
+- [A code-based multiple watermarking scheme for the preservation of authenticity of digital video](https://doi.org/10.1007/s11042-026-21509-x)：用基于码的多重水印保护数字视频真实性，属于偏离本轴的多媒体安全方法。
+- [Toward Bridging the Tool Gap: Equipping Large Language Models with Tools to Answer Programmers’ Questions](https://doi.org/10.1145/3759534.3762682)：为 LLM 配备面向程序员问答的工具，使回答能够引入外部代码或项目证据，而不只依赖文本记忆。
+- [CoEdPilot: Interactively Recommending Project-Wise Code Edits](https://doi.org/10.1007/s11390-025-5139-z)：交互式推荐项目级代码编辑，建模仓库内编辑传播而不是孤立的单文件补全。
+- [Optimizing Copyright Subject and Originality Rules for AI-Generated Software](https://doi.org/10.1145/3783669.3783752)：分析 AI 生成软件的著作权主体和原创性规则，属于法律政策研究而非可复用代码模型方法。
+- [Enhancing code generation accuracy using fine-tuning and task-adaptive pretraining with domain-specific data augmentation](https://doi.org/10.4314/swj.v19i4.13)：结合任务自适应预训练、监督微调和领域数据增强来提升代码生成准确率。
+- [A comparative study of Kolmogorov-Arnold networks and multilayer perceptrons for software defect prediction with SHAP analysis](https://doi.org/10.1007/s10586-025-05691-5)：比较 Kolmogorov-Arnold 网络和多层感知机的软件缺陷预测效果，并用 SHAP 解释软件度量的影响。
+- [A Study on Framework for Adaptive Code Generation and Performance Optimization Based on Qwen](https://doi.org/10.5220/0014021500004918)：基于 Qwen 做代码生成与性能优化适配，将生成组织成迭代优化流程而非普通提示。
+- [DB-GPT: Large Language Model Meets Database](https://doi.org/10.1007/s41019-023-00235-6)：提出面向数据库的 LLM 系统，支持自然语言数据库交互、SQL 生成和数据流程辅助。
+- [GrammarT5: Grammar-Integrated Pretrained Encoder-Decoder Neural Model for Code](https://doi.org/10.1145/3597503.3639125)：将编程语言语法集成到 T5 式编码器-解码器中，使代码预训练和生成遵循句法结构。
+- [PyDex: Repairing Bugs in Introductory Python Assignments using LLMs](https://doi.org/10.1145/3649850)：用 LLM 修复入门 Python 作业中的学生 bug，结合题目上下文和修复反馈生成补丁。
+- [AceCoder: An Effective Prompting Technique Specialized in Code Generation](https://doi.org/10.1145/3675395)：提出面向代码生成的 AceCoder 专用提示策略，把编程任务约束显式组织进生成请求。
+- [Exploring Automated Assertion Generation via Large Language Models](https://doi.org/10.1145/3699598)：评估 LLM 自动生成断言的能力，衡量生成断言是否能捕捉程序行为并服务测试。
+- [HAFix: history-augmented large language models for bug fixing](https://doi.org/10.1007/s10664-026-10833-3)：为 LLM bug 修复加入项目历史上下文，让既往修复和变更模式指导补丁生成。
+- [Combining Small Language Models and Large Language Models for Zero-Shot NL2SQL](https://doi.org/10.14778/3681954.3681960)：组合小语言模型和大语言模型做 zero-shot NL2SQL，由轻量模型辅助或约束大模型生成 SQL。
+- [You Don’t Have to Say Where to Edit! jLED—Joint Learning to Localize and Edit Source Code](https://doi.org/10.1145/3712187)：联合学习 bug 定位和源码编辑，使调用方无需先给出精确编辑位置即可进行修复。
+- [Bug Detection and Localization using Pre-trained Code Language Models](https://doi.org/10.18420/inf2024_124)：微调预训练代码语言模型，在软件中检测 bug 并定位可疑代码区域。
+- [Code Summarization without Direct Access to Code - Towards Exploring Federated LLMs for Software Engineering](https://doi.org/10.1145/3661167.3661210)：探索联邦式 LLM 代码摘要，让项目代码保留在本地，仅共享隐私保护的模型更新或输出。
+- [STRUT: Structured Seed Case Guided Unit Test Generation for C Programs using LLMs](https://doi.org/10.1145/3728970)：用结构化种子用例引导 C 程序的 LLM 单元测试生成，显式提供输入格式和行为分区。
+- [DeciX: Explain Deep Learning Based Code Generation Applications](https://doi.org/10.1145/3660814)：解释深度学习代码生成应用，追踪模型行为和生成代码决策以供开发者检查。
+- [Spotting Code Mutation for Predictive Mutation Testing](https://doi.org/10.1145/3691620.3695491)：在完整变异测试前预测可能的代码变异，通过代码变更信号选择变异目标以降低测试成本。
+- [Increasing the Reliability of Software Systems Using a Large-Language-Model-Based Solution for Onboarding](https://doi.org/10.3390/inventions9040079)：用 LLM 入职助手呈现项目知识和可靠性实践，帮助新加入开发者理解软件系统。
+- [The Sustainability Face of Automated Program Repair Tools](https://doi.org/10.1145/3744900)：研究自动程序修复工具的可持续性影响，属于工具影响分析而不是新的修复模型。
+- [Model-based software sustainability analysis and improvement](https://doi.org/10.1007/s10270-026-01374-w)：将模型驱动分析用于软件可持续性评估和改进规划，更接近软件质量建模而非 LLM 代码生成。
+- [Graph neural networks for precise bug localization through structural program analysis](https://doi.org/10.1007/s10515-025-00556-y)：结合图神经网络和结构化程序分析特征，更精确地定位代码中的 bug。
+- [Implementation of Semantic Search in an Academic Repository Using Sentence-BERT and FAISS](https://doi.org/10.33395/sinkron.v10i2.15940)：实现 Sentence-BERT 加 FAISS 的学术仓库语义搜索，属于信息检索系统，偏离软件开发模型轴。
+- [Inteligencia artificial generativa para la enseñanza de matemáticas y programación en educación superior: Revisión sistemática](https://doi.org/10.31876/rcs.v32i2.45578)：系统综述生成式 AI 在高等教育数学和编程教学中的使用，更适合路由到教育综述覆盖。
+- [Escaping the latency trap: a length-aware scheduling research for sequence parallelism](https://doi.org/10.1117/12.3113829)：研究序列并行模型服务中的长度感知调度，属于基础设施优化而非软件开发代码建模。
+- [When Generative AI Mixes Languages: Multilingual Users' Code-Switching Behavior in Human-LLM Interaction](https://doi.org/10.1145/3772363.3798492)：考察多语用户在人机 LLM 交互中的语码转换行为，属于 HCI 多语使用研究而非代码模型。
+- [SQL Statement Generation Enhanced Through the Fusion of Large Language Models and Knowledge Graphs](https://doi.org/10.3390/electronics15020278)：融合 LLM 和知识图谱，改进从自然语言数据库请求生成 SQL 语句。
+- [Mitigating LLM hallucinations in Text-to-SQL parsing with a self-refinement feedback loop and memory augmentation](https://doi.org/10.1007/s10844-026-01050-x)：为 Text-to-SQL 解析加入自我细化反馈循环和记忆增强，以减少 LLM 幻觉。
+- [AI-Powered Code Autocompletion and Bug Detection for Developers](https://doi.org/10.21275/sr25027114413)：描述结合代码自动补全和 bug 检测信号的开发者助手，用于 IDE 式支持。
+- [From Scenario to Code: Structured Prompting for LLM-Based Unit Test Generation](https://doi.org/10.1145/3779657.3779658)：用结构化场景提示把软件需求转化为 LLM 生成的单元测试。
+- [Utilizing Large Language Model for Conversational Information Seeking via Dual-Query Generation and Joint-Encoding](https://doi.org/10.1145/3742423)：用双查询生成和联合编码做会话式信息检索，没有明确的软件开发建模目标。
+- [Structure-Preserving Discrete Diffusion Models for Verified Code Generation](https://doi.org/10.1145/3785706.3785940)：用保持结构的离散扩散模型生成代码，并将生成过程与验证约束结合。
+- [AutoRuleSQL: Hybrid Text-to-SQL via Rule-Driven Fast Paths and LLM Bootstrapping](https://doi.org/10.1145/3746252.3761438)：结合规则驱动快速路径和 LLM bootstrapping，使 Text-to-SQL 在规则不足时回退到学习式解析。
+- [Program Code Generation with Generative AIs](https://doi.org/10.3390/a17020062)：经验比较多种生成式 AI 的程序代码生成表现，关注正确性、可用性和生成代码质量。
+- [An Empirical Study of the Code Generation of Safety-Critical Software Using LLMs](https://doi.org/10.3390/app14031046)：评估 LLM 生成安全关键软件代码，重点关注高风险代码的正确性和保障问题。
+- [Need a Programming Exercise Generated in Your Native Language? ChatGPT's Got Your Back: Automatic Generation of Non-English Programming Exercises Using OpenAI GPT-3.5](https://doi.org/10.1145/3626252.3630897)：用 GPT-3.5 生成非英语编程练习，面向本地化计算机教育内容而非通用代码模型。
+- [MFTCoder: Boosting Code LLMs with Multitask Fine-Tuning](https://doi.org/10.1145/3637528.3671609)：通过跨多种代码智能任务的多任务微调提升代码大模型。
+- [Studying the Quality of Source Code Generated by Different AI Generative Engines: An Empirical Evaluation](https://doi.org/10.3390/fi16060188)：经验评估多个生成引擎输出源码的质量，衡量生成代码属性而不是提出新模型。
+- [LLM-Generated Invariants for Bounded Model Checking Without Loop Unrolling](https://doi.org/10.1145/3691620.3695512)：用 LLM 生成循环不变量，使有界模型检查能够避免显式循环展开。
+- [Improved Program Repair Methods using Refactoring with GPT Models](https://doi.org/10.1145/3626252.3630875)：将 GPT 程序修复与重构变换结合，以改进补丁生成。
+- [Towards LLM-augmented multiagent systems for agile software engineering](https://doi.org/10.1145/3691620.3695336)：勾勒用于敏捷软件工程的 LLM 增强多智能体支持，更适合路由到 agent harness 或流程工具覆盖。
+- [Enhancing Large Language Models-Based Code Generation by Leveraging Genetic Improvement](https://doi.org/10.1007/978-3-031-56957-9_7)：将遗传改进用于 LLM 生成代码，使候选程序朝更好的正确性或性能演化。
+- [Large Language Model-based Test Case Generation for GP Agents](https://doi.org/10.1145/3638529.3654056)：用 LLM 为遗传编程智能体生成测试用例，为生成程序提供评测输入。
+- [Analyzing Developer-ChatGPT Conversations for Software Refactoring: An Exploratory Study](https://doi.org/10.1145/3643991.3645082)：分析开发者与 ChatGPT 的重构对话，刻画重构意图、提示和交互模式，而非提出模型。
+- [Integrating Generative AI into Legal Education: From Casebooks to Code, Opportunities and Challenges](https://doi.org/10.5204/lthj.3640)：讨论生成式 AI 和代码示例在法律教育中的使用，偏离软件开发模型方法。
+- [DSL-Xpert: LLM-driven Generic DSL Code Generation](https://doi.org/10.1145/3652620.3687782)：用 LLM 驱动通用领域专用语言代码生成，从高层任务描述合成 DSL 代码。
+- [A Knowledge Enhanced Large Language Model for Bug Localization](https://doi.org/10.1145/3729356)：用外部软件知识增强 LLM bug 定位器，使可疑位置排序具备项目感知上下文。
+- [Generative AI in Introductory Programming Instruction: Examining the Assistance Dilemma with LLM-Based Code Generators](https://doi.org/10.1145/3649165.3690111)：研究入门编程中 LLM 代码生成器带来的辅助困境，属于教育/HCI 评估而非模型侧方法。
+- [KareCoder: A New Knowledge-Enriched Code Generation System](https://doi.org/10.1145/3639478.3643076)：为代码生成加入知识增强，使生成程序能够利用检索或结构化领域知识。
+- [Coeditor: Leveraging Repo-level Diffs for Code Auto-editing](https://openreview.net/forum?id=ALVwQjZRS8)：使用仓库级 diff 训练代码自动编辑模型，使模型学习在项目上下文中执行一致编辑。
+- [Why Do Software Practitioners Use ChatGPT for Software Development Tasks?](https://doi.org/10.1145/3696630.3731667)：调查软件从业者为何在开发任务中使用 ChatGPT，更适合人因或综述覆盖。
+- [Imperfect Code Generation: Uncovering Weaknesses in Automatic Code Generation by Large Language Models](https://doi.org/10.1145/3639478.3643081)：经验揭示 LLM 自动代码生成的失败模式，包括生成程序的正确性和质量弱点。
+- [Leveraging Human Insights for Enhanced LLM-based Code Repair](https://doi.org/10.1145/3696630.3731672)：将人类修复洞察引入 LLM 代码修复，在原始模型建议之外指导补丁生成。
+- [SDCC: software-defined collective communication for distributed training](https://doi.org/10.1007/s11432-023-3894-4)：用软件定义集合通信优化分布式训练，属于机器学习系统基础设施而非软件开发代码建模。
+- [On Calibration of Pretrained Code Models](https://doi.org/10.1145/3597503.3639126)：衡量并改进预训练代码模型校准，使其置信度更好匹配代码任务正确性。
+- [Exploring Reproducibility of Human-Labelled Data for Code-Mixed Sentiment Analysis](https://doi.org/10.63317/4rk7cfdtiy7k)：研究混合语种情感分析中人工标注数据的可复现性，偏离软件开发和代码模型能力。
+- [Towards Interpreting the Behavior of Large Language Models on Software Engineering Tasks](https://doi.org/10.1145/3639478.3639798)：探查 LLM 在软件工程任务上的行为，识别成功和失败背后的可解释模式。
+- [Towards automatically identifying the co‐change of production and test code](https://doi.org/10.1002/stvr.1870)：建模生产代码与测试代码的共同变更，预测测试何时需要随代码修改而演化。
+- [Generating Multi-Part Autogradable Faded Parsons Problems From Code-Writing Exercises](https://doi.org/10.1145/3626252.3630786)：从代码写作练习生成可自动评分的多部分 faded Parsons 题，面向编程教育内容生成。
+- [CQLLM: A Framework for Generating CodeQL Security Vulnerability Detection Code Based on Large Language Model](https://doi.org/10.3390/app16010517)：用 LLM 生成 CodeQL 漏洞检测查询，使安全规则可由自然语言漏洞描述产生。
+- [Enhancing queries for code generation with reinforcement learning](https://doi.org/10.1038/s41598-025-21271-4)：用强化学习改进代码生成查询，依据生成代码结果优化提示或查询形式。
+- [SynergyBug: A deep learning approach to autonomous debugging and code remediation](https://doi.org/10.1038/s41598-025-08226-5)：用深度学习进行自动调试和代码修复，将 bug 检测与候选修复生成结合。
+- [CQPES: A GPU-Aided Software Package for Developing Full-Dimensional Accurate Potential Energy Surfaces by Permutation-Invariant-Polynomial Neural Network](https://doi.org/10.3390/chemistry7060201)：用于势能面的化学仿真软件，明显偏离软件开发模型覆盖。
+- [Symmetry-Aware Code Generation: Distilling Pseudocode Reasoning for Lightweight Deployment of Large Language Models](https://doi.org/10.3390/sym17081325)：将伪代码推理蒸馏到轻量模型中，并利用对称性感知信号支持可部署代码生成。
+- [The Modular Imperative: Rethinking LLMs for Maintainable Software](https://doi.org/10.1145/3759425.3763392)：主张面向可维护软件的模块化 LLM 设计，更像立场或设计原则而非具体训练方法。
+- [Executable Science: Research Software Engineering Practices for Replicating Neuroscience Findings](https://doi.org/10.1145/3736731.3746147)：讨论复现神经科学发现所需的研究软件工程实践，适合 RSE 流程覆盖而非模型方法。
+- [Software Performance Engineering for Foundation Model-Powered Software (FMware)](https://doi.org/10.1145/3676151.3719357)：界定基础模型驱动软件系统的性能工程问题，更接近软件性能方法论而非模型训练。
+- [Empowering Diversity by Building Inclusive Software Engineering Projects with Large Language Models](https://doi.org/10.34190/icair.4.1.3023)：研究 LLM 辅助下的包容性软件工程项目，属于以人为中心的流程主题而非可复用代码模型。
+- [Exploring Code-Switching Dynamics in Urdu-English Multilingual ChatGPT Models: Patterns, Challenges, and Implications](https://doi.org/10.61506/02.00203)：分析 ChatGPT 交互中的乌尔都语-英语语码转换，其中“code”指语言混用，偏离软件开发。
+- [Vehicle Domain-Specific Language: Unifying Modeling and Code Generation for Low-Code Automotive Development](https://doi.org/10.1145/3691620.3695282)：定义车辆领域专用语言，将汽车建模和代码生成统一到低代码开发流程中。
+- [Dynamic Scoring Code Token Tree: A Novel Decoding Strategy for Generating High-Performance Code](https://doi.org/10.1145/3691620.3695505)：提出动态评分代码 token 树解码策略，引导模型生成更高性能的代码。
+- [ChronoLLM: customizing language models for physics-based simulation code generation](https://doi.org/10.1007/s11044-026-10152-x)：用领域仿真知识定制 LLM，生成物理仿真代码。
+- [An Empirical Study on the Characteristics of Reusable Code Clones](https://doi.org/10.1145/3793251)：经验刻画可复用代码克隆，为克隆感知维护提供依据，而不是增加模型侧方法。
+- [A transformer-based stacked ensemble framework for software defect prediction](https://doi.org/10.1007/s10115-026-02696-3)：使用基于 Transformer 的 stacked ensemble，在项目缺陷特征上进行软件缺陷预测。
+- [Generating highly customizable python code for data processing with large language models](https://doi.org/10.1007/s00778-025-00900-4)：用 LLM 按用户需求和数据流程约束生成高度可定制的 Python 数据处理代码。
+- [Designing and Optimizing Alignment Datasets for IoT Security: A Synergistic Approach with Static Analysis Insights](https://doi.org/10.1145/3727582.3728687)：利用静态分析洞察设计 IoT 安全对齐数据集，以监督更安全的代码安全行为。
+- [Generating Code Tours Using Locally-Runnable LLMs](https://doi.org/10.1145/3696630.3731462)：用本地可运行 LLM 生成 code tour，使仓库解释无需云端推理即可产生。
+- [The Future of Software Engineering Beyond the Hype of AI](https://doi.org/10.1145/3743095.3743102)：关于 AI 时代软件工程未来的立场文章，并非具体模型、验证器或数据集贡献。
+- [Fus: Combining Semantic and Structural Graph Information for Binary Code Similarity Detection](https://doi.org/10.3390/electronics14193781)：结合语义特征和结构化图信息进行二进制代码相似性检测。
+- [Infrastructure as Code and Observability Automation for Payment Systems in Cloud-Native Environments](https://doi.org/10.71465/fair526)：描述云原生支付系统中的基础设施即代码和可观测性自动化，属于 DevOps 实践而非模型侧工作。
+- [Towards combining chain-of-thought and code static analysis for buffer overflow vulnerability detection](https://doi.org/10.1007/s11219-025-09733-4)：结合 chain-of-thought 提示和静态分析证据来检测缓冲区溢出漏洞。
+- [A cross-language and cross-binary type approach to binary-source software composition analysis using BM25](https://doi.org/10.1007/s10207-025-01148-3)：在跨语言和跨二进制类型信息上使用 BM25，进行二进制-源码软件组成分析。
+- [Using Pre-trained Transformers to Detect Malicious Source Code Within JavaScript Packages](https://doi.org/10.18420/inf2024_40)：应用预训练 Transformer 检测 JavaScript 包中的恶意源码。
+- [A Brief Analysis of the Progress and Trends in Software Defect Prediction Methods](https://doi.org/10.54254/2755-2721/99/20251769)：简要分析软件缺陷预测方法的进展和趋势，更适合作为综述或背景材料。
+- [Pay Attention! Human-Centric Improvements of LLM-based Interfaces for Assisting Software Test Case Development](https://doi.org/10.1145/3672539.3686341)：研究面向 LLM 辅助测试用例开发的人本界面改进，而不是新的模型侧方法。
+- [How Do Large Language Models Perform in Deep Learning Code Generation? An Empirical Study](https://doi.org/10.1145/3816024)：在 100 个深度学习代码生成任务 DeepEval 上评估 8 个 LLM，分析语法、语义和可执行性失败，如 API 幻觉和张量形状不匹配。
+- [Extending OCL for semantic representation of software systems](https://doi.org/10.1007/s11334-026-00639-3)：把 Object Constraint Language 扩展为 AgileUML OCL，使 UML/OCL 模型可表示软件应用语义，用于分析或再工程。
+- [Refactoring Object‐Oriented Software With ChatGPT: An Empirical Study](https://doi.org/10.1049/sfw2/3348017)：在 5 类场景、200 个 Java 重构用例上测试 ChatGPT，发现其编译通过率较高，但目标重构正确率明显低于 NetBeans。
+- [DIR-SMOTE: a density-influence resampling framework for imbalanced code smell detection](https://doi.org/10.1007/s10515-026-00624-x)：用 density-influence resampling 处理代码异味检测数据集中的类别不平衡。
+- [Cyber Security and Software Engineering](https://doi.org/10.3390/app16104625)：宽泛的安全与软件工程背景材料；保留为综述或编辑性上下文，而非具体代码模型贡献。
+- [Causal modeling in software defect prediction: bridging expert knowledge and novice insight](https://doi.org/10.1007/s10515-026-00625-w)：把因果建模用于软件缺陷预测，连接专家因果假设与面向新手的缺陷分析洞察。
+- [AI-powered DevOps: the Software Industry Is Re-wiring the Pipeline](https://doi.org/10.1145/3772008.3772011)：DevOps 工作流候选；讨论 AI 如何进入软件生产流水线，而不是模型训练贡献。
+- [Hybrid Modal Decoupled Fusion for Stable Multilingual Code Generation](https://doi.org/10.1145/3773365.3773431)：用 hybrid modal decoupled fusion 稳定多语言代码生成，面向不同编程语言模态的融合问题。
+- [Enhancing Security in Software Design Patterns and Antipatterns: A Framework for LLM-Based Detection](https://doi.org/10.3390/electronics14030586)：结合 LLM 与安全启发式规则检测设计模式和反模式中的风险，支持比传统静态分析更上下文感知的安全分析。
+- [No Code, No Cloud: On-Device Mockup-to-Code with Lightweight Vision-Language AI](https://doi.org/10.1145/3742413.3789144)：用轻量端侧视觉语言模型把 UI mockup 转成代码，避免视觉前端生成依赖云端推理。
+- [BugPrioritizeAI for multimodal test case prioritisation using bug reports, code changes, and test metadata](https://doi.org/10.1038/s41598-025-31851-z)：融合 bug report、代码变更与测试元数据进行测试优先级排序，把回归测试建模为多模态排序问题。
+- [A Knowledge Graph-Based Approach for Assisted PLC Code Generation](https://doi.org/10.1145/3804601.3804649)：用知识图谱引导 PLC 代码生成，使工业控制代码合成能够利用结构化领域关系。
+- [On-demand generation of high-quality software engineering datasets using large language models and ontologies](https://doi.org/10.1007/s10515-026-00617-w)：结合 LLM 与本体按需合成软件工程数据集，为特定任务提供训练或评测数据。
+- [Enhancing Parameter-Efficient Code Representations with Retrieval and Structural Priors](https://doi.org/10.3390/app16021106)：RS-Rep 结合结构-语义检索、图相对偏置和 span 判别式对比学习，用约 5% 可训练参数改进 PEFT 代码表示。
+- [Chain-of-Verification for Secure Code Generation Using Iterative Self-Review](https://doi.org/10.71465/ajbd3634)：循环生成、漏洞检查、修订并重新验证代码，用自我审查过程提升安全代码生成，相比单轮提示更可靠。
+- [ccPASTpqc: Post Quantum Cryptography Migration of Programs Using Code Language Models](https://doi.org/10.1145/3799830.3799836)：使用代码语言模型迁移程序到后量子密码方案，面向密码 API 现代化。
+- [Beyond prompting: the role of phrasing tasks in vulnerability prediction for Java](https://doi.org/10.1186/s42400-025-00476-0)：研究零样本、思维链和反向表述提示如何影响 GPT 与 Llama 对 Java 方法漏洞的预测。
+- [ValExtractor: Reliable Automated Local Variable Extraction in Code Refactoring](https://doi.org/10.1007/s11390-025-5133-5)：自动执行局部变量提取重构，关注特定重构算子的可靠性。
+- [Human-AI Collaboration in Data-Driven Software Engineering: A Seq2Seq Model with Attention for Automated Code Debugging](https://doi.org/10.56536/ijset.v3i1.62)：在 Stack Overflow 与 CodeSearchNet 噪声代码上训练带 attention 的 Seq2Seq LSTM，用于修正常见语法和语义错误。
+- [Software Reuse in the Generative AI Era: From Cargo Cult Towards Systematic Practices](https://doi.org/10.1145/3755881.3755981)：实践与方法论候选；把生成式 AI 时代的软件复用从临时复制转向系统化实践。
+- [Automatic test suite generation using bat algorithm](https://doi.org/10.1177/1088467x251395503)：用 bat algorithm、mutants 和数学约束生成测试套件，并与 GA、PSO、ABC 等搜索式基线比较测试套件规模。
+- [Enhancing GUI test case generation with multi-objective quasi-oppositional genetic sparrow](https://doi.org/10.1038/s41598-025-31221-9)：用多目标 quasi-oppositional genetic sparrow search 生成 GUI 测试用例，同时优化覆盖率、冗余和缺陷检测。
+- [Toward Inferring Structural Semantics from Binary Code Using Graph Neural Networks](https://doi.org/10.1145/3733822.3764673)：用图神经网络从二进制代码推断结构语义，服务逆向工程与二进制理解。
+- [Improving the Multi-Class Classification of Non-Functional Requirements in Spanish: A Study of Dataset Balancing and Performance](https://doi.org/10.1007/s10664-025-10736-9)：评估西班牙语非功能需求多分类中的数据集平衡，比较翻译版与平衡版 PROMISE 派生数据上的浅层分类器。
+- [Structure-Aware Multi-Stage Adaptation of Qwen-72B for Code Generation](https://doi.org/10.1145/3777730.3777795)：补充面向代码生成模型的结构感知多阶段适配方法。
+- [PIONEER: improving the robustness of student models when compressing pre-trained models of code](https://doi.org/10.1007/s10515-025-00560-2)：提升预训练代码模型压缩为学生模型时的鲁棒性。
+- [Decomposition then watermarking: Enhancing code traceability with dual-channel code watermarking](https://doi.org/10.1007/s10515-025-00561-1)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Towards Privacy-Preserving Code Generation: Understanding and Mitigating Memorization in Code Large Language Models](https://doi.org/10.1145/3696630.3731473)：FSE 论文研究代码 LLM 的记忆化问题，将隐私风险度量与缓解策略结合，用于更安全的代码生成。
+- [Towards Personalized and Contextualized Code Explanations](https://doi.org/10.1145/3708319.3733681)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Towards Personalized and Contextualized Code Explanations 为主要改进目标，作为 Model 条目的能力参考。
+- [LLM Compiler: Foundation Language Models for Compiler Optimization](https://doi.org/10.1145/3708493.3712691)：把 foundation language model 适配到编译器优化任务，用程序文本和优化上下文预测优化决策，补充不同于纯手写启发式规则的 compiler optimization 路线。
+- [Experimental Evaluation of Parameter-Efficient Fine-Tuning for Software Engineering Tasks](https://doi.org/10.1145/3722107)：面向软件工程智能体与代码模型的模型、训练或算法工作。核心思想：以 Experimental Evaluation of Parameter-Efficient Fine-Tuning for Software Engineering Tasks 为主要改进目标，作为 Model 条目的能力参考。
+- [LLM-based Co-Evolution of Configurable Software Systems](https://doi.org/10.1145/3744915.3748460)：利用 LLM 支持可配置软件系统的协同演化。
+- [Hallucination-Resilient LLM-Driven Sound and Tunable Static Analysis: A Case of Higher-Order Control-Flow Analysis](https://doi.org/10.1145/3759425.3763378)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [An Empirical Study on Language Models for Generating Log Statements in Test Code](https://doi.org/10.1145/3759915)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Enhancing Domain-Specific Code Completion via Collaborative Inference with Large and Small Language Models](https://doi.org/10.1145/3770748)：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Code-Enhanced Cross-Perspective Bug Question Retrieval](https://doi.org/10.1145/3789667)：通过代码增强改进跨视角缺陷问题检索。
+- [CoCoder_Repair: MISRA Code Rule Repair Based on Large Language Models](https://doi.org/10.1145/3789982.3790042)：一种基于大语言模型的 MISRA 代码规则修复方法；核心思路是把代码模型修复用于面向标准的嵌入式软件质量约束。
+- [Using large language models to generate and correct code written in low-resource and domain-specific programming languages](https://doi.org/10.20935/acadai8228)：面向软件开发能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Using large language models to generate and correct code written in low-resource and domain-specific programming languages”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AUTOMATIZAÇÃO INTELIGENTE DE DOCUMENTAÇÃO DE SOFTWARE COM LLMS](https://doi.org/10.31512/gesto.v14i1.2447)：构建基于本地 Ollama 与 LangChain 的软件技术文档管理 chatbot pipeline，用两阶段处理做意图分类并保留组织敏感数据控制。
+- [Harnessing Large Language Models for Automated Software Testing: A Leap Towards Scalable Test Case Generation](https://doi.org/10.3390/electronics14071463)：使用 LLM 进行自动化软件测试和可扩展测试用例生成。
+- [AI-Driven Augmented Software Engineering: Leveraging Cognitive Models for Enhanced Code Generation](https://doi.org/10.47852/bonviewjcce52026123)：把 cognitive models 与 AI 驱动的代码生成、重构和缺陷修复结合，并从代码质量、开发者生产力、可用性和适应性评估框架。
+- [LLMs as Code Generators for Model-Driven Development](https://doi.org/10.5220/0013580300003964)：ICSoft 论文评估 LLM 在模型驱动开发中的代码生成作用，关注从模型工件到实现代码的生成链路。
+- [Comparing LLM-based and MDE-based code generation for agile MDE]()：Comparing LLM-based and MDE-based code generation for agile MDE：面向软件开发智能体与代码智能的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Exploring the Effect of Genetic Improvement for Large Language Models-Generated Code](https://doi.org/10.1007/s42979-025-04281-x)：研究用遗传改进技术优化 LLM 生成程序，超越一次性代码生成。

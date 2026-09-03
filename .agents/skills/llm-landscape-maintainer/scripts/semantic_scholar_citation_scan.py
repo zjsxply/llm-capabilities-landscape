@@ -79,6 +79,27 @@ def write_json(path: Path, data: Any) -> None:
     tmp.replace(path)
 
 
+def now_utc() -> str:
+    return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+
+def edge_payload(identifier: str, edge: str, rows: list[Any], *, partial: bool = False) -> dict[str, Any]:
+    payload: dict[str, Any] = {
+        "_meta": {
+            "schema_version": 1,
+            "source": "semantic_scholar_citation_scan",
+            "identifier": identifier,
+            "edge": edge,
+            "fetched_at": now_utc(),
+        },
+        "offset": 0,
+        "data": rows,
+    }
+    if partial:
+        payload["_partial"] = True
+    return payload
+
+
 @contextlib.contextmanager
 def file_lock(path: Path, enabled: bool):
     if not enabled or fcntl is None:
@@ -120,9 +141,13 @@ def normalize_identifier(raw: str) -> str | None:
             return f"arXiv:{arxiv}"
     doi_url = DOI_URL_RE.search(value)
     if doi_url:
-        return f"DOI:{urllib.parse.unquote(doi_url.group(1).rstrip('.,;'))}"
+        return f"DOI:{urllib.parse.unquote(doi_url.group(1).rstrip('.,;')).lower()}"
     if value.lower().startswith("doi:"):
-        return f"DOI:{urllib.parse.unquote(value.split(':', 1)[1].rstrip('.,;'))}"
+        return f"DOI:{urllib.parse.unquote(value.split(':', 1)[1].rstrip('.,;')).lower()}"
+    if value.lower().startswith("s2:"):
+        paper_hash = value.split(":", 1)[1]
+        if re.fullmatch(r"[0-9a-f]{40}", paper_hash, flags=re.I):
+            return paper_hash.lower()
     s2 = S2_PAPER_RE.search(value)
     if s2:
         return s2.group(1)
@@ -169,7 +194,7 @@ class S2Client:
         refresh: bool,
         stale_on_error: bool,
     ) -> None:
-        self.max_delay = max(0.0, min(max_delay, 30.0))
+        self.max_delay = max(0.0, max_delay)
         self.min_delay = min(max(0.0, min_delay), self.max_delay)
         self.delay_decrease = max(0.0, delay_decrease)
         self.delay = min(self.max_delay, self.min_delay)
@@ -322,12 +347,12 @@ def fetch_edges(
             break
         data = page.get("data") or []
         collected.extend(data)
-        write_json(path, {"offset": 0, "data": collected, "_partial": True})
+        write_json(path, edge_payload(identifier, edge, collected, partial=True))
         next_offset = page.get("next")
         if next_offset is None or not data:
             break
         offset = int(next_offset)
-    result = {"offset": 0, "data": collected}
+    result = edge_payload(identifier, edge, collected)
     write_json(path, result)
     return result
 
@@ -367,12 +392,12 @@ def fetch_edges_direct(
             return page if isinstance(page, dict) else {"_error": {"message": "non-object response"}}
         data = page.get("data") or []
         collected.extend(data)
-        write_json(path, {"offset": 0, "data": collected, "_partial": True})
+        write_json(path, edge_payload(identifier, edge, collected, partial=True))
         next_offset = page.get("next")
         if next_offset is None or not data:
             break
         offset = int(next_offset)
-    result = {"offset": 0, "data": collected}
+    result = edge_payload(identifier, edge, collected)
     write_json(path, result)
     return result
 
@@ -481,7 +506,7 @@ def main() -> int:
     parser.add_argument("--max-references", type=int, default=200)
     parser.add_argument("--page-size", type=int, default=100)
     parser.add_argument("--min-delay", type=float, default=0.1)
-    parser.add_argument("--max-delay", type=float, default=30.0, help="Maximum inter-request delay; capped at 30 seconds.")
+    parser.add_argument("--max-delay", type=float, default=5.0, help="Maximum inter-request and retry delay in seconds.")
     parser.add_argument("--delay-decrease", type=float, default=1.0, help="Linear delay decrease after each successful network request.")
     parser.add_argument("--max-retries", type=int, default=10)
     parser.add_argument("--refresh", action="store_true", help="Ignore successful cache entries and refetch.")

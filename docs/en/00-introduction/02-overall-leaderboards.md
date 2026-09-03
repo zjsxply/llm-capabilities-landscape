@@ -3,6 +3,7 @@
 > Parent chapter: 0. Introduction
 
 
+- [Exploring and Mitigating Adversarial Manipulation of Voting-Based Leaderboards](https://arxiv.org/abs/2501.07493): Studies and mitigates adversarial manipulation of voting-based leaderboards.
 - [LMSYS Chatbot Arena](https://lmarena.ai/leaderboard/text) is closer to an end-user experience leaderboard for text scenarios.
 - [Vision Arena](https://lmarena.ai/leaderboard/vision) is closer to an end-user experience leaderboard for vision scenarios.
 - [LLM Stats](https://llm-stats.com/) is a continuously aggregated overall model leaderboard that combines public benchmarks, API speed, pricing, and other signals into one comparison entry point. It is useful for quickly viewing overall trends across mainstream tasks.

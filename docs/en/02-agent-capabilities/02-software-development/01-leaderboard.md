@@ -1,5 +1,19 @@
 # 2.2.1 Leaderboard
 
+- [CodeArena: A Collective Evaluation Platform for LLM Code Generation](https://arxiv.org/abs/2503.01295): A collective evaluation platform for LLM code generation; core idea: complement static code benchmarks with arena-style or community evaluation signals for coding systems.
+- [RepairBench Leaderboard](https://repairbench.github.io/): Tracks frontier-model program-repair results on RepairBench, giving a direct public ranking surface for automated repair.
+- [CRUXEval Leaderboard](https://crux-eval.github.io/leaderboard.html): An official leaderboard for code reasoning, understanding, and execution tasks that complement function-generation benchmarks.
+- [EvoEval Leaderboard](https://evo-eval.github.io/): An official evolving-code benchmark leaderboard for probing whether HumanEval-style rankings transfer to harder or transformed coding tasks.
+- [CodeEditorBench Leaderboard](https://codeeditorbench.github.io/): An official project leaderboard for code-editing tasks across debugging, translation, polishing, and requirement changes.
+- [BigCodeBench Leaderboard](https://bigcode-bench.github.io/): An official leaderboard for practical code generation with diverse function calls and complex instructions.
+- [Long Code Arena](https://huggingface.co/spaces/JetBrains-Research/long-code-arena): An official JetBrains Research HF Space that ranks models across long-context code tasks such as completion, localization, and repair.
+- [SciCode Leaderboard](https://scicode-bench.github.io/leaderboard/): An official scientific-coding leaderboard for tasks that combine domain knowledge, reasoning, and executable code synthesis.
+- [AppWorld Leaderboard](https://appworld.dev/leaderboard): The official AppWorld leaderboard for interactive coding agents operating over simulated apps and people.
+- [KernelBench Leaderboard](https://scalingintelligence.stanford.edu/KernelBenchLeaderboard/): An official ranking for correct and efficient GPU-kernel generation, emphasizing performance-aware systems code.
+- [ProjectEval Leaderboard](https://ryanloil.github.io/ProjectEval/): An official project-level code-generation leaderboard for evaluating usable agent-created projects.
+- [SWE-Bench Pro Leaderboard](https://scaleapi.github.io/SWE-bench_Pro-os/): A public leaderboard page for SWE-Bench Pro's harder long-horizon software-engineering tasks.
+- [Terminal-Bench 2.0 Leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.0): The official versioned leaderboard for terminal-environment tasks that include coding, file operations, and executable workflows.
+- [BigCodeArena](https://huggingface.co/spaces/bigcode/arena): An official BigCode arena for code-model pairwise comparisons with execution-assisted preference collection.
 - [SWE-bench Leaderboard](https://www.swebench.com/): The official entry point for SWE-bench, Lite, Verified, Multilingual, and related results; the core continuous leaderboard for repo-level issue resolving.
 - [SWE-bench Multimodal Leaderboard](https://www.swebench.com/multimodal.html): The official leaderboard for visual/frontend issue statements and JavaScript software libraries, useful for observing whether agents generalize from text-based Python fixes to multimodal software tasks.
 - [SWE-Lancer Diamond Leaderboard](https://swelancer.github.io/leaderboard/): OpenAI SWE-Lancer's public Diamond leaderboard, emphasizing realistic freelance-style software tasks and delivery evaluation closer to economic value.

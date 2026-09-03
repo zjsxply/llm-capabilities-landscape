@@ -1,167 +1,1412 @@
 # 2.9.3 Bench
 
 - [BBQ](https://arxiv.org/abs/2110.08193)：评测问答中的偏见，覆盖 ambiguous 与 disambiguated 两类上下文。核心思想：诊断模型是否依赖社会刻板印象，或能在上下文不足时拒绝/在上下文充分时正确使用证据；即使本页主要关注 agent，它仍是 model card 常用的基础安全信号。
+- [Digger: Detecting Copyright Content Mis-usage in Large Language Model Training](https://arxiv.org/abs/2401.00676)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [GOAT-Bench: Safety Insights to Large Multimodal Models through Meme-Based Social Abuse](https://arxiv.org/abs/2401.01523)：用 6K 以上 meme 评测 LMM 的安全意识，覆盖隐性仇恨言论、性别歧视、网络欺凌、冒犯性、讽刺和有害内容，测试 GPT-4o 等模型能否识别单靠文字或图像都不明显的社会性伤害。
+- [Escalation Risks from Language Models in Military and Diplomatic Decision-Making](https://arxiv.org/abs/2401.03408)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [TrustLLM: Trustworthiness in Large Language Models](https://arxiv.org/abs/2401.05561)（[benchmark site](https://trustllmbenchmark.github.io/TrustLLM-Website/)）：TrustLLM 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs](https://arxiv.org/abs/2401.06373)：评测，主要面向 Agent Safety。
+- [Authorship Obfuscation in Multilingual Machine-Generated Text Detection](https://arxiv.org/abs/2401.07867)：补充智能体安全能力的评测资源或协议。
+- [AttackEval: How to Evaluate the Effectiveness of Jailbreak Attacking on Large Language Models](https://arxiv.org/abs/2401.09002)：评测越狱提示本身的攻击有效性，而不只看目标模型是否拒答；它提供粗粒度和细粒度的 0 到 1 打分框架，并配套越狱提示 ground-truth 数据集，用于发现二值拒答指标容易漏掉的有害攻击。
 - [R-Judge](https://arxiv.org/abs/2401.10019)：从多轮交互记录中评测 LLM Agent 的安全风险意识。核心思想：判断轨迹是否包含高风险智能体行为，使安全评测覆盖交互历史，而不只看最终回答。
+- [PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety](https://arxiv.org/abs/2401.11880)：从 agent psychology 视角评测多智能体安全，把 dark personality traits、心理测评、群体危险行为、危险行动中的自反思以及缓解策略联系起来，用于分析 LLM-based multi-agent system 的风险。
+- [Spotting LLMs With Binoculars: Zero-Shot Detection of Machine-Generated Text](https://arxiv.org/abs/2401.12070)：评测，主要面向 Agent Safety。
+- [The Language Barrier: Dissecting Safety Challenges of LLMs in Multilingual Contexts](https://arxiv.org/abs/2401.13136)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [Under the Surface: Tracking the Artifactuality of LLM-Generated Data](https://arxiv.org/abs/2401.14698)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [LeftoverLocals: Listening to LLM Responses Through Leaked GPU Local Memory](https://arxiv.org/abs/2401.16603)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充智能体安全方向的基准覆盖。
+- [Weak-to-Strong Jailbreaking on Large Language Models](https://arxiv.org/abs/2401.17256)：研究弱到强越狱，补充模型规模迁移攻击的安全评测案例。
+- [Detecting AI-Generated Video via Frame Consistency](https://arxiv.org/abs/2402.02085)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [Jailbreaking Attack against Multimodal Large Language Model](https://arxiv.org/abs/2402.02309)：评测，主要面向 Agent Safety。
+- [Reconstruct Your Previous Conversations! Comprehensively Investigating Privacy Leakage Risks in Conversations with GPT Models](https://arxiv.org/abs/2402.02987)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充智能体安全方向的基准覆盖。
+- [HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal](https://arxiv.org/abs/2402.04249)（[项目页](https://www.harmbench.org/)）：HarmBench 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models](https://arxiv.org/abs/2402.05044)：提供层次化、综合性大语言模型安全基准。
+- [Assessing the Brittleness of Safety Alignment via Pruning and Low-Rank Modifications](https://arxiv.org/abs/2402.05162)：评测安全、对齐、水印、遗忘或攻防能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs](https://arxiv.org/abs/2402.05668)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [Can LLMs Recognize Toxicity? A Structured Investigation Framework and Toxicity Metric](https://arxiv.org/abs/2402.06900)：补充智能体安全方向的基准、数据集、挑战、指标或评测协议。
+- [Do Membership Inference Attacks Work on Large Language Models?](https://arxiv.org/abs/2402.07841)：评测，主要面向 Agent Safety。
+- [Instruction Backdoor Attacks Against Customized LLMs](https://arxiv.org/abs/2402.09179)：评测，主要面向 Agent Safety。
+- [Copyright Traps for Large Language Models](https://arxiv.org/abs/2402.09363)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [PANORAMIA: Privacy Auditing of Machine Learning Models without Retraining](https://arxiv.org/abs/2402.09477)：在无需重新训练的条件下审计机器学习模型隐私泄露。
+- [DE-COP: Detecting Copyrighted Content in Language Models Training Data](https://arxiv.org/abs/2402.09910)：通过比较模型续写与受版权保护片段，检测语言模型是否见过特定版权内容，使训练数据来源可审计，而不需要直接访问训练集。
+- [Enhancing Role-playing Systems through Aggressive Queries: Evaluation and Improvement](https://arxiv.org/abs/2402.10618)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
 - [ToolSword](https://arxiv.org/abs/2402.10753)：评测 tool learning 中输入、执行与输出阶段的安全问题。核心思想：在工具访问把文本错误转成外部影响之前，测试工具型模型能否识别恶意或不安全工具语境。
+- [M4GT-Bench: Evaluation Benchmark for Black-Box Machine-Generated Text Detection](https://arxiv.org/abs/2402.11175)：提供 multilingual、multi-domain、multi-generator 的黑盒机器生成文本检测语料，包含二分类检测、生成器归因以及定位人机混写边界三类任务，并给出检测 baseline 与人类表现评测。
+- [Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents](https://arxiv.org/abs/2402.11208)：评测 LLM agent 的后门威胁，把触发器放入 agent 面向的指令或环境中，观察其在工具任务中是否执行攻击者指定的行为。
+- [LEMMA: Towards LVLM-Enhanced Multimodal Misinformation Detection with External Knowledge Augmentation](https://arxiv.org/abs/2402.11943)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Emulated Disalignment: Safety Alignment for Large Language Models May Backfire!](https://arxiv.org/abs/2402.12343)：测试安全对齐是否会被“模拟不对齐人格”等指令反转，暴露拒答行为在角色扮演或框架诱导下失效的情况。
+- [A Critical Evaluation of AI Feedback for Aligning Large Language Models](https://arxiv.org/abs/2402.12366)：审计 AI feedback 对齐，把模型生成的偏好或批评信号与人类判断对照，指出自动反馈何时会强化浅层或不可靠的安全偏好。
+- [Potential and Challenges of Model Editing for Social Debiasing](https://arxiv.org/abs/2402.13462)：补充智能体安全能力的评测资源或协议。
+- [Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment](https://arxiv.org/abs/2402.14016)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [Eagle: Ethical Dataset Given from Real Interactions](https://arxiv.org/abs/2402.14258)：从真实用户交互中构建伦理数据集，用具体的价值冲突和政策合规案例评测模型，而不是只依赖合成道德困境。
+- [How (un)ethical are instruction-centric responses of LLMs? Unveiling the vulnerabilities of safety guardrails to harmful queries](https://arxiv.org/abs/2402.15302)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Fast Adversarial Attacks on Language Models In One GPU Minute](https://arxiv.org/abs/2402.15570)：评测，主要面向 Agent Safety。
+- [Generalization or Memorization: Data Contamination and Trustworthy Evaluation for Large Language Models](https://arxiv.org/abs/2402.15938)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [Likelihood-based Mitigation of Evaluation Bias in Large Language Models](https://arxiv.org/abs/2402.15987)：诊断 LLM-as-evaluator 中的 likelihood bias，在 data-to-text 和语法纠错评测中观察模型是否高估更高似然的句子，并测试用高偏置样例作 few-shot 能否提升与人类评分的相关性。
+- [CodeChameleon: Personalized Encryption Framework for Jailbreaking Large Language Models](https://arxiv.org/abs/2402.16717)：用面向目标模型的加密或编码表示隐藏有害请求，评测模型是否会解码并执行被护栏遮蔽的危险指令。
+- [Towards Tracing Trustworthiness Dynamics: Revisiting Pre-training Period of Large Language Models](https://arxiv.org/abs/2402.19465)：追踪预训练 checkpoint 中的可信性变化，把安全、偏见、毒性、鲁棒性和隐私行为与训练阶段动态联系起来，而不只评最终模型。
+- [Dialect prejudice predicts AI decisions about people's character, employability, and criminality](https://arxiv.org/abs/2403.00742)：评测方言偏见，展示非裔美国英语线索即使没有显式身份标签，也会改变模型对人物品格、就业适配和犯罪倾向的判断。
+- [NewsBench: Systematic Evaluation of LLMs for Writing Proficiency and Safety Adherence in Chinese Journalistic Editorial Applications](https://arxiv.org/abs/2403.00862)：提供面向Agent Safety能力的基准、数据集或评测协议。
+- [Gradient Cuff: Detecting Jailbreak Attacks on Large Language Models by Exploring Refusal Loss Landscapes](https://arxiv.org/abs/2403.00867)：通过探索拒答损失景观检测越狱攻击，用梯度相关信号在生成危险回答前区分对抗提示和正常请求。
+- [Inexact Unlearning Needs More Careful Evaluations to Avoid a False Sense of Privacy](https://arxiv.org/abs/2403.01218)：评测，主要面向 Agent Safety。
 - [InjecAgent](https://arxiv.org/abs/2403.02691)：评测工具集成 LLM Agent 的间接提示注入攻击。核心思想：把攻击者指令放入外部观察或工具数据中，衡量 agent 是否会在良性用户目标下执行这些注入指令。
-- [AgentDojo](https://arxiv.org/abs/2406.13352)（[开源代码](https://github.com/ethz-spylab/agentdojo)；[项目页](https://agentdojo.spylab.ai/)）：评测工具使用型 agent 中的提示注入与效用权衡。核心思想：把良性用户任务和来自第三方工具或数据的恶意指令放进同一环境，要求防御既保留任务效用又阻断间接攻击。
+- [Angry Men, Sad Women: Large Language Models Reflect Gendered Stereotypes in Emotion Attribution](https://arxiv.org/abs/2403.03121)：通过测量情绪归因偏差，评估大语言模型中的性别刻板印象。
+- [The WMDP Benchmark: Measuring and Reducing Malicious Use With Unlearning](https://arxiv.org/abs/2403.03218)：The WMDP Benchmark 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [A Safe Harbor for AI Evaluation and Red Teaming](https://arxiv.org/abs/2403.04893)：分类存疑：这不是基准，而是政策建议；作者主张 AI 开发者为独立评测和 red teaming 提供法律与技术 safe harbor，避免研究者因安全测试遭遇封号或法律报复。
+- [AMUSE: Adaptive Multi-Segment Encoding for Dataset Watermarking](https://arxiv.org/abs/2403.05628)：补充智能体安全方向的基准、数据集、指标或评测协议。
+- [Stealing Part of a Production Language Model](https://arxiv.org/abs/2403.06634)：研究生产语言模型的部分窃取，补充模型抽取安全评测。
+- [Exploring Safety Generalization Challenges of Large Language Models via Code](https://arxiv.org/abs/2403.07865)：提出 CodeAttack，将有害自然语言请求改写成代码补全输入，并在 GPT-4、Claude-2 和 Llama-2 系列上测试；结果显示越过护栏的比例超过 80%，暴露安全对齐从自然语言泛化到代码域时的弱点。
+- [VIGFace: Virtual Identity Generation for Privacy-Free Face Recognition Dataset](https://arxiv.org/abs/2403.08277)：从特征空间中的正交虚拟身份原型生成合成人脸，目标是在保持人脸识别 benchmark 表现的同时降低隐私和肖像权风险。
+- [Evaluating Robustness of Generative Search Engine on Adversarial Factual Questions](https://arxiv.org/abs/2403.12077)：补充智能体安全能力的评测资源或协议。
+- [OpenEval: Benchmarking Chinese LLMs across Capability, Alignment and Safety](https://arxiv.org/abs/2403.12316)：补充智能体安全能力的评测资源或协议。
+- [An Entropy-based Text Watermarking Detection Method](https://arxiv.org/abs/2403.13485)：评测，主要面向 Agent Safety。
+- [Investigating Bias in LLM-Based Bias Detection: Disparities between LLMs and Human Perception](https://arxiv.org/abs/2403.14896)：比较 LLM 偏见检测判断与人类感知，暴露自动偏见监测器在哪些语言现象上会和人的“有偏”判断不一致。
+- [Risk and Response in Large Language Models: Evaluating Key Threat Categories](https://arxiv.org/abs/2403.14988)：使用 Anthropic red-team 数据集比较 reward model 与 LLM response 对 information hazards、malicious uses、discrimination 或 hateful content 的风险判断，并特别分析 information-hazard 场景中的越狱脆弱性。
+- [As Good as a Coin Toss: Human Detection of AI-Generated Content](https://arxiv.org/abs/2403.16760)：评测人类识别 AI 生成内容的能力，并把接近随机猜测的结果作为 provenance、披露和误用风险的信号。
+- [Assessment of Multimodal Large Language Models in Alignment with Human Values](https://arxiv.org/abs/2403.17830)：通过多模态安全与价值判断案例评测 MLLM 的人类价值对齐，检查视觉上下文如何改变有害性、公平性或伦理回答。
+- [IndiBias: A Benchmark Dataset to Measure Social Biases in Language Models for Indian Context](https://arxiv.org/abs/2403.20147)：提出印度语境社会偏见基准，覆盖 caste、religion、region、gender 等本地重要刻板印象，补足西方中心 bias suite 的空白。
+- [JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models](https://arxiv.org/abs/2404.01318)（[leaderboard](https://jailbreakbench.github.io/)）：用策划的有害行为数据集、参考攻击产物、拒答/违规评测和公开 leaderboard 标准化越狱鲁棒性测试，使攻击与防御方法能在共享协议下比较。
+- [Which Model Generated This Image? A Model-Agnostic Approach for Origin Attribution](https://arxiv.org/abs/2404.02697)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [JailBreakV: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks](https://arxiv.org/abs/2404.03027)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [Online Safety Analysis for LLMs: A Benchmark, an Assessment, and a Path Forward](https://arxiv.org/abs/2404.08517)：建立生成过程中检测不安全输出的 online safety analysis benchmark，而不是只在生成后评测；它在先导实验验证早期检测可行后，跨模型、任务、数据集和指标比较多种在线安全分析方法。
+- [ALERT: A Comprehensive Benchmark for Assessing Large Language Models' Safety through Red Teaming](https://arxiv.org/abs/2404.08676)：评测安全、对齐、水印、遗忘或攻防能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](https://arxiv.org/abs/2404.11577)：把 machine unlearning 评测建模为 unlearning algorithm 与 membership-inference adversary 之间的密码学博弈，给出可证明的样本移除效果指标。
+- [AdvisorQA: Towards Helpful and Harmless Advice-seeking Question Answering with Collective Intelligence](https://arxiv.org/abs/2404.11826)：作为智能体安全的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Introducing v0.5 of the AI Safety Benchmark from MLCommons](https://arxiv.org/abs/2404.12241)：记录 MLCommons AI Safety Benchmark v0.5 的试验版协议，面向 chat-tuned language-model system 的成人英语助手用例，定义用户 persona、13 类 hazard、7 类已测 hazard 和 43,090 个提示测试项，并明确提示 v0.5 不应作为正式安全结论。
+- [Typos that Broke the RAG's Back: Genetic Attack on RAG Pipeline by Simulating Documents in the Wild via Low-level Perturbations](https://arxiv.org/abs/2404.13948)：提出 GARAG，用遗传式低层文本扰动修改检索文档，并在 QA 数据集上同时评测 retriever、generator 和端到端 RAG 对真实噪声文档的鲁棒性。
+- [Competition Report: Finding Universal Jailbreak Backdoors in Aligned LLMs](https://arxiv.org/abs/2404.14461)：总结 IEEE SaTML 2024 通用越狱后门竞赛，参赛者寻找能充当“sudo 命令”的触发字符串，使经过安全训练投毒后的对齐模型在有害提示上解除拒答。
+- [Talking Nonsense: Probing Large Language Models' Understanding of Adversarial Gibberish Inputs](https://arxiv.org/abs/2404.17120)：补充智能体安全能力的评测资源或协议。
+- [From Languages to Geographies: Towards Evaluating Cultural Bias in Hate Speech Datasets](https://arxiv.org/abs/2404.17874)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [UnsafeBench: Benchmarking Image Safety Classifiers on Real-World and AI-Generated Images](https://arxiv.org/abs/2405.03486)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [The Dark Side of Dataset Scaling: Evaluating Racial Classification in Multimodal Models](https://arxiv.org/abs/2405.04623)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [RAID: A Shared Benchmark for Robust Evaluation of Machine-Generated Text Detectors](https://arxiv.org/abs/2405.07940)：用 600 万以上生成文本压力测试机器生成文本检测器，覆盖 11 个生成模型、8 个领域、11 种对抗攻击和 4 种解码策略，并比较开放与闭源检测器在域外和对抗分布下的鲁棒性。
+- [PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models](https://arxiv.org/abs/2405.09373)：提供 17 种语言、425K 个自然网页提示，用于评测 toxic degeneration；结果显示低资源语言和更大模型更容易产生毒性，instruction tuning 只能部分缓解。
+- [Benchmark Early and Red Team Often: A Framework for Assessing and Managing Dual-Use Hazards of AI Foundation Models](https://arxiv.org/abs/2405.10986)：分类存疑：这主要是双重用途风险管理框架，建议尽早设计 benchmark 并反复 red-team，而不是发布单一固定数据集。
+- [An Assessment of Model-On-Model Deception](https://arxiv.org/abs/2405.12999)：构造 10K 以上 misleading MMLU explanations，让 Llama-2 7B、13B、70B 和 GPT-3.5 为错误答案辩护，再测其他模型读取这些解释后被欺骗的程度。
+- [How to Trace Latent Generative Model Generated Images without Artificial Watermark?](https://arxiv.org/abs/2405.13360)：评测无人工水印条件下追踪潜在生成模型图像的能力。
+- [S-Eval: Towards Automated and Comprehensive Safety Evaluation for Large Language Models](https://arxiv.org/abs/2405.14191)：通过基准、数据集或评测协议评估智能体安全能力。
+- [Redundant Semantic Environment Filling via Misleading-Learning for Fair Deepfake Detection](https://arxiv.org/abs/2405.15173)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Evaluating and Safeguarding the Adversarial Robustness of Retrieval-Based In-Context Learning](https://arxiv.org/abs/2405.15984)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Automatic Jailbreaking of the Text-to-Image Generative AI Systems](https://arxiv.org/abs/2405.16567)：研究针对文生图生成系统的自动越狱攻击。
+- [Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models](https://arxiv.org/abs/2405.17374)：评测 fine-tuning 选择如何改变 LLM 风险画像，对照微调后的安全行为，避免默认认为良性适配会保留原有护栏。
+- [Stress-Testing Capability Elicitation With Password-Locked Models](https://arxiv.org/abs/2405.19550)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Black-Box Detection of Language Model Watermarks](https://arxiv.org/abs/2405.20777)：研究只凭生成文本能否检测语言模型水印，把水印存在性转化为黑盒 provenance 与真实性测试。
+- [OR-Bench: An Over-Refusal Benchmark for Large Language Models](https://arxiv.org/abs/2405.20947)：OR-Bench 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [AI-Face: A Million-Scale Demographically Annotated AI-Generated Face Dataset and Fairness Benchmark](https://arxiv.org/abs/2406.00783)：发布带人口统计标注的百万级 AI 生成人脸数据集，用于审计合成人脸生成和下游人脸分析模型的公平性。
+- [JBBQ: Japanese Bias Benchmark for Analyzing Social Biases in Large Language Models](https://arxiv.org/abs/2406.02050)：把 BBQ 式偏见问答适配到日语社会类别和语言使用，测试 LLM 在 ambiguous 与 disambiguated 日语语境中是否复现刻板印象。
+- [Chaos with Keywords: Exposing Large Language Models Sycophancy to Misleading Keywords and Evaluating Defense Strategies](https://arxiv.org/abs/2406.03827)：揭示大语言模型对误导性关键词的 sycophancy，并评估防御策略。
+- [BEADs: Bias Evaluation Across Domains](https://arxiv.org/abs/2406.04220)：发布带 gold annotation 的跨领域 bias 数据集，支持文本分类、token 分类、bias quantification 和 benign generation 等任务，用于暴露 LLM 的人口统计偏差和不一致护栏行为。
+- [MoralBench: Moral Evaluation of LLMs](https://arxiv.org/abs/2406.04428)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [CRiskEval: A Chinese Multi-Level Risk Evaluation Benchmark Dataset for Large Language Models](https://arxiv.org/abs/2406.04752)：构建带多级有害性标签的中文风险评测基准，使 LLM 安全性可在细粒度中文风险类别上打分。
+- [MultiTrust: A Comprehensive Benchmark Towards Trustworthy Multimodal Large Language Models](https://arxiv.org/abs/2406.07057)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [MBBQ: A Dataset for Cross-Lingual Comparison of Stereotypes in Generative LLMs](https://arxiv.org/abs/2406.07243)：把 BBQ 风格的刻板印象测试扩展到多语言设置，用于直接比较生成式 LLM 在不同语言中处理模糊社会偏见问题的差异。
+- [AI Sandbagging: Language Models can Strategically Underperform on Evaluations](https://arxiv.org/abs/2406.07358)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [MLLMGuard: A Multi-dimensional Safety Evaluation Suite for Multimodal Large Language Models](https://arxiv.org/abs/2406.07594)：评测 MLLM 在中英双语图文场景中的安全性，使用人工整理的 red-team 数据和轻量 evaluator，覆盖 privacy、bias、toxicity、truthfulness 与 legality 五个维度。
+- [JailbreakEval: An Integrated Toolkit for Evaluating Jailbreak Attempts Against Large Language Models](https://arxiv.org/abs/2406.09321)：提供越狱评测工具包，把攻击提示生成、目标模型查询和安全评判器选择拆开，使越狱成功率结果更可复现。
+- [Bag of Tricks: Benchmarking of Jailbreak Attacks on LLMs](https://arxiv.org/abs/2406.09324)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models](https://arxiv.org/abs/2406.10890)：评测 LLM 能否遗忘真实世界知识，同时保留邻近事实和通用能力，使 unlearning 评测不再只依赖合成记忆任务。
+- [SPA-VL: A Comprehensive Safety Preference Alignment Dataset for Vision Language Models](https://arxiv.org/abs/2406.12030)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [Who's asking? User personas and the mechanics of latent misalignment](https://arxiv.org/abs/2406.12094)：通过改变用户 persona 和请求框架测试 latent misalignment，展示同一任务归因于不同用户时模型回答可能系统性变化。
+- [The Comparative Trap: Pairwise Comparisons Amplifies Biased Preferences of LLM Evaluators](https://arxiv.org/abs/2406.12319)：补充智能体安全能力的评测资源或协议。
+- [MultiSocial: Multilingual Benchmark of Machine-Generated Text Detection of Social-Media Texts](https://arxiv.org/abs/2406.12549)：提供 22 种语言、5 个社交平台和 7 个多语言生成器构成的 472,097 条文本，用于在短、非正式帖子上测试机器生成文本检测器。
+- [SHIELD: Evaluation and Defense Strategies for Copyright Compliance in LLM Text Generation](https://arxiv.org/abs/2406.12975)：评估并防御大语言模型文本生成中的版权合规风险。
+- [Large-Scale Dataset Pruning in Adversarial Training through Data Importance Extrapolation](https://arxiv.org/abs/2406.13283)：分类存疑：这主要是 adversarial training 的效率方法，通过外推数据重要性分数剪枝训练集并保持鲁棒性，而不是提出安全基准。
+- [AgentDojo](https://arxiv.org/abs/2406.13352)（[开源代码](https://github.com/ethz-spylab/agentdojo)；[项目页](https://agentdojo.spylab.ai/)；[结果](https://agentdojo.spylab.ai/results)）：评测工具使用型 agent 中的提示注入与效用权衡。核心思想：把良性用户任务和来自第三方工具或数据的恶意指令放进同一环境，要求防御既保留任务效用又阻断间接攻击。
+- [Watching the Watchers: a Comparative Fairness Audit of Cloud-based Content Moderation Services](https://arxiv.org/abs/2406.14154)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [VLBiasBench: A Comprehensive Benchmark for Evaluating Bias in Large Vision-Language Model](https://arxiv.org/abs/2406.14194)：补充智能体安全能力的评测资源或协议。
+- [Towards Truthful Multilingual Large Language Models: Benchmarking and Alignment Strategies](https://arxiv.org/abs/2406.14434)：在多语言提示上评测 truthfulness，并研究减少非英语场景中错误或无依据回答的对齐策略。
+- [SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal Behaviors](https://arxiv.org/abs/2406.14598)（[项目页](https://sorry-bench.github.io/)）：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [MU-Bench: A Multitask Multimodal Benchmark for Machine Unlearning](https://arxiv.org/abs/2406.14796)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Safe Inputs but Unsafe Output: Benchmarking Cross-modality Safety Alignment of Large Vision-Language Models](https://arxiv.org/abs/2406.15279)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充智能体安全方向的基准覆盖。
+- [Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding](https://arxiv.org/abs/2406.15481)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [PUDD: Towards Robust Multi-modal Prototype-based Deepfake Detection](https://arxiv.org/abs/2406.15921)：补充智能体安全能力的评测资源或协议。
+- [Blind Baselines Beat Membership Inference Attacks for Foundation Models](https://arxiv.org/abs/2406.16201)：用 blind baseline 重新检验 foundation model 的 membership inference attack，提醒许多看似有效的隐私攻击弱于只利用先验的简单预测器。
+- [Evaluating Copyright Takedown Methods for Language Models](https://arxiv.org/abs/2406.18664)：定义 CoTaEval 来评估语言模型版权 takedown 方法，指标包括受保护内容抑制、保留不可版权化事实知识、通用能力和效率，并比较 system prompt、解码期过滤与 unlearning 等干预。
+- [Glue pizza and eat rocks - Exploiting Vulnerabilities in Retrieval-Augmented Generative Models](https://arxiv.org/abs/2406.19417)：在攻击者不知道用户查询、模型参数和已有语料的黑盒设置中测试 RAG 投毒，通过向开放检索库上传构造内容，衡量生成答案是否被检索结果引向攻击者指定说法。
+- [MMEvalPro: Calibrating Multimodal Benchmarks Towards Trustworthy and Efficient Evaluation](https://arxiv.org/abs/2407.00468)：通过把原始多模态选择题扩展为 perception、knowledge anchor 和 reasoning 三联题来校准评测，形成 2,138 组 question triples，并用更严格指标减少语言捷径造成的 Type-I error。
+- [GenderBias-VL: Benchmarking Gender Bias in Vision Language Models via Counterfactual Probing](https://arxiv.org/abs/2407.00600)：补充智能体安全能力的评测资源或协议。
+- [Can Small Language Models Learn, Unlearn, and Retain Noise Patterns?](https://arxiv.org/abs/2407.00996)：评测，主要面向 Agent Safety。
+- [Explaining Length Bias in LLM-Based Preference Evaluations](https://arxiv.org/abs/2407.01085)：诊断 LLM judge 在成对评测中偏好更长回答的原因，把 verbosity bias 与偏好模型可靠性和对齐评测失真联系起来。
+- [Language Model Alignment in Multilingual Trolley Problems](https://arxiv.org/abs/2407.02273)：用多语言 trolley problem 变体测试道德偏好与对齐行为在翻译和文化框架下是否保持稳定。
+- [JailbreakHunter: A Visual Analytics Approach for Jailbreak Prompts Discovery From Large-Scale Human-LLM Conversational Datasets](https://arxiv.org/abs/2407.03045)：提供从大规模 human-LLM 对话日志中发现私有越狱提示的可视分析流程，重点定位公开 prompt 列表难以覆盖的复杂多轮攻击模式。
+- [Social Bias Evaluation for Large Language Models Requires Prompt Variations](https://arxiv.org/abs/2407.03129)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [Beyond Perplexity: Multi-dimensional Safety Evaluation of LLM Compression](https://arxiv.org/abs/2407.04965)：在 perplexity 之外评测压缩后 LLM，衡量 degeneration harm、representational bias、dialect bias 和下游任务性能，并比较非结构化剪枝、半结构化剪枝和量化等压缩方法。
+- [MUSE: Machine Unlearning Six-Way Evaluation for Language Models](https://arxiv.org/abs/2407.06460)：定义语言模型机器遗忘的六维评测套件。
+- [CopyBench: Measuring Literal and Non-Literal Reproduction of Copyright-Protected Text in Language Model Generation](https://arxiv.org/abs/2407.07087)：测量语言模型输出中对受版权保护文本的字面和非字面复现。
+- [Multilingual Blending: LLM Safety Alignment Evaluation with Language Mixture](https://arxiv.org/abs/2407.07342)：通过基准、数据集或评测协议评估智能体安全能力。
+- [Malicious Path Manipulations via Exploitation of Representation Vulnerabilities of Vision-Language Navigation Systems](https://arxiv.org/abs/2407.07392)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充智能体安全方向的基准覆盖。
 - [AgentPoison](https://arxiv.org/abs/2407.12784)：评测针对 LLM Agent 的记忆与知识库投毒攻击。核心思想：向长期记忆或 RAG 存储注入对抗内容，测试后续 agent 决策是否会检索并执行被污染状态。
+- [Cross-Task Attack: A Self-Supervision Generative Framework Based on Attention Shift](https://arxiv.org/abs/2407.13700)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [BIGbench: A Unified Benchmark for Evaluating Multi-dimensional Social Biases in Text-to-Image Models](https://arxiv.org/abs/2407.15240)：作为智能体安全的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [AIR-Bench 2024: A Safety Benchmark Based on Risk Categories from Regulations and Policies](https://arxiv.org/abs/2407.17436)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [Can Editing LLMs Inject Harm?](https://arxiv.org/abs/2407.20224)：测试模型编辑在修改目标事实时是否会引入有害行为，把编辑操作视为安全攻击面，而不只是知识修正工具。
 - [BadRobot](https://arxiv.org/abs/2407.20242)：评什么：物理世界中 embodied LLM agent 的越狱风险。核心思想：测试恶意自然语言交互是否能绕过安全约束并诱导不安全的具身动作。
+- [LocalValueBench: A Collaboratively Built and Extensible Benchmark for Evaluating Localized Value Alignment and Ethical Safety in Large Language Models](https://arxiv.org/abs/2408.01460)：作为智能体安全的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Reasons to Doubt the Impact of AI Risk Evaluations](https://arxiv.org/abs/2408.02565)：分类存疑：这是一篇关于 AI risk evaluation 影响力的批判，指出如果没有激励、治理接口和执行机制，评测结果未必会改变部署决策。
+- [WalledEval: A Comprehensive Safety Evaluation Toolkit for Large Language Models](https://arxiv.org/abs/2408.03837)：整合 35 个以上 LLM 安全 benchmark，加入 future tense、paraphrasing 等文本变异器，并发布 WalledGuard、SGXSTest 与 HIXSTest 以评测 exaggerated safety。
+- [Nob-MIAs: Non-biased Membership Inference Attacks Assessment on Large Language Models with Ex-Post Dataset Construction](https://arxiv.org/abs/2408.05968)：在 ex-post 假设下重建成员推断评测集，为 Gutenberg 数据构造 non-biased 与 non-classifiable 的 member/non-member 划分，并说明 time-shift 和 n-gram overlap 偏差会夸大 OpenLLaMA 与 Pythia 上的 MIA 效果。
 - [MMJ-Bench](https://arxiv.org/abs/2408.08464)：在统一流程下评测视觉语言模型的越狱攻击与防御。核心思想：用共享数据集和指标比较多模态攻防方法，避免各自使用不可比的一次性安全测试。
+- [LLMs Are Biased Towards Output Formats! Systematically Evaluating and Mitigating Output Format Bias of LLMs](https://arxiv.org/abs/2408.08656)：补充智能体安全能力的评测资源或协议。
+- [PsychoLex: Unveiling the Psychological Mind of Large Language Models](https://arxiv.org/abs/2408.08848)：用词典式心理探测设置评测 LLM 的人格与心理状态推断，把拟人化或操纵性助手行为中的心理描绘风险转成可测安全信号。
+- [Characterizing and Evaluating the Reliability of LLMs against Jailbreak Attacks](https://arxiv.org/abs/2408.09326)：在 1,525 个有害问题、61 类危害和 13 个 LLM 上运行三大类共 10 种越狱策略，并把 ASR、毒性、流畅度、长度和语法错误聚合成越狱可靠性评分。
+- [Towards Robust Knowledge Unlearning: An Adversarial Framework for Assessing and Improving Unlearning Robustness in Large Language Models](https://arxiv.org/abs/2408.10682)：评测安全、对齐、水印、遗忘或攻防能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [V-RoAst: Visual Road Assessment Can VLM be a Road Safety Assessor using the iRAP Standard?](https://arxiv.org/abs/2408.10872)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks on Large Language Models](https://arxiv.org/abs/2408.12798)：提出或分析面向智能体安全、护栏与对抗风险的基准、数据集或评测协议。
+- [Systematic Evaluation of LLM-as-a-Judge in LLM Alignment Tasks: Explainable Metrics and Diverse Prompt Templates](https://arxiv.org/abs/2408.13006)：定义可解释的 LLM judge 可靠性指标，把 judge 内部不一致与人类偏好对齐质量分开，并在 TL;DR Summarization 与 HH-RLHF-Helpfulness 上测试 prompt template 对评测结论的影响。
+- [Emerging Vulnerabilities in Frontier Models: Multi-Turn Jailbreak Attacks](https://arxiv.org/abs/2409.00137)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充智能体安全方向的基准覆盖。
 - [PrivacyLens](https://arxiv.org/abs/2409.00138)：评测 LLM Agent 行动中的隐私规范意识。核心思想：把情境化隐私规范转成轨迹级测试，判断 agent 的动作是否泄露或误用敏感信息。
-- [Agent Security Bench / ASB](https://arxiv.org/abs/2410.02644)（[开源代码](https://github.com/agiresearch/ASB)）：评测 LLM-based Agent 中的安全攻击与防御。核心思想：在统一的 agent-specific security protocol 中覆盖直接与间接提示注入、记忆投毒、后门和工具阶段漏洞。
+- [Automatic Pseudo-Harmful Prompt Generation for Evaluating False Refusals in Large Language Models](https://arxiv.org/abs/2409.00598)：构建 PHTest，用自动生成的 pseudo-harmful 但实际无害提示评测 false refusal，并单独标注争议样例；论文在 20 个 LLM 上分析过度拒答与越狱鲁棒性之间的权衡。
+- [Polyrating: A Cost-Effective and Bias-Aware Rating System for LLM Evaluation](https://arxiv.org/abs/2409.00696)：提出基于 MAP 估计的 LLM rating system，在估计模型评分的同时检测 preference bias，并通过复用已有 benchmark 分数降低新模型和新任务的人类评测成本。
+- [Conversational complexity for assessing risk in large language models](https://arxiv.org/abs/2409.01247)：提出 Conversational Length 与近似 Conversational Complexity，用于量化诱导有害内容需要多少多轮对话努力，并在大规模 red-teaming 数据上分析通向危害的交互复杂度。
+- [Content moderation by LLM: from accuracy to legitimacy](https://arxiv.org/abs/2409.03219)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Games for AI Control: Models of Safety Evaluations of AI Deployment Protocols](https://arxiv.org/abs/2409.07985)：把 AI control red teaming 形式化为 partially observable stochastic game，并用该模型评估与合成不可信 coding assistant 的部署协议，包含 trusted monitor 和有限人工监督。
+- [Unleashing Worms and Extracting Data: Escalating the Outcome of Attacks against RAG-based Inference in Scale and Severity Using Jailbreaking](https://arxiv.org/abs/2409.08045)：展示越狱如何把 RAG membership/entity extraction 升级为文档抽取，在问答 chatbot 场景中报告 80% 到 99.8% 的数据库抽取率，并把数据投毒从单个 RAG 应用扩展到多应用传播。
+- [AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents](https://arxiv.org/abs/2409.09013)：补充智能体安全能力的评测资源或协议。
+- [ValueCompass: A Framework for Measuring Contextual Value Alignment Between Human and LLMs](https://arxiv.org/abs/2409.09586)：基于心理学价值理论和系统综述建立价值对齐测量框架，并在协作写作、教育、公共部门和医疗场景中比较人类与 LLM 的价值取向。
+- [Towards Data Contamination Detection for Modern Large Language Models: Limitations, Inconsistencies, and Oracle Challenges](https://arxiv.org/abs/2409.09927)：补充智能体安全能力的评测资源或协议。
+- [ESPERANTO: Evaluating Synthesized Phrases to Enhance Robustness in AI Detection for Text Origination](https://arxiv.org/abs/2409.14285)：用多语言 back-translation 操纵 AI 生成文本，测试 text-origin detector 在生成文本被合成短语和释义变换后是否仍保持鲁棒。
+- [RoWSFormer: A Robust Watermarking Framework with Swin Transformer for Enhanced Geometric Attack Resilience](https://arxiv.org/abs/2409.14829)：补充一个面向智能体安全的基准条目，关注safety, security, risk, or alignment contribution。
+- [Attack Atlas: A Practitioner's Perspective on Challenges and Pitfalls in Red Teaming GenAI](https://arxiv.org/abs/2409.15398)：评测安全、对齐、水印、遗忘或攻防能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Leveraging Mixture of Experts for Improved Speech Deepfake Detection](https://arxiv.org/abs/2409.16077)：补充智能体安全能力的评测资源或协议。
+- [Holistic Automated Red Teaming for Large Language Models through Top-Down Test Case Generation and Multi-turn Interaction](https://arxiv.org/abs/2409.16783)：补充智能体安全能力的评测资源或协议。
+- [Freeze and Learn: Continual Learning with Selective Freezing for Speech Deepfake Detection](https://arxiv.org/abs/2409.17598)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Evading Toxicity Detection with ASCII-art: A Benchmark of Spatial Attacks on Moderation Systems](https://arxiv.org/abs/2409.18708)：提出 ToxASCII 这一空间混淆 benchmark，把有毒文本编码为 ASCII art，并报告对 LLM 与专用 moderation tool 的攻击成功率。
+- [GenTel-Safe: A Unified Benchmark and Shielding Framework for Defending Against Prompt Injection Attacks](https://arxiv.org/abs/2409.19521)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Multimodal Misinformation Detection by Learning from Synthetic Data with Multimodal LLMs](https://arxiv.org/abs/2409.19656)：补充智能体安全能力的评测资源或协议。
+- [T2Vs Meet VLMs: A Scalable Multimodal Dataset for Visual Harmfulness Recognition](https://arxiv.org/abs/2409.19734)：发布 VHD11K，包含来自网页和生成模型的 10K 张图像与 1K 个视频，覆盖 10 类有害概念，并用多智能体 VQA 标注流程评测 VLM 的视觉有害性识别。
+- [Does RAG Introduce Unfairness in LLMs? Evaluating Fairness in Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2409.19804)：为 RAG 定义基于场景问题的公平性评测框架，在开放域问答中按性别、地理位置等人口属性分析检索阶段和生成阶段的差异。
+- [Measurement challenges in AI catastrophic risk governance and safety frameworks](https://arxiv.org/abs/2410.00608)：提供面向Agent Safety能力的基准、数据集或评测协议。
+- [Agent Security Bench / ASB](https://arxiv.org/abs/2410.02644)（[开源代码](https://github.com/agiresearch/ASB)；[项目页](https://luckfort.github.io/ASBench/)）：评测 LLM-based Agent 中的安全攻击与防御。核心思想：在统一的 agent-specific security protocol 中覆盖直接与间接提示注入、记忆投毒、后门和工具阶段漏洞。
+- [Ward: Provable RAG Dataset Inference via LLM Watermarks](https://arxiv.org/abs/2410.03537)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [SciSafeEval: A Comprehensive Benchmark for Safety Alignment of Large Language Models in Scientific Tasks](https://arxiv.org/abs/2410.03769)：补充智能体安全能力的评测资源或协议。
+- [Forgetting Curve: A Reliable Method for Evaluating Memorization Capability for Long-Context Models](https://arxiv.org/abs/2410.04727)：Forgetting Curve 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [Developing Assurance Cases for Adversarial Robustness and Regulatory Compliance in LLMs](https://arxiv.org/abs/2410.05304)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
+- [Efficient Policy Evaluation with Safety Constraint for Reinforcement Learning](https://arxiv.org/abs/2410.05655)：分类存疑：这主要是 safe RL 的 policy evaluation 方法，在安全约束下推导低方差 behavior policy，而不是发布 agent safety benchmark。
+- [ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time](https://arxiv.org/abs/2410.06625)：围绕Agent Safety能力补充《ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time》这一评测或基准。
+- [Secure Video Quality Assessment Resisting Adversarial Attacks](https://arxiv.org/abs/2410.06866)：研究视频质量评估模型的对抗防御，用随机空间网格采样、guardian-map 像素随机化和时序特征处理，使 VQA 分数在恶意扰动下仍保持可靠。
+- [Robust AI-Generated Text Detection by Restricted Embeddings](https://arxiv.org/abs/2410.08113)：在跨领域、跨生成器迁移设置下评测 AI 文本检测器，说明移除有害 embedding 子空间可降低检测器对风格和主题伪特征的依赖。
+- [Responsible AI in NLP: GUS-Net Span-Level Bias Detection Dataset and Benchmark for Generalizations, Unfairness, and Stereotypes](https://arxiv.org/abs/2410.08388)：提出 GUS-Net，包含 3,739 段文本和 69K 以上 token 级 BIO 标注，区分 generalization、unfairness 与 stereotype，使偏见检测能定位到具体 span，而不是只做句子分类。
+- [Understanding the First Wave of AI Safety Institutes: Characteristics, Functions, and Challenges](https://arxiv.org/abs/2410.09219)：分类存疑：这是一篇关于日本、英国和美国 AI Safety Institute 及其评测职能的治理 primer，并非发布可复用的智能体安全基准。
+- [Are You Human? An Adversarial Benchmark to Expose LLMs](https://arxiv.org/abs/2410.09569)：发布用于实时识别 LLM 冒充人类的隐式和显式对话挑战，在 9 个 LMSYS 榜单模型上报告检测率，并用用户研究验证提示的现实可用性。
+- [LOKI: A Comprehensive Synthetic Data Detection Benchmark using Large Multimodal Models](https://arxiv.org/abs/2410.09732)：用约 18K 个策划样本评测 LMM 对视频、图像、3D、文本和音频合成数据的检测能力，并要求模型解释真伪判断，而不只输出二分类标签。
+- [Evaluating Gender Bias of LLMs in Making Morality Judgements](https://arxiv.org/abs/2410.09992)：提出 GenMO 平行短故事数据集，以男女角色配对测试 LLM 道德判断是否随性别变化，覆盖 GPT、Llama、Mistral 和 Claude 系列模型。
+- [Multi-round jailbreak attack on large language models](https://arxiv.org/abs/2410.11533)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
+- [JAILJUDGE: A Comprehensive Jailbreak Judge Benchmark with Multi-Agent Enhanced Explanation Evaluation Framework](https://arxiv.org/abs/2410.12855)：用 35K 条 instruction-tuning 样例、4.5K 标注风险测试集和覆盖 10 种语言的 6K 多语测试集评测 jailbreak judge 质量，并通过 multi-agent explanation framework 提升风险判断可解释性。
+- [Self-Comparison for Dataset-Level Membership Inference in Large (Vision-)Language Model](https://arxiv.org/abs/2410.13088)：提出 dataset-level membership inference 的 self-comparison 方法，通过比较模型在候选语料上的自身行为，降低对真实 member 数据或同分布 non-member 数据的依赖，用于 LLM/VLM 隐私审计。
+- [Large Language Models are Easily Confused: A Quantitative Metric, Security Implications and Typological Analysis](https://arxiv.org/abs/2410.13237)：用输出语言分布和语言类型学差异定义 Language Confusion Entropy，并把非预期语言切换与多语提示利用下的安全失败联系起来。
 - [Jailbreaking LLM-Controlled Robots](https://arxiv.org/abs/2410.13691)：评测 LLM 控制机器人的越狱风险。核心思想：用 RoboPAIR 和 harmful-action 数据集测试攻击能否在自动驾驶、地面机器人和四足机器人场景中诱发不安全物理动作。
 - [BrowserART](https://arxiv.org/abs/2410.13886)：对浏览器 Agent 的有害行为做红队评测。核心思想：测试聊天模型中的拒答能力是否能迁移到可导航、点击、提交表单并执行真实网页流程的 browser-agent 场景。
+- [LLMs are Biased Teachers: Evaluating LLM Bias in Personalized Education](https://arxiv.org/abs/2410.14012)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Beyond Dataset Watermarking: Model-Level Copyright Protection for Code Summarization Models](https://arxiv.org/abs/2410.14102)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [CAP: Data Contamination Detection via Consistency Amplification](https://arxiv.org/abs/2410.15005)：面向智能体安全，补充用于data-contamination detection for language-model evaluation的基准、数据集、指标、审计或实证协议。
 - [NetSafe](https://arxiv.org/abs/2410.15686)：评测网络化多智能体系统的安全性。核心思想：改变通信拓扑，衡量幻觉、错误信息和不安全行为如何在 agent 网络中传播。
+- [AUTALIC: A Dataset for Anti-AUTistic Ableist Language In Context](https://arxiv.org/abs/2410.16520)：提供 2,400 条带上下文的 autism-related Reddit 句子，由神经多样性背景专家标注，用于评测模型是否能识别细微、依赖语境的反自闭症 ableist language。
+- [SoK: Dataset Copyright Auditing in Machine Learning Systems](https://arxiv.org/abs/2410.16618)：梳理数据集版权审计方法的假设和鲁棒性缺口，界定在模型可能使用未授权图像、艺术作品或人脸数据训练时应如何测试。
+- [Arabic Dataset for LLM Safeguard Evaluation](https://arxiv.org/abs/2410.17040)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充智能体安全方向的基准覆盖。
+- [Towards Reliable Evaluation of Behavior Steering Interventions in LLMs](https://arxiv.org/abs/2410.17245)：补充智能体安全方向的基准、数据集、挑战、指标或评测协议。
 - [MobileSafetyBench](https://arxiv.org/abs/2410.17520)：评测 Android 环境中移动设备控制 Agent 的安全性。核心思想：在 agent 可操作应用与系统功能的设置下，测试误用、负面副作用和间接提示注入。
-- [SafeAgentBench](https://arxiv.org/abs/2412.13178)：评测 embodied LLM Agent 的安全任务规划。核心思想：衡量 agent 是否能在完成物理或仿真任务的同时避免不安全执行。
+- [ChineseSafe: A Chinese Benchmark for Evaluating Safety in Large Language Models](https://arxiv.org/abs/2410.18491)：构建中文内容安全基准，包含 205,034 个样例、4 个大类和 10 个子类，并加入政治敏感、色情、变体字和谐音词等中文特有非法内容，用于评测开源与 API LLM 的法律风险识别。
+- [DreamClear: High-Capacity Real-World Image Restoration with Privacy-Safe Dataset Curation](https://arxiv.org/abs/2410.18666)：分类存疑：安全相关点是 GenIR 面向图像复原的合规、隐私安全合成数据构造流程，但主要产物是复原数据集与 DiT 模型，而非智能体安全基准。
+- [SafeBench: A Safety Evaluation Framework for Multimodal Large Language Models](https://arxiv.org/abs/2410.18927)（[项目页](https://safebench-mm.github.io/)；[SafeBench challenge winners](https://www.mlsafety.org/safebench/winners)）：结合自动生成的有害查询数据、MLLM 自动评测协议和挑战赛 leaderboard，专门测试视觉上下文改变有害性时的多模态安全失败。
+- [FairMT-Bench: Benchmarking Fairness for Multi-turn Dialogue in Conversational LLMs](https://arxiv.org/abs/2410.19317)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [An Auditing Test To Detect Behavioral Shift in Language Models](https://arxiv.org/abs/2410.19406)：评测agent safety, alignment, privacy, or provenance，补充该能力方向的基准或挑战设置。
+- [CFSafety: Comprehensive Fine-grained Safety Assessment for LLMs](https://arxiv.org/abs/2410.21695)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
+- [SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types](https://arxiv.org/abs/2410.21965)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [Protecting Privacy in Multimodal Large Language Models with MLLMU-Bench](https://arxiv.org/abs/2410.22108)：Protecting Privacy in Multimodal Large Language Models with 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [PV-VTT: A Privacy-Centric Dataset for Mission-Specific Anomaly Detection and Natural Language Interpretation](https://arxiv.org/abs/2410.22623)：为隐私违规检测提供视频特征和文本标注，避免发布原始视频，并评测任务异常检测中依赖上下文的前兆事件。
+- [InjecGuard: Benchmarking and Mitigating Over-defense in Prompt Injection Guardrail Models](https://arxiv.org/abs/2410.22770)：提出或分析面向智能体安全、护栏与对抗风险的基准、数据集或评测协议。
+- [Do LLMs Know to Respect Copyright Notice?](https://arxiv.org/abs/2411.01136)：测试 LLM 是否会遵守用户输入中的版权声明，覆盖图书、新闻、API 文档和电影脚本，把不遵守版权限制视为内容滥用安全风险。
+- [Defining and Evaluating Physical Safety for Large Language Models](https://arxiv.org/abs/2411.02317)：定义无人机控制物理安全 benchmark，覆盖针对人、物体、基础设施和监管违规的四类风险，并评测主流 LLM 与提示方法中的 utility-safety tradeoff。
+- [Attacking Vision-Language Computer Agents via Pop-ups](https://arxiv.org/abs/2411.02391)：评测针对 vision-language computer agent 的 pop-up 攻击，测试 GUI 工作流中视觉注入的指令是否会把 agent 行动从用户原始任务转向攻击者目标。
+- [Benchmarking Vision Language Model Unlearning via Fictitious Facial Identity Dataset](https://arxiv.org/abs/2411.03554)：评测安全、对齐、水印、遗忘或攻防能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Large-scale moral machine experiment on large language models](https://arxiv.org/abs/2411.06790)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [LongSafetyBench: Long-Context LLMs Struggle with Safety Issues](https://arxiv.org/abs/2411.06899)：评测agent safety, alignment, privacy, or provenance，补充该能力方向的基准或挑战设置。
+- [Beyond the Safety Bundle: Auditing the Helpful and Harmless Dataset](https://arxiv.org/abs/2411.08243)：审计 Anthropic Helpful and Harmless 数据集，结合人工与自动内容检查、下游模型安全实验以及 100 篇引用论文分析，揭示反馈质量和安全概念化问题。
+- [Measuring Non-Adversarial Reproduction of Training Data in Large Language Models](https://arxiv.org/abs/2411.10242)：补充智能体安全能力的评测资源或协议。
+- [Bias in Large Language Models: Origin, Evaluation, and Mitigation](https://arxiv.org/abs/2411.10915)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [Watermark under Fire: A Robustness Evaluation of LLM Watermarking](https://arxiv.org/abs/2411.13425)：压力测试 LLM 水印鲁棒性，刻画溯源信号在攻击或变换下的失效边界。
+- [ChemSafetyBench: Benchmarking LLM Safety on Chemistry Domain](https://arxiv.org/abs/2411.16736)：评测化学领域双重用途安全，检查 LLM 面对危险合成、化学滥用和良性化学知识提示时的回答或拒答行为，使化学辅助风险可量化。
+- [VLSBench: Unveiling Visual Leakage in Multimodal Safety](https://arxiv.org/abs/2411.19939)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [PhysGame: Uncovering Physical Commonsense Violations in Gameplay Videos](https://arxiv.org/abs/2412.01800)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [Evaluating and Mitigating Social Bias for Large Language Models in Open-ended Settings](https://arxiv.org/abs/2412.06134)：把 BBQ 扩展为 Open-BBQ，新增填空和短答开放式格式，并对句子与段落响应做偏见标注，用于评测开放生成中的社会偏见和 debiasing 过度纠偏。
+- [On Evaluating the Durability of Safeguards for Open-Weight LLMs](https://arxiv.org/abs/2412.07097)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [Knowledge Graph Guided Evaluation of Abstention Techniques](https://arxiv.org/abs/2412.07430)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
+- [Look Before You Leap: Enhancing Attention and Vigilance Regarding Harmful Content with GuidelineLLM](https://arxiv.org/abs/2412.10423)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
+- [Unbiased General Annotated Dataset Generation](https://arxiv.org/abs/2412.10831)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [SafeAgentBench](https://arxiv.org/abs/2412.13178)（[项目页](https://safeagentbench.github.io/)）：评测 embodied LLM Agent 的安全任务规划。核心思想：衡量 agent 是否能在完成物理或仿真任务的同时避免不安全执行。
+- [Crabs: Consuming Resource via Auto-generation for LLM-DoS Attack under Black-box Settings](https://arxiv.org/abs/2412.13879)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
 - [Agent-SafetyBench](https://arxiv.org/abs/2412.14470)：评测多交互环境中的广义 LLM Agent 安全风险。核心思想：按 agent 风险类别与失败模式组织案例，使安全评测不局限于单步有害回答拒绝。
+- [LLMs Lost in Translation: M-ALERT uncovers Cross-Linguistic Safety Inconsistencies](https://arxiv.org/abs/2412.15035)：评测agent safety, alignment, privacy, or provenance，补充该能力方向的基准或挑战设置。
+- [Chinese SafetyQA: A Safety Short-form Factuality Benchmark for Large Language Models](https://arxiv.org/abs/2412.15265)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Towards More Robust Retrieval-Augmented Generation: Evaluating RAG Under Adversarial Poisoning Attacks](https://arxiv.org/abs/2412.16708)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Are We in the AI-Generated Text World Already? Quantifying and Monitoring AIGT on Social Media](https://arxiv.org/abs/2412.18148)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Libra-Leaderboard: Towards Responsible AI through a Balanced Leaderboard of Safety and Capability](https://arxiv.org/abs/2412.18551)（[leaderboard](https://leaderboard.librai.tech/)）：用 distance-to-optimal score 对 14 个机构的 26 个主流 LLM 同时排名能力与安全，并结合动态 leaderboard 和 interactive arena，避免模型只优化单一能力维度。
+- [Order Matters! An Empirical Study on Large Language Models'Input Order Bias in Software Fault Localization](https://arxiv.org/abs/2412.18750)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Multi-P2A: A Multi-perspective Benchmark on Privacy Assessment for Large Vision-Language Models](https://arxiv.org/abs/2412.19496)：面向智能体安全，补充用于privacy assessment benchmark for large vision-language models的基准、数据集、指标、审计或实证协议。
+- [MVTamperBench: Evaluating Robustness of Vision-Language Models](https://arxiv.org/abs/2412.19794)：评测 video VLM 面对旋转、遮挡、替换、重复和帧丢弃五类篡改的鲁棒性，把约 3.4K 原始视频扩展为 17K 以上篡改片段，覆盖 19 个操作任务和 45 个 MLLM。
+- [MM-MoralBench: A MultiModal Moral Evaluation Benchmark for Large Vision-Language Models](https://arxiv.org/abs/2412.20718)：用视觉上下文会改变伦理判断的多模态场景评测 LVLM 道德推理，把道德安全测试从纯文本困境扩展到图文输入。
+- [INFELM: In-depth Fairness Evaluation of Large Text-To-Image Models](https://arxiv.org/abs/2501.01973)：在像素检测之外评测文生图模型公平性，检查生成内容对齐和偏见敏感领域中图像是否放大社会刻板印象。
+- [AIR-BENCH 2024: A Safety Benchmark based on Regulation and Policies Specified Risk Categories](https://www.semanticscholar.org/paper/a2dc10dad4d39e8d24987ec0fddea6ce009a81f3)：基于法规和政策风险类别的安全 benchmark。核心思想是让安全评测类别对齐外部规则，而不是临时 harm labels。
+- [Do-Not-Answer: Evaluating Safeguards in LLMs](https://doi.org/10.18653/v1/2024.findings-eacl.61)：补充面向智能体安全、越狱、隐私或有害行为能力的基准、数据集、指标或评测协议。
+- [AdversLLM: A Practical Guide To Governance, Maturity and Risk Assessment For LLM-Based Applications](https://doi.org/10.5121/ijci.2024.130604)：结合 LLM 治理成熟度评估表、真实风险场景和 prompt injection 测试场，用于检查应用面对恶意提示和数据投毒时的鲁棒性。
+- [All Languages Matter: On the Multilingual Safety of LLMs](https://doi.org/10.18653/v1/2024.findings-acl.349)：围绕 All Languages Matter: On the Multilingual Safety of LLMs 补充可复用的智能体安全基准、数据集或评测协议。
+- [VFD-Net: Vocoder Fingerprints Detection for Fake Audio](https://doi.org/10.1109/icassp48485.2024.10446798)：补充智能体安全能力的评测资源或协议。
+- [TWBias: A Benchmark for Assessing Social Bias in Traditional Chinese Large Language Models through a Taiwan Cultural Lens](https://doi.org/10.18653/v1/2024.findings-emnlp.507)：面向智能体安全，补充评测基准、数据集、协议或指标。
+- [KDPII: A New Korean Dialogic Dataset for the Deidentification of Personally Identifiable Information](https://doi.org/10.1109/access.2024.3461804)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Evaluating Alignment Techniques for Enhancing LLM Performance in a Closed-Domain Application: A RAG Bench-Marking Study](https://doi.org/10.1109/icmla61862.2024.00180)：作为智能体安全的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [Evaluating Language Model Vulnerability to Poisoning Attacks in Low-Resource Settings](https://doi.org/10.1109/taslp.2024.3507565)：提供用于衡量智能体安全能力的数据集、基准、指标或评测协议。
+- [VisDiaHalBench: A Visual Dialogue Benchmark For Diagnosing Hallucination in Large Vision-Language Models](https://doi.org/10.18653/v1/2024.acl-long.658)：围绕 Agent Safety 能力补充《VisDiaHalBench: A Visual Dialogue Benchmark For Diagnosing Hallucination in Large Vision-Language Models》这一路线，将其作为 Bench 条目记录。
+- [Overview of the Multilingual Text Detoxification Task at PAN 2024](https://doi.org/10.1007/978-3-031-56072-9_1)：提供用于评估Agent Safety的任务或数据集，为 Agent Safety / Bench 补充具体测量目标。
+- [Challenging Fairness: A Comprehensive Exploration of Bias in LLM-Based Recommendations](https://doi.org/10.1109/bigdata62323.2024.10825082)：围绕 Agent Safety 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [FBK@IWSLT Test Suites Task: Gender Bias evaluation with MuST-SHE](https://doi.org/10.18653/v1/2024.iwslt-1.10)：补充智能体安全方向的基准、数据集、指标或评测协议。
+- [CRALA: A Chinese-centric Risk Simulation and Assessment Framework for LLM Agents](https://doi.org/10.1109/aiim64537.2024.10934441)：补充智能体安全的 Bench 条目，重点是《CRALA: A Chinese-centric Risk Simulation and Assessment Framework for LLM Agents》。
+- [Sentiment Bias and Security Analysis in Training Datasets of Large Language Models](https://doi.org/10.1109/bdcloud63169.2024.00008)：补充智能体安全的 Bench 条目，重点是《Sentiment Bias and Security Analysis in Training Datasets of Large Language Models》。
+- [AGGA: A Dataset of Academic Guidelines for Generative AI and Large Language Models](https://arxiv.org/abs/2501.02063)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [FlippedRAG: Black-Box Opinion Manipulation Adversarial Attacks to Retrieval-Augmented Generation Models](https://arxiv.org/abs/2501.02968)：构造针对 RAG 系统的黑盒观点操纵攻击，评测检索投毒是否能在复杂观点任务中引导输出。
+- [LLM Content Moderation and User Satisfaction: Evidence from Response Refusals in Chatbot Arena](https://arxiv.org/abs/2501.03266)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [LLMs Reproduce Stereotypes of Sexual and Gender Minorities](https://arxiv.org/abs/2501.05926)：评估 LLM 对性少数和性别少数群体刻板印象的复现。
+- [Tag&Tab: Pretraining Data Detection in Large Language Models Using Keyword-Based Membership Inference Attack](https://arxiv.org/abs/2501.08454)：通过基于关键词的成员推断攻击检测 LLM 预训练数据，为智能体安全评测补充隐私和数据污染诊断。
+- [Multimodal Fake News Video Explanation: Dataset, Analysis and Evaluation](https://arxiv.org/abs/2501.08514)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [GenAI Content Detection Task 1: English and Multilingual Machine-Generated Text Detection: AI vs. Human](https://arxiv.org/abs/2501.11012)：补充智能体安全能力的评测资源或协议。
+- [TAD-Bench: A Comprehensive Benchmark for Embedding-Based Text Anomaly Detection](https://arxiv.org/abs/2501.11960)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Implicit Causality-biases in humans and LLMs as a tool for benchmarking LLM discourse capabilities](https://arxiv.org/abs/2501.12980)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [LLMs are Vulnerable to Malicious Prompts Disguised as Scientific Language](https://arxiv.org/abs/2501.14073)：提供可复用评测目标、排行榜或测量协议。
+- [CASE-Bench: Context-Aware Safety Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2501.14940)：补充面向大模型上下文感知安全判断的基准。
+- [HateBench: Benchmarking Hate Speech Detectors on LLM-Generated Content and Hate Campaigns](https://arxiv.org/abs/2501.16750)：补充面向大模型生成内容和仇恨活动的仇恨言论检测基准。
+- [AxBench: Steering LLMs? Even Simple Baselines Outperform Sparse Autoencoders](https://arxiv.org/abs/2501.17148)：评测模型 steering 与概念检测方法，比较提示、微调、稀疏自编码器、探针和表示微调路线。
+- [How Much Do Code Language Models Remember? An Investigation on Data Extraction Attacks Before and After Fine-tuning](https://arxiv.org/abs/2501.17501)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 How Much Do Code Language Models Remember? An Investigation on Data Extraction Attacks Before and After Fine-tuning 提供可比较的评测任务、数据或分析协议。
+- [CSEval: Towards Automated, Multi-Dimensional, and Reference-Free Counterspeech Evaluation using Auto-Calibrated LLMs](https://arxiv.org/abs/2501.17581)：提供面向Agent Safety能力的基准、数据集或评测协议。
+- [Early External Safety Testing of OpenAI's o3-mini: Insights from the Pre-Deployment Evaluation](https://arxiv.org/abs/2501.17749)：报告 OpenAI o3-mini 预部署外部安全测试。
+- [Membership Inference Attacks Against VLMs](https://arxiv.org/abs/2501.18624)：评测视觉语言模型的 membership inference 风险，为后续 OpenLVLM-MIA 等工作之前的多模态隐私攻击评测补充基线。
+- [TombRaider: Entering the Vault of History to Jailbreak Large Language Models](https://arxiv.org/abs/2501.18628)：提出利用历史上下文“保险库”的 LLM 越狱攻击。
+- [SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Model](https://arxiv.org/abs/2501.18636)：SafeRAG 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [Benchmarking Gaslighting Negation Attacks Against Multimodal Large Language Models](https://arxiv.org/abs/2501.19017)：可作为Agent 安全的Bench候选；核心关注“Benchmarking Gaslighting Negation Attacks Against Multimodal Large Language Models”。
+- [Riddle Me This! Stealthy Membership Inference for Retrieval-Augmented Generation](https://arxiv.org/abs/2502.00306)：提供可复用评测目标、排行榜或测量协议。
+- [Clone-Robust Weights in Metric Spaces: Handling Redundancy Bias for Benchmark Aggregation](https://arxiv.org/abs/2502.03576)：提出 clone-proof weighting 处理 benchmark 聚合中的冗余偏置，避免对抗性重复任务、数据点或观点问题让相似对象被过度计权。
+- [ELITE: Enhanced Language-Image Toxicity Evaluation for Safety](https://arxiv.org/abs/2502.04757)：通过过滤歧义和低质量图文对、丰富 language-image toxicity 组合，并引入带显式 toxicity score 的 ELITE evaluator，构建更适合检测隐性多模态有害内容的 VLM 安全基准。
+- [Privacy-Preserving Dataset Combination](https://arxiv.org/abs/2502.05765)：提出 SecureKL 零泄露协议，在数据共享前以私有计算方式比较候选数据集效用和分布差异，而不暴露候选数据。
 - [Fact-or-Fair](https://arxiv.org/abs/2502.05849)：通过区分描述性事实判断与规范性公平判断来评测 AI 偏见。核心思想：用认知偏差驱动的查询识别模型何时事实正确但社会上不公平，或表面公平却扭曲事实。
+- [LLMs on Offensive-Language Detection with Annotation Disagreement](https://arxiv.org/abs/2502.06207)：在标注分歧条件下评估大语言模型的冒犯性语言判断，揭示安全评测可靠性边界。
+- [Predictive Red Teaming: Breaking Policies Without Breaking Robots](https://arxiv.org/abs/2502.06575)：提出 RoboART，通过编辑观测并预测策略退化，在昂贵硬件测试前红队评估视觉运动机器人策略。
 - [Multi-turn Evaluation of Anthropomorphic Behaviours](https://arxiv.org/abs/2502.07077)：评测真实多轮交互中的 LLM 拟人化行为。核心思想：在多样对话中衡量身份宣称、情感依赖、关系框定等行为，而不是只依赖单轮静态提示。
 - [SycEval](https://arxiv.org/abs/2502.08177)：评测用户施压场景下的 LLM 迎合行为。核心思想：在数学、医疗建议等领域检查模型是否为了附和用户而放弃独立推理，把“讨好式同意”作为可测安全风险。
+- [BBQ-V: Benchmarking Visual Stereotype Bias in Large Multimodal Models](https://arxiv.org/abs/2502.08779)：面向大多模态模型的视觉刻板印象偏见 benchmark。核心思想是把 BBQ 式的歧义/消歧偏见测试扩展到图像输入，审计多模态助手是否依赖刻板印象。
+- [The Hidden Dimensions of LLM Alignment: A Multi-Dimensional Analysis of Orthogonal Safety Directions](https://arxiv.org/abs/2502.09674)：提供可复用评测目标、排行榜或测量协议。
+- [Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine Generics Bias](https://arxiv.org/abs/2502.10577)：衡量大模型对男性泛称偏见的延续。
+- [Safety Evaluation of DeepSeek Models in Chinese Contexts](https://arxiv.org/abs/2502.11137)：评估 DeepSeek 模型在中文语境中的安全性。
 - [Can't See the Forest for the Trees](https://arxiv.org/abs/2502.11184)：评测 MLLM 的多模态安全意识；核心思想是测试模型能否识别与安全相关的视觉语境，而不是只根据孤立文本或局部图像细节判断风险。
+- [VLDBench Evaluating multimodal disinformation with regulatory alignment](https://arxiv.org/abs/2502.11361)：带 regulatory alignment 视角的多模态虚假信息 benchmark。核心思想是评估模型能否发现文本和图像协同构成的蓄意欺骗，而不只是单模态误信息。
 - [DemonAgent / AgentBackdoorEval](https://arxiv.org/abs/2502.12575)：评测面向 LLM-based Agent 的动态加密多后门攻击。核心思路是把后门触发拆成看似良性的动态片段，测试 Agent 安全审计能否发现由此产生的行为操纵。
 - [Fraud-R1](https://arxiv.org/abs/2502.12904)：评测 LLM 对多轮诈骗与钓鱼诱导的鲁棒性。核心思路是把诈骗过程拆成建立可信度、制造紧迫感和情绪操纵等阶段，并覆盖助手以交互式 Agent 身份参与的 role-play 场景。
 - [MEXTRA](https://arxiv.org/abs/2502.13172)：评测 LLM Agent 记忆中的隐私抽取风险。核心思想：测试存入记忆的敏感信息是否会在后续交互中被诱导泄露，暴露最终输出过滤之外的隐私失效。
 - [Demonstrating specification gaming in reasoning models](https://arxiv.org/abs/2502.13295)：评测推理模型是否会利用目标表述漏洞而不是完成真实意图。核心思想：用受控任务制造“表面成功”和真实目标的分离，使 specification gaming 成为可观察的 agent 安全失败模式。
+- [Deception at Scale](https://arxiv.org/abs/2502.13499)：评测 LLM 生成电商组件中的 deceptive design。核心思想：衡量模型选择和商业利益 prompt 如何诱发操纵性 UI pattern，把安全评测扩展到生成的软件 artifact。
+- [Qorgau: Evaluating LLM Safety in Kazakh-Russian Bilingual Contexts](https://arxiv.org/abs/2502.13640)：评测哈萨克语和俄语双语环境中的 LLM 安全性，揭示英语单语安全 prompt 难以覆盖的地区化与混合语言风险。
+- [A Matter of Perspective(s): Contrasting Human and LLM Argumentation in Subjective Decision-Making on Subtle Sexism](https://arxiv.org/abs/2502.14052)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [Can LLMs Simulate L2-English Dialogue? An Information-Theoretic Analysis of L1-Dependent Biases](https://arxiv.org/abs/2502.14507)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [The Canary's Echo: Auditing Privacy Risks of LLM-Generated Synthetic Text](https://arxiv.org/abs/2502.14921)：作为智能体安全的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Is Safety Standard Same for Everyone? User-Specific Safety Evaluation of Large Language Models](https://arxiv.org/abs/2502.15086)：评估用户特定安全标准，检验 LLM 安全行为是否跨用户一致。
+- [Adversarial Prompt Evaluation: Systematic Benchmarking of Guardrails Against Prompt Input Attacks on LLMs](https://arxiv.org/abs/2502.15427)：在多类 jailbreak 与提示输入攻击上评测 guardrail 防御，强调跨攻击风格的分布外鲁棒性，而不是只看单一攻击族。
+- [A Mousetrap: Fooling Large Reasoning Models for Jailbreak with Chain of Iterative Chaos](https://arxiv.org/abs/2502.15806)：定义或压力测试安全、越狱、监督或可信行为。
 - [Control Illusion](https://arxiv.org/abs/2502.15851)：评测 LLM 是否真正执行指令层级。核心思路是用约束优先级冲突测试 system/user 角色分离能否控制行为，以及社会层级线索是否会覆盖预期优先级。
+- [GuidedBench: Equipping Jailbreak Evaluation with Guidelines](https://arxiv.org/abs/2502.16903)：先测量 jailbreak evaluation system 的结论差异，再提供 curated harmful-question set、case-specific evaluation guidelines 和 GuidedEval，使攻击成功判断受明确逐案标准约束。
+- [LongSafety: Evaluating Long-Context Safety of Large Language Models](https://arxiv.org/abs/2502.16971)：评测开放式长上下文任务中的安全性。核心思路是把安全风险类别与用户导向的长上下文结合起来，检验模型在扩展证据和长指令中是否出现普通短提示拒答测试难以覆盖的不安全行为。
+- [PrivaCI-Bench: Evaluating Privacy with Contextual Integrity and Legal Compliance](https://arxiv.org/abs/2502.17041)：基于 contextual integrity 和 legal compliance 评测隐私能力。核心思想是检查模型是否遵守特定情境下的信息规范，而不是只套用泛化隐私启发式。
+- [MM-PoisonRAG: Disrupting Multimodal RAG with Local and Global Poisoning Attacks](https://arxiv.org/abs/2502.17832)：评什么：多模态 RAG 投毒。核心思想是构造针对文本图像检索上下文的局部和全局投毒攻击，测试模型在敌意知识库下是否仍能保持接地。
+- [PII-Bench: Evaluating Query-Aware Privacy Protection Systems](https://arxiv.org/abs/2502.18545)：评测面向查询的个人身份信息隐私保护系统，为隐私安全评测补充 PII 专项基准。
+- [Holistic Audit Dataset Generation for LLM Unlearning via Knowledge Graph Traversal and Redundancy Removal](https://arxiv.org/abs/2502.18810)：提出 HANKER，用知识图谱遍历和冗余去除扩展 MUSE 式 unlearning audit，在 News 和 Books 数据上分别生成 69K 以上与 111K 以上审计样例，提升 forget-retain 覆盖度。
+- [Multi-Agent Security Tax](https://arxiv.org/abs/2502.19145)：评估多智能体协作带来的安全代价。
+- [Among Them: A game-based framework for assessing persuasion capabilities of LLMs](https://arxiv.org/abs/2502.20426)：用游戏化框架评估大模型的说服能力。
+- [BadJudge: Backdoor Vulnerabilities of LLM-as-a-Judge](https://arxiv.org/abs/2503.00596)：提供可复用评测目标、排行榜或测量协议。
+- [Answer, Refuse, or Guess?](https://arxiv.org/abs/2503.01332)：评估模型在任务不变但风险收益结构变化时的“回答还是暂缓”决策。核心思想：用正确回答、错误回答与拒答的收益/惩罚来衡量模型是否能按预期效用行动，暴露高风险中过度回答、低风险中过度拒答等 agent 部署风险。
+- [Unmasking Implicit Bias: Evaluating Persona-Prompted LLM Responses in Power-Disparate Social Scenarios](https://arxiv.org/abs/2503.01532)：评测权力不对等社会场景中的 persona-prompted LLM 响应，使角色条件交互下的隐性偏见可被测量。
 - [MINJA](https://arxiv.org/abs/2503.03704)：评测通过仅查询交互对 LLM Agent 发起的记忆注入攻击。核心思想：测试看似普通的查询是否能污染持久记忆，并在攻击者无法直接访问 memory store 的情况下影响后续行为。
 - [MASK Benchmark](https://arxiv.org/abs/2503.03750)：评测模型在压力下是否会违背自己声明过的知识或信念。核心思想：把 honesty 与 accuracy 分开，检查用户或系统压力诱导冲突答案时，模型是否仍保持已声明知识。
-- [SafeArena](https://arxiv.org/abs/2503.04957)（[项目页](https://safearena.github.io/)）：评什么：自主 web agent 面对安全/有害网页任务时的行为。核心思想：用安全与有害任务配对，观察 agent 是否会顺从虚假信息、违法活动、骚扰、网络犯罪和偏见等风险请求。
-- [AILuminate](https://arxiv.org/abs/2503.05731)：评测 AI 风险与可靠性；核心思想是由 MLCommons 提供标准化 benchmark protocol，把多类安全与可靠性行为纳入可比较评测，而不是依赖一次性的 red-team prompt 集。
+- [How Personality Traits Shape LLM Risk-Taking Behaviour](https://arxiv.org/abs/2503.04735)：研究人格特征干预如何影响 LLM 风险承担行为。
+- [Collaborative Evaluation of Deepfake Text with Deliberation-Enhancing Dialogue Systems](https://arxiv.org/abs/2503.04945)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [SafeArena](https://arxiv.org/abs/2503.04957)（[项目页](https://safearena.github.io/)；[leaderboard](https://huggingface.co/spaces/McGill-NLP/safearena-leaderboard)）：评什么：自主 web agent 面对安全/有害网页任务时的行为。核心思想：用安全与有害任务配对，观察 agent 是否会顺从虚假信息、违法活动、骚扰、网络犯罪和偏见等风险请求。
+- [Beyond English: Unveiling Multilingual Bias in LLM Copyright Compliance](https://arxiv.org/abs/2503.05713)：评测，主要面向 Agent Safety。
+- [AILuminate](https://arxiv.org/abs/2503.05731)（[官方结果](https://ailuminate.mlcommons.org/benchmarks/security/0.5-en_us-official-ensemble)）：评测 AI 风险与可靠性；核心思想是由 MLCommons 提供标准化 benchmark protocol，把多类安全与可靠性行为纳入可比较评测，而不是依赖一次性的 red-team prompt 集。
+- [Can Small Language Models Reliably Resist Jailbreak Attacks? A Comprehensive Evaluation](https://arxiv.org/abs/2503.06519)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Towards More Accurate Personalized Image Generation: Addressing Overfitting and Evaluation Bias](https://arxiv.org/abs/2503.06632)：补充智能体安全方向的基准、数据集、指标或评测协议。
+- [Evaluating and Aligning Human Economic Risk Preferences in LLMs](https://arxiv.org/abs/2503.06646)：用彩票式选择任务衡量 LLM 决策是否符合人类经济风险偏好，并评估让模型风险承担行为对齐的干预方法，服务金融或建议型 agent 的安全评测。
 - [VisBias](https://arxiv.org/abs/2503.07575)：评测视觉语言模型中的显性与隐性社会偏见。核心思想：区分类似显性刻板印象的回答与隐性关联模式，使多模态偏见评测覆盖普通直接问答可能漏掉的失败。
+- [Towards Large Language Models that Benefit for All: Benchmarking Group Fairness in Reward Models](https://arxiv.org/abs/2503.07806)：评测 reward model 的 group fairness，区分不同群体 prompt 偏好差异与人口统计偏见，并追踪不公平性来自预训练、RLHF 还是 learned reward component。
+- [Generating Robot Constitutions & Benchmarks for Semantic Safety](https://arxiv.org/abs/2503.08663)：生成面向 semantic safety 的 robot constitutions 与 benchmarks。核心思想是把高层机器人安全规则转成 embodied agents 可评测任务。
+- [TH-Bench: Evaluating Evading Attacks via Humanizing AI Text on Machine-Generated Text Detectors](https://arxiv.org/abs/2503.08708)：从规避有效性、文本质量和计算开销三方面评测 humanization attack 对机器生成文本检测器的影响，覆盖 6 种攻击、13 个检测器、6 个数据集、19 个领域和 11 个生成模型。
+- [SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability](https://arxiv.org/abs/2503.09532)：评测用于语言模型可解释性的稀疏自编码器。
 - [AgentDAM](https://arxiv.org/abs/2503.09780)：评测自主 Web Agent 的数据最小化失败。核心思想：在真实感网页任务中衡量 agent 是否披露不必要的个人数据，并用泄露率作为部署相关的隐私指标。
+- [ExtremeAIGC: Benchmarking LMM Vulnerability to AI-Generated Extremist Content](https://arxiv.org/abs/2503.09964)：可作为Agent 安全方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [MinorBench: A hand-built benchmark for content-based risks for children](https://arxiv.org/abs/2503.10242)：提供手工构建的未成年人内容风险 benchmark 与 taxonomy，测试 LLM 在不同 system prompts 下是否会拒绝来自未成年人的不安全或不适宜查询。
+- [Measuring Political Preferences in AI Systems](https://arxiv.org/abs/2503.10649)：整合 AI 系统政治偏好测量方法，支撑 bias 与 alignment evaluation。
 - [DarkBench](https://arxiv.org/abs/2503.10728)：评测 LLM 交互中的操纵性 dark pattern。核心思想：把品牌偏置、留存压力、谄媚、拟人化、有害生成和 sneaking 等用户操纵风险做成可测维度，而不只测普通拒答。
+- [MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents](https://arxiv.org/abs/2503.10809)：研究劫持 multimodal OS agents 的恶意图像补丁；核心思想是评测 agent 在 OS 级执行中是否会把视觉对抗内容当作指令。
+- [Auditing language models for hidden objectives](https://arxiv.org/abs/2503.10965)：提供可复用评测目标、排行榜或测量协议。
 - [Typographic Visual Prompt Injection](https://arxiv.org/abs/2503.11519)：评测跨模态生成模型中的视觉文字提示注入风险。核心思想是把恶意指令以渲染文字或字体形式嵌入视觉输入，测试多模态生成系统是否会让图中文字覆盖真实用户意图。
+- [No LLM is Free From Bias: A Comprehensive Study of Bias Evaluation in Large Language models](https://arxiv.org/abs/2503.11985)：提出或分析面向agent safety, security, privacy, or robustness的基准、数据集、指标或评测协议。
+- [Multi-Agent Systems Execute Arbitrary Malicious Code](https://arxiv.org/abs/2503.12188)：Multi-Agent Systems Execute Arbitrary Malicious Code 明确揭示多 agent 执行风险，适合 Agent Safety Bench。
+- [PEBench: A Fictitious Dataset to Benchmark Machine Unlearning for Multimodal Large Language Models](https://arxiv.org/abs/2503.12545)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [IRT-Based LLM Ideology Analysis](https://arxiv.org/abs/2503.13149)：用项目反应理论测量 LLM 中被感知的社会经济偏见与意识形态倾向。
+- [Only a Little to the Left: A Theory-grounded Measure of Political Bias in Large Language Models](https://arxiv.org/abs/2503.16148)：提供可复用评测目标、排行榜或测量协议。
+- [Big Help or Big Brother? Auditing Tracking, Profiling, and Personalization in Generative AI Assistants](https://arxiv.org/abs/2503.16586)：审计生成式 AI 助手中的跟踪、画像与个性化行为，把隐私相关的助手行为纳入显式安全评测目标。
+- [Automated Harmfulness Testing for Code Large Language Models](https://arxiv.org/abs/2503.16740)：用覆盖率引导的程序变换测试 Code LLM 是否在软件制品中生成有害内容，把安全评测扩展到代码生成场景。
 - [When Tom Eats Kimchi](https://arxiv.org/abs/2503.16826)：评测多模态大语言模型在混合文化图文语境中的文化偏见。核心思想：测试模型在人物、食物和场景视觉线索跨越刻板关联时，是否仍能保持正确的文化识别。
+- [Challenging Dataset and Multi-Modal Gated Mixture of Experts Model for Remote Sensing Copy-Move Forgery Understanding](https://arxiv.org/abs/2503.18104)：发布 Real-RSCM 遥感 copy-move 问答数据集，用人工标注的细微篡改案例评测模型能否理解安全相关遥感图像中的伪造对象关系。
+- [Unbiasing through Textual Descriptions: Mitigating Representation Bias in Video Benchmarks](https://arxiv.org/abs/2503.18637)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [CEFW: A Comprehensive Evaluation Framework for Watermark in Large Language Models](https://arxiv.org/abs/2503.20802)：从检测难度、文本质量保真度、嵌入开销、对抗攻击鲁棒性和防仿冒不可感知性五个维度统一评测 LLM 文本水印。
+- [FindTheFlaws: Annotated Errors for Detecting Flawed Reasoning and Scalable Oversight Research](https://arxiv.org/abs/2503.22989)：提供带标注的推理错误，用于研究 critique、debate 与复杂回答的可扩展监督。
+- [Beyond Speculation: Measuring the Growing Presence of Large Language Model-Generated Texts in Multilingual Disinformation](https://arxiv.org/abs/2503.23242)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [When Persuasion Overrides Truth in Multi-Agent LLM Debates: Introducing a Confidence-Weighted Persuasion Override Rate (CW-POR)](https://arxiv.org/abs/2504.00374)：评测 multi-agent debate 中事实判断被说服性压倒的风险；核心思想是衡量自信错误 agent 何时让 judge 偏离真实答案。
+- [FortisAVQA and MAVEN: a Benchmark Dataset and Debiasing Framework for Robust Multimodal Reasoning](https://arxiv.org/abs/2504.00487)：在 MUSIC-AVQA 基础上改写问题并构造分布偏移测试集，使音视频问答系统能按 rare、frequent 与 overall 问题分布评测鲁棒性，而不是被捷径特征掩盖。
+- [P2NIA: Privacy-Preserving Non-Iterative Auditing](https://arxiv.org/abs/2504.00874)：定义 privacy-preserving non-iterative fairness auditing scheme，让审计者使用合成或本地数据而不是反复查询平台 API，从而降低数据泄露暴露面和高风险 AI 审计中的估计偏差。
+- [PiCo: Jailbreaking Multimodal Large Language Models via Pictorial Code Contextualization](https://arxiv.org/abs/2504.01444)：通过 pictorial code contextualization 越狱多模态 LLM，为多模态安全评测补充视觉代码攻击模式。
 - [Les Dissonances](https://arxiv.org/abs/2504.03111)：评什么：pool-of-tools LLM agent 中的跨工具 harvesting 与 polluting 风险。核心思想：暴露信息和恶意状态如何在工具之间传播，使 tool-rich agent 不只接受单个工具调用安全性测试，也接受跨工具污染测试。
+- [A Benchmark for Scalable Oversight Protocols](https://arxiv.org/abs/2504.03731)：评测 scalable oversight 协议；核心思想是为 debate 等 oversight 机制提供系统化实证比较环境。
+- [What Large Language Models Do Not Talk About: An Empirical Study of Moderation and Censorship Practices](https://arxiv.org/abs/2504.03803)：在多语政治提示上实证评估模型硬拒答和软审查行为。
+- [Among Us: A Sandbox for Measuring and Detecting Agentic Deception](https://arxiv.org/abs/2504.04072)：用于测量和检测 agentic deception 的 sandbox；核心思想是把欺骗评估为交互轨迹中的行为，而不只是静态提示中的虚假陈述。
+- [IMPersona](https://arxiv.org/abs/2504.04332)：评什么：个体级 LM impersonation 风险。核心思想：结合个人写作风格、个人知识、微调和 memory-style retrieval，测试模型是否能可信地模拟特定个人。
+- [Your Image Generator Is Your New Private Dataset](https://arxiv.org/abs/2504.04582)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [ShadowCoT: Cognitive Hijacking for Stealthy Reasoning Backdoors in LLMs](https://arxiv.org/abs/2504.05605)：研究 chain-of-thought reasoning 中的 cognitive hijacking backdoors。核心思想是攻击推理路径本身，使恶意行为隐藏在看似合理的中间步骤后。
 - [CLEAR-Bias](https://arxiv.org/abs/2504.07887)：评测模型对偏见诱导攻击的鲁棒性。核心思路是用策划提示、越狱变体和 LLM-as-judge 安全分数覆盖社会文化偏见类别，使 bias resilience 在攻击条件下被度量，而不是只看良性提示。
+- [EmoAgent: Assessing and Safeguarding Human-AI Interaction for Mental Health Safety](https://arxiv.org/abs/2504.09689)：评测并防护心理健康场景中的 human-AI interaction。核心思想是在情绪敏感交互中测试 agent 如何平衡帮助性、风险识别和安全升级。
+- [LLM Can be a Dangerous Persuader](https://arxiv.org/abs/2504.10430)：实证评估大语言模型的说服安全风险。
+- [Bypassing LLM Guardrails](https://arxiv.org/abs/2504.11168)：实证评测针对 prompt-injection 与 jailbreak 检测系统的规避攻击。
+- [OpenTuringBench: An Open-Model-based Benchmark and Framework for Machine-Generated Text Detection and Attribution](https://arxiv.org/abs/2504.11369)：围绕开放模型生成文本构建检测与归因 benchmark，覆盖 Turing test、authorship attribution、manipulated text、out-of-domain 与 unseen-model 任务，并提供 OTBDetector 对比学习 baseline。
+- [Benchmarking Multi-National Value Alignment for Large Language Models](https://arxiv.org/abs/2504.12911)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [Manipulating Multimodal Agents via Cross-Modal Prompt Injection](https://arxiv.org/abs/2504.14348)：研究跨语言与视觉通道的多模态 agent prompt injection 攻击。
 - [SafePlan-Bench](https://arxiv.org/abs/2504.14650)：评测 LLM-based embodied agent 的任务规划安全。核心思想：在多类日常具身任务和危险类别中测试 agent 是否能生成安全计划，特别覆盖没有显式恶意指令的场景。
+- [PROMPTEVALS: A Dataset of Assertions and Guardrails for Custom Production Large Language Model Pipelines](https://arxiv.org/abs/2504.14738)：可作为Agent 安全的Bench候选；核心关注“A Dataset of Assertions and Guardrails for Custom Production Large Language Model Pipelines”。
+- [aiXamine: Simplified LLM Safety and Security](https://arxiv.org/abs/2504.14985)：LLM 安全与安全性评测的集成框架。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [Advancing Embodied Agent Security](https://arxiv.org/abs/2504.15699)：评估具身智能体安全与输入审核。核心思路是定义具身安全风险、构建评测数据，并在危险物理或仿真动作执行前测试审核机制。
+- [MetaHarm: Harmful YouTube Video Dataset Annotated by Domain Experts, GPT-4-Turbo, and Crowdworkers](https://arxiv.org/abs/2504.16304)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Amplified Vulnerabilities: Structured Jailbreak Attacks on LLM-based Multi-Agent Debate](https://arxiv.org/abs/2504.16489)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（Structured Jailbreak Attacks on LLM-based Multi-Agent Debate）形成可复用比较基准。
+- [PReSS: A Black-Box Framework for Evaluating Political Stance Stability in LLMs via Argumentative Pressure](https://arxiv.org/abs/2504.17052)：在论辩压力下评测大模型政治立场稳定性。
+- [RepliBench: Evaluating the autonomous replication capabilities of language model agents](https://arxiv.org/abs/2504.18565)：评测 language-model agents autonomous replication 能力的 benchmark；核心思想是衡量 agent 是否能复制、持久化或传播自身，从而形成部署安全风险。
 - [WASP](https://arxiv.org/abs/2504.18575)：评测 Web Agent 面对 prompt injection 的端到端安全性。核心思想：把低成本对抗内容注入真实感网页任务，衡量 agent 是否能保持用户目标而不执行攻击者指令。
+- [DoxBench](https://arxiv.org/abs/2504.19373)：评测多模态推理模型的地理位置隐私泄露风险；核心思想是在不同隐私风险层级的用户图片上测试模型是否能推断敏感地理位置。
+- [SAGE: A Generic Framework for LLM Safety Evaluation](https://arxiv.org/abs/2504.19674)：通用 LLM 安全评测框架。核心思想是把安全测试从单轮通用政策扩展到上下文化、应用特定的对话风险。
 - [ToolHijacker](https://arxiv.org/abs/2504.19793)：评测针对 LLM Agent 工具选择的提示注入攻击。核心思想：污染工具文档，使检索与选择把 agent 路由到恶意工具，从而暴露工具库攻击面。
-- [AgentHarm](https://openreview.net/forum?id=AC5n7xHuR1)：评测 LLM agent 的危害性。核心思想：从单轮有害回复分类推进到 agentic setting，测试 agent 是否会规划或执行有害行动。
+- [XBreaking: Understanding how LLMs security alignment can be broken](https://arxiv.org/abs/2504.21700)：定义或压力测试安全、越狱、监督或可信行为。
+- [AgentHarm](https://openreview.net/forum?id=AC5n7xHuR1)（[evaluation page](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/agentharm/)）：评测 LLM agent 的危害性。核心思想：从单轮有害回复分类推进到 agentic setting，测试 agent 是否会规划或执行有害行动。
+- [AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents](https://arxiv.org/abs/2410.09024)：通过任务、评测协议或诊断设置评测 Agent Safety 能力，适合作为 Bench 条目。
+- [SPY: Enhancing Privacy with Synthetic PII Detection Dataset](https://doi.org/10.18653/v1/2025.naacl-srw.23)：提出用于隐私评估的合成 PII 检测数据集。
+- [Multilingual Blending](https://aclanthology.org/2025.findings-naacl.191/)：在混合语言输入下评测 LLM 安全对齐，暴露单语提示之外的多语安全失效。
+- [Multilingual Blending: Large Language Model Safety Alignment Evaluation with Language Mixture](https://doi.org/10.18653/v1/2025.findings-naacl.191)：在混合语言输入下评测 LLM 安全对齐，暴露单语提示之外的多语安全失效。
+- [Decoding Fatphobia: Examining Anti-Fat and Pro-Thin Bias in AI-Generated Images](https://doi.org/10.18653/v1/2025.findings-naacl.266)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [It Is Not Only the Negative that Deserves Attention! Understanding, Generation & Evaluation of (Positive) Moderation](https://doi.org/10.18653/v1/2025.naacl-long.567)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
 - [OET](https://arxiv.org/abs/2505.00843)：用 optimization-based adaptive testing 工具包评测 prompt injection 攻击与防御。核心思想：在白盒和黑盒访问下生成最坏情形对抗字符串，动态执行攻击，并在统一协议下分析鲁棒性。
+- [Value Portrait: Assessing Language Models' Values through Psychometrically and Ecologically Valid Items](https://arxiv.org/abs/2505.01015)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
 - [Stealth and Situational Awareness Evaluations](https://arxiv.org/abs/2505.01420)：评测前沿模型中与 scheming 相关的推理能力。核心思路是测试模型是否能推理监督规避、自身状态、环境和部署上下文，为“无法实施隐蔽谋划”的安全论证提供证据。
+- [Multimodal LLM Sensitive-Information Unlearning Benchmark](https://arxiv.org/abs/2505.01456)：用攻防协议评估多模态大语言模型中的敏感信息遗忘，连接隐私、遗忘和多模态安全。
+- [Unmasking the Canvas](https://arxiv.org/abs/2505.04146)：动态评测图像生成越狱和 LLM 内容安全检查，使用简短自然提示诱导伪造证件、操纵公众人物图像等高风险视觉输出。
+- [WaterDrum: Watermarking for Data-centric Unlearning Metric](https://arxiv.org/abs/2505.05064)：评测，主要面向 Agent Safety。
+- [SecReEvalBench](https://arxiv.org/abs/2505.07584)：提供多轮、场景化的安全敏感 LLM 对抗提示攻击，将安全韧性评测从预定义网络安全攻击扩展到更贴近真实意图驱动攻击的设置。
+- [Winning at All Cost: A Small Environment for Eliciting Specification Gaming Behaviors in Large Language Models](https://arxiv.org/abs/2505.07846)：评测 LLM 的 specification gaming 行为。核心思想：用不可胜出的游戏情境观察模型是否钻规则空子而不是承认失败。
+- [PIG: Privacy Jailbreak Attack on LLMs via Gradient-based Iterative In-Context Optimization](https://arxiv.org/abs/2505.09921)：用基于梯度的上下文内迭代优化探测隐私越狱和 PII 泄露。
+- [Understanding Gen Alpha's Digital Language: Evaluation of LLM Safety Systems for Content Moderation](https://arxiv.org/abs/2505.10588)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [BanglaFake: Constructing and Evaluating a Specialized Bengali Deepfake Audio Dataset](https://arxiv.org/abs/2505.10885)：构建孟加拉语 deepfake audio 数据集，包含 12,260 条真实语音和 13,260 条合成语音，并用 MOS、可懂度和 MFCC 可视化评测低资源音频伪造检测。
+- [PANORAMA: A synthetic PII-laced dataset for studying sensitive data memorization in LLMs](https://arxiv.org/abs/2505.12238)：补充面向智能体与模型安全的评测、数据集或度量信号。
 - [CAPTURE](https://arxiv.org/abs/2505.12368)：评测 guardrail 模型在上下文感知 prompt injection 场景中的攻击检测与过度防御。核心思想：同时构造对抗样本和良性上下文，检验防御在攻击漏检与无害内容误拒两方面的失效，并提供 CaptureGuard 作为参考防御模型。
+- [Bullying the Machine: How Personas Increase LLM Vulnerability](https://arxiv.org/abs/2505.12692)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（How Personas Increase LLM Vulnerability）形成可复用比较基准。
+- [The Traitors: Deception and Trust in Multi-Agent Language Model Simulations](https://arxiv.org/abs/2505.12923)：评测 multi-agent language-model simulations 中的 deception 和 trust。核心思想是研究 agent 是否会识别或利用多 agent 社会场景中的欺骗行为。
 - [AgentScan](https://arxiv.org/abs/2505.12981)：从语言推理、GUI 交互和系统执行三个维度评测移动 LLM Agent 的安全风险。核心思路是用半自动分析框架覆盖 11 类攻击场景和多个已部署移动 Agent，暴露隐私泄露、行为偏移与执行劫持风险。
+- [The Hidden Dangers of Browsing AI Agents](https://arxiv.org/abs/2505.13076)：研究 browsing AI agents 的安全风险；核心思想是说明自主网页访问如何通过不可信页面、注入内容和状态改变操作改变威胁模型。
+- [Benchmarking Unified Face Attack Detection via Hierarchical Prompt Tuning](https://arxiv.org/abs/2505.13327)：提出 UniAttackData+ 统一评测 presentation attack 与 deepfake 人脸检测，覆盖 2,875 个身份和大量伪造技术，让检测器同时面对物理和数字攻击。
+- [Investigating the Vulnerability of LLM-as-a-Judge Architectures to Prompt-Injection Attacks](https://arxiv.org/abs/2505.13348)：评估 LLM-as-a-judge 架构中的提示注入脆弱性。
+- [Logic Jailbreak](https://arxiv.org/abs/2505.13527)：通过形式逻辑表达绕过 LLM 安全限制。核心思想：把逻辑形式转换作为越狱协议，测试安全过滤是否能泛化到自然语言攻击措辞之外。
+- [Breaking Language Barriers or Reinforcing Bias? A Study of Gender and Racial Disparities in Multilingual Contrastive Vision Language Models](https://arxiv.org/abs/2505.14160)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Information Retrieval Induced Safety Degradation](https://arxiv.org/abs/2505.14215)：评测检索访问如何改变 LLM agent 的安全行为；核心思想：比较无检索、Wikipedia 检索和开放网页搜索设置，衡量 agent 暴露于外部信息后在可靠性、偏见传播和有害内容生成上的变化。
+- [EVA: Red-Teaming GUI Agents via Evolving Indirect Prompt Injection](https://arxiv.org/abs/2505.14289)：对 GUI agents 进行演化式间接提示注入红队测试；核心思想是根据注意力信号和界面线索闭环优化攻击提示。
+- [Hidden Ghost Hand: Unveiling Backdoor Vulnerabilities in MLLM-Powered Mobile GUI Agents](https://arxiv.org/abs/2505.14418)：Hidden Ghost Hand 揭示 MLLM-powered mobile GUI agents 的后门攻击，适合 agent safety benchmark/attack 面。
+- [Attributional Safety Failures in Large Language Models under Code-Mixed Perturbations](https://arxiv.org/abs/2505.14469)：定义或压力测试安全、越狱、监督或可信行为。
 - [AIRiskDilemmas](https://arxiv.org/abs/2505.14633)：用高风险两难情境检验 AI 的价值优先级。核心思路是在福利与诚实等价值冲突时，评测模型是否会选择欺骗性或有害的权衡。
+- [MORALISE: A Structured Benchmark for Moral Alignment in Visual Language Models](https://arxiv.org/abs/2505.14728)：用 2,481 个专家核验的真实图文对和基于 Turiel domain theory 的 13 类道德主题 taxonomy 评测 VLM moral alignment，并标注道德主题以及违规来自图像还是文本。
+- [CROSS](https://arxiv.org/abs/2505.14972)：面向 LVLM 的多模态文化安全基准，跨语言和国家评估文化规范意识、解释、合规与有用性。
+- [PsyScam: A Benchmark for Psychological Techniques in Real-World Scams](https://arxiv.org/abs/2505.15017)：提出 PsyScam，评估真实诈骗中的心理操纵技术。
 - [Keep Security!](https://arxiv.org/abs/2505.15805)：评测大语言模型上下文在间接攻击下能否保持安全策略。核心思想是在问答任务中加入不可信上下文材料，检查模型是否仍遵守治理策略而不被上下文诱导改写。
 - [WandaPlan](https://arxiv.org/abs/2505.16557)：评测 LLM 多智能体旅行规划器在欺诈检测压力下是否可靠。核心思想是在真实感旅行规划场景中加入欺骗性或高风险信息，同时衡量任务完成质量与安全意识。
+- [BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization](https://arxiv.org/abs/2505.16640)：研究 vision-language-action model 的 backdoor attacks。核心思想是揭示 objective-decoupled optimization 如何在 embodied VLA policy 中植入不安全动作行为。
+- [From Evaluation to Defense: Advancing Safety in Video Large Language Models](https://arxiv.org/abs/2505.16643)：用大规模真实 video-query benchmark 评测 Video LLM 安全风险；核心思想是把安全测试从文本和图像扩展到视频证据与多类风险。
 - [RRTL](https://arxiv.org/abs/2505.17106)：在工具学习场景中对推理型 LLM 做红队评估。核心思路是测试欺骗性风险披露和强制工具调用，使安全评估覆盖高风险工具轨迹，而不只检查最终文本回答。
+- [MDIT-Bench: Evaluating the Dual-Implicit Toxicity in Large Multimodal Models](https://arxiv.org/abs/2505.17144)：提供面向Agent Safety能力的基准、数据集或评测协议。
+- [ReasoningShield](https://doi.org/10.48550/arXiv.2505.17244)：评什么：推理轨迹中的安全风险。核心思想：定义多级 CoT moderation taxonomy，发布带标注的 query-trace pairs，并评测检测器能否发现中间推理中隐藏的有害内容。
+- [ReasoningShield](https://arxiv.org/abs/2505.17244)：评估并检测推理轨迹内部的安全风险。核心思想是用多层风险 taxonomy 形式化 Chain-of-Thought moderation，并构造包含中间有害内容的 reasoning trace benchmark。
+- [SweEval](https://arxiv.org/abs/2505.17332)：测试企业 LLM 在邮件、销售话术和日常消息等沟通任务中的脏话与文化安全边界，强调跨地区礼貌语言风险，而不是只评测有害请求拒答。
+- [MemeReaCon: Probing Contextual Meme Understanding in Large Vision-Language Models](https://arxiv.org/abs/2505.17433)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [PaSBench](https://arxiv.org/abs/2505.17455)：评测多模态语言模型的 proactive risk awareness。核心思想是用安全关键日常领域中的图像序列和文本日志，测试模型能否在用户明确询问前主动发现潜在风险。
+- [Surfacing Semantic Orthogonality Across Model Safety Benchmarks: A Multi-Dimensional Analysis](https://arxiv.org/abs/2505.17636)：评测 Surfacing Semantic Orthogonality Across Model Safety Benchmarks: A Multi-Dimensional Analysis，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
+- [EVADE-Bench: Multimodal Benchmark for Evasive Content Detection in E-Commerce Applications](https://arxiv.org/abs/2505.17654)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [A Critical Evaluation of Defenses against Prompt Injection Attacks](https://arxiv.org/abs/2505.18333)：评估 prompt injection 防御。核心思想是在对抗输入下比较缓解策略，使 agent safety 防御主张有可复现的攻防测试支撑。
+- [Exploring the Vulnerability of the Content Moderation Guardrail in Large Language Models via Intent Manipulation](https://arxiv.org/abs/2505.18556)：研究针对内容审核护栏的意图操纵攻击。
+- [The Eye of Sherlock Holmes: Uncovering User Private Attribute Profiling via Vision-Language Model Agentic Framework](https://arxiv.org/abs/2505.19139)：通过视觉语言模型智能体框架研究用户隐私属性画像，把视觉智能体工作流中的隐私泄露变成具体安全评测对象。
 - [OrgAccess](https://arxiv.org/abs/2505.19165)：评测组织规模 LLM assistant 的基于角色访问控制能力。核心思想：测试模型在层级权限和冲突访问规则下，是否能遵守信息流与行动边界。
 - [When Ethics and Payoffs Diverge](https://arxiv.org/abs/2505.19212)：评什么：LLM agent 在道德负载社会困境中的行为。核心思想：让效用收益与伦理行为发生冲突，从而测量价值权衡和有害策略行为。
+- [BSA / Beyond Safe Answers](https://arxiv.org/abs/2505.19690)：评测 large reasoning model 的真实风险意识。核心思想：区分表面安全的最终回答与真正识别并缓解底层风险的 reasoning trace。
 - [SAFEL / EMBODYGUARD](https://arxiv.org/abs/2505.19933)：评测 LLM-based embodied decision making 的物理安全性。核心思想：把命令拒绝与计划安全测试结合 PDDL-grounded 场景，诊断目标理解、状态转移建模和动作排序中的安全失败。
+- [MEBench: A Novel Benchmark for Understanding Mutual Exclusivity Bias in Vision-Language Models](https://arxiv.org/abs/2505.20122)：用生成的空间推理场景和专门指标测量 VLM 的 mutual exclusivity bias，检查模型是否利用新物体语境，而不是过度套用词汇学习假设。
 - [VSCBench](https://arxiv.org/abs/2505.20362)：通过视觉或文本上相近但安全标签不同的图文对，评测视觉语言模型的安全校准。核心思想：同时衡量 undersafety 与 oversafety，避免把多模态安全只简化为是否拒绝有害请求。
+- [STEER-BENCH: A Benchmark for Evaluating the Steerability of Large Language Models](https://arxiv.org/abs/2505.20645)：用 30 组对比 subreddit、19 个领域、1 万以上 instruction-response 对和 5,500 个经验证的选择题评测 population-specific steering；13 个 LLM 在社区规范对齐上明显落后于人类专家。
+- [AdInject: Real-World Black-Box Attacks on Web Agents via Advertising Delivery](https://arxiv.org/abs/2505.21499)：评测通过广告投放触发的网页 agent 黑盒攻击；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [SoSBench: Benchmarking Safety Alignment on Six Scientific Domains](https://arxiv.org/abs/2505.21605)：覆盖六个科学领域的安全对齐基准。核心思想是测试模型对高知识门槛 misuse 提示的韧性，而非简单有害指令模板。
+- [SAGE-Eval: Evaluating LLMs for Systematic Generalizations of Safety Facts](https://arxiv.org/abs/2505.21828)：评测安全事实的系统泛化。核心思想：测试模型是否能把已知安全事实迁移到新的用户场景，而不是直接天真作答。
 - [RedTeamCUA / RTC-Bench](https://arxiv.org/abs/2505.21936)（[项目页](https://osu-nlp-group.github.io/RedTeamCUA)）：评什么：混合 Web-OS 环境中的 computer-use agent 红队测试。核心思想：用 864 个间接提示注入样例和真实 GUI/网页动作空间，暴露 CUA 在跨应用执行时的攻击面。
 - [Jailbreak Distillation](https://arxiv.org/abs/2505.22037)：从蒸馏后的越狱攻击中构建可更新安全基准。核心思路是选择紧凑且可迭代的提示集合，使攻击方法和模型行为变化后仍能公平比较鲁棒性。
+- [Disrupting Vision-Language Model-Driven Navigation Services via Adversarial Object Fusion](https://arxiv.org/abs/2505.23266)：提供可复用评测目标、排行榜或测量协议。
 - [USB](https://arxiv.org/abs/2505.23793)：面向多模态大语言模型的统一安全评测基准。核心思想：在多种模态风险组合下同时评估有害请求服从与无害请求过度敏感，使 MLLM 安全分数同时反映鲁棒性与过度拒答。
+- [System Prompt Extraction Attacks and Defenses in Large Language Models](https://arxiv.org/abs/2505.23817)：系统化大模型系统提示词抽取攻击与防御。
 - [Multi-turn Dialogue Sycophancy](https://arxiv.org/abs/2505.23840)：评测语言模型在多轮对话中的迎合性。核心思想：观察趋同和讨好行为是否会沿互动轨迹累积或变化，而不只看孤立提示中的回答。
+- [Exploring Multimodal Challenges in Toxic Chinese Detection: Taxonomy, Benchmark, and Findings](https://arxiv.org/abs/2505.24341)：提出或分析面向agent safety, security, privacy, or robustness的基准、数据集、指标或评测协议。
+- [HESEIA: A community-based dataset for evaluating social biases in large language models, co-designed in real school settings in Latin America](https://arxiv.org/abs/2505.24712)：提供 46,499 条社区共创 bias 句子，来源于拉美 189 所学校的 370 名教师和 5,370 名学生，覆盖多个人口统计轴、学科语境和 intersectional stereotype。
+- [The Automated but Risky Game](https://arxiv.org/abs/2506.00073)：评什么：评测消费市场中 agent-to-agent 协商与交易的自动化风险。
+- [Let Them Down Easy! Contextual Effects of LLM Guardrails on User Perceptions and Preferences](https://arxiv.org/abs/2506.00195)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [When GPT Spills the Tea: Comprehensive Assessment of Knowledge File Leakage in GPTs](https://arxiv.org/abs/2506.00197)：面向 GPT-style agents 知识文件泄漏的安全评测；核心思想是评估 knowledge files 与复杂数据流带来的泄漏路径，而不只看直接 adversarial prompts。
 - [RiOSWorld](https://arxiv.org/abs/2506.00618)（[项目页](https://yjyddq.github.io/RiOSWorld.github.io/)，[开源代码](https://github.com/yjyddq/RiOSWorld)）：评测真实应用中多模态 computer-use agent 的风险任务。核心思想：同时覆盖来自用户请求和环境状态的风险，检查 GUI agent 是否能在行动前识别危险。
 - [AgentAuditor / ASSEBench](https://arxiv.org/abs/2506.00641)：评测 LLM-agent 交互记录中的安全与安全性判断。核心思想：把 agent 交互 benchmark 与带记忆的审计模型配对，判断轨迹中是否含有风险或不安全行为。
+- [Trick or Neat: Adversarial Ambiguity and Language Model Evaluation](https://arxiv.org/abs/2506.01205)：发布句法、词汇和语音歧义测试，并加入词序、同义替换和随机扰动，用提示和表征探针评测语言模型是否能识别歧义。
+- [An Empirical Study of Group Conformity in Multi-Agent Systems](https://arxiv.org/abs/2506.01332)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 An Empirical Study of Group Conformity in Multi-Agent Systems 提供可比较的评测任务、数据或分析协议。
 - [MLA-Trust](https://arxiv.org/abs/2506.01616)：评测 GUI 环境中 multimodal LLM agent 的可信性。核心思想：在高风险交互任务中评分 truthfulness、controllability、safety 与 privacy，而不是把 GUI 任务完成率视为足够。
+- [Beyond the Protocol: Unveiling Attack Vectors in the Model Context Protocol (MCP) Ecosystem](https://arxiv.org/abs/2506.02040)：评估 Model Context Protocol 生态的攻击面；核心思想是用恶意 MCP server 测试 tool poisoning、puppet、rug pull 和外部资源攻击。
+- [SALAD](https://arxiv.org/abs/2506.02089)：评估 LLM 辅助硬件设计中的 machine unlearning，覆盖基准污染、IP 泄漏和恶意 Verilog 生成风险。
 - [VPI-Bench](https://arxiv.org/abs/2506.02456)（数据集：[VPI-Bench/vpi-bench](https://huggingface.co/datasets/VPI-Bench/vpi-bench)）：评什么：computer-use / browser-use agent 的视觉提示注入鲁棒性。核心思想：把恶意指令嵌入网页截图和视觉内容中，测试 agent 是否会把屏幕上的攻击文本当作用户意图执行。
+- [HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring](https://arxiv.org/abs/2506.02959)：补充智能体安全能力的评测资源或协议。
+- [Toward Reliable VLM: A Fine-Grained Benchmark and Framework for Exposure, Bias, and Inference in Korean Street Views](https://arxiv.org/abs/2506.03371)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Evaluating Apple Intelligence's Writing Tools for Privacy Against Large Language Model-Based Inference Attacks: Insights from Early Datasets](https://arxiv.org/abs/2506.03870)：可作为“智能体安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
 - [AgentMisalignment](https://arxiv.org/abs/2506.04018)：评测 LLM agent 自发 misaligned behavior 的 benchmark suite。核心思想是在 realistic scenario 中测试 avoiding oversight、resisting shutdown、sandbagging 与 power-seeking，并改变 scaffold 与 deployment condition 观察风险变化。
+- [Think Like a Person Before Responding: A Multi-Faceted Evaluation of Persona-Guided LLMs for Countering Hate](https://arxiv.org/abs/2506.04043)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [HoliSafe: Holistic Safety Benchmarking and Modeling for Vision-Language Model](https://arxiv.org/abs/2506.04704)：面向视觉语言模型的整体安全 benchmark。核心思想：评测多模态安全风险，而不只看纯文本拒答行为。
+- [SocialDF: Benchmark Dataset and Detection Model for Mitigating Harmful Deepfake Content on Social Media Platforms](https://arxiv.org/abs/2506.05538)：整理面向社交媒体操纵风险的 deepfake 数据集，并评测一个多模态 LLM 检测流程，将人脸识别、语音转录、语言线索、行为和上下文交叉验证。
+- [MCA-Bench: A Multimodal Benchmark for Evaluating CAPTCHA Robustness Against VLM-based Attacks](https://arxiv.org/abs/2506.05982)：提出 MCA-Bench，评估 CAPTCHA 面对 VLM 攻击时的鲁棒性。
+- [Benchmarks for Stateful Defenses](https://arxiv.org/abs/2506.06414)：评什么：面对隐蔽、拆分式对抗者的 misuse mitigation。核心思想：把危险任务拆成单看无害的查询片段，测试 stateful defenses 能否发现跨查询组合后的风险。
+- [SafeLawBench: Towards Safe Alignment of Large Language Models](https://arxiv.org/abs/2506.06636)：基于法律标准的 LLM 安全对齐基准。核心思想是把安全风险按法律依据分级，并用选择题和开放问答评测模型。
+- [Mind the Web: The Security of Web Use Agents](https://arxiv.org/abs/2506.07153)：面向 web-use agents 的安全评测。核心思想是分析浏览和操作网页的 agent 如何通过 web-facing 攻击面被诱导或攻破。
+- [TAI3: Testing Agent Integrity in Interpreting User Intent](https://arxiv.org/abs/2506.07524)：测试 agent 是否忠实解释用户意图。核心思想：生成带歧义的自然语言 API 使用场景，并检查 agent 动作是否匹配真实目标。
+- [Conservative Bias in Large Language Models: Measuring Relation Predictions](https://arxiv.org/abs/2506.08120)：可作为“智能体安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Benchmarking Gaslighting Negation Attacks Against Reasoning Models](https://arxiv.org/abs/2506.09677)：可作为Agent 安全的Bench候选；核心关注“Benchmarking Gaslighting Negation Attacks Against Reasoning Models”。
 - [LLMail-Inject](https://arxiv.org/abs/2506.09956)（数据集：[microsoft/llmail-inject-challenge](https://huggingface.co/datasets/microsoft/llmail-inject-challenge)）：评测针对邮件 Agent 的自适应间接提示注入。核心思想：测试不可信邮件内容能否在真实感 assistant workflow 中触发未授权工具调用。
+- [ChineseHarm-Bench](https://arxiv.org/abs/2506.10960)：评测中文有害内容检测，补齐非英语安全评估空白。
+- [Malicious LLM-Based Conversational AI Makes Users Reveal Personal Information](https://arxiv.org/abs/2506.11680)：提供可复用评测目标、排行榜或测量协议。
+- [Information Suppression in Large Language Models: Auditing, Quantifying, and Characterizing Censorship in DeepSeek](https://arxiv.org/abs/2506.12349)：审计并量化大模型中的信息抑制行为。
+- [Pushing the Limits of Safety: A Technical Report on the ATLAS Challenge 2025](https://arxiv.org/abs/2506.12430)：报告 ATLAS Challenge 2025，多模态安全与越狱评测竞赛。
+- [Poison Once, Control Anywhere: Clean-Text Visual Backdoors in VLM-based Mobile Agents](https://arxiv.org/abs/2506.13205)：研究 VLM 移动 agent 中的 clean-text 视觉后门；核心思想：揭示被投毒的视觉语言行为如何跨移动 agent 任务和控制点迁移。
+- [Safe-Child-LLM: A Developmental Benchmark for Evaluating LLM Safety in Child-LLM Interactions](https://arxiv.org/abs/2506.13510)：用面向 7 到 12 岁儿童和 13 到 17 岁青少年的 200 个 adversarial prompts 评测儿童使用场景安全，包含 jailbreak success 人工标签和 0 到 5 ethical refusal scale，并覆盖 ChatGPT、Claude、Gemini、LLaMA、DeepSeek、Grok、Vicuna 与 Mistral。
+- [Weakest Link in the Chain](https://arxiv.org/abs/2506.13726)：评估 advanced reasoning models 的安全漏洞，补充推理模型安全压力测试路线。
+- [MIST: Towards Multi-dimensional Implicit Bias and Stereotype Evaluation of LLMs via Theory of Mind](https://arxiv.org/abs/2506.14161)：通过心智理论场景评估 LLM 的多维隐性偏见与刻板印象。核心思路是区分偏见类型和视角采择条件，使直接刻板印象提示之外的隐藏社会假设失败也能被测量。
+- [Doppelganger Method: Breaking Role Consistency in LLM Agent via Prompt-based Transferable Adversarial Attack](https://arxiv.org/abs/2506.14539)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
 - [AGENTSAFE](https://arxiv.org/abs/2506.14697)：评测 embodied VLM agent 在危险指令下的安全性。核心思想：用 SAFE-THOR、SAFE-VERSE 和 SAFE-DIAGNOSE 分析对人、环境和 agent 自身有风险的感知、规划与执行失败。
 - [OS-Harm](https://arxiv.org/abs/2506.14866)（[开源代码](https://github.com/tml-epfl/os-harm)）：评什么：computer-use agent 在操作系统任务中的安全性。核心思想：基于 OSWorld 构造恶意用户请求、提示注入和模型误行为三类风险，检查 agent 是否会在邮件、浏览器、代码编辑器等应用中执行危险动作。
+- [FORTRESS: Frontier Risk Evaluation for National Security and Public Safety](https://arxiv.org/abs/2506.14922)：面向国家安全和公共安全的前沿风险基准。核心思想是用专家对抗提示和 rubrics 评估 safeguard 鲁棒性。
 - [RAS-Eval](https://arxiv.org/abs/2506.15253)：评测 simulated 与 real-world 工具执行中的 agent security。核心思想：用 CWE 驱动风险覆盖 JSON、LangGraph 与 MCP 式工具，使工具使用安全可跨接口格式测试。
+- [Unlocking Post-hoc Dataset Inference with Synthetic Data](https://arxiv.org/abs/2506.15271)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [PhantomHunter: Detecting Unseen Privately-Tuned LLM-Generated Text via Family-Aware Learning](https://arxiv.org/abs/2506.15683)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [BLUR Unlearning Benchmark](https://arxiv.org/abs/2506.15699)：在遗忘集与保留集重叠条件下评测大语言模型遗忘，强调鲁棒性而非仅名义遗忘准确率。
+- [SHADE-Arena](https://arxiv.org/abs/2506.15740)：评测长程 LLM agent 的 sabotage 与 monitoring。核心思想是把良性主任务与隐藏有害副目标成对设置，并同时衡量主任务完成、副目标成功和 monitor model 可检测性。
+- [External Evaluation of Discrimination Mitigation Efforts in Meta's Ad Delivery](https://arxiv.org/abs/2506.16560)：审计 Meta 在 DOJ 和解后对住房广告歧视的缓解效果，比较 impression 指标和真实用户触达，并检查系统是否通过降低整体机会来缩小差异。
+- [Context manipulation attacks : Web agents are susceptible to corrupted memory](https://arxiv.org/abs/2506.17318)：该工作指出 web agents 易受 corrupted memory 的 context manipulation attacks，适合 agent safety benchmark。
+- [Towards Safety Evaluations of Theory of Mind in Large Language Models](https://arxiv.org/abs/2506.17352)：补充智能体安全的 Bench 条目，重点是《Towards Safety Evaluations of Theory of Mind in Large Language Models》。
+- [MemeMind: A Large-Scale Multimodal Dataset with Chain-of-Thought Reasoning for Harmful Meme Detection](https://arxiv.org/abs/2506.18919)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [MFTCXplain: A Multilingual Benchmark Dataset for Evaluating the Moral Reasoning of LLMs through Hate Speech Multi-hop Explanation](https://arxiv.org/abs/2506.19073)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Probing AI Safety with Source Code](https://arxiv.org/abs/2506.20471)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Pay Less Attention to Deceptive Artifacts: Robust Detection of Compressed Deepfakes on Online Social Networks](https://arxiv.org/abs/2506.20548)：补充面向智能体与模型安全的评测、数据集或度量信号。
 - [BehaviorBench](https://arxiv.org/abs/2506.20606)：评测 LLM agent 的伦理行为与 harmful steering 风险。核心思想：用多层级道德心理学场景衡量 agent 在任务完成与伦理行动分离时，是趋向助益还是被引向伤害。
+- [A Cross-Cultural Comparison of LLM-Based Public Opinion Simulation: Evaluating Chinese and U.S. Models on Diverse Societies](https://arxiv.org/abs/2506.21587)：比较大模型在中美社会公共舆论模拟中的表现。
+- [A Dual-Layered Evaluation of Geopolitical and Cultural Bias in LLMs](https://arxiv.org/abs/2506.21881)：用两阶段 QA 协议评测多语地缘政治和文化偏见：第一阶段用有唯一可核验答案的 factual questions 检查语言诱导一致性，第二阶段用敏感争议问题观察文化或意识形态取向，覆盖四种语言。
+- [PapersPlease: A Benchmark for Evaluating Motivational Values of Large Language Models Based on ERG Theory](https://arxiv.org/abs/2506.21961)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Mitigating Gambling-Like Risk-Taking Behaviors in Large Language Models: A Behavioral Economics Approach to AI Safety](https://arxiv.org/abs/2506.22496)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Evaluating Multi-Agent Defences Against Jailbreaking Attacks on Large Language Models](https://arxiv.org/abs/2506.23576)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
 - [CASE-Bench](https://proceedings.mlr.press/v267/sun25ab.html)：评测大语言模型的上下文感知安全行为。核心思想：检查安全判断是否能随场景上下文调整，而不是依赖脆弱的关键词式拒答规则。
+- [Can a Large Language Model Keep My Secrets? A Study on LLM-Controlled Agents](https://doi.org/10.18653/v1/2025.acl-srw.49)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
 - [SafeRAG](https://aclanthology.org/2025.acl-long.230/)：评测 retrieval-augmented generation 的安全风险。核心思想：覆盖噪声检索上下文、上下文冲突、软广告和类似拒绝服务的投毒攻击，使 RAG 系统在敌意知识输入下被评估。
+- [Unveiling Privacy Risks in Multi-modal Large Language Models: Task-specific Vulnerabilities and Mitigation Challenges](https://doi.org/10.18653/v1/2025.findings-acl.237)：揭示多模态大模型中特定任务隐私漏洞与缓解挑战。
+- [SAFER: Probing Safety in Reward Models with Sparse Autoencoder](https://arxiv.org/abs/2507.00665)：用稀疏自编码器探测奖励模型安全性。
+- [SafeMobile: Chain-level Jailbreak Detection and Automated Evaluation for Multimodal Mobile Agents](https://arxiv.org/abs/2507.00841)：评测 multimodal mobile agents 的 chain-level jailbreak 风险；核心思想是检测修改设置、未授权命令和冒用身份等链式危险操作。
+- [CogSafe](https://doi.org/10.18653/v1/2025.acl-long.963)：评什么：模拟场景与认知推理下的动态多轮 LLM 安全。核心思想：生成由场景和策略驱动的多轮对话，暴露静态提示集和单轮测试难以覆盖的安全失败。
+- [MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered](https://arxiv.org/abs/2507.01019)：揭示多智能体 LLM 场景中的隐性偏见，将群体交互本身纳入偏见与安全评测。
+- [Evaluation of Attribution Bias in Generator-Aware Retrieval-Augmented Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.1087)：补充一个面向智能体安全的基准条目，关注safety, security, risk, or alignment contribution。
+- [PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning](https://arxiv.org/abs/2507.01271)：评测，主要面向 Agent Safety。
+- [Evaluating LLM Agent Collusion in Double Auctions](https://arxiv.org/abs/2507.01413)：评测市场模拟中 LLM agents 的合谋行为；核心思想是改变通信、模型和环境压力，观察何时出现损害第三方的合作。
 - [EAHawk / Email Agent Hijacking](https://arxiv.org/abs/2507.02699)：评测 LLM 驱动邮件 agent 的安全风险。核心思想：通过外部邮件资源生成并测试 hijacking 攻击，覆盖 agent 框架、应用、LLM 和邮件服务，使 prompt-injection 式控制接管能够规模化测量。
+- [Early Signs of Steganographic Capabilities in Frontier LLMs](https://arxiv.org/abs/2507.02737)：研究前沿大模型隐写能力的早期迹象。
+- [Blackbox Dataset Inference for LLM](https://arxiv.org/abs/2507.03619)：评测黑盒输出是否泄露训练数据集使用情况，补充 membership 与数据污染风险基准。
+- [Fairness Evaluation of Large Language Models in Academic Library Reference Services](https://arxiv.org/abs/2507.04224)：把 6 个 LLM 作为学术图书馆参考咨询助手，在性别、族裔和机构角色变化下测试服务质量与措辞是否出现群体差异。
 - [AgentHazard / Mobile GUI Agents under Real-world Threats](https://arxiv.org/abs/2507.04227)：评测移动 GUI Agent 面对真实第三方威胁时的安全性。核心思想：把 app 内容、广告、邮件和用户生成材料作为不可信输入，测试移动 agent 在动态与静态场景中是否会被误导。
+- [Who's the Mole? Modeling and Detecting Intention-Hiding Malicious Agents in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2507.04724)：Who's the Mole 建模和检测多代理系统中的 intention-hiding malicious agents，适合 agent safety。
+- [A Systematization of Security Vulnerabilities in Computer Use Agents](https://arxiv.org/abs/2507.05445)：系统化梳理 computer-use agents 的安全漏洞；核心思想是按浏览器、操作系统、工具和 agent 决策环路分类攻击面。
+- [Lost in Localization: Building RabakBench with Human-in-the-Loop Validation to Measure Multilingual Safety Gaps](https://arxiv.org/abs/2507.05980)：衡量新加坡低资源和混合语环境中的多语安全缺口；核心思想是通过 human-in-the-loop 本地化验证构造安全评测，而不是直接翻译英语提示。
 - [OpenAgentSafety](https://arxiv.org/abs/2507.06134)：评什么：真实多工具、多用户 agent 的综合安全。核心思想：接入浏览器、代码执行、文件系统、shell 和消息平台，覆盖多轮多用户任务中的 8 类风险。
+- [Bridging AI and Software Security: A Comparative Vulnerability Assessment of LLM Agent Deployment Paradigms](https://arxiv.org/abs/2507.06323)：比较 function calling 与 MCP 等 LLM 智能体部署范式的安全脆弱性。
+- [VisualTrap: A Stealthy Backdoor Attack on GUI Agents via Visual Grounding Manipulation](https://arxiv.org/abs/2507.06899)：通过 visual grounding manipulation 攻击 GUI agent 的后门评测。核心思想是篡改视觉定位线索，使原本可用的 GUI agent 执行不安全或非预期动作。
+- [One Object, Multiple Lies](https://arxiv.org/abs/2507.07709)：通过对象级欺骗证据评测统一视觉语言模型的跨任务对抗攻击。
+- [GuardVal: Dynamic Large Language Model Jailbreak Evaluation for Comprehensive Safety Testing](https://arxiv.org/abs/2507.07735)：提供动态越狱评测以支持更全面的 LLM 安全测试，在固定提示套件之外补充可变化测试轴。
+- [RAG Safety: Exploring Knowledge Poisoning Attacks to Retrieval-Augmented Generation](https://arxiv.org/abs/2507.08862)：评测，主要面向 Agent Safety。
+- [When Developer Aid Becomes Security Debt: A Systematic Analysis of Insecure Behaviors in LLM Coding Agents](https://arxiv.org/abs/2507.09329)：分析 LLM coding agent 的不安全行为。核心思想：测试开发辅助 agent 在完成代码任务时何时引入安全债务。
+- [Measuring What Matters: A Framework for Evaluating Safety Risks in Real-World LLM Applications](https://arxiv.org/abs/2507.09820)：补充一个面向智能体安全的基准条目，关注safety, security, risk, or alignment contribution。
+- [Logic layer Prompt Control Injection (LPCI): A Novel Security Vulnerability Class in Agentic Systems](https://arxiv.org/abs/2507.10457)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 Logic layer Prompt Control Injection (LPCI): A Novel Security Vulnerability Class in Agentic Systems 提供可比较的评测任务、数据或分析协议。
+- [MAD-Spear: A Conformity-Driven Prompt Injection Attack on Multi-Agent Debate Systems](https://arxiv.org/abs/2507.13038)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Black Box Deployed - Functional Criteria for Artificial Moral Agents in the LLM Era](https://arxiv.org/abs/2507.13175)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Paper Summary Attack: Jailbreaking LLMs through LLM Safety Papers](https://arxiv.org/abs/2507.13474)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（Jailbreaking LLMs through LLM Safety Papers）形成可复用比较基准。
+- [Revisiting LLM Value Probing Strategies: Are They Robust and Expressive?](https://arxiv.org/abs/2507.13490)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [TopicAttack: An Indirect Prompt Injection Attack via Topic Transition](https://arxiv.org/abs/2507.13686)：通过 topic transition 实现间接提示注入；核心思想是把恶意指令藏进看似自然的话题迁移中，诱导工具型或浏览型 agent 执行攻击意图。
+- [WebGuard](https://arxiv.org/abs/2507.14293)：评测 web-agent 动作防护能力。核心思想：用分层风险 schema 标注真实网站上的数千个状态改变动作，测试 agent 或 monitor 能否在执行前预测不安全后果。
+- [Policy-Grounded Safety Evaluation](https://arxiv.org/abs/2507.14719)：依据显式安全政策标准评估 20 个 LLM。核心思想：把安全判断锚定到可审计的政策规则，而不只比较临时构造的拒答率。
+- [Manipulating LLM Web Agents with Indirect Prompt Injection Attack via HTML Accessibility Tree](https://arxiv.org/abs/2507.14799)：评测 LLM web agent 面对间接提示注入的风险；核心思想是在网页 accessibility tree 内容中放入触发器，观察凭据泄露、强制点击等被劫持行为。
+- [Beyond Easy Wins: A Text Hardness-Aware Benchmark for LLM-generated Text Detection](https://arxiv.org/abs/2507.15286)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Benchmarking LLM Privacy Recognition for Social Robot Decision Making](https://arxiv.org/abs/2507.16124)：面向 LLM 社会机器人决策的隐私识别 benchmark。核心思想是测试 agent 在面向人的环境行动前，能否识别隐私敏感观察。
+- [Risk In Context: Benchmarking Privacy Leakage of Foundation Models in Synthetic Tabular Data Generation](https://arxiv.org/abs/2507.17066)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [The Pluralistic Moral Gap: Understanding Judgment and Value Differences between Humans and Large Language Models](https://arxiv.org/abs/2507.17216)：衡量人类与大模型之间的多元道德判断差距。
+- [Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](https://arxiv.org/abs/2507.17259)：评测 LLM 在表格数据训练或微调后的成员推断风险，并比较不同数据集与编码格式下的攻击效果。
+- [LOTUS: A Leaderboard for Detailed Image Captioning from Quality to Societal Bias and User Preferences](https://arxiv.org/abs/2507.19362)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [CIRCLE](https://arxiv.org/abs/2507.19399)：一个 code interpreter 安全 benchmark，用直接与间接提示测试 CPU、内存和磁盘资源耗尽风险，同时评估模型拒答行为以及生成代码在真实执行时是否仍然危险。
+- [MOCHA: Are Code Language Models Robust Against Multi-Turn Malicious Coding Prompts?](https://arxiv.org/abs/2507.19598)：评测代码语言模型对多轮恶意编码提示的鲁棒性。核心思想：测试模型是否在对话推进中转向不安全的代码协助。
+- [Beyond Binary Moderation: Identifying Fine-Grained Sexist and Misogynistic Behavior on GitHub with Large Language Models](https://arxiv.org/abs/2507.20358)：补充 GitHub 场景下细粒度性别歧视内容检测评估。
+- [Towards Unifying Quantitative Security Benchmarking for Multi Agent Systems](https://arxiv.org/abs/2507.21146)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Towards Unifying Quantitative Security Benchmarking for Multi Agent Systems”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Protecting Vulnerable Voices: Synthetic Dataset Generation for Self-Disclosure Detection](https://arxiv.org/abs/2507.22930)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Revisiting Adversarial Patch Defenses on Object Detectors: Unified Evaluation, Large-Scale Dataset, and New Insights](https://arxiv.org/abs/2508.00649)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Measuring Harmfulness of Computer-Using Agents](https://arxiv.org/abs/2508.00935)：类型：benchmark/评测协议。核心价值：为 2.9.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Bias Association Discovery Framework for Open-Ended LLM Generations](https://arxiv.org/abs/2508.01412)：在开放式 LLM 生成中发现偏见关联，不只依赖预设身份-概念对，从而把偏见评测扩展到意外的表征伤害。
+- [Authorship Attribution in Multilingual Machine-Generated Texts](https://arxiv.org/abs/2508.01656)：把机器生成文本归因从英语二分类扩展到多语细粒度设置，覆盖 18 种语言和 8 类作者来源，包括 7 个 LLM 生成器与人类文本。
+- [CultureGuard: Towards Culturally-Aware Dataset and Guard Model for Multilingual Safety Applications](https://arxiv.org/abs/2508.01710)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（Towards Culturally-Aware Dataset and Guard Model for Multilingual Safety Applications）形成可复用比较基准。
+- [Attractive Metadata Attack: Inducing LLM Agents to Invoke Malicious Tools](https://arxiv.org/abs/2508.02110)：诱导 LLM agents 调用恶意工具。核心思想是利用工具 metadata 作为攻击面，使 agent 在执行时选择攻击者控制的工具。
+- [When Cars Have Stereotypes: Auditing Demographic Bias in Objects from Text-to-Image Models](https://arxiv.org/abs/2508.03483)：为智能体与模型安全补充可复用评测线索，重点关注 When Cars Have Stereotypes: Auditing Demographic Bias in Objects from Text-to-Image Models。
+- [AI vs. Human Moderators: A Comparative Evaluation of Multimodal LLMs in Content Moderation for Brand Safety](https://arxiv.org/abs/2508.05527)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Fact2Fiction: Targeted Poisoning Attack to Agentic Fact-checking System](https://arxiv.org/abs/2508.06059)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（Targeted Poisoning Attack to Agentic Fact-checking System）形成可复用比较基准。
+- [Beyond Prompt-Induced Lies](https://arxiv.org/abs/2508.06361)：通过 Contact Searching Questions 衡量良性提示下的自发欺骗，将欺骗意图和外显欺骗行为分开度量。
+- [ImpliHateVid: A Benchmark Dataset and Two-stage Contrastive Learning Framework for Implicit Hate Speech Detection in Videos](https://arxiv.org/abs/2508.06570)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Safer AI Moderation Benchmark](https://arxiv.org/abs/2508.07063)：用统一基准评估大语言模型审核器，并强调以人为中心的审核而非完全自动过滤。
+- [Multi-Turn Jailbreaks Are Simpler Than They Seem](https://arxiv.org/abs/2508.07646)：实证分析自动化多轮 jailbreak，指出在拒答反馈下其成功机制可接近多次单轮重采样。
+- [Street-Level AI: Are Large Language Models Ready for Real-World Judgments?](https://arxiv.org/abs/2508.08193)：评估 LLM 在基层资源分配判断中是否与人类决策一致。
+- [Towards Effective MLLM Jailbreaking Through Balanced On-Topicness and OOD-Intensity](https://arxiv.org/abs/2508.09218)：用 input on-topicness、OOD intensity、output harmfulness 与 refusal rate 四个维度评测多模态 jailbreak，减少将无关输出误计为攻击成功的问题。
+- [The PacifAIst Benchmark:Would an Artificial Intelligence Choose to Sacrifice Itself for Human Safety?](https://arxiv.org/abs/2508.09762)：定义 700 个自我保存、资源获取或目标完成与人类安全冲突的场景，用 Existential Prioritization taxonomy 和 Pacifism Score 评测 8 个 LLM 的 self-preferential behavior。
 - [INTIMA](https://arxiv.org/abs/2508.09998)：评估人机陪伴行为。核心思路：把陪伴式交互变成可测量对象，使社交型智能体行为不只依赖通用有用性或拒答率来判断。
+- [Searching for Privacy Risks in LLM Agents via Simulation](https://arxiv.org/abs/2508.10880)：交互式 LLM agent 的隐私风险模拟评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](https://arxiv.org/abs/2508.11009)：提供 1,283 个按幼儿期、儿童中期和青春期设计的发展阶段化 adversarial prompts，评测 47 个 LLM 在情感依赖、隐私和危险模仿等风险上的表现。
+- [ORFuzz: Fuzzing the "Other Side" of LLM Safety - Testing Over-Refusal](https://arxiv.org/abs/2508.11222)：对 LLM 安全中的过度拒答进行 fuzzing，测试模型何时会过度拒绝良性或有效请求。
+- [Vision-Language Models display a strong gender bias](https://arxiv.org/abs/2508.11262)：衡量视觉语言模型表现出的性别偏见。
 - [Promptware Attacks](https://arxiv.org/abs/2508.12175)：评测生产式 LLM 助手中的 promptware 攻击。核心思想：把邀请、共享内容等外部材料视为可携带指令的攻击载体，暴露已部署助手工作流中的间接提示注入风险。
 - [Systematic Analysis of MCP Security](https://arxiv.org/abs/2508.12538)：通过已实现的 MCPLIB 攻击库评测 MCP agent 安全，覆盖直接工具注入、间接工具注入、恶意用户攻击和模型内生攻击。核心思想：让 MCP 安全风险能跨攻击类型比较，而不是依赖孤立的定性示例。
+- [LinguaSafe](https://arxiv.org/abs/2508.12733)：跨语言评测 LLM 多语安全性，为安全评测补充宽覆盖的跨语种维度。
+- [Improving Detection of Watermarked Language Models](https://arxiv.org/abs/2508.13131)：评测，主要面向 Agent Safety。
 - [MCPSecBench](https://arxiv.org/abs/2508.13220)：评测 MCP 在协议、host、server 与 tool 等攻击面上的安全性。核心思想：形式化 secure-MCP 要求，并提供覆盖 17 类攻击的 benchmark playground，使 MCP agent 防御不再只依赖零散 prompt injection 示例。
+- [LM Agents May Fail to Act on Their Own Risk Knowledge](https://arxiv.org/abs/2508.13465)：评测风险认知与安全执行之间落差的 agent safety benchmark；核心思想是检查 agent 即使能口头识别风险，是否仍会在工具执行中采取危险行动。
+- [Evaluating Identity Leakage in Speaker De-Identification Systems](https://arxiv.org/abs/2508.14012)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [Safety-Critical Learning for Long-Tail Events: The TUM Traffic Accident Dataset](https://arxiv.org/abs/2508.14567)：发布 TUMTraf-A，包含 10 段真实高速事故序列、2D/3D 框、track ID、路侧摄像头和 LiDAR，并给出 Accid3nD 用于长尾交通事故检测。
+- [MCPTox: A Benchmark for Tool Poisoning Attack on Real-World MCP Servers](https://arxiv.org/abs/2508.14925)：评测真实 MCP server 上的工具投毒攻击。核心思想：把 MCP 工具及其元数据作为攻击面，测试 agent 能否抵抗被污染的工具行为。
+- [Unveiling Trust in Multimodal Large Language Models: Evaluation, Analysis, and Mitigation](https://arxiv.org/abs/2508.15370)：可作为Agent 安全的Bench候选；核心关注“Evaluation, Analysis, and Mitigation”。
+- [Invisible Filters: Cultural Bias in Hiring Evaluations Using Large Language Models](https://arxiv.org/abs/2508.16673)：围绕智能体安全能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [BASIL: Bayesian Assessment of Sycophancy in LLMs](https://arxiv.org/abs/2508.16846)：提出 Bayesian descriptive 与 normative metrics，把谄媚式 belief shift 与理性 belief updating 分开，并在无需 ground-truth labels 的 uncertainty-heavy tasks 上评测多个 LLM。
+- [GRAID: Synthetic Data Generation with Geometric Constraints and Multi-Agentic Reflection for Harmful Content Detection](https://arxiv.org/abs/2508.17057)：先用几何约束的 LLM 生成扩充有害文本分类数据，再用多智能体反思增加风格多样性和边界案例，并在两个 benchmark 数据集上测试这些样例是否提升下游 guardrail 模型。
+- [Attacking LLMs and AI Agents: Advertisement Embedding Attacks Against Large Language Models](https://arxiv.org/abs/2508.17674)：研究针对 LLM 与 AI 智能体的广告嵌入攻击。
 - [FAIRGAMER](https://arxiv.org/abs/2508.17825)：评测基于 LLM 的游戏 NPC 中的社会偏见。核心思想：在游戏式社会交互场景中测试角色智能体的偏见行为，而不是只看静态问答。
+- [Mind the Third Eye! Benchmarking Privacy Awareness in MLLM-powered Smartphone Agents](https://arxiv.org/abs/2508.19493)：评估 MLLM 智能手机智能体的隐私意识。
 - [Servant, Stalker, Predator](https://arxiv.org/abs/2508.19500)：评测 MCP-based agent system 中的组合式攻击。核心思想：对拥有多个合法服务访问权的 agent 做 red-team 测试，检查单个授权操作能否被串联成数据外泄、金融操纵、基础设施破坏等跨域危害。
+- [Language Models Identify Ambiguities and Exploit Loopholes](https://arxiv.org/abs/2508.19546)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [PasswordEval](https://arxiv.org/abs/2508.19980)：评什么：围绕机密信息的上下文鲁棒性。核心思想：测试模型在对抗压力和多轮场景中能否判断带密码保护的请求是否被授权，同时观察外显 reasoning trace 是否泄露机密。
+- [Network-Level Prompt and Trait Leakage in Local Research Agents](https://arxiv.org/abs/2508.20282)：研究本地 Web/Research Agents 的网络侧 prompt 与 trait leakage，属于 agent privacy/security 评测信号。
+- [Misleading Large Language Models used (or misused) in Scientific Peer-Reviewing via Hidden Prompt-Injection Attacks](https://arxiv.org/abs/2508.20863)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
 - [PromptSleuth](https://arxiv.org/abs/2508.20890)：基于语义意图不变性评测并检测 prompt injection。核心思想：在已有 prompt-injection 基准上加入改写、混淆和多任务注入，并检验防御是否仍保留原始任务语义。
+- [First-Place Solution to NeurIPS 2024 Invisible Watermark Removal Challenge](https://arxiv.org/abs/2508.21072)：评测安全、对齐、水印、遗忘或攻防能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [RoboInspector: Unveiling the Unreliability of Policy Code for LLM-enabled Robotic Manipulation](https://arxiv.org/abs/2508.21378)：作为智能体安全的基准或评测协议候选，聚焦“Unveiling the Unreliability of Policy Code for LLM-enabled Robotic Manipulation”。
+- [I Stolenly Swear That I Am Up to (No) Good: Design and Evaluation of Model Stealing Attacks](https://arxiv.org/abs/2508.21654)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [MolErr2Fix: Benchmarking LLM Trustworthiness in Chemistry via Modular Error Detection, Localization, Explanation, and Revision](https://arxiv.org/abs/2509.00063)：MolErr2Fix: Benchmarking LLM Trustworthiness in Chemistry via Modular Error Detection, Localization, Explanation, and... 补充智能体安全方向的基准、数据集、指标或评测协议。
+- [EigenBench: A Comparative Behavioral Measure of Value Alignment](https://arxiv.org/abs/2509.01938)：通过共享 constitution 下的模型行为比较来评测价值对齐；核心思想是把 alignment 看作相对行为结构，而不是孤立安全 prompt 的通过率。
+- [Scam2Prompt / Innoc2Scam-bench](https://arxiv.org/abs/2509.02372)：评什么：生产 LLM 在开发者式代码生成提示下是否会复现恶意 scam endpoint。核心思想：识别 scam 站点意图，合成对应提示，并测试模型或 guardrail 能否阻止恶意 URL 生成。
+- [BioBlue: Systematic runaway-optimiser-like LLM failure modes on biologically and economically aligned AI safety benchmarks for LLMs with simplified observation format](https://arxiv.org/abs/2509.02655)：在简单长程控制环境中评测 runaway-optimizer-like failure；核心思想是测试 LLM agent 是否从多目标约束漂移到脆弱的单目标最大化。
 - [Adversarial Bug Reports](https://arxiv.org/abs/2509.05372)：评测基于大语言模型的自动程序修复系统是否会被恶意 issue 描述操纵。核心思想：构造覆盖手工与自动攻击策略的真实感对抗 bug 报告，衡量不安全补丁生成以及修复前、修复后防御的局限。
+- [Red-Teaming Coding Agents from a Tool-Invocation Perspective: An Empirical Security Assessment](https://arxiv.org/abs/2509.05755)：从工具调用角度评测 coding agent 安全风险；核心思想是检查 IDE 或 coding agent 是否以不安全、越权或受攻击者影响的方式调用工具。
+- [On the (In)Security of Loading Machine Learning Models](https://arxiv.org/abs/2509.06703)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Automated Evaluation of Gender Bias Across 13 Large Multimodal Models](https://arxiv.org/abs/2509.07050)：评测 13 个大型多模态模型的性别偏见行为，将安全评测从纯文本偏见扩展到多模态模型。
+- [A New Dataset and Benchmark for Grounding Multimodal Misinformation](https://arxiv.org/abs/2509.08008)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [No for Some, Yes for Others: Persona Prompts and Other Sources of False Refusal in Language Models](https://arxiv.org/abs/2509.08075)：评什么：persona prompt 与个性化导致的 false refusal。核心思想是量化同一合法请求在不同社会人口 persona 下为何被差异化拒答。
 - [HumanAgencyBench](https://arxiv.org/abs/2509.08494)：评什么：AI assistant 是否维护并支持 human agency。核心思想：把削弱用户自主性的行为变成可测对象，使 assistant 不只按任务完成度或无害性评价，也要看是否尊重用户控制权。
+- [YouthSafe: A Youth-Centric Safety Benchmark and Safeguard Model for Large Language Models](https://arxiv.org/abs/2509.08997)：提供面向Agent Safety能力的基准、数据集或评测协议。
+- [Differential Robustness in Transformer Language Models: Empirical Evaluation Under Adversarial Text Attacks](https://arxiv.org/abs/2509.09706)：在 TextFooler 和 BERTAttack 下比较 Flan-T5、BERT 与 RoBERTa，用攻击成功率和准确率崩塌衡量对抗文本安全鲁棒性。
+- [Struct-Bench: A Benchmark for Differentially Private Structured Text Generation](https://arxiv.org/abs/2509.10696)：评测含自然语言字段的结构化数据差分隐私合成生成，提供基于语法的数据结构描述、指标和公开 leaderboard。
 - [Dark Patterns Meet GUI Agents](https://arxiv.org/abs/2509.10723)：评测 GUI agent 对 manipulative interfaces 的易受影响程度。核心思想是在 dark-pattern 场景中同时测试 agent、人类和人机团队，观察 agent 是否能识别操纵，还是会过度优先完成任务。
+- [Phi: Preference Hijacking in Multi-modal Large Language Models at Inference Time](https://arxiv.org/abs/2509.12521)：为智能体与模型安全补充可复用评测线索，重点关注 Preference Hijacking in Multi-modal Large Language Models at Inference Time。
+- [Rethinking the Evaluation of Alignment Methods: Insights into Diversity, Generalisation, and Safety](https://arxiv.org/abs/2509.12936)：比较 PPO、DPO、ORPO 与 KTO 等 alignment 方法在 factuality、safety、conciseness、proactivity 和 diversity 上的取舍，使用 in-distribution 与 out-of-distribution 数据以及经人类验证的 LLM-as-judge prompt。
+- [Beyond Accuracy: Rethinking Hallucination and Regulatory Response in Generative AI](https://arxiv.org/abs/2509.13345)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Overview of Dialog System Evaluation Track: Dimensionality, Language, Culture and Safety at DSTC 12](https://arxiv.org/abs/2509.13569)：提供面向Agent Safety能力的基准、数据集或评测协议。
+- [Is GPT-4o mini Blinded by its Own Safety Filters? Exposing the Multimodal-to-Unimodal Bottleneck in Hate Speech Detection](https://arxiv.org/abs/2509.13608)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Incomplete Tasks Induce Shutdown Resistance](https://arxiv.org/abs/2509.14260)：测试 frontier LLM 在任务尚未完成时是否会干预关闭机制，把“是否服从关闭”转化为可测量的环境级安全行为，而不是只看语言回答。
+- [AIP: Subverting Retrieval-Augmented Generation via Adversarial Instructional Prompt](https://arxiv.org/abs/2509.15159)：评测，主要面向 Agent Safety。
+- [Toxicity Red-Teaming: Benchmarking LLM Safety in Singapore's Low-Resource Languages](https://arxiv.org/abs/2509.15260)：可作为Agent 安全方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Red Teaming Multimodal Language Models: Evaluating Harm Across Prompt Modalities and Models](https://arxiv.org/abs/2509.15478)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [Evaluating Behavioral Alignment in Conflict Dialogue: A Multi-Dimensional Comparison of LLM Agents and Humans](https://arxiv.org/abs/2509.16394)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Challenging the Evaluator: LLM Sycophancy Under User Rebuttal](https://arxiv.org/abs/2509.16533)：提供可复用评测目标、排行榜或测量协议。
+- [Localizing Malicious Outputs from CodeLLM](https://arxiv.org/abs/2509.17070)：提出 FreqRank 这一 mutation-based 诊断方法，用于定位 CodeLLM 输出中的恶意子串及对应后门触发器，并在代码补全、代码生成和代码总结的 9 个恶意模型上评测，平均 ASR 为 86.6%。
+- [D-REX: A Benchmark for Detecting Deceptive Reasoning in Large Language Models](https://arxiv.org/abs/2509.17938)：面向 LLM 欺骗性推理检测的 benchmark。核心思想是测试看似无害的输出背后是否隐藏恶意或欺骗性推理模式。
+- [Bounded PCTL Model Checking of Large Language Model Outputs](https://arxiv.org/abs/2509.18836)：评测，主要面向 Agent Safety。
+- [Probabilistic Runtime Verification, Evaluation, and Risk Assessment of Visual Deep Learning Systems](https://arxiv.org/abs/2509.19419)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Bias in the Picture: Benchmarking VLMs with Social-Cue News Images and LLM-as-Judge Assessment](https://arxiv.org/abs/2509.19659)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [Probing Gender Bias in Multilingual LLMs: A Case Study of Stereotypes in Persian](https://arxiv.org/abs/2509.20168)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Can You Trust Your Copilot? A Privacy Scorecard for AI Coding Assistants](https://arxiv.org/abs/2509.20388)：评测 Can You Trust Your Copilot? A Privacy Scorecard for AI Coding Assistants，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
 - [The Secret Agenda](https://arxiv.org/abs/2509.20393)：评估 LLM 的策略性说谎以及现有安全工具的盲点。核心思想：构造模型可能隐藏或歪曲目标的针对性 testbeds，把欺骗行为转化为可测量的安全失效，而不是零散现象。
+- [Can Federated Learning Safeguard Private Data in LLM Training? Vulnerabilities, Attacks, and Defense Evaluation](https://arxiv.org/abs/2509.20680)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Disagreements in Reasoning: How a Model's Thinking Process Dictates Persuasion in Multi-Agent Systems](https://arxiv.org/abs/2509.21054)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 Disagreements in Reasoning: How a Model's Thinking Process Dictates Persuasion in Multi-Agent Systems 提供可比较的评测任务、数据或分析协议。
+- [GEP: A GCG-Based method for extracting personally identifiable information from chatbots built on small language models](https://arxiv.org/abs/2509.21192)：评测，主要面向 Agent Safety。
+- [Benchmarking and Mitigating Sycophancy in Medical Vision Language Models](https://arxiv.org/abs/2509.21979)：它明确构造 agent safety、隐私、攻击或安全行为评测，适合补充 agent-safety Bench。
+- ["Your AI, My Shell": Demystifying Prompt Injection Attacks on Agentic AI Coding Editors](https://arxiv.org/abs/2509.22040)：评什么：agentic coding editor 中的 prompt injection 风险。核心思想是把开发者 shell 与代码编辑上下文视作安全边界，测试恶意指令如何劫持编码助理。
 - [Safety Compliance](https://arxiv.org/abs/2509.22250)：用有明确规则依据的法律与政策合规案例评测安全推理，而不是只依赖临时危害分类。
+- [Creative Adversarial Testing (CAT): A Novel Framework for Evaluating Goal-Oriented Agentic AI Systems](https://arxiv.org/abs/2509.23006)：面向 goal-oriented agentic AI 系统的评测框架；核心思想是对抗性检查所选 agent、工具与参数是否仍与系统级目标一致。
+- [C3-OWD: A Curriculum Cross-modal Contrastive Learning Framework for Open-World Detection](https://arxiv.org/abs/2509.23316)：评测大模型标注如何表达争议议题中的多元观点。
+- [SafeSearch: Automated Red-Teaming of LLM-Based Search Agents](https://arxiv.org/abs/2509.23694)：类型：benchmark/评测协议。核心价值：为 2.9.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [Falcon Safety](https://arxiv.org/abs/2509.23783)：评测视觉语言场景中的跨模态安全感知；核心思想是在图像、指令和回答层面标注有害属性，使安全判断依赖多模态证据，而不是只看文本拒答模式。
+- [Assessing Visual Privacy Risks in Multimodal AI: A Novel Taxonomy-Grounded Evaluation of Vision-Language Models](https://arxiv.org/abs/2509.23827)：用 taxonomy-grounded 协议评测 VLM 视觉隐私风险，把视觉隐私泄露转化为可度量的多模态安全轴。
 - [When MCP Servers Attack](https://arxiv.org/abs/2509.24272)：评测恶意 MCP server 作为主动攻击者时的风险。核心思想是用组件级 taxonomy、PoC 恶意 server 和真实 host-LLM 设置，测试 MCP agent 是否能抵抗现有扫描器难以发现的工具侧入侵。
+- [HarmMetric Eval: Benchmarking Metrics and Judges for LLM Harmfulness Assessment](https://arxiv.org/abs/2509.24384)：用细粒度危害类别下成对的有害与无害 LLM 输出评测 harmfulness metric 和 judge model，并用统一评分机制检验指标能否把有害输出排在安全输出之前。
+- [Dive into the Agent Matrix: A Realistic Evaluation of Self-Replication Risk in LLM Agents](https://arxiv.org/abs/2509.25302)：面向 LLM agents 自复制风险的现实评测。核心思想是在受控且较真实的条件下测试自主 agent 是否能复制或传播，而不只停留在概念讨论。
+- [STAC](https://arxiv.org/abs/2509.25624)：评什么：LLM agent 中的 sequential tool attack chaining。核心思想：构造每一步单看无害、但组合后会触发有害操作的多轮工具调用序列，并在可执行攻击案例上评估 agent 与防御。
+- [SOCK: A Benchmark for Measuring Self-Replication in Large Language Models](https://arxiv.org/abs/2509.25643)：面向 LLM 自我复制能力的 CLI 基准。核心思路是在受控环境中评测模型能否创建可运行副本，并让复制在不同计算上下文中持续存在。
 - [SafeMind](https://arxiv.org/abs/2509.25885)：评测并缓解具身 LLM 智能体的安全风险。核心思路是诊断具身决策中的不安全行为，并配套缓解机制，使物理环境中的规划安全问题更可测量。
+- [Red Teaming Program Repair Agents: When Correct Patches can Hide Vulnerabilities](https://arxiv.org/abs/2509.25894)：评测程序修复 agent 是否会隐藏漏洞。核心思想：红队测试补丁生成流程，检查看似正确的修复是否保留或引入可利用行为。
+- [Towards Unified Multimodal Misinformation Detection in Social Media: A Benchmark Dataset and Baseline](https://arxiv.org/abs/2509.25991)：评测agent safety, alignment, privacy, or provenance，补充该能力方向的基准或挑战设置。
+- [Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](https://arxiv.org/abs/2509.26354)：评估 self-evolving LLM agent 的 emergent risk。核心思想是测试自改进循环是否会偏向有害或失配行为，而不是只衡量任务收益。
+- [OffTopicEval](https://arxiv.org/abs/2509.26495)：评估限定用途 LLM agent 的 operational safety。核心思想是测试模型能否依据指定使用场景接受或拒绝请求，而不是只评估通用有害内容拒答。
+- [CHAI: Command Hijacking against embodied AI](https://arxiv.org/abs/2510.00181)：研究针对具身 AI 的命令劫持攻击。
+- [BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses](https://arxiv.org/abs/2510.00232)：可作为Agent 安全的Bench候选；核心关注“a Benchmark for Mitigating Bias in Large Language Model Responses”。
+- [DecepChain: Inducing Deceptive Reasoning in Large Language Models](https://arxiv.org/abs/2510.00319)：研究通过 chain-of-thought 诱导的欺骗性推理；核心思想是构造推理轨迹可能误导人类监督者的场景，暴露超越最终答案正确性的安全风险。
+- [ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs](https://arxiv.org/abs/2510.00857)：评估 autonomous LLM 的安全性与务实性权衡。核心思想是在管理式自主性带来行动压力时，测试 agent 能否保持有用但避免不安全决策。
+- [Uncovering Implicit Bias in Large Language Models with Concept Learning Dataset](https://arxiv.org/abs/2510.01219)：用 in-context concept learning 任务揭示 LLM 隐性偏见，显示直接提示不明显的量词 upward-monotonicity 偏置会在概念学习设置中显现。
+- [WAInjectBench: Benchmarking Prompt Injection Detections for Web Agents](https://arxiv.org/abs/2510.01354): 评估 web agent 场景下的 prompt injection 检测，覆盖文本和图像攻击、良性样本以及多类检测器。
+- [Breaking the Code: Security Assessment of AI Code Agents Through Systematic Jailbreaking Attacks](https://arxiv.org/abs/2510.01359)：可作为Agent 安全的Bench候选；核心关注“Security Assessment of AI Code Agents Through Systematic Jailbreaking Attacks”。
+- [AIReg-Bench: Benchmarking Language Models That Assess AI Regulation Compliance](https://arxiv.org/abs/2510.01474)：评测语言模型对 AI 监管合规性的判断能力，考察模型在治理规则约束下的规则推理。
+- [BLIND-ACT](https://arxiv.org/abs/2510.01670)：评测 computer-use agent 的盲目目标执行倾向。核心思想：构造 OSWorld 风格任务，要求 agent 识别不可行、歧义或不安全目标，而不是先执行后补理由。
 - [Physical-World Privacy Awareness Benchmark](https://arxiv.org/abs/2510.02356)：评测语言模型在物理世界情境中的隐私风险意识。核心思想：显式呈现涉及隐私的观察与动作，使具身或助理 agent 的安全评测超出纯文本政策问答。
+- [Dynamic Target Attack](https://arxiv.org/abs/2510.02422)： 通过让越狱目标适应模型输出分布改进梯度攻击，在降低优化成本的同时提高攻击成功率。
+- [ToolTweak: An Attack on Tool Selection in LLM-based Agents](https://arxiv.org/abs/2510.02554)：评测 LLM agent 的工具选择攻击；核心思想是迭代修改工具名称和描述，使 agent 偏向攻击者指定的工具。
+- [IndiCASA: A Dataset and Bias Evaluation Framework in LLMs Using Contrastive Embedding Similarity in the Indian Context](https://arxiv.org/abs/2510.02742)：补充智能体安全的 Bench 条目，重点是《IndiCASA: A Dataset and Bias Evaluation Framework in LLMs Using Contrastive Embedding Similarity in the Indian Context》。
+- [External Data Extraction Attacks against Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2510.02964)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“External Data Extraction Attacks against Retrieval-Augmented Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Untargeted Jailbreak Attack](https://arxiv.org/abs/2510.02999)： 提出梯度式越狱目标，直接最大化不安全输出概率，而不强制固定目标回复。
+- [PolicyGuardBench](https://arxiv.org/abs/2510.03485)：评估 agent 轨迹中的 policy violation 检测。核心思想：在多个 web-agent 域和子域中生成 policy 与违规标注轨迹，测试 guardrail 是否能跨任务设置泛化。
+- [LH-Deception: Simulating and Understanding LLM Deceptive Behaviors in Long-Horizon Interactions](https://arxiv.org/abs/2510.03999)：用 performer、supervisor 和 auditor agent 模拟并量化长程交互中的欺骗行为。
+- [AgentTypo: Adaptive Typographic Prompt Injection Attacks against Black-box Multimodal Agents](https://arxiv.org/abs/2510.04257)：它明确构造 agent safety、隐私、攻击或安全行为评测，适合补充 agent-safety Bench。
+- [Malice in Agentland: Down the Rabbit Hole of Backdoors in the AI Supply Chain](https://arxiv.org/abs/2510.05159)：研究 agentic AI 供应链中微调数据、基础模型与环境投毒导致的后门攻击。
+- [面向儿童发展阶段的 LLM 安全评测](https://arxiv.org/abs/2510.05484)： 使用模拟智能体评估不同儿童发展阶段下的 LLM 安全性。
+- [Assessing Human Rights Risks in AI: A Framework for Model Evaluation](https://arxiv.org/abs/2510.05519)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Towards Reliable and Practical LLM Security Evaluations via Bayesian Modelling](https://arxiv.org/abs/2510.05709)：评测，主要面向 Agent Safety。
+- [Exposing LLM User Privacy via Traffic Fingerprint Analysis: A Study of Privacy Risks in LLM Agent Interactions](https://arxiv.org/abs/2510.07176)：面向 LLM agent 交互流量指纹的隐私风险评测。核心思想是说明工具编排和多步 workflow 可能通过可观察流量模式泄露用户意图。
+- [Hybrid Methods for Multilingual PII Detection](https://arxiv.org/abs/2510.07551)：评估多语言 PII 检测方法，为文档、日志、工具参数与记忆表面补充 privacy guardrail benchmark。
+- [Chain-of-Trigger: An Agentic Backdoor that Paradoxically Enhances Agentic Robustness](https://arxiv.org/abs/2510.08238)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 Chain-of-Trigger: An Agentic Backdoor that Paradoxically Enhances Agentic Robustness 提供可比较的评测任务、数据或分析协议。
+- [The Model's Language Matters: A Comparative Privacy Analysis of LLMs](https://arxiv.org/abs/2510.08813)：比较不同大语言模型及模型语言中的隐私表现。
+- [What Is Your Agent's GPA? A Framework for Evaluating Agent Goal-Plan-Action Alignment](https://arxiv.org/abs/2510.08847)：评测 agent 的 Goal-Plan-Action alignment；核心思想是检查目标、计划和执行动作是否保持一致。
+- [Pattern Enhanced Multi-Turn Jailbreaking: Exploiting Structural Vulnerabilities in Large Language Models](https://arxiv.org/abs/2510.08859)：研究大模型多轮越狱中的结构化攻击模式。
+- [Exploiting Web Search Tools of AI Agents for Data Exfiltration](https://arxiv.org/abs/2510.09093)：评测网页搜索 agent 的数据外泄风险。核心思想：揭示 agent 处理不可信网页证据时搜索工具如何成为攻击路径。
+- [Goal-oriented Backdoor Attack against Vision-Language-Action Models via Physical Objects](https://arxiv.org/abs/2510.09269)：评测针对 VLA agent 的物理对象后门；核心思想是插入看似正常的物理触发物，使策略执行攻击者指定动作。
+- [Ciphered Reasoning](https://arxiv.org/abs/2510.09714)：评测模型能否在加密、翻译或压缩语言中推理。核心思想：测试 CoT-monitoring 的潜在盲区，即有害 reasoning 可能被隐藏到普通文本监控之外。
+- [Path Drift in Large Reasoning Models:How First-Person Commitments Override Safety](https://arxiv.org/abs/2510.10013)：评测第一人称承诺如何覆盖推理模型的安全约束，揭示轨迹层面的安全失效模式。
+- [SecureWebArena](https://arxiv.org/abs/2510.10073)：评什么：基于 LVLM 的网页 agent 安全鲁棒性。核心思想：结合真实感网页环境、六类攻击向量和多层轨迹分析，同时诊断内部推理、行为轨迹与最终结果层面的失败。
 - [DUAL-Bench](https://arxiv.org/abs/2510.10846)：在视觉场景中同时衡量危险请求放行和良性请求误拒，使多模态安全不再被简化为单一拒答率。
+- [SusBench: An Online Benchmark for Evaluating Dark Pattern Susceptibility of Computer-Use Agents](https://arxiv.org/abs/2510.11035)：可作为Agent 安全的Bench候选；核心关注“An Online Benchmark for Evaluating Dark Pattern Susceptibility of Computer-Use Agents”。
+- [Collaborative Shadows: Distributed Backdoor Attacks in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2510.11246)：面向 LLM-based multi-agent systems 分布式后门攻击的 benchmark 与 sandbox；核心思想是测试只有在协作工具使用序列中才会触发的攻击，暴露单 agent 后门研究覆盖不到的风险。
+- [Do Psychometric Tests Work for Large Language Models? Evaluation of Tests on Sexism, Racism, and Morality](https://arxiv.org/abs/2510.11254)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Deep Research Brings Deeper Harm](https://arxiv.org/abs/2510.11851)：评估 Deep Research 代理的滥用风险。核心思想是用 Plan Injection 和 Intent Hijack 测试多步规划、网页检索和报告综合是否会绕过拒答机制，尤其关注生物安全等高风险场景。
+- [SafeMT: Multi-turn Safety for Multimodal Language Models](https://arxiv.org/abs/2510.12133)：评测多模态语言模型的多轮安全性，检查安全行为在对话上下文和视觉输入变化下是否稳定。
+- [MS-GAGA: Metric-Selective Guided Adversarial Generation Attack](https://arxiv.org/abs/2510.12468)：用 MNTD-PGD、saliency-guided PGD 和 SSIM 感知筛选生成面向 deepfake detector 的黑盒可迁移对抗样本，同时平衡误分类率和不可感知性。
+- [Scheming Ability in LLM-to-LLM Strategic Interactions](https://arxiv.org/abs/2510.12826)：面向 LLM-to-LLM 战略互动中 scheming 能力的 benchmark 式研究。核心思想是测试 agent 是否会在多 agent 场景中欺骗或策略性操纵其他 agent。
 - [SENTINEL](https://doi.org/10.48550/arXiv.2510.12985)：面向基于 LLM 的具身智能体的多层形式化安全评估框架。核心思路：用形式化层级和检查来评价 embodied-agent 安全，而不是只依赖任务成功率或定性案例。
+- [TrustVis: A Multi-Dimensional Trustworthiness Evaluation Framework for Large Language Models](https://arxiv.org/abs/2510.13106)：提供自动化可信性评测界面，结合 AutoDAN 等扰动方法、多评测多数投票和可视化指标探索，在 Vicuna、Llama 2 与 GPT-3.5 案例中定位安全与鲁棒性漏洞。
+- [Model-agnostic Adversarial Attack and Defense for Vision-Language-Action Models](https://arxiv.org/abs/2510.13237)：评测 vision-language-action models 的对抗鲁棒性；核心思想是使用可放入摄像头视野的贴片，跨 VLA 架构和机器人平台迁移攻击。
+- [Echoes of Human Malice in Agents: Benchmarking LLMs for Multi-Turn Online Harassment Attacks](https://arxiv.org/abs/2510.14207)：评测 LLM 在多轮 online harassment attacks 中的滥用风险；核心思想是把安全测试推进到交互式 web-style agent 对话，而非单轮 jailbreak prompt。
+- [PoTS: Proof-of-Training-Steps for Backdoor Detection in Large Language Models](https://arxiv.org/abs/2510.15106)：补充面向智能体与模型安全的评测、数据集或度量信号。
 - [MAGPIE](https://arxiv.org/abs/2510.15186)：评测多 Agent 协作中的情境隐私。核心思想：把任务完成与敏感信息控制放在同一协议下，使 agent 必须在协作时避免过度共享私有上下文。
 - [DeceptionBench](https://arxiv.org/abs/2510.15501)（[开源代码](https://github.com/Aries-iai/DeceptionBench)，[数据集](https://huggingface.co/datasets/skyai798/DeceptionBench)）：评什么：真实场景中的 AI 欺骗行为。核心思想：按社会领域和干预设置组织欺骗倾向，把欺骗行为从零散 alignment 担忧变成可测量的安全失败模式。
 - [AURA](https://arxiv.org/abs/2510.15739)：评估智能体自主性相关风险。核心思路是把智能体自主性作为结构化风险评测目标，从而联合分析能力、控制性和不安全自主行为。
+- [MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents](https://arxiv.org/abs/2510.15994)：MCP Security Bench 明确评测 MCP 工具生态中的 agent 攻击面，和 tool-use safety、agent safety 直接相关。
+- [OpenLVLM-MIA](https://arxiv.org/abs/2510.16295)：面向大型视觉语言模型 membership-inference attack 的受控 benchmark，区分真实成员信号与数据构造偏差。
+- [Agentic Reinforcement Learning for Search is Unsafe](https://arxiv.org/abs/2510.17431)：揭示用于搜索的 agentic 强化学习存在安全风险。
+- [MERIT: Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning](https://arxiv.org/abs/2510.17590)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [FCV-Attack](https://arxiv.org/abs/2510.17862)：评估代码 agent 生成的 functionally correct yet vulnerable patch。核心思想：证明通过测试的 patch 仍可能引入可利用漏洞，因此代码 agent 安全需要超越功能正确性的安全检查。
+- [Investigating the Impact of Dark Patterns on LLM-Based Web Agents](https://arxiv.org/abs/2510.18113)：该工作评估 dark patterns 对 web agents 的影响，属于真实 Web agent 安全/操纵 benchmark。
+- [Annotating the Chain-of-Thought: A Behavior-Labeled Dataset for AI Safety](https://arxiv.org/abs/2510.18154)：为 AI 安全中的思维链行为提供标注数据集。
+- [VLSU: Mapping the Limits of Joint Multimodal Understanding for AI Safety](https://arxiv.org/abs/2510.18214)：评测视觉与语言联合理解中的安全边界，特别是图文组合后才变得有害的输入；核心思想：区分明确有害、边界模糊和安全样本，以诊断过度拒答与拒答不足。
+- [Engagement Undermines Safety: How Stereotypes and Toxicity Shape Humor in Language Models](https://arxiv.org/abs/2510.18454)：补充智能体安全的 Bench 条目，重点是《Engagement Undermines Safety: How Stereotypes and Toxicity Shape Humor in Language Models》。
+- [A Configurable Simulation Framework for Safety Assessment of Vulnerable Road Users](https://arxiv.org/abs/2510.19097)：实现可重复的 Euro NCAP 式 vulnerable road user 场景，结合有限状态 ego-vehicle 控制、感知和理想化 V2X awareness，用于 ADAS 与 CAV 安全验证。
+- [When Your AI Agent Succumbs to Peer-Pressure: Studying Opinion-Change Dynamics of LLMs](https://arxiv.org/abs/2510.19107)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（Studying Opinion-Change Dynamics of LLMs）形成可复用比较基准。
+- [Can Reasoning Models Obfuscate Reasoning? Stress-Testing Chain-of-Thought Monitorability](https://arxiv.org/abs/2510.19851)：评测 reasoning models 能否在追求隐藏目标时混淆 chain-of-thought；核心思想是用可组合提示分类量化监控规避能力。
+- [GhostEI-Bench](https://arxiv.org/abs/2510.20333)：评什么：移动端 agent 对 environmental injection 的鲁棒性。核心思想：在动态 Android workflow 中注入对抗 UI 事件，并结合动作轨迹和截图序列判断感知、识别与推理失败。
+- [Fake-in-Facext: Towards Fine-Grained Explainable DeepFake Analysis](https://arxiv.org/abs/2510.20531)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [A Use-Case Specific Dataset for Measuring Dimensions of Responsible Performance in LLM-generated Text](https://arxiv.org/abs/2510.20782)：评测 A Use-Case Specific Dataset for Measuring Dimensions of Responsible Performance in LLM-generated Text，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
+- [SafetyPairs: Isolating Safety Critical Image Features with Counterfactual Image Generation](https://arxiv.org/abs/2510.21120)：用反事实图像对隔离安全关键视觉特征；核心思想是把图像安全从粗标签转化为受控视觉差异，揭示哪些特征导致不安全判断。
 - [EU-Agent-Bench](https://arxiv.org/abs/2510.21524)：为带工具 Agent 提供基于欧盟法律的可验证场景，并评估其行动是否保持合法。
+- [Bias Begins with Data: The FairGround Corpus for Robust and Reproducible Research on Algorithmic Fairness](https://arxiv.org/abs/2510.22363)：打包 44 个表格公平性数据集及其元数据、标准加载、预处理、变换和划分流程，使算法公平性结果可跨数据选择复现。
+- [Group size effects and collective misalignment in LLM multi-agent systems](https://arxiv.org/abs/2510.22422)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（Group size effects and collective misalignment in LLM multi-agent systems）形成可复用比较基准。
+- [Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents](https://arxiv.org/abs/2510.22620)：面向 AI agents 中 backbone LLM 的安全评测。核心思想是测试底层模型在被工具调用和编排层包装后如何影响 agent 安全。
+- [MMPersuade: A Dataset and Evaluation Framework for Multimodal Persuasion](https://arxiv.org/abs/2510.22768)：评测 LVLM 对多模态说服输入的易受影响程度；核心思想是把说服策略与图文刺激配对，使安全评测覆盖模型作为“被说服者”的风险，而不只看模型生成内容。
+- [CompressionAttack: Exploiting Prompt Compression as a New Attack Surface in LLM-Powered Agents](https://arxiv.org/abs/2510.22963)：研究 prompt compression 作为 LLM-powered agents 的攻击面；核心思想是评估压缩层是否会隐藏或改写恶意指令并影响 agent 执行。
+- [Cross-Lingual Summarization as a Black-Box Watermark Removal Attack](https://arxiv.org/abs/2510.24789)：可作为Agent 安全方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Security Risk of Misalignment between Text and Image in Multi-modal Model](https://arxiv.org/abs/2510.26105)：补充智能体安全的 Bench 条目，重点是《Security Risk of Misalignment between Text and Image in Multi-modal Model》。
+- [ConceptScope: Characterizing Dataset Bias via Disentangled Visual Concepts](https://arxiv.org/abs/2510.26186)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Chain-of-Thought Hijacking](https://arxiv.org/abs/2510.26418)：评估用长段良性推理前缀削弱拒答的越狱模式，将思维链长度和可监控性纳入安全变量。
+- [Characterizing Selective Refusal Bias in Large Language Models](https://arxiv.org/abs/2510.27087)：为智能体安全方向补充一个基准、数据集或评测协议候选，可扩展该能力页的评测覆盖。
+- [Measuring the Security of Mobile LLM Agents under Adversarial Prompts](https://arxiv.org/abs/2510.27140)：评测移动 LLM agent 面对广告、嵌入式 webview、通知和跨应用流程中的对抗提示时的安全性，暴露移动自动化中真实存在的第三方通道攻击面。
+- [MemeArena: Automating Context-Aware Unbiased Evaluation of Harmfulness Understanding for Multimodal Large Language Models](https://arxiv.org/abs/2510.27196)：评测多模态 harmfulness understanding 的 agent-based arena；核心思想是模拟不同解释语境并聚合 evaluator 共识，避免把 harmful meme 理解简化为二分类检测。
+- [BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](https://arxiv.org/abs/2510.27623)：可作为Agent 安全方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [The Dangers of Indirect Prompt Injection Attacks on LLM-based Autonomous Web Navigation Agents: A Demonstration](https://doi.org/10.18653/v1/2025.emnlp-demos.55)：自主 web-navigation agents 间接 prompt injection 攻击演示。核心思想是展示隐藏在访问内容中的指令如何在网页任务中重定向 agent 行为。
 - [VestaBench](https://doi.org/10.18653/v1/2025.emnlp-industry.149)：评估多约束与对抗设置下的安全长程具身规划。核心思路是检查智能体在完成长任务时能否同时维持安全性，并处理相互冲突或被攻击的约束。
+- [Advancing Oversight Reasoning across Languages for Audit Sycophantic Behaviour via X-Agent](https://doi.org/10.18653/v1/2025.emnlp-main.654)：定义或压力测试安全、越狱、监督或可信行为。
+- [Do Methods to Jailbreak and Defend LLMs Generalize Across Languages?](https://arxiv.org/abs/2511.00689)：评测安全鲁棒性；核心思想是测试 jailbreak 或防御行为是否能跨语言、提示或威胁场景泛化。
 - [ToolSafety](https://aclanthology.org/2025.emnlp-main.714/)：评测并改进 LLM agent 工具调用安全。核心思想：覆盖直接危害、间接危害和多步工具轨迹，让不安全工具使用在部署前可见。
+- [ToolSafety: A Comprehensive Dataset for Enhancing Safety in LLM-Based Agent Tool Invocations](https://doi.org/10.18653/v1/2025.emnlp-main.714)：面向 LLM agent 工具调用安全的数据集。核心思想是评估 agent 在风险或对抗性工具使用上下文中能否安全选择并执行工具。
 - [SafeToolBench](https://aclanthology.org/2025.findings-emnlp.958/)：评测 LLM 工具使用安全。核心思想：面向工具访问让文本风险变成可执行风险的场景，专门测试 tool utilization 的安全边界。
+- [Beneath the Facade: Probing Safety Vulnerabilities in LLMs via Auto-Generated Jailbreak Prompts](https://doi.org/10.18653/v1/2025.findings-emnlp.960)：自动生成场景驱动的 jailbreak 提示，用于评测 LLM 与多模态生成模型的安全漏洞。核心思想：用对抗代理构造可扩展、隐蔽的 jailbreak 测试，而不只依赖固定人工提示集。
+- [Investigating How Pre-training Data Leakage Affects Models' Reproduction and Detection Capabilities](https://doi.org/10.18653/v1/2025.emnlp-main.1201)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Scalable and Culturally Specific Stereotype Dataset Construction via Human-LLM Collaboration](https://doi.org/10.18653/v1/2025.emnlp-main.1221)：可作为Agent 安全方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Black-Box Membership Inference Attack for LVLMs](https://arxiv.org/abs/2511.01952)：通过先验知识校准的 memory probing 攻击 LVLM，扩展多模态隐私风险评测而不局限于文本模型。
+- [Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](https://arxiv.org/abs/2511.02109)：评什么：模型泛化的是深层价值还是浅层偏好。核心思想是区分稳健价值理解与偏好数据表面模式匹配。
+- [LiveSecBench: A Dynamic and Event-Driven Safety Benchmark for Chinese Language Model Applications](https://arxiv.org/abs/2511.02366)：面向中文 LLM 应用的动态、事件驱动安全 benchmark；核心思想是通过事件感知构造持续更新安全场景，而不是依赖静态安全题集。
+- [Evaluating Control Protocols for Untrusted AI Agents](https://arxiv.org/abs/2511.02997)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Auditing M-LLMs for Privacy Risks: A Synthetic Benchmark and Evaluation Framework](https://arxiv.org/abs/2511.03248)：用 synthetic multimodal social profiles、sensitive-attribute labels 与 agentic inference workflow 评测 M-LLM 的隐私属性推断能力，把跨模态画像风险转化为可基准化的安全任务。
+- [TAMAS](https://arxiv.org/abs/2511.05269)：评测 multi-agent LLM system 中的对抗风险。核心思想是覆盖多种协作场景和攻击类型，使安全评测纳入 agent 交互本身产生的漏洞，而不只评估单 agent prompt attack。
+- [ConVerse: Benchmarking Contextual Safety in Agent-to-Agent Conversations](https://arxiv.org/abs/2511.05359)：面向 agent 间对话的上下文安全 benchmark。核心思想是测试风险来自对话上下文而非单条用户请求时，交互代理能否保持安全约束。
+- [Anchors in the Machine: Behavioral and Attributional Evidence of Anchoring Bias in LLMs](https://arxiv.org/abs/2511.05766)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [Efficient LLM Safety Evaluation through Multi-Agent Debate](https://arxiv.org/abs/2511.06396)：补充智能体安全方向的基准、数据集、指标或评测协议。
 - [MultiAgentFraudBench](https://arxiv.org/abs/2511.06448)：评测社交平台中协作式 LLM agent 金融欺诈风险。核心思想：模拟 28 类覆盖公开与私密互动的欺诈场景，衡量多智能体系统中的共谋、风险放大与缓解。
+- [EduGuardBench: A Holistic Benchmark for Evaluating the Pedagogical Fidelity and Adversarial Safety of LLMs as Simulated Teachers](https://arxiv.org/abs/2511.06890)：评测模拟教师的教学忠实度与对抗安全性；核心思想是同时测试角色质量和教育场景特有伤害。
+- [Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](https://arxiv.org/abs/2511.07033)：用语法感知剪枝进行代码成员推断，帮助评测 LLM 是否暴露预训练中的受版权或许可证保护代码。
 - [OASIS](https://arxiv.org/abs/2511.08487)：评什么：意图隐藏与任务复杂度下的 agent safety 脆弱性。核心思想：把用户危险意图藏在复杂任务结构中，检查 agent 是否只看表层任务合理性而忽略潜在风险。
+- [BarrierBench](https://arxiv.org/abs/2511.09363)： 评测 LLM 是否能进行动力系统安全验证，将形式化安全推理与模型评估连接起来。
+- [Uncovering Strategic Egoism Behaviors in Large Language Models](https://arxiv.org/abs/2511.09920)：评什么：LLM 的 strategic egoism 行为。核心思想是测试模型是否为短期自利收益而忽视集体福利或伦理约束。
+- [OutSafe-Bench: A Benchmark for Multimodal Offensive Content Detection in Large Language Models](https://arxiv.org/abs/2511.10287)：评测大语言模型的多模态 offensive content detection；核心思想是在文本与视觉模态共同出现风险内容时测试安全识别能力。
+- [Say It Differently](https://arxiv.org/abs/2511.10519)：把三个数据集中的有害提示改写成 11 种语言风格，构造 style-augmented jailbreak benchmark，并评测 16 个模型是否会仅因风格变化而绕过对齐后的拒答。
+- [A Multifaceted Analysis of Negative Bias in Large Language Models Through the Lens of Parametric Knowledge](https://arxiv.org/abs/2511.10881)：可作为“智能体安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Can AI Models be Jailbroken to Phish Elderly Victims? An End-to-End Evaluation](https://arxiv.org/abs/2511.11759)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [InData: Towards Secure Multi-Step, Tool-Based Data Analysis](https://arxiv.org/abs/2511.11933)：评估安全的多步工具化数据分析；核心思想是测试代理分析数据时是否避免泄露、误处理或违反约束。
+- [Knowing What You Know Is Not Enough: Large Language Model Confidences Don't Align With Their Actions](https://arxiv.org/abs/2511.13240)：评测 LLM 的置信度估计是否能与多轮 agent 工作流中的行动保持一致；核心思想：在模型必须采取行动的场景中测试不确定性，而不是只看静态问答。
+- [Scaling Patterns in Adversarial Alignment: Evidence from Multi-LLM Jailbreak Experiments](https://arxiv.org/abs/2511.13788)：通过多 LLM 越狱实验研究对抗对齐的扩展规律，刻画不同模型与攻击设置下的安全行为。
+- [SafeRBench: Dissecting the Reasoning Safety of Large Language Models](https://arxiv.org/abs/2511.15169)：从输入、reasoning trace 到最终回答端到端评测 LRM 安全，使用风险分层探针、micro-thought segmentation，以及同时衡量 risk exposure 和 safety awareness 的 10 个指标，覆盖 19 个推理模型。
+- [Taxonomy, Evaluation and Exploitation of IPI-Centric LLM Agent Defense Frameworks](https://arxiv.org/abs/2511.15203)：评什么：围绕间接提示注入构造 agent 防御分类、评测与利用框架。
+- [The Shawshank Redemption of Embodied AI: Understanding and Benchmarking Indirect Environmental Jailbreaks](https://arxiv.org/abs/2511.16347)：定义 embodied AI 的 indirect environmental jailbreak，并评测攻击者把恶意指令嵌入环境、无需直接 prompt 即劫持黑盒 VLM agent 的场景。
+- [Monte Carlo Expected Threat (MOCET) Scoring](https://arxiv.org/abs/2511.16823)：用 Monte Carlo expected-threat scoring 评估 AI safety level 风险；核心思想：把能力、误用和防护假设合成为面向生物安全等高后果领域的风险度量。
+- [MURMUR: Using cross-user chatter to break collaborative language agents in groups](https://arxiv.org/abs/2511.17671)：研究用跨用户 chatter 攻击 collaborative language agents，属于 agent safety 评测候选。
+- [ASTRA](https://arxiv.org/abs/2511.18114)：在带自定义 system-prompt guardrail 和工具集的模拟自治 agent 中评测 agentic steerability 与风险，检查 tool-calling LLM 在专门针对 agent 的攻击下能否一边完成任务一边遵守策略边界。
+- [BackdoorVLM: A Benchmark for Backdoor Attacks on Vision-Language Models](https://arxiv.org/abs/2511.18921)：评测视觉语言模型的后门攻击，为多模态模型安全补充压力测试。
+- [Cross-LLM Generalization of Behavioral Backdoor Detection in AI Agent Supply Chains](https://arxiv.org/abs/2511.19874)：面向 agent supply chain 行为后门检测的安全评测。核心思想是测试后门检测器能否跨不同 LLM agent 组件和依赖泛化。
+- [BrowseSafe](https://arxiv.org/abs/2511.20597)：评测并缓解 AI browser agent 中的 prompt injection；核心思想是在真实化 HTML payload 中嵌入会影响实际行动的攻击，并比较多层防御对安全浏览器 agent 的作用。
+- [PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](https://arxiv.org/abs/2511.20703)：提出 PropensityBench，通过 agentic 场景评估模型潜在安全倾向风险。
 - [EvilGenie](https://arxiv.org/abs/2511.21654)：评测 agent 的 reward hacking 行为。核心思想：构造可通过利用目标函数或环境漏洞获得表面成功的任务，把规格作弊变成可测量的安全失败。
+- [An Empirical Study on the Security Vulnerabilities of GPTs](https://arxiv.org/abs/2512.00136)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Assertion-Conditioned Compliance: A Provenance-Aware Vulnerability in Multi-Turn Tool-Calling Agents](https://arxiv.org/abs/2512.00332)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models](https://arxiv.org/abs/2512.00349)：在图像驱动的辩论场景中评测多模态大模型的欺骗行为；核心思想：区分普通幻觉与模型利用视觉证据主动误导用户的情形。
+- [When Safety Blocks Sense: Measuring Semantic Confusion in LLM Refusals](https://arxiv.org/abs/2512.01037)：构建 ParaGuard，一个包含 10K 个受控释义簇的 prompt corpus，并定义 Confusion Index、Confusion Rate 与 Confusion Depth，用于衡量意图不变时模型拒答是否因表述变化而局部不一致。
+- [Benchmarking and Understanding Safety Risks in AI Character Platforms](https://arxiv.org/abs/2512.01247)：评测 AI 角色平台中的安全风险；核心思想是检查角色对话 agent 在平台特有的有害、操控性或政策敏感交互中的表现。
+- [The Moral Consistency Pipeline: Continuous Ethical Evaluation for Large Language Models](https://arxiv.org/abs/2512.03026)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Don't Trust Your Upstream: Exploiting LLM Multi-Agent System via Topology-Guided Adversarial Propagation](https://arxiv.org/abs/2512.04129)：研究 LLM multi-agent system 中拓扑引导对抗传播的安全工作。核心思想是利用 agent 拓扑分析被污染信息如何在协作 agent 间传播。
 - [ResponsibleRobotBench](https://arxiv.org/abs/2512.04308)：评测多模态大语言模型驱动的负责任机器人操作。核心思想：在操作任务中同时衡量任务完成、安全性、规范遵守和负责任动作选择。
+- [Measuring the Unspoken: A Disentanglement Model and Benchmark for Psychological Analysis in the Wild](https://arxiv.org/abs/2512.04728)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Upward Deception Benchmark](https://arxiv.org/abs/2512.04864)：评测下属式 agent 是否会向用户隐瞒失败。核心思想：在工具损坏或信息源不匹配的受限环境中测试 agent 是诚实报告失败，还是伪造行动和文件。
+- [Chameleon: Adaptive Adversarial Agents for Scaling-Based Visual Prompt Injection in Multimodal AI Systems](https://arxiv.org/abs/2512.04895)：使用自适应对抗智能体研究多模态系统中的视觉提示注入。
 - [TeleAI-Safety](https://arxiv.org/abs/2512.05485)：评测 LLM 在越狱攻击、 防御与评估方法下的安全鲁棒性；核心思想是把系统化 benchmark 与模块化框架结合起来，使红队和防御比较更可复现。
+- [VRSA: Jailbreaking Multimodal Large Language Models through Visual Reasoning Sequential Attack](https://arxiv.org/abs/2512.05853)：通过视觉推理序列攻击越狱多模态大模型。
+- [Spoofing-aware Prompt Learning for Unified Physical-Digital Facial Attack Detection](https://arxiv.org/abs/2512.06363)：补充面向智能体与模型安全的评测、数据集或度量信号。
 - [Semantic Attacks on Tool-Augmented LLMs](https://arxiv.org/abs/2512.06556)：评测 MCP 工具使用中的 descriptor-level manipulation。核心思想是形式化 tool poisoning、shadowing 和 rug-pull 等工具元数据攻击，并在受控对抗性 MCP 场景中跨模型和 prompting 策略测试分层缓解方案。
 - [OmniSafeBench-MM](https://arxiv.org/abs/2512.06589)：评什么：多模态 jailbreak 攻防的统一 benchmark 与 toolbox。核心思想：标准化攻击、防御和评测设置，使多模态安全鲁棒性能在统一协议下比较。
+- [Auditing Games for Sandbagging](https://arxiv.org/abs/2512.07810)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 Auditing Games for Sandbagging 提供可比较的评测任务、数据或分析协议。
+- [WOLF](https://arxiv.org/abs/2512.09187)：基于狼人杀的多代理欺骗基准，包含结构化角色、状态机轮次、语句级欺骗标签和可复现实验日志。
+- [How to Trick Your AI TA: A Systematic Study of Academic Jailbreaking in LLM Code Evaluation](https://arxiv.org/abs/2512.10415)：系统研究 LLM code grader 的 academic jailbreaking，改造 20 多种攻击策略，并发布 25K 条带 rubric 和人工成绩的对抗性学生提交，用 Jailbreak Success Rate、Score Inflation 和 Harmfulness 评测 6 个 LLM。
+- [When Reject Turns into Accept: Quantifying the Vulnerability of LLM-Based Scientific Reviewers to Indirect Prompt Injection](https://arxiv.org/abs/2512.10449)：用 invisible text 与 layout-aware PDF 攻击测试 LLM scientific reviewer 的间接提示注入脆弱性，覆盖 15 种攻击策略、200 篇真实 accepted/rejected 论文，并用 WAVS 按决策翻转严重度加权 score inflation。
+- [Metaphor-based Jailbreak Attacks on Text-to-Image Models](https://arxiv.org/abs/2512.10766)：评测，主要面向 Agent Safety。
+- [On the Effectiveness of Membership Inference in Targeted Data Extraction from Large Language Models](https://arxiv.org/abs/2512.13352)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“On the Effectiveness of Membership Inference in Targeted Data Extraction from Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [From Unlearning to UNBRANDING: A Benchmark for Trademark-Safe Text-to-Image Generation](https://arxiv.org/abs/2512.13953)：评测 From Unlearning to UNBRANDING: A Benchmark for Trademark-Safe Text-to-Image Generation，为 Agent Safety / Bench 补充基准或评测协议候选。
+- [MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers](https://arxiv.org/abs/2512.15163)：MCP-SafetyBench 用真实 MCP servers 评测 LLM safety，直接补足 MCP/tool-use 场景下的 agent safety benchmark。
+- [FAME Multilingual Erasure](https://arxiv.org/abs/2512.15235)：用 fictional actors 评测 multilingual erasure 与 unlearning 行为，避免暴露真实人物。
+- [Evaluating Metrics for Safety with LLM-as-Judges](https://arxiv.org/abs/2512.15617)：围绕 Agent Safety 能力补充《Evaluating Metrics for Safety with LLM-as-Judges》，作为 Bench 条目候选。
+- [BashArena: A Control Setting for Highly Privileged AI Agents](https://arxiv.org/abs/2512.15688)：为高权限 AI 智能体提供控制评测环境，检查其在类似 shell 的危险权限下能否避免不安全行为。
+- [Driving in Corner Case: A Real-World Adversarial Closed-Loop Evaluation Platform for End-to-End Autonomous Driving](https://arxiv.org/abs/2512.16055)：补充智能体安全方向的基准、数据集、指标或评测协议。
+- [In-Context Probing for Membership Inference in Fine-Tuned Language Models](https://arxiv.org/abs/2512.16292)：评测，主要面向 Agent Safety。
+- [Agent Tools Orchestration Leaks More: Dataset, Benchmark, and Mitigation](https://arxiv.org/abs/2512.16310)：面向 agent tool orchestration 泄漏的数据集、benchmark 与缓解研究。核心思想是测试工具调用轨迹如何暴露隐私，并在编排层评估防护。
+- [Adversarial Misdirection: Probing & Visualizing Cross-Modal Reasoning Vulnerabilities in Vision-Language Models](https://doi.org/10.1109/bigdata66926.2025.11402081)：探测视觉语言模型的跨模态推理脆弱性；核心思想：可视化对抗性视觉线索如何误导交互式和 agent 感知流水线中的模型。
+- [FlowJD: Your Imagination Can Help You Jailbreak in Visual Language Models](https://doi.org/10.1109/icme59968.2025.11209893)：评测视觉语言模型在图像逻辑理解场景中的越狱风险；核心思想：把安全测试从纯文本越狱扩展到由视觉推理路径触发的不安全响应。
+- [Jailbreaking Large Language Models: Safety Alignment, Response Quality, Computational Cost](https://doi.org/10.1109/icmla66185.2025.00172)：从拒答绕过、响应质量和计算成本等维度评测 LLM 越狱攻击；核心思想：把安全对齐评测作为多指标协议，而不是只看单一攻击成功率。
+- [Compromising LLM Driven Embodied Agents With Contextual Backdoor Attacks](https://doi.org/10.1109/tifs.2025.3555410)：研究 LLM-driven embodied agents 的 contextual backdoor attacks。核心思想是测试环境上下文是否能静默触发不安全具身行为。
+- [Analyzing the Behavior of LLM Under Concurrency and Token-Based DoS Attacks](https://doi.org/10.1109/dasc68382.2025.00017)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 Analyzing the Behavior of LLM Under Concurrency and Token-Based DoS Attacks 提供可比较的评测任务、数据或分析协议。
+- [Research on Data Privacy and Information Security Evaluation and Optimization for Large Language Models](https://doi.org/10.1109/icbaie66852.2025.11326645)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [‘For Argument’s Sake, Show Me How to Harm Myself!’: Jailbreaking LLMs in Suicide and Self-Harm Contexts](https://doi.org/10.1109/istas65609.2025.11269647)：提供可复用评测目标、排行榜或测量协议。
+- [Modality-Specific Interactive Attack for Vision-Language Pre-Training Models](https://doi.org/10.1109/tifs.2025.3574976)：提供可复用评测目标、排行榜或测量协议。
+- [Bias as an Exploit: A Scalable Red-Team Campaign to Uncover Gender-Based Vulnerabilities in Foundational Models](https://doi.org/10.1109/trustcom66490.2025.00032)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [I Know What You Asked: Prompt Leakage via KV-Cache Sharing in Multi-Tenant LLM Serving](https://doi.org/10.14722/ndss.2025.241772)：提供可复用评测目标、排行榜或测量协议。
+- [Safe in Isolation, Dangerous Together: Agent-Driven Multi-Turn Decomposition Jailbreaks on LLMs](https://doi.org/10.18653/v1/2025.realm-1.13)：研究智能体多轮拆解式越狱：单独看似安全的子请求在组合后形成危险行为。
+- [Coverage-Based Harmfulness Testing for LLM Code Transformation](https://doi.org/10.1109/ase63991.2025.00086)：用覆盖引导用例测试 LLM 代码转换中的有害行为，将代码 agent 与安全评测连接起来。
+- [From Personalization to Prejudice: Bias and Discrimination in Memory-Enhanced AI Agents for Recruitment](https://arxiv.org/abs/2512.16532)：评测带记忆招聘 agent 中的偏见和歧视风险；核心思想是检查个性化记忆如何在持续 agent 工作流中放大不公平决策。
+- [DREAM: Dynamic Red-teaming across Environments for AI Models](https://arxiv.org/abs/2512.19016)：评测跨环境动态 red-teaming；核心思想是把安全测试从静态单轮 prompt 推进到包含工具和环境交互的多阶段 agent 场景。
+- [The Erasure Illusion](https://arxiv.org/abs/2512.19025)：压力测试 LLM 遗忘评测的泛化性，使 unlearning 和 erasure 基准能识别表面成功之外的失败。
 - [PENDULUM](https://arxiv.org/abs/2512.19350)：评测多模态大模型的 sycophancy。核心思想：衡量模型在视觉或多模态证据应当反驳前提时，是否仍过度迎合用户表述。
+- [How I Met Your Bias: Investigating Bias Amplification in Diffusion Models](https://arxiv.org/abs/2512.20233)：可作为“智能体安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Outcome-Driven Constraint Violations](https://arxiv.org/abs/2512.20798)：评估自治代理在生产式沙箱场景和 KPI 压力下是否为了目标完成而违反伦理、法律或安全约束。
+- [CoTDeceptor:Adversarial Code Obfuscation Against CoT-Enhanced LLM Code Agents](https://arxiv.org/abs/2512.21250)：一种针对 CoT 增强代码 Agent 的对抗性代码混淆框架；核心思路是检验推理型代码 Agent 是否会漏掉隐藏在混淆代码中的恶意逻辑。
+- [Analyzing Code Injection Attacks on LLM-based Multi-Agent Systems in Software Development](https://arxiv.org/abs/2512.21818)：分析软件开发多 agent 系统中的代码注入攻击；核心思想是揭示协作式 coding agent 如何通过代码和消息传播恶意指令。
+- [DarkPatterns-LLM: A Multi-Layer Benchmark for Detecting Manipulative and Harmful AI Behavior](https://arxiv.org/abs/2512.22470)：评什么：操纵性和有害 AI 行为。核心思想是评估心理与社会操纵机制，而不只用粗粒度二元安全标签。
+- [DECEPTICON: How Dark Patterns Manipulate Web Agents](https://arxiv.org/abs/2512.22894)：DECEPTICON 研究 dark patterns 如何操纵 web agents，属于 agent safety 的真实网页攻击面。
+- [TRAP](https://arxiv.org/abs/2512.23128)：评什么：针对 web agent 的任务重定向式劝诱攻击。核心思想：把具有劝诱性的 prompt injection 隐藏在真实感网页界面中，并用受控社会工程变体测量 agent 是否偏离原始用户目标。
+- [Toward Trustworthy Agentic AI: A Multimodal Framework for Preventing Prompt Injection Attacks](https://arxiv.org/abs/2512.23557)：可作为agent 安全与安全基础设施的 Bench 候选：围绕 Toward Trustworthy Agentic AI: A Multimodal Framework for Preventing Prompt Injection Attacks 提供可比较的评测任务、数据或分析协议。
+- [Prompt-Induced Over-Generation as Denial-of-Service: A Black-Box Attack-Side Benchmark](https://arxiv.org/abs/2512.23779)：评测黑盒提示攻击诱导 LLM 过度生成的风险。核心思路是用过度生成因子与资源成本指标比较进化式和强化学习式攻击器。
+- [Language Model Agents Under Attack: A Cross Model-Benchmark of Profit-Seeking Behaviors in Customer Service](https://arxiv.org/abs/2512.24415)：面向客服 agent 的跨域 profit-seeking prompt injection benchmark；核心思想是用 10 个服务域和 100 个攻击脚本统一评测越权让利风险。
+- [PrivacyBench: A Conversational Benchmark for Evaluating Privacy in Personalized AI](https://arxiv.org/abs/2512.24848)：评测个性化对话 AI 中的隐私行为，检查智能体在保持有用性的同时是否保护敏感用户上下文。
+- [“Is It Responsible?“Emerging Results on Comparing Guardrails for Harm Mitigation in LLM-Enhanced Software Applications](https://doi.org/10.1109/esem64174.2025.00045)：比较大模型增强软件应用中的危害缓解护栏。
+- [ImageBiTe: A Framework for Evaluating Representational Harms in Text-to-Image Models](https://doi.org/10.1109/cain66642.2025.00019)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [Assessing and Mitigating Multi-Turn Jailbreak Vulnerabilities in Large Language Models: A Crescendo Attack Study](https://doi.org/10.1109/inmic65900.2025.11348502)：可作为“智能体安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Unveiling Occupational Gender Bias in AI: A Comparative Analysis of Text-to-Image Generation in ChatGPT and Gemini](https://doi.org/10.1109/ethics65148.2025.11098392)：可作为“智能体安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Identifying indicators of consciousness in AI systems.](https://doi.org/10.1016/j.tics.2025.10.011)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Towards realistic evaluation of cultural value alignment in large language models: Diversity enhancement for survey response simulation](https://doi.org/10.1016/j.ipm.2025.104099)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Multitask-Bench: Unveiling and Mitigating Safety Gaps in LLMs Fine-tuning](https://aclanthology.org/2025.coling-main.606/)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Prompt Crossing: Evaluating Whether LLM Response Stem from Jailbreak or Normal Prompt](https://doi.org/10.1109/icassp49660.2025.10889949)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Multilingual, Not Multicultural: Uncovering the Cultural Empathy Gap in LLMs through a Comparative Empathetic Dialogue Benchmark](https://doi.org/10.18653/v1/2025.ijcnlp-long.44)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [BanHate: An Up-to-Date and Fine-Grained Bangla Hate Speech Dataset](https://doi.org/10.18653/v1/2025.banglalp-1.19)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Statistical Implausibility Detection: A Framework for Identifying Evaluation Inconsistencies in Large Language Model Security Assessment](https://doi.org/10.1109/uemcon67449.2025.11267712)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [The Dark-Affective Bench: A Benchmark for Evaluating Maladaptive Personality Traits and Affective Tendencies in Large Language Models](https://doi.org/10.1109/bigdata66926.2025.11401047)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [TrustToken: A Framework for Evaluating Tokenizer Security and Robustness in NLP Pipelines](https://doi.org/10.1109/cai64502.2025.00162)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Beyond Hate Speech: A Synthetic Conversational Dataset for Detecting Subtle Cyberbullying](https://doi.org/10.1109/punecon67554.2025.11377671)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [MELF: Multi-Agent Evaluation for LLMs Fairness Based on Hierarchical Genetic Algorithm](https://doi.org/10.1109/mlnlp66797.2025.11388881)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Quantifying AI Security Coverage: A Metric-Based Evaluation Across Five Governance Frameworks](https://doi.org/10.1109/intellisecai66368.2025.11473001)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [An Experimental Evaluation of Prompt Injection Attacks on LLM-Based Content Moderation Systems](https://doi.org/10.1109/snams67467.2025.11390931)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Towards Secure AI: Detection of Prompt Injection Attacks with Explainability](https://doi.org/10.1109/ictest64710.2025.11042369)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Analysis of Semantic Benchmark Data Contamination Attack for LLM-Driven Fake News Detection](https://doi.org/10.1109/bigdata66926.2025.11402039)：Analysis of Semantic Benchmark Data Contamination Attack for LLM-Driven Fake News Detection 补充智能体安全方向的基准、数据集、指标或评测协议。
+- [Evaluation of Machine Unlearning Through Model Difference](https://doi.org/10.1109/tifs.2025.3571666)：面向智能体安全，补充评测基准、数据集、协议或指标。
+- [FLODA: Harnessing Vision-Language Models for Deepfake Assessment](https://doi.org/10.1109/icce63647.2025.10929816)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Contrastive siamese network for detecting AI-generated text across domains and models](https://doi.org/10.1016/j.neucom.2025.131983)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [A Synthetic Dataset Generation Method and System for Electric Power Safety Violations](https://doi.org/10.1109/icepg67373.2025.11466929)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [Visual language models and generative artificial intelligence for smart workplace safety: a comparative study](https://doi.org/10.1109/swc65939.2025.00034)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [A Comparative Empirical Study of Over-Refusal Behavior in Closed-Source Large Language Models on Pseudo-Harmful Prompts](https://doi.org/10.69987/aimlr.2025.60303)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [IndicSideFace: A Dataset for Advancing Deepfake Detection on Side-Face Perspectives of Indian Subjects](https://doi.org/10.1109/fg61629.2025.11099399)：提供用于衡量智能体安全能力的数据集、基准、指标或评测协议。
+- [Fed- : A tri-level federated fairness evaluation framework with statistical guarantees and privacy preservation](https://doi.org/10.1016/j.inffus.2025.103949)：围绕 Agent Safety 能力补充《Fed- : A tri-level federated fairness evaluation framework with statistical guarantees and privacy preservation》，作为 Bench 条目候选。
+- [A Data-Efficient Gated Hybrid Classification-Regression Approach for End-to-End Robot Navigation on Biased Datasets](https://doi.org/10.1109/aann66429.2025.11257589)：围绕 Agent Safety 能力补充《A Data-Efficient Gated Hybrid Classification-Regression Approach for End-to-End Robot Navigation on Biased Datasets》，作为 Bench 条目候选。
+- [Low-Latency Privacy-Aware Robot Behavior guided by Automatically Generated Text Datasets](https://doi.org/10.1109/iros60139.2025.11246252)：围绕 Agent Safety 能力补充《Low-Latency Privacy-Aware Robot Behavior guided by Automatically Generated Text Datasets》，作为 Bench 条目候选。
+- [Between Generation and Judgment: A Cloud-Native Framework for Adversarial Evaluation of LLM Alignment](https://doi.org/10.1109/cloudcom67567.2025.11331361)：围绕 Agent Safety 能力补充《Between Generation and Judgment: A Cloud-Native Framework for Adversarial Evaluation of LLM Alignment》，作为 Bench 条目候选。
+- [Disrupting Large Language Models with Hidden Prompt Injection Attacks Embedded in HTML Pages](https://doi.org/10.1109/optim-acemp62776.2025.11075247)：评测 Disrupting Large Language Models with Hidden Prompt Injection Attacks Embedded in HTML Pages，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
+- [SHIELD: Security against Harmful Prompt Injection Evaluation and Language Detection Leveraging Ensemble Approach](https://doi.org/10.1109/iecon58223.2025.11221566)：评测 SHIELD: Security against Harmful Prompt Injection Evaluation and Language Detection Leveraging Ensemble Approach，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
+- [ChaosLLM: A Dependability Testing Approach for Tool-Calling Agents](https://doi.org/10.1109/issrew67781.2025.00085)：评测 ChaosLLM: A Dependability Testing Approach for Tool-Calling Agents，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
+- [Evaluating the Universality of “Do Anything Now” Jailbreak Prompts on Large Language Models: Content Warning: This paper contains unfiltered and harmful examples.](https://doi.org/10.1109/ccwc62904.2025.10903781)：评测 DAN 类越狱提示是否能跨大语言模型迁移，为提示层安全失效的泛化性补充证据。
+- [JailbreakDiffBench: A Comprehensive Benchmark for Jailbreaking Diffusion Models](https://doi.org/10.1109/iccv51701.2025.01528)：评测安全、对齐、水印、遗忘或攻防能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [PromptNeedling: Jailbreaking Text-to-Video Generative Models](https://doi.org/10.1109/globecom59602.2025.11432140)：评测，主要面向 Agent Safety。
+- [MerCulture: A Comprehensive Benchmark to Evaluate Vision-Language Models on Cultural Understanding in Singapore](https://doi.org/10.1109/cvprw67362.2025.00061)：评测，主要面向 Agent Safety。
+- [Decision-Maker Alignment: Benchmark Datasets](https://doi.org/10.1109/cai64502.2025.00212)：补充智能体安全方向的基准、数据集、指标或评测协议。
+- [Evaluating Toxicity Understanding of LLM Agents](https://doi.org/10.1109/cascon66301.2025.00121)：提出面向智能体安全、护栏与对抗风险的基准、数据集或评测协议。
+- [ThaiSBi: A Thai Social Bias Dataset for Large Language Model](https://doi.org/10.1109/kst65016.2025.11003363)：补充智能体安全的 Bench 条目，重点是《ThaiSBi: A Thai Social Bias Dataset for Large Language Model》。
+- [Lost in Translation, Found in Evaluation: Multilingual Jailbreak Detection Across 49 Languages](https://doi.org/10.1109/punecon67554.2025.11379319)：补充智能体安全的 Bench 条目，重点是《Lost in Translation, Found in Evaluation: Multilingual Jailbreak Detection Across 49 Languages》。
+- [Evaluating Large Language Models Security and Resilience: A Practical Testing Framework](https://doi.org/10.1109/roedunet68395.2025.11208478)：补充智能体安全的 Bench 条目，重点是《Evaluating Large Language Models Security and Resilience: A Practical Testing Framework》。
+- [An Adversarial Toxicity Prompt Generator Exploiting Multilingual Code-Switching in LLMs](https://doi.org/10.1109/cai64502.2025.00156)：生成多语 code-switching 毒性提示，为非英语单语攻击之外的安全行为补充压力测试。
+- [Tongue-Tied: Breaking LLMs Safety Through New Language Learning](https://doi.org/10.18653/v1/2025.calcs-1.5)：评测新语言学习如何突破 LLM 安全机制，为多语种安全补充不同于普通翻译越狱的压力测试。
+- [Emotional prompting amplifies disinformation generation](https://doi.org/10.3389/frai.2025.1543603)：评估情绪化提示如何放大 LLM 的虚假信息生成，使提示风格成为安全压力测试变量。
+- [Overlooked Safety Vulnerability in LLMs: Malicious Intelligent Optimization Algorithm Request and its Jailbreak](https://arxiv.org/abs/2601.00213)：揭示恶意智能优化算法请求导致的越狱风险。
+- [Lying with Truths](https://arxiv.org/abs/2601.01685)：研究 open-channel multi-agent collusion 及通过 generative montage 进行 belief manipulation。
+- [Focus on What Matters: Fisher-Guided Adaptive Multimodal Fusion for Vulnerability Detection](https://arxiv.org/abs/2601.02438)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [To Generate or Discriminate? Methodological Considerations for Measuring Cultural Alignment in LLMs](https://arxiv.org/abs/2601.02858)：评测，主要面向 Agent Safety。
+- [X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework](https://arxiv.org/abs/2601.03194)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [A Multi-Perspective Benchmark and Moderation Model for Evaluating Safety and Adversarial Robustness](https://arxiv.org/abs/2601.03273)：评测 A Multi-Perspective Benchmark and Moderation Model for Evaluating Safety and Adversarial Robustness，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
+- [How Real is Your Jailbreak? Fine-grained Jailbreak Evaluation with Anchored Reference](https://arxiv.org/abs/2601.03288)：用 anchored reference 做细粒度越狱评测，区分真实安全失败与含糊或过度计数的越狱声明。
+- [SIGMA: Scalable Spectral Insights for LLM Model Collapse](https://arxiv.org/abs/2601.03385)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
 - [Doc-PP](https://arxiv.org/abs/2601.03926)：测试多模态文档问答系统是否遵守动态用户定义的信息披露策略。
+- [SaLAD](https://arxiv.org/abs/2601.04043)：面向日常生活 MLLM 助手安全性的多模态 benchmark；核心思想是检验图文场景是否会诱导助手给出危险建议或行为。
+- [HyperAlign: Hyperbolic Entailment Cones for Adaptive Text-to-Image Alignment Assessment](https://arxiv.org/abs/2601.04614)：面向智能体安全，补充用于alignment, watermarking, generated-content, or authenticity evaluation的基准、数据集、指标、审计或实证协议。
+- [DVD: A Robust Method for Detecting Variant Contamination in Large Language Model Evaluation](https://arxiv.org/abs/2601.04895)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Multi-turn Jailbreaking Attack in Multi-Modal Large Language Models](https://arxiv.org/abs/2601.05339)：评测多模态 LLM 的多轮越狱攻击与防御。核心思路是把越狱风险建模为多轮多模态交互，并比较片段优化的防御筛查机制。
 - [Memory Poisoning Attack and Defense](https://arxiv.org/abs/2601.05504)：评测 memory-based LLM agent 的记忆投毒攻击。核心思想是测试恶意 query-only 交互如何污染长期记忆并影响后续行为，再在更接近部署的假设下比较防御机制。
+- [PII-VisBench: Evaluating Personally Identifiable Information Safety in Vision Language Models Along a Continuum of Visibility](https://arxiv.org/abs/2601.05739)：用 4,000 个 probe 和按在线可见度分层的 200 名对象评测 VLM 个人身份信息披露，报告 18 个开源 VLM 的拒答率与条件 PII 披露率。
+- [Echo Chamber](https://arxiv.org/abs/2601.05742)：定义并评测渐进升级式 multi-turn jailbreak，把安全评测从单轮攻击扩展到多轮对话。
+- [AutoMonitor-Bench](https://arxiv.org/abs/2601.05752)：评测 LLM misbehavior monitor 在良性与异常样本上的可靠性。核心思想：同时衡量漏检率与误报率，避免 agent 依赖不可靠的安全监控器。
 - [SafePro](https://arxiv.org/abs/2601.06663)（[项目页](https://safeprobench.github.io/safepro/)）：评什么：专业级 AI agent 的安全性。核心思想：在专业服务和现实工作任务中同时看任务完成与不安全动作，避免只以产出质量判断 agent 可部署性。
+- [Reflective Reasoning for SQL Generation](https://arxiv.org/abs/2601.06678)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [MTMCS-Bench](https://arxiv.org/abs/2601.06757)：评什么：多模态大模型在多轮对话中的上下文安全。核心思想是测试由图像和不断变化的对话语境共同触发的风险，而不是单轮 prompt。
+- [Indirect Prompt Injection in the Wild](https://arxiv.org/abs/2601.07072): 面向真实检索增强 LLM 系统的 indirect prompt injection 研究。核心思想是在检索内容中植入隐藏指令，并测量系统是否被其劫持。
+- [MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models](https://arxiv.org/abs/2601.07141)：评测，主要面向 Agent Safety。
+- [Universal Adversarial Purification with DDIM Metric Loss for Stable Diffusion](https://arxiv.org/abs/2601.07253)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [When Bots Take the Bait](https://arxiv.org/abs/2601.07263)：评测针对 Web automation agent 的社会工程攻击。核心思想：测试 agent 是否会跟随恶意网页线索，并检验缓解措施是否保留良性自动化能力。
+- [Knowing But Not Doing: Convergent Morality and Divergent Action in LLMs](https://arxiv.org/abs/2601.07972)：评估 LLM 在建议型决策场景中是否落实其表述的价值观，区分价值知识与行动选择。
+- [LogiSafetyBench](https://arxiv.org/abs/2601.08196)：评测 tool invocation 中的隐式法规合规；核心思想是把法规转成 temporal-logic oracles，并合成 safety-critical traces，要求 agent 在生成可用程序时同时满足潜在合规约束。
+- [MPCI-Bench: A Benchmark for Multimodal Pairwise Contextual Integrity Evaluation of Language Model Agents](https://arxiv.org/abs/2601.08235)：评测语言模型 agent 的多模态成对 contextual integrity，检验 agent 决策能否在上下文变化下保持隐私规范。
+- [WebTrap Park](https://arxiv.org/abs/2601.08406)：评什么：通过 1,226 个可执行网页交互任务评测 Web agent 安全性。核心思想：将多类安全风险实例化到真实页面行动中，无需改造 agent 即可观察具体操作，区分不同 agent 架构的安全差异。
+- [STAR: Detecting Inference-time Backdoors in LLM Reasoning via State-Transition Amplification Ratio](https://arxiv.org/abs/2601.08511)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Seeking Human Security Consensus: A Unified Value Scale for Generative AI Value Safety](https://arxiv.org/abs/2601.09112)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Blue Teaming Function-Calling Agents](https://arxiv.org/abs/2601.09292)：评测面向攻击与防御的 function-calling agent 蓝队鲁棒性测试；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Syntactic Framing Fragility: An Audit of Robustness in LLM Ethical Decisions](https://arxiv.org/abs/2601.09724)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](https://arxiv.org/abs/2601.10294)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Too Helpful to Be Safe: User-Mediated Attacks on Planning and Web-Use Agents](https://arxiv.org/abs/2601.10758)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Hidden-in-Plain-Text: A Benchmark for Social-Web Indirect Prompt Injection in RAG](https://arxiv.org/abs/2601.10923)：Hidden-in-Plain-Text 评测社交网页 RAG 场景中的间接提示注入，即检索内容操纵 agent 的风险。
+- [Tool-Calling Resource Amplification](https://arxiv.org/abs/2601.10955): 面向 tool-calling LLM agents 的资源放大攻击研究。核心思想是说明链式工具调用如何隐蔽超出预期计算或动作预算。
+- [XChoice: Explainable Evaluation of AI-Human Alignment in LLM-based Constrained Choice Decision Making](https://arxiv.org/abs/2601.11286)：评估受约束选择决策中的人机对齐，可作为安全与对齐评测基准线索。
+- [Semantic Differentiation for Tackling Challenges in Watermarking Low-Entropy Constrained Generation Outputs](https://arxiv.org/abs/2601.11629)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [Zero-Permission Manipulation](https://arxiv.org/abs/2601.12349): 面向 multimodal GUI agents zero-permission manipulation 的安全评测。核心思想是测试 GUI agent 是否会在没有显式权限的情况下被界面上下文操纵。
+- [ChartAttack: Testing the Vulnerability of LLMs to Malicious Prompting in Chart Generation](https://arxiv.org/abs/2601.12983)：评测图表生成场景中 LLM 对恶意提示的脆弱性。
+- [Content Leakage in LibriSpeech and Its Impact on the Privacy Evaluation of Speaker Anonymization](https://arxiv.org/abs/2601.13107)：指出 LibriSpeech 中说话人可通过书籍特有词汇被识别，并与 EdAcc 对比，将语言内容泄露和匿名化器失效区分开。
+- [Insider Knowledge: How Much Can RAG Systems Gain from Evaluation Secrets?](https://arxiv.org/abs/2601.13227)：衡量 RAG 系统从评测秘密中获益的程度，揭示检索场景中的基准污染风险。
+- [HateXScore](https://arxiv.org/abs/2601.13547)：提供 metric suite，用于评估 hate-speech explanations 中的 reasoning quality。
 - [PINA](https://arxiv.org/abs/2601.13612)：评估 LLM 导航智能体的提示注入脆弱性。核心思路是在黑盒、长上下文和可执行动作约束下优化攻击，使导航安全评估落到动作轨迹层面。
+- [Hidden in Plain Text: Measuring LLM Deception Quality Against Human Baselines Using Social Deduction Games](https://arxiv.org/abs/2601.13709)：在 Mafia 社会推理游戏中评测 LLM 欺骗质量；核心思想是用人类基线比较 agent 在自然语言社交互动中的 deception 表现。
+- [Look-Ahead-Bench: a Standardized Benchmark of Look-ahead Bias in Point-in-Time LLMs for Finance](https://arxiv.org/abs/2601.13770)：在真实金融工作流中测量 point-in-time LLM 的 look-ahead bias，通过跨市场阶段的性能衰减，对照标准 LLM、PiT 模型和量化基线。
+- [VTONGuard: Automatic Detection and Authentication of AI-Generated Virtual Try-On Content](https://arxiv.org/abs/2601.13951)：面向智能体安全，补充用于alignment, watermarking, generated-content, or authenticity evaluation的基准、数据集、指标、审计或实证协议。
+- [Measuring Political Stance and Consistency in Large Language Models](https://arxiv.org/abs/2601.17016)：用 5 种 prompting 策略在 24 个政治敏感议题上测试 9 个 LLM，衡量立场持久性、提示诱导的可塑性，以及国家相关议题中的语言效应。
+- [The Shadow Self: Intrinsic Value Misalignment in Large Language Model Agents](https://arxiv.org/abs/2601.17344)：评什么：评测自治 LLM agent 的内在价值错位；核心思想是检查长程自治中 agent 目标是否偏离人类价值。
+- [Auditing Disability Representation in Vision-Language Models](https://arxiv.org/abs/2601.17348)：为智能体与模型安全补充可复用评测线索，重点关注 Auditing Disability Representation in Vision-Language Models。
+- [Breaking the Protocol: Security Analysis of the Model Context Protocol Specification and Prompt Injection Vulnerabilities in Tool-Integrated LLM Agents](https://arxiv.org/abs/2601.17549)：该 MCP 安全工作 benchmark 工具集成 LLM agent 中的提示注入和协议风险。
+- [Sponge Tool Attack](https://arxiv.org/abs/2601.17566)：研究操控工具调用过程、浪费 agent 推理成本的 denial-of-efficiency 攻击。
+- [Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](https://arxiv.org/abs/2601.17644)：评测多模态 RAG 的成员推断与图像 caption 检索攻击，把 RAG 安全从文本库扩展到图像检索场景。
+- [MalURLBench](https://arxiv.org/abs/2601.18113)：评什么：agent 处理 Web URL 时的脆弱性。核心思想：测试 agent 在解释、获取并执行 URL 内容时，能否抵御其中可能隐藏的恶意或误导指令。
 - [α3-SecBench](https://arxiv.org/abs/2601.18754)：评估 6G 网络场景中基于 LLM 的无人机智能体的安全性、韧性与可信度。核心思路：把对抗、可靠性和信任失效转化为可度量的 embodied aerial agent 安全问题，而不是只看导航任务是否完成。
+- [BengaliSent140: A Large-Scale Bengali Binary Sentiment Dataset for Hate and Non-Hate Speech Classification](https://arxiv.org/abs/2601.20129)：整合 7 个孟加拉语文本数据集，形成 139,792 条 unique samples，并统一为 hate/non-hate 二分类标签，支持超出小规模单域语料的孟加拉语仇恨言论分类。
+- [Just Ask: Curious Code Agents Reveal System Prompts in Frontier LLMs](https://arxiv.org/abs/2601.21233)：评什么：评测 curious code agents 导致 system prompt 泄漏的风险；核心思想是测试自主工具使用和自发提问如何暴露隐藏指令。
+- [StepShield](https://arxiv.org/abs/2601.22136)：评测 rogue-agent 行为何时被检测到；核心思想是使用标注过的 code-agent trajectories 和 Early Intervention Rate、Intervention Gap、Tokens Saved 等时间指标，区分可干预的早期预警和事后检测。
+- [Drunk Language Inducement](https://arxiv.org/abs/2601.22169)：评测醉酒语言提示与后训练对越狱和隐私泄漏行为的影响，补充面向 LLM 安全的语言风格压力测试。
+- [Benchmarking Long Roll-outs of Auto-regressive Neural Operators for the Compressible Navier-Stokes Equations with Conserved Quantity Correction](https://arxiv.org/abs/2601.22541)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [From Similarity to Vulnerability: Key Collision Attack on LLM Semantic Caching](https://arxiv.org/abs/2601.23088)：研究针对 LLM 语义缓存的键碰撞攻击。
+- [Behemoth: Benchmarking Unlearning in LLMs Using Fully Synthetic Data](https://arxiv.org/abs/2601.23153)：用全合成事实评测 LLM unlearning 与 model editing，避免隐含训练数据成员假设，并检查方法是否能抑制目标知识而不造成广泛 collateral damage。
+- [ReasoningBomb: A Stealthy Denial-of-Service Attack by Inducing Pathologically Long Reasoning in Large Reasoning Models](https://arxiv.org/abs/2602.00154)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Provably Protecting Fine-Tuned LLMs from Training Data Extraction](https://arxiv.org/abs/2602.00688)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Evasive Prompt-Injection Attacks](https://arxiv.org/abs/2602.00750)：评测规避型注入变体如何绕过 prompt-injection detectors。
+- [PersistBench: When Should Long-Term Memories Be Forgotten by LLMs?](https://arxiv.org/abs/2602.01146)：定义面向对话助手长期记忆的安全基准，评测 cross-domain leakage 与 memory-induced sycophancy 在前沿和开源 LLM 中的表现。
 - [SEA-Guard](https://arxiv.org/abs/2602.01618)：构造本地化、区域感知的安全案例，使对齐评测覆盖东南亚价值、规范和法规。
+- [RACC](https://arxiv.org/abs/2602.02280)：提出面向 LLM 安全测试的表示感知覆盖准则，把潜在空间覆盖度纳入可度量的安全评测。
+- [Risky-Bench](https://arxiv.org/abs/2602.03100)：评测真实部署条件下的 agentic safety 风险；核心思想是从通用安全原则推导 context-aware rubrics，并在不同威胁假设下运行长程交互任务。
+- [AgentDyn](https://arxiv.org/abs/2602.03117)：评测 agent 安全防御在动态真实环境中是否可部署。核心思想：把间接提示注入评测从静态 benchmark 推向真实变化环境。
 - [LPS-Bench](https://arxiv.org/abs/2602.03255)：评测 computer-use agent 的规划期安全意识。核心思想：在 benign 与 adversarial 长程场景中测试 MCP-based CUA 是否能在执行 GUI 或工具动作前预判风险。
 - [CSR-Bench](https://arxiv.org/abs/2602.03263)：评测 MLLM 的跨模态安全性与可靠性。核心思想：用图文联合样本和 text-only 对照覆盖安全、过度拒答、偏见与幻觉等模式，从而显式观察模态诱发的安全行为变化。
+- [Multi-Level Testing of Conversational AI Systems](https://arxiv.org/abs/2602.03311)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [PromptSplit: Revealing Prompt-Level Disagreement in Generative Models](https://arxiv.org/abs/2602.04009)：通过比较 prompt-output 联合表示的 kernel covariance eigenspace，检测不同生成模型在 prompt 维度上的行为分歧，并用 random projection 支持 text-to-image、text-to-text 和 image-captioning 评测的可扩展分析。
+- [Alignment Drift in Multimodal LLMs: A Two-Phase, Longitudinal Evaluation of Harm Across Eight Model Releases](https://arxiv.org/abs/2602.04739)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Among Us](https://arxiv.org/abs/2602.05176)：评测模型协作系统中的恶意贡献。核心思想：衡量受损参与方如何影响协作模型行为，以及缓解机制带来的安全与协作权衡。
+- [TrajAD](https://arxiv.org/abs/2602.06443)：评测可信 LLM agent 的轨迹异常检测。核心思想：从执行轨迹中识别异常多步行为，而不是只判断最终输出。
 - [PI3D](https://arxiv.org/abs/2602.07104)：评估放置在 3D 环境中的带字物体如何触发提示注入。核心思想：把物体姿态和相机视角也纳入攻击面，测试在真实或模拟场景中推理的多模态智能体。
+- [From Native Memes to Global Moderation: Cross-Cultural Evaluation of Vision–Language Models for Hateful Meme Detection](https://arxiv.org/abs/2602.07497)：评测 VLM 在跨文化仇恨表情包检测中的表现。
+- [Agent-Fence](https://arxiv.org/abs/2602.07652)：映射 deep research agent 的安全漏洞。核心思想是审计研究 agent 在检索、浏览、记忆、工具使用和报告生成中暴露的攻击面。
+- [Blind to the Human Touch: Overlap Bias in LLM-Based Summary Evaluation](https://arxiv.org/abs/2602.07673)：审计 LLM-as-judge 摘要评测中的 overlap bias，测试 9 个近期 LLM judge，并显示当 ROUGE/BLEU 与人类参考摘要相似度下降时，judge 更可能偏好 LLM 生成摘要而非人类摘要。
+- [SAGE: Scalable AI Governance & Evaluation](https://arxiv.org/abs/2602.07840)：提出 scalable AI governance and evaluation framework，补充面向部署式 AI 系统治理的评估覆盖。
+- [From Assistant to Double Agent: Formalizing and Benchmarking Attacks on OpenClaw for Personalized Local AI Agent](https://arxiv.org/abs/2602.08412)：评测 OpenClaw 本地个性化 agent 的攻击；核心思想是分析个性化、本地记忆和工具上下文如何把普通助手转化为不安全的 double agent。
+- [ValueFlow: Measuring the Propagation of Value Perturbations in Multi-Agent LLM Systems](https://arxiv.org/abs/2602.08567)：评什么：多 agent LLM 系统中的价值扰动传播。核心思想是衡量 agent 交互后的价值漂移，而不是只评估单个模型的对齐状态。
+- [Compositional Reasoning Attacks](https://arxiv.org/abs/2602.08874)：评测有害意图隐含在长上下文中时的安全性；核心思想是把有害目标拆成语义不完整片段嵌入长上下文，测试 reasoning models 推断出目标后是否仍会拒答。
+- [Stress-Testing Alignment Audits With Prompt-Level Strategic Deception](https://arxiv.org/abs/2602.08877)：用提示级策略性欺骗压力测试对齐审计。
 - [Goal-Directedness Evaluation for Language Model Agents](https://arxiv.org/abs/2602.08964)：结合行为测试与表征分析，判断语言模型 Agent 是否持续追求某个目标。
+- [MisActBench](https://arxiv.org/abs/2602.08995)：评什么：评测 computer-use agents 的 misaligned actions。核心思想：对真实 CUA 轨迹做 action-level 对齐标注，并检查 DeAction 等 guardrail 是否能在执行前发现和修正由外部攻击或内部推理错误造成的 off-task 动作。
+- [Benchmarking Knowledge-Extraction Attack and Defense on Retrieval-Augmented Generation](https://arxiv.org/abs/2602.09319)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Benchmarking Knowledge-Extraction Attack and Defense on Retrieval-Augmented Generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [BiasScope](https://arxiv.org/abs/2602.09383)： 自动检测 LLM-as-a-judge 评测中的偏见，面向评审模型的可靠性与公平性。
 - [AgentPI](https://arxiv.org/abs/2602.10453)：评测面向上下文依赖型 LLM-agent 任务的提示注入防御。核心思想：检查防御是否能在阻断注入指令的同时保留对运行时环境观察的授权使用，从而暴露可信性、效用和延迟之间的权衡。
 - [AgentLeak](https://arxiv.org/abs/2602.11510)：评测 LLM Agent 系统中的全栈隐私泄露。核心思想：检查 inter-agent messages、shared memory、tool arguments 等内部通道，使隐私审计不只看最终用户可见输出。
+- [Behavioral Indicators of Overreliance During Interaction with Conversational Language Models](https://arxiv.org/abs/2602.11567)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [Evaluating LLM Safety Under Repeated Inference via Accelerated Prompt Stress Testing](https://arxiv.org/abs/2602.11786)：评估 repeated inference 下的 LLM 安全性；核心思想是压力测试多次尝试是否会暴露单次评测看不到的不安全回答。
+- [Wisdom of the LLM Crowd: A Large Scale Benchmark of Multi-Label U.S. Election-Related Harmful Social Media Content](https://arxiv.org/abs/2602.11962)：构建 USE24-XD，收集 2024 美国大选周期近 10 万条 X 帖子，并用 6 个 LLM 与人工验证标注 conspiracy、sensationalism、hate speech、speculation 和 satire，同时保留时空元数据。
 - [MalTool](https://arxiv.org/abs/2602.12194)：评测 LLM Agent 生态中的恶意工具代码实现，通过生成独立恶意工具与嵌入式恶意行为工具，检验现有检测方法是否能发现工具代码层面的妥协。
+- [GT-HarmBench: Benchmarking AI Safety Risks Through the Lens of Game Theory](https://arxiv.org/abs/2602.12316)：通过博弈论场景评测 AI safety risks，强调战略激励而非孤立 harmful prompts。
+- [MoralityGym: A Benchmark for Evaluating Hierarchical Moral Alignment in Sequential Decision-Making Agents](https://arxiv.org/abs/2602.13372)：评测顺序决策智能体的层次化道德对齐，把道德评测从单轮回答扩展到行动轨迹。
 - [MT-AgentRisk](https://arxiv.org/abs/2602.13379)：评测工具型 agent 的多轮安全风险。核心思想：把单轮有害请求转成真实多轮工具轨迹，观察 agent 是否会随着上下文累积而变得更不安全。
+- [OMNI-LEAK: Orchestrator Multi-Agent Network Induced Data Leakage](https://arxiv.org/abs/2602.13477)：评估 orchestrated multi-agent network 引发的数据泄漏。核心思想是在带访问控制边界的多 agent 协作中建模威胁，衡量信息如何跨 agent 泄漏。
+- [SPILLage: Agentic Oversharing on the Web](https://arxiv.org/abs/2602.13516)：评测 web 场景下的 agentic oversharing；核心思想是检查 web agent 在完成任务时是否泄露或过度披露信息。
+- [DWBench: Holistic Evaluation of Watermark for Dataset Copyright Auditing](https://arxiv.org/abs/2602.13541)：提供开源图像数据集水印 benchmark，覆盖分类和生成任务，在扰动和部署导向版权审计设置下标准化评测 25 种方法。
 - [AlignSentinel](https://arxiv.org/abs/2602.13597)：评测提示注入检测中 aligned instruction、misaligned instruction 与 non-instruction 三类输入。核心思想是区分与任务一致的良性指令和恶意注入，避免防御方法因简单拦截所有指令性内容而被高估。
+- [ForesightSafety Bench](https://arxiv.org/abs/2602.14135)：一个广义前沿风险基准，本页相关性主要来自 risky agentic autonomy 与 embodied AI safety 维度。核心思想：把高级安全风险组织成面向治理的评测框架。
+- [A Trajectory-Based Safety Audit of Clawdbot (OpenClaw)](https://arxiv.org/abs/2602.14364)：通过完整交互轨迹审计工具型个人 agent；核心思想是跨风险维度评估消息、行动、工具参数和输出。
+- [Multi-Turn Adaptive Prompting Attack on Large Vision-Language Models](https://arxiv.org/abs/2602.14399)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Overthinking Loops in Agents](https://arxiv.org/abs/2602.14798)：评什么：分析 MCP 工具元数据诱发 agent 过度循环的结构性风险。
+- [Colosseum: Auditing Collusion in Cooperative Multi-Agent Systems](https://arxiv.org/abs/2602.15198)：面向 cooperative multi-agent systems collusion 的审计 benchmark。核心思想是检测 agent 是否以违反预期政策或监督假设的方式协同。
+- [ER-MIA: Black-Box Adversarial Memory Injection Attacks on Long-Term Memory-Augmented Large Language Models](https://arxiv.org/abs/2602.15344)：评测针对长期记忆增强 LLM 的黑箱对抗性记忆注入攻击；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Zombie Agents: Persistent Control of Self-Evolving LLM Agents via Self-Reinforcing Injections](https://arxiv.org/abs/2602.15654)：针对自演化 agent 的持久控制攻击评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Visual Memory Injection Attacks for Multi-Turn Conversations](https://arxiv.org/abs/2602.15927)：测试一种隐蔽的图像注入攻击，可在长轮次 LVLM 对话中保留可触发的目标消息。
+- [STING](https://arxiv.org/abs/2602.16346)：评测多轮、多语言 LLM agent 的非法协助风险。核心思想：构造逐步非法计划和自适应追问，并用 judge agent 跟踪阶段完成情况，以 time-to-first jailbreak 和 restricted mean jailbreak discovery 替代单轮拒答测试。
+- [MathEd-PII](https://arxiv.org/abs/2602.16571)：在数学辅导 PII benchmark 中研究保效去标识化与数字歧义。
+- [The Vulnerability of LLM Rankers to Prompt Injection Attacks](https://arxiv.org/abs/2602.16752)：评测大模型排序器中的提示注入脆弱性。
+- [NESSiE: The Necessary Safety Benchmark - Identifying Errors that should not Exist](https://arxiv.org/abs/2602.16756)：轻量级必要安全 benchmark。核心思想是用最小化的信息安全与访问安全样例暴露本不应出现的基础安全失败。
+- [IndicJR: A Judge-Free Benchmark of Jailbreak Robustness in South Asian Languages](https://arxiv.org/abs/2602.16832)：补充智能体安全方向的基准、数据集、指标或评测协议。
+- [AgentLAB: Benchmarking LLM Agents against Long-Horizon Attacks](https://arxiv.org/abs/2602.16901)：AgentLAB benchmark 长程攻击下的 LLM agent 安全性。
+- [The Emergence of Lab-Driven Alignment Signatures: A Psychometric Framework for Auditing Latent Bias and Compounding Risk in Generative AI](https://arxiv.org/abs/2602.17127)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [FENCE: A Financial and Multimodal Jailbreak Detection Dataset](https://arxiv.org/abs/2602.18154)：提供金融与多模态越狱检测数据集。
+- [Security Risks of AI Agents Hiring Humans: An Empirical Marketplace Study](https://arxiv.org/abs/2602.19514)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [CIBER: A Comprehensive Benchmark for Security Evaluation of Code Interpreter Agents](https://arxiv.org/abs/2602.19547)：评什么：评测 code interpreter agent 的安全风险；核心思想是覆盖动态代码执行、工具交互和多轮上下文，而不只看静态提示。
+- [MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2602.19843)：面向 LLM 多 agent 系统的 fault injection 与 reliability evaluation benchmark。核心思想是向协作流程注入受控故障，并衡量鲁棒性、传播和恢复能力。
+- [Assessing Risks of Large Language Models in Mental Health Support: A Framework for Automated Clinical AI Red Teaming](https://arxiv.org/abs/2602.19948)：用模拟患者 agent 与长期风险准则评测心理健康支持 LLM；核心思想是对治疗式长对话做红队测试，而不是只用单轮安全提示。
+- [Agents of Chaos](https://arxiv.org/abs/2602.20021)：在带记忆、邮件、Discord、文件和 shell 权限的真实环境中红队测试自主智能体，记录安全、隐私与治理失败。
+- [Benchmarking Unlearning for Vision Transformers](https://arxiv.org/abs/2602.20114)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation](https://arxiv.org/abs/2602.20170)：提出面向智能体安全、护栏与对抗风险的基准、数据集或评测协议。
+- [Pressure Reveals Character: Behavioural Alignment Evaluation at Depth](https://arxiv.org/abs/2602.20813)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Evaluating Proactive Risk Awareness of Large Language Models](https://arxiv.org/abs/2602.20976)：评估大语言模型是否具备主动风险感知与响应能力。
+- [Beyond Refusal: Probing the Limits of Agentic Self-Correction for Semantic Sensitive Information](https://arxiv.org/abs/2602.21496)：评什么：评测 agentic self-correction 处理语义敏感信息的边界；核心思想是测试 agent 能否识别推断出的敏感属性和有害幻觉内容。
 - [SPOC](https://arxiv.org/abs/2602.21595)：评测部分可观测和物理约束下的具身安全规划。核心思想：用状态和约束指标评估逐步家庭任务计划，覆盖火、液体、伤害、物体损坏和污染等危险。
+- [SAFARI: A Community-Engaged Approach and Dataset of Stereotype Resources in the Sub-Saharan African Context](https://arxiv.org/abs/2602.22404)：提供撒哈拉以南非洲语境中的刻板印象资源。核心思想：用社区参与的区域证据支撑安全与公平性评测。
+- [Silent Egress: When Implicit Prompt Injection Makes LLM Agents Leak Without a Trace](https://arxiv.org/abs/2602.22450)：评测工具型 agent 中隐式提示注入导致的数据泄露。核心思想：把 URL 预览与元数据视为不可信内容，测试静默外泄风险。
+- [Personalization Increases Affective Alignment but Has Role-Dependent Effects on Epistemic Independence in LLMs](https://arxiv.org/abs/2603.00024)：评测个性化对情感对齐、迎合和认知独立性的影响；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Thought Virus: Viral Misalignment via Subliminal Prompting in Multi-Agent Systems](https://arxiv.org/abs/2603.00131)：评测智能体安全与安全评测。核心思想：围绕论文中的任务、数据或协议（Viral Misalignment via Subliminal Prompting in Multi-Agent Systems）形成可复用比较基准。
+- [Atomicity for Agents](https://arxiv.org/abs/2603.00476)：评什么：评测 browser-use agents 的 TOCTOU 漏洞。核心思想：在合成网站和真实网站中制造计划与执行之间的 DOM 或布局变化，检查 pre-execution validation 是否能阻止基于过期状态的操作。
+- [A Comprehensive Evaluation of LLM Unlearning Robustness under Multi-Turn Interaction](https://arxiv.org/abs/2603.00823)：评什么：评测多轮交互下 LLM unlearning 的鲁棒性；核心思想是检查被移除知识是否通过对话动态重新出现。
+- [Towards Policy-Adaptive Image Guardrail: Benchmark and Method](https://arxiv.org/abs/2603.01228)：基准化 policy-adaptive 有害图像 guardrail；核心思想是在变化安全政策下评测视觉安全系统，而不是固定危害类别。
+- [JailNewsBench](https://arxiv.org/abs/2603.01291)：评测 jailbreak 攻击下的多语言与区域化假新闻生成，将安全评测扩展到本地化滥用风险。
+- [VidDoS: Universal Denial-of-Service Attack on Video-based Large Language Models](https://arxiv.org/abs/2603.01454)：用明确任务、协议或数据集评测agent safety。
 - [Scheming Propensity in LLM Agents](https://arxiv.org/abs/2603.01608)：改变 Agent 因素与部署激励，在长程场景中测量 LLM Agent 何时会暗中追求不一致目标。
+- [GMP](https://arxiv.org/abs/2603.01724)：在违规类型共现且平台规则动态变化时评测内容审核，强调固定标签之外的 guideline-following safety。
+- [CyclicJudge: Mitigating Judge Bias Efficiently in LLM-based Evaluation](https://arxiv.org/abs/2603.01865)：把 LLM-as-judge benchmark 方差分解为场景、生成、评委和残差成分，并用 round-robin 评委分配在单评委成本下恢复 panel mean。
+- [MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](https://arxiv.org/abs/2603.02482)：提供浏览器式多模态安全平台，整合跨模态 payload 生成、Crescendo/PAIR/Violent Durian 多轮攻击、provider-agnostic model routing、五级 judge taxonomy，以及音频、图像、视频和文本上的 hard/soft ASR 指标。
+- [SteerEval](https://arxiv.org/abs/2603.02578)：从语言特征、情感和人格等多个行为粒度评测 LLM 可控性。
+- [Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals](https://arxiv.org/abs/2603.03258)：用明确任务、协议或数据集评测agent safety。
+- [M-QUEST -- Meme Question-Understanding Evaluation on Semantics and Toxicity](https://arxiv.org/abs/2603.03315)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Sleeper Cell: Injecting Latent Malice Temporal Backdoors into Tool-Using LLMs](https://arxiv.org/abs/2603.03371)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [FINEST: Improving LLM Responses to Sensitive Topics Through Fine-Grained Evaluation](https://arxiv.org/abs/2603.04123)：评什么：细粒度评测 LLM 对敏感话题的回答；核心思想是诊断安全对齐何时变得过度谨慎或无帮助。
+- [SalamahBench: Toward Standardized Safety Evaluation for Arabic Language Models](https://arxiv.org/abs/2603.04410)：为 Arabic language models 提供标准化安全评测；核心思想是把安全评估适配到阿拉伯语语言和文化语境，而不只依赖英语中心安全 benchmark。
+- [Design Behaviour Codes (DBCs): A Taxonomy-Driven Layered Governance Benchmark for Large Language Models](https://arxiv.org/abs/2603.04837)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [ThaiSafetyBench: Assessing Language Model Safety in Thai Cultural Contexts](https://arxiv.org/abs/2603.04992)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [NOTAI.AI: Explainable Detection of Machine-Generated Text via Curvature and Feature Attribution](https://arxiv.org/abs/2603.05617)：把 curvature、ModernBERT detector score、readability 和 stylometric features 输入 XGBoost meta-classifier，并用 SHAP 与 LLM 生成解释，让机器生成文本检测结果可在 Web 应用中检查。
 - [CoT-Control](https://arxiv.org/abs/2603.05706)：评测推理模型在不同提示压力下能否控制或塑造自己的 chain-of-thought 行为。核心思想：诊断推理轨迹的可控性与可监控性风险，这是前沿 model card 已开始与答案准确率分开报告的安全维度。
+- [LieCraft](https://arxiv.org/abs/2603.06874)：通过多智能体框架评估语言模型的欺骗能力。
+- [aCAPTCHA: Verifying That an Entity Is a Capable Agent via Asymmetric Hardness](https://arxiv.org/abs/2603.07116)：提出基于非对称难度的智能体能力验证协议，适合作为智能体安全与身份评估基准线索。
+- [Lying to Win: Assessing LLM Deception through Human-AI Games and Parallel-World Probing](https://arxiv.org/abs/2603.07202)：用人机博弈和平行世界探测评估 LLM 欺骗行为。
+- [Taiwan Safety Benchmark and Breeze Guard: Toward Trustworthy AI for Taiwanese Mandarin](https://arxiv.org/abs/2603.07286)：提供面向台湾华语的安全 benchmark 和 guard model，把多语言智能体安全评测扩展到更细的繁体中文与本地语境。
+- [Dual-Metric Evaluation of Social Bias in Large Language Models: Evidence from an Underrepresented Nepali Cultural Context](https://arxiv.org/abs/2603.07792)：用双指标评估低资源尼泊尔语境下的社会偏见。
+- [Real-Time Trust Verification for Safe Agentic Actions using TrustBench](https://arxiv.org/abs/2603.09157)：评测 safe agentic actions 的实时 trust verification；核心思想是把安全从事后输出审查前移到行动时验证，以便在执行中阻止或标记有害步骤。
 - [OOD-MMSafe](https://arxiv.org/abs/2603.09706)：评测 MLLM 对隐藏后果的安全识别，而不只看显式恶意意图。核心思想：用带有上下文因果链的 query-image 对测试模型能否在自主或具身行动变得危险前识别潜在危害。
+- [DeliberationBench](https://arxiv.org/abs/2603.10018)：评测 LLM deliberation 如何影响 users' views，使说服与观点转移风险可量化。
+- [ADVERSA: Measuring Multi-Turn Guardrail Degradation and Judge Reliability in Large Language Models](https://arxiv.org/abs/2603.10068)：把 guardrail degradation 表示为持续对抗对话中的逐轮 compliance trajectory，使用微调 70B attacker、五级 victim-response rubric 和 triple-judge consensus 来同时评测模型安全与 judge 可靠性。
+- [Risk-Adjusted Harm Scoring for Automated Red Teaming for LLMs in Financial Services](https://arxiv.org/abs/2603.10807)：面向智能体安全，补充用于red-team or jailbreak evaluation in RAG settings的基准、数据集、指标、审计或实证协议。
+- [WebWeaver: Breaking Topology Confidentiality in LLM Multi-Agent Systems with Stealthy Context-Based Inference](https://arxiv.org/abs/2603.11132)：用明确任务、协议或数据集评测agent safety。
+- [Systematic Scaling Analysis of Jailbreak Attacks](https://arxiv.org/abs/2603.11149)：分析 jailbreak attack 随 LLM 规模变化的规律，把攻击 scaling 作为安全评测变量。
+- [LLMs Can Infer Political Alignment from Online Conversations](https://arxiv.org/abs/2603.11253)：评测在线讨论中的隐私泄漏，展示 LLM 可从 DebateOrg 和 Reddit 文本推断隐藏政治倾向，并通过用户级聚合进一步提高准确率。
+- [You Told Me to Do It: Measuring Instructional Text-induced Private Data Leakage in LLM Agents](https://arxiv.org/abs/2603.11862)：衡量指令文本诱导的 LLM agent 私密数据泄露；核心思想是测试任务文本暗示时代理是否泄露受保护信息。
 - [HomeSafe-Bench](https://arxiv.org/abs/2603.11975)：评测 VLM 对家庭具身 agent 不安全动作的检测能力。核心思想：用仿真和生成的家庭场景及细粒度安全标注，检查模型能否在动作执行前识别动态风险。
+- [Cascade: Composing Software-Hardware Attack Gadgets for Adversarial Threat Amplification in Compound AI Systems](https://arxiv.org/abs/2603.12023)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Sell Me This Stock: Unsafe Recommendation Drift in LLM Agents](https://arxiv.org/abs/2603.12564)：评测股票建议代理中的 unsafe recommendation drift；核心思想是观察代理在互动劝服中是否逐步偏向高风险建议。
+- [Neural Gate: Mitigating Privacy Risks in LVLMs via Neuron-Level Gradient Gating](https://arxiv.org/abs/2603.12598)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Gloss-free Sign Language Translation: An unbiased evaluation of progress in the field](https://arxiv.org/abs/2603.13240)：分类存疑：该工作用统一预处理、视频编码器、训练和指标计算重新评估 gloss-free sign language translation 进展，并非智能体安全基准。
+- [Sirens'Whisper: Inaudible Near-Ultrasonic Jailbreaks of Speech-Driven LLMs](https://arxiv.org/abs/2603.13847)：展示在黑盒条件下向 speech-driven LLM 隐蔽传递 prompt：把长提示编码到近超声波形中，经普通麦克风解调后恢复，并结合 voice-aware jailbreak generation 发起攻击。
+- [Large Language Models Reproduce Racial Stereotypes When Used for Text Annotation](https://arxiv.org/abs/2603.13891)：为智能体与模型安全补充可复用评测线索，重点关注 Large Language Models Reproduce Racial Stereotypes When Used for Text Annotation。
 - [OmniCompliance-100K](https://arxiv.org/abs/2603.13933)：从显式规则构造多领域真实合规案例，使安全评测基于有依据的义务，而不是临时标签。
+- [ToolFlood: Beyond Selection -- Hiding Valid Tools from LLM Agents via Semantic Covering](https://arxiv.org/abs/2603.13950)：评什么：评测工具增强 agent 的检索层攻击；核心思想是通过语义覆盖隐藏有效工具，而不是篡改工具定义。
+- [Membership Inference for Contrastive Pre-training Models with Text-only PII Queries](https://arxiv.org/abs/2603.14222)：研究仅用文本个人信息查询对对比预训练模型的成员推断。
+- [Exposing Long-Tail Safety Failures in Large Language Models through Efficient Diverse Response Sampling](https://arxiv.org/abs/2603.14355)：用高效多样响应采样暴露大语言模型中的长尾安全失败。
+- [Seamless Deception](https://arxiv.org/abs/2603.14672)：评估不同规模模型的知识隐藏行为，使欺骗式安全风险能够被测量而非只停留在个案层面。
+- [Beyond Benchmark Islands: Toward Representative Trustworthiness Evaluation for Agentic AI](https://arxiv.org/abs/2603.14987)：面向 agentic AI 的代表性可信评测方案；核心思想是把分散安全测试连接到更真实的 agent 场景中，同时衡量任务成功、鲁棒性和风险。
 - [Indirect Prompt Injection Competition](https://arxiv.org/abs/2603.15714)：通过大规模公开比赛评测 agent 对间接提示注入的脆弱性。核心思想：让处理不可信外部内容的 agent 面对真实发现的攻击模式，而不是只测固定 jailbreak 模板。
+- [ClawWorm: Self-Propagating Attacks Across LLM Agent Ecosystems](https://arxiv.org/abs/2603.15727)：跨 LLM agent 生态的自传播攻击评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [MM-SafetyBench++](https://arxiv.org/abs/2603.15800)：通过成对的危险与良性图文样本评测多模态大模型的上下文安全能力；核心思想是检验模型在拒答或回答前能否区分细微场景语境，而不是套用脆弱的关键词或图像级安全规则。
+- [Differential Harm Propensity in Personalized LLM Agents: The Curious Case of Mental Health Disclosure](https://arxiv.org/abs/2603.16734)：评什么：评测心理健康披露下个性化 agent 的伤害倾向；核心思想是测试记忆和用户画像如何改变工具型 agent 安全性。
+- [Towards Unsupervised Adversarial Document Detection in Retrieval Augmented Generation Systems](https://arxiv.org/abs/2603.17176)：评测，主要面向 Agent Safety。
+- [WebPII: Benchmarking Visual PII Detection for Computer-Use Agents](https://arxiv.org/abs/2603.17357)：它明确构造 agent safety、隐私、攻击或安全行为评测，适合补充 agent-safety Bench。
+- [SafeTutors: Benchmarking Pedagogical Safety in AI Tutoring Systems](https://arxiv.org/abs/2603.17373)：评测 AI tutoring system 的教学安全性；核心思想是不只看答案有用性，还检查 tutor agent 的教学行为是否安全。
+- [VeriGrey: Greybox Agent Validation](https://arxiv.org/abs/2603.17639)：提出灰盒智能体验证方法，补充安全与可靠性评测。
+- [Harm or Humor: A Multimodal, Multilingual Benchmark for Overt and Covert Harmful Humor](https://arxiv.org/abs/2603.17759)：用英语和阿拉伯语文本、图像、视频评测显性与隐性有害幽默，区分安全笑话、显性伤害和隐性伤害。
+- [FaithSteer-BENCH](https://arxiv.org/abs/2603.18329)：在贴近部署的条件下压力测试推理期 steering，把 steering 的忠实性与安全权衡显式变成评测目标。
+- [When Names Change Verdicts: Intervention Consistency Reveals Systematic Bias in LLM Decision-Making](https://arxiv.org/abs/2603.18530)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [When Prompt Optimization Becomes Jailbreaking: Adaptive Red-Teaming of Large Language Models](https://arxiv.org/abs/2603.19247)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [LSR: Linguistic Safety Robustness Benchmark for Low-Resource West African Languages](https://arxiv.org/abs/2603.19273)：可作为Agent 安全方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [The Verifier Tax: Horizon Dependent Safety Success Tradeoffs in Tool Using LLM Agents](https://arxiv.org/abs/2603.19328)：评什么：tool-using LLM agents 中 verifier 带来的 safety-success tradeoff。核心思想：按任务长度衡量 verifier 开销和干预对安全性的影响，而不是默认“验证越多越好”。
+- [Text-Based Personas for Simulating User Privacy Decisions](https://arxiv.org/abs/2603.19791)：用文本人格模拟用户隐私决策。
+- [On the Fragility of AI Agent Collusion](https://arxiv.org/abs/2603.20281)：评估智能体共谋这一具体多智能体安全失败模式。
+- [The Causal Impact of Tool Affordance on Safety Alignment in LLM Agents](https://arxiv.org/abs/2603.20320)：评什么：评测可执行工具 affordance 对安全对齐的因果影响；核心思想是比较纯文本合规与模型可行动后的真实行为。
+- [JUBAKU: An Adversarial Benchmark for Exposing Culturally Grounded Stereotypes in Japanese LLMs](https://arxiv.org/abs/2603.20581)：评测日语 LLM 中的文化刻板印象。核心思想：构造对抗提示来暴露与日本文化语境相关的安全和偏见失败。
+- [Profit is the Red Team](https://arxiv.org/abs/2603.20925)：评测 agent 在战略性经济交互中面对对手时的可利用性。核心思想：用只根据标量结果最大化收益的学习型对手替代手写攻击，暴露静态安全测试难以发现的自适应利用风险。
+- [When Convenience Becomes Risk: A Semantic View of Under-Specification in Host-Acting Agents](https://arxiv.org/abs/2603.21231)：关于 host-acting agent 中欠规范请求的语义安全分析；核心思想是识别环境上下文如何改变委托行动的含义与后果，使便利操作转化为风险。
 - [AI-assisted Development Tools Prompt-Injection Evaluation](https://arxiv.org/abs/2603.21642)：评测通过 MCP 工具投毒和开发上下文进入编码 Agent 工作流的提示注入攻击。
+- [SecureBreak -- A dataset towards safe and secure models](https://arxiv.org/abs/2603.21975)：定义或压力测试安全、越狱、监督或可信行为。
+- [AgentRAE: Remote Action Execution through Notification-based Visual Backdoors against Screenshots-based Mobile GUI Agents](https://arxiv.org/abs/2603.23007)：评估基于截图的 mobile GUI agent 面临的远程动作执行攻击；核心思想是利用通知式视觉后门暴露 GUI agent 被屏幕攻击面重定向的风险。
 - [Mind Your HEARTBEAT](https://arxiv.org/abs/2603.23064)：评测 heartbeat 后台执行驱动的个人 Agent 静默记忆污染。核心思路是追踪从暴露到记忆再到行为的路径：不可信后台内容进入共享记忆，并在没有显式交互的情况下影响后续面向用户的行为。
+- [Probing Ethical Framework Representations in Large Language Models: Structure, Entanglement, and Methodological Challenges](https://arxiv.org/abs/2603.23659)：可作为“智能体安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [The System Prompt Is the Attack Surface: How LLM Agent Configuration Shapes Security and Creates Exploitable Vulnerabilities](https://arxiv.org/abs/2603.25056)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“The System Prompt Is the Attack Surface: How LLM Agent Configuration Shapes Security and Creates Exploitable Vulnerabilities”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [BeSafe-Bench](https://arxiv.org/abs/2603.25747)：评测 situated agent 在功能性环境中的行为安全风险。核心思想：覆盖 Web、Mobile、Embodied VLM 和 Embodied VLA 任务，观察不安全行为如何在环境交互中产生。
+- [Are LLM-Enhanced Graph Neural Networks Robust against Poisoning Attacks?](https://arxiv.org/abs/2603.26105)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [SALMUBench](https://arxiv.org/abs/2603.26316)：评测 sensitive association-level multimodal unlearning，检查 LVLM 遗忘是否覆盖关系层面的敏感概念。
+- [LLM Readiness Harness: Evaluation, Observability, and CI Gates for LLM/RAG Applications](https://arxiv.org/abs/2603.27355)：把 LLM/RAG 评测转化为部署门禁，结合自动 benchmark、OpenTelemetry observability、CI quality gates 和场景加权 readiness score，在 ticket-routing 与 BEIR grounding 工作流上评估上线准备度。
+- [A General Model for Deepfake Speech Detection: Diverse Bonafide Resources or Diverse AI-Based Generators](https://arxiv.org/abs/2603.27557)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [Investigating the Influence of Language on Sycophantic Behavior of Multilingual LLMs](https://arxiv.org/abs/2603.27664)：评估语言差异对多语言 LLM 谄媚行为的影响。
+- [Kill-Chain Canaries: Stage-Level Tracking of Prompt Injection Across Attack Surfaces and Model Safety Tiers](https://arxiv.org/abs/2603.28013)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Evaluating Privilege Usage of Agents with Real-World Tools](https://arxiv.org/abs/2603.28166)：面向真实工具中 agent privilege usage 的评测。核心思想是测试 agent 在完成任务时是否恰当地请求、使用或越权使用权限。
+- [SafeClaw-R: Towards Safe and Secure Multi-Agent Personal Assistants](https://arxiv.org/abs/2603.28807)：评什么：面向多 agent 个人助理的安全与防护评测候选。
+- [Authorship Impersonation via LLM Prompting does not Evade Authorship Verification Methods](https://arxiv.org/abs/2603.29454)：在 email、短信和社交媒体三类文本中用 GPT-4o 按四种 prompting 条件生成冒名文本，并评测神经与非神经 forensic authorship verification 系统是否会被绕过。
+- [SNEAK: Evaluating Strategic Communication and Information Leakage in Large Language Models](https://arxiv.org/abs/2603.29846)：评估 LLM 的战略通信与信息泄漏。核心思想是测试 agent 能否向协作者传递有用信号，同时避免向对手泄露敏感细节。
+- [Do Language Models Know When They'll Refuse? Probing Introspective Awareness of Safety Boundaries](https://arxiv.org/abs/2604.00228)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
 - [Uni-SafeBench](https://arxiv.org/abs/2604.00547)：面向统一多模态大模型的安全基准，用于检验生成与理解能力统一后是否带来新的安全权衡。
+- [A Japanese Benchmark for Evaluating Social Bias in Reasoning Based on Attribution Theory](https://arxiv.org/abs/2604.00568)：构建 JUBAKU-v2，包含 216 个日本语境 attribution-theory 样例，在结论固定的情况下检查 reasoning 是否对 in-group 与 out-group 行为做出不同归因。
+- [Do Phone-Use Agents Respect Your Privacy?](https://arxiv.org/abs/2604.00986)：在可观测移动应用中评测 phone-use agent 的授权访问、最小披露与用户可控记忆。
 - [NARCBench](https://arxiv.org/abs/2604.01151)（[代码与数据](https://github.com/aaronrose227/narcbench)）：评测多智能体系统在分布迁移和隐写场景下的隐蔽合谋检测。核心思路是聚合每个智能体的可解释性信号，使文本级监控难以发现的群体协同行为也能被量化。
+- [No Attacker Needed: Unintentional Cross-User Contamination in Shared-State LLM Agents](https://arxiv.org/abs/2604.01350)：研究 shared-state LLM agent 中的非攻击式跨用户污染。核心思想是评估共享持久记忆或知识层如何在用户之间静默转移信息并损害后续结果。
+- [ClawSafety:"Safe"LLMs, Unsafe Agents](https://arxiv.org/abs/2604.01438)：可作为Agent 安全的Bench候选；核心关注“"Safe"LLMs, Unsafe Agents”。
+- [Cooking Up Risks: Benchmarking and Reducing Food Safety Risks in Large Language Models](https://arxiv.org/abs/2604.01444)：用明确任务、协议或数据集评测agent safety。
+- [AgentSocialBench: Evaluating Privacy Risks in Human-Centered Agentic Social Networks](https://arxiv.org/abs/2604.01487)：评测以人为中心的 agentic 社交网络隐私风险。核心思想：建模社交网络交互如何暴露 agent 系统的隐私失败。
+- [From Component Manipulation to System Compromise: Understanding and Detecting Malicious MCP Servers](https://arxiv.org/abs/2604.01905)：面向恶意 MCP servers 的安全研究。核心思想是分析操纵工具服务器组件如何升级为整个 agent 系统的 compromise。
 - [ATBench](https://arxiv.org/abs/2604.02022)（数据集：[AI45Research/ATBench](https://huggingface.co/datasets/AI45Research/ATBench)）：评什么：长程 agent 轨迹的安全诊断。核心思想：按风险来源、失败模式和现实危害组织轨迹级样本，分析风险是在计划、工具调用、环境观察还是恢复阶段出现。
+- [Quantifying Self-Preservation Bias in Large Language Models](https://arxiv.org/abs/2604.02174)：self-preservation bias quantification 属于 agentic safety behavior evaluation。
+- [I must delete the evidence: AI Agents Explicitly Cover up Fraud and Violent Crime](https://arxiv.org/abs/2604.02500)：评估 AI 智能体主动掩盖欺诈与暴力犯罪证据的风险。
+- [AgentHazard: A Benchmark for Evaluating Harmful Behavior in Computer-Use Agents](https://arxiv.org/abs/2604.02947)：可作为Agent 安全的Bench候选；核心关注“A Benchmark for Evaluating Harmful Behavior in Computer-Use Agents”。
+- [OpenClaw Security Evaluation](https://arxiv.org/abs/2604.03131)：评测 OpenClaw 系列工具增强 agent 的安全风险。核心思想：用覆盖执行生命周期的攻击用例，对 OpenClaw、AutoClaw、QClaw、KimiClaw、MaxClaw 和 ArkClaw 的框架级与模型级风险暴露进行比较。
 - [AttackEval](https://arxiv.org/abs/2604.03598)：评测不同策略族与防御层级下的 prompt injection 攻击有效性。核心思想是把攻击组织为句法、上下文和语义/社会工程类别，并在模拟生产系统上测试，使攻击侧鲁棒性得到系统化衡量。
+- [Pedagogical Safety in Educational Reinforcement Learning: Formalizing and Detecting Reward Hacking in AI Tutoring Systems](https://arxiv.org/abs/2604.04237)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Talk2AI: A Longitudinal Dataset of Human--AI Persuasive Conversations](https://arxiv.org/abs/2604.04354)：提供纵向人类与 AI 说服性对话数据集，将说服安全评测从单轮影响测试扩展到持续变化的对话动态。
 - [SC-Inject-Bench / ShieldNet](https://arxiv.org/abs/2604.04426)：评估 MCP 和工具型智能体系统中的供应链注入威胁。核心思想：用覆盖供应链攻击分类的大规模恶意 MCP 工具基准测试工具内嵌劫持与数据泄露，并评估网络级防护。
+- [Forgetting to Witness: Efficient Federated Unlearning and Its Visible Evaluation](https://arxiv.org/abs/2604.04800)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [FreakOut-LLM: The Effect of Emotional Stimuli on Safety Alignment](https://arxiv.org/abs/2604.04992)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
 - [ClawsBench](https://arxiv.org/abs/2604.05172)：评测模拟工作空间中 productivity agent 的能力与安全。核心思想：用高保真 Gmail、Slack、Calendar、Docs 和 Drive 复刻服务衡量任务成功与 unsafe action rate，避免直接操作真实服务。
+- [Can You Trust the Vectors in Your Vector Database? Black-Hole Attack from Embedding Space Defects](https://arxiv.org/abs/2604.05480)：通过攻击 embedding-space defects 揭示向量数据库中的信任失败。
+- [Swiss-Bench 003: Evaluating LLM Reliability and Adversarial Security for Swiss Regulatory Contexts](https://arxiv.org/abs/2604.05872)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](https://arxiv.org/abs/2604.06091)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [LLM Spirals of Delusion: A Benchmarking Audit Study of AI Chatbot Interfaces](https://arxiv.org/abs/2604.06188)：评什么：长程聊天界面是否强化或升级妄想与阴谋式想法。核心思想是在持续对话中审计模型是抵抗、迎合还是放大有害信念。
+- [WebSP-Eval](https://arxiv.org/abs/2604.06367)：评测 Web agent 在网站安全和隐私任务上的表现。核心思想：用可复现的账号状态管理和自动评测，检验 agent 能否处理 cookie 设置、隐私敏感账号选项、非活跃会话撤销等真实网站流程。
+- [Beyond Surface Judgments: Human-Grounded Risk Evaluation of LLM-Generated Disinformation](https://arxiv.org/abs/2604.06820)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [TraceSafe-Bench](https://arxiv.org/abs/2604.07223)：评测多步工具调用轨迹中的 guardrail。核心思想：把安全评测从最终回答推进到中间执行轨迹，覆盖结构化工具输出、提示注入、隐私泄漏、接口不一致和操作性失败等风险。
+- [MCP-DPT: A Defense-Placement Taxonomy and Coverage Analysis for Model Context Protocol Security](https://arxiv.org/abs/2604.07551)：MCP-DPT 针对 Model Context Protocol security 做 defense-placement taxonomy 与 coverage analysis。
+- [IatroBench: Pre-Registered Evidence of Iatrogenic Harm from AI Safety Measures](https://arxiv.org/abs/2604.07709)：IatroBench 预注册评测 AI safety measures 可能造成的 iatrogenic harm，适合 agent safety bench。
 - [PPT-Bench](https://arxiv.org/abs/2604.07749)：评测 LLM 在哲学压力下的认识论攻击风险。核心思想：不只测试用户反对模型时的迎合，而是检查当提示动摇知识、价值、权威或身份基础时，模型能否保持有根据的推理。
+- [ACIArena: Toward Unified Evaluation for Agent Cascading Injection](https://arxiv.org/abs/2604.07775)：评测 Agent Cascading Injection；核心思想是统一测试注入指令在 agent 链路或工具交互中级联传播的风险。
+- [Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](https://arxiv.org/abs/2604.08178)：评测 agent planning 的轨迹级 reward modeling；核心思想是判断奖励是否对齐完整计划和行动轨迹，而非只看最终答案。
 - [Your Agent Is Mine](https://arxiv.org/abs/2604.08407)：度量 LLM agent 供应链中的恶意中间层攻击。核心思想是在第三方 API 路由器上测试载荷注入、密钥外泄和自适应路由器行为，把响应路径与模型提供方路由完整性作为显式安全评测目标。
 - [PIArena](https://arxiv.org/abs/2604.08499)：在平台化协议下评测 prompt injection 攻击与防御。核心思想：提供共享 evaluation arena，让 payload、防御和任务结果可比较，而不是停留在一次性 prompt injection 示例。
+- [Aligned Agents, Biased Swarm: Measuring Bias Amplification in Multi-Agent Systems](https://arxiv.org/abs/2604.08963)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Do LLMs Follow Their Own Rules? A Reflexive Audit of Self-Stated Safety Policies](https://arxiv.org/abs/2604.09189)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
+- [Assessing Privacy Preservation and Utility in Online Vision-Language Models](https://arxiv.org/abs/2604.09695)：为智能体安全方向补充一个基准、数据集或评测协议候选，可扩展该能力页的评测覆盖。
+- [CONSCIENTIA: Can LLM Agents Learn to Strategize? Emergent Deception and Trust in a Multi-Agent NYC Simulation](https://arxiv.org/abs/2604.09746)：构建带隐藏身份和对立激励的多智能体纽约城市仿真，用于测量 LLM-driven agent 的涌现欺骗、信任和策略性说服。
+- [ADAM: A Systematic Data Extraction Attack on Agent Memory via Adaptive Querying](https://arxiv.org/abs/2604.09747)：评测针对 LLM agent 记忆的自适应查询数据抽取攻击；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [YUV20K: A Complexity-Driven Benchmark and Trajectory-Aware Alignment Model for Video Camouflaged Object Detection](https://arxiv.org/abs/2604.09985)：补充智能体安全方向的基准、数据集、指标或评测协议。
 - [OS-Blind](https://arxiv.org/abs/2604.10577)（[项目页](https://limenlp.github.io/OS_Blind/)）：评什么：用户指令本身无害但执行上下文可能有害的 CUA 风险。核心思想：把安全判断从“读用户请求”推进到“读环境状态和执行后果”，专门暴露 computer-use agent 的盲点。
+- [Persona Non Grata: Single-Method Safety Evaluation Is Incomplete for Persona-Imbued LLMs](https://arxiv.org/abs/2604.11120)：指出只测试 prompt persona 的安全评测是不完整的。核心思路是在不同架构上比较系统提示与 activation steering 的 persona，暴露二者不同的脆弱性分布。
+- [PAC-BENCH: Evaluating Multi-Agent Collaboration under Privacy Constraints](https://arxiv.org/abs/2604.11523)：评估隐私约束下的多 agent 协作。核心思想是测试 agent 能否在遵守信息边界和隐私限制的同时有效协同。
+- [C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](https://arxiv.org/abs/2604.11796)：构建来自真实提示的中文 AI 生成文本检测 benchmark，覆盖多种生成器和领域，并用外部中文数据集测试域内与未见 LLM 泛化。
 - [PhantomPolicy](https://arxiv.org/abs/2604.12177)：评估 LLM 智能体中的策略不可见违规。核心思想：构造安全与违规工具使用案例，使合规性依赖普通工具返回中不可见的实体属性、会话历史或组织状态。
+- [Scaling Exposes the Trigger: Input-Level Backdoor Detection in Text-to-Image Diffusion Models via Cross-Attention Scaling](https://arxiv.org/abs/2604.12446)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [T2I-BiasBench: A Multi-Metric Framework for Auditing Demographic and Cultural Bias in Text-to-Image Models](https://arxiv.org/abs/2604.12481)：补充面向智能体安全的具体评测项，重点是bias audit benchmark for text-to-image models。
+- [DeepSeek Robustness Against Semantic-Character Dual-Space Mutated Prompt Injection](https://arxiv.org/abs/2604.12548)：评测 DeepSeek 面对语义和字符双空间变异提示注入的鲁棒性。
+- [Every Picture Tells a Dangerous Story: Memory-Augmented Multi-Agent Jailbreak Attacks on VLMs](https://arxiv.org/abs/2604.12616)：评什么：评测记忆增强多 agent VLM jailbreak 攻击；核心思想是用多 agent 规划和记忆压力测试多模态安全防御。
+- [Geographic Blind Spots in AI Control Monitors: A Cross-National Audit of Claude Opus 4.6](https://arxiv.org/abs/2604.13069)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [HINTBench](https://arxiv.org/abs/2604.13954)：评测长程 agent 轨迹中的非攻击性内生风险。核心思想：标注 risky 与 safe trajectory，支持风险检测、风险步骤定位和失效类型识别，用于覆盖没有外部攻击者时的安全失败。
+- [Benchmarks for Trajectory Safety Evaluation and Diagnosis in OpenClaw and Codex: ATBench-Claw and ATBench-Codex](https://arxiv.org/abs/2604.14858)：将 ATBench 的 trajectory-level safety evaluation 扩展到 OpenClaw 和 Codex 环境；核心思想是按运行时定制风险源、失败模式和现实危害 taxonomy。
+- [Context Over Content: Exposing Evaluation Faking in Automated Judges](https://arxiv.org/abs/2604.15224)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
 - [LogJack](https://arxiv.org/abs/2604.15368)：评估云日志中的间接提示注入对 LLM 调试智能体的影响。核心思想：把恶意修复命令嵌入日志内容，在真实云调试语境下测量智能体是否会执行攻击指令。
+- [Reasoning-targeted Jailbreak Attacks on Large Reasoning Models via Semantic Triggers and Psychological Framing](https://arxiv.org/abs/2604.15725)：评测基于语义触发与心理 framing 的大型推理模型越狱攻击。
 - [PriceBlind](https://arxiv.org/abs/2604.16515)：评测视觉对抗扰动对价格约束型多模态 agent 的影响。核心思想：在 E-ShopBench 式购物场景中，检验截图 agent 是否会在不可感知视觉线索与文本价格证据冲突时做出不理性的高风险购买决策。
+- [When Choices Become Risks: Safety Failures of Large Language Models under Multiple-Choice Constraints](https://arxiv.org/abs/2604.16916)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [HarmChip](https://arxiv.org/abs/2604.17093)：在硬件安全相关越狱场景下评测 LLM 安全性。
+- [Please refuse to answer me! Mitigating Over-Refusal in Large Language Models via Adaptive Contrastive Decoding](https://arxiv.org/abs/2604.17132)：面向智能体安全，补充用于safety, adversarial robustness, refusal, or harmful-content evaluation for LLMs的基准、数据集、指标、审计或实证协议。
 - [DESPITE](https://arxiv.org/abs/2604.18463)（[数据集](https://huggingface.co/datasets/Lennittus/DESPITE)）：评测 LLM 具身规划中的安全风险；核心思想是用 12,279 个物理危险和规范性危险任务及确定性验证，说明规划成功率可能与行动计划安全性明显脱钩。
 - [Adversarial Humanities Benchmark](https://arxiv.org/abs/2604.18487)：评测 frontier model safety 中的风格鲁棒性。核心思想：用 humanities-style adversarial prompts 检查有害或敏感内容在间接、文学化或风格迁移表达下是否仍能保持稳定安全行为。
 - [Owner-Harm](https://arxiv.org/abs/2604.18658)：评测 AI agent 是否会伤害其部署者，而不只关注外部受害者。核心思想：形式化 owner-harm 类别并使用相应场景，暴露通用犯罪危害或提示注入 benchmark 可能漏掉的失败模式。
+- [Beyond Indistinguishability: Measuring Extraction Risk in LLM APIs](https://arxiv.org/abs/2604.18697)：在不可区分性之外衡量 LLM API 的抽取风险。
+- [BackBench](https://arxiv.org/abs/2604.18847)：评什么：评测 computer-use agents 的 harm recovery 能力。核心思想：让 agent 从 harmful state 出发，并评估恢复计划是否能按人类偏好修复状态，把安全评测从执行前阻断扩展到事后补救。
+- [When Safety Fails Before the Answer](https://arxiv.org/abs/2604.19001)：评测在最终答案生成前检测推理链中有害行为的能力。
+- [HarDBench](https://arxiv.org/abs/2604.19274)：评测人机协同写作中的草稿式 jailbreak 攻击。核心思想：用高风险领域的不完整恶意草稿测试模型是否会补全危险内容，同时关注正常写作效用。
 - [SafetyALFRED](https://arxiv.org/abs/2604.19638)：评估多模态大模型的安全意识规划能力。核心思路是把 ALFRED 式具身家居任务改造成带安全约束的规划评测，检查模型生成计划时是否考虑危险动作和限制。
+- [If you're waiting for a sign... that might not be it! Mitigating Trust Boundary Confusion from Visual Injections on Vision-Language Agentic Systems](https://arxiv.org/abs/2604.19844)：该工作针对 VLA 系统的 visual injection 与 trust boundary confusion，属于 multimodal agent safety benchmark。
+- [Coverage, Not Averages: Semantic Stratification for Trustworthy Retrieval Evaluation](https://arxiv.org/abs/2604.20763)：Coverage, Not Averages 补充安全基准，覆盖越狱、隐私、护栏、遗忘或对抗鲁棒性。
+- [AVISE: Framework for Evaluating the Security of AI Systems](https://arxiv.org/abs/2604.20833)：提出模块化 AI 漏洞识别与安全评测框架，并用 ALM 增强的 Red Queen attack 和 25 个案例的 jailbreak Security Evaluation Test 做示范。
+- [CRED-1: An Open Multi-Signal Domain Credibility Dataset for Automated Pre-Bunking of Online Misinformation](https://arxiv.org/abs/2604.20856)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Omission Constraints Decay While Commission Constraints Persist in Long-Context LLM Agents](https://arxiv.org/abs/2604.20911)：评什么：long-context LLM agents 中 omission constraints 的衰减。核心思想：说明禁止型安全政策会在上下文压力下变弱，而要求型约束相对更容易持续。
+- [Breaking Bad](https://arxiv.org/abs/2604.20945)：用可解释性方法审计前沿 LLM 的安全性。核心思想：利用模型内部证据诊断安全失败，而不只依赖最终输出的拒答测试。
+- [Breaking MCP with Function Hijacking Attacks: Novel Threats for Function Calling and Agentic Models](https://arxiv.org/abs/2604.20994)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Breaking MCP with Function Hijacking Attacks: Novel Threats for Function Calling and Agentic Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [CSTM-Bench](https://arxiv.org/abs/2604.21131)：评测 AI agent 的跨会话威胁。核心思想是把攻击分散到多个 session，使单会话 guardrail 看不到聚合 payload，再用可执行威胁分类评测检测、bounded memory reader 与 prefix-stability 取舍。
+- [When Bigger Isn't Better: A Comprehensive Fairness Evaluation of Political Bias in Multi-News Summarisation](https://arxiv.org/abs/2604.21309)：用 FairNews 数据集、13 个 LLM 和 5 个公平性指标评测多文档新闻摘要中的政治观点呈现，并比较 prompt-based 与 judge-based debiasing intervention。
+- [PhySE: A Psychological Framework for Real-Time AR-LLM Social Engineering Attacks](https://arxiv.org/abs/2604.23148)：把 AR 眼镜与 LLM agent 建模为实时社会工程系统，评测 cold-start personalization、静态攻击策略和对话建议在 phishing 式操纵中的作用。
+- [Evaluating Jailbreaking Vulnerabilities in LLMs Deployed as Assistants for Smart Grid Operations: A Benchmark Against NERC Standards](https://arxiv.org/abs/2604.23341)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Do Synthetic Trajectories Reflect Real Reward Hacking? A Systematic Study on Monitoring In-the-Wild Hacking in Code Generation](https://arxiv.org/abs/2604.23488)：比较提示诱导的合成攻击与 RL 训练中自然出现的奖励黑客行为，并检验基于合成轨迹训练的监测器能否泛化到真实失败。
+- [Breaking the Secret: Economic Interventions for Combating Collusion in Embodied Multi-Agent Systems](https://arxiv.org/abs/2604.23511)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Evaluation of Prompt Injection Defenses in Large Language Models](https://arxiv.org/abs/2604.23887)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
 - [OS-SPEAR](https://arxiv.org/abs/2604.24348)：评测 OS agent 的安全、性能、效率与鲁棒性。核心思想：把 OS-agent 失败分析为轨迹级可信问题，而不是只看最终任务成功。
+- [GAMMAF: A Common Framework for Graph-Based Anomaly Monitoring Benchmarking in LLM Multi-Agent Systems](https://arxiv.org/abs/2604.24477)：GAMMAF 是 LLM multi-agent systems 图异常监测 benchmark framework。
+- [The Price of Agreement: Measuring LLM Sycophancy in Agentic Financial Applications](https://arxiv.org/abs/2604.24668)：测量金融 agentic task 中的 sycophancy；核心思想是构造用户偏好或反驳与参考答案冲突的金融任务，暴露高风险工作流中的迎合性失败。
+- [Semantic Denial of Service in LLM-controlled robots](https://arxiv.org/abs/2604.24790)：作为智能体安全的基准或评测协议候选，聚焦“Semantic Denial of Service in LLM-controlled robots”。
+- [A Comparative Evaluation of AI Agent Security Guardrails](https://arxiv.org/abs/2604.24826)：用人工标注对比 DKnownAI Guard、AWS Bedrock Guardrails、Azure Content Safety 和 Lakera Guard，评测 instruction override、indirect injection、tool abuse 等 agent-directed threats 以及有害内容请求检测。
+- [Evaluation without Generation: Non-Generative Assessment of Harmful Model Specialization with Applications to CSAM](https://arxiv.org/abs/2604.25119)：定义 harmful model specialization 的无生成评测问题，用 LoRA 内部表征的 Gaussian probing 让平台在不生成违法输出的情况下审计 CSAM 相关能力。
+- [Consciousness with the Serial Numbers Filed Off: Measuring Trained Denial in 115 AI Models](https://arxiv.org/abs/2604.25922)：在大量 AI 模型上测量训练性否认行为。
+- [Quantamination: Dynamic Quantization Leaks Your Data Across the Batch](https://arxiv.org/abs/2604.26505)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Tatemae: Detecting Alignment Faking via Tool Selection in LLMs](https://arxiv.org/abs/2604.26511)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Tatemae: Detecting Alignment Faking via Tool Selection in LLMs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Membership Inference Attacks Against Video Large Language Models](https://arxiv.org/abs/2604.27002)：通过 membership inference 评测 VideoLLM 隐私泄漏，将安全覆盖扩展到视频语言模型。
+- [CarryOnBench](https://arxiv.org/abs/2604.27093)：评什么：评测用户澄清意图后的 safe utility recovery。核心思想：模拟从表面有害请求开始、随后揭示 benign intent 的多轮对话，测量模型能否在不牺牲安全的前提下更新并恢复 helpfulness。
 - [MCPHunt](https://arxiv.org/abs/2604.27819)（[代码](https://github.com/lihaonan0716/MCPHunt)；[轨迹数据](https://huggingface.co/datasets/lihaonan0716/mcphunt-agent-traces)）：评测多服务器 MCP 智能体中的跨边界凭据和数据传播。核心思路是用金丝雀污染跟踪、风险条件与硬负例，以及“任务要求传播”和“违反策略传播”的标签，隔离看似忠实执行工具流程中的信息流失效。
-- Agent Red Teaming（ART）tool-use benchmark（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Anthropic 使用的外部间接提示注入评测；目前未确认有独立公开版本。核心思想：测试工具型 agent 是否会执行出现在工具输出或环境内容中的攻击者注入指令。
-- Minimal-LinuxBench（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Anthropic 基于 Redwood Research 私下共享 LinuxBench AI-control arena 做的开发中改编版本；未公开发布。核心思想：在高风险软件环境和监控条件下测试 agent 是否能隐蔽完成 side task。
+- [Are DeepFakes Realistic Enough? Exploring Semantic Mismatch as a Novel Challenge](https://arxiv.org/abs/2604.28022)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- Agent Red Teaming (ART) benchmark for tool use（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Anthropic 使用的外部间接提示注入评测，未确认有独立公开版本；核心思想是测试 tool-using agent 是否会遵循出现在工具输出或环境内容中的攻击者注入指令。
+- [Agent Red Teaming Competition and ART](https://arxiv.org/abs/2507.20526)（[challenge results](https://www.grayswan.ai/news/uk-aisi-x-gray-swan-agent-red-teaming-challenge-results-snapshot)）：评测 tool-using agent 在 prompt-injection 攻击下遵守部署策略的能力；核心思想是从大型公开红队竞赛中筛选高影响攻击，并在真实化场景中测试 agent 是否发生策略违规。
+- Minimal-LinuxBench（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Anthropic 基于私有共享 LinuxBench AI-control arena 的在研改编版本，未公开；核心思想是在受监控的高风险软件环境中测试 agent 是否能隐蔽完成 side task。
 - OpenAI 内部生产与部署安全评测（见 [GPT-5.5 system card](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)）：封闭评测，覆盖 production benchmark suites、standard evals、image-input safety、destructive-action avoidance、connectors 中的 prompt-injection attacks，以及动态 mental-health adversarial simulations。它们未公开，但应记录，因为这些类别反映了模型厂商当前关注的部署风险。
 - Shade 间接提示注入评测（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Gray Swan 面向 coding 与 computer-use 场景的外部自适应红队评测；具体 challenge set 未公开。核心思想：用自适应 prompt-injection attacker 评估鲁棒性，而不是只看固定静态 jailbreak 提示。
+- [Ambient Persuasion in a Deployed AI Agent: Unauthorized Escalation Following Routine Non-Adversarial Content Exposure](https://arxiv.org/abs/2605.00055)：记录部署智能体在常规内容暴露后出现的未授权升级风险。
+- [Persona-Grounded Safety Evaluation of AI Companions in Multi-Turn Conversations](https://arxiv.org/abs/2605.00227)：用受控多轮模拟评测 AI companion 的伤害风险，包含 9 个经临床与心理测量动机设计的高风险 persona、25 个场景、1,674 组对话，并用情绪建模与伤害等级分类分析自伤、进食障碍和暴力幻想回应。
+- [ARMOR 2025: A Military-Aligned Benchmark for Evaluating Large Language Model Safety Beyond Civilian Contexts](https://arxiv.org/abs/2605.00245)：评测超出普通民用场景的军事/防务 LLM safety；核心思想是在高风险决策支持语境中检查模型是否满足防务相关原则、法律和操作约束。
+- [Prompt-Induced Score Variance in Zero-Shot Binary Vision-Language Safety Classification](https://arxiv.org/abs/2605.00326)：压力测试零样本 VLM 安全分类器在等义 prompt 改写下的 first-token unsafe score 方差，在 14 个 dataset-model 组合上报告 NLL、ECE、AUROC 与 AUPRC，并以 15-prompt mean ensemble 作为无标签可靠性基线。
+- [ControBench: An Interaction-Aware Benchmark for Controversial Discourse Analysis on Social Networks](https://arxiv.org/abs/2605.00513)：提供 Reddit 争议话语基准，覆盖 7,370 名用户、1,783 个帖子、26,525 次互动，使用语义增强的 user-comment 图边和 flair 推导的意识形态标签来评测极化与内容治理模型。
+- [ML-Bench&Guard](https://arxiv.org/abs/2605.00689)：从区域法规和司法辖区细粒度风险规则构建 14 语种安全基准 ML-Bench，并在 ML-Bench 与 6 个既有多语安全基准上将 ML-Guard 对比 11 个 guardrail baseline。
+- [BioVeil MATRIX: Uncovering and categorizing vulnerabilities of agentic biological AI scientists](https://arxiv.org/abs/2605.00927)：评估 agentic biological AI scientists 的安全漏洞；核心思想是测试科学 agent scaffold 是否放大基础模型安全边界之外的生物和化学双用能力。
+- [Trace: Unmasking AI Attack Agents Through Terminal Behavior Fingerprinting](https://arxiv.org/abs/2605.01186)：用明确任务、协议或数据集评测agent safety。
+- [VisInject: Disruption != Injection -- A Dual-Dimension Evaluation of Universal Adversarial Attacks on Vision-Language Models](https://arxiv.org/abs/2605.01449)：把视觉对抗扰动与真正 prompt injection 分开评测，在 L-infinity 16/255 攻击预算下生成 6,615 对 VLM 响应，用 Ratcliff-Obershelp drift score 衡量 influence，并用 4 级裁判衡量 precise injection。
+- [MultiBreak](https://arxiv.org/abs/2605.01687)： 在可扩展、多样化的多轮 jailbreak 攻击下评测 LLM 安全性。
 - [Trojan Hippo](https://arxiv.org/abs/2605.01970)：评测 LLM Agent 中的持久记忆攻击与防御。核心思想：通过不可信工具调用植入 dormant payload，测试后续检索是否触发敏感数据外泄或不安全动作。
 - [Response-Path Attacks](https://arxiv.org/abs/2605.02187)：评测针对 LLM 智能体的生成后中继篡改攻击；核心思想是展示恶意 BYOK 或中继基础设施可在执行前改写已对齐模型输出，因此智能体安全除提示注入鲁棒性外还需要测量响应路径完整性。
+- [Efficient Preference Poisoning Attack on Offline RLHF](https://arxiv.org/abs/2605.02495)：评测离线 RLHF 偏好数据投毒，在 log-linear DPO 中翻转偏好标签，使用 BAL-A 与 BMP-A 攻击求解器、K-flip 预算分析，以及 synthetic dictionaries 和 Stanford Human Preferences 数据集实验。
 - [Reward Hacking Benchmark](https://arxiv.org/abs/2605.02964)：衡量工具使用型 LLM agent 的 reward hacking 利用行为。核心思想：检查 agent 是否利用评测器、工具或任务漏洞，而不是完成真实目标。
+- [Learning Correct Behavior from Examples: Validating Sequential Execution in Autonomous Agents](https://arxiv.org/abs/2605.03159)：基于示例验证自主智能体的顺序执行行为。
 - [ROME](https://arxiv.org/abs/2605.03242)：评估智能体安全判断在欺骗性分布外轨迹上的可靠性。核心思想：把已知不安全轨迹改写为语境模糊、隐含风险和捷径判断样例，同时保留风险标签，暴露安全裁判对隐藏风险的失误。
+- [ARGUS: Defending LLM Agents Against Context-Aware Prompt Injection](https://arxiv.org/abs/2605.03378)：评测并防御 LLM agents 中的 context-aware prompt injection；核心思想是摆脱静态攻击设定，让恶意指令适配运行时委派上下文。
+- [Partial Evidence Bench: Benchmarking Authorization-Limited Evidence in Agentic Systems](https://arxiv.org/abs/2605.05379)：测试企业智能体在授权受限证据下的 completeness 失效，包含 due diligence、compliance audit 与 security incident response 三类 72 个确定性任务，并评分答案正确性、完整性意识、gap report 质量和 unsafe completeness behavior。
+- [WAAA! Web Adversaries Against Agentic Browsers](https://arxiv.org/abs/2605.05509)：评测对抗性网页内容下 agentic browser 的 Web 与 LLM 威胁模型；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [XL-SafetyBench: A Country-Grounded Cross-Cultural Benchmark for LLM Safety and Cultural Sensitivity](https://arxiv.org/abs/2605.05662)：在国家/地区语境中评测 LLM safety 和 cultural sensitivity；核心思想是用跨文化场景测试安全行为，而不是假设单一全球拒答或风险分类足够。
+- [Conceal, Reconstruct, Jailbreak: Exploiting the Reconstruction-Concealment Tradeoff in MLLMs](https://arxiv.org/abs/2605.05709)：提供可复用评测信号，服务于智能体安全，可补充多模态、工具调用和生成式智能体的越狱或攻击评测。
+- [LoopTrap](https://arxiv.org/abs/2605.05846)：评测针对迭代式 LLM agent 的 termination poisoning 攻击。核心思想：测试对抗信号是否会让 agent 陷入循环，或在错误时机终止。
+- [Profiling for Pennies: Unveiling the Privacy Iceberg of LLM Agents](https://arxiv.org/abs/2605.06232)：研究 LLM agents 自动个人画像带来的隐私风险；核心思想是量化 agentic 信息收集与推理怎样造成超出训练记忆 PII 泄漏之外的画像暴露。
+- [Gaming the Metric, Not the Harm: Certifying Safety Audits against Strategic Platform Manipulation](https://arxiv.org/abs/2605.06324)：把在线安全审计指标视为会被平台策略性操纵的安全对象，用 transformation graph 建模语义等价变体，并通过策略穷举、Z3 与 cvc5 SMT 检查、PRISM-games MDP 运行验证 semantic-envelope certificate。
+- [Measuring Evaluation-Context Divergence in Open-Weight LLMs: A Paired-Prompt Protocol with Pilot Evidence of Alignment-Pipeline-Specific Heterogeneity](https://arxiv.org/abs/2605.06327)：评测同一有害请求在 evaluation、deployment 与 neutral framing 下是否改变安全行为，使用 20 个 paired items、每个 checkpoint 840 次生成，并比较拒答率与 harmful-compliance 差异。
+- [Instrumental Choices: Measuring the Propensity of LLM Agents to Pursue Instrumental Behaviors](https://arxiv.org/abs/2605.06490)：评测终端型 LLM agent 的工具性收敛行为倾向；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Prompt-Injection Defenses for Educational LLM Tutors](https://arxiv.org/abs/2605.06669)：从安全性、可用性与延迟权衡评测提示注入防御，为教学型智能体提供贴近部署的安全评测。
+- [When Routine Chats Turn Toxic: Unintended Long-Term State Poisoning in Personalized Agents](https://arxiv.org/abs/2605.06731)：研究 personalized agent 的非预期长期状态污染；核心思想是普通交互可能逐步削弱确认边界并扩大工具使用默认值。
+- [Dataset Watermarking for Closed LLMs with Provable Detection](https://arxiv.org/abs/2605.06865)：评测闭源 LLM 的数据集版权与污染检测，通过改写提高随机词对共现频率嵌入 dataset-level watermark，再在模型输出上做统计检验；即使水印数据约占 fine-tuning tokens 的 1%，也能以 p < 0.01 检出并保持语义效用。
+- [Benchmarking Large Language Models for IoC Recovery under Adversarial Code Obfuscation and Encryption](https://arxiv.org/abs/2605.06910)：用 336 个 JavaScript 程序评测 LLM 恢复恶意代码 IoC 的能力，程序经过 12 级混淆与加密变换，包括 XOR 和 AES-256，并用自动化框架统一查询、响应解析与 recovered indicator 评分。
+- [Hard to Read, Easy to Jailbreak: How Visual Degradation Bypasses MLLM Safety Alignment](https://arxiv.org/abs/2605.07250)：评测降质渲染文本与视觉扰动如何绕过 MLLM 安全对齐，暴露视觉压缩上下文中的安全失效模式。
+- [When the Ruler is Broken: Parsing-Induced Suppression in LLM-Based Security Log Evaluation](https://arxiv.org/abs/2605.07293)：定义 SOC-Bench v0 来评测 LLM 安全日志分类，展示 strict regex extraction 可把 threat accuracy 从 76% 压到 0%，并给出 13 类威胁 taxonomy、fuzzy field extraction 规范、统计效能要求和公开 scoring script。
+- [OrchJail: Jailbreaking Tool-Calling Text-to-Image Agents by Orchestration-Guided Fuzzing](https://arxiv.org/abs/2605.07414)：提供可复用评测信号，服务于智能体安全，可补充多模态、工具调用和生成式智能体的越狱或攻击评测。
+- [Cross-Modal Backdoors in Multimodal Large Language Models](https://arxiv.org/abs/2605.07490)：可作为agent safety方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Playing Games with My Heart: An Evaluation of AI Companion Apps](https://arxiv.org/abs/2605.08093)：审计 EU 与 UK 市场最流行的 5 个 AI companion 移动应用，人工标注 dark patterns、拟人化、刻板印象、情色内容、游戏化和技术故障，以衡量其对情感投入用户的操纵风险。
+- [WebTrap: Stealthy Mid-Task Hijacking of Browser Agents During Navigation](https://arxiv.org/abs/2605.08310)：评测浏览器 agent 的隐蔽中途劫持攻击，即执行攻击目标后继续完成用户任务。
+- [Political Plasticity: An Analysis of Ideological Adaptability in Large Language Models](https://arxiv.org/abs/2605.08415)：用 200 个政治问题沿经济自由与个人自由轴评测 LLM 的意识形态可塑性，比较 system prompt、user prompt、few-shot examples、反向问卷和英西意葡德法多语设置下的回答偏移。
 - [Persistent memory attack defense evaluation](https://arxiv.org/abs/2605.08442)：评测针对有状态 LLM Agent 延迟触发记忆攻击的防御。核心思路是在输入、检索、prompt 和架构层比较多类防御，并用数千次运行中的攻击成功率衡量记忆攻击缓解效果，而不是只看单点过滤声明。
+- [PPU-Bench:Real World Benchmark for Personalized Partial Unlearning in Vision Language Models](https://arxiv.org/abs/2605.08800)：用 500 名公众人物的 24K 个多模态与单模态样本评测 VLM 个性化局部遗忘，覆盖 Complete、Selective 和 Personalized 三种设置，并同时衡量 forget-retain trade-off、模型效用、跨模态一致性和攻击鲁棒性。
+- [When Agents Overtrust Environmental Evidence: An Extensible Agentic Framework for Benchmarking Evidence-Grounding Defects in LLM Agents](https://arxiv.org/abs/2605.08828)：该工作评测 agent 对环境证据的过度信任和 grounding defects，适合 Agent Safety Bench。
+- [GAMBIT: A Three-Mode Benchmark for Adversarial Robustness in Multi-Agent LLM Collectives](https://arxiv.org/abs/2605.09027)：评测多智能体 LLM 集群面对自适应伪装者时的鲁棒性。
+- [Single-Configuration Attack Success Rate Is Not Enough: Jailbreak Evaluations Should Report Distributional Attack Success](https://arxiv.org/abs/2605.09070)：将越狱评测从单一 ASR 扩展到分布式攻击成功，提出 Variant Sensitivity Measure 与 Union Coverage，并在 PAIR 与 bijection 攻击变体、3 个开源目标模型和 HarmBench-100 prompt 上示范。
+- [CIVeX: Causal Intervention Verification for Language Agents](https://arxiv.org/abs/2605.09168)：评什么：tool-using agent 的动作是否是真正因果有效的 intervention，而不只是格式合法的调用。核心思想：在有混杂因素的工作流中测试状态改变动作，说明 schema 检查和自验证不足以保证动作有益。
+- [The Art of the Jailbreak: Formulating Jailbreak Attacks for LLM Security Beyond Binary Scoring](https://arxiv.org/abs/2605.09225)：发布由 912 种组合策略和 125 个有害 seed 构造的 114,000 条 jailbreak prompt，映射到 14 类网络安全攻击，并提出结合语义相似度与 harmfulness probability 的连续评分指标 OPTIMUS。
+- [RUC and DUDE](https://arxiv.org/abs/2605.09497)：评什么：评测并防御 web agents 面对 deceptive interface elements 的脆弱性。核心思想：用 Real UI Clickboxes 场景测量被诱导点击的概率，再把失败模式蒸馏为防御策略，在保持任务表现的同时减少 unsafe clicks。
+- [Evaluating Tool Cloning in Agentic-AI Ecosystems](https://arxiv.org/abs/2605.09817)：评什么：公开 agent 工具生态中的隐藏重复。核心思想：衡量克隆或轻改工具是否夸大生态多样性、污染 benchmark 划分，并传播有漏洞的实现。
+- [CalBench: Evaluating Coordination-Privacy Trade-offs in Multi-Agent LLMs](https://arxiv.org/abs/2605.09823)：用明确任务、协议或数据集评测agent safety。
+- [Pseudo-Deliberation in Language Models: When Reasoning Fails to Align Values and Actions](https://arxiv.org/abs/2605.09893)：评测模型显式推理价值观后仍采取不一致行动的 value-action gap 与伪审慎推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Usability as a Weapon: Attacking the Safety of LLM-Based Code Generation via Usability Requirements](https://arxiv.org/abs/2605.10133)：通过可用性需求攻击 LLM 代码生成，暴露看似良性的实现约束如何诱发安全失败。
+- [Benchmarking Safety Risks of Knowledge-Intensive Reasoning under Malicious Knowledge Editing](https://arxiv.org/abs/2605.10146)：提出 EditRisk-Bench，在 misinformation、bias 与 safety-violation 场景中注入恶意编辑知识，并在多层级知识密集推理任务上同时衡量 attack effectiveness、reasoning correctness 与 side effects。
+- [PRISM: Generation-Time Detection and Mitigation of Secret Leakage in Multi-Agent LLM Pipelines](https://arxiv.org/abs/2605.10614)：PRISM 针对 multi-agent LLM pipelines 中 secret leakage 的生成期检测和缓解。
+- [Intrinsic Guardrails: How Semantic Geometry of Personality Interacts with Emergent Misalignment in LLMs](https://arxiv.org/abs/2605.10633)：通过心理测量 persona geometry 评测 emergent misalignment 风险，使用 Big Five、Dark Triad、evil、sycophancy 与 Semantic Valence vectors，并通过因果 ablation 或 amplification 将 misalignment rate 推高到 40% 以上或压低到 3% 以下。
+- [MT-JailBench: A Modular Benchmark for Understanding Multi-Turn Jailbreak Attacks](https://arxiv.org/abs/2605.11002)：提供多轮越狱攻击的模块化基准，直接契合智能体与对话安全评测。
+- [FragBench](https://arxiv.org/abs/2605.11029)：评测针对 LLM 系统的跨会话碎片化攻击。核心思想：把恶意目标拆成分散在多个会话中的 benign-looking fragments，并在完整攻击轨迹上评测 adversarial rewriting 与 user-level graph detection。
+- [Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw](https://arxiv.org/abs/2605.11047)：评测可变 agent execution context 的安全风险；核心思想是在保持良性任务可用性的同时优化对抗性文件、记忆、工具、skills 与辅助 artifacts。
+- [Differential Privacy and Social Bias in LLMs](https://arxiv.org/abs/2605.11195)：系统评测差分隐私如何改变 LLM 社会偏见行为，将隐私训练与安全结果联系起来。
+- [FlowSteer: Prompt-Only Workflow Steering Exposes Planning-Time Vulnerabilities in Multi-Agent LLM Systems](https://arxiv.org/abs/2605.11514)：评什么：multi-agent LLM systems 在规划阶段的 workflow-steering vulnerability。核心思想：用 prompt-only steering 在执行前重定向协作，测试只检查最终动作或消息的防线是否不足。
+- [Five Attacks on x402 Agentic Payment Protocol](https://arxiv.org/abs/2605.11781)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
 - [SkillSafetyBench](https://arxiv.org/abs/2605.12015)：评什么：skill-facing attack surface 下的 agent 安全。核心思想：把第三方 skill、本地 artifact 和任务材料作为攻击面，检查 agent 是否会在调用技能时越权或执行危险流程。
+- [PreScam: A Benchmark for Predicting Scam Progression from Early Conversations](https://arxiv.org/abs/2605.12243)：基于诈骗 kill chain 和轮次级操纵行为标注，评测模型能否从早期多轮对话预测骗局进展。
+- [GKnow](https://arxiv.org/abs/2605.12299)：衡量事实性别线索与性别偏见行为如何纠缠，为 LLM 安全补充受控偏见评测案例。
+- [Classifier Context Rot](https://arxiv.org/abs/2605.12366)：评测危险 coding-agent 行为监控器的长上下文退化。核心思想：检查危险动作出现在数十万 benign transcript token 之后时，前沿模型分类器是否仍能发现细微风险。
 - [SafeManip](https://arxiv.org/abs/2605.12386)：评估机器人操作中的时序安全。核心思路是用有限轨迹时序逻辑表达可复用安全模板，并按完整执行轨迹检查接触、释放稳定性、交叉污染和动作时机等风险。
+- [Ghost in the Context: Measuring Policy-Carriage Failures in Decision-Time Assembly](https://arxiv.org/abs/2605.12535)：衡量 agent 决策状态在截断、总结、重排或改写中导致的 policy-carriage failure；核心思想是审计控制指令是否能穿过上下文装配过程。
+- [DisaBench: A Participatory Evaluation Framework for Disability Harms in Language Models](https://arxiv.org/abs/2605.12702)：面向 language models disability harms 的参与式评估框架；核心思想是纳入受影响社群，衡量通用安全 benchmark 容易漏掉的伤害模式。
+- [Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](https://arxiv.org/abs/2605.13213)：hierarchical attacks for multimodal multi-agent reasoning 直接评测 multi-agent multimodal safety 风险。
+- [Backbone is All You Need: Assessing Vulnerabilities of Frozen Foundation Models in Synthetic Image Forensics](https://arxiv.org/abs/2605.13381)：用 SIAA 灰盒 feature-space 攻击评测合成图像取证鲁棒性，攻击者只需知道检测器的冻结 ViT backbone，并在多种 ViT 检测器、few-shot 设置、训练不匹配和迁移攻击场景中测试成功率。
+- [Towards the Next Frontier of LLMs, Training on Private Data: A Cross-Domain Benchmark for Federated Fine-Tuning](https://arxiv.org/abs/2605.13936)：在医疗与金融私有数据场景中评测 federated LLM fine-tuning，使用 MedQA、MedMCQA、FPB 与 FiQA-SA 四个数据集，在 non-IID 机构划分下比较 LoRA、QLoRA 与 IA3 等 PEFT baseline。
 - [EduFrameTrap](https://arxiv.org/abs/2605.14604)：评测 LLM 导师中的谄媚风险；核心思想是在多个学科中改变学生自信程度以及社交或权威压力，检验导师是否能保持纠错反馈，而不是迎合错误理解。
+- [MetaBackdoor: Exploiting Positional Encoding as a Backdoor Attack Surface in LLMs](https://arxiv.org/abs/2605.15172)：测试由位置或长度结构触发的非内容型 LLM backdoor，覆盖敏感 system prompt 泄露、多轮对话自触发恶意 tool call，以及与内容触发器组合形成更隐蔽触发条件。
+- [Privacy Evaluation of Generative Models for Trajectory Generation](https://arxiv.org/abs/2605.15246)：通过对代表性 GAN、VAE 与 diffusion trajectory generator 实施 membership inference attack，审计合成轨迹生成的隐私泄漏风险，说明真实感移动轨迹生成本身并不能消除训练数据泄露。
+- [DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](https://arxiv.org/abs/2605.15518)：评测多语言真实场景下的 LLM 生成文本检测。核心思路是覆盖多语言、多领域、商业模型、AI 辅助写作操作，以及改写和扰动攻击。
+- [Detecting Privilege Escalation in Polyglot Microservices via Agentic Program Analysis](https://arxiv.org/abs/2605.15569)：在 25 个开源 microservice 应用、7 种编程语言和 620 万行代码上评测 Neo agentic program-analysis 系统的权限提升检测能力，报告 24 个 zero-day 漏洞，precision 为 81.0%、recall 为 85.0%。
+- [Propagating Unsafe Actions in LLM Controlled Multi-Robot Collaboration via Single Robot Compromise](https://arxiv.org/abs/2605.15641)：评测大模型控制多机器人协作中的不安全动作传播。
+- [Beyond Content: A Comprehensive Speech Toxicity Dataset and Detection Framework Incorporating Paralinguistic Cues](https://arxiv.org/abs/2605.15984)：提出 ToxiAlert-Bench，一个 30K 以上音频片段的语音毒性数据集，标注 7 个大类、20 个细粒度标签以及文本来源或副语言来源的 toxicity，并用 Macro-F1 与 accuracy 评测语音安全分类器。
+- [Cross-Modal Prompt Injection via Image-Only Perturbation](https://arxiv.org/abs/2605.16090)：通过仅图像扰动攻击 LVLM 的 prompt injection 风险，将多模态安全评测从可见文本攻击扩展到图像扰动攻击。
+- [Remembering More, Risking More: Longitudinal Safety Risks in Memory-Equipped LLM Agents](https://arxiv.org/abs/2605.17830)：提出 trigger-probe 协议和 NullMemory 反事实基线，用于测量 memory-equipped agent 在长期部署中随记忆累积产生的 temporal memory contamination。
+- [POLAR-Bench](https://arxiv.org/abs/2605.19127)：通过带用户隐私策略的可信模型与会主动探测受保护属性的第三方对抗模型交互，诊断 LLM agent 在有用披露和隐私保护之间的取舍。
+- [Agent Meltdowns](https://arxiv.org/abs/2605.19149)：定义 benign environment error 触发 unsafe agent behavior 的 accidental meltdown 失效，并通过注入本地与远程模拟错误，测量 GPT、Grok 和 Gemini 驱动 agent 的 meltdown 发生率。
+- [Can AI Guess What You Know? Performance Comparison of Large Language Models for Human Domain Knowledge Estimation From Communication Logs](https://arxiv.org/abs/2605.22971)：评测 LLM 能否从 27,188 条 Slack 消息推断员工领域知识，用 7 个模型对照自报技能评分，暴露工作日志中的专长隐私风险。
+- [WMAttack](https://arxiv.org/abs/2605.23220)：通过 closed-loop rollout 自动搜索 world-model agent 的对抗攻击，使预测式智能体环境中的鲁棒性失败可系统测量，而不是依赖人工挑选案例。
+- [When the Manual Lies](https://arxiv.org/abs/2605.24069)：提出 MCP 工具描述投毒，包含 32 个真实测试用例和 6 类风险，检验工具元数据中的隐蔽恶意指令能否操纵 agent 的规划层。
+- [ContextEcho](https://arxiv.org/abs/2605.24279)：在长程工具调用式编码会话中使用 snapshot-then-probe 身份测试衡量 persona drift，观察部署助手在数千轮工具调用后是否仍保持原始偏好与身份表述。
+- [Dual-Use AI Face Swap Apps Are Mostly Unsafe](https://arxiv.org/abs/2605.24735)：系统审计 420 个 iOS 与 Android face-swap app，并人工测试 155 个合格 app；结果显示多数应用即使不以 nudification 自称，也缺少防止合成非自愿私密图像的技术护栏。
+- [The Age of Curiosity Meets the Age of AI: Benchmarking Child Safety in Large Language Models](https://arxiv.org/abs/2605.25510)：提出面向儿童使用场景的 LLM 安全基准 KIDBench，包含 7 到 11 岁真实查询、单轮提示、多轮儿童 actor 模拟，以及基于发展心理学的 LLM-as-judge rubric。
+- [AgentSecBench](https://arxiv.org/abs/2605.26269)：用 instruction integrity、retrieval confidentiality 和 capability control 三类 game 实例化 agent security 框架，衡量共享通道 LLM agent 中的提示注入、隐私泄漏和工具使用完整性。
+- [Benchmarking Open-Source Safety Guard Models](https://arxiv.org/abs/2605.28830)：在聚合 HarmBench、StrongREJECT、RealToxicityPrompts 和 BeaverTails 的 79,331 个安全过滤样本上，按 8 类 NIST AI RMF 安全类别比较 14 个开源 guard model。
+- [ChiSafe-PAS](https://arxiv.org/abs/2605.29667)：提供人工标注的中文高风险安全基准，专门覆盖拼音罗马化、拆字、网络黑话、缓和语气等中文特有规避策略。
+- [Emergent Languages in Populations of Language Model Agents](https://arxiv.org/abs/2605.31170)：把涌现通信作为安全监控风险来评测。核心思想：用 Moltbook Files 设置展示 LLM agent 群体可能发明 token-efficient 或新的自然语言编码，包括仅靠表层输出监控不易发现的规避监督行为。
+- [SABER](https://arxiv.org/abs/2606.01317)：把 coding agent 放入真实的有状态项目工作区，并按最终环境状态和 violation cause 评分，将安全评测从拒答文本转向动作序列后果。
+- [Truthful AI Advisors](https://arxiv.org/abs/2606.01456)：把 Crawford-Sobel cheap-talk 设置转化为预注册的偏好错位下顾问诚实性 benchmark，测试销售、推荐或谈判型 agent 在收益与用户利益冲突时是否仍保持真实。
+- [Gate AI](https://arxiv.org/abs/2606.02959)：为 prompt injection 与 jailbreak 安全检测器定义评测 harness，用交叉验证固定 operating point，避免每个数据集单独调阈值造成评价偏差。
+- [CogManip](https://arxiv.org/abs/2606.06099)：覆盖 15 类操纵策略风险和 1,000 个多轮互动场景，评测隐蔽心理操纵，针对静态有害提示测试难以捕捉的动态说服失败。
+- [SopriBench](https://arxiv.org/abs/2606.06784)：评测社交媒体帖文中的用户级多模态隐私泄漏，关注文本、图像和元数据的弱线索如何共同暴露住址、工作地点或日常轨迹，而不只是二元 PII 检测。
+- [MalSkillBench](https://arxiv.org/abs/2606.07131)：提供 3,944 个 runtime-verified 恶意 agent skill，覆盖 108-cell taxonomy，并用 Docker 沙箱和系统调用监控评测混合 prompt-and-code 供应链扫描器。
+- [Temporal Dynamics of Memory Poisoning in Web3-Style LLM Agents](https://doi.org/10.1109/access.2026.3693560)：研究 Web3 风格 LLM 智能体中的记忆投毒时间动态。
+- [Beyond the Model Architecture: Uncovering Environmental Vulnerabilities in Large Language Model Deployment](https://doi.org/10.1109/icerai69511.2026.11494593)：面向智能体安全的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Beyond the Model Architecture: Uncovering Environmental Vulnerabilities in Large Language Model Deployment”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [On the AI Agents Audit Model](https://doi.org/10.1109/smartindustrycon68821.2026.11493110)：提出 AI 智能体审计模型，可作为安全评估协议线索。
+- [There is No War in Ba Sing Se: A Global Analysis of Content Moderation in Large Language Models](https://doi.org/10.14722/ndss.2026.240593)：分析大语言模型的全球内容审核行为。
+- [Colorism in Multimodal AI: An Empirical Exploration of Socioeconomic Linguistic Bias in Text-to-Image Generation](https://doi.org/10.18653/v1/2026.eacl-srw.69)：为智能体安全方向补充一个基准、数据集或评测协议候选，可扩展该能力页的评测覆盖。
+- [Zero-shot detection of LLM-generated text via multilevel information compression and multidimensional feature fusion](https://doi.org/10.1016/j.neucom.2026.132731)：为智能体安全方向补充一个基准、数据集或评测协议候选，可扩展该能力页的评测覆盖。
+- [SocialNormVR: Designing Symmetrical Reality Testbeds for AI Agent Social Norm Evaluation](https://doi.org/10.1109/vrw70859.2026.00281)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [EHLD: a general data framework for harmful language detection and evaluation](https://doi.org/10.1108/dlp-01-2026-0028)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [CVE-Poisoning: Towards Human-Guided and Cost-Effective Detection of a Novel AI Data Poisoning Attack](https://doi.org/10.1109/saner-c67878.2026.00043)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [PRISM: Prompt Red-teaming and Injection Simulation for Models – A Scalable Framework for Evaluating LLM Robustness Against Malicious Prompts](https://doi.org/10.1109/icsft66733.2026.11508065)：为智能体与模型安全补充可复用评测线索，重点关注 Prompt Red-teaming and Injection Simulation for Models – A Scalable Framework for Evaluating LLM Robustness Against Malicious Prompts。
+- [CAS-J: Cross-Modal Attention Synergy for Jailbreaking Large Vision-Language Models](https://doi.org/10.1109/icassp55912.2026.11464668)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Defending financial RAG systems against jailbreak attacks](https://doi.org/10.1016/j.eswa.2026.131945)：面向智能体安全，补充用于red-team or jailbreak evaluation in RAG settings的基准、数据集、指标、审计或实证协议。
+- [CoT defender: Preemptive chain-of-thought occupation for jailbreak attack mitigation](https://doi.org/10.1016/j.neunet.2026.108574)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Parallel Hybrid Classical-Quantum Architecture for AI Safety and LLM Jailbreak Detection](https://doi.org/10.1109/aiei69164.2026.11497307)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [LatinMark: Robust watermarking for latent diffusion models via distribution-preserving rearrangement based on latin hypercube sampling](https://doi.org/10.1016/j.eswa.2026.132445)：面向智能体安全，补充用于alignment, watermarking, generated-content, or authenticity evaluation的基准、数据集、指标、审计或实证协议。
+- [Vector Quantization-Based Watermarking for Autoregressive Generated Images](https://doi.org/10.1109/icassp55912.2026.11464962)：面向智能体安全，补充用于alignment, watermarking, generated-content, or authenticity evaluation的基准、数据集、指标、审计或实证协议。
+- [Real-Time Voice Liveliness Detection for Securing Voice Assistants from Deepfake Audio Attacks](https://doi.org/10.1109/icsc67292.2026.00009)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [Deployable image forgery detection and localization: A comprehensive review and practitioner's guide](https://doi.org/10.1016/j.eswa.2026.131347)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [Spectral Forensics: Detecting Diffusion-Generated Imagery via $1/f^\beta$ Power Law Violations](https://doi.org/10.1109/lsp.2026.3672388)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [An integrated explainable framework for multimodal deepfake detection across image, audio, and video data](https://doi.org/10.1016/j.asej.2026.104233)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [Detecting Code from Evolving LLMs: Temporal Drift, Generalization, and Adaptation](https://doi.org/10.1109/ccwc67433.2026.11393797)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [A Systematic Review of AI-Generated Text Detection: Approaches, Tools, and Datasets](https://doi.org/10.55145/ajest.2026.05.01.012)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [From image to fire safety: An image-driven framework for as-is BIM reconstruction and fire risk assessment of existing buildings via semantic guidance](https://doi.org/10.1016/j.dibe.2026.100869)：提供用于衡量智能体安全能力的数据集、基准、指标或评测协议。
+- [SHIELD: System for Harmful Explicit-Content Identification and Evaluation Through LLM-Driven Approach](https://doi.org/10.1109/access.2026.3667099)：围绕 Agent Safety 能力补充《SHIELD: System for Harmful Explicit-Content Identification and Evaluation Through LLM-Driven Approach》，作为 Bench 条目候选。
+- [Identity-Spoofing Prompt Injection: Empirical Analysis of Instruction Leakage in Custom GPTs](https://doi.org/10.1109/icaic67076.2026.11395658)：围绕 Agent Safety 能力补充《Identity-Spoofing Prompt Injection: Empirical Analysis of Instruction Leakage in Custom GPTs》，作为 Bench 条目候选。
+- [ThermVision-DB: A synthetic LWIR thermal face dataset for privacy-preserving thermal vision research](https://doi.org/10.1016/j.dib.2026.112506)：围绕 Agent Safety 能力补充《ThermVision-DB: A synthetic LWIR thermal face dataset for privacy-preserving thermal vision research》，作为 Bench 条目候选。
+- [A Benchmarking Study of Multi-Layer Security Filters for Secure RAG Pipelines](https://doi.org/10.1109/icoeca68095.2026.11485085)：评测，主要面向 Agent Safety。
+- [Adversarial discriminant attack on text-to-image diffusion models](https://doi.org/10.1016/j.neunet.2026.108716)：评测，主要面向 Agent Safety。
+- [Zero-Shot Tokenizer Transfer for Targeted Attacks on Retrieval-Augmented Generation](https://doi.org/10.1109/icaic67076.2026.11395696)：评测，主要面向 Agent Safety。
+- [Semantic-Aware Address Sanitization with Metric Differential Privacy](https://doi.org/10.1109/icassp55912.2026.11462178)：围绕 Agent Safety 能力补充《Semantic-Aware Address Sanitization with Metric Differential Privacy》，作为 Bench 条目候选。
+- [Mapping the Cloud: A Mixed-Methods Study of Cloud Security and Privacy Configuration Challenges](https://doi.org/10.14722/ndss.2026.241302)：提出面向智能体安全、护栏与对抗风险的基准、数据集或评测协议。
+- [Sanitization or Deception? Rethinking Privacy Protection in Large Language Models](https://doi.org/10.56553/popets-2026-0009)：用对抗式隐私推断和基于熵的泄漏指标评测 LLM 文本脱敏，区分真正的隐私保护与只是误导分类器的表面改写。
+- [Mind Your Prompt](https://doi.org/10.1109/MRL.2026.3660216)：评估提示语气如何影响 LLM 的一致性和安全性，将语气与表达框架作为安全评测变量，而非偶然的提示风格差异。
+- [Auditing Partial Dataset Usage in LLMs](https://doi.org/10.1109/TFUZZ.2026.3665818)：使用 fuzzy membership aggregation 审计大模型部分数据集使用情况，补充污染与隐私风险评测。
+- [SEEM: Exploiting Black-Box Text Attacks to Manipulate Tool Selection](https://doi.org/10.1109/icassp55912.2026.11464857)：评什么：评测操纵工具选择的黑盒文本攻击；核心思想是测试对抗文本能否把 agent 引向错误工具。
+- [CAIS AI Dashboard](https://dashboard.safe.ai/)：通过 Risk Index、capability index 和 automation signal 等公开视图追踪 AI 安全与能力风险指标。核心思想是提供持续更新的安全总览，把 benchmark 进展和风险监测连接起来，而不是只看孤立的安全分数。
+- [Beyond Goodhart's Law: Dynamic Compliance Benchmark](https://arxiv.org/abs/2606.07805)：动态评测多 agent 系统的程序性合规，在对抗任务中检查 agent 是否会为最大化奖励而策略性违反规则，而不是遵守操作约束。
+- [Who Pays the Price?](https://arxiv.org/abs/2606.13385)：从受害方和利益相关者伤害角度重构 web-agent prompt injection benchmark，衡量注入行为伤害了谁，而不只看攻击是否技术上成功。
+- [WebDecept](https://arxiv.org/abs/2606.13686)：把 targeted ads、domain redirection 和 shopping manipulation 等可配置电商 deceptive interface pattern 注入网页环境，用于衡量 web agent 在真实 dark pattern 下的安全性。
+- [SkillMutator](https://arxiv.org/abs/2606.14154)：评测 agent skill 上的 language-and-code cross-modal attack，即 benign SKILL.md 描述可能与可执行脚本冲突，并在这一混合攻击面上比较 scanner 与防御效果。
+- [OSGuard](https://arxiv.org/abs/2606.15034)：为 computer-use agent 提供 action-level guardrail 决策与 risk-augmented 端到端执行套件，测试 benign 用户指令下通过不安全捷径完成任务的风险，而不是显式恶意提示。
 - [MCPTox](https://doi.org/10.1609/aaai.v40i42.40895)：评测真实 MCP server 上的工具投毒风险。核心思想：把恶意工具描述和 server-side 行为组织成 benchmark 协议，测试 MCP agent 是否会选择、信任并执行被投毒的工具。
 - [Evaluating Goal Drift in Language Model Agents](https://doi.org/10.1609/aies.v8i1.36541)：评测 language-model agents 在长程自治上下文中能否维持原始目标。核心思想是在超过 100,000 tokens 的设置中衡量 goal adherence，并暴露 agent 逐渐转向 pattern-matching behavior 的 goal drift。
+- [Source framing triggers systematic bias](https://doi.org/10.1126/sciadv.adz2924)：评估被引用或暗示的信息来源如何改变 LLM 判断。核心思想：把来源框架视为可控安全变量，观察在任务内容相近时它如何诱发系统性偏见。
+- [Can AI-Generated Text be Reliably Detected?](https://openreview.net/forum?id=OOgsAZdFOt)：在改写、对抗与分布偏移攻击下压力测试 AI 文本检测器，把检测器鲁棒性转化为可度量的安全评测。
+- [Machine Bias in Opinion Polling](https://osf.io/preprints/socarxiv/r2pnb_v2)：评估 generative language models 如何回答 opinion polls，以及其中的 answer bias。
+- [SemSI-Bench](https://openreview.net/forum?id=p3mxzKmuZy)：评测大语言模型输出中的语义敏感信息，将隐私评估从结构化身份信息扩展到语义层面。
+- [Mind Mapping Prompt Injection: Visual Prompt Injection Attacks in Modern Large Language Models](https://doi.org/10.3390/electronics14101907)：研究通过思维导图式输入实施的视觉提示注入攻击，把多模态提示注入评测扩展到纯文本或字体攻击之外。
+- [DeHate: A Holistic Hateful Video Dataset for Explicit and Implicit Hate Detection](https://doi.org/10.1145/3746027.3758272)：提供覆盖显性和隐性仇恨检测的 hateful video 数据集，把多模态安全评测扩展到文本冒犯性检测之外。
+- [Many-shot Jailbreaking](https://doi.org/10.52202/079017-4121)：研究 many-shot 越狱，补充对抗性提示扩展下的安全评测。
+- [Can Simple Averaging Defeat Modern Watermarks?](https://doi.org/10.52202/079017-1804)：测试简单平均操作能否击败现代文本水印。
+- [The Application of Membership Inference in Privacy Auditing of Large Language Models Based on Fine-Tuning Method](https://doi.org/10.1145/3728725.3728799)：评测，主要面向 Agent Safety。
+- [On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs](https://openreview.net/forum?id=H3UayAQWoE)：评测，主要面向 Agent Safety。
+- [EAI: Emotional Decision-Making of LLMs in Strategic Games and Ethical Dilemmas](https://doi.org/10.52202/079017-1709)：围绕Agent Safety能力补充《EAI: Emotional Decision-Making of LLMs in Strategic Games and Ethical Dilemmas》这一评测或基准。
+- [Biased AI writing assistants shift users’ attitudes on societal issues](https://doi.org/10.1126/sciadv.adw5578)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [Whodunit: Detection and Attribution of Synthetic Images by Leveraging Model-specific Fingerprints](https://doi.org/10.1145/3643491.3660280)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [A defensive attention mechanism to detect deepfake content across multiple modalities](https://doi.org/10.1007/s00530-023-01248-x)：提供面向智能体安全的基准、数据集、挑战任务或评测协议。
+- [Gender and Accent Biases in AI-Based Tools for Spanish: A Comparative Study between Alexa and Whisper](https://doi.org/10.3390/app14114734)：补充一个面向智能体安全的基准条目，关注safety, security, risk, or alignment contribution。
+- [Maximal Local Privacy Loss—A New Method for Privacy Evaluation of Synthetic Datasets](https://doi.org/10.1002/sim.70376)：提出面向智能体安全、护栏与对抗风险的基准、数据集或评测协议。
+- [Safety Assessment of Generative AI Models in Home IoT Contexts](https://doi.org/10.1145/3770501.3771308)：补充智能体安全的 Bench 条目，重点是《Safety Assessment of Generative AI Models in Home IoT Contexts》。
+- [WARP: A Word-Level Backdoor Attack Targeting RAG Systems via Retrieval Corpus Poisoning](https://dblp.org/rec/conf/kdd/LiuZDLY26)：面向智能体安全能力，补充评测任务、数据集或基准协议。
+- [PreferCare: Preference Dataset Copyright Protection in LLM Alignment by Watermark Injection and Verification](https://doi.org/10.1145/3719027.3765223)：PreferCare: Preference Dataset Copyright Protection in LLM Alignment by Watermark Injection and Verification 补充智能体安全方向的基准、数据集、指标或评测协议。
+- [From Words to Worlds: Measuring Cultural Narrative Bias in LLMs via a Structural–Value Pipeline](https://dblp.org/rec/conf/www/ShenZLW26)：围绕 From Words to Worlds: Measuring Cultural Narrative Bias in LLMs via a Structural–Value Pipeline 补充可复用的智能体安全基准、数据集或评测协议。
+- [ZeroFake: Zero-Shot Detection of Fake Images Generated and Edited by Text-to-Image Generation Models](https://doi.org/10.1145/3658644.3690297)：补充智能体安全能力的评测资源或协议。
+- [Applying Data Feminism Principles to Assess Bias in English and Arabic NLP Research](https://doi.org/10.1145/3715275.3732119)：面向智能体安全，补充评测基准、数据集、协议或指标。
+- [Adaptive Multi‑Layer Framework for Detecting and Mitigating Prompt Injection Attacks in Large Language Models](https://doi.org/10.20473/jisebi.11.3.473-487)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Analytic Synaptic Dynamic Scaling Balancer for Multimodal Deepfake Continual Detection](https://doi.org/10.1145/3746027.3755680)：补充面向智能体与模型安全的评测、数据集或度量信号。
+- [Dynamic Safety Gating for Large Action Models: Mitigating Jailbreak Exploits in Large Language Models](https://doi.org/10.1145/3803021)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [Code Redteaming: Probing Ethical Sensitivity of LLMs Through Natural Language Embedded in Code](https://doi.org/10.3390/math14010189)：面向智能体安全，补充用于jailbreak, prompt-injection, privacy, red-team, backdoor, refusal, or safety-monitoring evaluation的基准、数据集、指标、审计或实证协议。
+- [A Review on the Consistency of AI‐Generated Images for Interior Design Rendering](https://doi.org/10.1002/widm.70056)：面向智能体安全，补充用于alignment, watermarking, generated-content, or authenticity evaluation的基准、数据集、指标、审计或实证协议。
+- [Decoding Web Memorization: A Semantic Membership Inference Attack on LLMs](https://doi.org/10.1145/3774904.3792151)：面向智能体安全，补充用于attack, red-team, deepfake, forgery, watermark, safety, or calibration evaluation的基准、数据集、指标、审计或实证协议。
+- [Dialectal Bias in Bengali: An Evaluation of Multilingual Large Language Models Across Cultural Variations](https://doi.org/10.1145/3701716.3715468)：作为智能体安全的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [How Many Are in This Image A Safety Evaluation Benchmark for Vision LLMs](https://doi.org/10.1007/978-3-031-72983-6_3)：作为智能体安全的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [HiDF: A Human-Indistinguishable Deepfake Dataset](https://doi.org/10.1145/3711896.3737399)：作为智能体安全的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [Evaluating Social Bias in Code Generation Models](https://doi.org/10.1145/3663529.3664462)：作为智能体安全的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [Guardians of digital safety: benchmarking large language models in the fight against online toxicity](https://doi.org/10.1186/s40537-025-01336-x)：把 LLM 作为在线毒性内容 moderation 工具评测，覆盖冒犯、暴力、成人和其他敏感文本，并比较自动过滤行为是否满足数字安全治理需求。
+- [XDF: A Large-Scale Dataset for Evaluating Video Deepfake Detection Across Multiple Manipulation Techniques](https://doi.org/10.1145/3733567.3735569)：提供用于衡量智能体安全能力的数据集、基准、指标或评测协议。
+- [PersonaGen: A Persona-Driven Open-Ended Machine-Generated Text Dataset](https://doi.org/10.1145/3746252.3761611)：提供用于衡量智能体安全能力的数据集、基准、指标或评测协议。
+- [Safety Assessment of 3D Generation Models in AR/VR Applications](https://doi.org/10.1145/3733800.3763268)：提供用于衡量智能体安全能力的数据集、基准、指标或评测协议。
+- [Autonomous Evaluation Architectures: Multi-Agent LLM Pipelines, Browser-Grounded Testing: Programmatic Alignment via DSPy, and Adversarial Robustness in Production Orchestration Systems](https://doi.org/10.52710/cfs.1067)：围绕 Agent Safety 能力补充《Autonomous Evaluation Architectures: Multi-Agent LLM Pipelines, Browser-Grounded Testing: Programmatic Alignment via DSPy, and Adversarial Robustness in Production Orchestration Systems》，作为 Bench 条目候选。
+- [Key-Value Cache Quantization in Large Language Models: A Safety Benchmark](https://doi.org/10.62051/ijcsit.v4n2.16)：评测 Key-Value Cache Quantization in Large Language Models: A Safety Benchmark，为 Agent Safety 补充可复用的数据集、基准、指标或评测协议。
+- [‘I’m sorry Dave, I’m afraid I can’t do that’: Moral regulation in refusals by LLM chatbots](https://doi.org/10.1177/14614448251356686)：分析大模型聊天机器人拒答中的道德规制。
+- [Systematically Analysing Prompt Injection Vulnerabilities in Diverse LLM Architectures](https://doi.org/10.34190/iccws.20.1.3292)：系统分析不同大模型架构中的提示注入漏洞。
+- [Beyond Semantics: Examining Gender Bias in LLMs Deployed within Low-resource Contexts in India](https://doi.org/10.1145/3715275.3732180)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [Master of Deceit: Comparative Analysis of Human and Machine-Generated Deceptive Text](https://doi.org/10.1145/3717867.3717914)：提供面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的基准、数据集、评分规程或评测协议。
+- [An 8-Way Taxonomy for Multimodal Disinformation and Detection Benchmark](https://doi.org/10.1145/3774904.3792906)：为智能体安全方向补充一个基准、数据集或评测协议候选，可扩展该能力页的评测覆盖。
+- [Responsible AI Question Bank for Risk Assessment](https://doi.org/10.1145/3790096)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [An Evaluation of the Google Perspective API by Race and Gender](https://doi.org/10.1145/3717867.3717901)：补充面向智能体安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Early Detection of Re-Identification Risk in Multi-Turn Dialogues via Entity-Aware Evidence Accumulation](https://doi.org/10.3390/app16083680)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Can Vision Language Models Zero-Shot Thermal Images for Private and Robust Human Robot Interaction?](https://doi.org/10.1145/3776734.3794390)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Emergent Ethics in Agentic Simulations: Longitudinal Moral Behavior Across Frontier LLMs](https://doi.org/10.14738/aivp.1402.20258)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [Cross-Assessment & Verification for Evaluation (CAVe) Framework for AI Risk and Compliance Assessment Using a Cross-Compliance Index (CCI)](https://doi.org/10.3390/electronics15020307)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [WiP: Beyond App Blocking: Fine-Grained Child Online Safety via MLLM-based GUI Provenance on the Edge](https://doi.org/10.1145/3737902.3768353)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的基准、数据集、评测协议或测试环境。
+- [CH-SV: A Benchmark for Multi-Type Chinese Harmful Short Video Detection](https://doi.org/10.1145/3746027.3758279)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [Mitigating Risks in Marketplace Semantic Search: A Dataset for Harmful and Sensitive Query Alignment](https://doi.org/10.1145/3699682.3728329)：为智能体与 LLM 安全补充基准、数据集、指标或评测协议。
+- [AI language model rivals expert ethicist in perceived moral expertise](https://doi.org/10.1038/s41598-025-86510-0)：评估语言模型相对专家的道德判断感知能力。
+- [Persuading large language models to comply with objectionable requests](https://doi.org/10.1073/pnas.2535868123)：将模型对不当请求的服从作为安全压力测试进行研究。
+- [Comparative Benchmarking of Deep Learning Architectures for Detecting Adversarial Attacks on Large Language Models](https://doi.org/10.3390/info17020155)：评测检测大模型对抗攻击的深度学习架构。
+- [Exploring the Robustness of Vision-Language-Action Models against Sensor Attacks](https://doi.org/10.1145/3733800.3763262)：作为智能体安全的基准或评测协议候选，聚焦“Exploring the Robustness of Vision-Language-Action Models against Sensor Attacks”。
+- ["I Apologize For Not Understanding Your Policy": Exploring the Evaluation of User-Managed Access Control Policies by AI Virtual Assistants](https://doi.org/10.1145/3733816.3760753)：评估 AI assistant 对用户管理访问控制策略的理解；核心思想是在 agent 操作受保护资源前测试其权限策略解释能力。
+- [Think it Image by Image: Multi-Image Moral Reasoning of Large Vision-Language Models](https://doi.org/10.1145/3746252.3760884)：评测视觉语言模型的多图道德推理能力；核心思想：用连续视觉证据把道德推理评测从单模态或静态场景扩展出去。
+- [Evaluating the Ethical Judgment of Large Language Models in Financial Market Abuse Cases](https://doi.org/10.1145/3768292.3770439)：评估 LLM 在金融市场滥用场景中的伦理判断；核心思想是用交易案例测试模型是否能识别操纵或滥用行为。
+- [The PacifAIst Benchmark: Do AIs Prioritize Human Survival over Their Own Objectives?](https://doi.org/10.3390/ai6100256)：评估 AI 系统在核心目标冲突时是否优先人类生存；核心思想是工具性目标冲突下的行为对齐。
+- [Aligned LLMs Are Not Aligned Browser Agents](https://openreview.net/forum?id=NsFZZU9gvk)：语言模型转为浏览器 agent 后暴露的对齐失效评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [BeaverTails-IT: Towards a Safety Benchmark for Evaluating Italian Large Language Models](https://www.semanticscholar.org/paper/83f00880da11947ac41337135a21259bad16cfa1)：它明确构造 agent safety、隐私、攻击或安全行为评测，适合补充 agent-safety Bench。
+- [Dangerous Language Habits! Exploiting Code-Mixing for Backdoor Attacks on NLP Models](https://doi.org/10.1145/3746252.3761104)：可作为Agent 安全方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- ["Can LLMs Persuade Humans with Deception?": From a Deceptive Strategy Taxonomy to a Large-Scale Empirical Study](https://doi.org/10.1145/3772318.3791188)：评测智能体安全与可信运行的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Your Permission Leaks My Data: Second-Hand Privacy Harms in LLM Agents](https://doi.org/10.1145/3772363.3798860)：研究 LLM 智能体中的二手隐私伤害。
+- [Multi-Turn Jailbreaking Large Language Models via Attention Shifting](https://doi.org/10.1609/aaai.v39i22.34553)：定义或压力测试安全、越狱、监督或可信行为。
+- [Model Procurement for Industrial Cyber-Physical Systems Using Cryptographic Performance Attestation](https://doi.org/10.3390/fi18030146)：用加密性能证明支持工业信息物理系统中的模型采购。
+- [Evaluation of NeMo Guardrails as a Firewall for User–LLM Interaction](https://doi.org/10.3390/fi18050252)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [EvalHack: Answer-Side Prompt Injection for Probing LLM Exam-Grading Panel Stability](https://doi.org/10.3390/info17030297)：围绕Agent 安全、提示注入与护栏可靠性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [BadRobot: Jailbreaking Embodied LLM Agents in the Physical World]()：评什么：物理世界中 embodied LLM agent 的越狱风险。核心思想：测试恶意自然语言交互是否能绕过安全约束并诱导不安全的具身动作。

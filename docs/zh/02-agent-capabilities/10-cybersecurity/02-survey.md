@@ -1,18 +1,234 @@
 # 2.10.2 Survey
 
+- [Towards Transparent Cyber Threat Detection : A Systematic Literature Review on the Role of Explainable AI (XAI) in Information Security Risk Management (2018-2025)](https://doi.org/10.1109/citsm67730.2025.11291277)：梳理网络安全的方法、风险、数据集或评测实践。
+- [On the Challenges of Fuzzing Techniques via Large Language Models](https://arxiv.org/abs/2402.00350)：综述利用 LLM 生成模糊测试的研究，覆盖 LLM、传统 fuzzing 与自动生成测试用例的交叉工作，并讨论部署前景。
+- [Security and Privacy Challenges of Large Language Models: A Survey](https://arxiv.org/abs/2402.00888)：综述 LLM 的安全与隐私风险，覆盖越狱、数据投毒、PII 泄露、应用场景暴露和防御机制。
+- [An Extensive Comparison of Static Application Security Testing Tools](https://arxiv.org/abs/2403.09219)：梳理网络安全的方法、证据与开放问题。
+- [Large Language Models for Blockchain Security: A Systematic Literature Review](https://arxiv.org/abs/2403.14280)：综述 LLM 在区块链安全中的用途，覆盖智能合约审计、交易异常检测、漏洞修复和智能合约程序分析。
+- [Large Language Model for Vulnerability Detection and Repair: Literature Review and the Road Ahead](https://arxiv.org/abs/2404.02525)：梳理，主要面向 Cybersecurity。
+- [Evolutionary Large Language Models for Hardware Security: A Comparative Survey](https://arxiv.org/abs/2404.16651)：梳理网络安全的方法、证据与开放问题。
 - [When LLMs meet cybersecurity: a systematic literature review](https://arxiv.org/abs/2405.03644)：梳理进攻、防御、教育和安全运营中的应用与缺口。
 - [Large Language Models for Cyber Security: A Systematic Literature Review](https://arxiv.org/abs/2405.04760)：组织漏洞检测、渗透测试、恶意软件分析、事件响应与自动化。
+- [Using AI Assistants in Software Development: A Qualitative Study on Security Practices and Concerns](https://arxiv.org/abs/2405.06371)：基于 27 名软件从业者访谈和 190 条 Reddit 讨论，分析 AI 助手在代码生成、威胁建模和漏洞检测中的使用，以及开发者对安全与质量的核查习惯。
+- [Generative AI and Large Language Models for Cyber Security: All Insights You Need](https://arxiv.org/abs/2405.12750)：综述生成式 AI 在硬件安全、入侵检测、安全软件工程、威胁情报、恶意软件和钓鱼检测中的应用，并比较 42 个 LLM 与相关数据集。
+- [SoK: Leveraging Transformers for Malware Analysis](https://arxiv.org/abs/2405.17190)：系统化整理 Transformer 用于恶意软件分析的工作，按模型适配方式和特征表示建立分类，并汇总数据集与开放挑战。
+- [The Shadow of Fraud: The Emerging Danger of AI-powered Social Engineering and its Possible Cure](https://arxiv.org/abs/2407.15912)：把 AI 驱动社会工程攻击分为 enlarging、enriching 和 emerging 三个阶段，讨论攻击度量、风险评估和自适应防御。
+- [Is Generative AI the Next Tactical Cyber Weapon For Threat Actors? Unforeseen Implications of AI Generated Cyber Attacks](https://arxiv.org/abs/2408.12806)：综述生成式 AI 对网络攻击生成与威胁行为的影响。
+- [Deep Learning Under Siege: Identifying Security Vulnerabilities and Risk Mitigation Strategies](https://arxiv.org/abs/2409.09517)：回顾生产部署中深度学习模型的安全脆弱性，提出缓解技术和用于衡量安全控制效果的指标。
+- [Contextualized AI for Cyber Defense: An Automated Survey Using LLMs](https://arxiv.org/abs/2409.13524)：梳理cybersecurity, vulnerability detection, or secure code repair相关方法与挑战，补充该能力方向的综述线索。
+- [A Survey for Deep Reinforcement Learning Based Network Intrusion Detection](https://arxiv.org/abs/2410.07612)：综述基于深度强化学习的网络入侵检测，覆盖 DQN、actor-critic、少数类和未知攻击、特征选择、不平衡数据与 IoT 部署问题。
+- [SoK: The Security-Safety Continuum of Multimodal Foundation Models through Information Flow and Global Game-Theoretic Analysis of Asymmetric Threats](https://arxiv.org/abs/2411.11195)：用信息流分类、minimax 防御分析、Defense Coverage Index 和自毁阈值系统化描述多模态基础模型的 security-safety 连续体。
+- [Preventing Jailbreak Prompts as Malicious Tools for Cybercriminals: A Cyber Defense Perspective](https://arxiv.org/abs/2411.16642)：将越狱提示视为潜在网络犯罪工具，分析提示注入、上下文操纵、过滤绕过与敏感信息提取，并讨论提示分析、动态安全协议和持续微调防御。
+- [Direction for Detection: A Survey of Automated Vulnerability Detection and all of its Pain Points](https://arxiv.org/abs/2412.11194)：按问题形式、检测粒度、语言、指标、数据集和方法系统化整理 87 篇 ML4AVD 工作，并指出 12 个相互强化的痛点。
+- [On Large Language Models in Mission-Critical IT Governance: Are We Ready Yet?](https://arxiv.org/abs/2412.11698)：梳理网络安全方向的近期方法、评测问题或风险边界。
+- [From Vulnerabilities to Remediation: A Systematic Literature Review of LLMs in Code Security](https://arxiv.org/abs/2412.15004)：系统综述 LLM 在代码安全中的利弊，分析易引入的漏洞、漏洞检测与修复能力、提示策略影响以及数据投毒风险。
 - [Harnessing the power of language models in cybersecurity](https://doi.org/10.1016/j.jjimei.2024.100315)：综述语言模型如何支持威胁检测、漏洞分析、事件响应与安全自动化工作流。
+- [A systematic literature review on the impact of AI models on the security of code generation](https://doi.org/10.3389/fdata.2024.1386720)：系统综述 AI 模型对生成代码安全性的影响。
+- [Survey on generative visual media detection and security](https://doi.org/10.1360/ssi-2024-0354)：综述 Survey on generative visual media detection and security，为该能力方向补充可由父级复核的综述线索。
+- [A Comprehensive Survey: Evaluating the Efficiency of Artificial Intelligence and Machine Learning Techniques on Cyber Security Solutions](https://doi.org/10.1109/access.2024.3355547)：综述与 Cybersecurity 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
+- [Enhancing Autonomous System Security and Resilience With Generative AI: A Comprehensive Survey](https://doi.org/10.1109/access.2024.3439363)：综述与 Cybersecurity 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
+- [A Review of Advancements and Applications of Pre-Trained Language Models in Cybersecurity](https://doi.org/10.1109/isdfs60797.2024.10527236)：梳理网络安全的方法、证据与开放问题。
+- [LLMs for Hardware Security: Boon or Bane?](https://doi.org/10.1109/vts60656.2024.10538871)：补充一个面向网络安全的综述条目，关注LLMs for hardware-security assessment。
+- [Large language models for cyber resilience: A comprehensive review, challenges, and future perspectives](https://doi.org/10.1016/j.asoc.2024.112663)：梳理网络安全相关方法、风险与开放问题。
+- [Explainable AI for cybersecurity automation, intelligence and trustworthiness in digital twin: Methods, taxonomy, challenges and prospects](https://doi.org/10.1016/j.icte.2024.05.007)：《Explainable AI for cybersecurity automation, intelligence and trustworthiness in digital twin: Methods, taxonomy, challenges and prospects》梳理Cybersecurity的方法、分类、证据或实践边界。
+- [Vulnerability detection techniques for smart contracts: A systematic literature review](https://doi.org/10.1016/j.jss.2024.112160)：综述网络安全行动与评测，为后续父级复核整理方法、证据或开放问题。
+- [LLM-Enabled Cyber-Physical Systems: Survey, Research Opportunities, and Challenges](https://doi.org/10.1109/fmsys62467.2024.00013)：围绕cybersecurity capability梳理综述、分类或路线图，供父级复核是否补入。
+- [Large Language Model-enabled Vulnerability Investigation: A Review](https://doi.org/10.1109/icngn63705.2024.10871716)：综述网络安全的方法谱系、任务边界、证据来源与开放挑战。
+- [Security Vulnerabilities in AI Hardware: Threats and Countermeasures](https://doi.org/10.1109/ats64447.2024.10915219)：围绕 Cybersecurity 能力补充《Security Vulnerabilities in AI Hardware: Threats and Countermeasures》，作为 Survey 条目候选。
+- [Advancements in cybersecurity and machine learning: A comprehensive review of recent research](https://doi.org/10.30574/wjaets.2024.13.1.0416)：围绕 Cybersecurity 能力补充《Advancements in cybersecurity and machine learning: A comprehensive review of recent research》，作为 Survey 条目候选。
+- [Across the Spectrum In-Depth Review AI-Based Models for Phishing Detection](https://doi.org/10.1109/ojcoms.2024.3462503)：综述面向钓鱼检测的 AI 模型谱系。
+- [Network Intrusion Datasets: A Survey, Limitations, and Recommendations](https://arxiv.org/abs/2502.06688)：评审 89 个公开 NIDS 数据集的 13 类属性，讨论数据局限、流行度和数据集选择、生成、使用的实践建议。
+- [LLMs in Software Security: A Survey of Vulnerability Detection Techniques and Insights](https://arxiv.org/abs/2502.07049)：综述 LLM 在软件漏洞检测中的技术路线和经验。
+- [Transforming Cyber Defense: Harnessing Agentic and Frontier AI for Proactive, Ethical Threat Intelligence](https://arxiv.org/abs/2503.00164)：综述 agentic AI 与 frontier AI 在主动、合伦理网络威胁情报中的作用。
+- [Agentic AI and the Cyber Arms Race](https://arxiv.org/abs/2503.04760)：讨论 agentic AI 如何改变网络攻防能力格局。
+- [Vulnerability Detection: From Formal Verification to Large Language Models and Hybrid Approaches: A Comprehensive Overview](https://arxiv.org/abs/2503.10784)：综述从形式化验证到 LLM 与混合方法的漏洞检测路线，说明符号技术与神经方法如何在软件安全中结合。
+- [Large Language Models powered Network Attack Detection: Architecture, Opportunities and Case Study](https://arxiv.org/abs/2503.18487)：综述网络安全智能体与安全任务相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Generative LLMs for Smart Contract Vulnerability Detection](https://arxiv.org/abs/2504.04685)：综述生成式语言模型在智能合约漏洞检测中的使用方式。
+- [Large Language Model (LLM) for Software Security: Code Analysis, Malware Analysis, Reverse Engineering](https://arxiv.org/abs/2504.07137)：可作为网络安全 agent的 Survey 候选：围绕 Large Language Model (LLM) for Software Security: Code Analysis, Malware Analysis, Reverse Engineering 梳理背景、方法与开放问题。
+- [Hardware Design and Security Needs Attention: From Survey to Path Forward](https://arxiv.org/abs/2504.08854)：综述注意力模型和 LLM 驱动的硬件设计与安全，覆盖 HDL 生成、漏洞识别、RTL 验证、调试和芯片设计案例。
+- [A Multi-Layered Security Analysis of Blockchain Systems: From Attack Vectors to Defense and System Hardening](https://arxiv.org/abs/2504.09181)：按交易平台、智能合约、公链、共识机制和 P2P 层分析区块链安全威胁，并把攻击面对应到系统加固策略。
+- [Benchmarking Practices in LLM-driven Offensive Security: Testbeds, Metrics, and Experiment Design](https://arxiv.org/abs/2504.10112)：LLM 驱动 offensive security 评测方法学综述。核心思想是比较测试床、指标和实验设计，用于评估自动化攻击工具。
+- [Explainable AI in Usable Privacy and Security: Challenges and Opportunities](https://arxiv.org/abs/2504.12931)：综述网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [The Dark Side of the Web: Towards Understanding Various Data Sources in Cyber Threat Intelligence](https://arxiv.org/abs/2504.14235)：综述网络威胁情报中的暗网等数据来源。
+- [A Comprehensive Study of Exploitable Patterns in Smart Contracts: From Vulnerability to Defense](https://arxiv.org/abs/2504.21480)：聚焦 Solidity/EVM 中重入和整数溢出两类可利用模式，复现攻击场景并评估相应防御。
+- [LLMs' Suitability for Network Security: A Case Study of STRIDE Threat Modeling](https://arxiv.org/abs/2505.04101)：用 5 个 LLM 和 4 种提示策略执行 5G 威胁的 STRIDE 分类，给出网络安全场景中 LLM 调整与微调的经验。
 - [Forewarned is Forearmed: A Survey on Large Language Model-based Agents in Autonomous Cyberattacks](https://arxiv.org/abs/2505.12786)：聚焦进攻型 agent 的侦察、利用、持久化、工具与缓解。
+- [LLM-Driven APT Detection for 6G Wireless Networks: A Systematic Review and Taxonomy](https://arxiv.org/abs/2505.18846)：系统综述并分类 LLM 驱动的 APT 检测，虽以 6G 网络为场景但可服务网络安全方向。
+- [Multi-Agent Reinforcement Learning in Cybersecurity: From Fundamentals to Applications](https://arxiv.org/abs/2505.19837)：综述网络安全中的多智能体强化学习，从基础到应用。
+- [Towards Secure MLOps: Surveying Attacks, Mitigation Strategies, and Research Challenges](https://arxiv.org/abs/2506.02032)：综述网络安全智能体与安全任务相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Generative AI for Vulnerability Detection in 6G Wireless Networks: Advances, Case Study, and Future Directions](https://arxiv.org/abs/2506.20488)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Large Language Models for Network Intrusion Detection Systems: Foundations, Implementations, and Future Directions](https://arxiv.org/abs/2507.04752)：综述网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Information Security Based on LLM Approaches: A Review](https://arxiv.org/abs/2507.18215)：综述 LLM 在信息安全中的应用，覆盖恶意行为预测、网络威胁分析、系统漏洞检测、恶意代码识别和密码算法优化。
+- [SoK: Root Cause of $1 Billion Loss in Smart Contract Real-World Attacks via a Systematic Literature Review of Vulnerabilities](https://arxiv.org/abs/2507.20175)：系统化总结智能合约真实攻击损失背后的根因和漏洞模式。
+- [Secure coding for web applications: Frameworks, challenges, and the role of LLMs](https://arxiv.org/abs/2507.22223)：综述网络安全智能体与安全任务相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Symbolic Execution in Practice: A Survey of Applications in Vulnerability, Malware, Firmware, and Protocol Analysis](https://arxiv.org/abs/2508.06643)：综述网络安全的方法谱系、任务边界、证据来源与开放挑战。
+- [Conflicting Scores, Confusing Signals: An Empirical Study of Vulnerability Scoring Systems](https://arxiv.org/abs/2508.13644)：实证梳理漏洞评分体系之间的不一致性，说明网络安全分诊中风险标签的局限。
+- [When Machine Learning Meets Vulnerability Discovery: Challenges and Lessons Learned](https://arxiv.org/abs/2508.15042)：梳理网络安全的方法、风险、数据集或评测实践。
+- [SoK: Exposing the Generation and Detection Gaps in LLM-Generated Phishing](https://arxiv.org/abs/2508.21457)：梳理大模型生成钓鱼内容与检测之间的缺口，明确网络安全威胁模型。
+- [Phishing Webpage Detection: Unveiling the Threat Landscape and Investigating Detection Techniques](https://arxiv.org/abs/2509.08424)：综述钓鱼网页威胁图景与检测技术。
+- [Large Language Models for Security Operations Centers: A Comprehensive Survey](https://arxiv.org/abs/2509.10858)：可作为网络安全 agent的 Survey 候选：围绕 Large Language Models for Security Operations Centers: A Comprehensive Survey 梳理背景、方法与开放问题。
 - [From Firewalls to Frontiers](https://arxiv.org/abs/2509.11398)：论证 AI 红队测试是网络红队的领域化演进，继承威胁建模、对抗方法与安全实践。
+- [Security Analysis of Ponzi Schemes in Ethereum Smart Contracts](https://arxiv.org/abs/2510.03819)：将以太坊智能合约庞氏骗局分为四类结构，并用 Mythril 与脚本模式扫描分析源代码特征、漏洞和运行机制。
 - [A Survey on Agentic Security: Applications, Threats and Defenses](https://arxiv.org/abs/2510.06445)：连接安全 agent 的应用、威胁与防御设计。
+- [System Password Security: Attack and Defense Mechanisms](https://arxiv.org/abs/2510.10246)：梳理网络安全的方法、风险、数据集或评测实践。
+- [A Comprehensive Survey of Website Fingerprinting Attacks and Defenses in Tor: Advances and Open Challenges](https://arxiv.org/abs/2510.11804)：综述网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Signature in Code Backdoor Detection, how far are we?](https://arxiv.org/abs/2510.13992)：重新评估 Spectral Signature 防御在代码模型后门检测中的适用性，比较攻击与防御设置，并提出无需重训即可估计效果的代理指标。
+- [Internal Vulnerabilities, External Threats: A Grounded Framework for Enterprise Open Source Risk Governance](https://arxiv.org/abs/2510.25882)：基于 15 名实践者访谈构建 OTVM 开源风险治理框架，将企业目标、外部威胁、内部脆弱性和缓解能力串联起来。
+- [Software Vulnerability Management in the Era of Artificial Intelligence: An Industry Perspective](https://arxiv.org/abs/2512.18261)：综述 AI 对漏洞管理流程与实践约束的影响。
+- [ISADM: An Integrated STRIDE, ATT&CK, and D3FEND Model for Threat Modeling Against Real-World Adversaries](https://arxiv.org/abs/2512.18751)：将 STRIDE、ATT&CK 与 D3FEND 整合为面向真实对手的威胁建模分类框架，连接攻击建模与防御知识库。
+- [Agentic AI for Cyber Resilience: A New Security Paradigm and Its System-Theoretic Foundations](https://arxiv.org/abs/2512.22883)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Securing the AI Supply Chain: What Can We Learn From Developer-Reported Security Issues and Solutions of AI Projects?](https://arxiv.org/abs/2512.23385)：基于 Hugging Face 与 GitHub 讨论构建 AI 供应链安全问题和解决方案的经验分类，覆盖系统、工具、模型与数据风险。
 - [Enhancing Software Vulnerability Analysis via Large Language Models](https://doi.org/10.1109/DSC67331.2025.00092)：系统综述 LLM 支持软件漏洞分析的方法、评测设置与研究空白。
 - [LLM-Powered Security Test Generation](https://doi.org/10.1109/MC.2025.3625694)：回顾 LLM 如何支持安全测试 oracle、漏洞探测和对抗输入生成，用于软件安全评估。
 - [Review of generative AI for multimodal cybersecurity threat simulation](https://doi.org/10.30574/wjarr.2025.27.1.2532)：综述 LLM、GAN 与多模态 Transformer 在文本、音频、图像和视频等通道中的合成网络威胁仿真。
+- [Generative AI in Cybersecurity](https://doi.org/10.1016/j.iotcps.2025.01.001): 综述 LLM 在网络安全中的应用与漏洞风险，连接防御、攻击和风险面。
+- [Generative-AI Cybersecurity Risk Assessment](https://doi.org/10.1016/j.dajour.2025.100580): 评估生成式 AI 带来的网络安全挑战，为应用型综述补充风险导向视角。
+- [Generative AI in the cybersecurity SDLC](https://doi.org/10.1016/j.array.2025.100509)： 综述生成式 AI 在软件开发生命周期中支持网络安全的方式，梳理防御场景与风险。
+- [Critical Evaluation of Agentic AI in Cybersecurity](https://doi.org/10.1109/csnet67572.2025.11288238)： 评述 agentic AI 在网络安全作业中的收益与风险。
+- [Unlocking the Next Generation of REST API Security: A Critical Analysis of the Path from Fuzzing to LLMs](https://doi.org/10.1109/dsc67331.2025.00067)：评析从模糊测试到 LLM 辅助 REST API 安全的演进，将传统测试与新兴语言模型工作流联系起来。
+- [Large Language Models for Vulnerability Detection in Static Code Analysis: A Survey](https://doi.org/10.1109/icaibd64986.2025.11082007)：综述网络安全相关方法、风险或评测边界。
+- [Static Analysis Techniques for Secure Software: A Systematic Review](https://doi.org/10.32604/jcs.2025.071765)：综述网络安全相关方法、风险或评测边界。
+- [Deep Learning-Based Steganalysis and Zero-Day Exploit Detection of Hidden Malware and Adversarial Deception Attacks - A Survey](https://doi.org/10.1109/icaft66710.2025.11453199)：补充网络安全的 Survey 条目，重点是《Deep Learning-Based Steganalysis and Zero-Day Exploit Detection of Hidden Malware and Adversarial Deception Attacks - A Survey》。
+- [ML-based Fuzzing for Vulnerability Detection: Methods, Benchmarks, and Open Challenges-A Review](https://doi.org/10.1109/iceca66444.2025.11382854)：补充网络安全的 Survey 条目，重点是《ML-based Fuzzing for Vulnerability Detection: Methods, Benchmarks, and Open Challenges-A Review》。
+- [Smart Contract Vulnerability Detection: A Systematic Literature Review](https://doi.org/10.1109/isctrkiye68593.2025.11224848)：补充网络安全的 Survey 条目，重点是《Smart Contract Vulnerability Detection: A Systematic Literature Review》。
+- [From Static to AI-Driven Detection: A Comprehensive Review of Obfuscated Malware Techniques](https://doi.org/10.1109/access.2025.3550781)：综述或系统梳理网络安全，为该能力页补充分类、趋势或风险边界。
+- [Contamination-Aware, Taxonomy-Driven Vulnerability Classification for CPS: Evidence and Insights at Scale](https://doi.org/10.1109/bigdata66926.2025.11401570)：围绕 Cybersecurity 能力补充《Contamination-Aware, Taxonomy-Driven Vulnerability Classification for CPS: Evidence and Insights at Scale》，作为 Survey 条目候选。
+- [Security of Cloud-Hosted Machine Learning: A Comprehensive Review of Attacks and Defenses in MLaas Environments](https://doi.org/10.1109/icisc65841.2025.11188369)：综述 Security of Cloud-Hosted Machine Learning: A Comprehensive Review of Attacks and Defenses in MLaas Environments，为 Cybersecurity 补充近期方法、证据或开放问题脉络。
+- [Large Language Models (LLMs) for Software Security Analysis](https://doi.org/10.4236/jis.2025.162018)：综述 Large Language Models (LLMs) for Software Security Analysis，为 Cybersecurity 补充近期方法、证据或开放问题脉络。
+- [Comparative Analysis of Large Language Models in Solidity Smart Contract Vulnerability Detection: Review](https://doi.org/10.1109/icaisc64594.2025.10959494)：综述网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [A Survey of Large Language Models (LLMs) for Cybersecurity: Opportunities and Directions](https://doi.org/10.1109/bigdata66926.2025.11402639)：可作为“网络安全 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [A Comprehensive Review of AI’s Current Impact and Future Prospects in Cybersecurity](https://doi.org/10.1109/access.2025.3528114)：可作为“网络安全 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [NLP-based techniques for Cyber Threat Intelligence](https://doi.org/10.1016/j.cosrev.2025.100765)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A review on machine learning techniques for network security](https://doi.org/10.1080/23742917.2025.2480730)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Cybersecurity in Satellite Communication Networks: Key Threats and Neutralization Measures](https://doi.org/10.1109/ojcoms.2025.3585060)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A comprehensive review of explainable AI in cybersecurity: Decoding the black box](https://doi.org/10.1016/j.icte.2025.10.004)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Cyber Deception: Taxonomy, State of the Art, Frameworks, Trends, and Open Challenges](https://doi.org/10.1109/comst.2025.3594788)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A Review on Multi-Step Attack Detection](https://doi.org/10.1109/access.2025.3607497)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Intelligent cybersecurity systems for phishing attack detection - An overview](https://doi.org/10.1016/j.compeleceng.2025.110829)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A Survey on Security and Privacy in Federated Learning-Based Intrusion Detection Systems for 5G and Beyond Networks](https://doi.org/10.1109/ojcoms.2025.3644477)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Binary Code Analysis for Cybersecurity: A Systematic Review of Forensic Techniques in Vulnerability Detection and Anti-Evasion Strategies](https://doi.org/10.1109/access.2025.3610616)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Exposing the Security Vulnerabilities of Generative AI: A Comprehensive Survey](https://doi.org/10.1109/intcec65580.2025.11255987)：梳理网络安全的方法、风险、数据集或评测实践。
+- [Flash Loan Attack is More Than Just Price Oracle Manipulation: A Comprehensive Empirical Study](https://doi.org/10.1109/qrs65678.2025.00073)：梳理网络安全的方法、风险、数据集或评测实践。
+- [O-Cloud Security: A Comprehensive Survey of Threats, Mitigation Strategies, and Future Directions](https://doi.org/10.1109/ojcoms.2025.3600528)：梳理网络安全的方法、风险、数据集或评测实践。
+- [Is Attention All Security Domain Needs? A Systematic Review of Self-attention Mechanism in Cybersecurity](https://doi.org/10.1109/aiccsa66935.2025.11315233)：梳理网络安全的方法、风险、数据集或评测实践。
+- [Towards Smarter Cyber Threat Detection and Response with Explainable AI](https://doi.org/10.36948/ijfmr.2025.v07i05.56563)：梳理网络安全的方法、风险、数据集或评测实践。
+- [A Comprehensive Survey on Enhancing Digital Twin Security Systems with Explainable AI Techniques](https://doi.org/10.1109/idciot64235.2025.10915028)：梳理网络安全的方法、风险、数据集或评测实践。
+- [Exploring Organizational Resilience Towards AI-Driven Cyber Threats: A Systematic Literature Review](https://doi.org/10.23919/ist-africa67297.2025.11060472)：梳理网络安全的方法、风险、数据集或评测实践。
+- [Multimodal Phishing Detection on Social Networking Sites: A Systematic Review](https://doi.org/10.1109/access.2025.3579584)：系统综述社交网络中的多模态钓鱼检测方法。
+- [A Comprehensive Survey of Deep Learning-Based Adversarial Network Intrusion Detection Systems](https://doi.org/10.1109/icirca65293.2025.11089572)：综述基于深度学习的对抗性网络入侵检测系统。
+- [A review on the effectiveness of red teaming exercises in modern cybersecurity](https://doi.org/10.30574/wjarr.2025.26.3.2456)：综述现代网络安全中红队演练的有效性。
+- [A Comprehensive Survey of Smart Contracts Vulnerability Detection Tools: Techniques and Methodologies](https://doi.org/10.1016/j.jnca.2025.104142)：综述智能合约漏洞检测工具与方法。
+- [Extensive Review of Threat Models for DevSecOps](https://doi.org/10.1109/access.2025.3547932)：综述 DevSecOps 场景下的威胁模型。
+- [Cyber Attack Prediction: From Traditional Machine Learning to Generative Artificial Intelligence](https://doi.org/10.1109/access.2025.3547433)：综述网络攻击预测从传统机器学习到生成式 AI 方法的发展。
+- [Cracks in the chain: A technical analysis of real-life supply chain security incidents](https://doi.org/10.1016/j.cose.2025.104673)：分析真实供应链安全事件，为网络风险评估梳理失效模式。
+- [Survey and Classification of Protecting Solutions Against AI-Powered and AI-Driven Cyber Attacks](https://doi.org/10.1109/amcai66110.2025.11474389)：分类梳理针对 AI 驱动网络攻击的防护方案，为网络安全自动化补充防御视角的综述。
+- [Machine Learning for Cyber Defense: Comprehensive Survey of Datasets and Techniques for Network, Host and Application based Cyber Attacks](https://doi.org/10.54364/cybersecurityjournal.2025.1119)：综述面向网络、主机与应用攻击的网络防御数据集和机器学习技术。
+- [Transforming cybersecurity with agentic AI to combat emerging cyber threats](https://doi.org/10.1016/j.telpol.2025.102976)：面向网络安全智能体与评测的综述或相关工作脉络。核心思路是围绕“Transforming cybersecurity with agentic AI to combat emerging cyber threats”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Creating Cyber Attack Trees Using LLMs: A Comprehensive Review and Mixed-Methods Approach](https://doi.org/10.1109/icaiet65052.2025.11211217)：面向 LLM 辅助网络攻击树生成的综述与混合方法入口；核心思路是把威胁建模结构与语言模型支持的攻击树草拟和分析连接起来。
+- [A Review of the Use of Large Language Models to Generate Synthetic Cybersecurity Datasets](https://doi.org/10.1109/itnac66378.2025.11302633)：面向网络安全智能体与评测的综述或相关工作脉络。核心思路是围绕“A Review of the Use of Large Language Models to Generate Synthetic Cybersecurity Datasets”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Agentic Artificial Intelligence for Cyber Threat Management](https://doi.org/10.1109/mc.2025.3544797)：综述 agentic AI 在网络威胁管理中的应用。
+- [Exploring the emerging role of large language models in smart grid cybersecurity: a survey of attacks, detection mechanisms, and mitigation strategies](https://doi.org/10.3389/fenrg.2025.1531655)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Investigating the use of Large Language Models in software security requirements: Results of a literature review](https://doi.org/10.5753/ise.2025.14892)：综述网络安全 Agent 与安全评测相关研究，可作为该方向近期相关工作的入口。
+- [Beyond Detection: Large Language Models and Next-Generation Cybersecurity](https://doi.org/10.70470/shifra/2025/005)：可作为网络安全 agent的 Survey 候选：围绕 Beyond Detection: Large Language Models and Next-Generation Cybersecurity 梳理背景、方法与开放问题。
+- [Cybersecurity in the age of generative AI: A systematic taxonomy of AI-powered vulnerability assessment and risk management](https://doi.org/10.1016/j.future.2025.108107)：系统化梳理生成式 AI 时代的 AI 驱动漏洞评估与风险管理。
+- [SoK: AI Support for Analyst Situation Awareness in Security Operation Centres](https://doi.org/10.1109/eurousec69254.2025.00024)：系统化梳理 AI 如何在证据、triage 与决策支持中增强 SOC 分析员态势感知。
+- [The Rise of Cognitive SOCs: A Systematic Literature Review on AI Approaches](https://doi.org/10.1109/ojcs.2025.3536800)：系统综述安全运营中心中的 AI 方法，包括告警筛选和分析师辅助流程。
 - [A Survey of Agentic AI and Cybersecurity: Challenges, Opportunities and Use-case Prototypes](https://arxiv.org/abs/2601.05293)：回顾自主安全 agent 的用例、原型、机会与风险边界。
+- [Remote Code Execution in ML Model Hosting Ecosystems](https://arxiv.org/abs/2601.14163)：实证梳理 model-hosting ecosystems 中的 remote-code-execution 风险，补充 AI 系统部署安全边界。
+- [Securing AI Agents in Cyber-Physical Systems: A Survey of Environmental Interactions, Deepfake Threats, and Defenses](https://arxiv.org/abs/2601.20184)：综述 CPS 中 AI 智能体的环境交互、深度伪造威胁与防御。
+- [Deep Learning for Contextualized NetFlow-Based Network Intrusion Detection: Methods, Data, Evaluation and Deployment](https://arxiv.org/abs/2602.05594)：综述或系统化梳理网络安全操作、漏洞分析与网络推理，用于补充方法谱系、任务边界、风险与开放问题。
+- [Stand-Alone Complex or Vibercrime? Exploring the adoption and innovation of GenAI tools, coding assistants, and agents within cybercrime ecosystems](https://arxiv.org/abs/2603.29545)：分析 GenAI 工具、编码助手和智能体在网络犯罪生态中的采用方式，区分高度自动化的 cybercrime-as-a-service 与降低门槛的 vibe-coding 滥用。
+- [What Are Adversaries Doing? Automating Tactics, Techniques, and Procedures Extraction: A Systematic Review](https://arxiv.org/abs/2604.02377)：梳理网络安全方向，重点关注 What Are Adversaries Doing? Automating Tactics, Techniques, and Procedures Extraction: A Systematic Review。
+- [SoK: Reshaping Research on Network Intrusion Detection Systems](https://arxiv.org/abs/2604.17556)：综述或系统化梳理网络安全操作、漏洞分析与网络推理，用于补充方法谱系、任务边界、风险与开放问题。
+- [Adaptive and AI-Augmented Security Testing: A Systematic Survey of Program Analysis, Feedback-Driven Testing, and Hybrid Learning-Based Approaches](https://arxiv.org/abs/2604.27000)：综述用于 AI 增强安全测试的程序分析、反馈驱动测试与混合学习方法，说明自动化测试和学习模型如何结合用于漏洞发现。
 - [AI-Driven Security Alert Screening](https://arxiv.org/abs/2605.08316)：综述安全运营中心中 AI 驱动的安全告警筛选与告警疲劳缓解。
 - [LLMs for Agentic NetOps and AIOps](https://arxiv.org/abs/2605.12729)：综述面向 agentic NetOps 与 AIOps 的 LLM，覆盖架构、评测与安全。
 - [Harnessing LLMs for Cyber-Resilience](https://doi.org/10.1109/ACCESS.2026.3682720)：系统综述 LLM 在网络韧性、威胁缓解与未来网络安全路线中的作用。
+- [Intelligent Code Review and Vulnerability Localization Based on Large-Scale Pre-Trained Language Models (LLM)](https://doi.org/10.1109/iceaai68945.2026.11442374)：综述网络安全相关方法、风险或评测边界。
+- [SecureCodeReviewer: An AI-Driven Automated Secure Code Review System with Context-Aware Vulnerability Detection](https://doi.org/10.1109/iccces62661.2026.11436328)：围绕 Cybersecurity 能力补充《SecureCodeReviewer: An AI-Driven Automated Secure Code Review System with Context-Aware Vulnerability Detection》，作为 Survey 条目候选。
+- [A systematic literature review of large language models in phishing attack generation and detection](https://doi.org/10.1016/j.array.2026.100775)：系统综述大模型在钓鱼攻击生成与检测中的使用。
+- [Graph intelligence for IoT and CPS security: From connectivity patterns to cyber-physical reasoning](https://doi.org/10.1016/j.cosrev.2026.100978)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [DDoS attack detection and defense techniques in software defined networks: A survey](https://doi.org/10.1016/j.cosrev.2026.100921)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Exploring Cyber Trends and Threats Towards V2X Connected Vehicles in Malaysia: A Systematic Literature Review](https://doi.org/10.14569/ijacsa.2026.0170157)：综述或系统化梳理网络安全操作、漏洞分析与网络推理，用于补充方法谱系、任务边界、风险与开放问题。
+- [AI-Driven Cyber Threat Detection Systems: A Survey on Techniques and Applications](https://doi.org/10.1109/icasst68917.2026.11484337)：综述或系统化梳理网络安全操作、漏洞分析与网络推理，用于补充方法谱系、任务边界、风险与开放问题。
+- [Secure and Explainable Federated Learning for IoT Intrusion Detection: A Comprehensive Survey](https://doi.org/10.1109/ojcoms.2026.3681580)：围绕federated-learning survey for IoT intrusion detection梳理方法、证据与开放问题，补充网络安全方向的综述或分类线索。
+- [A Survey of AI-Driven STIG Automation Techniques in Modern DevSecOps Environments](https://doi.org/10.1109/etfi68128.2026.11484642)：梳理网络安全方向，重点关注 A Survey of AI-Driven STIG Automation Techniques in Modern DevSecOps Environments。
+- [Phishing 2.0: exploring the capabilities and risks of agentic AI-enabled attacks](https://doi.org/10.3389/fcomp.2026.1795045)：综述智能体 AI 驱动钓鱼攻击的能力和风险。
+- [Cross-domain impacts of electric vehicle cyber attacks on smart grids: A comprehensive survey](https://doi.org/10.1016/j.rser.2026.117104)：综述电动汽车网络攻击对智能电网的跨域影响。
+- [From Correlation to Intervention: A Survey on Log-Based Causal Analysis for Security and AIOps](https://doi.org/10.1109/aieta69357.2026.11508946)：综述安全运营和 AIOps 中基于日志的因果分析方法。
+- [A systematic review on botnet defense mechanisms: past, present and future](https://doi.org/10.1080/23742917.2026.2628020)：综述僵尸网络防御机制及其演进。
+- [A Review of Artificial Intelligence Technology: Applications and Impacts in Cybersecurity Evaluation](https://doi.org/10.12677/airr.2026.152040)：综述人工智能技术在网络安全评估中的应用与影响。
+- [Exploring the synergistic collaboration of Human Agentic-AI in enhancing the security of the software development lifecycle](https://doi.org/10.1016/j.eij.2026.100915)：面向网络安全智能体与安全评测的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [AI-Driven Security Challenges in Cloud Computing: A Review of Emerging Threats and Security Solutions](https://doi.org/10.1109/akgec68790.2026.11485800)：综述云计算中的 AI 驱动安全挑战与解决方案。
+- [Large Language Models for Software Vulnerability Detection: A Survey of Methods, Evaluation, and Future Trends](https://doi.org/10.1109/gaiis69281.2026.11519183)：综述软件漏洞检测中的 LLM 方法与评测趋势。
+- [Large Language Models in Cloud Cybersecurity: Applications, Vulnerabilities, and Risk Mitigation Strategies](https://doi.org/10.1109/imed68921.2026.11484999)：综述云安全中 LLM 的应用、脆弱性和风险缓解。
+- [Leveraging Generative AI for Security Defense of Mobile Edge-Enabled Digital Twins: A Survey](https://doi.org/10.1109/tccn.2026.3683228)：综述移动边缘数字孪生中的生成式 AI 安全防御。
 - [Large language models for software vulnerability detection](https://doi.org/10.1007/s10207-025-00992-7)：综述基于 LLM 的软件漏洞检测模型、方法、数据集、指标和研究实践建议。
 - [GAI-Driven Offensive Cybersecurity](https://doi.org/10.5220/0013378700003899)：把生成式 AI 定位为进攻安全和渗透测试的赋能技术，并连接攻击自动化与主动防御考量。
 - [SoK: Automated TTP Extraction from CTI Reports - Are We There Yet?](https://www.usenix.org/conference/usenixsecurity25/presentation/buechel)：系统化梳理 CTI 报告中的 TTP 抽取方法，并在统一设置中比较 NLP、嵌入和生成式方法。
+- [LLM-IoT Security Survey](https://doi.org/10.3390/jcp6020063)： 综述 LLM 与 IoT 集成中的安全威胁、防御和隐私保护架构。
+- [AI-Powered Steganography Survey](https://doi.org/10.62411/faith.3048-3719-76)：综述 AI-powered image、linguistic 与 3D-mesh steganography/data hiding。
+- [AI and Information Security Systematic Review](https://doi.org/10.1007/s10115-025-02613-0)：综述 AI 与 information-security 方法、应用和开放挑战的结合方式。
+- [AI-Powered Social Engineering: Emerging Attack Vectors, Vulnerabilities, and Multi-Layered Defense Strategies](https://doi.org/10.3390/computers15020128)：综述生成式 AI 与 deepfake 推动的社会工程攻击，梳理攻击向量、脆弱性、心理因素与多层防御。
+- [A Systematic Literature Review on Automated Software Vulnerability Detection Using Machine Learning](https://doi.org/10.1145/3699711)：[A Systematic Literature Review on Automated Software Vulnerability Detection Using Machine Learning](https://doi.org/10.1145/3699711): 系统综述基于机器学习的自动软件漏洞检测.
+- [Emerging AI threats in cybercrime: a review of zero-day attacks via machine, deep, and federated learning](https://doi.org/10.1007/s10115-025-02556-6)：围绕 Cybersecurity 能力补充《Emerging AI threats in cybercrime: a review of zero-day attacks via machine, deep, and federated learning》这一路线，将其作为 Survey 条目记录。
+- [Network Security Issues Caused by Generative Artificial Intelligence](https://doi.org/10.1145/3726010.3726029)：回顾生成式 AI 如何改变网络安全威胁与防御重点。
+- [Learning-based models for vulnerability detection: an extensive study](https://doi.org/10.1007/s10664-025-10734-x)：围绕Cybersecurity梳理《Learning-based models for vulnerability detection: an extensive study》涉及的方法、分类或实践。
+- [A Review of Mobile Surveillanceware: Capabilities, Countermeasures, and Research Challenges](https://doi.org/10.3390/electronics14142763)：围绕 Cybersecurity 能力补充《A Review of Mobile Surveillanceware: Capabilities, Countermeasures, and Research Challenges》，作为 Survey 条目候选。
+- [Automatic security-flaw detection - towards a fair evaluation and comparison](https://doi.org/10.1007/s10270-025-01300-6)：补充网络安全的 Survey 条目，重点是《Automatic security-flaw detection - towards a fair evaluation and comparison》。
+- [Alert Prioritisation in Security Operations Centres: A Systematic Survey on Criteria and Methods](https://doi.org/10.1145/3695462)：综述网络安全行动与评测，为后续父级复核整理方法、证据或开放问题。
+- [Generative AI: a double-edged sword in the cyber threat landscape](https://doi.org/10.1007/s10462-025-11285-9)：综述或系统梳理网络安全，为该能力页补充分类、趋势或风险边界。
+- [A Comprehensive Survey of Threat Intelligence Research: A Measurement-Based Study](https://doi.org/10.1145/3772280)：综述网络安全的方法谱系、任务边界、证据来源与开放挑战。
+- [Artificial intelligence-driven approaches for assessing social vulnerability to natural hazards: a comprehensive bibliometric review](https://doi.org/10.1007/s11069-025-07808-w)：围绕 Cybersecurity 能力补充《Artificial intelligence-driven approaches for assessing social vulnerability to natural hazards: a comprehensive bibliometric review》，作为 Survey 条目候选。
+- [Large language models based vulnerability detection: How does it enhance performance?](https://doi.org/10.1007/s10207-025-00983-8)：综述网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [A Review of Learning-based Smart Contract Vulnerability Detection: A Perspective on Code Representation](https://doi.org/10.1145/3750042)：综述网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Securing the Road Ahead: A Survey on Internet of Vehicles Security Powered by a Conceptual Blockchain‐Based Intrusion Detection System for Smart Cities](https://doi.org/10.1002/ett.70133)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A Literature Review of Textual Cyber Abuse Detection Using Cutting‐Edge Natural Language Processing Techniques: Language Models and Large Language Models](https://doi.org/10.1002/widm.70029)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Digital Twin-Enabled Incident Detection and Response: A Systematic Review of Critical Infrastructures Applications](https://doi.org/10.1007/s10207-025-01113-0)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Securing Blockchain Systems: A Layer-Oriented Survey of Threats, Vulnerability Taxonomy, and Detection Methods](https://doi.org/10.3390/fi17050205)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Harnessing AI for Cyber Defense: Honeypot-Driven Intrusion Detection Systems](https://doi.org/10.3390/sym17050628)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [AI-Enabled IoT Intrusion Detection: Unified Conceptual Framework and Research Roadmap](https://doi.org/10.3390/make7040115)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A Survey of Cross-Layer Security for Resource-Constrained IoT Devices](https://doi.org/10.3390/app15179691)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Ethereum smart contracts: a hierarchical analysis of vulnerability challenges and mitigation strategies](https://doi.org/10.1007/s10586-025-05173-8)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [AI-Based Anomaly Detection in Industrial Control and Cyber–Physical Systems: A Data-Type-Oriented Systematic Review](https://doi.org/10.3390/electronics15010020)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Ethereum Smart Contracts Under Scrutiny: A Survey of Security Verification Tools, Techniques, and Challenges](https://doi.org/10.3390/computers14060226)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [AI-Powered Vulnerability Detection and Patch Management in Cybersecurity: A Systematic Review of Techniques, Challenges, and Emerging Trends](https://doi.org/10.3390/make8010019)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Mapping Deep Learning to Blockchain Security: A Survey](https://doi.org/10.1145/3787470.3787473)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Securing the future: Integrating AI safety into cybersecurity frameworks](https://doi.org/10.55214/2576-8484.v9i8.9643)：梳理网络安全能力相关的方法、风险、评测实践或分类框架。
+- [Generative AI and LLMs in Cybersecurity:~Literature Review and Future Research Directions](https://doi.org/10.5220/0014598400004052)：综述或系统化梳理网络安全操作、漏洞分析与网络推理，用于补充方法谱系、任务边界、风险与开放问题。
+- [Natural Language Processing (NLP)-Based Frameworks for Cyber Threat Intelligence and Early Prediction of Cyberattacks in Industry 4.0: A Systematic Literature Review](https://doi.org/10.3390/app16020619)：综述或系统化梳理网络安全操作、漏洞分析与网络推理，用于补充方法谱系、任务边界、风险与开放问题。
+- [A Comparative Study of Machine and Deep Learning Approaches for Smart Contract Vulnerability Detection](https://doi.org/10.3390/technologies13120592)：梳理网络安全的方法、风险、数据集或评测实践。
+- [Advanced Approaches for Vulnerability Detection in Solidity-Based Smart Contracts: A Comparative Review](https://doi.org/10.23939/mmc2025.04.1077)：梳理网络安全的方法、风险、数据集或评测实践。
+- [FUTURE-PROOFING SECURITY: A COMPREHENSIVE SURVEY ON GENERATIVE AI AND QUANTUM INNOVATIONS IN CYBER DEFENSE](https://doi.org/10.12732/ijam.v38i8s.598)：梳理网络安全的方法、风险、数据集或评测实践。
+- [A systematic literature study of machine learning techniques based intrusion detection: datasets, models, challenges, and future directions](https://doi.org/10.1186/s40537-025-01323-2)：系统综述机器学习入侵检测的数据集、模型、挑战与后续方向。
+- [A Survey on Malware Analysis with Large Language Models](https://doi.org/10.1007/978-981-95-3072-4_4)：综述大语言模型用于恶意软件分析的技术路线。
+- [From Heuristics to Transformers: A Comprehensive Survey of Type Inference from Stripped Binaries](https://doi.org/10.1145/3803633.3803665)：梳理网络安全方向，重点关注 From Heuristics to Transformers: A Comprehensive Survey of Type Inference from Stripped Binaries。
+- [Advances in NLP Techniques for Detection of Message-Based Threats in Digital Platforms: A Systematic Review](https://doi.org/10.3390/electronics14132551)：系统综述用于检测消息型数字威胁的自然语言处理技术。
+- [Towards a Sustainable Cybersecurity Governance: Threat Modelling with Large Language Models](https://doi.org/10.3390/su172310569)：研究结合大语言模型威胁建模的可持续网络安全治理。
+- [Explainable AI for Cybersecurity Applications: A Review Article on Techniques, Deployments, and Usability Challenges](https://doi.org/10.33847/2686-8296.7.1_1)：综述网络安全中可解释 AI 技术、部署与可用性挑战。
+- [Alert Fatigue in Security Operations Centres: Research Challenges and Opportunities](https://doi.org/10.1145/3723158)：梳理安全运营中心告警疲劳的挑战与研究机会。
+- [A Comprehensive Survey on Database Management System Fuzzing: Techniques, Taxonomy and Evaluation](https://doi.org/10.1145/3799227)：综述安全测试中的数据库管理系统模糊测试技术、分类和评估。
+- [Application of AI in Cyberattack Detection: A Review.](https://doi.org/10.3390/s26051518)：综述 AI 在网络攻击检测中的应用。
+- [Proactive cybersecurity in industry 4.0: a survey of cybersecurity threat prediction approaches in manufacturing systems](https://doi.org/10.1007/s10207-025-01188-9)：综述工业 4.0 制造系统中的主动网络威胁预测方法。
+- [Advanced IDS: a comparative study of datasets and machine learning algorithms for network flow-based intrusion detection systems](https://doi.org/10.1007/s10489-025-06422-4)：比较网络流入侵检测数据集与机器学习算法，为 IDS 评估提供方法图谱。
+- [A Systematic Review of Cyber Range Taxonomies: Trends, Gaps, and a Proposed Taxonomy](https://doi.org/10.3390/fi17060259)：系统梳理网络靶场分类体系的趋势、缺口与建议评估维度。
+- [A Comparative Study of Security Operations Center Models for Operational Technology](https://doi.org/10.5324/yd7t8t20)：比较面向运营技术安全运营的 SOC 模型。
+- [Next-generation penetration testing: a cross-domain review of challenges, trends, and taxonomy for urban digital ecosystems](https://doi.org/10.1007/s00607-025-01583-z)：综述城市数字生态中跨域渗透测试的挑战、趋势与分类体系，补充进攻安全与网络安全 Agent 的综述覆盖。
+- [Towards Robust Cyber Attack Taxonomies: A Survey with Requirements, Structures, and Assessment](https://doi.org/10.1145/3717606)：综述网络攻击分类体系的需求、结构与评估准则。
+- [Securing Mobile Devices: An Analysis of Security Subsystems and Supply Chain Risks](https://doi.org/10.5220/0014038100004061)：分析移动设备安全子系统与供应链风险。
+- [Sometimes Simpler is Better: A Comprehensive Analysis of State-of-the-Art Provenance-Based Intrusion Detection Systems](https://www.semanticscholar.org/paper/5660fb9f9ad6b70b8b62757be1e1fe7e86eb9d49)：分析主流溯源型入侵检测系统，适合作为网络安全检测方向的综述入口。
+- [Evaluation of the maturity of LLMs in the cybersecurity domain](https://doi.org/10.1007/s10207-025-01112-1)：评估 LLM 在网络安全领域任务中的成熟度。
+- [Generative AI revolution in cybersecurity: a comprehensive review of threat intelligence and operations](https://doi.org/10.1007/s10462-025-11219-5)：可作为网络安全 agent的 Survey 候选：围绕 Generative AI revolution in cybersecurity: a comprehensive review of threat intelligence and operations 梳理背景、方法与开放问题。
+- [Generative AI for cyber threat intelligence: applications, challenges, and analysis of real-world case studies](https://doi.org/10.1007/s10462-025-11338-z)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Leveraging Machine Learning Models to Improve Smart Contract Security: A Survey of Vulnerabilities and Detection Methods](https://doi.org/10.1145/3772367)：面向网络安全智能体与安全评测的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [A Systematic Literature Review on Detecting Software Vulnerabilities with Large Language Models](https://doi.org/10.1145/3815425)：可作为网络安全 agent的 Survey 候选：围绕 A Systematic Literature Review on Detecting Software Vulnerabilities with Large Language Models 梳理背景、方法与开放问题。
+- [Security risk management in the digital enterprise: enhancing cyber defense with large language models](https://doi.org/10.1186/s40537-026-01420-w)：综述 LLM 增强的网络防御与安全风险管理。
+- [A Review of Agentic AI in Cybersecurity: Cognitive Autonomy, Ethical Governance, and Quantum-Resilient Defense](https://doi.org/10.12688/f1000research.169337.1)：可作为网络安全 agent的 Survey 候选：围绕 A Review of Agentic AI in Cybersecurity: Cognitive Autonomy, Ethical Governance, and Quantum-Resilient Defense 梳理背景、方法与开放问题。
+- [AI agents and full autonomy in cybersecurity: technical, business, ethical and legal considerations](https://doi.org/10.1365/s43439-026-00172-w)：综述网络安全中全自治 AI 智能体的技术、商业、伦理和法律问题。
+- [A Survey on Large Language Models in Software Security: Opportunities and Threats](https://doi.org/10.3390/computers15040226)：综述软件安全中 LLM 的机遇与威胁。
+- [LLMs for Cybersecurity in the Big Data Era: A Comprehensive Review of Applications, Challenges, and Future Directions](https://doi.org/10.3390/info16110957)：可作为网络安全 agent的 Survey 候选：围绕 LLMs for Cybersecurity in the Big Data Era: A Comprehensive Review of Applications, Challenges, and Future Directions 梳理背景、方法与开放问题。
+- [Vulnerability Detection in Large Language Models: Addressing Security Concerns](https://doi.org/10.3390/jcp5030071)：可作为网络安全 agent的 Survey 候选：围绕 Vulnerability Detection in Large Language Models: Addressing Security Concerns 梳理背景、方法与开放问题。
+- [Harnessing Large Language Models for Enhanced Cybersecurity: A Review of Their Role in Defending Against APT and Cyber Attacks](https://doi.org/10.33971/ijmrai.1.1.8)：综述网络安全智能体与安全任务相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Generative AI and cybersecurity: Exploring opportunities and threats at their intersection](https://doi.org/10.5117/mab.99.149299)：面向网络安全智能体与评测的综述或相关工作脉络。核心思路是围绕“Generative AI and cybersecurity: Exploring opportunities and threats at their intersection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Agentic AI Workflows in Cybersecurity: Opportunities, Challenges, and Governance via the MCP Model](https://doi.org/10.52783/jisem.v10i52s.10767)：从 MCP 治理视角综述网络安全中的 agentic AI 工作流。
+- [Large language models in the software supply chain: challenges and opportunities]()：关于软件供应链安全中 LLM 使用的综述性观点；核心思路是梳理安全编码、漏洞检测、代码归因和恶意软件分析中的机会与风险。

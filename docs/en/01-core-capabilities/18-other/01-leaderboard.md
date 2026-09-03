@@ -1,0 +1,28 @@
+# 1.18.1 Leaderboard
+- [MULTI: multimodal understanding leaderboard with text and images](https://opendfm.github.io/MULTI-Benchmark/): The official leaderboard ranks multimodal models on Chinese examination-derived image-text understanding, reasoning, and knowledge tasks; the paper is available on [arXiv](https://arxiv.org/abs/2402.03173).
+- [FlagEval-Arena](https://flageval.baai.org/#/arena): The official side-by-side arena compares large language models and text-driven AIGC systems for Chinese users; the ACL demo paper is available through the [ACL Anthology](https://doi.org/10.18653/v1/2025.acl-demo.56).
+- [AgentBoard](https://hkust-nlp.github.io/agentboard/): Official leaderboard for multi-turn LLM agent evaluation across navigation, web, games, and embodied-style tasks.
+- [Open FinLLM Leaderboard](https://huggingface.co/spaces/TheFinAI/Open-FinLLM-Leaderboard): Public financial-LLM leaderboard associated with FinBen-style evaluation.
+- [MMT-Bench](https://mmt-bench.github.io/): Official multimodal multitask AGI benchmark leaderboard for vision-language models.
+- [Auto-Arena](https://huggingface.co/spaces/Auto-Arena/Leaderboard): Official leaderboard for agent peer-battle and committee-discussion based LLM evaluation.
+- [WildBench](https://huggingface.co/spaces/allenai/WildBench): AI2's public leaderboard for challenging real-user tasks.
+- [MixEval](https://mixeval.github.io/): Official leaderboard that mixes benchmark sources to approximate crowd preference signals.
+- [WildVision Arena](https://huggingface.co/spaces/WildVision/vision-arena): Public arena for vision-language model comparison with human preferences.
+- [Grid-Based Game Benchmark](https://research-outcome.github.io/LLM-Game-Benchmark/leaderboard/): Official leaderboard for LLM grid-game competitions.
+- [VisualAgentBench](https://github.com/THUDM/VisualAgentBench): Official repository with public leaderboard and results for visual foundation-agent tasks.
+- [MME-RealWorld](https://mme-realworld.github.io/): Official leaderboard for high-resolution real-world multimodal evaluation.
+- [VHELM](https://crfm.stanford.edu/helm/vhelm/v2.0.1/): Stanford CRFM HELM leaderboard for holistic vision-language model evaluation.
+- [COMPL-AI](https://compl-ai.org/): Official EU AI Act-inspired benchmark and result portal.
+- [JudgeBench](https://huggingface.co/spaces/ScalerLab/JudgeBench): Official Hugging Face leaderboard for LLM-as-judge evaluation.
+- [RM-Bench](https://github.com/THU-KEG/RM-Bench-Leaderboard): Official leaderboard repository for subtlety and style reward-model evaluation.
+- [VL-RewardBench](https://huggingface.co/spaces/MMInstruction/VL-RewardBench): Official leaderboard for vision-language generative reward models.
+- [WMT 2024 Quality Estimation Shared Task](https://www2.statmt.org/wmt24/qe-task.html): Official shared-task results page for translation quality estimation.
+- [Multimodal RewardBench](https://github.com/facebookresearch/multimodal_rewardbench): Official repository with public results for multimodal reward-model evaluation.
+- [AlgoPerf](https://mlcommons.org/benchmarks/algorithms/): MLCommons competition and results entry point for training-algorithm performance.
+- [NTIRE 2025 Cross-Domain Few-Shot Object Detection Challenge](https://codalab.lisn.upsaclay.fr/competitions/21851): Official Codalab challenge and competition results surface.
+- [TabArena](https://tabarena.ai/): Official living leaderboard for tabular machine learning and tabular foundation models.
+- [WildSpoof](https://wildspoof.github.io/): Official challenge site and results page for robust spoof detection.
+- [Social Welfare Function Leaderboard](https://arxiv.org/abs/2510.01164): A leaderboard-style benchmark where LLM agents allocate scarce social resources in dynamic simulations, comparing efficiency and distributive fairness through ROI and Gini-style metrics.
+- [CorrectBench](https://correctbench.github.io/): Official project page with leaderboard and results for LLM self-correction strategies.
+- [ScoringBench](https://github.com/jonaslandsgesell/ScoringBench): Official repository with benchmark tables and results for proper scoring-rule evaluation.
+- [CCL-Bench](https://cclbench.ai/leaderboard.html): Official trace-based LLM infrastructure benchmark leaderboard.

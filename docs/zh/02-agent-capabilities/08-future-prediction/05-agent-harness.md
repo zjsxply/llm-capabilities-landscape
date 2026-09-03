@@ -1,10 +1,21 @@
 # 2.8.5 Agent Harness
 
+- [Vectorized Representation Dreamer (VRD): Dreaming-Assisted Multi-Agent Motion Forecasting](https://arxiv.org/abs/2406.14415)：构建面向未来预测任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Simulating Financial Market via Large Language Model based Agents](https://arxiv.org/abs/2406.19966)：提供面向 Future Prediction 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
 - [Reasoning and Tools for Human-Level Forecasting](https://arxiv.org/abs/2408.12036)（开源代码：未公开；早期 agentic forecasting scaffold；核心思想是把检索、分解、数值校准和 forecasting heuristics 接到同一推理工具链里，成为 BTF/FutureSearch 后续工作的直接引用基线）
+- [FN-Agents: Analysis of Exchange Rate Volatility Prediction Based on Multi-Agent Systems](https://doi.org/10.1109/cait64506.2024.10963060)：构建面向未来预测任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [FinSphere, a Real-Time Stock Analysis Agent Powered by Instruction-Tuned LLMs and Domain Tools](https://arxiv.org/abs/2501.12399)：构建面向未来预测任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [LLMs Can Teach Themselves to Better Predict the Future](https://arxiv.org/abs/2502.05253)：用自博弈预测轨迹与已揭晓结果提升 LLM 概率预测能力。
+- [FinArena: A Human-Agent Collaboration Framework for Financial Market Analysis and Forecasting](https://arxiv.org/abs/2503.02692)：构建人机协作框架进行金融市场分析和预测。
 - [TimeSeriesScientist](https://arxiv.org/abs/2510.01538)（[开源代码](https://github.com/Y-Research-SBU/TimeSeriesScientist)；通用时间序列预测 agent；核心思想是用 Curator、Planner、Forecaster、Reporter 四类代理把数据诊断、模型选择、验证集成和报告生成串成白盒 forecasting workflow）
+- [Beyond Inherent Cognition Biases in LLM-Based Event Forecasting: A Multi-Cognition Agentic Framework](https://doi.org/10.18653/v1/2025.findings-emnlp.258)：在事件预测中使用多认知 agentic framework；核心思想：结合互补推理模式，降低预测生成中的固有认知偏差。
+- [A Spatio-Temporal GNN and Multi-Agent System Framework for Bottleneck Prediction and Signal Optimization in Bangalore](https://doi.org/10.1016/j.rineng.2025.107675)：构建面向未来预测任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Agricultural Futures Trading Decision Using AI Agent With Multiscale Candlestick Analysis](https://doi.org/10.1109/tcss.2025.3583788)：构建面向未来预测任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
 - [AIA Forecaster](https://arxiv.org/abs/2511.07678)（开源代码：未公开；面向真实未来事件的 agentic forecaster；核心思想是用多轮网页研究、结构化预测提示和校准规则逼近人类 superforecaster，并暴露 live/pastcasting 评测中的信息泄漏风险）
 - [FutureSearch Forecasting Question Generator/Resolver](https://arxiv.org/abs/2601.22444)（开源代码：未公开；用 LLM 驱动的网页研究 agent 自动生成和兑现预测问题，既是评测题生产 harness，也能用题目分解策略改进 forecasting agent 的概率判断）
+- [Agent-Supported Foresight for AI Systemic Risks: AI Agents for Breadth, Experts for Judgment](https://arxiv.org/abs/2602.08565)：用 in-silico agent 执行 Futures Wheel 方法来扩展长期 AI 系统性风险后果发现，并把每个用例 30 次 agent 运行与专家、领导者和普通参与者判断对照，让人类负责语境校准。
+- [Milkyway](https://arxiv.org/abs/2604.15719)（开源代码：未找到稳定公开仓库）：把预解析信号写回持续更新的 future prediction harness。核心思想：对同一未决问题反复预测、提取 pre-resolution signal、更新 factor tracking / evidence gathering / uncertainty handling，再用已实现结果做回看检查，属于更直接的 harness evolution 路线。
 - MiroFish（[开源代码](https://github.com/666ghj/MiroFish)，[官方站点](https://mirofish.work/)；无独立论文）：把种子材料、知识图谱、多人格代理和社会演化拼成可交互的预测模拟引擎；适合把“预测”从静态问答变成可回放的 scenario simulation。
 - FutureSearch ReAct Agent（[开源代码](https://github.com/futuresearch/futuresearch-python)；无独立 arXiv 论文）：BTF-2 论文引用的 FutureSearch 开源 agent 实现，提供 ReAct-style 系统提示、网页研究工具包和时间管理机制，适合作为 forecasting agent 的可复现实验 harness。
-- [Milkyway](https://arxiv.org/abs/2604.15719)（开源代码：未找到稳定公开仓库）：把预解析信号写回持续更新的 future prediction harness。核心思想：对同一未决问题反复预测、提取 pre-resolution signal、更新 factor tracking / evidence gathering / uncertainty handling，再用已实现结果做回看检查，属于更直接的 harness evolution 路线。
+- [Signal or Noise in Multi-Agent LLM-based Stock Recommendations?](https://arxiv.org/abs/2604.17327)：构建面向未来预测任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
 - [Bayesian Linguistic Forecaster（BLF）](https://arxiv.org/abs/2604.18576)（开源代码：未公开；面向 ForecastBench 的 agentic forecaster；核心思想是把数值概率与自然语言证据摘要合成 linguistic belief state，并在迭代工具使用中做 sequential Bayesian updating、trial aggregation 与层级校准）

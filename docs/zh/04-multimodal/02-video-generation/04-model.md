@@ -1,52 +1,1628 @@
 # 4.2.4 Model
 
+- [Controllable Video Generation With Text-Based Instructions](https://doi.org/10.1109/tmm.2023.3262972)：用文本指令控制视频生成与编辑，更适合作为模型侧可控生成条目，而不是外部 agent harness。
+- [EMAGE: Towards Unified Holistic Co-Speech Gesture Generation via Masked Audio Gesture Modeling](https://arxiv.org/abs/2401.00374)：在 BEAT2 上训练 masked audio-gesture transformer，融合语音节奏与内容特征、四个 VQ-VAE 和 masked gesture hints，生成同步的面部、身体、手部与全局共语手势。
+- [From Covert Hiding To Visual Editing: Robust Generative Video Steganography](https://arxiv.org/abs/2401.00652)：在生成式人脸视频编辑过程中把秘密信息嵌入语义特征，用端到端 RoGVS 网络提升对社交平台失真的鲁棒性和嵌入容量。
+- [VideoStudio: Generating Consistent-Content and Multi-scene Videos](https://arxiv.org/abs/2401.01256)：用 LLM 将提示扩展为多场景脚本，追踪跨场景共享实体，并结合扩散生成保持长视频中的实体一致性。
+- [Moonshot: Towards Controllable Video Generation and Editing with Multimodal Conditions](https://arxiv.org/abs/2401.01827)：通过 multimodal video block、解耦的图文 cross-attention 和可选图像 ControlNet，把文本、图像与几何条件同时用于视频生成和编辑。
+- [VASE: Object-Centric Appearance and Shape Manipulation of Real Videos](https://arxiv.org/abs/2401.02473)：在图像条件扩散模型上加入时间层与形状控制训练，面向真实视频实现对象级外观修改和显式结构编辑。
+- [Latte: Latent Diffusion Transformer for Video Generation](https://arxiv.org/abs/2401.03048)：将潜在扩散 Transformer 用于视频生成，补充模型侧生成骨干。
+- [MagicVideo-V2: Multi-Stage High-Aesthetic Video Generation](https://arxiv.org/abs/2401.04468)：把文生图模型、视频运动生成器、参考图像嵌入和帧插值整合为多阶段流水线，用于高分辨率、高审美的文本到视频生成。
+- [Morphable Diffusion: 3D-Consistent Diffusion for Single-image Avatar Creation](https://arxiv.org/abs/2401.04728)：把可关节驱动的 3D morphable human model 注入多视角扩散，使单张图像可生成三维一致、可动画化且可控姿态和表情的人体 avatar。
+- [Object-Centric Diffusion for Efficient Video Editing](https://arxiv.org/abs/2401.05735)：通过 object-centric sampling 和 token merging 加速文本引导视频编辑，把更多去噪计算分配给被编辑前景并减少背景开销。
+- [RAVEN: Rethinking Adversarial Video Generation with Efficient Tri-plane Networks](https://arxiv.org/abs/2401.06035)：采用显式与隐式混合 tri-plane GAN、单一 clip latent 和光流模块，以更低 FLOPs 生成 256 px、超过 5 秒的时序一致视频。
+- [Video Super-Resolution Transformer with Masked Inter&Intra-Frame Attention](https://arxiv.org/abs/2401.06312)：用 masked intra-frame and inter-frame attention 和自适应块级 mask 复用已增强特征，在保持 PSNR 的同时降低视频超分计算与显存成本。
+- [360DVD: Controllable Panorama Video Generation with 360-Degree Video Diffusion Model](https://arxiv.org/abs/2401.06578)：通过轻量 360-Adapter、360 enhancement techniques、运动条件和 WEB360 数据集，把预训练文生视频扩散模型适配到全景视频生成。
+- [VideoCrafter2: Overcoming Data Limitations for High-Quality Video Diffusion Models](https://arxiv.org/abs/2401.09047)：通过 VideoCrafter2 训练路线缓解数据限制下的视频扩散质量问题。
+- [Vlogger: Make Your Dream A Vlog](https://arxiv.org/abs/2401.09414)：把分钟级 vlog 生成拆成 LLM 导演的脚本、演员、ShowMaker 和配音阶段，其中 ShowMaker 同时训练文本到视频生成和视频预测能力。
+- [CustomVideo: Customizing Text-to-Video Generation with Multiple Subjects](https://arxiv.org/abs/2401.09962)：通过把多个主体合成到同一图像、在扩散 latent 中做注意力解耦，并用对象 mask 引导注意力学习，实现多主体身份保持的视频定制。
+- [WorldDreamer: Towards General World Models for Video Generation via Predicting Masked Tokens](https://arxiv.org/abs/2401.09985)：把视觉输入离散化并预测 masked tokens，在多模态提示下学习通用世界模型，支持自然场景和驾驶场景中的文生视频、图生视频与视频编辑。
+- [Motion-Zero: Zero-Shot Moving Object Control Framework for Diffusion-Based Video Generation](https://arxiv.org/abs/2401.10150)：无需训练即可通过位置感知初始噪声先验、U-Net attention map 空间约束和 shifted temporal attention 控制对象轨迹。
+- [Inflation with Diffusion: Efficient Temporal Adaptation for Text-to-Video Super-Resolution](https://arxiv.org/abs/2401.10404)：把文生图超分扩散模型 inflation 到视频框架，加入 temporal adapter，并比较不同调参方式下的视频超分质量与计算成本。
+- [MotionMix: Weakly-Supervised Diffusion for Controllable Motion Generation](https://arxiv.org/abs/2401.11115)：将扩散去噪拆成噪声标注数据驱动的粗生成和无标注 motion refinement，用弱监督同时支持文本到动作、动作到动作和音乐到舞蹈。
+- [Lumiere: A Space-Time Diffusion Model for Video Generation](https://arxiv.org/abs/2401.12945)：提出用于视频生成的时空扩散模型。
+- [BootsTAP: Bootstrapped Training for Tracking-Any-Point](https://arxiv.org/abs/2402.00847)：用无标注真实视频和 student-teacher 自监督训练引导 tracking-any-point 模型，相比仅用仿真数据训练显著提升 TAP-Vid DAVIS 和 Kinetics 表现。
+- [Boximator: Generating Rich and Controllable Motions for Video Synthesis](https://arxiv.org/abs/2402.01566)：为现有视频扩散模型加入 hard box 和 soft box 约束，仅训练控制模块并用 self-tracking 学习 box 与对象的关联。
+- [InteractiveVideo: User-Centric Controllable Video Generation with Synergistic Multimodal Instructions](https://arxiv.org/abs/2402.03040)：通过协同多模态指令机制融合文本、图像、绘制和拖拽输入，让用户在生成过程中迭代细粒度控制视频。
+- [Direct-a-Video: Customized Video Generation with User-Directed Camera Movement and Object Motion](https://arxiv.org/abs/2402.03162)：通过显式相机、物体运动或三维一致性控制改进可控视频生成。
+- [ConsistI2V: Enhancing Visual Consistency for Image-to-Video Generation](https://arxiv.org/abs/2402.04324)：通过首帧时空注意力和首帧低频噪声初始化提升图生视频一致性，并把同一机制扩展到长视频自回归生成和相机控制。
+- [Keyframer: Empowering Animation Design using Large Language Models](https://arxiv.org/abs/2402.06071)：把自然语言动画提示转成可编辑动画代码和内联预览，并通过 13 人设计研究总结 decomposed prompting 与直接代码编辑的交互方式。
+- [HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting](https://arxiv.org/abs/2402.06149)：将 3D Gaussians 绑定到可动画化头部先验，并联合优化初始化、蒸馏和正则项，让文本提示生成真实且可驱动的头部 avatar。
+- [Magic-Me: Identity-Specific Video Customized Diffusion](https://arxiv.org/abs/2402.09368)：用 3D Gaussian noise initialization、扩展 textual inversion 身份模块和身份解耦的视频扩散训练，在定制视频中保持指定人物身份。
+- [Poisoned Forgery Face: Towards Backdoor Attacks on Face Forgery Detection](https://arxiv.org/abs/2402.11473)：研究针对人脸伪造检测的后门攻击，揭示生成媒体检测器的脆弱性。
+- [CLIPping the Deception: Adapting Vision-Language Models for Universal Deepfake Detection](https://arxiv.org/abs/2402.12927)：保留 CLIP 文本分支并用 prompt tuning 做通用 deepfake 检测，在 ProGAN 上适配后评估跨生成器泛化。
+- [Video ReCap: Recursive Captioning of Hour-Long Videos](https://arxiv.org/abs/2402.13250)：构建递归 video-language 模型和 Ego4D-HCap 数据集，用 curriculum learning 为短 clip、segment 和小时级视频生成多层级字幕与摘要。
+- [Bring Your Own Character: A Holistic Solution for Automatic Facial Animation Generation of Customized Characters](https://arxiv.org/abs/2402.13724)：通过估计 blendshape coefficients 将输入人脸表情重定向到定制虚拟角色，并提供兼容 Unity 的动画工具包。
+- [Customize-A-Video: One-Shot Motion Customization of Text-to-Video Diffusion Models](https://arxiv.org/abs/2402.14780)：在时间注意力层上使用 LoRA 学习单样本运动定制，并用 appearance absorbers 从参考视频中分离外观和可复用运动。
+- [Snap Video: Scaled Spatiotemporal Transformers for Text-to-Video Synthesis](https://arxiv.org/abs/2402.14797)：扩展面向视频的 EDM，并用比 U-Net 训练和采样更快的 Transformer 骨干扩展到十亿参数文生视频模型。
+- [EMO: Emote Portrait Alive - Generating Expressive Portrait Videos with Audio2Video Diffusion Model under Weak Conditions](https://arxiv.org/abs/2402.17485)：直接从音频生成说话或唱歌肖像视频，绕开三维模型和面部 landmarks，同时保持身份和帧间平滑。
+- [Seeing and Hearing: Open-domain Visual-Audio Generation with Diffusion Latent Aligners](https://arxiv.org/abs/2402.17723)：用扩散潜空间对齐器生成视觉与音频对齐内容。
+- [AtomoVideo: High Fidelity Image-to-Video Generation](https://arxiv.org/abs/2403.01800)：通过多粒度图像注入、adapter 训练、高质量数据策略和迭代预测，提升图生视频的图像保真、运动强度与长序列生成能力。
+- [UniCtrl: Improving the Spatiotemporal Consistency of Text-to-Video Diffusion Models via Training-Free Unified Attention Control](https://arxiv.org/abs/2403.02332)：用免训练 unified attention control、跨帧自注意力、motion injection 和时空同步提升文生视频模型的一致性与运动多样性。
+- [Tuning-Free Noise Rectification for High Fidelity Image-to-Video Generation](https://arxiv.org/abs/2403.02827)：在图像 latent 中注入噪声并校正去噪过程，以即插即用方式提升图生视频的细节保真并缓解噪声预测偏差。
+- [MMoFusion: Multi-modal Co-Speech Motion Generation with Diffusion Model](https://arxiv.org/abs/2403.02905)：用扩散框架结合渐进式多模态融合、由情绪和身份控制的 style matrix，以及共享和风格专用编码器，生成多样的共语身体动作。
+- [CAT: Enhancing Multimodal Large Language Model to Answer Questions in Dynamic Audio-Visual Scenarios](https://arxiv.org/abs/2403.04640)：通过 clue aggregator、AVinstruct 混合指令数据和 ambiguity-aware preference optimization，增强动态音视频场景中的问答能力。
+- [SplattingAvatar: Realistic Real-Time Human Avatars With Mesh-Embedded Gaussian Splatting](https://arxiv.org/abs/2403.05087)：把 3D Gaussians 嵌入三角网格，由显式 mesh motion 驱动低频变形，并用 Gaussian splats 实时渲染高频外观细节。
+- [VideoElevator: Elevating Video Generation Quality with Versatile Text-to-Image Diffusion Models](https://arxiv.org/abs/2403.05438)：免训练地交替使用文生视频模型做 temporal motion refining、inflated 文生图扩散做 spatial quality elevating，提升文生视频画质。
+- [Audio-Synchronized Visual Animation](https://arxiv.org/abs/2403.05659)：定义 audio-synchronized visual animation 任务，构建 AVSync15，并训练 AVSyncD 扩散模型按时序对齐的音频线索驱动图像或视频动画。
+- [Harmonious Group Choreography with Trajectory-Controllable Diffusion](https://arxiv.org/abs/2403.06189)：用 trajectory-controllable diffusion、dance-trajectory navigator、distance-consistency loss、footwork adaptor 和 forward-kinematic loss 生成无碰撞群舞。
+- [FastVideoEdit: Leveraging Consistency Models for Efficient Text-to-Video Editing](https://arxiv.org/abs/2403.06269)：利用 consistency model 的自一致性做零样本文本引导视频编辑，避免 DDIM inversion、额外条件提取和逐视频微调。
+- [FlowVQTalker: High-Quality Emotional Talking Face Generation through Normalizing Flow and Quantization](https://arxiv.org/abs/2403.06375)：结合 flow-based coefficient generator 与 vector-quantized texture modeling，使音频一对多映射到情绪表情、眨眼、姿态和高清说话人脸纹理。
+- [V3D: Video Diffusion Models are Effective 3D Generators](https://arxiv.org/abs/2403.06738)：微调视频扩散模型生成 360 度环绕多视角图像，加入几何一致性先验，并从单张图像重建 mesh 或 3D Gaussians。
+- [DragAnything: Motion Control for Anything using Entity Representation](https://arxiv.org/abs/2403.07420)：用开放域 entity representation 表示任意被点击对象，让用户通过绘制轨迹同时控制一个或多个对象甚至背景区域的运动。
+- [Motion Mamba: Efficient and Long Sequence Motion Generation with Hierarchical and Bidirectional Selective SSM](https://arxiv.org/abs/2403.07487)：在对称 U-Net 中使用 hierarchical temporal Mamba block 和 bidirectional spatial Mamba module，提高长序列人体运动生成效率。
+- [SSM Meets Video Diffusion Models: Efficient Video Generation with Structured State Spaces](https://arxiv.org/abs/2403.07711)：用双向 structured state-space layers 替代视频扩散中的二次复杂度时间注意力，在长序列上降低显存并保持或改善 FVD。
+- [Text-to-Audio Generation Synchronized with Videos](https://arxiv.org/abs/2403.07938)：同时提出 T2AV-Bench 指标和视频对齐的文本到音频扩散模型，通过 Audio-Visual ControlNet 与对比学习融合时序视觉特征。
+- [AesopAgent: Agent-driven Evolutionary System on Story-to-Video Production](https://arxiv.org/abs/2403.07952)：用基于 RAG 的工作流演化、提示和工具优化，以及图像、音频、特效和动画工具编排 story-to-video 生产。
+- [Follow-Your-Click: Open-domain Regional Image Animation via Short Prompts](https://arxiv.org/abs/2403.08268)：用首帧 masking、短 motion prompt 模块和基于 flow 的速度控制，从用户点击区域和简短提示生成局部图像动画。
+- [Video Editing via Factorized Diffusion Distillation](https://arxiv.org/abs/2403.09334)：无需成对视频编辑数据，通过分别蒸馏图像编辑 adapter 的逐帧编辑能力和视频 adapter 的时序一致性，训练 Emu Video Edit。
+- [AICL: Action In-Context Learning for Video Diffusion Model](https://arxiv.org/abs/2403.11535)：把参考视频作为 in-context action examples，使视频扩散模型理解非常见动作，并能在三个基础生成器中迁移动作。
+- [EffiVED: Efficient Video Editing via Text-instruction Diffusion Models](https://arxiv.org/abs/2403.11568)：从图像编辑数据集和开放世界视频构造指令式视频编辑对，训练无需逐视频微调的高效扩散编辑器。
+- [ReGenNet: Towards Human Action-Reaction Synthesis](https://arxiv.org/abs/2403.11882)：把 action-reaction synthesis 建模为在线 reactor motion prediction，在 NTU120、InterHuman 和 Chi3D 标注 actor-reactor 顺序，并用带距离交互损失的 Transformer diffusion 生成反应动作。
+- [SV3D: Novel Multi-view Synthesis and 3D Generation from a Single Image using Latent Video Diffusion](https://arxiv.org/abs/2403.12008)：将图生视频 latent diffusion 适配为显式相机控制的环绕多视角合成模型，并把输出用于改进的三维优化与重建。
+- [VideoMV: Consistent Multi-View Generation Based on Large Video Generative Model](https://arxiv.org/abs/2403.12010)：微调视频生成器生成稠密多视角图像，并用带前馈重建模块的 3D-aware denoising sampling 提升多视角一致性。
+- [VFusion3D: Learning Scalable 3D Generative Models from Video Diffusion Models](https://arxiv.org/abs/2403.12034)：释放视频扩散模型的多视角先验，合成近 300 万组多视角数据，并训练秒级运行的前馈图像到三维生成器。
+- [CoCoCo: Improving Text-Guided Video Inpainting for Better Consistency, Controllability and Compatibility](https://arxiv.org/abs/2403.12035)：通过 motion capture module、instance-aware region selection 和可注入个性化模型的兼容路径，改进文本引导视频修复的一致性、可控性和兼容性。
+- [GaussianFlow: Splatting Gaussian Dynamics for 4D Content Creation](https://arxiv.org/abs/2403.12365)：把 3D Gaussian dynamics splat 到图像空间得到可微 Gaussian flow，从而用光流直接监督 4D 生成和动态新视角合成。
+- [Mora: Enabling Generalist Video Generation via A Multi-Agent Framework](https://arxiv.org/abs/2403.13248)：整合开源视频模块，通过 multi-agent fine-tuning、无数据合成训练和 human-in-the-loop 过滤，近似 Sora 风格的文生视频、图生视频和编辑能力。
+- [Be-Your-Outpainter: Mastering Video Outpainting through Input-Specific Adaptation](https://arxiv.org/abs/2403.13745)：先做 input-specific pseudo outpainting adaptation，再用 pattern-aware diffusion outpainting，让外扩区域继承源视频的场景模式。
+- [TimeRewind: Rewinding Time with Image-and-Events Video Diffusion](https://arxiv.org/abs/2403.13800)：通过 event motion adaptor 将事件相机运动条件注入图生视频扩散，从单张图像合成合理的拍摄前瞬间。
+- [CoMo: Controllable Motion Generation through Language Guided Pose Code Editing](https://arxiv.org/abs/2403.13900)：把人体运动离散为可解释的身体部位 pose codes，从文本自回归生成，并允许 LLM 直接修改 pose codes 完成动作编辑。
+- [Efficient Video Diffusion Models via Content-Frame Motion-Latent Decomposition](https://arxiv.org/abs/2403.14148)：把视频表示为一个内容帧和低维 motion latent，用微调图像扩散模型生成内容、轻量 motion-latent diffusion 生成运动以降低视频生成成本。
+- [CAGE: Unsupervised Visual Composition and Animation for Controllable Video Generation](https://arxiv.org/abs/2403.14368)：在无标注视频上以随机选取的自监督局部特征作为统一控制格式训练，使模型能在指定时空位置组合对象并生成动画。
+- [AnyV2V: A Tuning-Free Framework For Any Video-to-Video Editing Tasks](https://arxiv.org/abs/2403.14468)：先用任意图像编辑器修改首帧，再通过图生视频生成和 temporal feature injection 传播结果，实现免调参视频编辑。
+- [Videoshop: Localized Semantic Video Editing with Noise-Extrapolated Diffusion Inversion](https://arxiv.org/abs/2403.14617)：允许用户用外部图像工具编辑首帧，再通过 noise-extrapolated latent inversion 将语义、空间和时间一致的修改传播到后续帧。
+- [X-Portrait: Expressive Portrait Animation with Hierarchical Motion Attention](https://arxiv.org/abs/2403.15931)：用条件扩散渲染器、ControlNet 式姿态和表情控制以及 patch-based local control，从 driving RGB 视频驱动单张肖像动画。
+- [Edit3K: Universal Representation Learning for Video Editing Components](https://arxiv.org/abs/2403.16048)：构建包含 3,094 类编辑组件和 618,800 个视频的数据集，并学习不依赖原始素材外观的编辑组件表征，用于检索、识别和推荐。
+- [Make-Your-Anchor: A Diffusion-based 2D Avatar Generation Framework](https://arxiv.org/abs/2403.16510)：用一分钟人物视频微调 structure-guided diffusion model，将 3D mesh 条件渲染为人物外观，并用重叠式时间去噪扩展到长 anchor-style 视频。
+- [TRIP: Temporal Residual Learning with Image Noise Prior for Image-to-Video Diffusion Models](https://arxiv.org/abs/2403.17005)：用静态图像导出的 image noise prior 和 temporal residual learning，在图生视频扩散中同时保持图像保真和帧间动态一致性。
+- [AniPortrait: Audio-Driven Synthesis of Photorealistic Portrait Animation](https://arxiv.org/abs/2403.17694)：先从音频提取三维中间表征并投影为二维 landmarks，再用扩散模型和 motion module 生成写实且时序一致的说话肖像动画。
+- [TC4D: Trajectory-Conditioned Text-to-4D Generation](https://arxiv.org/abs/2403.17920)：将文本到 4D 的运动分解为样条参数化的全局 bounding-box 轨迹和局部形变，并用预训练文生视频先验监督动态三维场景。
+- [ConvoFusion: Multi-Modal Conversational Diffusion for Co-Speech Gesture Synthesis](https://arxiv.org/abs/2403.17936)：使用多模态对话扩散模型进行伴随语音的手势合成。
+- [Beyond Talking – Generating Holistic 3D Human Dyadic Motion for Communication](https://arxiv.org/abs/2403.19467)：分别为 speaker 和 listener 的整体动作训练 VQ-VAE，并用链式自回归 Transformer 同时生成协调的人际交流动作。
+- [Motion Inversion for Video Customization](https://arxiv.org/abs/2403.20193)：从参考视频学习时序一致的 motion embeddings，并将 query-key 与 value embeddings 注入 temporal transformer 以复用目标运动。
+- [ST-LLM: Large Language Models Are Effective Temporal Learners](https://arxiv.org/abs/2404.00308)：直接把空间和时间视频 token 输入 LLM，并通过动态 masking 和定制训练提升视频对话与理解能力。
+- [Towards Variable and Coordinated Holistic Co-Speech Motion Generation](https://arxiv.org/abs/2404.00368)：生成与语音协调的可变整体身体动作。
+- [Video Interpolation with Diffusion Models](https://arxiv.org/abs/2404.01203)：用级联扩散从起止帧联合生成插帧视频，再用受原始高清端点条件约束的超分模型恢复高分辨率结果。
+- [Direct Preference Optimization of Video Large Multimodal Models from Language Model Reward](https://arxiv.org/abs/2404.01258)：把详细视频字幕作为语言证据进行 reward scoring，并用 direct preference optimization 降低视频问答回答中的幻觉。
+- [Large Motion Model for Unified Multi-Modal Motion Generation](https://arxiv.org/abs/2404.01284)：通过 MotionVerse 统一不同模态、格式和任务的数据，把文本到动作、音乐到舞蹈等任务整合进 motion-centric 多模态通用模型。
+- [MotionChain: Conversational Motion Controllers via Multimodal Prompts](https://arxiv.org/abs/2404.01700)：将文本、图像和动作提示 token 化后输入 vision-motion-aware language model，实现长序列人体动作的多轮对话式控制。
+- [Co-Speech Gesture Video Generation via Motion-Decoupled Diffusion Model](https://arxiv.org/abs/2404.01862)：用 TPS 变换提取保留外观的 latent motion features，再用 Transformer diffusion 生成与音频时序对齐的共语手势视频。
+- [MiniGPT4-Video: Advancing Multimodal LLMs for Video Understanding with Interleaved Visual-Textual Tokens](https://arxiv.org/abs/2404.03413)：通过交错视觉-文本 token 推进视频多模态 LLM。
+- [SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer](https://arxiv.org/abs/2404.03736)：在 video-to-4D 中解耦稀疏运动控制和外观，并用 Adaptive Gaussian initialization 与 Gaussian Alignment loss 保持形状和运动保真。
+- [AnimateZoo: Zero-shot Video Generation of Cross-Species Animation via Subject Alignment](https://arxiv.org/abs/2404.04946)：通过 Laplacian detail booster、prompt-tuned identity extractor 和 shape alignment 对齐跨物种主体，实现零样本动物动画。
+- [MagicTime: Time-Lapse Video Generation Models as Metamorphic Simulators](https://arxiv.org/abs/2404.05014)：用 MagicAdapter、dynamic frame extraction 和时间流逝视频中的物理变化知识，把预训练文生视频模型转为 metamorphic time-lapse 生成器。
+- [Investigating the Effectiveness of Cross-Attention to Unlock Zero-Shot Editing of Text-to-Video Diffusion Models](https://arxiv.org/abs/2404.05519)：分析文生视频扩散中的 cross-attention，展示无需单样本微调也能零样本控制对象形状、位置和运动。
+- [LoopAnimate: Loopable Salient Object Animation](https://arxiv.org/abs/2404.09172)：解耦多层图像外观和文本语义，并向扩散模型注入像素级与特征级条件，生成首尾无缝衔接的对象动画。
+- [AniClipart: Clipart Animation with Text-to-Video Priors](https://arxiv.org/abs/2404.12347)：利用文本到视频先验生成剪贴画动画。
+- [TalkingGaussian: Structure-Persistent 3D Talking Head Synthesis via Gaussian Splatting](https://arxiv.org/abs/2404.15264)：把面部运动表示为持久 3D Gaussian primitives 的平滑形变，并加入 face-mouth deformation 和 Gaussian initialization 保持说话头部结构。
+- [ID-Animator: Zero-Shot Identity-Preserving Human Video Generation](https://arxiv.org/abs/2404.15275)：通过带 learnable facial latent queries 的 face adapter 和身份导向数据构造，让单张参考脸驱动零样本个性化人物视频生成。
+- [MotionMaster: Training-free Camera Motion Transfer For Video Generation](https://arxiv.org/abs/2404.15789)：从源视频中解耦相机运动和对象运动，并无需训练 temporal camera module 即可把相机轨迹迁移到新生成视频。
+- [Beyond Deepfake Images: Detecting AI-Generated Videos](https://arxiv.org/abs/2404.15955)：展示图像合成检测器在生成视频上失效，并学习视频特有痕迹，用于 H.264 重压缩和少样本迁移场景下的合成视频检测与生成器归因。
+- [Semantically consistent Video-to-Audio Generation using Multimodal Language Large Model](https://arxiv.org/abs/2404.16305)：用多模态语言模型推断关键帧视频语义，并生成自然语言音频方案，用于提示文本到音频模型生成音效与背景音乐。
+- [TI2V-Zero: Zero-Shot Image Conditioning for Text-to-Video Diffusion Models](https://arxiv.org/abs/2404.16306)：通过 repeat-and-slide denoising 策略，无需训练或额外模块即可把图像条件加入预训练文本到视频扩散模型。
+- [Tunnel Try-on: Excavating Spatial-temporal Tunnels for High-quality Virtual Try-on in Videos](https://arxiv.org/abs/2404.17571)：围绕服装区域构建 focus tunnels，用 Kalman filter 平滑裁剪，注入 tunnel position embeddings，并用环境编码器实现高细节视频虚拟试穿。
+- [Ock: Unsupervised Dynamic Video Prediction With Object-Centric Kinematics](https://arxiv.org/abs/2404.18423)：用对象 slots 分离时间静态外观与位置、速度、加速度等对象中心运动学来预测动态视频。
+- [FlexiFilm: Long Video Generation with Flexible Conditions](https://arxiv.org/abs/2404.18620)：为多模态控制加入时间条件器，并用重采样策略缓解过曝，使扩散模型能够生成超过 30 秒的连贯长视频。
+- [MeGA: Hybrid Mesh-Gaussian Head Avatar for High-Fidelity Rendering and Head Editing](https://arxiv.org/abs/2404.19026)：结合增强 FLAME mesh、UV displacement、deferred neural rendering、disentangled neural textures 和 Gaussians 建模头部组件，实现高保真 avatar 渲染与头部编辑。
+- [EMOPortraits: Emotion-Enhanced Multimodal One-Shot Head Avatars](https://arxiv.org/abs/2404.19110)：在 MegaPortraits 基础上通过架构和训练调整，更好编码强烈非对称表情并提升 one-shot 头部 avatar 的情绪迁移。
+- [MotionLCM: Real-time Controllable Motion Generation via Latent Consistency Model](https://arxiv.org/abs/2404.19759)：将 motion latent diffusion 蒸馏为一步或少步 latent consistency 生成，并加入 latent-space ControlNet supervision，实现可控实时动作生成。
+- [StoryDiffusion: Consistent Self-Attention for Long-Range Image and Video Generation](https://arxiv.org/abs/2405.01434)：向预训练图像扩散加入 consistent self-attention，并训练 semantic motion predictor，把一致图像序列转换为长程视频。
+- [Efficient Text-Driven Motion Generation via Latent Consistency Training](https://arxiv.org/abs/2405.02791)：结合运动 latent 一致性训练、量化运动自编码器和轨迹预计算，实现少步甚至单步的文本驱动人体运动生成。
+- [Matten: Video Generation with Mamba-Attention](https://arxiv.org/abs/2405.03025)：在 latent diffusion 视频生成器中混合用于局部视频内容的时空 attention 和用于全局内容建模的 bidirectional Mamba。
+- [AniTalker: Animate Vivid and Diverse Talking Faces through Identity-Decoupled Facial Motion Encoding](https://arxiv.org/abs/2405.03121)：通过自监督帧重建和 metric-learning 身份编码，学习身份解耦的通用面部运动表征，用于生动多样的说话脸动画。
+- [Vidu: a Highly Consistent, Dynamic and Skilled Text-to-Video Generator with Diffusion Models](https://arxiv.org/abs/2405.04233)：采用 U-ViT diffusion backbone 生成最高 16 秒、1080p 的连贯动态视频，并测试 canny-to-video、prediction 和 subject-driven controls。
+- [Edit-Your-Motion: Space-Time Diffusion Decoupling Learning for Video Motion Editing](https://arxiv.org/abs/2405.04496)：结合 DDIM 反演、轻量运动注意力适配器、循环因果注意力和两阶段时空学习，实现一次性微调的人体视频运动编辑。
+- [TALC: Time-Aligned Captions for Multi-Scene Text-to-Video Generation](https://arxiv.org/abs/2405.04682)：将分场景字幕与视频早期和后期视觉特征对齐，并在多场景视频文本数据上微调预训练 T2V 模型以保持场景连续性。
+- [OneTo3D: One Image to Re-editable Dynamic 3D Model and Video Generation](https://arxiv.org/abs/2405.06547)：把单张图像转换为可编辑的 Gaussian-splatting 动态三维表示，并用文本指令控制语义运动和长三维视频生成。
+- [LogoMotion: Visually Grounded Code Generation for Content-Aware Animation](https://arxiv.org/abs/2405.07065)：通过视觉接地代码生成、程序修复和可连接代码的编辑控件，生成面向 logo 的运动、分组和时序动画代码。
+- [ViViD: Video Virtual Try-on using Diffusion Models](https://arxiv.org/abs/2405.11794)：用 garment encoder 捕捉精细服装语义，结合 attention feature fusion 和轻量 pose encoder，在视频试穿中保持服装细节和时空一致性。
+- [DisenStudio: Customized Multi-Subject Text-to-Video Generation with Disentangled Spatial Control](https://arxiv.org/abs/2405.12796)：在预训练文生视频扩散中加入 spatial-disentangled cross-attention，使多个参考主体保持身份，并把动作绑定到正确主体。
+- [SIGGesture: Generalized Co-Speech Gesture Synthesis via Semantic Injection with Large-Scale Pre-Training Diffusion Models](https://arxiv.org/abs/2405.13336)：在大规模伪标注手势数据上预训练扩散基础模型，用 LLM 生成语义手势，并在反向扩散阶段注入语义信息。
+- [MotionCraft: Physics-based Zero-Shot Video Generation](https://arxiv.org/abs/2405.13557)：用物理仿真的光流扭曲图像扩散模型的噪声潜空间，在零样本设置下生成具有指定物理运动且能补全场景内容的视频。
+- [Video Diffusion Models are Training-free Motion Interpreter and Controller](https://arxiv.org/abs/2405.14864)：通过 PCA 定位视频扩散模型中的运动感知特征，去除内容相关通道得到 MOFT，并用于无需训练、跨架构的运动控制。
+- [PuzzleAvatar: Assembling 3D Avatars from Personal Albums](https://arxiv.org/abs/2405.14869)：从稀疏个人相册中组合面部、身体与服装组件，重建可驱动的个性化三维头像表示。
+- [Scaling Diffusion Mamba with Bidirectional SSMs for Efficient Image and Video Generation](https://arxiv.org/abs/2405.15881)：用双向状态空间 Mamba 层替代高开销注意力扩散模块，以更高效率扩展图像和视频生成。
+- [Disentangling Foreground and Background Motion for Enhanced Realism in Human Video Generation](https://arxiv.org/abs/2405.16393)：分别建模前景人体姿态运动与背景稀疏跟踪点运动，并用全局特征逐片段扩展生成以减少长视频漂移。
+- [I2VEdit: First-Frame-Guided Video Editing via Image-to-Video Diffusion Models](https://arxiv.org/abs/2405.16537)：把首帧作为结构和外观锚点，让图生视频扩散在传播编辑时维持跨帧一致性。
+- [Diffusion4D: Fast Spatial-temporal Consistent 4D Generation via Video Diffusion Models](https://arxiv.org/abs/2405.16645)：借助视频扩散先验快速生成时空一致的 4D 内容，避免逐帧重优化带来的高成本。
+- [360-degree Human Video Generation with 4D Diffusion Transformer](https://arxiv.org/abs/2405.17405)：用 4D diffusion transformer 生成 360 度人体视频，在视角和时间维度保持人物外观一致。
+- [RefDrop: Controllable Consistency in Image or Video Generation via Reference Feature Guidance](https://arxiv.org/abs/2405.17661)：在去噪过程中丢弃并复用参考特征，在图像和视频生成中调节身份或风格一致性与可控变化。
+- [ToonCrafter: Generative Cartoon Interpolation](https://arxiv.org/abs/2405.17933)：把预训练图生视频扩散适配到稀疏卡通草图，结合双参考条件和草图插值，把线稿关键帧补成时序连贯的卡通中间帧。
+- [VividPose: Advancing Stable Video Diffusion for Realistic Human Image Animation](https://arxiv.org/abs/2405.18156)：为人体图像动画适配 Stable Video Diffusion，通过姿态条件提升动作真实感和身份保持。
+- [VITON-DiT: Learning In-the-Wild Video Try-On from Human Dance Videos via Diffusion Transformers](https://arxiv.org/abs/2405.18326)：从真实舞蹈视频训练 diffusion transformer，把服装迁移到运动人物上并维持视频时序一致性。
+- [T2V-Turbo: Breaking the Quality Bottleneck of Video Consistency Model with Mixed Reward Feedback](https://arxiv.org/abs/2405.18750)：将文生视频扩散蒸馏为快速 consistency model，并用人工和自动奖励反馈恢复生成质量。
+- [EasyAnimate: High-Performance Video Generation Framework with Hybrid Windows Attention and Reward Backpropagation](https://arxiv.org/abs/2405.18991)：围绕 hybrid-window attention 与 reward backpropagation 构建高分辨率视频生成框架，用于高效质量调优。
+- [MotionDreamer: Zero-Shot 3D Mesh Animation from Video Diffusion Models](https://arxiv.org/abs/2405.20155)：从视频扩散模型中提取运动先验，使三维网格可由文本或参考视频零样本驱动动画。
+- [MOFA-Video: Controllable Image Animation via Generative Motion Field Adaptions in Frozen Image-to-Video Diffusion Model](https://arxiv.org/abs/2405.20222)：在冻结的图生视频扩散模型上加入 motion-field adapter，使稀疏轨迹能够控制图像动画而无需完整微调。
+- [CV-VAE: A Compatible Video VAE for Latent Generative Video Models](https://arxiv.org/abs/2405.20279)：设计兼容 latent video diffusion 的视频 VAE tokenizer，改进重建质量和时序压缩。
+- [4Diffusion: Multi-view Video Diffusion Model for 4D Generation](https://arxiv.org/abs/2405.20674)：围绕多视角视频扩散构建 4D 生成流程，结合时空多视角建模和多类扩散先验，减少单目视频到 4D 生成中的闪烁与跨视角不一致。
+- [Stratified Avatar Generation from Sparse Observations](https://arxiv.org/abs/2405.20786)：通过分层建模几何与外观，从稀疏观测构建可控人体头像渲染表示。
+- [Frieren: Efficient Video-to-Audio Generation Network with Rectified Flow Matching](https://arxiv.org/abs/2406.00320)：在声谱 latent 上使用 rectified flow matching 和非自回归向量场估计器，通过 ODE 采样提升 video-to-audio 的音质与视听同步。
+- [ZeroSmooth: Training-free Diffuser Adaptation for High Frame Rate Video Generation](https://arxiv.org/abs/2406.00908)：在推理期适配预训练 diffuser，实现无需额外训练的高帧率视频生成。
+- [UniAnimate: taming unified video diffusion models for consistent human image animation](https://arxiv.org/abs/2406.01188)：为人体图像动画驯化统一视频扩散模型，通过控制机制提升身份、姿态和时序一致性。
+- [MoLA: Motion Generation and Editing with Latent Diffusion Enhanced by Adversarial Training](https://arxiv.org/abs/2406.01867)：用对抗训练增强 latent diffusion 的动作生成与编辑，使人体动作更清晰且更符合运动规律。
+- [Follow-Your-Emoji: Fine-Controllable and Expressive Freestyle Portrait Animation](https://arxiv.org/abs/2406.01900)：以 emoji 风格表情信号驱动肖像动画，实现比语音条件更细粒度、更有表现力的面部运动控制。
+- [I4VGen: Image as Free Stepping Stone for Text-to-Video Generation](https://arxiv.org/abs/2406.02230)：把中间图像生成作为文生视频桥梁，先锚定外观再生成时序连贯的运动。
+- [CamCo: Camera-Controllable 3D-Consistent Image-to-Video Generation](https://arxiv.org/abs/2406.02509)：通过显式相机、物体运动或三维一致性控制改进可控视频生成。
+- [V-Express: Conditional Dropout for Progressive Training of Portrait Video Generation](https://arxiv.org/abs/2406.02511)：用 conditional dropout 与渐进式训练提升肖像视频生成在音频、姿态和参考图像条件下的鲁棒性。
+- [ViDiT-Q: Efficient and Accurate Quantization of Diffusion Transformers for Image and Video Generation](https://arxiv.org/abs/2406.02540)：量化图像和视频生成用 diffusion transformer，在保持去噪精度的同时降低推理成本。
+- [Enhancing Temporal Consistency in Video Editing by Reconstructing Videos with 3D Gaussian Splatting](https://arxiv.org/abs/2406.02541)：将编辑后视频重建为 3D Gaussian splats，使编辑结果在几何和时间维度保持一致。
+- [Towards Multiple Character Image Animation Through Enhancing Implicit Decoupling](https://arxiv.org/abs/2406.03035)：通过增强隐式解耦改进多角色图像动画，减少不同角色之间的运动和身份串扰。
+- [Searching Priors Makes Text-to-Video Synthesis Better](https://arxiv.org/abs/2406.03215)：在文生视频过程中搜索并注入有效先验，以提升提示一致性、运动质量和视觉质量。
+- [VideoTetris: Towards Compositional Text-to-Video Generation](https://arxiv.org/abs/2406.04277)：把提示分解为空间和时间组合布局，使文生视频扩散更可靠地生成多个交互概念。
+- [SF-V: Single Forward Video Generation Model](https://arxiv.org/abs/2406.04324)：以单次前向传播生成视频，面向无需迭代去噪的低延迟视频合成。
+- [ShareGPT4Video: Improving Video Understanding and Generation with Better Captions](https://arxiv.org/abs/2406.04325)：构建密集高质量视频描述，为视频理解和文生视频生成同时提供合成监督。
+- [Physics3D: Learning Physical Properties of 3D Gaussians via Video Diffusion](https://arxiv.org/abs/2406.04338)：从视频扩散先验中推断 3D Gaussians 的物理属性，使生成三维场景能呈现更合理的动态。
+- [Lifelong Learning of Video Diffusion Models From a Single Video Stream](https://arxiv.org/abs/2406.04814)：研究从单一路径视频流持续更新视频扩散模型，在无大规模重训语料下实现持续适配。
+- [Ada-VE: Training-Free Consistent Video Editing Using Adaptive Motion Prior](https://arxiv.org/abs/2406.04873)：在推理期使用自适应运动先验，无需调参即可提升文本引导视频编辑的时间一致性。
+- [Training-Free Video Editing via Optical Flow-Enhanced Score Distillation](https://arxiv.org/abs/2406.04888)：结合光流约束与 score distillation，在没有成对编辑数据和模型微调的情况下实现一致视频编辑。
+- [CoNo: Consistency Noise Injection for Tuning-free Long Video Diffusion](https://arxiv.org/abs/2406.05082)：在去噪窗口之间注入一致性噪声，使扩散模型无需重训即可扩展到更长视频。
+- [MotionClone: Training-Free Motion Cloning for Controllable Video Generation](https://arxiv.org/abs/2406.05338)：通过训练自由的注意力与轨迹引导复制参考视频运动，用于可控视频生成。
+- [Ctrl-V: Higher Fidelity Video Generation with Bounding-Box Controlled Object Motion](https://arxiv.org/abs/2406.05630)：用物体边界框约束视频生成，使用户能指定物体位置和运动并维持视觉质量。
+- [Vript: A Video Is Worth Thousands of Words](https://arxiv.org/abs/2406.06040)：提供细粒度视频描述，改进生成视频模型训练和评测所需的文本-视频对齐数据。
+- [FRAG: Frequency Adapting Group for Diffusion Video Editing](https://arxiv.org/abs/2406.06044)：在扩散编辑中采用频率自适应分组，在保留低频结构的同时允许高频视觉变化。
+- [GAIA: Rethinking Action Quality Assessment for AI-Generated Videos](https://arxiv.org/abs/2406.06087)：提出面向 AI 生成视频的动作质量评估模型，重点判断生成运动是否符合目标动作。
+- [Aid: Adapting Image2video Diffusion Models for Instruction-Guided Video Prediction](https://arxiv.org/abs/2406.06465)：将图生视频扩散模型适配为可遵循自然语言指令的视频预测和未来帧生成模型。
+- [Motion Consistency Model: Accelerating Video Diffusion with Disentangled Motion-Appearance Distillation](https://arxiv.org/abs/2406.06890)：通过解耦运动动态和外观保持，将视频扩散蒸馏为更快的 consistency model。
+- [4Real: Towards Photorealistic 4D Scene Generation via Video Diffusion Models](https://arxiv.org/abs/2406.07472)：利用视频扩散先验生成照片级 4D 场景，并保持外观、几何和时间演化一致。
+- [VideoLLaMA 2: Advancing Spatial-Temporal Modeling and Audio Understanding in Video-LLMs](https://arxiv.org/abs/2406.07476)：通过时空建模与音频理解推进 video LLM，是视频理解模型侧条目。
+- [Hierarchical Patch Diffusion Models for High-Resolution Video Generation](https://arxiv.org/abs/2406.07792)：通过分层 patch diffusion 生成高分辨率视频，把大尺寸帧拆解为可处理的局部去噪阶段。
+- [Vivid-ZOO: Multi-View Video Generation with Diffusion Model](https://arxiv.org/abs/2406.08659)：将扩散生成扩展到多视角视频，在同步视角之间保持物体外观一致。
+- [Hallo: Hierarchical Audio-Driven Visual Synthesis for Portrait Image Animation](https://arxiv.org/abs/2406.08801)：用层次化视觉生成流程从音频合成肖像动画，控制面部运动并提升时间平滑性。
+- [Training-free Camera Control for Video Generation](https://arxiv.org/abs/2406.10126)：在不重新训练基础生成器的情况下，为视频生成加入相机控制机制。
+- [Long Story Short: Story-level Video Understanding from 20K Short Films](https://arxiv.org/abs/2406.10221)：构建包含 20,143 部公开视频短片的 SF20K，并用其指令微调视频 VLM，以支持泄漏风险更低的长程故事级问答。
+- [ViD-GPT: Introducing GPT-style Autoregressive Generation in Video Diffusion Models](https://arxiv.org/abs/2406.10981)：在视频扩散中加入因果时间注意力、frame-as-prompt 条件和 key-value cache，使自回归长视频生成能复用此前生成的全部帧。
+- [Holistic-Motion2D: Scalable Whole-body Human Motion Generation in 2D Space](https://arxiv.org/abs/2406.11253)：构建百万级 2D 全身动作语料，配套姿态标注与文本描述，并训练 part-aware、confidence-aware 基线用于可扩展文本到动作生成。
+- [VIA: Unified Spatiotemporal Video Adaptation Framework for Global and Local Video Editing](https://arxiv.org/abs/2406.12831)：在测试时适配预训练图像编辑模型以增强局部 mask 控制，并加入全局视频上下文传播，使文本编辑在分钟级视频中保持一致。
+- [ExVideo: Extending Video Diffusion Models via Parameter-Efficient Post-Tuning](https://arxiv.org/abs/2406.14130)：用参数高效的时间扩展策略对现有短片段视频扩散模型做 post-tuning，以较低训练成本生成更长视频。
+- [Image Conductor: Precision Control for Interactive Video Synthesis](https://arxiv.org/abs/2406.15339)：用相机 LoRA 和物体 LoRA 分离相机与物体运动，加入无相机引导，并基于轨迹整理数据训练单图视频的精细控制。
+- [Identifying and Solving Conditional Image Leakage in Image-to-Video Diffusion Model](https://arxiv.org/abs/2406.15735)：指出图生视频扩散在大时间步过度依赖条件图像，并用解析初始化和随时间变化的条件图像噪声缓解低运动输出。
+- [Video-Infinity: Distributed Long Video Generation](https://arxiv.org/abs/2406.16260)：把长视频扩散推理拆分到多张 GPU，并在设备间交换时间与上下文信息，使短序列生成器无需重训即可扩展到长视频。
+- [FreeTraj: Tuning-Free Trajectory Control in Video Diffusion Models](https://arxiv.org/abs/2406.16863)：通过修改初始噪声采样和注意力计算，在无需训练的情况下控制生成对象轨迹，并可扩展到相机运动控制。
+- [Text-Animator: Controllable Visual Text Video Generation](https://arxiv.org/abs/2406.17777)：加入文本嵌入注入和视觉文字控制模块，使文生视频模型在保持运动连贯的同时稳定渲染字形。
+- [MimicMotion: High-Quality Human Motion Video Generation with Confidence-aware Pose Guidance](https://arxiv.org/abs/2406.19680)：结合 confidence-aware pose guidance、区域损失放大和长视频拼接，生成可跟随动作参考的任意长度人物视频。
+- [SVG: 3D Stereoscopic Video Generation via Denoising Frame Matrix](https://arxiv.org/abs/2407.00367)：通过深度估计把单目生成视频 warp 到双目视角，并用 frame-matrix inpainting 与遮挡边界重注入生成三维立体视频。
+- [Hierarchical Memory for Long Video QA](https://arxiv.org/abs/2407.00603)：采用 Flash-VStream 的 STAR Memory 压缩长视频视觉 token，并结合 MovieChat-1K 的视频和音频数据微调 LOVEU 长视频问答模型。
+- [DiffIR2VR-Zero: Zero-Shot Video Restoration with Diffusion-based Image Restoration Models](https://arxiv.org/abs/2407.01519)：通过层次化 latent warping 与光流或特征匹配的 hybrid token merging，复用预训练图像修复扩散模型做零样本视频修复。
+- [Boosting Consistency in Story Visualization with Rich-Contextual Conditional Diffusion Models](https://arxiv.org/abs/2407.02482)：用 frame-prior transformer diffusion 和来自已知片段与字幕的丰富上下文条件，提升故事可视化的语义和时间一致性。
+- [LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control](https://arxiv.org/abs/2407.03168)：扩展 implicit-keypoint 肖像动画框架，结合图像-视频混合训练、stitching 和 retargeting 控制，高效迁移视频驱动的头部运动。
+- [VCoME: Verbal Video Composition with Multimodal Editing Effects](https://arxiv.org/abs/2407.04697)：提出口播或字幕视频的多模态特效合成任务，构建特效组合数据集，并用多模态模型选择文本、视觉和音频特效。
+- [LaSe-E2V: Towards Language-guided Semantic-Aware Event-to-Video Reconstruction](https://arxiv.org/abs/2407.05547)：将语言引导的文本条件扩散、事件引导时空注意力、事件感知 mask 损失和噪声初始化用于事件到视频重建。
+- [Compositional Video Generation as Flow Equalization](https://arxiv.org/abs/2407.06182)：提出 Vico，通过构建提示 token 的时空注意力图并均衡 token 影响，避免多概念视频提示被单个词主导。
+- [VIMI: Grounding Video Generation through Multi-modal Instruction](https://arxiv.org/abs/2407.06304)：用检索到的 in-context examples 构造多模态提示-视频数据，并经预训练和微调让同一模型支持文本、图像和混合指令的 grounded video generation。
+- [Video-to-Audio Generation with Hidden Alignment](https://arxiv.org/abs/2407.07464)：建模隐式对齐关系，实现由视频生成音频。
+- [VEnhancer: Generative Space-Time Enhancement for Video Generation](https://arxiv.org/abs/2407.07667)：基于时空数据增强训练 video ControlNet，使低分辨率、低帧率生成视频可同时做空间和时间上采样并减少闪烁。
+- [Still-Moving: Customized Video Generation without Customized Video Data](https://arxiv.org/abs/2407.08674)：把定制文生图权重迁移到 inflated 文生视频模型，通过适配机制在无定制视频数据下保留主体或风格个性化。
+- [Live2Diff: Live Stream Translation via Uni-directional Attention in Video Diffusion Models](https://arxiv.org/abs/2407.08701)：用单向时间注意力替代双向注意力，使视频扩散模型能只依赖当前和历史帧进行实时视频流翻译。
+- [Video Diffusion Alignment via Reward Gradients](https://arxiv.org/abs/2407.08737)：把偏好训练视觉 reward model 的像素空间稠密梯度反传到视频扩散模型，以更少监督目标视频完成对齐。
+- [Learning Online Scale Transformation for Talking Head Video Generation](https://arxiv.org/abs/2407.09965)：从源图和驱动帧关键点学习尺度变换模块，使 one-shot 人脸 reenactment 在生成中自动调整脸部尺度不匹配。
+- [Noise Calibration: Plug-and-play Content-Preserving Video Enhancement using Pre-trained Video Diffusion Models](https://arxiv.org/abs/2407.10285)：在结构保持损失下优化去噪噪声，使预训练视频扩散模型无需重训练专家模型即可增强视频质量。
+- [Masked Generative Video-to-Audio Transformers with Enhanced Synchronicity](https://arxiv.org/abs/2407.10387)：把全频段音频 codec 与序列到序列 masked generative transformer 结合，使 video-to-audio 同时保持语义匹配、音质和动作-声音同步。
+- [Animate3D: Animating Any 3D Model with Multi-view Video Diffusion](https://arxiv.org/abs/2407.11398)：在渲染三维动画数据上训练多视角视频扩散先验，并结合重建与 4D score distillation 为静态三维资产生成动画。
+- [MERLIN: Multimodal Embedding Refinement via LLM-based Iterative Navigation for Text-Video Retrieval-Rerank Pipeline](https://arxiv.org/abs/2407.12508)：用无需训练的 LLM 问答反馈循环迭代修正查询嵌入，在 MSR-VTT、MSVD 和 ActivityNet 上改进文本到视频检索与重排。
+- [Towards Understanding Unsafe Video Generation](https://arxiv.org/abs/2407.12581)：分析开源视频生成模型的不安全输出，并把筛选后的 2,112 个生成片段聚类为暴力、恐怖、色情、政治和扭曲异常等类别。
+- [4Dynamic: Text-to-4D Generation with Hybrid Priors](https://arxiv.org/abs/2407.12684)：把文生视频先验与静态和动态两阶段 4D 生成结合，为 score distillation 提供直接运动监督，提升文本到 4D 场景真实感。
+- [VD3D: Taming Large Video Diffusion Transformers for 3D Camera Control](https://arxiv.org/abs/2407.12781)：为 transformer 视频扩散模型加入 ControlNet 式 Plucker 坐标相机条件，实现细粒度三维相机运动控制。
+- [RealViformer: Investigating Attention for Real-World Video Super-Resolution](https://arxiv.org/abs/2407.13987)：发现 real-world VSR 中 channel attention 比空间协方差注意力更抗伪影，并据此构建带协方差重缩放的视频超分模型。
+- [Unlearning Concepts from Text-to-Video Diffusion Models](https://arxiv.org/abs/2407.14209)：研究文本到视频扩散模型的概念遗忘，为生成视频内容提供模型侧控制机制。
+- [M2D2M: Multi-Motion Generation from Text with Discrete Diffusion Models](https://arxiv.org/abs/2407.14502)：在离散扩散中使用动态转移概率和两阶段去噪，生成包含多个动作且转场连贯的文本条件人体动作序列。
+- [Anchored Diffusion for Video Face Reenactment](https://arxiv.org/abs/2407.15153)：用时间引导和非均匀时间间隔训练扩展 diffusion transformer，合成片段衔接更平滑的较长人脸 reenactment 视频。
+- [Cinemo: Consistent and Controllable Image Animation with Motion Diffusion Models](https://arxiv.org/abs/2407.15642)：预测 motion residuals 并加入结构相似性引导，使图像动画在遵循文本运动的同时保留源图细节。
+- [MovieDreamer: Hierarchical Generation for Coherent Long Visual Sequence](https://arxiv.org/abs/2407.16655)：把长视频创作分解为自回归视觉 token 规划以保持叙事连贯，再用扩散渲染生成高保真帧。
+- [HumanVid: Demystifying Training Data for Camera-controllable Human Image Animation](https://arxiv.org/abs/2407.17438)：发布真实与合成混合的人体动画数据集，并研究可控相机的人物图像动画，而不只控制二维人体动作。
+- [LinguaLinker: Audio-Driven Portraits Animation with Implicit Facial Control Enhancement](https://arxiv.org/abs/2407.18595)：把多语言音频特征分解为控制嘴、眼和头部运动的隐式 gates，并嵌入扩散式肖像动画管线。
+- [Faster Image2Video Generation: A Closer Look at CLIP Image Embedding’s Impact on Spatio-Temporal Cross-Attentions](https://arxiv.org/abs/2407.19205)：指出 Stable Video Diffusion 中 CLIP 图像嵌入主要影响审美质量，并缓存轻量替代层以加速图生视频 cross-attention 推理。
+- [FreeLong: Training-Free Long Video Generation with SpectralBlend Temporal Attention](https://arxiv.org/abs/2407.19918)：用 SpectralBlend temporal attention 在无需训练的情况下扩展短视频扩散模型，缓解长视频中的高频失真和质量退化。
+- [MotionCraft: Crafting Whole-Body Motion with Plug-and-Play Multimodal Controls](https://arxiv.org/abs/2407.21136)：用 coarse-to-fine 训练和统一动作格式训练 diffusion transformer，使文本、语音或音乐控制可插入全身动作生成。
+- [Tora: Trajectory-oriented Diffusion Transformer for Video Generation](https://arxiv.org/abs/2407.21705)：把用户轨迹编码为层次化时空 motion patches，并与文本和视觉条件一起融合进 diffusion transformer。
+- [Reenact Anything: Semantic Video Motion Transfer Using Motion-Textual Inversion](https://arxiv.org/abs/2408.00458)：把参考视频运动表示为可学习的文本或图像嵌入 token，使图生视频模型在保留目标外观和布局的同时迁移动作。
+- [MDT-A2G: Exploring Masked Diffusion Transformers for Co-Speech Gesture Generation](https://arxiv.org/abs/2408.03312)：将 masked diffusion transformer 直接用于手势序列，并用 mask modeling 强化语音驱动共语手势中的时间关系学习。
+- [Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics](https://arxiv.org/abs/2408.04631)：在 Objaverse-Animation-HQ 上用拖拽点条件和 all-to-first attention 微调图生视频生成器，以建模对象部件级动态。
+- [mPLUG-Owl3: Towards Long Image-Sequence Understanding in Multi-Modal Large Language Models](https://arxiv.org/abs/2408.04840)：加入 hyper-attention blocks，把视觉和语言整合到语言引导的共享语义空间，用于长图像序列、交错图文输入和长视频理解。
+- [High-Fidelity and Lip-Synced Talking Face Synthesis via Landmark-Based Diffusion Model](https://arxiv.org/abs/2408.05416)：在扩散式 talking-face 模型中用面部 landmarks 作为中间结构，降低音频到视觉映射歧义并保持唇形同步和外观细节。
+- [HeadGAP: Few-Shot 3D Head Avatar via Generalizable Gaussian Priors](https://arxiv.org/abs/2408.06019)：从大规模多视角动态数据中学习 Gaussian splatting 头部先验，再用少量野外输入快速个性化可动画化三维头部 avatar。
+- [ControlNeXt: Powerful and Efficient Control for Image and Video Generation](https://arxiv.org/abs/2408.06070)：用轻量控制架构替代笨重的 ControlNet 式分支，适用于图像和视频扩散，并保持与 LoRA 风格权重兼容。
 - [CogVideoX](https://arxiv.org/abs/2408.06072)：采用 expert transformer 的开放文生视频扩散模型，扩展基于 Transformer 的视频去噪与训练以提升生成质量。
+- [FancyVideo: Towards Dynamic and Consistent Video Generation via Cross-frame Textual Guidance](https://arxiv.org/abs/2408.08189)：加入 cross-frame textual guidance module，通过时间信息注入和 affinity refinement 让文本控制具有帧级差异，从而生成动态且一致的视频。
+- [LongVILA: Scaling Long-Context Visual Language Models for Long Videos](https://arxiv.org/abs/2408.10188)：通过长上下文扩展、长视频监督微调和多模态 sequence parallelism，把 VILA 扩展到数千帧和 2M token 级上下文。
+- [TrackGo: A Flexible and Efficient Method for Controllable Video Generation](https://arxiv.org/abs/2408.11475)：用自由形状 mask 和箭头控制对象部件、轨迹和背景运动，并通过轻量 TrackAdapter 注入视频生成模型的时间自注意力层。
+- [Real-Time Video Generation with Pyramid Attention Broadcast](https://arxiv.org/abs/2408.12588)：根据去噪中注意力差异的冗余模式，以 pyramid schedule 复用注意力输出，并结合分布式 sequence parallelism 实现免训练实时视频生成加速。
+- [xGen-VideoSyn-1: High-fidelity Text-to-Video Synthesis with Compressed Representations](https://arxiv.org/abs/2408.12590)：结合时空 VidVAE 压缩、长序列分治合并策略，以及带空间和时间注意力的 DiT，并在 1300 万视频文本对上训练。
+- [EasyControl: Transfer ControlNet to Video Diffusion for Controllable Generation and Interpolation](https://arxiv.org/abs/2408.13005)：通过 condition adapters 把 ControlNet 式条件特征迁移到视频扩散，使单张条件图即可控制生成和插值而无需重建每个控制分支。
+- [CustomCrafter: Customized Video Generation with Preserving Motion and Concept Composition Abilities](https://arxiv.org/abs/2408.13239)：用即插即用的少量参数更新模块，在主体定制时保留视频扩散模型的运动生成和概念组合能力，无需额外引导视频或恢复微调。
+- [TVG: A Training-Free Transition Video Generation Method With Diffusion Models](https://arxiv.org/abs/2408.13413)：用高斯过程回归拟合潜变量过渡轨迹，并结合插值式条件控制和频率感知双向融合，无需训练即可生成转场视频。
+- [Training-free Long Video Generation with Chain of Diffusion Model Experts](https://arxiv.org/abs/2408.13423)：串联现成扩散专家分别负责结构控制和时空细化，通过协同去噪与长视频约束生成最长约 600 帧的连贯视频。
+- [MegActor-Σ: Unlocking Flexible Mixed-Modal Control in Portrait Animation with Diffusion Transformer](https://arxiv.org/abs/2408.14975)：使用混合模态条件 diffusion transformer 和 modality-decoupling control 训练，在肖像动画中平衡音频弱控制与视觉强控制。
+- [Generative Inbetweening: Adapting Image-to-Video Models for Keyframe Interpolation](https://arxiv.org/abs/2408.15239)：通过轻量微调得到反向时间图生视频模型，并在采样时融合正向和反向估计，实现两个关键帧之间的视频插帧。
+- [GenRec: Unifying Video Generation and Recognition with Diffusion Models](https://arxiv.org/abs/2408.15241)：在 Stable Video Diffusion 上加入随机帧条件训练，使同一个扩散框架同时支持鲁棒视频识别和类别条件生成。
+- [Kangaroo: A Powerful Video-Language Model Supporting Long-context Video Input](https://arxiv.org/abs/2408.15542)：构建高质量视频语言数据，并用分辨率和输入帧数逐步增加的 curriculum training 训练 8B 长上下文视频 LMM。
+- [ReconX: Reconstruct Any Scene From Sparse Views With Video Diffusion Model](https://arxiv.org/abs/2408.16767)：把稀疏视角三维重建转化为视频生成任务，用全局点云条件化视频扩散模型，再从生成视角中优化置信度感知的三维高斯表示。
+- [Compositional 3D-aware Video Generation with LLM Director](https://arxiv.org/abs/2409.00558)：用 LLM 导演将提示拆成 3D 概念，调用专家模型生成表示，再用多模态 LLM 轨迹指导和 2D 扩散 SDS 细化合成帧。
+- [OD-VAE: An Omni-dimensional Video Compressor for Improving Latent Video Diffusion Model](https://arxiv.org/abs/2409.01199)：用 OD-VAE 同时进行空间与时间压缩，并提供多个压缩变体、tail initialization 和任意长度推理以提升潜视频扩散效率。
+- [AMG: Avatar Motion Guided Video Generation](https://arxiv.org/abs/2409.01502)：用可控三维 avatar 渲染结果条件化视频扩散，使多人物人体视频生成能显式控制相机位置、身体动作和背景风格。
+- [DiVE: DiT-based Video Generation with Enhanced Control](https://arxiv.org/abs/2409.01595)：构建带增强条件控制的 DiT 视频生成器，把 transformer 主干作为可控合成模型，而不是泛泛的扩散占位条目。
+- [CyberHost: Taming Audio-driven Avatar Diffusion Model with Region Codebook Attention](https://arxiv.org/abs/2409.01876)：使用 Region Codebook Attention，并结合身体运动图、手部清晰度和局部增强等人体先验监督，实现零样本音频驱动全身动画。
+- [ViewCrafter: Taming Video Diffusion Models for High-fidelity Novel View Synthesis](https://arxiv.org/abs/2409.02048)：利用视频扩散模型从稀疏视觉输入生成高保真新视角视频。
+- [Solving Video Inverse Problems Using Image Diffusion Models](https://arxiv.org/abs/2409.02574)：把视频时间维视作图像扩散的 batch 维，并加入 batch 一致采样，使图像扩散模型可求解时空视频逆问题。
+- [Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency](https://arxiv.org/abs/2409.02634)：加入片段内和片段间时序模块以及音频到 latent 映射，使纯音频肖像扩散学习长期运动模式而不依赖空间运动模板。
+- [Human-VDM: Learning Single-Image 3D Human Gaussian Splatting from Video Diffusion Models](https://arxiv.org/abs/2409.02851)：先用视频扩散模块从单张人体图像合成视角一致视频，再经超分和插帧增强后拟合三维高斯人体表示。
+- [LongLLaVA: Scaling Multi-modal LLMs to 1000 Images Efficiently via a Hybrid Architecture](https://arxiv.org/abs/2409.02889)：结合 Mamba 与 Transformer 模块并采用渐进式训练，高效处理超长图像序列，支撑视频理解和密集视觉上下文输入。
+- [SVP: Style-Enhanced Vivid Portrait Talking Head Diffusion Model](https://arxiv.org/abs/2409.03270)：从表情和音频学习概率式内在风格先验，并通过 cross-attention 注入 Stable Diffusion，实现可控的生动说话人头部生成。
+- [Phy124: Fast Physics-Driven 4D Content Generation from a Single Image](https://arxiv.org/abs/2409.07179)：把物理仿真直接整合进单图 4D 生成，通过外力控制动态，并在 4D 运动生成阶段避免扩散采样以提升速度。
+- [Hi3D: Pursuing High-Resolution Image-to-3D Generation with Video Diffusion Models](https://arxiv.org/abs/2409.07452)：把单图三维生成转化为环绕视频生成，在三维高斯重建前加入相机姿态条件和三维感知 video-to-video refinement。
+- [DrawingSpinUp: 3D Animation from Single Character Drawings](https://arxiv.org/abs/2409.08615)：通过去除和恢复视角相关轮廓线、细化单线条结构，把普通角色手绘图转成可信三维动画。
+- [MFCLIP: Multi-Modal Fine-Grained CLIP for Generalizable Diffusion Face Forgery Detection](https://arxiv.org/abs/2409.09724)：用细粒度文本提示、图像噪声视觉痕迹和样本对注意力扩展 CLIP，以跨生成器和数据集检测扩散人脸伪造。
+- [OSV: One Step is Enough for High-Quality Image to Video Generation](https://arxiv.org/abs/2409.11367)：结合一致性蒸馏、GAN 训练和 latent 空间视频判别器，使图生视频扩散模型能一步生成高质量视频。
+- [GaussianHeads: End-to-End Learning of Drivable Gaussian Head Avatars from Coarse-to-fine Representations](https://arxiv.org/abs/2409.11951)：通过变形粗粒度人脸几何、在表面初始化三维高斯并进一步细化，端到端学习可驱动的实时新视角头部 avatar。
+- [DNI: Dilutional Noise Initialization for Diffusion Video Editing](https://arxiv.org/abs/2409.13037)：在初始 latent 噪声中加入区域特定的稀释噪声，使扩散视频编辑能处理非刚性运动和结构变化，而不只是刚性叠加。
+- [Temporally Aligned Audio for Video with Autoregression](https://arxiv.org/abs/2409.13689)：提出 V-AURA，自回归 video-to-audio 模型结合高帧率视觉特征与跨模态融合，并用 VisualSound 评估相关性和时间对齐。
+- [Dormant: Defending against Pose-driven Human Image Animation](https://arxiv.org/abs/2409.14424)：在单张人体图像上优化防护扰动，使下游姿态驱动动画模型错误提取外观特征并产生帧间不一致。
+- [Fake It till You Make It: Curricular Dynamic Forgery Augmentations towards General Deepfake Detection](https://arxiv.org/abs/2409.14444)：通过课程式动态伪造增强，让检测器逐步接触更困难的合成篡改，提升通用 deepfake 检测能力。
+- [Video-to-Audio Generation with Fine-grained Temporal Semantics](https://arxiv.org/abs/2409.14709)：用 Grounding SAM 提取帧级细粒度语义，并将其作为潜音频扩散条件，提高生成音频与视觉事件的时间对齐。
+- [LoVA: Long-form Video-to-Audio Generation](https://arxiv.org/abs/2409.15157)：用 Diffusion Transformer 进行长视频到音频生成，针对 UNet 式 V2A 系统在长输入拼接时的一致性问题。
+- [MIMAFace: Face Animation via Motion-Identity Modulated Appearance Feature Learning](https://arxiv.org/abs/2409.15179)：用运动和身份信号调制 CLIP 外观特征，并加入跨片段亲和学习，以公共数据实现时序一致的人脸动画。
+- [StarVid: Enhancing Semantic Alignment in Video Diffusion Models via Spatial and SynTactic Guided Attention Refocusing](https://arxiv.org/abs/2409.15259)：用 LLM 规划运动轨迹，结合空间感知交叉注意力损失和动词名词语法对比约束，让 T2V 扩散更好绑定主体与动作。
+- [Stable Video Portraits](https://arxiv.org/abs/2409.18083)：对 Stable Diffusion 做人物专属微调，再用时间 3DMM 条件和时间去噪将其提升为可编辑的说话人视频头像模型。
+- [PhysGen: Rigid-Body Physics-Grounded Image-to-Video Generation](https://arxiv.org/abs/2409.18964)：结合图像理解、图像空间刚体物理仿真和扩散渲染，使用户可用力和力矩控制图生视频运动。
+- [FreeMask: Rethinking the Importance of Attention Masks for Zero-Shot Video Editing](https://arxiv.org/abs/2409.20500)：用 Mask Matching Cost 选择适配去噪时刻的交叉注意力 mask，并改进时序、交叉和自注意力的 mask 融合以实现零样本视频编辑。
+- [ImmersePro: End-to-End Stereo Video Synthesis Via Implicit Disparity Learning](https://arxiv.org/abs/2410.00262)：用隐式视差学习进行端到端立体视频合成。
+- [MM-LDM: Multi-Modal Latent Diffusion Model for Sounding Video Generation](https://arxiv.org/abs/2410.01594)：把音频和视频统一为类图像表示，并结合模态专属感知 latent 与共享语义空间，实现联合 sounding video generation。
+- [Loong: Generating Minute-level Long Videos with Autoregressive Language Models](https://arxiv.org/abs/2410.02757)：把文本和视频 token 建模为同一自回归序列，并用由短到长的渐进训练与推理重编码扩展到分钟级视频生成。
+- [Redefining Temporal Modeling in Video Diffusion: The Vectorized Timestep Approach](https://arxiv.org/abs/2410.03160)：用逐帧 vectorized timestep 替代整段视频的标量 timestep，让视频扩散能为插帧、图生视频和长视频合成分配独立噪声计划。
+- [VideoGuide: Improving Video Diffusion Models without Training Through a Teacher’s Guide](https://arxiv.org/abs/2410.04364)：在推理早期把引导视频扩散模型的去噪样本插入采样模型的去噪过程，无需训练即可提升预训练文生视频扩散的时间一致性。
+- [L-C4: Language-Based Video Colorization for Creative and Consistent Color](https://arxiv.org/abs/2410.04972)：结合语言引导的实例感知文本嵌入、时序可变形注意力和跨片段融合，实现语义可控且时序一致的视频上色。
+- [Beyond FVD: Enhanced Evaluation Metrics for Video Generation Quality](https://arxiv.org/abs/2410.05203)：分析 FVD 的高斯假设、时序敏感性和样本规模缺陷，并用 JEPA embedding 与 MMD 提出更贴近人类判断的 JEDi 指标。
+- [The Dawn of Video Generation: Preliminary Explorations with SORA-like Models](https://arxiv.org/abs/2410.05227)：从架构、数据、训练和评测缺口分析 SORA-like 视频生成器，强调从 U-Net 到 DiT 的迁移以及现有指标对长视频和可控性的不足。
+- [ViBiDSampler: Enhancing Video Interpolation Using Bidirectional Diffusion Sampler](https://arxiv.org/abs/2410.05651)：沿正向和反向图生视频路径顺序采样，并结合起止帧、CFG++ 与 DDS guidance，实现由关键帧约束的视频插帧。
+- [T2V-Turbo-v2: Enhancing Video Generation Model Post-Training through Data, Reward, and Conditional Guidance Design](https://arxiv.org/abs/2410.05677)：用高质量数据、多种 reward model 和条件 guidance 能量设计蒸馏一致性文生视频模型，并把运动 guidance 注入 teacher ODE solver。
+- [Pyramidal Flow Matching for Efficient Video Generative Modeling](https://arxiv.org/abs/2410.05954)：把去噪解释为相互衔接的金字塔阶段，并端到端训练单个 DiT，在降低全分辨率开销的同时支持自回归时序金字塔。
+- [ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way](https://arxiv.org/abs/2410.06241)：用免训练的 temporal self-guidance 和 Fourier-based motion enhancement 减少时间注意力差异并增强运动幅度，不增加参数或采样成本。
+- [MimicTalk: Mimicking a personalized and expressive 3D talking face in minutes](https://arxiv.org/abs/2410.06734)：用静态-动态混合调优和 in-context 风格化音频到动作映射适配通用 3D talking-face 模型，把个性化训练压缩到数分钟。
+- [DreamMesh4D: Video-to-4D Generation with Sparse-Controlled Gaussian-Mesh Hybrid Representation](https://arxiv.org/abs/2410.06756)：把高斯绑定到 mesh 面片，并用稀疏变形图和几何蒙皮驱动，从单目视频提升 4D 对象一致性。
+- [TextToon: Real-Time Text Toonify Head Avatar from Single Video](https://arxiv.org/abs/2410.07160)：在高斯形变场中学习条件嵌入 triplane，并加入自适应像素平移，实现实时文本风格化可驱动头部 avatar。
+- [AvatarGO: Zero-shot 4D Human-Object Interaction Generation and Animation](https://arxiv.org/abs/2410.07164)：用 LLM 引导的接触重定向和对应关系感知运动优化，直接从文本合成可动画化的 4D 人物-物体交互场景。
+- [Language-Guided Joint Audio-Visual Editing via One-Shot Adaptation](https://arxiv.org/abs/2410.07463)：一次性适配成对的音频和视觉扩散模型，并加入跨模态语义增强，缓解音视频编辑中的语言或视觉忽视问题。
+- [Hallo2: Long-Duration and High-Resolution Audio-Driven Portrait Image Animation](https://arxiv.org/abs/2410.07718)：用 noisy patch-drop augmentation、latent vector quantization、时序对齐和表情文本标签，把音频驱动肖像扩散扩展到长时长 4K 视频。
+- [Progressive Autoregressive Video Diffusion Models](https://arxiv.org/abs/2410.08151)：为各帧分配逐步升高的噪声水平，并在小型移位区间中去噪，以自回归生成质量漂移更小的 60 秒视频。
+- [DINTR: Tracking via Diffusion-based Interpolation](https://arxiv.org/abs/2410.10053)：将目标跟踪重写为扩散式插值，用可解释的条件插值过程替代高斯噪声映射来建模视频帧间对应关系。
+- [VideoAgent: Self-Improving Video Generation](https://arxiv.org/abs/2410.10076)：通过 self-conditioning consistency 和环境反馈改进生成的机器人视频计划，在下游控制提取前减少物理幻觉。
+- [Animate-X: Universal Character Image Animation with Enhanced Motion Representation](https://arxiv.org/abs/2410.10306)：加入结合 CLIP 运动概念和显式模拟姿态输入的 Pose Indicator，使 LDM 可动画化人类和拟人角色。
+- [DragEntity:Trajectory Guided Video Generation using Entity and Positional Relationships](https://arxiv.org/abs/2410.10751)：用实体表征和位置关系控制多对象轨迹拖拽，在生成视频中保持对象间相对空间结构。
+- [Cavia: Camera-controllable Multi-view Video Diffusion with View-Integrated Attention](https://arxiv.org/abs/2410.10774)：用 view-integrated attention 替代空间和时序注意力，使单张输入图像可生成多个相机可控且时空一致的视频。
+- [MaskControl: Spatio-Temporal Control for Masked Motion Synthesis](https://arxiv.org/abs/2410.10780)：为 masked motion model 加入 logits 正则、推理时 logit 优化和可微期望采样，实现任意关节与任意帧控制。
+- [Boosting Camera Motion Control for Video Diffusion Transformers](https://arxiv.org/abs/2410.10802)：指出 DiT 中相机控制退化主要来自条件设计，并加入 Camera Motion Guidance 与稀疏姿态指定来控制长视频相机运动。
+- [High-Resolution Frame Interpolation with Patch-based Cascaded Diffusion](https://arxiv.org/abs/2410.11838)：提出 HiFI，一种基于 patch 的级联像素扩散模型，通过固定分辨率 patch 上采样进行高分辨率视频插帧。
+- [The State of Robot Motion Generation](https://arxiv.org/abs/2410.12172)：综述机器人运动生成中的显式模型方法和学习式隐式方法，更像相邻运动生成参考而非核心视频生成模型。
+- [Shaping a Stabilized Video by Mitigating Unintended Changes for Concept-Augmented Video Editing](https://arxiv.org/abs/2410.12526)：通过抑制概念增强编辑中的背景、身份等非目标变化来稳定视频，使新增概念不易引发逐帧漂移。
+- [AVID: Adapting Video Diffusion Models to World Models](https://arxiv.org/abs/2410.12822)：在小规模动作标注数据上训练 learned-mask adapter，把冻结的预训练视频扩散模型转化为动作条件世界模型。
 - [Movie Gen](https://arxiv.org/abs/2410.13720)：媒体基础模型族，覆盖文生视频、个性化视频、精确编辑和音频生成。
-- [HunyuanVideo](https://arxiv.org/abs/2412.03603)：开放大型视频基础模型，结合数据清洗、架构设计、渐进式扩展和大规模训练基础设施。
-- [Autoregressive Video Generation without Vector Quantization](https://arxiv.org/abs/2412.14169)：提出无需向量量化的自回归视频生成方法。
+- [DAWN: Dynamic Frame Avatar with Non-autoregressive Diffusion Framework for Talking Head Video Generation](https://arxiv.org/abs/2410.13726)：用非自回归扩散框架一次性生成动态长度 talking-head avatar 帧，减少自回归口型生成中的误差累积和推理延迟。
+- [DreamVideo-2: Zero-Shot Subject-Driven Video Customization with Precise Motion Control](https://arxiv.org/abs/2410.13830)：用主体绑定目标和运动控制适配器平衡主体保持与框序列运动控制，实现零样本主体定制视频生成。
+- [VidPanos: Generative Panoramic Videos from Casual Panning Videos](https://arxiv.org/abs/2410.13832)：从随手拍摄的平移视频估计相机轨迹，并生成时序一致的广视场内容，把普通 panning clips 转为生成式全景视频。
+- [Addressing Blind Guessing: Calibration of Selection Bias in Multiple-Choice Question Answering by Video Language Models](https://arxiv.org/abs/2410.14248)：诊断视频语言模型在多选问答中的答案位置选择偏差，并用 BOLD 后处理校准，属于相邻的视频模型评测与去偏条目而非生成器。
+- [FrameBridge: Improving Image-to-Video Generation with Bridge Models](https://arxiv.org/abs/2410.15371)：在 text-to-image 与 image-to-video 扩散之间插入 bridge model，让生成起始帧更好保留运动线索并提升后续时序一致性。
+- [Allegro: Open the Black Box of Commercial-Level Video Generation Model](https://arxiv.org/abs/2410.15458)：发布开放视频生成模型报告，披露 Allegro 的数据流水线、架构、训练配方和评测，并提供代码与权重以支撑商业级时间一致性。
+- [CamI2V: Camera-Controlled Image-to-Video Diffusion Model](https://arxiv.org/abs/2410.15957)：通过显式相机、物体运动或三维一致性控制改进可控视频生成。
+- [Warped Diffusion: Solving Video Inverse Problems with Image Diffusion Models](https://arxiv.org/abs/2410.16152)：把视频视为图像帧之间的连续 warping transformation，并加入测试时 self-equivariant guidance，使图像扩散模型可处理视频修复和 8 倍超分且减少闪烁。
+- [LongVU: Spatiotemporal Adaptive Compression for Long Video-Language Understanding](https://arxiv.org/abs/2410.17434)：用 DINOv2 特征删除冗余帧，再做文本引导的帧特征压缩和基于时间依赖的空间 token 压缩，以便 VLM 处理长视频。
+- [Pay Attention and Move Better: Harnessing Attention for Interactive Motion Generation and Training-free Editing](https://arxiv.org/abs/2410.18977)：构建显式建模 self-attention 与 cross-attention 的 MotionCLR，并通过操作注意力图实现人体动作强调、替换和示例驱动生成。
+- [Framer: Interactive Frame Interpolation](https://arxiv.org/abs/2410.18978)：允许用户在起止图像之间指定关键点轨迹来控制插帧，并提供自动估计和优化关键点的 autopilot 模式。
+- [FasterCache: Training-Free Video Diffusion Model Acceleration with High Quality](https://arxiv.org/abs/2410.19355)：在去噪过程中复用缓存特征，以免训练方式加速视频扩散推理，同时尽量保持生成质量。
+- [MarDini: Masked Autoregressive Diffusion for Video Generation at Scale](https://arxiv.org/abs/2410.20280)：把 masked autoregressive 时间规划与轻量空间扩散生成结合，使单一模型可在任意帧 mask 下做插帧、图生视频和视频扩展。
+- [ARLON: Boosting Diffusion Transformers with Autoregressive Models for Long Video Generation](https://arxiv.org/abs/2410.20502)：用 latent VQ-VAE、自适应语义注入和粗粒度视觉 token 训练连接自回归模型与 diffusion transformer，以生成动态长视频。
+- [On Learning Multi-Modal Forgery Representation for Diffusion Generated Video Detection](https://arxiv.org/abs/2410.23623)：提出 MM-Det，从 LMM 多模态空间构造 forgery representation，并用 in-and-across-frame attention 与 DVF 扩散视频取证数据集评测。
+- [Enhancing Motion in Text-to-Video Generation with Decomposed Encoding and Conditioning](https://arxiv.org/abs/2410.24219)：把文本编码和条件注入分解为内容分支与运动分支，并加入 text-motion 与 video-motion 监督以增强文生视频运动动态。
+- [URAvatar: Universal Relightable Gaussian Codec Avatars](https://arxiv.org/abs/2410.24223)：在可控光照多视角人头扫描上训练通用 3D Gaussian relightable avatar，再用手机扫描和 inverse rendering 个性化，实现实时动画与重光照。
+- [GameGen-X: Interactive Open-world Game Video Generation](https://arxiv.org/abs/2411.00769)：在来自 150 多款游戏、超过一百万段 gameplay clips 的数据上训练 diffusion transformer，并加入 InstructNet 控制专家实现开放世界游戏视频续写与交互控制。
+- [Video prediction using score-based conditional density estimation](https://arxiv.org/abs/2411.00842)：把下一帧预测建模为隐式条件密度估计，用 resilience-to-noise 目标训练 sequence-to-image 网络，以采样多种可能未来轨迹。
+- [Fast and Memory-Efficient Video Diffusion Using Streamlined Inference](https://arxiv.org/abs/2411.01171)：通过 Feature Slicer、Operator Grouping 和 Step Rehash 降低视频扩散显存与计算，使 AnimateDiff 类生成可在单张消费级 GPU 上运行。
+- [MoMu-Diffusion: On Learning Long-Term Motion-Music Synchronization and Correspondence](https://arxiv.org/abs/2411.01805)：用 BiCoR-VAE 对齐动作与音乐 latent，再用多模态 Transformer diffusion 和 cross-guidance sampling 生成长时长、节拍匹配的动作或音乐。
+- [AutoVFX: Physically Realistic Video Editing from Natural Language Instructions](https://arxiv.org/abs/2411.02394)：整合 neural scene modeling、LLM 生成代码和物理仿真，把源视频与自然语言指令转化为照片级动态 VFX 编辑。
+- [Adaptive Caching for Faster Video Generation With Diffusion Transformers](https://arxiv.org/abs/2411.02397)：提出免训练 AdaCache，为每个样本自适应缓存计划，并用 motion regularization 在视频 DiT 中平衡计算量与生成质量。
+- [DimensionX: Create Any 3D and 4D Scenes from a Single Image with Controllable Video Diffusion](https://arxiv.org/abs/2411.04928)：用带 dimension-aware LoRA 的 ST-Director 解耦视频扩散中的空间结构和时间演化，从单图重建可控 3D 与 4D 场景。
+- [SG-I2V: Self-Guided Trajectory Control in Image-to-Video Generation](https://arxiv.org/abs/2411.04989)：仅利用预训练图生视频扩散模型的内部知识实现零样本轨迹控制，避免微调和带标注运动数据集。
+- [ReCapture: Generative Video Camera Controls for User-Provided Videos using Masked Video Fine-Tuning](https://arxiv.org/abs/2411.05003)：先用新相机轨迹生成 noisy anchor video，再通过 masked video fine-tuning 把用户提供的视频重生成为干净且时序一致的新视角片段。
+- [Don't Look Twice: Faster Video Transformers with Run-Length Tokenization](https://arxiv.org/abs/2411.05222)：在推理前用 run-length tokenization 合并时间上重复的视频 patch，从而减少 token 数并加速 video transformer，无需按数据集调参。
+- [Tell What You Hear From What You See - Video to Audio Generation Through Text](https://arxiv.org/abs/2411.05679)：构建包含 LLM 视频到文本转换器和 transformer 音频 token 生成器的 VATT，使可选文本提示可控制 video-to-audio 生成。
+- [Improved Video VAE for Latent Video Diffusion Model](https://arxiv.org/abs/2411.06449)：用 keyframe-based temporal compression 和 group causal convolution 改进 latent video diffusion 压缩，缓解图像 VAE 初始化和因果帧不均衡问题。
+- [I2VControl-Camera: Precise Video Camera Control with Adjustable Motion Strength](https://arxiv.org/abs/2411.06525)：用相机坐标系点轨迹控制图生视频相机运动，并通过高阶轨迹算子调节主体运动强度。
+- [A Multidimensional Measurement of Photorealistic Avatars Quality of Experience](https://arxiv.org/abs/2411.09066)：提供开源主观测试框架，从十个人类体验维度评估照片级 avatar，并显示多数维度与 PSNR、SSIM、LPIPS、FID 和 FVD 相关性较弱。
+- [JoyVASA: Portrait and Animal Image Animation with Diffusion-Based Audio-Driven Facial Dynamics and Head Motion Generation](https://arxiv.org/abs/2411.09209)：分离静态 3D 面部表示与动态面部运动，再用音频条件 diffusion transformer 生成运动序列，支持跨语言的人像和动物脸动画。
+- [EchoMimicV2: Towards Striking, Simplified, and Semi-Body Human Animation](https://arxiv.org/abs/2411.10061)：用 audio-pose dynamic harmonization、可利用头部数据的 head partial attention 和 phase-specific denoising loss 简化半身人物动画。
+- [OnlyFlow: Optical Flow Based Motion Conditioning for Video Diffusion Models](https://arxiv.org/abs/2411.10501)：从输入视频提取 optical flow 并经 flow encoder 注入文生视频骨干，使生成视频在遵循文本的同时迁移参考运动，且无需任务特定训练。
+- [AnimateAnything: Consistent and Controllable Animation for Video Generation](https://arxiv.org/abs/2411.10836)：通过多尺度控制融合把相机路径、文本提示和用户运动标注转换为逐帧 optical-flow priors，并用频域稳定模块处理大幅运动。
+- [StableV2V: Stabilizing Shape Consistency in Video-to-Video Editing](https://arxiv.org/abs/2411.11045)：先编辑首帧，再对齐源视频运动与编辑提示，并把对齐后的内容传播到后续帧；论文还构建 DAVIS-Edit 评测集。
+- [Towards motion from video diffusion models](https://arxiv.org/abs/2411.12831)：用视频扩散模型的 score distillation sampling 驱动 SMPL-X 人体形变，探索公开视频扩散先验能否合成真实人体动作。
+- [What You See Is What Matters: A Novel Visual and Physics-Based Metric for Evaluating Video Generation Quality](https://arxiv.org/abs/2411.13609)：提出 VAMP 生成视频质量指标，分别评估外观一致性与物理运动合理性，并在 corrupted video 和 generated video 上验证。
+- [Novel View Extrapolation with Video Diffusion Priors](https://arxiv.org/abs/2411.14208)：把 Stable Video Diffusion 先验用作 ViewExtrapolator，无需微调 SVD 即可细化 radiance field 外推视角中的伪影。
+- [DissolveStereo: Coarse Depth Injection for Zero-Shot Stereo Video Generation](https://arxiv.org/abs/2411.14295)：无需成对训练数据，通过 noisy stereo-latent restart、迭代 latent harmonization 和 dissolved depth maps 生成视角与时间更一致的立体视频。
+- [Unleashing the Potential of Multi-modal Foundation Models and Video Diffusion for 4D Dynamic Physical Scene Simulation](https://arxiv.org/abs/2411.14423)：PhysFlow 结合多模态材料推断、3D Gaussian 场景表示、可微 MPM、视频扩散和光流 guidance，用于 4D 物理场景仿真。
+- [Efficient Long Video Tokenization via Coordinate-based Patch Reconstruction](https://arxiv.org/abs/2411.14762)：CoordTok 将长视频编码为分解式 triplane 表示，并按随机采样的时空坐标重建 patch，使 128 帧视频只需 1,280 个 token 而非数千个。
+- [Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement](https://arxiv.org/abs/2411.15115)：VideoRepair 用 MLLM 自动生成的问题检测细粒度图文不匹配，规划保留区域，并只对问题区域做局部重生成。
+- [Optical-Flow Guided Prompt Optimization for Coherent Video Generation](https://arxiv.org/abs/2411.15540)：MotionPrompt 训练 optical-flow discriminator，并在反向采样中优化可学习 prompt token，用光流梯度引导视频扩散生成自然运动。
+- [ReWind: Understanding Long Videos with Instructed Learnable Memory](https://arxiv.org/abs/2411.15556)：通过 read-perceive-write learnable memory 和 memory-guided frame selection 提升长视频理解效率，属于相邻 video VLM 条目而非生成器。
+- [FATE: Full-head Gaussian Avatar with Textural Editing from Monocular Video](https://arxiv.org/abs/2411.15604)：用 sampling-based densification、把 Gaussian 烘焙为连续 attribute maps 的 neural baking，以及 universal completion，从单目视频重建可编辑 360 度全头 avatar。
+- [M3-CVC: Controllable Video Compression with Multimodal Generative Models](https://arxiv.org/abs/2411.15798)：结合 LMM 提取的时空描述、语义-运动关键帧选择和文本引导扩散重建，实现可控的超低码率视频压缩。
+- [SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models](https://arxiv.org/abs/2411.16216)：用两阶段 trajectory-to-autoregressive-diffusion 流程生成可控足球运动，并在推理中加入 contact guidance 改善脚与球的接触细节。
+- [Sonic: Shifting Focus to Global Audio Perception in Portrait Animation](https://arxiv.org/abs/2411.16331)：把全局音频感知分解为 clip 内和 clip 间线索，用音频本身驱动表情与唇动，减少对额外视觉稳定信号的依赖。
+- [Ca2-VDM: Efficient Autoregressive Video Diffusion Model with Causal Generation and Cache Sharing](https://arxiv.org/abs/2411.16375)：通过因果特征计算和跨自回归扩散步骤的 cache sharing，复用重叠条件帧而不是反复计算。
+- [DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation](https://arxiv.org/abs/2411.16657)：用 LLM 解析脚本生成场景和对象布局，检索目标运动先验，并通过 test-time adaptation 支持组合式多场景 story-to-video 生成。
+- [Generative Omnimatte: Learning to Decompose Video into Layers](https://arxiv.org/abs/2411.16683)：学习将视频分解为层，为可控视频生成和编辑提供模型基础。
+- [Importance-Based Token Merging for Efficient Image and Video Generation](https://arxiv.org/abs/2411.16720)：在 token merging 中保留高信息量扩散 token，并利用 classifier-free guidance 等重要性分数分配计算资源，以更小画质损失加速 AnimateDiff 等视频生成模型。
+- [EmotiveTalk: Expressive Talking Head Generation through Audio Information Decoupling and Emotional Video Diffusion](https://arxiv.org/abs/2411.16726)：用 V-AID 将音频解耦为唇动和表情表示，再通过 emotional talking-head diffusion backbone 注入目标情绪，生成长时稳定且表情丰富的肖像视频。
+- [InTraGen: Trajectory-controlled Video Generation for Object Interactions](https://arxiv.org/abs/2411.16804)：加入对象 ID 交互编码、四个轨迹交互数据集和 trajectory quality metric，使轨迹控制的文生视频能生成多对象互动场景。
+- [Pathways on the Image Manifold: Image Editing via Video Generation](https://arxiv.org/abs/2411.16819)：把图像编辑改写为从原图到编辑结果的图生视频过渡，用连续时间路径提高复杂编辑指令服从性并保留原图关键内容。
+- [Free2 Guide: Training-Free Text-to-Video Alignment Using Image LVLM](https://arxiv.org/abs/2411.17041)：基于 path-integral control，用黑盒图像 LVLM 对拼接视频帧打分并引导扩散采样，无需训练视频 reward model 即可提升文本-视频对齐。
+- [WF-VAE: Enhancing Video VAE by Wavelet-Driven Energy Flow for Latent Video Diffusion Model](https://arxiv.org/abs/2411.17459)：构建 wavelet-flow 视频自编码器，把低频能量引入 latent 表示，并用 causal cache 缓解长视频分块推理中的 latent 不连续。
+- [Towards Precise Scaling Laws for Video Diffusion Transformers](https://arxiv.org/abs/2411.17470)：为 video DiT 拟合显式包含学习率和 batch size 的 scaling laws，用于在大规模训练前按算力预算选择模型规模和超参数。
+- [VideoDirector: Precise Video Editing via Text-to-Video Models](https://arxiv.org/abs/2411.17592)：用时空解耦 guidance、多帧 null-text optimization 和 self-attention control 修复文生视频反演中的闪烁与失真，实现局部视频编辑。
+- [StableAnimator: High-Quality Identity-Preserving Human Image Animation](https://arxiv.org/abs/2411.17697)：用面部感知编码器、distribution-aware identity adapter 和 HJB 引导去噪，从参考人物图像与姿态序列生成更保身份的人体动画。
+- [I2VControl: Disentangled and Unified Video Motion Synthesis Control](https://arxiv.org/abs/2411.17765)：把相机控制、对象拖拽和 motion brush 统一为点轨迹表示，并用空间分区协调多类控制，减少同一视频中的控制冲突。
+- [MotionCharacter: Identity-Preserving and Motion Controllable Human Video Generation](https://arxiv.org/abs/2411.18281)：将动作类型和运动强度显式解耦，用文本短语指定动作、用光流指标控制幅度，在保持角色身份的同时做细粒度人体运动变化。
+- [HiFiVFS: High Fidelity Video Face Swapping](https://arxiv.org/abs/2411.18293)：构建基于 Stable Video Diffusion 的视频换脸框架，通过身份脱敏属性提取、对抗学习和细节身份注入提升时序稳定性。
+- [Individual Content and Motion Dynamics Preserved Pruning for Video Diffusion Models](https://arxiv.org/abs/2411.18375)：通过剪除偏内容的浅层冗余块、保留更关键的深层运动模块，并蒸馏单帧内容和多帧动态，把视频扩散压缩为 VDMini。
+- [CAT4D: Create Anything in 4D with Multi-View Video Diffusion Models](https://arxiv.org/abs/2411.18613)：用多视角视频扩散先验把单目视频扩展为指定相机位姿和时间的多视角视频，再优化可变形 3D Gaussians 完成 4D 重建。
+- [AC3D: Analyzing and Improving 3D Camera Control in Video Diffusion Transformers](https://arxiv.org/abs/2411.18673)：通过显式相机、物体运动或三维一致性控制改进可控视频生成。
+- [SPAgent: Adaptive Task Decomposition and Model Selection for General Video Generation and Editing](https://arxiv.org/abs/2411.18983)：将用户请求拆成生成与编辑子任务，由 LLM 控制器为各步骤选择专用视频模型并编排执行，面向通用视频创作而不是单一生成骨干。
+- [Timestep Embedding Tells: It’s Time to Cache for Video Diffusion Model](https://arxiv.org/abs/2411.19108)：利用 timestep embedding 判断哪些视频扩散特征可复用缓存，减少重复去噪计算并尽量保持生成质量。
+- [Gaussians-to-Life: Text-Driven Animation of 3D Gaussian Splatting Scenes](https://arxiv.org/abs/2411.19233)：把场景形变与视频生成先验结合，让文本指令驱动静态 3D Gaussian Splatting 场景产生时序一致的动画。
+- [Trajectory Attention for Fine-grained Video Motion Control](https://arxiv.org/abs/2411.19324)：引入 trajectory attention，将用户指定的运动路径注入视频扩散中的细粒度对象运动控制，而不只依赖文本提示。
+- [Fleximo: Towards Flexible Text-to-Human Motion Video Generation](https://arxiv.org/abs/2411.19459)：面向文本到人体运动视频生成，支持更灵活的文本控制和可控身体动作，而不是普通文生视频采样。
+- [Ditto: Motion-Space Diffusion for Controllable Realtime Talking Head Synthesis](https://arxiv.org/abs/2411.19509)：把 talking-head 合成放入紧凑 motion space 中做扩散生成，先生成可控实时面部运动再渲染肖像帧。
+- [Open-Sora Plan: Open-Source Large Video Generation Model](https://arxiv.org/abs/2412.00131)：记录开源大型视频生成模型路线与技术栈。
+- [VISION-XL: High Definition Video Inverse Problem Solver using Latent Image Diffusion Models](https://arxiv.org/abs/2412.00156)：用 SDXL 潜空间图像扩散、pseudo-batch consistent sampling 和 pseudo-batch inversion 求解高清视频逆问题，覆盖去模糊、超分、修复和帧平均等退化。
+- [DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses](https://arxiv.org/abs/2412.00397)：从二维姿态中补充三维几何线索，再驱动人物图像动画，使生成身体在深度、肢体结构和姿态变化上更稳定。
+- [Motion Dreamer: Realizing Physically Coherent Video Generation through Scene-Aware Motion Reasoning](https://arxiv.org/abs/2412.00547)：先进行场景感知的运动推理，预测符合物体与场景约束的轨迹，再进行视频合成，以减少违背布局和物理关系的运动。
+- [PhyT2V: LLM-Guided Iterative Self-Refinement for Physics-Grounded Text-to-Video Generation](https://arxiv.org/abs/2412.00596)：用 LLM 引导的自我改进循环审查生成视频中的物理不合理之处，并迭代修改提示或条件，使文本到视频结果更符合物理约束。
+- [VideoSAVi: Self-Aligned Video Language Models without Human Supervision](https://arxiv.org/abs/2412.00624)：通过自我批判初始回答、从视频内容构造偏好对并进行 DPO，自监督对齐 video LLM；它是相邻的视频理解对齐模型，而不是视频生成器。
+- [Synergizing Motion and Appearance: Multi-Scale Compensatory Codebooks for Talking Head Video Generation](https://arxiv.org/abs/2412.00719)：联合学习多尺度运动和外观码本，并用 Transformer 检索补偿运动流和外观特征，用于说话人头部视频生成。
+- [Hallo3: Highly Dynamic and Realistic Portrait Image Animation with Video Diffusion Transformer](https://arxiv.org/abs/2412.00733)：基于视频 diffusion transformer 构建肖像图像动画系统，重点处理大幅头部运动和丰富表情动态，而不只做小范围口型同步。
+- [Coherent Video Inpainting Using Optical Flow-Guided Efficient Diffusion](https://arxiv.org/abs/2412.00857)：用 FloED 双分支结构先恢复光流，再通过多尺度 flow adapters、latent interpolation 和 flow-attention cache 引导扩散修复，实现更连贯的对象移除和背景补全。
+- [FLOAT: Generative Motion Latent Flow Matching for Audio-Driven Talking Portrait](https://arxiv.org/abs/2412.01064)：在潜在 motion 空间中用 flow matching 建模说话肖像运动，先把音频映射为头部姿态和表情轨迹，再渲染时间平滑的人像视频。
+- [MoTrans: Customized Motion Transfer with Text-driven Video Diffusion Models](https://arxiv.org/abs/2412.01343)：把定制参考运动迁移到文本驱动的视频扩散模型中，在生成时将可复用运动引导与目标外观分离。
+- [CPA: Camera-pose-awareness Diffusion Transformer for Video Generation](https://arxiv.org/abs/2412.01429)：通过 Sparse Motion Encoding 和 Temporal Attention Injection 为 DiT 视频生成加入相机姿态控制，在保留原始 DiT 参数的同时支持相机轨迹和对象运动。
+- [Enhancing Video-LLM Reasoning via Agent-of-Thoughts Distillation](https://arxiv.org/abs/2412.01694)：把 Agent-of-Thoughts 的推理轨迹蒸馏进 video LLM 训练，提升多步视频问答能力，同时推理时不再依赖外部智能体教师。
+- [SEAL: SEmantic Attention Learning for Long Video Representation](https://arxiv.org/abs/2412.01798)：把长视频压缩为场景、对象和动作实体，并用兼顾相关性与多样性的注意力子集选择建模；它偏视频表征与理解，作为生成方向的相邻模型记录。
+- [World-consistent Video Diffusion with Explicit 3D Modeling](https://arxiv.org/abs/2412.01821)：在视频扩散中加入显式三维场景建模，使相机运动和生成内容在统一世界坐标中保持一致。
+- [Progress-Aware Video Frame Captioning](https://arxiv.org/abs/2412.02071)：提出 ProgressCaptioner、FrameCap 数据集和 FrameCapEval，为每帧生成能刻画动作推进的细粒度描述，主要服务关键帧选择和视频理解。
+- [Generative Photography: Scene-Consistent Camera Control for Realistic Text-to-Image Synthesis](https://arxiv.org/abs/2412.02168)：用三维感知场景表示和相机控制从文本生成场景一致的摄影视角，因此与视频相机控制和新视角生成路线相邻。
+- [Improving Dynamic Object Interactions in Text-to-Video Generation with AI Feedback](https://arxiv.org/abs/2412.02617)：用视觉语言模型提供的二元 AI 反馈作为奖励信号，对文生视频模型做离线 RL 式微调，提升多物体交互和下落等动态场景的真实感。
+- [Motion Prompting: Controlling Video Generation with Motion Trajectories](https://arxiv.org/abs/2412.02700)：把运动轨迹作为视频生成提示，将用户指定路径转化为对象和相机运动约束。
+- [Mimir: Improving Video Diffusion Models for Precise Text Understanding](https://arxiv.org/abs/2412.03085)：围绕属性、关系和组合细节等提示理解失败，对视频扩散模型进行面向文本理解的训练和评估。
+- [DIVE: Taming DINO for Subject-Driven Video Editing](https://arxiv.org/abs/2412.03347)：利用 DINO 特征定位并保持目标主体，在视频编辑中实现主体驱动的修改，同时减少背景漂移。
+- [HunyuanVideo](https://arxiv.org/abs/2412.03603)：报告腾讯开放视频基础模型，包含视频-文本潜空间扩散架构、数据清洗管线和文本到视频扩展训练配方。
+- [INFP: Audio-Driven Interactive Head Generation in Dyadic Conversations](https://arxiv.org/abs/2412.04037)：从双人对话音频生成交互式头部动作，先学习低维会话 motion latent，再去噪生成说话与聆听状态下的头部行为，并配套 DyConv 数据集。
+- [HANDI: Hand-Centric Text-and-Image Conditioned Video Generation](https://arxiv.org/abs/2412.04189)：让文本和图像条件扩散聚焦手部动作，自动预测 motion area，并用 Hand Refinement Loss 提升第一视角场景中手部姿态的清晰度和平滑性。
+- [Divot: Diffusion Powers Video Tokenizer for Comprehension and Generation](https://arxiv.org/abs/2412.04432)：训练 diffusion-powered video tokenizer，让其特征可条件化去噪并解码回视频，再结合 Divot-Vicuna 同时支持视频理解和文生视频生成。
+- [DiCoDe: Diffusion-Compressed Deep Tokens for Autoregressive Video Generation with Language Models](https://arxiv.org/abs/2412.04446)：用视频扩散先验训练约 1000 倍压缩的 deep tokens，使自回归语言模型能以较低训练成本生成数秒到一分钟级视频。
+- [MEMO: Memory-Guided Diffusion for Expressive Talking Video Generation](https://arxiv.org/abs/2412.04448)：在 talking-video 生成中加入 memory-guided diffusion，使身份、表情和运动线索能在较长肖像片段中持续保持。
+- [Factorized Video Autoencoders for Efficient Generative Modelling](https://arxiv.org/abs/2412.04452)：把视频压缩到随输入规模次线性增长的四平面 factorized latent space，降低 latent diffusion 在视频生成、预测和插帧中的显存与计算开销。
+- [4Real-Video: Learning Generalizable Photo-Realistic 4D Video Diffusion](https://arxiv.org/abs/2412.04462)：在时间轴和视角轴组成的帧网格上生成 4D 视频，用双流 diffusion transformer 分别更新时间行与视角列，并通过同步层交换信息。
+- [LiFT: Leveraging Human Feedback for Text-to-Video Model Alignment](https://arxiv.org/abs/2412.04814)：收集人类对文本到视频输出的偏好，并据此对齐生成器，以提升提示遵循和感知质量。
+- [SoPo: Text-to-Motion Generation Using Semi-Online Preference Optimization](https://arxiv.org/abs/2412.05095)：用半在线偏好反馈优化文本到动作模型，使生成动作更符合人类偏好的自然度和文本语义。
+- [Mind the Time: Temporally-Controlled Multi-Event Video Generation](https://arxiv.org/abs/2412.05263)：为多事件提示加入显式时间控制，使用户能指定事件发生时刻，而不是只依赖提示词顺序。
+- [Stag-1: Towards Realistic 4D Driving Simulation with Video Generation Model](https://arxiv.org/abs/2412.05280)：用自动驾驶环视数据重建连续 4D 点云场景，并结合视频生成模型从任意相机位姿合成照片级、可控的驾驶仿真视图。
+- [MotionStone: Decoupled Motion Intensity Modulation with Diffusion Transformer for Image-to-Video Generation](https://arxiv.org/abs/2412.05848)：在 diffusion transformer 图生视频模型中解耦运动强度和图像内容，使用户能调节运动幅度而不改变主体外观。
+- [Track4Gen: Teaching Video Diffusion Models to Track Points Improves Video Generation](https://arxiv.org/abs/2412.06016)：在 Stable Video Diffusion 特征上加入点跟踪监督，将生成损失和跨帧 tracking 任务合并训练，以减少外观漂移并提升帧间一致性。
+- [Latent-Reframe: Enabling Camera Control for Video Diffusion Models Without Training](https://arxiv.org/abs/2412.06029)：在推理期重构 latent 坐标，为预训练视频扩散模型加入相机运动控制，无需额外训练。
+- [UniPaint: Unified Space-Time Video Inpainting via Mixture-of-Experts](https://arxiv.org/abs/2412.06340)：用 mixture-of-experts 时空修复模型统一处理对象移除、内容补全和时间一致的视频区域填充。
+- [CoMA: Compositional Human Motion Generation with Multi-modal Agents](https://arxiv.org/abs/2412.07320)：结合协作式语言和视觉 agents、mask-transformer 动作生成器、身体部位 codebooks、文本引导编辑和自我校正，生成组合式短程与长程人体动作。
+- [Mobile Video Diffusion](https://arxiv.org/abs/2412.07583)：设计面向移动端的轻量视频扩散管线，降低模型规模和采样成本，使端侧文本到视频生成更可行。
+- [ObjCtrl-2.5D: Training-free Object Control with Camera Poses](https://arxiv.org/abs/2412.07721)：在视频扩散去噪过程中结合 2.5D 对象轨迹和相机姿态引导，无需训练即可控制生成对象运动。
+- [STIV: Scalable Text and Image Conditioned Video Generation](https://arxiv.org/abs/2412.07730)：扩展同时接受文本和图像条件的视频生成器，用图像锚定外观，并由文本指定运动和场景变化。
+- [StyleMaster: Stylize Your Video with Artistic Generation and Translation](https://arxiv.org/abs/2412.07744)：结合艺术化视频生成和视频到视频风格迁移，使用户能创建或重绘视频并保持时间一致性。
+- [Motion by Queries: Identity-Motion Trade-offs in Text-to-Video Generation](https://arxiv.org/abs/2412.07750)：分析 self-attention query 特征同时承载运动、布局和身份信息，并用受控 Q injection 实现免训练 motion transfer 与多镜头身份一致性。
+- [PortraitTalk: Towards Customizable One-Shot Audio-to-Talking Face Generation](https://arxiv.org/abs/2412.07754)：采用包含 IdentityNet 和 AnimateNet 的 latent diffusion 框架，结合音频、参考图和解耦文本 cross-attention，在单样本 talking-face 生成中保持身份并控制表情运动。
+- [3DTrajMaster: Mastering 3D Trajectory for Multi-Entity Motion in Video Generation](https://arxiv.org/abs/2412.07759)：用 gated 3D-motion object injector 将多个实体的 6DoF 轨迹注入视频扩散，并配合 domain adaptor、annealed sampling 与 360-Motion 数据集提升泛化。
+- [SynCamMaster: Synchronizing Multi-Camera Video Generation from Diverse Viewpoints](https://arxiv.org/abs/2412.07760)：在预训练文生视频模型上加入 multi-view synchronization 模块，使 6DoF 多相机视角共享外观和几何，并用 UE 渲染、多相机图像和单目视频混合训练。
+- [Repurposing Pre-trained Video Diffusion Models for Event-based Video Interpolation](https://arxiv.org/abs/2412.07761)：把互联网规模视频扩散先验适配到事件相机插帧，用高时间分辨率稀疏事件流引导大运动中间帧合成并提升跨相机泛化。
+- [From Slow Bidirectional to Fast Autoregressive Video Diffusion Models](https://arxiv.org/abs/2412.07772)：把双向视频 diffusion transformer 改造成因果自回归生成器，并用 ODE 初始化、非对称教师学生监督和 KV cache 将 50 步去噪蒸馏到 4 步。
+- [Video Motion Transfer with Diffusion Transformers](https://arxiv.org/abs/2412.07776)：从 DiT 跨帧注意力图提取 Attention Motion Flow，并在推理期优化 latent 与位置嵌入，以免训练方式迁移参考视频运动。
+- [Mojito: Motion Trajectory and Intensity Control for Video Generation](https://arxiv.org/abs/2412.08948)：结合免训练 cross-attention Directional Motion Control 与基于光流的 Motion Intensity Modulator，把文生视频中的运动方向和运动强度分开控制。
+- [LVMark: Robust Watermark for Latent Video Diffusion Models](https://arxiv.org/abs/2412.09122)：在 latent video diffusion 中嵌入不可见 512-bit 水印，训练解码器利用相邻帧一致性、3D 小波低频信号、RGB 特征和重要性加权 latent 层抵抗视频失真。
+- [LatentSync: Audio Conditioned Latent Diffusion Models for Lip Sync](https://arxiv.org/abs/2412.09262)：诊断 audio-conditioned LDM 的视觉捷径学习问题，并用 StableSyncNet 监督和 Temporal Representation Alignment 提升唇同步准确性与视频时间一致性。
+- [InstanceCap: Improving Text-to-Video Generation via Instance-aware Structured Caption](https://arxiv.org/abs/2412.09283)：通过辅助模型集群把视频转成实例级结构化 caption，构建 InstanceVid-22K，并在推理时用结构化提示减少对象和运动描述幻觉。
+- [T-SVG: Text-Driven Stereoscopic Video Generation](https://arxiv.org/abs/2412.09323)：使用零样本立体视频流水线，先由文本生成参考视频，再提升为 3D 点云序列、渲染双视差视图，并用视频修复处理伪影。
+- [Video Seal: Open and Efficient Video Watermarking](https://arxiv.org/abs/2412.09492)：联合训练视频水印 embedder 和 extractor，并结合编码器失真、图像预训练、混合后训练、extractor 微调和时间传播，实现高分辨率视频的高效开源水印。
+- [LiftImage3D: Lifting Any Single Image to 3D Gaussians with Video Generation Priors](https://arxiv.org/abs/2412.09597)：通过分段小相机运动轨迹释放 latent video diffusion 的 3D 先验，再用 MASt3R 标定相机并以 distortion-aware Gaussian splatting 学习无畸变 canonical 几何。
+- [Owl-1: Omni World Model for Consistent Long Video Generation](https://arxiv.org/abs/2412.09600)：用持久 latent world state 建模长视频，先解码观测、预测动态并更新状态，为视频生成器提供比 last-frame chaining 更长程的条件。
+- [OmniDrag: Enabling Motion Control for Omnidirectional Image-to-Video Generation](https://arxiv.org/abs/2412.09623)：联合微调 omnidirectional control module 和 temporal attention，并用 spherical motion estimator 从拖拽点提取控制信号，实现 360 度图生视频的场景级和对象级运动控制。
+- [Dynamic Try-On: Taming Video Virtual Try-on with Dynamic Attention Mechanism](https://arxiv.org/abs/2412.09822)：复用 DiT 主干作为 garment encoder，用 dynamic feature fusion 存取服装特征，并通过 limb-aware dynamic attention 稳定快速人体动作下的视频试穿。
+- [LinGen: Towards High-Resolution Minute-Length Text-to-Video Generation with Linear Computational Complexity](https://arxiv.org/abs/2412.09856)：用 MATE block 替换 DiT 的二次复杂度 self-attention，结合 Mamba2 长程扫描、review tokens 和 Temporal Swin Attention，在单 GPU 上生成分钟级高清视频。
+- [AniSora: Exploring the Frontiers of Animation Video Generation in the Sora Era](https://arxiv.org/abs/2412.10255)：把 1000 万级动画数据处理管线、带 spatiotemporal mask 的可控生成模型和 948 条动画评测集结合起来，覆盖风格、插帧和局部图像引导动画。
+- [SnapGen-V: Generating a Five-Second Video within Five Seconds on a Mobile Device](https://arxiv.org/abs/2412.10494)：从紧凑图像 backbone 搜索硬件友好的时间层，并通过 adversarial fine-tuning 得到 0.6B、4 步去噪的视频扩散模型，可在 iPhone 16 Pro Max 上 5 秒生成 5 秒视频。
+- [Video Diffusion Transformers are In-Context Learners](https://arxiv.org/abs/2412.10783)：通过空间或时间拼接示例、联合 caption 多场景片段和少量任务微调，激活 video DiT 的 in-context 生成能力而不改动基础架构。
+- [CFSynthesis: Controllable and Free-view 3D Human Video Synthesis](https://arxiv.org/abs/2412.11067)：用 texture-SMPL 表示和前景背景分离合成可控身份、动作和场景的人体视频，并支持自由视角三维姿态。
+- [DynamicScaler: Seamless and Scalable Video Generation for Panoramic Scenes](https://arxiv.org/abs/2412.11100)：在无缝旋转窗口上使用 Offset Shifting Denoiser 与 Global Motion Guidance，使固定分辨率扩散模型能以恒定显存生成任意尺寸全景视频。
+- [VividFace: A Diffusion-Based Hybrid Framework for High-Fidelity Video Face Swapping](https://arxiv.org/abs/2412.11279)：训练图像视频混合扩散换脸模型，结合 VidFaceVAE、AIDT 身份姿态三元组、遮挡增强和 3D 条件来保持时间一致的身份细节。
+- [BiM-VFI: Bidirectional Motion Field-Guided Frame Interpolation for Video with Non-uniform Motions](https://arxiv.org/abs/2412.11365)：引入 bidirectional motion field map、BiM-guided flow estimation、content-aware upsampling 和 VFI-centric flow distillation，减少加速、减速和变向运动插帧中的模糊。
+- [SpatialMe: Stereo Video Conversion Using Depth-Warping and Blend-Inpainting](https://arxiv.org/abs/2412.11512)：用 depth warping、多分支 blend inpainting、mask-based hierarchical feature update、disparity expansion 和 1000 条 StereoV1K 数据实现单目到立体视频转换。
+- [InterDyn: Controllable Interactive Dynamics with Video Diffusion Models](https://arxiv.org/abs/2412.11785)：把大型视频生成器当作隐式物理模拟器，输入初始帧和驱动对象运动信号，生成时序一致的复杂对象交互过程。
+- [CAP4D: Creating Animatable 4D Portrait Avatars with Morphable Multi-View Diffusion Models](https://arxiv.org/abs/2412.12093)：用 morphable multi-view diffusion 从 1 到 100 张参考图重建照片级 4D 肖像 avatar，并支持实时动画和渲染。
+- [Can video generation replace cinematographers? Research on the cinematic language of generated video](https://arxiv.org/abs/2412.12223)：构建 20 类 cinematic-language 数据集，训练 CameraDiff LoRA 控制景别、角度和相机运动，并用 CameraCLIP 与 CLIPLoRA 指导多镜头风格组合。
+- [Towards a Universal Synthetic Video Detector: From Face or Background Manipulations to Fully AI-Generated Content](https://arxiv.org/abs/2412.12278)：训练 UNITE 这一基于 SigLIP 特征的 transformer 检测器，并加入 attention-diversity loss，覆盖人脸编辑、背景篡改、非人物视频以及完整 T2V 和 I2V 合成内容。
+- [FocusChat: Text-guided Long Video Understanding via Spatiotemporal Information Filtering](https://arxiv.org/abs/2412.12833)：用视觉文本语义分支和 Spatial-Temporal Filtering Module 筛选长视频 token，只把与查询相关的 16 个视觉 token 输入 LLM。
+- [StreetCrafter: Street View Synthesis with Controllable Video Diffusion Models](https://arxiv.org/abs/2412.13188)：用 LiDAR 点云渲染作为像素级条件控制视频扩散，在 Waymo 和 PandaSet 上实现相机准确的街景新视角合成、像素级编辑和动态场景渲染。
+- [Real-time One-Step Diffusion-based Expressive Portrait Videos Generation](https://arxiv.org/abs/2412.13479)：将肖像扩散蒸馏为 OSA-LCM 一步 avatar latent consistency model，并通过 avatar discriminator 和 editing fine-tuning 保持唇音一致和表情运动。
+- [AKiRa: Augmentation Kit on Rays for optical video generation](https://arxiv.org/abs/2412.14158)：在视频生成 backbone 上训练带复杂 ray camera model 的相机 adapter，可控制相机运动、焦距、畸变和光圈，实现 zoom、fisheye 与 bokeh 等光学效果。
+- [VideoDPO: Omni-Preference Alignment for Video Diffusion Generation](https://arxiv.org/abs/2412.14167)：把 DPO 适配到视频扩散，用同时衡量视觉质量和文本视频语义对齐的 OmniScore 自动构造偏好对，并在训练中按分数重加权。
+- [Autoregressive Video Generation without Vector Quantization](https://arxiv.org/abs/2412.14169)：把视频生成改写为非量化的时间逐帧和空间逐集合自回归，在保持 GPT 式因果性的同时用帧内双向建模提升效率。
+- [AniDoc: Animation Creation Made Easier](https://arxiv.org/abs/2412.14173)：使用视频扩散和 correspondence matching，根据参考角色为线稿动画上色，并能从起止草图自动生成时序一致的中间帧。
+- [TRecViT: A Recurrent Video Transformer](https://arxiv.org/abs/2412.14294)：把因果视频建模分解为时间 gated linear recurrent units、空间 self-attention 和通道 MLP，以低于 ViViT 的参数、显存和 FLOPs 生成实时视频特征。
+- [Llama Learns to Direct: DirectorLLM for Human-Centric Video Generation](https://arxiv.org/abs/2412.14484)：训练基于 Llama 的 DirectorLLM 输出姿态和指令信号，作为人体运动草图条件输入 UNet 或 DiT 渲染器，提升 human-centric video 的动作真实性和提示遵循。
+- [ScaMo: Exploring the Scaling Law in Autoregressive Motion Generation Model](https://arxiv.org/abs/2412.14559)：用 Motion FSQ-VAE tokenizer 和 text-prefix autoregressive transformer 研究文本到动作生成的 scaling law，刻画计算量、模型大小、词表、数据和测试损失的关系。
+- [EnergyMogen: Compositional Human Motion Generation with Energy-Based Diffusion Model in Latent Space](https://arxiv.org/abs/2412.14706)：把 latent motion diffusion 解释为能量模型组合，加入基于 cross-attention 的语义能量，并融合多项能量生成多概念人体动作和扩展动作数据。
+- [Prompt-A-Video: Prompt your Video Diffusion Model via Preference-Aligned LLM](https://arxiv.org/abs/2412.15156)：通过 reward-guided prompt evolution 构造提示池，对 LLM 做 SFT 和 DPO，使其为特定视频扩散模型生成 video-centric、model-aware 且偏好对齐的提示。
+- [Align Video Diffusion Model with Online Video-Centric Preference Optimization](https://arxiv.org/abs/2412.15159)：用视频质量评估模型提供更贴近视频感知的反馈，并以在线 DPO、在线偏好生成和 curriculum 更新优化视频扩散质量、减少闪烁。
+- [AV-Link: Temporally-Aligned Diffusion Features for Cross-Modal Audio-Video Generation](https://arxiv.org/abs/2412.15191)：通过带时序对齐 self-attention 的 Fusion Block 连接冻结音频和视频扩散模型，在同一框架中支持 video-to-audio 与 audio-to-video 生成。
+- [LeviTor: 3D Trajectory Oriented Image-to-Video Synthesis](https://arxiv.org/abs/2412.15214)：把拖拽式图生视频控制扩展到深度维度，将对象 mask 抽象为带相对深度和实例标签的 cluster points 后输入视频扩散模型。
+- [SyncFlow: Toward Temporally Aligned Joint Audio-Video Generation from Text](https://arxiv.org/abs/2412.15220)：采用 dual diffusion-transformer 架构，并按视频、音频、联合微调分阶段训练，从文本同步生成音视频，还支持零样本 video-to-audio 迁移。
+- [MMAudio: Taming Multimodal Joint Training for High-Quality Video-to-Audio Synthesis](https://arxiv.org/abs/2412.15322)：训练 157M 参数 flow-matching video-to-audio 模型，联合使用视频音频和文本音频数据，并通过帧级同步模块提升语义与时序对齐。
+- [DOLLAR: Few-Step Video Generation Via Distillation and Latent Reward Optimization](https://arxiv.org/abs/2412.15689)：结合 variational score distillation、consistency distillation 和 latent reward optimization，把视频扩散压缩到 1 到 4 步，同时保持 10 秒视频质量和多样性。
+- [Follow-Your-MultiPose: Tuning-Free Multi-Character Text-to-Video Generation via Pose Guidance](https://arxiv.org/abs/2412.16495)：通过姿态序列提取角色 mask，用 LLM 为每个角色生成独立提示，并结合 spatial-aligned cross-attention 与多分支控制实现免调参多角色视频生成。
+- [Layer-and Timestep-Adaptive Differentiable Token Compression Ratios for Efficient Diffusion Transformers](https://arxiv.org/abs/2412.16822)：学习 token、layer 和 timestep 级 DiT 压缩比例，让低重要性 token 绕过计算，为 diffusion transformer 生成器提供相邻的推理加速路线。
+- [Adapting Image-to-Video Diffusion Models for Large-Motion Frame Interpolation](https://arxiv.org/abs/2412.17042)：为图生视频扩散加入条件编码器，并用双分支特征提取和 cross-frame attention 处理大运动插帧，在 FVD 上优于既有方法。
+- [VidTwin: Video VAE with Decoupled Structure and Dynamics](https://arxiv.org/abs/2412.17726)：把视频编码到 structure latent 和 dynamics latent 两个空间，用 Q-Former 捕获低频运动趋势，并用空间平均的 dynamics vectors 表示快速细粒度运动。
+- [Smooth-Foley: Creating Continuous Sound for Video-to-Audio Generation Under Semantic Guidance](https://arxiv.org/abs/2412.18157)：在 video-to-audio 生成中沿时间使用文本标签语义指导，并在预训练 text-to-audio 模型上加入 frame adapter 和 temporal adapter，以改善连续声音的语义与时间对齐。
+- [DiTCtrl: Exploring Attention Control in Multi-Modal Diffusion Transformer for Tuning-Free Multi-Prompt Longer Video Generation](https://arxiv.org/abs/2412.18597)：把多提示视频生成视作时序编辑，在 MM-DiT 内做 mask-guided attention control 与 attention sharing，无需训练即可生成平滑提示过渡，并配套 MPVBench。
+- [ZeroHSI: Zero-Shot 4D Human-Scene Interaction by Video Generation](https://arxiv.org/abs/2412.18600)：从预训练视频生成器中蒸馏 human-scene interaction，并用可微渲染重建交互过程，从而不依赖成对 3D 场景和 MoCap 数据适配未知环境。
+- [Video is Worth a Thousand Images: Exploring the Latest Trends in Long Video Generation](https://arxiv.org/abs/2412.18688)：综述长视频生成策略、数据集、指标、GAN 与扩散基础，并强调短片段合成之外还需要规划、故事组织和时空一致性。
+- [ModelGrow: Continual Text-to-Video Pre-training with Model Expansion and Language Understanding Enhancement](https://arxiv.org/abs/2412.18966)：研究文生视频 continual pretraining，通过扩展模型容量和引入 LLM 文本编码器，在有限算力下提升复杂提示理解和生成对齐。
+- [MAKIMA: Tuning-free Multi-Attribute Open-domain Video Editing via Mask-Guided Attention Modulation](https://arxiv.org/abs/2412.19978)：用 inversion attention 与特征保留视频结构，并通过 mask-guided self-attention 和 cross-attention 调制、关键帧特征传播实现免调参多属性视频编辑。
+- [Open-Sora: Democratizing Efficient Video Production for All](https://arxiv.org/abs/2412.20404)：开源采用 STDiT 解耦时空注意力和高压缩 3D autoencoder 的视频生成器，并提供训练、推理、数据准备代码与权重，支持最长 15 秒、720p 合成。
+- [Video Decomposition Prior: Editing Videos Layer by Layer](https://proceedings.iclr.cc/paper_files/paper/2024/hash/7a8a348d9c874a33ca2fdc259723592f-Abstract-Conference.html)：把视频分解为可编辑层，对外观或对象逐层修改后再合成，从而提升视频编辑的时间一致性。
+- [Robust Blind Video Watermarking Based on Ring Tensor and BCH Coding](https://doi.org/10.1109/jiot.2024.3453960)：结合环张量表示与 BCH 纠错编码嵌入盲视频水印，面向视频失真下的鲁棒所有权追踪。
+- [TIA2V: Video generation conditioned on triple modalities of text-image-audio](https://doi.org/10.1016/j.eswa.2024.126278)：将文本、图像和音频三种条件共同用于视频合成，使语义提示、视觉外观与声音线索同时控制生成结果。
+- [Resource Allocation for Video Diffusion Task Offloading in Cloud-Edge Networks: A Deep Active Inference Approach](https://doi.org/10.1109/globecom52923.2024.10901843)：用 deep active inference 建模云边网络中的视频扩散任务卸载，强调生成推理的资源分配与部署效率，而不是新的生成器骨干。
+- [The Application of AI Video Generation Technology in Virtual Reality (VR) and Augmented Reality (AR)](https://doi.org/10.1109/aidlnn65358.2024.00035)：讨论 AI 视频生成在 VR 和 AR 内容制作中的应用，更偏应用场景参考而非新的扩散或 Transformer 方法。
+- [Alignment-aware Patch-level Routing for Dynamic Video Frame Interpolation](https://bmva-archive.org.uk/bmvc/2024/papers/Paper_23/paper.pdf)：在视频插帧中按对齐关系动态路由图像块，用 patch 级对应处理运动区域，避免所有区域使用同一插值路径。
+- [Animatable Gaussians: Learning Pose-Dependent Gaussian Maps for High-Fidelity Human Avatar Modeling](https://doi.org/10.1109/cvpr52733.2024.01864)：学习姿态相关的 Gaussian maps，让人体骨骼姿态驱动高斯属性变化，从而实现高保真可动画化数字人渲染。
+- [RealMock: Crafting Realistic Animated Portraits via Dual-Driven Landmark Editing](https://doi.org/10.1109/access.2024.3487414)：通过双驱动 landmark 编辑融合肖像身份与驱动运动线索，用于生成更真实的动态肖像视频。
+- [Multimodal Emotional Talking Face Generation Based on Action Units](https://doi.org/10.1109/tcsvt.2024.3523359)：把面部动作单元作为可控情绪变量，并融合多模态线索生成带情绪表达的说话人脸视频。
+- [When Does Sora Show: The Beginning of TAO to Imaginative Intelligence and Scenarios Engineering](https://doi.org/10.1109/jas.2024.124383)：从 TAO 与场景工程视角分析 Sora 式视频生成，把任务、动作和对象结构作为可控想象式合成的关键轴。
+- [LAMP: Learn A Motion Pattern for Few-Shot Video Generation](https://doi.org/10.1109/cvpr52733.2024.00677)：从少量参考视频中学习可复用 motion pattern 并注入视频生成，使模型无需大规模动作专属数据即可做 few-shot 运动定制。
+- [CAMEL: CAusal Motion Enhancement Tailored for Lifting Text-Driven Video Editing](https://doi.org/10.1109/cvpr52733.2024.00867)：在文本驱动视频编辑中加入因果运动增强，使被提升的编辑沿帧间运动线索传播，而不是逐帧漂移。
+- [ImproveYourVideos: Architectural Improvements for Text-to-Video Generation Pipeline](https://doi.org/10.1109/access.2024.3522510)：改进文本到视频生成管线架构。
+- [TexAVi: Generating Stereoscopic VR Video Clips from Text Descriptions](https://arxiv.org/abs/2501.01156)：把文本到视频合成与左右眼视图构造结合，从文字描述生成具有沉浸式深度一致性的立体 VR 视频片段。
+- [Vulnerability-Aware Deepfake Video Detection](https://arxiv.org/abs/2501.01184)：用 vulnerability-aware spatio-temporal learning 提升 deepfake video detection 的泛化与可解释性。
+- [AR4D: Autoregressive 4D Generation from Monocular Videos](https://arxiv.org/abs/2501.01722)：以单目视频作为条件做自回归 4D 生成，将观测到的运动转化为动态三维内容，而不是只生成孤立视频帧。
+- [Joint Optimization for 4D Human-Scene Reconstruction in the Wild](https://arxiv.org/abs/2501.02158)：提出 JOSH，在 human-scene contact 约束下联合优化场景几何、相机姿态和人体运动，用于野外单目视频的 4D 人-场景重建。
+- [Brick-Diffusion: Generating Long Videos with Brick-to-Wall Denoising](https://arxiv.org/abs/2501.02741)：用交错的 brick-to-wall 潜变量去噪把短视频扩散扩展到任意长度生成，使分段之间能跨 stride 交换帧信息。
+- [Star](https://arxiv.org/abs/2501.02976)：利用 text-to-video 模型为真实视频超分辨率提供时空增强，把生成式视频先验与复原任务连接起来。
+- [TransPixeler](https://arxiv.org/abs/2501.03006)：为 text-to-video 模型加入透明层生成，支持更易合成的视频生成。
 - [Through-The-Mask](https://arxiv.org/abs/2501.03059)：使用基于 mask 的运动轨迹控制图生视频生成。
+- [Motion-Aware Generative Frame Interpolation](https://arxiv.org/abs/2501.03699)：结合光流引导与生成式视频先验，提升帧插值的时间一致性和运动稳定性。
+- [FlexCache: Flexible Approximate Cache System for Video Diffusion](https://arxiv.org/abs/2501.04012)：通过压缩缓存特征、分离对象与背景缓存，并设计替换策略来提升视频扩散推理吞吐量。
+- [Disentangled Clothed Avatar Generation with Layered Representation](https://arxiv.org/abs/2501.04631)：提出 LayerAvatar，在分层 Gaussian UV 特征平面上训练前馈扩散模型，将身体、头发和服装解耦并支持实时动画。
+- [Progressive Growing of Video Tokenizers for Temporally Compact Latent Spaces](https://arxiv.org/abs/2501.05442)：从低压缩编码器逐步训练高时间压缩视频 tokenizer，并用 cross-level feature mixing 在不简单增加通道数的情况下获得紧凑 latent。
+- [CamCtrl3D: Single-Image Scene Exploration with Precise 3D Camera Control](https://arxiv.org/abs/2501.06006)：在显式 3D 相机轨迹控制下从单张图像生成场景探索视频。
+- [Videoauteur: Towards Long Narrative Video Generation](https://arxiv.org/abs/2501.06173)：结合大规模烹饪视频数据集和 Long Narrative Video Director，使长视频生成能维持语义事件连贯性与视觉对齐关键帧。
+- [Qffusion: Controllable Portrait Video Editing via Quadrant-Grid Attention Learning](https://arxiv.org/abs/2501.06438)：把两个参考图像和面部条件重排为四象限 latent，学习外观与时间联合注意力，并用递归传播生成任意长度肖像编辑视频。
 - [BlobGEN-Vid](https://arxiv.org/abs/2501.07647)：利用 blob 视频表示实现组合式文生视频生成。
+- [FramePainter: Endowing Interactive Image Editing with Video Diffusion Priors](https://arxiv.org/abs/2501.08225)：把视频扩散先验用于交互式图像编辑，从视频中学习真实物理变化和视觉一致性，而不是在图像扩散上额外堆叠参考编码器。
 - [LayerAnimate](https://arxiv.org/abs/2501.08295)：为动画生成加入层级控制。
-- [Improving Video Generation with Human Feedback](https://arxiv.org/abs/2501.13918)：提出面向视频生成的模型侧方法，核心围绕 Improving Video Generation with Human Feedback。
+- [Diffusion Adversarial Post-Training for One-Step Video Generation](https://arxiv.org/abs/2501.08316)：将对抗式后训练用于一步视频生成。
+- [DynamicFace](https://arxiv.org/abs/2501.08553)：结合可组合 3D facial priors 做高质量、一致的视频人脸替换。
+- [FlexiClip: Locality-Preserving Free-Form Character Animation](https://arxiv.org/abs/2501.08676)：在贝塞尔轨迹动画中加入时间 Jacobian、概率流 ODE 建模和 flow-matching 损失，使 clipart 在平滑运动中保持几何结构。
+- [Ouroboros-Diffusion](https://arxiv.org/abs/2501.09019)：提升免微调长视频扩散中的内容一致性生成。
+- [X-Dyna](https://arxiv.org/abs/2501.10021)：为人体图像生成富有表现力的动态动画，扩展图像到视频的人体动画模型。
+- [DiffVSR](https://arxiv.org/abs/2501.10110)：提出面向复杂退化的鲁棒视频超分辨率扩散模型配方。
+- [EMO2: End-Effector Guided Audio-Driven Avatar Video Generation](https://arxiv.org/abs/2501.10687)：采用两阶段 audio-driven avatar 生成：先从语音预测手部姿态，再用扩散模型合成同步的表情与身体运动。
+- [GSVC](https://arxiv.org/abs/2501.12060)：用 2D Gaussian Splatting 做高效视频表示与压缩，补充生成式视频表示路线。
+- [Taming Teacher Forcing for Masked Autoregressive Video Generation](https://arxiv.org/abs/2501.12389)：提出 MAGI 和 Complete Teacher Forcing，让 masked 帧以完整观测帧为条件，连接帧内 masked modeling 与因果长视频生成。
+- [Image Motion Blur Removal in the Temporal Dimension with Video Diffusion Models](https://arxiv.org/abs/2501.12604)：把单图运动模糊视为时间平均现象，并借助预训练视频扩散 Transformer 的运动动态先验求解扩散逆问题。
+- [Improving Video Generation with Human Feedback](https://arxiv.org/abs/2501.13918)：构建面向现代视频生成器的多维人类偏好数据集，训练奖励模型，并用反馈优化 rectified-flow 视频生成以减少提示不匹配和运动不平滑。
+- [VideoShield: Regulating Diffusion-based Video Generation Models via Watermarking](https://arxiv.org/abs/2501.14195)：用水印机制约束 diffusion-based video generation，为生成视频提供模型侧控制手段。
+- [Nautilus: Locality-Aware Autoencoder for Scalable Mesh Generation](https://arxiv.org/abs/2501.14317)：构建 locality-aware mesh autoencoder，通过保持拓扑邻近关系的 tokenization 和局部共享顶点压缩，实现可扩展的 artist-like mesh generation。
+- [RelightVid](https://arxiv.org/abs/2501.16330)：构建时间一致的视频重光照扩散模型。
 - [Separate Motion from Appearance](https://arxiv.org/abs/2501.16714)：在文生视频扩散模型中分离动作定制与外观定制。
+- [DiffusionRenderer](https://arxiv.org/abs/2501.18590)：用视频扩散模型做神经逆渲染和正向渲染，把视频生成与物理化渲染控制连接起来。
+- [Diffusion Latent Beam Search](https://arxiv.org/abs/2501.19252)：在推理时搜索扩散 latent 来提升文本到视频对齐，而不是重训练生成器。
+- [Consistent Video Colorization via Palette Guidance](https://arxiv.org/abs/2501.19331)：以 Stable Video Diffusion 为基础加入调色板颜色引导，在多个片段间提供统一颜色上下文以获得鲜明且时间稳定的上色。
 - [OmniHuman-1](https://arxiv.org/abs/2502.01061)：一阶段人物动画模型，用混合运动条件扩展 Diffusion Transformer 训练。
+- [VidSketch: Hand-drawn Sketch-Driven Video Generation with Diffusion Control](https://arxiv.org/abs/2502.01101)：支持任意数量手绘草图和文本提示输入，并用分级草图控制与 TempSpatial Attention 生成连贯草图驱动动画。
+- [BVINet: Unlocking Blind Video Inpainting With Zero Annotations](https://arxiv.org/abs/2502.01181)：在端到端盲视频修复网络中同时预测损坏区域 mask 并完成填充，用一致性损失和合成加真实损坏视频训练。
+- [HuViDPO:Enhancing Video Generation through Direct Preference Optimization for Human-Centric Alignment](https://arxiv.org/abs/2502.01690)：把 DPO 引入文本到视频生成，结合按动作类别构建的小规模人类偏好数据、首帧条件和 SparseCausal Attention 做人本对齐。
 - [Dual-IPO](https://arxiv.org/abs/2502.02088)：将双迭代偏好优化用于文生视频生成。
+- [MotionLab: Unified Human Motion Generation and Editing via the Motion-Condition-Motion Paradigm](https://arxiv.org/abs/2502.02358)：以 Motion-Condition-Motion 范式统一人体动作生成与编辑，并用 rectified flow 学习 source motion 与条件到 target motion 的映射。
+- [Controllable Video Generation with Provable Disentanglement](https://arxiv.org/abs/2502.02690)：提出 CoVoGAN 插件模块，用最小变化和充分变化约束解耦静态与动态 latent，为可识别的视频概念控制提供理论与实现。
+- [FreqPrior](https://arxiv.org/abs/2502.03496)：在频域过滤高斯噪声以改进视频扩散模型，保留运动动态和视觉细节。
+- [DC-VSR](https://arxiv.org/abs/2502.03502)：通过 Spatial/Temporal Attention Propagation 和 Detail-Suppression Self-Attention Guidance，在扩散式视频超分中同时保持时空一致与纹理细节。
 - [MotionCanvas](https://arxiv.org/abs/2502.04299)：通过可控图生视频生成支持电影化镜头设计。
-- [Lumina-Video](https://arxiv.org/abs/2502.06782)：提出面向视频生成的模型侧方法，核心围绕 Efficient and Flexible Video Generation with Multi-scale Next-DiT。
+- [On-device Sora: Enabling Training-Free Diffusion-based Text-to-Video Generation for Mobile Devices](https://arxiv.org/abs/2502.04363)：通过免训练优化让扩散式文本到视频生成可在移动设备上运行。
+- [Fast Video Generation with Sliding Tile Attention](https://arxiv.org/abs/2502.04507)：用硬件感知的 sliding tile attention 替代视频 DiT 中昂贵的 3D full attention，利用局部时空注意力集中性加速推理。
+- [AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting](https://arxiv.org/abs/2502.05176)：面向 360 度 Gaussian Splatting 场景修复，结合 depth-aware unseen mask、adaptive guided depth diffusion、SDEdit 细节增强，并发布 360-USID 数据集。
+- [FlashVideo: Flowing Fidelity to Detail for Efficient High-Resolution Video Generation](https://arxiv.org/abs/2502.05179)：把高分辨率视频生成拆成提示忠实的低分辨率合成和 flow-matching 超分阶段，从而高效补足细节。
+- [Fg-T2M++: LLMs-Augmented Fine-Grained Text Driven Human Motion Generation](https://arxiv.org/abs/2502.05534)：利用大语言模型增强细粒度文本驱动人体运动生成。
+- [AI-driven Sign Language Generation with Non-manual Markers](https://arxiv.org/abs/2502.05661)：将非手部标记纳入手语视频生成，使面部与身体线索不再只依赖手部动作控制。
+- [VFX Creator: Animated Visual Effect Generation with Controllable Diffusion Transformer](https://arxiv.org/abs/2502.05979)：发布带 mask 和时间戳的 Open-VFX，并训练带时空 LoRA、mask 控制和起止时间 token 的 Video DiT 来生成可控特效。
+- [CustomVideoX: 3D Reference Attention Driven Dynamic Adaptation for Zero-Shot Customized Video Diffusion Transformers](https://arxiv.org/abs/2502.06527)：提出 3D reference attention，用于零样本个性化视频扩散 Transformer。
+- [History-Guided Video Diffusion](https://arxiv.org/abs/2502.06764)：用历史上下文约束视频扩散生成，使生成视频保持时间连续性与动态一致性。
+- [Lumina-Video](https://arxiv.org/abs/2502.06782)：把 Next-DiT 扩展到视频生成，通过多尺度时空建模把扩散 Transformer 图像骨干适配为灵活的文生视频框架。
+- [Lotus: Creating Short Videos From Long Videos With Abstractive and Extractive Summarization](https://arxiv.org/abs/2502.07096)：先生成短视频脚本和语音，再匹配长视频片段到旁白，并通过自动片段选择与编辑界面支持抽取式补充。
+- [Contextual Gesture](https://arxiv.org/abs/2502.07239)：基于上下文感知的手势表征生成伴随语音的手势视频，将人本视频生成扩展到面部和唇动之外。
+- [Enhance-A-Video: Better Generated Video for Free](https://arxiv.org/abs/2502.07508)：提出 a training-free approach to enhance the coherence and quality of DiT-based generated videos, named Enhance-A-Video. The core idea is enhancing the cross-frame correlations based on non-diagonal temporal attention distributions。
+- [VidCRAFT3: Camera, Object, and Lighting Control for Image-to-Video Generation](https://arxiv.org/abs/2502.07531)：通过点云重建、轨迹到光流编码和 triple-attention 融合，统一图生视频中的相机运动、对象运动和光照方向控制。
+- [Dynamic Sparsity in Large-Scale Video DiT Training](https://arxiv.org/abs/2502.07590)：将动态稀疏用于大规模 Video DiT 训练，提升视频生成骨干的训练效率。
+- [Magic 1-For-1](https://arxiv.org/abs/2502.07701)：在一分钟内生成一分钟视频片段。核心思想：让长视频合成的生成时长接近真实运行时间，从而提升实用性。
+- [AnyCharV: Bootstrap Controllable Character Video Generation with Fine-to-Coarse Guidance](https://arxiv.org/abs/2502.08189)：先训练姿态引导的角色视频基础模型，再用首阶段生成视频和粗 mask 替换做自举训练，以保留源角色细节。
+- [BEAM](https://arxiv.org/abs/2502.08297)：结合物理渲染与 Gaussian modeling 支持可重光照体积视频，为视频生成补充物理约束的视频表示路线。
+- [Light-a-Video](https://arxiv.org/abs/2502.08590)：用渐进式光照融合实现免训练视频重光照，补充可控视频编辑路线。
 - [Step-Video-T2V](https://arxiv.org/abs/2502.10248)：30B 文生视频基础模型，结合深压缩 Video-VAE、双语文本编码器、3D full-attention DiT flow matching 和 Video-DPO 后训练。
+- [SkyReels-A1: Expressive Portrait Animation in Video Diffusion Transformers](https://arxiv.org/abs/2502.10841)：构建基于视频扩散 Transformer 的肖像动画模型。
+- [MaskFlow: Discrete Flows For Flexible and Efficient Long Video Generation](https://arxiv.org/abs/2502.11234)：使用离散 flow 实现灵活高效的长视频生成，为长时序合成补充新的生成建模路线。
+- [TextOCVP: Object-Centric Video Prediction with Language Guidance](https://arxiv.org/abs/2502.11655)：提出 TextOCVP, an object-centric model for video prediction guided by textual descriptions。
+- [MVTokenFlow: High-quality 4D Content Generation using Multiview Token Flow](https://arxiv.org/abs/2502.11697)：提出 MVTokenFlow for high-quality 4D content creation from monocular videos。
+- [DLFR-VAE: Dynamic Latent Frame Rate VAE for Video Generation](https://arxiv.org/abs/2502.11897)：提出 the Dynamic Latent Frame Rate VAE (DLFR-VAE), a training-free paradigm that can make use of adaptive temporal compression in latent space. While existing video generative models apply fixed compression rates via pretrained VAE, we observe that real-world video content exhibits substantial temporal non-uniformity, with high-motion segments contain。
+- [MALT Diffusion: Memory-Augmented Latent Transformers for Any-Length Video Generation](https://arxiv.org/abs/2502.12632)：用记忆增强潜空间 Transformer 支持任意长度视频生成。
+- [LLMPopcorn: An Empirical Study of LLMs as Assistants for Popular Micro-video Generation](https://arxiv.org/abs/2502.12945)：以 Exploring these questions, we show that advanced LLMs like DeepSeek-V3 can generate micro-videos with popularity rivaling human content 为核心。
+- [AV-Flow](https://arxiv.org/abs/2502.13133)：把文本转换为 audio-visual human-like interaction sequences。
+- [MotionMatcher: Motion Customization of Text-to-Video Diffusion Models via Motion Feature Matching](https://arxiv.org/abs/2502.13234)：通过匹配预训练模型提取的高层时空运动特征微调 T2V 扩散，避免参考视频像素重建带来的内容泄漏。
+- [Dynamic Concepts Personalization from Single Videos](https://arxiv.org/abs/2502.14844)：提出 Set-and-Sequence, a novel framework for personalizing Diffusion Transformers (DiTs)-based generative video models with dynamic concepts。
+- [LAVID](https://arxiv.org/abs/2502.14994)：用 agentic LVLM 框架推理视频伪影并检测扩散生成视频，提供可解释证据。
+- [Hardware-Friendly Static Quantization Method for Video Diffusion Transformers](https://arxiv.org/abs/2502.15077)：提出 a novel method for the post-training quantization of OpenSoraopensora, a Video Diffusion Transformer, without relying on dynamic quantization techniques. Our approach employs static quantization, achieving video quality comparable to FP16 and dynamically quantized ViDiT-Q methods, as measured by CLIP, and VQA metrics。
+- [AnyTop: Character Animation Diffusion with Any Topology](https://arxiv.org/abs/2502.17327)： 用扩散方法为任意拓扑角色生成动画，把动画生成扩展到非固定模板绑定。
+- [X-Dancer](https://arxiv.org/abs/2502.17414)：从音乐生成富有表现力的人体舞蹈视频，为视频生成补充音频条件下的人体运动路线。
+- [FLAP: Fully-controllable Audio-driven Portrait Video Generation through 3D head conditioned diffusion model](https://arxiv.org/abs/2502.19455)：用显式 3D 头部姿态和表情参数调节肖像扩散模型，使语音驱动、头部旋转和眨眼频率可独立控制。
+- [Lighting-Controllable Portrait Animation](https://arxiv.org/abs/2502.19894)：构建可重光照的单目肖像动画 video diffusion model，补充肖像视频生成中的光照控制能力。
+- [Mobius: Text to Seamless Looping Video Generation via Latent Shift](https://arxiv.org/abs/2502.20307)：复用预训练 latent video diffusion，通过连接首尾噪声并在去噪中移动帧 latent，实现无训练的文本到无缝循环视频生成。
+- [InsTaG: Learning Personalized 3D Talking Head from Few-Second Video](https://arxiv.org/abs/2502.20387)：结合轻量个人专属 3D Gaussian 合成器和通用运动先验，仅用数秒视频即可快速适配个性化 3D talking head。
+- [Training-Free Adaptive Sparse Attention](https://arxiv.org/abs/2502.21079)：以自适应稀疏注意力实现训练无关的长视频高效生成，补充视频扩散模型的推理效率路线。
+- [Raccoon: Multi-stage Diffusion Training with Coarse-to-Fine Curating Videos](https://arxiv.org/abs/2502.21314)：把粗到细筛选得到的 CFC-VIDS-1M 数据集，与解耦时空注意力 Transformer 和四阶段渐进训练配方结合。
+- [FaceShot](https://arxiv.org/abs/2503.00740)：使 arbitrary characters 动起来，扩展 portrait and character video generation。
+- [Extrapolating and Decoupling Image-to-Video Generation Models: Motion Modeling is Easier Than You Think](https://arxiv.org/abs/2503.00948)：解耦并外推图像到视频扩散中的运动建模，以增强可控运动生成。
+- [VideoHandles: Editing 3D Object Compositions in Videos Using Video Generative Priors](https://arxiv.org/abs/2503.01107)：以 We propose as a method for editing 3D object compositions in videos of static scenes with camera motion 为核心。
+- [Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior](https://arxiv.org/abs/2503.01610)：利用大规模多视角 clothed-human capture 学到的 universal prior 和 expressive 3D Gaussians，从野外单目视频恢复可动画化真实感 avatar。
+- [KeyFace: Expressive Audio-Driven Facial Animation for Long Sequences via KeyFrame Interpolation](https://arxiv.org/abs/2503.01715)：采用两阶段扩散流程，先生成音频条件的低帧率关键帧，再插值补齐，并加入连续情绪与非语音发声建模。
+- [DualDiff+: Dual-Branch Diffusion for High-Fidelity Video Generation with Reward Guidance](https://arxiv.org/abs/2503.03689)：用 DualDiff 双分支条件扩散、Occupancy Ray-shape Sampling 和前景感知 mask 控制多视角驾驶场景视频中的前景、背景与三维几何。
+- [Progressively Deformable 2D Gaussian Splatting](https://arxiv.org/abs/2503.05600)：用渐进可变形 2D Gaussian Splatting 表示任意分辨率视频。
+- [GSV3D: Gaussian Splatting-Based Geometric Distillation With Stable Video Diffusion for Single-Image 3D Object Generation](https://arxiv.org/abs/2503.06136)：用 Gaussian Splatting 解码器蒸馏 SV3D latent，在保留 2D 扩散多样性的同时显式约束多视角几何一致性。
+- [Text2Story: Advancing Video Storytelling with Text Guidance](https://arxiv.org/abs/2503.06310)：通过双向时间加权 latent 混合、动力学启发的提示权重和语义动作表示，把场景与动作提示融合成长视频叙事。
+- [LightMotion: A Light and Tuning-free Method for Simulating Camera Motion in Video Generation](https://arxiv.org/abs/2503.06508)：提供免调参的潜空间相机运动控制方法，在视频生成中模拟平移、缩放与旋转，无需额外深度估计或模型微调。
+- [Motion Anything: Any to Motion Generation](https://arxiv.org/abs/2503.06955)： 从多种条件生成 motion，补充视频与动画模型中的通用运动合成路线。
+- [PersonaBooth](https://arxiv.org/abs/2503.07390)：个性化 text-to-motion generation，使动作合成能保留特定主体风格。
+- [ObjectMover: Generative Object Movement with Video Prior](https://arxiv.org/abs/2503.08037)：利用视频先验生成物体运动，支持生成视频中的可控物体移动。
+- [RFLAV: Rolling Flow matching for infinite Audio Video generation](https://arxiv.org/abs/2503.08307)：提出 R-FLAV, a novel transformer-based architecture that addresses all the key challenges of AV generation. We explore three distinct cross modality interaction modules, with our lightweight temporal fusion module emerging as the most effective and computationally efficient approach for aligning audio and visual modalities。
+- [AnyMoLe](https://arxiv.org/abs/2503.08417)：利用视频扩散模型做任意角色 motion in-betweening，降低对角色专属运动数据的依赖。
+- [Versatile Multimodal Controls for Whole-Body Talking Human Animation](https://arxiv.org/abs/2503.08714)：构建 VersaAnimator，用音频驱动 3D 运动 token、文本控制身体动作、token 到姿态转换器和多模态视频扩散生成全身说话人动画。
+- [SwapAnyone](https://arxiv.org/abs/2503.09154)：在任意视频中生成一致且真实的人物替换视频合成。
 - [WonderVerse](https://arxiv.org/abs/2503.09160)：使用视频生成先验、可控场景扩展和不一致检测生成连贯 3D 环境。
-- [Open-Sora 2.0](https://arxiv.org/abs/2503.09642)：提出面向视频生成的模型侧方法，核心围绕 Training a Commercial-Level Video Generation Model in $200k。
+- [TPDiff: Temporal Pyramid Video Diffusion Model](https://arxiv.org/abs/2503.09566)：在扩散阶段中逐步提高帧率，并用分阶段概率流 ODE 训练，在降低训练成本的同时加速推理。
+- [V2M4: 4D Mesh Animation Reconstruction from a Single Monocular Video](https://arxiv.org/abs/2503.09631)：从单目视频直接生成可用 4D mesh animation asset，流程包括相机搜索、mesh reposing、条件优化、配准和全局纹理优化。
+- [Open-Sora 2.0](https://arxiv.org/abs/2503.09642)：报告面向商用级开放视频生成器的低成本训练栈，重点描述约 20 万美元预算下的数据、模型规模和训练决策。
+- [VideoMerge: Towards Training-free Long Video Generation](https://arxiv.org/abs/2503.09926)：通过合并多个固定尺寸去噪窗口，把预训练视频扩散模型免训练扩展到长视频，而不是要求单个 noise tensor 外推到未训练长度。
+- [Cosh-DiT: Co-Speech Gesture Video Synthesis via Hybrid Audio-Visual Diffusion Transformers](https://arxiv.org/abs/2503.09942)：提出 Cosh-DiT, a Co-speech gesture video system with hybrid Diffusion Transformers that perform audio-to-motion and motion-to-video synthesis using discrete and continuous diffusion modeling, respectively。
+- [A Self-supervised Motion Representation for Portrait Video Generation](https://arxiv.org/abs/2503.10096)：面向视频、三维与世界模型生成的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“A Self-supervised Motion Representation for Portrait Video Generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [DreamInsert: Zero-Shot Image-to-Video Object Insertion from A Single Image](https://arxiv.org/abs/2503.10342)：以 We propose DreamInsert, which achieves Image-to-Video Object Insertion in a training-free manner for the first time. By incorporating the trajectory of the object into consideration, DreamInsert can predict the unseen object movement, fuse it harmoniously with the background video, and generate the desired video seamlessly 为核心。
+- [LHM: Large Animatable Human Reconstruction Model from a Single Image in Seconds](https://arxiv.org/abs/2503.10625)：用融合人体位置特征和图像特征的 multimodal transformer，在数秒内从单张图像前馈推断可动画化 3D Gaussian 人体 avatar。
+- [NIL: No-data Imitation Learning by Leveraging Pre-trained Video Diffusion Models](https://arxiv.org/abs/2503.10626)：把预训练视频扩散模型作为演示生成器，用于人形、四足、动物和非常规形态的无数据模仿学习。
+- [V2Edit: Versatile Video Diffusion Editor for Videos and 3D Scenes](https://arxiv.org/abs/2503.10634)：以 Addressing the critical challenge of balancing original content preservation with editing task fulfillment, our approach employs a progressive strategy that decomposes complex editing tasks into a sequence of simpler subtasks 为核心。
+- [VRMDiff: Text-Guided Video Referring Matting Generation of Diffusion](https://arxiv.org/abs/2503.10678)：把指代表达视频抠图视为扩散生成 alpha matte，加入 Latent-Constructive 损失，并发布 1 万条带字幕与实例 matte 的视频数据。
+- [Error Analyses of Auto-Regressive Video Diffusion Models: A Unified Framework](https://arxiv.org/abs/2503.10704)：用 Meta-ARVDM 统一分析自回归视频扩散中的历史遗忘和时间退化，把长程误差与条件互信息和指标局限联系起来。
+- [EmoDiffusion: Enhancing Emotional 3D Facial Animation with Latent Diffusion Models](https://arxiv.org/abs/2503.11028)：在 latent diffusion 中解耦语音里的情绪信息，使 3D 人脸动画既保持语音同步又能表达丰富情绪。
+- [Cross-Modal Learning for Music-to-Music-Video Description Generation](https://arxiv.org/abs/2503.11190)：构建音乐到音乐视频描述的训练数据与微调流程，把 Music4All 中的音乐和视觉信息转成可供文生视频模型使用的描述提示。
+- [LLaVA-MLB: Mitigating and Leveraging Attention Bias for Training-Free Video LLMs](https://arxiv.org/abs/2503.11205)：利用 LLM 注意力压缩并扩展视频 token，通过 Gridded Attention Pooling 缓解位置偏置，并用 Visual Summarization Tail 利用该偏置。
+- [RASA: Replace Anyone, Say Anything - A Training-Free Framework for Audio-Driven and Universal Portrait Video Editing](https://arxiv.org/abs/2503.11571)：通过 Unified Animation Control、源视频反演 latent、视觉形状控制、音频说话控制和帧间控制，无需训练即可编辑肖像外观与口型。
+- [Frame-wise Conditioning Adaptation for Fine-Tuning Diffusion Models in Text-to-Video Prediction](https://arxiv.org/abs/2503.12953)：通过逐帧条件适配把预训练文本到视频扩散模型用于文本视频预测，而不只依赖图像扩散式 LoRA 微调。
+- [SyncDiff: Diffusion-Based Talking Head Synthesis with Bottlenecked Temporal Visual Prior for Improved Synchronization](https://arxiv.org/abs/2503.13371)：为扩散式 talking-head 合成加入瓶颈化时间视觉先验，在保留图像保真度的同时提升唇音同步。
+- [Fast Autoregressive Video Generation with Diagonal Decoding](https://arxiv.org/abs/2503.14070)：提出 Diagonal Decoding (DiagD), a training-free inference acceleration algorithm for autoregressively pre-trained models that exploits spatial and temporal correlations in videos。
+- [PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation](https://arxiv.org/abs/2503.14295)：用隐式关键点形变控制唇音对齐和情绪，包括词级说话风格、唇动幅度、情绪强度和面部区域级情绪混合。
+- [Comp-Attn: Present-and-Align Attention for Compositional Video Generation](https://arxiv.org/abs/2503.14428)：为组合式文生视频加入 present-and-align 注意力机制。核心思想：分别约束主体出现和关系对齐，避免多主体提示只生成视觉合理但语义不完整的视频。
+- [Stable Virtual Camera: Generative View Synthesis with Diffusion Models](https://arxiv.org/abs/2503.14489)：提出 Seva 通用扩散视角合成模型，可接受任意输入视图和目标相机，同时生成时间平滑的新视角视频。
+- [MusicInfuser: Making Video Diffusion Listen and Dance](https://arxiv.org/abs/2503.14505)：用 guidance 启发的层级适配性准则选择预训练 T2V 扩散层，在小数据且无动作数据的情况下让舞蹈视频与音乐同步。
+- [Temporal-Consistent Video Restoration](https://arxiv.org/abs/2503.14863)：利用预训练扩散模型进行时间一致的视频恢复，扩展生成式视频修复方法覆盖。
+- [Temporal Regularization Makes Your Video Generator Stronger](https://arxiv.org/abs/2503.15417)：以 Temporal quality is a critical aspect of video generation, as it ensures consistent motion and realistic dynamics across frames. However, achieving high temporal coherence and diversity remains challenging 为核心。
+- [Sparse and Flexible Keyjoint Control](https://arxiv.org/abs/2503.15557)：通过 sparse and flexible keyjoint conditions 控制 motion synthesis。
+- [Zero-1-to-A](https://arxiv.org/abs/2503.15851)：用视频扩散把单张图像转成可动画化头部 avatar，降低头像动画生成对大量训练数据或多视角采集的依赖。
+- [VideoRFSplat: Direct Scene-Level Text-to-3D Gaussian Splatting Generation with Flexible Pose and Multi-View Joint Modeling](https://arxiv.org/abs/2503.15855)：通过多视角联合建模与灵活姿态控制，直接生成 scene-level text-to-3D Gaussian splats，而不是逐视图独立处理。
+- [Scenemi](https://arxiv.org/abs/2503.16289)：面向人-场景交互进行运动中间帧生成，增强场景感知视频生成中的可控运动合成。
+- [SV4D 2.0: Enhancing Spatio-Temporal Consistency in Multi-View Video Diffusion for High-Quality 4D Generation](https://arxiv.org/abs/2503.16396)： 提升多视角视频扩散在 4D 生成中的时空一致性，连接视频合成与动态 3D 资产。
+- [MagicMotion: Controllable Video Generation with Dense-to-Sparse Trajectory Guidance](https://arxiv.org/abs/2503.16421)：用 dense-to-sparse trajectory guidance 控制视频生成，让用户指定运动路径，模型补全连贯视频动态。
+- [Think-Then-React](https://arxiv.org/abs/2503.16451)：先建模已观察动作，再生成合理的人体 reaction motion，用于 unconstrained action-to-reaction generation。
+- [A Recipe for Generating 3D Worlds from a Single Image](https://arxiv.org/abs/2503.16611)：将单张图像转化为可探索三维世界，结合生成式场景补全和几何感知 refinement 支持世界级内容创建。
+- [Enabling Versatile Controls for Video Diffusion Models](https://arxiv.org/abs/2503.16983)：为视频扩散模型加入多样控制机制，将可控视频合成从固定条件扩展到更灵活的控制方式。
+- [Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](https://arxiv.org/abs/2503.17539)：在 diffusion transformer 中加入 Video Interface Networks，使局部视频片段能并行去噪并交换全局语义上下文。
+- [InstructVEdit: A Holistic Approach for Instructional Video Editing](https://arxiv.org/abs/2503.17641)：提供完整的指令视频编辑流程，包括可靠编辑对数据整理、两项提升时间一致性的架构改动，以及利用真实数据的迭代细化。
+- [TransAnimate: Taming Layer Diffusion to Generate RGBA Video](https://arxiv.org/abs/2503.17934)：把 layer diffusion 适配为 RGBA 视频生成，产出可直接用于合成流程的透明前景动画。
+- [OmnimatteZero](https://arxiv.org/abs/2503.18033)：利用预训练视频扩散模型进行免训练 omnimatte 提取，扩展视频生成中的前景层控制与编辑能力。
+- [LongDiff: Training-Free Long Video Generation in One Go](https://arxiv.org/abs/2503.18150)：免训练地把短视频扩散模型扩展到长视频生成。
+- [Resource-Efficient Motion Control for Video Generation via Dynamic Mask Guidance](https://arxiv.org/abs/2503.18386)：用前景 mask 运动序列控制视频生成，并结合首帧共享和自回归延展，在减少训练数据需求的同时保持主体一致性。
+- [Teller: Real-Time Streaming Audio-Driven Portrait Animation with Autoregressive Motion Generation](https://arxiv.org/abs/2503.18429)：用自回归运动生成实现实时流式 audio-driven portrait animation，使语音同步面部运动能够低延迟输出。
+- [EvAnimate: Event-conditioned Image-to-Video Generation for Human Animation](https://arxiv.org/abs/2503.18552)：用事件相机的高时间分辨率运动线索驱动人体图生视频扩散，在高速运动、弱光和曝光变化下减少模糊与姿态噪声。
+- [AMD-Hummingbird](https://arxiv.org/abs/2503.18559)：提出高效文本到视频模型 AMD-Hummingbird，强调轻量化和快速合成系统的模型设计。
+- [HunyuanPortrait: Implicit Condition Control for Enhanced Portrait Animation](https://arxiv.org/abs/2503.18860)：通过隐式条件控制增强肖像动画，在不只依赖显式姿态输入的情况下改进表情和运动迁移。
+- [Target-Aware Video Diffusion Models](https://arxiv.org/abs/2503.18950)：以 We present a target-aware video diffusion model that generates videos from an input image, in which an actor interacts with a specified target while performing a desired action. The target is defined by a segmentation mask, and the action is described through a text prompt 为核心。
+- [EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-To-Video Diffusion Models](https://arxiv.org/abs/2503.19369)：用合成成对运动迁移样本训练，复用 T2V 主干提取时间信息，并以 scaler 模块和时间集成机制实现无需测试时优化的运动迁移。
+- [AccVideo: Accelerating Video Diffusion Model with Synthetic Dataset](https://arxiv.org/abs/2503.19462)：用合成去噪轨迹和少步引导加速视频扩散模型。
+- [Dance Like a Chicken: Low-Rank Stylization for Human Motion Diffusion](https://arxiv.org/abs/2503.19557)：用 LoRA-MDM 从少量风格样本适配动作扩散先验，在保持动作流形结构的同时支持风格化文本动作生成和风格混合。
+- [AudCast: Audio-Driven Human Video Generation by Cascaded Diffusion Transformers](https://arxiv.org/abs/2503.19824)：用级联扩散 Transformer 进行音频驱动的人体视频生成。
+- [TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization](https://arxiv.org/abs/2503.19901)：把物理人-场景交互任务 token 化，使统一合成模型能在场景上下文中生成接触感知的人体运动。
+- [AvatarArtist](https://arxiv.org/abs/2503.19906)：借助生成先验从肖像图像构建开放域 4D avatar，支持多风格动画化身。
+- [EGVD: Event-Guided Video Diffusion Model for Physically Realistic Large-Motion Frame Interpolation](https://arxiv.org/abs/2503.20268)：通过多模态运动条件生成器把事件相机信号与稳定视频扩散先验结合，并用选择性微调及真实加模拟事件数据处理大运动插帧。
 - [Wan](https://arxiv.org/abs/2503.20314)：开放视频基础模型套件，以扩散 Transformer 为主干，结合新 VAE、可扩展预训练和大规模数据清洗，覆盖文生视频、图生视频、编辑和个人视频。
-- [Seaweed-7B](https://arxiv.org/abs/2504.08685)：提出面向视频生成的模型侧方法，核心围绕 Cost-Effective Training of Video Generation Foundation Model。
+- [VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](https://arxiv.org/abs/2503.20491)：用安全对齐的 SFT 数据以及文本级和视频级偏好反馈训练提示优化器，提升 T2V 模型的安全性、意图保持和画面质量。
+- [FB-4D: Spatial-Temporal Coherent Dynamic 3D Content Generation with Feature Banks](https://arxiv.org/abs/2503.20784)：以 Inspired by recent findings that pretrained diffusion features capture rich correspondences, we propose FB-4D, a novel 4D generation framework that integrates a Feature Bank mechanism to enhance both spatial and temporal consistency in generated frames 为核心。
+- [Free4D: Tuning-Free 4D Scene Generation with Spatial-Temporal Consistency](https://arxiv.org/abs/2503.20785)：以 We present Free4D, a novel tuning-free framework for 4D scene generation from a single image. Existing methods either focus on object-level generation, making scene-level generation infeasible, or rely on large-scale multi-view video datasets for expensive training, with limited generalization ability due to the scarcity of 4D scene data 为核心。
+- [ChatAnyone: Stylized Real-time Portrait Video Generation with Hierarchical Motion Diffusion Model](https://arxiv.org/abs/2503.21144)：用分层音频驱动运动扩散生成风格化面部和身体动作，再注入显式手部控制与人脸细化以实现实时上半身肖像视频。
+- [Uni4D: Unifying Visual Foundation Models for 4D Modeling from a Single Video](https://arxiv.org/abs/2503.21761)：统一视觉基础模型做单视频 4D 建模，将重建与时间建模结合成动态场景资产生成流程。
+- [StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](https://arxiv.org/abs/2503.21775)：将风格编码器与预训练多模态模型对齐，并融合风格和内容 latent，使文本、动作、图像、视频或音频参考都可控制动作风格。
+- [Detecting Localized Deepfake Manipulations Using Action Unit-Guided Video Representations](https://arxiv.org/abs/2503.22121)：用动作单元引导的视频表征检测眉眼口等局部面部特征的细粒度 deepfake 编辑。
+- [Enhance Generation Quality of Flow Matching V2A Model via Multi-Step CoT-Like Guidance and Combined Preference Optimization](https://arxiv.org/abs/2503.22200)：用 Chain-of-Perform 引导和组合偏好优化改进 video-to-audio flow matching，提高音视频语义与时序对齐。
+- [SketchVideo: Sketch-based Video Generation and Editing](https://arxiv.org/abs/2503.23284)：以草图作为视频生成和编辑的直接空间控制信号，使用户能同时约束对象布局和时间变化。
+- [VLIPP](https://arxiv.org/abs/2503.23368)：把 VLM 规划作为 image-to-video generation 的物理先验，提升生成动态的物理合理性。
+- [JointTuner: Appearance-Motion Adaptive Joint Training for Customized Video Generation](https://arxiv.org/abs/2503.23951)：以 Moreover, with the finding that channel-temporal shift noise suppresses appearance-related low-frequencies while enhancing motion-related high-frequencies, we designe 为核心。
+- [HumanDreamer: Generating Controllable Human-Motion Videos via Decoupled Generation](https://arxiv.org/abs/2503.24026)：将可控人体动作视频生成解耦为运动和外观因素，在改善姿态控制的同时保持主体身份。
+- [Hierarchical Flow Diffusion for Efficient Frame Interpolation](https://arxiv.org/abs/2504.00380)：用层级扩散显式建模双向光流，再通过光流引导图像合成器生成中间帧，提高扩散式插帧效率。
+- [Monocular and Generalizable Gaussian Talking Head Animation](https://arxiv.org/abs/2504.00665)：用单目数据训练 MGGTalk，使 3D Gaussian talking-head 动画可泛化到未见身份，避免多视角采集和逐人重训练。
+- [Articulated Kinematics Distillation](https://arxiv.org/abs/2504.01204)：把视频扩散模型中的关节角色运动蒸馏到骨架式动画控制中。
+- [DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance](https://arxiv.org/abs/2504.01724)：组合多种 guidance 信号做整体人体图像动画，面向更强表现力、鲁棒性和身份保持。
+- [Generating 360° Video is What You Need For a 3D Scene](https://arxiv.org/abs/2504.02045)：以 We introduce a practical and scalable solution that uses 360° video as an intermediate scene representation, capturing the full-scene context and ensuring consistent visual content throughout the generation 为核心。
+- [OmniCam: Unified Multimodal Video Generation via Camera Control](https://arxiv.org/abs/2504.02312)：将多模态视频生成与相机控制条件统一起来，增强可控 text-to-video 与 image-to-video 合成能力。
+- [OmniTalker: One-shot Real-time Text-Driven Talking Audio-Video Generation With Multimodal Style Mimicking](https://arxiv.org/abs/2504.02433)：提出 OmniTalker, a unified framework that jointly generates synchronized talking audio-video content from input text while emulating the speaking and facial movement styles of the target identity, including speech characteristics, head motion, and facial dynamics。
+- [MG-MotionLLM: A Unified Framework for Motion Comprehension and Generation across Multiple Granularities](https://arxiv.org/abs/2504.02478)： 统一多粒度运动理解与生成，连接视频运动理解和生成式运动控制。
+- [Audio-Visual Controlled Video Diffusion with Masked Selective State Spaces Modeling for Natural Talking Head Generation](https://arxiv.org/abs/2504.02542)：在 talking-head video diffusion 中用 masked selective state-space modeling 融合音频和视觉控制。
+- [VIP Video Inpainting](https://arxiv.org/abs/2504.03041)：构建用于 real-world human removal 的 video inpainting pipeline。
+- [How I Warped Your Noise: a Temporally-Correlated Noise Prior for Diffusion Models](https://arxiv.org/abs/2504.03072)： 提出面向扩散模型的时间相关噪声先验，把噪声设计作为提升视频生成与修复时序一致性的可控模型路径。
+- [Ditailistener: Controllable High Fidelity Listener Video Generation with Diffusion](https://arxiv.org/abs/2504.04010)：用扩散模型生成可控高保真 listener 视频。
+- [Multi-Identity Human Image Animation with Structural Video Diffusion](https://arxiv.org/abs/2504.04126)：用 Structural Video Diffusion、身份专属嵌入和三维感知动态建模生成多人物交互视频并保持各自身份。
+- [Video4DGen: Enhancing Video and 4D Generation through Mutual Optimization](https://arxiv.org/abs/2504.04153)：提出 Video4DGen, a novel framework that excels in generating 4D representations from single or multiple generated videos as well as generating 4D-guided videos。
+- [Time-adaptive Video Frame Interpolation based on Residual Diffusion](https://arxiv.org/abs/2504.05402)：用 residual diffusion 做时间自适应视频插帧，面向任意时间位置的中间帧生成，而不只支持固定倍率插帧。
+- [Towards efficient real-time video motion transfer via generative time series modeling](https://arxiv.org/abs/2504.05537)：把实时视频 motion transfer 建模为生成式时间序列问题，强调低延迟地把时间动态迁移到生成视频中。
+- [CamC2V: Context-aware Controllable Video Generation](https://arxiv.org/abs/2504.06022)：为图生视频扩散加入上下文感知相机控制，在保持场景内容的同时施加轨迹约束，弥补普通 I2V 只做静态图像动画的问题。
+- [RagMe: Retrieval Augmented Video Generation for Enhanced Motion Realism](https://arxiv.org/abs/2504.06672)：把检索到的示例视频作为运动 grounding 条件接入预训练 T2V 扩散模型，用少量微调提升物体运动真实感。
+- [EIDT-V: Exploiting Intersections in Diffusion Trajectories for Model-Agnostic, Zero-Shot, Training-Free Text-to-Video Generation](https://arxiv.org/abs/2504.06861)：结合 latent diffusion trajectory intersections、LLM 逐帧提示和 CLIP 注意力 mask，让图像扩散模型在免训练且不改架构的情况下生成文本到视频结果。
+- [SIGMAN: Scaling 3D Human Gaussian Generation with Millions of Assets](https://arxiv.org/abs/2504.06982)：用百万级资产扩展 3D human Gaussian generation，把数据规模作为提升数字人合成质量的关键变量。
+- [GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography](https://arxiv.org/abs/2504.07083)：自回归生成相机轨迹，用于类似摄影指导的视频控制。
+- [STeP](https://arxiv.org/abs/2504.07549)：用时空扩散先验作为 plug-and-play 框架，从稀疏测量中重建科学视频。
+- [Beyond the Frame](https://arxiv.org/abs/2504.07940)：从普通透视视频生成 360-degree panoramic videos。
+- [TokenMotion: Decoupled Motion Control via Token Disentanglement for Human-centric Video Generation](https://arxiv.org/abs/2504.08181)：将人体视频生成中的运动 token 与外观 token 解耦，使运动控制不会覆盖身份和场景内容。
+- [Discriminator-Free Direct Preference Optimization for Video Diffusion](https://arxiv.org/abs/2504.08542)：以真实视频作为胜样本、反转或打乱等编辑损坏视频作为负样本构造视频 DPO，无需人工或判别器评分即可学习避开时间伪影。
+- [Seaweed-7B](https://arxiv.org/abs/2504.08685)：描述从零训练 7B 视频基础模型的低成本方案，重点记录 66.5 万 H100 GPU 小时预算下的架构、数据和资源取舍。
+- [MotionDreamer Motion Synthesis](https://arxiv.org/abs/2504.08959)：用局部化生成式掩码 Transformer 进行一对多运动合成，增强可控运动生成。
+- [Zero-Shot Personalized Camera Motion Control for Image-to-Video Synthesis](https://arxiv.org/abs/2504.09472)：在无需专门训练的情况下控制图像到视频合成中的个性化相机运动。
+- [GaussVideoDreamer](https://arxiv.org/abs/2504.10001)：结合视频扩散和不一致性感知 Gaussian Splatting 进行 3D 场景生成，将视频先验与空间一致场景合成相连接。
+- [Aligning Anime Video Generation with Human Feedback](https://arxiv.org/abs/2504.10044)：用人类反馈和动漫特化奖励对齐动漫视频生成。
+- [Analysis of Attention in Video Diffusion Transformers](https://arxiv.org/abs/2504.10317)：分析视频扩散 Transformer 的注意力行为，支持对视频生成系统的模型侧诊断。
+- [OmniVDiff](https://arxiv.org/abs/2504.10825)：构建面向生成与理解的全控制视频扩散模型。核心思想：统一多类控制信号，使视频合成能被更丰富的视觉和语义条件引导。
+- [Taming Consistency Distillation for Accelerated Human Image Animation](https://arxiv.org/abs/2504.11143)：提出 DanceLCM，通过分段一致性蒸馏、轻量辅助头、运动区域损失和人脸保真特征注入，实现 2 到 4 步人体图像动画。
+- [UniAnimate-DiT: Human Image Animation with Large-Scale Video Diffusion Transformer](https://arxiv.org/abs/2504.11289)：训练大规模 video diffusion transformer 做人体图像动画，以 DiT 容量扩展 UniAnimate 式控制。
+- [VideoPanda: Video Panoramic Diffusion with Multi-view Attention](https://arxiv.org/abs/2504.11389)：在视频扩散中使用多视角注意力合成 360 度全景视频。
+- [EgoExo-Gen: Ego-centric Video Prediction by Watching Exo-centric Videos](https://arxiv.org/abs/2504.11732)： 通过观看外部视角视频预测自我中心视频，为第一人称视频生成补充视角迁移路径。
+- [Understanding Attention in Video Diffusion](https://arxiv.org/abs/2504.12027)：分析 video diffusion models 的 attention mechanisms，为时间生成行为提供诊断视角。
+- [Modular-Cam: Modular Dynamic Camera-view Video Generation with LLM](https://arxiv.org/abs/2504.12048)：用 LLM 将复杂文生视频提示拆解为模块化场景和动态镜头视角，提升镜头感知的视频生成能力。
+- [VGDFR: Diffusion-based Video Generation with Dynamic Latent Frame Rate](https://arxiv.org/abs/2504.12259)：在扩散式视频生成中使用动态 latent frame rate，更合理分配时间建模资源。
+- [UniPhys: Unified Planner and Controller with Diffusion for Flexible Physics-Based Character Control](https://arxiv.org/abs/2504.12540)：把 diffusion 与统一 planner/controller 结合用于 physics-based character control，不只做视觉动作模仿。
+- [Supervising 3D Talking Head Avatars with Analysis-by-Audio-Synthesis](https://arxiv.org/abs/2504.13386)：通过 analysis-by-audio-synthesis 闭环监督 3D talking-head avatar，用音频重建信号改进语音驱动的面部运动。
+- [Visual Prompting for One-shot Controllable Video Editing without Inversion](https://arxiv.org/abs/2504.14335)：无需 DDIM inversion 即可把用户编辑的首帧传播到后续视频，通过 visual prompting 保持源内容一致。
+- [Turbo2K: Towards Ultra-Efficient and High-Quality 2K Video Synthesis](https://arxiv.org/abs/2504.14470)：面向高效 2K 视频合成重新设计生成路径，在较低计算开销下追求高质量，而不是单纯提升分辨率。
+- [FlowLoss: Dynamic Flow-Conditioned Loss Strategy for Video Diffusion Models](https://arxiv.org/abs/2504.14535)：直接匹配生成视频与真实视频的光流场，并用噪声感知的去噪步权重调节 flow loss，以提升扩散训练中的运动稳定性和早期收敛。
+- [DyST-XL: Dynamic Layout Planning and Content Control for Compositional Text-to-Video Generation](https://arxiv.org/abs/2504.15032)：提出 DyST-XL, a training-free framework that enhances off-the-shelf text-to-video models (e.g., CogVideoX-5B) through frame-aware control. DyST-XL integrates three key innovations: (1) A Dynamic Layout Planner that leverages large language models (LLMs) to parse input prompts into entity-attribute graphs and generates physics-aware keyframe layouts, w。
+- [Versatile Compressed Video Enhancement](https://arxiv.org/abs/2504.15380)：提供 plug-and-play 压缩视频增强方法，面向压缩伪影下的生成式视频修复和质量提升。
+- [DiTPainter: Efficient Video Inpainting with Diffusion Transformers](https://arxiv.org/abs/2504.15661)：提出 DiTPainter, an end-to-end video inpainting model based on Diffusion Transformer (DiT)。
+- [Efficient Temporal Consistency in Diffusion-Based Video Editing with Adaptor Modules: A Theoretical Framework](https://arxiv.org/abs/2504.16016)：分析 DDIM 视频编辑中的 adapter 模块，证明时间一致性损失下的可微性、Lipschitz 梯度界、下降收敛和 DDIM inversion 稳定性。
+- [BadVideo: Stealthy Backdoor Attack Against Text-to-Video Generation](https://arxiv.org/abs/2504.16907)：通过时空组合和动态元素迁移，在貌似正常的视频中嵌入有害目标，揭示文生视频生成器的后门攻击面。
 - [We'll Fix it in Post](https://arxiv.org/abs/2504.17180)：通过生成后的神经符号反馈改进文生视频结果。
+- [MV-Crafter: An Intelligent System for Music-Guided Video Generation](https://arxiv.org/abs/2504.17267)：用脚本生成、视频生成和音乐视频同步三个模块生成音乐视频，使视觉节奏和风格与输入音乐对齐。
+- [Dynamic Camera Poses and Where to Find Them](https://arxiv.org/abs/2504.17788)：构建并利用动态相机姿态资源，改进生成视频和视角合成管线中的相机运动条件控制。
+- [NoiseController: Towards Consistent Multi-View Video Generation via Noise Decomposition and Collaboration](https://arxiv.org/abs/2504.18448)：将初始噪声分解为场景级和对象级成分，并通过多帧噪声协作和联合去噪提升多视角视频生成一致性。
+- [Audio-Driven Talking Face Video Generation with Joint Uncertainty Learning](https://arxiv.org/abs/2504.18810)：把联合不确定性学习加入音频驱动的说话人脸视频生成，在不同语音输入下提升视觉可靠性与生成质量。
+- [CineVerse: Consistent Keyframe Synthesis for Cinematic Scene Composition](https://arxiv.org/abs/2504.19894)：构建电影场景数据集，并训练两阶段流程：先由 LLM 规划场景、角色和镜头，再微调 T2I 模型合成一致关键帧。
+- [Advance Fake Video Detection via Vision Transformers](https://arxiv.org/abs/2504.20669)：将基于 ViT 的伪造图像检测扩展到视频，通过聚合帧嵌入和时间证据检测更通用的 AI 生成视频。
+- [HoloTime: Taming Video Diffusion Models for Panoramic 4D Scene Generation](https://arxiv.org/abs/2504.21650)：结合视频扩散与全景 4D 场景重建生成沉浸式场景。
+- [Eye2Eye: A Simple Approach for Monocular-to-Stereo Video Synthesis](https://arxiv.org/abs/2505.00135)：用简单方法将单目视频合成为立体视频。
+- [Model See Model Do: Speech-Driven Facial Animation with Style Control](https://arxiv.org/abs/2505.01319)：让 latent diffusion 人脸动画模型以参考风格片段为条件，在唇音同步和基础情绪之外迁移细腻表演风格。
+- [VIDSTAMP](https://arxiv.org/abs/2505.01406)：为视频扩散模型加入时间感知水印以支持所有权和完整性验证，扩展视频生成安全与来源控制。
+- [DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization](https://arxiv.org/abs/2505.02192)：联合适配身份与运动，用于定制化文本到视频生成。
+- [PAHA: Parts-Aware Audio-Driven Human Animation with Diffusion Model](https://arxiv.org/abs/2505.03603)：为扩散式音频驱动上半身动画加入部件感知重加权和部件一致性增强，提升局部前景与音频运动控制。
+- [ReactDance: Progressive-Granular Representation for Long-Term Coherent Reactive Dance Generation](https://arxiv.org/abs/2505.05589)：在扩散框架中使用层次化 latent 表示生成 reactive dance，同时处理细粒度双人空间互动和长程时间连贯性。
+- [Jailbreaking the Text-to-Video Generative Models](https://arxiv.org/abs/2505.06679)：把 T2V 越狱形式化为离散提示优化，通过迭代搜索语义等价提示同时提高安全过滤绕过率和语义一致性。
+- [DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Video Editing with Diffusion Models](https://arxiv.org/abs/2505.07057)：通过参数高效微调提升扩散式视频编辑的一致性。
+- [EventDiff: A Unified and Efficient Diffusion Model Framework for Event-based Video Frame Interpolation](https://arxiv.org/abs/2505.08235)：用事件-帧混合自编码器和时空交叉注意力融合事件流与普通帧，使扩散式插帧不再依赖显式光流或扭曲操作。
+- [BiECVC: Gated Diversification of Bidirectional Contexts for Learned Video Compression](https://arxiv.org/abs/2505.09193)：用局部特征复用、解码运动对齐、线性注意力非局部上下文和双向上下文门控改进学习式双向视频压缩。
+- [Dyadic Mamba: Long-term Dyadic Human Motion Synthesis](https://arxiv.org/abs/2505.09827)：用状态空间模型替代 Transformer 位置建模，并拼接两个人体动作流，在文本条件下生成任意长度的双人交互动作。
+- [Aquarius: A Family of Industry-Level Video Generation Models for Marketing Scenarios](https://arxiv.org/abs/2505.10584)：报告面向营销场景的 Aquarius 工业级视频生成模型族，突出生产质量、可控性和部署约束。
+- [QVGen: Pushing the Limit of Quantized Video Generative Models](https://arxiv.org/abs/2505.11497)：推进量化视频生成模型的低比特推理，在保持合成质量的同时把压缩纳入模型设计轴。
+- [From Shots to Stories: LLM-Assisted Video Editing with Unified Language Representations](https://arxiv.org/abs/2505.12237)：将视频镜头转成 L-Storyboard 语言表示，并用 StoryFlow 稳定 LLM 在镜头属性分类、下一镜头选择和镜头排序中的推理。
+- [Safe-Sora: Safe Text-to-Video Generation via Graphical Watermarking](https://arxiv.org/abs/2505.12667)：通过图形水印提升文本到视频生成的安全性。
+- [Hearing from Silence: Reasoning Audio Descriptions from Silent Videos via Vision-Language Model](https://arxiv.org/abs/2505.13062)：定义从静音视频推理音频描述的 SVAD 任务，利用 VLM 推断缺失声音描述，作为后续 video-to-audio 生成的文本条件。
+- [VSA: Faster Video Diffusion with Trainable Sparse Attention](https://arxiv.org/abs/2505.13389)：学习 trainable sparse attention 加速视频扩散去噪，使模型无需更换生成骨干即可提升效率。
+- [FinePhys: Fine-grained Human Action Generation by Explicitly Incorporating Physical Laws for Effective Skeletal Guidance](https://arxiv.org/abs/2505.13437)：把基于物理规律的骨架引导接入扩散视频生成，使体操等细粒度人体动作在时间上更自然可信。
+- [DraftAttention](https://arxiv.org/abs/2505.14708)：用 low-resolution attention guidance 加速 video diffusion，为视频生成补充任务特定的推理效率方法。
+- [FastCar: Cache Attentive Replay for Fast Auto-Regressive Video Generation on the Edge](https://arxiv.org/abs/2505.14709)：用 cache-attentive replay 在边缘设备上运行自回归视频生成，复用历史计算并控制质量损失。
+- [Intentional Gesture](https://arxiv.org/abs/2505.15197)：生成与语音和表达意图一致的手势，扩展可控人本视频生成能力。
+- [Interspatial Attention for Efficient 4D Human Video Generation](https://arxiv.org/abs/2505.15800)：提出 a new interspatial attention (ISA) mechanism as a scalable building block for modern diffusion transformer (DiT)--based video generation models。
+- [Interactive Semantic Human-Body Video Compression](https://arxiv.org/abs/2505.16152)：用带 interactive semantics 的生成式方法压缩 human-body video。
+- [DOVE](https://arxiv.org/abs/2505.16239)：构建面向真实视频超分辨率的一步式高效扩散模型。核心思想：把视频修复推向更快的生成式增强，同时保持时间一致性。
+- [Direct3D-S2: Gigascale 3D Generation Made Easy with Spatial Sparse Attention](https://arxiv.org/abs/2505.17412)：用 spatial sparse attention 扩展三维生成规模，在降低 gigascale scene synthesis 成本的同时保持结构细节。
+- [T2VUnlearning: A Concept Erasing Method for Text-to-Video Diffusion Models](https://arxiv.org/abs/2505.17550)：提出 unlearning-based concept erasing as a solution. First, we adopt negatively-guided velocity prediction fine-tuning and enhance it with prompt augmentation to ensure robustness against prompts refined by large language models (LLMs)。
+- [Model Already Knows the Best Noise: Bayesian Active Noise Selection via Attention in Video Diffusion Model](https://arxiv.org/abs/2505.17561)：以 To address this, we propose ANSE (Active Noise Selection for Generation), a model-aware framework that selects high-quality seeds by quantifying attention-based uncertainty 为核心。
+- [DanceTogether! Identity-Preserving Multi-Person Interactive Video Generation](https://arxiv.org/abs/2505.18078)：提出 DanceTogether，面向多人交互视频生成保持身份一致，并配套双人运动数据。
+- [VORTA](https://arxiv.org/abs/2505.18809)：通过路由稀疏注意力提升视频扩散效率。核心思想：减少不必要的注意力计算，同时保留视频合成所需的时空依赖。
+- [Sparse VideoGen2: Accelerate Video Generation with Sparse Attention via Semantic-Aware Permutation](https://arxiv.org/abs/2505.18875)：用 semantic-aware sparse attention 和 token permutation 加速视频生成 diffusion transformer。
+- [REGen: Multimodal Retrieval-Embedded Generation for Long-to-Short Video Editing](https://arxiv.org/abs/2505.18880)：以 We propose a novel retrieval-embedded generation framework that allows a large language model to quote multimodal resources while maintaining a coherent narrative 为核心。
+- [Geometry-guided Online 3D Video Synthesis with Multi-View Temporal Consistency](https://arxiv.org/abs/2505.18932)：在在线 3D 视频合成中加入几何引导和多视角时间一致性约束，使相机运动和时间推进下的生成视图保持一致。
+- [SRDiffusion](https://arxiv.org/abs/2505.19151)：通过 sketching-rendering 协同加速视频扩散推理，补充视频专用推理效率方法。
+- [Dynamic-I2V: Exploring Image-to-Video Generation Models via Multimodal LLM](https://arxiv.org/abs/2505.19901)：把 MLLM 条件编码器接入 diffusion transformer，使图像与文本条件能表达物体-动作关系，从而提升运动可控性和时间一致性。
+- [AniCrafter: Customizing Realistic Human-Centric Animation via Avatar-Background Conditioning in Video Diffusion Models](https://arxiv.org/abs/2505.20255)：提出 AniCrafter, a diffusion-based human-centric animation model that can seamlessly integrate and animate a given character into open-domain dynamic backgrounds while following given human motion sequences。
+- [MotionPro: A Precise Motion Controller for Image-to-Video Generation*](https://arxiv.org/abs/2505.20287)：为图生视频加入精确运动控制器，把用户指定运动作为一等条件信号。
+- [Unified Text-Image-to-Video Generation: A Training-Free Approach to Flexible Visual Conditioning](https://arxiv.org/abs/2505.20629)：在推理期统一文本和图像条件，让预训练视频生成器无需额外训练即可接受更灵活的视觉引导。
+- [Frame-Level Captions for Long Video Generation with Complex Multi Scenes](https://arxiv.org/abs/2505.20827)：以 First, we propose a novel way to annotate datasets at the frame-level, providing detailed text guidance needed for making complex, multi-scene long videos. This detailed guidance works with a Frame-Level Attention Mechanism to make sure text and video match precisely 为核心。
+- [RainFusion](https://arxiv.org/abs/2505.21036)：利用多维视觉冗余加速视频生成，为生成式视频模型补充自适应效率方法。
+- [EF-VI](https://arxiv.org/abs/2505.21205)：改进 video inbetweening 中的 end-frame injection。
+- [Frame In-N-Out: Unbounded Controllable Image-to-Video Generation](https://arxiv.org/abs/2505.21491)：以 To support this task, we introduce a new dataset that is curated semi-automatically, an efficient identity-preserving motion-controllable video Diffusion Transformer architecture, and a comprehensive evaluation protocol targeting this task 为核心。
+- [Any-to-Bokeh: One-Step Video Bokeh via Multi-Plane Image Guided Diffusion](https://arxiv.org/abs/2505.21593)：用多平面图像引导扩散实现一步视频焦外虚化。
+- [Learning World Models for Interactive Video Generation](https://arxiv.org/abs/2505.21996)：为 image-to-video 模型加入动作条件和自回归记忆，面向交互式视频生成。
+- [PanoWan: Lifting Diffusion Video Generation Models to 360° with Latitude/Longitude-aware Mechanisms](https://arxiv.org/abs/2505.22016)：用 latitude/longitude-aware 机制把扩散视频生成器提升到 360 度合成，适配全景几何。
+- [Q-VDiT: Towards Accurate Quantization and Distillation of Video-Generation Diffusion Transformers](https://arxiv.org/abs/2505.22167)：研究视频生成 diffusion transformer 的量化与蒸馏，面向低比特部署质量保持。
+- [StateSpaceDiffuser: Bringing Long Context to Diffusion World Models](https://arxiv.org/abs/2505.22246)：提出 StateSpaceDiffuser, where a diffusion model is enabled to perform long-context tasks by integrating features from a state-space model, representing the entire interaction history。
+- [MOVi: Training-free Text-conditioned Multi-Object Video Generation](https://arxiv.org/abs/2505.22980)：提出 a novel training-free approach for multi-object video generation that leverages the open world knowledge of diffusion models and large language models (LLMs)。
+- [MMGT: Motion Mask Guided Two-Stage Network for Co-Speech Gesture Video Generation](https://arxiv.org/abs/2505.23120)：在两阶段共语手势视频生成网络中使用 motion mask，将手势区域引导和最终视频合成分开建模。
+- [Zero-to-Hero](https://arxiv.org/abs/2505.23134)：用零样本初始化增强 reference-based video appearance editing。
+- [MiniMax-Remover: Taming Bad Noise Helps Video Object Removal](https://arxiv.org/abs/2505.24873)： 通过抑制不良噪声改善视频对象移除，为视频编辑模型补充鲁棒性导向方法。
+- [Foresight](https://arxiv.org/abs/2506.00329)：通过自适应层复用加速文本到视频生成并保持质量，补充任务相关的视频生成加速机制。
 - [Video Signature](https://arxiv.org/abs/2506.00652)：在视频扩散模型中嵌入隐式水印，同时保持视觉质量和时序一致性。
-- [Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](https://arxiv.org/abs/2506.09350)：提出面向视频生成的模型侧方法，核心围绕 Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation。
+- [SkyReels-Audio: Omni Audio-Conditioned Talking Portraits in Video Diffusion Transformers](https://arxiv.org/abs/2506.00830)：提出 SkyReels-Audio, a unified framework for synthesizing high-fidelity and temporally coherent talking portrait videos. Built upon pretrained video diffusion transformers, our framework supports infinite-length generation and editing, while enabling diverse and controllable conditioning through multimodal inputs。
+- [Temporal In-Context Fine-Tuning](https://arxiv.org/abs/2506.00996)：结合时序推理与 in-context fine-tuning 控制视频扩散模型，覆盖多样编辑与生成条件。
+- [MoCA-Video: Motion-Aware Concept Alignment for Consistent Video Editing](https://arxiv.org/abs/2506.01004)：在冻结视频扩散 latent 中用分割和对角去噪调度定位对象，再用 momentum correction 和 gamma residual module 稳定语义混合编辑。
+- [DeepVerse: 4D Autoregressive Video Generation as a World Model](https://arxiv.org/abs/2506.01103)：把 4D 自回归视频生成表述为世界模型，强调持续场景动态而不是短片段独立合成。
+- [FlowMo: Variance-Based Flow Guidance for Coherent Motion in Video Generation](https://arxiv.org/abs/2506.01144)：从相邻帧 latent 中提取去外观偏置的时间信号，并在采样时降低 patch 级时间方差，以免训练方式增强运动连贯性。
+- [Playing with Transformer at 30+ FPS via Next-Frame Diffusion](https://arxiv.org/abs/2506.01380)：用 next-frame diffusion 实现 30 FPS Transformer 生成，面向高效实时视频合成。
+- [DiffuseSlide: Training-Free High Frame Rate Video Generation Diffusion](https://arxiv.org/abs/2506.01454)：以免训练扩散流程把低帧率关键帧视频转为高帧率输出，并通过噪声重注入和滑动去噪减少闪烁。
+- [OmniV2V: Versatile Video Generation and Editing via Dynamic Content Manipulation](https://arxiv.org/abs/2506.01801)：通过 dynamic content manipulation 做通用 video-to-video 生成和编辑，区分需要改变的内容与应保持时间一致的内容。
+- [Physics-Guided Motion Loss for Video Generation Model](https://arxiv.org/abs/2506.02244)：在视频生成训练中加入显式 physics-guided motion loss，使合成运动更符合物理动态。
+- [SViMo: Synchronized Diffusion for Video and Motion Generation in Hand-object Interaction Scenarios](https://arxiv.org/abs/2506.02444)：以 Recognizing that visual appearance and motion patterns share fundamental physical laws in the real world, we propose a novel framework that combines visual priors and dynamic constraints within a synchronized diffusion process to generate the HOI video and motion simultaneously 为核心。
+- [LumosFlow: Motion-Guided Long Video Generation](https://arxiv.org/abs/2506.02497)：在分层长视频生成中加入显式运动引导，结合大运动关键帧、latent optical flow 和后处理精修以减少重复与不自然过渡。
+- [Dual-Expert Consistency Model for Efficient and High-Quality Video Generation](https://arxiv.org/abs/2506.03123)：提出双专家一致性蒸馏方法，在提升视频生成效率的同时保持时间一致性。
+- [CamCloneMaster: Enabling Reference-based Camera Control for Video Generation](https://arxiv.org/abs/2506.03140)：支持 reference-based camera control，把示例中的相机运动线索迁移到视频生成，而不是只依赖文本提示。
+- [IllumiCraft](https://arxiv.org/abs/2506.03150)：统一几何与光照扩散以支持可控视频生成，把场景结构和光照控制联系起来。
+- [FullDiT2: Efficient In-Context Conditioning for Video Diffusion Transformers](https://arxiv.org/abs/2506.04213)：以 Based on these insights, we propose FullDiT2, an efficient in-context conditioning framework for general controllability in both video generation and editing tasks, which innovates from two key perspectives 为核心。
+- [Voyager: Long-Range and World-Consistent Video Diffusion for Explorable 3D Scene Generation](https://arxiv.org/abs/2506.04225)：从单张图像和用户指定相机路径生成世界一致的 3D 点云序列，避免依赖额外的 SfM 或多视角立体重建流水线。
+- [LayerFlow](https://arxiv.org/abs/2506.04228)：统一 layer-aware video generation，使前景和背景结构可显式控制。
+- [Follow-Your-Creation: Empowering 4D Creation through Video Inpainting](https://arxiv.org/abs/2506.04590)：以视频修复作为 4D creation 引擎，使编辑或补全的视频区域能传播为动态内容资产。
+- [FPSAttention: Training-Aware FP8 and Sparsity Co-Design for Fast Video Diffusion](https://arxiv.org/abs/2506.04648)：把 FP8 attention 和稀疏性做 training-aware 协同设计，在保持生成质量的同时加速视频扩散。
+- [FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](https://arxiv.org/abs/2506.05046)：通过操控 flow field 在免训练条件下引导文本到视频编辑，提供推理时的运动感知精确编辑。
+- [Astraea: A Token-wise Acceleration Framework for Video Diffusion Transformers](https://arxiv.org/abs/2506.05096)：搜索 token 缩减计划，并结合轻量 token 选择和 GPU 友好稀疏注意力来加速视频扩散 Transformer。
+- [Follow-Your-Motion: Video Motion Transfer via Efficient Spatial-Temporal Decoupled Finetuning](https://arxiv.org/abs/2506.05207)：以 To tackle these issues, we propose Follow-Your-Motion, an efficient two-stage video motion transfer framework that finetunes a powerful video diffusion transformer to synthesize complex motion 为核心。
+- [ContentV: Efficient Training of Video Generation Models with Limited Compute](https://arxiv.org/abs/2506.05343)：提出 ContentV, an 8B-parameter text-to-video model that achieves state-of-the-art performance (85.14 on VBench) after training on 256 x 64GB Neural Processing Units (NPUs) for merely four weeks。
+- [LLIA - Enabling Low-Latency Interactive Avatars: Real-Time Audio-Driven Portrait Video Generation with Diffusion Models](https://arxiv.org/abs/2506.05806)：结合变长音频到视频扩散、consistency model 训练、量化、流水并行、状态标签和表情控制，实现低延迟交互式头像生成。
+- [Restereo: Diffusion stereo video generation and restoration](https://arxiv.org/abs/2506.06023)：用扩散模型进行立体视频生成与修复，将视频生成覆盖扩展到双目一致性。
+- [A Systematic Investigation on Deep Learning-Based Omnidirectional Image and Video Super-Resolution](https://arxiv.org/abs/2506.06710)：系统考察全景图像和视频超分辨率深度方法，明确覆盖 360 度视频复原与时间上采样。
+- [TV-LiVE: Training-Free, Text-Guided Video Editing via Layer Informed Vitality Exploitation](https://arxiv.org/abs/2506.07205)：提出基于层级信号的训练无关文本引导视频编辑方法。
+- [From Generation to Generalization: Emergent Few-Shot Learning in Video Diffusion Models](https://arxiv.org/abs/2506.07280)：以 To probe the extent of this internal knowledge, we introduce a few-shot fine-tuning framework that repurposes VDMs for new tasks using only a handful of examples 为核心。
+- [NOVA3D: Normal Aligned Video Diffusion Model for Single Image to 3D Generation](https://arxiv.org/abs/2506.07698)：用视频扩散先验做单图到三维生成，通过 Geometry-Temporal Alignment attention 和 de-conflict geometry fusion 提升多视角一致性。
+- [Consistent Video Editing as Flow-Driven Image-to-Video Generation](https://arxiv.org/abs/2506.07713)：把视频编辑拆成首帧编辑和光流驱动的图到视频生成，并模拟与形变对齐的伪光流来保持非刚性编辑的时间一致性。
+- [PolyVivid: Vivid Multi-Subject Video Generation with Cross-Modal Interaction and Enhancement](https://arxiv.org/abs/2506.07848)：提出 PolyVivid, a multi-subject video customization framework that enables flexible and identity-consistent generation。
+- [Improving Motion in Image-to-Video Models via Adaptive Low-Pass Guidance](https://arxiv.org/abs/2506.08456)：以 To address this, we propose adaptive low-pass guidance (ALG), a simple training-free fix to the I2V model sampling procedure to generate more dynamic videos without compromising per-frame image quality 为核心。
+- [LiftVSR](https://arxiv.org/abs/2506.08529)：将图像扩散先验迁移到视频超分辨率，并通过混合时序建模补充扩散式视频恢复路线。
+- [Cross-Frame Representation Alignment for Fine-Tuning Video Diffusion Models](https://arxiv.org/abs/2506.09229)：将 REPA 扩展为视频 CREPA，在 CogVideoX-5B 和 Hunyuan Video 的 LoRA 微调中把当前帧隐藏状态对齐到邻帧视觉特征。
+- [Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](https://arxiv.org/abs/2506.09350)：把预训练 latent video diffusion 后训练成逐帧自回归生成器，用 adversarial student forcing 和 KV-cache 友好架构支持实时流式控制。
+- [Synthetic Human Action Video Data Generation with Pose Transfer](https://arxiv.org/abs/2506.09411)：用可控 3D Gaussian avatar 做姿态迁移合成人体动作视频，并发布 RANDOM People 身份数据来扩展小样本动作识别训练集。
+- [VideoMat](https://arxiv.org/abs/2506.09665)：从视频扩散模型中提取 PBR 材质。核心思想：复用视频扩散先验来推断可控渲染与生成所需的材质属性。
+- [AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation](https://arxiv.org/abs/2506.09982)：提出面向文本驱动通用 mesh animation 的前馈 4D foundation model，无需逐实例优化即可生成动画 mesh。
+- [PlayerOne: Egocentric World Simulator](https://arxiv.org/abs/2506.09995)： 构建自我中心世界模拟器，连接第一人称视频生成与交互式世界模型行为。
+- [Multimodal Cinematic Video Synthesis Using Text-to-Image and Audio Generation Models](https://arxiv.org/abs/2506.10005)：以 Advances in generative artificial intelligence have altered multimedia creation, allowing for automatic cinematic video synthesis from text inputs. This work describes a method for creating 60-second cinematic movies incorporating Stable Diffusion for high-fidelity image synthesis, GPT-2 for narrative structuring, and a hybrid audio pipeline using gTTS an 为核心。
+- [EmbodiedGen: Towards a Generative 3D World Engine for Embodied Intelligence](https://arxiv.org/abs/2506.10600)：构建面向 embodied intelligence 的生成式三维世界引擎，把视频/世界生成与交互式空间模拟连接起来。
+- [iDiT-HOI: Inpainting-based Hand Object Interaction Reenactment via Video Diffusion Transformer](https://arxiv.org/abs/2506.12847)：用 inpainting-based video diffusion transformer 重演手物交互，处理遮挡、物体差异以及未见过的人和物。
+- [EraserDiT: Fast Video Inpainting with Diffusion Transformer Model](https://arxiv.org/abs/2506.12853)：以 We propose a Circular Position-Shift strategy to further enhance long-term temporal consistency during the inference stage 为核心。
+- [VideoPDE: Unified Generative PDE Solving via Video Inpainting Diffusion Models](https://arxiv.org/abs/2506.13754)：把 PDE 正向和逆向求解统一为时空 inpainting，用 pixel-space 视频扩散 Transformer 在任意已知数据 mask 下生成缺失状态。
+- [VideoMAR: Autoregressive Video Generatio with Continuous Tokens](https://arxiv.org/abs/2506.14168)：提出 VideoMAR, a concise and efficient decoder-only autoregressive image-to-video model with continuous tokens, composing temporal frame-by-frame and spatial masked generation。
+- [Causally Steered Diffusion for Automated Video Counterfactual Generation](https://arxiv.org/abs/2506.14404)：用因果图文本提示和基于 VLM 的文本损失引导 latent 视频编辑，使反事实视频生成保留原视频数据生成过程中的因果依赖。
+- [Toward Rich Video Human-Motion2D Generation](https://arxiv.org/abs/2506.14428)：以 Building upon this dataset, we propose a novel diffusion-based rich video human motion2D generation (RVHM2D) model. RVHM2D incorporates an enhanced textual conditioning mechanism utilizing either dual text encoders (CLIP-L/B) or T5-XXL with both global and local features 为核心。
+- [Hunyuan3D 2.1: From Images to High-Fidelity 3D Assets with Production-Ready PBR Material](https://arxiv.org/abs/2506.15442)：扩展图像到三维资产生成并支持生产级材质，适合视频/三维生成页面的模型小节。
+- [One-Step Diffusion for Video Super-Resolution](https://arxiv.org/abs/2506.15591)：用一步式扩散实现细节丰富且时间一致的视频超分辨率。
+- [UniRelight](https://arxiv.org/abs/2506.15673)：用单次视频扩散过程同时估计 albedo 并合成新光照，在合成多光照数据和自动标注真实视频上训练，以提升图像和视频重打光的泛化与时间一致性。
+- [Advanced Sign Language Video Generation with Compressed and Quantized Multi-Condition Tokenization](https://arxiv.org/abs/2506.15980)：通过压缩量化的多条件 tokenization 进行手语视频生成，提升身份保持、姿态和手部控制能力。
+- [FastInit: Fast Noise Initialization for Temporally Consistent Video Generation](https://arxiv.org/abs/2506.16119)：为视频扩散设计快速噪声初始化，使早期 latent 噪声具有时间一致性，从源头减少闪烁而无需改动完整生成器。
+- [Seeing What Matters: Generalizable AI-generated Video Detection with Forensic-Oriented Augmentation](https://arxiv.org/abs/2506.16802)：以 Then, we introduce a novel forensic-oriented data augmentation strategy based on the wavelet decomposition and replace specific frequency-related bands to drive the model to exploit more relevant forensic cues 为核心。
+- [DreamCube: 3D Panorama Generation via Multi-plane Synchronization](https://arxiv.org/abs/2506.17206)：通过多平面同步生成三维全景，适合三维场景生成模型。
+- [ViDAR: Video Diffusion-Aware 4D Reconstruction From Monocular Inputs](https://arxiv.org/abs/2506.18792)：用个性化视频扩散生成伪多视角监督来训练单目 4D Gaussian 表示，并通过 diffusion-aware loss 与相机位姿优化缓解几何不一致。
+- [Training-Free Motion Customization for Distilled Video Generators with Adaptive Test-Time Distillation](https://arxiv.org/abs/2506.19348)：通过自适应测试时蒸馏，为蒸馏视频生成器实现无需训练的运动定制。核心思想：只在需要引导的时段调用较慢教师模型，使快速视频生成器更忠实地跟随参考运动。
+- [AnimaX](https://arxiv.org/abs/2506.19851)：结合视频与姿态扩散来动画化无生命 3D 物体，扩展视频生成中的 3D 感知动画覆盖。
+- [DFVEdit: Conditional Delta Flow Vector for Zero-shot Video Editing](https://arxiv.org/abs/2506.20967)：以 To alleviate this problem, we present DFVEdit, an efficient zero-shot video editing method tailored for Video DiTs. DFVEdit eliminates the need for both attention modification and fine-tuning by directly operating on clean latents via flow transformation 为核心。
+- [Video Virtual Try-on with Conditional Diffusion Transformer Inpainter](https://arxiv.org/abs/2506.21270)：用条件 diffusion transformer inpainter 做视频虚拟试衣，在人物运动过程中保持服装身份并跨帧补全衣物区域。
+- [Shape-for-Motion: Precise and Consistent Video Editing With 3D Proxy](https://arxiv.org/abs/2506.22432)：为目标物体构建时间一致的 3D proxy mesh，将单帧编辑传播到全片段，再把几何和纹理渲染输入解耦视频扩散编辑器。
+- [OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions](https://arxiv.org/abs/2506.23361)：在前馈视频生成器中用多模态控制条件做主体定制，减少逐主体优化需求。
+- [SynMotion: Semantic-Visual Adaptation for Motion Customized Video Generation](https://arxiv.org/abs/2506.23690)：提出 SynMotion, a new motion-customized video generation model that jointly leverages semantic guidance and visual adaptation。
+- [VMoBA](https://arxiv.org/abs/2506.23858)：用 mixture-of-block attention 提升视频扩散 Transformer 的效率。核心思想：按块级模式路由注意力，在降低计算量的同时尽量保持长视频的时间结构。
+- [MotionGPT3](https://arxiv.org/abs/2506.24086): 将人体运动作为第二模态，扩展围绕运动序列的多模态生成与表征。
+- [Filter-And-Refine: A MLLM Based Cascade System for Industrial-Scale Video Content Moderation](https://doi.org/10.18653/v1/2025.acl-industry.62)：部署级联审核架构，让多模态 LLM 先过滤候选视频，再细化判定结果，用于工业规模视频内容安全审核。
+- [Populate-A-Scene: Affordance-Aware Human Video Generation](https://arxiv.org/abs/2507.00334)：微调文生视频模型，让其根据动作提示在单张场景图中插入人物，并利用 cross-attention affordance 信号而非框或姿态作为位置依据。
+- [ARIG: Autoregressive Interactive Head Generation for Real-Time Conversations](https://arxiv.org/abs/2507.00472)：面向实时对话自回归生成交互式头部视频，重点是低延迟头部运动和回复同步。
+- [AI-Generated Video Detection via Perceptual Straightening](https://arxiv.org/abs/2507.00583)：通过 perceptual straightening 检测 AI 生成视频，利用感知空间规律作为取证信号，而不是只看原始伪影模板。
+- [Geometry-aware 4D Video Generation for Robot Manipulation](https://arxiv.org/abs/2507.01099)：以 To address this, we propose a 4D video generation model that enforces multi-view 3D consistency of generated videos by supervising the model with cross-view pointmap alignment during training 为核心。
+- [FixTalk](https://arxiv.org/abs/2507.01390)：在极端场景下降低 talking-head 视频生成中的身份泄漏和渲染伪影。
+- [LongAnimation: Long Animation Generation with Dynamic Global-Local Memory](https://arxiv.org/abs/2507.01945)：以 Specifically, we propose LongAnimation, a novel framework, which mainly includes a SketchDiT, a Dynamic Global-Local Memory (DGLM), and a Color Consistency Reward 为核心。
+- [Pixel-Wise Temporal Frequency Deepfake Detection](https://arxiv.org/abs/2507.02398)：利用像素级时序频率特征检测 deepfake video，补充生成视频真实性检测模型。
+- [Canonswap](https://arxiv.org/abs/2507.02691)：通过 canonical-space modulation 实现高保真、一致的视频换脸。
+- [From Long Videos to Engaging Clips: A Human-Inspired Video Editing Framework with Multimodal Narrative Understanding](https://arxiv.org/abs/2507.02790)：构建 HIVE 自动剪辑管线，用 MLLM 做角色提取、对话分析、叙事摘要、场景分割、亮点选择和无关内容剪除。
+- [Runtime-Adaptive Caching for Video Diffusion](https://arxiv.org/abs/2507.02860)：通过 runtime-adaptive caching 对 video diffusion 做 training-free acceleration。
+- [RefTok: Reference-Based Tokenization for Video Generation](https://arxiv.org/abs/2507.02862)：以未量化参考帧为条件编码和解码帧组，在提高压缩率的同时保持对象外观、文字细节和运动连续性。
+- [StreamDiT](https://arxiv.org/abs/2507.03745)：用 moving buffer flow matching、混合帧分区训练、adaLN DiT window attention 和分段蒸馏，实现 512p 文生视频 16 FPS 流式生成。
+- [EchoMimicV3: 1.3B Parameters are All You Need for Unified Multi-Modal and Multi-Task Human Animation](https://arxiv.org/abs/2507.03905)：通过 Soup-of-Tasks mask、Soup-of-Modals cross-attention、阶段感知模态分配、negative DPO 和阶段感知 CFG 统一多任务人体动画。
+- [Can Video LLMs Refuse to Answer? Alignment for Answerability in Video Large Language Models](https://arxiv.org/abs/2507.04976)：对齐 Video-LLM 判断问题是否可由视频回答，并在超出视频信息范围时拒答，同时提供数据构造流程和可答性评估指标。
+- [Tora2: Motion and Appearance Customized Diffusion Transformer for Multi-Entity Video Generation](https://arxiv.org/abs/2507.05963)：加入解耦个性化提取器、融合轨迹文本与视觉身份的门控自注意力，以及运动身份对比损失，实现多实体外观和运动定制。
+- [Democratizing High-Fidelity Co-Speech Gesture Video Generation](https://arxiv.org/abs/2507.06812)：把 2D 全身骨架作为音频到视频的桥梁，从细粒度音频和参考图预测骨架运动，并发布 405 小时 CSG-405 数据集。
+- [Physics-Grounded Motion Forecasting via Equation Discovery for Trajectory-Guided Image-to-Video Generation](https://arxiv.org/abs/2507.06830)：提出 a novel framework that integrates symbolic regression (SR) and trajectory-guided image-to-video (I2V) models for physics-grounded video forecasting。
+- [Martian World Model: Controllable Video Synthesis with Physically Accurate 3D Reconstructions](https://arxiv.org/abs/2507.07978)：结合可控视频合成与物理准确的三维重建，适合补充世界一致性视频生成路线。
+- [M2DAO-Talker: Harmonizing Multi-granular Motion Decoupling and Alternating Optimization for Talking-head Generation](https://arxiv.org/abs/2507.08307)：将非刚性的口腔与面部运动和刚性头部运动解耦，并用形变 mask、相机参数和交替优化减少说话头像渲染伪影。
+- [Show and Polish](https://arxiv.org/abs/2507.10293)：通过参考引导的身份保持进行人脸视频修复。核心思想：引入参考身份信号，使视频修复在提升质量时不随时间偏离目标人物。
+- [MOSPA: Human Motion Generation Driven by Spatial Audio](https://arxiv.org/abs/2507.11949)：以 To bridge this gap and enable high-quality modeling of human movements in response to spatial audio, we introduce the first comprehensive Spatial Audio-Driven Human Motion (SAM) dataset, which contains diverse and high-quality spatial audio and motion data 为核心。
+- [HairShifter: Consistent and High-Fidelity Video Hair Transfer via Anchor-Guided Animation](https://arxiv.org/abs/2507.12758)：把图像发型迁移与 Anchor Frame 加 Animation 流程结合，并用 multi-scale gated SPADE decoder 保持发型细节和时间连贯。
+- [Think-Before-Draw: Decomposing Emotion Semantics & Fine-Grained Controllable Expressive Talking Head Generation](https://arxiv.org/abs/2507.12761)：用 chain-of-thought 情绪解析把文本情绪标签转成面部肌肉运动描述，再通过 progressive guidance denoising 生成可控表情。
+- [LoViC: Efficient Long Video Generation with Context Compression](https://arxiv.org/abs/2507.12952)：通过 context compression 提升长视频生成效率，在降低记忆开销的同时保留长程时间信息。
+- [FantasyPortrait: Enhancing Multi-Character Portrait Animation with Expression-Augmented Diffusion Transformers](https://arxiv.org/abs/2507.12956)：在多角色肖像动画中加入 expression-augmented diffusion transformer，改善角色级表情迁移和一致性。
+- [Leveraging Pre-Trained Visual Models for AI-Generated Video Detection](https://arxiv.org/abs/2507.13224)：适配预训练视觉模型检测通用 AI 生成视频，覆盖不局限于人脸 deepfake 的合成内容取证。
+- [Taming Diffusion Transformer for Efficient Mobile Video Generation in Seconds](https://arxiv.org/abs/2507.13343)：提出 a series of novel optimizations to significantly accelerate video generation and enable practical deployment on mobile platforms. First, we employ a highly compressed variational autoencoder (VAE) to reduce the dimensionality of the input data without sacrificing visual quality。
+- [Encapsulated Composition of Text-to-Image and Text-to-Video Models for High-Quality Video Synthesis](https://arxiv.org/abs/2507.13753)：提出 EVS, a training-free Encapsulated Video Synthesizer that composes T2I and T2V models to enhance both visual fidelity and motion smoothness of generated videos。
+- [StableAnimator++: Overcoming Pose Misalignment and Face Distortion for Human Image Animation](https://arxiv.org/abs/2507.15064)：通过可学习姿态对齐和身份保持提升人物图像动画生成。
+- [Dream, Lift, Animate: From Single Images to Animatable Gaussian Avatars](https://arxiv.org/abs/2507.15979)：先用视频扩散生成单图的多视角，再 lift 为 3D Gaussians 并映射到姿态感知 UV 空间，使单图 avatar 可由身体形变驱动动画。
+- [Enhancing Scene Transition Awareness in Video Generation via Post-Training](https://arxiv.org/abs/2507.18046)：用含多场景切换的 Transition-Aware Video 数据集做后训练，使文生视频模型能从提示中判断何时需要场景转场。
+- [SemGes: Semantics-Aware Co-Speech Gesture Generation Using Semantic Coherence and Relevance Learning](https://arxiv.org/abs/2507.19359)：通过语义一致性和相关性学习生成伴随语音的手势，使虚拟角色动作不只依赖节奏匹配。
+- [Back to the Features: DINO as a Foundation for Video World Models](https://arxiv.org/abs/2507.19468)：将 DINO 特征作为视频世界模型基础，关联生成式动力学和仿真式视频模型。
+- [TransFlow: Motion Knowledge Transfer from Video Diffusion Models to Video Salient Object Detection](https://arxiv.org/abs/2507.19789)：把视频扩散特征中的运动知识迁移到视频显著目标检测，用生成模型的时间表征辅助下游分割。
+- [Compositional Video Synthesis by Temporal Object-Centric Learning](https://arxiv.org/abs/2507.20855)：用时间一致的物体中心槽位进行组合式视频生成与编辑。核心思想：显式建模物体身份和动态，使插入、删除和替换在跨帧时保持一致。
+- [Low-Cost Test-Time Adaptation for Robust Video Editing](https://arxiv.org/abs/2507.21858)：在视频编辑推理阶段进行低成本自监督 test-time adaptation，提升时间一致性与 prompt 鲁棒性。
+- [X-NeMo](https://arxiv.org/abs/2507.23143)：用解耦 latent attention 实现富表现力的神经动作复现视频生成。
+- [TITAN-Guide: Taming Inference-Time Alignment for Guided Text-to-Video Diffusion Models](https://arxiv.org/abs/2508.00289)：用判别式引导模型的 forward-gradient latent optimization 控制文生视频扩散，在免训练控制中降低相对反向传播引导的显存开销。
+- [IN2OUT: Fine-Tuning Video Inpainting Model for Video Outpainting Using Hierarchical Discriminator](https://arxiv.org/abs/2508.00418)：把视频 inpainting 模型微调到 outpainting，加入层次判别器和局部-全局对抗损失，使边界外扩区域保持清晰和整体一致。
+- [Semantic and Temporal Integration in Latent Diffusion Space for High-Fidelity Video Super-Resolution](https://arxiv.org/abs/2508.00471)：在 latent diffusion 空间中融合语义和时间线索做视频超分辨率，面向高保真且跨帧一致的视频修复。
+- [D3 for AI-generated video detection](https://arxiv.org/abs/2508.00701)：用二阶时间特征进行免训练 AI 生成视频检测。
+- [AudioGen-Omni: A Unified Multimodal Diffusion Transformer for Video-Synchronized Audio, Speech, and Song Generation](https://arxiv.org/abs/2508.00733)：用统一 multimodal diffusion transformer 生成与视频同步的音频、语音和歌曲，而不是把音频作为后处理。
+- [SpA2V: Harnessing Spatial Auditory Cues for Audio-driven Spatially-aware Video Generation](https://arxiv.org/abs/2508.00782)：以 As prior methods largely ignore this factor, we present SpA2V, the first framework explicitly exploits these spatial auditory cues from audios to generate videos with high semantic and spatial correspondence 为核心。
+- [MoCA: Identity-Preserving Text-to-Video Generation via Mixture of Cross Attention](https://arxiv.org/abs/2508.03034)：在 DiT 骨干中加入混合交叉注意力层、层次时间池化和 latent video perceptual loss，以保持文生视频中的跨帧身份一致。
+- [Macro-from-Micro Planning for High-Quality and Parallelized Autoregressive Long Video Generation](https://arxiv.org/abs/2508.03334)：提出 a novel planning-then-populating framework centered on Macro-from-Micro Planning (MMPL) for long video generation. MMPL sketches a global storyline for the entire video through two hierarchical stages: Micro Planning and Macro Planning。
+- [VideoGuard](https://arxiv.org/abs/2508.03480)：保护视频内容免受未授权编辑，把内容保护作为视频生成与编辑模型的一项可复用能力。
+- [Scaling Up Audio-Synchronized Visual Animation: An Efficient Training Paradigm](https://arxiv.org/abs/2508.03955)：用噪声大规模视频预训练和少量人工精选样本微调扩展 audio-synchronized animation，并以多特征音频条件和 window attention 强化同步。
+- [IDCNet: Guided Video Diffusion for Metric-Consistent RGBD Scene Generation with Precise Camera Control](https://arxiv.org/abs/2508.04147)：用相机、图像和深度一致的数据以及几何感知 Transformer block，联合生成 RGB 视频与 metric depth maps，实现精确相机控制的场景生成。
+- [LayerT2V](https://arxiv.org/abs/2508.04228)：用 unified multi-layer representation 支持可控 video generation。
+- [PoseGen](https://arxiv.org/abs/2508.05091)：通过上下文 LoRA 微调实现姿态可控的长人像视频生成，为可控人体运动视频模型补充一条路线。
+- [RAP: Real-time Audio-driven Portrait Animation with Video Diffusion Transformer](https://arxiv.org/abs/2508.05115)：构建实时音频驱动肖像 diffusion transformer，用 hybrid attention 做细粒度音频控制，并以 static-dynamic 训练推理方案缓解长期漂移。
+- [X-MoGen](https://arxiv.org/abs/2508.05162)：统一人类与动物 motion generation，扩展条件驱动 motion synthesis 到非人类拓扑。
+- [DreamVE: Unified Instruction-based Image and Video Editing](https://arxiv.org/abs/2508.06080)：以 To this end, we introduce DreamVE, a unified model for instruction-based image and video editing. Specifically, We propose a two-stage training strategy: first image editing, then video editing 为核心。
+- [SwiftVideo: A Unified Framework for Few-Step Video Generation through Trajectory-Distribution Alignment](https://arxiv.org/abs/2508.06082)：提出 {SwiftVideo}, a unified and stable distillation framework that combines the advantages of trajectory-preserving and distribution-matching strategies。
+- [ViPro-2: Unsupervised State Estimation via Integrated Dynamics for Guiding Video Prediction](https://arxiv.org/abs/2508.06335)：为视频预测加入无监督状态估计，从观测中推断符号动态状态，避免依赖干净的真值初始状态。
+- [FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation](https://arxiv.org/abs/2508.06392)：用 GAN 训练和 softened reverse KL 最小化把多步视频扩散 teacher 蒸馏成少步 student，使稀疏视角新视角采样时间减少超过 90%。
+- [LaVieID](https://arxiv.org/abs/2508.07603)：用 local autoregressive diffusion transformers 实现 identity-preserving video creation。
+- [Generative Video Matting](https://arxiv.org/abs/2508.07905)：提出 to solve the problem from two perspectives. First, we emphasize the importance of large-scale pre-training by pursuing diverse synthetic and pseudo-labeled segmentation datasets。
+- [S^2VG: 3D Stereoscopic and Spatial Video Generation via Denoising Frame Matrix](https://arxiv.org/abs/2508.08048)：通过深度 warp 生成相机视角，并用 frame-matrix inpainting 与 dual update 把单目生成视频转成立体和空间视频。
+- [Fine-grained Video Dubbing Duration Alignment with Segment Supervised Preference Optimization](https://arxiv.org/abs/2508.08550)：以 We propose the Segment Supervised Preference Optimization (SSPO) method, which employs a segment-wise sampling strategy and fine-grained loss to mitigate duration mismatches between source and target lines 为核心。
+- [RealisMotion: Decomposed Human Motion Control and Video Generation in the World Space](https://arxiv.org/abs/2508.08588)：在世界空间中把人物视频生成拆解为主体、背景、轨迹和动作控制，提升可控人体运动组合能力。
+- [Yan: Foundational Interactive Video Generation](https://arxiv.org/abs/2508.08601)：以 We present Yan, a foundational framework for interactive video generation, covering the entire pipeline from simulation and generation to editing. Specifically, Yan comprises three core modules 为核心。
+- [TaoCache: Structure-Maintained Video Generation Acceleration](https://arxiv.org/abs/2508.08978)：用无需训练的固定点噪声输出缓存加速视频 DiT，并校准余弦相似度和噪声差分范数比例以跳过后期去噪且保持结构。
+- [Spatial-Temporal Multi-Scale Quantization](https://arxiv.org/abs/2508.08991)：在多个时空尺度上量化 motion，用于 flexible motion generation。
+- [X-UniMotion: Animating Human Images with Expressive, Unified and Identity-Agnostic Motion Latents](https://arxiv.org/abs/2508.09383)：以 We present X-UniMotion, a unified and expressive implicit latent representation for whole-body human motion, encompassing facial expressions, body poses, and hand gestures 为核心。
+- [Identity-Preserving Video Generation via Mixture of Facial Experts](https://arxiv.org/abs/2508.09476)：通过面部专家混合在大角度人脸变化下保持身份一致，提供人像视频生成的细粒度身份控制机制。
+- [OneVAE: Joint Discrete and Continuous Optimization Helps Discrete Video VAE Train Better](https://arxiv.org/abs/2508.09857)：通过 FSQ 保留连续 VAE 先验，并进行离散-连续联合优化，使离散视频 VAE 的压缩 token 训练更稳定。
+- [SpeechForensics: Audio-Visual Speech Representation Learning for Face Forgery Detection](https://arxiv.org/abs/2508.09913)：从真实视频中学习音视频语音表征并迁移到人脸伪造检测，把语音与面部运动一致性作为生成视频取证信号。
+- [BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation](https://arxiv.org/abs/2508.10774)：结合块稀疏注意力和步数蒸馏提升视频生成效率。
+- [TexVerse: A Universe of 3D Objects with High-Resolution Textures](https://arxiv.org/abs/2508.10868)：发布 TexVerse 高分辨率纹理 3D 数据集，包含 PBR 材质、rigged models 与 animated assets，用于纹理丰富的生成任务。
+- [Versatile Video Tokenization with Generative 2D Gaussian Splatting](https://arxiv.org/abs/2508.11183)：用 generative 2D Gaussian splatting 做 video tokenization，服务于视频生成和表示。
+- [VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](https://arxiv.org/abs/2508.12081)：为 motion LLM 的三维动作生成加入基于视频的检索增强，利用检索到的人体动作信号和 dual-alignment DPO 训练。
+- [Adaptive Hybrid Caching for Efficient Text-to-Video Diffusion Model Acceleration](https://arxiv.org/abs/2508.12691)：提出免训练 MixCache，通过上下文感知触发和自适应粒度选择，在 step、CFG 与 block cache 之间动态加速视频 DiT。
+- [Lumen](https://arxiv.org/abs/2508.12945)：用视频生成模型实现一致重打光和协调背景替换，扩展视频编辑中的场景级光照控制。
+- [Compact Attention](https://arxiv.org/abs/2508.12969)：利用结构化时空稀疏性加速视频生成，同时保留与运动一致性相关的注意力结构。
+- [EgoTwin: Dreaming Body and View in First Person](https://arxiv.org/abs/2508.13013)：以 head-centric motion representation 和受控制论启发的视觉-动作交互机制，联合生成第一视角视频和人体运动。
+- [Precise Action-to-Video Generation Through Visual Action Prompts](https://arxiv.org/abs/2508.13104)：通过视觉动作提示生成精确动作到视频结果。
+- [Motion2Motion](https://arxiv.org/abs/2508.13139)：通过稀疏对应在不同骨架拓扑之间迁移动作，提升可控角色动作生成。
+- [Sketch3DVE: Sketch-based 3D-Aware Scene Video Editing](https://arxiv.org/abs/2508.13797)：通过估计点云和相机、用深度图编辑三维几何并将 mask 传播到视频扩散，在大视角变化下支持草图驱动的局部场景编辑。
+- [Vivid-VR](https://arxiv.org/abs/2508.14483)：从 text-to-video diffusion transformers 中蒸馏概念用于 photorealistic video restoration，将生成先验与视频修复连接起来。
+- [FakeHunter Explainable Video Forensics](https://arxiv.org/abs/2508.14581)：用 memory-anchored multimodal reasoning 进行逐步视频取证解释，补充 deepfake 与生成视频真实性检测模型。
+- [AnchorSync: Global Consistency Optimization for Long Video Editing](https://arxiv.org/abs/2508.14609)：把长视频编辑拆成稀疏 anchor frame 编辑和中间帧插值，用 progressive denoising 与多模态引导保持分钟级结构一致性。
+- [Tinker: Diffusion's Gift to 3D-Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](https://arxiv.org/abs/2508.14811)：在无需逐场景优化的情况下，从稀疏输入进行三维多视角一致编辑。
+- [VideoEraser](https://arxiv.org/abs/2508.15314)：从文本到视频扩散模型中擦除指定概念，为视频生成补充模型侧安全与可控性方法。
+- [MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling](https://arxiv.org/abs/2508.17404)：把人体视频生成拆分为结构与外观两部分，通过 3D 结构 Transformer 和密集跟踪约束提升运动一致性。
+- [Warm Chat: Diffuse Emotion-aware Interactive Talking Head Avatar with Tree-Structured Guidance](https://arxiv.org/abs/2508.18337)：用 Transformer head-mask generator 和 interactive talking tree 表示说话、倾听与情绪状态转移，生成双向交互的情绪感知 talking-head avatar。
+- [Wan-S2V: Audio-Driven Cinematic Video Generation](https://arxiv.org/abs/2508.18621)：基于 Wan 构建音频驱动 cinematic video model，支持比语音动画更复杂的角色交互、身体运动和镜头调度。
+- [VoxHammer: Training-Free Precise and Coherent 3D Editing in Native 3D Space](https://arxiv.org/abs/2508.19247)：直接在原生 3D latent space 中编辑物体，复用 inversion latent 和缓存 key-value token 以一致地保留未编辑区域。
+- [MIDAS: Multimodal Interactive Digital-humAn Synthesis via Real-time Autoregressive Video Generation](https://arxiv.org/abs/2508.19320)：提出 an autoregressive video generation framework that enables interactive multimodal control and low-latency extrapolation in a streaming manner. With minimal modifications to a standard large language model (LLM), our framework accepts multimodal condition encodings including audio, pose, and text, and outputs spatially and semantically coherent r。
+- [InfinityHuman: Towards Long-Term Audio-Driven Human](https://arxiv.org/abs/2508.20210)：提出 InfinityHuman, a coarse-to-fine framework that first generates audio-synchronized representations, then progressively refines them into high-resolution, long-duration videos using a pose-guided refiner。
+- [3D Gaussian-Guided Object Editing for Driving Video Generation](https://arxiv.org/abs/2508.20471)：利用 3D Gaussian 引导驾驶视频中的可控目标编辑，扩展面向场景约束的视频编辑方法。
+- [EmoCAST: Emotional Talking Portrait via Emotive Text Description](https://arxiv.org/abs/2508.20615)：通过 text-guided emotive attention、emotion-aware audio attention、野外情绪肖像数据集和训练策略，从情绪文本精确控制说话肖像表情。
+- [POSE: Phased One-Step Adversarial Equilibrium for Video Diffusion Models](https://arxiv.org/abs/2508.21019)：以 To bridge this gap, we propose the Video Phased Adversarial Equilibrium (V-PAE), a distillation framework that enables high-quality, single-step video generation from large-scale video models 为核心。
+- [Look Beyond: Two-Stage Scene View Generation via Panorama and Video Diffusion](https://arxiv.org/abs/2509.00843)：通过全景与视频扩散两阶段生成场景视图。
+- [Bidirectional Sparse Attention for Faster Video Diffusion Training](https://arxiv.org/abs/2509.01085)：提出 a Bidirectional Sparse Attention (BSA) framework for faster video DiT training, the first to dynamically sparsify both Queries and Key-Value pairs within 3D full attention, thereby substantially improving training and inference efficiency。
+- [Identity-Preserving Text-to-Video Generation via Training-Free Prompt, Image, and Guidance Enhancement](https://arxiv.org/abs/2509.01362)：以 Finally, we propose ID-Aware Spatiotemporal Guidance Enhancement, utilizing unified gradients to optimize identity preservation and video quality jointly du 为核心。
+- [O-DisCo-Edit: Object Distortion Control for Unified Realistic Video Editing](https://arxiv.org/abs/2509.01596)：以 To address this, we propose O-DisCo-Edit, a unified framework that incorporates a novel object distortion control (O-DisCo) 为核心。
+- [GenCompositor](https://arxiv.org/abs/2509.02460)：用 diffusion Transformer 做 generative video compositing。
+- [LuxDiT](https://arxiv.org/abs/2509.03680)：用视频扩散 Transformer 进行光照估计。核心思想：利用视频扩散表示恢复光照线索，支持可控且物理接地的视频生成。
+- [Zero-shot 3D-Aware Trajectory-Guided image-to-video generation via Test-Time Training](https://arxiv.org/abs/2509.06723)：结合深度推断的 3D kinematic projection、test-time LoRA 和 latent 协同适配，在无轨迹标注训练下实现透视一致的轨迹控制。
+- [AnyPortal: Zero-Shot Consistent Video Background Replacement](https://arxiv.org/abs/2509.07472)：以 We introduce ANYPORTAL, a novel zero-shot framework for video background replacement that leverages pre-trained diffusion models. Our framework collaboratively integrates the temporal prior of video diffusion models with the relighting capabilities of image diffusion models in a zero-shot setting 为核心。
+- [LINR Bridge](https://arxiv.org/abs/2509.07484)：结合 neural implicits 与 video diffusion priors 生成 vector-graphic animation。
+- [Multi-Feature Fusion for Video Diffusion Transformer Training](https://arxiv.org/abs/2509.09547)：对齐自监督视觉编码器特征以改进视频扩散 Transformer 训练，形成表征融合式训练配方。
+- [T2Bs: Text-to-Character Blendshapes via Video Generation](https://arxiv.org/abs/2509.10678)：通过 deformable 3D Gaussian splatting 和视角相关 deformation MLP，把文本到三维静态资产与视频扩散结合，生成已配准且表情丰富的角色头部 blendshapes。
+- [PanoLora: Bridging Perspective and Panoramic Video Generation with LoRA Adaptation](https://arxiv.org/abs/2509.11092)：通过 LoRA 把透视视频生成迁移到全景视频，支持更大视场的可控视频合成。
+- [AvatarSync: Rethinking Talking-Head Animation through Autoregressive Perspective](https://arxiv.org/abs/2509.12052)：以音素引导的自回归视角减少 talking-head 闪烁，先用 causal attention 生成面部关键帧，再用时间戳自适应插值补中间帧。
+- [Hunyuan3D Studio: End-to-End AI Pipeline for Game-Ready 3D Asset Generation](https://arxiv.org/abs/2509.12815)：提出面向游戏可用三维资产生成的端到端 AI 流水线，适合三维与世界生成模型覆盖。
+- [BWCache](https://arxiv.org/abs/2509.13789)：通过 block-wise caching 加速视频扩散 Transformer，为视频生成补充面向部署的推理优化路线。
+- [Lynx: Towards High-Fidelity Personalized Video Generation](https://arxiv.org/abs/2509.15496)：以 We present Lynx, a high-fidelity model for personalized video synthesis from a single input image. Built on an open-source Diffusion Transformer (DiT) foundation model, Lynx introduces two lightweight adapters to ensure identity fidelity 为核心。
+- [Follow-Your-Emoji-Faster: Towards Efficient, Fine-Controllable, and Expressive Freestyle Portrait Animation](https://arxiv.org/abs/2509.16630)：用 expression-aware landmark motion、细粒度 facial loss 和效率化扩散设计，加速可控且表现力强的 freestyle portrait animation。
+- [VidCLearn: A Continual Learning Approach for Text-to-Video Generation](https://arxiv.org/abs/2509.16956)：把 continual learning 用于文生视频，使模型吸收新视频概念时尽量保留既有的运动和外观知识。
+- [VAInpaint](https://arxiv.org/abs/2509.17022)：构建带有 LLM 驱动模块的零样本视频-音频修复框架，将多模态视频编辑扩展到视觉之外的音频恢复与对齐。
+- [Stable Video-Driven Portraits](https://arxiv.org/abs/2509.17476)：用 driving video 中眼、鼻、口 mask 作为强运动控制，结合跨身份监督、时空注意力和历史帧来提升肖像 reenactment 一致性。
+- [From Prompt to Progression: Taming Video Diffusion Models for Seamless Attribute Transition](https://arxiv.org/abs/2509.19690)：在去噪过程中加入逐帧属性引导和数据特定的 transition direction，使视频扩散能生成平滑属性变化且不破坏运动动态。
+- [CamPVG](https://arxiv.org/abs/2509.19979)：通过 epipolar-aware diffusion 实现 camera-controlled panoramic video generation。
+- [MultiSoundGen: Video-to-Audio Generation for Multi-Event Scenarios via SlowFast Contrastive Audio-Visual Pretraining and Direct Preference Optimization](https://arxiv.org/abs/2509.19999)：通过 SlowFast 对比式视听预训练和直接偏好优化，改进多事件场景的视频到音频生成。核心思想：在复杂视频中同时对齐语义事件、快速动态和音频质量，而不只优化通用同步性。
+- [SimDiff: Simulator-constrained Diffusion Model for Physically Plausible Motion Generation](https://arxiv.org/abs/2509.20927)：把 simulator projection 解释为扩散引导，并在去噪中条件化重力、风等环境参数，避免推理期反复调用模拟器且可控制物理系数。
+- [MotionFlow: Learning Implicit Motion Flow for Complex Camera Trajectory Control in Video Generation](https://arxiv.org/abs/2509.21119)：提出 a novel approach that integrates both camera and object motions by converting them into the motion of corresponding pixels。
+- [Reasoning-Enhanced Domain-Adaptive Pretraining of Multimodal Large Language Models for Short Video Content Moderation](https://arxiv.org/abs/2509.21486)：通过 caption、VQA 和推理任务对 MLLM 做短视频领域自适应预训练，以提升多类不当内容检测。
+- [ControlHair](https://arxiv.org/abs/2509.21541)：用物理约束的视频扩散实现可控动态头发渲染。
+- [UniVid: Unifying Vision Tasks with Pre-trained Video Generation Models](https://arxiv.org/abs/2509.21760)：以 To answer this, we propose UniVid, a framework that fine-tunes a video diffusion transformer to handle various vision tasks without task-specific modifications 为核心。
+- [DiTraj](https://arxiv.org/abs/2509.21839)：为视频扩散 Transformer 提供免训练轨迹控制，为生成视频补充推理时运动控制方法。
+- [Syncphony: Synchronized Audio-to-Video Generation with Diffusion Transformers](https://arxiv.org/abs/2509.21893)：在预训练视频骨干上加入 motion-aware loss 和 audio sync guidance，实现 24 fps 音频同步视频生成。
+- [Taming Flow-based I2V Models for Creative Video Editing](https://arxiv.org/abs/2509.21917)：以 To this end, we propose IF-V2V, an Inversion-Free method that can adapt off-the-shelf flow-matching-based I2V models for video editing without significant computational overhead 为核心。
+- [Jailbreaking on Text-to-Video Models via Scene Splitting Strategy](https://arxiv.org/abs/2509.22292)：提出黑盒 SceneSplit 越狱，把有害叙事拆成单独看似安全的场景，并迭代组合约束文生视频输出走向不安全结果。
+- [Sparse2Dense Human Video Compression](https://arxiv.org/abs/2509.23169)：用关键点驱动密集人体视频与顶点预测，服务于压缩式生成。
+- [Vid-Freeze: Protecting Images from Malicious Image-to-Video Generation via Temporal Freezing](https://arxiv.org/abs/2509.23279)：提出 Vid-Freeze -- a novel adversarial defense that adds imperceptible perturbations to enforce temporal freezing in generated videos。
+- [VividFace](https://arxiv.org/abs/2509.23584)：面向视频人脸增强的一步扩散模型，在保持质量的同时提高生成式修复效率。
+- [ReLumix](https://arxiv.org/abs/2509.23769)：将图像重打光扩展到时序一致的视频重打光，利用视频扩散模型补充可控光照编辑方法。
+- [Redundancy Reduction for Video Super-Resolution](https://arxiv.org/abs/2509.23980)：降低 diffusion models 中的视频超分冗余，补充生成式视频修复的效率方向。
+- [Autoregressive Video Generation beyond Next Frames Prediction](https://arxiv.org/abs/2509.24081)：以 To address this, we present VideoAR, a unified framework that supports a spectrum of prediction units including full frames, key-detail frames, multiscale refinements, and spatiotemporal cubes 为核心。
+- [NeRV-Diffusion: Diffuse Implicit Neural Representations for Video Synthesis](https://arxiv.org/abs/2509.24353)：以 We present NeRV-Diffusion, an implicit latent video diffusion model that synthesizes videos via generating neural network weights. The generated weights can be rearranged as the parameters of a convolutional neural network, which forms an implicit neural representation (INR), and decodes into videos with frame indices as the input 为核心。
+- [Attention Surgery](https://arxiv.org/abs/2509.24899)：通过注意力手术线性化视频扩散 Transformer，将效率改进绑定到视频生成架构本身。
 - [PanoWorld-X](https://arxiv.org/abs/2509.24997)：通过球面感知视频扩散与可控相机合成生成可探索的全景世界。
+- [MotionRAG](https://arxiv.org/abs/2509.26391)：把检索到的 motion references 注入 image-to-video generation，使运动控制不只依赖文本提示。
+- [Arbitrary Generative Video Interpolation](https://arxiv.org/abs/2510.00578)：用 generative modeling approach 泛化 video interpolation。
+- [FreeViS](https://arxiv.org/abs/2510.01686)：在参考不一致时进行免训练视频风格化，为视频生成补充推理时控制路线。
+- [TempoControl: Temporal Attention Guidance for Text-to-Video Models](https://arxiv.org/abs/2510.02226)：为文本到视频模型加入时间注意力引导，直接面向视频生成中的时间动态可控性。
+- [VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL](https://arxiv.org/abs/2510.02282)：用 GRPO、时间稳定性和扩散复杂度奖励以及 14 万组真假视频训练 reasoning MLLM，使检测器能解释物理接地伪影。
+- [Learning to Generate Rigid Body Interactions with Video Diffusion Models](https://arxiv.org/abs/2510.02284)：提出 KineMask，用物体速度和 mask-supervised training 训练视频扩散模型，生成物理合理的刚体交互。
+- [Input-Aware Sparse Attention for Real-Time Co-Speech Video Generation](https://arxiv.org/abs/2510.02617)：通过蒸馏扩散模型并引入 input-aware sparse attention 加速共语音视频生成。核心思路是在保持运动质量的同时降低音频驱动说话人视频合成延迟。
+- [Mask2IV: Interaction-Centric Video Generation via Mask Trajectories](https://arxiv.org/abs/2510.03135)：提出 Mask2IV, a novel framework specifically designed for interaction-centric video generation. It adopts a decoupled two-stage pipeline that first predicts plausible motion trajectories for both actor and object, then generates a video conditioned on these trajectories。
+- [Generating Human Motion Videos using a Cascaded Text-to-Video Framework](https://arxiv.org/abs/2510.03909)：提出 CAMEO 级联框架，将 text-to-motion 模型和条件视频扩散连接起来，根据动作描述和视觉条件生成通用人体运动视频。
+- [Character Mixing for Video Generation](https://arxiv.org/abs/2510.05093)：以 We introduce a framework that tackles these issues with Cross-Character Embedding (CCE), which learns identity and behavioral logic across multimodal sources, and Cross-Character Augmentation (CCA), which enriches training with synthetic co-existence and mixed-style data 为核心。
+- [LightCache: Memory-Efficient, Training-Free Acceleration for Video Generation](https://arxiv.org/abs/2510.05367)：提供训练无关、节省显存的视频生成加速方法。
+- [Controllable Audio-Visual Viewpoint Generation from 360° Spatial Information](https://arxiv.org/abs/2510.06060)：一种基于 360 度空间信息的可控音视频视角生成模型框架；核心思路是用全景空间线索约束生成，使画面外事件也能影响特定视角的视频与音频。
+- [ShapeGen4D: Towards High Quality 4D Shape Generation from Videos](https://arxiv.org/abs/2510.06208)：用 temporal attention、time-aware point sampling、4D latent anchoring 和 noise sharing 从视频生成稳定动态几何。
+- [A Bridge from Audio to Video: Phoneme-Viseme Alignment Allows Every Face to Speak Multiple Languages](https://arxiv.org/abs/2510.06612)：用 phoneme-guided mixture-of-experts 和 phoneme-viseme alignment 连接音频与口型，使 talking-face synthesis 泛化到多语言。
+- [No MoCap Needed: Post-Training Motion Diffusion Models with Reinforcement Learning using Only Textual Prompts](https://arxiv.org/abs/2510.06988)：用 text-motion retrieval reward 和 denoising diffusion policy optimization 后训练 motion diffusion，无需 motion-capture 真值即可适配新动作。
+- [MV-Performer: Taming Video Diffusion Model for Faithful and Synchronized Multi-view Performer Synthesis](https://arxiv.org/abs/2510.07190)：以 To maintain synchronization in the generated videos, we propose a multi-view human-centric video diffusion model that fuses information from the reference video, partial rendering, and different viewpoints 为核心。
+- [TTOM: Test-Time Optimization and Memorization for Compositional Video Generation](https://arxiv.org/abs/2510.07940)：提出 Test-Time Optimization and Memorization (TTOM), a training-free framework that aligns VFM outputs with spatiotemporal layouts during inference for better text-image alignment。
+- [Physics-Driven AI-Generated Video Detection](https://arxiv.org/abs/2510.08073)：用物理驱动的时空建模检测 AI-generated videos，补充生成视频真实性检测模型。
+- [UniMMVSR: A Unified Multi-Modal Framework for Cascaded Video Super-Resolution](https://arxiv.org/abs/2510.08143)：统一支持文本、图像和视频条件的级联视频超分，并系统研究 condition injection、训练方案和数据混合。
+- [FlexTraj: Image-to-Video Generation with Flexible Point Trajectory Control](https://arxiv.org/abs/2510.08527)：以 We present FlexTraj, a framework for image-to-video generation with flexible point trajectory control. FlexTraj introduces a unified point-based motion representation that encodes each point with a segmentation ID, a temporally consistent trajectory ID, and an optional color channel for appearance cues, enabling both dense and sparse trajectory control 为核心。
+- [X2Video](https://arxiv.org/abs/2510.08530)：把 intrinsic-guided 图像扩散扩展到视频，结合 hybrid self-attention、masked cross-attention、递归采样和 InteriorVideo 数据集，支持材质、几何、光照、参考图与文本控制。
+- [VideoCanvas](https://arxiv.org/abs/2510.08555)：通过 in-context conditioning 从任意时空 patch 统一完成视频补全。
+- [DEMO: Disentangled Motion Latent Flow Matching for Fine-Grained Controllable Talking Portrait Synthesis](https://arxiv.org/abs/2510.10650)：构建正交化 motion autoencoder 与 optimal-transport flow matching，把唇动、头部姿态和眼神分离控制用于音频驱动肖像合成。
+- [AdaViewPlanner: Adapting Video Diffusion Models for Viewpoint Planning in 4D Scenes](https://arxiv.org/abs/2510.10670)：以 To this end, we propose a two-stage paradigm to adapt pre-trained T2V models for viewpoint prediction, in a compatible manner. First, we inject the 4D scene representation into the pre-trained T2V model via an adaptive learning branch, where the 4D scene is viewpoint-agnostic and the conditional generated video embeds the viewpoints visually 为核心。
+- [Task-Specific Dual-Model Framework for Comprehensive Traffic Safety Video Description and Analysis](https://arxiv.org/abs/2510.11907)：分别优化 VideoLLaMA 做交通视频时间描述、Qwen2.5-VL 做 VQA，在 WTS 数据上减少任务干扰以提升安全分析。
+- [Time-Correlated Video Bridge Matching](https://arxiv.org/abs/2510.12453)：为 generative video modeling 加入 time-correlated bridge matching。
+- [MVP4D](https://arxiv.org/abs/2510.12785)：用多视角肖像视频扩散生成可动画化 4D avatar。核心思想：通过多视角时间生成在动态 avatar 合成中保持身份与运动一致性。
+- [Edit-Your-Interest: Efficient Video Editing via Feature Most-Similar Propagation](https://arxiv.org/abs/2510.13084)：用 spatiotemporal feature memory 缓存关键图像 token，并通过 most-similar token propagation 做零样本文本视频编辑以降低计算且保持时序。
+- [VIST3A: Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator](https://arxiv.org/abs/2510.13454)：以 We introduce VIST3A, a general framework that does just that, addressing two main challenges. First, the two components must be joined in a way that preserves the rich knowledge encoded in their weights 为核心。
+- [EditCast3D: Single-Frame-Guided 3D Editing with Video Propagation and View Selection](https://arxiv.org/abs/2510.13652)：提出 EditCast3D, a pipeline that employs video generation foundation models to propagate edits from a single first frame across the entire dataset prior to reconstruction。
+- [CanvasMAR: Improving Masked Autoregressive Video Prediction With Canvas](https://arxiv.org/abs/2510.13669)：通过模糊全局画布先验和运动感知采样顺序改进掩码自回归视频预测。核心思想：在早期提供全局帧结构，使少步自回归视频合成更连贯。
+- [STANCE Video Generation](https://arxiv.org/abs/2510.14588)：用 sparse-to-dense anchored encoding 实现 motion-coherent video generation。
+- [NANO3D: A Training-Free Approach for Efficient 3D Editing Without Masks](https://arxiv.org/abs/2510.15019)：将 FlowEdit 接入 TRELLIS，并用 region-aware Voxel/Slat merging 在无 mask 情况下编辑 3D 物体并保留未编辑结构。
+- [TGT: Text-Grounded Trajectories for Locally Controlled Video Generation](https://arxiv.org/abs/2510.15104)：用成对轨迹和局部文本描述约束视频生成，并通过 location-aware cross-attention 与 dual CFG 将运动绑定到具体实体。
+- [EDVD-LLaMA](https://arxiv.org/abs/2510.16442)：用 multimodal large language model reasoning 做可解释 deepfake video detection。
+- [HGC-Avatar: Hierarchical Gaussian Compression for Streamable Dynamic 3D Avatars](https://arxiv.org/abs/2510.16463)：将动态 3D avatar 分成 structural Gaussian layer 和 SMPL-X motion layer，支持分层压缩、渐进解码以及由视频或文本姿态控制的渲染。
+- [From Mannequin to Human: A Pose-Aware and Identity-Preserving Video Generation Framework for Lifelike Clothing Display](https://arxiv.org/abs/2510.16833)：提出 a new task called mannequin-to-human (M2H) video generation, which aims to synthesize identity-controllable, photorealistic human videos from footage of mannequins。
+- [Video Prediction of Dynamic Physical Simulations With Pixel-Space Spatiotemporal Transformers](https://arxiv.org/abs/2510.20807)：用 pixel-space spatiotemporal transformer 做物理仿真视频自回归预测，在不依赖 latent 特征机制的情况下延长准确预测 horizon。
+- [Enhancing Video Inpainting with Aligned Frame Interval Guidance](https://arxiv.org/abs/2510.21461)：提出 VidPivot，将多帧图像修复与 masked 区域运动传播分开，并结合帧间隔先验、FrameProp 传播和上下文控制器实现一致视频修复。
+- [BachVid: Training-Free Video Generation with Consistent Background and Character](https://arxiv.org/abs/2510.21696)：提升无需训练的文生视频中跨片段的角色和背景一致性。核心思想：缓存并复用扩散 Transformer 的注意力与特征信号，使多视频生成在没有参考图像时也能保持身份和场景上下文。
+- [LSF-Animation: Label-Free Speech-Driven Facial Animation via Implicit Feature Representation](https://arxiv.org/abs/2510.21864)：从语音中隐式提取情绪、从中性面部 mesh 中提取身份，并用 hierarchical interaction fusion block 融合线索，避免显式身份和情绪标签。
+- [STG-Avatar: Animatable Human Avatars via Spacetime Gaussian](https://arxiv.org/abs/2510.22140)：将线性蒙皮与 Spacetime Gaussians 耦合，并用光流引导高动态区域加密，在保持实时渲染的同时提升可动画化头像质量。
 - [FAME](https://arxiv.org/abs/2510.22960)：公平性感知的视频编辑方法，注入 fairness embedding 并调制 attention，以减少刻板印象漂移并保持时序一致性。
+- [Lookahead Anchoring: Preserving Character Identity in Audio-Driven Human Animation](https://arxiv.org/abs/2510.23581)：在自回归音频驱动动画中用未来关键帧或参考图像作为 lookahead anchor，使当前生成窗口持续保持角色身份。
+- [Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](https://arxiv.org/abs/2510.24103)：用 flow-based Transformer、双角色音视频对齐和 model-guided objective 做开放域 video-to-audio generation，并在 VGGSound 与 UnAV-100 上提升跨模态一致性。
+- [SAGE: Structure-Aware Generative Video Transitions between Diverse Clips](https://arxiv.org/abs/2510.24667)：通过保持轮廓和显著特征在差异较大的片段之间生成结构感知转场，扩展视频生成中的语义跨度较大 in-betweening 能力。
+- [VividCam: Learning Unconventional Camera Motions from Virtual Synthetic Videos](https://arxiv.org/abs/2510.24904)：用简单合成三维视频教会视频扩散非常规相机运动，并通过解耦策略隔离相机运动与低多边形外观伪影。
+- [SEE4D](https://arxiv.org/abs/2510.26796)：通过自回归视频修复生成无姿态输入的 4D 内容，扩展视频扩散式 4D 生成路线。
+- [OmniX: From Unified Panoramic Generation and Perception to Graphics-Ready 3D Scenes](https://arxiv.org/abs/2510.26800)：复用 2D 生成先验做全景感知、生成和补全，从 panorama workflow 产出 PBR-ready 3D scenes。
+- [DANCER: Dance ANimation via Condition Enhancement and Rendering with diffusion model](https://arxiv.org/abs/2510.27169)：在 Stable Video Diffusion 上加入 appearance enhancement module、pose rendering motion guidance，并构建 TikTok-3K 数据集来合成单人舞蹈视频。
+- [Generative human motion mimicking through feature extraction in denoising diffusion settings](https://arxiv.org/abs/2511.00011)：结合 motion inpainting 和 motion style transfer diffusion，用高层动作特征模仿并创造性变化输入 MoCap 序列。
+- [LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation](https://arxiv.org/abs/2511.00090)：把缓存调度建成误差加权有向图，并用 lexicographic minimax path optimization 控制视频扩散加速中的最坏累积误差。
+- [Diff4Splat](https://arxiv.org/abs/2511.00503)：用潜在动态重建模型生成可控 4D 场景，把 3D 场景结构与时间化视频世界生成连接起来。
+- [MotionStream: Real-Time Video Generation with Interactive Motion Controls](https://arxiv.org/abs/2511.01266)：以 We present MotionStream, enabling sub-second latency with up to 29 FPS streaming generation on a single GPU. Our approach begins by augmenting a text-to-video model with motion control, which generates high-quality videos that adhere to the global text prompt and local motion guidance, but does not perform inference on the fly 为核心。
+- [Towards One-step Causal Video Generation via Adversarial Self-Distillation](https://arxiv.org/abs/2511.01419)：提出 a distillation-based framework for efficient causal video generation that enables high-quality synthesis with extremely limited denoising steps. Our approach builds upon the Distribution Matching Distillation (DMD) framework and proposes a novel Adversarial Self-Distillation (ASD) strategy, which aligns the outputs of the student model's n-step d。
+- [UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback](https://arxiv.org/abs/2511.01678)：以 To enable fine-grained relighting control and supervision, we design a structured six-dimensional annotation protocol capturing core 为核心。
+- [Unified Long Video Inpainting and Outpainting via Overlapping High-Order Co-Denoising](https://arxiv.org/abs/2511.03272)：通过重叠高阶协同去噪统一长视频内补与外扩，面向长时段视频编辑。
+- [PhysCorr: Dual-Reward DPO for Physics-Constrained Text-to-Video Generation with Automated Preference Selection](https://arxiv.org/abs/2511.03997)：结合 PhysicsRM 双维奖励模型和 PhyDPO 偏好优化，同时约束物体内部稳定性和物体间交互，使文生视频输出更符合物理一致性。
+- [RISE-T2V: Rephrasing and Injecting Semantics with LLM for Expansive Text-to-Video Generation](https://arxiv.org/abs/2511.04317)：通过 Rephrasing Adapter 将 LLM 下一 token 预测中的 hidden states 作为视频扩散条件，隐式扩展短提示以贴近用户意图。
+- [THEval. Evaluation Framework for Talking Head Video Generation](https://arxiv.org/abs/2511.04520)：用 8 个指标从质量、自然度和同步性评估 talking-head 生成，覆盖 17 个模型生成的 8.5 万个视频和新的真实数据集。
+- [Neodragon: Mobile Video Generation using Diffusion Transformer](https://arxiv.org/abs/2511.06055)：以 We introduce Neodragon, a text-to-video system capable of generating 2s (49 frames @24 fps) videos at the 640x1024 resolution directly on a Qualcomm Hexagon NPU in a record 6.7s (7 FPS) 为核心。
+- [RelightMaster](https://arxiv.org/abs/2511.06271)：利用 multi-plane light images 实现精确视频重光照，显式控制视频编辑中的光照变化。
+- [4DSTR: Advancing Generative 4D Gaussians with Spatial-Temporal Rectification for High-Quality and Consistent 4D Generation](https://arxiv.org/abs/2511.07241)：通过时空 rectification 改进生成式 4D Gaussians，提升 4D 生成质量与时间一致性。
+- [ISExplore:Informative Segment Selection for Efficient Personalized 3D Talking Face Generation](https://arxiv.org/abs/2511.07940)：按音频多样性、唇动幅度和视角多样性自动选择几秒参考片段，在保持质量的同时缩短 NeRF 或 3DGS talking-face 准备时间。
+- [3D4D: An Interactive, Editable, 4D World Model via 3D Video Generation](https://arxiv.org/abs/2511.08536)：通过四个生成模块、WebGL Supersplat 渲染和 foveated rendering，把文本和静态图像转成可实时探索的交互式 4D 场景。
+- [PipeDiT: Accelerating Diffusion Transformers in Video Generation with Task Pipelining and Model Decoupling](https://arxiv.org/abs/2511.12056)：通过 PipeSP 序列并行流水和 DeDiVAE 的扩散/变分自编码器解耦，在多 GPU 上降低 DiT 视频生成的延迟和显存压力。
+- [ProAV-DiT: A Projected Latent Diffusion Transformer for Efficient Synchronized Audio-Video Generation](https://arxiv.org/abs/2511.12072)：用 multi-scale dual-stream spatiotemporal autoencoder、group cross-modal attention 和 3D latent DiT 在统一 latent 空间对齐音频与视频。
+- [Generative Photographic Control for Scene-Consistent Video Cinematic Editing](https://arxiv.org/abs/2511.12921)：提出 CineCtrl，通过解耦交叉注意力分离镜头运动和 bokeh、快门速度等摄影控制，实现场景一致的视频电影化编辑。
+- [InstantViR](https://arxiv.org/abs/2511.14208)：利用蒸馏扩散先验求解实时视频逆问题，为视频输入补充快速生成式恢复路线。
+- [StreamingTalker: Audio-driven 3D Facial Animation with Autoregressive Diffusion Model](https://arxiv.org/abs/2511.14223)：用自回归扩散模型生成语音驱动三维面部动作，按音频分块流式预测，并让每个窗口只依赖有限历史动作帧。
+- [FreeSwim: Revisiting Sliding-Window Attention Mechanisms for Training-Free Ultra-High-Resolution Video Generation](https://arxiv.org/abs/2511.14712)：以 Motivated by this limitation, we introduce a training-free approach that leverages video Diffusion Transformers pretrained at their native scale to synthesize higher resolution videos without any additional training or adaptation 为核心。
+- [First Frame Is the Place to Go for Video Content Customization](https://arxiv.org/abs/2511.15700)：把首帧视为概念记忆缓冲区，使视频模型能用 20 到 50 个样例做参考式内容定制，而无需改架构或大规模微调。
+- [Degradation-Aware Hierarchical Termination for Compressed Video Enhancement](https://arxiv.org/abs/2511.16137)：通过 degradation-aware hierarchical termination 改进 compressed video 的 blind quality enhancement。
+- [TriDiff-4D: Fast 4D Generation through Diffusion-based Triplane Re-posing](https://arxiv.org/abs/2511.16662)：先由文本生成 canonical 3D avatar 和动作序列，再用第二个扩散模型做 triplane re-posing，从而快速生成任意长度 4D avatar。
+- [NoPo-Avatar: Generalizable and Animatable Avatars from Sparse Inputs without Human Poses](https://arxiv.org/abs/2511.16673)：仅从单张或稀疏图像重建可动画化三维人体 avatar，不依赖测试时相机或人体姿态输入，从而避免噪声姿态估计带来的退化。
+- [Self-Supervised Audio-Visual Deepfake Detection](https://arxiv.org/abs/2511.17181)：评估自监督音频、视频与多模态表征在可解释 deepfake 检测中的作用。
+- [PostCam: Camera-Controllable Novel-View Video Generation with Query-Shared Cross-Attention](https://arxiv.org/abs/2511.17185)：用 Query-Shared Cross-Attention 将 6-DoF 姿态和渲染特征对齐到共享 latent 空间，在保持动态场景细节的同时提升相机轨迹精度。
+- [Plan-X: Instruct Video Generation via Semantic Planning](https://arxiv.org/abs/2511.17986)：提出 Plan-X, a framework that explicitly enforces high-level semantic planning to instruct video generation process. At its core lies a Semantic Planner, a learnable multimodal language model that reasons over the user's intent from both text prompts and visual context, and autoregressively generates a sequence of text-grounded spatio-temporal semanti。
+- [EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses](https://arxiv.org/abs/2511.18173)：将 egocentric video diffusion 条件化到显式 3D 全身姿态序列，并用同时表达相机动态和身体关节的姿态表示实现精确控制。
+- [Sequence-Adaptive Video Prediction in Continuous Streams using Diffusion Noise Optimization](https://arxiv.org/abs/2511.18255)：通过按序列优化推理噪声，让冻结的扩散视频预测器适配连续视频流，并在 Ego4D 风格长视频上评估同步适配与预测。
+- [Point-to-Point: Sparse Motion Guidance for Controllable Video Editing](https://arxiv.org/abs/2511.18277)：用 anchor tokens 表示少量关键信息点轨迹，从视频扩散先验中提取并重新定位这些轨迹以控制主体编辑后的运动。
+- [FlowPortal](https://arxiv.org/abs/2511.18346)：用残差校正 flow 实现训练无关的视频重打光和背景替换，扩展轻量视频编辑控制。
+- [MagicWorld: Interactive Geometry-driven Video World Exploration](https://arxiv.org/abs/2511.18886)：提出 MagicWorld, an interactive video world model built upon an autoregressive framework。
+- [Eevee](https://arxiv.org/abs/2511.18957)：面向近景高分辨率 video-based virtual try-on，补充人像视频生成与编辑模型。
+- [Beyond Reward Margin: Rethinking and Resolving Likelihood Displacement in Diffusion Models via Video Generation](https://arxiv.org/abs/2511.19049)：以 Informed by these insights, we introduce a novel solution named Policy-Guided DPO (PG-DPO), combining Adaptive Rejection Scaling (ARS) and Implicit Preference Regularization 为核心。
+- [Learning Plug-and-play Memory for Guiding Video Diffusion Models](https://arxiv.org/abs/2511.19229)：为视频扩散模型加入即插即用记忆，引导生成视频的时间一致性和可控性。
+- [Rectified SpaAttn](https://arxiv.org/abs/2511.19835)：重新审视高效视频生成中的注意力稀疏性，补充视频扩散或自回归合成的稀疏注意力路线。
+- [UltraViCo: Breaking Extrapolation Limits in Video Diffusion Transformers](https://arxiv.org/abs/2511.20123)：提升视频扩散 Transformer 超出训练长度的外推能力。
+- [Exo2EgoSyn](https://arxiv.org/abs/2511.20186)：通过视角对齐与多视角条件，把 foundation video generator 适配到 exocentric-to-egocentric 视频合成。
+- [STARFlow-V: End-to-End Video Generative Modeling with Normalizing Flows](https://arxiv.org/abs/2511.20462)：以 Additionally, we propose flow-score matching, which equips the model with a light-weight causal denoiser to improve the video generation consistency in an autoregressive fashion. To improve the sampling efficiency, STARFlow-V employs a vide 为核心。
+- [PhysChoreo: Physics-Controllable Video Generation with Part-Aware Semantic Grounding](https://arxiv.org/abs/2511.20562)：为物理可控视频生成加入部件感知语义 grounding。
+- [Inferix](https://arxiv.org/abs/2511.20714)：以 block diffusion 构建面向 world simulation 的推理引擎，将视频生成系统与交互式世界模型仿真连接起来。
+- [Split-then-Merge](https://arxiv.org/abs/2511.20809)：将无标注视频拆成前景和背景再组合，学习 layer-aware video composition。
+- [CtrlVDiff](https://arxiv.org/abs/2511.21129)：把几何、内禀属性、语义和外观约束统一到视频扩散控制中，提升可控视频生成。
+- [Efficient Training for Human Video Generation with Entropy-Guided Prioritized Progressive Learning](https://arxiv.org/abs/2511.21136)：用 conditional entropy inflation 识别关键组件，并配合自适应 progressive schedule 降低人体视频扩散训练时间和显存。
+- [3MDiT: Unified Tri-Modal Diffusion Transformer for Text-Driven Synchronized Audio-Video Generation](https://arxiv.org/abs/2511.21780)：在 tri-modal diffusion transformer 中把视频、音频和文本建模为共同演化的流，通过 isomorphic audio branch 和 omni-block fusion 做同步生成。
+- [WorldWander: Bridging Egocentric and Exocentric Worlds in Video Generation](https://arxiv.org/abs/2511.22098)：在视频生成中连接自我中心与外部视角，增强世界视频合成中的视角迁移能力。
+- [BlockVid](https://arxiv.org/abs/2511.22973)：通过 block diffusion 生成高质量分钟级视频，面向长时长合成保持片段间一致性。
+- [DualCamCtrl: Dual-Branch Diffusion Model for Geometry-Aware Camera-Controlled Video Generation](https://arxiv.org/abs/2511.23127)：提出双分支、几何感知的相机控制视频生成。
+- [PanFlow: Decoupled Motion Control for Panoramic Video Generation](https://arxiv.org/abs/2512.00832)：利用全景球面结构解耦相机旋转和 optical-flow 运动控制，并用 spherical noise warping 保持全景边界循环一致性。
+- [Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](https://arxiv.org/abs/2512.00961)：以 Experiments on Meta-World and Distracting Control Suite demonstrate the effectiveness of our approach 为核心。
 - [AlignVid](https://arxiv.org/abs/2512.01334)：面向文本引导图生视频的免训练 attention scaling 方法，结合轻量 Q/K scaling 和 guidance scheduling。
+- [Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](https://arxiv.org/abs/2512.01677)：基于结构和接触感知表示生成开放世界手物交互视频。
+- [Generative Video Motion Editing with 3D Point Tracks](https://arxiv.org/abs/2512.02015)：以 We present a track-conditioned V2V framework that enables joint editing of camera and object motion. We achieve this by conditioning a video generation model on a source video and paired 3D point tracks representing source and target motions 为核心。
+- [Progressive Image Restoration via Text-Conditioned Video Generation](https://arxiv.org/abs/2512.02273)：把静态图像修复建模为文本条件视频生成过程，逐步合成中间修复状态，而不是一次性增强单帧。
+- [Video Diffusion Models Excel at Tracking Similar-Looking Objects Without Supervision](https://arxiv.org/abs/2512.02339)：分析视频扩散模型中涌现的无监督跟踪能力，尤其是相似外观对象，并将 motion encoding 与模型侧视频表征联系起来。
+- [YingVideo-MV: Music-Driven Multi-Stage Video Generation](https://arxiv.org/abs/2512.02492)：通过音频语义分析、镜头规划和相机条件扩散生成长音乐表演视频。核心思想：把歌曲结构和相机运动作为显式控制信号，以提升音乐视频的时间连贯性。
+- [Hear What Matters! Text-conditioned Selective Video-to-Audio Generation](https://arxiv.org/abs/2512.02650)：提出文本条件选择性视频到音频生成，用于在多物体视频中只生成目标声源。核心思想：用文本作为视觉事件选择器，使音频生成支持可控编辑与混音。
+- [LoVoRA](https://arxiv.org/abs/2512.02933)：通过 learnable object-aware localization 实现文本引导、免 mask 的视频对象移除与添加。
+- [In-Context Sync-LoRA for Portrait Video Editing](https://arxiv.org/abs/2512.03013)：以 We present Sync-LoRA, a method for editing portrait videos that achieves high-quality visual modifications while maintaining frame-accurate synchronization and identity consistency 为核心。
+- [GeoVideo: Introducing Geometric Regularization into Video Generation Model](https://arxiv.org/abs/2512.03453)：提出 geometric regularization losses into video generation by augmenting latent diffusion models with per-frame depth prediction. We adopted depth as the geometric representation because of the great progress in depth prediction and its compatibility with image-based latent encoders。
+- [LAMP: Language-Assisted Motion Planning for Controllable Video Generation](https://arxiv.org/abs/2512.03619)：把 LLM 作为运动规划器，将自然语言场景描述转为运动 DSL 以及物体和相机的三维轨迹，用于可控视频生成。
+- [Zero-Shot Video Translation and Editing with Frame Spatial-Temporal Correspondence](https://arxiv.org/abs/2512.03905)：通过显式帧内和帧间时空对应实现零样本视频翻译与编辑。核心思想：同时约束帧内和跨帧特征，使视频在无需额外训练的情况下保持时间一致性。
+- [UniMo](https://arxiv.org/abs/2512.03918)：用自回归框架统一 2D 视频与 3D 人体运动，将人体运动建模与视频生成连接起来。
+- [Beyond Flicker: Detecting Kinematic Inconsistencies for Generalizable Deepfake Video Detection](https://arxiv.org/abs/2512.04175)：用合成的面部 kinematic inconsistency 训练 deepfake video detector，将生成视频取证从 frame flicker 扩展到自然运动依赖关系被破坏的检测。
+- [Inference-time Stochastic Refinement of GRU-Normalizing Flow for Real-time Video Motion Transfer](https://arxiv.org/abs/2512.04282)：在 GRU-normalizing-flow 推理中加入 MCMC 式随机细化，为实时 motion transfer 生成更多样且连贯的未来关键点轨迹。
+- [FMA-Net++: Motion- and Exposure-Aware Real-World Joint Video Super-Resolution and Deblurring](https://arxiv.org/abs/2512.04390)：用层次双向传播、曝光时间调制和 flow-guided dynamic filtering 建模运动与曝光变化耦合，实现联合视频超分和去模糊。
+- [EgoLCD](https://arxiv.org/abs/2512.04515)：用长上下文扩散生成第一视角视频，扩展面向长上下文的自我中心视频合成。
+- [VideoSSM: Autoregressive Long Video Generation with Hybrid State-Space Memory](https://arxiv.org/abs/2512.04519)：以 We propose VideoSSM, a Long Video Model that unifies AR diffusion with a hybrid state-space memory 为核心。
+- [Deep Forcing](https://arxiv.org/abs/2512.05081)：通过免训练 deep-sink 引导与 participative compression 扩展长视频生成。
+- [TV2TV: A Unified Framework for Interleaved Language and Video Generation](https://arxiv.org/abs/2512.05103)：在 Mixture-of-Transformers 中交错语言建模和视频 flow matching，使模型先用文本推理后续内容，再生成视频帧。
+- [IE2Video](https://arxiv.org/abs/2512.05240)：将预训练扩散模型适配到事件相机视频重建，为事件视频信号提供生成式重建路径。
+- [Delving into Latent Spectral Biasing of Video VAEs for Superior Diffusability](https://arxiv.org/abs/2512.05394)：以 We present a statistical analysis of video VAE latent spaces and identify two spectral properties essential for diffusion training: a spatio-temporal frequency spectrum biased toward low frequencies, and a channel-wise eigenspectrum dominated by a few modes 为核心。
+- [USV](https://arxiv.org/abs/2512.05754)：用统一稀疏化加速视频扩散模型。
+- [Bring Your Dreams to Life: Continual Text-to-Video Customization](https://arxiv.org/abs/2512.05802)：以 To resolve the above challenges, we develop a novel Continual Customized Video Diffusion (CCVD) model, which can continuously learn new concepts to generate videos across various text-to-video generation tasks by tackling forgetting and concept neglect 为核心。
+- [Coherent Audio-Visual Editing via Conditional Audio Generation Following Video Edits](https://arxiv.org/abs/2512.07209)：在视频编辑后条件生成或编辑音频，使声轨与变化后的视觉事件保持一致。核心思想：把视频编辑和音频生成视为耦合的一致性问题，而不是彼此独立的后处理。
+- [Unified Camera Positional Encoding](https://arxiv.org/abs/2512.07237)：为可控视频生成加入相机位置编码，提升生成视频中的视角与运动控制。
+- [Communication-Efficient Serving for Video Diffusion Models with Latent Parallelism](https://arxiv.org/abs/2512.07350)：以 To tackle this issue, we exploit the local spatio-temporal dependencies inherent in the diffusion denoising process and propose Latent Parallelism (LP), the first parallelism strategy tailored for VDM serving 为核心。
+- [MultiMotion: Multi Subject Video Motion Transfer via Video Diffusion Transformer](https://arxiv.org/abs/2512.07500)：以 We present MultiMotion, a novel unified framework that overcomes these limitations. Our core innovation is Maskaware Attention Motion Flow (AMF), which utilizes SAM2 masks to explicitly disentangle and control motion features for multiple objects within the DiT pipeline 为核心。
+- [OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](https://arxiv.org/abs/2512.07802)：提出 OneStory, enabling global yet compact cross-shot context modeling for consistent and scalable narrative generation。
+- [WorldReel](https://arxiv.org/abs/2512.07821)：通过一致几何与运动建模生成 4D 视频，强化视频生成中时间持久场景结构的覆盖。
+- [EgoX](https://arxiv.org/abs/2512.08269)：从单个外部视角视频生成第一人称视频，为第一人称视频生成补充视角迁移路线。
+- [PAVAS: Physics-Aware Video-to-Audio Synthesis](https://arxiv.org/abs/2512.08282)：利用物体质量、运动轨迹和交互线索进行物理感知的视频到音频生成。核心思想：让生成声音反映视频中的物理成因，而不只是拟合表层视听相关性。
+- [GeoDiffMM: Geometry-Guided Conditional Diffusion for Motion Magnification](https://arxiv.org/abs/2512.08325)：以 optical-flow 几何和可学习放大系数作为扩散条件，结合 noise-free flow augmentation 和 flow-based synthesis 放大细微运动。
+- [GimbalDiffusion: Gravity-Aware Camera Control for Video Generation](https://arxiv.org/abs/2512.09112)：提出用于视频生成的重力感知相机控制，将相机运动条件扩展到普通提示或轨迹控制之外。
+- [StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation](https://arxiv.org/abs/2512.09363)：把预训练视频生成器用于单目到立体视频，结合 geometry-aware regularization、时空 tiling 和 1100 万帧 stereo dataset。
+- [DirectSwap: Mask-Free Cross-Identity Training and Benchmarking for Expression-Consistent Video Head Swapping](https://arxiv.org/abs/2512.09417)：构建合成交叉身份配对数据 HeadSwapBench，并用 motion- and expression-aware reconstruction loss 训练免 mask 视频扩散换头模型。
+- [VHOI: Controllable Video Generation of Human-Object Interactions from Sparse Trajectories via Motion Densification](https://arxiv.org/abs/2512.09646)：以 We propose VHOI, a two-stage framework that first densifies sparse trajectories into HOI mask sequences, and then fine-tunes a video diffusion model conditioned on these dense masks 为核心。
+- [ShotDirector: Directorially Controllable Multi-Shot Video Generation with Cinematographic Transitions](https://arxiv.org/abs/2512.10286)：面向视频、三维与世界模型生成的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“ShotDirector: Directorially Controllable Multi-Shot Video Generation with Cinematographic Transitions”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [OmniZoo](https://arxiv.org/abs/2512.10352)：从文本生成 topology-agnostic animal motion，扩展 motion generation 到多种骨架结构。
+- [Audio-sync Video Instance Editing with Granularity-Aware Mask Refiner](https://arxiv.org/abs/2512.10571)：提出 AVI-Edit，通过迭代式 granularity-aware mask refiner 和 self-feedback audio agent，为实例级视频编辑提供精细空间 mask 与音频同步的时间控制。
+- [GaussianHeadTalk: Wobble-Free 3D Talking Heads with Audio Driven Gaussian Splatting](https://arxiv.org/abs/2512.10939)：用 3D morphable model 映射 Gaussian splats，并由 Transformer 从音频预测驱动参数，以稳定实时 3D talking-head 生成。
+- [AutoRefiner: Improving Autoregressive Video Diffusion Models via Reflective Refinement Over the Stochastic Sampling Path](https://arxiv.org/abs/2512.11203)：为自回归视频扩散加入 pathwise noise refiner 和 reflective KV-cache，在不更新权重的情况下推理时提升样本质量。
+- [REST: Diffusion-based Real-time End-to-end Streaming Talking Head Generation via ID-Context Caching and Asynchronous Streaming Distillation](https://arxiv.org/abs/2512.11229)：学习高压缩时空 VAE latent，用 ID-Context Cache 保持身份和时序，并通过 asynchronous streaming distillation 训练流式学生模型。
+- [JoyStreamer-Flash: Real-time and Infinite Audio-Driven Avatar Generation with Autoregressive Diffusion](https://arxiv.org/abs/2512.11423)：通过 progressive step bootstrapping、前帧噪声 motion condition injection 和 cache-resetting unbounded RoPE，实现无限长度实时音频驱动 avatar 扩散。
+- [Flowception: Temporally Expansive Flow Matching for Video Generation](https://arxiv.org/abs/2512.11438)：以 We present Flowception, a novel non-autoregressive and variable-length video generation framework. Flowception learns a probability path that interleaves discrete frame insertions with continuous frame denoising 为核心。
+- [V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties](https://arxiv.org/abs/2512.11799)：在视频编辑中精确控制内在属性。
+- [SPDMark: Selective Parameter Displacement for Robust Video Watermarking](https://arxiv.org/abs/2512.12090)：通过 LoRA 式选择性参数位移在视频扩散模型生成过程中嵌入水印，并用帧特定消息和 matching-based recovery 检测时间篡改。
+- [SMRABooth: Subject and Motion Representation Alignment for Customized Video Generation](https://arxiv.org/abs/2512.12193)：为定制化视频生成对齐主体与运动表示。
+- [V-Warper: Appearance-Consistent Video Diffusion Personalization via Value Warping](https://arxiv.org/abs/2512.12375)：通过 value warping 改进外观一致的视频扩散个性化生成。
+- [Endless World: Real-Time 3D-Aware Long Video Generation](https://arxiv.org/abs/2512.12430)：以 Motivated by this, we introduce Endless World, a real-time framework for infinite, 3D-consistent video this http URL support infinite video generation, we introduce a conditional autoregressive training strategy that aligns newly generated content with existing video frames 为核心。
+- [InteracTalker: Prompt-Based Human-Object Interaction with Co-Speech Gesture Generation](https://arxiv.org/abs/2512.12664)：用统一的 motion、speech 和 prompt embedding 空间、generalized motion adaptation 与自适应融合，把共语手势和物体交互动作合成到同一扩散框架。
+- [STARCaster](https://arxiv.org/abs/2512.13247)：将时空自回归视频扩散用于身份和视角感知的说话人肖像生成，强化肖像视频中的身份保持与视角控制。
+- [Transform Trained Transformer: Accelerating Naive 4K Video Generation Over 10⨉](https://arxiv.org/abs/2512.13492)：提出面向高分辨率视频生成的 Transformer 加速方法。
+- [Soul: Breathe Life into Digital Human for High-fidelity Long-term Multimodal Animation](https://arxiv.org/abs/2512.13495)：用 Soul-1M 数据、audio-injection layers、threshold-aware codebook replacement 和蒸馏，从肖像、文本和音频生成长期一致的数字人动画。
+- [LongVie 2](https://arxiv.org/abs/2512.13604)：构建可控超长视频 world model，将视频生成扩展到更长、更具状态性的多模态场景合成。
+- [Grab-3D](https://arxiv.org/abs/2512.13665)：利用 3D geometric temporal consistency 检测 AI-generated videos。
+- [Elastic3D: Controllable Stereo Video Conversion with Guided Latent Decoding](https://arxiv.org/abs/2512.14236)：通过 guided latent decoding 将单目视频转为可控立体视频，为沉浸式内容生成补充一条 3D-aware 视频生成路线。
+- [HGS: Hybrid Gaussian Splatting with Static-Dynamic Decomposition for Compact Dynamic View Synthesis](https://arxiv.org/abs/2512.14352)：用 RBF 建模和两阶段训练分离静态与动态 Gaussian primitives，面向自由视角视频实现紧凑实时 dynamic view synthesis。
+- [Native and Compact Structured Latents for 3D Generation](https://arxiv.org/abs/2512.14692)：用原生紧凑 structured latents 做 3D 生成，以 generation-friendly structured tokens 替代更重的中间表示。
+- [IC-Effect: Precise and Efficient Video Effects Editing via In-Context Learning](https://arxiv.org/abs/2512.15635)：以 We propose IC-Effect, an instruction-guided, DiT-based framework for few-shot video VFX editing that synthesizes complex effects ( flames, particles and cartoon characters) while strictly preserving spatial and temporal consistency 为核心。
+- [End-to-End Training for Autoregressive Video Diffusion via Self-Resampling](https://arxiv.org/abs/2512.15702)：通过 self-resampling 端到端训练自回归视频扩散，缓解序列式去噪中的训练-测试不匹配。
+- [EverybodyDance: Bipartite Graph-Based Identity Correspondence for Multi-Character Animation](https://arxiv.org/abs/2512.16360)：用 bipartite identity matching graph、mask-query attention、identity-embedded guidance 和专用 IC benchmark 保持多角色动画身份对应。
+- [Anchored Video Generation: Decoupling Scene Construction and Temporal Synthesis in Text-to-Video Diffusion Models](https://arxiv.org/abs/2512.16371)：以 We introduce Anchored Video Generation (AVG), a modular pipeline that decouples these tasks by decomposing the Text-to-Video generation into three specialized stages: (1) Reasoning, where a Large Language Model (LLM) rewrites the video prompt to describe only the initial scene, resolving temporal ambiguities; 为核心。
+- [Pixel Seal: Adversarial-only training for invisible image and video watermarking](https://arxiv.org/abs/2512.16874)：用仅对抗训练目标学习不可见图像和视频水印，为生成和编辑视觉媒体补充来源保护方法。
+- [Infinite-Homography as Robust Conditioning for Camera-Controlled Video Generation](https://arxiv.org/abs/2512.17040)：用基于单应性的几何引导约束相机可控视频生成。核心思想：在不完全依赖易出错深度重投影的情况下，提高相机姿态遵循和视角一致性。
+- [Asynchronous Pipeline Parallelism for Real-Time Multilingual Lip Synchronization in Video Communication Systems](https://arxiv.org/abs/2512.18318)：把翻译、语音处理和唇形同步做异步流水并行，并结合图编译、量化、kernel fusion 和静音分段降低多语言视频通信延迟。
+- [EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](https://arxiv.org/abs/2512.18814)：以 To address this, we introduce EchoMotion, a framework designed to model the joint distribution of appearance and human motion, thereby improving the quality of complex human action video generation 为核心。
+- [CETCAM: Camera-Controllable Video Generation via Consistent and Extensible Tokenization](https://arxiv.org/abs/2512.19020)：用一致且可扩展的几何感知 tokenization 控制视频扩散模型的相机运动，减少对大规模相机位姿标注的依赖。
+- [WorldWarp: Propagating 3D Geometry with Asynchronous Video Diffusion](https://arxiv.org/abs/2512.19678)：以 To bridge this gap, we propose WorldWarp, a framework that couples a 3D structural anchor with a 2D generative refiner 为核心。
+- [Generating the Past, Present and Future from a Motion-Blurred Image](https://arxiv.org/abs/2512.19817)：复用预训练视频扩散模型，从运动模糊图像推断曝光前、曝光中和曝光后的动态视频，并支持相机轨迹、物体运动和动态三维恢复。
+- [Learning to Refocus with Video Diffusion Models](https://arxiv.org/abs/2512.19823)：利用视频扩散先验做重聚焦，把模糊和深度线索转化为时间一致的焦点编辑，而非逐帧独立修复。
+- [Few-Shot-Based Modular Image-to-Video Adapter for Diffusion Models](https://arxiv.org/abs/2512.20000)：提出用于图像到视频扩散模型的小样本模块化适配器。
+- [AirGS: Real-Time 4D Gaussian Streaming for Free-Viewpoint Video Experiences](https://arxiv.org/abs/2512.20943)：把 4D Gaussian 更新转成多通道二维格式，结合关键帧选择和自适应 Gaussian 更新剪枝，实现低延迟自由视角视频流。
+- [FluencyVE: Marrying Temporal-Aware Mamba with Bypass Attention for Video Editing](https://arxiv.org/abs/2512.21015)：在 one-shot 视频编辑中用 temporal-aware Mamba 替代时间注意力，并加 low-rank bypass attention 以降低计算和保持帧间一致。
+- [ACD: Direct Conditional Control for Video Diffusion Models via Attention Supervision](https://arxiv.org/abs/2512.21268)：通过针对稀疏三维感知物体布局的注意力监督，为视频扩散模型加入直接条件控制。核心思想：把布局和条件遵循纳入去噪目标，而不只依赖间接的 classifier-free guidance。
+- [Knot Forcing: Taming Autoregressive Video Diffusion Models for Real-time Infinite Interactive Portrait Animation](https://arxiv.org/abs/2512.21734)：用 knot 式时间锚点约束自回归视频扩散轨迹，稳定实时无限交互式肖像动画。
+- [Inference-based GAN Video Generation](https://arxiv.org/abs/2512.21776)：使用 leverages a Markov chain framework with a recall mechanism, where each state represents a short-length VAE-GAN video generator。
+- [EasyOmnimatte](https://arxiv.org/abs/2512.21865)：改造预训练 inpainting diffusion model 做端到端视频分层分解，把 omnimatte 编辑与扩散先验连接起来。
+- [Characterizing Motion Encoding in Video Diffusion Timesteps](https://arxiv.org/abs/2512.22175)：分析视频扩散去噪过程中不同 timestep 的运动信息位置，说明模型如何在扩散轨迹中编码动态。
+- [SoulX-FlashTalk: Real-Time Infinite Streaming of Audio-Driven Avatars via Self-Correcting Bidirectional Distillation](https://arxiv.org/abs/2512.23379)：用 self-correcting bidirectional distillation、retrospective self-correction、hybrid sequence parallelism 和 Parallel VAE 支持 14B 实时无限 avatar 流。
+- [HY-Motion 1.0: Scaling Flow Matching Models for Text-To-Motion Generation](https://arxiv.org/abs/2512.23464)：扩展文本到动作生成的 flow-matching 模型，提供运动生成 foundation model，而不是窄域动画后处理。
+- [LiveTalk: Real-Time Multimodal Interactive Video Diffusion via Improved On-Policy Distillation](https://arxiv.org/abs/2512.23576)：改进面向文本、图像和音频条件 avatar diffusion 的 on-policy distillation，并结合音频语言模型和 Anchor-Heavy Identity Sinks 实现实时多轮交互。
+- [Stream-DiffVSR](https://arxiv.org/abs/2512.23709)：用 autoregressive diffusion 支持低延迟、可流式视频超分，补充高效视频修复模型。
+- [Pretraining Frame Preservation for Lightweight Autoregressive Video History Embedding](https://arxiv.org/abs/2512.23851)：以 We present a lightweight history encoder that maps long video histories into short-length embeddings, pretrained with a frame query objective that learns to attend to content features at arbitrary temporal positions 为核心。
+- [RainFusion2.0](https://arxiv.org/abs/2512.24086)：为视频恢复与生成流程加入时空感知和硬件友好的块级稀疏注意力。
 - [I2VGuard](https://doi.org/10.1109/CVPR52734.2025.01175)：保护输入图像不被扩散式图生视频模型滥用。
 - [HomoGen](https://doi.org/10.1109/CVPR52734.2025.02137)：结合单应传播与扩散模型提升视频修复能力。
 - [LLM hidden-state conditioning for video diffusion](https://doi.org/10.1109/ECAI65401.2025.11095434)：用指令跟随 LLM 的隐藏状态作为视频扩散模型条件。
 - [MotionShot](https://doi.org/10.1109/ICCV51701.2025.01103)：在文生视频中跨任意对象自适应迁移动作。
 - [MotionMatcher](https://doi.org/10.1109/ICCVW69036.2025.00728)：通过动作特征匹配定制文生视频扩散模型中的电影化运动。
+- [DAADiff](https://doi.org/10.1109/BigData66926.2025.11401904)：提出用于实时视频修复的双轴自适应框架。
+- [VASA-Rig](https://doi.org/10.1109/TVCG.2025.3549168)：用语音和情感共同条件化 3D 面部运动，生成带实时情绪动态的音频驱动 avatar 动画。
+- [L-C4](https://doi.org/10.1016/j.neucom.2025.132199)：用语言控制创意视频上色，在文本引导颜色生成的同时保持跨帧颜色一致性。
+- [Keyframe-Guided Creative Video Inpainting](https://doi.org/10.1109/cvpr52734.2025.01214)：用关键帧引导创意视频修复，为可控时间序列编辑补充方法。
+- [Dlfr-Gen](https://doi.org/10.1109/ICCV51701.2025.01523)：以动态 latent frame rate 进行视频生成，为扩散式视频合成补充帧率控制方法。
+- [Adaptor](https://doi.org/10.1109/CVPRW67362.2025.00632)：在视频扩散 Transformer 中自适应减少 token，为长视频或高分辨率生成提供视频专用的效率改进路径。
+- [PARO for Video Generation](https://doi.org/10.1109/DAC63849.2025.11133383)：面向视频生成模型采用模式感知的注意力量化与重排，为高效合成补充软硬件协同设计路线。
+- [MoAnimate](https://doi.org/10.1109/TCSVT.2025.3639082)：弥合人体视频动画中的 motion-oriented latent 表征差距，为生成式人物视频提供更可控的运动建模路线。
+- [Aligning Global Semantics and Local Textures in Generative Video Enhancement](https://doi.org/10.1109/ICCV51701.2025.01587)：通过平衡全局语义一致性与局部纹理保真度改进生成式视频增强。
+- [Enhancing Video Stylization with Integral Noise](https://doi.org/10.1109/ICNC64010.2025.10993671)：通过 integral noise 设计改进视频风格化，使风格迁移更关注时间一致控制。
+- [Flow Enhanced Dual Transformer](https://doi.org/10.1109/MSN69125.2025.00062)：使用光流增强的双 Transformer 建模做视频修复，扩展面向生成式视频编辑的时间一致性方法。
+- [Drafting and Revision for Video Inpainting](https://doi.org/10.24963/ijcai.2025/230)：用 drafting-and-revision design 推进 high-fidelity video inpainting。
+- [22DEditor](https://doi.org/10.1109/TCSVT.2025.3642772)：借助单个 2D diffusion prior 实现具有时空一致性的 text-driven volumetric video editing。
+- [IDCNet Deepfake Detection](https://doi.org/10.1109/TIFS.2025.3593353)：通过图像分解和跨视角蒸馏改进泛化型 deepfake 检测。
+- [RivuletMLP](https://doi.org/10.1109/CVPR52734.2025.00688)：用 MLP 架构做高效压缩视频质量增强，补充视频修复模型。
+- [Frequency-Domain Video Demoireing](https://doi.org/10.1109/TCSVT.2025.3636874)：在频域进行时空滤波以去除视频摩尔纹，补充生成式视频修复与增强线索。
+- [GAN Spatio-Temporal Video Watermarking](https://doi.org/10.1109/ICICCS67942.2025.11382501)：结合时空特征与注意力机制构建鲁棒视频水印，用于视频内容保护。
+- [Mdff-Net Deepfake Video Detection](https://doi.org/10.1109/ACROSET66531.2025.11281048)：通过多域特征融合提升 deepfake video detection 的鲁棒性。
+- [Hybrid Deepfake Video Detection](https://doi.org/10.1109/ICONAT66879.2025.11362687)：用混合深度学习提升 deepfake video detection 的泛化与公平性。
+- [Multistream Face-Swapping Attack Detection](https://doi.org/10.1109/COMSCI67172.2025.11225271)：用多流特征嵌入检测 face-swapping attacks，面向生成视频取证建模跨流伪造痕迹。
+- [Face Forgery Video Detection via Temporal Forgery Cue Unraveling](https://doi.org/10.1109/cvpr52734.2025.00693)：建模人脸伪造视频中的时间伪造线索，使生成视频取证不只依赖逐帧伪影。
+- [DTR: Dynamic Tree-Ring Watermarking Framework for Diffusion-Based Video Generation](https://doi.org/10.1109/icassp49660.2025.10888152)：面向扩散式视频生成提出动态 Tree-Ring 水印机制，增强生成视频的来源追踪和权属信号。
+- [RBMark: Robust and blind video watermark in DT CWT domain](https://doi.org/10.1016/j.jvcir.2025.104438)：在 DT-CWT 域提出鲁棒盲视频水印方法，用于生成视频溯源和内容保护。
+- [Implanting Robust Watermarks in Latent Diffusion Models for Video Generation](https://doi.org/10.1109/icassp49660.2025.10888991)：在视频生成的 latent diffusion model 中植入鲁棒水印，为生成器内生的溯源机制补充方法。
+- [Video Diffusion Posterior Sampling for Seeing Beyond Dynamic Scattering Layers](https://doi.org/10.1109/tpami.2025.3598457)：用视频扩散后验采样恢复动态散射层后的场景。
+- [RINGet: A Robust Watermarking Framework for Diffusion-Based Video Generation](https://doi.org/10.1109/tcsvt.2025.3643532)：提出面向 diffusion-based video generation 的 robust watermarking framework。
+- [UniAdapter: All-in-One Control for Flexible Video Generation](https://doi.org/10.1109/tcsvt.2025.3532495)：提供 all-in-one 视频控制适配器，把多种条件信号统一到同一控制框架，而不是为每种生成模式单独训练控制模块。
+- [TokensGen: Harnessing Condensed Tokens for Long Video Generation](https://doi.org/10.1109/iccv51701.2025.01691)：用 condensed tokens 压缩长视频的时间上下文，减少自回归长视频合成中的 token 冗余。
+- [Harnessing Conventional Video Processing Insights for Emerging 3D Video Generation Models: A Comprehensive Attention-aware Way](https://doi.org/10.1109/dac63849.2025.11132992)：把传统视频处理中的运动和时间结构先验迁移到 attention-aware 3D 视频生成，用以指导新兴生成骨干。
+- [A Scalable Framework for Satellite Video and Annotation Generation based on 3D Foundation Model](https://doi.org/10.1109/igarss55030.2025.11243378)：利用 3D foundation model 同时合成卫星视频和标注，面向可扩展遥感视频数据生成，而不是通用文本到视频短片。
+- [Hierarchical Emotion-Guided Masked Transformer for Long-Sequence Co-Speech Gestures with Partial Supervision](https://doi.org/10.1109/ijcb65343.2025.11411217)：采用层级 emotion-guided masked Transformer 生成长序列共语音手势，并用部分监督建模情绪条件下的长时运动。
+- [VideoVAE+: Large Motion Video Autoencoding with Cross-Modal Video VAE](https://doi.org/10.1109/iccv51701.2025.01668)：设计用于大运动视频自编码的跨模态 Video VAE，强化下游视频生成骨干所需的潜空间视频 token 化。
+- [RADiT: Redundancy-Aware Diffusion Transformer Acceleration Leveraging Timestep Similarity](https://doi.org/10.1109/dac63849.2025.11133190)：利用扩散 Transformer 不同时间步之间的相似性跳过冗余计算，为视频生成推理提供冗余感知加速路径。
+- [Generating Long-Take Videos via Effective Keyframes and Guidance](https://doi.org/10.1109/wacv61041.2025.00365)：通过选择有效关键帧并在关键帧之间施加引导生成长镜头视频，改善短片段合成之外的时间连续性。
+- [QK-Edit: Revisiting Attention-based Injection in MM-DiT for Image and Video Editing](https://doi.org/10.1109/iccv51701.2025.01770)：重新审视多模态 DiT 中的注意力注入，通过 query-key 操作完成图像和视频编辑，而不是重新训练完整模型。
+- [STDD: Spatio-Temporal Dual Diffusion for Video Generation](https://doi.org/10.1109/cvpr52734.2025.01173)：将视频生成拆成耦合的空间扩散和时间扩散过程，用双重时空去噪设计分别建模帧质量与运动动态。
+- [AST-Adapter: Parameter-Efficient Video-to-Video Transfer Learning With Adaptive Spatiotemporal Information Bias](https://doi.org/10.1109/tcsvt.2025.3638017)：用自适应时空信息偏置适配器进行参数高效的视频到视频迁移学习。
+- [Spatio-Temporal Energy-Guided Diffusion Model for Zero-Shot Video Synthesis and Editing](https://doi.org/10.1109/tcsvt.2025.3531390)：用时空能量项引导扩散采样，在无需任务微调的情况下做 zero-shot 视频合成与编辑并约束时间一致性。
+- [GE-adapter: A general and efficient adapter for enhanced video editing with pretrained text-to-image diffusion models](https://doi.org/10.1016/j.eswa.2025.129649)：通过通用高效 adapter 把预训练 text-to-image diffusion 用于视频编辑，复用图像先验并补足时间一致性。
+- [Denoising Reuse: Exploiting Inter-Frame Motion Consistency for Efficient Video Generation](https://doi.org/10.1109/tcsvt.2025.3548728)：利用帧间运动一致性复用 denoising 计算，减少高效视频生成中的重复推理开销。
+- [Mirage](https://arxiv.org/abs/2512.24227)：将一步视频扩散用于驾驶场景中的一致资产编辑，补充快速且场景约束明确的视频编辑路线。
+- [Corgi: Cached Memory Guided Video Generation](https://doi.org/10.1109/wacv61041.2025.00450)：用 cached memory 引导视频生成，保留先前生成的场景和运动上下文以提升跨帧或跨片段连续性。
+- [Layer-Animate for Transparent Video Generation](https://doi.org/10.1109/icassp49660.2025.10887999)：提出透明视频生成方法 Layer-Animate，面向带 alpha 通道的动画内容而非普通 RGB 视频合成。
+- [Tuning-Free High-Resolution Video Diffusion With Spatial-Temporal Latent Grouping](https://doi.org/10.1109/tmm.2025.3618540)：用 ST-LAG 将视频 latent 按空间和时间分组去噪，复用低分辨率扩散先验并重新组合区域以生成全局一致的高分辨率视频。
+- [LCGD: Enhancing Text-to-Video Generation via Contextual LLM Guidance and U-Net Denoising](https://doi.org/10.1109/access.2025.3550945)：用 LLM 扩展文本提示的上下文引导，并结合 U-Net 去噪，让文生视频扩散在生成时获得更强语义控制。
+- [Explicit Depth-Aware Blurry Video Frame Interpolation Guided by Differential Curves](https://doi.org/10.1109/cvpr52734.2025.00192)：在模糊视频插帧中加入显式深度和 differential curves 引导，针对遮挡与运动边界提升中间帧一致性。
+- [Explicit Guidance for Robust Video Frame Interpolation Against Discontinuous Motions](https://doi.org/10.1109/wacv61041.2025.00820)：用显式不连续运动线索引导视频插帧，使生成的中间帧更稳健地处理突变运动与遮挡。
+- [CCE: A Content Creation Engine With Outlier and Mixed-Representation Computing, Semantic-Defined Instruction Generation for Video Diffusion](https://doi.org/10.1109/jssc.2025.3622515)：实现面向视频扩散的内容生成引擎，结合 outlier 计算、混合表示和语义定义指令生成来提升合成效率。
+- [A Two Stage Generative Model for Controllable Human Head Motion Video Generation](https://doi.org/10.1109/nicoint67466.2025.00021)：把可控头部运动视频生成拆成运动规划和视觉渲染两阶段，分离时间轨迹控制与最终画面合成。
+- [Enhancing Human-Computer Interaction Through Decoupling Motion and Camera Control in Human-Centric Video Generation](https://doi.org/10.1080/10447318.2025.2487877)：在人本视频生成中解耦人体运动与相机运动，让交互系统可分别控制主体动态和视角。
+- [Enhancing Text-to-Video Generation by Using a Training-Free Approach](https://doi.org/10.1109/nnice64954.2025.11064441)：通过推理期引导而非微调改进文生视频，使提示或 latent 控制可迁移到预训练视频生成器。
+- [Joint Global-Local Frames Modeling to enhance semantic alignment for zero-shot long video editing](https://doi.org/10.1016/j.neucom.2025.130836)：在零样本长视频编辑中结合全局序列上下文和局部帧建模，使语义修改对齐并保持时间一致性。
+- [SUE-Adapter: Enhancing Complex-Semantic-Long-Text to Video Generation Models with Large Language Models](https://doi.org/10.1109/icbaie66852.2025.11326569)：用 LLM 辅助 adapter 重构复杂长文本提示，提升多从句文生视频请求的语义落地能力。
+- [3D Denoising Diffusion Video Frame Interpolation (5DVFI)](https://doi.org/10.1109/iccr67607.2025.11372085)：把三维去噪扩散用于视频插帧，在合成中间帧时联合建模空间和时间维度。
+- [DM-360VFI: 360° Spherical Video Interpolation Using Diffusion Model](https://doi.org/10.1109/mlmc65154.2025.11189310)：将扩散式插帧适配到 360 度球面视频，要求生成帧在全景边界处保持连贯。
+- [EasyControl: Adding Control to Video Diffusion for Controllable Video Generation and Interpolation](https://doi.org/10.1109/icassp49660.2025.10889997)：用轻量 adapter 把 ControlNet 式条件特征迁移到视频扩散，使单张条件图即可控制生成和插值。
+- [AdaptEdit: An Adaptive Correspondence Guidance Framework for Reference-Based Video Editing](https://doi.org/10.24963/ijcai.2025/1131)：用自适应 correspondence guidance 在视频中传播参考编辑，在不依赖密集手工 mask 的情况下保持空间对齐和时间一致性。
+- [TH-Mamba: Spatial-Temporal Correlation Learning for Mamba-Based Talking Head Generation](https://doi.org/10.1109/tcsvt.2025.3596747)：围绕 Mamba 式时空相关学习构建说话头生成模型，用状态空间序列建模协调跨帧面部动态。
+- [Co-Speech Gesture Video Generation with Implicit Motion-Audio Entanglement](https://doi.org/10.1109/cvpr52734.2025.01063)：学习隐式音频-动作耦合来生成共语手势视频，使合成身体动作与语音节奏和内容对齐。
+- [Unity in Diversity: Video Editing via Gradient-Latent Purification](https://doi.org/10.1109/cvpr52734.2025.02179)：在扩散视频编辑中净化梯度和 latent 信号，使局部编辑可以多样变化，同时保留整段视频的统一时序结构。
+- [NADM: Noise-Aware Diffusion Model for Landscape Painting Video Generation](https://doi.org/10.1109/tcyb.2025.3576752)：提出面向山水画视频生成的噪声感知扩散模型，通过噪声建模稳定风格化画面的时间演化。
+- [Dynamic Attention-Guided Video Generation from Text with Multi-Scale Synthesis and LoRA Optimization](https://doi.org/10.1109/iscait64916.2025.11010506)：结合动态注意力、多尺度合成和 LoRA 优化，在不完整重训生成器的情况下提升文生视频细节控制。
+- [Align-A-Video: Deterministic Reward Tuning of Image Diffusion Models for Consistent Video Editing](https://doi.org/10.1109/cvpr52734.2025.00199)：用确定性奖励信号调优图像扩散模型，使逐帧编辑迁移到视频时保持时间一致。
+- [CoFaCo: Controllable Generative Talking Face Video Coding](https://doi.org/10.1109/tip.2025.3648562)：把说话脸视频编码建模为可控生成，用紧凑面部控制信号重建或传输表情化说话头视频。
+- [SynGauss: Real-Time 3D Gaussian Splatting for Audio-Driven Talking Head Synthesis](https://doi.org/10.1109/access.2025.3548015)：用 3D Gaussian splatting 实时合成音频驱动说话头，将语音线索映射到可变形 Gaussian 头部表示。
+- [GaussianSpeech: Audio-Driven Personalized 3D Gaussian Avatars](https://doi.org/10.1109/iccv51701.2025.01214)：构建音频驱动的个性化 3D Gaussian avatar，把语音特征连接到可动画化的 Gaussian 几何和外观。
+- [Diffused Poses and Distilled Expressions for Controllable Audio-driven Talking Face Generation](https://doi.org/10.1109/icassp49660.2025.10887982)：将扩散式头部姿态生成与蒸馏表情控制分开，提高音频驱动说话脸视频的可控性。
+- [FlowStyler: Artistic Video Stylization Via Transformation Fields Transports](https://doi.org/10.1109/iccv51701.2025.00953)：通过跨帧传输 transformation fields 做艺术化视频风格迁移，在应用风格变化的同时保持时序连贯。
+- [DreamAnimate: Temporal Consistency and Detail Preservation for Character Animation](https://doi.org/10.1109/icme59968.2025.11210030)：在角色动画中同时关注时间一致性和细节保真，在运动迁移与源角色外观保持之间取得平衡。
+- [Event-based Video Super-Resolution via State Space Models](https://doi.org/10.1109/cvpr52734.2025.01172)：用状态空间模型融合事件相机信号做视频超分，利用稀疏高时间分辨率事件重建更清晰帧。
+- [Truncate Diffusion: Efficient Video Editing With Low-Rank Truncate](https://doi.org/10.1109/tmm.2025.3590901)：在扩散式视频编辑中使用低秩截断以降低计算开销，同时尽量保留编辑轨迹。
+- [Controllable Human Video Generation From Sparse Sketches](https://doi.org/10.1109/tvcg.2025.3543687)：用稀疏草图条件控制人体视频生成，让用户以轻量空间信号指定动作或姿态，由模型补全外观和时序连贯运动。
+- [DreamHA: Towards High-Quality Human Animation with Image-to-Video Diffusion Models](https://doi.org/10.1109/icassp49660.2025.10890226)：将图生视频扩散适配到人体动画，强调从静态人物参考中保持身份并生成平滑动作。
+- [High-Fidelity Semantic Video Communication with Controllable Image-To-Video Diffusion Models](https://doi.org/10.1109/ism66958.2025.00033)：把可控图生视频扩散用作语义视频通信解码器，从紧凑视觉或语义控制信号重建高保真视频。
+- [VidEvo: Evolving Video Editing through Exhaustive Temporal Modeling](https://doi.org/10.24963/ijcai.2025/99)：通过穷尽式时间建模强化视频编辑，显式跟踪长程帧依赖，使编辑结果随时间保持连贯。
+- [A Framework With Multi-Scale Hybrid Mamba Voxel Flow for Video Prediction](https://doi.org/10.1109/tcsvt.2025.3612980)：结合多尺度 voxel flow 与 hybrid Mamba 序列建模进行视频预测，用状态空间动态高效预测未来帧。
+- [HTMDF-DD: Hybrid triple modality based spatial-temporal features early fusion for deepfake detection](https://doi.org/10.1016/j.compeleceng.2025.110860)：在 deepfake 视频检测中早期融合三种模态的时空特征，面向生成媒体真实性分类而非生成。
+- [Video Steganography With Optimized Robust Modulation Paths for Lossy Channels](https://doi.org/10.1109/lsp.2025.3632809)：为视频隐写优化鲁棒调制路径，使隐藏载荷能经受有损信道，同时尽量保持视觉质量。
+- [Resampling video super-resolution based on multi-scale guided optical flow](https://doi.org/10.1016/j.compeleceng.2025.110176)：用多尺度引导光流重采样视频超分帧，先对齐运动再恢复高分辨率细节。
+- [Aurora: Adaptive Audio-Video Multi-Scale Attention Fusion for Deepfake Detection](https://doi.org/10.1109/icpads67057.2025.11322961)：通过多尺度注意力自适应融合音频和视频线索，捕捉生成媒体中的跨模态不一致来检测 deepfake。
+- [Boosting Deepfake Video Detection Using Non-Local Attention and Sharpness-Aware Minimization](https://doi.org/10.1109/avss65446.2025.11149952)：结合 non-local attention 和 sharpness-aware minimization，提升 deepfake 视频检测器跨伪造来源的泛化能力。
+- [TEV-STT: Text-Guided Expressive Video Generation from Facial Images via Spatio-Temporal Transformer](https://doi.org/10.1109/iccds64403.2025.11209591)：用时空 Transformer 在文本引导下动画化人脸图像，把表情描述转成时间连贯的肖像视频。
+- [LMTalker: Sparse Landmark-guided Gaussian Splatting for High-fidelity Talking Head Synthesis](https://doi.org/10.1109/icassp49660.2025.10889082)：用稀疏 landmarks 驱动 Gaussian-splatting 说话头，在轻量控制信号下提升高保真面部运动。
+- [HERA: Hybrid Explicit Representation for Ultra-Realistic Head Avatars](https://doi.org/10.1109/cvpr52734.2025.00033)：采用 hybrid explicit representation 构建头部 avatar，将可控几何与外观细节结合以实现超真实 reenactment。
+- [StruGauAvatar: Learning Structured 3D Gaussians for Animatable Avatars From Monocular Videos](https://doi.org/10.1109/tvcg.2025.3557457)：从单目视频学习结构化 3D Gaussian avatar，使有限单视角素材恢复出的表示可被动画化。
+- [BM-Edit: Background retention and motion consistency for zero-shot video editing](https://doi.org/10.1016/j.knosys.2025.113784)：在零样本视频编辑中显式保持背景和运动一致性，减少目标编辑之外的内容漂移。
+- [Zero-Shot Customized Video Editing with Diffusion Feature Transfer](https://doi.org/10.1109/iccvw69036.2025.00643)：把参考定制中的扩散特征迁移到目标视频，实现无需逐视频训练的主体或风格编辑。
+- [Towards Long-Sequence Image-to-Video Generation: A Multi-Stage Diffusion Framework for Temporal and Motion Consistency](https://doi.org/10.1109/ispacs68724.2025.11383105)：用多阶段扩散管线生成长序列图生视频，将时间延展和运动一致性 refinement 分开处理。
+- [Reconstructing High Quality Raw Video Using Temporal Affinity and Diffusion Prior](https://doi.org/10.1109/tpami.2025.3596623)：结合 temporal affinity 建模和扩散先验重建 RAW 视频，利用邻近帧关系恢复高质量细节。
+- [Few-shot-based video generation via multimodal fusion and Fourier Spliter](https://doi.org/10.1016/j.imavis.2025.105794)：用多模态融合和 Fourier splitter 做少样本视频生成，通过分离频率成分稳定有限样本下的外观与运动。
+- [Research on Methods to Improve Video Generation Quality Based on Google DeepMind’s Veo Model](https://doi.org/10.1109/cvaa66438.2025.11193318)：研究围绕 Veo 式文生视频的质量改进策略，重点是提示、控制或工作流选择，而不是发布新的生成骨干。
+- [LLM-Guided Dual-Branch Diffusion Model for Fine-Grained Motion Synthesis](https://doi.org/10.1109/icassp49660.2025.10889902)：用 LLM 引导双分支扩散模型生成细粒度动作，将语义规划与动作细节生成分开。
+- [4EV: Adaptive Video Editing With Spatial Temporal Dynamics and Motion Pathways](https://doi.org/10.1109/access.2025.3624055)：扩展 Stable Diffusion 做提示驱动视频编辑，用时空注意力和 attention-map injection 支持物体移动、路径导航、背景转换与缩放效果。
+- [Text-to-Sign Language Video Generation Using GANs, BERT, and Sora](https://doi.org/10.1109/isec64801.2025.11147381)：探索结合多模态生成组件的文本到手语视频生成。
+- [Enhancing Video Generation Based on Text-to-Image Diffusion Models Using a Multimodal Approach](https://doi.org/10.1109/mercon67903.2025.11217072)：面向视频生成与编辑提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [DiffPortraitVideo: Diffusion-Based Expression-Consistent Zero-Shot Portrait Video Translation](https://doi.org/10.1109/tvcg.2025.3642300)：面向视频生成与编辑提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [TrackDiffusion: Tracklet-Conditioned Video Generation via Diffusion Models](https://doi.org/10.1109/wacv61041.2025.00349)：用物体 tracklets 条件化扩散生成，并加入 instance enhancer，在保持跨帧物体一致性的同时控制多目标运动轨迹。
+- [UniTMGE: Uniform Text-Motion Generation and Editing Model via Diffusion](https://doi.org/10.1109/wacv61041.2025.00595)：提出 TMMGE 扩散框架，在统一的多模态 text-motion 控制下同时支持文本条件运动生成和运动编辑。
+- [Optimizing Semantic and Texture Consistency in Video Generation](https://doi.org/10.32604/cmc.2025.065529)：提出 Dual Consistency Training，结合多尺度空间适配器、CLIP 与 VGG 语义纹理损失和动态 CLWS 权重，提升 one-shot 文生视频的一致性。
+- [Pixel-to-4D: Camera-Controlled Image-to-Video Generation with Dynamic 3D Gaussians](https://arxiv.org/abs/2601.00678)：用动态 3D Gaussians 实现相机可控的图像到视频生成，连接可控视频合成与 4D 空间结构。
+- [DreamID-V](https://arxiv.org/abs/2601.01425)：用 diffusion transformer 弥合 image-to-video 人脸替换差距，实现高保真身份保持。
+- [MM-Sonate: Multimodal Controllable Audio-Video Generation with Zero-Shot Voice Cloning](https://arxiv.org/abs/2601.01568)：提供带零样本声音克隆的多模态可控音视频生成。
+- [MotionAdapter: Video Motion Transfer via Content-Aware Attention Customization](https://arxiv.org/abs/2601.01955)：提出 MotionAdapter, a content-aware motion transfer framework that enables robust and semantically aligned motion transfer within DiT-based video diffusion models。
+- [MagicFight: Personalized Martial Arts Combat Video Generation](https://arxiv.org/abs/2601.02107)：通过身份条件化动作编排生成个性化武术对打视频，将主体保持与高速交互运动结合起来。
+- [DreamStyle](https://arxiv.org/abs/2601.02785)：提供统一视频风格化框架，补充视频编辑和生成控制。
+- [Mind the Generative Details: Direct Localized Detail Preference Optimization for Video Diffusion Models](https://arxiv.org/abs/2601.04068)：提出 LocalDPO, a novel post-training framework that constructs localized preference pairs from real videos and optimizes alignment at the spatio-temporal region level。
+- [ReHyAt](https://arxiv.org/abs/2601.04342)：为视频扩散 Transformer 加入 recurrent hybrid attention，强调递归时间建模而不只是普通注意力替换。
+- [PackCache: A Training-Free Acceleration Method for Unified Autoregressive Video Generation via Compact KV-Cache](https://arxiv.org/abs/2601.04359)：以 Leveraging these observations, we introduce PackCache, a training-free KV-cache management method that dynamically compacts the KV cache through three coordinated mechanisms: condition anchoring that preserves semantic references, cross-frame decay modeling that allocates cache budget according to temporal distance, and spatially preserving position embed 为核心。
+- [Plenoptic Video Generation](https://arxiv.org/abs/2601.05239)：以 To address it, we introduce PlenopticDreamer, a framework that synchronizes generative hallucinations to maintain spatio-temporal memory. The core idea is to train a multi-in-single-out video-conditioned model in an autoregressive manner, aided by a camera-guided video retrieval strategy that adaptively selects salient videos from previous generations as 为核心。
+- [GaussianSwap](https://arxiv.org/abs/2601.05511)：用 3D Gaussian splatting 实现可动画化的视频换脸。
+- [Rotate Your Character: Revisiting Video Diffusion Models for High-Quality 3D Character Generation](https://arxiv.org/abs/2601.05722)：提出 RCM (Rotate your Character Model), an advanced image-to-video diffusion framework tailored for high-quality novel view synthesis (NVS) and 3D character generation。
+- [TAGRPO: Boosting GRPO on Image-to-Video Generation with Direct Trajectory Alignment](https://arxiv.org/abs/2601.05729)：提出 TAGRPO, a robust post-training framework for I2V models inspired by contrastive learning。
+- [VideoAR: Autoregressive Video Generation via Next-Frame & Scale Prediction](https://arxiv.org/abs/2601.05966)：通过同时预测下一帧和尺度进行自回归视频生成，用 token 化时间推进来扩展视频并控制分辨率增长。
+- [Focal Guidance: Unlocking Controllability from Semantic-Weak Layers in Video Diffusion Models](https://arxiv.org/abs/2601.07287)：以 To address this, we propose Focal Guidance (FG), which enhances the controllability from Semantic-Weak Layers 为核心。
+- [Rewriting Video](https://arxiv.org/abs/2601.08565)：根据文本指令重写已有视频素材，为生成模型部分补充文本驱动视频编辑方法。
+- [MoCha:End-to-End Video Character Replacement without Structural Guidance](https://arxiv.org/abs/2601.08587)：提出 MoCha, a pioneering framework that bypasses these limitations by requiring only a single arbitrary frame mask。
+- [Motion Attribution for Video Generation](https://arxiv.org/abs/2601.08828)：分析视频生成模型如何归因运动，为时间控制和运动一致性提供模型侧诊断视角。
+- [V-DPM: 4D Video Reconstruction with Dynamic Point Maps](https://arxiv.org/abs/2601.09499)：以 First, we show how to formulate DPMs for video input in a way that maximizes representational power, facilitates neural prediction, and enables reuse of pretrained models 为核心。
+- [Efficient Camera-Controlled Video Generation of Static Scenes via Sparse Diffusion and 3D Rendering](https://arxiv.org/abs/2601.09697)：结合稀疏扩散与 3D 渲染实现相机可控视频生成，增强静态场景生成中的视角控制能力。
+- [FlowAct-R1: Towards Interactive Humanoid Video Generation](https://arxiv.org/abs/2601.10103)：提出 FlowAct-R1, a framework specifically designed for real-time interactive humanoid video generation. Built upon a MMDiT architecture, FlowAct-R1 enables the streaming synthesis of video with arbitrary durations while maintaining low-latency responsiveness。
+- [ELITE](https://arxiv.org/abs/2601.10200)：通过学习初始化与测试时生成式适配，从单目视频构建 Gaussian head avatar，补充高效个性化头像生成方法。
+- [Beyond Inpainting](https://arxiv.org/abs/2601.10214)：用 3D 理解支持精确相机控制的视频生成。
+- [FrankenMotion: Part-level Human Motion Generation and Composition](https://arxiv.org/abs/2601.10909)：以身体部件为单位组合人体动作，使生成动作能重组局部动作片段，同时保持全身协调。
+- [Dynamic Sparse Attention for Video Diffusion](https://arxiv.org/abs/2601.11641)：用分布混合感知的动态稀疏注意力提升视频扩散 Transformer 效率。
+- [Learning Stochastic Bridges for Video Object Removal via Video-to-Video Translation](https://arxiv.org/abs/2601.12066)：以 To address the trade-off where strong bridge priors hinder the removal of large objects, we propose a novel adaptive mask modulation strategy 为核心。
+- [Moaw: Unleashing Motion Awareness for Video Diffusion Models](https://arxiv.org/abs/2601.12761)：训练视频扩散模型进行运动感知和密集跟踪，再复用学到的运动意识实现可控运动迁移。
+- [LAViG-FLOW: Latent Autoregressive Video Generation for Fluid Flow Simulations](https://arxiv.org/abs/2601.13190)：将 latent autoregressive video generation 用于流体仿真，把物理动态视作随时间展开的视频建模问题。
+- [VideoMaMa](https://arxiv.org/abs/2601.14255)：结合生成先验与掩码引导进行视频抠像，把视频编辑覆盖扩展到时间一致的前景提取。
+- [LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models](https://arxiv.org/abs/2601.14674)：用场景潜变量条件生成式轨迹重渲染生成视频。
+- [Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](https://arxiv.org/abs/2601.14959)：提出 LDF-VFI 自回归扩散 Transformer 插帧范式，并用 skip-concatenate sampling 保持长程时间稳定性。
 - [StableWorld](https://arxiv.org/abs/2601.15281)：面向稳定、一致的长时程交互式视频生成。
+- [HVD: Human Vision-Driven Video Representation Learning for Text-Video Retrieval](https://arxiv.org/abs/2601.16155)：采用类人视觉的粗到细检索模型，结合关键帧选择和 patch 压缩模块，去除冗余帧并聚合显著视觉实体用于文本-视频匹配。
+- [PyraTok: Language-Aligned Pyramidal Tokenizer for Video Understanding and Generation](https://arxiv.org/abs/2601.16210)：通过多尺度量化学习语言对齐的金字塔式视频 token，提升视频重建、文本到视频生成与零样本视频理解。
+- [Memory-V2V: Memory-Augmented Video-to-Video Diffusion for Consistent Multi-Turn Editing](https://arxiv.org/abs/2601.16296)：以 We introduce Memory-V2V, a memory-augmented framework that treats prior edits as structured constraints for subsequent generations. Memory-V2V maintains an external memory of previous outputs, retrieves task-relevant edits, and integrates them through relevance-aware tokenization and adaptive compression 为核心。
+- [SALAD](https://arxiv.org/abs/2601.16515)：通过高效线性注意力调优，在视频扩散 Transformer 中实现高稀疏度注意力。
+- [LoL: Longer than Longer, Scaling Video Generation to Hour](https://arxiv.org/abs/2601.16914)：以 To address it, we propose a lightweight, training-free approach that effectively suppresses this behavior by introducing multi-head RoPE jitter that breaks inter-head attention homogenization and mitigates long-horizon collapse 为核心。
+- [Reward-Forcing: Autoregressive Video Generation with Reward Feedback](https://arxiv.org/abs/2601.16933)：以 By using reward signals to guide the model, our method simplifies training while preserving high visual fidelity and temporal consistency. Through extensive experiments on standard benchmarks, we find that our approach performs comparably to existing autoregressive models and, in some cases, surpasses similarly sized bidirectional models by avoiding const 为核心。
 - [SkyReels-V3](https://arxiv.org/abs/2601.17323)：报告统一条件视频生成模型，覆盖参考图生视频、视频延展和音频引导生成。
+- [Entropy-Guided k-Guard Sampling for Long-Horizon Autoregressive Video Generation](https://arxiv.org/abs/2601.19488)：按 token 熵自适应调整自回归视频采样，在低不确定区域减少冗余随机性，在高不确定区域缓解误差累积，面向长时程视频生成。
+- [FAIRT2V: Training-Free Debiasing for Text-to-Video Diffusion Models](https://arxiv.org/abs/2601.20791)：无需微调，通过基于 anchor 的球面测地变换中和提示嵌入，缓解文生视频扩散模型中的人口属性偏见。
+- [Zero-Shot Video Restoration and Enhancement with Assistance of Video Diffusion Models](https://arxiv.org/abs/2601.21922)：提出 the first framework that utilizes the rapidly-developed video diffusion model to assist the image-based method in maintaining more temporal consistency for zero-shot video restoration and enhancement。
 - [JUST-DUB-IT](https://arxiv.org/abs/2601.22143)：用 LoRA 和合成多语视频对适配音视频扩散基础模型，同时生成翻译音频和同步面部运动。
+- [VMonarch](https://arxiv.org/abs/2601.22275)：用结构化注意力构建高效视频扩散 Transformer。
+- [Hi-Light](https://arxiv.org/abs/2601.23167)：面向高保真、高分辨率视频重光照。核心思想：将重光照模型与专门评估范式结合，使光照编辑按时间一致性和物理一致性来判断。
+- [TokenTrim: Inference-Time Token Pruning for Autoregressive Long Video Generation](https://arxiv.org/abs/2602.00268)：在自回归推理时剪除不稳定的 latent 条件 token，避免损坏 token 被反复复用，从而无需重训练即可缓解长视频时间漂移。
+- [Scalable Generative Game Engine: Breaking the Resolution Wall via Hardware-Algorithm Co-Design](https://arxiv.org/abs/2602.00608)：通过硬件-算法协同设计解耦计算受限的世界模型生成和内存受限的解码，以支持更高分辨率神经游戏模拟。
+- [PISCES: Annotation-free Text-to-Video Post-Training via Optimal Transport-Aligned Rewards](https://arxiv.org/abs/2602.01624)：用 Dual Optimal-Transport aligned rewards 进行无标注文生视频后训练，使奖励信号对齐人类判断维度。
+- [GPD: Guided Progressive Distillation for Fast and High-Quality Video Generation](https://arxiv.org/abs/2602.01814)：通过 Guided Progressive Distillation 加速视频扩散，由在线 teacher 逐步训练 student 使用更大去噪步长。
+- [FSVideo: Fast Speed Video Diffusion Model in a Highly-Compressed Latent Space](https://arxiv.org/abs/2602.02092)：以 We introduce FSVideo, a fast speed transformer-based image-to-video (I2V) diffusion framework. We build our framework on the following key components: 1.) a new video autoencoder with highly-compressed latent space ($64644$ spatial-temporal downsampling ratio), achieving competitive reconstruction quality; 2 为核心。
+- [Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video Generation](https://arxiv.org/abs/2602.02214)：提出 Causal Forcing, which uses an autoregressive teacher for ODE initialization to bridge the architectural gap, and then applies the same DMD procedure as in Self Forcing。
+- [Quant VideoGen](https://arxiv.org/abs/2602.02958)：用二比特 KV-cache 量化支持自回归长视频生成，提升长时段合成效率。
+- [Morphe: High-Fidelity Generative Video Streaming with Vision Foundation Model](https://arxiv.org/abs/2602.03529)：用视觉基础模型实现高保真 generative video streaming，关注连续生成而非离线短片段合成。
+- [3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](https://arxiv.org/abs/2602.03796)：以 We introduce 3DiMo, which jointly trains a motion encoder with a pretrained video generator to distill driving frames into compact, view-agnostic motion tokens, injected semantically via cross-attention 为核心。
+- [Adaptive 1D Video Diffusion Autoencoder](https://arxiv.org/abs/2602.04220)：提出 One-Dimensional Diffusion Video Autoencoder (One-DVA), a transformer-based framework for adaptive 1D encoding and diffusion-based decoding. The encoder employs query-based vision transformers to extract spatiotemporal features and produce latent representations, while a variable-length dropout mechanism dynamically adjusts the latent length。
+- [Light Forcing](https://arxiv.org/abs/2602.04789)：用稀疏注意力加速自回归视频扩散，提升长视频生成效率。
+- [Euphonium: Steering Video Flow Matching via Process Reward Gradient Guided Stochastic Dynamics](https://arxiv.org/abs/2602.04928)：提出 Euphonium, a novel framework that steers generation via process reward gradient guided dynamics。
+- [GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge For Efficient Video Reward Modeling](https://arxiv.org/abs/2602.05202)：将视频生成 Transformer 改写为能量式奖励模型，用生成器自身的时序结构判断视频质量，而不只依赖 VLM 奖励。
 - [FastVMT](https://arxiv.org/abs/2602.05551)：用局部 attention mask 和扩散步梯度复用减少 DiT 视频生成中的运动与梯度冗余。
+- [Pathwise Test-Time Correction for Autoregressive Long Video Generation](https://arxiv.org/abs/2602.05871)：提出 Test-Time Correction (TTC), a training-free alternative. Specifically, TTC utilizes the initial frame as a stable reference anchor to calibrate intermediate stochastic states along the sampling trajectory。
+- [Context Forcing: Consistent Autoregressive Video Generation with Long Context](https://arxiv.org/abs/2602.06028)：以 To resolve this, we propose Context Forcing, a novel framework that trains a long-context student via a long-context teacher. By ensuring the teacher is aware of the full generation history, we eliminate the supervision mismatch, enabling the robust training of models capable of long-term consistency 为核心。
 - [CineScene](https://arxiv.org/abs/2602.06959)：把 3D-aware scene features 注入预训练文生视频模型，在控制镜头运动的同时保持场景一致性。
+- [Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models](https://arxiv.org/abs/2602.07106)：把语音驱动 3D 面部动画接入 omni-modal LLM，通过语音单元脚手架和 token-as-query 门控融合解耦语义推理与时序运动生成。
+- [VFace Video Face Swapping](https://arxiv.org/abs/2602.07835)：提供 training-free diffusion 的视频换脸方法。
+- [Geometry-Aware Rotary Position Embedding for Consistent Video World Model](https://arxiv.org/abs/2602.07854)：为一致的视频世界模型加入几何感知 RoPE。
+- [PISCO](https://arxiv.org/abs/2602.08277)：训练用于稀疏关键帧控制下精确实例插入的视频扩散模型，通过可变信息引导、时间掩码和几何感知条件保持原场景动态。
+- [Language-Guided Motion Tokenizer](https://arxiv.org/abs/2602.08337)：用 language-guided transformer tokenizer 做 human motion generation，把 motion tokens 与文本控制连接起来。
+- [D2-VR](https://arxiv.org/abs/2602.08395)：结合 degradation robustness 与 distillation 做视频修复，为生成式视频增强补充优化路线。
+- [ALIVE: Animate Your World with Lifelike Audio-Video Generation](https://arxiv.org/abs/2602.08682)：用 TA-CrossAttn、UniTemp-RoPE 和联合音视频分支，将预训练文生视频模型适配为 text-to-video-and-audio 与参考动画模型。
+- [Causality in Video Diffusers is Separable from Denoising](https://arxiv.org/abs/2602.10095)：展示 that the causal reasoning in these models is separable from the multi-step denoising process. Through systematic probing of autoregressive video diffusers, we uncover two key regularities: (1) early layers produce highly similar features across denoising steps, indicating redundant computation along the diffusion trajectory;。
 - [Flow Caching](https://arxiv.org/abs/2602.10825)：用 flow caching 加速自回归视频生成。
+- [HairWeaver](https://arxiv.org/abs/2602.11117)：用少样本、仿真到真实引导的视频扩散合成逼真的头发运动。
+- [LUVE](https://arxiv.org/abs/2602.11564)：通过 latent-cascaded generation 和 dual-frequency experts 支持超高分辨率视频合成，形成频率专门化生成架构。
+- [Variation-aware Flexible 3D Gaussian Editing](https://arxiv.org/abs/2602.11638)：用 variation-aware modeling 灵活编辑 3D Gaussians，在保留目标结构的同时控制形状或外观变化。
+- [Light4D](https://arxiv.org/abs/2602.11769)：提供面向极端视角的训练无关 4D 视频重打光，把可控视频编辑扩展到视角变化下的光照效果。
+- [MonarchRT](https://arxiv.org/abs/2602.12271)：用高效注意力支持实时视频生成。
+- [DCDM: Divide-and-Conquer Diffusion Models for Consistency-Preserving Video Generation](https://arxiv.org/abs/2602.13637)：通过分而治之扩散模型保持视频生成的一致性。
+- [EchoTorrent: Towards Swift, Sustained, and Streaming Multi-Modal Video Generation](https://arxiv.org/abs/2602.13669)：面向快速、持续和流式多模态视频生成。
+- [Train Short, Inference Long: Training-free Horizon Extension for Autoregressive Video Generation](https://arxiv.org/abs/2602.14027)：在无需额外训练的情况下扩展自回归视频生成时长，面向更长且连贯的生成视频。
+- [Adapting VACE for Real-Time Autoregressive Video Diffusion](https://arxiv.org/abs/2602.14381)：把 VACE 的参考帧控制移入并行条件通路，使预训练 VACE 权重能在因果分块和 KV cache 下支持实时自回归视频扩散的结构控制与修复。
 - [AnchorWeave](https://arxiv.org/abs/2602.14941)：用检索到的局部空间记忆和多锚点编织提升可控相机视频生成的长程场景一致性。
-- [Helios](https://arxiv.org/abs/2603.04379)：提出面向视频生成的模型侧方法，核心围绕 Real Real-Time Long Video Generation Model。
+- [EditCtrl](https://arxiv.org/abs/2602.15031)：将实时生成式视频编辑中的局部与全局控制解耦，为 video diffusion workflow 补充可控性方法。
+- [Consistency-Preserving Diverse Video Generation](https://arxiv.org/abs/2602.15287)：在 flow-matching 视频生成中做联合采样，用 latent-space 多样性更新并投影掉会破坏时间一致性的分量，在不反传视频解码器的情况下提升批内多样性。
+- [CHAI: CacHe Attention Inference for text2video](https://arxiv.org/abs/2602.16132)：提出 Cache Attention，在语义相关提示之间复用 latent，把文本到视频扩散的 denoising 步数降到约 8 步仍保持质量。
+- [Generated Reality: Human-centric World Simulation using Interactive Video Generation with Hand and Camera Control](https://arxiv.org/abs/2602.18422)：以 We introduce a human-centric video world model that is conditioned on both tracked head pose and joint-level hand poses 为核心。
+- [Flash-VAED](https://arxiv.org/abs/2602.19161)： 为高效视频生成提供 plug-and-play VAE decoder，目标是在不重写完整生成器的情况下降低解码开销。
+- [PropFly: Learning to Propagate via On-the-Fly Supervision from Pre-trained Video Diffusion Models](https://arxiv.org/abs/2602.20583)：通过预训练视频扩散模型的 on-the-fly supervision 学习传播，将生成先验迁移到时间传播任务。
+- [Human Video Generation from a Single Image with 3D Pose and View Control](https://arxiv.org/abs/2602.21188)：使用带关节姿态调制的 HVG latent video diffusion 模型，从单张图像生成多视角、时空一致的人体视频。
+- [Towards Controllable Video Synthesis of Routine and Rare OR Events](https://arxiv.org/abs/2602.21365)：构建手术室视频扩散框架，先抽象场景几何再按罕见事件条件生成视频，并合成 sterile-field violation 近失事件数据用于检测器训练。
+- [MultiAnimate: Pose-Guided Image Animation Made Extensible](https://arxiv.org/abs/2602.21581)：通过 Identifier Assigner 和 Identifier Adapter 将姿态引导图像动画扩展到多人物场景，保持个体身份和遮挡结构。
+- [ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](https://arxiv.org/abs/2602.22742)：以 Building on the observation that many animation tasks can be formulated as a linear inverse problem, we introduce ProjFlow, a training-free sampler that achieves zero-shot, exact satisfaction of linear spatial constraints while preserving motion realism 为核心。
+- [UCM: Unifying Camera Control and Memory with Time-aware Positional Encoding Warping for World Models](https://arxiv.org/abs/2602.22960)：提出 UCM, a novel framework that unifies long-term memory and precise camera control via a time-aware positional encoding warping mechanism。
+- [SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](https://arxiv.org/abs/2602.23956)：用 attention manipulation 免训练控制多事件视频生成，在同一生成片段中调度不同事件。
+- [SKeDA: A Generative Watermarking Framework for Text-to-video Diffusion Models](https://arxiv.org/abs/2603.00194)：为文本到视频扩散模型加入生成式水印机制。
+- [PreciseCache](https://arxiv.org/abs/2603.00976)：为高保真视频生成设计精准特征缓存，在效率和质量之间保持平衡。
+- [FREE-Edit: Using Editing-aware Injection in Rectified Flow Models for Zero-shot Image-Driven Video Editing](https://arxiv.org/abs/2603.01164)：以 Recognizing this, we propose an Editing-awaRE (REE) injection method to modulate the injection intensity of each token. Specifically, we first compute the pixel difference between the source and edited first frame to form a corresponding editing mask 为核心。
+- [UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](https://arxiv.org/abs/2603.01418)：用 multi-modal transformer blocks 在音频和视频 latent 上共享自注意力，实现端到端唇形同步 talking portrait generation。
+- [CamDirector](https://arxiv.org/abs/2603.02256)：编辑长期一致的视频相机轨迹，为时间稳定的视频编辑补充控制路线。
+- [NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing](https://arxiv.org/abs/2603.02802)：提出 NOVA: Sparse Control \& Dense Synthesis, a new framework for unpaired video editing. Specifically, the sparse branch provides semantic guidance through user-edited keyframes distributed across the video, and the dense branch continuously incorporates motion and texture information from the original video to maintain high fidelity and coherence。
+- [SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion](https://arxiv.org/abs/2603.02882)：为视频扩散模型加入可扩展的 in-generation watermarking 与 blind extraction，面向生成视频溯源和时间扰动下的鲁棒性。
+- [CubeComposer: Spatio-Temporal Autoregressive 4K 360{\deg} Video Generation from Perspective Video](https://arxiv.org/abs/2603.04291)：以 We introduce CubeComposer, a novel spatio-temporal autoregressive diffusion model that natively generates 4K-resolution 360° videos. By decomposing videos into cubemap representations with six faces, CubeComposer autoregressively synthesizes content in a well-planned spatio-temporal order, reducing memory demands while enabling high-resolution output 为核心。
+- [Helios](https://arxiv.org/abs/2603.04379)：面向 real real-time long video generation，把流式延迟和持续时间一致性作为模型设计约束。
+- [How Effective Are Publicly Accessible Deepfake Detection Tools? A Comparative Evaluation of Open-Source and Free-to-Use Platforms](https://arxiv.org/abs/2603.04456)：以盲测调查员协议评估 6 个公开可用的深伪或篡改检测工具，对比取证工具与 AI 分类器在真实、篡改和 AI 生成媒体上的表现。
+- [FC-VFI](https://arxiv.org/abs/2603.04899)：面向 high-FPS slow-motion generation 做 faithful and consistent video-frame interpolation。
+- [FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](https://arxiv.org/abs/2603.05506)：用尺度感知条件控制人像视频镜头。
+- [VDCook:DIY video data cook your MLLMs](https://arxiv.org/abs/2603.05539)：提供自演化视频数据构建平台，结合查询优化、真实视频检索、可控合成、来源记录和 Notebook，为 MLLM 生成领域数据包。
+- [Video Compression Meets Video Generation: Latent Inter-Frame Pruning with Attention Recovery](https://arxiv.org/abs/2603.05811)：提出 LIPAR，跳过冗余 latent patch 的重复计算，并用 attention recovery 近似被剪 token 的注意力值，在不明显损失质量的情况下加速视频生成与编辑。
+- [Text-Driven Emotionally Continuous Talking Face Generation](https://arxiv.org/abs/2603.06071)：定义情绪连续的 talking face 生成任务，并提出 TIE-TFG，把文本和变化情绪描述映射为表情随语义连续变化的说话人脸视频。
+- [Positive-Incentive Noise for Neural Video Compression](https://arxiv.org/abs/2603.06095)：用 positive-incentive noise 改进静态场景神经视频压缩。
+- [FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](https://arxiv.org/abs/2603.06289)：提出 FlowMotion, a novel training-free framework that enables efficient and flexible motion transfer by directly leveraging the predicted outputs of flow-based T2V models。
+- [Physical Simulator In-the-Loop Video Generation](https://arxiv.org/abs/2603.06408)：以 To further improve texture consistency during object movement, we propose a Test-Time Texture Consistency Optimization (TTCO) technique that adapts text and feature embeddings based on pixel correspondences from the simulator 为核心。
+- [NEGATE: Constrained Semantic Guidance for Linguistic Negation in Text-to-Video Diffusion](https://arxiv.org/abs/2603.06533)：为文本到视频扩散加入面向语言否定的约束语义引导，针对视频生成中文本条件控制的典型失效模式。
+- [Accelerating Video Generation Inference with Sequential-Parallel 3D Positional Encoding Using a Global Time Index](https://arxiv.org/abs/2603.06664)：用 Causal-RoPE SP、算子融合和 RoPE 预计算把因果自回归视频生成适配到序列并行推理，降低显存和首帧延迟。
+- [Text-to-Skeleton Cascades](https://arxiv.org/abs/2603.08028)：通过 text-to-skeleton 级联生成可控复杂人体运动视频。
+- [CinemaWorld: Generative Augmented Reality with LLMs and 3D Scene Generation for Movie Augmentation](https://arxiv.org/abs/2603.08060)：用 MLLM 提取电影场景特征，并生成同步的三维增强现实特效、物体、纹理和光照来扩展观影体验。
+- [Video2LoRA: Unified Semantic-Controlled Video Generation via Per-Reference-Video LoRA](https://arxiv.org/abs/2603.08210)：通过逐参考视频 LoRA 控制视频生成。
+- [HiAR: Efficient Autoregressive Long Video Generation via Hierarchical Denoising](https://arxiv.org/abs/2603.08703)：以 Drawing inspiration from bidirectional diffusion models, which denoise frames at a shared noise level while maintaining coherence, we propose that conditioning on context at the same noise level as the current block provides sufficient signal for temporal consistency while effectively mitigating error propagation 为核心。
+- [HECTOR: Hybrid Editable Compositional Object References for Video Generation](https://arxiv.org/abs/2603.08850)：结合图像或视频对象参考与逐对象轨迹控制，使生成视频在保留参考外观的同时可指定位置、尺度和速度。
+- [SVG-EAR](https://arxiv.org/abs/2603.08982)：通过误差感知路由补偿稀疏视频生成注意力，补充面向扩散 Transformer 视频合成的推理效率方法。
+- [Training-free Motion Factorization for Compositional Video Generation](https://arxiv.org/abs/2603.09104)：提出免训练运动分解方法，用于组合式视频生成。
+- [From Ideal to Real](https://arxiv.org/abs/2603.09283)：提升非理想条件下的视频目标移除稳定性，使视频编辑模型在遮罩、输入或场景假设存在噪声时更鲁棒。
+- [Streaming Autoregressive Video Generation via Diagonal Distillation](https://arxiv.org/abs/2603.09488)：提出 Diagonal Distillation, which operates orthogonally to existing approaches and better exploits temporal information across both video chunks and denoising steps。
+- [FrameDiT: Diffusion Transformer with Matrix Attention for Efficient Video Generation](https://arxiv.org/abs/2603.09721)：为扩散 Transformer 视频生成提出矩阵注意力，是面向高效合成的模型架构贡献。
+- [Motion Forcing](https://arxiv.org/abs/2603.10408)：通过解耦运动动态提升视频生成鲁棒性。
+- [SignSparK: Efficient Multilingual Sign Language Production via Sparse Keyframe Learning](https://arxiv.org/abs/2603.10446)：用稀疏关键帧学习和 conditional flow matching 做多语 sign-language production，把 text-to-3D signing generation 扩展到多种手语。
+- [MANSION: Multi-floor lANguage-to-3D Scene generatIOn for loNg-horizon tasks](https://arxiv.org/abs/2603.11554)：从语言生成面向长时程任务的多楼层三维场景，把场景生成扩展到大型室内布局而非单房间。
+- [Controllable Egocentric Video Generation via Occlusion-Aware Sparse 3D Hand Joints](https://arxiv.org/abs/2603.11755)：提出 a novel framework that generates egocentric videos from a single reference frame, leveraging sparse 3D hand joints as embodiment-agnostic control signals with clear semantic and geometric structures。
+- [FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](https://arxiv.org/abs/2603.12146)：以 To bridge this gap, we introduce FlashMotion, a novel training framework designed for few-step trajectory-controllable video generation. We first train a trajectory adapter on a multi-step video generator for precise trajectory control 为核心。
+- [DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning](https://arxiv.org/abs/2603.12257)：提出 DreamVideo-Omni, a unified framework enabling harmonious multi-subject customization with omni-motion control via a progressive two-stage training paradigm。
+- [EVATok](https://arxiv.org/abs/2603.12267)： 用 adaptive-length video tokenization 支持高效视觉自回归生成，为视频合成补充 token 预算控制路线。
+- [MemRoPE: Training-Free Infinite Video Generation via Evolving Memory Tokens](https://arxiv.org/abs/2603.12513)：以 We introduce MemRoPE, a training-free framework with two co-designed components 为核心。
+- [LibraGen: Playing a Balance Game in Subject-Driven Video Generation](https://arxiv.org/abs/2603.13506)：以 To address this, we propose LibraGen, a novel framework that views extending foundation models for S2V generation as a balance game between intrinsic VGFM strengths and S2V capability 为核心。
+- [CamLit](https://arxiv.org/abs/2603.14241)：为视频扩散加入显式镜头与光照控制。核心思想：把相机运动和照明作为可控变量，使视频生成更具结构化控制能力。
+- [Early Failure Detection and Intervention in Video Diffusion Models](https://arxiv.org/abs/2603.14320)：研究视频扩散模型的早期失败检测与干预方法。
+- [LatSearch: Latent Reward-Guided Search for Faster Inference-Time Scaling in Video Diffusion](https://arxiv.org/abs/2603.14526)：以 We introduce a latent reward model that scores partially denoised latents at arbitrary timesteps with respect 为核心。
+- [MVHOI](https://arxiv.org/abs/2603.14686)：用 3D foundation model 连接 multi-view conditions，实现 complex human-object interaction video reenactment。
+- [Edit2Interp: Adapting Image Foundation Models from Spatial Editing to Video Frame Interpolation with Few-Shot Learning](https://arxiv.org/abs/2603.15003)：仅用 64 到 256 个 LoRA 样本把图像编辑基础模型适配到视频插帧，展示空间先验可转化为时间合成能力。
+- [Spatial-Temporal Likelihoods for Generated-Video Detection](https://arxiv.org/abs/2603.15026)：通过 spatial-temporal likelihoods 做 training-free generated-video detection。
+- [Generative Video Compression with 1D Latents](https://arxiv.org/abs/2603.15302)：用 one-dimensional latent representations 做 generative video compression。
+- [Tri-Prompting: Video Diffusion with Unified Control over Scene, Subject, and Motion](https://arxiv.org/abs/2603.15614)：在视频扩散中统一控制场景、主体与运动，为视频生成补充细粒度可控方法。
+- [Physics-Informed Video Diffusion for Shallow Water Equations](https://arxiv.org/abs/2603.15627)：把浅水方程物理约束注入视频扩散，使生成 rollout 遵循 PDE 动态而不仅是视觉合理。
+- [SparkVSR](https://arxiv.org/abs/2603.16864)：通过 sparse keyframe propagation 支持交互式视频超分，补充生成式视频修复与增强方向。
+- [Script-to-Slide Grounding: Grounding Script Sentences to Slide Objects for Automatic Instructional Video Generation](https://arxiv.org/abs/2603.16931)：将脚本句子 grounding 到幻灯片对象，再自动生成教学视频，使旁白文本先与视觉元素对齐。
+- [Stereo World Model: Camera-Guided Stereo Video Generation](https://arxiv.org/abs/2603.17375)：以 We present StereoWorld, a camera-conditioned stereo world model that jointly learns appearance and binocular geometry for end-to-end stereo video this http URL monocular RGB or RGBD approaches, StereoWorld operates exclusively within the RGB modality, while simultaneously grounding geometry directly from disparity 为核心。
+- [Motion-Adaptive Temporal Attention for Lightweight Video Generation with Stable Diffusion](https://arxiv.org/abs/2603.17398)：在冻结 Stable Diffusion 上加入轻量时间注意力，高运动片段用局部跨帧注意力、低运动片段用全局注意力，仅增加 25.8M 可训练参数。
+- [SHIFT: Motion Alignment in Video Diffusion Models with Adversarial Hybrid Fine-Tuning](https://arxiv.org/abs/2603.17426)：通过对抗式混合微调对齐视频扩散模型运动。
+- [ChopGrad: Pixel-Wise Losses for Latent Video Diffusion via Truncated Backpropagation](https://arxiv.org/abs/2603.17812)：提出潜空间视频扩散的像素级损失与截断反传方法。
+- [3DreamBooth: High-Fidelity 3D Subject-Driven Video Generation Model](https://arxiv.org/abs/2603.18524)：以 To resolve these issues, we introduce a novel framework for 3D-aware video customization, comprising 3DreamBooth and 3Dapter. 3DreamBooth decouples spatial geometry from temporal motion through a 1-frame optimization paradigm 为核心。
+- [Improving Joint Audio-Video Generation with Cross-Modal Context Learning](https://arxiv.org/abs/2603.18600)：以 To alleviate these issues, we propose Cross-Modal Context Learning (CCL), equipped with several carefully designed modules 为核心。
+- [Input-Stable Attention Sparsity](https://arxiv.org/abs/2603.18636)：通过离线稀疏性画像和在线 QK 共聚类，在视频生成中实现免训练稀疏注意力。
+- [EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](https://arxiv.org/abs/2603.19224)：以 To address this, we introduce VOR (Video Object Removal), a large-scale dataset that provides diverse paired videos, each consisting of one video where the target object is present with its effects and a counterpart where the object and effects are absent, with corresponding object masks 为核心。
+- [OrbitNVS: Harnessing Video Diffusion Priors for Novel View Synthesis](https://arxiv.org/abs/2603.19613)：提出 OrbitNVS, which reformulates NVS as an orbit video generation task. Through tailored model design and training strategies, we adapt a pre-trained video generation model to the NVS task, leveraging its rich visual priors to achieve high-quality view synthesis。
+- [Minor Adjustments for User Intent in Video Models](https://arxiv.org/abs/2603.19672)： 用轻量调整提升视频模型对用户意图的遵循，而不是依赖完整重训练。
+- [PerformRecast](https://arxiv.org/abs/2603.19731)：在肖像视频编辑中解耦表情与头部姿态。
+- [LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation](https://arxiv.org/abs/2603.20192)：以 Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency 为核心。
+- [PROBE](https://arxiv.org/abs/2603.21547)：诊断文本到视频扩散模型在概念擦除后的残余概念容量，使视频生成安全中的概念移除失败更可见。
+- [Manifold-Aware Exploration for Reinforcement Learning in Video Generation](https://arxiv.org/abs/2603.21872)：提出 SAGE-GRPO，通过 manifold-aware SDE 修正和宏观 rollout 过滤，把强化学习探索限制在预训练视频数据流形附近，以稳定视频生成后训练。
+- [CLEAR](https://arxiv.org/abs/2603.21901)：进行 context-aware mask-free video subtitle removal，提供不依赖显式 mask 的视频编辑与修复模型。
+- [PAM](https://arxiv.org/abs/2603.22193)：构建 pose-appearance-motion engine 用于 HOI 视频生成，提升 sim-to-real 运动与交互合成。
+- [ST-GDance++](https://arxiv.org/abs/2603.22316)：扩展面向长时段群体编舞的时空扩散模型，为视频合成补充多人运动生成方向。
+- [A Video Steganography for H.265/HEVC Based on Multiple CU Size and Block Structure Distortion](https://arxiv.org/abs/2603.22850)：基于 H.265 CU block structure stability metric 和多级失真控制选择编码单元尺寸嵌入秘密信息，提高抗隐写分析能力和容量。
 - [InterDyad](https://arxiv.org/abs/2603.23132)：双人交互语音到视频生成框架，将对话音频与运动先验对齐，并使用角色感知 Gaussian guidance。
+- [ViBe: Ultra-High-Resolution Video Synthesis Born from Pure Images](https://arxiv.org/abs/2603.23326)：提出 a pure image adaptation framework that upgrades a video Diffusion Transformer pre-trained at its native scale to synthesize higher-resolution videos。
+- [I3DM](https://arxiv.org/abs/2603.23413)：通过隐式 3D-aware 记忆检索与注入提升视频场景生成的一致性。
+- [Foveated Diffusion: Efficient Spatially Adaptive Image and Video Generation](https://arxiv.org/abs/2603.23491)：使用 starts with a mask modeling the foveated resolution to allocate tokens non-uniformly, assigning higher token density to foveal regions and lower density to peripheral regions。
+- [Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](https://arxiv.org/abs/2603.24260)：通过 heterogeneous caching 加速扩散式视频编辑，避免每个采样去噪步都做完整计算。
+- [Unleashing Vision-Language Semantics for Deepfake Video Detection](https://arxiv.org/abs/2603.24454)：利用视觉-语言语义检测 deepfake 视频，作为生成媒体真实性模型，不只依赖底层视觉伪影。
+- [Anti-I2V: Safeguarding your photos from malicious image-to-video generation](https://arxiv.org/abs/2603.24570)：保护照片免受恶意图像到视频生成滥用，补充视频生成误用防护模型。
+- [AnyID: Ultra-Fidelity Universal Identity-Preserving Video Generation from Any Visual References](https://arxiv.org/abs/2603.25188)：提出 AnyID, an ultra-fidelity identity-preservation video generation framework that features two core contributions. First, we introduce a scalable omni-referenced architecture that effectively unifies heterogeneous identity inputs (e.g., faces, portraits, and videos) into a cohesive representation。
+- [InstanceAnimator: Multi-Instance Sketch Video Colorization](https://arxiv.org/abs/2603.25357)：以 We propose InstanceAnimator, a novel Diffusion Transformer framework for multi-instance sketch video colorization. Existing methods suffer from three core limitations: inflexible user control due to heavy reliance on single reference frames, poor instance controllability leading to misalignment in multi-character scenarios, and degraded detail fidelity in 为核心。
+- [MemCam: Memory-Augmented Camera Control for Consistent Video Generation](https://arxiv.org/abs/2603.26193)：提出 MemCam, a memory-augmented interactive video generation approach that treats previously generated frames as external memory and leverages them as contextual conditioning to achieve controllable camera viewpoints with high scene consistency。
 - [VGGRPO](https://arxiv.org/abs/2603.26599)：用 4D latent reward 提升世界一致性视频生成，使视频合成更符合持续场景几何与动态。
+- [LightCtrl](https://arxiv.org/abs/2603.27083)：提供训练无关的可控视频重打光，为视频扩散流程补充推理时编辑方法。
+- [EFlow](https://arxiv.org/abs/2603.27086)：通过 efficient solution flow 从零训练 few-step video generators，补充视频生成模型的快速训练路线。
+- [FlashSign](https://arxiv.org/abs/2603.27915)：为高效手语视频生成提供无需姿态输入的引导。核心思想：降低对显式姿态条件的依赖，同时保持手语动作生成的可控性。
+- [AutoCut: End-to-end advertisement video editing based on multimodal discretization and controllable generation](https://arxiv.org/abs/2603.28366)：parent-routing-needed：该广告视频系统结合多模态离散化与可控生成，但整体更像应用型编辑流程而不是可复用模型条目。
+- [Not All Frames Are Equal: Complexity-Aware Masked Motion Generation via Motion Spectral Descriptors](https://arxiv.org/abs/2603.29655)：用运动频谱描述符衡量逐帧动态复杂度，并据此指导 masked motion generation 中的 masking、attention 和 decoding。
+- [OmniRoam: World Wandering via Long-Horizon Panoramic Video Generation](https://arxiv.org/abs/2603.30045)：以 We propose OmniRoam, a controllable panoramic video generation framework that exploits the rich per-frame scene coverage and inherent long-term spatial and temporal consistency of panoramic representation, enabling long-horizon scene wandering 为核心。
+- [MotionGrounder: Grounded Multi-Object Motion Transfer via Diffusion Transformer](https://arxiv.org/abs/2604.00853)：在 diffusion transformer 中加入光流式运动信号和对象-文本对齐损失，实现 grounded multi-object motion transfer。
 - [TRACE](https://arxiv.org/abs/2604.01207)：结合 geometry-aligned video masking 的三维场景编辑方法，用多视角锚点和 tangible geometry anchoring 实现时序稳定编辑。
+- [DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](https://arxiv.org/abs/2604.01666)：用合成运动数据训练高动态视频生成器，通过策划的运动信号提升运动强度和时间多样性。
+- [Bidirectional Cycle Consistency for Video Diffusion](https://arxiv.org/abs/2604.01700)：通过可逆插值检验并改进视频扩散模型预测过去帧的能力。
+- [Control-DINO: Feature Space Conditioning for Controllable Image-to-Video Diffusion](https://arxiv.org/abs/2604.01761)：把解耦后的 DINO 风格特征空间作为预训练图生视频扩散模型的条件，增强风格化、重光照和 3D 到视频生成的可控性。
+- [ActionParty: Multi-Subject Action Binding in Generative Video Games](https://arxiv.org/abs/2604.02330)：以 For this purpose, we propose ActionParty, an action controllable multi-subject world model for generative video games. It introduces subject state tokens, i.e. latent variables that persistently capture the state of each subject in the scene 为核心。
+- [HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis](https://arxiv.org/abs/2604.03305)：提出 HVG-3D, a unified framework for 3D-aware hand-object interaction (HOI) video synthesis conditioned on explicit 3D representations. Specifically, we develop a diffusion-based architecture augmented with a 3D ControlNet, which encodes geometric and motion cues from 3D inputs to enable explicit 3D reasoning during video synthesis。
+- [BiTDiff: Fine-Grained 3D Conducting Motion Generation via BiMamba-Transformer Diffusion](https://arxiv.org/abs/2604.04395)：构建 3D 指挥动作数据集 CM-Data，并用 BiMamba-Transformer diffusion 生成长序列、细粒度、音乐条件的指挥动作。
+- [Inter-Request Caching Reuse for Video Diffusion](https://arxiv.org/abs/2604.04451)： 通过跨请求缓存复用加速视频扩散 Transformer serving，为视频生成补充部署侧效率方法。
+- [HumANDiff](https://arxiv.org/abs/2604.05961)：用 articulated noise diffusion 提升人体视频生成中的运动一致性。
+- [OmniCamera: A Unified Framework for Multi-task Video Generation with Arbitrary Camera Control](https://arxiv.org/abs/2604.06010)：提出 OmniCamera, a unified framework designed to explicitly disentangle and command these two dimensions. This compositional approach enables flexible video generation by allowing arbitrary pairings of camera and content conditions, unlocking unprecedented creative control。
 - [DiffHDR](https://arxiv.org/abs/2604.06161)：用视频扩散模型重曝光 LDR 视频，可作为视频生成模型中的视频编辑与增强方法。
-- [Matrix-Game 3.0](https://arxiv.org/abs/2604.08995)：构建具备长程记忆的实时流式交互世界模型，适合补充需要跨用户动作维持状态的视频生成模型路线。
+- [Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity](https://arxiv.org/abs/2604.07402)：通过局部优化和表示连续性约束加速自回归视频生成器训练，使相邻帧预测更稳定。
+- [Uni-ViGU: Towards Unified Video Generation and Understanding via A Diffusion-Based Video Generator](https://arxiv.org/abs/2604.08121)：以 This imbalance motivates us to invert the conventional paradigm: rather than extending understanding-centric MLLMs to support generation, we propose Uni-ViGU, a framework that unifies video generation and understanding by extending a video generator as the foundation 为核心。
+- [When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models](https://arxiv.org/abs/2604.08546)：在文本到视频扩散模型中对齐文本数字和视觉实例，面向时间维度上的数量忠实性。
+- [Matrix-Game 3.0](https://arxiv.org/abs/2604.08995)：构建具备长程记忆的实时流式交互世界模型，强调视频生成系统跨用户动作维持状态的能力。
+- [Generalizing Video DeepFake Detection by Self-generated Audio-Visual Pseudo-Fakes](https://arxiv.org/abs/2604.09110)：用真实样本自生成音视频伪造样本来训练视频深伪检测器，在不依赖真实 deepfake 训练数据的情况下提升跨数据集泛化。
+- [CT-1: Vision-Language-Camera Models Transfer Spatial Reasoning Knowledge to Camera-Controllable Video Generation](https://arxiv.org/abs/2604.09201)：提出 a novel Vision-Language-Camera model, termed CT-1 (Camera Transformer 1), a specialized model designed to transfer spatial reasoning knowledge to video generation by accurately estimating camera trajectories。
+- [Prompt Relay: Inference-Time Temporal Control for Multi-Event Video Generation](https://arxiv.org/abs/2604.10030)：在推理时间步之间 relay prompts，以控制生成视频中多个事件何时出现，无需重训练即可加入时间调度。
+- [Long-Horizon Streaming Video Generation via Hybrid Attention with Decoupled Distillation](https://arxiv.org/abs/2604.10103)：通过混合注意力和解耦蒸馏改进长时程流式视频生成。
 - [Rein3D](https://arxiv.org/abs/2604.10578)：基于全景视频扩散的强化式三维室内场景生成方法，把细化轨迹作为伪真值更新 3D Gaussian。
+- [ReplicateAnyScene: Zero-Shot Video-to-3D Composition via Textual-Visual-Spatial Alignment](https://arxiv.org/abs/2604.10789)：提出 ReplicateAnyScene, a framework capable of fully automated and zero-shot transformation of casually captured videos into compositional 3D scenes。
+- [Immune2V: Image Immunization Against Dual-Stream Image-to-Video Generation](https://arxiv.org/abs/2604.10837)：面向视频、三维与世界模型生成的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Immune2V: Image Immunization Against Dual-Stream Image-to-Video Generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [HDR Video Generation](https://arxiv.org/abs/2604.11788)：通过 logarithmic encoding 的 latent alignment 支持 HDR 视频生成，为视频合成补充动态范围控制。
+- [LottieGPT](https://arxiv.org/abs/2604.11792)：把矢量动画 token 化用于自回归生成，扩展视频与动画生成到非栅格表示。
+- [Ride the Wave](https://arxiv.org/abs/2604.12219)：为更平滑的视频生成分配 sparse-attention precision，补充视频特定的效率与质量控制方法。
+- [VideoFlexTok](https://arxiv.org/abs/2604.12887)： 提出 flexible-length coarse-to-fine video tokenization，提升视频生成模型的 token 效率。
+- [VibeFlow: Versatile Video Chroma-Lux Editing through Self-Supervised Learning](https://arxiv.org/abs/2604.13425)：以 This paper proposes VibeFlow, a novel self-supervised framework that unleashes the intrinsic physical understanding of pre-trained video generation models 为核心。
+- [DiT as Real-Time Rerenderer: Streaming Video Stylization with Autoregressive Diffusion Transformer](https://arxiv.org/abs/2604.13509)：用自回归 diffusion transformer 做流式视频风格化，把视频生成模型扩展到实时重渲染流程。
+- [Metadata-Guided Diffusion for Bitstream-Corrupted Video Recovery](https://arxiv.org/abs/2604.13906)：通过元数据引导扩散模型恢复码流损坏视频，为退化视频输入补充生成式恢复路线。
+- [Controllable Video Object Insertion](https://arxiv.org/abs/2604.14556)：用 multiview priors 做可控视频物体插入，把视频编辑扩展到几何一致性控制。
+- [Seen-to-Scene: Keep the Seen, Generate the Unseen for Video Outpainting](https://arxiv.org/abs/2604.14648)：通过保留可见区域并生成未见场景内容来做视频 outpainting，同时保持时空一致性。
+- [Flow of Truth: Proactive Temporal Forensics for Image-to-Video Generation](https://arxiv.org/abs/2604.15003)：为图生视频生成加入主动时间取证，用运动流证据识别或认证生成片段。
+- [Latent-Compressed VAE for Video Diffusion](https://arxiv.org/abs/2604.16479)：用 variational autoencoder 设计压缩 video diffusion models 的 video latents。
+- [Motif-Video 2B: Technical Report](https://arxiv.org/abs/2604.16503)：以 Training strong video generation models usually requires massive datasets, large parameter counts, and substantial compute. In this work, we ask whether strong text-to-video quality is possible at a much smaller budget: fewer than 10M clips and less than 100,000 H200 GPU hours 为核心。
+- [Modeling Biomechanical Constraint Violations for Language-Agnostic Lip-Sync Deepfake Detection](https://arxiv.org/abs/2604.16808)：通过建模口周关键点的位移、速度、加速度和 jerk 检测唇同步 deepfake 中的生物力学约束违背，不依赖像素或音频。
+- [DVAR: Adversarial Multi-Agent Debate for Video Authenticity Detection](https://arxiv.org/abs/2604.16987)：parent-routing-needed：adversarial multi-agent debate 是围绕生成视频真实性检测的外部判断框架，不是核心生成器架构。
+- [Generalizable Face Forgery Detection via Separable Prompt Learning](https://arxiv.org/abs/2604.17307)：用 separable prompt learning 做泛化人脸伪造检测，将操控线索与领域特定视觉偏差分离。
+- [Speculative Decoding for Autoregressive Video Generation](https://arxiv.org/abs/2604.17397)：把 speculative decoding 用于自回归视频生成器，为更长或更快的视频合成补充推理扩展路线。
+- [GS-STVSR](https://arxiv.org/abs/2604.18047)：用 2D Gaussian splatting 实现高效连续时空视频超分辨。
+- [AdaCluster: Adaptive Query-Key Clustering for Sparse Attention in Video Generation](https://arxiv.org/abs/2604.18348)：提出面向视频生成稀疏注意力的自适应聚类模型方法。
+- [TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation](https://arxiv.org/abs/2604.19473)：用 temporal-wise separable attention 解耦多事件视频生成中的事件时序，提升对有序动作的控制。
+- [CityRAG: Stepping Into a City via Spatially-Grounded Video Generation](https://arxiv.org/abs/2604.19741)：以 To this end, we present CityRAG, a video generative model that leverages large corpora of geo-registered data as context to ground generation to the physical scene, while maintaining learned priors for complex motion and appearance changes 为核心。
+- [DynamicRad](https://arxiv.org/abs/2604.20470)：为长视频扩散引入内容自适应稀疏注意力，在降低视频合成计算量的同时保留与场景相关的时间证据。
+- [Sparse Forcing](https://arxiv.org/abs/2604.21221)：训练原生稀疏注意力以支持实时自回归扩散视频生成，形成架构级效率方法。
+- [KD-CVG: A Knowledge-Driven Approach for Creative Video Generation](https://arxiv.org/abs/2604.21362)：把外部知识注入创意视频生成，用结构化语义指导概念和场景构图。
+- [Rethinking Cross-Domain Evaluation for Face Forgery Detection with Semantic Fine-grained Alignment and Mixture-of-Experts](https://arxiv.org/abs/2604.21478)：结合语义细粒度对齐和 mixture-of-experts 检测器，提升跨域人脸伪造检测能力。
+- [Reshoot-Anything](https://arxiv.org/abs/2604.21776)：从单目视频中自监督学习 video reshooting，为视频编辑补充相机控制与视角迁移能力。
+- [Vista4D](https://arxiv.org/abs/2604.21915)：利用 4D 点云进行视频重拍，为视角或轨迹变化提供几何感知的视频编辑与生成方法。
+- [FlowAnchor: Stabilizing the Editing Signal for Inversion-Free Video Editing](https://arxiv.org/abs/2604.22586)：稳定无需反演视频编辑中的类光流编辑信号，在不做逐视频 DDIM inversion 的情况下减少时间漂移。
+- [FreqFormer: Hierarchical Frequency-Domain Attention with Adaptive Spectral Routing for Long-Sequence Video Diffusion Transformers](https://arxiv.org/abs/2604.22808)：为长序列视频扩散 Transformer 加入层次化频域注意力和自适应频谱路由。
 - [Hallo-Live](https://arxiv.org/abs/2604.23632)：实时音视频 avatar 生成方法，使用异步双流扩散、future-expanding attention 和偏好引导蒸馏。
+- [YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal](https://arxiv.org/abs/2604.27322)：提出 YOSE, You Only Select Essential Tokens, an efficient fine-tuning framework. YOSE introduces two key components: Batch Variable-length Indexing (BVI) and Diffusion Process Simulator (DiffSim) Module。
+- [UniVidX](https://arxiv.org/abs/2605.00658)：通过扩散先验统一多模态视频生成。核心思想：在同一框架中整合多种条件信号，使视频生成覆盖多类创建与编辑模式。
+- [Latent Space Probing for Adult Content Detection in Video Generative Models](https://arxiv.org/abs/2605.00874)：在 CogVideoX 去噪 latent 状态上接入轻量分类器，在视频解码前实时检测成人内容。
+- [AnimationDiff: A Visual Comparison Tool for Generated 3D Character Animations](https://arxiv.org/abs/2605.01001)：parent-routing-needed：AnimationDiff 是生成 3D 角色动画的可视比较工具，更接近评测工具而非 Model。
+- [VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](https://arxiv.org/abs/2605.01517)：把 text-to-SVG 动画建模为持久向量几何上的稀疏状态更新，在生成可编辑动画时保持结构一致性。
+- [Predictive Latents for Video Generation](https://arxiv.org/abs/2605.02134)：用 predictive latent representations 做视频生成，增强时序基础的生成建模。
+- [ActDiff-VC](https://arxiv.org/abs/2605.02849)：用 conditional controlled diffusion 与 active sampling 做超低码率视频压缩，适合 generative video reconstruction 覆盖。
+- [Bridging the Embodiment Gap: Disentangled Cross-Embodiment Video Editing](https://arxiv.org/abs/2605.03637)：通过解耦表示进行跨具身形态视频编辑，适合补充围绕具身运动的可控视频生成。
+- [Stream-R1: Reliability-Perplexity Aware Reward Distillation for Streaming Video Generation](https://arxiv.org/abs/2605.03849)：通过可靠性与困惑度感知的奖励蒸馏改进流式视频生成，面向稳定在线生成质量。
+- [FaithfulFaces: Pose-Faithful Facial Identity Preservation for Text-to-Video Generation](https://arxiv.org/abs/2605.04702)：在文生视频中同时保持人脸身份和目标姿态，将身份控制与姿态驱动运动解耦。
+- [SNN AI-Generated Video Detection](https://arxiv.org/abs/2605.05895)：使用脉冲神经网络检测 AI-generated videos，补充生成视频真实性检测模型。
+- [Relit-LiVE](https://arxiv.org/abs/2605.06658)：通过联合学习环境视频实现视频重打光。
+- [Alice v1: Distillation-Enhanced Video Generation Surpassing Closed-Source Models](https://arxiv.org/abs/2605.08115)：用蒸馏增强训练视频生成模型，将更强教师模型行为迁移到开放生成器中。
+- [ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](https://arxiv.org/abs/2605.08840)：提出 ReST-KV, a robust KV eviction method that combines layer-wise output Reconstruction and Spatial-Temporal smoothing to provide a more comprehensive perspective for the KV cache eviction task。
+- [EduStory: A Unified Framework for Pedagogically-Consistent Multi-Shot STEM Instructional Video Generation](https://arxiv.org/abs/2605.09378)：parent-routing-needed：该贡献是教学一致的多镜头 STEM 教学视频框架，可能更像领域生成流水线而非通用模型。
+- [TIE: Time Interval Encoding for Video Generation over Events](https://arxiv.org/abs/2605.10543)：把事件时间间隔编码为视频生成条件，让模型显式控制事件持续时间和间隔。
+- [AllocMV: Optimal Resource Allocation for Music Video Generation via Structured Persistent State](https://arxiv.org/abs/2605.10723)：以 We propose AllocMV, a hierarchical framework formulating music video synthesis as a Multiple-Choice Knapsack Problem (MCKP). AllocMV represents the video's persistent state as a compact, structured object comprising character entities, scene priors, and sharing graphs, produced by a global planner prior to realization 为核心。
+- [FIS-DiT: Breaking the Few-Step Video Inference Barrier via Training-Free Frame Interleaved Sparsity](https://arxiv.org/abs/2605.11869)：提出 training-free 的 frame-interleaved sparsity，用于少步视频 diffusion 推理，补充快速视频生成模型的实用推理路线。
+- [$h$-control: Training-Free Camera Control via Block-Conditional Gibbs Refinement](https://arxiv.org/abs/2605.11871)：在预训练 flow-matching 视频生成器中加入 block-conditional pseudo-Gibbs refinement，对未观测 latent 区域做内循环修正，以平衡相机轨迹遵循和画质。
+- [OmniHumanoid: Streaming Cross-Embodiment Video Generation with Paired-Free Adaptation](https://arxiv.org/abs/2605.12038)：支持无配对适配的流式跨具身形态视频生成。
+- [CausalCine: Real-Time Autoregressive Generation for Multi-Shot Video Narratives](https://arxiv.org/abs/2605.12496)：以 To bridge this gap, we introduce CausalCine, an interactive autoregressive framework that transforms multi-shot video generation into an online directing process 为核心。
+- [CRePE](https://arxiv.org/abs/2605.12938)：为统一相机控制的视频生成加入曲线光线期望位置编码，使相机条件生成不再局限于针孔相机假设。
+- [DiffST](https://arxiv.org/abs/2605.13182)：将时空感知扩散用于真实空间时间视频超分辨率，补充面向恢复的视频扩散方法。
+- [TeDiO: Temporal Diagonal Optimization for Training-Free Coherent Video Diffusion](https://arxiv.org/abs/2605.14136)：以 We show that these failures leave a clear imprint inside the model: incoherent videos consistently exhibit irregular, fragmented temporal diagonals in their intermediate self-attention maps, whereas stable motion corresponds to smooth, band-diagonal patterns 为核心。
+- [HASTE](https://arxiv.org/abs/2605.14513)：通过 head-wise adaptive sparse attention 在无需训练的情况下加速 video diffusion，为视频生成补充面向能力的效率方法。
+- [SEDiT](https://arxiv.org/abs/2605.14894)：用 one-step diffusion transformer 无 mask 去除视频字幕，补充可复用的视频编辑方法。
+- [Test-time Human Motion Control](https://arxiv.org/abs/2605.14935)：用 multi-scale coarse-to-fine modeling 做 test-time human motion control。
+- [Causal Forcing++: Scalable Few-Step Autoregressive Diffusion Distillation for Real-Time Interactive Video Generation](https://arxiv.org/abs/2605.15141)：扩展少步自回归扩散蒸馏以支持实时交互式视频生成，适合补充低延迟交互生成方向。
+- [RAVEN: Real-time Autoregressive Video Extrapolation with Consistency-model GRPO](https://arxiv.org/abs/2605.15190)：以 We introduce the Real-time Autoregressive Video Extrapolation Network (RAVEN), a training-time test framework that repacks each self rollout into an interleaved sequence of clean historical endpoints and noisy denoising states 为核心。
+- [Sound Sparks Motion](https://arxiv.org/abs/2605.15307)：用音频与文本条件调优视频编辑，把可控视频编辑从纯视觉提示扩展到跨模态控制。
+- [PanoWorld: Geometry-Consistent Panoramic Video World Modeling](https://arxiv.org/abs/2605.15391)：以 We present PanoWorld, a panoramic video world model that generates geometry-consistent 360$$ video from a single image and a caption 为核心。
+- [VideoRLVR](https://arxiv.org/abs/2605.15458)：通过 SDE-GRPO、decomposed rewards 和 early-step focus 把 verifiable rewards 用于 video diffusion model，使视频生成更接近显式空间、时间和逻辑约束。
+- [AnyAct](https://arxiv.org/abs/2605.15497)：从视频恢复角色动作以实现 human reenactment，扩展 human-centric 视频生成控制。
+- [SNIS-NGM Video Editing](https://arxiv.org/abs/2605.15533)：通过 structural noise initialization 与 guidance 实现 tuning-free instruction-based video editing。
+- [FashionChameleon: Towards Real-Time and Interactive Human-Garment Video Customization](https://arxiv.org/abs/2605.15824)：面向实时交互式 human-garment video customization。
 - [LSTD](https://doi.org/10.1109/TMM.2026.3651052)：用扩散模型同时建模视频生成中的长短期时间结构。
+- [NABLA](https://doi.org/10.1109/ACCESS.2026.3686867)：使用 neighborhood-adaptive block-level attention 提升视频生成效率，补充结构化注意力的视频合成路线。
+- [LDT](https://doi.org/10.1109/tmm.2026.3668560)：采用线性扩散 Transformer 实现高效可扩展视频生成，突出架构级效率而非应用包装。
+- [CamI2V-Epipolar](https://doi.org/10.1109/LSP.2026.3675911)：为相机控制的图像到视频扩散模型加入极线约束稀疏注意力，提升生成视频中的几何感知视角控制。
+- [Text2Sign](https://doi.org/10.1109/access.2026.3686260)：提供单 GPU 可运行的文本到手语视频扩散 baseline，使手语视频生成更易复现。
+- [Hybrid Temporal-Spatial Deepfake Detection](https://doi.org/10.1109/RMKMATE69073.2026.11519016)：结合时间与空间特征进行深伪检测。
+- [Hybrid Multimodal DeepFake Detection](https://doi.org/10.1109/ICSEDIS68157.2026.11517985)：用时空多模态特征学习进行深伪检测。
+- [Comfort-Oriented Stereoscopic Video Retargeting](https://doi.org/10.1109/AETCSE69203.2026.11504393)：结合特征引导与深度重映射改进立体视频 retargeting 的观看舒适度。
+- [ARGUS-Net: An Uncertainty-Aware Multi-Agent Framework for Multimodal Deepfake Detection With Probabilistic Evidence Fusion](https://doi.org/10.1109/access.2026.3692236)：用不确定性感知的概率证据融合进行多模态 deepfake detection，将生成媒体取证扩展到单一路径检测器之外。
+- [StyHarmo: Efficient Style-Specific Video Generation with Music Synchronization](https://doi.org/10.1109/icassp55912.2026.11463734)：生成与音乐同步的特定风格视频，为视频生成补充音频条件控制方法。
+- [EgoGen: Egocentric Interaction Video Generation with 3D Hand Structure Constraints](https://doi.org/10.1109/icassp55912.2026.11461342)：用 3D 手部结构约束作为第一人称交互视频生成条件，把手姿、物体接触几何和 egocentric 视频合成绑定起来。
+- [Towards Dynamic World Model Generation with Monocular Video](https://doi.org/10.1109/icassp55912.2026.11463651)：以单目视频作为证据生成动态世界模型，将视频观测连接到随时间演化的场景表示。
+- [LGVF: A Low-Bitrate Generative Video Compression Framework With Spatio-Temporal Diffusion Model](https://doi.org/10.1109/lsp.2026.3670748)：用时空扩散解码器做低码率生成式视频压缩，从紧凑传输特征中重建感知细节。
+- [Efficient Quantization of Text-to-Video Diffusion Models with OmniQuant-Style PTQ on Consumer GPUs](https://doi.org/10.1109/etai68332.2026.11485459)：将 OmniQuant 式后训练量化用于文生视频扩散模型，使生成器能在消费级 GPU 上以更低显存运行。
+- [Domain-Adaptive Panoramic Video Generation Using Image Diffusers](https://doi.org/10.1109/access.2026.3667172)：把图像扩散先验适配到全景视频生成，重点处理领域迁移和 360 度时间一致性，而不是普通平面合成。
+- [Trajectory-Based Video Generation Model for Autonomous Driving](https://doi.org/10.1109/iceaai68945.2026.11442436)：用轨迹条件驱动自动驾驶场景视频生成，将自车或目标运动规划作为合成视频的控制信号。
+- [Training-Free Controllable Text-Guided Video Editing](https://doi.org/10.1109/tcsvt.2026.3652425)：在无需微调的情况下按文本提示编辑视频，通过推理时控制预训练生成器而不是训练新编辑器。
+- [IDFreq: Identity-preserved human video generation via frequency-based decomposition](https://doi.org/10.1016/j.jvcir.2026.104828)：通过频域分解保持人体视频生成中的身份信息，将身份线索与运动和外观变化分离。
+- [End-to-End Story Visualization Framework with Penalty-Based Evaluation using Vision-Language Models](https://doi.org/10.1109/icassp55912.2026.11464718)：parent-routing-needed：故事可视化和基于 VLM 的惩罚评估更接近故事生成流水线或评测协议，而不是可复用的视频生成骨干。
+- [MotionPrior: Exploring Efficient Learning of Motion Concepts for Few-Shot Video Generation](https://doi.org/10.1109/tip.2026.3672374)：从少量样例中学习可复用的运动概念，用 motion prior 支持仅有有限运动示例时的视频生成适配。
+- [Research on Temporal Consistency Animation Video Generation Method Based on Grid Convolution](https://doi.org/10.1016/j.fraope.2026.100606)：用 grid convolution 保持动画视频生成的时间一致性，面向风格化运动中的逐帧稳定性。
+- [Temporal Consistency Based Deepfake Video Detection Framework](https://doi.org/10.1109/icmlas67792.2026.11483633)：通过时间一致性线索检测 deepfake 视频，更像生成视频真实性模型而非合成方法。
+- [Implicit hierarchical temporal-spatial residual model for long-term video prediction](https://doi.org/10.1016/j.neunet.2026.108732)：用隐式分层时空残差做长期视频预测，将粗粒度时间动态和空间残差细化分开建模。
+- [3D differential decomposition for video deepfake detection with identity suppression](https://doi.org/10.1016/j.image.2026.117525)：用 3D differential decomposition 和 identity suppression 检测视频 deepfake，减少对特定身份伪影的依赖。
+- [MỘT PHƯƠNG PHÁP TIẾP CẬN MỚI ĐỂ PHÁT HIỆN VIDEO DEEPFAKE](https://doi.org/10.70117/hdujs.84.2.2026.1034)：parent-routing-needed：这是越南语 deepfake 检测方法条目，标题元数据不足以确认具体模型机制，应后续核查后路由到取证或 Bench。
+- [Bidirectional Continuous-Time Video Super-Resolution via Neural Ordinary Differential Equations and Multi-Order Spatial Interactions](https://doi.org/10.1109/icassp55912.2026.11463198)：用神经常微分方程做双向连续时间视频超分辨，并通过多阶空间交互恢复中间高分辨率动态。
+- [Multi-Domain Hybrid Feature Fusion with Domain-Specific LSTM Networks for Generalizable Deepfake Video Detection](https://doi.org/10.1109/icsft66733.2026.11506803)：结合 hybrid feature fusion 与 domain-specific LSTM，使 deepfake 视频检测器能跨伪造域和时间伪影泛化。
+- [AdaFlow: Efficient Long Video Editing Via Adaptive Attention Slimming and Keyframe Selection](https://doi.org/10.1109/icassp55912.2026.11461449)：通过自适应注意力瘦身和关键帧选择加速长视频编辑，在减少冗余时间计算的同时保持编辑连续性。
+- [Federated Micro-Expression Mining and Multi-Modal Metadata Fusion for Deepfake Fraud Detection in Ubiquitous Financial Video-KYC Systems at IoT Network](https://doi.org/10.1016/j.fraope.2026.100523)：parent-routing-needed：该工作是结合微表情与元数据融合的联邦视频 KYC 欺诈检测，更接近领域安全而非通用视频生成。
+- [TFD-Video: Threshold-Aware Federated Deepfake Detection for Video Forensics](https://doi.org/10.1109/access.2026.3660914)：用阈值感知联邦学习做视频取证，在跨客户端训练 deepfake 检测器的同时自适应判别阈值。
+- [Deepfake Detection for Cyber Security](https://doi.org/10.1109/etfi68128.2026.11484797)：parent-routing-needed：该网络安全向 deepfake 检测条目当前元数据未给出具体生成器或检测器机制，应读源后再路由。
+- [Neon: One-Shot Text-To-Video Tuning via Noise Latent Dynamics](https://doi.org/10.1109/icassp55912.2026.11463840)：通过调控 noise latent dynamics 用单个样例调优文生视频生成，实现无需完整重训的轻量个性化。
+- [Paintflow: Stage-Aware Temporal Modeling for Text-to-Video Synthesis of Painting Processes](https://doi.org/10.1109/icassp55912.2026.11463609)：用阶段感知时间结构建模绘画过程视频，使文本提示与有序绘制阶段对齐。
+- [A Robust Video Watermarking Network Based on 3D Multi-Scale Attention Aggregation and Multi-Kernel Feature Fusion](https://doi.org/10.1109/cacml68972.2026.11506796)：通过 3D 多尺度注意力聚合和多核特征融合嵌入并检索视频水印，适合生成视频来源与真实性覆盖。
 - [ScenarioDiff](https://doi.org/10.1007/s11263-025-02413-7)：在场景条件动态变化下进行文本到视频生成。
 - [World and Human Action Models towards gameplay ideation](https://doi.org/10.1038/s41586-025-08600-3)：构建世界模型与人类动作模型，用于交互式游戏创意生成。
 - [CustomTTT](https://doi.org/10.1609/aaai.v39i2.32182)：通过测试时训练定制视频生成中的动作与外观。
 - [Follow-Your-Click](https://doi.org/10.1609/aaai.v39i6.32643)：将局部点击与动作提示转化为开放域图像动画。
 - [TIV-Diffusion](https://doi.org/10.1609/aaai.v39i8.32861)：围绕文本指令下的对象中心运动进行图生视频生成。
+- [ConceptVoid](https://doi.org/10.3390/math13162652)：在生成式视频扩散模型中进行精确多概念擦除，扩展视频生成器的安全与可控方法。
+- [Identity-Deformation Disentanglement for Face Video Re-Enactment](https://doi.org/10.1609/aaai.v39i2.32113)：通过分离身份与形变因素改进单样本人脸视频重演，补充 talking-head 与头像视频生成方法。
+- [One-Step Distillation for Image and Video Super-Resolution](https://doi.org/10.1145/3793853.3798191)： 把 one-step distillation 用于基于扩散的图像和视频超分，为生成式修复补充高效路线。
+- [Implicit Bezier Motion Model](https://doi.org/10.1145/3769047.3769052)：用 implicit Bezier motion representation 实现精确时空控制，服务可控运动和视频生成。
+- [Joint Image-Video Causal VAE Tokenization](https://openreview.net/forum?id=pvJ4zjE8Nb)：用 causal VAE 做图像与视频的联合 tokenization，作为生成模型 backbone；此处用稳定 OpenReview 链接替代 S2-only 候选。
+- [Field-DiT](https://openreview.net/forum?id=EaZpT0Xyey)：在统一场表示上训练 diffusion transformer，覆盖 video、3D 与 game field generation。
+- [VisMimic](https://doi.org/10.1145/3746059.3747794)：把 motion chain 融入反馈视频生成，用于运动指导场景。
+- [Soft Spatial Control for Human Motion Diffusion](https://doi.org/10.1007/s00371-026-04494-y)：用双阶段扩散实现人类动作生成中的全面 soft spatial control。
+- [Multi-modal Deepfake Detection via Multi-task Audio-Visual Prompt Learning](https://doi.org/10.1609/aaai.v39i1.32042)：通过音视频 prompt learning 和多任务监督检测 deepfake，突出跨模态生成视频取证。
+- [PointTalk: Audio-Driven Dynamic Lip Point Cloud for 3D Gaussian-based Talking Head Synthesis](https://doi.org/10.1609/aaai.v39i8.32946)：从音频生成动态唇部点云，用于 3D Gaussian talking-head 合成，为说话人视频生成加入几何控制。
+- [Body Gesture Generation for Multimodal Conversational Agents](https://doi.org/10.1145/3680528.3687648)：为多模态对话智能体生成身体手势。
+- [Deep Learning-Based Video Watermarking: A Robust Framework for Spatial-Temporal Embedding and Retrieval](https://doi.org/10.3390/fi18020104)：提出用于鲁棒视频水印的时空嵌入与检索框架。
+- [Zero-Shot Controllable Image-to-Video Animation via Motion Decomposition](https://doi.org/10.1145/3664647.3681394)：通过运动分解实现零样本可控图生视频动画，让用户无需训练个性化模型即可控制目标或相机运动。
+- [Arayvideo: text-to-video diffusion models with a transformer architecture](https://doi.org/10.1117/12.3109193)：构建基于 Transformer 的文生视频扩散模型，用注意力驱动的视频合成替代卷积式时间建模。
+- [FreeTraj: Tuning-Free Trajectory Control via Noise Guided Video Diffusion](https://doi.org/10.1007/s11263-026-02732-3)：在无需调参训练的情况下，通过去噪过程中的噪声层级轨迹信号控制视频扩散中的对象轨迹。
+- [INR Smooth: Interframe noise relation-based smooth video synthesis on diffusion models](https://doi.org/10.1371/journal.pone.0321193)：利用帧间噪声关系平滑扩散视频合成，通过协调跨帧 latent noise 降低时间闪烁。
+- [ViDA: Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow](https://doi.org/10.1145/3658617.3697692)：用 differential approximation 和 adaptive dataflow 加速视频扩散 Transformer，重点是推理效率而非新条件控制。
+- [New horizons in machine understanding: explanatory and objectual understanding in deep learning video generation models](https://doi.org/10.1007/s11229-025-05174-5)：分析深度学习视频生成模型中的解释性理解和对象性理解，更像概念性的模型理解参考而非新生成器。
+- [PlayLife: Tracking-Shot Video Generation](https://doi.org/10.1007/s11263-026-02837-9)：聚焦 tracking-shot 镜头运动的视频生成，为生成视频补充电影化轨迹控制案例。
+- [Consistent Human Animation with Pseudo Multi-View Anchoring and Cross-Granularity Integration](https://doi.org/10.1145/3731715.3733297)：用 pseudo multi-view anchors 与 cross-granularity 特征融合保持人体动画一致性，覆盖视角和身体部件尺度上的稳定生成。
+- [StyleCrafter: Taming Artistic Video Diffusion with Reference-Augmented Adapter Learning](https://doi.org/10.1145/3687975)：为艺术化视频扩散学习 reference-augmented adapters，在迁移参考风格的同时保持时间连贯。
+- [4D Gaussian Videos with Motion Layering](https://doi.org/10.1145/3731189)：用带 motion layering 的 4D Gaussian videos 表示动态场景，分离运动成分以支持可编辑且时间一致的渲染。
+- [MoonShot: Towards Controllable Video Generation and Editing with Motion-Aware Multimodal Conditions](https://doi.org/10.1007/s11263-025-02346-1)：用 motion-aware 多模态条件做可控视频生成和编辑，在生成器中结合文本、图像和运动线索。
+- [Generative Rotoscoping: A First-Person Autobiographical Exploration on Generative Video-to-Video Practices](https://doi.org/10.1145/3698061.3726926)：parent-routing-needed：该工作更像关于生成式 rotoscoping 的创作实践研究，而不是可复用模型贡献。
+- [From text to moving image: Evaluating generative artificial intelligence text-to-video models for pre-writing idea generation in language instruction](https://doi.org/10.1007/s10639-025-13516-6)：parent-routing-needed：该条目评估文生视频工具在语言教学写前构思中的作用，更适合教育或评测覆盖而非 Model。
+- [Deepfake detection via spatial–temporal deep networks: leveraging CNNs and LSTMs for enhanced accuracy](https://doi.org/10.1007/s42452-025-08014-w)：结合 CNN 空间特征和 LSTM 时间建模做 deepfake 视频检测，关注帧级伪影与序列动态。
+- [Deepfake detection using deep convolutional neural network and long short-term memory](https://doi.org/10.1007/s11042-026-21375-7)：用 CNN 与 LSTM 检测 deepfake 视频，先提取逐帧视觉伪影，再进行时间序列分类。
+- [A hybrid spatial–frequency attention-based algorithm using efficientnet for robust and interpretable deepfake detection](https://doi.org/10.1038/s41598-026-46086-9)：在 EfficientNet 特征上加入空间-频域注意力，用于跨视觉和频谱伪影的可解释 deepfake 检测。
+- [AT-HSTNet: An Efficient Hierarchical Action-Transformer Framework for Deepfake Video Detection](https://doi.org/10.3390/app16073450)：用 hierarchical action-transformer 架构从动作级时间模式和局部视觉证据检测 deepfake 视频。
+- [A Multi-Grained Parallel Spatio-Temporal Learning Architecture for Deepfake Video Detection](https://doi.org/10.1145/3789507)：用并行多粒度空间与时间分支检测 deepfake，结合局部帧伪影和较长时序运动不一致线索。
+- [Performance Evaluation of NIST-Standardized Post-Quantum and Symmetric Ciphers for Mitigating Deepfakes](https://doi.org/10.3390/cryptography10020015)：parent-routing-needed：该工作评估用于缓解 deepfake 威胁的密码方案，属于安全基础设施而非视频生成模型。
+- [S2-Edit3DV: Diffusion-Guided Style Meets Structure for Consistent Multi-View 3D Video Generation](https://doi.org/10.1145/3746027.3755796)：结合 diffusion-guided 风格迁移和结构约束做多视角 3D 视频生成，使外观编辑跨视角保持一致。
+- [G-FED: G-Buffer Guided Frame Extrapolation in Video Diffusion Models](https://doi.org/10.1145/3721250.3742972)：用 G-buffer 条件指导视频扩散的帧外推，利用几何和渲染属性生成未来帧。
+- [ScaMo: Towards Text to Video Storyboard Generation Using Scale and Movement of Shots](https://doi.org/10.1145/3696409.3700279)：通过建模镜头景别和镜头运动生成文本到视频 storyboard，把电影化构图作为显式控制信号。
+- [Improving Identity Preservation in Video Generation with Multi-Branch Models](https://doi.org/10.1145/3746027.3761990)：用多分支模型保持视频生成中的身份线索，将身份特征与运动和场景变化分离。
+- [FreerCustom: Training-Free Multi-Concept Customization for Image and Video Generation](https://doi.org/10.1007/s11263-025-02623-z)：无需训练即可定制图像和视频生成中的多个概念，通过推理时操控概念表示实现多概念控制。
+- [ColorSurge: Bringing Vibrancy and Efficiency to Automatic Video Colorization via Dual-Branch Fusion](https://doi.org/10.1145/3721238.3730736)：用双分支融合做视频上色，在鲜艳颜色传播和高效时间处理之间平衡。
+- [Detection-Aware Inference for Robust Talking-Head Video Generation](https://doi.org/10.1145/3769748.3773364)：在推理阶段让 talking-head 生成具备检测感知能力，调整合成以减少检测器或质量检查暴露的伪影。
+- [ChromaFlow: End-to-End Flow Matching for Efficient Video Colorization](https://doi.org/10.1145/3757376.3771391)：用端到端 flow matching 做视频上色，以直接的生成式 color-flow 模型替代分阶段传播。
+- [Disentangled Phoneme-Prosody Mapping for Controllable 3D Facial Animation](https://doi.org/10.1145/3721250.3743011)：分离音素和韵律映射以实现可控 3D 面部动画，让语音内容和表达性时序驱动不同面部控制。
+- [EdgeGaussian: Real-time Free-Viewpoint Video for Mobile VR via Edge-Client Collaborative Neural Rendering](https://doi.org/10.1145/3680207.3765245)：parent-routing-needed：该 edge-client 协同神经渲染系统主要面向移动 VR 自由视角视频传输，而不是生成式视频建模。
+- [M2PE-Diff: Music-to-Pose Encoder for Dance Video Generation Leveraging Latent Diffusion Framework](https://doi.org/10.1145/3746027.3754808)：把音乐编码成姿态序列用于 latent diffusion 舞蹈视频生成，将音频节奏作为运动控制信号。
+- [Learning Evidential Delta Denoising Scores for Video Editing](https://doi.org/10.1145/3746027.3755065)：学习用于视频编辑的 evidential delta denoising scores，在保留源视频证据的同时估计编辑特定的去噪变化。
+- [DrivingDiffusion: Layout-Guided Multi-view Driving Scenarios Video Generation with Latent Diffusion Model](https://doi.org/10.1007/978-3-031-73229-4_27)：用驾驶布局条件控制 latent diffusion，生成道路、参与者和相机结构协调的多视角驾驶场景视频。
+- [Real-Time Deepfake Video Detection Using Eye Movement Analysis with a Hybrid Deep Learning Approach](https://doi.org/10.3390/electronics13152947)：通过眼动线索和混合深度学习分类器进行实时 deepfake 视频检测。
+- [Codec Avatar Studio: Paired Human Captures for Complete, Driveable, and Generalizable Avatars](https://doi.org/10.52202/079017-2640)：parent-routing-needed：该 paired-capture avatar 数据和 studio 管线更适合作为 avatar 基础设施或数据集覆盖，而非纯模型条目。
+- [MoVideo: Motion-Aware Video Generation with Diffusion Model](https://doi.org/10.1007/978-3-031-72784-9_4)：为扩散视频生成加入运动感知条件，使合成片段遵循显式运动线索，而不是只依赖提示词动态。
+- [WAVE: Warping DDIM Inversion Features for Zero-Shot Text-to-Video Editing](https://doi.org/10.1007/978-3-031-73116-7_3)：为零样本文本驱动视频编辑扭曲 DDIM inversion 特征，在无需逐视频训练的情况下沿时间传播编辑信号。
+- [Video-driven musical composition using large language model with memory-augmented state space](https://doi.org/10.1007/s00371-024-03606-w)：使用带记忆增强状态空间的大语言模型从视频生成音乐，更适合作为相邻的 video-to-audio 生成参考。
+- [CP-Diffusion: Conditional Prompt-Based Diffusion Models for Video Generation](https://doi.org/10.1145/3793552)：在扩散视频生成中使用条件提示，把 prompt 结构变成可控制合成运动和外观的信号。
+- [Enhanced Temporal Representation and Spatial Alignment for High-Fidelity Talking Video Generation](https://doi.org/10.1007/s00371-025-03999-2)：通过增强时间表示和空间对齐提升高保真 talking video 生成，面向唇形、姿态和身份跨帧一致性。
+- [LoRA Training for Text-to-Video Models: A Practical Guide to Fine-Tuning SOTA Video Generation](https://doi.org/10.1145/3757371.3763260)：parent-routing-needed：这是文生视频模型 LoRA 微调实践指南，更接近教程或工程指导而不是新的模型方法。
+- [OmniFusion: Exemplar-Based Video Colorization Using OmniMotion and DifFusion Priors](https://doi.org/10.1007/978-981-96-0917-8_5)：结合 OmniMotion 对应关系和扩散先验做样例驱动视频上色，通过时序跟踪区域传播参考颜色。
+- [An Adaptive LSB-Based Video Steganography Framework with Blockchain-Enabled Verification for Secure Multimedia Communication](https://doi.org/10.48084/etasr.16031)：parent-routing-needed：带区块链验证的自适应 LSB 隐写属于安全多媒体通信基础设施，不是视频生成模型。
+- [Revolutionizing Deepfake Video Detection: A Quantum-Inspired Multimodal Approach](https://doi.org/10.5220/0014240300004052)：用量子启发式多模态分类器检测 deepfake 视频，融合多路证据判断生成媒体真实性。
+- [TrueLens: Video Fake News Detection with Dual Level Evidence Gathering and Consolidation](https://doi.org/10.1145/3774904.3792362)：parent-routing-needed：TrueLens 面向视频假新闻的证据获取与整合，更接近 misinformation detection 而非视频生成建模。
+- [Appearance and Motion Realism in AI Video Generation and Editing](https://doi.org/10.1145/3772363.3799321)：parent-routing-needed：该条目看起来评估生成或编辑视频的外观与运动真实感，可能应进入 Bench 而非 Model。
+- [Spatiotemporal deep learning for real-time video-based deepfake detection using 3DCNN, 3DResNet, TCN, and VAE](https://doi.org/10.1038/s41598-026-49090-1)：比较 3DCNN、3DResNet、TCN 和 VAE 等时空深度模型在实时 deepfake 视频检测中的表现。
+- [Deepfake detection method based on complementary enhancement of spatial-frequency domain features](https://doi.org/10.1007/s00530-025-02187-5)：增强互补的空间与频域特征用于 deepfake 检测，将视觉伪影和频谱操控痕迹结合起来。
+- [Audio–Visual Synchronization and Lip Movement Analysis for Real-Time Deepfake Detection](https://doi.org/10.1007/s44196-025-00911-7)：通过音视频同步和唇动分析检测 deepfake，针对语音与嘴部运动之间的不匹配。
+- [VidSTR: Automatic Spatiotemporal Retargeting of Speech-Driven Video Compositions](https://doi.org/10.1145/3706598.3713857)：自动对 speech-driven video compositions 做时空重定向，在保持语音视频同步的同时调整布局和时序。
+- [Enhanced Motion-aware Latent Diffusion Models for Video Frame Interpolation](https://doi.org/10.1145/3746027.3754776)：为视频帧插值中的 latent diffusion 加入运动感知条件，提升大运动下的中间帧合成。
+- [Spatially-Precise Video Editing with Reference Imitation: A Region-Aware Cross-Modal Framework](https://doi.org/10.3390/app15084349)：用区域感知跨模态框架模仿参考编辑，实现空间精确的视频编辑并将参考外观绑定到选定区域。
+- [Exploring Sign Language Dataset Augmentation with Generative Artificial Intelligence Videos: A Case Study Using Adobe Firefly-Generated American Sign Language Data](https://doi.org/10.3390/info16090799)：parent-routing-needed：该工作研究用 Adobe Firefly 生成视频增强手语数据集，更接近数据集方法而非可复用模型贡献。
+- [Adaptive diffusion landmark dynamic rendering for realistic talking face video generation](https://doi.org/10.1007/s00371-025-03907-8)：用 adaptive diffusion landmarks 驱动 talking face 动态渲染，为数字人视频生成提供显式 landmark 级运动控制。
+- [AI-driven audio-to-video generation for dynamic content creation via stable diffusion and CNN-augmented transformers](https://doi.org/10.1038/s41598-026-38758-3)：结合稳定扩散与 CNN 增强 Transformer 进行音频到视频生成。
+- [RAGCol: RAG-Based Automatic Video Colorization Through Text Caption Generation and Knowledge Enrichment](https://doi.org/10.1145/3672608.3707748)：面向视频生成与编辑的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [AV-DiT: Taming Image Diffusion Transformers for Efficient Joint Audio and Video Generation](https://doi.org/10.1145/3746027.3755713)：提出视频生成、视频编辑或视频世界模型方法；核心思想是提升时序一致性、可控性或生成效率，而不只停留在静态图像生成。
+- [RAGCol++: Retrieval Augmented Generation Based Automatic Video Colorization Using Semantic Similarity Search and Probabilistic Grounded Knowledge](https://doi.org/10.1145/3770865.3770867)：在 RAGCol 基础上加入更大的 COL-KG、语义相似检索、概率 grounded knowledge 和 colorizer 效率改动，用于自动视频上色。
+- [MegActor-Sigma: Unlocking Flexible Mixed-Modal Control in Portrait Animation with Diffusion Transformer](https://doi.org/10.1609/aaai.v39i9.33002)：用扩散 Transformer 为肖像动画加入灵活的混合模态控制。
+- [CyberHost: A One-stage Diffusion Framework for Audio-driven Talking Body Generation]()：用 one-stage 音频驱动扩散框架、Region Attention Modules 和人体先验条件，在不依赖姿态或 mesh 中间表示的情况下生成零样本 talking-body 视频。

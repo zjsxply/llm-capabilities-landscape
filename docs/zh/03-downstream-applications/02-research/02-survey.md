@@ -1,18 +1,158 @@
 # 3.2.2 Survey
 
+- [Interpretable Scientific Discovery with Symbolic Regression: A Review](https://arxiv.org/abs/2211.10873)：该综述以符号回归为主线，对比遗传编程与深度学习两类可解释科学发现方法，并明确各自的优势与失效边界。
+- [Discovering Causal Relations and Equations from Data](https://arxiv.org/abs/2305.13341)：该综述把观测因果发现与方程发现连接起来，说明不变性、干预、领域知识和现代机器学习如何共同支撑可解释的物理规律发现。
+- [Toward the Transparent Use of Generative Artificial Intelligence in Academic Articles](https://doi.org/10.3138/jsp-2023-0053)：该工作将人工智能辅助学术研究划分为问题形成、问题解答和发现传播三类情境，并提出根据人工智能参与方式决定披露程度的分级透明度规则。
+- [Potential of artificial intelligence in textual cohesion, grammatical precision, and clarity in scientific writing](https://doi.org/10.62486/latia2024110)：采用 SALSA 方法，对 Scopus、Web of Science、SciELO 和 Latindex 收录的 2023 年以来研究开展定性系统综述；结果表明，AI 尤其在作为辅助工具时可改善衔接、语法准确性与表达清晰度，但成效取决于使用情境和恰当的人工介入，且仍伴随伦理与法律挑战。
+- [ChatGPT y comunicación científica: hacia un uso de la Inteligencia Artificial que sea tan útil como responsable](https://doi.org/10.31009/hipertext.net.2023.i26.03)：文章结合已有应用案例，考察 ChatGPT 对研究设计、数据收集和论文写作的影响，并将其机会与局限落实为诚实披露、透明使用、科研诚信、伦理判断和持续人工批判性监督等实践要求。
+- [Decoding complexity: how machine learning is redefining scientific discovery](https://arxiv.org/abs/2405.04161)：该综述按研究者对目标现象掌握程度的不同，梳理机器学习如何支持科学发现，并以脑图谱和系外行星探测等案例说明其作用。文章认为科学数据与文献规模的增长使更复杂的建模成为可能，同时强调发现结论需要严格验证、可解释性以及对过度依赖机器学习风险的审慎控制。
+- [Automating the Practice of Science - Opportunities, Challenges, and Implications](https://arxiv.org/abs/2409.05890)：文章梳理科学自动化在加速发现与提升可复现性方面的机会，并组织当前瓶颈以及制约部署的伦理和实践后果。
+- [An Analysis of Tasks and Datasets in Peer Reviewing](https://doi.org/10.18653/v1/2024.sdp-1.24)：梳理 peer-review 自动化任务及其数据集，把 reviewer matching、分数预测、论证挖掘、评审生成、decision prediction 和 meta-review support 分开，使后续系统能按具体子任务比较，而不是笼统称为“AI reviewer”。
+- [Risks of AI scientists: prioritizing safeguarding over autonomy](https://arxiv.org/abs/2402.04247)：该观点论文按用户意图、科研领域和外部影响梳理 AI 科学家的脆弱性，并提出由人工监管、智能体对齐和考虑环境反馈的智能体监管构成的三元防护框架。
+- [AI-driven research in pure mathematics and theoretical physics](https://arxiv.org/abs/2405.19973)：把 AI 辅助理论发现分成 top-down、bottom-up 与 meta-mathematics 三类路线，比较近年进展与仍需人类理论家参与的局限。
+- [A Comprehensive Survey of Scientific Large Language Models and Their Applications in Scientific Discovery](https://arxiv.org/abs/2406.10833)：梳理 260 余个跨学科、跨模态的科学 LLM，对比其架构、预训练语料、评测任务和科研发现用途，而非将各学科视为彼此割裂的模型谱系。
+- [Data Analysis in the Era of Generative AI](https://arxiv.org/abs/2409.18475)：把 AI 辅助数据分析聚焦到将高层意图转成可执行代码、图表和洞察，并把可用系统的关键问题落到交互设计、信任、评测和用户需求缺口上。
+- [Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges](https://arxiv.org/abs/2412.11427)：该综述盘点通向长程自主科学发现的进展，并指出仍缺少面向科学的智能体、更强的基准、多模态科学表征、定理证明以及一体化的数据驱动建模。
+- [Virtual laboratories: transforming research with AI](https://doi.org/10.1017/dce.2024.15)：综述 AI 虚拟实验室如何改变科研流程。
+- [Paradigm shifts: exploring AI's influence on qualitative inquiry and analysis](https://doi.org/10.3389/frma.2024.1331589)：文章指出，基于规则的自动化可以加速质性编码，但可能与解释主义假设冲突并遗漏交流细节。它主张采用部分自动化，让 AI 支持严谨而快速的分析，同时由研究者保留语境理解和最终解释，形成质性科研流程的具体治理原则。
+- [Appliances of Generative AI-Powered Language Tools in Academic Writing: A Scoping Review](https://doi.org/10.17323/jle.2024.24181)：该 PRISMA/PPC 综述分析 44 项研究，将学术写作应用分为增强、风险以及作者身份与完整性，并具体列出校对、批注、改写、翻译和反馈等用途，以及幻觉引用和作者声音丢失等问题。
+- [Regulatory solutions to alleviate the risks of generative AI models in qualitative research](https://doi.org/10.1080/17516234.2024.2399098)：结合文献审查、4 名定性研究者的风险工作坊，以及对 7 名审稿人、研究者和研究参与者的访谈构建风险情景；随后比较五个法域的政策，并将干预措施从软法组织到硬法。
+- [Unmasking artificial intelligence (AI): Identifying articles written by AI models](https://doi.org/10.18231/j.ijca.2024.028)：将 AI 生成文章识别归纳为技术分析、元数据检查、文体测量、连贯性测试和 GPTZero 等检测模型，并把欺骗、写作有效性、责任归属与作者署名列为相应的科研诚信风险。
+- [Evaluación del uso ético de ChatGPT en investigación científica: principales tendencias, mejores prácticas y desafíos identificados](https://doi.org/10.3145/thinkepi.2024.e18a19)：范围综述将证据归为学术研究中的 ChatGPT 伦理使用、教育与健康场景，以及偏差、公平与监管三类，并提炼署名、引用、透明度和持续伦理监督等共同控制点。
+- [How Can Generative AI (GenAI) Enhance or Hinder Qualitative Studies? A Critical Appraisal from South Asia, Nepal](https://doi.org/10.46743/2160-3715/2024.6637)：文章将 GenAI 在定性研究中的用途归纳为共同作者、对话支持和研究助理，并把这些角色与可靠性、偏差及披露使用情况的保障要求结合起来，强调分析仍由人负责。
+- [Ethical reflections on the use of Generative Artificial Intelligence in the academic sphere: writing and authorship](https://doi.org/10.5753/wics.2024.3170)：这篇宽泛文献综述将 GenAI 在文献综述、构思和内容生成中的使用与作者身份、抄袭和知识产权风险联系起来，并呼吁学界、企业和政府依据透明、公正、公平、责任与有益性原则制定规则；摘要未说明综述语料或综合协议。
+- [Scientific Hypothesis Generation and Validation: Methods, Datasets, and Future Directions](https://arxiv.org/abs/2505.04651)：该综述从符号发现梳理到 LLM、检索、知识图谱、模拟、因果推断和多智能体的科学假设系统，并比较不同方法在新颖性、可解释性和验证上的取舍。
+- [Bayesian symbolic regression: Automated equation discovery from a physicists' perspective](https://arxiv.org/abs/2507.19540)：从信息论和统计物理角度介绍概率式符号回归，比较其显式模型可信度与基于模型集成的不确定性处理和启发式搜索、正则化之间的差异。
+- [Large Language Model-based Data Science Agent: A Survey](https://arxiv.org/abs/2508.02744)：该综述从角色、执行、知识和反思四个控制面统一梳理数据科学 agent，再将其映射到预处理、建模、评估和可视化阶段。
+- [More Parameters Than Populations: A Systematic Literature Review of Large Language Models within Survey Research](https://arxiv.org/abs/2509.03391)：文章结合数据库和引用网络综述，将 LLM 在调查研究中的用途分为收集前、收集中和收集后三阶段，并借助调查方法学经验总结数据质量前提、机会和失败模式。
+- [A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving](https://arxiv.org/abs/2509.08269)：该综述将 LLM 在进化优化中的作用分为建模和求解，并进一步区分独立优化器、嵌入式组件与高层算法管理器。
+- [Generative Large Language Models (gLLMs) in Content Analysis: A Practical Guide for Communication Research](https://arxiv.org/abs/2510.24337)：系统归纳大语言模型辅助定量内容分析的七阶段流程，将编码本设计、提示构造、模型与参数选择、迭代优化和可靠性验证同效度、可复现性及研究伦理规范衔接起来。
+- [Simulating Students with Large Language Models: A Review of Architecture, Mechanisms, and Role Modelling in Education with Generative AI](https://arxiv.org/abs/2511.06078)： 该综述把 LLM 驱动的模拟学生视为科研工具，比较用于复现学习者画像、教学响应和多智能体课堂行为的架构与角色建模机制，并总结其在课程评估和教师培训中的用法。其突出的科研自动化价值是用可控、可扩展的合成参与者替代难以系统开展的学习者研究，同时明确偏差、可靠性和目标对齐限制。
+- [Presentation Generation for Scientific Research Papers: A Comprehensive Survey](https://doi.org/10.1109/ic-eeta66496.2025.11548444)：系统组织论文到演示文稿生成，从论文内容解析和幻灯片规划到科研视觉设计与评测；它凸显了通用幻灯片生成器通常遗漏的来源可追溯、叙事组织和科学传播约束。
 - [LLM4SR: A Survey on Large Language Models for Scientific Research](https://arxiv.org/abs/2501.04306)：综述科学文献、假设生成、实验、数据分析与写作。
-- [A review on the novelty measurements of academic papers](https://arxiv.org/abs/2501.17456)：综述学术论文新颖性度量。核心思路是梳理 novelty 概念、度量类型、验证方法、工具和数据集，使 AI scientist 的新颖性评测能对齐既有科学计量研究。
+- [Accelerating Discovery in Natural Science Laboratories with AI and Robotics](https://arxiv.org/abs/2501.06847)：综合自然科学实验室中的 AI 与机器人自动发现实践，将可复现性、通量、标准化和人类监督提炼为跨学科共性约束。
+- [Large language models for automated scholarly paper review: A survey](https://arxiv.org/abs/2501.10326)：围绕自动化学术论文评审梳理已使用的 LLM、已解决的技术瓶颈、数据集、代码、在线系统、出版方反应与实际落地风险。
 - [Transforming Science with Large Language Models: A Survey on AI-assisted Scientific Discovery, Experimentation, Content Generation, and Evaluation](https://arxiv.org/abs/2502.05151)：回顾从实验到内容生成与评估的 AI 辅助科学发现。
-- [Large Language Models Penetration in Scholarly Writing and Peer Review](https://arxiv.org/abs/2502.11193)：回顾 LLM 进入学术写作与同行评审的方式，并覆盖流程收益与诚信风险。
 - [The Design Space of Recent AI-assisted Research Tools](https://arxiv.org/abs/2502.16291)：综述面向科研构思、意义建构和科学创造力的 AI 辅助研究工具，归纳交互模式、自动化风险和设计取舍。
+- [From Hypothesis to Publication: A Comprehensive Survey of AI-Driven Research Support Systems](https://arxiv.org/abs/2503.01424)：综述从假设生成、实验、写作、审稿到发表的 AI research support workflows。
 - [Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions](https://arxiv.org/abs/2503.08979)：聚焦自主科研工作流、工具使用与可靠性挑战。
 - [Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents](https://arxiv.org/abs/2503.24047)：覆盖科学 agent 的任务类型、架构、基准与流程自动化。
 - [A Survey on Hypothesis Generation for Scientific Discovery](https://arxiv.org/abs/2504.05496)：梳理 LLM 驱动的科学假设生成方法、质量提升技术与评估策略。
-- [Hallucination, reliability, and the role of generative AI in science](https://arxiv.org/abs/2504.08526)：围绕生成式 AI 嵌入科研流程时的幻觉与可靠性风险进行归纳。
+- [From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery](https://arxiv.org/abs/2505.13259)：综述 LLM 系统如何从自动化单个科学任务走向自主发现，并按实现这一转变所需的科研闭环能力组织相关工作。
+- [Recalibrating the Compass: Integrating Large Language Models into Classical Research Methods](https://arxiv.org/abs/2505.19402)：综述AI 辅助科研工作流相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [From Reasoning to Learning: A Survey on Hypothesis Discovery and Rule Learning with Large Language Models](https://arxiv.org/abs/2505.21935)：用皮尔士的溯因、演绎和归纳框架组织 LLM 的假设生成、应用与验证，把从信息执行走向知识发现的路径讲清楚。
 - [Recent Advances and Future Directions in Literature-Based Discovery](https://arxiv.org/abs/2506.12385)：综述基于文献的发现方法，覆盖知识图谱、深度学习与 LLM 支撑的自动假设生成。
-- [Agent4S](https://arxiv.org/abs/2506.23692)：综述 LLM agent 如何改变科研范式，覆盖任务分解到自主实验等环节。
 - [AI4Research](https://arxiv.org/abs/2507.01903)：映射 AI 对科学研究生命周期的支持，覆盖构思、实验、分析、写作与评审。
-- [Deep Research: A Survey of Autonomous Research Agents](https://arxiv.org/abs/2508.12752)：回顾搜索、综合、推理、引用与长程 research-agent 工作流。
+- [From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery](https://arxiv.org/abs/2508.14111)：把 agentic science 定义为 LLM、多模态系统与研究平台从辅助工具走向科学主体性的阶段，覆盖假设生成、实验设计、执行、分析与迭代 refinement。
+- [Open Dataset Search in the LLM Era](https://arxiv.org/abs/2509.00728)：综述 LLM 辅助数据集搜索中的查询理解、数据源发现、数据集匹配和复用风险，把 dataset search 视为科研工作流中的基础设施问题。
+- [Autonomous Agents for Scientific Discovery](https://arxiv.org/abs/2510.09901)：从科学家、自然语言、代码与物理系统之间的编排关系出发，讨论 LLM 科学 agent 在假设、实验、分析与迭代优化中的作用。
+- [A Survey of AI Scientists](https://arxiv.org/abs/2510.23045)：用六阶段框架综述 AI scientist 系统，把 Experimental Preparation 和 Experimental Execution 从端到端科研流程中拆出，便于定位实验计划和执行前准备的研究空白。
+- [A Tutorial on Generative AI and Simulation Modeling Integration](https://doi.org/10.1109/WSC68292.2025.11338995)：教程式梳理生成式 AI 与 LLM 如何支持仿真模型生成、执行和分析。
+- [AI, agentic models and lab automation for scientific discovery — the beginning of scAInce](https://doi.org/10.3389/frai.2025.1649155)：综述智能体式 AI 与实验室自动化如何支持科学发现流程。
+- [The Role of AI in Advancing Scientific Research from Hypothesis to Publication](https://doi.org/10.1109/aict67988.2025.11268778)：一篇综述式论文，讨论 AI 对科研流程的支持；核心思路是把假设形成、分析、写作和发表支持放在同一科研生命周期中考察。
+- [Scientific software development in the AI era: reproducibility, MLOps, and applications in soft matter physics](https://doi.org/10.3389/fphy.2025.1711356)：一篇面向实践者的 AI 时代科学软件开发综述；核心思路是连接可复现性、MLOps、监控与自适应科学建模工作流。
+- [Integrating Artificial Intelligence Tools for Research and Scholarly Communication in Academic Libraries: A Systematic Review](https://doi.org/10.1515/opis-2025-0057)：综述从 226 条记录筛得 24 项研究，发现 AI 能改善检索、分析和学术传播，却带来隐私、偏见和素养不足问题；文章因此强调馆员在培训和负责任采用中的持续作用。
+- [Generative AI in Academia: A Comprehensive Review of Applications and Implications for the Research Process.](https://doi.org/10.21608/ijeasou.2025.349520.1041)：文章把 GenAI 的用途映射到构思、文献综述、数据分析、合成数据与假设生成以及发表后工作，并在人工监督框架中同时处理抄袭、偏见、隐私和批判性思维削弱风险。
+- [¿Cómo está transformando la inteligencia artificial la comunicación científica? Desafíos, oportunidades y el papel de los actores involucrados: una revisión de alcance](https://doi.org/10.22201/iibi.24488321xe.2025.104.59032)：这项 90 项研究的范围综述覆盖科学翻译、论文撰写编辑和同行评审中的生成式 AI 使用，并将治理风险归纳为偏差、抄袭、识别、政策缺口和相关方责任。
+- [The 2025 Landscape of Generative AI in Scholarly Writing and Publishing: A Scoping Review of Uses and Ethical Approaches](https://jle.hse.ru/article/view/29876)：该综述遵循 Arksey-O'Malley 框架和 PRISMA-ScR，在 Scopus 中检索 2025 年英文论文与综述，从 334 条记录中纳入 56 篇。它按治理、内容质量和风险缓解组织证据，梳理构思、提纲、综合、语言润色、同行评审和编辑工作中的用途，并总结新兴的分级披露与任务分类框架，同时强调人类问责。
+- [Potentials and risks of using AI in qualitative research](https://doi.org/10.1016/j.zefq.2025.10.004)：综述将 LLM 定位为类别发展、编码和解释中的补充性第二或第三意见，同时强调方法严谨性、伦理判断、数据保护及质性研究的核心解释原则仍由人承担。
+- [Plagiarism types and detection methods: a systematic survey of algorithms in text analysis](https://doi.org/10.3389/fcomp.2025.1504725)：按逐字抄袭、改写抄袭、翻译抄袭和思想抄袭组织检测任务，并比较字符串匹配、机器学习、自然语言处理和深度学习方法在跨语言、源代码、内在检测及 AI 生成内容场景中的适用性与局限。
+- [Artificial research participants in behavioral science](https://doi.org/10.1108/jeet-03-2025-0014)：区分大模型模拟参与者的两种证据边界：数据收集阶段仅补充真人参与者，试点测试阶段才可替代真人，并分别给出实施指引。
+- [Multi-Modal Plagiarism Detection in the Era of AI: A Comprehensive Review and Novel Framework Proposal](https://doi.org/10.1109/acet67282.2025.11430248)：该综述定义七步多模态抄袭检测框架，结合 OCR、基于 Transformer 的 NLP 以及词法、语义和结构相似度分析，以覆盖文本、扫描件、手写内容、释义改写和机器生成内容。
+- [Agentic Quantitative Trading: A Survey of Workflows, Systems, and Evaluation](https://arxiv.org/abs/2608.31041)： 该综述将智能体量化交易拆分为因子挖掘、信号发现、组合构建、订单执行和风险管理五个阶段，并比较策略构建、离线交易、实时市场和可靠性基准。摘要指出现有系统主要集中在信号发现，很少端到端整合组合、执行与风控，而且预测能力并不能稳定转化为实时交易表现。
+- [Comparative Analysis of Traditional, Machine Learning, and LLM-based Data Preprocessing Methods](https://doi.org/10.1109/ICIRCA69024.2026.11570529)：比较预定义规则预处理、自适应机器学习方法与基于 LLM 的方法，从跨范式角度梳理面向数据驱动模型的数据准备方法演进。
+- [AI as an accelerator for defining new problems that transcends boundaries](https://doi.org/10.1186/s13040-025-00429-w)：该文回顾跨学科、超学科、融合研究与无边界思维方法，并提出 AI 可综合跨域知识和专家视角，生成多个候选问题定义，以支持人机协同的科研问题构建。
+- [AI-Generated Figures in Academic Publishing](https://arxiv.org/abs/2603.16159)：梳理主要出版机构对 AI 生成科学图像的政策和实践风险，重点讨论可复现性、作者归因、视觉误导和 disclosure 要求。
+- [A Visionary Look at Vibe Researching](https://arxiv.org/abs/2604.00945)：把“vibe researching”界定为人类给出方向、agent 执行研究劳动的范式，并梳理多 agent、记忆、工具使用、检索、限制和治理问题。
+- [Can AI Be a Good Peer Reviewer?](https://arxiv.org/abs/2604.27924)：综述 peer review process、review generation、rebuttal、meta-review、evaluation 和伦理风险，可作为 AI reviewer 与同行评审自动化方向的总览参考。
+- [AutoResearch AI: Towards AI-Powered Research Automation for Scientific Discovery](https://arxiv.org/abs/2605.23204)：综述从任务级 AI for Science 工具走向工作流级科研自动化的趋势，把文献扎根、假设生成、实验、验证、报告和修订组织成统一的科研生产 pipeline。
+- [Workflow Closure Is Not Scientific Closure in Auto-Research Systems](https://arxiv.org/abs/2605.26200)：把 auto-research 视为认识论控制问题，而不只是工作流闭环问题。核心思想是综合 100 多篇论文与仓库，并结构化审计 21 个代表系统，诊断 objective collapse、validation collapse 和 acceptance collapse，主张自主执行必须置于非自主的科学控制之下。
+- [From Text to Discovery](https://arxiv.org/abs/2606.08723)：综述 LLM 如何改变自然科学、社会科学和人文学科研究。核心思想是按假设生成、文献综合、数据分析、写作和研究风险控制组织跨学科应用。
+- [Quo Vadis? Scientific Discovery in the Age of Artificial Intelligence](https://arxiv.org/abs/2608.17970)：论文综述 AI 能力及其在科学中的科学计量扩散，并提出从专用科学 AI、助手、agent 到混合实验系统的类型学。它选择性回顾数学、计算机科学、物理、化学、生命科学和社会科学成果，同时梳理技术、认识论、制度和认知劳动分工风险。
+- [Leveraging Human-Aligned and Probabilistic AI for White-Box Research and Knowledge Discovery: A Survey](https://doi.org/10.1109/CSNT69054.2026.11502373)：综述面向白盒科研设计与知识发现的人类对齐、概率式 AI 方法。
+- [Artificial intelligence in scholarly peer review: a scoping review of applications, risks, and governance challenges](https://doi.org/10.1016/j.ijmedinf.2026.106418)：综述 AI 在学术同行评审中的应用、风险和治理挑战，适合作为科研发表流程自动化的边界与风险参考。
+- [Generative Artificial Intelligence in Research and Scholarly Communication: A Systematic Literature Review](https://doi.org/10.1080/10572317.2026.2704164)：该系统综述归纳生成式人工智能在科研与学术传播中的应用，覆盖工作流收益、治理问题和待解决的证据缺口。
+- [AI Agents for the Science of Science: A Survey of Tasks, Architectures, Evaluations, and Challenges](https://doi.org/10.18653/v1/2026.findings-acl.1804)：该综述按任务、架构、评测和挑战梳理科学学智能体，描绘计算化学术研究的设计空间。
+- [Comprehensive Consideration of Ethics in AI-assisted Scientific Writing and Peer Review](https://doi.org/10.3346/jkms.2026.41.e281)：该综述为 AI 辅助科学写作和同行评审提出透明度、问责、保密、披露和人工核验要求。
+- [Synthetic Audiences as Proxies for Human Users: A Systematic Literature Review](https://doi.org/10.1109/access.2026.3703706)：综述发现合成受众研究反复受到幻觉、偏见、提示敏感性和拟人化泛化限制，并比较提示条件化、基于真人数据微调以及人类与 LLM 混合设计等防护路径。
+- [The Guideline for Reporting Generative Artificial Intelligence Use in Educational Research: Implications From a Systematic Review](https://doi.org/10.1109/tlt.2026.3708984)：文章从 8,831 条记录中筛得 126 项研究，把从构思到写作的 GenAI 使用实践转化为报告指南，要求明确记录人的参与、方法和负责任使用方式。
+- [Silicon Samples: A Review and Outlook on Large Language Models Simulating Human Respondents](https://doi.org/10.23977/jaip.2026.090119)：文章综述 25 项“硅样本”研究，将应用分为四个领域，并从心理测量效度、群体拟合度和情境依赖性评估，指出拟人化泛化和认识论正义风险限制其替代真人样本。
+- [Navigating artificial intelligence in qualitative research: ethical and practical considerations from concept to publication](https://doi.org/10.3389/frma.2026.1863790)：综述跟踪 AI 在质性研究五个阶段的作用，指出幻觉、隐私泄露和解释细腻度损失需要分阶段记录和人工核验，不能用一条泛化的 AI 使用规则解决。
 - [A Helping Hand](https://doi.org/10.3390/app15095208)：综述 AI 驱动实验设计在变量选择、目标设定与闭环科学实验中的工作流。
-- [Exploring the scope of generative AI in literature review development](https://doi.org/10.1007/s12525-025-00754-2)：分析生成式 AI 如何支持文献综述中的研究综合、比较、批判等知识发展活动。
+- [Capabilities and Limitations in Scientific Application of LLMs](https://doi.org/10.53658/rw2026-4-1%2819%29-43-62)：综述 LLM 在科学初步数据分析中的能力、偏差与验证问题。
+- [Beyond Automation: Why Human Expertise Remains Essential in Scientific Peer Review](https://doi.org/10.1007/s41660-025-00544-5)：论证即使 AI 可自动化部分筛选或写作，科学同行评审仍需要专家判断来完成语境评估、责任承担和解释。
+- [Integrating Generative Artificial Intelligence into Social Science Research: Measurement, Prompting, and Simulation](https://doi.org/10.1177/00491241251339184)：围绕三个方法轴组织社会科学专刊：验证 AI 生成输出、通过提示提升可复现性，以及模拟态度或行为。
+- [New Tools, New Rules: A Practical Guide to Effective and Responsible Generative AI Use for Surveys and Experiments in Research](https://doi.org/10.1177/00222429251349882)：为调查和实验研究提供过程级 GenAI 使用指南，覆盖文献综述、量表与问卷设计、执行、非结构化数据编码、解释、预注册，以及可复现 R 或 SPSS 模板。
+- [Large language models and responsible research evaluation: an extension of the Leiden Manifesto](https://doi.org/10.1007/s11192-026-05552-x)：把 Leiden Manifesto 原则扩展到 LLM 研究质量评价，对比引用指标、专家评审和模型评分，并强调 LLM 判断的透明性限制。
+- [The end of experimental research as we know it? A perspective on generative artificial intelligence in communication science](https://doi.org/10.1007/s44382-025-00019-8)：以传播学为例指出三组 GenAI 实验悖论：AI 既替代又需要实验者、既简化又复杂化实验、并制造可能比现实更真实的人工刺激。
+- [Transformation of Scientific Peer Review under the Influence of Artificial Intelligence: Opportunities and Risks](https://doi.org/10.3103/s0147688225700777)：把 AI 辅助同行评审分析为双重转变：常规初审可缓解评审压力，但不透明、漏掉创新和削弱 mentorship 需要新规则约束。
+- [Generative artificial intelligence and the transformation of the scientific research process through a critical review of the research cycle](https://doi.org/10.47909/ijsmc.372)：综述生成式 AI 对科研流程各环节的影响。
+- [Rethinking the scientific method in the age of AI](https://doi.org/10.1038/s44222-025-00386-3)：讨论 AI 时代科学方法的假设和边界变化。
+- [The assisted Technology dilemma: a reflection on AI chatbots use and risks while reshaping the peer review process in scientific research](https://doi.org/10.1007/s00146-025-02299-6)：讨论聊天机器人介入同行评审后带来的劳动分配、责任归属、保密性和信任边界变化，而不是把评审自动化简化成技术评分问题。
+- [Decoding complexity through machine learning is redefining scientific discovery](https://doi.org/10.1038/s42005-026-02676-7)：综述机器学习如何重塑科学发现。
+- [Autonomous ‘self-driving’ laboratories: a review of technology and policy implications](https://doi.org/10.1098/rsos.250646)：综述自主科学工作、AI 科学家或自驱实验室。
+- [The fifth era of science: Artificial scientific intelligence](https://doi.org/10.1371/journal.pbio.3003230)：综述自主科学工作、AI 科学家或自驱实验室。
+- [LLM-Based Scientific Peer Review: Methods, Benchmarks, and Reliability Challenges](https://arxiv.org/abs/2606.25057)：系统梳理 LLM 科学同行评审的方法、基准与可靠性挑战，重点区分文本生成质量、评分可信度、偏见、保密和治理风险。
+- [The Calibration Turn in AI-Assisted Research: A Conceptual and Methodological Framework for Evidence-Licensed Claims](https://arxiv.org/abs/2606.31273)：提出“证据许可的主张”框架，把 AI 辅助研究中的生成、分析、解释和写作操作都约束到可追溯证据上，避免模型把未验证输出包装成科学结论。
+- [Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops](https://arxiv.org/abs/2607.07663)：综述递归自我改进，以闭环程度和评估器强度分类有界改进与自主研究循环。
+- [Artificial Intelligence in Peer Review: Enhancing Efficiency While Preserving Integrity](https://doi.org/10.3346/jkms.2025.40.e92)：从同行评审流程视角讨论 AI 如何提升初筛与审稿效率，同时强调完整性、保密性和人类最终责任不能被自动化评分替代。
+- [Evolutionary Intelligence for Scientific Discovery: From Evolutionary Computation to Cumulative Discovery Systems](https://arxiv.org/abs/2607.09025)：用“演化什么、怎样改变、为何选择、反馈来自哪里、何时发生”五个轴区分一次性进化搜索和累积式发现；它要求把科学候选及其反馈历史跨轮次保存，从而能在算法发现和 agentic 科研工作流之间比较真正可积累的发现机制。
+- [Toward Trustworthy Autonomous Science: A Two-Year Community Roadmap](https://arxiv.org/abs/2607.12113)：以可互操作的自驱实验室、经实验验证的假设、推理训练模型和协同基础设施更新自主科学议程。它把下一阶段瓶颈落在可信证据、跨实验室接口和治理，而不是仅仅扩大自动实验规模。
+- [Artificial Intelligence for Algorithm Discovery: A Three-Dimensional Framework](https://doi.org/10.1109/ic3it69043.2026.11567669)：提出 AI 算法发现的三维框架，用问题空间、搜索/生成机制和验证方式来组织自动算法发现研究。
+- [The Future of Scientific Writing: AI Tools, Benefits, and Ethical Implications](https://doi.org/10.1590/0103-644020256471)：综述 AI 工具在科学写作中的用途，覆盖文献梳理、结构组织、语言润色和伦理披露，强调工具收益必须与作者责任配套。
+- [Practical Considerations and Ethical Implications of Using Artificial Intelligence in Writing Scientific Manuscripts](https://doi.org/10.14309/crj.0000000000001629)：给出科学 manuscript 写作中使用 AI 的实践与伦理注意事项，重点讨论起草、编辑、润色、署名、披露和事实核查。
+- [Ensuring peer review integrity in the era of large language models: A critical stocktaking of challenges, red flags, and recommendations](https://doi.org/10.1016/j.ejrai.2025.100018)：盘点 LLM 进入同行评审后的完整性风险、红旗信号和治理建议，包括虚假引用、保密泄漏、审稿质量下降和编辑部审查流程。
+- [Ethical guidelines for the use of generative artificial intelligence and artificial intelligence-assisted tools in scholarly publishing: a thematic analysis](https://doi.org/10.6087/kcse.352)：对出版机构 AI 使用政策做主题分析，总结 scholarly publishing 中 disclosure、作者责任、审稿保密和编辑监督等伦理准则。
+- [THE POTENTIAL AND ETHICAL ISSUES OF ARTIFICIAL INTELLIGENCE IN IMPROVING ACADEMIC WRITING](https://doi.org/10.29121/shodhai.v2.i1.2025.24)：讨论 AI 改进学术写作的潜在收益与伦理问题，重点在语言支持、原创性、透明披露和学术诚信之间的平衡。
+- [Harmonizing Innovation and Integrity: Ethical Perspectives on Artificial Intelligence (AI) in Academic Writing](https://doi.org/10.61096/ijphr.v13.iss1.2025.59-65)：从方法与伦理两方面梳理 AI 参与学术写作的影响，强调创新便利性不能替代证据核查、作者责任和诚信规范。
+- [Generative Artificial Intelligence in Scientific Publishing: Ethical Governance, Challenges, and Responsibilities](https://doi.org/10.20883/medical.e1571)：综述生成式 AI 对科学出版的影响，覆盖稿件准备、同行评审、编辑流程、作者署名、透明披露和出版治理责任。
+- [Human-assisted traditional peer review intelligence vs artificial peer review intelligence: perspectives on future disruptive sciences](https://doi.org/10.1007/s44163-026-01013-9)：比较人类辅助的传统同行评审智能与人工同行评审智能，把未来审稿定位为混合治理问题。
+- [On the Vulnerability of Citation Metrics in the Era of Generative Artificial Intelligence](https://doi.org/10.3390/publications14020023)：分析生成式 AI 如何降低论文式文本生产成本并增加操纵引用指标的路径，将 bibliometric robustness 变成出版治理问题。
+- [LARGE LANGUAGE MODELS IN SCIENTIFIC RESEARCH WORKFLOWS: A SYSTEMATIC LITERATURE REVIEW OF APPLICATIONS, CHALLENGES, AND FUTURE DIRECTIONS](https://doi.org/10.64680/jisads.v4i1.65)：该 PRISMA 综述梳理 LLM 在知识发现、研究设计、写作和评估中的应用，并提出可靠科研工作流的整合框架。
+- [The past, present and future of self-driving laboratories](https://doi.org/10.1038/s41570-026-00847-2)：综述自驱动实验室在自主实验中的演进、当前架构和未来方向。
+- [A New Paradigm: Agentic AI for Scientific Discovery](https://doi.org/10.65649/ukh4n33x)：综述覆盖六阶段研究生命周期的智能体科学发现，并将验证视为可信自主性的核心要求。
+- [Extended Inductive Thematic Analysis for the Digital Era: How Researchers Integrate AI and Traditional Digital Tools, and Why We Need a New Framework](https://doi.org/10.1177/16094069261473131)：该研究提出八阶段 AI 增强归纳主题分析框架，同时保留人类对解释、批判和验证的责任。
+- [The rise of robotics in self-driving labs](https://doi.org/10.1038/s44182-026-00094-z)：综述自驱实验室的机器人层，说明自动化与算法决策如何跨学科扩展可复现实验的设计、执行和分析，同时梳理可扩展性与泛化仍受限的环节。
+- [Research Acceleration in Self-Driving Labs](https://doi.org/10.1002/aisy.202200331)：给出面向材料和分子发现的技术路线图，把自动化硬件、实验设计策略、数据标准、主动学习和实验闭环集成视为自驱实验室扩展的关键路径。
+- [Exploring the role of large language models in the scientific method](https://www.nature.com/articles/s44387-025-00019-5)：从 hypothesis 到 discovery 讨论 LLM 如何嵌入科学方法，指出实验设计和实验执行自动化必须和人类目标、评估指标、安全边界共同设计。
+- [Integrated Systems for Computational Scientific Discovery](https://doi.org/10.1609/aaai.v38i20.30269)：该综述将集成式计算科学发现界定为系统性挑战，识别八项组成能力，回顾既有的局部集成，并分析基础设施与评测障碍。它还提出适合测试集成式计算工件的科学领域，提供的是领域地图，而不是 Deep Research 式文献综合工作流。
+- [Transforming science labs into automated factories of discovery](https://doi.org/10.1126/scirobotics.adm6991)：文章将实验室自动化划分为从辅助到完全自动化的五个层级，并围绕自动化程度与任务通用性总结科学发现中的机器人研究挑战。
+- [Symbolic Regression: A Pathway to Interpretability Towards Automated Scientific Discovery](https://doi.org/10.1145/3637528.3671464)：教程将符号回归定义为直接从数据学习方程，以获得紧凑且可解释的模型，比较不同学习路线，并讨论物理科学场景中的机会与局限。
+- [How to Harness the Power of GPT for Scientific Research: A Comprehensive Review of Methodologies, Applications, and Ethical Considerations](https://doi.org/10.1007/s13139-024-00876-z)：文章把提示工程视为 GPT 辅助科研的控制层，并说明提示如何支持文献综述、数据分析和论文准备，同时强调效率提升必须受人的专业判断和伦理核验约束。
+- [Using large language models for survey research in communication: opportunities and challenges](https://doi.org/10.1007/s44382-025-00014-z)：梳理 LLM 对问卷设计和开放回答分析的支持，并把效度、伦理与合成数据风险作为使用 AI 调查工具前必须检验的约束。
+- [Getting Started with Artificial Intelligence Assisted Qualitative Analysis: An Introductory Guide to Qualitative Research Approaches with Exploratory Examples from Reflexive Content Analysis](https://doi.org/10.1177/16094069251354863)：文章对比 Small-q 与 Big-Q 质性传统，提出方法匹配模型：LLM 辅助分析是否合适取决于研究的认识论价值，尤其是反思性，而不能只看自动化效率。
+- [Artificial intelligence in scientific writing: opportunities and ethical considerations](https://doi.org/10.18203/2320-6012.ijrms20244167)：文章把 AI 辅助科研写作看作从连接既有研究、发现空白到生成证据和起草论文的流程，同时强调提示驱动的效率不能替代人的创造力、批判推理、合规审查和引用核验。
+- [A survey on large language models driven meta-optimizers for automated intelligent optimization](https://doi.org/10.1007/s10462-025-11470-w)：该综述将 LLM 驱动的元优化定义为统一范式，并围绕算法自动生成、动态算法选择、参数配置和变异控制组织现有方法；同时汇总评测指标与基准问题，并讨论跨领域泛化、可靠性和算法设计自动化等挑战。
+- [An Overview of Challenges, Experiments, and Computational Solutions in Peer Review (Extended Version)](http://www.cs.cmu.edu/~nihars/preprints/SurveyPeerReview.pdf)：将同行评审视为分布式人工评价系统，围绕审稿人分配、策略性行为、评分校准、主观性、身份偏差、激励与政策，系统梳理实证证据和计算干预方案，并指出该领域评估改革的两个核心障碍：缺乏公认真值，以及敏感评审数据难以获取。
+- [Evaluation Criteria for Synthetic Respondents in Qualitative Research: Limits of Applicability](https://doi.org/10.19181/inter.2026.18.2.5)：该综述界定并批判 LLM 生成的定性合成受访者评估标准，涵盖情境特异性、叙事矛盾和解释价值。
+- [What Can Natural Language Processing Do for Peer Review?](https://arxiv.org/abs/2405.06563)：把同行评审支持拆成 reviewer assignment、评审质量分析、论文评估和 meta-review 辅助等具体 NLP 任务。
+- [Doing Thematic Analysis in the Age of Generative AI: Practices, Ethics and Reflexivity](https://doi.org/10.1177/16094069261425173)：论文把 ChatGPT 嵌入反思式主题分析的六个阶段，从转录、编码到解释和校对，同时要求研究者保留反思性判断与伦理控制。
+- [AI for Auto-Research: Roadmap & User Guide](https://arxiv.org/abs/2605.18661)（[项目页](https://worldbench.github.io/awesome-ai-auto-research)；[开源仓库](https://github.com/worldbench/awesome-ai-auto-research)）是自动科研 agent、benchmark、skill 和工具的路线图与清单；应作为发现资源使用，而不是独立 benchmark 或可运行 skill。
+- [Claw4Science](https://doi.org/10.64898/2026.03.30.715118)：把 OpenClaw 科学 agent 生态整理成项目与技能数据集和平台，帮助科研 agent 发现可复用的科学工作流与技能仓库。
+- [Exploring multi-view symbolic regression methods in physical sciences.](https://doi.org/10.1098/rsta.2024.0592)：该综述在真实物理科学数据集上比较 Operon、PySR、phi-SO 和 eggp 的多视角符号回归实现。结果表明，这些实现能够用紧凑的参数化函数拟合共享现象；论文进一步总结与优质模型相关的实现特征，并为后续科学发现系统提出具体建议。
+- [Large Language Models Penetration in Scholarly Writing and Peer Review](https://arxiv.org/abs/2502.11193)：回顾 LLM 进入学术写作与同行评审的方式，并覆盖流程收益与诚信风险。
+- [Agents4Science AI authors and reviewers](https://arxiv.org/abs/2511.15534)：总结 Agents4Science 的经验；该会议让 AI agent 担任主要作者和审稿人，人类作为共同作者与共同审稿人，从而把人机科研协作的能力边界和治理问题具体化。
+- [Position: Correct Answer, Wrong Mechanism -- When AI Scientists Defend General Claims Their Own Data Contradicts](https://arxiv.org/abs/2606.23175)：这篇立场文指出 AI Scientist 不能只按最终答案评分，还要检查其数据是否真的支持机制解释，以及系统是否诚实承认自身结果与主张的矛盾。
+- [Detecting Hallucinated and Suspicious Citations: What Current Tools Can and Cannot Do](https://arxiv.org/abs/2607.22693)：综述引文幻觉检测工具，并识别学术来源审计中的抽取、元数据、覆盖率和一致性限制。
 - [Science acceleration and accessibility with self-driving labs](https://doi.org/10.1038/s41467-025-59231-1)：回顾 self-driving lab 如何结合自动化、AI 与实验基础设施来加速科学发现并扩大可及性。
+- [Towards Agentic AI for Science: Hypothesis Generation, Comprehension, Quantification, and Validation](https://doi.org/10.1145/3701716.3717754)：围绕假设生成、理解、量化和验证来框定面向科学的 agentic AI。
+- [AI ‐Assisted Scientific Figures in Scholarly Publishing: A Risk‐Based Taxonomy by Evidentiary Function](https://doi.org/10.1002/leap.2085)：按科学图像在论文中的证据功能建立风险 taxonomy，区分示意、分析和证据型图像，并讨论披露、可审计性、标注和防伪要求。
+- [Comments on “AI and the advent of the cyborg behavioral scientist”](https://doi.org/10.1002/jcpy.1453)：四组评论者共同提出“询问、训练、检查”的纪律：先激发并识别能力，再用领域文档和示例定制模型，最后核验稳健性；文章还指出合成数据、音视频刺激和群体行为分析是正在出现的科研用途。
+- [AI4Qual: A Comprehensive Field Guide to LLM-Supported Qualitative Research (Tutorial)](https://doi.org/10.1145/3742414.3794947)：AI4Qual 将 LLM 辅助的定性研究组织为端到端工作流：以遵循知情同意的提示支持半结构化访谈追问，并通过从开放编码到主题归纳、人与 LLM 的一致性检查以及将结论链接回原始摘录的 RAG 路径来支撑分析。
+- [A Vision for Auto Research with LLM Agents](https://arxiv.org/abs/2504.18765)：将 Auto Research 组织为模块化多 agent 生命周期，覆盖文献综述、构思、方法规划、实验、论文写作、审稿回应和传播，并给出初步可行性验证。
+- [An AI-powered research assistant in the lab: A practical guide for text analysis through iterative collaboration with LLMs](https://arxiv.org/abs/2505.09724)：给出实验室文本分析中的迭代式人机协作流程，强调提示修订、研究者校验和反复解释，而不是无人值守的定性编码。
+- [Agentic publications: redesigning scientific publishing in the age of thinking large language models](https://arxiv.org/abs/2505.13246)：提出 agentic publication，把论文扩展为交互式知识系统，结合知识图谱、元数据、检索、多 agent 验证、API 和持续更新的综合内容。
+- [A Grassroots Network and Community Roadmap for Interconnected Autonomous Science Laboratories for Accelerated Discovery](https://arxiv.org/abs/2506.17510)：定义 AISLE 这一互联自主实验室生态，覆盖跨机构设备编排、FAIR 数据管理、agent 接口、科学 grounding 与 AI 融入教育。
+- [Position on LLM-Assisted Peer Review](https://arxiv.org/abs/2601.09182)：主张 LLM 更适合作为 reviewer mentoring 和反馈改进工具，而不是直接替代评审者；它把同行评审辅助的核心放在评审训练、反馈质量和 reviewer pool 可持续性上。
+- [Who Owns Creativity and Who Does the Work? Trade-offs in LLM-Supported Research Ideation](https://arxiv.org/abs/2601.12152)：分析 LLM 支持科研构思时的归属、劳动与主体性取舍，为 Research 页提供人机创造力治理参考。
+- [Scientific Knowledge Graph Construction Needs an AI-Mediated, Scientist-in-the-Loop Workflow (A Blue Sky Paper)](https://doi.org/10.1109/escience65000.2025.00085)：主张用 AI-mediated、scientist-in-the-loop 流程构建科学知识图谱，将实体抽取、关系验证和领域修正变成人机共管步骤。
+- [Agentic AI Scientists Are Not Built For Autonomous Scientific Discovery](https://arxiv.org/abs/2605.08956)：立场论文，将当前 co-scientist 式辅助和真正自主科学发现区分开来，指出假设形成、实验扎根、证据整合和科学问责仍是主要瓶颈。
+- [AI Scientists as Engines of Discovery: A Case for Development within Reformed Institutions](https://arxiv.org/abs/2606.22859)：从制度设计角度讨论 AI Scientist：主张把自动发现系统放进改革后的科研机构中发展，并同时考虑角色分工、治理和评估，而不是只优化单个工具。
+- [A Vocabulary for Multi-Agent Automated Research Systems](https://arxiv.org/abs/2607.22682)：定义比较自动化研究系统的术语体系，覆盖角色、操作、状态、控制、通信和评估。
+- [Towards a new paradigm of scientific discovery with socialized artificial intelligence](https://arxiv.org/abs/2608.02775)：该立场论文提出科学发现需要“社会化 AI”：组织分布式知识、角色与反馈，而不是把自主发现视为孤立的模型推断。
+- [Position: AI Agents in Scientific Teams Should Be Studied as Human-Agent Systems](https://arxiv.org/abs/2608.14667)：论文将 AI Scientist 的分析单位重新定义为人机对，结合文献与真实案例，主张用数学框架研究人机协同，并关注科学探究多样性下降等风险。
+- [Data Citation for Large Language Models: A Challenge](https://arxiv.org/abs/2608.25663)：论文将 LLM 数据引用归纳为三个开放任务：把训练数据影响转化为语料引用，以合适粒度和固定性引用推理时数据集或子集，以及定义单个知识图谱三元组引用的含义和学术贡献如何沿来源链传递。
+- [Antipatterns in AI-assisted Qualitative Data Analysis: A Catalog of Temptations and Pitfalls for Software Engineering Researchers](https://arxiv.org/abs/2608.27927)：该目录将 AI 辅助定性分析中表面有利却损害严谨性的做法分为“危险驱动因素”“操作失误”和“分析失败”，为研究者与审稿人识别无效的人机协同分析实践提供共同术语。
+- [Scientific Machine Learning (SciML): A Teleological Taxonomy for Decision Support](https://doi.org/10.5220/0015075900004094)：论文把以物理信息来源和算法偏置为中心的 SciML 分类改成以目标为首的决策树，分为逆向发现、正向模拟、控制与设计、领域适配四类。它对科研自动化的独特点在于把科学家的目标映射到候选架构，并明确将其定位为自动 SciML 模型选择的基础。
+- [Navigating Artificial Intelligence in Scientific Manuscript Writing: Tips and Traps](https://doi.org/10.1055/s-0044-1800801)： 这篇实践性综述梳理 AI 如何辅助文献综述、统计分析和科研论文语言加工，同时把幻觉、偏差、作者判断流失及出版商政策风险列为使用约束；它的突出价值是给出贯穿多个科研产出环节的人控使用框架，而不是主张把写作完全交给 AI。
+- [LLM-based Simulations of Human Behavior in Psychological Research](https://doi.org/10.1609/aies.v8i1.36603)： 这篇概念性综述从科学表征和认识论不透明性出发，分析把 LLM 当作心理研究参与者替代物的做法，并将信任与不信任立场对应到提示设计、微调、可解释性和计算认知建模等方法回应。它用分类框架说明在把合成参与者用于替代研究执行前，应如何验证这种方法。

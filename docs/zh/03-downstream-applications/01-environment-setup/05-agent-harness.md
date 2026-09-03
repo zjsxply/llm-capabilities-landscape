@@ -2,24 +2,37 @@
 
 - [Installamatic](https://arxiv.org/abs/2412.06294)（[开源代码](https://github.com/coinse/installamatic)）是最典型的安装步骤合成与失败恢复 agent。
 - [ExecutionAgent](https://arxiv.org/abs/2412.10133)（[开源代码](https://github.com/sola-st/ExecutionAgent)）代表“基于执行反馈修复环境命令”。
+- [Enabling Autonomic Microservice Management through Self-Learning Agents](https://arxiv.org/abs/2501.19056)：面向环境配置与运维自动化的智能体框架或运行时。核心思想：把 Enabling Autonomic Microservice Management through Self-Learning Agents 外化为可复用的编排、工具调用、记忆或协议逻辑。
 - [Repo2Run](https://arxiv.org/abs/2502.13681)（[开源代码](https://github.com/bytedance/Repo2Run)）把环境构建明确成 Dockerfile 合成与测试闭环。
 - [SetUpAgent](https://arxiv.org/abs/2503.07701)（开源代码：未公开）聚焦自反式 Dockerfile 合成与环境修补，是把“试错建环境”显式 agent 化的代表工作。
 - [SWE-smith](https://arxiv.org/abs/2504.21798)（[开源代码](https://github.com/SWE-bench/SWE-smith)）将可执行环境构建、任务合成与验证流水线打通，更偏“配环境能力驱动的数据工厂”。
 - [CompileAgent](https://arxiv.org/abs/2505.04254)（[开源代码](https://github.com/Ch3nYe/AutoCompiler)）面向编译失败修复，强调从编译日志中定位缺失依赖、API 不兼容和构建脚本问题。
+- [Deployability-Centric Infrastructure-as-Code Generation: Fail, Learn, Refine, and Succeed through LLM-Empowered DevOps Simulation](https://arxiv.org/abs/2506.05623)：它提供 DevOps、IaC、云资源或环境配置 agent workflow，适合补充 environment-setup Agent Harness。
 - [SWE-Builder（SWE-Factory）](https://arxiv.org/abs/2506.10954)（[开源代码](https://github.com/DeepSoftwareAnalytics/swe-factory)）把环境构建模块化为可复用组件，用于大规模生成可执行 SWE 训练与评测实例。
-- [Efficient and Scalable Agentic AI with Heterogeneous Systems](https://arxiv.org/abs/2507.19635)：研究异构基础设施上可扩展 agentic AI 的系统支撑。核心思想是把 agent workflow 视为可执行系统图，在 CPU、GPU 与服务之间优化调度、放置和资源使用。
-- [AgentSight](https://arxiv.org/abs/2508.02736)：利用 eBPF 为 AI agent 提供系统级可观测性。核心思想是从操作系统层记录 agent 进程、工具与资源行为，让运行时故障、不安全动作和性能瓶颈可审计。
+- [A Fast, Reliable, and Secure Programming Language for LLM Agents with Code Actions](https://arxiv.org/abs/2506.12202)：面向 LLM agents code actions 的安全可靠编程语言。核心思想是用专门语言层约束可执行 agent 动作，提高可靠性、安全性和可审计性。
+- [Type-Compliant Adaptation Cascades: Adapting Programmatic LM Workflows to Data](https://arxiv.org/abs/2508.18244)：通过 type-compliant cascades 适配 programmatic LM workflows，属于 workflow harness 基础设施。
+- [KubeIntellect: A Modular LLM-Orchestrated Agent Framework for End-to-End Kubernetes Management](https://arxiv.org/abs/2509.02449)：面向环境配置与运维自动化的智能体框架或运行时。核心思想：把 A Modular LLM-Orchestrated Agent Framework for End-to-End Kubernetes Management 外化为可复用的编排、工具调用、记忆或协议逻辑。
 - [OSS-BUILD-AGENT](https://arxiv.org/abs/2509.25248)（开源代码：未找到稳定公开仓库）聚焦真实开源软件构建失败恢复，核心是基于构建日志反复修改依赖、配置与脚本直到编译通过。
+- [Multi-Agent Code-Orchestrated Generation for Reliable Infrastructure-as-Code](https://arxiv.org/abs/2510.03902)：面向环境配置与运维自动化的智能体框架或运行时。核心思想：把 Multi-Agent Code-Orchestrated Generation for Reliable Infrastructure-as-Code 外化为可复用的编排、工具调用、记忆或协议逻辑。
 - [GradleFixer（Automating Android Build Repair）](https://arxiv.org/abs/2510.08640)（开源代码：未公开）属于边界相关：聚焦 Android/Gradle 构建失败修复，任务核心强依赖构建与依赖环境操作；其思路对“配环境 + 构建修复”类任务有参考，但不是通用 Repo2Run/EnvBench 风格 benchmark。
+- [Automated Cloud Infrastructure-as-Code Reconciliation with AI Agents](https://arxiv.org/abs/2510.20211)：它提供 DevOps、IaC、云资源或环境配置 agent workflow，适合补充 environment-setup Agent Harness。
+- [Aragog: Just-in-Time Model Routing for Scalable Serving of Agentic Workflows](https://arxiv.org/abs/2511.20975)：在 agentic workflows 中即时路由模型以降低服务成本，属于 agent workflow serving harness。
 - [SWE-Bench++](https://arxiv.org/abs/2512.17419)（[开源代码](https://github.com/TuringEnterprises/SWE-Bench-plus-plus)）在自动生成 SWE benchmark 的流程中显式引入 environment synthesis，并与 setup agent 做对比。
+- [Deploy-Ready IaC Generation Using Multi-Agent Systems for Cloud Deployments](https://doi.org/10.1109/icbats66542.2025.11258273)：用多智能体生成可直接部署的云端 Infrastructure-as-Code artifact，适合归入以基础设施配置为输出物的环境自动化工作。
+- [LLM - Driven Autonomous Cloud Automation Agent](https://doi.org/10.1109/csitss67709.2025.11295499)：面向环境搭建与可执行基础设施的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“LLM - Driven Autonomous Cloud Automation Agent”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [ContextCache: Task-Aware Lifecycle Management for Memory-Efficient LLM Agent Deployment](https://doi.org/10.1109/iros60139.2025.11247595)：面向Agent 运行时与部署基础设施提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [LEAF: A Lightweight Edge Agent Framework with Expert SLMs for the Industrial Internet of Things](https://doi.org/10.32604/cmc.2025.074384)：面向Agent 运行时与部署基础设施提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
 - [MEnvAgent](https://arxiv.org/abs/2601.22859)（[开源代码](https://github.com/ernie-research/MEnvAgent)）把“多语言环境构建”做成多 agent 的 Planning-Execution-Verification 闭环，并引入环境复用机制。
-- [DockSmith](https://arxiv.org/abs/2602.00592)（开源代码：未公开）将 Docker 环境构建作为核心 agentic 能力来训练/评测，并以 Multi-Docker-Eval 为主评测基准。
 - [SWE-Universe](https://arxiv.org/abs/2602.02361)（开源代码：未公开）主张大规模自动构造可验证的 SWE 环境与任务数据，环境能力评测基于作者自建多语言任务集。
 - [HerAgent](https://arxiv.org/abs/2602.07871)（[开源代码](https://github.com/EuniAI/HerAgent)）聚焦自动环境部署，并在多个 setup 相关子基准上做统一评测对比（见论文）。
-- [AgentCgroup](https://arxiv.org/abs/2602.09345)：面向沙盒化 AI agent 的资源控制框架。核心思想：刻画 coding agent 在 OS 层面的 CPU、内存和工具调用资源峰值，并用 cgroup 式策略控制多租户执行。
 - [ScaleSWE](https://arxiv.org/abs/2602.09892)（[开源代码](https://github.com/AweAI-Team/ScaleSWE)）通过 setup agent、test creation agent 与 problem synthesis agent 的多代理流水线构造大规模 verified SWE 实例。
 - [SWE-rebench V2](https://arxiv.org/abs/2602.23866)（[开源代码](https://github.com/SWE-rebench/SWE-rebench-V2)）公开了 interactive setup synthesis 代理及其镜像构建流程，用于复杂仓库 setup 自动化。
 - [SWE-Hub](https://arxiv.org/abs/2603.00575)（[开源代码](https://github.com/zhenglw02/SWE-Hub)）将 Env Agent 作为数据工厂执行底座介绍，强调环境搭建在大规模 SWE 流水线中的基础设施角色。
+- [stratum: A System Infrastructure for Massive Agent-Centric ML Workloads](https://arxiv.org/abs/2603.03589)：面向大规模 agent-centric ML workload 的系统基础设施；核心思想是支持数千次探索式 agent pipeline 可复现运行。
 - [RepoLaunch](https://arxiv.org/abs/2603.05026)（[开源代码](https://github.com/microsoft/RepoLaunch)）把跨语言仓库的 build-test 打通抽象成通用流水线。
 - [daVinci-Env（OpenSWE）](https://arxiv.org/abs/2603.13023)（[开源代码](https://github.com/GAIR-NLP/OpenSWE)）用多代理流水线大规模合成可执行 Docker 环境与评测脚本，更偏“可复现基础设施 + 环境合成”。
+- [MEMRES](https://arxiv.org/abs/2604.16941)：面向 Python 依赖配置的记忆增强 resolver，先结合可复用解析记忆、人工整理的 import-to-package 映射、语义 import 分析和置信度级联，最后才回退到 LLM。
+- [RAT / RunAnyThing](https://arxiv.org/abs/2604.23190)：面向任意仓库的语言无关自动环境配置框架，结合语义初始化、规划、专用配置工具和沙盒化修复，并提出 RATBench 来评测异构仓库的 setup 能力。
+- [Crab: A Semantics-Aware Checkpoint/Restore Runtime for Agent Sandboxes](https://arxiv.org/abs/2604.28138)：面向 agent sandbox 的语义感知 checkpoint/restore runtime；核心思想是连接 agent 回合语义与文件系统、进程和运行时副作用，只保存与恢复相关的 OS 状态。
 - [BootstrapAgent](https://arxiv.org/abs/2605.15815)（[开源代码](https://github.com/Vossera/BootstrapAgent)）把仓库启动经验蒸馏成可复用的 `.bootstrap` contract；核心流程包括证据抽取、结构化规划、Docker 验证、trace-driven repair 与 clean replay，目标是让后续 coding agent 少重复试错。
+- [Self-Healing Infrastructure: Autonomous LLM Agents for Real-Time Remediation of Configuration Drift and Security Misconfigurations in IaC Deployments](https://doi.org/10.35940/ijitee.d4757.15040326)：提出闭环 IaC 修复流水线，由 drift detector、security reasoner、root-cause analyzer、remediation generator 和 post-remediation validator 协同，并在模拟 Terraform drift 场景上评测。

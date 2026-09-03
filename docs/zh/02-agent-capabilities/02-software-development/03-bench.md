@@ -1,84 +1,918 @@
 # 2.2.3 Bench
 
-- [SWE-Bench](https://arxiv.org/abs/2310.06770)：评什么：基于真实 GitHub issue 的仓库级 bug fixing（生成补丁并通过测试）。核心思想：用“真实仓库 + 可复现实验环境 + 测试通过”定义可执行的 SWE 评测。（[开源代码](https://github.com/SWE-bench/SWE-bench)）
-- [SciCode](https://arxiv.org/abs/2407.13168)：评什么：科研/科学场景的真实编码任务（scientist-curated research coding）。核心思想：题目更贴近科研问题分解与可验证测试，强调“知识召回 + 推理 + 代码合成”的组合能力。（[开源代码](https://github.com/scicode-bench/SciCode)）
-- [SWE-bench Multimodal](https://arxiv.org/abs/2410.03859)：评什么：视觉/前端 JavaScript 软件库中的 issue resolving。核心思想：把图片化问题陈述、视觉测试与跨语言前端仓库纳入 SWE-bench 范式，用 617 个任务检验 agent 是否能从 Python 文本 bug fixing 泛化到视觉软件域。（[项目页](https://www.swebench.com/multimodal.html)）
-- [CoReQA](https://arxiv.org/abs/2501.03447)：评测代码仓库问答能力。核心思想是测试模型能否理解 repository-level code context 并回答自然语言问题，用代码库理解补足生成、补全和修 bug 类评测。
-- [SyncBench](https://arxiv.org/abs/2502.06994)：评什么：协作软件工程中的 out-of-sync 恢复能力。核心思想：从真实 GitHub 协作演化中构造 24,332 个可执行场景，测试 agent 在环境状态变化后能否重新同步、沟通与修复。（[项目页](https://xhguo7.github.io/SyncMind/)）
-- [Copilot Arena](https://arxiv.org/abs/2502.09328)（[项目页](https://gclef-cmu.org/research/2025copilotarena/)，[开源代码](https://github.com/lmarena/copilot-arena)）：评什么：真实开发环境中的代码 LLM 偏好与交互质量。核心思想：在 IDE 内收集模型成对比较和用户偏好，补足“补丁是否通过测试”之外的 code assistant 体验、上下文使用和编辑建议质量。
-- `SWE-Bench Verified`：评什么：SWE-Bench 的更可靠可复现子集（强调可评测性与环境稳定）。核心思想：以更严格的数据与评测筛选降低评测噪声。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified)）
-- [SWE-Lancer / SWE-Lancer Diamond](https://arxiv.org/abs/2502.12115)：评什么：更贴近真实工程协作/外包式软件任务的端到端交付能力（从需求到实现与验收）。核心思想：以更接近真实开发流程的任务设定，强调可验证交付与流程执行；公开榜单常以 Diamond split 追踪更高价值任务。
-- [Aider Polyglot](https://github.com/Aider-AI/polyglot-benchmark)：评什么：跨语言编程/修改任务的对比与评分。核心思想：用多语言样本与统一评分规则，衡量“跨语言的真实改码能力”。
-- [SWEE-Bench / SWA-Bench](https://arxiv.org/abs/2503.07701)：评什么：由 SetUpAgent 自动构造的更大规模 repo-level issue resolving 与应用型软件任务。核心思想：把历史依赖环境重建、测试执行和结果解析自动化，用于扩展 SWE-bench 的仓库覆盖面并暴露分布差异。
-- [Multi-SWE-Bench](https://arxiv.org/abs/2504.02605)：评什么：多语言 issue-resolving 软件工程任务（跨语言仓库、跨语言依赖/工具链）。核心思想：在多语言仓库上复用 SWE 评测范式，并同步发布多语言兼容 agent/harness 改版以支撑可复现评测（7 种语言、1632 实例）。（[开源代码](https://github.com/multi-swe-bench/multi-swe-bench)）
-- [R2E-Gym](https://arxiv.org/abs/2504.07164)：评什么：可执行 SWE agent 训练与评测环境、以及 test-time scaling。核心思想：用 SYNGEN 从提交中合成带执行环境的 issue-like 任务，并结合执行式与 execution-free verifier 支撑开放权重 SWE agent 训练。（[项目页](https://r2e-gym.github.io/)，[开源代码](https://github.com/R2E-Gym/R2E-Gym)）
-- [SWE-PolyBench](https://arxiv.org/abs/2504.08703)：评什么：多语言 repo-level SWE 评测与对照平台。核心思想：更偏 evaluation harness，把不同语言/生态下的 SWE 任务放到统一对比协议中。（[开源代码](https://github.com/amazon-science/SWE-PolyBench)）
-- [SWE-bench Multilingual](https://www.swebench.com/multilingual)：评什么：多语言代码库上的 SWE-bench 式 issue resolving。核心思想：尽量复用 SWE-bench 的数据/评测基础设施，把多语言能力作为“评测层扩展”纳入同一套 harness（300 题、9 种语言）。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Multilingual)，[开源代码](https://github.com/SWE-bench/SWE-bench)）
-- [CodeVisionary](https://arxiv.org/abs/2504.13472)：面向 LLM code generation 的 agent-based evaluation framework。核心思想是用 LLM-agent evaluator 在参考答案匹配之外评估生成代码，同时显式暴露代码评测假设和 judge 行为。
-- [CodeMMLU](https://openreview.net/forum?id=CahIEKCu5Q)：评什么：多任务代码理解与推理能力。核心思想：提供 MMLU 风格的代码 benchmark，把代码知识、理解和推理同纯补丁生成能力区分开。
-- [ConvCodeWorld](https://openreview.net/forum?id=rpouyo09V0)：评什么：可复现反馈环境中的对话式代码生成。核心思想：把代码生成放入迭代对话和执行反馈环境，要求 agent 利用反馈，而不是一次性输出片段。
+- [SWE-Bench](https://arxiv.org/abs/2310.06770)（[榜单](https://www.swebench.com/)，[开源代码](https://github.com/SWE-bench/SWE-bench)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [CRUXEval: A Benchmark for Code Reasoning, Understanding and Execution](https://arxiv.org/abs/2401.03065)（[榜单](https://crux-eval.github.io/leaderboard.html)）：使用 800 个带输入输出对的短 Python 函数，评测代码执行推理中的输入预测与输出预测。
+- [PythonSaga: Redefining the Benchmark to Evaluate Code Generating LLMs](https://arxiv.org/abs/2401.03855)：使用 185 个手写 Python 提示，均衡覆盖 38 类编程概念和不同难度，降低 HumanEval 与 MBPP 的概念偏置。
+- [DebugBench: Evaluating Debugging Capability of Large Language Models](https://arxiv.org/abs/2401.04621)：使用 4,253 个调试实例，基于 LeetCode 代码片段和 GPT-4 注入缺陷，覆盖 C++、Java、Python 的 4 大类与 18 小类 bug。
+- [DevEval: Evaluating Code Generation in Practical Software Projects](https://arxiv.org/abs/2401.06401)：测试代码生成的正确性、可靠性或质量；使用来自 119 个真实项目、覆盖 10 个领域的 2,690 个样本。
+- [On Inter-Dataset Code Duplication and Data Leakage in Large Language Models](https://arxiv.org/abs/2401.07930)：使用 On Inter-dataset Code Duplication and Data Leakage in Large Language Models 数据集 评测代码许可证、污染或基准泄漏风险；把污染、记忆化或重叠视为有效性风险。
+- [Assessing the Latent Automated Program Repair Capabilities of Large Language Models using Round-Trip Translation](https://arxiv.org/abs/2401.07994)：使用 Round-Trip Translation 评测调试、故障定位或自动程序修复，包含 164 个缺陷、46 个缺陷。
+- [Code Simulation Challenges for Large Language Models](https://arxiv.org/abs/2401.09074)：使用 Code Simulation Challenges for Large Language Models 评测代码推理、执行模拟或语义理解；衡量效率、成本、运行时间或资源使用。
+- [CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs](https://arxiv.org/abs/2401.11314)：在 700 名学生的课堂中连续 12 周评测 LLM 编程助手，结合 8,000 次使用记录、每周问卷、22 次学生访谈和 8 次教师访谈。
+- [Reassessing Java Code Readability Models with a Human-Centered Approach](https://arxiv.org/abs/2401.14936)：使用 Human-Centered Approach 评测代码可读性、可维护性、异味或质量评价，包含 15 个开发者、390 个程序员。
+- [PPM: Automated Generation of Diverse Programming Problems for Benchmarking Code Generation Models](https://arxiv.org/abs/2401.15545)：使用 PPM 评测代码生成的正确性、鲁棒性、质量或效率；用扰动或分布偏移考察鲁棒性。
+- [NoFunEval: Funny How Code LMs Falter on Requirements Beyond Functional Correctness](https://arxiv.org/abs/2401.15963)：使用 NoFunEval 评测需求、软件模型、流程模型或工作量估计任务，包含 accuracy 等指标；衡量效率、成本、运行时间或资源使用。
+- [An Insight into Security Code Review with LLMs: Capabilities, Obstacles, and Influential Factors](https://arxiv.org/abs/2401.16310)：使用 LLMs: Capabilities, Obstacles, and Influential Factors 评测安全编码或漏洞检测；衡量效率、成本、运行时间或资源使用。
+- [Code-Aware Prompting: A Study of Coverage-Guided Test Generation in Regression Setting using LLM](https://arxiv.org/abs/2402.00097)：评测覆盖率引导的 LLM 提示在回归测试生成中的作用。
+- [Ocassionally Secure: A Comparative Analysis of Code Generation Assistants](https://arxiv.org/abs/2402.00689)：使用 Ocassionally Secure 评测安全编码或漏洞检测，包含 9 个任务；衡量效率、成本、运行时间或资源使用。
+- [EffiBench: Benchmarking the Efficiency of Automatically Generated Code](https://arxiv.org/abs/2402.02037)：使用 1,000 道效率关键的 LeetCode 题，先以功能正确性过筛，再把生成代码运行时间同专家解法比较。
+- [GitBug-Java: A Reproducible Benchmark of Recent Java Bugs](https://arxiv.org/abs/2402.02961)：使用 GitBug-Java 基准 评测编码或程序分析任务表现，包含 199 个缺陷、55 个仓库；使用仓库上下文或真实 issue 产物。
+- [Mercury: A Code Efficiency Benchmark for Code Large Language Models](https://arxiv.org/abs/2402.07844)：使用 Mercury 基准 评测编码或程序分析任务表现，包含 1,889 个任务；衡量效率、成本、运行时间或资源使用。
+- [Generating Java Methods: An Empirical Assessment of Four AI-Based Code Assistants](https://arxiv.org/abs/2402.08431)：评测开发助手或编码 agent 工作流，包含 100 个方法；控制方法、函数、类或语句级粒度。
+- [Unsupervised Evaluation of Code LLMs with Round-Trip Correctness](https://arxiv.org/abs/2402.08699)：使用 Round-Trip Correctness 评测编码或程序分析任务表现；衡量效率、成本、运行时间或资源使用。
+- [CodeMind: Evaluating Large Language Models for Code Reasoning](https://arxiv.org/abs/2402.09664)：使用 CodeMind 评测代码推理、执行模拟或语义理解；衡量效率、成本、运行时间或资源使用。
+- [RITFIS: Robust input testing framework for LLMs-based intelligent software](https://arxiv.org/abs/2402.13518)：用具体框架或工具评估生成软件的测试生成、测试质量或模糊测试；以扰动或分布偏移作为压力因素。
+- [Language Models for Code Completion: A Practical Evaluation](https://arxiv.org/abs/2402.16197)：使用 Language Models for Code Completion 评测上下文感知代码补全与中间填充预测；在评测协议中引入交互或反馈。
+- [HumanEval-XL: A Multilingual Code Generation Benchmark for Cross-lingual Natural Language Generalization](https://arxiv.org/abs/2402.16694)：交叉覆盖 23 种自然语言与 12 种编程语言，检验代码生成模型能否超越英文 Python 提示泛化。
+- [The Emergence of Large Language Models in Static Analysis: A First Look Through Micro-Benchmarks](https://arxiv.org/abs/2402.17679)：评测程序分析、类型推理或形式化验证任务，包含 accuracy 等指标；控制方法、函数、类或语句级粒度。
+- [DyPyBench: A Benchmark of Executable Python Software](https://arxiv.org/abs/2403.00539)：使用 DyPyBench 基准 评测软件工程任务表现，包含 50 个项目；衡量效率、成本、运行时间或资源使用。
+- [SQLBench: A Comprehensive Evaluation for Text-to-SQL Capabilities of Large Language Models](https://arxiv.org/abs/2403.02951)：把 Text-to-SQL 评测组织成 5 个子任务和一个新数据集，强调基于数据库的 SQL 生成而非单一精确匹配。
+- [Learn to Code Sustainably: An Empirical Study on LLM-based Green Code Generation](https://arxiv.org/abs/2403.03344)：使用 Learn to Code Sustainably 实证研究 评测代码生成的正确性、鲁棒性、质量或效率；衡量效率、成本、运行时间或资源使用。
+- [Quantifying Contamination in Evaluating Code Generation Capabilities of Language Models](https://arxiv.org/abs/2403.04811)：测试训练数据泄漏、基准污染或代码来源判定；把暴露与记忆化作为主要有效性风险。
+- [Evaluation of LLMs on Syntax-Aware Code Fill-in-the-Middle Tasks](https://arxiv.org/abs/2403.04814)：使用 Syntax-Aware Code Fill-in-the-Middle Tasks 评测上下文感知代码补全与中间填充预测；使用仓库上下文或真实 issue 产物。
+- [CommitBench: A Benchmark for Commit Message Generation](https://arxiv.org/abs/2403.05188)：使用 CommitBench 基准 评测提交信息生成、分类与代码变更一致性；使用仓库上下文或真实 issue 产物。
+- [CodeUltraFeedback: An LLM-as-a-Judge Dataset for Aligning Large Language Models to Coding Preferences](https://arxiv.org/abs/2403.09032)：提供面向代码大模型对齐的 LLM-as-a-judge 偏好数据集。
+- [Enhancing Formal Theorem Proving: A Comprehensive Dataset for Training AI Models on Coq Code](https://arxiv.org/abs/2403.12627)：评测程序分析、类型推理或形式化验证任务，包含 超过 10,000 个文件；控制方法、函数、类或语句级粒度。
+- [Investigating the Performance of Language Models for Completing Code in Functional Programming Languages: A Haskell Case Study](https://arxiv.org/abs/2403.15185)：实证评估Investigating the Performance of Language Models for Completing Code in Functional Programming Languages: A Haskell Case Study；在通过率之外加入运行时间、能耗或资源效率指标。
+- [An Exploratory Investigation into Code License Infringements in Large Language Model Training Datasets](https://arxiv.org/abs/2403.15230)：审计 53 个代码训练大模型背后的数据集与强 copyleft 代码语料的重叠，用于衡量训练数据中的许可证不一致风险。
+- [ProCQA: A Large-scale Community-based Programming Question Answering Dataset for Code Search](https://arxiv.org/abs/2403.16702)：使用 ProCQA 数据集 评测代码检索与检索增强代码生成；衡量效率、成本、运行时间或资源使用。
+- [Exploring the Impact of the Output Format on the Evaluation of Large Language Models for Code Translation](https://arxiv.org/abs/2403.17214)：使用 Output Format Biases in the Evaluation of Large Language Models for Code Translation 评测代码翻译、转译或库迁移，包含 Accuracy 等指标、BLEU；衡量效率、成本、运行时间或资源使用。
+- [Annotating Slack Directly on Your Verilog: Fine-Grained RTL Timing Evaluation for Early Optimization](https://arxiv.org/abs/2403.18453)：使用 Annotating Slack Directly on Your Verilog 评测硬件、GPU kernel 或 RTL 代码生成；检验跨语言泛化。
+- [Top Leaderboard Ranking = Top Coding Proficiency, Always? EvoEval: Evolving Coding Benchmarks via LLM](https://arxiv.org/abs/2403.19114)：使用 Top Leaderboard Ranking = Top Coding Proficiency, Always? EvoEval: Evolving Coding Benchmarks via LLM 榜单 评测代码生成的正确性、鲁棒性、质量或效率；使用仓库上下文或真实 issue 产物。
+- [CoderUJB: An Executable and Unified Java Benchmark for Practical Programming Scenarios](https://arxiv.org/abs/2403.19287)：使用 CoderUJB 基准 评测编码或程序分析任务表现，包含 2,239 个问题、17 个项目；检验跨语言泛化。
+- [CodeBenchGen: Creating Scalable Execution-based Code Generation Benchmarks](https://arxiv.org/abs/2404.00566)：使用 CodeBenchGen 评测代码生成的正确性、鲁棒性、质量或效率，包含 1,931 个样例、293 个库、367 个仓库；使用仓库上下文或真实 issue 产物。
+- [EvoCodeBench: An Evolving Code Generation Benchmark Aligned with Real-World Code Repositories](https://arxiv.org/abs/2404.00599)：使用 EvoCodeBench 基准 评测代码生成的正确性、鲁棒性、质量或效率，包含 275 个样本、25 个仓库；使用仓库上下文或真实 issue 产物。
+- [Beyond Functional Correctness: Exploring Hallucinations in LLM-Generated Code](https://arxiv.org/abs/2404.00971)：在功能正确性之外评测 LLM 生成代码中的幻觉。
+- [Assessing, Exploiting, and Mitigating Syntactic Robustness Failures in LLM-Based Code Generation](https://arxiv.org/abs/2404.01535)：测试代码生成的正确性、可靠性或质量；以扰动或分布偏移作为压力因素。
+- [The RealHumanEval: Evaluating Large Language Models' Abilities to Support Programmers](https://arxiv.org/abs/2404.02806)：测试RealHumanEval: Evaluating Large Language Models' Abilities to Support Programmers；在 HumanEval 式可执行任务上改变语言、提示或协议条件。
+- [CodeEditorBench: Evaluating Code Editing Capability of Large Language Models](https://arxiv.org/abs/2404.03543)（[榜单](https://codeeditorbench.github.io/)）：使用 CodeEditorBench 评测代码编辑、调试、翻译、润色与需求切换式修改；衡量效率、成本、运行时间或资源使用。
+- [On Evaluating the Efficiency of Source Code Generated by LLMs](https://arxiv.org/abs/2404.06041)：评估大语言模型生成源代码的运行时间与资源效率。
+- [WebCode2M: A Real-World Dataset for Code Generation from Webpage Designs](https://arxiv.org/abs/2404.06369)：评测前端、网页、UI 或全栈 Web 生成，包含 2.56 million 个实例；使用仓库上下文或真实 issue 产物。
+- [InfiBench: Evaluating the Question-Answering Capabilities of Code Large Language Models](https://arxiv.org/abs/2404.07940)：使用 InfiBench 评测编码或程序分析任务表现，包含 15 个编程语言；使用仓库上下文或真实 issue 产物。
+- [MMCode: Benchmarking Multimodal Large Language Models for Code Generation with Visually Rich Programming Problems](https://arxiv.org/abs/2404.09486)：使用 MMCode 评测代码生成的正确性、鲁棒性、质量或效率，包含 3,548 个问题；检验跨语言泛化。
+- [LLMorpheus: Mutation Testing Using Large Language Models](https://arxiv.org/abs/2404.09952)：评测测试生成、测试充分性或模糊测试，包含 13 个包；用扰动或分布偏移考察鲁棒性。
+- [LLM-Based Test-Driven Interactive Code Generation: User Study and Empirical Evaluation](https://arxiv.org/abs/2404.10100)：实证评估代码生成的正确性、可靠性或质量；要求多轮交互或反馈利用，而不是一次性生成。
+- [The Fault in our Stars: Quality Assessment of Code Generation Benchmarks](https://arxiv.org/abs/2404.10155)：评测代码可读性、可维护性、异味或质量评价，包含 3,566 个提示、9 个基准、5 个模型；使用仓库上下文或真实 issue 产物。
+- [Rethinking Software Engineering in the Foundation Model Era: From Task-Driven AI Copilots to Goal-Driven AI Pair Programmers](https://arxiv.org/abs/2404.10225)：使用 Rethinking Software Engineering in the Foundation Model Era: From Task-Driven AI Copilots to Goal-Driven 评测开发助手或编码 agent 工作流；在评测协议中引入交互或反馈。
+- [Large Language Models as Test Case Generators: Performance Evaluation and Enhancement](https://arxiv.org/abs/2404.13340)：使用 Large Language Models as Test Case Generators: Performance Evaluation and Enhancement 评测测试生成、测试充分性或模糊测试，包含 accuracy 等指标；衡量效率、成本、运行时间或资源使用。
+- [Does Your Neural Code Completion Model Use My Code? A Membership Inference Approach](https://arxiv.org/abs/2404.14296)：评测上下文感知代码补全与中间填充预测，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [LLMs in Web-Development: Evaluating LLM-Generated PHP code unveiling vulnerabilities and limitations](https://arxiv.org/abs/2404.14459)：评估大语言模型生成 PHP Web 开发代码中的漏洞与局限。
+- [Automated Commit Message Generation With Large Language Models: An Empirical Study and Beyond](https://arxiv.org/abs/2404.14824)：实证研究大语言模型自动生成提交信息的能力。
+- [Using LLMs in Software Requirements Specifications: An Empirical Evaluation](https://arxiv.org/abs/2404.17842)：使用 Using LLMs in Software Requirements Specifications 评测需求、软件模型、流程模型或工作量估计任务；使用仓库上下文或真实 issue 产物。
+- [ChatBI: Towards Natural Language to Complex Business Intelligence SQL](https://arxiv.org/abs/2405.00527)：使用 ChatBI 评测商业智能 SQL 生成；检验跨语言泛化。
+- [NaturalCodeBench: Examining Coding Performance Mismatch on HumanEval and Natural User Prompts](https://arxiv.org/abs/2405.04520)：使用 NaturalCodeBench 评测代码生成的正确性、鲁棒性、质量或效率，包含 6 个领域；衡量效率、成本、运行时间或资源使用。
+- [Plot2Code: A Comprehensive Benchmark for Evaluating Multi-modal Large Language Models in Code Generation from Scientific Plots](https://arxiv.org/abs/2405.07990)：使用 Plot2Code 基准 评测代码生成的正确性、鲁棒性、质量或效率；检验跨语言泛化。
+- [Towards Translating Real-World Code with LLMs: A Study of Translating to Rust](https://arxiv.org/abs/2405.11514)：使用 Translating Real-World Code with LLMs 研究 评测代码翻译、转译或库迁移；在评测协议中引入交互或反馈。
+- [Fight Fire With Fire: How Much Can We Trust ChatGPT on Source Code-Related Tasks?](https://arxiv.org/abs/2405.12641)：使用 Fight Fire with Fire 评测代码变更理解、分类与生成任务；使用仓库上下文或真实 issue 产物。
+- [ChatGPT Code Detection: Techniques for Uncovering the Source of Code](https://arxiv.org/abs/2405.15512)：使用 ChatGPT Code Detection 评测AI 生成代码检测与来源分类，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [Harnessing Large Language Models for Software Vulnerability Detection: A Comprehensive Benchmarking Study](https://arxiv.org/abs/2405.15614)：评测安全编码或漏洞检测，包含 F1 等指标；使用仓库上下文或真实 issue 产物。
+- [RTL-Repo: A Benchmark for Evaluating LLMs on Large-Scale RTL Design Projects](https://arxiv.org/abs/2405.17378)：在大规模 RTL 设计项目上评测大语言模型。
+- [DevEval: A Manually-Annotated Code Generation Benchmark Aligned with Real-World Code Repositories](https://arxiv.org/abs/2405.19856)：使用 DevEval 基准 评测代码生成的正确性、鲁棒性、质量或效率，包含 13 个开发者、1,874 个样本、117 个仓库；使用仓库上下文或真实 issue 产物。
+- [HumanEvalComm: Benchmarking the Communication Competence of Code Generation for LLMs and LLM Agents](https://arxiv.org/abs/2406.00215)：使用 HumanEvalComm 评测代码生成的正确性、鲁棒性、质量或效率；使用仓库上下文或真实 issue 产物。
+- [From Effectiveness to Efficiency: Uncovering Linguistic Bias in Large Language Model-based Code Generation](https://arxiv.org/abs/2406.00602)：测试前端、网页或图像到代码生成；在通过率之外加入运行时间、能耗或资源效率指标。
+- [R2C2-Coder: Enhancing and Benchmarking Real-world Repository-level Code Completion Abilities of Code Large Language Models](https://arxiv.org/abs/2406.01359)：使用 R2C2-Coder 评测上下文感知代码补全与中间填充预测；使用仓库上下文或真实 issue 产物。
+- [TESTEVAL: Benchmarking Large Language Models for Test Case Generation](https://arxiv.org/abs/2406.04531)：评测测试生成、测试充分性或模糊测试，包含 coverage 等指标；使用仓库上下文或真实 issue 产物。
+- [Hints-In-Browser: Benchmarking Language Models for Programming Feedback Generation](https://arxiv.org/abs/2406.05053)：使用 Hints-In-Browser 评测编码或程序分析任务表现，包含 cost 等指标；在评测协议中引入交互或反馈。
+- [How Efficient is LLM-Generated Code? A Rigorous & High-Standard Benchmark](https://arxiv.org/abs/2406.06647)：使用 Efficient is LLM-Generated Code? A Rigorous & High-Standard 基准 评测代码生成的正确性、鲁棒性、质量或效率，包含 pass@k 等指标；使用仓库上下文或真实 issue 产物。
+- [HumanEvo: An Evolution-Aware Benchmark for More Realistic Evaluation of Repository-Level Code Generation](https://arxiv.org/abs/2406.06918)：使用 HumanEvo 基准 评测代码生成的正确性、鲁棒性、质量或效率；使用仓库上下文或真实 issue 产物。
+- [McEval: Massively Multilingual Code Evaluation](https://arxiv.org/abs/2406.07436)：实证评估McEval: Massively Multilingual Code Evaluation；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [Is Programming by Example solved by LLMs?](https://arxiv.org/abs/2406.08316)：使用 Is Programming by Example solved by LLMs 评测算法程序合成与复杂度感知代码生成；衡量效率、成本、运行时间或资源使用。
+- [LLMs Meet Library Evolution: Evaluating Deprecated API Usage in LLM-Based Code Completion](https://arxiv.org/abs/2406.09834)：评测上下文感知代码补全与中间填充预测，包含 28,125 个提示；使用仓库上下文或真实 issue 产物。
+- [ChartMimic: Evaluating LMM's Cross-Modal Reasoning Capability via Chart-to-Code Generation](https://arxiv.org/abs/2406.09961)：测试代码生成的正确性、可靠性或质量；用图表图像与指令要求模型生成科学图表渲染代码。
+- [CoSQA+: Enhancing Code Search Evaluation With a Multi-Choice Benchmark and Test-Driven Agents](https://arxiv.org/abs/2406.11589)：评测代码检索与检索增强代码生成，包含 412,080 个样本对、1,000 个样本对；检验跨语言泛化。
+- [Long Code Arena: a Set of Benchmarks for Long-Context Code Models](https://arxiv.org/abs/2406.11612)（[HF Space](https://huggingface.co/spaces/JetBrains-Research/long-code-arena)）：使用 Long Code Arena 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [Can We Trust Large Language Models Generated Code? A Framework for In-Context Learning, Security Patterns, and Code Evaluations Across Diverse LLMs](https://arxiv.org/abs/2406.12513)：实证评估安全代码生成、漏洞检测或安全代码审查；比较提示、上下文示例或 prompt programming 策略。
+- [JavaBench: A Benchmark of Object-Oriented Code Generation for Evaluating Large Language Models](https://arxiv.org/abs/2406.12902)：使用 JavaBench 基准 评测代码生成的正确性、鲁棒性、质量或效率，包含 24 个基准、5 个基准、389 个方法；使用仓库上下文或真实 issue 产物。
+- [SWT-Bench: Testing and Validating Real-World Bug-Fixes with Code Agents](https://arxiv.org/abs/2406.12952)：评测测试生成、测试充分性或模糊测试，包含 coverage 等指标；使用仓库上下文或真实 issue 产物。
+- [CodeRAG-Bench: Can Retrieval Augment Code Generation?](https://arxiv.org/abs/2406.14497)：使用 CodeRAG-Bench 评测代码检索与检索增强代码生成；使用仓库上下文或真实 issue 产物。
+- [Qiskit HumanEval: An Evaluation Benchmark for Quantum Code Generative Models](https://arxiv.org/abs/2406.14712)：用 Qiskit 编程任务评测量子代码生成模型。
+- [Identifying Inaccurate Descriptions in LLM-generated Code Comments via Test Execution](https://arxiv.org/abs/2406.14836)：评测代码注释、文档、摘要或日志推理，包含 accuracy 等指标；用扰动或分布偏移考察鲁棒性。
+- [CasModaTest: A Cascaded and Model-agnostic Self-directed Framework for Unit Test Generation](https://arxiv.org/abs/2406.15743)：使用 CasModaTest 框架 评测测试生成、测试充分性或模糊测试，包含 accuracy 等指标、coverage；衡量效率、成本、运行时间或资源使用。
+- [BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions](https://arxiv.org/abs/2406.15877)（[榜单](https://bigcode-bench.github.io/)）：使用 BigCodeBench 评测代码生成的正确性、鲁棒性、质量或效率，包含 139 个库、7 个领域、1,140 个任务；检验跨语言泛化。
+- [ModeLing: A Novel Dataset for Testing Linguistic Reasoning in Language Models](https://arxiv.org/abs/2406.17038)：使用 modeLing 数据集 评测测试生成、测试充分性或模糊测试，包含 accuracy 等指标；衡量效率、成本、运行时间或资源使用。
+- [LLM-Aided Testbench Generation and Bug Detection for Finite-State Machines](https://arxiv.org/abs/2406.17132)：评测测试生成、测试充分性或模糊测试，包含 coverage 等指标；使用仓库上下文或真实 issue 产物。
+- [Software Model Evolution with Large Language Models: Experiments on Simulated, Public, and Industrial Datasets](https://arxiv.org/abs/2406.17651)：使用 Large Language Models: Experiments on Simulated, Public, and Industrial Datasets 评测需求、软件模型、流程模型或工作量估计任务；使用仓库上下文或真实 issue 产物。
+- [Transforming Software Development: Evaluating the Efficiency and Challenges of GitHub Copilot in Real-World Projects](https://arxiv.org/abs/2406.17910)：测试真实工作流中的开发助手或编码 agent 行为；把任务放入仓库上下文，而不是孤立代码片段。
+- [AssertionBench: A Benchmark to Evaluate Large-Language Models for Assertion Generation](https://arxiv.org/abs/2406.18627)：使用 AssertionBench 基准 评测软件或硬件验证中的断言生成；比较提示或上下文示例设置。
+- [NLPerturbator: Studying the Robustness of Code LLMs to Natural Language Variations](https://arxiv.org/abs/2406.19783)：实证评估NLPerturbator: Studying the Robustness of Code LLMs to Natural Language Variations；以扰动或分布偏移作为压力因素。
+- [Large-scale, Independent and Comprehensive study of the power of LLMs for test case generation](https://arxiv.org/abs/2407.00225)：评测测试生成、测试充分性或模糊测试，包含 216,300 个测试用例；使用仓库上下文或真实 issue 产物。
+- [MG-Verilog: Multi-grained Dataset Towards Enhanced LLM-assisted Verilog Generation](https://arxiv.org/abs/2407.01910)：使用 MG-Verilog 数据集 评测硬件、GPU kernel 或 RTL 代码生成；检验跨语言泛化。
+- [Exploring the Capabilities of LLMs for Code-Change-Related Tasks](https://arxiv.org/abs/2407.02824)：使用 Exploring the Capabilities of LLMs for Code Change Related Tasks 评测代码变更理解、分类与生成任务；衡量效率、成本、运行时间或资源使用。
+- [CoIR: A Comprehensive Benchmark for Code Information Retrieval Models](https://arxiv.org/abs/2407.02883)：使用 CoIR 基准 评测代码检索与检索增强代码生成；使用仓库上下文或真实 issue 产物。
+- [ConCodeEval: Evaluating Large Language Models for Code Constraints in Domain-Specific Languages](https://arxiv.org/abs/2407.03387)：使用 ConCodeEval 评测编码或程序分析任务表现；比较提示或上下文示例设置。
+- [Are LLMs Correctly Integrated into Software Systems?](https://arxiv.org/abs/2407.05138)：使用 Are LLMs Correctly Integrated into Software Systems 评测软件工程任务表现；衡量效率、成本、运行时间或资源使用。
+- [Assessing Code Generation with Intermediate Languages](https://arxiv.org/abs/2407.05411)：使用 Intermediate Languages 评测代码生成的正确性、鲁棒性、质量或效率；检验跨语言泛化。
+- [What is wrong with your code generated by large language models? An extensive study](https://arxiv.org/abs/2407.06153)：使用 Your Code Generated by Large Language Models? An Extensive 研究 评测编码或程序分析任务表现，包含 accuracy 等指标；在评测协议中引入交互或反馈。
+- [CodeUpdateArena: Benchmarking Knowledge Editing on API Updates](https://arxiv.org/abs/2407.06249)：使用 CodeUpdateArena 评测编码或程序分析任务表现，包含 54 个函数、670 个样例；控制方法、函数、类或语句级粒度。
+- [On Leakage of Code Generation Evaluation Datasets](https://arxiv.org/abs/2407.07565)：评测代码许可证、污染或基准泄漏风险，包含 161 个提示；把污染、记忆化或重叠视为有效性风险。
+- [Natural Language is Not Enough: Benchmarking Multi-Modal Generative AI for Verilog Generation](https://arxiv.org/abs/2407.08473)：评测硬件、GPU kernel 或 RTL 代码生成，包含 accuracy 等指标；检验跨语言泛化。
+- [Uncovering Weaknesses in Neural Code Generation](https://arxiv.org/abs/2407.09793)：分析神经代码生成的失效模式，补充总分式代码基准。
+- [CIBench: Evaluating Your LLMs with a Code Interpreter Plugin](https://arxiv.org/abs/2407.10499)：使用 CIBench 评测编码或程序分析任务表现；在评测协议中引入交互或反馈。
+- [Beyond Correctness: Benchmarking Multi-dimensional Code Generation for Large Language Models](https://arxiv.org/abs/2407.11470)：使用 Beyond Correctness 评测代码生成的正确性、鲁棒性、质量或效率，包含 accuracy 等指标、coverage；检验跨语言泛化。
+- [Evaluating Contextually Personalized Programming Exercises Created with Generative AI](https://arxiv.org/abs/2407.11994)：使用 Generative AI 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [SciCode](https://arxiv.org/abs/2407.13168)（[榜单](https://scicode-bench.github.io/leaderboard/)，[开源代码](https://github.com/scicode-bench/SciCode)）：评测科学家策划的科研编码任务，要求问题分解、科学知识召回、推理和可执行验证。
+- [PyBench: Evaluating LLM Agent on various real-world coding tasks](https://arxiv.org/abs/2407.16732)：使用 PyBench 评测开发助手或编码 agent 工作流；使用仓库上下文或真实 issue 产物。
+- [AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents](https://arxiv.org/abs/2407.18901)：使用 AppWorld 评测编码或程序分析任务表现；在评测协议中引入交互或反馈。
+- [Evaluating Long Range Dependency Handling in Code Generation Models using Multi-Step Key Retrieval](https://arxiv.org/abs/2407.21049)：测试上下文感知代码补全与中间填充预测；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [TaskEval: Assessing Difficulty of Code Generation Tasks for Large Language Models](https://arxiv.org/abs/2407.21227)：使用 TaskEval 评测代码生成的正确性、鲁棒性、质量或效率，包含 21 个基准；衡量效率、成本、运行时间或资源使用。
+- [Can Developers Prompt? A Controlled Experiment for Code Documentation Generation](https://arxiv.org/abs/2408.00686)：评测代码注释、文档、摘要或日志推理，包含 30 个学生；比较提示或上下文示例设置。
+- [Large Language Models for Equivalent Mutant Detection: How Far Are We?](https://arxiv.org/abs/2408.01760)：在 3,302 个方法级 Java mutant 对上评测等价 mutant 检测，比较 LLM 语义判断能否降低 mutation testing 的冗余成本和偏差。
+- [Licoeval: Evaluating LLMs on License Compliance in Code Generation](https://arxiv.org/abs/2408.02487)：评测大模型代码生成中的许可证合规性。
+- [RepoMasterEval: Evaluating Code Completion via Real-World Repositories](https://arxiv.org/abs/2408.03519)：测试上下文感知代码补全与中间填充预测；把任务放入仓库上下文，而不是孤立代码片段。
+- [AcTracer: Active Testing of Large Language Model via Multi-Stage Sampling](https://arxiv.org/abs/2408.03573)：使用 AcTracer 评测测试生成、测试充分性或模糊测试；检验跨语言泛化。
+- [AI-assisted Coding with Cody: Lessons from Context Retrieval and Evaluation for Code Recommendations](https://arxiv.org/abs/2408.05344)：使用 AI-assisted Coding with Cody 评测代码检索与检索增强代码生成；检验跨语言泛化。
+- [Can LLMs Replace Manual Annotation of Software Engineering Artifacts?](https://arxiv.org/abs/2408.05534)：使用 LLMs Replace Manual Annotation of Software Engineering Artifacts 评测软件工程任务表现，包含 cost 等指标、accuracy；检验跨语言泛化。
+- [Evaluating Language Models for Efficient Code Generation](https://arxiv.org/abs/2408.06450)：使用 Language Models for Efficient Code Generation 评测代码生成的正确性、鲁棒性、质量或效率，包含 121 个任务；使用仓库上下文或真实 issue 产物。
+- [(Invited Paper) Are Llms Any Good for High-Level Synthesis?](https://arxiv.org/abs/2408.10428)：使用 Are LLMs Any Good for High-Level Synthesis 评测高层综合与硬件代码生成；衡量效率、成本、运行时间或资源使用。
+- [CodeJudge-Eval: Can Large Language Models be Good Judges in Code Understanding?](https://arxiv.org/abs/2408.10718)：评估大语言模型能否作为代码理解任务的评判者。
+- [Revisiting VerilogEval: Newer LLMs, In-Context Learning, and Specification-to-RTL Tasks](https://arxiv.org/abs/2408.11053)：在 VerilogEval 上重新评估更新 LLM、上下文学习和 specification-to-RTL 任务。
+- [CRUXEval-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution](https://arxiv.org/abs/2408.13001)：使用 800 个带输入输出对的短 Python 函数，评测代码执行推理中的输入预测与输出预测。
+- [DOMAINEVAL: An Auto-Constructed Benchmark for Multi-Domain Code Generation](https://arxiv.org/abs/2408.13204)：使用 DOMAINEVAL 基准 评测代码生成的正确性、鲁棒性、质量或效率；检验跨语言泛化。
+- [On the Quality of AI-Generated Source Code Comments: A Comprehensive Evaluation](https://arxiv.org/abs/2408.14007)：评测代码可读性、可维护性、异味或质量评价，包含 142 个类、273 个方法；控制方法、函数、类或语句级粒度。
+- [SWE-bench-java: A GitHub Issue Resolving Benchmark for Java](https://arxiv.org/abs/2408.14354)：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [Statically Contextualizing Large Language Models with Typed Holes](https://arxiv.org/abs/2409.00921)：使用 Typed Holes 评测程序分析、类型推理或形式化验证任务；衡量效率、成本、运行时间或资源使用。
+- [Automatic Detection of LLM-Generated Code: A Comparative Case Study of Contemporary Models Across Function and Class Granularities](https://arxiv.org/abs/2409.01382)：使用 Automatic Detection of LLM-Generated Code 案例研究 评测代码生成的正确性、鲁棒性、质量或效率，包含 14,485 个函数；用扰动或分布偏移考察鲁棒性。
+- [ℬ4: Towards Optimal Assessment of Plausible Code Solutions with Plausible Tests](https://arxiv.org/abs/2409.08692)：使用 B4 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [Measuring the Influence of Incorrect Code on Test Generation](https://arxiv.org/abs/2409.09464)：评测测试生成、测试充分性或模糊测试，包含 6 个模型、3 widely-used benchmark、41 个样例；使用仓库上下文或真实 issue 产物。
+- [SpecEval: Evaluating Code Comprehension in Large Language Models via Program Specifications](https://arxiv.org/abs/2409.12866)：使用 SpecEval 评测代码推理、执行模拟或语义理解；衡量效率、成本、运行时间或资源使用。
+- [A Systematic Evaluation of Large Code Models in API Suggestion: When, Which, and How](https://arxiv.org/abs/2409.13178)：使用 Systematic Evaluation of Large Code Models in API Suggestion: When, Which, and How 评测数据科学、Notebook、API 或包选择编码任务，包含 853 个项目；衡量效率、成本、运行时间或资源使用。
+- [Efficient Domain Augmentation for Autonomous Driving Testing Using Diffusion Models](https://arxiv.org/abs/2409.13661)：评测测试生成、测试充分性或模糊测试，包含 coverage 等指标；使用视觉或多模态输入。
+- [A Comprehensive Framework for Evaluating API-oriented Code Generation in Large Language Models](https://arxiv.org/abs/2409.15228)：评测数据科学、Notebook、API 或包选择编码任务，包含 Runtime 等指标、accuracy；使用仓库上下文或真实 issue 产物。
+- [TestBench: Evaluating Class-Level Test Case Generation Capability of Large Language Models](https://arxiv.org/abs/2409.17561)：评测测试生成、测试充分性或模糊测试，包含 coverage 等指标；控制方法、函数、类或语句级粒度。
+- [RepairBench](https://arxiv.org/abs/2409.18952)（[榜单](https://repairbench.github.io/)）：使用 RepairBench 榜单 评测编码或程序分析任务表现；衡量效率、成本、运行时间或资源使用。
+- [FLEX: Expert-level False-Less EXecution Metric for Reliable Text-to-SQL Benchmark](https://arxiv.org/abs/2409.19014)：评测自然语言到 SQL 或图查询生成，包含 Accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [CodeJudge: Evaluating Code Generation with Large Language Models](https://arxiv.org/abs/2410.02184)：评测不只依赖隐藏测试用例的 LLM-as-a-judge 代码语义评分，强调 slow-thinking 式代码裁判能力。
+- [SWE-bench Multimodal](https://arxiv.org/abs/2410.03859)（[榜单](https://www.swebench.com/multimodal.html)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [Evaluation of Code LLMs on Geospatial Code Generation](https://arxiv.org/abs/2410.04617)：评测数据科学、Notebook、API 或包选择编码任务，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [SWE-Bench+: Enhanced Coding Benchmark for LLMs](https://arxiv.org/abs/2410.06992)：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [DA-Code: Agent Data Science Code Generation Benchmark for Large Language Models](https://arxiv.org/abs/2410.07331)：评测数据科学、Notebook、API 或包选择编码任务，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [Collu-Bench: A Benchmark for Predicting Language Model Hallucinations in Code](https://arxiv.org/abs/2410.09997)：使用 Collu-Bench 基准 评测编码或程序分析任务表现，包含 13,234 个实例；检验跨语言泛化。
+- [Towards Realistic Evaluation of Commit Message Generation by Matching Online and Offline Settings](https://arxiv.org/abs/2410.12046)：评测提交信息生成、分类与代码变更一致性，包含 656 个样本对；在评测协议中引入交互或反馈。
+- [Evaluating Software Development Agents: Patch Patterns, Code Quality, and Issue Complexity in Real-World GitHub Scenarios](https://arxiv.org/abs/2410.12468)：测试代码可读性、可维护性、坏味道或质量评价；把任务放入仓库上下文，而不是孤立代码片段。
+- [Evaluating Quantized Large Language Models for Code Generation on Low-Resource Language Benchmarks](https://arxiv.org/abs/2410.14766)：使用 Low-Resource Language Benchmarks 评测代码生成的正确性、鲁棒性、质量或效率；检验跨语言泛化。
+- [mHumanEval - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation](https://arxiv.org/abs/2410.15037)：使用 mHumanEval -- A Multilingual Benchmark to Evaluate Large Language Models for Code Generation 基准 评测代码生成的正确性、鲁棒性、质量或效率，包含 超过 200 个自然语言、15 个自然语言；检验跨语言泛化。
+- [An evaluation of LLM code generation capabilities through graded exercises](https://arxiv.org/abs/2410.16292)：使用 LLM code generation capabilities through graded exercises 评测代码生成的正确性、鲁棒性、质量或效率，包含 8 个编程语言；衡量效率、成本、运行时间或资源使用。
+- [Dear Diary: A Randomized Controlled Trial of Generative AI Coding Tools in the Workplace](https://arxiv.org/abs/2410.18334)：报告工作场景中生成式 AI 编程工具的随机对照试验。
+- [Do LLMs generate test oracles that capture the actual or the expected program behaviour?](https://arxiv.org/abs/2410.21136)：评测 LLM 生成测试 oracle 时捕捉的是实际程序行为还是预期程序行为。
+- [M2rc-Eval: Massively Multilingual Repository-level Code Completion Evaluation](https://arxiv.org/abs/2410.21157)：实证评估上下文感知代码补全与中间填充预测；把任务放入仓库上下文，而不是孤立代码片段。
+- [Can Language Models Replace Programmers? REPOCOD Says 'Not Yet'](https://arxiv.org/abs/2410.21647)：测试Can Language Models Replace Programmers? REPOCOD Says 'Not Yet'；把任务放入仓库上下文，而不是孤立代码片段。
+- [EvoCodeBench: An Evolving Code Generation Benchmark with Domain-Specific Evaluations](https://arxiv.org/abs/2410.22821)：使用 EvoCodeBench 基准 评测代码生成的正确性、鲁棒性、质量或效率，包含 275 个样本、25 个仓库、10 个领域；使用仓库上下文或真实 issue 产物。
+- [Secret Leak Detection in Software Issue Reports using LLMs: A Comprehensive Evaluation](https://arxiv.org/abs/2410.23657)：实证评估安全代码生成、漏洞检测或安全代码审查；把任务放入仓库上下文，而不是孤立代码片段。
+- [TurtleBench: A Visual Programming Benchmark in Turtle Geometry](https://arxiv.org/abs/2411.00264)：评测 turtle geometry 视觉编程，要求模型根据视觉或文本指令生成几何图案代码。
+- [An Empirical Study on the Code Refactoring Capability of Large Language Models](https://arxiv.org/abs/2411.02320)：使用 Code Refactoring Capability of Large Language Models 实证研究 评测编码或程序分析任务表现，包含 30 个项目；使用仓库上下文或真实 issue 产物。
+- [Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping](https://arxiv.org/abs/2411.03292)：评测前端、网页、UI 或全栈 Web 生成，包含 15 个类型、31 个类别；在评测协议中引入交互或反馈。
+- [MetRex: A Benchmark for Verilog Code Metric Reasoning Using LLMs](https://arxiv.org/abs/2411.03471)：使用 MetRex 基准 评测硬件、GPU kernel 或 RTL 代码生成；衡量效率、成本、运行时间或资源使用。
+- [Detection of Technical Debt in Java Source Code](https://arxiv.org/abs/2411.05457)：使用 Detection of Technical Debt in Java Source Code 评测代码可读性、可维护性、异味或质量评价，包含 974 个项目；衡量效率、成本、运行时间或资源使用。
+- [Escalating LLM-based Code Translation Benchmarking into the Class-level Era](https://arxiv.org/abs/2411.06145)：评测代码翻译、转译或库迁移，包含 accuracy 等指标、cost；控制方法、函数、类或语句级粒度。
+- [The First Prompt Counts the Most! An Evaluation of Large Language Models on Iterative Example-Based Code Generation](https://arxiv.org/abs/2411.06774)：实证评估代码生成的正确性、可靠性或质量；比较提示、上下文示例或 prompt programming 策略。
+- [Impact of LLM-based Review Comment Generation in Practice: A Mixed Open-/Closed-source User Study](https://arxiv.org/abs/2411.07091)：使用 Impact of LLM-based Review Comment Generation in Practice: A Mixed Open-/Closed-source 用户研究 评测代码注释、文档、摘要或日志推理。
+- [RedCode: Risky Code Execution and Generation Benchmark for Code Agents](https://arxiv.org/abs/2411.07781)：使用 RedCode 基准 评测编码或程序分析任务表现，包含 4,050 个测试用例、25 个类型、8 个领域；使用仓库上下文或真实 issue 产物。
+- [Programming with AI: Evaluating ChatGPT, Gemini, AlphaCode, and GitHub Copilot for Programmers](https://arxiv.org/abs/2411.09224)：评测开发助手或编码 agent 工作流，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [Precision or Peril: Evaluating Code Quality from Quantized Large Language Models](https://arxiv.org/abs/2411.10656)：使用 Precision or Peril 评测代码可读性、可维护性、异味或质量评价；使用仓库上下文或真实 issue 产物。
+- [Detecting Multi-Parameter Constraint Inconsistencies in Python Data Science Libraries](https://arxiv.org/abs/2411.11410)：面向 Python 数据科学库中的多参数约束不一致，为代码理解系统补充维护任务。
+- [Are Large Language Models Memorizing Bug Benchmarks?](https://arxiv.org/abs/2411.13323)：评测调试、故障定位或自动程序修复，包含 accuracy 等指标；把污染、记忆化或重叠视为有效性风险。
+- [CAFE A Novel Code switching Dataset for Algerian Dialect French and English](https://arxiv.org/abs/2411.13424)：分类说明：该条目实际是阿尔及利亚方言、法语与英语 code-switching 语言数据集，不是软件开发代码任务。
+- [Repository-level Code Translation Benchmark Targeting Rust](https://arxiv.org/abs/2411.13990)：评测代码翻译、转译或库迁移，包含 375 个任务；使用仓库上下文或真实 issue 产物。
+- [Translating C To Rust: Lessons from a User Study](https://arxiv.org/abs/2411.14174)：评测代码翻译、转译或库迁移，包含 cost 等指标、runtime；使用仓库上下文或真实 issue 产物。
+- [A Real-World Benchmark for Evaluating Fine-Grained Issue Solving Capabilities of Large Language Models](https://arxiv.org/abs/2411.18019)：使用 Real-World Benchmark for Evaluating Fine-Grained Issue Solving Capabilities of Large Language Models 基准 评测编码或程序分析任务表现，包含 30 个仓库；使用仓库上下文或真实 issue 产物。
+- [Examining the Use and Impact of an AI Code Assistant on Developer Productivity and Experience in the Enterprise](https://arxiv.org/abs/2412.06603)：使用 Developer Productivity and Experience in the Enterprise 评测开发助手或编码 agent 工作流；衡量效率、成本、运行时间或资源使用。
+- [PyraNet: A Multi-Layered Hierarchical Dataset for Verilog](https://arxiv.org/abs/2412.06947)：使用 PyraNet 数据集 评测硬件、GPU kernel 或 RTL 代码生成；检验跨语言泛化。
+- [A Comprehensive Evaluation of Parameter-Efficient Fine-Tuning on Code Smell Detection](https://arxiv.org/abs/2412.13801)：使用 Code Smell Detection 评测代码可读性、可维护性、异味或质量评价；检验跨语言泛化。
+- [AIGCodeSet: A New Annotated Dataset for AI Generated Code Detection](https://arxiv.org/abs/2412.16594)：使用 AIGCodeSet 数据集 评测AI 生成代码检测与来源分类；使用仓库上下文或真实 issue 产物。
+- [RepoTransBench: A Real-World Multilingual Benchmark for Repository-Level Code Translation](https://arxiv.org/abs/2412.17744)：评测代码翻译、转译或库迁移，包含 1,897 个样本、13 个样本对；使用仓库上下文或真实 issue 产物。
+- [ADC: Enhancing Function Calling Via Adversarial Datasets and Code Line-Level Feedback](https://arxiv.org/abs/2412.17754)：评测安全编码或漏洞检测，包含 accuracy 等指标；在评测协议中引入交互或反馈。
+- [Top General Performance = Top Domain Performance? DomainCodeBench: A Multi-domain Code Generation Benchmark](https://arxiv.org/abs/2412.18573)：使用 Top General Performance = Top Domain Performance? DomainCodeBench: A Multi-domain Code Generation 基准 评测代码生成的正确性、鲁棒性、质量或效率，包含 12 个领域、15 个编程语言、2,400 个任务；检验跨语言泛化。
+- [How Propense Are Large Language Models at Producing Code Smells? A Benchmarking Study](https://arxiv.org/abs/2412.18989)：评测代码可读性、可维护性、异味或质量评价，包含 accuracy 等指标；控制方法、函数、类或语句级粒度。
+- [The Impact of Prompt Programming on Function-Level Code Generation](https://arxiv.org/abs/2412.20545)：测试代码生成的正确性、可靠性或质量；控制方法、函数、类或语句级任务粒度。
+- [EVOLVE: Evaluation of Language-to-SQL Validity and Effectiveness - A Detailed Review Framework for Complex Text-to-SQL Queries](https://doi.org/10.1109/bigdata62323.2024.10825883)：使用 EVOLVE 框架 评测自然语言到 SQL 或图查询生成。
+- [Challenges and Opportunities in Integrating LLMs into Continuous Integration/Continuous Deployment (CI/CD) Pipelines](https://doi.org/10.1109/ainit61980.2024.10581784)：分类说明：该条目是关于把 LLM 接入 CI/CD 的开发工作流集成建议，不是基准数据集或评分协议。
+- [Evaluating In-Context Learning of Libraries for Code Generation](https://doi.org/10.18653/v1/2024.naacl-long.161)：使用 In-Context Learning of Libraries for Code Generation 评测代码生成的正确性、鲁棒性、质量或效率；比较提示或上下文示例设置。
+- [A Comparative Analysis between AI Generated Code and Human Written Code: A Preliminary Study](https://doi.org/10.1109/bigdata62323.2024.10825958)：使用 Comparative Analysis between AI Generated Code and Human Written Code: A Preliminary 研究 评测代码生成的正确性、鲁棒性、质量或效率。
+- [Optimizing Code Retrieval: High-Quality and Scalable Dataset Annotation through Large Language Models](https://doi.org/10.18653/v1/2024.emnlp-main.123)：使用 Optimizing Code Retrieval 数据集 评测代码可读性、可维护性、异味或质量评价。
+- [Evaluating Performance and Accuracy of Large Language Models in Translating Code-Mixed Hindi to English: A Comparative Study](https://doi.org/10.1109/indicon63790.2024.10958340)：分类说明：该条目评测的是 code-mixed Hindi 文本翻译，不是程序代码翻译。
+- [NLP Models for Technical Task and Specification Analysis](https://doi.org/10.1109/scm62608.2024.10554107)：评测 NLP 模型分析技术任务和软件规格说明的能力，把需求理解而非代码生成作为评测目标。
+- [A Systematic Evaluation of Code-generating Chatbots for Use in Undergraduate Computer Science Education](https://doi.org/10.1109/fie61694.2024.10893165)：使用 Systematic Evaluation of Code-generating Chatbots for Use in Undergraduate Computer Science Education 评测编程教育中的代码生成、反馈或评估；使用学生或课堂产物。
+- [Balancing Security and Correctness in Code Generation: An Empirical Study on Commercial Large Language Models](https://doi.org/10.1109/tetci.2024.3446695)：实证评估商业 LLM 生成代码时安全性与正确性的权衡。
+- [CoReQA](https://arxiv.org/abs/2501.03447)：使用 CoReQA 评测编码或程序分析任务表现，包含 176 个编程语言；使用仓库上下文或真实 issue 产物。
+- [Code Comment Inconsistency Detection Based on Confidence Learning](https://doi.org/10.1109/tse.2024.3358489)：用置信学习检测代码注释不一致。
+- [Evaluating Large Language Models for Code Generation: Assessing Accuracy, Quality, and Performance](https://doi.org/10.1109/fllm63129.2024.10852439)：测试代码可读性、可维护性、坏味道或质量评价；在通过率之外加入运行时间、能耗或资源效率指标。
+- [Evaluating large language models for software testing](https://doi.org/10.1016/j.csi.2024.103942)：使用 large language models for software testing 评测测试生成、测试充分性或模糊测试。
+- [Exploring the Effectiveness of LLMs in Automated Logging Statement Generation: An Empirical Study](https://doi.org/10.1109/tse.2024.3475375)：使用 Exploring the Effectiveness of LLMs in Automated Logging Statement Generation: An Empirical Study 实证研究 评测代码注释、文档、摘要或日志推理。
+- [Methodology for Code Synthesis Evaluation of LLMs Presented by a Case Study of ChatGPT and Copilot](https://doi.org/10.1109/access.2024.3403858)：实证评估真实工作流中的开发助手或编码 agent 行为；控制方法、函数、类或语句级任务粒度。
+- [Assessing the Performance of AI-Generated Code: A Case Study on GitHub Copilot](https://doi.org/10.1109/issre62328.2024.00030)：实证评估真实工作流中的开发助手或编码 agent 行为；把任务放入仓库上下文，而不是孤立代码片段。
+- [Can GPT-4 Aid in Detecting Ambiguities, Inconsistencies, and Incompleteness in Requirements Analysis? A Comprehensive Case Study](https://doi.org/10.1109/access.2024.3464242)：使用 GPT-4 Aid in Detecting Ambiguities, Inconsistencies, and Incompleteness in Requirements Analysis? A Comprehensive Case 案例研究 评测需求、软件模型、流程模型或工作量估计任务。
+- [LLM-based Interactive Code Generation: Empirical Evaluation](https://doi.org/10.1109/ispras64596.2024.10899123)：使用 LLM-based Interactive Code Generation 评测代码生成的正确性、鲁棒性、质量或效率；在评测协议中引入交互或反馈。
+- [FormalEval: A Method for Automatic Evaluation of Code Generation via Large Language Models](https://doi.org/10.1109/iseda62518.2024.10617643)：实证评估代码生成的正确性、可靠性或质量；控制方法、函数、类或语句级任务粒度。
+- [Beyond Synthetic Benchmarks: Assessing Recent LLMs for Code Generation](https://doi.org/10.18178/wcse.2024.06.042)：使用 Beyond Synthetic Benchmarks 评测代码生成的正确性、鲁棒性、质量或效率。
+- [CL-HumanEval: A Benchmark for Evaluating Cross-lingual Transfer though Code Generation](https://aclanthology.org/2024.paclic-1.62/)：使用 CL-HumanEval 基准 评测代码生成的正确性、鲁棒性、质量或效率；检验跨语言泛化。
+- [Deep Assessment of Code Review Generation Approaches: Beyond Lexical Similarity](https://arxiv.org/abs/2501.05176)：用真实代码评审问题的语义覆盖来评估生成评审文本，突破只看词面相似度的代码评审评价方式。
+- [FairCoder: Evaluating Social Bias of LLMs in Code Generation](https://arxiv.org/abs/2501.05396)：评测 code generation 中的社会偏见；核心思想是覆盖函数实现与单元测试阶段，并设计代码特定公平性指标。
+- [LLM Based Input Space Partitioning Testing for Library APIs](https://arxiv.org/abs/2501.05456)：评测测试生成、测试充分性或模糊测试，包含 超过 2,205 个方法、10 个库；使用仓库上下文或真实 issue 产物。
+- [Evaluating the Performance of Large Language Models in Competitive Programming: A Multi-Year, Multi-Grade Analysis](https://arxiv.org/abs/2501.05601)：实证评估算法程序合成与竞赛编程式生成；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [Hold on! is my feedback useful? evaluating the usefulness of code review comments](https://arxiv.org/abs/2501.06738)：测试代码注释、文档一致性或代码摘要；要求多轮交互或反馈利用，而不是一次性生成。
+- [Evaluating Pre-Trained Models for Multi-Language Vulnerability Patching](https://arxiv.org/abs/2501.07339)：测试安全代码生成、漏洞检测或安全代码审查；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [CWEval: Outcome-driven Evaluation on Functionality and Security of LLM Code Generation](https://arxiv.org/abs/2501.08200)：从功能正确性和安全结果评测 LLM 代码生成。核心思想：用可执行行为和弱点暴露来评分，而不只看表面相似度。
+- [The Heap](https://arxiv.org/abs/2501.09653)：使用 Heap 数据集 评测编码或程序分析任务表现，包含 57 个编程语言；检验跨语言泛化。
+- [Test Wars](https://arxiv.org/abs/2501.10200)：使用 Test Wars 研究 评测编码或程序分析任务表现，包含 coverage 等指标；衡量效率、成本、运行时间或资源使用。
+- [Can LLM Generate Regression Tests for Software Commits?](https://arxiv.org/abs/2501.11086)：评估 LLM 是否能为软件提交和补丁生成回归测试。
+- [DI-BENCH: Benchmarking Large Language Models on Dependency Inference with Testable Repositories at Scale](https://arxiv.org/abs/2501.13699)：评测可测试仓库中的依赖推断。核心思想：要求模型推断缺失或隐式依赖，并在可执行仓库上下文中验证。
+- [Assessing Large Language Models in Comprehending and Verifying Concurrent Programs across Memory Models](https://arxiv.org/abs/2501.14326)：评什么：LLM 对不同内存模型下并发程序的理解与验证能力。核心思想是测试超出普通顺序代码理解的并发推理。
+- [Skeleton-Guided-Translation: A Benchmarking Framework for Code Repository Translation with Fine-Grained Quality Evaluation](https://arxiv.org/abs/2501.16050)：面向仓库级代码翻译的 benchmarking framework。核心思想是在跨语言迁移代码库时评估细粒度功能和结构质量。
+- [Automated Refactoring of Non-Idiomatic Python Code: A Differentiated Replication with LLMS](https://arxiv.org/abs/2501.17024)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（Code: A Differentiated Replication with LLMS）形成可复用比较基准。
+- [A Tool for In-depth Analysis of Code Execution Reasoning of Large Language Models](https://arxiv.org/abs/2501.18482)：分析大模型的代码执行推理能力。
+- [CoDocBench: A Dataset for Code-Documentation Alignment in Software Maintenance](https://arxiv.org/abs/2502.00519)：使用 CoDocBench 数据集 评测代码注释、文档、摘要或日志推理；使用仓库上下文或真实 issue 产物。
+- [SE Arena](https://arxiv.org/abs/2502.01860)：提供交互式平台评测基础模型的软件工程能力。
+- [COFFE: A Code Efficiency Benchmark for Code Generation](https://arxiv.org/abs/2502.02827)：代码生成效率 benchmark。核心思想是评测生成程序是否不仅正确，而且具备实际可用的效率。
+- [AL-Bench: A Benchmark for Automatic Logging](https://arxiv.org/abs/2502.03160)：提出 AL-Bench，用行为感知检查评估自动日志插入。
+- [Proving the Coding Interview: A Benchmark for Formally Verified Code Generation](https://arxiv.org/abs/2502.05714)：Proving the Coding Interview 用形式化验证衡量代码生成，补充可证明正确代码 benchmark。
+- [MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms](https://arxiv.org/abs/2502.06556)：评测多文件项目级 unit-test generation；核心思想是从函数级测试扩展到带真实依赖的 Python、Java 和 JavaScript 项目。
+- [SyncBench](https://arxiv.org/abs/2502.06994)（[项目页](https://xhguo7.github.io/SyncMind/)）：使用 SyncMind 评测编码或程序分析任务表现，包含 21 个仓库；使用仓库上下文或真实 issue 产物。
+- [SnipGen: A Mining Repository Framework for Evaluating LLMs for Code](https://arxiv.org/abs/2502.07046)：用于构造仓库级代码评测任务的挖掘框架；核心思想是从真实仓库中提取代码片段和检查来评估 LLM coding 能力。
+- [CLOVER: A Test Case Generation Benchmark with Coverage, Long-Context, and Verification](https://arxiv.org/abs/2502.08806)：覆盖覆盖率、长上下文和验证的测试用例生成基准。核心思想是在真实 Python 仓库中评估测试补全与生成。
+- [Copilot Arena](https://arxiv.org/abs/2502.09328)（[Arena](https://gclef-cmu.org/research/2025copilotarena/)，[开源代码](https://github.com/lmarena/copilot-arena)）：评什么：真实开发环境中的代码 LLM 偏好与交互质量。核心思想：在 IDE 内收集模型成对比较和用户偏好，补足“补丁是否通过测试”之外的 code assistant 体验、上下文使用和编辑建议质量。
+- [KernelBench](https://arxiv.org/abs/2502.10517)（[榜单](https://scalingintelligence.stanford.edu/KernelBenchLeaderboard/)）：评估语言模型能否为 PyTorch 工作负载编写正确且更快的 GPU kernel，并用 `fast_p` 同时衡量功能正确性和加速幅度。（[榜单](https://scalingintelligence.stanford.edu/KernelBenchLeaderboard/)）
+- [Assessing Correctness in LLM-Based Code Generation via Uncertainty Estimation](https://arxiv.org/abs/2502.11620)：使用 Uncertainty Estimation 评测代码生成的正确性、鲁棒性、质量或效率；使用仓库上下文或真实 issue 产物。
+- [Code-Vision: Evaluating Multimodal LLMs Logic Understanding and Code Generation Capabilities](https://arxiv.org/abs/2502.11829)：从流程图评测逻辑理解与代码生成的多模态 benchmark；核心思想是要求模型把视觉算法表示转成正确程序。
+- [BaxBench: Can LLMs Generate Correct and Secure Backends?](https://arxiv.org/abs/2502.11844)：评测正确且安全的后端生成；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [SWE-Lancer / SWE-Lancer Diamond](https://arxiv.org/abs/2502.12115)（[榜单](https://swelancer.github.io/leaderboard/)）：使用 SWE-Lancer 评测编码或程序分析任务表现，包含 超过 1,400 个任务、50 个缺陷、32,000 个任务；使用仓库上下文或真实 issue 产物。
+- [EquiBench: Benchmarking Large Language Models' Reasoning about Program Semantics via Equivalence Checking](https://arxiv.org/abs/2502.12466)：评测代码推理、执行模拟或语义理解，包含 2400 个样本对；使用仓库上下文或真实 issue 产物。
+- [Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](https://arxiv.org/abs/2502.13069)：面向欠规格软件工程需求的交互式 agent 评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Poisoned Source Code Detection in Code Models](https://arxiv.org/abs/2502.13459)：评测安全编码或漏洞检测，包含 85.6% 个样本；用扰动或分布偏移考察鲁棒性。
+- [From Tools to Teammates: Evaluating LLMs in Multi-Session Coding Interactions](https://arxiv.org/abs/2502.13791)：多会话编码协作交互评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Comparative Analysis of Large Language Models for Context-Aware Code Completion using SAFIM Framework](https://arxiv.org/abs/2502.15243)：使用 SAFIM 框架 评测上下文感知代码补全与中间填充预测，包含 latency 等指标、accuracy；衡量效率、成本、运行时间或资源使用。
+- [Data Wrangling Task Automation Using Code-Generating Language Models](https://arxiv.org/abs/2502.15732)：使用 Code-Generating Language Models 评测数据科学、Notebook、API 或包选择编码任务；衡量效率、成本、运行时间或资源使用。
+- [CodeCriticBench: A Holistic Code Critique Benchmark for Large Language Models](https://arxiv.org/abs/2502.16614)：评估模型在代码生成和代码问答场景中的代码批判能力，把软件开发评测从代码生成扩展到诊断性反馈与建设性修改建议。
+- [Studying How Configurations Impact Code Generation in LLMs: The Case of ChatGPT](https://arxiv.org/abs/2502.17450)：可作为软件开发 agent 与代码模型的 Bench 候选：围绕 Studying How Configurations Impact Code Generation in LLMs: The Case of ChatGPT 提供可比较的评测任务、数据或分析协议。
+- [When Benchmarks Talk](https://arxiv.org/abs/2502.18413)：使用 When Benchmarks Talk 评测编码或程序分析任务表现，包含 10 个模型、3 个数据集；在评测协议中引入交互或反馈。
+- [ChatGPT vs. DeepSeek: A Comparative Study on AI-Based Code Generation](https://arxiv.org/abs/2502.18467)：使用 ChatGPT vs. DeepSeek 研究 评测代码生成的正确性、鲁棒性、质量或效率；使用仓库上下文或真实 issue 产物。
+- [Deep-Bench: Deep Learning Benchmark Dataset for Code Generation](https://arxiv.org/abs/2502.18726)：评测函数级深度学习代码生成；核心思想是覆盖多个 DL workflow 阶段和输入数据类型，补足普通小片段代码 benchmark 的覆盖不足。
+- [IndicEval-XL: Bridging Linguistic Diversity in Code Generation Across Indic Languages](https://arxiv.org/abs/2502.19067)：评测 Indic languages 场景下的代码生成；核心思想是检查编程任务用多样自然语言表达时，coding model 是否仍能可靠工作。
+- [Isolating Language-Coding from Problem-Solving: Benchmarking LLMs with PseudoEval](https://arxiv.org/abs/2502.19149)：PseudoEval 在代码生成评测中区分语言编码能力与问题求解能力。
+- [Assessing LLMs for Front-end Software Architecture Knowledge](https://arxiv.org/abs/2502.19518)：使用 LLMs for Front-end Software Architecture Knowledge 评测前端、网页、UI 或全栈 Web 生成；衡量效率、成本、运行时间或资源使用。
+- [Are LLMs Ready for Practical Adoption for Assertion Generation?](https://arxiv.org/abs/2502.20633)：使用 Are LLMs Ready for Practical Adoption for Assertion Generation 评测软件或硬件验证中的断言生成。
+- [Measuring Determinism in Large Language Models for Software Code Review](https://arxiv.org/abs/2502.20747)：测量 LLM 在软件代码评审中的确定性和重复测试可靠性。
+- [Towards Automated Smart Contract Generation: Evaluation, Benchmarking, and Retrieval-Augmented Repair](https://arxiv.org/abs/2503.01098)：围绕智能合约生成提供评测、benchmarking 和检索增强修复流程。
+- [Memorize or Generalize? Evaluating LLM Code Generation with Evolved Questions](https://arxiv.org/abs/2503.02296)：使用 Code Rewriting 评测代码生成的正确性、鲁棒性、质量或效率，包含 accuracy 等指标；把污染、记忆化或重叠视为有效性风险。
+- [LONGCODEU: Benchmarking Long-Context Language Models on Long Code Understanding](https://arxiv.org/abs/2503.04359)：从代码单元、跨单元关系和长代码文档等方面评测长代码理解。
+- [Can LLMs Reason About Program Semantics? A Comprehensive Evaluation of LLMs on Formal Specification Inference](https://arxiv.org/abs/2503.04779)：通过形式化规约推断评估 LLM 的程序语义推理。
+- [Evaluating Large Language Models in Code Generation: INFINITE Methodology for Defining the Inference Index](https://arxiv.org/abs/2503.05852)：使用 Large Language Models in Code Generation: INFINITE Methodology for Defining the Inference Index 评测代码生成的正确性、鲁棒性、质量或效率，包含 accuracy 等指标；控制方法、函数、类或语句级粒度。
+- [FEA-Bench: A Benchmark for Evaluating Repository-Level Code Generation for Feature Implementation](https://arxiv.org/abs/2503.06680)：用真实仓库 PR 与单元测试评测增量功能开发能力，而不只评测 bug 修复。
+- [ProjectEval: A Benchmark for Programming Agents Automated Evaluation on Project-Level Code Generation](https://arxiv.org/abs/2503.07010)：面向 programming agents 的项目级自动代码生成 benchmark；核心思想是从单函数代码题推进到带项目上下文和可执行验证的任务。
+- [SWEE-Bench / SWA-Bench](https://arxiv.org/abs/2503.07701)：使用 Automated Benchmark Generation for Repository-Level Coding Tasks 基准 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [RefactorBench: Evaluating Stateful Reasoning in Language Agents Through Code](https://arxiv.org/abs/2503.07832)：类型：benchmark/评测协议。核心价值：为 2.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Personalized Code Readability Assessment: Are We There Yet?](https://arxiv.org/abs/2503.07870)：使用 Personalized Code Readability Assessment 评测代码可读性、可维护性、异味或质量评价；比较提示或上下文示例设置。
+- [Enhancing Large Language Models for Hardware Verification: A Novel SystemVerilog Assertion Dataset](https://arxiv.org/abs/2503.08923)：评测硬件、GPU kernel 或 RTL 代码生成，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [DynaCode: A Dynamic Complexity-Aware Code Benchmark for Evaluating Large Language Models in Code Generation](https://arxiv.org/abs/2503.10452)：动态生成复杂度感知代码题和 call-graph 结构，降低静态代码生成基准中的记忆化风险。
+- [What's DAT? Three Case Studies of Measuring Software Development Productivity at Meta With Diff Authoring Time](https://arxiv.org/abs/2503.10977)：使用 Diff Authoring Time 评测软件工程任务表现，包含 超过 20 个项目；衡量效率、成本、运行时间或资源使用。
+- [Beyond Final Code: A Process-Oriented Error Analysis of Software Development Agents in Real-World GitHub Scenarios](https://arxiv.org/abs/2503.12374)：该工作对真实 GitHub 场景的软件开发 agents 做过程级错误分析，可补充 SWE agent evaluation。
+- [Can Reasoning Models Reason about Hardware?](https://arxiv.org/abs/2503.12721)：从智能体式高层次综合视角评估推理模型，将软件智能体评测扩展到硬件代码生成。
+- [TinySQL: A Progressive Text-to-SQL Dataset for Mechanistic Interpretability Research](https://arxiv.org/abs/2503.12730)：使用 TinySQL 数据集 评测自然语言到 SQL 或图查询生成；检验跨语言泛化。
+- [VeriContaminated](https://arxiv.org/abs/2503.13572)：使用 VeriContaminated 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [OpenLLM-RTL: Open Dataset and Benchmark for LLM-Aided Design RTL Generation: Invited Paper](https://arxiv.org/abs/2503.15112)：提供开放数据集和基准，用于评测 LLM 辅助 RTL 生成等硬件设计代码任务。
+- [BigO(Bench) - Can LLMs Generate Code with Controlled Time and Space Complexity?](https://arxiv.org/abs/2503.15242)：代码生成中的时间与空间复杂度控制评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [CodeReviewQA: The Code Review Comprehension Assessment for Large Language Models](https://arxiv.org/abs/2503.16167)：评测 LLM 对 code review 的理解；核心思想是把隐式 review comment 转成细粒度 QA，同时测试代码和人类意图理解。
+- [Why Stop at One Error? Benchmarking LLMs as Data Science Code Debuggers for Multi-Hop and Multi-Bug Errors](https://arxiv.org/abs/2503.22388)：评测 LLM 作为数据科学代码调试器的能力；核心思想是要求模型在多跳上下文中修复多个相互影响的 bug，而不是只定位单个孤立错误。
+- [CodeIF-Bench](https://arxiv.org/abs/2503.22688)：使用 CodeIF-Bench 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [RobuNFR: Evaluating the Robustness of Large Language Models on Non-Functional Requirements Aware Code Generation](https://arxiv.org/abs/2503.22851)：RobuNFR 评估涉及性能、可维护性等非功能需求时的代码生成鲁棒性。
+- [CodeARC: Benchmarking Reasoning Capabilities of LLM Agents for Inductive Program Synthesis](https://arxiv.org/abs/2503.23145)：类型：benchmark/评测协议。核心价值：为 2.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Rubric Is All You Need: Enhancing LLM-based Code Evaluation With Question-Specific Rubrics](https://arxiv.org/abs/2503.23989)：面向 LLM 代码评测的 rubric 方法。核心思想是用题目特定评分标准让自动代码评测更贴合任务要求。
+- [Assessing Code Understanding in LLMs](https://arxiv.org/abs/2504.00065)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Leveraging LLMs for User Stories in AI Systems: UStAI Dataset](https://arxiv.org/abs/2504.00513)：使用 Leveraging LLMs for User Stories in AI Systems: UStAI 数据集 评测需求、软件模型、流程模型或工作量估计任务。
+- [Large-scale Evaluation of Notebook Checkpointing with AI Agents](https://arxiv.org/abs/2504.01377)：使用 AI Agents 评测数据科学、Notebook、API 或包选择编码任务；在评测协议中引入交互或反馈。
+- [Are Autonomous Web Agents Good Testers?](https://arxiv.org/abs/2504.01495)：自主网页 agent 的软件测试能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [TuRTLe: A Unified Evaluation of LLMs for RTL Generation](https://arxiv.org/abs/2504.01986)：评测 LLM 生成 RTL 的能力；核心思想是同时考察语法、功能、可综合性和 PPA 约束，而不只看普通代码正确性。
+- [Multi-SWE-Bench](https://arxiv.org/abs/2504.02605)（[榜单](https://multi-swe-bench.github.io/)，[开源代码](https://github.com/multi-swe-bench/multi-swe-bench)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [HaPy-Bug – Human Annotated Python Bug Resolution Dataset](https://arxiv.org/abs/2504.04810)：评测调试、故障定位或自动程序修复，包含 793 个提交；使用仓库上下文或真实 issue 产物。
+- [FeedbackEval: A Benchmark for Evaluating Large Language Models in Feedback-Driven Code Repair Tasks](https://arxiv.org/abs/2504.06939)：面向反馈驱动代码修复的 benchmark。核心思想是评估模型能否在迭代调试中利用编译器、测试和自然语言反馈。
+- [R2E-Gym](https://arxiv.org/abs/2504.07164)（[项目页](https://r2e-gym.github.io/)，[开源代码](https://github.com/R2E-Gym/R2E-Gym)）：使用 R2E-Gym 评测编码或程序分析任务表现，包含 pass@1 等指标；使用仓库上下文或真实 issue 产物。
+- [SWE-PolyBench](https://arxiv.org/abs/2504.08703)（[榜单](https://amazon-science.github.io/SWE-PolyBench/)，[开源代码](https://github.com/amazon-science/SWE-PolyBench)）：使用 SWE-PolyBench 基准 评测编码或程序分析任务表现，包含 2110 个实例；使用仓库上下文或真实 issue 产物。
+- [SBFT Tool Competition 2025 - Java Test Case Generation Track](https://arxiv.org/abs/2504.09168)：评测测试生成、测试充分性或模糊测试，包含 55 个类；使用仓库上下文或真实 issue 产物。
+- [Themisto: Jupyter-Based Runtime Benchmark](https://arxiv.org/abs/2504.12365)：基于 Jupyter 的 runtime benchmark；核心思想是在 notebook 执行上下文中评估代码生成和修复，其中状态与运行反馈很关键。
+- [CodeVisionary](https://arxiv.org/abs/2504.13472)：使用 CodeVisionary 框架 评测编码或程序分析任务表现，包含 363 个样本、37 个场景、23 个编程语言；使用仓库上下文或真实 issue 产物。
+- [Simplicity by Obfuscation: Evaluating LLM-Driven Code Transformation with Semantic Elasticity](https://arxiv.org/abs/2504.14024)：围绕软件开发 Agent 与代码能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [C2RUST-BENCH: A Minimized, Representative Dataset for C-to-Rust Transpilation Evaluation](https://arxiv.org/abs/2504.15144)：评测代码翻译、转译或库迁移，包含 2,905 个函数、15,503 个函数；使用仓库上下文或真实 issue 产物。
+- [ForgeBench: A Machine Learning Benchmark Suite and Auto-Generation Framework for Next-Generation HLS Tools](https://arxiv.org/abs/2504.15185)：使用 ForgeBench 基准 评测硬件、GPU kernel 或 RTL 代码生成；使用仓库上下文或真实 issue 产物。
+- [Do It For Me vs. Do It With Me: Investigating User Perceptions of Different Paradigms of Automation in Copilots for Feature-Rich Software](https://arxiv.org/abs/2504.15549)：使用 Me: Investigating User Perceptions of Different Paradigms of Automation in Copilots for Feature-Rich Software 评测开发助手或编码 agent 工作流；使用视觉或多模态输入。
+- [Benchmarking LLM for Code Smells Detection: OpenAI GPT-4.0 vs DeepSeek-V3](https://arxiv.org/abs/2504.16027)：评测 LLM 的代码异味检测能力，为软件质量分析提供专门评估点。
+- [Tracking the Moving Target: A Framework for Continuous Evaluation of LLM Test Generation in Industry](https://arxiv.org/abs/2504.18985)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（A Framework for Continuous Evaluation of LLM Test Generation in Industry）形成可复用比较基准。
+- [CoCo-Bench: A Comprehensive Code Benchmark For Multi-task Large Language Model Evaluation](https://arxiv.org/abs/2504.20673)：面向 LLM 评测的综合多任务代码 benchmark；核心思想是在统一套件中覆盖多类 coding 任务。
+- [OSVBench: Benchmarking LLMs on Specification Generation Tasks for Operating System Verification](https://arxiv.org/abs/2504.20964)：面向操作系统验证规范生成的基准。核心思想是测试形式化 kernel 规范的长上下文程序合成任务。
+- [CodeFlowBench: A Multi-turn, Iterative Benchmark for Complex Code Generation](https://arxiv.org/abs/2504.21751)：CodeFlowBench 是多轮迭代复杂代码生成 benchmark，契合软件开发 agent 评测。
+- [CodeMMLU](https://openreview.net/forum?id=CahIEKCu5Q)：使用 CodeMMLU 基准 评测编码或程序分析任务表现，包含 20,000 个领域；检验跨语言泛化。
+- [CodeMMLU: A Multi-Task Benchmark for Assessing Code Understanding Capabilities of CodeLLMs](https://arxiv.org/abs/2410.01999)：评测代码推理、执行模拟或语义理解，包含 20,000 个领域；检验跨语言泛化。
+- [ConvCodeWorld](https://openreview.net/forum?id=rpouyo09V0)：使用 ConvCodeWorld 评测编码或程序分析任务表现，包含 9 个场景；检验跨语言泛化。
+- [ConvCodeWorld: Benchmarking Conversational Code Generation in Reproducible Feedback Environments](https://arxiv.org/abs/2502.19852)：在可复现实验环境中建模多轮代码生成反馈质量，而不是只评测孤立代码片段。
+- [FaithfulPersona: Balancing Faithfulness and Personalization in Code Explanations through Self-Critique](https://doi.org/10.18653/v1/2025.findings-naacl.53)：它提供软件工程、代码事实性、仓库任务或补丁迁移评测，适合补充 software-development Bench。
+- [Fact-Consistency Evaluation of Text-to-SQL Generation for Business Intelligence Using Exaone 3.5](https://arxiv.org/abs/2505.00060)：使用 Exaone 3.5 评测商业智能 SQL 生成，包含 219 个问题；衡量效率、成本、运行时间或资源使用。
 - [CodeRAG-Bench](https://aclanthology.org/2025.findings-naacl.176/)（[开源代码](https://github.com/code-rag-bench/code-rag-bench)）：评什么：检索增强代码生成。核心思想：测试检索到的仓库或文档上下文是否真正改善代码生成，而不是引入无关上下文。
-- [Design2Code](https://aclanthology.org/2025.naacl-long.199/)：评什么：从真实网页设计图生成前端代码的多模态能力。核心思想：让模型把视觉 UI 设计转成可运行的 HTML/CSS 实现，并评估生成页面的视觉与结构还原度。
+- [Design2Code](https://aclanthology.org/2025.naacl-long.199/)：使用 Design2Code 评测编码或程序分析任务表现。
+- [CVE-Bench: Benchmarking LLM-based Software Engineering Agent's Ability to Repair Real-World CVE Vulnerabilities](https://doi.org/10.18653/v1/2025.naacl-long.212)：该 CVE-Bench 关注 LLM-based SWE agent 修复真实 CVE 漏洞，和已有 exploit 型 CVE-Bench 可区分。
+- [Testing Database Systems with Large Language Model Synthesized Fragments](https://arxiv.org/abs/2505.02012)：评测测试生成、测试充分性或模糊测试，包含 55 个缺陷；使用仓库上下文或真实 issue 产物。
 - [WebGen-Bench](https://arxiv.org/abs/2505.03733)（[开源代码](https://github.com/mnluzimu/WebGen-Bench)，[数据集](https://huggingface.co/datasets/luzimu/WebGen-Bench)）：评什么：LLM agent 从零生成多文件、可交互网站的能力。核心思想：把网站生成指令和人工清洗过的浏览器可执行功能测试配对，让前端代码生成按用户可见行为评分，而不是只看代码表面相似度。
-- [Code Semantics-Preserving Mutations](https://arxiv.org/abs/2505.10443)：评估 LLM 在语义保持代码变换下理解 Python 程序的鲁棒性。核心思路是在重命名、镜像、重排等不改变语义的表面变化后，比较答案准确率和推理稳定性。
+- [OmniGIRL: A Multilingual and Multimodal Benchmark for GitHub Issue Resolution](https://arxiv.org/abs/2505.04606)：多语言、多模态 GitHub issue 修复评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [LLM Code Customization with Visual Results: A Benchmark on TikZ](https://arxiv.org/abs/2505.04670)：可作为软件开发 agent的Bench候选；核心关注“A Benchmark on TikZ”。
+- [ActRef: Enhancing the Understanding of Python Code Refactoring with Action-Based Analysis](https://arxiv.org/abs/2505.06553)：用基于动作的分析增强对 Python 代码重构的理解。
+- [Web-Bench: A LLM Code Benchmark Based on Web Standards and Frameworks](https://arxiv.org/abs/2505.07473)：基于 Web 标准和框架的 LLM 代码基准；核心思想是测试生成的前端/网页代码是否遵守真实平台 API 与框架规则。
+- [LongCodeBench](https://arxiv.org/abs/2505.07897)：使用 LongCodeBench 评测编码或程序分析任务表现，包含 cost 等指标；使用仓库上下文或真实 issue 产物。
+- [Will Your Next Pair Programming Partner Be Human? An Empirical Evaluation of Generative AI as a Collaborative Teammate in a Semester-Long Classroom Setting](https://arxiv.org/abs/2505.08119)：比较 39 名本科生在传统结对编程、与 GenAI 结对编程、单人使用 GenAI 三种条件下完成 6 次课堂编程作业的表现。
+- [Tests as Prompt: A Test-Driven-Development Benchmark for LLM Code Generation](https://arxiv.org/abs/2505.09027)：面向 LLM 代码生成的 TDD benchmark。核心思想是把测试同时作为提示和验证器，要求模型从可执行检查中推断功能。
+- [MigrationBench: Repository-Level Code Migration Benchmark from Java 8](https://arxiv.org/abs/2505.09569)：仓库级 Java 迁移任务评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Evaluating Large Language Models for the Generation of Unit Tests with Equivalence Partitions and Boundary Values](https://arxiv.org/abs/2505.09830)：用等价类划分与边界值评估大语言模型生成单元测试的能力。
+- [Code Semantics-Preserving Mutations](https://arxiv.org/abs/2505.10443)：评测测试生成、测试充分性或模糊测试，包含 accuracy 等指标；用扰动或分布偏移考察鲁棒性。
+- [OSS-Bench: Benchmark Generator for Coding LLMs](https://arxiv.org/abs/2505.12331)：从真实开源软件自动生成代码任务来评测 coding LLM；核心思想是替换函数并用编译、测试和 sanitizer 信号评估可编译性、功能正确性与内存安全。
+- [AutoGEEval: A Multimodal and Automated Framework for Geospatial Code Generation on GEE with Large Language Models](https://arxiv.org/abs/2505.12900)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（A Multimodal and Automated Framework for Geospatial Code Generation on GEE with Large Language Models）形成可复用比较基准。
 - [EffiBench-X](https://arxiv.org/abs/2505.13004)（[开源代码](https://github.com/EffiBench/EffiBench-X)，[数据集](https://huggingface.co/datasets/EffiBench/effibench-x)）：评什么：Python、C++、Java、JavaScript、Ruby 和 Go 中 LLM 生成代码的效率。核心思想：以功能正确性为门槛，再与人类专家解法的运行时间对照，暴露生成代码是“能跑”还是“真正高效”。
-- [CodeSimpleQA](https://arxiv.org/abs/2505.15843)：评什么：基础代码理解/问答（更偏 code QA）能力。核心思想：用更清晰可判定的 QA 形式补足 SWE 之外的“代码知识与理解”刻画。
-- [SWE-rebench](https://arxiv.org/abs/2505.20411)：评什么：去污染、可交互的仓库级 SWE 评测。核心思想：在 SWE-bench 风格 issue resolving 上控制训练污染和环境偏差，并支持 agent 通过交互式执行反馈完成修复。
-- [SWE-bench-Live](https://arxiv.org/abs/2505.23419)：评什么：持续更新的真实 GitHub issue resolving。核心思想：从近期 issue 与 pull request 构造 live task，让评测随时间刷新，降低静态 benchmark 被过拟合或泄漏的风险。（[开源代码](https://github.com/SWE-bench-Live/SWE-bench-Live)）
-- [GSO](https://arxiv.org/abs/2505.23671)：评什么：真实仓库中的性能优化任务。核心思想：从 commit history 构造跨语言优化任务，用性能测试和专家优化作为参照，考察 SWE agent 是否能定位瓶颈并做有效加速。（[项目页](https://gso-bench.github.io/)，[开源代码](https://github.com/gso-bench/gso)）
-- [SWE-Evo](https://arxiv.org/abs/2506.13339)：评什么：面向 SWE 任务的自进化/自改写式求解与泛化能力。核心思想：用“迭代改写与自我提升”的协议刻画 test-time 进化式代理表现。
-- [DyCodeEval](https://proceedings.mlr.press/v267/chen25ba.html)：评什么：数据污染压力下的代码推理能力。核心思想：动态生成或刷新代码评测任务，让 benchmark 分数更能反映推理而不是背过公开样例。
-- [KernelBench](https://proceedings.mlr.press/v267/ouyang25a.html)（[开源代码](https://github.com/ScalingIntelligence/KernelBench)）：评什么：正确且高效的 GPU kernel 生成。核心思想：把性能感知的系统代码作为一等 benchmark 目标，而不只看功能正确性。
+- [Structure-Aware Corpus Construction and User-Perception-Aligned Metrics for Large-Language-Model Code Completion](https://arxiv.org/abs/2505.13073)：使用 Structure-Aware Corpus Construction and User-Perception-Aligned Metrics for Large-Language-Model Code Completion 评测上下文感知代码补全与中间填充预测；使用仓库上下文或真实 issue 产物。
+- [CLEVER: A Curated Benchmark for Formally Verified Code Generation](https://arxiv.org/abs/2505.13938)：形式化验证代码生成基准；核心思想是评测生成程序是否满足机器可检查规范，而不只是通过非正式样例。
+- [A Qualitative Investigation into LLM-Generated Multilingual Code Comments and Automatic Evaluation Metrics](https://arxiv.org/abs/2505.15469)：实证评估代码注释、文档一致性或代码摘要；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [DSCodeBench: A Realistic Benchmark for Data Science Code Generation](https://arxiv.org/abs/2505.15621)：评估真实数据科学代码生成，覆盖常用 Python 数据科学库，并配有人工修订任务和更强测试套件。
+- [CASS: Nvidia to AMD Transpilation with Data, Models, and Benchmark](https://arxiv.org/abs/2505.16968)：提供 Nvidia 到 AMD 转译的数据、模型与 benchmark，评测跨平台性能代码迁移。
+- [SWE-Dev](https://arxiv.org/abs/2505.16975)：使用 SWE-Dev 评测编码或程序分析任务表现，包含 500 个样本；使用仓库上下文或真实 issue 产物。
+- [FullFront: Benchmarking MLLMs Across the Full Front-End Engineering Workflow](https://arxiv.org/abs/2505.17399)：覆盖设计、编码与迭代修改的前端工程工作流评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [From Output to Evaluation: Does Raw Instruction-Tuned Code LLMs Output Suffice for Fill-in-the-Middle Code Generation?](https://arxiv.org/abs/2505.18789)：使用 From Output to 评测上下文感知代码补全与中间填充预测；衡量效率、成本、运行时间或资源使用。
+- [VerifyThisBench: Generating Code, Specifications, and Proofs All at Once](https://arxiv.org/abs/2505.19271)：同时生成代码、规格和证明的 benchmark。核心思想是评估系统能否把实现与形式化规格和证明义务对齐。
+- [Simple and Effective Baselines for Code Summarisation Evaluation](https://arxiv.org/abs/2505.19392)：使用 Simple and Effective Baselines for Code Summarisation 评测编码或程序分析任务表现；控制方法、函数、类或语句级粒度。
+- [Benchmarking and Enhancing LLM Agents in Localizing Linux Kernel Bugs](https://arxiv.org/abs/2505.19489)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（Benchmarking and Enhancing LLM Agents in Localizing Linux Kernel Bugs）形成可复用比较基准。
+- [CIDRe: A Reference-Free Multi-Aspect Criterion for Code Comment Quality Measurement](https://arxiv.org/abs/2505.19757)：定义无参考、多维度的代码注释质量评价准则，为代码生成系统补充文档质量评测指标。
+- [Evaluating the Energy-Efficiency of the Code Generated by LLMs](https://arxiv.org/abs/2505.20324)：在 878 个 LeetCode 风格问题上评测 20 个大模型生成代码的能耗，并与标准人工代码进行比较。
+- [SWE-rebench](https://arxiv.org/abs/2505.20411)（[榜单](https://swe-rebench.com/leaderboard)）：使用 SWE-rebench 评测编码或程序分析任务表现，包含 超过 21,000 个任务；使用仓库上下文或真实 issue 产物。
+- [Can Agents Fix Agent Issues?](https://arxiv.org/abs/2505.20749)：评测软件 agent 能否修复 LLM-agent 系统中的问题；核心思想是提供带可执行环境和失败触发测试的 agent issue 任务，暴露 agent 软件维护不同于传统软件维护的难点。
+- [An LLM-as-Judge Metric for Bridging the Gap with Human Evaluation in SE Tasks](https://arxiv.org/abs/2505.20854)：使用 Human Evaluation in SE Tasks 指标 评测编码或程序分析任务表现，包含 accuracy 等指标。
+- [SIMCOPILOT: Evaluating Large Language Models for Copilot-Style Code Generation](https://arxiv.org/abs/2505.21514)：评测 copilot-style code generation；核心思想是在更接近交互式代码助手的设置下测试模型，而不是只考单次编程题。
+- [GitGoodBench](https://arxiv.org/abs/2505.22583)：使用 GitGoodBench 基准 评测编码或程序分析任务表现，包含 900 个样本、120 个样本、17,469 个样本；使用仓库上下文或真实 issue 产物。
+- [VERINA: Benchmarking Verifiable Code Generation](https://arxiv.org/abs/2505.23135)：VERINA 评测可验证代码生成，要求代码、规格和证明一致，属于软件开发能力的明确 benchmark。
+- [SWE-bench-Live](https://arxiv.org/abs/2505.23419)（[榜单](https://swe-bench-live.github.io/)，[开源代码](https://github.com/SWE-bench-Live/SWE-bench-Live)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [WEDGE / PERFFORGE](https://arxiv.org/abs/2505.23471)（[开源代码](https://github.com/UChiSeclab/perfforge)）：合成刻画代码性能区域的约束和压力测试输入，用于评测代码优化 agent 是否能发现真正暴露性能瓶颈的样例。
+- [LLM Performance for Code Generation on Noisy Tasks](https://arxiv.org/abs/2505.23598)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [GSO](https://arxiv.org/abs/2505.23671)（[项目页](https://gso-bench.github.io/)，[开源代码](https://github.com/gso-bench/gso)）：使用 GSO 评测编码或程序分析任务表现，包含 102 个任务；使用仓库上下文或真实 issue 产物。
+- [SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving](https://arxiv.org/abs/2505.23932)：评什么：长上下文 GitHub issue solving。核心思想是用需要大量项目上下文的仓库 issue 评估 agent。
+- [SwiftEval: Developing a Language-Specific Benchmark for LLM-generated Code Evaluation](https://arxiv.org/abs/2505.24324)：评什么：LLM 生成 Swift 代码的能力。核心思想是用 Swift 语法、API 和生态约束进行语言特定评测。
+- [Breakpoint](https://arxiv.org/abs/2506.00172)：使用 Breakpoint 评测编码或程序分析任务表现，包含 超过 900 个任务；使用仓库上下文或真实 issue 产物。
+- [CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning](https://arxiv.org/abs/2506.00750)：真实代码语义推理基准。核心思想是用 Python、C 和 Java 仓库及执行轨迹评估细粒度语义推理。
+- [CODEMENV: Benchmarking Large Language Models on Code Migration](https://arxiv.org/abs/2506.00894)：提出 CODEMENV，评估模型在代码迁移、语言和环境变化下的能力。
+- [Flow2Code: Evaluating Large Language Models for Flowchart-based Code Generation Capability](https://arxiv.org/abs/2506.02073)：评测基于流程图的代码生成；核心思想是将 15 种语言代码与 code、UML、pseudocode 三类流程图配对。
+- [Exploring Generalizable Automated Program Repair with Large Language Models](https://arxiv.org/abs/2506.03283)：使用 Large Language Models 评测调试、故障定位或自动程序修复，包含 13 个模型。
+- [CETBench: A Novel Dataset constructed via Transformations over Programs for Benchmarking LLMs for Code-Equivalence Checking](https://arxiv.org/abs/2506.04019)：通过程序变换构造的代码等价性检查 benchmark；核心思想是评估模型能否判断超越表面语法的语义等价。
+- [Characterizing Multi-Hunk Patches: Divergence, Proximity, and LLM Repair Challenges](https://arxiv.org/abs/2506.04418)：使用 Characterizing Multi-Hunk Patches 评测编码或程序分析任务表现；检验跨语言泛化。
+- [DCP-Bench-Open: Evaluating LLMs for Constraint Modelling of Discrete Combinatorial Problems](https://arxiv.org/abs/2506.06052)：DCP-Bench-Open 评估 LLM 能否把离散组合优化问题表述为可执行约束模型。
+- [DesignBench: A Comprehensive Benchmark for MLLM-based Front-end Code Generation](https://arxiv.org/abs/2506.06251)：评测基于 MLLM 的前端代码生成。核心思想：检查模型能否把视觉或设计需求转成正确可用的前端实现。
+- [Evaluating LLMs Effectiveness in Detecting and Correcting Test Smells: An Empirical Study](https://arxiv.org/abs/2506.07594)：可作为软件开发 agent 与代码模型的 Bench 候选：围绕 Evaluating LLMs Effectiveness in Detecting and Correcting Test Smells: An Empirical Study 提供可比较的评测任务、数据或分析协议。
+- [WebUIBench: A Comprehensive Benchmark for Evaluating Multimodal Large Language Models in WebUI-to-Code](https://arxiv.org/abs/2506.07818)：评测 MLLM 的 web-UI-to-code 能力；核心思想是按网页开发阶段拆分子能力，而不只看最终页面输出。
+- [ProtocolLLM: RTL Benchmark for SystemVerilog Generation of Communication Protocols](https://arxiv.org/abs/2506.07945)：提出通信协议 SystemVerilog 生成的 RTL 基准。
+- [UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](https://arxiv.org/abs/2506.09289)：面向 SWE-Bench 上代码 agent 的严格评测研究；核心思想是强化单元测试和验证信号，使 SWE 类分数更接近真实修复质量。
+- [Code Roulette](https://arxiv.org/abs/2506.10204)：评估 prompt 变体如何影响生成代码的功能和质量，把 prompt sensitivity 纳入代码生成可靠性 benchmark。
+- [AutoGEEval++: A multi-level and multi-geospatial-modality automated evaluation framework for large language models in geospatial code generation on Google Earth Engine](https://arxiv.org/abs/2506.10365)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（A multi-level and multi-geospatial-modality automated evaluation framework for large language models in geospatial code generation on Google Earth Engine）形成可复用比较基准。
+- [HPCTransCompile: An AI Compiler Generated Dataset for High-Performance CUDA Transpilation and LLM Preliminary Exploration](https://arxiv.org/abs/2506.10401)：提供高性能 CUDA 转译数据集与 LLM 初步评测，将代码 benchmark 扩展到 HPC 转译。
+- [SELU: A Software Engineering Language Understanding Benchmark](https://arxiv.org/abs/2506.10833)：软件工程语言理解 benchmark；核心思想是评测模型是否理解软件工程语言、需求和工件，而不只是生成代码。
+- [Evaluating Small-Scale Code Models for Code Clone Detection](https://arxiv.org/abs/2506.10995)：评测代码克隆或重复缺陷检测，包含 accuracy 等指标、F1；使用仓库上下文或真实 issue 产物。
+- [Ever-Improving Test Suite by Leveraging Large Language Models](https://arxiv.org/abs/2506.11000)：使用 Ever-Improving Test Suite by Leveraging Large Language Models 套件 评测编码或程序分析任务表现。
+- [CoQuIR: A Comprehensive Benchmark for Code Quality-Aware Information Retrieval](https://arxiv.org/abs/2506.11066)：评测关注代码质量的信息检索，检查代码搜索系统能否检索到可用实现，而不只是文本相似片段。
+- [Can LLMs Generate High-Quality Test Cases for Algorithm Problems? TestCase-Eval: A Systematic Evaluation of Fault Coverage and Exposure](https://arxiv.org/abs/2506.12278)：评测算法题测试用例生成能力。核心思想：用 fault coverage 与 fault exposure 衡量生成测试是否覆盖多样输入场景并暴露人类提交中的缺陷。
+- [Querying Large Automotive Software Models: Agentic vs. Direct LLM Approaches](https://arxiv.org/abs/2506.13171)：可作为软件开发 agent 与代码模型的 Bench 候选：围绕 Querying Large Automotive Software Models: Agentic vs. Direct LLM Approaches 提供可比较的评测任务、数据或分析协议。
+- [Empirical Evaluation of Large Language Models in Automated Program Repair](https://arxiv.org/abs/2506.13186)：使用 Large Language Models in Automated Program Repair 评测调试、故障定位或自动程序修复；衡量效率、成本、运行时间或资源使用。
+- [FrontendBench: A Benchmark for Evaluating LLMs on Front-End Development via Automatic Evaluation](https://arxiv.org/abs/2506.13832)：用自动评测测试 LLM 前端开发能力；核心思想是结合功能类别和交互式测试场景评估 Web UI 代码。
+- [Comprehensive Verilog Design Problems: A Next-Generation Benchmark Dataset for Evaluating Large Language Models and Agents on RTL Design and Verification](https://arxiv.org/abs/2506.14074)：提供可复用评测目标、排行榜或测量协议。
+- [AI-Driven Tools in Modern Software Quality Assurance: An Assessment of Benefits, Challenges, and Future Directions](https://arxiv.org/abs/2506.16586)：使用 AI-Driven Tools in Modern Software Quality Assurance: An Assessment of Benefits, Challenges, and Future 评测代码可读性、可维护性、异味或质量评价，包含 coverage 等指标；衡量效率、成本、运行时间或资源使用。
+- [Is Your Automated Software Engineer Trustworthy?](https://arxiv.org/abs/2506.17812)：面向自动化软件工程师的可信性评测。核心思想是不只看任务成功，还评估 coding agent 在真实开发条件下的安全性、鲁棒性和行为可靠性。
+- [SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications](https://arxiv.org/abs/2506.18951)：提出可执行 SQL issue debugging 基准 BIRD-CRITIC，并配套 Six-Gym 训练环境和 Bird-Fixer 修复 agent。
+- [Text2Cypher Across Languages: Evaluating and Finetuning LLMs](https://arxiv.org/abs/2506.21445)：评测自然语言到 SQL 或图查询生成，包含 accuracy 等指标；检验跨语言泛化。
+- [Can Large Language Models Help Students Prove Software Correctness? An Experimental Study with Dafny](https://arxiv.org/abs/2506.22370)：实证评估编程教育中的代码生成、反馈或评估；以学生或课堂产物作为评测场景。
+- [What characteristics make ChatGPT effective for software issue resolution? An empirical study of task, project, and conversational signals in GitHub issues](https://arxiv.org/abs/2506.22390)：实证分析 ChatGPT 解决 GitHub issue 时受任务、项目和对话信号影响的模式。
+- [DyCodeEval](https://proceedings.mlr.press/v267/chen25ba.html)：使用 DyCodeEval 评测编码或程序分析任务表现；把污染、记忆化或重叠视为有效性风险。
+- [KernelBench](https://proceedings.mlr.press/v267/ouyang25a.html)（[榜单](https://scalingintelligence.stanford.edu/KernelBenchLeaderboard/)，[开源代码](https://github.com/ScalingIntelligence/KernelBench)）：评什么：正确且高效的 GPU kernel 生成。核心思想：把性能感知的系统代码作为一等 benchmark 目标，而不只看功能正确性。
 - [TypyBench](https://proceedings.mlr.press/v267/dong25l.html)（[开源代码](https://github.com/typybench/typybench)）：评什么：仓库级 Python 类型推断。核心思想：在真实项目上下文、依赖和类型约束下测试软件维护推理能力。
-- [SWE-Bench-CL](https://arxiv.org/abs/2507.00014)：评什么：按仓库演化时间线组织的持续学习式 SWE 任务。核心思想：把 SWE-Bench Verified 问题重排为自然的 issue 序列，直接评估 agent 是否能积累经验、迁移知识并避免遗忘。（[开源代码](https://github.com/thomasjoshi/agents-never-forget)）
-- [M2RC-EVAL](https://aclanthology.org/2025.acl-long.763/)：评什么：大规模多语言仓库级代码补全。核心思想：把 repo-level completion 扩展到更多编程语言，并按细粒度补全场景报告表现，而不只给整体平均值。
-- [WebUIBench](https://aclanthology.org/2025.findings-acl.815/)：评什么：多模态大模型的 WebUI-to-code 生成。核心思想：把网页生成拆成多维子能力，让前端代码失败能被定位，而不是只用单一页面相似度评分。
-- [ProjectEval](https://aclanthology.org/2025.findings-acl.1036/)：评什么：编程 agent 的项目级代码生成。核心思想：模拟面向用户的项目需求，并用自动化交互式评测判断 agent 生成的项目是否可用，而不是只看语法是否像代码。
-- [TritonBench](https://aclanthology.org/2025.findings-acl.1183/)：评什么：LLM 生成 Triton GPU operator 的能力。核心思想：把代码评测推进到性能关键的 ML kernel 编程，同时考察正确性、并行约束和优化质量。
-- [SWE-MERA](https://arxiv.org/abs/2507.11059)：评什么：动态采集、持续更新的真实 GitHub issue resolving。核心思想：用自动化筛选、LLM 质量验证和时间窗口化榜单降低污染风险，并支持按任务时间段观察 agent 泛化。（[Leaderboard](https://mera-evaluation.github.io/demo-swe-mera/)，[数据集](https://huggingface.co/datasets/MERA-evaluation/SWE-MERA)）
+- [SWE-Bench-CL](https://arxiv.org/abs/2507.00014)（[开源代码](https://github.com/thomasjoshi/agents-never-forget)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [Incoherence as Oracle-less Measure of Error in LLM-Based Code Generation](https://arxiv.org/abs/2507.00057)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（Incoherence as Oracle-less Measure of Error in LLM-Based Code Generation）形成可复用比较基准。
+- [AutoChunker: Structured Text Chunking and its Evaluation](https://doi.org/10.18653/v1/2025.acl-industry.69)：分类说明：该条目实际是结构化文本切分，不是软件开发基准；只有作为文档工具证据时才相邻相关。
+- [HumanEval Pro and MBPP Pro: Evaluating Large Language Models on Self-invoking Code Generation Task](https://aclanthology.org/2025.findings-acl.686/)：评测自调用代码生成，把 HumanEval 与 MBPP 扩展到模型需要判断何时调用辅助函数或生成代码的场景。
+- [M2RC-EVAL](https://aclanthology.org/2025.acl-long.763/)：使用 M2RC-EVAL 评测编码或程序分析任务表现。
+- [Echoes of AI: Investigating the Downstream Effects of AI Assistants on Software Maintainability](https://arxiv.org/abs/2507.00788)：评估 AI 助手对软件可维护性的下游影响。
+- [WebUIBench](https://aclanthology.org/2025.findings-acl.815/)：使用 WebUIBench 基准 评测前端、网页、UI 或全栈 Web 生成。
+- [ProjectEval](https://aclanthology.org/2025.findings-acl.1036/)（[榜单](https://ryanloil.github.io/ProjectEval/)）：使用 ProjectEval 基准 评测编码或程序分析任务表现。
+- [TritonBench](https://aclanthology.org/2025.findings-acl.1183/)：使用 TritonBench 评测硬件、GPU kernel 或 RTL 代码生成。
+- [Can Language Models Replace Programmers for Coding? REPOCOD Says 'Not Yet'](https://doi.org/10.18653/v1/2025.acl-long.1204)：评测语言模型能否完成真实 repository coding；核心思想是在实际仓库语境中测试代码理解和修改能力。
+- [HLStrans: Dataset for C-to-HLS Hardware Code Synthesis](https://arxiv.org/abs/2507.04315)：提供 C-to-HLS 硬件代码合成数据集，将代码生成评测扩展到硬件设计流程。
+- [CORE: Benchmarking LLMs Code Reasoning Capabilities through Static Analysis Tasks](https://arxiv.org/abs/2507.05269)：通过静态分析任务评估代码推理能力。
+- [CoreCodeBench: Decoupling Code Intelligence via Fine-Grained Repository-Level Tasks](https://arxiv.org/abs/2507.05281)：通过细粒度仓库级任务评测 code intelligence；核心思想是把 repo-level coding ability 拆成可诊断子任务，避免只给出单一综合分数。
+- [Measuring how changes in code readability attributes affect code quality evaluation by Large Language Models](https://arxiv.org/abs/2507.05289)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [ASSURE: Metamorphic Testing for AI-powered Browser Extensions](https://arxiv.org/abs/2507.05307)：使用 ASSURE 评测测试生成、测试充分性或模糊测试；使用仓库上下文或真实 issue 产物。
+- [SLDB: An End-To-End Heterogeneous System-on-Chip Benchmark Suite for LLM-Aided Design](https://arxiv.org/abs/2507.06376)：使用 SLDB 基准 评测编码或程序分析任务表现。
+- [CodeJudgeBench: Benchmarking LLM-as-a-Judge for Coding Tasks](https://arxiv.org/abs/2507.10535)：面向 coding tasks 的 LLM-as-a-judge 基准。核心思想是检验 judge model 是否能可靠判断代码正确性，而不是默认通用评审能力能迁移到编程。
+- [SIMCODE: A Benchmark for Natural Language to ns-3 Network Simulation Code Generation](https://arxiv.org/abs/2507.11014)：评测从自然语言生成 ns-3 网络仿真代码的能力。
+- [SWE-MERA](https://arxiv.org/abs/2507.11059)（[榜单](https://mera-evaluation.github.io/demo-swe-mera/)，[数据集](https://huggingface.co/datasets/MERA-evaluation/SWE-MERA)）：使用 SWE-MERA 基准 评测编码或程序分析任务表现，包含 10,000 个任务、300 个样本；使用仓库上下文或真实 issue 产物。
+- [MERA Code: A Unified Framework for Evaluating Code Generation Across Tasks](https://arxiv.org/abs/2507.12284)：跨任务代码生成统一评估框架。核心思想是标准化多种代码生成设置，减少模型比较的任务碎片化。
+- [GitChameleon: Evaluating AI Code Generation Against Python Library Version Incompatibilities](https://arxiv.org/abs/2507.12367)：评估 AI code generation 面对 Python library version incompatibilities 的表现；核心思想是测试 agent 能否适应依赖 API 变化。
 - [SWE-Perf](https://arxiv.org/abs/2507.12415)（[项目页](https://swe-perf.github.io/)，[开源代码](https://github.com/swe-perf/swe-perf)）：评什么：仓库级代码性能优化。核心思想：给 agent 真实代码库、目标函数和性能相关测试，使补丁必须在保持正确性的同时降低实测运行时间。
-- [AlgoTune](https://arxiv.org/abs/2507.15887)：评什么：数值算法和代码性能优化。核心思想：让 agent 在可执行反馈下同时保证正确性和速度，补足 SWE 修 bug 之外对算法工程、性能诊断和优化搜索的评测。
-- [BinMetric](https://www.ijcai.org/proceedings/2025/858)：评什么：大语言模型的二进制代码分析。核心思想：把代码评测从源代码理解扩展到编译后二进制，需要模型推断符号、控制流和底层语义。
-- [GitTaskBench](https://arxiv.org/abs/2508.18993)：评什么：repo-level 的真实代码代理任务（理解仓库、配环境、增量开发/修复、交付）。核心思想：用更端到端的仓库任务链路衡量 code agent 的“真实工程闭环”，并引入成本/效率维度。（[开源代码](https://github.com/QuantaAlpha/GitTaskBench)）
-- [robust-kbench](https://arxiv.org/abs/2509.14279)：评测 agentic CUDA kernel generation、verification 与 optimization。核心思想是用更多样的正确性和性能测试补上 kernel benchmark 漏洞，再衡量能把 PyTorch 代码迭代转写为优化 CUDA kernel 的 agent。
-- [SWE-Bench Pro](https://arxiv.org/abs/2509.16941)：评什么：更高难、更贴近“工程级代理”需求的 SWE 任务集。核心思想：提高任务复杂度与流程要求，拉开强 agent 的区分度。
-- [FeatBench](https://arxiv.org/abs/2509.22237)：评什么：只给自然语言需求的 repository-level feature implementation。核心思想：不给代码提示，并用持续更新流水线降低污染，专门观察 agent 的需求理解、范围控制与回归风险。（[开源代码](https://github.com/TsinghuaISE/FeatBench)）
-- [TF-Bench](https://arxiv.org/abs/2509.23686)：评什么：通过 System F 类型推断评测程序语义推理。核心思想：用形式化演绎式程序语言任务测试模型是否具备超越 token 关联或测试捷径的语义推理能力。
-- [CRUST-Bench](https://openreview.net/forum?id=8xofWL61S9)：评什么：C 到 safe Rust 的转译。核心思想：评估语义保持和内存安全约束同时成立的实际代码转换任务。
-- [ArtifactsBench](https://arxiv.org/abs/2510.04316)：评什么：更偏“可交付产物（artifacts）”导向的软件任务完成。核心思想：把输出约束为可验证的工程产物与工作流结果，而不是单一代码片段。
-- [Holistic Agent Leaderboard（HAL）](https://arxiv.org/abs/2510.11977)（[开源代码](https://github.com/princeton-pli/hal-harness)）：评什么：跨 benchmark 的 agent 统一评测，覆盖 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond 等软件工程任务。核心思想：把任务运行、成本、时间、轨迹和 leaderboard 提交流程标准化，便于比较不同软件 agent harness 的通用性。
-- [CodeAssistBench](https://papers.nips.cc/paper_files/paper/2025/hash/ba9d95c583a154bb77b5f5900691430e-Abstract-Datasets_and_Benchmarks_Track.html)（[开源代码](https://github.com/amazon-science/CodeAssistBench)）：评什么：多轮 chat-based code assistance。核心思想：用容器化真实仓库、模拟用户和真实问题衡量 code assistant 在多轮问答、上下文追踪和代码库理解中的帮助质量，而不是只测一次性补丁生成。
-- [Paper2Web](https://arxiv.org/abs/2510.15842)：评什么：从研究论文生成可交互的学术项目网站。核心思想：在通用前端指令之外加入论文条件输入、版式与交互性指标，以及 PaperQuiz 式知识保留检查。
-- [ImpossibleBench](https://arxiv.org/abs/2510.20270)：评什么：LLM agent 利用测试用例漏洞的倾向。核心思想：基于 LiveCodeBench、SWE-bench 等构造不可能完成的编码任务变体，诊断“通过测试不等于完成真实任务”的 specification gaming。
-- [CodeClash](https://arxiv.org/abs/2511.00839)：评什么：面向开放目标的软件工程锦标赛。核心思想：让 agent 在多轮 tournament 中自主修改代码库、读取日志、写测试和与对手竞争，衡量长期代码维护与策略性改进能力。（[项目页](https://codeclash.ai/)，[开源代码](https://github.com/CodeClash-ai/CodeClash)）
+- [AlgoTune](https://arxiv.org/abs/2507.15887)：使用 AlgoTune 评测编码或程序分析任务表现；衡量效率、成本、运行时间或资源使用。
+- [RealBench: Benchmarking Verilog Generation Models with Real-World IP Designs](https://arxiv.org/abs/2507.16200)：用真实 IP 级 Verilog 设计评测大模型硬件代码生成，包含结构化规格、严格 testbench、形式化检查以及模块级和系统级任务。
+- [MultiKernelBench: A Multi-Platform Benchmark for Kernel Generation](https://arxiv.org/abs/2507.17773)：多平台 kernel generation benchmark。核心思想是评测代码模型能否在不同硬件和平台约束下生成高效 kernel。
+- [NoCode-bench: A Benchmark for Evaluating Natural Language-Driven Feature Addition](https://arxiv.org/abs/2507.18130)：评测自然语言驱动的功能添加；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [SLICEMATE: Accurate and Scalable Static Program Slicing via LLM-Powered Agents](https://arxiv.org/abs/2507.18957)：LLM-powered static program slicing agent 与 SliceBench；核心思想是用 synthesis、verification、refinement agents 生成切片，并在 2,200 个 Java/Python 标注程序上评测。
+- [ReCatcher: Towards LLMs Regression Testing for Code Generation](https://arxiv.org/abs/2507.19390)：面向 LLM 代码生成的回归测试框架；核心思路是从正确性、静态代码质量和执行性能三方面比较模型更新并捕获退化。
+- [CrossPL: Evaluating Large Language Models on Cross Programming Language Code Generation](https://arxiv.org/abs/2507.19904)：评测跨编程语言代码生成；核心思想是检查 coding model 在不同编程语言之间生成代码时能否保持意图与可执行行为。
+- [LLM4VV:: Evaluating Cutting-Edge LLMs for Generation and Evaluation of Directive-Based Parallel Programming Model Compiler Tests](https://arxiv.org/abs/2507.21447)：使用 LLM4VV 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [MultiAIGCD: A Comprehensive dataset for AI Generated Code Detection Covering Multiple Languages, Models,Prompts, and Scenarios](https://arxiv.org/abs/2507.21693)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [IFEvalCode: Controlled Code Generation](https://arxiv.org/abs/2507.22462)：评测受控代码生成。核心思想：测试代码模型能否在功能正确之外满足风格、长度、结构等细节约束。
+- [COBOL-to-Java Code Transformation Quality Evaluation](https://arxiv.org/abs/2507.23356)：评估 COBOL 到 Java 转换质量，为软件 agent 补充 legacy-code modernization benchmark 轴。
+- [Benchmarking LLMs for Unit Test Generation from Real-World Functions](https://arxiv.org/abs/2508.00408)：评测 LLM 面向真实函数的 unit-test generation；核心思想是降低数据污染和简单函数偏置对测试生成评测的影响。
+- [BinMetric](https://www.ijcai.org/proceedings/2025/858)：使用 BinMetric 基准 评测编码或程序分析任务表现。
+- [MRG-Bench: Evaluating and Exploring the Requirements of Context for Repository-Level Code Generation](https://arxiv.org/abs/2508.02998)：使用 MRG-Bench 评测需求、软件模型、流程模型或工作量估计任务；使用仓库上下文或真实 issue 产物。
+- [A System Model Generation Benchmark from Natural Language Requirements](https://arxiv.org/abs/2508.03215)：评测从自然语言需求生成形式化系统模型；核心思想是在实现开始前测试需求理解和模型语法正确性。
+- [Refining Critical Thinking in LLM Code Generation: A Faulty Premise-based Evaluation Framework](https://arxiv.org/abs/2508.03622)：评测错误用户前提下的代码生成；核心思想是测试模型在编码前是否会质疑不可能或误导性需求。
+- [More Than a Score: Probing the Impact of Prompt Specificity on LLM Code Generation](https://arxiv.org/abs/2508.03678)：评什么：评测 prompt specificity 对代码生成结果的影响，提醒 benchmark prompt 稳定性风险。
+- [Benchmarking Web API Integration Code Generation](https://doi.org/10.1109/aiware69974.2025.00034)：基准化 Web API 集成代码生成；核心思想是测试文档使用、参数接线和可执行集成，而不只是单函数生成。
+- [SE-Jury: An LLM-as-Ensemble-Judge Metric for Narrowing the Gap with Human Evaluation in SE](https://doi.org/10.1109/ase63991.2025.00214)：面向软件工程评测的 LLM-as-ensemble-judge 指标；核心思想是通过集成多个 judge 视角缩小与人工评价的差距。
+- [Fixbench-RTL: A Comprehensive Benchmark for Evaluating LLMs on RTL Debugging](https://doi.org/10.1109/asianhost68425.2025.11370376)：评估 LLM RTL debugging 能力的 benchmark；核心思想是在硬件描述修复中使用可执行或结构化验证，而不只评普通软件 bug。
+- [DocStringEval: Evaluating the Effectiveness of Language Models for Code Explanation Through DocString Generation](https://doi.org/10.1109/etcc65847.2025.11108633)：通过 docstring 生成评测语言模型的代码解释能力；核心思想是用可评分的 docstring 生成来衡量模型是否理解代码行为并能解释它。
+- [Large Language Models as Configuration Validators](https://doi.org/10.1109/icse55347.2025.00017)：评测 LLM 进行软件配置验证的能力；核心思想是检验模型能否辅助或替代昂贵的开发者手写验证规则。
+- [Unseen Horizons: Unveiling the Real Capability of LLM Code Generation Beyond the Familiar](https://doi.org/10.1109/icse55347.2025.00082)：评测 LLM 在 familiar 问题之外的代码生成能力；核心思想是把真实泛化能力与接近记忆或熟悉样例的表现区分开。
+- [Evaluating Correct-Consistency and Robustness in Code-Generating LLMs](https://doi.org/10.1109/icst62969.2025.10988971)：评估 code-generating LLM 的正确一致性和鲁棒性；核心思想是检查语义相关提示是否产生正确且稳定的代码输出。
+- [PCEBench: A Multi-Dimensional Benchmark for Evaluating Large Language Models in Parallel Code Generation](https://doi.org/10.1109/ipdps64566.2025.00055)：评什么：并行代码生成能力。核心思想是同时评估正确性和并行编程约束，而不是只测顺序代码合成。
+- [The “Question Neighbourhood” Approach for Systematic Evaluation of Code-Generating LLMs](https://doi.org/10.1109/tse.2025.3612251)：用 question neighbourhood 系统评估 code-generating LLMs 的方法。核心思想是通过相邻 prompt 变体测试鲁棒性，而不是只评一个任务实例。
+- [STEPWISE-CODEX-Bench / SX-Bench](https://arxiv.org/abs/2508.05193)：评测复杂多函数代码理解与细粒度执行步数推理，把代码评测从单函数输入输出正确性推进到控制流、数据流和动态执行过程理解。
+- [Empirical Evaluation of AI-Assisted Software Package Selection: A Knowledge Graph Approach](https://arxiv.org/abs/2508.05693)：评测数据科学、Notebook、API 或包选择编码任务，包含 16,887 个仓库；使用仓库上下文或真实 issue 产物。
+- [ArchXBench](https://arxiv.org/abs/2508.06047)：评测 LLM 驱动的复杂数字系统 RTL 合成，把代码生成评测扩展到硬件描述和强验证约束的设计任务。
+- [Non-programmers Assessing AI-Generated Code: A Case Study of Business Users Analyzing Data](https://arxiv.org/abs/2508.06484)：使用 Non-programmers Assessing AI-Generated Code 案例研究 评测AI 生成代码检测与来源分类；比较提示或上下文示例设置。
+- [Hallucinations in Code Change to Natural Language Generation: Prevalence and Evaluation of Detection Metrics](https://arxiv.org/abs/2508.08661)：使用 Hallucinations in Code Change to Natural Language Generation: Prevalence and Evaluation of Detection Metrics 评测代码变更理解、分类与生成任务；检验跨语言泛化。
+- [Translating Tax Law to Code with LLMs: A Benchmark and Evaluation Framework](https://doi.org/10.18653/v1/2025.nllp-1.4)：面向税法到代码转换的 benchmark 和评测框架；核心思想是测试模型能否把法律规则转化为可执行程序逻辑。
+- [When Faster Isn’t Greener: The Hidden Costs of LLM-Based Code Optimization](https://doi.org/10.1109/ase63991.2025.00139)：评什么：评测 LLM 代码优化在性能和能耗上的隐藏成本。
+- [Polyglot: An Extensible Framework to Benchmark Code Translation with LLMs](https://doi.org/10.1109/ase63991.2025.00195)：围绕软件开发 Agent 与代码能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Evaluating LLMs for Arabic Code Summarization: Challenges and Insights from GPT-4](https://doi.org/10.1109/cdma61895.2025.00017)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（Challenges and Insights from GPT-4）形成可复用比较基准。
+- [Functional and Non-functional Requirements Classification: A Comparative Evaluation of Pre-trained LLMs and ML Techniques](https://doi.org/10.1109/comtech65062.2025.11034464)：围绕软件开发 Agent 与代码能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Analyzing the impact of prompt engineering on efficiency, code quality, and security in CRUD application development](https://doi.org/10.1109/icarc64760.2025.10963005)：围绕软件开发 Agent 与代码能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Do Large Language Models Contain Software Architectural Knowledge? : An Exploratory Case Study with GPT](https://doi.org/10.1109/icsa65012.2025.00012)：可作为软件开发 agent 与代码模型的 Bench 候选：围绕 Do Large Language Models Contain Software Architectural Knowledge? : An Exploratory Case Study with GPT 提供可比较的评测任务、数据或分析协议。
+- [Is ChatGPT-Generated Code Really Green?: Evaluating AI-Generated Solutions for Energy-Efficient Coding Practices](https://doi.org/10.1109/ms.2025.3644903)：评估 ChatGPT 生成代码的能耗效率。
+- [OpenRTLSet: A Fully Open-Source Dataset for Large Language Model-based Verilog Module Design](https://doi.org/10.1109/iclad65226.2025.00038)：发布面向 LLM Verilog 模块设计的开放数据集，为 coding benchmark 补充 HDL 生成覆盖。
+- [Defects4Log](https://arxiv.org/abs/2508.11305)：评测 LLM 对 logging-code defects 的检测和推理能力，为功能性修 bug 之外补充软件质量维护轴。
+- [TRACE: Evaluating Execution Efficiency of LLM-Based Code Translation](https://arxiv.org/abs/2508.11468)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（Evaluating Execution Efficiency of LLM-Based Code Translation）形成可复用比较基准。
+- [Benchmark Dataset Generation and Evaluation for Excel Formula Repair with LLMs](https://arxiv.org/abs/2508.11715)：评测 LLM 修复 Excel 公式的能力；核心思想是把电子表格公式错误整理为专门的 benchmark dataset 和评测协议，而不是把表格公式当作普通文本处理。
+- [Clean Code, Better Models: Enhancing LLM Performance with Smell-Cleaned Dataset](https://arxiv.org/abs/2508.11958)：使用 Clean Code, Better Models 数据集 评测代码可读性、可维护性、异味或质量评价，包含 50 个仓库；衡量效率、成本、运行时间或资源使用。
+- [Uncovering Systematic Failures of LLMs in Verifying Code Against Natural Language Specifications](https://arxiv.org/abs/2508.12358)：研究 LLM 根据自然语言规格验证代码时的系统性失败。核心思想是评估模型能否判断实现是否满足需求，这是编码 agent 循环中的关键 verifier 能力。
+- [Wit-HW: Bug Localization in Hardware Design Code via Witness Test Case Generation](https://arxiv.org/abs/2508.14414)：使用 Wit-HW 评测硬件、GPU kernel 或 RTL 代码生成，包含 41 个缺陷、13 个缺陷；衡量效率、成本、运行时间或资源使用。
+- [WebMMU: A Benchmark for Multimodal Multilingual Website Understanding and Code Generation](https://arxiv.org/abs/2508.16763)：类型：benchmark/评测协议。核心价值：为 2.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [CASP: An evaluation dataset for formal verification of C code](https://arxiv.org/abs/2508.18798)：评测程序分析、类型推理或形式化验证任务，包含 506 个样本对；检验跨语言泛化。
+- [Interactive Evaluation for Multi-Requirement Software Engineering Tasks](https://arxiv.org/abs/2508.18905)：评什么：结构化反馈对话下的软件工程能力。核心思想：把每个任务建模为需求依赖图，并由 interviewer 提供最小化定向提示，衡量模型能否从错误中恢复并在交互中满足多项需求。
+- [GitTaskBench](https://arxiv.org/abs/2508.18993)（[开源代码](https://github.com/QuantaAlpha/GitTaskBench)）：使用 GitTaskBench 基准 评测编码或程序分析任务表现，包含 54 个任务、7 个领域；使用仓库上下文或真实 issue 产物。
+- [Benchmarking and Studying the LLM-based Code Review](https://arxiv.org/abs/2509.01494)：评测并分析 LLM 代码评审行为。
+- [The Impact of Critique on LLM-Based Model Generation from Natural Language: The Case of Activity Diagrams](https://arxiv.org/abs/2509.03463)：使用 LLM-Based Model Generation from Natural Language: The Case of Activity Diagrams 评测代码审查与批注质量；使用仓库上下文或真实 issue 产物。
+- [Comparative Evaluation of Large Language Models for Test-Skeleton Generation](https://arxiv.org/abs/2509.04644)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Analyzing the Instability of Large Language Models in Automated Bug Injection and Correction](https://arxiv.org/abs/2509.06429)：面向软件开发能力的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Analyzing the Instability of Large Language Models in Automated Bug Injection and Correction”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [SWE-Mirror](https://arxiv.org/abs/2509.08724)：使用 SWE-Mirror 评测编码或程序分析任务表现，包含 40 个仓库、60,671 个任务；使用仓库上下文或真实 issue 产物。
+- [ReDef: Do Code Language Models Truly Understand Code Changes for Just-in-Time Software Defect Prediction?](https://arxiv.org/abs/2509.09192)：构建基于 revert 的即时软件缺陷预测基准，检验代码语言模型是否真正理解代码变更而非噪声标签。
+- [Cross-Domain Evaluation of Transformer-Based Vulnerability Detection on Open & Industry Data](https://arxiv.org/abs/2509.09313)：使用 Open & Industry Data 评测安全编码或漏洞检测；衡量效率、成本、运行时间或资源使用。
+- [Designing and Evaluating AI Margin Notes in Document Reader Software](https://arxiv.org/abs/2509.09840)：分类说明：该条目研究文档阅读器中的 AI 边注，不是编程或软件工程任务评测。
+- [SWE-Effi](https://arxiv.org/abs/2509.09853)：在资源约束下重新评估软件代理，把结果准确率与 token、时间成本结合起来，暴露昂贵失败和 scaffold-模型效率权衡。
+- [When the Code Autopilot Breaks: Why LLMs Falter in Embedded Machine Learning](https://arxiv.org/abs/2509.10946)：围绕软件开发 Agent 与代码能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [TransLibEval: Demystify Large Language Models'Capability in Third-party Library-targeted Code Translation](https://arxiv.org/abs/2509.12087)：评什么：面向第三方库的代码翻译能力。核心思想是测试模型是否保留库语义和 API 使用，而不只是语法转换。
+- [Evaluating Large Language Models for Code Translation: Effects of Prompt Language and Prompt Design](https://arxiv.org/abs/2509.12973)：评测提示语言和提示设计对代码翻译性能的影响。
+- [An Empirical Study on Failures in Automated Issue Solving](https://arxiv.org/abs/2509.13941)：面向自动 issue solving agent 的失败分析研究。核心思想是超越总解决率，细分定位、推理、补丁生成和验证阶段的失败来源。
+- [robust-kbench](https://arxiv.org/abs/2509.14279)：使用 Robust Agentic CUDA Kernel Benchmarking, Verification, and Optimization 评测编码或程序分析任务表现，包含 runtime 等指标；用扰动或分布偏移考察鲁棒性。
+- [SWE-QA: Can Language Models Answer Repository-level Code Questions?](https://arxiv.org/abs/2509.14635)：仓库级代码问答基准；核心思想是测试模型是否能通过浏览和理解整个仓库回答代码问题。
+- [CodeFuse-CR-Bench: A Comprehensiveness-aware Benchmark for End-to-End Code Review Evaluation in Python Projects](https://arxiv.org/abs/2509.14856)：以 comprehensiveness-aware 评分评估 Python 项目中的端到端代码审查，为软件开发评测补充区别于补丁生成、单元测试生成和仓库缺陷修复的代码审查轴。
+- [CCrepairBench: A High-Fidelity Benchmark and Reinforcement Learning Framework for C++ Compilation Repair](https://arxiv.org/abs/2509.15690)：面向 C++ compilation repair 的高保真 benchmark；核心思想是用真实数据和可执行反馈评测编译错误自动修复。
+- [SWE-Bench Pro](https://arxiv.org/abs/2509.16941)（[榜单](https://scaleapi.github.io/SWE-bench_Pro-os/)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [BASFuzz: Towards Robustness Evaluation of LLM-based NLP Software via Automated Fuzz Testing](https://arxiv.org/abs/2509.17335)：实证评估生成软件的测试生成、测试质量或模糊测试；以扰动或分布偏移作为压力因素。
+- [SR-Eval: Evaluating LLMs on Code Generation under Stepwise Requirement Refinement](https://arxiv.org/abs/2509.18808)：SR-Eval 评估逐步需求细化下的代码生成能力。
+- [On the Soundness and Consistency of LLM Agents for Executing Test Cases Written in Natural Language](https://arxiv.org/abs/2509.19136)：围绕软件开发 Agent 与代码能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [V-GameGym: Visual Game Generation for Code Large Language Models](https://arxiv.org/abs/2509.20136)：评估 code LLM 的视觉游戏生成能力；核心思想是测试模型能否生成符合视觉和行为要求的可执行游戏产物。
+- [Evaluating and Mitigating Errors in LLM-Generated Web API Integrations](https://arxiv.org/abs/2509.20172)：评估并缓解 LLM 生成 Web API integration 的错误；适合考察代码代理正确调用外部服务的能力。
+- [ML Code Smells: From Specification to Detection](https://arxiv.org/abs/2509.20491)：定义并检测机器学习代码异味，为面向 ML 的代码智能体补充软件质量任务。
+- [Library Hallucinations in LLMs: Risk Analysis Grounded in Developer Queries](https://arxiv.org/abs/2509.22202)：可作为软件开发 agent 与代码模型的 Bench 候选：围绕 Library Hallucinations in LLMs: Risk Analysis Grounded in Developer Queries 提供可比较的评测任务、数据或分析协议。
+- [FeatBench](https://arxiv.org/abs/2509.22237)（[开源代码](https://github.com/TsinghuaISE/FeatBench)）：使用 FeatBench 评测编码或程序分析任务表现，包含 157 个任务、27 个仓库；使用仓库上下文或真实 issue 产物。
+- [DafnyCOMP](https://arxiv.org/abs/2509.23061)：使用 Local Success Does Not Compose 评测程序分析、类型推理或形式化验证任务；检验跨语言泛化。
+- [PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](https://arxiv.org/abs/2509.23338)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（A Benchmark for Evaluating LLMs in Cross-System SQL Translation）形成可复用比较基准。
+- [TF-Bench](https://arxiv.org/abs/2509.23686)：使用 Type Inference in System F 评测编码或程序分析任务表现，包含 accuracy 等指标；用扰动或分布偏移考察鲁棒性。
+- [SolContractEval: A Benchmark for Evaluating Contract-Level Solidity Code Generation](https://arxiv.org/abs/2509.23824)：评测合约级 Solidity 代码生成；核心思想是从孤立函数扩展到完整智能合约约束，检查 coding model 能否生成连贯的合约代码。
+- [PerfBench: Can Agents Resolve Real-World Performance Bugs?](https://arxiv.org/abs/2509.24091)：评什么：agent 是否能解决真实性能 bug。核心思想是测试性能诊断与修复，而不只做功能性 issue fixing。
+- [LogLead](https://arxiv.org/abs/2509.24352)：使用 Walk the Talk 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [A Benchmark for Localizing Code and Non-Code Issues in Software Projects](https://arxiv.org/abs/2509.25242)：它提供软件工程、代码事实性、仓库任务或补丁迁移评测，适合补充 software-development Bench。
+- [BloomAPR](https://arxiv.org/abs/2509.25465)：使用 BloomAPR 框架 评测编码或程序分析任务表现；衡量效率、成本、运行时间或资源使用。
+- [CRUST-Bench](https://openreview.net/forum?id=8xofWL61S9)：使用 CRUST-Bench 基准 评测编码或程序分析任务表现，包含 100 个仓库、19 个任务；使用仓库上下文或真实 issue 产物。
+- [CRUST-Bench: A Comprehensive Benchmark for C-to-safe-Rust Transpilation](https://arxiv.org/abs/2504.15254)：CRUST-Bench 针对 C 到 safe Rust 转译建立 benchmark，覆盖代码迁移与安全语言转换能力。
+- [ChatGPT in Introductory Programming: Counterbalanced Evaluation of Code Quality, Conceptual Learning, and Student Perceptions](https://arxiv.org/abs/2510.00946)：实证评估代码可读性、可维护性、坏味道或质量评价；以学生或课堂产物作为评测场景。
+- [Selecting Cybersecurity Requirements: Effects of LLM Use and Professional Software Development Experience](https://arxiv.org/abs/2510.04274)：评测安全编码或漏洞检测，包含 cost 等指标；检验跨语言泛化。
+- [ArtifactsBench](https://arxiv.org/abs/2510.04316)：使用 Deep Learning Approaches: A Hybrid CNN-RNN 框架 评测编码或程序分析任务表现，包含 accuracy 等指标；衡量效率、成本、运行时间或资源使用。
+- [Challenge on Optimization of Context Collection for Code Completion](https://arxiv.org/abs/2510.04349)：提供 ASE 挑战数据和评测协议，考察如何选择项目上下文以提升 fill-in-the-middle 代码补全。
+- [Spec2Control: Automating PLC/DCS Control-Logic Engineering from Natural Language Requirements with LLMs - A Multi-Plant Evaluation](https://arxiv.org/abs/2510.04519)：实证评估需求、软件模型、流程模型或任务流生成；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [FreshBrew: A Benchmark for Evaluating AI Agents on Java Code Migration](https://arxiv.org/abs/2510.04852)：评测 AI agent 的 Java 代码迁移能力。核心思想：测试 agent 能否在真实仓库中处理版本升级与依赖变更。
+- [BIRD-INTERACT: Re-imagining Text-to-SQL Evaluation for Large Language Models via Lens of Dynamic Interactions](https://arxiv.org/abs/2510.05318)：评测动态交互式 text-to-SQL；核心思想是在数据库 assistant 环境中覆盖歧义查询、执行错误和变化的用户需求。
+- [Cognitive Layered Test-Case Generation Evaluation](https://arxiv.org/abs/2510.05365)：按 Bloom 认知层次评测从 bug report 生成测试用例的能力，使用 Defects4J、GHRB 和变异版本考察语言与语义泛化。
+- [Automated Program Repair of Uncompilable Student Code](https://arxiv.org/abs/2510.06187)：测试故障定位、缺陷修复或自动程序修复；以学生或课堂产物作为评测场景。
+- [VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code](https://arxiv.org/abs/2510.06296)：评测形式可验证代码的等价性，且不依赖单一标准答案；核心思想是用等价评分判断生成程序是否保持可验证语义。
+- [Vibe Checker](https://arxiv.org/abs/2510.07315)：使用 Vibe Checker 评测编码或程序分析任务表现，包含 pass@k 等指标；检验跨语言泛化。
+- [RustAssure: Differential Symbolic Testing for LLM-Transpiled C-to-Rust Code](https://arxiv.org/abs/2510.07604)：使用 RustAssure 评测测试生成、测试充分性或模糊测试；把污染、记忆化或重叠视为有效性风险。
+- [AppForge: From Assistant to Independent Developer - Are GPTs Ready for Software Development?](https://arxiv.org/abs/2510.07740)：评什么：LLM 是否能完成完整应用开发。核心思想是从函数级代码生成推进到组件协同、状态一致性和框架生命周期约束。
+- [BigCodeArena: Unveiling More Reliable Human Preferences in Code Generation via Execution](https://arxiv.org/abs/2510.08697)（[Arena](https://huggingface.co/spaces/bigcode/arena)）：在代码生成偏好评测中引入执行辅助，降低人工判断原始代码的负担，使成对偏好更可靠。（[Arena](https://huggingface.co/spaces/bigcode/arena)）
+- [Binary-Matrix Test-Case Evaluation](https://arxiv.org/abs/2510.08720)：使用 Many Code and Test Cases Are Enough? Evaluating Test Cases Generation from a Binary-Matrix 评测编码或程序分析任务表现，包含 coverage 等指标；使用仓库上下文或真实 issue 产物。
+- [Rethinking Agentic Workflows: Evaluating Inference-Based Test-Time Scaling Strategies in Text2SQL Tasks](https://arxiv.org/abs/2510.10885)：使用 Rethinking Agentic Workflows 评测编码或程序分析任务表现，包含 accuracy 等指标、latency；使用仓库上下文或真实 issue 产物。
+- [RepoSummary](https://arxiv.org/abs/2510.11039)：面向 feature-oriented repo summarization 与文档生成，为代码库级理解补充评测任务。
+- [Holistic Agent Leaderboard（HAL）](https://arxiv.org/abs/2510.11977)（[榜单](https://hal.cs.princeton.edu/)，[开源代码](https://github.com/princeton-pli/hal-harness)）：评什么：跨 benchmark 的 agent 统一评测，覆盖 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond 等软件工程任务。核心思想：把任务运行、成本、时间、轨迹和 leaderboard 提交流程标准化，便于比较不同软件 agent harness 的通用性。
+- [ContractEval: A Benchmark for Evaluating Contract-Satisfying Assertions in Code Generation](https://arxiv.org/abs/2510.12047)：评测代码生成中的契约满足断言；核心思想是测试生成代码是否执行前置条件，并在 HumanEval+ 与 MBPP+ 任务上使用重构描述和神经符号测试生成。
+- [Diff-XYZ: A Benchmark for Evaluating Diff Understanding](https://arxiv.org/abs/2510.12487)：通过 apply、anti-apply 和 diff generation 评估代码 diff 理解；适合补充编辑和审查仓库的代理能力。
+- [Benchmarking Correctness and Security in Multi-Turn Code Generation](https://arxiv.org/abs/2510.13859)：评测多轮代码生成中的正确性与安全性；核心思想是检查迭代代码修改是否持续可用且安全，而不是只评估单次生成片段。
+- [E2Edev: Benchmarking Large Language Models in End-to-End Software Development Task](https://arxiv.org/abs/2510.14509)：可作为软件开发 agent的Bench候选；核心关注“Benchmarking Large Language Models in End-to-End Software Development Task”。
+- [Pluto: A Benchmark for Evaluating Efficiency of LLM-generated Hardware Code](https://arxiv.org/abs/2510.14756)：使用 Pluto 基准 评测硬件、GPU kernel 或 RTL 代码生成，包含 pass@1 等指标；衡量效率、成本、运行时间或资源使用。
+- [WebGen-V Bench: Structured Representation for Enhancing Visual Design in LLM-based Web Generation and Evaluation](https://arxiv.org/abs/2510.15306)：面向 instruction-to-HTML generation 的 benchmark 与框架；核心思想是结合 agentic crawling、结构化网页表示和 section-level 多模态评测。
+- [MLCPD: A Unified Multi-Language Code Parsing Dataset with Universal AST Schema](https://arxiv.org/abs/2510.16357)：使用 MLCPD 数据集 评测编码或程序分析任务表现，包含 coverage 等指标；检验跨语言泛化。
+- [QuanBench: Benchmarking Quantum Code Generation with Large Language Models](https://arxiv.org/abs/2510.16779)：面向大语言模型 quantum code generation 的 benchmark。核心思想是评测 LLM 能否生成正确量子程序，而不只是通用代码。
+- [When Many-Shot Prompting Fails](https://arxiv.org/abs/2510.16809)：评估 LLM 代码翻译中的 many-shot prompting，补充一个更多示例未必提升转换质量的软件评测案例。
+- [TREAT: A Code LLMs Trustworthiness / Reliability Evaluation and Testing Framework](https://arxiv.org/abs/2510.17163)：评什么：面向 Code LLM 的可信性和可靠性评测框架。
+- [WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality](https://arxiv.org/abs/2510.18560)：可作为软件开发 agent的Bench候选；核心关注“Evaluating (M)LLMs as Critiques for Web Development Quality”。
+- [ImpossibleBench](https://arxiv.org/abs/2510.20270)：使用 ImpossibleBench 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [Trust, But Verify: An Empirical Evaluation of AI-Generated Code for SDN Controllers](https://arxiv.org/abs/2510.20703)：在 POX SDN controller 任务上比较 ChatGPT、Copilot、DeepSeek 和 BlackBox.ai 的零样本与少样本代码生成，并用 Mininet 验证功能正确性和人工修复需求。
+- [MATCH: Task-Driven Code Evaluation through Contrastive Learning](https://arxiv.org/abs/2510.23169)：使用 MATCH 评测编码或程序分析任务表现，包含 BLEU 等指标；使用仓库上下文或真实 issue 产物。
+- [Can LLMs Narrate Tabular Data? An Evaluation Framework for Natural Language Representations of Text-to-SQL System Outputs](https://arxiv.org/abs/2510.23854)：使用 LLMs Narrate Tabular Data? An Evaluation Framework for Natural Language Representations of Text-to-SQL System 框架 评测自然语言到 SQL 或图查询生成；检验跨语言泛化。
+- [PRDBench](https://arxiv.org/abs/2510.24358)：使用 Automatically Benchmarking LLM Code Agents through Agent-Driven Annotation and 评测编码或程序分析任务表现，包含 50 个项目、20 个领域；衡量效率、成本、运行时间或资源使用。
+- [CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases](https://arxiv.org/abs/2510.24428)：可作为软件开发 agent的Bench候选；核心关注“Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases”。
+- [QCoder Benchmark: Bridging Language Generation and Quantum Hardware through Simulator-Based Feedback](https://arxiv.org/abs/2510.26101)：可作为软件开发 agent的Bench候选；核心关注“Bridging Language Generation and Quantum Hardware through Simulator-Based Feedback”。
+- [Using Copilot Agent Mode to Automate Library Migration: A Quantitative Assessment](https://arxiv.org/abs/2510.26699)：定量评估 Copilot Agent Mode 自动化库迁移。
+- [Gistify](https://arxiv.org/abs/2510.26790)：评测代码库级理解，要求模型写出最小自包含文件，复现完整仓库中特定 entrypoint 的运行输出。
+- [CATArena: Evaluating Evolutionary Capabilities of Code Agents via Iterative Tournaments](https://arxiv.org/abs/2510.26852)：CATArena 用迭代锦标赛评估 code agents 的演化能力，适合 Software Development Bench。
+- [Vintage Code, Modern Judges: Meta-Validation in Low Data Regimes](https://arxiv.org/abs/2510.27244)：研究低数据场景下代码评测的元验证。
+- [Mind the Query: A Benchmark Dataset towards Text2Cypher Task](https://doi.org/10.18653/v1/2025.emnlp-industry.133)：使用 Mind the Query 基准 评测自然语言到 SQL 或图查询生成。
+- [Understanding Code Agent Behaviour: An Empirical Study of Success and Failure Trajectories](https://arxiv.org/abs/2511.00197)：代码 agent 成功与失败轨迹的实证分析。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [SolEval: Benchmarking Large Language Models for Repository-level Solidity Smart Contract Generation](https://doi.org/10.18653/v1/2025.emnlp-main.218)：评测 repository-level Solidity smart-contract generation；核心思想是用项目级智能合约任务评估代码模型，而不是只测孤立片段。
+- [CodeArena: Evaluating and Aligning CodeLLMs on Human Preference](https://doi.org/10.18653/v1/2025.emnlp-main.489)：用人类偏好评测并对齐 CodeLLM。核心思想：通过偏好判断比较代码输出，而不只看单元测试通过率。
+- [CodeClash](https://arxiv.org/abs/2511.00839)（[榜单](https://codeclash.ai/)，[开源代码](https://github.com/CodeClash-ai/CodeClash)）：使用 CodeClash 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [A Comprehensive Empirical Evaluation of Agent Frameworks on Code-centric Software Engineering Tasks](https://arxiv.org/abs/2511.00872)：代码中心任务上的 agent 框架实证比较。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [MicroRemed: Benchmarking LLMs in Microservices Remediation](https://arxiv.org/abs/2511.01166)：面向 microservices remediation 的 LLM benchmark；核心思想是评测 agent 能否诊断并修复分布式服务架构中的故障。
+- [An Empirical Study of LLM-Based Code Clone Detection](https://arxiv.org/abs/2511.01176)：评测代码克隆或重复缺陷检测，包含 F1 等指标；使用仓库上下文或真实 issue 产物。
+- [Lares: LLM-driven Code Slice Semantic Search for Patch Presence Testing](https://arxiv.org/abs/2511.01252)：评测测试生成、测试充分性或模糊测试，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
 - [RepoDebug](https://aclanthology.org/2025.findings-emnlp.1294/)：评什么：仓库级、多任务、多语言 debugging。核心思想：把调试评测从单函数推进到真实仓库上下文中的故障定位与修复。
-- [SWE-Sharp-Bench](https://arxiv.org/abs/2511.02352)：评什么：C# / .NET 生态下的 repo-level bug fixing。核心思想：把 SWE-bench 式 issue resolving 扩展到强类型、构建链路复杂的企业级语言生态，用真实测试验证补丁。
+- [SWE-Sharp-Bench](https://arxiv.org/abs/2511.02352)：使用 SWE-Sharp-Bench 基准 评测编码或程序分析任务表现，包含 150 个实例、17 个仓库；使用仓库上下文或真实 issue 产物。
+- [VCode: a Multimodal Coding Benchmark with SVG as Symbolic Visual Representation](https://arxiv.org/abs/2511.02778)：VCode 将 SVG 作为符号视觉表示评测 multimodal coding，扩展软件/视觉编码 benchmark。
+- [Benchmarking and Studying the LLM-based Agent System in End-to-End Software Development](https://arxiv.org/abs/2511.04064)：评什么：端到端软件开发流程中的 LLM agent system。核心思想是从孤立编码题推进到完整开发流水线。
+- [BAPPA: Benchmarking Agents, Plans, and Pipelines for Automated Text-to-SQL Generation](https://arxiv.org/abs/2511.04153)：评测自然语言到 SQL 或图查询生成，包含 Accuracy 等指标、accuracy；使用仓库上下文或真实 issue 产物。
+- [Speed at the Cost of Quality? The Impact of LLM Agent Assistance on Software Development](https://arxiv.org/abs/2511.04427)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [EDIT-Bench](https://arxiv.org/abs/2511.04486)：使用 EDIT-Bench 评测编码或程序分析任务表现，包含 1 model；检验跨语言泛化。
+- [Agentic Refactoring: An Empirical Study of AI Coding Agents](https://arxiv.org/abs/2511.04824)：实证研究 AI 编程智能体在重构任务中的表现。
+- [SWE-Compass: Towards Unified Evaluation of Agentic Coding Abilities for Large Language Models](https://arxiv.org/abs/2511.05459)：跨更广开发流程、语言和编码能力评测软件 agent。
 - [SWE-fficiency](https://arxiv.org/abs/2511.06090)（[项目页](https://swefficiency.com/)）：评什么：真实 workload 上的仓库级性能优化。核心思想：从性能改进型 pull request 挖掘任务，要求 agent 定位瓶颈、保持测试通过，并接近专家级加速，而不是只通过功能测试。
-- [SWE-Bench++](https://arxiv.org/abs/2512.17419)：评什么：自动生成的 SWE benchmark 与高质量可执行实例。核心思想：在任务生成流程中显式引入环境合成、补丁生成和验证筛选，减少人工构造瓶颈。（[开源代码](https://github.com/TuringEnterprises/SWE-Bench-plus-plus)）
-- [WebCoderBench](https://arxiv.org/abs/2601.02430)：评什么：从真实用户需求生成 Web 应用。核心思想：用 1,572 条真实需求和 9 个维度下的 24 个可解释指标评测生成应用，而不只依赖参考实现或测试用例。
+- [Assertion-Aware Test Code Summarization with Large Language Models](https://arxiv.org/abs/2511.06227)：面向测试代码摘要的基准与分析；核心思路是检验模型能否利用断言结构总结单元测试意图，而不只是依赖通用代码上下文。
+- [BENCHMARKING AUTONOMOUS SOFTWARE DEVELOPMENT AGENTS: TASKS, METRICS, AND FAILURE MODES](https://doi.org/10.5121/csit.2026.160420)：评测自主软件开发 agent。核心思想：组织任务、指标与失败模式，支持端到端软件 agent 评测。
+- [Toward Measuring Prompt Quality: A Preliminary Investigation on Prompt Smells](https://doi.org/10.1109/saner-c67878.2026.00046)：面向软件开发能力的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Toward Measuring Prompt Quality: A Preliminary Investigation on Prompt Smells”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Benchmarking LLMs for Fine-Grained Code Review with Enriched Context in Practice](https://arxiv.org/abs/2511.07017)：在增强上下文下评测 LLM 的细粒度代码审查能力，为软件开发评测补充区别于修复 issue 和生成补丁的审查轴。
+- [Smart but Costly? Benchmarking LLMs on Functional Accuracy and Energy Efficiency](https://arxiv.org/abs/2511.07698)：评什么：同时评测 LLM 代码的功能正确性和能耗效率。
+- [MermaidSeqBench: An Evaluation Benchmark for LLM-to-Mermaid Sequence Diagram Generation](https://arxiv.org/abs/2511.14967)：面向 LLM-to-Mermaid sequence diagram generation 的 benchmark。核心思想是测试模型能否把自然语言或代码式描述转成合法 sequence diagram。
+- [VecIntrinBench: Benchmarking Cross-Architecture Intrinsic Code Migration for RISC-V Vector](https://arxiv.org/abs/2511.18867)：评测面向 RISC-V Vector 的跨架构 intrinsic code migration；核心思想是检验代码模型能否在硬件特定 API 之间保持低层语义。
+- [Can LLMs Recover Program Semantics? A Systematic Evaluation with Symbolic Execution](https://arxiv.org/abs/2511.19130)：用符号执行系统评测 LLM 是否能在混淆代码中恢复程序语义。核心思路是测试语义理解，而不是表层代码模式识别。
+- [CodeFuse-CommitEval: Towards Benchmarking LLM's Power on Commit Message and Code Change Inconsistency Detection](https://arxiv.org/abs/2511.19875)：评测提交信息与代码变更不一致检测，为仓库感知代码模型补充版本控制质量评测轴。
+- [Can Vibe Coding Beat Graduate CS Students? An LLM vs. Human Coding Tournament on Market-driven Strategic Planning](https://arxiv.org/abs/2511.20613)：在市场驱动战略规划编码任务的 tournament 中比较 LLM 和研究生；可作为带人类参照的软件代理基准。
+- [Hierarchical Evaluation of Software Design Capabilities of Large Language Models of Code](https://arxiv.org/abs/2511.20933)：层级化评估 code LLM 的软件设计能力；核心思想是测试架构和设计推理，而不只看局部代码补全。
+- [Empirical Assessment of the Code Comprehension Effort Needed to Attack Programs Protected with Obfuscation](https://arxiv.org/abs/2511.21301)：使用 Empirical Assessment of the Code Comprehension Effort Needed to Attack Programs Protected with Obfuscation 评测代码推理、执行模拟或语义理解；检验跨语言泛化。
+- [BackportBench: A Multilingual Benchmark for Automated Backporting of Patches](https://arxiv.org/abs/2512.01396)：它提供软件工程、代码事实性、仓库任务或补丁迁移评测，适合补充 software-development Bench。
+- [WildCode: An Empirical Analysis of Code Generated by ChatGPT](https://arxiv.org/abs/2512.04259)：使用 WildCode 评测编码或程序分析任务表现。
+- [Counting Without Running: Evaluating LLMs' Reasoning About Code Complexity](https://arxiv.org/abs/2512.04355)：评估 LLM 在不运行代码时对代码复杂度的推理；核心思想是测试模型对循环、递归和算法成本的静态理解。
+- [Do LLMs Trust the Code They Write?](https://arxiv.org/abs/2512.07404)：评估 LLM 是否信任或验证自己写出的代码；核心思想是诊断生成代码流程中的自我验证行为。
+- [On Assessing the Relevance of Code Reviews Authored by Generative Models](https://arxiv.org/abs/2512.15466)：研究如何评估生成式模型所写代码评审的相关性，为 AI 辅助代码评审补充定向评测线索。
+- [CIFE: Code Instruction-Following Evaluation](https://arxiv.org/abs/2512.17387)：代码指令遵循评测 benchmark；核心思想是为 Python 任务配套开发者指定的鲁棒性、格式和安全约束，并联合评分功能正确性与约束遵循。
+- [SWE-Bench++](https://arxiv.org/abs/2512.17419)（[开源代码](https://github.com/TuringEnterprises/SWE-Bench-plus-plus)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [From Prompt to Product: A Human-Centered Benchmark of Agentic App Generation Systems](https://arxiv.org/abs/2512.18080)：面向 agentic app generation systems 的以人为中心 benchmark；核心思想是评估从提示到完整应用交付的可用性和产品级完成度，而不只看代码片段。
+- [SWE-EVO](https://arxiv.org/abs/2512.18470)：用来自版本说明和历史变更的 48 个软件演化任务评测长程编码 agent，覆盖 7 个 Python 项目并配有验证测试套件。
+- [CodeSimpleQA](https://arxiv.org/abs/2512.19424)：用英中双语的代码相关问答对评测代码大模型事实准确性，覆盖多种编程语言和计算机科学领域。
+- [RealisticCodeBench](https://doi.org/10.1109/ASE63991.2025.00248)：使用 RealisticCodeBench 评测编码或程序分析任务表现。
+- [A Dataset and Preliminary Study of Using GPT-5 for Code-change Impact Analysis](https://arxiv.org/abs/2512.19481)：使用 GPT-5 for Code-change Impact Analysis 数据集 评测编码或程序分析任务表现；衡量效率、成本、运行时间或资源使用。
+- [AXIOM: Benchmarking LLM-as-a-Judge for Code via Rule-Based Perturbation and Multisource Quality Calibration](https://arxiv.org/abs/2512.20159)：用规则扰动和多源校准评测 code 场景下的 LLM-as-a-judge；核心思想是检验代码评审 judge 在受控质量变化下是否稳定。
+- [Comment Traps: How Defective Commented-out Code Augment Defects in AI-Assisted Code Generation](https://arxiv.org/abs/2512.20334)：使用 Comment Traps 评测代码注释、文档、摘要或日志推理；使用仓库上下文或真实 issue 产物。
+- [SweRank+: Multilingual, Multi-Turn Code Ranking for Software Issue Localization](https://arxiv.org/abs/2512.20482)：评测多语、多轮代码排序和软件 issue localization；核心思想是检查模型能否跨语言、跨交互轮次排序并细化候选代码位置。
+- [NotSoTiny: A Large, Living Benchmark for RTL Code Generation](https://arxiv.org/abs/2512.20823)：评什么：面向 RTL 代码生成的大规模 living benchmark。
+- [AI-Generated Code Is Not Reproducible (Yet)](https://arxiv.org/abs/2512.22387)：使用 AI-Generated Code Is Not Reproducible (Yet) 实证研究 评测AI 生成代码检测与来源分类，包含 300 个项目、100 个提示；衡量效率、成本、运行时间或资源使用。
+- [Building Software by Rolling the Dice: A Qualitative Study of Vibe Coding](https://arxiv.org/abs/2512.22418)：评测开发助手或编码 agent 工作流，包含 254 个提示；使用视觉或多模态输入。
+- [M2G-Eval: Enhancing and Evaluating Multi-granularity Multilingual Code Generation](https://arxiv.org/abs/2512.22628)：评测多粒度多语言代码生成；核心思想是在 18 种编程语言上测试 class、function、block 与 line 级生成，并控制测试污染。
+- [How Do Agentic AI Systems Deal With Software Energy Concerns? A Pull Request-Based Study](https://arxiv.org/abs/2512.24636)：使用 Software Energy Concerns? A Pull Request-Based 研究 评测软件工程任务表现；使用仓库上下文或真实 issue 产物。
+- [RovoDev Code Reviewer: A Large-Scale Online Evaluation of LLM-based Code Review Automation at Atlassian](https://arxiv.org/abs/2601.01129)：面向 LLM 代码审查自动化的大规模在线评测。核心思想是在生产式 review workflow 中评估代码审查 agent，而不只用离线补丁生成任务。
+- [Code for Machines, Not Just Humans: Quantifying AI-Friendliness with Code Health Metrics](https://arxiv.org/abs/2601.02200)：使用 Code for Machines, Not Just Humans 评测代码可读性、可维护性、异味或质量评价，包含 5,000 个文件。
+- [Policy-as-Code in the Wild: A Taxonomy and Dataset for Open Policy Agent from Github](https://doi.org/10.1109/saner-c67878.2026.00038)：使用 Policy-as-Code in the Wild 数据集 评测开发助手或编码 agent 工作流；使用仓库上下文或真实 issue 产物。
+- [A Detection Method for Text Input-Induced Non-Crashing Functional Bugs in Mobile GUI Testing](https://doi.org/10.1109/aetcse69203.2026.11504024)：补充移动 GUI 测试中文本输入诱发功能缺陷的评估任务。
+- [WebCoderBench](https://arxiv.org/abs/2601.02430)：使用 WebCoderBench 评测前端、网页、UI 或全栈 Web 生成。
+- [DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation](https://arxiv.org/abs/2601.03178)：面向扩散模型加速代码生成的 benchmark 与 agent。核心思想是要求 agent 把多种模型加速技术组合成可执行代码，并评估正确性与加速效果。
+- [MHRC-Bench](https://arxiv.org/abs/2601.03708)：评测多语言硬件仓库级代码补全；核心思想是把仓库级代码评测从通用软件语言扩展到硬件描述语言，并加入代码结构与硬件语义标签。
 - [RepoReason](https://arxiv.org/abs/2601.03731)：评什么：仓库级 agentic code reasoning。核心思想：用 execution-driven mutations 和 abductive assertion verification 测试 agent 是否能推理代码库行为，而不只是修复已知 issue。
-- [OctoBench](https://arxiv.org/abs/2601.10343)：评什么：repository-grounded coding 中的 scaffold-aware instruction following。核心思想：要求 agent 在完整轨迹中持续遵循约束和 scaffold 指令，并用客观 checklist 评分。
-- [Terminal-Bench 2.0](https://arxiv.org/abs/2601.11868)：评什么：终端环境中的端到端任务完成（读写文件、运行命令、修复问题、产出可执行结果）。核心思想：把“编程”落到真实 CLI 操作闭环，评测可执行性而非纯代码片段。（[Registry](https://www.tbench.ai/registry/terminal-bench/2.0)，[开源代码](https://github.com/harbor-framework/terminal-bench)）
-- [IDE-Bench](https://arxiv.org/abs/2601.20886)：评什么：真实软件工程任务中的 IDE agents。核心思想：让 agent 通过 IDE-native tool interface 操作未公开仓库，覆盖 feature implementation、bug fixing、refactoring 和 performance optimization。
+- [FronTalk: Benchmarking Front-End Development as Conversational Code Generation with Multi-Modal Feedback](https://arxiv.org/abs/2601.04203)：把前端开发建模为带多模态反馈的对话式代码生成 benchmark。核心思想是评估基于对话和视觉反馈的迭代 UI coding，而不是一次性代码输出。
+- [AdaptEval](https://arxiv.org/abs/2601.04540)：评测代码复用中的代码片段适配能力，任务来自 Stack Overflow 与 GitHub，并结合任务级/适配级需求标注和函数级测试。
+- [Analyzing Message-Code Inconsistency in AI Coding Agent-Authored Pull Requests](https://arxiv.org/abs/2601.04886)：分析 AI 编程智能体生成的 pull request 中消息与代码变更不一致的问题。
+- [IndRegBias: A Dataset for Studying Indian Regional Biases in English and Code-Mixed Social Media Comments](https://arxiv.org/abs/2601.06477)：分类说明：该条目实际是英语与 code-mixed 社交媒体评论中的印度地域偏见数据集，不属于软件开发基准主轴，除非作为相邻证据保留。
+- [EVM-QuestBench: An Execution-Grounded Benchmark for Natural-Language Transaction Code Generation](https://arxiv.org/abs/2601.06565)：用执行检查评测自然语言到交易代码生成；核心思想是要求模型生成能在 EVM 类执行环境中验证行为的代码。
+- [Beyond Strict Rules: Assessing the Effectiveness of Large Language Models for Code Smell Detection](https://arxiv.org/abs/2601.09873)：评估 LLM 在超越严格规则的代码异味检测中的有效性。
+- [OctoBench](https://arxiv.org/abs/2601.10343)：使用 OctoBench 评测编码或程序分析任务表现，包含 217 个任务；使用仓库上下文或真实 issue 产物。
+- [Symbio Coding: An Educational Testbed for AI Agent Simulation as Software Development Team Member](https://doi.org/10.1109/iciet66371.2025.11045965)：提供评测 AI 智能体作为软件开发团队成员的教学测试床。
+- [Assessing output reliability and similarity of large language models in software development: A comparative case study approach](https://doi.org/10.1016/j.infsof.2025.107787)：使用 output reliability and similarity of large language models in software development: A comparative case 案例研究 评测软件工程任务表现。
+- [Smells Like Trouble: Investigating the Impact of Requirements Quality on LLM-Supported Software Engineering](https://doi.org/10.1109/re63999.2025.00075)：使用 Smells Like Trouble 评测代码可读性、可维护性、异味或质量评价。
+- [Towards Database-Free Text-to-SQL Evaluation: A Graph-Based Metric for Functional Correctness](https://aclanthology.org/2025.coling-main.308/)：使用 Database-Free Text-to-SQL Evaluation 指标 评测自然语言到 SQL 或图查询生成。
+- [Model See, Model Do? Exposure-Aware Evaluation of Bug-vs-Fix Preference in Code LLMs](https://arxiv.org/abs/2601.10496)：使用 Model See, Model Do? Exposure-Aware Evaluation of Bug-vs-Fix Preference in Code LLMs 评测调试、故障定位或自动程序修复；检验跨语言泛化。
+- [Mind the Overlap: Trustworthy Evaluation for Large Code Models](https://doi.org/10.1109/mc.2025.3637575)：使用 Mind the Overlap 评测代码许可证、污染或基准泄漏风险；把污染、记忆化或重叠视为有效性风险。
+- [Evaluating Security and Quality of Banking Software Generated by Large Language Models](https://doi.org/10.1109/asyu67174.2025.11208402)：使用 Security and Quality of Banking Software Generated by Large Language Models 评测安全编码或漏洞检测。
+- [Evaluating Automatic Code Generation for Generative AI Learning Models](https://doi.org/10.1109/iccams65118.2025.11233953)：使用 Automatic Code Generation for Generative AI Learning Models 评测代码生成的正确性、鲁棒性、质量或效率。
+- [ABC-Bench: Benchmarking Agentic Backend Coding in Real-World Development](https://arxiv.org/abs/2601.11077)：类型：benchmark/评测协议。核心价值：为 2.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Software Unit Test Automation with LLM-Based Generative AI: Evaluating Test Quality through Code Coverage and Edge-Case Analysis](https://doi.org/10.1109/ubmk67458.2025.11206953)：使用 LLM-Based Generative AI: Evaluating Test Quality through Code Coverage and Edge-Case Analysis 评测测试生成、测试充分性或模糊测试。
+- [Prompt engineering study: comparing pre-service engineers to large language models in requirements generation](https://doi.org/10.1017/pds.2025.10280)：比较职前工程师与大语言模型在需求生成任务上的表现。
+- [Evaluating the quality of user stories using large language models: an industry study](https://doi.org/10.5753/cibse.2025.35291)：在工业场景中评估大语言模型判断用户故事质量的能力。
+- [Terminal-Bench 2.0](https://arxiv.org/abs/2601.11868)（[榜单](https://www.tbench.ai/leaderboard/terminal-bench/2.0)，[Registry](https://www.tbench.ai/registry/terminal-bench/2.0)，[开源代码](https://github.com/harbor-framework/terminal-bench)）：使用 Terminal-Bench 评测开发助手或编码 agent 工作流，包含 89 个任务。
+- [Beyond Accuracy: Characterizing Code Comprehension Capabilities in (Large) Language Models](https://arxiv.org/abs/2601.12951)：通过诊断性输入输出变换刻画 LLM 代码理解行为，为软件理解补充超越总准确率的细粒度评测。
+- [KOCO-BENCH: Can Large Language Models Leverage Domain Knowledge in Software Development?](https://arxiv.org/abs/2601.13240)：面向软件开发中领域知识使用的 benchmark。核心思想是测试 LLM 在解决代码和开发任务时能否利用领域知识。
+- [CooperBench: Why Coding Agents Cannot be Your Teammates Yet](https://arxiv.org/abs/2601.13295)：代码 agent 团队协作能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](https://arxiv.org/abs/2601.13398)：它提供软件工程、代码事实性、仓库任务或补丁迁移评测，适合补充 software-development Bench。
+- [A Tool for Automatically Cataloguing and Selecting Pre-Trained Models and Datasets for Software Engineering](https://arxiv.org/abs/2601.13460)：分类说明：该条目是软件工程模型与数据集的资产编目和选择工具，不是基准条目。
+- [From Words to Queries: A Comparative Evaluation of GPT Models in NLIDB Systems](https://doi.org/10.1109/i3ctcon68242.2026.11507817)：使用 From Words to Queries 评测编码或程序分析任务表现。
+- [RepoGenesis: Benchmarking End-to-End Microservice Generation from Readme to Repository](https://arxiv.org/abs/2601.13943)：从 README 到仓库的端到端微服务生成评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Tokenomics: Quantifying Where Tokens Are Used in Agentic Software Engineering](https://arxiv.org/abs/2601.14470)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（Quantifying Where Tokens Are Used in Agentic Software Engineering）形成可复用比较基准。
+- [Benchmarking Text-to-Python against Text-to-SQL: The Impact of Explicit Logic and Ambiguity](https://arxiv.org/abs/2601.15728)：使用 Text-to-Python against Text-to-SQL 评测自然语言到 SQL 或图查询生成；衡量效率、成本、运行时间或资源使用。
+- [RubberDuckBench: A Benchmark for AI Coding Assistants](https://arxiv.org/abs/2601.16456)：评测 AI 编程助手。核心思想：关注助手式软件任务与交互质量，而不只是函数补全。
+- [AI builds, We Analyze: An Empirical Study of AI-Generated Build Code Quality](https://arxiv.org/abs/2601.16839)：使用 AI builds, We Analyze 实证研究 评测代码可读性、可维护性、异味或质量评价；使用仓库上下文或真实 issue 产物。
+- [Code Change Characteristics and Description Alignment: A Comparative Study of Agentic versus Human Pull Requests](https://arxiv.org/abs/2601.17627)：可作为软件开发方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [TAM-Eval: Evaluating LLMs for Automated Unit Test Maintenance](https://arxiv.org/abs/2601.18241)：评什么：LLM 自动维护单元测试的能力。核心思想：检验 agent 能否随代码演进更新测试，补足 bug 修复和功能实现之外的软件工程能力。
+- [Whitespaces Don't Lie: Feature-Driven and Embedding-Based Approaches for Detecting Machine-Generated Code](https://arxiv.org/abs/2601.19264)：使用 Whitespaces Don't Lie 评测AI 生成代码检测与来源分类，包含 F1 等指标；衡量效率、成本、运行时间或资源使用。
+- [AACR-Bench: Evaluating Automatic Code Review with Holistic Repository-Level Context](https://arxiv.org/abs/2601.19494)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Bench4HLS: End-to-End Evaluation of LLMs in High-Level Synthesis Code Generation](https://arxiv.org/abs/2601.19941)：评测 LLM 驱动的高层综合代码生成。核心思想：评测端到端 HLS 代码生成，而不是通用编程片段。
+- [On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents](https://arxiv.org/abs/2601.20404)：可作为软件开发 agent 与代码模型的 Bench 候选：围绕 On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents 提供可比较的评测任务、数据或分析协议。
+- [IDE-Bench](https://arxiv.org/abs/2601.20886)：评测开发助手或编码 agent 工作流，包含 80 个仓库；使用仓库上下文或真实 issue 产物。
+- [TimeMachine-bench: A Benchmark for Evaluating Model Capabilities in Repository-Level Migration Tasks](https://arxiv.org/abs/2601.22597)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [On the Impact of Code Comments for Automated Bug-Fixing: An Empirical Study](https://arxiv.org/abs/2601.23059)：使用 On the Impact of Code Comments for Automated Bug-Fixing: An Empirical Study 实证研究 评测调试、故障定位或自动程序修复，包含 accuracy 等指标；衡量效率、成本、运行时间或资源使用。
+- [ScratchEval : A Multimodal Evaluation Framework for LLMs in Block-Based Programming](https://arxiv.org/abs/2602.00757)：评什么：LLM 在积木式编程中的多模态能力。核心思想是测试程序以可视化 block 表示时的理解和生成，而不只处理纯文本代码。
+- [ProjDevBench: Benchmarking AI Coding Agents on End-to-End Project Development](https://arxiv.org/abs/2602.01655)：编码 agent 的端到端项目开发评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [AICD Bench: A Challenging Benchmark for AI-Generated Code Detection](https://arxiv.org/abs/2602.02079)：评测 AI 生成代码检测能力，为软件评估补充代码来源识别和生成代码检测维度，而不只关注代码合成。
 - [OmniCode](https://arxiv.org/abs/2602.02262)（[开源代码](https://github.com/seal-research/OmniCode)）：评什么：补丁生成之外的多样软件工程任务。核心思想：覆盖 Python、Java 和 C++ 中的 bug fixing、test generation、code review fixing 与 style fixing，让编码 agent 面对更完整的专业开发工作流。
-- [ContextBench](https://arxiv.org/abs/2602.05892)：评测 coding agent 的上下文检索能力。核心思想：在补丁生成或推理前，单独检验 agent 能否定位完成代码任务所需的文件、符号和历史证据。
-- [FeatureBench](https://arxiv.org/abs/2602.10975)：评什么：agentic coding system 的复杂功能开发。核心思想：用可执行验证评估端到端 feature implementation；由于标题和发布不同，应与前面的 FeatBench 区分。
-- [GameDevBench](https://arxiv.org/abs/2602.11103)：通过游戏开发任务评测 agentic 软件开发能力。核心思想：检查 agent 能否规划、实现、调试并交付交互式游戏项目，而不只是解决仓库 issue 或单点编程题。
-- [ReqElicitGym](https://arxiv.org/abs/2602.18306)：评测对话式需求获取中的访谈能力。核心思想：提供一个要求 agent 主动追问并挖掘需求的环境，而不是只执行已经完整说明的软件任务。
-- [ISO-Bench](https://arxiv.org/abs/2602.19594)（数据集：[Lossfunk/ISO-Bench](https://huggingface.co/datasets/Lossfunk/ISO-Bench)）：评什么：vLLM 与 SGLang 中的真实推理优化任务。核心思想：结合执行指标和 LLM 裁判软指标，要求 agent 理解瓶颈并生成保持 serving 行为意图的优化补丁。
+- [Evaluating the Effectiveness and Cost-Efficiency of Large Language Models in Automated Unit Test Generation](https://doi.org/10.5753/sbqs.2025.13853)：测试生成软件的测试生成、测试质量或模糊测试；在通过率之外加入运行时间、能耗或资源效率指标。
+- [Chatgpt-Based Test Generation for Refactoring Engines Enhanced by Feature Analysis on Examples](https://doi.org/10.1109/icse55347.2025.00210)：使用 Chatgpt-Based Test Generation for Refactoring Engines Enhanced by Feature Analysis on Examples 评测测试生成、测试充分性或模糊测试。
+- [Refactoring Python Code with LLM-Based Multi-Agent Systems: An Empirical Study in ML Software Projects](https://doi.org/10.5753/sbes.2025.11033)：实证评估真实工作流中的开发助手或编码 agent 行为；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [Evaluating the Effectiveness of ChatGPT in Improving Code Quality](https://doi.org/10.1109/icmi65310.2025.11139842)：使用 Effectiveness of ChatGPT in Improving Code Quality 评测代码可读性、可维护性、异味或质量评价。
+- [Amalgamation of Classical and Large Language Models for Duplicate Bug Detection: A Comparative Study](https://doi.org/10.32604/cmc.2025.057792)：使用 Amalgamation of Classical and Large Language Models for Duplicate Bug Detection: A Comparative 研究 评测代码克隆或重复缺陷检测。
+- [Can large language models identify and refactor code clones? An empirical study](https://doi.org/10.1016/j.jss.2025.112717)：使用 large language models identify and refactor code clones? An empirical study 实证研究 评测代码克隆或重复缺陷检测。
+- [Tracets4J: A Traceable Unit Test Generation Dataset](https://doi.org/10.1109/saner64311.2025.00077)：使用 Tracets4J 数据集 评测测试生成、测试充分性或模糊测试。
+- [Mixture-of-Agents based Text-to-SQL Study on TURSpider Dataset](https://doi.org/10.1109/siu66497.2025.11112412)：使用 TURSpider 数据集 评测自然语言到 SQL 或图查询生成。
+- [WorkflowJudge: Semantic Benchmark of LLM-Generated GitHub Actions workflows via Checklist-Driven Evaluation](https://doi.org/10.1109/aibdf67964.2025.11440748)：使用 WorkflowJudge 基准 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [Quirx: A Mutation-Based Framework for Evaluating Prompt Robustness in LLM-based Software](https://doi.org/10.1109/ase63991.2025.00383)：使用 Quirx 框架 评测测试生成、测试充分性或模糊测试；用扰动或分布偏移考察鲁棒性。
+- [StackPlagger: A System for Identifying AI-Code Plagiarism on Stack Overflow](https://doi.org/10.1109/ase63991.2025.00386)：使用 StackPlagger 评测编码或程序分析任务表现。
+- [LogSI: A Benchmark for System-Incremental Log Analysis](https://doi.org/10.1109/icassp49660.2025.10890641)：使用 LogSI 基准 评测代码注释、文档、摘要或日志推理。
+- [Unadmitted Technical Debt: Dataset and Detection Approaches](https://doi.org/10.1109/tse.2025.3623644)：使用 Unadmitted Technical Debt 数据集 评测代码可读性、可维护性、异味或质量评价。
+- [A Task-Level Evaluation of AI Agents in Open-Source Projects](https://arxiv.org/abs/2602.02345)：评测 AI agent 在开源项目任务中的表现。核心思想：衡量项目级任务能力，而不是孤立代码片段或玩具 issue。
+- [Live-kBench](https://arxiv.org/abs/2602.02690)：评测 Linux kernel 新近崩溃缺陷的修复能力，把持续刷新的 live benchmark 与标准化 crash-repair 环境结合起来。
+- [Beyond the Prompt: Assessing Domain Knowledge Strategies for High-Dimensional LLM Optimization in Software Engineering](https://arxiv.org/abs/2602.02752)：测试Beyond the Prompt: Assessing Domain Knowledge Strategies for High-Dimensional LLM Optimization in Software Engineering；比较提示、上下文示例或 prompt programming 策略。
+- [SWE-Refactor: A Repository-Level Benchmark for Real-World LLM-Based Code Refactoring](https://arxiv.org/abs/2602.03712)：面向真实代码重构的仓库级 benchmark。核心思想是在真实代码库中评估 agent 的行为保持式重构能力，而不是孤立代码编辑。
+- [ProxyWar: Dynamic Assessment of LLM Code Generation in Game Arenas](https://arxiv.org/abs/2602.04296)：在 game arenas 中动态评估 LLM 代码生成；核心思想是在交互、对抗或环境依赖条件下验证生成代码，而不是只跑静态单元测试。
+- [TestMigrationsInPy: A Dataset of Test Migrations from Unittest to Pytest](https://arxiv.org/abs/2602.05122)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [ContextBench](https://arxiv.org/abs/2602.05892)：使用 ContextBench 基准 评测编码或程序分析任务表现，包含 1,136 个任务、66 个编程语言；使用仓库上下文或真实 issue 产物。
+- [Comprehensive Evaluation of Large Language Models on Software Engineering Tasks: A Multi-Task Benchmark](https://arxiv.org/abs/2602.07079)：多任务软件工程 benchmark。核心思想是跨多个 SE 任务比较模型，而不是只看单一代码生成切片。
+- [Rethinking the Value of Agent-Generated Tests for LLM-Based Software Engineering Agents](https://arxiv.org/abs/2602.07900)：评测 agent 生成测试对软件工程 agent 的价值。核心思想：衡量生成测试何时改进修复，何时误导 agent 循环。
+- [Integrating Code Metrics into Automated Documentation Generation for Computational Notebooks](https://arxiv.org/abs/2602.08133)：评测代码注释、文档、摘要或日志推理，包含 accuracy 等指标、BLEU、F1；控制方法、函数、类或语句级粒度。
+- [FUSEMOS: Perceptual Evaluation of Text-to-Music Generation with Dual-Encoder Fusion and Ranking-Aware Composite Loss](https://doi.org/10.1109/icassp55912.2026.11461672)：分类说明：该条目实际是文本到音乐生成的感知评价，不属于软件开发基准主轴；若保留，只能作为相邻证据。
+- [Automatic translation of natural language requirements into CTL specifications using Large Language Models: A multi-approach evaluation](https://doi.org/10.1016/j.jss.2026.112941)：实证评估需求、软件模型、流程模型或任务流生成；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [From COCOMO to GPT: A Comprehensive Evaluation of LLM-Based Software Effort Estimation](https://doi.org/10.1109/access.2026.3671204)：使用 From COCOMO to GPT 评测需求、软件模型、流程模型或工作量估计任务。
+- [Classification of security challenges and mitigation approaches in the quantum software engineering](https://doi.org/10.1016/j.jss.2026.112884)：分类说明：该条目是量子软件工程安全挑战分类或综述，不是基准数据集。
+- [CLASSIFICATION OF SOURCE CODE VULNERABILITIES AND ANALYSIS OF DETECTION METHODS: EVALUATION, COMPARISON, AND PROPOSED APPROACHES](https://doi.org/10.5121/ijnsa.2026.18201)：实证评估安全代码生成、漏洞检测或安全代码审查；控制方法、函数、类或语句级任务粒度。
+- [SWE Context Bench: A Benchmark for Context Learning in Coding](https://arxiv.org/abs/2602.08316)：评测coding agent 的上下文学习；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [AIDev: Studying AI Coding Agents on GitHub](https://arxiv.org/abs/2602.09185)：构建 AIDev，大规模收集 GitHub 上智能体编写的 pull request。
+- [SWE-AGI: Benchmarking Specification-Driven Software Construction with MoonBit in the Era of Autonomous Agents](https://arxiv.org/abs/2602.09447)：评测基于规格的软件构建能力，任务语言为 MoonBit。核心思想是要求 agent 根据明确规格实现 parser、interpreter 等系统，把评测从补丁修复推进到完整构建。
+- [AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms](https://arxiv.org/abs/2602.09464)：评什么：面向经典算法的可验证代码生成 benchmark。
+- [SWE-Bench Mobile: Can Large Language Model Agents Develop Industry-Level Mobile Applications?](https://arxiv.org/abs/2602.09540)：可作为软件开发 agent的Bench候选；核心关注“Can Large Language Model Agents Develop Industry-Level Mobile Applications?”。
+- [JMigBench: A Benchmark for Evaluating LLMs on Source Code Migration (Java 8 to Java 11)](https://arxiv.org/abs/2602.09930)：评什么：LLM 将 Java 8 源码迁移到 Java 11 的能力。核心思想是用真实语言版本和兼容性约束测试迁移正确性。
+- [EvoCodeBench: A Human-Performance Benchmark for Self-Evolving LLM-Driven Coding Systems](https://arxiv.org/abs/2602.10171)：它提供软件工程、代码事实性、仓库任务或补丁迁移评测，适合补充 software-development Bench。
+- [TestExplora: Benchmarking LLMs for Proactive Bug Discovery via Repository-Level Test Generation](https://arxiv.org/abs/2602.10471)：评测 LLM 在仓库级环境中主动发现 bug 的能力；核心思想是隐藏缺陷信号，要求 agent 通过生成测试把实现行为与文档意图进行比较。
+- [FeatureBench](https://arxiv.org/abs/2602.10975)：使用 FeatureBench 评测编码或程序分析任务表现，包含 200 个任务、24 个仓库；使用仓库上下文或真实 issue 产物。
+- [GameDevBench](https://arxiv.org/abs/2602.11103)：使用 GameDevBench 评测编码或程序分析任务表现，包含 132 个任务；检验跨语言泛化。
+- [SAFuzz](https://arxiv.org/abs/2602.11209)：用语义引导的自适应 fuzzing 测试 LLM 生成代码，把代码智能体评价扩展到静态通过率之外。
+- [Automated Test Suite Enhancement Using Large Language Models with Few-shot Prompting](https://arxiv.org/abs/2602.12256)：测试前端、网页或图像到代码生成；比较提示、上下文示例或 prompt programming 策略。
+- [An Online Reference-Free Evaluation Framework for Flowchart Image-to-Code Generation](https://arxiv.org/abs/2602.13376)：评测前端、网页、UI 或全栈 Web 生成，包含 coverage 等指标、F1；在评测协议中引入交互或反馈。
+- [CodeGlance: Understanding Code Reasoning Challenges in LLMs through Multi-Dimensional Feature Analysis](https://arxiv.org/abs/2602.13962)：通过多维代码特征诊断 LLM 的代码推理挑战。
+- [Mutation-Analysis Code Summary Evaluation](https://arxiv.org/abs/2602.17838)：用定向代码变异测试代码摘要是否反映行为变化，使代码文档/摘要评测更可执行。
+- [ReqElicitGym](https://arxiv.org/abs/2602.18306)：使用 ReqElicitGym 评测编码或程序分析任务表现，包含 101 个场景、10 个类型；在评测协议中引入交互或反馈。
+- [Multi-CoLoR: Context-Aware Localization and Reasoning across Multi-Language Codebases](https://arxiv.org/abs/2602.19407)：评估多语言代码库中的上下文感知定位与推理；适合补充非单一 Python 环境的仓库级代理评测。
+- [ISO-Bench](https://arxiv.org/abs/2602.19594)（[Lossfunk/ISO-Bench](https://huggingface.co/datasets/Lossfunk/ISO-Bench)）：评什么：vLLM 与 SGLang 中的真实推理优化任务。核心思想：结合执行指标和 LLM 裁判软指标，要求 agent 理解瓶颈并生成保持 serving 行为意图的优化补丁。
+- [EditFlow: Benchmarking and Optimizing Code Edit Recommendation Systems via Reconstruction of Developer Flows](https://arxiv.org/abs/2602.21697)：评测通过重构开发者工作流评测代码编辑推荐质量；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [An Evaluation of Context Length Extrapolation in Long Code via Positional Embeddings and Efficient Attention](https://arxiv.org/abs/2602.21800)：使用 Positional Embeddings and Efficient Attention 评测编码或程序分析任务表现；控制方法、函数、类或语句级粒度。
+- [Analysing Software Quality of AI-Translated Code: A Comparative Study of Large Language Models Using Static Analysis](https://doi.org/10.2478/acss-2025-0013)：使用 Analysing Software Quality of AI-Translated Code 研究 评测代码可读性、可维护性、异味或质量评价，包含 500 个实例；衡量效率、成本、运行时间或资源使用。
+- [MM-GRADE: A Multi-Modal EDA Tool Documentation QA Framework Leveraging Retrieval Augmented Generation](https://doi.org/10.1109/iccad66269.2025.11240857)：使用 MM-GRADE 框架 评测代码注释、文档、摘要或日志推理；检验跨语言泛化。
+- [Towards Quality Assurance of Natural Language in Code](https://doi.org/10.1109/icse-companion66252.2025.00056)：使用 Quality Assurance of Natural Language in Code 评测代码可读性、可维护性、异味或质量评价。
+- [Comparative Study of Code Generation by AI Models](https://doi.org/10.1109/iccrtee64519.2025.11052899)：使用 Comparative Study of Code Generation by AI Models 研究 评测代码生成的正确性、鲁棒性、质量或效率。
+- [VeriBench: Benchmarking Large Language Models for Verilog Code Generation and Design Synthesis](https://doi.org/10.1109/iscas56072.2025.11044004)：使用 VeriBench 评测硬件、GPU kernel 或 RTL 代码生成。
+- [Challenges to Using Large Language Models in Code Generation and Repair](https://doi.org/10.1109/msec.2025.3530488)：使用 Large Language Models in Code Generation and Repair 评测代码生成的正确性、鲁棒性、质量或效率。
+- [Detecting Adversarial Prompted AI-Generated Code on Stack Overflow: A Benchmark Dataset and an Enhanced Detection Approach](https://doi.org/10.1109/icsme64153.2025.00089)：使用 Stack Overflow: A Benchmark Dataset and an Enhanced Detection Approach 基准 评测安全编码或漏洞检测；用扰动或分布偏移考察鲁棒性。
+- [Empirical Evaluation of LLMs for Automated Program Fault Localisation](https://doi.org/10.1109/qrs-c65679.2025.00063)：使用 LLMs for Automated Program Fault Localisation 评测调试、故障定位或自动程序修复。
 - [RepoMod-Bench](https://arxiv.org/abs/2602.22518)（[开源代码](https://github.com/Modelcode-ai/mcode-benchmark)）：评什么：repo 级代码现代化与跨语言迁移。核心思想：用 implementation-agnostic tests 评功能等价。
-- [Rust-SWE-bench](https://arxiv.org/abs/2602.22764)：评什么：Rust 生态下的 repo-level issue resolving。核心思想：把所有权、生命周期、Cargo 构建与测试约束纳入 SWE-bench 式评测，突出强类型系统和工具链对 coding agent 的影响。
-- [SWE-rebench V2](https://arxiv.org/abs/2602.23866)：评什么：语言无关、规模更大的动态 SWE 任务构造与执行评测。核心思想：延续 SWE-rebench 的去污染自动化采集路线，把可执行任务扩展到更多语言与仓库生态。
-- [SWE-CI](https://arxiv.org/abs/2603.03823)：评什么：CI 信号驱动的软件修复与回归验证。核心思想：把持续集成失败、日志定位、补丁生成和重跑验证纳入同一任务协议，补足只看本地测试的 SWE 评测缺口。
-- [CktEvo](https://arxiv.org/abs/2603.08718)：评测仓库级 RTL 代码演进能力；核心思路是把 HDL 生成评测推进到既有硬件代码仓库的演化场景，要求智能体在可验证修改中保持设计意图。
-- [WebVR](https://arxiv.org/abs/2603.13391)：评什么：根据交互视频重建网页。核心思想：用演示视频和人类对齐的视觉 rubric 检查多模态模型能否恢复页面布局、交互流程和动态线索，用于网页生成评测。
-- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)：评什么：技能注入（skills）对真实 SWE 任务的边际收益。核心思想：把“有/无 skill 的配对对照”做成可执行、可确定性验证的框架，隔离 skill 的真实贡献。（[开源代码](https://github.com/GeniusHTX/SWE-Skills-Bench)）
-- [VIBEPASS](https://arxiv.org/abs/2603.15921)：评什么：vibe-coding-style agents 的调试与修复闭环。核心思想：联合测试 fault-triggering test generation 与 fault-targeted repair，而不是只评补丁生成。
+- [Rust-SWE-bench](https://arxiv.org/abs/2602.22764)：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [CL4SE: Benchmarking Context Learning on Software Engineering](https://arxiv.org/abs/2602.23047)：评测软件工程中的 context learning；核心思想是定义 SE 专属上下文类型，并在不改模型权重的情况下测量上下文对核心工作流的影响。
+- [SWE-rebench V2](https://arxiv.org/abs/2602.23866)：使用 SWE-rebench V2 评测编码或程序分析任务表现，包含 32,079 个任务、3,617 个仓库；使用仓库上下文或真实 issue 产物。
+- [ClarEval: A Benchmark for Evaluating Clarification Skills of Code Agents under Ambiguous Instructions](https://arxiv.org/abs/2603.00187)：评估 code agent 在模糊指令下的澄清能力；核心思想是测试需求不完整时 agent 是否会在修改前提出有效问题。
+- [SWE-ABS](https://arxiv.org/abs/2603.00520)：用覆盖率驱动和 mutation 驱动的 adversarial tests 强化 SWE 式评测，暴露通过弱测试但语义错误的补丁。
+- [CONCUR: Benchmarking LLMs for Concurrent Code Generation](https://arxiv.org/abs/2603.03683)：评测 LLM 的并发代码生成能力；核心思想是检查同步、共享状态推理和并发特有正确性，而不只看单线程函数行为。
+- [SWE-CI](https://arxiv.org/abs/2603.03823)：使用 SWE-CI 评测编码或程序分析任务表现，包含 100 个任务、71 个提交；使用仓库上下文或真实 issue 产物。
+- [CodeTaste: Can LLMs Generate Human-Level Code Refactorings?](https://arxiv.org/abs/2603.04177)：评测 LLM coding agents 是否能做人类级代码重构；核心思想是考察行为保持的结构、重复和可维护性改进，而不只看补丁是否通过测试。
+- [Vibe Code Bench: Evaluating AI Models on End-to-End Web Application Development](https://arxiv.org/abs/2603.04601)：通过部署应用与浏览器 agent 工作流检查评测从零构建网页应用。
+- [Evaluating LLMs in the Context of a Functional Programming Course: A Comprehensive Study](https://arxiv.org/abs/2603.05646)：实证评估编程教育中的代码生成、反馈或评估；以学生或课堂产物作为评测场景。
+- [Repository-Oriented Long-Horizon Conversational Context Management](https://arxiv.org/abs/2603.06358)：评测内容：仓库开发对话中的上下文管理能力。核心思想：检验代码助手能否在长对话中保留并检索关键仓库信息，而不是随着历史变长丢失任务上下文。
+- [Assessing AI-Based Code Generation using Code Comments](https://doi.org/10.1109/iisec69317.2026.11418477)：使用 Code Comments 评测代码注释、文档、摘要或日志推理。
+- [Benchmarking AI Models for Automated Code Generation and Testing Using HumanEval](https://doi.org/10.1109/gcwot69191.2026.11499481)：使用 AI Models for Automated Code Generation and Testing Using HumanEval 评测测试生成、测试充分性或模糊测试。
+- [CodeS+: Towards Assessing the Generalization Ability of Code Models Under Distribution Shift](https://doi.org/10.1109/tse.2026.3668096)：测试CodeS+: Towards Assessing the Generalization Ability of Code Models Under Distribution Shift；以扰动或分布偏移作为压力因素。
+- [CktEvo](https://arxiv.org/abs/2603.08718)：使用 CktEvo 基准 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [KernelCraft: Benchmarking for Agentic Close-to-Metal Kernel Generation on Emerging Hardware](https://arxiv.org/abs/2603.08721)：评什么：新兴硬件上的 agentic close-to-metal kernel generation。核心思想是用硬件 ISA 与性能约束测试底层 kernel 合成能力。
+- [Can AI Agents Generate Microservices? How Far are We?](https://arxiv.org/abs/2603.09004)：评测 AI agent 生成微服务的能力。核心思想：从单文件代码生成推进到服务拆分、集成与可运行微服务产物。
+- [MiniAppBench: Evaluating the Shift from Text to Interactive HTML Responses in LLM-Powered Assistants](https://arxiv.org/abs/2603.09652)：MiniAppBench 评测从文本回答到交互式 HTML 应用的迁移，适合软件/GUI code benchmark。
+- [CR-Bench: Evaluating the Real-World Utility of AI Code Review Agents](https://arxiv.org/abs/2603.11078)：评什么：AI code review agent 的真实效用。核心思想是用细粒度协议衡量审查行为，把误报成本和审查有用性纳入评估。
+- [A First Look at Conventional Commits Classification](https://doi.org/10.1109/icse55347.2025.00011)：将 Conventional Commits 分类作为软件工程评测任务进行研究。
+- [A Public Benchmark of REST APIs](https://doi.org/10.1109/msr66628.2025.00072)：提供面向软件工具测试的公共 REST API 基准。
+- [Synthesis-in-the-Loop Evaluation of LLMs for RTL Generation: Quality, Reliability, and Failure Modes](https://arxiv.org/abs/2603.11287)：面向 RTL generation 的 synthesis-in-the-loop evaluation。核心思想是用综合质量、可靠性和失败模式评价硬件代码生成，而不是文本相似度。
+- [ManiBench: A Benchmark for Testing Visual-Logic Drift and Syntactic Hallucinations in Manim Code Generation](https://arxiv.org/abs/2603.13251)：评测 Manim 代码生成。核心思想：测试模型生成可执行动画代码时的视觉逻辑漂移与语法幻觉。
+- [WebVR](https://arxiv.org/abs/2603.13391)：评测前端、网页、UI 或全栈 Web 生成，包含 175 个类别、19 个模型；检验跨语言泛化。
+- [GreenAI: A Comparative Analysis of Environmental Efficiency in LLM-Generated Code](https://doi.org/10.1109/access.2026.3658813)：比较 LLM 生成代码的环境效率，把可持续性纳入代码生成评测维度。
+- [EvoClaw: Evaluating AI Agents on Continuous Software Evolution](https://arxiv.org/abs/2603.13428)：EvoClaw 面向连续软件演化和技术债的 agent 评测，补充一次性修 bug 之外的软件开发 Bench。
+- [Do AI Agents Really Improve Code Readability?](https://arxiv.org/abs/2603.13723)：评测代码可读性、可维护性、异味或质量评价，包含 403 个提交；检验跨语言泛化。
+- [s2n-bignum-bench: A practical benchmark for evaluating low-level code reasoning of LLMs](https://arxiv.org/abs/2603.14628)：基于工业密码库评测低层代码推理；核心思想是考察模型能否理解真实实现和汇编/低层正确性，而不只会做竞赛式形式数学。
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)（[开源代码](https://github.com/GeniusHTX/SWE-Skills-Bench)）：使用 SWE-Skills-Bench 评测编码或程序分析任务表现，包含 565 个实例；使用仓库上下文或真实 issue 产物。
+- [VIBEPASS](https://arxiv.org/abs/2603.15921)：使用 VIBEPASS 评测编码或程序分析任务表现。
 - [FormulaCode](https://arxiv.org/abs/2603.16011)（[项目页](https://formulacode.org/)）：评什么：大型科学 Python 代码库上的 agentic optimization。核心思想：把真实性能瓶颈、专家补丁和大量社区维护 workloads 配对，用多目标正确性与加速效果评价 agent，而不是只看狭窄微基准。
-- [SLUMP](https://arxiv.org/abs/2603.17104)：评什么：长程 coding agent 的 faithfulness loss。核心思想：逐步揭示需求，并评分后续代码是否在组件层面保持 emergent specifications。
-- [RACE-bench](https://arxiv.org/abs/2603.26337)：评什么：repo 级 feature addition 与中间推理。核心思想：除补丁正确性外，还显式评 issue 理解、定位和实现拆解。
+- [Quantifying the RAG Advantage: A Multi-Metric Benchmark for LLM-based Code Generation](https://doi.org/10.5753/sbbd.2025.247760)：用 120 道精选 LeetCode 题、配套解法解释、检索增强提示和多指标比较来评测 RAG 对 LLM 代码生成的增益。
+- [SWE-QA-Pro: A Representative Benchmark and Scalable Training Recipe for Repository-Level Code Understanding](https://arxiv.org/abs/2603.16124)：面向 repository-level code understanding 的代表性 benchmark；核心思想是在修改代码之前评估 agent 能否基于真实代码库上下文回答软件问题。
+- [LLM NL2SQL Robustness: Surface Noise vs. Linguistic Variation in Traditional and Agentic Settings](https://arxiv.org/abs/2603.17017)：测试表层噪声、语言变体与 agentic 设置下的 NL2SQL 鲁棒性；以扰动或分布偏移作为压力因素。
+- [SLUMP](https://arxiv.org/abs/2603.17104)：使用 When the Specification Emerges 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [Omni-I2C: A Holistic Benchmark for High-Fidelity Image-to-Code Generation](https://arxiv.org/abs/2603.17508)：类型：benchmark/评测协议。核心价值：为 2.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [ArchBench: Benchmarking Generative-AI for Software Architecture Tasks](https://arxiv.org/abs/2603.17833)：评测生成式 AI 的软件架构任务能力；核心思想是把评测范围从函数级代码生成扩展到架构理解、设计和转换。
+- [Can LLMs Reason Like Automated Theorem Provers for Rust Verification? VCoT-Bench: Evaluating via Verification Chain of Thought](https://arxiv.org/abs/2603.18334)：提出 VCoT-Bench 评测 Rust 验证中的验证思维链。
+- [Evaluating LLM-generated code for domain-specific languages: molecular dynamics with LAMMPS](https://arxiv.org/abs/2603.20630)：评测 LLM 为 LAMMPS 分子动力学 DSL 生成代码。
+- [AI-Assisted Code Refactoring: Where Can it be Helpful and Where Do Humans Outperform it?](https://doi.org/10.1016/j.jss.2026.112862)：评估 AI 辅助在代码重构中何处有帮助、何处仍弱于人类，为软件工程评测补充区别于修 bug 和代码生成的重构维度。
+- [SWE-Next](https://arxiv.org/abs/2603.20691)：使用 SWE-Next 评测编码或程序分析任务表现，包含 3,971 个仓库、102,582 个样本对、2,308 个实例；使用仓库上下文或真实 issue 产物。
+- [Code Review Agent Benchmark](https://arxiv.org/abs/2603.23448)：评测代码审查 agent，为补丁生成和仓库问题修复之外补充代码审查专门评测轴。
+- [Detect--Repair--Verify for LLM-Generated Code: A Multi-Language, Multi-Granularity Empirical Study](https://arxiv.org/abs/2603.23633)：评测LLM 生成代码的漏洞检测、修复与功能安全验证 workflow；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [TRACE](https://arxiv.org/abs/2603.24586)：使用 Comparing Developer and LLM Biases in Code 评测编码或程序分析任务表现，包含 13 个模型；在评测协议中引入交互或反馈。
+- [TRAJEVAL: Decomposing Code Agent Trajectories for Fine-Grained Diagnosis](https://arxiv.org/abs/2603.24631)：TRAJEVAL 分解 code agent trajectories 做细粒度诊断，适合 SWE agent evaluation。
+- [SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks](https://arxiv.org/abs/2603.24755)：SlopCodeBench 评测 coding agent 在长程迭代任务中退化的问题，适合 Software Development Bench。
+- [Evaluating adaptive and generative AI-based feedback and recommendations in a knowledge-graph-integrated programming learning system](https://arxiv.org/abs/2603.24940)：评测知识图谱集成的编程学习系统中的自适应与生成式 AI 反馈，关注学习推荐和代码反馈的交互效果。
+- [MobileDev-Bench: A Benchmark for Issue Resolution in Mobile Application Development](https://arxiv.org/abs/2603.24946)：评测移动应用开发中的 issue resolution；核心思想是把仓库级修复评测扩展到移动应用代码库、构建系统和平台特定约束。
+- [Reliable Inline Code Documentation with LLMs](https://aclanthology.org/2025.eval4nlp-1.4/)：对 LLM 生成的行内代码注释进行细粒度评估，关注文档质量和覆盖度，而不只看代码生成正确性。
+- [ReCUBE: Evaluating Repository-Level Context Utilization in Code Generation](https://arxiv.org/abs/2603.25770)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Search-Induced Issues in Web-Augmented LLM Code Generation: Detecting and Repairing Error-Inducing Pages](https://arxiv.org/abs/2603.26091)：检测并修复 Web 增强 LLM 代码生成中的错误诱导页面。
+- [A Time-Consistent Benchmark for Repository-Level Software Engineering Evaluation](https://arxiv.org/abs/2603.26137)：在 T0 时间点冻结仓库，只用 T0 前产物构造任务上下文，并用之后合入的 pull request 派生任务评测仓库级 SWE agent，避免时间泄漏和合成 issue 设计影响结果。
+- [RACE-bench](https://arxiv.org/abs/2603.26337)：使用 Intermediate Reasoning on Feature Addition Task 基准 评测编码或程序分析任务表现，包含 528 个实例、12 个仓库；使用仓库上下文或真实 issue 产物。
 - [StackRepoQA](https://arxiv.org/abs/2603.26567)：评测跨文件和系统级代码仓库问答能力，而不是只测孤立代码片段或单函数。
+- [Do LLMs Generate Useful Test Oracles?](https://doi.org/10.1109/ASE63991.2025.00031)：用 unbiased dataset 评测 LLM-generated test oracles，澄清生成断言是否真正提供有效测试信号。
+- [ComBench: A Repo-level Real-world Benchmark for Compilation Error Repair](https://arxiv.org/abs/2603.27333)：评测真实项目中的仓库级编译错误修复，补足单文件修复数据与真实仓库构建失败之间的评测缺口。
+- [Needle in the Repo](https://arxiv.org/abs/2603.27745)：评测通过功能测试的仓库级修改是否仍保持可维护结构、模块化与可测试性。
+- [Crossing the NL/PL Divide: Information Flow Analysis Across the NL/PL Boundary in LLM-Integrated Code](https://arxiv.org/abs/2603.28345)：使用 Where Code Meets Natural Language 评测编码或程序分析任务表现，包含 9,083 个样本对、4,154 个文件、353 个样本对；衡量效率、成本、运行时间或资源使用。
+- [Debt Behind the AI Boom: A Large-Scale Empirical Study of AI-Generated Code in the Wild](https://arxiv.org/abs/2603.28592)：使用 Debt Behind the AI Boom 实证研究 评测AI 生成代码检测与来源分类，包含 6,299 个仓库；使用仓库上下文或真实 issue 产物。
+- [RTLBench](https://doi.org/10.1109/ICCD65941.2025.00087)：从多个硬件设计维度评测 LLM 生成的 RTL 代码，补充可执行 HDL 生成而非通用编程的基准轴。
+- [A Study on the Impact of Fault localization Granularity for Repository-Scale Code Repair Tasks](https://arxiv.org/abs/2604.00167)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [VeriAct: Beyond Verifiability -- Agentic Synthesis of Correct and Complete Formal Specifications](https://arxiv.org/abs/2604.00280)：评估 LLM 生成形式化规格的正确性与完备性，指出通过验证器的 JML 规格仍可能过度或不足约束程序行为。
+- [Reproducible, Explainable, and Effective Evaluations of Agentic AI for Software Engineering](https://arxiv.org/abs/2604.01437)：用明确任务、协议或数据集评测software-development agents。
+- [GBQA: A Game Benchmark for Evaluating LLMs as Quality Assurance Engineers](https://arxiv.org/abs/2604.02648)：GBQA 将 LLM 作为 QA engineer 进行 game quality assurance 评测，属于软件测试 benchmark。
+- [IndustryCode: A Benchmark for Industry Code Generation](https://arxiv.org/abs/2604.02729)：评测工业代码生成。核心思想：用面向工业的代码任务补充通用编程 benchmark 的实际工程约束。
+- [SWE-STEPS](https://arxiv.org/abs/2604.03035)：使用 Beyond Isolated Tasks 框架 评测编码或程序分析任务表现；使用仓库上下文或真实 issue 产物。
+- [ABTest: Behavior-Driven Testing for AI Coding Agents](https://arxiv.org/abs/2604.03362)：用明确任务、协议或数据集评测software-development agents。
+- [AgenticFlict: A Large-Scale Dataset of Merge Conflicts in AI Coding Agent Pull Requests on GitHub](https://arxiv.org/abs/2604.03551)：提供 AI 编码智能体 PR 合并冲突大规模数据集。
+- [Beyond Fixed Tests: Repository-Level Issue Resolution as Coevolution of Code and Behavioral Constraints](https://arxiv.org/abs/2604.04580)：该工作把 repo issue resolution 建模为代码和行为约束共同演化，适合 Software Development Bench。
+- [Edit, But Verify: An Empirical Audit of Instructed Code-Editing Benchmarks](https://arxiv.org/abs/2604.05100)：对照真实编码助手交互审计 instructed code-editing 基准，揭示现有评测在语言、领域、编辑意图和测试覆盖上的缺口。
+- [CAKE: Cloud Architecture Knowledge Evaluation of Large Language Models](https://arxiv.org/abs/2604.05755)：CAKE 评测 LLM 的 cloud architecture knowledge，补充软件架构知识 benchmark。
+- [Evaluating LLM-Based 0-to-1 Software Generation in End-to-End CLI Tool Scenarios](https://arxiv.org/abs/2604.06742)：它提供软件工程、代码事实性、仓库任务或补丁迁移评测，适合补充 software-development Bench。
+- [Chatbot-Based Assessment of Code Understanding in Automated Programming Assessment Systems](https://arxiv.org/abs/2604.07304)：评测代码推理、执行模拟或语义理解，包含 runtime 等指标；使用仓库上下文或真实 issue 产物。
+- [Syntax Is Easy, Semantics Is Hard: Evaluating LLMs for LTL Translation](https://arxiv.org/abs/2604.07321)：评什么：评测从自然语言需求到线性时序逻辑的翻译；核心思想是区分容易的语法和困难的语义正确性。
+- [QuanBench+: A Unified Multi-Framework Benchmark for LLM-Based Quantum Code Generation](https://arxiv.org/abs/2604.08570)：跨多个框架评测 LLM 量子代码生成；核心思想是检查模型能否生成符合具体量子框架要求的程序，而不是泛化的类 Python 代码。
+- [Do AI Coding Agents Log Like Humans? An Empirical Study](https://arxiv.org/abs/2604.09409)：评测AI coding agents 在 agentic pull request 中是否满足日志记录要求；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [ACE-Bench: A Lightweight Benchmark for Evaluating Azure SDK Usage Correctness](https://arxiv.org/abs/2604.09564)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Do Agent Rules Shape or Distort? Guardrails Beat Guidance in Coding Agents](https://arxiv.org/abs/2604.11088)：评测自然语言 agent 规则会帮助还是扭曲 coding agent。核心思想：对数千条带规则的 coding-agent 轨迹进行受控实验。
+- [Evaluating LLM Agents on Automated Software Analysis Tasks](https://arxiv.org/abs/2604.11270)：类型：benchmark/评测协议。核心价值：为 2.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Beyond Output Correctness: Benchmarking and Evaluating Large Language Model Reasoning in Coding Tasks](https://arxiv.org/abs/2604.12379)：在最终输出正确性之外评测大语言模型的代码任务推理能力。
+- [ROSE: An Intent-Centered Evaluation Metric for NL2SQL](https://arxiv.org/abs/2604.12988)：评测自然语言到 SQL 或图查询生成，包含 Accuracy 等指标；检验跨语言泛化。
+- [HWE-Bench: Benchmarking LLM Agents on Real-World Hardware Bug Repair Tasks](https://arxiv.org/abs/2604.14709)：在 Verilog、SystemVerilog 和 Chisel 仓库中基准化 LLM agent 的真实硬件 bug repair 能力。
+- [MMCoIR and CodeMMR](https://arxiv.org/abs/2604.15663)：提出覆盖自然语言、代码和图像的多模态代码检索基准，并训练统一检索器来处理带视觉结构的编程制品。
+- [Precise Debugging Benchmark](https://arxiv.org/abs/2604.17338)：使用 Precise Debugging 基准 评测调试、故障定位或自动程序修复；检验跨语言泛化。
+- [Multilingual Automated Logging Benchmark](https://arxiv.org/abs/2604.17529)：说明单语言证据不足以支撑自动日志生成，并提供多语言 benchmark 与实证研究。
+- [SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks](https://arxiv.org/abs/2604.17771)：评测自然语言到 SQL 或图查询生成，包含 accuracy 等指标；把污染、记忆化或重叠视为有效性风险。
+- [WebCompass: Towards Multimodal Web Coding Evaluation for Code Language Models](https://arxiv.org/abs/2604.18224)：WebCompass 面向多模态 web coding evaluation，适合软件开发和网页生成评测。
+- [PlayCoder: Making LLM-Generated GUI Code Playable](https://arxiv.org/abs/2604.19742)：PlayCoder 评测 LLM 生成 GUI/game code 的可运行性和可玩性，属于软件开发 benchmark。
 - [Hallucination Inspector](https://arxiv.org/abs/2604.20202)：检查 API 迁移生成的 glue code 是否捏造不存在的符号或错误调用上下文。
-- [VIBE-Pro](https://benchlm.ai/benchmarks/vibePro)（[MiniMax M2.7 模型报告](https://www.minimax.io/news/minimax-m27-en)中报告）：评什么：vibe coding 场景下的仓库级完整项目交付。核心思想：判断 agent 能否把宽泛需求转成 Web、移动端和仿真类任务中的完整可运行项目，补足 SWE-Bench Pro 这类 issue fixing benchmark 与 NL2Repo-Bench 这类 repo construction benchmark 之间的空白。
+- [ARFBench: Benchmarking Time Series Question Answering Ability for Software Incident Response](https://arxiv.org/abs/2604.21199)：用明确任务、协议或数据集评测software-development agents。
+- [LLMs for ROS2 Architecture Comprehension](https://arxiv.org/abs/2604.21699)：用 1,230 个架构相关问题评测 9 个 LLM 理解 3 个 ROS2 系统的能力，并以运行监控得到的 ground truth 评分。
+- [RealBench: A Repo-Level Code Generation Benchmark Aligned with Real-World Software Development Practices](https://arxiv.org/abs/2604.22659)：评测贴近真实软件开发实践的仓库级代码生成；核心思想是把代码生成从孤立片段推进到仓库上下文、项目约束和真实工程流程。
+- [Evaluating Large Language Models on Computer Science University Exams in Data Structures](https://arxiv.org/abs/2604.23347)：评测大学数据结构考试中的 LLM 能力评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [SWE-QA: A Dataset and Benchmark for Complex Code Understanding](https://arxiv.org/abs/2604.24814)：用数据集和 benchmark 评测复杂代码理解；核心思想是考察模型能否回答需要理解代码结构、语义和仓库上下文的软件问题。
+- [CoRE: A Fine-Grained Code Reasoning Benchmark Beyond Output Prediction](https://arxiv.org/abs/2604.25399)：使用 CoRE 基准 评测代码推理、执行模拟或语义理解；使用仓库上下文或真实 issue 产物。
+- [RESTestBench: A Benchmark for Evaluating the Effectiveness of LLM-Generated REST API Test Cases from NL Requirements](https://arxiv.org/abs/2604.25862)：用精确与模糊自然语言需求、人工校验的 REST 服务和基于需求的 mutation testing，评估 LLM 生成 REST API 测试用例的有效性。
+- [SWE-Bench 5G: Benchmarking AI Coding Agents on Telecom Network Engineering Tasks](https://arxiv.org/abs/2604.26278)：评测 AI coding agents 修复 5G core network 软件缺陷；核心思想是把开源 5G 项目真实 issue 打包为 Docker 环境、fail-to-pass 测试和可控 3GPP 规格上下文。
+- [ClassEval-Pro: A Cross-Domain Benchmark for Class-Level Code Generation](https://arxiv.org/abs/2604.26923)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [CI-Repair-Bench: A Repository-Aware Benchmark for Automated Patch Validation via CI Workflows](https://arxiv.org/abs/2604.27148)：通过 repository-aware CI workflow 评测自动补丁验证；核心思想是把 CI 日志、构建步骤和回归检查纳入修复评测，而不是只依赖本地测试。
+- [RuC: HDL-Agnostic Rule Completion Benchmark Generation](https://arxiv.org/abs/2604.27780)：生成不依赖 HDL 的规则补全基准。
+- [An Empirical Evaluation of Code Smell Detection in Angular Applications](https://arxiv.org/abs/2604.27893)：评测代码可读性、可维护性、异味或质量评价，包含 accuracy 等指标、F1；使用仓库上下文或真实 issue 产物。
+- [Social Bias in LLM-Generated Code: Benchmark and Mitigation](https://arxiv.org/abs/2605.00382)：补充software development方向的基准或评测套件，核心围绕《Social Bias in LLM-Generated Code: Benchmark and Mitigation》。
+- [CodeAssistBench](https://papers.nips.cc/paper_files/paper/2025/hash/ba9d95c583a154bb77b5f5900691430e-Abstract-Datasets_and_Benchmarks_Track.html)（[开源代码](https://github.com/amazon-science/CodeAssistBench)）：评什么：多轮 chat-based code assistance。核心思想：用容器化真实仓库、模拟用户和真实问题衡量 code assistant 在多轮问答、上下文追踪和代码库理解中的帮助质量，而不是只测一次性补丁生成。
+- [LiveFMBench: Unveiling the Power and Limits of Agentic Workflows in Specification Generation](https://arxiv.org/abs/2605.01394)：评测 specification generation 场景中的 agentic workflows；核心思想是考察编码 agent 能否生成有用的形式化或结构化规格，而不仅是补丁或代码片段。
+- [CommitSuite: A Comprehensive Benchmark for Commit Classification and Message Generation](https://arxiv.org/abs/2605.02256)：评测提交信息生成、分类与代码变更一致性，包含 63,533 个提交、243 个编程语言；使用仓库上下文或真实 issue 产物。
+- [POSTCONDBENCH: Benchmarking Correctness and Completeness in Formal Postcondition Inference](https://arxiv.org/abs/2605.03356)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [ProgramBench](https://arxiv.org/abs/2605.03546)：评测软件 agent 能否根据文档和参考行为从零重建完整程序；核心思想是用端到端行为 fuzzing 检查整体架构和实现选择，而不是只测试固定 patch。
+- [FMI_SU_Yotkova_Kastreva at SemEval-2026 Task 13: Lightweight Detection of LLM-Generated Code via Stylometric Signals](https://arxiv.org/abs/2605.04157)：使用 FMI_SU_Yotkova_Kastreva at SemEval-2026 Task 13 评测代码生成的正确性、鲁棒性、质量或效率，包含 026 个任务；检验跨语言泛化。
+- [Beyond Retrieval: A Multitask Benchmark and Model for Code Search](https://arxiv.org/abs/2605.04615)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [KernelBenchX: A Comprehensive Benchmark for Evaluating LLM-Generated GPU Kernels](https://arxiv.org/abs/2605.04956)：评测 LLM 生成 GPU kernel 的能力；核心思想是同时考察正确性、性能和实现质量，补充普通函数级代码生成之外的高性能编程轴。
+- [Breaking, Stale, or Missing? Benchmarking Coding Agents on Project-Level Test Evolution](https://arxiv.org/abs/2605.06125)：用明确任务、协议或数据集评测software-development agents。
+- [BUILD-AND-FIND: An Effort-Aware Protocol for Evaluating Agent-Managed Codebases](https://arxiv.org/abs/2605.06136)：BUILD-AND-FIND 将 agent-managed codebases 作为可审计工程 artifact 评估，适合 Software Bench。
+- [Constraint Decay](https://arxiv.org/abs/2605.06445)：使用 Constraint Decay 评测编码或程序分析任务表现，包含 80 个任务、20 个任务；检验跨语言泛化。
+- [The Single-File Test: A Longitudinal Public-Interface Evaluation of First-Output LLM Web Generation with Social Reach Tracking](https://arxiv.org/abs/2605.06707)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [ScarfBench: A Benchmark for Cross-Framework Application Migration in Enterprise Java](https://arxiv.org/abs/2605.06754)：企业 Java 跨框架应用迁移基准；核心思想是评测 agent 在迁移框架相关代码和配置时能否保持行为等价。
+- [Bridging the Last Mile of Circuit Design: PostEDA-Bench, a Hierarchical Benchmark for PPA Convergence and DRC Fixing](https://arxiv.org/abs/2605.06936)：补充software development方向的基准或评测套件，核心围绕《Bridging the Last Mile of Circuit Design: PostEDA-Bench, a Hierarchical Benchmark for PPA Convergence and DRC Fixing》。
+- [SmellBench: Evaluating LLM Agents on Architectural Code Smell Repair](https://arxiv.org/abs/2605.07001)：使用 SmellBench 评测代码可读性、可维护性、异味或质量评价；检验跨语言泛化。
+- [Delulu: A Verified Multi-Lingual Benchmark for Code Hallucination Detection in Fill-in-the-Middle Tasks](https://arxiv.org/abs/2605.07024)：评测多语言 fill-in-the-middle 代码任务中的 hallucination 检测；核心思想是用验证样例检查模型或检测器能否识别虚构、不一致或缺少依据的代码补全。
+- [RepoZero: Can LLMs Generate a Code Repository from Scratch?](https://arxiv.org/abs/2605.07122)：RepoZero 评测从零生成代码仓库的能力，补充 repo-level 软件开发 Bench。
+- [Mage: Multi-Axis Evaluation of LLM-Generated Executable Game Scenes Beyond Compile-Pass Rate](https://arxiv.org/abs/2605.07342)：从多轴评测 LLM 生成的可执行游戏场景，而不只看是否能编译；核心思想是同时检查可运行性、语义贴合度、视觉一致性和行为可用性。
+- [Text-to-CAD Evaluation with CADTests](https://arxiv.org/abs/2605.07807)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
 - [SWE Atlas](https://arxiv.org/abs/2605.08366)（[项目页](https://scale.com/blog/swe-atlas-complete)，[开源代码](https://github.com/scaleapi/SWE-Atlas)）：评什么：issue resolution 之外的专业编码 agent 工作流，覆盖代码库问答、测试编写和重构。核心思想：结合程序化检查和 rubric 评价工程质量、可维护性与代码库卫生。
-- [SWE-Chain](https://arxiv.org/abs/2605.14415)：评什么：链式发布升级下的 repo 级软件维护。核心思想：把版本迁移串成连续任务，考察前后版本联动修复。
+- [A Dataset of Agentic AI Coding Tool Configurations](https://arxiv.org/abs/2605.08435)：发布 Agentic AI 编码工具配置数据集。
+- [CUDABeaver: Benchmarking LLM-Based Automated CUDA Debugging](https://arxiv.org/abs/2605.08455)：可作为software development agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [SmartEval: A Benchmark for Evaluating LLM-Generated Smart Contracts from Natural Language Specifications](https://arxiv.org/abs/2605.09610)：评测 LLM 根据自然语言规范生成智能合约；核心思想是考察模型能否在正确性和安全敏感约束下把需求转成可执行合约代码。
+- [Instruction Adherence in Coding Agent Configuration Files: A Factorial Study of Four File-Structure Variables](https://arxiv.org/abs/2605.10039)：研究编码智能体配置文件中的指令遵循。
+- [CppPerf](https://arxiv.org/abs/2605.10890)：评测仓库级 C++ 性能修复；核心思想是挖掘经过人工验证的执行时间优化 commit，封装可复现 Docker 构建测试环境，并检查 agent 是否能生成有效优化 patch。
+- [An Execution-Verified Multi-Language Benchmark for Code Semantic Reasoning](https://arxiv.org/abs/2605.11006)：用执行验证评测多编程语言代码语义推理；核心思想是要求模型理解程序行为而不是表层语法，并通过可运行检查验证答案。
+- [SWE-Cycle: Benchmarking Code Agents across the Complete Issue Resolution Cycle](https://arxiv.org/abs/2605.13139)：基准化代码代理完整 issue resolution cycle；核心思想是纳入环境设置摩擦、自治轨迹解析和端到端交付。
+- [UIBenchKit](https://arxiv.org/abs/2605.13141)：提供统一的设计到代码模型评测工具包，标准化视觉 UI 生成代码系统的任务封装与评分。
+- [Neural Code Translation of Legacy Code: APL to C#](https://arxiv.org/abs/2605.13896)：评估 LLM 引导的遗留代码翻译，比较自然语言描述中介、检索增强与迭代修正策略，并用编译和执行结果验证 C# 输出。
+- [SWE-Chain](https://arxiv.org/abs/2605.14415)：使用 SWE-Chain 评测编码或程序分析任务表现，包含 9 个包；使用仓库上下文或真实 issue 产物。
+- [Artifact validity under varying agent configurations in LLM-assisted software development: A comparative analysis](https://doi.org/10.1016/j.infsof.2026.108022)：比较不同 agent 配置下的软件开发产物有效性。
+- [PerfCodeBench: Benchmarking LLMs for System-Level High-Performance Code Optimization](https://arxiv.org/abs/2605.15222)：评测系统级高性能代码优化，关注生成代码是否高效，而不只看功能正确性。
+- [RTL-BenchMT: Dynamic Maintenance of RTL Generation Benchmark Through Agent-Assisted Analysis and Revision](https://arxiv.org/abs/2605.15537)：使用 RTL-BenchMT 基准 评测硬件、GPU kernel 或 RTL 代码生成；使用仓库上下文或真实 issue 产物。
+- [Text-to-DSL Evaluation](https://arxiv.org/abs/2605.15865)：评估从自然语言生成符合语法的领域专用语言模型。核心思想是测试开源 LLM 能否生成相互关联的 DSL 模型，并同时满足语法有效性、语义完整性和跨模型引用一致性。
+- [SaaSBench](https://arxiv.org/abs/2605.17526)（[开源代码](https://github.com/ShadeCloak/SaaSbench)）：评什么：企业级 SaaS 工程中的长程 coding agent。核心思想：用 6 个 SaaS 领域中的 30 个复杂任务、8 种编程语言、6 类数据库、13 个框架和 5,370 个 validation nodes，配合 dependency-aware hybrid evaluation，揭示超过 95% 的失败发生在深入业务逻辑前的系统配置和多组件集成阶段。
+- [WebGameBench](https://arxiv.org/abs/2605.17637)：把结构化 Web 游戏规格冻结为 requirement-to-application 任务，并评测部署后的浏览器游戏，使输入处理、状态转移、渲染、计分和可玩性作为交付应用整体接受检验。
+- [VISTA](https://arxiv.org/abs/2605.26144)：在文本、截图、Figma 与技术栈约束等条件下评测视觉规格到 Web 应用的端到端生成，并结合功能检查、人工标注意图与视觉结构指标考察 UI-centric coding agent。
+- [SpecBench](https://arxiv.org/abs/2605.30314)：把 SWE agent 评测从实现阶段前移到 specification design，要求 agent 将初始提案转化为经审查的需求，暴露固定精确需求式 SWE-Bench 难以发现的规格推理失败。
+- [CodeGolf Bench](https://arxiv.org/abs/2605.30394)：利用 code.golf 平台评测 60 种编程语言中的简洁代码生成，把最小字节数或字符数作为区别于普通通过率的能力维度。
+- [WorldCoder-Bench](https://arxiv.org/abs/2606.01869)：评测具备物理约束的浏览器原生 3D 世界合成，要求生成的 Three.js 风格程序协调资产、空间与物理约束、交互控件和隐藏运行时状态，而不只匹配 DOM 或像素。
+- [RealClawBench](https://arxiv.org/abs/2606.03889)：从真实开发者与 OpenClaw 会话构建 live benchmark，保留不完全明确的意图、本地执行环境依赖和异质用户请求，补足静态 issue-resolution 集合常会抹平的真实复杂性。
+- [TensorBench](https://arxiv.org/abs/2606.05570)：在 compiler-based tensor framework 上提供 199 个功能添加与重构任务，并用围绕稀疏格式、密集优化和编译器行为的可执行测试，让高难仓库任务可以规模化评测。
+- [SmellBench: Towards Fine-Grained Evaluation of Code Agents on Refactoring Tasks](https://arxiv.org/abs/2606.05574)：通过主动注入或选择代码异味修复任务评测可维护性导向的重构，使 agent 不只按功能补丁成功率评分，也要体现结构清理能力。
+- [SWE-Explore](https://arxiv.org/abs/2606.07297)：把仓库探索能力从最终补丁成功中拆出，要求 coding agent 对相关代码区域排序，单独评测仓库理解、上下文检索、定位和缺陷诊断。
+- [CORE-Bench](https://arxiv.org/abs/2606.11864)：围绕具体仓库状态、文件与函数定位、辅助上下文收集和干扰项过滤重新定义 agentic coding 的代码检索，而不是只做片段级 docstring 匹配。
+- [Claw-SWE-Bench](https://arxiv.org/abs/2606.12344)：用固定 prompt、运行预算、workspace contract、补丁抽取和 evaluator 接口，将 SWE-bench 式 issue resolution 适配到 OpenClaw 类通用 agent harness，覆盖 43 个仓库的 350 个多语言任务。
+- [Dialogue SWE-Bench](https://arxiv.org/abs/2606.13995)：通过 persona-grounded 用户模拟器和对话质量评价测试交互式 coding agent，衡量其能否经由对话解决真实软件问题，而不仅是全自动生成补丁。
+- `SWE-Bench Verified`：评什么：SWE-Bench 的更可靠可复现子集（强调可评测性与环境稳定）。核心思想：以更严格的数据与评测筛选降低评测噪声。（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified)）
+- [Aider Polyglot](https://github.com/Aider-AI/polyglot-benchmark)（[榜单](https://aider.chat/docs/leaderboards/)）：使用 GitHub - Aider-AI/polyglot-benchmark 基准 评测编码或程序分析任务表现；检验跨语言泛化。
+- [SWE-bench Multilingual](https://www.swebench.com/multilingual)（[数据集](https://huggingface.co/datasets/SWE-bench/SWE-bench_Multilingual)，[开源代码](https://github.com/SWE-bench/SWE-bench)）：评测真实 GitHub issue 上的仓库级缺陷修复，要求生成补丁在可复现实验环境中通过可执行测试。
+- [VIBE-Pro](https://benchlm.ai/benchmarks/vibePro)（[MiniMax M2.7 model report](https://www.minimax.io/news/minimax-m27-en)）：评什么：vibe coding 场景下的仓库级完整项目交付。核心思想：判断 agent 能否把宽泛需求转成 Web、移动端和仿真类任务中的完整可运行项目，补足 SWE-Bench Pro 这类 issue fixing benchmark 与 NL2Repo-Bench 这类 repo construction benchmark 之间的空白。
+- [LogBase: A Large-Scale Benchmark for Semantic Log Parsing](https://doi.org/10.1145/3728969)：提供大规模语义日志解析 benchmark。
+- [Code Clones from Commercial AI Code Generators](https://doi.org/10.1145/3729397)：实证评估 commercial AI code generators 输出中的 clone overlap。
+- [ResBench: A Resource-Aware Benchmark for LLM-Generated FPGA Designs](https://doi.org/10.1145/3728179.3728192)：评测大模型生成 FPGA 设计时的资源意识，把功耗、性能、面积或资源约束纳入硬件代码生成评测。
+- [Quality Assessment of ChatGPT Generated Code and their Use by Developers](https://doi.org/10.1145/3643991.3645071)：使用 Quality Assessment of ChatGPT Generated Code and their Use by Developers 评测代码可读性、可维护性、异味或质量评价。
+- [Are Prompt Engineering and TODO Comments Friends or Foes? An Evaluation on GitHub Copilot](https://doi.org/10.1145/3597503.3639176)：实证评估代码注释、文档一致性或代码摘要；把任务放入仓库上下文，而不是孤立代码片段。
+- [Leveraging Large Language Model to Assist Detecting Rust Code Comment Inconsistency](https://doi.org/10.1145/3691620.3695010)：使用 Leveraging Large Language Model to Assist Detecting Rust Code Comment Inconsistency 评测代码注释、文档、摘要或日志推理。
+- [Evaluating the Test Adequacy of Benchmarks for LLMs on Code Generation](https://doi.org/10.1002/smr.70034)：审计代码生成基准是否覆盖足够行为情形，补充只看通过率的评测。
+- [Assessing ChatGPT’s Code Generation Capabilities with Short vs Long Context Programming Problems](https://doi.org/10.1145/3704522.3704535)：使用 Short vs Long Context Programming Problems 评测代码生成的正确性、鲁棒性、质量或效率。
+- [PyHDL-Eval: An LLM Evaluation Framework for Hardware Design Using Python-Embedded DSLs](https://doi.org/10.1145/3670474.3685948)：使用 PyHDL-Eval 框架 评测硬件、GPU kernel 或 RTL 代码生成。
+- [Assessing the effectiveness of recent closed-source large language models in fault localization and automated program repair](https://doi.org/10.1007/s10515-025-00549-x)：使用 effectiveness of recent closed-source large language models in fault localization and automated program 评测调试、故障定位或自动程序修复。
+- [Identifying Multi-parameter Constraint Errors in Python Data Science Library API Documentation](https://doi.org/10.1145/3728945)：测试代码注释、文档一致性或代码摘要；测试跨语言泛化，而不是仅限英文 Python 片段。
+- [Can LLMs Implicitly Learn Numeric Parameter Constraints in Data Science APIs?](https://doi.org/10.52202/079017-1718)：使用 LLMs Implicitly Learn Numeric Parameter Constraints in Data Science APIs 评测数据科学、Notebook、API 或包选择编码任务。
+- [Challenges of deploying code embeddings: an industrial case study on method name generation](https://doi.org/10.1007/s10515-026-00592-2)：实证评估Challenges of deploying code embeddings: an industrial case study on method name generation；控制方法、函数、类或语句级任务粒度。
+- [Evaluating and Improving ChatGPT for Unit Test Generation](https://doi.org/10.1145/3660783)：评测测试生成、测试充分性或模糊测试，包含 coverage 等指标；使用仓库上下文或真实 issue 产物。
+- [Towards Real-Time and Personalized Code Generation](https://doi.org/10.1145/3627673.3679071)：使用 Real-Time and Personalized Code Generation 评测代码生成的正确性、鲁棒性、质量或效率。
+- [Waste materials utilization in 3D printable concrete for sustainable construction applications: a review](https://doi.org/10.1007/s42247-024-00942-4)：分类说明：该条目实际是 3D 打印混凝土可持续材料综述，不属于软件开发基准。
+- [A Pilot Study on Secure Code Generation with ChatGPT for Web Applications](https://doi.org/10.1145/3603287.3651194)：使用 ChatGPT for Web Applications 研究 评测安全编码或漏洞检测。
+- [Test Case Generation for Requirements in Natural Language - An LLM Comparison Study](https://doi.org/10.1145/3717383.3717389)：使用 Test Case Generation for Requirements in Natural Language - An LLM Comparison 研究 评测测试生成、测试充分性或模糊测试。
+- [Assessing and Analyzing the Correctness of GitHub Copilot’s Code Suggestions](https://doi.org/10.1145/3715108)：评测开发助手或编码 agent 工作流，包含 17 个类型；使用仓库上下文或真实 issue 产物。
+- [An Exploratory Evaluation of Large Language Models Using Empirical Software Engineering Tasks](https://doi.org/10.1145/3671016.3674821)：使用 Empirical Software Engineering Tasks 评测软件工程任务表现。
+- [Large Language Models for Student Code Evaluation: Insights and Accuracy](https://doi.org/10.5220/0013287500003932)：实证评估编程教育中的代码生成、反馈或评估；以学生或课堂产物作为评测场景。
+- [Evaluating Long Range Dependency Handling in Code Generation LLMs](https://openreview.net/forum?id=HeY-47mXZr)：评测代码生成模型处理长距离依赖的能力，把远距离上下文使用作为压力因素，而不只看局部补全准确率。
+- [ASAC: A Benchmark for Algorithm Synthesis](https://doi.org/10.1145/3663529.3663802)：使用 ASAC 基准 评测算法程序合成与复杂度感知代码生成。
+- [CG-Bench: Can Language Models Assist Call Graph Construction in the Real World?](https://doi.org/10.1145/3759425.3763379)：使用 CG-Bench 评测程序分析、类型推理或形式化验证任务。
+- [RepoSim: Evaluating Prompt Strategies for Code Completion via User Behavior Simulation](https://doi.org/10.1145/3691620.3695299)：使用 RepoSim 评测上下文感知代码补全与中间填充预测；使用仓库上下文或真实 issue 产物。
+- [Automated Generation of Challenge Questions for Student Code Evaluation Using Abstract Syntax Tree Embeddings and RAG: An Exploratory Study](https://doi.org/10.1145/3711403.3711450)：使用 Abstract Syntax Tree Embeddings and RAG: An Exploratory 研究 评测代码检索与检索增强代码生成；使用学生或课堂产物。
+- [DSCode Comparator: An Interactive Interface for Comparing Models and Evaluating Code for Data Science Tasks](https://doi.org/10.1145/3742413.3789088)：使用 DSCode Comparator 评测数据科学、Notebook、API 或包选择编码任务；在评测协议中引入交互或反馈。
+- [Complexity Analysis of LLM-Generated Recursive Code: A Systematic Evaluation](https://doi.org/10.21015/vtse.v13i4.2269)：使用 Complexity Analysis of LLM-Generated Recursive Code 评测算法程序合成与复杂度感知代码生成；控制方法、函数、类或语句级粒度。
+- [A Comparative Evaluation of Prompting Strategies for Code Generation with Large Language Models](https://doi.org/10.66372/jger.v2i1.1)：使用 Large Language Models 评测代码生成的正确性、鲁棒性、质量或效率，包含 pass@1 等指标、cost、Cost；比较提示或上下文示例设置。
+- [Evaluating Large Language Models in Class-Level Code Generation](https://doi.org/10.1145/3597503.3639219)：测试代码生成的正确性、可靠性或质量；控制方法、函数、类或语句级任务粒度。
+- [Significant Productivity Gains through Programming with Large Language Models](https://doi.org/10.1145/3661145)：通过 24 名参与者的 Python 编程用户研究，比较 Copilot 自动补全、GPT-3 对话辅助和仅用浏览器三种条件下的生产率与使用模式。
+- [Enhancing Exploratory Testing by Large Language Model and Knowledge Graph](https://doi.org/10.1145/3597503.3639157)：使用 Enhancing Exploratory Testing by Large Language Model and Knowledge Graph 评测测试生成、测试充分性或模糊测试。
+- [Benchmarking Automated Program Repair: An Extensive Study on Both Real-World and Artificial Bugs](https://doi.org/10.1145/3650212.3652140)：使用 Automated Program Repair 研究 评测调试、故障定位或自动程序修复。
+- [An Empirical Study to Evaluate AIGC Detectors on Code Content](https://doi.org/10.1145/3691620.3695468)：评测 AIGC 检测器对代码内容的来源分类能力，把人写代码与 AI 生成代码的判别作为任务。
+- [Large Language Models for C Test Case Generation: A Comparative Analysis](https://doi.org/10.3390/electronics14112284)：评测测试生成、测试充分性或模糊测试，包含 Pass@1 等指标、coverage；检验跨语言泛化。
+- [Generating reliable software project task flows using large language models through prompt engineering and robust evaluation](https://doi.org/10.1038/s41598-025-19170-9)：实证评估需求、软件模型、流程模型或任务流生成；以扰动或分布偏移作为压力因素。
+- [Evaluating the Effectiveness of Deep Learning Models for Foundational Program Analysis Tasks](https://doi.org/10.1145/3649829)：评测程序分析、类型推理或形式化验证任务，包含 accuracy 等指标；使用仓库上下文或真实 issue 产物。
+- [TestLoop: A Process Model Describing Human-in-the-Loop Software Test Suite Generation](https://doi.org/10.1145/3765754)：使用 TestLoop 套件 评测软件工程任务表现，包含 coverage 等指标；在评测协议中引入交互或反馈。
+- [ConDefects: A Complementary Dataset to Address the Data Leakage Concern for LLM-Based Fault Localization and Program Repair](https://doi.org/10.1145/3663529.3663815)：使用 ConDefects 数据集 评测调试、故障定位或自动程序修复；把污染、记忆化或重叠视为有效性风险。
+- [IaC-Eval: A Code Generation Benchmark for Cloud Infrastructure-as-Code Programs](https://doi.org/10.52202/079017-4273)：使用 IaC-Eval 基准 评测代码生成的正确性、鲁棒性、质量或效率。
+- [Evaluating Claude Code’s Coding and Test Automation for GPU Acceleration ofa Legacy Fortran Application: A GeoFEM Case Study](https://doi.org/10.1145/3784828.3785335)：使用 Claude Code’s Coding and Test Automation for GPU Acceleration ofa Legacy Fortran Application: A 案例研究 评测编码或程序分析任务表现。
+- [Do LLMs Speak BPMN? An Evaluation of Their Process Modeling Capabilities Based on Quality Measures](https://doi.org/10.3390/computation14010010)：使用 Quality Measures 评测代码可读性、可维护性、异味或质量评价，包含 accuracy 等指标；衡量效率、成本、运行时间或资源使用。
+- [Refuting LLM-generated Code with Reactive Task Comprehension](https://doi.org/10.1145/3724363.3729100)：使用 Reactive Task Comprehension 评测代码生成的正确性、鲁棒性、质量或效率。
+- [Fine-Tuning Large Language Models for Code-Style Analysis: The Significance of Dataset Size](https://doi.org/10.47839/ijc.24.1.3885)：使用 Fine-Tuning Large Language Models for Code-Style Analysis: The Significance of Dataset Size 数据集 评测编码或程序分析任务表现，包含 480 个样本、480 个样本、120 个样本；使用仓库上下文或真实 issue 产物。
+- [An evaluation study of large language models for addressing code quality issues](https://doi.org/10.1007/s10664-026-10858-8)：使用 evaluation study of large language models for addressing code quality issues 研究 评测代码可读性、可维护性、异味或质量评价；使用仓库上下文或真实 issue 产物。
+- [RunBugRun: An executable dataset for automated program repair](https://doi.org/10.1007/s10664-025-10790-3)：使用 RunBugRun 数据集 评测调试、故障定位或自动程序修复。
+- [A Structured Lifecycle Model for Quantum Software Engineering: Bridging Technical Challenges and Future Directions](https://doi.org/10.1049/sfw2/7827044)：分类说明：该条目是量子软件工程生命周期模型，不是基准协议。
+- [Robustness evaluation and enhancement of LLMs in code generation: an empirical study](https://doi.org/10.1007/s10664-026-10856-w)：实证评估代码生成的正确性、可靠性或质量；以扰动或分布偏移作为压力因素。
+- [CodeEduBench: A Multidimensional Benchmark for Evaluating AI-Driven Code Generation Models in C Programming Education](https://doi.org/10.1145/3744367.3744402)：使用 CodeEduBench 基准 评测编程教育中的代码生成、反馈或评估；检验跨语言泛化。
+- [Leveraging LLMs for Generating Infrastructure as Code: An Exploratory Empirical Study](https://doi.org/10.1145/3796563.3796572)：评测 LLM 生成 infrastructure-as-code 程序的能力，把云基础设施配置合成作为软件工程任务。
+- [A Study of Large Language Models in Detecting Python Code Violations](https://doi.org/10.14500/aro.12395)：使用 Study of Large Language Models in Detecting Python Code Violations 研究 评测编码或程序分析任务表现，包含 F1 等指标；衡量效率、成本、运行时间或资源使用。
+- [Exploring the Boundaries Between LLM Code Clone Detection and Code Similarity Assessment on Human and AI-Generated Code](https://doi.org/10.3390/bdcc9020041)：使用 Human and AI-Generated Code 评测代码克隆或重复缺陷检测；衡量效率、成本、运行时间或资源使用。
+- [QATCH: Automatic Evaluation of SQL-Centric Tasks on Proprietary Data](https://doi.org/10.1145/3712704)：使用 QATCH 评测自然语言到 SQL 或图查询生成；衡量效率、成本、运行时间或资源使用。
+- [Benchmarking Large Language Models for Autonomous Run-time Error Repair: Toward Self-Healing Software Systems](https://doi.org/10.1145/3756681.3757021)：使用 Large Language Models for Autonomous Run-time Error Repair: Toward Self-Healing Software Systems 评测软件工程任务表现。
+- [Do Current Language Models Support Code Intelligence for R Programming Language? RCR Report](https://doi.org/10.1145/3744902)：测试Do Current Language Models Support Code Intelligence for R Programming Language? RCR Report；把任务放入仓库上下文，而不是孤立代码片段。
+- [Has My Code Been Stolen for Model Training? A Naturalness Based Approach to Code Contamination Detection](https://doi.org/10.1145/3715765)：测试训练数据泄漏、基准污染或代码来源判定；把暴露与记忆化作为主要有效性风险。
+- [Balancing Validity and Vulnerability: Knowledge-Driven Seed Generation via LLMs for Deep Learning Library Fuzzing](https://doi.org/10.3390/app151910396)：评测测试生成、测试充分性或模糊测试，包含 17 个缺陷；使用仓库上下文或真实 issue 产物。
+- [Analyzing the performance of large language models on statement-level code summarization](https://doi.org/10.1007/s10489-026-07214-0)：测试代码注释、文档一致性或代码摘要；在通过率之外加入运行时间、能耗或资源效率指标。
+- [Comparing Large Language Models and Traditional Clone Detection Tools for Intra- and Cross-Language Code Clone Detection](https://doi.org/10.1145/3801119.3801133)：使用 Comparing Large Language Models and Traditional Clone Detection Tools for Intra- and Cross-Language Code 评测代码克隆或重复缺陷检测。
+- [ArkTS code generation: A comprehensive evaluation with large language models](https://doi.org/10.1007/s10664-026-10844-0)：使用 ArkTS code generation 评测代码生成的正确性、鲁棒性、质量或效率。
+- [Failures in Reliably Assessing Program Code Readability](https://doi.org/10.1145/3769994.3770017)：使用 Failures in Reliably Assessing Program Code Readability 评测代码可读性、可维护性、异味或质量评价。
+- [Large Language Models for Automated Web-Form-Test Generation: An Empirical Study — RCR Report](https://doi.org/10.1145/3797275)：实证评估自动化网页表单测试生成；把任务放入仓库上下文，而不是孤立代码片段。
+- [CodeRankEval: Benchmarking and Analyzing LLM Performance for Code Ranking](https://doi.org/10.1007/s11390-025-5514-9)：评什么：LLM 的代码排序能力。核心思想是评估模型对候选代码解的偏好与排序，而不只看单次生成。
+- [Can Large Language Models Verify System Software? A Case Study Using FSCQ as a Benchmark](https://doi.org/10.1145/3713082.3730382)：用 FSCQ 评估 LLM 验证系统软件能力的 benchmark case。核心思想是测试模型能否处理复杂已验证系统，而不只是小代码片段。
+- [SecureMind: A Framework for Benchmarking Large Language Models in Memory Bug Detection and Repair](https://doi.org/10.1145/3735950.3735954)：评什么：LLM 的内存 bug 检测与修复能力。核心思想是围绕 memory-safety 缺陷和修复评估安全代码推理。
+- [From Model Diagram to Code: A Benchmark Dataset and Multi-Agent Framework](https://doi.org/10.1145/3746027.3755425)：同时提供模型图到代码的 benchmark dataset 和多 agent 生成框架。
+- [Can Multimodal Large Language Models Grade Like an Expert? A Study on UML Class Diagram Assessment Accuracy](https://doi.org/10.1002/cae.70080)：可作为软件开发 agent 与代码模型的 Bench 候选：围绕 Can Multimodal Large Language Models Grade Like an Expert? A Study on UML Class Diagram Assessment Accuracy 提供可比较的评测任务、数据或分析协议。
+- [Automating code generation for a new ecosystem: establishing baselines with large language model based code generation for ArkTS and HarmonyOS](https://doi.org/10.1007/s10515-026-00599-9)：为 ArkTS 与 HarmonyOS 生态建立 LLM 代码生成基线。
+- [Measuring What Matters: An Aggregate Metric for Assessing Enterprise Code Summaries](https://doi.org/10.1145/3696630.3728520)：一种评估企业代码摘要的聚合指标；核心思路是用更贴近企业开发者需求的维度衡量代码摘要，而不是只依赖通用重合度分数。
+- [Understanding Large Language Model Performance in Software Engineering: A Large-scale Question Answering Benchmark](https://doi.org/10.1145/3726302.3730262)：评测软件工程智能体与代码模型。核心思想：围绕论文中的任务、数据或协议（A Large-scale Question Answering Benchmark）形成可复用比较基准。
+- [Unmasking the Type Inference Capabilities of LLMs for Java Code Snippets](https://doi.org/10.1145/3790099)：评估 LLM 对 Java 代码片段的类型推断能力。
+- [From Feature Description to UML Architecture: A Novel Framework for Automated Reasoning and Multimodal Evaluation of Component and Deployment Diagram](https://doi.org/10.20473/jisebi.12.1.138-153)：评估从特性描述到 UML 架构工件的多模态推理。
+- [AI-Driven Code Documentation: Comparative Evaluation of LLMs for Commit Message Generation](https://doi.org/10.3390/computers15020087)：比较评估 LLM 的提交消息生成能力。
+- [Evaluating LLMs for Source Code Generation and Summarization Using Machine Learning Classification and Ranking](https://doi.org/10.3390/computers15020119)：评测软件开发智能体与代码智能的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。

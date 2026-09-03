@@ -1,14 +1,481 @@
 # 1.5.4 Model
 
 - [LLaVA](https://arxiv.org/abs/2304.08485)：高影响力的视觉指令调优方法，把视觉编码器连接到 LLM，并用合成图像指令数据训练。
+- [Integrating Language Guidance Into Image-Text Matching for Correcting False Negatives](https://doi.org/10.1109/tmm.2023.3261443)：用语言引导的图文匹配识别对比式视觉语言训练中的假负样本。
+- [Improved Zero-Shot Classification by Adapting VLMs with Text Descriptions](https://arxiv.org/abs/2401.02460)：用类别描述扩展文本提示来适配零样本 VLM 分类器，而不是只依赖类别名称。
+- [Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding](https://arxiv.org/abs/2401.04398)：把表格推理表示为一串表格演化操作，使 LLM 在回答问题时逐步变换中间表格。
+- [Inducing High Energy-Latency of Large Vision-Language Models with Verbose Images](https://arxiv.org/abs/2401.11170)：揭示文本密集的 verbose images 会放大 VLM 的 token 处理量和能耗延迟，暴露模型侧鲁棒性与效率风险。
+- [EarthGPT: A Universal Multimodal Large Language Model for Multisensor Image Comprehension in Remote Sensing Domain](https://arxiv.org/abs/2401.16822)：训练遥感多模态 LLM 来理解多传感器图像，覆盖场景理解、视觉定位和问答。
+- [RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback](https://arxiv.org/abs/2402.03681)：把视觉语言基础模型的反馈作为奖励信号，用于强化学习优化视觉语言输出。
+- [Task-customized Masked Autoencoder via Mixture of Cluster-conditional Experts](https://arxiv.org/abs/2402.05382)：用聚类条件专家定制 masked autoencoder，使视觉表征适配下游任务结构。
+- [Question Aware Vision Transformer for Multimodal Reasoning](https://arxiv.org/abs/2402.05472)：让 Vision Transformer 受问题文本条件化，从而为多模态推理选择相关视觉特征。
+- [ViGoR: Improving Visual Grounding of Large Vision Language Models with Fine-Grained Reward Modeling](https://arxiv.org/abs/2402.06118)：训练细粒度奖励模型，为 VLM 的视觉定位质量提供 token 或区域级反馈。
+- [Mitigating Object Hallucination in Large Vision-Language Models via Image-Grounded Guidance](https://arxiv.org/abs/2402.08680)：用输入图像中的证据引导生成，减少 VLM 对物体和属性的幻觉。
+- [EFUF: Efficient Fine-Grained Unlearning Framework for Mitigating Hallucinations in Multimodal Large Language Models](https://arxiv.org/abs/2402.09801)：通过 fine-grained unlearning 缓解多模态大模型幻觉，属于模型侧后训练方法。
+- [Vision-Flan: Scaling Human-Labeled Tasks in Visual Instruction Tuning](https://arxiv.org/abs/2402.11690)：用大规模人工标注视觉语言任务扩展视觉指令调优。
+- [Scaffolding Coordinates to Promote Vision-Language Coordination in Large Multi-Modal Models](https://arxiv.org/abs/2402.12058)：在多模态提示和训练样本中加入坐标脚手架，使 VLM 学会更精确的空间指代。
+- [Tables as Images? Exploring the Strengths and Limitations of LLMs on Multimodal Representations of Tabular Data](https://arxiv.org/abs/2402.12424)：研究把表格渲染成图像在何种情况下优于或弱于文本化表格编码。
+- [Uncertainty-Aware Evaluation for Vision-Language Models](https://arxiv.org/abs/2402.14418)：用不确定性估计诊断 VLM 在视觉语言任务中的置信度和可靠性。
+- [Efficient Temporal Extrapolation of Multimodal Large Language Models with Temporal Grounding Bridge](https://arxiv.org/abs/2402.16050)：加入 temporal grounding bridge，使多模态 LLM 能以较低再训练成本外推跨时间视觉理解。
+- [IBD: Alleviating Hallucinations in Large Vision-Language Models via Image-Biased Decoding](https://arxiv.org/abs/2402.18476)：在解码阶段偏向图像条件证据，从而抑制 VLM 回答中的虚构物体和属性。
+- [Peacock: A Family of Arabic Multimodal Large Language Models and Benchmarks](https://arxiv.org/abs/2403.01031)：构建阿拉伯语多模态 LLM 与评测数据，覆盖图像理解、视觉问答和 OCR 密集场景。
+- [InfiMM-HD: A Leap Forward in High-Resolution Multimodal Understanding](https://arxiv.org/abs/2403.01487)：把多模态理解扩展到高分辨率输入，使模型保留细粒度视觉细节和密集文本。
+- [One Prompt Word is Enough to Boost Adversarial Robustness for Pre-Trained Vision-Language Models](https://arxiv.org/abs/2403.01849)：通过调节一个精心选择的提示词提升预训练 VLM 的对抗鲁棒性。
+- [Multi-Modal Instruction Tuned LLMs with Fine-Grained Visual Perception](https://arxiv.org/abs/2403.02969)：用细粒度感知数据对多模态 LLM 做指令调优，强化局部视觉理解。
+- [TextMonkey: An OCR-Free Large Multimodal Model for Understanding Document](https://arxiv.org/abs/2403.04473)：构建无需外部 OCR 的文档 MLLM，直接从视觉 token 读取文本密集页面。
+- [MoAI: Mixture of All Intelligence for Large Language and Vision Models](https://arxiv.org/abs/2403.07508)：把多个专用视觉专家接入 LLM，使模型能在检测、OCR 和推理能力之间路由。
+- [ChartInstruct: Instruction Tuning for Chart Comprehension and Reasoning](https://arxiv.org/abs/2403.09028)：构造图表专用指令数据，用于调优 VLM 的图表理解和推理问答能力。
+- [The First to Know: How Token Distributions Reveal Hidden Knowledge in Large Vision-Language Models?](https://arxiv.org/abs/2403.09037)：分析 VLM 的 token 分布，揭示视觉语言知识在最终解码前何时出现。
+- [GiT: Towards Generalist Vision Transformer through Universal Language Interface](https://arxiv.org/abs/2403.09394)：用统一语言接口封装多种视觉任务，训练通用型 Vision Transformer。
+- [Generative Region-Language Pretraining for Open-Ended Object Detection](https://arxiv.org/abs/2403.10191)：通过生成式 region-language 预训练支持开放式目标检测。
+- [X-LLaVA: Optimizing Bilingual Large Vision-Language Alignment](https://arxiv.org/abs/2403.11399)：优化视觉特征与中英文回答之间的双语对齐，面向双语 VLM 使用场景。
+- [mPLUG-DocOwl 1.5: Unified Structure Learning for OCR-free Document Understanding](https://arxiv.org/abs/2403.12895)：学习统一文档结构表示，用于无需外部 OCR 的版面、表格和文本密集页面理解。
+- [Bridge the Modality and Capability Gaps in Vision-Language Model Selection](https://arxiv.org/abs/2403.13797)：区分模态覆盖与下游能力匹配，研究如何为具体任务选择 VLM。
+- [Once for Both: Single Stage of Importance and Sparsity Search for Vision Transformer Compression](https://arxiv.org/abs/2403.15835)：在单阶段内搜索 ViT 重要性和稀疏性，用于压缩多模态模型中的视觉编码器。
+- [Elysium: Exploring Object-level Perception in Videos via MLLM](https://arxiv.org/abs/2403.16558)：用多模态 LLM 探查视频帧中的物体级感知与时序物体理解。
+- [mChartQA: A universal benchmark for multimodal Chart Question Answer based on Vision-Language Alignment and Reasoning](https://arxiv.org/abs/2404.01548)：把图表问答与视觉语言对齐、推理信号结合，用于图表 VLM 训练和分析。
+- [Ferret-v2: An Improved Baseline for Referring and Grounding with Large Language Models](https://arxiv.org/abs/2404.07973)：通过更强的区域级视觉表示改进多模态 LLM 的指代表达和视觉 grounding。
+- [Two Effects, One Trigger: On the Modality Gap, Object Bias, and Information Imbalance in Contrastive Vision-Language Representation Learning](https://arxiv.org/abs/2404.07983)：分析模态差距、物体偏置与信息不平衡如何影响对比式 VLM 表征。
+- [TextCoT: Zoom-In for Enhanced Multimodal Text-Rich Image Understanding](https://arxiv.org/abs/2404.09797)：围绕文本密集图像区域进行 zoom-in 推理，提升文档和截图类输入的多模态理解。
+- [Groma: Localized Visual Tokenization for Grounding Multimodal Large Language Models](https://arxiv.org/abs/2404.13013)：引入局部化视觉 tokenization，使 MLLM 能把回答 grounding 到具体图像区域。
+- [AdvLoRA: Adversarial Low-Rank Adaptation of Vision-Language Models](https://arxiv.org/abs/2404.13425)：用对抗式低秩适配提升 VLM 鲁棒性，同时避免全量微调。
+- [Exploring Diverse Methods in Visual Question Answering](https://arxiv.org/abs/2404.13565)：比较多种 VQA 建模策略如何把视觉证据和问题文本映射为答案。
+- [Graphic Design with Large Multimodal Model](https://arxiv.org/abs/2404.14368)：将大多模态模型适配到图形设计版面理解和设计反馈生成。
+- [Cantor: Inspiring Multimodal Chain-of-Thought of MLLM](https://arxiv.org/abs/2404.16033)：诱导多模态 chain-of-thought，使 MLLM 在回答前分解视觉证据。
+- [TinyChart: Efficient Chart Understanding with Program-of-Thoughts Learning and Visual Token Merging](https://arxiv.org/abs/2404.16635)：结合 program-of-thought 学习和视觉 token 合并，实现高效图表理解。
+- [Choose What You Need: Disentangled Representation Learning for Scene Text Recognition, Removal and Editing](https://arxiv.org/abs/2405.04377)：学习解耦的场景文本表征，用共享特征支持文本识别、移除和编辑。
+- [VisionGraph: Leveraging Large Multimodal Models for Graph Theory Problems in Visual Context](https://arxiv.org/abs/2405.04950)：用多模态模型解析图论图示，并基于视觉上下文求解图论问题。
+- [Boosting Multimodal Large Language Models with Visual Tokens Withdrawal for Rapid Inference](https://arxiv.org/abs/2405.05803)：通过撤除低价值视觉 token 加速 MLLM 推理，同时保留与答案相关的图像证据。
+- [SpeechGuard: Exploring the Adversarial Robustness of Multimodal Large Language Models](https://arxiv.org/abs/2405.08317)：研究语音与视觉输入交互时多模态 LLM 的对抗鲁棒性。
+- [Xmodel-VLM: A Simple Baseline for Multimodal Vision Language Model](https://arxiv.org/abs/2405.09215)：提供一个简单 VLM 基线，用于在多模态任务上对齐视觉编码器和语言模型。
+- [Rethinking Overlooked Aspects in Vision-Language Models](https://arxiv.org/abs/2405.11850)：审视影响感知、语言对齐和下游鲁棒性的 VLM 设计细节。
+- [No Filter: Cultural and Socioeconomic Diversity in Contrastive Vision-Language Models](https://arxiv.org/abs/2405.13777)：考察数据过滤选择如何影响对比式 VLM 中的文化与社会经济多样性表征。
+- [Alleviating Hallucinations in Large Vision-Language Models through Hallucination-Induced Optimization](https://arxiv.org/abs/2405.15356)：用诱发幻觉的样例优化 VLM，使训练直接惩罚无图像依据的视觉声明。
+- [Meteor: Mamba-based Traversal of Rationale for Large Language and Vision Models](https://arxiv.org/abs/2405.15574)：用 Mamba 式 rationale traversal 模块连接视觉证据与推理步骤。
+- [Enhancing Visual-Language Modality Alignment in Large Vision Language Models via Self-Improvement](https://arxiv.org/abs/2405.15973)：利用模型自身反馈迭代改进多模态训练信号，从而加强视觉语言对齐。
+- [Benchmarking and Improving Detail Image Caption](https://arxiv.org/abs/2405.19092)：构建并使用细节图像描述监督，使 caption 模型捕捉更细粒度的视觉属性。
+- [MetaToken: Detecting Hallucination in Image Descriptions by Meta Classification](https://arxiv.org/abs/2405.19186)：加入 meta-classification token，用于检测图像描述中的幻觉内容。
+- [Adaptive Image Quality Assessment via Teaching Large Multimodal Model to Compare](https://arxiv.org/abs/2405.19298)：训练多模态模型进行自适应图像比较，用于图像质量评估。
+- [Matryoshka Query Transformer for Large Vision-Language Models](https://arxiv.org/abs/2405.19315)：用嵌套查询表示在多个粒度上把视觉证据传递给大语言模型。
+- [Visual Perception by Large Language Model's Weights](https://arxiv.org/abs/2405.20339)：研究视觉感知能力如何从 LLM 权重中涌现或被编码。
+- [DeCo: Decoupling Token Compression from Semantic Abstraction in Multimodal Large Language Models](https://arxiv.org/abs/2405.20985)：把视觉 token 压缩与语义抽象解耦，在降低 MLLM 成本时保留关键证据。
+- [StrucTexTv3: An Efficient Vision-Language Model for Text-rich Image Perception, Comprehension, and Beyond](https://arxiv.org/abs/2405.21013)：构建高效 VLM，专门面向文本密集图像的感知和理解。
+- [TabPedia: Towards Comprehensive Visual Table Understanding with Concept Synergy](https://arxiv.org/abs/2406.01326)：利用表格结构、单元格内容和视觉版面的概念协同来理解视觉表格。
+- [VisTR: Visualizations as Representations for Time-series Table Reasoning](https://arxiv.org/abs/2406.03753)：把时间序列表格转换为可视化表示，使 VLM 能推理趋势和表格数值。
+- [ChatSR: Multimodal Large Language Models for Scientific Formula Discovery](https://arxiv.org/abs/2406.05410)：用多模态 LLM 连接科学视觉或符号证据与公式发现。
+- [From Redundancy to Relevance: Enhancing Explainability in Multimodal Large Language Models](https://arxiv.org/abs/2406.06579)：通过过滤冗余视觉证据并突出相关证据，提升 MLLM 可解释性。
+- [MIND: Multimodal Shopping Intention Distillation from Large Vision-language Models for E-commerce Purchase Understanding](https://arxiv.org/abs/2406.10701)：从大型 VLM 蒸馏购物意图知识，用于多模态电商购买理解。
+- [mDPO: Conditional Preference Optimization for Multimodal Large Language Models](https://arxiv.org/abs/2406.11839)：把偏好优化扩展到多模态 LLM，在视觉语言输入条件下学习偏好。
+- [DocKylin: A Large Multimodal Model for Visual Document Understanding with Efficient Visual Slimming](https://arxiv.org/abs/2406.19101)：用 visual slimming 提升文档 MLLM 在版面、文本和文档问答任务上的效率。
+- [FlowVQA: Mapping Multimodal Logic in Visual Question Answering with Flowcharts](https://arxiv.org/abs/2406.19237)：面向流程图 VQA，建模节点、箭头和多模态证据之间的逻辑结构。
+- [A Bounding Box is Worth One Token: Interleaving Layout and Text in a Large Language Model for Document Understanding](https://arxiv.org/abs/2407.01976)：把每个边界框编码为一个 token，使 LLM 能交错处理文档文本和版面几何。
+- [Crossroads of Continents: Automated Artifact Extraction for Cultural Adaptation with Large Multimodal Models](https://arxiv.org/abs/2407.02067)：引入经人工验证的 9,935 张国家概念图像数据集 DalleStreet，并用 CultureAdapt 抽取和编辑 LMM 生成图像中的文化器物。
+- [FineCLIPER: Multi-modal Fine-grained CLIP for Dynamic Facial Expression Recognition with AdaptERs](https://arxiv.org/abs/2407.02157)：偏离 OCR 主轴；用帧、掩码、关键点和 MLLM 生成的面部变化描述，把 CLIP 适配到动态表情识别。
+- [Why do LLaVA Vision-Language Models Reply to Images in English?](https://arxiv.org/abs/2407.02333)：诊断 LLaVA 类模型的多语偏置，指出视觉输入会让非英文查询更易生成英文回答，并用语言骨干替换和注意力干预缓解该现象。
+- [Improving Visual Storytelling with Multimodal Large Language Models](https://arxiv.org/abs/2407.02586)：偏离 OCR 主轴；在视觉故事数据集上结合监督学习和强化学习调优 LLM 与 LVLM 组件，生成更连贯的图像叙事。
+- [ChartGemma: Visual Instruction-tuning for Chart Reasoning in the Wild](https://arxiv.org/abs/2407.04172)：基于 PaliGemma，用直接来自图表图像趋势和低层视觉细节的指令数据调优模型，提升图表摘要、问答和事实核查。
+- [Rethinking Visual Prompting for Multimodal Large Language Models with External Knowledge](https://arxiv.org/abs/2407.04681)：把掩码、OCR 等专用视觉模型输出嵌入空间 visual-prompt map，让 MLLM 接收细粒度外部知识而不依赖坐标文本提示。
+- [A Single Transformer for Scalable Vision-Language Modeling](https://arxiv.org/abs/2407.06438)：提出 7B 单 Transformer LVLM SOLO，从 LLM 初始化，经 ImageNet 预训练、网页规模预训练和指令调优，避免独立视觉编码器、连接器和 LLM 的扩展限制。
+- [Graph-Based Captioning: Enhancing Visual Descriptions by Interconnecting Region Captions](https://arxiv.org/abs/2407.06723)：构建 GBC10M 图式描述数据集，用实体、组合和关系节点为 CLIP 训练提供结构化区域级图像描述。
+- [Pseudo-RIS: Distinctive Pseudo-supervision Generation for Referring Image Segmentation](https://arxiv.org/abs/2407.07412)：偏离 OCR 主轴；把基础模型生成的掩码与具区分性的描述配对，并过滤弱指代表达，生成 referring segmentation 伪监督。
+- [IDA-VLM: Towards Movie Understanding via ID-Aware Large Vision-Language Model](https://arxiv.org/abs/2407.07577)：偏离 OCR 主轴；加入 ID-reference 视觉指令调优和 MM-ID 基准，用于跨电影场景追踪角色身份。
+- [Quantized Prompt for Efficient Generalization of Vision-Language Models](https://arxiv.org/abs/2407.10704)：把提示量化误差作为 CLIP 适配的轻量正则，减少下游数据集上的过拟合和存储开销。
+- [Naturally Occurring Feedback is Common, Extractable and Useful](https://arxiv.org/abs/2407.10944)：偏离 OCR 主轴；从聊天日志中抽取用户自发反馈，并用会话派生信号训练偏好对齐语言模型。
+- [Reflective Instruction Tuning: Mitigating Hallucinations in Large Vision-Language Models](https://arxiv.org/abs/2407.11422)：构建 11.5 万条 REVERIE 反思理由视觉指令数据，让 LVLM 学会解释正确和混淆回答以减少幻觉。
+- [BEAF: Observing BEfore-AFter Changes to Evaluate Hallucination in Vision-language Models](https://arxiv.org/abs/2407.13442)：用前后变化图像对检验 VLM 是否真正注意到视觉变化，还是继续虚构未变化的物体与属性。
+- [Qalam: A Multimodal LLM for Arabic Optical Character and Handwriting Recognition](https://arxiv.org/abs/2407.13559)：构建面向阿拉伯印刷 OCR 和手写识别的多模态 LLM，重点是阿拉伯文字读取而非通用视觉问答。
+- [Beyond Augmentation: Empowering Model Robustness under Extreme Capture Environments](https://arxiv.org/abs/2407.13640)：偏离 OCR 主轴；用网格化 multi-mode synchronization augmentation 提升极端拍摄条件下的行人重识别鲁棒性。
+- [EVLM: An Efficient Vision-Language Model for Visual Understanding](https://arxiv.org/abs/2407.14177)：结合图文 cross-attention、层级 ViT 特征和 MoE 模块，降低图像与视频描述类 MLLM 的计算成本。
+- [Token-level Correlation-guided Compression for Efficient Multimodal Document Understanding](https://arxiv.org/abs/2407.14439)：提出即插即用的文档 token 压缩器，用 patch-token 相关性和 CLS-token 采样保留裁剪文档中的高信息 token。
+- [On Pre-training of Multimodal Language Models Customized for Chart Understanding](https://arxiv.org/abs/2407.14506)：提出 CHOPINLLM，通过原始图表数值对齐、随机文本化图表替换和先抽取再回答的微调强化图表读数能力。
+- [Harmonizing Visual Text Comprehension and Generation](https://arxiv.org/abs/2407.16364)：构建 TextHarmony，以 Slide-LoRA 专家和 DetailedTextCaps-100K 让同一个模型同时理解和生成视觉文本。
+- [Graph-based Unsupervised Disentangled Representation Learning via Multimodal Large Language Models](https://arxiv.org/abs/2407.18999)：偏离 OCR 主轴；利用 MLLM 推断加权语义因子图，用于无监督解耦表征学习。
+- [LLAVADI: What Matters For Multimodal Large Language Models Distillation](https://arxiv.org/abs/2407.19409)：系统研究小型 MLLM 蒸馏，指出 token 对齐与 logit 对齐共同决定 2.7B 学生模型能否接近更大教师模型。
+- [ControlMLLM: Training-Free Visual Prompt Learning for Multimodal Large Language Models](https://arxiv.org/abs/2407.21534)：在测试时优化潜变量，把 MLLM 注意力引向框、掩码、涂鸦或点选区域，用于指代表达描述和推理。
+- [Mitigating Multilingual Hallucination in Large Vision-Language Models](https://arxiv.org/abs/2408.00550)：构造跨语言幻觉感知回答对，并用直接偏好优化降低 13 种语言场景下的 LVLM 幻觉。
+- [Alleviating Hallucination in Large Vision-Language Models with Active Retrieval Augmentation](https://arxiv.org/abs/2408.00555)：提出 ARA，在低置信时刻触发层级图像感知检索并筛选检索证据，以减少 LVLM 幻觉。
+- [Advancing Post-OCR Correction: A Comparative Study of Synthetic Data](https://arxiv.org/abs/2408.02253)：比较合成数据规模、增强方式和 glyph-similarity 生成方法，用 ByT5 式模型改进低资源语言 post-OCR 纠错。
+- [How Aligned are Human Chart Takeaways and LLM Predictions? A Case Study on Bar Charts with Varying Layouts](https://arxiv.org/abs/2408.06837)：检验 LLM 是否能在不同柱状图布局下复现人类 takeaways，发现事实准确性和人类比较类型对齐都较弱。
+- [ChemVLM: Exploring the Power of Multimodal Large Language Models in Chemistry Area](https://arxiv.org/abs/2408.07246)：用双语化学图文数据训练化学 MLLM，并评测化学 OCR、多模态化学推理和分子理解。
+- [Adaptive Layer Selection for Efficient Vision Transformer Fine-Tuning](https://arxiv.org/abs/2408.08670)：偏离 OCR 主轴；按 mini-batch 自适应选择关键 ViT 层进行微调，以降低训练显存与计算成本。
+- [HiRED: Attention-Guided Token Dropping for Efficient Inference of High-Resolution Vision-Language Models in Resource-Constrained Environments](https://arxiv.org/abs/2408.10945)：根据注意力丢弃低价值高分辨率视觉 token，使 VLM 以更低推理成本处理细节图像。
+- [EE-MLLM: A Data-Efficient and Compute-Efficient Multimodal Large Language Model](https://arxiv.org/abs/2408.11795)：构建更小的 MLLM，突出数据高效和计算高效训练，用于通用多模态理解。
+- [Open-FinLLMs: Open Multimodal Large Language Models for Financial Applications](https://arxiv.org/abs/2408.11878)：把开放多模态 LLM 适配到金融文档和金融视觉内容，面向图表、报告和金融领域视觉问答。
+- [Revisiting Image Captioning Training Paradigm via Direct CLIP-based Optimization](https://arxiv.org/abs/2408.14547)：用直接 CLIP 目标优化 captioner，提升图像文本对齐而不只依赖最大似然描述训练。
+- [DocLayLLM: An Efficient Multi-modal Extension of Large Language Models for Text-rich Document Understanding](https://arxiv.org/abs/2408.15045)：用面向版面和密集文档阅读的高效多模态架构扩展 LLM，使其处理文本密集文档。
+- [General OCR Theory: Towards OCR-2.0 via a Unified End-to-end Model](https://arxiv.org/abs/2409.01704)：主张 OCR-2.0 应走统一端到端文本图像建模路线，而不是分离检测和识别模块。
+- [No Detail Left Behind: Revisiting Self-Retrieval for Fine-Grained Image Captioning](https://arxiv.org/abs/2409.03025)：用 Visual Caption Boosting、BagCurri 和 TrueMatch 基准训练能保留细微视觉差异且减少幻觉的图像描述模型。
+- [ChartMoE: Mixture of Diversely Aligned Expert Connector for Chart Understanding](https://arxiv.org/abs/2409.03277)：用由 chart-table、chart-JSON 和 chart-code 对齐任务初始化的 MoE 连接器替换图表 MLLM 的线性投影器。
+- [mPLUG-DocOwl2: High-resolution Compressing for OCR-free Multi-page Document Understanding](https://arxiv.org/abs/2409.03420)：把每个高分辨率文档页压缩到 324 个 token，并通过单页、多页和多任务阶段训练 DocOwl2 进行跨页问答。
+- [Serp-Mamba: Advancing High-Resolution Retinal Vessel Segmentation With Selective State-Space Model](https://arxiv.org/abs/2409.04356)：偏离 OCR 主轴；用 serpentine Mamba 扫描和 ambiguity recalibration 处理高分辨率视网膜血管分割。
+- [Open-MAGVIT2: An Open-Source Project Toward Democratizing Auto-regressive Visual Generation](https://arxiv.org/abs/2409.04410)：偏离 OCR 主轴；发布 MAGVIT-v2 式 tokenizer 和带非对称 token 分解的自回归图像生成模型。
+- [NEVLP: Noise-Robust Framework for Efficient Vision-Language Pre-training](https://arxiv.org/abs/2409.09582)：用 transformer 连接冻结图像编码器和 LLM，并结合噪声自适应对比学习与概念增强文本生成处理噪声网页图文对。
+- [Detect, Describe, Discriminate: Moving Beyond VQA for MLLM Evaluation](https://arxiv.org/abs/2409.15125)：提出 D3，让 MLLM 描述近似图像对的差异，并用 self-retrieval 测试细粒度视觉辨别。
+- [Attention Prompting on Image for Large Vision-Language Models](https://arxiv.org/abs/2409.17143)：把由 CLIP 生成的查询引导注意力热图叠加到输入图像上，在不改权重的情况下引导 LVLM 感知。
+- [Visual Question Decomposition on Multimodal Large Language Models](https://arxiv.org/abs/2409.19339)：加入 DecoVQA+ 和选择性分解微调目标，使 MLLM 能把复杂视觉问题拆成有用子问题。
+- [Scrambled text: training Language Models to correct OCR errors using synthetic data](https://arxiv.org/abs/2409.19735)：用 Markov 字符扰动生成的历史报纸合成文本训练语言模型，进行上下文辅助 OCR 纠错。
+- [Helpful DoggyBot: Open-World Object Fetching using Legged Robots and Vision-Language Models](https://arxiv.org/abs/2410.00231)：偏离 OCR 主轴；结合四足机器人控制器、夹爪、RGB 摄像头和 VLM 语义命令生成，实现零样本室内取物。
+- [OCC-MLLM-Alpha:Empowering Multi-modal Large Language Model for the Understanding of Occluded Objects with Self-Supervised Test-Time Learning](https://arxiv.org/abs/2410.01861)：利用 3D 生成支持的自监督测试时学习，提升 MLLM 对遮挡物体的描述能力。
+- [LoTLIP: Improving Language-Image Pre-training for Long Text Understanding](https://arxiv.org/abs/2410.05249)：在 1 亿长描述图文对上预训练，并加入 corner tokens，使图文模型在保留短文本能力的同时提升长文本检索。
+- [TextHawk2: A Large Vision-Language Model Excels in Bilingual OCR and Grounding with 16x Fewer Tokens](https://arxiv.org/abs/2410.05261)：强化视觉编码器、扩展 1 亿预训练样本来源，并把图像 token 压缩 16 倍，用于双语 OCR、grounding、ChartQA 和 DocVQA。
+- [ModalPrompt:Dual-Modality Guided Prompt for Continual Learning of Large Multimodal Models](https://arxiv.org/abs/2410.05849)：通过图文双模态引导、prompt fusion 和 prompt selection 学习任务提示，实现高效连续多模态指令调优。
+- [To Preserve or To Compress: An In-Depth Study of Connector Selection in Multimodal Large Language Models](https://arxiv.org/abs/2410.06765)：比较保特征与压缩型 MLLM 连接器，指出保特征更利于细粒度感知，而压缩连接器更快。
+- [Chain-of-Sketch: Enabling Global Visual Reasoning](https://arxiv.org/abs/2410.08165)：通过中间 sketch 帧训练全局视觉推理，其中带 Markov 结构的归纳式 sketch 序列提升分布外泛化。
+- [Emergent Visual Grounding in Large Multimodal Models Without Grounding Supervision](https://arxiv.org/abs/2410.08209)：证明弱监督 LMM 也能涌现 grounding，并用 attention-map attend-and-segment 与扩散视觉编码器 DIFFLMM 强化定位。
+- [Neural Material Adaptor for Visual Grounding of Intrinsic Dynamics](https://arxiv.org/abs/2410.08257)：偏离 OCR 主轴；结合物理先验、学习式修正和 Particle-GS 渲染，从图像中 grounding 材料内在动力学。
+- [ImagineNav: Prompting Vision-Language Models as Embodied Navigator through Scene Imagination](https://arxiv.org/abs/2410.09874)：偏离 OCR 主轴；生成未来 RGB 或 RGB-D 视角并让 VLM 选择最佳视角，用于无地图目标导航。
+- [Can We Predict Performance of Large Models across Vision-Language Tasks?](https://arxiv.org/abs/2410.10112)：用概率矩阵分解和不确定性估计，在稀疏模型任务成绩矩阵上预测未测试的 LVLM 基准分数。
+- [Mixture of Experts Made Personalized: Federated Prompt Learning for Vision-Language Models](https://arxiv.org/abs/2410.10114)：在联邦 CLIP prompt learning 中让客户端通过注意力门控组合本地提示和多个非本地提示专家，实现个性化适配。
+- [Automatically Generating Visual Hallucination Test Cases for Multimodal Large Language Models](https://arxiv.org/abs/2410.11242)：提出 VHExpansion，通过扰动问题、答案和图像扩展视觉幻觉测试对，并用扩展数据微调 MLLM。
+- [DocLayout-YOLO: Enhancing Document Layout Analysis through Diverse Synthetic Data and Global-to-Local Adaptive Perception](https://arxiv.org/abs/2410.12628)：在 DocSynth-300K 上预训练快速文档版面检测器，并加入 global-to-local 感受野模块处理多尺度页面元素。
+- [Dual Prototype Evolving for Test-Time Generalization of Vision-Language Models](https://arxiv.org/abs/2410.12790)：在测试时同时演化文本和视觉类别原型，并用每样本可学习残差对齐两种原型以适配 VLM。
+- [Trust but Verify: Programmatic VLM Evaluation in the Wild](https://arxiv.org/abs/2410.13121)：更接近基准而非模型；PROVE 构造 1.05 万个可由场景图程序验证的开放式 QA 对，并同时评估 VLM 回答的有用性与真实性。
+- [Mitigating Hallucinations in Large Vision-Language Models via Summary-Guided Decoding](https://arxiv.org/abs/2410.13321)：提出 Summary-Guided Decoding，通过把长文本上下文压缩为摘要并只校准图像相关词性的 token 来降低 LVLM 幻觉。
+- [MiCEval: Unveiling Multimodal Chain of Thought's Quality via Image Description and Reasoning Steps](https://arxiv.org/abs/2410.14668)：把多模态思维链拆成图像描述准确性和逐步推理质量，并按正确性、相关性与信息量进行细粒度评估。
+- [IPO: Interpretable Prompt Optimization for Vision-Language Models](https://arxiv.org/abs/2410.15397)：用 LLM 生成可读文本 prompt，并把历史 prompt 及其成绩放入上下文，替代不可解释的连续 prompt 调优。
+- [Reducing Hallucinations in Vision-Language Models via Latent Space Steering](https://arxiv.org/abs/2410.15778)：提出 Visual and Textual Intervention，在测试时 steering 潜空间表征以稳定视觉特征，减少图文错配导致的幻觉。
+- [Griffon-G: Bridging Vision-Language and Vision-Centric Tasks via Large Multimodal Models](https://arxiv.org/abs/2410.16163)：基于 CCMD-8M 多模态指令数据统一 grounding、区域描述、图像描述和 VQA 等视觉中心与视觉语言任务。
+- [Beyond Filtering: Adaptive Image-Text Quality Enhancement for MLLM Pretraining](https://arxiv.org/abs/2410.16166)：提出 AITQE，对低质量图文对重写文本并通过负样本学习提升判别能力，而不是简单丢弃语义不对齐样本。
+- [ROCKET-1: Mastering Open-World Interaction with Visual-Temporal Context Prompting](https://arxiv.org/abs/2410.17856)：偏离 OCR 主轴；用历史观测和分割掩码组成 visual-temporal context prompting，训练开放世界具身交互低层策略。
+- [C2: Scalable Auto-Feedback for LLM-based Chart Generation](https://arxiv.org/abs/2410.18652)：构建 ChartAF 和 ChartUIE-8K 无参考数据集，为 LLM 生成的图表代码提供自动反馈，减少人工图表标注依赖。
+- [Distill Visual Chart Reasoning Ability from LLMs to MLLMs](https://arxiv.org/abs/2410.18798)：用 Code-as-Intermediary Translation 把图表代码转成文本推理链，低成本合成可扩展的图表 QA 训练数据。
+- [Rethinking Visual Dependency in Long-Context Reasoning for Large Vision-Language Models](https://arxiv.org/abs/2410.19732)：指出长上下文会削弱 LVLM 的视觉依赖，并用免训练文本 token 剪枝去除低关键信息以恢复视觉证据权重。
+- [What Factors Affect Multi-Modal In-Context Learning? An In-Depth Exploration](https://arxiv.org/abs/2410.20482)：在 6 个 VLM 和 20 种策略上拆解多模态上下文学习，发现多模态示例检索、示例内部排序和任务引导语最关键。
+- [Face-MLLM: A Large Face Perception Model](https://arxiv.org/abs/2410.20717)：偏离 OCR 主轴；用细粒度人脸描述和 QA 式属性重标注数据，并通过三阶段训练构建专门的人脸感知 MLLM。
+- [MMDocBench: Benchmarking Large Vision-Language Models for Fine-Grained Visual Document Understanding](https://arxiv.org/abs/2410.21311)：更接近文档理解基准；包含 15 类 OCR-free 文档任务、4338 个 QA 对和 11353 个支持区域，覆盖论文、票据、财报、表格、图表和信息图。
+- [Vision-Language Models Create Cross-Modal Task Representations](https://arxiv.org/abs/2410.22330)：发现 VLM 会形成跨文本、图像、示例和指令的模态不变 task vector，且在跨模态触发中有时优于完整任务提示。
+- [ArxivDIGESTables: Synthesizing Scientific Literature into Tables using Language Models](https://arxiv.org/abs/2410.22360)：把文献综述表生成拆成 schema 生成和值生成，并用 2228 个 arXiv 综述表和 DecontextEval 对齐方法支撑评测。
+- [Effective and Efficient Adversarial Detection for Vision-Language Models via A Single Vector](https://arxiv.org/abs/2410.22888)：构建 RADAR 对抗图像和有害回答数据集，并用 NEARSIDE 从 VLM 隐状态中提取单一攻击方向向量检测输入攻击。
+- [VL-Cache: Sparsity and Modality-Aware KV Cache Compression for Vision-Language Model Inference Acceleration](https://arxiv.org/abs/2410.23317)：针对 VLM 注意力稀疏模式设计 KV cache 压缩，在 prefill 与 decoding 中区分视觉和文本 token 做层自适应预算分配。
+- [Collage: Decomposable Rapid Prototyping for Information Extraction on Scientific PDFs](https://arxiv.org/abs/2410.23478)：提供科学 PDF 信息抽取原型工具，可比较 Hugging Face token classifier、LLM 和任务专用模型，并可视化处理失败。
+- [Interpretable Next-token Prediction via the Generalized Induction Head](https://arxiv.org/abs/2411.00066)：偏离 OCR 主轴；提出 GIM 检索式可解释 next-token 模块，结合精确 n-gram 匹配和神经模糊匹配，并扩展到 fMRI 响应预测。
+- [Right this way: Can VLMs Guide Us to See More to Answer Questions?](https://arxiv.org/abs/2411.00394)：研究 VLM 能否在图像信息不足时指导用户如何重新拍摄，提供人工标注基准和合成的“where to know”微调数据。
+- [IDEATOR: Jailbreaking Large Vision-Language Models Using Themselves](https://arxiv.org/abs/2411.00827)：用 VLM 生成目标越狱文本，并配合扩散模型生成越狱图像，自动构造黑盒 LVLM 红队 image-text 攻击对。
+- [Dreaming Out Loud: A Self-Synthesis Approach For Training Vision-Language Models With Developmentally Plausible Data](https://arxiv.org/abs/2411.00828)：用四阶段自合成训练低数据 VLM：小语料语言预训练、图像描述对齐、未标注图像自生成 caption，以及 VQA 推理任务。
+- [RS-MoE: A Vision–Language Model With Mixture of Experts for Remote Sensing Image Captioning and Visual Question Answering](https://arxiv.org/abs/2411.01595)：面向遥感图像描述和 VQA 定制 MoE VLM，用 instruction router 调度多个轻量 LLM 专家关注不同遥感语义方面。
+- [Inference Optimal VLMs Need Fewer Visual Tokens and More Parameters](https://arxiv.org/abs/2411.03312)：建立 VLM 推理扩展律，指出固定计算预算下视觉推理常更适合减少图像 token 并使用更大的语言模型。
+- [DesignMinds: Enhancing Video-Based Design Ideation with a Vision-Language Model and a Context-Injected Large Language Model](https://arxiv.org/abs/2411.03827)：偏离 OCR 主轴；把 VLM 与注入上下文的 LLM 结合用于视频设计灵感生成，并在设计从业者研究中评估原创性和参与度。
+- [M3DocRAG: Multi-modal Retrieval is What You Need for Multi-page Multi-document Understanding](https://arxiv.org/abs/2411.04952)：构建多模态 RAG 处理多页多文档 DocVQA，先检索文本、图表、图片等视觉证据，再由 MLM 作答。
+- [Hierarchical Visual Feature Aggregation for OCR-Free Document Understanding](https://arxiv.org/abs/2411.05254)：用多尺度视觉特征、cross-attentive pooling 和相对位置指令任务提升 OCR-free 文档阅读，同时减少输入给 MLLM 的 token。
+- [Weakly Supervised Temporal Action Localization via Dual-Prior Collaborative Learning Guided by Multimodal Large Language Models](https://arxiv.org/abs/2411.08466)：偏离 OCR 主轴；把 MLLM 产生的动作关键语义和完整语义先验注入传统弱监督视频动作定位模型。
+- [Tree-of-Table: Unleashing the Power of LLMs for Enhanced Large-Scale Table Understanding](https://arxiv.org/abs/2411.08516)：通过表格压缩与分解构建层级 Table-Tree，使 LLM 能对大规模复杂表格执行树式推理。
+- [ARM: Appearance Reconstruction Model for Relightable 3D Generation](https://arxiv.org/abs/2411.10825)：偏离 OCR 主轴；从稀疏视角图像重建可重光照 3D 外观，把观测反投影到 UV 纹理空间并加入材质先验。
+- [Understanding Multimodal LLMs: the Mechanistic Interpretability of Llava in Visual Question Answering](https://arxiv.org/abs/2411.10950)：用机制可解释方法分析 LLaVA 颜色 VQA，与文本 QA 对比，并定位影响最终答案的视觉嵌入位置。
+- [GeoGround: A Unified Large Vision-Language Model. for Remote Sensing Visual Grounding](https://arxiv.org/abs/2411.11904)：统一遥感视觉 grounding 中的水平框、旋转框和分割掩码，使自然语言查询能指定不同形态的定位输出。
+- [VL-Uncertainty: Detecting Hallucination in Large Vision-Language Model via Uncertainty Estimation](https://arxiv.org/abs/2411.11919)：通过对语义等价的视觉和文本扰动测量回答方差，并按语义聚类答案，以不确定性检测 LVLM 幻觉。
+- [Vision Language Models Are Few-Shot Audio Spectrogram Classifiers](https://arxiv.org/abs/2411.12058)：偏离 OCR 主轴；把声谱图作为图像提示给 VLM 做少样本音频分类，展示视觉声谱表示可接近或超过音频模型基线。
+- [Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](https://arxiv.org/abs/2411.12790)：定义细粒度视觉知识编辑任务和 FGVEdit 基准，并用 multimodal scope classifier 精准编辑多实体图像中的 MLLM 知识。
+- [Stable Flow: Vital Layers for Training-Free Image Editing](https://arxiv.org/abs/2411.14430)：偏离 OCR 主轴；自动识别 DiT flow 模型中的 vital layers，通过选择性注入注意力特征和改进 inversion 实现免训练图像编辑。
+- [freePruner: A Training-free Approach for Large Multimodal Model Acceleration](https://arxiv.org/abs/2411.15446)：无需再训练，通过贡献度选择语义关键视觉 token，再用注意力模式补充保留低层细节 token，以加速 LMM。
+- [VaLiD: Mitigating the Hallucination of Large Vision Language Models by Visual Layer Fusion Contrastive Decoding](https://arxiv.org/abs/2411.15839)：从视觉编码失真角度缓解幻觉，把早期视觉层与后期输出融合后做 contrastive decoding。
+- [Self-Calibrated CLIP for Training-Free Open-Vocabulary Segmentation](https://arxiv.org/abs/2411.15869)：通过抑制 ViT-CLIP 中异常 token 的注意力并恢复局部空间细节，实现无需新参数的开放词汇分割校准。
+- [Document Haystacks: Vision-Language Reasoning Over Piles of 1000+ Documents](https://arxiv.org/abs/2411.16740)：提出 DocHaystack 和 InfoHaystack 大规模视觉文档检索基准，并用多种专用视觉编码器与问题文档相关性模块组成 V-RAG。
+- [Imagine and Seek: Improving Composed Image Retrieval with an Imagined Proxy](https://arxiv.org/abs/2411.16752)：偏离 OCR 主轴；根据查询图像和相对文本生成 proxy image，再融合代理图像、原图和文本特征改进零样本组合图像检索。
+- [Is ‘Right’ Right? Enhancing Object Orientation Understanding in Multimodal Large Language Models through Egocentric Instruction Tuning](https://arxiv.org/abs/2411.16761)：用以用户视角为标准的 orientation instruction data 对 MLLM 做 egocentric tuning，并用 EgoOrientBench 评测物体方向理解。
+- [DOGE: Towards Versatile Visual Document Grounding and Referring](https://arxiv.org/abs/2411.17125)：构建 DOGR engine 生成多粒度文档解析和对话 grounding 数据，并用覆盖图表、海报和 PDF 的 DOGR-Bench 评测七类任务。
+- [HEIE: MLLM-Based Hierarchical Explainable AIGC Image Implausibility Evaluator](https://arxiv.org/abs/2411.17261)：偏离 OCR 主轴；用层级 MLLM 评估 AIGC 图像不合理性，同时输出缺陷热图、评分和解释。
+- [HyperSeg: Towards Universal Visual Segmentation with Large Language Model](https://arxiv.org/abs/2411.17606)：用 VLLM 做通用图像和视频分割，并结合混合实体识别与细粒度视觉感知器生成推理驱动的像素级结果。
+- [MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding](https://arxiv.org/abs/2411.17762)：在视觉 tokenizer 中加入语义约束，使离散图像 token 与语言 token 对齐，从而统一视觉理解和生成。
+- [Autonomous Imagination: Closed-Loop Decomposition of Visual-to-Textual Conversion in Visual Reasoning for Multimodal Large Language Models](https://arxiv.org/abs/2411.18142)：通过迭代修改视觉输入，如隔离或重排物体，再把视觉证据转成文本，以缓解 MLLM 感知瓶颈。
+- [On Domain-Adaptive Post-Training for Multimodal Large Language Models](https://arxiv.org/abs/2411.19930)：系统研究领域自适应 MLLM 后训练，包含开源模型 generate-then-filter 数据合成、单阶段训练和生物医学、食品、遥感等领域评测。
+- [Align-KD: Distilling Cross-Modal Alignment Knowledge for Mobile Vision-Language Model](https://arxiv.org/abs/2412.01282)：把跨模态对齐知识蒸馏到移动端 VLM 学生模型中，在不增加模型规模或数据量的情况下提升多模态理解。
+- [LayoutVLM: Differentiable Optimization of 3D Layout via Vision-Language Models](https://arxiv.org/abs/2412.02193)：偏离 OCR 主轴；用 VLM 生成场景布局表示，并结合可微优化，让语言指令下的 3D 物体摆放满足物理可行性。
+- [A Stitch in Time Saves Nine: Small VLM is a Precise Guidance for Accelerating Large VLMs](https://arxiv.org/abs/2412.03324)：用小型 VLM 的注意力信号指导大型 VLM 视觉 token 剪枝，在激进压缩下保留关键图像证据。
+- [FLAIR: VLM with Fine-grained Language-informed Image Representations](https://arxiv.org/abs/2412.03561)：构建带有细粒度语言引导图像表征的视觉语言模型。
+- [Multimodal Fact-Checking with Vision Language Models: A Probing Classifier based Solution with Embedding Strategies](https://arxiv.org/abs/2412.05155)：检验 VLM 隐层嵌入在多模态事实核查中的作用，并发现分离图文编码器嵌入再融合可优于直接使用 VLM 嵌入。
+- [CompCap: Improving Multimodal Large Language Models with Composite Captions](https://arxiv.org/abs/2412.05243)：构造复合图像 caption 数据，让 MLLM 学习描述图表、海报、截图等非自然拍摄图像。
+- [iLLaVA: An Image is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](https://arxiv.org/abs/2412.06263)：同时压缩图像编码器和 LLM 阶段的视觉冗余，追求端到端 LVLM 加速而不只是后段 token 剪枝。
+- [Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding](https://arxiv.org/abs/2412.06474)：在推理时遮蔽高认知不确定性的视觉 token 并集成预测，以降低 LVLM 幻觉输出。
+- [The Narrow Gate: Localized Image-Text Communication in Vision-Language Models](https://arxiv.org/abs/2412.06646)：分析原生与适配式多模态模型，指出视觉信息通过残差流中的局部通信位置进入文本生成。
+- [GEXIA: Granularity Expansion and Iterative Approximation for Scalable Multi-Grained Video-Language Learning](https://arxiv.org/abs/2412.07704)：偏离 OCR 主轴；把视频文本数据扩展到多种时间粒度，并用迭代近似模块对齐这些粒度。
+- [Doubly-Universal Adversarial Perturbations: Deceiving Vision-Language Models Across Both Images and Text with a Single Perturbation](https://arxiv.org/abs/2412.08108)：优化单个扰动同时攻击 VLM 的图像和文本输入，核心针对注意力 value 向量中的脆弱层。
+- [DocVLM: Make Your VLM an Efficient Reader](https://arxiv.org/abs/2412.08746)：加入 OCR 编码器，把文本内容和版面压缩成学习查询，使 VLM 在不改原权重的情况下读取高分辨率文档。
+- [jina-clip-v2: Multilingual Multimodal Embeddings for Text and Images](https://arxiv.org/abs/2412.08802)：发布面向文本图像检索与表征的多语言多模态嵌入模型。
+- [SynerGen-VL: Towards Synergistic Image Understanding and Generation with Vision Experts and Token Folding](https://arxiv.org/abs/2412.09604)：用 token folding 和 vision expert 渐进式对齐预训练，构建兼顾高分辨率图像理解与生成的无编码器 MLLM。
+- [PVC: Progressive Visual Token Compression for Unified Image and Video Processing in Large Vision-Language Models](https://arxiv.org/abs/2412.09613)：逐帧渐进压缩视觉 token，使同一 VLM 策略能在较短 token 预算下处理静态图像和视频。
+- [V2PE: Improving Multimodal Long-Context Capability of Vision-Language Models with Variable Visual Position Encoding](https://arxiv.org/abs/2412.09616)：用可变视觉位置步长，让 VLM 处理视频、高分辨率图像和长图文文档时不受固定文本位置窗口限制。
+- [Benchmarking Table Comprehension In The Wild](https://arxiv.org/abs/2412.09884)：更接近基准条目；TableQuest 评估上下文表格文本混合场景中的整体表格理解，而非孤立表格问答。
+- [Constraint-Aware Zero-Shot Vision-Language Navigation in Continuous Environments](https://arxiv.org/abs/2412.10137)：偏离 OCR 主轴；把连续环境零样本 VLN 分解为带约束跟踪的子指令和值图导航。
+- [DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding](https://arxiv.org/abs/2412.10302)：MoE VLM 系列，结合动态切块视觉编码与 MLA DeepSeekMoE 语言模块，覆盖高分辨率 OCR、文档、图表、grounding 和 VQA。
+- [Optimizing Vision-Language Interactions Through Decoder-Only Models](https://arxiv.org/abs/2412.10758)：用 vision-token adapter 和自适应 co-attention 构建 decoder-only VLM，去除独立视觉编码器处理图文任务。
+- [Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval](https://arxiv.org/abs/2412.11077)：用 MLLM 的单阶段反思推理在保留视觉细节的同时应用文本修改，实现免训练组合图像检索。
+- [OmniVLM: A Token-Compressed, Sub-Billion-Parameter Vision-Language Model for Efficient On-Device Inference](https://arxiv.org/abs/2412.11475)：把 729 个视觉 token 压缩到 81 个，并用 SFT 与 minimal-edit DPO 训练 9.68 亿参数端侧 VLM。
+- [GeoX: Geometric Problem Solving Through Unified Formalized Vision-Language Pre-training](https://arxiv.org/abs/2412.11863)：通过形式化几何表示预训练图示编码器和符号解码器，使 MLLM 能解析几何图并求解几何题。
+- [Faster Vision Mamba is Rebuilt in Minutes via Merged Token Re-training](https://arxiv.org/abs/2412.12496)：在 token 合并后快速重训 Vision Mamba，在高压缩率下恢复精度并加速 SSM 式视觉模块。
+- [Nullu: Mitigating Object Hallucinations in Large Vision-Language Models via HalluSpace Projection](https://arxiv.org/abs/2412.13817)：从真实与幻觉提示中识别 HalluSpace，并正交化 LVLM 权重，把特征投影出幻觉子空间。
+- [Unveiling Visual Perception in Language Models: An Attention Head Analysis Approach](https://arxiv.org/abs/2412.18108)：在 VLM 中区分视觉、文本和多模态神经元与注意力头，并用 GPT-4o 辅助解释视觉 token 处理机制。
+- [Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models](https://arxiv.org/abs/2412.18609)：偏离 OCR 主轴；用 4500 万参数时空对齐块直接处理视频输入，避免重型预训练编码器。
+- [Toward Robust Referring Image Segmentation](https://doi.org/10.1109/tip.2024.3371348)：聚焦语言引导分割掩码的鲁棒性问题；IEEE TIP 元数据显示其属于分割方向，而非 OCR 专项文档理解。
+- [Large Language Models Know What is Key Visual Entity: An LLM-assisted Multimodal Retrieval for VQA](https://doi.org/10.18653/v1/2024.emnlp-main.613)：用 LLM 识别关键视觉实体，并分别编码这些实体做检索增强 VQA，减少检索查询中的无关视觉信息。
+- [Building Vision-Language Models on Solid Foundations with Masked Distillation](https://doi.org/10.1109/cvpr52733.2024.01348)：用 masked distillation 进行 CVPR 2024 VLM 预训练，通过遮蔽输入迁移视觉语言表示，而非只做普通对比对齐。
+- [DST-Det: Open-Vocabulary Object Detection via Dynamic Self-Training](https://doi.org/10.1109/tcsvt.2024.3520734)：用动态自训练扩展开放词汇目标检测的伪标注类别，更偏通用检测而非 OCR 文档任务。
+- [Towards Explainable Image Aesthetics Assessment With Attribute-Oriented Critiques Generation](https://doi.org/10.1109/tcsvt.2024.3470870)：生成属性导向的审美评论来解释图像美学评分，是邻近的视觉质量评估任务。
+- [Torch-Advent-Civilization-Evolution: Accelerating Diffusion Model for Image Restoration](https://doi.org/10.1109/tcsvt.2024.3470888)：加速扩散式图像复原；IEEE TCSVT 元数据表明其侧重复原效率，而非文档或 OCR 理解。
+- [DreamMask: Boosting Open-vocabulary Panoptic Segmentation with Synthetic Data](https://arxiv.org/abs/2501.02048)：通过词汇扩展、版面排布、数据过滤和合成-真实对齐损失生成开放词汇全景分割训练数据，提升模型对新类别的泛化。
+- [Realistic Test-Time Adaptation of Vision-Language Models](https://arxiv.org/abs/2501.03729)：在类别覆盖可变和在线非独立同分布批次下压力测试 VLM 测试时自适应，指出现有 TTA 往往牺牲零样本鲁棒性。
+- [V2C-CBM: Building Concept Bottlenecks with Vision-to-Concept Tokenizer](https://arxiv.org/abs/2501.04975)：用 vision-to-concept tokenizer 构建可解释概念瓶颈，避免 LLM 生成的冗长或非视觉概念列表。
+- [ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation](https://arxiv.org/abs/2501.06598)：结合代码 LLM 骨干、Chart2Code-160k 和 Snippet-of-Thought 生成，把图表图像转换为可执行代码并更好还原细节。
+- [Multi-task Visual Grounding with Coarse-to-Fine Consistency Constraints](https://arxiv.org/abs/2501.06710)：用两阶段粗到细一致性约束，让指代表达边界框和分割掩码保持对齐。
+- [GeoPix: Multi-Modal Large Language Model for Pixel-level Image Understanding in Remote Sensing](https://arxiv.org/abs/2501.06828)：给遥感 MLLM 加入 mask predictor 和类别级记忆，使语言指令能返回像素级分割掩码。
+- [Zero-shot Video Moment Retrieval via Off-the-shelf Multimodal Large Language Models](https://arxiv.org/abs/2501.07972)：偏离 OCR 主轴；Moment-GPT 用冻结 MLLM 做查询改写、自适应候选片段生成和片段打分，实现免调优视频时刻检索。
+- [Theme-Explanation Structure for Table Summarization using Large Language Models: A Case Study on Korean Tabular Data](https://arxiv.org/abs/2501.10487)：结合多步推理和 theme-explanation 输出结构，为韩语行政表格生成更易读的摘要。
+- [Ocean-OCR: Towards General OCR Application via a Vision-Language Model](https://arxiv.org/abs/2501.15558)：训练面向通用 OCR 场景的 3B 多模态模型，重点提升含文本图像理解而非泛化视觉感知。
+- [Towards Making Flowchart Images Machine Interpretable](https://arxiv.org/abs/2501.17441)：把流程图图像转换为可执行 Python 代码，将 OCR 式文档理解从文本抽取扩展到图结构和程序语义。
+- [HSRMamba: Contextual Spatial-Spectral State Space Model for Single Hyperspectral Super-Resolution](https://arxiv.org/abs/2501.18500)：偏离 OCR 主轴；用 Mamba 建模局部和全局空间光谱依赖，服务高光谱图像超分辨率。
+- [Fast Vision Mamba: Pooling Spatial Dimensions for Accelerated Processing](https://arxiv.org/abs/2502.00594)：沿图像空间维度交替池化 token，减少 Mamba recurrent scan 步数，同时保持视觉模型精度。
+- [OCR Error Post-Correction with LLMs in Historical Documents: No Free Lunches](https://arxiv.org/abs/2502.01205)：评估开源 LLM 做历史文档 OCR 后纠错，发现英文可降错，但芬兰语尚未达到实用纠错效果。
+- [Efficient Few-Shot Continual Learning in Vision-Language Models](https://arxiv.org/abs/2502.04098)：用低秩结构化更新选择性修改 VLM 图像编码器，在少样本连续学习中纠错并保持整体鲁棒性。
+- [From Objects to Events: Unlocking Complex Visual Understanding in Object Detectors Via LLM-guided Symbolic Reasoning](https://arxiv.org/abs/2502.05843)：在开放词汇检测器之上加入 LLM 引导的符号推理，使物体检测结果能支持事件级理解。
+- [Adaptive Perception for Unified Visual Multimodal Object Tracking](https://arxiv.org/abs/2502.06583)：用等权模态建模让统一跟踪器在 RGB 与其他模态之间自适应融合，覆盖多模态目标跟踪任务。
+- [Rethinking the Global Knowledge of CLIP in Training-Free Open-Vocabulary Semantic Segmentation](https://arxiv.org/abs/2502.06818)：在免训练开放词汇分割中恢复 CLIP 的全局上下文，而不是只依赖局部 patch 注意力。
+- [Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models](https://arxiv.org/abs/2502.07601)：构建 Anomaly-Instruct-125k 和 VisA-D&R，并调优 MLLM 来检测和解释细粒度视觉异常。
+- [Granite Vision: a lightweight, open-source multimodal model for enterprise Intelligence](https://arxiv.org/abs/2502.09927)：将 20 亿参数 decoder-only Granite LLM 与视觉模态对齐，并用覆盖表格、图表、图示、草图和信息图的企业指令数据训练。
+- [Adversarially Robust CLIP Models Can Induce Better (Robust) Perceptual Metrics](https://arxiv.org/abs/2502.11725)：通过无监督对抗微调 CLIP 得到鲁棒感知指标，并提升鲁棒图像到图像检索。
+- [JL1-CD: A New Benchmark for Remote Sensing Change Detection and a Robust Multi-Teacher Knowledge Distillation Framework](https://arxiv.org/abs/2502.13407)：发布 5000 对高分辨率遥感变化检测图像，并按变化面积比例训练多教师蒸馏框架。
 - [Qwen2.5-VL](https://arxiv.org/abs/2502.13923)：视觉语言模型路线，通过改进视觉 tokenization、训练数据和后训练覆盖 OCR、文档、图表、grounding 与视觉推理。
-- [Table-R1](https://arxiv.org/abs/2505.12415)：提出面向图像和 OCR的模型侧方法，核心围绕 Region-based Reinforcement Learning for Table Understanding。
-- [Effective Training Data Synthesis for Improving MLLM Chart Understanding](https://arxiv.org/abs/2508.06492)：提出面向图像和 OCR的模型侧方法，核心围绕 Effective Training Data Synthesis for Improving MLLM Chart Understanding。
+- [MLLMs Know Where to Look: Training-free Perception of Small Visual Details with Multimodal LLMs](https://arxiv.org/abs/2502.17422)：通过引导 MLLM 关注细节区域来提升小视觉细节感知。
+- [CLIPure: Purification in Latent Space via CLIP for Adversarially Robust Zero-Shot Classification](https://arxiv.org/abs/2502.18176)：基于 SDE 推导在 CLIP 潜空间净化对抗样本，提升零样本图像分类鲁棒性。
+- [FinBloom: Knowledge Grounding Large Language Model with Real-time Financial Data](https://arxiv.org/abs/2502.18471)：偏离 OCR 主轴；把金融 LLM 回答 grounding 到实时文本和表格数据，并在金融新闻上微调 Bloom 7B。
+- [Deciphering Functions of Neurons in Vision-Language Models](https://arxiv.org/abs/2502.18485)：区分 VLM 中的视觉、文本和多模态神经元，并自动生成神经元解释以理解视觉 token 处理。
+- [InPK: Infusing Prior Knowledge into Prompt for Vision-Language Models](https://arxiv.org/abs/2502.19777)：用类别先验知识初始化 CLIP 可学习 prompt，在多层特征中持续强化 token 与先验的交互，并加入文本到视觉投影以提升零/少样本识别。
+- [T2ICount: Enhancing Cross-Modal Understanding for Zero-Shot Counting](https://arxiv.org/abs/2502.20625)：利用扩散模型交叉注意力、层级语义校正和区域一致性损失，提升文本敏感的零样本目标计数。
+- [Enhancing Vision-Language Compositional Understanding with Multimodal Synthetic Data](https://arxiv.org/abs/2503.01167)：SPARCL 通过特征注入的快速文生图、风格迁移和 adaptive-margin 过滤生成组合式图文扰动，用于提升 CLIP 组合理解。
+- [Every SAM Drop Counts: Embracing Semantic Priors for Multi-Modality Image Fusion and Beyond](https://arxiv.org/abs/2503.01210)：利用 SAM 语义先验改进红外-可见光图像融合，并提升下游场景理解适配能力。
+- [Retrieval-Augmented Perception](https://arxiv.org/abs/2503.01222)：把视觉 RAG 用于高分辨率图像感知，提升 MLLM 获取细粒度视觉证据的能力。
+- [Diversity Covariance-Aware Prompt Learning for Vision-Language Models](https://arxiv.org/abs/2503.01531)：用各向异性 Mahalanobis 距离建模视觉特征协方差，并学习多样软提示，为少样本 VLM 适配形成多中心决策边界。
+- [A Token-Level Text Image Foundation Model for Document Understanding](https://arxiv.org/abs/2503.02304)：构建面向文档理解的 token-level 文本图像基础模型，增强 OCR 场景中的文本图像推理。
+- [Question-Aware Gaussian Experts for Audio-Visual Question Answering](https://arxiv.org/abs/2503.04459)：偏离 OCR 主轴；用问题感知的高斯时间专家为音视频问答选择连续和非连续关键帧。
+- [Painting with Words: Elevating Detailed Image Captioning with Benchmark and Alignment Learning](https://arxiv.org/abs/2503.07906)：用面向详细图像描述的基准与对齐学习提升 captioning。
+- [External Knowledge Injection for CLIP-Based Class-Incremental Learning](https://arxiv.org/abs/2503.08510)：通过双分支调优向 CLIP 类增量学习注入外部语义知识，保留细粒度视觉概念。
+- [SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks](https://arxiv.org/abs/2503.08703)：偏离 OCR 主轴；为事件相机流提出带全局轨迹提示的脉冲驱动 Transformer 跟踪器。
+- [Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding](https://arxiv.org/abs/2503.09143)：偏离 OCR 主轴；通过 Ego-ExoClip 预训练和 EgoIT 指令调优，把外视角 MLLM 知识迁移到第一视角视频理解。
+- [Bayesian Test-Time Adaptation for Vision-Language Models](https://arxiv.org/abs/2503.09248)：以贝叶斯似然与先验调节重新刻画 VLM 测试时自适应，提升零样本图像分类鲁棒性。
+- [LuSeg: Efficient Negative and Positive Obstacles Segmentation via Contrast-Driven Multi-Modal Feature Fusion on the Lunar](https://arxiv.org/abs/2503.11409)：偏离 OCR 主轴；用对比一致性融合月面 RGB-D 数据，分割月球车导航中的正负障碍物。
+- [SmolDocling: An Ultra-Compact Vision-Language Model for End-To-End Multi-Modal Document Conversion](https://arxiv.org/abs/2503.11576)：用 2.56 亿参数文档 VLM 输出 DocTags 标记，同时保留页面内容、结构和元素位置，覆盖表格、公式、图表、代码和列表。
+- [Rethinking Few-Shot Adaptation of Vision-Language Models in Two Stages](https://arxiv.org/abs/2503.11609)：把 VLM 少样本适配拆成特征抽取和类别专门化两阶段，并据此设计参数高效调优。
+- [O-TPT: Orthogonality Constraints for Calibrating Test-time Prompt Tuning in Vision-Language Models](https://arxiv.org/abs/2503.12096)：通过正交化可学习 prompt 对应的文本特征来校准 VLM 测试时 prompt tuning，降低零/少样本分类的校准误差。
+- [DPC: Dual-Prompt Collaboration for Tuning Vision-Language Models](https://arxiv.org/abs/2503.13443)：克隆并行 prompt，将 base 类和 new 类优化解耦，以缓解 CLIP prompt tuning 的新旧类别权衡。
+- [FisherTune: Fisher-Guided Robust Tuning of Vision Foundation Models for Domain Generalized Segmentation](https://arxiv.org/abs/2503.17940)：用领域相关 Fisher 信息选择 VFM 参数更新，在领域泛化语义分割中保持鲁棒微调。
+- [Linguistics-aware Masked Image Modeling for Self-supervised Scene Text Recognition](https://arxiv.org/abs/2503.18746)：面向场景文字识别引入语言学感知的自监督 masked image modeling，在视觉文本退化时提升 OCR 鲁棒性。
+- [DiffV2IR: Visible-to-Infrared Diffusion Model via Vision-Language Understanding](https://arxiv.org/abs/2503.19012)：结合渐进式扩散学习和视觉语言理解模块，实现语义感知的可见光到红外图像转换。
+- [Scaling Vision Pre-Training to 4K Resolution](https://arxiv.org/abs/2503.19903)：把视觉预训练扩展到 4K 分辨率，服务高分辨率视觉模型。
+- [LLaVA-CMoE: Towards Continual Mixture of Experts for Large Vision-Language Models](https://arxiv.org/abs/2503.21227)：为 LLaVA 式 MoE VLM 加入 probe-guided expert expansion，在无旧任务回放数据时保留连续学习知识。
+- [CTRL-O: Language-Controllable Object-Centric Visual Representation Learning](https://arxiv.org/abs/2503.21747)：提出面向图像与 OCR的智能体流程或编排模式。
+- [OrchMLLM: Orchestrate Multimodal Data with Batch Post-Balancing to Accelerate Multimodal Large Language Model Training](https://arxiv.org/abs/2503.23830)：在 dispatch 后平衡多模态 mini-batch，减少模态组成不一致导致的 GPU 负载不均。
+- [Self-Evolving Visual Concept Library using Vision-Language Critics](https://arxiv.org/abs/2504.00185)：让 VLM critic 迭代改进视觉概念库，并考虑概念交互对下游分类器的影响。
+- [How does Watermarking Affect Visual Language Models in Document Understanding?](https://arxiv.org/abs/2504.01048)：从文档类型、水印位置和内容变化等维度评估可见水印对 VLM 文档理解的影响，并报告显著性能下降。
+- [Rethinking RL Scaling for Vision Language Models: A Transparent, From-Scratch Framework and Comprehensive Evaluation Scheme](https://arxiv.org/abs/2504.02587)：提供 MAYE 这一从零实现的四步 VLM 强化学习管线和标准化评测方案，用于比较视觉推理中的 RL 与 SFT 训练动态。
+- [Datum-wise Transformer for Synthetic Tabular Data Detection in the Wild](https://arxiv.org/abs/2504.08829)：用 datum-wise Transformer 在未见表结构上检测合成表格数据，属于邻近的表格真实性识别任务。
+- [InternVL3: Exploring Advanced Training and Test-Time Recipes for Open-Source Multimodal Models](https://arxiv.org/abs/2504.10479)：提出 InternVL3 开源多模态模型族的预训练、后训练与测试时推理配方。
+- [CDUPatch: Color-Driven Universal Adversarial Patch Attack for Dual-Modal Visible-Infrared Detectors](https://arxiv.org/abs/2504.10888)：利用颜色到红外响应映射，在物理场景中攻击可见光-红外双模态检测器。
+- [DyFo: A Training-Free Dynamic Focus Visual Search for Enhancing LMMs in Fine-Grained Visual Understanding](https://arxiv.org/abs/2504.14920)：用免训练动态视觉聚焦增强 LMM 的细粒度视觉理解。
+- [Document Image Rectification Bases on Self-Adaptive Multitask Fusion](https://arxiv.org/abs/2505.06038)：SalmRec 通过任务间特征聚合和门控机制融合背景去除、三维坐标预测和文本行分割，用于矫正弯曲变形的文档图像。
+- [Visual Evolutionary Optimization on Combinatorial Problems with Multimodal Large Language Models: A Case Study of Influence Maximization](https://arxiv.org/abs/2505.06850)：偏离 OCR 主轴；把图结构优化解编码为图像，让 MLLM 引导演化搜索求解影响最大化。
+- [Arrow-Guided VLM: Enhancing Flowchart Understanding via Arrow Direction Encoding](https://arxiv.org/abs/2505.07864)：检测节点和箭头端点，对节点文本做 OCR，并构造结构化提示，使 VLM 无需任务微调即可回答流程图问题。
+- [FaceShield: Explainable Face Anti-Spoofing with Multimodal Large Language Models](https://arxiv.org/abs/2505.09415)：偏离 OCR 主轴；在 FaceShield-pre10K 和 FaceShield-sft45K 上训练 MLLM，用于人脸伪造检测和证据解释。
+- [Why 1 + 1 < 1 in Visual Token Pruning: Beyond Naive Integration via Multi-Objective Balanced Covering](https://arxiv.org/abs/2505.10118)：把视觉 token 剪枝表述为 prompt 对齐与视觉保真之间的双目标覆盖问题，并用贪心半径分配 token 预算。
+- [Table-R1](https://arxiv.org/abs/2505.12415)：通过 region-enhanced SFT 和 table-aware GRPO，让表格推理步骤先引用相关区域再回答。
+- [Egocentric Action-Aware Inertial Localization in Point Clouds with Vision-Language Guidance](https://arxiv.org/abs/2505.14346)：偏离 OCR 主轴；把头戴 IMU 动作与 3D 点云结构对齐，用空间锚点校正惯性定位漂移。
+- [Vision-Language Modeling Meets Remote Sensing: Models, datasets, and perspectives](https://arxiv.org/abs/2505.14361)：综述式条目，梳理遥感 VLM 中的对比学习、视觉指令调优和文本条件图像生成路线。
+- [Few-Shot Adversarial Low-Rank Fine-Tuning of Vision-Language Models](https://arxiv.org/abs/2505.15130)：在少样本场景下用 LoRA 对抗微调 CLIP，提升鲁棒性而无需全参数更新。
+- [LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](https://arxiv.org/abs/2505.16933)：用视觉指令微调扩展大型扩散语言模型。
+- [CHAOS: Chart Analysis with Outlier Samples](https://arxiv.org/abs/2505.17235)：更接近图表鲁棒性基准；通过多级文本和视觉扰动测试 MLLM 对异常图表的理解。
+- [Seeing It or Not? Interpretable Vision-aware Latent Steering to Mitigate Object Hallucinations](https://arxiv.org/abs/2505.17812)：为输出 token 构建视觉贡献图，并把潜状态 steer 到视觉关注区域以减少物体幻觉。
+- [Deformable Attentive Visual Enhancement for Referring Segmentation Using Vision-Language Model](https://arxiv.org/abs/2505.19242)：结合 SE 模块、可变形卷积、残差学习和 referring-aware fusion loss 改进语言引导分割。
+- [LlamaSeg: Image Segmentation via Autoregressive Mask Generation](https://arxiv.org/abs/2505.19422)：把分割掩码表示成视觉 token，并在 SA-OVRS 开放词汇掩码数据上训练 LLaMA 式自回归模型。
+- [TextSR: Diffusion Super-Resolution with Multilingual OCR Guidance](https://arxiv.org/abs/2505.23119)：在扩散超分模型中加入文本检测和 OCR 指导，恢复多语言场景文字并减少幻觉纹理。
+- [Kernel-based Unsupervised Embedding Alignment for Enhanced Visual Representation in Vision-language Models](https://arxiv.org/abs/2506.02557)：用核目标把 CLIP 视觉嵌入对齐到 DINOv2，在保持文本兼容性的同时增强细粒度感知。
+- [FuseLIP: Multimodal Embeddings via Early Fusion of Discrete Tokens](https://arxiv.org/abs/2506.03096)：让一个 Transformer 同时处理离散图像和文本 token，形成早融合多模态嵌入，而不是后期合并编码器输出。
+- [Robustness in Both Domains: CLIP Needs a Robust Text Encoder](https://arxiv.org/abs/2506.03355)：对 CLIP 文本编码器做对抗微调，使多模态管线中的鲁棒图像编码器也匹配文本侧鲁棒性。
+- [The OCR Quest for Generalization: Learning to recognize low-resource alphabets with model editing](https://arxiv.org/abs/2506.06761)：用模型编辑和 domain merging 让 OCR 识别器更快吸收未见过的低资源字母体系，减少对集中式微调的依赖。
+- [ChartReasoner: Code-Driven Modality Bridging for Long-Chain Reasoning in Chart Question Answering](https://arxiv.org/abs/2506.10116)：先把图表图像转换为结构化 ECharts 代码再进行长链推理，保留普通图像转文本流程容易丢失的视觉与版式细节。
+- [Segment This Thing: Foveated Tokenization for Efficient Point-Prompted Segmentation](https://arxiv.org/abs/2506.11131)：围绕点提示裁剪图像，并用可变分辨率 foveated patch tokenization 降低分割成本，而不是缩小模型本身。
+- [The Amazon Nova Family of Models: Technical Report and Model Card](https://arxiv.org/abs/2506.12103)：报告 Amazon Nova 基础模型族及其多模态 model-card 证据。
+- [MM-R5: MultiModal Reasoning-Enhanced ReRanker via Reinforcement Learning for Document Retrieval](https://arxiv.org/abs/2506.12364)：通过 SFT 推理链和针对重排序质量、推理格式的 RL 奖励训练多模态文档重排序器。
+- [Document-Level Tabular Numerical Cross-Checking: A Coarse-to-Fine Approach](https://arxiv.org/abs/2506.13328)：CoFiTCheck 先用 instructional parallel embeddings 过滤文档级表格数值对，再用跨表数值对齐预训练的分类器细判剩余候选。
+- [DualEdit: Dual Editing for Knowledge Updating in Vision-Language Models](https://arxiv.org/abs/2506.13638)：在 VLM 中文本和视觉模态各自敏感的层上做知识编辑，并用文本侧门控在更新知识时保留原有能力。
+- [PostAlign: Multimodal Grounding as a Corrective Lens for MLLMs](https://arxiv.org/abs/2506.17901)：加入后对齐 grounding 模块，定位被指称视觉对象、生成文本理由，并拒绝由语言先验诱发的幻觉实体。
+- [Emergence of Text Readability in Vision Language Models](https://arxiv.org/abs/2506.19389)：分析 VLM 训练动态，发现图像中文字可读性比一般语义理解更晚且更突然地涌现，提示需要专门的文本理解训练策略。
+- [LASFNet: A Lightweight Attention-Guided Self-Modulation Feature Fusion Network for Multimodal Object Detection](https://arxiv.org/abs/2506.21018)：用单个注意力引导自调制融合单元和轻量 neck attention 模块降低多模态检测成本，同时提升 mAP。
+- [EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](https://arxiv.org/abs/2506.22246)：为 Vision Mamba 图像复原引入 multi-head selective scan 和 all-around 扫描模式，在超分、去噪、去模糊和去雾任务上降低 FLOPs。
+- [Token Activation Map to Visually Explain Multimodal LLMs](https://arxiv.org/abs/2506.23270)：用估计因果推断和 rank Gaussian filter 抑制上下文 token 干扰，为 MLLM 逐 token 生成结果提供更可靠的激活可视化。
+- [FA-Seg: A fast and accurate diffusion-based method for open-vocabulary segmentation](https://arxiv.org/abs/2506.23323)：利用预训练扩散模型做免训练开放词汇分割，结合双提示、层次化注意力细化和测试时翻转提升掩码质量。
+- [VISIAR: Empower MLLM for Visual Story Ideation](https://doi.org/10.18653/v1/2025.findings-acl.945)：偏离 OCR 主轴；用 MLLM 视觉理解、story graph、候选素材选择和素材重排来完成视觉故事构思。
+- [From Chaotic OCR Words to Coherent Document: A Fine-to-Coarse Zoom-Out Network for Complex-Layout Document Image Translation](https://aclanthology.org/2025.findings-acl.998/)：用 fine-to-coarse zoom-out 架构把复杂版面中的混乱 OCR 词序组织成连贯的文档图像翻译。
+- [Escaping Plato's Cave: JAM for Aligning Independently Trained Vision and Language Models](https://arxiv.org/abs/2507.01201)：通过联合训练模态专属 autoencoder，并结合重建目标与跨模态对齐目标，对齐冻结的单模态视觉模型和语言模型。
+- [Integrated Structural Prompt Learning for Vision-Language Models](https://arxiv.org/abs/2507.05677)：为 CLIP 类 VLM 加入 self-structural 和 cross-structural prompt 模块，并用 sample probing 平衡 base-to-new 泛化。
+- [Hierarchical Cross-Modal Prompt Learning for Vision-Language Models](https://arxiv.org/abs/2507.14976)：提出层级跨模态提示学习，用于在保持泛化的同时适配 VLM。
+- [One Last Attention for Your Vision-Language Model](https://arxiv.org/abs/2507.15480)：RAda 在 VLM 末端附加轻量注意力 mask，在微调或测试时适配中校准跨模态决策矩阵。
+- [LeakyCLIP: Extracting Training Data from CLIP](https://arxiv.org/abs/2508.00756)：通过从对比嵌入空间重构或识别被记忆的图文对，诊断 CLIP 预训练中的训练数据泄漏与隐私风险。
+- [MGCR-Net: Multimodal Graph-Conditioned Vision-Language Reconstruction Network for Remote Sensing Change Detection](https://arxiv.org/abs/2508.01555)：用多模态图条件和视觉语言重建约束遥感变化检测，使变化判断依赖结构化跨模态场景关系，而不只是像素差分。
+- [A Foundational Multi-Modal Model for Few-Shot Learning](https://arxiv.org/abs/2508.04746)：构建小样本多模态基础模型，将共享视觉语言表示快速适配到只有少量支持样例的新类别。
+- [Distribution-Specific Learning for Joint Salient and Camouflaged Object Detection](https://arxiv.org/abs/2508.06063)：在联合训练中区分显著目标与伪装目标分布，让检测器学习面向两类相反前景线索的分布感知特征。
+- [AdaptInfer: Adaptive Token Pruning for Vision-Language Model Inference with Dynamical Text Guidance](https://arxiv.org/abs/2508.06084)：用动态文本引导在推理阶段裁剪视觉 token，在保留提示相关区域的同时降低 VLM 计算量。
+- [Effective Training Data Synthesis for Improving MLLM Chart Understanding](https://arxiv.org/abs/2508.06492)：合成图表中心的指令数据，强化 MLLM 对坐标轴、图例、数值和图表推理模式的识别。
+- [Infusing Fine-Grained Visual Knowledge to Vision-Language Models](https://arxiv.org/abs/2508.12137)：在 VLM 训练中注入细粒度视觉知识，使表示保留部件、属性和局部证据，服务细节级图文扎根。
+- [MPCAR](https://arxiv.org/abs/2508.12400)：在推理时为 LVLM 生成多视角描述或推理路径，并与原问题合成增强上下文，再用 enriched prompt 作答，无需微调即可提升复杂视觉推理。
+- [Inverse-LLaVA: Eliminating Alignment Pre-training Through Text-to-Vision Mapping](https://arxiv.org/abs/2508.12466)：通过文本到视觉映射去除 LLaVA 类模型的独立对齐预训练。
+- [Preserve and Sculpt: Manifold-Aligned Fine-tuning of Vision-Language Models for Few-Shot Learning](https://arxiv.org/abs/2508.12877)：通过流形对齐微调提升视觉语言模型的小样本学习。
+- [Lost in Embeddings: Information Loss in Vision-Language Models](https://arxiv.org/abs/2509.11986)：衡量 VLM 视觉嵌入投影到语言空间时的信息损失，并关联 connector 失真与问答性能下降。
+- [SitLLM: Large Language Models for Sitting Posture Health Understanding via Pressure Sensor Data](https://arxiv.org/abs/2509.12994)：偏离图像 OCR 主轴；把压力传感器 patch 映射到 LLM 语义空间，用于细粒度坐姿理解和健康反馈。
 - [SERVAL: Surprisingly Effective Zero-Shot Visual Document Retrieval Powered by Large Vision and Language Models](https://arxiv.org/abs/2509.15432)：用大视觉语言模型进行零样本文档视觉检索，直接对应文档理解与 OCR 检索需求。
 - [GRPO for Multimodal Table Understanding](https://arxiv.org/abs/2509.16889)：将 GRPO 式强化学习用于多模态模型的复杂表格理解。
-- [Infinity Parser](https://arxiv.org/abs/2510.15349)：提出面向图像和 OCR的模型侧方法，核心围绕 Layout Aware Reinforcement Learning for Scanned Document Parsing。
-- [DeepSeek-OCR](https://arxiv.org/abs/2510.18234)：提出面向图像和 OCR的模型侧方法，核心围绕 Contexts Optical Compression。
+- [Baseer: A Vision-Language Model for Arabic Document-to-Markdown OCR](https://arxiv.org/abs/2509.18174)：面向阿拉伯语 document-to-Markdown OCR 微调视觉语言模型，并提出专家校验的 Misraj-DocOCR 评测集。
+- [MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing](https://arxiv.org/abs/2509.22186)：用解耦式 VLM 架构实现高效高分辨率文档解析。
+- [LLaVA-OneVision-1.5: Fully Open Framework for Democratized Multimodal Training](https://arxiv.org/abs/2509.23661)：提供 LLaVA-OneVision 系列的高效、开放多模态训练框架。
+- [DocPruner: A Storage-Efficient Framework for Multi-Vector Visual Document Retrieval via Adaptive Patch-Level Embedding Pruning](https://arxiv.org/abs/2509.23883)：利用文档内 patch 注意力自适应剪除冗余 patch 级嵌入，使多向量视觉文档检索存储降低约 50-60% 且检索性能损失很小。
+- [HiViS: Hiding Visual Tokens from the Drafter for Speculative Decoding in Vision-Language Models](https://arxiv.org/abs/2509.23928)：在 speculative decoding 中对草稿模型隐藏视觉 token，并在验证阶段保留视觉条件，从而加速 VLM 解码。
+- [jina-reranker-v3: Last but Not Late Interaction for Document Reranking](https://arxiv.org/abs/2509.25085)：用 late-interaction 文档表示进行重排序，让 OCR 密集和视觉抽取文档检索仍能保留 token 级证据。
+- [Personalized Vision via Visual In-Context Learning](https://arxiv.org/abs/2509.25172)：把扩散 Transformer 改造成四宫格视觉 in-context learner，仅用一个标注示例、VisRel 调优数据和注意力引导 seed 打分来适配个性化视觉任务。
+- [Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](https://arxiv.org/abs/2510.00515)：通过 token 一致性和 layer 一致性渐进蒸馏压缩视觉 token，用教师模型缓解 MLLM token 压缩造成的特征扰动学习难度。
+- [Data Selection for Fine-tuning Vision Language Models via Cross Modal Alignment Trajectories](https://arxiv.org/abs/2510.01454)：根据跨模态对齐轨迹选择 VLM 微调数据，优先保留能改善图文表示对齐的样例。
+- [Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](https://arxiv.org/abs/2510.01954)：把来自图像 patch 嵌入的视觉参考 token 与文本 token 交错生成，再用轻量解码器直接输出检测、分割和 grounding 结果。
+- [Bayesian Test-time Adaptation for Object Recognition and Detection with Vision-language Models](https://arxiv.org/abs/2510.02750)：将 Bayesian test-time adaptation 用于视觉语言模型的目标识别与检测，为视觉语言模型补充可复用的鲁棒适应方法。
+- [Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](https://arxiv.org/abs/2510.02913)：按置信度重加权零样本 VLM 预测，缓解分布偏移下过度自信的图文匹配。
+- [LEAML: Label-Efficient Adaptation to Out-of-Distribution Visual Tasks for Multimodal Large Language Models](https://arxiv.org/abs/2510.03232)：用标签高效信号将 MLLM 适配到分布外视觉任务，在不进行完整重标注的情况下提升鲁棒性。
+- [VeritasFi: An Adaptable, Multi-tiered RAG Framework for Multi-modal Financial Question Answering](https://arxiv.org/abs/2510.10828)：结合多模态金融文档检索和分层答案生成，把图表、表格和报告证据提供给问答模型。
+- [PaddleOCR-VL: Boosting Multilingual Document Parsing via a 0.9B Ultra-Compact Vision-Language Model](https://arxiv.org/abs/2510.14528)：用 0.9B 紧凑 VLM 解析多语言文档，覆盖文本、表格、公式、图表和版面元素。
+- [Composition-Grounded Data Synthesis for Visual Reasoning](https://arxiv.org/abs/2510.15040)：COGS 为图表、渲染文档和网页等人工图像域合成组合扎根的视觉推理数据。
+- [Infinity Parser](https://arxiv.org/abs/2510.15349)：已撤稿的重复提交；其 LayoutRL 用编辑距离、段落数量和阅读顺序奖励训练扫描文档解析，但后续更新转到 arXiv:2506.03197。
+- [DeepSeek-OCR](https://arxiv.org/abs/2510.18234)：通过 DeepEncoder 和 DeepSeek3B-MoE decoder 将长文本上下文压缩为高分辨率视觉 token，面向 OCR 式上下文光学压缩。
+- [Exploring a Unified Vision-Centric Contrastive Alternatives on Multi-Modal Web Documents](https://arxiv.org/abs/2510.18703)：训练面向多模态网页文档的视觉中心对比表示，将渲染页面区域与周围文本和文档结构对齐。
+- [Mixture-of-Minds](https://arxiv.org/abs/2510.20176)：把 table understanding 拆成 planning、coding 和 answering agents，并用 MCTS rollouts 与 reinforcement learning 提升结构化表格推理。
+- [GranViT: A Fine-Grained Vision Model With Autoregressive Perception For MLLMs](https://arxiv.org/abs/2510.21501)：在 Gran-29M 区域标注上用 box-to-caption 和 caption-to-box 自回归目标预训练细粒度视觉编码器，以增强 MLLM 的 OCR 理解。
+- [Token-Level Inference-Time Alignment for Vision-Language Models](https://arxiv.org/abs/2510.21794)：在推理阶段对 VLM 输出做 token 级对齐，使生成文本贴合视觉证据而无需重训基座模型。
+- [Structure-Aware Cooperative Ensemble Evolutionary Optimization on Combinatorial Problems with Multimodal Large Language Models](https://arxiv.org/abs/2510.21906)：围绕 MLLM 使用结构感知协同集成演化优化来求解组合视觉问题，可能更偏优化方法而非 OCR。
+- [FastVLM: Self-Speculative Decoding for Fast Vision-Language Model Inference](https://arxiv.org/abs/2510.22641)：将 self-speculative decoding 用于 VLM，让轻量草稿路径加速图像条件生成。
+- [GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-guided Latent Diffusion Model?](https://arxiv.org/abs/2510.26339)：用 OCR 数据、TS-ControlNet 和文本中心与场景中心交替调度来引导潜扩散超分，恢复可读场景文字。
+- [A Remarkably Efficient Paradigm to Multimodal Large Language Models for Sequential Recommendation](https://arxiv.org/abs/2511.05885)：偏离 OCR 主轴；Speeder 将多模态物品属性压缩成紧凑 token，以加速序列推荐训练和推理。
+- [TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](https://arxiv.org/abs/2511.16423)：在无需本地训练的条件下进行一次性联邦 VLM 适配，复用客户端统计量或原型来个性化图文预测。
+- [MetroGS: Efficient and Stable Reconstruction of Geometrically Accurate High-Fidelity Large-Scale Scenes](https://arxiv.org/abs/2511.19172)：优化 Gaussian splatting 场景重建的几何精度与稳定性，但与 OCR 或文档理解轴线关联较弱。
+- [dots.ocr: Multilingual Document Layout Parsing in a Single Vision-Language Model](https://arxiv.org/abs/2512.02498)：在单一 VLM 中统一多语言 OCR 和版面解析，无需独立版面管线即可输出文档结构与文本片段。
+- [GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](https://arxiv.org/abs/2512.02505)：把地理空间 VLM 输出改写为扩散式并行粗到细 refinement，用于结构化 captioning、visual grounding 和多目标检测。
+- [Making Dialogue Grounding Data Rich: A Three-Tier Data Synthesis Framework for Generalized Referring Expression Comprehension](https://arxiv.org/abs/2512.02791)：为指代表达理解生成三层对话扎根数据，丰富区域级视觉 grounding 监督。
+- [NAS-LoRA: Empowering Parameter-Efficient Fine-Tuning for Visual Foundation Models with Searchable Adaptation](https://arxiv.org/abs/2512.03499)：用可搜索 LoRA 适配提升视觉基础模型参数高效微调。
+- [Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](https://arxiv.org/abs/2512.04309)：通过检索增强与模态差距校正，用纯文本监督训练图像描述模型。
+- [Fourier-Attentive Representation Learning: A Fourier-Guided Framework for Few-Shot Generalization in Vision-Language Models](https://arxiv.org/abs/2512.04395)：用傅里叶引导表示学习提升视觉语言模型的小样本泛化。
+- [Dropout Prompt Learning: Towards Robust and Adaptive Vision-Language Models](https://arxiv.org/abs/2512.07234)：用 Dropout Prompt Learning 构建鲁棒且自适应的视觉语言模型。
+- [Training Multi-Image Vision Agents via End2End Reinforcement Learning](https://arxiv.org/abs/2512.08980)：通过端到端强化学习训练 multi-image vision agents。
+- [Improving VQA Reliability: A Dual-Assessment Approach with Self-Reflection and Cross-Model Verification](https://arxiv.org/abs/2512.14770)：通过自反思与跨模型验证提升视觉问答可靠性。
+- [Accelerating End-to-End PDF to Markdown Conversion Through Assisted Generation](https://arxiv.org/abs/2512.18122)：用 assisted generation 加速 PDF 到 Markdown 转换，将文档解析与 Markdown 结构的模型侧起草或验证结合起来。
+- [Understand Layout and Translate Text: Unified Feature-Conductive End-to-End Document Image Translation](https://doi.org/10.1109/tpami.2025.3530998)：统一版面理解与文本翻译，实现端到端文档图像翻译。
+- [Self-Supervised Discovery of Cross-Lingual Shared Knowledge for Continual Text Recognition](https://doi.org/10.1109/tip.2025.3614773)：通过自监督信号学习跨语言共享表示，帮助连续文本识别模型跨文字体系迁移并减少遗忘。
+- [SimCache: Similarity Caching for Efficient VLM-based Scene Understanding](https://doi.org/10.1109/cvprw67362.2025.00315)：缓存相似的 VLM 场景理解状态，使重复视觉查询复用表示而不是重新计算完整图像语言推理。
+- [CEC-Zero: Zero-Supervision Character Error Correction with Self-Generated Rewards](https://arxiv.org/abs/2512.23971)：贡献 OCR 或文本识别模型侧方法；核心思想是提升字符识别或纠错能力，服务于视觉文本理解。
+- [Mul-VMamba: Multimodal semantic segmentation using selection-fusion-based vision-Mamba](https://doi.org/10.1016/j.knosys.2025.115119)：采用 selection-fusion Vision Mamba 模块进行多模态语义分割，选择性混合长视觉序列中的不同模态特征。
+- [Exploring Text-Guided Information Fusion Through Chain-of-Reasoning for Pansharpening](https://doi.org/10.1109/tgrs.2025.3604447)：以文本条件的 chain-of-reasoning 融合引导 pansharpening，用语言线索控制空间与光谱信息整合。
+- [EntityErasure: Erasing Entity Cleanly via Amodal Entity Segmentation and Completion](https://doi.org/10.1109/cvpr52734.2025.02633)：结合 amodal entity segmentation 与补全，干净移除视觉实体并重建被遮挡背景区域。
+- [Retaining Knowledge and Enhancing Long-Text Representations in CLIP through Dual-Teacher Distillation](https://doi.org/10.1109/cvpr52734.2025.02318)：通过双教师蒸馏让 CLIP 保留既有视觉语言知识，同时扩展长文本表示能力。
+- [Constituency-Tree-Induced Vision–Language Alignment for Multimodal Large Language Models](https://doi.org/10.1109/tcsvt.2025.3639574)：用 constituency tree 结构将视觉特征与短语级语言单元对齐，改进 MLLM 的细粒度图文对应。
+- [Multimodal Large Language Model-Guided ISP Hyperparameter Optimization with Dynamic Preference Learning](https://doi.org/10.1109/iccv51701.2025.00048)：将 MLLM 作为图像信号处理超参数搜索的偏好信号，并动态学习视觉质量偏好。
+- [Motion Expressions Guided Video Segmentation via Effective Motion Information Mining](https://doi.org/10.1109/tetci.2025.3537936)：挖掘 motion-expression 线索进行视频分割，更像相邻视觉 grounding 方法而非 OCR 或文档理解。
+- [LIRA: Reasoning Reconstruction via Multimodal Large Language Models](https://doi.org/10.1109/iccv51701.2025.00172)：用 MLLM 重建推理轨迹，使视觉答案能关联到中间多模态证据。
+- [Nayana: A Foundation for Document-Centric Vision-Language Models via Multi-Task, Multimodal, and Multilingual Data Synthesis](https://doi.org/10.1109/iccvw69036.2025.00178)：用多任务、多模态、多语言合成数据训练文档中心 VLM，覆盖 OCR、版面和文档推理。
+- [Trustworthy Driver State Perception via Contextual Interaction-Driven Evidential Vision-Language Fusion in Vehicular Cyber-Physical Systems](https://doi.org/10.1109/tits.2025.3542447)：以 evidential vision-language fusion 融合上下文驾驶员状态线索并量化不确定性，可能更偏车辆感知而非 OCR。
+- [LaTeXNet: A Specialized Model for Converting Visual Tables and Equations to LaTeX Code](https://doi.org/10.1109/icassp49660.2025.10887698)：面向表格和公式特化视觉到代码建模，将文档图像转换为 LaTeX 表示。
+- [Adaptive prototype memory with incremental updates for few-shot image classification](https://doi.org/10.1016/j.neucom.2025.132102)：为小样本图像分类维护可增量更新的类别原型，属于视觉适配方法，但并非文档或 OCR 专项。
+- [Few-shot and interpretable agentic framework based on large language models for data-efficient plant phenotyping](https://doi.org/10.1016/j.compag.2025.111382)：使用 LLM 驱动的小样本可解释工作流进行植物表型分析，似乎应放在 Image/OCR 模型页之外。
+- [Unstable Sample based Style Enhancement for Invisible Text Backdoor Attack](https://doi.org/10.1109/ntci67886.2025.11308675)：通过不稳定样本的风格增强构造 invisible-text backdoor attack，是文本图像扰动方向的安全方法。
+- [Enhancing Table Recognition Using Vision Language Models (VLM)](https://doi.org/10.1109/ccai65422.2025.11189648)：将 VLM 推理用于表格识别，结合视觉和文本线索恢复表格结构。
+- [Enhancing Chart Question Answering Using Multimodal Reasoning Techniques](https://doi.org/10.1109/iconscept66142.2025.11437368)：围绕图表视觉、标签和问题文本进行多模态推理，提升图表问答能力。
+- [Modumer: Modulating Transformer for Image Restoration](https://doi.org/10.1109/tnnls.2025.3561924)：提出用于图像复原的 modulating Transformer，通过注意力或特征调制适配退化模式。
+- [UHD-processer: Unified UHD Image Restoration with Progressive Frequency Learning and Degradation-aware Prompts](https://doi.org/10.1109/cvpr52734.2025.02153)：用渐进式频率学习和退化感知 prompts 统一复原超高清图像。
+- [COMO: Cross-mamba interaction and offset-guided fusion for multimodal object detection](https://doi.org/10.1016/j.inffus.2025.103414)：通过 Cross-Mamba 交互和 offset-guided fusion 融合多模态目标检测特征。
+- [MLFuse: Multi-Scenario Feature Joint Learning for Multi-Modality Image Fusion](https://doi.org/10.1109/tmm.2025.3535355)：跨场景联合学习多模态融合特征，提升图像融合设置之间的迁移能力。
+- [Image Quality Assessment: Exploring the Similarity of Deep Features via Covariance-Constrained Spectra](https://doi.org/10.1109/tbc.2025.3609055)：在协方差约束下比较深度特征谱，用模型侧感知表示评估图像质量。
+- [Generative Zero-Shot Composed Image Retrieval](https://doi.org/10.1109/cvpr52734.2025.02764)：用生成式建模支持零样本组合图像检索，合成或重写视觉文本组合信号。
+- [MLLM-I2W: Harnessing Multimodal Large Language Model for Zero-Shot Composed Image Retrieval](https://aclanthology.org/2025.coling-main.125/)：用 MLLM 将图像加文本查询转换为适合检索的描述，实现零样本组合图像检索。
+- [Continuous Adverse Weather Removal via Degradation-Aware Distillation](https://doi.org/10.1109/cvpr52734.2025.02618)：通过退化感知蒸馏学习连续恶劣天气去除，覆盖不同强度的天气退化。
+- [MFS-Fusion: Mamba-integrated deep multi-modal image fusion framework with multi-scale fourier enhancement and spatial calibration](https://doi.org/10.1016/j.eswa.2025.130054)：结合 Mamba 序列建模、多尺度傅里叶增强和空间校准进行多模态图像融合。
+- [Highlight What You Want: Weakly-Supervised Instance-Level Controllable Infrared-Visible Image Fusion](https://doi.org/10.1109/iccv51701.2025.01174)：加入弱监督实例级控制，使红外-可见光融合能突出用户指定对象。
+- [Dual-Agent Optimization framework for Cross-Domain Few-Shot Segmentation](https://doi.org/10.1109/cvpr52734.2025.00920)：用双 agent 优化框架进行跨域小样本分割，属于相邻的 agentic 视觉适配方法而非核心 OCR。
+- [Inverting the Generation Process of Denoising Diffusion Implicit Models: Empirical Evaluation and a Novel Method](https://doi.org/10.1109/wacv61041.2025.00453)：提出 DDIM 生成过程反演方法，可用于图像编辑或重建，但与 OCR 主轴关系较弱。
+- [Alliance: All-in-One Spectral-Spatial-Frequency Awareness Foundation Model](https://doi.org/10.1109/tpami.2025.3639595)：构建同时感知光谱、空间与频率信息的一体化基础模型，用于图像复原或增强。
+- [Fine-Tuning via Linked Domains: A Closed-Form Dual Alignment Mechanism for Transferring Vision-Language Models](https://doi.org/10.1109/tcsvt.2025.3613794)：用闭式 dual-alignment 机制在 linked domains 间迁移 VLM，减少重度微调需求。
+- [Screening, Rectifying, and Re-Screening: A Unified Framework for Tuning Vision-Language Models with Noisy Labels](https://doi.org/10.24963/ijcai.2025/568)：通过筛选、修正、再筛选循环在噪声标签下调优 VLM，过滤并修复监督信号。
+- [Cross-domain distillation for unsupervised domain adaptation with large vision-language models](https://doi.org/10.1016/j.patcog.2025.112985)：从大型 VLM 蒸馏跨域知识，在没有目标域标签的情况下进行无监督域适配。
+- [Unsupervised Knowledge Distillation via Local Representations for Vision-Language Models](https://doi.org/10.1109/lsp.2025.3582567)：通过局部视觉语言表示进行 VLM 知识蒸馏，在无标注图文对时保留细粒度对齐。
+- [Dual-modality adaptation in vision-language models for continual learning](https://doi.org/10.1016/j.neunet.2025.108422)：在持续学习中同时适配视觉和语言分支，减少 VLM 跨任务遗忘。
+- [CCDPlus: Towards Accurate Character to Character Distillation for Text Recognition](https://doi.org/10.1109/tpami.2025.3533737)：贡献 OCR 或文本识别模型侧方法；核心思想是提升字符识别或纠错能力，服务于视觉文本理解。
+- [Massively Multilingual Joint Segmentation and Glossing](https://arxiv.org/abs/2601.10925)：联合预测多语言 segmentation 与 glossing，更像文本语言条目而非 Image/OCR 模型项。
+- [QKVQA: Question-Focused Filtering for Knowledge-based VQA](https://arxiv.org/abs/2601.13856)：通过围绕问题相关的图像区域与知识片段过滤跨文章证据，改进知识型视觉问答。
+- [Towards Mitigating Modality Bias in Vision-Language Models for Temporal Action Localization](https://arxiv.org/abs/2601.21078)：偏离 OCR 主轴；ActionVLM 根据语言相对纯视觉预测的增益动态重加权，并用残差聚合完成时序动作定位。
 - [PaddleOCR-VL-1.5](https://arxiv.org/abs/2601.21957)：紧凑 OCR 与文档 VLM，面向真实噪声输入训练识别、版面、表格、表单和文档问答。
+- [Preserving Localized Patch Semantics in VLMs](https://arxiv.org/abs/2602.01530)：加入 Logit Lens Loss，使视觉 token 在 VLM 训练中保留 patch 局部语义，而不是把视觉内容扩散到语言 token。
+- [Fine-tuning Pre-trained Vision-Language Models in a Human-Annotation-Free Manner](https://arxiv.org/abs/2602.04337)：CoFT 用正负文本提示、跨模态双模型协作和噪声感知伪标签，在无人工标注数据上适配 CLIP 类 VLM。
+- [Chart Specification: Structural Representations for Incentivizing VLM Reasoning in Chart-to-Code Generation](https://arxiv.org/abs/2602.10880)：用结构化图表表示激励 VLM 在图表到代码生成中进行推理，把图表理解与可执行的视觉到代码输出连接起来。
+- [Are Multimodal Large Language Models Good Annotators for Image Tagging?](https://arxiv.org/abs/2602.20972)：评估 MLLM 作为低成本图像标签标注器的能力，并把其标签转化为接近人工监督效果的训练标签。
+- [OmniOCR: Generalist OCR for Ethnic Minority Languages](https://arxiv.org/abs/2602.21042)：通过动态低秩适配支持少数民族文字和低资源书写系统的通用 OCR。
+- [CCCaption: Dual-Reward Reinforcement Learning for Complete and Correct Image Captioning](https://arxiv.org/abs/2602.21655)：聚焦图像理解、图表流程图、视觉编码或图像描述的模型训练。
+- [DynamicGTR: Leveraging Graph Topology Representation Preferences to Boost VLM Capabilities on Graph QAs](https://arxiv.org/abs/2602.21864)：为每个查询动态选择最合适的图拓扑表示，使 VLM 在图问答中更准确且回答更简洁。
+- [Discovery of Interpretable Physical Laws in Materials via Language-Model-Guided Symbolic Regression](https://arxiv.org/abs/2602.22967)：偏离 OCR 主轴；用 LLM 引导符号回归缩小搜索空间，发现钙钛矿材料性质的可解释公式。
+- [RubiCap: Rubric-Guided Reinforcement Learning for Dense Image Captioning](https://arxiv.org/abs/2603.09160)：RubiCap 使用评审规则引导的强化学习，从合成字幕中提升密集图像描述能力。
+- [A Simple Efficiency Incremental Learning Framework via Vision-Language Model with Nonlinear Multi-Adapters](https://arxiv.org/abs/2603.11211)：SimE 在 VLM 中使用非线性多适配器连接，实现无需记忆库的增量任务学习。
+- [Shape-Agnostic Table Overlap Discovery: A Maximum Common Subhypergraph Approach](https://arxiv.org/abs/2603.14419)：把任意形状、非连续的表格重叠建模为最大公共子超图问题，而不再假设重叠区域必须是矩形。
+- [LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models](https://arxiv.org/abs/2603.14882)：用免训练自适应采样模拟中央凹编码和皮层放大机制，在固定像素预算下给 VLM 非均匀视觉分辨率。
+- [Reliable Reasoning in SVG-LLMs via Multi-Task Multi-Reward Reinforcement Learning](https://arxiv.org/abs/2603.16189)：通过多任务、多奖励强化学习提升模型对 SVG 式结构化视觉内容的可靠推理能力。
+- [HeBA: Heterogeneous Bottleneck Adapters for Robust Vision-Language Models](https://arxiv.org/abs/2603.16653)：用模态专属 bottleneck adapter 适配 CLIP 类 VLM，其中视觉路径采用卷积结构，文本路径采用 dense projection，以提升分布偏移鲁棒性。
 - [HopChain](https://arxiv.org/abs/2603.17024)：合成数据方法，生成链式视觉问题，使 VLM 学会综合多处视觉证据。
+- [SSP-SAM: SAM With Semantic-Spatial Prompt for Referring Expression Segmentation](https://arxiv.org/abs/2603.18086)：加入视觉和语言注意力适配器生成语义空间提示，使 SAM 能根据指代表达生成分割掩码。
+- [PromptHub: Enhancing Multi-Prompt Visual In-Context Learning with Locality-Aware Fusion, Concentration and Alignment](https://arxiv.org/abs/2603.18891)：通过 locality-aware 的多提示融合、集中与对齐机制改进视觉 in-context learning。
+- [From Plausibility to Verifiability: Risk-Controlled Generative OCR with Vision-Language Models](https://arxiv.org/abs/2603.19790)：把冻结 VLM 的生成式 OCR 表述为选择性接受或拒答问题，并用多视角共识和结构筛查的 Geometric Risk Controller 控制极端错误。
+- [ResPrune: Text-Conditioned Subspace Reconstruction for Visual Token Pruning in Large Vision-Language Models](https://arxiv.org/abs/2603.21105)：通过文本条件的残差能量子空间重建选择视觉 token，在降低 LVLM 推理成本时保留视觉 token 几何结构。
+- [FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning](https://arxiv.org/abs/2603.22969)：偏离 OCR 主轴；结合频率感知 LoRA 和对比学习，改进弱监督伪装目标检测。
+- [Reducing Oracle Feedback with Vision-Language Embeddings for Preference-Based RL](https://arxiv.org/abs/2603.28053)：偏离 OCR 主轴；ROVED 用视觉语言嵌入生成低成本片段偏好，只在高不确定样本上请求 oracle 反馈。
+- [Navigating the Mirage: A Dual-Path Agentic Framework for Robust Misleading Chart Question Answering](https://arxiv.org/abs/2603.28583)：更像 Agent Harness 图表问答条目；ChartCynics 结合 ROI 视觉诊断、OCR 数据抽取、SFT 和 GRPO 来抵抗误导性图表。
+- [WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Language Models](https://arxiv.org/abs/2604.02570)：把细粒度加权 SVD 与量化用于 VLM 运算，面向图像描述和 VQA 工作负载降低实际延迟。
+- [SciLT: Long-tailed Image Classification under Scientific Image Domains](https://arxiv.org/abs/2604.03687)：偏离 OCR 主轴；研究科学图像长尾分类，并用多层基础模型特征融合增强尾部类别。
 - [Vero](https://arxiv.org/abs/2604.04917)：开放视觉推理强化学习路线，结合视觉数据、奖励设计和 RL 优化。
+- [RCP: Representation Consistency Pruner for Mitigating Distribution Shift in Large Vision-Language Models](https://arxiv.org/abs/2604.04972)：用基于 LLM 注意力的累计 mask 和延迟修复 adapter 剪枝 LVLM 视觉 token，降低删除 token 带来的表示分布偏移。
+- [Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking](https://arxiv.org/abs/2604.05268)：学习多模态 RAG 重排序中的查询侧区域裁剪，使图像问题在候选评分前聚焦相关视觉证据。
+- [ModuSeg: Decoupling Object Discovery and Semantic Retrieval for Training-Free Weakly Supervised Segmentation](https://arxiv.org/abs/2604.07021)：将几何 mask proposal 与语义赋值解耦，用基础模型实现免训练弱监督语义分割。
+- [Dual-Modality Anchor-Guided Filtering for Test-time Prompt Tuning](https://arxiv.org/abs/2604.12403)：用来自属性描述的文本锚点和来自测试时统计的自适应图像锚点，筛选用于测试时 prompt tuning 的增强视图。
+- [A Multi-Agent Approach for Claim Verification from Tabular Data Documents](https://arxiv.org/abs/2604.17225)：更像 Agent Harness 表格文档条目；MACE 用 planner、executor 和 verifier 三类 agent 及零样本 CoT 轨迹验证声明。
+- [Advancing Vision Transformer with Enhanced Spatial Priors](https://arxiv.org/abs/2604.18549)：在 Vision Transformer 中加入欧氏距离衰减和横纵分解注意力，以注入更强的显式空间先验。
+- [climt-paraformer: Stable Emulation of Convective Parameterization using a Temporal Memory-aware Transformer](https://arxiv.org/abs/2604.21085)：偏离 OCR 主轴；用时间记忆感知 Transformer 模拟气候模型中的湿对流参数化。
+- [CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution](https://arxiv.org/abs/2604.22192)：通过三视角调优与询问驱动数据演化改进图表到代码生成。
+- [Revisiting Greedy Decoding for Visual Question Answering: A Calibration Perspective](https://arxiv.org/abs/2604.23443)：从校准角度分析视觉问答中 greedy decoding 优于随机采样的条件。
+- [QFlash: Bridging Quantization and Memory Efficiency in Vision Transformer Attention](https://arxiv.org/abs/2604.25306)：为 ViT、DeiT 和 Swin 工作负载实现整数域 FlashAttention，避免 FP16 softmax 并降低注意力能耗与延迟。
 - [Spatial Priming Outperforms Semantic Prompting: A Grid-Based Approach to Improving LLM Accuracy on Chart Data Extraction](https://arxiv.org/abs/2605.08220)：用基于网格的空间启动提升图表数据抽取准确率，契合图像 OCR 与结构化视觉阅读。
+- [Language-Conditioned Visual Grounding with CLIP Multilingual](https://arxiv.org/abs/2605.09060)：固定视觉编码器并只改变 XLM-R 文本分支，在 13 种语言上探测 multilingual CLIP grounding，发现低资源语言主要造成空间对齐缺口。
+- [Phasor Memory Networks: Stable Backpropagation Through Time for Scalable Explicit Memory](https://arxiv.org/abs/2605.13370)：偏离 OCR 主轴；用 unitary phasor dynamics 和可学习 anchors 约束循环记忆更新，稳定显式记忆的 BPTT。
+- [Contestable Multi-Agent Debate with Arena-based Argumentative Computation for Multimedia Verification](https://arxiv.org/abs/2605.14495)：更像 Agent Harness 多媒体核验条目；分解声明、检索证据，并用 arena-based argument graphs 解析支持和反驳论据。
+- [Do Composed Image Retrieval Benchmarks Require Multimodal Composition?](https://arxiv.org/abs/2605.14787)：更像基准审计；显示许多组合图像检索查询可由单一模态解决，暴露 unimodal shortcut。
+- [Deep Pre-Alignment for VLMs](https://arxiv.org/abs/2605.15300)：用小型 VLM perceiver 替换标准 ViT 编码器，使视觉特征进入目标 LLM 前已更接近文本空间。
+- [Are Large Vision-Language Models Robust to Adversarial Visual Transformations?](https://doi.org/10.1109/tifs.2026.3671065)：研究 LVLM 在对抗性视觉变换下的鲁棒性，更像压力测试条目而非 OCR 专项模型。
+- [Diffusion Noise Optimization for Synthetic VLM Training](https://doi.org/10.1109/wacv61042.2026.00620)：在合成 VLM 训练图像时优化扩散噪声选择，依据 WACV 官方元数据保留为合成数据训练条目。
+- [Debating for Coreference: A Multi-Agent Framework for Cross-Document Event Coreference Resolution](https://doi.org/10.1109/icassp55912.2026.11463512)：偏离 OCR 主轴；用多智能体 debate 框架解决文本中心的跨文档事件共指消解。
+- [BlindDet: Towards Robust Physical-World Backdoor Attack in Low-Light Scenarios Against Object Detection](https://doi.org/10.1109/icassp55912.2026.11464443)：安全方向目标检测条目，研究低光照场景中的物理世界后门攻击，而非 OCR 理解。
+- [HGS-3DSeg: Identity-Encoding Half-Gaussian Splatting for Memory-Efficient 3D Reconstruction and Segmentation](https://doi.org/10.1109/tase.2026.3659445)：偏离 OCR 主轴；用 identity-encoding half-Gaussian splatting 实现内存高效的三维重建和分割。
+- [SSDMamba: A spectral-spatial dual-branch mamba for hyperspectral image classification](https://doi.org/10.1016/j.neucom.2026.132944)：偏离 OCR 主轴；用双分支 Mamba 建模光谱和空间特征，用于高光谱图像分类。
+- [A Tool for Extracting Citation Graphs From Scholarly PDF Articles](https://doi.org/10.1109/access.2026.3677777)：文档处理工具条目，从学术 PDF 中抽取引用图；更像基础设施而非模型侧 OCR 方法。
+- [Machine Learning-Driven Discovery of Stable Vanadium Oxide Compositions for Aerospace Applications](https://doi.org/10.2514/6.2026-0141)：偏离 OCR 主轴；用机器学习发现面向航空航天材料的稳定钒氧化物组成。
+- [Uncertainty quantification in model discovery by distilling interpretable material constitutive models from Gaussian process posteriors](https://doi.org/10.1016/j.cma.2026.118979)：偏离 OCR 主轴；从 Gaussian process posterior 中蒸馏可解释材料本构模型，并量化模型发现的不确定性。
+- [Data-driven discovery of high-performance surface passivators for efficient and stable perovskite solar cells](https://doi.org/10.1016/j.cej.2026.175529)：偏离 OCR 主轴；用数据驱动筛选寻找高效稳定钙钛矿太阳能电池的表面钝化剂。
+- [Multi-modal Mutual-Guidance Conditional Prompt Learning for Vision-Language Models](https://doi.org/10.1016/j.eswa.2026.132077)：通过模态间相互引导学习条件提示，用于适配视觉语言模型。
+- [FedCLIPOT: Federated CLIP Model via Parameter Reusing and Optimal Transport](https://doi.org/10.1016/j.inffus.2026.104324)：在联邦设置中通过参数复用和 optimal transport 对齐客户端分布来适配 CLIP。
+- [AttriPrompt: Class Attribute-Aware Prompt Tuning for Vision-Language Model](https://doi.org/10.1109/tip.2026.3657216)：用类别属性信息调优 VLM prompt，使图文匹配利用显式属性语义。
+- [How do Hugging Face Models Document Datasets, Bias, and Licenses? An Empirical Study](https://doi.org/10.1145/3643916.3644412)：偏离 OCR 主轴；实证分析 Hugging Face model cards 是否记录数据集、偏见和许可证信息。
+- [Vision Mamba Mender](https://doi.org/10.52202/079017-1645)：官方元数据仅显示其为 Vision Mamba 修复或增强方法，可读证据不足以支撑强 OCR 分类。
+- ["This is My Fault", Really? Understanding Blind and Low-Vision People’s Perception of Hallucination in Large Vision Language Models](https://doi.org/10.1145/3746059.3747597)：用户研究条目，分析盲人和低视力用户如何感知 LVLM 幻觉，更接近无障碍视觉系统而非模型训练。
+- [Aligning Vision Language Models with Contrastive Learning](https://doi.org/10.1007/978-3-031-91672-4_3)：用对比学习对齐视觉和文本表示，属于通用 VLM 对齐方法。
+- [SDG-MLLM: Injecting Structured Dialogue Graphs into MLLM for Multimodal Conversational Aspect-Based Sentiment Analysis](https://doi.org/10.1145/3746027.3762071)：偏离 OCR 主轴；把结构化对话图注入 MLLM，用于多模态会话方面级情感分析。
+- [FireMM-IR: An Infrared-Enhanced Multi-Modal Large Language Model for Comprehensive Scene Understanding in Remote Sensing Forest Fire Monitoring](https://doi.org/10.3390/s26020390)：构建带红外增强分类模块的遥感 MLLM，用于森林火灾像素级场景理解。
+- [Analyzing why AI struggles with drawing human hands with CLIP](https://doi.org/10.12688/f1000research.159688.1)：用 CLIP 相关测试诊断生成式 AI 在手部绘制中的数据偏差、解剖表示不足和几何错误。
+- [LLM-Enhanced Semantic Text Segmentation](https://doi.org/10.3390/app151910849)：文本 NLP 条目；用 LLM embedding 结合聚类和图方法进行语义文本分割。
+- [Visual Instruction Tuning towards General-Purpose Multimodal Large Language Model: A Survey](https://doi.org/10.1007/s11263-025-02572-7)：综述式条目，梳理通用多模态大模型的视觉指令微调方法。
+- [BarLeRIa: An Efficient Tuning Framework for Referring Image Segmentation](https://openreview.net/forum?id=wHLDHRkmEu)：OpenReview 上的指代表达分割调优框架，更接近相邻视觉 grounding 而非 OCR 专项模型。
+- [A Causally Constrained Framework Coupling Causal Discovery and SEIR Mechanisms for Interpretable Epidemic Modeling](https://doi.org/10.3390/math14101776)：偏离 OCR 主轴；把 SEIR 先验嵌入因果时间预测网络，用于可解释传染病建模。
+- [Towards Model Compliance Using Generative Agents: A NetLogo to Sequence Diagrams Experiment](https://doi.org/10.5220/0014467500004058)：偏离 OCR 主轴；用生成式 agents 将 NetLogo 模型行为转换成时序图以检查模型一致性。
+- [Interpretable Machine Learning of Salt Cavern Volume Shrinkage: Implications for Long-Term Stability Engineering](https://doi.org/10.1021/acs.energyfuels.5c06539)：偏离 OCR 主轴；用可解释机器学习分析盐穴体积收缩和长期工程稳定性。
+- [Toward Robust and Stable Model Selection in Machine Learning for Materials Science via Systematic Hyperparameter Optimization](https://doi.org/10.1002/adts.202502092)：偏离 OCR 主轴；比较超参数优化策略，以提高材料科学模型选择的可靠性。
+- [Interpretable machine learning-assisted discovery of BaTiO 3 -based ceramics with enhanced dielectric constant](https://doi.org/10.1039/d6tc00908e)：偏离 OCR 主轴；结合特征选择、SHAP 和高效全局优化发现 BaTiO3 基陶瓷组成。
+- [Debiased All-in-one Image Restoration with Task Uncertainty Regularization](https://doi.org/10.1609/aaai.v39i8.32905)：用任务不确定性正则化为多种退化任务去偏，改进 all-in-one 图像复原训练。
+- [Learning with Enriched Inductive Biases for Vision-Language Models](https://doi.org/10.1007/s11263-025-02354-1)：通过更丰富的归纳偏置改进 VLM 学习，属于通用视觉语言表示方法而非 OCR 专项训练。
+- [Multi-axis Prompt and Multi-dimension Fusion Network for All-in-one Weather-degraded Image Restoration](https://doi.org/10.1609/aaai.v39i8.32898)：用多轴 prompt learning、多维特征融合和 degradation-free implicit representation 复原恶劣天气退化图像。
+- [Multi-Scale Texture Fusion for Reference-Based Image Super-Resolution: New Dataset and Solution](https://doi.org/10.1007/s11263-025-02514-3)：提出参考图像超分数据集和多尺度纹理融合方案，用于恢复图像细节。
+- [Energy-guided test-time adaptation for data shifts in multi-modal perception](https://doi.org/10.1007/s00371-025-03952-3)：用 energy-guided test-time adaptation 处理多模态感知模型中的数据分布偏移。
+- [AdViP: Aligning Multi-modal LLMs via Adaptive Vision-enhanced Preference Optimization](https://doi.org/10.1007/s11263-026-02840-0)：用自适应视觉增强偏好优化对齐多模态 LLM，使偏好信号显式利用视觉证据。
+- [Attention-Enhanced Cross-Modality Alignment for Adapting Vision-Language Models](https://doi.org/10.1007/s10994-025-06952-5)：用注意力增强的跨模态对齐机制，将 VLM 适配到下游视觉语言任务。
+- [Mitigating the Evolving Semantic Entanglement in Continual Learning of Vision-Language Models](https://doi.org/10.1145/3746027.3755498)：通过缓解跨任务持续变化的语义纠缠，处理 VLM 持续学习中的表示漂移。
+- [Contextual Reasoning for Robust Composed Image Retrieval with Vision-Language Models](https://doi.org/10.1145/3731715.3733298)：利用上下文推理提升视觉语言模型的组合图像检索能力。

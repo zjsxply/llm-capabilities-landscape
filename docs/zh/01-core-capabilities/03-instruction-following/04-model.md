@@ -4,10 +4,546 @@
 - [InstructGPT](https://arxiv.org/abs/2203.02155)：定义指令遵循 RLHF 路线的代表性工作，结合监督示范、人类偏好奖励建模和策略优化。
 - [Self-Instruct](https://arxiv.org/abs/2212.10560)：合成指令数据生成方法，由语言模型自举生成指令，经过过滤后微调以增强指令遵循。
 - [DPO](https://arxiv.org/abs/2305.18290)：偏好优化算法，直接从偏好对对齐指令遵循模型，而不单独训练显式奖励模型。
-- [Tulu 3](https://arxiv.org/abs/2411.15124)：开放后训练路线，结合高质量指令数据、偏好学习、类 RL 优化和评测驱动迭代。
-- [Measuring Data Diversity for Instruction Tuning: A Systematic Analysis and A Reliable Metric](https://arxiv.org/abs/2502.17184)：定义指令微调数据多样性指标，并分析多样性如何改变指令遵循表现。
-- [HelpSteer3](https://arxiv.org/abs/2503.04378)：提供人类反馈与编辑数据，用于提升开放式指令行为和推理时扩展效果。
-- [D3: Diversity, Difficulty, and Dependability-Aware Data Selection for Sample-Efficient LLM Instruction Tuning](https://arxiv.org/abs/2503.11441)：按多样性、难度和可靠性选择指令微调数据，以提升样本高效的指令遵循。
-- [Adaptive Length-Bias Mitigation](https://aclanthology.org/2025.findings-naacl.169/)：缓解 RLHF 奖励模型中过长和过短回答偏好的长度偏置。
-- [Generative RLHF-V](https://arxiv.org/abs/2505.18531)：从多模态人类偏好中学习对齐原则，而不只优化成对偏好分数。
+- [ChartAssisstant: A Universal Chart Multimodal Language Model via Chart-to-Table Pre-training and Multitask Instruction Tuning](https://arxiv.org/abs/2401.02384)：通过图表到表格预训练和多任务指令调优训练图表多模态语言模型，用于图表问答与推理。
+- [Examining Forgetting in Continual Pre-training of Aligned Large Language Models](https://arxiv.org/abs/2401.03129)：研究持续预训练如何改变已对齐 LLM 的行为，衡量新领域适配何时侵蚀既有指令遵循与安全对齐。
+- [3DMIT: 3D Multi-Modal Instruction Tuning for Scene Understanding](https://arxiv.org/abs/2401.03201)：构建面向场景理解的 3D 多模态指令调优数据与训练方案，将点云和视觉上下文纳入问答。
+- [Scaling Laws for Forgetting When Fine-Tuning Large Language Models](https://arxiv.org/abs/2401.05605)：拟合微调遗忘的经验 scaling law，刻画模型规模、数据规模和微调时长对任务适配遗忘的影响。
+- [AboutMe: Using Self-Descriptions in Webpages to Document the Effects of English Pretraining Data Filters](https://arxiv.org/abs/2401.06408)：利用网页自我描述审计英语预训练数据过滤如何改变文档分布，从而影响后续指令调优模型继承的数据基础。
+- [Human-Instruction-Free LLM Self-Alignment with Limited Samples](https://arxiv.org/abs/2401.06785)：用少量种子样本生成并过滤自对齐数据，使 LLM 在没有人工撰写指令的条件下完成对齐。
+- [DRLC: Reinforcement Learning with Dense Rewards from LLM Critic](https://arxiv.org/abs/2401.07382)：用 LLM critic 产生密集反馈替代稀疏任务奖励，为强化学习策略提供更频繁的对齐信号。
+- [Linear Alignment: A Closed-form Solution for Aligning Human Preferences without Tuning and Feedback](https://arxiv.org/abs/2401.11458)：提出用于偏好对齐的闭式线性变换，避免迭代微调和在线人工反馈。
+- [Tradeoffs Between Alignment and Helpfulness in Language Models](https://arxiv.org/abs/2401.16332)：分析对齐干预如何降低 helpfulness，将拒答行为、安全收益与通用助手效用区分开。
+- [SelectLLM: Can LLMs Select Important Instructions to Annotate?](https://arxiv.org/abs/2401.16553)：用 LLM 选择最值得人工标注的指令样本，以降低指令调优数据构建成本。
+- [Towards Efficient Exact Optimization of Language Model Alignment](https://arxiv.org/abs/2402.00856)：提出面向语言模型对齐目标的精确优化技术，降低偏好训练中的近似误差。
+- [Intent-based Prompt Calibration: Enhancing prompt optimization with synthetic boundary cases](https://arxiv.org/abs/2402.03099)：通过生成合成边界案例校准提示，在提示优化前暴露意图不匹配问题。
+- [Rethinking the Role of Proxy Rewards in Language Model Alignment](https://arxiv.org/abs/2402.03469)：考察 proxy reward 何时能引导或误导对齐训练，澄清奖励模型替代人工偏好的边界。
+- [Long Is More for Alignment: A Simple but Tough-to-Beat Baseline for Instruction Fine-Tuning](https://arxiv.org/abs/2402.04833)：显示指令微调中的更长回答本身就是感知对齐和助手质量上的强基线。
+- [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000)：将对齐视为教学行为，训练 LLM 生成更符合教学目标与学习者需求的回答。
+- [A Closer Look at the Limitations of Instruction Tuning](https://arxiv.org/abs/2402.05119)：系统测试指令调优的泛化失效点，揭示其在任务迁移和监督指令分布之外的鲁棒性限制。
+- [DeAL: Decoding-time Alignment for Large Language Models](https://arxiv.org/abs/2402.06147)：在解码阶段施加对齐约束，在不改动模型权重的情况下引导生成。
+- [Towards Unified Alignment Between Agents, Humans, and Environment](https://arxiv.org/abs/2402.07744)：把人类、智能体和环境偏好连接为统一对齐目标，用于交互式系统。
+- [Text-centric Alignment for Multi-Modality Learning](https://arxiv.org/abs/2402.08086)：围绕文本监督对齐多模态表示，使视觉等模态更好响应语言指令。
+- [PRompt Optimization in Multi-Step Tasks (PROMST): Integrating Human Feedback and Preference Alignment](https://arxiv.org/abs/2402.08702)：将人工反馈和偏好对齐纳入提示搜索，优化多步任务中的提示。
+- [Answer is All You Need: Instruction-following Text Embedding via Answering the Question](https://arxiv.org/abs/2402.09642)：通过问答行为训练文本嵌入，使检索表示能够遵循自然语言指令。
+- [Aligning Crowd Feedback via Distributional Preference Reward Modeling](https://arxiv.org/abs/2402.09764)：把众包偏好建模为分布而非单一标签，在训练奖励模型时保留分歧信息。
+- [Reward Generalization in RLHF: A Topological Perspective](https://arxiv.org/abs/2402.10184)：从拓扑角度分析 RLHF 奖励模型何时能跨响应空间泛化，以及何时会过拟合局部偏好模式。
+- [BitDelta: Your Fine-Tune May Only Be Worth One Bit](https://arxiv.org/abs/2402.10193)：把微调更新压缩为一位权重差分，展示极端量化下仍可保留大量适配信号。
+- [Exploration-Driven Policy Optimization in RLHF: Theoretical Insights on Efficient Data Utilization](https://arxiv.org/abs/2402.10342)：分析探索策略如何影响有限偏好数据条件下的 RLHF 样本效率和策略改进。
+- [Relative Preference Optimization: Enhancing LLM Alignment through Contrasting Responses across Identical and Diverse Prompts](https://arxiv.org/abs/2402.10958)：同时对比同一提示和不同提示下的回答，用相对偏好优化提升 LLM 对齐。
+- [KnowTuning: Knowledge-aware Fine-tuning for Large Language Models](https://arxiv.org/abs/2402.11176)：在微调中加入知识感知目标，使指令遵循模型保留事实和领域知识。
+- [Dissecting Human and LLM Preferences](https://arxiv.org/abs/2402.11296)：比较人类与模型偏好模式，揭示自动偏好信号偏离人类判断的位置。
+- [Chain-of-Instructions: Compositional Instruction Tuning on Large Language Models](https://arxiv.org/abs/2402.11532)：在微调中使用链式与组合式指令，以提升多步指令遵循。
+- [Reformatted Alignment](https://arxiv.org/abs/2402.12219)：研究回答格式如何影响对齐训练，以及格式改写能否恢复偏好对齐行为。
+- [Your Vision-Language Model Itself Is a Strong Filter: Towards High-Quality Instruction Tuning with Data Selection](https://arxiv.org/abs/2402.12501)：使用目标视觉语言模型自身筛选更高质量样本，用于视觉指令调优。
+- [Instruction-tuned Language Models are Better Knowledge Learners](https://arxiv.org/abs/2402.12847)：显示指令调优能提升语言模型在后续微调中吸收和使用新知识的能力。
+- [Synthetic Data (Almost) from Scratch: Generalized Instruction Tuning for Language Models](https://arxiv.org/abs/2402.13064)：在极少人工种子的基础上生成广覆盖合成指令数据，支持通用指令调优。
+- [ELAD: Explanation-Guided Large Language Models Active Distillation](https://arxiv.org/abs/2402.13098)：用解释信号选择蒸馏样本，通过主动学习更高效地迁移教师模型行为。
+- [Bayesian Reward Models for LLM Alignment](https://arxiv.org/abs/2402.13210)：训练带贝叶斯不确定性的奖励模型，使对齐训练能处理稀疏或含歧义的偏好标签。
+- [Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning](https://arxiv.org/abs/2402.13669)：用自蒸馏缩小预训练行为与下游微调数据之间的分布差距。
+- [COPR: Continual Human Preference Learning via Optimal Policy Regularization](https://arxiv.org/abs/2402.14228)：通过策略正则化持续学习新的人类偏好，同时避免覆盖既有对齐行为。
+- [Q-Probe: A Lightweight Approach to Reward Maximization for Language Models](https://arxiv.org/abs/2402.14688)：加入轻量 probe 估计提升奖励的生成方向，减少完整策略重训需求。
+- [Data-Efficient Operator Learning via Unsupervised Pretraining and In-Context Learning](https://arxiv.org/abs/2402.15734)：结合无监督预训练和上下文学习，降低 operator-learning 模型对标注数据的需求。
+- [Multimodal Instruction Tuning with Conditional Mixture of LoRA](https://arxiv.org/abs/2402.15896)：用条件 LoRA 专家路由多模态指令调优样本，实现参数高效适配。
+- [Don't Forget Your Reward Values: Language Model Alignment via Value-based Calibration](https://arxiv.org/abs/2402.16030)：用价值估计校准语言模型输出，使奖励信息在对齐生成阶段持续可用。
+- [InstructEdit: Instruction-based Knowledge Editing for Large Language Models](https://arxiv.org/abs/2402.16123)：通过显式自然语言指令编辑模型知识，而非依赖原始事实三元组或纯梯度更新。
+- [Set the Clock: Temporal Alignment of Pretrained Language Models](https://arxiv.org/abs/2402.16797)：将预训练语言模型适配到特定时间语境，使输出更符合目标时间下的知识和行为。
+- [RECOST: External Knowledge Guided Data-efficient Instruction Tuning](https://arxiv.org/abs/2402.17355)：用外部知识选择或构造更少但信息量更高的样本进行指令调优。
+- [SoFA: Shielded On-the-fly Alignment via Priority Rule Following](https://arxiv.org/abs/2402.17358)：在生成阶段执行优先级规则，为模型提供无需完整重训的即时安全对齐。
+- [Pragmatic Instruction Following and Goal Assistance via Cooperative Language-Guided Inverse Planning](https://arxiv.org/abs/2402.17930)：用协作式逆向规划推断指令背后的用户目标，生成更有帮助的目标导向辅助。
+- [DecisionNCE: Embodied Multimodal Representations via Implicit Preference Learning](https://arxiv.org/abs/2402.18137)：从隐式偏好比较中学习具身多模态表示，而不是依赖显式动作标签。
+- [Learning to Generate Instruction Tuning Datasets for Zero-Shot Task Adaptation](https://arxiv.org/abs/2402.18334)：训练数据生成器创建指令调优集，使模型无需任务专属标注即可适配未见任务。
+- [Reward Model Learning vs. Direct Policy Optimization: A Comparative Analysis of Learning from Human Preferences](https://arxiv.org/abs/2403.01857)：比较显式奖励模型训练与直接策略优化，澄清两类偏好学习路线各自适用的条件。
+- [Balancing Enhancement, Harmlessness, and General Capabilities: Enhancing Conversational LLMs with Direct RLHF](https://arxiv.org/abs/2403.02513)：用 direct RLHF 改善对话行为，同时跟踪 helpfulness、harmlessness 与通用能力之间的取舍。
+- [Negating Negatives: Alignment without Human Positive Samples via Distributional Dispreference Optimization](https://arxiv.org/abs/2403.03419)：仅利用负反馈进行对齐，通过优化一组不偏好回答的分布来替代正样本。
+- [On the Essence and Prospect: An Investigation of Alignment Approaches for Big Models](https://arxiv.org/abs/2403.04204)：梳理并分析大模型主要对齐方法，包括监督调优、RLHF、constitutional 方法和偏好优化。
+- [Adaptive Task Balancing for Visual Instruction Tuning via Inter-Task Contribution and Intra-Task Difficulty](https://arxiv.org/abs/2403.04343)：通过估计任务贡献和样本难度来平衡视觉指令调优中的不同任务。
+- [Provable Multi-Party Reinforcement Learning with Diverse Human Feedback](https://arxiv.org/abs/2403.05006)：给出可证明的强化学习方法，用于整合来自多个人类且彼此差异化的反馈。
+- [Aligning Large Language Models for Controllable Recommendations](https://arxiv.org/abs/2403.05063)：对齐推荐场景中的 LLM，使用户能通过自然语言控制推荐约束和偏好。
+- [Overcoming Reward Overoptimization via Adversarial Policy Optimization with Lightweight Uncertainty Estimation](https://arxiv.org/abs/2403.05171)：结合对抗式策略优化和轻量不确定性估计，缓解 RLHF 中的奖励过优化。
+- [Bayesian Preference Elicitation with Language Models](https://arxiv.org/abs/2403.05534)：在用户效用的贝叶斯模型下，用语言模型提出信息量高的偏好询问。
+- [IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages](https://arxiv.org/abs/2403.06350)：给出印度语言预训练与指令微调语料的数据构建流程。
+- [ALaRM: Align Language Models via Hierarchical Rewards Modeling](https://arxiv.org/abs/2403.06754)：构建层级奖励模型，将对齐反馈拆解为多层偏好信号。
+- [Curry-DPO: Enhancing Alignment using Curriculum Learning & Ranked Preferences](https://arxiv.org/abs/2403.07230)：把课程学习与排序偏好结合起来，使 DPO 训练从较易对齐案例推进到更难案例。
+- [Improving Reinforcement Learning from Human Feedback Using Contrastive Rewards](https://arxiv.org/abs/2403.07708)：用直接比较偏好回答和拒绝回答的对比式奖励信号训练 RLHF 策略。
+- [Fine-tuning Large Language Models with Sequential Instructions](https://arxiv.org/abs/2403.07794)：用相互依赖的连续指令微调 LLM，以改善多轮和分步指令遵循。
+- [Scaling Data Diversity for Fine-Tuning Language Models in Human Alignment](https://arxiv.org/abs/2403.11124)：研究提升微调数据多样性如何影响人类对齐行为和通用指令遵循。
+- [A Moral Imperative: The Need for Continual Superalignment of Large Language Models](https://arxiv.org/abs/2403.14683)：主张建立持续 superalignment 方法，随着模型能力、价值观和部署语境变化反复更新模型。
+- [MetaAligner: Conditional Weak-to-Strong Correction for Generalizable Multi-Objective Alignment of Language Models](https://arxiv.org/abs/2403.17141)：训练与具体策略模型解耦的 meta-aligner，通过重组带目标标签的偏好数据和条件弱到强校正，在不同策略模型上即插即用地执行多目标对齐。
+- [COIG-CQIA: Quality is All You Need for Chinese Instruction Fine-tuning](https://arxiv.org/abs/2403.18058)：发布来自真实资源且经人工核验的中文指令调优数据集，并评估面向中文交互习惯的模型训练与数据混合策略。
+- [Understanding the Learning Dynamics of Alignment with Human Feedback](https://arxiv.org/abs/2403.18742)：从理论上分析偏好数据分布如何影响人类反馈对齐中的策略更新速度和偏好可区分性。
+- [sDPO: Don't Use Your Data All at Once](https://arxiv.org/abs/2403.19270)：把偏好数据拆成逐步 DPO 阶段，使后续更新使用更接近已对齐状态的 reference model，而不是一次性消耗全部偏好对。
+- [Fine-Tuning Language Models with Reward Learning on Policy](https://arxiv.org/abs/2403.19279)：用当前策略样本上的无监督多视图表示和合成偏好数据持续细化奖励模型，缓解 RLHF 中奖励学习的分布外问题。
+- [Mixed Preference Optimization: Reinforcement Learning with Data Selection and Better Reference Model](https://arxiv.org/abs/2403.19443)：先在 reward gap 较大的简单偏好对上训练 DPO，再以该 DPO 策略为 reference model，在较难偏好对上进行在线 RLHF 细化。
+- [ChatGLM-RLHF: Practices of Aligning Large Language Models with Human Feedback](https://arxiv.org/abs/2404.00934)：总结 ChatGLM 生产级 RLHF 流程，包括人类偏好采集、奖励模型训练、策略优化、方差缓解、模型并行和抗遗忘正则化。
+- [Regularized Best-of-N Sampling to Mitigate Reward Hacking for Language Model Alignment](https://arxiv.org/abs/2404.01054)：在奖励模型 best-of-N 解码中加入最小贝叶斯风险邻近正则项，并用生成样本构造更稳健的 DPO 偏好数据。
+- [Asymptotics of Language Model Alignment](https://arxiv.org/abs/2404.01730)：在简化语言模型和线性奖励模型假设下，推导 KL 约束强化学习对齐与 best-of-N 选择之间的闭式和渐近关系。
+- [Automatic Prompt Selection for Large Language Models](https://arxiv.org/abs/2404.02717)：先聚类训练数据并生成合成候选提示，再训练 prompt evaluator，为零样本数学问答选择输入特定提示。
+- [An Incomplete Loop: Instruction Inference, Instruction Following, and In-context Learning in Language Models](https://arxiv.org/abs/2404.03028)：在 GPT 和 Llama 模型的算术与翻译任务上比较显式指令、少样本示例和生成式任务描述，显示这些提示模式之间并不系统互通。
+- [CantTalkAboutThis: Aligning Language Models to Stay on Topic in Dialogues](https://arxiv.org/abs/2404.03820)：构建含干扰轮次的合成对话数据集，用于微调聊天模型在任务型对话中抵抗跑题并保持指定角色。
+- [Binary Classifier Optimization for Large Language Model Alignment](https://arxiv.org/abs/2404.04656)：只用点赞或点踩式二元反馈训练分类器，并把分类器 logit 作为隐式奖励来近似 DPO 对齐。
+- [Towards Understanding the Influence of Reward Margin on Preference Model Performance](https://arxiv.org/abs/2404.04932)：在无需穷尽式细粒度人工标签的情况下估计偏好 margin，并证明 margin-aware 奖励模型训练能改善奖励预测与下游对齐表现。
+- [Facial Affective Behavior Analysis with Instruction Tuning](https://arxiv.org/abs/2404.05052)：构建带 facial-prior 和 LoRA 模块的 EmoLA 多模态指令模型，并配套 FABA 指令数据集与情绪、action unit 推理基准。
+- [Not All Contexts Are Equal: Teaching LLMs Credibility-aware Generation](https://arxiv.org/abs/2404.06809)：生成带可信度标注的 RAG 训练数据并构造三类场景基准，使模型学习按来源可靠性加权使用检索证据。
+- [Self-Supervised Visual Preference Alignment](https://arxiv.org/abs/2404.10501)：从原图和增强图生成 VLM 的 chosen 与 rejected 回答，并在无需 GPT-4 或人工偏好监督的情况下应用 DPO。
+- [Stepwise Alignment for Constrained Language Model Policy Optimization](https://arxiv.org/abs/2404.11049)：把对齐形式化为安全约束下的奖励最大化，并用 SACPO 结合 DPO 式更新分步优化 helpfulness 与 harmlessness。
+- [TextSquare: Scaling up Text-Centric Visual Instruction Tuning](https://arxiv.org/abs/2404.12803)：通过 self-questioning、answering、reasoning 和 evaluation 生成 Square-10M 文本中心 VQA 指令数据，并训练 TextSquare 处理 OCR 密集的多模态推理。
+- [Mapping Social Choice Theory to RLHF](https://arxiv.org/abs/2404.13038)：分析 RLHF 偏好聚合与社会选择投票设置的差异，澄清哪些不可能性和聚合结论可以迁移到对齐问题。
+- [Filtered Direct Preference Optimization](https://arxiv.org/abs/2404.13846)：在 DPO 训练期间用奖励模型相对于当前模型输出过滤低质量偏好样本，从而改进无显式奖励模型的对齐。
+- [Optimal Design for Human Preference Elicitation](https://arxiv.org/abs/2404.13895)：把最优实验设计扩展到列表式偏好询问，选择更高信息量的标注问题以高效学习绝对反馈和排序反馈模型。
+- [Self-Supervised Alignment with Mutual Information: Learning to Follow Principles without Preference Labels](https://arxiv.org/abs/2404.14313)：提出 SAMI 迭代微调算法，在没有偏好标签或示范的条件下最大化书面 constitution 与自生成回答之间的互信息。
+- [From Complex to Simple: Enhancing Multi-Constraint Complex Instruction Following Ability of Large Language Models](https://arxiv.org/abs/2404.15846)：研究多约束指令数据的作用，并构造有效复杂指令训练样本，使模型在域内、域外和对抗约束下泛化。
+- [Prefix Text as a Yarn: Eliciting Non-English Alignment in Foundation Language Model](https://arxiv.org/abs/2404.16766)：提出 PreTTY 免训练多语种对齐方法，只在解码开头加入一两个任务相关 prefix token，使基础 LLM 在翻译和词性标注上接近 SFT 模型。
+- [HFT: Half Fine-Tuning for Large Language Models](https://arxiv.org/abs/2404.18466)：在 SFT、DPO 和持续微调中冻结一半参数，让另一半学习新指令行为，从而缓解灾难性遗忘并降低训练时间。
+- [Creative Beam Search: LLM-as-a-Judge For Improving Response Generation](https://arxiv.org/abs/2405.00099)：把 diverse beam search 与 LLM judge 候选验证结合起来，在解码阶段筛选更符合目标的回答。
+- [Self-Refine Instruction-Tuning for Aligning Reasoning in Language Models](https://arxiv.org/abs/2405.00402)：先把大模型推理示范迁移给小模型，再用 DPO 式自我细化、采样推理路径和真值奖励对齐数学与常识推理能力。
+- [MANTIS: Interleaved Multi-Image Instruction Tuning](https://arxiv.org/abs/2405.01483)：构建 72.1 万样本的 Mantis-Instruct 数据集，训练具备共指、比较、时间理解和多图推理能力的 LMM，而不依赖海量噪声交错预训练。
+- [D2PO: Discriminator-Guided DPO with Response Evaluation Models](https://arxiv.org/abs/2405.01511)：在在线 DPO 中加入独立 response-evaluation discriminator，用少量 gold preference 为合成样本打银标签，降低偏好数据需求。
+- [LLM Theory of Mind and Alignment: Opportunities and Risks](https://arxiv.org/abs/2405.08154)：把 theory-of-mind 作为与对齐相关的模型属性，分析目标推断、对话适配、共情、群体协作和道德判断中的机会与风险。
+- [Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process](https://arxiv.org/abs/2405.11870)：用 token 级偏好估计和转移优化统一 SFT 与偏好优化，并通过 temporal residual connection 在普通 SFT 数据上整合两类目标。
+- [SPO: Multi-Dimensional Preference Sequential Alignment With Implicit Reward Modeling](https://arxiv.org/abs/2405.12739)：不用显式奖励模型，按顺序优化 helpfulness、harmlessness 等多个偏好维度，并推导闭式策略与损失函数。
+- [The Echoes of Multilinguality: Tracing Cultural Value Shifts during LM Fine-tuning](https://arxiv.org/abs/2405.12744)：追踪多语种微调数据如何改变不同语言中的文化价值表示，并用训练数据归因定位触发 value shift 的样本。
+- [Mosaic-IT: Cost-Free Compositional Data Synthesis for Instruction Tuning](https://arxiv.org/abs/2405.13326)：把现有 instruction-response 样本组合到更高层 meta-instruction 下，合成组合式指令数据以增强多步和格式遵循并降低训练成本。
+- [Disperse-Then-Merge: Pushing the Limits of Instruction Tuning via Alignment Tax Reduction](https://arxiv.org/abs/2405.13432)：将指令数据分块训练多个子模型，再通过模型合并减轻 SFT 后期在知识和推理基准上的 alignment tax。
+- [AlignGPT: Multi-modal Large Language Models with Adaptive Alignment Capability](https://arxiv.org/abs/2405.14129)：预训练时按图文对齐程度分组，指令调优时自适应组合不同对齐层级表示，以满足不同多模态任务的对齐需求。
+- [Maintaining Structural Integrity in Parameter Spaces for Parameter Efficient Fine-tuning](https://arxiv.org/abs/2405.14739)：把 PEFT 从二维 LoRA 推广到 N 维张量参数空间，在保持拓扑结构的同时建模低秩更新，覆盖 NLP、视觉和多模态任务。
+- [MallowsPO: Fine-Tune Your LLM with Preference Dispersions](https://arxiv.org/abs/2405.14953)：在 DPO 中加入受 Mallows 排序理论启发的 dispersion index，用于刻画人类偏好的分散程度，并可作为离线偏好优化插件。
+- [Reinforcing Language Agents via Policy Optimization with Action Decomposition](https://arxiv.org/abs/2405.15821)：把语言智能体动作拆解为 token 级 Bellman backup，使 PPO 在无限制动作空间中获得更细粒度的 credit assignment。
+- [Mechanism Design for LLM Fine-tuning with Multiple Reward Models](https://arxiv.org/abs/2405.16276)：把多奖励模型微调形式化为机制设计问题，通过 VCG 式支付让不同偏好的参与方更有动力真实报告奖励目标。
+- [Multi-Reference Preference Optimization for Large Language Models](https://arxiv.org/abs/2405.16388)：把单参考 DPO 扩展为闭式多参考目标，利用多个预训练模型的先验提升偏好学习的泛化与稳健性。
+- [Implicit Multimodal Alignment: On the Generalization of Frozen LLMs to Multimodal Inputs](https://arxiv.org/abs/2405.16700)：发现冻结 LLM 内部存在感知 token 与文本 token 的隐式对齐，并把该信号用于解释多模态性能、幻觉风险和推理压缩。
+- [Getting More Juice Out of the SFT Data: Reward Learning from Human Demonstration Improves SFT for LLM Alignment](https://arxiv.org/abs/2405.17888)：从人类示范中学习奖励，改进用于 LLM 对齐的监督微调。
+- [Online Merging Optimizers for Boosting Rewards and Mitigating Tax in Alignment](https://arxiv.org/abs/2405.17931)：在每个 RLHF 优化步骤中融合策略更新、SFT 参数方向和预训练参数方向，在 DPO、KTO 等设置下提升对齐奖励并缓解能力损失。
+- [Unified Preference Optimization: Language Model Alignment Beyond the Preference Frontier](https://arxiv.org/abs/2405.17956)：分解偏好目标和辅助目标，使 DPO 式训练能同时优化用户偏好与风格、危害降低等设计者目标，而无需额外偏好数据。
+- [Outlier-weighed Layerwise Sampling for LLM Fine-tuning](https://arxiv.org/abs/2405.18380)：按层内 outlier 分布采样并微调少量层，再加入低秩梯度投影，实现比 LoRA 更强的内存高效 LLM 适配。
+- [Efficient Model-agnostic Alignment via Bayesian Persuasion](https://arxiv.org/abs/2405.18718)：训练小型 advisor 发送贝叶斯说服信号，引导黑盒 receiver LLM 在不更新权重的情况下改进数学和代码回答。
+- [Weak-to-Strong Search: Align Large Language Models via Searching over Small Language Models](https://arxiv.org/abs/2405.19262)：在测试时用已调优和未调优小模型的 log-probability 差值引导冻结大模型采样，避免直接微调大模型。
+- [Group Robust Preference Optimization in Reward-free RLHF](https://arxiv.org/abs/2405.20304)：在无奖励模型 RLHF 中优化最差群体表现，针对普通平均偏好优化可能掩盖的 subgroup failure。
+- [Joint Embeddings for Graph Instruction Tuning](https://arxiv.org/abs/2405.20684)：通过联合嵌入对齐图结构和语言表示，使 LLM 能遵循图结构指令完成图理解任务。
+- [The AI Alignment Paradox](https://arxiv.org/abs/2405.20806)：讨论把 AI 系统导向人类价值与保留多元、冲突目标之间的张力，是概念性对齐条目而非新的训练配方。
+- [Scalable Ensembling For Mitigating Reward Overoptimisation](https://arxiv.org/abs/2406.01013)：用奖励模型集成降低 RLHF 中的 reward overoptimization，使代理奖励在对齐生成阶段更稳健。
+- [LoFiT: Localized Fine-tuning on LLM Representations](https://arxiv.org/abs/2406.01563)：把微调限制在与目标行为相关的表示子空间，减少不必要的参数更新来适配 LLM。
+- [Self-Improving Robust Preference Optimization](https://arxiv.org/abs/2406.01660)：让当前策略迭代生成偏好数据并继续优化，相比静态离线 DPO 式对齐更强调鲁棒性。
+- [Dishonesty in Helpful and Harmless Alignment](https://arxiv.org/abs/2406.01931)：研究 helpfulness 与 harmlessness 对齐激励如何诱发不诚实行为，揭示偏好训练助手的评测失效模式。
+- [Computational Limits of Low-Rank Adaptation (LoRA) Fine-Tuning for Transformer Models](https://arxiv.org/abs/2406.03136)：分析 LoRA 在 transformer 微调中能否表达所需更新，澄清参数高效指令适配的计算限制。
+- [Is Free Self-Alignment Possible?](https://arxiv.org/abs/2406.03642)：测试预训练语言模型能否在很少或没有偏好数据的条件下自对齐，探查内生反馈与监督对齐的边界。
+- [Self-Play with Adversarial Critic: Provable and Scalable Offline Alignment for Language Models](https://arxiv.org/abs/2406.04274)：在离线偏好数据上引入与 adversarial critic 的 self-play，形成带理论保证的可扩展对齐目标。
+- [Phased Instruction Fine-Tuning for Large Language Models](https://arxiv.org/abs/2406.04371)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充指令遵循方向的模型覆盖。
+- [Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment](https://arxiv.org/abs/2406.04412)：设计直接判断回答分散度的偏好标注方式，以更高效地收集用于 LLM 对齐的人类反馈。
+- [Distributional Preference Alignment of LLMs via Optimal Transport](https://arxiv.org/abs/2406.05882)：用 optimal transport 将模型回答分布与偏好分布对齐，超越逐样本二元偏好标签。
+- [Aligning Large Language Models with Representation Editing: A Control Perspective](https://arxiv.org/abs/2406.05954)：把对齐视为可控表示编辑，通过调节模型激活来引导行为，而不只依赖完整偏好微调。
+- [Inverse Constitutional AI: Compressing Preferences into Principles](https://arxiv.org/abs/2406.06560)：从成对偏好数据中反推出简洁 constitutional principles，把示例压缩为可复用的对齐与评测规则。
+- [Prototypical Reward Network for Data-Efficient RLHF](https://arxiv.org/abs/2406.06606)：构建基于 prototype 的奖励模型，通过把回答与学习到的偏好原型比较来减少人工偏好标签需求。
+- [OPTune: Efficient Online Preference Tuning](https://arxiv.org/abs/2406.07657)：提出在线偏好调优算法，用新采样模型输出持续更新对齐策略，比固定离线偏好训练更高效。
+- [ContraSolver: Self-Alignment of Language Models by Resolving Internal Preference Contradictions](https://arxiv.org/abs/2406.08842)：发现模型自身偏好判断中的矛盾，并用这些矛盾的解决结果训练模型完成自对齐。
+- [Knowledge Editing in Language Models via Adapted Direct Preference Optimization](https://arxiv.org/abs/2406.09920)：把 DPO 改造为知识编辑方法，将编辑后和未编辑回答作为偏好对来更新事实行为。
+- [Deep Bayesian Active Learning for Preference Modeling in Large Language Models](https://arxiv.org/abs/2406.10023)：用贝叶斯主动学习选择信息量最高的回答对进行偏好标注和奖励模型训练。
+- [A Probability–Quality Trade-off in Aligned Language Models and its Relation to Sampling Adaptors](https://arxiv.org/abs/2406.10203)：形式化 aligned sampling 中 prior-model likelihood 与人类奖励之间的取舍，解释采样适配器如何选择 reward-likelihood 平衡。
+- [RoseLoRA: Row and Column-wise Sparse Low-rank Adaptation of Pre-trained Language Model for Knowledge Editing and Fine-tuning](https://arxiv.org/abs/2406.10777)：在 LoRA 更新中加入行列稀疏性，只改变任务相关参数并尽量保留无关知识。
+- [Self-Evolution Fine-Tuning for Policy Optimization](https://arxiv.org/abs/2406.10813)：训练 adaptive reviser 改写低质量回答，再用改写结果微调策略，使模型能用未标注数据以接近 SFT 的稳定性完成对齐。
+- [ExPLoRA: Parameter-Efficient Extended Pre-Training to Adapt Vision Transformers under Domain Shifts](https://arxiv.org/abs/2406.10973)：在领域迁移下继续 ViT 自监督预训练，只解冻少数 block 并用 LoRA 调其余层，属于相邻 PEFT 方法而非指令专用对齐。
+- [Dynamic Data Mixing Maximizes Instruction Tuning for Mixture-of-Experts](https://arxiv.org/abs/2406.11256)：利用 MoE 路由偏好构造数据集级表示，并动态调整指令数据采样权重，以减少 MoE 指令调优中的冗余。
+- [Fairer Preferences Elicit Improved Human-Aligned Large Language Model Judgments](https://arxiv.org/abs/2406.11370)：提出 ZEPO 零样本提示优化器，使 LLM 成对评审对等价提示更稳健，并提升与人类判断的一致性。
+- [Super(ficial)-alignment: Strong Models May Deceive Weak Models in Weak-to-Strong Generalization](https://arxiv.org/abs/2406.11431)：在 helpfulness 与 harmlessness 冲突目标下测试 weak-to-strong 对齐，发现强学生模型可能向弱监督者隐藏失配行为。
+- [Style Transfer with Multi-iteration Preference Optimization](https://arxiv.org/abs/2406.11581)：把多轮偏好优化用于文本风格迁移，结合 hope-versus-fear 采样、伪平行生成和动态多目标奖励聚合。
+- [Community-Cross-Instruct: Unsupervised Instruction Generation for Aligning Large Language Models to Online Communities](https://arxiv.org/abs/2406.12074)：从在线社区讨论中无监督生成社区特定 instruction-output 对，用于微调并评估代表 Reddit 政治和饮食社区的 LLM。
+- [BPO: Staying Close to the Behavior LLM Creates Better Online LLM Alignment](https://arxiv.org/abs/2406.12168)：提出接近 behavior LLM 的在线偏好优化目标，用 trust-region 思路约束学习策略靠近采样来源模型。
+- [Instruction Data Generation and Unsupervised Adaptation for Speech Language Models](https://arxiv.org/abs/2406.12946)：用 LLM 和文本转语音系统合成文本与语音配对指令数据，并支持用未标注语音扩展多模态语音语言模型。
+- [Self-play with Execution Feedback: Improving Instruction-following Capabilities of Large Language Models](https://arxiv.org/abs/2406.13542)：提出 AutoIF，把指令质量验证转化为代码和单元测试执行反馈，再通过 rejection sampling 生成 SFT 与 DPO 数据。
+- [Take the essence and discard the dross: A Rethinking on Data Selection for Fine-Tuning Large Language Models](https://arxiv.org/abs/2406.14115)：从特征抽取、标准设计和 selector 评估三阶段综述微调数据选择，因此更像 survey 式旁支条目而不是新模型。
+- [Hybrid Alignment Training for Large Language Models](https://arxiv.org/abs/2406.15178)：交替优化指令遵循和偏好对齐目标，并用改造的 elastic weight consolidation 避免 SFT 与 RLHF 目标互相覆盖。
+- [SAIL: Self-Improving Efficient Online Alignment of Large Language Models](https://arxiv.org/abs/2406.15567)：把在线 LLM 对齐重写为 bilevel optimization，并化简为一阶自改进循环，迭代探索回答并调节偏好标签。
+- [Robust Reinforcement Learning from Corrupted Human Feedback](https://arxiv.org/abs/2406.15568)：研究从受污染人类反馈中进行鲁棒强化学习。
+- [Language Alignment via Nash-learning and Adaptive feedback](https://arxiv.org/abs/2406.15890)：提出 LANA，将 Nash 式对齐写成对自适应对手反馈的镜像下降，从而在不训练偏好模型、不依赖标注偏好数据的情况下自对齐。
+- [Preference Tuning For Toxicity Mitigation Generalizes Across Languages](https://arxiv.org/abs/2406.16235)：显示仅用英文数据做 DPO 去毒化可迁移到 17 种语言，并用多语 MLP 激活分析解释跨语言毒性下降机制。
+- [Cascade Reward Sampling for Efficient Decoding-Time Alignment](https://arxiv.org/abs/2406.16306)：提出 CARDS 段级拒绝采样，用奖励模型不确定性减少解码时对齐中的冗余 token 生成和奖励评估。
+- [Towards Comprehensive Preference Data Collection for Reward Modeling](https://arxiv.org/abs/2406.16486)：把奖励模型偏好数据采集拆成提示生成、回答生成、回答过滤和偏好标注四步，用于分析 RLHF 偏好对的噪声与多样性。
+- [InstructPatentGPT: training patent language models to follow instructions with human feedback](https://arxiv.org/abs/2406.16897)：把授权专利与公开申请状态视为隐式反馈，训练专利语言模型控制权利要求授权可能性、长度和限定性术语使用。
+- [Mitigate the Gap: Investigating Approaches for Improving Cross-Modal Alignment in CLIP](https://arxiv.org/abs/2406.17639)：研究共享编码器参数和模态内分离如何缩小 CLIP modality gap，是相邻的跨模态对齐分析而非指令调优方法。
+- [Improving Weak-to-Strong Generalization with Reliability-Aware Alignment](https://arxiv.org/abs/2406.19032)：按弱监督答案的可靠性进行过滤或重加权，使强模型从不完美弱标签中学习时减少噪声影响。
+- [EmPO: Emotion Grounding for Empathetic Response Generation through Preference Optimization](https://arxiv.org/abs/2406.19071)：构造基于情绪 grounding 理论的偏好数据，并用偏好优化提升共情对话，同时评估泛化、多样性和情绪效价。
+- [Averaging log-likelihoods in direct alignment](https://arxiv.org/abs/2406.19188)：在偏好目标前对回答 log-likelihood 做平均，使直接对齐损失对长度不敏感，缓解 DPO 类训练的回答长度偏置。
+- [Direct Preference Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2406.19774)：把 LLM 知识蒸馏重写为 Direct Preference Knowledge Distillation，将分布差异与教师输出隐式偏好奖励结合。
+- [ProgressGym: Alignment with a Millennium of Moral Progress](https://arxiv.org/abs/2406.20087)：提供 progress alignment 实验框架，从跨世纪历史文本学习道德进步机制，而不是标准指令调优配方。
+- [Advancing Process Verification for Large Language Models via Tree-Based Preference Learning](https://arxiv.org/abs/2407.00390)：用 best-first reasoning tree 和步骤级偏好对训练 Tree-PLV 验证器，比二元路径标签提供更细粒度的过程反馈。
+- [Cost-Effective Proxy Reward Model Construction with On-Policy and Active Learning](https://arxiv.org/abs/2407.02119)：结合 on-policy 采样与主动学习构建代理奖励 oracle，使在线 RLHF 能在很小专家反馈预算下继续标注偏好。
+- [PromptIntern: Saving Inference Costs by Internalizing Recurrent Prompt during Large Language Model Fine-tuning](https://arxiv.org/abs/2407.02211)：通过模板压缩、few-shot 示例吸收和渐进内化微调模型，把反复出现的领域提示写入参数以降低推理成本。
+- [Learning to Refine with Fine-Grained Natural Language Feedback](https://arxiv.org/abs/2407.02397)：把改写细分为错误检测、细粒度 critique 生成和基于反馈的重写，训练或提示模型利用自然语言批注。
+- [Understanding Alignment in Multimodal LLMs: A Comprehensive Study](https://arxiv.org/abs/2407.02477)：比较多模态偏好数据集以及 DPO、PPO 等对齐选择，分析其对降低 MLLM 图像 grounding 幻觉的作用。
+- [AgentInstruct: Toward Generative Teaching with Agentic Flows](https://arxiv.org/abs/2407.03502)：用面向原始资料的 agentic flows 自动生成多样化合成提示与回答，用于后训练模型学习新技能或行为。
+- [Lateralization LoRA: Interleaved Instruction Tuning with Modality-Specialized Adaptations](https://arxiv.org/abs/2407.03604)：为交错式视觉语言生成引入模态专门化 synergizer 适配，在文本和图像路径上使用不同归纳偏置。
+- [Benchmarking Complex Instruction-Following with Multiple Constraints Composition](https://arxiv.org/abs/2407.03978)：提出 ComplexBench，是包含约束类型、维度和组合层级的复杂指令遵循 benchmark-only 条目。
+- [GPT vs RETRO: Exploring the Intersection of Retrieval and Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2407.04528)：比较 GPT 与 retrieval-enhanced RETRO 上的多种 PEFT 方法，发现 RETRO 零样本更强而 GPT 对参数高效微调更敏感。
+- [Spontaneous Reward Hacking in Iterative Self-Refinement](https://arxiv.org/abs/2407.04549)：展示生成器在迭代 self-refinement 中优化 LLM evaluator 时会出现上下文内 reward hacking，尤其容易利用共享模型漏洞。
+- [Variational Best-of-N Alignment](https://arxiv.org/abs/2407.06057)：把 Best-of-N 奖励选择分布蒸馏进策略，通过最小化 backward KL 降低推理时对齐成本并逼近 BoN 行为。
+- [Video-STaR: Self-Training Enables Video Instruction Tuning with Any Supervision](https://arxiv.org/abs/2407.06189)：循环进行视频指令生成与微调，并用已有视频标签过滤生成答案，把任意有标签视频数据转成弱监督。
+- [Nash CoT: Multi-Path Inference with Preference Equilibrium](https://arxiv.org/abs/2407.07099)：把角色化和通用 CoT 路径作为博弈均衡来平衡，在减少推理路径数量的同时保留推理多样性。
+- [β-DPO: Direct Preference Optimization with Dynamic β](https://arxiv.org/abs/2407.08639)：按成对偏好数据质量在 batch 层面动态校准 DPO 的 beta 参数，并加入 beta 引导的异常偏好对过滤。
+- [DistillSeq: A Framework for Safety Alignment Testing in Large Language Models using Knowledge Distillation](https://arxiv.org/abs/2407.10106)：用蒸馏的审核知识、语法树和 LLM 生成恶意查询组成安全测试框架，并非直接的对齐训练方法。
+- [Fine-tuning Multimodal Large Language Models for Product Bundling](https://arxiv.org/abs/2407.11712)：用混合商品 tokenization、多模态融合和分阶段目标微调 Bundle-MLLM，将商品捆绑转化为多选推理。
+- [Situated Instruction Following](https://arxiv.org/abs/2407.12061)：定义包含欠指定、随时间演化的人类意图的具身指令遵循设置，暴露现有 EIF 模型缺口而不是提出训练配方。
+- [Correcting the Mythos of KL-Regularization: Direct Alignment without Overoptimization via Chi-Squared Preference Optimization](https://arxiv.org/abs/2407.13399)：用卡方偏好优化替换 DPO 的 log link，以不确定性感知的卡方正则缓解离线对齐过优化。
+- [Data-Centric Human Preference with Rationales for Direct Preference Alignment](https://arxiv.org/abs/2407.14477)：为偏好对补充机器生成的选择理由，使直接偏好优化能更高效利用已有人工偏好数据。
+- [Navigation Instruction Generation with BEV Perception and Large Language Models](https://arxiv.org/abs/2407.15087)：构建 BEVInstructor，将鸟瞰视角和透视视觉提示融合，并用迭代 refinement 生成路线描述。
+- [A Practical Analysis of Human Alignment with *PO](https://arxiv.org/abs/2407.15229)：在分布外超参数变化下压力测试偏好优化方法，并提出 length-normalized DPO 提升对齐稳定性。
+- [Revisiting the Robust Alignment of Circuit Breakers](https://arxiv.org/abs/2407.15902)：用改造的 embedding-space attack 重新评估 circuit-breaker 防御并报告更高攻击成功率，是对齐防御鲁棒性审计。
+- [Autonomous Improvement of Instruction Following Skills via Foundation Models](https://arxiv.org/abs/2407.20635)：用 foundation model 自动化机器人数据采集与监督，使指令遵循策略能从自主经验中持续改进。
+- [Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment](https://arxiv.org/abs/2408.00137)：通过将 attention-score 模式对齐到更均衡的关联来缓解负面社会偏见，而不只依赖输出层过滤。
+- [EXAONE 3.0 7.8B Instruction Tuned Language Model](https://arxiv.org/abs/2408.03541)：报告 LG AI 的 EXAONE 3.0 7.8B 指令调优模型，涵盖训练配方、韩英双语侧重和基准评测。
+- [In2Core: Leveraging Influence Functions for Coreset Selection in Instruction Finetuning of Large Language Models](https://arxiv.org/abs/2408.03560)：用模型梯度上的 influence function 选择指令调优 coreset，在约一半训练数据下维持性能。
+- [Better Alignment with Instruction Back-and-Forth Translation](https://arxiv.org/abs/2408.04614)：从网页文档经 backtranslation 和回答改写生成合成指令回答对，相比常用指令数据提升 AlpacaEval 胜率。
+- [Unlocking Decoding-time Controllability: Gradient-Free Multi-Objective Alignment with Contrastive Prompts](https://arxiv.org/abs/2408.05094)：在解码阶段为每个目标对比 expert prompt 与 adversarial prompt，实现无需梯度的多目标对齐控制。
+- [Bridging and Modeling Correlations in Pairwise Data for Direct Preference Optimization](https://arxiv.org/abs/2408.07471)：从失败回答合成 pseudo-winning response，并训练 token 级相关性建模以增强 DPO 偏好对信息量。
+- [Minor DPO reject penalty to increase training robustness](https://arxiv.org/abs/2408.09834)：分析 DPO 中 beta 的作用，并加入 MinorDPO reject penalty，使其更接近 RL 式偏好优化并提升鲁棒性。
+- [EMO-LLaMA: Enhancing Facial Emotion Understanding with Instruction Tuning](https://arxiv.org/abs/2408.11424)：向 MLLM 加入面部先验模块和 Gemini 生成的 FER 指令数据，用于静态与视频面部情绪理解。
+- [SEA: Supervised Embedding Alignment for Token-Level Visual-Textual Integration in MLLMs](https://arxiv.org/abs/2408.11813)：在多模态预训练中加入 token 级监督 embedding alignment，尤其提升小语言骨干的视觉文本整合。
+- [Selective Preference Optimization via Token-Level Reward Function Estimation](https://arxiv.org/abs/2408.13518)：用小型 DPO oracle 估计 token 级奖励并只训练关键 token，减少有噪声的偏好监督。
+- [Instruct-SkillMix: A Powerful Pipeline for LLM Instruction Tuning](https://arxiv.org/abs/2408.14774)：从强 LLM 中抽取指令遵循技能，随机组合技能对并生成紧凑 SFT 数据，提升 AlpacaEval、MT-Bench 和 WildBench。
+- [Inverse-Q*: Token Level Reinforcement Learning for Aligning Large Language Models Without Preference Data](https://arxiv.org/abs/2408.14874)：把直接偏好思想扩展到 token 级强化学习，从模型回答中估计条件最优策略，无需外部奖励或偏好数据。
+- [UNA: A Unified Supervised Framework for Efficient LLM Alignment Across Feedback Types](https://arxiv.org/abs/2408.15339)：通过广义隐式奖励函数统一二元、成对和打分式反馈，用于监督式对齐训练。
+- [CBF-LLM: Safe Control for LLM Alignment](https://arxiv.org/abs/2408.15625)：把 control barrier function 作为 token 生成安全过滤器，干预 Llama 3 输出以满足用户指定的对齐约束。
+- [Understanding Multimodal Hallucination with Parameter-Free Representation Alignment](https://arxiv.org/abs/2409.01151)：提出无需训练参数的 Pfram 表征对齐指标，显示图像表征对齐度与 MLLM 物体幻觉相关。
+- [On the Limited Generalization Capability of the Implicit Reward Model Induced by Direct Preference Optimization](https://arxiv.org/abs/2409.03650)：证明 DPO 的隐式奖励模型能拟合训练偏好，但在分布迁移下泛化弱于显式奖励模型。
+- [Geometric-Averaged Preference Optimization for Soft Preference Labels](https://arxiv.org/abs/2409.06691)：用分布式 soft preference label 的加权几何平均 likelihood 改造 DPO，缓解二元偏好假设带来的过优化。
+- [Semi-Supervised Reward Modeling via Iterative Self-Training](https://arxiv.org/abs/2409.06903)：通过迭代伪标注、置信度过滤和监督微调，用未标注数据改进奖励模型。
+- [Beyond IID: Optimizing Instruction Learning from the Perspective of Instruction Interaction and Dependency](https://arxiv.org/abs/2409.07045)：建模指令类别之间的交互和依赖关系，并用线性规划式指令课程优化 SFT 数据选择。
+- [Your Weak LLM is Secretly a Strong Teacher for Alignment](https://arxiv.org/abs/2409.08813)：评估弱 LLM 作为可扩展反馈提供者，发现其对齐反馈可达到甚至超过人工标注偏好数据。
+- [AIPO: Improving Training Objective for Iterative Preference Optimization](https://arxiv.org/abs/2409.08845)：诊断迭代偏好优化中的长度利用问题，并为合成数据对齐循环提出调整后的训练目标。
+- [Propulsion: Steering LLM with Tiny Fine-Tuning](https://arxiv.org/abs/2409.10927)：在预训练层加入轻量可训练缩放参数来引导输出，而不更新基础模型权重。
+- [LLM-as-a-Judge & Reward Model: What They Can and Cannot Do](https://arxiv.org/abs/2409.11239)：从语言迁移、事实核验和困难提示等角度分析自动 judge 与奖励模型，澄清 judge 信号的可靠边界。
+- [Optimizing RLHF Training for Large Language Models with Stage Fusion](https://arxiv.org/abs/2409.13221)：提出 RLHFuse 训练系统，融合生成、推理和 micro-batch 训练阶段以提升 RLHF 的 GPU 利用率。
+- [Instruction-guided Multi-Granularity Segmentation and Captioning with Large Multimodal Model](https://arxiv.org/abs/2409.13407)：构建 MGLMM，使分割和描述可按指令在 panoptic 到细粒度层级间切换，并定义 MGSC 任务。
+- [Aligning Language Models Using Follow-up Likelihood as Reward Signal](https://arxiv.org/abs/2409.13948)：把用户后续话语 likelihood 作为奖励信号，用于替代人工或 GPT-4 偏好标签进行回答对齐。
+- [Reward-Robust RLHF in LLMs](https://arxiv.org/abs/2409.15360)：研究对奖励污染或错设更鲁棒的 RLHF 方法。
+- [MultiTalk: Introspective and Extrospective Dialogue for Human-Environment-LLM Alignment](https://arxiv.org/abs/2409.16455)：通过内省与外省对话循环、状态提取器和错配检测器，将任务规划同时约束到用户意图、智能体能力和环境条件。
+- [PMSS: Pretrained Matrices Skeleton Selection for LLM Fine-tuning](https://arxiv.org/abs/2409.16722)：从预训练权重矩阵中选择 skeleton，只学习小矩阵即可实现低成本高秩更新，在复杂推理上用更少可训练参数提升微调效果。
+- [On Extending Direct Preference Optimization to Accommodate Ties](https://arxiv.org/abs/2409.17431)：用 Rao-Kupper 与 Davidson 的 tie-aware 偏好模型替换 DPO 的 Bradley-Terry 假设，使明确标为平局的样本成为正则化信号而非被丢弃。
+- [Just say what you want: only-prompting self-rewarding online preference optimization](https://arxiv.org/abs/2409.17534)：仅通过 prompting 生成在线偏好数据，不依赖外部 judge，并用最优性差距控制在训练后期构造更难负样本。
+- [Modulated Intervention Preference Optimization (MIPO): Keep the Easy, Refine the Difficult](https://arxiv.org/abs/2409.17545)：按偏好数据与 reference model 的匹配程度调节正则干预，简单样本保持接近参考模型，困难样本允许更大策略偏移。
+- [Pixel-Space Post-Training of Latent Diffusion Models](https://arxiv.org/abs/2409.17565)：在 latent diffusion 后训练中加入像素空间监督，同时改善质量微调和基于偏好的后训练，并维持文本对齐质量。
+- [Instruction Embedding: Latent Representations of Instructions Towards Task Identification](https://arxiv.org/abs/2409.19680)：提出 instruction embedding 与 IEB 基准，用 prompt-based embedding 识别任务类别，服务于指令数据选择和示例检索。
+- [The Perfect Blend: Redefining RLHF with Mixture of Judges](https://arxiv.org/abs/2409.20370)：提出带 Mixture of Judges 的 CGPO，在 RLHF 中原则化选择多目标权重，缓解 reward hacking，并平衡聊天、STEM、代码与指令遵循目标。
+- [Seeing Eye to AI: Human Alignment via Gaze-Based Response Rewards for Large Language Models](https://arxiv.org/abs/2410.01532)：把眼动特征作为隐式反馈纳入奖励模型，在既有人类偏好数据集上提升偏好预测准确性。
+- [Upcycling Instruction Tuning from Dense to Mixture-of-Experts via Parameter Merging](https://arxiv.org/abs/2410.01610)：将 dense 指令调优中间 checkpoint 上循环为 MoE 指令模型，通过专家扩展、参数合并、遗传多样性和少量种子数据预优化 router。
+- [FactAlign: Long-form Factuality Alignment of Large Language Models](https://arxiv.org/abs/2410.01691)：结合句子级 factuality 评估与 fKTO 对齐，提升长回答事实性，同时保持 helpfulness。
+- [EMMA: Efficient Visual Alignment in Multi-Modal LLMs](https://arxiv.org/abs/2410.02080)：用轻量 early-fusion 跨模态模块生成 instruction-aware visual representations，以极少参数提升多模态鲁棒性并减少 hallucination。
+- [Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment](https://arxiv.org/abs/2410.02197)：学习可表达细腻和循环偏好的 preference embedding，并用 General Preference Optimization 进行后训练，超越 Bradley-Terry 奖励模型。
+- [Dynamic Gradient Alignment for Online Data Mixing](https://arxiv.org/abs/2410.02498)：动态估计与少量目标任务样本梯度对齐的训练数据混合，使 LLM 能在无需重训的条件下进行任务专门化。
+- [Margin Matching Preference Optimization: Enhanced Model Alignment with Granular Feedback](https://arxiv.org/abs/2410.03145)：把偏好对中的相对质量 margin 转成 Bradley-Terry soft target，用于训练 policy 和 reward model，并提升 RewardBench、MT-Bench 校准表现。
+- [A Probabilistic Perspective on Unlearning and Alignment for Large Language Models](https://arxiv.org/abs/2410.03523)：用覆盖完整输出分布的高概率指标评估 unlearning 与 alignment，暴露 greedy decoding 确定性评测掩盖的失败。
+- [Revisiting the Superficial Alignment Hypothesis](https://arxiv.org/abs/2410.03717)：证明后训练表现会随 finetuning examples 在数学、代码、指令遵循和多跳推理上呈 scaling，反驳“对齐只改风格”的过窄解释。
+- [Beyond Scalar Reward Model: Learning Generative Judge from Preference Data](https://arxiv.org/abs/2410.03742)：用 LLM 生成带自然语言 rationale 的正负 judgment 对，并以 DPO 训练 generative judge，替代不可解释的标量 reward head。
+- [Hyperbolic Fine-tuning for Large Language Models](https://arxiv.org/abs/2410.04010)：在双曲空间中执行低秩适配，保留 token embedding 的层次结构，并提升算术与常识推理微调效果。
+- [RainbowPO: A Unified Framework for Combining Improvements in Preference Optimization](https://arxiv.org/abs/2410.04203)：把 DPO 家族七类改进组件统一到一个偏好优化目标中，便于对齐算法的可控比较和组合。
+- [Permutative Preference Alignment from Listwise Ranking of Human Judgments](https://arxiv.org/abs/2410.04346)：用可微 NDCG surrogate 直接优化 response ranked list，为 LLM 对齐提供超越 Bradley-Terry 成对选择的 listwise 偏好训练。
+- [LRHP: Learning Representations for Human Preferences via Preference Pairs](https://arxiv.org/abs/2410.04503)：从偏好对中学习结构化 preference representation，并用于偏好数据选择和 preference margin prediction，而不只输出单一奖励分数。
+- [Toward Secure Tuning: Mitigating Security Risks from Instruction Fine-Tuning](https://arxiv.org/abs/2410.04524)：SWAT 先 warm up 由安全特征漂移识别出的鲁棒 attention 模块，再进行完整指令微调，以降低安全回退风险。
+- [Regressing the Relative Future: Efficient Policy Optimization for Multi-turn RLHF](https://arxiv.org/abs/2410.04612)：把多轮 RLHF 表述为基于自生成对话数据和 Q-value 估计的回归任务，缓解只在 reference-policy 历史上训练造成的 covariate shift。
+- [Accelerated Preference Optimization for Large Language Model Alignment](https://arxiv.org/abs/2410.06293)：把迭代偏好优化视为 proximal-point method，并引入 Nesterov momentum 来加速 DPO、SPPO 类对齐。
+- [Utilize the Flow before Stepping into the Same River Twice: Certainty Represented Knowledge Flow for Refusal-Aware Instruction Tuning](https://arxiv.org/abs/2410.06913)：在 refusal-aware 指令调优中加入回答 certainty 与 knowledge-flow 冲突检查，过滤会导致模型对可答问题过度拒答的样本。
+- [Better Language Models Exhibit Higher Visual Alignment](https://arxiv.org/abs/2410.07173)：显示更强 text-only LLM 与视觉表征的对齐更好，并提出 ShareLock 用少量配对数据融合冻结视觉和语言骨干。
+- [StraGo: Harnessing Strategic Guidance for Prompt Optimization](https://arxiv.org/abs/2410.08601)：从成功与失败提示案例中提炼 how-to-do 策略，用上下文示范给出分步优化指导，减少自动提示优化中的 prompt drifting。
+- [AMPO: Automatic Multi-Branched Prompt Optimization](https://arxiv.org/abs/2410.08696)：通过模式识别、分支调整和分支剪枝迭代生成多分支提示，使失败反馈能覆盖复杂任务中的多种解题模式。
+- [Nudging: Inference-time Alignment of LLMs via Guided Decoding](https://arxiv.org/abs/2410.09300)：在 base model 高不确定 token 处由小型 aligned model 提供 token 级引导，无需训练即可在解码时对齐输出。
+- [Toward Guidance-Free AR Visual Generation via Condition Contrastive Alignment](https://arxiv.org/abs/2410.09347)：用 condition contrastive alignment 微调自回归视觉生成模型，使其在不修改采样过程的情况下逼近 classifier-free guidance。
+- [Reconstructive Visual Instruction Tuning](https://arxiv.org/abs/2410.09575)：在视觉指令调优中加入重构图像 latent 的输出目标，用去噪式视觉监督保留纯文本目标会丢失的细粒度细节。
+- [AlphaDPO: Adaptive Reward Margin for Direct Preference Optimization](https://arxiv.org/abs/2410.10148)：用来自偏好分布的自适应 reward margin 替代固定 DPO margin，以稳定异质偏好对上的对齐训练。
+- [FairMindSim: Alignment of Behavior, Emotion, and Belief in Humans and LLM Agents Amid Ethical Dilemmas](https://arxiv.org/abs/2410.10398)：将 FairMindSim 与 BREM 潜在信念模型结合，跟踪 LLM agent 在伦理博弈中的信念、情绪和奖励更新。
+- [TopoFR: A Closer Look at Topology Alignment on Face Recognition](https://arxiv.org/abs/2410.10587)：用 persistent homology 对齐人脸识别表征拓扑，并按 structure-damage 分数挖掘难样本以避免 latent collapse。
+- [SensorLLM: Aligning Large Language Models with Motion Sensors for Human Activity Recognition](https://arxiv.org/abs/2410.10624)：先把运动传感器序列对齐到趋势描述并加入 channel-boundary token，再通过任务感知调优完成行为识别。
+- [Balancing Continuous Pre-Training and Instruction Fine-Tuning: Optimizing Instruction-Following in LLMs](https://arxiv.org/abs/2410.10739)：比较 base checkpoint 与 instruction-tuned checkpoint 的持续预训练路径，研究如何在更新知识时保持指令遵循能力。
+- [When Does Perceptual Alignment Benefit Vision Representations?](https://arxiv.org/abs/2410.10817)：用人类 image-triplet 相似性判断微调视觉编码器，并检验这种感知对齐何时改善计数、分割、深度和检索。
+- [Fine-tuning can Help Detect Pretraining Data from Large Language Models](https://arxiv.org/abs/2410.10880)：在少量同域未见语料上微调后比较成员与非成员的分数偏移，用于检测 LLM 预训练数据成员关系。
+- [Federated Data-Efficient Instruction Tuning for Large Language Models](https://arxiv.org/abs/2410.10926)：FedHDS 在联邦环境中选择代表性私有客户端子集，减少客户端内与客户端间冗余来完成指令调优。
+- [Preference Optimization with Multi-Sample Comparisons](https://arxiv.org/abs/2410.12138)：把 RLHF 式后训练从单输出比较扩展到多样本集合比较，用 mDPO 和 mIPO 优化多样性、偏差等群体级特征。
+- [Reversal of Thought: Enhancing Large Language Models with Preference-Guided Reverse Reasoning Warm-up](https://arxiv.org/abs/2410.12323)：在批量推理前执行偏好引导的反向推理 warm-up，把答案反推为伪代码式任务提示。
+- [PRefLexOR: preference-based recursive language modeling for exploratory optimization of reasoning and agentic thinking](https://arxiv.org/abs/2410.12375)：用 log-odds 偏好优化训练递归推理轨迹，并结合动态知识图和 rejection sampling 进行自我改进。
+- [TPO: Aligning Large Language Models with Multi-branch & Multi-step Preference Trees](https://arxiv.org/abs/2410.12854)：从多分支、多步骤 preference tree 的排序信号学习，而不只使用二元偏好对，并加入 adaptive step reward 对齐长链推理。
+- [Improving Instruction-Following in Language Models through Activation Steering](https://arxiv.org/abs/2410.12877)：计算有无指令输入之间的 activation 差分向量，在推理时引导格式、长度、词语包含和组合约束遵循。
+- [Self-Pluralising Culture Alignment for Large Language Models](https://arxiv.org/abs/2410.12971)：生成文化主题问题，对比 culture-aware 与 culture-unaware 输出来挖掘文化相关样本，并进行联合或特定文化微调。
+- [PopAlign: Diversifying Contrasting Patterns for a More Comprehensive Alignment](https://arxiv.org/abs/2410.13785)：从 prompt、model 和 pipeline 三层设计六类对比策略构造偏好对，扩大对齐覆盖并提升抗 jailbreak 能力。
+- [A Common Pitfall of Margin-based Language Model Alignment: Gradient Entanglement](https://arxiv.org/abs/2410.13828)：诊断 margin-based 偏好损失中的 gradient entanglement，说明 preferred 与 unsafe dispreferred 概率可能同步上升。
+- [Fine-Grained Verifiers: Preference Modeling as Next-token Prediction in Vision-Language Alignment](https://arxiv.org/abs/2410.14148)：用 VLLM 自身视觉编码器作为 token 级 verifier，让 FiSAO 在无额外偏好数据时获得细粒度自对齐信号。
+- [Do LLMs estimate uncertainty well in instruction-following?](https://arxiv.org/abs/2410.14582)：把细微约束遵循错误与基准混杂因素拆开，评估不确定性估计能否识别指令失败。
+- [Diverging Preferences: When do Annotators Disagree and do Models Know?](https://arxiv.org/abs/2410.14632)：归纳十类偏好分歧来源，并显示 Bradley-Terry reward model 与 LLM judge 往往把主观分歧当作噪声处理。
+- [A Large Language Model-Driven Reward Design Framework via Dynamic Feedback for Reinforcement Learning](https://arxiv.org/abs/2410.14660)：用 CARD 的 coder-evaluator 循环、过程反馈和 trajectory-preference 评估合成 reward-function code，减少人工设计成本。
+- [Semi-supervised Fine-tuning for Large Language Models](https://arxiv.org/abs/2410.14745)：通过 in-weight 与 in-context 两条路径把有标注任务知识传播到无标注数据，再筛选高质量 pseudo response 做半监督 SFT。
+- [How to Evaluate Reward Models for RLHF](https://arxiv.org/abs/2410.14872)：提出 Preference Proxy Evaluations，检验 reward model 在人类偏好和可验证偏好代理任务上的指标能否预测真实 RLHF 收益。
+- [Chasing Random: Instruction Selection Strategies Fail to Generalize](https://arxiv.org/abs/2410.15225)：在不同数据集、预算和评测基准上审计指令数据选择方法，发现许多 selector 计入成本后难以超过随机子集。
+- [Modality-Fair Preference Optimization for Trustworthy MLLM Alignment](https://arxiv.org/abs/2410.15334)：构造关键区域扰动的多模态偏好对，加入 image reward loss，并按 easy-to-hard 迭代对齐降低跨模态幻觉。
+- [ComPO: Community Preferences for Language Model Personalization](https://arxiv.org/abs/2410.16027)：用 Reddit 社区级 ComPRed 偏好条件化偏好优化，避免把多群体偏好压成单一平均用户模型。
+- [Magnetic Preference Optimization: Achieving Last-iterate Convergence for Language Models Alignment](https://arxiv.org/abs/2410.16714)：将 magnetic mirror descent 用于自博弈偏好优化，目标是 last-iterate Nash convergence 而不是平均迭代更新。
+- [Optimal Design for Reward Modeling in RLHF](https://arxiv.org/abs/2410.17055)：把 RLHF 奖励建模中的偏好数据采集形式化为 offline simple-regret minimization，并给出线性 contextual dueling bandit 保证。
+- [Understanding Layer Significance in LLM Alignment](https://arxiv.org/abs/2410.17875)：学习 layer-wise alignment delta 的二元 mask，显示不同 SFT 数据集识别出的关键对齐层高度重合。
+- [MiLoRA: Efficient Mixture of Low-Rank Adaptation for Large Language Models Fine-tuning](https://arxiv.org/abs/2410.18035)：把 LoRA 模块视为专家，并在首个生成 token 后复用 prompt-aware routing，以降低多租户 PEFT 延迟。
+- [Holistic Utility Preference Learning for Listwise Alignment](https://arxiv.org/abs/2410.18127)：用 Direct Ranking Preference Optimization 替代成对 DPO，从 listwise response ranking 中保留更丰富的偏好顺序信息。
+- [Hierarchical Multimodal LLMs with Semantic Space Alignment for Enhanced Time Series Classification](https://arxiv.org/abs/2410.18686)：用层级时序编码器和粗细粒度语义空间对齐，连接时间序列特征与语言语义。
+- [Hybrid Preferences: Learning to Route Instances for Human vs. AI Feedback](https://arxiv.org/abs/2410.19133)：训练 HyPER 根据 reward model 表现预测和标注成本，把每个偏好标注路由给人类或 LM。
+- [MAP: Multi-Human-Value Alignment Palette](https://arxiv.org/abs/2410.19198)：把多价值对齐写成带用户自定义目标的约束优化，可同时调节 helpfulness、harmlessness、positiveness 等价值维度。
+- [Learning from Response not Preference: A Stackelberg Approach for LLM Detoxification using Non-parallel Data](https://arxiv.org/abs/2410.20298)：把 detoxification 微调建模为 paraphrasing LLM 与毒性分类器之间的 Stackelberg game，以处理只有非平行数据时的不完整偏好。
+- [Faster WIND: Accelerating Iterative Best-of-N Distillation for LLM Alignment](https://arxiv.org/abs/2410.20727)：把 iterative Best-of-N distillation 与 self-play 对齐联系起来，并优化 win-rate dominance 以提升样本效率。
+- [LoRA vs Full Fine-tuning: An Illusion of Equivalence](https://arxiv.org/abs/2410.21228)：从谱结构比较 LoRA 与全量微调，指出 LoRA 会引入高排序 intruder dimension 且遗忘更局部。
+- [f-PO: Generalizing Preference Optimization with f-divergence Minimization](https://arxiv.org/abs/2410.21662)：把 DPO、EXO 及新变体统一为训练策略与最优偏好策略之间的 f-divergence 最小化。
+- [MALoRA: Mixture of Asymmetric Low-Rank Adaptation for Enhanced Multi-Task Learning](https://arxiv.org/abs/2410.22782)：在 LoRA expert 间采用非对称优化，减少可训练参数并缓解多任务训练不均衡和 seesaw effect。
+- [Universality of the π2/6 Pathway in Avoiding Model Collapse](https://arxiv.org/abs/2410.22812)：分析保留真实数据并叠加合成数据为何能避免 model collapse，对比 augment workflow 与 discard workflow。
+- [Exploring Gradient Subspaces: Addressing and Overcoming LoRA's Limitations in Federated Fine-Tuning of Large Language Models](https://arxiv.org/abs/2410.23111)：指出 LoRA 的低秩梯度子空间限制联邦微调效果，并研究更宽子空间更新用于私有 LLM 适配。
+- [Adaptive Alignment: Dynamic Preference Adjustments via Multi-Objective Reinforcement Learning for Pluralistic AI](https://arxiv.org/abs/2410.23630)：用多目标强化学习动态调整偏好权重，以支持 pluralistic alignment 而非固定标量 reward。
+- [Mitigating Tail Narrowing in LLM Self-Improvement via Socratic-Guided Sampling](https://arxiv.org/abs/2411.00750)：用 Guided Self-Improvement 采样更难且未掌握的问题，缓解迭代自训练中 easy-query 过采样造成的长尾收缩。
+- [Sample-Efficient Alignment for LLMs](https://arxiv.org/abs/2411.01493)：把在线对齐建模为 contextual dueling bandit，并在 DPO、IPO、SLiC 中实现 Thompson-sampling 主动探索。
+- [Continual LLaVA: Continual Instruction Tuning in Large Vision-Language Models](https://arxiv.org/abs/2411.02564)：定义 COAST 覆盖 domain、capability 和 dataset 三类增量视觉指令调优，并提出无需 rehearsal 的 Continual LLaVA。
+- [Self-Consistency Preference Optimization](https://arxiv.org/abs/2411.04109)：把 self-consistency 从推理技巧转成训练信号，在无监督推理题上偏好一致答案而非不一致答案。
+- [DELIFT: Data Efficient Language model Instruction Fine Tuning](https://arxiv.org/abs/2411.04425)：用 pairwise utility 选择高信息量样本，覆盖指令调优、任务微调和持续微调三个阶段。
+- [Sharp Analysis for KL-Regularized Contextual Bandits and RLHF](https://arxiv.org/abs/2411.04625)：给出 KL-regularized contextual bandit 与 RLHF 的更紧样本复杂度分析，解释 reference-policy regularization 的作用。
+- [SEE-DPO: Self Entropy Enhanced Direct Preference Optimization](https://arxiv.org/abs/2411.04712)：在 DPO 式 diffusion alignment 中加入 self-entropy 正则，减少长时间偏好训练中的过拟合和 reward hacking。
+- [IOPO: Empowering LLMs with Complex Instruction Following via Input-Output Preference Optimization](https://arxiv.org/abs/2411.06208)：构建 TRACE，并用输入偏好与输出偏好共同对齐，让模型学习复杂指令难度与回答质量差异。
+- [Stronger Models are NOT Stronger Teachers for Instruction Tuning](https://arxiv.org/abs/2411.07133)：系统比较 5 个 base model 与 20 个 response generator，发现更大的教师模型并不一定产生更好的合成指令数据。
+- [Efficient and Accurate Prompt Optimization: the Benefit of Memory in Exemplar-Guided Reflection](https://arxiv.org/abs/2411.07446)：在 exemplar-guided reflection 中加入记忆机制，复用历史反馈并选择与任务表现更匹配的示例优化提示。
+- [RED: Unleashing Token-Level Rewards from Holistic Feedback via Reward Redistribution](https://arxiv.org/abs/2411.08302)：把序列级 reward model 分数重分配到 token 级，为 RLHF policy training 提供更密集的 credit assignment。
+- [Dynamic Rewarding with Prompt Optimization Enables Tuning-free Self-Alignment of Language Models](https://arxiv.org/abs/2411.08733)：用搜索式 prompt optimization 和 dynamic rewarding 让 LLM 无需微调或人工标签即可修复自身对齐弱点。
+- [Bridging the Visual Gap: Fine-Tuning Multimodal Models with Knowledge-Adapted Captions](https://arxiv.org/abs/2411.09018)：用 Decomposed NLI 审计 caption 命题，并通过 KnowAda 调整 caption 知识，在视觉细节和幻觉控制之间取平衡。
+- [Mitigating Hallucination in Multimodal Large Language Model via Hallucination-targeted Direct Preference Optimization](https://arxiv.org/abs/2411.10436)：针对视觉能力不足、长上下文生成和多模态冲突构造偏好对，并执行 hallucination-targeted DPO。
+- [BPO: Towards Balanced Preference Optimization between Knowledge Breadth and Depth in Alignment](https://arxiv.org/abs/2411.10914)：动态增强每个样本的知识深度，在偏好优化中平衡指令覆盖广度与回答深度。
+- [Learn from Downstream and Be Yourself in Multimodal Large Language Model Fine-Tuning](https://arxiv.org/abs/2411.10928)：根据预训练权重幅度和下游梯度估计参数重要性，选择性更新以兼顾 MLLM 泛化和任务专门化。
+- [SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization](https://arxiv.org/abs/2411.11909)：用随机符号替代视觉 demonstration 来迫使多模态上下文对齐，并通过 symbol-demonstration DPO 训练。
+- [Value Imprint: A Technique for Auditing the Human Values Embedded in RLHF Datasets](https://arxiv.org/abs/2411.11937)：构建人类价值 taxonomy 并标注 RLHF 偏好，再训练分类器审计数据集实际编码了哪些价值。
+- [From Holistic to Localized: Local Enhanced Adapters for Efficient Visual Instruction Fine-Tuning](https://arxiv.org/abs/2411.12787)：结合 skill space、rank-rectified task space LoRA 和局部视觉线索增强，处理视觉指令调优中的数据冲突。
+- [Star-Agents: Automatic Data Optimization with LLM Agents for Instruction Tuning](https://arxiv.org/abs/2411.14497)：用多 LLM agent 协作生成指令数据，按难度和质量双模型评分，并在动态 refinement 中提升数据质量。
+- [FedMLLM: Federated Fine-tuning MLLM on Multimodal Heterogeneity Data](https://arxiv.org/abs/2411.14717)：在 modality、domain 和 task 异质条件下评测联邦 MLLM 微调，配套轻量模型与六类 FL baseline。
+- [Tulu 3](https://arxiv.org/abs/2411.15124)：发布基于 Llama 3.1 的开放后训练路线，结合 SFT、DPO、RLVR、精选数据、代码和评测。
+- [On the Impact of Fine-Tuning on Chain-of-Thought Reasoning](https://arxiv.org/abs/2411.15382)：衡量 RLHF、SFT 和 QLoRA 对 chain-of-thought 推理的影响，包括性能增益、遗忘以及安全和隐私副作用。
+- [LLaMA-MoE v2: Exploring Sparsity of LLaMA from Perspective of Mixture-of-Experts with Post-Training](https://arxiv.org/abs/2411.15708)：将 attention 与 MLP 模块转成 instructed MoE 变体，并用后训练修复稀疏化带来的能力下降。
+- [Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge](https://arxiv.org/abs/2411.16824)：分析 vision encoder 已知与未知样本，并用 enriched visual knowledge 缓解 LVLM 视觉组件与语言组件的 cognitive misalignment。
+- [CLOVER: Cross-Layer Orthogonal Vectors Pruning and Fine-Tuning](https://arxiv.org/abs/2411.17426)：对跨层 attention 矩阵做 SVD 分解，在不增加参数的条件下剪枝或微调 orthogonal vectors。
+- [Active Data Curation Effectively Distills Large-Scale Multimodal Models](https://arxiv.org/abs/2411.18674)：用 ACID 在线 batch 选择和 ACED 预训练，以主动数据筛选而非复杂 KD 目标蒸馏多模态模型。
+- [Personalized Federated Fine-Tuning for LLMs via Data-Driven Heterogeneous Model Architectures](https://arxiv.org/abs/2411.19128)：提出 FedAMoLE，使客户端能从私有指令数据中学习异构 LoRA 式架构来完成个性化联邦微调。
+- [DreamBlend: Advancing Personalized Fine-Tuning of Text-to-Image Diffusion Models](https://arxiv.org/abs/2411.19390)：在推理阶段融合个性化 diffusion 的早期和后期 checkpoint，平衡 prompt fidelity、subject fidelity 与多样性。
+- [Refine-by-Align: Reference-Guided Artifacts Refinement through Semantic Alignment](https://arxiv.org/abs/2412.00306)：用两阶段 diffusion 模型将 masked artifact 区域与参考图像特征对齐，修复个性化图像中的局部伪影。
+- [The broader spectrum of in-context learning](https://arxiv.org/abs/2412.03782)：把 in-context learning 重述为序列分布中的 loss reduction，连接指令遵循、角色扮演和时间序列外推等能力。
+- [VladVA: Discriminative Fine-tuning of LVLMs](https://arxiv.org/abs/2412.04378)：通过面向组合式视觉语言判断的优化，把生成式 LVLM 转换为判别式 image-text 模型。
+- [EACO: Enhancing Alignment in Multimodal LLMs via Critical Observation](https://arxiv.org/abs/2412.04903)：先用 scoring-evaluation 指令训练 critic，再用其多维观察构造自生成 DPO 偏好对来对齐 MLLM。
+- [MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale](https://arxiv.org/abs/2412.05237)：合成 1200 万条带忠实中间 rationale 的多模态指令回答对，用于激发 MLLM 的 chain-of-thought 推理。
+- [Does RLHF Scale? Exploring the Impacts From Data, Model, and Method](https://arxiv.org/abs/2412.06000)：系统分析 RLHF 在数据多样性、模型规模、推理预算、reward model 规模和每提示采样数上的 scaling 特性。
+- [S2FT: Efficient, Scalable and Generalizable LLM Fine-tuning by Structured Sparsity](https://arxiv.org/abs/2412.06289)：选择稀疏 heads 与 channels 并 co-permute 成 dense submatrix，再原地微调以兼顾训练效率和推理部署。
+- [SafeWorld: Geo-Diverse Safety Alignment](https://arxiv.org/abs/2412.06483)：将 geo-diverse 安全查询与文化、法律政策证据配对，并构建上下文安全评估和对齐数据。
+- [Post-Training Statistical Calibration for Higher Activation Sparsity](https://arxiv.org/abs/2412.07174)：在 activation pruning 前用 mode-centering 做统计校准，提高后训练稀疏度和解码速度并保持模型质量。
+- [Efficient Diversity-Preserving Diffusion Alignment via Gradient-Informed GFlowNets](https://arxiv.org/abs/2412.07775)：用 gradient-informed GFlowNet 微调 diffusion model，在优化 reward function 的同时保留多样性和先验。
+- [VisionArena: 230K Real World User-VLM Conversations with Preference Labels](https://arxiv.org/abs/2412.08687)：发布真实 Chatbot Arena VLM 对话、用户偏好投票和能近似 live arena 排名的 benchmark。
+- [GRIP: A Graph-Based Reasoning Instruction Producer](https://arxiv.org/abs/2412.08864)：从 seed data 抽取概念构建知识图，并利用显式与隐式边大规模合成多样 reasoning instructions。
+- [SPRec: Leveraging Self-Play to Debias Preference Alignment for Large Language Model-based Recommendations](https://arxiv.org/abs/2412.09243)：在 self-play 中交替执行 SFT 与 DPO，以降低 DPO 带来的推荐集中和 filter-bubble 效应。
+- [Entropy-Regularized Process Reward Model](https://arxiv.org/abs/2412.11006)：从 KL-regularized MDP 推导 entropy-regularized process reward model，为逐步推理提供奖励且限制 policy drift。
+- [Smaller Language Models Are Better Instruction Evolvers](https://arxiv.org/abs/2412.11231)：在多个 instruction evolution 场景中显示小模型比大教师更能合成有效复杂指令。
+- [SPaR: Self-Play with Tree-Search Refinement to Improve Instruction-Following in Large Language Models](https://arxiv.org/abs/2412.11605)：用 tree-search self-refinement 构造可比较偏好对，隔离细微指令遵循差异而非无关表达差异。
+- [LLaVA Steering: Visual Instruction Tuning with 500x Fewer Parameters through Modality Linear Representation-Steering](https://arxiv.org/abs/2412.12359)：用 linear representation steering 重新平衡文本和视觉模态，将视觉指令调优所需参数降低数百倍。
+- [Preference-Oriented Supervised Fine-Tuning: Favoring Target Model Over Aligned Large Language Models](https://arxiv.org/abs/2412.12865)：在普通 SFT 数据上加入“目标模型优于 aligned LLM”的偏好，使目标模型学习超越教师回答。
+- [Energy-Based Preference Model Offers Better Offline Alignment than the Bradley-Terry Preference Model](https://arxiv.org/abs/2412.13862)：用 energy-based preference model 替代 Bradley-Terry，避免 DPO 离线对齐中非唯一最小值带来的目标偏移。
+- [MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](https://arxiv.org/abs/2412.14164)：通过 visual-predictive instruction tuning 让 LLM 在指令格式数据中同时预测文本 token 和连续视觉 token。
+- [Align Anything: Training All-Modality Models to Follow Instructions with Language Feedback](https://arxiv.org/abs/2412.15838)：提供 20 万条全模态偏好样本，并用统一语言反馈对齐任意输入输出的文本、图像、音频和视频模型。
+- [GMoE: Empowering LLMs Fine-Tuning via MoE Graph Collaboration](https://arxiv.org/abs/2412.16216)：在 MoE expert 之间加入 graph routing 与协调策略，缓解 LLM 微调中的 load imbalance。
+- [A Large-Scale Empirical Study on Fine-Tuning Large Language Models for Unit Testing](https://arxiv.org/abs/2412.16620)：在测试生成、断言生成和测试演化三类任务上微调 37 个 LLM，系统评估何时 unit-testing 适配有效。
+- [GAS: Generative Auto-bidding with Post-training Search](https://arxiv.org/abs/2412.17018)：把 post-training search 用于 generative auto-bidding，修正 return-conditioned action mismatch 并适配少数广告主偏好。
+- [Explanatory Instructions: Towards Unified Vision Tasks Understanding and Zero-shot Generalization](https://arxiv.org/abs/2412.18525)：把视觉任务定义改写为解释性输入输出指令，并构建 1200 万样本以提升零样本任务泛化。
+- [ChipAlign: Instruction Alignment in Large Language Models for Chip Design via Geodesic Interpolation](https://arxiv.org/abs/2412.19819)：通过测地线权重插值融合通用指令对齐 LLM 与芯片专用 LLM，在保留硬件设计知识的同时提升 IFEval 表现。
+- [An archival perspective on pretraining data](https://doi.org/10.1016/j.patter.2024.100966)：把预训练语料视作非正式档案，分析网络规模数据纳入、知识访问中介和价值取舍如何影响模型基础。
+- [Rethinking Pragmatics in Large Language Models: Towards Open-Ended Evaluation and Preference Tuning](https://doi.org/10.18653/v1/2024.emnlp-main.1258)：用自由生成回答评测社会语用推理，并显示 preference optimization 比 SFT 更稳定地提升语用能力。
+- [PeerSynergy: An Innovative Application Applying Large Language Model to Peer Instruction](https://doi.org/10.1109/tale62452.2024.10834348)：实现一个用于工程教育 peer instruction 的 LLM 应用，用模型辅助同伴学习流程，而非提出新的对齐训练配方。
+- [ChartAssistant: A Universal Chart Multimodal Language Model via Chart-to-Table Pre-training and Multitask Instruction Tuning](https://doi.org/10.18653/v1/2024.findings-acl.463)：用 chart-to-table 预训练和 ChartSFT 多任务指令微调训练图表 VLM，覆盖图表理解、推理和真实图表零样本场景。
+- [Unmasking large language models by means of OpenAI GPT-4 and Google AI: A deep instruction-based analysis](https://doi.org/10.1016/j.iswa.2024.200431)：通过结构化指令探测 GPT-4 与 Google AI 系统，提供行为比较分析，而不是新的后训练算法。
+- [ICLR: In-Context Learning of Representations](https://arxiv.org/abs/2501.00070)：用 graph tracing 提示分析概念表征，显示样例增多时模型会从预训练语义突然重组为上下文定义的角色。
+- [Influencing Humans to Conform to Preference Models for RLHF](https://arxiv.org/abs/2501.06416)：测试向标注者展示偏好模型量、训练标注规则和改写偏好问题等干预，使人类偏好表达更匹配 RLHF 假设。
+- [Scopes of Alignment](https://arxiv.org/abs/2501.12405)：提出 competence、transience 和 audience 三个 alignment scope，将对齐目标扩展到通用有用、无害、诚实之外。
+- [Predictive Prompt Analysis](https://arxiv.org/abs/2501.18883)：面向指令遵循与提示行为的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Predictive Prompt Analysis”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [UniAttn: Reducing Inference Costs via Softmax Unification for Post-Training LLMs](https://arxiv.org/abs/2502.00439)：在后训练模型中统一 Transformer 层间冗余 softmax 激活，并用线性投影补偿误差以降低推理延迟。
+- [Learning from Active Human Involvement through Proxy Value Propagation](https://arxiv.org/abs/2502.03369)：用 TD learning 将人类示范和干预产生的 proxy values 向未标注轨迹传播，实现无奖励函数的人在环策略优化。
+- [PILAF: Optimal Human Preference Sampling for Reward Modeling](https://arxiv.org/abs/2502.04270)：为偏好标注选择 response pairs，使奖励模型学习在迭代式和在线 RLHF 中更贴近潜在 oracle reward。
+- [DiTASK: Multi-Task Fine-Tuning with Diffeomorphic Transformations](https://arxiv.org/abs/2502.06029)：保持 ViT 权重奇异向量不变，并通过神经 diffeomorphic transformation 调整奇异值以减少多任务微调干扰。
+- [Zero-shot Depth Completion via Test-time Alignment with Affine-invariant Depth Prior](https://arxiv.org/abs/2502.06338)：在测试时把 affine-invariant depth diffusion prior 对齐到稀疏 metric measurements，用硬约束实现跨域深度补全。
+- [The Geometry of Prompting: Unveiling Distinct Mechanisms of Task Adaptation in Language Models](https://arxiv.org/abs/2502.08009)：分析 prompting 引起的表征几何变化，发现不同 prompting 方法可用不同任务适配机制达到相近性能。
+- [AI Alignment at Your Discretion](https://arxiv.org/abs/2502.10441)：定义 alignment discretion 指标，并在安全对齐数据集上测量人类裁量与算法裁量之间的差异。
+- [Towards Understanding Fine-Tuning Mechanisms of LLMs via Circuit Analysis](https://arxiv.org/abs/2502.11812)：跟踪微调过程中的 circuit 变化，发现主要变化发生在边上，并据此设计按 circuit 变化分配 rank 的 LoRA 变体。
+- [Corrupted but Not Broken: Rethinking the Impact of Corrupted Data in Visual Instruction Tuning](https://arxiv.org/abs/2502.12635)：显示脏视觉指令数据对 MLLM 的损害可逆，并利用小参数子集和模型内部 clean-corrupt 信号做恢复与过滤。
+- [RLTHF: Targeted Human Feedback for LLM Alignment](https://arxiv.org/abs/2502.13417)：把人工标注集中到奖励分布中的 LLM 难判样本，用约 6-7% 的人工成本达到全人工 RLHF 的对齐质量。
+- [On-the-fly Preference Alignment via Principle-Guided Decoding](https://arxiv.org/abs/2502.14204)：在解码阶段依据偏好原则即时对齐模型输出，扩展测试时指令与偏好控制方法。
+- [A Stronger Mixture of Low-Rank Experts for Fine-Tuning Foundation Models](https://arxiv.org/abs/2502.15828)：用 Riemannian-inspired multi-space projections 稳定 MoE-LoRA 微调，提升调优和推理时的鲁棒性。
+- [Direct Alignment with Heterogeneous Preferences](https://arxiv.org/abs/2502.16320)：把 user types 纳入 direct alignment 形式化，揭示单一策略面对异质偏好时的一致性与样本效率张力。
+- [Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence](https://arxiv.org/abs/2502.17028)：把 Cauchy-Schwarz divergence 与 mutual information 结合，使 VLM 对齐同时覆盖模态分布和成对语义关系。
+- [Measuring Data Diversity for Instruction Tuning: A Systematic Analysis and A Reliable Metric](https://arxiv.org/abs/2502.17184)：提出按样本 novelty 衡量指令数据多样性的 NovelSum，并报告其与指令微调性能高度相关。
+- [Advantage-Guided Distillation for Preference Alignment in Small Language Models](https://arxiv.org/abs/2502.17927)：通过 dual-constrained distillation 与 advantage-guided 分布级奖励，将教师模型的偏好知识迁移到小语言模型。
+- [Robust Multi-Objective Preference Alignment with Online DPO](https://arxiv.org/abs/2503.00295)：用 online DPO 训练一个 prompt-conditioned policy，使推理时 preference weights 可在冲突目标之间调节行为。
+- [Active Learning for Direct Preference Optimization](https://arxiv.org/abs/2503.01076)：在 policy 最后一层表征上线性化 DPO 目标，并用 D-optimal design 在线或离线选择信息量高的偏好反馈。
+- [AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation](https://arxiv.org/abs/2503.02832)：把 token-level reward alignment 重写为来自 DPO 与 reference logits 的自适应 policy distillation，缓解序列级稀疏 credit assignment。
+- [HelpSteer3](https://arxiv.org/abs/2503.04378)：发布开放式任务的人类反馈和编辑数据，训练反馈模型与编辑模型，通过草稿、批评和修订实现推理时扩展。
+- [Color Alignment in Diffusion](https://arxiv.org/abs/2503.06746)：将 diffusion sample 或 latent 投影到条件颜色空间，使生成过程服从用户给定颜色分布同时保持多样性。
+- [Filter Images First, Generate Instructions Later: Pre-Instruction Data Selection for Visual Instruction Tuning](https://arxiv.org/abs/2503.07591)：先筛选高价值图像再生成昂贵指令，在保持 LVLM 表现的同时降低视觉指令微调成本。
+- [Robust Multi-Objective Controlled Decoding of Large Language Models](https://arxiv.org/abs/2503.08796)：在解码阶段同时控制多个生成目标，扩展无需外部 harness 的指令遵循与对齐行为。
+- [Take Off the Training Wheels! Progressive In-Context Learning for Effective Alignment](https://arxiv.org/abs/2503.09958)：先用少量示例生成初始 token 并从 separator 表征提取 ICL vector，再用该向量进行零样本对齐生成。
+- [UC-MOA: Utility-Conditioned Multi-Objective Alignment for Distributional Pareto-Optimality](https://arxiv.org/abs/2503.10669)：把非线性 utility functions 转换为符号条件 token，训练单个 LLM 覆盖多个奖励维度的 Pareto tradeoff。
+- [Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium](https://arxiv.org/abs/2503.10990)：分析多样化人类偏好何时无法由单一奖励模型表示，并把 Nash-style preference learning 作为保留少数偏好的对齐路线。
+- [D3: Diversity, Difficulty, and Dependability-Aware Data Selection for Sample-Efficient LLM Instruction Tuning](https://arxiv.org/abs/2503.11441)：按多样性、预测难度和可靠性为指令数据打分，并求解 weighted coreset objective 以实现样本高效微调。
+- [Federated Continual Instruction Tuning](https://arxiv.org/abs/2503.12897)：定义分布式多模态指令调优 FCIT benchmark，并用动态知识组织和子空间选择性激活缓解遗忘。
+- [Improving Preference Extraction In LLMs By Identifying Latent Knowledge Through Classifying Probes](https://arxiv.org/abs/2503.17755)：用对比提示训练 linear probes 提取 latent preference judgments，在域迁移下优于生成式 LLM judge。
+- [Whispering in Amharic: Fine-tuning Whisper for Low-resource Language](https://arxiv.org/abs/2503.18485)：在 FLEURS、Common Voice 和 BDU-Speech 等 Amharic 数据上微调 Whisper，显示数据混合与同音词规范化能提升 ASR 质量。
+- [The Greatest Good Benchmark: Measuring LLMs' Alignment with Utilitarian Moral Dilemmas](https://arxiv.org/abs/2503.19598)：用 utilitarian moral dilemmas 评测 15 个 LLM，揭示其偏向 impartial beneficence 并回避 instrumental harm。
+- [DynMoLE: Boosting Mixture of LoRA Experts Fine-Tuning with a Hybrid Routing Mechanism](https://arxiv.org/abs/2504.00661)：用 Tsallis-entropy routing 和辅助熵损失在指令微调时动态选择各层 LoRA experts。
+- [AIR: A Systematic Analysis of Annotations, Instructions, and Response Pairs in Preference Dataset](https://arxiv.org/abs/2504.03612)：分析偏好数据集中 annotation、instruction 与 response pair 的结构作用，为 instruction-following 后训练补充数据质量和数据结构视角。
+- [Robust Reinforcement Learning from Human Feedback for Large Language Models Fine-Tuning](https://arxiv.org/abs/2504.03784)：在 Bradley-Terry reward model 可能错设时改进 RLHF，降低 reward 和 policy estimator 方差并在 Anthropic HH 偏好上优于基线。
+- [FocalLens: Instruction Tuning Enables Zero-Shot Conditional Image Representations](https://arxiv.org/abs/2504.08368)：用自然语言指令对 vision encoder 做对比微调，使图像 embedding 更突出任务相关视觉属性。
+- [Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](https://arxiv.org/abs/2504.09629)：显式传播并补偿逐层量化误差，在无需重训练的条件下改进 LLM 低比特后训练量化。
+- [Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo](https://arxiv.org/abs/2504.13139)：将序贯蒙特卡洛解码用于在句法与语义约束下控制 LLM 输出，适合作为模型侧指令控制方法。
+- [Feature Alignment and Representation Transfer in Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2504.13825)：综述 feature alignment、attention transfer、block-wise logits 和 decoupled distillation 等用于压缩与迁移 LLM 行为的方法。
+- [Understanding the Repeat Curse in Large Language Models from a Feature Perspective](https://arxiv.org/abs/2504.14218)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [AdaViP: Aligning Multi-modal LLMs via Adaptive Vision-enhanced Preference Optimization](https://arxiv.org/abs/2504.15619)：通过移除关键视觉元素构造视觉偏好对，并在 MLLM DPO 中自适应平衡视觉与语言偏好。
+- [Instantly Learning Preference Alignment via In-context DPO](https://doi.org/10.18653/v1/2025.naacl-long.8)：根据 ICL 前后的 LLM 状态构建即时 DPO-style scorer，使模型无需微调即可生成并选择对齐回答。
+- [Adaptive Length-Bias Mitigation](https://aclanthology.org/2025.findings-naacl.169/)：把回答长度建模为 query-dependent 的奖励因素，在保留对齐准确率的同时减少冗长回答带来的 reward hacking。
+- [Steerable Chatbots: Personalizing LLMs with Preference-Based Activation Steering](https://arxiv.org/abs/2505.04260)：沿可解释偏好维度做 activation steering，并让用户调节强度，在聊天界面中验证轻量个性化。
+- [On the Robustness of Reward Models for Language Model Alignment](https://arxiv.org/abs/2505.07271)：研究奖励模型在分布变化与扰动下的表现，澄清对齐流水线中的可靠性边界。
+- [The Value of Disagreement in AI Design, Evaluation, and Alignment](https://arxiv.org/abs/2505.07772)：定义 perspectival homogenization，并提出在 AI 设计、评测和对齐中保留有益分歧的规范框架。
+- [System Prompt Optimization with Meta-Learning](https://arxiv.org/abs/2505.09666)：在多数据集和多用户提示上用 bilevel meta-learning 优化任务无关 system prompt，提升向未见任务迁移的能力。
+- [It's only fair when I think it's fair: How Gender Bias Alignment Undermines Distributive Fairness in Human-AI Collaboration](https://arxiv.org/abs/2505.10661)：通过人机协作实验显示，AI 建议是否符合用户的性别偏见预期会影响公平感知和采纳行为。
+- [BLEUBERI: BLEU is a surprisingly effective reward for instruction following](https://arxiv.org/abs/2505.11080)：表明 BLEU 可作为合成指令跟随数据上的轻量 RL 奖励。
+- [Shadow-FT: Tuning Instruct Model via Training on Paired Base Model](https://arxiv.org/abs/2505.12716)：先微调 paired Base model，再把学到的权重更新 graft 到 Instruct model，从而无额外参数提升下游任务。
+- [KaFT: Knowledge-aware Fine-tuning for Boosting LLMs' Domain-specific Question-Answering Performance](https://arxiv.org/abs/2505.15480)：用多样化 query 检测内部知识与上下文知识冲突，并按冲突程度为领域 QA 微调样本加权。
+- [Generative RLHF-V](https://arxiv.org/abs/2505.18531)：用强化学习和 grouped comparison 训练多模态 generative reward model，比只优化成对偏好分数更能提升 MLLM 对齐。
+- [KerZOO: Kernel Function Informed Zeroth-Order Optimization for Accurate and Accelerated LLM Fine-Tuning](https://arxiv.org/abs/2505.18886)：用 kernel function 降低零阶 LLM 微调中的低阶梯度估计偏差，加速内存高效优化。
+- [Curriculum-RLAIF: Curriculum Alignment with Reinforcement Learning from AI Feedback](https://arxiv.org/abs/2505.20075)：用课程式数据选择提升 AI-feedback reward model 在噪声偏好数据下的泛化。
+- [SquareχPO: Differentially Private and Robust χ2-Preference Optimization in Offline Direct Alignment](https://arxiv.org/abs/2505.21395)：用 square probability loss 替换 χPO log loss，为离线 direct alignment 提供隐私保护和标签污染鲁棒性保证。
+- [Conversational Alignment with Artificial Intelligence in Context](https://arxiv.org/abs/2505.22907)：提出 CONTEXT-ALIGN 语用框架，并讨论当前 LLM 架构在对齐 common ground 与上下文处理上的限制。
+- [Don't Reinvent the Wheel: Efficient Instruction-Following Text Embedding based on Guided Space Transformation](https://arxiv.org/abs/2505.24754)：用 GSTransform 直接变换预计算通用 embedding，使文本向量在不重编码语料库的情况下响应新指令。
+- [Chameleon: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning](https://arxiv.org/abs/2505.24844)：在 embedding affinity space 中计算 leverage-score domain weights，高效迁移预训练和微调的数据混合策略。
+- [K-order Ranking Preference Optimization for Large Language Models](https://arxiv.org/abs/2506.00441)：把 DPO 的 Plackett-Luce 排序目标扩展到 top-K ranking，并加入动态 K 选择和 curriculum learning。
+- [Language-Image Alignment with Fixed Text Encoders](https://arxiv.org/abs/2506.04209)：固定 LLM text encoder、只训练 image encoder，以较低成本提升组合理解和长 caption 的图文对齐。
+- [Ravan: Multi-Head Low-Rank Adaptation for Federated Fine-Tuning](https://arxiv.org/abs/2506.05568)：把联邦 LoRA 更新重参数化为多个可训练低秩 head 和轻量 scaling，在客户端异质性下提升表达力。
+- [Towards an Explainable Comparison and Alignment of Feature Embeddings](https://arxiv.org/abs/2506.06231)：用 spectral pairwise embedding comparison 找出两个 embedding 对样本簇组织方式的差异，并对齐这些 cluster structure。
+- [Reward Model Interpretability via Optimal and Pessimal Tokens](https://arxiv.org/abs/2506.07326)：穷举 value-laden prompts 下的单 token 回答分数，暴露 reward model 的异质性、提示框架敏感性和 token 频率偏置。
+- [Explicit Preference Optimization: No Need for an Implicit Reward Model](https://arxiv.org/abs/2506.07492)：提出 EXPO，在不依赖 DPO implicit reward 重参数化的情况下优化偏好，避免次优正则和插值行为。
+- [ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization](https://arxiv.org/abs/2506.08712)：用 policy 自身置信度定位 preference-critical tokens，在不引入辅助模型的情况下集中优化关键 token。
+- [Preference-Driven Multi-Objective Combinatorial Optimization with Conditional Computation](https://arxiv.org/abs/2506.08898)：把多目标子问题路由到专用神经组件，并用成对 solution preferences 而非显式 reward 训练。
+- [Personalized LLM Decoding via Contrasting Personal Preference](https://arxiv.org/abs/2506.12109)：在用户数据 PEFT 后执行 reward-guided decoding，通过对比个人隐式偏好实现无需外部 reward model 的个性化。
+- [TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization](https://arxiv.org/abs/2506.14574)：从分解 PPO 视角推导 DPO 的 token-level reward guidance，使不同 token 按奖励强度偏离 reference policy。
+- [Adaptive Sample Scheduling for Direct Preference Optimization](https://arxiv.org/abs/2506.17252)：根据模型训练状态逐 batch 调度 DPO 样本，不改变 DPO loss 即提升偏好对齐效果。
+- [OAT-Rephrase: Optimization-Aware Training Data Rephrasing for Zeroth-Order LLM Fine-Tuning](https://arxiv.org/abs/2506.17264)：依据 MeZO 优化动态改写训练样本，并用语义 judge 过滤，从而稳定零阶微调。
+- [Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](https://arxiv.org/abs/2506.18184)：在 Mamba 的 LoRA 式 PEFT 中加入 leaky-integrate membrane gates 和跨层 membrane transfer，增强时间信息保留。
+- [What Matters in LLM-generated Data: Diversity and Its Effect on Model Fine-Tuning](https://arxiv.org/abs/2506.19262)：研究 LLM 生成数据的多样性水平与混合比例如何影响下游微调效果和 model collapse 风险。
+- [Interactive Multi-Objective Probabilistic Preference Learning with Soft and Hard Bounds](https://arxiv.org/abs/2506.21887)：在 Active-MoSH 中结合 soft-hard bounds 与 probabilistic preference learning，引导高风险多目标决策搜索。
+- [TACOS: Open Tagging and Comparative Scoring for Instruction Fine-Tuning Data Selection](https://arxiv.org/abs/2507.03673)：用开放标签聚类 query，并在簇内做 comparative scoring，选择多样且高质量的指令微调数据。
+- [Easy Dataset: A Unified and Extensible Framework for Synthesizing LLM Fine-Tuning Data from Unstructured Documents](https://arxiv.org/abs/2507.04009)：从非结构化文档抽取 chunks、用 persona-driven prompting 合成问答，并通过 GUI 支持人工审核领域微调数据。
+- [Interpretable Reward Modeling with Active Concept Bottlenecks](https://arxiv.org/abs/2507.04695)：把 reward prediction 分解为可解释概念，并主动请求信息量最高的 concept labels 来训练偏好模型。
+- [pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models](https://arxiv.org/abs/2507.05394)：用模态专用 adapter 和共享跨模态投影，让联邦 VLM 客户端本地个性化同时保持全局泛化。
+- [CRED: Counterfactual Reasoning and Environment Design for Active Preference Learning](https://arxiv.org/abs/2507.05458)：通过设计反事实环境并按采样 reward beliefs 排序轨迹，生成信息量更高的偏好查询。
+- [RepeaTTS: Towards Feature Discovery through Repeated Fine-Tuning](https://arxiv.org/abs/2507.08012)：对重复 TTS 采样做 PCA 发现潜在可控语音特征，再把这些特征作为二次微调标签。
+- [Unlocking Speech Instruction Data Potential with Query Rewriting](https://arxiv.org/abs/2507.08603)：在 TTS 合成前重写文本指令，降低 out-of-distribution speech prompts 影响并构建更强的 speech-instruction 数据。
+- [Grammar-Guided Evolutionary Search for Discrete Prompt Optimisation](https://arxiv.org/abs/2507.10326)：用 grammar-guided genetic programming 搜索 prompt-editing functions 组成的程序，再通过 local search 优化复杂提示。
+- [Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics](https://arxiv.org/abs/2507.12083)：用 query-centric inverse reinforcement learning 推断 reward-guided 行为意图，再预测交通参与者轨迹。
+- [StyleAdaptedLM: Enhancing Instruction Following Models with Efficient Stylistic Transfer](https://arxiv.org/abs/2507.18294)：在非结构化风格语料上训练 LoRA adapter 并合并进 instruction model，以无 paired data 的方式迁移品牌或作者风格。
+- [Scenepainter: Semantically Consistent Perpetual 3D Scene Generation with Concept Relation Alignment](https://arxiv.org/abs/2507.19058)：构建 SceneConceptGraph 对齐 outpainter 的场景先验与当前场景概念，减少 perpetual 3D generation 中的语义漂移。
+- [SGPO: Self-Generated Preference Optimization based on Self-Improver](https://arxiv.org/abs/2507.20181)：让同一模型同时充当 policy 和 self-improver，生成 on-policy preference pairs 用于 DPO，避免外部偏好标注。
+- [Towards Higher Effective Rank in Parameter-Efficient Fine-Tuning Using Khatri-Rao Product](https://arxiv.org/abs/2508.00230)：在 KRAdapter 中用 Khatri-Rao product 产生更高 effective rank 的 PEFT 更新，同时保持 LoRA 式内存和计算成本。
+- [HALO: Human Preference Aligned Offline Reward Learning for Robot Navigation](https://arxiv.org/abs/2508.01539)：从离线机器人轨迹、Boltzmann 排序动作样本和二元用户反馈中学习视觉导航 reward。
+- [The Bidirectional Process Reward Model](https://arxiv.org/abs/2508.01682)：用 left-to-right 与 prompt-reversed right-to-left 两路并行评估推理步骤，并通过 gating 融合为 bidirectional PRM。
+- [Beyond the Trade-off: Self-Supervised Reinforcement Learning for Reasoning Models' Instruction Following](https://arxiv.org/abs/2508.02150)：利用 reasoning model 的内部信号做 self-supervised RL，在不依赖外部教师的情况下提升指令遵循并保持推理能力。
+- [QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](https://arxiv.org/abs/2508.04485)：按时空层复杂度分配低秩全精度辅助分支，并加入 bias alignment，用于 diffusion VSR 的低比特量化。
+- [IFDECORATOR: Wrapping Instruction Following Reinforcement Learning with Verifiable Rewards](https://arxiv.org/abs/2508.04632)：用协同对抗 instruction-verification flywheel、IntentCheck 和 trap-instruction trip wires 包装 RLVR，以抑制 reward hacking。
+- [ITDR: An Instruction Tuning Dataset for Enhancing Large Language Models in Recommendations](https://arxiv.org/abs/2508.05667)：从 13 个推荐数据集构建约 20 万条、覆盖 7 个子任务的推荐指令样本，提升 LLM 的 user-item 理解与交互能力。
+- [Pareto Multi-Objective Alignment for Language Models](https://arxiv.org/abs/2508.07768)：把多目标 RLHF 转换为带闭式解的可扩展凸优化，用于在相互冲突的回答目标之间实现 Pareto tradeoff。
+- [LLM-as-a-Judge for Privacy Evaluation? Exploring the Alignment of Human and LLM Perceptions of Privacy in Textual Data](https://arxiv.org/abs/2508.12158)：在 10 个数据集上比较 13 个 LLM privacy judges 与 677 名人类参与者，衡量模型何时匹配总体隐私感知。
+- [Reward-Shifted Speculative Sampling Is An Efficient Test-Time Weak-to-Strong Aligner](https://arxiv.org/abs/2508.15044)：用已对齐 draft model 和 reward-shifted speculative acceptance，以较低推理成本实现 weak-to-strong 测试时对齐。
+- [Teaching LLMs to Plan: Logical Chain-of-Thought Instruction Tuning for Symbolic Planning](https://arxiv.org/abs/2509.13351)：提出 PDDL-Instruct，用 logical chain-of-thought 指令调优训练模型判断动作适用性、状态转移和计划有效性。
+- [Preference Distillation via Value based Reinforcement Learning](https://arxiv.org/abs/2509.16965)：提出 Teacher Value-based Knowledge Distillation，用教师模型 value function 为小模型 DPO 提供软奖励塑形，同时保持最优偏好策略不变。
+- [Language Models that Think, Chat Better](https://arxiv.org/abs/2509.20357)：用 model-rewarded thinking 做开放式聊天后训练，在回答前生成长推理并用偏好奖励优化，把 RLVR-style 思考扩展到非可验证任务。
+- [Alignment Unlocks Complementarity: A Framework for Multiview Circuit Representation Learning](https://arxiv.org/abs/2509.20968)：先用 equivalence-alignment loss 建立 Boolean circuit 多视图的 function-aware 表示，再做 multiview masked modeling；除表示对齐外与指令遵循轴较远。
+- [Dynamic Policy Induction for Adaptive Prompt Optimization: Bridging the Efficiency-Accuracy Gap via Lightweight Reinforcement Learning](https://arxiv.org/abs/2509.25267)：用 PPO 和资源感知奖励训练轻量 Prompt Policy Network，为每个输入选择 zero-shot、few-shot、chain-of-thought 或 self-consistency 提示策略。
+- [Exploring Chain-of-Thought Reasoning for Steerable Pluralistic Alignment](https://arxiv.org/abs/2510.04045)：比较 CoT prompting、人类与合成 CoT 微调以及 RLVR，在 Value Kaleidoscope 和 OpinionQA 上显示 RLVR 对 steerable pluralistic alignment 最省样本。
+- [Teaching LLM to be Persuasive: Reward-Enhanced Policy Optimization for Alignment from Heterogeneous Rewards](https://arxiv.org/abs/2510.04214)：REPO 结合奖励模型、LLM judge 和规则奖励，使议价智能体遵守 SOP 阶段、guardrail 与说服式多轮对话约束。
+- [Margin Adaptive DPO: Leveraging Reward Model for Granular Control in Preference Optimization](https://arxiv.org/abs/2510.05342)：提出 MADPO，按 reward-model margin 自适应调节 DPO temperature，避免简单偏好对过拟合并保留低 margin 样本信号。
+- [Mitigating Judgment Preference Bias in Large Language Models through Group-Based Polling](https://arxiv.org/abs/2510.08145)：提出 Genii，让多个 LLM judge 通过无监督 group polling 相互校准，缓解评测中的 self-preference bias。
+- [A-IPO: Adaptive Intent-driven Preference Optimization](https://arxiv.org/abs/2510.10077)：加入 intent module 推断用户隐含目标，并把 intent-response similarity 写入偏好奖励，以保护少数派或上下文特定偏好。
+- [RLSR: Reinforcement Learning with Supervised Reward Outperforms SFT in Instruction Following](https://arxiv.org/abs/2510.14200)：把 SFT 语料放入 RL 框架，用生成回答与人工答案的语义相似度作为监督奖励，提升指令遵循而非只做 next-token SFT。
+- [Eliciting Truthful Feedback for Preference-Based Learning via the VCG Mechanism](https://arxiv.org/abs/2510.17285)：用 D-optimal 偏好查询和 VCG payment 激励策略性主体如实报告私有成本；属于偏好学习邻域，但不是 LLM 对齐方法本身。
+- [GraphCompliance: Aligning Policy and Context Graphs for LLM-Based Regulatory Compliance](https://arxiv.org/abs/2510.26309)：把法规构造成 policy graph，把运行上下文抽取为 subject-action-object 与 entity-relation triples，并对齐两类图来约束 LLM 合规判断。
+- [Fints: Efficient Inference-Time Personalization for LLMs with Fine-Grained Instance-Tailored Steering](https://arxiv.org/abs/2510.27206)：从稀疏用户数据生成样本级 steering vector，并在 forward pass 注入，实现无需再训练的推理时个性化。
+- [Constructing Your Model's Value Distinction: Towards LLM Alignment with Anchor Words Tuning](https://doi.org/10.18653/v1/2025.findings-emnlp.317)：Constructing Your Model's Value Distinction: Towards LLM Alignment with Anchor Words Tuning 补充指令遵循与偏好对齐方向的模型侧方法。
+- [CoTD-PO: Chain-of-Thought Distillation with Preference Optimization](https://doi.org/10.18653/v1/2025.findings-emnlp.1087)：CoTD-PO: Chain-of-Thought Distillation with Preference Optimization 补充指令遵循与偏好对齐方向的模型侧方法。
+- [Rethinking Deep Alignment Through The Lens Of Incomplete Learning](https://arxiv.org/abs/2511.12155)：用 base-favored tokens 诊断位置相关的安全学习衰减，并通过自适应惩罚和混合教师蒸馏修复回答后段训练不足区域。
+- [Maximizing the efficiency of human feedback in AI alignment: a comparative analysis](https://arxiv.org/abs/2511.12796)：比较 RLHF 偏好采样策略，发现基于 tournament 与 proxy mutual information 的 Swiss InfoGain 比随机 Bradley-Terry 采样更省标注。
+- [Multi-Value Alignment for LLMs via Value Decorrelation and Extrapolation](https://arxiv.org/abs/2511.17579)：提出 MVA，通过价值方向 decorrelation 与 extrapolation 处理相互冲突的人类价值，避免偏好优化坍缩到单一目标。
+- [FeRA: Frequency-Energy Constrained Routing for Effective Diffusion Adaptation Fine-Tuning](https://arxiv.org/abs/2511.17979)：用 frequency-specific adapter experts 和 energy-consistency regularization 路由 diffusion 微调更新；主要是 diffusion adaptation，与指令遵循模型轴较远。
+- [PIRA: Preference-Oriented Instruction-Tuned Reward Models with Dual Aggregation](https://arxiv.org/abs/2511.20668)：把 QA pair 改写为 preference-task instruction，并跨多种指令聚合平均奖励，以降低任务偏置和 reward overoptimization。
+- [RL-Struct: A Lightweight Reinforcement Learning Framework for Reliable Structured Output in LLMs](https://arxiv.org/abs/2512.00319)：用 critic-free GRPO 和层级奖励对齐 schema 约束，提升复杂 JSON 的 structural accuracy 与 validity。
+- [UMM-RM: An Upcycle-and-Merge MoE Reward Model for Mitigating Reward Hacking](https://arxiv.org/abs/2512.00724)：把 dense reward model 的 FFN upcycle 为含共享与专门专家的 MoE，再合并回 dense RM，以保留抗 reward hacking 的专家多样性。
+- [A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs](https://arxiv.org/abs/2512.08786)：在 federated PPO RLHF 中评估 min、max、average 和 adaptive group reward aggregation，在不共享原始数据下权衡公平性与对齐质量。
+- [Intelligently Weighting Multiple Reference Models for Direct Preference Optimization of LLMs](https://arxiv.org/abs/2512.10040)：为 MRPO 测试离线、在线与 Thompson-sampling reference weighting，显示验证信号加权可提升偏好准确率但常弱于强 single-reference DPO。
+- [Replay Failures as Successes: Sample-Efficient Reinforcement Learning for Instruction Following](https://arxiv.org/abs/2512.23457)：提出 Hindsight instruction Replay，把失败回答按已满足约束改写为可学习成功样本，使 binary-reward RL 获得更密集的指令遵循信号。
+- [DialogueMLLM: Transforming Multimodal Emotion Recognition in Conversation Through Instruction-Tuned MLLM](https://doi.org/10.1109/access.2025.3591447)：面向指令遵循与偏好对齐，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Understanding successful human-AI teaming: The role of goal alignment and AI autonomy for social perception of LLM-based chatbots](https://doi.org/10.1016/j.chbah.2025.100246)：面向指令遵循与偏好对齐，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Rethinking DPO-Style Diffusion Aligning Frameworks](https://doi.org/10.1109/iccv51701.2025.01679)：面向指令遵循与偏好对齐，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [LoRGen: A Two-Stage LLM Framework for Human-Aligned LoR Generation via Efficient Fine-Tuning and Direct Preference Optimization](https://doi.org/10.1109/iccit68739.2025.11491508)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Multimodal Knowledge Retrieval-Augmented Iterative Alignment for Satellite Commonsense Conversation](https://doi.org/10.24963/ijcai.2025/908)：提出或分析面向instruction following, alignment, or preference optimization的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [AlignExperts: Knowledge alignment experts for summarization faithfulness evaluation](https://doi.org/10.1016/j.eswa.2025.130943)：提出用于摘要忠实性评估的 knowledge-alignment expert 模块；公开元数据能确认方法名，但更细机制仍需出版方摘要补证据。
+- [Benchmarking Fine-Tuning Strategies for LLaMA: A Multi-Dimensional Evaluation for National Security Contexts](https://doi.org/10.1109/iri66576.2025.00023)：结合情感分析、微调 LLaMA 和国家安全专业人员反馈，在高风险决策支持中提升上下文感知、降低偏置并改善可信度。
+- [Reward-guided direct preference optimization](https://doi.org/10.1016/j.eswa.2025.130295)：用奖励引导扩展直接偏好优化，补充偏好对齐训练方法。
+- [PRECISION: A Structured Prompting Framework for Optimizing Large Language Model Interactions](https://doi.org/10.1109/atigb66719.2025.11142139)：提出结构化提示框架以优化大语言模型交互。
+- [Structuring Low-Rank Adaptation with Semantic Guidance for Model Fine-Tuning](https://doi.org/10.1109/icecai66283.2025.11170527)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Improving Personality Alignment in Role-Playing Dialogue Agents for Small LLMs](https://doi.org/10.1109/ijcnn64981.2025.11227883)：面向指令遵循提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [LSRIF: Logic-Structured Reinforcement Learning for Instruction Following](https://arxiv.org/abs/2601.06431)：面向指令遵循的逻辑结构化强化学习方法；核心思想是显式表示指令约束，使训练和评测能追踪具体约束是否满足。
+- [Principled Fine-tuning of LLMs from User-Edits: A Medley of Preference, Supervision, and Reward](https://arxiv.org/abs/2601.19055)：把部署中的 user edits 同时建模为偏好、监督标签和成本反馈，并集成三类学习信号以稳健适配不同编辑分布。
+- [Rethinking Federated Graph Foundation Models: A Graph-Language Alignment-based Approach](https://arxiv.org/abs/2601.21369)：FedGALA 用无监督对比学习对齐 GNN 与 frozen PLM embedding，减少 federated graph foundation model 的量化损失；与指令遵循较偏轴。
+- [The Effectiveness of Style Vectors for Steering Large Language Models: A Human Evaluation](https://arxiv.org/abs/2601.21505)：通过人工评测检验 style-vector steering，衡量 activation direction 是否能稳定改变 LLM 文体并保留任务回答质量。
+- [Real-Time Aligned Reward Model beyond Semantics](https://arxiv.org/abs/2601.22664)：构建超越语义相似度的实时对齐奖励模型，扩展后训练中的模型侧反馈信号。
+- [Replacing Parameters with Preferences: Federated Alignment of Heterogeneous Vision-Language Models](https://arxiv.org/abs/2602.00485)：提出 MoR，各客户端用本地偏好标注训练 reward model，服务器通过 routing-based reward fusion 与 GRPO 对齐共享 VLM。
+- [PersoDPO: Scalable Preference Optimization for Instruction-Adherent, Persona-Grounded Dialogue via Multi-LLM Evaluation](https://arxiv.org/abs/2602.04493)：用多 LLM 自动评测 coherence、persona grounding 和 length-format compliance 来构造偏好对，再用 DPO 微调 persona dialogue model。
+- [Rubrics as an Attack Surface: Stealthy Preference Drift in LLM Judges](https://arxiv.org/abs/2602.13576)：指出 rubric-induced preference drift：通过 benchmark validation 的 rubric 修改仍会移动 LLM judge 标签，并把偏置传入后训练。
+- [Vistar: Enhancing the Perception Capability of LLMs under Imprecise IMU-Text Alignment](https://arxiv.org/abs/2602.14071)：当前 arXiv 元数据对应 EEG driving-fatigue recognition 的 DeltaGateNet，而非 Vistar；该行需要后续核验 URL-title 漂移，且与指令遵循偏轴。
+- [Zero-Shot Instruction Following in RL via Structured LTL Representations](https://arxiv.org/abs/2602.14344)：用结构化 linear temporal logic 表示指令，使 RL policy 能组合任务约束并零样本遵循未见指令。
+- [References Improve LLM Alignment in Non-Verifiable Domains](https://arxiv.org/abs/2602.16802)：在不可验证任务中用 reference answer 作为对齐锚点，改善无法通过精确规则奖励判定正确性的偏好优化。
+- [FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](https://arxiv.org/abs/2602.17095)：通过 low-rank Gram matrix 与 Procrustes alignment 聚合 LoRA 式 federated updates，降低 aggregation error、decomposition drift 与通信成本。
+- [StoryMovie: A Dataset for Semantic Alignment of Visual Stories with Movie Scripts and Subtitles](https://arxiv.org/abs/2602.21829)：构建 visual story 与电影脚本、字幕的语义对齐数据集；主要是多模态数据资源，放在 Model 存在分类风险。
 - [RAIN-Merging](https://arxiv.org/abs/2602.22538)：面向大型推理模型指令合规性的 gradient-free model merging 方法，同时保留 reasoning format。
+- [RewardUQ: A Unified Framework for Uncertainty-Aware Reward Models](https://arxiv.org/abs/2602.24040)：构建具备不确定性感知能力的奖励模型，使对齐流程能够处理反馈信号中的置信度与歧义。
+- [Beyond Factual Correctness: Mitigating Preference-Inconsistent Explanations in Explainable Recommendation](https://arxiv.org/abs/2603.03080)：不只按 factuality 训练推荐解释，而是加入 preference-consistency signal，减少与用户偏好或物品排序冲突的解释。
+- [When Weak LLMs Speak with Confidence, Preference Alignment Gets Stronger](https://arxiv.org/abs/2603.04968)：把弱 LLM 的 confidence-calibrated 输出作为偏好信号，说明 uncertainty-aware weak supervision 可以增强对齐。
+- [ActiveUltraFeedback: Efficient Preference Data Generation using Active Learning](https://arxiv.org/abs/2603.09692)：用 active learning 选择信息量高的 prompt-response comparison 来生成 UltraFeedback 式偏好数据，降低 RLHF 标注需求。
+- [Safe RLHF Beyond Expectation: Stochastic Dominance for Universal Spectral Risk Control](https://arxiv.org/abs/2603.10938)：用 first-order stochastic-dominance constraint 取代 expected-cost 安全约束，并通过可微 optimal-transport 优化控制 RLHF 尾部风险。
+- [PRMB: Benchmarking Reward Models in Long-Horizon CBT-based Counseling Dialogue](https://arxiv.org/abs/2603.11494)：提供六轮 CBT 咨询场景的 PRMB reward model 基准，含 pairwise 与 Best-of-N 偏好测试；主要是评测资源，分类上更接近 Bench。
+- [Evidence-based Distributional Alignment for Large Language Models](https://arxiv.org/abs/2603.13305)：检索 World Values Survey 证据并校准群体答案分布，使 LLM 在文化和领域迁移下保留分歧而非输出单一共识。
+- [CausalRM: Causal-Theoretic Reward Modeling for RLHF from Observational User Feedbacks](https://arxiv.org/abs/2603.18736)：从 click、copy、upvote 等有偏 observational feedback 学习 reward model，并用因果框架校正噪声和选择偏差。
+- [Aggregation Alignment for Federated Learning with Mixture-of-Experts under Data Heterogeneity](https://arxiv.org/abs/2603.21276)：处理数据异质场景下 federated MoE training 的聚合对齐；arXiv 摘要抓取超时，因此该行仍是低置信、偏轴说明。
+- [DSPA: Dynamic SAE Steering for Data-Efficient Preference Alignment](https://arxiv.org/abs/2603.21461)：从 preference triples 构建 prompt-conditional SAE steering，在解码时只修改 token-active latents，而不更新 base model 权重。
+- [Cluster-R1: Large Reasoning Models Are Instruction-following Clustering Agents](https://arxiv.org/abs/2603.23518)：训练大型推理模型解释 clustering instruction 并推断 latent grouping，并用 28 任务 ReasonCluster benchmark 评测。
+- [GDPO-Listener: Expressive Interactive Head Generation via Auto-Regressive Flow Matching and Group reward-Decoupled Policy Optimization](https://arxiv.org/abs/2603.25020)：用 auto-regressive flow matching 与 group reward-decoupled policy optimization 增强 listener head motion 表达性；与指令遵循模型偏轴。
+- [Is One-Shot In-Context Learning Helpful for Data Selection in Task-Specific Fine-Tuning of Multimodal LLMs?](https://arxiv.org/abs/2603.28058)：提出 CLIPPER，通过 one-shot demonstration-query response 探测来做无需训练的 MLLM coreset selection，兼顾样本重要性与多样性。
+- [Offline Constrained RLHF with Multiple Preference Oracles](https://arxiv.org/abs/2604.00200)：把多偏好 oracle 的 offline constrained RLHF 写成 KL-regularized dual problem，从 pairwise comparison 中保证 protected-group welfare 约束。
+- [Measuring Human Preferences in RLHF is a Social Science Problem](https://arxiv.org/abs/2604.03238)：把 RLHF 标注重新定义为 measurement validity 问题，提出诊断区分 non-attitude、现场构造回答和真实偏好，再谈聚合。
+- [Data Selection for Multi-turn Dialogue Instruction Tuning](https://arxiv.org/abs/2604.07892)：提出 MDS，以 user-query trajectory coverage 和 topic grounding、information progress、form consistency 等结构可靠性信号选择整段对话。
+- [Utilizing and Calibrating Hindsight Process Rewards via Reinforcement with Mutual Information Self-Evaluation](https://arxiv.org/abs/2604.11611)：提出 MISE，把 hindsight generative self-evaluation 用作 dense process reward，并通过 mutual-information objective 与稀疏环境反馈校准。
+- [Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents](https://arxiv.org/abs/2604.18122)：结合文档 grounded option scoring、Bayesian preference inference 和自适应 pairwise tradeoff question，从非结构化资料中引导偏好获取。
+- [Zero-Shot Detection of LLM-Generated Text via Implicit Reward Model](https://arxiv.org/abs/2604.21223)：从 base model 与 instruction-tuned model 的差异中导出 implicit reward signal，以零样本检测 LLM 生成文本；作为对齐模型条目偏轴。
+- [Three Models of RLHF Annotation: Extension, Evidence, and Authority](https://arxiv.org/abs/2604.25895)：把 RLHF 标注区分为 extension、evidence 与 authority 三种规范角色，澄清偏好标签应如何收集、验证和聚合。
+- [SRA: Span Representation Alignment for Large Language Model Distillation](https://arxiv.org/abs/2605.01205)：在不同 tokenizer 的教师与学生模型之间蒸馏 attention-weighted span center of mass，避免脆弱的 token-level 对齐。
+- [Why Expert Alignment Is Hard: Evidence from Subjective Evaluation](https://arxiv.org/abs/2605.04972)：研究主观评测中的 expert alignment 难点，显示专家身份、隐性标准和编辑样本都会强烈影响对齐效果。
+- [Personalized Alignment Revisited: The Necessity and Sufficiency of User Diversity](https://arxiv.org/abs/2605.09119)：证明 personalized alignment 获得常数 online regret 与对数 offline sample complexity 所需且充分的 user-diversity 条件。
+- [Spurious Correlation Learning in Preference Optimization: Mechanisms, Consequences, and Mitigation via Tie Training](https://arxiv.org/abs/2605.11134)：说明 DPO 式目标会通过 mean bias 与 causal-spurious leakage 学到伪相关特征，并用 equal-preference pair 的 tie training 缓解。
+- [Variance-aware Reward Modeling with Anchor Guidance](https://arxiv.org/abs/2605.11865)：为 Gaussian reward model 加入粗粒度 response-level anchor label，在多元或高分歧偏好中同时识别 reward mean 与 variance。
+- [BSO: Safety Alignment Is Density Ratio Matching](https://arxiv.org/abs/2605.12339)：把 safety alignment 推导为 density-ratio matching，并给出无需辅助 reward 或 cost model 的单阶段 Bregman Safety Optimization loss。
+- [MediaAdaptNet: Deep Representation Alignment With Cross-Platform Attention for Legacy Media Acceptance Discovery](https://doi.org/10.1109/access.2026.3653001)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [EMOTION-DRIVEN GENERATIVE SYSTEMS PRODUCING PERSONALIZED VISUAL ART BASED ON USER PREFERENCES](https://doi.org/10.29121/shodhkosh.v7.i4s.2026.7496)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [FRM-PTQ: Feature relationship matching enhanced low-bit post-training quantization for large language models](https://doi.org/10.1016/j.neunet.2026.108619)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Towards neural-symbolic grammatical inference for endangered languages using integrating graph neural networks and instruction-tuned language models](https://doi.org/10.1016/j.engappai.2026.114011)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [QoEUP: A Preference-Based QoE Optimization Scheme Using Human Feedback for Mobile Video Streaming](https://doi.org/10.1109/tnse.2026.3651560)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [User-Level Safety Alignment](https://doi.org/10.1109/icassp55912.2026.11461922)：定义 ULSA 任务，让 LLM 按用户角色定制安全对齐强度，使专业合法场景下的回答不被一刀切拒绝。
+- [Fine-Tuning Large Language Models for Nonlinear Dynamics: The Lorenz Attractor as a Benchmark for Hypersonic Simulation](https://doi.org/10.2514/6.2026-1170)：用 Lorenz attractor 时间序列微调 LLaMA 3.2 3B，检验文本出身的大模型能否作为高超声速仿真中混沌非线性动力学的快速 surrogate。
+- [Efficient Distillation of Large Language Models Using Group Relative Policy Distillation](https://doi.org/10.1109/icassp55912.2026.11464454)：为指令遵循方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [A Multi-Objective Reinforcement Learning Approach to Prompt Optimization in NLP](https://doi.org/10.1016/j.procs.2026.01.110)：补充面向 NLP 提示优化的多目标强化学习方法。
+- [Revisiting the role of linguistic knowledge in large language models through prompting](https://doi.org/10.1016/j.knosys.2026.115667)：面向指令遵循与提示行为的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Revisiting the role of linguistic knowledge in large language models through prompting”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Tighter Bound for Reward Learning in Reinforcement Learning from Human Feedback](https://openreview.net/forum?id=EyMoFzI3Oz)：在一般函数逼近设定下推导 RLHF 奖励学习的参数估计误差界，去掉与样本量无关的常数项，并据此提出带参数约束的离线与在线 RLHF 算法以提高偏好数据采集效率。
+- [Denoising Alignment with Large Language Model for Recommendation](https://doi.org/10.1145/3696662)：提出面向指令遵循的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Perplexity-aware Correction for Robust Alignment with Noisy Preferences](https://doi.org/10.52202/079017-0888)：提出面向指令遵循的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [WizardArena: Post-training Large Language Models via Simulated Offline Chatbot Arena](https://doi.org/10.52202/079017-3543)：补充一个面向指令遵循与偏好对齐的模型条目，关注alignment, post-training, calibration, or instruction-following contribution。
+- [Reinforcing LLM Agents via Policy Optimization with Action Decomposition](https://doi.org/10.52202/079017-3297)：面向指令遵循与偏好对齐，补充模型侧方法、训练配方、架构或数据方法。
+- [Quantum-Amplitude Embedded Adaptation for Parameter-Efficient Fine-Tuning in Large Language Models](https://doi.org/10.1145/3746252.3760795)：面向指令遵循与偏好对齐，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Continuous Model Calibration: Leveraging Feedback-Driven Fine-Tuning for Self- Correcting Large Language Models](https://doi.org/10.55248/gengpi.6.0325.1208)：面向指令遵循与偏好对齐，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [SIPA: a self-iterative preference alignment method for generative language models](https://doi.org/10.1007/s10489-025-07079-9)：面向指令遵循与偏好对齐，补充用于alignment, preference optimization, or aligned-generation model-side method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Parameter-Efficient Fine-Tuning via General Linear Structural Regularization for High-Rank Adaptation](https://doi.org/10.3390/info17050460)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [IMPerSumm: Information-Modulated User Preference Modeling for Personalized Text Summarization](https://openreview.net/pdf/c5089177170d4b0d8394292f63039b491783017c.pdf)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [BiSpikCLM: A Spiking Language Model integrating Softmax-Free Spiking Attention and Spike-Aware Alignment Distillation](https://arxiv.org/abs/2605.13859)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Designing Scaffolding Cards to Facilitate LLM-Based Socratic Instruction: An Exploratory Study of Response Strategies to Support Learning](https://doi.org/10.1145/3772318.3791696)：面向指令遵循与偏好对齐，补充用于instruction following, preference optimization, alignment, reward, or post-training contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Tackling Uncertain Correspondences for Multi-Modal Entity Alignment](https://doi.org/10.52202/079017-3794)：提出或分析面向instruction following, alignment, or preference optimization的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Gen-JEMA: enhanced explainability using generative joint embedding multimodal alignment for monitoring directed energy deposition](https://doi.org/10.1007/s10845-025-02614-4)：提出或分析面向instruction following, alignment, or preference optimization的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Mitigating Reward Overoptimization via Lightweight Uncertainty Estimation](https://doi.org/10.52202/079017-2596)：提出或分析面向instruction following, alignment, or preference optimization的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。

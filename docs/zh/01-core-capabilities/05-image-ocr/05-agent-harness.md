@@ -5,13 +5,71 @@
 - [ViperGPT](https://arxiv.org/abs/2303.08128)（[开源代码](https://github.com/cvlab-columbia/viper)）：以 Python 执行作为中间层的视觉推理 harness，把模型输出约束为可执行 API 组合。
 - [MM-REACT](https://arxiv.org/abs/2303.11381)（[开源代码](https://github.com/microsoft/MM-REACT)）：多模态 ReAct 工作流；把视觉感知、推理与动作（工具调用）组织成可复用的提示控制流。
 - [HuggingGPT](https://arxiv.org/abs/2303.17580)（[开源代码](https://github.com/microsoft/JARVIS)）：把多模态任务路由到工具/模型并编排执行的通用 agent 框架（包含视觉任务路由与组合）。
+- [VisionGPT: Vision-Language Understanding Agent Using Generalized Multimodal Framework](https://arxiv.org/abs/2403.09027)：提出面向图像与 OCR的智能体流程或编排模式。
+- [Meta-Prompting for Automating Zero-shot Visual Recognition with LLMs](https://arxiv.org/abs/2403.11755)：提供面向 Image/OCR 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Swarm Intelligence in Geo-Localization: A Multi-Agent Large Vision-Language Model Collaborative Framework](https://arxiv.org/abs/2408.11312)：提供面向image, OCR, or vision-language capability的工作流、检索或工具循环、验证方法、提示策略或编排框架。
+- [ViDoRAG: Visual Document Retrieval-Augmented Generation via Dynamic Iterative Reasoning Agents](https://arxiv.org/abs/2502.18017)：ViDoRAG 用动态迭代 visual document RAG 处理富视觉文档，适合 Image/OCR Agent Harness。
 - [MDocAgent](https://arxiv.org/abs/2503.13964)（[开源代码](https://github.com/aiming-lab/MDocAgent)）：面向文档问答的多模态多 agent RAG 框架；把 text agent、image agent、critical agent、summary agent 等角色组合起来做跨模态证据整合。
+- [DWIM: Towards Tool-Aware Visual Reasoning via Discrepancy-Aware Workflow Generation & Instruct-Masking Tuning](https://arxiv.org/abs/2503.19263)：工具感知的视觉推理工作流生成。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [OmniNova:A General Multimodal Agent Framework](https://arxiv.org/abs/2503.20028)：提出通用多模态 agent framework，可补充多模态 harness 入口。
+- [An agentic system with reinforcement-learned subsystem improvements for parsing form-like documents](https://arxiv.org/abs/2505.13504)：面向表单类文档数据抽取的 agentic 系统；核心思想是通过 agent 管理子系统选择和强化学习式改进来提升文档解析。
+- [Agentic Visualization: Extracting Agent-Based Design Patterns From Visualization Systems](https://arxiv.org/abs/2505.19101)：提出面向图像与 OCR的智能体流程或编排模式。
+- [Multimodal Reasoning Agent for Zero-Shot Composed Image Retrieval](https://arxiv.org/abs/2505.19952)：用多模态推理智能体进行零样本组合图像检索。
+- [VReST: Enhancing Reasoning in Large Vision-Language Models through Tree Search and Self-Reward Mechanism](https://arxiv.org/abs/2506.08691)：视觉推理中的树搜索与自奖励机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Socratic-MCTS: Test-Time Visual Reasoning by Asking the Right Questions](https://arxiv.org/abs/2506.08927)：用于测试时视觉推理的苏格拉底式 MCTS。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [ChartAgent](https://arxiv.org/abs/2507.06157)（开源代码：暂未见稳定公开官方仓库）：面向图表问答的 agentic workflow，常见做法是 `读图/OCR -> 表格化/结构化 -> 计算/校验 -> 作答` 的分阶段编排。
 - [PyVision](https://arxiv.org/abs/2507.07998)（[项目页](https://agent-x.space/pyvision/)；[开源代码](https://github.com/agents-x-project/PyVision)）：面向视觉推理的动态工具 harness；让模型按任务生成、执行和修正 Python 图像处理工具，而不是依赖固定 toolset。
+- [DatasetAgent: A Novel Multi-Agent System for Auto-Constructing Datasets from Real-World Images](https://arxiv.org/abs/2507.08648)：面向视觉文档、图表、表格与 OCR 推理的智能体框架或运行时。核心思想：把 A Novel Multi-Agent System for Auto-Constructing Datasets from Real-World Images 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Agentic AI With Orchestrator-Agent Trust: A Modular Visual Classification Framework With Trust-Aware Orchestration and RAG-Based Reasoning](https://arxiv.org/abs/2507.10571)：面向图像理解与 OCR，补充用于orchestrated visual-classification framework with trust-aware RAG reasoning的智能体流程、编排模式、工具循环或运行框架。
 - [VProChart](https://arxiv.org/abs/2507.17209)（开源代码：暂未见稳定公开官方仓库）：面向图表推理的流程化方法，更强调把图表理解与计算/验证模块化以降低图表 hallucination。
+- [Analyze-Prompt-Reason: A Collaborative Agent-Based Framework for Multi-Image Vision-Language Reasoning](https://arxiv.org/abs/2508.00356)：用于多图视觉语言推理的协作 agent framework；核心思想是用 PromptEngineer 生成任务特定提示，再由 VisionReasoner 在多样多图任务上完成最终推理。
+- [Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](https://arxiv.org/abs/2508.03404)：面向视觉文档理解与推理的 multi-agent collaboration framework。核心思想是把文档推理子任务分给不同 agent，并按 agent 自适应扩展测试时计算。
+- [ContextualLVLM-Agent: A Holistic Framework for Multi-Turn Visually-Grounded Dialogue and Complex Instruction Following](https://arxiv.org/abs/2508.15164)：面向图像、OCR 与视觉文档理解的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [See it. Say it. Sorted.](https://arxiv.org/abs/2508.15222)（[代码](https://github.com/hantaoZhangrichard/see_it_say_it_sorted)）：训练无关的 sketch-to-diagram agentic harness。核心思想是用 Critic VLM 提出关系性修改建议，让多个 LLM candidate 生成 SVG 更新，再由 Judge VLM 选择稳定改进，从而得到可编辑的程序化图表，而不是只输出位图。
+- [Mini-o3: Scaling Up Reasoning Patterns and Interaction Turns for Visual Search](https://arxiv.org/abs/2509.07969)：Mini-o3 扩展视觉搜索中的工具交互轮次和推理模式，适合 Image Agent Harness。
+- [ChartAgent: A Multimodal Agent for Visually Grounded Reasoning in Complex Chart Question Answering](https://arxiv.org/abs/2510.04514)：面向复杂 chart QA 的多模态 agent。核心思想是结合图表感知、grounded evidence 和推理步骤，而不是直接回答图表问题。
+- [ContextNav: Towards Agentic Multimodal In-Context Learning](https://arxiv.org/abs/2510.04560)：可作为图像、文档、图表与通用多模态理解的Agent Harness候选；核心关注“Towards Agentic Multimodal In-Context Learning”。
+- [PoSh: Using Scene Graphs To Guide LLMs-as-a-Judge For Detailed Image Descriptions](https://arxiv.org/abs/2510.19060)：用 scene graph 引导 LLM-as-a-judge 评估详细图像描述；核心思想是用属性和关系的局部检查替代短 caption 指标来评分长描述。
 - [Doc-Researcher](https://arxiv.org/abs/2510.21603)（开源代码：暂未见稳定公开官方仓库）：面向多模态文档 deep research 的多 agent 系统；把解析、分层检索、问题分解、证据累积和跨文档综合连接成迭代式 workflow。
+- [SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](https://arxiv.org/abs/2510.26615)：提出多页视觉文档理解的层级 agentic framework。
+- [DocAssistant: Integrating Key-region Reading and Step-wise Reasoning for Robust Document Visual Question Answering](https://doi.org/10.18653/v1/2025.findings-emnlp.187)：结合关键区域阅读和逐步推理的文档 VQA 助手；核心思想是在生成答案前先定位有用的文档区域。
 - [DocAgent](https://aclanthology.org/2025.emnlp-main.893/)（[开源代码](https://github.com/lisun-ai/DocAgent)）：面向多模态长上下文文档理解的 agentic framework；强调记忆与 reviewer 机制，把文本、版面、图表、表格和图像证据统一到长文档推理链中。
+- [TabRAG: Improving Tabular Document Question Answering for Retrieval Augmented Generation via Structured Representations](https://arxiv.org/abs/2511.06582)：用结构化表格表示增强 tabular document QA 的 RAG 流程，适合文档理解 harness。
+- [Orion: A Unified Visual Agent for Multimodal Perception, Advanced Visual Reasoning and Execution](https://arxiv.org/abs/2511.14210)：统一视觉代理，通过编排专用工具完成图像、视频和文档中的感知、推理与执行任务。
+- [Octopus: Agentic Multimodal Reasoning with Six-Capability Orchestration](https://arxiv.org/abs/2511.15351)：面向面向 agentic 多模态推理的六能力编排的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
 - [ARIAL](https://arxiv.org/abs/2511.18192)（开源代码：暂未见稳定公开官方仓库）：面向 Document VQA 与答案定位的 agentic framework；通过 planner 编排 OCR、语义检索、答案生成和文本到区域对齐，同时输出答案与 bounding box 证据。
+- [Be My Eyes: Extending Large Language Models to New Modalities Through Multi-Agent Collaboration](https://arxiv.org/abs/2511.19417)：类型：agent harness/可复用执行框架。核心价值：为 1.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Thinking with Programming Vision: Towards a Unified View for Thinking with Images](https://arxiv.org/abs/2512.03746)：用编程式视觉工具支持图像推理。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Collaborative Document Simplification Using Multi-Agent Systems](https://aclanthology.org/2025.coling-main.60/)：作为图像与 OCR的智能体框架候选，关注标题所示的可复用能力、方法或评测信号。
+- [TabAgent: A Multi-Agent Table Extraction Framework for Unstructured Documents](https://doi.org/10.1109/aibdf67964.2025.11440749)：面向非结构化文档表格抽取的多 agent 框架；核心思想是将解析、检查和结构化文档证据拆给协作 agent 完成。
+- [CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning](https://arxiv.org/abs/2512.17312)：面向通过动态工具集成进行可执行视觉推理的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
 - [DocDancer](https://arxiv.org/abs/2601.05163)（开源代码：论文称开源，暂未确认稳定公开仓库）：把 DocQA 建模成工具驱动的信息寻求过程，显式区分 document exploration 与 answer synthesis，并用合成轨迹训练开放式文档 agent。
+- [AVIR: Adaptive Visual In-Document Retrieval for Efficient Multi-Page Document Question Answering](https://arxiv.org/abs/2601.11976)：在多页文档问答前加入自适应视觉文档内检索，属于文档 VQA harness。
+- [Clarify or Answer: Reinforcement Learning for Agentic VQA with Context Under-specification](https://arxiv.org/abs/2601.16400)：面向上下文欠明确时的 clarify-or-answer agentic VQA的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Pixel-Grounded Retrieval](https://arxiv.org/abs/2601.19060)：面向知识型 VQA 的多模态检索 harness。核心思想是把检索决策 grounding 到图像区域，在视觉证据和问题语境需要时调用外部知识。
+- [TikArt: Stabilizing Aperture-Guided Fine-Grained Visual Reasoning with Reinforcement Learning](https://arxiv.org/abs/2602.14482)：用 aperture 引导的顺序证据获取进行视觉推理。核心思想：让 agent 多步聚焦细粒度区域，而非依赖单次全图编码。
 - [OCR-Agent](https://arxiv.org/abs/2602.21053)（[开源代码](https://github.com/AIGeeksGroup/OCR-Agent)）：面向 OCR/文档理解的专门 agent；强调 `OCR -> 结构化解析 -> 校验 -> 回填` 的迭代式工作流。
+- [PhotoAgent: Agentic Photo Editing with Exploratory Visual Aesthetic Planning](https://arxiv.org/abs/2602.22809)：带探索式视觉审美规划的 agentic photo-editing 框架。核心思想是通过视觉反馈规划和修订编辑，避免完全依赖用户一次性精确说明。
+- [AgenticOCR: Parsing Only What You Need for Efficient Retrieval-Augmented Generation](https://arxiv.org/abs/2602.24134)：只解析任务相关内容的 agentic OCR。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering](https://arxiv.org/abs/2603.02438)：ORCA 用协作 agent 处理文档视觉问答，适合 Image/OCR Agent Harness。
+- [KFRA](https://arxiv.org/abs/2603.03762)：面向开放集细粒度视觉理解的知识增强 agent。核心思想：通过开放词表检测和网页级检索形成类别假设，定位判别性区域，再把多模态证据整合进可解释推理循环。
+- [DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](https://arxiv.org/abs/2603.03857)：面向 LVLM visually grounded reasoning 的 training-free 框架。核心思想是先定位关键视觉线索，再结合完整上下文推理，以提升 grounded answers。
+- [Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](https://arxiv.org/abs/2603.07659)：面向视觉语言模型测试时鲁棒性的 self-critical inference 流程的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Explicit Logic Channel for Validation and Enhancement of MLLMs on Zero-Shot Tasks](https://arxiv.org/abs/2603.11689)：面向在零样本视觉语言任务中验证并增强 MLLM 的显式逻辑通道的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Feynman: Knowledge-Infused Diagramming Agent for Scalable Visual Designs](https://arxiv.org/abs/2603.12597)：类型：agent harness/可复用执行框架。核心价值：为 1.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [AwaRes](https://arxiv.org/abs/2603.16932)：面向高效 VLM 的按需空间工具调用 harness。核心思想：先看低分辨率全局视图，只有当问题需要细粒度证据时才调用高分辨率裁剪检索工具，并用自动标注样本训练多轮裁剪使用轨迹。
+- [Evidence Units](https://arxiv.org/abs/2604.00500)：面向多模态 RAG 的解析器无关文档组织层。核心思想是把表格、图、公式、题注和解释段落组织成基于本体的证据单元，再用图规则验证单元完整性后用于检索。
+- [CharTool: Tool-Integrated Visual Reasoning for Chart Understanding](https://arxiv.org/abs/2604.02794)：面向 chart understanding 的 tool-integrated visual reasoning harness。核心思想：结合图表数据流水线与外部计算，使 MLLM 能定位视觉元素并完成精确数值推理。
+- [V-Reflection: Transforming MLLMs from Passive Observers to Active Interrogators](https://arxiv.org/abs/2604.03307)：面向用于细粒度 MLLM 感知的主动视觉询问与反思的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [HIVE: Query, Hypothesize, Verify An LLM Framework for Multimodal Reasoning-Intensive Retrieval](https://arxiv.org/abs/2604.07220)：为多模态检索加入 LLM 的查询、假设与验证循环，使图表、示意图和截图证据在采纳前经过显式推理。
+- [Entropy-Gradient Grounding](https://arxiv.org/abs/2604.08456)：面向 VLM 的免训练证据检索流程。核心思想是用视觉 token 上的熵梯度排序相关区域，再通过迭代放大与重新定位，并用空间熵停止规则处理细节关键型问题。
+- [VISOR: Agentic Visual Retrieval-Augmented Generation via Iterative Search and Over-horizon Reasoning](https://arxiv.org/abs/2604.09508)：面向视觉密集文档的 agentic visual RAG harness；核心思想是交替进行检索、视觉动作与长程推理，以缓解跨页证据稀疏和搜索漂移。
+- [MM-Doc-R1](https://arxiv.org/abs/2604.13579)：agentic long-document visual-QA harness；核心思想是在长文档上执行迭代式、vision-aware information discovery 与 synthesis，并用强化学习鼓励有效的多轮证据搜集。
 - [Doc-V*](https://arxiv.org/abs/2604.13731)（开源代码：暂未见稳定公开官方仓库）：面向多页 Document VQA 的 coarse-to-fine 交互式视觉推理 harness；核心思想是用页面级检索、区域级放大、证据验证和答案生成闭环替代一次性全页阅读。
+- [Foveated Reasoning](https://arxiv.org/abs/2604.21079)：面向 VLM 的有状态视觉聚焦框架。核心思想是先从低分辨率视图推理，只在需要时触发高分辨率局部观察，再把选中的证据送回同一推理轨迹，以控制视觉 token 预算。
+- [Beyond Pixels: Introspective and Interactive Grounding for Visualization Agents](https://arxiv.org/abs/2604.21134)：提供可复用 agent 工作流或执行 harness，服务于image, OCR, document, chart, or diagram understanding。
+- [Generating Statistical Charts with Validation-Driven LLM Workflows](https://arxiv.org/abs/2605.00800)：提供可复用 agent 工作流或执行 harness，服务于image, OCR, document, chart, or diagram understanding。
+- [Hierarchical Visual Agent: Managing Contexts in Joint Image-Text Space for Advanced Chart Reasoning](https://arxiv.org/abs/2605.04304)：类型：agent harness/可复用执行框架。核心价值：为 1.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [From Sketch to Structure](https://doi.org/10.1109/ACCESS.2026.3678494)：面向业务流程图理解的 agentic prompting 工作流。核心思想是通过分阶段视觉语言推理，把草图式图表转成结构化流程表示。
+- [VTQA: visual tabular data question answering framework based on multi-agent](https://doi.org/10.1007/s12650-025-01103-3)：《VTQA: visual tabular data question answering framework based on multi-agent》为Image OCR补充智能体流程、编排模式、工具循环或运行时框架。
+- [ChartCitor: Answer Citations for ChartQA via Multi-Agent LLM Retrieval](https://doi.org/10.1145/3701716.3716886)：面向视觉文档、图表、表格与 OCR 推理的智能体框架或运行时。核心思想：把 Answer Citations for ChartQA via Multi-Agent LLM Retrieval 外化为可复用的编排、工具调用、记忆或协议逻辑。

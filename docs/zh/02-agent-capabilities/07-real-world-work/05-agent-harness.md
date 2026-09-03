@@ -1,40 +1,294 @@
 # 2.7.5 Agent Harness
 
+- [ItiNera: Integrating Spatial Optimization with Large Language Models for Open-domain Urban Itinerary Planning](https://arxiv.org/abs/2402.07204)：结合空间优化与大语言模型，执行开放域城市行程规划。
+- [GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications](https://arxiv.org/abs/2404.06921)：提出面向真实世界工作的智能体流程或编排模式。
+- [Large Language Models Can Plan Your Travels Rigorously with Formal Verification Tools](https://arxiv.org/abs/2404.11891)：把大模型旅行规划与形式化验证工具结合，用于保证行程约束。
+- [Planning with Multi-Constraints via Collaborative Language Agents](https://arxiv.org/abs/2405.16510)：用协作式语言智能体处理多约束规划。
+- [Leveraging Visual Tokens for Extended Text Contexts in Multi-Modal Learning](https://arxiv.org/abs/2406.02547)：提出面向真实工作流的智能体流程、工具编排、评测循环或交互式执行框架。
+- [FinVerse: An Autonomous Agent System for Versatile Financial Analysis](https://arxiv.org/abs/2406.06379)：作为真实世界工作的智能体框架条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [TRIP-PAL: Travel Planning with Guarantees by Combining Large Language Models and Automated Planners](https://arxiv.org/abs/2406.10196)：结合大模型与自动规划器生成有保证的旅行计划。
+- [Ask-before-Plan: Proactive Language Agents for Real-World Planning](https://arxiv.org/abs/2406.12639)：[Ask-before-Plan: Proactive Language Agents for Real-World Planning](https://arxiv.org/abs/2406.12639): 为真实世界语言智能体加入先询问再规划机制.
+- [LAMBDA: A Large Model Based Data Agent](https://arxiv.org/abs/2407.17535)：构建面向真实工作任务的智能体工作流或执行框架。
+- [Large Language Models for Zero Touch Network Configuration Management](https://arxiv.org/abs/2408.13298)：将大语言模型用于 zero-touch 网络配置管理工作流。
+- [Data Formulator 2: Iterative Creation of Data Visualizations, with AI Transforming Data Along the Way](https://arxiv.org/abs/2408.16119)：构建面向真实工作任务的智能体工作流或执行框架。
+- [TravelAgent: An AI Assistant for Personalized Travel Planning](https://arxiv.org/abs/2409.08069)：[TravelAgent: An AI Assistant for Personalized Travel Planning](https://arxiv.org/abs/2409.08069): 实现个性化旅行规划 AI 助手.
+- [Control Industrial Automation System with Large Language Model Agents](https://arxiv.org/abs/2409.18009)：作为真实世界工作的智能体框架条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [To the Globe (TTG): Towards Language-Driven Guaranteed Travel Planning](https://arxiv.org/abs/2410.16456)：构建语言驱动且带保证的旅行规划。
+- [SiriusBI: A Comprehensive LLM-powered Solution for Data Analytics in Business Intelligence](https://arxiv.org/abs/2411.06102)：提出面向真实工作流的智能体流程、工具编排、评测循环或交互式执行框架。
+- [Towards Full Delegation: Designing Ideal Agentic Behaviors for Travel Planning](https://arxiv.org/abs/2411.13904)：Towards Full Delegation 补充真实世界规划智能体框架，面向操作性任务完成。
 - [BrowserGym Ecosystem](https://arxiv.org/abs/2412.05467)（[开源代码](https://github.com/ServiceNow/BrowserGym)）：统一 WebArena、VisualWebArena、WorkArena 等网页/企业工作环境，并配套 AgentLab 实验框架，适合做现实网页和 workplace agent 的可复现比较。
+- [AutoPrep: Natural Language Question-Aware Data Preparation with a Multi-Agent Framework](https://arxiv.org/abs/2412.10422)：AutoPrep 补充真实世界规划智能体框架，面向操作性任务完成。
+- [Personal Large Language Model Agents: A Case Study on Tailored Travel Planning](https://doi.org/10.18653/v1/2024.emnlp-industry.37)：以定制旅行规划为案例研究个人大语言模型智能体，体现面向终端用户的真实任务编排。
+- [Flow: Modularized Agentic Workflow Automation](https://arxiv.org/abs/2501.07834)：模块化 agentic workflow automation 框架；核心思想是把真实工作流拆成带显式控制和验证点的可复用模块。
+- [Engineering LLM Powered Multi-Agent Framework for Autonomous CloudOps](https://arxiv.org/abs/2501.08243)：描述 MOYA 多智能体编排框架，用于在异构企业数据和流程上执行自治 CloudOps。
+- [LLM-Agents Driven Automated Simulation Testing and Analysis of small Uncrewed Aerial Systems](https://arxiv.org/abs/2501.11864)：用 LLM 智能体自动生成、执行并分析小型无人机系统仿真测试。
+- [Argos: Agentic Time-Series Anomaly Detection with Autonomous Rule Generation via Large Language Models](https://arxiv.org/abs/2501.14170)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Agentic Workflows for Conversational Human-AI Interaction Design](https://arxiv.org/abs/2501.18002)：把 agentic workflow 用于对话式人机交互设计，在编码与数据任务之外补充真实设计工作 harness。
+- [MarketSenseAI 2.0: Enhancing Stock Analysis Through LLM Agents](https://arxiv.org/abs/2502.00415)：提出面向真实工作流的智能体流程、工具编排、评测循环或交互式执行框架。
+- [GistVis: Automatic Generation of Word-scale Visualizations from Data-rich Documents](https://arxiv.org/abs/2502.03784)：作为真实世界工作的智能体框架条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [AutoAgent: A Fully-Automated and Zero-Code Framework for LLM Agents](https://arxiv.org/abs/2502.05957)：AutoAgent 是自动化、零代码的 LLM agent 框架，适合 Real-World Work Agent Harness。
+- [Multi-Agent Simulator Drives Language Models for Legal Intensive Interaction](https://arxiv.org/abs/2502.06882)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Interactive Data Harmonization with LLM Agents](https://arxiv.org/abs/2502.07132)：Interactive Data Harmonization 以 LLM agents 做数据协调/清洗流程，属于真实数据工作流 harness。
+- [EvoFlow: Evolving Diverse Agentic Workflows On The Fly](https://arxiv.org/abs/2502.07373)：用演化搜索自动设计异构 agent workflow，减少手工编排依赖。
+- [TableTalk: Scaffolding Spreadsheet Development with a Language Agent](https://arxiv.org/abs/2502.09787)：TableTalk 将 spreadsheet development 脚手架化为 language-agent workflow，适合真实办公/数据工作流。
+- [DesignWeaver](https://arxiv.org/abs/2502.09867)：依据专家设计实践暴露设计维度与视觉参考，支撑产品设计中的文生图提示构造。
+- [Can Large Language Model Agents Balance Energy Systems?](https://arxiv.org/abs/2502.10557)：补充一个面向真实世界工作流的智能体框架条目，关注LLM agents for energy-system balancing。
+- [Divergent Thoughts toward One Goal: LLM-based Multi-Agent Collaboration System for Electronic Design Automation](https://arxiv.org/abs/2502.10857)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Adaptive Decision Discourse](https://arxiv.org/abs/2502.10978)：面向多方决策讨论的 agentic LLM 框架，通过模拟角色和自适应对话支持现实决策。
+- [Narrative-Driven Travel Planning: Geoculturally-Grounded Script Generation with Evolutionary Itinerary Optimization](https://arxiv.org/abs/2502.14456)：Narrative-Driven Travel Planning 补充真实世界规划智能体框架，面向操作性任务完成。
+- [I-MCTS: Enhancing Agentic AutoML via Introspective Monte Carlo Tree Search](https://arxiv.org/abs/2502.14693)：I-MCTS 通过 introspective MCTS 增强 agentic AutoML，属于自动化机器学习 workflow harness。
+- [AIdeation](https://arxiv.org/abs/2502.14747)：构建面向概念设计师的人机协同 ideation 系统，支持头脑风暴、视觉探索与设计空间组合。
+- [LEDD: Large Language Model-Empowered Data Discovery in Data Lakes](https://arxiv.org/abs/2502.15182)：构建 LEDD，可扩展地用 LLM 支持数据湖语义发现。
+- [AI Agentic workflows and Enterprise APIs: Adapting API architectures for the age of AI agents](https://arxiv.org/abs/2502.17443)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Generator-Assistant Stepwise Rollback Framework for Large Language Model Agent](https://arxiv.org/abs/2503.02519)：Generator-Assistant stepwise rollback 处理 agent 执行中的回滚/修复，属于通用 agent workflow harness。
+- [Dango: A Mixed-Initiative Data Wrangling System using Large Language Model](https://arxiv.org/abs/2503.03154)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [DynTaskMAS: A Dynamic Task Graph-driven Framework for Asynchronous and Parallel LLM-based Multi-Agent Systems](https://arxiv.org/abs/2503.07675)：DynTaskMAS 提出动态任务图驱动的异步并行多代理框架，属于 agent workflow orchestration。
+- [OR-LLM-Agent: Automating Modeling and Solving of Operations Research Optimization Problem with Reasoning Large Language Model](https://arxiv.org/abs/2503.10009)：用于自动化运筹优化建模和求解的 agent；核心思想是把业务式优化问题转化为形式模型，完成求解并解释决策。
+- [Cerebrum (AIOS SDK): A Platform for Agent Development, Deployment, Distribution, and Discovery](https://arxiv.org/abs/2503.11444)：面向 agent 开发、部署、分发与发现的平台层。核心思想：把 agent 能力与生命周期操作封装成 SDK 式基础设施。
+- [DAgent: A Relational Database-Driven Data Analysis Report Generation Agent](https://arxiv.org/abs/2503.13269)：可作为真实工作 agent的 Agent Harness 候选：围绕 DAgent: A Relational Database-Driven Data Analysis Report Generation Agent 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Agent-S: LLM Agentic workflow to automate Standard Operating Procedures](https://arxiv.org/abs/2503.15520)：面向标准作业流程自动化的 agentic workflow。核心思想是把 SOP 步骤转为用户交互、工具调用和受控执行循环。
+- [Towards Agentic AI Networking in 6G: A Generative Foundation Model-as-Agent Approach](https://arxiv.org/abs/2503.15764)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [SPIO: Ensemble and Selective Strategies via LLM-Based Multi-Agent Planning in Automated Data Science](https://arxiv.org/abs/2503.23314)：SPIO 研究自动数据科学中的 LLM 多代理规划，属于 data science workflow harness。
+- [AI Agents in Engineering Design: A Multi-Agent Framework for Aesthetic and Aerodynamic Car Design](https://arxiv.org/abs/2503.23315)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [DebFlow: Automating Agent Creation via Agent Debate](https://arxiv.org/abs/2503.23781)：DebFlow 通过 agent debate 自动生成 agents/workflows，属于 agent creation harness。
+- [AI2Agent: An End-to-End Framework for Deploying AI Projects as Autonomous Agents](https://arxiv.org/abs/2503.23948)：补充真实世界工作的 Agent Harness 条目，重点是《AI2Agent: An End-to-End Framework for Deploying AI Projects as Autonomous Agents》。
+- [AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems](https://arxiv.org/abs/2504.00587)：AgentNet 关注去中心化多 agent 协调，适合 Real-World Work Agent Harness。
+- [Marco](https://arxiv.org/abs/2504.01962)：面向硬件设计任务求解的可配置图式多智能体框架。
 - [Autono](https://arxiv.org/abs/2504.04650)：一种 ReAct 风格的自主 agent 框架，包含自适应动作生成、及时放弃控制和多智能体记忆迁移。核心思想：在固定 planner workflow 失效时允许执行路径动态调整，同时保留终止保护以提升鲁棒性。
+- [AgentA/B: Automated and Scalable Web A/BTesting with Interactive LLM Agents](https://arxiv.org/abs/2504.09723)：AgentA/B 把 Web A/B 测试转化为可扩展的交互式 LLM agent 工作流，属于真实业务 workflow harness。
+- [Toward Super Agent System with Hybrid AI Routers](https://arxiv.org/abs/2504.10519)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Toward Super Agent System with Hybrid AI Routers 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [DashChat: Interactive Authoring of Industrial Dashboard Design Prototypes through Conversation with LLM-Powered Agents](https://arxiv.org/abs/2504.12865)：补充一个面向真实世界工作流的智能体框架条目，关注LLM-agent conversational dashboard authoring。
+- [Cellular-X](https://arxiv.org/abs/2504.13190)：面向蜂窝基站运维的 LLM agent。核心思想：在 USRP X310 testbed 上结合多模态 LLM、技术文档 RAG、迭代自纠错和语音式配置报告，让现场工程师能用自然交互完成基站配置与修订。
+- [LLM-enabled Multi-Agent Autonomous Mechatronics Design Framework](https://arxiv.org/abs/2504.14681)：协调机械设计、优化、电子、控制和软件工程等专门 agent。核心思想：把语言需求与结构化人工反馈转成真实机电原型，并通过自主水质监测船展示从任务抽象到结构、电子、控制和软件实现的跨学科设计流程。
+- [Steering Semantic Data Processing With DocWrangler](https://arxiv.org/abs/2504.14764)：DocWrangler 将语义数据处理操作封装为可操控 workflow，适合真实数据处理 agent harness。
+- [Divide, Optimize, Merge: Fine-Grained LLM Agent Optimization at Scale](https://arxiv.org/abs/2505.03973)：类型：agent harness/可复用执行框架。核心价值：为 2.7.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Learning Virtual Machine Scheduling in Cloud Computing through Language Agents](https://arxiv.org/abs/2505.10117)：将云端虚拟机调度建模为语言智能体决策任务。
+- [Cochain](https://arxiv.org/abs/2505.10936)：面向业务流程的协作提示 harness；核心思想：把阶段级知识图谱与 prompt tree 结合起来，让 agent 复用跨阶段提示信息，同时避免完整多 agent 协作带来的 token 成本和任务稀释。
+- [Can AI automatically analyze public opinion? A LLM agents-based agentic pipeline for timely public opinion analysis](https://arxiv.org/abs/2505.11401)：用 LLM agents 自动执行舆情分析，从自然语言查询出发完成检索、分析和结构化报告生成，不依赖本地部署或任务特定训练数据。
+- [LLM Cloud Self-Healing](https://arxiv.org/abs/2505.11743)：面向云运维的 fault detection 与 autonomous self-healing harness。核心思想：把日志和错误报告理解、异常检测与恢复触发结合起来，服务真实 operational workflow。
+- [ALAS: A Stateful Multi-LLM Agent Framework for Disruption-Aware Planning](https://arxiv.org/abs/2505.12501)：面向扰动感知规划的 stateful multi-LLM agent framework。核心思想是在多步现实任务中维护规划状态并从扰动中恢复。
+- [Simulation Agent: A Framework for Integrating Simulation and Large Language Models for Enhanced Decision-Making](https://arxiv.org/abs/2505.13761)：可作为真实工作 agent的 Agent Harness 候选：围绕 Simulation Agent: A Framework for Integrating Simulation and Large Language Models for Enhanced Decision-Making 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [MLZero: A Multi-Agent System for End-to-end Machine Learning Automation](https://arxiv.org/abs/2505.13941)：MLZero 是端到端机器学习自动化多代理系统，属于真实工作流自动化 harness。
+- [MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](https://arxiv.org/abs/2505.14996)：MAS-ZERO 研究零监督设计多代理系统，目标是自动生成 agent roles/workflows，符合 agent harness 方向。
+- [AutoData: A Multi-Agent System for Open Web Data Collection](https://arxiv.org/abs/2505.15859)：AutoData 将开放 Web 数据采集组织成多代理系统，属于数据工程/业务采集 workflow harness。
+- [X-MAS: Towards Building Multi-Agent Systems with Heterogeneous LLMs](https://arxiv.org/abs/2505.16997)：面向异构 LLM 驱动的多 agent 系统的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Agentic AI Process Observability: Discovering Behavioral Variability](https://arxiv.org/abs/2505.20127)：研究如何发现智能体流程中的行为差异，为部署型工作流智能体提供可观测性支持。
 - [Alita](https://arxiv.org/abs/2505.20286)（[开源代码](https://github.com/CharlesQ9/Alita)）：偏生产环境的通用 solver agent，强调跨工具编排与复杂工作流执行，可迁移到现实业务任务的多步骤执行场景。
+- [MermaidFlow: Redefining Agentic Workflow Generation via Safety-Constrained Evolutionary Programming](https://arxiv.org/abs/2505.22967)：MermaidFlow 通过安全约束进化式编程生成 agentic workflows，属于 workflow generation harness。
+- [Free Lunch for User Experience: Crowdsourcing Agents for Scalable User Studies](https://arxiv.org/abs/2505.22981)：提出真实工作方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Data-to-Dashboard: Multi-Agent LLM Framework for Insightful Visualization in Enterprise Analytics](https://arxiv.org/abs/2505.23695)：面向企业分析的数据到仪表盘多代理流程。核心思想是自动化领域识别、概念抽取、多视角分析和迭代反思。
+- [STRATUS: A Multi-agent System for Autonomous Reliability Engineering of Modern Clouds](https://arxiv.org/abs/2506.02009)：面向云系统可靠性工程的多 agent 自动化流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [AutoMind: Adaptive Knowledgeable Agent for Automated Data Science](https://arxiv.org/abs/2506.10974)：类型：agent harness/可复用执行框架。核心价值：为 2.7.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Modeling Earth-Scale Human-Like Societies with One Billion Agents](https://arxiv.org/abs/2506.12078)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Modeling Earth-Scale Human-Like Societies with One Billion Agents 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [SheetMind: An End-to-End LLM-Powered Multi-Agent Framework for Spreadsheet Automation](https://arxiv.org/abs/2506.12339)：面向电子表格自动化的端到端多代理框架。核心思想是把表格分析与编辑组织成协作式 agent 工作流，对齐真实办公交付而非孤立问答。
+- [Towards the Autonomous Optimization of Urban Logistics: Training Generative AI with Scientific Tools via Agentic Digital Twins and Model Context Protocol](https://arxiv.org/abs/2506.13068)：用 MCP 和 agentic digital twin 编排科学工具进行城市物流优化。
+- [Conditional Generative Modeling for Enhanced Credit Risk Management in Supply Chain Finance](https://arxiv.org/abs/2506.15305)：提出真实工作方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [SwarmAgentic: Towards Fully Automated Agentic System Generation via Swarm Intelligence](https://arxiv.org/abs/2506.15672)：SwarmAgentic 关注从零生成和自优化 agentic systems，是明确的 agent-system generation harness。
+- [A Parallelized Framework for Simulating Large-Scale LLM Agents with Realistic Environments and Interactions](https://doi.org/10.18653/v1/2025.acl-industry.94)：用于模拟大规模 LLM agents 的并行框架，包含较真实的环境与交互。核心思想是支持大量 agent 并发行动，用于可扩展行为实验。
+- [Personal Travel Solver: A Preference-Driven LLM-Solver System for Travel Planning](https://doi.org/10.18653/v1/2025.acl-long.1339)：结合 LLM 模块与数值求解器，在 RealTravel 数据上生成同时满足显式约束和隐式偏好的旅行计划。
+- [EvoAgentX: An Automated Framework for Evolving Agentic Workflows](https://arxiv.org/abs/2507.03616)：EvoAgentX 明确是自动演化 agentic workflow 的框架，贡献在多代理 workflow 配置、优化和集成。
+- [MOD-X: A Modular Open Decentralized eXchange Framework proposal for Heterogeneous Interoperable Artificial Intelligence Agents](https://arxiv.org/abs/2507.04376)：提出面向异构 AI 智能体互操作的模块化去中心化交换框架。
+- [Routine: A Structural Planning Framework for LLM Agent System in Enterprise](https://arxiv.org/abs/2507.14447)：面向企业 LLM agent system 的结构化规划框架。核心思想是编码流程知识、工具需求和参数传递，以稳定企业工作流执行。
+- [FlowForge: Guiding the Creation of Multi-Agent Workflows with Design Space Visualization as a Thinking Scaffold](https://arxiv.org/abs/2507.15559)：面向多 agent workflow 创建的设计支架。核心思想是用可视化设计空间帮助用户在构建 agent 系统时思考角色、依赖和编排。
+- [Compliance Brain Assistant: Conversational Agentic AI for Assisting Compliance Tasks in Enterprise Environments](https://arxiv.org/abs/2507.17289)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Conversational Agentic AI for Assisting Compliance Tasks in Enterprise Environments 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [StaffPro: an LLM Agent for Joint Staffing and Profiling](https://arxiv.org/abs/2507.21636)：面向真实工作自动化提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
 - [MaRGen](https://arxiv.org/abs/2508.01370)：用于自驱市场研究与分析的多 Agent harness。核心思路是协调 researcher、retriever、reviewer 和 writer Agent 查询数据、生成洞察与可视化、撰写市场报告，并通过自动评审迭代提升报告质量。
+- [PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows](https://arxiv.org/abs/2508.02866)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Galaxy: A Cognition-Centered Framework for Proactive, Privacy-Preserving, and Self-Evolving LLM Agents](https://arxiv.org/abs/2508.03991)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 A Cognition-Centered Framework for Proactive, Privacy-Preserving, and Self-Evolving LLM Agents 外化为可复用的编排、工具调用、记忆或协议逻辑。
 - [AgenticData](https://arxiv.org/abs/2508.05002)：面向结构化与非结构化异质数据的 agentic data analytics 系统。核心思想：把自然语言问题转成语义计划，再协调数据画像、交叉验证、语义优化和记忆 agent 执行并修正数据分析流程。
+- [Grid-Agent](https://arxiv.org/abs/2508.05702)：协调 LLM 驱动的多智能体进行电网控制，补充工业运营场景的 agent harness。
+- [SHIELDA: Structured Handling of Exceptions in LLM-Driven Agentic Workflows](https://arxiv.org/abs/2508.07935)：SHIELDA 面向 LLM-driven agentic workflows 的异常处理，属于可靠 workflow execution harness。
 - [HomerAgent](https://arxiv.org/abs/2508.09124)（[开源代码](https://github.com/microsoft/OdysseyBench)）：OdysseyBench 配套的办公生产力 agent/harness，用显式记忆组织长程工作流中的阶段结果，适合分析 office workflow 中的上下文遗忘和错误复用。
+- [Profile-Aware Maneuvering: A Dynamic Multi-Agent System for Robust GAIA Problem Solving by AWorld](https://arxiv.org/abs/2508.09889)：用画像感知多智能体系统提升 GAIA 问题求解鲁棒性。
+- [RAGulating Compliance: A Multi-Agent Knowledge Graph for Regulatory QA](https://arxiv.org/abs/2508.09893)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 A Multi-Agent Knowledge Graph for Regulatory QA 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [KompeteAI: Accelerated Autonomous Multi-Agent System for End-to-End Pipeline Generation for Machine Learning Problems](https://arxiv.org/abs/2508.10177)：类型：benchmark/评测协议。核心价值：为 2.7.3 Agent Harness 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [GALA: Can Graph-Augmented Large Language Model Agentic Workflows Elevate Root Cause Analysis?](https://arxiv.org/abs/2508.12472)：提供图增强的根因分析 agentic workflow。核心思想：用图结构组织证据、假设与流程步骤，支持运维诊断。
+- [COCO: Cognitive Operating System with Continuous Oversight for Multi-Agent Workflow Reliability](https://arxiv.org/abs/2508.13815)：COCO 为多 agent workflow 增加连续 oversight，适合 Real-World Work Agent Harness。
+- [Osprey: Production-ready agentic AI for safety-critical control systems](https://arxiv.org/abs/2508.15066)：描述面向安全关键控制系统的生产级 agentic AI harness，强调部署约束、运行时协同与控制系统集成。
+- [L-MARS: Legal Multi-Agent Workflow with Orchestrated Reasoning and Agentic Search](https://arxiv.org/abs/2509.00761)：结合 orchestrated reasoning 与 agentic search 的法律多 agent workflow；核心思想是把法律问答拆成检索、推理和验证角色，以生成有依据的专业答案。
+- [Abduct, Act, Predict: Scaffolding Causal Inference for Automated Failure Attribution in Multi-Agent Systems](https://arxiv.org/abs/2509.10401)：该框架为多代理系统失败归因提供 abduct-act-predict 脚手架，属于 agent diagnostics harness。
 - [AgentArch Reference Harness](https://arxiv.org/abs/2509.10769)（[开源代码](https://github.com/ServiceNow/AgentArch)）：用统一企业任务环境比较多种 agent 架构，适合把 planner-executor、多代理、memory、工具路由等 harness 设计变量拆开做消融。
+- [MALLM: Multi-Agent Large Language Models Framework](https://arxiv.org/abs/2509.11656)：MALLM 是多代理大语言模型 framework，适合多代理 orchestration/harness 路线。
+- [LLM Agents for Interactive Workflow Provenance](https://arxiv.org/abs/2509.13978)：面向大规模 workflow provenance 数据的 LLM agent 查询架构。核心思想：用轻量 metadata-driven design 将自然语言转成结构化 provenance query，并结合 prompt tuning 与 RAG 支撑化学等科学 workflow 的运行时数据分析。
+- [CrowdAgent: Multi-Agent Managed Multi-Source Annotation System](https://arxiv.org/abs/2509.14030)：面向真实工作与企业智能体的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
 - [ARE](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）：把真实任务环境做成会异步变化的运行时，支持通知、外部系统、状态演化和执行日志，适合评测 agent 在动态工作流中的持续计划更新。
+- [The AGNTCY Agent Directory Service: Architecture and Implementation](https://arxiv.org/abs/2509.18787)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Architecture and Implementation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Agentic Metacognition](https://arxiv.org/abs/2509.19783)：为低代码 agent 加入失败预测与人工交接，把元认知控制显式纳入现实工作流。
+- [LLM Agent Meets Agentic AI: Can LLM Agents Simulate Customers to Evaluate Agentic-AI-based Shopping Assistants?](https://arxiv.org/abs/2509.21501): 用 LLM agent 作为客户数字孪生，通过多轮交互轨迹和用户体验反馈评估购物助手。
+- [RobustFlow](https://arxiv.org/abs/2509.21834)：诊断并提升 agentic workflow generation 在语义等价指令变体下的鲁棒性。
+- [ATLAS: Constraints-Aware Multi-Agent Collaboration for Real-World Travel Planning](https://arxiv.org/abs/2509.25586)：面向真实旅行规划协调约束感知的多 agent 协作。
+- [ScheduleMe: Multi-Agent Calendar Assistant](https://arxiv.org/abs/2509.25693)：实现多智能体日历助手，覆盖现实办公中的日程协调工作流。
+- [AuditAgent: Expert-Guided Multi-Agent Reasoning for Cross-Document Fraudulent Evidence Discovery](https://arxiv.org/abs/2510.00156)：利用专家引导的多智能体推理进行跨文档欺诈证据发现，适合文档密集型专业工作流。
+- [JoyAgent-JDGenie](https://arxiv.org/abs/2510.00510)：面向 GAIA 的通用代理架构，结合多代理规划执行、critic 投票、分层记忆、搜索、代码执行和多模态工具。
+- [Multi-Agent Blackboard for Data Discovery](https://arxiv.org/abs/2510.01285)：面向大型异构数据湖的数据科学 agent harness。核心思想：让不同专长的子 agent 在共享 blackboard 上主动响应请求，避免中央控制器必须预知所有数据分区或检索器能力。
+- [Manager Agent / MA-Gym](https://arxiv.org/abs/2510.02557)：把自治工作流管理建模为人机团队编排问题，并提供用于任务图、分配、监控和治理的仿真框架。
+- [Identifying Financial Risk Information Using RAG with a Contrastive Insight](https://arxiv.org/abs/2510.03521)：提出真实工作方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Where Did It All Go Wrong? A Hierarchical Look into Multi-Agent Error Attribution](https://arxiv.org/abs/2510.04886)：该工作提供多代理错误归因的层级诊断视角，适合 multi-agent observability/debugging harness。
+- [Chrysalis](https://arxiv.org/abs/2510.05271)：提供用于比较 education settings 中 active teaching 与 passive learning AI-agent workflows 的系统。
+- [MADIAVE: Multi-Agent Debate for Implicit Attribute Value Extraction](https://arxiv.org/abs/2510.05611)：使用多智能体辩论进行隐式属性值抽取。
+- [Simulating Teams with LLM Agents: Interactive 2D Environments for Studying Human-AI Dynamics](https://arxiv.org/abs/2510.08242)：面向 LLM agent 团队的可定制 2D 模拟 harness；核心思想是让用户定义角色、空间环境和场景，以研究协作与团队涌现行为。
+- [StepFly](https://arxiv.org/abs/2510.10074)：自动化执行 incident diagnosis 中的 troubleshooting guide。核心思想：先用 TSG Mentor 改进 guide 质量，再离线抽取执行 DAG 和 Query Preparation Plugins，最后用带记忆的 DAG-guided scheduler-executor 并行运行可拆分的 SRE 排障步骤。
 - [BrowserAgent](https://arxiv.org/abs/2510.10666)（[开源代码](https://github.com/TIGER-AI-Lab/BrowserAgent)）：在真实浏览器动作空间中执行多步任务的 solver agent，适合 WorldTravel 这类现实约束驱动的网页任务。
 - [HAL Harness](https://openreview.net/pdf?id=vUaY1t64ZZ)（[开源代码](https://github.com/princeton-pli/hal-harness)）：标准化、成本可见的 agent evaluation harness，提供统一 CLI、并行运行、日志/成本追踪与 leaderboard 提交流程，适合把现实工作 agent 的可复现实验从“单论文脚本”推进到持续评测。
+- [SAGE: A Top-Down Bottom-Up Knowledge-Grounded User Simulator for Multi-turn AGent Evaluation](https://arxiv.org/abs/2510.11997)：面向多轮 agent evaluation 的知识接地用户模拟器。核心思想是结合自上而下的目标和自下而上的知识接地，使交互式 agent 面对更真实的用户行为。
+- [AsyncVoice Agent: Real-Time Explanation for LLM Planning and Reasoning](https://arxiv.org/abs/2510.16156)：支持实时解释与打断的语音对话 agent 架构；核心思想是把流式推理解释与任务规划解耦，让用户能在执行中交互。
+- [Lark: Biologically Inspired Neuroevolution for Multi-Stakeholder LLM Agents](https://arxiv.org/abs/2510.16978)：面向 multi-stakeholder LLM agents 的仿生 neuroevolution 框架；核心思想是通过 plasticity、duplication、maturation 与 stakeholder-aware selection 演化候选方案。
 - [Enterprise Deep Research](https://arxiv.org/abs/2510.17797)（[开源代码](https://github.com/SalesforceAIResearch/enterprise-deep-research)）：企业研究场景的多代理深研系统实现；核心思想：把企业私有知识、公开网页、消息和文件检索接到 planner/retriever/writer/checker 流程中，适合现实组织内的调研和汇报工作流。
+- [LLM-Based Multi-Agent System for Simulating and Analyzing Marketing and Consumer Behavior](https://arxiv.org/abs/2510.18155)：用交互式 LLM agents 模拟消费者决策和社会动态，并以价格折扣场景测试营销策略部署前的效果。
+- [SheetBrain: A Neuro-Symbolic Agent for Accurate Reasoning over Complex and Large Spreadsheets](https://arxiv.org/abs/2510.19247)：面向复杂大型电子表格推理的 neuro-symbolic agent。核心思想是结合符号结构和 LLM 推理，处理超出单元格文本提示的 spreadsheet 任务。
+- [Communication to Completion](https://arxiv.org/abs/2510.19995)：面向协作工作流的 cost-aware multi-agent communication 框架。核心思想是把通信视为带时间成本的受限资源，用 Alignment Factor 连接共享任务理解与工作效率，并在多 agent 软件工程工作流中研究协调策略。
+- [From Benchmarks to Business Impact: Deploying IBM Generalist Agent in Enterprise Production](https://arxiv.org/abs/2510.23856)：通用 agent 在企业生产环境中的部署经验。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [VDSAgents: A PCS‐Guided Multi‐Agent System for Veridical Data Science Automation](https://arxiv.org/abs/2510.24339)：补充real world work方向的agent harness，核心围绕《VDSAgents: A PCS‐Guided Multi‐Agent System for Veridical Data Science Automation》。
+- [Retrieval Augmented Generation (RAG) for Fintech: Agentic Design and Evaluation](https://arxiv.org/abs/2510.25518)：讨论金融科技工作流中 RAG 的智能体式设计与评估。
+- [SwarmAgentic](https://aclanthology.org/2025.emnlp-main.93/)：通过 swarm intelligence 自动生成 agentic system，把多智能体工作流从手写编排推进到自动生成。
+- [Test-Time Adaptation for LLM Agents](https://arxiv.org/abs/2511.04847)：研究代理在部署时通过环境交互适配未知网站和函数集合，结合格式对齐与动态规律 grounding。
+- [Dynamic plan generation with LLMs: automatic execution of abstract BDI-agent goals](https://doi.org/10.1080/17445760.2025.2541956)：把 LLM 计划生成与抽象 BDI 智能体目标的自动执行连接起来。
+- [LLM-Powered Multi-Agent Collaboration for Intelligent Industrial On-Call Automation](https://doi.org/10.1109/ase63991.2025.00184)：面向真实工作自动化提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [IEEE AI Standards for Agentic Systems](https://doi.org/10.1109/cai64502.2025.00269)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 IEEE AI Standards for Agentic Systems 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Human-in-the-Loop Runbook Improvement with Agentic Support Automation](https://doi.org/10.1109/cogmi67134.2025.00046)：将智能体式支持自动化用于人在环运行手册改进。
+- [Comm-CoT: Standardized Chain-of-Thought Communication Framework for Efficient LLM based Multi-Agent Decision-Making in Real-Time Strategy Games](https://doi.org/10.1109/ecis65594.2025.11087008)：标准化 LLM 多智能体在游戏决策中的思维链通信。
+- [Domain Agnostic Agentic AI: Enabling Autonomous Automation with SmartGenie CoPilot](https://doi.org/10.1109/etis64005.2025.10961403)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Enabling Autonomous Automation with SmartGenie CoPilot 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Design of Task Allocation and Decision-Making Styles for AI Agents Based on LLM](https://doi.org/10.1109/icccbda64898.2025.11030412)：研究 LLM 智能体的任务分配与决策风格，属于可复用的多智能体协调问题。
+- [Design and Implementation of Multi-Agent Systems: A Lang Graph-Based Approach](https://doi.org/10.1109/icoeit63558.2025.11211513)：记录基于 LangGraph 的多智能体系统实现模式。
+- [From Keywords to Context: An AI Agent for Natural Language Document Lookup in the Enterprise](https://doi.org/10.1109/rivf68649.2025.11365175)：面向真实工作自动化提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Agents4Gov: Privacy-Preserving Web Agents Using Open LLMs for Public Sector Tasks](https://doi.org/10.5753/eniac.2025.13911)：面向真实工作自动化提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Metadata-Driven Construction of Semantic Views in Enterprise Knowledge Graphs with LLM Agents](https://doi.org/10.5753/sbbd_estendido.2025.248167)：面向真实工作自动化提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Dataforge: Agentic Platform for Autonomous Data Engineering](https://arxiv.org/abs/2511.06185)：面向表格数据工程的 autonomous agentic platform；核心思想是通过带预算的反馈循环和自动停止机制，自动完成数据清洗与特征操作，服务真实 AI-ready data preparation 工作。
 - [DataSage](https://arxiv.org/abs/2511.14299)：面向数据分析的多智能体洞察发现框架。核心思路是结合外部知识检索、角色化辩论和多路径推理，使业务分析智能体能够验证并修正发现的洞察。
+- [Secure Autonomous Agent Payments: Verifying Authenticity and Intent in a Trustless Environment](https://arxiv.org/abs/2511.15712)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Verifying Authenticity and Intent in a Trustless Environment 外化为可复用的编排、工具调用、记忆或协议逻辑。
 - [Agent Discovery in Internet of Agents](https://arxiv.org/abs/2511.19113)：定义 Agent 如何发布、搜索、匹配和验证能力，以支撑动态任务下的大规模协作。
+- [Towards Trustworthy Legal AI through LLM Agents and Formal Reasoning](https://arxiv.org/abs/2511.21033)：将角色分化的法律 LLM 智能体与 SMT 法规验证结合，使法律推理能按形式化规则被检查。
 - [AgentNet++](https://arxiv.org/abs/2512.00614)：在去中心化 LLM Agent 网络中加入层级协作、隐私保护知识共享和资源分配机制。
 - [Multi-Objective Agentic Rewrites](https://arxiv.org/abs/2512.02289)：面向 DocETL 式非结构化数据流水线的 agentic 重写框架。核心思想：同时优化语义算子的准确率、成本和延迟，而不是把 LLM 数据处理视为固定提示词流水线。
 - [Trust-Aware Decentralized Multi-Agent System](https://arxiv.org/abs/2512.02410)：在 AgentNet 式动态智能体图基础上加入可信通信、隐私保护知识共享和资源感知协同，以支持更大规模的智能体社会。
+- [HiveMind: Contribution-Guided Online Prompt Optimization of LLM Multi-Agent Systems](https://arxiv.org/abs/2512.06432)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Contribution-Guided Online Prompt Optimization of LLM Multi-Agent Systems 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Insured Agents: A Decentralized Trust Insurance Mechanism for Agentic Economy](https://arxiv.org/abs/2512.08737)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 A Decentralized Trust Insurance Mechanism for Agentic Economy 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [ARTEMIS](https://arxiv.org/abs/2512.09108)：一个面向 LLM agent 的 no-code 演化优化平台，从日志和 benchmark 脚本中发现可配置的 prompt、tool 描述和参数，并在 coding、CrewAI 和教学 agent 等场景中联合优化。
+- [DataFlow: An LLM-Driven Framework for Unified Data Preparation and Workflow Automation in the Era of Data-Centric AI](https://arxiv.org/abs/2512.16676)：可组合的 LLM 驱动数据准备框架。核心思想是提供可复用算子与可调试 pipeline 抽象，支撑数据中心 AI。
+- [AnalogSAGE: Self-evolving Analog Design Multi-Agents with Stratified Memory and Grounded Experience](https://arxiv.org/abs/2512.22435)：用 stratified memory 与 simulator-grounded feedback 协调 analog-circuit design agents，补充面向 specification-driven electronic design automation 的真实工作流 harness。
+- [ChatGraPhT: A Visual Conversation Interface for Multi-Path Reflection with Agentic LLM Support](https://arxiv.org/abs/2512.22790)：面向真实工作自动化提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [RoboPhD](https://arxiv.org/abs/2601.01126)：自改进 Text-to-SQL agent 工作流，通过自主查询执行和反馈演化。
+- [Jenius Agent: Towards Experience-Driven Accuracy Optimization in Real-World Scenarios](https://arxiv.org/abs/2601.01857)：面向真实工作流智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Jenius Agent: Towards Experience-Driven Accuracy Optimization in Real-World Scenarios”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [PosterVerse](https://arxiv.org/abs/2601.03993)：带 HTML scalable typography 的全流程海报生成框架，适合作为真实工作中视觉内容生产 agent 的 harness 线索。
+- [TourPlanner: A Competitive Consensus Framework with Constraint-Gated Reinforcement Learning for Travel Planning](https://arxiv.org/abs/2601.04698)：TourPlanner 补充真实世界规划智能体框架，面向操作性任务完成。
 - [EvoEnv](https://arxiv.org/abs/2601.08173)（[开源代码](https://github.com/KnowledgeXLab/EvoEnv)）：TraineeBench 背后的统一 environment / harness 框架，提供 workspace manager、virtual clock、tool gateway、trajectory/evaluation pipeline 和可视化 trace viewer，适合研究动态任务调度与持续学习型 workplace agent。
+- [Rows to Reasoning](https://arxiv.org/abs/2601.08741)：面向 spreadsheet 理解的检索增强多模态框架，适合表格密集的办公工作。
+- [POLARIS](https://arxiv.org/abs/2601.11816)：面向 back-office automation 的 typed planning 与 governed execution 框架。
+- [TimeART: Towards Agentic Time Series Reasoning via Tool-Augmentation](https://arxiv.org/abs/2601.13653)：面向时间序列推理的 tool-augmented agentic framework；核心思想是结合专业分析工具和 LLM 推理，并从 TimeToolBench 轨迹中学习。
+- [The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption](https://arxiv.org/abs/2601.13671)：多代理编排的综述与架构框架。核心思想是整理规划、策略执行、状态管理和企业采用模式。
 - [UXCascade](https://arxiv.org/abs/2601.15777)：使用带 persona 条件的模拟用户 Agent、操作日志和思维出声轨迹，聚合可规模化的设计反馈。
+- [ReFuGe](https://arxiv.org/abs/2601.17735)：用 LLM agents 为关系数据库预测任务生成特征，适合作为数据工作 agent 将复杂企业表转成建模工件的 harness。
 - [MultiVis-Agent](https://arxiv.org/abs/2601.18320)：面向跨模态数据可视化的多智能体框架，通过逻辑规则协调可靠且完整的可视化工作流。
+- [Agentic Fog: A Policy-driven Framework for Distributed Intelligence in Fog Computing](https://arxiv.org/abs/2601.20764)：提出雾计算中分布式智能的策略驱动框架。
+- [TessPay: Verify-then-Pay Infrastructure for Trusted Agentic Commerce](https://arxiv.org/abs/2602.00213)：面向真实工作与企业智能体的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [SEAD: Self-Evolving Agent for Multi-Turn Service Dialogue](https://arxiv.org/abs/2602.03548)：构建面向多轮服务对话的自进化 agent，将客服交互与 agent 迭代改进连接起来。
+- [DiLLS](https://arxiv.org/abs/2602.05446)：通过分层行为摘要诊断多 agent 系统的 observability harness。
+- [ST-Raptor: An Agentic System for Semi-Structured Table QA](https://arxiv.org/abs/2602.07034)：面向半结构化表格问答的 agentic system，用分阶段表格推理替代一次性答案生成。
+- [DeepPrep](https://arxiv.org/abs/2602.07371)：面向自主数据准备的 LLM-powered agentic system，覆盖清洗、转换与流水线决策。
+- [Tribal-Knowledge Data Agents](https://arxiv.org/abs/2602.13521)：把组织内隐性经验接入 data agents，使企业分析工作流能利用 tacit operational context。
 - [A2H](https://arxiv.org/abs/2602.15831)：标准化 Agent 如何发现、寻址、通知并纳入人类参与者，而不是把人只当作系统外观察者。
-- [Reliable Database Question Answering with Collaborative Agents](https://doi.org/10.1109/icassp55912.2026.11463606)：面向数据库问答的协作式智能体方案，可作为数据工作流中多角色协同规划查询与校验答案的参考框架。
+- [APEX-SQL: Talking to the data via Agentic Exploration for Text-to-SQL](https://arxiv.org/abs/2602.16720)：面向企业 text-to-SQL 的 agentic exploration 框架；核心思想是在生成查询前主动检查数据库以消解 schema 歧义。
+- [An intelligent low-code platform for building task-oriented LLM-based chatbots](https://doi.org/10.1016/j.cola.2026.101401)：提供用于构建任务型 LLM 聊天机器人的低代码平台。
+- [Detecting and Repairing Role Drift in Multi-Agent Collaboration with Lightweight Protocols](https://doi.org/10.1109/cnml68938.2026.11453032)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Detecting and Repairing Role Drift in Multi-Agent Collaboration with Lightweight Protocols 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Semantic-Driven Adaptive Multi-Agent Collaboration via LLMs in Dynamic Environments](https://doi.org/10.1109/gaiis69281.2026.11519182)：在动态环境中进行语义驱动的 LLM 多智能体协作。
+- [Code-Collaborative Intelligent Query Generation Technology for Complex Relational Data](https://doi.org/10.1109/gaiis69281.2026.11519204)：为复杂关系数据加入代码协作式智能查询生成。
+- [PRISM: Pipeline for Root-cause Investigation via Specialized Multi-agents](https://doi.org/10.1109/gaiis69281.2026.11519347)：使用专门化多智能体进行根因调查。
+- [Towards Explainable Agentic Intelligence: A LangGraph-MCP Hybrid Framework for Scalable, Fair, and Self-Improving Multi-Agent Systems](https://doi.org/10.1109/ic3et64989.2026.11467510)：将 LangGraph 与 MCP 结合为可扩展多智能体框架。
+- [Investigating Knowledge Graphs for Context-Aware Search in Financial Transactional AI Agents](https://doi.org/10.1109/icecco67619.2026.11488774)：在金融交易智能体中使用知识图谱进行上下文感知搜索。
+- [Domain Flexible Autonomous Data Analysis Agent Leveraging Large Language Models](https://doi.org/10.1109/icmlas67792.2026.11483967)：可作为真实工作 agent的 Agent Harness 候选：围绕 Domain Flexible Autonomous Data Analysis Agent Leveraging Large Language Models 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Agentic Data Pipeline Orchestration with Multi-Agent AI](https://doi.org/10.1109/southeastcon63549.2026.11476299)：用多智能体 AI 编排智能体式数据流水线。
+- [AdaptOrch](https://arxiv.org/abs/2602.16873)：根据任务和模型格局自适应多 agent 编排，而不是固定角色图。
+- [OpenEarthAgent: A Unified Framework for Tool-Augmented Geospatial Agents](https://arxiv.org/abs/2602.17665)：提供统一的工具增强 geospatial agents 框架。
+- [Architecting AgentOS: From Token-Level Context to Emergent System-Level Intelligence](https://arxiv.org/abs/2602.20934)：可作为真实工作 agent的 Agent Harness 候选：围绕 Architecting AgentOS: From Token-Level Context to Emergent System-Level Intelligence 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [AID-Agent: An LLM-Agent for Advanced Extraction and Integration of Documents](https://doi.org/10.18653/v1/2025.realm-1.6)：结合 OCR、LLM 与可定制工具处理复杂文档抽取和集成，可作为真实工作场景中的文档处理智能体框架。
 - [SimAB](https://arxiv.org/abs/2603.01024)：把设计截图和转化目标转化为带 persona 条件的模拟用户会话，用于快速 A/B 式设计评估。
+- [Agentic AI with Chatops for Large Scale Network Operations](https://doi.org/10.1109/cai64502.2025.00242)：构建面向真实世界工作任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Exploring LLM-based agents for need analysis of knowledge management practice](https://doi.org/10.1017/pds.2025.10181)：构建面向真实世界工作任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Manager-Executor](https://doi.org/10.1109/CAIT68620.2025.11424841)：一种分层多 LLM 协作模型，将全局规划和子任务分解交给 Manager，将执行交给 Executor，并用 MCP 式通信协议协调 agent 间交互。
+- [REGAL: A Registry-Driven Architecture for Deterministic Grounding of Agentic AI in Enterprise Telemetry](https://arxiv.org/abs/2603.03018)：补充面向真实工作自动化与流程感知智能体部署的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [HiMAP-Travel](https://arxiv.org/abs/2603.04750)：用分层多 agent 规划处理长程约束旅行任务，可作为约束密集现实工作的可复用模式。
+- [Deep Tabular Research via Continual Experience-Driven Execution](https://arxiv.org/abs/2603.09151)：面向真实工作流智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Deep Tabular Research via Continual Experience-Driven Execution”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [DataFactory: Collaborative multi-agent framework for advanced table question answering](https://arxiv.org/abs/2603.09152)：面向高级表格问答的协作式多智能体框架，协调表格理解、推理与答案验证。
+- [Context Engineering: From Prompts to Corporate Multi-Agent Architecture](https://arxiv.org/abs/2603.09619)：把上下文工程连接到企业多智能体架构，将提示、上下文与角色编排纳入企业 agent 设计。
+- [DUCTILE: Agentic LLM Orchestration of Engineering Analysis in Product Development Practice](https://arxiv.org/abs/2603.10249)：补充面向真实工作自动化与流程感知智能体部署的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [A modular large language model agent architecture for adaptive and autonomous process-aware execution](https://doi.org/10.1016/j.is.2026.102748)：补充面向真实工作自动化与流程感知智能体部署的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Verified Multi-Agent Orchestration](https://arxiv.org/abs/2603.11445)：面向复杂查询解析的 plan-execute-verify-replan 框架，显式加入验证步骤。
+- [DAG-Orchestrated Planner](https://arxiv.org/abs/2603.14229)：用 DAG 编排处理 hybrid data lake 上的多模态、多跳问答。
+- [PMAx](https://arxiv.org/abs/2603.15351)：面向 process mining 的 virtual process-analyst harness。核心思想：基于 event-log metadata 生成本地分析脚本，私有计算精确指标，再由 analyst agent 根据 artifact 汇总报告。
+- [LLM Collaborative Industrial Troubleshooting](https://doi.org/10.1016/j.aei.2025.103235)：把大语言模型用于复杂工业设备故障的人机协同排障。
+- [LLM-Enabled Machining Process KG](https://doi.org/10.1016/j.aei.2025.103244)：用大语言模型构建加工工艺知识图谱，支撑智能工艺规划。
+- [Multi-Agent Debate for Construction Decisions](https://doi.org/10.70401/jbde.2025.0018)：把跨阶段 multi-agent debate workflow 用于建设项目决策。
+- [Agent Lifecycle Toolkit](https://arxiv.org/abs/2603.15473)：面向 robust agents 的中间件工具包，覆盖 agent lifecycle 中可复用的控制组件。
+- [Drift-Aware Agentic ETL](https://doi.org/10.1109/GAIIS69281.2026.11519158)：把 LLM 驱动的修复与验证 agent 用于 schema 演化的数据湖 ETL，补充真实工作中数据流水线需要适应漂移而非固定提示执行的 harness 线索。
+- [Autonoma: A Hierarchical Multi-Agent Framework for End-to-End Workflow Automation](https://arxiv.org/abs/2603.19270)：提供端到端工作流自动化的层级多智能体框架。
 - [kRAIG](https://arxiv.org/abs/2603.20311)：自然语言驱动的 DataOps 流水线生成智能体，面向将需求转化为可执行数据操作的真实工作场景。
 - [DAB DataAgent](https://arxiv.org/abs/2603.20576)（[开源代码](https://github.com/ucbepic/DataAgentBench)）：Data Agent Benchmark 自带的数据代理执行框架，围绕多数据库连接、Python 执行、查询日志、工具调用轨迹和 Pass@1 聚合评估组织，适合企业数据问答/分析类任务的 harness 参考。
 - [EnterpriseLab](https://arxiv.org/abs/2603.21630)（开源代码：未找到稳定公开仓库）：面向企业 agent 的全栈开发与部署平台；把 MCP 化企业应用环境、自动轨迹合成、训练流水线和持续评估接在一起，并以含 15 个应用、140+ 工具的 EnterpriseArena 实例验证，属于“企业私有化 agent harness + 数据生成 + 训练评测闭环”路线。
+- [TrustTrade: Human-Inspired Selective Consensus Reduces Decision Uncertainty in LLM Trading Agents](https://arxiv.org/abs/2603.22567)：通过选择性共识降低 LLM 交易智能体的不确定性。
+- [Why Database Manuals are Not Enough: Efficient and Reliable Configuration Tuning for DBMSs via Code-Driven LLM Agents](https://arxiv.org/abs/2603.22708)：面向真实工作与企业智能体的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [CarePilot: A Multi-Agent Framework for Long-Horizon Computer Task Automation in Healthcare](https://arxiv.org/abs/2603.24157)：类型：agent harness/可复用执行框架。核心价值：为 2.7.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [CADSmith](https://arxiv.org/abs/2603.26512)：带执行修复和程序化几何验证的多 agent CAD 生成工作流。
+- [EBuddy: a workflow orchestrator for industrial human-machine collaboration](https://arxiv.org/abs/2603.28579)：补充面向真实工作自动化与流程感知智能体部署的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
 - [DeepEye](https://arxiv.org/abs/2603.28889)：可操控的 self-driving data-agent system。核心思想：暴露可控制的数据分析工作流，使用户能够引导自主探索、可视化和洞察生成，而不是接受黑箱式分析运行。
+- [Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures](https://arxiv.org/abs/2603.28990)：比较自组织 LLM 智能体与预设层级结构，可补充多智能体工作流设计。
+- [GardenDesigner](https://arxiv.org/abs/2604.01777)：用 chain-of-agents workflow 将审美原则转为江南园林设计 artifact，把 real-work design automation 扩展到办公任务之外。
+- [The Self Driving Portfolio: Agentic Architecture for Institutional Asset Management](https://arxiv.org/abs/2604.02279)：提出面向机构资产管理的智能体架构。
+- [Combee](https://arxiv.org/abs/2604.04247)：面向 self-improving agents 的 scalable prompt-learning harness；核心思想是通过 scan-style aggregation、augmented shuffling 和 dynamic batch control 从大量并行 agent traces 中学习，在 AppWorld、Terminal-Bench 等任务上改进 trace-to-prompt learning。
 - [Claw-Eval Harness](https://arxiv.org/abs/2604.06132)（[开源代码](https://github.com/claw-eval/claw-eval)）：围绕 OpenClaw 风格 agent 运行多类真实任务，强调三路证据记录、细粒度 rubric、Pass^k 稳定性和安全/鲁棒性检查，适合做可部署 agent 的回归评测框架。
 - [AV-SQL](https://arxiv.org/abs/2604.07041)：通过 agentic views 分解复杂 Text-to-SQL 查询，将中间查询视图纳入智能体工作流，而不是依赖一次性 SQL 生成。
 - [ClawBench Browser Harness](https://arxiv.org/abs/2604.08523)（[开源代码](https://github.com/reacher-z/ClawBench)）：围绕真实浏览器会话构建任务录制、HTTP 拦截、轨迹回放和 payload 判定流水线，适合评测会改写远端状态的浏览器 agent，同时尽量避免真的提交破坏性操作。
+- [Multi-User Large Language Model Agents](https://arxiv.org/abs/2604.08567)：提供可复用 agent 工作流或执行 harness，服务于real-world work agents。
 - [Agentic Jackal](https://arxiv.org/abs/2604.09470)：面向 Text-to-JQL 的实时执行与语义值 grounding 框架，适合跟踪需要根据工具侧取值校验查询的数据与工作流智能体。
 - [OccuBench LWM Harness](https://arxiv.org/abs/2604.10866)（[开源代码](https://github.com/GregxmHu/OccuBench)）：把职业场景中的工具响应外包给 Language World Model，并提供 reference agent loop、fault injection、3-vote rubric verifier 与 OpenAI-compatible API 接口；其价值在于让缺少真实后端系统的职业任务也能被 agent 交互式评测。
+- [Problem Reductions at Scale: Agentic Integration of Computationally Hard Problems](https://arxiv.org/abs/2604.11535)：面向计算困难问题的 agentic integration 框架；核心思想是把开放用户问题路由成求解器可处理的归约形式，并验证输出。
+- [REGREACT: Self-Correcting Multi-Agent Pipelines for Structured Regulatory Information Extraction](https://arxiv.org/abs/2604.12054)：用于监管信息抽取的自纠错多智能体流水线。核心思路是把合规准则抽取拆成专门阶段，修复层级、依赖与幻觉错误。
+- [Aethon: A Reference-Based Replication Primitive for Constant-Time Instantiation of Stateful AI Agents](https://arxiv.org/abs/2604.12129)：为有状态 AI 智能体定义基于引用的复制原语。
+- [Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Reasoning](https://arxiv.org/abs/2604.12282)：用多智能体、多格式推理提升真实电子表格理解。
+- [Agent-Aided Design for Dynamic CAD Models](https://arxiv.org/abs/2604.15184)：研究动态 CAD 模型设计中的反馈循环 agent；核心思想是通过生成、可视化和迭代反馈改进 CAD 组件。
+- [VoxMind: An End-to-End Agentic Spoken Dialogue System](https://arxiv.org/abs/2604.15710)：端到端 agentic spoken-dialogue 系统；核心思想是在语音交互中加入工具使用和任务执行，而不只做感知与生成。
+- [Exploring Agentic Visual Analytics: A Co-Evolutionary Framework of Roles and Workflows](https://arxiv.org/abs/2604.15813)：可作为真实工作 agent的 Agent Harness 候选：围绕 Exploring Agentic Visual Analytics: A Co-Evolutionary Framework of Roles and Workflows 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [TriEx: A Game-based Tri-View Framework for Explaining Internal Reasoning in Multi-Agent LLMs](https://arxiv.org/abs/2604.20043)：用游戏化三视角框架解释多智能体 LLM 的内部推理。
+- [Auditing and Controlling AI Agent Actions in Spreadsheets](https://arxiv.org/abs/2604.20070)：面向审计和控制电子表格工作流中的多步 AI agent 动作的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
 - [PExA](https://arxiv.org/abs/2604.22934)：面向复杂 Text-to-SQL 的并行探索智能体，通过并行搜索多个查询假设来提升数据问答工作流的稳健性。
+- [DataClaw: An Autonomous Data Agent with Instant Messaging Integration](https://arxiv.org/abs/2604.24067)：构建集成即时通讯的自主数据智能体。
+- [OxyGent](https://arxiv.org/abs/2604.25602)（[代码](https://github.com/jd-opensource/OxyGent)）：围绕统一 Oxy abstraction 构建的开源 multi-agent framework，将 agents、tools、LLMs 与 reasoning flows 作为可组合组件，并提供运行时可观测性、动态规划图和 OxyBank 驱动的系统演化。
 - [Agentic Harness Engineering](https://arxiv.org/abs/2604.25850)：把 harness 变成可观测、可迭代的对象；核心思想：用组件可见性、经验可见性和决策可见性，把 coding-agent harness 的自动演化变成可验证闭环。
+- [Bian Que](https://arxiv.org/abs/2604.26805)：面向在线系统运维的 agentic framework，用灵活 skill arrangement 支撑操作型工作流。
 - [Claw-Eval-Live Harness](https://arxiv.org/abs/2604.28139)（[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：把 marketplace signal 到任务快照、mock service、workspace fixture、grader 与 leaderboard 聚合打通，适合构建会周期性刷新且能保留可复现快照的 workflow benchmark。
+- [SiriusHelper: An LLM Agent-Based Operations Assistant for Big Data Platforms](https://arxiv.org/abs/2605.00043)：构建面向大数据平台运维的 LLM 智能体助手。
 - [DataEvolver](https://arxiv.org/abs/2605.01789)：面向自主数据构建与改进的目标驱动循环智能体框架；核心思路是把数据集构建组织成包含目标、反馈和修订的迭代工作流，而不是一次性生成步骤。
+- [Synthetic Users, Real Differences: an Evaluation Framework for User Simulation in Multi-Turn Conversations](https://arxiv.org/abs/2605.02624)：提供可复用 agent 工作流或执行 harness，服务于real-world work agents。
+- [Decision-aware User Simulation Agent for Evaluating Conversational Recommender Systems](https://arxiv.org/abs/2605.05250)：提供可复用 agent 工作流或执行 harness，服务于real-world work agents。
+- [AlphaCrafter: A Full-Stack Multi-Agent Framework for Cross-Sectional Quantitative Trading](https://arxiv.org/abs/2605.05580)：构建面向量化交易的全栈多智能体框架。
+- [LATTE](https://arxiv.org/abs/2605.06320)：面向 language-agent teams 的 adaptive task-graph harness。核心思想：让 agents 共同维护包含 subtask dependencies、assignments 与 progress 的共享 coordination graph，以减少冗余沟通、文件冲突和 token 浪费。
+- [SHARP: A Self-Evolving Human-Auditable Rubric Policy for Financial Trading Agents](https://arxiv.org/abs/2605.06822)：提供可复用 agent 工作流或执行 harness，服务于real-world work agents。
+- [Towards Autonomous Business Intelligence via Data-to-Insight Discovery Agent](https://arxiv.org/abs/2605.07202)：面向自治商业智能的 data-to-insight discovery agent；核心思想是通过代理式分析循环把原始数据转成可解释业务洞察。
+- [AgentRunner](https://arxiv.org/abs/2605.10223)：面向可治理、可韧性执行的企业 AI agent 分层运行框架。
 - [WildClawBench Native Runtime Harness](https://arxiv.org/abs/2605.10912)（[开源代码](https://github.com/internlm/WildClawBench)）：用 Docker 和真实 CLI agent harness 承载长程任务，强调 agent 系统、工具运行时与模型三者共同评测，是对只测裸模型或轻量 wrapper 的现实化补充。
+- [PresentAgent-2: Towards Generalist Multimodal Presentation Agents](https://arxiv.org/abs/2605.11363)：Agent Harness 条目；核心思想：面向通用多模态 presentation agents；核心思想是从开放查询出发规划、收集证据、生成媒体并产出演示视频。
+- [QwenPaw](https://github.com/agentscope-ai/QwenPaw)（[文档](https://qwenpaw.agentscope.io/)）：PawBench 默认使用的个人助理运行时。核心思想：把本地或云端部署、多渠道连接、定时任务、记忆与个性化、skill 自动加载、多 agent 协作和安全控制组合起来，使真实工作技能以常驻 assistant 方式运行，而不是只作为一次性 benchmark wrapper。
+- [OpenClaw](https://github.com/openclaw/openclaw)（[文档](https://docs.openclaw.ai)）：面向真实消息与桌面工作流的 local-first 个人助理运行时。核心思想：用 gateway control plane、多渠道 inbox、路由会话、托管 skills、cron jobs、canvas/browser 工具和 sandbox policy，把有权限的现实工作 agent 接入多设备使用，同时显式暴露部署和外部访问控制。
+- [Hermes Agent](https://github.com/NousResearch/hermes-agent)（[文档](https://hermes-agent.nousresearch.com/docs/)）：带真实终端界面的自改进 agent runtime。核心思想：通过 agent-curated memory、自主创建并改进 skills、全文会话搜索、subagent spawning、cron automations、messaging gateways，以及 local、Docker、SSH、Singularity、Modal 或 Daytona 等执行后端，形成闭环学习与长期运行能力。
+- [Reliable Database Question Answering with Collaborative Agents](https://doi.org/10.1109/icassp55912.2026.11463606)：面向数据库问答的协作式智能体方案，可作为数据工作流中多角色协同规划查询与校验答案的参考框架。
+- [AutoMind](https://doi.org/10.1109/ACCESS.2026.3661202)：用多 agent navigation 做自动洞察发现，适合探索式分析工作流。
+- [No Action Without a NOD](https://arxiv.org/abs/2605.12240)：面向服务 agent 的异构多 agent 架构，在行动前加入显式确认或协商门控。
+- [EnCompass](https://openreview.net/forum?id=IKVkpjSJzJ)：通过搜索程序执行路径增强 agent programming，把 execution-path exploration 做成真实工作 agent 程序可复用的 harness 技术。
+- [Can Agent Fix Agent Issues?](https://openreview.net/forum?id=N9HLe9iPhj)：研究 agent 修复 agent-system issue，直接面向已部署或复杂 agentic system 的维护工作流。
+- [Automated Composition of Agents](https://openreview.net/forum?id=1LPPMAUlaT)：把 agentic component selection 建模为 knapsack-style 组合问题，为有约束的 agent 组装提供原则化 harness。
 - [LLM-Based Multi-agent Systems](https://doi.org/10.1007/978-3-032-15632-7_9)：综述 LLM 多智能体系统的框架、评测方式、开放挑战与研究前沿，可作为区分多智能体编排模式与单模型能力的相关工作入口。
 - [Internet of Agentic AI](https://doi.org/10.1109/mcom.001.2500309)：把大规模 Agent 互操作、通信、发现和治理视为基础设施问题。
+- [i-Check](https://doi.org/10.5220/0014279800004052)：以幂等性作为优化原则，提升企业 agent 工作流的安全性和可重复执行性。
+- [CharacterMeet: Supporting Creative Writers' Entire Story Character Construction Processes Through Conversation with LLM-Powered Chatbot Avatars](https://doi.org/10.1145/3613904.3642105)：[CharacterMeet: Supporting Creative Writers' Entire Story Character Construction Processes Through Conversation with LLM-Powered Chatbot Avatars](https://doi.org/10.1145/3613904.3642105): 用对话式 LLM 头像支持故事角色构建流程.
+- [Intent Fuel Station: A RAG-Enhanced Agent Hub for Realizing Networking Intents](https://doi.org/10.1145/3748273.3749201)：补充真实世界工作的 Agent Harness 条目，重点是《Intent Fuel Station: A RAG-Enhanced Agent Hub for Realizing Networking Intents》。
+- [FOCUS: an AI-assisted reading workflow for information overload](https://doi.org/10.1038/s41587-025-02947-8)：构建面向真实世界工作任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Persistent Assistant: Seamless Everyday AI Interactions via Intent Grounding and Multimodal Feedback](https://doi.org/10.1145/3706598.3714317)：通过意图落地与多模态反馈支撑日常持续助手。
+- [A Hierarchical Retrieval-Augmented Multi-Agent System for Robust Financial Analysis and Decision Support](https://doi.org/10.1145/3800000.3800146)：补充面向金融分析的层次化检索增强多智能体流程。
+- [Leveraging multi-agent framework for root cause analysis](https://doi.org/10.1007/s40747-025-02096-0)：使用多智能体框架进行根因分析。
+- [XPF: Agentic AI System for Business Workflow Automation](https://doi.org/10.1145/3731545.3743644)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 Agentic AI System for Business Workflow Automation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [HEAR: A Holistic Extraction and Agentic Reasoning Framework for Document Understanding](https://doi.org/10.1145/3746027.3761999)：结合整体抽取与智能体推理进行文档理解。
+- [AIMS: Cost-Efficient LLM-Based Agent Deployment in Hybrid Cloud-Edge Environments](https://doi.org/10.1145/3767295.3803622)：优化混合云边环境中 LLM 智能体的低成本部署。
+- [Towards a foundational platform for generative agents in simulated city environment](https://doi.org/10.1371/journal.pcsy.0000093)：为模拟城市环境中的生成式智能体提供基础平台。
+- [An Adaptive Multi-Agent Framework for Semantic-Aware Process Mining](https://doi.org/10.3390/computers14110481)：构建面向语义感知流程挖掘的自适应多智能体框架。
+- [Graph-Aware Scheduling for Multi-Agent Workflows in Edge-Cloud Environments](https://doi.org/10.3390/fi18050265)：提出图感知的边缘云多智能体工作流调度。
+- [MOTIF: A Framework for Enhancing the Profiling Module of Generative Agents that Simulate Human Behavior](https://doi.org/10.5220/0013181800003890)：面向真实工作场景与多智能体系统的智能体框架或运行时。核心思想：把 A Framework for Enhancing the Profiling Module of Generative Agents that Simulate Human Behavior 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Intent-Driven Agentic Systems: Engineering AI That Understands, Plans and Executes Human Goals End-to-End](https://doi.org/10.62970/ijirct.v12.i1.2603028)：提出理解、规划并执行人类目标的意图驱动智能体系统。

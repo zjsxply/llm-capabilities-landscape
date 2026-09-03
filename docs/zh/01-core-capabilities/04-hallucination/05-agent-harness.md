@@ -4,10 +4,153 @@
 - [SelfCheckGPT](https://arxiv.org/abs/2303.08896)（[开源代码](https://github.com/potsawee/selfcheckgpt)）：通过自一致性与变体采样检测可疑声明；核心思想是把“不一致”作为 hallucination 风险信号。
 - [FacTool](https://arxiv.org/abs/2307.13528)（[开源代码](https://github.com/GAIR-NLP/factool)）：工具增强事实性检测框架；核心思想是把 QA、代码、数学和科学文献综述等任务中的生成内容拆解为可查证单元，再调用外部工具与证据判断 factual errors。
 - [Chain-of-Verification](https://arxiv.org/abs/2309.11495)：把复杂回答拆成待核验子声明并逐条验证；核心思想是把核验控制流显式化，降低“整体看起来合理但细节胡说”。
+- [DRAGIN: Dynamic Retrieval Augmented Generation based on the Real-time Information Needs of Large Language Models](https://arxiv.org/abs/2403.10081)：动态 RAG 控制器，在生成过程中依据模型跨完整上下文的实时信息需求，决定何时检索以及如何构造检索查询。
 - [SAFE](https://arxiv.org/abs/2403.18802)（[开源代码](https://github.com/google-deepmind/long-form-factuality)）：搜索增强事实性评测 harness；核心思想是把长回答拆成 atomic claims，再用检索证据逐条判断是否被支撑。
+- [Visual Fact Checker: Enabling High-Fidelity Detailed Caption Generation](https://arxiv.org/abs/2404.19752)：免训练 captioning 流水线，先生成多个候选 caption，再让 LLM 调用目标检测与 VQA 工具核查，最后合成更少视觉幻觉的细粒度描述。
+- [Argumentative Large Language Models for Explainable and Contestable Claim Verification](https://arxiv.org/abs/2405.02079)：把 LLM claim verification 接入论证框架与形式推理，使验证结论可解释、可质疑并可被纠正，而不是只输出不透明标签。
+- [FlashRAG: A Modular Toolkit for Efficient Retrieval-Augmented Generation Research](https://arxiv.org/abs/2405.13576)：轻量模块化 RAG 研究工具包，用于复现和比较 retriever、generator 与 evaluation 组件，避免绑定到重型应用框架。
 - [RefChecker](https://arxiv.org/abs/2405.14486)（[开源代码](https://github.com/amazon-science/RefChecker)）：reference-based 细粒度幻觉检查器；核心思想是把回答拆成可核验片段并与参考证据对齐，输出 span/claim 级 hallucination 判断。
+- [GNN-RAG: Graph Neural Retrieval for Large Language Model Reasoning](https://arxiv.org/abs/2405.20139)：把 dense knowledge-graph subgraph 上的 GNN 检索与 LLM 生成结合，先取候选答案节点和最短路径证据，再回答 KGQA 问题。
+- [CheckEmbed: Effective Verification of LLM Solutions to Open-Ended Tasks](https://arxiv.org/abs/2406.02524)：把开放式 LLM 答案压缩为一个现代 embedding 向量来做整答语义等价比较，比 token 或 sentence 级打分更便宜。
+- [Ragnarök: A Reusable RAG Framework and Baselines for TREC 2024 Retrieval-Augmented Generation Track](https://arxiv.org/abs/2406.16828)：为 TREC RAG Track 提供构建、测试、可视化和评测 attributed RAG search systems 的框架，而不是只提交传统排序列表。
+- [Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting](https://arxiv.org/abs/2407.08223)：让小型 specialist LM 基于不同检索文档子集并行起草答案，再由大型 generalist LM 验证，以降低长上下文位置偏差并提升 RAG 效率。
+- [Interpreting and Mitigating Hallucination in MLLMs through Multi-agent Debate](https://arxiv.org/abs/2407.20505)：用 self-reflection 和 multi-agent debate 诊断并降低多模态幻觉。核心思想：让多个 agent 相互质询视觉声明、定位 hallucinated regions，并解释错误来源，而不是只给出最终 factuality score。
 - [RAGChecker](https://arxiv.org/abs/2408.08067)（[开源代码](https://github.com/amazon-science/RAGChecker)）：RAG 系统诊断式评测框架；核心思想是从 claim-level 支撑、遗漏和噪声定位检索端与生成端的事实性错误。
+- [HyPA-RAG: A Hybrid Parameter Adaptive Retrieval-Augmented Generation System for AI Legal and Policy Applications](https://arxiv.org/abs/2409.09046)：用 query complexity classifier 为法律政策问题自适应调参，结合 dense、sparse 与 KG 检索，并在纽约 Local Law 144 上设计 fidelity 指标。
+- [Astute RAG: Overcoming Imperfect Retrieval Augmentation and Knowledge Conflicts for Large Language Models](https://arxiv.org/abs/2410.07176)：面向无关、误导或冲突检索结果，显式引出模型内部知识，与外部证据按来源感知方式整合，再按可靠性选择答案。
+- [LEGO-GraphRAG: Modularizing Graph-based Retrieval-Augmented Generation for Design Space Exploration](https://arxiv.org/abs/2411.05844)：把 GraphRAG 拆成可复用工作流模块，分类已有设计选择，并支持构建新的 GraphRAG 实例以探索质量与成本权衡。
+- [GeAR: Graph-enhanced Agent for Retrieval-augmented Generation](https://arxiv.org/abs/2412.18431)：用图扩展增强传统检索器，并把 graph-based retrieval 接入多步 agent 框架以处理 multi-hop RAG 问答。
+- [A Self-Reflective Retrieval Augmented Generation System to Eliminate Hallucination in LLM Generation](https://doi.org/10.5121/csit.2024.141402)：在 ChatGPT 生成与 LangChain workflow nodes 外加入 self-reflective checks，使 RAG 流水线在返回最终答案前先自检。
+- [Think More, Hallucinate Less: Mitigating Hallucinations via Dual Process of Fast and Slow Thinking](https://arxiv.org/abs/2501.01306)：面向幻觉缓解的 tree-search harness。核心思想是在生成时引入 MCTS 等显式 slow-thinking 搜索，对候选答案进行探索和检查后再输出事实性回答。
 - [SelfCheckAgent](https://arxiv.org/abs/2502.01812)：多 agent 零资源幻觉检测框架；核心思想是组合 symbolic、specialized detection 与 contextual consistency agents，用多维一致性信号判断生成内容是否可靠。
+- [Faithful, Unfaithful or Ambiguous? Multi-Agent Debate with Initial Stance for Summary Evaluation](https://arxiv.org/abs/2502.08514)：面向摘要忠实性评估的多代理辩论 workflow。核心思想是让不同初始立场的代理给出证据，区分忠实、不忠实和模糊样本。
 - [REFIND](https://arxiv.org/abs/2502.13622)（[开源代码](https://github.com/oneonlee/REFIND)）：retrieval-augmented factuality hallucination detection；核心思想是用检索文档与 context sensitivity ratio 定位幻觉 span，并在多语言设置中验证鲁棒性。
+- [Hallucination Detection in Large Language Models with Metamorphic Relations](https://arxiv.org/abs/2502.15844)：Metamorphic-relation hallucination detection 可作为无外部资源的事实性检测 harness。
+- [GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking](https://arxiv.org/abs/2502.16514)：GraphCheck 用抽取知识图辅助长文本 fact-checking，补充长文本事实核验 harness。
+- [LettuceDetect: A Hallucination Detection Framework for RAG Applications](https://arxiv.org/abs/2502.17125)：检测检索增强生成应用中的幻觉。
+- [FACT-AUDIT: An Adaptive Multi-Agent Framework for Dynamic Fact-Checking Evaluation of Large Language Models](https://arxiv.org/abs/2502.17924)：自适应多 agent 事实核查评测流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [FactReasoner: A Probabilistic Approach to Long-Form Factuality Assessment for Large Language Models](https://arxiv.org/abs/2502.18573)：Agent Harness 条目；核心思想：用概率化事实性评估流程检查长答案，补足原子事实核验之外的长文幻觉诊断。
+- [ConsJudge](https://arxiv.org/abs/2502.18817)：面向 RAG 评测的 judge-consistency 框架。核心思想：在多个评价维度组合下采样判断，用一致性筛选 accepted/rejected judgments，再训练更稳定的 RAG 输出评价器。
+- [HoT: Highlighted Chain of Thought for Referencing Supporting Facts from Inputs](https://arxiv.org/abs/2503.02003)：提示模型在推理和回答中标出输入事实依据，使幻觉检查能够追踪到具体声明。
+- [Path Pooling: Train-Free Structure Enhancement for Efficient Knowledge Graph Retrieval-Augmented Generation](https://arxiv.org/abs/2503.05203)：给 KG-RAG 加入可即插即用的 path-centric pooling 操作，让检索在无需训练新检索器的情况下利用图结构与语义证据。
+- [A Graph-based Verification Framework for Fact-Checking](https://arxiv.org/abs/2503.07282)：基于图的事实核验框架。核心思想是把声明分解为图结构，更系统地验证指代歧义和子声明依赖。
+- [RAG-KG-IL: A Multi-Agent Hybrid Framework for Reducing Hallucinations and Enhancing LLM Reasoning through RAG and Incremental Knowledge Graph Learning Integration](https://arxiv.org/abs/2503.13514)：可作为幻觉与事实性的 Agent Harness 候选：围绕 RAG-KG-IL: A Multi-Agent Hybrid Framework for Reducing Hallucinations and Enhancing LLM Reasoning through RAG and Incremental Knowledge Graph Learning Integration 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration](https://arxiv.org/abs/2503.15272)：用多 agent 协作提升长文生成事实性。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Optimizing Decomposition for Optimal Claim Verification](https://arxiv.org/abs/2503.15354)：优化声明拆解与核验的事实性流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [FactSelfCheck](https://arxiv.org/abs/2503.17229)：基于 fact triple 的黑盒幻觉检测；核心思想是把回答拆成细粒度事实后做多轮一致性检查。
 - [Premise Verification](https://arxiv.org/abs/2504.06438)：面向 false-premise query 的检索增强逻辑验证框架；核心思想是在生成前把用户问题转成逻辑前提并逐条查证，提前阻断“顺着错误前提胡编”的幻觉链路。
+- [HalluciNot: Hallucination Detection Through Context and Common Knowledge Verification](https://arxiv.org/abs/2504.07069)：结合上下文与常识的幻觉检测流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [PASS-FC: Progressive and Adaptive Search Scheme for Fact Checking of Comprehensive Claims](https://arxiv.org/abs/2504.09866)：渐进式分解、消歧、搜索并验证复杂 claim，用于自动事实核查。
+- [Secure Multifaceted-RAG for Enterprise: Hybrid Knowledge Retrieval with Security Filtering](https://arxiv.org/abs/2504.13425)：同时检索内部文档、预生成专家知识与经过安全过滤的外部 LLM 知识，并用本地生成器降低企业数据泄漏风险。
+- [AlignRAG: An Adaptable Framework for Resolving Misalignments in Retrieval-Aware Reasoning of RAG](https://arxiv.org/abs/2504.14858)：把 RAG 重释为 retrieval-aware reasoning，用 contrastive critique-driven alignment 和可选的 auto-stopping critic 让推理轨迹贴合检索证据。
+- [ConSens](https://arxiv.org/abs/2505.00065)：通过比较有无给定上下文时回答的困惑度来评估开放书问答的上下文 grounding。核心思想：判断答案是否真正依赖所给证据而不是参数记忆，为 RAG 和开放书 QA 系统提供可扩展的上下文使用信号。
+- [Knowing You Don't Know: Learning When to Continue Search in Multi-round RAG through Self-Practicing](https://arxiv.org/abs/2505.02811)：从 self-practiced retrieval paths 训练轻量 information-sufficiency critic，使多轮 RAG 能基于证据充分性继续检索、停止或作答。
+- [Osiris: A Lightweight Open-Source Hallucination Detection System](https://arxiv.org/abs/2505.04844)：提供轻量级开源幻觉检测系统；核心思想：把可复用检测流水线接入生成工作流，而不是只报告静态基准分数。
+- [Uncertainty Profiles for LLMs: Uncertainty Source Decomposition and Adaptive Model-Metric Selection](https://arxiv.org/abs/2505.07309)：Agent Harness 条目；核心思想：分解不确定性来源并自适应选择指标，服务幻觉风险评估。
+- [TrumorGPT: Graph-Based Retrieval-Augmented Large Language Model for Fact-Checking](https://arxiv.org/abs/2505.07891)：面向健康谣言事实核查，用 few-shot LLM prompting 构建 semantic health knowledge graph，并通过 GraphRAG 做真实性推理。
+- [THELMA: Task Based Holistic Evaluation of Large Language Model Applications-RAG Question Answering](https://arxiv.org/abs/2505.11626)：面向 RAG question answering 的 task-based holistic evaluation framework；核心思想是用相互关联的指标在无参考答案条件下评估和监控 RAG QA 应用。
+- [RAGXplain: From Explainable Evaluation to Actionable Guidance of RAG Pipelines](https://arxiv.org/abs/2505.13538)：面向 RAG pipeline 的可解释评测 harness；核心思想是诊断检索和生成失败，并把聚合分数转化为可执行的 pipeline 修复建议。
+- [EMULATE: A Multi-Agent Framework for Determining the Veracity of Atomic Claims by Emulating Human Actions](https://arxiv.org/abs/2505.16576)：用于原子 claim 核验的多 agent 框架；核心思想是用专门 agent 模拟人工事实核查动作，完成证据检索、claim 检查和真假判断。
+- [Multi-agent Systems for Misinformation Lifecycle : Detection, Correction And Source Identification](https://arxiv.org/abs/2505.17511)：面向虚假信息检测、纠正和源识别的多 agent 框架；核心思想是把事实核查拆分为负责检测、证据、纠正和溯源的协作 agent。
+- [Removal of Hallucination on Hallucination: Debate-Augmented RAG](https://arxiv.org/abs/2505.18581)：把多 agent debate 插入检索和生成两个阶段，用 proponent、opponent 与 judge 角色过滤误导性检索并降低 RAG 诱发的幻觉。
+- [RvLLM: LLM Runtime Verification with Domain Knowledge](https://arxiv.org/abs/2505.18585)：结合领域知识对 LLM 输出做运行时验证。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [VeriTrail: Closed-Domain Hallucination Detection with Traceability](https://arxiv.org/abs/2505.21786)：它提供事实核验、溯源或 hallucination 修复 workflow，适合补充 hallucination Agent Harness。
+- [Conformal-RAG](https://arxiv.org/abs/2506.20978)：面向 RAG 输出质量评估的 conformal factuality 框架。核心思想：在不依赖标准答案的情况下，对保留下来的高质量子声明提供 group-conditional coverage 保证，让 RAG 回答质量更可审计。
+- [RAG-Critic: Leveraging Automated Critic-Guided Agentic Workflow for Retrieval Augmented Generation](https://doi.org/10.18653/v1/2025.acl-long.179)：RAG-Critic 通过 automated critic-guided workflow 改进 RAG，适合 hallucination/RAG reliability harness。
+- [Visual Evidence Prompting Mitigates Hallucinations in Large Vision-Language Models](https://doi.org/10.18653/v1/2025.acl-long.205)：补充通过视觉证据提示缓解大型视觉语言模型幻觉的方法。
+- [KEA Explain](https://arxiv.org/abs/2507.03847)：用于检测并解释 LLM 幻觉的神经符号框架。核心思想是把模型输出构成的知识图与可信来源对比，并用图核解释进行对比式诊断。
+- [UQLM: A Python Package for Uncertainty Quantification in Large Language Models](https://arxiv.org/abs/2507.06196): 提供用于 response-level 幻觉检测和可靠性估计的不确定性量化 Python 工具包。
+- [TruthTorchLM](https://arxiv.org/abs/2507.08203)（[开源代码](https://github.com/Ybakman/TruthTorchLM)）：可扩展的 truthfulness 预测库。核心思想是用统一接口整合 30 多种 truthfulness 方法，覆盖黑盒、白盒、grounded 与不确定性方法，使事实性检测器更容易比较和复用。
+- [Fail Fast, or Ask: Mitigating the Deficiencies of Reasoning LLMs with Human-in-the-Loop Systems Engineering](https://arxiv.org/abs/2507.14406)：用 human-in-the-loop systems engineering 缓解 reasoning model 错误；核心思想是用不确定性决定模型应回答、快速失败还是请求人类专家。
+- [Debating Truth: Debate-driven Claim Verification with Multiple Large Language Model Agents](https://arxiv.org/abs/2507.19090)：多代理辩论式 claim verification 框架。核心思想是用正反辩手和裁决代理揭示事实核验中的细微证据冲突。
+- [SemRAG: Semantic Knowledge-Augmented RAG for Improved Question-Answering](https://arxiv.org/abs/2507.21110)：结合 semantic chunking 与 knowledge graph structuring，让领域 RAG 在无需完整微调的情况下保留连贯文本块和实体关系。
+- [All for law and law for all: Adaptive RAG Pipeline for Legal Research](https://arxiv.org/abs/2508.13107)：用 context-aware query translation、检索深度和回答风格控制、开源检索器，以及 RAGAS、BERTScore-F1、ROUGE-Recall 做法律 RAG 的 faithfulness 评测。
+- [OPERA: A Reinforcement Learning-Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval](https://arxiv.org/abs/2508.16438)：把 goal-planning module 与 reason-execute retrieval module 结合，并用 Multi-Agents Progressive GRPO 训练 multi-hop RAG 的编排过程。
+- [EviNote-RAG: Enhancing RAG Models via Answer-Supportive Evidence Notes](https://arxiv.org/abs/2509.00877): 提出 retrieve-note-answer 流程，用 answer-supportive evidence notes 和蕴含式奖励提升 RAG 证据充分性并降低误导。
+- [Trusted Uncertainty in Large Language Models: A Unified Framework for Confidence Calibration and Risk-Controlled Refusal](https://arxiv.org/abs/2509.01455)：Agent Harness 条目；核心思想：结合置信校准与风险控制拒答，服务幻觉风险管理。
+- [Proof-Carrying Numbers (PCN): A Protocol for Trustworthy Numeric Answers from LLMs via Claim Verification](https://arxiv.org/abs/2509.06902)：面向 LLM 数值答案的可信协议；核心思想是让数字携带可验证证据，从而拒绝编造或误引数值。
+- [MetaRAG: Metamorphic Testing for Hallucination Detection in RAG Systems](https://arxiv.org/abs/2509.09360)：面向 RAG 系统幻觉检测的 metamorphic testing harness；核心思想是生成保持语义一致的变换，并检查回答是否仍由检索证据支撑。
+- [Sub-Sentence Citations for RAG](https://arxiv.org/abs/2509.20859)：面向 RAG 的简洁且充分引用生成框架；核心思想：把引用粒度从句子或段落推进到更短的证据片段，并用标注规范、自动生成的微调数据和 credit model 同时保障可读性与可核验性。
+- [DeFacto: Counterfactual Thinking with Images for Enforcing Evidence-Grounded and Faithful Reasoning](https://arxiv.org/abs/2509.20912)：面向 evidence-grounded faithful reasoning 的反事实图像 harness。核心思想是迫使模型检查视觉证据是否真正支持其推理路径。
+- [LUMINA](https://arxiv.org/abs/2509.21875)：通过上下文-知识信号检测 RAG 系统幻觉。核心思想：分别度量外部上下文使用和内部知识使用，并进行统计验证，为 RAG agent 提供轻量检测器，识别“已有足够检索证据但仍忽略或违背证据”的情况。
+- [FinVet: A Collaborative Framework of RAG and External Fact-Checking Agents for Financial Misinformation Detection](https://arxiv.org/abs/2510.11654)：结合两条 RAG 流水线、外部 fact-checking agents、置信度加权投票、三层自适应验证和显式不确定性标记来处理金融 misinformation。
+- [FaStFACT](https://arxiv.org/abs/2510.12839)：面向长文本生成的事实性评估 harness。核心思想：简化 claim 抽取、证据检索与 claim 验证流程，在降低 token 和时间成本的同时提升与人工事实性判断的一致性。
+- [Teaming LLMs to Detect and Mitigate Hallucinations](https://arxiv.org/abs/2510.19507)：多模型协作的幻觉控制工作流；核心思想是把检测、批判和修订分配给协作语言模型，以减少无依据声明。
+- [Co-Sight](https://arxiv.org/abs/2510.21557)：面向长程 LLM agent 的验证 harness；核心思想是在多个 agent 之间维护结构化事实，并把 meta-verification 分配给分歧热点，使中间推理可证伪、可审计。
+- [Multi-Modal Fact-Verification Framework for Reducing Hallucinations in Large Language Models](https://arxiv.org/abs/2510.22751)：用多模态事实核验流程降低幻觉，属于 hallucination mitigation harness。
+- [MAD-Fact: A Multi-Agent Debate Framework for Long-Form Factuality Evaluation in LLMs](https://arxiv.org/abs/2510.22967)：面向用于长文本事实性评测的多 agent debate 框架的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Hybrid Fact-Checking that Integrates Knowledge Graphs, Large Language Models, and Search-Based Retrieval Agents Improves Interpretable Claim Verification](https://arxiv.org/abs/2511.03217)：结合知识图谱、LLM 和搜索检索 agent 的 claim-verification harness。核心思想是在结构化证据精度和 Web 检索覆盖面之间取得平衡。
+- [ProgRAG](https://arxiv.org/abs/2511.10240)：面向知识图谱的 hallucination-resistant progressive retrieval and reasoning workflow，在生成回答前显式组织证据获取。
+- [CausalGuard: A Smart System for Detecting and Preventing False Information in Large Language Models](https://arxiv.org/abs/2511.11600)：用于检测和防止 LLM 虚假信息的因果系统；核心思想是追踪无依据声明的可能因果来源，并在其进入最终答案前阻断传播。
+- [InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](https://arxiv.org/abs/2512.02981)：可作为幻觉与事实性的Agent Harness候选；核心关注“Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration”。
+- [Identify-then-Verify](https://arxiv.org/abs/2512.06476)：一个用于 QA 信息充分性判断的结构化流程，先假设缺失信息，再回查源上下文验证该信息是否真的缺失，从而帮助模型在幻觉生成前选择 abstain 或标出证据缺口。
+- [RAGLens](https://arxiv.org/abs/2512.08892)：基于 sparse autoencoder 的 RAG 幻觉检测器。核心思想：识别与来源不支持生成相关的模型内部特征，并将其作为轻量、可解释的检索增强系统忠实性检查。
+- [Guided and knowledgeable multi-agent debate for fact verification](https://doi.org/10.1016/j.eswa.2025.130103)：提出 GKMAD 免训练事实核查 debate 框架，包含 guided debate、knowledgeable debate、advanced advice 与 knowledgeable verification，并在 HoVER、FEVEROUS、SciFact-Open 子集上评测。
+- [The Semantic Illusion: Certified Limits of Embedding-Based Hallucination Detection in RAG Systems](https://arxiv.org/abs/2512.15068)：研究 RAG 中基于 embedding 的幻觉检测的可认证边界；核心思想是说明语义相似度何时能证明支持、何时会掩盖无依据声明。
+- [RAG-CUE](https://doi.org/10.1109/BigData66926.2025.11401780)：面向 RAG 系统的 component-aware 评价框架；核心思想：结合 composite scoring、带置信区间的质量分桶、topic modeling 和自动 health report，在有参考和无参考设置下定位检索与生成瓶颈。
+- [ClaimVerAgents: A Multi-Agent Retrieval-Augmented Claim Verification Framework](https://doi.org/10.1109/aiccsa66935.2025.11315316)：面向 claim verification 的多 agent RAG 框架。核心思想是协调证据检索、推理和 verdict 生成，使新近或冷门声明也能得到可追踪事实核验。
+- [REVISE: A Framework for Paragraph-Level Misinformation Correction in Large Language Models](https://doi.org/10.1109/aitest66680.2025.00027)：Agent Harness 条目；核心思想：面向段落级 misinformation correction 的框架。
+- [Collaborative Fact-checking via Multi-Agent Debate and Weighted Voting](https://doi.org/10.1109/icaids67687.2025.00038)：用多 agent 辩论和加权投票进行事实核查；核心思想：聚合多个 agent 视角以提升事实性判断。
+- [Lie to Me: Knowledge Graphs for Robust Hallucination Self-Detection in LLMs](https://arxiv.org/abs/2512.23547)：用知识图增强幻觉自检测；核心思想是以结构化实体和关系增强自检，使生成声明能被更稳健地验证。
+- [DANV: A Dual-Agent Framework for Retrieval-Augmented News Verification](https://doi.org/10.1109/cbase67452.2025.11335506)：面向幻觉检测与事实一致性提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Probabilistic Hallucination Reduction](https://arxiv.org/abs/2601.00641)：model-agnostic harness，对固定输入进行多次独立生成，并用独立 LLM-as-judge 投票选择受支持答案，从而给出 hallucination-selection probability 的显式界。
+- [PCC](https://arxiv.org/abs/2601.02574)：自适应 fact-checking harness，估计 probabilistic certainty 与 reasoning consistency，并据此在直接回答、targeted retrieval 和 deep search 之间路由。
+- [DiVA](https://arxiv.org/abs/2601.03605)：agentic-discriminative factuality verifier，将 generative search 与 discriminative scoring 结合，用于区分错误严重程度的 factuality judgments；该工作也提出了细粒度验证测试床 FGVeriBench。
+- [eTracer: Towards Traceable Text Generation via Claim-Level Grounding](https://arxiv.org/abs/2601.03669)：基于 claim-level grounding 的可追溯文本生成框架；核心思想是把生成声明连接到显式证据，便于事实性审计。
+- [RAGVUE: A Diagnostic View for Explainable and Automated Evaluation of Retrieval-Augmented Generation](https://arxiv.org/abs/2601.04196)：面向自动化 RAG 评测的可解释诊断框架。核心思想是区分检索、推理和接地错误，而不是把 RAG 质量压缩成单一分数。
+- [Tool-MAD: A Multi-Agent Debate Framework for Fact Verification with Diverse Tool Augmentation and Adaptive Retrieval](https://arxiv.org/abs/2601.04742)：类型：agent harness/可复用执行框架。核心价值：为 1.4.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [ART: Adaptive Reasoning Trees for Explainable Claim Verification](https://arxiv.org/abs/2601.05455)：可作为hallucination and factuality方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [MedRAGChecker: Claim-Level Verification for Biomedical Retrieval-Augmented Generation](https://arxiv.org/abs/2601.06519)：提供生物医学 RAG 的 claim-level verification。核心思想：把生物医学 RAG 答案分解为原子声明，并依据检索证据检查支持或矛盾。
+- [InFi-Check](https://arxiv.org/abs/2601.06666)：面向 LLM 输出的可解释细粒度 fact-checking 框架。核心思想：不只给出二元事实性标签，而是暴露错误类型和证据级判断，让 hallucination diagnosis 更可操作。
+- [FROAV: A Framework for RAG Observation and Agent Verification - Lowering the Barrier to LLM Agent Research](https://arxiv.org/abs/2601.07504)：RAG observation and agent verification 框架；设计关键词：RAG workflow inspection、agent verification、实验迭代、降低 agent 评测门槛。
+- [Retrieve-Refine-Calibrate: A Framework for Complex Claim Fact-Checking](https://arxiv.org/abs/2601.16555)：可作为hallucination and factuality方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](https://arxiv.org/abs/2601.18753)：类型：agent harness/可复用执行框架。核心价值：为 1.4.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [HalluJudge: A Reference-Free Hallucination Detection for Context Misalignment in Code Review Automation](https://arxiv.org/abs/2601.19072)：面向代码审查自动化的 reference-free hallucination detector。核心思想是在生成的 review comment 进入开发流程前，检查其是否真实基于当前代码。
+- [Token-Guard: Towards Token-Level Hallucination Control via Self-Checking Decoding](https://arxiv.org/abs/2601.21969)：基于 self-checking decoding 的 token 级幻觉控制方法；核心思想是在下一个 token 可能无依据时介入生成，而不是只在答案完成后审计。
+- [HALT: Hallucination Assessment via Log-probs as Time series](https://arxiv.org/abs/2602.02888)：Agent Harness 条目；核心思想：把 log-prob 序列作为时间序列来做幻觉评估。
+- [The Energy of Falsehood: Detecting Hallucinations via Diffusion Model Likelihoods](https://arxiv.org/abs/2602.11364)：可作为hallucination and factuality方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [FineRef: Fine-Grained Error Reflection and Correction for Long-Form Generation with Citations](https://arxiv.org/abs/2602.18437)：面向带引用长文生成的细粒度反思与修正 harness；核心思想是在生成过程中诊断引用相关性和支撑错误，并在无依据 claim 固化到最终答案前修正。
+- [No One Size Fits All: QueryBandits for Hallucination Mitigation](https://arxiv.org/abs/2602.20332)：可作为hallucination and factuality方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [WKGFC](https://arxiv.org/abs/2603.00267)：multi-source fact-checking harness；核心思想是让 LLM agent 在 MDP 式循环中决定如何检索知识图谱证据和网页证据，再用组合证据进行真实性判断。
+- [HART: Data-Driven Hallucination Attribution and Evidence-Based Tracing for Large Language Models](https://arxiv.org/abs/2603.05828)：面向面向 LLM 输出的数据驱动幻觉归因和证据追踪的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Tool Receipts, Not Zero-Knowledge Proofs: Practical Hallucination Detection for AI Agents](https://arxiv.org/abs/2603.10060)：基于 tool receipts 的 AI agent 幻觉检测框架；核心思想是记录工具证据，让声明能对照真实工具使用进行检查，而不是只看叙述。
+- [Structured Linked Data as a Memory Layer for Agent-Orchestrated Retrieval](https://arxiv.org/abs/2603.10700)：把 Schema.org markup 和可解引用 entity pages 作为 standard 与 agentic RAG 的 structured memory layer，并在四个领域测试 multi-hop link traversal。
+- [CounterRefine](https://arxiv.org/abs/2603.16091)：面向 retrieval-grounded factual QA 的 inference-time 修复循环；核心思想是先生成草案答案，再基于草案检索支持与反证证据，只有在确定性验证支持时才保留或修订答案。
+- [Kestrel: Grounding Self-Refinement for LVLM Hallucination Mitigation](https://arxiv.org/abs/2603.16664)：面向无需重训练的 LVLM grounded self-refinement 幻觉缓解流程的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Domain-Grounded Tiered Retrieval](https://arxiv.org/abs/2603.17872)：LangGraph-style 幻觉缓解 harness，通过 intrinsic verification、domain-specific retrieval、refined context filtering、regeneration 和 atomic claim-level verification 串联查询处理流程。
+- [TopoChunker: Topology-Aware Agentic Document Chunking Framework](https://arxiv.org/abs/2603.18409)：用 Inspector 与 Refiner 两类 agent 把异构文档转换为 Structured Intermediate Representation，为下游 RAG 保留跨片段依赖关系。
+- [Permutation-Consensus Listwise Judging for Robust Factuality Evaluation](https://arxiv.org/abs/2603.20562)：面向用于鲁棒事实性评测的 permutation-consensus listwise judging的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [PAVE: Premise-Aware Validation and Editing for Retrieval-Augmented LLMs](https://arxiv.org/abs/2603.20673)：面向 RAG 回答的 premise-aware validation and editing 层。核心思想：把检索上下文拆成与问题相关的原子事实，逐条核验回答声明，并在输出前改写缺乏支持的内容。
+- [RT4CHART](https://arxiv.org/abs/2603.27752)：面向 RAG 幻觉检测的 hierarchical verification harness。核心思想：将答案拆成 claims，对照检索上下文进行局部到全局验证，把 verdicts 映射回 answer spans，并输出支持或反驳 evidence。
+- [SHARP](https://arxiv.org/abs/2604.04190)：面向知识图谱 triple verification 的 schema-aware agent；核心思想是结合 memory-augmented planning、增强 ReAct loop 与 KG/text 混合证据工具，生成透明证据链来验证三元组。
+- [LatentAudit: Real-Time White-Box Faithfulness Monitoring for Retrieval-Augmented Generation with Verifiable Deployment](https://arxiv.org/abs/2604.05358)：可作为hallucination and factuality方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [CUE-R](https://arxiv.org/abs/2604.05467)：基于干预的 RAG 证据效用评测框架。核心思想：对检索证据执行移除、替换和重复操作，再观察正确性、grounding、置信误差和推理轨迹变化，从而识别哪些证据真正影响答案。
+- [Reducing Hallucination in Enterprise AI Workflows via Hybrid Utility Minimum Bayes Risk (HUMBR)](https://arxiv.org/abs/2604.11141)：缓解高风险企业 AI workflow 中的幻觉；核心思想是把输出选择表述为 hybrid-utility minimum Bayes risk，降低有害无依据声明。
+- [ArbGraph: Conflict-Aware Evidence Arbitration for Reliable Long-Form Retrieval-Augmented Generation](https://arxiv.org/abs/2604.18362)：Agent Harness 条目；核心思想：面向长文本 RAG 的冲突证据仲裁；核心思想是在生成前处理噪声或矛盾检索证据。
+- [RADAR](https://arxiv.org/abs/2604.19005)（[开源代码](https://github.com/tangyixuan/RADAR)）：面向 half-truth detection 的 role-anchored 多 agent debate 框架；核心思想是让 Politician 与 Scientist 围绕检索证据进行对抗推理，再由 Judge 和 early termination 控制判断被遗漏上下文造成的误导性声明。
+- [GSAR](https://arxiv.org/abs/2604.23366)：面向多 agent 诊断报告的 typed grounding 与恢复 harness。核心思想：把证据支持分为 grounded、ungrounded、contradicted 和 complementary，按证据类型计算 groundedness score，并在固定计算预算下驱动 proceed、regenerate 或 replan。
+- [Evergreen](https://arxiv.org/abs/2604.26180)：面向 semantic aggregates 的 claim-verification harness。核心思想：把自然语言聚合结论编译为带 provenance 的 semantic queries，再用 early stopping、filtering 和 confidence-sequence estimation 在大规模关系数据上高效验证 claims。
+- [Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](https://arxiv.org/abs/2605.00529)：构建分布自适应 hierarchical abstract tree 与 multi-granular retrieval agent，使跨文档 RAG 能沿连接关系检索，而不局限于彼此隔离的单文档树。
+- ["I Don't Know"-- Towards Appropriate Trust with Certainty-Aware Retrieval Augmented Generation](https://arxiv.org/abs/2605.00957)：可作为hallucination and factuality方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [SURE-RAG](https://arxiv.org/abs/2605.03534)：面向 selective RAG 的 sufficiency 与 uncertainty-aware 证据验证 harness；核心思想是把局部 claim-evidence verifier 信号聚合为 answer-level coverage、disagreement、conflict 与 uncertainty 分数，并在证据不足时 abstain。
+- [Hallucination as an Anomaly: Dynamic Intervention via Probabilistic Circuits](https://arxiv.org/abs/2605.05953)：可作为hallucination and factuality方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Proxy Analyzer](https://arxiv.org/abs/2605.07209)：幻觉检测 harness，用小型开权重 analyzer model 读取已生成文本，并基于 activation-derived features 判断 unsupported content，使闭源生成模型输出也能在不访问生成器内部状态的情况下被检查。
+- [Source or It Didn't Happen: A Multi-Agent Framework for Citation Hallucination Detection](https://arxiv.org/abs/2605.08583)：Agent Harness 条目；核心思想：检测科学写作中的引用幻觉；核心思想是用多 agent 验证从二元检索扩展到书目信息和 claim 级检查。
+- [Does RAG Know When Retrieval Is Wrong? Diagnosing Context Compliance under Knowledge Conflict](https://arxiv.org/abs/2605.14473)：诊断 RAG 在检索内容与参数知识冲突时是否过度服从上下文；核心思想是在推理时分解 context influence，让事实性评测区分答案正确性与 context-driven compliance。
+- [Multi-Agent Guidance for LVLM Hallucination](https://doi.org/10.1109/ICASSP55912.2026.11463505)：缓解视觉语言模型中的物体与关系幻觉。核心思想是用多个 agent 角色交叉检查视觉实体和关系，再生成最终回答。
+- [Low-Cost Verification for Multimodal Large Language Models](https://doi.org/10.1109/CNML68938.2026.11453286)：面向多模态输出的轻量验证方法。核心思想是在接受 MLLM 答案前检查跨模态一致性，从而减少对更大 judge 的依赖。
+- [Deepchecks for RAG](https://arxiv.org/abs/2605.14488)：面向 RAG 应用的评测和监控框架。核心思想：结合多维 RAG 质量检查、根因分析和生产监控，使可靠性、相关性和用户满意度不再只依赖单一答案分数。
+- [A Multi-Stage Hallucination Reduction Framework for Large Language Models using Retrieval-Augmented Generation and NLI-based Verification](https://doi.org/10.1109/icoeca68095.2026.11485254)：把检索增强生成与自然语言推理验证组合成外部流水线，用于降低 LLM 幻觉。
+- [MERMAIDS](https://doi.org/10.1109/CISCE69494.2026.11504621)：面向多跳 agentic RAG 的 structured evidence memory harness；核心思想是用 claim-evidence-source-time 图组织证据、跨任务复用证据，并在检测到冲突时触发重新检索或降低答案置信度。
+- [DocEviTrace](https://doi.org/10.1109/SCSE70081.2026.11499856)：面向长文档预测的可验证 evidence localization 框架；核心思想是结合级联检索、span selection 与 NLI 验证，让解释变成带 offset、verifier score 和检索轨迹的可核查证据 artifact。
+- [OffRAG-HM: Offline Retrieval-Augmented Generation with Hallucination Mitigation: Enhancing Privacy and Reliability in Restricted Environments](https://doi.org/10.1109/icwr69602.2026.11513356)：在隐私受限环境中结合离线 RAG 与幻觉缓解。
+- [Mitigating LLM Hallucination Snowballing in Multiagent Systems via Context-Aware Semantic Consistency Reasoning.](https://doi.org/10.1109/tnnls.2026.3655508)：通过智能体或多智能体一致性检查减少幻觉传播。
+- [Domain-Agnostic Knowledge Graph Construction for Systematic Hallucination Reduction and Knowledge Reusability in Large Language Models](https://doi.org/10.14569/ijacsa.2026.0170397)：构建领域无关知识图谱框架，用于降低幻觉并复用知识。
+- [Aftina: enhancing stability and preventing hallucination in AI-based Islamic fatwa generation using LLMs and RAG](https://doi.org/10.1007/s00521-025-11229-y)：在 Islamic fatwa RAG QA 系统中加入 re-ranker，并比较 base LLM、RAG、RAG-plus-re-ranker 三种设置下的稳定性、幻觉、完整性与无关性。
+- [GraphTrace: A Modular Retrieval Framework Combining Knowledge Graphs and Large Language Models for Multi-Hop Question Answering](https://doi.org/10.3390/computers14090382)：组合 entity extraction、path finding、query decomposition、semantic path ranking、context aggregation 与 LLM generation，形成可解释的 KG-grounded multi-hop retrieval。
+- [Symphony: Towards Trustworthy Question Answering and Verification using RAG over Multimodal Data Lakes](https://dblp.org/rec/journals/debu/0001YZLF00H24)：把 multimodal data-lake discovery、tool-based reasoning 和基于可信公共或企业数据源的 answer verification 组合起来。
+- [Atomic Contrastive Verification: Fine-Grained Fact-Checking via Claim Decomposition and Knowledge Graph-Grounded Contrastive Reasoning](https://doi.org/10.3390/math14101769)：把生成文本与源文档拆成 atomic claims，构建 KG triples，扰动 entity、relation、time、quantity 变体，并执行 contrastive NLI-style verdicting。
+- [Dynamic Knowledge Graph Augmentation Enhances Factual Accuracy in Retrieval Based Generation](https://doi.org/10.54097/e4991d70)：用持续更新的知识图谱、GNN subgraph entity representations、temporal refresh 与 cross-modal fusion 增强 RAG，以降低事实错误。
+- [Multi-LLM Verification for Question Answering under Conflicting Contexts](https://doi.org/10.26615/978-954-452-098-4-116)：面向 conflicting contexts 下 QA 的验证 harness；核心思想是用多个 LLM 交叉检查证据并处理单 agent self-verification 容易遗漏的冲突。
+- [Minimizing Hallucinations and Communication Costs: Adversarial Debate and Voting Mechanisms in LLM-Based Multi-Agents](https://doi.org/10.3390/app15073676)：面向多 agent 幻觉缓解的 harness。核心思想是结合 debate 和 voting，让 agent 互相检查答案，同时控制通信成本。
+- [An Integrated Framework of Dense Retrieval and Factual Verification Based on Large Language Models](https://doi.org/10.1145/3768801.3768812)：面向幻觉检测与事实一致性提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。

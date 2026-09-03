@@ -2,7 +2,23 @@
 
 - [Humanity's Last Exam](https://lastexam.ai/)：专家级跨学科知识与推理公开榜单；价值在于把高难科学、数学、人文和专业题作为模型知识上限压力测试。
 - [HLE-Rolling](https://agi.safe.ai/)：Humanity's Last Exam 的动态更新/提交入口；价值在于通过持续修订、新题和 live submission 缓解公开 HLE 的污染、错误与饱和。
+- [OlympiadBench Leaderboard](https://github.com/OpenBMB/OlympiadBench#leaderboard)：官方仓库中的双语奥赛级数学与科学题榜单；价值在于分别呈现 text-only 与完整多模态竞赛题表现。
+- [MMLU-Pro Leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro)：TIGER-Lab 面向更难多学科专业知识的公开榜单；价值在于跟踪减少捷径与污染之后的稳健专业问答能力。
+- [CS-Bench Leaderboard](https://csbench.github.io/)：Computer Science Mastery 官方榜单；价值在于按难度和子领域比较模型的计算机科学知识。
+- [SciKnowEval Leaderboard](https://scipilots.org/sciknoweval/)：SciKnowEval 官方榜单；价值在于按学科领域和任务层级组织多层科学知识评测。
+- [NeurIPS 2024 ML4CFD Competition](https://www.codabench.org/competitions/3282/)：ML4CFD airfoil-design challenge 的官方 Codabench 页面；价值在于为计算流体力学代理建模提供竞赛式排名。
 - [PaperBench Results](https://github.com/openai/preparedness/blob/main/project/paperbench/README.md)：论文复现型 AI 研究 agent 的公开结果表；价值在于把 rollout、reproduction 和 grading 分离，便于比较端到端科研复现能力。
+- [SuperGPQA Leaderboard](https://supergpqa.github.io/)：长尾专业问答的官方榜单；价值在于比较模型在更接近真实工作场景的广泛专家知识上的表现，而不只看标准学术考试。
+- [PhyBench Leaderboard](https://www.phybench.cn/leaderboard)：PHYBench 官方物理知识与推理榜单；价值在于跟踪模型在概念、定律和推导密集型物理任务上的表现。
+- [PhyArena](https://phyarena.github.io/)：PHYSICS benchmark family 的公开 arena 与榜单页面；价值在于在 rule-based 与 model-based grading 下比较物理推理系统。
+- [HealthBench Results](https://openai.com/index/healthbench/)：OpenAI 官方 HealthBench 结果页；价值在于提供健康与临床知识可靠性的公开模型比较。
 - [AstaBench Leaderboard](https://huggingface.co/spaces/allenai/asta-bench-leaderboard)：综合科研 agent suite 的公开榜单；价值在于覆盖文献检索、代码执行、数据分析和端到端科学发现等多类科研技能。
+- [ScienceAgentBench Leaderboard](https://hal.cs.princeton.edu/scienceagentbench)：面向数据驱动科学发现 agent 的公开榜单；价值在于用来自同行评审论文的任务和可执行程序提交来比较系统。
 - [ResearchCodeBench Leaderboard](https://researchcodebench.github.io/leaderboard/index.html)：从新近 ML 论文实现研究代码的公开榜单；适合作为 PaperBench/EXP-Bench 之外更偏代码实现的科研 agent 评测参照。
 - [SciVisAgentBench Leaderboard](https://scivisagentbench.github.io/leaderboard.html)：科学数据分析与可视化 agent 榜单；价值在于把科学数据理解、分析决策和图形表达纳入可比较评测。
+- [MLIP Arena](https://huggingface.co/spaces/atomind/mlip-arena)：开放的机器学习原子间势基准空间；价值在于为材料模型提供实时比较入口，覆盖 MLIP 精度、速度和协议透明度。
+- [LABBench2 Leaderboard](https://labs.edisonscientific.com/benchmarks/labbench2)：Edison Scientific 官方的真实生物研究任务榜单；价值在于跟踪 agent 在文件处理、外部 runner 和工具切换等实验室工作流变体上的表现。
+- [FIRE-Bench Leaderboard](https://firebench.github.io/)：全流程科学再发现 agent 的官方榜单；价值在于比较 agent 能否通过自主构思、实验和总结重建论文级 claim。
+- [AIRS-Bench Leaderboard](https://github.com/facebookresearch/airs-bench#leaderboard)：端到端科研工作流的官方仓库榜单；价值在于在同一套任务中比较 idea generation、实验分析与迭代修订能力。
+- [ResearchGym Leaderboard](https://anikethh.github.io/ResearchGym/)：长时程 AI 研究任务的官方项目榜单；价值在于在有预算限制、带代码库的研究问题中比较 agent。
+- [MedHELM Results](https://crfm.stanford.edu/helm/medhelm/v2.0.0/)：Stanford HELM 医疗任务评测官方结果页；价值在于展示跨临床与生物医学任务的模型比较，而不只看单一医学问答考试。

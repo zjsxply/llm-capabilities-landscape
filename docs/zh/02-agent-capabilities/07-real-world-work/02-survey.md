@@ -1,10 +1,66 @@
 # 2.7.2 Survey
 
+- [Revolutionizing Finance with LLMs: An Overview of Applications and Insights](https://arxiv.org/abs/2401.11641)：综述与 Real World Work 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
+- [Towards Urban General Intelligence: A Review and Outlook of Urban Foundation Models](https://arxiv.org/abs/2402.01749)：综述与梳理 Real-World Work 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [LLMs with Industrial Lens: Deciphering the Challenges and Prospects - A Survey](https://arxiv.org/abs/2402.14558)：梳理真实世界工作相关方法、风险与开放问题。
+- [From Large Language Models and Optimization to Decision Optimization CoPilot: A Research Manifesto](https://arxiv.org/abs/2402.16269)：梳理真实工作流方向的近期方法、评测问题或风险边界。
+- [A Survey on Human-AI Collaboration with Large Foundation Models](https://arxiv.org/abs/2403.04931)：梳理该方向的任务边界、方法谱系或评测维度，补充真实世界工作方向的综述覆盖。
+- [A Survey of Text-to-SQL in the Era of LLMs: Where Are We, and Where Are We Going?](https://arxiv.org/abs/2408.05109)：综述与 Real World Work 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
 - [Large Language Models for Constructing and Optimizing Machine Learning Workflows: A Survey](https://arxiv.org/abs/2411.10478)：连接 agent、AutoML、pipeline 搜索、数据处理、模型选择与评测。
 - [A Survey on Large Language Model-based Agents for Statistics and Data Science](https://arxiv.org/abs/2412.14222)：组织数据清洗、分析、可视化、建模、报告与人机协作。
+- [A survey of emerging applications of large language models for problems in mechanics, product design, and manufacturing](https://doi.org/10.1016/j.aei.2024.103066)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Empowering AIOps: Leveraging Large Language Models for IT Operations Management](https://arxiv.org/abs/2501.12461)：综述 LLM 如何支持 IT 运维管理，覆盖运维推理、自动化与 AIOps 工作流。
 - [Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents](https://arxiv.org/abs/2503.24047)：覆盖专业科研工作中的文献、实验规划、分析、假设与工具。
+- [The Real Barrier to LLM Agent Usability is Agentic ROI](https://arxiv.org/abs/2505.17767)：把真实世界 agent 可用性重述为投入产出问题，综合信息增益、节省时间、成本和大众部署取舍，而不只看任务成功率。
+- [The Limits of Predicting Agents from Behaviour](https://arxiv.org/abs/2506.02923)：分析仅凭行为预测智能体的局限，关联智能体评估与可观测性。
+- [AI Agents and Agentic AI-Navigating a Plethora of Concepts for Future Manufacturing](https://arxiv.org/abs/2507.01376)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Large Language Models for Agent-Based Modelling: Current and possible uses across the modelling cycle](https://arxiv.org/abs/2507.05723)：综述真实工作场景与多智能体系统相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [A Survey of AIOps in the Era of Large Language Models](https://arxiv.org/abs/2507.12472)：可作为真实工作 agent的 Survey 候选：围绕 A Survey of AIOps in the Era of Large Language Models 梳理背景、方法与开放问题。
+- [Web3 x AI Agents: Landscape, Integrations, and Foundational Challenges](https://arxiv.org/abs/2508.02773)：综述 Web3 与 AI 智能体的集成、互操作挑战和生态部署问题。
+- [Are LLM Agents the New RPA? A Comparative Study with RPA Across Enterprise Workflows](https://arxiv.org/abs/2509.04198)：面向真实工作与企业智能体的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Adaptive and Resource-efficient Agentic AI Systems for Mobile and Embedded Devices: A Survey](https://arxiv.org/abs/2510.00078)：综述移动与嵌入式设备上的智能体 AI 部署，重点关注内存、能耗、带宽和时延约束下的自适应。
 - [Table Question Answering in the Era of Large Language Models](https://arxiv.org/abs/2510.09671)：综述基于 LLM 的表格问答任务、方法、基准和评测问题，适合作为结构化数据工作入口。
 - [Empowering Real-World: A Survey on the Technology, Practice, and Evaluation of LLM-driven Industry Agents](https://arxiv.org/abs/2510.17491)：回顾真实部署场景、任务实践、评测与运营约束。
 - [A Survey of Data Agents: Emerging Paradigm or Overstated Hype?](https://arxiv.org/abs/2510.23587)：检验数据访问、转换、分析与决策支持中的稳定收益。
+- [Inter-Agent Trust Models: A Comparative Study of Brief, Claim, Proof, Stake, Reputation and Constraint in Agentic Web Protocol Design-A2A, AP2, ERC-8004, and Beyond](https://arxiv.org/abs/2511.03434)：综述真实工作场景与多智能体系统相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Agentifying Agentic AI](https://arxiv.org/abs/2511.17332)：从概念层面讨论如何将智能体式 AI 结构化为智能体系统。
+- [A Review of Automated Data Science Based on Large Language Models](https://doi.org/10.1109/ICNC-FSKD67701.2025.11198037)：综述基于 LLM 的自动化数据科学流程，覆盖数据准备、建模与报告。
+- [Large Language Model Agents in Finance: A Survey Bridging Research, Practice, and Real-World Deployment](https://doi.org/10.18653/v1/2025.findings-emnlp.972)：综述金融场景中的 LLM 智能体，覆盖研究实践、部署与真实约束。
+- [Generative AI approaches for architectural design automation](https://doi.org/10.1016/j.autcon.2025.106506)：梳理真实工作流方向的近期方法、评测问题或风险边界。
+- [Talking to Data: A Systematic Review of the Rise of Conversational Agents for Visual Analytics](https://doi.org/10.1109/access.2025.3638950)：综述真实工作相关方法、风险或评测边界。
+- [AgentAI: A comprehensive survey on autonomous agents in distributed AI for industry 4.0](https://doi.org/10.1016/j.eswa.2025.128404)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Leveraging large language models in next generation intelligent manufacturing: Retrospect and prospect](https://doi.org/10.1016/j.jmsy.2025.07.019)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Generative AI agents are the premise of artificial general intelligence? The exploration of GenAI agents-based integration in enterprises’ operations](https://doi.org/10.1080/01605682.2025.2612146)：面向真实工作与企业智能体的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Transforming project management: the impact and potential of AI agents in shaping future practice](https://doi.org/10.1108/imds-03-2025-0295)：综述 AI 智能体在项目管理中的影响与潜力。
+- [Enterprise AI Agents: Secure, Scalable, and Autonomous Intelligence for the Modern Workforce](https://doi.org/10.1109/icced68324.2025.11324763)：综述真实工作自动化相关研究，可作为该方向近期相关工作的入口。
+- [Agentic AI: A Survey of Autonomous Agents, Architectures, and Emerging Applications](https://doi.org/10.1109/ictbig68706.2025.11323264)：综述自主智能体、智能体架构与新兴应用。
+- [Industrial AI Agent with large and small-scale models collaboration: concept, framework, and application](https://doi.org/10.1360/sst-2025-0463)：从大小模型协同角度描述工业 AI 智能体框架。
+- [On-premise AI agents: a future foundation for education, academia, and industry](https://doi.org/10.20517/aiagent.2025.11)：讨论本地部署 AI 智能体作为教育、学术与产业基础设施。
+- [The Path Ahead for Agentic AI: Challenges and Opportunities](https://arxiv.org/abs/2601.02749)：综述真实工作场景与多智能体系统相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Can LLMs Clean Up Your Mess? A Survey of Application-Ready Data Preparation with LLMs](https://arxiv.org/abs/2601.17058)：可作为真实工作 agent的 Survey 候选：围绕 Can LLMs Clean Up Your Mess? A Survey of Application-Ready Data Preparation with LLMs 梳理背景、方法与开放问题。
+- [From Control to Foresight: Simulation as a New Paradigm for Human-Agent Collaboration](https://arxiv.org/abs/2603.11677)：将仿真作为人机协作智能体设计与评估范式，可补充真实任务智能体的综述线索。
+- [Efficient LLM Serving for Agentic Workflows: A Data Systems Perspective](https://arxiv.org/abs/2603.16104)：综述智能体工作流带来的服务与数据系统挑战。
+- [Addressing the Reality Gap: A Three-Tension Framework for Agentic AI Adoption](https://arxiv.org/abs/2604.27245)：提出智能体 AI 采用中的现实差距张力框架。
+- [Less Interaction But More Explanation: A Communication Perspective on Agentic AI Interfaces](https://arxiv.org/abs/2605.01610)：从沟通视角研究 Agentic AI 交互界面。
+- [Position: Assistive Agents Need Accessibility Alignment](https://arxiv.org/abs/2605.13579)：面向真实工作流智能体的综述或相关工作脉络。核心思路是围绕“Position: Assistive Agents Need Accessibility Alignment”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Agentic AI in Industry: Adoption Level and Deployment Barriers](https://arxiv.org/abs/2605.14675)：研究产业中 Agentic AI 的采用水平与部署障碍。
 - [What Really Matters for Table LLMs?](https://doi.org/10.18653/v1/2026.findings-eacl.195)：对 Table LLM 的模型与数据因素做元评测，澄清结构化数据问答性能主要受哪些因素影响。
+- [Intelligent ERP AI Agent with RAG and LLM Integration: A Systematic Literature Review](https://doi.org/10.1109/AIMLA67915.2026.11522318)：综述 ERP 场景中结合 RAG 与 LLM 的智能体集成路线，补充企业级工作流视角。
+- [Agentic artificial intelligence as a new frontier in information systems: Promise, peril, and research opportunities](https://doi.org/10.1016/j.im.2026.104317)：面向真实工作与企业智能体的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [TAXAL Framework: Triadic Fusion of Cognitive, Functional, and Causal Dimensions for Explainability in Agentic LLMs](https://doi.org/10.1016/j.inffus.2026.104389)：提出覆盖认知、功能与因果维度的智能体 LLM 可解释性框架。
+- [Bridging game theory and multi-agent systems: Development status and future prospects](https://doi.org/10.1016/j.paerosci.2026.101183)：综述真实工作场景与多智能体系统相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Bridging Gaps in Agentic AI: Verification, Coordination, and Evaluation](https://doi.org/10.1109/iccsc67078.2026.11468761)：讨论 Agentic AI 在验证、协调和评估上的缺口。
+- [Harnessing Large Language Models and Agentic AI for Transformative Cloud Reliability and Incident Management: A Comprehensive Suggestive Review](https://doi.org/10.32996/jcsts.2026.8.5.4)：综述智能体 AI 在云可靠性与事故管理中的应用。
 - [Agentic information systems](https://doi.org/10.1007/s12525-025-00861-0)：将 agentic information systems 定义为能在非结构化环境中自主决策、执行并委派任务的信息系统，连接智能体与组织信息系统设计。
+- [Retrieval-Augmented Generation (RAG) and Large Language Models (LLMs) for Enterprise Knowledge Management and Document Automation: A Systematic Literature Review](https://doi.org/10.3390/app16010368)：系统综述 RAG 与 LLM 在企业知识管理和文档自动化中的应用。
+- [Large language models in urban planning](https://doi.org/10.1038/s44284-025-00261-7)：综述与梳理 Real-World Work 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [From Human Pragmatic Language Skills to Conversational Agent Design: A Systematic Review of Transfer Strategies](https://doi.org/10.1145/3772318.3792787)：综述真实工作相关方法、风险或评测边界。
+- [Conversational Agents in the Legal Domain: A Systematic Review of the Literature](https://doi.org/10.1007/978-3-031-84460-7_12)：系统综述法律领域的对话智能体。
+- [Agentic AI: a review, applications and open research challenges](https://doi.org/10.1007/s00607-026-01676-3)：综述 Agentic AI 应用与开放研究挑战。
+- [Analyzing the impact of LLMs in Data Science lifecycle: a systematic mapping study](https://doi.org/10.1007/s41060-026-01041-9)：系统梳理 LLM 对数据科学生命周期的影响。
+- [Evaluating Agentic AI Systems: A Balanced Framework for Performance, Robustness, Safety and Beyond](https://doi.org/10.2139/ssrn.5402054)：从性能、鲁棒性、安全性等维度组织智能体 AI 评估框架。
+- [Agentic AI Frameworks in SMMEs: A Systematic Literature Review of Ecosystemic Interconnected Agents](https://doi.org/10.3390/ai6060123)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Where Should Control Reside in Multi-Agent Language-Model Systems?](https://doi.org/10.34190/icair.5.1.4157)：分析多智能体语言模型系统中的控制权应如何分配。
+- [HUMAN–AI COLLABORATION IN KNOWLEDGE WORK: PRODUCTIVITY, ERRORS, AND ETHICAL RISK](https://doi.org/10.52152/6q2p9250)：面向真实工作与企业智能体的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Agentic AI and Autonomous Marketing Systems: A Systematic Review and Integrative Framework](https://doi.org/10.59857/khwrgh17)：系统综述智能体 AI 与自主营销系统。
+- [Exploring Generative AI Agents: Architecture, Applications, and Challenges](https://doi.org/10.60087/jaigs.v8i1.350)：可作为真实工作 agent的 Survey 候选：围绕 Exploring Generative AI Agents: Architecture, Applications, and Challenges 梳理背景、方法与开放问题。

@@ -1,0 +1,245 @@
+# 1.17.3 Bench
+
+- [AI‐Powered Scoring for Creative Thinking: Methods and Challenges in PISA Assessment](https://doi.org/10.1002/jocb.70082)：围绕 PISA 2022 Creative Thinking 测评梳理自动评分路线，比较语义距离、监督微调以及 few-shot 和 zero-shot LLM 评分。
+- [Unpacking the Essential Tension of Knowledge Recombination: Analyzing the Impact of Knowledge Spanning on Citation Counts and Disruptive Innovation](https://arxiv.org/abs/2301.09737)：该研究在 American Physical Society 论文上量化知识跨度与颠覆式创新，发现知识跨度与颠覆性呈 U 形关系、与引用数呈倒 U 形关系；它把科学知识重组转化为可测的创造力结果。
+- [Probing the "Creativity" of Large Language Models](https://aclanthology.org/2023.findings-emnlp.858/)：用 Divergent Association Task 测试发散语义联想。核心思想：让模型生成彼此无关的词并计算语义距离，显示解码策略和 temperature 可提高 DAT 得分，但会带来稳定性取舍。
+- [Increasing Diversity While Maintaining Accuracy](https://aclanthology.org/2023.acl-long.34/)：评测人类干预如何帮助 LLM 生成更多样的文本数据。核心思想：结合 logit suppression、temperature sampling、label replacement 和 out-of-scope filtering，说明当生成被推向多样性时，人类可部分恢复被牺牲的准确性。
+- [The Crowdless Future? Generative AI and Creative Problem-Solving](https://doi.org/10.1287/orsc.2023.18430)：通过差异化与独立搜索协议，比较人类群体和人机协作在创意问题求解中的表现。
+- [Would Archimedes Shout “Eureka” with Algorithms? The Hidden Hand of Algorithmic Design in Idea Generation, the Creation of Ideation Bubbles, and How Experts Can Burst Them](https://doi.org/10.5465/amj.2023.1307)：研究算法设计对想法生成的影响，衡量构思泡沫以及专家干预如何重新打开被压缩的创意搜索空间。
+- [Can AI Be as Creative as Humans?](https://arxiv.org/abs/2401.01623)（[项目页](https://ai-relative-creativity.github.io/)）：评什么：把 AI 创造力转化为与人类创作者群体可比较的度量问题。核心思想：定义 Relative Creativity 和 Statistical Creativity，并把理论连接到 prompt-conditioned autoregressive model，使创造力评估落在条件数据拟合上，而不是依赖单一普适定义。
+- [Can AI Write Classical Chinese Poetry like Humans? An Empirical Study Inspired by Turing Test](https://arxiv.org/abs/2401.04952)：ProFTAP 将人类古典中文诗与模型生成诗混合，让评审给出人类作者概率，并用 AUC 与符号秩检验衡量不可区分性。
+- [AesBench: An Expert Benchmark for Multimodal Large Language Models on Image Aesthetics Perception](https://arxiv.org/abs/2401.08276)（[榜单](https://aesbench.github.io/)）：评什么：多模态大模型的图像审美感知。核心思想：用专家设计的美学判断测试 MLLM 是否能识别构图、色彩、风格和视觉质量等创意作品评价中的关键子能力。
+- [Assessing and Understanding Creativity in Large Language Models](https://arxiv.org/abs/2401.12491)：评什么：用改造后的 Torrance-style protocol 评测 LLM 创造力。核心思想：用 700 个问题、7 类任务和 Fluency、Flexibility、Originality、Elaboration 四个标准刻画模型，发现 LLM 更擅长 elaboration、弱于 originality，且提示词、角色扮演和多 LLM 协作会改变创造力画像。
+- [Exploring Precision and Recall to assess the quality and diversity of LLMs](https://arxiv.org/abs/2402.10693)：把图像生成中的 precision 与 recall 引入开放式文本评测。核心思想：把模型输出当作分布来比较，在无对齐参考答案时同时衡量质量和多样性，暴露普通 benchmark accuracy 难以捕捉的取舍。
+- [An Interpretable Evaluation of Entropy-based Novelty of Generative Models](https://arxiv.org/abs/2402.17287)：提出可解释的熵式生成模型 novelty 评价方法，为开放式生成提供分布层面的创造力指标。
+- [The Effects of Generative AI on Design Fixation and Divergent Thinking](https://arxiv.org/abs/2403.11164)：评什么：生成式 AI 辅助如何改变 design fixation 和 divergent thinking。核心思想：比较有无 AI 生成样例时的人类设计行为，检验构思辅助是在扩展解空间，还是把用户锚定到早期建议。
+- [CreativEval: Evaluating Creativity of LLM-Based Hardware Code Generation](https://arxiv.org/abs/2404.08806)：评什么：RTL 硬件代码生成中的创造力。核心思想：从 fluency、flexibility、originality 和 elaboration 四个维度评价 LLM 生成的硬件设计，使创意工程输出不只按能否编译来判断。
+- [Characterising the Creative Process in Humans and Large Language Models](https://arxiv.org/abs/2405.00899)：评什么：创造过程轨迹，而不只是最终创造力得分。核心思想：用 sentence embeddings 比较人类和 LLM 在 Alternate Uses 与 Verbal Fluency 任务中的语义空间探索和 jump profiles。
+- [Divergent creativity in humans and large language models](https://arxiv.org/abs/2405.13012)：把 LLM 与人类 divergent thinking 做大规模比较。核心思想：在 10 万个人类回答上使用 computational-creativity 指标，显示 LLM 可超过普通人在 Divergent Association Task 上的平均水平，但仍落后于高创造力人群。
+- [Do Language Models Enjoy Their Own Stories?](https://arxiv.org/abs/2405.13769)：评测 LLM 能否替代人工标注者做自动故事评价。核心思想：比较 LLM 打分、传统自动指标和人工标注，显示 LLM 在系统级故事评分上强于旧指标，但解释可靠性仍不足。
+- [A Robot Walks into a Bar](https://arxiv.org/abs/2405.20956)：评测 LLM 是否能作为喜剧创作支持工具服务专业喜剧演员。核心思想：结合 workshop、Creativity Support Index 和焦点小组，显示当前模型常产出平淡、有偏或过度过滤的段子，难以贴合艺术家的价值与风格需求。
+- [Creativity Has Left the Chat: The Price of Debiasing Language Models](https://arxiv.org/abs/2406.05587)：衡量去偏对 LLM 创造力的代价，检验面向安全的去偏是否会降低开放式生成中的原创性或多样性。
+- [Humor in AI](https://arxiv.org/abs/2406.10522)：构建大规模漫画 caption 幽默 benchmark。核心思想：发布 New Yorker 漫画 caption contest 中 220 万条 caption 的 2.5 亿次众包评分，并用排序评测显示 GPT-4 和 Claude 仍落后于顶尖人类参赛者。
+- [Evaluating n-Gram Novelty of Language Models Using Rusty-DAWG](https://arxiv.org/abs/2406.13069)：评什么：生成文本复用了多少训练语料中的 n-gram。核心思想：用 DAWG 式索引实现任意长度 n-gram 的常数时间检索，发现较长 n-gram 上 LM 文本比人类文本更不新颖，且解码策略会改变 novelty。
+- [Are Large Language Models Capable of Generating Human-Level Narratives?](https://arxiv.org/abs/2407.13248)：评什么：LLM 与人类叙事生成质量的差距。核心思想：把叙事写作作为创意能力测试，分析模型故事在 coherence、interest 和 storytelling quality 上何处接近或偏离人类水平。
+- [Overview of the NLPCC 2024 Shared Task on Chinese Metaphor Generation](https://arxiv.org/abs/2408.04378)：总结中文隐喻生成 shared task。核心思想：把 metaphor production 做成带共同数据集、提交系统和评价协议的创造性语言任务，用于评测 figurative generation。
+- [The Double-Edged Roles of Generative AI in the Creative Process: Experiments on Design Work](https://doi.org/10.1287/isre.2024.0937)：结合实验室研究和专业设计师测试，区分 GenAI 在创意构思阶段的收益与后续设计执行阶段的限制。
+- [Augmented Learning for Joint Creativity in Human-GenAI Co-Creation](https://doi.org/10.1287/isre.2024.0984)：检验人类与 GenAI 共创是否带来持续协作中的增强学习，而不只是一次性的创意产出提升。
+- [The Creative Psychometric Item Generator: a Framework for Item Generation and Validation Using Large Language Models](https://arxiv.org/abs/2409.00202)：The Creative Psychometric Item Generator 用 LLM 生成并验证创造力测验题项，把心理测量式创造力评估变成可复现的 LLM 辅助评测流程。
+- [Can Large Language Models Unlock Novel Scientific Research Ideas?](https://arxiv.org/abs/2409.06185)：评测从科学论文生成未来研究 idea 的能力。核心思想：把科研创意评估定义为难以规模化的问题，因为它需要领域知识、上下文理解和对当前文献格局的判断，普通 reference-based metric 难以适用。
+- [SimulBench: Evaluating Language Models with Creative Simulation Tasks](https://arxiv.org/abs/2409.07641)：SimulBench 用固定用户智能体生成多轮交互脚本，再由 GPT-4 评审目标模型的最终回答，评测终端模拟和文字游戏等创意模拟任务。
+- [Evaluating and Enhancing Large Language Models for Novelty Assessment in Scholarly Publications](https://arxiv.org/abs/2409.16605)：提出面向学术 novelty assessment 的 SchNovel。核心思想：在六个 arXiv 领域构造按发表时间区分新旧的论文对，并用检索增强 novelty assessor 模拟审稿人查找相似前作的过程。
+- [Human Creativity in the Age of LLMs](https://arxiv.org/abs/2410.03703)：通过随机实验评测 LLM 辅助对 divergent 与 convergent thinking 的影响，关注人类创造力表现而不只是模型输出质量。
+- [AI as Humanity's Salieri](https://arxiv.org/abs/2410.04265)：用机器文本相对于网页文本的系统归因量化语言创造力。核心思想：把模型生成与人类网页文本比较，检验 LLM 是否更多是在重组常见语言模式，而不是真正达到专家人类的 originality。
+- [Towards Better Open-Ended Text Generation](https://arxiv.org/abs/2410.18653)：提供开放式文本生成的多准则评测框架。核心思想：用 partial ordering 和汇总指标对解码方法排序，同时平衡 coherence、diversity 和 perplexity，而不是优化单一自动分数。
+- [Evaluating Creative Short Story Generation in Humans and Large Language Models](https://arxiv.org/abs/2411.02316)：在 60 个 LLM 和 60 名人类上评测创意短故事写作。核心思想：使用 cue-word 五句故事、自动 novelty 与 surprise 指标，以及专家和非专家评分，区分文体复杂度与真正 originality。
+- [Conditional Vendi Score](https://arxiv.org/abs/2411.02817)：评测 prompt-conditioned generative model 的多样性。核心思想：把生成样本熵拆成 prompt-induced diversity 和 model-induced diversity，避免图像与视频生成器只因 prompt 多样而被高估。
+- [One fish, two fish, but not the whole sea](https://arxiv.org/abs/2411.04427)：评测合成 LLM population 的 conceptual diversity。核心思想：比较对齐前后群体内部和总体层面的变异性，显示 alignment 可能相对人类行为数据压缩概念多样性。
+- [Metaphor generation based on noval evaluation method](https://doi.org/10.1016/j.neucom.2024.128651)：发布含 18,000 对人工标注样本的 MGPP 隐喻生成语料，并提出结合 metaphoricity 与 similarity 的 MS-score，用于评测和重排生成隐喻。
+- [Human perception of art in the age of artificial intelligence](https://doi.org/10.3389/fpsyg.2024.1497469)：用人类作品与 DALL·E 2 作品成对呈现，结合偏好选择与来源辨别任务，同时衡量 AI 艺术的审美偏好和可识别性。
+- [One Does Not Simply Meme Alone: Evaluating Co-Creativity Between LLMs and Humans in the Generation of Humor](https://arxiv.org/abs/2501.11433)：评测人类与 LLM 在 meme 与幽默生成中的协同创造，关注协作是否提升笑点质量、原创性和用户创作控制感。
+- [A Causality-Aware Paradigm for Evaluating Creativity of Multimodal Large Language Models](https://arxiv.org/abs/2501.15147)：提出面向多模态大模型创造力的因果感知评测范式，用于区分因果理解与表层图文新颖性。
+- [Why Do We Laugh? Annotation and Taxonomy Generation for Laughable Contexts in Spontaneous Text Conversation](https://arxiv.org/abs/2501.16635)：标注日语自发文本对话中的可笑语境，并用 LLM 生成解释来归纳十类“为什么可笑”的分类体系。
+- [We're Different, We're the Same: Creative Homogeneity Across LLMs](https://arxiv.org/abs/2501.19361)：Creative Homogeneity Across LLMs 在标准创造力测试上收集人类与多个 LLM 的创意回答，并从群体层面度量多样性，发现 LLM 输出彼此之间比人类输出更同质。
+- [How do Humans and Language Models Reason About Creativity? A Comparative Analysis](https://arxiv.org/abs/2502.03253)：在统一评测协议下比较人类与语言模型的创造性推理，将创造性判断同普通流畅作答区分开来。
+- [Pencils to Pixels: A Systematic Study of Creative Drawings across Children, Adults and AI](https://arxiv.org/abs/2502.05999)：用 1,338 幅儿童、成人与 AI 绘图及风格、内容指标评估视觉创造力，并比较专家评分和自动评分。
+- [Timing Matters: How Using LLMs at Different Timings Influences Writers' Perceptions and Ideation Outcomes in AI-Assisted Ideation](https://arxiv.org/abs/2502.06197)：Timing Matters 评测写作者在构思流程中何时使用 LLM，显示辅助出现的时机会改变用户主观能动感以及最终想法的质量或多样性。
+- [Components of Creativity: Language Model-based Predictors for Clustering and Switching in Verbal Fluency](https://doi.org/10.18653/v1/2025.conll-1.15)：用语言模型预测 verbal fluency 任务中的 clustering 与 switching，使发散创造力的组成部分可以从生成词序列中测量。
+- [Artistic turing test: The challenge of differentiating human and AI-generated art](https://doi.org/10.1016/j.chbah.2025.100209)：Artistic Turing Test 以儿童画衍生提示生成 AI 艺术，并让人类与 AI 参与者判断作品来源，从而检验视觉艺术中的人机不可区分性。
+- [A Critical Assessment of Modern Generative Models' Ability to Replicate Artistic Styles](https://arxiv.org/abs/2502.15856)：评测现代生成模型复现艺术风格的能力，把风格模仿转成具体的创造力测试，而不是只看样本是否好看。
+- [Integrating Generative Artificial Intelligence and Human Design: The Impact of Automation Level on Human Creative Experience and Efficiency](https://doi.org/10.1080/10447318.2025.2518333)：比较生成式 AI 设计支持中的自动化水平，衡量其对创意体验与效率的影响。
+- [Language Models and the Magic of Metaphor: A Comparative Evaluation with Human Judgments](https://aclanthology.org/2025.clicit-1.49/)：比较语言模型的隐喻解释与人类判断，把 figurative-language understanding 转化为贴近创造力的评测协议。
+- [The Dynamics of Collective Creativity in Human-AI Hybrid Societies](https://arxiv.org/abs/2502.17962)：建模人机混合社会网络，衡量 AI 智能体对想法传播、文化产物和集体创造动态的非线性影响。
+- [Bridging the Creativity Understanding Gap: Small-Scale Human Alignment Enables Expert-Level Humor Ranking in LLMs](https://arxiv.org/abs/2502.20356)：说明少量人类对齐可把 LLM 幽默排序提升到接近专家判断的水平，把笑话评价本身作为可测的创造力子能力。
+- [Automated Evaluation of Meter and Rhyme in Russian Generative and Human-Authored Poetry](https://arxiv.org/abs/2502.20931)：发布 RIFMA 数据集和俄语诗歌 scansion 工具，覆盖重音标注、押韵检测和诗性缺陷识别，用于评测 LLM 是否遵守格律诗形式约束。
+- [Figurative Archive: an open dataset and web-based application for the study of metaphor](https://arxiv.org/abs/2503.00444)：提供 996 条意大利语隐喻及熟悉度、语义距离、解释偏好和语料统计评分，并配套 Web 应用，使隐喻理解与修辞创造力评测不再依赖临时提示词。
+- [Creation-Mmbench: Assessing Context-Aware Creative Intelligence in Mllms](https://arxiv.org/abs/2503.14478)：Creation-MMBench 评测 MLLM 的上下文感知创意智能，检验模型能否在语境约束下生成并判断创意多模态回答。
+- [AI Delivers Creative Output but Struggles with Thinking Processes](https://arxiv.org/abs/2503.23327)：该研究将 GPT-3.5、GPT-4 与 GPT-4o 同人类比较，覆盖发散思维、聚合思维、顿悟题、创意写作、联想流、表征转换和创意选择。
+- [NoveltyBench](https://arxiv.org/abs/2504.05228)（[榜单](https://novelty-bench.github.io/)）：评测 LM 能否生成多个不同且高质量的回答。核心思想：构造鼓励多答案的 prompt 和真实用户问题，比较 20 个领先模型与人类写作者，显示当前模型的分布多样性更低，且同一家族内更大模型不一定更有多样性。
+- [Measuring LLM Novelty As The Frontier Of Original And High-Quality Output](https://arxiv.org/abs/2504.09389)：该工作把 LLM novelty 定义为原创性与高质量共同构成的前沿，用来避免创造力评测只奖励随机发散而忽略可用性。
+- [Has the Creativity of Large-Language Models peaked?](https://arxiv.org/abs/2504.12320)：在创造力任务上重新分析模型间与模型内变异，检验近期 LLM 提升在重复 creative assessment 中是否出现饱和。
+- [Probing and Inducing Combinational Creativity in Vision-Language Models](https://arxiv.org/abs/2504.13120)：CreativeMashup 用 666 个艺术家视觉混搭作品和 IEI 的识别、解释、蕴涵三级标注评测 VLM 的组合式创造力。
+- [Roll the dice & look before you leap](https://arxiv.org/abs/2504.15266)（[开源代码](https://github.com/chenwu98/algorithmic-creativity)）：提供一个跨领域的 algorithmic creativity 测试床，用于分析 next-token prediction 之外的创造性生成。核心思想：在需要前瞻随机规划的可控任务上量化 coherence、diversity 和 originality，使创造力评测不完全依赖主观真实世界打分。
+- [Automated Creativity Evaluation for Large Language Models: A Reference-Based Approach](https://arxiv.org/abs/2504.15784)：提出基于参考答案的 LLM 创造力自动评价方法，为创意输出打分提供比临时 judge prompt 更可复现的协议。
+- [Homogenizing effect of large language models (LLMs) on creative diversity: An empirical comparison of human and ChatGPT writing](https://doi.org/10.1016/j.chbah.2025.100207)：比较人类写作与 ChatGPT 写作，用于衡量 LLM 辅助是否压缩创作多样性并让开放文本趋同。
+- [Artificial Intelligence and the Creative Process: Does AI-Creativity Extend Beyond Divergent Thinking?](https://doi.org/10.1016/j.yjoc.2025.100105)：检验 AI 创造力是否超出发散思维测量，推动评估覆盖更完整的创意过程阶段。
+- [Exploring Cognitive Strategies in Human-AI Interaction: ChatGPT's Role in Creative Tasks](https://doi.org/10.1016/j.yjoc.2025.100095)：通过分析用户与 ChatGPT 互动时采用的认知策略，研究模型在创造性任务中的作用。
+- [Unravelling technostress in human–AI collaborative brainstorming: examining the impact of AI technology characteristics on brainstorming outcomes through AI control anxiety](https://doi.org/10.1108/k-11-2025-2887)：用 409 名参与者研究人机协同头脑风暴，将 AI 技术特征和 AI 控制焦虑与创意生成阶段的表现、创意选择阶段的偏好相联系。
+- [A Principle-Based Evaluation of Generative AI Animation](https://doi.org/10.1109/tensymp63728.2025.11145008)：用专家评分、一致性检验、卡方检验、因子分析、方差分析和逻辑回归，将五段 AI 生成动画对照十项经典动画原则进行评估。
+- [To Feel is to be Human? The Empirical Study of Reader Response to Original and AI-Generated Texts](https://doi.org/10.5709/dialogica-01.01.2025-04)：用李克特量表与语义差异量表比较读者对 Poe 原作和 LLM 改写版本的反应，将作者身份框架与文学形式纳入 AI 创意写作评测。
+- [Evaluation of Generated Poetry](https://doi.org/10.18653/v1/2025.eval4nlp-1.9)：提出覆盖押韵、格律、句法、语义和未知词比例的自动诗歌指标，并在捷克语生成诗与人类诗上同人工判断做相关性验证。
+- [Harmonious Minds: Benchmarking Intertwined Reasoning of Human Personality and Musical Preference](https://doi.org/10.18653/v1/2025.findings-ijcnlp.126)：评测 LLM 能否从文本推断人格特质并选择匹配音乐偏好的和弦进行，用心理线索与符号音乐结构测试跨域审美推理。
+- [Optimising ChatGPT for creativity in literary translation: A case study from English into Dutch, Chinese, Catalan and Spanish](https://arxiv.org/abs/2504.18221)：评测 ChatGPT 在荷兰语、中文、加泰罗尼亚语和西班牙语文学翻译中的创造性，通过提示与生成设置区分忠实性和创造性改写。
+- [Defining and Quantifying Creative Behavior in Popular Image Generators](https://arxiv.org/abs/2505.04497)：提出面向图像生成器创造性的实用量化指标，并同人类直觉对齐检查，使图生图模型可按创意行为而不只是样本观感来比较。
+- [Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models](https://arxiv.org/abs/2505.10844)：引入长叙事脑筋急转弯，其解法既可能依赖洞察也可能依赖暴力搜索，并从解析、求解、自我纠错、解题草图和提示使用等层面暴露 LLM 何时能找到创意捷径。
+- [Can LLMs Simulate Human Behavioral Variability? A Case Study in the Phonemic Fluency Task](https://arxiv.org/abs/2505.16164)：在音位流畅性任务上比较 34 个模型、45 种配置与 106 名人类，用输出多样性和词汇网络结构检验 LLM 是否能复现人类创造性变异。
+- [Not All Jokes Land: Evaluating Large Language Models Understanding of Workplace Humor](https://arxiv.org/abs/2506.01819)：评测 LLM 对职场幽默的理解，检验模型能否识别笑话意图、适切性与专业沟通中的语境线索。
+- [The Reader is the Metric: How Textual Features and Reader Profiles Explain Conflicting Evaluations of AI Creative Writing](https://arxiv.org/abs/2506.03310)：The Reader is the Metric 用 1,471 篇故事、101 名标注者和 17 个无参考文本特征建模读者偏好，区分表层型与整体型创意写作评价者。
+- [Can Artificial Intelligence Write Like Borges? An Evaluation Protocol for Spanish Microfiction](https://arxiv.org/abs/2506.08172)：提出基于文学理论的西班牙语微小说评测协议，从主题连贯、文本清晰、解释深度和审美质量等维度评价 AI 生成文本是否接近 Borges 式短篇期待。
+- [Can Recombination Displace Dominant Scientific Ideas](https://arxiv.org/abs/2506.15959)：该研究分析 1965 至 2024 年的 4,100 万篇论文，把跨主题的非典型知识重组与主题内部替代主流观点的颠覆性分开；两个指标刻画不同的科学新颖性路径，也解释了知识重组增加并不必然带来更多突破。
+- [The Ideation-Execution Gap: Execution Outcomes of LLM-Generated versus Human Research Ideas](https://arxiv.org/abs/2506.20803)：用后续执行结果比较 LLM 与人类生成的研究想法，检验看似有创意的科学 proposal 是否经得起实现和评估。
+- [MetaClimage: A novel database of visual metaphors related to Climate Change, with costs and benefits analysis](https://arxiv.org/abs/2507.09225)：发布气候变化视觉隐喻数据库，将隐喻图像与字面图像配对，并提供难度、有效性、艺术质量、情绪唤起以及由标签派生的语义和情绪变量，可支持超越字面描述的多模态隐喻评测。
+- [A Comparative Approach to Assessing Linguistic Creativity of Large Language Models and Humans](https://arxiv.org/abs/2507.12039)：在同一评价设置下比较 LLM 与人类的语言创造力，帮助区分模型流畅性与类似人类的原创性。
+- [Metaphor and Large Language Models: When Surface Features Matter More than Deep Understanding](https://arxiv.org/abs/2507.15357)：在表层特征扰动下评测 LLM 隐喻理解，揭示看似修辞理解的表现何时来自浅层线索。
+- [Which LLMs Get the Joke? Probing Non-STEM Reasoning Abilities with HumorBench](https://arxiv.org/abs/2507.21476)：HumorBench 评测哪些 LLM 真能理解笑话，把幽默作为非 STEM 推理 benchmark，考察不协调性、文化线索和语用解释能力。
+- [Automating chemosensory creativity assessment with large language models](https://doi.org/10.1016/j.foodqual.2025.105599)：用 LLM 自动评估化学感官创意，把风味和食品创意的原创性转化为领域化评分问题，而不只依赖人工专家评分。
+- [Human creativity versus artificial intelligence: source attribution, observer attitudes, and eye movements while viewing visual art](https://doi.org/10.3389/fpsyg.2025.1509974)：在参与者观看被标注为人类或 AI 创作的视觉艺术时记录眼动，把显性的来源归因态度与隐性的感知行为联系起来。
+- [On choosing the vehicles of metaphors without a body: evidence from Large Language Models](https://doi.org/10.18653/v1/2025.analogyangle-1.4)：测试大型语言模型选择隐喻 vehicle 的能力，以具身性为线索衡量其比喻语言判断是否接近人类隐喻推理。
+- [CordelSextilha.BR: A Benchmark for Poetic Form in Brazilian Cordel Verse Generation](https://doi.org/10.5753/eniac.2025.14067)：构建巴西 cordel 六行诗生成基准，包含 1,519 个公版诗节、末行补全任务、押韵、格律、连贯性和 cordel 风格专家评分，并给出 GPT-4o 与 LLaMA-3.2 的 RhythmAcc 和 RhymeAcc 基线。
+- [PoeTone: A Framework for Constrained Generation of Structured Chinese Songci with LLMs](https://arxiv.org/abs/2508.02515)：用形式符合度、LLM 质量评判、人工评测和 probing 任务评估 18 个 LLM 的中文宋词生成，并把该评测器作为 Generate-Critic 架构中的 critic。
+- [The Basic B*** Effect: The Use of LLM-based Agents Reduces the Distinctiveness and Diversity of People's Choices](https://arxiv.org/abs/2509.02910)：用 1,000 名美国用户的 110,000 个真实身份相关选择，比较通用与个性化 LLM 代理如何降低人际独特性和个体内部多样性。
+- [Language Model Perplexity Predicts Scientific Surprise and Transformative Impact](https://arxiv.org/abs/2509.05591)：该研究在超过 200 万篇论文上发现，语言模型 perplexity 可以预测评审分歧、编辑延迟、跨学科关注和后续变革性影响；最出人意料的论文同时更可能成为突破或被否定，从而把科学惊奇变成可评测信号。
+- [D-HUMOR: Dark Humor Understanding via Multimodal Open-ended Reasoning](https://arxiv.org/abs/2509.06771)：发布 4,379 个 Reddit meme，并标注 dark humor 目标类别与强度，再用 role-reversal self-loop 和三流推理网络评测多模态开放式幽默理解。
+- [Pun Unintended: LLMs and the Illusion of Humor Understanding](https://arxiv.org/abs/2509.12158)：Pun Unintended 评测 LLM 是否真正理解双关和幽默，还是只会生成看似合理的解释，从而把幽默理解变成诊断式创造力评测。
+- [Combinatorial Creativity](https://arxiv.org/abs/2509.21043)：评测超出 compositional generalization 的开放式组合创造力。核心思想是为算法式创造任务定义 novelty-utility 评分，并用它诊断创造力 scaling、模型深宽权衡，以及新颖输出变得不够有用的 ideation-execution gap。
+- [Death of the Novel(ty): Beyond n-Gram Novelty as a Metric for Textual Creativity](https://arxiv.org/abs/2509.22641)：用 8,618 条专家作家标注说明 n-gram novelty 会过度奖励不合语义或不合语用的表达，从而把文本创造力与表层罕见度区分开。
+- [The Geometry of Creative Variability: How Credal Sets Expose Calibration Gaps in Language Models](https://arxiv.org/abs/2509.23088)：用 credal set 衡量模型故事分布如何覆盖人类创意变异，并比较不同提示、模型和解码策略。
+- [Galton's Law of Mediocrity](https://arxiv.org/abs/2509.25767)：评测 LLM 广告创意为何回归平均想法，用有人类参照的创意场景揭示 originality failure。
+- [UPMVM: A Metrics Verification Model for Urdu Poetry](https://doi.org/10.9781/ijimai.2025.09.001)：定义用于乌尔都 ghazal 的规则式韵律检测器和自定义系统，验证诗句中的 Arud meter。
+- [Style Over Story: A Process-Oriented Study of Authorial Creativity in Large Language Models](https://arxiv.org/abs/2510.02025)：Style Over Story 从过程角度研究 LLM 的作者式创造力，区分文体润色与更深层的故事发展，避免创意写作评测退化为流畅度评分。
+- [What Shapes a Creative Machine Mind? Comprehensively Benchmarking Creativity in Foundation Models](https://arxiv.org/abs/2510.04009)：What Shapes a Creative Machine Mind 从多个任务与评分维度系统评测基础模型创造力，把模型创造力从单个提示演示转化为结构化评测对象。
+- [Unveiling LLMs' Metaphorical Understanding: Exploring Conceptual Irrelevance, Context Leveraging and Syntactic Influence](https://arxiv.org/abs/2510.04120)：用概念映射、隐喻-字面表达库和句法敏感性测试评测 LLM 的隐喻处理，揭示模型何时依赖上下文、何时落入无关的字面映射。
+- [How Well do LLMs Understand Sinhala Metaphors? Insights from SinMet-5K](https://doi.org/10.1109/scse70081.2026.11499936)：提出 SinMet-5K 僧伽罗语隐喻理解评测，检验 LLM 是否能处理低资源语言中的修辞意义，而不只依赖英语隐喻能力。
+- [Analysis of Text Accuracy and Visual Alignment in Vision-Language Models for Artistic Text Generation](https://doi.org/10.1109/wacv61042.2026.00092)：该 WACV 评测用 1,000 个词语与风格提示分析 DALL-E、Qwen-VL 和 Qwen-2.5B 的艺术文字生成，并衡量字符级准确率、语义相似度和 CLIP 视觉上下文对齐。
+- [The role of task breadth and cognitive flexibility in generative AI-supported creative idea generation](https://doi.org/10.1016/j.technovation.2026.103540)：检验任务宽度和人的认知灵活性如何影响 GenAI 支持想法生成的创意价值。
+- [DEVELOPING COMPUTATIONAL AESTHETICS FRAMEWORKS TO EVALUATE QUALITY IN DIGITAL ARTWORK CREATIONS](https://doi.org/10.29121/shodhkosh.v7.i4s.2026.7474)：提出数字艺术作品质量的计算美学评估框架，将 AI 艺术评价与可度量审美属性连接起来，而非只依赖主观评论。
+- [EVALUATING ARTISTIC MERIT OF AI-GENERATED PHOTOGRAPHS](https://doi.org/10.29121/shodhkosh.v7.i1s.2026.7126)：结合美学理论、计算成像分析，以及 AI 生成与人类创作照片的策展式比较，评估 AI 生成摄影的艺术价值。
+- [Exploring the Mechanisms of Generative AI’s Impact on Design Creativity: An Empirical Investigation Based on the 4P’s Model](https://doi.org/10.1080/10447318.2026.2622577)：基于 4P creativity model 做实证研究，区分生成式 AI 对设计中的 person、process、product 和 press 因素的影响。
+- [The Scientific Creative Thinking Test (SCTT): Reliability, Validity, and Automated Scoring](https://doi.org/10.1080/10400419.2026.2639038)：为 Scientific Creative Thinking Test 提供信度、效度和自动评分证据，使科学创造力成为可用心理测量和机器评分衡量的评价对象。
+- [Beyond Noise: Characterizing Creative Potential in Unverifiable LLM Hallucinations](https://aclanthology.org/2026.acl-long.554)：该论文将不可验证的 LLM 输出区分为“创造性综合”和“无根据编造”，并在科学概念创造任务上用三个技术领域的 32,400 个生成结果及 1,080 个人工判断检验这一划分。创造性综合占输出的 4.7%，且跨模型、提示策略、领域和嵌入选择保持稳定；回溯实验还显示模型能在受控组合条件下近似恢复训练截止后出现的科学概念。
+- [Does Writing with Language Models Reduce Content Diversity?](https://openreview.net/forum?id=Feiz5HtCD0)：评什么：语言模型辅助写作是否会让人类输出同质化。核心思想：比较无辅助写作、GPT-3 辅助和 InstructGPT 辅助，并用词汇与内容多样性指标显示，反馈调优后的写作助手会让不同作者的文章更相似。
+- [Curiosity-Driven LLM-as-a-judge for Personalized Creative Judgment](https://arxiv.org/abs/2510.05135)：提出 curiosity-driven LLM-as-a-judge 来做个性化创意判断，使评测提示适配用户创意偏好，而不是套用固定 rubric。
+- [Deep Associations, High Creativity: A Simple yet Effective Metric for Evaluating Large Language Models](https://arxiv.org/abs/2510.12110)：提出用于评测 LLM 创造力的深层联想指标，衡量模型输出是否形成非显而易见但有意义的语义连接，而不只是流畅续写。
+- [HypoSpace: Evaluating LLM Creativity as Set-Valued Hypothesis Generators under Underdetermination](https://arxiv.org/abs/2510.15614)：把 LLM 创造力定义为不充分决定条件下的集合式假设生成，衡量模型能否覆盖多个合理解释，而不是只给出单一确信答案。
+- [CLAWS:Creativity detection for LLM-generated solutions using Attention Window of Sections](https://arxiv.org/abs/2510.17921)：通过分段 LLM 生成解答并分析各 section 的 attention-window 模式来检测创造力信号。
+- [Evaluating LLM Story Generation through Large-scale Network Analysis of Social Structures](https://arxiv.org/abs/2510.18932)：用大规模社会结构网络分析评测 LLM 故事生成，在表层流畅度与连贯性之外刻画叙事关系质量。
+- [Infinity-Chat](https://arxiv.org/abs/2510.22954)（[开源代码](https://github.com/liweijiang/artificial-hiveminds)，[数据集](https://huggingface.co/datasets/liweijiang/infinite-chats-taxonomy)）：评什么：开放式语言模型输出的多样性与同质化。核心思想：用 26K 个具有多个合理答案的真实用户问题，衡量模型多次生成是否坍缩成相似的“蜂巢式”回答，而不是保持类似人类的表达差异。
+- [Partnering with Generative AI: Experimental Evaluation of Model-Led and Human-Led Interaction in Human-AI Co-Creation](https://arxiv.org/abs/2510.23324)：该研究比较模型主导与人类主导的人机共创交互，评测主导权安排如何改变创意结果和用户体验，而不是默认所有 AI 辅助方式相同。
+- [Art or Artifice? Large Language Models and the False Promise of Creativity](https://doi.org/10.1145/3613904.3642731)：用专家人工评估检验 LLM 创意写作主张。核心思想：按文学质量标准比较模型和人类创意输出，指出流畅性可能掩盖 originality、intentionality 和 artistic control 的不足。
+- [LLM generation novelty through the lens of semantic similarity](https://arxiv.org/abs/2510.27313)：用语义相似性结构衡量 LLM 输出 novelty，为开放式生成提供超越词面重叠的分级新颖性信号。
+- [Beyond Checkmate: Exploring the Creative Choke Points for AI Generated Texts](https://doi.org/10.18653/v1/2025.emnlp-main.600)：Beyond Checkmate 按引言、正文和结论分段分析 AI 文本与人类文本的差异，定位创意表达的 chokepoint，并发布可解释检测代码。
+- [LiteraryTaste: A Preference Dataset for Creative Writing Personalization](https://arxiv.org/abs/2511.09310)：发布 60 名读者的创意写作偏好数据集，把自报阅读品味与每人 100 对短篇创意文本偏好标注结合起来，用于个性化和微调研究。
+- [Simple Lines, Big Ideas: Towards Interpretable Assessment of Human Creativity from Drawings](https://arxiv.org/abs/2511.12880)：提出可解释的绘画创造力评估方法，将分数分解为内容与风格两个维度，并为已有创造力标注绘画数据集补充内容类别标注。
+- [Stable Diffusion Models Reveal a Persisting Human-AI Gap in Visual Creativity](https://arxiv.org/abs/2511.16814)：该视觉创造力评测比较艺术家、非艺术家、人类引导和自引导 Stable Diffusion 输出，并对照人类评分与 GPT-4o 评分模式。
+- [Homogenization Effects of Large Language Models on Human Creative Ideation](https://doi.org/10.1145/3635636.3656204)：评测 ChatGPT 如何改变人类构思多样性。核心思想：同时测量个体层面的 divergent idea 和群体层面的同质化，显示模型辅助可帮助个人提出更发散的想法，但会让总体 idea pool 更相似。
+- [The author is dead, but what if they never lived? A reception experiment on Czech AI- and human-authored poetry](https://arxiv.org/abs/2511.21629)：设计捷克语诗歌接受实验，让母语读者区分 AI 与人类诗作并评价审美质量，把 AI 诗歌不可区分性测试扩展到英语之外。
+- [Does Less Hallucination Mean Less Creativity?](https://arxiv.org/abs/2512.11509)：实证考察降低幻觉是否会压制 LLM 创造性，把 reliability 与 creativity 的张力显式化，而不是默认安全调优只有正向收益。
+- [Can GPT replace human raters? Validity and reliability of machine-generated norms for metaphors](https://arxiv.org/abs/2512.12444)：测试 GPT 模型能否为英意隐喻提供 familiarity、comprehensibility 和 imageability 规范评分，并用人类与行为判断验证其可靠性。
+- [Alignment, Exploration, and Novelty in Human-AI Interaction](https://arxiv.org/abs/2512.17117)：基于九天博物馆协作讲故事实验和 3,000 多条访客贡献，测量轮流式人类-LLM 共创中的情感对齐、语义探索与语言创新。
+- [Research on Novelty Measurement Indicator of Academic Papers Based on the Atypical Recombination of Knowledge](https://arxiv.org/abs/2512.18979)：Knowledge Eccentricity 衡量论文的知识重组偏离既有知识体系的程度，并在 Science、Nature、高被引和零被引论文的五个年份样本上检验该指标；团队越大得分越低，参考文献越多则新颖性适度提高。
+- [Do readers prefer AI-generated Italian short stories?](https://arxiv.org/abs/2601.17363)：开展意大利短篇小说盲测，将两篇 ChatGPT-4o 生成故事与一篇 Moravia 故事比较，测量读者偏好、评分和人口统计因素影响。
+- [Within-Model vs Between-Prompt Variability in Large Language Models for Creative Tasks](https://arxiv.org/abs/2601.21339)：该工作让 12 个 LLM 在 10 个创造力提示下各生成 100 个样本，并将原创性与流畅度方差分解为提示、模型、交互项和模型内随机性。
+- [When LLMs Imagine People: A Human-Centered Persona Brainstorm Audit for Bias and Fairness in Creative Applications](https://arxiv.org/abs/2602.00044)：Persona Brainstorm Audit 用 12 个模型生成 120,000 个开放式人物设定，并在 16 个偏见维度上以归一化 Cramer's V 暴露单轴与交叉身份偏见。
+- [Are Semantic Networks Associated with Idea Originality in Artificial Creativity? A Comparison with Human Agents](https://arxiv.org/abs/2602.02048)：比较人工智能与人类主体的语义网络结构，检验网络属性是否能预测想法原创性。
+- [AidanBench](https://openreview.net/forum?id=fz969ahcvJ)（[榜单](https://aidanbench.com/)）：评测开放式问题中的 novel idea generation。核心思想：在没有明确标准答案的任务中评价 LLM 的 creativity、reliability、contextual attention 和 instruction following，暴露其与普通 benchmark 的弱相关性。
+- [Outlines of a Fuzzy Approach for Characterizing Purposefulness in Human and LLM Generated Text](https://doi.org/10.1109/CogInfoCom63007.2024.10894733)：评什么：human 与 LLM generated text 的 purposefulness 和 distinctiveness。核心思想：用 fuzzy-logic 方法比较不同 part-of-speech 类别中的语义唯一性，使创意文本不只被二分为人类或机器，而是按目标指向性做分级判断。
+- ["Who" Is the Best Creative Thinking Partner?](https://doi.org/10.1002/jocb.1519)：比较 human-human、human-internet 和 human-AI co-creation。核心思想：让 202 名参与者完成四类创造力任务，发现人类双人组在 divergent-thinking 得分上优于 AI 辅助条件，同时 AI 自动评分可能与人类创造力判断明显不一致。
+- [AI Writers and Critics: An Exploratory Study on Creative Content Generation and Evaluation by Large Language Models](https://ceur-ws.org/Vol-3810/paper12.pdf)：评什么：LLM 同时作为创意作者和批评者。核心思想：比较 11 个模型在 poem、blog、ad copy、short movie script 和 news article 上的表现，考察不同提示和 multi-agent 设置，并用 LLM evaluator rubric 评价 innovation、coherence、expressiveness 和 diversity。
+- [Human-AI Synergy Supports Collective Creative Search](https://arxiv.org/abs/2602.10001)：比较纯人类、纯 AI 与人机混合群体的集体创造性搜索，用搜索轨迹而不只是最终作品评分来刻画创造力。
+- [EQ-Bench Creative Writing v3](https://eqbench.com/creative_writing.html)：评什么：创意写作的主观质量、风格、叙事控制和文学表达。核心思想：围绕开放式创意写作 prompt 维护公开模型榜单，用持续更新的比较面补充论文型创造力 benchmark。
+- [EQ-Bench Longform Creative Writing](https://eqbench.com/creative_writing_longform.html)：评什么：长篇创意写作质量。核心思想：用更长叙事输出检验模型能否持续保持节奏、声音、连贯性和风格控制，而不只是在短回答中表现好。
+- [LLM Creative Story-Writing Benchmark](https://github.com/lechmazur/writing)：评什么：带约束的短故事生成。核心思想：用带显式要求的创意写作 prompt 比较模型，使故事质量与约束满足度有一个公开 GitHub 榜单参考。
+- [Can LLMs Cook Jamaican Couscous? A Study of Cultural Novelty in Recipe Generation](https://arxiv.org/abs/2602.10964)：评测 LLM 食谱生成中的文化新颖性，检验模型能否创造合理的跨文化菜式而不坍缩为刻板印象。
+- [Can AI Make Us Laugh?](https://aclanthology.org/2025.chum-1.8/)：将 AI 生成笑话与专业人类喜剧作者的作品对比。核心思想：在现场单口喜剧式表演中测量观众笑声，用直接行为信号判断 Witscript 笑话是否达到人类创作水平。
+- [Human vs. AI in creative contests](https://doi.org/10.1007/s10660-025-09990-2)：在创意比赛语境中评测中文 LLM 的广告文案生成。核心思想：把机器生成广告文案与人类比赛作品比较，使营销创造力通过应用型竞赛协议评估，而不是只看孤立 prompt 示例。
+- [Can AI Take a Joke-Or Make One?](https://doi.org/10.1145/3698061.3734388)：测试支持性对话中的幽默生成与识别。核心思想：构造面向幽默风格、情感适切性和说话人角色敏感性的定向数据集，比较 GPT-4o、LLaMA3 和 Gemini 1.5 是否知道何时该开玩笑、何时不该。
+- ["Not Human, Funnier": How Machine Identity Shapes Humor Perception in Online AI Stand-up Comedy](https://arxiv.org/abs/2602.12763)：通过操控机器身份来评测 AI 单口喜剧感知，检验观众何时会因为表演者被明确标注为 AI 而认为生成笑话更好笑。
+- [LLMs Exhibit Significantly Lower Uncertainty in Creative Writing Than Professional Writers](https://arxiv.org/abs/2602.16162)：比较 LLM 与专业写作者在创意写作中的不确定性，揭示模型在开放式故事生成中的过度自信行为。
+- [Forma mentis networks predict creativity ratings of short texts via interpretable artificial intelligence in human and AI-simulated raters](https://doi.org/10.1007/s42001-025-00446-z)：比较人类和 AI 对短故事的创造力评分。核心思想：用 textual forma mentis networks、XGBoost 和 SHAP 说明 GPT-3.5 与 Sonnet 3.7 依赖的语义和情感特征不同于人类，并且会偏好自己生成的故事。
+- [Hybrid humor](https://doi.org/10.1002/aaai.70064)：评测 GPT-4o 的漫画 caption 写作能力。核心思想：移除 IEEE Computer 漫画原 caption 后让 AI 生成替代文本，检验其是否保留情境含义、反讽和文化上下文，并把模型定位为构思助手而不是替代漫画作者。
+- [Are LLMs qualified evaluators and generators of one-liner jokes](https://doi.org/10.1016/j.neunet.2026.109077)：研究 LLM 能否同时做幽默评委和笑话生成器。核心思想：把 one-liner generation 与 evaluation 放入同一协议，检验能可靠评价笑话的模型是否也能生成真正好笑且多样的笑话。
+- [Analogical reasoning with large language models: a co-creative framework and benchmarking of LLMs in design ideation](https://doi.org/10.1017/dsj.2025.10044)：评测 LLM 在协同设计构思中的类比推理能力，把基于类比的概念迁移转化为可评价的设计创造力协议。
+- [Lost in Stories: Consistency Bugs in Long Story Generation by LLMs](https://arxiv.org/abs/2603.05890)：用一致性缺陷用例评测长篇故事生成，使叙事连贯性问题不再被单轮流畅性掩盖。
+- [The Art That Poses Back: Assessing AI Pastiches after Contemporary Artworks](https://arxiv.org/abs/2603.06324)：通过艺术家提供源作品，评估 AI 对当代艺术作品的拟作生成，覆盖绘画、素描、雕塑和装置等参照类型。
+- [A Benchmark for Evaluating Large Language Models' Comprehension of Artistic Techniques and Emotions in Chinese Poetry](https://doi.org/10.1145/3786183.3786184)：评测 LLM 对中国诗歌艺术手法与情感的理解，把文学阐释作为创造性语言能力的子任务。
+- [Grounding Machine Creativity in Game Design Knowledge Representations](https://arxiv.org/abs/2603.07101)：在结构约束下探测 LLM 可执行 game-pattern 合成，把机器创造力落到可玩设计知识，而不是只看自由文本新颖性。
+- [CREATE: Testing LLMs for Associative Creativity](https://arxiv.org/abs/2603.09970)：把 associative creativity 做成 LLM 评测，考察模型能否建立遥远且非显然的概念关联，补充 divergent association 与开放式生成类测试。
+- [A Rubric-Guided Multimodal Approach Using High-Capacity LLMs Provides Psychometrically Sound Creativity Assessment in Learning Games](https://doi.org/10.1080/10400419.2026.2638384)：测试 LLM 能否为 Physics Playground 学习游戏中的学生自制多模态关卡做创造力评分。核心思想：比较 rubric-guided 与 rubric-free prompt、text-only 与图像加结构化输入、GPT/Gemini 模型容量，显示高容量模型在显式创造力 rubric 和多模态证据下更接近人类专家评分。
+- [HanMoVLM: Large Vision-Language Models for Professional Artistic Painting Evaluation](https://arxiv.org/abs/2603.10814)：HanMo-Bench 用拍卖级与 AI 生成的中国画构建专家式评测，并训练 HanMoVLM 作为艺术评价器和测试时扩展验证器。
+- [Does AI See like Art Historians? Interpreting How Vision Language Models Recognize Artistic Style](https://arxiv.org/abs/2603.11024)：用潜空间概念分解、因果检验、定量评测和艺术史专家判断来评估 VLM 的艺术风格识别机制。
+- [Can MLLMs Tell Jokes Based on Images? A Visual Context-Driven Humor Generation Framework](https://doi.org/10.1109/ICME59968.2025.11209232)：评测视觉上下文驱动的笑话生成，检验多模态大模型能否把图像中的反差与场景线索转化为幽默文本。
+- [CreativeBench](https://arxiv.org/abs/2603.11863)：用自演化挑战评测并推动机器创造力，把 novelty 压力持续引入评测流程，而不是只固定一组创意 prompt。
+- [Exploring the use of LLMs to evaluate design creativity](https://doi.org/10.1017/pds.2025.10191)：研究 LLM 能否评价设计创造力，将模型判断与人类设计评价标准对照，用于早期构思作品评估。
+- ["Who" designs better?](https://doi.org/10.1017/dsj.2025.10029)：在灯具设计竞赛中比较 AI、人类与人机协作，并用盲评众包的 CPSS 量表评估草图、三维渲染和 VR 展示三个阶段。
+- [From Prompts to Worlds: How Users Iterate, Explore, and Make Sense of AI-Generated 3D Environments](https://arxiv.org/abs/2603.13233)：通过出声思维、行为观察以及可用性、临场感和参与度量表研究商业文本到 3D 平台，揭示 AI 生成 3D 环境中的语言到空间限制。
+- [Creative Convergence or Imitation? Genre-Specific Homogeneity in LLM-Generated Chinese Literature](https://arxiv.org/abs/2603.14430)：衡量 LLM 生成中文文学的体裁特定同质化，检验表面上的创意趋同是否来自模仿和跨体裁风格坍缩。
+- [Tarab: A Multi-Dialect Corpus of Arabic Lyrics and Poetry](https://arxiv.org/abs/2603.16601)：发布 256 万诗句规模的阿拉伯歌词与诗歌语料，覆盖古典阿拉伯语、现代标准阿拉伯语和六大地区变体，并带有语言、地域、时代和体裁元数据，可支持创意文本建模与评测。
+- [Evaluating LLMs' divergent thinking capabilities for scientific idea generation with minimal context](https://doi.org/10.1038/s41467-026-70245-1)：用 1,180 个关键词和 22 个领域的极少上下文 prompt 评测科学想法生成，并按 originality、feasibility、fluency、flexibility 和 clarity 打分，说明科学 divergent thinking 与通用 benchmark 相关性较弱。
+- [Tracing Cognitive Dynamics in Group Ideation: An LLM-Based Framework for Automating Linkography](https://doi.org/10.1080/10447318.2026.2662519)：用 LLM 自动化 group ideation 的 linkography 分析，追踪协同创意会话中想法如何连接与演化。
+- [How LLMs Distort Our Written Language](https://arxiv.org/abs/2603.18161)：结合用户研究和 LLM 普及前的人类作文，衡量 LLM 修改如何改变文风、语气、含义和创造性感知，并报告重度使用下立场被中性化的比例上升。
+- [Serendipity by Design: Evaluating the Impact of Cross-domain Mappings on Human and LLM Creativity](https://arxiv.org/abs/2603.19087)：评测跨领域映射如何影响人类与 LLM 创造力，把意外类比作为促进发散构思的干预方式。
+- [Can ChatGPT Really Understand Modern Chinese Poetry?](https://arxiv.org/abs/2603.20851)：该框架与专业诗人合作，从多个维度评估 ChatGPT 对现代中文诗的阐释，包括与诗人原意的一致性和诗性把握。
+- [Timing In stand-up Comedy: Text, Audio, Laughter, Kinesics (TIC-TALK): Pipeline and Database for the Multimodal Study of Comedic Timing](https://arxiv.org/abs/2603.21803)：发布多模态单口喜剧节奏资源，包含 90 部演出中特对齐的 5400 多个主题片段，并结合 BERTopic 分段、Whisper-AT 笑声检测、YOLO 镜头分类和姿态关键点。
+- [CMGBench: Benchmarking Chinese Metaphor Generation for Large Language Models](https://doi.org/10.3724/2096-7004.di.2025.0084)：评测 LLM 的中文隐喻生成能力，补充以贴切且新颖隐喻生产为核心的 figurative-language 创造力测试。
+- [Research Novelty in Information Systems Journals After ChatGPT: Differences Across Institutional Language Contexts](https://arxiv.org/abs/2603.22510)：该研究用 SPECTER2 对 2020 至 2025 年 13,847 篇信息系统论文计算相对最近前作的语义距离，发现非英语主导机构作者在 ChatGPT 普及后新颖性下降更大；它在不观测个人 LLM 使用的前提下衡量学术生态层面的原创性变化。
+- [CresOWLve: Benchmarking Creative Problem-Solving Over Real-World Knowledge](https://arxiv.org/abs/2604.03374)：用真实世界知识谜题评测创意解题，要求逻辑推理、横向思维、类比、常识与非显然事实连接，并暴露前沿 LLM 从事实问答到创意问题的性能落差。
+- [Cards Against LLMs: Benchmarking Humor Alignment in Large Language Models](https://arxiv.org/abs/2604.08757)：提出面向 LLM 的幽默对齐基准，用 Cards Against Humanity 式选择题检验模型偏好是否贴近人类喜剧判断。
+- [Decoupling of Usefulness and Novelty](https://doi.org/10.1145/3772318.3791329)：评测生成式 AI 对新手设计的影响，并显式区分 usefulness 与 novelty，避免把创意支持简单等同于“有用”。
+- [Culture-Aware Humorous Captioning: Multimodal Humor Generation across Cultural Contexts](https://arxiv.org/abs/2604.18091)：定义图像加文化语境条件下的幽默 caption 生成，并给出六维评测，检验多模态模型能否同时保持图像相关性、文化适配、幽默性和创造性。
+- [Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](https://arxiv.org/abs/2604.18169)：用成对文学翻译任务区分 LLM 的理解与创造性改写能力，检验模型能否在保留意义的同时做出有创意的译法。
+- [HumorRank: A Tournament-Based Leaderboard for Evaluating Humor Generation in Large Language Models](https://arxiv.org/abs/2604.19786)：评什么：通过锦标赛式成对排序评测 LLM 笑话生成。核心思想：用比较判断给幽默系统排序，而不是只看孤立 prompt 得分，把幽默生成变成 leaderboard-style 的创意语言任务。
+- [Evaluating LLM-Generated Explanations of Metaphors - A Culture-Sensitive Study of Danish](https://aclanthology.org/2025.nodalida-1.51/)：构建 150 个丹麦语隐喻与习语的评测，并用四级量表评价 ChatGPT 与 Llama 的解释，揭示文化特定 figurative meaning 上的英语迁移偏差。
+- [Exploring creativity in human-AI co-creation](https://doi.org/10.3389/fcomp.2025.1672735)：比较不同设计经验人群中的人机共创过程，用设计过程证据分析 expertise 如何影响 novelty、usefulness 与协作模式。
+- [The Effect of Idea Elaboration on the Automatic Assessment of Idea Originality](https://arxiv.org/abs/2604.20569)：检验想法详述程度对自动原创性评分的影响，探测模型评审是否偏好更自相似或更充分展开的创意回答。
+- [Voice Under Revision: Large Language Models and the Normalization of Personal Narrative](https://arxiv.org/abs/2604.22142)：Voice Under Revision 用三个前沿 LLM 在通用改写、仅改写、保留声音三类提示下改写 300 篇个人叙事，并用 13 个风格计量指标显示文本会收敛到更 polished、但更少情境化的声音。
+- [More Aligned, Less Diverse? Analyzing the Grammar and Lexicon of Two Generations of LLMs](https://arxiv.org/abs/2605.06030)：用 HPSG 语法分析和生态学多样性指标比较两代 LLM 生成新闻文本与《纽约时报》语料，衡量更新的对齐是否压缩句法和词汇多样性。
+- [A Reproducible Multi-Architecture Baseline for Token-Level Chinese Metaphor Identification under the MIPVU Framework](https://arxiv.org/abs/2605.07170)：在 PSU Chinese Metaphor Corpus 上按 MIPVU 框架给出可复现的中文词级隐喻识别基线，比较中文 RoBERTa 与结合 MCD7 基本义资源的 MelBERT 适配。
+- [How humorous is AI?](https://doi.org/10.1016/j.chbr.2025.100807)：评测 ChatGPT 幽默生成及其人机互动效果，补充生成笑话何时被认为好笑或合宜的 social-HCI 视角。
+- [Read, Grep, and Synthesize: Diagnosing Cross-Domain Seed Exposure for LLM Research Ideation](https://arxiv.org/abs/2605.11532)：诊断 LLM 科研构思是否受跨领域 seed 暴露驱动，使创造力评测能区分有益启发、隐性污染和模板复用。
+- [Assessing the Creativity of Large Language Models](https://arxiv.org/abs/2605.13450)（[榜单](https://schapiro.ai/creative-ai-index/)）：评测心理测量式创造力测验能否预测 LLM 的创造性成就。核心思想是把 DAT、Conditional DAT 和新提出的 DRAT 同创意写作、发散思维和科研构思结果对照，说明创造力测验是构念特异的，不能相互替代。
+- [Human vs. LLM Creativity](https://doi.org/10.3390/jintelligence14020027)：跨任务比较人类与 LLM 创造力及其语言机制，显式呈现 originality、elaboration 与语言使用之间的不对称。
+- [Limits of Computational Selection](https://doi.org/10.3390/info17030243)：从 computational selection 的限制分析 convergent creativity，说明创意生成之后的人机差异如何在选择阶段产生。
+- [Creativity Bias](https://arxiv.org/abs/2605.13596)：检验自动与机器评审在文学翻译创造性上的偏差，说明流畅度导向的翻译评分何时会低估有创造性的非直译表达。
+- ["Like Taking the Path of Least Resistance": Exploring the Impact of LLM Interaction on the Creative Process of Programming](https://arxiv.org/abs/2605.13776)：评测 LLM 交互如何改变创意编程过程，通过创意编码中的交互轨迹揭示“最小阻力路径”效应，而不只看最终代码质量。
+- [Dynamics of collective creativity in AI art competitions](https://arxiv.org/abs/2605.17141)：利用 Artbreeder remix party 谱系研究网络化人机文化生产，衡量分支式 remix 结构如何影响新颖性和集体创造力。
+- [Multimodal Metaphor Understanding and Generation in MLLMs: A Dataset and Reasoning Framework](https://doi.org/10.1016/j.patcog.2026.113369)：该工作把多模态隐喻理解与生成整理成面向 MLLM 的数据集和推理框架，评测模型能否建立图文隐喻映射，而不只是描述表层内容。
+- [Preferences Order, Ratings Anchor: From Fused Expert Aesthetic Ground Truth to Self-Distillation](https://arxiv.org/abs/2605.19776)：提出 PPaint 双协议中国画审美基准，包含 150 幅画作、45,900 个专家成对偏好判断，并在五个审美维度上配套评分。
+- [Seeing the Poem: Image-Semantic Detection of AI-Generated Modern Chinese Poetry with MLLMs](https://arxiv.org/abs/2605.22654)：评估 MLLM 检测 AI 生成现代汉诗的能力，并加入图像语义线索，使诗歌作者身份检测不局限于纯文本信号。
+- [Reshaping team collaboration and creativity in co-design: the role of large language models](https://doi.org/10.1080/15710882.2026.2641141)：该研究考察 LLM 如何重塑 co-design 中的团队协作与创造力，关注 AI 对角色分工、沟通方式和群体创意发展的影响。
+- [MindCopilot: Towards Formalizing and Evaluating Granular Human-LLM Co-Writing](https://arxiv.org/abs/2605.23535)：把细粒度人类与 LLM 共写形式化为人在环马尔可夫决策过程，评估接受、编辑和修复行为，而不只看最终文本质量。
+- [Testing Language Creativity of Large Language Models and Humans](https://doi.org/10.18653/v1/2025.nlp4dh-1.37)：Testing Language Creativity 比较 LLM 与人类在语言创造力任务上的表现，为页面补充人机创意语言生成差异的评测型条目。
+- [Re-defining Humor Data Objects for AI Humor Research](https://arxiv.org/abs/2605.25171)：把幽默定义为带上下文和解释的推理数据对象，迭代提示 LLM 生成幽默解释，并扩展这些对象用于幽默数据合成与增强。
+- [The Effects of (Dis)similarities Between the Creator and the Assessor on Assessing Creativity: A Comparison of Humans and LLMs](https://doi.org/10.3390/jintelligence13070080)：该研究比较人类和 LLM 在创作者与评估者相似或不相似条件下的创造力评分，揭示评估者身份会改变评分，而不能把 LLM 判断视为中立。
+- [The paradox of creativity in generative AI: high performance, human-like bias, and limited differential evaluation](https://doi.org/10.3389/fpsyg.2025.1628486)：该研究提出生成式 AI 创造力悖论：模型可能取得高分，同时仍呈现类人偏差和有限的区分效度，因此不能只看总体创造力分数。
+- [Beyond One Path: Evaluating and Enhancing Divergent Thinking in Interactive LLM Agents](https://arxiv.org/abs/2605.28465)：提出 MUTATE 来评估交互式 LLM agent 的发散思维，同时考察发现多条可行路径的路径级能力和非典型物体使用的动作级能力，并记录传统成功率会丢弃的偏离路径尝试。
+- [Automated Creativity Evaluation of Language Models Across Open-Ended Tasks](https://arxiv.org/abs/2606.11762)：该框架把无需参考答案的发散创造力与依赖检索的收敛任务完成度分开：前者用 semantic entropy 评分，后者用基于检索的多智能体 judge 评分；验证覆盖 MacGyver 解题、HypoGen 科研构思和 BookMIA 创意写作，评审效率提升超过 60%。
+- [AGC-Bench: Measuring Artificial General Creativity](https://arxiv.org/abs/2607.01152)：AGC-Bench 将头脑风暴、STEM、叙事、修辞、解题和幽默等 78 个创造力数据集标准化，用 Judge Response Theory 校准开放权重 AGC-Judge；在 83 个 LLM 上发现一个解释 81.5% 方差的通用创造力因子，同时它与知识和推理能力可分离。
+- [CreAItive Collaboration? Users' Misjudgment of AI-Creativity Affects Their Collaborative Performance](https://doi.org/10.1145/3706598.3713886)：评测用户误判 AI 创造力如何影响协作表现，把感知到的创造主体性与真实共创结果区分开。
+- [Design creativity in AI: Using the SCAMPER method](https://doi.org/10.1017/s0890060425100036)：用 SCAMPER 作为结构化创造力协议比较 GPT-4 与学生生成的工程概念，并区分新颖性和技术可行性。
+- [Generative artificial intelligence models outperform students on divergent and convergent thinking assessments](https://doi.org/10.1038/s41598-025-21398-4)：比较 GenAI 模型与学生在发散思维原创性和收敛思维 RAT 式测验上的表现，并质疑现有创造力测评方法。
+- [Generative artificial intelligence, human creativity, and art](https://doi.org/10.1093/pnasnexus/pgae052)：利用数百万件艺术作品衡量文生图 AI 如何改变创作产出和受众价值，并把人类构思与 AI 视觉生成视为协同流程。
+- [The social AI author: modeling creativity and distinction in simulated cultural fields](https://doi.org/10.1007/s00146-025-02790-0)：该模拟用与真实作者匹配的 LLaMA 作家角色生成小说和文学场域判断，再与真实文化区分比较，评估 AI 文学创造力的同质化与身份偏差。
+- [AI Narrative Modeling: How Machines' Intelligence Reproduces Archetypal Storytelling](https://doi.org/10.3390/info16040319)：AI Narrative Modeling 用 GPT-4 与 Claude 生成六类荣格原型故事，并结合相似度、情感、TF-IDF、主题模型和专家评分评估连贯性、深度、复杂性与原创性。
+- [AI-generated poetry is indistinguishable from human-written poetry and is rated more favorably](https://doi.org/10.1038/s41598-024-76900-1)：这项 Scientific Reports 研究通过两项预注册诗歌实验，让参与者区分 AI 生成诗与人类诗，并在不同作者身份提示下评价审美质量。
+- [Can Audio Language Models Listen Between the Lines? A Study on Metaphorical Reasoning via Unspoken](https://doi.org/10.1145/3746027.3758173)：Unspoken 考察音频语言模型能否从语音中完成隐喻推理，把比喻理解转化为音频语言模型评测协议。
+- [Tasting Emotions with GPT-4o: Comparing AI and Human Norms in Metaphoric Associations](https://doi.org/10.1007/s12559-026-10594-7)：用自由联想和量表评分协议比较 GPT-4o 与人类味觉-情感隐喻常模。
+- [The current state of artificial intelligence generative language models is more creative than humans on divergent thinking tasks](https://doi.org/10.1038/s41598-024-53303-w)：用 AUT、后果任务和 DAT 比较 GPT-4 与人类，并控制流畅性来衡量发散思维。
+- [The Double-Edged Sword of Creative Control in Designer-AI Co-Creation with Design Experience as a Boundary Condition](https://doi.org/10.3390/bs16040570)：检验创意控制权和设计经验如何影响设计师-AI 共创结果。
+- [Who expands the human creative frontier with generative AI: Hive minds or masterminds?](https://doi.org/10.1126/sciadv.adu5800)：基于在线艺术平台大规模数据和匹配非采用者，区分生产率、稀释效应与 Stable Diffusion 开源发布对新颖作品产出的影响。
+- [Evaluating Creativity: Can LLMs Be Good Evaluators in Creative Writing Tasks?](https://doi.org/10.3390/app15062971)：比较 LLM 评审与传统评估信号在创意写作任务中的表现，检验机器评价主观创意文本的可靠性和一致性。
+- [Beyond the surface: stylometric analysis of GPT-4o's capacity for literary style imitation](https://doi.org/10.1093/llc/fqaf035)：在零样本、零样本模仿和上下文学习提示下生成 GPT-4o 文本，并用文体计量学检验其对 Hemingway 与 Shelley 风格写作的模仿能力。
+- [Perception of AI Creativity: Dimensional Exploration and Scale Development](https://doi.org/10.1002/jocb.70028)：开发并验证受众感知 AI 创造力的多维量表，把机器创造力感知转化为可测量的评价构念。
+- [Stylometric comparisons of human versus AI-generated creative writing](https://doi.org/10.1057/s41599-025-05986-3)：用文体计量特征比较人类与 AI 生成的创意写作，为创意语言评估提供细粒度作者身份信号。
+- [Large language models are homogeneously creative](https://doi.org/10.1093/pnasnexus/pgag042)：比较多个 LLM 在创造力任务上的表现，检验不同模型是否仍收敛到狭窄而同质的创意输出。
+- [Effects of Prompt Elements on Problem-Solving Performance and User Experience: Insights from ChatGPT Interactions](https://doi.org/10.1177/21582440251381680)：在 ChatGPT 创造性问题解决交互中改变提示元素，并同时衡量解题表现和用户体验。
+- [How to maximize the creativity of artificial intelligence: an experimental analysis of response order and prompting effects](https://doi.org/10.1007/s00146-025-02816-7)：通过实验改变回答顺序和提示方式，衡量呈现方式与提示设计如何改变 AI 创造力感知。
+- [Automated scoring of creative problem solving with large language models: A comparison of originality and quality ratings.](https://doi.org/10.1037/aca0000736)：比较 LLM 对创造性问题解决中原创性和质量评分的自动打分能力，检验两个评分维度是否呈现不同可靠性。
+- [Creativity and AI](https://doi.org/10.2139/ssrn.4686415)：在开放程度不同的任务上盲评人类与 ChatGPT 的匹配回答池，得到参与者层面的人机创造力判断。
+- [Time-on-task and instructions help humans to keep up with AI: replication and extension of a comparison of creative performances](https://doi.org/10.1038/s41598-025-05745-z)：在改写的 Alternate Uses 指令、更长人类作答时间、Remote Associates 任务、语义距离评分和外部评分员下复现实验，比较人类与 AI 创造表现。
+- [COMPARISON OF AI-GENERATED CONCEPTUAL INTERIOR DESIGNS USING STANDARDIZED PROMPTS IN VARIOUS AI MODELS](https://doi.org/10.7456/tojdac.1736051)：用五组标准化室内设计提示评估 DALL-E、Midjourney 和 Stable Diffusion，并由专家从风格、家具、灯光、纺织品、配饰和布局等维度评分。
+- [Artificial Intelligence in Neoplasticism: Aesthetic Evaluation and Creative Potential](https://doi.org/10.3390/computers14040130)：用 Beardsley 与 Carroll 美学标准评估 Midjourney 生成的新造型主义作品，并用逻辑回归分析几何形态、平衡和色彩和谐等因素。
+- [Introducing the fusion innovation test as a new paradigm for studying realworld creative problem solving](https://doi.org/10.1038/s41598-025-28134-y)：提出把两个随机元素组合到自我提升或可持续发展目标中的创造性问题解决任务，并从新颖性、可行性和目标有效性评分，联合衡量发散与收敛思维。
+- [A Large-Scale Multimodal Framework for Mapping Artistic Creativity: How Do Human and AI Art Differ?](https://doi.org/10.1145/3772363.3798861)：提出 M-CPSS，将 Creative Product Semantic Scale 与 CLIP 嵌入对齐，在 AI-ArtBench 的 185,015 件人类与 AI 艺术作品上生成可解释创造力属性画像。
+- [When Behavior Is Not Enough: Identity Biases in Human-AI Creative Collaboration](https://doi.org/10.1145/3772363.3799001)：用网页协同绘画欺骗实验区分“伙伴身份被认为是 AI 还是人类”与合作或攻击性行为对人机创意协作评分的影响。
+- [Automated assessment of creativity in multilingual narratives](https://doi.org/10.1037/aca0000725)：训练 LLM 对 11 种语言短故事的 narrative originality 打分，显示多语模型能以不低于 0.72 的相关性预测人类创造力评分。
+- [Scoring German Alternate Uses Items Applying Large Language Models](https://doi.org/10.3390/jintelligence13060064)：用八个实验室样本中约 5 万条、覆盖 15 个物品的德语 Alternate Uses Task 回答，比较 LLM 自动评分创造潜能的方法。
+- [Groups and AI: How Access to Generative AI Influences Creative Teamwork](https://doi.org/10.1145/3743049.3743073)：比较协同小组在创意营销任务中使用生成式 AI 或网页搜索的差异，并结合自评、外部评分和对探索与收敛过程的观察。
+- [Literary Language Mashup: Curating Fictions with Large Language Models](https://doi.org/10.3390/math14020210)：用 GrAImes 组织 LLM 文学生成评价，该协议借鉴文学理论与出版编辑流程来判断 AI 策划小说的质量。
+- [Automating creativity assessment in engineering design: A psychometric validation of AI-generated items of the design problem task](https://doi.org/10.1002/jee.70066)：通过专家内容效度、匹配被试和心理测量检验，验证 LLM 生成的工程设计问题任务题项，覆盖能力差异与限制、交通移动和社会系统三个设计域，用于创造性思维测评。
+- [Automated Scoring of Creative Achievement](https://doi.org/10.1002/jocb.70104)：用 Llama 3.1 8B、Llama 3.3 70B 和 GPT-4o 的零样本提示为开放式创造性成就报告打分，并在两个数据集上用相关性和效标效度证据对比模型评分与人类评审。
+- [The Martian Game: Exploring Open-Ended Question-Asking via an Online Gaming Environment](https://doi.org/10.1145/3786304.3787878)：把创造性问题发现做成在线游戏，让玩家先向 AI 聊天机器人提问，再设计火星城市太阳能系统；协议按复杂度、原创性和相关性编码问题，并评价最终文字与视觉方案。
+- [When Labels Matter More: Behavioral and Eye-Tracking Evidence on Aesthetic Judgment of AI-Generated and Human-Created Paintings by Lay Viewers](https://doi.org/10.1177/02762374261441560)：通过三项审美判断研究操纵创作者标签和作品真实来源，覆盖人类与 AI 绘画，并结合自陈评价、注视和瞳孔等眼动指标，揭示 AI 艺术评价中的身份标签偏差。
+- [Random Forest Predicts Human Ratings of Creative Stories Using Very Small Training Samples](https://doi.org/10.3390/bs16040576)：在 411 篇短故事上比较 Random Forest、gradient boosting 和决策树，用小训练集预测专家 CAT 创造力评分。
+- [Exploring the interplay of AI-generated art and its creative potential in digital media](https://doi.org/10.1177/13548565261423224)：通过参与者评价比较 AI 生成与非 AI 游戏美术资产，研究数字媒体中创意表达的感知差异。
+- [Automated Graphic Divergent Thinking Assessment: A Multimodal Machine Learning Approach](https://doi.org/10.3390/jintelligence13040045)：用 ResNet50 视觉特征和 GloVe 文本嵌入为图像式发散思维测试评分，基于 708 份学生回答报告与人工分数在新颖性、流畅性和灵活性评测上的相关性。
+- [Generative AI enhances individual creativity but reduces the collective diversity of novel content](https://doi.org/10.1126/sciadv.adn5290)：在线短篇小说实验显示，获得 LLM 生成的故事想法会提高个人作品的创造力、写作质量和愉悦度评价，低创造力作者受益尤其明显，但 AI 辅助故事彼此更相似；该实验揭示个人收益与群体多样性之间的权衡。

@@ -100,6 +100,46 @@ def write_json(path: Path, data: Any) -> None:
     tmp.replace(path)
 
 
+def now_utc() -> str:
+    return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+
+def parse_timestamp(value: Any) -> dt.datetime | None:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    text = value.strip()
+    if text.endswith("Z"):
+        text = f"{text[:-1]}+00:00"
+    try:
+        parsed = dt.datetime.fromisoformat(text)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=dt.timezone.utc)
+    return parsed.astimezone(dt.timezone.utc)
+
+
+def cache_fetched_at(path: Path, data: dict[str, Any]) -> dt.datetime | None:
+    meta = data.get("_meta")
+    if isinstance(meta, dict):
+        fetched_at = parse_timestamp(meta.get("fetched_at"))
+        if fetched_at is not None:
+            return fetched_at
+    try:
+        return dt.datetime.fromtimestamp(path.stat().st_mtime, dt.timezone.utc)
+    except FileNotFoundError:
+        return None
+
+
+def is_stale_cache(path: Path, data: dict[str, Any], stale_days: float | None) -> bool:
+    if stale_days is None:
+        return False
+    fetched_at = cache_fetched_at(path, data)
+    if fetched_at is None:
+        return True
+    return dt.datetime.now(dt.timezone.utc) - fetched_at >= dt.timedelta(days=stale_days)
+
+
 @contextlib.contextmanager
 def file_lock(path: Path, enabled: bool):
     if not enabled or fcntl is None:
@@ -122,26 +162,65 @@ def paper_cache_path(cache_dir: Path, identifier: str) -> Path:
     return cache_dir / "papers" / f"{S2.safe_name(identifier)}.json"
 
 
-def is_good_cache(path: Path) -> bool:
+def is_good_cache(path: Path, *, stale_days: float | None = None) -> bool:
     data = read_json(path)
-    return isinstance(data, dict) and not data.get("_error") and isinstance(data.get("data"), list)
+    return (
+        isinstance(data, dict)
+        and not data.get("_error")
+        and isinstance(data.get("data"), list)
+        and not is_stale_cache(path, data, stale_days)
+    )
 
 
-def needs_fetch(cache_dir: Path, identifier: str, edges: list[str], refresh: bool) -> bool:
+def is_good_paper_cache(path: Path, *, stale_days: float | None = None) -> bool:
+    data = read_json(path)
+    return (
+        isinstance(data, dict)
+        and not data.get("_error")
+        and bool(data.get("paperId"))
+        and not is_stale_cache(path, data, stale_days)
+    )
+
+
+def needs_fetch(
+    cache_dir: Path,
+    identifier: str,
+    edges: list[str],
+    refresh: bool,
+    stale_days: float | None,
+) -> bool:
     if refresh:
         return True
-    return any(not is_good_cache(edge_cache_path(cache_dir, identifier, edge)) for edge in edges)
+    return any(not is_good_cache(edge_cache_path(cache_dir, identifier, edge), stale_days=stale_days) for edge in edges)
 
 
-def edge_payload(paper: dict[str, Any], edge: str) -> dict[str, Any]:
+def edge_payload(identifier: str, paper: dict[str, Any], edge: str) -> dict[str, Any]:
     key = "citingPaper" if edge == "citations" else "citedPaper"
     rows = [{key: item} for item in paper.get(edge) or [] if isinstance(item, dict)]
-    return {"offset": 0, "data": rows}
+    return {
+        "_meta": {
+            "schema_version": 1,
+            "source": "semantic_scholar_batch_edges",
+            "identifier": identifier,
+            "edge": edge,
+            "fetched_at": now_utc(),
+        },
+        "offset": 0,
+        "data": rows,
+    }
 
 
 def paper_payload(paper: dict[str, Any]) -> dict[str, Any]:
     excluded = {"citations", "references"}
     return {key: value for key, value in paper.items() if key not in excluded}
+
+
+def batch_fields(edges: list[str], *, include_abstracts: bool) -> str:
+    paper_fields = [*BASE_FIELDS, *(RICH_FIELDS if include_abstracts else [])]
+    edge_fields = [*EDGE_BASE_FIELDS, *(EDGE_RICH_FIELDS if include_abstracts else [])]
+    for edge in edges:
+        paper_fields.extend(f"{edge}.{field}" for field in edge_fields)
+    return ",".join(paper_fields)
 
 
 class BatchClient:
@@ -155,8 +234,8 @@ class BatchClient:
         max_retries: int,
     ) -> None:
         self.fields = fields
-        self.min_delay = max(0.0, min(min_delay, 30.0))
-        self.max_delay = max(self.min_delay, min(max_delay, 30.0))
+        self.min_delay = max(0.0, min_delay)
+        self.max_delay = max(self.min_delay, max_delay)
         self.delay_decrease = max(0.0, delay_decrease)
         self.delay = self.min_delay
         self.max_retries = max_retries
@@ -230,16 +309,36 @@ class BatchClient:
         return 0, []
 
 
-def write_error_edges(cache_dir: Path, identifier: str, edges: list[str], status: int, message: str) -> None:
-    payload = {"_error": {"status": status, "message": message}}
+def write_error_edges(
+    cache_dir: Path,
+    identifier: str,
+    edges: list[str],
+    status: int,
+    message: str,
+    *,
+    preserve_existing: bool = True,
+) -> None:
     for edge in edges:
-        write_json(edge_cache_path(cache_dir, identifier, edge), payload)
+        path = edge_cache_path(cache_dir, identifier, edge)
+        if preserve_existing and status != 404 and is_good_cache(path):
+            continue
+        payload = {
+            "_meta": {
+                "schema_version": 1,
+                "source": "semantic_scholar_batch_edges",
+                "identifier": identifier,
+                "edge": edge,
+                "fetched_at": now_utc(),
+            },
+            "_error": {"status": status, "message": message},
+        }
+        write_json(path, payload)
 
 
 def write_paper_edges(cache_dir: Path, identifier: str, paper: dict[str, Any], edges: list[str]) -> None:
     write_json(paper_cache_path(cache_dir, identifier), paper_payload(paper))
     for edge in edges:
-        write_json(edge_cache_path(cache_dir, identifier, edge), edge_payload(paper, edge))
+        write_json(edge_cache_path(cache_dir, identifier, edge), edge_payload(identifier, paper, edge))
 
 
 def fetch_and_write(
@@ -283,12 +382,25 @@ def chunks(items: list[str], size: int) -> list[list[str]]:
     return [items[index : index + size] for index in range(0, len(items), size)]
 
 
-def write_report(path: Path, *, identifiers: list[str], fetched: int, skipped: int, cache_dir: Path) -> None:
+def write_report(
+    path: Path,
+    *,
+    identifiers: list[str],
+    targets: int,
+    fetched: int,
+    skipped: int,
+    cache_dir: Path,
+    edges: list[str],
+    stale_days: float | None,
+) -> None:
     lines = [
         "# Semantic Scholar Batch Edge Backfill",
         "",
         f"- Generated: {dt.datetime.now().isoformat(timespec='seconds')}",
+        f"- Edges: {', '.join(edges)}",
+        f"- Stale threshold days: {stale_days if stale_days is not None else 'disabled'}",
         f"- Identifiers: {len(identifiers)}",
+        f"- Fetch targets: {targets}",
         f"- Already cached/skipped: {skipped}",
         f"- Batch returned papers: {fetched}",
         f"- Cache directory: `{cache_dir}`",
@@ -302,6 +414,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Backfill S2 citation/reference edge caches using paper/batch.")
     parser.add_argument("files", nargs="*", type=Path, help="Markdown/text files from which to extract identifiers. Defaults to README and recursive docs.")
     parser.add_argument("--id", action="append", default=[], help="Explicit paper identifier.")
+    parser.add_argument("--ids-file", type=Path, help="Read one explicit arXiv/DOI/S2 identifier per line; when set, do not scan default Markdown files.")
     parser.add_argument("--cache-dir", type=Path, default=Path(".tmp/semantic_citation_cache"))
     parser.add_argument("--lock-file", type=Path, default=Path(".tmp/semantic_citation_cache/api.lock"))
     parser.add_argument("--no-lock", action="store_true")
@@ -309,29 +422,62 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=100)
     parser.add_argument("--edge", choices=["citations", "references"], action="append")
     parser.add_argument("--min-delay", type=float, default=0.1)
-    parser.add_argument("--max-delay", type=float, default=30.0)
+    parser.add_argument("--max-delay", type=float, default=5.0)
     parser.add_argument("--delay-decrease", type=float, default=0.2)
     parser.add_argument("--max-retries", type=int, default=10)
     parser.add_argument("--refresh", action="store_true")
+    parser.add_argument(
+        "--stale-days",
+        type=float,
+        help="Refetch otherwise valid edge caches whose fetched_at metadata, or legacy file mtime, is at least this many days old.",
+    )
     parser.add_argument("--no-split-400", action="store_true", help="Do not recursively split HTTP 400 batches.")
     parser.add_argument(
         "--include-abstracts",
         action="store_true",
         help="Request abstracts/openAccessPdf for seeds and edge papers. This is richer but can make large batches fail.",
     )
+    parser.add_argument(
+        "--paper-only",
+        action="store_true",
+        help="Fetch and cache seed paper metadata only; do not request citation/reference edges.",
+    )
     args = parser.parse_args()
 
-    edges = list(dict.fromkeys(args.edge or ["citations", "references"]))
-    files = args.files or default_markdown_files(Path.cwd())
-    identifiers = S2.collect_identifiers(files, args.id)
-    targets = [identifier for identifier in identifiers if needs_fetch(args.cache_dir, identifier, edges, args.refresh)]
+    edges = [] if args.paper_only else list(dict.fromkeys(args.edge or ["citations", "references"]))
+    if args.ids_file:
+        identifiers = S2.collect_identifiers([], args.id)
+        for raw in args.ids_file.read_text(encoding="utf-8", errors="ignore").splitlines():
+            identifier = S2.normalize_identifier(raw)
+            if identifier and identifier not in identifiers:
+                identifiers.append(identifier)
+    else:
+        # An explicit --id is a focused request. Do not silently add every
+        # repository document when no positional files were supplied.
+        files = args.files or ([] if args.id else default_markdown_files(Path.cwd()))
+        identifiers = S2.collect_identifiers(files, args.id)
+    if args.paper_only:
+        targets = [
+            identifier
+            for identifier in identifiers
+            if args.refresh
+            or not is_good_paper_cache(
+                paper_cache_path(args.cache_dir, identifier), stale_days=args.stale_days
+            )
+        ]
+    else:
+        targets = [
+            identifier
+            for identifier in identifiers
+            if needs_fetch(args.cache_dir, identifier, edges, args.refresh, args.stale_days)
+        ]
     skipped = len(identifiers) - len(targets)
     print(f"Identifiers: {len(identifiers)}; batch targets: {len(targets)}; skipped: {skipped}", flush=True)
 
     fetched = 0
     with file_lock(args.lock_file, enabled=not args.no_lock):
         client = BatchClient(
-            fields=RICH_BATCH_FIELDS if args.include_abstracts else SLIM_FIELDS,
+            fields=batch_fields(edges, include_abstracts=args.include_abstracts),
             min_delay=args.min_delay,
             max_delay=args.max_delay,
             delay_decrease=args.delay_decrease,
@@ -350,7 +496,16 @@ def main() -> int:
             if batch_missing:
                 print(f"batch missing/error ids: {batch_missing}", flush=True)
 
-    write_report(args.out, identifiers=identifiers, fetched=fetched, skipped=skipped, cache_dir=args.cache_dir)
+    write_report(
+        args.out,
+        identifiers=identifiers,
+        targets=len(targets),
+        fetched=fetched,
+        skipped=skipped,
+        cache_dir=args.cache_dir,
+        edges=edges,
+        stale_days=args.stale_days,
+    )
     print(f"Batch returned papers: {fetched}", flush=True)
     print(f"Wrote {args.out}", flush=True)
     return 0

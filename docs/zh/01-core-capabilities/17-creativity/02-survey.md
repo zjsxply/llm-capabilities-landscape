@@ -1,0 +1,99 @@
+# 1.17.2 Survey
+
+- [Algorithmic Creativity: A Systematic Review of AI and Artistic Expression in the Digital African Landscape](https://doi.org/10.58721/pajmae.v3i1.1518)：系统综述非洲数字创意生态中的 AI 与艺术表达，检索 2014 至 2025 年主要数据库与灰色文献，并进行主题综合。
+- [Envisioning the Future of Creative Thinking Assessment](https://doi.org/10.1002/jocb.70036)：反思 PISA 2022 creative-thinking assessment，强调在保留多领域、多语言创造性思维覆盖的同时发展可扩展评分方法。
+- [On the Creativity of Large Language Models](https://arxiv.org/abs/2304.00008)：用经典创造力理论审视 LLM 创造力。核心思想：围绕 value、novelty 和 surprise 组织讨论，并区分 product、process、press、person 四种视角，避免把“会写创意文本”的现象直接等同于机器创造力已被证明。
+- [Open-Endedness is Essential for Artificial Superhuman Intelligence](https://arxiv.org/abs/2406.04268)：把 open-endedness 定位为超人 AI 的必要条件。核心思想：用 novelty 和 learnability 定义开放式进步，并主张 foundation-model 系统需要自我改进的发现循环，而不是只优化固定 benchmark。
+- [A Survey on Compositional Learning of AI Models](https://arxiv.org/abs/2406.08787)：综述组合学习的理论、任务、评测基准和模型族。核心思想：为 Creativity 页提供技术基线，用于区分普通 compositional generalization 和后续 benchmark 所关注的更开放式 combinatorial creativity。
+- [Creativity in AI: Progresses and Challenges](https://arxiv.org/abs/2410.17218)：综述 AI 创造力的进展与挑战，围绕机器创造力梳理当前生成能力、评测限制和开放问题。
+- [AI-Augmented Design Thinking: Potentials, Challenges, and Mitigation Strategies of Integrating Artificial Intelligence in Human-Centered Innovation Processes](https://doi.org/10.1109/emr.2024.3512866)：基于专业设计思维工作坊的可供性分析，识别 AI 融入以人为中心创新流程的潜力、挑战和缓解策略。
+- [Advances in artificial intelligence: a review for the creative industries](https://arxiv.org/abs/2501.02725)：综述创意产业中的 AI 进展，梳理生成系统如何影响创作流程、生产角色和行业采纳。
+- [The Theater Stage as Laboratory: Review of Real-Time Comedy LLM Systems for Live Performance](https://arxiv.org/abs/2501.08474)：综述用于现场表演的实时喜剧 LLM 系统，并主张 AI 喜剧应在真实线下或线上观众条件下评估。
+- [Generative AI and Creative Work: Narratives, Values, and Impacts](https://arxiv.org/abs/2502.03940)：梳理网络媒体中围绕 GenAI 创意工作的叙事，指出自动化与生产率框架如何把创意同劳动、物质执行和技艺分离。
+- [XAIxArts Manifesto: Explainable AI for the Arts](https://arxiv.org/abs/2502.21220)：把面向艺术的可解释 AI 从技术中心和生产率解释转向艺术家价值、材料性和创作阐释。
+- [De-skilling, Cognitive Offloading, and Misplaced Responsibilities: Potential Ironies of AI-Assisted Design](https://arxiv.org/abs/2503.03924)：分析 120 多篇 UX 与设计文章并结合从业者感知，梳理 AI 辅助设计中的技能退化、认知卸载和责任错置风险。
+- [Human and Machine as Seen at the Co-Creation Age: A Co-Word Analysis in Human Machine Co-creation (2014-2024)](https://arxiv.org/abs/2505.14363)：用 2014 至 2024 年 CHI 人机共创论文的共词分析，梳理从工具使用走向协作式创意伙伴关系的主题演化。
+- [A Systematic Review of Human-AI Co-Creativity](https://arxiv.org/abs/2506.21333)：系统综述 62 个共创系统，覆盖应用领域、交互模式、人类角色、AI 角色和人机创造力支持的评价实践。
+- [Music and Artificial Intelligence: Artistic Trends](https://arxiv.org/abs/2508.11694)：调研 337 个 AI 音乐作品，并按共同作曲、声音设计、歌词、翻译、现场表演和装置等趋势分类。
+- [The Variance Paradox: How AI Reduces Diversity but Increases Novelty](https://arxiv.org/abs/2508.19264)：The Variance Paradox 用方差压缩、认知依赖和跨域重组解释 AI 创造力，预测多样性下降何时可能转化为后续新颖性。
+- [Generative AI in Game Development: A Qualitative Research Synthesis](https://arxiv.org/abs/2509.11898)：综合质性研究，梳理 GenAI 如何重塑游戏开发流水线、生产角色和价值网络。
+- [Combinatorial Creativity: A New Frontier in Generalization Abilities](https://arxiv.org/abs/2509.21043)：把 combinatorial creativity 定义为不同于 compositional generalization 的开放式泛化能力，用 novelty-utility 评分和算法任务研究创造力 scaling、模型深宽权衡，以及 ideation-execution gap 背后的新颖性-效用取舍。
+- [MetricalARGS: A Taxonomy for Studying Metrical Poetry with LLMs](https://arxiv.org/abs/2510.08188)：MetricalARGS 为 LLM 格律诗研究提供分类法，将押韵、节奏、体裁和结构组织为可分析的创意写作维度。
+- [Large Language Models for Scientific Idea Generation: A Creativity-Centered Survey](https://arxiv.org/abs/2511.07448)：该综述把 LLM 科研构思方法分为外部知识增强、提示层分布 steering、推理时扩展、多智能体协作和参数适配五类，再用 Boden taxonomy 与 Rhodes 4P 框架分析新颖性，并区分新颖性和科学有效性。
+- [Artificial Creativity: from predictive AI to Generative System 3](https://doi.org/10.3389/frai.2025.1654716)：把人工创造力描述为从预测式 AI 走向 Generative System 3，强调超越输出模仿的元认知与生成控制。
+- [Creative Planning with Language Models: Practice, Evaluation and Applications](https://doi.org/10.18653/v1/2025.naacl-tutorial.1)：关于语言模型创意规划的教程，连接开放式生成中的规划方法、评测协议和应用模式。
+- [Disembodied creativity in generative AI: prima facie challenges and limitations of prompting in creative practice](https://doi.org/10.3389/frai.2025.1651354)：从默会专业知识和具身实践分析提示词式 GenAI，说明创意工作为何不能被简化为自然语言指令。
+- [The study of human-AI Co-creation design under generative artificial intelligence: cognition, process, method, and outcome](https://doi.org/10.1080/09544828.2025.2567155)：这篇人机共创设计综述从认知、过程、方法、结果、边界条件和未来设计师-AI 融合模式梳理生成式 AI 协作。
+- [Creativity and aesthetic evaluation of AI-generated artworks: bridging problems and methods from psychology to AI](https://doi.org/10.3389/fpsyg.2025.1648480)：把创造力心理学和经验美学方法引入 AI 艺术研究，梳理可用于 AI 生成艺术品的创造力与审美评价指标。
+- [When humans and large language models collaborate, problem-finding illuminates](https://doi.org/10.1080/14479338.2025.2504428)：把人类与 LLM 协作的问题发现拆成认知活动和技能，强调在复杂组织问题中先形成问题表述，再进入后续求解，从而补足 AI 辅助创新的前端环节。
+- [Can AI read the room?: Attuning machines to the affective atmospheres of stand-up comedy performance](https://doi.org/10.1080/2040610x.2025.2544414)：分析 AI 能否感知现场与数字单口喜剧的情绪氛围，并用表演理论界定只处理文本的幽默智能体会遗漏什么。
+- [GenAI and Creative Labor: New Evidence on Valuation, Inequality, and Adoption](https://doi.org/10.1177/07308884261450882)：从价值评估、协作、不平等与采用四个维度组织 GenAI 创意劳动，并结合专题论文与 2025 年 SNAAP Pulse 创意从业者调查证据。
+- [Acquisition of Intelligent Design Knowledge Driven by UGC: Technical Approaches, Challenges, and Prospects](https://doi.org/10.1109/eeiss65394.2025.11086078)：综述从用户生成内容中抽取产品特征和设计知识的技术路线，并归纳智能设计决策支持系统的集成瓶颈。
+- [Irrationality in humans and creativity in AI](https://doi.org/10.3389/frai.2025.1579704)：把人类非理性、合取谬误以及默认模式、执行控制、显著性网络联系起来，提出可启发 AI 创造力的非线性推理信号。
+- [An Economics of Creative Machines: The Role and Responsibility of Human-AI Creators](https://doi.org/10.1109/r10-htc63995.2025.11394507)：用 Cobb-Douglas 生产函数、成本最小化和 Rényi 熵知识整合来建模人类-AI 创作，为创造力研究提供 AI 何时从生成者转为工具的经济学视角。
+- [Artificial Creativity? AI’s Short- and Long-Term Impact on Creativity](https://doi.org/10.1080/08956308.2025.2450756)：综述生成式 AI 对创造性思维的短期和长期影响，把实践采用、科学政策问题与创造力研究联系起来，而不是只评价 AI 艺术输出质量。
+- [AI & arts: people-centred practice](https://doi.org/10.1080/14702029.2025.2578870)：作为“AI 与艺术：以人为中心的实践”专刊导论，将创造性 AI 实践组织在共同设计、社区参与、机构反思、倾听、可及性和共创等维度上，而不是把 AI 艺术视为脱离人的自动化。
+- [DIGITAL AESTHETICS IN THE AGE OF MACHINE LEARNING](https://doi.org/10.29121/shodhkosh.v6.i5s.2025.6892)：综述图像合成、风格迁移、审美评分、可解释性和文化对齐如何改变基于机器学习的数字艺术生成、评价与感知。
+- [The Role of AI in Democratizing Visual Storytelling](https://doi.org/10.29121/shodhkosh.v6.i4s.2025.6860)：综述生成图像、风格迁移、多模态叙事和自动剪辑系统如何降低视觉叙事门槛。
+- [Reinventing Digital Illustration with Generative AI Tools](https://doi.org/10.29121/shodhkosh.v6.i5s.2025.6876)：把数字插画视为人类意图与 GAN、VAE、扩散推理的交互，并讨论 AI 与人类作品的相似度评估。
+- [A Systematic Review of Generative AI on Game Character Creation: Applications, Challenges, and Future Trends](https://doi.org/10.1109/TG.2025.3564869)：综述生成式 AI 在游戏角色创作中的流水线，梳理角色资产生成的应用、生产挑战与未来趋势。
+- [The Bright Side of the Moon: Transfer Learning and Creativity in Machine Learning Practice](https://doi.org/10.1080/10400419.2025.2565357)：把 transfer learning 与机器学习实践中的创造力联系起来，将跨域复用与适配视为创意型 ML 系统和实践者生成新方案的一部分。
+- [Creative Thinking Assessment Across Cultures: Challenges and Considerations](https://doi.org/10.1002/jocb.70025)： 分析语言、文化价值和 PISA 标准化假设如何扭曲跨文化创意思维评测，并主张采用能够保留多样创造形式的灵活多维框架。
+- [Group Selection as a Safeguard Against AI Substitution](https://arxiv.org/abs/2602.03541)：用基于智能体的建模和演化博弈论比较 AI 作为创造力补充者与替代者的长期影响，解释同质化 AI 使用何时会导致文化崩塌动态。
+- [Beyond Input–Output: Rethinking Creativity through Design-by-Analogy in Human–AI Collaboration](https://arxiv.org/abs/2602.09423)：用类比设计重新界定人机创造力，主张评测应跟踪类比搜索与转换过程，而不只看最终产物。
+- [Design Generative AI for Practitioners: Exploring Interaction Approaches Aligned with Creative Practice](https://arxiv.org/abs/2603.03074)：将 DesignPrompt、FusAIn 和 DesignTrace 归纳为交互框架，让设计师通过意图脚手架、直接视觉输入和过程轨迹引导生成式 AI。
+- [Beyond Semantic Similarity: Open Challenges for Embedding-Based Creative Process Analysis Across AI Design Tools](https://arxiv.org/abs/2603.07611)：Beyond Semantic Similarity 批判用固定嵌入相似度分析创作过程，并围绕创意重要性、多模态轨迹切分、以及指标反过来影响生成的智能体系统梳理开放挑战。
+- [Exploring Multimodal Generative Systems: Efficient Training and Evaluation for Visual and Creative Applications](https://doi.org/10.29121/shodhkosh.v7.i2s.2026.7265)：综述面向视觉创意应用的多模态生成系统训练与评测，把效率设计同图像和设计输出评价联系起来。
+- [Designing for Meaning in AIGC Systems: The Control–Ownership Pathway in Human–AI Co-Creation](https://doi.org/10.1109/access.2026.3679569)：基于 299 名 AIGC 用户，结合偏最小二乘结构方程模型与模糊集定性比较分析，刻画交互性、控制感、所有权与共创意义感之间的路径。
+- [The use of artificial intelligence in new product development: A systematic literature review, conceptual framework, and future research agenda](https://doi.org/10.1016/j.technovation.2026.103541)：系统综述新产品开发中的 AI 使用，并将相关文献组织为面向 AI 辅助产品创意与设计的概念框架和未来研究议程。
+- [Semantic Preservation in LLM-Based Cultural Narrative Generation for Marketing Communication Contexts](https://doi.org/10.1109/icnlp69856.2026.11528070)：分析 LLM 文化叙事生成中的语义保持问题，归纳结构压缩、显著性再分配、语用漂移和符号弱化等常见失真模式。
+- [Artificial intelligence across design thinking: a qualitative review](https://doi.org/10.1017/dsj.2026.10054)：用 SPAR-4-SLR 协议综述 205 篇 Web of Science 文献，按设计思维阶段梳理 AI 在证据收集、创意发散、原型和测试中的作用，以及偏见、透明性不足和创意同质化等风险。
+- [Embodied Intelligence and Algorithmic Expression](https://doi.org/10.29121/shodhkosh.v7.i1.2026.7603)：构建 15 个 AI-dance 系统案例语料，比较其输入、输出、交互循环、embodiment 与 agency sharing。
+- [Towards Personalizing Generative AI with Small Data for Co-Creation in the Visual Arts](https://ceur-ws.org/Vol-3660/paper11.pdf)：将艺术家主导的小数据个性化视为共创路径，对比直接个性化模型与仅靠提示词探索生成空间的差异。
+- [Generative artificial intelligence in creative contexts](https://doi.org/10.1007/s11301-025-00494-9)：系统综述创意场景中的 GenAI 研究。核心思想：综合 64 篇研究，归纳采纳因素、创造过程影响、行业实践变化，并提出长期创作实践、社会经济影响和伦理使用等后续问题。
+- [Perceptions and integration of generative artificial intelligence in creative practices and industries](https://doi.org/10.1007/s00146-025-02667-2)：梳理创意专业人士在视觉艺术、写作、表演艺术和空间设计中如何采纳 GenAI。核心思想：用 scoping review 和概念模型说明创作正在从 creation 转向 curation，采纳程度受隐性知识、材料性、职业阶段和同质化担忧影响。
+- [AI-driven design: a comprehensive review of its methodologies, applications, and challenges](https://doi.org/10.1007/s00158-026-04331-9)：综述作为创造力相邻工程领域的 AI-driven design。核心思想：梳理 AI 辅助设计的方法、应用和挑战轴，帮助区分产品与工程构思中的创造力贡献和普通优化应用。
+- [Creativity in AI as Emergence from Domain-Limited Generative Models](https://arxiv.org/abs/2601.08388)：把 AI 创造力从事后输出打分重构为生成机制问题。核心思想：用 pattern-based generation、induced world models、contextual grounding 和 arbitrarity 四个互作组件解释 domain-limited generative model 中的创造性涌现。
+- [AI ethics in creative domains](https://doi.org/10.1007/s43681-026-01044-z)：综述创意领域中围绕检测、识别、解释与生成的 AI 伦理问题。核心思想：把艺术与创意生产视为具有独立 authorship、attribution、authenticity 和 moral evaluation 风险的能力场景，而不是普通 AI 伦理的附录。
+- [A Taxonomy of Human–MLLM Interaction in Early-Stage Sketch-Based Design Ideation](https://arxiv.org/abs/2602.22171)：梳理早期草图式设计构思中的人类-MLLM 交互模式，映射多模态模型如何参与创意设计工作流。
+- [Assessing the Creativity of Large Language Models: Testing, Limits, and New Frontiers](https://arxiv.org/abs/2605.13450)：系统检验人类创造力测验能否预测 LLM 在创意写作、发散思维和科研构思上的创造性表现；发现 DAT 与 Conditional DAT 是构念相关的预测器，并提出 DRAT 作为稳健预测科学构思能力的测验。
+- [Designing Interactions with Generative AI for Art and Creativity](https://doi.org/10.1145/3715336.3735843)：系统综述艺术与创造力场景中的 GenAI 交互设计，把工具形态、用户角色和设计模式整理成面向创意共创的 taxonomy。
+- [Exploring Collaboration Patterns and Strategies in Human-AI Co-creation through the Lens of Agency](https://arxiv.org/abs/2507.06000)：从 agency 视角综述顶级 HCI 中的人机共创研究，梳理 initiative、control 和 responsibility 如何在人与 AI 之间流动。
+- [Human-AI Co-Creativity](https://arxiv.org/abs/2411.12527)：综合人机创造性协作的层级，澄清系统何时是工具、伙伴、批评者或共同作者。
+- [Human-Centered AI Communication in Co-Creativity](https://arxiv.org/abs/2505.18385)：提出面向 co-creativity 的沟通框架，突出 feedback、explanation 与 initiative 如何塑造人机创造性协作。
+- [Narrative Theory-Driven LLM Methods for Automatic Story Generation and Understanding: A Survey](https://arxiv.org/abs/2602.15851)：这篇综述用叙事理论梳理 LLM 自动故事生成与理解，为创造力页面提供围绕情节、角色、话语结构和评测方法的系统视角。
+- [“Control Is a Trajectory, Not a Point”: Conceptualizing Control in Human-AI Co-Creativity](https://doi.org/10.1145/3772318.3790861)：该工作把人机共创中的控制权概念化为贯穿创作过程的轨迹，为交互设计者描述用户与 AI 何时转换主动权提供框架。
+- [Generative Artificial Intelligence and the Creative Industries: A Bibliometric Review and Research Agenda](https://doi.org/10.3390/systems14020138)：用 PRISMA 筛选、文献计量和主题聚类梳理创意产业中的 GenAI，覆盖劳动、平台、治理、工作流与创意生产。
+- [Human-AI Interaction Patterns in Creative Domains and Their Time-Based Visualization](https://doi.org/10.1145/3743049.3743081)：梳理创意领域中按时间展开的人机交互模式，为共创系统中的主动权分配与迭代流程提供工作流词表。
+- [Ideation with Generative AI—in Consumer Research and Beyond](https://doi.org/10.1093/jcr/ucaf012)：将生成式 AI 概括为设计者、写作者、访谈者与扮演者等构思伙伴，说明 LLM 在创意研究流程中的支持位置。
+- [The Impact of Generative AI on Creativity in Software Development: A Research Agenda](https://doi.org/10.1145/3708523)：这篇研究议程从个人能力、团队能力、产品、意外后果和社会影响五个主题梳理生成式 AI 对软件开发创造力的影响。
+- [The Role of Artificial Intelligence in the Ideation Process](https://doi.org/10.1111/jpim.12791)：这篇综述把 AI 构思过程分为机会识别与分析、想法生成、想法筛选与选择，指出 AI 提升平均创意但在顶尖想法选择上仍弱。
+- [AI Visual Art History: An Art Movement with Expanded Artistic Horizon](https://doi.org/10.1145/3726868)：AI Visual Art History 将 AI 视觉艺术梳理为新兴艺术运动，讨论其与传统艺术史、艺术家与机器共创、评价标准变化和视觉创作民主化之间的关系。
+- [Has AI Surpassed Humans in Creative Idea Generation? A Meta-Analysis](https://doi.org/10.1145/3746175.3746189)：对 17 项研究和 115 个效应量做人类与 GenAI 创意构思元分析，结论是不支持 GenAI 已整体超越人类的强证据。
+- [Incorporating Personality into AI Writing Companions: Mapping the Design Space](https://doi.org/10.1145/3706599.3720185)：梳理 AI 写作伙伴的功能、人格特征与视觉设计空间，说明人格化如何影响创作陪伴体验。
+- [Generative AI as a probabilistic medium: a systems-theoretical analysis of the art system](https://doi.org/10.1007/s00146-026-03111-9)：用系统理论把 GenAI 视作艺术系统中的概率媒介，说明机器生成的变异性如何改变艺术生产和评价。
+- [Human‐AI Co‐Creativity: Does ChatGPT Make Us More Creative?](https://doi.org/10.1002/jocb.70022)：把 ChatGPT 创造力证据重新放到人机共创框架下，区分模型独立创造力声明与交互对人类创作结果的影响。
+- [AI‐Augmented Approaches to Creative Problem‐Solving: A Metacognitive Perspective](https://doi.org/10.1111/caim.70003)：从元认知角度分析 GenAI 介入创造性问题解决，区分个体 CPS 流程中的工具式辅助与行动者式角色。
+- [Peeping at creAItivity through a keyhole: creative self-perceptions, potential, and enhancement of GenAI chatbots](https://doi.org/10.1007/s10462-025-11288-6)：从自我感知、创造潜力和增强策略梳理 GenAI 聊天机器人的创造力，为聊天机器人创造力提供结构化评估视角。
+- [Algorithms in the Realm of Fuzziness. How Generative Artificial Intelligence Is Changing the Front End of Innovation](https://doi.org/10.1111/caim.70048)：研究 GenAI 如何重塑创新前端，尤其是正式产品开发之前的机会识别和构思活动。
+- [AI as a Helper: Leveraging Generative AI Tools Across Common Parts of the Creative Process](https://doi.org/10.3390/jintelligence13050057)：把 GenAI 支持映射到问题识别、想法生成、想法评价和部署四个阶段，为创意流程提供分阶段的 AI 辅助框架。
+- [Cyber-Creativity: A Decalogue of Research Challenges](https://doi.org/10.3390/jintelligence13080103)：提出人机创造力研究的十项挑战，把 AI 在创意过程中的收益与风险组织起来，而不是把创造力简化为单一输出分数。
+- [From friction to synergy: The complex interplay of human creativity and AI](https://doi.org/10.1177/27538699251350483)：从情感、具身、经验和社会文化维度分析人机创造力，强调创意支持系统不应消除所有 friction，而要监测并利用能提升创造潜力的摩擦。
+- [Creativity across domains](https://doi.org/10.1093/pnasnexus/pgaf174)：串联科学、工程、数学、计算、技术和艺术中的创造力，用跨领域历史案例说明计算工具和 AI 可能如何加速或重塑创造性工作。
+- [Is Memory the Key to AI Creativity? Exploring the Intersection of Artificial Intelligence and Artistic Expression](https://doi.org/10.1002/jocb.70051)：结合文献综述和创意技术从业者访谈，把灾难性遗忘、持续学习与艺术 AI 联系起来，将 memory 视为支撑长期创造演化的机制。
+- [Organizing across cognitive asymmetry in human–AI collaboration: A study of perfume creation](https://doi.org/10.1002/smj.70089)：以专业香水创作为案例解释人机认知不对称，归纳任务分配、隐性知识与编码知识转换、输出 steering 等整合实践。
+- [“The Cat Sat on the …?” Why Generative AI Has Limited Creativity](https://doi.org/10.1002/jocb.70077)：把标准创造力定义用于 LLM 输出的事前分析，并论证自回归生成机制把模型创造力限制在 little-c 到 Pro-c 附近。
+- [AI: An Active and Innovative Tool for Artistic Creation](https://doi.org/10.3390/arts14030052)：梳理生成式 AI 融入艺术创作的历史与概念脉络，并以 Refik Anadol 的 *Unsupervised* 和 Anna Ridler 的 *Mosaic Virus* 分析作者性、合法性与文化影响。
+- [Generative AI in Game Design: Enhancing Creativity or Constraining Innovation?](https://doi.org/10.3390/jintelligence13060060)：通过 42 名游戏设计从业者问卷和 9 次后续访谈，分析 GenAI 对游戏设计中的构思、原型、决策、原创性和创作依赖的影响。
+- [Augment, not replace: Utilising AI tools for documentary podcast production.](https://doi.org/10.24135/ijcmr.v13iapril.167)：记录五集纪录片播客制作流程，并评估 AI 工具在前期、制作和后期环节中如何增强而非替代专业创作判断。
+- [A Bibliometric Analysis and Systematic Review of Artificial Intelligence in Fashion Design](https://doi.org/10.65660/stardergisi.1811605)：用 Scopus 中人工智能、文生图和时装设计相关检索分析 97 篇文献，并复查高被引与近期工作，梳理 AI 工具类型及其在时装创意流程中的使用阶段。
+- [Designers as Co-Creators: Reconfiguring Workflows and Creative Agency in AI-Augmented Design](https://doi.org/10.1002/pra2.1528)：访谈 14 名专业设计师，并按发现、创意发散、开发、细化和定稿五个阶段绘制 AI 使用热力图，说明 AI 在加速迭代中的作用以及哪些语境判断仍由人主导。
+- [Generative AI Technology for Safeguarding Intangible Cultural Heritage: A Systematic Review](https://doi.org/10.1145/3785987.3785989)：系统综述非遗保护中的生成式 AI，比较 GAN、扩散模型、神经风格迁移、自回归模型和 VAE 在数字化创新、内容生成和跨文化复用中的作用。
+- [A Framework for Human-AI Dance Creation: The Machinic Movement Matrix](https://doi.org/10.1145/3802842.3802849)：提出由 generativity、responsiveness 和 agency distribution 构成的三轴分类，用于分析编舞共创中的机器角色。
+- [The Use of Large Language Models in HCI: A Critical Analysis of Synthetic Users](https://doi.org/10.1145/3745900.3746108)：批判性分析 HCI 中由 LLM 生成的 synthetic users，梳理采用压力、使用场景、规范性偏差风险，以及其为何尤其不适合替代可用性测试或访谈。
+- [The Investigation of Generative AI on Role-Playing Games: Applications, Challenges, and Future Trends](https://doi.org/10.54097/m90bkr64)：综述桌面角色扮演游戏中的 AIGC 应用，重点讨论 GPT 式动态任务与叙事生成如何缓解游戏体验同质化。
+- [The Co-Creative Design Framework for Hybrid Intelligence](https://doi.org/10.1145/3698061.3726934)：围绕 agency、interaction dynamics 和 communication 形式化人机共创，使生成式 AI 设计系统可作为混合创作协作来分析。
+- [Designing Co-Creative Systems: Five Paradoxes in Human-AI Collaboration](https://doi.org/10.3390/info16100909)：用五组设计张力刻画人机共创：模糊性与精确性、控制与意外发现、速度与反思、个体与集体、原创与重组。
+- [A Theoretical Framework of the Structure of Augmented Creativity](https://doi.org/10.1007/s10796-026-10745-z)：提出 augmented creativity 的社会物质框架，解释人类与 GenAI 如何共同产出新颖且有用的结果，并连接 agency、工具和创意过程结构。
+- [On the Creativity of AI Agents](https://arxiv.org/abs/2604.13242)：从功能主义与本体论两个视角分析 LLM 智能体创造力，认为智能体可表现出可观察的创意输出，但仍缺少社会、个人和过程层面的创造力维度。
+- [Position: LLMs can’t jump](https://openreview.net/forum?id=klU4737opt)：论文主张，基于下一词预测训练的 LLM 擅长在训练分布所表征的模式之间插值和重组，却无法稳定完成与变革性发现相关的不连续概念跃迁。文章据此提出研究议程，以区分看似合理的重组与真正新颖的创造性推理。

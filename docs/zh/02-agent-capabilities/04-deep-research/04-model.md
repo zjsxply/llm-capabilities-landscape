@@ -1,32 +1,70 @@
 # 2.4.4 Model
 
-- [DeepResearcher](https://arxiv.org/abs/2504.03160)（[开源代码](https://github.com/GAIR-NLP/DeepResearcher)）：在真实网页搜索环境中用端到端强化学习训练 deep-research agent。
+- [Automating Research Synthesis with Domain-Specific Large Language Model Fine-Tuning](https://arxiv.org/abs/2404.08680)：对开源 LLM 做领域微调来自动化系统综述综合，重点处理筛选之后的证据整合和叙事综合，而不是只做提示词层面的摘要。
+- [OpenReviewer: A Specialized Large Language Model for Generating Critical Scientific Paper Reviews](https://arxiv.org/abs/2412.11948)：用 7.9 万条专家评审微调 Llama-OpenReviewer-8B，并封装成从 PDF 抽取全文到按模板生成批判性评审的流程。
+- [Improving Scientific Document Retrieval with Concept Coverage-based Query Set Generation](https://arxiv.org/abs/2502.11181)：提出 CCQGen，先追踪已生成合成查询中仍未覆盖的学术概念，再把这些缺口作为后续查询生成条件，用于改进科学文档检索微调。
 - OpenAI Deep Research / `o3-deep-research`（[官方报告](https://openai.com/index/introducing-deep-research/)；[模型文档](https://platform.openai.com/docs/models/o3-deep-research)）：面向网页浏览、数据分析和高难长程研究任务，用端到端强化学习优化的闭源模型线。
 - Perplexity Sonar Deep Research（[模型文档](https://docs.perplexity.ai/docs/sonar/models/sonar-deep-research)）：面向穷尽式来源搜索、推理和长篇带引用报告生成的 deep-research API 模型端点。
-- [WebDancer](https://arxiv.org/abs/2505.22648)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebDancer)）：训练面向多步搜索与推理的自主信息搜索能力。
-- [WebWatcher](https://arxiv.org/abs/2508.05748)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher)）：用合成多模态轨迹与强化学习训练多模态 deep-research agent。
+- [DeepResearcher](https://arxiv.org/abs/2504.03160)（[开源代码](https://github.com/GAIR-NLP/DeepResearcher)）：在真实网页搜索环境中用端到端强化学习训练 deep-research agent。
+- [HiPerRAG: High-Performance Retrieval Augmented Generation for Scientific Insights](https://arxiv.org/abs/2505.04846)：构建面向科学洞察发现的高吞吐 RAG 栈，在研究问题需要遍历大规模论文或数据集合时强调检索性能和证据 grounding。
+- [REMOR](https://arxiv.org/abs/2505.11718)：结合 reasoning LLM 与多目标强化学习生成同行评审，使输出平衡多个评审质量维度，而不是只优化 verdict 一致性。
 - Kimi-Researcher（[官方报告](https://moonshotai.github.io/Kimi-Researcher/)）：报告通过端到端 agentic reinforcement learning 训练的 Kimi k-series 内部模型，覆盖多轮搜索、浏览、代码工具和 deep-search 基准。
+- [Scientific Paper Retrieval with LLM-Guided Semantic-Based Ranking](https://arxiv.org/abs/2505.21815)：用 LLM 引导语义排序和概念索引改进科学论文检索。
+- [Beyond path selection: Better LLMs for Scientific Information Extraction with MimicSFT and Relevance and Rule-induced(R2)GRPO](https://arxiv.org/abs/2505.22068)：用 MimicSFT 和规则诱导 GRPO 改进科学信息抽取。
+- [WebDancer](https://arxiv.org/abs/2505.22648)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebDancer)）：训练面向多步搜索与推理的自主信息搜索能力。
+- [TDCSA: LLM-Guided Top-Down Approach for Robust Citation Sentiment Analysis](https://doi.org/10.18653/v1/2025.findings-acl.335)：提出 TDCSA 自顶向下的引文情感分析架构：双 LLM 生成引文相关四元组，多视角表示处理中性引文，再由增强四元组特征的 PLM 完成分类；实验达到当前最佳性能，并在四元组质量变化时保持稳健。
+- [WebSailor](https://arxiv.org/abs/2507.02592)：训练面向高难 reasoning navigation 的 web agent，用 uncertainty-aware task synthesis 与强化调优处理更难的搜索轨迹。
+- [WebWatcher](https://arxiv.org/abs/2508.05748)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWatcher)）：用合成多模态轨迹与强化学习训练多模态 deep-research agent。
+- [Beyond Ten Turns / Long-Horizon Agentic Search](https://arxiv.org/abs/2508.07976)（[OpenReview](https://openreview.net/forum?id=MfPDdPUGKi)）：扩展长程 agentic search 的端到端强化学习，是 web-search 训练与 deep-research 模型优化之间的顶会桥接工作。
 - [Atom-Searcher](https://arxiv.org/abs/2508.12800)：用 atomic-thought rewards 和 reasoning reward models 强化细粒度 deep-research 搜索行为。
-- [Open Data Synthesis For Deep Research](https://arxiv.org/abs/2509.00375)：提出面向深度研究的模型侧方法，核心围绕 Open Data Synthesis For Deep Research。
+- xAI Grok 4 Fast Search（[模型卡 PDF](https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf)）：报告面向网页和 X 浏览、代码执行与 deep-search 评测的端到端 tool-use reinforcement learning。
+- [CASPER: Concept-integrated Sparse Representation for Scientific Retrieval](https://arxiv.org/abs/2508.13394)：把显式科学概念注入稀疏检索表示，使论文搜索能按领域 facet 匹配，而不只依赖表层词。
+- [Scalable scientific interest profiling using large language models](https://arxiv.org/abs/2508.15834)：用 LLM 从论文历史中推断研究者兴趣画像，把发表记录转化为可扩展的专家与主题表示。
+- [Open Data Synthesis For Deep Research](https://arxiv.org/abs/2509.00375)：提出两阶段 deep-research 训练数据合成流程：先用 InfoSeek 构造知识密集型检索任务，再通过层级 chain-of-thought 搜索过程合成生成多轮轨迹，用于提升 DR agent 的训练数据质量。
 - [SFR-DeepResearch](https://arxiv.org/abs/2509.06283)：对 reasoning-optimized 模型做持续强化学习，训练带 web 与 Python 工具的自主单 agent deep research。
+- [FLeW: Facet-Level and Adaptive Weighted Representation Learning of Scientific Documents](https://arxiv.org/abs/2509.07531)：利用 facet-level 权重与 citation intent 信号学习科学文档表示。核心思路是用引用意图和引用频率生成面向任务自适应的论文嵌入，而不是单一粗粒度向量。
+- [SciGPT](https://arxiv.org/abs/2509.08032)：面向科学文献理解对 Qwen3 做领域适配，结合领域蒸馏、长文档稀疏 MoE attention 和本体感知知识适配。
 - [DeepDive](https://arxiv.org/abs/2509.10446)：用知识图谱问题合成和端到端多轮强化学习训练 deep-search agents。
 - [WebSailor / WebSailor-V2](https://arxiv.org/abs/2509.13305)：通过不确定性导向任务合成、cold-start reinforcement fine-tuning 和可扩展 agentic RL 缩小开放模型与闭源 deep-research agent 的差距。
 - [Scaling Agents via Continual Pre-training](https://arxiv.org/abs/2509.13310)：提出 Agentic CPT，并以 AgentFounder 作为 deep-research agent 的基础模型训练阶段。
-- xAI Grok 4 Fast Search（[模型卡 PDF](https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf)）：报告面向网页和 X 浏览、代码执行与 deep-search 评测的端到端 tool-use reinforcement learning。
+- [Meow](https://arxiv.org/abs/2509.19370)：把 automatic academic survey 的 outline writing 独立成从论文元数据生成层级大纲的任务，并用两阶段 SFT 与 RL 训练 8B 模型。
 - [MARS: Co-evolving Dual-System Deep Research](https://arxiv.org/abs/2510.04935)：用 multi-agent reinforcement learning 共同优化双系统 deep-research 行为。
+- [Beyond Turn Limits](https://arxiv.org/abs/2510.08276)：用 dynamic context window 训练 deep-search agent，面向固定轮数预算截断长程信息搜索轨迹时的失败。
 - [DeepPlanner](https://arxiv.org/abs/2510.12979)：用 advantage shaping 优化 deep-research agents 的规划能力。
 - [Tongyi DeepResearch](https://arxiv.org/abs/2510.24701)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch)）：报告面向长程深度信息搜索和端到端 deep research 能力训练的 agentic LLM。
+- [Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction](https://arxiv.org/abs/2511.07943)：把深度搜索中的查询拆解、层级思考和证据修正做成多轮交互训练目标，使 search planning 不只依赖提示词脚手架，而成为模型可学习的监督行为。
 - [DR Tulu](https://arxiv.org/abs/2511.19399)：用 rubric-evolving reinforcement learning 训练并发布开放 deep-research 模型，面向长篇开放式研究。
 - [Step-DeepResearch Technical Report](https://arxiv.org/abs/2512.20491)（[开源代码](https://github.com/stepfun-ai/StepDeepResearch)）：给出开放式 deep research 的端到端训练路线，包含数据、策略优化和 checklist 式评审。
+- [Improving Scientific Document Retrieval with Academic Concept Index](https://arxiv.org/abs/2601.00567)：用概念索引表征改进科研文献检索。
 - [O-Researcher](https://arxiv.org/abs/2601.03743)：通过多代理蒸馏和 agentic reinforcement learning 构建开放式 deep-research 模型。
 - [Chaining the Evidence](https://arxiv.org/abs/2601.06021)：用 citation-aware rubric rewards 为 deep-search agent 提供更稠密的强化学习监督。
+- [OpenScholar](https://www.nature.com/articles/s41586-025-10072-4)：用大规模开放论文索引和检索增强模型生成 citation-backed responses；它和 PaperQA2 的区别在于更强调开放模型、开放语料和跨领域专家问题上的引用准确性。
+- [Turning Citation Networks Inside Out: Studying Science Using Content-Based Knowledge Graphs from LLM-Derived Taxonomies](https://arxiv.org/abs/2601.15062)：该方法不只依赖引文绘制科学版图，而是用 LLM 归纳的 taxonomy 将每篇论文编码为“度量-数据-研究问题”三元组，并据此构建内容图，识别领域的方法学主干和稀有的桥接组合。
+- [OffSeeker: Online Reinforcement Learning Is Not All You Need for Deep Research Agents](https://arxiv.org/abs/2601.18467)：聚焦深度研究智能体的搜索、报告生成、轨迹数据或强化学习训练。
+- [EchoReview](https://arxiv.org/abs/2602.00733)：从 citation echoes 中学习自动同行评审监督，利用后续论文如何引用和讨论一项工作来减少对稀缺专家评审标签的依赖。
 - [IntentRL](https://arxiv.org/abs/2602.03468)：训练深调研前的主动意图澄清行为，避免昂贵长程搜索从错误需求开始。
 - [How to Train Your Deep Research Agent?](https://arxiv.org/abs/2602.19526)：系统研究 Search-R1 式 deep-research 训练中的 prompt、reward 和 policy optimization，并提出 Search-R1++。
+- [Ensembling approaches to citation function classification and important citation screening](https://doi.org/10.1007/s11192-025-05265-7)：系统集成引文语境分类器，组合三类基模型多样性来源、五种多样性度量、两种新多样性重排方法、投票与堆叠、性能感知加权以及更深的分层组合。最佳系统在 11 类和 6 类引文功能分类上分别将现有最佳结果提高超过 5 和 4 个百分点，在重要引文筛选上提高 3 个百分点。
 - [DeepResearch-9K / DeepResearch-R1](https://arxiv.org/abs/2603.01152)：发布 deep-research agent 数据集与开放 RL 训练框架。
 - [KARL](https://arxiv.org/abs/2603.05218)：通过合成数据和迭代式大批量 off-policy RL，训练覆盖搜索与报告生成场景的企业知识 agent。
+- [SciBERT-Based Interpretable Framework for Citation Influence Classification Using Sparse Rationale Extraction](https://doi.org/10.1109/access.2026.3688794)：将 SciBERT 与 HardKuma-L0 稀疏选择器结合，在判断引文重要性的同时抽取最小 token 依据；在不平衡的 ACL-ARC 和 SciCite 上 F1 分别为 0.95 和 0.92，显著超过强基线，并在 ERASER 的充分性与完整性指标上优于 attention、LIME 和 SHAP。
 - [SynPlanResearch-R1](https://arxiv.org/abs/2603.07853)（[开源代码](https://github.com/HansiZeng/syn-plan-research)）：用合成可执行计划训练 deep research 中的工具探索能力。
+- [OpenSeeker: Democratizing Frontier Search Agents by Fully Open-Sourcing Training Data](https://arxiv.org/abs/2603.15594)：聚焦深度研究智能体的搜索、报告生成、轨迹数据或强化学习训练。
 - [MiroThinker-1.7 & H1](https://arxiv.org/abs/2603.15726)（[开源代码](https://github.com/MiroMindAI/MiroThinker)）：通过验证、交互 scaling 和重型推理训练推进开源 research agent。
+- [Citation Intent Classification via Exponential Borda Fusion and SciBERT](https://doi.org/10.3390/a19080612)：指数加权 Borda 融合将 Gemma、LLaMA 和 Mistral 的排序结合起来标注 UnarXive 引文语境，再监督训练五分类 SciBERT，在背景、方法、比较、扩展和批评意图识别上达到 0.83 macro-F1。
 - [OpenResearcher](https://arxiv.org/abs/2603.20278)（[开源代码](https://github.com/TIGER-AI-Lab/OpenResearcher)）：构建全开放的长程 deep-research 轨迹合成流程，基于离线语料和 `search/open/find` 原语。
+- [Integrating Table Representations into Large Language Models for Improved Scholarly Document Comprehension](https://doi.org/10.18653/v1/2024.sdp-1.28)：该方法先在表格问答数据上进行中间任务预训练，再将模型适配到计算机科学论文表格。加入表格表示后，模型在科学文献理解任务上显著提升，包括同行评审分数预测；代码和模型均已公开。
+- [HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature](https://arxiv.org/abs/2603.23136)：HGNet 将正交语义分解与感知 n-gram 的注意力用于实体识别，再结合层次消息传递、抑制环路的可微损失和连续抽象场损失；OOD NER 提升 8.08%、关系抽取提升 5.99%，在 SPHERE 零样本设置下增益更大。
+- [Research topic detection in scientific articles using a hybrid BERT integrated telescopic vector tree model with emperor penguin enhanced NSGA II optimization](https://doi.org/10.1038/s41598-025-21145-9)：补充用于科学文章主题检测的混合 BERT 模型。
+- [ScilinkBERT](https://doi.org/10.1007/s11227-025-07838-y)：将 BERT 风格语言模型适配到带引用上下文的科学文本，用于文献理解。
+- [Soft-Prompted Semantic Normalization for Unsupervised Analysis of the Scientific Literature](https://doi.org/10.3390/make8030063)：用 soft prompts 做科学术语语义归一化，在无标注条件下分析异构科学文献。
+- [Scientific Claim Recognition via Staged Fine-Tuning with LoRA](https://doi.org/10.3724/2096-7004.di.2025.0009)：用分阶段 LoRA 微调识别科学文本中的 claim，为论文理解、证据抽取和科研诚信分析提供基础模型。
 - [Mind DeepResearch / MindDR](https://arxiv.org/abs/2604.14518)：结合 SFT cold start、Search-RL、Report-RL 和偏好对齐，训练规划、深搜与报告生成 agent。
 - [LiteResearcher](https://arxiv.org/abs/2604.17931)：构建 lite virtual world 来扩展 deep-research agent 的 agentic reinforcement learning，降低对不稳定 live search 的依赖。
+- [GAN-CITE: leveraging semi-supervised generative adversarial networks for citation function classification with limited data](https://doi.org/10.1007/s11192-025-05233-1)：将语言模型与半监督 GAN 结合，用未标注引用语境提升引用功能分类；在仅使用 10%、20% 和 30% 标注数据，以及标注不足和类别不平衡设置下，均优于监督和半监督基线，适用于数字图书馆引用分类。
+- [Tool-Augmented Multi-Turn Academic Paper Recommendation via Reinforcement Learning](https://doi.org/10.1109/bigcomp68355.2026.00031)：把论文推荐建模为多轮工具增强 agent 任务，并用强化学习改进推荐器调用工具和适应用户反馈的方式。
 - [DR-Venus](https://arxiv.org/abs/2604.19859)：基于开放数据和 agentic 训练路线，训练 4B 边缘规模 deep-research agent。
+- [Data Gatherer](https://doi.org/10.18653/v1/2025.sdp-1.10)：用 LLM 从科学文献中抽取数据集引用，补充科研信息抽取模型案例。
+- [Learning study similarity to investigate heterogeneity in meta-analysis using LLMs and triplet loss](https://arxiv.org/abs/2605.29603)：用 LLM embedding 与 triplet loss 学习元分析中的研究相似度，把语义比较与统计综合连接起来。
+- [HyBIRD: Hyperbolic Bridge Retrieval and Diagnosis for Methodology Inspiration Retrieval](https://arxiv.org/abs/2606.28336)：HyBIRD 固定强 dense methodology retriever，再加入轻量超曲桥接表示，诊断检索到的方法片段如何覆盖 proposal 需求并暴露证据缺口，而不只是返回论文排序。
+- [From citation intent to knowledge contribution: Classifying what cited papers actually contribute](https://arxiv.org/abs/2608.20697)：提出知识贡献分类体系，将被引工作的贡献分为方法、资源工具、实证发现和背景，并区分核心与非核心贡献。Dual-Path Fusion 分类器达到 85.5% 的准确率；在 802,202 条 ACL 引文中，核心贡献占 39.09%。核心贡献引用次数在各排名截断点上比传统引用次数更能识别获奖论文，而 KCT 标签在传播预测上优于引用意图标签。

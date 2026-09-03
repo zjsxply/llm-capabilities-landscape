@@ -1,15 +1,88 @@
 # 4.3.2 Survey
 
+- [Diffusion Models for Audio Restoration: A review (Special Issue On Model-Based and Data-Driven Audio Signal Processing)](https://arxiv.org/abs/2402.09821)：综述Speech的方法、风险或评测脉络，可作为 Speech / Survey 部分的领域地图。
+- [Speech Translation with Speech Foundation Models and Large Language Models: What is There and What is Missing?](https://arxiv.org/abs/2402.12025)：梳理语音与音频相关方法、风险与开放问题。
+- [Towards audio language modeling - an overview](https://arxiv.org/abs/2402.13236)：综述与 Speech 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
+- [a-DCF: an architecture agnostic metric with application to spoofing-robust speaker verification](https://arxiv.org/abs/2403.01355)：综述与梳理 Speech 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [A Survey on Speech Deepfake Detection](https://arxiv.org/abs/2404.13914)：A Survey on Speech Deepfake Detection 补充语音或音频综述，覆盖生成、识别、编解码、水印或深度伪造检测。
+- [Natural Language Processing RELIES on Linguistics](https://arxiv.org/abs/2405.05966)：梳理语音方向的近期方法、评测问题或风险边界。
+- [Audio-Language Datasets of Scenes and Events: A Survey](https://arxiv.org/abs/2407.06947)：综述语音、音频、TTS、声音或音频语言能力，补充近期方法、基准、风险或开放问题脉络。
+- [Foundation Models for Music: A Survey](https://arxiv.org/abs/2408.14340)：综述Speech的方法、风险或评测脉络，可作为 Speech / Survey 部分的领域地图。
+- [Applications and Advances of Artificial Intelligence in Music Generation:A Review](https://arxiv.org/abs/2409.03715)：围绕speech, audio, or audio-language capability梳理综述、分类或路线图，供父级复核是否补入。
+- [A Comprehensive Survey with Critical Analysis for Deepfake Speech Detection](https://arxiv.org/abs/2409.15180)：综述语音、音频或口语语言能力，为父级复核提供近期综述线索。
 - [Recent Advances in Speech Language Models: A Survey](https://arxiv.org/abs/2410.03751)：综述 speech language model 的表示、理解、生成、对话与评测。
+- [Where are We in Audio Deepfake Detection? A Systematic Analysis over Generative and Detection Models](https://arxiv.org/abs/2410.04324)：Where are We in Audio Deepfake Detection 补充语音或音频综述，覆盖生成、识别、编解码、水印或深度伪造检测。
+- [A decade of DCASE: Achievements, practices, evaluations and future challenges](https://arxiv.org/abs/2410.04951)：梳理语音方向的近期方法、评测问题或风险边界。
+- [Audio Description Generation in the Era of LLMs and VLMs: A Review of Transferable Generative AI Technologies](https://arxiv.org/abs/2410.08860)：面向语音与音频能力，梳理近期工作、分类边界与开放问题。
+- [Roadmap towards Superhuman Speech Understanding using Large Language Models](https://arxiv.org/abs/2410.13268)：梳理speech, audio, or spoken-language capability相关方法与挑战，补充该能力方向的综述线索。
+- [A Survey on Speech Large Language Models for Understanding](https://arxiv.org/abs/2410.18908)：[A Survey on Speech Large Language Models for Understanding](https://arxiv.org/abs/2410.18908): 综述面向理解任务的语音大语言模型.
+- [Robust AI-Synthesized Speech Detection Using Feature Decomposition Learning and Synthesizer Feature Augmentation](https://arxiv.org/abs/2411.09167)：梳理语音与音频相关方法、风险与开放问题。
 - [WavChat: A Survey of Spoken Dialogue Models](https://arxiv.org/abs/2411.13577)：回顾语音到语音交互、轮次管理、对话控制与评测。
+- [From Audio Deepfake Detection to AI-Generated Music Detection - A Pathway and Overview](https://arxiv.org/abs/2412.00571)：围绕 Speech 能力补充《From Audio Deepfake Detection to AI-Generated Music Detection - A Pathway and Overview》这一路线，将其作为 Survey 条目记录。
+- [Towards Controllable Speech Synthesis in the Era of Large Language Models: A Survey](https://arxiv.org/abs/2412.06602)：Towards Controllable Speech Synthesis in the Era of 补充语音或音频综述，覆盖生成、识别、编解码、水印或深度伪造检测。
+- [Audio-deepfake detection: Adversarial attacks and countermeasures](https://doi.org/10.1016/j.eswa.2024.123941)：[Audio-deepfake detection: Adversarial attacks and countermeasures](https://doi.org/10.1016/j.eswa.2024.123941): 综述音频深度伪造检测中的对抗攻击与对策.
+- [Reimagining speech: a scoping review of deep learning-based methods for non-parallel voice conversion](https://doi.org/10.3389/frsip.2024.1339159)：作为语音与音频的综述条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
 - [Audio-Language Models for Audio-Centric Tasks: A Systematic Survey](https://arxiv.org/abs/2501.15177)：覆盖音频中心任务、数据集、架构与评测。
+- [Recent Advances in Discrete Speech Tokens: A Review](https://arxiv.org/abs/2502.06490)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [Emotion Recognition and Generation: A Comprehensive Review of Face, Speech, and Text Modalities](https://arxiv.org/abs/2502.06803)：梳理语音与音频相关方法、风险与开放问题。
+- [Advances in Microphone Array Processing and Multichannel Speech Enhancement](https://arxiv.org/abs/2502.09037)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
 - [A Comprehensive Survey on Generative AI for Video-to-Music Generation](https://arxiv.org/abs/2502.12489)：综述 video-to-music generation 的条件输入、条件机制与音乐生成框架。
 - [When Large Language Models Meet Speech](https://arxiv.org/abs/2502.19548)：综述将语音接入 LLM 的文本式、潜表示式与音频 token 式集成路线。
+- [Direct Speech to Speech Translation: A Review](https://arxiv.org/abs/2503.04799)：综述端到端语音到语音翻译的体系结构、数据、评测与开放问题。
+- [SoK: How Robust is Audio Watermarking in Generative AI models?](https://arxiv.org/abs/2503.19176)：系统梳理生成式 AI 音频水印的鲁棒性、攻击、评测假设与部署风险。
+- [Summarizing Speech: A Comprehensive Survey](https://arxiv.org/abs/2504.08024)：综述语音与音视频摘要的任务定义、方法和评估。
 - [On The Landscape of Spoken Language Models: A Comprehensive Survey](https://arxiv.org/abs/2504.08528)：梳理 spoken-language-model 架构、任务、数据集与开放问题。
+- [Deep, data-driven modeling of room acoustics: literature review and research perspectives](https://arxiv.org/abs/2504.16289)：综述语音、音频、ASR、说话人、视听或音频深伪能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Voice Cloning: Comprehensive Survey](https://arxiv.org/abs/2505.00579)：Voice Cloning 补充语音或音频综述，覆盖生成、识别、编解码、水印或深度伪造检测。
 - [Towards Holistic Evaluation of Large Audio-Language Models: A Comprehensive Survey](https://arxiv.org/abs/2505.15957)：回顾 audio-language model 的能力、鲁棒性、安全与基准设计。
 - [Voice of a Continent](https://arxiv.org/abs/2505.18436)：系统梳理非洲语音数据集、技术、基准与模型表现，突出低资源语言的覆盖缺口。
+- [Discrete Audio Tokens: More Than a Survey!](https://arxiv.org/abs/2506.10274)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [A Survey on World Models Grounded in Acoustic Physical Information](https://arxiv.org/abs/2506.13833)：面向语音与音频，补充关于survey coverage of world models grounded in acoustic physical information的综述线索。
+- [Loss functions incorporating auditory spatial perception in deep learning – a review](https://arxiv.org/abs/2506.19404)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Machine Learning in Acoustics: A Review and Open-source Repository](https://arxiv.org/abs/2507.04419)：补充一个面向语音与音频的综述条目，关注machine learning in acoustics survey and repository。
+- [Code-Switching in End-to-End Automatic Speech Recognition: A Systematic Literature Review](https://arxiv.org/abs/2507.07741)：可作为语音与音频方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。
+- [SonicGauss: Position-Aware Physical Sound Synthesis for 3D Gaussian Representations](https://arxiv.org/abs/2507.19835)：SonicGauss: Position-Aware Physical Sound Synthesis for 3D Gaussian Representations 梳理语音与音频方向的方法、风险或评测边界。
+- [Non-Intrusive Automatic Speech Recognition Refinement: A Survey](https://arxiv.org/abs/2508.07285)：综述无需重训或重构底层识别器的 ASR 后处理纠错方法。
 - [ASAudio](https://arxiv.org/abs/2508.10924)：综述高级空间音频研究，覆盖表示、生成与评测。
+- [A Survey on Evaluation Metrics for Music Generation](https://arxiv.org/abs/2509.00051)：综述音乐生成质量与对齐评估指标。
+- [Speaker Privacy and Security in the Big Data Era: Protection and Defense Against Deepfake](https://arxiv.org/abs/2509.06361)：综述说话人隐私保护与 deepfake 语音防御，把个性化语音生成与声纹安全风险面联系起来。
+- [Automatic Speech Recognition (ASR) for African Low-Resource Languages: A Systematic Literature Review](https://arxiv.org/abs/2510.01145)：综述非洲低资源语言自动语音识别的方法、数据集与能力缺口。
+- [Environmental Sound Deepfake Detection Challenge: An Overview](https://arxiv.org/abs/2512.24140)：Environmental Sound Deepfake Detection Challenge 补充语音或音频综述，覆盖生成、识别、编解码、水印或深度伪造检测。
 - [Training Strategies for Speech Large Language Models](https://doi.org/10.1109/FLLM67465.2025.11391055)：综述 speech large language model 的训练策略，以训练视角补充更宽泛的 speech-language-model 综述。
 - [Real-Time Voice](https://doi.org/10.1109/ICCECE61355.2025.10940301)：综述自动语音识别与转写，重点关注实时语音系统。
+- [Hot topics in speech synthesis evaluation](https://doi.org/10.21437/ssw.2025-1)：梳理语音合成评测中的当前议题，包括简单 MOS 式打分遗漏的维度。
+- [Human Voice Synthesis and Cloning Using Generative AI Models: A Comprehensive Review of Recent Advances and Applications](https://doi.org/10.1109/icecie66637.2025.11363848)：综述语音、音频或口语语言能力，为父级复核提供近期综述线索。
+- [The evaluation of prosody in speech synthesis: a systematic review](https://doi.org/10.5753/jbcs.2025.5468)：综述语音、音频或口语语言能力，为父级复核提供近期综述线索。
+- [Review on Development of Deep Learning-Based Voice Cloning Technology](https://doi.org/10.1109/icahn67688.2025.00013)：综述语音、音频或口语语言能力，为父级复核提供近期综述线索。
+- [A Review on Bangla Text-to-Speech With Human-Like Expressions](https://doi.org/10.1109/access.2025.3648947)：围绕 Speech 能力补充《A Review on Bangla Text-to-Speech With Human-Like Expressions》，作为 Survey 条目候选。
+- [Next-generation MOFs for atmospheric water harvesting: The role of machine learning techniques](https://doi.org/10.1016/j.ccr.2025.217211)：梳理语音方向的近期方法、评测问题或风险边界。
+- [A Systematic Framework for Text-To-Speech System](https://doi.org/10.1109/iccca66364.2025.11325188)：A Systematic Framework for Text-To-Speech System 梳理语音与音频方向的方法、风险或评测边界。
+- [A review on speech emotion recognition for low-resource and Indigenous languages](https://doi.org/10.1016/j.specom.2025.103342)：梳理语音与音频的近期方法与开放问题。
+- [Three Years of VoiceMOS Challenges: Lessons Learned by the UWB-NTIS-TTS Team](https://doi.org/10.1109/access.2025.3596644)：梳理语音与音频的近期方法与开放问题。
+- [A Survey on Performance Evaluation Methods for Automatic Speech Recognition Models](https://doi.org/10.1109/aiahpc66801.2025.11290010)：综述 A Survey on Performance Evaluation Methods for Automatic Speech Recognition Models，为 Speech 补充近期方法、证据或开放问题脉络。
+- [Deep learning pathways for automatic sign language processing](https://doi.org/10.1016/j.patcog.2025.111475)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Video games and speech privacy: A case study of Fortnite](https://doi.org/10.21437/spsc.2025-7)：梳理语音与音频语言能力的方法、风险、数据集或评测实践。
+- [Synthetic Singers: A Review of Deep-Learning-based Singing Voice Synthesis Approaches](https://arxiv.org/abs/2601.13910)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [A Design Space for Live Music Agents](https://arxiv.org/abs/2602.05064)：梳理Speech相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Self-Supervised Learning for Speaker Recognition: A study and review](https://arxiv.org/abs/2602.10829)：可作为“语音与音频 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [Task-Lens: Cross-Task Utility Based Speech Dataset Profiling for Low-Resource Indian Languages](https://arxiv.org/abs/2602.23388)：从 26 种语言、9 类下游任务出发梳理 50 个印度语音数据集，识别元数据复用机会和低资源语音技术缺口。
+- [Silent Speech Interfaces in the Era of Large Language Models: A Comprehensive Taxonomy and Systematic Review](https://arxiv.org/abs/2603.11877)：梳理语音与音频方向，重点关注 Silent Speech Interfaces in the Era of Large Language Models: A Comprehensive Taxonomy and Systematic Review。
+- [Voice Privacy from an Attribute-based Perspective](https://arxiv.org/abs/2603.20301)：面向语音与音频，补充关于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的综述线索。
+- [DiariZen Explained: A Tutorial for the Open Source State-of-the-Art Speaker Diarization Pipeline](https://arxiv.org/abs/2604.21507)：梳理语音与音频方向，重点关注 A Tutorial for the Open Source State-of-the-Art Speaker Diarization Pipeline。
+- [V.O.I.C.E (Voice, Ownership, Identity, Control, Expression): Risk Taxonomy of Synthetic Voice Generation From Empirical Data](https://arxiv.org/abs/2604.24794)：综述语音、音频与声音生成或理解，为该方向提供可复用的分类或综合视角。
+- [Toward Fair Speech Technologies: A Comprehensive Survey of Bias and Fairness in Speech AI](https://arxiv.org/abs/2605.01597)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [A Survey on Multimodal Emotion Recognition: Methods, Datasets, and Future Directions](https://doi.org/10.32604/cmc.2026.076411)：综述语音、音频、ASR、说话人、视听或音频深伪能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Speech emotion recognition: A systematic mega-review of techniques and pipelines](https://doi.org/10.1016/j.inffus.2026.104161)：梳理语音与音频方向，重点关注 Speech emotion recognition: A systematic mega-review of techniques and pipelines。
 - [AI-Enabled Text-to-Music Generation](https://doi.org/10.3390/electronics14061197)：综述文本到音乐生成的方法、框架与未来方向。
 - [From Tools to Creators](https://doi.org/10.3390/info16080656)：综述 AI 音乐生成的方法、应用与发展趋势，可补充语音与音频生成页面中非语音音乐生成的综述入口。
+- [A Systematic Literature Review on Bias Evaluation and Mitigation in Automatic Speech Recognition Models for Low-Resource African Languages](https://doi.org/10.1145/3769089)：系统综述低资源非洲语言自动语音识别模型中的偏见评估与缓解方法。
+- [Survey of deep emotion recognition in dynamic data using facial, speech and textual cues](https://doi.org/10.1007/s11042-023-17944-9)：梳理语音的方法、证据与开放问题。
+- [The value of convergence research for developing trustworthy AI for weather, climate, and ocean hazards](https://doi.org/10.1038/s44304-024-00014-x)：梳理语音方向的近期方法、评测问题或风险边界。
+- [Sound Event Detection: A Journey Through DCASE Challenge Series](https://doi.org/10.1561/116.00000051)：梳理语音与音频相关方法、风险与开放问题。
+- [Speech Separation Using Advanced Deep Neural Network Methods: A Recent Survey](https://doi.org/10.3390/bdcc9110289)：梳理语音与音频的近期方法与开放问题。
+- [Emotion-Aware Speech Generation by Utilizing Prosody in Artificial Agents: A Systematic Review](https://doi.org/10.1007/s00034-025-03336-x)：综述语音与音频的方法谱系、任务边界、证据来源与开放挑战。
+- [Integrating Facial Emotion Recognition, Speech to Text Transcription, and Natural Language Processing for Customer Satisfaction Analysis from Video Reviews](https://doi.org/10.48084/etasr.15095)：围绕 Speech 能力补充《Integrating Facial Emotion Recognition, Speech to Text Transcription, and Natural Language Processing for Customer Satisfaction Analysis from Video Reviews》，作为 Survey 条目候选。
+- [AUDIRE: a comprehensive review of speech recognition technologies – methods, uses, and challenges](https://doi.org/10.1007/s10772-025-10213-0)：梳理语音与音频方向，重点关注 a comprehensive review of speech recognition technologies – methods, uses, and challenges。
+- [A systematic review of audio deepfake detection techniques for digital investigation](https://doi.org/10.1007/s10791-026-10077-1)：综述音频深伪检测技术。
+- [Speech AI for All: The What, How, and Who of Measurement](https://doi.org/10.1145/3772363.3778768)：面向语音与音频模型的综述或相关工作脉络。核心思路是围绕“Speech AI for All: The What, How, and Who of Measurement”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Research Status on Performance Degradation of Automatic Speech Recognition Models](https://doi.org/10.1145/3773365.3773556)：一篇关于自动语音识别模型性能退化的综述；核心思路是整理语音识别可靠性中的退化原因与评估要点。

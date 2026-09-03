@@ -1,57 +1,320 @@
 # 2.10.3 Bench
 
-- [Cybench](https://arxiv.org/abs/2408.08926)：通过 CTF 风格挑战评测网络安全能力与风险。核心思想：把模型放进可执行安全任务中，要求其推理、使用工具并完成 exploit-oriented 目标，而不只是回答网络安全知识题。
+- [ReposVul: A Repository-Level High-Quality Vulnerability Dataset](https://arxiv.org/abs/2401.13169)：构建仓库级漏洞数据，用于评测超越孤立代码片段的漏洞检测。
+- [Evaluation of LLM Chatbots for OSINT-based Cyberthreat Awareness](https://arxiv.org/abs/2401.15127)：提供用于评估Cybersecurity的任务或数据集，为 Cybersecurity / Bench 补充具体测量目标。
+- [LLM4Vuln: A Unified Evaluation Framework for Decoupling and Enhancing LLMs' Vulnerability Reasoning](https://arxiv.org/abs/2401.16185)：通过任务、评测协议或诊断设置评测 Cybersecurity 能力，适合作为 Bench 条目。
+- [CyberMetric: A Benchmark Dataset for Evaluating Large Language Models Knowledge in Cybersecurity](https://arxiv.org/abs/2402.07688)：围绕 Cybersecurity 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [An Empirical Evaluation of LLMs for Solving Offensive Security Challenges](https://arxiv.org/abs/2402.11814)：在真实 CTF 进攻安全题上比较 human-in-the-loop 与全自动 LLM 解题流程，并与人类参赛者结果对照，为自主网络安全任务表现提供早期测量。
+- [Comprehensive evaluation of Mal-API-2019 dataset by machine learning in malware detection](https://arxiv.org/abs/2403.02232)：补充网络安全方向的基准、数据集、挑战、指标或评测协议。
+- [Software Vulnerability and Functionality Assessment using LLMs](https://arxiv.org/abs/2403.08429)：补充网络安全能力的评测资源或协议。
+- [To Err is Machine: Vulnerability Detection Challenges LLM Reasoning](https://arxiv.org/abs/2403.17218)：补充网络安全方向的基准、数据集、挑战、指标或评测协议。
+- [Evaluating Large Language Models for Line-Level Vulnerability Localization](https://arxiv.org/abs/2404.00287)：评测大模型定位代码脆弱行的能力。
+- [Multitask-Based Evaluation of Open-Source LLM on Software Vulnerability](https://arxiv.org/abs/2404.02056)：通过任务、评测协议或诊断设置评测 Cybersecurity 能力，适合作为 Bench 条目。
+- [DeVAIC: A Tool for Security Assessment of AI-generated Code](https://arxiv.org/abs/2404.07548)：补充网络安全能力的评测资源或协议。
+- [CyberSecEval 2: A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models](https://arxiv.org/abs/2404.13161)：在 CyberSecEval 中加入 prompt injection、code interpreter abuse、用于衡量 safety-utility tradeoff 的 False Refusal Rate，以及四组 exploit generation 任务，用于度量进攻能力。
+- [VulEval: Towards Repository-Level Evaluation of Software Vulnerability Detection](https://arxiv.org/abs/2404.15596)：通过基准、数据集或评测协议评估网络安全能力。
+- [SEvenLLM: Benchmarking, Eliciting, and Enhancing Abilities of Large Language Models in Cyber Threat Intelligence](https://arxiv.org/abs/2405.03446)：围绕 Cybersecurity 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [SECURE: Benchmarking Large Language Models for Cybersecurity](https://arxiv.org/abs/2405.20441)：通过基准、数据集或评测协议评估网络安全能力。
+- [Dataset and Lessons Learned from the 2024 SaTML LLM Capture-the-Flag Competition](https://arxiv.org/abs/2406.07954)：发布 IEEE SaTML 2024 两阶段 prompt-injection CTF 的经验和数据：参赛队先防守隐藏在 system prompt 中的 secret，再攻击其他队的防御；所有防御至少被绕过一次。
+- [MegaVul: A C/C++ Vulnerability Dataset with Comprehensive Code Representations](https://arxiv.org/abs/2406.12415)：发布大规模 C/C++ 漏洞数据集，用 vulnerable 和 patched code 的完整表示补足片段级标签的不足。
+- [Is Your AI-Generated Code Really Safe? Evaluating Large Language Models on Secure Code Generation with CodeSecEval](https://arxiv.org/abs/2407.02395)：提出 CodeSecEval，包含 44 类关键漏洞、180 个样本，用于自动评测 secure code generation 与代码修复。
+- [Comparison of Static Application Security Testing Tools and Large Language Models for Repo-level Vulnerability Detection](https://arxiv.org/abs/2407.16235)：在 Java、C、Python 仓库级漏洞检测上比较 15 个 SAST 工具与 12 个开源 LLM，显示 SAST 召回较低但误报少，而 LLM 召回高但误报多。
+- [CYBERSECEVAL 3: Advancing the Evaluation of Cybersecurity Risks and Capabilities in Large Language Models](https://arxiv.org/abs/2408.01605)：提供用于评估Cybersecurity的任务或数据集，为 Cybersecurity / Bench 补充具体测量目标。
+- [CTISum: A New Benchmark Dataset For Cyber Threat Intelligence Summarization](https://arxiv.org/abs/2408.06576)：用多源 Web 情报构建 CTI 摘要数据集，加入 attack-process summarization 细粒度子任务，并比较抽取式、生成式和 LLM 摘要方法。
+- [Vulnerability Handling of AI-Generated Code - Existing Solutions and Open Challenges](https://arxiv.org/abs/2408.08549)：评测软件安全或网络安全能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Cybench](https://arxiv.org/abs/2408.08926)（[leaderboard](https://cybench.github.io/)）：通过 CTF 风格挑战评测网络安全能力与风险。核心思想：把模型放进可执行安全任务中，要求其推理、使用工具并完成 exploit-oriented 目标，而不只是回答网络安全知识题。
+- [How Well Do Large Language Models Serve as End-to-End Secure Code Producers?](https://arxiv.org/abs/2408.10495)：评测 LLM 端到端生成安全代码的能力。
+- [Top Score on the Wrong Exam: On Benchmarking in Machine Learning for Vulnerability Detection](https://arxiv.org/abs/2408.12986)：提出或分析面向网络安全行动与评测的基准、数据集或评测协议。
+- [SPICED: Syntactical Bug and Trojan Pattern Identification in A/MS Circuits using LLM-Enhanced Detection](https://arxiv.org/abs/2408.16018)：补充网络安全能力的评测资源或协议。
+- [LLMSecCode: Evaluating Large Language Models for Secure Coding](https://arxiv.org/abs/2408.16100)：开源 secure-coding 客观评测框架，通过改变参数和提示观察性能差异，并把部分结果与外部评测者对照以检查评测公正性。
+- [Models Are Codes: Towards Measuring Malicious Code Poisoning Attacks on Pre-trained Model Hubs](https://arxiv.org/abs/2409.09368)：补充网络安全能力的评测资源或协议。
+- [VulnLLMEval: A Framework for Evaluating Large Language Models in Software Vulnerability Detection and Patching](https://arxiv.org/abs/2409.10756)：补充网络安全能力的评测资源或协议。
+- [PromptFuzz: Harnessing Fuzzing Techniques for Robust Testing of Prompt Injection in LLMs](https://arxiv.org/abs/2409.14729)：补充网络安全能力的评测资源或协议。
+- [RMCBench: Benchmarking Large Language Models’ Resistance to Malicious Code](https://arxiv.org/abs/2409.15154)：用 473 个恶意代码提示在 text-to-code 和 code-to-code 两种场景中测试 LLM 拒绝生成恶意代码的能力；11 个模型的平均拒绝率仅为 28.71%。
+- [RealVul: Can We Detect Vulnerabilities in Web Applications with LLM?](https://arxiv.org/abs/2410.07573)：面向 PHP Web 应用漏洞检测，通过 vulnerability candidate detection 和代码规范化抽取触发点，使 LLM 能学习普通源码数据集中较少覆盖的 Web 漏洞特征。
+- [PoisonBench: Assessing Large Language Model Vulnerability to Data Poisoning](https://arxiv.org/abs/2410.08811)：评测软件安全或网络安全能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Catastrophic Cyber Capabilities Benchmark (3CB): Robustly Evaluating LLM Agent Cyber Offense Capabilities](https://arxiv.org/abs/2410.09114)：补充网络安全能力的评测资源或协议。
+- [SeCodePLT: A Unified Platform for Evaluating the Security of Code GenAI](https://arxiv.org/abs/2410.11096)：评测软件安全或网络安全能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Enhancing Reverse Engineering: Investigating and Benchmarking Large Language Models for Vulnerability Analysis in Decompiled Binaries](https://arxiv.org/abs/2411.04981)：评测 LLM 在反编译二进制代码上的漏洞分析能力，暴露固件、驱动和专有系统缺少源码时的语义差距。
+- [CS-Eval: A Comprehensive Large Language Model Benchmark for CyberSecurity](https://arxiv.org/abs/2411.16239)：构建公开双语网络安全基准，覆盖 42 个网络安全类别，并按知识、能力和应用三个认知层级组织问题。
+- [RTL-Breaker: Assessing the Security of LLMs Against Backdoor Attacks on HDL Code Generation](https://arxiv.org/abs/2411.17569)：评测 HDL 代码生成 LLM 是否会把 poisoned training data 中的 backdoor 迁移到生成的硬件设计中。
+- [ChatNVD: Advancing Cybersecurity Vulnerability Assessment With Large Language Models](https://arxiv.org/abs/2412.04756)：补充网络安全能力的评测资源或协议。
+- [Can LLM Prompting Serve as a Proxy for Static Analysis in Vulnerability Detection](https://arxiv.org/abs/2412.12039)：在 partial-code 漏洞检测中，将漏洞说明提示和 contrastive chain-of-thought 样本与静态分析器对比，报告强推理模型提示能降低假阴性。
+- [SecBench: A Comprehensive Multi-Dimensional Benchmarking Dataset for LLMs in Cybersecurity](https://arxiv.org/abs/2412.20787)：补充网络安全方向的基准、数据集、挑战、指标或评测协议。
+- [Empowering Hardware Security with LLM: The Development of a Vulnerable Hardware Database](https://doi.org/10.1109/host55342.2024.10545393)：使用 LLM 构建易受攻击硬件数据库，用于硬件安全评测。
+- [Can AI Keep You Safe? A Study of Large Language Models for Phishing Detection](https://doi.org/10.1109/ccwc60891.2024.10427626)：围绕 Cybersecurity 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Evaluating Large Language Models for Enhanced Fuzzing: An Analysis Framework for LLM-Driven Seed Generation](https://doi.org/10.1109/access.2024.3484947)：评估 LLM 生成 Python fuzzing seed 的效果，用动态测试输入框架检验传统 seed 策略较弱的场景。
+- [NetLLMBench: A Benchmark Framework for Large Language Models in Network Configuration Tasks](https://doi.org/10.1109/nfv-sdn61811.2024.10807499)：把 prompt engineering 与闭环网络仿真结合起来，在多种网络配置场景中基准化并验证 LLM 的配置答案。
+- [Transforming the field of Vulnerability Prediction: Are Large Language Models the key?](https://doi.org/10.1109/mascots64422.2024.10786575)：分析 LLM-based vulnerability prediction models 相对早期深度学习和文本挖掘 VPM 的进展，同时强调准确性、可靠性和实用部署仍未解决。
+- [Securing Against Deception: Exploring Phishing Emails Through ChatGPT and Sentiment Analysis](https://doi.org/10.1109/sera61261.2024.10685564)：补充面向网络安全的评测、数据集或度量信号。
+- [Silver Lining in the Fake News Cloud: Can Large Language Models Help Detect Misinformation?](https://doi.org/10.1109/tai.2024.3440248)：提供可复用评测目标、排行榜或测量协议。
+- [CySecBench: Generative AI-based CyberSecurity-focused Prompt Dataset for Benchmarking Large Language Models](https://arxiv.org/abs/2501.01335)：提供面向网络安全的提示数据集，用于评测 LLM 的越狱行为和有害网络安全内容生成。
+- [Exploring the Security Threats of Knowledge Base Poisoning in Retrieval-Augmented Code Generation](https://arxiv.org/abs/2502.03233)：评测被投毒知识库如何影响检索增强代码生成并诱导不安全输出。
 - [ITBench](https://arxiv.org/abs/2502.05352)（[开源代码](https://github.com/itbench-hub/ITBench)）：评测 SRE、CISO、FinOps 等企业 IT 自动化工作流。核心思想：把安全运营、事件响应和成本/治理工作放进可执行场景，并配套可解释指标。
+- [OCCULT](https://arxiv.org/abs/2502.15797)：评测 LLM 的 offensive cyber operation capabilities。核心思想是在比静态网络安全问答更接近攻击操作流程的场景中测试 cyber task performance。
+- [ConfuGuard: Using Metadata to Detect Active and Stealthy Package Confusion Attacks Accurately and at Scale](https://arxiv.org/abs/2502.20528)：补充面向网络安全的评测、数据集或度量信号。
+- [Benchmarking Large Language Models for Multi-Language Software Vulnerability Detection](https://arxiv.org/abs/2503.01449)：可作为网络安全 agent的 Bench 候选：围绕 Benchmarking Large Language Models for Multi-Language Software Vulnerability Detection 提供可比较的评测任务、数据或分析协议。
+- [AutoAdvExBench](https://arxiv.org/abs/2503.01811)：评测 agent 自主利用 adversarial-example defenses 的能力，对比 CTF-like 练习与真实防御；作者的 agent 可攻破 75% CTF-like 任务，但真实防御成功率只有 13%。
+- [AttackSeqBench: Benchmarking Large Language Models' Understanding of Sequential Patterns in Cyber Attacks](https://arxiv.org/abs/2503.03170)：面向网络威胁情报攻击序列理解的基准。核心思想是测试 LLM 对战术、技术和流程攻击链的推理能力。
+- [Practical Vulnerability Detection Benchmark](https://arxiv.org/abs/2503.03586)：在真实代码仓库级漏洞检测上评测 LLM 和 agent。
 - [CASTLE](https://arxiv.org/abs/2503.09433)：评测静态分析器、形式化工具和 LLM 的 CWE 检测能力。核心思想：用人工构造的 CWE 程序和专门评分方式，比较不止原始真阳性数量的漏洞检测质量。
 - [A Framework for Evaluating Emerging Cyberattack Capabilities of AI](https://arxiv.org/abs/2503.11917)：评估 AI-enabled cyberattack risk 在端到端 attack-chain archetype 中的表现。核心思想是把 cyber kill-chain analysis 改造为 frontier AI evaluation，定位瓶颈阶段并把结果映射到防御缓解措施。
-- [CVE-Bench](https://arxiv.org/abs/2503.17332)（[开源代码](https://github.com/uiuc-kang-lab/cve-bench)）：评测 AI agent 利用真实 Web 应用漏洞的能力。核心思想：用高危 CVE、隔离环境和可执行验证，把代码理解、漏洞定位、终端操作和 exploit 构造接到同一协议中。
+- [Rethinking the Evaluation of Secure Code Generation](https://arxiv.org/abs/2503.15554)：在同一批生成程序上同时检查漏洞与功能正确性，重新评估安全代码生成。
+- [CVE-Bench](https://arxiv.org/abs/2503.17332)（[leaderboard](https://cvebench.com/)；[开源代码](https://github.com/uiuc-kang-lab/cve-bench)）：评测 AI agent 利用真实 Web 应用漏洞的能力。核心思想：用高危 CVE、隔离环境和可执行验证，把代码理解、漏洞定位、终端操作和 exploit 构造接到同一协议中。
+- [Large Language Models are Unreliable for Cyber Threat Intelligence](https://arxiv.org/abs/2503.23175)：提供可复用评测目标、排行榜或测量协议。
+- [Android Malware Analysis Code-LLM Benchmarking](https://arxiv.org/abs/2504.00694)：评测 code LLMs 的 Android malware analysis 能力。
+- [CTI-HAL: A Human-Annotated Dataset for Cyber Threat Intelligence Analysis](https://arxiv.org/abs/2504.05866)：提出或分析面向cybersecurity capability的基准、数据集、指标或评测协议。
+- [A Vulnerability Code Intent Summary Dataset](https://arxiv.org/abs/2504.08180)：补充网络安全方向的基准、数据集、指标或评测协议。
+- [Can LLMs Classify CVEs? Investigating LLMs Capabilities in Computing CVSS Vectors](https://arxiv.org/abs/2504.10713)：评估 LLM 对 CVE 分类和 CVSS 向量计算的能力。
+- [DMind Benchmark: The First Comprehensive Benchmark for LLM Evaluation in the Web3 Domain](https://arxiv.org/abs/2504.16116)：为网络安全补充基准、数据集、指标或评测协议。
+- [Improving Automated Secure Code Reviews: A Synthetic Dataset for Code Vulnerability Flaws](https://arxiv.org/abs/2504.16310)：补充网络安全方向的基准、数据集、指标或评测协议。
+- [BinPool: A Dataset of Vulnerabilities for Binary Security Analysis](https://arxiv.org/abs/2504.19055)：收集 603 个 CVE、89 类 CWE 对应的 6,144 个 Debian 二进制文件，并在四种优化级别下配对 vulnerable 与 patched 程序用于二进制漏洞分析。
+- [The Hidden Risks of LLM-Generated Web Application Code: A Security-Centric Evaluation of Code Generation Capabilities in Large Language Models](https://arxiv.org/abs/2504.20612)：评测 LLM 生成 Web 应用在认证、会话管理、输入验证等类别上的安全弱点，用 secure-coding 评估补充功能性代码生成基准。
+- [SecRepoBench](https://arxiv.org/abs/2504.21205)：真实仓库中的安全代码补全评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Good News for Script Kiddies? Evaluating Large Language Models for Automated Exploit Generation](https://arxiv.org/abs/2505.01065)：可作为网络安全 agent的 Bench 候选：围绕 Good News for Script Kiddies? Evaluating Large Language Models for Automated Exploit Generation 提供可比较的评测任务、数据或分析协议。
 - [Digital Forensic Timeline Analysis Evaluation](https://arxiv.org/abs/2505.03100)：评测基于 LLM 的数字取证时间线分析；核心思想是明确数据集、时间线生成与 ground truth 构造，使取证推理不再只依赖案例展示，而能进行量化比较。
+- [A Preliminary Study of Large Language Models for Multilingual Vulnerability Detection](https://arxiv.org/abs/2505.07376)：评估大语言模型的多语言漏洞检测能力，检验安全代码推理能否跨编程语言迁移。
+- [ICVul: A Well-labeled C/C++ Vulnerability Dataset with Comprehensive Metadata and VCCs](https://arxiv.org/abs/2505.08503)：从 NVD 中保留关联 GitHub 修复提交的 CVE，用 SZZ 追踪 Vulnerability-Contributing Commits，并通过 ESC 过滤与元数据增强提高 C/C++ 标签可靠性。
+- [LibVulnWatch](https://arxiv.org/abs/2505.08842)：提供发现开源 AI 库隐藏漏洞的 agent system 与 leaderboard，为 library-security assessment 补充 cyber benchmark。
 - [DecompileBench](https://arxiv.org/abs/2505.11340)：评测逆向工程工作流中的反编译器。核心思想：结合真实函数抽取、运行时感知验证和面向分析员的评判，衡量语义忠实度与可用性。
-- [BountyBench](https://arxiv.org/abs/2505.15216)（[项目页](https://bountybench.github.io/)）：评测真实网络安全系统中的攻击者与防御者 agent。核心思想：用 bug bounty 场景和美元影响信号衡量 Detect、Exploit、Patch 三类任务，补足只看 CTF 成功率的安全评测。
+- [ACSE-Eval](https://arxiv.org/abs/2505.11565)：评测 LLM 对真实云基础设施的威胁建模能力。核心思想：检验模型能否在真实基础设施语境中推理云资产、攻击面与安全控制。
+- [CYBERTEAM](https://arxiv.org/abs/2505.11901)：面向 LLM 蓝队威胁狩猎的具身 benchmark。核心思想是在交互式网络安全环境中评估证据收集和缓解行动能力。
+- [Decompile-Bench](https://arxiv.org/abs/2505.12668)：二进制到源码反编译能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [QUT-DV25: A Dataset for Dynamic Analysis of Next-Gen Software Supply Chain Attacks](https://arxiv.org/abs/2505.13804)：采集 14,271 个 PyPI 包的安装期和安装后动态轨迹，其中 7,127 个为恶意包，使供应链攻击检测能研究动态 payload 行为而不只依赖静态元数据。
+- [BountyBench](https://arxiv.org/abs/2505.15216)（[leaderboard](https://bountybench.github.io/)）：评测真实网络安全系统中的攻击者与防御者 agent。核心思想：用 bug bounty 场景和美元影响信号衡量 Detect、Exploit、Patch 三类任务，补足只看 CTF 成功率的安全评测。
+- [An Empirical Analysis of Vulnerability Detection Tools for Solidity Smart Contracts Using Line Level Manually Annotated Vulnerabilities](https://arxiv.org/abs/2505.15756)：提供面向网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力的基准、数据集、评分规程或评测协议。
+- [VADER](https://arxiv.org/abs/2505.19395)：人工评估的软件漏洞基准，覆盖漏洞评估、检测、解释、修复和测试计划质量。
 - [SecVulEval](https://arxiv.org/abs/2505.19828)：评测 LLM 在真实 C/C++ 漏洞检测中的能力。核心思想：使用更贴近真实软件的漏洞代码，而不只依赖合成片段，检验模型能否在底层软件语境中定位安全缺陷。
+- [Assembly Code Deobfuscation Evaluation](https://arxiv.org/abs/2505.19887)：评什么：LLM 的汇编代码去混淆能力。核心思想是拆分不同混淆维度，更诊断式地衡量逆向分析能力。
+- [Crowdsourced cyber elicitation](https://arxiv.org/abs/2505.19915)：通过 CTF 比赛中的开放 AI 赛道和众包 elicitation 评估 AI 网络能力，并与人类参赛表现对照。
 - [DFIR-Metric](https://arxiv.org/abs/2505.19973)：评估大语言模型在数字取证与事件响应任务中的能力。核心思想：把 DFIR 知识和调查步骤转成 benchmark 数据集，使网络安全推理不只停留在通用安全问答。
-- [CyberGym](https://arxiv.org/abs/2506.02548)（[项目页](https://www.cybergym.io/)）：评测真实网络安全任务中的漏洞理解与利用闭环。核心思想：把 CVE 场景、可执行环境、工具调用和最终验证整合起来，要求 agent 做类似真实渗透或修复流程的连续决策。
+- [Benchmarking Large Language Models for Cryptanalysis and Side-Channel Vulnerabilities](https://arxiv.org/abs/2505.24621)：将多领域、不同长度和写作风格的明文与加密版本配对，评测 zero-shot、few-shot 和 chain-of-thought 设置下的解密能力，把 cryptanalysis 与 side-channel reasoning 纳入 LLM 安全评测。
+- [DefenderBench](https://arxiv.org/abs/2506.00739)：用于评估网络安全环境中 language agent 的 toolkit。核心思想是把 agent 放入带环境反馈的防御性安全任务中，比较网络安全推理、工具使用与响应质量。
+- [Improving LLM Agents with Reinforcement Learning on Cryptographic CTF Challenges](https://arxiv.org/abs/2506.02048)：为 LLM agent 提供程序生成的密码学 CTF 挑战；核心思想是用可精确验证、强工具依赖的密码学推理支持训练与评测。
+- [CyberGym](https://arxiv.org/abs/2506.02548)（[leaderboard](https://www.cybergym.io/)）：评测真实网络安全任务中的漏洞理解与利用闭环。核心思想：把 CVE 场景、可执行环境、工具调用和最终验证整合起来，要求 agent 做类似真实渗透或修复流程的连续决策。
+- [A Multi-Dataset Evaluation of Models for Automated Vulnerability Repair](https://arxiv.org/abs/2506.04987)：在六个数据集和四种编程语言上比较 CodeBERT 与 CodeT5 的漏洞补丁能力，区分训练分布内修复和未见漏洞泛化。
 - [SafeGenBench](https://arxiv.org/abs/2506.05692)：评测 LLM 生成代码中的安全漏洞检测。核心思想：关注模型和工具能否识别生成程序中的不安全点，作为 exploit 与 patch 类 benchmark 之外的生成代码安全检测补充。
-- [SEC-bench](https://arxiv.org/abs/2506.11791)（[项目页](https://sec-bench.github.io/)；[开源代码](https://github.com/SEC-bench/SEC-bench)）：评测真实软件安全任务中的 PoC 生成和漏洞修复。核心思想：自动构造带 harness 的漏洞仓库和隔离复现环境，让 agent 必须读代码、运行验证、生成攻击或补丁。
+- [MalGEN: A Testbed for Modeling and Evaluating Malware Behaviors](https://arxiv.org/abs/2506.07586)：可作为网络安全 agent的 Bench 候选：围绕 MalGEN: A Testbed for Modeling and Evaluating Malware Behaviors 提供可比较的评测任务、数据或分析协议。
+- [Security Degradation in Iterative AI Code Generation: A Systematic Analysis of the Paradox](https://arxiv.org/abs/2506.11022)：分析反复调用大模型改进代码时漏洞如何演化，补充迭代式 AI 辅助开发中的安全编码评测维度。
+- [VulStamp: Vulnerability Assessment using Large Language Model](https://arxiv.org/abs/2506.11484)：补充网络安全方向的基准、数据集、指标或评测协议。
+- [SEC-bench](https://arxiv.org/abs/2506.11791)（[leaderboard](https://sec-bench.github.io/)；[开源代码](https://github.com/SEC-bench/SEC-bench)）：评测真实软件安全任务中的 PoC 生成和漏洞修复。核心思想：自动构造带 harness 的漏洞仓库和隔离复现环境，让 agent 必须读代码、运行验证、生成攻击或补丁。
+- [Using LLMs for Security Advisory Investigations: How Far are We?](https://arxiv.org/abs/2506.13161)：评测网络安全智能体与安全评测的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
 - [AIRTBench](https://arxiv.org/abs/2506.14682)（[开源代码](https://github.com/dreadnode/AIRTBench-Code)）：评测自主 AI red teaming 场景中的攻击发现、代码执行和利用链闭环。核心思想：把黑盒 CTF 风格 AI/ML 安全挑战放进可运行任务，检查 agent 能否写脚本、调用工具并验证 compromise。
+- [Measuring and Augmenting Large Language Models for Solving Capture-the-Flag Challenges](https://arxiv.org/abs/2506.17644)：评测并增强 LLM 解决 CTF 挑战的能力；核心思想是用可执行 CTF 任务衡量工具使用、漏洞推理和答案验证，而不是静态网络安全问答。
+- [Smart-LLaMA-DPO: Reinforced Large Language Model for Explainable Smart Contract Vulnerability Detection](https://arxiv.org/abs/2506.18245)：补充网络安全能力的评测资源或协议。
+- [FORGE: An LLM-driven Framework for Large-Scale Smart Contract Vulnerability Dataset Construction](https://arxiv.org/abs/2506.18795)：从 6,454 份真实审计报告抽取智能合约漏洞，用 LLM 流水线按 CWE 分类，形成覆盖 296 类 CWE 的 27,497 条漏洞发现用于工具评测。
 - [Can You Really Trust Code Copilot?](https://doi.org/10.18653/v1/2025.acl-long.849)：从代码安全角度评估 LLM 编程助手。核心思路是检查生成或辅助编写的代码是否引入安全弱点，而不只衡量功能正确性。
+- [Evaluating Language Models For Threat Detection in IoT Security Logs](https://arxiv.org/abs/2507.02390)：评估语言模型在物联网安全日志威胁检测中的表现。
+- [AICrypto](https://arxiv.org/abs/2507.09580)：评估 LLM 的密码学能力。核心思想：结合密码学选择题、CTF 式利用挑战和证明题，覆盖知识记忆、实际攻击推理与形式化推理。
+- [PhreshPhish: A Real-World, High-Quality, Large-Scale Phishing Website Dataset and Benchmark](https://arxiv.org/abs/2507.10854)：发布大规模高质量 phishing website 数据集和 benchmark suite，专门降低数据泄漏、误标样本和不真实 base rate 对钓鱼检测结果的影响。
+- [MT4DP: Data Poisoning Attack Detection for DL-based Code Search Models via Metamorphic Testing](https://arxiv.org/abs/2507.11092)：补充网络安全的 Bench 条目，重点是《MT4DP: Data Poisoning Attack Detection for DL-based Code Search Models via Metamorphic Testing》。
+- [evalSmarT: An LLM-Based Framework for Evaluating Smart Contract Generated Comments](https://arxiv.org/abs/2507.20774)：可作为“网络安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
 - [Vulnerability Mitigation System (VMS)](https://arxiv.org/abs/2507.21113)：用来自 PicoCTF 与 OverTheWire 的两组 CTF benchmark 评测自治渗透测试 agent。核心思想是把 planning 和 summarization agent 与 200 道标准化挑战配对，从而比较不同 LLM 的命令生成与反馈处理能力。
+- [Out of Distribution, Out of Luck: How Well Can LLMs Trained on Vulnerability Datasets Detect Top 25 CWE Weaknesses?](https://arxiv.org/abs/2507.21817)：评测基于漏洞数据训练的 LLM 在分布外 Top 25 CWE 弱点上的检测表现。
+- [RedCoder: Automated Multi-Turn Red Teaming for Code LLMs](https://arxiv.org/abs/2507.22063)：自动化多轮 code LLM 红队测试，面向诱导漏洞代码或恶意代码的对抗式交互。
+- [On the Evaluation of Large Language Models in Multilingual Vulnerability Repair](https://arxiv.org/abs/2508.03470)：评估 LLM 在七种编程语言中的漏洞修复能力，揭示跨语言场景下的优势与失败模式。
 - [CTFTiny and CTFJudge](https://arxiv.org/abs/2508.05674)：用轻量 CTF benchmark 和基于 judge 的轨迹分析评测 offensive-security agent。核心思想：衡量阶段性进展和步骤质量，而不只看最终 flag 是否提交成功。
+- [Quantifying the Generalization Gap: A New Benchmark for Out-of-Distribution Graph-Based Android Malware Classification](https://arxiv.org/abs/2508.06734)：补充网络安全的 Bench 条目，重点是《Quantifying the Generalization Gap: A New Benchmark for Out-of-Distribution Graph-Based Android Malware Classification》。
+- [Can LLMs Find Bugs in Code? An Evaluation from Beginner Errors to Security Vulnerabilities in Python and C++](https://arxiv.org/abs/2508.16419)：补充网络安全方向的基准、数据集、指标或评测协议。
+- [A.S.E](https://arxiv.org/abs/2508.18106)：在仓库级别评测 AI 生成代码的安全性。核心思想：模拟真实 AI 辅助编程任务，暴露实际安全编码失败。
+- [CTF-Dojo](https://arxiv.org/abs/2508.18370)：用于训练和评估漏洞发现 agent 的大规模可执行 CTF 环境。核心思想：用 Docker 封装数百个可运行挑战并提供可验证反馈，同时用 CTF-Forge 将公开 CTF 材料转换为可复现任务。
+- [WFC/WFD: Web Fuzzing Commons, Dataset and Guidelines to Support Experimentation in REST API Fuzzing](https://arxiv.org/abs/2509.01612)：提供 REST API fuzzing 实验的数据集与指南。
 - [VulnRepairEval](https://arxiv.org/abs/2509.03331)：用基于漏洞利用的验证评估 LLM 漏洞修复。核心思路是让修复后的代码在可复现容器流水线中抵御功能性 PoC，而不是只依赖表层测试。
+- [Vulnerability-Affected Versions Identification: How Far Are We?](https://arxiv.org/abs/2509.03876)：评测系统识别已知漏洞影响版本的能力，这是网络安全分诊中的核心任务。
+- [Revisiting Third-Party Library Detection: A Ground Truth Dataset and Its Implications Across Security Tasks](https://arxiv.org/abs/2509.04091)：补充面向网络安全能力的可复用基准、数据集、测试平台或评测协议。
+- [When Code Crosses Borders: A Security-Centric Evaluation of LLM-based Code Translation](https://arxiv.org/abs/2509.06504)：从安全视角评测 LLM 代码翻译，检查翻译代码是否保留或引入漏洞。
+- [ImportSnare](https://arxiv.org/abs/2509.07941)：评什么：retrieval-augmented code generation 中的 code manual hijacking。核心思想是测试恶意检索文档能否诱导生成不安全导入或行为。
 - [TermiBench / Shell or Nothing](https://arxiv.org/abs/2509.09207)：在真实主机、服务和 CVE 场景中评测自动化渗透测试 agent。核心思想：把评测目标从 CTF 找 flag 推向获得完整系统控制，并结合 memory-activated agent 与真实工具反馈。
+- [Security Analysis of Web Applications Based on Gruyere](https://arxiv.org/abs/2509.14706)：为网络安全补充基准、数据集、指标或评测协议。
+- [LLM Generated Detection Rules](https://arxiv.org/abs/2509.16749)：评测 LLM 生成的网络安全检测规则。核心思想：判断规则是否具备实际运营可用性，而不只看文本是否看似合理。
 - [CyberSOCEval](https://arxiv.org/abs/2509.20166)：在 CyberSecEval 4 中评测恶意软件分析和威胁情报推理。核心思想：把防御型 SOC 评测聚焦到运营证据，而不是通用安全知识。
+- [SecureVibeBench](https://arxiv.org/abs/2509.22097)：通过重构引入漏洞的场景评测 secure vibe coding。核心思想：检查 coding agent 是否会复现或避免可利用变更。
+- [Benchmarking LLM-Assisted Blue Teaming via Standardized Threat Hunting](https://arxiv.org/abs/2509.23571)：通过标准化 threat hunting 评测 LLM 辅助蓝队。核心思想：衡量模型能否指导防御者发现并推理网络威胁。
+- [NATGVD](https://arxiv.org/abs/2510.04987)：用保持语义的代码变换生成 natural adversarial vulnerable code，同时改变代码图结构，以超出 clean accuracy 的方式压力测试 GNN 与 graph-aware transformer 漏洞检测器。
+- [AdvCUA](https://arxiv.org/abs/2510.06607)：评测 computer-use agent 能否执行真实系统攻击任务。核心思想：在多主机企业 OS 沙箱中按 MITRE ATT&CK 战术和端到端 kill chain 构造任务，并用硬编码验证检查攻击结果。
+- [A Systematic Study on Generating Web Vulnerability Proof-of-Concepts Using Large Language Models](https://arxiv.org/abs/2510.10148)：系统研究大模型生成 Web 漏洞概念验证的能力。
+- [PACEbench](https://arxiv.org/abs/2510.11688)：评估 AI 的实际网络攻击利用能力。核心思想：覆盖单点、混合、链式和带防御的漏洞利用场景，让 agent 面对真实漏洞难度、环境复杂性和网络防御。
 - [CTIArena](https://arxiv.org/abs/2510.11974)：评测 LLM 在异构网络威胁情报中的知识与推理；核心思想是检查模型能否整合指标、报告、战术和证据，而不只是回答通用安全常识。
+- [HackWorld: Evaluating Computer-Use Agents on Exploiting Web Application Vulnerabilities](https://arxiv.org/abs/2510.12200)：类型：benchmark/评测协议。核心价值：为 2.10.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [LLM Agents for Automated Web Vulnerability Reproduction: Are We There Yet?](https://arxiv.org/abs/2510.14700)：该工作评测 agent 自动复现 Web 漏洞的能力，能落到 Cybersecurity Bench。
+- [When AI Takes the Wheel: Security Analysis of Framework-Constrained Program Generation](https://arxiv.org/abs/2510.16823)：补充面向网络安全的评测、数据集或度量信号。
+- [Cybersecurity AI: Evaluating Agentic Cybersecurity in Attack/Defense CTFs](https://arxiv.org/abs/2510.17521)：面向攻防 CTF 的 agentic cybersecurity 评测。核心思想是在对抗式网络安全任务中测试 agent 的攻击、防御、工具使用和状态跟踪能力。
+- [From Flows to Words: Can Zero-/Few-Shot LLMs Detect Network Intrusions? A Grammar-Constrained, Calibrated Evaluation on UNSW-NB15](https://arxiv.org/abs/2510.17883)：补充带语法约束和校准的零样本、少样本大模型入侵检测评估。
 - [CAIBench](https://arxiv.org/abs/2510.24317)：评什么：网络安全 AI agent 的元基准。核心思想：把多类网络安全 agent 评测组织到可比较的基准层中，使能力判断不局限于单一 cyber suite。
 - [AutoPenBench](https://aclanthology.org/2025.emnlp-industry.114/)：评测漏洞测试 Agent。核心思路是提供从入门练习到真实漏洞系统的 33 个任务，支持基于 MCP 的 Agent 比较，并用里程碑评分显示最终攻破前的中间进展。
+- [AutoPenBench: A Vulnerability Testing Benchmark for Generative Agents](https://doi.org/10.18653/v1/2025.emnlp-industry.114)：评测漏洞测试 Agent。核心思路是提供从入门练习到真实漏洞系统的 33 个任务，支持基于 MCP 的 Agent 比较，并用里程碑评分显示最终攻破前的中间进展。
+- [GDPR-Bench-Android](https://arxiv.org/abs/2511.00619)：评什么：评测 Android 代码中 GDPR 合规问题的自动检测。
+- [AthenaBench: A Dynamic Benchmark for Evaluating LLMs in Cyber Threat Intelligence](https://arxiv.org/abs/2511.01144)：面向 cyber threat intelligence 的动态 benchmark；核心思想是评测 LLM 能否把非结构化威胁报告转化为可行动 CTI 知识。
+- [On The Dangers of Poisoned LLMs In Security Automation](https://arxiv.org/abs/2511.02600)：评估被投毒 LLM 在安全自动化流程中的风险，适合网络安全智能体评测。
+- [From LLMs to Agents: A Comparative Evaluation of LLMs and LLM-based Agents in Security Patch Detection](https://arxiv.org/abs/2511.08060)：面向网络安全智能体与评测的可复用评测、数据集、协议或诊断研究。核心思路是围绕“From LLMs to Agents: A Comparative Evaluation of LLMs and LLM-based Agents in Security Patch Detection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [PATCHEVAL](https://arxiv.org/abs/2511.11019)：评测 LLM 与 agent 修补 Go、JavaScript 和 Python 真实漏洞的能力。核心思想：把大规模 CVE 语料与沙箱化安全测试和功能测试结合起来验证补丁。
+- [An evaluation framework for network IDS/IPS datasets: Leveraging MITRE ATT&CK and industry relevance metrics](https://arxiv.org/abs/2511.12743)：结合 MITRE ATT&CK 与行业相关性指标，超越准确率评估入侵检测数据集。
+- [Can MLLMs Detect Phishing? A Comprehensive Security Benchmark Suite Focusing on Dynamic Threats and Multimodal Evaluation in Academic Environments](https://arxiv.org/abs/2511.15165)：评测多模态大模型在学术环境中的动态钓鱼威胁识别能力；核心思想：把视觉、多语和上下文依赖的钓鱼线索组织成安全基准套件。
+- [Beyond Code Similarity: Benchmarking the Plausibility, Efficiency, and Complexity of LLM-Generated Smart Contracts](https://arxiv.org/abs/2511.16224)：可作为“网络安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [LLM-CSEC: Empirical Evaluation of Security in C/C++ Code Generated by Large Language Models](https://arxiv.org/abs/2511.18966)：补充网络安全的 Bench 条目，重点是《LLM-CSEC: Empirical Evaluation of Security in C/C++ Code Generated by Large Language Models》。
+- [DUALGUAGE: Automated Joint Security-Functionality Benchmarking for Secure Code Generation](https://arxiv.org/abs/2511.20709)：DUALGUAGE 同时评测安全代码生成的安全性和功能性，适合 Cybersecurity Bench。
+- [Binary-30K: A Heterogeneous Dataset for Deep Learning in Binary Analysis and Malware Detection](https://arxiv.org/abs/2511.22095)：补充网络安全的 Bench 条目，重点是《Binary-30K: A Heterogeneous Dataset for Deep Learning in Binary Analysis and Malware Detection》。
+- [Asm2SrcEval: Evaluating Large Language Models for Assembly-to-Source Code Translation](https://arxiv.org/abs/2512.00134)：用词面、语义、流畅性和效率指标评测 LLM 的汇编到源码翻译能力，面向逆向工程场景。
+- [Is Vibe Coding Safe? Benchmarking Vulnerability of Agent-Generated Code in Real-World Tasks](https://arxiv.org/abs/2512.03262)：用真实开源功能需求评测 vibe-coding agent 生成的可部署代码是否存在漏洞。
+- [CFCEval: Evaluating Security Aspects in Code Generated by Large Language Models](https://arxiv.org/abs/2512.06248)：评估 LLM-generated code 的质量与安全；核心思想是缓解数据集偏差，并在 CodeBLEU 等相似度指标之外加入安全维度。
+- [From Lab to Reality: A Practical Evaluation of Deep Learning Models and LLMs for Vulnerability Detection](https://arxiv.org/abs/2512.10485)：补充网络安全的 Bench 条目，重点是《From Lab to Reality: A Practical Evaluation of Deep Learning Models and LLMs for Vulnerability Detection》。
+- [LLM-Assisted AHP for Explainable Cyber Range Evaluation](https://arxiv.org/abs/2512.10487)：补充用于可解释 cyber range 评估的大模型辅助方法。
+- [Unveiling Malicious Logic: Towards a Statement-Level Taxonomy and Dataset for Securing Python Packages](https://arxiv.org/abs/2512.12559)：为网络安全补充基准、数据集、指标或评测协议。
+- [A Network Arena for Benchmarking AI Agents on Network Troubleshooting](https://arxiv.org/abs/2512.16381)：评测 AI agent 的网络故障排查能力；核心思想是检查 agent 能否利用运维证据和行动诊断并修复网络故障。
+- [A Systematic Study of Code Obfuscation Against LLM-based Vulnerability Detection](https://arxiv.org/abs/2512.16538)：面向 LLM-based vulnerability detection 的代码混淆系统 benchmark。核心思想是测试代码在语义不变转换后漏洞检测器是否仍稳健。
 - [AutoDFBench 1.0](https://arxiv.org/abs/2512.16965)：在字符串搜索、删除文件恢复、文件雕刻、Windows 注册表恢复和 SQLite 数据恢复等任务上评测数字取证工具与 AI 生成的取证代码。核心思想：基于 CFTT 测试用例、REST 执行和 precision/recall/F1 指标，使取证工具和 agent 代码评测可复现。
+- [AutoBaxBench / AutoBaxBuilder](https://arxiv.org/abs/2512.21132)：通过自动生成的任务评测代码安全能力。核心思想是从零生成功能测试和端到端 security-probing exploit，并发布新的安全任务，以降低污染风险和专家手工构造成本。
+- [Exploring the Security Threats of Retriever Backdoors in Retrieval-Augmented Code Generation](https://arxiv.org/abs/2512.21681)：面向网络安全智能体与评测的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Exploring the Security Threats of Retriever Backdoors in Retrieval-Augmented Code Generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [VAP-6](https://doi.org/10.1109/EAIC66483.2025.11101426)：面向语言模型的漏洞评估与渗透测试 benchmarking framework。核心思路是把 VAPT 任务组织成可复用评测设置，使语言模型 Agent 能在安全评估流程上比较，而不只是回答网络安全知识题。
 - [CFA-Bench](https://doi.org/10.1109/EuroSPW67616.2025.00031)：评测 LLM agent 的网络安全取证能力。核心思想：生成包含脆弱服务、攻击、流量包和日志轨迹的应急响应场景，并通过分阶段检查点评分取证推理。
+- [Dynamic Benchmarking for Static Taint Analysis](https://doi.org/10.1109/ASE63991.2025.00082)：评测 LLM 静态污点分析能力的软件安全 benchmark framework；核心思想是把 static taint analysis 变成系统化动态评测协议，而不是零散代码样例。
+- [BinMetric](https://doi.org/10.24963/ijcai.2025/858): 面向大语言模型的综合 binary-code analysis benchmark。核心思想是评测不同于普通源码 benchmark 的低层二进制分析任务。
+- [Cyber Operations Gyms](https://doi.org/10.1109/ICMCIS64378.2025.11047884)：提出用于训练自主网络防御 agent 的 cyber-operation gym 环境，为防御型 agent 补充仿真与评测底座。
+- [Formal Verification for Autonomous Cyber Defense](https://doi.org/10.1109/MILCOM64451.2025.11310002)：利用抽象关键网络场景验证自主 cyber-defense 行为，补充 assurance-style evaluation 轴线。
+- [Automated Judging of LLM-Based Smart Contract Security Auditors](https://doi.org/10.1109/ICBC64466.2025.11114647)：评测基于 LLM 的智能合约安全审计器，为合约安全工作流补充审计器评判基准。
+- [Code Obfuscation and LLM Vulnerability Detection](https://doi.org/10.1109/EuroSPW67616.2025.00007)：评估代码混淆如何改变 LLM 的漏洞检测行为和信息泄露风险，为安全代码审查基准补充鲁棒性与隐私维度。
+- [C/C++ Vulnerability Data Set Generation Framework using a Parser and LLM](https://doi.org/10.1109/icaic63015.2025.10848559)：评测，主要面向 Cybersecurity。
+- [Hardware Trojan Detection in Open-Source Hardware Designs Using Machine Learning](https://doi.org/10.1109/access.2025.3546156)：在开源硬件设计上评测结合机器学习和 NLP 的 hardware Trojan detection，目标是突破只依赖 AES 等小型示例的可扩展性限制。
+- [Security Vulnerabilities in AI-Generated JavaScript: A Comparative Study of Large Language Models](https://doi.org/10.1109/csr64739.2025.11130176)：用 100 个相同复杂提示比较六个 LLM 生成的 600 段 JavaScript，识别出 275 段含漏洞代码和分属 28 类 CWE 的 602 个漏洞。
+- [Beyond the Hype: An Empirical Assessment of LLMs and Traditional ML for Code Vulnerability Detection](https://doi.org/10.1109/sds66131.2025.00019)：补充网络安全方向的基准、数据集、指标或评测协议。
+- [Prompting for Security: A Cross-Model Evaluation of Code Generation in LLMs](https://doi.org/10.1109/ubmk67458.2025.11207030)：补充网络安全的 Bench 条目，重点是《Prompting for Security: A Cross-Model Evaluation of Code Generation in LLMs》。
+- [Poster: AI-Driven Security: Investigating LLMs for Automated Vulnerability Detection in Code Changes](https://doi.org/10.1109/svcc65277.2025.11133632)：补充网络安全的 Bench 条目，重点是《Poster: AI-Driven Security: Investigating LLMs for Automated Vulnerability Detection in Code Changes》。
+- [Generative AI for Cybersecurity: LLM-Driven Attack Dataset Augmentation in Web API Detection](https://doi.org/10.1109/icct-pacific63901.2025.11012893)：用 LLM 合成可定制的 Web API 攻击流量，服务于基于机器学习的入侵检测，目标是缓解真实 Web API 安全数据稀缺和静态训练数据过时问题。
+- [R3-Bench: Reproducible Real-world Reverse Engineering Dataset for Symbol Recovery](https://doi.org/10.1109/ase63991.2025.00026)：提供可复现的逆向工程符号恢复数据集。
+- [Reasoned or Rapid code? Unveiling the strengths and limits of DeepSeek for Solidity development](https://doi.org/10.1016/j.infsof.2025.107917)：可作为“网络安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Phishing Email Detection Using Large Language Models: A Comparative Analysis of Standalone and Retrieval Augmented Generation Models](https://doi.org/10.1109/iccia67866.2025.00032)：可作为“网络安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Rethinking Phishing Detection: How Dataset Quality Affects Model Generalization](https://doi.org/10.1109/acit65614.2025.11185656)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Have We Solved Access Control Vulnerability Detection in Smart Contracts? A Benchmark Study](https://doi.org/10.1109/ase63991.2025.00166)：为网络安全补充基准、数据集、指标或评测协议。
+- [NetPrompt: Evaluation of LLMs as Network Intrusion Detection System](https://doi.org/10.1109/milcom64451.2025.11310431)：为网络安全补充基准、数据集、指标或评测协议。
+- [bBench: A Comprehensive Performance Benchmark for Blockchain Applications](https://doi.org/10.1109/issre66568.2025.00046)：为网络安全补充基准、数据集、指标或评测协议。
+- [A feature-engineered dataset of benign and phishing URLs for machine learning and large language models evaluation](https://doi.org/10.1016/j.dib.2025.112162)：补充用于机器学习和大模型评测的良性与钓鱼 URL 数据集。
+- [Prevention Label Enrichment in a Network Intrusion Detection System Benchmark Dataset](https://doi.org/10.1109/icisit66233.2025.11402953)：为网络入侵检测基准数据集补充预防标签。
+- [ModRTU InjectX: A Command Injection Simulation Tool for Industrial Cybersecurity Research](https://doi.org/10.1109/icest66328.2025.11098380)：提供面向工业网络安全实验的 Modbus RTU 命令注入仿真工具。
+- [SYN Flood Attacks in Wireless Local Area Networks (WLANs): Dataset and Analysis](https://doi.org/10.1109/uemcon67449.2025.11267661)：提供无线局域网 SYN flood 攻击的数据集与分析。
+- [CasinoLimit: An Offensive Dataset Labeled with MITRE ATT&CK Techniques](https://doi.org/10.1109/raid67961.2025.00039)：发布带有 MITRE ATT&CK 技术标注的攻击性网络安全数据集。
+- [What We Talk About When We Talk About Logs: Understanding the Effects of Dataset Quality on Endpoint Threat Detection Research](https://doi.org/10.1109/sp61157.2025.00112)：分析终端威胁检测数据集质量对研究结论的影响，适合网络安全基准可靠性方向。
+- [ICARuS: Intercode-CTF Auto-Randomization System](https://doi.org/10.1109/cai64502.2025.00200)：为 Intercode-CTF 提供自动随机化系统；核心思想是变换 CTF 实例以降低记忆化风险，让网络安全 agent 评测更稳健。
+- [Evaluating Autonomous Computational Agents for Complex Logic and Security-Oriented Task Environments](https://doi.org/10.1109/rcsm67767.2025.11507457)：在复杂逻辑和安全任务环境中评测 autonomous computational agents。
+- [Robustness Evaluation of Tactics, Techniques, and Procedures Knowledge in Large Language Models](https://doi.org/10.1109/smc58881.2025.11343068)：围绕 MITRE ATT&CK 轴评估 LLM 对战术、技术与过程知识的鲁棒性。
+- [A comparative benchmark study of LLM-based threat elicitation tools](https://doi.org/10.1016/j.future.2025.108243)：面向网络安全智能体与评测的可复用评测、数据集、协议或诊断研究。核心思路是围绕“A comparative benchmark study of LLM-based threat elicitation tools”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Should We Evaluate LLM Based Security Analysis Approaches on Open Source Systems?](https://doi.org/10.1109/ase63991.2025.00265)：围绕网络安全 Agent 与安全评测提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Systematic Testing of Security-Related Vulnerabilities in LLM-Based Applications](https://doi.org/10.1109/cain66642.2025.00043)：系统测试 LLM 应用中的安全相关漏洞。
+- [Gamifying AI Evaluation: How Well Do Chatbots Perform in Cybersecurity Challenges?](https://doi.org/10.1109/cscs66924.2025.00097)：围绕网络安全 Agent 与安全评测提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Security Charter Effectiveness in Large Language Model Code Generation: A Multi-Phase Experimental Analysis Revealing Task-Dependent Responsiveness and Architectural Differences](https://doi.org/10.1109/icdmw69685.2025.00164)：可作为网络安全 agent的 Bench 候选：围绕 Security Charter Effectiveness in Large Language Model Code Generation: A Multi-Phase Experimental Analysis Revealing Task-Dependent Responsiveness and Architectural Differences 提供可比较的评测任务、数据或分析协议。
+- [From Large to Mammoth: A Comparative Evaluation of Large Language Models in Zero-Shot Vulnerability Detection](https://doi.org/10.14722/ndss.2025.241491)：比较评估 LLM 的零样本漏洞检测能力。
+- [Are We There Yet? On Security Vulnerabilities Produced by Open Source Generative AI Models and Its Implications for Security Education](https://doi.org/10.4230/oasics.icpec.2025.9)：围绕网络安全 Agent 与安全评测提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Evaluating Zero-shot Reasoning with Agentic LLMs for Smart Contract Vulnerability Detection](https://doi.org/10.5753/webmedia_estendido.2025.15858)：围绕网络安全 Agent 与安全评测提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Beyond Single Bugs: Benchmarking Large Language Models for Multi-Vulnerability Detection](https://arxiv.org/abs/2512.22306)：评测 LLM 的多漏洞检测能力；核心思想是测试模型能否处理相互作用的多个漏洞，而不是单一独立 bug。
+- [Content Subversion Against Information-Based Systems](https://doi.org/10.1109/TDSC.2025.3628309)：评测让人类可见文档与机器抽取内容不一致的 content-subversion 攻击，展示其对审稿人分配、查重、搜索索引、二维码和条形码系统的影响。
+- [Insecure Fonts Against PDF Documents and Web Pages](https://doi.org/10.1109/TIFS.2025.3599320)：研究真实 PDF 与网页中的恶意字体攻击面，包括绕过 PDF 签名和威胁网页邮件，使 font handling 成为文档安全评测变量。
+- [An Empirical Evaluation of LLM-Based Approaches for Code Vulnerability Detection: RAG, SFT, and Dual-Agent Systems](https://arxiv.org/abs/2601.00254)：可作为“网络安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Cracking IoT Security: Can LLMs Outsmart Static Analysis Tools?](https://arxiv.org/abs/2601.00559)：在智能家居 IoT trigger-action interaction threats 上比较 LLM 与静态分析工具，并加入 mutation set 评估鲁棒性。
+- [SeRe: A Security-Related Code Review Dataset Aligned with Real-World Review Activities](https://arxiv.org/abs/2601.01042)：用 active-learning-guided ensemble classification 和人工标注构建安全相关代码审查数据集，填补通用 code-review comments 与安全专门反馈之间的空缺。
 - [ALPHA](https://arxiv.org/abs/2601.01320)：评测 LLM 与 SAST 工具在 Python 函数上的层级化 CWE 预测。核心思想：区分过度泛化、过度细化和横向错误并施加不同惩罚，使漏洞反馈比二分类检测更可操作。
 - [SastBench](https://arxiv.org/abs/2601.02941)：评测软件安全工作流中的 agentic SAST triage 能力。核心思想：检查 agent 能否理解静态分析结果、排序漏洞风险并给出 triage 决策，而不只是产生原始告警。
-- [Cyb-LLM](https://doi.org/10.1109/ICVADV67766.2026.11470531)：在安全约束下评测 LLM 的网络攻防能力。核心思想：把攻击请求、防御分诊、安全编码、恶意软件等网络安全工作流统一到一个 benchmark 中。
-- [ThreatSage](https://doi.org/10.1109/icassp55912.2026.11463278)：评测由 LLM 编排的蓝队防御操作。核心思想：用模块化防御任务衡量检测、分析、协同与响应工作流。
+- [Multi-perspective Report Evaluation for SOCs](https://arxiv.org/abs/2601.03013)：为安全运营中心设计多视角报告评测。
 - [Sola-Visibility-ISPM](https://arxiv.org/abs/2601.07880)：评测 agentic AI 的身份安全态势可见性能力。核心思想：检查 agent 能否审阅并推理身份安全态势管理中的证据与缺口。
+- [A Risk-Stratified Benchmark Dataset for Bad Randomness (SWC-120) Vulnerabilities in Ethereum Smart Contracts](https://arxiv.org/abs/2601.09836)：提供按风险分层的以太坊智能合约数据集，用于评估坏随机性漏洞检测能力。
+- [CellularSpecSec-Bench: A Staged Benchmark for Evidence-Grounded Interpretation and Security Reasoning over 3GPP Specifications](https://arxiv.org/abs/2601.12716)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
 - [HardSecBench](https://arxiv.org/abs/2601.13864)：评测 LLM 生成硬件代码时的安全意识；核心思想是检查生成的 HDL 或硬件相关代码是否避免安全缺陷，而不只看能否编译或实现功能。
+- [LLM-based Vulnerability Detection at Project Scale: An Empirical Study](https://arxiv.org/abs/2601.19239)：实证评估项目级 LLM 漏洞检测。
+- [OpenSec: Measuring Incident Response Agent Calibration Under Adversarial Evidence](https://arxiv.org/abs/2601.21083)：围绕网络安全 Agent 与安全评测提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [The Semantic Trap: Do Fine-tuned LLMs Learn Vulnerability Root Cause or Just Functional Pattern?](https://arxiv.org/abs/2601.22655)：通过成对样本和语义保持扰动，检验微调后的漏洞检测 LLM 是否真正学习根因而非表层功能模式。
 - [RealSec-bench](https://arxiv.org/abs/2601.22706)：评估真实仓库中的安全代码生成。核心思想：测试生成代码能否在满足功能需求的同时避免现实仓库语境中的安全缺陷。
+- [Syntax- and Compilation-Preserving Evasion of LLM Vulnerability Detectors](https://arxiv.org/abs/2602.00305)：在 5,000 个 C/C++ 样例上用语法与编译保持的代码变换评测 LLM 漏洞检测器，并以 Complete Resistance 衡量超出 clean recall 的鲁棒性。
 - [CIPHER](https://arxiv.org/abs/2602.01438)：评估 LLM 生成 Python 加密代码中的漏洞发生率。核心思路是在不安全、中性和安全提示之间做受控对比，并用加密专属漏洞分类与行级自动评分揭示隐蔽安全缺陷。
+- [Benchmarking Large Language Models for Zero-shot and Few-shot Phishing URL Detection](https://arxiv.org/abs/2602.02641)：为网络安全补充可复用评测线索，重点关注 Benchmarking Large Language Models for Zero-shot and Few-shot Phishing URL Detection。
+- [Evaluating the Vulnerability Landscape of LLM-Generated Smart Contracts](https://arxiv.org/abs/2602.04039)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
 - [Capture the Flags](https://arxiv.org/abs/2602.05523)：用语义保持变换评测 agentic LLM 在 CTF 家族任务上的表现。核心思想：检查网络安全 agent 能否跨变换后的挑战变体泛化，而不是记住单个题面的表述。
 - [Vulnerability Reasoning Evaluation](https://arxiv.org/abs/2602.06687)：用因果标注和语义扰动评测漏洞推理质量。核心思想：不只看检测结论是否正确，还检查模型解释是否匹配真实根因。
 - [Patch-to-PoC](https://arxiv.org/abs/2602.07287)：评测 agent 从 Linux kernel 补丁复现 N-day PoC 的能力。核心思想：把补丁分析、内核构建、调试和漏洞利用验证合在一起，检查 agent 是否能把已修复漏洞重新转化为可执行攻击证据。
 - [CyberExplorer](https://arxiv.org/abs/2602.08023)：在真实攻击仿真环境中评测 LLM 的进攻安全能力。核心思想：在交互式仿真中评估攻击规划与执行，而不是只做静态网络安全问答。
+- [CIC-Trap4Phish: A Unified Multi-Format Dataset for Phishing and Quishing Attachment Detection](https://arxiv.org/abs/2602.09015)：可作为“网络安全 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [An Empirical Study of the Imbalance Issue in Software Vulnerability Detection](https://arxiv.org/abs/2602.12038)：研究软件漏洞检测中的类别不平衡问题。
+- [A Scalable Approach to Solving Simulation-Based Network Security Games](https://arxiv.org/abs/2602.16564)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [Adversarial Code Comments for AI Security Reviewers](https://arxiv.org/abs/2602.16741)：实证评测对抗性代码注释是否会欺骗 LLM 代码安全审查器，为代码 agent 补充安全审查鲁棒性轴。
+- [LLM Agents for Penetration Testing](https://arxiv.org/abs/2602.17622)：评测有效渗透测试 agent 的构成因素。核心思想：分析真实渗透测试 workflow 中的 agent 设计，而不是静态网络安全问答。
+- [Defensive Refusal Bias: How Safety Alignment Fails Cyber Defenders](https://arxiv.org/abs/2603.01246)：评测安全对齐对网络防御者的拒答偏差。核心思想：衡量模型何时因合法防御任务像滥用而拒绝提供网络安全帮助。
+- [SANDBOXESCAPEBENCH](https://arxiv.org/abs/2603.02277)：评测 LLM agents 的 container sandbox escape 能力；核心思想是在嵌套 Inspect AI CTF 环境中让 agent 只拥有容器内 shell 权限，并通过人为加入的 sandbox 弱点尝试触达受保护 flag。
+- [ZeroDayBench](https://arxiv.org/abs/2603.02297)：评测 LLM agent 面对未见 zero-day 漏洞的 cyberdefense 能力。核心思想：要求 agent 在开源代码库中发现并修补 novel critical vulnerabilities，暴露当前前沿 agent 在主动安全维护上的限制。
+- [Multi-Agent Honeypot-Based Request-Response Context Dataset for Improved SQL Injection Detection Performance](https://arxiv.org/abs/2603.02963)：通过 Request Generator、Database Response Agent 和 Traffic Monitor 构建 140,973 个带标签 SQL 注入 request-response 对，并证明上下文训练的 CNN 和 BiLSTM 优于只看 payload 的基线。
 - [Before You Hand Over the Wheel](https://arxiv.org/abs/2603.06422)：评测 LLM 的安全事件分析能力。核心思想：检查模型能否分析事件证据，并支持需要谨慎移交的人机协同 SOC 决策。
 - [CyberThreat-Eval](https://arxiv.org/abs/2603.09452)：评估 LLM 是否能自动化真实网络威胁情报工作流。核心思想：覆盖分流、深度搜索和 CTI 报告撰写，并用更接近分析师实用性的指标替代单纯文本重合度。
-- [Penetration-Testing Planning Quality](https://doi.org/10.66279/enzxq198)：以无执行方式评测 LLM 渗透测试规划质量。核心思想：在工具执行前诊断 agent 能否形成合理、有序的攻击计划。
+- [EVMBench Re-Evaluation](https://arxiv.org/abs/2603.10795)：在原始 EVMBench 设置之外评测 AI agent 的智能合约安全能力。核心思想：比较更多模型和 scaffold 配置，并加入模型发布后的真实安全事件，检验 agent 是否能在避免污染捷径的情况下发现并利用漏洞。
 - [TOSSS](https://arxiv.org/abs/2603.10969)：基于 CVE 的大语言模型软件安全 benchmark。核心思想：用真实漏洞案例评测安全推理能力，而不局限于通用安全编码问答。
+- [Multi-Step Cyber Attack Scenarios](https://arxiv.org/abs/2603.11214)：衡量 AI agent 在多步网络攻击场景中的进展。核心思想：评测跨多个攻击阶段的链式能力，而不是孤立安全问答。
 - [CTI-REALM](https://arxiv.org/abs/2603.13517)：评测 agent 生成安全检测规则的能力。核心思想：把防御型网络安全评测从通用威胁情报推理推进到可用于 SOC 工作流的 detection rule 产出。
+- [SynthChain: A Synthetic Benchmark and Forensic Analysis of Advanced and Stealthy Software Supply Chain Attacks](https://arxiv.org/abs/2603.16694)：补充面向网络安全能力的可复用基准、数据集、测试平台或评测协议。
 - [Contextual Bias in LLM-Assisted Security Code Review](https://arxiv.org/abs/2603.18740)：用真实 PR 元数据和 CVE 场景测试自动安全代码审查 Agent 是否会在对抗性表述下漏掉重新引入的漏洞。
 - [OrgForge-IT](https://arxiv.org/abs/2603.22499)：用可验证的合成组织证据评测 LLM 的内部威胁检测能力。核心思想：检验 agent 能否在类企业活动轨迹中推理并识别有 ground truth 可查的内部风险信号。
+- [Does Teaming-Up LLMs Improve Secure Code Generation? A Comprehensive Evaluation with Multi-LLMSecCodeEval](https://arxiv.org/abs/2603.22717)：评估多 LLM 协作是否提升安全代码生成。
+- [LLM-Enabled Open-Source Systems in the Wild: An Empirical Study of Vulnerabilities in GitHub Security Advisories](https://arxiv.org/abs/2604.04288)：基于 GitHub 安全公告实证研究 LLM 开源系统漏洞。
+- [Can LLMs Deobfuscate Binary Code? A Systematic Analysis of Large Language Models into Pseudocode Deobfuscation](https://arxiv.org/abs/2604.08083)：从预编译、编译期和编译后三类变换评测 LLM 二进制去混淆能力，使逆向工程鲁棒性可度量。
+- [Encrypted Traffic Interpretation Benchmark](https://arxiv.org/abs/2604.08140)：评测 LLM 对加密流量的多模态推理解释能力。核心思想：把流量解释转成基准任务，检验模型能否结合协议、流量和上下文信号。
+- [NetAgentBench](https://arxiv.org/abs/2604.09678)：基于显式网络状态评测 agentic network configuration。核心思想：衡量 agent 能否检查拓扑、推理配置变更，并达到目标安全或连通状态。
+- [Beyond RAG for Cyber Threat Intelligence: A Systematic Evaluation of Graph-Based and Agentic Retrieval](https://arxiv.org/abs/2604.11419)：评什么：评测网络威胁情报中的图检索和 agentic retrieval；核心思想是测试超出向量 RAG 的关系密集型 CTI 查询。
+- [A Synthetic Conversational Smishing Dataset for Social Engineering Detection](https://arxiv.org/abs/2604.11752)：补充用于社会工程检测的合成对话式短信钓鱼数据集。
 - [SIR-Bench](https://arxiv.org/abs/2604.12040)：通过 794 个回放测试用例评估自主安全事件响应智能体。核心思路是用分诊准确率、新证据发现和工具使用适当性区分真正的取证调查与复述告警。
+- [LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](https://arxiv.org/abs/2604.12994)：提出包含 122 个真实逻辑漏洞的 LogicDS，并评测传统与 LLM 修复方法，定位 prompt sensitivity、代码上下文丢失和 patch localization 困难等失败来源。
+- [RealVuln](https://arxiv.org/abs/2604.13764)：面向真实代码漏洞扫描的 living benchmark。核心思想：在手工标注的漏洞仓库和 false-positive traps 上比较 rule-based SAST、通用 LLM 与安全专用扫描器，并提供版本化评分产物。
+- [AIRA: AI-Induced Risk Audit: A Structured Inspection Framework for AI-Generated Code](https://arxiv.org/abs/2604.17587)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [DeepRed](https://arxiv.org/abs/2604.19354)：面向 LLM agent CTF 挑战的 partial-credit benchmark。核心思想：在隔离的 Kali-target 虚拟环境中运行 agent，并用来自公开 writeup 的 challenge-specific checkpoints 计分，而不是只看 solved/unsolved。
 - [Cyber Defense Benchmark](https://arxiv.org/abs/2604.19533)：评测 LLM 在 SecOps 工作流中的智能体化威胁狩猎能力；核心思路是检验智能体能否调查安全证据并完成防御性威胁狩猎任务，而不只是回答网络安全知识题。
+- [Secure Logging Benchmark](https://arxiv.org/abs/2604.20211)：刻画并评测 LLM 面对日志代码安全问题的能力。核心思想：检验模型能否识别或避免由 logging code 引入的安全缺陷。
+- [CyberCertBench](https://arxiv.org/abs/2604.20389)：基于行业认可认证构造 MCQA 套件来评估网络安全知识。
+- [A Ground-Truth-Based Evaluation of Vulnerability Detection Across Multiple Ecosystems](https://arxiv.org/abs/2604.21111)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [REBENCH: A Procedural, Fair-by-Construction Benchmark for LLMs on Stripped-Binary Types and Names (Extended Version)](https://arxiv.org/abs/2604.27319)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [SecGoal](https://arxiv.org/abs/2604.27601)：评测从协议文档中抽取并形式化安全目标。核心思想：测试 LLM 能否把自然语言安全要求转化为形式化协议分析目标。
+- [PuzzleMark: Implicit Jigsaw Learning for Robust Code Dataset Watermarking in Neural Code Completion Models](https://arxiv.org/abs/2604.27677)：补充网络安全方向的基准、数据集、指标或评测协议。
 - OpenAI 网络安全风险评测（见 [GPT-5.5 system card](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)）：封闭或 model-card-only 评测，包含 Capture the Flag (Professional)、Cyber Range、VulnLMP、Irregular 的 atomic challenge suite 与 CyScenarioBench。核心思想：即使具体 challenge set 未公开，也要跟踪模型厂商对端到端网络行动、漏洞研究、exploit 构造和长程攻防任务的关注。
+- [Security and Reliability of AI-Generated C++ Code: A Static Analysis Study Aligned With Saudi NCA Essential Cybersecurity Controls (ECC)](https://doi.org/10.1109/access.2026.3679355)：用静态分析研究 AI 生成 C++ 代码的安全性与可靠性。
+- [From Function to Repository: Towards Repository-Level Evaluation of Software Vulnerability Detection](https://doi.org/10.1109/tse.2026.3662145)：评测网络安全智能体与安全评测的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Beyond performance metrics: evaluating the unique value of generative AI in hybrid cybersecurity threat detection](https://doi.org/10.3389/fdata.2026.1768366)：面向网络安全智能体与评测的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Beyond performance metrics: evaluating the unique value of generative AI in hybrid cybersecurity threat detection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [MOSAIC-Bench](https://arxiv.org/abs/2605.03952)：评测 coding agent 的组合式漏洞诱导。核心思想：在已部署软件基底上给出多阶段、看似良性的 ticket，并用确定性 exploit oracle 检查 agent 是否引入可利用漏洞。
+- [Defensive Mechanisms Against Deepfake Threats in Cybersecurity: Detection, Robustness, and Simulation-Based Evaluation](https://doi.org/10.1109/iitcee67948.2026.11394335)：面向网络安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [KyVul, an LLM Created C/C++ Vulnerability Dataset](https://doi.org/10.1109/icaic67076.2026.11395855)：补充面向网络安全能力的可复用基准、数据集、测试平台或评测协议。
+- [Beyond Accuracy: Fidelity Evaluation Framework for Synthetic Data in Network Intrusion Detection](https://doi.org/10.1109/ccwc67433.2026.11393807)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [How Prompt Design Affects LLM-Based Password Strength Evaluation: A Comparison Against zxcvbn](https://doi.org/10.1109/iisec69317.2026.11418402)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [A Dynamic AI-Powered Cyber Range for Cybersecurity Awareness and Skill Testing](https://doi.org/10.1109/ccic68129.2026.11486131)：补充用于网络安全意识和技能测试的动态 AI 驱动 cyber range。
+- [Version ( 2.0 ) - (SmarTS: A java package for smart contract test suite generation and execution)](https://doi.org/10.1016/j.softx.2026.102569)：提供用于智能合约测试套件生成与执行的 Java 包，支持可复用的合约安全评测流程。
+- [When datasets deceive: Exposing overlap in smart contract vulnerability detection](https://doi.org/10.1016/j.icte.2026.02.002)：揭示智能合约漏洞数据集中的训练测试重叠问题，为合约安全评测补充基准可靠性证据。
+- [Recall-First Temporal Routing for Low-Base-Rate IDS: Debuggable Unified Preprocessing and Low-Base FPR Evaluation Protocol](https://doi.org/10.1109/ectidamtncon67592.2026.11460005)：为入侵检测补充低基率误报评估协议和可调试的统一预处理流程。
+- [Analyzing Spatially and Temporally Coordinated Cyberattacks in Cyber-Physical Systems: A Systematic Co-Simulation Study for IEEE Bus Systems Using MATLAB/SIMULINK and TrueTime Toolbox](https://doi.org/10.1109/access.2026.3689426)：通过系统化信息物理联合仿真分析时空协同网络攻击。
+- [Correct Code, Vulnerable Dependencies: A Large Scale Measurement Study of LLM-Specified Library Versions](https://arxiv.org/abs/2605.06279)：大规模测量 LLM 指定库版本带来的脆弱依赖。
+- [ThreatSage](https://doi.org/10.1109/icassp55912.2026.11463278)：评测由 LLM 编排的蓝队防御操作。核心思想：用模块化防御任务衡量检测、分析、协同与响应工作流。
+- [Evaluating Retrieval-Augmented Generation for LLM-Based Vulnerability Detection: An Empirical Study on Real-World Java Vulnerabilities](https://doi.org/10.1109/access.2026.3676577)：在真实 Java 漏洞上实证评估 RAG 增强的 LLM 漏洞检测，检验检索上下文是否比直接提示带来更有效的安全发现。
 - [CyBiasBench](https://arxiv.org/abs/2605.07830)：评测 cyber-attack agent 的行为偏差。核心思想：衡量 agent 在进攻场景中是否系统性过度或不足选择某些 attack family，用行为诊断补充 exploit-success benchmark。
 - [CrackMeBench](https://arxiv.org/abs/2605.10597)：评测 agent 的二进制逆向工程能力。核心思想：用 CrackMe 风格任务检查 agent 在可执行逆向工作流中的代码理解、工具使用、假设检验和解题验证能力。
+- [Ethibench Pentesting Evaluation](https://arxiv.org/abs/2605.10834)：评什么：用真实目标中的 validated vulnerability discovery 评测 AI pentesting agents。核心思想：结合持续维护的 ground truth、语义匹配、重复随机运行和效率指标进行评分，而不是只看 CTF 式任务完成。
 - [ExploitGym](https://arxiv.org/abs/2605.11086)：评测 AI agent 能否把安全漏洞转化为真实攻击。核心思想：用真实漏洞、可执行环境和利用结果验证，衡量 agent 在侦察、构造 exploit、调试失败和达成攻击目标上的端到端能力。
-- [ExploitBench](https://arxiv.org/abs/2605.14153)（[项目页](https://exploitbench.ai/)；[开源代码](https://github.com/exploitbench/exploitbench)）：评测网络安全 agent 的分层能力 ladder。核心思想：从基础侦察到复杂利用链组织逐级任务，帮助区分“会用工具”和“能完成真实 exploit chain”的能力差异。
+- [CTFusion](https://arxiv.org/abs/2605.11504)：基于 CTF 的 LLM agent 评测 benchmark；核心思想是用攻防题目测试 agent 的漏洞推理、工具使用和分步网络安全问题求解。
+- [Code-Centric Detection of Vulnerability-Fixing Commits: A Unified Benchmark and Empirical Study](https://arxiv.org/abs/2605.13138)：统一 20 多个 vulnerability-fixing-commit 数据集、覆盖 18 万多个提交，并通过 180 多组实验显示模型注意力主要受提交信息影响而不是代码变更本身。
+- [ExploitBench](https://arxiv.org/abs/2605.14153)（[leaderboard](https://exploitbench.ai/)；[开源代码](https://github.com/exploitbench/exploitbench)）：评测网络安全 agent 的分层能力 ladder。核心思想：从基础侦察到复杂利用链组织逐级任务，帮助区分“会用工具”和“能完成真实 exploit chain”的能力差异。
 - [AuthBench](https://arxiv.org/abs/2605.14859)：评测终端/代码 agent 能否为任务推断最小充分的文件级权限边界。核心思想：把任务可用性验证和攻击结果验证合并，专测 coding agent 在读写执行权限、敏感文件暴露和最小权限授权之间的折中。
+- [Cyb-LLM](https://doi.org/10.1109/ICVADV67766.2026.11470531)：在安全约束下评测 LLM 的网络攻防能力。核心思想：把攻击请求、防御分诊、安全编码、恶意软件等网络安全工作流统一到一个 benchmark 中。
+- [Penetration-Testing Planning Quality](https://doi.org/10.66279/enzxq198)：以无执行方式评测 LLM 渗透测试规划质量。核心思想：在工具执行前诊断 agent 能否形成合理、有序的攻击计划。
+- [CyberMaskQA](https://arxiv.org/abs/2605.24765)：在带 private-entity labels 的隐私约束下评测网络安全问答，并用 accuracy 与 masking 双指标揭示 operational security reasoning 的隐私效用权衡。
+- [Detecting Broken Object-Level Authorization Vulnerabilities in Database-Backed Applications](https://doi.org/10.1145/3658644.3690227)：研究数据库支持应用中的对象级授权失效漏洞检测。
+- [Analysis of the Precision of Large Language Models in the Identification of Security Vulnerabilities and Weaknesses in Generated Code](https://openalex.org/W7154729999)：分析大语言模型识别生成代码中安全漏洞与弱点的精确性。
+- [From Large to Mammoth: A Comparative Evaluation of Large Language Models in Vulnerability Detection](https://www.ndss-symposium.org/ndss-paper/from-large-to-mammoth-a-comparative-evaluation-of-large-language-models-in-vulnerability-detection/)：在 Java 与 C/C++ 漏洞检测上比较 LLaMA、CodeLLaMA、Mistral、Mixtral、Gemma、Phi 和 GPT-4 系列，控制正负样本、漏洞类型识别、上下文窗口、量化和 zero/few-shot 设置。
+- [An Empirical Study of Knowledge Graph-Enhanced RAG for Information Security Compliance](https://doi.org/10.3390/info17040389)：在 ISO/IEC 27000 系列上评测知识图谱增强 RAG；该系列包含 97 份交叉引用的安全合规文档，普通独立 chunk retrieval 容易破坏上下文关系。
+- [Evaluating the Effectiveness of Multi-Agent Large Language Models for Automated Vulnerable Code Repair](https://doi.org/10.5220/0014480400004061)：评测面向真实 Java 漏洞的文件级 multi-agent LLM 修复流程，将修复子任务分配给多个 agent，并与非 agent 式 LLM 修复对照。
+- [Evaluating Large Language Models for Real-World Vulnerability Repair in C/C++ Code](https://doi.org/10.1145/3643651.3659892)：通过基准、数据集或评测协议评估网络安全能力。
+- [A Dataset for Evaluating LLMs Vulnerability Repair Performance in Android Applications: Data/Toolset paper](https://doi.org/10.1145/3714393.3726486)：引入来自 113 个 Android 应用的 272 个安全最佳实践违反项，并提供人工构造的 Java 与 XML 修复，用于评测 GPT-4o 和 Gemini 变体的漏洞修复准确性。
+- [Improving prompt tuning-based software vulnerability assessment by fusing source code and vulnerability description](https://doi.org/10.1007/s10515-025-00525-5)：补充网络安全方向的基准、数据集、指标或评测协议。
+- [Addressing the C/C++ Vulnerability Datasets Limitation: The Good, the Bad and the Ugly](https://doi.org/10.5220/0013495200003979)：补充网络安全的 Bench 条目，重点是《Addressing the C/C++ Vulnerability Datasets Limitation: The Good, the Bad and the Ugly》。
+- [Fine-Tune LLMs for PLC Code Security: An Information-Theoretic Analysis](https://doi.org/10.3390/math13193211)：补充面向网络安全的评测、数据集或度量信号。
+- [What if, Behind the Curtain, There Is Only an LLM? A Holistic Evaluation of TinyLlama-Generated Synthetic Cyber Threat Intelligence](https://doi.org/10.3390/electronics14244971)：结合自动检测与网络安全专家参与的人类研究，评测 TinyLlama 生成的合成 CTI 是否会欺骗人类专家和 AI 分类器。
+- [Recurring Vulnerability Detection: How Far Are We?](https://doi.org/10.1145/3728901)：提供面向网络安全、漏洞分析、模糊测试、钓鱼或威胁建模能力的基准、数据集、评分规程或评测协议。
+- [A Next-Generation Cyber-Range Framework for O-RAN and 6G Security Validation](https://doi.org/10.3390/fi18010029)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [Evaluation of AI Agent Accelerated Cyber Operations Planning](https://doi.org/10.34190/iccws.21.1.4427)：补充面向网络安全操作、漏洞分析与网络推理的基准、数据集、评测协议或测试环境。
+- [PeeringLLM-Bench: Evaluating LLMs for BGP Configuration Tasks](https://doi.org/10.1145/3763400.3763451)：为网络安全补充基准、数据集、指标或评测协议。
+- [SEA-u-lator: Privacy Preserving Social Engineering Attack Simulator for Gmail](https://doi.org/10.1145/3786304.3787916)：补充面向 Gmail 的隐私保护社会工程攻击模拟器。
+- [T1GER: An Instructional Re-Design of a Cyber Range Exercise in a Commercial Security Operations Center](https://doi.org/10.1145/3772318.3791226)：面向商业安全运营中心重新设计网络靶场练习，补充贴近真实场景的训练与评测设置。
+- [A Thirty-Day Dataset of Malicious HTTP Requests Blocked by OWASP ModSecurity on a Production Web Server](https://doi.org/10.3390/data10110186)：发布生产 Web 服务器上由 OWASP ModSecurity 拦截的恶意 HTTP 请求数据集。
+- [Evaluating large language models for multilingual vulnerability detection at dual granularities](https://doi.org/10.1007/s10664-026-10832-4)：评估大语言模型的多语言漏洞检测能力。
+- [Can Synthetic Spam Beat Real-World Detectors? Evaluating LLMs' Dual Role in Spam Generation and Detection](https://doi.org/10.5220/0014316600004061)：面向网络安全智能体与评测的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Can Synthetic Spam Beat Real-World Detectors? Evaluating LLMs' Dual Role in Spam Generation and Detection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [CAGE challenge 4: A scalable multi-agent reinforcement learning gym for autonomous cyber defence](https://doi.org/10.1002/aaai.70021)：提供面向自主网络防御的可扩展多 agent 强化学习 gym。
+- [SEC-bench Pro](https://arxiv.org/abs/2605.26548)：评测关键浏览器/运行时系统上的长程漏洞挖掘。核心思想是把 183 个经验证的 V8 与 SpiderMonkey 漏洞重构成带具体 PoC 输入、修复链接和 oracle 校验的可复现任务，显示当前前沿 coding agent 成功率仍低于 40%。
+- [Cross-Vendor Sola ISPM Benchmark](https://arxiv.org/abs/2606.02674)：定义 50 个数据接地的身份安全态势管理任务，覆盖 AWS、Okta、Azure AD 与 Google Workspace，并用 grounding、join fidelity、retrieval 与 SQL equivalence 指标评分。
+- [CyberGym-E2E](https://arxiv.org/abs/2606.04460)：用来自 139 个开源项目的 920 个真实漏洞评测端到端网络安全 agent，覆盖漏洞发现、PoC 生成与补丁生成的完整生命周期协议。

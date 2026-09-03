@@ -1,13 +1,44 @@
 # 4.1.5 Agent Harness
 
-- [ComfyBench / ComfyAgent](https://arxiv.org/abs/2409.01392)（[开源代码](https://github.com/xxyQwQ/ComfyBench)；[项目页](https://xxyqwq.github.io/ComfyBench)）：ComfyUI workflow 生成与评测 harness，LLM agent 学习文档、生成可执行 workflow、运行并用 pass/resolve 式指标评分。
-- [ComfyGPT](https://arxiv.org/abs/2503.17671)（[开源代码](https://github.com/comfygpt/comfygpt)；[项目页](https://comfygpt.github.io/)）：面向 ComfyUI workflow 生成的自优化多 agent 系统，包含 flow generation、refinement 和 execution agents。
-- [CIGEval](https://arxiv.org/abs/2504.07046)：面向条件图像生成的 agentic evaluation harness。核心思想是让 LMM 选择工具并围绕多类条件生成任务做细粒度判断，使图像生成评测成为工具介入的工作流，而不是单一标量指标。
-- [ComfyMind](https://arxiv.org/abs/2505.17908)（[开源代码](https://github.com/EnVision-Research/ComfyMind)）：基于 ComfyUI 的通用生成规划与反馈框架。核心思路是使用树形工作流规划和执行反馈，把复杂多模态生成任务分解、执行并修复，而不是只依赖一次性提示。
-- [ComfyUI-Copilot](https://arxiv.org/abs/2506.05010)（[开源代码](https://github.com/AIDC-AI/ComfyUI-Copilot)）：ComfyUI workflow 生命周期助手，覆盖生成、调试、重写、参数调优和 ComfyUI 生态内的 agentic workflow 操作；其公开仓库目前说明官方 API 服务已暂停，因此实际部署需要用户自备 LLM API key 与 base URL。
-- [Maestro](https://arxiv.org/abs/2509.10704)：面向自我改进文生图的智能体编排框架。核心思路：协调生成、批评和修订智能体，让图像输出通过显式流程改进，而不是依赖单次模型调用。
-- [PromptSculptor](https://arxiv.org/abs/2509.12446)：面向文生图提示词优化的多 agent harness。核心思想：把提示词分析、改写和质量反馈拆给协作 agent，在基础生成模型之外迭代提升图像生成提示。
-- [OmniVerifier](https://arxiv.org/abs/2510.13804)（[开源代码](https://github.com/Cominclip/OmniVerifier)）：面向视觉结果验证的生成式 verifier；可把“视觉判断”改造成显式验证与自我修正闭环，并在 ViVerBench 等上对比评测。
-- [ComfySearch](https://arxiv.org/abs/2601.04060)：用于 ComfyUI 工作流的自主探索 harness。核心思路是在严格工作流约束下搜索组件图，并用验证引导构建过程，使 Agent 能生成可执行且质量更高的 ComfyUI pipeline。
-- [coDrawAgents](https://arxiv.org/abs/2603.12829)：面向组合式图像生成的多智能体对话 harness。核心思想：拆分 interpreter、planner、checker 与 painter 等角色，在生成前迭代地约束复杂对象布局和属性。
-- [EditRefiner](https://arxiv.org/abs/2605.07457)：面向图像编辑优化的人类对齐智能体框架。核心思路是将图像编辑封装为迭代优化流程，由基础生成器之外的反馈、对齐检查和修订环节推动改进。
+- [DiffusionAgent: Navigating Expert Models for Agentic Image Generation](https://arxiv.org/abs/2401.10061)：用 LLM 驱动的 tree-of-thought navigator 解析开放域提示词，在可扩展先验知识树中零样本匹配最合适的扩散专家，并用人类反馈更新 advantage database 来改进模型路由策略。
+- [Anywhere: A Multi-Agent Framework for User-Guided, Reliable, and Diverse Foreground-Conditioned Image Generation](https://arxiv.org/abs/2404.18598)：把前景条件生成拆成前景理解、多样性增强、物体完整性保护、提示一致性、自动质量评估与失败重生成等专职 agent，替代单一端到端 inpainting 流程。
+- [EditScribe: Non-Visual Image Editing with Natural Language Verification Loops](https://arxiv.org/abs/2408.06632)：面向盲人和低视力用户，将自然语言编辑命令与 LMM 生成的整体描述、对象描述、视觉变化摘要、AI 判断和追问验证循环结合起来完成非视觉图像编辑。
+- [ComfyBench / ComfyAgent](https://arxiv.org/abs/2409.01392)（[开源代码](https://github.com/xxyQwQ/ComfyBench)；[项目页](https://xxyqwq.github.io/ComfyBench)）：用 200 个指令跟随生成任务评测 ComfyUI workflow 设计 agent，并把 ComfyAgent 实现为 code-to-workflow 解释器加协作 agent，由现有 workflow 学习后生成新的节点图。
+- [MagicQuill: An Intelligent Interactive Image Editing System](https://arxiv.org/abs/2411.09703)：用 MLLM 实时监控轻量交互并推断插入、擦除、改色等编辑意图，再把请求交给带双分支插件的扩散先验以实现精确局部控制。
+- [HILITE: Human-in-the-loop Interactive Tool for Image Editing](https://doi.org/10.1109/bigdata62323.2024.10825916)：把用户置于编辑闭环中，通过交互式审阅与修正界面检查生成结果、调整局部问题并重新提交编辑，而不是一次性接受扩散输出。
+- [Bayesian Optimization for Controlled Image Editing via LLMs](https://arxiv.org/abs/2502.18116)：用大模型引导的贝叶斯优化迭代搜索来控制图像编辑结果。
+- [PromptMap: An Alternative Interaction Style for AI-Based Image Generation](https://arxiv.org/abs/2503.09436)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Hybrid Agents for Image Restoration](https://arxiv.org/abs/2503.10120)：把图像复原拆成处理模糊退化诊断的慢速 MLLM agent、处理明确简单需求的快速 LLM agent，以及协调多种专用和通用复原工具的反馈 agent。
+- [ComfyGPT](https://arxiv.org/abs/2503.17671)（[开源代码](https://github.com/comfygpt/comfygpt)；[项目页](https://comfygpt.github.io/)）：用 ReformatAgent、FlowAgent、RefineAgent 和 ExecuteAgent 生成 ComfyUI workflow，重点优化精确节点连接，并借助 FlowDataset 与 FlowBench 反馈做强化学习改进。
+- [CREA](https://arxiv.org/abs/2504.05306)：把创意图像编辑组织成团队流程，由专职 agent 提炼创意概念、执行扩散编辑、批评候选图并增强结果，在原创性、连贯性和艺术意图之间迭代取舍。
+- [CIGEval](https://arxiv.org/abs/2504.07046)：把条件图像生成评测改成 LMM 工具调用循环，由 agent 从多功能工具箱中选工具、按细粒度任务准则分析工具输出，并可用 2.3K 条评测轨迹蒸馏出更小的 LMM 裁判。
+- [Q-Agent](https://arxiv.org/abs/2504.07148)：先把多退化感知拆成单退化 chain-of-thought 检查，再用客观 IQA 指标贪心选择复原算法顺序，避免无效或错误排序的复原步骤。
+- [SPICE: A Synergistic, Precise, Iterative, and Customizable Image Editing Workflow](https://arxiv.org/abs/2504.09697)：面向图像生成与编辑的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Twin Co-Adaptive Dialogue for Progressive Image Generation](https://arxiv.org/abs/2504.14868)：从基础图像开始让用户和系统保持同步对话，持续消解提示歧义，并把后续生成适配到不断变化的用户反馈，而不是反复手工试提示词。
+- [ComfyMind](https://arxiv.org/abs/2505.17908)（[开源代码](https://github.com/EnVision-Research/ComfyMind)）：通过 Semantic Workflow Interface 把 ComfyUI 节点图抽象成自然语言可调用模块，再用搜索树规划和局部执行反馈逐阶段修复 workflow 选择。
+- [ComfyUI-Copilot](https://arxiv.org/abs/2506.05010)（[开源代码](https://github.com/AIDC-AI/ComfyUI-Copilot)）：用 assistant agent 协调 workflow、node 和 model worker agents，并依托 7K nodes、62K models、9K workflows 的 KB，支持一键导入 workflow、节点/模型推荐、提示词写作、参数搜索和画布调试；公开仓库说明相关 agent 能力现在需要用户自备 LLM API key 与 base URL。
+- [Retrieval Augmented Comic Image Generation](https://arxiv.org/abs/2506.12517)：用检索式角色分配把文本中的角色对齐到参考图，再通过区域角色注入在连续漫画帧中保持身份、服装和姿态表现的一致性。
+- [CAL-RAG: Retrieval-Augmented Multi-Agent Generation for Content-Aware Layout Design](https://arxiv.org/abs/2506.21934)：用检索增强多智能体生成进行内容感知版式设计。
+- [4KAgent](https://arxiv.org/abs/2507.07105)：先按输入领域做 profiling，再让感知 agent 结合 VLM 与 IQA 专家生成复原计划，最后由复原 agent 以递归执行-反思和质量驱动 MoE 策略选择每步 4K 超分输出。
+- [An LLM-LVLM Driven Agent for Iterative and Fine-Grained Image Editing](https://arxiv.org/abs/2508.17435)：使用 LLM-LVLM 智能体进行迭代式细粒度图像编辑。
+- [Narrative-to-Scene Generation: An LLM-Driven Pipeline for 2D Game Environments](https://arxiv.org/abs/2509.04481)：把短故事转换为三个时间帧的 2D tile 场景，先抽取 object-relation-object 空间谓词，再用 GameTileNet affordance embedding 检索素材、用 cellular automata 生成地形并按规则放置对象。
+- [Maestro](https://arxiv.org/abs/2509.10704)：从初始 T2I 提示词出发迭代进化候选图，让专职 MLLM critic 找出图像弱点，verifier 在保留用户意图的同时合并可解释编辑信号，再用 MLLM-as-a-judge 做候选图成对比较。
+- [PromptSculptor](https://arxiv.org/abs/2509.12446)：用四个 agent 自动优化提示词：通过 chain-of-thought 推断隐藏上下文并扩写模糊输入，自评改写后提示与原请求的一致性，再把用户反馈纳入下一轮 tuning。
+- [AgenticIQA: An Agentic Framework for Adaptive and Interpretable Image Quality Assessment](https://arxiv.org/abs/2509.26006)：可作为图像生成与编辑的 Agent Harness 候选：围绕 AgenticIQA: An Agentic Framework for Adaptive and Interpretable Image Quality Assessment 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [GenPilot: A Multi-Agent System for Test-Time Prompt Optimization in Image Generation](https://arxiv.org/abs/2510.07217)：面向图像生成与编辑的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Bringing The Consistency Gap: Explicit Structured Memory for Interleaved Image-Text Generation](https://arxiv.org/abs/2510.10969)：为交错图文生成加入显式结构化记忆。核心思想：用 Image Understanding Tree 跟踪实体、属性和关系，使长程多模态生成在多轮中保持身份、逻辑和风格一致。
+- [From Evidence to Verdict: An Agent-Based Forensic Framework for AI-Generated Image Detection](https://arxiv.org/abs/2511.00181)：把 AI 图像检测改写成多阶段取证流程，组合反向图像搜索、元数据提取、预训练分类器、VLM 分析、多 agent 证据辩论，以及可选的历史案例记忆模块。
+- [Multimodal-LLM Agent For Text-Driven Multi-Attribute Face Editing](https://doi.org/10.1109/icip55913.2025.11084332)：用多模态 LLM 作为文本驱动人脸编辑控制器，协调多个面部属性修改请求，减少用户手工拆分和排序编辑步骤的需求。
+- [ComfySearch](https://arxiv.org/abs/2601.04060)：把 ComfyUI workflow 生成表述为验证引导的图搜索，agent 在节点连接约束下探索组件选择，只保留可执行且质量更高的 pipeline 状态。
+- [M3: High-fidelity Text-to-Image Generation via Multi-Modal, Multi-Agent and Multi-Round Visual Reasoning](https://arxiv.org/abs/2602.06166)：提供规划、记忆、验证、工具调用或运行时编排，服务于图像生成与编辑，可补充面向文生图的智能体式引导、多轮推理和生成控制。
+- [GlyphBanana: Advancing Precise Text Rendering Through Agentic Workflows](https://arxiv.org/abs/2603.12155)：面向图像生成与编辑的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [coDrawAgents](https://arxiv.org/abs/2603.12829)：协调 Interpreter、Planner、Checker 与 Painter：先把提示解析成对象描述符，再按语义优先级分组规划布局、检查空间和属性错误，并把对象逐步绘制到不断更新的画布上。
+- [Agentic Flow Steering and Parallel Rollout Search for Spatially Grounded Text-to-Image Generation](https://arxiv.org/abs/2603.18627)：提供规划、记忆、验证、工具调用或运行时编排，服务于图像生成与编辑，可补充面向文生图的智能体式引导、多轮推理和生成控制。
+- [PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow](https://arxiv.org/abs/2603.25738)：用类人创意工作流自动化图形设计。
+- [GEMS](https://arxiv.org/abs/2603.28088)：把闭环多 agent 生成流程、记录事实状态与压缩经验的 trajectory-level memory，以及按需加载的领域 skill 结合起来处理专门下游生成任务。
+- [Creo: From One-Shot Image Generation to Progressive, Co-Creative Ideation](https://arxiv.org/abs/2604.13956)：把文生图改造成分阶段共创流程，从可编辑草图推进到高分辨率图像，并用锁定机制保留先前决策，使后续 AI 辅助编辑只影响指定区域或属性。
+- [EditRefiner](https://arxiv.org/abs/2605.07457)：基于 EditFHF-15K 人类反馈运行 perception-reasoning-action-evaluation 循环，先定位伪影和编辑失败区域，再用文本推理诊断问题、规划局部重编辑，并判断是否需要继续优化。
+- [IEA: Amateur-Friendly Conversational Image Editing Agent via Three Stages of Multitask Alignment](https://arxiv.org/abs/2606.08016)：构建 IEA 对话式图像编辑 agent，通过 16 个参数化工具产生可解释编辑轨迹，并结合 SFT、GRPO 奖励和合成多任务微调训练。
+- [AgentStory: A Multi-Agent System for Story Visualization with Multi-Subject Consistent Text-to-Image Generation](https://doi.org/10.1145/3731715.3733271)：面向图像生成与编辑的智能体框架或运行时。核心思想：把 A Multi-Agent System for Story Visualization with Multi-Subject Consistent Text-to-Image Generation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Talk, Imagine, Evolve: A Unified Multimodal Agent for Seamless Visual Generation and Editing](https://doi.org/10.1145/3746027.3754467)：面向视觉生成与编辑的多模态代理。核心思想：把图像生成和编辑封装进可对话、可构想候选结果并能迭代改进输出的代理循环。
+- [AVATAR-AGENT: A Multi-Agent System for Expressive 3D Avatar Generation](https://doi.org/10.1145/3786167.3788404)：构建面向表现力三维头像生成的多智能体系统。

@@ -1,0 +1,28 @@
+# 1.18.1 Leaderboard
+- [MULTI: multimodal understanding leaderboard with text and images](https://opendfm.github.io/MULTI-Benchmark/)：官方榜单用来自中文真实考试的图文理解、推理和知识任务排列多模态模型；论文见 [arXiv](https://arxiv.org/abs/2402.03173)。
+- [FlagEval-Arena](https://flageval.baai.org/#/arena)：官方 side-by-side arena 面向中文用户比较大语言模型与文本驱动 AIGC 系统；ACL demo 论文见 [ACL Anthology](https://doi.org/10.18653/v1/2025.acl-demo.56)。
+- [AgentBoard](https://hkust-nlp.github.io/agentboard/)：官方榜单评测多轮 LLM agent 在导航、网页、游戏和具身式任务中的表现。
+- [Open FinLLM Leaderboard](https://huggingface.co/spaces/TheFinAI/Open-FinLLM-Leaderboard)：与 FinBen 式评测相关的公开金融 LLM 榜单。
+- [MMT-Bench](https://mmt-bench.github.io/)：官方多模态 multitask AGI benchmark 榜单，用于比较视觉语言模型。
+- [Auto-Arena](https://huggingface.co/spaces/Auto-Arena/Leaderboard)：官方榜单，用 agent peer battle 和 committee discussion 评测 LLM。
+- [WildBench](https://huggingface.co/spaces/allenai/WildBench)：AI2 维护的公开榜单，面向真实用户提出的高难任务。
+- [MixEval](https://mixeval.github.io/)：官方榜单把多类 benchmark 来源混合，用来近似 crowd preference 信号。
+- [WildVision Arena](https://huggingface.co/spaces/WildVision/vision-arena)：基于人类偏好的视觉语言模型公开对战 arena。
+- [Grid-Based Game Benchmark](https://research-outcome.github.io/LLM-Game-Benchmark/leaderboard/)：官方榜单用于 LLM 网格游戏竞赛。
+- [VisualAgentBench](https://github.com/THUDM/VisualAgentBench)：官方仓库提供 visual foundation-agent 任务的公开榜单与结果。
+- [MME-RealWorld](https://mme-realworld.github.io/)：官方榜单用于高分辨率真实世界多模态评测。
+- [VHELM](https://crfm.stanford.edu/helm/vhelm/v2.0.1/)：Stanford CRFM HELM 中的视觉语言模型综合评测榜单。
+- [COMPL-AI](https://compl-ai.org/)：受欧盟 AI Act 启发的官方 benchmark 与结果门户。
+- [JudgeBench](https://huggingface.co/spaces/ScalerLab/JudgeBench)：官方 Hugging Face 榜单，用于 LLM-as-judge 评测。
+- [RM-Bench](https://github.com/THU-KEG/RM-Bench-Leaderboard)：官方榜单仓库，用于 subtlety 与 style 维度的 reward model 评测。
+- [VL-RewardBench](https://huggingface.co/spaces/MMInstruction/VL-RewardBench)：官方榜单评测 vision-language generative reward model。
+- [WMT 2024 Quality Estimation Shared Task](https://www2.statmt.org/wmt24/qe-task.html)：官方 shared-task 结果页，用于机器翻译质量估计。
+- [Multimodal RewardBench](https://github.com/facebookresearch/multimodal_rewardbench)：官方仓库提供多模态 reward model 评测结果。
+- [AlgoPerf](https://mlcommons.org/benchmarks/algorithms/)：MLCommons 训练算法性能竞赛与结果入口。
+- [NTIRE 2025 Cross-Domain Few-Shot Object Detection Challenge](https://codalab.lisn.upsaclay.fr/competitions/21851)：官方 Codalab challenge 与竞赛结果入口。
+- [TabArena](https://tabarena.ai/)：官方 living leaderboard，用于表格机器学习和表格基础模型。
+- [WildSpoof](https://wildspoof.github.io/)：官方 challenge 站点与结果页，评测鲁棒 spoof detection。
+- [Social Welfare Function Leaderboard](https://arxiv.org/abs/2510.01164)：榜单式基准，让 LLM agent 在动态仿真中分配稀缺社会资源，并用 ROI 和 Gini 类指标比较集体效率与分配公平性。
+- [CorrectBench](https://correctbench.github.io/)：官方项目页提供 LLM 自我修正策略的榜单与结果。
+- [ScoringBench](https://github.com/jonaslandsgesell/ScoringBench)：官方仓库提供 proper scoring-rule 评测表格与结果。
+- [CCL-Bench](https://cclbench.ai/leaderboard.html)：官方 trace-based LLM infrastructure benchmark 榜单。

@@ -6,17 +6,252 @@
 - [RAP](https://arxiv.org/abs/2305.14992)（[开源代码](https://github.com/Ber666/RAP)）更强调推理作为规划问题。
 - [Graph of Thoughts](https://arxiv.org/abs/2308.09687)（[开源代码](https://github.com/spcl/graph-of-thoughts)）把 ToT 的树结构推广为图式中间状态，支持合并、聚合与更复杂的推理拓扑。
 - [LATS](https://arxiv.org/abs/2310.04406)（[开源代码](https://github.com/lapisrocks/LanguageAgentTreeSearch)）把规划、评估与搜索更系统地接入 agent loop。
+- [Generalized Planning for the Abstraction and Reasoning Corpus](https://arxiv.org/abs/2401.07426)：把 ARC 建模为 generalized planning 问题，合成可复用的动作抽象，以解决一类网格任务而不是单个样例。
+- [An Enhanced Prompt-Based LLM Reasoning Scheme via Knowledge Graph-Integrated Collaboration](https://arxiv.org/abs/2402.04978)：把提示式推理与知识图谱协作结合起来，让 LLM 在作答时检索结构化实体和关系。
+- [Simulating Multi-Stakeholder Decision-Making with Generative Agents in Urban Planning](https://arxiv.org/abs/2402.11314)：用按利益相关方角色设定的生成式 agents 模拟城市规划决策，把偏好形成、协商和冲突显式组织成多智能体流程。
+- [Benchmark Self-Evolving: A Multi-Agent Framework for Dynamic LLM Evaluation](https://arxiv.org/abs/2402.11443)：用多个 agents 生成、评审和刷新 benchmark 条目，使评测集能随模型能力提升而动态演化。
+- [PROC2PDDL: Open-Domain Planning Representations from Texts](https://arxiv.org/abs/2403.00092)：把过程性自然语言文本转换为 PDDL 式规划表示，连接语言理解与符号规划器。
+- [KnowAgent: Knowledge-Augmented Planning for LLM-Based Agents](https://arxiv.org/abs/2403.03101)：在 agent 规划循环中加入显式知识获取和使用，使计划能基于相关外部事实落地。
+- [AgentStudio: A Toolkit for Building General Virtual Agents](https://arxiv.org/abs/2403.17918)：提供构建通用虚拟 agents 的工具包，可配置感知、记忆、规划和行动模块。
+- [Prompting Techniques for Reducing Social Bias in LLMs through System 1 and System 2 Cognitive Processes](https://arxiv.org/abs/2404.17218)：用双过程提示区分快速直觉回答和慢速审慎推理，以降低偏见输出。
+- [COAST: COnstraints And STreams for Task and Motion Planning](https://arxiv.org/abs/2405.08572)：把任务与运动规划表示为约束和 stream 的组合，使符号规划器能在搜索中调用连续生成器。
+- [Agent Planning with World Knowledge Model](https://arxiv.org/abs/2405.14205)：把世界知识模型接入 agent 规划，让候选动作能被背景常识和任务约束检查。
+- [Tool-Planner: Dynamic Solution Tree Planning for Large Language Model with Tool Clustering](https://arxiv.org/abs/2406.03807)：先把工具聚类，再生成动态 solution tree，让 LLM 规划工具调用顺序并按中间结果继续分支。
+- [Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models](https://arxiv.org/abs/2406.04271)：把可复用 thought templates 存入 buffer，在推理时检索相似思路来引导新问题。
+- [Retrieve-Plan-Generation: An Iterative Planning and Answering Framework for Knowledge-Intensive LLM Generation](https://arxiv.org/abs/2406.14979)：交替执行检索、规划和生成，使知识密集型回答能随新证据修订计划。
+- [RASTeR: Robust, Agentic, and Structured Temporal Reasoning](https://arxiv.org/abs/2406.19538)：把时间推理组织为 agentic pipeline，先抽取事件、排序并检查时间关系，再生成答案。
+- [Tree Search for Language Model Agents](https://arxiv.org/abs/2407.01476)：把树搜索控制用于语言模型 agents，对候选行动轨迹进行扩展、评估和回溯。
+- [An Empirical Study of Retrieval Augmented Generation with Chain-of-Thought](https://arxiv.org/abs/2407.15569)：实证比较 RAG 与 chain-of-thought 的相互作用，说明检索证据何时帮助或干扰多步推理。
+- [A Logical Fallacy-Informed Framework for Argument Generation](https://arxiv.org/abs/2408.03618)：用显式逻辑谬误类别引导论证生成，使生成主张能针对常见推理错误被检查。
+- [Causal Agent based on Large Language Model](https://arxiv.org/abs/2408.06849)：把因果推理组织成 LLM-agent 循环，识别因果变量、查询支撑知识并修正因果结论。
+- [Abstract Operations Research Modeling Using Natural Language Inputs](https://arxiv.org/abs/2408.07272)：把自然语言问题描述转为抽象运筹优化模型，连接 LLM 解析与优化建模。
+- [IDEA: Enhancing the Rule Learning Ability of Large Language Model Agent through Induction, Deduction, and Abduction](https://arxiv.org/abs/2408.10455)：围绕归纳、演绎和溯因组织规则学习，让 agent 能推断并检验潜在任务规则。
+- [From Grounding to Planning: Benchmarking Bottlenecks in Web Agents](https://arxiv.org/abs/2409.01927)：把 web-agent 失败拆分为 grounding、状态跟踪和规划瓶颈，定位浏览器任务中的关键薄弱环节。
+- [PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization](https://arxiv.org/abs/2409.03811)：用并行自回归 agents 构造组合优化解，让多个局部决策协同生成，而不是单一串行解码。
+- [TART: An Open-Source Tool-Augmented Framework for Explainable Table-based Reasoning](https://arxiv.org/abs/2409.11724)：结合表格操作、工具调用和解释生成，让表格推理暴露中间计算过程。
+- [The Ability of Large Language Models to Evaluate Constraint-satisfaction in Agent Responses to Open-ended Requests](https://arxiv.org/abs/2409.14371)：研究 LLM 作为开放式 agent 回答的约束检查器，把生成质量与约束满足评估区分开。
+- [Self-Correction is More than Refinement: A Learning Framework for Visual and Language Reasoning Tasks](https://arxiv.org/abs/2410.04055)：把 self-correction 视为面向视觉和语言推理的 critique、错误定位和修正求解循环。
+- [GameTraversalBenchmark: Evaluating Planning Abilities Of Large Language Models Through Traversing 2D Game Maps](https://arxiv.org/abs/2410.07765)：用 2D 地图遍历评测交互式规划，要求模型维护状态、选择移动并满足导航目标。
+- [OpenR: An Open Source Framework for Advanced Reasoning with Large Language Models](https://arxiv.org/abs/2410.09671)：提供开放的高级推理实验框架，覆盖搜索、过程监督和测试时推理组件。
+- [Expanding Search Space with Diverse Prompting Agents: An Efficient Sampling Approach for LLM Mathematical Reasoning](https://arxiv.org/abs/2410.09780)：运行多样化 prompting agents 采样互补的数学解题路径，再选择或聚合答案。
+- [Planning Anything with Rigor: General-Purpose Zero-Shot Planning with LLM-based Formalized Programming](https://arxiv.org/abs/2410.12112)：把自然语言规划任务转换为形式化程序，使 zero-shot 计划可以被执行和严格检查。
+- [APRICOT: Active Preference Learning and Constraint-Aware Task Planning with LLMs](https://arxiv.org/abs/2410.19656)：结合主动偏好学习和约束感知 LLM 规划，在用户偏好和可行性约束逐步明确时调整计划。
+- [Language Agents Meet Causality - Bridging LLMs and Causal World Models](https://arxiv.org/abs/2410.19923)：把语言 agents 与因果世界模型连接起来，使 agents 能围绕干预和反事实环境动态进行推理。
+- [ReSpAct: Harmonizing Reasoning, Speaking, and Acting Towards Building Large Language Model-Based Conversational AI Agents](https://arxiv.org/abs/2411.00927)：在同一个对话 agent 循环中协调推理、说话和行动选择，而不是只生成文本回复。
+- [GRL-Prompt: Towards Knowledge Graph based Prompt Optimization via Reinforcement Learning](https://arxiv.org/abs/2411.14479)：基于知识图谱信息构造 prompts，并用强化学习优化 prompt 选择以服务下游推理任务。
+- [Conceptual In-Context Learning and Chain of Concepts: Solving Complex Conceptual Problems Using Large Language Models](https://arxiv.org/abs/2412.15309)：用显式 concept chains 替代普通示例，引导模型穿过复杂问题中的抽象概念依赖。
+- [Aristotle: Mastering Logical Reasoning with A Logic-Complete Decompose-Search-Resolve Framework](https://arxiv.org/abs/2412.16953)：把逻辑问题分解为子命题，搜索证明相关线索，并在 logic-complete 框架中解析结论。
+- [Refining Guideline Knowledge for Agent Planning Using Textgrad](https://doi.org/10.1109/ickg63256.2024.00020)：用 TextGrad 式文本反馈精炼 guideline knowledge，使 agent planner 后续规划时能遵循改进后的规则。
+- [Reasoning with Graphs: Structuring Implicit Knowledge to Enhance LLMs Reasoning](https://arxiv.org/abs/2501.07845)：先从上下文隐含关系构造显式图再作答，为逻辑推理和多跳问答提供可复用的图结构推理脚手架。
+- [Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design](https://arxiv.org/abs/2501.08603)：可作为通用推理与优化的 Agent Harness 候选：围绕 Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Decompose-ToM: Enhancing Theory of Mind Reasoning in Large Language Models through Simulation and Task Decomposition](https://arxiv.org/abs/2501.09056)：面向 Theory-of-Mind 的推理 harness，递归模拟他人视角，并把任务拆成主体识别、问题改写、世界状态更新和知识可得性检查。
+- [Zero-Shot Verification-guided Chain of Thoughts](https://arxiv.org/abs/2501.13122)：用零样本步骤分解和 LLM 自验证器为推理链评分并引导推理，不依赖微调验证器或少样本示例。
+- [Fast Think-on-Graph](https://arxiv.org/abs/2501.14300)：通过结构化知识图谱探索加速 LLM 图上推理，适合作为图介导推理 harness。
+- [MASTER: A Multi-Agent System with LLM Specialized MCTS](https://arxiv.org/abs/2501.14304)：带 specialized MCTS 的 multi-agent reasoning system。核心思想是结合 agent specialization 和 tree search，让复杂推理可以分支、评估并修正候选解。
 - [AB-MCTS for ARC-AGI-2](https://arxiv.org/abs/2503.04412)（[开源代码](https://github.com/SakanaAI/ab-mcts-arc2)）：把 ARC-AGI-2 显式建模为程序空间的树搜索问题；设计关键词：MCTS、程序空间搜索、多模型裁决。
-- ARC-AGI-solution（[开源代码](https://github.com/aviad12g/ARC-AGI-solution)；无独立论文）：LLM 引导 DSL 搜索的工程化 ARC 求解代理。
 - [Division-of-Thoughts](https://arxiv.org/abs/2502.04392)：面向端侧 agent 的本地-云端混合推理 harness。核心思想：分解任务、构建依赖图，并在本地小模型与云端 LLM 之间调度子任务，使受设备约束的助手也能处理复杂推理工作流。
+- [Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools](https://arxiv.org/abs/2502.04644)：面向结合网页搜索、代码执行和结构化记忆的深度推理的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
 - [Adaptive Graph of Thoughts](https://arxiv.org/abs/2502.05078)：统一 chain、tree 和 graph 结构的测试时自适应推理 harness。核心思想：在推理过程中选择并改写推理拓扑，而不是固定使用某一种 CoT、ToT 或 GoT 模式。
+- [Bilevel Learning for Bilevel Planning](https://arxiv.org/abs/2502.08697)：把规划本身建模为 bilevel 问题，学习上层策略选择如何塑造下层计划构造。
+- [Are Rules Meant to be Broken? Understanding Multilingual Moral Reasoning as a Computational Pipeline with UniMoral](https://arxiv.org/abs/2502.14083)：把道德判断建模为多语言计算 pipeline，显式处理规则识别、语境例外和最终决策。
 - [PlanGEN](https://arxiv.org/abs/2502.16111)：面向复杂规划与推理的多 agent inference-time harness；设计关键词：constraint agent、verification agent、selection agent、自适应选择 BoN/ToT/REBASE。
 - [VeriPlan](https://arxiv.org/abs/2502.17898)：面向终端用户规划的验证增强 harness。核心思路是把 LLM 规划器与规则翻译、用户可调的灵活性控制和模型检查结合起来，使生成计划能够围绕显式约束被检查和修订。
+- [MA-GTS: A Multi-Agent Framework for Solving Complex Graph Problems in Real-World Applications](https://arxiv.org/abs/2502.18540)：求解复杂图问题的多 agent 框架。核心思想：把图推理拆成搜索、验证和修订等协作 agent 角色。
+- [Multi-Agent Verification: Scaling Test-Time Compute with Multiple Verifiers](https://arxiv.org/abs/2502.20379)：面向通过多个 verifier agent 进行 test-time scaling的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Parallelized Planning-Acting for Efficient LLM-based Multi-Agent Systems](https://arxiv.org/abs/2503.03505)：面向 LLM 多 agent 系统的规划与行动 harness；核心思想是并行化计划生成、动作执行和反馈利用，降低协作 agent 工作流中的串行瓶颈。
+- [ReasonGraph: Visualisation of Reasoning Paths](https://arxiv.org/abs/2503.03979)：用于可视化和分析 LLM 推理路径的 Web 平台；核心思想是跨模型供应商审计顺序式和树状推理轨迹。
+- [Broaden your SCOPE! Efficient Multi-turn Conversation Planning for LLMs using Semantic Space](https://arxiv.org/abs/2503.11586)：用 semantic space 进行高效多轮对话规划，属于 conversation-planning harness。
 - [VerifiAgent](https://arxiv.org/abs/2504.00406)（[开源代码](https://github.com/Jiuzhouh/VerifiAgent)）：统一验证 agent，把 meta-verification 与工具自适应验证接入推理；设计关键词：数学/逻辑/常识工具选择、反馈修订、inference scaling。
+- [Achieving Unanimous Consensus Through Multi-Agent Deliberation](https://arxiv.org/abs/2504.02128)：基于 deliberation 的 LLM agent 一致性机制；核心思想是通过讨论协调 agent 意见，而不是依赖固定多数规则。
+- [Debate Only When Necessary: Adaptive Multiagent Collaboration for Efficient LLM Reasoning](https://arxiv.org/abs/2504.05047)：面向高效推理的 adaptive multi-agent collaboration harness。核心思想是只在可能有帮助时触发 debate，降低不必要交互成本和 debate 诱发错误。
+- [Reasoning Court: Combining Reasoning, Action, and Judgment for Multi-Hop Reasoning](https://arxiv.org/abs/2504.09781)：将推理、行动和裁决组织成 court-like 多跳推理流程，属于通用推理 harness。
+- [Pandora: A Code-Driven Large Language Model Agent for Unified Reasoning Across Diverse Structured Knowledge](https://arxiv.org/abs/2504.12734)：面向结构化知识推理的代码驱动 LLM 智能体，用可执行程序作为异构推理任务的协调层。
+- [Model Tensor Planning](https://arxiv.org/abs/2505.01059)：用 tensorized model components 表示规划动态，使多步计划组合比自由文本提示更结构化。
+- [Towards Multi-Agent Reasoning Systems for Collaborative Expertise Delegation: An Exploratory Design Study](https://arxiv.org/abs/2505.07313)：可作为通用推理的Agent Harness候选；核心关注“An Exploratory Design Study”。
+- [Group Think: Multiple Concurrent Reasoning Agents Collaborating at Token Level Granularity](https://arxiv.org/abs/2505.11107)：token-level concurrent multi-agent reasoning harness。核心思想是让多个 agent 以更细时间粒度协作，而不是只交换完整回复。
 - [BELLE](https://arxiv.org/abs/2505.11811)：面向多跳问答的双层多智能体推理框架。核心思想是把高层分解与低层证据推理分开，让多个 agent 协调中间结论，而不是用单个大提示一次性求解多跳问题。
+- [Solve-Detect-Verify: Inference-Time Scaling with Flexible Generative Verifier](https://arxiv.org/abs/2505.11966)：可作为通用推理的Agent Harness候选；核心关注“Inference-Time Scaling with Flexible Generative Verifier”。
+- [ReflAct: World-Grounded Decision Making in LLM Agents via Goal-State Reflection](https://arxiv.org/abs/2505.15182)：面向 LLM agent world-grounded decision making 的 goal-state reflection harness。核心思想是反思目标状态与观察状态，使动作选择扎根于环境进展。
 - [Plan and Budget](https://arxiv.org/abs/2505.16122)：面向 LLM 推理的测试时扩展框架。核心思路是在求解前或求解过程中规划推理预算，把推理计算投入到更可能从额外思考中受益的问题上。
+- [LightRouter: Towards Efficient LLM Collaboration with Minimal Overhead](https://arxiv.org/abs/2505.16221)：可作为通用推理的Agent Harness候选；核心关注“Towards Efficient LLM Collaboration with Minimal Overhead”。
+- [Augmenting LLM Reasoning with Dynamic Notes Writing for Complex QA](https://arxiv.org/abs/2505.16293)：为模型提供动态笔记工作区，在复杂问答中保留中间证据、假设和未解子问题。
+- [Social preferences with unstable interactive reasoning: Large language models in economic trust games](https://arxiv.org/abs/2505.17053)：用经济学 trust games 研究 LLM 如何在不稳定多轮交互中更新社会偏好。
+- [HydraRAG](https://arxiv.org/abs/2505.17464)：一种免训练推理 harness，把图拓扑、文档证据、来源可靠性和 agent-driven exploration 结合起来，用于多跳、多实体 RAG 推理。
+- [GAM-Agent: Game-Theoretic and Uncertainty-Aware Collaboration for Complex Visual Reasoning](https://arxiv.org/abs/2505.23399)：作为通用推理的智能体执行框架候选，聚焦“Game-Theoretic and Uncertainty-Aware Collaboration for Complex Visual Reasoning”。
 - [Language-Driven Coordination and Learning in Multi-Agent Simulation Environments](https://arxiv.org/abs/2506.04251)：面向多智能体仿真的语言驱动协调与学习框架，可用于区分交互协议、环境设计与模型本身能力。
+- [LLM-First Search](https://arxiv.org/abs/2506.05213)：self-guided test-time search harness。核心思想是在 solution-space exploration 中让 LLM 自主决定继续、回退或分支，而不是依赖固定的 MCTS 式探索超参数。
+- [Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive, and Inductive Reasoning in Language Models](https://arxiv.org/abs/2506.07106)：将 abductive、deductive 和 inductive 推理拆成多 agent 轨迹；核心思想是把轨迹组织为 reasoning graph，并用 NLI 引导的 belief propagation 检查内部一致性。
+- [SELT: Self-Evaluation Tree Search for LLMs with Task Decomposition](https://arxiv.org/abs/2506.07557)：面向 LLM reasoning 的 self-evaluation tree-search harness；核心思想是结合改造后的 Monte Carlo Tree Search、任务分解和内在自评，在没有外部 reward model 的情况下探索推理路径。
+- [A Neurosymbolic Agent System for Compositional Visual Reasoning](https://arxiv.org/abs/2506.07778)：它提供搜索、程序化或 neurosymbolic 推理 workflow，适合补充 general reasoning Agent Harness。
+- [Eliciting Reasoning in Language Models with Cognitive Tools](https://arxiv.org/abs/2506.12115)：可作为通用推理的Agent Harness候选；核心关注“Eliciting Reasoning in Language Models with Cognitive Tools”。
+- [Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs](https://arxiv.org/abs/2506.12509)：把 LLM reasoning verification 组织为有向无环图，属于结构化验证 harness。
+- [Xolver: Multi-Agent Reasoning with Holistic Experience Learning Just Like an Olympiad Team](https://arxiv.org/abs/2506.14234)：带 holistic experience learning 的 multi-agent reasoning harness；核心思想是让 agent 跨任务积累指导、错误和解题经验。
+- [OmniReflect: Discovering Transferable Constitutions for LLM agents via Neuro-Symbolic Reflections](https://arxiv.org/abs/2506.17449)：通过神经符号反思发现可迁移 agent constitution 的 harness；核心思想是把重复经验蒸馏为紧凑原则，用于指导后续跨任务推理与行动。
+- [AnyMAC: Cascading Flexible Multi-Agent Collaboration via Next-Agent Prediction](https://arxiv.org/abs/2506.17784)：使用 next-agent prediction 的 flexible multi-agent collaboration harness。核心思想是动态选择下一位行动 agent，而不是固定 debate 顺序。
+- [Adaptive Domain Modeling with Language Models: A Multi-Agent Approach to Task Planning](https://arxiv.org/abs/2506.19592)：可作为通用推理的Agent Harness候选；核心关注“A Multi-Agent Approach to Task Planning”。
+- [CodeAgents: A Token-Efficient Framework for Codified Multi-Agent Reasoning in LLMs](https://arxiv.org/abs/2507.03254)：把多智能体推理 codify 成模块化类代码结构，以提升效率和可扩展性。
+- [Enhancing Test-Time Scaling of Large Language Models with Hierarchical Retrieval-Augmented MCTS](https://arxiv.org/abs/2507.05557)：用于测试时推理的层级检索增强 MCTS。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [GRASP: Generic Reasoning And SPARQL Generation across Knowledge Graphs - Demo System](https://arxiv.org/abs/2507.08107)：展示 reasoning-to-SPARQL 流程，把自然语言问题转化为可执行知识图谱查询。
+- [Finding Common Ground: Using Large Language Models to Detect Agreement in Multi-Agent Decision Conferences](https://arxiv.org/abs/2507.08440)：可作为通用推理与优化的 Agent Harness 候选：围绕 Finding Common Ground: Using Large Language Models to Detect Agreement in Multi-Agent Decision Conferences 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Repairing Language Model Pipelines by Meta Self-Refining Competing Constraints at Runtime](https://arxiv.org/abs/2507.10590)：面向存在相互冲突约束的语言模型流水线运行时修复框架。核心思想是加入元控制器诊断约束冲突并引导自我修正，避免低效回溯循环。
+- [From Extraction to Synthesis: Entangled Heuristics for Agent-Augmented Strategic Reasoning](https://arxiv.org/abs/2507.13768)：面向通用推理的智能体框架或运行时。核心思想：把 Entangled Heuristics for Agent-Augmented Strategic Reasoning 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Adaptive Multi-Agent Reasoning via Automated Workflow Generation](https://arxiv.org/abs/2507.14393)：为多 agent 推理生成自适应工作流；核心思想是构造任务特定协作模式，而不是依赖固定多 agent 模板。
+- [PanelTR: Zero-Shot Table Reasoning Framework Through Multi-Agent Scientific Discussion](https://arxiv.org/abs/2508.06110)：使用多 agent 科学讨论进行 zero-shot 表格推理；核心思想是让 agent 围绕表格 QA 和事实验证证据进行讨论，再给出答案。
+- [EndoAgent: A Memory-Guided Reflective Agent for Intelligent Endoscopic Vision-to-Decision Reasoning](https://arxiv.org/abs/2508.07292)：结合医学视觉感知、记忆和反思，支持内镜场景中的 vision-to-decision 推理。
+- [CausalPlan: Empowering Efficient LLM Multi-Agent Collaboration Through Causality-Driven Planning](https://arxiv.org/abs/2508.13721)：面向 LLM 多 agent 协作的因果驱动规划 harness；核心思想是显式建模因果依赖，减少协作行动中的不一致。
+- [Improved Generalized Planning with LLMs through Strategy Refinement and Reflection](https://arxiv.org/abs/2508.13876)：用于广义规划的策略细化与反思 harness；核心思想是生成可复用的 Python/PDDL 式规划程序，并通过反思错误分析改进。
+- [Meta-R1](https://arxiv.org/abs/2508.17291)：一种元认知测试时推理框架。核心思想是把对象层解题与元层规划、调节和自适应停止分开，使推理轨迹更可控且更省 token。
+- [MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](https://arxiv.org/abs/2508.18260)：面向 test-time inference 的并行图检索增强推理 harness。核心思想是通过多条图结构检索推理链扩展推理，而不是单条线性思维链。
+- [HiPlan: Hierarchical Planning for LLM-Based Agents with Adaptive Global-Local Guidance](https://arxiv.org/abs/2508.19076)：可作为通用推理与优化的 Agent Harness 候选：围绕 HiPlan: Hierarchical Planning for LLM-Based Agents with Adaptive Global-Local Guidance 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [GDS Agent](https://arxiv.org/abs/2508.20637)：用 agentic workflow 处理图算法推理，把图结构任务与工具化推理步骤连接起来。
+- [TableMind: An Autonomous Programmatic Agent for Tool-Augmented Table Reasoning](https://arxiv.org/abs/2509.06278)：可作为通用推理与优化的 Agent Harness 候选：围绕 TableMind: An Autonomous Programmatic Agent for Tool-Augmented Table Reasoning 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [A Data-Driven Discretized CS:GO Simulation Environment to Facilitate Strategic Multi-Agent Planning Research](https://arxiv.org/abs/2509.06355)：发布离散化 Counter-Strike 仿真环境，用于研究游戏状态约束下的战略多智能体规划。
+- [CLAUSE: Agentic Neuro-Symbolic Knowledge Graph Reasoning via Dynamic Learnable Context Engineering](https://arxiv.org/abs/2509.21035)：用动态可学习上下文工程组织 agentic neuro-symbolic knowledge graph reasoning。
+- [InfoQA](https://arxiv.org/abs/2509.21199)：面向多跳问答的 capacity-aware 多调用框架。核心思想是把证据整合拆成更小且准确率更高的步骤，主动裁剪既有推理轨迹，并显式维护依赖关系，避免单次生成中的容量溢出。
+- [Retrieval-of-Thought](https://arxiv.org/abs/2509.21743)：复用既有 thought steps 的推理 harness。核心思想是把已解问题的推理轨迹组织成 thought graph，在推理时检索并重组相关步骤，从而减少冗余长推理并尽量保持准确率。
+- [Beyond the Strongest LLM: Multi-Turn Multi-Agent Orchestration vs. Single LLMs on Benchmarks](https://arxiv.org/abs/2509.23537)：比较多轮多 agent orchestration 与单 LLM baseline 的研究。核心思想是让 agent 迭代提出、投票或修订答案，并分析编排何时优于更强单模型。
+- [Recursive Self-Aggregation](https://arxiv.org/abs/2509.26626)：面向 reasoning model 的 test-time scaling harness；核心思想是反复聚合候选推理链子集，形成改进后的解群体，把并行采样和序列 refinement 结合起来。
+- [Multi-Agent Collaborative Intelligence: Dual-Dial Control for Reliable LLM Reasoning](https://arxiv.org/abs/2510.04488)：用 dual-dial 控制多智能体协作强度，在独立推理和交互讨论之间调节以提升可靠性。
+- [Code World Models for General Game Playing](https://arxiv.org/abs/2510.04542): 把自然语言游戏规则转换为可执行 Python world model，用于合法动作枚举、隐状态推断和 MCTS 规划。
+- [Slm-mux: Orchestrating small language models for reasoning](https://arxiv.org/abs/2510.05077)：可作为通用推理的Agent Harness候选；核心关注“Orchestrating small language models for reasoning”。
+- [Mission Impossible: Feedback-Guided Dynamic Interactive Planning for Improving Reasoning on LLMs](https://arxiv.org/abs/2510.05577)：面向开放域推理的反馈引导动态交互规划 harness；核心思想是在检索密集的多跳任务中动态调整行动序列，而不是执行固定计划。
+- [AlphaApollo: A System for Deep Agentic Reasoning](https://arxiv.org/abs/2510.06261)：类型：agent harness/可复用执行框架。核心价值：为 1.9.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [A Multi-Agent Framework for Stateful Inference-Time Search](https://arxiv.org/abs/2510.07147)：面向 stateful inference-time search 的多 agent 框架。核心思想是在结构化推理步骤之间维护持久状态，而不是依赖无状态单次推理。
+- [ProSEA: Problem Solving via Exploration Agents](https://arxiv.org/abs/2510.07423)：模块化 exploration-agent 问题求解框架；核心思想是通过分层探索持续演化计划，而不是依赖一次性静态规划。
+- [AgentAsk: Multi-Agent Systems Need to Ask](https://arxiv.org/abs/2510.07593)：让 multi-agent systems 在不确定交接前主动提问的交互框架。核心思想是诊断边级通信失败，并通过澄清请求减少错误传播。
+- [SwarmSys: Decentralized Swarm-Inspired Agents for Scalable and Adaptive Reasoning](https://arxiv.org/abs/2510.10047)：可作为general reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [D3MAS: Decompose, Deduce, and Distribute for Enhanced Knowledge Sharing in Multi-Agent Systems](https://arxiv.org/abs/2510.10585)：通过分解、推导和分发进行多 agent 知识共享；核心思想是在 agent 间共享最小充分状态，减少重复检索和重复推理。
+- [ThinkPilot: Steering Reasoning Models via Automated Think-prefixes Optimization](https://arxiv.org/abs/2510.12063)：自动优化 think-prefixes 来引导 reasoning models，属于推理控制 harness。
+- [Adaptive Reasoning Executor: A Collaborative Agent System for Efficient Reasoning](https://arxiv.org/abs/2510.13214)：面向成本感知推理的协作 harness；核心思想是先由小模型回答，再由大模型 verifier 做 gate，只有需要时才触发深度推理。
+- [Unleashing Diverse Thinking Modes in LLMs through Multi-Agent Collaboration](https://arxiv.org/abs/2510.16645)：用多个 agent 扮演不同 thinking mode 并协作整合结果；核心思想是通过角色化讨论扩展推理路径，并提高推理过程的可解释性。
+- [See or Say Graphs: Agent-Driven Scalable Graph Understanding with Vision-Language Models](https://arxiv.org/abs/2510.16769)：用 agent-driven workflow 扩展 vision-language models 的 graph understanding，把图感知与推理组织成显式的 harness 设计问题。
+- [Adaptive Coopetition](https://arxiv.org/abs/2510.18179)：一种多 agent 测试时推理 harness。核心思想是用粗粒度 verifier 信号和 UCB 风格策略决定 agent 何时协作、何时竞争，在不依赖强 verifier 的情况下提升稳健性。
+- [Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People](https://arxiv.org/abs/2510.20886)：面向“像人一样探索和行动”的理性 agent 框架。核心思想是评测不确定性下的信息寻求和行动选择，要求 agent 在行动前决定该问什么。
+- [LRPLAN: A Multi-Agent Collaboration of Large Language and Reasoning Models for Planning with Implicit & Explicit Constraints](https://doi.org/10.18653/v1/2025.findings-emnlp.440)：结合大语言模型与推理模型的多 agent 规划框架。核心思想是让不同 agent 处理隐式与显式约束，使生成计划同时满足隐藏要求和明示要求。
+- [R-CHAR: A Metacognition-Driven Framework for Role-Playing in Large Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.1372)：用 metacognition 组织 role-playing LLM 行为，属于角色扮演 agent harness。
+- [Agentic-ToM: Cognition-Inspired Agentic Processing For Enhancing Theory of Mind Reasoning](https://doi.org/10.18653/v1/2025.findings-emnlp.1398)：面向 theory-of-mind reasoning 的认知启发式 agentic pipeline；核心思想是把心理状态推断拆成 agent 化处理步骤，用于交互式社交推理。
+- [Playpen: An Environment for Exploring Learning From Dialogue Game Feedback](https://doi.org/10.18653/v1/2025.emnlp-main.1517)：提供从 dialogue game feedback 中学习的环境，属于交互式 reasoning harness。
+- [Scaling Graph Chain-of-Thought Reasoning: A Multi-Agent Framework with Efficient LLM Serving](https://arxiv.org/abs/2511.01633)：可作为通用推理与优化的 Agent Harness 候选：围绕 Scaling Graph Chain-of-Thought Reasoning: A Multi-Agent Framework with Efficient LLM Serving 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [CourtReasoner: Can LLM Agents Reason Like Judges?](https://doi.org/10.18653/v1/2025.emnlp-main.1787)：把法律裁判组织为 agent 推理流程，在结论前检查事实、规则和类司法理由。
+- [Unlocking the Power of Multi-Agent LLM for Reasoning: From Lazy Agents to Deliberation](https://arxiv.org/abs/2511.02303): 分析多智能体推理中的 lazy-agent collapse，并加入 causal influence 度量与 deliberation reward 来维持协作。
+- [S-DAG](https://arxiv.org/abs/2511.06727)：subject-level 多 agent 推理 harness。核心思想是为每个 query 推断学科依赖图，将经过画像的模型分配到学科专家节点，并通过有向无环图组织信息流，以处理多学科异构推理任务。
+- [Can LLM Agents Really Debate? A Controlled Study of Multi-Agent Debate in Logical Reasoning](https://arxiv.org/abs/2511.07784)：用受控逻辑推理实验检验多智能体辩论究竟改善答案，还是主要放大已有错误。
 - [VSA for ARC-AGI](https://arxiv.org/abs/2511.08747)（[开源代码](https://github.com/ijoffe/ARC-VSA-2025)）：把 ARC-AGI 做成更显式的神经-符号程序归纳问题；设计关键词：神经-符号、可验证执行。
 - [iMAD](https://arxiv.org/abs/2511.11306)：面向高效 LLM inference 的多智能体辩论 harness。核心思想：协调辩论智能体与聚合机制，使推理时协作在控制额外计算的同时提升推理准确性。
+- [EduAgentQG: A Multi-Agent Workflow Framework for Personalized Question Generation](https://arxiv.org/abs/2511.11635)：把个性化出题拆给 learner modeling、内容选择、题目草拟和质量审查等 agents 协同完成。
+- [Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models](https://arxiv.org/abs/2511.11751)：结合概念 grounding 与基于规则的多智能体推理，让 VLM 把视觉证据连接到符号推断。
+- [Debate over Mixed-knowledge: A Robust Multi-Agent Reasoning Framework for Incomplete Knowledge Graph Question Answering](https://arxiv.org/abs/2511.12208)：让持有不同知识视图的 agents 围绕不完整知识图谱问答辩论，以处理缺失或冲突图证据。
+- [Towards a General Framework for HTN Modeling with LLMs](https://arxiv.org/abs/2511.18165)：面向 LLM-driven hierarchical task-network modeling 的框架；核心思想是把自动规划模型生成从扁平 PDDL 风格扩展到层级规划结构。
+- [Synthesizing Visual Concepts as Vision-Language Programs](https://arxiv.org/abs/2511.18964)：它提供搜索、程序化或 neurosymbolic 推理 workflow，适合补充 general reasoning Agent Harness。
+- [LatentMAS](https://arxiv.org/abs/2511.20639)：训练无关的多 agent 隐空间协作 harness。核心思想是让 agent 通过共享 latent working memory 交换 hidden-state 表示，而不只依赖文本消息通信。
+- [CRAwDAD: Causal Reasoning Augmentation with Dual-Agent Debate](https://arxiv.org/abs/2511.22854)：用双智能体辩论增强因果推理。核心思路是在汇总答案前让智能体相互质询和修正因果主张，降低伪相关推理被保留下来的概率。
+- [Adapting Like Humans: A Metacognitive Agent with Test-time Reasoning](https://arxiv.org/abs/2511.23262)：补充general reasoning方向的agent harness，核心围绕《Adapting Like Humans: A Metacognitive Agent with Test-time Reasoning》。
+- [Thinking by Doing: Building Efficient World Model Reasoning in LLMs via Multi-turn Interaction](https://arxiv.org/abs/2511.23476)：通过多轮交互构建 world-model reasoning，属于交互式推理 harness。
+- [Learning to Orchestrate Agents in Natural Language with the Conductor](https://arxiv.org/abs/2512.04388)：可作为通用推理的Agent Harness候选；核心关注“Learning to Orchestrate Agents in Natural Language with the Conductor”。
+- [End-to-end PDDL Planning with Hardcoded and Dynamic Agents](https://arxiv.org/abs/2512.09629)：围绕 PDDL 任务求解的规划 harness。核心思想是结合固定 agent 与动态生成 agent 来翻译目标、构造计划并验证可执行规划结果。
+- [ENWAR 2.0: An Agentic Multimodal Wireless LLM Framework With Reasoning, Situation-Aware Explainability and Beam Tracking](https://doi.org/10.1109/tmc.2025.3629736)：把 agentic multimodal LLM 流程用于无线网络推理、态势感知解释和波束跟踪。
+- [Harnessing Large Language Models for question answering over complex tables](https://doi.org/10.1016/j.engappai.2025.111910)：用大语言模型回答复杂表格问题。
+- [AutoCrit: A Meta-Reasoning Framework for Self-Critique and Iterative Error Correction in LLM Chains-of-Thought](https://doi.org/10.1109/icmlca66850.2025.11336788)：加入元推理循环，对 chain-of-thought 步骤进行批评、错误定位和迭代修复。
+- [GR-Agent: Adaptive Graph Reasoning Agent under Incomplete Knowledge](https://arxiv.org/abs/2512.14766)：在知识不完整时自适应选择、扩展和修订图证据，组织 graph reasoning agent 循环。
+- [CLMC: Code-Level Metacognition for LLM Agents](https://doi.org/10.1109/icdmw69685.2025.00295)：面向 LLM agent 的代码级元认知框架；核心思想是在任务复杂度和不确定性上升时，把自诊断与自改进变成显式 agent 机制。
+- [Abstract-Then-Concretize Automated Design of Multi-Agent System](https://doi.org/10.1109/kse68178.2025.11309450)：自动化 multi-agent system 设计框架。核心思想是先生成抽象协作结构，再把它具体化为面向任务的 agent 与交互关系，减少手工设计 MAS 的成本。
 - [Reaching Agreement Among Reasoning LLM Agents](https://arxiv.org/abs/2512.20184)：面向推理 agent 的一致性感知编排协议；设计关键词包括增量 quorum 检测、提前终止、安全与活性保证，以及减少拖尾延迟。
+- [MAR:Multi-Agent Reflexion Improves Reasoning Abilities in LLMs](https://arxiv.org/abs/2512.20845)：可作为通用推理的Agent Harness候选；核心关注“Multi-Agent Reflexion Improves Reasoning Abilities in LLMs”。
+- [SPIRAL: Symbolic LLM Planning via Grounded and Reflective Search](https://arxiv.org/abs/2512.23167)：可作为通用推理的Agent Harness候选；核心关注“Symbolic LLM Planning via Grounded and Reflective Search”。
+- [Figure It Out: Improve the Frontier of Reasoning with Executable Visual States](https://arxiv.org/abs/2512.24297)：Figure It Out 用可执行视觉状态辅助推理，适合 General Reasoning Agent Harness。
+- [Hybrid Reasoning Agents and a Conceptual Framework for Integrating Symbolic Logic with Large Language Models](https://doi.org/10.1109/icsec67360.2025.11298019)：一种把符号逻辑与 LLM Agent 结合的概念框架；核心思路是在可复用的混合 Agent 设计中结合显式逻辑结构与语言模型推理。
+- [Improving Argumentative Reasoning in LLMs Using Online Debates and Agent-Based Interaction](https://doi.org/10.1109/nkcon66957.2025.11345775)：面向通用推理提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Enhancing ML Explainability with Multi-Agent LLMs: A Context-Aware XAI Approach](https://doi.org/10.5753/sbbd.2025.246998)：面向通用推理提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [pdfQA: Diverse, Challenging, and Realistic Question Answering over PDFs](https://arxiv.org/abs/2601.02285)：构建真实 PDF 问答场景，要求系统结合文档解析、检索、版面线索和多步证据综合。
+- [ReTreVal](https://arxiv.org/abs/2601.02880)：带验证机制的多步推理树框架。核心思想：探索不同解题分支，并在给出最终答案前进行验证。
+- [DynaDebate](https://arxiv.org/abs/2601.05746)：动态路径多 agent debate 框架。核心思想：在聚合前生成多样化辩论路径，避免审议过程被固定在单一同质交流模式中。
+- [D2Plan: Dual-Agent Dynamic Global Planning for Complex Retrieval-Augmented Reasoning](https://arxiv.org/abs/2601.08282)：双智能体检索增强推理框架。核心思想：由 Reasoner 维护并修订全局计划，由 Purifier 压缩相关证据，从而减少搜索链漂移和干扰证据劫持。
+- [SCOPE / Programming over Thinking](https://arxiv.org/abs/2601.09097)：面向多约束规划的代码执行 harness。核心思想：把问题特定推理与可复用 solver function 分开，用执行检查约束，而不是只依赖长自然语言思考。
+- [MACRO-LLM: LLM-Empowered Multi-Agent Collaborative Reasoning under Spatiotemporal Partial Observability](https://arxiv.org/abs/2601.09295)：面向时空部分可观测场景的多 agent 协作推理框架；核心思想是在状态不完整且动态变化时协调 agent 推理。
+- [Neural Chain-of-Thought Search: Searching the Optimal Reasoning Path to Enhance Large Language Models](https://arxiv.org/abs/2601.11340)：搜索更优链式推理路径。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [MARS](https://arxiv.org/abs/2601.11974)：面向 agent 自改进的元认知反思 harness。核心思想：用结构化反思循环调整 prompt 与策略，降低反复递归提示的开销。
+- [OFA-MAS: One-for-All Multi-Agent System Topology Design based on Mixture-of-Experts Graph Generative Models](https://arxiv.org/abs/2601.12996)：可作为通用推理的Agent Harness候选；核心关注“One-for-All Multi-Agent System Topology Design based on Mixture-of-Experts Graph Generative Models”。
+- [Confidence-Modulated Multi-Agent Debate](https://arxiv.org/abs/2601.19921)：改进 reasoning agents 的 debate harness；核心思想是选择更多样的初始答案，并让 agent 传递校准置信度，使更新过程更可能收敛到证据更充分的假设。
+- [VERGE](https://arxiv.org/abs/2601.20055)：面向可验证推理的形式化修订与引导引擎。核心思想：分解 claim、自动形式化、用 SMT solver 验证，并迭代修复输出。
+- [MoCo](https://arxiv.org/abs/2601.21257)：model-collaboration harness 与 benchmark library；核心思想是实现覆盖 routing、text exchange、logits 和 parameters 的多种协作方法，并在统一的 reasoning、QA、code 和 safety 数据集上比较。
+- [Can David Beat Goliath? On Multi-Hop Reasoning with Resource-Constrained Agents](https://arxiv.org/abs/2601.21699)：研究资源受限智能体的多跳推理，为通用推理补充较小或低成本智能体如何协同对抗强基线的执行框架视角。
+- [Reasoning While Asking](https://arxiv.org/abs/2601.22139)：面向推理模型的主动询问 harness。核心思想：允许模型在解题过程中请求缺失信息，而不是被迫一次性作答或盲目自我思考。
+- [BayesFlow](https://arxiv.org/abs/2601.22305)：面向 LLM 系统的 Bayesian workflow-generation harness。核心思想：对包含 LLM 调用、工具调用和后处理步骤的候选工作流进行采样、加权和修订，而不是手工固定一条 pipeline。
+- [Interleaved Formal-Logic Verification](https://arxiv.org/abs/2601.22642)：验证增强的自然推理 harness。核心思想：把普通推理与形式逻辑检查交错执行，使错误能在最终答案前被发现。
+- [ALIGN](https://arxiv.org/abs/2602.00127)：为多 agent 推理提供性能保证的 delegation 协议。核心思想：决定何时以及如何委派推理工作，同时保留对协作结果的显式保证。
+- [Planner Error Localization and Correction](https://arxiv.org/abs/2602.00276)：面向 LLM planner 的修复 harness。核心思想：定位生成计划违反约束的位置，并把定向修正反馈到规划循环中。
+- [DeALOG](https://arxiv.org/abs/2602.00996)：去中心化、日志介导的多 agent 推理框架。核心思想：通过共享推理日志协调 agent，使协作过程可检查且不依赖单一中心控制器。
+- [ORCH](https://arxiv.org/abs/2602.01797)：用于离散选择推理的确定性多 agent 编排器。核心思想：用 EMA 引导路由多个分析过程，并以确定性方式合并以稳定选择答案。
+- [Fat-Cat](https://arxiv.org/abs/2602.02206)：文档驱动的元认知多 agent 推理系统。核心思想：协调读取文档、监控不确定性并通过显式自检修订复杂答案的 agent。
+- [MentorCollab](https://arxiv.org/abs/2602.05307)：用于高效推理的大模型到小模型选择性指导 harness。核心思想：只在有价值时让强模型指导小模型，在准确率与计算成本之间做权衡。
+- [DyTopo: Dynamic Topology Routing for Multi-Agent Reasoning via Semantic Matching](https://arxiv.org/abs/2602.06039)：可作为通用推理的Agent Harness候选；核心关注“Dynamic Topology Routing for Multi-Agent Reasoning via Semantic Matching”。
+- [The Value of Variance: Mitigating Debate Collapse in Multi-Agent Systems via Uncertainty-Driven Policy Optimization](https://arxiv.org/abs/2602.07186)：通过 uncertainty-driven policy optimization 缓解 debate collapse 的多 agent debate 框架。核心思想是防止群体审议过早收敛到错误推理。
+- [Internalizing Multi-Agent Reasoning for Accurate and Efficient LLM-based Recommendation](https://arxiv.org/abs/2602.09829)：把多智能体 deliberation 内化到推荐流程中，在降低推理成本的同时保留协作推理收益。
+- [AdaptEvolve: Improving Efficiency of Evolutionary AI Agents through Adaptive Model Selection](https://arxiv.org/abs/2602.11931)：可作为general reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [STAR : Bridging Statistical and Agentic Reasoning for Large Model Performance Prediction](https://arxiv.org/abs/2602.12143)：结合统计推理与智能体式推理预测大模型表现。
+- [SSLogic](https://arxiv.org/abs/2602.13218)：用于可验证逻辑任务的 agentic meta-synthesis harness；核心思想是让 agent 编写、验证、盲审并精炼可执行的 generator-validator 任务族。
+- [G2CP: A Graph-Grounded Communication Protocol for Verifiable and Efficient Multi-Agent Reasoning](https://arxiv.org/abs/2602.13370)：提出图结构通信协议，让多智能体推理轨迹更可验证并减少自然语言通信漂移。
+- [Vision Wormhole](https://arxiv.org/abs/2602.15382)（[代码](https://github.com/xz-liu/heterogeneous-latent-mas)）：面向异构 multi-agent systems 的通信 harness；核心思想是用 universal visual codec 作为共享 latent channel，让不同模型家族的 agent 不经成对文本翻译也能交换 reasoning traces。
+- [Team-of-Thoughts](https://arxiv.org/abs/2602.16485)：heterogeneous multi-agent test-time scaling harness，将不同模型视为 specialized tools，通过 orchestrator calibration 与 agent self-assessment 选择要激活的专家。
+- [Weak and Strong Verification](https://arxiv.org/abs/2602.17633)：研究何时可以信任低成本 reasoning check。核心思想：区分 self-consistency、proxy rewards 等 weak verification 信号和更强的外部核验，明确 reasoning harness 何时应升级到更昂贵的验证。
+- [RUMAD: Reinforcement-Unifying Multi-Agent Debate](https://arxiv.org/abs/2602.23864)：面向用于自适应共识和效率的强化统一多 agent debate的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [ArgLLM-App: An Interactive System for Argumentative Reasoning with Large Language Models](https://arxiv.org/abs/2602.24172)：提供交互式系统，让用户构建、检查和修订由 LLM 支持的论证推理。
+- [DenoiseFlow: Uncertainty-Aware Denoising for Reliable LLM Agentic Workflows](https://arxiv.org/abs/2603.00532)：DenoiseFlow 面向可靠 LLM agentic workflows 的不确定性感知 denoising。
+- [GraphScout: Empowering Large Language Models with Intrinsic Exploration Ability for Agentic Graph Reasoning](https://arxiv.org/abs/2603.01410)：让 LLM 具备内生探索能力以执行图推理任务，可作为通用推理智能体框架线索。
+- [Exploring Plan Space through Conversation: An Agentic Framework for LLM-Mediated Explanations in Planning](https://arxiv.org/abs/2603.02070)：通过对话式解释探索计划空间，补充规划型智能体框架。
+- [PRISM: Pushing the Frontier of Deep Think via Process Reward Model-Guided Inference](https://arxiv.org/abs/2603.02479)：面向由过程奖励模型引导的候选生成、改进和聚合式深度思考的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Query Disambiguation via Answer-Free Context: Doubling Performance on Humanity's Last Exam](https://arxiv.org/abs/2603.04454)：面向用于高难推理问题澄清的 answer-free context的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [TableMind++: An Uncertainty-Aware Programmatic Agent for Tool-Augmented Table Reasoning](https://arxiv.org/abs/2603.07528)：可作为通用推理与优化的 Agent Harness 候选：围绕 TableMind++: An Uncertainty-Aware Programmatic Agent for Tool-Augmented Table Reasoning 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Ares: Adaptive Reasoning Effort Selection for Efficient LLM Agents](https://arxiv.org/abs/2603.07915)：面向 LLM agent 的自适应推理预算选择器；核心思想是判断任务何时需要更长 deliberation、工具调用或低成本直接回答。
+- [Agentic Neurosymbolic Collaboration for Mathematical Discovery: A Case Study in Combinatorial Design](https://arxiv.org/abs/2603.08322)：协调 LLM agents 与神经符号搜索工具，提出并验证组合设计构造。
+- [Argumentation for Explainable and Globally Contestable Decision Support with LLMs](https://arxiv.org/abs/2603.14643)：用 argumentation structures 组织 LLM 辅助决策支持，使解释和反驳理由都可检查。
+- [GNNVerifier: Graph-based Verifier for LLM Task Planning](https://arxiv.org/abs/2603.14730)：用图结构 verifier 检测 LLM 任务计划中的结构性错误。
+- [SAGE: Multi-Agent Self-Evolution for LLM Reasoning](https://arxiv.org/abs/2603.15255)：可作为通用推理的Agent Harness候选；核心关注“Multi-Agent Self-Evolution for LLM Reasoning”。
+- [HyEvo: Self-Evolving Hybrid Agentic Workflows for Efficient Reasoning](https://arxiv.org/abs/2603.19639)：HyEvo 自动生成 hybrid agentic workflows，属于通用 reasoning workflow harness。
+- [GoAgent](https://arxiv.org/abs/2603.19677)：面向 LLM-based multi-agent systems 的 group-level communication-topology generation harness。核心思想：先生成候选 agent groups，再以 group 为原子单位连接通信图，并用 conditional information bottleneck 减少冗余跨组通信。
+- [Hear Both Sides: Efficient Multi-Agent Debate via Diversity-Aware Message Retention](https://arxiv.org/abs/2603.20640)：用多样性感知消息保留改进多 agent debate。核心思想：按信息多样性筛选并保留 debate 消息，以减少冗余与噪声。
+- [Network-of-Thought](https://arxiv.org/abs/2603.20730)：面向复杂任务的 reasoning-topology harness。核心思想：把中间思路组织成网络，使推理路径能在固定 chain、tree 或简单 graph 之外相互作用。
+- [ROM: Real-time Overthinking Mitigation via Streaming Detection and Intervention](https://arxiv.org/abs/2603.22016)：面向流式推理中的实时过度思考检测与干预的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Bridging the Know-Act Gap via Task-Level Autoregressive Reasoning](https://arxiv.org/abs/2603.22619)：可作为general reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Polaris: A G\"odel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](https://arxiv.org/abs/2603.23129)：面向面向小语言模型的经验抽象和策略修复 Godel-agent 循环的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [BEACOF](https://arxiv.org/abs/2603.24973)（[代码](https://github.com/WUT-IDEA/BEACOF)）：受 approximate Perfect Bayesian Equilibrium 启发的 belief-driven multi-agent collaboration harness，让 agents 更新对同伴能力的信念并动态选择协作策略，以避免 groupthink 或 deadlock。
+- [Early Stopping for Large Reasoning Models via Confidence Dynamics](https://arxiv.org/abs/2604.04930)：面向基于置信度动态的 reasoning model 早停的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [HANDRAISER](https://arxiv.org/abs/2604.06452)：面向 language-based multi-agent systems 的 interruptible communication harness。核心思想：让 listener agent 根据预期未来收益和通信成本学习何时打断 speaker，从而在不损害任务表现的情况下降低 token 开销。
+- [Enhancing LLM Problem Solving via Tutor-Student Multi-Agent Interaction](https://arxiv.org/abs/2604.08931)：可作为general reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Process Reward Agents for Steering Knowledge-Intensive Reasoning](https://arxiv.org/abs/2604.09482)：面向用 process-reward agents 和外部证据引导知识密集推理的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [CascadeDebate](https://arxiv.org/abs/2604.12262)：cost-aware cascade harness，在不确定的升级节点选择性插入 multi-agent deliberation，让低成本模型层先处理模糊样本，再决定是否调用更大模型或人类专家。
+- [Weak-Link Optimization for Multi-Agent Reasoning and Collaboration](https://arxiv.org/abs/2604.15972)：可作为general reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Cut Your Losses! Learning to Prune Paths Early for Efficient Parallel Reasoning](https://arxiv.org/abs/2604.16029)：面向推理时并行推理路径的早停剪枝的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Compiling Deterministic Structure into SLM Harnesses](https://arxiv.org/abs/2604.17450)：Compiling Deterministic Structure into SLM Harnesses 强调确定性结构化 harness，适合通用推理。
+- [OOPrompt: Reifying Intents into Structured Artifacts for Modular and Iterative Prompting](https://arxiv.org/abs/2604.19114)：把 prompting intents 具象化为结构化 artifacts，使 prompt workflow 可以模块化编辑、组合和迭代。
+- [Separable Pathways for Causal Reasoning: How Architectural Scaffolding Enables Hypothesis-Space Restructuring in LLM Agents](https://arxiv.org/abs/2604.20039)：用架构脚手架分离大模型智能体的因果推理路径。
+- [From Coarse to Fine: Self-Adaptive Hierarchical Planning for LLM Agents](https://arxiv.org/abs/2604.23194)：用于 LLM agents 的自适应层级规划机制；核心思想是从粗粒度宏计划开始，再按任务复杂度逐步细化计划粒度。
+- [FlowBot: Inducing LLM Workflows with Bilevel Optimization and Textual Gradients](https://arxiv.org/abs/2604.26258)：FlowBot 用 bilevel optimization 和 textual gradients 诱导 LLM workflows。
+- [AGEL-Comp: A Neuro-Symbolic Framework for Compositional Generalization in Interactive Agents](https://arxiv.org/abs/2604.26522)：Agent Harness 条目；核心思想：评测和增强交互式 agent 的组合泛化；核心思想是用动态因果程序图作为 world model 来约束行动。
+- [The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate](https://arxiv.org/abs/2605.00914)：面向孤立自校正与同质多 agent debate 的受控比较的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [CP-SynC: Multi-Agent Zero-Shot Constraint Modeling in MiniZinc with Synthesized Checkers](https://arxiv.org/abs/2605.01675)：用多 agent 合成 checker 支持约束建模。核心思想：同时生成 MiniZinc 模型与验证 checker，以减少语义错误。
 - [Executable World Models for ARC-AGI-3](https://arxiv.org/abs/2605.05138)（[开源代码](https://github.com/alexisfox7/RGB-Agent)）：面向 ARC-AGI-3 榜单的 Read-Grep-Bash agent；设计关键词：可执行世界模型、文件化环境观察、shell 工具调用、以代码和日志维护任务状态。
+- [GraphDC: A Divide-and-Conquer Multi-Agent System for Scalable Graph Algorithm Reasoning](https://arxiv.org/abs/2605.06671)：用分治式多智能体系统提升图算法推理的可扩展性。
+- [LaTER: Efficient Test-Time Reasoning via Latent Exploration and Explicit Verification](https://arxiv.org/abs/2605.07315)：面向先潜在探索、再显式验证的高效测试时推理的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [TMAS: Scaling Test-Time Compute via Multi-Agent Synergy](https://arxiv.org/abs/2605.10344)：通过多 agent 协同扩展测试时计算的推理框架；核心思想是协调多条推理轨迹和验证角色，而不是简单独立采样答案。
+- [DOLORES / Deep Reasoning](https://arxiv.org/abs/2605.11388)：面向通用 agent 的结构化元认知 harness；核心思想是在推理时按任务构造 scaffold，把问题分解为联想推断、形式计算和递归子问题。
+- [Reinforced Collaboration in Multi-Agent Flow Networks](https://arxiv.org/abs/2605.12943)：把多智能体协作组织为从成功工作流中学习的 flow network，并据此优化协作。
+- [LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling](https://arxiv.org/abs/2605.14186)：Metacognitive Harness 利用模型自知信号做 test-time scaling 决策，属于推理 harness。
+- [CAPS](https://arxiv.org/abs/2605.15513)：用于 parallel reasoning 的 cascaded adaptive pairwise-selection harness。核心思想：在候选解之间非均匀分配 verifier context 与 comparison budget，在减少验证 token 的同时保持或提升代码与数学任务准确率。
+- [SELENE](https://doi.org/10.18653/v1/2026.eacl-industry.7)：选择性、证据加权的 LLM debate harness。核心思想：只在证据加权分歧有价值的场景启动辩论，在不总是支付完整辩论成本的情况下提升可靠性。
+- [Efficient Agentic Reasoning Through Self-Regulated Simulative Planning](https://arxiv.org/abs/2605.22138)：提出 SR2AM，将 LLM 作为世界模型进行未来状态模拟，并由 learned configurator 决定是否规划和规划深度，以减少无效推理 token。
+- [G-DMAD](https://doi.org/10.1109/ACCESS.2026.3667025)：面向鲁棒推理的分组异质多 agent debate 框架。核心思想：把 agent 分成异质推理小组并进行跨组辩论，而不是依赖同质投票。
+- [Interruptible Multi-Agent Debate](https://doi.org/10.14569/ijacsa.2026.0170403)：用于早期纠错的句级多 agent debate 协议。核心思想：允许 agent 在完整回答生成前披露疑点并打断发言顺序。
+- [Structured Reasoning Virtual Machine](https://doi.org/10.1109/ETAI68332.2026.11485030)：用结构化推理运行时降低 LLM 解题中的状态漂移和逻辑级联。
+- [Agent-Driven Topology Assembly: Trustworthy LLM Dispatch Reasoning in Distribution Networks](https://doi.org/10.1109/acpee69242.2026.11525045)：用 LLM agents 组装配电网拓扑，并在电网约束下支持调度推理。
+- [LogiCue: Targeted Prompting for Improved Modal and Conditional Reasoning in Large Language Models](https://doi.org/10.1016/j.procs.2026.01.057)：用定向提示线索引导 LLM 处理模态与条件推理中需要显式逻辑区分的情形。
+- ARC-AGI-solution（[开源代码](https://github.com/aviad12g/ARC-AGI-solution)；无独立论文）：LLM 引导 DSL 搜索的工程化 ARC 求解代理。
+- [CoAgt: unleashing the reasoning capabilities of large language models on tabular data with a chain of agents](https://doi.org/10.7717/peerj-cs.3423)：串联表格理解、操作选择和答案综合等专门 agents，处理表格数据推理。
+- [SyLeR: A Framework for Explicit Syllogistic Legal Reasoning in Large Language Models](https://doi.org/10.1145/3746252.3761120)：把法律推理编码为显式 syllogistic steps，使 LLM 输出暴露规则、事实和结论结构。
+- [Moving Experiences - Towards a Conceptual Framework for Performative Artefacts in Museums](https://doi.org/10.1145/3719236.3719249)：提出 performative museum artefacts 的概念框架；它并不明显属于通用 LLM 推理 harness。
+- [Generative High‐Resolution Ensemble Weather Forecast Supports Renewable Energy Planning and Operation](https://doi.org/10.1029/2025gl119044)：用生成式高分辨率集合天气预报支持可再生能源规划和运行决策。
+- [BayBE: a Bayesian Back End for experimental planning in the low-to-no-data regime](https://doi.org/10.1039/d5dd00050e)：提供面向低数据或无数据实验规划的 Bayesian optimization 后端。
+- [LLM-Collab: a framework for enhancing task planning via chain-of-thought and multi-agent collaboration](https://doi.org/10.3934/aci.2024019)：结合 chain-of-thought 规划与多智能体协作，使任务计划能由不同 agents 提出、批评和精炼。
+- [Cognitive Agents in Urban Mobility: Integrating LLM Reasoning into Multi-Agent Simulations](https://doi.org/10.3390/s25185688)：把 LLM 推理嵌入城市出行仿真，使 cognitive agents 能解释并调整出行决策。
+- [SPARK_AI: A Prompt-Orchestrated Architecture for Stateful, Process-Oriented Reasoning with Large Language Models](https://doi.org/10.3390/informatics13040063)：定义 prompt-orchestrated architecture，在 process-oriented reasoning steps 之间维护状态。
+- [SwarmPrompt: Swarm Intelligence-Driven Prompt Optimization Using Large Language Models](https://doi.org/10.5220/0013090300003890)：把 swarm intelligence search 用于 prompt optimization，将候选 prompts 作为可迭代改进的群体。

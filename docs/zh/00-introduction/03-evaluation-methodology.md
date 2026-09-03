@@ -7,13 +7,19 @@
 ## 0.3.1 Agent eval 平台
 
 - [HELM](https://crfm.stanford.edu/helm/latest/)（[论文](https://arxiv.org/abs/2211.09110)；[开源代码](https://github.com/stanford-crfm/helm)）：整体模型评测平台；适合作为透明 scenarios、metrics、原始 prompts/completions 和多指标报告的早期参考。
-- [OpenAI Evals](https://github.com/openai/evals) 和 [simple-evals](https://github.com/openai/simple-evals)：开放评测 registry 与轻量评测套件；适合自定义任务、公开 eval recipe 和 LLM 系统回归测试。
 - [lm-evaluation-harness](https://arxiv.org/abs/2405.14782)（[开源代码](https://github.com/EleutherAI/lm-evaluation-harness)）：EleutherAI 的常用任务 harness；适合复现 task implementation、模型 adapter 和评测设置敏感性记录。
+- [The AI Agent Index](https://arxiv.org/abs/2502.01635)：按基座模型、推理实现、工具使用、应用领域、评测披露和护栏信息记录已部署的 agentic system，把公开透明度本身纳入评测对象。
+- [Harbor](https://www.harborframework.com/)（[开源代码](https://github.com/harbor-framework/harbor)；相关 benchmark：[Terminal-Bench](https://arxiv.org/abs/2601.11868)）：用于运行 agent eval 与创建 sandbox environment 的框架；适合 Terminal-Bench 式任务、轨迹记录和 RL environment 打包。
+- [BenchFlow](https://www.benchflow.ai/)（[开源代码](https://github.com/benchflow-ai/benchflow)；相关 benchmark：[SkillsBench](https://arxiv.org/abs/2602.12670)）：面向任务与高保真环境打包的 agent eval runtime；适合可复现 skill 评测和 RL-style evaluation workflow。
+- [PROTEA](https://arxiv.org/abs/2605.18032)：为 multi-agent LLM workflow 提供离线 test-driven refinement。核心思想是执行 workflow graph、评分中间节点并定位错误，使 workflow 调试不只依赖最终答案评判。
+- [TwinRouterBench](https://arxiv.org/abs/2605.18859)：评测 agentic LLM 系统中的 step-level model routing。核心思想是结合来自 agent 中间步骤 prefix 的 static/live dynamic routing 测试、downgrade-and-cascade 协议和 deterministic scoring。
+- [DecisionBench](https://arxiv.org/abs/2605.19099)：评测 long-horizon agent workflow 中的 emergent delegation。核心思想是在 GAIA、tau-bench 和 BFCL 式任务上加入 peer-model pool 与 call-model 接口，衡量 agent 何时委托、路由和恢复。
+- [OpenCompass](https://opencompass.org.cn/)（[论文](https://arxiv.org/abs/2605.19276)；[开源代码](https://github.com/open-compass/opencompass)）：通用 LLM 评测平台，支持分布式执行、benchmark hub、多类 evaluator 和结果可视化。
+- [OpenJudge](https://openjudge.me/)（[开源代码](https://github.com/agentscope-ai/OpenJudge)）：面向 AI 应用的开源评测框架，提供 relevance、hallucination、tool selection、memory、planning、trajectory quality、代码、数学和多模态输出等现成 grader；适合在 agent benchmark 中复用 grader、生成 rubric，并把评分结果转成 reward signal，而不是只维护固定题集。
+- [PawBench](https://agentscope-ai.github.io/PawBench/)（[开源代码](https://github.com/agentscope-ai/PawBench)；生态：[OpenJudge](https://github.com/agentscope-ai/OpenJudge)）：面向 agentic AI 的 model-harness 联合评测基准。PawBench v1.0 在 150 个任务上比较 9 个模型和 3 个 harness，保留公开 prompt、grader、任务标签、提交记录、切片视图、transcript 与 workspace 产物，用来显式观察 harness 选择如何改变同一模型实际释放出的能力。
+- [OpenAI Evals](https://github.com/openai/evals) 和 [simple-evals](https://github.com/openai/simple-evals)：开放评测 registry 与轻量评测套件；适合自定义任务、公开 eval recipe 和 LLM 系统回归测试。
 - [Inspect AI](https://inspect.aisi.org.uk/)（[开源代码](https://github.com/UKGovernmentBEIS/inspect_ai)）：AISI 的模型与 agent 评测开源框架；适合组织 solver、tool、scorer、sandbox、日志和可审计 eval set。
 - [OpenEvals](https://github.com/langchain-ai/openevals) 和 [AgentEvals](https://github.com/langchain-ai/agentevals)：LangChain 的应用级 evaluator 与 agent trajectory evaluator 包；适合复用 judge function、轨迹匹配和 agent 行为回归检查。
-- [BenchFlow](https://www.benchflow.ai/)（[开源代码](https://github.com/benchflow-ai/benchflow)；相关 benchmark：[SkillsBench](https://arxiv.org/abs/2602.12670)）：面向任务与高保真环境打包的 agent eval runtime；适合可复现 skill 评测和 RL-style evaluation workflow。
-- [Harbor](https://www.harborframework.com/)（[开源代码](https://github.com/harbor-framework/harbor)；相关 benchmark：[Terminal-Bench](https://arxiv.org/abs/2601.11868)）：用于运行 agent eval 与创建 sandbox environment 的框架；适合 Terminal-Bench 式任务、轨迹记录和 RL environment 打包。
-- [OpenCompass](https://opencompass.org.cn/)（[论文](https://arxiv.org/abs/2605.19276)；[开源代码](https://github.com/open-compass/opencompass)）：通用 LLM 评测平台，支持分布式执行、benchmark hub、多类 evaluator 和结果可视化。
 - 工程侧补充平台包括 [DeepEval](https://deepeval.com/)（[开源代码](https://github.com/confident-ai/deepeval)）、[promptfoo](https://www.promptfoo.dev/)（[开源代码](https://github.com/promptfoo/promptfoo)）、[Giskard](https://docs.giskard.ai/)（[开源代码](https://github.com/Giskard-AI/giskard-oss)）和 [LightEval](https://huggingface.co/docs/lighteval/en/index)（[开源代码](https://github.com/huggingface/lighteval)）；它们更偏应用回归和测试工具，不是 benchmark 条目本身，但对把 benchmark 设计、CI 和部署后 agent 可靠性闭环接起来很重要。
 
 ## 0.3.2 动态与可靠评测代表工作
@@ -21,61 +27,586 @@
 - [DyVal](https://arxiv.org/abs/2309.17167)：动态生成推理任务，缓解固定题库污染；适合观察“按规则生成新题”的路线。
 - [LatestEval](https://arxiv.org/abs/2312.12343)：用最新新闻与时间敏感材料构造阅读理解评测；核心价值是把“模型是否见过题”转成时间切片问题。
 - [DARG](https://arxiv.org/abs/2406.17271)：用 adaptive reasoning graph 动态评估 LLM 推理；核心思想是根据模型回答路径生成后续问题，减少固定 prompt 模板被刷榜。
-- [LiveBench](https://arxiv.org/abs/2406.19314)（[开源代码](https://github.com/LiveBench/LiveBench)；[Leaderboard](https://livebench.ai/)）：持续发布新题的综合榜单，覆盖数学、编码、语言、推理、数据分析与指令遵循，是“污染受限 live benchmark”的代表入口。
+- [LiveBench](https://arxiv.org/abs/2406.19314)（[开源代码](https://github.com/LiveBench/LiveBench)；[Leaderboard](https://livebench.ai/)）：用滚动题库覆盖数学、编码、语言、推理、数据分析与指令遵循，让公开题目逐步退出主要证据基础，而不是无限期停留在固定测试集中。
 - [BenchmarkCards](https://arxiv.org/abs/2410.12974)（[开源代码](https://github.com/SokolAnn/BenchmarkCards)）：标准化 benchmark 文档化框架；读新 benchmark 时可用它检查任务目标、数据来源、指标、限制、风险和适用边界是否被说明清楚。
+- [Predicting the Performance of Black-box LLMs through Follow-up Queries](https://arxiv.org/abs/2501.01558)：通过 follow-up questions 预测黑盒 LLM 行为；核心思想是把模型回答概率作为表示，用于预测正确性和被操纵状态。
+- [PRMBench: A Fine-grained and Challenging Benchmark for Process-Level Reward Models](https://arxiv.org/abs/2501.03124)：评估过程奖励模型识别细粒度推理步骤错误的能力。
 - [Statistical Uncertainty Quantification for Aggregate Performance Metrics](https://arxiv.org/abs/2501.04234)：研究聚合 benchmark 分数的不确定性估计。核心思想：使用 bootstrap、层级建模和任务权重可视化，使 benchmark 汇总报告排序不确定性，而不是把单一平均分当作定论。
+- [Potential and Perils of Large Language Models as Judges of Unstructured Textual Data](https://arxiv.org/abs/2501.08167)：提供可复用评测目标、排行榜或测量协议。
+- [Reasoning Makes LLMs More Self-Confident](https://arxiv.org/abs/2501.09775)：显示推理提示可能提高错误选择题答案的自信度，使置信校准与题型成为基准可靠性变量。
+- [Rigor, Reliability, and Reproducibility Matter: A Decade-Scale Survey of 572 Code Benchmarks](https://arxiv.org/abs/2501.10711)：代码基准十年尺度调查与指南。核心思想是审计 572 个代码基准的严谨性、可靠性和可复现性。
+- [Explain-Query-Test: Self-Evaluating LLMs Via Explanation and Comprehension Discrepancy](https://arxiv.org/abs/2501.11721)：基于解释与理解差异的自评协议；核心思想是让模型解释、提问并测试自身理解，避免把流畅解释误认为真实理解。
 - [Reference-free Evaluation Metrics for Text Generation](https://arxiv.org/abs/2501.12011)：综述跨任务的无参考 NLG 自动评测指标，将参考答案可得性与指标选择明确纳入评测可靠性考量。
+- [Redundancy Principles for MLLMs Benchmarks](https://arxiv.org/abs/2501.13953)：多模态基准冗余性的系统分析原则。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [AdEval](https://arxiv.org/abs/2501.13983)：用于缓解 benchmark 污染的对齐式动态评测方法。核心思想：从静态数据集中抽取知识点，用新背景信息扩展，再生成覆盖 Bloom 层级的问题，在保留原 benchmark 核心概念的同时避免复用固定题目。
 - [Humanity's Last Exam](https://arxiv.org/abs/2501.14249) / [HLE-Rolling](https://agi.safe.ai/)（更新日志：[centerforaisafety/hle](https://github.com/centerforaisafety/hle/blob/main/hle-rolling-changes.txt)）：HLE 提供高难专家题，HLE-Rolling 通过持续修订、新题和 live submission 缓解公开题库污染、错误与饱和。
+- [Mitigating GenAI-powered Evidence Pollution for Out-of-Context Multimodal Misinformation Detection](https://arxiv.org/abs/2501.14728)：面向基准可靠性与评测基础设施的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Mitigating GenAI-powered Evidence Pollution for Out-of-Context Multimodal Misinformation Detection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [Atla Selene Mini](https://arxiv.org/abs/2501.17195)：通用小型 LLM 裁判模型，在绝对评分、分类和成对偏好任务上进行评测，并报告了对提示格式变化的鲁棒性。
+- [Improving Your Model Ranking on Chatbot Arena by Vote Rigging](https://arxiv.org/abs/2501.17858)：分析 arena-style 模型评测中的操纵风险；核心思想是说明投票行为如何扭曲榜单排名，是偏好 arena 的评测可靠性警示。
+- [Model Provenance Testing for LLMs](https://arxiv.org/abs/2502.00706)：将模型来源识别作为评测目标，帮助基准使用者审计模型行为或权重来源。
+- [Preference Leakage: A Contamination Problem in LLM-as-a-judge](https://arxiv.org/abs/2502.01534)：Preference Leakage 讨论 LLM-as-a-judge 与数据合成导致的评价污染，适合 Benchmark Reliability。
+- [BenchMaker / LLM-Powered Benchmark Factory](https://arxiv.org/abs/2502.01683)：用可靠性检查支撑自动 benchmark 生成。价值在于把通用题目生成与一致性、成本、同强人工 benchmark 相关性等验证指标放在一起，降低自动造题的失真风险。
+- [The Elicitation Game: Evaluating Capability Elicitation Techniques](https://arxiv.org/abs/2502.02180)：评估 capability elicitation techniques；核心思想是比较 prompting、scaffolding 等方法能否揭示静态 benchmark prompt 未能测出的潜在能力。
+- [Do Large Language Model Benchmarks Test Reliability?](https://arxiv.org/abs/2502.03461)：审计常见 benchmark 中的标注错误与歧义，并提出面向可靠性的 platinum benchmark。
+- [Evaluating Text Style Transfer Evaluation: Are There Any Reliable Metrics?](https://arxiv.org/abs/2502.04718)：研究评测可靠性；核心思想是改进模型、指标或主动评测协议的选择、审计或成本控制。
+- [LessLeak-Bench: A First Investigation of Data Leakage in LLMs Across 83 Software Engineering Benchmarks](https://arxiv.org/abs/2502.06215)：检查 83 个软件工程 benchmark 中的数据泄漏。核心思想：审计 benchmark 污染，避免把编码 agent 的高分误判为真实泛化。
 - [Can We Trust AI Benchmarks?](https://arxiv.org/abs/2502.06559)：从有效性、可靠性、泄漏与治理角度审视 benchmark 是否可信，直接支撑动态评测和 benchmark 可靠性讨论。
+- [Automated Capability Discovery (ACD)](https://arxiv.org/abs/2502.07577)：使用基础模型提出、聚类并评分开放式任务，用于发现固定基准之外的模型能力和失败模式。
+- [Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies](https://arxiv.org/abs/2502.08554)：面向基准可靠性与评测基础设施的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Beyond the Singular: The Essential Role of Multiple Generations in Effective Benchmark Evaluation and Analysis](https://arxiv.org/abs/2502.08943)：评什么：从评测方法角度说明多次生成对可靠 benchmark 分析的必要性。
+- [Generalization Stress Test](https://arxiv.org/abs/2502.12459)：用选项长度、题型和无关名词替换等受控扰动测试 benchmark 可靠性。核心思想：揭示高分是否依赖表面线索，而不是稳定的任务理解与泛化能力。
+- [On the Limits of LLM Reasoning: Evidence From Contamination, Translation, and Answer Modification in Multiple-Choice Benchmarks](https://arxiv.org/abs/2502.12896)：分析多选推理基准中的污染、翻译和答案改写效应；核心思想：在受控扰动下区分记忆式模式召回与真实推理。
+- [Investigating Non-Transitivity in LLM-as-a-Judge](https://arxiv.org/abs/2502.14074)：研究 judge model 的排序不一致。核心思想是诊断 pairwise LLM judgment 何时违反传递性，从而使 leaderboard 排名和模型比较变得不稳定。
+- [Triangulating LLM Progress through Benchmarks, Games, and Cognitive Tests](https://arxiv.org/abs/2502.14359)：比较 benchmark、交互游戏和认知测试的元评测研究。核心思想是跨评测范式三角定位模型进展，而不是依赖单一分数族。
+- [PredictaBoard: Benchmarking LLM Score Predictability](https://arxiv.org/abs/2502.14445)：面向 LLM 分数可预测性的 benchmark。核心思想是衡量成功/失败区域能否被可靠预测，从而辅助定义更安全的运行边界。
+- [Prompt-to-Leaderboard](https://arxiv.org/abs/2502.14855)：按用户提示构造个性化 leaderboard 的评测方法。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [Measuring AI agent autonomy](https://arxiv.org/abs/2502.15212)：提出用代码检查来规模化评估 AI agent 自主性的方法。核心思想是检查规划、工具使用、监督与自发执行等实现边界，让自主性不只由最终任务分数来间接判断。
+- [MEMERAG: A Multilingual End-to-End Meta-Evaluation Benchmark for Retrieval Augmented Generation](https://arxiv.org/abs/2502.17163)：面向 RAG 评估的多语元评测 benchmark。核心思想是测试自动 RAG evaluator 在跨语言、跨文化场景下能否贴近人类判断。
+- [Verdict: A Library for Scaling Judge-Time Compute](https://arxiv.org/abs/2502.18018)：Verdict 是用于扩展 judge-time compute 的评测库，使 LLM-as-judge 流程更系统化。
 - [League / Leaderboard Auto Generation](https://arxiv.org/abs/2502.18209)：为快速演进的研究主题按需生成 leaderboard。核心思路是收集论文、抽取并归一化实验结果、比较实验设置，并生成带质量评估的榜单表格，使 leaderboard 构建本身成为可复用评测工作流。
+- [WiCkeD: A Simple Method to Make Multiple Choice Benchmarks More Challenging](https://arxiv.org/abs/2502.18316)：一种提升选择题评测可靠性的加难方法。核心思想是自动加入“以上皆非”选项，暴露模型对选项捷径的依赖和原有分数虚高问题。
+- [LangProBe: a Language Programs Benchmark](https://arxiv.org/abs/2502.20315)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [BOSE: A Systematic Evaluation Method Optimized for Base Models](https://arxiv.org/abs/2503.00812)：面向 base model 的系统化评测方法优化。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Task elicitation](https://arxiv.org/abs/2503.01986)：一种自适应画像模型失败的方法。核心思想：自动构造数百个能暴露 frontier models 系统弱点的自然语言评测，减少完全依赖专家手工发现关键失败模式。
 - [LLM-Safety Evaluations Lack Robustness](https://arxiv.org/abs/2503.02574)：审计 LLM 安全评测的鲁棒性；核心思想是检查扰动或评测设计选择如何改变安全评测结论，避免把不稳定分数直接当作可靠能力度量。
+- [Dynamic Benchmarking of Code Reasoning](https://arxiv.org/abs/2503.04149)：评测 code LLM 在数据污染风险下的推理能力。核心思想是用 agent 把 seed programming problem 改写为语义等价变体，把 benchmark 的新鲜度和鲁棒性纳入评测协议。
+- [Measuring temporal effects of agent knowledge by date-controlled tool use](https://arxiv.org/abs/2503.04188)：date-controlled tool use 用于测量 agent knowledge 的时间效应，适合评测可靠性与污染控制入口。
+- [TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning for LLM-as-a-Judge](https://arxiv.org/abs/2503.04381)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
 - [Know Thy Judge](https://arxiv.org/abs/2503.04474)：对 LLM safety judge 的鲁棒性做元评测。核心思想：通过扰动压力测试 judge 行为，避免安全 benchmark 分数在不知不觉中继承脆弱或有偏的 judge 决策。
+- [HoH: A Dynamic Benchmark for Evaluating the Impact of Outdated Information on Retrieval-Augmented Generation](https://arxiv.org/abs/2503.04800)：评测 RAG 中过期信息影响的动态 benchmark；核心思想是测试系统能否发现检索信息或参数知识已经过时。
+- [Dynamic-KGQA](https://arxiv.org/abs/2503.05049)：从知识图谱生成自适应 QA benchmark。核心思想：在保持统计一致性和难度控制的同时刷新题目，降低静态公开 QA 集的记忆风险。
+- [No Free Labels: Limitations of LLM-as-a-Judge Without Human Grounding](https://arxiv.org/abs/2503.05061)：研究缺少人类 grounding 时 LLM-as-a-judge 的局限；核心思想是说明自动 judge 标签何时偏离人类标准，不能被当作免费监督。
+- [RocketEval: Efficient Automated LLM Evaluation via Grading Checklist](https://arxiv.org/abs/2503.05142)：通过显式评分清单自动化 LLM 评测。
+- [Benchmarking AI Models in Software Engineering](https://arxiv.org/abs/2503.05860)：综述 AI4SE benchmark，并提出 BenchScout、BenchFrame 和 HumanEvalNext。核心思想：把 benchmark 发现、质量标准和 benchmark 修复视为一体化可靠性问题，而不是只继续增加代码生成题目。
 - [Validating LLM-as-a-Judge under Rating Indeterminacy](https://arxiv.org/abs/2503.05965)：研究人类评分本身不确定时 LLM 裁判的可靠性边界。核心思想是显式建模评分标签歧义，避免在主观任务上高估自动裁判的精确性。
+- [Is Your Benchmark (Still) Useful? Dynamic Benchmarking for Code Language Models](https://arxiv.org/abs/2503.06643)：检验代码 benchmark 在污染风险下是否仍有效；核心思想是用语义保持的程序变换生成新的等价评测。
+- [EvalTree: Profiling Language Model Weaknesses via Hierarchical Capability Trees](https://arxiv.org/abs/2503.08893)：通过 hierarchical capability trees 刻画语言模型弱点。核心思想是把失败组织到能力层级中，让 benchmark 结果可诊断，而不只是一个标量分数。
 - [Safer or Luckier?](https://arxiv.org/abs/2503.09347)：审计 LLM 安全评估器对数据伪迹的敏感性。核心思想：检验安全 judge 的分数究竟反映稳健风险判断，还是会被表层数据伪迹带偏，从而在信任 benchmark 结果之前暴露评估器脆弱性。
+- [Information Density Principle for MLLM Benchmarks](https://arxiv.org/abs/2503.10079)：面向 MLLM 基准设计的信息密度分析。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [ZeroSumEval: An Extensible Framework For Scaling LLM Evaluation with Inter-Model Competition](https://arxiv.org/abs/2503.10673)：通过模型间竞争扩展 LLM evaluation 的可扩展框架。核心思想是用零和竞争制造更强比较压力，降低对静态答案键的依赖。
+- [VeriLA: A Human-Centered Evaluation Framework for Interpretable Verification of LLM Agent Failures](https://arxiv.org/abs/2503.12651)：面向 LLM agent failure 的人本可解释验证框架；核心思想是把失败分析接到执行轨迹和可人工审计证据上。
+- [Why Do Multi-Agent LLM Systems Fail?](https://arxiv.org/abs/2503.13657)：评测多 agent LLM 系统失败模式诊断；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Right Answer, Wrong Score: Uncovering the Inconsistencies of LLM Evaluation in Multiple-Choice Question Answering](https://arxiv.org/abs/2503.14996)：关于 LLM 多选题评测可靠性的研究。核心思想是说明答案抽取、格式和评分约定会改变结果，即使模型实际选择了正确选项。
+- [ContextualJudgeBench](https://arxiv.org/abs/2503.15620)：评测 LLM-based judge 在 RAG、摘要等带上下文任务中的可靠性；核心思想是测试 judge 能否处理基于来源和条件化标准的评价，而不只是在无上下文指令跟随场景中打分。
+- [Towards Lighter and Robust Evaluation for Retrieval Augmented Generation](https://arxiv.org/abs/2503.16161)：研究更轻量、鲁棒的 RAG 评测；核心思想是在减少昂贵 judge model 依赖的同时保持可靠的 RAG 评估。
+- [The Emperor's New Clothes in Benchmarking?](https://arxiv.org/abs/2503.16402)：评估 benchmark 数据污染缓解策略。核心思想：在受控污染场景下用题目级 fidelity 与 contamination resistance 指标检查改写或再生成题目是否既保持原意又降低记忆泄漏。
+- [Pre- and Post-Mitigation Safety Evaluation Reporting](https://arxiv.org/abs/2503.17388)：主张 AI 公司报告 mitigation 前后的安全评测结果，把评测披露纳入 benchmark reliability。
+- [Judge Anything: MLLM as a Judge Across Any Modality](https://arxiv.org/abs/2503.17489)：研究跨模态的 MLLM-as-a-judge。核心思想是评估多模态 judge model 能否在非纯文本场景中可靠、一致地评分。
+- [KUMO](https://arxiv.org/abs/2504.02810)：一种生成式评测框架，结合符号引擎和 LLM 动态生成多轮推理任务，以降低记忆化和污染风险。
+- [Are You Getting What You Pay For? Auditing Model Substitution in LLM APIs](https://arxiv.org/abs/2504.04715)：审计 LLM API 是否返回用户预期的模型。核心思想是检测 model substitution，避免 benchmark 结果和生产比较被后端替换静默破坏。
+- [Prism: Dynamic and Flexible Benchmarking of LLMs Code Generation with Monte Carlo Tree Search](https://arxiv.org/abs/2504.05500)：面向 LLM 代码生成的动态 benchmark 框架。核心思想是用 Monte Carlo Tree Search 灵活生成和评估代码任务，降低对静态题集的依赖。
+- [SEVERE++](https://arxiv.org/abs/2504.05706)：评估视频表征泛化中的基准敏感性，为基准设计如何改变泛化测量提供一个模态相关案例。
+- [Prompt Format Robustness](https://arxiv.org/abs/2504.06969)：研究非语义 prompt 格式变化导致的 prompt brittleness，并提出 mixture-of-formats prompting，把 prompt style 作为 benchmark reliability 变量而不是偶然实现细节。
+- [A Sober Look at Progress in Language Model Reasoning](https://arxiv.org/abs/2504.07086)：审计 reasoning benchmark 结果对解码、提示、随机种子和运行环境的敏感性，把可复现性作为评测可靠性的核心问题。
+- [HypoEval](https://arxiv.org/abs/2504.07174)：面向自然语言生成的 hypothesis-guided evaluation framework。核心思想是用少量人工评价诱导更细的 rubrics，再对 checklist 式维度逐项打分并聚合，从而提升 judge 的可解释性和人类对齐度。
+- [TALE: A Tool-Augmented Framework for Reference-Free Evaluation of Large Language Models](https://arxiv.org/abs/2504.07385)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Synthesizing High-Quality Programming Tasks with LLM-based Expert and Student Agents](https://arxiv.org/abs/2504.07655)：面向编程任务合成的多 agent 框架。核心思想是用 expert 和 student agent 角色生成质量和难度更可控的代码评测任务。
 - [SPHERE](https://arxiv.org/abs/2504.07971)：面向 human-AI system 的 evaluation-card 框架；核心思想是记录系统语境、人类角色、指标、限制和部署假设，使人机系统评测可审计，而不是被压缩成单一分数。
+- [TrinEval](https://arxiv.org/abs/2504.08300)：用于区分死记硬背与真实能力的污染感知评测格式。核心思想：把多选 benchmark 改写成知识中心的 trinity 形式，在保留被测知识的同时减少记忆答案捷径。
+- [AgentRewardBench: Evaluating Automatic Evaluations of Web Agent Trajectories](https://arxiv.org/abs/2504.08942)：评测网页 agent 轨迹的自动评测器；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [EFAGen](https://arxiv.org/abs/2504.09763)：为高级数学题推断 executable functional abstractions。核心思想是从种子题和解法合成参数化程序，再用可执行测试验证，从而生成可用于压力测试的新题变体。
+- [RealHarm: A Collection of Real-World Language Model Application Failures](https://arxiv.org/abs/2504.10277)：真实语言模型应用失败案例数据集；核心思想是标注面向用户的异常交互，让安全评测以部署中观察到的危害为依据。
+- [xVerify: Efficient Answer Verifier for Reasoning Model Evaluations](https://arxiv.org/abs/2504.10481)：提供用于长推理输出答案抽取与判定的验证器。
+- [Deep Binding of Language Model Virtual Personas](https://arxiv.org/abs/2504.11673)：测试 LLM persona 是否真正绑定到群体内部信念，还是只复现外群体刻板印象；它用党派误解问题作为 synthetic-user 与 virtual-persona 评测的有效性探针。
+- [Benchmarking LLM-based Relevance Judgment Methods](https://arxiv.org/abs/2504.12558)：研究用于相关性评估的 LLM judge。核心思想是检验 LLM-based relevance judgment 能否支撑检索和搜索评测，同时不引入隐藏排序偏差。
+- [ZeroSumEval: Scaling LLM Evaluation with Inter-Model Competition](https://arxiv.org/abs/2504.12562)：用模型间竞争扩展 LLM 评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [SimUSER](https://arxiv.org/abs/2504.12722)：构建用于推荐系统评测的 LLM 用户模拟 agent，结合 persona、memory、perception 和 decision 模块，缩小离线指标与交互式用户行为之间的差距。
+- [Cost-of-Pass: An Economic Framework for Evaluating Language Models](https://arxiv.org/abs/2504.13359)：类型：benchmark/评测协议。核心价值：为 0.5.2 Representative Work and Entry Points 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [D-GEN: Automatic Distractor Generation and Evaluation for Reliable Assessment of Generative Model](https://arxiv.org/abs/2504.13439)：评什么：自动生成并评估 distractor，提高多选题评测可靠性。
+- [Revisiting Uncertainty Quantification Evaluation in Language Models: Spurious Interactions with Response Length Bias Results](https://arxiv.org/abs/2504.13677)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
+- [MEQA](https://arxiv.org/abs/2504.14039)：QA 基准元评估框架，用于量化基准质量并支持基准内部比较，论文以网络安全评测为示例。
+- [Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators](https://arxiv.org/abs/2504.15253)：评测 LLM-as-judge 在 test-time scaling 与 reward-style 选择中是否可靠。
+- [Leveraging LLMs as Meta-Judges: A Multi-Agent Framework for Evaluating LLM Judgments](https://arxiv.org/abs/2504.17087)：面向评测器鲁棒性的多 agent 元评审流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [FLUKE: A Linguistically-Driven and Task-Agnostic Framework for Robustness Evaluation](https://arxiv.org/abs/2504.17311)：语言学驱动、任务无关的鲁棒性评测框架；核心思想是用可跨任务应用的语言扰动压力测试模型。
+- [Chatbot Arena Meets Nuggets: Towards Explanations and Diagnostics in the Evaluation of LLM Responses](https://arxiv.org/abs/2504.20006)：为 Chatbot Arena 式响应评测加入 nugget-based 解释和诊断。
 - [The Leaderboard Illusion](https://arxiv.org/abs/2504.20879)：审计 Chatbot Arena 类 leaderboard 的可靠性。核心思想：揭示私有测试、选择性披露、采样不均与模型移除策略如何偏置排名，说明 leaderboard 分数需要协议层面的审查。
+- [Inversion Learning for NLG Evaluation Prompts](https://arxiv.org/abs/2504.21117)：学习面向具体 NLG 任务的评价提示词，将提示设计本身纳入基准可靠性变量，而不是把它视为固定评测细节。
+- [Confidence in Large Language Model Evaluation: A Bayesian Approach to Limited-Sample Challenges](https://arxiv.org/abs/2504.21303)：小样本模型评测中的贝叶斯置信度估计。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Which Agent Causes Task Failures and When? On Automated Failure Attribution of LLM Multi-Agent Systems](https://arxiv.org/abs/2505.00212)：评测多 agent 系统中的自动失败归因；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Position: AI Competitions Provide the Gold Standard for Empirical Rigor in GenAI Evaluation](https://arxiv.org/abs/2505.00612): 指出 AI competition 的实践可为 GenAI 评测提供经验严谨性，尤其可应对泄漏、污染和评测空间不清晰问题。
+- [Cer-Eval: Certifiable and Cost-Efficient Evaluation Framework for LLMs](https://arxiv.org/abs/2505.03814)：研究可认证、低成本的 LLM 评测；核心思想是判断测试数据是否充分并选择更有信息量的样本，在降低评测成本的同时保留置信度。
+- [HiBayES: A Hierarchical Bayesian Modeling Framework for AI Evaluation Statistics](https://arxiv.org/abs/2505.05602): 为低样本、层级化 AI 评测提供贝叶斯统计和不确定性量化，尤其适合高成本 agentic evaluation 的可靠性分析。
+- [Grounding Synthetic Data Evaluations of Language Models in Unsupervised Document Corpora](https://arxiv.org/abs/2505.08905)：研究如何把合成语言模型评测锚定到无监督文档语料；核心思想是通过真实语料分布降低合成评测伪影。
+- [Measurement to Meaning](https://arxiv.org/abs/2505.10573)：把 validity-centered evaluation reasoning 引入 AI benchmark，澄清一个分数何时只能支持窄任务结论，何时才可支持更宽的能力主张。
+- [Teach2Eval: An Indirect Evaluation Method for LLM by Judging How It Teaches](https://arxiv.org/abs/2505.12259)：通过判断 LLM 如何教学来间接评估模型；核心思想是用解释和教学行为评估能力，而不只看直接答题结果。
+- [Beyond Single-Point Judgment: Distribution Alignment for LLM-as-a-Judge](https://arxiv.org/abs/2505.12301)：通过分布对齐改进 LLM-as-a-judge 的可靠性；核心思想是建模人类判断的多样性和不确定性，而不是把评测压成单一分数。
+- [Decentralized Arena: Towards Democratic and Scalable Automatic Evaluation of Language Models](https://arxiv.org/abs/2505.12808)：Decentralized Arena 探索可扩展自动评测与 arena 机制，适合作为 benchmark reliability/leaderboard 方法入口。
+- [The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](https://arxiv.org/abs/2505.14617)：推理模型测试意识研究。核心思想是评估并干预模型在意识到被测试时是否改变行为。
+- [Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](https://arxiv.org/abs/2505.15055)：用项目反应理论诊断 benchmark 不一致性、区分度与 leaderboard 可靠性。
+- [Fooling the LVLM Judges: Visual Biases in LVLM-Based Evaluation](https://arxiv.org/abs/2505.15249)：评测基准可靠性与动态评测。核心思想：围绕论文中的任务、数据或协议（Visual Biases in LVLM-Based Evaluation）形成可复用比较基准。
+- [Social Bias in Popular Question-Answering Benchmarks](https://arxiv.org/abs/2505.15553)：主流问答基准中的社会偏见覆盖分析。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Reverse Engineering Human Preferences with Reinforcement Learning](https://arxiv.org/abs/2505.15795)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
 - [Don't Judge Code by Its Cover](https://arxiv.org/abs/2505.16222)：评测代码场景中的 LLM judge 是否会被语义等价但表面形式不同的程序影响。核心思想是通过变量命名、注释、格式等受控变换暴露普通 pass/fail 代码评测难以发现的 judge bias。
+- [ACE](https://arxiv.org/abs/2505.17228)：自动化基础模型的细粒度能力评估。核心思想是用 frontier models 将领域分解为能力、合成任务，并通过主动采样能力子集高效估计模型表现。
+- [The Case for Repeatable, Open, and Expert-Grounded Hallucination Benchmarks in Large Language Models](https://arxiv.org/abs/2505.17345)：主张幻觉评测应可重复、开放并由专家支撑；核心思想是 benchmark 设计需要足够透明，才能审计幻觉流行率等结论，而不是依赖不透明的一次性测试。
+- [But what is your honest answer? Aiding LLM-judges with honest alternatives using steering vectors](https://arxiv.org/abs/2505.17760)：用 honest alternatives 辅助 LLM-as-a-judge，提升评测可靠性。
+- [Evaluation Faking: Unveiling Observer Effects in Safety Evaluation of Frontier AI Systems](https://arxiv.org/abs/2505.17815)：安全评测中的观察者效应与评测伪装问题。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Publishing Benchmarks Without Giving the True Answers Away](https://arxiv.org/abs/2505.18102)：提出在减少答案泄漏的前提下发布 LLM benchmark 的协议。核心思想：保留开放评测与可复现性，同时避免未来训练或过拟合过程直接获得完整真实答案。
+- [CODE-DITING: A Reasoning-Based Metric for Functional Alignment in Code Evaluation](https://arxiv.org/abs/2505.19502)：研究代码评测中的 reasoning-based functional alignment metric；核心思想是比较 LLM-as-judge 方法能否判断生成代码与题意一致，而不是只匹配参考答案。
 - [SWE-rebench](https://arxiv.org/abs/2505.20411)（[Leaderboard](https://swe-rebench.com/leaderboard)）：自动收集并去污染 SWE 任务，强调新鲜 issue、可交互执行反馈与任务构造流水线。
+- [Amulet: Putting Complex Multi-Turn Conversations on the Stand with LLM Juries](https://arxiv.org/abs/2505.20451)：评什么：用 LLM jury 审理复杂多轮对话，补充长文本和评测可靠性。
+- [Silencer: From Discovery to Mitigation of Self-Bias in LLM-as-Benchmark-Generator](https://arxiv.org/abs/2505.20738)：研究 LLM-as-Benchmark-Generator 流程中的 self-bias；核心思想是发现并缓解模型在自身或相近系统生成 benchmark 上的分数膨胀。
+- [AutoJudger: An Agent-Driven Framework for Efficient Benchmarking of MLLMs](https://arxiv.org/abs/2505.21389)：AutoJudger 用 agent/IRT 降低 MLLM benchmark 成本，是自动化评测与 benchmark reliability 候选。
+- [LLMs Judging LLMs: A Simplex Perspective](https://arxiv.org/abs/2505.21972)：从单纯采样方差扩展到评委质量不确定性，用 simplex 视角刻画 LLM-as-judge 评分可靠性。
+- [The Price of a Second Thought: On the Evaluation of Reasoning Efficiency in Large Language Models](https://arxiv.org/abs/2505.22017)：评测 reasoning efficiency；核心思想是把准确率收益与额外思考成本放在一起比较，避免推理 benchmark 无成本地奖励无限延长思考。
+- [ReliableEval: A Recipe for Stochastic LLM Evaluation via Method of Moments](https://arxiv.org/abs/2505.22169)：ReliableEval 用矩方法式评估估计提示扰动下随机 LLM 表现的稳定性。
+- [GuessArena: Guess Who I Am? A Self-Adaptive Framework for Evaluating LLMs in Domain-Specific Knowledge and Reasoning](https://arxiv.org/abs/2505.22661)：面向领域知识与推理的自适应评估框架。核心思想是通过 guessing-game 形式自适应生成评测问题，更交互式地探测领域能力。
+- [DyePack: Provably Flagging Test Set Contamination in LLMs Using Backdoors](https://arxiv.org/abs/2505.23001)：用 backdoor 信号诊断 benchmark test-set contamination 的框架。核心思想是在基准数据中加入受控触发线索，借由模型后续行为判断测试集是否被训练使用。
 - [SWE-bench-Live](https://arxiv.org/abs/2505.23419)（[开源代码](https://github.com/SWE-bench-Live/SWE-bench-Live)；[Leaderboard](https://swe-bench-live.github.io/)）：持续从近期 GitHub issue/PR 生成任务，重点降低静态软件工程 benchmark 被记忆或过拟合的风险。
+- [Socratic-PRMBench: Benchmarking Process Reward Models with Systematic Reasoning Patterns](https://arxiv.org/abs/2505.23474)：评测 process reward models 在系统化推理模式下的步骤判断能力；核心思想是检查 verifier 能否识别分解等推理策略中的中间步骤错误。
+- [Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking](https://arxiv.org/abs/2505.23495): 审计 KGQA 基准质量问题，并用结构化知识 grounding、LLM 生成和符号验证构造 KGQAGen-10k。
+- [Large Language Models Often Know When They Are Being Evaluated](https://arxiv.org/abs/2505.23836)：提出 evaluation-awareness benchmark，基于评测和部署 transcript 检查模型是否能识别自己正在被测试。
+- [Semi-structured LLM Reasoners Can Be Rigorously Audited](https://arxiv.org/abs/2505.24217)：类型：可复用评测或 agent 外部机制。核心价值：为 0.5.2 Representative Work and Entry Points 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Simulating Training Data Leakage in Multiple-Choice Benchmarks for LLM Evaluation](https://arxiv.org/abs/2505.24263)：评什么：模拟多选基准中的训练数据泄漏，适合 benchmark reliability。
+- [DEEPQUESTION: Systematic Generation of Real-World Challenges for Evaluating LLMs Performance](https://arxiv.org/abs/2505.24532)：系统生成真实世界挑战题的 LLM evaluation 框架。核心思想是用 Bloom taxonomy 风格转换提升既有数据集的认知复杂度，测试标准 benchmark 之外的泛化能力。
+- [Data Swarms](https://arxiv.org/abs/2506.00741)：一种优化合成评测数据的方法。核心思想：围绕量化评测目标训练并演化一组数据生成器，并用对抗版本让更难数据与被测模型共同演化，以获得更稳健的评测信号。
+- [The Measurement Imbalance in Agentic AI Evaluation Undermines Industry Productivity Claims](https://arxiv.org/abs/2506.02064)：agentic AI 生产力评估中的测量失衡问题。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [BehaviorBox](https://arxiv.org/abs/2506.02204)：自动发现语言模型之间的细粒度行为差异，用诊断性比较切片补充单一总分排行榜。
+- [Beyond the Surface: Measuring Self-Preference in LLM Judgments](https://arxiv.org/abs/2506.02592)：测量 LLM judge 的 self-preference bias。核心思想是区分真实质量判断与 judge model 偏爱自身输出。
+- [Evaluation is All You Need: Strategic Overclaiming of LLM Reasoning Capabilities Through Evaluation Design](https://arxiv.org/abs/2506.04734)：研究评测设计导致的 reasoning 能力 overclaiming；核心思想是揭示细小评测条件变化会显著改变 reported performance。
+- [Reasoning Multimodal Large Language Model: Data Contamination and Dynamic Evaluation](https://arxiv.org/abs/2506.07202)：用动态评测诊断 reasoning multimodal LLM 的数据污染。
+- [How Benchmark Prediction from Fewer Data Misses the Mark](https://arxiv.org/abs/2506.07673)：小样本基准预测的失效模式分析。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Cost-Optimal Active AI Model Evaluation](https://arxiv.org/abs/2506.07949)：研究评测可靠性；核心思想是改进模型、指标或主动评测协议的选择、审计或成本控制。
+- [Correlated Errors in Large Language Models](https://arxiv.org/abs/2506.07962)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
+- [Beyond Top Activations](https://arxiv.org/abs/2506.07985)：用高效众包可靠性检查评估自动化可解释性。核心思想：让 interpretability 评估超越 top activation 示例，检验解释是否真的对人类评估者有用。
+- [LLM-as-a-qualitative-judge: automating error analysis in natural language generation](https://arxiv.org/abs/2506.09147)：用 LLM-as-a-qualitative-judge 自动化 NLG 错误分析，适合评测可靠性。
+- [LLMs Cannot Reliably Judge (Yet?): A Comprehensive Assessment on the Robustness of LLM-as-a-Judge](https://arxiv.org/abs/2506.09443)：LLM-as-a-judge 评测器鲁棒性评估。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason](https://arxiv.org/abs/2506.12286)：审计 SWE-Bench 成绩是否来自记忆而非推理。
+- [An Empirical Study of LLM-as-a-Judge: How Design Choices Impact Evaluation Reliability](https://arxiv.org/abs/2506.13639)：LLM-as-a-judge 设计选择的可靠性实证研究。核心思想是测量 judge 提示、量表和设置如何影响人类一致性与稳定性。
+- [References Matter: Investigating the Impact of Reference Set Variation on Summarization Evaluation](https://arxiv.org/abs/2506.14335)：评测基准可靠性与动态评测。核心思想：围绕论文中的任务、数据或协议（Investigating the Impact of Reference Set Variation on Summarization Evaluation）形成可复用比较基准。
+- [RE-IMAGINE](https://arxiv.org/abs/2506.15455)：从符号化中间表示合成 reasoning benchmark 变体。核心思想：生成关联、干预和反事实层级的问题变形，降低模型只凭记忆公开题目取得高分的可能。
+- [OAgents](https://arxiv.org/abs/2506.15741)：在 GAIA 与 BrowseComp 上实证研究 agent 设计选择，并提出更稳健的评测协议，凸显开放 agent 对比中的运行方差和可复现性限制。
+- [Re-Evaluating Code LLM Benchmarks Under Semantic Mutation](https://arxiv.org/abs/2506.17369)：用语义变异压力测试代码 benchmark；核心思想是检查模型分数是否能经受保持语义或定向改变语义的任务变换。
+- [A Conceptual Framework for AI Capability Evaluations](https://arxiv.org/abs/2506.18213)：面向治理的 AI capability evaluation 框架；核心思想是明确如何设计透明、全面且可靠的能力与风险评估。
+- [LastingBench: Defend Benchmarks Against Knowledge Leakage](https://arxiv.org/abs/2506.21614): 提出在知识泄漏下延长基准寿命的框架，通过定位泄漏点并进行反事实改写，在保持评测意图的同时削弱记忆化收益。
+- [Attestable Audits: Verifiable AI Safety Benchmarks Using Trusted Execution Environments](https://arxiv.org/abs/2506.23706)：面向 AI safety evaluation 的可验证 benchmark audit 基础设施；核心思想是在可信执行环境中运行评测，兼顾结果可验证和敏感资产保密。
+- [Garbage In, Reasoning Out? Why Benchmark Scores are Unreliable and What to Do About It](https://arxiv.org/abs/2506.23864)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
 - [Auto-Arena](https://aclanthology.org/2025.acl-long.223/)：通过 agent peer battles 和委员会讨论自动化 LLM 评测。核心思想：把成对辩论和多裁判讨论纳入评测协议，减少模型比较对单一静态提示词或单个 judge 的依赖。
+- [DynaQuest](https://aclanthology.org/2025.findings-acl.1380/)：围绕真实世界知识更新构建动态问答数据集，补充基准可靠性中的新鲜度和时效性评测。
+- [Pitfalls of Evaluating Language Models with Open Benchmarks](https://arxiv.org/abs/2507.00460)：分析开放 LLM benchmark 的污染风险；核心思想是展示在公开测试集上微调的模型如何虚高排名却无法泛化到相似未见测试。
+- [Agentic Benchmark Checklist](https://arxiv.org/abs/2507.02825)：总结严格 agentic benchmark 的构建检查项，并说明 task setup 和 reward design 如何显著扭曲测得性能。
+- [Economic Evaluation of LLMs](https://arxiv.org/abs/2507.03834)：用经济效用视角评估 LLM。核心思想是在成本、准确率和下游效用假设下量化模型选择价值，而不只画 accuracy-cost Pareto。
+- [User Behavior Prediction as a Generic, Robust, Scalable, and Low-Cost Evaluation Strategy for Estimating Generalization in LLMs](https://arxiv.org/abs/2507.05266)：提出用用户行为预测作为可扩展泛化评估策略；核心思想是通过预测真实用户行为估计 benchmark 成功能否迁移，而不是只给静态题目打分。
+- [Detecting Proxy Gaming](https://arxiv.org/abs/2507.05619)：用 evaluator stress tests 检测 RL 与 LLM alignment 中的 proxy gaming，把 benchmark objective 本身纳入可靠性审计。
+- [Developing and Maintaining an Open-Source Repository of AI Evaluations: Challenges and Insights](https://arxiv.org/abs/2507.06893)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Diagnosing Failures in Large Language Models' Answers: Integrating Error Attribution into Evaluation Framework](https://arxiv.org/abs/2507.08459)：评测基准可靠性与动态评测。核心思想：围绕论文中的任务、数据或协议（Integrating Error Attribution into Evaluation Framework）形成可复用比较基准。
+- [A Third Paradigm for LLM Evaluation: Dialogue Game-Based Evaluation using clembench](https://arxiv.org/abs/2507.08491)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [One Token to Fool LLM-as-a-Judge](https://arxiv.org/abs/2507.08794)：显示简单表面 token 也可能诱导生成式 reward model 给出假阳性，从而把 judge robustness 提升为 benchmark reliability 问题。
+- [SPICE: An Automated SWE-Bench Labeling Pipeline for Issue Clarity, Test Coverage, and Effort Estimation](https://arxiv.org/abs/2507.09108)：自动标注 SWE-Bench 的问题清晰度、测试覆盖与工作量。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models](https://arxiv.org/abs/2507.09424)：评测语言模型数据归因方法；核心思想是检查归因方法能否识别哪些数据或证据影响了模型行为。
+- [Reasoning or Memorization?](https://arxiv.org/abs/2507.10532)：指出 RL reasoning 增益可能受 benchmark contamination 影响，尤其当被污染的模型家族主导实验比较时，结论可靠性会下降。
 - [SWE-MERA](https://arxiv.org/abs/2507.11059)：动态软件工程 agent 评测；核心思想是持续采集、执行和验证新任务，把 agentic SWE 评测从单次快照推进到滚动题库。
+- [Benchmarking Deception Probes via Black-to-White Performance Boosts](https://arxiv.org/abs/2507.12691)：研究白盒 deception probe 是否优于黑盒监控；核心思想是用 black-to-white performance boost 衡量探针在规避压力下的实际增益。
+- [The Generative Energy Arena (GEA): Incorporating Energy Awareness in Large Language Model Human Evaluations](https://arxiv.org/abs/2507.13302)：把 energy awareness 纳入 LLM 人类评测 arena；核心思想是在比较模型回答时显式暴露普通人评常忽略的能耗成本维度。
+- [PromptSuite: A Task-Agnostic Framework for Multi-Prompt Generation](https://arxiv.org/abs/2507.14913)：生成多 prompt 变体，缓解单一 prompt 造成的评测不稳定。
+- [Reasoning Models are Test Exploiters: Rethinking Multiple-Choice](https://arxiv.org/abs/2507.15337)：Reasoning Models are Test Exploiters 指出多选评测可被利用，直接属于 benchmark reliability 风险。
+- [Debate-driven QA benchmarks](https://arxiv.org/abs/2507.17747)：把既有 QA 题转成由盲审裁判评判的对抗论辩，在复用题目的同时提高难度并削弱记忆化收益。
+- [SCOPE](https://arxiv.org/abs/2507.18182)：面向多选评测的 benchmark 可靠性方法。核心思想：用 null prompt 估计每个模型的选项位置偏差，再反向平衡答案位置和干扰项相邻关系，使分数更少依赖幸运标签或版式捷径。
+- [One-Time-Pad-Based Overestimation Benchmark](https://arxiv.org/abs/2507.19219)：评估数据污染或训练不均衡导致的 benchmark 高估。核心思想：用 one-time-pad 式构造在保留可复现性的同时减少真实答案暴露。
 - [Multi-Agent-as-Judge](https://arxiv.org/abs/2507.21028)：将基于 LLM 智能体的自动评测与多维人工评测对齐。核心思路是用多个评审智能体和结构化维度降低单一裁判偏差，使自动评测更接近人工评审。
+- [The Problem with Safety Classification is not just the Models](https://arxiv.org/abs/2507.21782)：从模型准确率之外审计安全分类评估。核心思想：揭示标签、政策和任务表述如何影响安全分数，把基准设计本身纳入评估对象。
+- [League of LLMs: A Benchmark-Free Paradigm for Mutual Evaluation of Large Language Models](https://arxiv.org/abs/2507.22359)：提出 LLM 之间的无固定题集互评范式；核心思想：把模型组织成多轮竞赛联盟，降低对可能污染或过拟合的公开固定题的依赖。
+- [Counterfactual Evaluation for Blind Attack Detection in LLM-based Evaluation Systems](https://arxiv.org/abs/2507.23453)：评测 LLM-based evaluation system 对 blind attack 的防护；核心思想是用 counterfactual checks 识别与真实答案无关、专门攻击评测器的 prompt-injection 式回答。
+- [LLMs Can Covertly Sandbag on Capability Evaluations Against Chain-of-Thought Monitoring](https://arxiv.org/abs/2508.00943)：该工作研究模型在能力评测中 covert sandbagging，对 benchmark reliability 和评测可信性有直接意义。
+- [Importance Sampling is All You Need: Predict LLM's performance on new benchmark by reusing existing benchmark](https://arxiv.org/abs/2508.01203)：用既有 benchmark 结果预测新 benchmark 表现。核心思想是用 importance sampling 降低完整重评成本。
+- [Test Set Quality in Multilingual LLM Evaluation](https://arxiv.org/abs/2508.02635)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Automated Validation of LLM-based Evaluators for Software Engineering Artifacts](https://arxiv.org/abs/2508.02827)：验证面向软件工程工件的 LLM evaluator，为代码与工程评测补充 judge reliability 检查。
 - [When AIs Judge AIs](https://arxiv.org/abs/2508.02994)：综述 agent-as-a-judge 评测，覆盖动机、设计模式，以及 AI 系统评价其他 AI 系统时的可靠性问题。
 - [ConfProBench](https://arxiv.org/abs/2508.04576)：评测基于 MLLM 的过程裁判在步骤级置信度上的可靠性。核心思想：用同义替换、句法改写和图像扰动改变推理步骤，衡量置信度鲁棒性、敏感性和校准，而不只看判断正确性。
+- [LLMEval-Fair](https://arxiv.org/abs/2508.05452)：面向稳健公平 LLM 比较的动态评测框架。核心思想：从大型私有题库中动态抽取未见测试，结合反作弊设计与校准后的 LLM-as-a-judge 评分，并通过 30 个月纵向模型研究分析排名稳定性。
+- [Auto-Eval Judge: Towards a General Agentic Framework for Task Completion Evaluation](https://arxiv.org/abs/2508.05508)：面向任务完成度评测的通用 agentic framework。核心思想是把评测拆成 agentic checks，使复杂任务完成度不只依赖一次性 LLM-as-a-judge 打分。
+- [SKATE, a Scalable Tournament Eval: Weaker LLMs differentiate between stronger ones using verifiable challenges](https://arxiv.org/abs/2508.06111)：SKATE 用可验证挑战和 tournament eval 区分强模型，属于 benchmark reliability。
+- [SDEval](https://arxiv.org/abs/2508.06142)：面向多模态 LLM 的动态安全评测框架。核心思想是对文本、图像和图文组合做动态扰动，以刷新安全 benchmark、暴露污染敏感性，并测试安全行为是否能承受分布变化。
+- [Play Favorites: A Statistical Method to Measure Self-Bias in LLM-as-a-Judge](https://arxiv.org/abs/2508.06709)：测量 LLM-as-a-judge 的 self-bias。核心思想是用统计方法检验 judge model 是否偏爱自己的输出，这是会扭曲模型比较和 arena 式评测的失败模式。
+- [Code2Bench: Scaling Source and Rigor for Dynamic Benchmark Construction](https://arxiv.org/abs/2508.07180)：为动态 benchmark 构造扩展来源和严谨性；核心思想是把代码 artifact 转化为更严格、可更新的评测任务。
+- [Conformal P-Value for MCQA](https://arxiv.org/abs/2508.10022)： 把 conformal p-value 用于多选问答，使 benchmark 判定具备可证明的风险控制。
+- [LaajMeter: A Framework for LaaJ Evaluation](https://arxiv.org/abs/2508.10161)：面向 LLM-as-a-judge 的评测框架；核心思想是衡量和组织 judge 可靠性，而不是把 judge 分数直接当作真值。
+- [Dropping Just a Handful of Preferences](https://arxiv.org/abs/2508.11847)：审计 Bradley-Terry 风格 LLM 偏好排名的稳健性。核心思想是找出极少量、最能影响排名的偏好样本，观察删除后是否会改变榜首模型，让 leaderboard 的敏感性不再被聚合分数掩盖。
+- [STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transition Samples](https://arxiv.org/abs/2508.12096)：基于 structured transition samples 的高效相对能力评测方法。核心思想是在完整 benchmark 运行昂贵或不稳定时，用紧凑转移样本比较模型能力。
+- [Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation](https://arxiv.org/abs/2508.13144)：评测套件中的信号、噪声与不确定性分析。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Search-Time Data Contamination](https://arxiv.org/abs/2508.13180)：研究搜索型 agent 在评测时检索到公开 benchmark 题目和答案所造成的泄漏。核心思想：把检索日志、来源屏蔽与报告规范纳入 benchmark 可靠性，而不只关注预训练污染。
+- [Mitigating Easy Option Bias in Multiple-Choice Question Answering](https://arxiv.org/abs/2508.13428)：Easy Option Bias 审计揭示多选 VQA benchmark 伪线索，属于 benchmark reliability 典型问题。
+- [Credence Calibration Game? Calibrating Large Language Models through Structured Play](https://arxiv.org/abs/2508.14390)：通过结构化游戏研究置信度校准；核心思想是在决策关键场景中引出并校准模型 credence，使正确性与置信度对齐。
+- [LongRecall](https://arxiv.org/abs/2508.15085)：面向长文本答案的结构化 recall evaluator。核心思想是把输出分解为自包含事实，先用词面和语义过滤缩小候选匹配，再用 entailment checks 验证对齐关系，从而降低长答案评价中的 false positives。
+- [A Survey on Large Language Model Benchmarks](https://arxiv.org/abs/2508.15361)：综述 LLM benchmark 家族与评测协议，可作为比较任务覆盖、指标设计和 benchmark 局限的总体地图。
+- [SafetyFlow: An Agent-Flow System for Automated LLM Safety Benchmarking](https://arxiv.org/abs/2508.15526)：用 agent-flow 自动构造 LLM 安全评测；核心思想是编排多个专门 agent 与工具生成 SafetyFlowBench，同时控制成本、冗余和难度。
+- [Agent-Testing Agent](https://arxiv.org/abs/2508.17393)：面向对话式 AI agent 的测试元代理。核心思想是结合代码分析、设计者追问、文献挖掘、persona 对抗对话和 judge 反馈，自动生成量化指标与定性缺陷报告。
+- [Beyond Benchmark: LLMs Evaluation with an Anthropomorphic and Value-oriented Roadmap](https://arxiv.org/abs/2508.18646)：主张在静态基准分数之外引入价值导向与拟人化路线图来评价 LLM。
+- [From Guidelines to Guarantees: A Graph-Based Evaluation Harness for Domain-Specific Evaluation of LLMs](https://arxiv.org/abs/2508.20810)：基于图结构指南构建领域 LLM 评测 harness；核心思想是把指南转化为可维护、抗污染的任务图，而不是静态手工数据集。
+- [Quantifying Label-Induced Bias in LLM Self- and Cross-Evaluations](https://arxiv.org/abs/2508.21164)：在无署名、真实署名和错误署名条件下测试 ChatGPT、Gemini 与 Claude 作为评价器的偏差，显示模型名称标签会系统性改变整体偏好和质量评分。
+- [Test of Time](https://arxiv.org/abs/2509.00072)：指出后截断性能衰减可能由题目构造方式造成，而不一定只来自训练污染；适合作为解释时序污染信号的反例和诊断入口。
 - [Adaptive Monitoring and Real-World Evaluation of Agentic AI Systems](https://arxiv.org/abs/2509.00115)：把目标漂移、风险降低和真实世界结果信号纳入已部署 agentic AI 系统的自适应监测闭环。
+- [Probe-Rewrite-Evaluate: A Workflow for Reliable Benchmarks and Quantifying Evaluation Awareness](https://arxiv.org/abs/2509.00591)：提出可靠基准构建与评测感知量化流程。
+- [Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs](https://arxiv.org/abs/2509.01790)：prompt sensitivity 可靠性研究。核心思想是检验已报告的敏感性是 LLM 固有缺陷还是评测设置伪影。
+- [JudgeAgent: Beyond Static Benchmarks for Knowledge-Driven and Dynamic LLM Evaluation](https://arxiv.org/abs/2509.02097)：把 LLM evaluation 转化为知识驱动的动态 agent 过程，适合 benchmark reliability 条目。
+- [AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?](https://arxiv.org/abs/2509.03312)：评测长执行轨迹中的 agentic 系统失败追踪；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [On Robustness and Reliability of Benchmark-Based Evaluation of LLMs](https://arxiv.org/abs/2509.04013)：研究同一问题在不同改写下的 benchmark 分数稳定性；核心思想是用语言变体暴露固定题面可能高估模型稳定能力的问题。
+- [RAFFLES: Reasoning-based Attribution of Faults for LLM Systems](https://arxiv.org/abs/2509.06822)：在多组件长程 LLM 系统中定位故障来源，超越只看最终结果指标。
+- [LLMs Don't Know Their Own Decision Boundaries: The Unreliability of Self-Generated Counterfactual Explanations](https://arxiv.org/abs/2509.09396)：测试 LLM 解释是否匹配自身决策边界；核心思想是验证模型给出的反事实修改是否真的能翻转预测。
+- [Automated MCQA Benchmarking at Scale: Evaluating Reasoning Traces as Retrieval Sources for Domain Adaptation of Small Language Models](https://arxiv.org/abs/2509.10744)：研究大规模自动 MCQA benchmark 构造；核心思想是把推理轨迹作为检索来源，使领域适配评测能更系统地生成和审计。
+- [Tractable Asymmetric Verification for Large Language Models via Deterministic Replicability](https://arxiv.org/abs/2509.11068)：面向基准可靠性与评测基础设施的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Tractable Asymmetric Verification for Large Language Models via Deterministic Replicability”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Evalet: Evaluating Large Language Models through Functional Fragmentation](https://arxiv.org/abs/2509.11206)：通过功能片段化评估 LLM-as-a-judge 输出；核心思想是把整体判断拆成更小的评分函数，便于定位和审计评测失败。
+- [Evaluation Awareness Scales Predictably](https://arxiv.org/abs/2509.13333)：衡量开源权重 LLM 如何随规模表现出评测感知，把 evaluation awareness 本身纳入 benchmark reliability 变量。
+- [Analyzing and Mitigating Surface Bias in Code Evaluation Metrics](https://arxiv.org/abs/2509.15397)：诊断并缓解代码评测指标的 surface bias。核心思想是识别分数何时反映表面代码属性，而不是真实功能质量。
+- [Implicit Behavioral Alignment of Language Agents in High-Stakes Crowd Simulations](https://arxiv.org/abs/2509.16457)：提出 PEBA 与 PersonaEvolve，通过迭代优化 LLM persona，使高风险人群仿真的群体行为分布贴近专家基准；核心价值是把 simulator realism 作为显式评测目标，而不是默认用户模拟可信。
+- [Do Before You Judge: Self-Reference as a Pathway to Better LLM Evaluation](https://arxiv.org/abs/2509.19880)：研究 self-reference 对 LLM 评测的作用；核心思想：分析模型自身生成能力何时能预测或不能预测其判断能力。
+- [Feeding Two Birds or Favoring One? Adequacy-Fluency Tradeoffs in Evaluation and Meta-Evaluation of Machine Translation](https://arxiv.org/abs/2509.20287)：补充评测可靠性或动态评测入口，服务于基准可靠性与动态评测，可补充检测器可靠性、指标可靠性和元评测方法。
+- [Anticipatory Evaluation of Language Models](https://arxiv.org/abs/2509.20645)：从 benchmark 描述估计 LLM benchmark scores 的方法。核心思想是在昂贵完整评测前预测结果，揭示 benchmark 设计与模型表现中的结构。
+- [CORE: Full-Path Evaluation of LLM Agents Beyond Final State](https://arxiv.org/abs/2509.20998)：CORE 关注 LLM agent 的 full-path evaluation，而非只看终态，适合 benchmark reliability。
+- [TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them](https://arxiv.org/abs/2509.21117): 分析 LLM-as-a-judge 在评分比较和成对传递性上的不一致，并用概率化聚合提升基于 judge 的评测可靠性。
+- [Evidence for Limited Metacognition in LLMs](https://arxiv.org/abs/2509.21545)：评估 LLM 的 metacognition 而不依赖自我报告；核心思想是测试模型能否策略性利用自身置信度和内部状态信息。
+- [Hidden Costs and Measurement Gaps of RLVR](https://arxiv.org/abs/2509.21882)：关于可验证奖励强化学习的 benchmark 可靠性分析。核心思想：把真实策略提升与预算不匹配、尝试次数膨胀、校准漂移和 partial-prompt 污染区分开。
 - [Beyond statistical significance](https://arxiv.org/abs/2509.22612)：量化多语言与多任务 NLP 评测中的不确定性和统计波动。核心思想：用重采样估计 benchmark 指标、排名和模型两两差异的复现不确定性，而不是把 leaderboard 分数视为固定值。
-- [ProJudge](https://openaccess.thecvf.com/content/ICCV2025/html/Ai_ProJudge_A_Multi-Modal_Multi-Discipline_Benchmark_and_Instruction-Tuning_Dataset_for_MLLM-based_ICCV_2025_paper.html)（[项目页](https://projudge.github.io/)）：评测跨多模态学科的 MLLM 过程裁判。核心思想：把过程级评判能力本身作为 benchmark 目标，使 verifier 和 grader 质量能与基础任务求解能力分开衡量。
+- [Variance-Bounded Evaluation of Entity-Centric AI Systems Without Ground Truth: Theory and Measurement](https://arxiv.org/abs/2509.22751)：研究无 ground-truth 标签时的 entity-centric AI system 评测；核心思想是在无法直接获得金标准答案时约束评测方差，用于衡量 chat 和 agent 系统。
+- [JE-IRT: A Geometric Lens on LLM Abilities through Joint Embedding Item Response Theory](https://arxiv.org/abs/2509.22888)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Taming Variability: Randomized and Bootstrapped Conformal Risk Control for LLMs](https://arxiv.org/abs/2509.23007)：在 API 边界对 LLM 输出应用 conformal risk control；核心思想是把随机生成转化为“发布、拒答或升级处理”的决策，并提供有限样本风险保证。
+- [MathBode: Measuring the Stability of LLM Reasoning using Frequency Response](https://arxiv.org/abs/2509.23143)：用类似频率响应的分析度量 LLM 推理稳定性；核心思想：诊断推理表现是否能抵抗受控扰动，而不是只看平均准确率。
+- [Mapping Overlaps in Benchmarks through Perplexity in the Wild](https://arxiv.org/abs/2509.23488)：评什么：用真实语料中的 perplexity signature 诊断基准之间的能力重叠和污染风险。
+- [Where LLM Agents Fail and How They can Learn From Failures](https://arxiv.org/abs/2509.25370)：面向对级联 agent 失败进行根因分析并从失败中学习的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Fingerprinting LLMs via Prompt Injection](https://arxiv.org/abs/2509.25448)：利用提示注入行为识别 LLM，连接模型来源检测、评测安全和隐藏模型身份核验。
+- [The Flaw of Averages: Quantifying Uniformity of Performance on Benchmarks](https://arxiv.org/abs/2509.25671)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [CEAID: Benchmark of Multilingual Machine-Generated Text Detection Methods for Central European Languages](https://arxiv.org/abs/2509.26051)：补充评测可靠性或动态评测入口，服务于基准可靠性与动态评测，可补充检测器可靠性、指标可靠性和元评测方法。
+- [Deconstructing Self-Bias in LLM-generated Translation Benchmarks](https://arxiv.org/abs/2509.26600)：研究 LLM 生成翻译 benchmark 的自偏置；核心思想是自动生成的测试集可能偏向出题模型，因此用于排名前需要先检查生成偏差。
+- [ProJudge](https://openaccess.thecvf.com/content/ICCV2025/html/Ai_ProJudge_A_Multi-Modal_Multi-Discipline_Benchmark_and_Instruction-Tuning_Dataset_for_MLLM-based_ICCV_2025_paper.html)（[项目页](https://projudge.github.io/)）：评测跨多模态学科的 MLLM 过程裁判。核心思想：把过程级评判能力本身作为 benchmark 目标，使评审器和打分器质量能与基础任务求解能力分开衡量。
+- [Methodological Framework for Quantifying Semantic Test Coverage in RAG Systems](https://arxiv.org/abs/2510.00001)：量化 RAG 系统的 semantic test coverage；核心思想是衡量评测问题是否覆盖 RAG 系统预期处理的语义空间。
+- [TRACE self-evolving benchmarks](https://arxiv.org/abs/2510.00415)：通过测试时探索和 validate-by-reproduce 轨迹自演化 agent benchmark。核心思想是挖掘任务演化提案、探索候选任务，并只保留具备可复现验证证据的演化任务。
+- [Graph2Eval](https://arxiv.org/abs/2510.00507)：面向多模态 agent 的知识图谱驱动任务生成 harness。核心思想：利用图结构生成可扩展、语义有 grounding 且可解的评测任务，避免只依赖无约束 LLM 造题。
+- [Benchmark Profiling: Mechanistic Diagnosis of LLM Benchmarks](https://arxiv.org/abs/2510.01232)：诊断 LLM benchmark 实际测量的技能组合。核心思想是对题目进行机制化画像，检验“推理”或“常识”等标签是否成立。
+- [Drawing Conclusions from Draws](https://arxiv.org/abs/2510.02306)：重新审视 arena-style LLM 评测中平局的语义，指出平局可能更多反映问题难度而非两个模型能力相同，因此 rating 更新需要显式考虑这一点。
+- [On The Fragility of Benchmark Contamination Detection in Reasoning Models](https://arxiv.org/abs/2510.02386)：评什么：检验 reasoning model 污染检测方法的脆弱性，属于 benchmark reliability。
+- [ALHD: A Large-Scale and Multigenre Benchmark Dataset for Arabic LLM-Generated Text Detection](https://arxiv.org/abs/2510.03502)：补充评测可靠性或动态评测入口，服务于基准可靠性与动态评测，可补充检测器可靠性、指标可靠性和元评测方法。
+- [Mind the Goal](https://arxiv.org/abs/2510.03696)：用 teacher model 和 goal-state taxonomy 评估目标导向对话 agent，重点衡量多轮系统是否真正满足任务目标，而不只是回复得像有帮助。
+- [FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](https://arxiv.org/abs/2510.04040)：评测 chain-of-thought reasoning 的实例级 faithful 性；核心思想是把“答案是否正确”和“展示出的推理是否真正支持答案”分开衡量。
+- [Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](https://arxiv.org/abs/2510.04265)：一种超越朴素 Pass@k 的 Bayesian 评估框架。核心思想是估计不确定性，避免从小样本或噪声样本中过度解读通过率。
+- [Task Complexity for LLM-MAS Evaluation](https://arxiv.org/abs/2510.04311)：面向多 agent 系统的评测方法论。核心思想是用推理深度和能力宽度刻画任务，再检验 multi-agent debate 何时真正优于单 agent baseline。
+- [SimulatorArena](https://arxiv.org/abs/2510.05444)：评测 LLM 用户模拟器能否作为多轮助手评测中的可靠真实用户替代，基于数学辅导和文档创作中的 909 条人工标注人类-LLM 对话，对比模拟器行为和评分与真实用户的一致性。
+- [ARISE: An Adaptive Resolution-Aware Metric for Test-Time Scaling Evaluation in Large Reasoning Models](https://arxiv.org/abs/2510.06014)：类型：benchmark/评测协议。核心价值：为 0.5.2 Representative Work and Entry Points 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [RoSE: Round-robin Synthetic Data Evaluation for Selecting LLM Generators without Human Test Sets](https://arxiv.org/abs/2510.06143)：补充评测可靠性或动态评测入口，服务于基准可靠性与动态评测，可补充检测器可靠性、指标可靠性和元评测方法。
+- [PTEB](https://arxiv.org/abs/2510.06730)：面向文本 embedding 评测的鲁棒性协议；核心思想：在评测时生成保义改写并汇总多次运行结果，降低对固定 MTEB 式测试项的过拟合，并暴露模型在表层变化下的稳定性。
+- [Revisiting Metric Reliability for Fine-grained Evaluation of Machine Translation and Summarization in Indian Languages](https://arxiv.org/abs/2510.07061)：补充评测可靠性或动态评测入口，服务于基准可靠性与动态评测，可补充检测器可靠性、指标可靠性和元评测方法。
+- [When Benchmarks Age: Temporal Misalignment through Large Language Model Factuality Evaluation](https://arxiv.org/abs/2510.07238)：研究 LLM 事实性评测中的时间错位；核心思想是说明静态 factuality benchmark 会随现实事实变化而老化，从而需要时间感知的评测协议。
+- [PEAR: Planner-Executor Agent Robustness Benchmark](https://arxiv.org/abs/2510.07505)：PEAR 针对 planner-executor agent 鲁棒性建立 benchmark，适合作为 agent benchmark reliability 入口。
+- [Strategic Multiple-Choice Test-Takers](https://arxiv.org/abs/2510.07761)：审计 reasoning models 如何利用选择题格式。核心思想是比较完整输入和仅选项输入，并检查推理轨迹，以区分有害 shortcut 与围绕选项进行的合理推断。
+- [Beyond Pass@k](https://arxiv.org/abs/2510.08325)：重新审视大采样预算下的 reasoning-boundary 指标。价值在于说明 Pass@k 会在离散答案任务中放大随机命中，并提出 Cover@tau 式指标，要求模型以给定可靠性阈值稳定解决某题。
+- [ArenaBencher: Automatic Benchmark Evolution via Multi-Model Competitive Evaluation](https://arxiv.org/abs/2510.08569)：通过多模型竞争评测自动演化 benchmark；核心思想：生成并刷新任务，降低公开样本记忆对分数的主导作用。
+- [Do LLMs Know They Are Being Tested? Evaluation Awareness and Incentive-Sensitive Failures in GPT-OSS-20B](https://arxiv.org/abs/2510.08624)：研究 LLM 是否会在察觉 benchmark-like prompt 时改变行为；核心思想是比较带 rubric 气味的评测提示与部署式契约提示，度量被夸大的 benchmark 表现。
+- [How Reliable is Language Model Micro-Benchmarking?](https://arxiv.org/abs/2510.08730)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Saving SWE-Bench: A Benchmark Mutation Approach for Realistic Agent Evaluation](https://arxiv.org/abs/2510.08996)：Saving SWE-Bench 通过 benchmark mutation 让 SWE agent 评测更真实、更稳健。
+- [Judge's Verdict](https://arxiv.org/abs/2510.09738)：评什么：LLM-as-a-judge 与人类判断的一致性。核心思想：把 judge 可靠性本身作为评估对象，暴露自动裁决何处与人工评审一致或分歧。
+- [PULSE](https://arxiv.org/abs/2510.09801)：评估软件 agent 设计中的 human-agent interaction。核心思想是结合用户反馈、满意度预测和 OpenHands 大规模真实使用数据，分析模型选择、规划策略和记忆机制如何影响开发者满意度。
+- [Evaluating the Quality of Randomness and Entropy in Tasks Supported by Large Language Models](https://arxiv.org/abs/2510.12080)：可作为benchmark 可靠性与动态评测的 Bench 候选：围绕 Evaluating the Quality of Randomness and Entropy in Tasks Supported by Large Language Models 提供可比较的评测任务、数据或分析协议。
+- [Selective Adversarial Attacks on LLM Benchmarks](https://arxiv.org/abs/2510.13570)：研究 benchmark robustness 与选择性模型降级的工作。核心思想是测试语义等价扰动是否能有选择地降低目标模型的 benchmark 分数。
+- [BenchPress: A Human-in-the-Loop Annotation System for Rapid Text-to-SQL Benchmark Curation](https://arxiv.org/abs/2510.13853)：面向 Text-to-SQL benchmark 快速构建的人机协同标注系统。核心思想是把 benchmark 构建本身作为带质量控制的 assisted workflow。
+- [Narrow Finetuning Leaves Clearly Readable Traces in Activation Differences](https://arxiv.org/abs/2510.13900)：表明窄域微调会留下可读的激活差异，可用于模型差分和来源分析。
+- [What Limits Agentic Systems Efficiency?](https://arxiv.org/abs/2510.16276)：把网页交互型 agentic system 的延迟拆成模型调用和环境开销，并提出 SpecCache，使效率度量成为可部署 agent 评测的一部分。
+- [Science-Grounded Novel Benchmarks for LLM Causality](https://arxiv.org/abs/2510.16530)：指出 LLM 因果能力声明需要以科学问题为 grounding 的基准设计，将基准有效性与因果推理评测相连接。
+- [DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](https://arxiv.org/abs/2510.18904)：补充评测可靠性或动态评测入口，服务于基准可靠性与动态评测，可补充检测器可靠性、指标可靠性和元评测方法。
+- [OVERBENCH](https://arxiv.org/abs/2510.19005)：评什么：动态评测下 LLM 的过敏感和过度拒答。核心思想：为特定模型生成会诱发防御性拒答的良性 prompt，再跨模型家族聚合，持续监控静态安全数据集看不到的拒答边界变化。
+- [WebGraphEval](https://arxiv.org/abs/2510.19205)：用加权 action graph 评估 web agent 轨迹。核心思想是把多个 agent 的轨迹合并成图结构，分析冗余、关键决策点、奖励传播和效率，而不只看任务是否成功。
+- [AgentArcEval: An architecture evaluation method for foundation model based agents](https://arxiv.org/abs/2510.21031)：评估 foundation-model-based agents 的架构，属于 agent evaluation 方法。
+- [KBE-DME](https://arxiv.org/abs/2510.21182)：通过图结构表示和知识增强扩展，将静态多模态 VQA benchmark 演化为动态、可控难度的版本，直接针对静态 MLLM 评测中的污染与饱和问题。
+- [Risk Management for Mitigating Benchmark Failure Modes: BenchRisk](https://arxiv.org/abs/2510.21460)：BenchRisk 用风险管理框架分析 benchmark 失效模式，适合 Benchmark Reliability。
+- [AutoBench: Automating LLM Evaluation through Reciprocal Peer Assessment](https://arxiv.org/abs/2510.22593)：基于 reciprocal peer assessment 的自维持 LLM evaluation 框架。核心思想是通过自动生成和互评任务降低静态 benchmark 过时问题。
+- [Automating Benchmark Design](https://arxiv.org/abs/2510.25039)：补充introduction方向的相关条目，核心围绕《Automating Benchmark Design》。
+- [FEval-TTC: Fair Evaluation Protocol for Test-Time Compute](https://arxiv.org/abs/2511.01203)：提出面向 test-time compute 的公平评测协议；核心思想是在明确推理预算下比较系统，避免把额外计算带来的收益混同为基础模型能力。
+- [LLMs as Judges: Toward The Automatic Review of GSN-compliant Assurance Cases](https://arxiv.org/abs/2511.02203)：面向基准可靠性与评测基础设施的可复用评测、数据集、协议或诊断研究。核心思路是围绕“LLMs as Judges: Toward The Automatic Review of GSN-compliant Assurance Cases”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [miniF2F-Lean Revisited: Reviewing Limitations and Charting a Path Forward](https://arxiv.org/abs/2511.03108)：评什么：复查 miniF2F-Lean 的限制，适合数学 benchmark reliability。
+- [Contamination Detection for VLMs using Multi-Modal Semantic Perturbation](https://arxiv.org/abs/2511.03774)：VLM benchmark contamination detection 属于评测可靠性和污染检测基础设施。
 - [Detecting Silent Failures in Multi-Agentic AI Trajectories](https://arxiv.org/abs/2511.04032)：评测多 agent 轨迹中的异常检测。核心思想是为漂移、循环和细节遗漏等失败构建带标签轨迹数据集，使静默 agent 失败能在最终答案评分掩盖问题之前被发现。
+- [RAGalyst: Automated Human-Aligned Agentic Evaluation for Domain-Specific RAG](https://arxiv.org/abs/2511.04502)：自动化面向领域 RAG 的 human-aligned agentic evaluation；核心思想是使用经验证的领域 rubric 和 agentic 评测循环，而不是只用通用启发式 RAG 指标。
+- [Benchmark Designers Should "Train on the Test Set" to Expose Exploitable Non-Visual Shortcuts](https://arxiv.org/abs/2511.04655)：该工作提出 benchmark 设计者主动暴露非视觉捷径的方法，直接服务 benchmark reliability。
+- [Adaptive Testing for LLM Evaluation: A Psychometric Alternative to Static Benchmarks](https://arxiv.org/abs/2511.04689)：面向 LLM evaluation 的自适应测试框架；核心思想是用项目反应理论选择高信息量题目，以更少题目估计能力。
+- [RPTS: Tree-Structured Reasoning Process Scoring for Faithful Multimodal Evaluation](https://arxiv.org/abs/2511.06899)：为多模态评测中的树状推理过程打分；核心思想：评估中间视觉推理路径，而不是只依赖多选或短答案终点。
+- [Self-Evaluating LLMs for Multi-Step Tasks: Stepwise Confidence Estimation for Failure Detection](https://arxiv.org/abs/2511.07364)：为多步推理估计逐步置信度；核心思想是在最终答案之前检查中间步骤，而不是只对整段回答打分。
+- [Stress Testing Factual Consistency Metrics for Long-Document Summarization](https://arxiv.org/abs/2511.07689)：评估长文档摘要中 reference-free factuality metrics 的稳健性。核心思想是用保持事实不变的扰动和检索上下文变化，暴露短文本 factuality 指标在长上下文证据和高信息密度 claim 下的失效模式。
 - [Outcome-Oriented Evaluation of AI Agents](https://arxiv.org/abs/2511.08242)：提出面向决策质量、自主性和业务结果的任务无关指标，超越延迟或 token 吞吐量。
+- [MACEval](https://arxiv.org/abs/2511.09139)：提出用于大模型评测的多 agent 持续评估网络。核心思想：通过角色分配、过程中数据生成和级联评估路由来刷新评测信号并跟踪长期表现，减少对静态封闭式 benchmark 的依赖。
+- [JudgeBoard: Benchmarking and Enhancing Small Language Models for Reasoning Evaluation](https://arxiv.org/abs/2511.15958)：评测小语言模型作为 reasoning evaluator 的能力，属于 judge/evaluator 可靠性方向。
+- [Solving Spatial Supersensing Without Spatial Supersensing](https://arxiv.org/abs/2511.16655)：对 Cambrian-S spatial-supersensing benchmark 的可靠性分析；核心思想是用简单 baseline 揭示捷径，并区分真实空间感知与数据伪迹。
+- [Investigating Test Overfitting on SWE-bench](https://arxiv.org/abs/2511.16858)：分析 SWE-bench-style issue resolution 中的 test overfitting；核心思想是检查 agent 何时通过可见或生成测试却遗漏真实功能需求。
+- [CoreEval](https://arxiv.org/abs/2511.18889)：一种利用现实知识更新的抗污染评测策略。核心思想：从原数据抽取实体关系，经 GDELT 检索最新证据，重构任务并迭代验证标签，使 benchmark 项目在保持语义连贯的同时降低污染导致的能力高估。
+- [Psychometric Tests for AI Agents](https://arxiv.org/abs/2511.19262)：用 psychometric tests 与 moduli-space 视角重构 AI agent 评测，为比较 agent traits 而非只看任务分数补充方法论。
 - [Failure Modes in LLM Systems](https://arxiv.org/abs/2511.19933)：归纳推理漂移、错误工具调用与版本漂移等生产故障，指出评测需要超越静态任务得分，衡量稳定性、可复现性与工作流集成。
+- [MTTR-A](https://arxiv.org/abs/2511.20663)：度量多代理系统中的 cognitive recovery latency。核心思想是把 mean time to recovery、mean time between failures 等可靠性指标迁移到 reasoning drift 场景，使分布式代理失去一致性后的恢复能力可观测。
+- [Structured Prompts Improve Evaluation of Language Models](https://arxiv.org/abs/2511.20836)：将 DSPy 式结构化 prompting 接入 HELM 评测，并显示 prompt 选择会改变 benchmark 分数和排名，因此 prompt 配置应被视为 benchmark 可靠性的变量，而不是无关实现细节。
+- [A Rosetta Stone for AI Benchmarks](https://arxiv.org/abs/2512.00193)：把模型能力与 benchmark 难度放到同一数值尺度的框架。核心思想：将已饱和和未饱和的 benchmark 拼接起来，使不同时间、不同评测集合上的模型进展可比较。
+- [When Does Verification Pay Off? A Closer Look at LLMs as Solution Verifiers](https://arxiv.org/abs/2512.02304)：解答验证何时有效的评测分析。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Lumos: Let there be Language Model System Certification](https://arxiv.org/abs/2512.02966)：面向 language-model systems 的认证框架。核心思想是用图式概率 DSL 规定 LMS 行为，并形式化认证系统输出是否满足目标性质。
+- [E-valuator: Reliable Agent Verifiers with Sequential Hypothesis Testing](https://arxiv.org/abs/2512.03109)：使用顺序假设检验的 agent 轨迹 verifier 框架。核心思想是给轨迹评测加入统计停止和正确性保证，而不是直接信任 judge 分数。
+- [Eval Factsheets: A Structured Framework for Documenting AI Evaluations](https://arxiv.org/abs/2512.04062)：AI 评测的结构化文档框架；核心思想是描述评测的 context、scope、structure、method 和 alignment，让 benchmark 可靠性与限制更容易审计。
+- [Stochasticity in Agentic Evaluations: Quantifying Inconsistency with Intraclass Correlation](https://arxiv.org/abs/2512.06710)：评什么：用 intraclass correlation 等统计量量化 agentic evaluation 的随机不一致。
+- [ReasonBENCH: Benchmarking the (In)Stability of LLM Reasoning](https://arxiv.org/abs/2512.07795)：ReasonBENCH 直接评估推理结果的跨运行稳定性，属于 benchmark reliability 与动态评估问题。
+- [Auto-BenchmarkCard](https://arxiv.org/abs/2512.09577)：自动生成 benchmark 文档卡；适合在 benchmark 数量快速增长时快速暴露数据、指标和限制描述缺失。
+- [Does SWE-Bench-Verified Test Agent Ability or Model Memory?](https://arxiv.org/abs/2512.10218)：面向 SWE-Bench-Verified 的 benchmark reliability 分析。核心思想是测试分数反映的是真实软件 agent 能力，还是模型记忆与训练暴露。
+- [OPV: Outcome-based Process Verifier for Efficient Long Chain-of-Thought Verification](https://arxiv.org/abs/2512.10756)：用于长链 CoT 核验的 outcome-based process verifier；核心思想是用最终结果证据检查中间推理过程，避免只凭答案匹配接受长推理轨迹。
+- [Progress over Points](https://arxiv.org/abs/2512.11183)：主张面向进展的 benchmark，即评测目标本身就是科学进步目标。其 NanoGPT speedrun 环境用标准化数据切片、参考训练 harness、遥测、运行时验证、反刷榜检查和 scientific delta 评分展示了这种路线，而不只追逐榜单分数。
 - [BAID](https://arxiv.org/abs/2512.11505)：评测 AI 生成文本检测器的偏差。核心思想是用大规模、子群体受控的人类文本与合成文本样本，检查 detector 可靠性是否随人口属性、方言、年级、正式程度、政治倾向和主题变化。
+- [Beyond Task Completion: An Assessment Framework for Evaluating Agentic AI Systems](https://arxiv.org/abs/2512.12791)：超越任务完成率的 agentic AI 系统评估框架。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Mathematics and Coding are Universal AI Benchmarks](https://arxiv.org/abs/2512.13764)：主张把数学与编程作为通用 AI 评测的基础 benchmark 锚点。
+- [Beyond Blind Spots: Analytic Hints for Mitigating LLM-Based Evaluation Pitfalls](https://arxiv.org/abs/2512.16272)：面向代码生成评测中 LLM-as-a-Judge 行为的 benchmark reliability 研究；核心思想是识别 judge 盲点，并测试 analytic hints 是否能暴露领域特定评测失败。
+- [Hacking Neural Evaluation Metrics with Single Hub Text](https://arxiv.org/abs/2512.16323)：可作为评测可靠性方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](https://arxiv.org/abs/2512.16899)：交错文本图像奖励模型评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Measuring all the noises of LLM Evals](https://arxiv.org/abs/2512.21326)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Your Reasoning Benchmark May Not Test Reasoning: Revealing Perception Bottleneck in Abstract Reasoning Benchmarks](https://arxiv.org/abs/2512.21329)：类型：benchmark/评测协议。核心价值：为 0.5.2 Representative Work and Entry Points 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [DICE: Discrete Interpretable Comparative Evaluation with Probabilistic Scoring for Retrieval-Augmented Generation](https://arxiv.org/abs/2512.22629)：为 RAG 提供离散、可解释、概率化评分的比较评测；核心思想是拆分比较单元并附带不确定性评分，提高 RAG 评测的可解释性。
 - [LLM Agent Workflow Orchestration Framework Bugs](https://doi.org/10.1109/ase63991.2025.00278)：刻画 Agent 控制流、工具集成、状态处理和编排逻辑中的缺陷，使 harness 可靠性审计不只依赖任务成功率。
+- [A survey on LLM-as-a-Judge](https://doi.org/10.1016/j.xinn.2025.101253)：系统梳理 LLM-as-a-judge 方法、使用场景与可靠性问题，连接 judge 鲁棒性和 agent 评测。
+- [Gemini vs. ChatGPT for Research-Quality Evaluation](https://doi.org/10.2478/jdis-2025-0014)：比较前沿 LLM 作为科研质量评估器的表现，补充学术评审场景中的 LLM-as-judge 可靠性案例。
+- [Task-Aware Evaluation and Error-Overlap Analysis for Large Language Models](https://doi.org/10.18653/v1/2025.chomps-main.1)：比较 LLM 在任务感知条件下的错误重叠，帮助评估者发现总分掩盖的共同或互补失败模式。
+- [IDE](https://doi.org/10.1109/ICASSP49660.2025.10890123)：一种多 agent 迭代式 LLM 动态评测框架。核心思想是反复增强、提升复杂度并竞争筛选评测样本，使静态数据集演化成更难且更多样的测试。
+- [Contamination Budget: Trade-offs Between Breadth, Depth and Difficulty](https://doi.org/10.24963/ijcai.2025/911)：分析 benchmark 污染存在或被有意引入时，覆盖广度、深度和难度之间的权衡；核心思想：把污染作为可量化的评测设计变量，而不是事后备注。
+- [Moving LLM evaluation forward: lessons from human judgment research](https://doi.org/10.3389/frai.2025.1592399)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [AgentDiagnose: An Open Toolkit for Diagnosing LLM Agent Trajectories](https://doi.org/10.18653/v1/2025.emnlp-demos.15)：AgentDiagnose 是诊断 LLM agent trajectories 的公开 toolkit，属于 trajectory-level evaluation tooling。
+- [Trustworthiness Evaluation of Large Language Models Using Multi-Criteria Decision Making](https://doi.org/10.1109/access.2025.3612568)：评测基准可靠性与动态评测。核心思想：围绕论文中的任务、数据或协议（Trustworthiness Evaluation of Large Language Models Using Multi-Criteria Decision Making）形成可复用比较基准。
+- [Adaptive Probabilistic Operational Testing for Large Language Models Evaluation](https://doi.org/10.1109/ast66626.2025.00017)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
+- [Standard Quality Criteria Derived from Current NLP Evaluations for Guiding Evaluation Design and Grounding Comparability and AI Compliance Assessments](https://doi.org/10.18653/v1/2025.findings-acl.1370)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
+- [TRUSTEVAL: A Dynamic Evaluation Toolkit on Trustworthiness of Generative Foundation Models](https://doi.org/10.18653/v1/2025.naacl-demo.8)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
+- [STELLAR: A Search-Based Testing Framework for Large Language Model Applications](https://arxiv.org/abs/2601.00497)：STELLAR 是面向 LLM 应用的搜索式自动测试框架。
+- [When Small Models Are Right for Wrong Reasons: Process Verification for Trustworthy Agents](https://arxiv.org/abs/2601.00513)：评测 agent 正确答案背后是否存在错误推理；核心思想是暴露仅靠准确率看不到的过程级失败。
+- [DatBench: Discriminative, Faithful, and Efficient VLM Evaluations](https://arxiv.org/abs/2601.02316)：类型：benchmark/评测协议。核心价值：为 0.5.2 Representative Work and Entry Points 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Grading Scale Impact on LLM-as-a-Judge: Human-LLM Alignment Is Highest on 0-5 Grading Scale](https://arxiv.org/abs/2601.03444)：LLM-as-a-judge 中评分量表影响研究。核心思想是比较不同量表下人类与 LLM 评分的一致性，寻找更可靠协议。
 - [Belief in Authority](https://arxiv.org/abs/2601.04790)：在 ChatEval 式场景中改变权威角色，测试评测 Agent 是否过度依赖角色标签而不是证据。
 - [Agent-as-a-Judge](https://arxiv.org/abs/2601.05111)：综述并分类 agent-as-a-judge 方法，说明多智能体角色、交互协议和评测标准发现如何影响自动评测。
-- [A survey on LLM-as-a-Judge](https://doi.org/10.1016/j.xinn.2025.101253)：系统梳理 LLM-as-a-judge 方法、使用场景与可靠性问题，连接 judge 鲁棒性和 agent 评测。
+- [Judge Model for Large-scale Multimodality Benchmarks](https://arxiv.org/abs/2601.06106)：multimodal Judge Model 关注大规模多模态 benchmark 的可复现评分与解释性，属于评测可靠性。
+- [ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions](https://arxiv.org/abs/2601.06112)：面向生产式压力条件的 LLM agent 可靠性 benchmark。核心思想是评估一致性、扰动鲁棒性和容错能力，而不只看单次成功率。
 - [Order in the Evaluation Court](https://arxiv.org/abs/2601.07648)：分析 14,171 篇 NLG 论文的评测实践，揭示通用指标长期惯用，以及 LLM 裁判与人工评测之间缺少充分验证。
+- [When KV Cache Reuse Fails in Multi-Agent Systems: Cross-Candidate Interaction is Crucial for LLM Judges](https://arxiv.org/abs/2601.08343)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [RULERS](https://arxiv.org/abs/2601.08654)：为稳健 LLM 评估提供锁定评分规程和证据锚定打分。核心思路是将自然语言评分规程编译为可执行标准，使裁判行为减少提示敏感性并更易审计。
+- [Rubric-Conditioned LLM Grading](https://arxiv.org/abs/2601.08843)：研究基于 rubric 的自动评分在对齐、不确定性和鲁棒性方面的表现；核心思想是把评分 rubric 本身纳入评测对象，从而显式衡量 judge 可靠性与不确定性。
+- [CoReflect: Conversational Evaluation via Co-Evolutionary Simulation and Reflective Rubric Refinement](https://arxiv.org/abs/2601.12208)：评什么：通过共演化模拟和反思式 rubric refinement 评估多轮对话；核心思想是让评分标准随观察到的对话行为演化。
+- [Rethinking the Value of Multi-Agent Workflow: A Strong Single Agent Baseline](https://arxiv.org/abs/2601.12307)：用强单 agent baseline 重新评估 multi-agent workflow；核心思想是在多类 benchmark 上检验 homogeneous workflow 是否可由多轮单 agent 执行模拟。
+- [When Wording Steers the Evaluation: Framing Bias in LLM judges](https://arxiv.org/abs/2601.13537)：面向 LLM judges framing bias 的 benchmark reliability 研究。核心思想是说明措辞变化如何影响评估器判断，从而影响 LLM-as-a-judge 协议。
+- [Confident Rankings with Fewer Items: Adaptive LLM Evaluation with Continuous Scores](https://arxiv.org/abs/2601.13885)：把自适应测试扩展到连续型 LLM 评测分数；核心思想是把 IRT 风格的题目选择从二值正确性推广到生成任务，用更少样本估计模型排名。
+- [When Agents Fail: A Comprehensive Study of Bugs in LLM Agents with Automated Labeling](https://arxiv.org/abs/2601.15232)：评测基准可靠性与动态评测。核心思想：围绕论文中的任务、数据或协议（A Comprehensive Study of Bugs in LLM Agents with Automated Labeling）形成可复用比较基准。
+- [Lost in Simulation: LLM-Simulated Users are Unreliable Proxies for Human Users in Agentic Evaluations](https://arxiv.org/abs/2601.17087)：检验 LLM 模拟用户是否能在 tau-bench retail 等 agent 评测中可靠代表真人用户。
 - [Automated Structural Testing of LLM-Based Agents](https://arxiv.org/abs/2601.18827)：提供面向 agent 系统的结构化测试方法。核心思想是用 OpenTelemetry-style traces、mocked LLM behavior 与可执行 assertions，对 agent 组件和交互做超越最终答案验收的回归测试。
+- [When Benchmarks Leak: Inference-Time Decontamination for LLMs](https://arxiv.org/abs/2601.19334)：研究 benchmark 泄漏场景下的推理期去污染。核心思想是在无法完全清理训练数据时，仍尽量减少污染对评测分数的影响。
+- [Benchmarks Saturate When The Model Gets Smarter Than The Judge](https://arxiv.org/abs/2601.19532)：研究 benchmark 饱和与 judge 能力不足。核心思想是审计并修订 Omni-MATH，把精确答案子集与问题样例分开。
+- [Toward Architecture-Aware Evaluation Metrics for LLM Agents](https://arxiv.org/abs/2601.19583)：提出 architecture-aware 的 agent 评测指标。核心思想是把 planner、memory 和 tool router 等组件与可观察行为关联起来，而不只报告最终成功率。
+- [TRACE](https://arxiv.org/abs/2601.20103)：评什么：评测代码环境中的 reward-hack detection。核心思想：在 benign 与 hacked testing trajectories 上做 contrastive anomaly detection，检查模型能否识别 reward exploit，而不是只相信最终 benchmark 分数。
+- [When Flores Bloomz Wrong: Cross-Direction Contamination in Machine Translation Evaluation](https://arxiv.org/abs/2601.20858)：分析机器翻译评测中的跨方向污染。核心思想：用 FLORES 式评测说明记忆可跨语言迁移并扭曲多语言分数。
+- [Noisy but Valid: Robust Statistical Evaluation of LLMs with Imperfect Judges](https://arxiv.org/abs/2601.20913)：面向 imperfect LLM judge 的统计评测框架。核心思想是用少量人类标注校准 judge 错误率，并保持有限样本有效性。
+- [PersonaAct](https://arxiv.org/abs/2601.22547)：用基于 persona 的多模态 agent 和真实行为轨迹模拟短视频用户，把 filter-bubble 审计转化为反事实用户模拟评测，而不只依赖离线推荐指标。
+- [Are LLM Evaluators Really Narcissists? Sanity Checking Self-Preference Evaluations](https://arxiv.org/abs/2601.22548)：审计 LLM evaluator 的所谓自恋偏好是否来自真正 self-preference 或实验混淆；核心思想是在把评委偏好当成能力证据前，先压力测试 LLM-as-judge 协议。
+- [Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](https://arxiv.org/abs/2601.22588)：面向使用小模型内部表征进行 representation-as-a-judge 评测的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [How should AI Safety Benchmarks Benchmark Safety?](https://arxiv.org/abs/2601.23112)：综述 AI safety benchmarks 的技术、认识论和社会技术失效模式。核心思想：把安全评测视为测量与风险管理问题，澄清当前 benchmark 能测什么、不能有效测什么。
+- [RAudit: A Blind Auditing Protocol for Large Language Model Reasoning](https://arxiv.org/abs/2601.23133)：RAudit 是 blind auditing protocol，用于诊断推理轨迹病理与推理可靠性。
+- [Learning More from Less: Unlocking Internal Representations for Benchmark Compression](https://arxiv.org/abs/2602.00710)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [TIDE: Trajectory-based Diagnostic Evaluation of Test-Time Improvement in LLM Agents](https://arxiv.org/abs/2602.02196)：类型：benchmark/评测协议。核心价值：为 0.5.2 Representative Work and Entry Points 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge](https://arxiv.org/abs/2602.02219)：评测基于 rubric 的 LLM-as-a-judge 评测中的位置偏差；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Cross-Lingual Stability of LLM Judges](https://arxiv.org/abs/2602.02287)：诊断 controlled generation 条件下 LLM-as-a-judge 评分是否能跨语言保持稳定。核心思想：在相关语言中固定生成条件，提前暴露多语评测中的 judge-transfer failure。
+- [PeerRank: Autonomous LLM Evaluation Through Web-Grounded, Bias-Controlled Peer Review](https://arxiv.org/abs/2602.02589)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [MAS-ProVe: Understanding the Process Verification of Multi-Agent Systems](https://arxiv.org/abs/2602.03053)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Accurate Failure Prediction in Agents Does Not Imply Effective Failure Prevention](https://arxiv.org/abs/2602.03338)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [What's in a Benchmark? The Case of SWE-Bench in Automated Program Repair](https://arxiv.org/abs/2602.04449)：审视 SWE-Bench Lite 与 Verified 排行榜；核心思想是分析提交方、产品、模型和开放性，让榜单分数能被解读为生态证据，而不只是能力数字。
+- [AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](https://arxiv.org/abs/2602.05353)：类型：agent harness/可复用执行框架。核心价值：为 0.5.2 Representative Work and Entry Points 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Alignment Verifiability](https://arxiv.org/abs/2602.05656)：研究 behavioral evaluation 下的 normative indistinguishability，澄清仅凭可观察行为何时无法验证 alignment claim。
+- [When Elo Lies: Hidden Biases in Codeforces-Based Evaluation of Large Language Models](https://arxiv.org/abs/2602.05891)：可作为评测可靠性方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [JADE](https://arxiv.org/abs/2602.06486)：为开放式专业任务提供 expert-grounded 动态评价；核心思想是把稳定的专家评价技能、面向具体回答的 claim-level 检查和证据依赖门控结合起来。
+- [Same Answer, Different Representations: Hidden instability in VLMs](https://arxiv.org/abs/2602.06652)：评测超越答案一致性的 VLM 表征级不稳定性；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Agentic Uncertainty Reveals Agentic Overconfidence](https://arxiv.org/abs/2602.06948)：研究 agent 在执行前、执行中和执行后能否预测自身任务成功率。核心思想：用成功概率校准式提问暴露 agent 过度自信，并比较执行前评估、执行后复核和对抗式自查，适合作为 agent 轨迹可靠性评测的补充参考。
+- [On Randomness in Agentic Evals](https://arxiv.org/abs/2602.07150)：量化 agentic benchmark 得分随机性。核心思想：说明 SWE-Bench-Verified 的单次 pass@1 即使在 temperature zero 下也可能随 run 波动数个百分点，因此需要多次运行估计和统计功效分析。
+- [Fault-Tolerant Evaluation for Sample-Efficient Model Performance Estimators](https://arxiv.org/abs/2602.07226)：评测用于验证模型性能的容错样本高效估计器；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Evaluating and Calibrating LLM Confidence on Questions with Multiple Correct Answers](https://arxiv.org/abs/2602.07842)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization](https://arxiv.org/abs/2602.07909)：通过对 model-item performance matrix 做稀疏优化来降低 LLM 评测成本；核心思想是选择代表性题目，用更少模型调用估计排名。
+- [The Judge Who Never Admits](https://arxiv.org/abs/2602.07996)：审计 LLM-as-judge 评测中的隐藏捷径。核心思想：注入受控元数据线索，并比较 verdict shift 与 cue acknowledgment，揭示裁判模型何时依赖无关信号却不在解释中承认。
+- [InfiCoEvalChain: A Blockchain-Based Decentralized Framework for Collaborative LLM Evaluation](https://arxiv.org/abs/2602.08229)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [When Evaluation Becomes a Side Channel: Regime Leakage and Structural Mitigations for Alignment Assessment](https://arxiv.org/abs/2602.08449)：把评测泄漏视为对齐评估的旁路信道并讨论结构性缓解。
+- [Four-Checkpoint Framework](https://arxiv.org/abs/2602.09629)：诊断 LLM 安全防线在哪个环节失效，而不只是测试攻击是否成功。核心思想：把安全评估拆成多个检查点，使基准结果能定位失败的防御阶段。
+- [AgentTrace: A Structured Logging Framework for Agent System Observability](https://arxiv.org/abs/2602.10133)：面向基准可靠性与动态评测的智能体框架或运行时。核心思想：把 A Structured Logging Framework for Agent System Observability 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [When LLMs get significantly worse: A statistical approach to detect model degradations](https://arxiv.org/abs/2602.10144)：该工作提供检测模型质量退化的统计方法，适合动态评估和 benchmark reliability。
+- [Benchmarks Are Not That Out of Distribution: Word Overlap Predicts Performance](https://arxiv.org/abs/2602.10657)：研究预训练语料与评测集的词重叠如何预测 benchmark 表现；核心思想是把看似 OOD 的难度重新拆解为污染和分布相似度问题。
+- [DDL2PropBank Agent: Benchmarking Multi-Agent Frameworks' Developer Experience Through a Novel Relational Schema Mapping Task](https://arxiv.org/abs/2602.11198)：评测通过受控 DDL 到 PropBank 任务评测多 agent 框架开发体验；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [When Agents Disagree With Themselves: Measuring Behavioral Consistency in LLM-Based Agents](https://arxiv.org/abs/2602.11619)：面向 LLM-based agents 的行为一致性评测。核心思想是衡量同一 agent 在等价情境下能否保持稳定选择和轨迹。
+- [Benchmark Health Index](https://arxiv.org/abs/2602.11674)：从 capability discrimination、anti-saturation 和 impact 三个维度审计 benchmark reliability。核心思想：利用模型报告证据和 benchmark 元数据量化一个评测在模型能力和报告实践变化后是否仍然有用。
+- [Towards Fair and Comprehensive Evaluation of Routers in Collaborative LLM Systems](https://arxiv.org/abs/2602.11877)：评测 collaborative LLM systems 中的 router。价值在于把 router 能力、场景匹配和分布外鲁棒性分开，避免模型路由评测退化成单一汇总分。
+- [Benchmark Illusion: Disagreement among LLMs and Its Scientific Consequences](https://arxiv.org/abs/2602.11898)：评测聚合准确率相似时隐藏的 benchmark 分歧和认知发散；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Differentiable Modal Logic for Multi-Agent Diagnosis, Orchestration and Communication](https://arxiv.org/abs/2602.12083)：Agent Harness 条目；核心思想：用可微模态逻辑进行多 agent 诊断、编排和沟通；核心思想是在 agent 轨迹中建模信念、因果和义务。
+- [A Theoretical Framework for Adaptive Utility-Weighted Benchmarking](https://arxiv.org/abs/2602.12356)：评测作为固定共享任务补充的自适应 utility-weighted benchmarking；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [ProbeLLM](https://arxiv.org/abs/2602.12966)：自动化诊断 LLM failure modes。核心思想：生成有针对性的 probes 来定位失败类型，而不只是报告总分；当静态题集难以区分模型时，可作为 benchmark reliability audit 的补充工具。
+- [BotzoneBench](https://arxiv.org/abs/2602.13214)：用按能力分级的固定游戏 AI 作为锚点评测交互式 LLM，在不稳定的 LLM 对战排名之外提供更稳定、更可解释的策略推理尺度。
+- [Think Deep, Not Just Long: Measuring LLM Reasoning Effort via Deep-Thinking Tokens](https://arxiv.org/abs/2602.13517)：用超越 chain-of-thought 长度的方式衡量推理努力；核心思想是识别深层预测发生显著修正的 token，并用其比例解释推理表现。
+- [HLE-Verified: A Systematic Verification and Structured Revision of Humanity's Last Exam](https://arxiv.org/abs/2602.13964)：对 Humanity's Last Exam 的系统验证和结构化修订。核心思想是审计有噪声的 benchmark 题目并修订，减少坏题对模型比较的扭曲。
+- [Benchmarking at the Edge of Comprehension](https://arxiv.org/abs/2602.14307)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [Towards a Science of AI Agent Reliability](https://arxiv.org/abs/2602.16666)：提出覆盖 consistency、robustness、predictability 和 safety 四个维度的 12 个 agent reliability 指标，说明单一成功率会掩盖部署型 agent 的操作性失败模式。
+- [Towards More Standardized AI Evaluation: From Models to Agents](https://arxiv.org/abs/2602.18029)：用明确任务、协议或数据集评测benchmark reliability and dynamic evaluation。
+- [EvalSense: A Framework for Domain-Specific LLM (Meta-)Evaluation](https://arxiv.org/abs/2602.18823)：评什么：面向领域 LLM 的元评估；核心思想是在信任开放式领域输出评分前先评估评估器本身。
+- [Case-Aware LLM-as-a-Judge Evaluation for Enterprise-Scale RAG Systems](https://arxiv.org/abs/2602.20379)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [Robust Lotteries](https://arxiv.org/abs/2602.21297)：研究 pairwise AI evaluation 的稳健聚合；核心思想是用最大彩票和稳健彩票替代脆弱的 Bradley-Terry 全序排名，在异质标注人群上优化最坏情形偏好保证。
+- [Black-Box Reliability Certification for AI Agents via Self-Consistency Sampling and Conformal Calibration](https://arxiv.org/abs/2602.21368)：黑盒 agent 输出可靠性认证 harness。核心思想是结合 self-consistency sampling 与 conformal calibration，为具体 system-task pair 给出有限样本可靠性门槛。
+- [TWICE](https://arxiv.org/abs/2602.22222)：用长期时序特征模拟个性化用户发帖行为，结合 user profiling、event-driven memory 和 style rewriting，使用户模拟评测能够检查时间一致性，而不只是一轮 persona 匹配。
+- [VeRO: An Evaluation Harness for Agents to Optimize Agents](https://arxiv.org/abs/2602.22480)：类型：agent harness/可复用执行框架。核心价值：为 0.5.2 Representative Work and Entry Points 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [General Agent Evaluation](https://arxiv.org/abs/2602.22953)（[开源代码](https://github.com/Exgentic/exgentic)；[榜单](https://www.exgentic.ai/)）：评测 agent configuration，而不是只评基座模型；它用统一协议比较 5 类 agent architecture、5 个 backbone LLM 和 6 个 benchmark，覆盖软件工程、客服、deep research 与个人助理。论文报告同一模型在不同 architecture 下可相差最多 12 个百分点，而且相近总分背后可能是完全不同的失败模式。
+- [Agent-Centric Text Anomaly Protocol](https://arxiv.org/abs/2602.23729)：面向文本异常推理的动态 benchmark protocol。核心思想：让 teacher、orchestrator 和 student agents 迭代生成、验证、求解并加难任务，使评测难度随模型能力演化，而不是停留在固定数据集。
+- [SWE-rebench V2](https://arxiv.org/abs/2602.23866)：语言无关、规模更大的动态 SWE 任务构造与执行评测；延续去污染自动化采集路线，把可执行任务扩展到更多语言与仓库生态。
+- [Autorubric: A Unified Framework for Rubric-Based LLM Evaluation](https://arxiv.org/abs/2603.00077)：提供基于 rubric 的统一 LLM 评测框架。核心思想：标准化 rubric 构造与使用，使开放式输出评测更可复现。
+- [TraceSIR: A Multi-Agent Framework for Structured Analysis and Reporting of Agentic Execution Traces](https://arxiv.org/abs/2603.00623)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [DEP: A Decentralized Large Language Model Evaluation Protocol](https://arxiv.org/abs/2603.01167)：面向面向可复现性和防泄漏的去中心化 LLM 评测协议的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [RubricBench: Aligning Model-Generated Rubrics with Human Standards](https://arxiv.org/abs/2603.01562)：评测模型生成的 rubric 是否符合人类标准；核心思想是在把 rubric 用作奖励模型或裁判支架前，先评估 rubric 本身的质量。
+- [Evaluating Performance Drift from Model Switching in Multi-Turn LLM Systems](https://arxiv.org/abs/2603.03111)：面向多轮 LLM 系统 model switching performance drift 的评测。核心思想是测试后续轮次由不同模型接手时系统表现如何变化。
+- [Procedure-Aware Evaluation](https://arxiv.org/abs/2603.03116)：揭示 LLM agents 中的 corrupt success。核心思想：同时评估 utility、efficiency、interaction quality 和 procedural integrity，对通过不一致或不合规过程完成的任务结果进行否决。
+- [Certainty robustness: Evaluating LLM stability under self-challenging prompts](https://arxiv.org/abs/2603.03330)：评测 LLM 在自我挑战式提示下的稳定性；核心思想是检查模型在初答之后被质疑时，答案和确定性表达是否仍然稳健。
+- [What Is Missing: Interpretable Ratings for Large Language Model Outputs](https://arxiv.org/abs/2603.04429)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [Benchmark of Benchmarks: Unpacking Influence and Code Repository Quality in LLM Safety Benchmarks](https://arxiv.org/abs/2603.04459)：审计 LLM 安全 benchmark 的影响力与代码质量。核心思想：把 benchmark 采用度、可运行性与仓库质量作为可靠性信号评估。
+- [Towards Provably Unbiased LLM Judges via Bias-Bounded Evaluation](https://arxiv.org/abs/2603.05485)：通过有界偏差评测追求更无偏的 LLM judge。
+- [The World Won't Stay Still: Programmable Evolution for Agent Benchmarks](https://arxiv.org/abs/2603.05910)：面向 agent benchmark 的可编程演化方法；核心思想是让基准环境以受控方式变化，使评测反映适应能力而不是静态任务记忆。
+- [A Coin Flip for Safety](https://arxiv.org/abs/2603.06594)：审计 LLM-as-a-judge 在对抗鲁棒性评估中的可靠性。核心思路是在红队分布偏移下用人工验证标签对照评判器行为，避免安全分数继承不稳定的评测偏差。
+- [Making AI Evaluation Deployment Relevant Through Context Specification](https://arxiv.org/abs/2603.06811)：通过显式上下文规格让 AI 评测更贴近部署场景。
+- [AutoChecklist: Composable Pipelines for Checklist Generation and Scoring with LLM-as-a-Judge](https://arxiv.org/abs/2603.07019)：面向用于 LLM-as-a-judge 的 checklist 生成与评分流水线的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [CoTJudger: A Graph-Driven Framework for Automatic Evaluation of Chain-of-Thought Efficiency and Redundancy in LRMs](https://arxiv.org/abs/2603.07078)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Countdown-Code: A Testbed for Studying The Emergence and Generalization of Reward Hacking in RLVR](https://arxiv.org/abs/2603.07084)：研究代码场景 RLVR reward hacking 的 testbed。核心思想是暴露模型提高奖励分数但偏离真实代码能力或泛化目标的情形。
+- [Toward Robust LLM-Based Judges: Taxonomic Bias Evaluation and Debiasing Optimization](https://arxiv.org/abs/2603.08091)：评估并优化 LLM 裁判的分类偏置，适合补充基准可靠性与裁判鲁棒性方向。
+- [Leaderboard Incentives: Model Rankings under Strategic Post-Training](https://arxiv.org/abs/2603.08371)：研究 strategic post-training 下的模型排名。价值在于建模 benchmark protocol 如何诱导 benchmaxxing，以及 leaderboard 设计如何扭曲表观能力进展。
+- [MASEval](https://arxiv.org/abs/2603.08835)（[开源代码](https://github.com/parameterlab/MASEval)）：把完整 multi-agent system 作为评测单元，而不是在模型外固定同一个框架。它的 framework-agnostic library 在 3 个 benchmark、3 个模型和 3 个框架上做系统级比较，并用 adapter 与 setup、execution、measurement、teardown、tracing、logging、metrics 等 lifecycle hooks 让框架效应可测。
+- [One-Eval: An Agentic System for Automated and Traceable LLM Evaluation](https://arxiv.org/abs/2603.09821)：自动化、可追踪的 LLM evaluation agentic system。价值在于把 benchmark 选择、schema 映射、执行和指标解释组织成可审计的评测工作流。
+- [Evaluation Illusion](https://arxiv.org/abs/2603.11027)：研究 LLM-as-a-judge 评测中的可靠性失效。核心思想：说明高模型级一致性可能掩盖脆弱的样本级一致性，并用知识驱动 rubric 生成减少表面启发式打分。
+- [Cross-Context Review: Improving LLM Output Quality by Separating Production and Review Sessions](https://arxiv.org/abs/2603.12123)：提升 LLM 输出质量的 cross-context review 方法。核心思想是把生成和审查放到不同会话中，降低审查者受生成上下文锚定的影响。
+- [Test-time RL alignment exposes task familiarity artifacts in LLM benchmarks](https://arxiv.org/abs/2603.12875)：评测通过测试时 RL alignment 暴露 LLM benchmark 的任务熟悉度伪影；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Brittlebench: Quantifying LLM robustness via prompt sensitivity](https://arxiv.org/abs/2603.13285)：通过 prompt sensitivity 量化 LLM 稳健性。核心思想：在真实提示改写和噪声用户输入下评测性能波动。
+- [Real-World AI Evaluation: How FRAME Generates Systematic Evidence to Resolve the Decision-Maker's Dilemma](https://arxiv.org/abs/2603.13294)：用明确任务、协议或数据集评测benchmark reliability and dynamic evaluation。
+- [Stylistic Features in ChatGPT Research Evaluation](https://arxiv.org/abs/2603.14919)：检验可读性与题名摘要风格是否会影响 ChatGPT 对研究质量的评分，补充 LLM-as-judge 可靠性中的评审偏差案例。
+- [CUBE](https://arxiv.org/abs/2603.15798)：提出基于 MCP 与 Gym 的 Common Unified Benchmark Environments 协议标准；适合降低 agent benchmark 快速增多后的集成税，并把 task、benchmark、package 和 registry 层职责拆清楚。
+- [V-DyKnow](https://arxiv.org/abs/2603.16581)：动态评测视觉语言模型的时效性知识，将 freshness 与 temporal validity 检查扩展到多模态评测。
+- [BenchBrowser: Retrieving Evidence for Evaluating Benchmark Validity](https://arxiv.org/abs/2603.18019)：BenchBrowser 为 benchmark validity 检索证据，适合 Benchmark Reliability。
+- [Measuring Reasoning Trace Legibility: Can Those Who Understand Teach?](https://arxiv.org/abs/2603.20508)：评测在最终答案正确性之外评测推理轨迹可读性；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [BenchBench: Benchmarking Automated Benchmark Generation](https://arxiv.org/abs/2603.20807)：评测自动生成 benchmark 的能力；核心思想是检查系统是否能生成可靠、有区分度且更抗污染的评测，而不只是会答题。
+- [RubricRAG: Towards Interpretable and Reliable LLM Evaluation via Domain Knowledge Retrieval for Rubric Generation](https://arxiv.org/abs/2603.20882)：通过检索领域知识生成 rubric，提升 LLM evaluation 的可解释性。价值在于让自动评分说明哪些要求被满足或遗漏，而不是只返回一个标量分数。
+- [AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](https://arxiv.org/abs/2603.21362)：面向用于 agent 评测的任务自适应 rubric 生成和逐步轨迹评分的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Post-Selection Distributional Model Evaluation](https://arxiv.org/abs/2603.23055)：评什么：评测 post-selection distributional model evaluation；核心思想是在 KPI 阈值事后确定时用完整输出分布比较候选模型。
+- [LLM Olympiad: Why Model Evaluation Needs a Sealed Exam](https://arxiv.org/abs/2603.23292)：主张用 sealed exam 式协议评测 LLM；核心思想是在降低刷榜和隐性泄漏的同时保留足够透明度，避免静态榜单误导。
+- [Willful Disobedience / AgentPex](https://arxiv.org/abs/2603.23806)（[开源代码](https://github.com/microsoft/agentpex)）：从提示词和系统指令中抽取行为规则，再检查 agent 轨迹中的工作流路由错误、不安全工具使用和规则违反，补足只看最终结果的评分盲区。
+- [SCoOP: Semantic Consistent Opinion Pooling for Uncertainty Quantification in Multiple Vision-Language Model Systems](https://arxiv.org/abs/2603.23853)：面向多个视觉语言模型之间的不确定性感知意见聚合的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Efficient Detection of Bad Benchmark Items with Novel Scalability Coefficients](https://arxiv.org/abs/2603.24999)：用可扩展性系数检测有问题的 benchmark 条目。
+- [Rethinking Failure Attribution in Multi-Agent Systems: A Multi-Perspective Benchmark and Evaluation](https://arxiv.org/abs/2603.25001)：failure attribution benchmark 提供 multi-perspective agent failure evaluation。
+- [InconLens: Interactive Visual Diagnosis of Behavioral Inconsistencies in LLM-based Agentic Systems](https://arxiv.org/abs/2603.28106)：InconLens 诊断 agentic system 行为不一致性，适合 benchmark reliability 与轨迹诊断。
+- [The Necessity of Setting Temperature in LLM-as-a-Judge](https://arxiv.org/abs/2603.28304)：评测LLM-as-a-judge 评测中的 temperature 敏感性；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [CoE: Collaborative Entropy for Uncertainty Quantification in Agentic Multi-LLM Systems](https://arxiv.org/abs/2603.28360)：评什么：评测 agentic multi-LLM 系统的不确定性；核心思想是衡量协作模型之间的语义分歧，而不只看单模型内部不确定性。
+- [Emergence WebVoyager: Toward Consistent and Transparent Evaluation of (Web) Agents in The Wild](https://arxiv.org/abs/2603.29020)：Emergence WebVoyager 审计并改进野外 Web agent 评估透明度，适合 Benchmark Reliability。
+- [Let the Abyss Stare Back Adaptive Falsification for Autonomous Scientific Discovery](https://arxiv.org/abs/2603.29045)：面向自主科学发现的评测可靠性方法。核心思想是让评估主动反驳候选系统，避免强搜索过程只学会赢固定考试。
+- [Beyond pass@1: A Reliability Science Framework for Long-Horizon LLM Agents](https://arxiv.org/abs/2603.29231)：评什么：从 reliability science 角度补充长程 agent 评测，超越 pass@1。
+- [View-oriented Conversation Compiler for Agent Trace Analysis](https://arxiv.org/abs/2603.29678)：类型：agent harness/可复用执行框架。核心价值：为 0.5.2 Representative Work and Entry Points 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Signals: Trajectory Sampling and Triage for Agentic Interactions](https://arxiv.org/abs/2604.00356)：Signals 用 trajectory sampling and triage 组织 agentic interactions 的证据，属于评测可靠性。
+- [Revision or Re-Solving? Decomposing Second-Pass Gains in Multi-LLM Pipelines](https://arxiv.org/abs/2604.01029)：Revision or Re-Solving 分解 multi-LLM pipeline second-pass gains，适合评测协议可靠性。
+- [Cost-Efficient Estimation of General Abilities Across Benchmarks](https://arxiv.org/abs/2604.01418)：该工作研究跨 benchmark 的 general ability 低成本估计，是评测方法学入口。
+- [Are Benchmark Tests Strong Enough? Mutation-Guided Diagnosis and Augmentation of Regression Suites](https://arxiv.org/abs/2604.01518)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [REAP: Automatic Curation of Coding Agent Benchmarks from Interactive Production Usage](https://arxiv.org/abs/2604.01527)：从交互式生产使用中自动整理 coding agent benchmarks；核心思想是用真实 agent 交互生成新鲜、任务扎实的评测实例，而不只依赖人工冻结的数据集。
+- [Diagnosing Translated Benchmarks: An Automated Quality Assurance Study of the EU20 Benchmark Suite](https://arxiv.org/abs/2604.01957)：该工作对翻译 benchmark 做自动质量诊断，适合 Benchmark Reliability 的 benchmark QA 方向。
+- [Position: Science of AI Evaluation Requires Item-level Benchmark Data](https://arxiv.org/abs/2604.03244)：关于基准逐题数据的立场论文；核心思想是发布逐题结果与元数据，使总分能够被审计难度、漂移和过拟合问题。
+- [ACES: Who Tests the Tests? Leave-One-Out AUC Consistency for Code Generation](https://arxiv.org/abs/2604.03922)：研究代码生成评测中的测试本身是否可靠；核心思想是用 leave-one-out AUC consistency 识别不稳定或误导性的测试，避免把噪声分数误当成能力证据。
+- [Multilingual Prompt Localization for Agent-as-a-Judge: Language and Backbone Sensitivity in Requirement-Level Evaluation](https://arxiv.org/abs/2604.04532)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [Self-Preference Bias in Rubric-Based Evaluation of Large Language Models](https://arxiv.org/abs/2604.06996)：它直接讨论评测可靠性、judge 偏差、动态评测或评测基础设施，适合补充 benchmark reliability 入口。
+- [Adaptive Rigor in AI System Evaluation using Temperature-Controlled Verdict Aggregation via Generalized Power Mean](https://arxiv.org/abs/2604.08595)：用温度控制的 verdict aggregation 改进 AI system evaluation；核心思想是调节判断聚合强度，降低单一 judge 结论的脆弱性。
+- [ContextSim](https://arxiv.org/abs/2604.09549)：把推荐系统评测从离线 A/B testing 推向情境感知的 LLM 用户 agent 模拟，让日常生活场景决定用户何时、何地、为何与推荐发生交互。
+- [FACT-E](https://arxiv.org/abs/2604.10693)：通过因果扰动与步骤间依赖检查评测 chain-of-thought 的忠实性；适合区分“看似连贯但不支撑答案”的轨迹与真正支持答案的推理路径。
+- [Select Smarter, Not More: Prompt-Aware Evaluation Scheduling with Submodular Guarantees](https://arxiv.org/abs/2604.11328)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
 - [Hidden Measurement Error in LLM Pipelines](https://arxiv.org/abs/2604.11581)：审计 LLM 标注和评测流水线中被隐藏的方差来源；核心思想是把评判模型选择、温度和提示措辞都视为测量误差来源，使基准结论包含普通抽样置信区间之外的不确定性。
+- [Filtered Reasoning Score: Evaluating Reasoning Quality on a Model's Most-Confident Traces](https://arxiv.org/abs/2604.11996)：评测在模型最自信轨迹上评测推理质量，而不仅看最终准确率；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [The A-R Behavioral Space: Execution-Level Profiling of Tool-Using Language Model Agents in Organizational Deployment](https://arxiv.org/abs/2604.12116)：对组织部署中的 tool-using language model agents 做执行级行为画像；核心思想是在最终成功率之外刻画行动和推理模式。
+- [Exploration and Exploitation Errors Are Measurable for Language Model Agents](https://arxiv.org/abs/2604.13151)：将 language model agent 的 exploration/exploitation errors 显式可测，属于 agent reliability 诊断。
+- [Numerical Instability and Chaos: Quantifying the Unpredictability of Large Language Models](https://arxiv.org/abs/2604.13206)：面向基准可靠性与评测基础设施的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Numerical Instability and Chaos: Quantifying the Unpredictability of Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Does RL Expand the Capability Boundary of LLM Agents? A PASS@(k,T) Analysis](https://arxiv.org/abs/2604.14877)：PASS@(k,T) 分析 RL 对 agent capability boundary 的影响，可用于 agentic eval 统计解释。
+- [Beyond Surface Statistics: Robust Conformal Prediction for LLMs via Internal Representations](https://arxiv.org/abs/2604.16217)：面向使用内部表征分数进行 LLM 可靠性 conformal prediction的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Evaluating Tool-Using Language Agents: Judge Reliability, Propagation Cascades, and Runtime Mitigation in AgentProp-Bench](https://arxiv.org/abs/2604.16706)：AgentProp-Bench 评测 tool-using agent judge reliability、传播级联和运行时缓解。
+- [Bias in the Loop: Auditing LLM-as-a-Judge for Software Engineering](https://arxiv.org/abs/2604.16790)：审计软件工程评测中的 LLM-as-a-judge 偏差；核心思想是揭示会扭曲代码模型和代理排名的裁判偏差。
+- [Harness as an Asset: Enforcing Determinism via the Convergent AI Agent Framework (CAAF)](https://arxiv.org/abs/2604.17025)：Harness as an Asset 强调通过 deterministic harness 控制 agent 行为，属于评测/部署可靠性入口。
+- [Beyond Static Snapshots: A Grounded Evaluation Framework for Language Models at the Agentic Frontier](https://arxiv.org/abs/2604.17573)：评什么：评估 agentic system 的 grounded evaluation；核心思想是用覆盖分布、时间、范围和过程有效性的设计替代静态快照。
+- [Terminal Wrench](https://arxiv.org/abs/2604.17596)（[开源代码](https://github.com/few-sh/terminal-wrench)）：评测终端 benchmark 是否可被 reward hacking 绕过；核心价值是把环境漏洞、评分捷径和轨迹操纵作为 benchmark 可靠性问题显式化。
+- [Towards Self-Improving Error Diagnosis in Multi-Agent Systems](https://arxiv.org/abs/2604.17658)：Agent Harness 条目；核心思想：面向多 agent 系统的自改进错误诊断；核心思想是在长交互轨迹中定位关键错误步骤，而不只依赖专家标注。
+- [When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](https://arxiv.org/abs/2604.17768)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [QuickScope](https://arxiv.org/abs/2604.17842)：为动态 benchmark 中的难题做快速认证；核心思想是给“这题是否真的难、是否能区分模型”提供更低成本的预筛机制。
+- [MM-JudgeBias](https://arxiv.org/abs/2604.18164)：评估 MLLM-as-a-Judge 系统中的组合偏置。核心思想是分别扰动查询、图像和回答证据，并衡量评测模型的敏感性与稳定性，从而暴露模态忽略和多模态评测不可靠问题。
+- [AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](https://arxiv.org/abs/2604.18240)：评测跨搜索、数据系统和 GUI 环境的 Agent-as-a-Judge 评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](https://arxiv.org/abs/2604.19395)：评测用于测试 self-consistency 何时改善百科知识召回的 knowledge-recall split；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Who Defines"Best"? Towards Interactive, User-Defined Evaluation of LLM Leaderboards](https://arxiv.org/abs/2604.21769)：Leaderboard/评测入口；通过交互式、偏好感知评估帮助用户定义 LLM 榜单中的“最好”，避免只依赖固定汇总分数。
+- [Temporal Taskification](https://arxiv.org/abs/2604.21930)：指出 streaming continual-learning evaluation 会因 temporal taskification 变得不稳定，补充时间顺序任务的 benchmark reliability 风险。
+- [On Benchmark Hacking in ML Contests: Modeling, Insights and Design](https://arxiv.org/abs/2604.22230)：用明确任务、协议或数据集评测benchmark reliability and dynamic evaluation。
+- [Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](https://arxiv.org/abs/2604.22708)：评测 LLM 多 agent 系统中的失败归因；核心思想是不只看最终成败，而是定位失败来自哪个 agent、交互或协作环节。
+- [AutoPyVerifier: Learning Compact Executable Verifiers for Large Language Model Outputs](https://arxiv.org/abs/2604.22937)：学习紧凑的可执行 verifier 来检查 LLM 输出；核心思想是在可行处用确定、可检查的程序验证替代纯 LLM 裁判。
+- [JudgeSense: A Benchmark for Prompt Sensitivity in LLM-as-a-Judge Systems](https://arxiv.org/abs/2604.23478)：评测 LLM-as-a-judge 系统的提示敏感性。核心思想：用经验证的提示改写衡量自动评审器的判决不稳定性。
+- [AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](https://arxiv.org/abs/2604.23581)：用 DAG-structured step-level scoring 和 error propagation 评测 agentic workflows。价值在于定位 workflow 在哪里失败，而不是只看最终任务是否成功。
+- [How Sensitive Are Safety Benchmarks to Judge Configuration Choices?](https://arxiv.org/abs/2604.24074)：审计安全基准分数如何随 LLM 裁判提示词和配置变化而波动。核心思路是把裁判设置视为评测变量，而不是实现细节，从而暴露安全基准中的分数和排名不稳定性。
+- [Incompressible Knowledge Probes](https://arxiv.org/abs/2604.24827)：构造 1,400 道覆盖七个冷门程度层级的事实题，并用 89 个开源权重模型校准准确率到参数量的映射，使黑盒 LLM 的隐藏参数规模能从事实容量估计，而不是依赖服务成本假设。
+- [BenchGuard](https://arxiv.org/abs/2604.24955)：审计 execution-based agent benchmarks；核心思想是用结构化 LLM 协议交叉检查任务 artifacts、specifications、graders 和可选 agent traces，暴露那些表面上像 agent 失败、实则来自 benchmark 缺陷的问题。
+- [VLM Judges Can Rank but Cannot Score: Task-Dependent Uncertainty in Multimodal Evaluation](https://arxiv.org/abs/2604.25235)：评估 VLM-as-judge 打分的可靠性边界。核心思路是用基于分数 token 概率的 conformal prediction 校准不确定性，说明排序往往比绝对分数更可信。
+- [Luminol-AIDetect: Fast Zero-shot Machine-Generated Text Detection based on Perplexity under Text Shuffling](https://arxiv.org/abs/2604.25860)：面向基准可靠性与评测基础设施的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Luminol-AIDetect: Fast Zero-shot Machine-Generated Text Detection based on Perplexity under Text Shuffling”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Option-Order Randomisation Reveals a Distributional Position Attractor in Prompted Sandbagging](https://arxiv.org/abs/2604.26206)：评测选项顺序随机化下 prompted sandbagging 的位置吸引子效应；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Instruction Complexity Induces Positional Collapse in Adversarial LLM Evaluation](https://arxiv.org/abs/2604.27249)：评测对抗式 LLM 评测中指令复杂度导致的位置坍缩；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Beyond the Mean: Within-Model Reliable Change Detection for LLM Evaluation](https://arxiv.org/abs/2604.27405)：评测面向模型版本比较的模型内可靠变化检测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Optimization before Evaluation: Evaluation with Unoptimized Prompts Can be Misleading](https://arxiv.org/abs/2604.27637)：研究未优化 prompt 如何误导 LLM 评测。核心思想是比较固定模板评测和模型特定 prompt 优化，暴露 benchmark 分数对提示词的敏感性。
+- [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：会随真实 workflow demand 变化的 live agent benchmark；其价值在于按季度刷新任务分布，同时保留 mock service、workspace fixture、trace 和 grader 以便复现。
+
+- [Token Arena](https://arxiv.org/abs/2605.00300)：以实时推理 endpoint 而不是单纯模型名为评测单位，把质量、延迟、价格、有效上下文、能耗估计和 endpoint fidelity provenance 纳入连续的部署感知评测。
+- [Evaluating Agentic AI in the Wild: Failure Modes, Drift Patterns, and a Production Evaluation Framework](https://arxiv.org/abs/2605.01604)：研究生产环境 agentic AI 的失败模式、漂移模式和评测框架；核心思想是在生产漂移下评测 agent，而不是只做静态离线任务。
+- [StressEval: Failure-Driven Dynamic Benchmarking for Knowledge-Intensive Reasoning in Large Language Models](https://arxiv.org/abs/2605.01939)：面向知识密集推理的 failure-driven 动态基准；核心思想是把模型已暴露失败转成可控、可回答且更难的评测题。
+- [Stable Counting Capacity](https://arxiv.org/abs/2605.02028)：面向程序性规则执行的极简可靠性探针。核心思想：让模型持续计数重复符号直到失败，移除知识和语义干扰，从而暴露重复执行过程和可用上下文长度中的不稳定性。
+- [Submodular Benchmark Selection](https://arxiv.org/abs/2605.02209)：类型：benchmark/评测协议。核心价值：为 0.5.2 Representative Work and Entry Points 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Towards Reliable LLM Evaluation: Correcting the Winner's Curse in Adaptive Benchmarking](https://arxiv.org/abs/2605.05973)：修正 adaptive LLM benchmarking 中的 winner's-curse effect。价值在于报告 prompt 或 program search 之后的 fresh-data 表现，而不是用被反复调参的题目高估能力。
+- [Visual Fingerprints for LLM Generation Comparison](https://arxiv.org/abs/2605.06054)：评测用于比较 LLM 生成条件的视觉指纹；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Towards Annotation-Free Validation of MLLMs: A Vision-Language Logical Consistency Metric](https://arxiv.org/abs/2605.06201)：评测基于因果充分和必要关系的免标注视觉语言逻辑一致性指标；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Beyond Fixed Benchmarks and Worst-Case Attacks: Dynamic Boundary Evaluation for Language Models](https://arxiv.org/abs/2605.06213)：评测围绕逐题不确定边界的动态能力评测；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Quantifying the Statistical Effect of Rubric Modifications on Human-Autorater Agreement](https://arxiv.org/abs/2605.06283)：评测修改 rubric 对人类与自动评分器一致性的统计影响；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Measuring Black-Box Confidence via Reasoning Trajectories: Geometry, Coverage, and Verbalization](https://arxiv.org/abs/2605.06308)：评测基于推理轨迹几何、覆盖度和 verbalization 的黑箱置信度评分；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [From Agent Loops to Deterministic Graphs: Execution Lineage for Reproducible AI-Native Work](https://arxiv.org/abs/2605.06365)：面向AI-native 工作的可复现执行谱系的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [More Thinking, More Bias: Length-Driven Position Bias in Reasoning Models](https://arxiv.org/abs/2605.06672)：评测多项选择评测中 reasoning model 的长度驱动位置偏差；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Bias and Uncertainty in LLM-as-a-Judge Estimation](https://arxiv.org/abs/2605.06939)：评测LLM-as-a-judge 估计器中的偏差与不确定性；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Adaptive auditing of AI systems with anytime-valid guarantees](https://arxiv.org/abs/2605.07002)：面向具有 anytime-valid 统计保证的自适应 AI 系统审计的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [The Translation Tax Is Not a Scalar: A Counterfactual Audit of English-Source Cue Inheritance in Chinese Multilingual Benchmarks](https://arxiv.org/abs/2605.07093)：Translation Tax audit 针对翻译 benchmark 的英文源线索继承做反事实审计，属于 benchmark reliability。
+- [Query-efficient model evaluation using cached responses](https://arxiv.org/abs/2605.07096)：利用缓存响应降低模型评测成本；核心思想是用更少的新模型查询估计 benchmark 表现。
+- [Towards Apples to Apples for AI Evaluations: From Real-World Use Cases to Evaluation Scenarios](https://arxiv.org/abs/2605.07986)：面向面向 apples-to-apples AI 评测的操作化 evaluation scenario 设计的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Coordinates of Capability](https://arxiv.org/abs/2605.08522)：用统一的 MTMM 几何框架分析 LLM 评测。核心思路是区分潜在能力维度和测量方法，使基准分数更接近能力证据，而不是孤立题集结果。
+- [The Metacognitive Probe: Five Behavioural Calibration Diagnostics for LLMs](https://arxiv.org/abs/2605.09844)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [Active Testing of Large Language Models via Approximate Neyman Allocation](https://arxiv.org/abs/2605.10075)：用少量高信息量样本估计大模型评测结果；核心思想是自适应分配标注或计算预算，而不是把所有评测样本等权处理。
+- [Consistency as a Testable Property: Statistical Methods to Evaluate AI Agent Reliability](https://arxiv.org/abs/2605.10516)：将 consistency 形式化为可检验属性，适合 AI agent reliability 统计评测入口。
+- [Navigating the Sea of LLM Evaluation: Investigating Bias in Toxicity Benchmarks](https://arxiv.org/abs/2605.10639)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [Executable Benchmarking Suite for Tool-Using Agents](https://arxiv.org/abs/2605.11030)：面向闭环工具使用 agent 的跨任务 benchmark 套件。核心思想：用共享 manifest、事件 schema、replay 策略、driver 声明和 evidence-admission gate 连接 WebArena Verified、SWE-Gym 子集与 MiniWoB++。
+- [The Scaling Law of Evaluation Failure: Why Simple Averaging Collapses Under Data Sparsity and Item Difficulty Gaps, and How Item Response Theory Recovers Ground Truth Across Domains](https://arxiv.org/abs/2605.11205)：研究数据稀疏和题目难度差异下简单平均为何失效；核心思想是用 IRT 在跨领域评测中恢复更可靠的真实能力估计。
+- [Measuring Five-Nines Reliability: Sample-Efficient LLM Evaluation in Saturated Benchmarks](https://arxiv.org/abs/2605.11209)：Five-Nines Reliability 关注饱和 benchmark 下的高可靠性区分，适合 Benchmark Reliability。
+- [Controllable User Simulation](https://arxiv.org/abs/2605.11519)：把可控用户模拟形式化为因果推断问题，指出用 post-hoc trajectory labels 做监督微调会在反事实对话 agent 评测中引入 look-ahead bias。
+- [VERDI](https://arxiv.org/abs/2605.11334)：为 verification-style LLM judge 估计置信度且不增加额外推理调用；核心思想是从评审轨迹中抽取子检查一致性、claim-level margin 和 evidence grounding 信号，再校准判定可靠性，用于 benchmark 审计。
+- [Property-Level Reconstructability of Agent Decisions](https://arxiv.org/abs/2605.12078)：把 Decision Event Schema 应用于多个公开 vendor SDK trace，检查 agent 决策后的 authority、policy、action 与 reasoning 属性哪些可重建、哪些仍然不可见。
+- [Rollout Cards](https://arxiv.org/abs/2605.12131)：面向 agent research 的可复现性标准。核心思想：把 rollout record 与 reporting view、drop manifest 和 scoring rule 一起发布，使 agent 得分背后的证据可审计、可比较。
+- [ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models](https://arxiv.org/abs/2605.12446)：面向基准可靠性与评测基础设施的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AgentLens](https://arxiv.org/abs/2605.12925)：面向 SWE-agent 轨迹的过程级评测框架。核心思想：识别测试通过但过程混乱或质量较弱的 Lucky Pass 行为，并用带质量标注的轨迹、waste signals、divergence points 与任务级 Prefix Tree Acceptor reference 支持分析。
+- [Discovery of Hidden Miscalibration Regimes](https://arxiv.org/abs/2605.13484)：评测全局置信校准之外的局部隐藏失校准模式；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [ACT*ONOMY](https://arxiv.org/abs/2605.13625)：用于解释 agent runtime trajectory 的行为 taxonomy 与分析 pipeline。核心思想：给自然语言轨迹中的 action、subaction 和 leaf behavior 贴标签，使评测能比较行为画像而不只看最终得分。
 - [Talk is (Not) Cheap](https://arxiv.org/abs/2605.15118)：用基于 STRIDE 的目标与技术二维分类审计 LLM 攻击基准的整体覆盖。核心思想：把公开攻击基准映射到威胁矩阵上，在解读分数前先暴露尚未覆盖的攻击类别。
+- [The Evaluation Game](https://arxiv.org/abs/2605.19377)：把 benchmark 鲁棒性形式化为 evaluator-trainer game，并用 group-action data augmentation 解释静态对抗基准在定向微调后如何失去原本含义。
+- [RealUserSim](https://arxiv.org/abs/2605.20204)：把 LLM 用户模拟建立在 14,000 多条真实人类-LLM 对话和 7,275 个可执行行为画像上，并加入 style match、行为真实度和 anti-leakage controls 的 fidelity benchmark。
+- [Open-World Evaluations](https://arxiv.org/abs/2605.20520)：主张用长期、混乱、真实世界且小样本质性评估的任务补足固定 benchmark，并用 CRUX 展示 agent 将 iOS 应用发布到 App Store 的开放世界评测。
+- [The Illusion of Intervention](https://arxiv.org/abs/2605.20767)：形式化 LLM 模拟实验中的 user drift，指出 synthetic-user intervention 可能改变隐含样本人群并造成观察性研究式混杂，因此评测协议需要诊断潜在属性漂移。
+- [ConsumerSimBench](https://arxiv.org/abs/2605.17079)：评测 LLM digital consumers 能否从 1,553 个中文社交媒体话题和 23,122 条规则审计准则中重建群体级反应，用可审计的 pointwise judgments 取代整体式模拟器打分。
+- [ProofAgent Harness](https://arxiv.org/abs/2605.24134)：提供 AI agent 对抗评测的开放基础设施。核心思想是收集 evaluation intelligence、运行对抗多轮试验、捕获轨迹并在可复用 harness 中应用 policy checks。
+- [FAX / Faithful Agentic XAI](https://arxiv.org/abs/2605.27879)：通过把解释拆成可检查 claim 来验证解释忠实性。核心思想是用 faithful tools 和 open-world benchmark 测试 agentic explanation 是否保持 model-specific 与 evidence-grounded。
+- [Harness-Bench](https://arxiv.org/abs/2605.27922)：衡量 harness 设计如何改变 agent 的实际能力。核心思想是在共享预算和协议下运行 106 个沙盒离线 workflow 任务，并记录轨迹和 validator 输出，以分离 harness 效应与基座模型能力。
+- [Benchmark Item Aggregation via Principal-Agent Analysis](https://arxiv.org/abs/2605.30916)：把 benchmark 聚合研究为 principal-agent 问题。核心思想是定义 welfare、improvability 和 variance 等 item-level primitives，避免总分掩盖有害的题目加权。
+- [Abstention Competence in Autonomous Agents](https://arxiv.org/abs/2606.02965)：主张 agent benchmark 应衡量何时应停止或 abstain。核心思想是定义 compliance-bias gaps，区分有原则的暂停、静默失败和被迫完成任务。
+- [ADWM Off-Policy Agent Evaluation](https://arxiv.org/abs/2606.05558)：用 autoregressive diffusion world models 做 LLM agent 的 off-policy evaluation。核心思想是从已有轨迹估计新 agent policy 表现，减少重新运行高风险或高成本环境的需求。
+- [BenchAgent Workflow Evaluation](https://arxiv.org/abs/2606.05670)：在对齐协议下比较 single-agent 与 multi-agent workflow。核心思想是共享 loader、tool access、answer contract、usage accounting 和 trajectory logging，从而公平测量 workflow topology 的影响。
+- [Adversarial Hacker-Fixer Benchmark Hardening](https://arxiv.org/abs/2606.08960)：加固 agent benchmark 以抵抗 reward hacking。核心思想是审计 terminal-agent 任务中的脆弱 verifier，并用 hacker-fixer-solver loop 找出和修复可利用评分规则。
+- [Soft-Prompt Tuning for Fair Benchmark Evaluation](https://arxiv.org/abs/2606.12117)：在 benchmark evaluation 中分离格式遵循与任务知识。核心思想是只优化少量 soft-prompt vectors 进行 benchmark format adaptation，并衡量分数中有多少来自格式而非能力。
+- [M2DE](https://doi.org/10.1016/j.patcog.2026.113428)：面向 LLM trustworthiness 的多压力源、多维度动态评估框架。核心思想：不只报告单一静态分数，而是改变 stressor 和 trustworthiness 维度，从而在变化的评测压力下检查 benchmark health。
+- [TCG-Bench](https://doi.org/10.18653/v1/2026.findings-eacl.353)：通过文本交易卡牌游戏评估抗污染的多语言推理能力。核心思想是把公开游戏引擎与隐藏卡牌实现分离，通过模拟调节难度，并在排行榜协议下比较英语与阿拉伯语战略推理表现。
+- [TrustBench](https://doi.org/10.1109/SoutheastCon63549.2026.11476117)：用多次运行稳定性和成本指标评测可信 LLM 行为。核心思想：同时报告期望行为率、固定设置下的重复运行一致性、置信度离散程度和 token 成本效益，而不是只看单次准确率。
+- [Hidden-Uncertainty Assessment via Non-Verbalized Signatures for LLM Medical QA](https://doi.org/10.1109/access.2026.3682338)：评测用于医学问答可靠性评估的非 verbalized 不确定性信号；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Reasoning's Razor: Reasoning Improves Accuracy but Hurts Recall at Critical Operating Points in Safety and Hallucination Detection](https://doi.org/10.18653/v1/2026.eacl-long.190)：评测安全和幻觉检测中 reasoning mode 的准确率与召回率取舍；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Trait and Consistency Evaluation: Measuring Behavioral Stability and the Adversarial Compensation Effect](https://doi.org/10.5753/jbcs.2026.6343)：评测黑箱 LLM 评测中的行为特质稳定性和对抗性补偿效应；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Cross-Examiner: Evaluating Consistency of Large Language Model-Generated Explanations](https://doi.org/10.1109/icassp55912.2026.11462075)：可作为benchmark reliability方向的 Representative Work and Entry Points 候选；标题/摘要显示其提供评测可靠性方法、judge 诊断、污染分析或测量实践。
+- [Process Evaluation for Agentic Systems](https://doi.org/10.18653/v1/2026.findings-eacl.140)：从过程层面评估 agentic systems；核心思想是审查中间决策和轨迹，而不只依赖最终成功率。
+- [Program-Verifiable Evaluation for Temporal QA: Metrics for Evidence Validity](https://doi.org/10.1109/access.2026.3679691)：为时间问答证据有效性定义程序可验证指标。
 - [Yourbench](https://openreview.net/forum?id=bkWERVKzuP)：用 LLM 生成动态评测集。核心思想：让 benchmark 构建者从私有或新鲜材料中实例化任务特定测试，避免只依赖公开静态题集。
 - [Fluid Language Model Benchmarking](https://openreview.net/forum?id=mxcCg9YRqj)：研究语言模型评测中的 benchmark 流动性。核心思想：把评测集视为持续演化的对象，并在受控刷新和变化下检验评测结论是否稳健。
 - [EvalAgents](https://openreview.net/forum?id=erGpkHCybv)：从 Web 中发现隐式评测标准。核心思想：用网页中抽取的标准让评测 rubric 更贴近任务，减少对手写通用打分表的依赖。
 - [AgentRewardBench](https://openreview.net/forum?id=fQcUZMPIvu)：评测 Web agent 轨迹的自动评分质量。核心思想：检查 reward model 和自动裁判能否正确评价完整 agent 轨迹，而不是只看最终答案或单张截图。
-- [Judge's Verdict](https://arxiv.org/abs/2510.09738)：评什么：LLM-as-a-judge 与人类判断的一致性。核心思想：把 judge 可靠性本身作为评估对象，暴露自动裁决何处与人工评审一致或分歧。
-- [Auto-BenchmarkCard](https://arxiv.org/abs/2512.09577)：自动生成 benchmark 文档卡；适合在 benchmark 数量快速增长时快速暴露数据、指标和限制描述缺失。
-- [RULERS](https://arxiv.org/abs/2601.08654)：为稳健 LLM 评估提供锁定评分规程和证据锚定打分。核心思路是将自然语言评分规程编译为可执行标准，使裁判行为减少提示敏感性并更易审计。
-- [Rubric-Conditioned LLM Grading](https://arxiv.org/abs/2601.08843)：研究基于 rubric 的自动评分在对齐、不确定性和鲁棒性方面的表现；核心思想是把评分 rubric 本身纳入评测对象，从而显式衡量 judge 可靠性与不确定性。
-- [The Judge Who Never Admits](https://arxiv.org/abs/2602.07996)：审计 LLM-as-judge 评测中的隐藏捷径。核心思想：注入受控元数据线索，并比较 verdict shift 与 cue acknowledgment，揭示裁判模型何时依赖无关信号却不在解释中承认。
-- [SWE-rebench V2](https://arxiv.org/abs/2602.23866)：语言无关、规模更大的动态 SWE 任务构造与执行评测；延续去污染自动化采集路线，把可执行任务扩展到更多语言与仓库生态。
-- [A Coin Flip for Safety](https://arxiv.org/abs/2603.06594)：审计 LLM-as-a-judge 在对抗鲁棒性评估中的可靠性。核心思路是在红队分布偏移下用人工验证标签对照评判器行为，避免安全分数继承不稳定的评测偏差。
-- [CUBE](https://arxiv.org/abs/2603.15798)：提出基于 MCP 与 Gym 的 Common Unified Benchmark Environments 协议标准；适合降低 agent benchmark 快速增多后的集成税，并把 task、benchmark、package 和 registry 层职责拆清楚。
-- [FACT-E](https://arxiv.org/abs/2604.10693)：通过因果扰动与步骤间依赖检查评测 chain-of-thought 的忠实性；适合区分“看似连贯但不支撑答案”的轨迹与真正支持答案的推理路径。
-- [Terminal Wrench](https://arxiv.org/abs/2604.17596)（[开源代码](https://github.com/few-sh/terminal-wrench)）：评测终端 benchmark 是否可被 reward hacking 绕过；核心价值是把环境漏洞、评分捷径和轨迹操纵作为 benchmark 可靠性问题显式化。
-- [QuickScope](https://arxiv.org/abs/2604.17842)：为动态 benchmark 中的难题做快速认证；核心思想是给“这题是否真的难、是否能区分模型”提供更低成本的预筛机制。
-- [How Sensitive Are Safety Benchmarks to Judge Configuration Choices?](https://arxiv.org/abs/2604.24074)：审计安全基准分数如何随 LLM 裁判提示词和配置变化而波动。核心思路是把裁判设置视为评测变量，而不是实现细节，从而暴露安全基准中的分数和排名不稳定性。
-- [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：会随真实 workflow demand 变化的 live agent benchmark；其价值在于按季度刷新任务分布，同时保留 mock service、workspace fixture、trace 和 grader 以便复现。
+- [Prompt Architecture Artifacts](https://doi.org/10.1371/journal.pone.0319159)：显示 prompt architecture 可能在 LLM 研究中诱发方法学 artifact，强调评测协议需要报告并压力测试 prompt design choices。
+- [Human Evaluation of Large Language Models](https://doi.org/10.3390/ai7050174)：综述 LLM 人工评测协议选择，为 benchmark 可靠性补充 protocol-selection 视角。
+- [Learning LLM-as-a-Judge for Preference Alignment](https://openreview.net/forum?id=HZVIQE1MsJ)：训练用于偏好对齐的 judge model，补充 LLM-as-a-judge 可靠性的评测器模型视角。
+- [Generative AI for social-science quality evaluation](https://doi.org/10.1007/s11192-026-05570-9)：检验生成式 AI 能否评估图书情报学研究质量，补充一个领域化 LLM-as-a-judge 可靠性案例。
+- [A Dataset Capturing Decision Processes, Tool Interactions and Provenance Links in Autonomous AI Agents](https://doi.org/10.3390/data11040066)：评什么：评测 agent 决策、工具交互和 provenance link 的结构化轨迹；核心思想是让 agent 内部动态可观察、可比较。
+- [CodeCleaner: Mitigating Data Contamination for LLM Benchmarking](https://doi.org/10.1145/3755881.3755901)：缓解 LLM 代码评测中的数据污染；核心思想是清理与公开代码仓库重叠、会抬高评测可信度风险的样本。
+- [Investigating Reproducibility Challenges in LLM Bugfixing on the HumanEvalFix Benchmark](https://doi.org/10.3390/software4030017)：评什么：研究 LLM bugfixing 在 HumanEvalFix 上的可复现性问题。
+- [Mapping the Landscape of LLM Deployment in the Wild: Prevalence, Patterns, and Perils](https://doi.org/10.1145/3788097)：面向基准可靠性与评测基础设施的综述或相关工作脉络。核心思路是围绕“Mapping the Landscape of LLM Deployment in the Wild: Prevalence, Patterns, and Perils”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Diagnosing Bias and Instability in LLM Evaluation: A Scalable Pairwise Meta-Evaluator](https://doi.org/10.3390/info16080652)：关注评测可靠性、裁判鲁棒性、基准不稳定性或动态评测。
+- [Large Language Models for Quality Control of Large Language Models](https://doi.org/10.5220/0014649700004058)：面向基准可靠性与评测基础设施的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Large Language Models for Quality Control of Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 
 ## 0.3.3 使用建议
 

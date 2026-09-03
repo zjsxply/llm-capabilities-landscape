@@ -1,10 +1,96 @@
 # 4.1.2 Survey
 
 - [Text-to-image Diffusion Models in Generative AI: A Survey](https://arxiv.org/abs/2303.07909)：文本到图像扩散系统及其评测的基础综述。
+- [Diffusion Models, Image Super-Resolution, and Everything: A Survey](https://arxiv.org/abs/2401.00736)：面向图像生成与编辑能力，梳理近期工作、分类边界与开放问题。
+- [Confronting Reward Overoptimization for Diffusion Models: A Perspective of Inductive and Primacy Biases](https://arxiv.org/abs/2402.08552)：综述或系统梳理图像生成与编辑，为该能力页补充分类、趋势或风险边界。
 - [Diffusion Model-Based Image Editing: A Survey](https://arxiv.org/abs/2402.17525)：综述指令式与文本驱动图像编辑方法及评测。
+- [Controllable Generation With Text-to-Image Diffusion Models: A Survey](https://arxiv.org/abs/2403.04279)：梳理，主要面向 Image Generation and Editing Models。
+- [A Survey on Quality Metrics for Text-to-Image Generation](https://arxiv.org/abs/2403.11821)：梳理图像生成与编辑的方法、证据与开放问题。
+- [Deepfake Generation and Detection: A Benchmark and Survey](https://arxiv.org/abs/2403.17881)：综述图像生成、编辑、溯源或视觉取证能力，为父级复核提供近期综述线索。
+- [Tutorial on Diffusion Models for Imaging and Vision](https://arxiv.org/abs/2403.18103)：综述Image Generation & Editing的方法、风险或评测脉络，可作为 Image Generation & Editing / Survey 部分的领域地图。
+- [Survey of Bias In Text-to-Image Generation: Definition, Evaluation, and Mitigation](https://arxiv.org/abs/2404.01030)：综述图像生成、编辑、水印、概念擦除或生成图像取证能力，补充近期方法、基准、风险或开放问题脉络。
+- [A Survey on Visual Mamba](https://arxiv.org/abs/2404.15956)：梳理，主要面向 Image Generation and Editing Models。
+- [Deep RAW Image Super-Resolution. A NTIRE 2024 Challenge Survey](https://arxiv.org/abs/2404.16223)：综述或系统梳理图像生成与编辑，为该能力页补充分类、趋势或风险边界。
+- [Real-Time 4K Super-Resolution of Compressed AVIF Images. AIS 2024 Challenge Survey](https://arxiv.org/abs/2404.16484)：综述或系统梳理图像生成与编辑，为该能力页补充分类、趋势或风险边界。
+- [Fake Artificial Intelligence Generated Contents (FAIGC): A Survey of Theories, Detection Methods, and Opportunities](https://arxiv.org/abs/2405.00711)：梳理图像生成与编辑的方法、证据与开放问题。
+- [AMMeBa: A Large-Scale Survey and Dataset of Media-Based Misinformation In-The-Wild](https://arxiv.org/abs/2405.11697)：面向图像生成与编辑能力，梳理近期工作、分类边界与开放问题。
+- [Unraveling the Smoothness Properties of Diffusion Models: A Gaussian Mixture Perspective](https://arxiv.org/abs/2405.16418)：综述或系统梳理图像生成与编辑，为该能力页补充分类、趋势或风险边界。
+- [LLMs Meet Multimodal Generation and Editing: A Survey](https://arxiv.org/abs/2405.19334)：综述图像生成与编辑的方法谱系、评测维度与开放问题，为父级审阅补充近期综述线索。
+- [Improving Compositional Attribute Binding in Text-to-Image Generative Models via Enhanced Text Embeddings](https://arxiv.org/abs/2406.07844)：作为图像生成与编辑的综述条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Step-by-Step Diffusion: An Elementary Tutorial](https://arxiv.org/abs/2406.08929)：梳理该方向的任务边界、方法谱系或评测维度，补充图像生成与编辑方向的综述覆盖。
+- [Diffusion Models in Low-Level Vision: A Survey](https://arxiv.org/abs/2406.11138)：综述与 Image Generation & Editing 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
+- [What's Next? Exploring Utilization, Challenges, and Future Directions of AI-Generated Image Tools in Graphic Design](https://arxiv.org/abs/2406.13436)：梳理图像生成与编辑方向的近期方法、评测问题或风险边界。
 - [A Survey of Multimodal-Guided Image Editing with Text-to-Image Diffusion Models](https://arxiv.org/abs/2406.14555)：回顾由文本、mask、layout、参考图等条件引导的编辑。
+- [A Survey of Defenses Against AI-Generated Visual Media: Detection, Disruption, and Authentication](https://arxiv.org/abs/2407.10575)：围绕Image Generation and Editing梳理《A Survey of Defenses Against AI-Generated Visual Media: Detection, Disruption, and Authentication》涉及的方法、分类或实践。
+- [Understanding Reinforcement Learning-Based Fine-Tuning of Diffusion Models: A Tutorial and Review](https://arxiv.org/abs/2407.13734)：综述图像生成、编辑、水印、概念擦除或生成图像取证能力，补充近期方法、基准、风险或开放问题脉络。
+- [Adversarial Attacks and Defenses on Text-to-Image Diffusion Models: A Survey](https://arxiv.org/abs/2407.15861)：Adversarial Attacks and Defenses on Text-to-Image Diffusion Models 补充图像生成与编辑综述，覆盖视觉合成、水印、概念擦除或生成媒体检测。
+- [Replication in Visual Diffusion Models: A Survey and Outlook](https://arxiv.org/abs/2408.00001)：综述图像生成、编辑、溯源或视觉取证能力，为父级复核提供近期综述线索。
+- [Attacks and Defenses for Generative Diffusion Models: A Comprehensive Survey](https://arxiv.org/abs/2408.03400)：综述Image Generation & Editing的方法、风险或评测脉络，可作为 Image Generation & Editing / Survey 部分的领域地图。
+- [A Survey on Benchmarks of Multimodal Large Language Models](https://arxiv.org/abs/2408.08632)：梳理，主要面向 Image Generation and Editing Models。
+- [Diffusion Model for Planning: A Systematic Literature Review](https://arxiv.org/abs/2408.10266)：综述图像生成、编辑、水印、概念擦除或生成图像取证能力，补充近期方法、基准、风险或开放问题脉络。
+- [Diffusion-Based Visual Art Creation: A Survey and New Perspectives](https://arxiv.org/abs/2408.12128)：围绕Image Generation and Editing梳理《Diffusion-Based Visual Art Creation: A Survey and New Perspectives》涉及的方法、分类或实践。
+- [CustomContrast: A Multilevel Contrastive Perspective For Subject-Driven Text-to-Image Customization](https://arxiv.org/abs/2409.05606)：围绕image generation or editing capability梳理综述、分类或路线图，供父级复核是否补入。
 - [Trustworthy Text-to-Image Diffusion Models: A Timely and Focused Survey](https://arxiv.org/abs/2409.18214)：覆盖安全、公平、隐私、鲁棒性与可信问题。
+- [Conditional Image Synthesis with Diffusion Models: A Survey](https://arxiv.org/abs/2409.19365)：综述或系统梳理图像生成与编辑，为该能力页补充分类、趋势或风险边界。
+- [A Survey on Diffusion Models for Inverse Problems](https://arxiv.org/abs/2410.00083)：梳理，主要面向 Image Generation and Editing Models。
+- [Computer-Aided Colorization State-of-the-Science: A Survey](https://arxiv.org/abs/2410.02288)：综述图像生成与编辑相关方法、风险或评测边界。
+- [Diffusion Models in 3D Vision: A Survey](https://arxiv.org/abs/2410.04738)：综述图像生成与编辑方向的相关工作，可作为父级复核时的体系化 Survey 候选。
+- [A Survey on All-in-One Image Restoration: Taxonomy, Evaluation and Future Trends](https://arxiv.org/abs/2410.15067)：面向图像生成与编辑能力，梳理近期工作、分类边界与开放问题。
+- [Progressive Compositionality In Text-to-Image Generative Models](https://arxiv.org/abs/2410.16719)：作为图像生成与编辑的综述条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Generating Compositional Scenes via Text-to-image RGBA Instance Generation](https://arxiv.org/abs/2411.10913)：梳理图像生成与编辑相关方法、风险与开放问题。
+- [Passive Deepfake Detection Across Multi-modalities: A Comprehensive Survey](https://arxiv.org/abs/2411.17911)：Passive Deepfake Detection Across Multi-modalities 补充图像生成与编辑综述，覆盖视觉合成、水印、概念擦除或生成媒体检测。
+- [A Chronological Review of Deepfake Detection: Techniques and Evolutions](https://doi.org/10.5121/csit.2024.150202)：综述 A Chronological Review of Deepfake Detection: Techniques and Evolutions，为该能力方向补充可由父级复核的综述线索。
+- [The Enhancement of Advanced Text-to-Image Diffusion Generation Models: A Review](https://doi.org/10.1109/icicml63543.2024.10957764)：综述 The Enhancement of Advanced Text-to-Image Diffusion Generation Models: A Review，为该能力方向补充可由父级复核的综述线索。
+- [A Survey of Cross-Modal Visual Content Generation](https://doi.org/10.1109/tcsvt.2024.3351601)：综述或系统梳理图像生成与编辑，为该能力页补充分类、趋势或风险边界。
+- [Image-Based Video Game Asset Generation and Evaluation Using Deep Learning: A Systematic Review of Methods and Applications](https://doi.org/10.1109/tg.2024.3487054)：梳理图像生成与编辑能力相关的方法、风险、评测实践或分类框架。
+- [Inference-Time Alignment in Diffusion Models](https://arxiv.org/abs/2501.09685)：综述通过 SMC、value guidance、classifier guidance 等推理时方法进行 reward-guided diffusion generation，把生成质量与显式下游目标连接起来。
+- [Any2anytryon: Leveraging Adaptive Position Embeddings for Versatile Virtual Clothing Tasks](https://arxiv.org/abs/2501.15891)：系统梳理该方向的方法、评测缺口或部署问题。
+- [A Comprehensive Review on Noise Control of Diffusion Model](https://arxiv.org/abs/2502.04669)：综述扩散模型训练与采样中的噪声调度和控制策略。
+- [Survey on AI-Generated Media Detection: From Non-MLLM to MLLM](https://arxiv.org/abs/2502.05240)：综述从非 MLLM 方法到多模态大语言模型的 AI 生成媒体检测路线。
+- [Efficient Diffusion Models: A Survey](https://arxiv.org/abs/2502.06805)：可作为图像生成与编辑的 Survey 候选：围绕 Efficient Diffusion Models: A Survey 梳理背景、方法与开放问题。
 - [Personalized Image Generation with Deep Generative Models: A Decade Survey](https://arxiv.org/abs/2502.13081)：回顾主体保持、参考条件与个性化生成。
+- [A Comprehensive Survey on Concept Erasure in Text-to-Image Diffusion Models](https://arxiv.org/abs/2502.14896)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [Methods and trends in detecting AI-generated images: A comprehensive review](https://arxiv.org/abs/2502.15176)：梳理图像生成与编辑方向的近期方法、评测问题或风险边界。
+- [Perceptual Visual Quality Assessment: Principles, Methods, and Future Directions](https://arxiv.org/abs/2503.00625)：综述感知视觉质量评估的原则、方法与未来方向。
+- [Simulating the Real World: A Unified Survey of Multimodal Generative Models](https://arxiv.org/abs/2503.04641)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Image Quality Assessment: From Human to Machine Preference](https://arxiv.org/abs/2503.10078)：梳理图像生成与编辑方向的近期方法、评测问题或风险边界。
+- [Vipera: Towards systematic auditing of generative text-to-image models at scale](https://arxiv.org/abs/2503.11113)：面向图像生成与编辑，补充综述或脉络梳理。
 - [A Comprehensive Survey on Visual Concept Mining in Text-to-image Diffusion Models](https://arxiv.org/abs/2503.13576)：综述文生图扩散模型中视觉概念的挖掘、定位与操控方法。
+- [Image Editing with Diffusion Models: A Survey](https://arxiv.org/abs/2504.13226)：可作为图像生成与编辑的 Survey 候选：围绕 Image Editing with Diffusion Models: A Survey 梳理背景、方法与开放问题。
+- [DRC: Enhancing Personalized Image Generation via Disentangled Representation Composition](https://arxiv.org/abs/2504.17349)：梳理图像生成与编辑相关方法、风险与开放问题。
+- [Diffusion Model Quantization: A Review](https://arxiv.org/abs/2505.05215)：面向图像生成与编辑，补充综述或脉络梳理。
+- [Visual Watermarking in the Era of Diffusion Models: Advances and Challenges](https://arxiv.org/abs/2505.08197)：梳理image generation, editing, watermarking, or generated-image authenticity相关方法与挑战，补充该能力方向的综述线索。
+- [Is Artificial Intelligence Generated Image Detection a Solved Problem?](https://arxiv.org/abs/2505.12335)：综述 AI 生成图像检测是否已解决，梳理检测器和失效模式，适合生成图像安全方向。
+- [Signals of Provenance: Practices & Challenges of Navigating Indicators in AI-Generated Media for Sighted and Blind Individuals](https://arxiv.org/abs/2505.16057)：梳理image generation, editing, watermarking, or generated-image authenticity相关方法与挑战，补充该能力方向的综述线索。
+- [SoK: Can Synthetic Images Replace Real Data? A Survey of Utility and Privacy of Synthetic Image Generation](https://arxiv.org/abs/2506.19360)：面向图像生成与编辑，补充综述或脉络梳理。
+- [Hallucination as an Upper Bound: A New Perspective on Text-to-Image Evaluation](https://arxiv.org/abs/2509.21257)：把幻觉概念用于解释文生图评价上界与指标含义。
+- [Responsible Diffusion: A Comprehensive Survey on Safety, Ethics, and Trust in Diffusion Models](https://arxiv.org/abs/2509.22723)：综述图像生成与编辑相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [A Survey on Cache Methods in Diffusion Models: Toward Efficient Multi-Modal Generation](https://arxiv.org/abs/2510.19755)：综述加速扩散式多模态生成的缓存方法。
+- [AI-Generated Image Detection: An Empirical Study and Future Research Directions](https://arxiv.org/abs/2511.02791)：梳理image generation, editing, watermarking, or generated-image authenticity相关方法与挑战，补充该能力方向的综述线索。
+- [Cultural Bias in Text-to-Image Models: A Systematic Review of Bias Identification, Evaluation, and Mitigation Strategies](https://doi.org/10.1109/access.2025.3585745)：系统综述文本到图像模型的偏见识别、评测与缓解方法，补充视觉生成中的安全与公平性覆盖。
+- [DeepFake detection in the AIGC era: A survey, benchmarks, and future perspectives](https://doi.org/10.1016/j.inffus.2025.103740)：DeepFake detection in the AIGC era 补充图像生成与编辑综述，覆盖视觉合成、水印、概念擦除或生成媒体检测。
+- [A review of instruction-guided image editing](https://doi.org/10.1016/j.engappai.2025.112953)：梳理image generation, editing, watermarking, or generated-image authenticity相关方法与挑战，补充该能力方向的综述线索。
+- [Research Progress on Text-to-Image Diffusion Models Based on Layout Control](https://doi.org/10.12677/csa.2025.154116)：补充图像生成与编辑的 Survey 条目，重点是《Research Progress on Text-to-Image Diffusion Models Based on Layout Control》。
+- [A Systematic Review of Image Generation Models: Methods, Comparative Insights, and Available Datasets](https://doi.org/10.1109/icpct64145.2025.10941132)：系统综述图像生成模型的方法、对比视角与可用数据集。
+- [How far have we gone in Generative Image Restoration? A study on its capability, limitations and evaluation practices](https://arxiv.org/abs/2603.05010)：综述生成式图像复原的能力、局限与评测实践。
+- [Operationalizing Fairness in Text-to-Image Models: A Survey of Bias, Fairness Audits and Mitigation Strategies](https://arxiv.org/abs/2604.16516)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
 - [Preference alignment on diffusion models](https://doi.org/10.1016/j.cosrev.2026.100900)：综述扩散式图像生成与编辑中的偏好对齐方法。
+- [Deepfakes and beyond in the era of AI-generated disinformation: A systematic literature review of emerging technologies, challenges, and policy recommendations](https://doi.org/10.1016/j.jvcir.2026.104748)：梳理，主要面向 Image Generation and Editing Models。
+- [Deepfakes: A comprehensive survey on techniques, challenges and future directions](https://doi.org/10.1016/j.compeleceng.2026.111210)：综述 Deepfakes: A comprehensive survey on techniques, challenges and future directions，为该能力方向补充可由父级复核的综述线索。
+- [Generative AI-Driven Digital Twin in the Manufacturing Internet of Things: A Comprehensive Survey](https://doi.org/10.1109/jiot.2026.3655343)：梳理图像生成与编辑的近期方法与开放问题。
 - [Towards Sustainable Image Synthesis](https://sciety.org/articles/activity/10.54392/irjmt2557)：综述文本到图像生成模型，覆盖 GAN、VAE 与扩散模型等路线，并关注可持续图像合成。
+- [From Fragment to One Piece: A Review on AI-Driven Graphic Design](https://doi.org/10.3390/jimaging11090289)：综述 AI 驱动的平面设计，补充图像生成与编辑中的设计工作流视角。
+- [Interaction Methods in Generative AI Image Tools: A Review of Trends and Design Opportunities Across HCI and Industry](https://doi.org/10.1145/3772318.3790307)：综述 HCI 与产业界生成式图像工具中的交互模式，为以模型为中心的图像生成综述补充工作流和控制界面视角。
+- [Digital Watermarking Technology for AI-Generated Images: A Survey](https://doi.org/10.3390/math13040651)：综述 AI 生成图像的数字水印技术，为图像生成主题补充 provenance 与真实性保护视角。
+- [Verifying artificial intelligence-generated images: Socio-technical approaches to authenticity](https://doi.org/10.59400/cai3893)：综述 AI 生成图像真实性验证的社会技术路径，补充水印和检测器为中心的生成图像综述。
+- [Understanding GANs: fundamentals, variants, training challenges, applications, and open problems](https://doi.org/10.1007/s11042-024-19361-y)：[Understanding GANs: fundamentals, variants, training challenges, applications, and open problems](https://doi.org/10.1007/s11042-024-19361-y): 综述 GAN 基础、变体、训练挑战与应用.
+- [Latent Diffusion Models for Image Watermarking: A Review of Recent Trends and Future Directions](https://doi.org/10.3390/electronics14010025)：综述图像生成、编辑、溯源或视觉取证能力，为父级复核提供近期综述线索。
+- [Research progress of AIGC image watermarking technology based on diffusion model](https://doi.org/10.1145/3708657.3708733)：梳理，主要面向 Image Generation and Editing Models。
+- [Unmasking AI-created visual content: a review of generated images and deepfake detection technologies](https://doi.org/10.1007/s44443-025-00154-8)：综述图像生成与编辑方向的相关工作，可作为父级复核时的体系化 Survey 候选。
+- [Robust Deepfake Detection by Addressing Generalization and Trustworthiness Challenges: A Short Survey](https://doi.org/10.1145/3689090.3689386)：综述图像生成与编辑方向的相关工作，可作为父级复核时的体系化 Survey 候选。
+- [A Survey of Multimodal Controllable Diffusion Models](https://doi.org/10.1007/s11390-024-3814-0)：综述图像生成与编辑的方法谱系、任务边界与开放挑战。
+- [Image generation evaluation: a comprehensive survey of human and automatic evaluations](https://doi.org/10.1631/fitee.2400904)：补充图像生成与编辑的 Survey 条目，重点是《Image generation evaluation: a comprehensive survey of human and automatic evaluations》。
+- [Ensuring privacy in face recognition: a survey on data generation, inference and storage](https://doi.org/10.1007/s42452-025-06987-2)：面向图像生成与编辑，补充综述或脉络梳理。
+- [Trajectory generative models: a survey from unconditional and conditional perspectives](https://doi.org/10.1007/s10707-025-00558-8)：梳理图像生成与编辑的近期方法与开放问题。
+- [A review of deep learning-based virtual try-on research](https://doi.org/10.1186/s13640-026-00691-w)：为图像生成与编辑方向补充一篇综述、分类或教程候选，帮助梳理该能力页的研究边界与方法脉络。
+- [Comprehensive exploration of diffusion models in image generation: a survey](https://doi.org/10.1007/s10462-025-11110-3)：面向图像生成与编辑的综述或相关工作脉络。核心思路是围绕“Comprehensive exploration of diffusion models in image generation: a survey”组织可复用线索，便于比较相关模型、评测或智能体工作流。

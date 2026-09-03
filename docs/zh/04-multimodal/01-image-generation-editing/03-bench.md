@@ -1,62 +1,319 @@
 # 4.1.3 Bench
 
+- [Steganography With Generated Images: Leveraging Volatility to Enhance Security](https://doi.org/10.1109/tdsc.2023.3341427)：评估生成图像的随机波动能否增强隐写安全性，重点检查载荷可恢复性以及检测器在生成差异下能否发现隐藏信息。
+- [Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs](https://arxiv.org/abs/2401.06209)：探测多模态 LLM 的视觉感知短板，可用于判断基于 LMM 的图像生成评审器是否真的能发现空间、计数和细节错误。
+- [Benchmarking the Robustness of Image Watermarks](https://arxiv.org/abs/2401.08573)：测试图像水印在常见编辑、退化和移除攻击之后的存活情况，衡量 provenance 信号在干净样本之外是否仍可检测。
+- [Organic or Diffused: Can We Distinguish Human Art from AI-generated Images?](https://arxiv.org/abs/2402.03214)：比较人类艺术作品与 AI 生成图像，评估人类或检测器在区分人作与扩散模型输出时是否依赖稳定视觉线索。
+- [The Male CEO and the Female Assistant: Evaluation and Mitigation of Gender Biases in Text-To-Image Generation of Dual Subjects](https://arxiv.org/abs/2402.11089)：用双主体职业提示审计文生图中的性别刻板印象，并测试缓解方法能否减少 CEO、助理等角色的偏置分配。
+- [WildFake: A Large-scale Challenging Dataset for AI-Generated Images Detection](https://arxiv.org/abs/2402.11843)：发布大规模野外 AI 生成图像检测数据集，重点考察检测器在不同生成器、提示词和自然图像域之间的泛化能力。
+- [UnlearnCanvas: A Stylized Image Dataset to Benchmark Machine Unlearning for Diffusion Models](https://arxiv.org/abs/2402.11846)：提供用于扩散模型 unlearning 的风格化图像概念，检查目标风格是否被移除，同时非目标生成质量和提示遵循是否保留。
+- [Towards Open-ended Visual Quality Comparison](https://arxiv.org/abs/2402.16641)：评测开放式成对视觉质量比较，要求模型解释相对质量判断，而不只是输出单一美学或 IQA 分数。
+- [Training Unbiased Diffusion Models From Biased Dataset](https://arxiv.org/abs/2403.01189)：衡量有偏训练数据如何传递到扩散模型输出，并测试去偏训练是否能减少属性偏斜而不牺牲图像质量。
+- [Discriminative Probing and Tuning for Text-to-Image Generation](https://arxiv.org/abs/2403.04321)：用判别式 probe 和 tuning 检查文生图输出是否编码了提示相关的视觉概念，把生成评测转成对象、属性和关系缺失的特征级测试。
+- [Data-Independent Operator: A Training-Free Artifact Representation Extractor for Generalizable Deepfake Detection](https://arxiv.org/abs/2403.06803)：评估无需训练的伪影表示在 deepfake 检测中的泛化性，重点看其是否摆脱特定数据集或生成器线索。
+- [A Dataset and Benchmark for Copyright Infringement Unlearning from Text-to-Image Diffusion Models](https://arxiv.org/abs/2403.12052)：为文生图扩散模型定义版权侵权 unlearning 评测，覆盖受版权风格提示、保留效用检查，以及被移除视觉概念是否复现的测试。
+- [Can ChatGPT Detect DeepFakes? A Study of Using Multimodal Large Language Models for Media Forensics](https://arxiv.org/abs/2403.14077)：测试通用多模态 LLM 能否作为媒体取证评审器检测 deepfake，暴露对话式视觉推理相对专用检测器的优势和盲区。
+- [FlashEval: Towards Fast and Accurate Evaluation of Text-to-Image Diffusion Generative Models](https://arxiv.org/abs/2403.16379)：提出更快速的文生图评测协议，用紧凑提示集合近似较慢的人类评审或指标排序，同时保持模型排名一致性。
+- [Fake or JPEG? Revealing Common Biases in Generated Image Detection Datasets](https://arxiv.org/abs/2403.17608)：揭示生成图像检测数据集中的偏差，区分合成图像线索与 JPEG、预处理伪影。
+- [DiffusionFace: Towards a Comprehensive Dataset for Diffusion-Based Face Forgery Analysis](https://arxiv.org/abs/2403.18471)：构建面向扩散式人脸伪造的检测与取证数据集，覆盖生成式人脸篡改，而不只限于 GAN 时代 deepfake。
+- [Bringing Textual Prompt to AI-Generated Image Quality Assessment](https://arxiv.org/abs/2403.18714)：把源提示词纳入 AI 生成图像质量评价，使评测同时考虑感知质量和提示-图像一致性。
+- [AIGCOIQA2024: Perceptual Quality Assessment of AI Generated Omnidirectional Images](https://arxiv.org/abs/2404.01024)：评测 AI 生成全景图像的感知质量评估。
+- [Evaluating Text-to-Visual Generation with Image-to-Text Generation](https://arxiv.org/abs/2404.01291)：通过 image-to-text generation 评测 text-to-visual generation，补充视觉生成自动评测路线。
+- [Diffusion Deepfake](https://arxiv.org/abs/2404.01579)：把 deepfake 评测重点转向扩散模型生成的视觉媒体，使检测压力测试不再只围绕 GAN 时代伪影。
+- [Bi‐LORA: A Vision‐Language Approach for Synthetic Image Detection](https://arxiv.org/abs/2404.01959)：用轻量视觉语言 LoRA 适配测试合成图像检测，重点检查小型 adapter 是否能跨生成器和数据源迁移。
+- [MULAN: A Multi Layer Annotated Dataset for Controllable Text-to-Image Generation](https://arxiv.org/abs/2404.02790)：提供面向可控文生图的多层标注，用于评估对象、属性、关系和布局控制，而不只看提示与图像相似度。
+- [Who Evaluates the Evaluations? Objectively Scoring Text-to-Image Prompt Coherence Metrics with T2IScoreScore (TS2)](https://arxiv.org/abs/2404.04251)：为文生图提示一致性指标引入元评估分数，检查自动指标是否真正匹配客观的提示-图像对齐信号。
+- [Mixture of Low-rank Experts for Transferable AI-Generated Image Detection](https://arxiv.org/abs/2404.04883)：评测 AI 生成图像检测在生成器和数据集迁移下的可迁移性，并用低秩专家适配检验跨来源鲁棒性。
+- [NTIRE 2024 Challenge on Image Super-Resolution (×4): Methods and Results](https://arxiv.org/abs/2404.09790)（[challenge](https://codalab.lisn.upsaclay.fr/competitions/17553)）：报告 NTIRE 四倍超分辨率挑战，在共享测试集和感知或保真指标下比较图像恢复方法。
+- [The Ninth NTIRE 2024 Efficient Super-Resolution Challenge Report](https://arxiv.org/abs/2404.10343)（[challenge](https://codalab.lisn.upsaclay.fr/competitions/17547)）：报告高效超分辨率挑战赛道，要求方法在共享协议下同时权衡感知或保真恢复质量、运行时间和资源开销。
+- [FakeBench: Probing Explainable Fake Image Detection via Large Multimodal Models](https://arxiv.org/abs/2404.13306)：测试大多模态模型的假图检测与解释能力，不只衡量真假分类准确率，还要求定位并说明取证证据。
+- [SVGEditBench: A Benchmark Dataset for Quantitative Assessment of LLM's SVG Editing Capabilities](https://arxiv.org/abs/2404.13710)：用指令驱动的 SVG 向量编辑和渲染结果检查量化 LLM 的 SVG 编辑能力，区分代码合法性和视觉编辑正确性。
+- [Adaptive Mixed-Scale Feature Fusion Network for Blind AI-Generated Image Quality Assessment](https://arxiv.org/abs/2404.15163)：评测 AI 生成图像的无参考质量评价，聚焦混合尺度视觉伪影和感知缺陷排序。
+- [NTIRE 2024 Quality Assessment of AI-Generated Content Challenge](https://arxiv.org/abs/2404.16687)（[challenge](https://codalab.lisn.upsaclay.fr/competitions/17627)）：报告 AI 生成内容质量评估挑战，比较模型预测人类感知合成图像质量的能力。
+- [Revisiting Text-to-Image Evaluation with Gecko: On Metrics, Prompts, and Human Ratings](https://arxiv.org/abs/2404.16820)：用精选提示、人类评分和指标对比重新审视文生图评测，显示自动分数与人类判断在哪些场景下分歧最大。
+- [Large Multi-modality Model Assisted AI-Generated Image Quality Assessment](https://arxiv.org/abs/2404.17762)：使用大型多模态模型评估 AI 生成图像质量。
+- [Probing Unlearned Diffusion Models: A Transferable Adversarial Attack Perspective](https://arxiv.org/abs/2404.19382)：从可迁移对抗提示角度评测扩散模型 unlearning，检查被擦除概念是否会在不同模型和攻击设置下被恢复。
+- [SEED-Data-Edit Technical Report: A Hybrid Dataset for Instructional Image Editing](https://arxiv.org/abs/2405.04007)：发布混合式指令图像编辑数据集，用于训练和评估编辑器能否执行自然语言修改并保持非目标区域。
+- [Towards Geographic Inclusion in the Evaluation of Text-to-Image Models](https://arxiv.org/abs/2405.04457)：评测文生图模型输出中的地理包容性。
+- [Quality Assessment for AI Generated Images With Instruction Tuning](https://arxiv.org/abs/2405.07346)：研究经指令调优的 AI 生成图像质量评估，用语言引导判断同时打分伪影、美学和提示对齐。
+- [Semantic Contextualization of Face Forgery: A New Definition, Dataset, and Detection Method](https://arxiv.org/abs/2405.08487)：定义语义上下文化的人脸伪造，并配套带上下文篡改标签的数据，使检测器不仅看像素伪影，也要识别意义层面的伪造线索。
+- [FAIntbench: A Holistic and Precise Benchmark for Bias Evaluation in Text-to-Image Models](https://arxiv.org/abs/2405.17814)：用细粒度提示和人口属性评测文生图偏见，衡量不同群体中的刻板化、缺失和比例失衡。
+- [Is Synthetic Data all We Need? Benchmarking the Robustness of Models Trained with Synthetic Images](https://arxiv.org/abs/2405.20469)：测试用合成图像训练的分类器在分布偏移下是否稳健，区分合成数据带来的鲁棒性收益和生成伪影导致的捷径学习。
+- [A-Bench: Are LMMs Masters at Evaluating AI-generated Images?](https://arxiv.org/abs/2406.03070)：把大多模态模型作为 AI 生成图像评审器来评测，对比其质量和对齐评分与人类偏好的差距，并暴露其对合成图像伪影的误判。
+- [Evaluating Durability: Benchmark Insights into Multimodal Watermarking](https://arxiv.org/abs/2406.03728)：评测多模态水印在常见变换和攻击下的持久性。
+- [Semantic Similarity Score for Measuring Visual Similarity at Semantic Level](https://arxiv.org/abs/2406.03865)：定义语义层面的视觉相似度分数，针对像素距离或 CLIP 式距离难以判断两张生成图是否保持相同对象和场景含义的情况。
+- [Image and Video Quality Assessment using Prompt-Guided Latent Diffusion Models for Cross-Dataset Generalization](https://arxiv.org/abs/2406.04654)：用提示引导的 latent diffusion 特征做无参考图像和视频质量评估，重点考察跨数据集泛化，而不是只适配单一 IQA 数据集。
+- [Evaluating and Mitigating IP Infringement in Visual Generative AI](https://arxiv.org/abs/2406.04662)：评测视觉生成模型对受保护内容或版权风格的模仿风险，并测试降低侵权风险同时保留生成效用的缓解策略。
+- [PQPP: A Joint Benchmark for Text-to-Image Prompt and Query Performance Prediction](https://arxiv.org/abs/2406.04746)：定义文生图提示词与查询表现预测任务，要求模型预判哪些提示或检索查询会产生高质量且对齐的图像。
+- [Commonsense-T2I Challenge: Can Text-to-Image Generation Models Understand Commonsense?](https://arxiv.org/abs/2406.07546)：用带细粒度常识标签的对抗提示对测试文生图模型是否生成符合现实状态的图像，例如同一物体在不同条件下应亮起或熄灭。
+- [MMFakeBench: A Mixed-Source Multimodal Misinformation Detection Benchmark for LVLMs](https://arxiv.org/abs/2406.08772)：构建混合来源的多模态虚假信息检测基准，要求 LVLM 在 AI 生成图像、配文和真实虚假信息语境中识别被篡改或合成的主张。
+- [A Large-scale Universal Evaluation Benchmark For Face Forgery Detection](https://arxiv.org/abs/2406.09181)：构建覆盖多种篡改来源和数据集的大规模人脸伪造检测基准，检验检测器是否能泛化到单一 deepfake 语料之外。
+- [Decoupling Forgery Semantics for Generalizable Deepfake Detection](https://arxiv.org/abs/2406.09739)：将语义伪造线索与来源特定伪影解耦，评估 deepfake 检测器在篡改类型、生成器或数据分布变化时是否仍能泛化。
+- [BiVLC: Extending Vision-Language Compositionality Evaluation with Text-to-Image Retrieval](https://arxiv.org/abs/2406.09952)：用文生图检索扩展视觉语言组合性评测，检查系统能否按正确属性和关系绑定把提示与生成图像或候选图像匹配。
+- [Exploring the Impact of AI-generated Image Tools on Professional and Non-professional Users in the Art and Design Fields](https://arxiv.org/abs/2406.10640)：研究专业与非专业艺术设计用户使用 AI 图像工具的体验，通过用户中心评估呈现工作流影响、质量感知和采用障碍。
+- [PhyBench: A Physical Commonsense Benchmark for Evaluating Text-to-Image Models](https://arxiv.org/abs/2406.11802)：用需要重力、支撑、反射、遮挡和物体交互合理性的提示，测试文生图模型是否遵守物理常识。
+- [DF40: Toward Next-Generation Deepfake Detection](https://arxiv.org/abs/2406.13495)：构建下一代 deepfake 检测基准集合。
+- [GenAI-Bench: Evaluating and Improving Compositional Text-to-Visual Generation](https://arxiv.org/abs/2406.13743)（[leaderboard](https://huggingface.co/datasets/TIGER-Lab/GenAI-Bench)）：用对象数量、属性、关系和布局等组合式提示评测文本到视觉生成，并据此诊断和改进组合对齐。
+- [EnTruth: Enhancing the Traceability of Unauthorized Dataset Usage in Text-to-image Diffusion Models with Minimal and Robust Alterations](https://arxiv.org/abs/2406.13933)：通过对训练图像施加最小且稳健的改动，评估文生图扩散模型中未经授权数据使用能否在事后被追踪。
+- [Evaluating Numerical Reasoning in Text-to-Image Models](https://arxiv.org/abs/2406.14774)：用数值提示测试文生图模型，衡量生成图像是否满足数量、计数和简单算术约束，而不只是出现目标物体。
+- [GIM: A Million-scale Benchmark for Generative Image Manipulation Detection and Localization](https://arxiv.org/abs/2406.16531)：发布百万级生成式图像篡改检测与定位基准，要求模型同时给出图像级伪造判断和编辑区域的空间 mask。
+- [EVALALIGN: Supervised Fine-Tuning Multimodal LLMs with Human-Aligned Data for Evaluating Text-to-Image Models](https://arxiv.org/abs/2406.16562)：用人类对齐的文生图评测数据监督微调多模态 LLM 裁判，再检验其在提示对齐和视觉质量判断上是否更接近人类偏好。
+- [Vision-Language Consistency Guided Multi-Modal Prompt Learning for Blind AI Generated Image Quality Assessment](https://arxiv.org/abs/2406.16641)：通过显式建模视觉-语言一致性做 AI 生成图像无参考质量评估，使分数同时反映提示忠实度和感知伪影。
+- [DreamBench++: A Human-Aligned Benchmark for Personalized Image Generation](https://arxiv.org/abs/2406.16855)（[leaderboard](https://dreambenchplus.github.io/#leaderboard)）：用人类对齐的提示、主体和偏好判断扩展个性化生成评测，检查自定义概念的身份保持、提示遵循和视觉保真。
+- [A Sanity Check for AI-generated Image Detection](https://arxiv.org/abs/2406.19435)：对 AI 生成图像检测做 sanity check，提高合成媒体评测可靠性。
+- [Analyzing Quality, Bias, and Performance in Text-to-Image Generative Models](https://arxiv.org/abs/2407.00138)：用共享提示集合审计文生图模型的输出质量、人口或社会偏见，以及运行效率和模型表现之间的取舍。
+- [MJ-Bench: Is Your Multimodal Reward Model Really a Good Judge for Text-to-Image Generation?](https://arxiv.org/abs/2407.04842)（[leaderboard](https://mj-bench.github.io/#leaderboard)）：把多模态 reward model 当作文生图裁判来评测，检查其分数是否与人类成对偏好在提示对齐、美学和常见失败模式上一致。
+- [Beyond Aesthetics: Cultural Competence in Text-to-Image Models](https://arxiv.org/abs/2407.06863)：评测文生图输出中的文化胜任力，检验生成器是否能表现长尾文化实体、实践和语境，而不是回落到主流视觉刻板印象。
+- [TGIF: Text-Guided Inpainting Forgery Dataset](https://arxiv.org/abs/2407.11566)：提供文本引导 inpainting 伪造样本和局部编辑区域，测试检测器能否发现语义上合理的生成区域，而不是只依赖整图真假线索。
+- [MemBench: Memorized Image Trigger Prompt Dataset for Diffusion Models](https://arxiv.org/abs/2407.17095)：提供用于扩散模型记忆化测试的触发提示，衡量模型是否会复现近似训练图像，以及记忆化如何随提示词和模型变化。
+- [G²Face: High-Fidelity Reversible Face Anonymization via Generative and Geometric Priors](https://arxiv.org/abs/2408.09458)：评估可逆人脸匿名化，在隐私保护、授权身份恢复和生成几何变换后的视觉保真之间做权衡。
+- [DiffZOO: A Purely Query-Based Black-Box Attack for Red-teaming Text-to-Image Generative Model via Zeroth Order Optimization](https://arxiv.org/abs/2408.11071)：用纯查询黑盒攻击红队测试文生图系统，通过零阶优化寻找能绕过安全过滤或诱导不安全生成的提示。
+- [I2EBench: A Comprehensive Benchmark for Instruction-based Image Editing](https://arxiv.org/abs/2408.14180)：用多样编辑操作评测指令式图像编辑，判断模型是否执行请求修改并保持源图中非目标内容。
+- [ConceptMix: A Compositional Image Generation Benchmark with Controllable Difficulty](https://arxiv.org/abs/2408.14339)：控制文生图组合式提示的难度，测试模型在提示变复杂时能否正确绑定多个概念、属性和关系。
+- [Learning to Discover Forgery Cues for Face Forgery Detection](https://arxiv.org/abs/2409.01030)：用自动发现的取证线索评估人脸伪造检测，关注线索发现是否提升定位能力和跨篡改泛化。
+- [Unlearning or Concealment? A Critical Analysis and Evaluation Metrics for Unlearning in Diffusion Models](https://arxiv.org/abs/2409.05668)：提出区分真实 unlearning 与表面隐藏的扩散模型评测指标，同时检查目标抑制、提示敏感性和保留生成质量。
+- [Detect Fake with Fake: Leveraging Synthetic Data-driven Representation for Synthetic Image Detection](https://arxiv.org/abs/2409.08884)：测试合成训练数据能否提升合成图像检测，用生成样本学习可迁移到未见生成器的表示。
+- [ABHINAW: A method for Automatic Evaluation of Typography within AI-Generated Images](https://arxiv.org/abs/2409.11874)：自动评测 AI 生成图像中的 typography，关注可读性、拼写、位置和风格一致性这些通用图像质量分数容易漏掉的问题。
+- [JourneyBench: A Challenging One-Stop Vision-Language Understanding Benchmark of Generated Images](https://arxiv.org/abs/2409.12953)：以生成图像作为视觉素材构建 VLM 理解基准，测试模型能否回答关于合成场景和伪影的细粒度问题。
+- [NTIRE 2024 Challenge on Stereo Image Super-Resolution: Methods and Results](https://arxiv.org/abs/2409.16947)（[track 1](https://codalab.lisn.upsaclay.fr/competitions/17245)；[track 2](https://codalab.lisn.upsaclay.fr/competitions/17246)）：报告立体图像超分辨率挑战结果，评估方法能否利用双目线索，同时提升左右一致性和高分辨细节。
+- [Subjective and Objective Quality Evaluation of Super-Resolution Enhanced Broadcast Images on a Novel SR-IQA Dataset](https://arxiv.org/abs/2409.17451)：提出广播图像超分辨率质量评估数据集，将主观人类评分与客观指标配对，用于评估感知恢复质量。
+- [Dog-IQA: Standard-guided Zero-shot MLLM for Mix-grained Image Quality Assessment](https://arxiv.org/abs/2410.02505)：用标准引导的零样本 MLLM 做混合粒度图像质量评估，覆盖局部缺陷、全局质量和解释式质量推理。
+- [Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](https://arxiv.org/abs/2410.05664)：从目标擦除、残留提示泄漏、保留生成质量和相邻概念连带损伤等维度评估扩散模型 unlearning。
+- [ForgeryGPT: Multimodal Large Language Model For Explainable Image Forgery Detection and Localization](https://arxiv.org/abs/2410.10238)：评测可解释的图像伪造检测与定位，要求多模态模型识别篡改区域并给出自然语言取证理由。
+- [Evaluating Semantic Variation in Text-to-Image Synthesis: A Causal Perspective](https://arxiv.org/abs/2410.10291)：从因果视角衡量文生图中的语义变化，检查提示因素是否系统性控制生成对象、属性和关系。
+- [Aligned Datasets Improve Detection of Latent Diffusion-Generated Images](https://arxiv.org/abs/2410.11835)：说明对齐真实图像与生成图像的数据分布能减少检测器捷径，在更公平的训练和测试构造下评测 latent diffusion 图像检测。
+- [NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples](https://arxiv.org/abs/2410.14669)：用自然出现的对抗图像和问题对测试 VLM，可用于检查图像生成裁判在细微视觉混淆下是否仍可靠。
+- [Robust Watermarking Using Generative Priors Against Image Editing: From Benchmarking to Advances](https://arxiv.org/abs/2410.18775)：评测图像编辑下的稳健水印，并提出生成先验改进。
+- [Diffusion Beats Autoregressive: An Evaluation of Compositional Generation in Text-to-Image Models](https://arxiv.org/abs/2410.22775)：比较扩散式和自回归文生图模型的组合生成能力，重点看属性绑定、物体关系和多实体提示保真。
+- [InvisMark: Invisible and Robust Watermarking for AI-generated Image Provenance](https://arxiv.org/abs/2411.07795)：评测 AI 生成图像来源追踪中的不可见水印，重点考察常见图像编辑和变换后的可检测性与鲁棒性。
+- [MEMO-Bench: A Multiple Benchmark for Text-to-Image and Multimodal Large Language Models on Human Emotion Analysis](https://arxiv.org/abs/2411.11235)：评估文生图和多模态模型表达、识别人类情绪的能力，覆盖细微面部表情、身体线索和提示中指定的情感。
+- [From Words to Structured Visuals: A Benchmark and Framework for Text-to-Diagram Generation and Editing](https://arxiv.org/abs/2411.11916)：用结构化视觉约束评测文本到图表生成与编辑，检查系统是否保持节点、连线、标签和布局语义。
+- [GalaxyEdit: Large-Scale Image Editing Dataset with Enhanced Diffusion Adapter](https://arxiv.org/abs/2411.13794)：发布大规模图像编辑数据集和 adapter 基线，评估编辑器能否遵循多样指令，同时保留主体身份与未编辑背景。
+- [MMGenBench: Fully Automatically Evaluating LMMs from the Text-to-Image Generation Perspective](https://arxiv.org/abs/2411.14062)：从文生图任务角度自动评估 LMM，用生成视觉结果探测指令遵循、语义 grounding 和多模态生成质量。
+- [FairAdapter: Detecting AI-generated Images with Improved Fairness](https://arxiv.org/abs/2411.14755)：在公平性约束下评估 AI 生成图像检测，检查检测器在不同人口或内容群体上的性能差异并改进合成图识别。
+- [Automatic Evaluation for Text-to-image Generation: Task-decomposed Framework, Distilled Training, and Meta-evaluation Benchmark](https://arxiv.org/abs/2411.15488)：把文生图评测拆成子能力，蒸馏自动评审器训练数据，并用 meta-evaluation 检查评审器是否与人类判断一致。
+- [The Visual Counter Turing Test (VCT2): A Benchmark for Evaluating AI-Generated Image Detection and the Visual AI Index (VAI)](https://arxiv.org/abs/2411.16754)：把 AI 生成图像检测表述为视觉版反图灵测试，并用 Visual AI Index 比较检测器对人类和机器生成图像的区分能力。
+- [Grounding-IQA: Multimodal Language Grounding Model for Image Quality Assessment](https://arxiv.org/abs/2411.17237)：把图像质量评估 grounding 到多模态语言中，要求质量模型将视觉缺陷与文本解释对应，而不只是回归一个分数。
+- [OpenING: A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation](https://arxiv.org/abs/2411.18499)：评测开放式交错图文生成，检查系统能否生成图像、说明和叙事上下文一致的多模态文档。
+- [HumanEdit: A High-Quality Human-Rewarded Dataset for Instruction-based Image Editing](https://arxiv.org/abs/2412.04280)：提供带人类奖励的指令式图像编辑数据，强调编辑成功率、视觉质量和人类比较中的内容保持偏好。
+- [FiVA: Fine-grained Visual Attribute Dataset for Text-to-Image Diffusion Models](https://arxiv.org/abs/2412.07674)：为文生图扩散模型提供细粒度视觉属性提示和标注，聚焦属性绑定、遗漏和幻觉错误。
+- [Cap: Evaluation of Persuasive and Creative Image Generation](https://arxiv.org/abs/2412.10426)：评测有说服力和创造性的图像生成，关注生成视觉是否满足传播意图和原创性，而不只是提示-图像相似度。
+- [IDEA-Bench: How Far are Generative Models from Professional Designing?](https://arxiv.org/abs/2412.11767)：评测面向专业设计的图像生成，重点考察版式、字体、视觉层级和任务相关设计质量，而不只看通用美学。
+- [F-Bench: Rethinking Human Preference Evaluation Metrics for Benchmarking Face Generation, Customization, and Restoration](https://arxiv.org/abs/2412.13155)：用面向人类偏好的指标评测人脸生成、定制和修复，区分身份保真、真实感和修复质量。
+- [DiffSim: Taming Diffusion Models for Evaluating Visual Similarity](https://arxiv.org/abs/2412.14580)：利用扩散模型行为评估视觉相似度，目标是捕捉标准 embedding 距离可能漏掉的感知和语义相似。
+- [An Evaluation Framework for Product Images Background Inpainting based on Human Feedback and Product Consistency](https://arxiv.org/abs/2412.17504)：用人类反馈和商品一致性检查评估商品图背景 inpainting，确保生成背景不扭曲商品，也不破坏商业展示需求。
+- [Generating Attribution Reports for Manipulated Facial Images: A Dataset and Baseline](https://arxiv.org/abs/2412.19685)：提供面向被篡改人脸图像的归因报告数据集和基线，要求系统解释篡改来源或操作，而不只是判断人脸真假。
 - [HarmonyIQA](https://arxiv.org/abs/2501.01116)：评测图像 harmonization 质量判断。核心思想：收集多个 harmonization 算法生成的合成图并配套人类偏好分数，测试图像质量模型能否发现通用 IQA 容易忽略的前景与背景光照、颜色不一致。
+- [MoE-AGIQA: Mixture-of-Experts Boosted Visual Perception-Driven and Semantic-Aware Quality Assessment for AI-Generated Images](https://doi.org/10.1109/cvprw63382.2024.00641)：用混合专家的视觉与语义评估衡量 AI 生成图像质量。
+- [Evaluating and Improving Compositional Text-to-Visual Generation](https://doi.org/10.1109/cvprw63382.2024.00538)：评测组合式文本到视觉生成，使用要求正确对象数量、属性和关系的提示，并研究提升组合对齐的干预方式。
+- [NTIRE 2024 Challenge on HR Depth from Images of Specular and Transparent Surfaces](https://doi.org/10.1109/cvprw63382.2024.00650)：通过基准、数据集或评测协议评估图像生成与编辑能力。
+- [MAGICK: A Large-Scale Captioned Dataset from Matting Generated Images Using Chroma Keying](https://doi.org/10.1109/cvpr52733.2024.02132)：用 chroma-key matting 构建大规模带 caption 的生成图像数据，使前景背景分离和基于 caption 的合成图像分析更可控。
+- [NTIRE 2024 Challenge on Light Field Image Super-Resolution: Methods and Results](https://doi.org/10.1109/cvprw63382.2024.00626)（[track 1](https://codalab.lisn.upsaclay.fr/competitions/17265)；[track 2](https://codalab.lisn.upsaclay.fr/competitions/17266)）：报告光场图像超分辨率挑战赛道，评估方法能否恢复高分辨率角度视图并保持跨视角一致性。
 - [MEt3R](https://arxiv.org/abs/2501.06336)：评测生成图像的多视角一致性。核心思想：衡量不同生成视角是否保持共同的三维结构，从而暴露单图质量指标看不到的空间一致性问题。
+- [Multimodal LLMs Can Reason about Aesthetics in Zero-Shot](https://arxiv.org/abs/2501.09012)：评估 MLLM 在零样本情况下判断美学质量的能力，检查其语言化理由是否与人类视觉质量偏好一致。
 - [IE-Bench](https://arxiv.org/abs/2501.09927)：用 source-aware 的人工意见分评测文本驱动图像编辑。核心思想是同时对照编辑提示和源图像判断结果，使编辑质量更贴近人类感知，而不只看图文对齐。
 - [T2ISafety](https://arxiv.org/abs/2501.12612)：评测文生图模型中的公平性、毒性和隐私风险。核心思想：组织安全提示与判定协议，使图像生成器不仅按视觉质量和提示对齐比较，也要检查有害、偏见或隐私相关输出。
+- [Human Body Restoration with One-Step Diffusion Model and A New Benchmark](https://arxiv.org/abs/2502.01411)：提出人体图像修复基准，覆盖遮挡和退化恢复，测试一步扩散模型能否恢复合理人体结构和身份一致细节。
+- [RusCode: Russian Cultural Code Benchmark for Text-to-Image Generation](https://arxiv.org/abs/2502.07455)：可作为图像生成与编辑方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [TextAtlas5M: A Large-scale Dataset for Dense Text Image Generation](https://arxiv.org/abs/2502.07870)：引入密集文字图像生成数据集，直接面向图像生成模型的视觉文字渲染能力。
+- [Diffusion Models Through a Global Lens: Are They Culturally Inclusive?](https://arxiv.org/abs/2502.08914)：可作为图像生成与编辑的 Bench 候选：围绕 Diffusion Models Through a Global Lens: Are They Culturally Inclusive? 提供可比较的评测任务、数据或分析协议。
+- [REAL: Realism Evaluation of Text-to-Image Generation Models for Effective Data Augmentation](https://arxiv.org/abs/2502.10663)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [BackdoorDM: A Comprehensive Benchmark for Backdoor Learning in Diffusion Model](https://arxiv.org/abs/2502.11798)：评测扩散模型中的后门攻击与防御，衡量触发成功率、干净生成质量和文生图场景下的攻击持久性。
+- [M3-AGIQA: Multimodal, Multi-Round, Multi-Aspect AI-Generated Image Quality Assessment](https://arxiv.org/abs/2502.15167)：把 AI 生成图像质量评估组织成多模态、多轮、多维度判断，使评审能在视觉、语义和偏好维度上迭代修正质量决策。
+- [SVGEditBench V2: A Benchmark for Instruction-based SVG Editing](https://arxiv.org/abs/2502.19453)：评测基于指令的 SVG 编辑，为更广泛的 SVG 生成与编辑套件补充向量图编辑协议。
+- [MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge](https://arxiv.org/abs/2502.19870)：评测多样视觉知识上的多模态编辑。
 - [Q-Eval-100K](https://arxiv.org/abs/2503.02357)：评测 text-to-vision 内容的视觉质量和提示对齐。核心思想：通过大规模人工标注生成视觉输出，使图像和视频式生成的质量与提示遵循不再只依赖小规模偏好样本。
 - [WISE](https://arxiv.org/abs/2503.07265)：评测文生图中的世界知识语义一致性；核心思想是检查生成图像是否保持常识性物体关系、空间布局和现实约束，而不只是匹配提示词。
+- [Exploring Bias in over 100 Text-to-Image Generative Models](https://arxiv.org/abs/2503.08012)：可作为图像生成与编辑的 Bench 候选：围绕 Exploring Bias in over 100 Text-to-Image Generative Models 提供可比较的评测任务、数据或分析协议。
+- [Do I look like a 'cat.n.01' to you? A Taxonomy Image Generation Benchmark](https://arxiv.org/abs/2503.10357)：评测文生图模型能否为 WordNet synset 等分类体系概念生成图像。核心思想：用面向分类体系的指标和人工反馈测试概念特异性与层级感知视觉生成能力。
+- [Textinvision: Text and Prompt Complexity Driven Visual Text Generation Benchmark](https://arxiv.org/abs/2503.13730)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
 - [ICE-Bench](https://arxiv.org/abs/2503.14482)：在统一基准中评测图像创建和编辑。核心思路是用共享任务和指标比较生成与编辑系统，从而同时诊断图像创建和图像修改能力。
+- [DPImageBench: A Unified Benchmark for Differentially Private Image Synthesis](https://arxiv.org/abs/2503.14681)：统一差分隐私图像合成的评测流程，覆盖方法、数据集与保真度和效用指标，并纠正常见的隐私违规下游分类器选择做法。
+- [Language-based Image Colorization: A Benchmark and Beyond](https://arxiv.org/abs/2503.14974)：评测语言引导图像上色，检查模型能否把文本颜色和风格约束应用到灰度图，同时保留物体边界和自然外观。
+- [TruthLens: Visual Grounding for Universal DeepFake Reasoning](https://arxiv.org/abs/2503.15867)：把 deepfake 推理落到视觉证据上，要求模型定位被篡改区域并解释伪造线索，而不只是输出真假标签。
+- [Unlocking the Hidden Potential of CLIP in Generalizable Deepfake Detection](https://arxiv.org/abs/2503.19683)：评估 CLIP 特征在跨域 deepfake 检测中的作用，展示通用视觉语言编码器如何被适配或 probing 为生成器无关的取证线索。
 - [LeX-Bench](https://arxiv.org/abs/2503.21749)：评测文生图系统中的视觉文字生成。核心思想：围绕文字渲染构造高质量提示和图像样本，测试生成器能否产出清晰、符合指令的文字，而不只是生成看似合理的周边画面。
+- [A Large Scale Analysis of Gender Biases in Text-to-Image Generative Models](https://arxiv.org/abs/2503.23398)：大规模分析文生图模型中的性别偏见，适合生成图像安全与公平性评测。
 - [GPT-ImgEval](https://arxiv.org/abs/2504.02782)：诊断 GPT-4o 类多模态生成器的图像生成质量。核心思路是组织生成提示和评测维度，暴露图像生成器在指令遵循、视觉保真和语义一致性上的失败。
 - [Envisioning Beyond the Pixels](https://arxiv.org/abs/2504.02826)：评测推理驱动的视觉编辑能力。核心思想：检验编辑系统能否遵循语义与逻辑约束，而不只是匹配低层视觉指令。
 - [LMM4LMM](https://arxiv.org/abs/2504.08358)：用大多模态模型评测大多模态图像生成。核心思路是以多模态裁判衡量生成图像质量和对齐程度，使图像生成比较比零散偏好判断更结构化。
+- [Towards Explainable Partial-AIGC Image Quality Assessment](https://arxiv.org/abs/2504.09291)：评测部分 AI 生成图像的质量评价，强调定位生成区域和解释质量线索，而不只给整图分数。
+- [Identity-Aware Vision-Language Model for Explainable Face Forgery Detection](https://arxiv.org/abs/2504.09439)：用身份感知的视觉语言推理评测可解释人脸伪造检测，要求模型把被篡改面部区域与身份一致性证据关联起来。
+- [Zooming In on Fakes: A Novel Dataset for Localized AI-Generated Image Detection with Forgery Amplification Approach](https://arxiv.org/abs/2504.11922)：提供局部 AI 生成图像检测数据集和伪造放大协议，测试检测器能否识别生成区域，而不只是做图像级真假分类。
+- [Prompt-Driven and Training-Free Forgetting Approach and Dataset for Large Language Models](https://arxiv.org/abs/2504.12574)：提供生成式图像模型选择性遗忘数据集和 Entangled 指标，用于评估扩散模型 unlearning 是否移除目标区域并保持背景一致性。
 - [ScienceT2I](https://arxiv.org/abs/2504.13129)：评估文生图中的科学合理性。核心思路是使用专家标注的科学提示、对抗图像对和独立测试集，暴露视觉上逼真但违反科学概念或物理真实性的生成结果。
 - [Complex-Edit](https://arxiv.org/abs/2504.13143)：评测复杂度可控的图像编辑。核心思路是生成类似思维链的编辑指令并控制难度，使编辑模型接受组合式、多步骤意图测试，而不只处理简单局部修改。
+- [RefVNLI: Towards Scalable Evaluation of Subject-driven Text-to-image Generation](https://arxiv.org/abs/2504.17502)：把参考图身份保持转成视觉语言推断任务来扩展 subject-driven generation 评测，减少对小规模人工偏好集的依赖。
+- [WILD](https://arxiv.org/abs/2504.19595)： 提供面向合成图像来源归因的真实场景图像链接数据集，覆盖闭集、开集生成器以及后处理鲁棒性。
+- [Interactive Discovery and Exploration of Visual Bias in Generative Text‐to‐Image Models](https://arxiv.org/abs/2504.19703)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [TrueFake: A Real World Case Dataset of Last Generation Fake Images also Shared on Social Networks](https://arxiv.org/abs/2504.20658)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [AI-GenBench: A New Ongoing Benchmark for AI-Generated Image Detection](https://arxiv.org/abs/2504.20865)（[leaderboard](https://mi-biolab.github.io/aigenbench-website/)）：提供持续更新的 AI 生成图像检测基准，强化视觉生成系统的来源证明与真实性评测。
+- [AGHI-QA: A Subjective-Aligned Dataset and Metric for AI-Generated Human Images](https://arxiv.org/abs/2504.21308)：用主观对齐数据和质量指标评测 AI 生成人像，补充人像生成评测。
 - [Scalable Human-aligned Benchmark for Text-guided Image Editing](https://arxiv.org/abs/2505.00502)：用人类偏好对齐的判断评估文本引导图像编辑。核心思路：围绕编辑是否满足用户指令和人类质量偏好来扩展评测，而不只依赖低层视觉指标。
 - [WorldGenBench](https://arxiv.org/abs/2505.01490)：评测融合世界知识的推理驱动文本到图像生成能力。核心思路是检验图像生成模型是否遵守常识和事实性世界约束，而不只是匹配局部提示词。
+- [Robust AI-Generated Face Detection with Imbalanced Data](https://arxiv.org/abs/2505.02182)：研究类别不平衡下的 AI 生成人脸检测，测试真实与合成人脸分布倾斜时检测器是否仍保持稳健。
 - [UniEval](https://arxiv.org/abs/2505.10483)：面向多模态理解与生成模型提供统一的整体评估。核心思路是减少分散任务评测带来的割裂，在同一框架下同时比较统一模型的理解能力与生成行为。
-- [GIE-Bench](https://arxiv.org/abs/2505.11493)：评估有 grounding 约束的文本引导图像编辑。核心思路：检验编辑是否既遵循文本指令，又保持与源图像的对应关系，而不只是生成看似合理的变化。
+- [ForensicHub: A Unified Benchmark & Codebase for All-Domain Fake Image Detection and Localization](https://arxiv.org/abs/2505.11003)（[leaderboard](https://scu-zjz.github.io/ForensicHub-doc/rank/fidl_rank.html)）：统一 deepfake、图像篡改、AIGC 与文档伪造的检测和定位评测，并提供共享基线与评测组件。
+- [DRAGON: A Large-Scale Dataset of Realistic Images Generated by Diffusion Models](https://arxiv.org/abs/2505.11257)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [GIE-Bench](https://arxiv.org/abs/2505.11493)（[leaderboard](https://sueqian6.github.io/GIE-Bench-web/#leaderboard)）：评估有 grounding 约束的文本引导图像编辑。核心思路：检验编辑是否既遵循文本指令，又保持与源图像的对应关系，而不只是生成看似合理的变化。
+- [X-Edit: Detecting and Localizing Edits in Images Altered by Text-Guided Diffusion Models](https://arxiv.org/abs/2505.11753)：可作为图像生成与编辑的 Bench 候选：围绕 X-Edit: Detecting and Localizing Edits in Images Altered by Text-Guided Diffusion Models 提供可比较的评测任务、数据或分析协议。
 - [CompBench](https://arxiv.org/abs/2505.12200)：评测复杂指令引导的图像编辑。核心思路是强化组合式编辑指令，衡量编辑模型是否同时完成目标修改并保持周边视觉一致性。
+- [TIRE 2025 challenge on Text to Image Generation Model Quality Assessment](https://arxiv.org/abs/2505.16314)：TIRE 2025 报告文本到图像生成模型质量评估挑战，为生成图像质量提供了公开评测场景。
 - [KRIS-Bench](https://arxiv.org/abs/2505.16707)：评测智能图像编辑模型；核心思想是在更复杂的编辑指令下检查模型是否保持语义意图、空间一致性和编辑保真度。
+- [T2I-ConBench: Text-to-Image Benchmark for Continual Post-training](https://arxiv.org/abs/2505.16875)：评测文本到图像模型的持续后训练。核心思路是检查后训练是否在提升新提示遵循能力的同时，保留已有生成质量与对齐能力。
+- [So-Fake: Benchmarking and Explaining Social Media Image Forgery Detection](https://arxiv.org/abs/2505.18660)：提供可复用评测目标、排行榜或测量协议。
 - [OmniGenBench](https://arxiv.org/abs/2505.18775)：评测 50 多类任务上的全能多模态生成能力。核心思路是将异构生成任务放入统一基准协议，使文本、图像、音频、视频及跨模态生成系统能够在单一任务指标之外进行比较。
+- [RAISE: Realness Assessment for Image Synthesis and Evaluation](https://arxiv.org/abs/2505.19233)：按“真实感”而不只是偏好或提示对齐评估图像合成，关注生成图像是否包含足以被看作真实照片的合理性线索。
 - [MMIG-Bench](https://arxiv.org/abs/2505.19415)：评测结合文本提示和多视角参考图的多模态图像生成。核心思想：把文生图、图像条件生成、编辑和概念一致性检查放入统一协议，并用带标注主体和可解释维度诊断组合语义与常识一致性。
+- [OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](https://arxiv.org/abs/2505.21347)：评测图像生成与编辑。核心思想：围绕论文中的任务、数据或协议（A Benchmark for Over-Refusal Evaluation on Text-to-Image Models）形成可复用比较基准。
+- [SridBench: Benchmark of Scientific Research Illustration Drawing of Image Generation Model](https://arxiv.org/abs/2505.22126)：评测图像生成模型绘制科研插图的能力，是明确的视觉生成评测轴。
+- ["That's another doom I haven't thought about": A User Study on AI Labels as a Safeguard Against Image-Based Misinformation](https://arxiv.org/abs/2505.22845)：通过用户研究评估 AI 标签作为图像虚假信息防护手段的效果，测量用户如何理解生成图像披露以及标签是否改变可信度判断。
+- [RSFAKE-1M: A Large-Scale Dataset for Detecting Diffusion-Generated Remote Sensing Forgeries](https://arxiv.org/abs/2505.23283)：提供百万级遥感伪造数据集，测试检测器能否识别扩散模型生成的卫星或航拍图像篡改。
+- [Draw ALL Your Imagine: A Holistic Benchmark and Agent Framework for Complex Instruction-based Image Generation](https://arxiv.org/abs/2505.24787)：提出面向复杂指令式图像生成的整体基准和 agent 框架，考察系统能否规划并满足多约束视觉请求。
+- [SEED: A Benchmark Dataset for Sequential Facial Attribute Editing with Diffusion Models](https://arxiv.org/abs/2506.00562)：评测连续人脸属性编辑，要求扩散编辑器按顺序执行多个修改，同时保持身份和前序编辑属性。
 - [TIIF-Bench](https://arxiv.org/abs/2506.02161)：评测文生图模型的指令遵循能力。核心思路是将提示词遵循转化为专项基准，用于比较生成图像是否满足指定约束。
 - [ByteMorph](https://arxiv.org/abs/2506.03107)：评测带有非刚性运动的指令引导图像编辑。核心思路是测试编辑系统能否处理形变、姿态变化和类运动变换，同时保持对象身份和场景连贯性。
 - [RefEdit-Bench](https://arxiv.org/abs/2506.03448)：评测复杂场景中基于指代表达的指令式图像编辑。核心思想是把编辑目标绑定到 RefCOCO 风格的真实对象引用，使模型必须找准目标实体并保持源图像其他区域。
+- [RAID: A Dataset for Testing the Adversarial Robustness of AI-Generated Image Detectors](https://arxiv.org/abs/2506.03988)：用可迁移对抗样本测试 AI 生成图像检测器的鲁棒性。核心思想：评测检测器在攻击后是否仍可靠，而不只在干净生成图像分布上报告准确率。
+- [DIMCIM: A Quantitative Evaluation Framework for Default-Mode Diversity and Generalization in Text-to-Image Generative Models](https://arxiv.org/abs/2506.05108)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [CuRe: Cultural Gaps in the Long Tail of Text-to-Image Systems](https://arxiv.org/abs/2506.08071)：评估文生图系统中的长尾文化表征，检查生成器是否准确呈现低资源文化实体和实践，而不是默认回到主流地区刻板图像。
+- [CulturalFrames: Assessing Cultural Expectation Alignment in Text-to-Image Models and Evaluation Metrics](https://arxiv.org/abs/2506.08835)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [ORIDa: Object-centric Real-world Image Composition Dataset](https://arxiv.org/abs/2506.08964)：评测以对象为中心的真实图像合成。核心思想是提供面向 composition 的数据，检查生成式编辑系统能否保持对象身份、位置与场景相容性。
+- [CAIRe: Cultural Attribution of Images by Retrieval-Augmented Evaluation](https://arxiv.org/abs/2506.09109)：通过检索增强的知识库 grounding 评测生成图像的文化归属。核心思想：评分图像是否包含与文化相关的实体和概念，而不只依赖通用图文相似度。
+- [Assessing the Quality of Denoising Diffusion Models in Wasserstein Distance: Noisy Score and Optimal Bounds](https://arxiv.org/abs/2506.09681)：用 Wasserstein 距离分析去噪扩散模型质量，在 noisy score 和最优界条件下评估生成分布与目标分布的距离。
 - [ComplexBench-Edit](https://arxiv.org/abs/2506.12830)（[代码](https://github.com/llllly26/ComplexBench-Edit)）：评估复杂指令驱动的图像编辑。核心思路是强调多指令和链式依赖编辑，并衡量未修改区域保持程度，避免模型只完成某个操作却破坏图像其他部分仍被高估。
+- [VectorEdits: A Dataset and Benchmark for Instruction-Based Editing of Vector Graphics](https://arxiv.org/abs/2506.15903)：评测指令式 SVG 向量图编辑，检查编辑结果是否满足自然语言命令，同时保持几何结构合法且可渲染。
 - [AIGODI Quality Assessment](https://arxiv.org/abs/2506.21925)：评测 AI 生成全景图像的质量与显著性。核心思想：面向 VR/AR 风格的 360 度生成图，结合畸变感知质量评估和显著性预测，把全景伪影与普通单视角图像生成失败区分开。
+- [DDL: A Large-Scale Datasets for Deepfake Detection and Localization in Diversified Real-World Scenarios](https://arxiv.org/abs/2506.23292)：发布多样真实场景 deepfake 检测与定位数据，测试方法在不同篡改来源、场景和像素级定位要求下的鲁棒性。
 - [MVGBench](https://arxiv.org/abs/2507.00006)：评估多视角生成模型。核心思路：检查生成器能否在多个视角之间保持对象、场景和视角一致性，而不是只评价单张图像质量。
+- [Automating Evaluation of Diffusion Model Unlearning with (Vision-) Language Model World Knowledge](https://arxiv.org/abs/2507.07137)：利用语言模型和视觉语言模型的世界知识评测扩散模型 unlearning，同时检查目标概念删除和相近概念的连带损伤。
 - [LMM4Edit / EBench-18K](https://arxiv.org/abs/2507.16193)（[代码](https://github.com/IntMeGroup/LMM4Edit)）：用人工偏好标注和 LMM 评分评估文本引导图像编辑。核心思路是覆盖感知质量、编辑对齐、属性保持和任务相关 QA，使图像编辑评测更贴近人类判断。
+- [The Cow of Rembrandt Analyzing Artistic Prompt Interpretation in Text-to-Image Models](https://arxiv.org/abs/2507.23313)：评估文生图模型如何理解艺术提示，重点检查艺术史或类艺术家指令中的风格、主体和构图忠实度。
+- [FFHQ-Makeup: Paired Synthetic Makeup Dataset with Facial Consistency Across Multiple Styles](https://arxiv.org/abs/2508.03241)：提供跨多种妆容风格的成对合成人脸图像，测试化妆编辑是否在改变妆效的同时保持面部身份一致。
+- [EditGarment: An Instruction-Based Garment Editing Dataset Constructed with Automated MLLM Synthesis and Semantic-Aware Evaluation](https://arxiv.org/abs/2508.03497)：构建指令式服装编辑数据集，并提供语义感知评测。
+- [UniSVG: A Unified Dataset for Vector Graphic Understanding and Generation with Multimodal Large Language Models](https://arxiv.org/abs/2508.07766)：提供 52.5 万条 SVG 理解与生成数据和评测，覆盖文本与图像条件下的矢量图生成。
 - [7Bench](https://arxiv.org/abs/2508.12919)：评测布局引导的文生图生成；核心思想是同时考察图像生成模型对显式空间布局和文本提示的遵循能力，为更宽泛的多模态生成评测补充 layout control 维度。
+- [Style4D-Bench: A Benchmark Suite for 4D Stylization](https://arxiv.org/abs/2508.19243)：评测 4D 风格化在时间和视角变化内容上的表现，衡量风格保真、运动或几何一致性，以及动态结构保持。
+- ['Humor, Art, or Misinformation?': A Multimodal Dataset for Intent-Aware Synthetic Image Detection](https://arxiv.org/abs/2508.20670)：按幽默、艺术和虚假信息等意图标注合成图像，评测检测器能否区分有害欺骗性用途与良性生成内容。
+- [Evaluating Compositional Generalisation in VLMs and Diffusion Models](https://arxiv.org/abs/2508.20783)：评测 VLM 与扩散模型的组合泛化，关注模型能否处理训练分布之外的新对象、属性和关系组合。
+- [MFFI: Multi-Dimensional Face Forgery Image Dataset for Real-World Scenarios](https://arxiv.org/abs/2509.05592)：提供面向真实场景的多维人脸伪造图像数据集，覆盖多种篡改类型、采集条件和取证标签。
+- [VQualA 2025 Challenge on Image Super-Resolution Generated Content Quality Assessment: Methods and Results](https://arxiv.org/abs/2509.06413)：报告超分辨率生成内容质量评估挑战，比较方法对 AI 增强高分辨率图像感知质量的判断能力。
+- [SVGauge: Towards Human-Aligned Evaluation for SVG Generation](https://arxiv.org/abs/2509.07127)：用贴近人类判断的标准评测 SVG 生成，检查渲染视觉质量、语义忠实度和矢量结构正确性，而不只看 SVG 文本是否合法。
+- [复杂场景下的 AI 生成图像检测](https://arxiv.org/abs/2509.09172)： 评测合成图像经过后处理或分布偏移后，检测器在非理想真实场景中的鲁棒性。
+- [OpenFake: An Open Dataset and Platform Toward Real-World Deepfake Detection](https://arxiv.org/abs/2509.09495)：发布面向真实场景深度伪造检测的开放数据集和平台，为生成式视觉媒体补充实用来源评测。
+- [MagicMirror: A Large-Scale Dataset and Benchmark for Fine-Grained Artifacts Assessment in Text-to-Image Generation](https://arxiv.org/abs/2509.10260)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [Brought a Gun to a Knife Fight: Modern VFM Baselines Outgun Specialized Detectors on In-the-Wild AI Image Detection](https://arxiv.org/abs/2509.12995)：在野外 AI 图像检测中比较现代视觉基础模型基线与专用检测器，检验通用视觉特征是否胜过窄取证训练。
 - [EdiVal-Agent](https://arxiv.org/abs/2509.13399)：面向多轮图像编辑的对象中心评测框架。核心思路是用可扩展、细粒度检查让编辑轨迹可审计，而不只判断最终图像效果。
+- [Erased, But Not Forgotten: Erased Rectified Flow Transformers Still Remain Unsafe Under Concept Attack](https://arxiv.org/abs/2510.00635)：可作为图像生成与编辑方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [MetaLogic: Robustness Evaluation of Text-to-Image Models via Logically Equivalent Prompts](https://arxiv.org/abs/2510.00796)：用逻辑等价提示评测文生图模型鲁棒性。
 - [Text-to-Image Models Leave Identifiable Signatures](https://arxiv.org/abs/2510.06525)：研究生成图像模型 leaderboard 的安全性。核心思想：显示生成图像可高精度反推出匿名模型身份，使排名操纵和提示选择攻击成为匿名 arena 的具体可靠性风险。
 - [DREAM](https://arxiv.org/abs/2510.10053)：评什么：深度伪造照片真实感评估。核心思想：测试模型或评审器能否区分并评价合成人脸图像的真实感，补充通用图像生成质量和安全评测。
-- [GIR-Bench](https://arxiv.org/abs/2510.11026)：评估统一多模态模型的推理式图像生成能力。核心思路是测试理解与生成一致性、受推理约束的视觉合成，以及复杂视觉任务上的泛化能力。
+- [GIR-Bench](https://arxiv.org/abs/2510.11026)（[leaderboard](https://hkust-longgroup.github.io/GIR-Bench/)）：评估统一多模态模型的推理式图像生成能力。核心思路是测试理解与生成一致性、受推理约束的视觉合成，以及复杂视觉任务上的泛化能力。
+- [Efficient Perceptual Image Super Resolution](https://arxiv.org/abs/2510.12765)：报告 AIM 2025 高效感知图像超分辨率研究与基准，从质量和资源维度扩展图像恢复评测。
 - [ViVerBench](https://arxiv.org/abs/2510.13804)（[项目页](https://omniverifier.github.io/)；[数据集](https://huggingface.co/datasets/comin/ViVerBench)）：评什么：视觉结果的验证（verification）能力；核心思想：把视觉理解/生成的关键判断转成可核验子任务，强调“能否证明自己对/错”。
-- [UniGenBench++](https://arxiv.org/abs/2510.18701)：评测文本到图像生成中的语义对齐。核心思路是用统一语义评测协议测试生成图像是否满足提示含义，而不只看视觉质量高低。
+- [UniGenBench++](https://arxiv.org/abs/2510.18701)（[leaderboards](https://github.com/CodeGoat24/UniGenBench)）：评测文本到图像生成中的语义对齐。核心思路是用统一语义评测协议测试生成图像是否满足提示含义，而不只看视觉质量高低。
+- [Exposing Blindspots: Cultural Bias Evaluation in Generative Image Models](https://arxiv.org/abs/2510.20042)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](https://arxiv.org/abs/2510.22373)：提出 VisJudge-Bench，评估可视化的美学和质量。
+- [DeepfakeBench-MM: A Comprehensive Benchmark for Multimodal Deepfake Detection](https://arxiv.org/abs/2510.22622)：把 deepfake 评测扩展到多模态证据，测试检测器是否能结合视觉、文本和跨模态线索，而不是只依赖图像伪影。
+- [M3T2IBench: A Large-Scale Multi-Category, Multi-Instance, Multi-Relation Text-to-Image Benchmark](https://arxiv.org/abs/2510.23020)：评测文生图模型对多类别、多实例和多关系提示词的遵循能力。核心思想：用基于检测的 AlignScore 暴露简单单物体图文对齐测试难以发现的失败。
+- [UniAIDet: A Unified and Universal Benchmark for AI-Generated Image Content Detection and Localization](https://arxiv.org/abs/2510.23023)：跨照片、艺术图像、文生图、图像编辑、修复和 deepfake 来源评测 AI 生成图像检测与定位。核心思想：检验检测器能否泛化到窄生成器族和单纯分类任务之外。
+- [Explainable Detection of AI-Generated Images with Artifact Localization Using Faster-Than-Lies and Vision-Language Models for Edge Devices](https://arxiv.org/abs/2510.23775)：评估面向边缘设备的 AI 图像检测与伪影定位，要求轻量 VLM 系统解释并标出可疑生成区域。
+- [Back to the Communities: A Mixed-Methods and Community-Driven Evaluation of Cultural Sensitivity in Text-to-Image Models](https://arxiv.org/abs/2510.27361)：用社区驱动的混合方法评估文生图文化敏感性，让判断扎根受影响社区，而不是只依赖通用标注者偏好。
+- [Evaluation of Text-to-Image Generation from a Creativity Perspective](https://doi.org/10.18653/v1/2025.findings-emnlp.26)：可作为图像生成与编辑方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
 - [UniREditBench](https://arxiv.org/abs/2511.01295)：评估多模态生成模型的推理式图像编辑能力。核心思路是测试模型能否处理多对象交互、规则约束场景和隐式推理需求，而不只是简单属性修改。
+- [Burst Image Quality Assessment: A New Benchmark and Unified Framework for Multiple Downstream Tasks](https://arxiv.org/abs/2511.07958)：补充面向多下游任务的连拍图像质量评估基准。
+- [The Persistence of Cultural Memory: Investigating Multimodal Iconicity in Diffusion Models](https://arxiv.org/abs/2511.11435)：评测文生图扩散模型处理文化标志性引用时，是进行有根据的再诠释还是直接视觉复刻。核心思想：区分对文化引用的识别和具体呈现，用于诊断类似记忆复制的行为。
 - [Q-REAL](https://arxiv.org/abs/2511.16908)：评什么：AI 生成内容的真实感和合理性。核心思想：评估生成结果是否不仅观感精致，而且符合现实世界约束下的 plausibility。
+- [Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](https://arxiv.org/abs/2511.17282)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
 - [Beyond Words and Pixels](https://arxiv.org/abs/2511.18271)：评测生成模型中的隐式世界知识推理。核心思路是检查生成结果是否遵守未明说的现实世界约束，而不只是匹配提示词表面信息。
+- [DiffSeg30k: A Multi-Turn Diffusion Editing Benchmark for Localized AIGC Detection](https://arxiv.org/abs/2511.19111)：提供多轮扩散编辑数据用于局部 AIGC 检测，测试检测器能否在连续生成式修改后恢复编辑 mask。
+- [Evaluating Dataset Watermarking for Fine-tuning Traceability of Customized Diffusion Models: A Comprehensive Benchmark and Removal Approach](https://arxiv.org/abs/2511.19316)：评测用于追踪定制扩散模型微调来源的数据集水印，覆盖水印可检测性、生成质量和移除攻击抗性。
 - [SPQR](https://arxiv.org/abs/2511.19558)：面向 text-to-image diffusion model 安全对齐方法的标准化 benchmark。核心思想：用统一 T2I 协议比较现代安全机制，而不是依赖零散红队样例。
+- [A Progressive Evaluation Framework for Multicultural Analysis of Story Visualization](https://arxiv.org/abs/2511.22576)：评估多语文化场景下的故事可视化模型；核心思路是结合 MLLM-as-jury，对文化适切性、视觉美感、连贯性、语义一致性和对象出现情况进行评分。
+- [DEAL-300K: Diffusion-based Editing Area Localization with a 300K-Scale Dataset and Frequency-Prompted Baseline](https://arxiv.org/abs/2511.23377)：发布 30 万规模的扩散编辑区域定位数据集，并提供频率提示基线，用于像素级检测被编辑区域。
 - [UnicEdit-10M](https://arxiv.org/abs/2512.02790)：评估带推理约束的大规模图像编辑。核心思路：把大规模编辑数据与统一验证结合起来，同时检查指令遵循、推理约束和编辑质量。
 - [I2I-Bench](https://arxiv.org/abs/2512.04660)：评测图像到图像编辑模型。核心思路是将图像编辑任务组织成基准套件，用于比较不同系统的指令遵循、内容保持和编辑质量。
 - [LongT2IBench](https://arxiv.org/abs/2512.09271)：用图结构标注评测长文本到图像生成。核心思想：测试图像生成器能否保留长提示中的实体、属性、关系和约束，而不是只匹配短 caption。
+- [Smudged Fingerprints: A Systematic Evaluation of the Robustness of AI Image Fingerprints](https://arxiv.org/abs/2512.11771)：系统测试 AI 图像指纹在后处理、图像变换和对抗退化下的鲁棒性，衡量来源信号何时保留或失效。
+- [Do-Undo Bench](https://arxiv.org/abs/2512.13609)：评测 image generation 中 action understanding 的 reversibility，检查生成视觉变化是否可被理解并撤销。
 - [TextEditBench](https://arxiv.org/abs/2512.16270)：评测超越简单渲染的推理感知文本编辑。核心思路是测试图像编辑器能否在上下文中修改文字，同时保持语义意图、版面和视觉一致性。
 - [GenEval 2](https://arxiv.org/abs/2512.16853)：研究文生图评测中的基准漂移问题。核心思路：更新并诊断图像生成评测，使模型比较在系统逐渐适应旧基准分布后仍然有意义。
+- [EMMA](https://arxiv.org/abs/2512.17320)：以语义指标和多类别样本评测生成模型的概念擦除能力。核心思路是同时检查目标概念是否被移除，以及非目标语义和生成质量是否被保留。
+- [Fixed-Threshold Evaluation of a Hybrid CNN-ViT for AI-Generated Image Detection Across Photos and Art](https://arxiv.org/abs/2512.21512)：在照片和艺术图像域测试固定阈值的 CNN-ViT 混合检测器，检查 AI 图像检测决策是否无需按数据集调阈也能保持校准。
+- [M-ErasureBench: A Comprehensive Multimodal Evaluation Benchmark for Concept Erasure in Diffusion Models](https://arxiv.org/abs/2512.22877)：评测扩散模型在文本提示、学习嵌入和反演潜变量等多模态输入下的概念擦除能力。核心思想：检查被擦除概念是否会通过非文本条件重新出现，而不只测试提示词层面的擦除。
+- [REVEALER: Reinforcement-Guided Visual Reasoning for Element-Level Text-Image Alignment Evaluation](https://arxiv.org/abs/2512.23169)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [Decoding Correlation-Induced Misalignment in the Stable Diffusion Workflow for Text-to-Image Generation](https://doi.org/10.1109/iccv51701.2025.01690)：可作为图像生成与编辑方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [A Comprehensive Dataset for Human vs. AI Generated Image Detection](https://arxiv.org/abs/2601.00553)：可作为图像生成与编辑方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [WIBE](https://doi.org/10.1109/ase63991.2025.00368)： 评测生成图像水印，为图像生成的安全性和来源追踪提供面向任务的比较入口.
+- [Quality Evaluation of AI-Generated Images: Subjective Study and Objective Methodology](https://doi.org/10.1109/tmm.2025.3618562)：结合主观人类研究和客观方法评测 AI 生成图像质量，将自动质量评价与人类对合成图像伪影的感知校准。
+- [AI-Generated Image Quality Assessment Based on Task-Specific Prompt and Multi-Granularity Similarity](https://doi.org/10.1109/tip.2025.3639984)：用任务特定提示和多粒度相似度评估 AI 生成图像质量，区分全局语义对齐和局部视觉保真。
+- [Exploring MLLM in Fine-Grained Visual Quality Comparison with Quality Token](https://doi.org/10.1109/iccvw69036.2025.00368)：通过质量 token 探查大多模态模型的细粒度视觉质量比较能力，关注成对或相对判断而非粗略美学分数。
+- [Deepfake detection via Feature Refinement and Enhancement Network](https://doi.org/10.1016/j.imavis.2025.105663)：评估用于 deepfake 检测的特征细化与增强网络，强调对细微生成式人脸伪影的取证特征强化。
+- [TerraFly-Forensics: A Dataset for Forensic Detection of Generated Map Images with Quality Assessment of Generative Models](https://doi.org/10.1109/icip55913.2025.11084647)：提供生成地图图像取证检测数据集，并评估地图生成模型质量，面向遥感制图中的来源鉴别场景。
+- [Face Forgery Detection With CLIP-Enhanced Multi-Encoder Distillation](https://doi.org/10.1109/tip.2025.3644125)：用 CLIP 增强的多编码器蒸馏评测人脸伪造检测，检验蒸馏后的视觉语言线索是否提升跨篡改泛化。
+- [DiffFace-Edit: A Diffusion-Based Facial Dataset for Forgery-Semantic Driven Deepfake Detection Analysis](https://arxiv.org/abs/2601.13551)：构建带语义伪造标签的扩散编辑人脸数据，用于分析哪些面部编辑会产生可检测或可定位的 deepfake 线索。
+- [Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](https://arxiv.org/abs/2601.19430)：可作为图像生成与编辑方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Unsupervised Synthetic Image Attribution: Alignment and Disentanglement](https://arxiv.org/abs/2601.22663)：评测无监督合成图像归因，把 alignment 与 disentanglement 分开，使生成输出在无标签条件下也能追溯到可能来源模型。
 - [VIBE](https://arxiv.org/abs/2602.01851)：评估图像编辑中的视觉指令遵循能力。核心思想：用系统化的视觉编辑任务测试模型是否在编辑后保持语义和逻辑约束，而不只是做表层视觉修改。
+- [LocateEdit-Bench: A Benchmark for Instruction-Based Editing Localization](https://arxiv.org/abs/2602.05577)：提供可复用评测信号，服务于图像生成与编辑，可补充生成图像偏见、溯源和编辑定位评测。
 - [GenArena](https://arxiv.org/abs/2602.06013)：用更贴近人类偏好的比较协议评估视觉生成任务。核心思路：通过 arena 式或偏好对齐评估，使图像和视觉生成输出的评价更接近人类判断。
 - [WorldEdit](https://arxiv.org/abs/2602.07095)：用知识驱动的提示和检查评估开放世界图像编辑。核心思路：测试编辑模型是否理解世界知识与指令语义，而不只是执行局部视觉变换。
+- [How well are open sourced AI-generated image detection models out-of-the-box: A comprehensive benchmark study](https://arxiv.org/abs/2602.07814)：比较开源 AI 生成图像检测模型在无需任务专门调优时的表现，为合成图像溯源补充实用鲁棒性评测。
+- [RealHD: A High-Quality Dataset for Robust Detection of State-of-the-Art AI-Generated Images](https://arxiv.org/abs/2602.10546)：提供高质量真实与 AI 生成图像用于稳健检测评测，减少低分辨率或压缩伪影带来的不现实捷径。
+- [RT2I-Bench: Evaluating Robustness of Text-to-Image Systems Against Adversarial Attacks](https://arxiv.org/abs/2602.15076)：评测文生图系统面对对抗攻击的鲁棒性，衡量提示扰动或攻击提示对安全性、对齐和图像质量的影响。
 - [MICON-Bench](https://arxiv.org/abs/2602.19497)：评估统一多模态模型中的多图上下文图像生成能力。核心思想：测试生成器能否连贯利用多张参考图，而不是把每个视觉上下文孤立处理。
+- [Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation](https://arxiv.org/abs/2602.22570)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [Authenticated Contradictions from Desynchronized Provenance and Watermarking](https://arxiv.org/abs/2603.02378)：评估来源元数据与水印证据相互矛盾的失败案例，揭示图像来源信号失同步时的真实性风险。
 - [InEdit-Bench](https://arxiv.org/abs/2603.03657)：评估智能图像编辑中的中间逻辑路径。核心思路是要求模型在状态变化、动态过程、时间序列和科学模拟等场景中生成连贯的多步视觉变化，从而暴露仅看最终图像时难以发现的推理缺陷。
+- [Scalable Evaluation of the Realism of Synthetic Environmental Augmentations in Images](https://arxiv.org/abs/2603.04325)：评估图像合成环境增强的真实感。
+- [Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](https://arxiv.org/abs/2603.04745)：提出真实红外图像超分辨率基准，测试模型在传感器噪声、低对比度和红外域特定伪影下的恢复质量。
 - [DSH-Bench](https://arxiv.org/abs/2603.08090)：用难度与场景感知的层级主题分类评测 subject-driven text-to-image generation。核心思想：按场景和难度区分主体保持失败，而不是只报告通用提示-图像对齐分数。
 - [WeEdit](https://arxiv.org/abs/2603.11593)：评估以图中文字为核心的图像编辑能力，覆盖双语和多语种编辑操作。核心思路是用 HTML 自动生成的大规模编辑数据配合标准化基准，分别考察指令遵循、文字清晰度和非目标区域保持能力。
 - [Omni IIE Bench](https://arxiv.org/abs/2603.16944)：评测实用场景中的指令式图像编辑能力。核心思想：用 single-turn consistency 与 multi-turn editing behavior 两条诊断轨道，考察模型在不同语义尺度编辑中的稳定性，而不只看混合任务平均分。
 - [TIEdit](https://arxiv.org/abs/2603.19775)：评测代表性文本引导图像编辑任务。核心思想：将源图、编辑提示和多个系统生成的编辑结果配对，评估感知质量、指令对齐和内容保持，并分析自动 LLM 评审为何与人类感知不一致。
+- [From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering](https://arxiv.org/abs/2603.20193)：为 VLM 图像篡改定义分类法、基准和指标，从 mask 级定位、像素证据到语义变化共同评估篡改。
 - [MultiBind](https://arxiv.org/abs/2603.21937)：评测多主体图像生成中的属性错绑问题。核心思想：使用多个主体参考图、背景参考和按实体编号的提示词，检查生成图像是否把属性保持或编辑在正确主体上，而不是在不同人物之间串换。
-- [BizGenEval](https://arxiv.org/abs/2603.25732)：评测商业视觉内容生成。核心思路是用面向业务的视觉创作任务比较生成器是否满足版式、品牌、指令和内容质量要求。
+- [When Understanding Becomes a Risk: Authenticity and Safety Risks in the Emerging Image Generation Paradigm](https://arxiv.org/abs/2603.24079)：评测 MLLM 式图像生成在不安全内容与伪造图像上的风险，并与 diffusion model 基线及现有伪造图像检测器对比。
+- [BizGenEval](https://arxiv.org/abs/2603.25732)（[leaderboard](https://microsoft.github.io/BizGenEval/)）：评测商业视觉内容生成。核心思路是用面向业务的视觉创作任务比较生成器是否满足版式、品牌、指令和内容质量要求。
+- [When Identities Collapse: A Stress-Test Benchmark for Multi-Subject Personalization](https://arxiv.org/abs/2603.26078)：对多主体个性化生成进行压力测试，评估生成系统在个性化提示下能否保持不同身份而不是发生主体混合。
 - [CREval](https://arxiv.org/abs/2603.26174)：评估复杂指令下的创意图像编辑能力。核心思路：把复杂用户意图拆成可自动检查的维度，使图像编辑评估比粗粒度视觉偏好更具可解释性。
 - [ImagenWorld](https://arxiv.org/abs/2603.27862)：用可解释人工评估在开放真实任务上压力测试图像生成模型。核心思想：评估生成图像是否满足现实任务约束，并使人工判断可追溯。
-- [KITTEN](https://www.semanticscholar.org/paper/6ccd8fbaa9578bb6a3f7835329515353477d6ad3)：通过知识融合检查评估面向视觉实体的图像生成。核心思路：测试生成器能否保留实体特定的视觉事实与知识，而不只是生成看似合理的通用图像。
+- [VectorGym: A Multitask Benchmark for SVG Code Generation, Sketching, and Editing](https://arxiv.org/abs/2603.29852)：用人工标注评测 SVG 生成、草图转 SVG、多步 SVG 编辑与 SVG 描述，并结合渲染结果进行评估。
+- [KITTEN](https://openreview.net/forum?id=wejaKS9Ps0)：通过知识融合检查评估面向视觉实体的图像生成。核心思路：测试生成器能否保留实体特定的视觉事实与知识，而不只是生成看似合理的通用图像。
+- [KITTEN: A Knowledge-Intensive Evaluation of Image Generation on Visual Entities](https://arxiv.org/abs/2410.11824)：通过知识融合检查评估面向视觉实体的图像生成，测试生成器能否保留实体特定视觉事实，而不只是生成看似合理的通用图像。
+- [NTIRE 2026 Efficient Super-Resolution Challenge](https://arxiv.org/abs/2604.03198)（[challenge](https://www.codabench.org/competitions/13553/)）：报告公开的高效超分辨率挑战赛，为图像恢复评测补充质量与资源开销并重的设置。
+- [SpatialEdit: Benchmarking Fine-Grained Image Spatial Editing](https://arxiv.org/abs/2604.04911)：可作为图像生成与编辑方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On](https://arxiv.org/abs/2604.08526)：提供大规模 fit-aware 虚拟试穿数据，评估生成服装图像是否符合体型、服装合身性和视觉真实感。
+- [NTIRE 2026 The 3rd Restore Any Image Model (RAIM) Challenge: Multi-Exposure Image Fusion in Dynamic Scenes (Track 2)](https://arxiv.org/abs/2604.09030)（[challenge](https://www.codabench.org/competitions/12728/)）： 报告 RAIM 动态场景多曝光图像融合挑战，补充图像增强基准。
+- [NTIRE 2026 Challenge on Single Image Reflection Removal in the Wild: Datasets, Results, and Methods](https://arxiv.org/abs/2604.10321)（[challenge](https://www.codabench.org/competitions/12971/)）： 报告 NTIRE 野外单图反射去除挑战，为图像编辑与增强补充修复基准。
+- [SEED: A Large-Scale Benchmark for Provenance Tracing in Sequential Deepfake Facial Edits](https://arxiv.org/abs/2604.10522)：提供可复用评测信号，服务于图像生成与编辑，可补充生成图像偏见、溯源和编辑定位评测。
+- [NTIRE 2026 Robust AI-Generated Image Detection](https://arxiv.org/abs/2604.11487)（[challenge](https://www.codabench.org/competitions/12761/)）：评测开放环境中的稳健 AI 生成图像检测，为 AIGC 来源识别与可靠性补充评估场景。
+- [StyleID: A Perception-Aware Dataset and Metric for Stylization-Agnostic Facial Identity Recognition](https://arxiv.org/abs/2604.21689)：提供面向风格化无关人脸身份识别的数据集和感知指标，测试身份识别能否在生成或风格化人脸外观下保持稳定。
+- [Knowledge Visualization: A Benchmark and Method for Knowledge-Intensive Text-to-Image Generation](https://arxiv.org/abs/2604.22302)：定义知识密集型文本到图像生成基准。
+- [Which Face and Whose Identity? Solving the Dual Challenge of Deepfake Proactive Forensics in Multi-Face Scenarios](https://arxiv.org/abs/2604.26342)：评估多脸场景中的主动 deepfake 取证，要求系统同时识别哪张脸被篡改以及涉及谁的身份。
+- [AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](https://arxiv.org/abs/2604.28177)：评测 AI 生成学术图像的取证分析，覆盖科学图表式视觉内容中的检测、定位和来源线索。
 - [SCALE / ZoneMaestro](https://arxiv.org/abs/2605.02537)：评估不规则室内场景生成中的复杂空间编排。核心思路是用密集空间关系、功能区域和非凸布局施压，使空间推理评测超越简单物体摆放。
+- [A unified Benchmark for Multi-Frame Image Restoration under Severe Refractive Warping](https://arxiv.org/abs/2605.05079)：提出严重折射扭曲下的多帧图像恢复基准，测试恢复模型能否从畸变帧序列中重建稳定图像。
 - [DynT2I-Eval](https://arxiv.org/abs/2605.06170)：用动态生成提示评测文生图模型。核心思想：构建结构化视觉语义空间，并在主体、逻辑约束、环境和构图等维度持续采样新提示，以降低 benchmark contamination，并诊断对齐、感知质量和美学表现。
+- [EditSleuth: A Dataset of Grounded Reasoning Chains for Image-Edit Forensics](https://arxiv.org/abs/2605.08695)：为图像编辑取证提供 grounded reasoning chains，评估模型能否把局部视觉证据连接成逐步解释编辑操作的推理链。
+- [WildRelight](https://arxiv.org/abs/2605.11696)：评测真实场景单图重光照，并结合物理引导适配。核心思想：检验重光照模型是否保持真实光照与材质行为，而不只是生成看似合理的编辑结果。
+- [TextSculptor](https://arxiv.org/abs/2605.21090)：提供 320 万个场景文字编辑训练样本，并用 TextSculpt-Bench 的四类编辑任务及 OCR、多模态、背景指标评测保文字图像编辑。
+- [LL-Bench](https://arxiv.org/abs/2606.02535)：面向大规模生成模型重新设计低层视觉评测，包含 16 类 degradation tasks、人类偏好和质量评分，以及 LL-Score evaluator。
+- [Probing intrinsic bias: Internal attention feature analysis for social bias evaluation in diffusion models](https://doi.org/10.1016/j.neucom.2026.133851)：提供可复用评测信号，服务于图像生成与编辑，可补充生成图像偏见、溯源和编辑定位评测。
+- [GIFTbench: Generative Image Fuzz Testing Benchmark](https://doi.org/10.1016/j.scico.2026.103502)：把 fuzz testing 思路用于生成图像系统，通过生成压力提示或输入来暴露图像合成与编辑行为中的失败模式。
+- [Generalizable face forgery detection via mining single-step reconstruction difference](https://doi.org/10.1016/j.patcog.2026.113265)：通过挖掘单步重建差异评估人脸伪造检测，目标是捕捉能跨生成器和篡改方法迁移的伪影。
+- [BAFIS: Dataset + Framework to assess occupational Bias and Human Preference in modern Text-to-image Models](https://doi.org/10.1109/wacv61042.2026.00215)：提供用于评估现代文生图模型职业偏见和人类偏好的数据集与框架，重点检查职业形象中的性别化或刻板化呈现。
+- [VeriTrace](https://doi.org/10.1109/OJSP.2026.3684389)：面向灾害媒体评测 real-fake verification 与 source tracing，为生成或篡改视觉内容补充 provenance 评价。
+- [Artificial Analysis Text to Image Leaderboard](https://artificialanalysis.ai/text-to-image)：提供面向文本到图像生成系统的公开盲测偏好比较 surface，可作为论文级图像生成基准的实时补充。
+- [Arena Image Edit Leaderboard](https://arena.ai/en/leaderboard/image-edit)：提供面向指令式图像编辑模型的公开 arena 式比较 surface。
+- [Impostor](https://arxiv.org/abs/2606.04545)：发布 agent-curated、10 万图像规模的真实感 AIGC 篡改定位 benchmark，评测系统能否找出被编辑区域，而不只是判断整图是否为合成图。
+- [T2I-Scorer: Quantitative Evaluation on Text-to-Image Generation via Fine-Tuned Large Multi-Modal Models](https://doi.org/10.1145/3664647.3680939)：用微调的大多模态模型量化评估文生图生成。
+- [Towards a unified evaluation framework: integrating human perception and metrics for AI-generated images](https://doi.org/10.1007/s00530-025-01769-7)：提出融合人类感知研究和客观质量指标的统一 AI 生成图像评测框架，用于合成图像质量评价。
+- [Combating Dataset Misalignment for Robust AI-Generated Image Detection in the Real World](https://doi.org/10.1145/3709022.3736541)：在真实世界数据集错配下评估合成图像检测器，关注训练来源与部署来源不一致时的鲁棒性。
+- [Frequency-aware Correlation Discovering and Spatial Forgery Clue Distilling for Synthetic Image Detection](https://doi.org/10.1145/3746027.3755815)：用频率感知相关性和空间伪造线索评测合成图像检测，强调对细微生成伪影的鲁棒识别。
+- [Breaking Semantic Artifacts for Generalized AI-generated Image Detection](https://doi.org/10.52202/079017-1903)：评估去除语义伪影依赖后的通用 AI 生成图像检测，防止检测器只是利用生成图像内容偏置。
+- [Do Entropic Measurements of the Diversity of AI-generated Images Match Human Judgement?](https://doi.org/10.1145/3772318.3791383)：把 AI 生成图像的熵式多样性指标与人类多样性判断对比，检验自动多样性度量是否反映感知变化。
+- [Assessing Effective Token Length of Multimodal Models for Text-to-Image Retrieval](https://doi.org/10.1145/3726302.3730326)：评估多模态文图检索中的有效 token 长度，测量模型能利用多少文本上下文以及检索质量何时饱和或下降。
+- [Characterizing the Flaws of Image-Based AI-Generated Content](https://doi.org/10.1145/3706599.3720004)：可作为图像生成与编辑的 Bench 候选：围绕 Characterizing the Flaws of Image-Based AI-Generated Content 提供可比较的评测任务、数据或分析协议。
+- [ArtFRD: A Fisher-Rao Mixture Metric for Generative Model Aesthetic Evaluation](https://doi.org/10.1145/3746027.3755259)：评测图像生成或编辑；核心思想是暴露通用视觉分数难以覆盖的对齐、偏见、真实感、伪影、安全或可控性问题。
+- [MultiDiffEditAttack: A Multi-Modal Black-Box Jailbreak Attack on Image Editing Models](https://doi.org/10.3390/electronics14050899)：评估针对图像编辑模型的多模态黑盒越狱攻击。

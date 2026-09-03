@@ -3,6 +3,27 @@
 - [HELM](https://arxiv.org/abs/2211.09110)（[开源代码](https://github.com/stanford-crfm/helm)）：通用评测 harness；在指令遵循任务中可复用 IFEval 场景与 strict accuracy 指标，把规则检查、模型调用和结果汇总标准化。
 - [Reflexion](https://arxiv.org/abs/2303.11366)（[开源代码](https://github.com/noahshinn/reflexion)）：把失败经验以文本记忆沉淀进下一轮执行，适合多轮约束任务的持续改进。
 - [Self-Refine](https://arxiv.org/abs/2303.17651)（[开源代码](https://github.com/madaan/self-refine)）：`先生成 -> 自评 -> 自改` 的 repair loop，可作为复杂指令执行的通用自修复骨架。
+- [Connecting Large Language Models with Evolutionary Algorithms Yields Powerful Prompt Optimizers](https://arxiv.org/abs/2309.08532)：Connecting Large Language Models with Evolutionary Algorithms Yields 补充指令遵循智能体框架，覆盖提示优化、指令控制或任务导向提示。
+- [Efficient Prompt Optimization Through the Lens of Best Arm Identification](https://arxiv.org/abs/2402.09723)：提供面向 Instruction Following 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Unleashing the Potential of Large Language Models as Prompt Optimizers: An Analogical Analysis with Gradient-based Model Optimizers](https://arxiv.org/abs/2402.17564)：提供面向 Instruction Following 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [CoGenesis: A Framework Collaborating Large and Small Language Models for Secure Context-Aware Instruction Following](https://arxiv.org/abs/2403.03129)：提供面向 Instruction Following 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Prompt Optimization with EASE? Efficient Ordering-aware Automated Selection of Exemplars](https://arxiv.org/abs/2405.16122)：提供面向 Instruction Following 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [AutoManual: Constructing Instruction Manuals by LLM Agents via Interactive Environmental Learning](https://arxiv.org/abs/2405.16247)：通过交互式环境学习自动构建 instruction manual；核心思想是用 Planner、Builder 和 Formulator 三类智能体在线更新环境规则，并借助 case-conditioned prompting 降低规则幻觉，再把规则整理成人类可读、可指导下游规划的手册。
+- [TS-Align: A Teacher-Student Collaborative Framework for Scalable Iterative Finetuning of Large Language Models](https://arxiv.org/abs/2405.20215)：面向指令遵循与偏好对齐，补充智能体工作流、编排模式、工具循环、记忆机制或多智能体框架。
+- [Learning to Ask: When LLM Agents Meet Unclear Instruction](https://arxiv.org/abs/2409.00557)：为工具调用智能体加入澄清提问闭环；核心思想是在 NoisyToolBench 的不完整或噪声指令下，用 Ask-when-Needed 让模型请求缺失参数，而不是自行编造工具调用。
+- [Moral Alignment for LLM Agents](https://arxiv.org/abs/2410.01639)：研究显式道义论与功利主义内在奖励驱动的智能体决策设置；核心思想是在 Iterated Prisoner's Dilemma 中塑造道德行为，并测试对自利策略的遗忘以及向其他矩阵博弈的迁移。
+- [BT-ACTION: A Test-Driven Approach for Modular Understanding of User Instruction Leveraging Behaviour Trees and LLMs](https://arxiv.org/abs/2504.02779)：补充面向指令遵循能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [ADL: A Declarative Language for Agent-Based Chatbots](https://arxiv.org/abs/2504.14787)：用声明式语言定义客服聊天机器人中的智能体及其交互；核心思想是结合自然语言编程、四类基础 agent、自定义函数、工具调用和第三方 agent，并由 MICA 系统解释执行。
+- [SI-Agent: An Agentic Framework for Feedback-Driven Generation and Tuning of Human-Readable System Instructions for Large Language Models](https://arxiv.org/abs/2507.03223)：面向指令遵循提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
 - [Re5](https://arxiv.org/abs/2507.05598)：面向指令遵循的 self-review/revision harness；核心思想是先抽取任务与约束，再做结构评估、约束级内容评估和选择性修订，减少盲目多轮自改带来的质量退化。
+- [COCORELI: Enforcing Execution Preconditions for Reliable Collaborative Instruction Following](https://arxiv.org/abs/2509.04470)：为协作式指令跟随强制执行前置条件；核心思想是在指令欠明确时阻止 agent 继续行动。
+- [MAC: A Multi-Agent Framework for Interactive User Clarification in Multi-turn Conversations](https://arxiv.org/abs/2512.13154)：面向指令遵循提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Evaluation-Driven Prompt Instruction Optimization](https://arxiv.org/abs/2601.03359)：用于改进提示指令的多 agent 工作流。核心思想是利用评测反馈迭代修复那些内容正确但违反形式约束的指令。
 - [NSVIF](https://arxiv.org/abs/2601.17789)：神经符号指令遵循验证框架；核心思想是把自然语言指令建模为逻辑与语义约束，并由统一求解器生成可解释反馈，可作为 agent 输出前的独立合规检查层。
+- [Error Taxonomy-Guided Prompt Optimization](https://arxiv.org/abs/2602.00997)：面向由执行日志错误分类指导的 prompt 优化的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [LLMON: An LLM-native Markup Language to Leverage Structure and Semantics at the LLM Interface](https://arxiv.org/abs/2603.22519)：面向LLMON 结构化标记接口，用于区分 LLM 调用中的指令、数据与语义的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Hierarchical Alignment: Enforcing Hierarchical Instruction-Following in LLMs through Logical Consistency](https://arxiv.org/abs/2604.09075)：hierarchical instruction-following 处理多层 authority instructions，适合 instruction-following harness。
+- [Automated Instruction Revision (AIR): A Structured Comparison of Task Adaptation Strategies for LLM](https://arxiv.org/abs/2604.09418)：面向以规则归纳方式进行自动指令修订和任务适配的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [CASPER](https://doi.org/10.18653/v1/2026.eacl-industry.32)：面向 LLM 工作流自动化的反馈引导提示优化框架。核心思想是连接离散与连续提示搜索，使 agent 提示不只依赖人工提示工程来改进。
 - lm-evaluation-harness（[开源代码](https://github.com/EleutherAI/lm-evaluation-harness)）：通用语言模型评测执行框架；价值在于已经包含 `ifeval` 任务实现，适合把指令遵循规则检查接入可复现实验流水线。
+- [Offscript](https://doi.org/10.1145/3786304.3787891)：用于审计指令遵循的 agentic 框架。核心思想是自动探测 LLM 与生成式搜索系统是否遵守自定义行为和来源指令。

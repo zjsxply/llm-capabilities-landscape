@@ -1,7 +1,26 @@
 # 1.10.2 Survey
 
+- [The What, Why, and How of Context Length Extension Techniques in Large Language Models - A Detailed Survey](https://arxiv.org/abs/2401.07872)：按 why、what、how 组织上下文长度扩展研究，说明长上下文外推为何重要、常见失效来自哪里、现有扩展策略如何工作，以及评测标准为何仍未统一。
 - [Beyond the Limits: A Survey of Techniques to Extend the Context Length in Large Language Models](https://arxiv.org/abs/2402.02244)：为 RoPE、插值、递归与检索路线提供基础综述。
+- [On the Resurgence of Recurrent Models for Long Sequences - Survey and Research Opportunities in the Transformer Era](https://arxiv.org/abs/2402.08132)：综述长上下文的方法谱系、任务边界与开放挑战。
+- [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](https://arxiv.org/abs/2404.16112)：把长序列 state-space model 分成 gating、structural 与 recurrent 三类，并对 S4、Mamba 等变体在语言、视觉、视频、音频、语音和时间序列基准上的表现做横向梳理。
+- [Understanding the RoPE Extensions of Long-Context LLMs: An Attention Perspective](https://arxiv.org/abs/2406.13282)：从 attention pattern 保持、attention uncertainty、检索错误和继续预训练长度解释 RoPE 外推方法，用实验说明长上下文扩展为何有效或失效。
+- [Retrieval Augmented Generation or Long-Context LLMs? A Comprehensive Study and Hybrid Approach](https://arxiv.org/abs/2407.16833)：比较检索增强生成与长上下文 LLM，并研究混合路线。
+- [Prompt Compression for Large Language Models: A Survey](https://arxiv.org/abs/2410.12388)：把 prompt compression 分成 hard prompt 与 soft prompt 两大类，并从 attention optimization、PEFT、多模态融合和 synthetic language 等角度解释压缩机制与下游适配。
+- [When Precision Meets Position: BFloat16 Breaks Down RoPE in Long-Context Training](https://arxiv.org/abs/2411.13476)：诊断 BFloat16 精度如何破坏 RoPE 在长上下文中的相对位置行为，并提出 AnchorAttention，用共享首 token 锚点降低长上下文训练代价。
 - [A Survey on Large Language Model Acceleration based on KV Cache Management](https://arxiv.org/abs/2412.19442)：回顾高效长上下文推理的内存与服务化权衡。
+- [Thus Spake Long-Context Large Language Model](https://arxiv.org/abs/2502.17129)：综述长上下文 LLM 在架构、训练、基础设施、评测以及百万级上下文扩展方面的进展。
 - [A Survey on Transformer Context Extension: Approaches and Evaluation](https://arxiv.org/abs/2503.13299)：区分架构层面的上下文扩展与下游任务成功。
 - [A Comprehensive Survey on Long Context Language Modeling](https://arxiv.org/abs/2503.17407)：综述长上下文方法、基准、评测陷阱与系统约束。
+- [Beyond Single-Turn: A Survey on Multi-Turn Interactions with Large Language Models](https://arxiv.org/abs/2504.04717)：把多轮 LLM 交互作为有状态问题综述，覆盖对话历史、工具或记忆反馈、用户适配、评测协议以及单轮测试看不到的失效模式。
+- [Real-World Summarization: When Evaluation Reaches Its Limits](https://arxiv.org/abs/2507.11508)：以酒店亮点摘要为真实输入忠实性评测案例，比较 span-level 人工标注、词重叠指标、可训练打分器和 LLM judge 在跨域部署中的不一致。
 - [A Survey of Context Engineering for Large Language Models](https://arxiv.org/abs/2507.13334)：综述上下文构造、检索、记忆、工具轨迹与提示状态管理。
+- [Efficient Attention Mechanisms for Large Language Models: A Survey](https://arxiv.org/abs/2507.19595)：综述长上下文模型中的高效注意力或上下文扩展技术。
+- [A Survey of Token Compression for Efficient Multimodal Large Language Models](https://arxiv.org/abs/2507.20198)：综述提升多模态大模型效率的 token 压缩方法。
+- [State-space modeling in long sequence processing: a survey on recurrence in the transformer era](https://doi.org/10.1016/j.neunet.2025.108039)：回顾 Transformer 时代的 recurrent 与 state-space 长序列模型，重点说明现代架构如何用持续序列状态换取更低 attention 成本。
+- [A Comprehensive Survey on Mamba: Architectures, Challenges, and Opportunities](https://doi.org/10.1109/mc.2025.3571322)：聚焦 Mamba 与 selective state-space architecture，总结架构变体、应用领域、效率优势和长序列建模开放问题。
+- [A systematic review of long document summarization methods: Evaluation metrics and approaches](https://doi.org/10.1016/j.neucom.2025.131287)：从评测设计角度综述长文档摘要，比较超出普通上下文或篇章长度输入下的摘要方法和指标。
+- [From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models](https://arxiv.org/abs/2603.04592)：综述面向动态输入、实时交互、记忆与增量推理的流式 LLM。
+- [Beyond the Parameters: A Technical Survey of Contextual Enrichment in Large Language Models: From In-Context Prompting to Causal Retrieval-Augmented Generation](https://arxiv.org/abs/2604.03174)：把推理时上下文增强组织成从 prompting 到 RAG、GraphRAG 与 CausalRAG 的连续谱，并补充文献筛选协议、claim audit 框架和部署决策指南。
+- [Long-Context Benchmark Volatility](https://doi.org/10.1145/3805621.3807653)：分析 benchmark volatility 如何扭曲 long-context evaluation accuracy，并提出缓解策略。
+- [Selection of low and ultra-low thermal conductivity materials for insulating layers of TBC systems in the context of computational materials science opportunities—a review](https://doi.org/10.1007/s10973-025-14226-4)：综述长上下文的方法谱系、任务边界、证据来源与开放挑战。

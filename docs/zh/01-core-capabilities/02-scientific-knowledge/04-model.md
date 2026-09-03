@@ -1,13 +1,1140 @@
 # 1.2.4 Model
 
 - [Galactica](https://arxiv.org/abs/2211.09085)：科学语言模型预训练工作，覆盖论文、教材、代码和知识材料，使科学符号、引用风格和技术推理成为模型侧能力目标。
-- [Toward Scientific Reasoning in LLMs](https://arxiv.org/abs/2505.19501)：提出面向科学知识的模型侧方法，核心围绕 Training from Expert Discussions via Reinforcement Learning。
+- [Graph isomorphism network for materials property prediction along with explainability analysis](https://doi.org/10.1016/j.commatsci.2023.112619)：用图同构网络预测材料性质，并通过可解释性分析呈现结构-性质驱动因素。
+- [Predicting the critical superconducting temperature using the random forest, MLP neural network, M5 model tree and multivariate linear regression](https://doi.org/10.1016/j.aej.2023.11.034)：比较随机森林、多层感知机、M5 模型树和线性回归对超导临界温度的预测能力。
+- [DiffMat: Latent diffusion models for image-guided material generation](https://doi.org/10.1016/j.visinf.2023.12.001)：用图像条件下的潜在扩散模型生成候选材料结构。
+- [PLLaMa: An Open-source Large Language Model for Plant Science](https://arxiv.org/abs/2401.01600)：发布面向植物科学术语、文献理解和研究问答的领域语言模型。
+- [Generating synthetic data for neural operators](https://arxiv.org/abs/2401.02398)：研究用合成 PDE 数据训练神经算子，以缓解真实仿真数据稀缺或昂贵的问题。
+- [End‐to‐End Crystal Structure Prediction from Powder X‐Ray Diffraction](https://arxiv.org/abs/2401.03862)：训练端到端模型从粉末 X 射线衍射图样直接推断晶体结构。
+- [Accelerating Computational Materials Discovery with Machine Learning and Cloud High-Performance Computing: from Large-Scale Screening to Experimental Validation.](https://arxiv.org/abs/2401.04070)：结合机器学习筛选、云端高性能计算和实验验证推进计算材料发现。
+- [Multimodal language and graph learning of adsorption configuration in catalysis](https://arxiv.org/abs/2401.07408)：结合语言表征与图学习来建模催化体系中的吸附构型。
+- [SciInstruct: a Self-Reflective Instruction Annotated Dataset for Training Scientific Language Models](https://arxiv.org/abs/2401.07950)：构建自反思指令标注数据，用于训练科学语言模型处理研究任务。
+- [Developing ChemDFM as a large language foundation model for chemistry](https://arxiv.org/abs/2401.14818)：通过化学领域预训练和指令行为开发化学基础语言模型。
+- [Accelerating superconductor discovery through tempered deep learning of the electron-phonon spectral function](https://arxiv.org/abs/2401.16611)：对电子-声子谱函数进行 tempered deep learning，以加速高温超导体搜索。
+- [Improving global weather and ocean wave forecast with large artificial intelligence models](https://arxiv.org/abs/2401.16669)：训练大型 AI 预报模型以联合预测全球天气和海浪。
+- [DeepH-2: Enhancing deep-learning electronic structure via an equivariant local-coordinate transformer](https://arxiv.org/abs/2401.17015)：用等变局部坐标 Transformer 改进电子哈密顿量的深度学习预测。
+- [LLaMP: Large Language Model Made Powerful for High-fidelity Materials Knowledge Retrieval and Distillation](https://arxiv.org/abs/2401.17244)：用以 LLM 为中心的检索和蒸馏流程提取高保真材料知识。
+- [Deep-Learning Density Functional Perturbation Theory.](https://arxiv.org/abs/2401.17892)：用深度模型学习密度泛函微扰理论量，以加速电子结构响应计算。
+- [PirateNets: Physics-informed Deep Learning with Residual Adaptive Networks](https://arxiv.org/abs/2402.00326)：提出残差自适应物理信息网络，用于求解科学微分方程问题。
+- [ExtremeCast: Boosting Extreme Value Prediction for Global Weather Forecast](https://arxiv.org/abs/2402.01295)：提升全球天气预报中的极端值预测。
+- [Bringing Statistics to Storylines: Rare Event Sampling for Sudden, Transient Extreme Events](https://arxiv.org/abs/2402.01823)：把罕见事件采样建模为构造突发瞬态极端事件情景线的统计方法。
+- [Unified Training of Universal Time Series Forecasting Transformers](https://arxiv.org/abs/2402.02592)：用统一训练配方训练通用时间序列预测 Transformer，覆盖多领域时间序列任务。
+- [Space Group Constrained Crystal Generation](https://arxiv.org/abs/2402.03992)：用目标空间群约束晶体生成，使生成结构满足晶体对称性。
+- [Equivariant neural network force fields for magnetic materials](https://arxiv.org/abs/2402.04864)：将等变神经网络力场扩展到磁性材料，建模与自旋相关的原子相互作用。
+- [Neural operators meet conjugate gradients: The FCG-NO method for efficient PDE solving](https://arxiv.org/abs/2402.05598)：结合神经算子与 flexible conjugate gradients，以更高效率求解 PDE 系统。
+- [Recent breakthrough in AI-driven materials science: tech giants introduce groundbreaking models](https://arxiv.org/abs/2402.05799)：梳理产业界材料科学基础模型，并将其定位为 AI 驱动材料建模的新骨干。
+- [Thermal transport of glasses via machine learning driven simulations](https://arxiv.org/abs/2402.06479)：用机器学习驱动仿真估计玻璃材料中的热输运。
+- [Weather Prediction with Diffusion Guided by Realistic Forecast Processes](https://arxiv.org/abs/2402.06666)：用真实预报过程引导扩散天气模型，以改进气象轨迹生成。
+- [ChemLLM: A Chemical Large Language Model](https://arxiv.org/abs/2402.06852)：训练用于分子、反应和化学知识任务的化学语言模型。
+- [LlaSMol: Advancing Large Language Models for Chemistry with a Large-Scale, Comprehensive, High-Quality Instruction Tuning Dataset](https://arxiv.org/abs/2402.09391)：用大规模高质量化学指令数据调适 LLM 的分子和反应推理能力。
+- [Differentiability in Unrolled Training of Neural Physics Simulators on Transient Dynamics](https://arxiv.org/abs/2402.12971)：分析神经物理仿真器在瞬态动力学任务中的可微展开训练。
+- [A Microstructure-based Graph Neural Network for Accelerating Multiscale Simulations](https://arxiv.org/abs/2402.13101)：把材料微结构表示为图，以加速多尺度仿真预测。
+- [KetGPT - Dataset Augmentation of Quantum Circuits using Transformers](https://arxiv.org/abs/2402.13352)：用 Transformer 增强量子电路数据集。
+- [Scaling physics-informed hard constraints with mixture-of-experts](https://arxiv.org/abs/2402.13412)：通过 mixture-of-experts 路由子问题，扩展物理信息网络中的硬约束训练。
+- [Stability-Aware Training of Machine Learning Force Fields with Differentiable Boltzmann Estimators](https://arxiv.org/abs/2402.13984)：在力场训练中加入可微 Boltzmann estimator，使稳定性约束影响学习到的势能面。
+- [OmniArch: Building Foundation Model for Scientific Computing](https://arxiv.org/abs/2402.16014)：提出面向科学计算的基础模型架构，以学习可复用的仿真和 PDE 求解行为。
+- [Transferable Water Potentials Using Equivariant Neural Networks.](https://arxiv.org/abs/2402.16204)：训练可在不同水构型和热力学条件之间迁移的等变神经网络势。
+- [Neural Operators with Localized Integral and Differential Kernels](https://arxiv.org/abs/2402.16845)：为神经算子加入局部积分核和微分核，用于科学建模。
+- [Measuring Vision-Language STEM Skills of Neural Models](https://arxiv.org/abs/2402.17205)：评测神经视觉语言模型处理 STEM 图示、视觉推理和技术问答的能力。
+- [Derivative-enhanced Deep Operator Network](https://arxiv.org/abs/2402.19242)：在 DeepONet 训练中加入导数信息，以提升科学系统的算子学习。
+- [A moment tensor potential for lattice thermal conductivity calculations of α and β phases of Ga2O3](https://arxiv.org/abs/2403.00113)：为 alpha 和 beta Ga2O3 的晶格热导率计算拟合 moment tensor potential。
+- [Emergence of accurate atomic energies from machine-learned noble-gas potentials.](https://arxiv.org/abs/2403.00377)：展示机器学习稀有气体势能够恢复准确的原子级能量分解。
+- [DPOT: Auto-Regressive Denoising Operator Transformer for Large-Scale PDE Pre-Training](https://arxiv.org/abs/2403.03542)：预训练自回归去噪算子 Transformer，用于大规模 PDE 预测和解建模。
+- [Performance Assessment of Universal Machine Learning Interatomic Potentials: Challenges and Directions for Materials' Surfaces.](https://arxiv.org/abs/2403.04217)：评估通用机器学习原子间势在材料表面问题上的表现，并识别失效模式。
+- [Accurate Crystal Structure Prediction of New 2D Hybrid Organic–Inorganic Perovskites](https://arxiv.org/abs/2403.06955)：用学习式晶体结构预测识别候选二维有机-无机杂化钙钛矿。
+- [Chronos: Learning the Language of Time Series](https://arxiv.org/abs/2403.07815)：把时间序列视作 token 序列，在异构时序数据上训练语言模型式预测器。
+- [PAPERCLIP: Associating Astronomical Observations and Natural Language with Multi-Modal Models](https://arxiv.org/abs/2403.08851)：通过 CLIP 式多模态模型对齐天文观测和自然语言描述。
+- [A Framework for Strategic Discovery of Credible Neural Network Surrogate Models under Uncertainty](https://arxiv.org/abs/2403.08901)：在不确定性下选择并验证神经代理模型，以保持科学仿真的可信度。
+- [Generalizing Denoising to Non-Equilibrium Structures Improves Equivariant Force Fields](https://arxiv.org/abs/2403.09549)：在训练中对非平衡结构去噪，以改进等变力场。
+- [TimeMachine: A Time Series is Worth 4 Mambas for Long-Term Forecasting](https://arxiv.org/abs/2403.09898)：用堆叠 Mamba 模块建模长时程时间序列动态。
+- [KARINA: An Efficient Deep Learning Model for Global Weather Forecast](https://arxiv.org/abs/2403.10555)：构建用于全球天气预报的高效深度学习架构。
+- [Deep learning generative model for crystal structure prediction](https://arxiv.org/abs/2403.10846)：提出条件晶体扩散变分自编码器，把材料成分作为约束来生成候选晶体结构，并用于晶体结构预测。
+- [Neural-network Density Functional Theory Based on Variational Energy Minimization.](https://arxiv.org/abs/2403.11287)：把密度泛函理论重写为由神经网络学习的变分能量最小化问题。
+- [Phonon predictions with E(3)-equivariant graph neural networks](https://arxiv.org/abs/2403.11347)：用 E(3) 等变图神经网络从原子结构预测声子性质。
+- [Pretraining Codomain Attention Neural Operators for Solving Multiphysics PDEs](https://arxiv.org/abs/2403.12553)：为多物理场 PDE 系统预训练 codomain-attention 神经算子。
+- [MTP: Advancing Remote Sensing Foundation Model via Multitask Pretraining](https://arxiv.org/abs/2403.13430)：用多任务预训练提升遥感基础模型在多类地理空间感知任务上的适应性。
+- [Spatio-Temporal Fluid Dynamics Modeling via Physical-Awareness and Parameter Diffusion Guidance](https://arxiv.org/abs/2403.13850)：用物理参数引导扩散模型进行时空流体动力学预测。
+- [Physics-Informed Diffusion Models](https://arxiv.org/abs/2403.14404)：把物理约束注入扩散模型，用于科学生成和仿真任务。
+- [Efficient first principles based modeling via machine learning: from simple representations to high entropy materials](https://arxiv.org/abs/2403.15579)：把机器学习用于第一性原理建模，覆盖从简单表征到高熵材料的场景。
+- [Space Group Informed Transformer for Crystalline Materials Generation](https://arxiv.org/abs/2403.15734)：在 Transformer 中编码空间群信息，以生成满足对称性约束的晶体材料。
+- [Training Machine-Learned Density Functionals on Band Gaps.](https://arxiv.org/abs/2403.17002)：以带隙目标训练机器学习密度泛函，用于电子结构预测。
+- [Unified differentiable learning of electric response](https://arxiv.org/abs/2403.17207)：在统一可微框架中学习电响应性质。
+- [Masked Autoencoders are PDE Learners](https://arxiv.org/abs/2403.17728)：证明 masked autoencoder 预训练能够学习 PDE 解的结构。
+- [Adaptive loss weighting for machine learning interatomic potentials](https://arxiv.org/abs/2403.18122)：用自适应损失加权平衡原子间势训练中的能量、力和相关目标。
+- [AlloyBERT: Alloy Property Prediction with Large Language Models](https://arxiv.org/abs/2403.19783)：将 BERT 式语言建模适配到基于材料文本和成分表征的合金性质预测。
+- [On the preprocessing of physics-informed neural networks: How to better utilize data in fluid mechanics](https://arxiv.org/abs/2403.19923)：研究哪些预处理选择能帮助物理信息神经网络更有效利用流体力学数据。
+- [Unlock the Potential of Large Language Models for Predictive Tabular Tasks in Data Science With Table-Specific Pretraining](https://arxiv.org/abs/2403.20208)：用表格专门预训练提升 LLM 在预测型表格数据科学任务上的表现。
+- [Aardvark Weather: end-to-end data-driven weather forecasting](https://arxiv.org/abs/2404.00411)：构建从观测到预报的端到端数据驱动天气模型。
+- [DiffObs: Generative Diffusion for Global Forecasting of Satellite Observations](https://arxiv.org/abs/2404.06517)：用扩散模型生成全球卫星观测场预报。
+- [PINNACLE: PINN Adaptive ColLocation and Experimental points selection](https://arxiv.org/abs/2404.07662)：自适应选择 collocation 点和实验点，以改进物理信息神经网络训练。
+- [Advancing extrapolative predictions of material properties through learning to learn using extrapolative episodic training](https://arxiv.org/abs/2404.08657)：用外推式 episodic training 改善材料性质的分布外预测。
+- [ClimODE: Climate and Weather Forecasting with Physics-informed Neural ODEs](https://arxiv.org/abs/2404.10024)：结合神经常微分方程和物理信息结构进行气候与天气预报。
+- [Interpolation and differentiation of alchemical degrees of freedom in machine learning interatomic potentials](https://arxiv.org/abs/2404.10746)：通过可微插值建模原子间势中的 alchemical 自由度。
+- [Machine Learning for Climate Physics and Simulations](https://arxiv.org/abs/2404.13227)：综述用于气候物理和仿真的机器学习模型族。
+- [ORBIT: Oak Ridge Base Foundation Model for Earth System Predictability](https://arxiv.org/abs/2404.14712)：预训练用于地球系统可预测性任务的基础模型。
+- [Generative Diffusion-based Downscaling for Climate](https://arxiv.org/abs/2404.17752)：用生成式扩散模型把粗分辨率气候场下采样为更高分辨率投影。
+- [RSCaMa: Remote Sensing Image Change Captioning With State Space Model](https://arxiv.org/abs/2404.18895)：把状态空间模型用于遥感图像对的变化描述生成。
+- [Analyzing and Exploring Training Recipes for Large-Scale Transformer-Based Weather Prediction](https://arxiv.org/abs/2404.19630)：比较大型 Transformer 天气模型的训练配方，以识别扩展和优化选择。
+- [How graph neural network interatomic potentials extrapolate: Role of the message-passing algorithm.](https://arxiv.org/abs/2405.00290)：分析消息传递算法如何影响图神经网络原子间势的外推能力。
+- [FeNNol: an Efficient and Flexible Library for Building Force-field-enhanced Neural Network Potentials](https://arxiv.org/abs/2405.01491)：提供灵活框架来构建带有力场项增强的神经网络势。
+- [Neural Context Flows for Meta-Learning of Dynamical Systems](https://arxiv.org/abs/2405.02154)：提出 Neural Context Flow，用 Taylor 展开的上下文自调制和不确定性估计，让 Neural ODE 在未观测参数变化下适配物理动力学。
+- [Annealed adaptive importance sampling method in PINNs for solving high dimensional partial differential equations](https://arxiv.org/abs/2405.03433)：用 annealed adaptive importance sampling 训练 PINN 求解高维 PDE。
+- [AtomGPT: Atomistic Generative Pretrained Transformer for Forward and Inverse Materials Design.](https://arxiv.org/abs/2405.03680)：在原子级材料表示上预训练 Transformer，使同一模型既能预测性质，也能为逆向材料设计生成候选结构。
+- [Unveiling the optimization process of Physics Informed Neural Networks: How accurate and competitive can PINNs be?](https://arxiv.org/abs/2405.04230)：表明更强优化器和小幅损失函数调整可让紧凑 PINN 在多类物理问题上接近有限差分精度，说明 PINN 常受优化过程限制。
+- [MatterSim: A Deep Learning Atomistic Model Across Elements, Temperatures and Pressures](https://arxiv.org/abs/2405.04967)：构建覆盖多元素、温度和压力条件的深度学习原子模型，补充材料模拟中超越纯语言科学问答的模型能力。
+- [FuXi-ENS: A machine learning model for medium-range ensemble weather forecasting](https://arxiv.org/abs/2405.05925)：构建 0.25 度、最长 15 天的全球集合天气模型，在不依赖业务 NWP 集合成员的情况下生成 6 小时间隔概率预报。
+- [Accelerating QM/MM simulations of electrochemical interfaces through machine learning of electronic charge densities.](https://arxiv.org/abs/2405.07370)：把 SALTED 电荷密度预测接入 MetalWalls，并用球谐 Ewald 扩展以 DFT 级电极电场驱动电化学分子动力学。
+- [Discovery of highly anisotropic dielectric crystals with equivariant graph neural networks.](https://arxiv.org/abs/2405.07915)：用等变图神经网络发现高各向异性介电晶体。
+- [Dielectric tensor prediction for inorganic materials using latent information from preferred potential](https://arxiv.org/abs/2405.09052)：利用通用神经势的等变嵌入和 O(3) 等变解码器预测电子、离子和总介电张量，并筛选高各向异性材料。
+- [LLM and Simulation as Bilevel Optimizers: A New Paradigm to Advance Physical Scientific Discovery](https://arxiv.org/abs/2405.09783)：提出 Scientific Generative Agent，让 LLM 生成假设和离散科学对象，由可微仿真器优化连续参数，并在本构律发现和分子设计中验证。
+- [Machine Learning for Predicting Ultralow Thermal Conductivity and High ZT in Complex Thermoelectric Materials.](https://arxiv.org/abs/2405.12143)：结合机器学习原子间势与统一热输运理论，分析 Tl9SbTe6 的声子频移、散射和热电优值。
+- [Aurora: A Foundation Model of the Atmosphere](https://arxiv.org/abs/2405.13063)：训练百万小时级地球系统基础模型，可微调用于空气质量、海浪、热带气旋路径和高分辨率天气预报。
+- [Data Assimilation with Machine Learning Surrogate Models: A Case Study with FourCastNet](https://arxiv.org/abs/2405.13180)：把 FourCastNet 嵌入变分资料同化流程，用部分含噪 ERA5 观测稳定长时程滤波并生成预报初值。
+- [CViT: Continuous Vision Transformer for Operator Learning](https://arxiv.org/abs/2405.13998)：结合视觉 Transformer 编码器、网格坐标嵌入和 query-wise cross-attention，使神经算子能以任意分辨率评估 PDE 系统。
+- [Higher-Rank Irreducible Cartesian Tensors for Equivariant Message Passing](https://arxiv.org/abs/2405.14253)：用高阶不可约笛卡尔张量积构建等变消息传递层，用于原子间势建模。
+- [RoPINN: Region Optimized Physics-Informed Neural Networks](https://arxiv.org/abs/2405.14369)：把 PINN 的点式优化扩展为 Monte Carlo trust-region 邻域优化，在不增加反向传播的情况下提升 PDE 泛化。
+- [Neural Pfaffians: Solving Many Many-Electron Schrödinger Equations](https://arxiv.org/abs/2405.14762)：用可学习的 Pfaffian 神经波函数在跨分子设置中强制电子反对称性，避免手工轨道选择。
+- [Lorentz-Equivariant Geometric Algebra Transformers for High-Energy Physics](https://arxiv.org/abs/2405.14806)：在四维时空几何代数中表示粒子物理数据，并用 Lorentz 等变 Transformer 支持分类、回归和生成流。
+- [AstroPT: Scaling Large Observation Models for Astronomy](https://arxiv.org/abs/2405.14930)：在 DESI Legacy Survey 星系图像切片上预训练最高 2.1B 参数的自回归 Transformer，并报告天文下游探针的扩展规律。
+- [Studies of Ni-Cr complexation in FLiBe molten salt using machine learning interatomic potentials](https://arxiv.org/abs/2405.14960)：拟合主动学习 ACE 原子间势，用熔盐分子动力学建模 FLiBe 中 Ni-Cr 杂质络合。
+- [Question Answering models for information extraction from perovskite materials science literature](https://arxiv.org/abs/2405.15290)：微调并比较包括 QA MatBERT 在内的问答模型，从论文中抽取钙钛矿带隙材料-性质关系。
+- [Data-driven global ocean modeling for seasonal to decadal prediction](https://arxiv.org/abs/2405.15412)：提出 ORCA-DL 三维数据驱动海洋模型，用于季节到年代尺度环流预测和极端事件模拟。
+- [Graph Neural PDE Solvers with Conservation and Similarity-Equivariance](https://arxiv.org/abs/2405.16183)：设计编码守恒律和相似等变性的图神经 PDE 求解器，以提升在未见空间域上的泛化。
+- [LUCIE: A Lightweight Uncoupled Climate Emulator With Long‐Term Stability and Physical Consistency](https://arxiv.org/abs/2405.16297)：用硬约束积分和谱正则训练轻量气候模拟器，支持稳定的百年自回归集合模拟。
+- [Sync4D: Video Guided Controllable Dynamics for Physics-Based 4D Generation](https://arxiv.org/abs/2405.16849)：结合 blend skinning 对应、运动部件分割和物理仿真，把参考视频中的运动迁移到生成的 3D Gaussian，实现可控 4D 动态。
+- [Spectral-Refiner: Accurate Fine-Tuning of Spatiotemporal Fourier Neural Operator for Turbulent Flows](https://arxiv.org/abs/2405.17211)：用来自 PDE 后验误差估计的负 Sobolev 损失微调时空 FNO 谱卷积层，用于 Navier-Stokes 湍流建模。
+- [Poseidon: Efficient Foundation Models for PDEs](https://arxiv.org/abs/2405.19101)：预训练带时间条件层归一化的多尺度算子 Transformer，并利用 PDE 半群性质扩展数据以迁移到 15 个下游 PDE 任务。
+- [DeepOKAN: Deep Operator Network Based on Kolmogorov Arnold Networks for Mechanics Problems](https://arxiv.org/abs/2405.19143)：用基于 RBF 的 Kolmogorov-Arnold 网络替换 DeepONet 组件，预测波动、弹性和瞬态 Poisson 等力学代理模型。
+- [AI-based data assimilation: Learning the functional of analysis estimation](https://arxiv.org/abs/2406.00390)：训练 AI-Var 直接最小化变分资料同化代价函数，在无需既有分析标签的情况下生成天气分析初值。
+- [The Crystal Ball Hypothesis in diffusion models: Anticipating object positions from initial noise](https://arxiv.org/abs/2406.01970)：发现初始扩散噪声中的通用 trigger patch 会影响物体位置，并用带框标注的噪声-图像数据训练检测器研究空间控制。
+- [AROMA: Preserving Spatial Structure for Latent PDE Modeling with Local Neural Fields](https://arxiv.org/abs/2406.02176)：用局部神经场编码不规则网格和点云 PDE 场，再用条件 Transformer 与扩散目标滚动预测潜在动力学。
+- [Machine learning Hubbard parameters with equivariant neural networks](https://arxiv.org/abs/2406.02457)：以占据矩阵描述符为输入，用等变神经网络预测 DFT+U+V Hubbard 参数，并以自洽 DFPT 计算作监督。
+- [Meta-designing quantum experiments with language models](https://arxiv.org/abs/2406.02470)：训练语言模型生成可读 Python 程序来概括量子实验设计，把一次性优化结果转化为可复用的代码级设计概念。
+- [A comprehensive and FAIR comparison between MLP and KAN representations for differential equations and operator networks](https://arxiv.org/abs/2406.02917)：比较 KAN 版 PIKAN、DeepOKAN 与 PINN、DeepONet 的表现，并分析鲁棒性、损失景观和 FAIR 基准。
+- [Solving Poisson Equations using Neural Walk-on-Spheres](https://arxiv.org/abs/2406.03494)：提出 Neural Walk-on-Spheres，用无梯度神经 PDE 求解器学习域内球面上的递归 Poisson 解，面向高维区域。
+- [Latent Neural Operator for Solving Forward and Inverse PDE Problems](https://arxiv.org/abs/2406.03923)：用 Physics-Cross-Attention 把观测映射到潜在空间，在其中学习 PDE 算子，并在任意几何位置解码预测。
+- [Element-wise Multiplication Based Deeper Physics-Informed Neural Networks](https://arxiv.org/abs/2406.04170)：在更深 PINN 中加入逐元素乘法模块，缓解初始化病态并增强复杂 PDE 基准上的表达能力。
+- [Probabilistic Weather Forecasting with Hierarchical Graph Neural Networks](https://arxiv.org/abs/2406.04759)：结合层次图构造与潜变量形式，使天气模型每步一次前向传播即可采样空间一致的概率集合预报。
+- [FunBO: Discovering Acquisition Functions for Bayesian Optimization with FunSearch](https://arxiv.org/abs/2406.04824)：用 LLM 引导的 FunSearch 合成 acquisition-function 代码，使其能跨 Bayesian optimization 基准族泛化。
+- [LLM-Enhanced Bayesian Optimization for Efficient Analog Layout Constraint Generation](https://arxiv.org/abs/2406.05250)：提出 LLANA，用 LLM few-shot 生成模拟版图参数约束来引导 Bayesian optimization，提高少样本设计空间探索效率。
+- [MaTableGPT: GPT‐Based Table Data Extractor from Materials Science Literature](https://arxiv.org/abs/2406.05431)：为 GPT 抽取材料科学表格设计表格表示与切分策略，并用追问过滤催化剂数据中的幻觉信息。
+- [VS-PINN: A Fast and efficient training of physics-informed neural networks using variable-scaling methods for solving PDEs with stiff behavior](https://arxiv.org/abs/2406.06287)：对 PINN 输入应用 variable-scaling 变换，使刚性或高频 PDE 解更易训练，并用 NTK 分析解释效果。
+- [GKAN: Graph Kolmogorov-Arnold Networks](https://arxiv.org/abs/2406.06470)：把 KAN 扩展到图学习，用邻域聚合前或后的可学习样条函数替代固定图卷积变换。
+- [Deep learning of spectra: Predicting the dielectric function of semiconductors](https://arxiv.org/abs/2406.08191)：在 ab initio 介电张量数据上训练 OptiMate 图注意力模型，从晶体结构预测半导体介电函数和折射率谱。
+- [Strategies for Pretraining Neural Operators](https://arxiv.org/abs/2406.08473)：系统比较神经算子在 PDE 预测中的迁移学习、物理预训练、数据增强、模型和数据集选择。
+- [GPT-ology, Computational Models, Silicon Sampling: How should we think about LLMs in Cognitive Science?](https://arxiv.org/abs/2406.09464)：梳理把 LLM 作为认知科学研究对象、计算模型和 silicon sampling 工具的范式，并强调训练数据不透明、提示超参数和可复现性限制。
+- [Improving Language Models for Emotion Analysis: Insights from Cognitive Science](https://arxiv.org/abs/2406.10265)：把情绪理论、标注方案和认知语用学联系起来，提出更丰富的情绪理解语言模型任务和基准设计方向。
+- [Universal materials model of deep-learning density functional theory Hamiltonian.](https://arxiv.org/abs/2406.10536)：用大规模材料数据库扩展 DeepH，形成通用密度泛函理论 Hamiltonian 模型，并可针对具体材料任务微调。
+- [Explain the Black Box for the Sake of Science: Revisiting the Scientific Method in the Era of Generative Artificial Intelligence](https://arxiv.org/abs/2406.10557)：主张用可解释生成式 AI 暴露模型决策原则，让领域专家把解释转化为可验证的科学假设。
+- [Ab initio structure solutions from nanocrystalline powder diffraction data via diffusion models](https://arxiv.org/abs/2406.10796)：PXRDnet 将扩散生成条件化于化学式和展宽粉末衍射图样，用于求解模拟和实验纳米晶结构。
+- [Kolmogorov Arnold Informed neural network: A physics-informed deep learning framework for solving PDEs based on Kolmogorov Arnold Networks](https://arxiv.org/abs/2406.11045)：将 Kolmogorov-Arnold Networks 用于 physics-informed deep learning，以求解偏微分方程。
+- [BSRBF-KAN: A combination of B-splines and Radial Basic Functions in Kolmogorov-Arnold Networks](https://arxiv.org/abs/2406.11173)：在 KAN 层中结合 B-spline 和径向基函数，并在 MNIST 类分类实验中表现出比多种 KAN 变体更稳定的收敛。
+- [Elf autoencoder for unsupervised exploration of flat-band materials using electronic band structure fingerprints](https://arxiv.org/abs/2406.11967)：在电子能带结构图像上训练卷积自编码器，用潜在指纹而非单纯化学组成聚类平带材料。
+- [A Space Group Symmetry Informed Network for O(3) Equivariant Crystal Tensor Prediction](https://arxiv.org/abs/2406.12888)：提出受 O(3) 等变性和空间群不变性约束的 GMTNet，用于预测介电、压电和弹性晶体张量。
+- [Scalable training of trustworthy and energy-efficient predictive graph foundation models for atomistic materials modeling: a case study with HydraGNN](https://arxiv.org/abs/2406.12909)：研究面向原子材料建模的可信、节能、可扩展图基础模型训练。
+- [Conditional score-based diffusion models for solving inverse problems in mechanics](https://arxiv.org/abs/2406.13154)：用正向仿真训练条件 score network，再通过 Langevin dynamics 为含噪力学反问题采样材料性质场后验。
+- [Convolutional Kolmogorov-Arnold Networks](https://arxiv.org/abs/2406.13155)：把可学习样条型 KAN 函数插入卷积层，在 Fashion-MNIST 上相对标准 CNN kernel 提升参数效率。
+- [GraphKAN: Enhancing Feature Extraction with Graph Kolmogorov Arnold Networks](https://arxiv.org/abs/2406.13597)：用 KAN 特征提取器替换图神经网络中的 MLP 和固定激活，以减少非欧图任务中的信息损失。
+- [Exploring large language models for microstructure evolution in materials](https://arxiv.org/abs/2406.15499)：测试 LLM 为材料微结构演化生成 phase-field PDE 仿真代码，发现其能处理较简单多物理问题，但在强耦合复杂 PDE 上失效。
+- [Machine learning materials properties with accurate predictions, uncertainty estimates, domain guidance, and persistent online accessibility](https://arxiv.org/abs/2406.15650)：发布覆盖 33 种材料性质的校准随机森林模型，同时提供不确定性估计、适用域指引和长期在线访问。
+- [Efficient Evolutionary Search Over Chemical Space with Large Language Models](https://arxiv.org/abs/2406.16976)：把 LLM 分子提案同进化选择和变异算子结合，将语言模型作为化学空间搜索策略，而不只是候选物打分器。
+- [Density-based long-range electrostatic descriptors for machine learning force fields.](https://arxiv.org/abs/2406.17595)：为机器学习力场加入平移和旋转对称的密度型长程静电描述符，在 NaCl 建模中优于短程描述符。
+- [KANQAS: Kolmogorov-Arnold Network for Quantum Architecture Search](https://arxiv.org/abs/2406.17630)：把 Kolmogorov-Arnold Network 用于量子架构搜索，用 KAN 建模引导候选量子线路设计。
+- [DiffusionPDE: Generative PDE-Solving Under Partial Observation](https://arxiv.org/abs/2406.17763)：训练条件扩散求解器，从稀疏或局部观测中采样 PDE 解场，把缺失状态的不确定性转化为生成式推断问题。
+- [Towards a Science Exocortex](https://arxiv.org/abs/2406.17809)：提出 science exocortex 概念，用一组专门化 AI agent 扩展研究者在文本分析、推理和协作中的认知工作流。
+- [A pre-trained deep potential model for sulfide solid electrolytes with broad coverage and high accuracy](https://arxiv.org/abs/2406.18263)：提出覆盖广、精度高的硫化物固态电解质预训练深度势模型。
+- [Finite basis Kolmogorov-Arnold networks: domain decomposition for data-driven and physics-informed problems](https://arxiv.org/abs/2406.19662)：把有限基 KAN 与区域分解结合，用于改进微分方程问题中的数据驱动和 physics-informed 学习。
+- [Calibrating LLMs with Preference Optimization on Thought Trees for Generating Rationale in Science Question Scoring](https://arxiv.org/abs/2406.19949)：在 thought-tree 理由上做偏好优化，使 LLM 为自动科学题评分生成更校准的解释。
+- [Self-adaptive weights based on balanced residual decay rate for physics-informed neural networks and deep operator networks](https://arxiv.org/abs/2407.01613)：按 residual decay rate 平衡 PINN 和 DeepONet 的损失项，使物理残差与数据约束更均衡地收敛。
+- [Structural Constraint Integration in Generative Model for Discovery of Quantum Material Candidates](https://arxiv.org/abs/2407.04557)：把显式结构约束注入生成式材料模型，大规模生成满足约束且稳定的量子材料候选。
+- [Leveraging data-driven weather models for improving numerical weather prediction skill through large-scale spectral nudging](https://arxiv.org/abs/2407.06100)：通过谱 nudging 将 GraphCast 式大尺度预测与物理 NWP 耦合，保留 AI 的大尺度技巧并恢复更细尺度动力学。
+- [Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations](https://arxiv.org/abs/2407.07218)：审计流体 PDE 机器学习论文，发现弱数值基线和报告偏差普遍存在，将许多 PDE solver 增益重释为评测可靠性问题。
+- [Scientific QA System with Verifiable Answers](https://arxiv.org/abs/2407.11485)：构建带可验证支撑的科学问答系统，强调答案可追溯性而非无依据生成。
+- [Global Atmospheric Data Assimilation with Multi-Modal Masked Autoencoders](https://arxiv.org/abs/2407.11696)：提出 EarthNet，多模态 masked autoencoder 基础模型，从 12 小时卫星观测序列补全全球大气状态，用于快速学习式资料同化。
+- [Generative Language Model for Catalyst Discovery](https://arxiv.org/abs/2407.14040)：在催化剂字符串表示上训练 CatGPT，并用稀疏目标数据微调以生成无机催化剂，例如 2e-ORR 合金候选。
+- [Machine Learning Emulation of Precipitation From km‐Scale UK Regional Climate Simulations Using a Diffusion Model](https://arxiv.org/abs/2407.14158)：用扩散模拟器 CPMGEM 将 60 km 驱动气候场下采样到 8.8 km，生成接近英国 convection-permitting 模拟的降水。
+- [Open Artificial Knowledge](https://arxiv.org/abs/2407.14371)：发布 OAK，一个由多种 LLM 按 Wikipedia 类别引导生成的 5 亿 token 合成知识语料，用于广域模型训练。
+- [Inferring turbulent velocity and temperature fields and their statistics from Lagrangian velocity measurements using physics-informed Kolmogorov-Arnold Networks](https://arxiv.org/abs/2407.15727)：用 physics-informed KAN 从拉格朗日粒子速度测量重建欧拉湍流速度和温度场，同时保持统计湍流量。
+- [Separable DeepONet: Breaking the Curse of Dimensionality in Physics-Informed Machine Learning](https://arxiv.org/abs/2407.15887)：分解 DeepONet 坐标并采用 forward-mode differentiation，降低高维 PDE residual 的 physics-informed operator learning 成本。
+- [Diffusion Prior-Based Amortized Variational Inference for Noisy Inverse Problems](https://arxiv.org/abs/2407.16125)：把扩散先验反问题求解改写为 amortized variational inference，直接从观测映射到后验样本而非逐例优化。
+- [From Text to Insight: Large Language Models for Materials Science Data Extraction](https://arxiv.org/abs/2407.16867)：综述 LLM 在材料科学数据抽取中的用法，说明领域约束和验证如何把非结构化论文转为结构化材料数据集。
+- [Adaptive Training of Grid-Dependent Physics-Informed Kolmogorov-Arnold Networks](https://arxiv.org/abs/2407.17611)：实现快速 JAX PIKAN，并提出自适应网格状态迁移策略，避免 PDE 求解训练中的损失峰值。
+- [Pretraining a Neural Operator in Lower Dimensions](https://arxiv.org/abs/2407.17616)：先在低维 PDE 任务上预训练神经算子，再迁移到高维求解器，以减少科学 operator learning 对昂贵仿真数据的依赖。
+- [Diffusion-Based Surrogate Modeling and Multi-Fidelity Calibration](https://arxiv.org/abs/2407.17720)：把低成本仿真上下文注入扩散 surrogate，并用高成本仿真引导采样，实现工程物理模型的多保真校准。
+- [On the Opportunities of (Re)-Exploring Atmospheric Science by Foundation Models: A Case Study](https://arxiv.org/abs/2407.17842)：评测 GPT-4o 在气候数据处理、物理诊断、预测和适应规划等大气科学任务上的表现，展示多模态基础模型的适用边界。
+- [Every Part Matters: Integrity Verification of Scientific Figures Based on Multimodal Large Language Models](https://arxiv.org/abs/2407.18626)：定义科学图像完整性验证任务，构建 Figure-seg，并用 MLLM 类比推理对齐图像部件与文本论断。
+- [A Large Encoder-Decoder Family of Foundation Models For Chemical Language](https://arxiv.org/abs/2407.20267)：在 9100 万 PubChem SMILES 样本上预训练 encoder-decoder 化学语言模型，支持性质预测和分子生成，并提供 289M 与 MoE 变体。
+- [AhmedML: High-Fidelity Computational Fluid Dynamics Dataset for Incompressible, Low-Speed Bluff Body Aerodynamics](https://arxiv.org/abs/2407.20801)：提供 500 个 Ahmed body 变体的高保真 OpenFOAM 仿真，包含流场、力、几何和网格，用于机器学习 CFD 建模。
+- [Thermal Conductivity Predictions with Foundation Atomistic Models](https://arxiv.org/abs/2408.00755)：把原子基础模型与 Wigner 热输运和热膨胀联系起来，给出达到第一性原理热导率预测精度的微调协议。
+- [A Probabilistic Framework for Learning Non‐Intrusive Corrections to Long‐Time Climate Simulations From Short‐Time Training Data](https://arxiv.org/abs/2408.02688)：用短轨迹训练概率神经校正器，为欠分辨率气候模拟提供稳定长时程和罕见事件统计修正。
+- [Huge Ensembles Part I: Design of Ensemble Weather Forecasts using Spherical Fourier Neural Operators](https://arxiv.org/abs/2408.03100)：设计基于 SFNO 的超大天气集合，用参数扰动和初始条件不确定性采样低概率高影响极端天气。
+- [Physics-Informed Kolmogorov-Arnold Networks for Power System Dynamics](https://arxiv.org/abs/2408.06650)：把 KAN 改造成 power-system physics-informed network，在转子角和频率动力学上比 MLP PINN 更小且更准确。
+- [MatterGPT: A Generative Transformer for Multi-Property Inverse Design of Solid-State Materials](https://arxiv.org/abs/2408.07608)：用 SLICES 字符串表示晶体结构，并以 next-token prediction 训练 Transformer，使其按形成能、带隙或多重目标性质生成全新晶体。
+- [Machine learning for the physics of climate](https://arxiv.org/abs/2408.09627)：综述机器学习如何重建气候观测、学习次网格参数化、加速气候模拟，并支持面向气候物理问题的大规模集合实验。
+- [KAN 2.0: Kolmogorov-Arnold Networks Meet Science](https://arxiv.org/abs/2408.10205)：扩展 pykan，加入乘法节点、符号公式编译器和树转换工具，使 KAN 能编码科学先验并恢复守恒量、拉格朗日量等物理规律。
+- [Cross-Domain Foundation Model Adaptation: Pioneering Computer Vision Models for Geophysical Data Analysis](https://arxiv.org/abs/2408.12396)：把现有计算机视觉基础模型微调到月球影像、地震数据和分布式声学传感等任务，降低从头训练地学专用骨干模型的成本。
+- [Latent Ewald summation for machine learning of long-range interactions](https://arxiv.org/abs/2408.15165)：通过 latent Ewald 式求和学习长程静电和色散效应，使原子模型能捕捉局部截断之外的周期相互作用。
+- [SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding](https://arxiv.org/abs/2408.15545)：结合持续预训练和监督微调，并通过 PDF 抽取、解析纠错、质量过滤与合成 SciLitIns 指令来适配科学文献理解任务。
+- [chemtrain: Learning Deep Potential Models via Automatic Differentiation and Statistical Physics](https://arxiv.org/abs/2408.15852)：提供基于 JAX 的神经势训练框架，可把实验数据、仿真数据和低成本预训练信号等 top-down 与 bottom-up 目标组合到同一训练流程中。
+- [Physics-informed neural networks for inviscid transonic flows around an airfoil](https://arxiv.org/abs/2408.17364)：为翼型周围可压缩 Euler 流的 PINN 求解加入多种人工耗散来稳定激波，并用有限体积仿真验证跨声速结果。
+- [Latent-EnSF: A Latent Ensemble Score Filter for High-Dimensional Data Assimilation with Sparse Observation Data](https://arxiv.org/abs/2409.00127)：用耦合 VAE 编码器把稀疏观测和完整物理状态对齐到潜在空间，再用 ensemble score filtering 处理非线性高维资料同化。
+- [Data-efficient construction of high-fidelity graph deep learning interatomic potentials](https://arxiv.org/abs/2409.00957)：将低成本 GGA 数据与少量高保真 SCAN 计算组合，训练多保真 M3GNet 原子间势，并在硅和水体系上接近高保真精度。
+- [Highly Accurate Real-space Electron Densities with Neural Networks](https://arxiv.org/abs/2409.01306)：从 deep-QMC 波函数出发，用 score matching 和 noise-contrastive estimation 学习实空间电子密度网络，以计算偶极矩、力和密度相关观测量。
+- [Powder diffraction crystal structure determination using generative models](https://arxiv.org/abs/2409.04727)：提出 PXRDGen，把预训练 XRD 编码器、扩散或流式结构生成器与 Rietveld 精修结合，从粉末衍射数据求解无机晶体结构。
+- [KANtrol: a physics-informed Kolmogorov-Arnold network framework for solving multi-dimensional and fractional optimal control problems](https://arxiv.org/abs/2409.06649)：在 KAN 中结合 Gaussian quadrature、自动微分和分数阶导数离散化，求解连续时间最优控制与参数识别问题。
+- [Generative Hierarchical Materials Search](https://arxiv.org/abs/2409.06762)：把语言到晶体生成分解为 LLM 生成中间化学信息、扩散模型生成结构、GNN 预测性质，并在推理时用树搜索联合优化。
+- [FuXi-2.0: Advancing machine learning weather forecasting model for practical applications](https://arxiv.org/abs/2409.07188)：把 FuXi 扩展到一小时间隔全球预报和更完整的气象变量集合，面向风能、太阳能、航空和海运等实际场景。
+- [A deep learning approach to search for superconductors from electronic bands](https://arxiv.org/abs/2409.07721)：用简单的注意力式 BNAS 网络关联电子能带结构与超导转变温度，并定位与超导性相关的能带区域。
+- [AI-accelerated discovery of high critical temperature superconductors](https://arxiv.org/abs/2409.08065)：提出 InvDesFlow，结合模型预训练、微调、扩散生成和第一性原理计算，筛选动态稳定的高温超导候选材料。
+- [Unifying the Description of Hydrocarbons and Hydrogenated Carbon Materials with a Chemically Reactive Machine Learning Interatomic Potential](https://arxiv.org/abs/2409.08194)：用反应型机器学习原子间势统一描述烃类与氢化碳材料。
+- [Integrating Neural Operators with Diffusion Models Improves Spectral Representation in Turbulence Modeling](https://arxiv.org/abs/2409.08477)：把扩散模型条件化于神经算子预测，以恢复湍流高频结构，并在射流仿真和 Schlieren velocimetry 中改善能谱一致性。
+- [Integration of Mamba and Transformer - MAT for Long-Short Range Time Series Forecasting with Application to Weather Dynamics](https://arxiv.org/abs/2409.08530)：结合 Mamba 的长程依赖建模和 Transformer 的短程模式捕捉，在多变量天气时间序列上提升精度与内存效率。
+- [KAN v.s. MLP for Offline Reinforcement Learning](https://arxiv.org/abs/2409.09653)：在 conservative Q-learning 中用 KAN 替换 MLP actor 和 critic，比较参数规模、训练效率和 D4RL 离线强化学习表现。
+- [PROSE-FD: A Multimodal PDE Foundation Model for Learning Multiple Operators for Forecasting Fluid Dynamics](https://arxiv.org/abs/2409.09811)：在 13 个数据集和 6 类方程族上预训练 Transformer PDE 基础模型，并融合符号输入进行零样本、非自回归流体动力学预测。
+- [DiffESM: Conditional Emulation of Temperature and Precipitation in Earth System Models With 3D Diffusion Models](https://arxiv.org/abs/2409.11601)：用 3D 条件扩散把地球系统模型的月平均温度或降水下采样为日尺度场，以支持热浪和强降水分析。
+- [ChemDFM-X: towards large multimodal model for chemistry](https://arxiv.org/abs/2409.13194)：构建跨模态化学对话基础模型，并用由近似计算和任务专用模型预测生成的 760 万条指令样本覆盖多类化学模态。
+- [Prithvi WxC: Foundation Model for Weather and Climate](https://arxiv.org/abs/2409.13598)：在 160 个 MERRA-2 变量上训练 23 亿参数 encoder-decoder 天气气候基础模型，并采用重建与预测混合目标。
+- [Nonlinear Inverse Design of Mechanical Multi-Material Metamaterials Enabled by Video Denoising Diffusion and Structure Identifier](https://arxiv.org/abs/2409.13908)：用视频扩散场生成器和 UNet 结构识别器，把目标非线性应力-应变曲线映射为多材料超材料布局。
+- [ChemEval: A Comprehensive Multi-Level Chemical Evaluation for Large Language Models](https://arxiv.org/abs/2409.13989)：主要是化学 LLM 评测套件，定义 4 个递进层级、12 个能力维度和 42 个专家设计任务，而不是新模型。
+- [Higher-order-ReLU-KANs (HRKANs) for Solving Physics-informed Neural Networks (PINNs) More Accurately, Robustly and Faster](https://arxiv.org/abs/2409.14248)：用高阶 ReLU 激活替代样条式 KAN 基函数，在保留 PINN residual 所需平滑导数的同时支持高效矩阵运算。
+- [The northeast materials database for magnetic materials](https://arxiv.org/abs/2409.15675)：用 LLM 抽取构建 67,573 条实验磁性材料数据库 NEMAD，并据此训练材料类别分类器和相变温度回归器。
+- [Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts](https://arxiv.org/abs/2409.16040)：用稀疏 mixture-of-experts 路由扩展 decoder-only 时间序列基础模型，使每次自回归预测只激活部分专家。
+- [A Deep Learning Earth System Model for Efficient Simulation of the Observed Climate](https://arxiv.org/abs/2409.16247)：推进用于科学模拟与预测的学习型地球系统或天气预报模型。
+- [Neural P3M: A Long-Range Interaction Modeling Enhancer for Geometric GNNs](https://arxiv.org/abs/2409.17622)：在几何 GNN 中加入可训练网格点运算，借鉴 particle-particle particle-mesh 思路来建模分子体系长程相互作用。
+- [SciDFM: A Large Language Model with Mixture-of-Experts for Science](https://arxiv.org/abs/2409.18412)：用论文、书籍和领域数据库从头训练科学 mixture-of-experts LLM，并通过指令微调处理分子和氨基酸序列推理。
+- [Robustness of AI-based weather forecasts in a changing climate](https://arxiv.org/abs/2409.18529)：在前工业、当前和升温 2.9 K 的气候态中测试学习式天气预报模型，刻画其气候分布外鲁棒性。
+- [Explain Like I'm Five: Using LLMs to Improve PDE Surrogate Models with Text](https://arxiv.org/abs/2410.01137)：在 PDE surrogate 中加入多模态模块，让冻结 LLM 文本嵌入编码边界条件、控制方程和系统描述。
+- [Text2PDE: Latent Diffusion Models for Accessible Physics Simulation](https://arxiv.org/abs/2410.01153)：用 mesh autoencoder 压缩 PDE 场，并训练以物理量或文本提示为条件的潜在扩散模型生成完整时空仿真。
+- [PhyMPGN: Physics-encoded Message Passing Graph Network for spatiotemporal PDE systems](https://arxiv.org/abs/2410.01337)：把 GNN 嵌入数值时间积分器并编码物理约束，用小数据集在不规则网格上建模 PDE 动力学。
+- [Flow matching for accelerated simulation of atomic transport in crystalline materials](https://arxiv.org/abs/2410.01464)：提出 LiFlow，用 Propagator、Corrector 和 Maxwell-Boltzmann 自适应先验进行锂扩散轨迹的条件 flow matching 仿真。
+- [Revisiting the Canonicalization for Fast and Accurate Crystal Tensor Property Prediction](https://arxiv.org/abs/2410.02372)：在 GoeCTP 中用极分解 canonicalization 实现快速 O(3) 等变晶体张量性质预测。
+- [Zebra: In-Context Generative Pretraining for Solving Parametric PDEs](https://arxiv.org/abs/2410.03437)：预训练自回归 Transformer，让模型从上下文示例轨迹求解参数化 PDE，并在推理时避免梯度适配。
+- [HyResPINNs: Adaptive Hybrid Residual Networks for Learning Optimal Combinations of Neural and RBF Components for Physics-Informed Modeling](https://arxiv.org/abs/2410.03573)：结合平滑基函数块、稀疏神经组件和残差式整块门控，在固定自由度下提升 PINN 表达能力。
+- [Efficient Sampling for Machine Learning Electron Density and Its Response in Real Space.](https://arxiv.org/abs/2410.04977)：按电子密度大小和原子特征线性独立性采样实空间网格点，减少电子密度与电场响应模型的训练点数。
+- [Micrometer: Micromechanics Transformer for Predicting Mechanical Responses of Heterogeneous Materials](https://arxiv.org/abs/2410.05281)：在高分辨率纤维复合材料微结构数据上训练 Transformer，预测微尺度应变场并加速均匀化与多尺度力学计算。
+- [Continuous Ensemble Weather Forecasting with Diffusion models](https://arxiv.org/abs/2410.05431)：推进用于科学模拟与预测的学习型地球系统或天气预报模型。
+- [Accelerating the discovery of low-energy structure configurations: a computational approach that integrates first-principles calculations, Monte Carlo sampling, and Machine Learning](https://arxiv.org/abs/2410.05604)：结合第一性原理计算、蒙特卡洛采样和机器学习加速低能结构发现。
+- [Physics-Informed Regularization for Domain-Agnostic Dynamical System Modeling](https://arxiv.org/abs/2410.06366)：提出 TREAT，在 neural ODE 中加入时间反演对称性损失，改进保守、可逆乃至不可逆动力系统的数值建模。
+- [Generative AI for discovering porous oxide materials for next-generation energy storage](https://arxiv.org/abs/2410.06433)：结合 CDVAE 生成、微调 LLM、DFT 验证和 M3GNet 弛豫，搜索用于多价电池的开隧道过渡金属氧化物。
+- [Random Sampling Versus Active Learning Algorithms for Machine Learning Potentials of Quantum Liquid Water.](https://arxiv.org/abs/2410.10698)：比较随机采样和 query-by-committee 主动学习训练 HDNNP 水势，发现固定数据量下随机采样可降低测试误差。
+- [SeaDATE: Remedy Dual-Attention Transformer With Semantic Alignment via Contrast Learning for Multimodal Object Detection](https://arxiv.org/abs/2410.11358)：该条目偏离科学知识模型主轴；其贡献是红外-可见光目标检测中的双注意力融合和对比语义对齐。
+- [LLM-Mixer: Multiscale Mixing in LLMs for Time Series Forecasting](https://arxiv.org/abs/2410.11674)：把时间序列分解到多个时间分辨率，并用面向时序的提示引导冻结 LLM 处理多尺度预测表征。
+- [Regional Ocean Forecasting with Hierarchical Graph Neural Networks](https://arxiv.org/abs/2410.11807)：提出 SeaCast，用图神经网络处理区域海洋网格几何和外部大气强迫，面向高分辨率地中海预报。
+- [From PINNs to PIKANs: recent advances in physics-informed machine learning](https://arxiv.org/abs/2410.13228)：这是保留在模型文件中的综述条目，梳理 PINN 与 PIKAN 在架构、自适应细化、区域分解、不确定性和软件方面的进展。
+- [Precipitation Nowcasting Using Diffusion Transformer With Causal Attention](https://arxiv.org/abs/2410.13314)：构建带因果注意力和 channel-to-batch shift 的扩散 Transformer，把降水条件与强降水预报结果显式关联。
+- [Million-atom heat transport simulations of polycrystalline graphene approaching first-principles accuracy enabled by neuroevolution potential on desktop GPUs](https://arxiv.org/abs/2410.13535)：用神经演化势函数把热输运模拟扩展到接近第一性原理精度的大规模体系。
+- [A foundation machine learning potential with polarizable long-range interactions for materials modelling](https://arxiv.org/abs/2410.13820)：提出包含可极化长程相互作用的基础机器学习势函数。
+- [Analyzing Atomic Interactions in Molecules as Learned by Neural Networks](https://arxiv.org/abs/2410.13833)：用可解释 AI 分析 SchNet 和 PaiNN 学到的原子相互作用，并与化学原则对照以诊断不稳定分子动力学。
+- [Machine-Learning-Assisted Blending of Data-Driven Turbulence Models](https://arxiv.org/abs/2410.14431)：在 RANS 方程内融合符号回归得到的湍流闭合专家，并用局部流动特征训练 Random Forest 权重。
+- [Accelerated discovery of extreme lattice thermal conductivity by crystal graph attention networks and chemical bonding](https://arxiv.org/abs/2410.16066)：训练 CATGNN 预测归一化 ICOHP 和 ICOBI 键合描述符，并筛选约 200,000 个晶体寻找极端晶格热导率材料。
+- [Neural Quantum Propagators for Driven-Dissipative Quantum Dynamics](https://arxiv.org/abs/2410.16091)：学习 driven neural quantum propagators 来近似时变算符，支持任意初态、外场和开放量子系统长时程动力学。
+- [On conditional diffusion models for PDE simulations](https://arxiv.org/abs/2410.16415)：研究用于 PDE 预测的条件 score-based diffusion，加入自回归采样、对历史长度稳定的训练以及用于资料同化的混合条件机制。
+- [Stochastic Flow Matching for Resolving Small-Scale Physics](https://arxiv.org/abs/2410.19814)：把粗分辨率物理场编码为潜在基础分布，并用带自适应噪声尺度的 flow matching 超分辨随机小尺度天气和 Kolmogorov flow 细节。
+- [Air Quality Prediction with Physics-Informed Dual Neural ODEs in Open Systems](https://arxiv.org/abs/2410.19892)：提出 Air-DualODE，把开放系统物理分支与数据驱动 Neural ODE 分支配对，并通过时间融合预测污染物浓度。
+- [Retrieval-Retro: Retrieval-based Inorganic Retrosynthesis with Expert Knowledge](https://arxiv.org/abs/2410.21341)：结合检索和专家知识进行无机逆合成规划。
+- [Orb: A Fast, Scalable Neural Network Potential](https://arxiv.org/abs/2410.22570)：提出快速、可扩展的神经网络势，用于原子尺度模拟。
+- [SLICES-PLUS: A crystal representation leveraging spatial symmetry](https://arxiv.org/abs/2410.22828)：在 SLICES 晶体字符串表示中加入空间对称信息，使生成模型和性质模型能更好编码周期晶体结构。
+- [FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions](https://arxiv.org/abs/2410.23405)：将大语言模型作为基础分布并结合流匹配进行材料生成。
+- [GEPS: Boosting Generalization in Parametric PDE Neural Solvers through Adaptive Conditioning](https://arxiv.org/abs/2410.23889)：用一小组低秩上下文参数和一阶优化做自适应条件化，使神经 PDE 求解器能跨未见初值、系数、外力和区域泛化。
+- [Adapting While Learning: Grounding LLMs for Scientific Problems with Intelligent Tool Usage Adaptation](https://arxiv.org/abs/2411.00412)：用工具生成解进行 World Knowledge Learning，并通过 Tool Usage Adaptation 让科学 LLM 只在较难问题上切换到工具。
+- [Automated, LLM enabled extraction of synthesis details for reticular materials from scientific literature](https://arxiv.org/abs/2411.03484)：构建 Knowledge Extraction Pipeline，用上下文示例提示从 reticular materials 论文 PDF 中分类段落并抽取合成参数。
+- [Charge-constrained atomic cluster expansion](https://arxiv.org/abs/2411.04062)：把 descriptor-constrained DFT 的变分结构迁移到 atomic cluster expansion，在无需 charge-constrained DFT 标签的情况下加入电荷相关 ACE 与长程静电。
+- [Physics-informed Kolmogorov–Arnold network with Chebyshev polynomials for fluid mechanics](https://arxiv.org/abs/2411.04516)：提出 ChebPIKAN，用 Chebyshev 多项式替代样条基，并结合物理信息损失求解 Allen-Cahn、Burgers、Helmholtz、Kovasznay 与 Navier-Stokes 方程。
+- [Insight into the effect of force error on the thermal conductivity from machine-learned potentials](https://arxiv.org/abs/2411.04769)：分析机器学习势中的力预测误差如何传递到晶格热导率估计，明确热输运仿真的可靠性边界。
+- [Are Deep Learning Methods Suitable for Downscaling Global Climate Projections? An Intercomparison for Temperature and Precipitation over Spain](https://arxiv.org/abs/2411.05850)：比较西班牙温度和降水气候投影的深度学习降尺度器，把区域气候降尺度作为模型选择和鲁棒性问题处理。
+- [SPIKANs: separable physics-informed Kolmogorov–Arnold networks](https://arxiv.org/abs/2411.06286)：提出 separable PIKAN，把多变量 PDE 解分解为低维 KAN 组件，以降低物理信息求解器训练成本。
+- [Community Research Earth Digital Intelligence Twin: a scalable framework for AI-driven Earth System Modeling](https://arxiv.org/abs/2411.07814)：将 CREDiT 描述为可扩展的 AI 地球系统建模框架，用于组织数据、仿真代理模型和社区数字孪生实验流程。
+- [A Generation Framework with Strict Constraints for Crystal Materials Design](https://arxiv.org/abs/2411.08464)：在硬性结构和成分约束下生成晶体候选，使材料设计输出在下游性质筛选前保持有效。
+- [FengWu-W2S: A deep learning model for seamless weather-to-subseasonal forecast of global atmosphere](https://arxiv.org/abs/2411.10191)：把 FengWu 扩展为统一深度学习大气预报模型，覆盖从天气尺度到次季节尺度的无缝全球预报。
+- [ACE2: accurately learning subseasonal to decadal atmospheric variability and forced responses](https://arxiv.org/abs/2411.11268)：学习次季节到年代际大气变化和强迫响应，用于地球系统建模。
+- [Cartesian atomic moment machine learning interatomic potentials](https://arxiv.org/abs/2411.12096)：用笛卡尔原子矩描述符构建原子间势，面向原子能量和力预测提供等变多体表示。
+- [G-RAG: Knowledge Expansion in Material Science](https://arxiv.org/abs/2411.14592)：在材料科学知识源上使用检索增强生成，扩展材料问答和发现支持所需的领域知识。
+- [Learnable Activation Functions in Physics-Informed Neural Networks for Solving Partial Differential Equations](https://arxiv.org/abs/2411.15111)：把 PINN 中固定激活函数替换为可学习激活函数，使求解器在拟合 PDE residual 时自适应基函数形状。
+- [Machine-learning emergent spacetime from linear response in future tabletop quantum gravity experiments](https://arxiv.org/abs/2411.16052)：用机器学习分析未来桌面量子引力实验的线性响应信号，以推断 emergent spacetime 特征。
+- [VICON: Vision In-Context Operator Networks for Multi-Physics Fluid Dynamics Prediction](https://arxiv.org/abs/2411.16063)：训练 vision in-context operator networks，从视觉示例轨迹推断多物理流体动力学，而不是依赖固定方程专用求解器。
+- [Phys4DGen: Physics-Compliant 4D Generation with Multi-Material Composition Perception](https://arxiv.org/abs/2411.16800)：把 4D 生成与材料组成感知和物理合规约束结合，使动态生成对象符合多材料行为。
+- [ADAF: An Artificial Intelligence Data Assimilation Framework for Weather Forecasting](https://arxiv.org/abs/2411.16807)：把天气资料同化表述为 AI 流程，将观测与学习式预报模型结合以改进预报初始状态。
+- [What do physics-informed DeepONets learn? Understanding and improving training for scientific computing applications](https://arxiv.org/abs/2411.18459)：诊断 physics-informed DeepONets 在算子训练中学到的内容，并研究提升科学计算泛化的训练改动。
+- [Scaling of Stochastic Normalizing Flows in SU(3) lattice gauge theory](https://arxiv.org/abs/2412.00200)：研究随机 normalizing flows 在 SU(3) 格点规范场中的扩展性，目标是加速格点量子场仿真采样。
+- [Extending atomic decomposition and many-body representation with a chemistry-motivated approach to machine learning potentials](https://arxiv.org/abs/2412.00522)：扩展机器学习势函数中的原子分解与多体表示。
+- [Solving the fractional quantum Hall problem with self-attention neural network](https://arxiv.org/abs/2412.00618)：用 self-attention 神经网络表示 fractional quantum Hall 波函数并求解多体量子态。
+- [Improving Physics Reasoning in Large Language Models Using Mixture of Refinement Agents](https://arxiv.org/abs/2412.00821)：用多个 refinement agents 迭代批判和改进 LLM 物理答案，重点修正推理错误而非只依赖领域预训练。
+- [Enhanced Photovoltaic Power Forecasting: An iTransformer and LSTM-Based Model Integrating Temporal and Covariate Interactions](https://arxiv.org/abs/2412.02302)：结合 iTransformer 的时间建模和 LSTM 的协变量交互建模，在变化天气输入下预测光伏功率。
+- [ACE2-SOM: Coupling an ML atmospheric emulator to a slab ocean and learning the sensitivity of climate to changed CO$_2$](https://arxiv.org/abs/2412.04418)：把 ACE2 机器学习大气 emulator 接入 slab-ocean 模型，用于研究二氧化碳强迫变化下的气候敏感性。
+- [Wavelet Diffusion Neural Operator](https://arxiv.org/abs/2412.04833)：结合小波表示、扩散建模和神经算子，以多尺度空间结构建模 PDE 场。
+- [GLONET: Mercator's End‐to‐End Neural Global Ocean Forecasting System](https://arxiv.org/abs/2412.05454)：提出 Mercator 风格的端到端神经全球海洋预报系统，用学习模型替代传统数值预报链条中的部分环节。
+- [Model-agnostic AI framework with explicit time integration for long-term fluid dynamics prediction](https://arxiv.org/abs/2412.05657)：提出带显式时间积分的模型无关 AI 框架，用于长期流体动力学预测。
+- [Boosting weather forecast via generative superensemble](https://arxiv.org/abs/2412.08377)：用生成式 superensemble 组合多个预报成员，提升相较单一学习式预报器的概率天气预报能力。
+- [DARWIN 1.5: Large Language Models as Materials Science Adapted Learners](https://arxiv.org/abs/2412.11970)：将大语言模型适配为材料科学学习器。
+- [Predicting Change, Not States: An Alternate Framework for Neural PDE Surrogates](https://arxiv.org/abs/2412.13074)：提出面向变化预测的神经 PDE 代理模型框架。
+- [Taming Multi-Domain, -Fidelity Data: Towards Foundation Models for Atomistic Scale Simulations](https://arxiv.org/abs/2412.13088)：研究跨多领域和多保真数据训练原子尺度基础模型，使机器学习势能复用廉价模拟和高精度模拟数据。
+- [Data-Efficient Inference of Neural Fluid Fields via SciML Foundation Model](https://arxiv.org/abs/2412.13897)：用科学机器学习基础模型从有限观测推断神经流体场，面向数据高效的流场状态重建。
+- [Graph-neural-network predictions of solid-state NMR parameters in silica from spherical tensor decomposition.](https://arxiv.org/abs/2412.15063)：结合球张量分解和图神经网络预测 silica 结构中的固态 NMR 参数。
+- [EarthDial: Turning Multi-sensory Earth Observations to Interactive Dialogues](https://arxiv.org/abs/2412.15190)：构建面向多传感器地球观测数据的对话模型，把遥感输入连接到交互式科学问答。
+- [A Large-Scale Simulation on Large Language Models for Decision-Making in Political Science](https://arxiv.org/abs/2412.15291)：该条目偏离科学知识模型主轴；它把 LLM 用作政治学决策模拟器，而不是贡献可复用科学建模骨干。
+- [A Generative Framework for Probabilistic, Spatiotemporally Coherent Downscaling of Climate Simulation](https://arxiv.org/abs/2412.15361)：生成概率化高分辨率气候场，同时保持降尺度模拟轨迹的时空一致性。
+- [GraphDOP: Towards skilful data-driven medium-range weather forecasts learnt and initialised directly from observations](https://arxiv.org/abs/2412.15687)：直接从观测初始化训练数据驱动中期天气预报模型。
+- [Assimilating Observed Surface Pressure Into ML Weather Prediction Models](https://arxiv.org/abs/2412.18016)：把观测地面气压注入机器学习天气模型，将气压同化作为学习式预报校正机制。
+- [LangYa: Revolutionizing Cross-Spatiotemporal Ocean Forecasting](https://arxiv.org/abs/2412.18097)：训练用于跨时空迁移的海洋预报模型，目标是在一个学习系统内覆盖不同区域和时间跨度。
+- [SuperSalt: equivariant neural network force fields for multicomponent molten salts system](https://arxiv.org/abs/2412.19353)：提出用于多组分熔盐体系的等变神经网络力场。
+- [BB-GeoGPT: A framework for learning a large language model for geographic information science](https://doi.org/10.1016/j.ipm.2024.103808)：面向 geographic information science 学习和适配大语言模型，使地理空间问答与推理获得领域化模型支持。
+- [High-Performance stacking ensemble learning for thermoelectric figure-of-merit prediction](https://doi.org/10.1016/j.matdes.2024.113552)：用堆叠集成学习预测热电性能优值。
+- [AI-Driven Ensemble Learning for Accurate Seebeck Coefficient Prediction in Half-Heusler Compounds Based on Chemical Formulas.](https://doi.org/10.1016/j.cocom.2024.e00923)：用 AI 驱动的集成学习基于化学式预测 Seebeck 系数。
+- [Understanding the Dielectric Relaxation of Liquid Water Using Neural Network Potential and Classical Pairwise Potential](https://doi.org/10.1016/j.molliq.2024.124054)：用神经网络势函数研究液态水介电弛豫。
+- [Accelerated Discovery of Novel Inorganic Solid-State Electrolytes through Machine Learning-Assisted Hierarchical Screening](https://doi.org/10.1016/j.jallcom.2024.177981)：用机器学习辅助的层次化筛选发现无机固态电解质。
+- [Has generative artificial intelligence solved inverse materials design?](https://doi.org/10.1016/j.matt.2024.05.017)：综述材料逆向设计中的生成式模型，指出分子、晶体和微结构生成器在从目标性质闭环到结构时仍面临的限制。
+- [Exploring Scientific Hypothesis Generation with Mamba](https://doi.org/10.18653/v1/2024.nlp4science-1.17)：测试 Mamba 序列模型生成科学假设的能力，突出 state-space 长上下文建模在文献驱动科学构想中的作用。
+- [Graph-text contrastive learning of inorganic crystal structure toward a foundation model of inorganic materials](https://doi.org/10.1080/27660400.2024.2406219)：通过对比学习对齐无机晶体图和文本描述，构建可用于材料检索与性质迁移的共享表示。
+- [Respecting causality for training physics-informed neural networks](https://doi.org/10.1016/j.cma.2024.116813)：按因果时间传播重排 PINN 优化，避免后期残差在早期物理状态学好之前主导训练。
+- [Do data-driven models beat numerical models in forecasting weather extremes? A comparison of IFS HRES, Pangu-Weather, and GraphCast](https://doi.org/10.5194/gmd-17-7915-2024)：比较 IFS HRES、Pangu-Weather 与 GraphCast 在极端天气上的表现，揭示学习式预报相对物理数值预报的短板。
+- [Active learning accelerates the discovery of high strength and high ductility lead-free solder alloys](https://doi.org/10.1016/j.matdes.2024.112921)：用主动学习选择无铅焊料合金实验，在更少候选评估下同时优化强度和延展性。
+- [Optimization of dual-layer flow field in a water electrolyzer using a data-driven surrogate model](https://doi.org/10.1016/j.egyai.2024.100411)：训练电解槽流场性能代理模型，用于优化双层通道设计，避免每个候选都运行完整物理仿真。
+- [Effectiveness of three machine learning models for prediction of daily streamflow and uncertainty assessment](https://doi.org/10.1016/j.wroa.2024.100297)：比较三类日径流预测模型并进行不确定性评估，把水文预报可靠性作为建模目标。
+- [Machine learning as a characterization method for analysis and design of perovskite solar cells](https://doi.org/10.1016/j.mtphys.2024.101359)：把机器学习作为钙钛矿太阳能电池分析和设计的表征层，将器件描述符连接到光伏行为。
+- [Data driven high quantum yield halide perovskite phosphors design and fabrication](https://doi.org/10.1016/j.mattod.2024.02.002)：结合数据驱动筛选与制备反馈，设计高量子产率卤化物钙钛矿荧光粉。
+- [High-performance Carbonaceous Absorbers: From Heterogeneous Absorbents to Data-driven Metamaterials](https://doi.org/10.1016/j.carbon.2024.119850)：用数据驱动超材料设计把碳基吸收体从经验异质材料推进到优化吸收结构。
+- [A novel correlation feature self-assigned Kolmogorov-Arnold Networks for multi-energy load forecasting in integrated energy systems](https://doi.org/10.1016/j.enconman.2024.119388)：在 KAN 中加入相关特征自分配机制，用于综合能源系统中电、热等多能源负荷预测。
+- [Denoising diffusion probabilistic models for generative alloy design](https://doi.org/10.1016/j.addma.2024.104478)：把 denoising diffusion 用于合金生成，将成分和工艺设计表述为学习式生成搜索问题。
+- [Size Dependent Lithium-Ion Conductivity of Solid Electrolytes in Machine Learning Molcular Dynamics Simulations](https://doi.org/10.1016/j.aichem.2024.100051)：用机器学习分子动力学研究固态电解质尺寸效应如何改变锂离子电导率估计。
+- [Geometry-Guided Conditional Adaptation for Surrogate Models of Large-Scale 3D PDEs on Arbitrary Geometries](https://doi.org/10.24963/ijcai.2024/640)：用几何条件化适配 PDE 代理模型，使学习式求解器能跨任意大型三维区域泛化。
+- [Application of machine learning for material prediction and design in the environmental remediation](https://doi.org/10.1016/j.cclet.2024.110722)：把机器学习预测和设计循环用于环境修复材料，将候选描述符连接到污染物去除性能。
+- [3D Super-Resolution Model for Vehicle Flow Field Enrichment](https://doi.org/10.1109/wacv57701.2024.00572)：用三维超分辨率补充粗粒度车辆流场仿真，把气动场作为学习式重建目标。
+- [DATS: Difficulty-Aware Task Sampler for Meta-Learning Physics-Informed Neural Networks](https://proceedings.iclr.cc/paper_files/paper/2024/hash/56dcc5a7b91a63f81bbcf91ba8699c74-Abstract-Conference.html)：提出按训练难度选择 PINN 元学习任务的 difficulty-aware sampler。
+- [Surrogate Modeling of the Aerodynamic Performance for Airfoils in Transonic Regime](https://doi.org/10.2514/6.2024-2220)：构建跨声速翼型气动性能代理模型，用于在设计探索中替代反复运行的高成本 CFD。
+- [AI for dielectric capacitors](https://doi.org/10.1016/j.ensm.2024.103612)：梳理介电电容器材料中的 AI 方法，包括性质预测、成分筛选和高能量密度介质设计。
+- [Representation learning with unconditional denoising diffusion models for dynamical systems](https://doi.org/10.5194/npg-31-409-2024)：在动力系统吸引子状态上训练去噪扩散模型，使反向扩散过程学习非线性系统表征并生成状态样本。
+- [Unveiling future superconductors through machine learning](https://doi.org/10.1016/j.mtphys.2024.101384)：用机器学习筛选候选超导体，围绕临界温度和成分信号推进材料发现。
+- [AI in materials science: Charting the course to Nobel-worthy breakthroughs](https://doi.org/10.1016/j.matt.2024.11.012)：从结构-性质预测、逆向设计和自主实验三条路径讨论 AI 材料模型如何支撑高影响力发现。
+- [You cannot handle the weather: Progressive amplified adverse-weather-gradient projection adversarial attack](https://doi.org/10.1016/j.eswa.2024.126143)：研究天气模型上的渐进放大 adverse-weather-gradient 攻击，把气象预报鲁棒性作为核心信号。
+- [Research of Knowledge-Enhanced Large Language Model Based on Knowledge Graph](https://doi.org/10.1109/icaice63571.2024.10863933)：用知识图谱结构增强 LLM，使科学回答能利用显式实体关系证据。
+- [Artificial Intelligence for Research (AI4R): Knowledge Base and Impact](https://doi.org/10.1109/ieir62538.2024.10959986)：构建 AI-for-research 知识库并分析影响，更接近 science-of-science 基础设施而不是领域仿真模型。
+- [Long-Term Prediction for Harmful Gas Concentration Based on RevIN-KANformer Model](https://doi.org/10.1109/cac63892.2024.10865153)：将 reversible instance normalization 与 KANformer 架构结合，用于有害气体浓度长时程预测。
+- [Machine learning of metal-organic framework design for carbon dioxide capture and utilization](https://doi.org/10.1016/j.jcou.2024.102941)：用机器学习设计二氧化碳捕集与利用所需金属有机框架，将 MOF 描述符连接到吸附和转化目标。
+- [Enhancing foundation models for scientific discovery via multimodal knowledge graph representations](https://doi.org/10.1016/j.websem.2024.100845)：把多模态科学知识图谱转化为表示，以增强基础模型的检索和发现行为。
+- [The June 2024 middle east compound heatwave: Dynamical drivers and AI-weather forecast models' evaluation](https://doi.org/10.1016/j.atmosres.2026.108779)：在 2024 年 6 月中东复合热浪上评估 AI 天气模型，同时分析该事件背后的动力学驱动。
+- [Caption Alignment and Structure-Aware Attention for Scientific Table-to-Text Generation](https://doi.org/10.1109/access.2024.3507772)：在科学表格转文本生成中加入 caption alignment 与结构感知注意力，使输出更贴合表格布局和元数据。
+- [Towards End-to-End Prompt-Vision-Physics Neural Network for Fast Design Discovery](https://doi.org/10.1109/cai59869.2024.00255)：在端到端神经设计模型中结合 prompt、vision 与 physics 信号，用于物理约束设计空间的快速发现。
+- [Improving AI Weather Prediction Models Using Global Mass and Energy Conservation Schemes](https://arxiv.org/abs/2501.05648)：给学习式天气预报加入全局质量和能量守恒校正，使输出更符合大气物理收支。
+- [Accelerating Discovery in Natural Science Laboratories with AI and Robotics: Perspectives and Challenges from the 2024 IEEE ICRA Workshop, Yokohama, Japan](https://arxiv.org/abs/2501.06847)：这是关于 AI 与机器人自然科学实验室发现的观点文章，可作为自主科学背景，但不是独立科学基础模型。
+- [Kolmogorov-Arnold Recurrent Network for Short Term Load Forecasting Across Diverse Consumers](https://arxiv.org/abs/2501.06965)：把 Kolmogorov-Arnold network 组件与循环建模结合，用于跨异构用户画像的短期负荷预测。
+- [Transforming Role Classification in Scientific Teams Using LLMs and Advanced Predictive Analytics](https://arxiv.org/abs/2501.07267)：用 LLM 派生特征和预测模型分类科研团队角色，属于 science-of-science 应用侧模型。
+- [Physics-Informed Latent Neural Operator for Real-time Predictions of Complex Physical Systems](https://arxiv.org/abs/2501.08428)：学习带物理信息约束的潜在神经算子，用于时变参数化 PDE 系统的实时预测。
+- [ABACUS: An electronic structure analysis package for the AI era.](https://arxiv.org/abs/2501.08697)：描述支持 AI 时代工作流的电子结构分析软件包，更接近科学建模基础设施而不是新的学习模型。
+- [CrystalGRW](https://arxiv.org/abs/2501.08998)：用 geodesic random walks 生成带目标属性的晶体结构。
+- [Towards Fast, Specialized Machine Learning Force Fields: Distilling Foundation Models via Energy Hessians](https://arxiv.org/abs/2501.09009)：利用能量 Hessian 监督，将基础模型蒸馏为快速专用机器学习力场。
+- [An implicit adaptive Fourier neural operator for long-term predictions of three-dimensional turbulence](https://arxiv.org/abs/2501.12740)：用隐式自适应 Fourier neural operator 稳定三维湍流的长时程预测。
+- [Bridging text and crystal structures: literature-driven contrastive learning for materials science](https://arxiv.org/abs/2501.12919)：通过对比学习对齐材料文献文本和晶体结构表示，把语言证据连接到无机结构嵌入。
+- [DoMINO: A Decomposable Multi-scale Iterative Neural Operator for Modeling Large Scale Engineering Simulations](https://arxiv.org/abs/2501.13350)：把大型工程仿真分解为多尺度神经算子迭代，使学习式求解器能扩展到工业几何。
+- [Kolmogorov Arnold Neural Interpolator for Downscaling and Correcting Meteorological Fields from In-Situ Observations](https://arxiv.org/abs/2501.14404)：用 Kolmogorov-Arnold neural interpolator 从稀疏原位观测中降尺度并校正气象场偏差。
+- [Point Cloud Neural Operator for Parametric PDEs on Complex and Variable Geometries](https://arxiv.org/abs/2501.14475)：把复杂 PDE 区域表示为点云，并学习可跨可变几何泛化的参数化解算子。
+- [Wyckoff Material Transformer](https://arxiv.org/abs/2501.16051)：在生成式材料 Transformer 中使用 Wyckoff 表示建模材料结构。
+- [FlowDAS: A Stochastic Interpolant-based Framework for Data Assimilation](https://arxiv.org/abs/2501.16642)：把资料同化表述为 stochastic interpolation，用生成式 flow 将先验预报状态映射到符合观测的后验状态。
+- [JRE-L: Journalist, Reader, and Editor LLMs in the Loop for Science Journalism for the General Audience](https://arxiv.org/abs/2501.16865)：该条目偏离科学知识模型主轴；它编排 journalist、reader 和 editor 三类 LLM 角色用于大众科学写作，而不是训练科学模型。
+- [COMPOL: A Unified Neural Operator Framework for Scalable Multi-Physics Simulations](https://arxiv.org/abs/2501.17296)：提供可组合的统一神经算子框架，用于跨耦合物理过程的可扩展多物理场仿真。
+- [VLMaterial: Procedural Material Generation with Large Vision-Language Models](https://arxiv.org/abs/2501.18623)：用大型视觉语言模型生成 procedural material 描述，把视觉语言条件连接到材料合成资产。
+- [Equivariant Hypergraph Diffusion](https://arxiv.org/abs/2501.18850)：用 equivariant hypergraph diffusion 做晶体结构预测。
+- [E2Former: An Efficient and Equivariant Transformer with Linear-Scaling Tensor Products](https://arxiv.org/abs/2501.19216)：提出带 Wigner 6j 卷积的线性扩展等变 Transformer，在保持旋转等变性的同时加速微观科学系统建模。
+- [OneForecast: A Universal Framework for Global and Regional Weather Forecasting](https://arxiv.org/abs/2502.00338)：在一个学习框架中统一全球与区域天气预报，使模型无需独立流水线即可处理不同预报区域。
+- [Gradient Alignment in Physics-informed Neural Networks: A Second-Order Optimization Perspective](https://arxiv.org/abs/2502.00604)：从二阶梯度对齐角度解释 PINN 训练失效，并提出诊断数据损失和物理损失平衡的优化视角。
+- [Neural Preconditioning Operator for Efficient PDE Solves](https://arxiv.org/abs/2502.01337)：学习神经预条件器以加速迭代式 PDE 求解，目标是提升收敛速度而不是完全替代数值求解。
+- [Al-Khwarizmi: Discovering Physical Laws with Foundation Models](https://arxiv.org/abs/2502.01702)：结合 foundation model、检索增强先验知识与 SINDy，从文本、数据和图表中生成特征库与优化器设置，用于可解释物理定律发现。
+- [Periodic Bayesian Flow for Material Generation](https://arxiv.org/abs/2502.02016)：用 periodic Bayesian flow 做 material generation。
+- [Electric-field driven nuclear dynamics of liquids and solids from a multi-valued machine-learned dipolar model](https://arxiv.org/abs/2502.02413)：学习液体和固体中电场驱动核动力学所需的原子间势与偶极模型，支撑高效科学模拟。
+- [Transolver++: An Accurate Neural Solver for PDEs on Million-Scale Geometries](https://arxiv.org/abs/2502.02414)：将神经 PDE 求解扩展到百万尺度几何，使学习型科学求解器更接近工业仿真场景。
+- [Physics-informed neural networks for solving moving interface flow problems using the level set approach](https://arxiv.org/abs/2502.02440)：在 level-set 移动界面流问题中改造 PirateNet PINN，结合因果训练、seq2seq 学习、Fourier 特征、Eikonal 正则和几何重初始化。
+- [Open Materials Generation](https://arxiv.org/abs/2502.02582)：用 stochastic interpolants 做开放材料生成，补充科学生成模型。
+- [Physically consistent global atmospheric data assimilation with machine learning in latent space](https://arxiv.org/abs/2502.02884)：在学习到的潜空间中执行贝叶斯大气资料同化，以保持全球天气与气候状态的物理一致性。
+- [Universal machine learning interatomic potentials poised to supplant DFT in modeling general defects in metals and random alloys](https://arxiv.org/abs/2502.03578)：检验 universal machine-learning interatomic potentials 是否可在金属缺陷与随机合金建模中替代 DFT。
+- [SymmCD](https://arxiv.org/abs/2502.03638)：用 symmetry-preserving diffusion 生成晶体结构，补充材料科学生成模型。
+- [PINT: Physics-Informed Neural Time Series Models with Applications to Long-term Inference on WeatherBench 2m-Temperature Data](https://arxiv.org/abs/2502.04018)：把简谐振子动力学作为物理先验嵌入 RNN、LSTM 和 GRU 预报器，用于 WeatherBench 2m 温度的长时程推断。
+- [Retro-Rank-In: A Ranking-Based Approach for Inorganic Materials Synthesis Planning](https://arxiv.org/abs/2502.04289)：把无机逆合成重写为目标与前驱体共享潜空间中的排序问题，改进新材料合成规划。
+- [Constitutive Kolmogorov–Arnold Networks (CKANs): Combining accuracy and interpretability in data-driven material modeling](https://arxiv.org/abs/2502.05682)：提出 CKAN 本构模型，将 KAN 符号学习与事后符号化结合，把黑箱材料预测转化为更可解释、可外推的公式。
+- [Known Unknowns: Out-of-Distribution Property Prediction in Materials and Molecules](https://arxiv.org/abs/2502.05970)：研究材料与分子的分布外性质预测，关注向训练分布之外性质范围的零样本外推。
+- [A Multimodal PDE Foundation Model for Prediction and Scientific Text Descriptions](https://arxiv.org/abs/2502.06026)：训练 Transformer PDE 基础模型，把方程参数、初始条件和自然语言物理过程描述融合起来，同时预测 ODE/PDE 解并生成科学文本解释。
+- [Physics-Guided Foundation Model for Scientific Discovery: An Application to Aquatic Science](https://arxiv.org/abs/2502.06084)：先在物理模型生成的环境系统上预训练，再用真实观测微调，并用质量和能量守恒约束湖泊水温与溶解氧动力学。
+- [WyckoffDiff](https://arxiv.org/abs/2502.06485)：针对晶体对称性构建生成式 diffusion model，补充材料结构生成模型。
+- [Uncertainty quantification for misspecified machine learned interatomic potentials](https://arxiv.org/abs/2502.07104)：将失配感知回归用于机器学习原子间势的不确定性估计，提升原子尺度科学模拟的可靠性评估。
+- [Global universal scaling and ultrasmall parameterization in machine-learning interatomic potentials with superlinearity](https://arxiv.org/abs/2502.07293)：构建 SUS2-MLIP，把通用状态方程缩放和非线性相互作用函数结合，解耦元素空间与坐标空间以获得紧凑可迁移的原子间势。
+- [Diffusion-LAM: Probabilistic Limited Area Weather Forecasting with Diffusion](https://arxiv.org/abs/2502.07532)：用条件扩散做有限区域概率天气预报，以区域边界状态作为条件，并在 MEPS 数据集上评估区域预报能力。
+- [Iterative charge equilibration for fourth-generation high-dimensional neural network potentials.](https://arxiv.org/abs/2502.07907)：为第四代高维神经网络势引入迭代式电荷平衡，替代直接求解并提升长程电荷转移模拟的可扩展性。
+- [The augmented potential method: Multiscale modeling toward a spectral defect genome](https://arxiv.org/abs/2502.08014)：在晶界缺陷附近使用通用机器学习势，在远场缓冲区使用经典势，计算 1,050 组二元合金的晶界偏聚能分布。
+- [TANTE: Time-adaptive operator learning via neural Taylor expansion](https://arxiv.org/abs/2502.08574)：学习 neural Taylor expansion 与局部收敛半径，使 Transformer 神经算子能为时变 PDE 预测自适应选择 rollout 步长。
+- [Artificial Intelligence in Spectroscopy: Advancing Chemistry from Prediction to Generation and Beyond](https://arxiv.org/abs/2502.09897)：综述 AI 光谱学模型，从光谱性质预测延伸到分子和材料生成。
+- [DiSciPLE: Learning Interpretable Programs for Scientific Visual Discovery](https://arxiv.org/abs/2502.10060)：面向科学视觉发现的程序学习框架。核心思想是从科学视觉数据中学习可解释程序，使 agent 产生可解释发现。
+- [Opportunities and challenges of quantum computing for climate modeling](https://arxiv.org/abs/2502.10488)：评估量子算法可支持的气候模型组件，同时指出其在规模化和接入业务气候模拟时的障碍。
+- [Reanalysis‐Based Global Radiative Response to Sea Surface Temperature Patterns: Evaluating the Ai2 Climate Emulator](https://arxiv.org/abs/2502.10893)：用 Green's-function 实验评估 Ai2 Climate Emulator 对海表温度模式的辐射响应。
+- [Smooth and Expressive Interatomic Potentials](https://arxiv.org/abs/2502.12147)：训练更能守恒能量的 MLIP，以提升下游物性预测可靠性。
+- [Large Language Models for Extrapolative Modeling of Manufacturing Processes](https://arxiv.org/abs/2502.12185)：用 LLM 从制造文献中抽取工艺知识，并迭代细化小数据参数模型，用于外推加工、变形和增材制造过程行为。
+- [MatterChat](https://arxiv.org/abs/2502.13107)：构建面向 material-science reasoning 与 interaction 的 multimodal LLM。
+- [CondensNet: enabling stable long-term climate simulations via hybrid deep learning models with adaptive physical constraints](https://arxiv.org/abs/2502.13185)：在神经云参数化中嵌入自适应凝结约束，形成 PCNN-GCM，以避免水汽过饱和并稳定长期混合气候模拟。
+- [AI-Driven Discovery of High Performance Polymer Electrodes for Next-Generation Batteries](https://arxiv.org/abs/2502.13899)：用 AI 引导筛选下一代电池聚合物电极候选，将聚合物特征连接到电化学性能。
+- [Tree-of-Debate: Multi-Persona Debate Trees Elicit Critical Thinking for Scientific Comparative Analysis](https://arxiv.org/abs/2502.14767)：把多角色辩论组织为树搜索过程，用分支批判提升科学比较分析中的推理质量。
+- [Semantic Embeddings of Chemical Elements for Enhanced Materials Inference and Discovery](https://arxiv.org/abs/2502.14912)：在 129 万篇合金论文摘要上训练 ElementBERT，生成元素语义嵌入，用于提升合金性质预测、相结构分类和 Bayesian 材料优化。
+- [Unveiling Attractor Cycles in Large Language Models: A Dynamical Systems View of Successive Paraphrasing](https://arxiv.org/abs/2502.15208)：把 LLM 的连续改写视为动力系统，分析多轮 paraphrasing 中出现的 attractor cycles。
+- [MoMa: A Modular Deep Learning Framework for Material Property Prediction](https://arxiv.org/abs/2502.15483)：训练材料学习专用模块，并按下游任务组合模块，用于 few-shot 和 continual 的材料性质预测。
+- [On the Effectiveness of Large Language Models in Automating Categorization of Scientific Texts](https://arxiv.org/abs/2502.15745)：评估 LLM 自动分类科学文本的效果，关注 prompt-based 分类器能否替代人工 taxonomy 标注。
+- [Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems](https://arxiv.org/abs/2502.17019)：提出面向大规模物理系统的树式层次 Transformer，扩展科学基础模型架构。
+- [DeepSeek vs. ChatGPT vs. Claude: A Comparative Study for Scientific Computing and Scientific Machine Learning Tasks](https://arxiv.org/abs/2502.17764)：比较 DeepSeek、ChatGPT 与 Claude 在科学计算和科学机器学习任务上的表现，刻画模型优势与失效模式。
+- [Efficient and accurate spatial mixing of machine learned interatomic potentials for materials science](https://arxiv.org/abs/2502.19081)：通过空间混合 machine-learned interatomic potentials，提高材料模拟效率与准确性。
+- [DeePMD-kit v3: A Multiple-Backend Framework for Machine Learning Potentials](https://arxiv.org/abs/2502.19161)：提供多后端机器学习势能框架，支持可扩展的原子尺度科学建模。
+- [Electrocatalyst discovery through text mining and multi-objective optimization](https://arxiv.org/abs/2502.20860)：把科学文本中的材料-性质 Word2Vec 嵌入同 Pareto 优化结合，筛选氧还原、析氢和析氧反应的电催化剂组成。
+- [Text-Guided Joint Diffusion for Periodic Materials](https://arxiv.org/abs/2503.00522)：用 text-guided joint diffusion 生成周期材料。
+- [Pre-training Graph Neural Networks with Structural Fingerprints for Materials Discovery](https://arxiv.org/abs/2503.01227)：用低成本结构指纹作为自监督目标预训练原子图神经网络，避免依赖量子计算标签，同时保持向材料任务迁移的能力。
+- [Wyckoff Transformer](https://arxiv.org/abs/2503.02407)：通过空间群与 Wyckoff positions 条件生成对称晶体。
+- [Generative assimilation and prediction for weather and climate](https://arxiv.org/abs/2503.03038)：定义 GAP 深度生成天气气候模型，在观测、预报和强迫约束下学习大气状态分布，统一支持同化、预报与气候模拟。
+- [Machine learning for estimation and control of quantum systems](https://arxiv.org/abs/2503.03164)：综述量子系统状态与动力学控制中的神经网络估计、梯度控制、演化控制、鲁棒控制和强化学习方法。
+- [Learning and discovering multiple solutions using physics-informed neural networks with random initialization and deep ensemble](https://arxiv.org/abs/2503.06320)：把随机初始化和深度集成用于 PINN，发现非线性 ODE 与 PDE 的多个稳定和不稳定解，并将其作为传统求解器初值。
+- [Conditional Generative Modeling for Amorphous Multi-Element Materials](https://arxiv.org/abs/2503.07043)：提出 ApolloX，用物理约束的条件生成框架建模非晶多元材料，并显式利用短程有序信息。
+- [Does Hessian Data Improve the Performance of Machine Learning Potentials?](https://arxiv.org/abs/2503.07839)：研究 Hessian 监督是否能提升机器学习原子间势在非平衡结构、反应路径和振动谱上的表现。
+- [Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](https://arxiv.org/abs/2503.07890)：把地理空间扩散生成模型转化为判别式基础模型，通过跨阶段融合噪声相关扩散特征服务遥感分割和分类。
+- [Mutation Testing via Iterative Large Language Model-Driven Scientific Debugging](https://arxiv.org/abs/2503.08182)：用迭代式 LLM debugging 生成科学代码 mutation 并暴露错误模型假设，把科学软件验证纳入模型评测循环。
+- [Predicting Tropical Cyclone Track Forecast Errors using a Probabilistic Neural Network](https://arxiv.org/abs/2503.09840)：训练概率神经网络估计热带气旋路径预报误差，为风暴轨迹预测提供校准后的不确定性。
+- [PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Spatiotemporal Prediction](https://arxiv.org/abs/2503.10253)：结合宏观潜在动力学、PDE 引导的微尺度自适应细化和时间消息传递，从稀疏 burst-sampled 观测中学习时空系统。
+- [Siamese Crystal Foundation Models](https://arxiv.org/abs/2503.10471)：提出 DAO 预训练-微调框架，联合 Siamese 结构生成器和能量预测器，从化学组成预测晶体结构。
+- [Mamba time series forecasting with uncertainty quantification](https://arxiv.org/abs/2503.10873)：将点预测 Mamba 与方差估计 Mamba 配对，在时间序列基准和随机科学轨迹上生成校准的不确定性区间。
+- [Versatile Physics‐based Character Control with Hybrid Latent Representation](https://arxiv.org/abs/2503.12814)：学习用于物理角色控制的混合潜在表示，更接近仿真控制模型，而不是纯文本科学推理方法。
+- [Tensor-decomposition-based A Priori Surrogate (TAPS) modeling for ultra large-scale simulations](https://arxiv.org/abs/2503.13933)：提出 TAPS 张量分解 C-HiDeNN Galerkin 代理模型，在空间、参数和时间维度求解控制方程，面向 zetta-scale 工程仿真。
+- [PET-MAD](https://arxiv.org/abs/2503.14118)：训练轻量 universal interatomic potential，通过更高原子多样性支持先进材料建模。
+- [Ensemble Knowledge Distillation for Machine Learning Interatomic Potentials](https://arxiv.org/abs/2503.14293)：从只用能量训练的教师模型集成中蒸馏力信息，在高保真数据缺少梯度时改进 MLIP 训练。
+- [Accelerating Transient CFD through Machine Learning-Based Flow Initialization](https://arxiv.org/abs/2503.15766)：用机器学习预测初始流场，并可与势流或均匀流混合初始化，在汽车气动瞬态 CFD 中缩短收敛时间。
+- [Enhancing Fourier Neural Operators with Local Spatial Features](https://arxiv.org/abs/2503.17797)：在 Fourier Neural Operator 前加入 CNN 局部特征提取器和分辨率不变的 resize 机制，使 PDE 求解器同时捕捉全局谱信息与局部空间结构。
+- [Thermalizer](https://arxiv.org/abs/2503.18731)：通过扩散式分布控制稳定自回归神经模型对时空混沌系统的仿真。
+- [Constraint-aware PDE pre-training](https://arxiv.org/abs/2503.19081)：在 PDE scientific foundation models 的预训练中注入约束，以提升泛化性和鲁棒性。
+- [Oxidation states in solids from data-driven paradigms](https://arxiv.org/abs/2503.19425)：用数据驱动的固体化学模型推断氧化态，以学习到的结构和组成证据替代纯规则分配。
+- [Multimodal machine learning with large language embedding model for polymer property prediction](https://arxiv.org/abs/2503.22962)：在 PolyLLMem 中融合 Llama 3 文本嵌入、Uni-Mol 结构嵌入和 LoRA 适配，用于小标注数据条件下的聚合物性质预测。
+- [CITRAS: Covariate-Informed Transformer for Time Series Forecasting](https://arxiv.org/abs/2503.24007)：使用 decoder-only Transformer，并通过 KV Shift 与注意力分数平滑联合建模目标历史、过去协变量和未来协变量。
+- [Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](https://arxiv.org/abs/2504.00510)：把任意 PDE 几何分解为神经算子子域，并用 Schwarz Neural Inference 拼接，同时给出几何泛化的收敛与误差分析。
+- [Accelerating the discovery of high-performance nonlinear optical materials using active learning and high-throughput screening](https://arxiv.org/abs/2504.01526)：结合主动学习与高通量筛选发现非线性光学晶体，并发布计算得到的 SHG tensor 数据用于模型评估。
+- [A Physics-Informed Meta-Learning Framework for the Continuous Solution of Parametric PDEs on Arbitrary Geometries](https://arxiv.org/abs/2504.02459)：用 physics-informed meta-learning 在任意几何上连续求解参数化 PDE。
+- [Grammar-based Ordinary Differential Equation Discovery](https://arxiv.org/abs/2504.02630)：提出 GODE，把形式文法、降维和随机搜索结合起来，从动力系统数据中发现简洁的 ODE 表达式。
+- [Learning Phase Distortion with Selective State Space Models for Video Turbulence Mitigation](https://arxiv.org/abs/2504.02697)：用 MambaTM 与学习到的潜在相位畸变图建模长程时空湍流效应，从而加速视频湍流校正。
+- [Learning Distributions of Complex Fluid Simulations with Diffusion Graph Networks](https://arxiv.org/abs/2504.02843)：用基于图的潜在扩散或流匹配学习复杂流体状态的平衡分布。
+- [Orb-v3](https://arxiv.org/abs/2504.06231)：扩展 universal interatomic potentials，用于更快的大范围材料原子模拟。
+- [Large language models as uncertainty-calibrated optimizers for experimental discovery](https://arxiv.org/abs/2504.06265)：为 LLM 引导的实验优化加入不确定性校准，使候选建议能在探索、利用和置信度之间权衡。
+- [Physics-informed KAN PointNet: Deep learning for simultaneous solutions to inverse problems in incompressible flow on numerous irregular geometries](https://arxiv.org/abs/2504.06327)：把共享 Jacobi-polynomial KAN 融入 PointNet，并结合物理残差损失，在一次训练中求解 135 个不规则几何上的不可压缩流逆问题。
+- [CRYSIM: Prediction of Symmetric Structures of Large Crystals with GPU-based Ising Machines](https://arxiv.org/abs/2504.06878)：把空间群、Wyckoff 位置组合和独立原子位点坐标编码为 Ising 变量，缩小大型对称晶胞的晶体结构搜索空间。
+- [CTSR: Cartesian tensor-based sparse regression for data-driven discovery of high-dimensional invariant governing equations](https://arxiv.org/abs/2504.07618)：在稀疏回归中使用笛卡尔张量基，面向二维和三维高维动力学发现满足旋转与反射不变性的控制方程。
+- [ms-Mamba: Multi-scale Mamba for Time-Series Forecasting](https://arxiv.org/abs/2504.07654)：用不同采样率的多个 Mamba block 处理时间序列，在基准数据上以更少参数和更低内存提升多尺度预测精度。
+- [Scaling Laws of Graph Neural Networks for Atomistic Materials Modeling*](https://arxiv.org/abs/2504.08112)：研究模型与数据规模如何影响原子材料 GNN 性能，把 MLIP 设计与 scaling law 方法连接起来。
+- [DrivAer Transformer: A high-precision and fast prediction method for vehicle aerodynamic drag coefficient based on the DrivAerNet++ dataset](https://arxiv.org/abs/2504.08217)：用 Transformer 代理模型高精度快速预测车辆气动阻力系数。
+- [Agent-Q: Fine-Tuning Large Language Models for Quantum Circuit Generation and Optimization](https://arxiv.org/abs/2504.11109)：用量子电路语料微调 LLM，生成并优化 OpenQASM 风格量子电路。
+- [SCENT: Robust Spatiotemporal Learning for Continuous Scientific Data via Scalable Conditioned Neural Fields](https://arxiv.org/abs/2504.12262)：用 transformer encoder-processor-decoder、可学习 query、query-wise cross-attention 和稀疏注意力统一建模不规则连续科学场的插值、重建与预测。
+- [ChemKANs for Combustion Chemistry Modeling and Acceleration](https://arxiv.org/abs/2504.12580)：用化学动力学和热力学信息流扩展 KAN-ODE，得到稀疏且抗噪的燃烧模型，并加速氢燃烧化学仿真。
+- [Machine-learning-based simulation of turbulent flows over periodic hills using a hybrid U-Net and Fourier neural operator framework](https://arxiv.org/abs/2504.13126)：用 U-Net 处理非周期方向，并在周期方向使用 Fourier 神经算子，以较低计算成本模拟周期山丘上的 LES 湍流。
+- [FDT Generative Response Modeling](https://arxiv.org/abs/2504.13333)：结合生成建模与涨落耗散思想预测科学系统概率分布的受迫响应。
+- [A Hierarchical Framework for Measuring Scientific Paper Innovation via Large Language Models](https://arxiv.org/abs/2504.14620)：用 LLM 按新颖性、影响和证据等层级维度评估论文创新性，而不是只依赖单一引用代理指标。
+- [Conformalized-KANs: Uncertainty Quantification with Coverage Guarantees for Kolmogorov-Arnold Networks (KANs) in Scientific Machine Learning](https://arxiv.org/abs/2504.15240)：把 KAN 集成模型同 conformal prediction 结合，为科学机器学习任务生成具备有限样本覆盖保证的校准预测区间。
+- [Surface to Seafloor: A Generative AI Framework for Decoding the Ocean Interior State](https://arxiv.org/abs/2504.15308)：使用基于 score 的 diffusion，从卫星海表观测重建三维海洋内部速度场和浮力场。
+- [Fourier analysis of the physics of transfer learning for data-driven subgrid-scale models of ocean turbulence](https://arxiv.org/abs/2504.15487)：在 Fourier 空间分析卷积式海洋湍流次网格模型，解释迁移学习如何修正未见流态下的激活谱失配。
+- [SUPRA: Subspace Parameterized Attention for Neural Operator on General Domains](https://arxiv.org/abs/2504.15897)：在 Laplacian 特征函数子空间中近似函数空间注意力，使神经算子在不规则 PDE 区域上保持注意力计算效率。
+- [High-performance training and inference for deep equivariant interatomic potentials](https://arxiv.org/abs/2504.16068)：改进深度等变原子间势的训练与推理，扩展可扩展科学模拟模型。
+- [MobileCity: An Efficient Framework for Large-Scale Urban Behavior Simulation](https://arxiv.org/abs/2504.16946)：构建大规模城市行为仿真框架，把人群移动和城市动态中的学习式行为模式作为建模目标。
+- [Reliable and efficient inverse analysis using physics-informed neural networks with normalized distance functions and adaptive weight tuning](https://arxiv.org/abs/2504.18091)：结合归一化 R-function 距离场和 bias-corrected 自适应损失权重，使 PINN 在逆分析中满足复杂边界条件。
+- [Appa Weather Latent Diffusion](https://arxiv.org/abs/2504.18720)：用潜在扩散模型调节天气动力学以支持全球数据同化，补充科学天气建模线。
+- [DISCO: learning to DISCover an evolution Operator for multi-physics-agnostic prediction](https://arxiv.org/abs/2504.19496)：预训练 hypernetwork，从短 PDE 轨迹推断紧凑的 evolution-operator network，将动力学发现与下一状态预测在多类物理数据上解耦。
+- [Multimodal Conditioned Diffusive Time Series Forecasting](https://arxiv.org/abs/2504.19669)：采用 MCD-TSF 扩散预测器，将数值序列同时间戳和文本描述联合条件化，并用 classifier-free 控制生成预测。
+- [Climate Science and Control Engineering: Insights, Parallels, and Connections](https://arxiv.org/abs/2504.21153)：把气候建模同反馈、可观测性和干预设计等控制工程概念连接起来，将控制工具定位为气候模型分析机制。
+- [Turning Up the Heat: Assessing 2-m Temperature Forecast Errors in AI Weather Prediction Models During Heat Waves](https://arxiv.org/abs/2504.21195)：这是评估型条目，度量 AI 天气模型在热浪期间的 2 米气温预报误差，而不是提出新预报模型。
+- [NEP89: Universal neuroevolution potential for inorganic and organic materials across 89 elements](https://arxiv.org/abs/2504.21286)：提出覆盖 89 种元素、适用于无机与有机材料的通用 neuroevolution potential。
+- [Materials discovery acceleration by using conditional generative methodology](https://arxiv.org/abs/2505.00076)：把条件生成与性质预测器结合，用于目标导向的晶体发现，并通过第一性原理后验筛选生成的拓扑绝缘体候选。
+- [Coarse-grained graph architectures for all-atom force predictions](https://arxiv.org/abs/2505.01058)：提出 CGAA-FF，用粗粒度消息传递加速全原子力场预测，同时保留原子级力输出。
+- [On Simulating Thin-Film Processes at the Atomic Scale Using Machine Learned Force Fields](https://arxiv.org/abs/2505.01118)：把机器学习力场嵌入原子级分子动力学，用于解析力场缺失时的气-表面薄膜过程模拟。
+- [PeSANet: Physics-encoded Spectral Attention Network for Simulating PDE-Governed Complex Systems](https://arxiv.org/abs/2505.01736)：构建物理编码的谱注意力网络，把谱算子与物理先验结合，用于小数据 PDE 系统预测。
+- [Enabling Local Neural Operators to perform Equation-Free System-Level Analysis](https://arxiv.org/abs/2505.02308)：把局部神经算子用作无方程代理模型，支持固定点、稳定性等系统级分析，而不只是时间滚动预测。
+- [Anant-Net: Breaking the Curse of Dimensionality with Scalable and Interpretable Neural Surrogate for High-Dimensional PDEs](https://arxiv.org/abs/2505.03595)：构建可扩展且可解释的高维 PDE 神经代理，针对超立方区域中传统 collocation 点数爆炸问题。
+- [SetONet: A Set-Based Operator Network for Solving PDEs with Variable-Input Sampling](https://arxiv.org/abs/2505.04738)：用置换不变聚合编码无序坐标-数值样本，使算子学习可处理可变传感器与缺失观测。
+- [ORBIT-2: Scaling Exascale Vision Foundation Models for Weather and Climate Downscaling](https://arxiv.org/abs/2505.04802)：用 residual slim Vision Transformer 扩展气候降尺度，在降低注意力开销的同时跨变量和区域泛化。
+- [A machine learning model for skillful climate system prediction](https://arxiv.org/abs/2505.06269)：提出 FengShun-CSM 全耦合 AI 气候系统模型，可对大气、海洋、陆地和冰冻圈 29 个关键变量生成 60 天全球逐日预报。
+- [Efficient Long-Range Machine Learning Force Fields for Liquid and Materials Properties](https://arxiv.org/abs/2505.06462)：提出带电荷预测的 MPNICE 不变消息传递力场架构，用于更快的长程原子建模。
+- [Climate in a Bottle](https://arxiv.org/abs/2505.06474)：构建 kilometer-scale global atmosphere 的 generative foundation model。
+- [FreqMoE: Dynamic Frequency Enhancement for Neural PDE Solvers](https://arxiv.org/abs/2505.06858)：通过 mixture-of-experts 频率增强模块路由不同频率成分，减少神经 PDE 求解器中的高频信息损失。
+- [Self-optimizing machine learning potential assisted automated workflow for highly efficient complex systems material design](https://arxiv.org/abs/2505.08159)：用 attention-coupled machine-learning potential 与自演化采样闭环自动化复杂晶体结构预测，减少人工干预。
+- [Towards foundation models for experimental readout systems combining discrete and continuous data](https://arxiv.org/abs/2505.08736)：给出核物理探测器读出基础模型方案，用离散和连续词表配合 causal multi-head cross-attention 融合低层读出数据。
+- [Vendi Information Gain: An Alternative To Mutual Information For Science And Machine Learning](https://arxiv.org/abs/2505.09007)：基于相似度驱动的 Vendi entropy 定义 Vendi Information Gain，为科学建模中的主动数据获取提供只需样本且非对称的 mutual information 替代指标。
+- [Space Group Equivariant Crystal Diffusion](https://arxiv.org/abs/2505.10994)：把 space-group equivariance 纳入 diffusion models，用于 crystal generation。
+- [Spatiotemporal Field Generation Based on Hybrid Mamba-Transformer with Physics-informed Fine-tuning](https://arxiv.org/abs/2505.11578)：构建 HMT-PF 混合 Mamba-Transformer 生成非结构化时空物理场，并用 point-query 物理方程残差在潜空间中微调校正。
+- [Mollifier Layers: Enabling Efficient High-Order Derivatives in Inverse PDE Learning](https://arxiv.org/abs/2505.11682)：用输出层卷积式 mollifier 运算替代递归 automatic differentiation，使 PDE 逆问题中的高阶导数估计更省内存且更抗噪。
+- [EarthSynth](https://arxiv.org/abs/2505.12108)：用 diffusion models 生成有信息量的 Earth-observation data，补充非生医科学建模。
+- [Generative Adaptation of Dynamics to Environmental Shifts via Weight-space Diffusion](https://arxiv.org/abs/2505.13919)：采用 DynaDiff 在权重空间直接生成适配后的动力学模型参数，以替代环境变化下昂贵的梯度微调。
+- [Local-Global Associative Frames for Symmetry-Preserving Crystal Structure Modeling](https://arxiv.org/abs/2505.15315)：利用局部与全局关联坐标框架保持晶体结构模型的旋转对称性。
+- [Hybrid Neural-MPM for Interactive Fluid Simulations in Real-Time](https://arxiv.org/abs/2505.18926)：把神经物理、数值求解器兜底和扩散控制器结合，在外力控制下实现低延迟二维和三维交互式流体模拟。
+- [Turb-L1: Achieving Long-term Turbulence Tracing By Tackling Spectral Bias](https://arxiv.org/abs/2505.19038)：将谱偏置诊断为湍流自回归预测过度平滑的原因，并围绕频域失效模式训练长期湍流跟踪模型。
+- [Latent Mamba Operator for Partial Differential Equations](https://arxiv.org/abs/2505.19105)：把 Mamba 式状态空间动力学放入潜在神经算子空间，以较低代价捕捉 PDE 的长程依赖。
+- [Hypercube-Based Retrieval-Augmented Generation for Scientific Question-Answering](https://arxiv.org/abs/2505.19288)：把科学文档索引到预定义多维 hypercube 中，再按实体、短语和主题分解查询，检索可解释的 cube 对齐证据用于 RAG 问答。
+- [Toward Scientific Reasoning in LLMs](https://arxiv.org/abs/2505.19501)：把十余年基因组工程论坛讨论转成强化学习友好的选择题数据，用专家讨论信号训练 LLM 科学推理。
+- [Machine Learning the Energetics of Electrified Solid-Liquid Interfaces.](https://arxiv.org/abs/2505.19745)：把机器学习原子间势式建模扩展到带有限偏压效应的带电金属表面。
+- [Spectral-inspired Operator Learning with Limited Data and Unknown Physics](https://arxiv.org/abs/2505.21573)：从频率索引自动学习局部与全局空间导数，使模型只需少量轨迹且不依赖显式 PDE residual。
+- [Learning where to learn: Training data distribution optimization for scientific machine learning](https://arxiv.org/abs/2505.21626)：提出关于 Learning where to learn: Training data distribution optimization for scientific machine learning 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [Iterative Corpus Refinement for Materials Property Prediction Based on Scientific Texts](https://arxiv.org/abs/2505.21646)：提出科学知识方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Ocean-E2E: Hybrid Physics-Based and Data-Driven Global Forecasting of Extreme Marine Heatwaves with End-to-End Neural Assimilation](https://arxiv.org/abs/2505.22071)：结合数据驱动预报与中尺度平流、海气相互作用的物理动态核，实现带端到端神经同化的 40 天全球到区域海洋热浪预测。
+- [Geometric Hyena Networks for Large-scale Equivariant Learning](https://arxiv.org/abs/2505.22560)：提出面向几何系统的等变长卷积建模，在亚二次复杂度下捕捉全局几何上下文，服务科学结构建模。
+- [Neural Interpretable PDEs: Harmonizing Fourier Insights with Attention for Scalable and Interpretable Physics Discovery](https://arxiv.org/abs/2505.23106)：提出科学知识方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Physics-Mamba for Chaotic Forecasting](https://arxiv.org/abs/2505.23863)：把 Mamba 序列建模同物理原则结合，用于长期混沌系统预测。
+- [A Graph Neural Network for the Era of Large Atomistic Models](https://arxiv.org/abs/2506.01686)：提出 DPA3 图神经架构，用于扩展面向多类模拟任务的大型原子模型。
+- [SatelliteFormula: Multi-Modal Symbolic Regression from Remote Sensing Imagery for Physics Discovery](https://arxiv.org/abs/2506.06176)：从遥感影像进行多模态符号回归以支持物理发现，把视觉证据与可解释科学公式归纳连接起来。
+- [FA-INR: Adaptive Implicit Neural Representations for Interpretable Exploration of Simulation Ensembles](https://arxiv.org/abs/2506.06858)：在隐式神经表示中加入可学习记忆库 cross-attention 和坐标引导的 mixture-of-experts 路由，用于可扩展、可解释的仿真集合代理。
+- [Beyond Scaling: Chemical Intuition as Emergent Ability of Universal Machine Learning Interatomic Potentials](https://arxiv.org/abs/2506.07579)：用 Edge-wise Emergent Decomposition 分析通用 MLIP 如何随规模增长学习有化学意义的键表示。
+- [FunDiff: Diffusion Models over Function Spaces for Physics-Informed Generative Modeling](https://arxiv.org/abs/2506.07902)：将函数自编码器与潜在扩散结合，使生成建模作用于连续函数场而不是图像式网格。
+- [Physics-Informed Teleconnection-Aware Transformer for Global Subseasonal-to-Seasonal Forecasting](https://arxiv.org/abs/2506.08049)：构建 TelePiT，结合球谐嵌入、多尺度物理信息 Neural ODE 和遥相关注意力，用于全球次季节到季节预报。
+- [Imposing the Fundamental Dynamical Constraint of Hydrostatic Balance to Improve Global ML Weather Prediction](https://arxiv.org/abs/2506.08285)：给 DLWP 类学习式天气预报加入硬性和软性的静力平衡约束，以改善较长提前期的预报场。
+- [PlantDeBERTa: An Open Source Language Model for Plant Science](https://arxiv.org/abs/2506.08897)：在植物胁迫响应文献上微调 DeBERTa，用于从植物科学文本中抽取结构化领域知识。
+- [PGDA-KGQA: A Prompt-Guided Generative Framework with Multiple Data Augmentation Strategies for Knowledge Graph Question Answering](https://arxiv.org/abs/2506.09414)：面向科学知识与知识增强推理的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“PGDA-KGQA: A Prompt-Guided Generative Framework with Multiple Data Augmentation Strategies for Knowledge Graph Question Answering”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [GEARS H: Accurate machine-learned Hamiltonians for next-generation device-scale modeling](https://arxiv.org/abs/2506.10298)：提出面向器件尺度电子结构建模的机器学习 Hamiltonian 框架，覆盖大界面和材料体系。
+- [Skillful joint probabilistic weather forecasting from marginals](https://arxiv.org/abs/2506.10772)：通过学习式模型扰动与 CRPS 训练，从边缘分布生成联合概率天气预报。
+- [OmniFluids: Unified Physics Pre-trained Modeling of Fluid Dynamics](https://arxiv.org/abs/2506.10862)：在流体物理规律上预训练统一模型，使其能适配非线性和三维流动系统。
+- [Distillation of atomistic foundation models across architectures and chemical domains](https://arxiv.org/abs/2506.10956)：通过合成数据蒸馏，将基础模型知识迁移到更快的专用原子势模型。
+- [Polymorphism Crystal Structure Prediction with Adaptive Space Group Diversity Control](https://arxiv.org/abs/2506.11332)：在多目标晶体结构预测中引入自适应空间群多样性控制，避免多晶型搜索塌缩到过度代表的对称性。
+- [Language Models Enable Data-Augmented Synthesis Planning for Inorganic Materials](https://arxiv.org/abs/2506.12557)：展示语言模型可召回并集成无机合成条件，在无需专项微调的情况下增强材料合成规划。
+- [Machine learning potentials for modeling alloys across compositions](https://arxiv.org/abs/2506.12592)：用信息论化学基元采样训练势能模型，使其覆盖更宽的合金组成范围。
+- [The Price of Freedom: Exploring Expressivity and Runtime Tradeoffs in Equivariant Tensor Products](https://arxiv.org/abs/2506.13523)：分析等变张量积算子的表达力与运行时权衡，帮助厘清面向科学 3D 几何建模的可扩展架构选择。
+- [SKOLR: Structured Koopman Operator Linear RNN for Time-Series Forecasting](https://arxiv.org/abs/2506.14113)：把有限维 Koopman 近似同结构化线性 RNN 连接起来，用于非线性时间序列预测。
+- [Accurate and scalable exchange-correlation with deep learning](https://arxiv.org/abs/2506.14665)：提出 Skala 深度学习交换相关泛函，面向更准确且可扩展的 DFT 科学模拟预测。
+- [Beyond Force Metrics: Pre-Training MLFFs for Stable MD Simulations](https://arxiv.org/abs/2506.14850)：显示 OC20 预训练再用 MD17 微调能得到更平滑的力场和更长稳定分子动力学轨迹，而不仅是降低力误差。
+- [Understanding multi-fidelity training of machine-learned force-fields](https://arxiv.org/abs/2506.14963)：分析力场训练中的预训练、微调和多头训练策略，并讨论力标签与方法特异表征的作用。
+- [An efficient forgetting-aware fine-tuning framework for pretrained universal machine-learning interatomic potentials](https://arxiv.org/abs/2506.15223)：在微调预训练原子间势时抑制灾难性遗忘，保留可迁移的原子建模能力。
+- [AutoHFormer: Efficient Hierarchical Autoregressive Transformer for Time Series Prediction](https://arxiv.org/abs/2506.16001)：采用因果层级自回归 Transformer 和段级并行机制，实现可扩展的多尺度时间序列预测。
 - [Sequential Causal Discovery with Noisy Language Model Priors](https://arxiv.org/abs/2506.16234)：在序贯因果发现中使用语言模型先验，把 LLM 知识直接接入科学假设搜索。
+- [Mesh-Informed Neural Operator : A Transformer Generative Approach](https://arxiv.org/abs/2506.16656)：用 mesh-informed Transformer 神经算子替代依赖规则网格的函数生成，以适配不规则区域和离散化无关场。
 - [Training a Scientific Reasoning Model for Chemistry](https://arxiv.org/abs/2506.17238)：面向化学科学推理的训练路线，结合领域数据和分阶段训练，使模型提升推理任务而不只是记忆化学事实。
+- [CLOUD: A Scalable and Physics-Informed Foundation Model for Crystal Representation Learning](https://arxiv.org/abs/2506.17345)：在 symmetry-consistent ordered parameter encoding 上预训练 Transformer 晶体基础模型，并面向材料性质预测任务微调。
+- [Refining Tc Prediction in Hydrides via Symbolic‐Regression‐Enhanced Electron‐Localization‐Function‐Based Descriptors](https://arxiv.org/abs/2506.17456)：用符号回归增强的电子局域函数描述符和扩展训练集，改进氢化物临界温度预测。
+- [Context-Aware Scientific Knowledge Extraction on Linked Open Data using Large Language Models](https://arxiv.org/abs/2506.17580)：构建 WISE 结构化 LLM 抽取流程，在 linked open data 上做科学知识检索整合，而非单独训练新模型。
+- [PhysiX: A Foundation Model for Physics Simulations](https://arxiv.org/abs/2506.17774)：训练物理仿真基础模型，在大规模仿真数据稀缺的条件下跨物理系统泛化。
+- [An ab initio foundation model of wavefunctions that accurately describes chemical bond breaking](https://arxiv.org/abs/2506.19960)：提出可迁移的从头算波函数模型来描述化学键断裂，把科学基础模型覆盖从原子间势扩展到电子结构波函数。
+- [Multi-task parallelism for robust pre-training of graph foundation models on multi-source, multi-fidelity atomistic modeling data](https://arxiv.org/abs/2506.21788)：共享消息传递层并把不同数据源路由到任务专用解码头，稳定多源多保真原子图基础模型预训练。
+- [Exploring the change in scientific readability following the release of ChatGPT](https://arxiv.org/abs/2506.21825)：该条目偏离模型清理主轴；它用标准 readability formulas 分析 ChatGPT 发布后 arXiv 摘要可读性变化。
+- [Probing forced responses and causality in data-driven climate emulators: conceptual limitations and the role of reduced-order models](https://arxiv.org/abs/2506.22552)：通过约化阶模型对比诊断神经气候模拟器在因果响应方面的局限。
+- [Quantum physics-informed neural networks for Maxwell’s equations: circuit design, “black hole” barren plateaus mitigation, and GPU acceleration](https://arxiv.org/abs/2506.23246)：把参数化量子线路同 PINN 损失结合求解 Maxwell 方程，并加入能量守恒约束与 barren plateau 缓解。
+- [Accurate Mediterranean Sea forecasting via graph-based deep learning](https://arxiv.org/abs/2506.23900)：提出 SeaCast 图神经区域海洋预报器，处理地中海网格几何和外部大气强迫，用于高分辨率海洋预测。
+- [UMA: A Family of Universal Models for Atoms](https://arxiv.org/abs/2506.23971)：提出面向 atoms 的通用模型族，扩展原子模拟方向的科学基础模型覆盖。
+- [Taxonomy-Driven Knowledge Graph Construction for Domain-Specific Scientific Applications](https://doi.org/10.18653/v1/2025.findings-acl.223)：把 LLM 与 RAG 知识图谱抽取锚定到专家 taxonomy，在气候科学 25 篇论文案例中减少实体和关系幻觉。
+- [Out-of-Sample Atmospheric Model Reliability](https://arxiv.org/abs/2507.03176)：研究深度学习大气模型能否可靠模拟样本外陆地热浪与寒潮频率。
+- [Kinetic Langevin Diffusion for Crystals](https://arxiv.org/abs/2507.03602)：用 kinetic Langevin diffusion 生成晶体材料。
+- [When Network Architecture Meets Physics: Deep Operator Learning for Coupled Multiphysics](https://arxiv.org/abs/2507.03660)：在单物理、弱耦合和强耦合系统中评测 DeepONet 变体，说明算子架构何时需要匹配多物理耦合强度。
+- [HRRRCast: a data-driven emulator for regional weather forecasting at convection allowing scales](https://arxiv.org/abs/2507.05658)：提供 ResNet 与图神经网络两类 HRRR 区域天气模型代理，用于美国本土 convection-allowing 预报。
+- [XiChen: A global weather observation-to-forecast machine learning system via four-dimensional variational gradient-guided flexible assimilation](https://arxiv.org/abs/2507.09202)：通过四维变分梯度引导的灵活同化构建全球观测到预报机器学习天气系统，为科学预报模型补充异构观测处理能力。
+- [Overtone: Cyclic Patch Modulation for Clean, Efficient, and Flexible Physics Emulators](https://arxiv.org/abs/2507.09264)：在自回归 PDE rollout 中循环调制 patch 尺寸，减少谐波误差累积，并让 Transformer 模拟器按算力在速度和精度间切换。
+- [FourCastNet 3: A geometric approach to probabilistic machine-learning weather forecasting at scale](https://arxiv.org/abs/2507.12144)：用几何机器学习实现可扩展概率天气预报，兼顾真实动力学与快速集合生成。
+- [FLDmamba: Integrating Fourier and Laplace Transform Decomposition with Mamba for Enhanced Time Series Prediction](https://arxiv.org/abs/2507.12803)：先用 Fourier 与 Laplace 分解时序，再交给 Mamba 建模，以同时处理周期性和瞬态动态。
+- [SemCSE: Semantic Contrastive Sentence Embeddings Using LLM-Generated Summaries For Scientific Abstracts](https://arxiv.org/abs/2507.13105)：用 LLM 生成的摘要构造对比学习目标，训练不只依赖引用关系的科学文本语义 embedding。
+- [Artificial Intelligence for Quantum Matter: Finding a Needle in a Haystack](https://arxiv.org/abs/2507.13322)：从粒子概率密度和概率流密度学习复杂多体波函数的神经表示。
+- [A universal augmentation framework for long-range electrostatics in machine learning interatomic potentials](https://arxiv.org/abs/2507.14302)：为机器学习原子间势加入长程静电增强，提升科学模拟保真度。
+- [Perovskite-R1](https://arxiv.org/abs/2507.16307)：面向 precursor additives 与实验设计的 domain-specialized LLM，补充材料发现模型。
+- [Constructing material network representations for intelligent amorphous alloy design](https://arxiv.org/abs/2507.16336)：把二元和三元非晶合金表示为动态材料网络，用网络拓扑发现传统表格式成分描述中隐藏的候选材料。
+- [PICore: Physics-Informed Unsupervised Coreset Selection for Data Efficient Neural Operator Training](https://arxiv.org/abs/2507.17151)：先用 physics-informed loss 选择无标签 PDE 输入，再只对核心样本运行数值求解器，从而降低神经算子训练的标注成本。
+- [Learning Long-Range Representations with Equivariant Messages](https://arxiv.org/abs/2507.19382)：扩展等变消息传递，以建模机器学习原子间势中的长程相互作用。
+- [VizGenie: Toward Self-Refining, Domain-Aware Workflows for Next-Generation Scientific Visualization](https://arxiv.org/abs/2507.21124)：属于 agentic 科学可视化系统，让 LLM 生成并改进 VTK 式分析脚本，因此更接近模型侧科学知识的邻近系统。
+- [Heterogeneous ensemble enables a universal uncertainty metric for atomistic foundation models](https://arxiv.org/abs/2507.21297)：以异构集成量化通用原子势的不确定性，并指导不确定性感知蒸馏。
 - [ChemDFM-R](https://arxiv.org/abs/2507.21990)：化学推理 LLM，把 atomized chemical knowledge 注入训练，以处理分子、反应和领域推理问题。
-- [CoT-Evo](https://arxiv.org/abs/2510.13166)：提出面向科学知识的模型侧方法，核心围绕 Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning。
+- [Data Readiness for Scientific AI at Scale](https://arxiv.org/abs/2507.23018)：定义科学基础模型数据集的 readiness levels 与 HPC 处理阶段，本身不是新的模型架构。
+- [SpectrumWorld: Artificial Intelligence Foundation for Spectroscopy](https://arxiv.org/abs/2508.01188)：构建面向 spectroscopy 的基础模型路线，将科学 AI 覆盖扩展到文本科学推理之外。
+- [BubbleOKAN: A physics-informed interpretable neural operator for high-frequency bubble dynamics](https://arxiv.org/abs/2508.03965)：把两阶段 DeepONet/DeepOKAN、Rowdy 自适应激活和 KAN 组件结合，用于高频气泡半径响应建模。
+- [Accelerating Discovery of Ternary Chiral Materials via Large-Scale Random Crystal Structure Prediction](https://arxiv.org/abs/2508.04110)：结合通用机器学习原子间势和随机结构搜索，扩展三元手性晶体空间并筛选潜在 Weyl 材料。
+- [GFocal: A Global-Focal Neural Operator for Solving PDEs on Arbitrary Geometries](https://arxiv.org/abs/2508.04463)：融合 Nyström 全局注意力块、slice-based focal 块和卷积门控，使神经算子同时捕捉全局相关和局部 PDE 细节。
+- [Generative Inversion for Property-Targeted Materials Design: Application to Shape Memory Alloys](https://arxiv.org/abs/2508.07798)：把预训练 GAN、性质预测器和基于梯度的潜在空间优化结合，用于目标导向的形状记忆合金设计。
+- [Learning an Implicit Physics Model for Image-Based Fluid Simulation](https://arxiv.org/abs/2508.08254)：从单张图像预测物理一致的流体运动和 3D Gaussian 外观，并用 Navier-Stokes 信息损失约束 4D 流体动画。
+- [DiffractGPT: Atomic Structure Determination from X-ray Diffraction Patterns Using a Generative Pretrained Transformer](https://arxiv.org/abs/2508.08349)：在模拟 XRD 图样与晶体结构配对数据上训练生成式 Transformer，直接从衍射图推断原子结构。
+- [Data-driven global ocean model resolving ocean-atmosphere coupling dynamics](https://arxiv.org/abs/2508.10908)：构建 KIST-Ocean 三维海洋环流代理模型，用视觉注意力对抗网络刻画海气耦合响应。
+- [BLIPs: Bayesian Learned Interatomic Potentials](https://arxiv.org/abs/2508.14022)：构建带不确定性估计的贝叶斯学习原子间势，用于小数据与分布外原子预测。
+- [Conditionally adaptive augmented Lagrangian method for physics-informed learning of forward and inverse problems using artificial neural networks](https://arxiv.org/abs/2508.15695)：扩展 PECANN，引入多惩罚参数、约束聚合、Fourier 特征、时间窗口和自适应 ALM 更新，以求解正向与反向 PDE 问题。
+- [Intern-S1: A Scientific Multimodal Foundation Model](https://arxiv.org/abs/2508.15763)：聚焦科学场景的多模态基础模型、科学推理或科学数据训练。
+- [CrystalDiT: A Diffusion Transformer for Crystal Generation](https://arxiv.org/abs/2508.16614)：使用统一的 diffusion Transformer、周期表表征与均衡训练来生成晶体结构。
+- [Global Forecasting of Tropical Cyclone Intensity Using Neural Weather Models](https://arxiv.org/abs/2508.17903)：用热带气旋观测估计适配神经天气模型，以改进粗分辨率再分析训练系统中被平滑的强度极值预报。
+- [Graph atomic cluster expansion for foundational machine learning interatomic potentials](https://arxiv.org/abs/2508.17936)：采用图原子簇展开训练具有广泛能力的基础原子间势模型。
+- [Linking heterogeneous microstructure informatics with expert characterization knowledge through customized and hybrid vision-language representations for industrial qualification](https://arxiv.org/abs/2508.20243)：融合语义分割与 CLIP/FLAVA 式视觉语言表征，将微结构图像和专家表征知识连接到复合材料资格评定。
+- [Bridging Minds and Machines: Toward an Integration of AI and Cognitive Science](https://arxiv.org/abs/2508.20674)：这是 AI 与认知科学关系的综述型语境条目，对具体科学知识模型而言属于偏轴内容。
+- [LeMat-Traj: A Scalable and Unified Dataset of Materials Trajectories for Atomistic Modeling](https://arxiv.org/abs/2508.20875)：聚合并标准化超过 1.2 亿个 DFT 材料轨迹构型，降低训练可迁移机器学习原子间势的门槛。
+- [Estimating Parameter Fields in Multi-Physics PDEs from Scarce Measurements](https://arxiv.org/abs/2509.00203)：从稀缺观测反演非线性、时空变化的多物理 PDE 参数场，补足 PINN 和神经算子在复杂参数估计上的短板。
+- [LUCIE-3D: A three-dimensional climate emulator for forced responses](https://arxiv.org/abs/2509.02061)：构建基于 SFNO 的三维气候模拟器，用于带垂直结构和长期稳定性的强迫响应建模。
+- [Scale-Adaptive Generative Flows for Multiscale Scientific Data](https://arxiv.org/abs/2509.02971)：为 stochastic interpolants 设计匹配 Fourier 频谱衰减的噪声分布和插值日程，以保留科学数据细尺度结构。
+- [Knowledge integration for physics-informed symbolic regression using pre-trained large language models](https://arxiv.org/abs/2509.03036)：用预训练 LLM 向 physics-informed symbolic regression 注入领域知识，减少手工特征工程。
+- [Are LLM Agents Behaviorally Coherent? Latent Profiles for Social Simulation](https://arxiv.org/abs/2509.03736)：该条目在此处偏轴；它评估提示化 LLM agent 在社会仿真中是否保持一致的潜在行为画像。
+- [HyPINO: Multi-Physics Neural Operators via HyperPINNs and the Method of Manufactured Solutions](https://arxiv.org/abs/2509.05117)：用 Swin Transformer hypernetwork 从 PDE 参数生成 PINN，并混合 manufactured-solution 标签和 physics loss，实现多物理算子的零样本泛化。
+- [Probabilistic operator learning: generative modeling and uncertainty quantification for foundation models of differential equations](https://arxiv.org/abs/2509.05186)：把 in-context operator networks 解释为 Bayesian inference，为 ODE/PDE 解算子加入生成式不确定性估计。
+- [BlendedNet: A Blended Wing Body Aircraft Dataset and Surrogate Model for Aerodynamic Predictions](https://arxiv.org/abs/2509.07209)：发布 RANS 仿真的 blended-wing-body 几何数据，并训练端到端代理模型做点态气动预测。
+- [DDNet: A Unified Physics-Informed Deep Learning Framework for Semiconductor Device Modeling](https://arxiv.org/abs/2509.08073)：用无网格物理信息网络求解半导体 drift-diffusion 方程，同时覆盖正向器件仿真和掺杂、材料、几何参数反演。
+- [OpenCSP: A Deep Learning Framework for Crystal Structure Prediction from Ambient to High Pressure](https://arxiv.org/abs/2509.10293)：构建覆盖常压与高压条件的深度学习晶体结构预测框架。
+- [SamudrACE: Fast and Accurate Coupled Climate Modeling with 3D Ocean and Atmosphere Emulators](https://arxiv.org/abs/2509.12490)：构建耦合三维海洋与大气仿真器用于长时段气候模拟，扩展地球系统科学模型覆盖。
+- [A Conformal Prediction Framework for Uncertainty Quantification in Physics-Informed Neural Networks](https://arxiv.org/abs/2509.13717)：用 distribution-free conformal prediction 和局部 conformal quantile estimation 校准 PINN 不确定性，生成具有限样本保证的空间自适应区间。
+- [Ion-modulated structure, proton transfer, and capacitance in the Pt(111)/water electric double layer](https://arxiv.org/abs/2509.13727)：构建带长程静电的 MLIP 框架来模拟偏压金属-电解质界面，扩展学习势在电化学双电层中的应用。
+- [Towards a Physics Foundation Model](https://arxiv.org/abs/2509.13805)：论证 train-once physics foundation model 的必要性，并指出单领域反复训练是当前瓶颈；它更像方案论述而非已发布模型。
+- [Quantum Variational Activation Functions Empower Kolmogorov-Arnold Networks](https://arxiv.org/abs/2509.14026)：把单量子比特 data-reuploading circuit 用作 KAN 的可学习激活函数，并扩展其频谱表达能力。
+- [HYCO: Hybrid-Cooperative Learning for Data-Driven PDE Modeling](https://arxiv.org/abs/2509.14123)：通过互相正则化协同训练物理模型和数据驱动 PDE 模型，在噪声、稀疏或异构观测下提升解和参数恢复。
+- [A variational framework for residual-based adaptivity in neural PDE solvers and operator learning](https://arxiv.org/abs/2509.14198)：用 residual 的凸变换形式化自适应策略，把权重选择同采样分布和误差目标联系起来。
+- [Spectral/Spatial Tensor Atomic Cluster Expansion with Universal Embeddings in Cartesian Space](https://arxiv.org/abs/2509.14961)：使用带频谱和空间变体的 Cartesian tensor ACE，在不依赖 spherical-tensor coupling 的情况下建模标量和张量型原子性质。
+- [KANO: Kolmogorov-Arnold Neural Operator](https://arxiv.org/abs/2509.16825)：在 Kolmogorov-Arnold 神经算子中联合谱基和空间基，提供符号可解释性，并比纯 Fourier 算子更适合变系数 PDE 泛化。
+- [Breaking the Discretization Barrier of Continuous Physics Simulation Learning](https://arxiv.org/abs/2509.17955)：从稀疏无结构观测学习连续时空物理动态，使仿真不再绑定固定网格或固定时间步。
+- [Training-Free Data Assimilation with GenCast](https://arxiv.org/abs/2509.18811)：围绕 GenCast 等预训练扩散动力系统 emulator 构造 particle-filter 同化流程，实现无需额外训练的天气资料同化。
+- [TimeMosaic: Temporal Heterogeneity Guided Time Series Forecasting via Adaptive Granularity Patch and Segment-wise Decoding](https://arxiv.org/abs/2509.19406)：通过自适应粒度 patch 和 segment-wise decoding 处理不同预测时段中的局部时间异质性。
+- [Shoot from the HIP: Hessian Interatomic Potentials without derivatives](https://arxiv.org/abs/2509.21624)：直接预测 Hessian 原子间势而不依赖自动微分，支撑过渡态搜索和振动分析。
+- [MORPH: PDE Foundation Models with Arbitrary Data Modality](https://arxiv.org/abs/2509.21670)：采用模态无关的自回归 PDE 基础模型，用 component-wise convolution 和 inter-field cross-attention 统一 1D 到 3D 数据。
+- [ChaosNexus](https://arxiv.org/abs/2509.21802)：构建面向 ODE 混沌系统预测的多尺度 foundation model。
+- [MCGM: Multi-stage Clustered Global Modeling for Long-range Interactions in Molecules](https://arxiv.org/abs/2509.22028)：提出关于 MCGM: Multi-stage Clustered Global Modeling for Long-range Interactions in Molecules 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Decoding quantum low density parity check codes with diffusion](https://arxiv.org/abs/2509.22347)：将 masked diffusion 用于从 syndrome measurements 推断 quantum low-density parity-check codes 的逻辑错误。
+- [Space Group Conditional Flow Matching](https://arxiv.org/abs/2509.23822)：把 space group 条件引入 flow matching，用于晶体结构生成。
+- [Guided Diffusion for the Discovery of New Superconductors](https://arxiv.org/abs/2509.25186)：微调晶体扩散基础模型，并结合 classifier-free guidance、多阶段筛选和实验验证，用于按性质驱动的超导体发现。
+- [STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting](https://arxiv.org/abs/2509.25210)：用 spatial-aligned attention 优化区域天气边界，并用 temporal mixture-of-experts 按月份路由大气模式，实现全球到区域预报。
+- [Swift: An Autoregressive Consistency Model for Efficient Weather Forecasting](https://arxiv.org/abs/2509.25631)：使用自回归一致性模型进行高效天气预报。
+- [From Cheap Geometry to Expensive Physics: Elevating Neural Operators via Latent Shape Pretraining](https://arxiv.org/abs/2509.25788)：先用无标签几何候选设计预训练神经算子，再用昂贵 PDE 仿真标签微调。
+- [EnScale: Temporally-consistent multivariate generative downscaling via proper scoring rules](https://arxiv.org/abs/2509.26258)：使用适当评分规则实现时间一致的多变量生成式降尺度。
+- [Are neural scaling laws leading quantum chemistry astray?](https://arxiv.org/abs/2509.26397)：以键解离能预测检验 scaling law 假设，显示不稳定几何构型覆盖比单纯扩大模型或数据规模更关键。
+- [Learning Inter-Atomic Potentials without Explicit Equivariance](https://arxiv.org/abs/2510.00027)：训练基于 Transformer 的原子间势，使其在表征空间中学习对称性约束，而不是在架构中硬编码显式等变性。
+- [Learning from the electronic structure of molecules across the periodic table](https://arxiv.org/abs/2510.00224)：扩展跨元素 Hamiltonian 预测，并提出 Hamiltonian pretraining 来学习可复用的原子环境描述符。
+- [Automated Extraction of Material Properties using LLM-based AI Agents](https://arxiv.org/abs/2510.01235)：主要是 agentic 抽取流程，利用动态 token 分配和 LLM agents 从全文论文中挖掘材料性质。
+- [MeXtract: Light-Weight Metadata Extraction from Scientific Papers](https://arxiv.org/abs/2510.06889)：微调 0.5B 到 3B 级 Qwen 衍生小模型，用于跨 schema 的科学论文元数据抽取。
+- [Diffusion Models for Materials Discovery](https://arxiv.org/abs/2510.09406)：研究扩散模型能否外推到材料发现中的未探索化学空间。
+- [Scaling Laws and Symmetry, Evidence from Neural Force Fields](https://arxiv.org/abs/2510.09768)：研究等变性如何改变神经力场在数据、参数与算力上的扩展规律。
+- [Optimizing cross-domain transfer for universal machine learning interatomic potentials](https://arxiv.org/abs/2510.11241)：通过多域训练与域桥接适配提升通用原子间势模型的迁移能力。
+- [Temporal Point Process Foundation Models](https://arxiv.org/abs/2510.12640)：把 temporal point process foundation models 作为科学发现工具，为事件数据补充非生医 scientific model 线索。
+- [Reciprocal Space Attention for Learning Long-Range Interactions](https://arxiv.org/abs/2510.13055)：把线性 attention 映射到 Fourier 空间，使 MLIP 无需预定义电荷也能建模长程静电和色散相互作用。
+- [CoT-Evo](https://arxiv.org/abs/2510.13166)：通过 chain-of-thought 的演化式蒸馏训练科学推理模型，让多轮推理轨迹成为可优化的监督信号。
+- [Too Open for Opinion? Embracing Open-Endedness in Large Language Models for Social Simulation](https://arxiv.org/abs/2510.13884)：研究 LLM 在社会模拟中生成开放式意见分布的能力，关注模型如何表示多样化主体立场。
+- [Efficient High-Accuracy PDEs Solver with the Linear Attention Neural Operator](https://arxiv.org/abs/2510.16816)：提出 LANO，用少量 agent token 介导全局交互，使神经算子在 PDE 网格上兼具高精度和线性注意力复杂度。
+- [Dara: Automated Multiple-Hypothesis Phase Identification and Refinement from Powder X‑ray Diffraction](https://arxiv.org/abs/2510.19667)：通过化学空间树搜索、同构相聚类、峰匹配和稳健 Rietveld refinement，自动化粉末 XRD 多相识别与精修。
+- [Guiding diffusion models to reconstruct flow fields from sparse data](https://arxiv.org/abs/2510.19971)：用迭代去噪扩散从稀疏测量重建非定常流场，并通过生成样本表达不确定性。
+- [Learning Coupled Earth System Dynamics with GraphDOP](https://arxiv.org/abs/2510.20416)：把大气、海洋、陆地和冰冻圈的卫星与原位观测嵌入共享图潜空间，在不依赖再分析的情况下学习耦合地球系统预报。
+- [L^2M^3OF: A Large Language Multimodal Model for Metal-Organic Frameworks](https://arxiv.org/abs/2510.20976)：在面向金属有机框架的多模态 LLM 中对齐晶体、语言与知识模态，用于 MOF 结构-性质推理。
+- [LacMaterial: Large Language Models as Analogical Chemists for Materials Discovery](https://arxiv.org/abs/2510.22312)：将大语言模型作为 analogical chemists 用于材料发现。
+- [Introducing physics-informed generative models for targeting structural novelty in the exploration of chemical space](https://arxiv.org/abs/2510.23181)：以结构新颖性与稳定性代理指标条件化扩散模型，生成物理可行的新晶体。
+- [Superconductor Discovery in the Emerging Paradigm of Materials Informatics](https://arxiv.org/abs/2510.25971)：综述超导体发现中的材料信息学流程，包括描述符设计、临界温度预测和候选材料筛选。
+- [Automated Discovery of Conservation Laws via Hybrid Neural ODE-Transformers](https://arxiv.org/abs/2511.00102)：结合 Neural ODE 向量场学习器、Transformer 符号不变量生成器和符号-数值验证器，从含噪轨迹中发现守恒律。
+- [A Synthesizability-Guided Pipeline for Materials Discovery](https://arxiv.org/abs/2511.01790)：结合组成与结构可合成性评分、合成路径预测和实验验证，把生成材料筛向更可能在实验室实现的候选物。
+- [A unified physics-informed generative operator framework for general inverse problems](https://arxiv.org/abs/2511.03241)：提出统一的 physics-informed generative operator framework，用于求解一般反问题。
+- [TXL Fusion: A Hybrid Machine Learning Framework Integrating Chemical Heuristics and Large Language Models for Topological Materials Discovery](https://arxiv.org/abs/2511.04068)：结合化学启发式、物理描述符和 LLM embedding 分类与发现拓扑材料，补充可解释的 LLM 辅助材料发现路线。
+- [Automated Discovery of Non-local Photonic Gates](https://arxiv.org/abs/2511.04648)：通过搜索光学线路设计并用物理仿真验证非局域门行为，自动发现 photonic gate 方案。
+- [Fine-Tuning Unifies Foundational Machine-Learned Interatomic Potential Architectures at ab initio Accuracy](https://arxiv.org/abs/2511.05337)：表明微调可在多种化合物上持续改进多类基础原子间势架构。
+- [Generalizing PDE Emulation with Equation-Aware Neural Operators](https://arxiv.org/abs/2511.09729)：用 PDE 项及其系数编码条件化神经算子，使单个 emulator 能跨参数集合外推并泛化到未见方程。
+- [Does Scientific Writing Converge to U.S. English? Evidence from Generative AI-Assisted Publications](https://arxiv.org/abs/2511.11687)：用论文文本衡量 AI 辅助写作带来的语言风格漂移，说明生成模型如何改变科学写作习惯，而非提出科学仿真器。
+- [Enforcing hidden physics in physics-informed neural networks](https://arxiv.org/abs/2511.14348)：把不可逆性正则作为 PINN 软约束，恢复燃烧、腐蚀、融化、裂纹扩展和波传播中的单向物理结构。
+- [Walrus: A Cross-Domain Foundation Model for Continuum Dynamics](https://arxiv.org/abs/2511.15684)：训练跨领域 continuum dynamics 基础模型，并针对异构分辨率、维度和长时程 rollout 做稳定化处理。
+- [Operator Learning at Machine Precision](https://arxiv.org/abs/2511.19980)：给出 CHONKNORIS，即 Cholesky Newton-Kantorovich 神经算子 residual 迭代系统，目标是机器精度的算子学习。
+- [Epistemic and aleatoric uncertainty quantification in weather and climate models](https://arxiv.org/abs/2511.23448)：在 Lorenz-1996 系统中使用 Bayesian neural parameterization，区分天气和气候时间尺度上的 aleatoric 与 epistemic 不确定性。
+- [Scalable and Interpretable Scientific Discovery via Sparse Variational Gaussian Process Kolmogorov-Arnold Networks (SVGP KAN)](https://arxiv.org/abs/2512.00260)：把 sparse variational Gaussian-process 推断加入 KAN，使科学发现模型具备可扩展的不确定性估计。
+- [Pre-Generating Multi-Difficulty PDE Data for Few-Shot Neural PDE Solvers](https://arxiv.org/abs/2512.00564)：把经典求解器算力分配到低、中、高难度 Navier-Stokes 样本，显示难度迁移可减少 few-shot PDE 求解器所需的昂贵数据生成。
+- [Automating modeling in mechanics: LLMs as designers of physics-constrained neural networks for constitutive modeling of materials](https://arxiv.org/abs/2512.01735)：让 LLM 按任务生成 physics-constrained neural-network 模块，用于材料本构力学模型。
+- [Mofasa: A Step Change in Metal-Organic Framework Generation](https://arxiv.org/abs/2512.01756)：采用全原子潜在扩散模型生成金属有机框架，用于材料发现。
 - [Addressing Logical Fallacies In Scientific Reasoning From Large Language Models: Towards a Dual-Inference Training Framework](https://arxiv.org/abs/2512.04228)：训练双重推理框架以缓解 LLM 科学推理中的逻辑谬误。
+- [SEAL: Self-Evolving Agentic Learning for Conversational Question Answering over Knowledge Graphs](https://arxiv.org/abs/2512.04868)：面向科学知识与知识增强推理的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“SEAL: Self-Evolving Agentic Learning for Conversational Question Answering over Knowledge Graphs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Uncertainty quantification for scientific machine learning using sparse variational Gaussian process Kolmogorov–Arnold networks (SVGP KAN)](https://arxiv.org/abs/2512.05306)：把 sparse variational Gaussian process 与 KAN 层结合，使科学模型在预测同时输出可扩展的不确定性估计。
+- [Platonic representation of foundation machine learning interatomic potentials](https://arxiv.org/abs/2512.05349)：把独立 MLIP 的潜在空间对齐到共同几何中，用于跨模型传输、可解释性和失效检测。
+- [Comparing the latent features of universal machine-learning interatomic potentials](https://arxiv.org/abs/2512.05717)：系统比较通用原子间势模型的潜在表征如何编码可迁移的化学信息。
+- [Accelerating Materials Discovery: Learning a Universal Representation of Chemical Processes for Cross-Domain Property Prediction](https://arxiv.org/abs/2512.05979)：把异构过程文本、分子结构和测量值转换为有向树过程图，并在约 700,000 个图上预训练 property-conditioned GNN。
+- [Physics-Guided Diffusion Priors for Multi-Slice Reconstruction in Scientific Imaging](https://arxiv.org/abs/2512.06977)：用物理引导的扩散先验从有限测量重建多切片科学图像，同时约束采集和成像物理。
+- [OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction](https://arxiv.org/abs/2512.06987)：构建面向有机晶体结构预测的大规模全原子扩散模型，并用 lattice-free 训练处理长程堆积相互作用。
+- [Equivariant Diffusion for Crystal Structure Prediction](https://arxiv.org/abs/2512.07289)：把 equivariant diffusion 用于非生医的 crystal-structure prediction。
+- [Materium: An Autoregressive Approach for Material Generation](https://arxiv.org/abs/2512.07486)：把材料生成表述为自回归序列建模，在学习到的化学和结构约束下逐步生成晶体候选。
+- [Large language models for superconductor discovery](https://arxiv.org/abs/2512.10847)：将大语言模型用于超导材料发现，为材料科学中的假设生成与候选搜索补充模型侧线索。
+- [Electronic crystals and quasicrystals in semiconductor quantum wells: an AI-powered discovery](https://arxiv.org/abs/2512.10909)：用 AI 驱动发现半导体量子阱中的电子晶体与准晶体。
+- [Stable spectral neural operator for learning stiff PDE systems from limited data](https://arxiv.org/abs/2512.11686)：提出 SSNO，在无显式方程条件下把谱结构和 integrating-factor 时间推进结合，用少量轨迹学习刚性 PDE 系统。
+- [Efficient Nudged Elastic Band Method using Neural Network Bayesian Algorithm Execution](https://arxiv.org/abs/2512.14993)：在学习最小能量路径的同时主动选择样本微调基础模型，从而减少过渡路径搜索中的能量和力评估次数。
+- [Riemannian Stochastic Interpolants for Amorphous Particle Systems](https://arxiv.org/abs/2512.16607)：把等变 flow matching 适配到环面约束的粒子系统，用于生成平衡态非晶材料构型。
+- [Towards Sharp Minimax Risk Bounds for Operator Learning](https://arxiv.org/abs/2512.17805)：给出 Hilbert-valued 噪声下算子学习的 minimax 上下界，更用于澄清评估极限而非新增模型。
+- [GeoTransolver: Learning Physics on Irregular Domains Using Multi-scale Geometry Aware Physics Attention Transformer](https://arxiv.org/abs/2512.20399)：用 GALE 替代标准 attention，将物理状态切片同来自 multi-scale ball queries 的几何、全局和边界条件上下文耦合。
+- [MiST Chemical Reasoning](https://arxiv.org/abs/2512.21231)：研究 mid-stage scientific training 如何影响 chemical reasoning models。
+- [Variationally correct operator learning: Reduced basis neural operator with a posteriori error estimation](https://arxiv.org/abs/2512.21319)：使用 first-order system least-squares 目标，使神经算子 residual loss 等价于解误差并支持后验误差估计。
+- [LLM-Based Condensed-Matter Property Prediction](https://doi.org/10.1109/CVIDL65390.2025.11085424)：探索用大语言模型预测凝聚态物性，补充非生医科学建模线索。
+- [Accelerating CO2 direct air capture screening for metal-organic frameworks with a transferable machine learning force field](https://doi.org/10.1016/j.matt.2025.102203)：用可迁移机器学习力场加速金属有机框架的直接空气捕集筛选。
+- [d-band center-guided high-fidelity generative model for inverse materials design](https://doi.org/10.1016/j.cej.2025.169918)：在高保真生成模型中引入 d-band center 指导，用于逆向材料设计。
+- [Accelerated green material and solvent discovery with chemistry- and physics-guided generative AI](https://doi.org/10.1016/j.aichem.2025.100106)：用化学与物理引导的生成式 AI 加速绿色材料与溶剂发现。
+- [Machine learning–assisted discovery of chromium bis(2-pyridyl)amine catalysts for ethylene tri-/tetramerization](https://doi.org/10.1016/j.jcat.2025.116613)：用机器学习辅助发现乙烯三聚和四聚铬催化剂。
+- [Neuroevolution Potential-Driven Accurate and Efficient Discovery of Graphene/GaN Heterojunctions: From Ballistic-Diffusive Transition to Thermal Conductivity Enhancement](https://doi.org/10.1016/j.physe.2025.116363)：用 neuroevolution potentials 发现高效准确的 graphene and GaN heterojunction designs。
+- [A quantitative criterion for evidencing predicted compounds in high-throughput powder X-ray diffraction data: Illustration with half-antiperovskite](https://doi.org/10.1016/j.actamat.2025.121525)：提出粉末 XRD 定量证据准则，用于判断预测的半反钙钛矿化合物是否真实出现在高通量衍射数据中。
+- [Linking microstructure informatics with characterization knowledge in additively manufactured composites through customized and hybrid vision-language representations for automated qualification](https://doi.org/10.1016/j.aei.2025.104238)：用定制化 hybrid vision-language representations 连接微结构图像与专家表征知识，以支持复合材料自动资格评定。
+- [The Emergence of Automation in Electrochemistry](https://doi.org/10.1016/j.coelec.2025.101679)：这是电化学自动化综述型条目，关注闭环实验和机器学习控制，而不是单一模型。
+- [Adding Machine Learning to the Polymer Reaction Engineering Toolbox](https://doi.org/10.1016/j.progpolymsci.2025.102029)：梳理机器学习进入 polymer reaction engineering 的路径，包括动力学、反应器建模、过程优化和数据驱动设计。
+- [Physically interpretable discrete latent representations for the design of advanced mechanical metamaterials in complex geometries](https://doi.org/10.1016/j.engappai.2025.111011)：学习机械超材料的离散潜在编码，使复杂几何生成结果仍可通过物理结构-性质因素解释。
+- [CeNEP: A general-purpose machine learning interatomic potential for cementitious materials](https://doi.org/10.1016/j.cej.2025.170639)：训练面向水泥基材料的通用机器学习原子间势，目标是在水泥化学空间内支持多体系原子模拟。
+- [ScaleMoE: A Fast and Scalable Distributed Training Framework for Large-Scale Mixture-of-Experts Models](https://doi.org/10.1109/pact65351.2025.00015)：提供大规模 mixture-of-experts 模型的分布式训练框架，更偏向模型扩展基础设施而非科学领域模型。
+- [Multiplex graph prompt collaboration for open-set social event detection](https://doi.org/10.1016/j.eswa.2025.128887)：用多路图 prompt 做 open-set social event detection，属于相邻图提示方法而非核心科学领域仿真器。
+- [Hottel Zone Physics-Constrained Networks for Industrial Furnaces](https://doi.org/10.1109/access.2025.3563413)：把 Hottel zone 辐射平衡作为物理约束嵌入神经网络，用于工业炉热场预测。
+- [DiMAT Materials Modeler (DiMM): An Interactive Framework for Materials Property Prediction and Optimization Using a Hybrid Machine Learning - Genetic Algorithm Approach](https://doi.org/10.1109/ice/itmc65658.2025.11106594)：把材料性质预测模型与遗传算法结合，让用户交互式优化候选材料。
+- [Peridynamic-driven feature-enhanced Vision Transformer for predicting defects and heterogeneous materials locations: Applications of deep learning in inverse problems](https://doi.org/10.1016/j.engappai.2025.110677)：把 peridynamic 特征送入 Vision Transformer，用于在反问题中定位缺陷和非均质材料区域。
+- [Modeling multivariable high-resolution 3D urban microclimate using localized fourier neural operator](https://doi.org/10.1016/j.buildenv.2025.112668)：将 localized Fourier neural operator 用于高分辨率三维城市微气候的多变量场建模。
+- [Cured Memory RUL Prediction of Solid-State Batteries Combined Progressive-Topologia Fusion Health Indicators](https://doi.org/10.1109/tii.2025.3528576)：把 cured-memory 建模与 progressive-topologia fusion health indicators 结合，用于固态电池剩余寿命预测。
+- [Machine learning-assisted design of metal–organic frameworks for hydrogen storage: A high-throughput screening and experimental approach](https://doi.org/10.1016/j.cej.2025.160766)：将机器学习筛选、高通量搜索和实验跟进结合，用于储氢金属有机框架设计。
+- [Recent advances in machine learning guided mechanical properties prediction and design of two-dimensional materials](https://doi.org/10.1016/j.tws.2025.113261)：这是综述型条目，概括机器学习引导的二维材料力学性质预测与设计。
+- [Huge ensembles – Part 1: Design of ensemble weather forecasts using spherical Fourier neural operators](https://doi.org/10.5194/gmd-18-5575-2025)：用 spherical Fourier neural operators 设计超大天气集合，以采样低概率高影响极端事件。
+- [Combined machine learning and computational protocols to predict electrolyte behavior and SEI formation in Li-metal batteries](https://doi.org/10.1016/j.cej.2025.163801)：把机器学习预测器和计算协议结合，建模锂金属电池中的电解液行为与 SEI 形成。
+- [Machine learning in membrane science: Bridging materials, structures, and performance for next-generation membrane design](https://doi.org/10.1016/j.seppur.2025.133091)：这是综述型条目，连接膜材料描述符、结构-性质模型和性能预测，用于膜设计。
+- [Exploring the structural basis of crystals that affect nonlinear optical responses: an experimental and machine learning quest](https://doi.org/10.1016/j.optmat.2025.116783)：结合实验与机器学习分析，识别影响非线性光学响应的晶体结构因素。
+- [Perovskite solar cells empowered by machine learning](https://doi.org/10.1016/j.jechem.2025.05.029)：这是钙钛矿太阳能电池综述条目，覆盖机器学习在组成、界面、稳定性和性能优化中的作用，而非新基础模型。
+- [Machine learning in X-ray diffraction for materials discovery and characterization](https://doi.org/10.1016/j.matt.2025.102272)：综述用于 X-ray diffraction 图样分析、材料发现和表征的机器学习方法。
+- [Accelerated material discovery of high-performance Mg alloys via active learning and high throughput multi-objective informed Bayesian optimization](https://doi.org/10.1016/j.mtcomm.2025.112484)：结合主动学习和多目标 Bayesian optimization 搜索镁合金成分，优化强度、延展性等性能目标。
+- [Long-term prediction of the Gulf Stream meander using OceanNet: a principled neural-operator-based digital twin](https://doi.org/10.5194/os-21-1065-2025)：用 OceanNet 神经算子数字孪生从海洋状态场长期预测 Gulf Stream meander。
+- [PI-MFM: Physics-informed multimodal foundation model for solving partial differential equations](https://arxiv.org/abs/2512.23056)：从符号方程输入自动组装 PDE residual loss，使多模态 PDE 基础模型能用统一 physics-informed 目标进行预训练和适配。
+- [Computational screening for novel solid-state electrolytes in <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" altimg="si66.svg"><mml:mrow><mml:mi mathvariant="bold">L</mml:mi><mml:msub><mml:mi mathvariant="bold">i</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mi mathvariant="bold">M</mml:mi><mm](https://doi.org/10.1016/j.jechem.2025.08.047)：计算筛选 Li3M 体系固态电解质，将组成和晶体描述符关联到稳定性与离子传输候选。
+- [Open science falling behind in the era of artificial intelligence](https://doi.org/10.3389/frma.2025.1595824)：分析 AI 时代研究实践对开放科学规范的压力，属于科研生态风险条目而非模型贡献。
+- [Extraction-Augmented Generation of Scientific Abstracts Using Knowledge Graphs](https://doi.org/10.1109/access.2025.3551756)：从抽取出的知识图谱事实生成科学摘要，用结构化实体关系证据约束文本生成。
+- [Artificial intelligence-driven autonomous laboratory for accelerating chemical discovery](https://doi.org/10.20517/cs.2025.66)：描述用于加速化学发现的自主实验室闭环，将 AI 候选选择、机器人实验和反馈更新结合起来。
+- [Accelerated discovery of corrosion-resistant multi-principal element alloys via data-augmented machine learning](https://doi.org/10.1016/j.corsci.2025.113567)：用数据增强机器学习在有限实验数据下筛选耐腐蚀多主元合金。
+- [Scientific Machine Learning (SciML) - How the Fusion of AI and Physics is Giving Rise to Promising Simulation Methodologies](https://doi.org/10.1109/sispad66650.2025.11186115)：总结融合神经模型、物理约束、方程和数值求解器的 SciML 仿真方法。
+- [The advancement of materials discovery through the applied artificial intelligence](https://doi.org/10.1016/j.mtelec.2025.100186)：综述应用 AI 推进材料发现的路径，包括性质预测、筛选和面向合成的设计。
+- [A Collaborative Framework for Cross-Domain Scientific Experiments for Society 5.0](https://doi.org/10.1109/icse-seis66351.2025.00013)：该条目偏离模型清理主轴；它提出跨领域科学实验协作基础设施，而不是可复用科学模型。
+- [The Dynamic Polymer Annotated Library: An automated approach to curating materials science literature](https://doi.org/10.1016/j.matt.2025.102624)：构建自动化聚合物文献整理库，为材料科学论文添加注释以支持下游聚合物数据挖掘。
+- [A hierarchical task-skill autonomous decision-making framework for composite robots in chemical experiment operations](https://doi.org/10.1108/ir-12-2025-0466)：提出用于化学实验操作复合机器人的层次 task-skill 决策框架，更接近自主实验室编排而非基础模型训练。
+- [Data- and Mechanism-Driven Hybrid Computing: A New Paradigm for Scientific and Engineering Computation](https://doi.org/10.4208/csiam-am.so-2025-0074)：把混合科学计算表述为数据驱动模型与机制驱动物理计算的结合。
+- [Kolmogorov–Arnold PointNet: Deep learning for prediction of fluid fields on irregular geometries](https://doi.org/10.1016/j.cma.2025.117888)：将 Kolmogorov-Arnold networks 与 PointNet 式几何编码结合，用于不规则区域上的流场预测。
+- [Artificial Intelligence-Driven Catalyst Design for Electrocatalytic Hydrogen Production: Paradigm Innovation and Challenges in Material Discovery](https://doi.org/10.1016/j.scenem.2025.100010)：综述电催化制氢中的 AI 催化剂设计，强调描述符学习和材料发现瓶颈。
+- [Artificial intelligence for catalyst design and synthesis](https://doi.org/10.1016/j.matt.2025.102138)：综述催化剂设计与合成中的 AI 方法，覆盖催化剂性质预测、反应优化和合成规划。
+- [Retrieving and discovering new knowledge from documents' abstracts in scientific databases: Proposing a query-based abstractive summarization model](https://doi.org/10.1016/j.jjimei.2025.100366)：提出面向科学数据库摘要的 query-based abstractive summarizer，用于检索并综合文档层新知识。
+- [Machine Learning Application in Thermal CO2 Hydrogenation: Catalyst Design, Process Optimization, and Mechanism Insights](https://doi.org/10.1016/j.apmate.2025.100333)：把机器学习用于热催化二氧化碳加氢，服务催化剂设计、工艺优化和机制解释。
+- [Opening the AI black-box: Symbolic regression with Kolmogorov-Arnold Networks for advanced energy applications](https://doi.org/10.1016/j.egyai.2025.100595)：把 KAN 与符号回归结合，为先进能源系统建模提取可解释公式。
+- [Legend-KINN: A legendre polynomial-based Kolmogorov-Arnold-informed neural network for efficient PDE solving](https://doi.org/10.1016/j.eswa.2025.129839)：构建基于 Legendre polynomial 的 KAN-informed network，用可解释基函数高效求解 PDE。
+- [PIKANs: Physics-informed Kolmogorov-Arnold networks for landslide time-to-failure prediction](https://doi.org/10.1016/j.cageo.2025.106094)：在 KAN 中嵌入物理约束，用岩土时间序列信号预测滑坡失效时间。
+- [Research on an Hourly Heat Load Forecasting Model for District Heating Systems Based on Heterogeneous Model Fusion](https://doi.org/10.1016/j.csite.2025.106500)：融合异构预测模型，用于区域供热系统的小时级热负荷预测。
+- [Mixed-depth physics-informed neural network with nested activation mechanism in solving partial differential equations](https://doi.org/10.1016/j.cma.2025.118356)：提出带嵌套激活机制的 mixed-depth PINN，用于求解局部复杂度不同的 PDE。
+- [MambaAD: Multivariate time series anomaly detection in IoT via multi-view Mamba](https://doi.org/10.1016/j.neucom.2025.131385)：用 multi-view Mamba 做多变量 IoT 时间序列异常检测，属于偏离科学领域模型主轴的预测架构。
+- [Forecasting of spatiotemporal nonlinear dynamic systems by Physics-informed neural networks with ResNet blocks](https://doi.org/10.1016/j.physd.2025.135040)：在 PINN 中加入 ResNet blocks，用于预测非线性时空动力系统。
+- [Data generation with optimal experimental design for operator learning](https://doi.org/10.1016/j.cma.2025.118675)：用最优实验设计选择 operator learning 训练数据，降低学习式 PDE 求解器所需仿真预算。
+- [The potential of AI global weather models for reference evapotranspiration forecasting: a comparison with numerical weather prediction models](https://doi.org/10.1016/j.jhydrol.2025.134363)：比较 AI 全球天气模型与数值天气预报在参考蒸散发预测上的表现。
+- [Data-Free Physics-Informed Neural Networks for Modeling Compressible Multiphase Flows](https://doi.org/10.1016/j.ijmultiphaseflow.2025.105589)：不依赖标注数据训练 PINN，而是用控制方程 residual 与物理约束建模可压缩多相流。
+- [Bridging climate science, policy, and communities: collaborative pathways for climate resilience in the Indo-Pacific](https://doi.org/10.3389/fclim.2025.1538123)：该条目偏离模型清理主轴；它讨论印太气候科学、政策和社区协作路径，而不是模型机制。
+- [Machine learning-assisted high-entropy alloy discovery: a perspective](https://doi.org/10.20517/jmi.2025.79)：综述高熵合金发现中的机器学习流程，包括描述符构建、筛选和实验验证。
+- [New directions in mapping the Earth’s surface with citizen science and generative AI](https://doi.org/10.1016/j.isci.2025.111919)：连接 citizen-science 观测与生成式 AI 做地表制图，更接近地理空间数据生产基础设施而不是核心科学模型。
+- [Physics-Informed Fine-Tuning for physics discovery from random and sparse data](https://doi.org/10.1016/j.engappai.2025.112132)：用 physics-informed losses 微调模型，使随机且稀疏的观测也能支持控制动力学发现。
+- [Investigating evidence-oriented generation of synthetic text data with a generative large language model in science education](https://doi.org/10.1080/09500693.2025.2538834)：用生成式 LLM 为科学教育实验生成 evidence-oriented synthetic text，属于相邻数据生成研究而非科学发现模型。
+- [HyperDiscover: Advancing Scientific Discovery through Concept Co-occurrence and Hypergraph Neural Networks](https://doi.org/10.1109/ijcnn64981.2025.11229150)：用概念共现构建超图神经网络，并结合对抗负样本和引文特征来预测跨论文科学概念关联。
+- [Pretrain Finite Element Method: A Pretraining and Warm-start Framework for PDEs via Physics-Informed Neural Operators](https://arxiv.org/abs/2601.03086)：通过 physics-informed neural operators 预训练并 warm-start 有限元 PDE 求解。
+- [Discontinuous Galerkin finite element operator network for solving non-smooth PDEs](https://arxiv.org/abs/2601.03668)：通过最小化 discontinuous-Galerkin 弱形式 residual 训练 DG-FEONet，无需成对输入输出数据即可求解含不连续系数的参数化 PDE。
+- [Probabilistic Transformers for Joint Modeling of Global Weather Dynamics and Decision-Centric Variables](https://arxiv.org/abs/2601.03753)：推进用于科学模拟与预测的学习型地球系统或天气预报模型。
+- [Stable Machine Learning Potentials for Liquid Metals via Dataset Engineering](https://arxiv.org/abs/2601.05003)：通过数据集工程改善液态金属机器学习原子间势的稳定性，使 AIMD 级精度能扩展到更长时间和尺度。
+- [Bgolearn: a Unified Bayesian Optimization Framework for Accelerating Materials Discovery](https://arxiv.org/abs/2601.06820)：提供统一的 Bayesian optimization 框架来加速材料发现。
+- [PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](https://arxiv.org/abs/2601.07742)：以力常数监督微调原子间势，提升振动性质预测能力。
+- [Multi-Task Fine-Tuning Enables Robust Out-of-Distribution Generalization in Atomistic Models](https://arxiv.org/abs/2601.08486)：以多任务适配在分布迁移下保留预训练原子表征先验。
+- [MOF Spatial Reasoning](https://arxiv.org/abs/2601.09285)：面向金属有机框架结构预测提升 LLM 空间推理，把 scientific model 覆盖扩展到非生医材料结构任务。
+- [Progressive Mixture-of-Experts with autoencoder routing for continual RANS turbulence modelling](https://arxiv.org/abs/2601.09305)：用 autoencoder router 为新流态添加专用 RANS 湍流专家，同时保留旧专家，避免持续学习中的灾难性遗忘。
+- [CauScientist: Teaching LLMs to Respect Data for Causal Discovery](https://arxiv.org/abs/2601.13614)：把 LLM 生成的因果图修改同概率统计验证和错误记忆结合，提升相对于纯数据方法和纯 LLM 方法的因果发现效果。
+- [Turning Citation Networks Inside Out: Studying Science Using Content-Based Knowledge Graphs from LLM-Derived Taxonomies](https://arxiv.org/abs/2601.15062)：用 LLM 派生分类体系构建基于内容的知识图谱，从而超越引用网络拓扑来分析科学领域。
+- [Regularity priors for the linear atomic cluster expansion](https://arxiv.org/abs/2601.15072)：为线性 ACE 势加入 regularity prior，使预测能量面更平滑并改善分布外行为。
+- [Equivariant Interatomic Potentials without Tensor Products](https://arxiv.org/abs/2601.15492)：设计无需高成本张量积运算的高表达力等变原子间势模型。
+- [Pushing the limits of unconstrained machine-learned interatomic potentials](https://arxiv.org/abs/2601.16195)：研究放松硬物理约束何时可提升原子间势模型的精度与效率。
+- [E2Former-V2: On-the-Fly Equivariant Attention with Linear Activation Memory](https://arxiv.org/abs/2601.16622)：采用即时等变注意力与线性激活内存，扩展三维原子模型。
+- [AI-enhanced discovery and accelerated synthesis of metal phosphosulfides](https://arxiv.org/abs/2601.16693)：结合 AI 引导候选选择与加速合成，搜索用于能源材料发现的金属磷硫化物。
+- [Spread/Error relationship and spatial error structure of precipitation ensemble nowcasting: Comparison of STEPS and generative AI](https://arxiv.org/abs/2601.19298)：比较 STEPS 与生成式 AI 降水临近预报中的集合离散度、预报误差和空间误差结构。
+- [Physics-Informed Transformer operator for the prediction of three-dimensional turbulence](https://arxiv.org/abs/2601.19351)：把 LES 方程嵌入 Transformer operator 的损失中，使 PITO 和 PIITO 无需标签学习三维湍流动力学，并较 PIFNO 降低显存。
+- [Divergence-Free Diffusion Models for Incompressible Fluid Flows](https://arxiv.org/abs/2601.19368)：把条件 score-based diffusion 用于 Kolmogorov flow 预测，并通过 Leray 谱投影和自回归条件化保持不可压缩约束。
+- [OSIRIS: Bridging Analog Circuit Design and Machine Learning with Scalable Dataset Generation](https://arxiv.org/abs/2601.19439)：生成可扩展的模拟电路数据集，使机器学习模型能从结构化仿真样例中学习电路设计任务。
+- [TINNs: Time-Induced Neural Networks for Solving Time-Dependent PDEs](https://arxiv.org/abs/2601.20361)：把神经网络权重参数化为时间的可学习函数，使 PINN 的空间表征能随时变 PDE 动力学演化。
+- [Smooth Dynamic Cutoffs for Machine Learning Interatomic Potentials](https://arxiv.org/abs/2601.21147)：以平滑动态邻域替代固定截断半径，降低原子间势模拟成本。
+- [CE-GOCD: Central Entity-Guided Graph Optimization for Community Detection to Augment LLM Scientific Question Answering](https://arxiv.org/abs/2601.21733)：通过图优化增强 LLM 科学问答。
+- [MEIDNet: Multimodal generative AI framework for inverse materials design](https://arxiv.org/abs/2601.22009)：结合等变结构编码、多模态对比学习与生成式逆向设计，开展目标材料发现。
+- [Learning Transient Convective Heat Transfer with Geometry Aware World Models](https://arxiv.org/abs/2601.22086)：把视频生成式世界模型改造成带全局物理参数和局部几何 mask 条件的架构，用于合成瞬态对流换热 CFD 场。
+- [HybridOM: Hybrid Physics-Based and Data-Driven Global Ocean Modeling with Efficient Spatial Downscaling](https://arxiv.org/abs/2602.00598)：把轻量可微海洋求解器、神经次网格校正和 flux-gated 区域降尺度结合，实现具物理一致性的全球海洋 emulation。
+- [Physics-Informed Neural Compression of High-Dimensional Plasma Data](https://arxiv.org/abs/2602.04758)：为五维等离子体湍流仿真的神经压缩加入 gyrokinetic 物理损失，并设计时空保真度评测流程。
+- [Imposing Boundary Conditions on Neural Operators via Learned Function Extensions](https://arxiv.org/abs/2602.04923)：学习把边界数据扩展为全域潜在函数，使标准神经算子能在 18 个 PDE 数据集上处理复杂非齐次边界条件。
+- [Learning, Solving and Optimizing PDEs with TensorGalerkin: an efficient high-performance Galerkin assembly algorithm](https://arxiv.org/abs/2602.05052)：提供张量化 Galerkin 组装算法，用于高效学习、求解和优化 PDE 系统。
+- [Broken neural scaling laws in materials science](https://arxiv.org/abs/2602.05702)：研究介电函数预测，显示当外推区域覆盖不足时，材料科学中的数据和模型 scaling 规律会失效。
+- [Beyond Pairwise Distance: Cognitive Traversal Distance as a Holistic Measure of Scientific Novelty](https://arxiv.org/abs/2602.06607)：提出 cognitive traversal distance 作为科学新颖性的图式度量，而不是只依赖成对语义距离。
+- [Rethinking Scientific Modeling: Toward Physically Consistent and Simulation-Executable Programmatic Generation](https://arxiv.org/abs/2602.07083)：用工程约束与验证反馈训练 LLM 生成可仿真执行的结构建模代码。
+- [VideoNeuMat: Neural Material Extraction from Generative Video Models](https://arxiv.org/abs/2602.07272)：从生成式视频模型中提取神经材料表征，把视频先验连接到材料外观建模。
+- [MSP-LLM: A Unified Large Language Model Framework for Complete Material Synthesis Planning](https://arxiv.org/abs/2602.07543)：将生成式或语言模型方法用于科学模拟、流体建模或材料合成规划。
 - [Data Darwinism Part I](https://arxiv.org/abs/2602.07824)：科学数据筛选方法，研究科学数据质量和选择如何影响科学基础模型的预训练价值。
+- [Graph Generative Models for Materials Extrapolation](https://arxiv.org/abs/2602.09309)：刻画 graph generative models 在材料科学中向未知规模外推的边界。
+- [Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](https://arxiv.org/abs/2602.09988)：评估硬约束循环 KAN 在物理信息系统发现中的稳定性，重点考察循环预测下的稳健性。
+- [Latent Generative Solvers for Generalizable Long-Term Physics Simulation](https://arxiv.org/abs/2602.11229)：用潜在生成式求解器支持长时程物理仿真，并提升跨动力学系统的泛化。
+- [Enforcing Reciprocity in Operator Learning for Seismic Wave Propagation](https://arxiv.org/abs/2602.11631)：把互易性约束纳入地震波传播的算子学习模型。
+- [Fourier Transformers for Latent Crystallographic Diffusion and Generative Modeling](https://arxiv.org/abs/2602.12045)：在倒易空间中以 Fourier Transformer 扩散模型开展周期晶体生成设计。
+- [Function-Space Decoupled Diffusion for Forward and Inverse Modeling in Carbon Capture and Storage](https://arxiv.org/abs/2602.12274)：用函数空间解耦扩散同时处理碳捕集与封存系统中的正向模拟和反问题推断。
+- [Monomeric machine learning potential for general covalent molecules: linear alkanes as an example](https://arxiv.org/abs/2602.14022)：训练面向共价分子的单体机器学习势，并用线性烷烃测试其跨分子尺寸迁移能力。
+- [Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](https://arxiv.org/abs/2602.15184)：联合训练目标 PDE 及其简化基础物理形式，提升神经算子在一维、二维和三维 PDE 上的数据效率与分布外迁移。
+- [Updating Parametric Knowledge with Context Distillation Retains Post-Training Capabilities](https://arxiv.org/abs/2602.16093)：上下文蒸馏用于更新参数知识，同时尽量保留指令跟随和推理等后训练能力。
+- [FEKAN: Feature-Enriched Kolmogorov-Arnold Networks](https://arxiv.org/abs/2602.16530)：用特征增强变换扩展 Kolmogorov-Arnold Networks，以改进科学函数逼近。
+- [QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery](https://arxiv.org/abs/2602.17478)：结合基于物理的合成数据、量子材料指令微调与物理信息注意力模块，使多模态模型更稳健地表征材料薄片。
+- [Inelastic Constitutive Kolmogorov-Arnold Networks: A generalized framework for automated discovery of interpretable inelastic material models](https://arxiv.org/abs/2602.17750)：用 KAN 的符号结构从数据中自动发现可解释的非弹性材料本构模型。
+- [AI-Based Regional Emulation for Kilometer-Scale Dynamical Downscaling](https://arxiv.org/abs/2602.18646)：用 ERA5 强迫和 CONUS404 目标训练 limited-area AI emulator，生成 4 公里逐小时降尺度结果，并在多数据集和气候态下保持稳定。
+- [Statistical Error Bounds for Generative Solvers of Chaotic PDEs: Wasserstein Stability, Generalization, and Turbulence](https://arxiv.org/abs/2602.18794)：为混沌 PDE 与湍流的生成式求解器推导 Wasserstein 稳定性和泛化误差界。
+- [Scale-PINN: Learning Efficient Physics-Informed Neural Networks Through Sequential Correction](https://arxiv.org/abs/2602.19475)：通过逐步校正训练 PINN，使求解器能在多个物理约束阶段高效修正误差。
+- [KANDy: Kolmogorov-Arnold Networks and Dynamical System Discovery](https://arxiv.org/abs/2602.20413)：将 KAN 表征用于动力系统发现，强调从轨迹中学习可解释方程。
+- [UrbanFM: Scaling Urban Spatio-Temporal Foundation Models](https://arxiv.org/abs/2602.20677)：扩展城市场景时空基础模型，用于城市级出行、环境或基础设施预测任务。
+- [Deep unfolding of MCMC kernels: scalable, modular & explainable GANs for high-dimensional posterior sampling](https://arxiv.org/abs/2602.20758)：把 MCMC 核深度展开为模块化 GAN 组件，用于可解释的高维后验采样。
+- [RGB-Event HyperGraph Prompt for Kilometer Marker Recognition based on Pre-trained Foundation Models](https://arxiv.org/abs/2602.22026)：在预训练基础模型上使用 RGB-event hypergraph prompt 识别公里桩，属于遥感邻近感知任务。
+- [NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](https://arxiv.org/abs/2602.22059)：预训练嵌套 mixture-of-experts 神经算子，以覆盖大规模 PDE 家族。
+- [LLM-driven discovery for carbon allotropes with bond-network entropy](https://arxiv.org/abs/2602.22706)：结合 LLM-driven discovery 与 bond-network entropy 搜索 carbon allotropes。
+- [Operator Learning Using Weak Supervision from Walk-on-Spheres](https://arxiv.org/abs/2603.01193)：用 walk-on-spheres 估计作为弱监督信号训练 PDE 算子学习模型。
+- [Update of PHYSBO: Improving Usability and Portability of Bayesian Optimization for Physics and Materials Research](https://arxiv.org/abs/2603.01349)：更新 PHYSBO 贝叶斯优化包，提升物理与材料搜索工作流的可用性和可移植性。
+- [FRiskGPT: A Generative Foundation Model for Financial Risk Detection](https://arxiv.org/abs/2603.01385)：路由备注：该金融风险基础模型偏离科学知识建模主轴，应复核是否移除或迁移。
+- [MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](https://arxiv.org/abs/2603.02002)：面向可靠且高效的预训练机器学习原子间势，并处理等变模型的计算成本问题。
+- [High-quality, high-information datasets for universal atomistic machine learning](https://arxiv.org/abs/2603.02089)：提供覆盖 102 种元素、采用标准化高水平计算的全电子 DFT 数据集，用于训练通用原子级模型。
+- [Contextual Latent World Models for Offline Meta Reinforcement Learning](https://arxiv.org/abs/2603.02935)：路由备注：其贡献是通用离线元强化学习世界模型，并不明显属于科学知识专用方法。
+- [Expanding Universal Machine Learning Interatomic Potentials to 97 Elements Towards Nuclear Applications](https://arxiv.org/abs/2603.03223)：构建 HE26 数据集和覆盖 97 种元素的开源通用 MLIP，将原子级建模扩展到锕系与核材料场景。
+- [Prediction of Extreme Events in Multiscale Simulations of Geophysical Turbulence using Reinforcement Learning](https://arxiv.org/abs/2603.03351)：训练强化学习预测器，在多尺度地球物理湍流仿真中识别极端事件。
+- [Multilevel Training for Kolmogorov Arnold Networks](https://arxiv.org/abs/2603.04827)：提出 KAN 的多层级训练，使由粗到细的优化改善科学函数学习。
+- [Hybrid ensemble forecasting combining physics-based and machine-learning predictions through spectral nudging](https://arxiv.org/abs/2603.05570)：通过 spectral nudging 结合物理预报和机器学习预测，形成混合集合预报。
+- [On the Value of Tokeniser Pretraining in Physics Foundation Models](https://arxiv.org/abs/2603.05598)：检验 tokenizer 预训练是否会改变物理基础模型的表现。
+- [Identification of an Unreported Structure Type in GdNiSn4 and Its Implications for Materials Prediction](https://arxiv.org/abs/2603.05613)：用新识别的 GdNiSn4 结构类型检验材料预测对未报道晶体家族的假设。
+- [A recipe for scalable attention-based MLIPs: unlocking long-range accuracy with all-to-all node attention](https://arxiv.org/abs/2603.06567)：采用全节点注意力，提高可扩展机器学习原子间势的长程精度。
+- [Scaling Machine Learning Interatomic Potentials with Mixtures of Experts](https://arxiv.org/abs/2603.07977)：为 MLIP 设计 mixture-of-experts 路由策略，并在 OMol25、OMat24 和 OC20M 上取得强精度表现。
+- [MUSA-PINN: Multi-scale Weak-form Physics-Informed Neural Networks for Fluid Flow in Complex Geometries](https://arxiv.org/abs/2603.08465)：把多尺度弱形式 PINN 训练与复杂几何流体约束结合起来。
+- [Bias in Universal Machine-Learned Interatomic Potentials and its Effects on Fine-Tuning](https://arxiv.org/abs/2603.10159)：诊断通用原子间势中的偏差及其对下游微调的影响。
+- [Inverse Neural Operator for ODE Parameter Optimization](https://arxiv.org/abs/2603.11854)：学习逆向神经算子，直接从观测到的解行为推断 ODE 参数。
+- [Research Paradigm of Materials Science Tetrahedra with Artificial Intelligence](https://arxiv.org/abs/2603.13744)：路由备注：该条更像材料科学范式或综述，应复核是否迁往 Survey。
+- [Intelligent Materials Modelling: Large Language Models Versus Partial Least Squares Regression for Predicting Polysulfone Membrane Mechanical Performance](https://arxiv.org/abs/2603.13834)：比较 LLM 预测与偏最小二乘回归在 polysulfone 膜力学性能预测中的表现。
+- [Cold-Metal Inverse Design](https://arxiv.org/abs/2603.13920)：使用 MatterGPT 式晶体生成器进行面向低功耗电子的冷金属逆向设计。
 - [DataEvolve](https://arxiv.org/abs/2603.14420)：自动化预训练数据演化方法，用模型反馈和自主数据改进循环优化科学语料混合。
+- [When Stability Fails: Hidden Failure Modes Of LLMS in Data-Constrained Scientific Decision-Making](https://arxiv.org/abs/2603.15840)：分析数据受限科学决策中 LLM 的隐性失效模式。
+- [An SO(3)-equivariant reciprocal-space neural potential for long-range interactions](https://arxiv.org/abs/2603.18389)：在倒易空间中构建 SO(3) 等变神经势，以捕获长程原子相互作用。
+- [Scalable Cross-Facility Federated Learning for Scientific Foundation Models on Multiple Supercomputers](https://arxiv.org/abs/2603.19544)：研究跨多个超算设施联邦训练科学基础模型。
+- [A unified machine learning framework for ab initio multiscale modeling of liquids](https://arxiv.org/abs/2603.20493)：将学习得到的原子间作用力与跨尺度液体建模连接起来，覆盖微观至宏观行为。
+- [UniFluids: Unified Neural Operator Learning with Conditional Flow-matching](https://arxiv.org/abs/2603.22309)：用条件流匹配训练统一的流体动力学神经算子。
+- [Sparsely-Supervised Data Assimilation via Physics-Informed Schr\"odinger Bridge](https://arxiv.org/abs/2603.22319)：把稀疏监督与物理信息 Schrodinger bridge 结合，用于资料同化。
+- [Bridging the Gap Between Climate Science and Machine Learning in Climate Model Emulation](https://arxiv.org/abs/2603.22320)：围绕气候科学约束设计气候模型 emulation，使学习型模拟器保留领域相关行为。
+- [Residual Attention Physics-Informed Neural Networks for Robust Multiphysics Simulation of Steady-State Electrothermal Energy Systems](https://arxiv.org/abs/2603.23578)：为 PINN 加入 residual attention，用于稳态电热能系统的多物理场仿真。
+- [Fine-tuning universal machine learning potentials for transition state search in surface catalysis](https://arxiv.org/abs/2603.24482)：用主动学习微调通用 MLIP，使其在异相催化过渡态搜索中接近 DFT 质量。
 - [Intern-S1-Pro](https://arxiv.org/abs/2603.25040)：万亿级科学多模态基础模型，扩展科学文本、图像、图表、文档和领域数据训练。
+- [Bridging the Simulation-to-Experiment Gap with Generative Models using Adversarial Distribution Alignment](https://arxiv.org/abs/2604.01169)：用对抗式生成建模对齐仿真分布与实验分布，降低 simulation-to-experiment mismatch。
+- [PI-JEPA: Label-Free Surrogate Pretraining for Coupled Multiphysics Simulation via Operator-Split Latent Prediction](https://arxiv.org/abs/2604.01349)：通过预测算子分裂后的潜在状态，在无标签条件下预训练多物理场 surrogate。
 - [Do We Need Bigger Models for Science?](https://arxiv.org/abs/2604.01965)：提出面向科学应用的小语言模型任务感知检索框架，展示专门化检索如何弥补模型规模较小带来的能力缺口。
+- [Crystalite: A Lightweight Transformer for Efficient Crystal Modeling](https://arxiv.org/abs/2604.02270)：采用化学结构化分词构建轻量扩散 Transformer，用于生成式晶体建模。
+- [Simple yet Effective: Low-Rank Spatial Attention for Neural Operators](https://arxiv.org/abs/2604.03582)：为 neural operators 引入低秩空间注意力机制。
+- [Scientific Knowledge-driven Decoding Constraints](https://arxiv.org/abs/2604.06603)：用科学知识驱动的解码约束提升 LLM 可靠性。
+- [Flow Learners for PDEs: Toward a Physics-to-Physics Paradigm for Scientific Computing](https://arxiv.org/abs/2604.07366)：学习物理状态之间的 flow map 来求解 PDE，把科学计算从 data-to-physics 推向 physics-to-physics。
+- [SYN-DIGITS: A Synthetic Control Framework for Calibrated Digital Twin Simulation](https://arxiv.org/abs/2604.07513)：用 synthetic control 根据观测系统行为校准数字孪生仿真。
+- [Generative 3D Gaussian Splatting for Arbitrary-ResolutionAtmospheric Downscaling and Forecasting](https://arxiv.org/abs/2604.07928)：将生成式 3D Gaussian splatting 用于任意分辨率大气降尺度与预报。
+- [U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecaster](https://arxiv.org/abs/2604.09041)：推进用于科学模拟与预测的学习型地球系统或天气预报模型。
+- [EquiformerV3: Scaling Efficient, Expressive, and General SE(3)-Equivariant Graph Attention Transformers](https://arxiv.org/abs/2604.09130)：扩展 SE(3) 等变图注意力，用于高效且富表达力的原子建模。
+- [A Lightweight Universal Machine-Learning Interatomic Potential via Knowledge Distillation for Scalable Atomistic Simulations](https://arxiv.org/abs/2604.10887)：将大型通用原子基础模型蒸馏为轻量原子间势，以支持可扩展模拟。
+- [One Scale at a Time: Scale-Autoregressive Modeling for Fluid Flow Distributions](https://arxiv.org/abs/2604.11403)：将生成式或语言模型方法用于科学模拟、流体建模或材料合成规划。
+- [Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](https://arxiv.org/abs/2604.12391)：路由备注：这是通用视觉基础模型预训练加速方法，并不明显属于科学知识专用条目。
+- [AI-assisted writing and the reorganization of scientific knowledge](https://arxiv.org/abs/2604.14126)：路由备注：该研究关注 AI 辅助写作对科学知识组织的影响，应复核是否迁往 Survey 或社会影响相关位置。
+- [AdaVFM: Adaptive Vision Foundation Models for Edge Intelligence via LLM-Guided Execution](https://arxiv.org/abs/2604.15622)：路由备注：LLM 引导的边缘端视觉基础模型执行优化偏离本页科学知识 Model 主轴。
+- [Breaking the Training Barrier of Billion-Parameter Universal Machine Learning Interatomic Potentials](https://arxiv.org/abs/2604.15821)：通过支持二阶导数的分布式训练框架，把通用 MLIP 训练扩展到十亿参数 MoE 模型。
+- [Machine Learning and Deep Learning in Quantum Materials: Symmetry, Topology, and the Rise of Altermagnets](https://arxiv.org/abs/2604.15985)：路由备注：该条更像量子材料综述，应复核是否迁往 Survey。
+- [Characterizing AlphaEarth Embedding Geometry for Agentic Environmental Reasoning](https://arxiv.org/abs/2604.18715)：分析 AlphaEarth embedding geometry，将其作为环境推理智能体的表征基础。
+- [Skillful Global Ocean Emulation and the Role of Correlation-Aware Loss](https://arxiv.org/abs/2604.18727)：说明 correlation-aware loss 如何让全球海洋模拟器超越逐点预报精度。
+- [Calibrating Scientific Foundation Models with Inference-Time Stochastic Attention](https://arxiv.org/abs/2604.19530)：在推理时引入 stochastic attention，以校准科学基础模型预测。
+- [Fast Amortized Fitting of Scientific Signals Across Time and Ensembles via Transferable Neural Fields](https://arxiv.org/abs/2604.19979)：用可迁移 neural fields 对随时间和 ensemble 变化的科学信号进行 amortized fitting。
+- [Predictivity and Utility of Neural Surrogates of Multiscale PDEs](https://arxiv.org/abs/2604.20061)：评估多尺度 PDE 神经 surrogate 何时具有足够预测性，可支撑下游科学工作流。
+- [S1-VL: Scientific Multimodal Reasoning Model with Thinking-with-Images](https://arxiv.org/abs/2604.21409)：聚焦科学场景的多模态基础模型、科学推理或科学数据训练。
+- [Mochi: Aligning Pre-training and Inference for Efficient Graph Foundation Models via Meta-Learning](https://arxiv.org/abs/2604.22031)：用元学习对齐图基础模型的预训练目标与推理期适配。
+- [Physics informed operator learning of parameter dependent spectra](https://arxiv.org/abs/2604.23625)：训练物理信息算子，用于预测依赖参数变化的谱。
+- [Learning Interpretable PDE Representations for Generative Reconstructions with Structured Sparsity](https://arxiv.org/abs/2604.23867)：学习稀疏且可解释的 PDE 表征，用于生成式重建任务。
+- [Errors that matter: Uncertainty-aware universal machine-learning potentials calibrated on experiments](https://arxiv.org/abs/2604.24607)：用实验数据校准通用 MLIP ensemble，使不确定性同时反映模型误差和电子结构参考误差。
+- [Learning Neural Operator Surrogates for the Black Hole Accretion Code](https://arxiv.org/abs/2604.25985)：为黑洞吸积模拟代码学习 neural-operator surrogate。
+- [Nothing Deceives Like Success: Social Learning and the Illusion of Understanding in Science](https://arxiv.org/abs/2604.27188)：路由备注：该科学理解社会学习研究偏离模型侧科学 AI，应复核是否移出本页。
+- [Machine Collective Intelligence for Explainable Scientific Discovery](https://arxiv.org/abs/2604.27297)：使用 machine collective intelligence 机制，使科学发现输出更具可解释性。
+- [Conditional Generative Models Enable Targeted Exploration of MAX Phase Design Space](https://arxiv.org/abs/2604.27709)：对 CrystaLLM-pi 进行属性条件化微调，以定向生成稳定且有利于 MXene 的 MAX 相结构。
+- [Fragment-Constrained Charge Equilibration for Charge-Aware Machine Learning Potentials at Electrochemical Interfaces](https://arxiv.org/abs/2604.27910)：为电荷感知 MLIP 加入片段约束电荷平衡，避免电化学界面中电极与电解质之间的伪电荷转移。
+- [Earth System Foundation Model (ESFM): A unified framework for heterogeneous data integration and forecasting](https://arxiv.org/abs/2605.00850)：推进用于科学模拟与预测的学习型地球系统或天气预报模型。
+- [An ALE-Consistent Graph Neural Operator-Transformer Framework for Fluid-Structure Interaction](https://arxiv.org/abs/2605.00937)：结合 ALE 一致坐标、图神经算子和 Transformer，用于流固耦合建模。
+- [Cast3: Translating numerical weather prediction principles into data-driven forecasting](https://arxiv.org/abs/2605.01599)：推进用于科学模拟与预测的学习型地球系统或天气预报模型。
+- [Pretrained Model Representations as Acquisition Signals for Active Learning of MLIPs](https://arxiv.org/abs/2605.03964)：复用预训练潜在表征，为主动学习选择信息量更高的原子标注样本。
+- [SemiConLens: Visual Analytics for 2D Semiconductor Discovery](https://arxiv.org/abs/2605.04067)：路由备注：这是面向二维半导体发现的可视分析系统，可能更适合 Agent Harness 或工具条目而非 Model。
+- [Density diversity in training data governs thermodynamic transferability of machine learning interatomic potentials](https://arxiv.org/abs/2605.05733)：说明训练构型的密度多样性有助于 MLIP 跨热力学状态迁移，尤其适用于流体体系。
+- [When AI Meets Science: Research Diversity, Interdisciplinarity, Visibility, and Retractions across Disciplines in a Global Surge](https://arxiv.org/abs/2605.06033)：路由备注：这是关于 AI 影响科研多样性、跨学科性和撤稿的文献计量研究，应复核是否迁往 Survey 或社会影响位置。
+- [Graphlets as Building Blocks for Structural Vocabulary in Knowledge Graph Foundation Models](https://arxiv.org/abs/2605.06154)：把 graphlet 作为结构词汇单元，用于知识图谱基础模型预训练。
+- [QuadNorm: Resolution-Robust Normalization for Neural Operators](https://arxiv.org/abs/2605.07375)：为神经算子引入分辨率稳健归一化，使 PDE surrogate 能跨网格分辨率迁移。
+- [A meshfree exterior calculus for generalizable and data-efficient learning of physics from point clouds](https://arxiv.org/abs/2605.08436)：构建 meshfree exterior calculus 表征，直接从点云中高效学习物理规律。
+- [Inpainting physics: self-supervised learning for context-driven fluid simulation](https://arxiv.org/abs/2605.08832)：将生成式或语言模型方法用于科学模拟、流体建模或材料合成规划。
+- [Compact SO(3) Equivariant Atomistic Foundation Models via Structural Pruning](https://arxiv.org/abs/2605.08885)：对等变原子基础模型进行结构剪枝，在保留预测能力的同时降低张量运算成本。
+- [CrystalREPA](https://arxiv.org/abs/2605.08960)：把晶体生成编码器与冻结 MLIP 表征对齐，以迁移稳定性感知的原子级先验。
+- [Stable Long-Horizon PDE Forecasting via Latent Structured Spectral Propagators](https://arxiv.org/abs/2605.10154)：用潜在结构化 spectral propagator 稳定长时程 PDE 预测。
+- [Overfitting by design: neural network density functionals for water](https://arxiv.org/abs/2605.10266)：研究为水体系刻意过拟合的神经网络密度泛函，以考察精度和迁移边界。
+- [LoREnc: Low-Rank Encryption for Securing Foundation Models and LoRA Adapters](https://arxiv.org/abs/2605.13163)：路由备注：面向基础模型与 LoRA adapter 的低秩加密属于安全基础设施，不是科学知识建模。
+- [Force-Aware Neural Tangent Kernels for Scalable and Robust Active Learning of MLIPs](https://arxiv.org/abs/2605.13788)：以力感知核采集方法扩展原子间势的稳健主动学习。
+- [Crys-JEPA](https://arxiv.org/abs/2605.14759)：通过 embedding screening 与 generative refinement 加速晶体发现。
+- [Composable Crystals](https://arxiv.org/abs/2605.14769)：用 concept learning 支持可控材料发现。
+- [GFMate: Empowering Graph Foundation Models with Test-time Prompt Tuning](https://arxiv.org/abs/2605.14809)：为图基础模型加入测试时 prompt tuning，在无需完整重训的情况下完成适配。
+- [Breakeven complexity: A new perspective on neural partial differential equation solvers](https://arxiv.org/abs/2605.15399)：分析神经 PDE 求解器何时能相对经典求解器抵消训练与推理成本。
+- [LLM-assisted intelligent discovery of metal-organic frameworks for solid-state electrolytes](https://doi.org/10.1016/j.mattod.2026.103225)：用 LLM 辅助发现用于固态电解质的金属有机框架材料。
+- [Long-Term Meteorological Disaster Prediction for Low-Altitude Routes in Complex Micrometeorology Environments Using Deep Temporal Models](https://doi.org/10.1109/cisce69494.2026.11504642)：用深度时间模型预测复杂微气象环境下低空航线的长期气象灾害风险。
+- [Dispersion-inclusive surface chemistry optimizer: An AI platform for high-precision surface science](https://doi.org/10.1016/j.cclet.2026.112720)：提供面向高精度表面科学的 AI 优化平台，并纳入色散作用建模。
+- [Stability-aware, transferable discovery of metal-organic frameworks for selective adsorption of C6 alkane isomers by machine learning](https://doi.org/10.1016/j.cej.2026.176943)：用可迁移机器学习在稳定性约束下发现用于 C6 alkane isomer 选择性吸附的 metal-organic frameworks。
+- [Tri-modal Machine Learning Powers Efficient Catalyst Discovery for High-performance Energy Storage](https://doi.org/10.1016/j.ensm.2026.105204)：用 tri-modal machine learning 加速高性能储能场景中的催化剂发现。
+- [Accelerating the discovery of single-atom catalysts for nitrate reduction via machine learning and DFT](https://doi.org/10.1016/j.cclet.2026.112734)：结合机器学习与 DFT 加速 nitrate reduction 单原子催化剂发现。
+- [Facilitating creep-resistant Al alloy design through a physics-aware integrated machine learning pipeline](https://doi.org/10.1016/j.mtcomm.2026.114676)：用物理感知机器学习流程设计抗蠕变铝合金。
+- [Hierarchical physics-guided neural network for sparse-data heterogeneous material identification](https://doi.org/10.1016/j.ijmecsci.2026.111291)：构建层级式物理引导神经网络，从稀疏观测中识别非均质材料。
+- [AI-Driven Multi-Property Prediction and Manufacturability-Aware Design for Electronic Materials and Devices](https://doi.org/10.1016/j.mtelec.2026.100209)：把多性质预测与可制造性约束结合，用于电子材料和器件设计。
+- [Data-driven design of Nb-W refractory alloys using Transformer-based stress-strain modeling](https://doi.org/10.1016/j.actamat.2026.122123)：用 Transformer 应力应变模型指导 Nb-W 难熔合金的数据驱动设计。
+- [Transformative discovery of rare-earth functional materials for energy and electronics via machine learning](https://doi.org/10.1016/j.esen.2026.100061)：用机器学习发现面向能源与电子应用的稀土功能材料。
+- [Graph representation learning for predicting processing conditions in Spinodal decomposition microstructures](https://doi.org/10.1016/j.commatsci.2026.114522)：用 spinodal decomposition 微结构的图表征推断可能的加工条件。
+- [SPFlow: A flow-based symmetry-preserving generative model for crystalline materials](https://doi.org/10.1016/j.mtphys.2026.102063)：提出保持晶体对称性的 flow-based 生成模型，用于晶体材料生成。
+- [Machine Learning for Microstructure Synthesis in Fusion Materials: A Physics-Aware Validation Framework for Tungsten Plasma-Facing Components](https://doi.org/10.1016/j.jnucmat.2026.156473)：用物理感知验证框架评估面向聚变等离子体壁钨部件的 ML 生成微结构。
+- [Machine learning prediction of multi-step hydrogenation energetics in transition metal-doped phosphorene](https://doi.org/10.1016/j.comptc.2026.115767)：用机器学习预测过渡金属掺杂 phosphorene 的多步加氢能量学。
+- [Machine learning-driven approaches in electrochemical CO2 reduction: Bridging the gap between data and sustainable catalysis](https://doi.org/10.1016/j.ccr.2026.217850)：综述用于电化学 CO2 还原催化的机器学习方法，以及限制可持续催化剂发现的数据缺口。
+- [Feature screening and sample synthesis for enhancing generalization predictive performance on imbalanced small data: amorphous alloy design](https://doi.org/10.1016/j.matdes.2026.115928)：结合特征筛选与样本合成，提升小样本不平衡非晶合金预测的泛化能力。
+- [Accelerating Materials Discovery for Water Crisis: Multi-Objective Machine Learning for Atmospheric Water Harvesting by MOFs](https://doi.org/10.1016/j.mtcomm.2026.115393)：用多目标机器学习搜索适合大气集水权衡目标的 MOF。
+- [Simulating silicon thermal oxidation with the hybrid MD + tfMC approach](https://doi.org/10.1016/j.commatsci.2026.114598)：结合分子动力学与 trial-free Monte Carlo 模拟硅热氧化。
+- [Let Materials Science Data Learn to Reason](https://doi.org/10.53941/aimat.2026.100004)：主张构建面向推理的材料科学数据表示，而不仅是性质预测数据集。
+- [AI-Driven Discovery of New Materials: Breaking Data Bottlenecks and Transforming Research Paradigms](https://doi.org/10.1360/csb-2026-0182)：综述 AI 驱动材料发现，重点讨论数据瓶颈与新型研究工作流。
+- [South China Sea “神针(Trident)”: Solution for ocean forecast foundation models](https://doi.org/10.1016/j.xinn.2026.101364)：提出南海“神针”海洋预报基础模型方案。
+- [Named Entity Recognition With Clue-Word Tags From Patent Documents in Materials Science](https://doi.org/10.1109/access.2026.3671976)：在材料科学专利 NER 中加入 clue-word tags，用于抽取结构化科学实体。
+- [A two-stage machine-learning framework for the discovery of stable boron-based and sulfur-terminated MXenes as promising hydrogen evolution reaction catalysts](https://doi.org/10.1016/j.ijhydene.2026.155583)：用两阶段机器学习筛选稳定硼基与硫端基 MXene，用于析氢反应催化。
+- [Physics-informed deep operator network for formability evaluation of dual-phase steels](https://doi.org/10.1016/j.ijmecsci.2026.111504)：将物理信息 DeepONet 用于双相钢成形性评估。
+- [Elementor: an Embodied Chemistry Learning Game Using Mixed Reality and Generative Artificial Intelligence](https://doi.org/10.1109/vr67842.2026.00035)：路由备注：这是混合现实化学学习游戏，属于教育交互软件，不是模型侧科学知识方法。
+- [AUTONOMOUS POLYMER MATERIALS DISCOVERY: ARTIFICIAL INTELLIGENCE ARCHITECTURES FOR GENERATIVE DESIGN AND CLOSED-LOOP ENGINEERING](https://doi.org/10.36868/ejmse.2026.11.01.003)：描述用于生成式聚合物设计与闭环工程的 AI 架构。
+- [StableOx-Cat agent: an AI agent for exploring stable metal oxide electrocatalysts](https://doi.org/10.20517/aiagent.2026.03)：路由备注：该电催化剂探索智能体可能更适合 autonomous-discovery harness，而不是 Model。
+- [RSS-KAN: Replacing B-splines with ReLU, Sigmoid, and Sine for accurate and efficient Kolmogorov-Arnold Networks](https://doi.org/10.1016/j.neucom.2026.132796)：用 ReLU、sigmoid 与 sine 基函数替代 KAN 的 B-spline，以提升精度和效率。
+- [Physics-aware generative models for turbulent fluid flows through energy-consistent stochastic interpolants](https://doi.org/10.1016/j.compfluid.2026.107098)：用 energy-consistent stochastic interpolants 生成物理感知湍流场。
+- [A Robust Data-Free Physics-Informed Neural Network for Compressible Flows with Shocks](https://doi.org/10.1016/j.compfluid.2026.106975)：训练无需标注 CFD 数据的 data-free PINN，用于带激波可压缩流的稳健求解。
+- [A Spectral-Guided Latent Physics Solver for PDE Problems](https://doi.org/10.1109/icassp55912.2026.11464790)：为 PDE 问题的潜在物理求解器加入谱引导。
+- [PI-DeepOKAN: Physics-Informed Deep Operator Kolmogorov– Arnold Network with Output-Head Reweighting for Multiphase Flow Prediction](https://doi.org/10.1016/j.eswa.2026.132114)：结合物理信息 DeepOKAN 算子与输出头重加权，用于多相流预测。
+- [A flow-aware training strategy for physics-informed neural networks](https://doi.org/10.1016/j.cma.2026.118910)：围绕流动结构调整 PINN 训练策略，以改善流体仿真学习。
+- [Learned Adaptive Weighting for Physics-Informed Fourier Neural Operators: Solving Discontinuous PDEs with Limited Data](https://doi.org/10.1016/j.apm.2026.117079)：为物理信息 Fourier neural operator 学习自适应损失权重，以处理低数据、非连续 PDE。
+- [QuMuS: A scalable tool for quantum mutant testing on NISQ hardware](https://doi.org/10.1016/j.softx.2026.102651)：路由备注：NISQ 硬件上的量子 mutant testing 属于软件测试基础设施，不是科学知识模型。
+- [Physics-Informed Guided Reconstruction: Electromagnetic Data Anomalous Noise Suppression via Spatial Mask Awareness](https://doi.org/10.1109/tgrs.2026.3687876)：用空间 mask 感知的物理信息重建抑制电磁数据异常噪声。
+- [Toward a composable, modular laboratory ecosystem for autonomous materials research and development](https://doi.org/10.1016/j.matt.2026.102756)：路由备注：模块化自主实验室生态属于 harness 或基础设施，而非模型侧条目。
+- [Research progress on bifunctional electrocatalytic materials for driving organic electrooxidation coupled with Hydrogen production](https://doi.org/10.1016/j.mcat.2026.115940)：路由备注：该条是电催化材料综述，应复核是否迁往 Survey 或移除。
+- [Augmented adaptive learning-based prediction and mixed-integer nonlinear optimization for catalyst discovery in CO2-to-methanol process](https://doi.org/10.1016/j.apenergy.2026.127597)：结合 augmented adaptive prediction 与混合整数非线性优化，用于 CO2 制甲醇催化剂发现。
+- [Predatory Journals and AI-Assisted Plagiarism of Scientific Research: Bootlegging Research as a New Criminological Reality](https://doi.org/10.3138/cjccj-2026-0201)：路由备注：该犯罪学和出版诚信文章偏离 scientific-knowledge Model 主轴。
+- [MatCreatioNN: Machine Learning Guided Computational Discovery of Photocatalysts for Environmental Applications](https://doi.org/10.1016/j.cattod.2026.115725)：用机器学习引导计算发现面向环境应用的光催化剂。
+- [Semantically-Guided Two-Stage Classification for Scientific Texts: Integrating Structural Awareness and Expert Routing](https://doi.org/10.3724/2096-7004.di.2025.0114)：把结构感知与专家路由结合，形成面向科学文本的两阶段分类器。
+- [Inverse design of metal-organic frameworks for direct air capture of CO2 via deep reinforcement learning](https://doi.org/10.1039/d4dd00010b)：用 deep reinforcement learning 逆向设计用于直接空气捕集 CO2 的金属有机框架。
+- [Text-Guided Crystal Chemical Space Generation](https://doi.org/10.1038/s41467-025-59636-y)：用 text-guided generative AI 探索晶体化学空间，补充材料发现模型。
+- [Systematic Softening in Universal MLIPs](https://doi.org/10.1038/s41524-024-01500-6)：分析 universal machine-learning interatomic potentials 中的系统性 softening 失效模式。
+- [Symmetry-Principle Crystal Structure Prediction](https://doi.org/10.1038/s43588-025-00775-z)：利用对称性原则提升晶体结构预测效率。
+- [Generative Discovery of Topological Materials](https://doi.org/10.1038/s41535-025-00731-0)：用深度生成模型发现新的拓扑绝缘体与半金属。
+- [CrysText](https://doi.org/10.1007/s40192-026-00451-8)：用基于 LLM 的文本条件生成晶体结构，扩展非生医科学生成建模。
+- [Constraint-Aware Quantum-Materials Generation](https://doi.org/10.1038/s41563-025-02355-y)：把结构约束整合进量子材料发现的生成模型。
+- [MatterGen Training-Data Memorization Critique](https://doi.org/10.1039/d6mh00268d)：分析 MatterGen 生成结果与训练化合物重合的问题，提示材料生成模型的记忆化风险。
+- [AIMNet2: a neural network potential to meet your neutral, charged, organic, and elemental-organic needs](https://doi.org/10.1039/d4sc08572h)：构建覆盖中性、带电、有机以及含元素有机原子体系的神经网络势模型。
+- [Continuous discovery of novel 2D materials via dual active learning-driven generative models](https://doi.org/10.1093/nsr/nwag101)：耦合生成式与预测式主动学习循环，探索未知化学空间并持续发现新型二维材料。
+- [End-to-end data-driven weather prediction](https://doi.org/10.1038/s41586-025-08897-0)：构建端到端数据驱动天气预测模型，强化大气系统科学基础模型覆盖。
+- [General reactive element-based machine learning potentials for heterogeneous catalysis](https://doi.org/10.1038/s41929-025-01398-3)：构建面向异相催化的通用反应式机器学习势，扩展原子尺度科学模型覆盖。
+- [Explainable Synthesizability Prediction of Inorganic Crystal Polymorphs Using Large Language Models](https://doi.org/10.1002/anie.202423950)：用大语言模型对无机晶体多晶型的可合成性进行可解释预测。
+- [Transferability of Data Sets between Machine-Learned Interatomic Potential Algorithms](https://doi.org/10.1021/acs.jctc.5c00272)：研究数据集在不同机器学习原子间势算法之间的可迁移性，厘清科学建模中的复用边界。
+- [Leveraging generative models with periodicity-aware, invertible and invariant representations for crystalline materials design](https://doi.org/10.1038/s43588-025-00797-7)：用周期性感知、可逆且不变的表示，让生成式材料设计更好地遵守晶体对称性与结构约束。
+- [Toward data-driven predictive modeling of electrocatalyst stability and surface reconstruction.](https://doi.org/10.1063/5.0271797)：面向电催化剂稳定性与表面重构的数据驱动预测建模，扩展科学 AI 在电化学中的覆盖。
+- [Diffusion–Model–Driven Discovery of Ferroelectrics for Photocurrent Applications](https://doi.org/10.1002/advs.202522108)：用 MatterGen 生成 12,800 个候选晶体，并结合多保真 ML 与 DFT 筛选发现光电流铁电材料。
+- [Transition State Searching Accelerated by Neural Network Potential](https://doi.org/10.1021/acs.jcim.4c01714)：用神经网络势加速过渡态搜索，把学习势能面从平衡态模拟扩展到反应路径探索。
+- [Automated and Efficient Sampling of Chemical Reaction Space](https://doi.org/10.1002/advs.202409009)：自动采样化学反应空间以构造 MLIP 训练数据，并结合快速近似计算与选择性高精度修正。
+- [Methods in PES-Learn: Direct-Fit Machine Learning of Born–Oppenheimer Potential Energy Surfaces](https://doi.org/10.3390/molecules31010100)：更新用于直接拟合机器学习势能面的开源流程，并加入核岭回归支持。
+- [Boosting Screening of Nonequiatomic High-Entropy Electrocatalysts by Inverse Design via Active Graph Learning](https://doi.org/10.1021/acscatal.5c05945)：结合逆向设计与主动图学习筛选非等原子高熵电催化剂。
+- [Inverse design of promising electrocatalysts for CO2 reduction via generative models and bird swarm algorithm](https://doi.org/10.1038/s41467-024-55613-z)：结合生成模型与鸟群优化搜索用于 CO2 还原的候选电催化剂。
+- [LLM-Prop: predicting the properties of crystalline materials using large language models](https://doi.org/10.1038/s41524-025-01536-2)：用大语言模型从晶体文本描述预测材料性质，补充基于图的晶体建模方法。
+- [Leveraging data mining, active learning, and domain adaptation for efficient discovery of advanced oxygen evolution electrocatalysts](https://doi.org/10.1126/sciadv.adr9038)：结合数据挖掘、主动学习与领域自适应，加速先进析氧电催化剂发现。
+- [Multi-modal conditional diffusion model using signed distance functions for metal-organic frameworks generation](https://doi.org/10.1038/s41467-024-55390-9)：结合多模态条件与 signed distance function 生成金属有机框架。
+- [Constant-Potential Machine Learning Force Field for the Electrochemical Interface.](https://doi.org/10.1021/acs.jctc.5c00784)：构建适用于恒电势电化学界面的机器学习力场。
+- [Generative Data Assimilation for Surface Ocean State Estimation From Multi‐Modal Satellite Observations](https://doi.org/10.1029/2025ms005063)：基于多模态卫星观测进行生成式资料同化，估计中尺度海洋状态并重建卫星未直接观测的变量。
+- [ANI-1ccx-gelu Universal Interatomic Potential and Its Fine-Tuning: Toward Accurate and Efficient Anharmonic Vibrational Frequencies.](https://doi.org/10.1021/acs.jpclett.4c03031)：扩展并微调用于通用原子间势，面向更准确的非谐振动频率预测。
+- [MOF-ChemUnity: Literature-Informed Large Language Models for Metal–Organic Framework Research](https://doi.org/10.1021/jacs.5c11789)：构建面向金属有机框架研究的文献增强大语言模型，连接 MOF 文献、结构化知识与材料推理。
+- [Learning Crystallographic Disorder: Bridging Prediction and Experiment in Materials Discovery](https://doi.org/10.1002/adma.202514226)：用基于晶体结构数据库训练的机器学习分类器估计无序结构倾向，衔接理想晶体预测与实验可实现性。
+- [PSCG-Net: A Multiscale Crystal Graph Neural Network for Accelerated Materials Discovery](https://doi.org/10.1021/acs.jcim.5c01460)：提出用于加速材料发现的多尺度晶体图神经网络，扩展科学 AI 中的晶体结构属性建模路线。
+- [Machine Learning Discovery of Record‐Low Lattice Thermal Conductivity in Double Perovskites](https://doi.org/10.1002/advs.202515766)：用机器学习发现具有超低晶格热导率的双钙钛矿，为科学建模部分补充材料性质发现案例。
+- [Maximizing efficiency of dataset compression for machine learning potentials with information theory](https://doi.org/10.1063/5.0312057)：用信息论和 minimum set cover 压缩机器学习原子间势数据集，在减少结构数量的同时尽量保留原子环境信息。
+- [GrapheneChat: A Large Language Model for Enhancing Graphene Research.](https://doi.org/10.1021/acsnano.5c21335)：构建面向石墨烯研究的大语言模型，为材料知识工作补充领域专用科学 LLM。
+- [Spatial Prediction of Electronic Wavefunctions from Reciprocal Lattices: Visualization of Electronic Properties of 2D Materials Using Deep Convolutional Neural Networks](https://doi.org/10.3390/aimater1010003)：用深度卷积神经网络从倒易晶格预测电子波函数，为材料电子结构建模补充一种路线。
+- [Machine-learning design of ductile FeNiCoAlTa alloys with high strength](https://doi.org/10.1038/s41586-025-09160-2)：用机器学习成分搜索和实验验证设计 FeNiCoAlTa 合金，使其同时具备高强度和延展性。
+- [A Euclidean transformer for fast and stable machine learned force fields](https://doi.org/10.1038/s41467-024-50620-6)：提出用于力场的 Euclidean Transformer 架构，在旋转感知几何建模、速度和分子模拟稳定性之间折中。
+- [Active machine learning model for the dynamic simulation and growth mechanisms of carbon on metal surface](https://doi.org/10.1038/s41467-023-44525-z)：用主动学习训练金属表面碳生长仿真模型，揭示动态沉积和生长机制。
+- [Harnessing large language models for data-scarce learning of polymer properties](https://doi.org/10.1038/s43588-025-00768-y)：利用 LLM 派生的聚合物表示和领域文本先验，在标注测量稀缺时提升聚合物性质预测。
+- [Suitability of large language models for extraction of high-quality chemical reaction dataset from patent literature](https://doi.org/10.1186/s13321-024-00928-8)：评估 LLM 从专利文献抽取反应条件和结果的能力，作为构建高质量化学反应数据集的路径。
+- [Improving Bond Dissociations of Reactive Machine Learning Potentials through Physics-Constrained Data Augmentation](https://doi.org/10.1021/acs.jcim.4c01847)：向反应型 MLIP 训练加入受物理约束的键解离增强样本，使势函数更好处理化学键断裂。
+- [XElemNet: towards explainable AI for deep neural networks in materials science](https://doi.org/10.1038/s41598-024-76535-2)：在 ElemNet 式材料性质预测上加入可解释性分析，把预测归因到化学组成特征。
+- [New Ways to Discover Novel Nonlinear Optical Materials: Scaling Machine Learning with Chemical Descriptors Information.](https://doi.org/10.1002/smll.202500540)：把化学描述符信息输入机器学习筛选模型，以扩展非线性光学材料发现。
+- [Ab Initio Simulation of Liquid Water without Artificial High Temperature.](https://doi.org/10.1021/acs.jctc.4c00650)：改进液态水从头算模拟，避免依赖人为高温修正。
+- [Generalized modeling of carbon film deposition growth via hybrid MD/MC simulations with machine-learning potentials](https://doi.org/10.1038/s41524-025-01781-5)：在混合分子动力学与蒙特卡洛模拟中使用机器学习势函数建模碳膜生长。
+- [Dynamic mesophase transition induces anomalous suppressed and anisotropic phonon thermal transport](https://doi.org/10.1038/s41524-024-01442-z)：研究动态中间相转变及各向异性声子热输运。
+- [Intricate short-range order in GeSn alloys revealed by atomistic simulations with highly accurate and efficient machine-learning potentials](https://doi.org/10.1103/physrevmaterials.8.043805)：用高精度机器学习势函数揭示 GeSn 合金短程有序。
+- [Lithium Localization by Anions in Argyrodite Solid Electrolytes from Machine‐Learning‐based Simulations](https://doi.org/10.1002/aenm.202402396)：用机器学习模拟研究 argyrodite 固态电解质中的锂定位。
+- [Machine Learning Interatomic Potential for Modeling the Mechanical and Thermal Properties of Naphthyl-Based Nanotubes](https://doi.org/10.1021/acs.jctc.4c01578)：用机器学习原子间势建模纳米管力学与热学性质。
+- [Real-space machine learning of correlation density functionals](https://doi.org/10.1038/s41467-025-66450-z)：在实空间中学习关联密度泛函。
+- [Graph2Mat: universal graph to matrix conversion for electron density prediction](https://doi.org/10.1088/2632-2153/adc871)：提供用于电子密度预测的图到矩阵转换方法。
+- [Inverse Design of High-Performance Thermoelectric Materials via a Generative Model Combined with Experimental Verification.](https://doi.org/10.1021/acsami.4c19494)：结合生成式逆向设计与实验验证发现高性能热电材料。
+- [Investigating the error imbalance of large-scale machine learning potentials in catalysis](https://doi.org/10.1039/d4cy00615a)：分析催化场景中大规模机器学习势函数的误差不均衡。
+- [Data-Driven Discovery of Water-Stable Metal-Organic Frameworks with High Water Uptake Capacity.](https://doi.org/10.1021/acsami.5c09320)：用数据驱动方法发现高吸水量且水稳定的 MOF。
+- [Accelerating Discovery of Infrared Nonlinear Optical Materials with High Lattice Thermal Conductivity: Combining Machine Learning and First‐Principles Calculations](https://doi.org/10.1002/adom.202403292)：结合机器学习与第一性原理计算加速红外非线性光学材料发现。
+- [Thermodynamics-Guided Machine Learning Framework with a Multiobjective Optimizer for Catalyst Discovery](https://doi.org/10.1021/acscatal.5c07191)：结合热力学约束与多目标优化，支持机器学习驱动的催化剂发现。
+- [PPO-GPR: A Custom Proximal Policy Optimization Tool for Active Reinforcement Learning](https://doi.org/10.1021/acsengineeringau.5c00122)：提出用于科学优化工作流的自定义 proximal policy optimization active reinforcement learning 工具。
+- [Incorporating Scientific Knowledge into Neural Network Density Functionals](https://doi.org/10.1021/acs.jctc.6c00270)：将科学知识融入 neural network density functionals，用于计算化学建模。
+- [Deep learning-driven anomaly detection and feature discovery in Ce-rich (Ni–Fe–Co–Ce)Ox catalysts for oxygen evolution reaction](https://doi.org/10.1039/d6ra02168a)：将深度学习用于 Ce-rich oxygen-evolution catalysts 的异常检测与特征发现。
+- [Machine-Learning-Guided Discovery and Statistical Analysis of Multielemental Reverse Water–Gas Shift Catalysts](https://doi.org/10.1021/acscatal.5c09278)：用机器学习与统计分析指导 multielemental reverse water-gas shift catalysts 的发现。
+- [Machine learning–driven discovery of optimal designs for water electrolysis devices](https://doi.org/10.1126/sciadv.adz1865)：用机器学习发现水电解设备的优化设计。
+- [D2VP: A Visual First Platform for Diagnosing Data Distribution Mismatch Toward Reliable Machine Learning in Materials Science](https://doi.org/10.1002/cphc.202500702)：提供 visual-first platform，用于诊断材料科学机器学习中的 data distribution mismatch 并提升可靠性。
+- [Artificial Intelligence for Materials Science: Transforming Research Paradigms](https://doi.org/10.1021/acs.chemrev.6c00012)：综述候选条目；围绕材料科学 AI 的数据基础设施、物理信息建模、自主发现和部署范式展开，而不是单一已训练模型。
+- [Materials Design Accelerated by Large Language Models: End-to-End Empowerment from Knowledge Mining to Intelligent Design](https://doi.org/10.7498/aps.74.20250497)：梳理从文献知识挖掘、知识构建到候选生成和智能设计决策的端到端 LLM 材料设计流程。
+- [Machine Learning for Accelerating Energy Materials Discovery: Bridging Quantum Accuracy with Computational Efficiency](https://doi.org/10.1002/aenm.202503356)：综述能量材料发现中以机器学习在量子精度和计算效率之间折中进行筛选、代理建模和性质预测的方法。
+- [Application of the AI2 Climate Emulator to E3SMv2's Global Atmosphere Model, With a Focus on Precipitation Fidelity](https://doi.org/10.1029/2024jh000136)：评估 AI2 Climate Emulator 作为 E3SMv2 全球大气输出的学习式代理模型，并以降水保真度作为压力测试。
+- [AI‐Assisted Design of 2D‐Material Electrode for Next‐Generation Wearable Aqueous Zinc Batteries](https://doi.org/10.1002/sstr.202500911)：用 AI 辅助筛选水系锌电池二维材料电极，将结构选择同可穿戴电池效率和稳定性关联起来。
+- [MLMD: a programming-free AI platform to predict and design materials](https://doi.org/10.1038/s41524-024-01243-4)：提出免编程材料平台，把性质预测与优化界面结合起来支持非代码用户开展 MLMD 设计循环。
+- [Leveraging language representation for materials exploration and discovery](https://doi.org/10.1038/s41524-024-01231-8)：使用材料文本或描述中的语言表征来指导探索，补充手工描述符之外的材料发现信号。
+- [Predicting thermodynamic stability of inorganic compounds using ensemble machine learning based on electron configuration](https://doi.org/10.1038/s41467-024-55525-y)：把电子构型特征输入集成机器学习模型，用于预测无机化合物热力学稳定性。
+- [Harnessing GPT-3.5 for text parsing in solid-state synthesis – case study of ternary chalcogenides](https://doi.org/10.1039/d3dd00202k)：以三元硫属化物为案例测试 GPT-3.5 解析固相合成步骤，把文献实验指令转成结构化合成数据。
+- [Materials-discovery workflow guided by symbolic regression for identifying acid-stable oxides for electrocatalysis](https://doi.org/10.1038/s41524-025-01596-4)：在材料发现流程中加入符号回归，推导用于识别耐酸氧化物电催化剂的可解释规则。
+- [Amortized Fourier Neural Operators](https://doi.org/10.52202/079017-3651)：将 Fourier neural operator 的推理摊销到算子族上，使 PDE 实例可共享训练后的求解能力而非逐例重训。
+- [Development of a machine learning finite-range nonlocal density functional.](https://doi.org/10.1063/5.0179149)：训练有限程非局域机器学习密度泛函，用于计算化学中的电子结构计算。
+- [Bond sensitive graph neural networks for predicting high temperature superconductors](https://doi.org/10.1002/mgea.48)：在图神经网络中编码键敏感特征，从成分或结构信号预测高温超导体。
+- [Identifying and embedding transferability in data-driven representations of chemical space](https://doi.org/10.1039/d4sc02358g)：学习带显式可迁移性估计的化学空间表征，使性质模型可跨相近化学域泛化。
+- [Closed-Loop Navigation of a Kinetic Zone Diagram for Redox-Mediated Electrocatalysis Using Bayesian Optimization, a Digital Twin, and Automated Electrochemistry.](https://doi.org/10.1021/acs.analchem.5c00099)：结合贝叶斯优化、数字孪生和自动化电化学，在氧化还原介导电催化的 kinetic zone diagram 中闭环搜索。
+- [Active Learning‐Guided Accelerated Discovery of Ultra‐Efficient High‐Entropy Thermoelectrics](https://doi.org/10.1002/adma.202515054)：用主动学习优先选择高熵热电组成，加速搜索超高效率候选材料。
+- [Deep Mind 21 functional does not extrapolate to transition metal chemistry](https://doi.org/10.1039/d4cp00878b)：在过渡金属化学上压力测试 DM21 密度泛函，揭示其训练分布外外推失效。
+- [Collective intelligence for AI-assisted chemical synthesis](https://doi.org/10.1038/s41586-026-10131-4)：把人类和机器反馈组织进 AI 辅助化学合成，通过集体建议改进反应规划。
+- [Advances in theory and computational methods for next-generation thermoelectric materials](https://doi.org/10.1063/5.0241645)：综述候选条目；梳理下一代热电材料中的电子结构、输运和机器学习筛选方法。
+- [A family of large language models for materials research with insights into model adaptability in continued pretraining](https://doi.org/10.1038/s42256-026-01199-8)：训练一组材料研究 LLM，并分析持续预训练如何改变其在材料任务上的适应性。
+- [Discovery of chemically modified higher tungsten boride by means of hybrid GNN/DFT approach](https://doi.org/10.1038/s41524-025-01628-z)：结合 GNN 筛选与 DFT 验证来发现化学改性的高阶钨硼化物结构。
+- [AI‐Driven Weather Forecasts to Accelerate Climate Change Attribution of Heatwaves](https://doi.org/10.1029/2025ef006453)：用 AI 天气预报更低成本地产生气候归因信号，以加速热浪气候变化归因。
+- [Machine‐Learning‐Driven Design of Dynamically Adaptive MOF Catalysts: Structural Evolution Mechanisms and Industrial Translation Pathways in Seawater Electrolysis](https://doi.org/10.1002/aenm.202506002)：用机器学习设计海水电解中的动态自适应 MOF 催化剂，并关联结构演化机制与工业转化路径。
+- [Transferable machine learning model for multi-target nanoscale simulations in hydrogen-carbon system from crystal to amorphous](https://doi.org/10.1038/s41524-025-01629-y)：训练覆盖晶体到非晶氢碳体系的可迁移机器学习势，同时处理多个纳米尺度模拟目标。
+- [Machine Learning Framework for Evaluating Microscale Interface Cohesive Zone Models of Polymer Composites.](https://doi.org/10.1021/acsami.5c16583)：用机器学习代理模型评估聚合物复合材料中的微尺度界面 cohesive-zone 模型。
+- [Synergizing a knowledge graph and large language model for relay catalysis pathway recommendation](https://doi.org/10.1093/nsr/nwaf271)：结合知识图谱和大语言模型来推荐 relay catalysis 路径。
+- [Machine learning global atomic representations with Euclidean fast attention](https://doi.org/10.1038/s42256-026-01195-y)：提出用于全局原子表征的 Euclidean fast attention，在保留几何信息的同时提升原子级建模可扩展性。
+- [Unified Graph-Based Interatomic Potential for Perovskite Structure Optimization](https://doi.org/10.1021/acs.jcim.5c01611)：构建统一图式原子间势，用于钙钛矿结构优化。
+- [Modulation of Tropical Cyclogenesis by the Convectively Coupled Kelvin Waves: Insights From Data‐Driven Climate Emulator ACE2](https://doi.org/10.1029/2025gl117387)：用 ACE2 数据驱动气候模拟器研究对流耦合 Kelvin 波如何调制热带气旋生成。
+- [Accelerated development of battery materials leveraging artificial intelligence and automation](https://doi.org/10.1557/s43579-025-00761-6)：综述候选条目；梳理 AI 与自动化如何从数据采集到闭环实验加速电池材料开发。
+- [Toward high entropy material discovery for energy applications using computational and machine learning methods](https://doi.org/10.1038/s41524-025-01918-6)：结合计算筛选和机器学习预测器，面向能源应用发现高熵材料。
+- [Accelerating materials recipe acquisition via LLM-mediated reinforcement learning](https://doi.org/10.1557/s43580-025-01143-9)：用 LLM 介导的强化学习获取材料配方，把合成规划转化为由奖励驱动的配方搜索。
+- [Exploring the Atmospheric Responses to Arctic Sea‐Ice Loss in Google's NeuralGCM](https://doi.org/10.1029/2025ms005264)：把 Google NeuralGCM 作为模拟器，用于分析北极海冰损失引发的大气响应。
+- [From High-Throughput Screening to Generative Design: Artificial Intelligence-Driven Dielectric Materials Discovery](https://doi.org/10.1021/acsami.6c05353)：连接高通量筛选与生成式设计，覆盖面向目标性质的介电材料预测器和生成器。
+- [How can machine learning facilitate computational electrochemistry](https://doi.org/10.1063/5.0320488)：综述候选条目；说明机器学习在计算电化学中的作用，包括代理势、反应建模和不确定性引导筛选。
+- [Artificial intelligence-facilitated multiscale theoretical modelling to advance battery science](https://doi.org/10.1007/s11426-025-3306-8)：综述候选条目；梳理从原子尺度到电池尺度理论仿真的多尺度 AI 电池科学方法。
+- [Metal–Organic Frameworks as Multifunctional Platforms for Chemical Sensors: Advances in Electrochemical and Optical Detection of Emerging Contaminants](https://doi.org/10.3390/pr14060886)：综述候选条目；聚焦 MOF 化学传感平台用于新兴污染物的电化学和光学检测，并非新的 AI 模型。
+- [Supporting Material Writing Practice with Phraselette, a Palette of Phrases](https://doi.org/10.1145/3715668.3735608)：路由备注：Phraselette 是基于短语调色板的写作辅助界面，不是科学建模方法。
+- [Redefining roles: Human–AI collaboration in screenwriting](https://doi.org/10.1386/josc_00190_1)：路由备注：该文分析剧本创作中的人机协作，应置于 Scientific Knowledge / Model 之外。
+- [“Gold-Standard” Δ‑Machine Learned Transferable Potential for Linear Alkanes](https://doi.org/10.1021/acs.jpclett.5c02946)：用高精度参考校正构建线性烷烃的 delta-machine-learned 可迁移势。
+- [Transformative applications of artificial intelligence in lithium battery materials science: advancements and future prospects](https://doi.org/10.1007/s12598-025-03617-z)：综述候选条目；梳理 AI 在锂电池材料筛选、设计、诊断和未来工作流中的应用。
+- [Artificial intelligence and illusions of understanding in scientific research](https://doi.org/10.1038/s41586-024-07146-0)：路由备注：讨论 AI 如何在科研实践中造成理解错觉，而不是提出科学模型。
+- [Seed-assisted formation of NiFe anode catalysts for anion exchange membrane water electrolysis at industrial-scale current density](https://doi.org/10.1038/s41929-024-01209-1)：材料化学条目；研究工业电流密度下用于阴离子交换膜水电解的 NiFe 阳极催化剂种子辅助形成，元数据中未显示可复用 AI 模型。
+- [Pushing the frontiers in climate modelling and analysis with machine learning](https://doi.org/10.1038/s41558-024-02095-y)：综述候选条目；总结用于气候建模、分析、模拟器和不确定性处理的机器学习方法，而不是提出单一模型。
+- [Enhancing Regional Climate Downscaling Through Advances in Machine Learning](https://doi.org/10.1175/aies-d-23-0066.1)：综述区域气候降尺度中的机器学习进展，包括从粗分辨率气候场学习局地降水和温度结构。
+- [Structure-aware graph neural network based deep transfer learning framework for enhanced predictive analytics on diverse materials datasets](https://doi.org/10.1038/s41524-023-01185-3)：用结构感知 GNN 预训练和迁移学习提升异构材料数据集上的性质预测。
+- [Leveraging infrared spectroscopy for automated structure elucidation](https://doi.org/10.1038/s42004-024-01341-w)：把红外光谱作为模型输入，用于自动推断分子或材料结构。
+- [Forecasting the eddying ocean with a deep neural network](https://doi.org/10.1038/s41467-025-57389-2)：训练深度神经海洋预报模型来处理涡旋分辨率动力学，而不只依赖粗分辨率物理海洋模型。
+- [Identifying general reaction conditions by bandit optimization](https://doi.org/10.1038/s41586-024-07021-y)：用 bandit optimization 在有限实验预算下搜索通用化学反应条件。
+- [Leveraging machine learning in porous media](https://doi.org/10.1039/d4ta00251b)：综述候选条目；覆盖多孔介质材料中的吸附、传输和性质预测机器学习模型。
+- [Accelerating materials property prediction via a hybrid Transformer Graph framework that leverages four body interactions](https://doi.org/10.1038/s41524-024-01472-7)：把 Transformer 和图模型结合，并显式利用四体相互作用特征来加速材料性质预测。
+- [Transformer-generated atomic embeddings to enhance prediction accuracy of crystal properties with machine learning](https://doi.org/10.1038/s41467-025-56481-x)：使用 Transformer 生成的原子嵌入作为描述符，提高晶体性质预测模型精度。
+- [Investigation and machine learning-based prediction of mechanical properties in hybrid natural fiber composites](https://doi.org/10.1038/s41598-025-18944-5)：用混杂天然纤维复合材料数据训练机器学习回归器，从配方和工艺变量预测力学性质。
+- [Recent Progress of Artificial Intelligence Application in Polymer Materials](https://doi.org/10.3390/polym17121667)：综述候选条目；梳理 AI 在聚合物材料性质预测、合成指导和结构-性质建模中的应用。
+- [Materials design with target-oriented Bayesian optimization](https://doi.org/10.1038/s41524-025-01704-4)：用目标导向贝叶斯优化把材料设计推向指定性质目标。
+- [Machine learning-enabled chemical space exploration of all-inorganic perovskites for photovoltaics](https://doi.org/10.1038/s41524-024-01270-1)：用机器学习探索用于光伏的全无机钙钛矿化学空间。
+- [Data-driven modeling of process-structure-property relationships in metal additive manufacturing](https://doi.org/10.1038/s44334-024-00003-y)：以数据驱动模型学习金属增材制造中的工艺-结构-性质关系。
+- [Design and Application of Electrocatalyst Based on Machine Learning](https://doi.org/10.1002/idm2.12249)：综述候选条目；覆盖机器学习引导的电催化剂设计、描述符选择、活性预测和应用流程。
+- [AI‐Generated Ammonium Ligands for High‐Efficiency and Stable 2D/3D Heterojunction Perovskite Solar Cells](https://doi.org/10.1002/adma.202503154)：用 AI 生成铵配体，以提升二维和三维异质结钙钛矿太阳能电池的效率与稳定性。
+- [Realistic material property prediction using domain adaptation based machine learning](https://doi.org/10.1039/d3dd00162h)：采用领域自适应，使在一个数据分布上训练的材料性质预测器迁移到更真实的目标条件。
+- [Accelerating the calculation of electron–phonon coupling strength with machine learning](https://doi.org/10.1038/s43588-024-00668-7)：训练机器学习代理模型以降低电子-声子耦合强度计算成本。
+- [A Diffusion-Based Pre-training Framework for Crystal Property Prediction](https://doi.org/10.1609/aaai.v38i8.28748)：用扩散目标预训练晶体表征，再针对晶体性质预测微调。
+- [Prometheus: Out-of-distribution Fluid Dynamics Modeling with Disentangled Graph ODE](https://proceedings.mlr.press/v235/wu24aa.html)：用解耦图 ODE 改进分布外流体动力学建模。
+- [Designing semiconductor materials and devices in the post-Moore era by tackling computational challenges with data-driven strategies](https://doi.org/10.1038/s43588-024-00632-5)：综述候选条目；说明后摩尔时代如何用数据驱动建模应对半导体材料和器件设计中的计算挑战。
+- [AI Approaches to Homogeneous Catalysis with Transition Metal Complexes](https://doi.org/10.1021/acscatal.5c01202)：综述候选条目；梳理过渡金属均相催化中的活性、选择性和配体空间探索 AI 模型。
+- [A deep equivariant neural network approach for efficient hybrid density functional calculations](https://doi.org/10.1038/s41467-024-53028-4)：用等变神经网络代理模型加速 hybrid density functional 电子结构计算。
+- [Neural Network Parameterization of Subgrid‐Scale Physics From a Realistic Geography Global Storm‐Resolving Simulation](https://doi.org/10.1029/2023ms003668)：从具有真实地理信息的全球风暴解析模拟中学习神经网络次网格参数化。
+- [Machine Learning Accelerated Screening Advanced Single-Atom Anchored MXenes Electrocatalyst for Nitrogen Fixation](https://doi.org/10.1021/acscatal.4c06914)：用机器学习筛选用于固氮电催化的单原子锚定 MXene 候选。
+- [Generalizing deep learning electronic structure calculation to the plane-wave basis](https://doi.org/10.1038/s43588-024-00701-9)：把深度学习电子结构计算扩展到平面波基组，增强其对非局域表征之外体系的迁移能力。
+- [Role of artificial intelligence in the design and discovery of next-generation battery electrolytes](https://doi.org/10.1063/5.0251325)：综述候选条目；梳理下一代电池电解液发现和设计中的 AI 方法。
+- [High‐Resolution National‐Scale Water Modeling Is Enhanced by Multiscale Differentiable Physics‐Informed Machine Learning](https://doi.org/10.1029/2024wr038928)：结合多尺度可微物理信息学习，提升全国尺度高分辨率水文建模。
+- [Experimental Study and ANN Development for Modeling Tensile and Surface Quality of Fiber-Reinforced Nylon Composites](https://doi.org/10.3390/polym17111528)：基于实验数据构建 ANN，预测纤维增强尼龙复合材料的拉伸和表面质量指标。
+- [Descriptors Divide‐and‐Conquer Enables Multifaceted and Interpretable Materials Structure–Activity Relationship Analysis](https://doi.org/10.1002/adfm.202421621)：把描述符分组进行 divide-and-conquer，使材料结构-活性模型能在多维因素上保持可解释性。
+- [PURE: Prompt Evolution with Graph ODE for Out-of-distribution Fluid Dynamics Modeling](https://doi.org/10.52202/079017-3333)：为 graph ODE 流体模型演化提示，使预测器更好适应分布外流体动力学状态。
+- [On the suitability of a convolutional neural network based RCM-emulator for fine spatio-temporal precipitation](https://doi.org/10.1007/s00382-024-07350-8)：测试基于 CNN 的区域气候模型模拟器是否适合精细时空降水降尺度。
+- [Improving Hardenability Modeling: A Bayesian Optimization Approach to Tuning Hyperparameters for Neural Network Regression](https://doi.org/10.3390/app14062554)：用贝叶斯优化调节神经网络回归器超参数，以改进钢材淬透性建模。
+- [Hybrid-LLM-GNN: Integrating Large Language Models and Graph Neural Networks for Enhanced Materials Property Prediction](https://doi.org/10.1039/d4dd00199k)：结合 LLM 派生表征和 GNN 结构建模，提升材料性质预测。
+- [Extracting structured data from organic synthesis procedures using a fine-tuned large language model](https://doi.org/10.1039/d4dd00091a)：微调大语言模型，从有机合成步骤中抽取结构化字段。
+- [Deep learning for property prediction of natural fiber polymer composites](https://doi.org/10.1038/s41598-025-10841-1)：用深度学习根据材料和工艺输入预测天然纤维聚合物复合材料性质。
+- [Learning Conditional Policies for Crystal Design Using Offline Reinforcement Learning](https://doi.org/10.1039/d4dd00024b)：训练离线强化学习条件策略，在目标性质约束下生成晶体设计动作。
+- [A Generative Super‐Resolution Model for Enhancing Tropical Cyclone Wind Field Intensity and Resolution](https://doi.org/10.1029/2024jh000375)：用生成式超分辨率增强热带气旋风场的强度和空间分辨率。
+- [Generative deep learning for predicting ultrahigh lattice thermal conductivity materials](https://doi.org/10.1038/s41524-025-01592-8)：用生成式深度学习识别超高晶格热导率材料。
+- [Machine‐Learning (ML)‐Physics Fusion Model Accelerates the Paradigm Shift in Typhoon Forecasting With a CNOP‐Based Assimilation Framework](https://doi.org/10.1029/2025gl115926)：把机器学习预测与基于 CNOP 的物理同化框架融合，用于台风预报。
+- [PDGPT: A large language model for acquiring phase diagram information in magnesium alloys](https://doi.org/10.1002/mgea.77)：用领域大语言模型从材料文本中获取镁合金相图信息。
+- [Shock wave prediction in transonic flow fields using domain-informed probabilistic deep learning](https://doi.org/10.1063/5.0185370)：采用领域信息约束的概率深度学习预测跨声速流场中的激波。
+- [An open-source family of large encoder-decoder foundation models for chemistry](https://doi.org/10.1038/s42004-025-01585-0)：发布 encoder-decoder 化学基础模型族，支持分子语言、性质预测和生成任务。
+- [An interpretable machine learning model for seasonal precipitation forecasting](https://doi.org/10.1038/s43247-025-02207-2)：提出 TelNet 这一 encoder-decoder-head 模型，用历史降水和气候指数预测六个重叠季节提前期的格点经验分布。
+- [A fast physics-based perturbation generator of machine learning weather model for efficient ensemble forecasts of tropical cyclone track](https://doi.org/10.1038/s41612-025-01009-9)：从 AI 天气模型自演化动力学中构造物理约束初始扰动，用于生成 2,000 成员热带气旋路径集合预报。
+- [Discovery of highly fluorescent covalent organic frameworks through AI-assisted iterative experiment–learning cycles](https://doi.org/10.1038/s41557-025-01974-x)：把模型推荐、实验验证和主动学习耦合成 COF 迭代发现闭环，用于寻找高荧光多孔框架。
+- [Towards Next-Generation Logic Synthesis: A Scalable Neural Circuit Generation Framework](https://doi.org/10.52202/079017-3147)：提出 T-Net，以正则化三角形神经电路生成器、hardness-aware loss 和 RL 辅助进化优化扩展逻辑综合。
+- [A materials terminology knowledge graph automatically constructed from text corpus](https://doi.org/10.1038/s41597-024-03448-0)：用中英文材料语料的 NLP 抽取构建 MGED-KG，形成 8,660 个术语节点和类型化关系，服务材料知识表示复用。
+- [Pretraining Strategies for Structure Agnostic Material Property Prediction](https://doi.org/10.1021/acs.jcim.3c00919)：比较不依赖已知晶体结构的材料性质预测预训练策略，面向结构未知场景的下游回归迁移。
+- [Searching for low thermal conductivity materials for thermal barrier coatings: A theoretical approach](https://doi.org/10.1103/physrevmaterials.8.033601)：用第一性原理与筛选式建模搜索低晶格热导率的热障涂层候选材料。
+- [The Melamine-Driven Solvation Effect Promotes Oxygen Reduction on a Platinum Catalyst: Machine Learning-Aided Free Energy Calculations](https://doi.org/10.1021/acs.jpclett.4c03437)：用机器学习辅助自由能计算解释三聚氰胺诱导溶剂化如何改变铂催化氧还原行为。
+- [SERS Cheminformatics: Opportunities for Data-Driven Discovery and Applications](https://doi.org/10.1021/acscentsci.5c00785)：综述候选：把表面增强拉曼光谱转化为 cheminformatics 数据问题，强调谱图整理、分子描述符和发现流程，而不是新模型。
+- [Advancing Force Fields Parameterization: A Directed Graph Attention Networks Approach.](https://doi.org/10.1021/acs.jctc.3c01421)：用有向图注意力网络学习力场参数，把分子图结构映射到极化或键合相互作用项。
+- [Understanding the Photoinduced Desorption and Oxidation of CO on Ru(0001) Using a Neural Network Potential Energy Surface](https://doi.org/10.1021/jacsau.4c00197)：训练神经网络势能面，在光诱导反应条件下模拟 Ru(0001) 表面的 CO 脱附与氧化。
+- [Rational Design of Carbon‐Based Electrocatalysts for H2O2 Production by Machine Learning and Structural Engineering](https://doi.org/10.1002/aenm.202500953)：综述候选：总结 DFT、机器学习和结构工程如何筛选用于 H2O2 生产的碳基二电子氧还原电催化剂。
+- [Toward a Learnable Climate Model in the Artificial Intelligence Era](https://doi.org/10.1007/s00376-024-3305-9)：综述候选：讨论在保留气候系统约束的同时，从数据中学习气候模型物理组件和参数化方案。
+- [Machine Learning for Materials Discovery: Numerical Recipes and Practical Applications](https://doi.org/10.1007/978-3-031-44622-1)：书籍型参考，整理材料发现中的描述符、模型选择、不确定性和实际筛选工作流。
+- [Performance Prediction of High‐Entropy Perovskites La0.8Sr0.2MnxCoyFezO3 with Automated High‐Throughput Characterization of Combinatorial Libraries and Machine Learning](https://doi.org/10.1002/adma.202407372)：结合自动化组合材料库表征与机器学习，刻画高熵钙钛矿氧化物的成分、结构和性能关系。
+- [Understanding the Performance of (Ni−Fe−Co−Ce)Ox‐Based Water Oxidation Catalysts via Explainable Artificial Intelligence Framework](https://doi.org/10.1002/celc.202300647)：用可解释机器学习预测 Ni-Fe-Co-Ce 氧化物析氧活性，并揭示成分与活性的关联。
+- [Advanced forecasts of global extreme marine heatwaves through a physics-guided data-driven approach](https://doi.org/10.1088/1748-9326/adbddd)：设计 10 天海洋热浪预报模型，通过数值模式启发的耦合模块和概率数据增强提升极端事件预测。
+- [Defect modeling in semiconductors: the role of first principles simulations and machine learning](https://doi.org/10.1088/2515-7639/adb181)：综述候选：梳理 DFT 与机器学习如何加速半导体点缺陷能量和性质预测。
+- [Accelerated design of nickel-cobalt based catalysts for CO2 hydrogenation with human-in-the-loop active machine learning](https://doi.org/10.1039/d4cy00873a)：用可解释数据驱动建模和人在回路主动学习，预测合成与反应条件对镍钴 CO2 甲烷化催化剂的影响。
+- [Empowering Chemistry Experts with Large Language Models for Literature Interpretation in Single-Atom Catalysis Toward Advanced Oxidation.](https://doi.org/10.1002/anie.202520525)：把 LLM 结构化抽取与专家迭代校正结合，将高级氧化单原子催化剂文献转化为可分析知识。
+- [Large Language Models Assisted Materials Development: Case of Predictive Analytics for Oxygen Evolution Reaction Catalysts of (Oxy)hydroxides](https://doi.org/10.1021/acssuschemeng.5c00798)：用 LLM 辅助材料分析整理析氧催化剂证据，并支持羟基氧化物催化剂的预测建模。
+- [End-to-end prediction and design of additively manufacturable alloys using a generative AlloyGPT model](https://doi.org/10.1038/s41524-025-01768-2)：训练生成式 AlloyGPT，在增材制造约束下同时进行合金性能预测和逆向设计。
+- [Reac-Discovery: an artificial intelligence–driven platform for continuous-flow catalytic reactor discovery and optimization](https://doi.org/10.1038/s41467-025-64127-1)：平台或 harness 迁移候选：把 AI 优化接入连续流催化反应器，用于搜索反应条件与催化剂设计。
+- [Bayesian Optimization for Chemical Synthesis in the Era of Artificial Intelligence: Advances and Applications](https://doi.org/10.3390/pr13092687)：综述候选：梳理化学合成优化中的 Gaussian process 代理模型、采集函数和探索-利用权衡。
+- [A Hierarchical Context Augmentation Method to Improve Retrieval-Augmented LLMs on Scientific Papers](https://doi.org/10.1145/3637528.3671847)：在 LLM 生成答案前加入论文结构化层级上下文，改进面向科学论文的检索增强生成。
+- [Incorporating Neural Networks into the AMOEBA Polarizable Force Field](https://doi.org/10.1021/acs.jpcb.3c08166)：构建 AMOEBA+NN 混合势，用 AMOEBA 处理长短程非共价相互作用，并让神经网络学习局部共价修正项。
+- [Conformal Crystal Graph Transformer with Robust Encoding of Periodic Invariance](https://doi.org/10.1609/aaai.v38i1.27781)：提出晶体图 Transformer，编码 E(3) 不变性和周期不变性，以改进晶体性质预测中的角度与周期结构建模。
+- [Machine-Learning Predictions of Critical Temperatures from Chemical Compositions of Superconductors](https://doi.org/10.1021/acs.jcim.4c01137)：训练基于化学组成的超导临界温度预测器，用于缺少精细结构信息时的公式级预测。
+- [Interpreting chemisorption strength with AutoML-based feature deletion experiments](https://doi.org/10.1073/pnas.2320232121)：用 AutoML 和受控特征删除实验识别影响催化剂化学吸附能预测的关键物理描述符。
+- [Machine learning-based screening of two-dimensional perovskite organic spacers](https://doi.org/10.1007/s42114-024-00910-w)：用机器学习筛选二维钙钛矿有机 spacer，缩小稳定且高性能杂化材料候选空间。
+- [Discovery Learning predicts battery cycle life from minimal experiments](https://doi.org/10.1038/s41586-025-09951-7)：从少量早期循环实验中学习电池寿命预测器，以更少测量实现更快电芯筛选。
+- [Inverse Design for Materials Discovery from the Multidimensional Electronic Density of States](https://doi.org/10.1039/d3ta06491c)：以多维电子态密度目标作为条件，用深度学习进行无机材料逆向设计。
+- [Co-intelligent Design of Catalysis Research with Large Language Models: Hype or Reality?](https://doi.org/10.1021/acscatal.5c04238)：评估 LLM 辅助催化研究设计的作用边界，并强调哪些环节仍需要专家监督。
+- [Seamless Science: Lifting Experimental Mechanical Testing Lab Data to an Interoperable Semantic Representation](https://doi.org/10.1002/adem.202401527)：数据基础设施迁移候选：把力学测试实验室数据转换为本体支撑的语义表示，提升材料记录互操作性。
+- [Optimizing toward Discovery: AI-Driven Exploration of Lewis Acid-Base Catalysts for PET Glycolysis.](https://doi.org/10.1021/jacs.5c20630)：用 AI 驱动优化探索 PET 糖解反应中的 Lewis 酸碱催化剂选择，并关联反应性能与催化剂空间搜索。
+- [Large language models for knowledge graph extraction from tables in materials science](https://doi.org/10.1039/d4dd00362d)：用 LLM 从材料科学表格中抽取结构化事实，将分散的表格文献数据组装为知识图谱。
+- [Active Learning for Accelerated Discovery of Two-Dimensional Magnetic Topological Materials](https://doi.org/10.1021/acs.chemmater.5c00908)：结合主动学习与材料筛选，优先选择二维磁性拓扑材料候选进入昂贵验证环节。
+- [Extracting and reconstructing knowledge in materials science literature using large language models](https://doi.org/10.1038/s43246-025-01043-3)：用 LLM 抽取并重构材料文献中的合成、性质与结构信息，把分散事实转为结构化科学知识。
+- [Exploring the application of ChatGPT in scientific topic analysis: a novel paradigm for enhanced analysis and efficiency](https://doi.org/10.1007/s10489-025-06498-y)：偏离模型主轴或可迁移至综述：研究 ChatGPT 作为科学主题分析辅助工具，而不是提出科学领域模型。
+- [Machine Learning‐Driven Perovskite Research from Experimental Exploration to Industrial Development](https://doi.org/10.1002/solr.202500464)：综述候选：梳理机器学习在钙钛矿太阳能电池筛选、器件重设计、制造、自动优化和工业质控中的作用。
+- [Machine Learning for Photocatalytic Materials Design and Discovery](https://doi.org/10.3390/cryst15121034)：综述候选：总结 ML 引导光催化材料发现中的数据收集、特征工程、模型选择与验证工作流。
+- [Machine learning-driven research in wood science: from prediction to understanding through the framework of Wood Informatics](https://doi.org/10.1186/s10086-026-02258-9)：综述候选：提出 Wood Informatics 框架，突出木材科学 ML 的数据异质性、泛化和可解释性问题。
+- [Accelerated discovery of multinary chalcogenide quantum dots: combining aqueous chemistry with high-throughput experimentation and machine learning](https://doi.org/10.1088/2399-1984/ae271b)：观点或工作流迁移候选：结合水相合成、高通量实验和 ML 导航多元硫属量子点发现空间。
+- [Ethics of the Use of Artificial Intelligence in Academia and Research: The Most Relevant Approaches, Challenges and Topics](https://doi.org/10.3390/informatics12040111)：偏离模型清理主轴：这篇 PRISMA 式综述讨论学术 AI 使用的伦理风险与机会，而非科学模型设计。
+- [Causal Matrix Long Short-Term Memory Network for Interpretable Significant Wave Height Forecasting](https://doi.org/10.3390/jmse13101872)：提出 C-mLSTM，把 cointegration 和 Granger 因果特征选择嵌入 LSTM 预报器，并用 Bayesian optimization 与 TD3 优化。
+- [A data-driven approach for risk assessment and material identification of buried objects using microwave measurements and neural networks](https://doi.org/10.1038/s41598-025-28188-y)：用神经网络处理微波测量以识别埋藏物材料并评估风险，更接近窄域传感应用而非通用科学建模。
+- [Discovery of novel High-Tc superconductors via machine learning-based random forest model](https://doi.org/10.1007/s00339-025-08758-7)：用随机森林模型基于材料描述符筛选潜在高临界温度超导体。
+- [Exploration of nonlinear optical materials by introducing information science](https://doi.org/10.1039/d5tc02957k)：提出信息科学引导的材料搜索方案，用于发现深紫外非线性光学晶体。
+- [MatImageAgent: A Large Language Multimodal Agent for Materials Characterization Images](https://doi.org/10.1002/mgea.70058)：Agent Harness 迁移候选：用 LLM 任务描述自动执行 SEM、XCT 和 AFM 图像识别、定量分析与报告生成。
+- [TRACER: a reliability-first GemNet baseline for trustworthy computational materials discovery](https://doi.org/10.1038/s41598-026-45279-6)：构建以可靠性为先的 GemNet 基线，用于可信计算材料发现，而不只追求榜单精度。
+- [Accelerated Discovery of Fluorophosphates as Deep‐Ultraviolet Nonlinear Optical Materials in the Y–P–O–F System: Unveiling New Composition‐Structure‐Property Rules](https://doi.org/10.1002/lpor.71297)：结合晶体结构预测、预训练 ML 筛选和 DFT 计算，在 Y-P-O-F 体系中搜索深紫外非线性光学氟磷酸盐。
+- [High‐Performance Infrared Nonlinear Optical Crystals Discovery Guided by High‐Throughput Computation, Machine Learning, and Experimental Verification](https://doi.org/10.1002/ange.2407356)：构建 1,807 个化合物的高通量数据集，定义非线性光学综合指标，并把 ML 筛选与定向合成结合。
+- [A transferable data driven framework for electrolyte discovery](https://doi.org/10.1007/s43937-025-00122-3)：提出可迁移的数据驱动电解质发现流程，用于在不同电解质化学空间之间复用筛选信号。
+- [Harnessing generative AI for efficient organic materials discovery in low-data regimes](https://doi.org/10.1039/d5dd00463b)：结合基于 building block 的生成式设计与 DFT 筛选，在低数据条件下发现有机 TADF 发光体。
+- [Smart Exploration of Perovskite Photovoltaics: From AI Driven Discovery to Autonomous Laboratories](https://doi.org/10.1002/aenm.202506803)：综述候选：梳理面向高维钙钛矿光伏成分、工艺和器件变量的 AI 优化与自主实验室策略。
+- [Discovery of tunable and soluble organic emitters for solid-state lasers with a self-driving laboratory](https://doi.org/10.1038/s41467-026-69233-2)：自驱动实验室迁移候选：结合自动化实验和模型引导搜索，发现可调谐且可溶的固态激光有机发光体。
+- [AI-Agent-Guided Design of Dual-Scale Modulated Nickel-Based Catalyst with Built-In Electric Field for Enhanced Biomass Electrooxidation](https://doi.org/10.1021/acsnano.6c00124)：Agentic 设计迁移候选：用 AI agent 引导设计带双尺度调制和内建电场的镍基生物质电氧化催化剂。
+- [CALPHAD-based cross-system knowledge transfer for rapid discovery of high-performance Al–Mg–Zn alloys](https://doi.org/10.1038/s41524-026-02073-2)：利用 CALPHAD 派生的跨体系知识迁移，在搜索高性能 Al-Mg-Zn 合金时复用热力学知识。
+- [Generative Design for Alloys: Harnessing Generative Models for Faster Discovery.](https://doi.org/10.1002/adma.202520478)：综述候选：围绕成分、加工、微结构和架构设计任务组织合金生成模型，而不是单一性质预测器。
+- [Evolve with your research: stepwise system evolution from document-driven to fact-centric research data management in materials science](https://doi.org/10.1186/s13321-026-01180-y)：数据基础设施迁移候选：介绍图结构 MatInf 研究数据系统和 STAR 范式，用于可追踪材料数据管理。
+- [Discovery of Effective Halide Solid Electrolytes for Solid-State Rechargeable Batteries via Machine Learning and DFT Calculations](https://doi.org/10.1021/acsaem.5c03277)：结合机器学习筛选和 DFT 验证，寻找适用于固态可充电电池的卤化物固态电解质。
+- [Automated construction of inorganic materials databases and materials discovery based on large language models](https://doi.org/10.1177/14727978251352139)：在材料语料上微调指令式 LLM，抽取材料-性质-合成关系，并自动构建无机材料数据库用于发现。
+- [Mathematical Generalization of Kolmogorov-Arnold Networks (KAN) and Their Variants](https://doi.org/10.3390/math13193128)：综述候选：梳理 KAN 的数学基础、推广与变体，并将其定位为可解释非线性建模架构。
+- [How Machine Learning Has Driven the Development of Rechargeable Ion Batteries](https://doi.org/10.1002/aenm.202504095)：综述候选：围绕工作流设计、算法选择、可解释性以及电极和电解质应用组织可充电离子电池 ML 进展。
+- [Automating Synthetic Organic Electrochemistry: Concepts and Advancements](https://doi.org/10.1002/cmtd.202500104)：综述候选：梳理自动化电化学平台、在线分析和闭环自驱动实验室模块在有机电合成中的应用。
+- [Kolmogorov–Arnold Network‐Enhanced Timeseries Networks for Dynamic Production Prediction in Carbon Capture, Utilization, and Storage‐Enhanced Oil Recovery Projects](https://doi.org/10.1002/ese3.70357)：设计 KAN 增强时间序列网络，用于 CCUS-EOR 产量预测，并强调可解释、低成本的油藏预测。
+- [Catalysis in the digital age: Unlocking the power of data with machine learning](https://doi.org/10.1002/wcms.1730)：综述候选：梳理机器学习如何结合实验与计算催化数据来筛选、优化并解释催化剂候选。
+- [Physics-informed neural networks with hybrid Kolmogorov-Arnold network and augmented Lagrangian function for solving partial differential equations](https://doi.org/10.1038/s41598-025-92900-1)：提出 AL-PKAN，把 KAN 式 encoder-decoder 函数与 augmented Lagrangian 约束结合，用于 PDE residual 优化。
+- [Constitutive scientific generative agent (CSGA): Leveraging large language models for automated constitutive model discovery](https://doi.org/10.1007/s44379-025-00022-2)：比较 constitutive neural network 与 LLM 科学生成智能体，并在 CSGA prompt 中注入材料理论来发现本构模型。
+- [Machine learning accelerated nonadiabatic dynamics simulations of materials with excitonic effects.](https://doi.org/10.1063/5.0248228)：用机器学习预测 Kohn-Sham Hamiltonian，再驱动简化 Tamm-Dancoff 计算，以加速含激子效应材料的非绝热动力学模拟。
+- [Forecasting high-dimensional spatio-temporal systems from sparse measurements](https://doi.org/10.1088/2632-2153/ad9883)：结合 neural ODE 潜在动力学和视觉 Transformer 重建，从稀疏测量预测高维物理场。
+- [Derivative-based Pre-training of Graph Neural Networks for Materials Property Predictions](https://doi.org/10.1039/d3dd00214d)：用去噪与监督力场导数预训练晶体结构 GNN，使表示能迁移到材料性质预测任务。
+- [Physics-Informed Neural Networks for Higher-Order Nonlinear Schrödinger Equations: Soliton Dynamics in External Potentials](https://doi.org/10.3390/math13111882)：综述候选：梳理高阶非线性 Schrodinger 方程、孤子动力学、外部势和基准设计中的 PINN 求解器。
+- [Exploring prototype-guided strategy for domain decomposition in physics-informed neural network](https://doi.org/10.1007/s11071-025-10871-4)：提出 Pro-PINN，用 encoder-decoder 生成 domain prototypes，并基于 prototype similarity 做无需先验的自适应区域分解。
+- [Developing trustworthy AI for weather and climate](https://doi.org/10.1063/pt.3.5379)：观点条目：讨论可信天气气候 AI 在预测、事件沟通和社区响应中的作用，而不是具体新预报器。
+- [Atmospheric Transport Modeling of CO2 With Neural Networks](https://doi.org/10.1029/2024ms004655)：研究用于 CO2 大气示踪输运的神经模型，重点处理长时程稳定性和质量守恒，而不只是普通天气预报。
+- [Machine learning frameworks to analyze climate change impact on hydropower productivity](https://doi.org/10.1007/s13201-025-02677-x)：从气候、水文、运行和再分析数据构建水电产能预测框架，并用合成气候情景分析气候影响。
+- [Climate nowcasting](https://doi.org/10.1088/2752-5295/adc327)：观点条目：把未来 10-15 年气候 nowcasting 定义为面向决策的极端天气风险预测问题。
+- [Reweighting free energy profiles between universal machine learning interatomic potentials for fast consensus building](https://arxiv.org/abs/2605.15630)：在通用 MLIP 之间重加权 potential-of-mean-force 曲线，以无需完整重采样的方式构建热力学共识。
+- [From Data to Physics: Physics-Informed Machine Learning Frameworks in Interdisciplinary Applications](https://doi.org/10.3390/dynamics6020016)：综述候选：梳理跨学科 physics-informed ML，重点讨论物理一致性和黑箱训练之外的泛化能力。
+- [RS-LLaVA: A Large Vision-Language Model for Joint Captioning and Question Answering in Remote Sensing Imagery](https://doi.org/10.3390/rs16091477)：用低秩适配把 LLaVA 调整到遥感图像，面向遥感场景的图像描述和视觉问答联合任务。
+- [A scalable framework for learning the geometry-dependent solution operators of partial differential equations](https://doi.org/10.1038/s43588-024-00732-2)：提出 DIMON，用 diffeomorphic mapping operator learning 在不同几何、静态、时变和个体化域中学习 PDE 解算子。
+- [DISCOVER: Deep identification of symbolically concise open-form partial differential equations via enhanced reinforcement learning](https://doi.org/10.1103/physrevresearch.6.013182)：在算子库上使用增强深度强化学习，从数据中识别简洁开放形式 PDE，减少对先验方程结构的依赖。
+- [Crystal Composition Transformer: Self‐Learning Neural Language Model for Generative and Tinkering Design of Materials](https://doi.org/10.1002/advs.202304305)：在晶体组成序列上训练自监督神经语言模型，用于生成式和 tinkering 式材料设计。
+- [Human interpretable structure-property relationships in chemistry using explainable machine learning and large language models](https://doi.org/10.1038/s42004-024-01393-y)：提出 XpertAI，把 XAI attribution 与 LLM 解释结合，使化学结构-性质关系能被非技术领域用户理解。
+- [Reinforcement Learning for Improving Chemical Reaction Performance.](https://doi.org/10.1021/jacs.4c08866)：提出 RE-EXPLORE，将深度强化学习、RNN 分子生成器和预训练反应性能回归器结合，用于搜索反应物或催化剂。
+- [Self-driving AMADAP laboratory: Accelerating the discovery and optimization of emerging perovskite photovoltaics](https://doi.org/10.1557/s43577-024-00816-4)：描述 AMADAP 自驱动材料平台，结合机器人合成、表征和 AI 预筛选来优化钙钛矿光伏。
+- [Robot-assisted mapping of chemical reaction hyperspaces and networks](https://doi.org/10.1038/s41586-025-09490-1)：构建低成本机器人光学平台，以高通量映射反应条件超空间并揭示产率景观和反应网络结构。
+- [Challenges Facing Scientific Publishing in the Field of Earth & Space Sciences](https://doi.org/10.1029/2024av001334)：偏轴条目：分析地球与空间科学出版中的指标、预印本、期刊扩张和 AI 使用压力，而不是建模方法。
+- [Scientific Machine Learning: A Symbiosis](https://doi.org/10.3934/fods.2024051)：编辑部观点：将 SciML 定位为计算科学与机器学习的共生关系，强调机会与限制而非新模型。
+- [Machine Learning-Enabled Optical Property Prediction of Thin Films Using Spectral Data Extraction from Scientific Literature](https://doi.org/10.1021/acsaom.5c00251)：用 ChartOCR 和 Plot2Spectra 从文献图中抽取折射率谱，再训练 XGBoost 预测薄膜光学性质。
+- [Challenging Scientific Categorizations Through Dispute Learning](https://doi.org/10.3390/app15042241)：提出 dispute learning，用对抗式科学争论信号挑战 AI 分类并暴露黑箱知识系统中的错误。
+- [On Integrating the Data-Science and Machine-Learning Pipelines for Responsible AI](https://doi.org/10.1145/3665601.3669849)：主张用数据科学工具管理 ML pipeline 元数据，并通过性能诊断和 RAG 输入输出探索支持 responsible-AI 审计。
+- [Efficient detection of AI-generated scientific abstracts with a lightweight transformer](https://doi.org/10.1038/s41598-026-35203-3)：在人工与 Gemini 生成的 arXiv 摘要上微调 DistilBERT，测试跨领域 AI 科学文本检测。
+- [A multimodal large language model for materials science](https://doi.org/10.1038/s42256-026-01214-y)：提出 MatterChat，把通用原子间势 encoder 与 LLM 对齐，使原子结构和文本共同支持材料对话与预测。
+- [Research on GNN and Fourier transform feature-driven GRU model for key indicator prediction in process industry](https://doi.org/10.1088/1742-6596/3079/1/012027)：结合图神经特征、Fourier transform 和 GRU 预测耦合流程工业系统中的时变关键指标。
+- [Deep Learning Model in Science Learning: Bibliometric Analysis](https://doi.org/10.30736/seaj.v7i1.1160)：偏轴条目：对科学教育中的 deep learning model 研究做文献计量分析，而不是提出科学建模方法。
+- [Soil Data Extraction from Scientific Publications Using Large Language Models](https://doi.org/10.1134/s1064229325605529)：在俄语土壤科学论文上评估 GPT-4 Turbo 的 58 类抽取问题，并比较专家标注和自动评判指标。
+- [Pegasus-copynet: a novel summarization generation framework for scientific and technological texts](https://doi.org/10.1007/s13042-025-02986-2)：用多维句子 masking 微调 Pegasus，并把嵌入送入 CopyNet 和术语感知词表选择模块生成科技文本摘要。
+- [Feedback, physics, and forecasts: The emerging paradigm of machine learning-driven battery research](https://doi.org/10.1557/s43581-026-00153-w)：综述候选：按数据域和物理保真度组织电池 ML 研究，覆盖早期循环特征、operando 图像和物理信息模型。
+- [Machine-Learning-Guided Discovery of CH 4 Combustion Catalysts Operating in the Presence of SO 2](https://doi.org/10.1021/jacs.6c01560)：通过 24 轮 ML 预测和实验闭环评估 300 个多元素催化剂，发现耐硫甲烷燃烧候选。
+- [Bridging Physics and Data in Metal Powder Bed Fusion with Scientific Machine Learning](https://doi.org/10.1007/s10845-026-02820-8)：综述候选：从 physics solvers、data-driven surrogates 和多尺度制造约束角度组织金属粉末床熔融 SciML。
+- [Data-Driven Research Drives Earth System Science](https://doi.org/10.1007/s12583-026-0501-9)：编辑部观点：将大数据、AI、基础模型和知识图谱视为推动地球系统科学的基础设施，而不是单一模型。
+- [Integrating Data Science and Machine Learning with an Aldol Condensation Laboratory](https://doi.org/10.1021/acs.jchemed.5c00994)：教学条目：通过两部分本科 Claisen-Schmidt aldol condensation 实验教授数据科学和机器学习概念。
+- [The role of artificial intelligence in scientific research: a classification framework with case-based empirical insights](https://doi.org/10.1007/s11192-026-05620-2)：分类框架条目：用案例实证分析 AI 如何重塑科研实践，而不是提出新的科学建模架构。
+- [A New Paradigm for Physics-Informed AI-Driven Reservoir Research: From Multiscale Characterization to Intelligent Seepage Simulation](https://doi.org/10.3390/en19010270)：综述候选：定义物理信息 AI 驱动油藏研究范式，覆盖多尺度表征到智能渗流模拟。
+- [Complex Networks in Contemporary Science and Technology](https://doi.org/10.3390/e28040456)：宽泛方法条目：讨论自然、社会和技术系统中的复杂网络表征，其模型页位置需要父级复核。
+- [Response to commentators on the blind spot: why science cannot ignore human experience](https://doi.org/10.1007/s11097-026-10146-2)：偏轴条目：回应关于科学中人类经验的评论，不贡献 AI-for-science 模型。
+- [Detection of AI-generated Content in Scientific Abstracts](https://doi.org/10.26615/978-954-452-102-8-003)：构建时间锚定的人类与 GPT-4.1 摘要数据集，并比较 zero-shot LLM、LoRA-DistilBERT 和传统分类器。
+- [Integrating physical units into high-performance AI-driven scientific computing](https://doi.org/10.1038/s41467-025-58626-4)：提出 SAIUnit，一个兼容 JAX 的 unit-aware 科学计算系统，提供大量物理单位和可微数学函数。
+- [Evo-SINDy: Universal Discovery of Partial Differential Equations Using Cooperative Evolutionary Computation](https://doi.org/10.1145/3712256.3726360)：用多种群协同演化搜索从数据中识别 PDE 形式，比标准 SINDy 更少依赖预设方程库。

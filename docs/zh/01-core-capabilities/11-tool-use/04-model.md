@@ -1,26 +1,371 @@
 # 1.11.4 Model
 
 - [Toolformer](https://arxiv.org/abs/2302.04761)：自监督工具使用训练方法，让语言模型学习何时调用 API、如何传参以及如何利用工具结果。
+- [ToolkenGPT](https://arxiv.org/abs/2305.11554)：把工具嵌入学习成特殊 token，让冻结语言模型通过可训练接口决定何时调用工具。
 - [Gorilla](https://arxiv.org/abs/2305.15334)：基于 LLaMA 微调的 API 调用模型和 APIBench 训练设置，用于在大规模 API 集合上生成准确调用。
+- [GPT4Tools](https://arxiv.org/abs/2305.18752)：用 self-instruction 教开放模型调用多模态工具，说明合成工具使用指令能迁移到未见工具。
+- [ToolAlpaca](https://arxiv.org/abs/2306.05301)：构建多 agent 模拟环境，在数百个真实 API 上生成数千个工具使用案例，再微调小模型获得泛化工具使用能力。
 - [ToolLLM](https://arxiv.org/abs/2307.16789)：构造 ToolBench 式轨迹，并训练 ToolLLaMA 进行 API 检索、参数填写和多步工具调用。
+- [FireAct](https://arxiv.org/abs/2310.05915)：在搜索等工具任务的 agent 轨迹上微调 backbone 语言模型，把轨迹数据作为增强 agent 的模型侧路线。
+- [AgentTuning](https://arxiv.org/abs/2310.12823)：构造 AgentInstruct 交互轨迹并训练 AgentLM，使规划、记忆和工具使用能力在不损害通用指令能力的情况下提升。
+- [Chain of Evidences and Evidence to Generate](https://arxiv.org/abs/2401.05787)：使用证据链提示把检索增强推理先锚定到上下文证据，再生成答案。
+- [MLLM-Tool](https://arxiv.org/abs/2401.10727)：通过对齐多模态大模型、工具描述、视觉输入和可执行工具输出，训练多模态工具智能体行为。
+- [The Power of Noise](https://arxiv.org/abs/2401.14887)：用噪声段落压力测试 RAG 检索器，揭示检索质量、排序和过滤何时比单纯增加上下文更关键。
+- [ReSLLM](https://arxiv.org/abs/2401.17645)：把大模型用作 federated search 的资源选择器，为查询选择应调用的垂直搜索引擎或语料库。
+- [G-Retriever](https://arxiv.org/abs/2402.07630)：结合图神经检索与大模型生成，使问答能利用文本图结构而不只依赖扁平段落。
+- [API Pack](https://arxiv.org/abs/2402.09615)：发布大规模多语言 API 调用生成语料，用于训练模型把自然语言请求映射成可执行 API 调用。
+- [BlendFilter](https://arxiv.org/abs/2402.11129)：把生成式检索查询与知识过滤结合起来，让 RAG 模型在生成前取得更干净的证据。
+- [Offline Training of Language Model Agents with Functions as Learnable Weights](https://arxiv.org/abs/2402.11359)：在离线 agent 训练中把函数视为可学习权重，使模型内化可复用函数行为，而不只是外部调用工具。
+- [TOOLVERIFIER](https://arxiv.org/abs/2402.14158)：用合成对比问题训练模型自验证工具选择和参数生成，提升向未见工具迁移的能力。
+- [Tug-of-War between Knowledge](https://arxiv.org/abs/2402.14409)：研究 RAG 中模型内部知识与外部检索知识的冲突，并提出冲突感知策略来判断何时应让检索证据覆盖参数记忆。
+- [Self-Retrieval](https://arxiv.org/abs/2403.00801)：把索引、检索、排序和生成合并到一个 LLM 驱动的检索架构中，而不是使用分离的检索器与生成器。
+- [ToolNet](https://arxiv.org/abs/2403.00839)：构建工具图，让大模型通过工具描述之间的依赖关系检索并连接大规模工具集合。
+- [LLMs in the Imaginarium](https://arxiv.org/abs/2403.04746)：通过想象工具使用场景中的模拟试错、执行反馈、记忆和 replay 来改进工具学习。
+- [RA-ISF](https://arxiv.org/abs/2403.06840)：用迭代自反馈分解问题、检查检索证据，并在检索噪声较大时修订 RAG 答案。
+- [RAFT](https://arxiv.org/abs/2403.10131)：用问题、文档和思维链三元组微调领域 RAG 模型，使其学会引用相关检索文档并忽略干扰项。
+- [Agent-FLAN](https://arxiv.org/abs/2403.12881)：重设计 agent tuning 数据和负样本，让开放 LLM 学习工具使用与 agent 推理，同时减少幻觉动作。
+- [Octopus](https://arxiv.org/abs/2404.01549)：在软件 API 文档和函数调用数据上微调小型端侧模型，并结合条件 masking 约束 API 调用格式。
+- [FT2Ra](https://arxiv.org/abs/2404.01554)：用类微调的检索器与生成器设置改造检索增强代码补全，使模型利用仓库上下文生成代码。
+- [CONFLARE](https://arxiv.org/abs/2404.04287)：把 conformal retrieval 引入 RAG，使模型能校准哪些检索段落可靠到足以用于生成。
+- [Blended RAG](https://arxiv.org/abs/2404.07220)：结合语义搜索与混合查询式检索，提升 RAG 生成前的证据选择质量。
+- [Dubo-SQL](https://arxiv.org/abs/2404.12560)：把多样化检索增强与微调结合用于 text-to-SQL，面向结构化数据库工具使用。
+- [RETTA](https://arxiv.org/abs/2405.07046)：用检索增强的测试时适配，把检索到的视频文本证据接入零样本字幕生成模型。
+- [Fine-Tuning Large Vision-Language Models as Decision-Making Agents via Reinforcement Learning](https://arxiv.org/abs/2405.10292)：用强化学习微调视觉语言模型，使其能在交互式视觉环境中作为决策智能体行动。
+- [xRAG](https://arxiv.org/abs/2405.13792)：把检索文档压缩成单个 retrieval token，在保留文档接地生成能力的同时降低 RAG 上下文成本。
+- [Towards Completeness-Oriented Tool Retrieval for Large Language Models](https://arxiv.org/abs/2405.16089)：优化工具检索对任务所需全部工具的覆盖，而不只追求语义相似度最高的排序结果。
+- [GRAG](https://arxiv.org/abs/2405.16506)：使用图检索增强，让生成过程利用检索实体和段落之间的关系。
+- [Tool Learning in the Wild](https://arxiv.org/abs/2405.16533)：收集真实世界工具使用监督，并训练大模型在异构 API 上充当自动工具智能体。
+- [Advancing Tool-Augmented Large Language Models](https://arxiv.org/abs/2406.07115)：从工具使用推理树中的错误学习，改进模型对何时以及如何调用工具的决策。
+- [Few-Shot Recognition via Stage-Wise Retrieval-Augmented Finetuning](https://arxiv.org/abs/2406.11148)：通过分阶段检索增强微调，引入检索到的支持样例来提升少样本识别。
+- [AvaTaR](https://arxiv.org/abs/2406.11200)：用对比推理优化大模型工具使用，训练模型区分成功工具轨迹与有缺陷的替代轨迹。
+- [PlanRAG](https://arxiv.org/abs/2406.12430)：加入先规划再检索阶段，使决策型大模型按显式计划检索证据后再回答。
+- [Generate-then-Ground](https://arxiv.org/abs/2406.14891)：先生成候选推理路径，再用检索证据接地，用于多跳问答。
+- [CogMG](https://arxiv.org/abs/2406.17231)：协同大模型与知识图谱，使生成过程能查询结构化知识，同时帮助更新不完整的图谱证据。
+- [Enhancing Tool Retrieval with Iterative Feedback from Large Language Models](https://arxiv.org/abs/2406.17465)：用大模型反馈循环迭代改进工具检索结果，再进行最终工具选择。
+- [APIGen](https://arxiv.org/abs/2406.18518)：在数千个可执行 API 上合成可验证 function-calling 数据，经过格式检查、真实执行和语义验证后用于训练 xLAM 风格模型。
+- [From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data](https://arxiv.org/abs/2406.19292)：用合成长上下文检索数据微调大语言模型，提升其从真实 haystack 式文档中定位信息的能力。
+- [Granite-Function Calling](https://arxiv.org/abs/2407.00121)：在嵌套调用、函数链、并行调用和 next-function prediction 等细粒度函数调用任务上训练开放 Granite 模型。
+- [ColPali: Efficient Document Retrieval with Vision Language Models](https://arxiv.org/abs/2407.01449)：用 PaliGemma 风格视觉语言模型把文档页面编码为视觉 patch，并通过 late interaction 在截图层面检索，而不是依赖 OCR 文本块。
+- [MixGR: Enhancing Retriever Generalization for Scientific Domain through Complementary Granularity](https://arxiv.org/abs/2407.10691)：用互补粒度训练科学领域检索器，使证据匹配能同时覆盖术语、句子和文档级上下文。
+- [NV-Retriever: Improving text embedding models with effective hard-negative mining](https://arxiv.org/abs/2407.15831)：通过困难负样本挖掘配方选择更难区分的非匹配样本，改进对比训练式嵌入检索器。
+- [SAKR: Enhancing Retrieval-Augmented Generation via Streaming Algorithm and K-Means Clustering](https://arxiv.org/abs/2407.21300)：用流式选择和 k-means 聚类在 RAG 生成前保留更具代表性的检索片段。
+- [Breaking the Hourglass Phenomenon of Residual Quantization: Enhancing the Upper Bound of Generative Retrieval](https://arxiv.org/abs/2407.21488)：分析生成式检索中 residual quantization 的容量瓶颈，并调整量化设置以提高检索编码上限。
+- [Re-Invoke: Tool Invocation Rewriting for Zero-Shot Tool Retrieval](https://arxiv.org/abs/2408.01875)：通过重写工具调用提升语言模型零样本工具检索能力。
+- [HybridRAG: Integrating Knowledge Graphs and Vector Retrieval Augmented Generation for Efficient Information Extraction](https://arxiv.org/abs/2408.04948)：结合知识图谱查询与向量检索，使 RAG 信息抽取同时利用实体关系和稠密文本匹配。
+- [TinyAgent](https://arxiv.org/abs/2409.00608)：用整理过的函数调用数据、工具检索和量化本地执行训练小型 function-calling 模型，面向边缘设备部署。
 - [ToolACE](https://arxiv.org/abs/2409.00920)：面向工具学习的数据与训练路线，用于改进多样化工具使用指令上的 function-calling 行为。
+- [xLAM](https://arxiv.org/abs/2409.03215)：用统一、增强与合成 agent 数据的可扩展流水线训练 large action model 系列，覆盖 function calling 与工具使用任务。
+- [Training-free Zero-shot Composed Image Retrieval via Weighted Modality Fusion and Similarity](https://arxiv.org/abs/2409.04918)：相邻的检索工作，通过图文相似度加权融合完成组合式图像搜索，但不训练工具调用或 API 使用能力。
+- [Towards Fair RAG: On the Impact of Fair Ranking in Retrieval-Augmented Generation](https://arxiv.org/abs/2409.11598)：研究公平排序目标如何改变 RAG 答案质量和群体曝光，更像检索策略诊断而非工具调用训练。
+- [Harnessing LLMs for API Interactions: A Framework for Classification and Synthetic Data Generation](https://arxiv.org/abs/2409.11703)：对自然语言 API 请求进行分类，并用大模型合成 API 交互数据，用于软件函数调用。
+- [M2R-Whisper: Multi-stage and Multi-scale Retrieval Augmentation for Enhancing Whisper](https://arxiv.org/abs/2409.11889)：在 Whisper 周围加入多阶段、多尺度检索，使语音识别能调用不同粒度的外部上下文。
+- [You Only Read Once (YORO): Learning to Internalize Database Knowledge for Text-to-SQL](https://arxiv.org/abs/2409.12172)：微调 text-to-SQL 模型以内部化数据库知识，减少推理时反复检索 schema 的需求。
+- [KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation](https://arxiv.org/abs/2409.13731)：将知识图谱、逻辑形式和检索增强生成结合成专业领域问答框架，使答案既能取用结构化知识也能做符号式推理。
+- [RAMBO: Enhancing RAG-based Repository-Level Method Body Completion](https://arxiv.org/abs/2409.15204)：通过仓库级检索为 method body completion 提供相关代码上下文，而不是只依赖本地文件上下文。
+- [Disentangling Questions from Query Generation for Task-Adaptive Retrieval](https://arxiv.org/abs/2409.16570)：把用户问题理解与检索查询生成解耦，训练能按任务调整检索行为的查询生成器。
+- [Unified Multimodal Interleaved Document Representation for Retrieval](https://arxiv.org/abs/2410.02729)：为交错文本、表格和图像的文档学习统一表示，使检索能处理混合模态证据。
+- [ToolGen](https://arxiv.org/abs/2410.03439)：把工具检索和工具调用都建模成生成任务，用特殊 token 表示工具，让模型参数内化大规模工具库。
+- [Hammer](https://arxiv.org/abs/2410.04587)：通过增强的无关函数数据和 function masking 训练端侧函数调用模型，提升对误导性工具名称的鲁棒性。
+- [ReFIR: Grounding Large Restoration Models with Retrieval Augmentation](https://arxiv.org/abs/2410.05601)：检索相似的已修复样例来条件化大规模图像修复模型，使修复决策接地到外部视觉参考。
+- [TurboRAG: Accelerating Retrieval-Augmented Generation with Precomputed KV Caches for Chunked Text](https://arxiv.org/abs/2410.07590)：为检索片段预计算 key-value cache，使 RAG 能复用已编码上下文并降低生成延迟。
+- [StepTool: Enhancing Multi-Step Tool Usage in LLMs via Step-Grained Reinforcement Learning](https://arxiv.org/abs/2410.07745)：把工具学习建模成多步决策过程，为每次工具交互按调用成功和任务贡献塑形奖励，再在多个工具使用步骤上做策略优化。
+- [From Exploration to Mastery: Enabling LLMs to Master Tools via Self-Driven Interactions](https://arxiv.org/abs/2410.08197)：提出 DRAFT，让模型通过试错探索工具、从交互反馈中学习，并改写工具文档，使后续多个模型更容易正确调用工具。
+- [BUTTON](https://arxiv.org/abs/2410.12952)：通过 bottom-up 任务构造和 top-down 模拟人类、助手与工具交互，生成组合式多轮函数调用数据。
+- [How Does Knowledge Selection Help Retrieval Augmented Generation?](https://arxiv.org/abs/2410.13258)：分析被选中的知识片段如何实际影响 RAG 生成，区分有用检索与干扰上下文。
+- [Improve Dense Passage Retrieval with Entailment Tuning](https://arxiv.org/abs/2410.15801)：用蕴含式监督调优稠密段落检索器，使检索段落更能支撑下游答案。
+- [BIG5-CHAT: Shaping LLM Personalities Through Training on Human-Grounded Data](https://arxiv.org/abs/2410.16491)：与工具使用偏离较大；它基于 Big Five 人格数据训练人格条件化聊天行为，而不是工具调用行为。
+- [SmartRAG: Jointly Learn RAG-Related Tasks From the Environment Feedback](https://arxiv.org/abs/2410.18141)：根据环境反馈联合优化 RAG 各组件，而不是分开训练检索与生成模块。
+- [EcoAct: Economic Agent Determines When to Register What Action](https://arxiv.org/abs/2411.01643)：把动作注册建模成经济决策，使 agent 能判断外部动作是否值得执行。
+- [WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning](https://arxiv.org/abs/2411.02337)：用自演化在线课程强化学习训练开源网页智能体，使其适应交互式浏览器任务。
+- [From Novice to Expert: LLM Agent Policy Optimization via Step-wise Reinforcement Learning](https://arxiv.org/abs/2411.03817)：用 From Novice to Expert 处理 LLM Agent Policy Optimization via Step-wise Reinforcement Learning。
+- [Meta-Reasoning Improves Tool Use in Large Language Models](https://arxiv.org/abs/2411.04535)：提出 TECTON 两阶段工具选择器，先用微调 head 给出候选工具，再对该选择进行元推理。
+- [MIRe: Enhancing Multimodal Queries Representation via Fusion-Free Modality Interaction for Multimodal Retrieval](https://arxiv.org/abs/2411.08334)：不把模态融合成单一表示，而是建模跨模态查询交互来提升多模态检索。
+- [Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension](https://arxiv.org/abs/2411.13093)：为长视频问答检索视觉对齐证据，使生成答案接地到相关帧和字幕。
+- [TL-Training: A Task-Feature-Based Framework for Training Large Language Models in Tool Use](https://arxiv.org/abs/2412.15495)：在 SFT 中重加权关键工具使用 token，并加入与工具调用错误类别相关的 PPO 奖励，用 1,217 个训练样例取得较强效果。
+- [APEX2: Adaptive and Extreme Summarization for Personalized Knowledge Graphs](https://arxiv.org/abs/2412.17336)：偏离工具使用主轴；它自适应总结用户知识图谱，而不是训练 API 或工具调用。
+- [Geospatial large language model trained with a simulated environment for generating tool-use chains autonomously](https://doi.org/10.1016/j.jag.2024.104312)：在仿真环境中训练地理空间工具链，使 LLM 能自主组合 GIS 操作。
+- [Keyword-Enhanced Semantic Retrieval and Multi-Dimensional Relevance Ranking in RAG](https://doi.org/10.1109/iccc62609.2024.10941711)：把关键词增强语义检索与多维相关性排序结合起来做 RAG 证据选择，更接近检索排序而非函数调用训练。
+- [Exploring the Application of Retrieval-Augmented Generation Technology in Defense Technology Intelligence](https://doi.org/10.1109/csis-iac63491.2024.10919351)：把 RAG 用于国防科技情报检索和答案接地，是领域 RAG 应用而不是 API 规划监督。
+- [Advancing Large Language Model Agent via Iterative Contrastive Trajectory Optimization](https://doi.org/10.2478/ijanmc-2024-0033)：用 ICTO 从成功和失败的 agent 轨迹中迭代优化，并以 POMDP 形式提供步骤级指导来提升开源 LLM 任务求解。
+- [A Comparative Analysis of Large Language Models with Retrieval-Augmented Generation based Question Answering System](https://doi.org/10.1109/i-smac61858.2024.10714814)：比较不同 LLM 在 RAG 问答系统中的表现，贡献更偏检索增强评测而非工具使用训练。
+- [OpenRAG: Open-source Retrieval-Augmented Generation Architecture for Personalized Learning](https://doi.org/10.1109/icairc64177.2024.10900069)：实现面向个性化学习的开源 RAG 架构，把课程检索接入学习顾问生成流程，但不提供新的工具调用监督。
+- [The enhanced context for AI-generated learning advisors with Advanced RAG](https://doi.org/10.1109/acompa64883.2024.00021)：用 Advanced RAG 为学习顾问生成补充上下文，是教育场景 RAG 应用而不是工具调用模型配方。
+- [GeoTool-GPT: a trainable method for facilitating Large Language Models to master GIS tools](https://doi.org/10.1080/13658816.2024.2438937)：构造 GeoTool 指令、GeoSolution 工具使用解法和 GeoTask 评测，并指令微调 LLaMA-2-7B 组合专业 GIS 工具链。
+- [Transferable dual multi-granularity semantic excavating for partially relevant video retrieval](https://doi.org/10.1016/j.imavis.2024.105168)：为部分相关视频检索学习双重多粒度语义，属于相邻视觉检索而非 API 或工具调用学习。
+- [MC-indexing: Effective Long Document Retrieval via Multi-view Content-aware Indexing](https://doi.org/10.18653/v1/2024.findings-emnlp.150)：为长文档检索构建多视角、内容感知索引，使证据能从互补文档视角进行匹配。
+- [Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2501.15228)：将查询改写、检索、文档过滤和答案生成视为协作 RL agent，在 MMOA-RAG 中用最终答案奖励联合优化整条 RAG 流水线，而不是分别监督微调各模块。
+- [Self-Training LLMs for Tool-Use Without Demonstrations](https://arxiv.org/abs/2502.05867)：让模型自行合成工具使用轨迹，并在没有 gold demonstrations 的情况下比较 SFT 与 preference fine-tuning。
+- [Graph RAG-Tool Fusion](https://arxiv.org/abs/2502.07223)：在基于 RAG 的工具检索中建模工具之间的结构化依赖，使 agent 能检索前置和相关 API，而不是把每个工具描述孤立排序。
+- [CoALM](https://arxiv.org/abs/2502.08820)：在结合多轮 ReAct 推理和复杂 API 使用的多任务数据上训练 collaborative agentic language model。
+- [QuOTE: Question-Oriented Text Embeddings](https://arxiv.org/abs/2502.10976)：围绕面向问题的监督训练嵌入，使检索表示由需要回答的查询来塑形。
+- [How Expressive are Knowledge Graph Foundation Models?](https://arxiv.org/abs/2502.13339)：偏离工具使用主轴；它分析知识图谱基础模型的表达能力，可作为结构化检索背景但不是工具调用方法。
+- [The KnowWhereGraph: A Large‐Scale Geo‐Knowledge Graph for Interdisciplinary Knowledge Discovery and Geo‐Enrichment](https://arxiv.org/abs/2502.13874)：发布用于跨学科发现和地理富集的大规模地理知识图谱，更像结构化检索基础设施而非工具使用训练。
+- [Text-to-SQL Domain Adaptation via Human-LLM Collaborative Data Annotation](https://arxiv.org/abs/2502.15980)：用人类和大模型协作标注 text-to-SQL 数据，以支持数据库查询模型的领域适配。
+- [CommGPT: A Graph and Retrieval-Augmented Multimodal Communication Foundation Model](https://arxiv.org/abs/2502.18763)：结合图检索和多模态通信数据，构建通信领域基础模型。
+- [PEToolLLM: Towards Personalized Tool Learning in Large Language Models](https://arxiv.org/abs/2502.18980)：从用户交互历史出发定义个性化工具学习，提出 PEToolBench，并适配 PEToolLLaMA 使隐含用户偏好能影响工具选择。
 - [GenTool: Enhancing Tool Generalization in Language Models through Zero-to-One and Weak-to-Strong Simulation](https://arxiv.org/abs/2502.18990)：通过零到一和弱到强模拟合成工具使用经验，以提升工具泛化。
+- [Do Retrieval-Augmented Language Models Adapt to Varying User Needs?](https://arxiv.org/abs/2502.19779)：评估 RAG 系统是否会随不同用户需求调整检索与生成，暴露个性化限制而不是提出新的工具使用训练器。
+- [RANGE: Retrieval Augmented Neural Fields for Multi-Resolution Geo-Embeddings](https://arxiv.org/abs/2502.19781)：用 RANGE 处理 Retrieval Augmented Neural Fields for Multi-Resolution Geo-Embeddings。
+- [Online Pseudo-average Shifting Attention(PASA) for Robust Low-precision LLM Inference: Algorithms and Numerical Analysis](https://arxiv.org/abs/2503.01873)：偏离工具使用主轴；它研究低精度 LLM 推理鲁棒性，而非检索或函数调用模型。
+- [START](https://arxiv.org/abs/2503.04625)：通过筛选和微调 hint-triggered code-execution 轨迹，构建能够使用工具的 self-taught reasoner。
+- [Aligning Extraction and Generation for Robust Retrieval-Augmented Generation](https://arxiv.org/abs/2503.04789)：对齐抽取阶段和生成阶段，使 RAG 在检索证据含噪时仍能生成更稳健的答案。
+- [ROGRAG: A Robustly Optimized GraphRAG Framework](https://arxiv.org/abs/2503.06474)：优化 GraphRAG 流水线的鲁棒性，用图结构检索替代单纯段落检索。
+- [Alignment for Efficient Tool Calling of Large Language Models](https://arxiv.org/abs/2503.06708)：面向高效工具调用对齐 LLM，提升工具选择和调用生成的可靠性与效率。
+- [MAGNET](https://arxiv.org/abs/2503.07826)：把函数签名图翻译成带可执行调用的多轮对话，并用正负轨迹训练模型，合成高质量多轮工具使用数据。
+- [Beyond Single Pass, Looping Through Time: KG-IRAG with Iterative Knowledge Retrieval](https://arxiv.org/abs/2503.14234)：跨多轮执行知识图谱检索，使 RAG 能迭代细化证据，而不是只从一次检索批次回答。
+- [Don't lie to your friends: Learning what you know from collaborative self-play](https://arxiv.org/abs/2503.14481)：用协作 self-play 训练智能体判断何时回答、何时用工具、何时信任工具以及何时拒答。
+- [Good4cir: Generating Detailed Synthetic Captions for Composed Image Retrieval](https://arxiv.org/abs/2503.17871)：偏离工具使用主轴；它为组合式图像检索生成详细合成 caption，而不是工具使用或 API 调用数据。
+- [ToRL](https://arxiv.org/abs/2503.23383)：扩展 tool-integrated reinforcement learning，让模型通过奖励驱动探索学习何时调用计算工具，而不只模仿静态轨迹。
 - [ToolACE-R](https://arxiv.org/abs/2504.01400)：面向工具学习的模型感知迭代训练与改进方法，而不是只提出新评测集。
+- [LLM-VPRF: Large Language Model Based Vector Pseudo Relevance Feedback](https://arxiv.org/abs/2504.01448)：用大模型生成向量伪相关反馈，在没有人工相关性标注的情况下扩展检索信号。
+- [DiaTool-DPO: Multi-Turn Direct Preference Optimization for Tool-Augmented Large Language Models](https://arxiv.org/abs/2504.02882)：把工具增强对话建模为状态转移，构造正负轨迹对，并用 DPO 提升多轮工具使用中的信息收集和越界请求拒绝能力。
 - [APIGen-MT](https://arxiv.org/abs/2504.03601)：通过模拟交互生成可验证多轮 API 使用轨迹，并用这些数据训练 xLAM function-calling 模型。
-- [OTC](https://doi.org/10.48550/arXiv.2504.14870)：提出面向工具使用的模型侧方法，核心围绕 Optimal Tool Calls via Reinforcement Learning。
-- [Nemotron-Research-Tool-N1](https://arxiv.org/abs/2505.00024)：提出面向工具使用的模型侧方法，核心围绕 Exploring Tool-Using Language Models with Reinforced Reasoning。
-- [Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.01441)：提出面向工具使用的模型侧方法，核心围绕 Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning。
-- [Tool-Star](https://arxiv.org/abs/2505.16410)：提出面向工具使用的模型侧方法，核心围绕 Empowering LLM-Brained Multi-Tool Reasoner via Reinforcement Learning。
-- [VTool-R1](https://arxiv.org/abs/2505.19255)：提出面向工具使用的模型侧方法，核心围绕 VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use。
+- [SWiRL](https://arxiv.org/abs/2504.04736)：把合成数据生成和 step-wise reinforcement learning 结合起来，优化多步推理与工具使用轨迹。
+- [VectorLiteRAG: Latency-Aware and Fine-Grained Resource Partitioning for Efficient RAG](https://arxiv.org/abs/2504.08930)：对向量检索资源做细粒度划分，在受限服务预算下降低 RAG 延迟。
+- [UP-Person: Unified Parameter-Efficient Transfer Learning for Text-Based Person Retrieval](https://arxiv.org/abs/2504.10084)：偏离工具使用主轴；它用参数高效迁移做文本化行人检索，而不是训练工具使用能力。
+- [Efficient Distributed Retrieval-Augmented Generation for Enhancing Language Model Performance](https://arxiv.org/abs/2504.11197)：分布式执行 RAG 的检索和生成工作，以提升语言模型增强服务效率。
+- [ReTool](https://arxiv.org/abs/2504.11536)：通过监督 warmup 和 outcome-reward 强化学习，训练模型把推理与实时代码执行交错起来。
+- [Estimating Optimal Context Length for Hybrid Retrieval-augmented Multi-document Summarization](https://arxiv.org/abs/2504.12972)：估计混合检索增强多文档摘要应纳入多少检索上下文，避免额外证据带来损害或浪费预算。
+- [ToolRL](https://arxiv.org/abs/2504.13958)：把强化学习作为工具学习的核心信号，强调 reward design 相比静态 function-calling imitation 的作用。
+- [OTC](https://doi.org/10.48550/arXiv.2504.14870)：用强化学习优化语言模型何时应发起工具调用，而不是只依赖模仿式调用轨迹。
+- [Privacy-Preserving Federated Embedding Learning for Localized Retrieval-Augmented Generation](https://arxiv.org/abs/2504.19101)：提出 FedE4RAG，让各客户端通过联邦参数聚合、服务器与客户端之间的知识蒸馏以及同态加密机制协同训练私有 RAG 检索器，无需共享本地原始数据。
+- [MICE for CATs: Model-Internal Confidence Estimation for Calibrating Agents with Tools](https://arxiv.org/abs/2504.20168)：从中间层 logitLens 解码和与最终输出的相似度特征估计工具调用置信度，再用校准分数判断调用工具是否值得承担风险。
+- [Nemotron-Research-Tool-N1](https://arxiv.org/abs/2505.00024)：用调用格式有效性和函数正确性的二元规则奖励训练工具调用推理模型，避免监督中间推理轨迹。
+- [EnronQA: Towards Personalized RAG over Private Documents](https://arxiv.org/abs/2505.00263)：基于 Enron 邮件构建私有文档问答设置，用于研究面向用户自有语料的个性化 RAG。
+- [Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.01441)：用结果奖励强化学习，让模型在多轮推理链中学习何时、如何以及调用哪些工具，而不需要步骤级标签。
+- [OpenThinkIMG: Learning to Think with Images via Visual Tool Reinforcement Learning](https://arxiv.org/abs/2505.08617)：通过强化学习学习交互式视觉工具使用，使模型能用图像辅助推理。
+- [The Accountability Paradox: How Platform API Restrictions Undermine AI Transparency Mandates](https://arxiv.org/abs/2505.11577)：偏离模型训练主轴；它分析平台 API 限制如何阻碍 AI 透明度要求，而不是提出模型训练方法。
+- [LLM-based Query Expansion Fails for Unfamiliar and Ambiguous Queries](https://arxiv.org/abs/2505.12694)：指出大模型查询扩展会在陌生或歧义查询上损害检索，是 RAG 前端的失败模式。
+- [Tool-Star](https://arxiv.org/abs/2505.16410)：用提示采样合成 tool-integrated reasoning 轨迹，按质量和难度过滤后再进行多工具 self-critic 强化学习。
+- [VTool-R1](https://arxiv.org/abs/2505.19255)：把 Python 视觉编辑工具纳入强化微调，使 VLM 学会在文本推理中交错生成中间视觉步骤。
+- [TTPA: Token-level Tool-use Preference Alignment Training Framework with Fine-grained Evaluation](https://arxiv.org/abs/2505.20016)：面向工具使用的 token-level preference-alignment 框架；核心思想是优化细粒度工具调用细节，而不只看轨迹级成功。
+- [FunReason](https://arxiv.org/abs/2505.20192)：自动精炼 function-calling 训练样例，并用多尺度损失平衡推理连贯性和精确函数执行。
+- [ConText-CIR: Learning from Concepts in Text for Composed Image Retrieval](https://arxiv.org/abs/2505.20764)：偏离工具使用主轴；它从文本概念学习组合式图像检索，而不是 API 或工具调用监督。
+- [Distill CLIP (DCLIP): Enhancing Image-Text Retrieval via Cross-Modal Transformer Distillation](https://arxiv.org/abs/2505.21549)：用跨模态 Transformer 蒸馏提升 CLIP 风格图文检索，属于相邻检索工作而非工具使用训练。
+- [Adaptive agentic meta-controller (AAMC): A deep reinforcement learning framework for intelligent SLM/LLM orchestration](https://doi.org/10.1016/j.neucom.2026.133192)：用 Adaptive agentic meta-controller (AAMC) 处理 A deep reinforcement learning framework for intelligent SLM/LLM orchestration。
+- [Proactive Health Oriented Residential Floor Plan Generation via Controllable Multi Agent Deep Reinforcement Learning](https://doi.org/10.1016/j.dibe.2026.100934)：围绕“Proactive Health Oriented Residential Floor Plan Generation via Controllable Multi Agent Deep Reinforcement Learning”组织智能体协同。
+- [Seamless skill transitions with hierarchical reward shaping and failure-driven replay](https://doi.org/10.1016/j.neucom.2026.133801)：把“Seamless skill transitions with hierarchical reward shaping and failure-driven replay”作为具体的工具介导流程来处理。
+- [R1-Code-Interpreter: LLMs Reason with Code via Supervised and Multi-stage Reinforcement Learning](https://arxiv.org/abs/2505.21668)：把纯文本大模型训练成能在推理中多轮发起 code-interpreter 查询的模型，结合多轮 SFT 和按样本提升潜力排序的课程式 RL。
+- [Flexible Tool Selection through Low-dimensional Attribute Alignment of Vision and Language](https://arxiv.org/abs/2505.22146)：在 ToolNet 中对齐视觉工具属性和语言任务需求，用物理、功能与心理属性的低维表示选择工具。
+- [Towards Effective Code-Integrated Reasoning](https://arxiv.org/abs/2505.24480)：通过工具增强强化学习训练模型判断何时以及如何调用代码解释器。
 - [Enhancing Tool Learning in Large Language Models with Hierarchical Error Checklists](https://arxiv.org/abs/2506.00042)：用层级错误清单定位 LLM 工具学习中的常见失败。
+- [Retrieval-Augmented Generation Systems for Intellectual Property via Synthetic Multi-Angle Fine-tuning](https://arxiv.org/abs/2506.00527)：用大模型生成多角度专利问题并结合困难负样本挖掘来微调 IP 检索器，增强 RAG 对口语化、拼写错误和歧义查询的鲁棒性。
+- [Self-Challenging Language Model Agents](https://arxiv.org/abs/2506.01716)：让 agent 生成带验证函数的可执行 Code-as-Task 挑战，再用强化学习训练执行 agent。
+- [SUMO-MCP: Leveraging the Model Context Protocol for Autonomous Traffic Simulation and Optimization](https://arxiv.org/abs/2506.03548)：把 SUMO 核心工具封装为 MCP 工具，使自然语言提示能够生成 OpenStreetMap 交通场景、构造需求、批量运行信号控制策略、比较结果并触发拥堵优化。
+- [Respecting Temporal-Causal Consistency: Entity-Event Knowledge Graphs for Retrieval-Augmented Generation](https://arxiv.org/abs/2506.05939)：提出 E2RAG，用实体图和事件图加双部映射保留叙事文档中的时间与因果上下文，避免传统 KG-RAG 把同一实体所有出现都压成一个节点。
+- [TaskCraft](https://arxiv.org/abs/2506.10055)：自动生成多工具、可验证的 agentic tasks 和执行轨迹，为 agentic foundation model 提供可扩展训练数据。
+- [RandomWorld](https://arxiv.org/abs/2506.11045)：程序化生成交互式工具和组合式工具使用数据，并把生成环境用于监督微调和强化学习。
+- [SymRAG: Efficient Neuro-Symbolic Retrieval Through Adaptive Query Routing](https://arxiv.org/abs/2506.12981)：根据查询复杂度和系统负载，把请求动态路由到符号、神经或混合检索路径，避免简单查询消耗与多跳问题相同的 RAG 计算。
+- [KunLunBaizeRAG: Reinforcement Learning Driven Inference Performance Leap for Large Language Models](https://arxiv.org/abs/2506.19466)：用强化学习优化 RAG 推理过程，使模型在检索、证据利用和答案生成之间学习更高效的推理策略。
+- [CA-GAR: Context-Aware Alignment of LLM Generation for Document Retrieval](https://doi.org/10.18653/v1/2025.findings-acl.303)：把语料信息注入 generation-augmented retrieval，通过相关文档信号调整 token 选择，并用基于词表的 distribution alignment strategy 提取语料信息，在 BEIR 与多语言 Mr.TyDi 检索任务上改进排序效果。
+- [Tool learning via Inference-time Scaling and Cycle Verifier](https://doi.org/10.18653/v1/2025.findings-acl.1266)：结合 inference-time scaling 与 cycle verifier，提高工具选择和参数生成的可靠性，而不是只依赖一次性函数调用解码。
+- [EvalAssist: A Human-Centered Tool for LLM-as-a-Judge](https://arxiv.org/abs/2507.02186)：提供评价标准开发环境和 prompt-chaining 式 LLM 评测流水线，并加入伤害与风险检测 evaluator，使人工评测者能复用结构化 LLM-as-a-judge 工作流。
+- [Beyond Independent Passages: Adaptive Passage Combination Retrieval for Retrieval Augmented Open-Domain Question Answering](https://arxiv.org/abs/2507.04069)：提出 AdaPCR，把段落组合而非独立 chunk 作为检索和重排单位，并用上下文感知 query reformulation 与自适应停止处理多跳问答。
+- [Kimi K2](https://arxiv.org/abs/2507.20534)：报告面向开放 MoE agentic model 的大规模 agentic 数据合成，以及在真实和合成环境交互中的联合强化学习。
+- [MMAT-1M](https://arxiv.org/abs/2507.21924)：构建百万级多模态 agent tuning 数据，包含 rationale、reflection、API 调用和检索增强，用于训练多模态工具使用行为。
+- [CompressKV: Semantic Retrieval Heads Know What Tokens are Not Important Before Generation](https://arxiv.org/abs/2508.02401)：识别 GQA 大模型中的语义检索注意力头，并用它们判断生成前哪些 KV-cache token 可以被淘汰。
+- [Reliable Evaluation Protocol for Low-Precision Retrieval](https://arxiv.org/abs/2508.03306)：提出 High-Precision Scoring 和 Tie-aware Retrieval Metrics，使低精度检索评测对伪并列分数更稳健。
+- [Tool Graph Retriever](https://arxiv.org/abs/2508.05152)：在工具依赖图上学习 tool representations，使检索能够包含前置和协作工具，而不是独立排序每个工具描述。
+- [mKG-RAG: Leveraging Multimodal Knowledge Graphs in Retrieval-Augmented Generation for Knowledge-intensive VQA](https://arxiv.org/abs/2508.05318)：把多模态知识图谱融入 RAG，用于知识密集型 VQA。
+- [GLM-4.5](https://arxiv.org/abs/2508.06471)：发布开放的 agentic、reasoning 与 coding foundation model，通过 expert iteration 与强化学习训练，并报告 TAU-Bench 工具使用结果。
 - [LoSemB: Logic-Guided Semantic Bridging for Inductive Tool Retrieval](https://arxiv.org/abs/2508.07690)：使用逻辑引导的语义桥接进行归纳式工具检索，提升对未见工具的泛化。
-- [SimpleTIR](https://arxiv.org/abs/2509.02479)：提出面向工具使用的模型侧方法，核心围绕 End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning。
+- [FTRL](https://arxiv.org/abs/2508.08791)：自动构造局部工具使用训练环境，收集反馈轨迹，并用可验证奖励训练模型。
+- [ToolACE-MT](https://arxiv.org/abs/2508.12685)：通过非自回归骨架构造、迭代细化和离线验证，生成多轮 agentic 工具使用对话。
+- [FLAIR: Feedback Learning for Adaptive Information Retrieval](https://arxiv.org/abs/2508.13390)：离线存储用户反馈和文档合成问题产生的指标，在线用双轨排序把这些指标与相似度分数结合。
+- [MUA-RL](https://arxiv.org/abs/2508.18669)：把模拟用户加入强化学习循环，使工具使用 agent 学会动态多轮交互行为。
+- [Retrieval-Augmented Generation for Natural Language Art Provenance Searches in the Getty Provenance Index](https://arxiv.org/abs/2508.19093)：为 Getty 拍卖 provenance 记录提供语义检索和上下文摘要，支持多语言自然语言检索。
+- [AWorld: Orchestrating the Training Recipe for Agentic AI](https://arxiv.org/abs/2508.20404)：围绕数据、环境与强化学习编排 agentic AI 训练配方。
+- [Granite Embedding R2 Models](https://arxiv.org/abs/2508.21085)：发布 Granite 文本检索 embedding 和 reranker 模型，与工具检索相邻，但不是函数调用策略训练。
+- [ReVPT](https://arxiv.org/abs/2509.01656)：通过强化学习训练多模态模型使用视觉工具推理，把工具学习从 API 调用扩展到感知工具选择。
+- [SimpleTIR](https://arxiv.org/abs/2509.02479)：过滤包含 void turn 的轨迹，缓解工具反馈后低概率 token 导致的梯度爆炸，从而稳定多轮 TIR 强化学习。
 - [Advancing SLM Tool-Use Capability Using Reinforcement Learning](https://arxiv.org/abs/2509.04518)：使用强化学习提升小语言模型的工具使用能力。
+- [RLFactory: A Plug-and-Play Reinforcement Learning Post-Training Framework for LLM Multi-Turn Tool-Use](https://arxiv.org/abs/2509.06980)：提供即插即用的多轮工具使用 RL 后训练框架，包含解耦工具调用、observation markers 和可组合奖励层。
+- [Towards Generalized Routing: Model and Agent Orchestration for Adaptive and Efficient Inference](https://arxiv.org/abs/2509.07571)：研究跨模型与 agent 的自适应路由以提升推理效率，将编排策略作为模型侧能力来处理。
 - [Retrieval And Structuring Augmented Generation with Large Language Models](https://arxiv.org/abs/2509.10697)：在生成前结构化检索信息，使 RAG 输出更适合可控的工具式工作流。
-- [AgentPRM](https://arxiv.org/abs/2511.08325)：提出面向工具使用的模型侧方法，核心围绕 Process Reward Models for LLM Agents via Step-Wise Promise and Progress。
+- [ToolRM: Outcome Reward Models for Tool-Calling Large Language Models](https://arxiv.org/abs/2509.11963)：面向 tool-calling LLMs 的 outcome reward model；核心思想是为完整工具调用轨迹打分，使 agent 学习工具调用是否真正带来成功结果，而不只看 JSON schema 是否有效。
+- [Zero-shot Graph Reasoning via Retrieval Augmented Framework with LLMs](https://arxiv.org/abs/2509.12743)：把目标图存入图数据库，并提示 LLM 生成可执行代码查询，配合错误反馈和超时机制完成零样本图推理。
+- [Tool-R1: Sample-Efficient Reinforcement Learning for Agentic Tool Use](https://arxiv.org/abs/2509.12867)：用答案判断和代码执行成功的结果奖励训练可执行 Python 工具 workflow，并用动态队列复用高质量轨迹。
+- [AgentScaler](https://arxiv.org/abs/2509.13311)：扩展可验证的模拟工具环境，并用两阶段微调课程提升 tau 类 agentic 任务上的 function-calling 能力。
+- [From Correction to Mastery: Reinforced Distillation of Large Language Model Agents](https://arxiv.org/abs/2509.14257)：让学生模型生成轨迹，教师只纠正最早错误，再从已验证前缀开始做短程强化学习。
+- [TARL](https://arxiv.org/abs/2509.14480)：在支持语音-文本交错 rollout 的 sandbox 中使用 turn-level adjudicated reinforcement learning，训练交互式多模态工具使用 agent。
+- [CodeGym](https://arxiv.org/abs/2509.17325)：把代码题转成合成、可验证、多轮工具使用环境，用于端到端 agent RL，提升工具 workflow 的域外泛化。
+- [SLM-Based Agentic AI with P-C-G: Optimized for Korean Tool Use](https://arxiv.org/abs/2509.19369)：面向工具使用与结构化工具交互提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Online-Optimized RAG for Tool Use and Function Calling](https://arxiv.org/abs/2509.20415)：面向工具和函数选择的检索对齐方法。核心思想是在 query embedding 与工具描述错位时在线调整 RAG 检索器，降低调用前的错误工具检索。
+- [Query-Centric Graph Retrieval Augmented Generation](https://arxiv.org/abs/2509.21237)：用 Doc2Query 风格生成构造 query-centric graph，并在查询粒度上检索多跳 chunk。
+- [ResT](https://arxiv.org/abs/2509.21826)：为 tool-use LLM 重加权 token-level policy gradient，使策略优化更关注信息量高的工具调用决策。
+- [EviPath](https://arxiv.org/abs/2509.23071)：合成证据锚定的 RAG agent 交互轨迹，用合成数据训练分解、检索器调用和逐步决策能力。
+- [PARL-MT](https://arxiv.org/abs/2509.23206)：为多轮函数调用加入 progress-aware 数据生成与强化学习，使局部工具调用与全局任务进展保持一致。
+- [ThinkBrake: Mitigating Overthinking in Tool Reasoning](https://arxiv.org/abs/2510.00546)：缓解工具推理中的过度思考，为工具调用前的推理预算控制提供模型侧方法。
+- [TOUCAN](https://arxiv.org/abs/2510.01179)：从真实 MCP 环境合成大规模 tool-agentic 轨迹，并微调模型以提升 function calling 与 MCP 工具使用能力。
+- [Omni-Embed-Nemotron: A Unified Multimodal Retrieval Model for Text, Image, Audio, and Video](https://arxiv.org/abs/2510.03458)：用一个模型统一文本、图像、音频和视频 embedding 检索，属于多模态工具检索相邻工作。
+- [APIDA-Chat: Structured Synthesis of API Search Dialogues to Bootstrap Conversational Agents](https://arxiv.org/abs/2510.03743)：合成结构化 API search dialogues 来启动 conversational agents，为 API 发现与工具使用训练补充数据生成路线。
+- [Leveraging Generative AI for large-scale prediction-based networking](https://arxiv.org/abs/2510.05797)：提出用 GenAI 辅助网络节点做预测式包传输，偏离工具使用模型训练主轴。
+- [ToolExpander: Extending the Frontiers of Tool-Using Reinforcement Learning to Weak LLMs](https://arxiv.org/abs/2510.07737)：通过动态困难样本采样和稳定性导向的强化学习，把工具使用 RL 扩展到较弱或小型语言模型。
+- [Prolog-RAG: A Symbolic Reasoning Approach to Retrieval-Augmented Generation](https://doi.org/10.1109/iccea65460.2025.11103126)：把 Prolog 式符号推理接入 RAG，使检索事实在生成答案前可由显式逻辑规则检查。
+- [A Semantic-Driven Method for Adaptive Compression in Retrieval-Augmented Generation for Language Models](https://doi.org/10.1109/qrs-c65679.2025.00055)：根据语义信号自适应压缩检索上下文，再提供给生成模型。
+- [ScopeTags: Self-Knowledge Tokens for Reliable Retrieval-Augmented Generation in Multimodal Systems](https://doi.org/10.1109/icca66035.2025.11430737)：加入标记范围和可靠性的 self-knowledge tokens，帮助多模态 RAG 生成器筛选检索证据。
+- [FAIR GraphRAG: A Retrieval-Augmented Generation Approach for Semantic Data Analysis](https://doi.org/10.1109/ickg66886.2025.00019)：把 GraphRAG 用于 FAIR 风格语义数据分析，强调结构化证据检索。
+- [Enhancing Retrieval-Augmented Generation with Document Link Structure for Multi-Hop Web Question Answering](https://doi.org/10.1109/cascon66301.2025.00112)：利用文档链接结构扩展和排序证据路径，用于多跳网页问答。
+- [Improving RAG Accuracy Through Multi-Retrieval Integration and Rank Base Retrieved Chunk Selection](https://doi.org/10.70112/ajeat-2025.14.2.4327)：融合多个检索器并按排名选择 chunk，同时调节每个检索器的 chunk 数来提升 RAG 正确性。
+- [UniEval-RAG: A Unified End-to-End Evaluation Framework for RAG Systems](https://doi.org/10.1109/ciotsc67482.2025.11412981)：定义 RAG 系统端到端评测框架，更接近 Bench 覆盖而不是工具使用模型训练。
+- [NextRAG: A Bilingual Retrieval-Augmented Generation Framework for Financial Question-Answering](https://doi.org/10.1109/iccit68739.2025.11491522)：构建面向金融问答的双语 RAG 框架，是领域应用而不是函数调用数据生成。
+- [VFI-LoRA : Leveraging Video Diffusion Models for Video Interpolation Through LoRA Finetuning](https://doi.org/10.1109/iotais67227.2025.11282119)：用 LoRA 微调视频扩散模型做插帧，偏离工具使用训练主轴。
+- [Analysing Code-Based Retrieval Augmented Generation Methods for Knowledge Retention](https://doi.org/10.1109/access65134.2025.11135582)：分析代码式 RAG 方法的知识保持效果，更像检索评测研究而非 API 规划监督。
+- [ModelFusion-RAG: A Prompt Compression Framework for Retrieval Enhanced Generation Based on Small Model Collaboration](https://doi.org/10.1109/acait67930.2025.11522017)：通过小模型协作压缩检索增强生成中的 prompt。
+- [Persian Text-Image Retrieval: A Framework Based on Image Captioning and Scalable Vector Search](https://doi.org/10.1109/csicc65765.2025.10967407)：把图像 captioning 与可扩展向量检索结合用于波斯语图文检索，与工具检索相邻但不是工具调用训练。
+- [A Route Planning Approach with RAG-based LLM and FAISS for Robotic Guide](https://doi.org/10.1109/roboticcc68732.2025.00016)：把 RAG 式 LLM 和 FAISS 检索结合用于机器人导览路径规划，是应用工作流而非基础模型工具监督。
+- [MAMR: Modality-Aligned Multi-modal Retrieval](https://doi.org/10.1109/ijcnn64981.2025.11228736)：对齐多模态表示以提升多模态检索，属于相邻检索模型贡献而非 API 使用训练。
+- [An API Recommendation Method Based on LLM](https://doi.org/10.1109/icpics66386.2025.11347390)：用 LLM 根据用户需求推荐 API，是工具选择相邻方法；可见元数据未显示工具调用 RL 或函数调用语料构造。
+- [Hybrid MCTS and Greedy Beam Search for Chunk Optimization in RAG](https://doi.org/10.1109/fit67061.2025.11333696)：用混合 MCTS 和贪心 beam search 优化 RAG chunk 选择。
+- [A Two-Stage Retrieval System for Maintenance Logs Using Semantic Search and Entity Re-ranking](https://doi.org/10.1109/iccbdai66607.2025.11388418)：先做语义搜索检索维护日志，再进行实体重排序。
+- [A Chatbot-Assisted Intrusion Detection System for Network Traffic Analysis Using Machine Learning and Retrieval-Augmented Generation](https://doi.org/10.1109/iccs67844.2025.11291869)：把网络流量入侵检测与 RAG 聊天机器人解释结合起来，是网络安全应用而非工具使用模型训练。
+- [A Cognitive-RAG Framework for Task Planning and Decision Generation](https://doi.org/10.1109/cac67268.2025.11487090)：把检索上下文接入任务规划与决策生成，更接近外部规划工作流而不是训练后的工具调用模型。
+- [Optimization of Limtations and Reduction of Hallucination in Llm Using Rag: a Performancedriven Framework](https://doi.org/10.1109/iccubea65967.2025.11283777)：优化 RAG 流水线以减少 LLM 幻觉，核心是检索接地而非工具调用策略学习。
+- [PO-RAG: Memory-Enhanced and Self-Optimizing System for Opinion Mining in Public Opinion](https://doi.org/10.1109/access.2025.3627262)：为舆情挖掘 RAG 系统加入记忆和自优化，是领域 RAG 系统而不是函数调用训练。
+- [Systematic Evaluation of Similarity Metrics for Retrieval, Reranking, and Completion in Retrieval Augmented Generation Systems](https://doi.org/10.1109/etecom66111.2025.11319066)：系统评估 RAG 中检索、重排和补全阶段的相似度指标，属于协议式研究而非模型训练方法。
+- [nnRAG – Incorporating Human-Feedback for Neural Network Driven Similarity Search: A Preliminary Feasibility Study](https://doi.org/10.1109/ichi64645.2025.00036)：在医疗 RAG 初步研究中把人类反馈纳入神经网络驱动的相似度搜索。
+- [FixConsult: Leveraging External Defect Knowledge Driven Natural Language Suggestions Generation for Software Vulnerability Repair](https://doi.org/10.1109/apsec66846.2025.00037)：检索外部缺陷知识，为软件漏洞修复生成自然语言建议。
+- [Retrieval-Supported Prompting in Large Language Models for Arabic Grammatical Error Correction](https://doi.org/10.1109/dsis67228.2025.11390585)：用检索支持提示改进阿拉伯语语法纠错，是语言应用 RAG 而非工具调用监督。
+- [ChatLS: Multimodal Retrieval-Augmented Generation and Chain-of-Thought for Logic Synthesis Script Customization](https://doi.org/10.1109/dac63849.2025.11132969)：结合多模态 RAG 与思维链提示来定制逻辑综合脚本。
+- [Next Steps in Cyber Blue Team Automation—Leveraging the Power of LLMs](https://doi.org/10.23919/cycon65856.2025.11103720)：讨论基于 LLM 的网络蓝队自动化；元数据更像路线图而非具体工具使用训练配方。
+- [InfraMLForge: Developer Tooling for Rapid LLM Development and Scalable Deployment](https://doi.org/10.1109/cisat66811.2025.11181815)：提供 LLM 快速开发和部署工具，属于 MLOps 基础设施而非工具调用模型工作。
+- [Semantic Relational Types of SQL Queries and Applications to AI Agent Tool Selection](https://doi.org/10.1109/cascon66301.2025.00048)：按语义关系类型分类 SQL 查询，并用这些类别指导 AI agent 的工具选择。
+- [Training-Free Group Relative Policy Optimization](https://arxiv.org/abs/2510.08191)：以免训练方式改造 GRPO 式优化以提升领域 agent 行为。
+- [Barriers that Programming Instructors Face While Performing Emergency Pedagogical Design to Shape Student-AI Interactions with Generative AI Tools](https://arxiv.org/abs/2510.09492)：调研计算机教学者在塑造学生使用 GenAI 工具时遇到的障碍，属于教育 HCI 而非模型训练。
+- [Environment Tuning](https://arxiv.org/abs/2510.10197)：把工具使用环境本身作为训练对象，用课程、环境增强和 progress rewards 支持 RL。
+- [CodeWatcher: IDE Telemetry Data Extraction Tool for Understanding Coding Interactions with LLMs](https://arxiv.org/abs/2510.11536)：抽取 IDE telemetry 来研究开发者如何与 LLM 编程工具交互，是数据采集基础设施而非工具调用训练器。
+- [Grounding Long-Context Reasoning with Contextual Normalization for Retrieval-Augmented Generation](https://arxiv.org/abs/2510.13191)：展示上下文格式会显著改变 RAG 准确性，并用 contextual normalization 标准化分隔符、密度和位置。
+- [PluriHopRAG: Exhaustive, Recall-Sensitive QA Through Corpus-Specific Document Structure Learning](https://arxiv.org/abs/2510.14377)：形式化 recall-sensitive pluri-hop QA，并学习语料特定文档结构以驱动对风电行业报告的穷尽式 RAG。
+- [ToolPRM](https://arxiv.org/abs/2510.14703)：训练面向结构化函数调用输出和 intra-call supervision 的细粒度 process reward model。
+- [Towards Mixed-Modal Retrieval for Universal Retrieval-Augmented Generation](https://arxiv.org/abs/2510.17354)：构建混合模态检索器 Nyx，并通过四阶段网页文档流水线生成 NyxQA，用于文本与图像的 universal RAG。
+- [PyStash: Retrieval-Augmented Generation Pipeline Context Aware Fine Tuning](https://doi.org/10.1109/synasc69064.2025.00042)：对 RAG 流水线做上下文感知微调，是检索适配条目；公开元数据较薄。
+- [LearnRAG: Implementing Retrieval-Augmented Generation for Adaptive Learning Systems](https://doi.org/10.1109/icaiic64266.2025.10920869)：在自适应学习系统中实现 RAG，是教育部署案例而非工具使用训练数据。
+- [Enhancing Vector Data Quality through Negative Learning for Retrieval-augmented Large Models](https://doi.org/10.1109/ijcnn64981.2025.11229352)：用 negative learning 改善检索增强大模型所依赖的向量数据质量。
+- [Retrieval Augmented Generation for Relational Mapping of Resume Data for Improved Analysis](https://doi.org/10.1109/icmlas64557.2025.10968921)：把 RAG 用于简历数据的关系映射和后续分析。
+- [CadenceRAG: Context-Aware and Dependency-Enhanced Retrieval Augmented Generation for Holistic Video Understanding](https://doi.org/10.1109/cvprw67362.2025.00353)：为整体视频理解加入上下文感知和依赖增强检索，是视频 RAG 方法而非函数调用训练。
+- [Synthetic Dataset Generation and Validation with LLMs for text2sparql in Wikidata Graphs](https://wikidataworkshop.github.io/2025/papers/paper4.pdf)：用 LLM 在 Wikidata 图上合成并验证 text-to-SPARQL 样例，提供结构化查询训练数据。
+- [MENTOR: A Reinforcement Learning Framework for Enabling Tool Use in Small Models via Teacher-Optimized Rewards](https://arxiv.org/abs/2510.18383)：用教师优化奖励和强化学习把工具使用能力迁移到小语言模型，避免只模仿静态轨迹。
+- [DCR-SQL: Dual-Channel Routing Framework for Cost-Efficient Text-to-SQL Generation with Dynamic Hardness Awareness](https://doi.org/10.1109/cac67268.2025.11487908)：按查询难度动态把 text-to-SQL 请求路由到双生成通道，在成本和准确率之间折中。
+- [Metagraph Augmented Generation (MAG) for Optimized Text-to-SQL Conversion Using LLMs](https://doi.org/10.1109/aixb65684.2025.00024)：用 metagraph 增强来改进 LLM 的自然语言到 SQL 转换。
+- [Towards Explainable RAG: Interpreting the Influence of Retrieved Passages on Generation](https://doi.org/10.1109/raiic65850.2025.11170170)：解释各检索段落如何影响生成器输出，是 RAG 可解释性分析。
+- [RAGRouter: A Retrieval-Augmented Routing Strategy Model for Large Language Model](https://doi.org/10.1109/icdm68174.2025.11309612)：训练或部署路由策略，决定 LLM 何时走检索增强路径。
+- [Large Language Models Tool Retrieval and Context Compression via Dynamic Graph-Based Relation Modeling](https://doi.org/10.25236/ajcis.2025.080712)：把工具之间的关系建成动态图，并用于工具检索和上下文压缩。
+- [Enhance Tool Invocation with Large Language Models through Cluster-Augmented Demonstration Sampling](https://doi.org/10.1109/ccpqt66408.2025.11383431)：从聚类中采样 demonstration，改进 LLM 工具调用示例的检索或调优效果。
+- [Knowledge Distillation in RAG: Enabling Small Models to Efficiently Leverage Large-Scale Knowledge Bases](https://doi.org/10.1109/icaice68195.2025.11382404)：将检索增强生成行为蒸馏到小模型中，补充检索增强工具使用的模型训练方法。
+- [A Rank-Aware Retrieval Precision Modeling and Calculation Method for Retrieval Augmented Generation](https://doi.org/10.1109/icise-ie68873.2025.11379172)：为检索增强生成建立排名感知的检索精度建模方法。
+- [Some Attention is All You Need for Retrieval](https://arxiv.org/abs/2510.19861)：证明混合 SSM-Transformer 模型的检索依赖自注意力头；稀疏注意力仍能保留检索，而 SSM 消融无法补偿。
+- [Retriever-generator-verification: A novel approach to enhancing factual coherence in open-domain question answering](https://doi.org/10.1016/j.ipm.2025.104147)：在检索-生成问答中加入验证环节，提高事实一致性。
+- [Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning](https://arxiv.org/abs/2510.23038)：用工具集成强化学习训练 LLM judge，让评审模型在调用外部工具和推理检查之间形成可奖励的 agentic 判断轨迹。
+- [DTC: Demonstration-Enhanced Tool Calling for Large Language Models](https://doi.org/10.1109/bigdata66926.2025.11402433)：研究用示范增强工具调用，作为改进大语言模型函数使用行为的模型侧方法。
+- [FunReason-MT](https://arxiv.org/abs/2510.24645)：通过 environment-API graph interaction、难查询合成和 guided iterative chain 生成真实感多轮工具使用训练数据。
+- [ToolReflection: Improving Large Language Models for Real-World API Calls with Self-Generated Data](https://doi.org/10.18653/v1/2025.realm-1.14)：从工具调用尝试中生成自反思数据，并用这些纠错样本训练模型以改进真实 API 调用行为。
+- [Instance-Level Composed Image Retrieval](https://arxiv.org/abs/2510.25387)：提出实例级 i-CIR 评测和由 VLM 生成的训练数据，属于组合式图像检索而非工具使用。
+- [MTIR-SQL: Multi-turn Tool-Integrated Reasoning Reinforcement Learning for Text-to-SQL](https://arxiv.org/abs/2510.25510)：将工具集成推理或执行反馈作为模型侧训练信号。
+- [ToolRM: Towards Agentic Tool-Use Reward Modeling](https://arxiv.org/abs/2510.26167)：训练面向 agentic tool-use 轨迹的奖励模型，为强化学习和重排序提供超越最终答案正确性的工具感知反馈信号。
+- [Evaluating Perspectival Biases in Cross-Modal Retrieval](https://arxiv.org/abs/2510.26861)：用 3XCM 基准揭示跨模态检索 embedding 中的语言和文化视角偏差。
+- [PORTS: Preference-Optimized Retrievers for Tool Selection with Large Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.507)：面向工具选择的 preference-optimized retriever。核心思想是训练检索组件选择更符合用户目标和下游 agent 成功率的工具，而不只依赖词面或向量相关性。
+- [Semantic Contribution-Aware Adaptive Retrieval for Black-Box Models](https://doi.org/10.18653/v1/2025.findings-emnlp.921)：利用语义贡献信号为黑盒模型进行自适应检索。
+- [MS-RAG: Simple and Effective Multi-Semantic Retrieval-Augmented Generation](https://doi.org/10.18653/v1/2025.emnlp-main.1151)：在生成前用多种语义视角检索，通过检索侧多样性提升 RAG 证据覆盖。
+- [KGFR: A Foundation Retriever for Generalized Knowledge Graph Question Answering](https://arxiv.org/abs/2511.04093)：提出用于知识图谱问答的基础检索器，减少对特定数据集检索器微调的依赖。
+- [DMA: Online RAG Alignment with Human Feedback](https://arxiv.org/abs/2511.04880)：用文档级、列表级和回答级人类反馈在线对齐 RAG 排序，再蒸馏轻量 scorer 以降低服务延迟。
+- [DeepEyesV2: Toward Agentic Multimodal Model](https://arxiv.org/abs/2511.05271)：通过数据构造与训练方法构建可调用代码执行、网页搜索和视觉工具的 agentic multimodal model。
+- [AgentPRM](https://arxiv.org/abs/2511.08325)：训练 agent 过程奖励模型，按每个动作对目标的 promise 和环境反馈后的 progress 打分。
+- [A Chinese financial event knowledge graph-based retrieval-augmented generation framework for financial question answering](https://doi.org/10.1016/j.engappai.2026.114670)：把中文金融事件知识图谱与 RAG 结合，用于金融问答。
+- [The Pathfinder: Adaptive learning for hydrogen storage material optimization](https://doi.org/10.1016/j.ijhydene.2026.155124)：运行面向储氢材料优化的 adaptive-learning loop，是科学优化工作流而非工具调用模型训练。
+- [Boosting Tool-Calling Capabilities of Large Language Models via a Novel In-Context Learning Approach](https://doi.org/10.1109/access.2026.3673174)：研究通过上下文学习提升工具调用能力的轻量路径，适合作为缺少微调或强化学习数据时的模型侧方案。
+- [API Pack](https://openreview.net/forum?id=f7O3hITh5s)：发布百万级多编程语言 instruction-API-call 数据集，并微调 CodeLlama 风格模型以泛化到未见 API。
+- [LoopTool: Closing the Data-Training Loop for Robust LLM Tool Calls](https://arxiv.org/abs/2511.09148)：闭合合成数据与训练反馈循环，提高 LLM 工具调用鲁棒性。
+- [Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning](https://arxiv.org/abs/2511.14460)：用端到端强化学习训练可与环境交互的 LLM agent。
+- [ToolMind](https://arxiv.org/abs/2511.15718)：构建带函数图、多 agent 用户-助手-工具模拟和 turn-level filtering 的 reasoning-enhanced tool-agentic dataset。
+- [Parametric Retrieval-Augmented Generation using Latent Routing of LoRA Adapters](https://arxiv.org/abs/2511.17044)：把外部文档编码进少量共享 LoRA adapter，并通过潜在路由为每个文档组合 adapter。
+- [DeepSeek-V3.2](https://arxiv.org/abs/2512.02556)：加入大规模 agentic task synthesis pipeline 与可扩展强化学习，把推理能力整合到工具使用场景中。
+- [VG-Refiner: Towards Tool-Refined Referring Grounded Reasoning via Agentic Reinforcement Learning](https://arxiv.org/abs/2512.06373)：VG-Refiner 通过智能体强化学习训练扎根推理，使模型能处理不可靠的视觉工具输出。
+- [Hybrid Retrieval-Augmented Generation for Robust Multilingual Document Question Answering](https://arxiv.org/abs/2512.12694)：结合语义查询扩展、reciprocal-rank fusion、严格接地提示和拒答机制，用于噪声多语历史文档问答。
+- [AutoTool](https://arxiv.org/abs/2512.13278)：通过大规模 tool-selection rationale 数据、SFT、强化学习和 ranking optimization 训练动态工具选择。
+- [Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](https://arxiv.org/abs/2512.15943)：针对企业 agent 任务微调小语言模型，包括问答、摘要、结构化解释和替代大模型的工具调用。
+- [AWPO](https://arxiv.org/abs/2512.19126)：自适应组合 reasoning rewards 与 outcome rewards，用于工具使用策略优化。
+- [InfTool](https://arxiv.org/abs/2512.23611)：在 API 规格和 MCP server 上进行多 agent role playing 以合成验证轨迹，再用 GRPO 和 gated rewards 闭环训练。
+- [RIMRULE: Improving Tool-Using Language Agents via MDL-Guided Rule Learning](https://arxiv.org/abs/2601.00086)：从工具使用失败轨迹中蒸馏紧凑规则并动态注入，使语言智能体能适应非标准或文档不足的 API。
+- [HardGen](https://arxiv.org/abs/2601.01498)：从失败样例、API 图、高级工具和可验证轨迹生成困难工具使用样本，用于训练更强 agent。
+- [SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models](https://arxiv.org/abs/2601.03555)：为工具使用语言模型加入结构化中层监督，聚焦高层计划与具体工具调用之间的决策层。
+- [Internal Representations as Indicators of Hallucinations in Agent Tool Selection](https://arxiv.org/abs/2601.05214)：用模型内部表征识别工具选择幻觉，为可靠工具选择提供诊断路径。
+- [EnvScaler](https://arxiv.org/abs/2601.05808)：程序化合成 tool-interactive environments 和场景，并用于监督微调和强化学习。
+- [GEM](https://arxiv.org/abs/2601.10355)：从文本语料中抽取隐式 workflow 并合成 grounded 多轮工具使用轨迹，再把流水线蒸馏成 trajectory synthesizer 模型。
+- [MatchTIR: Fine-Grained Supervision for Tool-Integrated Reasoning via Bipartite Matching](https://arxiv.org/abs/2601.10712)：通过二分匹配为工具融合推理提供细粒度监督，面向工具调用轨迹的模型侧训练。
+- [PerCache: Predictive Hierarchical Cache for RAG Applications on Mobile Devices](https://arxiv.org/abs/2601.11553)：用预测式分层缓存复用相关查询的计算，降低个性化移动端 RAG 延迟。
+- [ToolMaster](https://arxiv.org/abs/2601.12762)：通过环境交互训练模型先 trial 未知工具、再执行任务，结合 SFT 与强化学习。
+- [More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](https://arxiv.org/abs/2601.13525)：对领域 embedding，尤其是 query embedding 应用 PCA，在没有新标注或重训练的情况下改进稠密检索适配。
+- [RISE](https://arxiv.org/abs/2601.15120)：从已验证真实工具调用派生虚拟轨迹，并通过关键参数变异生成负样本，训练工具 agent 避免意图偏移。
+- [RAG-GFM: Overcoming In-Memory Bottlenecks in Graph Foundation Models via Retrieval-Augmented Generation](https://arxiv.org/abs/2601.15124)：用检索增强缓解图基础模型的内存瓶颈，属于结构化检索相邻工作而非工具调用训练。
+- [Robust model-based MARL via masked cross-agent completion under observation loss](https://doi.org/10.1007/s11432-025-4808-x)：围绕“Robust model-based MARL via masked cross-agent completion under observation loss”组织智能体协同。
+- [gpt-oss](https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf)：OpenAI 开放权重推理模型经过面向 agentic tool use、function calling、浏览式工具 workflow 和 Tau-Bench 式评测的后训练。
+- [CLEANER: Self-Purified Trajectories Boost Agentic Reinforcement Learning](https://arxiv.org/abs/2601.15141)：利用模型自纠错能力在数据采集时清除被执行错误污染的上下文，从而净化 agentic RL rollout。
+- [Fission-GRPO](https://arxiv.org/abs/2601.15625)：把工具执行错误转化为 on-policy corrective supervision，使模型学会从无效调用中恢复。
+- [Graph-Anchored Knowledge Indexing for Retrieval-Augmented Generation](https://arxiv.org/abs/2601.16462)：在迭代检索中逐步更新 knowledge-anchoring index，使 LLM 能导航分散的多跳证据。
+- [DiGiT-TC](https://arxiv.org/abs/2601.19914)：在不假设有状态执行环境的情况下模拟复杂多轮工具调用对话，面向只有工具规格可用的企业类场景。
+- [PEARL](https://arxiv.org/abs/2601.20439)：把离线工具探索规划和在线 GRPO 结合起来训练多跳工具调用。
+- [ASTRA](https://arxiv.org/abs/2601.21558)：合成 agentic trajectories 与 code-executable reinforcement arenas，把工具增强环境生成纳入模型侧 agent 训练。
+- [ToolWeaver](https://arxiv.org/abs/2601.21947)：把工具编码成 hierarchical sequences 来做 generative tool learning，降低词表膨胀，并让模型规模化学习协作式工具语义。
+- [SYNTHAGENT](https://arxiv.org/abs/2601.22511)：合成 mock tool worlds、用户模拟、任务和 rubric rewards，用于训练小型 agentic language model。
+- [EigenData](https://arxiv.org/abs/2601.22607)：结合自演化合成数据 agent 与 verifier-based GRPO 风格 RL，为 tau 类任务生成工具接地对话和逐实例可执行 checker。
+- [AutoTraj](https://arxiv.org/abs/2601.23032)：修复工具使用轨迹用于 SFT，并训练 trajectory-level reward model 支持 tool-integrated reasoning RL。
+- [DART](https://arxiv.org/abs/2602.00994)：研究 agentic RL 中推理行为与工具使用行为的梯度干扰，并用 disentangled tuning 缓解冲突。
+- [ASTER](https://arxiv.org/abs/2602.01204)：通过 interaction-dense cold start 和更长 RL 预算扩展 tool-integrated extended reasoning。
+- [What Does Vision Tool-Use Reinforcement Learning Really Learn? Disentangling Tool-Induced and Intrinsic Effects for Crop-and-Zoom](https://arxiv.org/abs/2602.01334)：区分视觉工具使用强化学习中模型内在能力提升与 crop-and-zoom 工具带来的外部收益。
+- [SOPRAG: Multi-view Graph Experts Retrieval for Industrial Standard Operating Procedures](https://arxiv.org/abs/2602.01858)：用实体、因果和流程图专家替代扁平 SOP chunking，并用 LLM 引导 gate 做工业流程检索。
+- [ASA: Training-Free Representation Engineering for Tool-Calling Agents](https://arxiv.org/abs/2602.04935)：面向 tool-calling agents 的 training-free representation-engineering 方法。核心思想是在工具接口变化时适配 agent，而不只依赖脆弱的 prompt 或 schema engineering。
+- [V-Retrver](https://arxiv.org/abs/2602.06034)： 将通用多模态检索重构为使用外部视觉工具收集证据的智能体推理，并配套证据对齐训练。
+- [ScaleEnv](https://arxiv.org/abs/2602.06820)：从零合成交互式环境和可验证任务，用于通用工具使用 agent 训练。
+- [ELPO](https://arxiv.org/abs/2602.09598)：定位 tool-integrated reasoning 中第一个不可恢复步骤，并用树搜索导出的 credit assignment 做 RL。
+- [Agent World Model](https://arxiv.org/abs/2602.10090)：生成带数据库状态、可靠转移和奖励的 code-driven synthetic tool environments，并用 RL 训练 agent。
+- [CM2](https://arxiv.org/abs/2602.12268)：在多轮多步模拟工具环境中使用 checklist rewards，补足难以获得可验证结果奖励的场景。
 - [SuperFC: Selective Data Utilization for a Sustainable and Effective Function-Calling Agent](https://doi.org/10.1109/ijcnn64981.2025.11228427)：为可持续且有效的函数调用智能体选择训练数据。
+- [HyFunc: Accelerating LLM-based Function Calls for Agentic AI through Hybrid-Model Cascade and Dynamic Templating](https://arxiv.org/abs/2602.13665)：用混合模型级联与动态模板加速 LLM 函数调用。
 - [PhGPO](https://arxiv.org/abs/2602.13691)：面向长程工具规划的 pheromone-guided policy optimization 方法，使用轨迹级反馈。
+- [Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use](https://arxiv.org/abs/2602.20426)：面向工具使用与智能体工具编排的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [PyVision-RL: Forging Open Agentic Vision Models via RL](https://arxiv.org/abs/2602.20739)：用 oversampling、过滤、rollout 排名和累积工具奖励稳定多模态 agentic RL，防止交互坍缩。
+- [Tool-R0](https://arxiv.org/abs/2602.21320)：通过 generator 与 solver 的 self-play 共演化，从零任务数据学习工具调用。
+- [SimpleTool: Parallel Decoding for Real-Time LLM Function Calling](https://arxiv.org/abs/2603.00030)：作为工具使用的模型侧方法候选，聚焦“Parallel Decoding for Real-Time LLM Function Calling”。
+- [TopoCurate:Modeling Interaction Topology for Tool-Use Agent Training](https://arxiv.org/abs/2603.01714)：建模 tool-use agent training 的交互拓扑；核心思想是按交互结构组织工具使用轨迹，使训练数据覆盖依赖关系而不只是孤立调用。
+- [CoVe](https://arxiv.org/abs/2603.01940)：把显式任务约束同时用于合成复杂交互式工具使用轨迹和派生确定性 RL 奖励信号。
+- [EvoTool: Self-Evolving Tool-Use Policy Optimization in LLM Agents via Blame-Aware Mutation and Diversity-Aware Selection](https://arxiv.org/abs/2603.04900)：自演化工具使用策略优化框架；核心思想是在失败后用 blame-aware feedback 与多样性控制来变异、选择 tool-use policy。
+- [EigenData: A Self-Evolving Multi-Agent Platform for Function-Calling Data Synthesis, Auditing, and Repair](https://arxiv.org/abs/2603.05553)：合成、审计并修复 function-calling 数据，为工具调用模型训练提供自演化数据生成机制。
+- [Data Agent: Learning to Select Data via End-to-End Dynamic Optimization](https://arxiv.org/abs/2603.07433)：用 Data Agent 处理 Learning to Select Data via End-to-End Dynamic Optimization。
+- [ICRL](https://arxiv.org/abs/2603.08068)：在 RL 中使用 in-context rollout prompts 代替 cold-start SFT，并随策略改进逐步退火示例。
+- [DIVE](https://arxiv.org/abs/2603.11076)：先执行真实工具，再从轨迹中生成多样、接地、可验证的任务，用于泛化工具使用训练。
+- [SQL-ASTRA](https://arxiv.org/abs/2603.16161)：用 aggregated trajectory reward 和 column-set matching reward 训练 agentic SQL，把稀疏的最终 SQL 反馈转化为更密集的步骤级监督。
+- [TRUST-SQL: Tool-Integrated Multi-Turn Reinforcement Learning for Text-to-SQL over Unknown Schemas](https://arxiv.org/abs/2603.16448)：在未知 schema 场景下训练工具集成的 text-to-SQL agent，并用结构化协议和双轨 GRPO 解决信用分配。
+- [Seed1.8 Model Card: Towards Generalized Real-World Agency](https://arxiv.org/abs/2603.20633)：报告面向真实世界智能体的基础模型，覆盖工具调用、代码执行、GUI 交互与部署侧推理优化。
+- [DSL-R1: From SQL to DSL for Training Retrieval Agents across Structured and Unstructured Data with Reinforcement Learning](https://arxiv.org/abs/2603.21018)：用 DSL-R1 处理 From SQL to DSL for Training Retrieval Agents across Structured and Unstructured Data with Reinforcement Learning。
+- [TIR-Agent: Training an Explorative and Efficient Agent for Image Restoration](https://arxiv.org/abs/2603.27742)：用 SFT、扰动扩展探索和 RL 训练图像修复工具调用策略，学习工具组合选择。
 - [ATLAS-RTC](https://arxiv.org/abs/2603.27905)：token 级运行时控制方法，在解码时对结构化工具调用输出执行 biasing、masking 或 rollback。
+- [Tool Retrieval Bridge: Aligning Vague Instructions with Retriever Preferences via Bridge Model](https://arxiv.org/abs/2604.07816)：训练 bridge model 对齐模糊指令与工具检索器偏好，提升工具选择检索的可用性。
+- [COVERT](https://arxiv.org/abs/2604.09813)：生成保持 oracle 的合成工具环境，包含干扰、歧义、噪声输出和可检查奖励的 rollout，用于 agentic RL。
+- [TInR: Exploring Tool-Internalized Reasoning in Large Language Models](https://arxiv.org/abs/2604.10788)：探索 tool-internalized reasoning，研究工具使用模式如何被吸收到模型推理行为中，而不只是作为外部 API 调用。
+- [Knowledge Is Not Static: Order-Aware Hypergraph RAG for Language Models](https://arxiv.org/abs/2604.12185)：把检索知识表示为有序超图交互，并检索连贯的超边序列而非无序事实集合。
+- [GraphRAG-Router: Learning Cost-Efficient Routing over GraphRAGs and LLMs with Reinforcement Learning](https://arxiv.org/abs/2604.16401)：先用 SFT warm-start 分层路由器，再用两阶段 RL 选择更低成本的 GraphRAG 与生成模型组合。
+- [R2IF: Aligning Reasoning with Decisions via Composite Rewards for Interpretable LLM Function Calling](https://arxiv.org/abs/2604.20316)：通过组合奖励把推理轨迹与函数调用决策对齐，同时纳入格式、正确性、推理有效性和规格价值信号。
+- [HaS: Accelerating RAG through Homology-Aware Speculative Retrieval](https://arxiv.org/abs/2604.20452)：在受限范围内做 speculative retrieval，并通过识别同源查询重遇来验证 draft。
+- [LARAG: Link-Aware Retrieval Strategy for RAG Systems in Hyperlinked Technical Documentation](https://arxiv.org/abs/2605.07517)：把超链接关系编码为 chunk 元数据，并在技术文档中做类图检索。
 - [Case-Based Calibration of Adaptive Reasoning and Execution for LLM Tool Use](https://arxiv.org/abs/2605.15041)：用案例校准工具使用中的自适应推理与执行。
+- [EnvFactory](https://arxiv.org/abs/2605.18703)：合成有状态可执行工具环境和自然多轮轨迹，并用 robust RL 训练 Qwen 系列工具使用 agent。
+- [AKBE / Agentic Knowledge Boundary Enhancement](https://arxiv.org/abs/2605.26952)：训练工具型 agent 判断什么时候真正需要工具。核心思想是对同一问题比较 with-tool 与 no-tool 的 on-policy rollout，推断逐实例知识边界和最少工具调用需求，再把定向监督注入 agentic RL，以减少冗余调用但不压制有用工具使用。
+- [Agent Explorative Policy Optimization for Multimodal Agentic Reasoning](https://arxiv.org/abs/2605.28774)：提出 AXPO，针对 Thinking-Acting Gap 固定推理前缀后重采样工具调用及后续轨迹，并用不确定性选择前缀以强化工具使用学习信号。
+- [DeepTool: Scaling Interleaved Deliberation in Tool-Integrated Reasoning via Process-Supervised Reinforcement Learning](https://arxiv.org/abs/2605.29568)：提出 DeepTool，用过程监督强化学习训练思考、行动和观察交错的 tool-integrated reasoning，补足仅依赖结果奖励的稀疏监督。
+- [On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](https://arxiv.org/abs/2606.00135)：同时研究 tool-calling evaluation sensitivity 与强化学习训练效率。核心思想：指出不同设置会如何改变工具调用 benchmark 结论，并提出加速 tool-calling RL 的技术，而不是只扩大 rollout 预算。
 - [MTSearch-R1](https://doi.org/10.1109/icassp55912.2026.11461921)：用强化学习训练大模型进行灵活的多工具搜索与工具选择。
 - [TOOL-CURE: Tool Selection via Curriculum-Enhanced Reinforcement Learning with Sample Screening for LLMs](https://doi.org/10.1145/3773966.3777952)：使用课程增强强化学习与样本筛选来改进工具选择。
+- [HCLeK: Hierarchical Compression of Legal Knowledge for Retrieval-Augmented Generation](https://doi.org/10.1145/3746252.3760925)：对法律知识做层次化压缩，改进法律语料中的检索接地生成。
+- [Empowering Large Language Models: Tool Learning for Real-World Interaction](https://doi.org/10.1145/3626772.3661381)：SIGIR 2024 面向真实世界交互的工具学习工作；可见元数据支持保留，但不足以写出更细机制。
+- [Two-Stage Tool Retrieval and Invocation for Customer Service Interactions](https://doi.org/10.1145/3788731.3788739)：把客服工具使用拆成检索和调用两个阶段，先找候选工具，再执行选定调用。
+- [Conflict-Aware RAG: Multi-Stage Learning with Conflict Signals for Robust Retrieval-Augmented Generation](https://doi.org/10.1145/3774904.3792289)：利用检索和生成阶段的冲突信号，在证据矛盾时训练或适配 RAG 行为。
+- [Envisioning Information Access Systems: What Makes for Good Tools and a Healthy Web?](https://doi.org/10.1145/3649468)：讨论人和社会需要怎样的信息访问系统，是概念性信息检索文章，偏离模型侧工具使用训练。
+- [In-Storage Acceleration of Retrieval Augmented Generation as a Service](https://doi.org/10.1145/3695053.3731032)：把 RAG 服务中的部分检索加速下沉到存储侧，属于系统优化而非模型训练。
+- [REDEEMing Modality Information Loss: Retrieval-Guided Conditional Generation for Severely Modality Missing Learning](https://doi.org/10.1145/3711896.3737101)：用检索引导条件生成恢复严重缺失模态，属于相邻多模态生成而非工具使用。
+- [AgentTune: An Agent-Based Large Language Model Framework for Database Knob Tuning](https://doi.org/10.1145/3769758)：把数据库 knob tuning 分解为 workload 分析、knob 选择、配置生成和验证 agent，减少 replay 和无效配置成本。
+- [Seeing the Unseen in Micro-Video Popularity Prediction: Self-Correlation Retrieval for Missing Modality Generation](https://doi.org/10.1145/3690624.3709308)：用 self-correlation retrieval 为微视频热度预测生成缺失模态，偏离工具使用训练。
+- [FiRE: Enhancing MLLMs with Fine-Grained Context Learning for Complex Image Retrieval](https://doi.org/10.1145/3726302.3729979)：用细粒度上下文学习训练或适配 MLLM 做复杂图像检索，属于相邻检索模型覆盖。
+- [Enhancing Security Insights with KnowGen-RAG: Combining Knowledge Graphs, LLMs, and Multimodal Interpretability](https://doi.org/10.1145/3716815.3729012)：结合知识图谱、LLM 和多模态可解释性生成安全洞察，是领域 RAG 工作流而非函数调用训练。
+- [An Improved Meta-Knowledge Prompt Engineering Approach for Generating Research Questions in Scientific Literature](https://doi.org/10.5220/0013060900003838)：用 meta-knowledge prompt engineering 生成科研问题，更接近科研构思而不是工具使用模型。
+- [Staged Multi‐Strategy Framework With Open‐Source Large Language Models for Natural Language to SQL Generation](https://doi.org/10.1002/tee.24268)：先用固定提示抽取 SQL 关键列，再结合表内容约束生成，以提升开源 LLM text-to-SQL。
+- [Reinforcement Learning of Planning Processes for Tool-Augmented LLM Agents](https://doi.org/10.71465/ajbd3639)：把工具增强 LLM agent 的规划过程作为强化学习对象，用反馈优化 plan generation 本身。

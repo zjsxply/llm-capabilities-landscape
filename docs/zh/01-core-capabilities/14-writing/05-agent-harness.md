@@ -1,11 +1,85 @@
 # 1.14.5 Agent Harness
 
 - [Self-Refine](https://arxiv.org/abs/2303.17651)（[开源代码](https://github.com/madaan/self-refine)）：`生成 -> 反馈 -> 修订` 的通用写作修订 loop；适合把一次性写作改造成可审稿、可迭代的长文生成流程。
-- [STORM](https://arxiv.org/abs/2402.14207)（[开源代码](https://github.com/stanford-oval/storm)）：面向长篇百科式写作的 `检索 -> 多视角提问 -> 大纲 -> 成稿` harness；更接近报告/综述型长文生成而不是单轮作文。
+- [Fine-Grained Modeling of Narrative Context: A Coherence Perspective via Retrospective Questions](https://arxiv.org/abs/2402.13551)：构建 NarCo 叙事连贯性图，用 LLM 生成片段之间的回溯问题，使写作与故事问答流程可以显式调用上下文依赖，而不是只依赖平铺长上下文。
+- [Metamorpheus: Interactive, Affective, and Creative Dream Narration Through Metaphorical Visual Storytelling](https://arxiv.org/abs/2403.00632)：一个情感化梦境叙事界面，按梦境情绪弧组织故事线，提供隐喻建议，并生成隐喻图像和文字描写，供用户在重排与重着色中反思经历。
+- [Towards Full Authorship with AI: Supporting Revision with AI-Generated Views](https://arxiv.org/abs/2403.01055)：通过 AI 生成视角支持写作修订。
+- [SARD: A Human-AI Collaborative Story Generation](https://arxiv.org/abs/2403.01575)：一个拖拽式多章节故事生成界面，用节点化叙事可视化帮助作者控制 LLM 生成的故事结构，同时揭示这种可视化会带来额外认知负担。
+- [LLM-based agents for automating the enhancement of user story quality: An early report](https://arxiv.org/abs/2403.09442)：在 Austrian Post Group IT 内实现自治 LLM-agent 参考模型，用于改写敏捷 user story，并由 6 个团队的 11 名参与者评估质量改进效果。
+- [StoryVerse: Towards Co-authoring Dynamic Plot with LLM-based Character Simulation via Narrative Planning](https://arxiv.org/abs/2405.13042)：通过基于 LLM 的角色模拟和叙事规划，支持动态情节共创。
+- [HoLLMwood: Unleashing the Creativity of Large Language Models in Screenwriting via Role Playing](https://arxiv.org/abs/2406.11683)：通过角色扮演释放大语言模型在影视剧本写作中的创作能力。
+- [CollabStory: Multi-LLM Collaborative Story Generation and Authorship Analysis](https://arxiv.org/abs/2406.12665)：提供多 LLM 共同创作流程与 3.2 万余篇故事数据集，把 authorship analysis 扩展到最多 5 个指令微调 LLM 合写同一故事的场景。
+- [IBSEN: Director-Actor Agent Collaboration for Controllable and Interactive Drama Script Generation](https://arxiv.org/abs/2407.01093)：通过导演-演员式智能体协作，支持可控、交互式戏剧脚本生成。
+- [LLM-based multi-agent poetry generation in non-cooperative environments](https://arxiv.org/abs/2409.03659)：一种社会学习式诗歌生成 harness，让合作与非合作 LLM agents 多轮互动，以提升生成诗歌的词汇多样性和新颖性。
+- [ScriptViz: A Visualization Tool to Aid Scriptwriting based on a Large Movie Database](https://arxiv.org/abs/2410.03224)：在编剧输入脚本时从大型电影数据库即时检索参考画面，并提供固定与不确定视觉元素控制，系统评估包含 15 名编剧。
+- [Usefulness of LLMs as an Author Checklist Assistant for Scientific Papers: NeurIPS'24 Experiment](https://arxiv.org/abs/2411.03417)：在 NeurIPS 2024 的 234 篇自愿提交论文上部署 LLM checklist assistant，向作者反馈投稿规范合规性，同时暴露过度严格与刷分操控风险。
+- [Amuse: Human-AI Collaborative Songwriting with Multimodal Inspirations](https://arxiv.org/abs/2412.18940)：一个 songwriting assistant，将图像、文本或音频灵感转为和弦建议，流程是先由多模态 LLM 产生噪声候选，再用单模态和弦模型过滤。
+- [StoryChat: An Interactive Storytelling System for Engaging with Agent Characters in a Story](https://doi.org/10.1109/iscid63852.2024.00055)：一个交互式 storytelling 系统，让用户在故事世界中与 agent characters 对话，把故事消费转化为角色中介的叙事互动。
+- [Let storytelling tell vivid stories: A multi-modal-agent-based unified storytelling framework](https://doi.org/10.1016/j.neucom.2024.129316)：一个多模态 agent storytelling 框架，协调叙事文本与视觉等模态生成，使故事可以作为跨模态作品而不只是纯文本输出。
+- [OmniThink](https://arxiv.org/abs/2501.09751)：一种 slow-thinking 机器写作框架。核心思想：围绕检索知识反复扩展与反思，使生成长文在保持连贯性的同时提升信息密度。
+- [Fuzzy Linkography: Automatic Graphical Summarization of Creative Activity Traces](https://arxiv.org/abs/2502.04599)：用语义相似度自动构建设计动作之间的 linkography 图，从而为 LLM 辅助 ideation 会话等创意活动轨迹生成可视摘要。
+- [MarkerGen](https://arxiv.org/abs/2502.13544)：面向长文生成的长度控制 harness。核心思想是把可控长度生成拆成子能力，插入动态 marker 做显式长度建模，并用三阶段生成更好满足长度约束。
+- [RAPID](https://arxiv.org/abs/2503.00751)：一种检索增强长文生成 harness。核心思想：先生成初步大纲，再用属性约束的信息发现补充材料，最后按计划生成文章，以提升知识密集型长文的事实覆盖和连贯性。
 - [Heterogeneous Recursive Planning](https://arxiv.org/abs/2503.08275)（开源代码：未找到稳定公开仓库）：自适应长文写作规划 harness；核心思想：不只生成一次性大纲，而是递归拆分不同粒度的写作单元，并在生成过程中按内容需要调整规划深度。
+- [LLM MapReduce V2](https://arxiv.org/abs/2504.05732)：面向极长资源到长文生成的 test-time scaling 框架。核心思想是堆叠 MapReduce 式整合层，让局部证据逐步组合为全局文章结构后再生成。
+- [Co-Writing with AI, on Human Terms: Aligning Research with User Demands Across the Writing Process](https://arxiv.org/abs/2504.12488)：综合 109 篇 HCI 论文并访谈 15 名写作者，把 AI 写作支持策略映射到 planning、translating、reviewing 和 monitoring 阶段，同时强调 agency 与 ownership。
 - [BookWorld](https://arxiv.org/abs/2504.14538)：用于把小说构造成交互式 agent 社会以支持创意故事生成。核心思想：用角色 agent、社会模拟和故事世界状态，让叙事生成超出单轮写作。
+- [EvalAgent: Discovering Implicit Evaluation Criteria from the Web](https://arxiv.org/abs/2504.15219): 从专家网页指南中发现任务特定的隐式评价准则，用于改进结构化写作评测的 rubric 构建。
+- [CAFES: A Collaborative Multi-Agent Framework for Multi-Granular Multimodal Essay Scoring](https://arxiv.org/abs/2505.13965)：可作为写作与文本生成的 Agent Harness 候选：围绕 CAFES: A Collaborative Multi-Agent Framework for Multi-Granular Multimodal Essay Scoring 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [HiCaM](https://arxiv.org/abs/2505.24319)：面向长文修改的层次因果框架；核心思想：结合层次 summary tree 与 causal graph，既避免错误改动无关段落，也能补上与修改隐式相关的内容。
+- [NexusSum: Hierarchical LLM Agents for Long-Form Narrative Summarization](https://arxiv.org/abs/2505.24575)：用分层大模型智能体完成长篇叙事摘要，把规划与综合生成拆成结构化写作流程。
+- [CO-OPERA: A Human-AI Collaborative Playwriting Tool to Support Creative Storytelling for Interdisciplinary Drama Education](https://arxiv.org/abs/2506.00791)：一个戏剧教育 playwriting 工具，用户可与 tutor 讨论扩展想法，操作 agents 生成剧本元素，并按需求迭代修改和再生成。
+- [STORYTELLER](https://arxiv.org/abs/2506.02347)：面向长篇故事生成的 plot-planning harness。核心思想：用 SVO 三元组表示 plot nodes，并让动态 storyline 模块与 narrative entity knowledge graph 协同，以保持情节连贯性和实体一致性。
 - [A Hybrid Multi-Agent Prompting Approach for Simplifying Complex Sentences](https://arxiv.org/abs/2506.11681)：使用混合多智能体提示工作流进行句子简化与修订。
 - [StoryWriter](https://arxiv.org/abs/2506.16445)（开源代码：未找到稳定公开仓库）：长篇故事生成多代理框架；核心思想：把角色设定、情节规划、章节写作和一致性检查拆给不同 agent，减少长故事中的人物漂移和情节断裂。
+- [MOG](https://arxiv.org/abs/2506.23393)：面向 Wikipedia 风格生成的层次化记忆 harness；核心思想：抽取细粒度 memory units，递归组织成文章大纲，并加入句级引用，以提升信息量和可核验性。
+- [PIC](https://doi.org/10.18653/v1/2025.acl-long.347)：一种用于更长、更连贯输出的 plug-in 方法。核心思想是压缩上下文 position IDs，并通过 NTK-aware 和 dynamic 变体延长输出长度，同时尽量保持长文生成质量。
+- [Constrained Text Revision Agent](https://doi.org/10.18653/v1/2025.findings-acl.1377)：面向受约束文本修订的迭代规划与搜索 harness；核心思想：把修订视为可控搜索过程，使 agent 在保留显式内容和形式约束的同时修复文本。
+- [Constella: Supporting Storywriters’ Interconnected Character Creation through LLM-based Multi-Agents](https://arxiv.org/abs/2507.05820)：用 LLM-based multi-agents 支持故事作者通过关联角色发现、并行角色日志和角色间评论来构建相互关联的人物群。
+- [DiaryPlay: AI-Assisted Creation of Interactive Story Vignettes for Everyday Storytelling](https://arxiv.org/abs/2507.11628)：把自然语言日常故事解析为环境、角色和事件三类元素，再用 LLM narrative planner 生成 branch-and-bottleneck 结构的交互式 vignette。
+- [Multi-Agent Synergy-Driven Iterative Visual Narrative Synthesis](https://arxiv.org/abs/2507.13285)：通过结构化叙事规划、自适应布局生成、迭代优化和偏好评估实现多 agent 视觉演示生成。
+- [WiNELL](https://arxiv.org/abs/2508.03728)：用于持续更新 Wikipedia 的多 agent harness。核心思想：聚合在线信息，选择目标实体的重要新知识，并为既有词条生成可供人工审核的编辑建议。
 - [Auto-Slides](https://arxiv.org/abs/2509.11062)：用于创建和定制研究演示文稿的交互式多 agent harness。核心思想：把幻灯片生成、编辑和用户引导式修改拆给不同 agent 角色，使 presentation writing 成为可迭代的工件工作流，而不是一次性文本生成。
+- [Collaborative Document Editing with Multiple Users and AI Agents](https://arxiv.org/abs/2509.11826)：把 AI agents 嵌入多人共享文档编辑环境，通过可见的 agent profiles、tasks 和评论回复呈现代理行为，并对 14 个团队开展一周用户研究。
+- [ConvergeWriter](https://arxiv.org/abs/2509.12811)：面向 grounded 长文构造的 bottom-up harness；核心思想：先充分检索，再把证据聚类成知识边界，随后才生成大纲和正文，使最终文档受已有来源约束。
+- [AgentCTG: Harnessing Multi-Agent Collaboration for Fine-Grained Precise Control in Text Generation](https://arxiv.org/abs/2509.13677)：面向写作与摘要提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [LLM Agents at the Roundtable: A Multi-Perspective and Dialectical Reasoning Framework for Essay Scoring](https://arxiv.org/abs/2509.14834)：提出 Roundtable Essay Scoring，让针对 prompt 和 topic 定制的 evaluator agents 先生成 trait rubric 并评分，再通过辩证讨论汇总为整体分数。
+- [Where Do I 'Add the Egg'?: Exploring Agency and Ownership in AI Creative Co-Writing Systems](https://arxiv.org/abs/2509.15440)：比较 agentic、tool-like 和 magical 三种界面隐喻的 co-writing 系统，通过作者访谈归纳创意写作工具中的 agency 与 ownership 子类型。
+- [OPEN-THEATRE: An Open-Source Toolkit for LLM-based Interactive Drama](https://arxiv.org/abs/2509.16713)：一个 LLM 交互戏剧开源工具包，包含可配置 pipeline、高效多智能体架构和层次化检索记忆，用于维持角色长期行为与叙事连贯性。
+- [SummQ](https://arxiv.org/abs/2509.20900)：面向长文档摘要的多代理写作框架。核心思想是把摘要生成/评审与出题、审题、答题校验结合起来，让摘要围绕可回答的理解问题迭代修订，而不是只依赖一次性相似度指标。
+- [DraftMarks: Enhancing Transparency in Human-AI Co-Writing Through Interactive Skeuomorphic Process Traces](https://arxiv.org/abs/2509.23505)：一个增强阅读工具，从 writer-AI 交互日志计算过程轨迹，并用橡皮屑、胶带、污痕等 skeuomorphic marks 展示修订强度和 AI 参与位置。
+- [MemAGent: A Cognitive-Hierarchical Multi-Agent System for Long-Form Story Generation](https://doi.org/10.1109/ICCVIT67848.2025.11391379)：面向长篇故事生成的认知层级式多智能体系统，协调记忆、规划与写作角色，以减少情节和人物一致性问题。
+- [Multi-Agent Based Character Simulation for Story Writing](https://doi.org/10.18653/v1/2025.in2writing-1.9)：使用多智能体角色模拟支撑故事写作流程。
+- [Co-DIRECT: A knowledge-augmented multi-agent framework for interactive drama script generation](https://doi.org/10.1016/j.eswa.2025.130571)：一个 Director-in-the-Loop 戏剧剧本框架，由 Writer、Actor 和 Critic agents 结合叙事学本体知识图谱协作，以提升情节连贯性、情感表现和内容多样性。
+- [SlideCraft: Context-aware Slides Generation Agent](https://doi.org/10.1109/picom68402.2025.00028)：一个 context-aware 幻灯片生成 agent，先推断沟通场景并选择模板，再结合输入文档、外部知识和内部资产生成 deck，并支持通过自然语言渠道迭代更新。
+- AgRefine（[论文](https://doi.org/10.1109/ICA67499.2025.00023)）：一个 review-guided 的多智能体学术润色 harness，通过规划、语言专家和复审角色进行可控的句级迭代修订。
+- [CtrlNews](https://doi.org/10.18653/v1/2025.findings-emnlp.461)：用于可控新闻写作的多 agent workflow。核心思想：用 knowledge gravitational field 机制协调写作 agent，在生成过程中管理主题控制和内容 grounding。
+- [RAG-AgentWrite](https://doi.org/10.1109/ISCIPT67144.2025.11265096)：AgentWrite 的检索增强式超长文本生成扩展；核心思想：在规划和写作的每个步骤加入 RAG，使 20,000 词以上输出具备更强的事实 grounding、连贯性和深度。
+- [SlideBot: A Multi-Agent Framework for Generating Informative, Reliable, Multi-Modal Presentations](https://arxiv.org/abs/2511.09804)：面向写作与长文本生成的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“SlideBot: A Multi-Agent Framework for Generating Informative, Reliable, Multi-Modal Presentations”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [DramaGAT: A Hierarchical Multi-Agent Collaborative Framework for Long-Form Script Generation](https://doi.org/10.1109/icbase66587.2025.11181381)：面向写作与摘要提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Progressive Ideation using an Agentic AI Framework for Human-AI Co-Creation](https://arxiv.org/abs/2601.00475)：提出 MIDAS 分布式专业 agent 团队，逐步细化工程设计想法，并同时评估相对既有方案的全局新颖性和相对已生成想法的局部新颖性。
 - [MUSE](https://arxiv.org/abs/2602.03028)：一个面向开放式故事构思的多智能体 harness。核心思想：用闭环认知编排协调规划、生成与修订角色，支持开放叙事发展。
+- [From Crafting Text to Crafting Thought: Grounding AI Writing Support to Writing Center Pedagogy](https://arxiv.org/abs/2602.04047)：把 AI 反馈原型 Writor 建立在 writing center pedagogy 上，使其设定修订目标、提供平衡反馈并展开对话，而不是直接代写替换文本。
+- [iRULER](https://arxiv.org/abs/2602.12779)：基于 rubric 的修订评估 harness。核心思想：把用户自定义标准转化为可理解反馈，用来指导写作修订。
+- [Multi-Agent Comedy Club: Investigating Community Discussion Effects on LLM Humor Generation](https://arxiv.org/abs/2602.14770)：构建 stand-up comedy 生成沙盒，把 critic 与 audience 讨论过滤成 social memory，并在后续 monologue 生成中检索使用。
+- [Meflex: A Multi-agent Scaffolding System for Entrepreneurial Ideation Iteration via Nonlinear Business Plan Writing](https://arxiv.org/abs/2602.15631)：把商业计划书写作脚手架与非线性 idea canvas 结合，用 LLM 支持的 reflection 与 meta-reflection 帮助创业新手迭代想法。
+- [StoryComposerAI: Supporting Human-AI Story Co-Creation Through Decomposition and Linking](https://arxiv.org/abs/2602.21486)：实现 creative decomposition and linking，让作者分别编辑 storylines、personas、locations 和 scenes，同时保持生成视觉内容与故事线一致。
+- [CoLyricist: Enhancing Lyric Writing with AI through Workflow-Aligned Support](https://arxiv.org/abs/2602.22606)：将 AI 歌词写作支持对齐到 theme setting、ideation、drafting lyrics 和 melody fitting 四个阶段，依据 10 名资深 lyricists 访谈并通过 16 人用户研究评估。
+- [APRES](https://arxiv.org/abs/2603.03142)：面向科研写作的 agentic paper revision 与 evaluation system。核心思想：发现能预测引用表现的 rubric，并据此修订论文同时保留核心科学内容，把论文改进变成可审阅 workflow。
+- [Reactive Writers: How Co-Writing with AI Changes How We Engage with Ideas](https://arxiv.org/abs/2603.10374)：基于 19 次访谈和 1,291 个 co-writing sessions 描述“reactive writing”，指出写作者评估 AI 建议会替代独立构思并影响观点形成。
 - [PaperOrchestra](https://arxiv.org/abs/2604.05018)（开源代码：未找到稳定公开仓库）：自动 AI 研究论文写作的多代理框架；核心思想：把论文写作拆成 topic/context 分析、section drafting、交叉审阅和整体修订，对应 PaperWritingBench 的学术写作任务。
+- [CoAuthorAI: A Human in the Loop System For Scientific Book Writing](https://arxiv.org/abs/2604.19772)：一个 human-in-the-loop 科学书籍写作系统，结合 RAG、专家设计的层次大纲、自动参考文献链接和句级专家修订。
+- [Semantic Prompting: Agentic Incremental Narrative Refinement through Spatial Semantic Interaction](https://arxiv.org/abs/2604.19971)：提出 S-PRISM，感知空间语义交互、推断 refinement intent，并对叙事文本执行有针对性的局部位置修订。
+- [AeSlides: Incentivizing Aesthetic Layout in LLM-Based Slide Generation via Verifiable Rewards](https://arxiv.org/abs/2604.22840)：面向基于可验证奖励优化 LLM 生成幻灯片的美学布局的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [LLM-ReSum](https://arxiv.org/abs/2604.25665)：基于自评估的反思式摘要 harness。核心思想：通过自我评估识别摘要弱点，并把这些反馈用于长文档摘要修订。
+- [Making AI Drafts Count: A Quality Threshold in Audio Description Workflows](https://arxiv.org/abs/2605.05348)：研究 GenAD 与 RefineAD 在 audio description 写作中的作用，说明只有结合指南与视频上下文的高质量草稿才会显著减少时间和认知负荷。
+- [WriteGuard-X: Constraint-Governed LLM Assistance for Ethical Scientific Writing](https://doi.org/10.1109/wccst67302.2026.11496178)：补充面向伦理科研写作的约束治理大模型辅助流程。
+- [SYNthia: An Interface Concept for Writing With Large Language Models](https://doi.org/10.1145/3698061.3734401)：一个 LLM 写作界面概念，强调可控的人机交互写作，而不是把生成简化为一次 prompt-response。
+- [Steering Narrative Agents Through a Dynamic Cognitive Framework for Guided Emergent Storytelling](https://doi.org/10.1609/aiide.v21i1.36841)：用动态认知框架 steering narrative agents，在 emergent storytelling 中为作者提供控制 agent 驱动情节发展的上层机制。
+- [Intelligent Support Engages Writers Through Relevant Cognitive Processes](https://doi.org/10.1145/3613904.3642549)：研究能触发相关认知过程的写作支持，而不只是修正文稿表层，使工具行为贴合作者的 planning、monitoring 和 revising。
+- [“Helping Me Versus Doing It for Me”: Designing for Agency in LLM-Infused Writing Tools for Science Journalism](https://doi.org/10.1145/3772318.3790372)：为 science journalism 的 LLM 写作工具提炼 agency-centered 设计建议，区分帮助作者推理的辅助与接管作者身份的自动化。
+- [Exploring Creator-Centric Methods for LLM-Assisted Interactive Storytelling](https://doi.org/10.1145/3772318.3791362)：探索 creator-centered 的 LLM 辅助交互叙事方法，重点是让作者引导故事结构与互动，而不是把控制权交给生成模型。
+- [Generative AI and linguistic diversity in academic writing and publishing](https://doi.org/10.1075/jerpp.00035.ugw)：讨论生成式 AI 写作辅助与学术出版语言多样性的关系，作为科研写作工作流的部署边界，而不是新的生成模型。
+- [Story-Driven: Exploring the Impact of Providing Real-time Context Information on Automated Storytelling](https://doi.org/10.1145/3654777.3676372)：把实时上下文信息作为 automated storytelling 的控制信号，考察 live contextual cues 是否提升生成故事的相关性与连续性。
+- [Friction: Deciphering Writing Feedback into Writing Revisions through LLM-Assisted Reflection](https://doi.org/10.1145/3706598.3714316)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [CASTCurate: An Agentic System to Accelerate the Collection and Annotation of Data-Driven Stories](https://doi.org/10.1145/3770761.3777345)：用智能体系统加速数据驱动叙事的收集与标注。

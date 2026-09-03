@@ -1,20 +1,407 @@
 # 2.2.2 Survey
 
 - [Large Language Models for Software Engineering: A Systematic Literature Review](https://arxiv.org/abs/2308.10620)：覆盖需求、编码、测试、调试与维护的基础综述。
+- [Code Review Automation: Strengths and Weaknesses of the State of the Art](https://arxiv.org/abs/2401.05136)：从实际优势、失败模式以及与人工评审预期的差距来评述代码评审自动化技术。
+- [Fine-tuning and prompt engineering for large language models-based code review automation](https://arxiv.org/abs/2402.00905)：比较提示工程与微调用于 LLM 代码评审自动化的路线，覆盖评审意见生成、缺陷发现和评审质量问题。
+- [Improving Automated Code Reviews: Learning from Experience](https://arxiv.org/abs/2402.03777)：把自动代码评审界定为从经验中学习的问题，强调历史评审数据、评审者反馈和跨项目适配。
+- [Assured LLM-Based Software Engineering](https://arxiv.org/abs/2402.04380)：围绕正确性、可靠性、安全性、安保和人工监督组织 LLM 软件工程的保障挑战。
+- [The Dawn of AI-Native EDA: Promises and Challenges of Large Circuit Models](https://arxiv.org/abs/2403.07257)：综述面向 AI-native electronic design automation 的大电路模型机遇与挑战。
+- [When code smells meet ML: on the lifecycle of ML-specific code smells in ML-enabled systems](https://arxiv.org/abs/2403.08311)：追踪 ML-enabled software 中特有代码异味的产生、检测、重构与维护生命周期。
+- [ChatGPT Incorrectness Detection in Software Reviews](https://arxiv.org/abs/2403.16347)：研究如何识别 ChatGPT 生成的错误评审意见，使评审意见质量与信任校准成为显式问题。
+- [Efficient and Green Large Language Models for Software Engineering: Literature Review, Vision, and the Road Ahead](https://arxiv.org/abs/2404.04566)：综述高效与绿色 LLM4SE 工作，将代码任务与模型成本、绿色计算和部署取舍联系起来。
 - [LLM-Based Multi-Agent Systems for Software Engineering: Literature Review, Vision, and the Road Ahead](https://arxiv.org/abs/2404.04834)：回顾多智能体编码、测试、评审、管理与协作工作流。
+- [Open Source AI-based SE Tools: Opportunities and Challenges of Collaborative Software Learning](https://arxiv.org/abs/2404.06201)：把开源 AI 软件工程工具视为协同学习生态，强调社区复用、工具透明度和维护挑战。
+- [Quantum Software Engineering: Roadmap and Challenges Ahead](https://arxiv.org/abs/2404.06825)：提出量子软件工程路线图，覆盖生命周期流程、工具链、测试、验证与教育缺口。
+- [A Systematic Literature Review on Large Language Models for Automated Program Repair](https://arxiv.org/abs/2405.01466)：系统综述 LLM 自动程序修复，覆盖缺陷定位、补丁生成、验证、数据集和修复质量风险。
+- [Trojans in Large Language Models of Code: A Critical Review through a Trigger-Based Taxonomy](https://arxiv.org/abs/2405.02828)：按触发机制和攻击面分类代码大模型木马，将代码生成安全与模型供应链风险联系起来。
+- [LLMs and the Future of Chip Design: Unveiling Security Risks and Building Trust](https://arxiv.org/abs/2405.07061)：综述 LLM 辅助芯片设计在规格、生成、验证和 EDA 自动化环节引入的信任与安全风险。
+- [From Today's Code to Tomorrow's Symphony: The AI Transformation of Developer's Routine by 2030](https://arxiv.org/abs/2405.12731)：展望 AI 助手到 2030 年如何重塑编码、调试、协作、评审和项目协调等开发者日常工作。
+- [Test Oracle Automation in the Era of LLMs](https://arxiv.org/abs/2405.12766)：综述 LLM 时代的测试预言自动化，关注期望输出推断、变形关系、断言生成和预言质量验证。
+- [Requirements Are All You Need: The Final Frontier for End-User Software Engineering](https://arxiv.org/abs/2405.13708)：把需求视为终端用户软件工程的瓶颈，连接自然语言意图捕获与可执行软件创建。
+- [A Roadmap for Modern Code Review: Challenges and Opportunities](https://arxiv.org/abs/2405.18216)：综述现代代码审查工作流的挑战与机会。
+- [An overview of quantum software engineering in Latin America](https://arxiv.org/abs/2405.20661)：梳理拉丁美洲量子软件工程活动，强调区域工具、教育、研究协作和采用障碍。
+- [The Role of Generative AI in Software Development Productivity: A Pilot Case Study](https://arxiv.org/abs/2406.00560)：通过试点案例研究度量生成式 AI 对软件开发生产力和开发者工作流的影响。
+- [How to Understand Whole Software Repository?](https://arxiv.org/abs/2406.01422)：综述 LLM 的仓库级理解方法，覆盖上下文选择、依赖推理、代码导航和整项目任务支持。
+- [Creativity, Generative AI, and Software Development: A Research Agenda](https://arxiv.org/abs/2406.01966)：提出生成式 AI 与软件开发创造力的研究议程。
+- [Using AI-Based Coding Assistants in Practice: State of Affairs, Perceptions, and Ways Forward](https://arxiv.org/abs/2406.07765)：综述真实场景中的编码助手使用、开发者感知、工作流摩擦和采用方向。
+- [Next-Generation Database Interfaces: A Survey of LLM-Based Text-to-SQL](https://arxiv.org/abs/2406.08426)：综述 LLM-based text-to-SQL 数据库接口，包括模式链接、提示设计、基准实践和数据库交互局限。
+- [Benchmarks and Metrics for Evaluations of Code Generation: A Critical Review](https://arxiv.org/abs/2406.12655)：批判性评述代码生成基准与指标，区分功能正确性、相似度指标、人工评估和基准泄漏问题。
+- [ETM: Modern Insights into Perspective on Text-to-SQL Evaluation in the Age of Large Language Models](https://arxiv.org/abs/2407.07313)：聚焦 text-to-SQL 评估，对比执行准确率与鲁棒性、模式复杂度、真实用户查询等现代评测关注点。
+- [Mapping the Trust Terrain: LLMs in Software Engineering - Insights and Perspectives](https://arxiv.org/abs/2407.08983)：从正确性、可解释性、安全性、治理和人类依赖等维度梳理软件工程中的 LLM 信任问题。
+- [A Survey on Employing Large Language Models for Text-to-SQL Tasks](https://arxiv.org/abs/2407.15186)：综述 LLM text-to-SQL 方法，覆盖提示式系统、微调、模式感知推理、数据集和评估缺口。
+- [From LLMs to LLM-based Agents for Software Engineering: A Survey of Current, Challenges and Future](https://arxiv.org/abs/2408.02479)：梳理从单次 LLM 编码支持到会规划、调用工具、检查仓库并迭代修复的软件工程智能体的转变。
 - [Large Language Model-Based Agents for Software Engineering: A Survey](https://arxiv.org/abs/2409.02977)：连接仓库理解、问题定位、补丁生成、测试与工具反馈。
+- [Agents in software engineering: survey, landscape, and vision](https://arxiv.org/abs/2409.09030)：按生命周期角色、工具交互、自治程度、评估实践和部署愿景综述软件工程智能体。
+- [Leveraging Reviewer Experience in Code Review Comment Generation](https://arxiv.org/abs/2409.10959)：综述如何用评审者历史与专业经验调节代码评审意见生成，而不只依赖通用代码变更上下文。
+- [Motivations, Challenges, Best Practices, and Benefits for Bots and Conversational Agents in Software Engineering: A Multivocal Literature Review](https://arxiv.org/abs/2409.11864)：综合学术与实践证据，梳理软件工程 Bot 的采用动机、集成实践、收益和反复出现的挑战。
+- [Demystifying Issues, Causes and Solutions in LLM Open-Source Projects](https://arxiv.org/abs/2409.16559)：实证分类开源 LLM 项目中的 issue 报告，并把原因与可维护修复策略联系起来。
+- [Software Security Analysis in 2030 and Beyond: A Research Roadmap](https://arxiv.org/abs/2409.17844)：提出未来软件安全分析路线图，覆盖 AI 辅助漏洞发现、安全编码和人机工具协作。
+- [Artificial-Intelligence Generated Code Considered Harmful: A Road Map for Secure and High-Quality Code Generation](https://arxiv.org/abs/2409.19182)：梳理安全高质量 AI 生成代码的风险和开放方向。
+- [LLM Hallucinations in Practical Code Generation: Phenomena, Mechanism, and Mitigation](https://arxiv.org/abs/2409.20550)：分析实际代码生成中幻觉的现象、机制与缓解方法。
+- [Understanding the Human-LLM Dynamic: A Literature Survey of LLM Use in Programming Tasks](https://arxiv.org/abs/2410.01026)：组织程序员在编程任务中使用 LLM 的证据，关注协作模式、信任、生产力和认知负担。
+- [From Natural Language to SQL: Review of LLM-based Text-to-SQL Systems](https://arxiv.org/abs/2410.01066)：从自然语言意图解析到模式 grounding、SQL 生成和执行式评估，评述 LLM-based text-to-SQL 系统。
+- [Code-Survey: An LLM-Driven Methodology for Analyzing Large-Scale Codebases](https://arxiv.org/abs/2410.01837)：提出一种用 LLM 分析大规模代码库的方法，包含自动代码结构抽取、摘要和仓库分析。
+- [A Survey on LLM-based Code Generation for Low-Resource and Domain-Specific Programming Languages](https://arxiv.org/abs/2410.03981)：综述低资源与领域专用编程语言的代码生成，指出稀缺训练数据和专门语法会削弱通用代码大模型。
+- [Large Language Model Enhanced Text-to-SQL Generation: A Survey](https://arxiv.org/abs/2410.06011)：综述 LLM 增强的 text-to-SQL 生成，强调提示策略、模式表示、推理步骤和数据库基准评估。
+- [Towards AI-Native Software Engineering (SE 3.0): A Vision and a Challenge Roadmap](https://arxiv.org/abs/2410.06107)：把 AI-native 软件工程定义为需求、架构、编码、测试和维护实践的转变，并提出挑战路线图。
+- [Studying Practitioners' Expectations on Clear Code Review Comments](https://arxiv.org/abs/2410.06515)：实证研究实践者对清晰代码评审意见的期待，用可执行性和解释需求约束自动评审质量。
+- [A Survey: Collaborative Hardware and Software Design in the Era of Large Language Models](https://arxiv.org/abs/2410.07265)：综述 LLM 支持的软硬件协同设计，连接需求、架构、代码生成、验证和跨领域协作。
+- [Software Engineering and Foundation Models: Insights from Industry Blogs Using a Jury of Foundation Models](https://arxiv.org/abs/2410.09012)：使用 foundation model jury 综合行业博客证据，分析基础模型在软件工程中的讨论和落地方式。
+- [Unraveling the Potential of Large Language Models in Code Translation: How Far are We?](https://arxiv.org/abs/2410.09812)：综述大语言模型在代码翻译任务上的进展与局限。
+- [How Much Does AI Impact Development Speed? an Enterprise-Based Randomized Controlled Trial](https://arxiv.org/abs/2410.12944)：报告企业随机对照试验，把 AI 编码辅助对开发速度的影响从轶事观察转为可度量结果。
+- [On the use of large language models in model-driven engineering](https://arxiv.org/abs/2410.17370)：综述 LLM 在模型驱动工程中的使用，包括模型创建、转换、验证以及与建模语言集成。
+- [A Survey on Adversarial Machine Learning for Code Data: Realistic Threats, Countermeasures, and Interpretations](https://arxiv.org/abs/2411.07597)：综述面向代码数据的对抗机器学习，覆盖现实攻击、防御和代码模型可解释性。
+- [Code LLMs: A Taxonomy-based Survey](https://arxiv.org/abs/2412.08291)：按训练数据、模型架构、适配策略、代码任务、评估设置和部署风险分类代码大模型。
+- [Towards a Taxonomy of Software Log Smells](https://arxiv.org/abs/2412.09284)：构建软件日志异味分类，用于识别日志反模式、质量风险和维护问题。
+- [Enhancing Code LLMs with Reinforcement Learning in Code Generation: A Survey](https://arxiv.org/abs/2412.20367)：综述用于代码大模型的强化学习策略，包括奖励设计、执行反馈、偏好优化和代码生成评估。
+- [Automatic Commit Message Generation: A Critical Review and Directions for Future Work](https://doi.org/10.1109/tse.2024.3364675)：综述自动提交信息生成方法，并总结代码变更摘要任务的发展方向。
+- [Towards Efficient Fine-Tuning of Language Models With Organizational Data for Automated Software Review](https://doi.org/10.1109/tse.2024.3428324)：研究使用组织内部评审数据高效微调语言模型以支持自动软件评审，强调隐私、适配成本和评审相关性。
+- [Automating modern code review processes with code similarity measurement](https://doi.org/10.1016/j.infsof.2024.107490)：综述代码相似度度量如何支撑现代代码评审，包括克隆检测、变更比较和评审决策支持。
+- [State of Practice: LLMs in Software Engineering and Software Architecture](https://doi.org/10.1109/icsa-c63560.2024.00059)：报告 LLM 在软件工程与软件架构中的实践现状，包括采用场景、收益和实践者顾虑。
+- [Architecture 2.0: Foundations of Artificial Intelligence Agents for Modern Computer System Design](https://doi.org/10.1109/mc.2024.3521641)：把 AI 智能体定位为现代计算机系统设计基础，连接架构搜索、设计自动化、验证和人类控制。
+- [Requirements Engineering for Trustworthy Human-AI Synergy in Software Engineering 2.0](https://doi.org/10.1109/re59067.2024.00011)：面向可信人机协同软件工作界定需求工程，强调协同、保障、问责和利益相关方意图。
+- [A Review of AI-Assisted Impact Analysis for Software Requirements Change: Challenges and Future Directions](https://doi.org/10.1109/acit62805.2024.10877072)：综述 AI 辅助需求变更影响分析，覆盖依赖追踪、变更传播和未来工具需求。
+- [Brief State of the Art on Human-AI in Software Engineering: Impact, Ethical Challenges, and Academic Evolution](https://doi.org/10.1109/cimps65195.2024.11095939)：从影响、伦理挑战和学术实践演化角度概括人机协同软件工程研究。
+- [Quality Assurance for LLM-Generated Test Cases: A Systematic Literature Review](https://doi.org/10.1109/slaai-icai63667.2024.10844968)：综述 LLM 生成测试用例的质量保障，覆盖有效性、覆盖率、可维护性和预言相关评估。
+- [Tales From the Trenches: Expectations and Challenges From Practice for Code Review in the Generative AI Era](https://doi.org/10.1109/ms.2024.3428439)：总结实践者在生成式 AI 时代对代码评审的期待和痛点，把自动化约束在真实评审工作流中。
+- [Machine Learning Innovations in Code Generation: A Systematic Literature Review of Methods, Challenges and Directions](https://doi.org/10.1109/icitcom62788.2024.10762291)：系统综述机器学习代码生成方法、挑战和研究方向，从神经程序合成延伸到 LLM 时代工具。
+- [An Overview and Discussion on Using Large Language Models for Implementation Generation of Solutions to Open-Ended Problems](https://arxiv.org/abs/2501.00562)：讨论 LLM 为开放式问题生成实现方案，强调规格歧义、解空间多样性和评估难度。
+- [Language Models for Code Optimization: Survey, Challenges and Future Directions](https://arxiv.org/abs/2501.01277)：综述使用语言模型进行代码优化的方法、挑战和未来方向。
+- [How Developers Interact with AI: A Taxonomy of Human-AI Collaboration in Software Engineering](https://arxiv.org/abs/2501.08774)：构建软件工程中人机协作模式分类，区分辅助、委派、评审和共同决策。
+- [Towards Advancing Code Generation with Large Language Models: A Research Roadmap](https://arxiv.org/abs/2501.11354)：梳理用大语言模型推进代码生成的挑战和研究路线。
+- [Large Language Models for Code Generation: The Practitioners Perspective](https://arxiv.org/abs/2501.16998)：从实践者需求综述 LLM 代码生成，强调实际工作流、局限与采用考量。
+- [Generative AI and Empirical Software Engineering: A Paradigm Shift](https://arxiv.org/abs/2502.08108)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Generative AI and Empirical Software Engineering: A Paradigm Shift 梳理背景、方法与开放问题。
+- [A Taxonomy of Real Faults for Hybrid Quantum-Classical Software Architectures](https://arxiv.org/abs/2502.08739)：分类混合量子-经典软件架构中的真实故障，支撑量子软件系统的测试与维护。
+- [Towards More Trustworthy Deep Code Models by Enabling Out-of-Distribution Detection](https://arxiv.org/abs/2502.18883)：将分布外检测作为深度代码模型的可信机制，连接分布偏移与代码模型可靠性。
+- [Towards Reliable Vector Database Management Systems: A Software Testing Roadmap for 2030](https://arxiv.org/abs/2502.20812)：提出向量数据库管理系统测试路线图，覆盖相似度搜索、索引、存储和检索管线中的可靠性风险。
+- [Challenges in Testing Large Language Model Based Software: A Faceted Taxonomy](https://arxiv.org/abs/2503.00481)：提出测试 LLM 软件和多智能体 LLM 软件的多维分类法。
+- [Large Language Models for Code Generation: A Comprehensive Survey of Challenges, Techniques, Evaluation, and Applications](https://arxiv.org/abs/2503.01245)：综述大语言模型代码生成的挑战、技术、评估和应用。
+- [Promptware Engineering: Software Engineering for Prompt-Enabled Systems](https://arxiv.org/abs/2503.02400)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Promptware Engineering: Software Engineering for Prompt-Enabled Systems 梳理背景、方法与开放问题。
+- [LLMs' Reshaping of People, Processes, Products, and Society in Software Development: A Comprehensive Exploration with Early Adopters](https://arxiv.org/abs/2503.05012)：研究早期采用者如何看待 LLM 工具对开发者、流程、产品和软件生态的全生命周期影响。
+- [Human-AI experience in integrated development environments: a systematic literature review](https://arxiv.org/abs/2503.06195)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Human-AI experience in integrated development environments: a systematic literature review 梳理背景、方法与开放问题。
+- [A Taxonomy of Inefficiencies in LLM-Generated Python Code](https://arxiv.org/abs/2503.06327)：分类 LLM 生成 Python 代码中的性能与质量低效问题。
+- [Novice Developers’ Perspectives on Adopting LLMs for Software Development: A Systematic Literature Review](https://arxiv.org/abs/2503.07556)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Novice Developers’ Perspectives on Adopting LLMs for Software Development: A Systematic Literature Review 梳理背景、方法与开放问题。
+- [Automating Code Review: A Systematic Literature Review](https://arxiv.org/abs/2503.09510)：系统综述代码评审自动化，覆盖评审意见生成、缺陷发现、修订建议、数据集、评测指标和人类评审对照。
+- [Generative AI for Software Architecture. Applications, Trends, Challenges, and Future Directions](https://arxiv.org/abs/2503.13310)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Generative AI for Software Architecture. Applications, Trends, Challenges, and Future Directions 梳理背景、方法与开放问题。
+- [Conversational Coding Assistants Study](https://arxiv.org/abs/2503.16508)：实证分析程序员如何与对话式 LLM 编程助手互动，以及他们对这类助手的期望。
+- [SoK: Towards Reproducibility for Software Packages in Scripting Language Ecosystems](https://arxiv.org/abs/2503.21705)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Foundation Models for Software Engineering of Cyber-Physical Systems: the Road Ahead](https://arxiv.org/abs/2504.04630)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Foundation Models for Software Engineering of Cyber-Physical Systems: the Road Ahead 梳理背景、方法与开放问题。
+- [Exploring the Lifecycle and Maintenance Practices of Pre-Trained Models in Open-Source Software Repositories](https://arxiv.org/abs/2504.06040)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [On the Need to Rethink Trust in AI Assistants for Software Development: A Critical Review](https://arxiv.org/abs/2504.12461)：批判软件工程研究常把对 AI 助手的信任等同于接受生成制品，并引入心理学与 HCI 信任模型改进研究设计。
+- [Combating Toxic Language: A Review of LLM-Based Strategies for Software Engineering](https://arxiv.org/abs/2504.15439)：综述软件工程交流中用 LLM 检测和缓解 toxic language 的策略。
+- [Harden and Catch for Just-in-Time Assured LLM-Based Software Testing: Open Research Challenges](https://arxiv.org/abs/2504.16472)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [From Bugs to Benchmarks: A Comprehensive Survey of Software Defect Datasets](https://arxiv.org/abs/2504.17977)：按缺陷来源、标注方式、任务覆盖、基准构建和评测局限综述软件缺陷数据集。
+- [A Multi-Language Perspective on the Robustness of LLM Code Generation](https://arxiv.org/abs/2504.19108)：综述代码生成鲁棒性在不同编程语言与评测设置中的差异。
+- [Hallucination by Code Generation LLMs: Taxonomy, Benchmarks, Mitigation, and Challenges](https://arxiv.org/abs/2504.20799)：综述代码生成幻觉的定义、基准、缓解方法与开放挑战。
+- [A Systematic Literature Review of Parameter-Efficient Fine-Tuning for Large Code Models](https://arxiv.org/abs/2504.21569)：系统梳理大代码模型的参数高效适配方法。
+- [A Path Less Traveled: Reimagining Software Engineering Automation via a Neurosymbolic Paradigm](https://arxiv.org/abs/2505.02275)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
 - [Software Development Life Cycle Perspective: A Survey of Benchmarks for Code Large Language Models and Agents](https://arxiv.org/abs/2505.05283)：映射软件开发生命周期中代码模型与 agent 的评测覆盖。
+- [A Systematic Literature Review on Neural Code Translation](https://arxiv.org/abs/2505.07425)：系统综述跨编程语言神经代码翻译的方法、数据集与评测实践。
+- [Software Architecture Meets LLMs: A Systematic Literature Review](https://arxiv.org/abs/2505.16697)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Search-Based Software Engineering and AI Foundation Models: Current Landscape and Future Roadmap](https://arxiv.org/abs/2505.19625)：梳理搜索式软件工程如何与基础模型方法结合。
+- [Exploring the Landscape of Text-to-SQL with Large Language Models: Progresses, Challenges and Opportunities](https://arxiv.org/abs/2505.23838)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Exploring the Landscape of Text-to-SQL with Large Language Models: Progresses, Challenges and Opportunities 梳理背景、方法与开放问题。
+- [Cataloguing Hugging Face Models to Software Engineering Activities: Automation and Findings](https://arxiv.org/abs/2506.03013)：综述软件工程智能体与代码模型相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Human-In-The-Loop Software Development Agents: Challenges and Future Directions](https://arxiv.org/abs/2506.11009)：基于 Atlassian 的部署经验总结人类参与式软件开发智能体挑战，重点是 Jira 任务解析、功能正确性测试、相似度评分和评测成本。
+- [A Short Survey on Formalising Software Requirements using Large Language Models](https://arxiv.org/abs/2506.11874)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [code_transformed: The Influence of Large Language Models on Code](https://arxiv.org/abs/2506.12014)：研究大语言模型对代码形态与开发实践的影响。
+- [Large Language Models for Unit Testing](https://arxiv.org/abs/2506.15227)：系统综述 LLM 驱动的单元测试生成、oracle 构造、修复、评测与开发者 workflow 集成，为软件 agent 的测试生成能力补充软件工程文献边界。
+- [LLMs in Coding and their Impact on the Commercial Software Engineering Landscape](https://arxiv.org/abs/2506.16653)：从商业采用、提示与隐私泄漏、生成代码安全缺陷、sycophancy，以及标注 AI 生成代码和受控部署等治理实践来梳理 LLM 编程工具的影响。
+- [Dissecting the SWE-Bench Leaderboards: Profiling Submitters and Architectures of LLM- and Agent-Based Repair Systems](https://arxiv.org/abs/2506.17208)：分析 SWE-Bench Lite 与 Verified 提交，梳理修复系统架构、来源与榜单模式，为软件智能体评测提供当前修复系统实际实现方式的综述视角。
+- [The Impact of AI-Generated Solutions on Software Architecture and Productivity: Results from a Survey Study](https://arxiv.org/abs/2506.17833)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Software Reuse in the Generative AI Era: From Cargo Cult Towards AI Native Software Engineering](https://arxiv.org/abs/2506.17937)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Vibe Coding](https://arxiv.org/abs/2506.23253)：实证研究通过对话式 AI 编程时的提示、调试、快速浏览和目标满足循环。
 - [Position: Future Research and Challenges Remain Towards AI for Software Engineering](https://proceedings.mlr.press/v267/gu25e.html)：ICML 2025 position paper，从任务、评测、可靠性、人因和部署等维度组织 AI 辅助软件工程的开放挑战。
 - [Code Reasoning for Software Engineering Tasks](https://arxiv.org/abs/2506.13932)：把代码推理识别为调试、修复、测试和仓库级软件任务背后的共同瓶颈。
 - [Navigating the growing field of research on AI for software testing](https://arxiv.org/abs/2506.14640)：构建 AI 增强软件测试的分类法和本体驱动综述，覆盖从人工辅助到全自动测试的研究。
+- [Understanding Software Engineering Agents](https://arxiv.org/abs/2506.18824)：实证分析 RepairAgent、AutoCodeRover 与 OpenHands 的 thought-action-result 轨迹，使动作模式、反馈利用和失败反模式能被后续 SWE agent 设计直接参考。
 - [A Survey of LLM-based Automated Program Repair](https://doi.org/10.48550/arXiv.2506.23749)：按故障定位、补丁生成、验证和端到端修复范式分类 LLM 自动程序修复。
+- [The Impact of LLM-Assistants on Software Developer Productivity: A Systematic Review and Mapping Study](https://arxiv.org/abs/2507.03156)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Prompt Engineering for Requirements Engineering: A Literature Review and Roadmap](https://arxiv.org/abs/2507.07682)：综述提示工程在需求工程任务中的方法与路线图问题。
+- [Code review as decision-making - building a cognitive model from the questions asked during code review](https://arxiv.org/abs/2507.09637)：把代码评审建模为由问题驱动的人类决策过程，强调完全自动化可能损失协作、学习和人际反馈价值。
+- [A Survey of Reinforcement Learning for Software Engineering](https://arxiv.org/abs/2507.12483)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Leveraging LLMs for Formal Software Requirements - Challenges and Prospects](https://arxiv.org/abs/2507.14330)：综述软件工程智能体与代码模型相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [The Rise of AI Teammates in Software Engineering (SE) 3.0: How Autonomous Coding Agents Are Reshaping Software Engineering](https://arxiv.org/abs/2507.15003)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“The Rise of AI Teammates in Software Engineering (SE) 3.0: How Autonomous Coding Agents Are Reshaping Software Engineering”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [How Software Engineers Engage with AI: A Pragmatic Workflow](https://arxiv.org/abs/2507.17930)：梳理软件开发的方法、风险、数据集或评测实践。
+- [A Deep Dive into Retrieval-Augmented Generation for Code Completion: Experience on WeChat](https://arxiv.org/abs/2507.18515)：结合大型工业部署场景分析代码补全中 RAG 的设计选择。
+- [Fine-Tuning Multilingual Language Models for Code Review: An Empirical Study on Industrial C# Projects](https://arxiv.org/abs/2507.19271)：梳理软件开发智能体的近期方法与开放问题。
+- [What Makes Code Generation Ethically Sourced?](https://arxiv.org/abs/2507.19743)：从许可、隐私、公平性、环境成本和训练或检索代码来源等维度界定代码生成的 ethical sourcing 问题。
+- [Vibe Coding as a Reconfiguration of Intent Mediation in Software Development: Definition, Implications, and Research Agenda](https://arxiv.org/abs/2507.21928)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems](https://arxiv.org/abs/2508.00198)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
 - [A Survey on AgentOps](https://arxiv.org/abs/2508.02121)：围绕监控、异常检测、根因分析与处置定义 LLM-based agent systems 的运维闭环。
+- [A Methodological Framework for LLM-Based Mining of Software Repositories](https://arxiv.org/abs/2508.02233)：提出 LLM 挖掘软件仓库的研究方法框架，强调任务建模、提示设计、结果验证和可复现性，而不只是能力基准。
+- [Quo Vadis, Code Review? Exploring the Future of Code Review](https://arxiv.org/abs/2508.06879)：综述 Quo Vadis, Code Review? Exploring the Future of Code Review，为 Software Development 补充近期方法、证据或开放问题脉络。
+- [Rethinking Autonomy: Preventing Failures in AI-Driven Software Engineering](https://arxiv.org/abs/2508.11824)：讨论 AI 驱动软件工程自主化中的失败预防。
+- [Guidelines for Empirical Studies in Software Engineering involving Large Language Models](https://arxiv.org/abs/2508.15503)：为基于 LLM 的软件工程研究提供方法论指导。
+- [A Defect Classification Framework for AI-Based Software Systems (AI-ODC)](https://arxiv.org/abs/2508.17900)：梳理软件开发的方法、风险、数据集或评测实践。
+- [AI and Agile Software Development: A Research Roadmap from the XP2025 Workshop](https://arxiv.org/abs/2508.20563)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [To New Beginnings: A Survey of Unified Perception in Autonomous Vehicle Software](https://arxiv.org/abs/2508.20892)：梳理软件开发智能体的近期方法与开放问题。
 - [Agentic Software Engineering: Foundational Pillars and a Research Roadmap](https://arxiv.org/abs/2509.06216)：以交互、验证、协作与生命周期集成组织自主软件工程研究。
+- [Developer-LLM Conversations: An Empirical Study of Interactions and Generated Code Quality](https://arxiv.org/abs/2509.10402)：实证分析开发者与 LLM 对话及其生成代码质量。
+- [Vibe Coding in Product Teams](https://arxiv.org/abs/2509.10652)：研究 AI-assisted coding 如何重构 product-team workflows、原型开发与协作。
+- [Large Language Models (LLMs) for Requirements Engineering (RE): A Systematic Literature Review](https://arxiv.org/abs/2509.11446)：系统综述 74 项 LLM 用于需求工程的研究，梳理活动类型、提示策略、制品、数据集与评测缺口。
+- [Good Vibrations? A Qualitative Study of Co-Creation, Communication, Flow, and Trust in Vibe Coding](https://arxiv.org/abs/2509.12491)：从共创、沟通、心流与信任角度定性研究 vibe coding，为软件智能体工作流补充开发者感知证据。
+- [Shift-Left Techniques in Electronic Design Automation: A Survey](https://arxiv.org/abs/2509.14551)：综述电子设计自动化中的 shift-left 技术，将质量、性能和验证反馈前移到需求、架构与系统级芯片设计阶段。
+- [Prompts as Software Engineering Artifacts: A Research Agenda and Preliminary Findings](https://arxiv.org/abs/2509.17548)：综述软件开发、代码生成、测试或验证能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Security smells in infrastructure as code: a taxonomy update beyond the seven sins](https://arxiv.org/abs/2509.18761)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [PromptDebt: A Comprehensive Study of Technical Debt Across LLM Projects](https://arxiv.org/abs/2509.20497)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 PromptDebt: A Comprehensive Study of Technical Debt Across LLM Projects 梳理背景、方法与开放问题。
+- [Comparing Open-Source and Commercial LLMs for Domain-Specific Analysis and Reporting: Software Engineering Challenges and Design Trade-offs](https://arxiv.org/abs/2509.24344)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Comparing Open-Source and Commercial LLMs for Domain-Specific Analysis and Reporting: Software Engineering Challenges and Design Trade-offs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Large Language Models for Software Testing: A Research Roadmap](https://arxiv.org/abs/2509.25043)：梳理 LLM 辅助软件测试与自动化测试的研究方向。
+- [Vibe Coding in Practice](https://arxiv.org/abs/2510.00328)：综述 vibe coding 的实践动机、挑战、质量保障与未来方向。
+- [When Shared Worlds Break: Demystifying Defects in Multi-User Extended Reality Software Systems](https://arxiv.org/abs/2510.01182)：梳理软件开发的方法、风险、数据集或评测实践。
+- [A Survey of LLM-Based Applications in Programming Education: Balancing Automation and Human Oversight](https://arxiv.org/abs/2510.03719)：面向软件开发能力，梳理近期工作、分类边界与开放问题。
+- [Reconsidering Requirements Engineering: Human-AI Collaboration in AI-Native Software Development](https://arxiv.org/abs/2510.04380)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Retrieval-Augmented Code Generation: A Survey with Focus on Repository-Level Approaches](https://arxiv.org/abs/2510.04905)：综述仓库级检索增强代码生成方法与评测问题。
+- [Quantum Computing as a Service - a Software Engineering Perspective](https://arxiv.org/abs/2510.04982)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Prompting in Practice: Investigating Software Developers' Use of Generative AI Tools](https://arxiv.org/abs/2510.06000)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Prompting in Practice: Investigating Software Developers' Use of Generative AI Tools”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Model-Assisted and Human-Guided: Perceptions and Practices of Software Professionals Using LLMs for Coding](https://arxiv.org/abs/2510.09058)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Generative AI for Software Project Management: Insights From a Review of Software Practitioner Literature](https://arxiv.org/abs/2510.10887)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Software Testing with Large Language Models: An Interview Study with Practitioners](https://arxiv.org/abs/2510.17164)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [A Systematic Literature Review of the Use of GenAI Assistants for Code Comprehension: Implications for Computing Education Research and Practice](https://arxiv.org/abs/2510.17894)：综述软件工程智能体与代码模型相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [When Abstraction Breaks Physics: Rethinking Modular Design in Quantum Software](https://arxiv.org/abs/2510.18557)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Toward Agentic Software Engineering Beyond Code: Framing Vision, Values, and Vocabulary](https://arxiv.org/abs/2510.19692)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Toward Agentic Software Engineering Beyond Code: Framing Vision, Values, and Vocabulary 梳理背景、方法与开放问题。
+- [Review of Tools for Zero-Code LLM Based Application Development](https://arxiv.org/abs/2510.19747)：按界面形式、后端集成、生成产物、可扩展性和 LLM 编排角色梳理零代码应用开发工具。
+- [A First Look at the Self-Admitted Technical Debt in Test Code: Taxonomy and Detection](https://arxiv.org/abs/2510.22409)：构建测试代码中自承认技术债的初步分类与检测器，把测试维护债与已有的生产代码债研究区分开。
+- [LLM-as-a-Judge for Software Engineering: Literature Review, Vision, and the Road Ahead](https://arxiv.org/abs/2510.24367)：综述 LLM-as-a-judge 在软件工程中的用途，并归纳代码、评审与工程制品评价的可靠性缺口。
 - [A Research Roadmap for Augmenting Software Engineering Processes and Software Products with Generative AI](https://arxiv.org/abs/2510.26275)：从设计科学视角提出生成式 AI 增强软件过程、软件产品和研究挑战的路线图。
 - [Code to Think, Think to Code](https://aclanthology.org/2025.emnlp-main.130/)：综述 code-enhanced reasoning 与 reasoning-driven code intelligence，连接编码模型、通用推理和 agentic problem solving。
+- [Position: Vibe Coding Needs Vibe Reasoning: Improving Vibe Coding with Formal Verification](https://arxiv.org/abs/2511.00202)：主张用形式化验证支撑氛围式编程工作流的可靠性。
+- [A Systematic Literature Review of Code Hallucinations in LLMs: Characterization, Mitigation Methods, Challenges, and Future Directions for Reliable AI](https://arxiv.org/abs/2511.00776)：系统综述 LLM 软件开发流程中的代码幻觉定义、检测方法与缓解策略。
+- [Lost in Code Generation: Reimagining the Role of Software Models in AI-driven Software Engineering](https://arxiv.org/abs/2511.02475)：重新审视软件模型在 AI 驱动软件工程中的作用。
+- [Walking the Tightrope of LLMs for Software Development: A Practitioners' Perspective](https://arxiv.org/abs/2511.06428)：总结实践者对 LLM 进入软件开发流程的观察与顾虑。
+- [Quality Assurance of LLM-generated Code: Addressing Non-Functional Quality Characteristics](https://arxiv.org/abs/2511.10271)：综述 LLM 生成代码的非功能质量特征，将软件开发覆盖从通过测试扩展到质量保障。
+- [Agent READMEs: An Empirical Study of Context Files for Agentic Coding](https://arxiv.org/abs/2511.12884)：实证研究 agentic coding 工作流中的 Agent README 和上下文文件。
+- [From Code Foundation Models to Agents and Applications: A Comprehensive Survey and Practical Guide to Code Intelligence](https://arxiv.org/abs/2511.18538)：综述代码基础模型、编码智能体与代码智能应用。
+- [AI for software engineering: from probable to provable](https://arxiv.org/abs/2511.23159)：综述 AI for software engineering: from probable to provable，为 Software Development 补充近期方法、证据或开放问题脉络。
+- [Large Language Model for Verilog Code Generation: Literature Review and the Road Ahead](https://arxiv.org/abs/2512.00020)：综述 LLM 生成 Verilog 代码的文献与硬件代码研究方向。
+- [Engagement in Code Review: Emotional, Behavioral, and Cognitive Dimensions in Peer vs. LLM Interactions](https://arxiv.org/abs/2512.05309)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Automated Code Review Assignments: An Alternative Perspective of Code Ownership on GitHub](https://arxiv.org/abs/2512.05551)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [The Emerging Use of GenAI for UX Research in Software Development: Challenges and Opportunities](https://arxiv.org/abs/2512.15944)：梳理软件开发的方法、风险、数据集或评测实践。
+- [SoK: Understanding (New) Security Issues Across AI4Code Use Cases](https://arxiv.org/abs/2512.18456)：系统化梳理 AI 代码用例中的新安全问题。
+- [Understanding the Role of Large Language Models in Software Engineering: Evidence from an Industry Survey](https://arxiv.org/abs/2512.21347)：基于行业证据梳理 LLM 在软件工程中的作用。
+- [An Empirical Study of Generative AI Adoption in Software Engineering](https://arxiv.org/abs/2512.23327)：实证研究生成式 AI 在软件工程中的采用情况。
+- [Characterizing Bugs and Quality Attributes in Quantum Software: A Large-Scale Empirical Study](https://arxiv.org/abs/2512.24656)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Vibe Coding, Interface Flattening](https://arxiv.org/abs/2512.24939)：将 vibe coding 解释为 GUI、CLI 与 API 入口向对话式控制的折叠，强调 structured outputs、tool calling、MCP、远程算力和平台协议如何重塑软件开发中的控制权。
 - [CSLLM: Code-Specific Large Language Models - A Survey](https://doi.org/10.1016/j.eswa.2025.130991)：综述代码专用大语言模型的架构、训练数据、适配方法与评测，为软件智能体页面补充代码智能的模型侧脉络。
+- [Code Integrity in AI-Assisted Software Development](https://doi.org/10.1109/ICSME64153.2025.00095)：综述 AI-assisted software development 中的代码完整性风险与保障需求，用 survey 视角补充以 benchmark 为主的覆盖。
+- [软件工程 Bot 前瞻分析](https://doi.org/10.1109/botse67031.2025.00014)： 综述软件工程 Bot 的机会与挑战，为代码智能体和自动化编排提供背景。
+- [Vibe Coding in Education](https://doi.org/10.1109/ICETA67772.2025.11280285)：从教育场景观察 vibe coding，对 AI-assisted coding 的学习、实践与风险提供补充视角。
+- [A Retrospective on Whole Test Suite Generation: On the Role of SBST in the Age of LLMs](https://doi.org/10.1109/tse.2025.3539458)：回顾完整测试套件生成与搜索式软件测试在 LLM 时代的作用，为测试生成智能体提供 SBST 背景。
+- [Code Summarization Tools Based on Artificial Intelligence: A Systematic Literature Review](https://doi.org/10.1109/saibot67519.2025.00010)：综述基于 AI 的代码摘要工具，可作为软件开发 agent 中代码理解与文档生成能力的背景线索。
+- [Research directions for using LLM in software requirement engineering: a systematic review](https://doi.org/10.3389/fcomp.2025.1519437)：系统综述 LLM 在需求工程中的研究方向，覆盖需求获取、分析、规格化、验证和未来研究缺口。
+- [The Impact of Generative Artificial Intelligence on Software Development Teams During the Construction Phase: Systematic Mapping Study](https://doi.org/10.1109/conisoft66928.2025.00047)：系统映射 GenAI 在构建阶段对软件团队的影响，包括角色分配、协作、生产力和团队风险。
+- [Redefining the Programmer: Human-AI Collaboration, LLMs, and Security in Modern Software Engineering](https://doi.org/10.32604/cmc.2025.068137)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Artificial intelligence for source code understanding tasks: A systematic mapping study](https://doi.org/10.1016/j.infsof.2025.107915)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Software Testing in the Generative AI Era: A Practitioner's Playbook](https://doi.org/10.1109/mc.2025.3562940)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Quality assessment of software requirements using artificial intelligence methods: A systematic literature review](https://doi.org/10.1016/j.infsof.2025.107979)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Recovering Traceability Links Between Code and Documentation: A Retrospective](https://doi.org/10.1109/tse.2025.3534027)：梳理Software Development相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Software Trustworthiness Assessment via Large Language Models (LLMs)](https://doi.org/10.1109/edcc-c66476.2025.00034)：把 LLM 用作软件可信性评估器，关注可靠性、安全性、安保与依赖性声明，而不只是代码生成。
+- [Impact of Generative Artificial Intelligence on Knowledge Management in Software Engineering: A Systematic Mapping Study](https://doi.org/10.5753/sbqs.2025.13875)：补充软件开发的 Survey 条目，重点是《Impact of Generative Artificial Intelligence on Knowledge Management in Software Engineering: A Systematic Mapping Study》。
+- [Generative AI in Agile Software Development: A Comprehensive Survey](https://doi.org/10.1109/icidca66325.2025.11280486)：补充软件开发的 Survey 条目，重点是《Generative AI in Agile Software Development: A Comprehensive Survey》。
+- [Bugs in AI-Generated Code - Understanding Bug Patterns and Possible Fix Strategies](https://doi.org/10.1109/icsme64153.2025.00098)：补充软件开发的 Survey 条目，重点是《Bugs in AI-Generated Code - Understanding Bug Patterns and Possible Fix Strategies》。
+- [Fine-tuning AI Models for code generation: Advances and applications](https://doi.org/10.30574/wjarr.2025.26.1.1172)：补充软件开发的 Survey 条目，重点是《Fine-tuning AI Models for code generation: Advances and applications》。
+- [Um Mapeamento Sistemático sobre Técnicas de Classificação e Categorização de Bugs em Software](https://doi.org/10.5753/reic.2025.6850)：补充软件开发的 Survey 条目，重点是《Um Mapeamento Sistemático sobre Técnicas de Classificação e Categorização de Bugs em Software》。
+- [A Survey of Large Language Model-Based Text-to-SQL Methods](https://doi.org/10.1109/acait67930.2025.11522096)：综述 LLM-based text-to-SQL 方法，覆盖模式理解、提示、微调、基准评测和数据库查询可靠性。
+- [Generative AI Efficiency and Effectiveness in Software Project Documentation Review Process](https://doi.org/10.1109/acdsa65407.2025.11165833)：研究生成式 AI 审查软件项目文档的效率与效果，重点在文档质量流程而非源代码自动化。
+- [Review of Large Language Model-Based Software Fault Localization Techniques](https://doi.org/10.1109/dsa66321.2025.00021)：综述软件开发的方法谱系、评测维度与开放问题，为父级审阅补充近期综述线索。
+- [Leveraging Large Language Models in Software Testing: A Review of Applications and Challenges](https://doi.org/10.1109/isdfs65363.2025.11011986)：梳理软件开发智能体的近期方法与开放问题。
+- [The Landscape of Quantum Software Testing Tools](https://doi.org/10.1109/ms.2025.3578154)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Software testing for peer-to-peer systems: Challenges and the state-of-the-art](https://doi.org/10.5753/jserd.2025.4917)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Transformer Models for Code Review Comment Generation: A Performance Comparison on GitHub Data](https://doi.org/10.1109/aimv66517.2025.11203699)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Exploration of Structural Code Relationship Space for Context Collection](https://doi.org/10.1109/asew67777.2025.00076)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Architectural Styles and Quality Attributes in AI-Based Video Software: A Systematic Literature Review](https://doi.org/10.1109/access.2025.3625266)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [From Code Analysis to Fault Localization: A Survey of Graph Neural Network Applications in Software Engineering](https://doi.org/10.14569/ijacsa.2025.0160461)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [AI-Driven Software Test Automation: An AI4SE-Oriented Survey of Techniques, Tools, and Challenges](https://doi.org/10.1109/access.2025.3623944)：综述软件开发、代码生成、测试或验证能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [A Systematic Literature Review of Text-to-SQL: Performance, Challenges, and Limitations](https://doi.org/10.62762/tacs.2025.497935)：可作为“软件开发 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [Quality Evaluation of LLM-based Generated Test Case: A Literature Review](https://doi.org/10.1109/icodse68111.2025.11351763)：可作为“软件开发 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [Generative Artificial Intelligence for AgileRE: A Systematic Mapping](https://doi.org/10.1109/sccc67219.2025.11420613)：可作为“软件开发 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [Machine Learning Approaches to Code Similarity Measurement: A Systematic Review](https://doi.org/10.1109/access.2025.3553392)：系统综述机器学习代码相似度度量，覆盖代码表示、克隆式任务、数据集和评测指标。
+- [Next-Generation Software Testing: AI-Powered Test Automation](https://doi.org/10.1109/ms.2025.3559194)：把 AI 驱动测试自动化定位为下一代软件测试，连接测试设计、执行、维护和测试人员角色变化。
+- [A systematic literature review on cross-language source code clone detection](https://doi.org/10.1016/j.cosrev.2025.100786)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [The Evolution of Automated Software Repair](https://doi.org/10.1109/tse.2025.3533309)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Software Testing Evolution: Comparative Insights into Traditional and Emerging Practices](https://doi.org/10.62762/jse.2025.246843)：梳理软件开发的方法、风险、数据集或评测实践。
+- [A Scoping Review of the Use of DSL in Software Applications: The Case of Chatbot Development](https://doi.org/10.1109/niss66502.2025.00031)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Understanding AWS Provider Dependency Updates in Infrastructure-As-Code: Empirical Study, Taxonomy, and Insights](https://doi.org/10.1109/tsc.2025.3601051)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Exploring Generative AI in Automated Software Engineering](https://doi.org/10.1109/ms.2025.3533754)：综述生成式 AI 在自动化软件工程中的应用。
+- [Machine Learning Approaches to Code Similarity Measurement: A Systematic Review](https://doi.org/10.64751/ajmimc.2025.v4.n4%281%29.pp15-21)：综述用于代码相似度度量的机器学习方法。
+- [A Systematic Literature Review of Visualization in Code Clone Detection Models](https://doi.org/10.1109/icicse67247.2025.11390858)：综述代码克隆检测模型中的可视化方法。
+- [Mapping the Software Evolution Landscape in the Age of Large Language Models](https://doi.org/10.1109/ms.2025.3646007)：梳理大语言模型如何重塑软件演化任务，为软件智能体覆盖范围补充维护与演化视角。
+- [Formal requirements engineering and large language models: A two-way roadmap](https://doi.org/10.1016/j.infsof.2025.107697)：综述形式化需求工程与 LLM 的双向关系，梳理软件开发工作流中的机会与风险。
+- [Using LLMs to enhance code quality: A systematic literature review](https://doi.org/10.1016/j.infsof.2025.107960)：系统综述使用 LLM 提升代码质量的研究。
+- [Software refactoring research with large language models: A systematic literature review](https://doi.org/10.1016/j.jss.2025.112762)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Software refactoring research with large language models: A systematic literature review 梳理背景、方法与开放问题。
+- [Code Clone Detection Techniques Based on Large Language Models](https://doi.org/10.1109/access.2025.3549780)：综述基于大语言模型的代码克隆检测技术。
+- [LLM-Based Code Generation: A Systematic Literature Review With Technical and Demographic Insights](https://doi.org/10.1109/access.2025.3631952)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 LLM-Based Code Generation: A Systematic Literature Review With Technical and Demographic Insights 梳理背景、方法与开放问题。
+- [Prompts Engineering Challenges in Software Code Generation](https://doi.org/10.1109/amitic68284.2025.11214606)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Prompts Engineering Challenges in Software Code Generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Towards Multi-Agentic AI for automated software design and modelling: challenges and opportunities](https://doi.org/10.1109/asew67777.2025.00063)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Towards Multi-Agentic AI for automated software design and modelling: challenges and opportunities 梳理背景、方法与开放问题。
+- [Human-Machine Teaming and Team Effectiveness in AI Tools for Software Engineering](https://doi.org/10.1109/chase66643.2025.00017)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Large Language Models for Software Fault Localization: a Survey](https://doi.org/10.1109/dsa66321.2025.00024)：一篇关于大语言模型用于软件故障定位的综述；核心思路是梳理 LLM 如何在修复或调试前定位可能的故障位置。
+- [Application of Large Language Models in Software Development: Review of the Current State and Development Perspectives](https://doi.org/10.1109/ent68818.2025.11245717)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [WIP: Literature Review on LLMs to Improve Code](https://doi.org/10.1109/fie63693.2025.11328320)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [Towards the Integration of Large Language Models into the Software Development Life Cycle: A Systematic Literature Review](https://doi.org/10.1109/fllm67465.2025.11390990)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [Supporting Agile Roles and Practices with GAI](https://doi.org/10.1109/icrito66076.2025.11241628)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Supporting Agile Roles and Practices with GAI”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A First Look at AI Trends in Value-Aligned Software Engineering Publications: Human-LLM Insights](https://doi.org/10.1109/icse-seis66351.2025.00014)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [A Survey and Prospects of Source Code Processing Techniques Based on Large Language Models](https://doi.org/10.1109/icsess67729.2025.11380277)：一篇关于基于大语言模型的源代码处理技术综述；核心思路是梳理 LLM 在代码理解、生成、分析和维护中的使用。
+- [Toward Process Improvement Framework for Software Development Using Generative AI](https://doi.org/10.1109/iiai-aai-winter69777.2025.00020)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Toward Process Improvement Framework for Software Development Using Generative AI”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Transforming Software Engineering Processes Through Generative AI: A Framework for Integration and Implementation](https://doi.org/10.1109/mc.2025.3539347)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Leveraging LLMs for Trustworthy Software Engineering: Insights and Challenges](https://doi.org/10.1109/mc.2025.3546204)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Leveraging LLMs for Trustworthy Software Engineering: Insights and Challenges 梳理背景、方法与开放问题。
+- [Automating Benchmark Generation for LLMs in Software Engineering: Challenges and Opportunities](https://doi.org/10.1109/nlbse66842.2025.00011)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [Intelligent Agents for Requirements Engineering: Use, Feasibility and Evaluation](https://doi.org/10.1109/re63999.2025.00064)：综述软件工程智能体与代码模型相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [A dual perspective review on large language models and code verification](https://doi.org/10.3389/fcomp.2025.1655469)：综述软件工程智能体与代码模型相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Large Language Models in Software Engineering: Automation, Collaboration, and Challenges](https://doi.org/10.56028/aetr.15.1.1795.2025)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Natural Language Processing in Software Engineering: A Systematic Literature Review](https://doi.org/10.5753/jserd.2025.5097)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [Software Engineering in the Era of Intelligence, Security, and Automation](https://doi.org/10.62762/jse.2025.534855)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [A review of backdoor attacks and defenses in code large language models: Implications for security measures](https://doi.org/10.1016/j.infsof.2025.107707)：综述代码大模型中的后门攻击与防御，把代码模型安全与软件智能体可靠性连接起来。
+- [Reporting LLM Prompting in Automated Software Engineering: A Guideline Based on Current Practices and Expectations](https://arxiv.org/abs/2601.01954)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Agentic Pipelines in Embedded Software Engineering: Emerging Practices and Challenges](https://arxiv.org/abs/2601.10220)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Changes in Coding Behavior and Performance Since the Introduction of LLMs](https://arxiv.org/abs/2601.11835)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Report for NSF Workshop on AI for Electronic Design Automation (NSF Workshop Report)](https://arxiv.org/abs/2601.14541)：总结 NSF AI for EDA workshop 的路线图，覆盖 LLM、图模型、强化学习、神经符号方法、基准与设计流程集成。
+- [Toward Agentic Software Project Management: A Vision and Roadmap](https://arxiv.org/abs/2601.16392)：给出智能体式软件项目管理愿景与路线图。
+- [Adoption of Generative Artificial Intelligence in the German Software Engineering Industry: An Empirical Study](https://arxiv.org/abs/2601.16700)：实证研究软件工程行业中生成式 AI 的采用情况。
+- [Understanding Dominant Themes in Reviewing Agentic AI-authored Code](https://arxiv.org/abs/2601.19287)：实证分析真实仓库中 agent 生成 pull request 的评审意见，提炼审阅者关注主题和交互模式。
+- [Are We All Using Agents the Same Way? An Empirical Study of Core and Peripheral Developers Use of Coding Agents](https://arxiv.org/abs/2601.20106)：梳理，主要面向 Software Development。
+- [Enterprise AI Coding Assistants Study](https://arxiv.org/abs/2601.20112)：实证分析企业场景中 AI coding assistants 的使用、影响与需求。
+- [A Survey on Large Language Model Impact on Software Evolvability and Maintainability: the Good, the Bad, the Ugly, and the Remedy](https://arxiv.org/abs/2601.20879)：综述 LLM 对软件演化与维护性的收益、风险和修复方向。
+- [Infusion of Blockchain to Establish Trustworthiness in AI Supported Software Evolution: A Systematic Literature Review](https://arxiv.org/abs/2601.20918)：系统综述区块链在 AI 支持软件演化可信性中的作用。
+- [From Horizontal Layering to Vertical Integration: A Comparative Study of the AI-Driven Software Development Paradigm](https://arxiv.org/abs/2601.22667)：比较从横向分层到纵向集成的 AI 驱动软件开发范式。
+- [You Need an Encoder for Native Position-Independent Caching](https://arxiv.org/abs/2602.01519)：面向软件开发，补充关于software-development, code-model, testing, verification, or security-analysis capability的综述线索。
+- [Why Agentic-PRs Get Rejected: A Comparative Study of Coding Agents](https://arxiv.org/abs/2602.04226)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Large Language Models in Software Documentation and Modeling: A Literature Review and Findings](https://arxiv.org/abs/2602.04938)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Large Language Models in Software Documentation and Modeling: A Literature Review and Findings 梳理背景、方法与开放问题。
+- [Trustworthy AI Software Engineers](https://arxiv.org/abs/2602.06310)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Trustworthy AI Software Engineers”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Forecasting Developer Environments with GenAI: A Research Perspective](https://arxiv.org/abs/2602.07412)：提出用生成式 AI 预测开发者环境的研究视角。
+- [Studying Quality Improvements Recommended via Manual and Automated Code Review](https://arxiv.org/abs/2602.11925)：比较人工评审与 ChatGPT-4 等自动评审推荐的质量改进，分析两类评审在问题类型和改进建议上的异同。
+- [A Survey of Code Review Benchmarks and Evaluation Practices in Pre-LLM and LLM Era](https://arxiv.org/abs/2602.13377)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Why Code, Why Now: An Information-Theoretic Perspective on the Limits of Machine Learning](https://arxiv.org/abs/2602.13934)：从信息论视角分析为什么代码是机器学习的特殊领域。
+- [Every Maintenance Has Its Exemplar: The Future of Software Maintenance through Migration](https://arxiv.org/abs/2602.14046)：把软件维护自动化与迁移学习式示例复用联系起来，强调从既有维护活动中学习补丁、适配和演化策略。
+- [Many Tools, Few Exploitable Vulnerabilities: A Survey of 246 Static Code Analyzers for Security](https://arxiv.org/abs/2602.18270)：调查 246 个安全静态分析器，强调大量工具报告结果与实际可利用漏洞数量之间的差距。
+- [Sustainable Code Generation Using Large Language Models: A Systematic Literature Review](https://arxiv.org/abs/2603.00989)：综述 LLM 代码生成中的能耗、可维护性和可持续性问题。
+- [SoK: Systematizing Software Artifacts Traceability via Associations, Techniques, and Applications](https://arxiv.org/abs/2603.16208)：系统化梳理软件制品追踪，将制品关联、链接恢复技术和应用场景统一到一个 traceability 框架中。
+- [Generative AI for Quantum Circuits and Quantum Code: A Technical Review and Taxonomy](https://arxiv.org/abs/2603.16216)：综述面向量子线路与量子代码的生成式 AI 方法。
+- [The State of Generative AI in Software Development: Insights from Literature and a Developer Survey](https://arxiv.org/abs/2603.16975)：结合文献和开发者证据分析生成式 AI 在软件开发中的使用。
+- [Intent Formalization: A Grand Challenge for Reliable Coding in the Age of AI Agents](https://arxiv.org/abs/2603.17150)：把 AI 生成代码中的意图鸿沟界定为可靠性瓶颈，并梳理规格、测试、验证与人机交互如何把用户意图转化为可检查对象。
+- [From Human Interfaces to Agent Interfaces: Rethinking Software Design in the Age of AI-Native Systems](https://arxiv.org/abs/2603.20300)：从人类界面转向智能体界面重新思考软件设计。
+- [LLM-based Automated Architecture View Generation: Where Are We Now?](https://arxiv.org/abs/2603.21178)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“LLM-based Automated Architecture View Generation: Where Are We Now?”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Awakening: Modern Challenges and Opportunities of Software Engineering Research](https://arxiv.org/abs/2603.21403)：综述现代软件工程研究的挑战与机会。
+- [From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI](https://arxiv.org/abs/2603.22106)：面向 AI 辅助开发重新界定软件健康，将技术债、认知债与意图债区分开来。
+- [The Specification as Quality Gate: Three Hypotheses on AI-Assisted Code Review](https://arxiv.org/abs/2603.25773)：把规格说明作为 AI 辅助代码审查的质量门，并提出评测审查质量的假设。
+- [SWE-PRBench: Benchmarking AI Code Review Quality Against Pull Request Feedback](https://arxiv.org/abs/2603.26130)：提出面向 pull request 的 AI 代码评审基准，并显示前沿模型只能发现少量人工标注的评审问题。
+- [Beyond Banning AI: A First Look at GenAI Governance in Open Source Software Communities](https://arxiv.org/abs/2603.26487)：实证梳理开源项目如何治理 issues、pull requests、代码审查和安全报告中的 GenAI 使用，说明审查负担与贡献规则比简单禁用更能决定采用边界。
+- [A Large-Scale Empirical Study of AI-Generated Code in Real-World Repositories](https://arxiv.org/abs/2603.27130)：面向软件开发，补充关于large-scale empirical study of AI-generated code in repositories的综述线索。
+- [A Taxonomy of Programming Languages for Code Generation](https://arxiv.org/abs/2604.00239)：为代码生成的评估与改进构建编程语言分类。
+- [The Rise of Language Models in Mining Software Repositories: A Survey](https://arxiv.org/abs/2604.00787)：综述语言模型在软件仓库挖掘中的应用。
+- [SmartPatchLinker: An Open-Source Tool to Linked Changes Detection for Code Review](https://arxiv.org/abs/2604.04045)：提出浏览器端代码评审工具，在评审界面中发现语义相关或重叠补丁，减少重复修改和延迟评审。
+- [Humans Integrate, Agents Fix: How Agent-Authored Pull Requests Are Referenced in Practice](https://arxiv.org/abs/2604.04059)：综述或系统化梳理软件工程、编程智能体、测试与代码安全，用于补充方法谱系、任务边界、风险与开放问题。
+- [Architecture Without Architects: How AI Coding Agents Shape Software Architecture](https://arxiv.org/abs/2604.04990)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Rethinking Software Engineering for Agentic AI Systems](https://arxiv.org/abs/2604.10599)：主张面向 agentic AI systems 重新组织软件工程，突出编排、验证、人机协作、教育和职责划分。
+- [Fairness in Multi-Agent Systems for Software Engineering: An SDLC-Oriented Rapid Review](https://arxiv.org/abs/2604.13103)：从软件开发生命周期视角快速综述多智能体系统公平性。
+- [Prompt-Driven Code Summarization: A Systematic Literature Review](https://arxiv.org/abs/2604.15385)：综述用语言模型和提示方法进行代码摘要的研究。
+- [The Semi-Executable Stack: Agentic Software Engineering and the Expanding Scope of SE](https://arxiv.org/abs/2604.15468)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“The Semi-Executable Stack: Agentic Software Engineering and the Expanding Scope of SE”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Beyond the'Diff': Addressing Agentic Entropy in Agentic Software Development](https://arxiv.org/abs/2604.16323)：将 Agentic Entropy 作为超越 diff 的智能体软件开发风险。
 - [LLM4Log](https://arxiv.org/abs/2604.16359)：把日志分析视为软件工程工作流，覆盖解析、异常检测、根因分析与运维辅助。
+- [On the Use of Commit Messages for Corrective Software Maintenance: A Systematic Mapping Study](https://arxiv.org/abs/2604.16404)：综述软件开发与代码智能，为该方向提供可复用的分类或综合视角。
+- [Automated Classification of Human Code Review Comments with Large Language Models](https://arxiv.org/abs/2604.23667)：用 LLM 细分人工代码评审意见中的冗余、含糊和建设性不足等问题，为评审质量分析提供分类工具。
+- [Understanding the Limits of Automated Evaluation for Code Review Bots in Practice](https://arxiv.org/abs/2604.24525)：面向软件开发能力，梳理近期工作、分类边界与开放问题。
+- [Evaluation of LLM-Based Software Engineering Tools: Practices, Challenges, and Future Directions](https://arxiv.org/abs/2604.24621)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [A systematic literature Review for Transformer-based Software Vulnerability detection](https://arxiv.org/abs/2604.24822)：综述软件开发与代码智能，为该方向提供可复用的分类或综合视角。
+- [LLM-Assisted Empirical Software Engineering: Systematic Literature Review and Research Agenda](https://arxiv.org/abs/2604.26192)：综述 LLM 在实证软件工程工作流中的使用和研究议程。
+- [Using LLMs in Software Design: An Empirical Study of GitHub and A Practitioner Survey](https://arxiv.org/abs/2605.01392)：结合 GitHub 证据与从业者问卷研究 LLM 在软件设计中的用途、收益和缺点，覆盖架构决策与设计沟通。
+- [Accountable Agents in Software Engineering: An Analysis of Terms of Service and a Research Roadmap](https://arxiv.org/abs/2605.04532)：从服务条款和研究路线图分析编码智能体的问责问题，聚焦生成、修改、推荐代码时的责任归属。
+- [Bridging Generation and Training: A Systematic Review of Quality Issues in LLMs for Code](https://arxiv.org/abs/2605.05267)：综述连接代码生成输出与模型训练数据的质量问题。
+- [Collaborator or Assistant? How AI Coding Agents Partition Work Across Pull Request Lifecycles](https://arxiv.org/abs/2605.08017)：综述或系统化梳理软件工程、编程智能体、测试与代码安全，用于补充方法谱系、任务边界、风险与开放问题。
+- [Fine-Tuning Models for Automated Code Review Feedback](https://arxiv.org/abs/2605.12610)：研究开源模型微调用于自动代码评审反馈，关注教育场景中的个性化反馈、成本和学生代码隐私。
+- [Assistance to Autonomy](https://arxiv.org/abs/2605.15245)：系统综述软件开发生命周期中的 agentic AI，从辅助任务延伸到自治工作流。
+- [RoadmapBench: Evaluating Long-Horizon Agentic Software Development Across Version Upgrades](https://arxiv.org/abs/2605.15846)：提出跨版本升级的长周期 agentic software development 基准，弥补单问题修复基准无法覆盖多文件、多目标工程演化的缺口。
+- [Rethinking Code Review in the Age of AI: A Vision for Agentic Code Review](https://arxiv.org/abs/2605.17548)：以端到端 pull-request review effectiveness 为核心重构 agentic code review，指出 AI 支持应超越 reviewer recommendation、PR 摘要和评论建议等孤立功能。
 - [Methods and Techniques of Agentic Software Engineering](https://doi.org/10.1109/access.2026.3652325)：系统梳理智能体软件工程的方法与技术，将工作流、技术路线和生命周期覆盖显式化，而不是只把 LLM 编程视为一次性代码生成。
+- [Agentic AI Frameworks for Legacy Software Modernization](https://doi.org/10.1109/MPCON69668.2026.11508251)：系统综述面向遗留软件现代化的 agentic AI 框架。
+- [A Review of Screenshot-to-Code Generation Systems](https://doi.org/10.1109/ICCCES62661.2026.11436626)：综述把 UI 截图转换为代码的系统。核心思想：梳理多模态感知、布局理解与代码合成交汇的视觉前端生成方法。
+- [LLM-Based Code Clone Detection Mapping Study](https://doi.org/10.1016/j.infsof.2026.108096)：系统梳理 LLM-based code clone detection 的 research landscape。
+- [Responsible Vibe Coding: Architecture, Opportunities, and Research Agenda](https://doi.org/10.1080/08874417.2026.2621186)：从架构、机会和研究议程角度梳理 vibe coding，为 AI 辅助编程工作流补充责任导向的综述视角。
+- [Benchmarking Large Language Models for Automated Code Changes: A Systematic Review](https://doi.org/10.1109/idciot67589.2026.11455819)：系统综述大语言模型在自动代码变更任务中的评测方式，为软件生命周期综述补充代码编辑评测视角。
+- [Automated Code Review Systems Using CodeBERT with Multi-Anchor Space-Aware Temporal Convolutional Neural Network](https://doi.org/10.1016/j.cola.2026.101396)：提出结合 CodeBERT 表示和 multi-anchor temporal convolution 的自动代码评审架构，更接近 Model 条目而非广义综述。
+- [Insecure by design? A human-centric security perspective on AI-assisted software development](https://doi.org/10.1016/j.cose.2026.104842)：综述软件开发与代码智能，为该方向提供可复用的分类或综合视角。
+- [Systematic literature review on software code smell detection approaches](https://doi.org/10.1016/j.jss.2026.112784)：系统综述代码异味检测方法，覆盖检测技术、数据集、质量属性影响和维护场景。
+- [Interactive LLM Agent Review for Software Engineering Artifacts](https://doi.org/10.1080/08874417.2026.2650523)：研究交互式 LLM agent 审查软件工程制品，关注人机反馈循环和非代码制品质量评估。
+- [Open-source GIS software and tools: a systematic review](https://doi.org/10.1080/20964471.2026.2666947)：偏离本页主轴；该文系统综述开源 GIS 软件与工具生态，而不是 AI 软件开发或代码智能。
+- [Toward a Maturity Model for AI-Assisted Software Development: Conceptual Framework and Research Agenda](https://doi.org/10.1109/iisec69317.2026.11418422)：提出 AI-assisted software development 成熟度模型和研究议程，用阶段化框架描述工具采用、流程整合与治理能力。
+- [Test automation with selenium: A survey](https://doi.org/10.1016/j.infsof.2026.108077)：综述基于 Selenium 的测试自动化方法。
+- [Large Language Models for Code Generation: A Survey](https://doi.org/10.1016/j.csi.2026.104165)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 Large Language Models for Code Generation: A Survey 梳理背景、方法与开放问题。
+- [Explainability and compliance in AI tools for design artifact generation: A multi-domain practitioner survey in requirements engineering](https://doi.org/10.1016/j.infsof.2026.108066)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Explainability and compliance in AI tools for design artifact generation: A multi-domain practitioner survey in requirements engineering”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Can we trust the source? A systematic review of watermarking and attribution for AI-generated code](https://doi.org/10.1016/j.infsof.2026.108157)：系统综述 AI 生成代码的水印与归因方法。
+- [Code Comprehension Gaps in AI-Assisted Development: A Conceptual Framework for Knowledge Erosion Patterns](https://doi.org/10.1109/access.2026.3689574)：提出 AI 辅助开发中的代码理解缺口概念框架。
+- [The Impact of LLMs on Software Development](https://doi.org/10.1109/scse70081.2026.11499962)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“The Impact of LLMs on Software Development”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [The Impact of Modern AI on Software Development: A Systematic Literature Review](https://doi.org/10.14569/ijacsa.2026.0170478)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“The Impact of Modern AI on Software Development: A Systematic Literature Review”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Culture Clashes: LLM Support in the Engineering of Safety-Critical Systems](https://doi.org/10.4271/2026-01-0110)：研究 LLM 对安全关键系统工程的支持。
+- [Quality Evaluation of Software Functional Requirements Generated by LLMs: A Systematic Mapping Study](https://doi.org/10.5753/sbsi.2026.248317)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Quality Evaluation of Software Functional Requirements Generated by LLMs: A Systematic Mapping Study”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [Enhancing Automated Unit Test Generation with Large Language Models](https://doi.org/10.1145/3802827)：系统综述基于 LLM 的单元测试生成方法、评测实践和开放挑战，可补充软件开发智能体与代码模型能力综述。
 - [Generative AI solutions for software quality](https://doi.org/10.1007/s11219-026-09754-7)：评估生成式 AI 在软件质量工作中的产业就绪度，补充软件工程生命周期综述。
 - [Toward Responsible Autonomy](https://doi.org/10.1145/3796315.3796331)：围绕责任、人类控制、问责和部署障碍来界定自主软件工程。
+- [Expert Opinions on LLMs in Software Development](https://doi.org/10.1002/ail2.127)：主题分析专家对 LLM 用于软件开发的看法，为软件 agent 页面补充实践者关切与采用边界。
+- [Software Architecture in the Age of Agentic AI](https://doi.org/10.1007/978-3-032-04403-7_5)：综述 agentic AI 对软件架构的影响，覆盖设计恢复、架构决策以及自治开发流程中的生命周期治理问题。
+- [Code Generation with Large Language Models](https://doi.org/10.1007/s10489-026-07230-0)：综述从神经程序合成到自主软件开发的演进，连接代码生成、评测和软件 agent 工作流。
+- [A Survey of the Full Process of Code Search Based on Deep Learning](https://doi.org/10.1002/cpe.70277)：梳理深度学习代码搜索从数据集构建、预处理到表示模型和查询扩展的完整流程，明确软件检索管线。
+- [Generative AI for Code Translation: A Systematic Mapping Study](https://doi.org/10.3390/engproc2025112033)：系统梳理生成式 AI 用于代码翻译的研究，补充神经代码翻译综述中的近期 LLM 证据。
+- [Unlocking the Potential of the Prompt Engineering Paradigm in Software Engineering: A Systematic Literature Review](https://doi.org/10.3390/ai6090206)：系统综述提示工程在代码生成、缺陷检测、软件追踪、检索增强生成和自动提示调优等软件工程任务中的方法。
+- [LLM-Based Chatbots for Mining Software Repositories: Challenges and Opportunities](https://doi.org/10.1145/3661167.3661218)：综述用于软件仓库挖掘的大模型聊天机器人挑战与机会。
+- [A survey on robustness attacks for deep code models](https://doi.org/10.1007/s10515-024-00464-7)：综述深度代码模型的鲁棒性攻击，组织扰动方式、威胁模型、防御方法和代码智能评测实践。
+- [Analyzing Developer Use of ChatGPT Generated Code in Open Source GitHub Projects](https://doi.org/10.1145/3643991.3645072)：实证研究开源 GitHub 项目中开发者如何引入 ChatGPT 生成代码，使采用、修改和评审行为可观察。
+- [A Roadmap for Software Testing in Open-Collaborative and AI-Powered Era](https://doi.org/10.1145/3709355)：提出开放协作与 AI 驱动时代的软件测试路线图，连接社区流程、自动化和质量保障。
+- [My Code Is Less Secure with Gen AI: Surveying Developers' Perceptions of the Impact of Code Generation Tools on Security](https://doi.org/10.1145/3672608.3707778)：调查开发者对 GenAI 代码生成安全影响的感知，揭示信心、风险意识和安全编码行为缺口。
+- [Automatically Engineering Trusted Software: A Research Roadmap](https://doi.org/10.1145/3779132)：提出自动化可信软件工程研究路线图，连接规格、验证、测试、合成和 assurance evidence。
+- [Fine-Tuning Large Language Models to Improve Accuracy and Comprehensibility of Automated Code Review](https://doi.org/10.1145/3695993)：综述Software Development的方法、风险或评测脉络，可作为 Software Development / Survey 部分的领域地图。
+- [Deep learning for code generation: a survey](https://doi.org/10.1007/s11432-023-3956-3)：梳理软件开发的方法、证据与开放问题。
+- [Chatting with AI: Deciphering Developer Conversations with ChatGPT](https://doi.org/10.1145/3643991.3645078)：梳理软件开发方向的近期方法、评测问题或风险边界。
+- [AI Coding Tools in Bilingual Software Development: A Survey of Spanish-Speaking Developers](https://doi.org/10.1145/3696630.3731670)：调查西语开发者使用 AI 编码工具的双语工作流问题，包括语言切换、文档支持和工具可用性缺口。
+- [Resolving Code Review Comments with Machine Learning](https://doi.org/10.1145/3639477.3639746)：面向软件开发能力，梳理近期工作、分类边界与开放问题。
+- [On the Use of ChatGPT for Code Review: Do Developers Like Reviews By ChatGPT?](https://doi.org/10.1145/3661167.3661183)：评估开发者对 ChatGPT 代码评审的看法，用有用性、信任和接受度约束自动评审落地。
+- [Support, Not Automation: Towards AI-supported Code Review For Code Quality and Beyond](https://doi.org/10.1145/3696630.3728505)：面向软件开发，补充综述或脉络梳理。
+- [Assertions in software testing: survey, landscape, and trends](https://doi.org/10.1007/s10009-025-00794-1)：面向软件开发，补充综述或脉络梳理。
+- [Using ChatGPT in Software Requirements Engineering: A Comprehensive Review](https://doi.org/10.3390/fi16060180)：综述 ChatGPT 在需求工程中的使用，覆盖需求获取、分析、规格说明、验证和 LLM 辅助 RE 的局限。
+- [A Comparative Review of AI Techniques for Automated Code Generation in Software Development: Advancements, Challenges, and Future Directions](https://doi.org/10.18421/tem131-76)：综述或系统梳理软件开发，为该能力页补充分类、趋势或风险边界。
+- [A review of automatic source code summarization](https://doi.org/10.1007/s10664-024-10553-6)：综述自动源码摘要方法、数据集、评测指标，以及其对程序理解和文档生成的支持作用。
+- [A Systematic Literature Review on Explainability for ML/DL-based Software Engineering](https://doi.org/10.1145/3763230)：系统综述 ML/DL 软件工程模型的可解释性，覆盖缺陷预测、测试和代码智能中的黑箱风险。
+- [From Overload to Insight: Bridging Code Search and Code Review with LLMs](https://doi.org/10.1145/3696630.3728518)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Intelligent PLC Code Generation in HCPS 2.0: A Multi-dimensional Taxonomy and Evolutionary Framework](https://doi.org/10.1145/3728725.3728757)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [Enhancing Software Engineering With AI: Innovations, Challenges, and Future Directions](https://doi.org/10.1049/sfw2/5691460)：综述软件开发的方法谱系、任务边界、证据来源与开放挑战。
+- [The Evolution of Code Review: From Traditional Methods to AI-Powered Approaches](https://doi.org/10.34248/bsengineering.1635994)：追踪代码评审从人工实践到静态分析、机器学习、深度学习和生成式 AI 辅助方法的演化。
+- [Impact of Code Smells on Software Quality: A Systematic Literature Review](https://doi.org/10.1002/smr.70091)：综合代码异味对软件质量属性、维护成本和重构优先级影响的证据。
+- [Q-ST: A Comprehensive Review of Quantum Software and Toolchains, Ecosystems, and Technologies](https://doi.org/10.1007/s11831-026-10615-6)：综述量子软件工具链、生态和技术，是相邻的领域软件工程综述，而非直接的 coding-agent 综述。
+- [Context-Aware Code Review Automation: A Retrieval-Augmented Approach](https://doi.org/10.3390/app16041875)：提出面向 Python 项目的 RAG 代码评审系统生成上下文相关评论，更像窄系统条目而非广义综述。
+- [Sentiment analysis for code-mixed low-resource languages: a systematic review of approaches, techniques, applications, challenges, and future directions](https://doi.org/10.1007/s13278-026-01588-2)：明显偏离本页主轴；该文综述低资源 code-mixed 语言的情感分析，而不是程序代码或软件工程流程。
+- [Multimodal Immediate Feedback (Audio/Video + LLM-based Code Reviewers) in Practice-Oriented Disciplines: Causal Analysis of Effects on the Pace of Skill Formation, Metacognitive Monitoring, and Sustained Engagement](https://doi.org/10.21275/sr25919135656)：研究实践型教学中的多模态即时反馈和 LLM 代码评审器，是邻近的软件教育反馈研究。
+- [The price of precision: the cost of preprocessing for automated code revision in code review](https://doi.org/10.1007/s10664-025-10781-4)：研究自动代码修订中预处理的成本，揭示输入精度、人工工作量和修订质量之间的取舍。
+- [The Risks of AI Coding Assistants: Novice Programmers Beware](https://doi.org/10.1145/3744690)：综述 The Risks of AI Coding Assistants: Novice Programmers Beware，为 Software Development 补充近期方法、证据或开放问题脉络。
+- [Code Quality Alarms: A Review of Techniques, Datasets, and Emerging Trends in Detecting Smells and Anti-Patterns](https://doi.org/10.4038/jdrra.v3i2.93)：综述 Code Quality Alarms: A Review of Techniques, Datasets, and Emerging Trends in Detecting Smells and Anti-Patterns，为 Software Development 补充近期方法、证据或开放问题脉络。
+- [AI-Powered Coding Tools: A Study of Advancements, Challenges, and Future Directions](https://doi.org/10.61173/n7m7qa37)：综述 AI-Powered Coding Tools: A Study of Advancements, Challenges, and Future Directions，为 Software Development 补充近期方法、证据或开放问题脉络。
+- [Artificial Intelligence in Software Testing and Beyond: A Review of Current Practices and Emerging Challenges](https://doi.org/10.18267/j.aip.303)：综述人工智能用于软件测试的实践与新挑战。
+- [Advancements in automated program repair: a comprehensive review](https://doi.org/10.1007/s10115-025-02383-9)：综述自动程序修复方法，从故障检测、补丁生成到验证、搜索策略和学习式修复。
+- [Innovating for Tomorrow: The Convergence of Software Engineering and Green AI](https://doi.org/10.1145/3712007)：综述软件工程与 Green AI 的双向关系，包括 AI 辅助软件工程自动化和可持续 AI 系统构建。
+- [A fine-grained taxonomy of code review feedback in TypeScript projects](https://doi.org/10.1007/s10664-024-10604-y)：构建 TypeScript 项目代码评审反馈的细粒度分类，可用于评估自动评审意见生成与修复。
+- [Attitudes Towards LLM Use Among Software Engineering Researchers: Results From A Two-Phase Survey Study](https://doi.org/10.1145/3696630.3731671)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Artificial Intelligence in Software Development: A Review of Code Generation, Testing, Maintenance and Security](https://doi.org/10.47191/ijcsrr/v8-i4-08)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [On the Use of Artificial Intelligence in Software Testing: State of the Art and Application to Satellite Systems](https://doi.org/10.1145/3783988)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Developers’ Dilemma: Opportunities and Pitfalls of Generative AI for Software Development](https://doi.org/10.1007/s12599-026-00998-y)：梳理软件开发能力相关的方法、风险、评测实践或分类框架。
+- [Artificial Intelligence for Infrastructure-as-Code—A Systematic Literature Review](https://doi.org/10.3390/electronics15040755)：综述或系统化梳理软件工程、编程智能体、测试与代码安全，用于补充方法谱系、任务边界、风险与开放问题。
+- [From Mock-ups to Code: A Conceptual Synthesis of AI-Driven Automatic Website Generation](https://doi.org/10.38124/ijisrt/25nov339)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Human–AI Collaboration in Software Quality Assurance: Balancing Automation and Human Expertise](https://doi.org/10.18090/samriddhi.v17i04.01)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Software Testing on Microservices-Based Systems: A Systematic Literature Review and Thematic Analysis](https://doi.org/10.1134/s0361768825700422)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Co-Intelligence in Software Engineering: Understanding and Optimizing GenAI Integration in Software Engineering for Skill Development in Time-Constrained Programming](https://doi.org/10.1145/3696630.3731469)：梳理软件开发的方法、风险、数据集或评测实践。
+- [Survey on Learning-based Dynamic Fault Localization: From Traditional Machine Learning to Large Language Models](https://doi.org/10.1145/3787202)：综述从传统机器学习到深度学习和 LLM 的动态故障定位，聚焦执行轨迹、测试数据和故障位置证据。
+- [Deep Learning Representations of Programs: A Systematic Literature Review](https://doi.org/10.1145/3769008)：综述程序深度学习表示方法。
+- [A Systematic Review on Code Smell Detection Approaches in Open Source Projects](https://doi.org/10.1002/spe.70074)：综述开源项目中的代码异味检测方法。
+- [Decision-Making in Agile Software Engineering: A Systematic Literature Review of Models, Methods, Actors and Lifecycle Contexts](https://doi.org/10.3390/software5020017)：综述敏捷软件工程中的决策模型、方法和生命周期语境。
+- [Software Quality Assurance and AI: A Systems-Theoretic Approach to Reliability, Safety, and Security](https://doi.org/10.3390/software4040030)：从系统理论视角组织 AI 辅助软件质量中的可靠性、安全性与安保问题。
+- [AI-Driven Innovations in Software Engineering: A Review of Current Practices and Future Directions](https://doi.org/10.3390/app15031344)：综述 AI 在软件工程中的当前实践与未来方向，可作为 AI 辅助开发工作流的综述入口。
+- [AI in the Software Development Lifecycle: Insights and Open Research Questions](https://doi.org/10.1145/3696630.3730538)：综述 AI 在软件开发生命周期各阶段的使用与开放问题，可作为 coding agents 的宽口径背景条目。
+- [From User Operations to Agentic Automation: Toward Intent-Oriented Software in the LLM Era](https://doi.org/10.1007/s11390-026-6182-0)：讨论从用户操作到智能体自动化的意图导向软件。
+- [Software defect detection using large language models: a literature review](https://doi.org/10.1007/s11704-025-40672-2)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Software defect detection using large language models: a literature review”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Beneficial Mistrust in Generative AI? The Role of AI Literacy in Programmers’ Handling of Bad Coding Advice](https://doi.org/10.1007/s12599-026-01000-5)：研究程序员如何处理生成式 AI 给出的错误编码建议。
+- [Challenges and Opportunities for Generative AI in Software Engineering: A Managerial View](https://doi.org/10.1145/3696630.3728718)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Software Engineering by and for Humans in an AI Era](https://doi.org/10.1145/3715111)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Not All Problems Are Nails, Not All Tools Should Be Hammers: A Position Paper on Agent Usage in Software Engineering Tasks](https://doi.org/10.1145/3786167.3788413)：讨论软件工程任务中何时应使用或不应使用智能体。
+- [A Catalogue of Evaluation Metrics for LLM-Based Multi-Agent Frameworks in Software Engineering](https://doi.org/10.1145/3786167.3788430)：整理 LLM 多智能体软件工程框架的评价指标。
+- [AI4SWEng manifest: Empowering the future of software engineering with advanced trustworthy artificial intelligence](https://doi.org/10.12688/openreseurope.21192.1)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [A Systematic Survey on Large Language Models for Static Code Analysis](https://doi.org/10.14500/aro.12082)：综述软件开发 Agent 与代码能力相关研究，可作为该方向近期相关工作的入口。
+- [LLMs for Commit Messages: A Survey and an Agent-Based Evaluation Protocol on CommitBench](https://doi.org/10.3390/computers14100427)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Review and Mapping of Search-Based Approaches for Program Synthesis](https://doi.org/10.3390/info16050401)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“Review and Mapping of Search-Based Approaches for Program Synthesis”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Foundation Models in Software Engineering: A Taxonomy, Systematic Review, and In-Depth Analysis of Testing Support](https://doi.org/10.3390/info17010073)：面向软件开发智能体与代码智能的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [A Review of Large Language Models for Automated Test Case Generation](https://doi.org/10.3390/make7030097)：可作为软件开发 agent 与代码模型的 Survey 候选：围绕 A Review of Large Language Models for Automated Test Case Generation 梳理背景、方法与开放问题。
+- [How do autonomous software agents learn? A systematic literature review](https://doi.org/10.7717/peerj-cs.3756)：面向软件开发能力的综述或相关工作脉络。核心思路是围绕“How do autonomous software agents learn? A systematic literature review”组织可复用线索，便于比较相关模型、评测或智能体工作流。

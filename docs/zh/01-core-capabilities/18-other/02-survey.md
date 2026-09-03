@@ -1,0 +1,464 @@
+# 1.18.2 Survey
+
+- [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432)：关于架构、规划、记忆、工具、多智能体交互与评测的基础综述。
+- [Embedded AI Research Review](https://doi.org/10.3390/mi17050586)：综述 2023 至 2026 年 embedded AI 的部署与代表性模型进展。
+- [Beyond Efficiency: A Systematic Survey of Resource-Efficient Large Language Models](https://arxiv.org/abs/2401.00625)：按计算、内存、能耗、资金和网络资源组织 LLM 效率技术，并贯穿架构设计、预训练、微调与系统设计，同时整理可比较的指标和数据集。
+- [Understanding LLMs: A Comprehensive Overview from Training to Inference](https://arxiv.org/abs/2401.02038)：以低成本 LLM 生命周期为主线，串联训练技术演进与推理部署技术，说明模型开发和服务实践中的效率约束。
+- [Comprehensive Exploration of Synthetic Data Generation: A Survey](https://arxiv.org/abs/2401.02524)：综述近十年的 417 个合成数据生成模型，以数据稀缺、隐私限制、模型选择和应用取舍作为组织线索。
+- [Unlocking Efficiency in Large Language Model Inference: A Comprehensive Survey of Speculative Decoding](https://arxiv.org/abs/2401.07851)：将 speculative decoding 系统化为先草拟候选 token、再并行验证的推理方法族，覆盖算法变体、加速场景和自回归 LLM 服务边界。
+- [A Survey of Resource-efficient LLM and Multimodal Foundation Models](https://arxiv.org/abs/2401.08092)：把资源效率视角从文本 LLM 扩展到视觉 Transformer、扩散模型和多模态基础模型，连接高效训练、调优、压缩与部署。
+- [Evolutionary Computation in the Era of Large Language Model: Survey and Roadmap](https://arxiv.org/abs/2401.10034)：梳理进化算法与 LLM 的双向关系，包括用进化计算进行黑盒 LLM 优化，以及用 LLM 辅助进化搜索。
+- [Supervised Fine-tuning in turn Improves Visual Foundation Models](https://arxiv.org/abs/2401.10222)：研究细粒度监督微调如何在大规模区域标注数据稀缺时，为 CLIP 式视觉基础模型补充可扩展的区域级视觉学习。
+- [From Understanding to Utilization: A Survey on Explainability for Large Language Models](https://arxiv.org/abs/2401.12874)：区分解释 LLM 内部机制的研究与把可解释性用于下游任务的研究，并以透明性、幻觉、毒性和对齐作为风险边界。
+- [MM-LLMs: Recent Advances in MultiModal Large Language Models](https://arxiv.org/abs/2401.13601)：综述把预训练 LLM 适配到多模态输入或输出的设计模式，覆盖架构、训练策略、任务、基准和后续方向。
+- [Navigating Dataset Documentations in AI: A Large-Scale Analysis of Dataset Cards on Hugging Face](https://arxiv.org/abs/2401.13822)：以研究时 Hugging Face 上 7433 张 dataset card 为证据，分析数据文档的完整性、可复现性、透明度和数据治理实践。
+- [A Comprehensive Survey of Compression Algorithms for Language Models](https://arxiv.org/abs/2401.15347)：围绕剪枝、量化、知识蒸馏、低秩方法等压缩算法建立分类，并把准确率、碳排放和维护成本作为评估压力。
+- [Continual Learning for Large Language Models: A Survey](https://arxiv.org/abs/2402.01364)：按更新阶段组织 LLM 持续学习，包括持续预训练、指令微调、对齐和部署后适配，用于补充新技能和更新知识。
+- [The RL/LLM Taxonomy Tree: Reviewing Synergies Between Reinforcement Learning and Large Language Models](https://arxiv.org/abs/2402.01874)：提出 RL 与 LLM 交互的三分支分类，区分用强化学习改进 LLM 与把 LLM 嵌入强化学习系统两类方向。
+- [Position: Graph Foundation Models Are Already Here](https://arxiv.org/abs/2402.02216)：把图基础模型界定为从任务专用图神经网络转向大规模图语料预训练的范式变化，强调迁移、领域多样性和图特有扩展挑战。
+- [Parameter-Efficient Fine-Tuning for Pre-Trained Vision Models: A Survey and Benchmark](https://arxiv.org/abs/2402.02242)：综述并基准化预训练视觉模型的 PEFT 方法，在全量微调的存储和计算限制下比较 adapter、prompt、低秩等方法族。
+- [A Roadmap to Pluralistic Alignment](https://arxiv.org/abs/2402.05070)：从 Overton、steering 和 distributional 三种视角定义多元对齐，并以语言模型作为表达多样人类价值而非单一偏好目标的试验场。
+- [Knowledge Graphs Meet Multi-Modal Learning: A Comprehensive Survey](https://arxiv.org/abs/2402.05391)：综述 300 余篇论文，按 KG 驱动多模态学习和多模态知识图谱两条轴线区分知识图谱的支撑作用与被建模对象。
+- [Advancing Graph Representation Learning with Large Language Models: A Comprehensive Survey of Techniques](https://arxiv.org/abs/2402.05952)：综述 LLM 融入图表示学习的技术，重点说明语言模型如何提供上下文语义、适应性和图领域推理信号。
+- [History, development, and principles of large language models: an introductory survey](https://arxiv.org/abs/2402.06853)：追溯语言模型从统计语言模型到现代 LLM 的发展，解释类人文本生成背后的基本原理及其技术和社会挑战。
+- [Mapping the Ethics of Generative AI: A Comprehensive Scoping Review](https://arxiv.org/abs/2402.08323)：对生成式 AI 伦理进行 scoping review，区分 LLM 和文生图模型特有的风险与传统判别式机器学习风险。
+- [Model Compression and Efficient Inference for Large Language Models: A Survey](https://arxiv.org/abs/2402.09748)：从算法视角建立 LLM 压缩和加速分类，覆盖剪枝、量化、蒸馏和推理时优化，以支持受限硬件部署。
+- [Towards Uncovering How Large Language Model Works: An Explainability Perspective](https://arxiv.org/abs/2402.10688)：用可解释性视角梳理 LLM 如何存储知识、进行推理和产生失效，将机制不透明性与幻觉、毒性和错位风险相连。
+- [Efficient Multimodal Learning from Data-centric Perspective](https://arxiv.org/abs/2402.11530)：把多模态效率定义为数据中心问题，说明数据选择和训练数据设计如何在不只是缩小模型的情况下减少 MLLM 训练和推理成本。
+- [A Survey on Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2402.13116)：梳理 LLM 知识蒸馏在专有教师模型能力迁移、开源模型压缩，以及 LLM 作为教师进行自我改进中的作用。
+- [Large multimodal agents: a survey](https://arxiv.org/abs/2402.15116)：综述扩展到多模态输入和输出的 LLM 智能体，把感知、推理、行动和多模态用户查询处理作为智能体边界。
+- [LLM Inference Unveiled: Survey and Roofline Model Insights](https://arxiv.org/abs/2402.16363)：为高效 LLM 推理引入 roofline model 框架，用硬件吞吐和内存搬移来比较服务与加速方法。
+- [A Survey on Data Selection for Language Models](https://arxiv.org/abs/2402.16827)：把语言模型数据选择视为预训练效率杠杆，覆盖质量过滤、候选样本打分、碳排和资金成本降低，以及数据集可行性。
+- [Datasets for Large Language Models: A Comprehensive Survey](https://arxiv.org/abs/2402.18041)：把 LLM 数据集视为核心基础设施，分类预训练、指令、对齐和评测数据，并分析数据设计如何支撑模型能力增长。
+- [At the Dawn of Generative AI Era: A Tutorial-cum-Survey on New Frontiers in 6G Wireless Intelligence](https://arxiv.org/abs/2402.18587)：综述生成式 AI 在 6G 无线智能中的应用，把稀缺、不完整、昂贵且难建模的无线数据作为主要领域边界。
+- [Large Language Models and Games: A Survey and Roadmap](https://arxiv.org/abs/2402.18659)：综述 LLM 在游戏中和服务游戏开发的角色，区分玩家交互、游戏内容生成、非玩家角色行为和游戏研究工具。
+- [Deep Learning for Cross-Domain Data Fusion in Urban Computing: Taxonomy, Advances, and Outlook](https://arxiv.org/abs/2402.19348)：按数据模态、时空对齐和交通、出行、环境感知等下游任务，分类梳理城市计算中的跨域数据融合。
+- [TELEClass: Taxonomy Enrichment and LLM-Enhanced Hierarchical Text Classification with Minimal Supervision](https://arxiv.org/abs/2403.00165)：以 LLM 辅助 taxonomy enrichment 为核心，降低层级文本分类的监督需求，突出标签结构构建这一组织线索。
+- [Unraveling the Mystery of Scaling Laws: Part I](https://arxiv.org/abs/2403.06563)：综述神经语言模型 scaling law 的经验和理论形式，聚焦计算量、数据量、参数规模与损失预测。
+- [Trajectory Data Management and Mining: A Survey from Deep Learning to the LLM Era](https://arxiv.org/abs/2403.14151)：从表示、索引到预测、生成、隐私和 LLM 增强 mobility mining，组织 trajectory data 管理与挖掘研究。
+- [Parameter-Efficient Fine-Tuning for Large Models: A Comprehensive Survey](https://arxiv.org/abs/2403.14608)：按 additive modules、prompt tuning、selective tuning、reparameterization 与混合方法分类 PEFT，面向内存和计算受限的大模型适配。
+- [Foundation Models for Time Series Analysis: A Tutorial and Survey](https://arxiv.org/abs/2403.14735)：把时间序列基础模型作为教程式地图，覆盖预测、分类、补全、异常检测、表征学习和迁移设置。
+- [Survey on Modeling of Human‐made Articulated Objects](https://arxiv.org/abs/2403.14937)：综述人造可动对象的表示方式，覆盖部件结构、关节、运动学、重建和交互感知建模。
+- [A Survey on Self-Supervised Graph Foundation Models: Knowledge-Based Perspective](https://arxiv.org/abs/2403.16137)：从自监督目标和知识信号出发梳理图基础模型，覆盖图预训练、迁移和领域适配。
+- [Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods](https://arxiv.org/abs/2404.00282)：分类说明 LLM 如何作为规划器、奖励设计器、策略先验、环境解释器和数据生成器来增强强化学习。
+- [A Review of Modern Recommender Systems Using Generative Models (Gen-RecSys)](https://arxiv.org/abs/2404.00579)：综述生成式推荐系统，覆盖序列生成、扩散、LLM 推荐、合成用户和评测风险。
+- [Multimodal Pretraining, Adaptation, and Generation for Recommendation: A Survey](https://arxiv.org/abs/2404.00621)：梳理推荐系统中围绕文本、图像、音频、图和行为信号进行预训练、适配与生成的方法。
+- [A Survey on Large Language Model-Based Game Agents](https://arxiv.org/abs/2404.02039)：按感知、记忆、规划、行动、协作和基准环境组织 LLM 驱动游戏智能体研究。
+- [Best Practices and Lessons Learned on Synthetic Data for Language Models](https://arxiv.org/abs/2404.07503)：围绕生成来源、过滤、多样性、评估和失效模式，总结语言模型合成数据的实践经验。
+- [An Overview of Diffusion Models: Applications, Guided Generation, Statistical Rates and Optimization](https://arxiv.org/abs/2404.07771)：把扩散模型应用与 guidance 机制、统计收敛和优化分析联系起来，而不只局限于图像生成场景。
+- [RLHF Deciphered: A Critical Analysis of Reinforcement Learning from Human Feedback for LLMs](https://arxiv.org/abs/2404.08555)：将 RLHF 拆为偏好数据、奖励建模、策略优化和对齐风险假设，指出反馈流程中容易失效的位置。
+- [State Space Model for New-Generation Network Alternative to Transformers: A Survey](https://arxiv.org/abs/2404.09516)：综述作为 Transformer 替代路线的状态空间序列模型，覆盖 selective scanning、长上下文效率和应用领域。
+- [Glitch Tokens in Large Language Models: Categorization Taxonomy and Effective Detection](https://arxiv.org/abs/2404.09894)：定义 glitch token 的类型，并给出用于发现触发异常 LLM 行为的罕见 token 的检测流程。
+- [The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey](https://arxiv.org/abs/2404.11584)：按推理、规划、工具调用、记忆、反思和多智能体协作组件梳理 Agent 架构。
+- [A Survey on Self-Evolution of Large Language Models](https://arxiv.org/abs/2404.14387)：按反馈来源、数据生成、模型更新、评估和防止自我强化错误的安全措施组织 LLM 自我演化研究。
+- [A Survey of Large Language Models on Generative Graph Analytics: Query, Learning, and Applications](https://arxiv.org/abs/2404.14809)：综述 LLM 在图查询、图表示学习、图生成、图推理和具体图任务中的生成式分析用途。
+- [Evaluating Large Language Models on Time Series Feature Understanding: A Comprehensive Taxonomy and Benchmark](https://arxiv.org/abs/2404.16563)：构建 taxonomy 和 benchmark，用于测试 LLM 是否理解趋势、季节性、相关性和异常等时间序列特征。
+- [Continual Learning of Large Language Models: A Comprehensive Survey](https://arxiv.org/abs/2404.16789)：综述 LLM 持续学习中的数据流、参数更新、回放、正则化、模块化方法和灾难性遗忘评估。
+- [Towards Incremental Learning in Large Language Models: A Critical Review](https://arxiv.org/abs/2404.18311)：聚焦 LLM 增量更新，对比参数高效适配、知识编辑、检索和持续训练策略。
+- [A Survey on Vision Mamba: Models, Applications and Challenges](https://arxiv.org/abs/2404.18861)：按视觉骨干设计、selective state-space 模块、下游任务和效率挑战梳理 Vision Mamba 变体。
+- [A Survey on Diffusion Models for Time Series and Spatio-Temporal Data](https://arxiv.org/abs/2404.18886)：综述时间序列和时空数据中的扩散方法，覆盖预测、补全、生成和异常检测。
+- [Why Tabular Foundation Models Should Be a Research Priority](https://arxiv.org/abs/2405.01147)：从异构 schema、稀缺标签、隐私敏感数据和文本中心基准之外的评测需求出发，阐明表格基础模型的研究优先级。
+- [NeRFs in robotics: A survey](https://arxiv.org/abs/2405.01333)：综述 NeRF 表征如何支持机器人感知、建图、视角规划、操作和仿真。
+- [Large Language Models for Mobility Analysis in Transportation Systems: A Survey on Forecasting Tasks](https://arxiv.org/abs/2405.02357)：综述 LLM 辅助 mobility forecasting，覆盖交通、需求、轨迹和运输系统预测任务。
+- [Empowering Time Series Analysis with Foundation Models: A Comprehensive Survey](https://arxiv.org/abs/2405.02358)：按预训练数据、模型架构、提示或适配方法和下游分析任务组织时间序列基础模型。
+- [Vision Mamba: A Comprehensive Survey and Taxonomy](https://arxiv.org/abs/2405.04404)：按架构变体、视觉任务覆盖、效率取舍和开放部署挑战分类 Vision Mamba 模型。
+- [Fairness in Reinforcement Learning: A Survey](https://arxiv.org/abs/2405.06909)：综述强化学习智能体中的公平性定义、约束机制、评测指标和应用风险。
+- [RLHF Workflow: From Reward Modeling to Online RLHF](https://arxiv.org/abs/2405.07863)：将 RLHF 分解为奖励建模、离线策略学习、在线偏好收集和部署时反馈循环。
+- [A Survey of Large Language Models for Graphs](https://arxiv.org/abs/2405.08011)：按图表示、图推理、图生成和图语言对齐组织 LLM-for-graphs 研究。
+- [A Timely Survey on Vision Transformer for Deepfake Detection](https://arxiv.org/abs/2405.08463)：按空间、时间、频域和多模态证据线索梳理 Vision Transformer 深度伪造检测器。
+- [A Comprehensive Survey on Data Augmentation](https://arxiv.org/abs/2405.09591)：跨数据类型综述 augmentation 策略，区分变换、生成、混合和策略搜索方法。
+- [Large Language Model (LLM) for Telecommunications: A Comprehensive Survey on Principles, Key Techniques, and Opportunities](https://arxiv.org/abs/2405.10825)：梳理 LLM 在电信中的网络管理、优化、协议智能、服务自动化和领域评测风险。
+- [Large Language Models Meet NLP: A Survey](https://arxiv.org/abs/2405.12819)：综述 LLM 如何重塑经典 NLP 任务、方法、数据集、评测和应用边界。
+- [Understanding the differences in Foundation Models: Attention, State Space Models, and Recurrent Neural Networks](https://arxiv.org/abs/2405.15731)：比较 attention、state-space 和 recurrent 架构作为基础模型序列骨干时的记忆、并行性和长程依赖处理能力。
+- [Demystify Mamba in Vision: A Linear Attention Perspective](https://arxiv.org/abs/2405.16605)：从 linear attention 视角解释 Vision Mamba，说明 state-space 视觉骨干何时类似 attention 替代方案。
+- [A Survey of Multimodal Large Language Model from A Data-centric Perspective](https://arxiv.org/abs/2405.16640)：以数据构建、过滤、对齐和评测为主线梳理多模态大语言模型发展。
+- [A Survey of Useful LLM Evaluation](https://arxiv.org/abs/2406.00936)：关注能预测真实效用的评测实践，对比 benchmark 分数与任务有效性、可靠性和决策相关性。
+- [Two Tales of Persona in LLMs: A Survey of Role-Playing and Personalization](https://arxiv.org/abs/2406.01171)：把 persona 研究分为角色扮演 Agent 和用户个性化两条线，比较数据集、提示、记忆和评测。
+- [Towards Scalable Automated Alignment of LLMs: A Survey](https://arxiv.org/abs/2406.01252)：综述用模型反馈、合成偏好和自动化监督替代或增强人工反馈的可扩展对齐循环。
+- [Benchmark Data Contamination of Large Language Models: A Survey](https://arxiv.org/abs/2406.04244)：综述 LLM 评测中的污染来源、检测方法、缓解策略和 benchmark 设计假设。
+- [A survey and benchmark of high-dimensional Bayesian optimization of discrete sequences](https://arxiv.org/abs/2406.04739)：结合方法综述与 benchmark 任务，覆盖蛋白质和组合设计等离散序列的高维贝叶斯优化。
+- [Towards Lifelong Learning of Large Language Models: A Survey](https://arxiv.org/abs/2406.06391)：围绕知识积累、技能保持、更新效率和遗忘控制综述 LLM lifelong learning。
+- [Recent Advances in Federated Learning Driven Large Language Models: A Survey on Architecture, Performance, and Security](https://arxiv.org/abs/2406.09831)：按架构、训练协议、性能取舍、隐私和安全威胁模型组织 federated LLM 工作。
+- [Large Language Models as Software Components: A Taxonomy for LLM-Integrated Applications](https://arxiv.org/abs/2406.10300)：提出 LLM 集成软件 taxonomy，区分组件角色、接口、失效边界和应用集成模式。
+- [A Survey on Human Preference Learning for Large Language Models](https://arxiv.org/abs/2406.11191)：综述用于对齐 LLM 行为的人类偏好数据收集、奖励建模、直接偏好优化和评测。
+- [A Survey of Large Language Models for Financial Applications: Progress, Prospects and Challenges](https://arxiv.org/abs/2406.11903)：综述金融 LLM 在情绪、风险、交易、报告、合规和领域评测约束中的应用。
+- [Unveiling the Flaws: Exploring Imperfections in Synthetic Data and Mitigation Strategies for Large Language Models](https://arxiv.org/abs/2406.12397)：分析 LLM 训练中合成数据的失效模式，包括格式过拟合和输出分布偏移，并按生成、过滤、多样性与评测组织缓解策略。
+- [Unveiling the Spectrum of Data Contamination in Language Models: A Survey from Detection to Remediation](https://arxiv.org/abs/2406.14644)：从重叠定义、检测方法、影响分析到修复策略，梳理训练语料和评测基准中的数据污染。
+- [On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey](https://arxiv.org/abs/2406.15126)：把 LLM 合成数据组织为生成、筛选和评测工作流，说明质量、多样性和可迁移性分别在何处被检验。
+- [The Responsible Foundation Model Development Cheatsheet: A Review of Tools & Resources](https://arxiv.org/abs/2406.16746)：汇总负责任基础模型开发的工具和资源，覆盖文档、风险评估、评测、治理和发布实践。
+- [From Efficient Multimodal Models to World Models: A Survey](https://arxiv.org/abs/2407.00118)：连接高效多模态大模型与 world model 目标，覆盖多模态指令调优、多模态思维链、具身 agent 和面向仿真的推理。
+- [Diffusion Models and Representation Learning: A Survey](https://arxiv.org/abs/2407.00783)：把扩散模型作为表征学习器综述，覆盖去噪目标、网络结构、guidance、自监督特征和下游视觉迁移。
+- [Large Language Model Enhanced Knowledge Representation Learning: A Survey](https://arxiv.org/abs/2407.00936)：综述 LLM 如何通过语义增强、知识图谱补全、embedding 生成和面向推理的表示方法来增强知识表示学习。
+- [AI Agents That Matter](https://arxiv.org/abs/2407.01502)：批判智能体基准中的常见混淆，区分准确率与成本、模型开发者与下游开发者需求，以及可复现评测与榜单过拟合。
+- [Survey on Knowledge Distillation for Large Language Models: Methods, Evaluation, and Application](https://arxiv.org/abs/2407.01885)：按方法、评测设置和应用组织 LLM 知识蒸馏，用于能力迁移、模型压缩和部署。
+- [A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models](https://arxiv.org/abs/2407.02646)：面向入门者介绍 Transformer 机制可解释性，覆盖 circuit、feature、activation patching 以及已有洞见和常见陷阱。
+- [Edge AI: A Taxonomy, Systematic Review and Future Directions](https://arxiv.org/abs/2407.04053)：将 Edge AI 系统综述为云、边、端协作，覆盖架构、学习模式、数据本地性、隐私和未来边缘部署方向。
+- [A Systematic Survey and Critical Review on Evaluating Large Language Models: Challenges, Limitations, and Recommendations](https://arxiv.org/abs/2407.04069)：综述 LLM 评测设置，指出 benchmark 不一致、任务覆盖缺口、指标选择问题，并给出更可靠评测建议。
+- [Merge, Ensemble, and Cooperate! A Survey on Collaborative Strategies in the Era of Large Language Models](https://arxiv.org/abs/2407.06089)：将 LLM 协作分为模型合并、集成和合作，比较路由器、专家模型和多模型交互如何提升稳健性与通用性。
+- [A Survey on Mixture of Experts in Large Language Models](https://arxiv.org/abs/2407.06204)：围绕 expert 设计、routing、稀疏激活、训练稳定性、扩展规律和部署取舍综述 LLM 中的 MoE。
+- [Data, Data Everywhere: A Guide for Pretraining Dataset Construction](https://arxiv.org/abs/2407.06380)：通过消融和网页抓取属性分析研究预训练数据构建流程，连接毒性、质量、话语类型和领域混合与下游准确率。
+- [LLM for Mobile: An Initial Roadmap](https://arxiv.org/abs/2407.06573)：从端侧模型压缩、边云执行到隐私、延迟、电池和移动应用集成约束，规划移动 LLM 设计路线。
+- [The Synergy Between Data and Multi-Modal Large Language Models: A Survey From Co-Development Perspective](https://arxiv.org/abs/2407.08583)：用协同发展视角解释 MLLM 数据构建、筛选、指令调优和评测如何塑造模型能力，以及模型如何反过来帮助构建数据。
+- [From Text to Life: On the Reciprocal Relationship between Artificial Life and Large Language Models](https://arxiv.org/abs/2407.09502)：梳理人工生命与 LLM 的双向关系，包括把 LLM 作为演化算子，以及用人工生命原则构建开放式环境。
+- [A survey on LoRA of large language models](https://arxiv.org/abs/2407.11046)：按下游适配、跨任务泛化、效率提升和联邦适配等隐私保护用途分类 LoRA 变体。
+- [LLM Inference Serving: Survey of Recent Advances and Opportunities](https://arxiv.org/abs/2407.12391)：综述 2023 年后的 LLM 推理服务系统技术，重点是 batching、调度、内存管理、并行和生产部署约束。
+- [Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)](https://arxiv.org/abs/2407.12858)：综述 LLM 系统的实践 grounding 与监控问题，覆盖鲁棒性、偏见、安全、可解释性、可观测性和负责任 AI 评测。
+- [Survey on Plagiarism Detection in Large Language Models: The Impact of ChatGPT and Gemini on Academic Integrity](https://arxiv.org/abs/2407.13105)：综述 ChatGPT 和 Gemini 时代文本生成下的抄袭检测方法，聚焦学术诚信风险、检测器局限、数据集设计和机构应对。
+- [Internal Consistency and Self-Feedback in Large Language Models: A Survey](https://arxiv.org/abs/2407.14507)：把自一致性、自我改进和自我精炼统一为内部一致性与自反馈循环，用于减少幻觉和推理错误。
+- [Recent Advances in Generative AI and Large Language Models: Current Status, Challenges, and Perspectives](https://arxiv.org/abs/2407.14962)：提供 ChatGPT 时代之后生成式 AI 与 LLM 的基础、应用、技术挑战和社会影响综述。
+- [Knowledge Mechanisms in Large Language Models: A Survey and Perspective](https://arxiv.org/abs/2407.15017)：把 LLM 知识机制分为利用与演化，覆盖记忆、理解、应用、创造和参数知识脆弱性。
+- [TAPTRv2: Attention-based Position Update Improves Tracking Any Point](https://arxiv.org/abs/2407.16291)：提出基于注意力的位置更新机制来跟踪视频中的任意点，强化 point tracking 稳健性，而不是广义综述条目。
+- [Networks of Networks: Complexity Class Principles Applied to Compound AI Systems Design](https://arxiv.org/abs/2407.16831)：把复杂性理论中的“生成答案与验证答案”区分用于复合 AI 系统，提出以验证器为中心的 Networks of Networks 设计原则。
+- [Keep the Cost Down: A Review on Methods to Optimize LLM' s KV-Cache Consumption](https://arxiv.org/abs/2407.18003)：综述长上下文 LLM 的 KV-cache 降耗方法，覆盖淘汰、压缩、量化、offloading 和内存感知服务。
+- [Know Your Limits: A Survey of Abstention in Large Language Models](https://arxiv.org/abs/2407.18418)：从 query、model 和 human values 三个角度组织 LLM abstention，梳理模型何时应拒答的方法、基准和指标。
+- [Mobile Edge Intelligence for Large Language Models: A Contemporary Survey](https://arxiv.org/abs/2407.18921)：综述云端与设备之间的移动边缘 LLM 部署，覆盖卸载、资源高效 LLM 技术、隐私、延迟和网络边缘应用。
+- [Efficient Training of Large Language Models on Distributed Infrastructures: A Survey](https://arxiv.org/abs/2407.20018)：围绕并行、通信、调度、内存和基础设施瓶颈综述分布式基础设施上的 LLM 高效训练。
+- [Blockchain for Large Language Model Security and Safety: A Holistic Survey](https://arxiv.org/abs/2407.20181)：考察区块链在 LLM 安全中的用途，包括来源追踪、访问控制、去中心化审计、隐私和可信部署。
+- [Tabular Data Augmentation for Machine Learning: Progress and Prospects of Embracing Generative AI](https://arxiv.org/abs/2407.21523)：综述表格数据增强方法，包括变换、生成和面向稀缺或不均衡表格数据的生成式 AI 路线。
+- [Generalized Out-of-Distribution Detection and Beyond in Vision Language Model Era: A Survey](https://arxiv.org/abs/2407.21794)：在 VLM 时代统一 OOD、异常、novelty、open-set 和 outlier detection，比较视觉语言方法和基准。
+- [What comes after transformers? - A selective survey connecting ideas in deep learning](https://arxiv.org/abs/2408.00386)：综述 Transformer 的替代和改造路线，覆盖架构、层、目标和优化，连接应对效率与幻觉限制的相关思想。
+- [A Survey of Mamba](https://arxiv.org/abs/2408.01129)：综述 Mamba 和选择性状态空间模型作为线性时间序列骨干的基础、变体、应用和效率取舍。
+- [Affective Computing in the Era of Large Language Models: A Survey from the NLP Perspective](https://arxiv.org/abs/2408.04638)：从 NLP 角度综述 LLM 时代的情感计算，覆盖情绪识别、情感分析、共情回应、数据集和评测限制。
+- [Survey: Transformer-based Models in Data Modality Conversion](https://arxiv.org/abs/2408.04723)：综述基于 Transformer 的文本、视觉和语音模态转换，覆盖架构、转换方法和跨模态应用。
+- [Re-TASK: Revisiting LLM Tasks from Capability, Skill, and Knowledge Perspectives](https://arxiv.org/abs/2408.06904)：用能力、技能和知识三条轴重新定义 LLM 任务，区分模型能做什么、执行什么步骤以及掌握什么信息。
+- [A Survey on Model MoErging: Recycling and Routing Among Specialized Experts for Collaborative Learning](https://arxiv.org/abs/2408.07057)：综述 Model MoErging 中专门化专家模型的回收与路由，关注 router、expert 选择、协同学习和泛化收益。
+- [Model Merging in LLMs, MLLMs, and Beyond: Methods, Theories, Applications, and Opportunities](https://arxiv.org/abs/2408.07666)：系统梳理 LLM 和多模态 LLM 的模型合并，覆盖权重空间合并、理论、应用，以及避免重训或访问原始数据的场景。
+- [A Survey on Symbolic Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2408.10210)：综述 LLM 符号知识蒸馏，重点是把教师模型的隐式知识抽取为规则、rationale 或其他可解释符号形式。
+- [Automatic Dataset Construction (ADC): Sample Collection, Data Curation, and Beyond](https://arxiv.org/abs/2408.11338)：综述自动数据集构建，从样本收集、数据筛选、质量控制到低成本标注，服务个性化或专用训练集。
+- [Self-supervised representation learning for geospatial objects: A survey](https://arxiv.org/abs/2408.12133)：综述地理空间对象的自监督表示学习，组织 pretext task、地理空间模态、空间上下文和遥感下游用途。
+- [Vintern-1B: An Efficient Multimodal Large Language Model for Vietnamese](https://arxiv.org/abs/2408.12480)：通过结合 Qwen2 与 InternViT 并在图像问答数据上微调，提出面向越南语 OCR、文档抽取和通用问答的 1B 多模态模型。
+- [Building and better understanding vision-language models: insights and future directions](https://arxiv.org/abs/2408.12637)：综合 VLM 的架构、训练数据、多模态对齐、评测和可解释性设计选择及开放问题。
+- [A Practitioner's Guide to Continual Multimodal Pretraining](https://arxiv.org/abs/2408.14471)：聚焦一次性大更新和样本级流式更新之间的实践型持续多模态预训练，讨论更新粒度、数据选择、遗忘和部署。
+- [A Survey on Evaluation of Multimodal Large Language Models](https://arxiv.org/abs/2408.15769)：按模态、任务、基准和 judge 协议综述 MLLM 评测，突出 GPT-4V 和 Gemini 式全能模型暴露的评测缺口。
+- [Quality Assessment in the Era of Large Models: A Survey](https://arxiv.org/abs/2409.00031)：综述大模型时代的多媒体质量评估，对比专门质量预测器与大模型方法在可解释性、鲁棒性和感知评分上的差异。
+- [On-Device Language Models: A Comprehensive Review](https://arxiv.org/abs/2409.00088)：综述端侧语言模型的压缩、量化、高效推理、硬件限制、隐私和边缘部署场景。
+- [Watermarking techniques for large language models: a survey](https://arxiv.org/abs/2409.00089)：按信号嵌入、检测、鲁棒性、文本质量以及改写或模型辅助移除风险组织 LLM 水印方法。
+- [Explainable artificial intelligence: A survey of needs, techniques, applications, and future direction](https://arxiv.org/abs/2409.00265)：综述安全关键应用中的 XAI 需求和技术，把透明度、问责、公平性和领域解释需求联系起来。
+- [Does Knowledge Localization Hold True? Surprising Differences Between Entity and Relation Perspectives in Language Models](https://arxiv.org/abs/2409.00617)：比较 entity 与 relation 两种知识定位视角，说明参数知识定位取决于被探测事实的类型。
+- [Large Language Models for Anomaly and Out-of-Distribution Detection: A Survey](https://arxiv.org/abs/2409.01980)：综述 NLP 之外 LLM 在异常和 OOD 检测中的用法，覆盖基于 prompt 的检测、表征使用、基准设置和可信性问题。
+- [Towards a Unified View of Preference Learning for Large Language Models: A Survey](https://arxiv.org/abs/2409.02795)：把 LLM 偏好学习拆为模型、数据、反馈和算法组件，连接 RLHF、DPO 式方法和评测。
+- [Configurable Foundation Models: Building LLMs from a Modular Perspective](https://arxiv.org/abs/2409.02877)：把 LLM 视为可配置模块化系统，综述组件、adapter、routing 和部署选择如何组合成任务定制基础模型。
+- [An overview of domain-specific foundation model: key technologies, applications and challenges](https://arxiv.org/abs/2409.04267)：综述面向特定行业和应用场景的基础模型定制，覆盖领域数据、适配技术、应用和部署挑战。
+- [Achieving Peak Performance for Large Language Models: A Systematic Review](https://arxiv.org/abs/2409.04833)：系统综述 LLM 性能提升杠杆，包括架构、数据、训练、后训练、评测和部署选择。
+- [A survey of multimodal composite editing and retrieval](https://arxiv.org/abs/2409.05405)：综述多模态组合检索和编辑，覆盖文本、图像、音频之间的组合查询、个性化、数据集和指标。
+- [What is the Role of Small Models in the LLM Era: A Survey](https://arxiv.org/abs/2409.06857)：综述小模型在 LLM 时代的角色，覆盖效率、专门化、蒸馏、边缘部署以及与大模型协作。
+- [Out-of-Distribution Detection: A Task-Oriented Survey of Recent Advances](https://arxiv.org/abs/2409.11884)：按任务设置综述 OOD 检测，区分 anomaly、novelty、open-set 和 outlier detection，并比较近期方法和评测设置。
+- [Visual Prompting in Multimodal Large Language Models: A Survey](https://arxiv.org/abs/2409.15310)：综述 MLLM 的 visual prompting，覆盖视觉提示形式、提示生成、组合推理、prompt learning 和细粒度视觉指令。
+- [Federated Large Language Models: Current Progress and Future Directions](https://arxiv.org/abs/2409.15723)：综述隐私、客户端异构数据、通信成本、收敛和安全约束下的联邦 LLM 训练与适配。
+- [Small Language Models: Survey, Measurements, and Insights](https://arxiv.org/abs/2409.15790)：综述小语言模型，并给出测量与实践洞见。
+- [A Survey on Multimodal Benchmarks: In the Era of Large AI Models](https://arxiv.org/abs/2409.18142)：综述 211 个面向大模型时代的多模态基准，按模态、任务、指标和 MLLM 评测缺口组织。
+- [Evaluation of OpenAI o1: Opportunities and Challenges of AGI](https://arxiv.org/abs/2409.18486)：在代码、数学、科学、医学、语言学和社会科学推理任务上评估 o1-preview，用于讨论 AGI 式能力机会与边界。
+- [A Survey on the Honesty of Large Language Models](https://arxiv.org/abs/2409.18786)：把 LLM honesty 界定为知道并表达自身所知，综述定义、不诚实行为空间、基准和对齐方法。
+- [Surveying the MLLM Landscape: A Meta-Review of Current Surveys](https://arxiv.org/abs/2409.18991)：对已有 MLLM survey 做 meta-review，按模态、架构、应用和评测缺口比较不同 survey 的主题分布。
+- [Towards a Theoretical Understanding of Synthetic Data in LLM Post-Training: A Reverse-Bottleneck Perspective](https://arxiv.org/abs/2410.01720)：把合成数据后训练建模为信息增益问题，提出 reverse-bottleneck 视角和基于互信息的泛化增益分析。
+- [Challenges and Future Directions of Data-Centric AI Alignment](https://arxiv.org/abs/2410.01957)：主张从数据中心视角研究对齐，突出人工反馈不可靠、时间漂移、上下文依赖和 AI 生成反馈局限。
+- [Is Your Paper Being Reviewed by an LLM? Investigating AI Text Detectability in Peer Review](https://arxiv.org/abs/2410.03019)：评估 AI 文本检测器能否区分人类同行评审和 LLM 生成评审，指出 GPT-4o 式评审在低误报下仍难检测。
+- [PositionID: LLMs can Control Lengths, Copy and Paste with Explicit Positional Awareness](https://arxiv.org/abs/2410.07035)：提出 PositionID 提示和微调方法以显式注入位置意识，并给出 LenCtrl-Bench 与 CP-Bench 评测长度控制和复制粘贴能力。
+- [Towards Multi-Modal Animal Pose Estimation: A Survey and In-Depth Analysis](https://arxiv.org/abs/2410.09312)：按传感器模态、输出形式、学习范式、数据集和指标综述 176 篇动物姿态估计论文，并连接人类姿态估计进展。
+- [A Review on Edge Large Language Models: Design, Execution, and Applications](https://arxiv.org/abs/2410.11845)：综述边缘 LLM 的资源高效模型设计、部署前准备、运行时推理优化、硬件异构和端侧应用。
+- [Exploring Prompt Engineering: A Systematic Review with SWOT Analysis](https://arxiv.org/abs/2410.12843)：用 SWOT 分析比较模板、微调等提示工程技术，强调语言设计选择和人机沟通边界。
+- [A Survey on Data Synthesis and Augmentation for Large Language Models](https://arxiv.org/abs/2410.12896)：综述 LLM 数据生成在准备、预训练、微调、指令调优、偏好对齐和应用阶段的用法，并区分增强与合成。
+- [Are AI Detectors Good Enough? A Survey on Quality of Datasets With Machine-Generated Texts](https://arxiv.org/abs/2410.14677)：综述机器生成文本检测数据集，指出检测器分数常受数据集伪迹和弱泛化影响，不能等同真实场景可靠检测。
+- [EPIC: Efficient Position-Independent Caching for Serving Large Language Models](https://arxiv.org/abs/2410.15332)：提出位置无关 KV cache 和 LegoLink 算法，使重复文档或示例内容在请求前缀不同的情况下也能复用。
+- [A Comprehensive Survey of Direct Preference Optimization: Datasets, Theories, Variants, and Applications](https://arxiv.org/abs/2410.15595)：把 DPO 作为无需 RL 的偏好对齐方法族来综述，覆盖理论、变体、偏好数据集、应用和后训练开放问题。
+- [Does Data Contamination Detection Work (Well) for LLMs? A Survey and Evaluation on Detection Assumptions](https://arxiv.org/abs/2410.18966)：按检测假设综述 50 篇污染检测论文，并实测部分假设，说明直接实例级污染检测何时失效。
+- [Towards Next-Generation LLM-based Recommender Systems: A Survey and Beyond](https://arxiv.org/abs/2410.19744)：从推荐系统社区视角综述 LLM 推荐，聚焦语言理解、推理和生成如何重塑推荐任务。
+- [Parameter-efficient fine-tuning in large language models: a survey of methodologies](https://arxiv.org/abs/2410.19878)：综述在 GPU 内存和计算受限下适配大模型的 PEFT 方法，说明下游任务中参数更新如何被约束。
+- [A Survey of Small Language Models](https://arxiv.org/abs/2410.20011)：综述小语言模型的架构、训练技术、压缩方法、基准数据集、评测指标和低资源及边缘部署挑战。
+- [From Cool Demos to Production-Ready FMware: Core Challenges and a Technology Roadmap](https://arxiv.org/abs/2410.20791)：综合产业、灰色文献、学术和标准材料，梳理生产级 FMware 的可靠性、成本、可扩展性、隐私和合规挑战。
+- [Towards Unifying Understanding and Generation in the Era of Vision Foundation Models: A Survey from the Autoregression Perspective](https://arxiv.org/abs/2410.22217)：从 tokenizer 与 backbone 角度综述自回归视觉基础模型，聚焦用 next-token prediction 统一视觉理解与生成。
+- [A Systematic Review of NeurIPS Dataset Management Practices](https://arxiv.org/abs/2411.00266)：按 provenance、分发方式、伦理披露和许可综述 NeurIPS Datasets and Benchmarks 论文，揭示元数据和数据策展透明度不一致。
+- [GPT for Games: An Updated Scoping Review (2020-2024)](https://arxiv.org/abs/2411.00308)：对 177 篇 GPT-for-games 论文做 scoping review，按程序化内容生成、混合主动设计、玩法、游戏智能体和用户研究分类。
+- [Toward Automated Algorithm Design: A Survey and Practical Guide to Meta-Black-Box-Optimization](https://arxiv.org/abs/2411.00625)：定义面向自动化算法设计的 MetaBBO，并用实践指南组织算法选择、配置、改造和生成。
+- [A Survey on Kolmogorov-Arnold Network](https://arxiv.org/abs/2411.06078)：综述 KAN 的理论基础、样条参数化边激活、架构变体、应用、可解释性主张和扩展挑战。
+- [A Survey on Human-Centric LLMs](https://arxiv.org/abs/2411.14491)：综述把 LLM 作为个体和群体人类认知替身的研究，覆盖推理、感知、社会认知、行为科学、政治科学和社会模拟。
+- [Understanding World or Predicting Future? A Comprehensive Survey of World Models](https://arxiv.org/abs/2411.14499)：区分用于内部世界理解的表征和用于未来状态预测的 world model，并综述其在游戏、驾驶、机器人和规划中的应用。
+- [Multimodal Alignment and Fusion: A Survey](https://arxiv.org/abs/2411.17040)：综述 260 余篇多模态对齐与融合研究，按数据、特征和输出层结构以及统计、图、生成、对比、注意力和 LLM 方法组织。
+- [A Survey of Sustainability in Large Language Models: Applications, Economics, and Challenges](https://arxiv.org/abs/2412.04782)：综述 LLM 可持续性中的能耗、碳排、数据中心资源利用、生命周期评估、高效训练和可持续部署问题。
+- [LLMs-as-Judges: A Comprehensive Survey on LLM-based Evaluation Methods](https://arxiv.org/abs/2412.05579)：系统梳理 LLM-as-judge 评测方法，是跨能力的评测方法论线索。
+- [When Text Embedding Meets Large Language Model: A Comprehensive Survey](https://arxiv.org/abs/2412.09165)：将 LLM 与 embedding 的关系分为 LLM 增强 embedding、LLM 作为 embedder 和 LLM 理解 embedding，覆盖语义匹配、聚类与检索。
+- [Reinforcement Learning Enhanced LLMs: A Survey](https://arxiv.org/abs/2412.10400)：围绕 RL 基础、RLHF、RLAIF、奖励建模、DPO 式替代方法、DeepSeek-R1 式系统和实现挑战综述 RL 增强 LLM。
+- [From Specific-MLLMs to Omni-MLLMs: A Survey on MLLMs Aligned with Multi-modalities](https://arxiv.org/abs/2412.11694)：综述把任意模态组合对齐到 LLM embedding 空间的 omni-modal MLLM，覆盖核心组件、两阶段训练、数据集、评测和开放挑战。
+- [The Open Source Advantage in Large Language Models (LLMs)](https://arxiv.org/abs/2412.12004)：把开源 LLM 定位为可复现、可访问、协作和外部监督路径，并与闭源和混合模型生态对比。
+- [Knowledge Boundary of Large Language Models: A Survey](https://arxiv.org/abs/2412.12472)：定义 LLM 知识边界，分类知识类型，并综述边界为何重要、如何识别以及边界导致的失效如何缓解。
+- [LLMs are Also Effective Embedding Models: An In-depth Overview](https://arxiv.org/abs/2412.12591)：综述从 encoder-only embedding 模型到 decoder-only LLM embedder 的转变，覆盖直接提示、数据中心调优、目标函数、架构和评测。
+- [Deploying Foundation Model Powered Agent Services: A Survey](https://arxiv.org/abs/2412.13437)：综述异构设备上的基础模型 Agent 服务部署，串联推理优化、资源分配、通信和服务可扩展性。
+- [A Survey on Inference Optimization Techniques for Mixture of Experts Models](https://arxiv.org/abs/2412.14219)：按模型、系统和硬件层组织 MoE 推理优化，覆盖专家设计、路由、压缩、延迟和能效权衡。
+- [Beyond the Hype: A Comprehensive Review of Current Trends in Generative AI Research, Teaching Practices, and Tools](https://arxiv.org/abs/2412.14732)：综合计算教育文献、教师调查和访谈，梳理编程课堂中的 GenAI 工具、教学用途、风险和学生实践。
+- [A Survey of RWKV](https://arxiv.org/abs/2412.14847)：综述 RWKV 作为无注意力、类循环基础模型架构的线性时间推理、训练取舍、变体和应用场景。
+- [A Survey of Query Optimization in Large Language Models](https://arxiv.org/abs/2412.17558)：提出面向 LLM 和 RAG 系统的 Query Optimization Lifecycle，覆盖意图识别、查询改写、检索执行、证据整合和回答合成。
+- [Next Token Prediction Towards Multimodal Intelligence: A Comprehensive Survey](https://arxiv.org/abs/2412.18619)：用 next-token prediction 统一多模态理解与生成，覆盖多模态 tokenization、MMNTP 架构、任务表示、数据集、评测和挑战。
+- [Cloud-Edge Collaborative Large Model Services](https://doi.org/10.1109/MNET.2024.3442880)：综述 large model services 在 cloud 与 edge resources 之间协同服务的挑战和解决模式。
+- [Large Language Models (LLM) in Industry: A Survey of Applications, Challenges, and Trends](https://doi.org/10.1109/honet63146.2024.10822885)：综述制造、医疗、金融、教育和服务等行业中的 LLM 部署，强调集成、隐私、可靠性、成本和劳动力挑战。
+- [Fundamental Capabilities of Large Language Models and their Applications in Domain Scenarios: A Survey](https://doi.org/10.18653/v1/2024.acl-long.599)：把推理、知识、规划、交互和生成等 LLM 能力原语映射到领域场景，说明能力如何匹配应用需求。
+- [Generative technology for human emotion recognition: A scoping review](https://doi.org/10.1016/j.inffus.2024.102753)：梳理生成式 AI 在人类情感识别中的应用，覆盖合成数据、多模态情感线索、隐私、数据集偏差和评测问题。
+- [Visualizing Large Language Models: A Brief Survey](https://doi.org/10.1109/iv64223.2024.00049)：综述用于理解 LLM 行为和训练过程的可视化技术，包括 embedding、attention、归因、token 概率、prompt 交互和模型调试视图。
+- [The Rise of Small Language Models](https://doi.org/10.1109/mis.2024.3517792)：把小语言模型定位为 LLM 的高效补充，覆盖延迟、可解释性、一致性、任务专门化和部署取舍。
+- [Learning from Mistakes: A Comprehensive Review of Knowledge Editing for Large Language Models](https://doi.org/10.1109/smartiot62235.2024.00092)：综述训练后修正 LLM 知识的方法，覆盖 locate-and-edit 路线、记忆与检索替代方案、评测可靠性和编辑副作用。
+- [Multiscale modelling: an industrial perspective](https://doi.org/10.1098/rsta.2024.0477)：综述工业多尺度建模流程，连接物理模型、数据驱动 surrogate、不确定性处理和部署约束。
+- [A Survey of LLM-based Agents: Theories, Technologies, Applications and Suggestions](https://doi.org/10.1109/aiotc63215.2024.10748304)：按理论基础、规划、记忆、工具使用、多智能体协作、应用和实践建议组织 LLM Agent 研究。
+- [Towards a Taxonomy of Challenges in Security Control Implementation](https://doi.org/10.1109/acsac63791.2024.00022)：基于 NIST、ISO 和 CIS 式安全控制族构建安全控制实施挑战分类，区分组织、技术和情境障碍。
+- [Research on the Structure and Realization of Mixture-of-Experts](https://doi.org/10.1109/iccea62105.2024.10604245)：综述 MoE 的结构与实现，覆盖 sparse-gated experts、路由、负载均衡、专家专门化和实现取舍。
+- [A Benchmarking Survey: Evaluating the Accuracy and Effectiveness of Benchmark Models in Measuring the Performance of Large Language Models](https://doi.org/10.1109/icimcis63449.2024.10957638)：综述用于衡量 LLM 性能的 benchmark model，比较准确性、有效性、指标选择和基准设计假设。
+- [Low-Rank Adaptation for Foundation Models: A Comprehensive Review](https://arxiv.org/abs/2501.00365)：综述 LoRA 作为基础模型低秩参数高效适配方法的 adapter 位置、rank 选择、变体、效率和部署取舍。
+- [A Survey of State of the Art Large Vision Language Models: Alignment, Benchmark, Evaluations and Challenges](https://arxiv.org/abs/2501.02189)：综述 VLM 的对齐、基准、评测与开放挑战。
+- [From Aleatoric to Epistemic: Exploring Uncertainty Quantification Techniques in Artificial Intelligence](https://arxiv.org/abs/2501.03282)：综述 AI 系统中的不确定性量化方法，区分模型族中的偶然不确定性与认知不确定性。
+- [Visual Question Answering Survey](https://arxiv.org/abs/2501.03939): 综述视觉问答从早期系统到近期进展，为 OCR 之外的广义 VLM 任务补充概览。
+- [Small Language Models (SLMs) Can Still Pack a Punch: A survey](https://arxiv.org/abs/2501.05465)：综述小语言模型，补充高效、专用模型家族的横向覆盖。
+- [Large Language Models For Text Classification: Case Study And Comprehensive Review](https://arxiv.org/abs/2501.08457)：结合文本分类案例研究与综述，覆盖 LLM 提示、微调、特征抽取、数据集选择和分类任务评测。
+- [LLM-based Human Simulations Have Not Yet Been Reliable](https://arxiv.org/abs/2501.08579)：综述社会、经济、政策与心理场景中的 LLM 人类模拟研究，并提出可信模拟所需的可靠性要求。
+- [Visual Large Language Models for Generalized and Specialized Applications](https://arxiv.org/abs/2501.02765)：综述视觉语言模型在图像、视频、深度、动作和语言等场景中的应用，为跨切面页面补充不局限于 OCR 或视频单项任务的 VLLM 应用地图。
+- [Towards Data-Centric AI: A Comprehensive Survey of Traditional, Reinforcement, and Generative Approaches for Tabular Data Transformation](https://arxiv.org/abs/2501.10555)：综述数据中心 AI 中表格数据转换的传统、强化学习和生成式方法。
+- [A Functional Software Reference Architecture for LLM-Integrated Systems](https://arxiv.org/abs/2501.12904)：提出集成大模型组件的软件参考架构，可补充跨场景智能体系统设计。
+- [MoE from a Big-Data Perspective](https://arxiv.org/abs/2501.16352)：综述 mixture-of-experts 的原理、架构、路由、扩展挑战与应用模式。
+- [Foundation Models for CPS-IoT: Opportunities and Challenges](https://arxiv.org/abs/2501.16368)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Multimodal Large Language Models for Image, Text, and Speech Data Augmentation: A Survey](https://arxiv.org/abs/2501.18648)：综述多模态 LLM 如何生成或转换图像、文本和语音数据用于增强，并讨论质量控制、泛化、过拟合和模态特定风险。
+- [Text Data Augmentation for LLMs](https://arxiv.org/abs/2501.18845)：综述大语言模型的文本数据增强方法、挑战与机会。
+- [Doing More with Less: A Survey on Routing Strategies for Resource Optimisation in Large Language Model-Based Systems](https://arxiv.org/abs/2502.00409)：综述 LLM 系统中分配查询、模型与资源的路由方法。
+- [Specializing Large Language Models to Simulate Survey Response Distributions for Global Populations](https://arxiv.org/abs/2502.07068)：在 SubPOP 调查分布上微调 LLM 以预测子群体回答分布，把人口模拟变成可基准化的社会科学建模问题。
+- [A Survey on Mamba Architecture for Vision Applications](https://arxiv.org/abs/2502.07161)：综述 Mamba 和状态空间视觉架构作为线性复杂度视觉骨干在检测、分割、视频、多模态和部署中的应用与挑战。
+- [Position: When Incentives Backfire, Data Stops Being Human](https://arxiv.org/abs/2502.07732)：指出 AI 生成数据会削弱人类贡献数据的内在动机，形成可能损害后续训练数据质量的反馈循环。
+- [A Survey on Data-Centric AI: Tabular Learning from Reinforcement Learning and Generative AI Perspective](https://arxiv.org/abs/2502.08828)：综述面向表格数据的特征选择、特征生成与数据中心优化中的强化学习和生成式方法。
+- [Game Theory Meets Large Language Models: A Systematic Survey](https://arxiv.org/abs/2502.09053)：将 LLM 与博弈论研究分为游戏中评估 LLM、用博弈论解释和对齐 LLM、建模模型竞争以及用 LLM 增强博弈论分析。
+- [Spiking Neural Networks for Temporal Processing](https://arxiv.org/abs/2502.09449)：综述 SNN temporal processing 的现状与未来方向，为视频、音频和事件流模型提供背景。
+- [From No to Know: Taxonomy, Challenges, and Opportunities for Negation Understanding in Multimodal Foundation Models](https://arxiv.org/abs/2502.09645)：为多模态基础模型的否定理解建立 taxonomy，覆盖语言、视觉和跨模态否定失败以及基准缺口。
+- [Decision Information Meets Large Language Models: The Future of Explainable Operations Research](https://arxiv.org/abs/2502.09994)：围绕 what-if 分析产生的 decision information 和 LLM 界面构建可解释运筹学框架，说明决策上下文如何提升 OR 解释可用性。
+- [BalanceBenchmark](https://arxiv.org/abs/2502.10816)：综述多模态不平衡学习，并配套统一工具包、数据集和指标，用于诊断模态主导与数据不平衡带来的失败。
+- [Pragmatics in the Era of Large Language Models: A Survey on Datasets, Evaluation, Opportunities and Challenges](https://arxiv.org/abs/2502.12378)：通过含义推断、指称、话语上下文、社会意义和语用推理失效的数据集与评测综述 LLM 语用能力。
+- [Bring Your Own Knowledge: A Survey of Methods for LLM Knowledge Expansion](https://arxiv.org/abs/2502.12598)：综述通过检索、适配、编辑和持续学习扩展 LLM 知识的方法。
+- [A Survey of Graph Transformers: Architectures, Theories and Applications](https://arxiv.org/abs/2502.16533)：按架构、理论、应用和图结构编码策略综述 graph transformers，说明其如何超越普通 attention 处理图结构。
+- [Language Model Fine-Tuning on Scaled Survey Data for Predicting Distributions of Public Opinions](https://arxiv.org/abs/2502.16761)：使用大规模调查回答数据微调语言模型，用于预测不同子群体的公共意见分布。
+- [Generative Models in Decision Making: A Survey](https://arxiv.org/abs/2502.17100)：综述候选，Survey of generative models for decision-making, relevant to cross-cutting model-side decision systems.
+- [Mechanistic Interpretability for Multi-Modal Foundation Models](https://arxiv.org/abs/2502.17516)：综述多模态基础模型的机制可解释方法，梳理 circuits、features 与 interventions 如何从文本 LLM 扩展到多模态模型。
+- [Harnessing Multiple Large Language Models: A Survey on LLM Ensemble](https://arxiv.org/abs/2502.18036)：综述多 LLM 集成，这是能力聚合中的跨切面模型组合模式。
+- [Towards Reliable LLM-Driven Fuzz Testing: Vision and Road Ahead](https://arxiv.org/abs/2503.00795)：把可靠 LLM 驱动 fuzzing 聚焦在有效 driver 和 seed、缺陷发现效果、可复现性，以及生成输入不可靠导致的失效。
+- [Evaluation and Facilitation of Online Discussions in the LLM Era: A Survey](https://arxiv.org/abs/2503.01513)：综述 LLM 用于在线讨论评估与促进的质量分类、审核、摘要、提示干预以及对公共讨论的风险。
+- [Position: Model Collapse Does Not Mean What You Think](https://arxiv.org/abs/2503.03150)：系统梳理该方向的方法、评测缺口或部署问题。
+- [A Survey on Sparse Autoencoders: Interpreting the Internal Mechanisms of Large Language Models](https://arxiv.org/abs/2503.05613)：综述用 sparse autoencoders 解释大语言模型内部机制的方法。
+- [Generative Artificial Intelligence: Evolving Technology, Growing Societal Impact, and Opportunities for Information Systems Research](https://arxiv.org/abs/2503.05770)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“Generative Artificial Intelligence: Evolving Technology, Growing Societal Impact, and Opportunities for Information Systems Research”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Emergent Abilities in Large Language Models: A Survey](https://arxiv.org/abs/2503.05788)：可作为跨类别模型能力的 Survey 候选：围绕 Emergent Abilities in Large Language Models: A Survey 梳理背景、方法与开放问题。
+- [A Comprehensive Survey of Mixture-of-Experts: Algorithms, Theory, and Applications](https://arxiv.org/abs/2503.07137)：综述混合专家模型的算法、路由理论、扩展行为与应用。
+- [From Task-Specific Models to Unified Systems: A Review of Model Merging Approaches](https://arxiv.org/abs/2503.08998)：综述跨领域智能体系统、协议、社会仿真或通信模式。
+- [Thinking Machines](https://arxiv.org/abs/2503.10814)：把 LLM 推理策略组织为提示、搜索、验证和自我改进等模式分类，便于横向比较不同推理系统。
+- [Decentralized LLM Training Survey](https://arxiv.org/abs/2503.11023)：综述单一 AI 集群之外的去中心化 LLM 训练，覆盖系统、通信与扩展约束。
+- [Empowering Time Series Analysis with Synthetic Data: A Survey and Outlook in the Era of Foundation Models](https://arxiv.org/abs/2503.11411)：综述候选，Survey of synthetic data for time-series foundation models and LLM-based time-series analysis.
+- [A Review of DeepSeek Models' Key Innovative Techniques](https://arxiv.org/abs/2503.11486)：综述 DeepSeek 的多头潜在注意力、MoE 路由、多 token 预测、低成本训练和算法系统协同设计等关键技术。
+- [How Can Time Series Analysis Benefit From Multiple Modalities? A Survey and Outlook](https://arxiv.org/abs/2503.11835)：综述多模态信号如何改进时间序列分析，梳理结构化时序建模中的数据融合和表征路线。
+- [A Survey on Federated Fine-tuning of Large Language Models](https://arxiv.org/abs/2503.12016)：综述大语言模型联邦微调方法。
+- [Knowledge Distillation Survey](https://arxiv.org/abs/2503.12067)：综述现代 DNN、VLM 与 LLM 中的 teacher-student distillation，覆盖部署与适配场景。
+- [A Survey on the Optimization of Large Language Model-based Agents](https://arxiv.org/abs/2503.12434)：综述 LLM agent 在提示、微调和环境交互中的优化策略。
+- [A Comprehensive Survey on Multi-Agent Cooperative Decision-Making: Scenarios, Approaches, Challenges and Perspectives](https://arxiv.org/abs/2503.13415)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Ensemble Learning for Large Language Models in Text and Code Generation: A Survey](https://arxiv.org/abs/2503.13505)：综述用于改进大语言模型文本与代码生成的 ensemble 方法。
+- [Synthetic Data Generation Using Large Language Models: Advances in Text and Code](https://arxiv.org/abs/2503.14023)：综述候选，Survey of LLM-based synthetic data generation for text and code.
+- [Distributed LLMs and Multimodal Large Language Models: A Survey on Advances, Challenges, and Future Directions](https://arxiv.org/abs/2503.16585)：综述分布式大模型和多模态大模型的进展与挑战。
+- [Offline Model-Based Optimization: Comprehensive Review](https://arxiv.org/abs/2503.17286)：综述黑盒目标的离线 model-based optimization，聚焦 surrogate 建模、不确定性、objective hacking 和无法在线查询时的基准。
+- [Large Language Model Agent: A Survey on Methodology, Applications and Challenges](https://arxiv.org/abs/2503.21460)：面向难以归入更窄能力页面的 agent 工作的近期综合综述。
+- [Agentic Large Language Models, a survey](https://arxiv.org/abs/2503.23037)：把 agentic LLM 的核心界定为自主性、规划、记忆、工具使用与环境交互，而不是普通聊天模型的延伸。
+- [Graph ODEs and Beyond: A Comprehensive Survey on Integrating Differential Equations with Graph Neural Networks](https://arxiv.org/abs/2503.23167)：综述图神经网络与微分方程的结合方式，包括连续深度动力学、神经 ODE 求解器、扩散过程和图结构时序建模。
+- [Open Problems and a Hypothetical Path Forward in LLM Knowledge Paradigms](https://arxiv.org/abs/2504.06823)：讨论 LLM 知识范式中的知识更新、reversal curse、内部冲突以及结合检索或编辑的潜在路径。
+- [Integrating Cognitive Processing Signals into Language Models: A Review of Advances, Applications and Future Directions](https://arxiv.org/abs/2504.06843)：综述认知加工信号融入语言模型的进展、应用与后续方向。
+- [Deep Learning-based Intrusion Detection Systems: A Survey](https://arxiv.org/abs/2504.07839)：综述深度学习入侵检测系统的数据采集、日志解析、图摘要、攻击检测和检测后调查流程。
+- [Linguistic Interpretability of Transformer-based Language Models: a systematic review](https://arxiv.org/abs/2504.08001)：系统综述 Transformer 语言模型如何编码语言现象，覆盖句法、语义、probing、因果干预和语言解释的局限。
+- [A Survey on Efficient Vision‐Language Models](https://arxiv.org/abs/2504.09724)：综述高效 VLM 的架构、训练、压缩与部署技术。
+- [Position: The Most Expensive Part of an LLM should be its Training Data](https://arxiv.org/abs/2504.12427)：主张训练数据劳动应被视为 LLM 的核心成本，并基于 64 个 LLM 的证据讨论数据工人报酬和数据供应链。
+- [Hadamard Product in Deep Learning: Introduction, Advances and Challenges](https://arxiv.org/abs/2504.13112)：综述深度学习中的 Hadamard 逐元素乘积，覆盖 gating、attention、特征交互、模型效率和设计挑战。
+- [Parameter-Efficient Continual Fine-Tuning: A Survey](https://arxiv.org/abs/2504.13822)：综述参数高效持续微调方法，比较 adapter、prompt、低秩更新、回放、正则化和遗忘控制。
+- [CLIP-Powered Domain Generalization and Domain Adaptation: A Comprehensive Survey](https://arxiv.org/abs/2504.14280)：综述基于 CLIP 的领域泛化与领域自适应方法，补充视觉语言模型适配版图。
+- [Representation Learning for Tabular Data](https://arxiv.org/abs/2504.16109)：综述 tabular representation learning，为 tabular foundation models 与结构化数据 in-context learning 提供背景。
+- [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736)：综述 LLM Agent 通信协议。核心思路是按 context-oriented 与 inter-agent、通用与垂直协议进行分类，并比较安全性、可扩展性、延迟和互操作性取舍。
+- [Generative to Agentic AI: Survey, Conceptualization, and Challenges](https://arxiv.org/abs/2504.18875)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“Generative to Agentic AI: Survey, Conceptualization, and Challenges”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Taming the Titans](https://arxiv.org/abs/2504.19720)：综述 efficient LLM inference serving methods 与 systems trade-offs。
+- [A Survey on Parameter-Efficient Fine-Tuning for Foundation Models in Federated Learning](https://arxiv.org/abs/2504.21099)：综述联邦学习场景下基础模型的参数高效适配方法。
+- [Position: Enough of Scaling LLMs! Lets Focus on Downscaling](https://arxiv.org/abs/2505.00985)：主张通过更小、更高效的模型进行 downscaling，讨论成本、延迟、部署约束以及紧凑模型优于继续扩大的场景。
+- [Edge-Cloud Collaborative Computing Survey](https://arxiv.org/abs/2505.01821)：综述 edge-cloud collaboration 中的 distributed intelligence 与 model optimization。
+- [Attention Mechanisms Perspective: Exploring LLM Processing of Graph-Structured Data](https://arxiv.org/abs/2505.02130)：用图任务分析 LLM attention 如何处理图结构输入，考察其是否捕获拓扑、邻域信号和长程依赖。
+- [Towards Cross-Modality Modeling for Time Series Analytics: A Survey in the LLM Era](https://arxiv.org/abs/2505.02583)：综述 LLM 时代的跨模态时间序列分析，覆盖文本、图像、图和传感器模态如何与时序信号对齐。
+- [Moving From Monolithic To Microservices Architecture for Multi-Agent Systems](https://arxiv.org/abs/2505.07838)：综述多 Agent 系统的微服务式设计，覆盖架构原则、ACL、MCP、A2A 与可扩展性权衡。
+- [AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges](https://arxiv.org/abs/2505.10468)：提供概念分类以及广义应用与挑战地图。
+- [Disambiguation in Conversational Question Answering in the Era of LLMs and Agents](https://arxiv.org/abs/2505.12543)：综述会话问答中的歧义类型、LLM 消歧方法、数据集与 Agent 化问答开放问题。
+- [This Time is Different](https://arxiv.org/abs/2505.14766)：用 observability perspective 分析 time-series foundation models。
+- [Large Language Models in the IoT Ecosystem - A Survey on Security Challenges and Applications](https://arxiv.org/abs/2505.17586)：综述 LLM 与 IoT 的双向关系，覆盖智慧城市、医疗、自动化和网络安全应用，以及设备、隐私和攻击面约束。
+- [An Outlook on the Opportunities and Challenges of Multi-Agent AI Systems](https://arxiv.org/abs/2505.18397)：综述多智能体 AI 系统在有效性、安全性和评估方面的机会与挑战。
+- [LLLMs: A Data-Driven Survey of Evolving Research on Limitations of Large Language Models](https://arxiv.org/abs/2505.19240)：通过半自动数据驱动综述扫描大规模 ACL 和 arXiv 语料，识别 14,648 篇关注 LLM 局限的论文并聚类研究主题。
+- [Ten Principles of AI Agent Economics](https://arxiv.org/abs/2505.20273)：面向跨领域智能体系统的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Position: The Future of Bayesian Prediction Is Prior-Fitted](https://arxiv.org/abs/2505.23947)： 将先验拟合模型定位为贝叶斯预测的未来方向，连接 PFN 式基础模型与结构化统计推理。
+- [Flow Matching and Diffusion Tutorial](https://arxiv.org/abs/2506.02070)：系统介绍 flow matching、denoising diffusion、训练、guidance 与架构设计。
+- [Small Language Models are the Future of Agentic AI](https://arxiv.org/abs/2506.02153)：主张许多重复、专门化的 agent 角色更适合由小语言模型承担，突出异构 agent 系统和部署经济性的价值。
+- [Towards a Small Language Model Lifecycle Framework](https://arxiv.org/abs/2506.07695)：综合 36 篇小语言模型研究，提出包含主组件、可选组件和横向组件的设计、训练、评测与部署生命周期框架。
+- [NeurIPS 2024 ML4CFD Competition: Results and Retrospective Analysis](https://arxiv.org/abs/2506.08516)：回顾 NeurIPS ML4CFD 翼型 surrogate modeling 竞赛，覆盖 OpenFOAM 数据、240 支队伍和多指标评测。
+- [Vision Generalist Model: A Survey](https://arxiv.org/abs/2506.09954)：综述视觉通用模型的架构、任务覆盖与下游适配模式。
+- [A Survey of Automatic Evaluation Methods on Text, Visual and Speech Generations](https://arxiv.org/abs/2506.10019)：用五类范式统一文本、视觉和语音生成自动评测，对比各模态指标与共享的 judge 和参考策略。
+- [A Tutorial-Cum-Survey on Self-Supervised Learning for Wi-Fi Sensing: Trends, Challenges, and Outlook](https://arxiv.org/abs/2506.12052)：综述 Wi-Fi sensing 中基于 CSI 信号的自监督学习、Wi-Fi 标准、隐私保护应用、数据集和部署挑战。
+- [Discrete Diffusion in Large Language and Multimodal Models: A Survey](https://arxiv.org/abs/2506.13759)：综述语言模型和多模态模型中的离散扩散方法。
+- [Graphs Meet AI Agents: Taxonomy, Progress, and Future Opportunities](https://arxiv.org/abs/2506.18019)：梳理图与 AI 智能体结合研究的分类、进展与未来机会。
+- [Generalizing vision-language models to novel domains: A comprehensive survey](https://arxiv.org/abs/2506.18504)：综述 VLM 迁移到新领域时的泛化设置、适配方法、基准和训练域之外的失效模式。
+- [LLM-Based Social Simulations Require a Boundary](https://arxiv.org/abs/2506.19806)：综述跨领域智能体系统、协议、社会仿真或通信模式。
+- [A Survey of Continual Reinforcement Learning](https://arxiv.org/abs/2506.21872)：综述 continual reinforcement learning，梳理 agent 如何在非平稳任务中持续适应并减少灾难性遗忘。
+- [A Survey of LLM Inference Systems](https://arxiv.org/abs/2506.21901)：综述面向高吞吐和高质量 LLM 推理的服务系统与技术。
+- [Position: In-House Evaluation Is Not Enough. Towards Robust Third-Party Evaluation and Flaw Disclosure for General-Purpose AI](https://proceedings.mlr.press/v267/longpre25a.html)：主张为通用 AI 建立第三方评测和缺陷披露流程，对比内部基准与独立、可问责测试。
+- [Model Cards Revisited: Bridging the Gap Between Theory and Practice for Ethical AI Requirements](https://arxiv.org/abs/2507.06014)：比较 26 份伦理 AI 指南和 3 套文档框架，说明当前 model cards 在治理、透明度和问责要求上的缺口。
+- [EduFlow: Advancing MLLMs' Problem-Solving Proficiency through Multi-Stage, Multi-Perspective Critique](https://arxiv.org/abs/2507.09374)：提出 MLLM 科学推理框架，结合数据选择、MCTS 轨迹构造、EduPRM 过程奖励模型和 critique tags。
+- [A Taxonomy for Design and Evaluation of Prompt-Based Natural Language Explanations](https://arxiv.org/abs/2507.10585)：为基于提示的自然语言解释构建 taxonomy，覆盖提示设计、解释形式、评测标准和面向用户的解释质量。
+- [Mixture of Experts in Large Language Models](https://arxiv.org/abs/2507.11181)：综述 large language models 中 MoE architectures、training、routing 与 deployment trade-offs。
+- [Collaborative Inference and Learning between Edge SLMs and Cloud LLMs: A Survey of Algorithms, Execution, and Open Challenges](https://arxiv.org/abs/2507.16731)：综述边缘小模型与云端 LLM 协同推理和学习的算法与执行模式。
+- [Hyperbolic Deep Learning for Foundation Models: A Survey](https://arxiv.org/abs/2507.17787)：综述双曲几何如何作为 LLM、VLM 和多模态基础模型的归纳偏置，用于层次或树状结构表示。
+- [Integrating LLM in Agent-Based Social Simulation: Opportunities and Challenges](https://arxiv.org/abs/2507.19364)：综述将 LLM 融入 agent-based 社会仿真的机会与挑战。
+- [A Survey of Self-Evolving Agents](https://arxiv.org/abs/2507.21046)：按“演化什么、何时演化、如何演化、在哪里演化”梳理 Agent 自我改进循环及其评测问题。
+- [Evaluation and Benchmarking of LLM Agents: A Survey](https://arxiv.org/abs/2507.21504)：回顾任务设计、指标、可复现性、环境交互与榜单式评测。
+- [A Survey on Agent Workflow - Status and Future](https://arxiv.org/abs/2508.01186)：综述通用 agent workflow 的设计与未来方向。
+- [SlideAudit: A Dataset and Taxonomy for Automated Evaluation of Presentation Slides](https://arxiv.org/abs/2508.03630)：提出 2400 页 slide 数据集、幻灯片缺陷 taxonomy 和众包标注，用于比较 LLM 与设计系统对演示文稿质量的 critique。
+- [Continual Learning for VLMs](https://arxiv.org/abs/2508.04227)：综述 VLM 与 MLLM 持续学习挑战，包括跨模态漂移、参数干扰、零样本保持和评测分类。
+- [Anatomy of a Machine Learning Ecosystem: 2 Million Models on Hugging Face](https://arxiv.org/abs/2508.06811)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Parallel Text Generation Survey](https://arxiv.org/abs/2508.08712)：综述并行解码和扩散语言模型，梳理文本生成从严格自回归解码向并行生成发展的模型路线。
+- [A Survey on Diffusion Language Models](https://arxiv.org/abs/2508.10875)：综述 diffusion language models 的去噪、并行解码、控制和推理权衡。
+- [A Comprehensive Review of AI Agents: Transforming Possibilities in Technology and Beyond](https://arxiv.org/abs/2508.11957)：综述 AI agent 的感知、推理、行动、学习和多智能体协作。
+- [From Language to Action](https://arxiv.org/abs/2508.17281)：综述作为自主 agent 和工具使用者的 LLM，组织架构、单 agent 与多 agent 设计、推理、规划、记忆、提示和微调等线索。
+- [Generative Models for Synthetic Data: Transforming Data Mining in the GenAI Era](https://arxiv.org/abs/2508.19570)：综述生成模型在 GenAI 时代如何创建、筛选和评估数据挖掘所需的合成数据。
+- [Model Science](https://arxiv.org/abs/2508.20040)：将 AI 系统的验证、解释和控制组织为统一研究议程，补充跨能力模型行为与可解释性综述。
+- [AI Agent Communication from Internet Architecture Perspective: Challenges and Opportunities](https://arxiv.org/abs/2509.02317)：综述跨领域智能体系统、协议、社会仿真或通信模式。
+- [Foundational models and federated learning: survey, taxonomy, challenges and practical insights](https://arxiv.org/abs/2509.05142)：综述基础模型与联邦学习的生命周期，比较数据、训练、个性化、隐私、通信和部署约束。
+- [A Survey of Reasoning and Agentic Systems in Time Series with Large Language Models](https://arxiv.org/abs/2509.11575)：综述候选，Survey of reasoning and agentic LLM systems for time-series analysis.
+- [Generalizability of Large Language Model-Based Agents](https://arxiv.org/abs/2509.16330)：以任务、领域、环境、工具和 agent scaffold 的迁移能力为主线，讨论 LLM Agent 是否真正能跳出窄 benchmark 泛化。
+- [End-to-End Aspect-Guided Review Summarization at Scale](https://arxiv.org/abs/2509.26103)：描述 Wayfair 大规模商品评论摘要流水线，抽取高频方面、执行 aspect-based sentiment analysis，并通过 A/B test 验证摘要效果。
+- [Self-Improvement in Multimodal Large Language Models: A Survey](https://arxiv.org/abs/2510.02665)：综述多模态大模型的自我改进策略及其降低人工监督成本的路径。
+- [AutoQual: An LLM Agent for Automated Discovery of Interpretable Features for Review Quality Assessment](https://arxiv.org/abs/2510.08081)：使用 LLM Agent 自动发现可解释特征来评估在线评论质量，把评论质量建模转化为自动特征发现问题。
+- [From Noise to Signal to Selbstzweck: Reframing Human Label Variation in the Era of Post-training in NLP](https://arxiv.org/abs/2510.12817)：将标注者分歧从噪声重构为后训练信号，综述标签变异来源、建模方法和评测选择。
+- [Briding Diffusion Posterior Sampling and Monte Carlo methods: a survey](https://arxiv.org/abs/2510.14114)：综述如何把预训练 diffusion prior 与 Monte Carlo 方法结合用于贝叶斯逆问题，强调 twisting 机制和后验采样。
+- [Multimedia-Aware Question Answering: A Review of Retrieval and Cross-Modal Reasoning Architectures](https://arxiv.org/abs/2510.20193)：综述面向图像、音频、视频、文本和元数据 QA 的检索与跨模态推理架构。
+- [LLM-empowered knowledge graph construction: A survey](https://arxiv.org/abs/2510.20345)：综述 LLM 如何重塑知识图谱构建，覆盖 ontology engineering、实体关系抽取、知识融合和质量控制。
+- [Generative AI in depth: A survey of recent advances, model variants, and real-world applications](https://arxiv.org/abs/2510.21887)：可作为跨类别模型能力的 Survey 候选：围绕 Generative AI in depth: A survey of recent advances, model variants, and real-world applications 梳理背景、方法与开放问题。
+- [A Survey on LLM Mid-training](https://arxiv.org/abs/2510.23081)：定义 mid-training，并梳理预训练与后训练之间的数据、优化、架构和能力定向干预。
+- [What Challenges Do Developers Face in AI Agent Systems? An Empirical Study on Stack Overflow](https://arxiv.org/abs/2510.25423)：基于 Stack Overflow 证据分析 AI 智能体系统开发者面临的挑战。
+- [Agentic AI](https://arxiv.org/abs/2510.25445)：把 agentic AI 的架构、应用与开放问题整理成系统级地图，横跨感知、规划、工具、记忆、协同与治理。
+- [A Survey on Efficient Large Language Model Training: From Data-centric Perspectives](https://arxiv.org/abs/2510.25817)：综述面向高效 LLM 训练与后训练的数据选择、标注、过滤和复用方法。
+- [An Interdisciplinary and Cross-Task Review on Missing Data Imputation](https://arxiv.org/abs/2511.01196)：跨 missingness 机制、单重和多重插补、任务设置及领域评测实践综述缺失数据插补。
+- [Missing the Margins: A Systematic Literature Review on the Demographic Representativeness of LLMs](https://arxiv.org/abs/2511.01864)：系统综述 211 篇关于 LLM 人口统计代表性的论文，覆盖评测人群、子群体覆盖和测量缺口。
+- [Selective Rotary Position Embedding](https://arxiv.org/abs/2511.17388)：提出输入依赖、可使用任意角度的旋转位置嵌入，用于改进 linear 和 softmax Transformer 变体的位置建模。
+- [Unboxing the Black Box](https://arxiv.org/abs/2511.19265)：综述用机制可解释性理解神经网络算法，为跨任务模型页面补充算法机制分析地图。
+- [Agentic Explainable Artificial Intelligence (Agentic XAI) Approach To Explore Better Explanation](https://arxiv.org/abs/2512.21066)：将 SHAP 式解释与多模态 LLM Agent 结合，通过迭代细化为非专家用户生成预测解释。
+- [A Design-Driven Taxonomy of AI Agentic Patterns](https://doi.org/10.1109/conecct65861.2025.11306519)：提出设计驱动的智能体 AI 模式分类，适合归纳跨切面智能体架构。
+- [Generative Agents in Agent-Based Modeling: Overview, Validation, and Emerging Challenges](https://doi.org/10.1109/tai.2025.3566362)：综述基于智能体建模中的生成式智能体，覆盖验证与仿真挑战。
+- [A Survey of Post-Training Scaling in Large Language Models](https://doi.org/10.18653/v1/2025.acl-long.140)：把后训练视为独立的 scaling 机制，串联数据构造、监督微调、偏好优化、强化学习和奖励建模。
+- [From Transformers to ChatGPT](https://doi.org/10.1109/ACCESS.2025.3600739)：从 Transformer 基础到 ChatGPT-style systems 综述大语言模型研究。
+- [A Survey of DeepSeek Models](https://doi.org/10.1109/iscmi67495.2025.11358595)：综述 DeepSeek 模型家族的架构、训练数据、面向推理的后训练、高效推理和部署经验。
+- [Multimodal Sentiment Analysis—A Comprehensive Survey From a Fusion Methods Perspective](https://doi.org/10.1109/access.2025.3554665)：从融合方法视角综述多模态情感分析，包括文本、音频和视觉的特征级、决策级、注意力和 Transformer 式整合。
+- [The Evolution of Generative AI: Trends and Applications](https://doi.org/10.1109/access.2025.3574660)：综述生成式 AI 从 GAN、扩散模型到 Transformer 和多模态生成的发展、应用领域与社会风险。
+- [A Hybrid Framework for Domain-Specific Knowledge Integration in Large Language Models: A Comprehensive Survey](https://doi.org/10.1109/ecai65401.2025.11095523)：综述把领域知识注入 LLM 的检索、知识图谱、微调、提示和混合流水线方法。
+- [A structured review of large language models in metaheuristic optimisation](https://doi.org/10.1016/j.dajour.2025.100587)：综述 LLM 如何通过问题建模、算子设计、算法配置和决策支持服务 metaheuristic optimization。
+- [A Review of Prompt Engineering Techniques for Large Language Models](https://doi.org/10.1080/10447318.2025.2607553)：综述 LLM 提示工程技术，包括 zero-shot、few-shot、chain-of-thought 变体、角色提示、模板和评测实践。
+- [Earth Action in Transition: Highlights From the 2025 ESA–NASA International Workshop on AI Foundation Models for EO (Space-Agencies)](https://doi.org/10.1109/mgrs.2025.3592035)：总结 2025 ESA-NASA 地球观测基础模型 workshop，突出数据基础设施、地理空间任务、机构协作和部署优先级。
+- [Improved crystal graph networks with periodic invariance from a global perspective](https://doi.org/10.1016/j.commatsci.2025.113951)：从周期不变性视角综述 crystal graph network 设计，关注材料建模中的全局晶体结构约束。
+- [Overview of the SISAP 2025 Indexing Challenge](https://doi.org/10.1007/978-3-032-06069-3_33)：总结 SISAP 2025 indexing challenge 的相似性搜索任务设置、数据集、提交系统、指标和索引取舍。
+- [Video Anomaly Detection: A Comprehensive Survey of Deep Learning Approaches](https://doi.org/10.1109/iceem66692.2025.11225153)：综述深度学习视频异常检测方法，覆盖重建、预测、弱监督、多模态信号、数据集和评测协议。
+- [Interrogative Comments Posed by Review Comment Generators: An Empirical Study of Gerrit](https://doi.org/10.1109/esem64174.2025.00054)：实证研究 Gerrit 代码评审中生成器提出的疑问式评论，分析问题形式、评审有用性和评论生成器失效模式。
+- [The role of Large Language Models in IoT security: A systematic review of advances, challenges, and opportunities](https://doi.org/10.1016/j.iot.2025.101735)：系统综述 LLM 在 IoT 安全中的威胁检测、漏洞分析、策略自动化和安全设备管理用途，并指出隐私与部署限制。
+- [Multi-choice machine reading comprehension benchmark datasets: A survey](https://doi.org/10.1016/j.asoc.2025.114499)：综述多项选择机器阅读理解基准数据集，比较数据构建、推理类型、领域覆盖和评测问题。
+- [Evaluating Large Language Models: A Review of Metrics and Benchmarks](https://doi.org/10.1109/sisy67000.2025.11205366)：综述 LLM 评测指标和基准，覆盖任务覆盖、自动指标、人类评测、鲁棒性和真实应用相关性。
+- [Frontiers in Multimodal AI: A Survey of Datasets and Benchmarks for Trustworthy Machine Intelligence](https://doi.org/10.1109/naecon65708.2025.11235327)：从鲁棒性、公平性、安全、可解释性和跨模态可靠性等可信维度综述多模态 AI 数据集与基准。
+- [A Critical Review of Benchmarking LLMs for Real-World Applications: Trends and Limitations](https://doi.org/10.1109/icufn65838.2025.11169931)：批判性综述真实应用中的 LLM benchmarking，聚焦基准有效性、领域错配、指标限制和部署相关性缺口。
+- [Knowledge Graphs for Multi-modal Learning: Survey and Perspective](https://doi.org/10.1016/j.inffus.2025.103124)：综述知识图谱如何通过结构语义、跨模态 grounding、推理、数据集构建和未来 KG-MLLM 集成支撑多模态学习。
+- [The Engineering of AI Evaluation and Scoring: Overview and Insights](https://doi.org/10.1109/syscon64521.2025.11014820)：综述 AI 评测与打分工程实践，覆盖指标设计、评分流水线、基准治理和自动化评估可靠性。
+- [LLM Agents for Enhanced Tabular Data Interpretation: A Perspective](https://doi.org/10.1109/sist61657.2025.11139242)：把 LLM Agent 定位为表格数据解释助手，覆盖表格理解、统计解释、工具使用和人类决策支持。
+- [Beyond automation: Unveiling the potential of agentic intelligence](https://doi.org/10.1016/j.rser.2025.116218)：综述 agentic intelligence 相比普通自动化的潜力。
+- [Agentic AI: A Comprehensive Survey of Technologies, Applications, and Societal Implications](https://doi.org/10.1109/access.2025.3585609)：系统梳理该方向的方法、评测缺口或部署问题。
+- ["I apologize for my actions": Emergent Properties and Technical Challenges of Generative Agents](https://doi.org/10.1109/alife-ciscompanion65078.2025.11031053)：面向跨领域智能体系统的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Bibliometric Insights into Large Language Model-Driven Intelligent Agents: Themes, Trends and Prospects](https://doi.org/10.1109/icaice68195.2025.11382423)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“Bibliometric Insights into Large Language Model-Driven Intelligent Agents: Themes, Trends and Prospects”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [ON MODELLING MULTI-AGENT SYSTEMS BASED ON LARGE LANGUAGE MODELS](https://doi.org/10.36871/2618-9976.2025.01.002)：综述通用 Agent 与多 Agent 方法相关研究，可作为该方向近期相关工作的入口。
+- [A Large-Scale Study on the Development and Issues of Multi-Agent AI Systems](https://arxiv.org/abs/2601.07136)：面向跨领域智能体系统的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Beyond Consensus: Perspectivist Modeling and Evaluation of Annotator Disagreement in NLP](https://arxiv.org/abs/2601.09065)：综述在 NLP 中建模标注者分歧的 perspectivist 方法，覆盖分歧来源、标注表示、模型训练和超越多数标签的评测。
+- [A Component-Based Survey of Interactions between Large Language Models and Multi-Armed Bandits](https://arxiv.org/abs/2601.12945)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“A Component-Based Survey of Interactions between Large Language Models and Multi-Armed Bandits”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Unified Study of LoRA Variants: Taxonomy, Review, Codebase, and Empirical Evaluation](https://arxiv.org/abs/2601.22708)：分类并实证比较 LoRA 变体的参数高效适配表现。
+- [Data Agents](https://arxiv.org/abs/2602.04261)：提出 data agent 的能力等级，并据此比较自动化数据访问、分析、转换和决策支持系统。
+- [Understanding LLM Failures: A Multi-Tape Turing Machine Analysis of Systematic Errors in Language Model Reasoning](https://arxiv.org/abs/2602.15868)：把 LLM 交互形式化为覆盖字符、token、词表、参数、激活、概率分布和输出文本的多带图灵机，以定位系统性推理错误。
+- [The Prediction-Measurement Gap](https://arxiv.org/abs/2603.10130)：指出为预测和检索优化的文本 embedding 未必适合作为科学测量工具，并提出围绕几何可读性、可解释性、抗干扰信号和可追溯语义推断的评估要求。
+- [The Library Theorem](https://arxiv.org/abs/2603.21272)： 把外部组织视为 agentic reasoning capacity 的约束，为工具、库和结构化知识如何影响智能体表现提供理论视角。
+- [Multi-Perspective LLM Annotations for Valid Analyses in Subjective Tasks](https://arxiv.org/abs/2603.21404)：提出 Perspective-Driven Inference，把 LLM 标注与自适应人工标注结合，用于存在多个有效视角的主观任务。
+- [Wired for Overconfidence: A Mechanistic Perspective on Inflated Verbalized Confidence in LLMs](https://arxiv.org/abs/2604.01457)：从 circuit-level 机制和 recalibration 干预角度分析 LLM 夸大 verbalized confidence 的问题。
+- [NED-Tree: Bridging the Semantic Gap with Nonlinear Element Decomposition Tree for LLM Nonlinear Optimization Modeling](https://arxiv.org/abs/2604.01588)：把非线性运筹问题描述拆解为 nonlinear element decomposition tree，帮助 LLM 生成可执行优化模型。
+- [Beyond Message Passing: A Semantic View of Agent Communication Protocols](https://arxiv.org/abs/2604.02369)：面向跨领域智能体系统的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Generative Frontiers](https://arxiv.org/abs/2604.02718)：强调 diffusion language model 评估的重要性，补充非自回归与并行文本生成的 survey 线索。
+- [Does a Global Perspective Help Prune Sparse MoEs Elegantly?](https://arxiv.org/abs/2604.06542)：提出 GRAPE 这一全局冗余感知的 sparse MoE 剪枝方法，在保留路由行为的同时移除冗余专家。
+- [Networking-Aware Energy Efficiency in Agentic AI Inference: A Survey](https://arxiv.org/abs/2604.07857)：综述闭环 agentic AI inference 的网络与能耗约束。
+- [From Weights to Activations](https://arxiv.org/abs/2604.14090)：将 activation steering 作为权重更新之外的适配路线，补充 representation engineering 的跨任务综述视角。
+- [From Feelings to Metrics: Understanding and Formalizing How Users Vibe-Test LLMs](https://arxiv.org/abs/2604.14137)：基于用户调查和真实比较报告形式化 vibe-testing，把非正式模型印象转化为候选评测实践。
+- [Cloud-native and Distributed Systems for Efficient and Scalable Large Language Models -- A Research Agenda](https://arxiv.org/abs/2604.17227)：提出面向高效可扩展 LLM 的云原生与分布式系统研究议程。
+- [Generative Synthetic Data for Causal Inference: Pitfalls, Remedies, and Opportunities](https://arxiv.org/abs/2604.23904)：综述生成式合成数据如何在保留预测效用的同时扭曲平均处理效应，并讨论因果推断中的补救路径。
+- [Bye Bye Perspective API: Lessons for Measurement Infrastructure in NLP, CSS and LLM Evaluation](https://arxiv.org/abs/2604.25580)：以 Perspective API 退役为案例，讨论 NLP 与 LLM 评测基础设施中的维护、有效性、访问和基准依赖问题。
+- [Position: How can Graphs Help Large Language Models?](https://arxiv.org/abs/2605.02452)：把图定位为 LLM 的支撑层，覆盖结构化知识、graph prompting、图增强检索和图式推理。
+- [Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines](https://arxiv.org/abs/2605.26442)：从数据中心视角综述 LLM 对齐调优，将流程拆为回答合成、偏好评估和偏好实例化，突出数据构建选择而不只讨论优化目标。
+- [Understanding Agentic AI](https://doi.org/10.1109/JAS.2026.125993)：综述 agentic AI 的算法和基础设施，为跨切面页面补充自治、编排与部署需求之间的系统级桥接。
+- [When Agents Handle Secrets](https://arxiv.org/abs/2605.03213)：把 confidential computing 作为处理秘密的 Agent 系统层，关注秘密如何穿过工具、记忆、委派和多方工作流。
+- [The hands behind the agents: Understanding practitioner challenges with agentic frameworks](https://doi.org/10.1016/j.infsof.2026.108183)：实证研究从业者使用智能体框架时的挑战，为跨切面智能体系统设计提供依据。
+- [Generalist multimodal AI](https://doi.org/10.1016/j.neucom.2026.132933)：综述通用多模态 AI 的架构、挑战与机会，作为连接图像、视频、音频和文本能力的跨领域入口。
+- [Agentic AI systems](https://doi.org/10.1016/j.neucom.2026.134049)：系统综述智能体式 AI 系统的多智能体架构、认知基础、交互、可解释性、安全与评测。
+- [Reasoning based on symbolic and parametric knowledge bases](https://doi.org/10.1016/j.ipm.2026.104880)：比较显式符号知识库与模型参数中隐式知识的推理方式，说明混合 symbolic-parametric 系统的适用位置。
+- [Transformers for Multivariate Time Series Forecasting](https://doi.org/10.1109/ACCESS.2026.3654408)：综述 Transformer-based multivariate time-series forecasting，梳理非文本 foundation models 的挑战与研究机会。
+- [Alignment in large vision language models: A survey](https://doi.org/10.1016/j.inffus.2026.104294)：综述大视觉语言模型对齐方法，覆盖数据策展、偏好调优、安全对齐、幻觉缓解和多模态评测。
+- [Assistance or Distraction? A Cognitive Ergonomics Perspective on Cognitive Load During AI-Assisted Post-Editing](https://doi.org/10.1080/10447318.2026.2628994)：从认知工效学角度分析 AI 辅助后编辑，关注模型建议何时降低工作量、何时增加认知负荷。
+- [Are language models intelligent enough for entrepreneurial work? A language-centered perspective](https://doi.org/10.1016/j.jbusvent.2026.106589)：从语言中心视角评估语言模型是否胜任创业工作，连接机会表述、说服、规划和判断任务。
+- [A Survey on LLM Edge-Intelligence: Recent Advances and Open Challenges](https://doi.org/10.1109/icoin68469.2026.11480489)：综述 LLM 边缘智能中的压缩、分割推理、端云协同、延迟、隐私、能耗和开放部署挑战。
+- [A perspective on using large language models for human data in human-water research: Why we should be cautious?](https://doi.org/10.3389/frwa.2026.1749745)：提醒在人水研究中把 LLM 当作人类数据替代品需谨慎，重点讨论有效性、代表性、领域语境和问责。
+- [Can AI Do Strategy?](https://doi.org/10.1287/stsc.2026.intro.v11.n1)：提出 AI 战略任务的因果阶梯和授权阶梯，强调应在可测量、可问责的战略任务上评估自治能力，而不是从通用推理分数直接推断。
+- [End-To-End LLM Systems: Data, Training, Evaluation, and Deployment](https://doi.org/10.1109/icmlas67792.2026.11483701)：综述端到端 LLM 系统的数据、训练、评估与部署流程。
+- [From Generative to Agentic: A Survey of Autonomous AI Systems and Their Evolving Capabilities](https://doi.org/10.1109/icsedis68157.2026.11517987)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“From Generative to Agentic: A Survey of Autonomous AI Systems and Their Evolving Capabilities”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Sensemaking in Multi-Agent LLM Interfaces: How Users Interpret Transparency and Trustworthiness Cues](https://doi.org/10.1145/3772318.3791157)：研究用户如何解读多智能体 LLM 界面中的透明度与信任线索。
+- [Agentic Design Patterns](https://doi.org/10.1007/978-3-032-01402-3)：以设计模式方式梳理智能体系统的可复用构造，作为广义智能体综述之外的模式化参考。
+- [Scenario, Role, and Persona](https://doi.org/10.1145/3706599.3719762)：综述社会智能 AI Agent 的场景、角色与人设设计策略，帮助界定交互式 Agent 行为的设计变量。
+- [A systematic survey of LLM-based text-to-SQL](https://doi.org/10.7717/peerj-cs.3773)：把 text-to-SQL 方法、安全漏洞和部署挑战放在一起梳理，说明数据库查询既是能力问题也是安全问题。
+- [Fundamental Capabilities and Applications of Large Language Models](https://doi.org/10.1145/3735632)：把 LLM 核心能力原语映射到主要应用族，说明跨领域能力如何超越单一任务轴组合起来。
+- [Multimodal Agent AI](https://doi.org/10.1007/s11390-025-4802-8)：把多模态 Agent 视为连接感知、推理、记忆、规划与行动的系统，覆盖数字和物理环境。
+- [The Rise of Agentic AI](https://doi.org/10.3390/fi17090404)：梳理定义、框架、架构、评测指标与挑战，突出 agentic AI 与普通 LLM 应用的边界。
+- [The rise and potential of large language model based agents](https://doi.org/10.1007/s11432-024-4222-0)：追踪 LLM Agent 如何结合规划、记忆、工具与多智能体交互，从文本生成走向自主任务执行。
+- [INSYTE](https://doi.org/10.1145/3760424)：提供从传统 AI 系统到 agentic AI 系统的分类框架，支撑各能力页之间的跨任务 taxonomy 判断。
+- [Bridging the Black Box](https://doi.org/10.1145/3787104)：综述 AI 系统的机制可解释性，为特征、回路和干预式模型分析提供总体地图。
+- [(Mis)Fitting Scaling Laws](https://openreview.net/forum?id=xI71dsS3o4)：综述 deep learning 中 scaling-law fitting techniques 与 failure modes。
+- [A Survey on Small Language Models in the Era of Large Language Models: Architecture, Capabilities, and Trustworthiness](https://doi.org/10.1145/3711896.3736563)：综述 SLM 的架构、能力与可信性，补充高效和专用模型家族的横向覆盖。
+- [On the caveats of AI autophagy](https://doi.org/10.1038/s42256-025-00984-1)：讨论 AI 生成数据递归反馈带来的风险，补充合成数据与模型坍缩相关覆盖。
+- [Tiny Language Models for Automation and Control: Overview, Potential Applications, and Future Research Directions](https://doi.org/10.3390/s25051318)：综述自动化与控制中的 tiny language models，聚焦紧凑部署、嵌入式使用、领域控制任务和未来研究需求。
+- [A Survey of AI-Generated Content (AIGC)](https://doi.org/10.1145/3704262)：综述文本、图像、音频、视频和多模态生成中的 AIGC 方法与应用，并讨论评测和滥用风险。
+- [Meta-analysis of large language models: benchmarking DeepSeek-R1 against ChatGPT, Gemini, Qwen, and LLaMA](https://doi.org/10.1186/s40537-025-01330-3)：对 DeepSeek-R1、ChatGPT、Gemini、Qwen 和 LLaMA 的基准结果做 meta-analysis，比较推理、语言和任务表现。
+- [Unlocking the black box: an in-depth review on interpretability, explainability, and reliability in deep learning](https://doi.org/10.1007/s00521-024-10437-2)：综述深度学习中的可解释性、解释性和可靠性技术，比较归因、替代模型、可视化、鲁棒性和可信方法。
+- [Position: Will we run out of data? Limits of LLM scaling based on human-generated data](https://proceedings.mlr.press/v235/villalobos24a.html)：估计人类生成训练数据对 LLM scaling 的限制，并讨论数据存量、合成数据替代和 scaling law 后果。
+- [Human-Centered and Sustainable Artificial Intelligence in Industry 5.0: Challenges and Perspectives](https://doi.org/10.3390/su16135448)：从人本和可持续角度综述 Industry 5.0 AI，覆盖协作、伦理、能耗、劳动力影响和工业部署。
+- [Deep Learning Workload Scheduling in GPU Datacenters: A Survey](https://doi.org/10.1145/3638757)：综述 GPU 数据中心中的深度学习 workload scheduling，覆盖集群资源分配、训练和推理作业、公平性、利用率和系统瓶颈。
+- [A survey on augmenting knowledge graphs (KGs) with large language models (LLMs): models, evaluation metrics, benchmarks, and challenges](https://doi.org/10.1007/s44163-024-00175-8)：综述 LLM 增强知识图谱的构建、补全、推理、评测指标、基准和挑战。
+- [A Comprehensive Survey of Deep Learning Approaches in Image Processing](https://doi.org/10.3390/s25020531)：综述图像处理中的深度学习方法，覆盖 restoration、segmentation、detection、enhancement 和 generation。
+- [Exploring machine learning solutions for overcoming challenges in IoT-based wireless sensor network routing: a comprehensive review](https://doi.org/10.1007/s11276-024-03697-2)：综述 IoT 无线传感器网络路由中的机器学习方法，覆盖能效、拥塞、可扩展性、移动性和可靠性约束。
+- [Resource-efficient Algorithms and Systems of Foundation Models: A Survey](https://doi.org/10.1145/3706418)：综述基础模型的资源高效算法与系统，覆盖压缩、稀疏计算、服务、调度、硬件感知和部署指标。
+- [Generate Impressive Videos with Text Instructions: A Review of OpenAI Sora, Stable Diffusion, Lumiere and Comparable Models](https://doi.org/10.2139/ssrn.4731634)：综述 Sora、Stable Diffusion 式系统和 Lumiere 等文生视频模型，比较时序一致性、可控性和生成质量。
+- [Assessing the Reliability of Artificial Intelligence Systems: Challenges, Metrics, and Future Directions](https://doi.org/10.59615/ijimes.4.2.1)：综述 AI 系统可靠性评估，覆盖鲁棒性、不确定性、安全指标、监控和验证挑战。
+- [Survey on the Role of Mechanistic Interpretability in Generative AI](https://doi.org/10.3390/bdcc9080193)：综述生成式 AI 中的机制可解释性，聚焦 circuits、features、因果干预以及内部解释如何支撑安全分析。
+- [An IS Research Agenda on Large Language Models: Development, Applications, and Impacts on Business and Management](https://doi.org/10.1145/3713032)：提出信息系统领域的 LLM 研究议程，覆盖模型开发、商业应用、组织影响、治理和管理实践。
+- [Machine Unlearning: A Perspective, Taxonomy, and Benchmark Evaluation](https://doi.org/10.3390/fi18030174)：提出面向机器遗忘的 taxonomy 和 benchmark 视角，覆盖删除请求、评测、隐私、效用和合规取舍。
+- [Leveraging Generative AI and Large Language Model for Process Systems Engineering: A State-of-the-Art Review](https://doi.org/10.1007/s11814-025-00524-y)：综述生成式 AI 与 LLM 在过程系统工程中的建模、优化、控制、设计和运行支持用途。
+- [From Data to Deployment: A Comprehensive Analysis of Risks in Large Language Model Research and Development](https://doi.org/10.1049/ise2/7358963)：按 LLM 研发生命周期分析风险，从数据策展、模型训练到评测、部署、监控和治理。
+- [Automated Conjecturing and Theorem Finding: A Survey](https://doi.org/10.1007/s11390-026-6040-0)：综述自动猜想和定理发现方法，包括符号搜索、机器学习、证明辅助和数学发现 workflow。
+- [A review of large language models in geomatics: integrating multimodal data, addressing challenges, and exploring synergies](https://doi.org/10.1007/s41324-026-00670-3)：综述 LLM 在 geomatics 中的多模态地理空间数据整合、遥感、GIS 流程、领域挑战和与空间模型的协同。
+- [Graph Triple Attention Networks: A Decoupled Perspective](https://doi.org/10.1145/3690624.3709223)：提出 graph triple attention networks 的 decoupled perspective，区分图表示学习中的结构、关系和特征级 attention。
+- [A Survey on Reinforcement Learning for Optimal Decision-Making and Control of Intelligent Vehicles](https://doi.org/10.1049/cit2.70073)：综述智能车辆决策与控制中的强化学习方法，覆盖规划、安全约束、仿真和真实迁移。
+- [Multiple Large AI Models’ Consensus for Object Detection—A Survey](https://doi.org/10.3390/app152412961)：综述把多个大 AI 模型共识用于目标检测的方法，比较 ensemble agreement、confidence fusion 和鲁棒性收益。
+- [A Review of Current Trends, Techniques, and Challenges in Large Language Models (LLMs)](https://doi.org/10.3390/app14052074)：综述 LLM 从 Transformer 架构到训练、提示、应用、评测以及技术和社会挑战的趋势。
+- [Large language models: a survey of their development, capabilities, and applications](https://doi.org/10.1007/s10115-024-02310-4)：综述 LLM 的发展、能力和应用，追踪架构、训练数据、对齐、评测和下游用例。
+- [A tutorial on open-source large language models for behavioral science](https://doi.org/10.3758/s13428-024-02455-8)：面向行为科学教程化介绍开源 LLM，覆盖模型选择、提示、本地部署、可复现性和伦理约束。
+- [Toward the unification of generative and discriminative visual foundation model: a survey](https://doi.org/10.1007/s00371-024-03608-8)：综述通过共享表征、预训练目标和下游适配统一生成式与判别式视觉基础模型的尝试。
+- [Simulating Human Opinions with Large Language Models: Opportunities and Challenges for Personalized Survey Data Modeling](https://doi.org/10.1145/3708319.3733685)：综述用 LLM 模拟个性化调查回答的机会与风险，强调代表性、校准、隐私和社会科学有效性。
+- [A Survey of LLM Datasets: From Autoregressive Model to AI Chatbot](https://doi.org/10.1007/s11390-024-3767-3)：综述 LLM 生命周期中的数据集，从自回归预训练语料到指令、对话、对齐和 chatbot 评测数据集。
+- [Automatic Large Language Model Evaluation via Peer Review](https://doi.org/10.1145/3627673.3679677)：提出类同行评审的 LLM 评测协议，通过多个 LLM 评审、讨论和一致性信号来判断开放式模型输出。
+- [Mapping the LLM Landscape: A Cross-Family Survey of Architectures, Alignment Methods, and Benchmark Performance](https://doi.org/10.3390/ai7040142)：按架构、对齐方法和基准表现比较 LLM 家族，梳理开放和闭源模型谱系的差异。
+- [Federated Large Language Model: Solutions, Challenges and Future Directions](https://doi.org/10.1109/mwc.009.2400244)：综述跨主题的 LLM 训练、适配、评测或可解释性能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Heterogeneous Confidential Computing System for Large Language Models: A Survey](https://doi.org/10.1145/3779307)：综述面向 LLM 的 confidential computing 系统，覆盖可信执行环境、异构硬件、安全推理、隐私和部署开销。
+- [Explainable Generative AI: A Two-Stage Review of Existing Techniques and Future Research Directions](https://doi.org/10.3390/ai7010031)：以两阶段方式综述 explainable generative AI，组织现有解释技术、局限、评测需求和未来研究方向。
+- [Recent advances in finetuning multimodal large language models](https://doi.org/10.1002/aaai.70025)：综述多模态大语言模型微调的近期进展。
+- [A survey of security and privacy issues of machine unlearning](https://doi.org/10.1002/aaai.12209)：综述机器遗忘中的安全与隐私问题。
+- [Explainability in Generative AI: An Umbrella Review of Current Techniques, Limitations, and Future Directions](https://ceur-ws.org/Vol-3851/paper7.pdf)：综述生成式 AI 在多模态和应用场景中的可解释技术与局限。
+- [A Critical Review of Agentic AI: Core Technologies, Applications, Ethical Implications, and Future Research Directions](https://doi.org/10.14710/jmasif.16.2.77084)：从核心技术、应用模式、伦理问题和研究方向综述 agentic AI，适合作为跨任务 agent 系统概览。
+- [Agentic AI Systems: What It Is and Isn't](https://doi.org/10.1002/joe.70018)：系统梳理该方向的方法、评测缺口或部署问题。
+- [A survey of large language models: techniques, applications, and challenges](https://doi.org/10.1007/s00530-026-02288-9)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“A survey of large language models: techniques, applications, and challenges”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Survey of Multimodal Learning: Methods, Applications, and Future](https://doi.org/10.1145/3713070)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“A Survey of Multimodal Learning: Methods, Applications, and Future”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Research Landscape of Agentic AI and Large Language Models: Applications, Challenges and Future Directions](https://doi.org/10.3390/a18080499)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Large Language Models: A Structured Taxonomy and Review of Challenges, Limitations, Solutions, and Future Directions](https://doi.org/10.3390/app15148103)：系统梳理该方向的方法、评测缺口或部署问题。
+- [LLM Fine-Tuning: Concepts, Opportunities, and Challenges](https://doi.org/10.3390/bdcc9040087)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“LLM Fine-Tuning: Concepts, Opportunities, and Challenges”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AI Chatbots and Cognitive Control: Enhancing Executive Functions Through Chatbot Interactions: A Systematic Review](https://doi.org/10.3390/brainsci15010047)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Ensemble Large Language Models: A Survey](https://doi.org/10.3390/info16080688)：可作为跨类别模型能力的 Survey 候选：围绕 Ensemble Large Language Models: A Survey 梳理背景、方法与开放问题。
+- [Understanding AI Agents—A Data-Driven Literature Review](https://doi.org/10.3390/math14091478)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“Understanding AI Agents—A Data-Driven Literature Review”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Agentic AI Systems: Evolution, Efficiency, and Ethical Implementation](https://doi.org/10.64229/gq9z0p28)：面向通用及跨领域 LLM 智能体的综述或相关工作脉络。核心思路是围绕“Agentic AI Systems: Evolution, Efficiency, and Ethical Implementation”组织可复用线索，便于比较相关模型、评测或智能体工作流。

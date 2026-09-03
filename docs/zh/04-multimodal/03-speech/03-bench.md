@@ -1,82 +1,501 @@
 # 4.3.3 Bench
 
+- [Refining the evaluation of speech synthesis: A summary of the Blizzard Challenge 2023](https://doi.org/10.1016/j.csl.2024.101747)：总结 Blizzard Challenge 2023 的语音合成评测设计，覆盖自然度、可懂度、说话人相似度等多维听测判断。
+- [Hallucinations in Neural Automatic Speech Recognition: Identifying Errors and Hallucinatory Models](https://arxiv.org/abs/2401.01572)：把 ASR 幻觉定义为流畅但与源语音语义无关的转写，说明 WER 难以识别，并给出扰动、语义关联和流畅度诊断。
+- [MuTox: Universal MUltilingual Audio-based TOXicity Dataset and Zero-shot Detector](https://arxiv.org/abs/2401.05060)：提出多语言音频毒性数据集和零样本检测器。
+- [MLAAD: The Multi-Language Audio Anti-Spoofing Dataset](https://arxiv.org/abs/2401.09512)：提供多语言音频反欺骗数据集，用于跨语言评测合成语音检测。
+- [ICASSP 2024 Speech Signal Improvement Challenge](https://arxiv.org/abs/2401.14444)：定义用于评测语音信号增强方法的共享挑战。
+- [SpeechBERTScore: Reference-Aware Automatic Evaluation of Speech Generation Leveraging NLP Evaluation Metrics](https://arxiv.org/abs/2401.16812)：把 BERTScore 式稠密语音特征和离散 token 指标用于生成语音与参考语音比较，并检验其与人类主观评分的相关性。
+- [Singing Voice Data Scaling-up: An Introduction to ACE-Opencpop and ACE-KiSing](https://arxiv.org/abs/2401.17619)：用合成器辅助扩增和人工细调构建 ACE-Opencpop、ACE-KiSing，评测其作为大规模多歌手歌声合成资源的效果。
+- [Objective and subjective evaluation of speech enhancement methods in the UDASE task of the 7th CHiME challenge](https://arxiv.org/abs/2402.01413)：在真实嘈杂 CHiME-5 家庭会话录音上评测 CHiME-7 UDASE 增强系统，对比侵入式指标、非侵入式指标和听众评分。
+- [SHIELD: an evaluation benchmark for face spoofing and forgery detection with multimodal large language models](https://arxiv.org/abs/2402.04178)：用真假题和选择题测试 MLLM 对 RGB、红外、深度以及伪造人脸证据的活体攻击和伪造检测能力。
+- [AIR-Bench: Benchmarking Large Audio-Language Models via Generative Comprehension](https://arxiv.org/abs/2402.07729)：用指令式音频理解任务评测大音频语言模型的开放式生成理解能力，而不只考 ASR 或固定标签音频分类。
+- [Codec-SUPERB: An In-Depth Analysis of Sound Codec Models](https://arxiv.org/abs/2402.13071)：跨下游应用和信号级指标评测神经声音 codec，检查 codec token 是否保留内容、说话人、副语言和音频信息。
+- [SpeechColab Leaderboard: An Open-Source Platform for Automatic Speech Recognition Evaluation](https://arxiv.org/abs/2403.08196)（[排行榜](https://github.com/SpeechColab/Leaderboard)）：提供开源 ASR 评测平台，对比开放模型和商业服务，并审计标点、大小写、同义词和 modified TER 等计分细节。
+- [ZAEBUC-Spoken: A Multilingual Multidialectal Arabic-English Speech Corpus](https://arxiv.org/abs/2403.18182)：发布多语种、多方言的阿拉伯语-英语语音语料库。
+- [Real Acoustic Fields: An Audio-Visual Room Acoustics Dataset and Benchmark](https://arxiv.org/abs/2403.18821)：采集真实房间脉冲响应、多视角图像和声源、听者 6DoF 位姿，用于 novel-view 声学合成和房间声学生成评测。
+- [The VoicePrivacy 2024 Challenge Evaluation Plan](https://arxiv.org/abs/2404.02677)（[结果](https://www.voiceprivacychallenge.org/vp2024/)）：定义语音匿名化赛道，要求隐藏说话人身份同时保留语言内容和情绪，并提供共享数据、脚本、基线和匿名语音提交协议。
+- [Cross-Domain Audio Deepfake Detection: Dataset and Analysis](https://arxiv.org/abs/2404.04904)：提供跨域音频深伪检测数据集与分析。
+- [Audio Dialogues: Dialogues dataset for audio and music understanding](https://arxiv.org/abs/2404.07616)：构建 16.38 万个通用声音和音乐多轮对话样本，并加入多音频问答，用于交互式音频理解评测。
+- [A Large-Scale Evaluation of Speech Foundation Models](https://arxiv.org/abs/2404.09385)：建立 SUPERB 式冻结语音基础模型加轻量任务头评测，分析跨任务泛化、排行榜可复现性和加权总分协议。
+- [MAD Speech: Measures of Acoustic Diversity of Speech](https://arxiv.org/abs/2404.10419)：提出生成语音的声学多样性指标，分别衡量声音、性别、情绪、口音和背景噪声等维度。
+- [An RFP dataset for Real, Fake, and Partially fake audio detection](https://arxiv.org/abs/2404.17721)：构建含真实、带噪、VC、TTS 和局部伪造音频的 RFP 检测集，显示局部伪造比全伪造产生更高 EER。
+- [Benchmarking Representations for Speech, Music, and Acoustic Events](https://arxiv.org/abs/2405.00934)：提出 ARCH，覆盖语音、音乐和声学事件分类的 12 数据集音频表征学习 benchmark。
+- [Mixat: A Data Set of Bilingual Emirati-English Speech](https://arxiv.org/abs/2405.02578)：发布 15 小时阿联酋方言英语 code-mixed 播客语音，并评测阿拉伯语和多语 ASR 在方言与代码切换识别上的不足。
+- [The Codecfake Dataset and Countermeasures for the Universally Detection of Deepfake Audio](https://arxiv.org/abs/2405.04880)：构建超过 100 万条中英文 Codecfake 音频用于 ALM 深伪检测，并用 CSAM 在 codec 生成条件下报告 EER。
+- [SVDD Challenge 2024: A Singing Voice Deepfake Detection Challenge Evaluation Plan](https://arxiv.org/abs/2405.05244)：定义首个歌声深伪检测挑战，区分实验室控制和野外场景中的真实与伪造歌唱录音。
+- [Evaluating Text-to-Speech Synthesis from a Large Discrete Token-based Speech Language Model](https://arxiv.org/abs/2405.09768)：评测离散 token 语音语言模型做 TTS 时的自然度、可懂度、非语音噪声以及幻觉或不可懂语音伪迹。
+- [Enabling ASR for Low-Resource Languages: A Comprehensive Dataset Creation Approach](https://arxiv.org/abs/2406.01446)：提出从有声书生成 ASR 训练数据的流水线，把数小时长音频切分为 4 到 15 秒片段以服务低资源语言识别。
+- [CtrSVDD: A Benchmark Dataset and Baseline Analysis for Controlled Singing Voice Deepfake Detection](https://arxiv.org/abs/2406.02438)：提供 47.64 小时真实和 260.34 小时伪造歌唱声，覆盖 14 种深伪方法和 164 个歌手身份，用于受控 SVDD 基线。
+- [Harder or Different? Understanding Generalization of Audio Deepfake Detection](https://arxiv.org/abs/2406.03512)：把音频 deepfake 检测器跨域失效分解为样本难度和生成器分布差异，显示主要问题来自分布差异而非单纯更难。
+- [URGENT Challenge: Universality, Robustness, and Generalizability For Speech Enhancement](https://arxiv.org/abs/2406.04660)：定义通用语音增强挑战，覆盖降噪、去混响、带宽扩展和 declipping，并强调鲁棒性与泛化指标。
+- [The Database and Benchmark For the Source Speaker Tracing Challenge 2024](https://arxiv.org/abs/2406.04951)：提供用于追踪生成或变换语音来源说话人的数据库和基准。
+- [Do Prompts Really Prompt? Exploring the Prompt Understanding Capability of Whisper](https://arxiv.org/abs/2406.05806)：评测 Whisper 在语音处理场景中是否真正理解提示。
+- [EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation](https://arxiv.org/abs/2406.06185)：发布并评测用于语音增强与去混响的消声全频语音数据集。
+- [AudioMarkBench: Benchmarking Robustness of Audio Watermarking](https://arxiv.org/abs/2406.06979)：评测音频水印方法在变换和攻击下的鲁棒性。
+- [EmoBox: Multilingual Multi-corpus Speech Emotion Recognition Toolkit and Benchmark](https://arxiv.org/abs/2406.07162)：为多语多语料语音情感识别统一 intra-corpus 和 cross-corpus 切分，并提供可复现实验工具包和基线。
+- [The Interspeech 2024 Challenge on Speech Processing Using Discrete Units](https://arxiv.org/abs/2406.07725)：在多语 ASR、TTS 和歌声合成三项任务上评测离散语音单元是否保留任务所需信息。
+- [LibriTTS-P: A Corpus with Speaking Style and Speaker Identity Prompts for Text-to-Speech and Style Captioning](https://arxiv.org/abs/2406.07969)：在 LibriTTS-R 上加入话语级说话风格提示和说话人特征提示，用于可控 TTS 与风格描述评测。
+- [FakeSound: Deepfake General Audio Detection](https://arxiv.org/abs/2406.08052)：定义 general audio deepfake 检测和伪造区域定位任务，并用自动篡改流水线生成真实感伪造语音和非语音音频。
+- [DCASE 2024 Task 4: Sound Event Detection with Heterogeneous Data and Missing Labels](https://arxiv.org/abs/2406.08056)（[结果](https://dcase.community/challenge2024/task-sound-event-detection-with-heterogeneous-training-dataset-and-potentially-missing-labels-results)）：定义异构数据和标签缺失条件下的声音事件检测任务。
+- [ML-SUPERB 2.0: Benchmarking Multilingual Speech Models Across Modeling Constraints, Languages, and Datasets](https://arxiv.org/abs/2406.08641)（[排行榜](https://multilingual.superbbenchmark.org/leaderboard)）：跨建模约束、语言和数据集评测多语言语音模型。
+- [The Second DISPLACE Challenge : DIarization of SPeaker and LAnguage in Conversational Environments](https://arxiv.org/abs/2406.09494)：定义会话环境中的说话人和语言分离挑战。
+- [On the Evaluation of Speech Foundation Models for Spoken Language Understanding](https://arxiv.org/abs/2406.10083)：用 SLUE 口语理解任务比较语音基础模型及其接入方式，覆盖自然语音分类和序列生成问题。
+- [MINT: a Multi-modal Image and Narrative Text Dubbing Dataset for Foley Audio Content Planning and Generation](https://arxiv.org/abs/2406.10591)：把图像、叙事文本和 Foley 音频规划目标配对，用于评测视频配音中跨模态场景匹配和音频生成。
+- [SingMOS: An extensive Open-Source Singing Voice Dataset for MOS Prediction](https://arxiv.org/abs/2406.10911)：发布带 MOS 标注的歌唱声音样本，用于训练和评测歌声合成、歌声转换输出的自动质量预测器。
+- [MusicScore: A Dataset for Music Score Modeling and Generation](https://arxiv.org/abs/2406.11462)：从 IMSLP 收集大规模乐谱数据，用于乐谱建模和生成评测，而不只服务光学乐谱识别。
+- [GigaSpeech 2: An Evolving, Large-Scale and Multi-domain ASR Corpus for Low-Resource Languages with Automated Crawling, Transcription and Refinement](https://arxiv.org/abs/2406.11546)：发布通过自动抓取、转写和精炼构建的大规模多语言 ASR 语料。
+- [SD-Eval: A Benchmark Dataset for Spoken Dialogue Understanding Beyond Words](https://arxiv.org/abs/2406.13340)：评测口语对话回复是否恰当，要求利用内容、副语言和环境线索，而不是只理解转写文本。
+- [DASB - Discrete Audio and Speech Benchmark](https://arxiv.org/abs/2406.14294)：在语音、通用音频和音乐的判别与生成任务上评测离散 audio token 是否保留音素、说话人和副语言信息。
+- [The Music Maestro or The Musically Challenged, A Massive Music Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2406.15885)：提供 ZIQI-Eval，包含 10 大类、56 个子类、超过 1.4 万条音乐问题，用于评测 LLM 的音乐理解和生成推理。
+- [AudioBench: A Universal Benchmark for Audio Large Language Models](https://arxiv.org/abs/2406.16020)（[榜单](https://huggingface.co/spaces/AudioLLMs/AudioBench-Leaderboard-Extend)）：用 8 项任务和 26 个数据集评测 AudioLLM，覆盖语音理解、音频场景理解以及声音和副语言理解。
+- [MSR-86K: An Evolving, Multilingual Corpus with 86,300 Hours of Transcribed Audio for Speech Recognition Research](https://arxiv.org/abs/2406.18301)：提供 86,300 小时持续演进的多语转写音频，用于 ASR 研究，强调大规模语料扩展而非固定小测试集。
+- [FMSG-JLESS Submission for DCASE 2024 Task4 on Sound Event Detection with Heterogeneous Training Dataset and Potentially Missing Labels](https://arxiv.org/abs/2407.00291)：报告 DCASE 2024 Task 4 异构、缺标签声音事件检测系统，结合域泛化、音频 transformer 和卷积特征。
+- [AudioTime: A Temporally-aligned Audio-text Benchmark Dataset](https://arxiv.org/abs/2407.02857)：提供带时间对齐的音频事件文本标注，使文生音频系统能按时间戳控制事件，而不只匹配整段 caption。
+- [Probing the Feasibility of Multilingual Speaker Anonymization](https://arxiv.org/abs/2407.02937)：评估多语种说话人匿名化的可行性。
+- [YourMT3+: Multi-Instrument Music Transcription with Enhanced Transformer Architectures and Cross-Dataset STEM Augmentation](https://arxiv.org/abs/2407.04822)：用增强 Transformer 架构和跨数据集 STEM 增广评测多乐器音乐转写，扩展音乐音频转写 benchmark。
+- [A Benchmark for Multi-Speaker Anonymization](https://arxiv.org/abs/2407.05608)：定义同一录音中多说话人匿名化评测，同时考察隐私保护、说话人相关攻击和 ASR 可用性。
+- [VoxBlink2: A 100K+ Speaker Recognition Corpus and the Open-Set Speaker-Identification Benchmark](https://arxiv.org/abs/2407.11510)：发布 10 万以上说话人的语料和 open-set speaker identification benchmark，用于含未知说话人的大规模识别。
+- [TTSDS - Text-to-Speech Distribution Score](https://arxiv.org/abs/2407.12707)：提出 TTS Distribution Score，从韵律、说话人身份、可懂度等因素比较合成语音与真实语音分布距离。
+- [MSceneSpeech: A Multi-Scene Speech Dataset For Expressive Speech Synthesis](https://arxiv.org/abs/2407.14006)：提供高质量中文表现力 TTS 数据集，按日常生活场景录制，包含多说话人和多种韵律风格。
+- [Overview of Speaker Modeling and Its Applications: From the Lens of Deep Speaker Representation Learning](https://arxiv.org/abs/2407.15188)：从说话人表征学习视角梳理识别、分离、合成和目标说话人提取等评测轴，而不是只新增单一数据集。
+- [The CHiME-8 DASR Challenge for Generalizable and Array Agnostic Distant Automatic Speech Recognition and Diarization](https://arxiv.org/abs/2407.16447)：定义联合 distant ASR 和 diarization 任务，压力来自任意说话人数、异构麦克风阵列和多样声学环境。
+- [Audio Entailment: Assessing Deductive Reasoning for Audio Understanding](https://arxiv.org/abs/2407.18062)：提出音频蕴含任务，测试音频语言模型能否基于音频证据做演绎判断，而不只做 caption 或 retrieval。
+- [VoxSim: A perceptual voice similarity dataset](https://arxiv.org/abs/2407.18505)：提供约 4.1 万个 VoxCeleb 语音对及感知说话人相似度评分，用于训练和验证语音合成相似度指标。
+- [MMTrail: A Multimodal Trailer Video Dataset with Language and Music Descriptions](https://arxiv.org/abs/2407.20962)：为预告片视频配套语言和音乐描述，用于评测多模态模型的音视频相关性和音乐语言 grounding。
+- [Can LLMs "Reason" in Music? An Evaluation of LLMs' Capability of Music Understanding and Generation](https://arxiv.org/abs/2407.21531)：用符号音乐理解和条件生成任务测试 LLM 在可编辑、交互式音乐创作中的多步推理能力。
+- [MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models](https://arxiv.org/abs/2408.01337)：通过对音乐输入的语言查询评测音频语言模型的音乐理解能力，目标超出通用音频 captioning。
+- [Contextual Cross-Modal Attention for Audio-Visual Deepfake Detection and Localization](https://arxiv.org/abs/2408.01532)：评测音视频深伪检测和定位，在跨模态分布差异下对齐被篡改的视觉和音频线索。
+- [The DeepSpeak Dataset](https://arxiv.org/abs/2408.05366)：发布身份相关的深伪视频和音频材料，面向冒名招聘等高风险场景，弥补低质量、过时取证训练集。
+- [Lyrics Transcription for Humans: A Readability-Aware Benchmark](https://arxiv.org/abs/2408.06370)：把歌词转写评测扩展到标点、排版、歌曲结构和主唱、和声可读性，而不只看词序准确率。
+- [Spoken Stereoset: on Evaluating Social Bias Toward Speaker in Speech Large Language Models](https://arxiv.org/abs/2408.07665)：把偏见评测改为 spoken input，测试说话人线索如何影响 Speech LLM 的 stereotype 与 anti-stereotype 判断。
+- [ASVspoof 5: Crowdsourced Speech Data, Deepfakes, and Adversarial Attacks at Scale](https://arxiv.org/abs/2408.08739)：用众包语音、深度伪造语音和大规模对抗攻击评测语音反欺骗能力。
+- [FLEURS-ASL: Including American Sign Language in Massively Multilingual Multitask Evaluation](https://arxiv.org/abs/2408.13585)：把 FLORES 和 FLEURS 扩展到由认证聋人译员翻译的美国手语视频，支持 ASL 与文本或语音语言 benchmark 之间的翻译评测。
+- [SpeechCraft: A Fine-Grained Expressive Speech Dataset with Natural Language Description](https://arxiv.org/abs/2408.13608)：构建带自然语言风格描述的细粒度表现力语音数据集，用自动标注系统支持语音风格理解和控制。
+- [A Preliminary Case Study on Long-Form In-the-Wild Audio Spoofing Detection](https://arxiv.org/abs/2408.14066)：在长时长、多说话人、复杂声学条件下压力测试 AASIST，而不是只用短时单说话人波形片段。
+- [SONICS: Synthetic Or Not - Identifying Counterfeit Songs](https://arxiv.org/abs/2408.14080)：把歌曲真实性检测定义为 counterfeit song benchmark，区分合成或篡改歌唱与真实录音。
+- [SVDD 2024: The Inaugural Singing Voice Deepfake Detection Challenge](https://arxiv.org/abs/2408.16132)（[结果](https://www.music-ir.org/mirex/wiki/2024:Singing_Voice_Deepfake_Detection_Results)）：记录首届歌声深伪检测挑战。
+- [AASIST3: KAN-Enhanced AASIST Speech Deepfake Detection using SSL Features and Additional Regularization for the ASVspoof 2024 Challenge](https://arxiv.org/abs/2408.17352)：报告 ASVspoof 2024 countermeasure 系统，把 AASIST3、SSL 特征、KAN 层和正则化用于合成语音与 VC 攻击检测。
+- [LibriheavyMix: A 20,000-Hour Dataset for Single-Channel Reverberant Multi-Talker Speech Separation, ASR and Speaker Diarization](https://arxiv.org/abs/2409.00819)：构建 2 万小时单通道混响多说话人混合语音，用于会议式场景下的分离、ASR 和说话人分离评测。
+- [IndicVoices-R: Unlocking a Massive Multilingual Multi-speaker Speech Corpus for Scaling Indian TTS](https://arxiv.org/abs/2409.05356)：通过降噪、说话人分离和质量过滤，把噪声较大的多语印度 ASR 数据转化为大规模多说话人 TTS 语料。
+- [VoiceWukong: Benchmarking Deepfake Voice Detection](https://arxiv.org/abs/2409.06348)：用 19 个商业工具、15 个开源工具生成的语音和 38 种真实生产环境变体评测 deepfake voice 检测器。
+- [The Voicemos Challenge 2024: Beyond Speech Quality Prediction](https://arxiv.org/abs/2409.07001)：定义 VoiceMOS 2024 三个赛道：高质量合成语音自然度、跨语言歌声或 VC 评分，以及带噪或增强语音的半监督质量预测。
+- [Salmon: A Suite for Acoustic Language Model Evaluation](https://arxiv.org/abs/2409.07437)：评测 acoustic language model 对背景噪声、情绪、说话人身份和房间脉冲响应的感知，而不只识别语音内容。
+- [OpenACE: An Open Benchmark for Evaluating Audio Coding Performance](https://arxiv.org/abs/2409.08374)：提供开放全频带音频和语音编码质量 benchmark，包含多种内容类型和 Opus、EVS、LC3、LC3-plus 可复现测试。
+- [LLM-Powered Grapheme-to-Phoneme Conversion: Benchmark and Case Study](https://arxiv.org/abs/2409.08554)：评测 LLM 的字素到音素转换能力，覆盖多音字和上下文相关读音，并探索无需额外标注数据的 prompting 与后处理。
+- [The Text-to-speech in the Wild (TITW) Database](https://arxiv.org/abs/2409.08711)：从 VoxCeleb1 自动转写、切分、增强和 DNSMOS 过滤得到 TITW-Hard、TITW-Easy，用于野外噪声 TTS 训练和评测。
+- [DFADD: The Diffusion and Flow-Matching Based Audio Deepfake Dataset](https://arxiv.org/abs/2409.08731)：收集 diffusion 和 flow-matching TTS 生成的 deepfake 音频，测试反欺骗系统能否处理 Voicebox 和 Seed-TTS 类生成器。
+- [The T05 System for the voicemos challenge 2024: Transfer Learning from Deep Image Classifier to Naturalness MOS Prediction of High-Quality Synthetic Speech](https://arxiv.org/abs/2409.09305)：描述 VoiceMOS 2024 Track 1 系统，将 SSL 语音特征与 spectrogram 图像特征融合来预测高质量合成语音自然度 MOS。
+- [A Study on Zero-shot Non-intrusive Speech Assessment using Large Language Models](https://arxiv.org/abs/2409.09914)：比较 GPT-4o 音频分析和 GPT-Whisper prompting 做零样本语音质量、可懂度评估，并与人类评分和 ASR 字符错误率对照。
+- [FakeMusicCaps: A Dataset for Detection and Attribution of Synthetic Music Generated via Text-to-Music Models](https://arxiv.org/abs/2409.10684)：提供面向文本到音乐模型生成合成音乐的检测与归因数据。
+- [Simulating Native Speaker Shadowing for Nonnative Speech Assessment with Latent Speech Representations](https://arxiv.org/abs/2409.11742)：用语音转换和潜在语音表征模拟母语者 shadowing，以超越 WER 的方式评估二语语音可懂度。
+- [ASR Benchmarking: Need for a More Representative Conversational Dataset](https://arxiv.org/abs/2409.12042)：构建来自 TalkBank 的多语会话 ASR 数据集，显示停顿、打断、disfluency 和口音变化会显著拉低 WER。
+- [Codec-Superb @ SLT 2024: A Lightweight Benchmark For Neural Audio Codec Models](https://arxiv.org/abs/2409.14085)：定义轻量 Codec-SUPERB challenge，在语音任务上比较神经 audio codec 低比特率下的内容、说话人和副语言保真度。
+- [LlamaPartialSpoof: An LLM-Driven Fake Speech Dataset Simulating Disinformation Generation](https://arxiv.org/abs/2409.14743)：构建 130 小时 LLM 驱动假语音数据集，包含全伪造和局部 voice-cloned 编辑，用攻击者动机场景暴露 countermeasure 弱点。
 - [OmniBench](https://arxiv.org/abs/2409.15272)（[开源代码](https://github.com/multimodal-art-projection/OmniBench)，[数据集](https://huggingface.co/datasets/m-a-p/OmniBench)）：评什么：omni-language models 的视觉、听觉和文本三模态理解。核心思想：检查模型能否同时识别、解释并推理多种模态，而不是把多模态评测局限为图文任务。
+- [ESPnet-Codec: Comprehensive Training and Evaluation of Neural Codecs For Audio, Music, and Speech](https://arxiv.org/abs/2409.15897)：提供基于 ESPnet 的 codec recipe，在统一条件下训练和评测音频、音乐、语音下游场景中的神经 codec。
+- [Enabling Auditory Large Language Models for Automatic Speech Quality Evaluation](https://arxiv.org/abs/2409.16644)：微调 auditory LLM 预测 MOS、说话人相似度和 A/B 偏好，并生成噪声、失真等自然语言质量描述。
+- [Did You Hear That? Introducing AADG: A Framework for Generating Benchmark Data in Audio Anomaly Detection](https://arxiv.org/abs/2410.03904)：把 LLM 用作 world model 合成更广泛的真实音频异常检测和定位场景，超出工业机器声音数据集。
+- [Efficiently Identifying Low-Quality Language Subsets in Multilingual Datasets: A Case Study on a Large-Scale Multilingual Audio Dataset](https://arxiv.org/abs/2410.04292)：提出 Preference Proportion Test，只需每个语言子集约 20 个标注样本即可发现多语转写音频中的低质量语言子集。
+- [Bahasa Harmony: A Comprehensive Dataset for Bahasa Text-to-Speech Synthesis with Discrete Codec Modeling of EnGen-TTS](https://arxiv.org/abs/2410.06608)：发布约 55 小时、5.2 万条 Bahasa TTS 录音，并提供 EnGen-TTS 基线和 MOS 评测。
+- [SCOREQ: Speech Quality Assessment with Contrastive Regression](https://arxiv.org/abs/2410.06675)：用 triplet-loss 对比回归做无参考 MOS 预测，并在多类语音质量数据集上检验跨领域泛化。
+- [MLPerf Power: Benchmarking the Energy Efficiency of Machine Learning Systems from μWatts to MWatts for Sustainable AI](https://arxiv.org/abs/2410.12032)：定义从微瓦级设备到数据中心的 MLPerf Power 能效测量规则，覆盖推理 workload，而不是单纯语音准确率 benchmark。
+- [Sound Check: Auditing Audio Datasets](https://arxiv.org/abs/2410.13114)：审计音频数据集，揭示语音和音频模型的数据质量、来源和评测风险。
+- [Can Large Audio-Language Models Truly Hear? Tackling Hallucinations with Multi-Task Assessment and Stepwise Audio Reasoning](https://arxiv.org/abs/2410.16130)：用 object existence、temporal order 和 object attribute 三类任务评测音频幻觉，并加入分步音频推理提示。
+- [VoiceBench: Benchmarking LLM-Based Voice Assistants](https://arxiv.org/abs/2410.17196)：在真实语音交互场景中评测基于 LLM 的语音助手，压力来自说话人、环境和内容变化，而不只考干净 ASR 或文本知识。
+- [Challenge on Sound Scene Synthesis: Evaluating Text-to-Audio Generation](https://arxiv.org/abs/2410.17589)：定义 DCASE 2024 Sound Scene Synthesis challenge，用结构化提示、Fréchet Audio Distance 和感知评分评测文生音频可控性。
+- [MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark](https://arxiv.org/abs/2410.19168)（[排行榜](https://sakshi113.github.io/mmau_homepage/)）：提供 1 万个覆盖语音、环境声和音乐的音频片段及人工问答，要求模型展示 27 类感知和推理技能。
+- [MOS-Bench: Benchmarking Generalization Abilities of Subjective Speech Quality Assessment Models](https://arxiv.org/abs/2411.03715)：汇集 8 个训练集和 17 个测试集，专门衡量主观语音质量评估和 MOS 预测模型的域外泛化。
+- [Performance Evaluation of SLAM-ASR: The Good, the Bad, the Ugly, and the Way Forward](https://arxiv.org/abs/2411.03866)：在域迁移和语音扰动下压力测试 SLAM-ASR connector 架构，分析语音 encoder 接 LLM 的 ASR 何时稳健。
+- [ParaLBench: A Large-Scale Benchmark for Computational Paralinguistics Over Acoustic Foundation Models](https://arxiv.org/abs/2411.09349)：统一 10 个数据集上的 13 个副语言任务，评测 14 个 acoustic foundation model，覆盖情绪、健康、年龄、性别和时间尺度特征。
+- [Rethinking MUSHRA: Addressing Modern Challenges in Text-to-Speech Evaluation](https://arxiv.org/abs/2411.12719)：诊断现代 TTS 评测中的 MUSHRA 参考偏置和评分歧义，并发布含 24.6 万个人类评分的 Hindi、Tamil MANGO 数据集。
+- [AudioSetCaps: An Enriched Audio-Caption Dataset Using Automated Generation Pipeline With Large Audio and Language Models](https://arxiv.org/abs/2411.18953)：用音频语言模型抽取、LLM captioning 和 CLAP 精炼生成 190 万 AudioSet caption 对，并扩展 410 万合成音频语言对。
+- [Circumventing shortcuts in audio-visual deepfake detection datasets with unsupervised learning](https://arxiv.org/abs/2412.00175)：指出常用音视频 deepfake 数据集中 leading silence 可被检测器作为捷径，并评测无监督去捷径方法。
+- [The Codec Language Model-Based Zero-Shot Spontaneous Style TTS System for CoVoC Challenge 2024](https://arxiv.org/abs/2412.01100)：报告 CoVoC 2024 自发风格 zero-shot TTS 系统，使用 LLaMA codec language model、delay pattern 和 classifier-free guidance。
+- [AV-Odyssey Bench: Can Your Multimodal LLMs Really Understand Audio-Visual Information?](https://arxiv.org/abs/2412.02611)：在 DeafTest 暴露响度、音高失败后，用数千个片段评测 MLLM 的音视频理解和多模态推理。
+- [ASR-EC Benchmark: Evaluating Large Language Models on Chinese ASR Error Correction](https://arxiv.org/abs/2412.03075)：评测大语言模型在中文 ASR 错误纠正中的能力。
+- [Benchmarking Open-ended Audio Dialogue Understanding for Large Audio-Language Models](https://arxiv.org/abs/2412.05167)：提出 ADU-Bench，包含 2 万余个开放式音频对话，覆盖 3 类场景、12 项技能、9 种语言和由语调、停顿、同音词造成的歧义。
+- [2M-BELEBELE: Highly Multilingual Speech and American Sign Language Comprehension Dataset](https://arxiv.org/abs/2412.08274)：把理解评测扩展到高度多语言语音和美国手语。
+- [Speak & Improve Corpus 2025: an L2 English Speech Corpus for Language Assessment and Feedback](https://arxiv.org/abs/2412.11986)：收录约 315 小时二语英语自发口语，包含整体评分、转写、错误标签和能力反馈相关标注。
+- [Explainable detection of machine generated music and early systematic evaluation](https://arxiv.org/abs/2412.13421)：研究机器生成音乐的可解释检测与早期系统评测。
+- [Open Universal Arabic ASR Leaderboard](https://arxiv.org/abs/2412.13788)（[榜单](https://huggingface.co/spaces/elmresearchcenter/open_universal_arabic_asr_leaderboard)）：建立开放阿拉伯语 ASR 连续排行榜，跨多方言数据集报告鲁棒性、说话人适应、推理效率和内存占用。
+- [VERSA: A Versatile Evaluation Toolkit for Speech, Audio, and Music](https://arxiv.org/abs/2412.17667)：提供 Python 评测工具包，含 65 个指标和 729 种配置变体，可利用参考音频、转写、caption 和非参考音频评测语音、音频、音乐。
+- [Are audio DeepFake detection models polyglots?](https://arxiv.org/abs/2412.17924)：通过比较英文训练检测器、同语言适配和跨语言适配策略，评测多语 audio deepfake 检测能力。
+- [Audiopedia: Audio QA with Knowledge](https://arxiv.org/abs/2412.20619)：定义知识密集型音频问答，包含单音频、多音频和检索增强子任务，要求外部知识推理与音频理解结合。
+- [Development of a code-switched Hindi-Marathi dataset and transformer-based architecture for enhanced speech recognition using dynamic switching algorithms](https://doi.org/10.1016/j.apacoust.2024.110408)：构建印地语-马拉地语代码切换语音数据集并提供 Transformer ASR 基线，扩展混合语言语音评测。
+- [Speech quality evaluation of neural audio codecs](https://doi.org/10.21437/interspeech.2024-1072)：评估神经音频编解码器的语音质量。
+- [PolyWER: A Holistic Evaluation Framework for Code-Switched Speech Recognition](https://doi.org/10.18653/v1/2024.findings-emnlp.356)：提供 code-switched 语音识别的整体评估框架。
+- [MADD: A Multi-Lingual Multi-Speaker Audio Deepfake Detection Dataset](https://doi.org/10.1109/iscslp63861.2024.10800535)：提供多语言、多说话人 audio deepfake 检测数据集，用于测试检测器在语言和说话人变化下的鲁棒性。
+- [Floras 50: A Massively Multilingual Multitask Benchmark for Long-Form Conversational Speech](https://doi.org/10.1109/slt61566.2024.10832167)：在 50 种语言和多任务上评测长篇会话语音，压力来自多语对话而非短篇朗读语音。
+- [Zh-Paral: Benchmark Dataset for Comprehension of Chinese Paralinguistic Speech](https://doi.org/10.1109/iscslp63861.2024.10800328)：评测中文副语言语音理解，重点是非词汇线索而非单纯转写内容。
+- [SunoCaps: A novel dataset of text-prompt based AI-generated music with emotion annotations](https://doi.org/10.1016/j.dib.2024.110743)：发布基于文本提示生成的 AI 音乐和情绪标注，用于评测合成音乐情感与提示条件生成。
+- [ASVspoof 5 Challenge: advanced ResNet architectures for robust voice spoofing detection](https://doi.org/10.21437/asvspoof.2024-24)：报告 ASVspoof 5 robust voice spoofing 检测实验，用 advanced ResNet 处理 deepfake 和对抗攻击条件。
+- [Acoustic features analysis for explainable machine learning-based audio spoofing detection](https://doi.org/10.1016/j.cviu.2024.104145)：分析可解释音频 spoofing 检测中的声学特征，说明哪些信号线索驱动机器学习 countermeasure。
+- [CORAAL QA: A Dataset and Framework for Open Domain Spontaneous Speech Question Answering from Long Audio Files](https://doi.org/10.1109/icassp48485.2024.10447109)：构建长篇自发 CORAAL 语音上的开放域问答，测试模型直接从扩展会话音频回答问题。
+- [Anti-spoofing Ensembling Model: Dynamic Weight Allocation in Ensemble Models for Improved Voice Biometrics Security](https://doi.org/10.21437/interspeech.2024-403)：评测用于 voice biometric spoofing 的动态权重 ensemble countermeasure，提供具体反欺骗基线。
+- [Evaluation of Objective Quality Models on Neural Audio Codecs](https://doi.org/10.1109/iwaenc61483.2024.10694655)：比较客观质量模型在神经音频 codec 输出上的表现，检验自动指标是否追踪 codec 语音劣化。
+- [Capsule Networks and LSTM Models for Robust Deepfake Detection in Audio and Video](https://doi.org/10.1109/icicnis64247.2024.10823109)：评测 capsule network 和 LSTM 做音视频 deepfake 检测，关注多模态鲁棒性而非转写准确率。
+- [EnvFake: An Initial Environmental-Fake Audio Dataset for Scene-Consistency Detection](https://doi.org/10.1109/iscslp63861.2024.10799995)：提出面向场景一致性检测的环境伪造音频，把 deepfake 评测从人声扩展到非语音声景。
+- [PPX-Anon: Prosody, Pitch and X-Vectors for De-Anonymization; our submission to the Voice Attacker Challenge 2024](https://doi.org/10.21437/spsc.2025-10)：报告 Voice Attacker Challenge 2024 去匿名化系统，利用韵律、音高和 x-vector 攻击语音匿名化。
+- [Unveiling the Linguistic Capabilities of a Self-Supervised Speech Model Through Cross-Lingual Benchmark and Layer- Wise Similarity Analysis](https://doi.org/10.1109/access.2024.3428364)：通过跨语言 benchmark 和逐层相似度分析，探测自监督语音模型编码了哪些语言信息。
+- [Contextual Interactive Evaluation of TTS Models in Dialogue Systems](https://doi.org/10.21437/interspeech.2024-1008)：在对话系统上下文中评测 TTS，测试合成回复是否契合会话语境，而不是孤立句子的自然度。
+- [Analysis of Subjective Evaluation of Al Speech Synthesis Emotional Expressiveness](https://doi.org/10.1109/snpd61259.2024.10673914)：分析听众对 AI 语音合成情绪表现力的主观评价，关注情感质量而不是 ASR 式正确性。
+- [The Affective Audio Dataset (AAD) for Non-Musical, Non-Vocalized, Audio Emotion Research](https://doi.org/10.1109/taffc.2024.3437153)：提供非音乐、非发声的情感音频数据，用于把环境声情感研究与语音或音乐情绪区分开。
+- [EvCSLR: Event-Guided Continuous Sign Language Recognition and Benchmark](https://doi.org/10.1109/tmm.2024.3521750)：定义事件引导的连续手语识别 benchmark，用事件线索评测与口语理解相邻的视觉手语序列。
+- [A Large-Scale Probing Analysis of Speaker-Specific Attributes in Self-Supervised Speech Representations](https://arxiv.org/abs/2501.05310)：探测 11 个语音 SSL 模型中的说话人身份、声学、韵律和副语言属性，显示中层与深层仍保留说话人特异线索。
+- [Fleurs-SLU: A Massively Multilingual Benchmark for Spoken Language Understanding](https://arxiv.org/abs/2501.06117)：把 FLEURS 扩展为口语语言理解评测，覆盖 102 种语言的主题分类和 92 种语言的听力理解多选问答。
+- [CodecFake+: A Large-Scale Neural Audio Codec-Based Deepfake Speech Dataset](https://arxiv.org/abs/2501.08238)：提供大规模基于神经音频 codec 的深伪语音数据集，把语音真实性评测扩展到 codec 生成伪迹。
 - [MusicEval](https://arxiv.org/abs/2501.10811)：用专家评分样本评测文生音乐生成。核心思想：以专业音乐判断支撑生成音乐质量与提示对齐的自动评测，补充 TTA-Bench 旁边的音频生成评测空白。
+- [DOTA-ME-CS: Daily Oriented Text Audio-Mandarin English-Code Switching Dataset](https://arxiv.org/abs/2501.12122)：评测语音与音频模型的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Generative Data Augmentation Challenge: Synthesis of Room Acoustics for Speaker Distance Estimation](https://arxiv.org/abs/2501.13250)：定义 ICASSP 2025 房间脉冲响应生成挑战，评测合成房间声学能否提升说话人距离估计，并提供数据集与评测代码。
 - [Jailbreak-AudioBench](https://arxiv.org/abs/2501.13772)：评测 large audio-language models 的 jailbreak 威胁。核心思想：测试有害请求是否能通过语音或音频通道变化绕过安全机制，把安全评测从纯文本 jailbreak prompts 扩展到音频模态。
+- [Generalizable Audio Deepfake Detection via Latent Space Refinement and Augmentation](https://arxiv.org/abs/2501.14240)：在 ASVspoof 2019 LA、ASVspoof 2021 LA 等未见攻击设置上评测音频深伪检测泛化，并使用潜空间细化与增强。
+- [AVE Speech: A Comprehensive Multimodal Dataset for Speech Recognition Integrating Audio, Visual, and Electromyographic Signals](https://arxiv.org/abs/2501.16780)：发布普通话语音识别数据集，包含 100 名说话人的音频、唇部视频、六通道 EMG 和 100 句语料朗读。
+- [Sagalee: an Open Source Automatic Speech Recognition Dataset for Oromo Language](https://arxiv.org/abs/2502.00421)：构建开源 Oromo 语 ASR 数据集，包含众包音频、转写以及 Conformer 和 Whisper 识别基线。
+- [Distillation and Pruning for Scalable Self-Supervised Representation-Based Speech Quality Assessment](https://arxiv.org/abs/2502.05356)：基于 XLS-R-SQA、10 万余条 MOS 标注片段和伪标注退化语音，评测蒸馏与剪枝后的非侵入式语音质量预测器。
+- [ShiftySpeech: A Large-Scale Synthetic Speech Dataset with Distribution Shifts](https://arxiv.org/abs/2502.05674)：构建带分布漂移的合成语音检测基准，覆盖说话人、情绪、语言、声学条件以及新 TTS 或 vocoder 的变化。
+- [Evaluation of Deep Audio Representations for Hearables](https://arxiv.org/abs/2502.06664)：发布 DEAR，含 1,158 条空间混合的 30 秒音频，并设置 8 个 hearable 任务评测上下文、语音源和声学场景属性。
+- [ASVspoof 5: Design, collection and validation of resources for spoofing, deepfake, and adversarial attack detection using crowdsourced speech](https://arxiv.org/abs/2502.08857)：构建众包语音资源，用于 spoofing、deepfake 与对抗攻击检测，把合成音频取证评测扩展到 codec-only 和单一生成器数据集之外。
+- [KAD: No More FAD! An Effective and Efficient Evaluation Metric for Audio Generation](https://arxiv.org/abs/2502.15602)：提出基于 MMD 的 Kernel Audio Distance，作为不依赖高斯假设的生成音频分布指标，并用扰动和生成音频评测验证。
+- [CS-Dialogue: A 104-Hour Dataset of Spontaneous Mandarin-English Code-Switching Dialogues for Speech Recognition](https://arxiv.org/abs/2502.18913)：发布 104 小时中英 code-switching 自发对话语音识别数据集。
+- [DeePen: Penetration Testing for Audio Deepfake Detection](https://arxiv.org/abs/2502.20427)：给出音频深伪检测器的黑盒渗透测试协议，用 time-stretching、echo 等信号处理攻击暴露模型脆弱性。
 - [Talking Turns](https://arxiv.org/abs/2503.01174)：评测音频基础模型的对话轮转动态。核心思想：用轮转事件判别器和用户研究协议，测试语音对话系统能否避免过度重叠或沉默，并处理会话发言权切换。
+- [Good practices for evaluation of synthesized speech](https://arxiv.org/abs/2503.03250)：给出语音合成论文评审用的评测指南，强调听测设计、常见指标陷阱，以及与 paper kit 评测要求的一致性。
 - [Full-Duplex-Bench](https://arxiv.org/abs/2503.04721)：评测全双工口语对话模型的轮次转换能力。核心思想：检查语音系统能否同时听与说、适当打断并管理话轮变化，而不是只按孤立回合回应。
 - [S2S-Arena](https://arxiv.org/abs/2503.05085)：评测 speech-to-speech 模型的副语言指令遵循能力。核心思想：检查口语对话系统能否按语气、韵律、情绪等非词汇线索执行指令，而不只是保持转写文本内容。
+- [Accompaniment Prompt Adherence: A measure for evaluating music accompaniment systems](https://arxiv.org/abs/2503.06346)：定义 APA 这一基于 CLAP embedding 分布的指标，用扰动实验和听测评估伴奏生成是否遵循条件音频 prompt。
+- [Targeted Data Poisoning for Black-Box Audio Datasets Ownership Verification](https://arxiv.org/abs/2503.10269)：把 data taggants 迁移到 Speech Commands 和 ESC-50，通过约 1% 音频投毒与 top-k 预测查询验证黑盒模型是否使用受保护数据训练。
+- [Aligning Text-to-Music Evaluation with Human Preferences](https://arxiv.org/abs/2503.16669)：评测 ASR、语音语言模型、空间音频或音频生成能力。
 - [QualiSpeech](https://arxiv.org/abs/2503.20290)（数据集：[tsinghua-ee/QualiSpeech](https://huggingface.co/datasets/tsinghua-ee/QualiSpeech)）：评什么：auditory LLM 的低层语音质量理解。核心思想：用覆盖 11 类噪声与失真维度的自然语言质量描述和推理，补充单一音频分数式评测。
+- [Perceptually Accurate 3D Talking Head Generation: New Definitions, Speech-Mesh Representation, and Evaluation Metrics](https://arxiv.org/abs/2503.20308)：用学习到的 speech-mesh 表征定义语音驱动 3D talking head 的时序同步、唇读可读性和表现力指标。
 - [FinAudio](https://arxiv.org/abs/2503.20990)：评测 audio LLM 在财报电话会、CEO 演讲等金融语音任务中的能力。核心思想：测试模型能否处理领域语音、情绪和事件推理，而不只是在干净的通用音频 QA 上表现良好。
+- [Deep Audio Watermarks are Shallow: Limitations of Post-Hoc Watermarking Techniques for Speech](https://arxiv.org/abs/2504.10782)：评估后置语音水印技术的局限，为合成语音检测和水印评测补充来源证明与鲁棒性压力测试视角。
+- [Benchmarking Audio Deepfake Detection Robustness in Real-World Communication Scenarios](https://arxiv.org/abs/2504.12423)：引入 ADD-C，在 codec 压缩、信道传输和丢包等真实通信条件下压力测试音频深伪检测器。
 - [OmniAudio](https://arxiv.org/abs/2504.14906)：评测从 360 度视频生成空间音频的能力，配套 Sphere360/Sphere360-Bench。核心思想是把全景视频与一阶 ambisonic 空间音频配对，使音频生成系统不仅按音质评分，也按空间接地和时序对齐来比较。
+- [Chinese-LiPS: A Chinese Audio-Visual Speech Recognition Dataset with Lip-Reading and Presentation Slides](https://arxiv.org/abs/2504.15066)：提供 100 小时中文 AVSR 数据，包含语音、唇部视频、演示文稿视觉上下文和人工转写，用于评测视觉线索融合。
+- [BERSting at the Screams: A Benchmark for Distanced, Emotional and Shouted Speech Recognition](https://arxiv.org/abs/2505.00059)：记录 98 名演员近 4 小时英语语音，覆盖手机位置、家庭声学环境、情绪、口音以及喊叫和普通说话条件。
+- [BLAB: Brutally Long Audio Bench](https://arxiv.org/abs/2505.03054)：用长篇会话音频评测 audio LM 的定位、时长估计、情绪和计数能力，超出 30 秒以内短音频片段设置。
+- [Multi-Domain Audio Question Answering Benchmark toward Acoustic Content Reasoning](https://arxiv.org/abs/2505.07365)：通过跨领域音频问答评测声学内容推理，为语音页面补充转写和生成之外的评测轴。
+- [SingNet: Towards a Large-Scale, Diverse, and In-the-Wild Singing Voice Dataset](https://arxiv.org/abs/2505.09325)：从 sample packs 和互联网歌曲整理约 3,000 小时多语、多风格野外歌声，用于 singing voice synthesis 和 voice conversion。
+- [The Voice Timbre Attribute Detection 2025 Challenge Evaluation Plan](https://arxiv.org/abs/2505.09382)：定义比较式 voice timbre attribute challenge，用 bright、coarse、soft、magnetic 等感知描述词解释成对声音差异。
+- [CAMEO: Collection of Multilingual Emotional Speech Corpora](https://arxiv.org/abs/2505.11051)：整理多语情绪语音语料，形成可复现实验的 speech emotion recognition benchmark，覆盖不同语言和情感状态。
+- [Granary: Speech Recognition and Translation Dataset in 25 European Languages](https://arxiv.org/abs/2505.13404)：提供多语言语音识别与翻译数据集，适合语音语言能力评测。
+- [S2SBench: A Benchmark for Quantifying Intelligence Degradation in Speech-to-Speech Large Language Models](https://arxiv.org/abs/2505.14438)：把文本 LLM 任务转为直接语音输入和音频 token 输出，量化 speech-to-speech LLM 的推理与生成能力退化。
 - [Vox-Profile](https://arxiv.org/abs/2505.14648)：评测语音基础模型对多样说话人与语音特征的刻画能力。核心思想：诊断 audio-language model 是否能识别说话人属性、发声状态和语音特征，而不是把语音输入简化为文字。
+- [Hybrid Audio Detection Using Fine-Tuned Audio Spectrogram Transformers: A Dataset-Driven Evaluation of Mixed AI-Human Speech](https://arxiv.org/abs/2505.15136)：构建并评测人声与克隆语音混合片段，面向真实攻击中拼接真音频和合成音频的检测场景。
+- [Spoken Language Understanding Unlearning Benchmark](https://arxiv.org/abs/2505.15700)：评估 spoken language understanding 中的机器遗忘能力与保留能力。
+- [MIKU-PAL: An Automated and Standardized Multi-Modal Method for Speech Paralinguistic and Affect Labeling](https://arxiv.org/abs/2505.15772)：从未标注视频自动抽取情绪语音，并标准化副语言和情感标签，用于语音合成数据构建。
 - [AudioTrust](https://arxiv.org/abs/2505.16211)：评测音频大语言模型的多维可信性。核心思想：围绕安全性、鲁棒性、隐私和可靠性等维度评估音频语言系统，而不是只把音频能力等同于识别准确率或感知质量。
+- [HPP-Voice: A Large-Scale Evaluation of Speech Embeddings for Multi-Phenotypic Classification](https://arxiv.org/abs/2505.16490)：使用 Human Phenotype Project Voice corpus 评测语音 embedding 是否能从副语言线索预测多种生理和神经表型。
 - [JALMBench](https://arxiv.org/abs/2505.17568)：评测大音频语言模型的 jailbreak 脆弱性。核心思想：用大规模文本和音频样本、多个攻击方法、主流 LALM 与防御机制组成统一评测框架，使音频 jailbreak 鲁棒性能系统比较。
+- [CHSER: A Dataset and Case Study on Generative Speech Error Correction for Child ASR](https://arxiv.org/abs/2505.18463)：提供儿童语音 ASR 错误纠正数据和案例研究，针对儿童声学与语言变异造成的转写失败。
 - [SpokenNativQA](https://arxiv.org/abs/2505.19163)：用约 33,000 个自然口语、文化对齐的问题评测多语种 spoken QA。核心思想：直接衡量语音输入、口音和低资源口语场景下的模型表现，而不是把多语种 QA 默认简化为文本输入。
+- [EnvSDD: Benchmarking Environmental Sound Deepfake Detection](https://arxiv.org/abs/2505.19203)：评测环境声音深度伪造检测，扩展到非人声的音频真实性场景。
+- [A Comprehensive Real-World Assessment of Audio Watermarking Algorithms: Will They Survive Neural Codecs?](https://arxiv.org/abs/2505.19663)：评估音频水印算法能否经受真实神经编解码器变换，扩展语音溯源评测场景。
+- [ALAS](https://arxiv.org/abs/2505.19937)：提出 Automatic Latent Alignment Score，通过逐层测量音频与文本表征相关性来评估多模态 LLM 在口语语言理解中的语音-文本对齐。
+- [Towards Emotionally Consistent Text-Based Speech Editing: Introducing EmoCorrector and The ECD-TSE Dataset](https://arxiv.org/abs/2505.20341)：提出 ECD-TSE 数据集，要求文本式语音编辑在替换内容时保持情绪一致，并用 EmoCorrector 修复编辑后的情感偏移。
+- [ReverbFX: A Dataset of Room Impulse Responses Derived from Reverb Effect Plugins for Singing Voice Dereverberation](https://arxiv.org/abs/2505.20533)：发布来自 reverb effect plugins 的房间脉冲响应，用多样人工房间声学评测歌声去混响。
 - [EmergentTTS-Eval](https://arxiv.org/abs/2505.23009)：评测 TTS 模型在复杂韵律、表现力和语言挑战上的能力；核心思想是用 model-as-a-judge protocol 衡量普通可懂度或自然度分数之外的语音生成行为。
+- [AISHELL-5: The First Open-Source In-Car Multi-Channel Multi-Speaker Speech Dataset for Automatic Speech Diarization and Recognition](https://arxiv.org/abs/2505.23036)：发布开放的车载中文多通道、多说话人语音数据集，包含环境噪声与可复现 ASR、diarization baseline，用于真实驾驶场景评测。
+- [Interspeech 2025 URGENT Speech Enhancement Challenge](https://arxiv.org/abs/2505.23212)（[排行榜](https://urgent-challenge.github.io/urgent2025/leaderboard/)）：定义 universal speech enhancement 赛道，覆盖多类失真、领域和评测指标，并用公开 leaderboard 报告参赛系统。
+- [CASPER: A Large Scale Spontaneous Speech Dataset](https://arxiv.org/abs/2506.00267)：发布大规模自发语音数据，用于评测识别和口语语言模型在非朗读、非提示语音上的表现。
+- [XMAD-Bench: Cross-Domain Multilingual Audio Deepfake Benchmark](https://arxiv.org/abs/2506.00462)：提供跨领域多语音频深伪基准，在训练和测试划分中区分说话人、生成方法和真实音频来源，以更接近真实场景地评测检测器。
+- [FUSE: Universal Speech Enhancement using Multi-Stage Fusion of Sparse Compression and Token Generation Models for the URGENT 2025 Challenge](https://arxiv.org/abs/2506.00809)：报告 URGENT 2025 语音增强系统，将 sparse compression、source separation 和 token generation 多阶段融合处理噪声或失真语音。
+- [Crowdsourcing MUSHRA Tests in the Age of Generative Speech Technologies: A Comparative Analysis of Subjective and Objective Testing Methods](https://arxiv.org/abs/2506.00950)：比较众包 MUSHRA 听测与客观指标，用于可扩展地发现生成语音中的细微质量伪影。
+- [LLM in the Loop: Creating the ParaDeHate Dataset for Hate Speech Detoxification](https://arxiv.org/abs/2506.01484)：构建 ParaDeHate 平行仇恨言论 detoxification 文本数据集，使用 LLM 辅助改写和过滤；该任务是文本安全而非音频语音评测。
+- [Lessons Learned from the URGENT 2024 Speech Enhancement Challenge](https://arxiv.org/abs/2506.01611)：复盘 URGENT 2024 universal speech enhancement challenge，分析多类失真、多领域数据、综合指标和鲁棒性缺口。
+- [Benchmarking Neural Speech Codec Intelligibility with SITool](https://arxiv.org/abs/2506.01731)：用 SITool 评测神经语音 codec 的可懂度，关注压缩后语音是否仍能被理解，而不只看声学相似度。
+- [Unveiling Audio Deepfake Origins: A Deep Metric learning And Conformer Network Approach With Ensemble Fusion](https://arxiv.org/abs/2506.02085)：评测音频 deepfake 来源追踪，结合 metric-learning loss、Conformer 分类和 ensemble fusion 识别生成系统。
 - [SOVA-Bench](https://arxiv.org/abs/2506.02457)：评测基于 LLM 的语音助手对话能力。核心思想：在同一语音助手协议中同时评估通用知识、语音识别与理解、语义回复质量和声学生成质量。
+- [A Multi-Dialectal Dataset for German Dialect ASR and Dialect-to-Standard Speech Translation](https://arxiv.org/abs/2506.02894)：提出 Betthupferl 数据集，覆盖 Franconian、Bavarian、Alemannic 和标准德语朗读语音，用于方言 ASR 与方言到标准德语翻译。
+- [HiFiTTS-2: A Large-Scale High Bandwidth Speech Dataset](https://arxiv.org/abs/2506.04152)：从 LibriVox 构建高带宽 TTS 语料，包含约 36.7k 小时 22.05 kHz 和 31.7k 小时 44.1 kHz 语音及处理诊断。
 - [MMSU](https://arxiv.org/abs/2506.04779)：评测多任务口语理解与推理。核心思路是检查全模态或音频语言模型能否直接围绕语音输入推理，而不只是依赖转写文本。
+- [Towards Generalized Source Tracing for Codec-Based Deepfake Speech](https://arxiv.org/abs/2506.07294)：可作为语音与音频模型的 Bench 候选：围绕 Towards Generalized Source Tracing for Codec-Based Deepfake Speech 提供可比较的评测任务、数据或分析协议。
+- [A Study on Speech Assessment with Visual Cues](https://arxiv.org/abs/2506.09549)：在无干净参考信号时，用双分支模型融合 STFT 音频特征与视觉 embedding 来预测 PESQ 和 STOI。
+- [Unmasking real-world audio deepfakes: A data-centric approach](https://arxiv.org/abs/2506.09606)：引入真实世界音频 deepfake 数据集，并评估数据中心策略对检测器鲁棒性的提升。
+- [EmoNet-Voice: A Fine-Grained, Expert-Verified Benchmark for Speech Emotion Detection](https://arxiv.org/abs/2506.09827)：结合覆盖 40 类情绪的 5,000 小时多语预训练集和专家验证评测数据，用于细粒度 speech emotion detection。
+- [Description and Discussion on DCASE 2025 Challenge Task 4: Spatial Semantic Segmentation of Sound Scenes](https://arxiv.org/abs/2506.10676)（[结果](https://dcase.community/challenge2025/task-spatial-semantic-segmentation-of-sound-scenes-results)）：定义 DCASE 2025 S5，把多通道混合音频分离为干声对象信号，并输出类别标签和 6DoF 空间元数据。
+- [Improving Speech Enhancement with Multi-Metric Supervision from Learned Quality Assessment](https://arxiv.org/abs/2506.12260)：用 learned speech-quality assessment 指标监督语音增强训练，评测指标引导是否能提升失真语音的感知质量。
+- [M3SD: Multi-modal, Multi-scenario and Multi-language Speaker Diarization Dataset](https://arxiv.org/abs/2506.14427)：通过音视频伪标注构建多模态、多场景、多语言 diarization 数据集，提升说话人边界和说话人数鲁棒性评测。
 - [InstructTTSEval](https://arxiv.org/abs/2506.16381)：评测 TTS 系统对复杂自然语言指令的遵循能力；核心思想是检查语音生成器是否能满足风格、韵律、说话人和内容指令，而不只是生成可懂音频。
+- [Aligning ASR Evaluation with Human and LLM Judgments: Intelligibility Metrics Using Phonetic, Semantic, and NLI Approaches](https://arxiv.org/abs/2506.16528)：比较 WER、CER 与音素、语义和 NLI 式可懂度指标，面向 exact word match 低估人类理解的构音障碍和发声障碍语音。
+- [Vo-Ve: An Explainable Voice-Vector for Speaker Identity Evaluation](https://arxiv.org/abs/2506.19446)：提出可解释 speaker-identity vector，以显式声音属性概率作为维度，在说话人相似度评分时给出属性级解释。
+- [Performance improvement of spatial semantic segmentation with enriched audio features and agent-based error correction for DCASE 2025 Challenge Task 4](https://arxiv.org/abs/2506.21174)：报告 DCASE 2025 S5 系统，在 mel 特征外加入 spectral roll-off、chroma 特征和 agent-based error correction。
 - [WildSpeech-Bench](https://arxiv.org/abs/2506.21875)：评测自然语音会话中的 audio LLM。核心思想：用真实会话语音测试模型对自发说话方式、互动上下文和自然声学变化的鲁棒性，而不只评干净脚本音频。
+- [RELATE: Subjective evaluation dataset for automatic evaluation of relevance between text and audio](https://arxiv.org/abs/2506.23582)：提供文本 prompt 与生成音频之间的主观相关性评分，用于检查自动 text-to-audio 指标是否贴近人类对齐判断。
+- [URGENT-PK: Perceptually-Aligned Ranking Model Designed for Speech Enhancement Competition](https://arxiv.org/abs/2506.23874)：提出面向语音增强系统比较的成对排序模型，用偏好式质量判断替代昂贵的绝对 MOS 标注。
+- [AudioBERTScore: Objective Evaluation of Environmental Sound Synthesis Based on Similarity of Audio embedding Sequences](https://arxiv.org/abs/2507.00475)：定义基于音频 embedding 序列相似度的环境声合成指标，用 max-norm 与 p-norm 匹配提升与主观 text-to-audio 相关性评分的一致性。
+- [IndicSynth: A Large-Scale Multilingual Synthetic Speech Dataset for Low-Resource Indian Languages](https://doi.org/10.18653/v1/2025.acl-long.1070)：发布面向印度低资源语言的大规模多语种合成语音数据集，支持多语种语音生成的训练与评测。
+- [Analyzing and Improving Speaker Similarity Assessment for Speech Synthesis](https://arxiv.org/abs/2507.02176)：审计语音合成中的 ASV speaker similarity embedding，并提出 U3D 捕捉传统 timbre identity 指标遗漏的动态节奏模式。
+- [Robust Localization of Partially Fake Speech: Metrics and Out-of-Domain Evaluation](https://arxiv.org/abs/2507.03468)：将局部假语音定位重构为序列异常检测，强调阈值指标和域外测试，而不是只看域内 EER。
+- [ContextASR-Bench: A Massive Contextual Speech Recognition Benchmark](https://arxiv.org/abs/2507.05727)：评测大音频语言模型的上下文语音识别能力，强调命名实体、世界知识和语言上下文，而不只考察声学鲁棒性。
+- [MixAssist: An Audio-Language Dataset for Co-Creative AI Assistance in Music Mixing](https://arxiv.org/abs/2507.06329)：提供 431 个音频 grounding 的多轮对话 turn，来自专家与业余制作人的协作混音过程，用于评测共创式 audio-language assistance。
+- [Towards Spatial Audio Understanding via Question Answering](https://arxiv.org/abs/2507.09195)：评测 ASR、语音语言模型、空间音频或音频生成能力。
+- [ASDKit: A Toolkit for Comprehensive Evaluation of Anomalous Sound Detection Methods](https://arxiv.org/abs/2507.10264)：打包 anomalous sound detection 训练与评测脚本，覆盖 DCASE 2020-2024 数据集，并控制数据集与随机种子敏感性。
 - [MULTIVOX](https://arxiv.org/abs/2507.10859)：评测多模态交互中的语音助手。核心思想：测试 spoken assistant 能否在面向用户的交互任务中协调语音、视觉或上下文证据，而不是只回答孤立音频问题。
+- [P.808 Multilingual Speech Enhancement Testing: Approach and Results of URGENT 2025 Challenge](https://arxiv.org/abs/2507.11306)：把本地化 ITU-T P.808 crowdsourced ACR 听测用于多语 URGENT 2025 语音增强系统，并分析主观与客观分数差异。
+- [Towards Reliable Objective Evaluation Metrics for Generative Singing Voice Separation Models](https://arxiv.org/abs/2507.11427)：用 degradation-category listening test 的 DMOS 比较歌声分离客观指标，覆盖 discriminative 与 generative separation models。
 - [WearVox](https://arxiv.org/abs/2507.11824)（[开源代码](https://github.com/facebookresearch/wearvox)）：评什么：可穿戴语音助手的上下文感知能力。核心思想：把语音、视觉和用户情境结合起来评估移动生活场景中的助手能力，补足桌面/网页工作流之外的现实助理形态。
+- [Triple X: A LLM-Based Multilingual Speech Recognition System for the INTERSPEECH2025 MLC-SLM Challenge](https://arxiv.org/abs/2507.17288)：报告面向多语会话语音的 encoder-adapter-LLM ASR 系统，在 MLC-SLM Task 1 中按 WER 排名第二。
 - [TELEVAL](https://arxiv.org/abs/2507.18061)：评测中文真实交互场景中的 spoken language models；核心思想是同时衡量可靠内容完成和合适的互动策略，避免只用任务答案正确率评价语音 agent。
 - [SpeechIQ](https://arxiv.org/abs/2507.19361)：通过覆盖记忆、理解和应用三个层级的 speech-agentic intelligence quotient 评测语音理解模型；核心思想是超越词错误率，在解释能力、下游问答、标注错误发现和幻觉信号上比较级联系统与端到端语音智能体。
+- [SpeechFake: A Large-Scale Multilingual Speech Deepfake Dataset Incorporating Cutting-Edge Generation Methods](https://arxiv.org/abs/2507.21463)：构建由多种语音合成工具生成的大规模多语言 speech deepfake 数据集，使合成音频检测评测不再局限于小规模或单一生成器语料。
 - [C3](https://arxiv.org/abs/2507.22968)：评什么：复杂对话中的双语 spoken dialogue model。核心思想：用多轮语音互动检查模型是否能维持上下文、处理对话挑战并跨语言给出合适回应。
 - [MECAT](https://arxiv.org/abs/2507.23511)：评测 audio-language models 的细粒度音频理解能力。核心思想是用多专家分析构造任务，使 benchmark 能区分细致的类人音频理解与泛泛 caption 或粗粒度回答。
+- [Benchmarking and Bridging Emotion Conflicts for Multimodal Emotion Reasoning](https://arxiv.org/abs/2508.01181)：评测音频与视觉情绪线索冲突下的多模态情绪推理，把跨模态情感冲突显式纳入诊断，而不是只做简单情绪分类。
 - [SpeechRole](https://arxiv.org/abs/2508.02013)：评测语音角色扮演 agent。核心思想：把大规模语音到语音角色扮演语料与 SpeechRole-Eval 结合起来，使 agent 不只按文本人格一致性评价，也要看交互能力、语音表现力和角色忠实度。
 - [SpeechR](https://arxiv.org/abs/2508.02018)：评什么：大音频语言模型的语音推理能力。核心思想：检查模型能否基于 spoken audio evidence 做推断、比较和推理，而不只是转写或分类表层语音内容。
+- [Multilingual Source Tracing of Speech Deepfakes: A First Benchmark](https://arxiv.org/abs/2508.04143)：提出多语 speech deepfake source tracing 基准，包含单语与跨语设置，并测试未见语言和未见说话人泛化。
 - [Omni-SafetyBench](https://arxiv.org/abs/2508.07173)：评测音视频大语言模型在联合模态输入下的安全性。核心思想：使用平行模态变体和跨模态安全一致性指标，使全模态安全评测不被简化为纯文本或纯图像拒答行为。
+- [SCDF: A Speaker Characteristics DeepFake Speech Dataset for Bias Analysis](https://arxiv.org/abs/2508.07944)：提供面向偏差分析的说话人特征 deepfake 语音数据集，用于评估性别、语言、年龄和合成器类型对检测器性能的影响。
 - [MSU-Bench](https://arxiv.org/abs/2508.08155)：评测多说话人会话场景中的语音理解。核心思想：以说话人为中心，从静态和动态说话人属性扩展到多说话人背景与互动理解，暴露单说话人音频 benchmark 难以发现的失败。
+- [$\text{M}^3\text{PDB}$: A Multimodal, Multi-Label, Multilingual Prompt Database for Speech Generation](https://arxiv.org/abs/2508.09702)：构建多模态、多标签、多语言 prompt database，用于在 prompt 缺失、质量低或域外时评测和选择 zero-shot speech generation prompt。
+- [RealTalk-CN: A Realistic Chinese Speech-Text Dialogue Benchmark With Cross-Modal Interaction Analysis](https://arxiv.org/abs/2508.10015)：发布中文多轮多领域 speech-text task-oriented dialogue benchmark，含 5.4k 段对话、60k 句、150 小时语音和 disfluency 标注。
+- [Perturbed Public Voices (P2V): A Dataset for Robust Audio Deepfake Detection](https://arxiv.org/abs/2508.10949)：用身份一致转写、环境与对抗噪声以及 2020-2025 voice cloning 系统压力测试 22 个音频 deepfake detector。
+- [Investigating Transcription Normalization in the Faetar ASR Benchmark](https://arxiv.org/abs/2508.11771)：审计低资源 Faetar ASR benchmark，显示转写不一致不是主要难点，有限词典约束解码比 bigram language modeling 更有帮助。
+- [Ges-QA: A Multidimensional Quality Assessment Dataset for Audio-to-3D Gesture Generation](https://arxiv.org/abs/2508.12020)：提供 1,400 个 audio-to-3D gesture 样本，带手势质量、音频-手势一致性和情绪匹配标签。
 - [MMAU-Pro](https://arxiv.org/abs/2508.13992)：评测覆盖语音、非语音声音和音乐的整体音频通用智能。核心思想：提高音频语言评测的难度与覆盖面，使模型不只在孤立语音或音乐子任务上比较，而要接受更广泛的听觉理解测试。
+- [Transsion Multilingual Speech Recognition System for MLC-SLM 2025 Challenge](https://arxiv.org/abs/2508.14916)：报告 MLC-SLM 2025 Track 1 ASR 系统，结合 Whisper-large-v3、adaptor、Qwen2.5-7B-Instruct 与 LoRA，在 11 种语言上排名第三。
+- [When Audio and Text Disagree: Revealing Text Bias in Large Audio-Language Models](https://arxiv.org/abs/2508.15407)：在声学证据与文本证据冲突时揭示大型音频语言模型的文本偏置。
+- [Objective and Subjective Evaluation of Diffusion-Based Speech Enhancement for Dysarthric Speech](https://arxiv.org/abs/2508.17980)：比较 diffusion 和信号处理式增强在英语构音障碍语音上的作用，使用 Whisper ASR、客观质量指标和主观质量判断。
 - [MTalk-Bench](https://arxiv.org/abs/2508.18240)：用竞技场式比较和 rubric 协议评测多轮 speech-to-speech 模型。核心思想：沿对话轨迹评估口语互动，使评测覆盖连贯性、话轮管理和回复质量，而不止单轮语音任务。
-- [AHELM](https://arxiv.org/abs/2508.21376)：对 audio-language model 做整体评测；核心思想是把音频中心任务与指标组织成统一 benchmark，使语音、声音和音乐理解能在同一协议下比较。
+- [MQAD: A Large-Scale Question Answering Dataset for Training Music Large Language Models](https://arxiv.org/abs/2508.19514)：评测语音或音频语言能力；核心思想是让音频、音乐或口语问答行为超越纯转写测试而可测量。
+- [CAMÕES: A Comprehensive Automatic Speech Recognition Benchmark for European Portuguese](https://arxiv.org/abs/2508.19721)：提供欧洲葡萄牙语自动语音识别基准，补充语音评测中的特定语言 ASR 覆盖。
+- [CodecBench: A Comprehensive Benchmark for Acoustic and Semantic Evaluation](https://arxiv.org/abs/2508.20660)：从声学和语义标准评测神经编解码器，把语音 codec 评测扩展到重建质量之外。
+- [AHELM](https://arxiv.org/abs/2508.21376)（[HELM Audio 结果](https://crfm.stanford.edu/helm/audio/latest/)）：对 audio-language model 做整体评测；核心思想是把音频中心任务与指标组织成统一 benchmark，使语音、声音和音乐理解能在同一协议下比较。
 - [AudioMOS Challenge 2025](https://arxiv.org/abs/2509.01336)：评估音频平均主观评分的自动预测能力。核心思路：通过共享挑战协议比较系统是否能贴近人类对生成或处理音频的质量判断。
+- [AudioCodecBench: A Comprehensive Benchmark for Audio Codec Evaluation](https://arxiv.org/abs/2509.02349)：从 semantic token 和 acoustic token 两个维度评测 audio codec，使语音和音乐 tokenizer 比较不只依赖重建质量或 ASR。
 - [TTA-Bench](https://arxiv.org/abs/2509.02398)：从功能表现、可靠性和社会责任维度评估文本到音频生成。核心思路是在统一协议中结合多样提示、客观指标和大规模人工标注。
+- [SSVD: Structured SVD for Parameter-Efficient Fine-Tuning and Benchmarking under Domain Shift in ASR](https://arxiv.org/abs/2509.02830)：在儿童语音和方言变化等 ASR domain shift 上 benchmark PEFT 方法，并在 ESPnet 中加入 structured SVD fine-tuning。
+- [Speech DF Arena: A Leaderboard for Speech DeepFake Detection Models](https://arxiv.org/abs/2509.02859)：提出 Speech DF Arena，作为语音 deepfake 检测的标准化 benchmark 与 leaderboard。
+- [Improving Perceptual Audio Aesthetic Assessment via Triplet Loss and Self-Supervised Embeddings](https://arxiv.org/abs/2509.03292)：用 BEATs embedding、triplet loss 和 multi-branch LSTM 预测 AudioMOS 2025 中生成语音、音频和音乐的 aesthetic axes。
 - [VoxRole](https://arxiv.org/abs/2509.03940)：评测基于语音的角色扮演 agent；核心思想是把 role-playing 评测从纯文本扩展到角色一致性、韵律、情绪和语音互动质量。
+- [AUDETER: A Large-scale Dataset for Deepfake Audio Detection in Open Worlds](https://arxiv.org/abs/2509.04345)：发布超过 4,500 小时、300 万条 synthetic audio clips，来自 11 个 TTS model 和 10 个 vocoder，用于 open-world deepfake audio detection。
+- [Adversarial Attacks on Audio Deepfake Detection: A Benchmark and Comparative Study](https://arxiv.org/abs/2509.07132)：围绕统计修改和优化式扰动评测音频深伪检测器的抗取证攻击鲁棒性，超越干净同分布样本设置。
+- [The ML-SUPERB 2.0 Challenge: Towards Inclusive ASR Benchmarking for All Language Varieties](https://arxiv.org/abs/2509.07139)：定义 Interspeech 2025 多语 ASR 挑战，测试集覆盖 200 多种语言、口音和方言，并使用 DynaBench 在线评测服务器。
+- [AU-Harness: An Open-Source Toolkit for Holistic Evaluation of Audio LLMs](https://arxiv.org/abs/2509.08031)：提供面向 Audio LLM 的开源综合评测工具包；核心思想：标准化高效评测流水线，覆盖多轮对话和系统化音频语言评测。
 - [VStyle](https://arxiv.org/abs/2509.09716)：评什么：基于 spoken instructions 的 voice style adaptation。核心思想：检查语音系统能否理解声音风格要求并调整生成语音，而不只满足转写层面的正确性。
+- [Can Large Audio Language Models Understand Audio Well? Speech, Scene and Events Understanding Benchmark for LALMs](https://arxiv.org/abs/2509.13148)：可作为语音与音频模型的 Bench 候选：围绕 Can Large Audio Language Models Understand Audio Well? Speech, Scene and Events Understanding Benchmark for LALMs 提供可比较的评测任务、数据或分析协议。
+- [Summary on The Multilingual Conversational Speech Language Model Challenge: Datasets, Tasks, Baselines, and Methods](https://arxiv.org/abs/2509.13785)：评测 ASR、语音语言模型、空间音频或音频生成能力。
+- [CS-FLEURS: A Massively Multilingual and Code-Switched Speech Dataset](https://arxiv.org/abs/2509.14161)：提供覆盖 113 个语言对和 52 种语言的大规模多语种语码转换语音基准，支持在高资源 X-English 场景之外评测 ASR 与语音翻译。
+- [CompSpoof: A Dataset and Joint Learning Framework for Component-Level Audio Anti-spoofing Countermeasures](https://arxiv.org/abs/2509.15804)：提出组件级音频伪造数据集和联合学习框架，评测检测器是否能识别被替换的语音或环境声组件，而不只判断整段音频真假。
+- [SVeritas: Benchmark for Robust Speaker Verification under Diverse Conditions](https://arxiv.org/abs/2509.17091)：评测 speaker verification 在自然与恶意 enrollment-test mismatch、信号退化和 spoofing 相关条件下的鲁棒性。
+- [FakeSound2: A Benchmark for Explainable and Generalizable Deepfake Sound Detection](https://arxiv.org/abs/2509.17162)：评测 deepfake sound detection 的 source tracing、manipulation explanation 和 unseen-source generalization，而不只做二分类。
+- [Benchmarking Humans And Machines On Complex Multilingual Speech Understanding Tasks](https://arxiv.org/abs/2509.17965)：在人类与机器之间比较多语混合声道、重叠语音理解能力，面向 cocktail-party 式 auditory attention 场景。
+- [MUSHRA-1S: A scalable and sensitive test approach for evaluating top-tier speech processing systems](https://arxiv.org/abs/2509.19219)：提出 single-stimulus MUSHRA，用固定 anchor 和 reference 扩展高质量语音系统听测，同时保留细微伪影敏感性。
 - [MMedFD](https://arxiv.org/abs/2509.19817)：评什么：真实医疗场景中的多轮全双工自动语音识别。核心思想：用存在重叠语音、轮次切换和专业术语的流式医疗对话，测试比干净单说话人 ASR 更困难的识别能力。
+- [SEA-Spoof: Bridging The Gap in Multilingual Audio Deepfake Detection for South-East Asian](https://arxiv.org/abs/2509.19865)：面向东南亚语言评测多语言音频深伪检测。核心思路是暴露通用合成语音检测数据集中容易遗漏的地区与语言覆盖缺口。
+- [Measuring Prosody Diversity in Zero-Shot TTS: A New Metric, Benchmark, and Exploration](https://arxiv.org/abs/2509.19928)：提出零样本语音合成韵律多样性的指标和基准。
+- [Why Speech Deepfake Detectors Won't Generalize: The Limits of Detection in an Open World](https://arxiv.org/abs/2509.20405)：把 open-world speech deepfake detection 描述为由设备、采样率、codec、环境和攻击族组合造成的 coverage debt。
+- [Objective Evaluation of Prosody and Intelligibility in Speech Synthesis via Conditional Prediction of Discrete Tokens](https://arxiv.org/abs/2509.20485)：一种免参考的语音合成韵律与可懂度评估框架；核心思路是通过离散语音 token 的条件预测来衡量 WER 和音高指标难以覆盖的质量。
+- [SingVERSE: A Diverse, Real-World Benchmark for Singing Voice Enhancement](https://arxiv.org/abs/2509.20969)：提供面向歌声音质增强的多样真实世界基准。
+- [AUDDT](https://arxiv.org/abs/2509.21597)：提供 audio unified deepfake detection benchmark toolkit，统一音频伪造检测评测。
 - [CMDAR](https://arxiv.org/abs/2509.22461)：评测中文多场景动态音频推理；核心思想是用多样音频场景和推理问题测试模型是否理解中文音频环境中的事件、上下文与时间变化。
+- [ArFake: A Multi-Dialect Benchmark and Baselines for Arabic Spoof-Speech Detection](https://arxiv.org/abs/2509.22808)：构建多方言阿拉伯语 spoofed speech 数据集和 baseline，用于比较不同阿拉伯语方言与合成器下的检测难度。
 - [XGC-AVQuiz](https://arxiv.org/abs/2509.23251)：评测真实与 AI 生成视频中的音视频内容理解；核心思想是用多任务覆盖时序对齐和跨模态推理，测试模型能否联合利用声音与视觉证据回答问题。
+- [ABC-Eval: Benchmarking Large Language Models on Symbolic Music Understanding and Instruction Following](https://arxiv.org/abs/2509.23350)：提供 1,086 个 ABC notation 音乐任务，覆盖 10 个子任务，用于评测 LLM 的 symbolic music understanding 和 instruction following。
+- [AISHELL6-whisper: A Chinese Mandarin Audio-visual Whisper Speech Dataset with Speech Recognition Baselines](https://arxiv.org/abs/2509.23833)：发布 30 小时中文耳语语音及平行正常语音，配同步正面视频和 AVSR baseline。
+- [Assessing Speech Quality Metrics for Evaluation of Neural Audio Codecs Under Clean Speech Conditions](https://arxiv.org/abs/2509.24457)：在 17 个 clean-speech neural codec 条件上，把 45 个客观语音质量指标与 MUSHRA 听测分数相关性对齐比较。
+- [ISSE: An Instruction-Guided Speech Style Editing Dataset and Benchmark](https://arxiv.org/abs/2509.24570)：构建近 400 小时、10 万余个 source-target pair，用详细自然语言指令编辑语音风格，同时保持内容和说话人身份。
+- [HiKE: Hierarchical Evaluation Framework for Korean-English Code-Switching Speech Recognition](https://arxiv.org/abs/2509.24613)：提供韩英 code-switching ASR 的分层评测框架，把语音评测扩展到非单语、非合成的混合语言场景。
+- [TAU: A Benchmark for Cultural Sound Understanding Beyond Semantics](https://arxiv.org/abs/2509.26329)：评测超越转写语义的文化声音理解。核心思路是用台湾日常声音地标和需要本地声学知识的选择题，暴露大型音频语言模型的文化盲区。
 - [PodEval](https://arxiv.org/abs/2510.00485)：评测播客式多模态音频生成。核心思想：结合真实播客数据集以及文本、语音和音频三个评测维度，使开放式长音频生成不再只依赖单一参考答案或临时人工偏好。
+- [What You See is What You Ask: Evaluating Audio Descriptions](https://arxiv.org/abs/2510.00808)：提出 ADQA，在连贯电影片段上用视觉欣赏和叙事理解问题评测 audio descriptions，而不依赖单一 reference caption。
 - [SingMOS-Pro](https://arxiv.org/abs/2510.01812)：评估歌声质量评估能力。核心思路：为生成或处理后的歌声音频提供专门基准，使人声演唱质量不只依赖通用音频评分。
+- [Exploring Resolution-Wise Shared Attention in Hybrid Mamba-U-Nets for Improved Cross-Corpus Speech Enhancement](https://arxiv.org/abs/2510.01958)：在域外语料上评测 RWSA-MambaUNet 语音增强，并报告 cross-corpus PESQ、SSNR 和 ESTOI 改进。
+- [Bias beyond Borders: Global Inequalities in AI-Generated Music](https://arxiv.org/abs/2510.01963)：构建 GlobalDISCO，含 73k 首生成音乐、147 种语言和国家均衡风格 prompt，用于审计 AI music generation 的地区、语言、文化和 genre bias。
+- [SAFE: Synthetic Audio Forensics Evaluation Challenge](https://arxiv.org/abs/2510.03387)：提出合成音频取证评测挑战，为语音系统检测生成或篡改音频提供基准。
+- [AURA Score: A Metric For Holistic Audio Question Answering Evaluation](https://arxiv.org/abs/2510.04934)：提出 AQEval 与面向开放式 audio question answering 的整体评价指标，考虑问题上下文、推理、相关性与部分正确性。
+- [Benchmarking Fake Voice Detection in the Fake Voice Generation Arms Race](https://arxiv.org/abs/2510.06544)：面向不断增强的合成语音生成方法评测 fake voice detection 能力。
+- [How much speech data is necessary for ASR in African languages? An evaluation of data scaling in Kinyarwanda and Kikuyu](https://arxiv.org/abs/2510.07221)：在 Kinyarwanda 上用 1 到 1,400 小时训练数据评测 Whisper scaling，并用 270 小时 Kikuyu 数据分析低资源 ASR 错误。
+- [LASER: An LLM-based ASR Scoring and Evaluation Rubric](https://arxiv.org/abs/2510.07437)：用 LLM rubric 替代原始 WER 惩罚，在 Hindi 上与人工评分高度相关，并迁移到 Marathi、Kannada 和 Malayalam ASR 错误分析。
 - [Full-Duplex-Bench-v2](https://arxiv.org/abs/2510.07838)：带自动考官的全双工对话系统多轮评测框架。核心思想：把全双工语音评测从话轮转换片段扩展到更长的交互轨迹，测试打断、重叠语音处理和考官驱动的对话控制。
+- [CS3-Bench: Evaluating and Enhancing Speech-to-Speech LLMs for Mandarin-English Code-Switching](https://arxiv.org/abs/2510.07881)：评测语音与音频模型的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
 - [MRSAudio](https://arxiv.org/abs/2510.10396)：用多模态录制数据评测空间音频理解与生成。核心思想：在生活、语音、音乐和歌唱场景中提供同步的双耳与 Ambisonics 音频、第一和第三视角视频、运动轨迹、转写、音素边界、歌词、乐谱与提示词。
 - [LISTEN](https://arxiv.org/abs/2510.10444)：评测 audio language model 是依赖词汇线索还是声学情绪线索。核心思想是用线索一致与冲突的受控设置，检查模型是否真正利用副语言声学证据，而不只是转写语音内容。
 - [VCB Bench](https://arxiv.org/abs/2510.11098)：评测基于音频证据的 LLM 对话智能体。核心思想：把 spoken-dialogue 评测从转写文本扩展到多轮对话中的声学证据 grounding。
 - [SpeechLLM-as-Judges / SpeechEval](https://arxiv.org/abs/2510.14664)：用结构化、可解释的 SpeechLLM 评审评估合成语音质量。核心思路是结合多语言语音片段与质量维度标注，使语音生成比较不再只依赖单一偏好分数。
 - [VocalBench-DF](https://arxiv.org/abs/2510.15406)：评测 Speech-LLM 面对不流利语音时的鲁棒性；核心思想是用多维 disfluency taxonomy（含语障相关场景）测试语音模型是否能脱离干净音频仍保持可靠交互。
+- [Hallucination Benchmark for Speech Foundation Models](https://arxiv.org/abs/2510.16567)：把流畅但与声学输入无关的 ASR hallucination 与普通音素错误分开评测，面向医疗和法律等高风险转写场景。
+- [The MUSE Benchmark: Probing Music Perception and Auditory Relational Reasoning in Audio LLMS](https://arxiv.org/abs/2510.19055)：用 10 个音乐感知和关系推理任务及 200 人 human baseline 测试 audio LLM，暴露 invariant musical representation 差距。
+- [EchoFake: A Replay-Aware Dataset for Practical Speech Deepfake Detection](https://arxiv.org/abs/2510.19414)：提供来自 13,000 多名说话人的 120 多小时音频，包含 zero-shot TTS 和物理 replay 录音，用于现实 speech deepfake detection。
+- [Vox-Evaluator: Enhancing Stability and Fidelity for Zero-shot TTS with A Multi-Level Evaluator](https://arxiv.org/abs/2510.20210)：评测 zero-shot TTS 稳定性，定位错误语音片段、给出整体质量评分，并指导对错误区域做 masked regeneration。
+- [HiFi-HARP: A High-Fidelity 7th-Order Ambisonic Room Impulse Response Dataset](https://arxiv.org/abs/2510.21257)：补充高保真高阶 Ambisonics 房间脉冲响应数据集。
+- [VietLyrics: A Large-Scale Dataset and Models for Vietnamese Automatic Lyrics Transcription](https://arxiv.org/abs/2510.22295)：发布 647 小时越南语歌曲，带 line-level aligned lyrics 和 metadata，用于带声调与方言变化的 automatic lyrics transcription。
 - [EchoMind](https://arxiv.org/abs/2510.22758)：通过相互关联的多层任务评测具备同理心的语音语言模型；核心思想是把语音内容理解、非词汇声学线索、情绪推理和同理回应生成串起来，而不是孤立评分。
+- [Treble10: A high-quality dataset for far-field speech recognition, dereverberation, and enhancement](https://arxiv.org/abs/2510.23141)：补充远场语音识别、去混响和增强数据集。
+- [Lost in Phonation: Voice Quality Variation as an Evaluation Dimension for Speech Foundation Models](https://arxiv.org/abs/2510.25577)：用 creaky voice 和 breathy voice 等声质变体 probing speech foundation models，把声质与副语言鲁棒性作为超越转写理解的语音评测维度。
+- [SP-MCQA: Evaluating Intelligibility of TTS Beyond the Word Level](https://arxiv.org/abs/2510.26190)：用 spoken-passage multiple-choice QA 检查 TTS 是否保留关键信息，超越词级可懂度和 WER 式评分。
+- [NaturalVoices: A Large-Scale, Spontaneous and Emotional Podcast Dataset for Voice Conversion](https://arxiv.org/abs/2511.00256)：发布 5,049 小时自发播客语音，含 emotion、quality、transcript 和 speaker 标注，用于 emotion-aware voice conversion。
+- [CoVoGER: A Multilingual Multitask Benchmark for Speech-to-text Generative Error Correction with Large Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.320)：提供面向 LLM 的多语言多任务 speech-to-text generative error correction 基准。
 - [MULTI-Bench](https://arxiv.org/abs/2511.00850)：评什么：多轮 spoken dialogue model 的情绪智能。核心思想：用交互式对话检查语音 agent 是否理解情感线索、维持情绪上下文，并在多轮中做出合适回应。
+- [Rethinking Sign Language Translation: The Impact of Signer Dependence on Model Evaluation](https://doi.org/10.18653/v1/2025.findings-emnlp.997)：审计 sign-language translation 中的 signer dependence，说明训练和测试 signer 重叠会虚高语言理解结果。
+- [Metric Analysis for Spatial Semantic Segmentation of Sound Scenes](https://arxiv.org/abs/2511.07075)：为 DCASE 式 spatial semantic sound-scene segmentation 提出 CASA-SDR，把 source matching 质量与类别标签错误分开。
+- [SynTTS-Commands: A Public Dataset for On-Device KWS via TTS-Synthesized Multilingual Speech](https://arxiv.org/abs/2511.07821)：用 CosyVoice 2 和公开说话人 embedding 合成英语与中文多命令数据，用于超低功耗 on-device keyword spotting benchmark。
 - [SpeechJudge](https://arxiv.org/abs/2511.07931)：评测语音自然度判断能力，并配套大规模人工偏好语音对。核心思想是把 speech/audio LLM 裁判与人类对自然度和可懂度的偏好对齐比较，避免合成语音评估只看转写准确率或通用音频质量。
+- [ParliaBench: An Evaluation and Benchmarking Framework for LLM-Generated Parliamentary Speech](https://arxiv.org/abs/2511.08247)：从英国议会演讲构建评测，结合计算指标和 LLM-as-judge 评分衡量语言质量、语义连贯性和政治真实性。
 - [SACRED-Bench](https://arxiv.org/abs/2511.10222)：评测针对多模态 LLM 的语音-音频组合攻击。核心思想：组合有害与无害语音、非语音音频和多说话人对话，使音频安全测试覆盖隐藏在复杂听觉场景中的黑盒攻击。
 - [MTR-DuplexBench](https://arxiv.org/abs/2511.10262)：评测全双工语音语言模型的多轮对话能力。核心思想：把连续、可重叠的对话切分为轮次级评估，并测试单轮语音问答之外的对话性、上下文一致性和交互质量。
+- [CASTELLA: Long Audio Dataset with Captions and Temporal Boundaries](https://arxiv.org/abs/2511.15131)：提供人工标注的 audio moment retrieval 数据，包含长音频、caption 和时间边界，扩展真实 AMR 评测而非小型合成测试集。
+- [Introducing Visual Scenes and Reasoning: A More Realistic Benchmark for Spoken Language Understanding](https://arxiv.org/abs/2511.19005)：提出 VRSLU，在 spoken-language understanding 中引入视觉场景、用户画像、知识图谱和 reasoning trace，用于 intent 与 slot 预测。
+- [Evaluating Objective Speech Quality Metrics for Neural Audio Codecs](https://arxiv.org/abs/2511.19734)：对 high-fidelity speech codec 输出进行 MUSHRA 听测，并比较主观分数与 neural-audio-codec 客观质量指标的相关性。
 - [HPSU](https://arxiv.org/abs/2511.23178)：评测真实 spoken speech understanding 中的人类水平感知能力。核心思想：检验语音模型能否捕捉自然语音中的感知线索，而不止理解转写文本语义。
+- [MVAD: A Benchmark Dataset for Multimodal AI-Generated Video-Audio Detection](https://arxiv.org/abs/2512.00336)：构建 multimodal video-audio detection 数据集，覆盖真实伪造模式、高感知质量样本和音视频真实性标签。
+- [Generative Multi-modal Feedback for Singing Voice Synthesis Evaluation](https://arxiv.org/abs/2512.02523)：用 audio-language reward model 为 singing voice synthesis 生成文本和音频 critique，覆盖 melody、content 和 auditory quality。
+- [The T12 System for AudioMOS Challenge 2025: Audio Aesthetics Score Prediction System Using KAN- and VERSA-based Models](https://arxiv.org/abs/2512.05592)：报告 AudioMOS 2025 系统，用 KAN- 和 VERSA-based model 预测生成音频的 aesthetics score。
+- [MultiAPI Spoof: A Multi-API Dataset and Local-Attention Network for Speech Anti-spoofing Detection](https://arxiv.org/abs/2512.07352)：提供多 API 合成语音反欺骗数据集，评测检测器面对商业和开源生成源时的鲁棒性。
+- [BUT Systems for Environmental Sound Deepfake Detection in the ESDD 2026 Challenge](https://arxiv.org/abs/2512.08319)：报告 ESDD 2026 Track 1 未见生成器环境声 deepfake detection 系统，使用 SSL front end、MHFA back end 和 feature-domain augmentation。
+- [BRACE: A Benchmark for Robust Audio Caption Quality Evaluation](https://arxiv.org/abs/2512.10403)：在鲁棒性条件下评测 audio caption quality，关注 caption 正确性而不只计算通用 audio-caption 相似度。
+- [Spoken DialogSum: An Emotion-Rich Conversational Dataset for Spoken Dialogue Summarization](https://arxiv.org/abs/2512.14687)：提供情绪丰富的 spoken dialogue summarization 数据，使摘要评测同时覆盖会话内容和情感上下文。
+- [MeetMulti-X: A benchmark analysis of scaling and prompting large language models on automatic minuting](https://doi.org/10.1016/j.eswa.2025.130428)：围绕语音与会议理解提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [MNSC: Advancing Singlish Speech Understanding with Carefully Curated Corpora](https://doi.org/10.1109/asru65441.2025.11434704)：面向语音与音频模型的可复用评测、数据集、协议或诊断研究。核心思路是围绕“MNSC: Advancing Singlish Speech Understanding with Carefully Curated Corpora”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Do Foundational Audio Encoders Understand Music Structure?](https://arxiv.org/abs/2512.17209)：比较 11 类 foundational audio encoder 的 music-structure analysis 表现，区分自监督方法、训练数据和上下文长度的影响。
+- [Marco-ASR: A Principled and Metric-Driven Framework for Fine-Tuning Large-Scale ASR Models for Domain Adaptation](https://arxiv.org/abs/2512.22165)：评测 metric-driven ASR fine-tuning 做领域适配，使用特定领域评分来决定大规模 ASR 模型如何适配。
+- [PROFASR-BENCH: A Benchmark for Context-Conditioned ASR in High-Stakes Professional Speech](https://arxiv.org/abs/2512.23686)：评测高风险专业语音中的 context-conditioned ASR，并加入实体感知评分与分组报告。
 - [Mandarin Speech Prosody Benchmark](https://doi.org/10.21437/Interspeech.2025-1873)：评估 AI 系统是否理解普通话语音韵律。核心思想：通过专门框架和基准展示，让韵律理解不再只被转写级普通话语音识别间接衡量。
+- [Revealing Cross-Lingual Bias in Synthetic Speech Detection under Controlled Conditions](https://doi.org/10.21437/spsc.2025-1)：在受控多语言合成条件下评测合成语音检测器，揭示检测性能随语言而变化的偏差。
+- [Limitations of Watermarking AI-Generated Speech Using AudioSeal](https://doi.org/10.1109/tps-isa67132.2025.00029)：评估 AudioSeal 式 AI 生成语音水印的局限，补充语音溯源测试中的鲁棒性证据。
+- [IndicFake Meets SAFARI-LLM: Unifying Semantic and Acoustic Intelligence for Multilingual Deepfake Detection](https://mlanthology.org/tmlr/2025/ranjan2025tmlr-indicfake/)：将 IndicFake 与 SAFARI-LLM 结合用于多语音频深伪检测，在印度语言场景中联合建模语义和声学信号。
+- [Investigating voiced and unvoiced regions of speech for audio deepfake detection](https://doi.org/10.1109/icassp49660.2025.10890861)：研究语音有声与无声区域对音频深伪检测的作用。
+- [CAFE: Spontaneous code-switching speech dataset in Algerian dialect, French and English](https://doi.org/10.1016/j.dib.2025.112150)：发布覆盖 Algerian dialect、French 与 English 的 spontaneous code-switching speech dataset。
+- [From One Stolen Utterance: Assessing the Risks of Voice Cloning in the AIGC Era](https://doi.org/10.1109/sp61157.2025.00238)：评估攻击者只有一条被盗语音时的 voice cloning 风险，把评测落在语音冒充威胁模型上。
+- [MSS: A Multilingual Spoofed Speech Dataset with Code-Switching for Anti-Spoofing Measures](https://doi.org/10.1109/cbmi66578.2025.11339326)：提供带 code-switching 的多语 spoofed speech，用于测试混合语言语音下的 anti-spoofing countermeasures。
+- [TTSDS2: Robust Objective Evaluation for Human-Quality Synthetic Speech](https://doi.org/10.21437/ssw.2025-11)：扩展 Text-to-Speech Distribution Score，用于 human-quality synthetic speech 的鲁棒客观评估，而非普通低质量 TTS。
+- [ArcticEcho: A Novel Speaker-Controlled Voice Cloning Dataset for Modern Deepfake Detection Benchmarking](https://doi.org/10.1109/apsipaasc65261.2025.11249340)：发布 speaker-controlled voice cloning 数据集，用受控说话人模仿场景 benchmark 现代 fake-speech detector。
+- [ASR Models for Traditional Emirati Arabic: Challenges, Adaptations, and Performance Evaluation](https://aclanthology.org/2025.icnlsp-1.5/)：评测 Traditional Emirati Arabic 的 ASR 适配，关注方言特定识别难点和模型性能。
+- [Legally validated evaluation framework for voice anonymization](https://doi.org/10.21437/interspeech.2025-1699)：定义经过法律验证的 voice anonymization 评测框架，把隐私保护与具有法律意义的说话人重识别风险联系起来。
+- [The influence of non-timbral cues in voice anonymisation and evaluation](https://doi.org/10.21437/spsc.2025-6)：测试非音色线索对 voice anonymization 及其评测的影响，把身份泄露与单纯 timbre 区分开。
+- [A Meta-Methodology for User Evaluation of Artificial Intelligence Generated Music; Using the Analytical Hierarchy Process, Likert and Emotional State Estimations](https://doi.org/10.1080/10447318.2025.2478265)：结合 analytic hierarchy process、Likert rating 和 emotional-state estimation 做 AI-generated music 用户评测。
+- [AVCaps: An Audio-Visual Dataset With Modality-Specific Captions](https://doi.org/10.1109/ojsp.2025.3578296)：提供带 modality-specific caption 的音视频样本，使模型能被评测其信息来自音频、视频还是二者组合。
+- [A Multi-dimensional Evaluation of the 2025 Blizzard Challenge](https://doi.org/10.21437/ssw.2025-32)：报告 Blizzard Challenge 2025 语音合成系统的多维感知评测，而不只比较单一自然度分数。
+- [Speech Synthesis Evaluation from a voting perspective - a starting point](https://doi.org/10.21437/ssw.2025-19)：把 speech synthesis evaluation 重写为投票问题，探索如何聚合听众偏好来比较系统。
+- [Design and Evaluation of Lightweight and Multi-Feature Models for Emotion Recognition from Speech](https://doi.org/10.1109/iscs69371.2025.11385843)：评测轻量多特征 speech emotion recognition 模型，在效率约束下进行情感分类。
+- [Iqra’Eval: A Shared Task on Qur’anic Pronunciation Assessment](https://doi.org/10.18653/v1/2025.arabicnlp-sharedtasks.61)：定义 Qur'anic pronunciation assessment shared task，评测诵读发音正确性而非通用阿拉伯语 ASR。
+- [The Faetar Speech Recognition Benchmark](https://doi.org/10.21437/interspeech.2025-1045)：建立低资源 Faetar ASR benchmark，并针对该语言的转写与规范化问题设置评分选择。
+- [Practical & Contextual Speech Synthesis Evaluation](https://doi.org/10.21437/ssw.2025-12)：在 practical contextual scenarios 中评测 speech synthesis，关注生成语音是否适合使用语境而非孤立句子质量。
+- [CEREALES : a new dataset of Quebec French accented speech with applications to speech recognition](https://doi.org/10.21437/interspeech.2025-1934)：发布 Quebec French accented speech 数据，用于评测法语 ASR 的口音鲁棒性。
+- [Automatic Speech Recognition for Search and Rescue: A Dataset Generation Framework for Irish Coast Guard Operations](https://doi.org/10.1109/issc67739.2025.11291519)：为 Irish Coast Guard 搜救场景设计 ASR 数据生成框架，面向海事指挥和应急行动语音，而非通用会话音频。
+- [A Chinese Expressive Long-dialogue Speech Dataset with Scripts](https://doi.org/10.1109/icassp49660.2025.10890525)：发布带脚本的中文长对话表达性语音数据集，把扩展对话文本与情感化语音录制配对。
+- [WearVox: An Egocentric Multichannel Voice Assistant Benchmark for Wearables](https://arxiv.org/abs/2601.02391)：收集 3,842 条 AI 眼镜多通道第一视角录音，覆盖搜索增强问答、闭卷问答、旁人说话拒答、工具调用和语音翻译，压力来自可穿戴噪声与运动。
+- [HearSay Benchmark: Do Audio LLMs Leak What They Hear?](https://arxiv.org/abs/2601.03783)：评测音频 LLM 是否泄露其听到的信息。
 - [ICASSP 2026 HumDial Challenge](https://arxiv.org/abs/2601.05564)：评测类人语音对话系统，覆盖情绪智能与全双工交互两个赛道。核心思想：用真实人类对话和共享挑战协议，测试语音智能体能否同时具备情感理解和实时轮转能力。
+- [ESDD2: Environment-Aware Speech and Sound Deepfake Detection Challenge Evaluation Plan](https://arxiv.org/abs/2601.07303)：定义环境感知语音与声音深度伪造检测的评测方案。
+- [LJ-Spoof: A Generatively Varied Corpus for Audio Anti-Spoofing and Synthesis Source Tracing](https://arxiv.org/abs/2601.07958)：为单一说话人构建 300 多万条语音，系统变化 30 个 TTS 家族、500 个生成变体和神经处理变体，用于反欺骗和合成来源追踪。
 - [RSA-Bench](https://arxiv.org/abs/2601.10384)：在真实声学场景中评测 audio large model。核心思想：用环境声音和真实声学条件检验听觉理解，而不是只测试干净语音输入。
 - [AQUA-Bench](https://arxiv.org/abs/2601.12248)：评测包含无答案情形的音频问答。核心思想：测试 audio-language model 能否识别音频证据不足并拒答，而不是强行生成幻觉答案。
+- [Confidence-based Filtering for Speech Dataset Curation with Generative Speech Enhancement Using Discrete Tokens](https://arxiv.org/abs/2601.12254)：用离散 token 语音增强模型的生成 log-probability 作为置信度，过滤音素遗漏和说话人不一致等幻觉，再用于野外 TTS 数据清洗。
+- [ICASSP 2026 URGENT Speech Enhancement Challenge](https://arxiv.org/abs/2601.13531)：定义 ICASSP 2026 universal speech enhancement 两个赛道：通用语音增强和增强语音质量评估，并给出数据集、基线和共享评测指标。
+- [FunCineForge: A Unified Dataset Toolkit and Model for Zero-Shot Movie Dubbing in Diverse Cinematic Scenes](https://arxiv.org/abs/2601.14777)：构建中文电视剧配音数据流水线，并在独白、旁白、对话和多说话人电影场景中评测 zero-shot movie dubbing。
+- [Zero-Shot Speech LLMs for Multi-Aspect Evaluation of L2 Speech: Challenges and Opportunities](https://arxiv.org/abs/2601.16230)：在 5,000 条 Speechocean762 二语英语语音上 zero-shot 评测 Qwen2-Audio-7B-Instruct，按准确度、流利度、韵律和完整度对齐人工评分。
+- [TidyVoice: A Curated Multilingual Dataset for Speaker Verification Derived from Common Voice](https://arxiv.org/abs/2601.16358)：从 Common Voice 派生 Tidy-M 与 Tidy-X 说话人验证 trial，覆盖 81 种语言的 21.2 万余名单语说话人和跨语言多语 trial。
+- [Language Family Matters: Evaluating LLM-Based ASR Across Linguistic Boundaries](https://arxiv.org/abs/2601.18899)：在 curated 与 crowdsourced 多语语料上比较按语言家族共享 LLM-ASR connector 的策略，衡量跨域泛化和参数节省。
+- [Audio Deepfake Detection at the First Greeting: "Hi!"](https://arxiv.org/abs/2601.19573)：用 0.5 到 2.0 秒的超短问候语片段评测音频深伪检测，并加入通信退化，报告实时边缘部署所需的鲁棒性和效率。
+- [A Benchmark for Audio Reasoning Capabilities of Multimodal Large Language Models](https://arxiv.org/abs/2601.19673)：提出 Audio Reasoning Tasks，要求 MLLM 在同一问题中组合多个音频子任务，而不是只做孤立的 diarization 或说话人属性识别。
+- [SAM Audio Judge: A Unified Multimodal Framework for Perceptual Evaluation of Audio Separation](https://arxiv.org/abs/2601.19702)：定义 SAJ 无参考感知指标，在 speech、music 与 sound separation 中接受文本、视觉或时间片段提示，并按 recall、precision、faithfulness 和整体质量评分。
 - [VoxPrivacy](https://arxiv.org/abs/2601.19956)：评什么：语音语言模型的交互式隐私意识。核心思想：测试语音助手在隐私敏感对话场景中的处理是否合适，补足主要关注识别、推理或生成质量的音频 benchmark。
+- [Unseen but not Unknown: Using Dataset Concealment to Robustly Evaluate Speech Quality Estimation Models](https://arxiv.org/abs/2601.21110)：提出 Dataset Concealment 评测语音质量估计，在 9 个训练集和 9 个未见测试集上隐藏语料身份，分解 MOSNet、NISQA 和 Wav2Vec2 模型的泛化差距。
+- [A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation](https://arxiv.org/abs/2601.22599)：构建 2,400 小时 Hive 合成数据集，通过挖掘高纯度单事件片段并去除事件共现捷径，评测 query-based universal sound separation。
+- [Multi-Speaker Conversational Audio Deepfake: Taxonomy, Dataset and Pilot Study](https://arxiv.org/abs/2602.00295)：定义多说话人会话音频 deepfake taxonomy，并发布 2,830 条真实与全合成双人对话的 MsCADD，用 LFCC-LCNN、RawNet2 和 Wav2Vec2 做检测基线。
+- [Toward Scalable Audio Description Quality Control: A Workflow for Evaluating Human and VLM Raters](https://arxiv.org/abs/2602.01390)：用 Item Response Theory 和六维专业 audio description 评分规程，把人类与 VLM 评分者同专家 ground truth 对齐，评测长视频无障碍描述质量控制。
+- [WAXAL: A Large-Scale Multilingual African Language Speech Corpus](https://arxiv.org/abs/2602.02734)：构建覆盖 24 种非洲语言的大规模语音语料，包含 ASR 与 TTS 组件，服务低资源多语语音评测和训练。
 - [LALM-as-a-Judge](https://arxiv.org/abs/2602.04796)：评测 large audio-language model 在多轮 spoken dialogue 中的安全评估能力。核心思想：测试音频语言 judge 能否沿着口语交互轨迹发现不安全行为。
+- [Evaluating Kubernetes Performance for GenAI Inference: From Automatic Speech Recognition to LLM Summarization](https://arxiv.org/abs/2602.04900)：在 Kubernetes 上实现 ASR 到摘要的推理流水线，测量 Kueue、Dynamic Accelerator Slicer 与 GAIE 或 llm-d 对 makespan、作业完成时间和 TTFT 的影响。
 - [Aegis](https://arxiv.org/abs/2602.07379)：红队评测 AI voice agents 的治理、完整性与安全风险。核心思想：建模真实语音 agent 部署流水线，并在银行、IT 支持、物流等场景中测试隐私泄漏、权限提升、资源滥用等对抗情形。
 - [AdvBench-Omni](https://arxiv.org/abs/2602.10161)：评测跨模态语义冲突下的全模态安全性。核心思想：把不同模态中的有害语义解耦，检验文本、图像、音频或视频证据相互冲突时拒答行为是否仍然稳定。
+- [SQuTR: A Robustness Benchmark for Spoken Query to Text Retrieval under Acoustic Noise](https://arxiv.org/abs/2602.12783)：评测声学噪声下 spoken-query-to-text 检索的鲁棒性。
 - [Interspeech 2026 Audio Reasoning Challenge](https://arxiv.org/abs/2602.14224)：评什么：音频推理模型和 agent 的 reasoning process quality。核心思想：用 shared challenge 协议不只评价最终音频推理答案，也评价中间推理行为质量。
+- [Scaling Audio-Visual Quality Assessment Dataset via Crowdsourcing](https://arxiv.org/abs/2602.22659)：构建 YT-NTU-AVQ，包含 1,620 条用户生成音视频序列和众包主观评分，为 AVQA 模型提供更丰富的内容与质量覆盖。
+- [AudioCapBench: Quick Evaluation on Audio Captioning across Sound, Music, and Speech](https://arxiv.org/abs/2602.23649)：精选 1,000 条环境声、音乐和语音 captioning 样本，用 METEOR、BLEU、ROUGE-L 以及 LLM-as-judge 的准确性、完整性和幻觉分数评测 13 个模型。
 - [Human or Machine?](https://arxiv.org/abs/2602.24080)：提出面向 speech-to-speech 互动的图灵测试式评测。核心思想：直接比较人类与机器口语互动，使自然度、响应性和会话人类感不只依赖转写准确率。
+- [Towards Orthographically-Informed Evaluation of Speech Recognition Systems for Indian Languages](https://arxiv.org/abs/2603.00941)：提出 Indian-language ASR 的 OIWER，用 LLM 生成可接受拼写变体，缓解 suffix 分割、非标准拼写和 code-mixed 词带来的 WER 悲观估计。
+- [VietSuperSpeech: A Large-Scale Vietnamese Conversational Speech Dataset for ASR Fine-Tuning in Chatbot, Customer Support, and Call Center Applications](https://arxiv.org/abs/2603.01894)：收集 267.39 小时越南语会话 YouTube 语音，覆盖 chatbot、客服、呼叫中心和热线式场景，并提供 pseudo-labeling 与质检后的训练和开发划分。
+- [When Spoof Detectors Travel: Evaluation Across 66 Languages in the Low-Resource Language Spoofing Corpus](https://arxiv.org/abs/2603.02364)：在 66 种语言上评测跨语言合成语音 spoof detection，通过阈值迁移暴露语言相关鲁棒性差距。
+- [The First Environmental Sound Deepfake Detection Challenge: Benchmarking Robustness, Evaluation, and Insights](https://arxiv.org/abs/2603.04865)：报告首届 ESDD environmental sound deepfake detection 挑战，给出任务定义、数据构造、评测协议、基线以及 1,748 份提交的结果分析。
 - [PolyBench](https://arxiv.org/abs/2603.05128)：评什么：复调音频中的组合推理。核心思想：测试音频语言模型能否分离并推理重叠声音事件，而不是只给出粗粒度场景标签。
+- [Beyond Word Error Rate: Auditing the Diversity Tax in Speech Recognition through Dataset Cartography](https://arxiv.org/abs/2603.05267)：提出 sample difficulty index 和 dataset cartography 做 ASR 审计，用 EmbER 与 SemDist 暴露 WER 难以发现的人群与声学失败模式。
+- [StyleBench: Evaluating Speech Language Models on Conversational Speaking Style Control](https://arxiv.org/abs/2603.07599)：可作为语音与音频模型的 Bench 候选：围绕 StyleBench: Evaluating Speech Language Models on Conversational Speaking Style Control 提供可比较的评测任务、数据或分析协议。
+- [Ramsa: A Large Sociolinguistically Rich Emirati Arabic Speech Corpus for ASR and TTS](https://arxiv.org/abs/2603.08125)：构建 41 小时 Emirati Arabic 语料，来自结构化访谈和国家电视节目，覆盖 157 名说话人、Urban、Bedouin、Mountain 或 Shihhi 子方言，并提供 ASR 与 TTS 基线。
+- [A Semi-spontaneous Dutch Speech Dataset for Speech Enhancement and Speech Recognition](https://arxiv.org/abs/2603.09725)：发布 DRES，含 80 名说话人在嘈杂公共室内空间录制的 1.5 小时半自发荷兰语，用 8 个 ASR 模型和 5 个语音增强算法评测增强前后表现。
+- [SCENEBench: An Audio Understanding Benchmark Grounded in Assistive and Industrial Use Cases](https://arxiv.org/abs/2603.09853)：在背景声理解、噪声定位、跨语言语音理解和 vocal characterizer recognition 上测试 LALM，并结合合成叠加、自然验证样本和延迟报告。
+- [Probabilistic Verification of Voice Anti-Spoofing Models](https://arxiv.org/abs/2603.10713)：通过估计 TTS、voice cloning 和信号变换下的误分类概率来验证 voice anti-spoofing robustness，并给出适用于未见合成攻击的模型无关上界。
+- [AnimeScore: A Preference-Based Dataset and Framework for Evaluating Anime-Like Speech Style](https://arxiv.org/abs/2603.11482)：收集 187 名评分者的 1.5 万组 anime-like voice 成对偏好，并训练排序指标，显示 SSL 模型在 anime-likeness 上达到 90.8% AUC，区别于 MOS 自然度。
+- [What Counts as Real? Speech Restoration and Voice Quality Conversion Pose New Challenges to Deepfake Detection](https://arxiv.org/abs/2603.14033)：展示语音修复与音质转换会干扰音频深伪检测器，为二分类 spoof 标签之外的真实性评测补充压力测试。
+- [CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents](https://arxiv.org/abs/2603.14328)：面向语音与音频模型的可复用评测、数据集、协议或诊断研究。核心思路是围绕“CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [PARSA-Bench](https://arxiv.org/abs/2603.14456)：评测波斯语 audio-language model。核心思想：覆盖语音理解、副语言分析、文化音频理解、诗歌、传统音乐与 code-switching，使波斯语音频能力不被简化为翻译文本评测。
+- [PhonemeDF: A Synthetic Speech Dataset for Audio Deepfake Detection and Naturalness Evaluation](https://arxiv.org/abs/2603.15037)：提供音素级合成语音数据集，用于音频 deepfake 检测与自然度评估，暴露句子级伪造基准可能遗漏的细粒度伪影。
+- [The Voice Behind the Words: Quantifying Intersectional Bias in SpeechLLMs](https://arxiv.org/abs/2603.16941)：可作为语音与音频模型的 Bench 候选：围绕 The Voice Behind the Words: Quantifying Intersectional Bias in SpeechLLMs 提供可比较的评测任务、数据或分析协议。
 - [DEAF](https://arxiv.org/abs/2603.18048)：评什么：音频语言模型的声学忠实性。核心思想：诊断模型输出是否真正基于音频信号，把类似幻觉检测的可靠性评测扩展到听觉证据。
+- [DiscoPhon: Benchmarking the Unsupervised Discovery of Phoneme Inventories With Discrete Speech Units](https://arxiv.org/abs/2603.18612)：在 6 个开发语言和 6 个测试语言上评测离散语音单元的无监督音素发现，每个未见语言只给 10 小时语音，并按单元质量、识别和分割评分。
+- [CAF-Score: Calibrating CLAP with LALMs for Reference-free Audio Captioning Evaluation](https://arxiv.org/abs/2603.19615)：用音频语言模型校准 CLAP 以进行无参考音频字幕评测。
+- [LoASR-Bench: Evaluating Large Speech Language Models on Low-Resource Automatic Speech Recognition Across Language Families](https://arxiv.org/abs/2603.20042)：评测语音与音频模型的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [ERM-MinMaxGAP: Benchmarking and Mitigating Gender Bias in Multilingual Multimodal Speech-LLM Emotion Recognition](https://arxiv.org/abs/2603.21050)：评测多语多模态 Speech-LLM 情感识别中的性别偏差，并为 Qwen2-Audio 类系统提出公平性感知的 MinMaxGAP 训练目标。
+- [How Open Is Open TTS? A Practical Evaluation of Open Source TTS Tools](https://arxiv.org/abs/2603.24116)：复现 Romanian TTS 开发流程，比较 FastPitch、VITS、Grad-TTS 和 Matcha-TTS 的安装、数据准备、硬件需求、客观指标和听测结果。
 - [SID-Bench](https://arxiv.org/abs/2603.24144)：评测口语对话系统中的语义感知打断检测；核心思想是使用真实人类对话和 Average Penalty Time 指标，在全双工交互中同时衡量误触发打断与响应过慢的代价。
+- [Leveraging Avatar Fingerprinting: A Multi-Generator Photorealistic Talking-Head Public Database and Benchmark](https://arxiv.org/abs/2603.26934)：从两个音视频语料和三个 talking-head 生成器构建 AVAPrintDB，在 self 或 cross-reenactment、生成器迁移和数据域迁移下评测 avatar fingerprinting。
+- [Description and Discussion on DCASE 2026 Challenge Task 4: Spatial Semantic Segmentation of Sound Scenes](https://arxiv.org/abs/2604.00776)：定义 DCASE 2026 Task 4 声场空间语义分割，同时检测和分离空间声事件，并更新同类多声源与无目标混合条件下的指标。
+- [AffectSpeech: A Large-Scale Emotional Speech Dataset with Fine-Grained Textual Descriptions for Speech Emotion Captioning and Synthesis](https://arxiv.org/abs/2604.04160)：按六个维度标注情感语音，包括 sentiment、开放词表情绪 caption、强度、韵律、显著片段和语义，并用 human-LLM verification 支持 captioning 与 synthesis。
 - [Full-Duplex-Bench-v3](https://arxiv.org/abs/2604.04847)：评测全双工语音智能体在真实口语不流畅条件下的工具使用能力；核心思想是把真人音频与链式 API 调用场景配对，并同时评估准确率、时延和轮次管理，使语音工具智能体不只在干净转写文本上做函数调用。
+- [DialBGM: A Benchmark for Background Music Recommendation from Everyday Multi-Turn Dialogues](https://arxiv.org/abs/2604.07895)：把 1,200 段日常多轮对话与 4 个候选音乐片段配对，并用人工偏好排序评测背景音乐推荐的语境相关性、非侵入性和一致性。
+- [AT-ADD: All-Type Audio Deepfake Detection Challenge Evaluation Plan](https://arxiv.org/abs/2604.08184)：定义覆盖语音与非语音音频的 all-type audio deepfake detection 挑战，并设置鲁棒 spoof 检测与现实多媒体取证相关评测轨道。
 - [AudioSafetyBench / AudioGuard](https://arxiv.org/abs/2604.08867)：评测音频系统在原生有害声音事件、高风险说话人属性、冒充、语音与内容组合风险以及非语音声音上的安全性。核心思路是把语音智能体安全做成基于政策分类的可测协议，而不是把它简化为“把不安全文本念出来”。
+- [Interactive ASR: Towards Human-Like Interaction and Semantic Coherence Evaluation for Agentic Speech Recognition](https://arxiv.org/abs/2604.09121)：把 LLM-as-judge 语义评分与多轮纠错 agent 结合，在 GigaSpeech、WenetSpeech 和 ASRU code-switching 上评测超越 WER 的语义忠实度。
 - [Jamendo-MT-QA](https://arxiv.org/abs/2604.09721)：面向多轨比较式音乐问答的基准，将音频与音乐评测从生成质量扩展到结构化聆听和比较。
+- [BlasBench: An Open Benchmark for Irish Speech Recognition](https://arxiv.org/abs/2604.10736)：提供 Irish-aware ASR normalizer 与 scoring harness，在 Common Voice ga-IE 和 FLEURS ga-IE 上评测 12 个系统，同时保留 fadas、lenition 和 eclipsis。
 - [HumDial-EIBench](https://arxiv.org/abs/2604.11594)：评什么：真人录制多轮音频对话中的情绪智能。核心思想：用真实语音交互而非纯转写文本，测试音频语言模型能否在多轮中识别并回应情感线索。
+- [VoxEffects: A Speech-Oriented Audio Effects Dataset and Benchmark](https://arxiv.org/abs/2604.12389)：把 produced speech 与精确音效链标签配对，评测 effect presence、preset classification 和 intensity prediction，并加入录制端与平台端退化。
+- [From Seeing it to Experiencing it: Interactive Evaluation of Intersectional Voice Bias in Human-AI Speech Interaction](https://arxiv.org/abs/2604.13067)：评估人机语音交互中的交叉性声音偏见。核心思路是在真实语音交互条件下测试偏见，而不只依赖文本提示或静态声音标签。
+- [Few-Shot and Pseudo-Label Guided Speech Quality Evaluation with Large Language Models](https://arxiv.org/abs/2604.13528)：用 LLM meta-evaluator 聚合声学描述符和 DNSMOS 或 VQScore 伪标签，在 VoiceBank-DEMAND 上做 zero-shot 与 few-shot MOS 预测。
+- [AVID: A Benchmark for Omni-Modal Audio-Visual Inconsistency Understanding via Agent-Driven Construction](https://arxiv.org/abs/2604.13593)：构建 1.12 万条长视频和 3.94 万个注入的音视频不一致事件，覆盖 active-speaker、voiceover 与 scenic 片段，并评分检测、时间定位、分类和推理。
+- [From Reactive to Proactive: Assessing the Proactivity of Voice Agents via ProVoice-Bench](https://arxiv.org/abs/2604.15037)：合成 1,182 条四类 proactive voice-agent 样本，评测语音 agent 何时应监控上下文并主动介入，以及 over-triggering 与推理缺陷。
+- [MUSCAT: MUltilingual, SCientific ConversATion Benchmark](https://arxiv.org/abs/2604.15929)：评测含混合输入与 code-switching 的多语科学对话，考验语音系统处理领域词汇和语言切换的能力。
 - [NVBench](https://arxiv.org/abs/2604.16211)：评测包含非语言发声的语音合成；核心思想是考察语音生成系统能否处理笑声、叹息、呼吸等非语言声音事件，而不只评价普通语音内容。
+- [ArtifactNet: Detecting AI-Generated Music via Forensic Residual Physics](https://arxiv.org/abs/2604.16254)：构建 ArtifactBench，含来自 22 个生成器的 AI 音乐和 6 个真实来源共 6,183 首曲目，用 codec residual forensic features 评测零样本与跨 codec 检测。
+- [NaijaS2ST: A Multi-Accent Benchmark for Speech-to-Speech Translation in Low-Resource Nigerian Languages](https://arxiv.org/abs/2604.16287)：评测 Igbo、Hausa、Yoruba、Nigerian Pidgin 与英语之间的低资源语音到语音翻译，对比级联系统、端到端系统和 AudioLLM 路线。
 - [VIBE / Voice-Induced Bias Evaluation](https://arxiv.org/abs/2604.17248)：通过真实语音评测 large audio-language model 的开放式偏见。核心思想：检查声音线索和口语表达是否会改变模型判断或回复，把偏见评测从纯文本提示扩展到语音输入。
 - [MINT-Bench](https://arxiv.org/abs/2604.17958)：评什么：文本转语音系统的多语言指令遵循。核心思想：测试语音生成能否跨语言遵循内容、风格、语种和控制指令，而不只是生成可懂音频。
+- [KoALa-Bench: Evaluating Large Audio Language Models on Korean Speech Understanding and Faithfulness](https://arxiv.org/abs/2604.19782)：覆盖韩语 ASR、语音翻译、语音问答、指令遵循和两个 speech faithfulness 任务，并纳入韩国高考听力题与本土文化内容。
 - [SpeechParaling-Bench](https://arxiv.org/abs/2604.20842)：评测具备副语言信息感知的语音生成。核心思想：把韵律、情绪、说话人风格等非文本语音因素纳入可测协议，而不是只用通用质量分数评价合成语音。
+- [Do LLM Decoders Listen Fairly? Benchmarking How Language Model Priors Shape Bias in Speech Recognition](https://arxiv.org/abs/2604.21276)：在 Common Voice 24 和 Fair-Speech 上比较 9 类 ASR 架构，按族裔、口音、性别、年龄和第一语言切片分析，并用 12 类声学退化压力测试 WER 与幻觉偏差。
 - [SongBench](https://arxiv.org/abs/2604.25937)：面向歌曲质量评估的细粒度多维基准，为音乐生成评测补充更具体的质量维度。
-- [VoxDialogue](https://www.semanticscholar.org/paper/8b20adb0a2bd79dc0ec89e8a07417c0e3ccd1297)：评测口语对话系统是否能理解文字转写之外的信息。核心思想：用包含声学和副语言线索的多轮口语对话理解任务，检查音频语言模型是否能利用说话人状态与互动证据，而不只依赖转写文本语义。
+- [LRS-VoxMM: A benchmark for in-the-wild audio-visual speech recognition](https://arxiv.org/abs/2604.27866)：从 VoxMM 派生 LRS 格式的野外 AVSR 评测集，并加入噪声、混响和带宽限制版本，用于衡量视觉语音线索在音频退化时的作用。
+- [VoxDialogue](https://openreview.net/forum?id=vbmSSIhKAM)：评测口语对话系统是否能理解文字转写之外的信息。核心思想：用包含声学和副语言线索的多轮口语对话理解任务，检查音频语言模型是否能利用说话人状态与互动证据，而不只依赖转写文本语义。
 - [MedMosaic](https://arxiv.org/abs/2605.00969)：评测多样化医学音频理解。核心思想：用大规模 medical audio benchmark 检查 audio-language model 是否能处理临床相关声学证据，而不只是在通用语音或音乐上表现良好。
+- [Multimodal Confidence Modeling in Audio-Visual Quality Assessment](https://arxiv.org/abs/2605.01219)：提出 MCM-AVQA，为音频和视频估计 modality-specific confidence，使非对称 streaming distortion 下的融合按可靠性预测人类 MOS。
+- [ReasonAudio: A Benchmark for Evaluating Reasoning Beyond Matching in Text-Audio Retrieval](https://arxiv.org/abs/2605.03361)：评估文本-音频检索中超越表层匹配的推理能力。核心思路是要求模型把声学证据与关系型或推理型文本查询连接起来，而不只依赖嵌入相似度。
+- [AfriVox-v2: A Domain-Verticalized Benchmark for In-the-Wild African Speech Recognition](https://arxiv.org/abs/2605.03590)：提供面向真实场景 African speech recognition 的 domain-verticalized benchmark。
+- [Assessing the Impact of Noise and Speech Enhancement on the Intelligibility of Speech Codecs](https://arxiv.org/abs/2605.03776)：在干净与带噪条件下比较传统和神经 speech codec，并评测编码前语音增强的影响，使用主观 intelligibility、listening effort 和 ASR objective intelligibility。
 - [Massive Sound Embedding Benchmark (MSEB)](https://arxiv.org/abs/2605.04556)：评什么：LLM 与音频模型在声音嵌入任务上的能力。核心思想：检验音频表征能否迁移到不同声音理解场景，补充语音问答或音频生成之外的 embedding 质量视角。
+- [WorldSpeech: A Multilingual Speech Corpus from Around the World](https://arxiv.org/abs/2605.09167)：从议会、广播和公版有声书等来源构建 65K 小时、76 种语言、24 kHz 对齐语音语料，用于提升 typologically diverse languages 的 ASR 微调。
+- [Kinetic-Optimal Scheduling with Moment Correction for Metric-Induced Discrete Flow Matching in Zero-Shot Text-to-Speech](https://arxiv.org/abs/2605.09386)：评测 codec-based zero-shot TTS 的 GibbsTTS，用 kinetic-optimal scheduling 和有限步 moment correction 提升客观自然度、主观偏好与说话人相似度。
 - [Expressive Appropriateness of Speech](https://arxiv.org/abs/2605.09413)：评测生成语音在丰富上下文中的表达适切性。核心思想：按照语境期望判断韵律、情感和表达方式，而不是只用通用自然度或可懂度指标评价语音质量。
 - [Fine-Grained Multi-Dimensional Speech Understanding](https://arxiv.org/abs/2605.12036)：从细粒度多维度评测语音理解。核心思想：把数据流水线、benchmark 任务与模型比较结合起来，使 audio-language model 的评测超越转写式理解。
+- [SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification](https://arxiv.org/abs/2605.13672)：构建可控 few-shot audio classification 划分，改变前景事件与背景环境的相关性，暴露 support-query 背景关联变化时的 shortcut reliance。
+- [Streaming Speech-to-Text Translation with a SpeechLLM](https://arxiv.org/abs/2605.14766)：评测真正 streaming 的 SpeechLLM 语音到文本翻译，让模型学习何时已有足够音频可输出，并在 1 到 2 秒延迟下接近非流式质量。
+- [KVoiceBench, KOpenAudioBench, and KMMAU](https://arxiv.org/abs/2605.27984)：发布三个韩语 SpeechLM 基准共 12,345 个样本，分别覆盖语音理解、开放音频理解与多模态音频语言推理；其中 agent 主要用于构造基准，而不是被评测对象。
+- [SLU-2K](https://arxiv.org/abs/2606.03788)：用 2,350 个手语视频问答对做语义级手语翻译评测，检查系统是否保留含义，而不只匹配 gloss 或字幕表面重合。
+- [Emotional Damage: Investigating Safety Vulnerabilities of Large Audio-Language Models Under Speaker Emotional Variations](https://doi.org/10.1109/icassp55912.2026.11464094)：研究说话人情绪变化下音频语言模型的安全脆弱性。
+- [XACLE Challenge 2026: The First X-to-Audio Alignment Challenge](https://doi.org/10.1109/icassp55912.2026.11464875)：定义 ICASSP 2026 X-to-Audio Alignment Challenge，在共享挑战设置中评测生成或检索音频是否与非音频条件信号对齐。
+- [Efficient Audio Transformer and AASIST for Environment Sound Deepfake Detection in the ESDD 2026 Challenge](https://doi.org/10.1109/icassp55912.2026.11464115)：报告 ESDD 2026 环境声 deepfake detection 系统，结合 Efficient Audio Transformer 和 AASIST 后端做挑战鲁棒性测试。
+- [Holistic Audio Quality Assessment: Fixed-Size MFCC Spectral Features for CNN-Based MOS Prediction](https://doi.org/10.1109/iisec69317.2026.11418452)：用固定长度 MFCC spectral features 与 CNN 预测 holistic audio quality 的 MOS，把变长音频压缩为客观质量评估表示。
+- [ÒWE-Voice: An Evaluation of Monolingual and Multilingual ASR Model Using Yoruba Proverb Speech Dataset](https://doi.org/10.18653/v1/2026.africanlp-main.8)：用 Yoruba proverb speech dataset 比较单语与多语 ASR 模型，评测富含谚语的约鲁巴语语音识别而非普通朗读文本。
+- [MAL-VSR: A Dual-Stream Architecture and Dataset for Malayalam Visual Speech Recognition](https://doi.org/10.1109/aicaps68631.2026.11452654)：提供 Malayalam visual speech recognition 数据集和 dual-stream 架构，面向低资源印度语言 lip-reading 场景。
+- [Emilia-NV: A Non-Verbal Speech Dataset with Word-Level Annotation for Human-Like Speech Modeling](https://doi.org/10.1109/icassp55912.2026.11464734)：提供带 word-level annotation 的非语言语音数据，用于把笑声、呼吸等 vocal events 与周围词对齐建模。
+- [AfriVox: Probing Multilingual and Accent Robustness of Speech LLMs](https://doi.org/10.18653/v1/2026.eacl-long.122)：按非洲语言和口音切片探测 Speech LLM 鲁棒性，暴露高资源英语之外的多语和口音识别差距。
+- [DeepMark Benchmark: Redefining Audio Watermarking Robustness](https://doi.org/10.1109/access.2026.3685903)：评测音频水印鲁棒性，为生成语音溯源与抗篡改能力提供专门协议。
+- [Multilingual Deepfake Speech Dataset for Robust and Generalizable Detection](https://doi.org/10.1109/access.2026.3680508)：提供覆盖 17 种语言和多种生成来源的多语言 deepfake speech 数据集，用于鲁棒性与跨数据集泛化评测。
+- [Open ASR Leaderboard](https://huggingface.co/spaces/hf-audio/open_asr_leaderboard)：在 Hugging Face 上聚合自动语音识别模型结果的公开排行榜。核心思想是为 ASR 系统在常见语音数据集和评测设置下提供可复用的比较入口。
+- [SUPERB Leaderboard](https://superbbenchmark.github.io/)：聚合 SUPERB 任务套件中的通用语音表征评测结果；核心思想是为识别、说话人和副语言等任务上的语音表征模型提供公开排名入口。
+- [Dynamic-SUPERB Leaderboard](https://dynamicsuperb-leaderboard.static.hf.space/index.html)：追踪 Dynamic-SUPERB 的语音指令遵循任务；核心思想是把语音处理转成动态指令遵循评测，而不是固定单任务指标。
+- [GlobeAudio](https://arxiv.org/abs/2606.08194)：发布 5,637 道由母语者基于真实音频构造的多语多文化选择题，用于评测大型音频语言模型与 ASR 到 LLM 流水线的自然声学语境理解。
+- [AFAD-MSA: Dataset and Models for Arabic Fake Audio Detection](https://doi.org/10.3390/computation14010020)：发布现代标准阿拉伯语假音频检测数据集与基线，把合成语音取证扩展到阿拉伯语场景。
+- [DECM: Evaluating Bilingual ASR Performance on a Code-switching/mixing Benchmark](https://doi.org/10.63317/32prfh3byi5r)：评测双语 ASR 在语码转换和语码混合语音上的表现。
+- [The Achilles’ heel of spoofing-aware speaker verification: a module-level analysis of adversarial vulnerabilities](https://doi.org/10.7717/peerj-cs.3744)：在三种白盒和黑盒对抗攻击下分析六类 spoofing-aware speaker verification 架构，显示 ASV 模块是系统脆弱性的主要来源。
+- [Evaluation framework for deepfake speech detection: a comparative study of state-of-the-art deepfake speech detectors](https://doi.org/10.1186/s42400-024-00346-1)：定义 deepfake speech detection 比较框架，并在不同数据样本、未见 deepfake 和修改样本泛化条件下评测 40 个检测器。
+- [Language Without Borders: A Dataset and Benchmark for Code-Switching Lip Reading](https://doi.org/10.52202/079017-0967)：提出 code-switching lip-reading 数据集和 benchmark，用于评测跨语言边界的 visual speech recognition。
+- [MusiQAl: A Dataset for Music Question-Answering through Audio-Video Fusion](https://doi.org/10.5334/tismir.222)：收集 310 个音乐表演视频和 11,793 组问答，评测音视频音乐推理、因果推断和跨文化 performer-music understanding。
+- [AudioAtlas: A Comprehensive and Balanced Benchmark Towards Movie-Oriented Text-to-Audio Generation](https://doi.org/10.1145/3746027.3758284)：定义面向电影场景的 text-to-audio generation benchmark，用 comprehensive and balanced prompts 评测影视场景描述与生成音频的对齐。
+- [SynSpeech: A Dataset and Benchmark for Fake Speech Detection](https://doi.org/10.1145/3743093.3771030)：发布 fake speech detection 数据集和 benchmark，用于区分合成与真实语音并支持检测器可复现比较。
+- [Valor32k-AVQA v2.0: Open-Ended Audio-Visual Question Answering Dataset and Benchmark](https://doi.org/10.1145/3746027.3758261)：提供 Valor32k-AVQA v2.0 开放式音视频问答数据集，评测模型能否从配对音频和视频证据生成答案。
+- [Optimizing Vietnamese Speech Recognition Models Through Dataset-Level Audio and Speech Characteristics](https://doi.org/10.1145/3797912)：按语速、自然度、SNR、audio coloration 和混响审计越南语 STT 训练数据，显示面向 social robot 部署的数据筛选能提升准确率。
+- [A New Tunisian Arabic Corpus and Benchmark for Automatic Speech Recognition](https://doi.org/10.5220/0014457700004052)：提出 Tunisian Arabic ASR 语料和 benchmark，为语音识别系统提供方言专门评测集，而不是依赖现代标准阿拉伯语。
+- [ViSQA: A benchmark dataset and baseline models for Vietnamese spoken question answering](https://doi.org/10.1371/journal.pone.0340771)：可作为语音与音频方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。

@@ -1,12 +1,111 @@
 # 1.7.5 Agent Harness
 
+- [Box It to Bind It: Unified Layout Control and Attribute Binding in T2I Diffusion Models](https://arxiv.org/abs/2402.17910)：提出面向空间与三维的智能体流程或编排模式。
+- [NEDS-SLAM: A Neural Explicit Dense Semantic SLAM Framework Using 3D Gaussian Splatting](https://arxiv.org/abs/2403.11679)：结合显式 dense semantic SLAM 与 3D Gaussian Splatting，把建图组织为同时维护几何、语义和可渲染场景状态的重建工作流。
+- [GauStudio: A Modular Framework for 3D Gaussian Splatting and Beyond](https://arxiv.org/abs/2403.19632)：提供面向 Spatial 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Idea-2-3D: Collaborative LMM Agents Enable 3D Model Generation from Interleaved Multimodal Inputs](https://arxiv.org/abs/2404.04363)：补充一个面向空间与三维能力的智能体框架条目，关注spatial, three-dimensional, or grounding contribution。
+- [ChatHuman: Chatting about 3D Humans with Tools](https://arxiv.org/abs/2405.04533)：提出面向空间与三维的智能体流程或编排模式。
+- [SparseDet: A Simple and Effective Framework for Fully Sparse LiDAR-Based 3-D Object Detection](https://arxiv.org/abs/2406.10907)：提供面向 Spatial 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [A Unified Framework for 3D Scene Understanding](https://arxiv.org/abs/2407.03263)：把三维场景理解任务统一到共享流程中，覆盖场景表示、grounding、问答与 captioning，便于跨 3D-language 任务格式比较模型。
+- [WARM-3D: A Weakly-Supervised Sim2Real Domain Adaptation Framework for Roadside Monocular 3D Object Detection](https://arxiv.org/abs/2407.20818)：提供面向spatial, 3D, reconstruction, or grounded perception的工作流、检索或工具循环、验证方法、提示策略或编排框架。
+- [Text2BIM: Generating Building Models Using a Large Language Model-based Multi-Agent Framework](https://arxiv.org/abs/2408.08054)：补充空间与三维理解方向可复用的编排、提示、规划、工具使用、记忆或环境管理逻辑。
+- [MUSES: 3D-Controllable Image Generation via Multi-Modal Agent Collaboration](https://arxiv.org/abs/2408.10605)：通过多模态 agent 协作控制具备 3D 约束的图像生成，在生成过程中协调语言、布局和空间约束。
+- [Story3D-Agent: Exploring 3D Storytelling Visualization with Large Language Models](https://arxiv.org/abs/2408.11801)：补充一个面向空间与三维能力的智能体框架条目，关注spatial, three-dimensional, or grounding contribution。
+- [CollaMamba: Efficient Collaborative Perception with Cross-Agent Spatial-Temporal State Space Model](https://arxiv.org/abs/2409.07714)：用时空 state-space model 协调多智能体感知，在通信与延迟约束下共享紧凑跨 agent 特征以完成协同 3D detection。
+- [Tag Map: A Text-Based Map for Spatial Reasoning and Navigation with Large Language Models](https://arxiv.org/abs/2409.15451)：构建文本地图，使 LLM 能进行空间推理与导航。
 - [VLM-Grounder](https://arxiv.org/abs/2410.13860)（[开源代码](https://github.com/InternRobotics/VLM-Grounder)）面向零样本三维视觉 grounding；核心思想是让 VLM agent 调用三维场景工具和几何验证，把开放词汇目标落到具体 3D 区域。
+- [MAGiC-SLAM: Multi-Agent Gaussian Globally Consistent SLAM](https://arxiv.org/abs/2411.16785)：通过多智能体构建全局一致的 3D Gaussian Splatting SLAM 地图，协调局部更新与全局对齐，使分布式场景重建保持一致。
+- [Ctrl-D: Controllable Dynamic 3D Scene Editing with Personalized 2D Diffusion](https://arxiv.org/abs/2412.01792)：提出面向空间与三维的智能体流程或编排模式。
+- [CAD-Assistant: Tool-Augmented VLLMs as Generic CAD Task Solvers](https://arxiv.org/abs/2412.13810)：把 VLLM 接入 CAD 工具，使模型通过工具执行解决草图、编辑、约束和设计分析任务，而不是只做文本推理。
+- [3D Designer Toy Design Methods Based on Generative AI and AI Agent](https://doi.org/10.1109/aixheart62327.2024.00010)：把设计师玩具创作组织为 AI agent 工作流，将提示和设计约束转成 3D 概念、建模步骤以及迭代生成或细化输出。
+- [SpatialCoT: Advancing Spatial Reasoning through Coordinate Alignment and Chain-of-Thought for Embodied Task Planning](https://arxiv.org/abs/2501.10074)：SpatialCoT 将坐标对齐和 CoT 用于 embodied task planning，适合 Spatial Agent Harness。
+- [Language-to-Space Programming for Training-Free 3D Visual Grounding](https://arxiv.org/abs/2502.01401)：可作为空间理解与视觉定位的Agent Harness候选；核心关注“Language-to-Space Programming for Training-Free 3D Visual Grounding”。
+- [Schema-Guided Scene-Graph Reasoning Based on Multi-Agent Large Language Model System](https://arxiv.org/abs/2502.03450)：面向空间推理的智能体框架或运行时。核心思想：把 Based on Multi-Agent Large Language Model System 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Beyond the Final Layer: Hierarchical Query Fusion Transformer with Agent-Interpolation Initialization for 3D Instance Segmentation](https://arxiv.org/abs/2502.04139)：补充一个面向空间与三维能力的智能体框架条目，关注spatial, three-dimensional, or grounding contribution。
+- [Visual Agentic AI for Spatial Reasoning with a Dynamic API](https://arxiv.org/abs/2502.06787)：面向用于视觉空间推理的动态 API的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [VisuoThink](https://arxiv.org/abs/2504.09130)：一种免训练的 LVLM 多模态树搜索 harness，在几何和空间推理任务中交替进行视觉与文本推理，并使用 look-ahead search。
+- [Abstract Perspective Change](https://arxiv.org/abs/2504.17207)：面向 VLM 视角推理的工具增强 harness。核心思想是用检测、分割和朝向估计构建场景抽象，再进行视角变换后让模型推理。
+- [SORT3D: Spatial Object-centric Reasoning Toolbox for Zero-Shot 3D Grounding Using Large Language Models](https://arxiv.org/abs/2504.18684)：用于零样本 3D grounding 的 spatial object-centric reasoning toolbox；核心思想是结合物体指代、空间关系和属性处理机器人相关 3D 场景。
+- [SpatialPrompting: Keyframe-driven Zero-Shot Spatial Reasoning with Off-the-Shelf Multimodal Large Language Models](https://arxiv.org/abs/2505.04911)：面向零样本 3D 空间推理的 keyframe-driven harness。核心思想是把 3D 环境转成关键帧视觉证据，而不是依赖 3D 专用微调。
+- [Struct2D](https://arxiv.org/abs/2506.04220)：面向 MLLM 空间推理的感知引导框架。核心思想：把 3D 场景转成鸟瞰图、对象标记和对象元数据等结构化 2D 输入，使模型无需显式 3D 输入也能处理方向、路线规划和空间关系。
 - [RoboRefer](https://arxiv.org/abs/2506.04308)（[开源代码](https://github.com/Zhoues/RoboRefer)）面向机器人空间指代任务，采用显式空间 grounding 与执行反馈闭环来提升复杂空间关系求解稳定性。
+- [SPAZER: Spatial-Semantic Progressive Reasoning Agent for Zero-shot 3D Visual Grounding](https://arxiv.org/abs/2506.21924)：类型：agent harness/可复用执行框架。核心价值：为 1.7.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [RemoteReasoner: Towards Unifying Geospatial Reasoning Workflow](https://arxiv.org/abs/2507.19280)：构建地理空间推理 workflow，在遥感影像和空间上下文上形成推断路径。
+- [CADDesigner: Conceptual CAD Model Generation with a General-Purpose Agent](https://arxiv.org/abs/2508.01031)：用通用智能体生成概念 CAD 模型，把 LLM 智能体与空间设计工作流连接起来。
+- [GeoFlow: Agentic Workflow Automation for Geospatial Tasks](https://arxiv.org/abs/2508.04719)：用智能体工作流自动化地理空间任务，将空间变换与验证组织成显式执行步骤。
+- [DeepThink3D: Enhancing Large Language Models with Programmatic Reasoning in Complex 3D Situated Reasoning Tasks](https://arxiv.org/abs/2508.15548)：面向复杂 3D situated reasoning 的程序化推理 harness。核心思想是让模型调用 3D 工具，并把程序结果纳入结构化推理来回答场景接地问题。
+- ["Does the cafe entrance look accessible? Where is the door?" Towards Geospatial AI Agents for Visual Inquiries](https://arxiv.org/abs/2508.15752)：把街景级 geospatial visual inquiries 组织成 agent 工作流，结合视觉证据、位置上下文和问题分解回答无障碍入口与目标位置问题。
+- [MV-RAG: Retrieval Augmented Multiview Diffusion](https://arxiv.org/abs/2508.16577)：把检索加入 multiview diffusion，用检索到的视角证据引导多相机视角之间的空间一致生成。
 - [MapAgent](https://arxiv.org/abs/2509.05933)（[开源代码](https://github.com/Hasebul/MapAgent)）面向 geospatial reasoning 的分层多 agent harness；核心思想是把复杂地图问题拆成规划、地图工具调用、证据抽取和答案生成模块，降低相似 geospatial API 带来的工具选择混淆。
+- [See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model](https://arxiv.org/abs/2509.16087)：可作为空间理解与视觉定位的Agent Harness候选；核心关注“Training-Free Spatial Prompting for Multimodal Large Language Model”。
+- [MAST: Multi-Agent Spatial Transformer for Learning to Collaborate](https://arxiv.org/abs/2509.17195)：用 multi-agent spatial transformer 建模协作，学习 agent 如何交换时空状态以完成协同感知或行动。
+- [Personalized Auto-Grading and Feedback System for Constructive Geometry Tasks Using Large Language Models on an Online Math Platform](https://arxiv.org/abs/2509.25529)：构建 LLM 辅助的作图几何自动批改闭环，结合学生构造轨迹、几何任务准则、个性化反馈和在线数学平台部署。
+- [TIGeR: Tool-Integrated Geometric Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2510.07181)：类型：agent harness/可复用执行框架。核心价值：为 1.7.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [CompassLLM](https://arxiv.org/abs/2510.07516)：面向 geospatial popular-path query 的多 agent harness。核心思想是把轨迹推理拆成 SEARCH 阶段识别热门路径，以及 GENERATE 阶段在历史轨迹不存在时合成可行路径。
+- [Reasoning in Space via Grounding in the World](https://arxiv.org/abs/2510.13800)：基于 3D grounding 的空间推理流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting](https://arxiv.org/abs/2510.16410)：将 3D 推理、分割或编辑包装为智能体工作流。
+- [Latent Sketchpad: Sketching Visual Thoughts to Elicit Multimodal Reasoning in MLLMs](https://arxiv.org/abs/2510.24514)：面向多模态推理的 visual-thought harness。核心思想是让模型绘制中间视觉状态，把空间和视觉推理外显出来，而不是只停留在文本 token 中。
+- [Video Spatial Reasoning with Object-Centric 3D Rollout](https://arxiv.org/abs/2511.13190)：可作为空间理解与视觉定位的Agent Harness候选；核心关注“Video Spatial Reasoning with Object-Centric 3D Rollout”。
+- [GeoVista](https://arxiv.org/abs/2511.15705)：结合 GeoBench 的网页增强地理定位代理，在视觉推理循环中调用图像放大和网页搜索工具。
+- [Geometrically-Constrained Agent (GCA)](https://arxiv.org/abs/2511.22659)：一种免训练空间推理 harness，先把模糊查询转写为可验证几何约束，再在约束范围内执行工具调用。
+- [Words into World: A Task-Adaptive Agent for Language-Guided Spatial Retrieval in AR](https://arxiv.org/abs/2512.00294)：为空间与三维理解补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
 - [SpaceTools](https://arxiv.org/abs/2512.04069)（[开源代码](https://github.com/spacetools/SpaceTools)）：面向空间推理的工具增强 harness；核心思想是把 segmentation、pointing、depth、3D box、grasp 等视觉/机器人工具纳入交互式执行链，并用工具反馈提升复杂空间任务的可验证性。
+- [Neuro-Symbolic Control with LLMs](https://arxiv.org/abs/2512.17321)：用 LLM 引导的神经符号控制解决语言引导的空间任务。
 - [VULCAN](https://arxiv.org/abs/2512.22351)（开源代码：暂未见稳定公开官方仓库）：面向三维物体摆放的工具增强多 agent 框架；核心思想是通过 MCP 风格 API、三维场景工具、Planner/Executor/Evaluator 协作和反馈循环，把语言指令转成可验证的 3D 操作。
+- [A Synergistic Multi-Agent Framework for Camouflage Attack on Large Language Models](https://doi.org/10.1109/taslpro.2025.3642728)：提出空间理解方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [SFCL: A Spatial-Frequency Collaborative Learning Framework for Generalizable Deepfake Detection](https://doi.org/10.1109/ijcb65343.2025.11410680)：提出空间理解方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Low-Cost 3D Authoring via Guided Diffusion in GUI-Driven Pipeline](https://doi.org/10.1109/cisat66811.2025.11181952)：描述 GUI 驱动的 3D authoring 流程，用用户控制引导 diffusion 输出，降低空间资产创建中的手工建模成本。
+- [DSPy-based neural-symbolic pipeline to enhance spatial reasoning in LLMs](https://doi.org/10.1016/j.neunet.2025.108022)：用 DSPy 组合 neural-symbolic prompting 模块，把问题分解、符号约束处理和 LLM 答案生成分开以增强空间推理。
+- [Generative Models for Incremental Learning to Advance Autonomous Agent Evolution: a 3D Perspective](https://doi.org/10.23919/eusipco63237.2025.11226732)：把三维生成模型视作自主 agent 的增量学习闭环，通过生成环境或物体逐步扩展感知与行动经验。
+- [Spatial heterogeneity of agricultural drought drivers in irrigation district: A causal inference framework bridging covariation and structural equation modeling](https://doi.org/10.1016/j.agwat.2025.109978)：构建灌区农业干旱驱动因素的因果分析流程，结合空间异质性、协变分析和结构方程建模，而非 LLM agent 循环。
+- [An open data collection of 3D tool and equipment models for neonatology](https://doi.org/10.1016/j.rineng.2025.104236)：提供新生儿科 3D 工具与设备模型的开放数据收集流程，支持临床工程场景中的仿真、训练和空间资产 authoring。
+- [An interactive system for 3D spatial relationship query by integrating tree-based element indexing and LLM-based agent](https://doi.org/10.1016/j.aei.2025.103375)：补充智能体工作流、编排模式、工具循环、记忆、验证或环境控制框架。
+- [Geo-IQ: Prompt Based Natural Language Retrieval for Geo-Spatial Data](https://doi.org/10.1109/icft66708.2025.11336542)：面向空间推理提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Integrating Generative and Agentic AI with Spatial-Temporal Reasoning: A Cognitive Science-Inspired Framework for Next-Generation Intelligent Systems](https://doi.org/10.1109/icngn67480.2025.11413623)：面向空间推理提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Thinking with Map: Reinforced Parallel Map-Augmented Agent for Geolocalization](https://arxiv.org/abs/2601.05432)：为图像地理定位加入 agent-in-the-map 循环和强化的并行地图使用。
+- [Map2Thought](https://arxiv.org/abs/2601.11442)：围绕 metric cognitive map 构建的三维空间推理框架。核心思想是结合网格式关系结构与度量尺度几何，使 VLM 推理更显式、可解释。
 - [Think3D](https://arxiv.org/abs/2601.13029)（[开源代码](https://github.com/zhangzaibin/spagent)）面向三维空间推理的主动探索 harness；核心思想是让 VLM agent 调用 3D 操作工具形成交互式 spatial chain-of-thought，并用工具反馈改善多视角与视频空间推理。
 - [Spatial-Agent](https://arxiv.org/abs/2601.16965)（开源代码：暂未见稳定公开官方仓库）面向地理空间问答的 GeoFlow 工作流；核心思想是把自然语言解析成可执行的空间变换图，再用计算与验证闭环抑制空间幻觉。
+- [LocationAgent: A Hierarchical Agent for Image Geolocation via Decoupling Strategy and Evidence from Parametric Knowledge](https://arxiv.org/abs/2601.19155)：用层级化、证据解耦的智能体进行图像地理定位。
+- [SceneSmith](https://arxiv.org/abs/2602.09153)：把 simulation-ready indoor-scene generation 组织为空间资产和约束上的 agentic workflow。
+- [SpotAgent](https://arxiv.org/abs/2602.09463)：面向视觉地理定位的 agentic 工作流。核心思想是通过外部证据与迭代推理 grounding 稀疏视觉线索，使位置预测可验证，而不是只给出高置信猜测。
+- [City Editing: Hierarchical Agentic Execution for Dependency-Aware Urban Geospatial Modification](https://arxiv.org/abs/2602.19326)：用分层 agent execution 执行城市地理空间编辑，按城市对象、地图图层和空间约束之间的依赖关系分解修改。
+- [pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning](https://arxiv.org/abs/2603.00905)：面向用于空间推理的 3D 可视程序生成的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [LLM-supported 3D Modeling Tool for Radio Radiance Field Reconstruction](https://arxiv.org/abs/2603.04368)：补充面向空间推理、三维重建与几何生成的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Thinking with Spatial Code for Physical-World Video Reasoning](https://arxiv.org/abs/2603.05591)：提供可复用 agent 工作流或执行 harness，服务于spatial reasoning。
+- [ViewFusion: Structured Spatial Thinking Chains for Multi-View Reasoning](https://arxiv.org/abs/2603.06024)：面向多视角推理的结构化空间 thinking-chain 框架；核心思想是在处理遮挡和视角变化前先对齐跨视角证据。
+- [AutoUE](https://arxiv.org/abs/2603.07106)：通过多智能体系统在 Unreal Engine 中自动生成 3D 游戏，把场景创建变成可执行 agent workflow。
+- [UniGround: Universal 3D Visual Grounding via Training-Free Scene Parsing](https://arxiv.org/abs/2603.08131)：提供可复用 agent 工作流或执行 harness，服务于spatial reasoning。
+- [World2Mind](https://arxiv.org/abs/2603.09774)：面向 foundation models 的 training-free 空间推理 toolkit。核心思想：基于 3D reconstruction 和 segmentation 输出构造 allocentric spatial cognitive maps，再通过 tool invocation assessment、cue collection 和 geometry-semantics integration 完成推理。
+- [SceneAssistant](https://arxiv.org/abs/2603.12238)：用 visual-feedback agent 改进 open-vocabulary 3D scene generation。
+- [RieMind: Geometry-Grounded Spatial Agent for Scene Understanding](https://arxiv.org/abs/2603.15386)：面向 scene understanding 的 geometry-grounded spatial agent。核心思想：解耦感知与度量推理，让 VLM 使用显式几何 grounding，而不是只依赖端到端视频理解。
+- [Visual Set Program Synthesizer](https://arxiv.org/abs/2603.15997)：可作为spatial and visual reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](https://arxiv.org/abs/2603.23404)：文本表征引导的 3D 空间推理。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [LanteRn: Latent Visual Structured Reasoning](https://arxiv.org/abs/2603.25629)：可作为spatial and visual reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [GISclaw: A Comprehensive Open-Source LLM Agent System for Realistic Multi-Step Geospatial Analysis](https://arxiv.org/abs/2603.26845)：提供面向真实多步 geospatial analysis 的开源 LLM agent system，覆盖工具编排与空间工作流执行。
 - [Think, Act, Build](https://arxiv.org/abs/2604.00528)（开源代码：暂未见稳定公开官方仓库）：面向零样本三维视觉 grounding 的 agentic framework；核心思想是把思考、三维动作和场景构建交替执行，用工具反馈逐步收敛目标定位。
+- [Active 3D Scene Exploration](https://arxiv.org/abs/2604.06725)：训练无关的多视角空间推理 harness；核心思想是从图像重建 3D 场景，选择有信息量的相机视角，合成新观察，并通过显式 perspective-taking 支持 MLLM 推理。
+- [3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience](https://arxiv.org/abs/2604.08042)：Agent Harness 条目；核心思想：语言驱动的 3D sketch 生成；核心思想是用早期对比经验引导空间绘制，而无需任务特定训练。
 - [MAG-3D](https://arxiv.org/abs/2604.09167)（开源代码：暂未见稳定公开官方仓库）：面向 3D understanding 的多 agent grounded reasoning；核心思想是将场景理解、空间关系判断和结果校验拆成协作角色，提升复杂三维推理的可验证性。
+- [LAST: Leveraging Tools as Hints to Enhance Spatial Reasoning for Multimodal Large Language Models](https://arxiv.org/abs/2604.09712)：它把空间推理接入外部工具或 agent workflow，适合补充 spatial Agent Harness。
+- [SceneOrchestra](https://arxiv.org/abs/2604.19907)：通过完整 tool-call trajectory generation 合成 3D 场景，把 agentic 3D creation 纳入空间工具化工作流。
+- [SpatiO](https://arxiv.org/abs/2604.21190)：面向空间 VLM agent 的测试时编排 harness。核心思想是根据输入场景动态协调二维线索、深度信号与几何推理策略。
+- [ProcFunc](https://arxiv.org/abs/2604.26943)：提供 VLM 可编辑和执行的 Python procedural-generation 抽象，把 3D scene construction 转为工具化流程。
+- [UnAC: Adaptive Visual Prompting with Abstraction and Stepwise Checking for Complex Multimodal Reasoning](https://arxiv.org/abs/2605.03950)：可作为spatial and visual reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [SpatialPrompt: XR-Based Spatial Intent Expression as Executable Constraints for AI Generative 3D Design](https://arxiv.org/abs/2605.07894)：补充面向空间推理、三维重建与几何生成的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [STAR: Failure-Aware Markovian Routing for Multi-Agent Spatiotemporal Reasoning](https://arxiv.org/abs/2605.10057)：STAR 为多 agent spatiotemporal reasoning 提供 failure-aware routing harness。
 - [ViSRA](https://arxiv.org/abs/2605.10106)（开源代码：未确认公开）：training-free video-based spatial reasoning agent；核心思想是把 MLLM 推理接到显式空间专家输出上，使视频空间推理模块化、可迁移，而不是依赖特定空间 benchmark 的后训练。
+- [Thinking with Novel Views: A Systematic Analysis of Generative-Augmented Spatial Intelligence](https://arxiv.org/abs/2605.10588)：把生成式 novel-view synthesis 放入推理循环；核心思想是在单视图存在空间歧义时，让 reasoner 请求替代视角。
+- [Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning](https://arxiv.org/abs/2608.27549)： Code-as-World 将物理组成、动力学和视觉外观表示为可执行程序；溯因式 agent 反复提出世界假设，执行并渲染，再依据语言或视频观测验证和修正，随后用通过验证的世界监督 Code-as-World-VL 学习定量物理推理。
+- [Cognitive 3D CAD model retrieval: a multi-agent system for intent-driven, cross-modal search](https://doi.org/10.1080/09544828.2026.2617799)：用多智能体系统执行意图驱动、跨模态的 3D CAD 模型检索，把用户意图、几何信息和检索流程连接起来。
+- [GeoAgent: a hierarchical LLM-based multi-agent architecture for autonomous spatial analysis](https://doi.org/10.1080/13658816.2026.2624784)：面向空间推理与空间智能的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“GeoAgent: a hierarchical LLM-based multi-agent architecture for autonomous spatial analysis”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [LumiMood: A Creativity Support Tool for Designing the Mood of a 3D Scene](https://doi.org/10.1145/3613904.3642440)：提供面向 Spatial 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Geospatial Knowledge-Base Question Answering Using Multi-Agent Systems](https://doi.org/10.3390/ijgi15010035)：提出空间理解方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [ScaleGS: Scalable Distributed Framework for Large-Scale 3D Gaussian Splatting with Edge Communication](https://doi.org/10.1145/3797823.3797830)：把大规模 3D Gaussian Splatting 重建分布到边缘通信连接的 worker 上，通过通信协调和场景分区实现可扩展空间渲染。
+- [A Novel Improved Dung Beetle Optimization Algorithm for Collaborative 3D Path Planning of UAVs](https://doi.org/10.3390/biomimetics10070420)：提供面向spatial, 3D, reconstruction, or grounded perception的工作流、检索或工具循环、验证方法、提示策略或编排框架。
+- [Knowledge-Guided Large Language Models for Enhancing Agent-Based Wildfire Spatial Simulation](https://doi.org/10.1145/3764921.3770152)：把领域知识注入 LLM 支持的 agent-based wildfire simulation，用空间火势传播规则和场景推理改进仿真设置或解释。
+- [sMoRe: Spatial Mapping and Object Rendering Environment](https://doi.org/10.1145/3708557.3716337)：提供 spatial mapping 与 object rendering 环境，用于构建、编辑和渲染以物体为中心的 3D 场景工作流。
+- [MCP-Unity: Protocol-Driven Framework for Interactive 3D Authoring](https://doi.org/10.1145/3757376.3771417)：通过协议驱动框架把 LLM 或工具客户端连接到 Unity，使交互式 3D authoring 能通过结构化场景编辑命令执行。
+- [Large Language Models for Spatial Analysis Queries](https://doi.org/10.14778/3750601.3750693)：提出面向空间理解能力的智能体流程、编排模式、工具循环或执行框架。
+- [PITAR: an LLM-powered Agent towards Intelligent and Accurate Manipulations in Extended Reality with Multimodal Interactions](https://doi.org/10.1145/3761667.3761944)：为空间与三维理解补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [GeoAgent: An Agentic AI Framework for Spatial Query Understanding and Interactive Geospatial Intelligence](https://doi.org/10.1145/3764915.3770719)：为空间与三维理解补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。

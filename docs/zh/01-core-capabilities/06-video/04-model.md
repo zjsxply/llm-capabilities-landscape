@@ -1,23 +1,1099 @@
 # 1.6.4 Model
 
+- [CoVR: Learning Composed Video Retrieval from Web Video Captions](https://arxiv.org/abs/2308.14746)：利用网页视频字幕训练组合式视频检索，使查询能用语言修改参考视频，而不只是按文本检索。
+- [Retrieval-Augmented Egocentric Video Captioning](https://arxiv.org/abs/2401.00789)：为第一视角视频字幕加入检索到的视觉语言上下文，使描述能借用相似历史片段及字幕信息。
+- [DeepStream: Video Streaming Enhancements Using Compressed Deep Neural Networks](https://doi.org/10.1109/tcsvt.2022.3229079)：压缩视频流增强用深度网络，在降低带宽和计算开销的同时尽量保持视觉质量。
+- [Glance and Focus: Memory Prompting for Multi-Event Video Question Answering](https://arxiv.org/abs/2401.01529)：采用先浏览后聚焦的记忆提示策略，先概览长视频，再围绕具体事件证据回答多事件问题。
+- [VSS-Net: Visual Semantic Self-Mining Network for Video Summarization](https://doi.org/10.1109/tcsvt.2023.3312325)：在视频内部自挖掘视觉语义，用高层事件信息选择摘要帧，而不只依赖低层显著性。
+- [FMA-Net: Flow-Guided Dynamic Filtering and Iterative Feature Refinement with Multi-Attention for Joint Video Super-Resolution and Deblurring](https://arxiv.org/abs/2401.03707)：结合光流引导、动态滤波和多注意力迭代特征细化，联合完成视频超分辨率与去模糊。
+- [Diffusion Priors for Dynamic View Synthesis from Monocular Videos](https://arxiv.org/abs/2401.05583)：用扩散先验约束单目动态视角合成，在只有单段视频时提升时间和几何合理性。
+- [Cross-Modality and Within-Modality Regularization for Audio-Visual Deepfake Detection](https://arxiv.org/abs/2401.05746)：同时正则化音视频跨模态一致性和模态内表征，以检测伪造痕迹只出现在某一模态的深度伪造视频。
+- [Distilling Vision-Language Models on Millions of Videos](https://arxiv.org/abs/2401.06129)：在百万级视频上蒸馏大型视觉语言监督，使紧凑视频语言模型继承广泛的时序与语义知识。
+- [Collaboratively Self-Supervised Video Representation Learning for Action Recognition](https://arxiv.org/abs/2401.07584)：通过协同自监督协调互补时序线索，在缺少密集标注时学习动作识别表征。
+- [SRL-CLIP: Efficient CLIP Video Adaptation via Structured Semantic Role Labels](https://arxiv.org/abs/2401.07669)：用结构化语义角色标签把 actor-action-object 关系注入 CLIP，高效适配视频语言识别。
+- [GPT4Ego: Unleashing the Potential of Pre-Trained Models for Zero-Shot Egocentric Action Recognition](https://arxiv.org/abs/2401.10039)：通过提示和适配预训练多模态模型进行零样本第一视角动作识别，减少对第一视角动作标注的依赖。
+- [Towards Language-Driven Video Inpainting via Multimodal Large Language Models](https://arxiv.org/abs/2401.10226)：用多模态大语言模型解释语言编辑请求，并指导视频修补中对象、区域和时间范围的选择。
+- [M2-CLIP: A Multimodal, Multi-task Adapting Framework for Video Action Recognition](https://arxiv.org/abs/2401.11649)：用多模态和多任务信号适配 CLIP，使共享表征能够覆盖不同设置下的视频动作识别。
+- [Diffusion Facial Forgery Detection](https://arxiv.org/abs/2401.15859)：针对扩散式合成流水线产生的伪造痕迹训练人脸伪造检测器。
+- [MoE-LLaVA: Mixture of Experts for Large Vision-Language Models](https://arxiv.org/abs/2401.15947)：在 LLaVA 式视觉语言模型中加入专家混合路由，让不同专家更高效地处理差异化多模态输入。
+- [Synchformer: Efficient Synchronization From Sparse Cues](https://arxiv.org/abs/2401.16423)：从稀疏时序线索学习音视频同步，高效对齐视频与声音中的事件。
+- [SNP-S3: Shared Network Pre-Training and Significant Semantic Strengthening for Various Video-Text Tasks](https://arxiv.org/abs/2401.17773)：预训练共享的视频文本网络并强化语义对齐，使同一骨干迁移到检索、字幕生成等任务。
+- [M2-RAAP: A Multi-Modal Recipe for Advancing Adaptation-based Pre-training towards Effective and Efficient Zero-shot Video-text Retrieval](https://arxiv.org/abs/2401.17797)：结合多模态适配和预训练配方，在无需完整任务微调的情况下提升零样本文本视频检索。
+- [Taylor Videos for Action Recognition](https://arxiv.org/abs/2402.03019)：用 Taylor 式时序近似表示视频动态，让动作识别更多利用运动演化而非孤立帧。
+- [Video-LaVIT: Unified Video-Language Pre-training with Decoupled Visual-Motional Tokenization](https://arxiv.org/abs/2402.03161)：在统一视频语言预训练中解耦视觉外观 token 与运动 token，使模型显式建模时间变化。
+- [Tuning Large Multimodal Models for Videos using Reinforcement Learning from AI Feedback](https://arxiv.org/abs/2402.03746)：用 AI 反馈强化学习调优视频多模态模型，使回答更贴合时序证据和偏好信号。
+- [Memory Consolidation Enables Long-Context Video Understanding](https://arxiv.org/abs/2402.05861)：跨上下文窗口压缩并巩固视频记忆，让模型在长视频理解中保留关键事件。
+- [World Model on Million-Length Video And Language With Blockwise RingAttention](https://arxiv.org/abs/2402.08268)：用 blockwise RingAttention 训练百万 token 级视频语言世界模型，面向极长时序依赖。
+- [Momentor: Advancing Video Large Language Model with Fine-Grained Temporal Reasoning](https://arxiv.org/abs/2402.11435)：通过细粒度 moment 及其关系建模改进 Video LLM 时序推理，而不是把视频压缩成粗粒度全局特征。
+- [OLViT: Multi-Modal State Tracking via Attention-Based Embeddings for Video-Grounded Dialog](https://arxiv.org/abs/2402.13146)：用基于注意力的视频嵌入追踪多模态对话状态，使视频落地回答能跟随对象和事件变化。
+- [LLMs Meet Long Video: Advancing Long Video Comprehension with An Interactive Visual Adapter in LLMs](https://arxiv.org/abs/2402.13546)：把交互式视觉适配器接入 LLM，使长视频证据可在理解过程中被查询和压缩。
+- [Place Anything into Any Video](https://arxiv.org/abs/2402.14316)：通过匹配位置、外观和跨帧时间一致性，把指定对象插入任意视频。
+- [Learning an Actionable Discrete Diffusion Policy via Large-Scale Actionless Video Pre-Training](https://arxiv.org/abs/2402.14407)：从大规模无动作标注视频预训练离散扩散策略，使类机器人动作预测能从视觉动态中学习。
+- [Sora Generates Videos with Stunning Geometrical Consistency](https://arxiv.org/abs/2402.17403)：分析 Sora 输出所体现的持久几何、相机运动和对象一致性，说明大规模视频生成器可能学到空间结构。
+- [VideoMAC: Video Masked Autoencoders Meet ConvNets](https://arxiv.org/abs/2402.19082)：把掩码自编码与卷积式视频骨干结合，用于学习具有时序意识的视频理解表征。
+- [OVEL: Large Language Model as Memory Manager for Online Video Entity Linking](https://arxiv.org/abs/2403.01411)：用 LLM 作为在线记忆管理器，在流式视频中维护实体假设和上下文以完成实体链接。
+- [DreamFrame: Enhancing Video Understanding via Automatically Generated QA and Style-Consistent Keyframes](https://arxiv.org/abs/2403.01422)：自动生成问答监督和风格一致关键帧，在缺少人工密集标注时增强视频理解模型。
+- [Exposing the Deception: Uncovering More Forgery Clues for Deepfake Detection](https://arxiv.org/abs/2403.01786)：从人脸外观和时序行为中挖掘更多伪造线索，使深度伪造检测不局限于显眼伪影。
+- [Exploiting Style Latent Flows for Generalizing Deepfake Video Detection](https://arxiv.org/abs/2403.06592)：建模风格潜空间中的流变化，在测试伪造类型不同于训练数据时提升深度伪造视频检测泛化。
+- [WorldGPT: A Sora-Inspired Video AI Agent as Rich World Models from Text and Image Inputs](https://arxiv.org/abs/2403.07944)：构建受 Sora 启发、由文本和图像条件控制的视频世界模型，用于生成丰富的模拟场景。
+- [Dam: Dynamic Adapter Merging for Continual Video QA Learning](https://arxiv.org/abs/2403.08755)：在持续 Video QA 学习中动态合并 adapter，使模型吸收新任务的同时减少旧能力遗忘。
+- [MIM4D: Masked Modeling with Multi-View Video for Autonomous Driving Representation Learning](https://arxiv.org/abs/2403.08760)：在多视角驾驶视频上做掩码建模，学习自动驾驶感知所需的 4D 时空表征。
+- [MM1: Methods, Analysis & Insights from Multimodal LLM Pre-training](https://arxiv.org/abs/2403.09611)：系统研究多模态 LLM 预训练中的数据配比、架构和分辨率选择，并分析类视频视觉信号对能力的影响。
+- [Video Mamba Suite: State Space Model as a Versatile Alternative for Video Understanding](https://arxiv.org/abs/2403.09626)：评估状态空间视频模型作为 Transformer 替代方案，在多类视频理解任务中进行高效时序建模。
+- [VideoAgent: Long-form Video Understanding with Large Language Model as Agent](https://arxiv.org/abs/2403.10517)：用 LLM 驱动的智能体把长视频理解拆解为可搜索的时间证据和推理步骤。
+- [Towards Neuro-Symbolic Video Understanding](https://arxiv.org/abs/2403.11021)：把神经视频感知与符号结构结合，使视频理解能够围绕事件、关系和组合语义推理。
+- [LocalStyleFool: Regional Video Style Transfer Attack Using Segment Anything Model](https://arxiv.org/abs/2403.11656)：用 SAM 引导的区域风格迁移攻击视频模型，暴露模型对跨帧局部风格变化的敏感性。
+- [Contextual AD Narration with Interleaved Multimodal Sequence](https://arxiv.org/abs/2403.12922)：从交错多模态序列生成上下文感知音频描述旁白，使无障碍视频描述同时反映画面内容和时序上下文。
+- [HyperLLaVA: Dynamic Visual and Language Expert Tuning for Multimodal Large Language Models](https://arxiv.org/abs/2403.13447)：在 LLaVA 式模型中动态调优视觉和语言专家，使推理能针对不同多模态输入专门化。
+- [Language Repository for Long Video Understanding](https://arxiv.org/abs/2403.14622)：为长视频构建语言化记忆库，让模型检索事件描述而不是反复处理全部帧。
+- [StreamingT2V: Consistent, Dynamic, and Extendable Long Video Generation from Text](https://arxiv.org/abs/2403.14773)：以流式方式生成长文本到视频结果，在扩展场景时保持运动连续和内容一致。
+- [InternVideo2: Scaling Video Foundation Models for Multimodal Video Understanding](https://arxiv.org/abs/2403.15377)：在视频、图像和语言数据上扩展视频基础模型预训练，提升通用多模态视频理解能力。
+- [AVicuna: Audio-Visual LLM with Interleaver and Context-Boundary Alignment for Temporal Referential Dialogue](https://arxiv.org/abs/2403.16276)：加入音视频交错和上下文边界对齐，使 LLM 能在视频落地对话中解析时序指代。
+- [AI-Generated Video Detection via Spatio-Temporal Anomaly Learning](https://arxiv.org/abs/2403.16638)：通过学习时空异常检测 AI 生成视频，区分合成运动和外观与真实视频的差异。
+- [Understanding Long Videos with Multimodal Language Models](https://arxiv.org/abs/2403.16998)：研究多模态语言模型如何处理长视频，并调整时序采样和上下文管理以支持长视频理解。
+- [OmniViD: A Generative Framework for Universal Video Understanding](https://arxiv.org/abs/2403.17935)：把识别、字幕、问答、密集字幕、时间定位和跟踪统一为 video-grounded token generation，在同一 encoder-decoder 中用语言标签以及时间、框 token 表达多类视频任务。
+- [An Image Grid Can Be Worth a Video: Zero-Shot Video Question Answering Using a VLM](https://arxiv.org/abs/2403.18406)：把采样视频帧拼成图像网格，使图像 VLM 能以零样本方式回答视频问题。
+- [LITA: Language Instructed Temporal-Localization Assistant](https://arxiv.org/abs/2403.19046)：训练语言指令驱动的时序定位助手，把自然语言查询映射到视频时间片段。
+- [Collaborative Learning of Anomalies with Privacy (CLAP) for Unsupervised Video Anomaly Detection: A New Baseline](https://arxiv.org/abs/2404.00847)：提出隐私感知的无监督视频异常检测协同学习，在不集中敏感视频的情况下共享异常知识。
+- [Harnessing Large Language Models for Training-Free Video Anomaly Detection](https://arxiv.org/abs/2404.01014)：利用 LLM 知识和提示进行免训练视频异常检测，无需专门训练检测器。
+- [SpikeMba: Multi-Modal Spiking Saliency Mamba for Temporal Video Grounding](https://arxiv.org/abs/2404.01174)：结合脉冲显著性和 Mamba 序列建模，从多模态视频线索中高效定位时间片段。
+- [Language Model Guided Interpretable Video Action Reasoning](https://arxiv.org/abs/2404.01591)：用语言模型解释引导视频动作推理，使预测呈现可解释动作证据而非黑盒类别分数。
+- [UniAV: Unified Audio-Visual Perception for Multi-Task Video Event Localization](https://arxiv.org/abs/2404.03179)：用统一音视频感知模型在多个视频任务中定位事件，共享跨模态表征。
+- [LongVLM: Efficient Long Video Understanding via Large Language Models](https://arxiv.org/abs/2404.03384)：压缩并选择长视频视觉 token，使 LLM 能在可控上下文长度内推理扩展视频。
+- [ChangeMamba: Remote Sensing Change Detection With Spatiotemporal State Space Model](https://arxiv.org/abs/2404.03425)：把时空状态空间建模用于遥感视频变化检测，高效捕捉长程时序依赖。
+- [Koala: Key Frame-Conditioned Long Video-LLM](https://arxiv.org/abs/2404.04346)：让 Video LLM 以筛选出的关键帧为条件，减少冗余帧处理并提升长视频理解。
+- [DREAM: Improving Video-Text Retrieval Through Relevance-Based Augmentation Using Large Foundation Models](https://arxiv.org/abs/2404.05083)：用大型基础模型生成相关性增强样本，使文本视频检索训练聚焦有意义的查询视频匹配。
+- [Enhancing Lip Reading with Multi-Scale Video and Multi-Encoder](https://arxiv.org/abs/2404.05466)：通过多尺度视频特征和多编码器同时捕捉细粒度口型运动与更广泛的面部上下文，改进口语识别。
+- [MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding](https://arxiv.org/abs/2404.05726)：为大型多模态模型加入显式记忆模块，使长期视频事件可在推理时存储和调用。
+- [MoReVQA: Exploring Modular Reasoning Models for Video Question Answering](https://arxiv.org/abs/2404.06511)：把 Video QA 拆成感知和推理模块，检验结构化模块是否优于单体视频语言推理。
+- [Perception-Oriented Video Frame Interpolation via Asymmetric Blending](https://arxiv.org/abs/2404.06692)：采用面向感知质量的不对称融合进行视频帧插值，减少可见伪影。
+- [Revisiting Feature Prediction for Learning Visual Representations from Video](https://arxiv.org/abs/2404.08471)：重新评估视频自监督中的特征预测目标，说明预测目标如何影响时序表征学习。
+- [V2Xum-LLM: Cross-Modal Video Summarization with Temporal Prompt Instruction Tuning](https://arxiv.org/abs/2404.12353)：用时序提示指令调优进行跨模态视频摘要，使 LLM 对齐视觉事件并生成简洁摘要。
+- [Dynamic Gaussians Mesh: Consistent Mesh Reconstruction from Monocular Videos](https://arxiv.org/abs/2404.12379)：把 Gaussian 表示与网格约束结合，从单目视频重建时间一致的动态网格。
+- [VideoGigaGAN: Towards Detail-rich Video Super-Resolution](https://arxiv.org/abs/2404.12388)：把 GigaGAN 式超分扩展到视频，在保留丰富细节的同时控制跨帧闪烁。
+- [On the Content Bias in Fréchet Video Distance](https://arxiv.org/abs/2404.12391)：分析 Fréchet Video Distance 的内容偏置，指出视频生成评测可能过度奖励内容相似而非运动质量。
+- [FreqBlender: Enhancing DeepFake Detection by Blending Frequency Knowledge](https://arxiv.org/abs/2404.13872)：把频域线索融合进深度伪造检测器，使细微合成伪影更容易与真实视频区分。
+- [SHE-Net: Syntax-Hierarchy-Enhanced Text-Video Retrieval](https://arxiv.org/abs/2404.14066)：把文本句法层次注入视频检索，改进组合式查询与时序视觉内容的对齐。
+- [PLLaVA : Parameter-free LLaVA Extension from Images to Videos for Video Dense Captioning](https://arxiv.org/abs/2404.16994)：无需新增参数地把 LLaVA 从图像扩展到视频密集字幕，在采样帧上复用视觉语言表征。
+- [MovieChat+: Question-Aware Sparse Memory for Long Video Question Answering](https://arxiv.org/abs/2404.17176)：为长视频构建问题感知稀疏记忆，使 Video QA 只检索与问题相关的片段。
+- [VimTS: A Unified Video and Image Text Spotter for Enhancing the Cross-Domain Generalization](https://arxiv.org/abs/2404.19652)：统一图像和视频文本检测识别，提升跨域和时序条件下的场景文字识别泛化。
+- [FreeVA: Offline MLLM as Training-Free Video Assistant](https://arxiv.org/abs/2405.07798)：把离线多模态 LLM 作为免训练视频助手，在推理时选择并语言化视觉证据。
+- [CSTA: CNN-based Spatiotemporal Attention for Video Summarization](https://arxiv.org/abs/2405.11905)：在视频摘要中加入 CNN 式时空注意力，使选中片段同时反映局部外观和时间重要性。
+- [Slicedit: Zero-Shot Video Editing With Text-to-Image Diffusion Models Using Spatio-Temporal Slices](https://arxiv.org/abs/2405.12211)：通过在时空切片上应用文本到图像扩散模型进行零样本视频编辑，以保持跨帧一致性。
+- [TOPA: Extending Large Language Models for Video Understanding via Text-Only Pre-Alignment](https://arxiv.org/abs/2405.13911)：在多模态训练前先用视频风格文本描述预对齐 LLM，以纯文本准备提升视频理解。
+- [Streaming Long Video Understanding with Large Language Models](https://arxiv.org/abs/2405.16009)：采用记忆传播式流编码和自适应记忆选择，用固定数量的问答相关 token 表示任意长度视频。
+- [RAP: Efficient Text-Video Retrieval with Sparse-and-Correlated Adapter](https://arxiv.org/abs/2405.19465)：用稀疏且相关的 adapter 层微调文本视频检索，建模时间稀疏性和跨帧相关性，避免完整重训 CLIP 式模型。
+- [Can't make an Omelette without Breaking some Eggs: Plausible Action Anticipation using Large Video-Language Models](https://arxiv.org/abs/2405.20305)：利用大型视频语言模型预测视频中的合理未来动作。
+- [MegActor: Harness the Power of Raw Video for Vivid Portrait Animation](https://arxiv.org/abs/2405.20851)：训练条件扩散肖像动画模型，并用身份不一致但动作表情一致的合成视频减少原始驱动视频带来的身份泄漏。
+- [Artemis: Towards Referential Understanding in Complex Videos](https://arxiv.org/abs/2406.00258)：跟踪用户在某帧框选的目标，并抽取紧凑的目标特定时空特征，用于复杂视频中的精细指代理解。
+- [MoDGS: Dynamic Gaussian Splatting from Casually-captured Monocular Videos with Depth Priors](https://arxiv.org/abs/2406.00434)：用单视图深度、3D 感知初始化和鲁棒深度损失引导动态 Gaussian Splatting，从随手拍单目视频渲染动态场景新视角。
+- [Advancing Weakly-Supervised Audio-Visual Video Parsing via Segment-Wise Pseudo Labeling](https://arxiv.org/abs/2406.00919)：在弱监督音视频解析中加入片段级伪标签，使模型学习事件模态和时间边界，而不只依赖视频级标签。
+- [Learning Temporally Consistent Video Depth from Video Diffusion Priors](https://arxiv.org/abs/2406.01493)：把流式视频深度估计改写为带片段内和跨片段上下文的条件生成问题，用视频扩散先验降低时间闪烁。
+- [An empirical study of excitation and aggregation design adaptions in CLIP4Clip for video-text retrieval](https://arxiv.org/abs/2406.01604)：为 CLIP4Clip 重新设计帧聚合，引入 excitation 和特征重校准模块以捕捉非互斥的帧间关系。
+- [AVFF: Audio-Visual Feature Fusion for Video Deepfake Detection](https://arxiv.org/abs/2406.02951)：通过两阶段跨模态融合学习音视频对应关系，使检测器能从跨模态不一致而不只是单模态伪影中识别未知深度伪造。
+- [SMC++: Masked Learning of Unsupervised Video Semantic Compression](https://arxiv.org/abs/2406.04765)：用掩码视频建模和非语义正则化压缩视频，在关注感知质量之外保留下游分析所需的语义信息。
+- [RMem: Restricted Memory Banks Improve Video Object Segmentation](https://arxiv.org/abs/2406.08476)：把视频对象分割的记忆库限制在关键帧上，减少冗余历史信息对记忆解码的干扰。
+- [CMC-Bench: Towards a New Paradigm of Visual Signal Compression](https://arxiv.org/abs/2406.09356)：该项偏离视频理解主轴，评测图像-文本-图像跨模态压缩，覆盖 1.8 万和 4 万张图像、6 个 I2T 模型、12 个 T2I 模型及 16 万条人工偏好评分。
+- [Too Many Frames, not all Useful: Efficient Strategies for Long-Form Video QA](https://arxiv.org/abs/2406.09396)：为长视频问答选择少量信息帧，减少对均匀采样长视频做大量 VLM 字幕化的冗余开销。
+- [VideoGPT+: Integrating Image and Video Encoders for Enhanced Video Understanding](https://arxiv.org/abs/2406.09418)：结合图像编码器的空间细节和视频编码器的时间上下文，缓解单一编码器在 Video LMM 中的局限。
+- [GenMM: Geometrically and Temporally Consistent Multimodal Data Generation for Video and LiDAR](https://arxiv.org/abs/2406.10722)：联合编辑 RGB 视频和 LiDAR，通过扩散修补、语义边界和深度估计插入时空几何一致的 3D 物体。
+- [VideoLLM-online: Online Video Large Language Model for Streaming Video](https://arxiv.org/abs/2406.11816)：提出 Learning-In-Video-Stream 框架，用流式语言建模、时序标注转写和优化推理流水线支持连续视频中的实时对话。
+- [Holmes-VAD: Towards Unbiased and Explainable Video Anomaly Detection via Multi-modal LLM](https://arxiv.org/abs/2406.12235)：构建带时间监督和多模态指令的 VAD-Instruct50k，将异常检测调优为可定位且可解释的响应。
+- [DrVideo: Document Retrieval Based Long Video Understanding](https://arxiv.org/abs/2406.12846)：把长视频转写成文本长文档，检索关键片段后交给 LLM 基于证据完成长视频理解。
+- [Splatter a Video: Video Gaussian Representation for Versatile Processing](https://arxiv.org/abs/2406.13870)：把视频嵌入规范空间中的显式 3D Gaussian，并为每个 Gaussian 建模 3D 运动，蒸馏光流和深度先验以服务跟踪、深度、分割、视角合成和编辑。
+- [Towards Event-oriented Long Video Understanding](https://arxiv.org/abs/2406.14129)：提出面向事件丰富长视频的 Event-Bench 和视频指令调优，减少仅凭孤立帧推断答案的捷径。
+- [Sports Intelligence: Assessing the Sports Understanding Capabilities of Language Models through Question Answering from Text to Video](https://arxiv.org/abs/2406.14877)：评测语言模型从文本到视频的体育问答能力，覆盖规则、历史事实、少样本提示和思维链推理。
+- [OmAgent: A Multi-modal Agent Framework for Complex Video Understanding with Task Divide-and-Conquer](https://arxiv.org/abs/2406.16620)：该项更偏智能体框架而非纯模型训练，通过存取查询相关帧和可调用 API、工具的分治循环理解长 CCTV 或电影视频。
+- [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](https://arxiv.org/abs/2406.16860)：以视觉为中心研究 MLLM 设计，比较 20 多种视觉编码器，提出 CV-Bench，并开放 Cambrian 模型与视觉指令数据。
+- [IVCA: Inter-relation-aware Video Complexity Analyzer](https://arxiv.org/abs/2407.00280)：在视频编码复杂度分析中加入特征域运动估计、层级感知参考权重和更丰富的时序特征，用于实时流媒体决策。
+- [VcLLM: Video Codecs are Secretly Tensor Codecs](https://arxiv.org/abs/2407.00467)：把硬件视频编解码器复用于 LLM 训练和推理中的张量压缩，重点是降低显存占用和通信带宽，而非视频理解本身。
+- [Zero-shot Video Restoration and Enhancement Using Pre-Trained Image Diffusion Model](https://arxiv.org/abs/2407.01960)：把图像扩散模型的空间自注意力替换为短长程时间注意力，并加入一致性引导，实现免训练视频复原且减少闪烁。
+- [Video Watermarking: Safeguarding Your Video from (Unauthorized) Annotations by Video-based LLMs](https://arxiv.org/abs/2407.02411)：用多模态 flow 损失优化关键帧不可见水印，阻止视频 LLM 对受保护视频做未授权标注。
+- [KeyVideoLLM: Towards Large-scale Video Keyframe Selection](https://arxiv.org/abs/2407.03104)：基于文本视频帧相似度选择关键帧，用于高效、稳健地压缩和管理 VideoLLM 数据。
+- [OmChat: A Recipe to Train Multimodal Language Models with Strong Long Context and Video Understanding](https://arxiv.org/abs/2407.04923)：用标准化视觉输入处理、动态视觉编码、渐进式多模态预训练和高质量数据筛选训练长上下文多模态模型，支持最高 512K 上下文。
+- [Video In-context Learning](https://arxiv.org/abs/2407.07356)：用自监督目标在视频上训练自回归 Transformer，使模型能从示范视频中零样本地进行 in-context 语义模仿。
+- [Label-anticipated Event Disentanglement for Audio-Visual Video Parsing](https://arxiv.org/abs/2407.08126)：提出 LEAP 标签语义投影解码器，把音频和视觉片段特征迭代投影到事件标签嵌入，以分离重叠的音视频事件。
+- [Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models](https://arxiv.org/abs/2407.10299)：提出 AnomalyRuler，以规则化 LLM 推理为视频异常检测提供场景特定判断依据和解释。
+- [Learning Natural Consistency Representation for Face Forgery Video Detection](https://arxiv.org/abs/2407.10550)：从真实人脸视频中自监督学习视觉 Natural Consistency 表征，使检测器能泛化到未知伪造方法和扰动。
+- [Ref-AVS: Refer and Segment Objects in Audio-Visual Scenes](https://arxiv.org/abs/2407.10957)：定义参考音视频分割任务，提供像素级掩码和多模态线索表达，并用音频、视觉和语言线索指导目标分割。
+- [VISA: Reasoning Video Object Segmentation via Large Language Models](https://arxiv.org/abs/2407.11325)：提出 ReasonVOS 任务和 Video-based large language Instructed Segmentation Assistant，把 MLLM 推理与 mask 解码、目标跟踪结合，并构建 35,074 个指令-mask 序列。
+- [Contrastive Sequential-Diffusion Learning: Non-Linear and Multi-Scene Instructional Video Synthesis](https://arxiv.org/abs/2407.11814)：为每个生成的教学场景对比选择最合适的早期场景作为扩散条件，以保持菜谱和 DIY 多场景视频中的非线性视觉一致性。
+- [E5-V: Universal Embeddings with Multimodal Large Language Models](https://arxiv.org/abs/2407.12580)：通过提示和仅文本对训练把 MLLM 适配为通用多模态 embedding，减少对成对图文数据的依赖，并支持检索式多模态任务。
+- [Goldfish: Vision-Language Understanding of Arbitrarily Long Videos](https://arxiv.org/abs/2407.12679)：先检索与指令最相关的 top-k 视频片段再回答问题，并提出 TVQA-long 评估整集级长视频理解。
+- [Rethinking Video-Text Understanding: Retrieval from Counterfactually Augmented Data](https://arxiv.org/abs/2407.13094)：提出 RCAD 任务和 Feint6K 数据集，用反事实改写视频检验模型是否依赖单帧物体和场景偏置。
+- [ViLLa: Video Reasoning Segmentation with Large Language Model](https://arxiv.org/abs/2407.14500)：将 LLM、上下文合成器和分割流程结合，在长时、遮挡和多目标视频中按语言查询定位对象。
+- [Text-based Talking Video Editing with Cascaded Conditional Diffusion](https://arxiv.org/abs/2407.14841)：用级联条件扩散进行文本驱动说话人视频编辑，同时保持身份、音视频过渡和上下文口型运动。
+- [Audio-visual training for improved grounding in video-text LLMs](https://arxiv.org/abs/2407.15046)：在显式音频和视觉输入上训练 video-text LLM 架构，并发布音频感知人工标注问答，用于检验回答是否同时落地到声音和画面。
+- [Videogamebunny: Towards Vision Assistants for Video Games](https://arxiv.org/abs/2407.15295)：在 185,259 张游戏图像和 389,565 个指令对上微调 Bunny 式视觉语言助手，面向游戏场景字幕、问答和结构化元素描述。
+- [Wolf: Dense Video Captioning with a World Summarization Framework](https://arxiv.org/abs/2407.18908)：用图像和视频 VLM 专家混合生成密集视频字幕，并提出 CapScore 与覆盖自动驾驶、通用场景和机器人领域的人工标注数据集。
+- [Boosting Audio Visual Question Answering via Key Semantic-Aware Cues](https://arxiv.org/abs/2407.20693)：构建 TSPM，通过陈述式问题提示、时间片段选择、空间 token 融合和音频交互提取与问题相关的音视频线索。
+- [RainMamba: Enhanced Locality Learning with State Space Models for Video Deraining](https://arxiv.org/abs/2407.21773)：用带局部性增强的状态空间模型高效建模长程时间信息，服务于视频去雨。
+- [Multimodal Fusion and Coherence Modeling for Video Topic Segmentation](https://arxiv.org/abs/2408.00365)：结合多模态特征融合和主题转场连贯性建模，提升监督式视频主题分割。
+- [Coarse Correspondences Boost Spatial-Temporal Reasoning in Multimodal Language Model](https://arxiv.org/abs/2408.00754)：把轻量跟踪得到的帧间或视角间对象粗对应关系写入 MLLM 提示，在不改架构的情况下增强时空推理。
+- [Infusing Environmental Captions for Long-Form Video Language Grounding](https://arxiv.org/abs/2408.02336)：利用 MLLM 生成的环境字幕过滤无关片段，提升长视频语言定位。
+- [VideoQA in the Era of LLMs: An Empirical Study](https://arxiv.org/abs/2408.04223)：系统审查 Video-LLM 在 VideoQA 中的行为，指出其上下文回答较强，但在时间顺序、时刻定位、鲁棒性和可解释性上仍有缺陷。
+- [Scene123: One Prompt to 3D Scene Generation via Video-Assisted and Consistency-Enhanced MAE](https://arxiv.org/abs/2408.05477)：从单个 prompt 生成 3D 场景：先扭曲邻近视角并用 MAE 补全不可见区域，再优化 NeRF 几何并用视频生成视图提升纹理细节。
+- [OmniCLIP: Adapting CLIP for Video Recognition with Spatial-Temporal Omni-Scale Feature Learning](https://arxiv.org/abs/2408.06158)：向 CLIP 加入并行时间 adapter 和 self-prompt generator，使视频识别同时利用空间、时间和动态目标尺度特征。
+- [When Video Coding Meets Multimodal Large Language Models: A Unified Paradigm for Video Coding](https://arxiv.org/abs/2408.08093)：提出 cross-modality video coding，把视频拆成空间内容和运动并转换为 MLLM 友好的紧凑模态，再用文本到视频或图文到视频模式重建。
+- [C2P-CLIP: Injecting Category Common Prompt in CLIP to Enhance Generalization in Deepfake Detection](https://arxiv.org/abs/2408.09647)：把类别共性提示注入 CLIP，使深度伪造检测器共享操纵类别线索，并泛化到训练伪造类型之外。
+- [Learning Precise Affordances From Egocentric Videos for Robotic Manipulation](https://arxiv.org/abs/2408.10123)：将第一视角视频自动转成精细 affordance mask，结合几何线索和视觉基础模型支持工具抓取与人机工具交接。
+- [Alignment-free Raw Video Demoireing](https://arxiv.org/abs/2408.10679)：提出 DemMamba，用频率辅助的时空 Mamba 模块做免对齐 raw 视频去摩尔纹。
+- [Frame Order Matters: A Temporal Sequence-Aware Model for Few-Shot Action Recognition](https://arxiv.org/abs/2408.12475)：加入递归式 sequential perceiver adapter、LLM 扩展类别文本和不平衡最优传输，使少样本动作识别保留帧顺序信息。
+- [Video-CCAM: Enhancing Video-Language Understanding with Causal Cross-Attention Masks for Short and Long Videos](https://arxiv.org/abs/2408.14023)：在视觉到 LLM 的 projector 中加入 causal cross-attention masks，使短视频和长视频理解不只依赖视觉 token 下采样或扩展上下文。
+- [Training-free Video Temporal Grounding using Large-scale Pre-trained Models](https://arxiv.org/abs/2408.16219)：用预训练 VLM 做免训练 proposal 选择，在跨数据集和分布外设置下完成视频时间定位。
+- [Beyond Uncertainty: Evidential Deep Learning for Robust Video Temporal Grounding](https://arxiv.org/abs/2408.16272)：提出带深度证据回归的 SRAM，使时间定位模型能估计不确定性并在噪声或分布外输入上拒答。
+- [CogVLM2: Visual Language Models for Image and Video Understanding](https://arxiv.org/abs/2408.16500)：将 CogVLM 系列扩展为 CogVLM2-Video，加入多帧时间戳输入和自动化视频指令数据。
+- [VideoLLM-MoD: Efficient Video-Language Streaming with Mixture-of-Depths Vision Computation](https://arxiv.org/abs/2408.16730)：用 mixture-of-depths 视觉计算跳过冗余视觉 token 处理，在保留 LLM 缓存上下文的同时降低流式视频语言推理开销。
+- [Can We Leave Deepfake Data Behind in Training Deepfake Detector?](https://arxiv.org/abs/2408.17052)：研究 blendfake 与 deepfake 混合训练，解释何时无需真实深度伪造样本也能提升检测器泛化。
+- [Generalizing Deepfake Video Detection with Plug-and-Play: Video-Level Blending and Spatiotemporal Adapter Tuning](https://arxiv.org/abs/2408.17065)：结合视频级混合数据和时空 adapter 调优，平衡空间与时间伪造线索以提升高效深度伪造检测。
+- [CinePreGen: Camera Controllable Video Previsualization via Engine-powered Diffusion](https://arxiv.org/abs/2408.17424)：把引擎驱动的相机和分镜界面与扩散渲染结合，使创作者能控制视频预演中的机位。
+- [Follow-Your-Canvas: Higher-Resolution Video Outpainting with Extensive Content Generation](https://arxiv.org/abs/2409.01055)：把视频扩图拆成多个空间窗口再融合，绕开 single-shot 扩图的显存限制并支持更高分辨率。
+- [TC-LLaVA: Rethinking the Transfer from Image to Video Understanding with Temporal Considerations](https://arxiv.org/abs/2409.03206)：通过改造 LLM 层间注意力把图像预训练 MLLM 适配到视频，包括面向时间的 RoPE 设计。
+- [Shaking Up VLMs: Comparing Transformers and Structured State Space Models for Vision & Language Modeling](https://arxiv.org/abs/2409.05395)：在最高 3B 参数的受控设置下比较 Mamba 与 Transformer VLM，发现 SSM 在字幕和问答上有优势，但显式视觉定位和上下文多模态检索较弱。
+- [Optimizing 4D Lookup Table for Low-light Video Enhancement via Wavelet Priori](https://arxiv.org/abs/2409.08585)：提出 WaveLUT，用小波先验 4D 查找表和动态补偿增强低光视频，同时保持颜色一致性和低延迟。
+- [LLM-based Weak Supervision Framework for Query Intent Classification in Video Search](https://arxiv.org/abs/2409.08931)：用提示工程、多种 LLM persona、思维链和上下文示例弱标注视频搜索查询意图，再训练低延迟分类器服务实时检索。
+- [Efficient Video to Audio Mapper with Visual Scene Detection](https://arxiv.org/abs/2409.09823)：用轻量 V2A 映射器和视觉场景检测器改进视频到音频生成，使多场景视频中的生成音频能随场景切换。
+- [AMEGO: Active Memory from long EGOcentric videos](https://arxiv.org/abs/2409.10917)：从单段第一视角长视频构建自包含的 active memory 表征，存储关键地点和物体交互，使后续查询无需重处理全片即可进行顺序、并发和时序定位推理。
+- [LVCD: Reference-based Lineart Video Colorization with Diffusion Models](https://arxiv.org/abs/2409.12960)：结合预训练视频扩散模型、sketch-guided ControlNet、reference attention 和重叠顺序采样，实现时间一致的线稿视频上色。
+- [Interpolating Video-LLMs: Toward Longer-sequence LMMs in a Training-free Manner](https://arxiv.org/abs/2409.12963)：在免训练设置下插值 Video-LLM 的视觉接口和 LLM 上下文处理，使原本只支持短视频的编码器与投影器可处理更长序列。
+- [Video-XL: Extra-Long Vision Language Model for Hour-Scale Video Understanding](https://arxiv.org/abs/2409.14485)：用 Visual Summarization Token 和 KV 稀疏化压缩分段视频证据，使 MLLM 能处理小时级视频并尽量保留细粒度视觉细节。
+- [In-Context Ensemble Learning from Pseudo Labels Improves Video-Language Models for Low-Level Workflow Understanding](https://arxiv.org/abs/2409.15867)：在上下文中集成多条伪标注 SOP 路径，使视频语言模型能从软件操作录屏中推断逐步工作流，并缓解单一上下文窗口限制。
+- [EAGLE: Egocentric AGgregated Language-video Engine](https://arxiv.org/abs/2409.17523)：用 EAGLE-400K 第一视角指令数据训练视频 MLLM，把动作识别、流程知识学习和 moment 检索统一到同一 egocentric 理解框架中。
+- [MECD: Unlocking Multi-Event Causal Discovery in Video Reasoning](https://arxiv.org/abs/2409.17647)：提出长视频多事件因果发现任务，要求根据视觉片段和事件文本生成事件级因果图，而不只是单事件 Video QA。
+- [Video DataFlywheel: Resolving the Impossible Data Trinity in Video-Language Understanding](https://arxiv.org/abs/2409.19532)：用带噪声控制的迭代式 Video DataFlywheel 精炼视频语言标注，平衡预训练数据的数量、多样性和质量。
+- [Replace Anyone in Videos](https://arxiv.org/abs/2409.19911)：把局部人物替换和插入建模为带姿态引导的图像条件视频修补，并用多形态掩码和身份保持扩散控制避免形状泄漏。
+- [Visual Context Window Extension: A New Perspective for Long Video Understanding](https://arxiv.org/abs/2409.20018)：把长视频失败解释为视觉上下文窗口不匹配问题，通过调整视觉 token 占用上下文的方式，在无需长视频重训的情况下扩展预训练 LMM。
+- [VideoINSTA: Zero-shot Long Video Understanding via Informative Spatial-Temporal Reasoning with LLMs](https://arxiv.org/abs/2409.20365)：先抽取基于事件的时间线索和基于内容的空间线索，再让 LLM 围绕这些信息证据进行零样本长视频时空推理。
+- [Uncertainty-Guided Self-Questioning and Answering for Video-Language Alignment](https://arxiv.org/abs/2410.02768)：提出 BoViLA 自训练流程，用 LLM 生成 VideoQA 问答并通过不确定性引导过滤低质量自生成样本。
+- [Data Playwright: Authoring Data Videos With Annotated Narration](https://arxiv.org/abs/2410.03093)：该项是数据视频创作系统，用 annotated narration 把叙事文本与内联自然语言设计命令结合起来生成动画数据视频。
+- [Frame-Voyager: Learning to Query Frames for Video Large Language Models](https://arxiv.org/abs/2410.03226)：用预训练 Video-LLM 的预测损失排序候选帧组合，训练查询条件化的帧选择器，再作为插件接入视频问答模型。
+- [Grounded-VideoLLM: Sharpening Fine-grained Temporal Grounding in Video Large Language Models](https://arxiv.org/abs/2410.03290)：为 Video-LLM 加入额外时序流和离散时间戳 token，并从字幕任务逐步训练到更复杂的时序定位任务，支持密集字幕和 grounded Video QA。
+- [A Multi-model Approach for Video Data Retrieval in Autonomous Vehicle Development](https://arxiv.org/abs/2410.03580)：用多模型流水线根据自然语言场景描述检索自动驾驶日志视频，减少工程师手写 SQL 查询的需求。
+- [LeLaN: Learning A Language-Conditioned Navigation Policy from In-the-Wild Videos](https://arxiv.org/abs/2410.03603)：从野外视频中学习语言条件导航策略，使机器人能寻找用户以自然语言描述的任意物体。
+- [IV-Mixed Sampler: Leveraging Image Diffusion Models for Enhanced Video Synthesis](https://arxiv.org/abs/2410.04171)：在视频生成中混合图像扩散采样，借助图像先验提升帧质量，同时保持时间连续性。
+- [Realizing Video Summarization from the Path of Language-based Semantic Understanding](https://arxiv.org/abs/2410.04511)：在推理时以 mixture-of-experts 思路组合多个互补 VideoLLM，融合视觉与音频内容生成视频摘要，而不需要额外微调。
+- [Video Prediction Transformers without Recurrence or Convolution](https://arxiv.org/abs/2410.04733)：测试纯 Transformer 视频预测架构，用基于注意力的序列建模替代循环和卷积式时序模块。
+- [TRACE: Temporal Grounding Video LLM via Causal Event Modeling](https://arxiv.org/abs/2410.05643)：把时序定位输出表示为带时间戳、显著性分数和字幕的因果事件序列，让 Video LLM 生成结构化预测而不是纯自由文本。
+- [Enhancing Temporal Modeling of Video LLMs via Time Gating](https://arxiv.org/abs/2410.05714)：提出 TG-Vid，在空间注意力、时间注意力和 MLP 子模块中加入 time gating，在 MVBench、TempCompass 和 NExT-QA 等时序敏感视频问答上提升表现。
+- [TEOChat: A Large Vision-Language Assistant for Temporal Earth Observation Data](https://arxiv.org/abs/2410.06234)：把视觉语言助手适配到时序地球观测数据，重点是卫星时间序列推理，而非普通相机视频。
+- [Deep Correlated Prompting for Visual Recognition with Missing Modalities](https://arxiv.org/abs/2410.06558)：通过关联 prompt、输入特征、跨层 prompt 关系和互补模态语义，把预训练多模态识别模型适配到缺失模态输入。
+- [MotionAura: Generating High-Quality and Motion Consistent Videos using Discrete Diffusion](https://arxiv.org/abs/2410.07659)：用离散扩散生成视频，目标是提升视觉质量和运动一致性，而非视频理解。
+- [ElasticTok: Adaptive Tokenization for Image and Video](https://arxiv.org/abs/2410.08368)：学习图像和视频的自适应 token 化，使 token 预算能随视觉复杂度变化，而不是固定压缩比例。
+- [MoTE: Reconciling Generalization with Specialization for Visual-Language to Video Knowledge Transfer](https://arxiv.org/abs/2410.10589)：用 mixture-of-temporal-experts 把视觉语言知识迁移到视频，在通用 CLIP 式表征和视频专门化之间取得平衡。
+- [Depth Any Video with Scalable Synthetic Data](https://arxiv.org/abs/2410.10815)：用 4 万段带精确深度标注的五秒合成视频训练视频深度估计，并结合扩散先验、旋转位置编码、flow matching 和混合时长训练处理变长视频。
+- [TemporalBench: Benchmarking Fine-grained Temporal Understanding for Multimodal Video Models](https://arxiv.org/abs/2410.10818)：该项更偏基准而非模型方法，基于人工时序标注构建约 1 万个问答对，用于测试动作频率、运动幅度和事件顺序等细粒度时序理解。
+- [VidCompress: Memory-Enhanced Temporal Compression for Video Understanding in Large Language Models](https://arxiv.org/abs/2410.11417)：用双压缩器处理视频 token：带 memory cache 的多尺度时序压缩器保留长短期关系，text-perceived Q-Former 查询压缩任务相关视觉证据。
+- [LoGS: Visual Localization via Gaussian Splatting with Fewer Training Images](https://arxiv.org/abs/2410.11505)：用 3D Gaussian Splatting 作为场景地图进行视觉定位，在少量训练图像条件下通过 SfM、检索、匹配、PnP 和 analysis-by-synthesis 细化 6-DoF 位姿。
+- [Beyond Coarse-Grained Matching in Video-Text Retrieval](https://arxiv.org/abs/2410.12407)：用自动生成的 hard negative caption 评测细粒度文本视频检索，这些字幕只改变名词、动词、形容词、副词或介词中的单词，并提供可结合现有方法的细粒度基线。
+- [ChatVTG: Video Temporal Grounding via Chat with Video Dialogue Large Language Models](https://arxiv.org/abs/2410.12813)：用 Video Dialogue LLM 生成多粒度片段字幕并与查询匹配，再通过 moment refinement 细化候选片段，实现零样本视频时序定位。
+- [Exploring the Design Space of Visual Context Representation in Video MLLMs](https://arxiv.org/abs/2410.13694)：把视觉上下文表示建模为帧选择和每帧 token 选择的预算约束优化问题，系统分析这些选择对 Video MLLM 损失和准确率的影响。
+- [Making Every Frame Matter: Continuous Activity Recognition in Streaming Video via Adaptive Video Context Modeling](https://arxiv.org/abs/2410.14993)：构建 CARS 流式活动识别系统，用活动空间特征抽取和活动感知状态更新保留相关上下文，并在边缘设备上达到 30 FPS 以上。
+- [xGen-MM-Vid (BLIP-3-Video): You Only Need 32 Tokens to Represent a Video Even in VLMs](https://arxiv.org/abs/2410.16267)：加入时间编码器，把多帧视觉 token 压缩成 32 个视频 token，使 4B 规模 VLM 也能以较低 token 成本取得有竞争力的视频问答表现。
+- [TimeSuite: Improving MLLMs for Long Video Understanding via Grounded Tuning](https://arxiv.org/abs/2410.19702)：通过 VideoChat-T token shuffle、Temporal Adaptive Position Encoding、TimePro grounded-tuning 数据和带时序定位监督的问答任务，把短视频 MLLM 适配到长视频。
+- [LARP: Tokenizing Videos with a Learned Autoregressive Generative Prior](https://arxiv.org/abs/2410.21264)：用 learned holistic queries 和轻量自回归先验进行视频 token 化，使离散潜空间更适合下游 AR 视频生成，而不只服务重建。
+- [PPLLaVA: Varied Video Sequence Understanding With Prompt Guidance](https://arxiv.org/abs/2411.02327)：用基于 CLIP 的视觉提示对齐和 prompt-guided pooling 激进压缩冗余视频 token，同时保留与指令相关的区域和时序语义。
+- [HourVideo: 1-Hour Video-Language Understanding](https://arxiv.org/abs/2411.04998)：该项主要是基准：整理 500 段 Ego4D 视频和 12,976 道五选一问题，覆盖摘要、回忆、跟踪、推理和导航，暴露长上下文 MLLM 的明显差距。
+- [Grounding Video Models to Actions through Goal Conditioned Exploration](https://arxiv.org/abs/2411.07223)：把预训练视频模型落地到具身控制中，用生成的视频状态作为自探索视觉目标，并在无奖励、无动作标签条件下生成轨迹级动作。
+- [Motion-Grounded Video Reasoning: Understanding and Perceiving Motion at Pixel Level](https://arxiv.org/abs/2411.09921)：定义运动落地视频推理任务，GROUNDMORE 包含 1,715 个片段和 24.9 万个掩码，要求因果、顺序、反事实和描述性问题输出分割掩码答案。
+- [Number it: Temporal Grounding Videos like Flipping Manga](https://arxiv.org/abs/2411.10332)：为每帧加入唯一数字标识的 Number-Prompt，使 Vid-LLM 像阅读连续漫画格一样跟踪事件时间线，并在无额外模型开销下完成时序定位。
+- [VeGaS: Video Gaussian Splatting](https://arxiv.org/abs/2411.11024)：用 folded-Gaussian 分布建模视频流中的非线性动态，提升帧重建并支持比简单 Gaussian 变换更真实的视频编辑。
+- [Timeformer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction](https://arxiv.org/abs/2411.11941)：为 deformable 3D Gaussians 加入跨时间 Transformer 编码器和双流优化，把学习到的运动模式迁移到基础流，同时保持推理渲染速度。
+- [AdaCM2: On Understanding Extremely Long-Term Video with Adaptive Cross-Modality Memory Reduction](https://arxiv.org/abs/2411.12593)：用文本查询相关性的自适应跨模态 token 合并减少长视频记忆开销，在视频字幕、问答和分类中提升表现并降低 GPU 内存。
+- [REDUCIO! Generating 1K Video Within 16 Seconds Using Extremely Compressed Motion Latents](https://arxiv.org/abs/2411.13552)：用 Reducio-VAE 极度压缩视频运动 latent，并训练 Reducio-DiT，在单张 A100 上约 16 秒生成 1024×1024 文本图像到视频片段。
+- [ReVisionLLM: Recursive Vision-Language Model for Temporal Grounding in Hour-Long Videos](https://arxiv.org/abs/2411.14901)：用递归式从粗到细视觉语言搜索和分层训练，在数分钟到数小时视频中定位事件时间边界。
+- [ACE: Action Concept Enhancement of Video-Language Models in Procedural Videos](https://arxiv.org/abs/2411.15628)：在辅助损失中持续加入动作同义词和负例标签微调程序视频 VLM，提升零样本动作分类且减少对固定动作名的过拟合。
+- [OccludeNet: A Causal Journey into Mixed-View Actor-Centric Video Action Recognition under Occlusions](https://arxiv.org/abs/2411.15729)：提供真实和合成遮挡动作视频，并用 backdoor adjustment 与反事实推理构建因果动作识别方法，以在遮挡下保留关键 actor 线索。
+- [PINNs4Drops: Video-conditioned physics-informed neural networks for two-phase flow reconstruction](https://arxiv.org/abs/2411.15949)：结合视频观测、彩色编码 glare point 成像和物理信息神经网络，从有限输入重建物理一致的 3D 液滴与两相流动态。
+- [VideoOrion: Tokenizing Object Dynamics in Videos](https://arxiv.org/abs/2411.16156)：用 detect-segment-track 流水线抽取物体动态并聚合为 object token，为 Video-LLM 提供紧凑、解耦的语义表示，而不是只下采样原始帧 token。
+- [VIRES: Video Instance Repainting via Sketch and Text Guided Generation](https://arxiv.org/abs/2411.16199)：用草图和文本引导视频实例重绘、替换、生成或移除，并通过 Sequential ControlNet、sketch attention 和草图感知编码器保持时序一致。
+- [Video-Text Dataset Construction from Multi-AI Feedback: Promoting Weak-to-Strong Preference Learning for Video Large Language Models](https://arxiv.org/abs/2411.16201)：通过采样多样化 VideoQA 回复并用外部评分器评价来构建 MMAIP-V 偏好数据，再用弱到强偏好学习对齐 Video-LLM。
+- [EPS: Efficient Patch Sampling for Video Overfitting in Deep Super-Resolution Model Training](https://arxiv.org/abs/2411.16312)：通过从目标视频中高效采样 patch 加速深度视频超分训练，用更低显存和计算成本完成视频专用过拟合。
+- [PersonalVideo: High ID-Fidelity Video Customization without Dynamic and Semantic Degradation](https://arxiv.org/abs/2411.17048)：面向目标身份个性化视频生成，同时约束动态和语义，避免高身份保真度以牺牲运动或场景内容为代价。
+- [VideoLLM Knows When to Speak: Enhancing Time-Sensitive Video Comprehension with Video-Text Duet Interaction Format](https://arxiv.org/abs/2411.17991)：把视频交互改为 video-text duet 形式，用户和模型都能在播放过程中插入文本消息，面向直播和时间敏感理解而非整段视频一次性提问。
+- [TimeMarker: A Versatile Video-LLM for Long and Short Video Understanding with Superior Temporal Localization Ability](https://arxiv.org/abs/2411.18211)：加入 Temporal Separator Token，并用 AnyLength 机制进行动态帧采样和自适应 token 合并，提升短视频与长视频中的时序定位能力。
+- [Track Anything Behind Everything: Zero-Shot Amodal Video Object Segmentation](https://arxiv.org/abs/2411.19210)：从首帧可见目标掩码出发，用视频扩散 outpainting 和测试时目标专门化完成零样本 amodal 视频目标分割，覆盖完全遮挡场景。
+- [T2Vid: Translating Long Text into Multi-Image is the Catalyst for Video-LLMs](https://arxiv.org/abs/2411.19951)：把长文本描述转换为多图像视觉上下文，为 Video-LLM 提供类似帧序列的合成证据以支持长文本视频推理。
+- [STEP: Enhancing Video-LLMs’ Compositional Reasoning by Spatio-Temporal Graph-guided Self-Training](https://arxiv.org/abs/2412.00161)：用时空图指导 Video-LLM 自训练，增强模型围绕对象、动作和时间关系的组合推理。
+- [STATIC : Surface Temporal Affine for TIme Consistency in Video Monocular Depth Estimation](https://arxiv.org/abs/2412.01090)：为单目视频深度估计加入 surface temporal affine 约束，使预测深度图在跨帧上保持时间一致。
+- [Eyes on the Road: State-of-the-Art Video Question Answering Models Assessment for Traffic Monitoring Tasks](https://arxiv.org/abs/2412.01132)：评估现有 VideoQA 模型在交通监控视频上的表现，该项更偏领域评测而非新模型训练。
+- [Long Video Diffusion Generation with Segmented Cross-Attention and Content-Rich Video Data Curation](https://arxiv.org/abs/2412.01316)：用 segmented cross-attention 和内容丰富的视频数据整理生成长视频，在扩展文本到视频序列时保留上下文。
+- [ShowHowTo: Generating Scene-Conditioned Step-by-Step Visual Instructions](https://arxiv.org/abs/2412.01987)：根据场景生成逐步视觉说明，把程序化语言、视觉上下文和合成教学帧连接起来。
+- [TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](https://arxiv.org/abs/2412.02930)：训练面向长视频时序推理的 Video LLM，显式关注事件顺序、持续时间和时间定位证据。
+- [RoDyGS: Robust Dynamic Gaussian Splatting for Casual Videos](https://arxiv.org/abs/2412.03077)：在缺少可靠相机位姿的随手拍视频中重建动态 Gaussian splats，提升 pose-free 动态新视角合成鲁棒性。
+- [LinVT: Empower Your Image-level Large Language Model to Understand Videos](https://arxiv.org/abs/2412.05185)：加入可插拔 Linear Video Tokenizer，把图像级 LLM 转换成 Video-LLM，同时保留视觉语言对齐并压缩冗余视频内容。
+- [Holmes-VAU: Towards Long-term Video Anomaly Understanding at Any Granularity](https://arxiv.org/abs/2412.06171)：提出 HIVAU-70K，包含 clip、event 和 video 级异常标注，并提供半自动标注引擎支持多粒度长视频异常理解。
+- [Deblur4DGS: 4D Gaussian Splatting from Blurry Monocular Video](https://arxiv.org/abs/2412.06424)：从模糊单目视频重建高质量 4D Gaussian 模型，通过估计曝光时间动态并约束渲染运动来处理模糊监督。
+- [AFFAKT: A Hierarchical Optimal Transport based Method for Affective Facial Knowledge Transfer in Video Deception Detection](https://arxiv.org/abs/2412.08965)：用层级最优传输把面部表情知识迁移到视频欺骗检测中，估计应迁移多少情感知识以及推理时如何融合。
+- [Foundation Models and Adaptive Feature Selection: A Synergistic Approach to Video Question Answering](https://arxiv.org/abs/2412.09230)：构建 LGQAVE，用问题感知帧选择、对象动态图和动态图 Transformer 形成语义化 VideoQA 表征。
+- [Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM](https://arxiv.org/abs/2412.09530)：结合大规模合成 VideoQA 数据和动态视觉 token 压缩，提升 VideoLLM 在多图像与视频任务上的效率和泛化。
+- [TimeRefine: Temporal Grounding with Time Refining Video LLM](https://arxiv.org/abs/2412.09601)：把时序定位改写为迭代时间戳 refinement，从粗定位预测 offset，并加入距离敏感辅助头提升边界精度。
+- [IQViC: In-context, Question Adaptive Vision Compressor for Long-term Video Understanding LMMs](https://arxiv.org/abs/2412.09907)：用 in-context、问题自适应 Transformer 视觉压缩器和记忆管理，只保留与问题相关的视频 token 以支持长时段 VideoQA。
+- [GAF: Gaussian Avatar Reconstruction from Monocular Videos via Multi-view Diffusion](https://arxiv.org/abs/2412.10209)：通过蒸馏多视角扩散先验、FLAME 法线图和身份保持 VAE 特征，从单目视频重建可动画化 3D Gaussian 头部 avatar。
+- [Apollo: An Exploration of Video Understanding in Large Multimodal Models](https://arxiv.org/abs/2412.10360)：系统研究视频 LMM 的采样、编码器、数据配比和训练日程等设计，并提出能高效处理小时级视频的 Apollo 模型族。
+- [VCA: Video Curious Agent for Long Video Understanding](https://arxiv.org/abs/2412.10471)：使用带 tree-search 片段探索和自生成内在奖励的好奇心 VLM agent，为长视频推理选择信息量最高的帧。
+- [Bridging Vision and Language: Modeling Causality and Temporality in Video Narratives](https://arxiv.org/abs/2412.10720)：加入 Causal-Temporal Reasoning Module，通过因果动态编码、时间关系学习和多阶段训练生成更连贯的视频字幕。
+- [Learning from Massive Human Videos for Universal Humanoid Pose Control](https://arxiv.org/abs/2412.14172)：从互联网人类视频经字幕生成和动作重定向构建 Humanoid-X，并训练 UH-1 进行文本条件 humanoid pose control。
+- [Can Generative Video Models Help Pose Estimation?](https://arxiv.org/abs/2412.16155)：利用预训练视频生成器在低重叠图像间幻化中间帧，再用姿态自一致性评分改进成对位姿估计。
+- [VidCtx: Context-aware Video Question Answering with Image Models](https://arxiv.org/abs/2412.17415)：通过提示图像能力 LMM 生成问题感知帧字幕、复用远距离帧上下文并汇聚帧级答案，实现免训练 VideoQA。
+- [Single Trajectory Distillation for Accelerating Image and Video Style Transfer](https://arxiv.org/abs/2412.18945)：用 single trajectory distillation、教师轨迹库和非对称对抗损失加速扩散式图像与视频风格迁移。
+- [PlanLLM: Video Procedure Planning with Refinable Large Language Models](https://arxiv.org/abs/2412.19139)：根据起点和目标视频帧规划动作序列，用 LLM 增强的自由形式规划和互信息对齐连接常识步骤与视觉状态。
+- [Generative Video Propagation](https://arxiv.org/abs/2412.19761)：GenProp 编码原视频、编辑首帧，并用图像到视频模型传播修改，统一处理编辑、插入、移除和跟踪任务。
+- [ReTaKe: Reducing Temporal and Knowledge Redundancy for Long Video Understanding](https://arxiv.org/abs/2412.20504)：用 DPSelect 关键帧和 PivotKV cache 剪枝进行免训练长视频压缩，同时减少时序冗余和 LLM 知识冗余。
+- [Hierarchical Banzhaf Interaction for General Video-Language Representation Learning](https://arxiv.org/abs/2412.20964)：用层级 Banzhaf 协作博弈建模 clip-word 细粒度交互，并从单模态和跨模态成分重建视频语言表征。
+- [VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM](https://arxiv.org/abs/2501.00599)：构建 VideoRefer-700K、VideoRefer-Bench 和 VideoRefer 模型，使 Video LLM 能执行对象级时空指令，而不只回答整段视频问题。
 - [MLLM-TA: Leveraging Multimodal Large Language Models for Precise Temporal Video Grounding](https://doi.org/10.1109/lsp.2024.3511426)：用多模态 LLM 进行精确时间视频定位，把语言查询映射到视频时间片段。
+- [Semantic-Driven Dual Consistency VAD](https://doi.org/10.1016/j.patcog.2024.110898)：用 semantic-driven dual consistency learning 做 weakly supervised video anomaly detection。
+- [SSIM over MSE for Video Anomaly Detection](https://doi.org/10.1016/j.neunet.2024.107115)：将视频异常检测中的重建误差评分从 MSE 转向更强调 SSIM 的视角。
+- [Inter-Clip Feature Similarity VAD](https://doi.org/10.1109/TCSVT.2024.3482414)：通过 inter-clip feature similarity 与 multi-scale temporal MLP 改进弱监督视频异常检测。
+- [SQL-Net Temporal Action Localization](https://doi.org/10.1109/TMM.2024.3521799)：用 semantic query learning 支持 point-supervised temporal action localization。
+- [Transformer-Enabled Abnormal Event Detection](https://doi.org/10.1016/j.engappai.2024.109496)：把 Transformer modeling 用于 video surveillance 中的 weakly supervised abnormal-event detection。
+- [Text-Video Knowledge Guided Prompting for Weakly Supervised Temporal Action Localization](https://doi.org/10.1109/tcsvt.2024.3521125)：利用文本-视频知识引导提示来改进弱监督时间动作定位。
+- [Cap4Video++: Enhancing Video Understanding With Auxiliary Captions](https://doi.org/10.1109/tpami.2024.3410329)：用辅助字幕增强视频理解。
+- [Video Rescaling With Recurrent Diffusion](https://doi.org/10.1109/tcsvt.2024.3397927)：用偏置联合帧操作和循环扩散在视频降采样与上采样之间传播时序信息，服务视频重缩放。
+- [Generative Steganography via Live Comments on Streaming Video Frames](https://doi.org/10.1109/tcss.2024.3352979)：把与流式视频帧同步的生成式弹幕评论作为隐写载体，在评论与视频交互中隐藏信息，而不只改动像素。
+- [RDFMark: Robust Dual-Functional Video Watermarking for Tamper Localization in Social Network Transmissions](https://doi.org/10.1109/msn63567.2024.00082)：结合可经受社交网络转码的鲁棒水印和可定位被篡改区域或帧的脆弱定位信号。
+- [Video anomaly detection guided by clustering learning](https://doi.org/10.1016/j.patcog.2024.110550)：在 U-Net 式自编码器中加入卷积增强自注意力、双尺度 K-means 特征聚类和片段级异常评分，用于无监督 VAD。
+- [Dual GroupGAN: An unsupervised four-competitor (2V2) approach for video anomaly detection](https://doi.org/10.1016/j.patcog.2024.110500)：把 SE-U-Net 预测生成器、SE-VAE 重建生成器和两个判别器组成 2V2 框架，用预测引导的重建差异检测异常。
+- [Zero-Shot Video Grounding With Pseudo Query Lookup and Verification](https://doi.org/10.1109/tip.2024.3365249)：提出 LoVe 两阶段零样本定位流程，先查找伪查询候选，再验证目标时刻，减少对人工时间标注的依赖。
+- [Diffusion-based normality pre-training for weakly supervised video anomaly detection](https://doi.org/10.1016/j.eswa.2024.124013)：先用扩散模型学习正常视频动态，再在弱监督 VAD 中依据偏离正常性的片段识别异常。
+- [VideoRAG: Scaling the context size and relevance for video question-answering](https://doi.org/10.18653/v1/2024.inlg-demos.3)：把检索增强生成用于 VideoQA，先选出与问题相关的 top-k 帧再回答，避免长视频固定稀疏采样。
+- [Triplet-set feature proximity learning for video anomaly detection](https://doi.org/10.1016/j.imavis.2024.105205)：用 triplet-set 特征邻近学习聚合正常视频证据，并把异常片段从正常模式中拉开。
+- [Reliable Phrase Feature Mining for Hierarchical Video-Text Retrieval](https://doi.org/10.1109/tcsvt.2024.3422869)：在视频文本检索中挖掘可靠短语级视觉与文本特征，结合跨模态语义相关、短语生成可靠性和层级对齐。
+- [Building Secure and Engaging Video Communication by Using Monitor Illumination](https://doi.org/10.1109/cvprw63382.2024.00441)：通过检测显示器发光与用户脸部反射之间的不匹配，在不投射主动挑战图案的情况下识别深伪头像或分心参会者。
+- [Personalized Video Comment Generation](https://doi.org/10.18653/v1/2024.findings-emnlp.979)：定义 PVCG 任务，配套 PerVidCom 与 FICL-Score，评估 MLLM 如何同时依据视频和未见用户的历史评论生成个性化评论。
+- [Deep Fake Image and Video Detection using Deep Learning](https://doi.org/10.1109/iccccm61016.2024.11039988)：结合用于图像伪造的 Meso4 与用于视频序列的 LRCN，使空间伪影和时序不一致共同参与深伪检测。
+- [MemoTiChat: A Memory-Augmented Time-Sensitive Model for Ultra-Long Video Understanding](https://doi.org/10.1109/ijcnn60899.2024.10649977)：用动态采样器、时间感知记忆缓冲区、记忆巩固模块和迭代视频编码器理解超过一万帧的超长视频。
+- [Collaborative Aware Bidirectional Semantic Reasoning for Video Question Answering](https://doi.org/10.1109/tcsvt.2024.3490665)：提出 CBSR，在问题-视频表征与候选答案之间做双向语义推理，以减轻 VideoQA 中的伪相关。
+- [Learning Comprehensive Visual Grounding for Video Captioning](https://doi.org/10.1109/tcsvt.2024.3502621)：用伪实体标注、时空实体落地和实体交互建模训练 grounded video captioning，减少对人工稀疏框标注的依赖。
+- [Multiscale Recovery Diffusion Model With Unsupervised Learning for Video Anomaly Detection System](https://doi.org/10.1109/tii.2024.3493390)：把 multiscale recovery diffusion 作为预训练任务，并利用生成速度线索在无帧级标签条件下检测监控异常。
+- [Multimodal Large Models are Effective Action Anticipators](https://arxiv.org/abs/2501.00795)：把视频序列视作 token，并结合动作文本线索，让多模态大模型用于长程视频动作预测。
+- [Unified Specialized Visual Encoders](https://arxiv.org/abs/2501.01426)：统一多个专用视觉编码器以增强 video language models 的表示能力。
+- [FrameFusion: Combining Similarity and Importance for Video Token Reduction on Large Vision Language Models](https://arxiv.org/abs/2501.01986)：在 LVLM 早期层合并相邻帧的相似视觉 token，并在后续层裁剪低重要性 token，以降低视频 token 负载同时保留检索、问答和时空理解能力。
+- [DeTrack: In-model Latent Denoising Learning for Visual Object Tracking](https://arxiv.org/abs/2501.02467)：把视觉目标跟踪表述为模型内部 latent denoising，并结合 denoising blocks 与记忆提升时序框跟踪鲁棒性。
+- [Watch Video, Catch Keyword: Context-aware Keyword Attention for Moment Retrieval and Highlight Detection](https://arxiv.org/abs/2501.02504)：结合视频上下文聚类与关键词感知对比学习，用于视频片段检索和高光检测。
+- [Mdp3: a Training-Free Approach for List-Wise Frame Selection in Video-Llms](https://arxiv.org/abs/2501.02885)：用免训练的 list-wise 帧选择提升 Video-LLM 效率，同时保留任务相关视觉证据。
+- [Video-of-Thought: Step-by-Step Video Reasoning from Perception to Cognition](https://arxiv.org/abs/2501.03230)：结合 MotionEpic 的像素级时空场景图 grounding 与 Video-of-Thought 分解，让模型从低层感知逐步推进到认知级视频推理。
+- [Action Quality Assessment via Hierarchical Pose-Guided Multi-Stage Contrastive Regression](https://arxiv.org/abs/2501.03674)：融合视觉与骨架特征，并用多阶段对比回归进行视频中细粒度动作质量评估。
+- [Building a Mind Palace: Structuring Environment-Grounded Semantic Graphs for Effective Long Video Analysis with LLMs](https://arxiv.org/abs/2501.04336)：把长视频转换为环境落地的语义图，使 LLM 能检索结构化的对象、事件和关系证据进行长视频分析。
+- [GaussianVideo](https://arxiv.org/abs/2501.04782)：用层次化 Gaussian Splatting 构建高效视频表示。
+- [MECD+: Unlocking Event-Level Causal Graph Discovery for Video Reasoning](https://arxiv.org/abs/2501.07227)：提出长视频多事件因果发现任务，用事件遮盖、类 Granger 检验、front-door adjustment、反事实推理和 context-chain reasoning 推断事件级因果图。
+- [EdgeTAM](https://arxiv.org/abs/2501.07256)：把 track-anything modeling 部署到 on-device video tracking。
+- [Facial Dynamics in Video: Instruction Tuning for Improved Facial Expression Perception and Contextual Awareness](https://arxiv.org/abs/2501.07978)：用跟踪感知视觉 token 对视频 MLLM 做动态表情描述指令调优，使模型跟随表情变化和上下文，而不是只分类孤立人脸。
+- [Admitting Ignorance Helps the Video Question Answering Models to Answer](https://arxiv.org/abs/2501.08771)：用位移和扰动后的问题训练 VideoQA 模型，让模型在证据不足时承认未知，而不是利用问题和答案之间的伪相关猜测。
+- [ComplexVAD](https://arxiv.org/abs/2501.09733)：检测视频中的交互异常，扩展 VAD 对交互关系的建模。
+- [LD-DETR](https://arxiv.org/abs/2501.10787)：为 video moment retrieval 与 highlight detection 引入循环解码细化，重点改进时间定位而不是泛化的视频问答。
+- [Memory Storyboard: Leveraging Temporal Segmentation for Streaming Self-Supervised Learning from Egocentric Videos](https://arxiv.org/abs/2501.12254)：面向视频理解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Diffusion Perceptual Video Compression](https://arxiv.org/abs/2501.13528)：用扩散式感知编码和时间信息复用改进神经视频压缩。
+- [EventVL: Understand Event Streams via Multimodal Large Language Model](https://arxiv.org/abs/2501.13707)：用 event-image/video-text 数据和时空事件表示把事件流接入 MLLM，用于描述和场景理解。
+- [Temporal Preference Optimization for Long-Form Video Understanding](https://arxiv.org/abs/2501.13919)：用时间偏好优化后训练 video-LMM，以增强长视频时间定位能力。
+- [VideoPure: Diffusion-Based Adversarial Purification for Video Recognition](https://arxiv.org/abs/2501.14999)：面向视频理解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [HumanOmni: A Large Vision-Speech Language Model for Human-Centric Video Understanding](https://arxiv.org/abs/2501.15111)：构建面向人物中心视频理解的视觉-语音语言模型。
+- [CogPlanner: Unveiling the Potential of Agentic Multimodal Retrieval Augmented Generation with Planning](https://arxiv.org/abs/2501.15470)：迭代规划多模态查询改写和检索策略，在控制检索成本的同时整合视频与图像证据用于 MRAG。
+- [Expertized Caption Auto-Enhancement for Video-Text Retrieval](https://arxiv.org/abs/2502.02885)：通过自动为视频字幕补充专家化的视觉与时间线索来改进视频-文本检索，增强视频语言检索模型使用的文本监督信号。
+- [Learning Real-World Action-Video Dynamics with Heterogeneous Masked Autoregression](https://arxiv.org/abs/2502.04296)：通过 masked autoregression 学习真实世界 action-video dynamics，将视频预测与动作条件世界建模联系起来。
+- [VideoRoPE: What Makes for Good Video Rotary Position Embedding?](https://arxiv.org/abs/2502.05173)：为视频 LLM 设计 3D RoPE，结合低频时间分配、对角空间布局和可调时间间距，并用带周期干扰项的长视频检索与理解任务验证其位置编码优势。
+- [Optimizing GPT for Video Understanding: Zero-Shot Performance and Prompt Engineering](https://arxiv.org/abs/2502.09573)：面向视频理解提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [VideoDiff: Human-AI Video Co-Creation with Alternatives](https://arxiv.org/abs/2502.10190)：支持生成备选 rough cut、B-roll 插入和文字特效，并用时间线、转写文本和预览对齐帮助创作者比较视频编辑方案。
+- [video-SALMONN-o1: Reasoning-enhanced Audio-visual Large Language Model](https://arxiv.org/abs/2502.11775)：通过推理优化训练增强音视频大模型的视频理解。
+- [Pretrained Image-Text Models are Secretly Video Captioners](https://arxiv.org/abs/2502.13363)：研究图文预训练模型如何迁移到视频字幕生成，说明视频语言理解中的跨模态迁移能力。
+- [SNN-Driven Multimodal Human Action Recognition via Sparse Spatial-Temporal Data Fusion](https://arxiv.org/abs/2502.13385)：用 SNN Mamba 骨干、脉冲图卷积和语义抽取模块融合事件相机与骨架流，实现低能耗多模态人体动作识别。
+- [From 16-Bit to 1-Bit: Visual KV Cache Quantization for Memory-Efficient Multimodal Large Language Models](https://arxiv.org/abs/2502.14882)：面向视频理解提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Practical Real-Time Neural Video Compression](https://arxiv.org/abs/2502.20762)：围绕运行开销瓶颈设计实时神经视频压缩 codec。
+- [Find First, Track Next](https://arxiv.org/abs/2503.03492)：将 referring video object segmentation 拆成目标识别与时间传播两步，增强语言指代的视频跟踪模型线索。
+- [EVE](https://arxiv.org/abs/2503.04058)：用 vision-language models 做端到端视频字幕抽取，连接视频理解与画面文字读取。
+- [Narrating the Video: Boosting Text-Video Retrieval via Comprehensive Utilization of Frame-Level Captions](https://arxiv.org/abs/2503.05186)：利用帧级标题叙事增强文本-视频检索，并缓解生成标题带来的错误信息影响。
+- [A Novel Trustworthy Video Summarization Algorithm Through a Mixture of LoRA Experts](https://arxiv.org/abs/2503.06064)：采用 MiLoRA-ViSum 专家混合 LoRA 建模视频空间与时间特征，用较少可训练参数生成可信视频摘要。
+- [Generative Video Bi-Flow](https://arxiv.org/abs/2503.06364)：把视频生成建模为 neural ODE bi-flow，直接从过去帧映射到未来帧，并学习去除流式生成中累积的漂移误差。
+- [COMODO](https://arxiv.org/abs/2503.07259)：将视频信号蒸馏到 IMU 表征中，用于高效第一人称人体活动识别。
 - [HierarQ: Task-Aware Hierarchical Q-Former for Enhanced Video Understanding](https://arxiv.org/abs/2503.08585)：提出任务感知的层级 Q-Former，改进视频语言模型的时间聚合。
+- [QuoTA: Query-oriented Token Assignment via CoT Query Decouple for Long Video Comprehension](https://arxiv.org/abs/2503.08689)：按查询相关性分配长视频视觉 token，以支持长视频理解。
+- [Continual Text-to-Video Retrieval](https://arxiv.org/abs/2503.10111)：用帧融合和任务感知路由改进持续 text-to-video retrieval。
+- [KVQ: Boosting Video Quality Assessment via Saliency-guided Local Perception](https://arxiv.org/abs/2503.10259)：通过显著性引导的局部纹理感知预测视频质量，用区域级质量线索改进全局感知评估，减少对密集局部标注的依赖。
+- [OVTR](https://arxiv.org/abs/2503.10616)：构建端到端 Transformer，用于视频中的 open-vocabulary multi-object tracking。
+- [结构化关键词视频异常检测](https://arxiv.org/abs/2503.10653)： 用结构化关键词表示引导视频异常检测，并提升语义可解释性。
+- [Large-Scale Pre-Training for Grounded Video Caption Generation](https://arxiv.org/abs/2503.10781)：从帧级 caption 和密集边界框构建 HowToGround1M，并预训练 GROVE 生成能把字幕对象跨时间落地的视频描述。
+- [MTV-Inpaint](https://arxiv.org/abs/2503.11412)： 在扩散式视频修复中统一长视频补全与目标插入，并支持文本和图像控制。
+- [Cognitive Disentanglement for Referring Multi-Object Tracking](https://arxiv.org/abs/2503.11496)：分离 what 与 where 路径以改进视频中的语言引导多目标跟踪。
+- [TACO: Taming Diffusion for In-the-Wild Video Amodal Completion](https://arxiv.org/abs/2503.12049)：把扩散模型适配到野外视频 amodal completion，在跨帧推断被遮挡区域时强调时间一致性，而不是只做可见区域分割。
+- [Training Video Foundation Models with NVIDIA NeMo](https://arxiv.org/abs/2503.12964)：记录基于 NVIDIA NeMo 的开源 VFM 训练流水线，覆盖视频数据加速清洗、多模态加载，以及并行化视频扩散训练和推理。
+- [Efficient Motion-Aware Video MLLM](https://arxiv.org/abs/2503.13016)：为视频多模态大模型加入 motion-aware efficiency，在算力约束下提升时序视觉推理。
+- [LaGoVAD](https://arxiv.org/abs/2503.13160)： 支持通过自然语言在推理时改变异常定义，实现开放世界视频异常检测。
+- [Time-R1: Post-Training Large Vision Language Model for Temporal Video Grounding](https://arxiv.org/abs/2503.13377)：用 R1 式后训练增强 LVLM 的视频时间定位能力。
+- [Long-VMNet: Accelerating Long-Form Video Understanding via Fixed Memory](https://arxiv.org/abs/2503.13707)：用固定记忆设计加速长视频理解，使模型在长片段上进行时序推理时不必让上下文成本随视频长度线性增长。
+- [Stitch-a-Demo: Video Demonstrations from Multistep Descriptions](https://arxiv.org/abs/2503.13821)：从多步骤文本检索并拼接教学视频片段，并用弱监督数据和 hard negatives 同时约束步骤正确性与视觉连贯性。
+- [LeanVAE](https://arxiv.org/abs/2503.14325)： 为潜空间视频扩散构建高效重建 VAE，在保持生成质量的同时降低编码成本。
+- [ImViD: Immersive Volumetric Videos for Enhanced VR Engagement](https://arxiv.org/abs/2503.14359)：发布移动多视角视频和同步音频采集数据，用 5K、60 FPS 室内外场景支持沉浸式体积视频重建与 6-DoF 交互。
+- [Joint Image-Instance Spatial-Temporal Attention](https://arxiv.org/abs/2503.14430)：用 joint image-instance spatial-temporal attention 改进 few-shot action recognition。
+- [Video-VoT-R1: An efficient video inference model integrating image packing and AoE architecture](https://arxiv.org/abs/2503.15807)：结合长序列 image packing、Autonomy-of-Experts 架构、Video-of-Thought 推理和强化学习训练，提升视频语言推理效率。
+- [MASH-VLM](https://arxiv.org/abs/2503.15871)：通过 disentangled spatial-temporal representations 缓解 Video-LLMs 的 action-scene hallucination。
+- [STOP Video Understanding](https://arxiv.org/abs/2503.15973)：用 integrated spatial-temporal dynamic prompting 改进视频理解。
+- [PoseTraj](https://arxiv.org/abs/2503.16068)： 通过合成姿态监督与相机解耦，为视频扩散加入姿态感知轨迹控制。
+- [M3: 3D-Spatial MultiModal Memory](https://arxiv.org/abs/2503.16413)：从视频源构建基于 3D Gaussian Splatting 的多模态记忆，并用 principal scene components 与 Gaussian memory attention 高效渲染多粒度特征。
+- [From Faces to Voices: Learning Hierarchical Representations for High-quality Video-to-Speech](https://arxiv.org/abs/2503.16956)：把无声说话人脸视频分阶段映射到内容、音色和韵律空间，对齐唇动、身份和表情等视觉因素与对应声学因素。
+- [PVChat: Personalized Video Chat with One-Shot Learning](https://arxiv.org/abs/2503.17069)：从单个主体视频个性化 Video LLM，结合身份保持的视频问答增强、渐进式图像到视频学习和 mixture-of-heads 结构。
+- [Temporal Modeling for Video Pre-Training on Video Instance Segmentation](https://arxiv.org/abs/2503.17672)：为视频实例分割加入时间建模预训练框架，增强模型侧视频解析覆盖。
 - [CountLLM](https://arxiv.org/abs/2503.17690)：结合周期性结构提示与渐进式多模态训练，使基于 LLM 的视频动作计数能泛化到新的重复动作。
+- [Anomize](https://arxiv.org/abs/2503.18094)：改进 open-vocabulary video anomaly detection。
+- [LLaVAction: evaluating and training multi-modal large language models for action understanding](https://arxiv.org/abs/2503.18712)：把 EPIC-KITCHENS-100 改造成带 hard distractors 的 MLLM 动作理解基准，并用 action token 与两阶段结构化动作管线训练 LLaVAction 处理细粒度第一视角动作。
+- [Video-ColBERT](https://arxiv.org/abs/2503.19009)：将 contextualized late interaction 用于 text-to-video retrieval。
+- [Bootstrap Your Own Views](https://arxiv.org/abs/2503.19706)：通过 masked ego-exo modeling 学习跨视角不变的视频表示，支撑更细粒度的跨视角视频理解。
+- [EventMamba: Enhancing Spatio-Temporal Locality with State Space Models for Event-Based Video Reconstruction](https://arxiv.org/abs/2503.19721)：用状态空间模型捕捉事件相机的局部时空动态，从稀疏异步事件流重建视频帧。
+- [EventFly: Event Camera Perception from Ground to the Sky](https://arxiv.org/abs/2503.19916)：把事件相机感知从地面场景扩展到空中场景，强调利用稀疏高速事件流进行鲁棒的类视频运动理解。
+- [From Trial to Triumph: Advancing Long Video Understanding via Visual Context Sample Scaling and Self-Reward Alignment](https://arxiv.org/abs/2503.20472)：用 bin-wise 多样化关键帧采样生成多个视觉上下文，再以频次、置信度和问题类型相关推理分数构成 self-reward 来选择长视频问答答案。
+- [What Changed and What Could Have Changed? State-Change Counterfactuals for Procedure-Aware Video Representation Learning](https://arxiv.org/abs/2503.21055)：用状态变化反事实训练流程感知视频表征，使模型区分真实物体变化与合理但未发生的替代变化。
+- [VADMamba](https://arxiv.org/abs/2503.21169)： 将状态空间模型用于快速视频异常检测，并结合帧预测与光流重建。
+- [BOLT: Boost Large Vision-Language Model Without Training for Long-Form Video Understanding](https://arxiv.org/abs/2503.21483)：以免训练方法增强 LVLM 的长视频理解。
 - [Video-R1](https://arxiv.org/abs/2503.21776)：把 R1 风格强化学习应用到视频语言模型，使其学习更长、更依赖证据的视频推理。
+- [Mobile-VideoGPT](https://arxiv.org/abs/2503.21782)：构建快速的视频理解语言模型，面向 mobile-efficient inference。
+- [Segment Any Motion in Videos](https://arxiv.org/abs/2503.22268)： 用通用视频模型分割视频中的运动，为视频理解与时序 grounding 补充运动中心路径。
+- [${\text{CA}^{2}\text{ST}}$: Cross-Attention in Audio, Space, and Time for Holistic Video Recognition](https://arxiv.org/abs/2503.23447)：在音频、空间和时间流之间引入 cross-attention，使视频识别同时利用声音、外观和运动线索。
+- [Exploring the Effect of Reinforcement Learning on Video Understanding: Insights from SEED-Bench-R1](https://arxiv.org/abs/2503.24376)：通过 SEED-Bench-R1 研究强化学习对视频理解的影响。
+- [SMILE](https://arxiv.org/abs/2504.00527)：把 CLIP 引导的空间语义和运动语义注入 masked video learning，以获得更强视频表示。
+- [Slow-Fast Architecture for Video Multi-Modal Large Language Models](https://arxiv.org/abs/2504.01328)：该慢快架构在视频多模态大模型中平衡时间分辨率与空间细节。
+- [Leveraging Modality Tags for Enhanced Cross-Modal Video Retrieval](https://arxiv.org/abs/2504.01591)：利用自动提取的模态标签和辅助 latent 概念改进跨模态视频检索，在 MSR-VTT、DiDeMo、TGIF、Charades 和 YouCook2 上验证。
+- [Moment Quantization for Video Temporal Grounding](https://arxiv.org/abs/2504.02286)：把 temporal moment 离散量化为可建模表示，帮助视频 grounding 模型更精确定位语言描述事件的时间边界。
+- [LV-MAE: Learning Long Video Representations Through Masked-Embedding Autoencoders](https://arxiv.org/abs/2504.03501)：用 masked-embedding autoencoder 目标学习长视频表征，重建紧凑视频 embedding 而不是原始帧。
+- [AutoSSVH](https://arxiv.org/abs/2504.03587)：自动化 frame sampling，用于高效 self-supervised video hashing。
+- [AVadCLIP](https://arxiv.org/abs/2504.04495)：结合音频与视觉的 CLIP-style 协作以提升视频异常检测鲁棒性。
+- [SAM2MOT](https://arxiv.org/abs/2504.04519)：把 multi-object tracking 表述为基于 SAM2-style temporal masks 的 segmentation。
+- [Multimodal Lengthy Videos Retrieval Framework and Evaluation Metric](https://arxiv.org/abs/2504.04572)：围绕长视频设计多模态检索框架和评价指标，奖励模型在长片段中定位真正相关的视频证据。
+- [Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images](https://arxiv.org/abs/2504.05458)：从单张风景图生成动态场景视频，通过优化 4D Gaussians 表示时间演化的几何和外观。
 - [Caption Anything in Video: Fine-grained Object-centric Captioning via Spatiotemporal Multimodal Prompting](https://arxiv.org/abs/2504.05541)：通过时空多模态提示进行细粒度、以对象为中心的视频描述。
-- [VideoExpert](https://arxiv.org/abs/2504.07519)：提出面向视频理解的模型侧方法，核心围绕 Augmented LLM for Temporal-Sensitive Video Understanding。
+- [Towards an AI-Driven Video-Based American Sign Language Dictionary: Exploring Design and Usage Experience with Learners](https://arxiv.org/abs/2504.05857)：构建并研究 AI 辅助的视频 ASL 词典，把手语视频与面向学习者的检索和使用流程连接起来。
+- [Saliency-Motion Guided Trunk-Collateral Network for Unsupervised Video Object Segmentation](https://arxiv.org/abs/2504.05904)：用显著性和运动分支引导无监督视频目标分割，在没有 mask 标注时区分前景目标与时序背景变化。
+- [Temporal Alignment-Free Video Matching](https://arxiv.org/abs/2504.05956)：在无需时间对齐的情况下进行少样本动作识别视频匹配，补充轻量视频表征路线。
+- [VideoExpert](https://arxiv.org/abs/2504.07519)：为 LLM 式视频理解加入时间敏感专家信号，使回答关注事件顺序和时间定位证据。
+- [GLUS](https://arxiv.org/abs/2504.07962)：在单一 LLM 中统一 global-local reasoning 用于视频分割，补充模型侧视频推理与分割方法。
+- [Plasticity-Aware Mixture of Experts for Learning Under QoE Shifts in Adaptive Video Streaming](https://arxiv.org/abs/2504.09906)：用 plasticity-aware mixture of experts 在 QoE 分布变化下调整自适应视频流决策。
+- [SlowFastVAD](https://arxiv.org/abs/2504.10320)： 结合轻量视频异常检测器与 RAG 增强 VLM，在降低成本的同时提升异常推理可解释性。
+- [Active Moment Discovery for Partially Relevant Video Retrieval](https://arxiv.org/abs/2504.10920)：用 active moment discovery 改进 partially relevant video retrieval。
+- [Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](https://arxiv.org/abs/2504.12083)：构造偏好回答与注入常见错误的非偏好回答，并用子序列级奖励和 token-wise KL 的 RRPO 缓解 LVLM 的时间理解错误、幻觉和语言捷径。
+- [Coding-Prior Guided Diffusion Network for Video Deblurring](https://arxiv.org/abs/2504.12222)：用编码先验引导扩散式视频去模糊，在去除运动模糊的同时保持时间结构。
+- [AdaVid: Adaptive Video-Language Pretraining](https://arxiv.org/abs/2504.12513)：通过自适应选择或加权视频文本样本与训练目标改进视频语言预训练，避免把所有 clip 等量处理。
+- [Balanced Prototypes for Partially Relevant Video Retrieval](https://arxiv.org/abs/2504.13035)：用均衡原型提升部分相关视频检索的效率和效果。
+- [EventVAD](https://arxiv.org/abs/2504.13092)：结合 event-aware temporal reasoning 与 multimodal LLMs 做 training-free video anomaly detection。
+- [Few-Shot Referring Video Single- and Multi-Object Segmentation Via Cross-Modal Affinity with Instance Sequence Matching](https://arxiv.org/abs/2504.13710)：通过跨模态 affinity 与实例序列匹配，把 few-shot referring video object segmentation 扩展到单目标和多目标场景。
+- [Memory-efficient Streaming VideoLLMs for Real-time Procedural Video Understanding](https://arxiv.org/abs/2504.13915)：通过流式输入和高效状态复用保持程序视频的实时理解，而不是持续累积全部帧。
+- [VideoPASTA: 7K Preference Pairs That Matter for Video-LLM Alignment](https://arxiv.org/abs/2504.14096)：VideoPASTA 构造针对性时空偏好样本，用于视频大模型对齐。
+- [Grounding-MD: Grounded Video-language Pre-training for Open-World Moment Detection](https://arxiv.org/abs/2504.14553)：用 grounded moment 监督预训练视频语言模型，使开放世界查询能定位固定动作词表之外的事件。
+- [ReSpec: Relevance and Specificity Grounded Online Filtering for Learning on Video-Text Data Streams](https://arxiv.org/abs/2504.14875)：按相关性和具体性在线过滤视频文本训练流，让预训练集中在信息量高的 caption-clip 配对上。
+- [Describe Anything](https://arxiv.org/abs/2504.16072)：支持详细的局部化图像与视频 captioning，增强模型侧细粒度 video-language grounding。
+- [Towards Explainable AI: Multi-Modal Transformer for Video-based Image Description Generation](https://arxiv.org/abs/2504.16788)：面向视频理解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [HierSum: A Global and Local Attention Mechanism for Video Summarization](https://arxiv.org/abs/2504.18689)：结合全局上下文注意力和局部片段注意力，使视频摘要同时保留整体情节和关键细节时刻。
+- [PiercingEye](https://arxiv.org/abs/2504.18866)：用 dual-space modeling 与 hyperbolic vision-language guidance 做视频暴力检测。
+- [Inter/Intra-Sample Coherence PRVR](https://arxiv.org/abs/2504.19637)：结合样本间与样本内分析以及 coherence prediction 改进 partially relevant video retrieval。
+- [Do Video Language Models really understand the video contexts?](https://doi.org/10.18653/v1/2025.naacl-srw.40)：提出 VURCA，把细粒度 VideoQA 理解与模型回复一致性进行对照，并用 FgNExT-QA 诊断视频上下文理解。
+- [MoSAM](https://arxiv.org/abs/2505.00739)：以运动引导和时空记忆选择增强 Segment Anything 的视频分割能力。
+- [TEMPURA: Temporal Event Masked Prediction and Understanding for Reasoning in Action](https://arxiv.org/abs/2505.01583)：用时间事件掩码预测和带时间戳的密集描述训练视频模型，增强动作因果推理。
 - [Vision and Intention Boost Large Language Model in Long-Term Action Anticipation](https://arxiv.org/abs/2505.01713)：结合视觉意图建模与 LLM 推理，用于长期动作预判。
 - [EchoInk-R1: Exploring Audio-Visual Reasoning in Multimodal LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.04623)：利用强化学习提升多模态 LLM 的音视频推理。
+- [SkillFormer: unified multiview video understanding for proficiency estimation](https://arxiv.org/abs/2505.08665)：在 TimeSformer 上加入 CrossViewFusion、可学习门控、自校准和 LoRA 微调，用于第一视角与第三视角的熟练度估计。
+- [SpikeVideoFormer](https://arxiv.org/abs/2505.10352)：用 Hamming attention 构建高效 spike-driven video transformer，复杂度为 O(T)。
+- [Physics-informed Temporal Alignment for Auto-regressive PDE Foundation Models](https://arxiv.org/abs/2505.10930)：为自回归 PDE 基础模型加入物理约束的时间对齐，把演化仿真场视作具有一致动力学的视频式序列。
+- [VFRTok: Variable Frame Rates Video Tokenizer with Duration-Proportional Information Assumption](https://arxiv.org/abs/2505.12053)：基于时长比例信息假设进行可变帧率视频 tokenization，提高视频表示效率，而不是把所有帧等量处理。
+- [Rebalancing Contrastive Alignment with Bottlenecked Semantic Increments in Text-Video Retrieval](https://arxiv.org/abs/2505.12499)：用 bottlenecked semantic increments 重新平衡文本视频对比学习，使检索模型对细粒度语义变化保持敏感。
+- [Temporal-Oriented Recipe for Transferring Large Vision-Language Model to Video Understanding](https://arxiv.org/abs/2505.12605)：用面向时间的训练和表示选择把图像 VLM 迁移到视频理解，突出运动、顺序和事件连续性。
+- [SPKLIP: Aligning Spike Video Streams with Natural Language](https://arxiv.org/abs/2505.12656)：通过分层 spike 特征与 spike-text contrastive learning 对齐 spike video streams 和自然语言，把视频语言建模扩展到稀疏、异步的神经形态输入。
+- [AdaToken-3D: Dynamic Spatial Gating for Efficient 3D Large Multimodal-Models Reasoning](https://arxiv.org/abs/2505.12782)：为 3D 多模态推理动态门控空间 token，在保留几何相关上下文的同时减少冗余视觉证据。
+- [Context-Modulated Neural Video Compression](https://arxiv.org/abs/2505.14541)：用上下文调制改进神经视频压缩，补充紧凑视频表示与重建模型。
+- [Programmatic Video Prediction Using Large Language Models](https://arxiv.org/abs/2505.14948)：提出 ProgGen，用 LLM 和 VLM 生成程序来估计每帧状态、预测状态转移，并渲染未来 RGB 帧。
+- [Flashback](https://arxiv.org/abs/2505.15205)：用 memory-driven zero-shot reasoning 做 real-time video anomaly detection。
+- [CP-LLM: Context and Pixel Aware Large Language Model for Video Quality Assessment](https://arxiv.org/abs/2505.16025)：在 LLM 式视频质量评估中结合上下文线索和像素级失真，把语言推理与感知退化建模连接起来。
+- [Generative Latent Coding](https://arxiv.org/abs/2505.16177)：在生成式 latent space 中进行超低码率图像和视频压缩。
+- [JFFRA : Joint Flow and Feature Refinement Using Attention for Video Restoration](https://arxiv.org/abs/2505.16434)：用注意力联合细化光流和视觉特征，使视频复原同时利用运动对齐和外观恢复。
+- [V2V: Scaling Event-Based Vision through Efficient Video-to-Voxel Simulation](https://arxiv.org/abs/2505.16797)：把普通视频高效转换为 voxel 化事件模拟数据，扩展事件视觉模型训练所需的稀疏时序数据。
+- [Fact-R1: Towards Explainable Video Misinformation Detection with Deep Reasoning](https://arxiv.org/abs/2505.16836)：改进视频语言、动作预测、误信息识别或多模态视频推理。
+- [自适应时序因果视频 tokenizer](https://arxiv.org/abs/2505.17011)： 学习一维潜空间视频 tokenizer 与时序因果结构，提升视频生成模型的表示效率。
+- [RAVEN: Query-Guided Representation Alignment for Question Answering over Audio, Video, Embedded Sensors, and Natural Language](https://arxiv.org/abs/2505.17114)：改进视频语言、动作预测、误信息识别或多模态视频推理。
+- [VAD-R1](https://arxiv.org/abs/2505.19877)：用 perception-to-cognition chain-of-thought 训练视频异常推理，把 VAD 与 video-language reasoning 连接起来。
+- [PHI: Bridging Domain Shift in Long-Term Action Quality Assessment via Progressive Hierarchical Instruction](https://arxiv.org/abs/2505.19972)：通过 progressive hierarchical instruction 与基于 flow 的特征适配，缓解长视频动作质量评估中的领域偏移。
+- [Scaling-up Perceptual Video Quality Assessment](https://arxiv.org/abs/2505.22543)：通过更大规模数据和建模扩展感知视频质量评估，使质量预测覆盖更广泛的失真和观看条件。
+- [VAU-R1: Advancing Video Anomaly Understanding via Reinforcement Fine-Tuning](https://arxiv.org/abs/2505.23504)：用强化微调提升 MLLM 的可解释视频异常推理能力，并配套 VAU-Bench 这一 CoT 异常基准，覆盖问答、推理依据、时间标注和描述性字幕。
+- [Generating Fit Check Videos with a Handheld Camera](https://arxiv.org/abs/2505.23886)：从手持相机输入生成试穿检查视频，建模服装外观和人体运动，让用户动态查看衣物合身效果。
+- [Grid-LOGAT: Grid Based Local and Global Area Transcription for Video Question Answering](https://arxiv.org/abs/2505.24371)：用局部与全局网格转写支持视频问答，面向更细粒度的视频证据提取。
+- [SynPO: Synergizing Descriptiveness and Preference Optimization for Video Detailed Captioning](https://arxiv.org/abs/2506.00835)：从 VLM 行为和少量 LLM 辅助构造视频描述偏好对，再用免 reference model 的 SynPO 提升细粒度时序描述，同时约束语言能力不被偏好优化带偏。
+- [Self-supervised ControlNet with Spatio-Temporal Mamba for Real-world Video Super-resolution](https://arxiv.org/abs/2506.01037)：结合自监督 ControlNet 条件和时空 Mamba 模块提升真实视频超分辨率，并维持跨帧一致性。
+- [MOOSE: Pay Attention to Temporal Dynamics for Video Understanding via Optical Flows](https://arxiv.org/abs/2506.01119)：把光流运动线索注入视频理解，使模型关注时间动态，而不是主要依赖静态帧外观。
+- [SAM-I2V](https://arxiv.org/abs/2506.01304)：以极低训练成本将 SAM 升级为可提示的视频分割模型，连接图像分割先验与视频交互。
+- [Reinforcement Learning Tuning for VideoLLMs: Reward Design and Data Efficiency](https://arxiv.org/abs/2506.01908)：在 GRPO 上加入语义与时间双奖励，并用重复推理的方差感知样本选择提升 VideoLLM 在视频问答、时间定位和 grounded QA 上的数据效率。
+- [Semantics-Aware Information Bottleneck VAD](https://arxiv.org/abs/2506.02535)：为视频异常检测加入 semantics-aware information bottleneck，强调与异常相关的可解释表征学习。
+- [EgoVLM: Policy Optimization for Egocentric Video Understanding](https://arxiv.org/abs/2506.03097)：EgoVLM 将策略优化用于第一人称视频理解，为自我中心视频推理模型补充了基于 RL 的路线。
+- [MamFusion](https://arxiv.org/abs/2506.03473)：用 Multi-Mamba temporal fusion 做 partially relevant video retrieval。
+- [Track Any Anomalous Object](https://arxiv.org/abs/2506.05175)：构建细粒度异常目标跟踪流水线，用于视频异常检测。
+- [From Play to Replay: Composed Video Retrieval for Temporally Fine-Grained Videos](https://arxiv.org/abs/2506.05274)：把组合式视频检索扩展到细粒度时间编辑，匹配参考视频加语言修改中对动作、顺序或具体时刻的变化。
+- [Unleashing Hour-Scale Video Training for Long Video-Language Understanding](https://arxiv.org/abs/2506.05332)：把视频语言训练扩展到小时级视频以增强长视频理解。
+- [Implicit Neural Representation for Video Restoration](https://arxiv.org/abs/2506.05488)：用隐式神经表示建模连续时空信号，使退化视频帧能以时间一致的方式复原。
+- [FRAME: Pre-Training Video Feature Representations via Anticipation and Memory](https://arxiv.org/abs/2506.05543)：用 anticipation 和 memory 目标预训练视频特征，使表示既预测后续事件又保留早期上下文。
+- [AllTracker: Efficient Dense Point Tracking at High Resolution](https://arxiv.org/abs/2506.07310)： 提供高分辨率 dense point tracking 模型原语，支撑视频运动理解与时间对应。
+- [Ambiguity-Restrained Video Retrieval](https://arxiv.org/abs/2506.07471)：学习受歧义约束的文本-视频表征，用于只有局部片段相关的部分相关视频检索。
+- [VidBridge-R1: Bridging QA and Captioning for RL-based Video Understanding Models with Intermediate Proxy Tasks](https://arxiv.org/abs/2506.09079)：VidBridge-R1 通过中间代理任务连接视频问答与字幕生成，提升基于强化学习的视频理解。
+- [Exploring Audio Cues for Enhanced Test-Time Video Model Adaptation](https://arxiv.org/abs/2506.12481)：在测试时利用音频线索适配视频模型，在视觉外观跨域变化时借助声画一致性稳定预测。
+- [Event Completeness for Weakly Supervised VAD](https://arxiv.org/abs/2506.13095)：学习事件完整性信号以改进弱监督视频异常检测。
+- [EVA02-AT: Egocentric Video-Language Understanding with Spatial-Temporal Rotary Positional Embeddings and Symmetric Optimization](https://arxiv.org/abs/2506.14356)：通过时空旋转位置嵌入与对称优化增强第一人称视频语言理解。
+- [PR-DETR: Injecting Position and Relation Prior for Dense Video Captioning](https://arxiv.org/abs/2506.16082)：向 DETR 式密集视频字幕模型注入位置和关系先验，使事件定位与字幕生成共享结构化时间上下文。
+- [ViFusion: In-Network Tensor Fusion for Scalable Video Feature Indexing](https://arxiv.org/abs/2506.16258)：在网络内部完成 tensor fusion 以扩展视频特征索引，降低海量视频表示存储和检索成本。
+- [Language-driven Description Generation and Common Sense Reasoning for Video Action Recognition](https://arxiv.org/abs/2506.16701)：用语言驱动描述和常识推理实现可解释的视频动作识别。
+- [Controllable and Expressive One-Shot Video Head Swapping](https://arxiv.org/abs/2506.16852)：把单张参考头部交换进视频并保留表情与控制信号，目标是时间一致的人脸和头部动画。
+- [Sequential Keypoint Density Estimator for VAD](https://arxiv.org/abs/2506.18368)：重新审视 sequential keypoint density estimator 作为 skeleton-based 视频异常检测基线。
+- [Feature Hallucination for Self-supervised Action Recognition](https://arxiv.org/abs/2506.20342)：在自监督动作识别中幻化缺失或互补特征，使视频表征学习到超出已观察帧的动作线索。
+- [TRIM: A Self-Supervised Video Summarization Framework Maximizing Temporal Relative Information and Representativeness](https://arxiv.org/abs/2506.20588)：用 Markov process 驱动的自监督损失替代重注意力式摘要模型，使生成摘要同时保留时间相对信息和代表性事件。
+- [CogGen: A Learner-Centered Generative AI Architecture for Intelligent Tutoring with Programming Video](https://arxiv.org/abs/2506.20600)：按学习目标切分编程视频，调用认知学徒式生成辅导引擎，并用贝叶斯知识追踪适配学习者指导。
+- [Consistent Zero-shot 3D Texture Synthesis Using Geometry-aware Diffusion and Temporal Video Models](https://arxiv.org/abs/2506.20946)：提出 VideoTex，用几何感知网格条件、时间视频先验和结构化 UV 扩散生成跨视角一致的 3D 纹理。
+- [DBMovi-GS: Dynamic View Synthesis from Blurry Monocular Video via Sparse-Controlled Gaussian Splatting](https://arxiv.org/abs/2506.20998)：结合密集运动轨迹、稀疏控制 Gaussian Splatting 和运动感知渲染，从模糊单目视频合成动态新视角。
+- [ActAlign: Zero-Shot Fine-Grained Video Classification via Language-Guided Sequence Alignment](https://arxiv.org/abs/2506.22967)：把 LLM 生成的子动作序列与视频帧在共享嵌入空间中用动态时间规整对齐，实现免训练细粒度动作分类。
+- [Autoregressive Denoising Score Matching for VAD](https://arxiv.org/abs/2506.23282)：将自回归去噪 score matching 用于视频异常检测。
+- [MoMa: Modulating Mamba for Adapting Image Foundation Models to Video Recognition](https://arxiv.org/abs/2506.23283)：通过调制 Mamba 将图像基础模型适配到视频识别，为时空建模提供参数高效路径。
+- [From Sight to Insight](https://arxiv.org/abs/2506.23519)：利用 eye-tracking signals 增强 weakly supervised video salient-object detection。
+- [Towards an Automated Multimodal Approach for Video Summarization: Building a Bridge Between Text, Audio and Facial Cue-Based Summarization](https://arxiv.org/abs/2506.23714)：融合转写文本、语音韵律和面部线索生成带时间戳的视频摘要，重点选择语义和情绪上重要的片段。
+- [Proteus-ID: ID-Consistent and Motion-Coherent Video Customization](https://arxiv.org/abs/2506.23729)：用扩散框架结合身份保持参考控制和运动一致性约束，根据单张参考图与文本定制主体视频。
+- [Ex-VAD](https://proceedings.mlr.press/v267/huang25ad.html)：结合 VLM 帧级 caption、LLM 异常解释与 label-enhanced alignment，做细粒度可解释 video anomaly detection。
+- [Moment Sampling in Video LLMs for Long-Form Video QA](https://arxiv.org/abs/2507.00033)：在 Video LLM 推理前用轻量 moment retrieval 模型选择与问题相关的帧，替代长视频问答中的均匀采样。
+- [Bisecle: Binding and Separation in Continual Learning for Video Language Understanding](https://arxiv.org/abs/2507.00469)：研究视频语言理解持续学习中的绑定与分离机制。
+- [AVC-DPO: Aligned Video Captioning via Direct Preference Optimization](https://arxiv.org/abs/2507.01492)：用直接偏好优化对齐视频字幕生成，适合补充视频语言模型后训练与字幕忠实性方向。
+- [MambaVideo for Discrete Video Tokenization with Channel-Split Quantization](https://arxiv.org/abs/2507.04559)：提出 Mamba 编解码器和 channel-split quantization，用于离散视频 token 化，增强自回归视频生成 token 表示。
+- [Tempo-R0](https://arxiv.org/abs/2507.04702)：用高效时间感知强化学习训练视频 MLLM，提升视频时间定位能力。
+- [Video-RTS: Rethinking Reinforcement Learning and Test-Time Scaling for Efficient and Enhanced Video Reasoning](https://arxiv.org/abs/2507.06485)：研究强化学习与测试时扩展如何提升视频推理效率。
+- [HiM2SAM](https://arxiv.org/abs/2507.07603)：通过层次运动估计和记忆优化增强 SAM2 的长期视频跟踪能力。
+- [Scaling RL to Long Videos](https://arxiv.org/abs/2507.07966)：把强化学习扩展到长视频理解与推理。
+- [Multi-Granular Spatio-Temporal Token Merging for Training-Free Acceleration of Video LLMs](https://arxiv.org/abs/2507.07990)：STTM 通过 quadtree 粗到细空间 token 分组和定向时间合并免训练加速 VideoLLM，在保持视频问答精度的同时支持同一视频多问题的 KV cache 复用。
+- [Online Micro-Gesture Recognition](https://arxiv.org/abs/2507.09512)：结合数据增强和时空注意力做在线 micro-gesture recognition。
 - [ViTCoT: Video-Text Interleaved Chain-of-Thought for Boosting Video Understanding in Large Language Models](https://arxiv.org/abs/2507.09876)：交织视频与文本思维链以提升 LLM 视频理解。
-- [TSPO](https://arxiv.org/abs/2508.04369)：提出面向视频理解的模型侧方法，核心围绕 Temporal Sampling Policy Optimization for Long-form Video Language Understanding。
-- [VideoMiner](https://arxiv.org/abs/2510.06040)：提出面向视频理解的模型侧方法，核心围绕 Iteratively Grounding Key Frames of Hour-Long Videos via Tree-Based Group Relative Policy Optimization。
+- [MS-DETR](https://arxiv.org/abs/2507.12062)：联合建模运动与语义，用于视频 moment retrieval 和 highlight detection。
+- [CoTasks: Chain-of-Thought based Video Instruction Tuning Tasks](https://arxiv.org/abs/2507.13609)：构造基于思维链的视频指令微调任务，把推理轨迹纳入视频模型适配。
+- [Grounding Degradations in Natural Language for All-In-One Video Restoration](https://arxiv.org/abs/2507.14851)：把未知视频退化用自然语言语义上下文表示，并蒸馏到统一视频修复模型中，使推理阶段无需额外调用基础模型。
+- [Prompt-aware of Frame Sampling for Efficient Text-Video Retrieval](https://arxiv.org/abs/2507.15491)：按用户查询进行 prompt-aware 帧选择，在边缘设备文本视频检索中平衡计算效率和检索精度。
+- [DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding](https://arxiv.org/abs/2507.15569)：用带视觉提示的关键帧表示视频，使 MLLM 保留时间上重要的运动区域，而不是割裂空间与时间线索。
+- [HiProbe-VAD](https://arxiv.org/abs/2507.17394)：探测免微调多模态 LLM 的 hidden states，用于检测和定位视频异常。
+- [Hyperbolic PRVR](https://arxiv.org/abs/2507.17402)：用双曲学习改进 partially relevant video retrieval 中的查询与视频局部对齐。
+- [Datasets and Recipes for Video Temporal Grounding via Reinforcement Learning](https://arxiv.org/abs/2507.18100)：先用高质量冷启动数据做监督微调，再用难度控制的强化学习提升视频时序定位的准确性和鲁棒性，并开放中间数据集、模型和代码。
+- [T3SVFND: Towards an Evolving Fake News Detector for Emergencies with Test-time Training on Short Video Platforms](https://arxiv.org/abs/2507.20286)：用带掩码自监督辅助任务的测试时训练，使短视频假新闻检测器适应突发事件带来的分布漂移。
+- [T2VParser](https://arxiv.org/abs/2507.20518)：通过 adaptive decomposition tokens 改进 text-to-video retrieval 中的局部对齐。
+- [DAMS](https://arxiv.org/abs/2507.20629)：用 dual-branch adaptive multiscale spatiotemporal framework 做 video anomaly detection。
+- [SAMITE: Position Prompted SAM2 with Calibrated Memory for Visual Object Tracking](https://arxiv.org/abs/2507.21732)：为 SAM2 加入位置提示与校准记忆，用于视觉目标跟踪，增强可提示的视频跟踪能力。
+- [Motion-Guided Modulation Network](https://arxiv.org/abs/2507.21977)：用 motion-guided modulation 做 skeleton-based micro-action recognition。
+- [Omnimodal Referring Audio-Visual Segmentation](https://arxiv.org/abs/2507.22886)：用全模态表达与推理扩展 referring audio-visual segmentation。
+- [Noise-Coded Illumination for Forensic and Photometric Video Analysis](https://arxiv.org/abs/2507.23002)：在采集阶段加入编码照明作为主动溯源信号，为法证和光度视频分析提供更难伪造的真实性线索。
+- [Mamba-based Spatio-Frequency Motion Perception for Video Camouflaged Object Detection](https://arxiv.org/abs/2507.23601)：结合频域运动线索和 Mamba 序列建模，在前景与背景外观高度相似时检测视频伪装目标。
+- [Enhanced Velocity Field Modeling for Gaussian Video Reconstruction](https://arxiv.org/abs/2507.23704)：通过速度场建模改进 Gaussian 视频重建，降低复杂运动和尺度变化下的形变过拟合。
+- [GV-VAD](https://arxiv.org/abs/2508.00312)：探索用 generated video 为 weakly supervised video anomaly detection 提供监督信号。
+- [Bidirectional Action Sequence Learning for Long-term Action Anticipation with Large Language Models](https://arxiv.org/abs/2508.00374)：结合前向和后向的 LLM 动作序列预测进行长期动作预判，以捕捉视频场景中语义不同的子动作。
+- [SpatioTemporal Difference Network for Video Depth Super-Resolution](https://arxiv.org/abs/2508.01259)：用空间差分和时间差分分支处理视频深度超分中的长尾误差，重点覆盖非平滑区域和时间变化区域。
+- [GAIS: Frame-Level Gated Audio-Visual Integration with Semantic Variance-Scaled Perturbation for Text-Video Retrieval](https://arxiv.org/abs/2508.01711)：将 frame-level gated audio-visual integration 与 semantic variance-scaled perturbation 用于 text-video retrieval。
+- [Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation](https://arxiv.org/abs/2508.01742)：改进视频语言、动作预测、误信息识别或多模态视频推理。
+- [StarPose: 3D Human Pose Estimation via Spatial-Temporal Autoregressive Diffusion](https://arxiv.org/abs/2508.02056)：用时空自回归扩散进行单目 3D 人体姿态估计，建模跨帧姿态相关性以获得更平滑的预测。
+- [AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](https://arxiv.org/abs/2508.03100)：通过强化学习改进长时程音视频推理，针对 on-policy 数据低效、优势信号消失和均匀采样问题设计训练策略。
+- [Gather and Trace: Rethinking Video TextVQA from an Instance-oriented Perspective](https://arxiv.org/abs/2508.04197)：围绕文本实例及其时间轨迹重构 Video TextVQA，使视频语言模型更好处理需要定位、跟踪并随时间读取画面文字的问题。
+- [Audio-Aware Video Moment Retrieval](https://arxiv.org/abs/2508.04273)：通过 importance-aware multi-granularity fusion 把音频线索纳入视频片段检索。
+- [TSPO](https://arxiv.org/abs/2508.04369)：为长视频 Video MLLM 优化时间采样策略，在稀疏帧采样不可微的条件下学习应选择哪些帧。
+- [Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](https://arxiv.org/abs/2508.04416)：用多模态工具增强强化学习提升长视频推理能力。
+- [Hierarchical Event Memory for Accurate and Low-Latency Online Video Temporal Grounding](https://arxiv.org/abs/2508.04546)：用层级事件记忆实现在线低延迟视频时序定位。
+- [ReasoningTrack: Chain-of-Thought Reasoning for Long-term Vision-Language Tracking](https://arxiv.org/abs/2508.05221)：在长时视觉语言跟踪中引入类 chain-of-thought 推理，并基于预训练 VLM 进行监督与强化调优。
+- [Gaussian-Splatter-Guided MoE for VAD](https://arxiv.org/abs/2508.06318)：在弱监督条件下用 Gaussian splatter 线索引导混合专家视频异常检测。
+- [VA-GPT](https://arxiv.org/abs/2508.06350)：把 MLLM 的有效 token 与稀疏视频异常对齐，改进异常事件总结与定位。
+- [Restage4D: Reanimating Deformable 3D Reconstruction from a Single Video](https://arxiv.org/abs/2508.06715)：把单段真实视频作为带物理约束的几何和关节运动证据，将可形变 3D 重建重新动画化为一致的 4D 内容。
+- [Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability](https://arxiv.org/abs/2508.07388)：通过加入保持动作理解能力的反演任务改进时序视频定位，避免只优化片段重叠分数。
+- [TAG: A Simple Yet Effective Temporal-Aware Approach for Zero-Shot Video Temporal Grounding](https://arxiv.org/abs/2508.07925)：提出时间感知的零样本视频时间定位方法，缓解预训练视觉语言定位中的语义碎片化问题。
+- [Describe What You See with Multimodal Large Language Models to Enhance Video Recommendations](https://arxiv.org/abs/2508.09789)：用 MLLM 生成短视频语义描述来增强推荐特征，弥补低层视觉和声学编码器难以捕捉意图、幽默和常识的问题。
+- [CRISP](https://arxiv.org/abs/2508.10432)：通过 contrastive residual injection 和 semantic prompting 做 continual video instance segmentation。
+- [Reinforcing Video Reasoning Segmentation to Think Before It Segments](https://arxiv.org/abs/2508.11538)：贡献视频理解模型方法；核心思想是改进对视频输入的时序推理或证据感知推理。
+- [Temporal Grounding as a Learning Signal](https://arxiv.org/abs/2508.11955)：将时间 grounding 作为指代表达视频目标分割的学习信号，把语言时间对齐与视频分割模型训练连接起来。
+- [MoCHA-former: Moiré-Conditioned Hybrid Adaptive Transformer for Video Demoiréing](https://arxiv.org/abs/2508.14423)：用摩尔纹条件控制 hybrid adaptive Transformer，使视频去摩尔纹能处理帧内空间变化和全局扩散的 aliasing。
+- [Aligning Moments in Time Using Video Queries](https://arxiv.org/abs/2508.15439)：提出 moment-alignment Transformer 做 video-to-video moment retrieval，在查询视频和目标视频帧之间建立语义与时间对齐。
+- [Boosting Micro-Expression Analysis via Prior-Guided Video-Level Regression](https://arxiv.org/abs/2508.18834)：用 prior-guided video-level regression 进行微表情分析，避免固定窗口和硬分类难以捕捉短时表情动态的问题。
+- [ProPy for PRVR](https://arxiv.org/abs/2508.19024)：在 CLIP 之上构建交互式 prompt pyramid，用于改进 partially relevant video retrieval。
+- [Autoregressive Universal Video Segmentation Model](https://arxiv.org/abs/2508.19242)：把流式视频分割改写成连续 mask 预测，用固定大小空间状态的 state-space 架构统一 prompted 与 unprompted 视频分割，并支持任意长度视频流。
+- [High-Speed FHD Full-Color Video Computer-Generated Holography](https://arxiv.org/abs/2508.19579)：通过处理过平滑相位谱和颜色串扰，优化高速全彩计算全息视频生成。
+- [Robust Alignment Learning for PRVR](https://arxiv.org/abs/2509.01383)：为 partially relevant video retrieval 加入鲁棒对齐学习，处理只有部分片段匹配文本查询的视频。
+- [Multimodal Foundation Model-Driven User Interest Modeling and Behavior Analysis on Short Video Platforms](https://arxiv.org/abs/2509.04751)：用多模态基础模型特征建模短视频用户兴趣，避免只依赖点击日志、文本标签或单模态偏好信号。
+- [Hybrid-Tower Video Retrieval](https://arxiv.org/abs/2509.04773)：结合 pseudo-query interaction 与 generation 改进细粒度 text-to-video retrieval。
+- [Leveraging Vision-Language Large Models for Interpretable Video Action Recognition with Semantic Tokenization](https://arxiv.org/abs/2509.05695)：利用视觉语言大模型和语义 token 化改进可解释视频动作识别。
+- [Unleashing Hierarchical Reasoning](https://arxiv.org/abs/2509.05751)：以 LLM-driven 的免训练框架处理 referring video object segmentation，将层级推理与视频 grounding 连接起来。
+- [H2OT: Hierarchical Hourglass Tokenizer for Efficient Video Pose Transformers](https://arxiv.org/abs/2509.06956)：用层次 hourglass tokenizer 剪枝并恢复姿态 token，使视频姿态 Transformer 能更高效地完成 3D 人体姿态估计。
+- [Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](https://arxiv.org/abs/2509.08376)：通过 Transformer 特征和低码率向量量化瓶颈，自监督解耦逐帧运动与片段级静态内容。
+- [LD-ViCE: Latent Diffusion Model for Video Counterfactual Explanations](https://arxiv.org/abs/2509.08422)：将潜在扩散模型用于视频反事实解释。
+- [Stable Part Diffusion 4D](https://arxiv.org/abs/2509.10687)： 生成多视角 RGB 与运动学部件视频，强化结构化 4D 视频和物体运动合成。
+- [GLaVE-Cap: Global-Local Aligned Video Captioning with Vision Expert Integration](https://arxiv.org/abs/2509.11360)：把视觉专家信号与全局-局部对齐结合，用于生成更细致且上下文一致的视频描述。
+- [MixANT: Observation-Dependent Memory Propagation for Stochastic Dense Action Anticipation](https://arxiv.org/abs/2509.11394)：为状态空间动作预判加入依赖观测的 mixture memory matrices，使时间记忆能随输入上下文动态变化。
+- [DUAL-VAD: Dual Benchmarks and Anomaly-Focused Sampling for Video Anomaly Detection](https://arxiv.org/abs/2509.11605)：用 softmax frame allocation 优先采样异常密集片段，并配套构建图像级和视频级两个 VAD 基准。
+- [Open-Ended Hierarchical Streaming Video Understanding](https://arxiv.org/abs/2509.12145)：把流式视频组织成 VLM 生成的层级状态，使开放式在线查询能同时利用近期帧和累积的场景、事件上下文。
+- [Distractor-Aware Memory-Based Visual Object Tracking](https://arxiv.org/abs/2509.13864)：为 visual object tracking 加入 distractor-aware memory，提升干扰目标下的 temporal correspondence。
+- [Teacher-Guided Pseudo Supervision and Cross-Modal Alignment for Audio-Visual Video Parsing](https://arxiv.org/abs/2509.14097)：用 EMA 引导的伪片段 mask 和类别感知跨模态对齐，改进弱监督音视频解析。
+- [ST-GS: Vision-Based 3D Semantic Occupancy Prediction with Spatial-Temporal Gaussian Splatting](https://arxiv.org/abs/2509.16552)：用 spatial-temporal Gaussian splatting 进行视觉 3D 语义占据预测，增强多视角交互和多帧一致性。
+- [Captioning for Text-Video Retrieval via Dual-Group Direct Preference Optimization](https://arxiv.org/abs/2509.16560)：用 dual-group direct preference optimization 按检索相关性优化视频 caption，使生成描述能更好地区分视觉相似视频。
+- [TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](https://arxiv.org/abs/2509.18056)：通过强化微调改进视频 LLM 的时间采样。
+- [Live-E2T: Real-time Threat Monitoring in Video via Deduplicated Event Reasoning and Chain-of-Thought](https://arxiv.org/abs/2509.18571)：把流式帧压缩成人-物-交互-地点语义元组，在线去重和更新事件，再微调 LLM 生成带思维链的威胁评估报告。
+- [Frequency-Domain Decomposition and Recomposition for Robust Audio-Visual Segmentation](https://arxiv.org/abs/2509.18912)：分解并重组频段，以同时处理音频高频噪声和视觉高频细节在音视频分割中的冲突。
+- [Concepts in Motion: Temporal Concept Bottleneck Model for Interpretable Video Classification](https://arxiv.org/abs/2509.20899)：把 concept bottleneck model 扩展到视频，用时间概念激活和逐概念时序自注意力实现可解释分类。
+- [Concept-Guided SeC for MOSEv2](https://arxiv.org/abs/2509.23838)：MOSEv2 Challenge 2025 二等奖方案，用概念引导改进视频目标分割。
+- [Rethinking JEPA: Compute-Efficient Video SSL with Frozen Teachers](https://arxiv.org/abs/2509.24317)：证明 frozen teacher 也能训练 masked-latent 视频自监督表征，从而解耦 teacher 与 student 架构并降低 V-JEPA 式训练成本。
+- [POVQA: Preference-Optimized Video Question Answering with Rationales for Data Efficiency](https://arxiv.org/abs/2510.01009)：把长视频压缩为每秒一个 pooled image，并用 rationale-answer 监督微调和可选 DPO 训练数据高效的 VideoQA。
+- [LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](https://arxiv.org/abs/2510.01339)：提出用于高清视频修复的 latent video consistency inverse solver。
+- [Fine-Grained Prompting for VAD](https://arxiv.org/abs/2510.02155)：通过 fine-grained prompting 将 VLM 用于视频异常检测，把异常理解与可提示的视频推理连接起来。
+- [Enhancing Fake News Video Detection via LLM-Driven Creative Process Simulation](https://arxiv.org/abs/2510.04024)：用 LLM 模拟假新闻视频的创作过程来扩增训练数据，减少检测器对狭窄模式的偏置。
+- [Video-LMM Post-Training: A Deep Dive into Video Reasoning with Large Multimodal Models](https://arxiv.org/abs/2510.05034)：分析视频推理后训练中的数据、监督信号和推理目标选择，关注这些因素如何改变时间 grounding 与多步 VideoQA 行为。
+- [VideoMiner](https://arxiv.org/abs/2510.06040)：把小时级视频迭代切分、描述并聚类成时间树，再用 tree-based GRPO 定位关键帧以支持长视频理解。
+- [Deforming Videos to Masks](https://arxiv.org/abs/2510.06139)：将 flow matching 用于指代表达视频分割，把语言查询驱动的视频 grounding 扩展到掩码输出。
+- [From Captions to Keyframes: KeyScore for Multimodal Frame Scoring and Video-Language Understanding](https://arxiv.org/abs/2510.06509)：用 caption 相似度、时间代表性和上下文删除影响给帧打分，以训练或指导语义关键帧提取器。
+- [MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding](https://arxiv.org/abs/2510.07915)：用 memory-augmented reinforcement learning 压缩视频 token，同时保留任务相关信息以提升 VLM 推理效率。
+- [LTCA: Long-Range Temporal Context Attention for Referring Video Object Segmentation](https://arxiv.org/abs/2510.08305)：为指代表达视频分割加入长程时间上下文注意力，在局部目标动态和全局表达-视频交互之间取得平衡。
+- [MultiCOIN: Multi-Modal COntrollable Video INbetweening](https://arxiv.org/abs/2510.08561)：提供多模态可控的视频中间帧生成，使过渡片段能遵循用户意图并处理大幅复杂运动。
+- [D-CoDe: Scaling Image-Pretrained VLMs to Video via Dynamic Compression and Question Decomposition](https://arxiv.org/abs/2510.08818)：通过免训练动态压缩与问题分解，将图像预训练 VLM 适配到视频理解。核心思路是选择代表帧、聚合空间 token，并把问题拆成更聚焦的子问题，使长视频输入无需再训练也能保持可处理。
+- [Hierarchical Indexing with Knowledge Enrichment for Multilingual Video Corpus Retrieval](https://arxiv.org/abs/2510.09553)：偏领域系统条目；它用层次索引、术语增强和高效细粒度匹配检索多语种长教学视频。
+- [High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](https://arxiv.org/abs/2510.11017)：结合全局和局部 state-space 建模进行高清视频姿态估计，同时捕捉整体运动趋势和高频关键点变化。
+- [Robust Ego-Exo Correspondence with Long-Term Memory](https://arxiv.org/abs/2510.11417)：用长期记忆改进 ego-exo 视频对应关系建模。
+- [State Space Prompting via Gathering and Spreading Spatio-Temporal Information for Video Understanding](https://arxiv.org/abs/2510.12160)：通过聚合与传播时空信息进行视频理解，将 state-space prompting 用于适配序列视觉模型。
+- [Dual Learning for Partially Relevant Video Retrieval](https://arxiv.org/abs/2510.12283)：结合 dynamic knowledge distillation 与 soft alignment 改进 partially relevant video retrieval。
+- [Efficient Video Sampling: Pruning Temporally Redundant Tokens for Faster VLM Inference](https://arxiv.org/abs/2510.14624)：在推理时裁剪跨帧静止的 patch token，无需重训即可降低 Video VLM token 负载并保留位置身份。
+- [MLLM Activity Descriptions for VAD](https://arxiv.org/abs/2510.14896)：利用 MLLM activity descriptions 实现可解释的半监督视频异常检测。
+- [Cerberus](https://arxiv.org/abs/2510.16290)：级联 vision-language models 做 real-time video anomaly detection。
+- [Enrich and Detect: Video Temporal Grounding With Multimodal Llms](https://arxiv.org/abs/2510.17023)：用多模态大模型增强视频时序定位。
+- [Video Reasoning without Training](https://arxiv.org/abs/2510.17045)：利用 LMM 输出熵中的探索-收敛模式，在推理时用轻量 value-cache controller 调整视频推理行为，无需 SFT 或 RL 即接近 RL-tuned 模型效果。
+- [FeatureFool: Zero-Query Fooling of Video Models via Feature Map](https://arxiv.org/abs/2510.18362)：研究通过特征图对视频模型实施零查询攻击的方法。
+- [GMFVAD: Using Grained Multi-modal Feature to Improve Video Anomaly Detection](https://arxiv.org/abs/2510.20268)：提出细粒度多模态特征建模用于视频异常检测，比片段级融合更细地对齐文本和视觉特征。
+- [MoniTor](https://arxiv.org/abs/2510.21449)：利用大语言模型指令进行在线视频异常检测，连接流式异常理解与语言引导。
+- [FrameShield VAD](https://arxiv.org/abs/2510.21532)：研究 adversarially robust video anomaly detection。
+- [VADTree](https://arxiv.org/abs/2510.22693)：用层级粒度感知时间采样和预训练模型进行可解释的免训练视频异常检测。
+- [HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](https://arxiv.org/abs/2510.23043)：用层级 Anchor-Mamba pooling 做视频时序定位。
+- [VideoTG-R1: Boosting Video Temporal Grounding via Curriculum Reinforcement Learning on Reflected Boundary Annotations](https://arxiv.org/abs/2510.23397)：用反射边界标注和课程强化学习，在标注含糊或难定位样本上提升视频时序定位能力。
+- [Resi-VidTok: An Efficient and Decomposed Progressive Tokenization Framework for Ultra-Low-Rate and Lightweight Video Transmission](https://arxiv.org/abs/2510.25002)：把视频编码为按重要性排序的关键 token 与细化 token，并结合 prefix-decodable 重建、差分时间 token 编码和信道自适应保护，服务超低码率无线传输。
+- [Partially Relevant Video Retrieval](https://arxiv.org/abs/2510.27432)：面向只有部分时刻匹配查询的视频检索，设计避免退化到整段粗粒度语义相似度的匹配建模。
+- [Universal Video Retrieval](https://arxiv.org/abs/2510.27571)： 共同设计 UVRB、合成多模态课程数据和通用视频嵌入器，以提升跨任务视频检索泛化。
+- [Text-Guided Fine-Grained VAD Understanding](https://arxiv.org/abs/2511.00524)：用文本引导细粒度视频异常理解，把 VAD 与语言 grounding 解释连接起来。
+- [TRACES VAD](https://arxiv.org/abs/2511.00580)：用 temporal recall 与 contextual embeddings 做 real-time video anomaly detection。
+- [ViPE: Visual Perception in Parameter Space for Efficient Video-Language Understanding](https://doi.org/10.18653/v1/2025.emnlp-main.897)：把视频感知压缩到参数空间，使视频语言模型无需在每层携带密集帧 token 也能高效适配。
+- [Pinpointing Trigger Moment for Grounded Video QA: Enhancing Spatio-temporal Grounding in Multimodal Large Language Models](https://arxiv.org/abs/2511.02182)：把 grounded Video QA 拆成视频推理问答、时空 grounding 和触发时刻定位三步，重点跟踪答案中引用的目标。
+- [VidEmo: Affective-Tree Reasoning for Emotion-Centric Video Foundation Models](https://arxiv.org/abs/2511.02712)：构建以情绪为中心的视频基础模型，通过 affective-tree reasoning 分解感知、表情分析和高层情绪理解。
+- [Dynamic Reflections](https://arxiv.org/abs/2511.02767)：通过文本对齐探测视频表征，揭示视频特征中哪些时间语义被编码，而不是把嵌入空间当作黑盒使用。
+- [Disentangled Concepts Speak Louder Than Words:Explainable Video Action Recognition](https://arxiv.org/abs/2511.03725)：为视频动作识别解耦动作概念和上下文概念，使解释能区分时间运动证据和空间场景线索。
+- [M2S2L](https://arxiv.org/abs/2511.05564)：用 Mamba 风格的多尺度时空学习做高效视频异常检测。
+- [VideoSSR: Video Self-Supervised Reinforcement Learning](https://arxiv.org/abs/2511.06281)：把异常定位、目标计数和时间拼图等视频内生预训练任务转化为可验证的 RLVR 数据，并提供 VIUBench 与 VideoSSR-30K，提升视频问答、长视频问答、时序定位和复杂推理。
+- [VADER](https://arxiv.org/abs/2511.07299)：为视频异常理解引入关系感知 LLM 推理，结合异常评分、上下文采样、目标关系特征和因果解释生成。
+- [Knowledge-Guided Textual Reasoning for Explainable Video Anomaly Detection via LLMs](https://arxiv.org/abs/2511.07429)：把弱监督视频异常检测转到文本域完成，先生成细粒度视频 caption，再引入外部知识并让 LLM 推理异常解释。
+- [VideoChain: A Transformer-Based Framework for Multi-hop Video Question Generation](https://arxiv.org/abs/2511.08348)：在改造的 BART 骨干中加入视频嵌入，生成需要跨多个时间分离片段推理的多跳视频问题。
+- [Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding](https://arxiv.org/abs/2511.08666)：在视频基础模型的 latent features 中做匿名化，而不是修改像素，以抑制个人属性泄露并保留下游理解能力。
+- [Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](https://arxiv.org/abs/2511.10134)：显式建模时间连贯性与视觉语义，强化事件级视频语言生成能力。
+- [PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](https://arxiv.org/abs/2511.10979)：以免训练的相位聚合平滑稳定 Video LLM 时序编码，降低注意力对轻微帧时间偏移的敏感性。
+- [Fast Reasoning Segmentation for Images and Videos](https://arxiv.org/abs/2511.12368)：把 reasoning segmentation 蒸馏为更快的图像和视频分割器，面向边缘设备上的开放集隐式文本查询。
+- [RefineVAD](https://arxiv.org/abs/2511.13204)：用 semantic guidance 做 feature recalibration，以改进 weakly supervised video anomaly detection。
 - [SMART: Shot-Aware Multimodal Video Moment Retrieval with Audio-Enhanced MLLM](https://arxiv.org/abs/2511.14143)：使用镜头感知的多模态推理和音频增强 MLLM 进行视频片段检索。
+- [Long-Term Human Activity Workflow Discovery](https://arxiv.org/abs/2511.14945)：通过建模长程时空规律，无监督发现人类活动中的周期性工作流，使重复例程在没有步骤标签时也能被识别。
+- [EfficientSAM3](https://arxiv.org/abs/2511.15833)：从 SAM1、SAM2 与 SAM3 逐步层级蒸馏，用于 efficient video concept segmentation。
+- [VTinker: Guided Flow Upsampling and Texture Mapping for High-Resolution Video Frame Interpolation](https://arxiv.org/abs/2511.16124)：用 guided flow upsampling 和 texture mapping 改进高清视频帧插值，减少粗粒度光流放大带来的边缘模糊。
+- [R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](https://arxiv.org/abs/2511.16901)：增强 Video-LLM 在复杂视听场景中的细粒度时空推理能力。
+- [MambaTAD: When State-Space Models Meet Long-Range Temporal Action Detection](https://arxiv.org/abs/2511.17929)：把结构化状态空间模型适配到 temporal action detection，并处理长程上下文衰减和全局上下文冲突。
+- [MotionDuet: Dual-Conditioned 3D Human Motion Generation with Video-Regularized Text Learning](https://arxiv.org/abs/2511.18209)：用视频正则化文本学习和双条件控制生成 3D 人体动作，使合成运动更贴近真实视频动态。
+- [Modality-Collaborative Low-Rank Decomposers for Few-Shot Video Domain Adaptation](https://arxiv.org/abs/2511.18711)：用 modality-collaborative low-rank decomposers 做 few-shot video domain adaptation，同时处理域对齐和跨模态融合。
+- [VideoCompressa: Data-Efficient Video Understanding via Joint Temporal Compression and Spatial Reconstruction](https://arxiv.org/abs/2511.18831)：面向视频理解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [SFA: Scan, Focus, and Amplify toward Guidance-aware Answering for Video TextVQA](https://arxiv.org/abs/2511.20190)：用 scan、focus 和 amplify 步骤改进 Video TextVQA 中的引导感知回答。
+- [GHR-VQA: Graph-guided Hierarchical Relational Reasoning for Video Question Answering](https://arxiv.org/abs/2511.20201)：把每帧表示为 scene graph，跨帧连接 human nodes，并用层次图推理完成 VideoQA。
+- [Smooth regularization for efficient video recognition](https://arxiv.org/abs/2511.20928)：把连续帧的中间层 embedding 变化正则化为 Gaussian random walk，为高效视频识别加入时间平滑归纳偏置。
+- [CaFlow: Enhancing Long-Term Action Quality Assessment with Causal Counterfactual Flow](https://arxiv.org/abs/2511.21653)：将自监督 counterfactual de-confounding、双向 time-conditioned flow 和 cycle consistency 结合，用于提升长时序视频的 action quality assessment。
+- [Layover or Direct Flight: Rethinking Audio-Guided Image Segmentation](https://arxiv.org/abs/2511.22025)：对视频页而言偏离主轴；它比较直接音频引导视觉 grounding 与先 ASR 转文本再定位的图像目标分割路线。
+- [Affordance-First Decomposition](https://arxiv.org/abs/2512.00694)：围绕 affordance 先分解视频语言持续学习任务，使模型在任务变化时保留动作相关概念，而不是只依赖外观类别。
+- [InternVideo-Next: Towards General Video Foundation Models without Video-Text Supervision](https://arxiv.org/abs/2512.01342)：通过修改 masked video modeling 的架构和目标，在不使用视频文本监督的情况下训练通用视频基础模型。
+- [DeRA](https://arxiv.org/abs/2512.04483)： 通过解耦表征对齐改进视频 tokenization，服务后续生成建模。
+- [Denoise to Track](https://arxiv.org/abs/2512.04619)：用视频扩散先验恢复鲁棒时间对应关系，在外观变化或遮挡导致帧间匹配不稳定时改进跟踪。
+- [Pseudo-Anomaly Diffusion for WSVAD](https://arxiv.org/abs/2512.06845)：用 diffusion-based pseudo anomalies 生成弱监督视频异常检测训练信号。
+- [V-Rex: Real-Time Streaming Video LLM Acceleration via Dynamic KV Cache Retrieval](https://arxiv.org/abs/2512.12284)：通过动态 KV 缓存检索提升流式 Video LLM 的效率。
+- [PoseAnything](https://arxiv.org/abs/2512.13465)： 提供具有部件感知时序一致性的通用姿态引导视频生成方法。
+- [Audio-Visual Cross-Modal Compression for Generative Face Video Coding](https://arxiv.org/abs/2512.15262)：在生成式人脸视频编码中利用音频与唇部运动的一致性，联合压缩音频和人脸视频流。
+- [InfoTok](https://arxiv.org/abs/2512.16975)： 提出基于信息论的自适应离散视频 tokenizer，用于高效视频表示。
+- [Atom Video-Language Pipelines](https://arxiv.org/abs/2512.17108)：通过 modular pipeline component reuse 提升 on-device video-language processing 效率。
+- [HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](https://arxiv.org/abs/2512.17601)：在免微调 MLLM 中寻找 anomaly-sensitive attention heads，用内部激活替代易受 prompt 影响的文本输出做 VAD。
 - [Disentangling Inter- and Intra-Video Relations for Multi-Event Video-Text Retrieval and Grounding](https://doi.org/10.1109/tip.2025.3630883)：建模视频间与视频内关系，用于多事件视频文本检索和定位。
+- [Spatial-temporal video grounding with cross-modal understanding and enhancement](https://doi.org/10.1016/j.eswa.2025.126650)：把跨模态理解与定位增强结合，使语言查询能同时更好对齐空间目标和时间事件片段。
+- [KDA](https://doi.org/10.1109/ICCV51701.2025.02164)：通过增强上下文进行 knowledge diffusion alignment，用于视频 temporal grounding，强化查询到视频片段的定位模型。
+- [Semantic and Sequential Alignment for Referring Video Object Segmentation](https://doi.org/10.1109/cvpr52734.2025.01776)： 为指代表达视频对象分割对齐语义与序列信号，强化语言引导的时序视频 grounding。
+- [IM-Zero](https://doi.org/10.1109/cvpr52734.2025.00681)： 为视频生成提供零样本实例级运动控制。
+- [GMIS](https://doi.org/10.1109/prmvai65741.2025.11108410)： 结合 Grounding-DINO 与 motion-iterative Segment Anything 处理 referring video object segmentation。
+- [Multimodal Evidential Learning for Open-World Weakly-Supervised Video Anomaly Detection](https://doi.org/10.1109/TMM.2025.3557682)：用多模态证据学习处理弱视频级监督下的开放世界异常事件。
+- [IntSTR](https://doi.org/10.1016/j.neucom.2025.131704)：用 integrated spatio-temporal relation transformer 建模视频目标检测中的空间与时间关系，补足视频感知模型线索。
+- [Multi-Task Instruction Tuning for VAD](https://doi.org/10.1109/LSP.2025.3630089)：通过 multi-task instruction tuning 改进视频异常理解，把异常检测、描述和推理纳入同一视频模型线。
+- [CRCL](https://doi.org/10.1109/TIP.2025.3558089)：为 surveillance-video anomaly detection 加入 causal representation consistency learning。
+- [Multilingual-Prompt-Guided VAD](https://doi.org/10.1109/TPAMI.2025.3590242)：用 multilingual prompts 与 directional feature learning 改进 weakly supervised video anomaly detection。
+- [MoBA](https://doi.org/10.1016/j.knosys.2025.115218)：为 video anomaly detection 的 deblurring autoencoder 加入 motion memory。
+- [Prototype-Guided Dynamic-Aware VAD](https://doi.org/10.1016/j.neunet.2025.107583)：结合 prototype guidance 与 dynamic awareness 做 video anomaly detection。
+- [PLOVAD](https://doi.org/10.1109/TCSVT.2025.3528108)：用 prompts 将 vision-language models 用于 open-vocabulary video anomaly detection。
+- [Noise-Resistant Video Anomaly Detection](https://doi.org/10.1109/CVPR52734.2025.01780)：结合 RGB 误差引导的多尺度预测编码与动态记忆，提升视频异常检测的抗噪性。
+- [Decoupled Motion Expression Video Segmentation](https://doi.org/10.1109/CVPR52734.2025.01290)：解耦运动表达以进行视频分割，提升运动感知的时间解析。
+- [MPE for Video Anomaly Detection](https://doi.org/10.1016/j.patcog.2025.111595)：利用多帧预测误差进行鲁棒视频异常推理。
+- [DCTFormer](https://doi.org/10.1109/TMM.2025.3613082)：使用带完形测试的双分支 Transformer 进行视频异常检测。
+- [Video ViT with Adversarial Training for UVAD](https://doi.org/10.1109/ACCESS.2025.3554813)：结合视频 Vision Transformer 与对抗训练进行无监督视频异常检测。
+- [Two-Stage Memory Framework for Video Anomaly Detection](https://doi.org/10.1109/TCSVT.2025.3568517)：结合视频分解、记忆和双向一致性进行异常检测。
+- [Cross-Modal Uncertainty Modeling for Unseen VAD](https://doi.org/10.1016/j.neucom.2025.132591)：为未见类别视频异常检测建模跨模态不确定性。
+- [Confidence-Aware Prototypes for WSVAD](https://doi.org/10.1109/TCSVT.2025.3628630)：为弱监督视频异常检测学习 confidence-aware prototypes。
+- [TSMnet](https://doi.org/10.1016/j.patrec.2025.10.017)：用 two-step threshold-shrinkage memory pipeline 做弱监督视频异常检测。
+- [Cross-Modal Feature Alignment VAD](https://doi.org/10.1016/j.imavis.2025.105874)：通过 cross-modal feature alignment 做视频异常检测与分类。
+- [CLIP-Based Adaptive Semantic Alignment for WSVAD](https://doi.org/10.1109/ICCBDAI66607.2025.11388561)：用 CLIP-based adaptive semantic alignment 做高效弱监督视频异常检测。
+- [Collaborative Cascade-Transformer WSVAD](https://doi.org/10.1109/CAC67268.2025.11486912)：用 cascade Transformer 做协同弱监督视频异常检测。
+- [StreamVAD](https://doi.org/10.1016/j.neucom.2025.131669)：用 progressive context integration 做多时间尺度 streaming 视频异常检测。
+- [Dual-Space Normalizing Flow VAD](https://doi.org/10.1109/TIP.2025.3614006)：用 dual-space normalizing flow 进行无监督视频异常检测。
+- [SAM-I2V++](https://doi.org/10.1109/TPAMI.2025.3648863)：进一步升级 SAM 以支持更高效的 promptable video segmentation。
+- [Caption-Coherence Video Summarization](https://doi.org/10.1109/TIP.2025.3598709)：通过建模 corresponding captions 之间的 coherence 改进 video summarization。
+- [Class-Incremental Anomaly Recognition](https://doi.org/10.1016/j.patcog.2025.112064)：在 class-incremental updates 下学习 surveillance settings 中的 real-time anomaly recognition。
+- [Spatio-Temporal Graph Self-Labeling for VAD](https://doi.org/10.1016/j.neucom.2025.129576)：用 graph-based self-labeling 改进 video anomaly detection。
+- [Query-Specific Context Moment Retrieval](https://doi.org/10.1109/TCSVT.2025.3530570)：通过 query-specific context learning 与 progressive localization 改进 video corpus moment retrieval。
+- [MMVAD](https://doi.org/10.1016/j.eswa.2025.127857)：通过 contrastive learning 与 adaptive frame segmentation 构建 cross-domain video anomaly detection 的 vision-language model。
+- [Audio-Visual Collaborative VAD](https://doi.org/10.1109/TMM.2025.3535377)：用 audio-visual collaborative learning 做 weakly supervised video anomaly detection。
+- [VTPM](https://doi.org/10.1109/WACVW65960.2025.00043)：利用大语言模型做 privacy-preserving video-to-text pedestrian activity monitoring。
+- [VadCLIP++](https://doi.org/10.1016/j.dsp.2025.105560)：用 dynamic vision-language model 做 weakly supervised video anomaly detection。
+- [Twice-Reconstruction VAD](https://doi.org/10.1109/JSEN.2025.3533613)：通过 parallel computing 与 twice-reconstruction design 提升 video anomaly detection 的时效性。
+- [AutoVMR](https://doi.org/10.1016/j.ins.2025.122615)：面向 video moment retrieval 自动生成并定位事件。
+- [Fire Swin VAD](https://doi.org/10.1016/j.jer.2025.08.016)：结合 convolutional layers、fire modules 与 Swin Transformers 做 video anomaly detection。
+- [DSCIL](https://doi.org/10.1016/j.patcog.2025.112656)：用 dynamic selected contrastive instance learning 做 weakly supervised video anomaly detection。
+- [CA-VAD](https://doi.org/10.1016/j.jvcir.2025.104521)：把 caption-aware 机制引入 surveillance-video anomaly detection，将语言描述和异常事件信号连接起来。
+- [MG-KG](https://doi.org/10.1016/j.imavis.2025.105644)：结合 motion guidance 与 knowledge graph 做 unsupervised video anomaly detection。
+- [Extended Graph Learning for VAD](https://doi.org/10.1109/TCSVT.2025.3625570)：把 extended graph learning 用于 weakly supervised video anomaly detection。
+- [Spatial Mask-Based Robust Video Object Segmentation](https://doi.org/10.1109/TCSVT.2025.3525629)：在 noisy labels 下用 spatial masks 与 adaptive robust training 改进 video object segmentation。
+- [GSM Video Anomaly Memory](https://doi.org/10.1016/j.patcog.2025.111950)：为 video anomaly detection and analysis 引入 global semantic memory。
+- [ESTER-VAR](https://doi.org/10.1109/ISPA66905.2025.11259472)：增强 semantic and temporal event representations，用于 video anomaly recognition。
+- [Evolutive Memory-Enhanced Normality Learning](https://doi.org/10.1109/ICIPW68931.2025.11386027)：为 unsupervised video anomaly detection 的 normality learning 加入 evolutive memory。
+- [Single-Frame Supervision for Temporal Video Anomaly Grounding](https://doi.org/10.1016/j.neucom.2025.132346)：用 single-frame supervision 训练 temporal video anomaly grounding。
+- [ViT-Recurrent VAD](https://doi.org/10.1016/j.array.2025.100471)：把 vision transformer 与 attention-driven recurrence 结合用于视频异常检测。
+- [Hierarchical Temporal Sequence Segmentation VAD](https://doi.org/10.1016/j.eswa.2025.128753)：用 hierarchical temporal sequence segmentation 改进弱监督视频异常检测。
+- [HGAT-VAD](https://doi.org/10.1109/CBASE67452.2025.11335483)：用 heterogeneous graph attention 做弱监督多模态视频异常检测。
+- [Causal and Semantic Guidance for Anomaly Detection](https://doi.org/10.32604/cmc.2025.073850)：在视频异常检测线索中结合因果推理与语义引导。
+- [Metaheuristic-Tuned GraMNet VAD](https://doi.org/10.1109/ISAC364032.2025.11156508)：用元启发式方法调优 GraMNet 架构，用于视频异常检测。
+- [Edge-Assisted Surveillance VAD](https://doi.org/10.1016/j.engappai.2025.111936)：结合边缘端异常检测和云端识别，用于视频监控异常分析。
+- [Anomaly-Aware Self-Supervised VAD](https://doi.org/10.1016/j.cviu.2025.104379)：用异常感知自监督特征学习改进弱监督视频异常检测。
+- [Dynamic Erasing Network](https://doi.org/10.1109/TNNLS.2025.3553556)：结合自适应时序建模改进弱监督视频异常检测。
+- [MANTA](https://doi.org/10.1109/CVPR52734.2025.00326)：用 diffusion Mamba 建模 stochastic long-term dense action anticipation，扩展视频动作预测模型。
+- [EntitySAM](https://doi.org/10.1109/CVPR52734.2025.02257)：面向视频实体级分割的 Segment Everything 模型，扩展视频分割基础模型覆盖。
+- [JointFormer](https://doi.org/10.1109/TPAMI.2025.3557841)：用联合建模统一视频目标分割框架，增强时序目标解析。
+- [Adversarial Erasure Network for WSVAD](https://doi.org/10.1016/j.neucom.2025.130030)：用 multi-instance learning 下的 adversarial erasure 改进弱监督视频异常检测。
+- [Emotion-Correlated Subjective Video Captioning](https://doi.org/10.1109/TIP.2025.3649363)：构建主客观情绪相关生成网络，用于 subjective video captioning。
+- [HTVR](https://doi.org/10.1016/j.patcog.2025.112145)：基于 relative similarity 的层次化 text-to-video retrieval 方法，增强视频检索模型覆盖。
+- [FAWL](https://doi.org/10.1109/ICASSP49660.2025.10887823)：用 frame-wise auxiliary alignment 和 weighted contrastive learning 改进弱监督视频语料片段检索。
+- [Efficient Attention for PRVR](https://doi.org/10.1109/ICCEA65460.2025.11103301)：评估 partially relevant video retrieval 中注意力机制的准确率与效率权衡。
+- [NASNetMobile-Enhanced ViT for WSVAD](https://doi.org/10.1109/JIOT.2025.3625045)：将 NASNetMobile 与 Vision Transformer 结合，用于高效弱监督视频异常检测。
+- [Infrared Near-Duplicate Video Retrieval](https://doi.org/10.1109/AIPCVT67868.2025.11405645)：融合温度信息与多粒度可微采样，用于红外近重复视频检索。
+- [Transformer Real-Time Video Object Recognition](https://doi.org/10.1109/ICNSoC66817.2025.00069)：用 Transformer 架构实现实时视频流目标识别。
+- [Attention and Feature Disentanglement VAD](https://doi.org/10.1109/ICCEIC67916.2025.11308803)：结合注意力与特征解耦提升视频异常检测鲁棒性。
+- [DVC2 Video Cascade Clustering](https://doi.org/10.1016/j.neucom.2025.131565)：用级联结构和学习到的视频表征组织相关视频片段，在没有人工类别标签时完成深度视频聚类。
+- [One-Class SVM Video Anomaly Detection](https://doi.org/10.1109/ICDCECE65353.2025.11034919)：用 one-class SVM 构建高效视频异常检测方法。
+- [Spatiotemporal Dual-Memory WSVAD](https://doi.org/10.1109/IJCNN64981.2025.11227333)：结合 spatiotemporal dual-memory enhancement 与 contrastive magnitude 改进弱监督视频异常检测。
+- [Streaming Videollms for Real-Time Procedural Video Understanding](https://doi.org/10.1109/ICCV51701.2025.02097)：构建面向实时程序性视频理解的流式 VideoLLM，强调在线视频推理而非离线片段问答。
+- [Event-Equalized Dense Video Captioning](https://doi.org/10.1109/cvpr52734.2025.00788)：通过均衡事件表征改进密集视频描述，使模型更均匀地覆盖视频事件。
+- [Rethinking Noisy Video-Text Retrieval via Relation-aware Alignment](https://doi.org/10.1109/cvpr52734.2025.00862)：通过关系感知对齐改进噪声视频-文本检索，而不只依赖全局文本-视频相似度。
+- [Human-Centric Fine-Grained Action Quality Assessment](https://doi.org/10.1109/tpami.2025.3556935)：建模视频中细粒度人体动作质量，为动作识别之外补充技能与表现评分能力。
+- [Localizing Step-by-Step: Multimodal Long Video Temporal Grounding with LLM](https://doi.org/10.1109/icme59968.2025.11209793)：将 LLM 引导的多模态推理用于长视频时序定位，为视频理解补充逐步定位方法。
+- [Decoupled spatial-temporal predicting model for weakly supervised action localization](https://doi.org/10.1016/j.knosys.2025.115241)：通过解耦空间与时间预测信号改进弱监督动作定位，补充 video temporal localization 的模型线。
+- [DBCON: Dual Bias Control in Zero-Shot Video Moment Retrieval](https://doi.org/10.1109/access.2025.3613635)：将 dual bias control 用于 zero-shot video moment retrieval，面向缺少任务特定训练标注的时间 grounding。
+- [Learning Fine-Grained Representations through Textual Token Disentanglement in Composed Video Retrieval](https://proceedings.iclr.cc/paper_files/paper/2025/hash/2dae7d1ccf1edf76f8ce7c282bdf4730-Abstract-Conference.html)：通过文本 token 解耦学习细粒度视频检索表示，提升带精细文本修改的组合式视频检索能力。
+- [TSAM: Temporal SAM Augmented with Multimodal Prompts for Referring Audio-Visual Segmentation](https://doi.org/10.1109/cvpr52734.2025.02230)：用时间与多模态提示增强 Segment Anything，用于指代表达下的音视频分割，把视频 grounding 从视觉 mask 扩展到音视频证据。
+- [Quality-Guided Vision-Language Learning for Long-Term Action Quality Assessment](https://doi.org/10.1109/tmm.2025.3599078)：用质量引导的视觉语言学习进行长期动作质量评估。
+- [Error Recognition in Procedural Videos Using Generalized Task Graph](https://doi.org/10.1109/iccv51701.2025.00933)：用 generalized task graph 联合做时间动作分割和错误识别，判断流程视频中错误发生的时刻与类型。
+- [Viewpoint Rosetta Stone: Unlocking Unpaired Ego-Exo Videos for View-invariant Representation Learning](https://doi.org/10.1109/cvpr52734.2025.01473)：用扩散式 Rosetta Stone Translator 和双编码器对比学习，对齐未配对的第一视角与第三视角动作视频。
+- [Diff-LMM: Diffusion Teacher-Guided Spatio-Temporal Perception for Video Large Multimodal Models](https://doi.org/10.24963/ijcai.2025/98)：把中间层扩散编码器特征蒸馏进 Video LMM，并用多层级对齐增强细粒度时空感知。
+- [Efficient Transfer From Image-Based Large Multimodal Models to Video Tasks](https://doi.org/10.1109/tmm.2025.3557692)：提出 MTransLLAMA，在时间注意力中复用图像 LMM 的空间注意力，并用早期图文融合和动态路由适配小数据视频任务。
+- [A Robust Aggregation of Federated Large Language Models for Multimodal Knowledge Discovery in Computational Social Systems](https://doi.org/10.1109/tcss.2025.3575623)：用 relative-total-distance 聚合和 CKKS 加密，在异构多模态数据上进行隐私保护的联邦 LLM 训练。
+- [External Memory Matters: Generalizable Object-Action Memory for Retrieval-Augmented Long-Term Video Understanding](https://doi.org/10.24963/ijcai.2025/97)：提出 REVU 外部文本-对象记忆，检索静态和动态 object-action 知识以支持开放世界长视频理解。
+- [Adaptive Computing and Multicasting Optimization for Live 360-Degree Video Streaming](https://doi.org/10.1109/tvt.2025.3605289)：用自适应用户分组、bargaining-game 资源分配和 Lyapunov 码率控制优化移动边缘 360 度视频直播。
+- [DETACH Video-Sensor Alignment](https://arxiv.org/abs/2512.20409)：用 decomposed spatio-temporal alignment 与 staged learning 对齐 exocentric video 和 ambient sensors。
+- [Multi-scale spatiotemporal feature fusion for super-resolution video reconstruction in dynamic scenes](https://doi.org/10.1016/j.engappai.2025.112327)：融合多尺度空间与时间特征，在动态场景视频超分重建中保留运动相关细节。
+- [Spatial–Temporal Clue Reasoning Chain for Long Video Question Answering](https://doi.org/10.1109/tcsvt.2025.3609441)：按片段、帧和区域逐步抽取与问题相关的视觉线索，再用异步线索选择和跨模态融合回答长视频问题。
+- [SpikeDiff: Zero-Shot High-Quality Video Reconstruction from Chromatic Spike Camera and Sub-Millisecond Spike Streams](https://doi.org/10.1109/iccv51701.2025.00741)：把预训练扩散先验和 spike camera 物理引导注入采样过程，无需任务特定训练数据即可从亚毫秒彩色 spike 流重建高速彩色视频。
+- [Can Retelling Have Adequate Information for Reasoning? An Enhancement Method for Imperfect Video Understanding with Large Language Model](https://doi.org/10.24963/ijcai.2025/906)：构建 ERSR，把不完整视频描述转成实体关系场景图，引入问题反馈，并通过 LLM 反思验证答案。
+- [A Hybrid Approach for Accurate Viewport Prediction in 360° Video Streaming](https://doi.org/10.1109/ainit65432.2025.11035159)：用双流架构预测 360 度视频视口，将 xLSTM 头部轨迹建模、SphereCNN 全景帧特征和动态融合结合起来。
+- [A Watermark Forgery Attack Against Stable Diffusion Model Watermarking](https://doi.org/10.1109/lsp.2025.3606783)：用混合损失训练伪造的 ResNet-18 水印提取器，使受害模型生成图像被验证为携带攻击者指定的伪造水印。
+- [INQUIRER: Harnessing internal knowledge graphs for video question generation](https://doi.org/10.1016/j.knosys.2025.114033)：先构建视频内部知识图谱，再基于图谱生成问题，并整理答案和干扰项以服务 VideoQA 数据生成。
+- [VEGAN: CCTV video quality enhancement with GAN-based foreground separation and super-resolution](https://doi.org/10.1016/j.array.2025.100673)：用 GAN 流水线增强 CCTV 视频，分离前景和背景、建模时间运动，并对低质量像素做超分辨率恢复。
+- [Memory-Augmented Long Short-Term Memory for Dynamic Video Summarization](https://doi.org/10.1109/sibgrapi67909.2025.11223357)：提出 MALSumm，用 xLSTM 监督式摘要器和双路径加权记忆同时保留局部细节与全局时间连贯性。
+- [Combining Spatial and Temporal Network for Video Anomaly Detection](https://doi.org/10.1109/iccvdm66874.2025.11290667)：用 CNN 与 LSTM 自编码结构检测视频异常，模型拆分为空间编码解码和时间编码解码模块。
+- [Multimodal Large Language Model for Deepfake Video Detection and Description](https://doi.org/10.1109/apsipaasc65261.2025.11249103)：提出 DVDD-LLaMA，结合 CLIP、SwinT deepfake-sniffing encoder 和紧凑视觉连接器，同时判断伪造视频并解释证据。
+- [A Hybrid ResNeXt-101 & LSTM Framework for Spatiotemporal Deepfake Detection in Video Sequences](https://doi.org/10.1109/reacs67479.2025.11413419)：将 ResNeXt-101 空间特征抽取与 LSTM 时间不一致性建模结合，用多个公开数据集训练和测试 deepfake 检测器。
+- [Unifying Spatio-Temporal Contexts for Advanced Text-Video Retrieval](https://doi.org/10.1109/icme59968.2025.11209054)：用 Spatial-Temporal Pooling 做文本视频检索，把实体、场景和文字等空间标签作为注意力提示，并用字幕摘要形成时间提示。
+- [Unboxed: Geometrically and Temporally Consistent Video Outpainting](https://doi.org/10.1109/cvpr52734.2025.00685)：对静态区域迭代使用 3D Gaussian Splatting 支撑的扩图，对动态区域用视频扩散细化，从而一致地扩展视野。
+- [Overview of the 1st International Workshop on Interactive Video Search and Exploration](https://doi.org/10.1109/cvprw67362.2025.00352)：总结 IViSE 2025 及其 known-item search 和 VideoQA 挑战轨道，对比全自动与人机交互式视频探索。
+- [Graph-Based Temporal Attention Network for Anomaly Recognition in Internet of Things Video Surveillance](https://doi.org/10.1109/jiot.2025.3597219)：提出 G-TAMNet，把图卷积、时间自注意力、记忆建模和边剪枝结合起来做物联网视频异常识别。
+- [TCCCL: Transformer-based cross-modal contextual correlation learning networks for web video event mining](https://doi.org/10.1016/j.ipm.2025.104457)：用 Transformer 跨模态上下文相关学习连接视觉、文本和时间上下文，以挖掘网页视频事件。
+- [Unified hierarchical contrastive learning for video captioning](https://doi.org/10.1016/j.inffus.2025.103856)：在视频字幕生成中加入层级对比学习目标，使帧、事件和句子表征在多个粒度上对齐。
+- [Confidence Breeds Success: Improving Fake News Video Detection via LVLM-Assisted Inference](https://doi.org/10.1109/icme59968.2025.11209223)：用 LVLM 生成新闻视频语义理解，再通过关键信息选择模块把辅助线索迁移给小型假新闻检测器。
+- [STDDNet: Harnessing Mamba for Video Polyp Segmentation via Spatial-aligned Temporal Modeling and Discriminative Dynamic Representation Learning](https://doi.org/10.1109/iccv51701.2025.01984)：构建 Mamba 式视频息肉分割器，以空间对齐时间建模和判别式动态表征处理不稳定内镜视频。
+- [AIM-VR: All-in-One Video Restoration via Dual-Path Mamba with Frequency Adaptive Fusion](https://doi.org/10.1109/icme59968.2025.11209023)：用双路径 Mamba、频率自适应融合和多退化对比学习，统一恢复雨、雾、雪等天气退化视频。
+- [Graph Prompts: Adapting Video Graph for Video Question Answering](https://doi.org/10.24963/ijcai.2025/166)：先用 masked node 与 edge 推理预训练视频图，再以 graph prompts 微调 VideoQA，使模型理解问题未显式提及的内容。
+- [Temporal Context and Representative Feature Learning for Weakly Supervised Video Anomaly Detection](https://doi.org/10.1016/j.jiixd.2025.06.001)：结合 Mamba 与 Transformer 的时序上下文学习和代表性特征选择，处理 WSVAD 中的长程证据和噪声片段。
+- [A Unified Approach to Video Anomaly Detection: Advancements in Feature Extraction, Weak Supervision, and Strategies for Class Imbalance](https://doi.org/10.1109/access.2025.3557948)：系统比较 VAD 特征编码器、CLIP/ViTamin 表征、sample-batch selection 和伪课程学习，以缓解弱监督噪声和类别不平衡。
+- [Hybrid Siamese Masked Autoencoders as Unsupervised Video Summarizer](https://doi.org/10.1109/tcsvt.2025.3557254)：用多视角 Siamese masked autoencoders 和 shot diversity enhancer，在无标签条件下选择语义重要的视频摘要镜头。
+- [Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](https://arxiv.org/abs/2512.21778)：微调 VLM 做视频场景分割，联合使用帧、转写文本、可选元数据、因果式镜头依赖和 token-logit 置信分数。
+- [Attentive Large Kernel Network With Mixture of Experts for Video Deblurring](https://doi.org/10.1109/tcsvt.2025.3531003)：用 attentive large-kernel 骨干和 mixture-of-experts 路由捕捉非均匀运动模糊，同时避免二次注意力开销。
+- [Vision-by-prompt: Context-aware dual prompts for composed video retrieval](https://doi.org/10.1016/j.patcog.2025.112378)：为组合式视频检索学习上下文感知的视觉与文本双提示，匹配参考视频加语言修改的查询。
+- [No Interaction, No Watching: Watching Characteristics of the Social Short Video Era](https://doi.org/10.1080/02560046.2025.2483951)：分析短视频观看中的互动、游戏化和算法治理特征，更像社会文化研究而非模型构建。
+- [Hierarchical Forwarding Resource Allocation With Proactive Frame Dropping for VR Video Streaming](https://doi.org/10.1109/tnse.2025.3593299)：通过预测帧截止时间、主动丢弃将过期帧，并按编码依赖和用户视角确定优先级来优化 VR 视频转发。
+- [Enhancing large language model for fake news video detection via cross-modal retrieval](https://doi.org/10.1016/j.ipm.2025.104471)：通过跨模态检索获取外部证据，并把筛选后的补充线索输入 LLM 式检测器，以增强假新闻视频检测。
+- [RMemVD: A Simple Restricted Multi-Memory Bank for Video Deblurring](https://doi.org/10.1109/tce.2025.3574196)：把像素级、语义级和感知级时序特征存入受限记忆库并动态更新，用更长视频上下文恢复模糊帧。
+- [A distinct classification of attention mechanisms in video understanding](https://doi.org/10.1016/j.ins.2025.122609)：梳理并分类视频理解中的注意力机制，更偏综述式 taxonomy，而非新的视频模型。
+- [VISPESAR: Video Summarization by Prompt Engineering and Serverless Architecture](https://doi.org/10.1109/asyu67174.2025.11208435)：用 Gemini 提示解析、FFmpeg 切片和 AWS serverless 编排实现基于查询的视频片段摘要服务。
+- [Global and Local CNN Attention Mechanisms for Video Summarization](https://doi.org/10.1109/ijcnn64981.2025.11229398)：在 GoogleNet 式摘要模型中加入 CBAM 局部注意力和全局特征注意力，用于选择长视频关键帧。
+- [DeepErase: A Generative AI Approach for Automated Logo Detection and Removal in Video Content](https://doi.org/10.1109/icdsbs63635.2025.11032076)：结合 YOLO logo 检测、LaMa 修补、多层 mask 和异步帧处理，自动移除视频内容中的 logo。
+- [Scalable Summarization of Long-Form Video Transcripts Using NLP](https://doi.org/10.1109/icmcsi64620.2025.10883112)：用 NLP 方法压缩长篇 YouTube 视频转写文本，主要面向 transcript 摘要而非视觉视频建模。
+- [Uncertainty-Aware Mixture of Experts for Video Action Anticipation](https://doi.org/10.1109/tcsvt.2025.3577027)：用多个 anticipation experts、专家嵌入、相似观测帧检索和不确定性感知路由建模多种可能未来动作。
+- [Instance-Adaptive Spatial-Temporal Enhancement for Efficient Video Compression](https://doi.org/10.1109/tip.2025.3602648)：提出 IASTE，先在空间和时间上降采样视频，再用 LoRA 高效过拟合每段视频的时空增强模型以改善压缩。
+- [Joint Source-Channel Optimization for AAV Video Coding and Transmission](https://doi.org/10.1109/tnse.2025.3604945)：联合建模无人机视频编码与无线传输中的时延、功耗、码率和失真，优化端到端质量和能耗。
+- [Adaptive Visual Prompting for Effective Satellite Video Tracking](https://doi.org/10.1109/tmm.2025.3645594)：提出 AVPTrack，用多位置 Super Prompts 动态改写模板，以适应卫星视频跟踪中的目标变化、遮挡和环境干扰。
+- [Visual Question Explainable Reasoning on Hypothesis Agent Interaction with Scene](https://doi.org/10.1016/j.sigpro.2025.110177)：通过建模假设、主体和场景之间的交互来做可解释视觉问答推理，把候选假设连接到视觉证据。
+- [DA-SWTS: Dual-attention and temporal sampling make long video understanding efficient](https://doi.org/10.1016/j.ins.2025.122908)：用双注意力和时间采样减少冗余帧，同时保留长视频理解所需证据。
+- [MSTVQA: A multi-path dynamic perception method for video quality assessment](https://doi.org/10.1016/j.imavis.2025.105891)：通过多条动态感知路径分别抽取互补时空质量线索，再汇聚预测视频质量。
+- [Video Decoupling Networks for Accurate, Efficient, Generalizable, and Robust Video Object Segmentation](https://doi.org/10.1109/tip.2025.3649360)：用 per-clip 记忆更新把历史帧解耦成场景、运动和实例元素，提升视频目标分割鲁棒性。
+- [Lightweight Multi-Layered Encryption and Steganography Model for Protecting Secret Messages in MPEG Video Frames](https://doi.org/10.32604/cmc.2025.068429)：先用 Hill cipher 和像素派生旋转密钥加密秘密文本，再通过 DWT 隐写嵌入 MPEG 视频帧。
+- [Dynamic Content Prediction with Motion-aware Priors for Blind Face Video Restoration](https://doi.org/10.1109/cvpr52734.2025.01660)：从高质量人脸视频构建运动感知语义字典，并预测时间相关字典元素以恢复退化人脸视频帧。
+- [A Semi-Automated System for Face Registration and Recognition in Video Streams](https://doi.org/10.1109/iccp68926.2025.11427157)：结合人脸检测、margin-based embedding、相似度搜索和用户引导注册，在视频流中做实时身份识别。
+- [ViDROP: Video Dense Representation Through Spatio-Temporal Sparsity](https://doi.org/10.1109/cvprw67362.2025.00300)：用 token dropping、masking、无解码器 per-patch loss 和像素空间 k-means 视频压缩学习高效自监督视频表征。
+- [Agent-Based Control Prompt Tuning for Video-Text Retrieval](https://doi.org/10.1109/tcsvt.2025.3574726)：用 agent-based control prompts 调优 CLIP 式文本视频检索，在不完整微调的情况下增强跨模态交互和 prompt 可靠性。
+- [COFFEE: Mitigating Hallucination in LVLMs via COllaborative Filtering for Enhanced Eyes](https://doi.org/10.1109/iccea65460.2025.11103059)：在推理时对 LVLM 视觉特征做免训练协同过滤，增强感知模块以降低跨模态幻觉。
+- [Training-Free VLM-Based Pseudo Label Generation for Video Anomaly Detection](https://doi.org/10.1109/access.2025.3573594)：免训练生成 CLIP 伪标签，并结合阈值相似度、二分类与细粒度异常分支、Transformer 和 GCN 做 WSVAD。
+- [A User-Guided and Local Motion-Adaptive Framework for Virtual Product Placement in Video](https://doi.org/10.1109/apsipaasc65261.2025.11249375)：由用户在首帧选定放置区域，再跟踪局部关键点并逐帧重对齐虚拟商品，实现视频中的自适应植入。
+- [Vid-Group: Temporal Video Grounding Pretraining from Unlabeled Videos in the Wild](https://doi.org/10.1109/iccv51701.2025.01910)：用超过 5 万个野外未标注视频和 20 万条伪标注预训练时序定位模型，并用 ReCorrect 修正不匹配样本与时间边界。
+- [A spatio-frequency cross fusion model for deepfake detection and segmentation](https://doi.org/10.1016/j.neucom.2025.129683)：融合空间视觉伪影和频域线索，联合检测并分割视频中的 deepfake 区域。
+- [Dual-Detector Reoptimization for Federated Weakly Supervised Video Anomaly Detection via Adaptive Dynamic Recursive Mapping](https://doi.org/10.1109/tii.2025.3574406)：用 channel-averaged 与 channel-statistical 双检测器和自适应递归映射，在异构客户端上改进联邦 WSVAD。
+- [EIKA: Explicit & Implicit Knowledge-Augmented Network for entity-aware sports video captioning](https://doi.org/10.1016/j.eswa.2025.126906)：把显式与隐式实体知识注入体育视频字幕生成，使描述能跟踪球员、队伍和赛事上下文。
+- [Semantic matters: A constrained approach for zero-shot video action recognition](https://doi.org/10.1016/j.patcog.2025.111402)：提出 SC-CLIP，通过语义相关查询生成和约束式跨注意力，让 CLIP 适配未见视频动作类别。
+- [Exploiting EfficientSAM and Temporal Coherence for Audio-Visual Segmentation](https://doi.org/10.1109/tmm.2025.3557637)：以时间一致性约束适配 EfficientSAM，将声音源与跨帧像素级视频 mask 对齐。
+- [Learning opposite prompts for weakly supervised video anomaly detection](https://doi.org/10.1016/j.knosys.2025.113600)：学习正常 prompt 与 opposite anomaly prompt，把弱标注视频片段中的异常证据从正常模式中分离出来。
+- [A video anomaly detection framework based on semantic consistency and multi-attribute feature complementarity](https://doi.org/10.1016/j.patcog.2025.112016)：结合语义一致性检查和互补多属性特征，区分异常事件与正常场景变化。
+- [A Fine-Grained Long Video Understanding Method Based on Multimodal Large Language Models](https://doi.org/10.1109/caibda65784.2025.11182631)：面向多模态大模型的细粒度长视频理解。
+- [ASTFormer: A Spatio-Temporal Transformer with Dual Attention and CNN Fusion for Video Anomaly Detection](https://doi.org/10.1109/cpsi66656.2025.11343933)：面向视频理解提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Towards Efficient Keyframe Selection for News Video Captioning](https://doi.org/10.1109/icca66035.2025.11430820)：面向视频理解提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [A Novel Video Caption Method Based on Improved Transformer Model](https://doi.org/10.1109/iccect64621.2025.11339737)：面向视频理解提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Cross Modal LMM for Video and Audio Analysis](https://doi.org/10.1109/iciccs65191.2025.10984926)：面向视频理解提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [BiSeR-LMA: A Bidirectional Semantic Reasoning and Large Model Enhancement Approach for Text-Video Cross-Modal Retrieval](https://doi.org/10.1109/tcsvt.2025.3576619)：面向视频理解提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Video Language Model Pretraining with Spatio-temporal Masking](https://doi.org/10.1109/cvpr52734.2025.00800)：用时空 masking 预训练视频语言模型，提升视频表征学习。
+- [VideoCuRL: Video Curriculum Reinforcement Learning with Orthogonal Difficulty Decomposition](https://arxiv.org/abs/2601.00887)：用二维课程调度 VideoLLM 强化学习，把视觉时间负载与认知推理深度分开，并结合 sparse KL 与难题回访稳定高难视频推理训练。
+- [FMVP: Masked Flow Matching for Adversarial Video Purification](https://arxiv.org/abs/2601.02228)：提出面向对抗视频净化的掩码流匹配方法。
+- [TA-Prompting: Enhancing Video Large Language Models for Dense Video Captioning via Temporal Anchors](https://arxiv.org/abs/2601.02908)：通过学习 temporal anchors 并采样连贯事件描述，提升 VideoLLMs 在未裁剪视频中的 dense video captioning 与时间 grounding。
+- [Better, But Not Sufficient: Testing Video ANNs Against Macaque IT Dynamics](https://arxiv.org/abs/2601.03392)：比较静态、循环和视频 ANN 对猕猴 IT 皮层响应的拟合，发现视频模型只带来有限神经预测增益，且难通过去外观化运动压力测试。
 - [MVP](https://arxiv.org/abs/2601.03781)：面向 VideoLLM 的自监督 masked-video-prediction 方法，提升下游视频问答和推理所需的时序与视觉表示。
 - [VideoAuto-R1](https://arxiv.org/abs/2601.05175)：视频自动推理方法，用训练与推理策略分离推理形成和答案精炼。
+- [Data-Driven Reduced-Complexity Modeling of Fluid Flows: A Community Challenge](https://arxiv.org/abs/2601.06183)：定义流体建模社区挑战，包含压缩、预测和稀疏感知三个赛道、统一指标与基线，更接近仿真 world-model 基准而非普通视频问答。
+- [HiVid-Narrator: Hierarchical Video Narrative Generation with Scene-Primed ASR-anchored Compression](https://arxiv.org/abs/2601.07366)：结合 scene-primed ASR 与帧级证据生成层次化视频叙事，把事件级 temporal chain 与 chapter summary 连接到电商视频理解。
+- [Edge-Optimized Multimodal Learning for UAV Video Understanding via BLIP-2](https://arxiv.org/abs/2601.08408)：构建轻量 UAV 视频理解栈，将 BLIP-2 接入 YOLO-World 与 YOLOv8-Seg 的感知输出，在无需无人机专门微调的情况下扩展检测与分割能力。
+- [S3-CLIP: Video Super Resolution for Person-ReID](https://arxiv.org/abs/2601.08807)：把视频 person ReID 的瓶颈定位到低质 tracklet，先插入任务驱动视频超分，再交给 CLIP-ReID 改善空地跨视角匹配。
+- [DR-VAD: Definition-guided reasoning for training-free video anomaly detection](https://doi.org/10.1016/j.neucom.2026.132836)：面向视频理解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [A video anomaly detection framework based on hybrid feature-enhanced memory reconstruction and jigsaw puzzle](https://doi.org/10.1007/s11760-024-03570-x)：结合特征增强记忆重建和 jigsaw 式自监督目标做视频异常检测，使重建失败和时空结构扰动共同指示异常事件。
+- [A video anomaly detection framework based on feature-strengthened and memory feature-ernhanced reconstruction](https://doi.org/10.1007/s00530-025-01735-3)：用增强记忆特征强化重建式视频异常检测，重点捕捉正常模式重建缺口，而不是提供外部智能体编排。
+- [Action Detail Matters: Refining Video Recognition with Local Action Queries](https://doi.org/10.1109/cvpr52734.2025.01782)：FocusVideo 学习跟随局部动作区域的 action queries，通过 local action-stream 分支传播查询，并用无参数多尺度交互降低背景噪声对动作识别的影响。
+- [Unsupervised Video Summarization Based on Spatiotemporal Semantic Graph and Enhanced Attention Mechanism](https://doi.org/10.1109/tcss.2025.3579570)：用时间卷积和动态边卷积构建时空语义图，再用双线性加性注意力选择运动显著帧，实现无监督视频摘要。
+- [Delving Into Instance Modeling for Weakly Supervised Video Anomaly Detection](https://doi.org/10.1109/tcsvt.2025.3546766)：指出统一时间池化会污染弱监督异常检测实例，并用动态片段合并与检索增强异常恢复改进 MIL 式 VAD。
+- [Graph-based centrality framework for effective multi-video summarization](https://doi.org/10.1016/j.ipm.2025.104276)：把多视频片段作为 3D-CNN 节点，用融合显著性、运动和语义相似度的 WDC、V-Rank、VL-Rank 中心性算法排序生成摘要。
+- [Improving Open-vocabulary Video Visual Relation Detection with Decomposed Prompt Learning and Relation Adjustment](https://doi.org/10.1109/icassp49660.2025.10890443)：把视频关系拆成动作模式和空间模式来学习 prompt，并利用可靠的 base relation 预测校准 novel predicate 概率。
+- [Multi-granularity Frequency Difference-Aware Attention for Video Question Answering](https://doi.org/10.1109/icme59968.2025.11209595)：MFDA 是可插拔的 VideoQA 跨模态注意力模块，在频域中用动态粒度建模、频率距离权重和互补融合分离细节与全局事件线索。
+- [Context-Enhanced Zero-Shot Video Temporal Grounding with Adaptive Boundary Refinement](https://doi.org/10.1109/icme59968.2025.11209776)：训练自由地用 VLM 生成视频上下文描述、用 LLM 推理事件时间关系，并通过自适应边界细化覆盖完整事件阶段。
+- [Weakly-supervised Video Anomaly Detection with Domain Adaptation](https://doi.org/10.1109/icecai66283.2025.11171315)：DA-VAD 将视频级和 clip 级特征视为源域与目标域，通过 domain aligner 和自适应对齐损失降低 WSVAD 的过拟合与样本不均衡。
+- [Reinforcement Learning Driven Anticipatory Summarization of Real Time Video Streams with Predictive Tracking Process](https://doi.org/10.1109/isaect68904.2025.11318755)：在流式摘要中加入预测式时空 anticipation graph 和强化门控压缩，让模型优先关注即将发生的目标交互，而不只回看已有关键帧。
+- [Unsupervised Video Anomaly Detection with Swin Transformer and Temporal-Context Modeling](https://doi.org/10.1109/acait67930.2025.11521860)：用 3D Swin Transformer 编码器-解码器结合 temporal shift 与动态大核卷积建模正常行为，再通过重构误差检测异常。
+- [Unsupervised video anomaly detection based on deep feature clustering](https://doi.org/10.1109/cgip66596.2025.00029)：用对比聚类把多模态片段特征对齐到低维空间，再通过密度式特征变化挖掘伪类别并训练单类 ConvNets 做无监督 VAD。
+- [The Smart Optimization of Anomaly Detection in Video Image Processing using Swin-Transformer](https://doi.org/10.1109/ic3ecsbhi63591.2025.10991291)：在视频异常检测中微调预训练 Swin Transformer，利用 self-attention 建模时空关系，以提升检测速度与精度。
+- [Trans-Diff:Transformer-based Video Summarization with Diffusion](https://doi.org/10.1109/icme59968.2025.11210092)：把 transformer 时空编码器与逐帧重构局部空间细节的 diffusion 解码器结合，增强长程依赖下的视频摘要连贯性。
+- [Deep Learning-Driven Real-Time Video Summarization with Temporal Modeling and Attention Mechanism](https://doi.org/10.47392/irjaem.2025.0229)：结合 RNN、BiLSTM 与注意力选择关键帧并保留时间依赖，用 BLEU 和 ROUGE 对照人工摘要评估实时摘要质量。
+- [SAM3-DMS](https://arxiv.org/abs/2601.09699)：为 SAM3 风格多目标视频分割解耦 memory selection。
+- [RemoteVAR: Autoregressive Visual Modeling for Remote Sensing Change Detection](https://arxiv.org/abs/2601.11898)：把视觉自回归建模适配到双时相遥感变化图，通过多分辨率融合特征和 cross-attention 条件生成稠密变化预测。
+- [MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network](https://arxiv.org/abs/2601.13715)：利用玻璃反射和真实运动之间的不一致检测视频玻璃表面，并融合光流、空间特征、历史引导注意力和时间交叉注意力。
+- [PREGEN: Uncovering Latent Thoughts in Composed Video Retrieval](https://arxiv.org/abs/2601.13797)：从冻结 VLM 多层隐藏状态提取紧凑表示用于 composed video retrieval，在不微调 VLM 的情况下改进视频查询加文本修改的匹配。
+- [Semantic-Guided Unsupervised Video Summarization](https://arxiv.org/abs/2601.14773)：研究语义引导的无监督视频摘要模型方法。
+- [VIOLA: Towards Video In-Context Learning with Minimal Annotations](https://arxiv.org/abs/2601.15549)：通过 density-aware uncertainty sampling 选择少量代表性标注样例，并利用剩余未标注 clip 做域适配，使视频 in-context learning 更省标注。
+- [Acoustic Field Video for Multimodal Scene Understanding](https://arxiv.org/abs/2601.17123)：用波束形成麦克风生成空间声强视频流，证明当声音被定位到画面区域而非仅作为单声道或立体声输入时，VLM 场景问答更可靠。
+- [VidLaDA: Bidirectional Diffusion Large Language Models for Efficient Video Understanding](https://arxiv.org/abs/2601.17868)：VidLaDA 使用双向扩散语言建模提升视频理解效率。
+- [Forward Consistency Learning](https://arxiv.org/abs/2601.18135)：结合 gated context aggregation 与 forward-consistency 约束，在流式视频中捕捉违背预期时间演化的异常事件。
+- [Towards Geometry-Aware and Motion-Guided Video Human Mesh Recovery](https://arxiv.org/abs/2601.21376)：HMRMamba 用 dual-scan Mamba 将 2D 观测提升为几何感知 3D 姿态锚点，再以运动引导重建增强视频人体网格的时间一致性。
+- [Countering the Over-Reliance Trap: Mitigating Object Hallucination for LVLMs via a Self-Validation Framework](https://arxiv.org/abs/2601.22451)：提出免训练自验证循环，不依赖语言先验 logits 直接检查对象是否存在，用于压制长 LVLM 描述中的对象幻觉 token。
+- [Fire on Motion](https://arxiv.org/abs/2601.22675)：通过优化 video pass-bands 提升 spiking action recognition efficiency。
+- [Exposing and Defending the Achilles' Heel of Video Mixture-of-Experts](https://arxiv.org/abs/2602.01369)：改进视频语言、动作预测、误信息识别或多模态视频推理。
+- [LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization](https://arxiv.org/abs/2602.02341)：LongVPO 通过两阶段偏好优化训练短上下文 VLM 理解超长视频。
+- [RANKVIDEO: Reasoning Reranking for Text-to-Video Retrieval](https://arxiv.org/abs/2602.02444)：用推理式重排序改进文本到视频检索，关联视频语言检索和候选片段推理。
+- [Diffusion-Aided Extreme Video Compression with Lightweight Semantics Guidance](https://arxiv.org/abs/2602.05201)：压缩语义表示、相机轨迹和稀疏前景 mask，再用条件扩散先验重建帧，实现极低码率视频压缩。
+- [Weaver: End-to-End Agentic System Training for Video Interleaved Reasoning](https://arxiv.org/abs/2602.05829)：训练策略模型在视频推理中调用视觉工具，用强化学习发现工具使用策略并生成多模态推理轨迹。
+- [Interpreting Physics in Video World Models](https://arxiv.org/abs/2602.07050)：探测视频 Transformer 中的物理变量，定位中间层的 Physics Emergence Zone，其中分解式物理信息既可读出也对预测有因果作用。
+- [Efficient-SAM2](https://arxiv.org/abs/2602.08224)：通过 object-aware visual encoding 与 memory retrieval 加速 SAM2 视频分割。
+- [TiFRe: Text-guided Video Frame Reduction for Efficient Video Multi-modal Large Language Models](https://arxiv.org/abs/2602.08861)：提出文本引导的视频帧压缩方法，以提升视频多模态大模型效率。
+- [Broadcast-News Video NER](https://arxiv.org/abs/2602.09154)：用混合确定性框架抽取广播新闻视频中的命名实体。
+- [STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning](https://arxiv.org/abs/2602.11730)：用强化学习提升时空视频 grounding 中的实例级推理与定位。
+- [Gaussian Sequences with Multi-Scale Dynamics for 4D Reconstruction from Monocular Casual Videos](https://arxiv.org/abs/2602.13806)：把动态场景表示为 3D Gaussian 序列，并在对象到粒子多个尺度上分解运动，用基础模型先验正则化单目 4D 重建。
+- [HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming](https://arxiv.org/abs/2602.14214)：把 LLM 用作流媒体显著性标注器，结合局部帧感知、VOD 的 LLM-guided merge-sort reranking 和直播场景的在线重要性预测。
+- [Let's Split Up](https://arxiv.org/abs/2602.16545)：面向细粒度视频理解编辑零样本分类器，为无需任务专门训练的视频语言识别补充轻量适配路线。
+- [Cross Pseudo Labeling for WSVAD](https://arxiv.org/abs/2602.17077)：用 cross pseudo labeling 改进弱监督视频异常检测。
+- [When & How to Write for Personalized Demand-aware Query Rewriting in Video Search](https://arxiv.org/abs/2602.17667)：WeWrite 挖掘需要个性化改写的视频搜索查询，用 SFT 与 GRPO 训练 LLM query rewriter，并通过 fake-recall 检查控制线上延迟。
+- [Learning Compact Video Representations for Efficient Long-form Video Understanding in Large Multimodal Models](https://arxiv.org/abs/2602.17869)：结合信息密度自适应采样器和自编码器式时空压缩器，使 MLLM 能在显存限制下处理更多长视频帧。
+- [DeepSVU](https://arxiv.org/abs/2602.18019)：用 physical-world-regularized MoE 做 security-oriented video understanding，把异常分析与更深层视频推理连接起来。
+- [Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding](https://arxiv.org/abs/2602.18977)：把图像预训练 backbone 适配到视频，通过 FFT 变换时间特征并学习频带 adapter，补回中速运动线索。
+- [MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment](https://arxiv.org/abs/2602.19004)：将 IMU 信号与骨架运动而非原始像素对齐，并在身体部位轨迹和亚秒级时间片上做层次化对比学习。
+- [UniE2F: A Unified Diffusion Framework for Event-to-Frame Reconstruction with Video Foundation Models](https://arxiv.org/abs/2602.19202)：用事件相机流条件化预训练视频扩散模型，并加入事件残差引导和采样调制，统一处理重建、插帧和预测。
+- [MLLM Zero-Shot Video Anomaly Detection](https://arxiv.org/abs/2602.19248)：用多模态大语言模型在无需真实异常数据的情况下进行零样本视频异常检测。
+- [Lie Flow: Video Dynamic Fields Modeling and Predicting with Lie Algebra as Geometric Physics Principle](https://arxiv.org/abs/2602.21645)：用 SE(3) 李群运动表示动态 4D radiance field，在统一几何空间中约束平移与旋转一致性，提升视图合成、时间连贯性和物理真实感。
+- [Anomaly-Connected Components and Intention Reasoning](https://arxiv.org/abs/2603.00550)：结合 anomaly-connected components 与 intention reasoning 做 weakly supervised video anomaly detection。
+- [TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization](https://arxiv.org/abs/2603.01169)：在帧级动态加权视觉、转写文本和音频三种模态，并提出 MoSu 作为包含三模态的大规模视频摘要基准。
+- [Training-Free Spatio-temporal Decoupled Reasoning Video Segmentation](https://arxiv.org/abs/2603.01545)：结合自适应对象记忆与时空推理进行视频分割，补充面向推理的视频理解模型。
+- [Action-Guided Attention for Video Action Anticipation](https://arxiv.org/abs/2603.01743)：把预测动作序列作为注意力查询和键，提升视频动作预判对高层意图的建模能力。
+- [Beyond Caption-Based Queries](https://arxiv.org/abs/2603.02363)：把视频 moment retrieval 扩展到 caption 式查询之外，拓展视频理解中的时间定位模型。
+- [SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](https://arxiv.org/abs/2603.05437)：结合 similarity-aware masks 与 LLM 生成的 caption augmentation，提升弱监督 dense video captioning 与时间定位。
+- [HyperTokens](https://arxiv.org/abs/2603.06662)：控制 continual video-language understanding 的 token dynamics，面向视频语言模型的保持与适配。
+- [SAVE Speech-Aware Video Retrieval](https://arxiv.org/abs/2603.08224)：为 video-text retrieval 学习 speech-aware video representation，补充音频-视频-文本检索模型。
+- [From Imitation to Intuition: Intrinsic Reasoning for Open-Instance Video Classification](https://arxiv.org/abs/2603.10300)：结合监督对齐与 GRPO，让视觉语言模型在开放实例视频分类中形成更稳健的推理能力。
+- [Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](https://arxiv.org/abs/2603.11439)：将 dense video captioning 中的定位与描述拆成不同角色的 queries，并用 contrastive alignment 与 overlap suppression 减少事件区域冗余。
+- [Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning](https://arxiv.org/abs/2603.11460)：为检索增强的 dense video captioning 引入受监督 saliency 信号，用 saliency-guided segmentation 与 saliency prompts 改善事件边界 grounding，且不需要额外标注。
+- [Think While Watching](https://arxiv.org/abs/2603.11896)：为连续到达的视频流加入在线 segment-level memory、因果 streaming mask 和 watch-think 重叠推理，用于多轮视频推理。
+- [SPARROW](https://arxiv.org/abs/2603.12382)：训练像素级 grounding 的视频 MLLM，以提升空间精度和时序指代一致性，强化模型对跨时间视频实体的原生定位能力。
+- [Geometry-Aware Semantic Reasoning for VAD](https://arxiv.org/abs/2603.13374)：为 training-free 视频异常检测加入 geometry-aware semantic reasoning，把空间线索纳入异常推理。
+- [Selective Noise Suppression and Discriminative Mutual Interaction for Robust Audio-Visual Segmentation](https://arxiv.org/abs/2603.14203)：SDAVS 用选择性抗噪处理器抑制无关音频，并通过判别式音视频互融合让 sounding-object segmentation 更稳定。
+- [Show Me When and Where: Towards Referring Video Object Segmentation in the Wild](https://arxiv.org/abs/2603.14300)：提出 YoURVOS，将 RVOS 扩展到更长的未裁剪 YouTube 视频，并用 OMFormer 要求模型同时预测指代目标何时出现和出现在哪里。
 - [Learning Transferable Temporal Primitives](https://arxiv.org/abs/2603.17693)：生成可控合成视频 primitives，使模型学习顺序、状态变化和事件依赖等概念。
 - [Unified Spatio-Temporal Token Scoring](https://arxiv.org/abs/2603.18004)：高效 VideoVLM token 选择方法，联合评分空间与时间 token 以保留推理相关证据。
+- [Insight-V++](https://arxiv.org/abs/2603.18118)：用多 agent 数据生成、summary-agent 反馈和时空 GRPO 变体提升图像与视频任务中的长链视觉推理能力。
+- [Scene Graph-guided SegCaptioning Transformer with Fine-grained Alignment for Controllable Video Segmentation and Captioning](https://arxiv.org/abs/2603.20887)：定义可控 SegCaptioning 任务，让用户用 box 等 prompt 同时得到对齐 mask 与 caption，并用 scene graph 保持分割和语言意图一致。
+- [Pretrained Video Models as Differentiable Physics Simulators for Urban Wind Flows](https://arxiv.org/abs/2603.21210)：在 1 万条 CFD rollout 上微调 LTX-Video，并加入 physics-informed decoder loss，把潜空间视频 Transformer 改造成可微城市风场代理模型。
+- [TrajSeg](https://arxiv.org/abs/2603.21488)：通过双向文本-轨迹对齐和统一 mask 解码器训练轨迹感知 MLLM，用于视频推理分割，提升强动态视频中的目标 grounding。
+- [TrajLoom](https://arxiv.org/abs/2603.22606)：从观测视频生成密集未来点轨迹，增强视频模型中的运动预测与时间表征。
+- [EVA: Efficient Reinforcement Learning for End-to-End Video Agent](https://arxiv.org/abs/2603.22918)：训练 planning-before-perception 视频 agent，用 summary-plan-action-reflection 循环让 RL 决定针对问题该看什么、何时看以及怎样看。
+- [Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining](https://arxiv.org/abs/2603.22953)：ClusterSTM 在帧内按语义聚类后做 cluster-wise masking，并保留时间密度最高的 token，以减少高 mask 比例下的信息丢失和跨帧泄漏。
+- [VIRST-Audio](https://arxiv.org/abs/2603.23126)：把音频查询转成文本引导的指代表达视频对象分割，并加入 existence-aware gating。
+- [AgentRVOS](https://arxiv.org/abs/2603.23489)：围绕目标轨迹进行零样本指代表达视频分割，为语言 grounding 的视频感知加入轨迹级推理方法。
+- [MLE-UVAD](https://arxiv.org/abs/2603.23868)：用 minimal latent entropy autoencoder 做 fully unsupervised video anomaly detection。
+- [Knowledge-Refined Dual Context-Aware Network](https://arxiv.org/abs/2603.23902)：用知识增强的 dual context modeling 改进 partially relevant video retrieval。
+- [Unbiased Multimodal Reranking for Long-Tail Short-Video Search](https://arxiv.org/abs/2603.24975)：用 LLM 生成的多模态质量标注、监督微调和成对偏好优化训练短视频重排模型，缓解长尾搜索中过度依赖稀疏点击信号的问题。
+- [EagleNet](https://arxiv.org/abs/2603.25267)：为 text-video retrieval 学习能量感知的细粒度关系。
+- [GridVAD](https://arxiv.org/abs/2603.25467)：在分层 frame grids 上进行空间推理，用于开放集视频异常检测。
+- [Motion Semantics Normalizing Flow for VAD](https://arxiv.org/abs/2603.26745)：用 motion semantics 与 normalizing flow 做 privacy-preserving 视频异常检测。
+- [VIRST](https://arxiv.org/abs/2603.27060)：构建用于 spatiotemporal segmentation 的 video-instructed reasoning assistant。
+- [TrackMAE](https://arxiv.org/abs/2603.27268)： 通过 track masking and prediction 学习视频表示，为视频理解补充面向 object track 的预训练路线。
 - [Wan-R1](https://arxiv.org/abs/2603.27866)：将可验证强化学习用于视频推理训练。
+- [CLIP-AUTT: Test-Time Personalization with Action Unit Prompting for Fine-Grained Video Emotion Recognition](https://arxiv.org/abs/2603.27999)：在测试时用面部 action-unit prompts 作为结构化时间语义来个性化 CLIP 式视频情绪识别，捕捉细微且主体相关的表情变化。
+- [VADMamba++](https://arxiv.org/abs/2604.00360)：在 grayscale space 中用混合 Mamba-style modeling 改进视频异常检测，强调高效时间表征。
+- [Tracking-Enhanced Prompt for MOSE](https://arxiv.org/abs/2604.00395)：在 PVUW MOSE challenge 中用 tracking-enhanced prompt 改进复杂视频目标分割。
+- [STRIVE: Structured Spatiotemporal Exploration for Reinforcement Learning in Video Question Answering](https://arxiv.org/abs/2604.01824)：STRIVE 通过结构化时空探索稳定视频问答中的强化学习训练。
+- [Diffusion-Guided Registers for Partially Relevant Video Retrieval](https://arxiv.org/abs/2604.03653)：使用扩散引导的 register token 改进部分相关视频检索。
+- [Watch Before You Answer: Learning from Visually Grounded Post-Training](https://arxiv.org/abs/2604.05117)：聚焦视频理解、长视频推理、视频奖励或视频后训练。
+- [ESOM](https://arxiv.org/abs/2604.07772)：支持动态异常定义下的流式 open-world 视频异常理解，并通过高效 token 处理降低部署成本。
+- [PanoSAM2](https://arxiv.org/abs/2604.07901)：面向 360-degree 视频目标分割，对 SAM2 做轻量化、畸变感知与 memory-aware 适配。
+- [Bridging Time and Space: Decoupled Spatio-Temporal Alignment for Video Grounding](https://arxiv.org/abs/2604.08014)：将视频 grounding 中的空间与时间对齐解耦，改进模型定位视频语言证据的能力。
 - [ABMAMBA: Multimodal Large Language Model with Aligned Hierarchical Bidirectional Scan for Efficient Video Captioning](https://arxiv.org/abs/2604.08050)：构建带有对齐层级双向扫描的高效视频描述 MLLM。
+- [UniversalVTG](https://arxiv.org/abs/2604.08522)：用跨数据集监督和 query unification 训练轻量通用 video temporal-grounding model，面向长未裁剪视频且不依赖重型 MLLM backbone。
+- [Learnable Motion-Focused Tokenization for Effective and Efficient Video Unsupervised Domain Adaptation](https://arxiv.org/abs/2604.09955)：LMFT 学习丢弃低运动背景 token 并保留动作相关运动 token，在提升 video UDA 准确率的同时降低计算量。
+- [Relaxing Anchor-Frame Dominance](https://arxiv.org/abs/2604.12582)：通过降低 anchor-frame dominance 缓解 Video-LLMs 的 hallucinations。
+- [DVFace: Spatio-Temporal Dual-Prior Diffusion for Video Face Restoration](https://arxiv.org/abs/2604.14560)：用 one-step diffusion、空间与时间人脸 codebook 以及非对称融合恢复退化人脸视频，同时保持身份稳定和时间连贯。
 - [EasyVideoR1](https://arxiv.org/abs/2604.16893)：简化的视频理解 RL 训练流程，改进奖励、数据和训练稳定性以支持 R1 风格视频推理。
-- [Response-G1](https://arxiv.org/abs/2605.07575)：提出面向视频理解的模型侧方法，核心围绕 Explicit Scene Graph Modeling for Proactive Streaming Video Understanding。
+- [LiquidTAD: Efficient Temporal Action Detection via Parallel Liquid-Inspired Temporal Relaxation](https://arxiv.org/abs/2604.18274)：把 liquid neural dynamics 的指数弛豫先验蒸馏成并行、非递归的时间算子，使 temporal action detection 具有线性序列复杂度。
+- [One Identity, Many Roles: Multimodal Entity Coreference for Enhanced Video Situation Recognition](https://arxiv.org/abs/2604.23173)：CineMEC 将文本事件角色 mention 与跨镜头视觉实体簇连接起来，在没有 grounding 监督的情况下提升视频情境识别的实体一致性。
+- [BVI-Mamba: video enhancement using a visual state-space model for low-light and underwater environments](https://arxiv.org/abs/2604.23655)：用 visual state-space modules 替代卷积式增强块，并加入 feature-space alignment，高效恢复低照度和水下视频。
+- [IntentVLM: Open-Vocabulary Intention Recognition through Forward-Inverse Modeling with Video-Language Models](https://arxiv.org/abs/2604.24002)：把意图识别拆成目标候选生成和结构化逆向选择两步，降低开放词表视频语言意图推理中的 hallucinated goals。
+- [DenseStep2M: A Scalable, Training-Free Pipeline for Dense Instructional Video Annotation](https://arxiv.org/abs/2604.26565)：构建免训练的教学视频标注流水线，先切分镜头并过滤旁白与画面错配，再用 Qwen2.5-VL 和 DeepSeek-R1 生成 200 万条有时间定位的过程步骤及 DenseCaption100。
+- [CMTA Generated-Video Detection](https://arxiv.org/abs/2605.00630)：利用 cross-modal temporal artifacts 做 generalizable AI-generated video detection。
+- [Static and Dynamic Graph Alignment Network for Temporal Video Grounding](https://arxiv.org/abs/2605.00684)：用 query-aware interaction 对齐静态与动态 clip graph，并结合多粒度语义匹配来更精确定位未裁剪视频中的语言所指时刻。
+- [Understanding the Performance Plateau in Text-to-Video Retrieval: A Comprehensive Empirical and Linguistic Analysis](https://arxiv.org/abs/2605.00826)：面向视频理解的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Understanding the Performance Plateau in Text-to-Video Retrieval: A Comprehensive Empirical and Linguistic Analysis”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [TRIMMER: A New Paradigm for Video Summarization through Self-Supervised Reinforcement Learning](https://arxiv.org/abs/2605.01659)：先自监督学习视频表征，再用基于时空帧决策和 entropy-style 奖励的强化学习选择摘要片段。
+- [Reasoning-Guided Grounding for Video Anomaly Detection](https://arxiv.org/abs/2605.02912)： 利用多模态大语言模型提升视频异常检测中的 grounding 与推理。
+- [MASRA](https://arxiv.org/abs/2605.03398)：用 MLLM 辅助的语义关系一致性对齐做视频时间定位。核心思想：通过关系一致的多模态语义，把语言查询与视频片段对齐。
+- [Evidential Learning for Partially Relevant Video Retrieval](https://arxiv.org/abs/2605.06083)：通过 evidential learning 重新审视 partially relevant video retrieval 的不确定性，改进 confidence-aware 视频检索。
+- [HumanNet: Scaling Human-centric Video Learning to One Million Hours](https://arxiv.org/abs/2605.06747)：把人类中心视频学习扩展到 100 万小时第一人称和第三人称视频，并提供交互式 caption、动作描述与手部和身体信号；VLA 消融显示自我中心人类视频可作为稀缺机器人数据的可扩展替代。
+- [RCoT-Seg](https://arxiv.org/abs/2605.07334)：把强化学习训练的 Chain-of-Thought 用于视频推理分割，将中间推理步骤与时空 mask 预测绑定。
+- [SphereVAD](https://arxiv.org/abs/2605.08003)：通过单位超球面上的 geodesic inference 做 training-free video anomaly detection。
+- [Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](https://arxiv.org/abs/2605.08651)：加入 orthogonal projection layers，用弱监督抑制人脸相关属性，同时保留姿态和运动线索以进行隐私感知视频异常检测。
+- [Uncertainty-Aware and Decoder-Aligned Learning for Video Summarization](https://arxiv.org/abs/2605.09507)：VASTSum 预测变分式帧重要性分布，并让训练目标贴近评估时使用的离散时间分段和 knapsack decoding。
+- [M$^4$-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](https://arxiv.org/abs/2605.11760)：把 SAM2 扩展到 RGB-D 视频显著目标检测，结合 modality-aware MoE-LoRA、门控多层特征融合和免 prompt 记忆初始化。
+- [Robust Promptable Video Object Segmentation](https://arxiv.org/abs/2605.12006)：提升 promptable video object segmentation 的 robustness。
+- [SteerSeg](https://arxiv.org/abs/2605.14908)：将注意力 steering 用于推理型视频分割。核心思想：引导视觉推理信号，使分割结果跟随更高层的时间与语义线索。
+- [COPRA for Video Anomaly Detection](https://arxiv.org/abs/2605.15325)：用 reinforcement learning 做 video anomaly detection 的 conditional parameter adaptation。
+- [TVRN: Invertible Neural Networks for Compression-Aware Temporal Video Rescaling](https://arxiv.org/abs/2605.15579)：用可逆 temporal wavelet 架构和 codec surrogate network，让帧率降采样与升采样在有损压缩下仍保留高频运动。
+- [Latent Video Prediction Learns Better World Models](https://arxiv.org/abs/2605.15618)：比较同等容量的视频基础模型，发现 latent-prediction 模型在污染、遮挡、细粒度接触线索和时间方向测试上更像稳健 world model。
+- [D2-DETR](https://doi.org/10.1109/icassp55912.2026.11464255)：通过双源增强和时长感知解码器改进视频时间定位。核心思想：利用片段时长结构更准确地定位语言所指的视频时刻。
+- [Cue-Guided Vision-Language Anomaly Detection](https://doi.org/10.1109/LSP.2026.3678477)：把抽象异常事件 grounding 到可检验的视觉语言线索，用于 anomaly detection。
+- [MG-TVMF](https://doi.org/10.1016/j.patcog.2026.113201)：融合 multi-grained text-video matching，用于 weakly supervised video anomaly detection。
+- [SAMURAI](https://doi.org/10.1109/TIP.2026.3651835)：为 SAM 2 加入运动感知记忆，用于免训练视觉目标跟踪。
+- [Attention-Driven Pseudo-Label Self-Training for VAD](https://doi.org/10.1016/j.patcog.2026.113349)：使用注意力驱动的伪标签自训练进行弱监督视频异常检测。
+- [Tri-Modal Hierarchical Contrastive VAD](https://doi.org/10.1016/j.array.2026.100884)：用 tri-modal hierarchical contrastive calibration 做视频异常检测。
+- [Cross-Query Contextual Clues for Video Retrieval](https://doi.org/10.1016/j.engappai.2026.114605)：用 cross-query contextual clues 增强 partially relevant video retrieval，扩展 PRVR 模型路线。
+- [StratiFormer](https://doi.org/10.1016/j.knosys.2026.116117)：提出用于视频目标检测的 stratified temporal Transformer。
+- [OVSMMFA-Net](https://doi.org/10.1016/j.dsp.2026.106006)：用 object-variation-sensitive 与 multi-direction Mamba 特征聚合做视频目标检测。
+- [Prompt-Guided Semantic Alignment for VAD](https://doi.org/10.1016/j.knosys.2026.115944)：将 prompt-guided 细粒度语义对齐用于弱监督视频异常检测。
+- [Semantic Boosting for VAD](https://doi.org/10.1109/TCSVT.2026.3652591)：通过知识共享与反馈做 semantic boosting，改进视频异常检测。
+- [Beyond Pixel Prophecy](https://doi.org/10.1109/icassp55912.2026.11463398)：用 hierarchical knowledge structures 做 training-free 视频异常预测。
+- [Explicit Knowledge-Structured WSVAD](https://doi.org/10.1016/j.dsp.2026.106088)：把 explicit knowledge structure 引入弱监督视频异常检测。
+- [A2VAD Attribute-Augmented VAD](https://doi.org/10.1016/j.patcog.2026.113987)：通过 attribute-augmented prompt learning 改进弱监督视频异常检测。
+- [TranSight](https://doi.org/10.1109/APSCON68325.2026.11497599)：用 dual-attention spatio-temporal network 处理交通监控视频中的异常检测。
+- [Hierarchical Language-Description VAD](https://doi.org/10.1016/j.knosys.2026.115466)：通过带完整语言描述的 hierarchical vision-language model 改进视频异常检测。
+- [Caption and Audio-Guided PRVR](https://doi.org/10.1109/ICASSP55912.2026.11463517)：用 gated caption 与 audio guidance 学习 partially relevant video retrieval 的视频表示。
+- [Causally Invariant VAD](https://doi.org/10.1016/j.patcog.2026.113809)：用 counterfactual reasoning 与 prototype intervention 做 causally invariant video anomaly detection。
+- [Cross-Category Spatiotemporal Consensus](https://doi.org/10.1016/j.neunet.2026.108627)：用跨类别时空一致性与判别网络改进 weakly supervised temporal action localization。
+- [Concept-Aware Learning for WSVAD](https://doi.org/10.1016/j.patcog.2026.113853)：为 weakly supervised video anomaly detection 引入 concept-aware learning。
+- [MRTP](https://doi.org/10.1016/j.imavis.2026.105959)：用 representative text prompts 做 multiscale video anomaly detection。
+- [Causal Feature-Guided Augmentation for VAD](https://doi.org/10.1016/j.cviu.2026.104671)：通过 causal feature-guided data augmentation 提升 robust video anomaly detection。
+- [TrCLIP-VAD](https://doi.org/10.1016/j.neunet.2026.108951)：通过 text rewriting 改进 CLIP training，用于 weakly supervised video anomaly detection。
+- [Noise-Robust Video Salient Object Detection in Spike Streams](https://doi.org/10.1109/ICASSP55912.2026.11463780)：在 noisy spike-stream videos 中建模 salient-object detection。
+- [MGLA-DSNet](https://doi.org/10.1016/j.jvcir.2026.104744)：在 dual-stream network 中加入 multi-head global-local attention，用于 weakly supervised video anomaly detection。
+- [MemFormer VAD](https://doi.org/10.1109/ICASSP55912.2026.11461361)：结合 memory-enhanced Transformers 与 multi-task learning 做 video anomaly detection。
+- [STARGA Rare-Event Video Detection](https://doi.org/10.1016/j.aej.2026.03.029)：用 generative spatial-temporal augmentation 做 unsupervised surveillance-video rare-event detection。
+- [Self-Supervised Proxy-Task VAD](https://doi.org/10.1016/j.sigpro.2026.110638)：用 multi-label spatiotemporal proxy tasks 做 self-supervised video anomaly detection。
+- [RGB-Skeleton Cross-Modal VAD](https://doi.org/10.1016/j.patcog.2026.113815)：用 cross-modal attention 融合 RGB 与 skeleton streams 做 video anomaly detection。
+- [Video Normality Memory VAD](https://doi.org/10.1016/j.displa.2026.103355)：用 multi-scale spatiotemporal features 与 feature-memory module 学习 video normality。
+- [Semantic-Augmentation Rule-Guided VAD](https://doi.org/10.12677/csa.2026.162034)：用 semantic augmentation 与 rule-guided learning 做 weakly supervised video anomaly detection。
+- [Fused Similarity Alignment for WSVAD](https://doi.org/10.1109/WACV61042.2026.00312)：结合 fused similarity alignment 与 dual-scale adaptive selection 做 weakly supervised video anomaly detection。
+- [Text-Semantics Dual-Teacher Distillation for PRVR](https://doi.org/10.1109/ICASSP55912.2026.11464179)：用 text-semantics guidance 与 dual-teacher distillation 改进 partially relevant video retrieval。
+- [AMAKD](https://doi.org/10.1016/j.aej.2026.03.038)：用 adversarial multimodal attention knowledge distillation 改进真实环境中的行为异常检测。
+- [ProDe](https://doi.org/10.1016/j.eswa.2026.132765)：用 prototype-based pattern decoupling 处理场景相关的多模态视频异常检测。
+- [COMMANDing Anomalies](https://doi.org/10.1016/j.neucom.2026.132943)：结合 dual memory 与 temporal Mamba 建模，用于持续视频异常检测。
+- [Depthwise VAE for UAV Traffic Anomaly Detection](https://doi.org/10.1016/j.eswa.2026.131425)：把 depthwise convolutional VAE 用于 UAV 视角交通视频异常检测。
+- [Open-Vocabulary MOT Scene Graph Generation](https://doi.org/10.1109/TIP.2026.3676899)：为开放词表多目标跟踪生成时空场景图。
+- [Key-Frame Fusion for Video Retrieval](https://doi.org/10.1109/ACCESS.2026.3654577)：通过关键帧选择与特征融合改进 content-based video retrieval。
+- [SmartGuard Video Surveillance](https://doi.org/10.1109/ICACS69208.2026.11433163)：提出隐私保护的边缘视频监控框架，用于可疑活动检测。
+- [Degree-Aware WSVAD](https://doi.org/10.1016/j.cviu.2026.104746)：结合 soft consistency learning 与 rule-attention fuzzy neural assistance 做弱监督视频异常检测。
+- [Temporal-Scale Semantic Consistency VAD](https://doi.org/10.1016/j.knosys.2026.115903)：跨时间尺度学习语义一致性，用于弱监督视频异常检测。
+- [BiLSTM-Hybrid Temporal Encoder VAD](https://doi.org/10.1109/ACDSA67686.2026.11467910)：将 hybrid temporal encoder 用于视频监控异常检测。
+- [Frame-wise Learned Offset Network](https://doi.org/10.1016/j.engappai.2026.114466)：通过 frame-wise learned offsets 与 localized loss 改进视频摘要。
+- [Reason to Retrieve: Structured Chain-of-Thought for Text-Video Retrieval](https://doi.org/10.1109/icassp55912.2026.11463500)：把 structured chain-of-thought 引入 text-video retrieval，为查询与视频匹配加入显式推理层，而不只依赖嵌入相似度。
+- [CoreCaption: Core Caption based Text-to-Video Retrieval](https://doi.org/10.1109/wacv61042.2026.00638)：用核心字幕表示视频以进行 text-to-video retrieval，强调简洁事件描述，而不是只依赖密集帧级视觉嵌入。
+- [Cap4Bridge: Caption-Guided Cross-Modal Contextualization With Stochastic Augmentation for Text-Video Retrieval](https://doi.org/10.1109/access.2026.3680911)：把 caption-guided cross-modal contextualization 与随机增强用于 text-video retrieval，提升上下文变化下的查询-视频对齐。
+- [Retrieval Augmented video captioning with quality-aware re-ranking and cross-gating fusion](https://doi.org/10.1016/j.displa.2026.103420)：在 retrieval-augmented video captioning 中加入 quality-aware re-ranking 与 cross-gating fusion。
+- [Parse, Align and Aggregate: Graph-Driven Compositional Reasoning for Video Question Answering](https://doi.org/10.1109/tpami.2026.3650864)：先解析问题语义，再对齐视频实体与事件，并聚合图结构表示来做组合式 Video QA 推理。
+- [Beyond the Highlights: Video Retrieval with Salient and Surrounding Contexts](https://doi.org/10.1109/wacv61042.2026.00217)：同时建模高亮信息及其周边时间上下文，避免视频检索只匹配孤立的显著片段。
+- [Scalable Video Action Anticipation with Cross Linear Attentive Memory](https://doi.org/10.1109/wacv61042.2026.00783)：用 cross-linear attentive memory 扩展长时动作预测，让未来动作推断保留可用的时间证据。
+- [Implicit Motion State Modeling for Efficient and Effective Video-Level Object Tracking](https://doi.org/10.1016/j.eswa.2026.132083)：在视频级学习隐式运动状态来跟踪目标，减少对逐帧局部关联的依赖。
+- [Integrating spatial features and dynamically learned temporal features via contrastive learning for video temporal grounding in LLM](https://doi.org/10.1016/j.imavis.2026.105895)：通过对比学习结合空间特征和动态学习的时间特征，使 LLM 能把语言查询定位到视频片段。
+- [Investigating spatial-temporal bias of LLMs](https://doi.org/10.1016/j.eswa.2026.131542)：分析 LLM 视频推理中的时空偏差，更像诊断研究而不是一项主模型方法。
+- [EiGS: Event-Informed 3D Deblur Reconstruction With Gaussian Splatting](https://doi.org/10.1109/lra.2026.3653290)：结合事件相机线索与 3D Gaussian Splatting，从视频式观测中重建去模糊动态场景。
+- [DSTG-VS: Dynamic spatio-temporal graph network with global-local feature fusion for video summarization](https://doi.org/10.1016/j.patcog.2026.113478)：构建动态时空图并融合全局与局部特征，使视频摘要保留事件结构而不只是帧显著性。
+- [MTPA: A multi-aspects perception assisted AIGV quality assessment model](https://doi.org/10.1016/j.jvcir.2026.104721)：用多方面感知信号评估 AI 生成视频质量，更接近视频生成评测而非核心理解模型。
+- [Domain textual knowledge-enhanced few-shot utility tunnel video anomaly detection with multimodal large language models](https://doi.org/10.1016/j.aei.2026.104594)：把管廊领域文本知识注入 MLLM，用于少样本巡检视频异常检测。
+- [Optimizing a 4D Lookup Table for Low-Light Video Enhancement via Wavelet Priori](https://doi.org/10.1109/tmm.2026.3651020)：用小波先验优化 4D 查找表，面向低光视频的高效颜色与时间一致性增强。
+- [Ask and focus more: Question-prompt uncertainty allocation for dual-controllable video captioning](https://doi.org/10.1016/j.patcog.2026.113105)：通过问题提示分配不确定性，使视频字幕可同时控制关注点和描述粒度。
+- [HoloQA: Full Reference Video Quality Assessor of Rendered Human Avatars in Virtual Reality](https://doi.org/10.1109/tip.2026.3663930)：为 VR 渲染数字人视频提供全参考质量评估，主要属于视频质量评测。
+- [Fully Unsupervised Video Anomaly Detection and Tracking with Adapter-Tuned Foundation Model](https://doi.org/10.1109/icitiit68860.2026.11499493)：通过 adapter 调优基础模型，在没有异常训练标签的情况下联合做异常检测与跟踪。
+- [Five emerging research opportunities for deep learning in video games: A curated overview](https://doi.org/10.1016/j.entcom.2026.101092)：综述深度学习在电子游戏中的研究机会，应作为 survey 或游戏方向的 parent-routing 候选。
+- [Motion-Dependent Object Perception Reveals Limits of Current Video Neural Networks](https://doi.org/10.64898/2026.03.15.711964)：测试当前视频网络在运动条件下的目标感知能力，更像模型局限诊断分析。
+- [RAATrack: Reliable appearance aggregation for video-level multimodal tracking](https://doi.org/10.1016/j.knosys.2026.115414)：跨视频和多模态聚合可靠外观线索，以提升长序列跟踪稳定性。
+- [Spatial Prior-Enhanced Temporal Action Localization: A Novel Three-Stage Framework for Pig Behavior Recognition](https://doi.org/10.1016/j.atech.2026.102010)：用带空间先验的三阶段时间定位流程识别猪行为，方法是模型侧但应用域较专门。
+- [Gaussian Splatting with Hybrid Deformation and Multi-Scale Depth Regularization for Dynamic Single-View Video Reconstruction](https://doi.org/10.1109/icassp55912.2026.11463565)：在 Gaussian Splatting 中结合混合形变和多尺度深度正则，从单视角视频重建动态场景。
+- [Video segment localization network based on mutual information dual-graph contrastive learning](https://doi.org/10.1016/j.asoc.2026.114699)：用互信息双图对比学习定位与语言相关的视频片段。
+- [MTTrack: A joint mamba-transformer framework with memory enhancement for real-time satellite remote sensing video object tracking](https://doi.org/10.1016/j.knosys.2026.115572)：结合 Mamba、Transformer 和记忆增强，实现卫星遥感视频中的实时目标跟踪。
+- [Few-shot video summarization via cross-video temporal invariance](https://doi.org/10.1016/j.neucom.2026.133994)：学习跨视频时间不变性，使摘要模型能从少量样本迁移事件重要性线索。
+- [Violent Video Detection Based on Multimodal Video-Text Fusion](https://doi.org/10.1109/gaiis69281.2026.11519099)：融合视频视觉证据与文本语义来检测暴力事件，而不只依赖视觉分类器。
+- [Dynamic-Aware Video Distillation: Adaptive Temporal Partitioning based on Video Semantics for Edge Device](https://doi.org/10.1016/j.neunet.2026.108871)：根据视频语义自适应划分时间片段，把视频模型蒸馏到边缘设备。
+- [Enhancing Opaque-Box VLMs Attack With Prior Information Guide](https://doi.org/10.1109/jiot.2026.3659121)：用先验信息引导针对 opaque-box VLM 的攻击，属于邻近的视频鲁棒性与安全方向。
+- [SceneShine: Illumination-aware Human Scene Gaussian Re-Splatting from Mobile Device Video](https://doi.org/10.1109/wacv61042.2026.00801)：加入光照感知的人体场景 Gaussian re-splatting，用于移动设备视频的重建。
+- [Foundation Model Empowered Real-Time Video Conference With Semantic Communications](https://doi.org/10.1109/tip.2026.3659719)：用基础模型语义支持实时视频会议通信，更接近语义视频传输而非核心理解。
+- [Unified Video Anomaly Detection Model for Detecting Different Anomaly Types](https://doi.org/10.1109/wacv61042.2026.00083)：训练统一异常检测模型，在同一视频模型中识别多类异常。
+- [Augmenting Image LLMs for Diverse Video Grounding Tasks Without Training](https://doi.org/10.1109/icassp55912.2026.11462885)：在推理时扩展图像 LLM 以处理多种视频 grounding 任务，无需任务专门训练。
+- [RAM-VQA: Restoration Assisted Multi-Modality Video Quality Assessment](https://doi.org/10.1109/tip.2026.3655117)：把视频复原线索与多模态质量评估结合，用于判断退化视频质量。
+- [Flow-guided cascaded transformer for consistent video colorization](https://doi.org/10.1016/j.patcog.2026.113268)：用光流引导和级联 Transformer 做视频上色，以保持跨帧一致性。
+- [Video Plot Segmentation](https://doi.org/10.1016/j.eswa.2026.132422)：把叙事视频切分为 plot 单元，补充时间故事结构建模而非普通片段分类。
+- [TAME: Temporal-Aware Mixture-of-Experts for Text–Video Retrieval](https://doi.org/10.1109/access.2026.3658103)：用时间感知 MoE 路由文本视频检索，使不同专家适配不同事件与运动模式。
+- [Latent Prediction-Based Generative Semantic Communication for Video Transmission in Wireless Networks](https://doi.org/10.1109/ojcoms.2026.3684230)：预测视频潜在语义以支持生成式无线传输，贡献更偏语义通信。
+- [Bidirectional Motion-Enhanced Semantic Communication for Wireless Video Transmission](https://doi.org/10.1109/jiot.2026.3657245)：用双向运动建模改进无线视频语义传输与重建。
+- [HarmoNet: Music Grounding by Short Video via Harmonic Resample and Dynamic Sparse Alignment](https://doi.org/10.1109/icassp55912.2026.11461334)：通过 harmonic resample 和动态稀疏对齐，把音乐结构与短视频视觉内容对应起来。
+- [Bridging Vision and Language with Quantum State for Video-text Retrieval](https://doi.org/10.1109/icassp55912.2026.11461629)：用量子态启发的跨模态对齐表示文本视频检索，以增强查询与视频匹配。
+- [Decoupling Motion and Texture: A Hybrid Recurrent Network for Video Quality Enhancement](https://doi.org/10.1109/icassp55912.2026.11462453)：在混合循环网络中解耦运动与纹理分支，用于视频质量增强。
+- [An End-to-End Multimodal Deep Learning Model for Fake Video Detection and Authenticity Scoring](https://doi.org/10.1109/icmsci67830.2026.11469332)：用端到端多模态模型同时输出伪视频检测结果和真实性评分。
+- [Adaptive compressed domain video encryption](https://doi.org/10.1016/j.eswa.2026.131360)：在压缩域中自适应加密视频，更属于安全与编码方向而非视频理解模型。
+- [Guided by structure](https://doi.org/10.1007/s00138-026-01799-9)：用边界感知建模处理 moment retrieval 与 highlight detection，增强视频理解中的时间定位。
+- [Mamba-based Video Moment Retrieval](https://doi.org/10.1038/s41598-026-44804-x)：用 Mamba 式序列建模和调制融合做视频片段检索。核心思想：通过高效长程序列融合改进时间与语言对齐。
+- [Hierarchical Prototype Alignment](https://doi.org/10.3390/e28040389)：通过分层原型对齐改进视频时间定位。核心思想：在多层语义或时间尺度上组织查询与视频匹配，以提升片段定位能力。
+- [Event-Driven Hybrid and Cross-Stage Guide](https://doi.org/10.1145/3731715.3733330)：通过事件驱动和跨阶段引导改进视频语料片段检索，扩展视频时间 grounding 模型覆盖。
+- [CoCoCo](https://doi.org/10.1609/aaai.v39i10.33203)： 提升文本引导视频修复在一致性、可控性和兼容性上的表现。
+- [Federated Weakly Supervised Video Anomaly Detection with Multimodal Prompt](https://doi.org/10.1609/aaai.v39i20.35398)：结合全局-局部上下文、联邦学习与多模态提示，改进隐私保护场景下的弱监督视频异常检测。
+- [HSTforU](https://doi.org/10.1007/s10489-024-06042-4)：用 hierarchical spatio-temporal Transformer 与 U-Net 结构处理 aerial and ground video anomaly detection。
+- [Multi-Grained Alignment for Partially Relevant Video Retrieval](https://doi.org/10.1145/3716388)：结合多粒度对齐与知识蒸馏处理部分相关视频检索，提升查询与视频仅局部重合时的匹配。
+- [Multi-Scale Spatiotemporal Normality Learning](https://doi.org/10.1007/s10489-025-06485-3)：学习多尺度时空正常性用于无监督视频异常检测。
+- [Semantic Granularity Alignment for Video Retrieval](https://doi.org/10.1609/aaai.v39i4.32437)：弥合文本与帧表征之间的语义粒度差距，服务部分相关视频检索。
+- [VarCMP](https://doi.org/10.1609/aaai.v39i8.32909)：将跨模态预训练模型适配到视频异常检索，连接异常检测与检索式视频语言对齐。
+- [HACSPT](https://doi.org/10.1007/s11760-025-04747-8)：结合自适应对比学习、自定步训练与 Transformer 建模用于视频异常检测。
+- [VLIAL](https://doi.org/10.1145/3746267.3762176)：用 VLM 驱动的 instance-awareness learning 改进弱监督视频异常检测，强化语义化异常定位。
+- [ABC-WSVAD](https://doi.org/10.4114/intartif.vol28iss75pp281-297)：将 swarm optimization 式自适应用于弱监督视频异常检测。
+- [Adaptive Feature Refinement for Fine-Grained VAD](https://doi.org/10.1007/s00371-025-04331-8)：结合自适应特征细化与语义增强做细粒度视频异常检测。
+- [Transition-Aware Gaze Target Detection](https://doi.org/10.1145/3799429)：为视频中的 gaze-target detection 建模路径与方向变化，补充社会注意力相关的视频理解方法。
+- [Spatio-Temporal Capsule WSVAD](https://doi.org/10.3390/app16052567)：将 spatio-temporal capsule network 用于弱监督监控视频异常检测。
+- [GTF-SAM](https://doi.org/10.1007/s11760-025-04961-4)：结合 graph-temporal fusion 与 scene-aware margin 改进弱监督视频异常检测。
+- [SETJiP](https://doi.org/10.3390/s26092889)：用 spatial 与 extra-temporal jigsaw-puzzle objectives 改进 video anomaly detection。
+- [Semi-Supervised VAD without Anomalous Samples](https://doi.org/10.1145/3797034)：提出在缺少 anomalous training samples 场景下的 video anomaly detection baseline。
+- [Contextual Anchor-Guided Video Captioning](https://doi.org/10.1007/s00371-026-04353-w)：用 contextual anchors 做 video captioning 的 semantic modeling。
+- [Probabilistic-Ensemble Video Anomaly Detection](https://doi.org/10.1049/ipr2.70247)：结合 probabilistic modeling 与 ensemble learning 处理 deep spatiotemporal features 上的 video anomaly detection。
+- [SOR-BDNet](https://doi.org/10.1145/3801156)：结合 GPT-4o 与 semantic-optical representations 做 boundary-aware video anomaly detection。
+- [Hybrid Dual-Branch Attention VAD](https://doi.org/10.1007/s11760-026-05169-w)：结合 dual-branch attention 与 spatial-channel reconstruction convolution 做 video anomaly detection。
+- [Start-End Frame Restoration VAD](https://doi.org/10.1007/s10044-026-01670-7)：通过基于 start-end frames 与 contextual recall 的 video restoration 做 video anomaly detection。
+- [LLM-Generated Queries for Temporal Video Grounding](https://doi.org/10.1007/s00530-025-02147-z)：用 LLM-generated queries 区分 semantically similar temporal-grounding requests。
+- [HSM-MAE VAD](https://doi.org/10.1049/ipr2.70369)：结合 Hilbert-SSM memory autoencoding 与 real-time video anomaly detection。
+- [Context-Aware Video Violence Detection](https://doi.org/10.1007/s11760-025-05090-8)：用 hierarchical spatiotemporal and semantic modeling 做 video violence detection。
+- [AWLC-Net](https://doi.org/10.1007/s11760-026-05268-8)：结合 adaptive windowing 与 length-sensitive clustering，用于高效 partially relevant video retrieval。
+- [Multimodal Adaptive Fusion for Long-Term Action Anticipation](https://doi.org/10.1007/s00138-025-01774-w)：用 multimodal adaptive fusion 改进 long-term action anticipation。
+- [Scene-Dependent Memory RGB-Difference VAD](https://doi.org/10.1145/3746027.3754742)：用 scene-dependent memory 与 inter-frame RGB-difference reconstruction 做 efficient video anomaly detection。
+- [Temporal-Aware Prompt Learning for VAD](https://doi.org/10.1007/s11760-025-05031-5)：为弱监督视频异常检测加入 temporal-aware prompt learning。
+- [CO-MOT Multi-Object Tracking](https://openreview.net/forum?id=0ov0dMQ3mN)：通过 coopetition label assignment 和 shadow sets 改进端到端 Transformer 多目标跟踪。
+- [Dual-Stream Memory VAD](https://doi.org/10.3390/s25175496)：使用双流 attention-enhanced memory networks 做视频异常检测。
+- [Context-Aware Multi-Modal GAN VAD](https://doi.org/10.1007/s12083-025-02134-1)：用上下文感知多模态 GAN 做实时视频监控异常检测。
+- [Temporal-Spatial Focus Connector for Micro-Action Recognition](https://doi.org/10.1145/3746027.3762095)：通过时空 focus connector 改进细粒度 micro-action recognition 的渐进式大规模建模。
+- [Aggressive-Behavior Video Detection](https://doi.org/10.3390/computers15050267)：用深度时空模型在视频流中早期检测攻击性人类行为。
+- [Improved 3D DenseNet Video Key-Information Detection](https://doi.org/10.1007/s44163-026-01121-6)：用改进 3D DenseNet 在视频体数据中检测关键信息，利用局部时空卷积而不是逐帧独立处理。
+- [Context-Aware Global-Local Fusion VAD](https://doi.org/10.1145/3789982.3790017)：融合全局与局部上下文以改进弱监督视频异常检测。
+- [Cognitively Guided Multimodal Deception Detection](https://doi.org/10.1145/3728425.3759922)：通过认知引导的不一致性建模进行多模态欺骗检测。
+- [Mixed-Learning Multi-Head Attention VAD](https://api.crossref.org/works/10.1177/15741702251401521)：用 mixed learning 与 multi-head attention convolutional network 进行视频监控异常事件检测。
+- [VTG-LLM: Integrating Timestamp Knowledge into Video LLMs for Enhanced Video Temporal Grounding](https://doi.org/10.1609/aaai.v39i3.32341)：把 timestamp knowledge 注入 Video LLM 以增强 temporal grounding，改进时刻定位和时间感知的视频语言推理。
+- [TC-LLaVA: Rethinking the Transfer of LLava from Image to Video Understanding with Temporal Considerations](https://doi.org/10.1609/aaai.v39i3.32317)：重新审视 LLaVA 式模型从图像到视频理解的迁移，并把时间因素作为模型适配的核心。
+- [Aligning Instance Brownian Bridge with Texts for Open-Vocabulary Video Instance Segmentation](https://doi.org/10.1609/aaai.v39i3.32250)：将 instance Brownian bridge 与文本对齐，用于开放词表视频实例分割。
+- [RealVG: Unleashing MLLMs for Training-Free Spatio-Temporal Video Grounding in the Wild](https://doi.org/10.1145/3746027.3755381)：用 MLLM 进行免训练的开放场景时空视频定位，在无需任务专门微调的情况下扩展视频 grounding。
+- [Rethinking Video-Language Model from the Language Input Perspective](https://doi.org/10.1609/aaai.v40i5.37390)：从语言输入侧分析并改进视频语言模型，补充视觉 token 与时间建模路线。
+- [Multimodal-guided mixture-of-experts bias removal strategy for natural language video localization](https://doi.org/10.1007/s00530-025-02120-w)：用多模态引导的 mixture-of-experts 策略降低自然语言视频定位中的偏差。
+- [OV-VOD: Open-Vocabulary Video Object Detection](https://doi.org/10.1145/3746027.3755402)：补充 open-vocabulary video object detection，将视频感知从固定类别检测扩展到语言对齐的目标识别。
+- [Decoupling Dense Video Captioning via Task-specific Prompts](https://doi.org/10.1145/3746027.3754990)：用任务特定提示分离事件定位和字幕生成，降低时间边界预测与语言描述之间的相互干扰。
+- [Enhancing Empathy Through Personalized AI-Driven Experiences and Conversations with Digital Humans in Video Games](https://doi.org/10.1145/3665463.3678856)：关注电子游戏中的个性化数字人体验与对话，应作为交互或游戏方向的 off-axis routing 候选。
+- [Integrating Video, Text, and Images for Multimodal Disinformation Detection](https://doi.org/10.1145/3733567.3735570)：融合视频、文本和图像线索检测多模态虚假信息，而不是只用视频作为证据。
+- [From Clips to Communities: Fusing Social Video into Knowledge Graphs for Localness-Aware LLMs](https://doi.org/10.1145/3715070.3749277)：把社交视频片段转成知识图谱信号以支持 localness-aware LLM，更接近视频邻近的信息整合条目。
+- [Ask, Attend, Attack: An Effective Decision-Based Black-Box Targeted Attack for Image-to-Text Models](https://doi.org/10.52202/079017-3356)：通过查询和注意力引导攻击 image-to-text 模型，应转向多模态鲁棒性而非视频模型覆盖。
+- [Online Multi-AUV Trajectory Planning for Underwater Sweep Video Sensing in Unknown and Uneven Seafloor Environments](https://doi.org/10.3390/drones9110735)：为水下视频感知规划多 AUV 轨迹，属于机器人与感知应用而非视频模型方法。
+- [Fast Coding Unit Partitioning Method for Video-Based Point Cloud Compression: Combining Convolutional Neural Networks and Bayesian Optimization](https://doi.org/10.3390/electronics14071295)：用 CNN 和贝叶斯优化做 video-based point-cloud compression 的编码单元划分，更接近压缩基础设施。
+- [Video sketching using multi-domain guidance and implicit encoding](https://doi.org/10.1007/s00371-025-03941-6)：用多域引导和隐式编码生成 sketch 风格的视频表示，用于视频风格化。
+- [Cross-modal spatio-temporal fusion weakly supervised video anomaly detection based on large-scale vision-language models](https://doi.org/10.1007/s00530-025-02158-w)：利用大型视觉语言模型融合跨模态时空线索，做弱监督视频异常检测。
+- [A Slide Annotation System with Multimodal Analysis for Video Presentation Review](https://doi.org/10.3390/a19020110)：把多模态分析用于演示视频批注，更像领域应用而非通用视频模型条目。
+- [ActiveEye: Enabling Continuous and Responsive Video Understanding for Smart Eyewear Systems](https://doi.org/10.1145/3770641)：为智能眼镜设计连续、响应式视频理解，重点是可穿戴系统约束下的流式推理。
+- [STDD: A Hybrid Spatial-Temporal model for Deepfake Detection](https://doi.org/10.1145/3709020.3734831)：结合空间与时间分支，跨帧检测 deepfake 伪影。
+- [Time-IC: Empowering MLLM with Interleaved Context for Temporal-Sensitive Video Understanding](https://doi.org/10.1145/3743093.3771066)：在 MLLM 内交错注入时间上下文，使回答利用时序敏感证据而非无序帧摘要。
+- [OV-DAVEL: Towards Open-Vocabulary Dense Audio-Visual Event Localization in Untrimmed Videos](https://doi.org/10.1145/3746027.3755518)：在未裁剪视频中以开放词表标签定位密集音视频事件。
+- [Not All Inputs Are Valid: Towards Open-Set Video Moment Retrieval using Language](https://doi.org/10.1145/3664647.3680947)：为语言式 moment retrieval 加入 open-set 处理，使模型能拒绝无效或不匹配的视频查询。
+- [TimeCraft: Navigate Weakly-Supervised Temporal Grounded Video Question Answering via Bi-directional Reasoning](https://doi.org/10.1007/978-3-031-72652-1_6)：通过双向推理导航弱监督时间定位，以完成 grounded Video QA。
+- [Enhancing video temporal grounding with large language model-based data augmentation](https://doi.org/10.1007/s11227-025-07159-0)：用 LLM 生成增强数据来改进视频时间定位监督。
+- [Deep Learning-Based High-Accurate Violence Detection for Intelligent Video Surveillance Systems](https://doi.org/10.52783/pmj.v35.i3s.3892)：将深度时空分类器用于视频监控中的高精度暴力检测。
+- [AI and Generative Models in 360-Degree Video Creation: Building the Future of Virtual Realities](https://doi.org/10.3390/app15179292)：讨论生成式 AI 在 360 度 VR 视频创作中的应用，更适合视频生成或综述路由。
+- [Machine Learning for Video Classification Enables Quantifying Intermolecular Couplings from Simulated Time-Evolved Multidimensional Spectra.](https://doi.org/10.1021/acs.jpclett.5c00588)：把视频分类用于模拟时变谱以量化分子间耦合，是 video-like 序列的科学应用。
+- [Cascade context-oriented spatio-temporal attention network for efficient and fine-grained video-grounded dialogues](https://doi.org/10.1007/s11704-024-40387-w)：用 cascade context-oriented 时空注意力做细粒度 video-grounded dialogue。
+- [MARs: Multi-Scale Convolution-Attention residual Fusion for Video Summarization](https://doi.org/10.1145/3793853.3795749)：融合多尺度卷积与注意力残差特征，用于视频摘要。
+- [NDCA: a neighboring block differences-based cost assignment method for robust video steganography on social networks](https://doi.org/10.1186/s13635-025-00214-6)：为社交网络视频隐写优化邻域块差异代价分配，属于安全与编码邻近方向。
+- [THGS: Lifelike Talking Human Avatar Synthesis From Monocular Video Via 3D Gaussian Splatting](https://doi.org/10.1111/cgf.15282)：用 3D Gaussian Splatting 从单目视频合成逼真的说话人数字人。
+- [Disentangled Gaussian Splatting: High-Fidelity Relightable Volumetric Video through Geometry-Appearance Decoupling](https://doi.org/10.1145/3757376.3771406)：在 Gaussian Splatting 中解耦几何和外观，以生成高保真、可重光照的 volumetric video。
+- [LiVo: Toward Bandwidth-adaptive Fully-Immersive Volumetric Video Conferencing](https://doi.org/10.1145/3768981)：让 volumetric video conferencing 适配带宽约束，更接近视频系统与通信。
+- [EchoVim: Making Vision Mamba Docile for Echocardiography Video Segmentation via Dynamic Interaction and Semantic Token-attentive Refinement](https://doi.org/10.1145/3746027.3754876)：用动态交互和语义 token 注意力细化，把 Vision Mamba 适配到超声心动图视频分割。
+- [VSumMamba: Mamba Empowered Efficient Video Summarization with Multi-Scale Spatial-Temporal Modeling](https://doi.org/10.1145/3746027.3755644)：用 Mamba 和多尺度时空建模实现高效视频摘要。
+- [SAND: A New Programming Abstraction for Video-based Deep Learning](https://doi.org/10.1145/3731569.3764847)：提供 video-based deep learning 流水线的编程抽象，应转向系统或工具路由。
+- [CMFF_VS: A Video Summarization Extraction Model based on Cross-modal Feature Fusion](https://doi.org/10.1007/s13369-025-10133-w)：通过跨模态特征融合抽取视频摘要，对齐视觉与辅助信号。
+- [Leveraging Bird Eye View Video and Multimodal Large Language Models for Real-Time Intersection Control and Reasoning](https://doi.org/10.3390/safety11020040)：用鸟瞰视频和 MLLM 推理做实时路口控制，属于交通控制应用。
+- [Structuring Video Semantics with Temporal Triplets for Zero-Shot Video Question Answering](https://doi.org/10.1145/3746252.3760857)：把视频语义表示为 temporal triplets，以支持零样本 Video QA 推理。
+- [STGas: infrared video gas leakage detection based on spatio-temporal feature fusion](https://doi.org/10.1088/1361-6501/ae0061)：融合红外视频空间与时间特征来检测气体泄漏。
+- [Leveraging 3DCNN and Weighted Similarity Metrics for Enhanced Content-Based Video Retrieval](https://doi.org/10.1007/s11760-025-04967-y)：结合 3D CNN 特征和加权相似度指标做 content-based video retrieval。
+- [Do the Four Components of Psychological Capital Have Differential Buffering Effects? A Longitudinal Study on Parental Neglect and Adolescent Problematic Short-Form Video Use](https://doi.org/10.3390/bs15101396)：研究青少年短视频使用的心理学问题，应作为 parent-routing 候选而非模型条目。
+- [IAM-VFI : Interpolate Any Motion for Video Frame Interpolation with Motion Complexity Map](https://doi.org/10.1007/978-3-031-72633-0_26)：用运动复杂度图引导视频帧插值，使模型处理不同运动模式。
+- [Temporally consistent low-light face video enhancement via video-to-video conditional diffusion](https://doi.org/10.1038/s41598-026-44219-8)：用 video-to-video 条件扩散增强低光人脸视频，同时保持时间一致性。
+- [Dual Sparse Long-Short Term Transformer for Video Shadow Detection](https://doi.org/10.1145/3796725)：结合稀疏长时和短时 Transformer 建模进行视频阴影检测。
+- [SkyCL: Swift Continuous Learning with Kinship-Awareness for Multi-Drone Video Analytics under Drastic Drift](https://doi.org/10.1145/3774904.3792131)：通过 kinship-aware continuous learning 让多无人机视频分析适应剧烈分布漂移。
+- [Street Scenes: Public Appliances for GenAI Video in Informal Settlements](https://doi.org/10.1145/3772318.3791033)：描述非正规住区中的公共 GenAI 视频装置，应作为 HCI 或部署方向候选。
+- [Multi-Scale U-Shaped Adaptive Clustering Learning Framework for Unsupervised Video Anomaly Detection](https://doi.org/10.3390/electronics15081558)：用多尺度 U 形自适应聚类框架做无监督视频异常检测。
+- [Collaborative Temporal Consistency Learning for Point-supervised Natural Language Video Localization](https://doi.org/10.1007/s11263-026-02777-4)：用协同时间一致性从点监督中学习自然语言视频定位。
+- [PerforMagic: Coordinating Bodily Performance and Camera Movement in AI Video Creation](https://doi.org/10.1145/3772363.3798782)：协调身体表演与摄像机运动进行 AI 视频创作，属于生成与创意工具条目。
+- [Att-BiLSTM-GAN: A Temporal Coherence-Preserving GAN Framework for Dynamic Art Video Stylization](https://doi.org/10.31449/inf.v50i10.11975)：用 attention BiLSTM GAN 进行动态艺术视频风格化，并保持时间连贯。
+- [End-to-End Teleoperated Driving Video Transmission Under 6G with AI and Blockchain](https://doi.org/10.3390/s26020571)：面向 6G、AI 与区块链的远程驾驶视频传输，应转向网络系统而非模型覆盖。
+- [Automated irrelevant individuals recognition algorithm in video via motion trajectories](https://doi.org/10.1093/comjnl/bxaf075)：通过运动轨迹分析识别视频中的无关人员。
+- [Rapid Agrichemical Inventory via Video Documentation and Large Language Model Identification](https://doi.org/10.3390/ijerph22101527)：用视频记录和 LLM 识别做农化品盘点，是偏应用的工作流条目。
+- [Pemanfaatan Musik AI Generatif pada Video Sinematik Promosi Wisata Sumber Maron](https://doi.org/10.65316/janur.v1i2.21)：讨论旅游宣传视频中生成式 AI 音乐的使用，应移出视频理解模型。
+- [Error-Guided Multimodal Sample Selection with Hallucination Suppression for LVLMs](https://doi.org/10.3390/computers14120564)：通过错误引导和幻觉抑制为 LVLM 训练选择多模态样本。
+- [Leveraging Label Distributions as Anchors to Enhance Video Recommendation](https://doi.org/10.1145/3711896.3737276)：用标签分布作为锚点改进视频推荐，更接近推荐系统而非核心视频理解。
+- [Multimodal anomaly detection in complex environments using video and audio fusion](https://doi.org/10.1038/s41598-025-01146-4)：融合音频和视频流，在复杂环境中做异常检测。
+- [Efficient text-to-video retrieval via multi-modal multi-tagger derived pre-screening](https://doi.org/10.1007/s44267-025-00073-2)：用多模态多标签器预筛选缩小文本到视频检索空间。
+- [MT-CMVAD: A Multi-Modal Transformer Framework for Cross-Modal Video Anomaly Detection](https://doi.org/10.3390/app15126773)：用多模态 Transformer 学习跨模态线索进行视频异常检测。
+- [EvSTVSR: Event Guided Space-Time Video Super-Resolution](https://doi.org/10.1609/aaai.v39i9.32983)：用事件信号引导时空视频超分辨率。
+- [Farther Than Mirror: Explore Pattern-Compensated Depth of Mirror with Temporal Changes for Video Mirror Detection](https://doi.org/10.1145/3746027.3754884)：通过 pattern-compensated depth 和时间变化建模来检测视频中的镜面。
+- [Spatio-Temporal Attention for Text-Video Retrieval](https://doi.org/10.1145/3715137)：用时空注意力把文本查询与视频事件对齐以进行检索。
+- [Capturing spatiotemporal dependencies with competitive set attention for video summarization](https://doi.org/10.1007/s00371-025-03865-1)：用 competitive set attention 捕捉视频摘要中的时空依赖。
+- [WSVAD-CLIP: Temporally Aware and Prompt Learning with CLIP for Weakly Supervised Video Anomaly Detection](https://doi.org/10.3390/jimaging11100354)：为 CLIP 加入时间感知与 prompt learning，用于弱监督视频异常检测。
+- [Joint Spatiotemporal Adversarial Attacks on Video Transformer Models Through XAI-guided Perturbation](https://doi.org/10.1145/3766071)：用 XAI 引导扰动在空间和时间上联合攻击视频 Transformer。
+- [PEARL: Perceptual and Analytical Representation Learning for Video Anomaly Detection](https://doi.org/10.1145/3727257.3727258)：为视频异常检测学习感知式与分析式表征。
+- [GraphVSum:graph guided multimodal video summarization](https://doi.org/10.1007/s00530-025-02084-x)：用视觉和语义证据图结构引导多模态视频摘要。
+- [Diffusion-driven key segment generation via progressive boundary optimization for partially relevant video retrieval](https://doi.org/10.1117/12.3072530)：通过扩散生成关键片段，并渐进优化边界以服务部分相关视频检索。
+- [EM-OFRP: enhanced memory-based optical flow reconstruction and variational prediction for video anomaly detection](https://doi.org/10.1007/s00530-025-01958-4)：结合基于记忆的光流重建和变分预测来做视频异常检测。
+- [QANet: quaternion attention network for video summarization](https://doi.org/10.1117/1.jei.34.2.023028)：用 quaternion attention 建模多通道关系，用于视频摘要。
+- [Causal Attention Transformer for Video Text Retrieval](https://doi.org/10.1049/ipr2.70093)：在 Transformer 文本视频检索中加入因果注意力，建模事件与查询的方向性关系。
+- [Lightweight Relational Proposal Network with Dual-Branch Distillation for Video Moment Retrieval](https://doi.org/10.1145/3746027.3755391)：用关系 proposal 和双分支蒸馏实现轻量化视频 moment retrieval。
+- [Time-constrained adversarial attacks for video recognition models: temporally sparse but effective perturbations](https://doi.org/10.1007/s00138-025-01779-5)：用帧级 mask 精确选择 K 帧施加扰动并保持其他帧不变，再结合基于分数的更新和投影约束，支持定向与非定向视频识别攻击。
+- [From Skeleton to Flesh: Aggregated Relational Transformer Towards Controllable Video Captioning with Two-Step Decoding](https://doi.org/10.1145/3731715.3733347)：用聚合关系 Transformer 进行可控视频字幕生成，并采用从结构到文本的两阶段解码。

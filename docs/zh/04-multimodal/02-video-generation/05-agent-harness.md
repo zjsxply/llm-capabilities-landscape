@@ -1,18 +1,40 @@
 # 4.2.5 Agent Harness
 
+- [LAVE: LLM-Powered Agent Assistance and Language Augmentation for Video Editing](https://arxiv.org/abs/2402.10294)：一个 LLM 辅助剪辑界面，先为用户素材生成语言描述，再让 agent 根据剪辑目标规划并执行操作，同时保留时间线上的人工精修。
+- [Motion-Agent: A Conversational Framework for Human Motion Generation with LLMs](https://arxiv.org/abs/2405.17013)：提供用 LLM 控制人体运动生成的对话式框架。
+- [From Data to Story: Towards Automatic Animated Data Video Creation with LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2408.03876)：Data Director 让多个 agent 分别解析原始数据、规划叙事角色，并把图表、旁白和视觉组件组合成动画数据故事视频。
+- [Anim-Director: A Large Multimodal Model Powered Agent for Controllable Animation Video Generation](https://arxiv.org/abs/2408.09787)：用 LMM 充当动画导演，把简短输入扩展为故事线、角色设定、场景描述、生成图像和动画片段。
+- [Kubrick: Multimodal Agent Collaborations for Synthetic Video Generation](https://arxiv.org/abs/2408.10453)：协调 Director、Programmer 和 Reviewer 等 VLM agent，把文本描述转成 Blender 脚本来渲染物理更可靠的合成视频。
+- [DreamFactory: Pioneering Multi-Scene Long Video Generation with a Multi-Agent Framework](https://arxiv.org/abs/2408.11788)：结合多智能体协作、思维链规划和关键帧迭代，在多场景长视频中维持风格与身份一致性。
 - [FilmAgent](https://arxiv.org/abs/2501.12909)：面向虚拟 3D 空间的多智能体电影自动化框架。核心思路：把电影创作拆成多个协作角色和可执行的场景生产步骤，而不是把视频生成简化为单次提示词调用。
 - [MM-StoryAgent](https://arxiv.org/abs/2503.05242)（[开源代码](https://github.com/X-PLUG/MM_StoryAgent)）：面向有声故事书视频生成的多智能体 harness。核心思路是协调写作、视觉生成、旁白、音效和音乐模块，使故事能够跨文本、图像与音频工具完成规划和渲染，而不是依赖单一模型一次性生成。
 - [MovieAgent](https://arxiv.org/abs/2503.07314)：一个用于自动化长视频生成的多智能体规划框架。核心思路是让导演、编剧、分镜师和场景管理等 LLM 智能体分工协作，将脚本拆解为场景、镜头、机位、字幕、音频和角色一致的生成步骤。
 - [V-Stylist](https://arxiv.org/abs/2503.12077)：一个多智能体视频风格化框架。核心思路是协调视频解析、风格模型搜索和反思修正，使 MLLM 智能体能够分解多镜头视频并迭代改进风格化结果。
+- [VideoGen-of-Thought: Step-by-step generating multi-shot video with minimal manual intervention](https://arxiv.org/abs/2503.15138)：从一句话自动生成多镜头视频，先扩展为电影化镜头规格，再传播身份 token 并验证跨镜头连续性。
+- [The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-To-Video Generation](https://arxiv.org/abs/2504.11739)：补充视频、三维与世界生成方向的外部编排或执行框架。
+- [Scaling Image and Video Generation via Test-Time Evolutionary Search](https://arxiv.org/abs/2505.17618)：补充视频、三维与世界生成方向的外部编排或执行框架。
 - [AniMaker](https://arxiv.org/abs/2506.10540)：一个面向动画叙事的多智能体 harness。核心思想：结合角色化故事规划与 MCTS 驱动的片段生成，使长动画能在多个 agent 间拆解、搜索和修订。
 - [AniME](https://arxiv.org/abs/2508.18781)：一个面向长动画生成的多智能体规划 harness。核心思想：自适应协调规划角色，使长动画在生成片段之间保持情节、角色和场景一致性。
+- [FantasyHSI: Video-Generation-Centric 4D Human Synthesis In Any Scene through A Graph-based Multi-Agent Framework](https://arxiv.org/abs/2509.01232)：使用基于图的多代理框架生成长程人-场景交互视频。核心思想：协调场景导航、动作规划和评论反馈，使生成的人类行为在未见场景中保持连贯。
 - [EditDuet](https://arxiv.org/abs/2509.10761)：面向非线性视频编辑的多智能体 harness。核心思想是把编辑拆给使用视频编辑工具的 Editor agent 和给出反馈或确认渲染的 Critic agent，使指令驱动视频编辑成为迭代式工具工作流。
+- [Code2Video: A Code-centric Paradigm for Educational Video Generation](https://arxiv.org/abs/2510.01174)：用规划和编码智能体通过可执行 Python 渲染代码生成教学视频。
 - [MagicWand](https://arxiv.org/abs/2511.18352)：面向图像和视频 AIGC 的用户偏好对齐生成与评估智能体。核心思路是在提示增强、生成、评估和迭代修正中持续引入偏好描述，并用 UniPreferBench 评估偏好对齐。
 - [AutoMV](https://arxiv.org/abs/2512.12196)：围绕歌曲结构、节拍、歌词和音乐属性协调多个 Agent，规划并生成时间一致的完整 MV。
 - [The Script is All You Need](https://arxiv.org/abs/2601.17737)：面向长程对话到电影化视频生成的智能体框架，将脚本作为多阶段视频创作的规划载体。
-- [SAGE: Scalable Agentic 3D Scene Generation](https://arxiv.org/abs/2602.10116)：为具身 agent 评测提供可扩展 3D 场景生成。核心思想：合成带行动约束的场景，使机器人或模拟 agent 能在多样可行动环境中测试，而不是依赖少量固定地图。
+- [StoryState: Agent-Based State Control for Consistent and Editable Storybooks](https://arxiv.org/abs/2602.01305)：在无训练文生图故事书生成上增加可编辑 story state，显式维护角色表、全局设定和逐页场景约束，使局部编辑不破坏跨页一致性。
+- [Retrieval, Refinement, and Ranking for Text-to-Video Generation via Prompt Optimization and Test-Time Scaling](https://arxiv.org/abs/2603.01509)：提供规划、记忆、验证、工具调用或运行时编排，服务于视频生成、视频编辑与世界模型，可补充围绕视觉生成和世界模型的智能体式编排、检索、重排或测试时搜索。
+- [ShareVerse](https://arxiv.org/abs/2603.02697)：用多智能体生成流程维持视频场景中的共享世界一致性。
 - [SPIRAL](https://arxiv.org/abs/2603.08403)：面向长程动作条件视频生成的反思式规划 harness。核心思想：由 PlanAgent 分解目标，结合记忆上下文逐段生成视频，再由 CriticAgent 反思并修复跨时间的动作执行。
+- [A Text-Native Interface for Generative Video Authoring](https://arxiv.org/abs/2603.09072)：Doki 把自由文本作为生成式视频创作界面，在同一文档中定义资产、组织场景、编排镜头、修改剪辑并添加音频。
 - [Mind-of-Director](https://arxiv.org/abs/2603.14790)：多模态智能体驱动的影片预演框架，通过协作决策组织生成前的电影化规划。
+- [WorldAgents: Can Foundation Image Models be Agents for 3D World Models?](https://arxiv.org/abs/2603.19708)：提供规划、记忆、验证、工具调用或运行时编排，服务于视频生成、视频编辑与世界模型，可补充围绕视觉生成和世界模型的智能体式编排、检索、重排或测试时搜索。
+- [VQ-Jarvis](https://arxiv.org/abs/2603.22998)：构建带质量感知与高效搜索的检索增强视频修复智能体，把视频编辑与修复从固定流水线扩展到动态代理流程。
 - [CutClaw](https://arxiv.org/abs/2603.29664)（[开源代码](https://github.com/GVCLab/CutClaw)）：通过音乐同步进行小时级视频剪辑的 agentic harness。核心思想：围绕音频结构协调长程剪辑决策，使视频剪辑智能体能处理更长时间线。
 - [DIRECT](https://arxiv.org/abs/2604.04875)：采用层级式多智能体规划与意图引导编辑的视频混剪生成框架，适合作为视频组合创作中的智能体编排案例。
+- [SCMAPR: Self-Correcting Multi-Agent Prompt Refinement for Complex-Scenario Text-to-Video Generation](https://arxiv.org/abs/2604.05489)：用自校正多智能体提示优化复杂场景文本到视频生成，将提示修复作为编排层。
 - [Camera Artist](https://arxiv.org/abs/2604.09195)：面向电影化语言叙事视频生成的多智能体框架，关注叙事、镜头与拍摄决策的协同。
+- [CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding](https://arxiv.org/abs/2604.13452)：一个多智能体视觉分镜框架，显式跟踪角色连续性、背景锚点和位置感知的场景转场，用于长篇视觉叙事。
+- [A LangGraph-Orchestrated Multi-Agent Framework for Automated Multimedia Production](https://doi.org/10.1109/icmsci67830.2026.11469317)：面向视频、三维与世界模型生成的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“A LangGraph-Orchestrated Multi-Agent Framework for Automated Multimedia Production”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [VideoCraft](https://doi.org/10.1145/3746059.3747606)：用混合现实空间图层编辑组织概念视频创作流程，适合作为工具介入式视频生成 harness。
+- [Boosting Text-to-Video Generative Model with MLLMs Feedback](https://doi.org/10.52202/079017-4426)：用 MLLM 偏好标注构建 VideoPrefer 和 VideoRM，把反馈生成变成文生视频模型的对齐闭环。
+- [ChoreoCraft: In-situ Crafting of Choreography in Virtual Reality through Creativity Support Tool](https://doi.org/10.1145/3706598.3714220)：一个 VR 编舞创作工具，通过上下文感知动作建议和运动学反馈，帮助编舞者找回、延展并评估舞蹈序列。

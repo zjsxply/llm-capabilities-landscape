@@ -3,34 +3,150 @@
 说明：这类 benchmark 往往不需要“专门命名的 solver agent”，更常见的形态是 `benchmark 自带 harness（切片、RAG 开关、无上下文对照）+ 可插拔上下文压缩/检索组件`。跨会话、跨任务的长期记忆已单列到 [1.15 记忆](../15-memory/README.md)，本节只保留与单次长输入或上下文增长过程直接相关的项目。
 
 - [DUDE](https://arxiv.org/abs/2305.08455)：评测图文长上下文对文档理解的影响；核心思想是把图文混合长输入作为主要负载并强调 evidence 对齐。
-- [L-Eval](https://arxiv.org/abs/2307.11088)（[开源代码](https://github.com/OpenLMLab/LEval)）：评什么：长上下文问答、摘要和闭卷/开卷任务；核心思想：建立标准化长上下文评测协议，早期区分上下文长度、任务类型和输入依赖。
-- [LongBench](https://arxiv.org/abs/2308.14508)：评测长上下文下的任务完成质量（多任务集合）；核心思想是用统一数据与脚本对比 `长输入 vs 截断/无上下文`，暴露长程依赖失败模式。（[开源代码](https://github.com/THUDM/LongBench)）
+- [L-Eval](https://arxiv.org/abs/2307.11088)（[榜单](https://l-eval.github.io/)；[开源代码](https://github.com/OpenLMLab/LEval)）：评什么：长上下文问答、摘要和闭卷/开卷任务；核心思想：建立标准化长上下文评测协议，早期区分上下文长度、任务类型和输入依赖。
+- [LongBench](https://arxiv.org/abs/2308.14508)：评测长上下文下的任务完成质量（多任务集合）；核心思想是用统一数据与脚本对比 `长输入 vs 截断/无上下文`，暴露长程依赖失败模式。（[榜单](https://longbench2.github.io/)；[开源代码](https://github.com/THUDM/LongBench)）
 - [BAMBOO](https://arxiv.org/abs/2309.13345)（[开源代码](https://github.com/RUCAIBox/BAMBOO)）：评什么：长文本建模能力，包括跨段推理、摘要和信息定位；核心思想：用多任务集合诊断 LLM 在长文本结构理解上的短板。
-- [Needle In A Haystack](https://github.com/gkamradt/LLMTest_NeedleInAHaystack)：评什么：长上下文单 needle 检索；核心思想：把目标片段埋入不同深度和长度的位置，快速暴露“声明窗口”和“可用窗口”的差距。
-- [LV-Eval](https://arxiv.org/abs/2402.05136)（[开源代码](https://github.com/infinigence/LVEval)）：评什么：不同长度区间（最高到 256K）下的长上下文表现；核心思想：用长度分层（length levels）做更平衡的对照，避免只在单一长度点比较。
+- [DocFinQA: A Long-Context Financial Reasoning Dataset](https://arxiv.org/abs/2401.06915)：把 FinQA 问题从短片段扩展到平均 123K 词的完整财报上下文，使金融数值问答同时考察长文档检索、精确定位和推理；检索式 QA 与长上下文 LLM 在最长文档上仍明显吃力。
+- [Can Large Language Models Understand Context?](https://arxiv.org/abs/2402.00858)：评估大语言模型是否真正理解上下文，而不只是利用表层线索。
+- [LV-Eval](https://arxiv.org/abs/2402.05136)（[榜单](https://github.com/infinigence/LVEval#leaderboard)；[开源代码](https://github.com/infinigence/LVEval)）：评什么：不同长度区间（最高到 256K）下的长上下文表现；核心思想：用长度分层（length levels）做更平衡的对照，避免只在单一长度点比较。
+- [Benchmarking and Building Long-Context Retrieval Models with LoCo and M2-BERT](https://arxiv.org/abs/2402.07440)：提出 LoCoV1 这套 12 任务长文档检索基准，专门覆盖切块无效或效果差的场景，并配套评测可处理 32K token 文档的 80M 参数状态空间检索编码器 M2-BERT。
 - [InfinityBench（∞Bench）](https://arxiv.org/abs/2402.13718)（[开源代码](https://github.com/OpenBMB/InfiniteBench)）：评什么：超过 100K tokens 的超长上下文任务能力；核心思想：把评测长度上限推到更大区间，显式暴露长输入下的退化曲线与截断策略影响。
+- [Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models](https://arxiv.org/abs/2402.14848)：通过给同一组 QA 推理样本加入不同长度、类型和位置的 padding 来隔离输入长度效应，发现推理能力会在远低于标称窗口的位置退化，且 next-token perplexity 可能与任务成功率负相关。
+- [CLongEval: A Chinese Benchmark for Evaluating Long-Context Large Language Models](https://arxiv.org/abs/2403.03514)：构建 7 个任务、7,267 个样例、覆盖 1K 到 100K token 窗口的中文长上下文基准，并加入 2,000 多个人工标注问答，发布数据、脚本和模型输出用于比较中文长上下文 LLM。
 - [Counting-Stars](https://arxiv.org/abs/2403.11802)（[开源代码](https://github.com/nick7nlp/Counting-Stars)）：评什么：长上下文中的多证据检索与推理。核心思想：同时改变证据位置和数量，要求模型汇集分散线索，而不是只完成单 needle 查找。
 - [NovelQA](https://arxiv.org/abs/2403.12766)（[项目页](https://novelqa.github.io/)，[数据集](https://huggingface.co/datasets/NovelQA/NovelQA)）：评什么：超过 200K token 的长篇小说问答。核心思想：要求模型理解跨整本作品分散出现的人物、事件和细节证据，而不是只做孤立 needle 检索。
-- [RULER](https://arxiv.org/abs/2404.06654)（[开源代码](https://github.com/hsiehjackson/RULER)）：评什么：长上下文模型的“真实可用上下文长度”；核心思想：用多种 needle/依赖形式系统诊断“宣称窗口大小”和“可用窗口大小”的差距。
-- [MileBench](https://arxiv.org/abs/2404.18532)（[开源代码](https://github.com/milebench/MileBench)）：评什么：多模态长上下文模型在长视频、长图文序列和跨模态检索/推理上的表现；核心思想：把长上下文压力从纯文本扩展到多模态输入，并提供公开 leaderboard 方便对齐。
+- [ConvBench: A Multi-Turn Conversation Evaluation Benchmark with Hierarchical Capability for Large Vision-Language Models](https://arxiv.org/abs/2403.20194)：用 577 组多轮对话和 215 个任务评测 LVLM，并按感知、推理、创造三级能力层级归因错误，使长对话失败能定位到具体能力层。
+- [ELITR-Bench: A Meeting Assistant Benchmark for Long-Context Language Models](https://arxiv.org/abs/2403.20262)：在 ELITR 会议语料上增加 271 个手写问答，并按不同词错误率构造 ASR 噪声转写，用会议助手场景测试模型对口语化、嘈杂长上下文的鲁棒性。
+- [Long-context LLMs Struggle with Long In-context Learning](https://arxiv.org/abs/2404.02060)：检验长上下文模型能否利用大量上下文示例，而不只是检索近邻事实。
+- [XL$^2$Bench: A Benchmark for Extremely Long Context Understanding with Long-range Dependencies](https://arxiv.org/abs/2404.05446)：在中英文小说、论文和法律阅读场景中设置超长上下文任务，并按记忆检索、细节理解、整体理解和开放生成四级能力递进，避免把长依赖简化成 padding。
+- [Ada-LEval: Evaluating long-context LLMs with length-adaptable benchmarks](https://arxiv.org/abs/2404.06480)：用 TSort 和 BestAnswer 两个子集精确控制样本长度，能生成最高 128K token 的测试样本，从而拆开 L-Eval、LongBench 等混合长度基准中的长度混杂因素。
+- [RULER](https://arxiv.org/abs/2404.06654)（[结果](https://github.com/NVIDIA/RULER)；[开源代码](https://github.com/hsiehjackson/RULER)）：评什么：长上下文模型的“真实可用上下文长度”；核心思想：用多种 needle/依赖形式系统诊断“宣称窗口大小”和“可用窗口大小”的差距。
+- [MileBench](https://arxiv.org/abs/2404.18532)（[榜单](https://milebench.github.io/)；[开源代码](https://github.com/milebench/MileBench)）：评什么：多模态长上下文模型在长视频、长图文序列和跨模态检索/推理上的表现；核心思想：把长上下文压力从纯文本扩展到多模态输入，并提供公开 leaderboard 方便对齐。
+- [Can Perplexity Reflect Large Language Model's Ability in Long Text Understanding?](https://arxiv.org/abs/2405.06105)：批判用 perplexity 代表长文本能力的做法，指出 PPL 主要反映局部语言建模，与长文本理解任务几乎不相关，因而低 PPL 不能证明模型真正利用了长程依赖。
+- [Russian-Language Multimodal Dataset for Automatic Summarization of Scientific Papers](https://arxiv.org/abs/2405.07886)：发布 420 篇俄语科研论文组成的长文档摘要数据集，包含正文、表格和图像，并报告 GigaChat 与 YandexGPT 的摘要基线结果。
+- [Challenges in Deploying Long-Context Transformers: A Theoretical Peak Performance Analysis](https://arxiv.org/abs/2405.08944)：从 KV cache 增长出发量化 100K 到 10M token Transformer 的 prefill、并发、通信和吞吐瓶颈，更像长上下文系统性能评估而非任务数据集。
+- [Long-Span Question-Answering: Automatic Question Generation and QA-System Ranking via Side-by-Side Evaluation](https://arxiv.org/abs/2406.00179)：利用整本书自动生成涉及人物弧线、主题和早期事件后果的阅读理解题，并用成对答案比较和 Bradley-Terry 模型对 QA 系统排序，避免单答案绝对评分。
+- [Analyzing Temporal Complex Events with Large Language Models? A Benchmark towards Temporal, Long Context Understanding](https://arxiv.org/abs/2406.02472)：提出面向新闻时间复杂事件的 TCELongBench，包含阅读理解、时间排序和未来事件预测三类任务，用长窗口 LLM 与 RAG 比较对长事件链的处理能力。
+- [RepoQA: Evaluating Long Context Code Understanding](https://arxiv.org/abs/2406.06025)：从 50 个仓库和 5 种编程语言中构造 500 个 Searching Needle Function 任务，要求模型根据自然语言描述定位目标函数，而不是匹配显式代码 needle。
+- [BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack](https://arxiv.org/abs/2406.10149)：用长上下文“针中推理”任务检验模型能否利用分散证据完成推理。
+- [SEAM: A Stochastic Benchmark for Multi-Document Tasks](https://arxiv.org/abs/2406.16086)：统一多文档摘要、问答和共指任务的输入输出格式，并在重复评测中随机改变文档顺序等因素，使分数能反映 prompt 变体敏感性而不是单一静态样本。
+- [One Thousand and One Pairs: A “novel” challenge for long-context language models](https://arxiv.org/abs/2406.16264)：构建基于小说叙事的长上下文配对挑战，要求模型跨长篇故事匹配成对证据，而不是只检索单个局部片段。
+- [Losing Visual Needles in Image Haystacks: Vision Language Models are Easily Distracted in Short and Long Contexts](https://arxiv.org/abs/2406.16851)：提出 LoCoVQA 动态生成器，在数学、VQA 和字符识别题周围加入域内外视觉干扰图，显示 VLM 随视觉上下文变长会快速、近似对数式掉点。
+- [Leave No Document Behind: Benchmarking Long-Context LLMs with Extended Multi-Doc QA](https://arxiv.org/abs/2406.17419)：构建 Loong 扩展多文档 QA，每篇文档都与答案相关，并设置 Spotlight Locating、Comparison、Clustering 和 Chain of Reasoning 四类任务，避免用无关噪声拉长输入。
+- [Summary of a Haystack: A Challenge to Long-Context LLMs and RAG Systems](https://arxiv.org/abs/2407.01370)：合成包含重复目标 insight 的文档 haystack，要求系统生成带来源引用的 query-focused summary，并用 Coverage 与 Citation 两个维度自动评估长上下文 LLM 和 RAG。
+- [Needle in the Haystack for Memory Based Large Language Models](https://arxiv.org/abs/2407.01437)：用 passkey 和 needle-in-a-haystack 回忆任务展示 Larimar 的外部关联记忆能在测试时离 GPU 写入长上下文并读回事实，无需在更长窗口上训练。
+- [MMLongBench-Doc](https://arxiv.org/abs/2407.01523)：评测长文档多模态理解；核心思想是用文档型多模态输入检验跨页/跨段对齐与摘要压缩能力。
+- [KV Cache Compression, But What Must We Give in Return? A Comprehensive Benchmark of Long Context Capable Approaches](https://arxiv.org/abs/2407.01527)：在七类长上下文任务上比较十余种 KV cache、token dropping、prompt compression、线性序列模型和混合架构方法，揭示单看压缩率或延迟会隐藏的质量代价。
+- [EVA-Score: Evaluation of Long-form Summarization on Informativeness through Extraction and Validation](https://arxiv.org/abs/2407.04969)：提出面向抽象长摘要的信息量指标，从生成摘要中抽取信息单元、与参考内容验证重叠，并给出可解释的 richness 分数。
+- [NeedleBench: Can LLMs Do Retrieval and Reasoning in 1 Million Context Window?](https://arxiv.org/abs/2407.11963)：生成双语、自适应长度的长上下文测试，并按稀疏 needle 检索和密集 Ancestral Trace 推理区分信息密度，检验模型在百万窗口中的连续检索与推理能力。
+- [Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark](https://arxiv.org/abs/2407.13766)：用大量互不相关图像构造多图问答，测量跨图推理和关键图像位置偏差，并提供 MIRAGE 作为可处理数千图像的轻量 visual-RAG 基线。
+- [Fast Training Dataset Attribution via In-Context Learning](https://arxiv.org/abs/2408.11852)：通过比较有无检索上下文时的 LLM 输出，并用混合分布矩阵分解估计训练数据贡献；它更像数据归因评估线索，而不是核心长上下文基准。
+- [UserSumBench: A Benchmark Framework for Evaluating User Summarization Approaches](https://arxiv.org/abs/2408.16966)：在 MovieLens、Yelp 和 Amazon Review 用户活动上做无参考用户画像摘要评估，并提供 time-hierarchical summarizer 与 self-critique verifier 作为抗幻觉基线。
+- [DetectiveQA: Evaluating Long-Context Reasoning on Detective Novels](https://arxiv.org/abs/2409.02465)：提供 1,200 个中英文人工问题，覆盖平均超过 100K token 的侦探小说，并配套参考推理步骤和 step-wise metric 来评测叙事证据检索。
+- [Retrieval Or Holistic Understanding? Dolce: Differentiate Our Long Context Evaluation Tasks](https://arxiv.org/abs/2409.06338)：用复杂度和冗余度参数区分 benchmark item 是偏检索还是偏整体理解，并通过抽样短片段估计任务是否无需阅读全文也能解出。
+- [Michelangelo: Long Context Evaluations Beyond Haystacks via Latent Structure Queries](https://arxiv.org/abs/2409.12640)：用 Latent Structure Queries 构造可自动评分的合成代码与自然语言任务，要求模型剔除无关上下文、恢复隐藏结构并回答结构细节，而不是寻找单个 needle。
+- [FRAMES](https://arxiv.org/abs/2409.12941)（数据集：[google/frames-benchmark](https://huggingface.co/datasets/google/frames-benchmark)）：评什么：检索增强与长文档环境中的事实性、检索与多跳推理；核心思想：用需要跨多篇文档整合证据的问题，联合测量 `factuality + retrieval + reasoning`。
+- [Evaluating Multilingual Long-Context Models for Retrieval and Reasoning](https://arxiv.org/abs/2409.18006)：提出或分析面向long-context, memory, or sequence modeling的基准、数据集、指标或评测协议。
+- [LFQA-E: Carefully Benchmarking Long-form QA Evaluation](https://arxiv.org/abs/2410.01945)：构建多语言、有参考答案的长篇问答 meta-evaluation 集，含 1,618 个问题和 7,323 个成对比较，覆盖 15 个主题，并显示 17 种自动指标仍无法接近人类判断。
+- [HELMET](https://arxiv.org/abs/2410.02694)（[榜单](https://princeton-nlp.github.io/HELMET/)；[开源代码](https://github.com/princeton-nlp/HELMET)）：评什么：多维长上下文评测集合；核心思想：用检索、RAG、重排序、推理与学习等维度组合，避免只用 needle 类任务代表长上下文能力。
+- [MathHay: An Automated Benchmark for Long-Context Mathematical Reasoning in LLMs](https://arxiv.org/abs/2410.04698)：自动生成同时需要信息查找和多步计算的长上下文数学任务，显示强通用模型在相关数学证据被嵌入长输入后仍明显掉点。
+- [DAPE V2: Process Attention Score as Feature Map for Length Extrapolation](https://arxiv.org/abs/2410.04798)：把 attention score 当作 feature map，并在相邻 head 上做卷积来改善长度外推；这更偏模型侧长上下文方法，后续应复核是否移入 Model。
+- [Cognitive Overload Attack:Prompt Injection for Long Context](https://arxiv.org/abs/2410.11272)：通过诱发认知过载的长上下文提示检验 prompt injection 风险，展示 GPT-4、Claude、Llama 与 Gemini 等模型在高负载 ICL 场景下可被越狱。
+- [Holistic Reasoning with Long-Context LMs: A Benchmark for Database Operations on Massive Textual Data](https://arxiv.org/abs/2410.11996)：提出 HoloBench，把大规模文本上的数据库式操作转成长上下文任务，并可控改变信息密度、信息分布、上下文长度和查询复杂度。
+- [How much do contextualized representations encode long-range context?](https://arxiv.org/abs/2410.12292)：用扰动实验和 anisotropy-calibrated cosine similarity 衡量表示中编码了多少长程模式，揭示 recurrent、hybrid 与 Transformer 架构在 perplexity 之外的长程上下文化差异。
+- [Towards More Effective Table-to-Text Generation: Assessing In-Context Learning and Self-Evaluation with Open-Source Models](https://arxiv.org/abs/2410.12878)：比较开源模型在表格到文本生成中的不同 in-context 示例策略和 LLM self-evaluation prompt，发现示例能提升生成，但自评与人类导向指标仍对齐不足。
+- [LONG²RAG: Evaluating Long-Context & Long-Form Retrieval-Augmented Generation with Key Point Recall](https://arxiv.org/abs/2410.23000)：用长证据上的关键点召回评测长上下文和长篇检索增强生成。
+- [What is Wrong with Perplexity for Long-context Language Modeling?](https://arxiv.org/abs/2410.23771)：提出 LongPPL，用长短上下文对比找出关键 token，并结合 LongCE 重加权训练解释平均 PPL 为什么会掩盖长上下文失败。
+- [Long Context RAG Performance of Large Language Models](https://arxiv.org/abs/2411.03538)：在三个领域数据集上运行 RAG 工作流，将总上下文从 2K 扩到 128K token（可行时到 2M），比较增加检索文档带来的收益以及 64K 以上的准确率崩溃。
+- [Needle Threading: Can LLMs Follow Threads through Near-Million-Scale Haystacks?](https://arxiv.org/abs/2411.05000)：测试 LLM 能否在近百万规模上下文中追踪信息线索。
+- [On Many-Shot In-Context Learning for Long-Context Evaluation](https://arxiv.org/abs/2411.07130)：提出 MANYICLBENCH，区分相似样本学习和全样本学习；实验显示一些 many-shot 任务在检索型 prompt 能到 64K 时，涉及全样本理解的任务 16K 左右就会崩。
+- [SummExecEdit: A Factual Consistency Benchmark in Summarization with Executable Edits](https://arxiv.org/abs/2412.13378)：用可执行摘要编辑构建事实一致性测试，同时评分错误检测和解释质量，显示 20 多个 LLM 在大量编辑样本上仍难以给出正确检测与解释。
+- [DynamicKV: Task-Aware Adaptive KV Cache Compression for Long Context LLMs](https://arxiv.org/abs/2412.14838)：在推理时按任务和层自适应分配 KV cache 预算，用约 1.7% cache 保留大部分 LongBench 表现，因此主要是模型侧长上下文压缩方法。
+- [LongBench v2](https://arxiv.org/abs/2412.15204)：评测更新后的长上下文任务族与更强对照协议；核心思想是把 `--rag N / --no_context / --cot` 等开关显式化，强化 benchmark-side harness 的可控变量。（[榜单](https://longbench2.github.io/)；[开源代码](https://github.com/THUDM/LongBench)）
+- [LongDocURL](https://arxiv.org/abs/2412.18424)：评测长文档 + URL/引用链的信息定位与引用一致性；核心思想是把外部引用（URL）与长文档证据对齐作为评分核心。
+- [Unified Multi-Scenario Summarization Evaluation and Explanation](https://doi.org/10.1109/tkde.2024.3509715)：比较多场景摘要评测并加入解释性分析，但当前 DOI 元数据不足以确认其长上下文专属协议，需后续补读全文。
+- [RAG-Check: Evaluating Multimodal Retrieval Augmented Generation Performance](https://arxiv.org/abs/2501.03995)：用 retrieval relevancy 和 generation correctness 两个分数评测多模态 RAG 可靠性，并基于 5,000 个人人工标注样本训练 RS 与 CS judge。
+- [Eliciting In-context Retrieval and Reasoning for Long-context Large Language Models](https://arxiv.org/abs/2501.08248): 评估长上下文模型在含强检索器干扰段落的知识库中进行上下文内检索与推理的能力，使长上下文评测从简化全文 QA 推向更接近 RAG 的设置。
+- [LongReason](https://arxiv.org/abs/2501.15089)：通过 context expansion 评测长上下文推理。核心思想是把短推理题扩展成长上下文题，覆盖阅读理解、逻辑推理和数学应用题，并观察上下文变长后的性能下降。
+- [Evaluating Large Language Models in Vulnerability Detection Under Variable Context Windows](https://arxiv.org/abs/2502.00064)：在不同 tokenized Java 代码长度下测试 10 个 LLM 的漏洞检测，发现不同模型的检测准确率和答案明确性对上下文长度敏感程度不同。
+- [Adaptive Distraction: Probing LLM Contextual Robustness with Automated Tree Search](https://arxiv.org/abs/2502.01609)：一种用自动树搜索生成干扰上下文的鲁棒性评测方法。核心思想是构造语义连贯但任务无关的上下文，测试长上下文模型能否保持原任务信号。
+- [NoLiMa](https://arxiv.org/abs/2502.05167)：评什么：超越字面匹配的长上下文理解；核心思想：通过改写、间接指代和非字面线索降低 needle-style 检索捷径，更强调真正的语义定位与推理。
+- [GSM-Infinite: How Do Your LLMs Behave over Infinitely Increasing Context Length and Reasoning Complexity?](https://arxiv.org/abs/2502.05252)：在不断增长的上下文长度和推理复杂度下扩展 GSM 式评测。
+- [DebateBench: A Challenging Long Context Reasoning Benchmark For Large Language Models](https://arxiv.org/abs/2502.06279)：提出面向长上下文推理的 DebateBench。
+- [LaRA: Benchmarking Retrieval-Augmented Generation and Long-Context LLMs - No Silver Bullet for LC or RAG Routing](https://arxiv.org/abs/2502.09977)：评测 RAG 与长上下文 LLM 路由的基准；核心思想是判断何时应使用检索、长上下文或混合路由。
+- [SCALAR: Scientific Citation-based Live Assessment of Long-context Academic Reasoning](https://arxiv.org/abs/2502.13753)：用 citation-based live tasks 评测长上下文学术推理，强调模型能否利用学术证据而不只是检索孤立片段。
+- [Large Language Models Struggle to Describe the Haystack without Human Help: Human-in-the-loop Evaluation of LLMs](https://arxiv.org/abs/2502.14748)：比较无监督、有监督 LLM 和传统 topic model 对大型文档集合的探索效果，发现 LLM 主题更易读但在领域数据上容易过泛，加入人工监督可缓解幻觉和泛化过度。
+- [DocPuzzle: A Process-Aware Benchmark for Evaluating Realistic Long-Context Reasoning Capabilities](https://arxiv.org/abs/2502.17807)：面向真实长上下文推理的过程感知 benchmark。核心思想是在长真实文档上提出专家级问题，要求多步推理而不只是检索单一片段。
+- [PhantomWiki: On-Demand Datasets for Reasoning and Retrieval Evaluation](https://arxiv.org/abs/2502.20377)：按需生成的推理与检索评测数据。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [U-NIAH: Unified RAG and LLM Evaluation for Long Context Needle-in-a-Haystack](https://arxiv.org/abs/2503.00353)：统一评估 RAG 与长上下文针尖检索能力。
+- [One ruler to measure them all: Benchmarking multilingual long-context language models](https://arxiv.org/abs/2503.01996)：提出 ONERULER，把 RULER 扩展到 26 种语言以评估多语长上下文能力。
+- [Sequential-NIAH: A Needle-In-A-Haystack Benchmark for Extracting Sequential Needles from Long Contexts](https://arxiv.org/abs/2504.04713)：面向顺序信息抽取的长上下文 needle-in-a-haystack 基准。核心思想是测试多个 needle 的完整性与顺序一致性。
+- [NeedleInATable](https://arxiv.org/abs/2504.06560)：评测长结构化表格上的长上下文能力。核心思想：把表格单元格视作 needle，要求模型按位置或查找问题定位目标单元格，区分真实表格感知能力与下游表格任务捷径。
+- [Can LLMs reason over extended multilingual contexts? Towards long-context evaluation beyond retrieval and haystacks](https://arxiv.org/abs/2504.12845)：评测长上下文推理。核心思想：围绕论文中的任务、数据或协议（Can LLMs reason over extended multilingual contexts? Towards long-context evaluation beyond retrieval and haystacks）形成可复用比较基准。
+- [ETHIC](https://aclanthology.org/2025.naacl-long.283/)（[开源代码](https://github.com/dmis-lab/ETHIC)）：评什么：高信息覆盖率的长上下文任务。核心思想：迫使模型使用长输入中的许多相关证据，减少“只检索一个片段即可答题”的评测偏差。
+- [LOFT: Scalable and More Realistic Long-Context Evaluation](https://doi.org/10.18653/v1/2025.findings-naacl.374)：评什么：提供更可扩展、更接近真实任务的长上下文评测。
+- [REVEAL: Multi-turn Evaluation of Image-Input Harms for Vision LLM](https://arxiv.org/abs/2505.04673)：评测 VLLM 在多轮图像输入对话中的伤害响应，使安全表现依赖累积的视觉对话上下文，而不是单张图像提示。
+- [MMLongBench](https://arxiv.org/abs/2505.10610)：评测多模态长上下文任务族；核心思想是把 `长视觉/长文本` 混合输入的鲁棒性做成可复现实验。
+- [SemTrace](https://arxiv.org/abs/2505.13353)：评估长上下文代码推理中的语义召回，通过反事实任务检查模型是否真正理解代码运行语义，而不是依赖词面召回或模式匹配捷径。
+- [CUB: Benchmarking Context Utilisation Techniques for Language Models](https://arxiv.org/abs/2505.16518)：评测上下文利用技术。核心思想：测试模型是否使用相关上下文、忽略干扰信息，并处理外部上下文与参数记忆冲突。
+- [100-LongBench: Are de facto Long-Context Benchmarks Literally Evaluating Long-Context Ability?](https://arxiv.org/abs/2505.19293)：提供长度可控的 LongBench 变体和区分基础能力与真实长上下文利用的指标，使评测能比较模型在不同长度下的崩溃点，而不是固定在单一输入长度。
+- [MiniLongBench](https://arxiv.org/abs/2505.19959)：低成本长上下文理解 benchmark。核心思想：从更大的 LCU benchmark 中剪除冗余样本，在保留诊断覆盖的同时降低评测时间和推理成本。
+- [Rethinking Chunk Size For Long-Document Retrieval: A Multi-Dataset Analysis](https://arxiv.org/abs/2505.21700)：在多个长文档检索数据集上分析切块大小对检索效果的影响。
+- [ToolHaystack](https://arxiv.org/abs/2505.23662)：评什么：工具增强模型在长期交互中的信息保持与调用决策；核心思想：把 haystack 压力测试扩展到真实多轮工具使用场景，观察历史证据、工具结果和当前目标之间的对齐。
+- [Evaluating the Sensitivity of LLMs to Prior Context](https://arxiv.org/abs/2506.00069)：面向持续交互中 prior context 敏感性的 benchmark。核心思想是衡量前文轮次如何改变模型行为，补足单轮 QA 评测。
+- [LongBioBench](https://arxiv.org/abs/2506.02921)（[开源代码](https://github.com/Thomasyyj/LongBio-Benchmark)，[数据集](https://huggingface.co/datasets/thomasyyj/LongBioBench_Sample)）：评什么：人物传记叙事上的可控长上下文理解。核心思想：构造目标事实与上下文有语义关联的长上下文考试，让难度和证据位置比纯合成 needle 任务更可控。
+- [Generating Q&A Benchmarks for RAG Evaluation in Enterprise Settings](https://doi.org/10.18653/v1/2025.acl-industry.33)：为企业 RAG 评估生成问答基准。
+- [Serial Position Effects of Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.52)：评估大语言模型中的序列位置效应。
+- [LOOM-Scope](https://arxiv.org/abs/2507.04723)：一个标准化且高效的长上下文评测框架，用于统一多套基准设置并降低综合评测成本。
+- [Ref-Long: Benchmarking the Long-context Referencing Capability of Long-context Language Models](https://arxiv.org/abs/2507.09506)：要求模型找出哪些文档引用或关联到指定 key，覆盖合成到真实的三个子集，显示即使 GPT-4o 级模型在长上下文引用定位上也存在明显短板。
+- [Document Haystack](https://arxiv.org/abs/2507.15882)：评估 VLM 的长上下文多模态文档理解。核心思想是在 5 到 200 页的复杂视觉文档中不同深度插入文本或图文 needle，并用自动化问题客观评分检索能力。
+- [NeedleChain: Measuring Intact Long-Context Reasoning Capability of Large Language Models](https://arxiv.org/abs/2507.22411)：用完全由查询相关证据组成的上下文测试全量信息整合，包含三种理解顺序变体、一个 NIAH 对照，并提出无需训练的 ROPE contraction 干预。
+- [Are We on the Right Way for Assessing Document Retrieval-Augmented Generation?](https://arxiv.org/abs/2508.03644)：面向多模态文档 RAG 评估的 benchmark/诊断研究。核心思想是评估真实文档 RAG 系统中的检索、证据标签和生成瓶颈。
+- [PRELUDE](https://arxiv.org/abs/2508.09848)：评什么：需要全局理解和跨段推理的长上下文任务；核心思想：让问题依赖文档整体结构与远距离证据组合，减少局部片段检索即可答题的评测偏差。
+- [HAMLET](https://arxiv.org/abs/2508.19578)：用多层 key-fact hierarchy 评估书籍长度上下文理解。核心思想是结合 root、branch、leaf 三级事实与 query-focused summarization，诊断粗粒度与细粒度 recall 以及 lost-in-the-middle 现象。
+- [Who Gets Cited Most? Benchmarking Long-Context Numerical Reasoning on Scientific Articles](https://arxiv.org/abs/2509.21028)：评测科学论文长上下文数值推理；核心思想是用 SQL 可验证问题要求模型跨全文论文完成计数、排序、聚合和比较。
+- [Maximum Effective Context Window](https://arxiv.org/abs/2509.21361)：评估模型在不同问题类型中实际可用的上下文长度。核心思想：通过标准化退化测试区分厂商标称最大上下文和真正有效上下文。
+- [LongLeader](https://arxiv.org/abs/2509.23161)（[ACL Anthology 页面](https://doi.org/10.18653/v1/2025.naacl-long.439)）：评什么：长上下文综合 leaderboard 与评测框架。核心思想：统一不同任务、长度区间和指标的排名口径，避免单一 LongBench/needle 任务过度代表长上下文能力。
+- [MDSEval: A Meta-Evaluation Benchmark for Multimodal Dialogue Summarization](https://arxiv.org/abs/2510.01659)：构建图像分享对话摘要的 meta-evaluation 集，包含摘要和八个质量维度的人类判断，并用跨模态互斥关键信息过滤出更丰富样本。
+- [Evaluation Framework for Highlight Explanations of Context Utilisation in Language Models](https://arxiv.org/abs/2510.02629)：评测高亮解释能否正确显示语言模型使用了哪些上下文片段，从而区分答案依赖外部上下文还是参数记忆。
+- [Finding Diamonds in Conversation Haystacks: A Benchmark for Conversational Data Retrieval](https://arxiv.org/abs/2510.02938)：评测面向产品洞察的对话数据检索；核心思想是用 9.1K 段对话和 1.6K 个分析查询测试 turn dynamics 与隐式状态下的检索能力。
+- [Context Length Alone Hurts LLM Performance Despite Perfect Retrieval](https://arxiv.org/abs/2510.05381)：表明即使相关信息已经完美检索，长输入本身也会削弱推理表现，从而区分检索失败和长上下文计算失败。
+- [AudioMarathon: A Comprehensive Benchmark for Long-Context Audio Understanding and Efficiency in Audio LLMs](https://arxiv.org/abs/2510.07293)：面向长上下文音频理解与效率的基准。核心思想是测试超越短音频片段的长程时间音频推理。
+- [HaystackCraft](https://arxiv.org/abs/2510.07414)：评什么：异构检索与 agentic 上下文增长下的长上下文鲁棒性。核心思想：基于 Wikipedia 超链接结构构造 haystack，并模拟检索偏差、查询改写、反思和停止决策，超越单 needle 式测试。
+- [LiteraryQA](https://arxiv.org/abs/2510.13494)：评测清洗后文学作品上的长文档叙事问答；核心思想是修正 NarrativeQA 式样本噪声并重新审视自动指标，使长上下文叙事理解建立在更可靠的证据上。
+- [LC-Eval: A Bilingual Multi-Task Evaluation Benchmark for Long-Context Understanding](https://arxiv.org/abs/2510.16783)：在 4K 到 128K+ token 的英文和阿拉伯语上下文上评测多文档 QA、双语 QA、段落内 claim verification 和长上下文选择题，连 GPT-4o 也在部分任务上表现困难。
+- [AcademicEval](https://arxiv.org/abs/2510.17725)（[榜单与开源代码](https://github.com/ulab-uiuc/AcademicEval)；[数据集](https://huggingface.co/datasets/ulab-ai/AcademicEval)）：评什么：基于 arXiv 新论文的长上下文生成任务；核心思想：把题源持续连接到新论文，自动构造 Title、Abstract、Introduction 和 Related Work 等任务，降低标签泄漏并覆盖层级抽象能力。
+- [Overruled Precedent Benchmark](https://arxiv.org/abs/2510.20941)：评测美国最高法院 case pair 上的长文档法律推理。核心思想是要求模型从完整司法意见中判断 precedent 是否已被推翻，测试比合成长上下文检索更接近真实法律工作的跨文档理解能力。
+- [LooGLE v2](https://arxiv.org/abs/2510.22548)（[开源代码](https://github.com/MuLabPKU/LooGLE-v2)，[数据集](https://huggingface.co/datasets/MuLabPKU/LooGLE-v2)）：评什么：16K 到 2M token 的真实长文本理解。核心思想：用法律、金融、游戏和代码等长文档任务测试远距离依赖和全局理解，避免只用 needle 检索代表长上下文能力。
+- [Ko-LongRAG: A Korean Long-Context RAG Benchmark Built with a Retrieval-Free Approach](https://doi.org/10.18653/v1/2025.findings-emnlp.938)：韩语长上下文 RAG benchmark，采用 retrieval-free 构造路线，可补充非英语长上下文检索与生成评测。
+- [Long Context Benchmark for the Russian Language](https://doi.org/10.18653/v1/2025.codi-1.1)：提供 18 个俄语长上下文数据集，按四级复杂度组织，覆盖信息检索、知识抽取、机器阅读、问答和推理，最高 128K token，并发布数据、代码和 leaderboard。
+- [Comparison-Based Automatic Evaluation for Meeting Summarization](https://doi.org/10.21437/interspeech.2025-2771)：把会议摘要评估改为成对比较而非孤立绝对评分，是长会议摘要评测线索，但仍需后续补读全文确认协议细节。
+- [SYNC](https://doi.org/10.18653/v1/2025.emnlp-main.1707)：用合成、可控任务评测长上下文理解能力。核心思想：隔离上下文长度和推理变量，减少真实文档内容和任务构造差异对模型比较的干扰。
+- [Oolong: Evaluating Long Context Reasoning and Aggregation Capabilities](https://arxiv.org/abs/2511.02817)：长上下文推理与聚合 benchmark；核心思想是测试模型能否组合分散证据，而不只是找到单个相关片段。
+- [What Matters in Evaluating Book-Length Stories? A Systematic Study of Long Story Evaluation](https://arxiv.org/abs/2512.12839)：提出 LongStoryEval，覆盖 600 本新出版书籍、平均 121K token，并从读者评论抽取八类评价标准，对比 aggregation、incremental-updated 和 summary-based 三类评估方法。
+- [LongBench Pro: A More Realistic and Comprehensive Bilingual Long-Context Evaluation Benchmark](https://arxiv.org/abs/2601.02872)：用自然产生的中英文样本扩展长上下文评测，覆盖多类任务与子任务。
+- [Gavel-Ref](https://arxiv.org/abs/2601.04424)：评测约 100K 到 500K tokens 的多文档法律案件摘要。核心思想：用 multi-value checklist items 加 residual factual 与 writing-style checks 诊断单一总分无法暴露的摘要失败。
+- [ChronosAudio](https://arxiv.org/abs/2601.04876)：评测音频大语言模型的长音频理解能力。核心思想：用超过 200 小时音频、36,000 个实例并按时长分层，诊断音频推理中的长上下文崩溃、时序局部性失效和现有缓解策略上限。
+- [PosIR](https://arxiv.org/abs/2601.08363)：评测内容：异构信息检索中的位置偏差。核心思想：通过长度受控分桶、参考片段相关性、10 种语言和 31 个领域，检验检索器是否因为证据出现在较靠后或较困难的位置而漏检。
+- [RIKER](https://arxiv.org/abs/2601.08847)：通过 coherent simulated universe 评估知识检索与抽取系统。核心思想是从已知真值生成文档，从而确定性评分检索、跨文档聚合、grounding 和抗幻觉能力，并可重生成以降低污染。
+- [SagaScale: A Realistic, Scalable, and High-Quality Long-Context Benchmark Built from Full-Length Novels](https://arxiv.org/abs/2601.09723)：基于完整长篇小说的双语长上下文 benchmark；核心思想是利用外部资源构造高质量 QA，但评测时不提供这些资源，并覆盖超长上下文。
+- [SIN-Bench](https://arxiv.org/abs/2601.10108)：评测长上下文多模态科学文献中的原生证据链追踪。核心思想是要求模型在完整论文中构建跨模态证据链，而不是只匹配最终答案。
+- [CorpusQA](https://arxiv.org/abs/2601.14952)：评什么：最高 1000 万 token 文档语料库上的整体分析与推理。核心思想：用程序化保证答案的数据合成框架生成计算密集型问题，要求系统跨数百篇文档聚合分散证据；实验显示长上下文 LLM 随长度退化、标准 RAG 直接崩溃，提示全局综合需要 memory-augmented architecture。
+- [Is Length Really A Liability? An Evaluation of Multi-turn LLM Conversations using BoolQ](https://arxiv.org/abs/2601.16508)：把 BoolQ 改造成不同长度和 scaffold 条件下的多轮对话，暴露单轮 prompt 评测看不到的、随模型而异的真实性失败。
+- [Mil-SCORE](https://arxiv.org/abs/2601.21826)：评测长上下文地理空间推理与规划。核心思想是要求模型在地图、报告和异构来源中选择性阅读，使规划依赖综合的长上下文证据。
+- [CL-Bench](https://arxiv.org/abs/2602.03587)：评测长上下文学习/记忆组织能力；核心思想是用更系统的 context learning 任务族把“记住什么、何时用、如何引用”变成可比较维度。
+- [Long-Context Long-Form Question Answering for Legal Domain](https://arxiv.org/abs/2602.07190)：面向答案跨多页的法律长篇问答，结合领域词汇拆解、复杂版面与脚注解析，以及按召回覆盖度分级的指标来评估长答案内容是否完整。
+- [LOCA-bench](https://arxiv.org/abs/2602.07962)（[开源代码](https://github.com/hkust-nlp/LOCA-bench)）：评什么：在“上下文持续增长”条件下语言代理的稳健性；核心思想：把长上下文从“单次喂入”改成“可控增长过程”，专门检验记忆/压缩/检索策略的失效边界。
+- [TS-Haystack: A Multi-Scale Retrieval Benchmark for Time Series Language Models](https://arxiv.org/abs/2602.14200)：在 100 秒到 24 小时的时间序列上下文上设置 10 个事件驱动问答任务，覆盖直接检索、时间推理、多步推理和上下文异常检测。
+- [MTRAG-UN: A Benchmark for Open Challenges in Multi-Turn RAG Conversations](https://arxiv.org/abs/2602.23184)：发布 6 个领域、666 个任务和 2,800 多轮对话的多轮 RAG 基准，专门考察不可回答、指代不足、非独立问题和含糊回复等失败模式。
+- [BRIDGE](https://arxiv.org/abs/2603.07931)：评测长多模态文档中的 grounded evidence 多跳推理。核心思想是要求跨文本、表格和图形整合证据，而不是只按最终答案正确性打分。
+- [MedMT-Bench](https://arxiv.org/abs/2603.23519)：评测长轮次医疗对话中的记忆与理解。核心思想是模拟诊疗交互，使模型必须跨轮保持医疗上下文、抵抗干扰并维持安全性。
+- [Reasoning Shift: How Context Silently Shortens LLM Reasoning](https://arxiv.org/abs/2604.01161)：诊断长上下文和多轮设置如何压缩推理轨迹并削弱自验证。
+- [YC-Bench](https://arxiv.org/abs/2604.01212)：评什么：长期规划与一致执行；核心思想：让 agent 在持续经营类任务中反复使用历史目标、资源状态和中间决策，观察 context truncation、scratchpad 与 memory 策略的真实收益。
+- [Prompt Compression in the Wild: Measuring Latency, Rate Adherence, and Quality for Faster LLM Inference](https://arxiv.org/abs/2604.02985)：在真实使用场景下衡量提示压缩的延迟、压缩率遵循与输出质量。
+- [CL-bench Life](https://arxiv.org/abs/2604.27043)：评估模型能否从真实生活上下文中学习。核心思想是用多方对话、个人档案和行为轨迹等混杂真实上下文，测试超越干净长文档的 context learning 能力。
+- [ASTRA-QA: A Benchmark for Abstract Question Answering over Documents](https://arxiv.org/abs/2605.10168)：面向文档抽象问答的 benchmark；核心思想是评测模型能否综合文档级抽象信息，而不只是抽取局部片段。
+- [Needle In A Haystack](https://github.com/gkamradt/LLMTest_NeedleInAHaystack)：评什么：长上下文单 needle 检索；核心思想：把目标片段埋入不同深度和长度的位置，快速暴露“声明窗口”和“可用窗口”的差距。
 - [MRCR](https://huggingface.co/datasets/openai/mrcr)：评什么：长上下文中的多 needle 共指检索与定位；核心思想：在长对话中埋入 `2 / 4 / 8 needles` 的同分布请求，要求模型返回指定次序的目标片段，以测试真正的长程区分与索引能力。
 - [GraphWalks](https://huggingface.co/datasets/openai/graphwalks)：评什么：长上下文中的图遍历式多跳推理；核心思想：把 BFS 与 parents 等图操作写成长 prompt 中的结构化任务，检验模型能否在长输入里维持结构状态并正确执行多步推理。
-- [MMLongBench-Doc](https://arxiv.org/abs/2407.01523)：评测长文档多模态理解；核心思想是用文档型多模态输入检验跨页/跨段对齐与摘要压缩能力。
-- [FRAMES](https://arxiv.org/abs/2409.12941)（数据集：[google/frames-benchmark](https://huggingface.co/datasets/google/frames-benchmark)）：评什么：检索增强与长文档环境中的事实性、检索与多跳推理；核心思想：用需要跨多篇文档整合证据的问题，联合测量 `factuality + retrieval + reasoning`。
-- [HELMET](https://arxiv.org/abs/2410.02694)（[开源代码](https://github.com/princeton-nlp/HELMET)）：评什么：多维长上下文评测集合；核心思想：用检索、RAG、重排序、推理与学习等维度组合，避免只用 needle 类任务代表长上下文能力。
-- [LongBench v2](https://arxiv.org/abs/2412.15204)：评测更新后的长上下文任务族与更强对照协议；核心思想是把 `--rag N / --no_context / --cot` 等开关显式化，强化 benchmark-side harness 的可控变量。（[开源代码](https://github.com/THUDM/LongBench)）
-- [LongDocURL](https://arxiv.org/abs/2412.18424)：评测长文档 + URL/引用链的信息定位与引用一致性；核心思想是把外部引用（URL）与长文档证据对齐作为评分核心。
-- [NoLiMa](https://arxiv.org/abs/2502.05167)：评什么：超越字面匹配的长上下文理解；核心思想：通过改写、间接指代和非字面线索降低 needle-style 检索捷径，更强调真正的语义定位与推理。
-- [ETHIC](https://aclanthology.org/2025.naacl-long.283/)（[开源代码](https://github.com/dmis-lab/ETHIC)）：评什么：高信息覆盖率的长上下文任务。核心思想：迫使模型使用长输入中的许多相关证据，减少“只检索一个片段即可答题”的评测偏差。
-- [MMLongBench](https://arxiv.org/abs/2505.10610)：评测多模态长上下文任务族；核心思想是把 `长视觉/长文本` 混合输入的鲁棒性做成可复现实验。
-- [ToolHaystack](https://arxiv.org/abs/2505.23662)：评什么：工具增强模型在长期交互中的信息保持与调用决策；核心思想：把 haystack 压力测试扩展到真实多轮工具使用场景，观察历史证据、工具结果和当前目标之间的对齐。
-- [LongBioBench](https://arxiv.org/abs/2506.02921)（[开源代码](https://github.com/Thomasyyj/LongBio-Benchmark)，[数据集](https://huggingface.co/datasets/thomasyyj/LongBioBench_Sample)）：评什么：人物传记叙事上的可控长上下文理解。核心思想：构造目标事实与上下文有语义关联的长上下文考试，让难度和证据位置比纯合成 needle 任务更可控。
-- [PRELUDE](https://arxiv.org/abs/2508.09848)：评什么：需要全局理解和跨段推理的长上下文任务；核心思想：让问题依赖文档整体结构与远距离证据组合，减少局部片段检索即可答题的评测偏差。
-- [LongLeader](https://arxiv.org/abs/2509.23161)：评什么：长上下文综合 leaderboard 与评测框架。核心思想：统一不同任务、长度区间和指标的排名口径，避免单一 LongBench/needle 任务过度代表长上下文能力。
-- [LiteraryQA](https://arxiv.org/abs/2510.13494)：评测清洗后文学作品上的长文档叙事问答；核心思想是修正 NarrativeQA 式样本噪声并重新审视自动指标，使长上下文叙事理解建立在更可靠的证据上。
-- [AcademicEval](https://arxiv.org/abs/2510.17725)（[开源代码](https://github.com/ulab-uiuc/AcademicEval)；[数据集](https://huggingface.co/datasets/ulab-ai/AcademicEval)）：评什么：基于 arXiv 新论文的长上下文生成任务；核心思想：把题源持续连接到新论文，自动构造 Title、Abstract、Introduction 和 Related Work 等任务，降低标签泄漏并覆盖层级抽象能力。
-- [LooGLE v2](https://arxiv.org/abs/2510.22548)（[开源代码](https://github.com/MuLabPKU/LooGLE-v2)，[数据集](https://huggingface.co/datasets/MuLabPKU/LooGLE-v2)）：评什么：16K 到 2M token 的真实长文本理解。核心思想：用法律、金融、游戏和代码等长文档任务测试远距离依赖和全局理解，避免只用 needle 检索代表长上下文能力。
-- [SYNC](https://doi.org/10.18653/v1/2025.emnlp-main.1707)：用合成、可控任务评测长上下文理解能力。核心思想：隔离上下文长度和推理变量，减少真实文档内容和任务构造差异对模型比较的干扰。
-- [CL-Bench](https://arxiv.org/abs/2602.03587)：评测长上下文学习/记忆组织能力；核心思想是用更系统的 context learning 任务族把“记住什么、何时用、如何引用”变成可比较维度。
-- [LOCA-bench](https://arxiv.org/abs/2602.07962)（[开源代码](https://github.com/hkust-nlp/LOCA-bench)）：评什么：在“上下文持续增长”条件下语言代理的稳健性；核心思想：把长上下文从“单次喂入”改成“可控增长过程”，专门检验记忆/压缩/检索策略的失效边界。
-- [YC-Bench](https://arxiv.org/abs/2604.01212)：评什么：长期规划与一致执行；核心思想：让 agent 在持续经营类任务中反复使用历史目标、资源状态和中间决策，观察 context truncation、scratchpad 与 memory 策略的真实收益。
+- [Long Document Summarization with Transformer Models: A Comparative Evaluation on the Gutenberg Dataset](https://doi.org/10.1145/3746709.3746746)：在 Gutenberg 长文档上比较 Transformer 摘要模型，是长文档摘要评估线索，但仍需可访问全文补齐具体协议。

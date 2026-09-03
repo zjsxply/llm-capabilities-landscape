@@ -2,35 +2,220 @@
 
 - [AppAgent](https://arxiv.org/abs/2312.13771)（[开源代码](https://github.com/mnotgod96/AppAgent)；[项目页](https://appagent-official.github.io/)）：早期智能手机 GUI agent harness，通过自主探索或人类演示学习 app 操作，并把生成的操作文档复用于后续任务。
 - [SeeAct](https://arxiv.org/abs/2401.01614)（[开源代码](https://github.com/OSU-NLP-Group/SeeAct)；视觉 grounding + 结构信息融合的网页 GUI agent 起点范式，后续被多类 CUA 吸收）
+- [SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents](https://arxiv.org/abs/2401.10935)：面向屏幕视觉操作的 GUI grounding agent，将截图转成可点击坐标，并用 GUI 专用预训练支持网页、桌面和移动界面的视觉动作预测。
+- [Mobile-Agent: Autonomous Multi-Modal Mobile Device Agent with Visual Perception](https://arxiv.org/abs/2401.16158)：智能手机 GUI 控制循环，先用视觉感知模块读取截图、检测图标和文本，再规划下一步点击或滑动，并在手机状态变化后用自反思修正操作。
+- [UFO: A UI-Focused Agent for Windows OS Interaction](https://arxiv.org/abs/2402.07939)：Windows 桌面 harness，包含 AppAgent 与 ActAgent 角色，负责选择活动应用、解析 GUI 控件和截图、把动作落到 Windows UI 操作，并在多应用流程中维持任务状态。
+- [ScreenAgent: A Vision Language Model-driven Computer Control Agent](https://arxiv.org/abs/2402.07945)：由 VLM 驱动的计算机控制循环，让模型观察截图、推理当前屏幕、输出鼠标和键盘操作，并通过更新后的屏幕反馈继续完成多步桌面任务。
+- [CoCo-Agent: A Comprehensive Cognitive MLLM Agent for Smartphone GUI Automation](https://arxiv.org/abs/2402.11941)：智能手机自动化框架，将感知、记忆、推理、决策和反思模块组合起来，使 agent 能定位屏幕元素、规划动作链并修正失败的移动端操作。
+- [On the Multi-turn Instruction Following for Conversational Web Agents](https://arxiv.org/abs/2402.15057)：研究多轮对话式网页 agent，用户目标会分轮到达，因此 harness 需要保存对话上下文，同时执行网页导航动作并在每次页面跳转后调整计划。
+- [Android in the Zoo: Chain-of-Action-Thought for GUI Agents](https://arxiv.org/abs/2403.02713)：为 Android agent 提出 Chain-of-Action-Thought 提示循环，在选择下一个手机 GUI API 动作前显式追踪历史观察和动作。
+- [Cradle: Empowering Foundation Agents towards General Computer Control](https://arxiv.org/abs/2403.03186)：通用计算机控制 harness，统一截图、键鼠动作、自反思以及技能或记忆复用，使基础 agent 能在游戏和桌面软件中操作而不依赖任务专用 API。
+- [SheetAgent: A Generalist Agent for Spreadsheet Reasoning and Manipulation via Large Language Models](https://arxiv.org/abs/2403.03636)：电子表格 GUI harness，将工作簿任务分解，在表格结构中落地单元格、公式和格式操作，并在多步操作中校验中间 spreadsheet 状态。
 - [Mobile-Agent-v2 / Mobile-Agent-E](https://arxiv.org/abs/2406.01014)（[Mobile-Agent-E](https://arxiv.org/abs/2501.11733)；[开源代码](https://github.com/X-PLUG/MobileAgent)）：移动端 GUI agent 路线，包含显式规划、反思、多智能体协作和后续自演化，连接 AndroidWorld 式任务与通用移动端操作。
+- [GUICourse: From General Vision Language Models to Versatile GUI Agents](https://arxiv.org/abs/2406.11317)：把通用 VLM 转成 GUI agent 的课程式框架，结合屏幕 grounding、动作预测和分阶段 GUI 任务，让模型学习可复用的观察-动作行为。
+- [WebCanvas: Benchmarking Web Agents in Online Environments](https://arxiv.org/abs/2406.12373)：主要是在线网页 benchmark，但也提供实时浏览器交互 harness，包含动态页面、动作执行和反馈循环，用于测试自适应 web agent。
+- [Agent-E: From Autonomous Web Navigation to Foundational Design Principles in Agentic Systems](https://arxiv.org/abs/2407.13032)：网页导航 agent 架构及设计原则，强调感知、规划、动作执行、反思和恢复等可复用模式，用于自主浏览器工作流。
+- [WebPilot: A Versatile and Autonomous Multi-Agent System for Web Task Execution with Strategic Exploration](https://arxiv.org/abs/2408.15978)：多智能体网页 harness，将策略探索、状态评估和浏览器动作执行分开，使 agent 能处理不确定的动态网站，而不是依赖僵硬的手写策略。
+- [Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents](https://arxiv.org/abs/2410.05243)：面向 GUI agent 的通用视觉 grounding 方法，从视觉输入预测可操作屏幕坐标，为网页、桌面和移动 agent 提供类似人类点击目标的接口。
 - [Agent S](https://arxiv.org/abs/2410.08164)（[开源代码](https://github.com/simular-ai/Agent-S)；ACI + 分层规划 + 外部知识检索 + 经验记忆的一体化 computer-use workflow）
+- [TinyClick: Single-Turn Agent for Empowering GUI Automation](https://arxiv.org/abs/2410.11871)：轻量单轮 GUI agent，专门根据用户命令定位对应 UI 元素，可作为更大自动化循环中的快速点击 grounding 组件。
 - [AgentStore](https://arxiv.org/abs/2410.18603)（[开源代码](https://github.com/chengyou-jia/AgentStore)；类 App Store 的异构 agent 动态选择与组合平台）
 - [OpenWebVoyager](https://arxiv.org/abs/2410.19609)（[开源代码](https://github.com/MinorJerry/OpenWebVoyager)；通过真实网页探索、反馈和优化构建多模态 web agent，连接 WebArena/VisualWebArena 与开放网页操作）
+- [Is Your LLM Secretly a World Model of the Internet? Model-Based Planning for Web Agents](https://arxiv.org/abs/2411.06559)：为网页 agent 加入基于模型的规划，通过预测网页状态转移，在真实页面执行前用树搜索式方法评估候选浏览器动作。
+- [Aguvis: Unified Pure Vision Agents for Autonomous GUI Interaction](https://arxiv.org/abs/2412.04454)：纯视觉 GUI agent 路线，把截图作为主要观察，直接在视觉界面元素上 grounding 动作，目标是不依赖 DOM 文本完成跨平台自主 GUI 交互。
 - [BrowserGym Ecosystem](https://arxiv.org/abs/2412.05467)（[开源代码](https://github.com/ServiceNow/BrowserGym)；统一 WebArena、VisualWebArena、WorkArena 等网页 GUI 环境，并提供可复现评测接口）
-- [R2D2](https://arxiv.org/abs/2501.12485)：围绕记忆、反思和动态决策构建的网页智能体 harness。核心思想：在网页交互过程中维护并修正任务记忆，使智能体能够调整计划，而不是只依赖固定提示和最近的浏览器上下文。
+- [Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining](https://arxiv.org/abs/2412.10342)：GUI agent harness，会把注意力收缩到与任务相关的屏幕区域、执行 grounded 动作，并利用交互历史自我精修以从遗漏或拥挤 UI 元素中恢复。
+- [InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection](https://arxiv.org/abs/2501.04575)：为多模态 GUI agent 加入层级推理与 expectation-reflection 行为，服务电脑和移动自动化。
+- [R2D2](https://arxiv.org/abs/2501.12485)：网页智能体 harness，在交互过程中维护、回放并修正反思式任务记忆，使 agent 能根据页面反馈动态调整计划，而不是只依赖固定提示和最近的浏览器上下文。
+- [GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration](https://arxiv.org/abs/2501.13896)：GUI-Bee 通过自主探索让 GUI action grounding 迁移到新环境，属于 computer-use agent harness。
+- [CowPilot: A Framework for Autonomous and Human-Agent Collaborative Web Navigation](https://arxiv.org/abs/2501.16609)：允许用户暂停、接管和恢复网页导航 agent，并评测协作成功率与效率。
+- [LLMER: Crafting Interactive Extended Reality Worlds with JSON Data Generated by Large Language Models](https://arxiv.org/abs/2502.02441)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
 - [PC-Agent](https://arxiv.org/abs/2502.14282)（[开源代码](https://github.com/X-PLUG/MobileAgent/tree/main/PC-Agent)；用 `Manager / Progress / Decision / Reflection` 层级多代理协作处理 PC 上的跨应用复杂任务）
+- [Mobile-Agent-V: Learning Mobile Device Operation Through Video-Guided Multi-Agent Collaboration](https://arxiv.org/abs/2502.17110)：用视频示范向移动 agent 注入操作知识，并用 Mobile-Knowledge 评测效果。
+- [AI-Instruments: Embodying Prompts as Instruments to Abstract & Reflect Graphical Interface Commands as General-Purpose Tools](https://arxiv.org/abs/2502.18736)：将提示具身化为 instruments，把图形界面命令抽象并反思为通用工具。
+- [Towards Enterprise-Ready Computer Using Generalist Agent](https://arxiv.org/abs/2503.01861)：面向企业工作流的通用计算机使用 agent 研究；核心思想是把 GUI 操作、任务状态和职场约束连接起来，超越孤立桌面任务。
+- [AppAgentX: Evolving GUI Agents as Proficient Smartphone Users](https://arxiv.org/abs/2503.02268)：让 GUI agent 演化为熟练智能手机用户的框架；核心思想是通过积累 app 使用经验和任务执行反馈提升移动端 agent。
+- [LiteWebAgent: The Open-Source Suite for VLM-Based Web-Agent Applications](https://arxiv.org/abs/2503.02950)：面向 VLM-based web-agent applications 的开源套件；核心思想是把感知、浏览器交互和任务执行组件封装成轻量 web-agent harness。
+- [InterChat: Enhancing Generative Visual Analytics using Multimodal Interactions](https://arxiv.org/abs/2503.04110)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [COLA: A Scalable Multi-Agent Framework For Windows UI Task Automation](https://arxiv.org/abs/2503.09263)：可作为计算机使用与 GUI agent的Agent Harness候选；核心关注“A Scalable Multi-Agent Framework For Windows UI Task Automation”。
+- [STEVE: A Step Verification Pipeline for Computer-use Agent Training](https://arxiv.org/abs/2503.12532)：补充computer use gui方向的agent harness，核心围绕《STEVE: A Step Verification Pipeline for Computer-use Agent Training》。
+- [WebNav: An Intelligent Agent for Voice-Controlled Web Navigation](https://arxiv.org/abs/2503.13843)：语音控制的网页导航 agent；核心思想是把口语化用户意图转换为浏览器导航动作，同时维护页面状态和交互进度。
+- [Advancing Mobile GUI Agents: A Verifier-Driven Approach to Practical Deployment](https://arxiv.org/abs/2503.15937)：让 LLM 作为候选移动动作的 verifier，提升 Android 任务自动化的实践可靠性。
+- [OS-Kairos: Adaptive Interaction for MLLM-Powered GUI Agents](https://arxiv.org/abs/2503.16465)：面向 MLLM-powered GUI agents 的 adaptive-interaction harness。核心思想是自适应交互时机和动作执行，使 GUI agent 能处理变化中的桌面或应用状态。
+- [GUI-Xplore: Empowering Generalizable GUI Agents with One Exploration](https://arxiv.org/abs/2503.17709)：通过一次探索增强 GUI agent 的泛化能力。
+- [Agent-Initiated Interaction in Phone UI Automation](https://arxiv.org/abs/2503.19537)：该工作研究手机 UI 自动化中的 agent 主动交互，为移动 GUI agent 增加主动控制。
+- [Navi-plus: Managing Ambiguous GUI Navigation Tasks with Follow-up](https://arxiv.org/abs/2503.24180)：面向歧义 GUI 导航任务的 follow-up harness。核心思想是在 GUI 目标不充分时让 agent 管理澄清，而不是脆弱地猜测执行。
 - [Agent S2](https://arxiv.org/abs/2504.00906)（[开源代码](https://github.com/simular-ai/Agent-S)；generalist-specialist 组合的多角色工作流）
 - [UXAgent](https://arxiv.org/abs/2504.09407)：用于用 LLM agent 模拟网页设计可用性测试。核心思想：协调类用户画像 agent 与网页交互，在人工测试前生成可用性证据。
+- [VLM-Fuzz: Vision language model assisted recursive depth-first search exploration for effective GUI testing of android apps](https://arxiv.org/abs/2504.11675)：面向 Android app 的 GUI 测试 agent harness，用 VLM 引导递归深度优先探索来选择屏幕动作、生成输入并扩展 app 状态。
+- [WebRollback: Enhancing Web Agents with Explicit Rollback Mechanisms](https://arxiv.org/abs/2504.11788)：网页 agent 的显式回滚机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [UFO2: The Desktop AgentOS](https://arxiv.org/abs/2504.14603)：类型：agent harness/可复用执行框架。核心价值：为 2.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [UFO](https://aclanthology.org/2025.naacl-long.26/)：面向 Windows OS interaction 的 UI-focused agent，需要和后续 UFO3 跨设备编排系统区分开，并补齐桌面 GUI harness 线索。
+- [ScaleTrack: Scaling and back-tracking Automated GUI Agents](https://arxiv.org/abs/2505.00416)：自动化 GUI agent 的扩展与回退机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [DroidRetriever: A Transparent and Steerable Automation System for Collaborative Mobile Information Seeking](https://arxiv.org/abs/2505.03364)：可作为computer-use and GUI agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](https://arxiv.org/abs/2505.05440)：面向移动自动化的 device-cloud 协同多代理框架。核心思想是在本地设备动作和云端推理之间拆分移动任务，以提升 GUI 操作效率。
+- [Mobile-Agent-V: A Video-Guided Approach for Effortless and Efficient Operational Knowledge Injection in Mobile Automation](https://arxiv.org/abs/2505.13887)：补充computer use gui方向的agent harness，核心围绕《Mobile-Agent-V: A Video-Guided Approach for Effortless and Efficient Operational Knowledge Injection in Mobile Automation》。
+- [ReGUIDE: Data Efficient GUI Grounding via Spatial Reasoning and Search](https://arxiv.org/abs/2505.15259)：通过空间推理与搜索改进 GUI grounding。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Unlocking Smarter Device Control: Foresighted Planning with a World Model-Driven Code Execution Approach](https://arxiv.org/abs/2505.16422)：面向智能设备控制的 world-model-driven code execution 方法；核心思想是对设备状态进行前瞻规划，并把代码执行作为可控自动化动作层。
+- [GUI-explorer: Autonomous Exploration and Mining of Transition-aware Knowledge for GUI Agent](https://arxiv.org/abs/2505.16827)：通过探索 GUI 挖掘转移感知知识以增强 GUI agent。
+- [LiteCUA](https://arxiv.org/abs/2505.18829)（开源代码：未公开；把“计算机”抽象成 MCP server 的环境语义层，降低动作空间复杂度）
+- [BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism](https://arxiv.org/abs/2505.20660)：GUI agent 的错误检测与回溯机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [UI-Genie: A Self-Improving Approach for Iteratively Boosting MLLM-based Mobile GUI Agents](https://arxiv.org/abs/2505.21496)：UI-Genie 是自改进移动 GUI agent 方法，强调迭代提升 action grounding 和跨 app 执行。
+- [UI-Evol](https://arxiv.org/abs/2505.21964)（[开源代码](https://github.com/microsoft/FIVE-UI-Evol)；可插拔知识演化模块，基于 Agent S2 在 OSWorld 上提升成功率并降低行为方差）
+- [Agent-SAMA: State-Aware Mobile Assistant](https://arxiv.org/abs/2505.23596)：面向移动助手的状态感知 harness。核心思想是在交互中保存并利用移动 UI 状态，使 assistant 能完成设备界面上的多步任务。
+- [Surfer-H / Holo1](https://arxiv.org/abs/2506.02865)：低成本开放权重网页 agent 栈。核心思想：把浏览器 agent 与面向网页导航和 UI 定位的 VLM 结合，并用 WebClick、WebVoyager 式评测同时观察准确率与成本。
+- [GUI-Reflection: Empowering Multimodal GUI Models with Self-Reflection Behavior](https://arxiv.org/abs/2506.08012)：自动构造反思与纠错数据，让 GUI agent 能从失败动作中恢复。
+- [Mirage-1: Augmenting and Updating GUI Agent with Hierarchical Multimodal Skills](https://arxiv.org/abs/2506.10387)：类型：skill 机制或技能生成/编排框架。核心价值：补充 agent skill 的发现、生成、选择或组合机制，突出可复用能力沉淀。
+- [UITron-Speech: Towards Automated GUI Agents Based on Speech Instructions](https://arxiv.org/abs/2506.11127)：面向语音指令的 GUI agent 框架。核心思想是把用户语音命令接到自动 GUI 操作，把 computer-use agent 扩展到非纯文本指令。
+- [Learning, Reasoning, Refinement: A Framework for Kahneman's Dual-System Intelligence in GUI Agents](https://arxiv.org/abs/2506.17913)：面向具有学习、推理和 refinement 回路的 GUI agent的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Chain-of-Memory: Enhancing GUI Agents for Cross-Application Navigation](https://arxiv.org/abs/2506.18158)：面向跨应用 GUI agents 的记忆 harness；核心思想是把动作描述和任务相关屏幕信息存入显式短期与长期记忆。
+- [DiMo-GUI: Advancing Test-time Scaling in GUI Grounding via Modality-Aware Visual Reasoning](https://arxiv.org/abs/2507.00008)：面向 GUI grounding 的 test-time scaling harness。核心思想是用 modality-aware visual reasoning 提升 computer-use agent 在 GUI 截图中定位动作的可靠性。
+- [Browsing Like Human: A Multimodal Web Agent with Experiential Fast-and-Slow Thinking](https://doi.org/10.18653/v1/2025.acl-long.697)：带有经验型快慢思考的多模态 web agent harness。核心思想是结合视觉浏览、动作经验和审慎推理，提升类人网页操作能力。
+- [GTA1: GUI Test-time Scaling Agent](https://arxiv.org/abs/2507.05791)：面向通过动作提议与验证进行 GUI test-time scaling的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [MobileUse: A GUI Agent with Hierarchical Reflection for Autonomous Mobile Operation](https://arxiv.org/abs/2507.16853)：类型：agent harness/可复用执行框架。核心价值：为 2.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [MapAgent: Trajectory-Constructed Memory-Augmented Planning for Mobile Task Automation](https://arxiv.org/abs/2507.21953)：可作为计算机使用与 GUI agent的Agent Harness候选；核心关注“Trajectory-Constructed Memory-Augmented Planning for Mobile Task Automation”。
+- [Magentic-UI](https://arxiv.org/abs/2507.22358)：面向网页、代码和文件任务的人在环 agentic 界面。核心思想：结合协同规划、协同执行、多任务、动作防护和记忆，让人类以较低成本干预不完美的自主 agent。
+- [CoAct-1](https://arxiv.org/abs/2508.03923)（[开源代码](https://github.com/SalesforceAIResearch/CoAct)；显式多代理协作，包含 `Orchestrator / GUI Operator / Programmer`）
+- [Uncertainty-Aware GUI Agent: Adaptive Perception through Component Recommendation and Human-in-the-Loop Refinement](https://arxiv.org/abs/2508.04025)：Uncertainty-Aware GUI Agent 用组件推荐和 human-in-the-loop refine 做自适应感知，属于 GUI agent harness。
+- [Evolving in Tasks: Empowering the Multi-modality Large Language Model as the Computer Use Agent](https://arxiv.org/abs/2508.04037)：通过任务演化增强多模态计算机使用 agent。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Beyond Pixels: Exploring DOM Downsampling for LLM-Based Web Agents](https://arxiv.org/abs/2508.04412)：研究 Web agents 的 DOM downsampling，上下文管理 harness 特征明确。
+- [SEAgent: Self-Evolving Computer Use Agent with Autonomous Learning from Experience](https://arxiv.org/abs/2508.04700)：面向基于自主经验学习的自演化 computer-use agent的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Cognitive Duality for Adaptive Web Agents](https://arxiv.org/abs/2508.05081)：Cognitive Duality 结合离线和在线探索构建 adaptive web agents，适合 Computer Use Agent Harness。
+- [Cybernaut: Towards Reliable Web Automation](https://arxiv.org/abs/2508.16688)：面向可靠 Web automation 的 browser-control agent harness。
+- [WebSight: A Vision-First Architecture for Robust Web Agents](https://arxiv.org/abs/2508.16987)：可作为计算机使用与 GUI agent的Agent Harness候选；核心关注“A Vision-First Architecture for Robust Web Agents”。
+- [PerPilot: Personalizing VLM-based Mobile Agents via Memory and Exploration](https://arxiv.org/abs/2508.18040)：面向 VLM mobile agent 的个性化 harness。核心思想是结合记忆与探索，使移动端 agent 能适应用户特定的 app 状态、偏好和重复任务。
+- [AppAgent-Pro: A Proactive GUI Agent System for Multidomain Information Integration and User Assistance](https://arxiv.org/abs/2508.18689)：面向多领域信息整合与用户辅助的主动 GUI agent 系统；核心思想是超越被动应用操作，在 GUI 上下文之间主动规划辅助。
+- [SWIRL](https://arxiv.org/abs/2508.20018)：面向移动 GUI 控制的分阶段多智能体工作流，通过交替更新专门化 GUI 角色来提升 LVLM 手机操作中的协作和动作可靠性。
+- [Morae: Proactively Pausing UI Agents for User Choices](https://arxiv.org/abs/2508.21456)：让 UI agent 主动暂停并请求用户选择的控制流 harness。核心思想是在检测到未充分指定或有风险的 GUI 决策时插入 handoff，而不是盲目执行。
+- [UItron: Foundational GUI Agent with Advanced Perception and Planning](https://arxiv.org/abs/2508.21767)：GUI 基础 agent 的感知与规划流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [KG-RAG: Enhancing GUI Agent Decision-Making via Knowledge Graph-Driven Retrieval-Augmented Generation](https://arxiv.org/abs/2509.00366)：KG-RAG 用知识图谱检索增强移动 GUI agent 在应用环境中的动作决策。
+- [MobiAgent: A Systematic Framework for Customizable Mobile Agents](https://arxiv.org/abs/2509.00531)：可定制移动 agent 系统框架。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [OmniActor: A Generalist GUI and Embodied Agent for 2D&3D Worlds](https://arxiv.org/abs/2509.02322)：面向 2D GUI 与 3D 具身世界的通用 agent。核心思想：用一套 agent 栈统一屏幕界面和具身环境中的动作生成。
+- [PG-Agent: An Agent Powered by Page Graph](https://arxiv.org/abs/2509.03536)：基于 page graph 的 GUI agent harness。核心思想：把 GUI 页面和页面跳转关系组织成图，让 agent 检索导航先验，而不是只依赖线性历史轨迹。
+- [MobileRAG](https://arxiv.org/abs/2509.03891)：检索增强的移动 Agent harness。核心思路是为移动 GUI Agent 加入检索、记忆和外部环境交互，使其能在 App 能力不足时恢复、从既往失败中学习，并减少重复界面探索。
+- [Instruction Agent: Enhancing Agent with Expert Demonstration](https://arxiv.org/abs/2509.07098)：用专家示范增强的 GUI agent。核心思想是利用示范提炼的指令处理新颖 UI 元素、长程动作和个性化 GUI 轨迹。
+- [Agentic Lybic](https://arxiv.org/abs/2509.11067)（[开源代码](https://github.com/xlang-ai/OSWorld/tree/main/mm_agents/maestro)；FSM 驱动的 `Controller / Manager / Worker / Evaluator` 分工与质量控制）
+- [InfraMind](https://arxiv.org/abs/2509.13704)：面向 mission-critical industrial management 的探索式 GUI agentic framework，可作为带显式探索与操作约束的垂直 CUA harness 参考。
+- [GUI-ARP: Enhancing Grounding with Adaptive Region Perception for GUI Agents](https://arxiv.org/abs/2509.15532)：GUI agent 的自适应区域感知机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent](https://arxiv.org/abs/2509.15566)：可作为计算机使用与 GUI agent的Agent Harness候选；核心关注“Blink-Think-Link Reasoning Model for GUI Agent”。
+- [Towards General Computer Control with Hierarchical Agents and Multi-Level Action Spaces](https://arxiv.org/abs/2509.18230)：用层级智能体与多层动作空间迈向通用计算机控制。
+- [Robust, Observable, and Evolvable Agentic Systems Engineering: A Principled Framework Validated via the Fairy GUI Agent](https://arxiv.org/abs/2509.20729)：以 Fairy GUI Agent 验证可观测、可演化的 agentic systems engineering 框架，适合作为 GUI agent harness 候选。
+- [Recon-Act: A Self-Evolving Multi-Agent Browser-Use System via Web Reconnaissance, Tool Generation, and Task Execution](https://arxiv.org/abs/2509.21072)：自演化多 agent browser-use 系统。核心思想是结合 web reconnaissance、工具生成与任务执行，让浏览器 agent 能发现交互 affordance 并随任务改进。
+- [D-Artemis: A Deliberative Cognitive Framework for Mobile GUI Multi-Agents](https://arxiv.org/abs/2509.21799)：D-Artemis 用 deliberative multi-agent 框架处理移动 GUI，适合 Computer Use Agent Harness。
+- [Generalist Scanner Meets Specialist Locator: A Synergistic Coarse-to-Fine Framework for Robust GUI Grounding](https://arxiv.org/abs/2509.24133)：Agent Harness 条目；核心思想：用通用扫描器和专门定位器协同提升 GUI grounding。
+- [Retrieval-augmented GUI Agents with Generative Guidelines](https://arxiv.org/abs/2509.24183)：利用生成式指南的检索增强 GUI agent。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [PAL-UI: Planning with Active Look-back for Vision-Based GUI Agents](https://arxiv.org/abs/2510.00413)：通过主动回看 GUI 历史视觉细节，支持后续步骤需要的长程记忆。
+- [GUI-KV: Efficient GUI Agents via KV Cache with Spatio-Temporal Awareness](https://arxiv.org/abs/2510.00536)：可作为计算机使用与 GUI agent的Agent Harness候选；核心关注“Efficient GUI Agents via KV Cache with Spatio-Temporal Awareness”。
+- [WALT](https://arxiv.org/abs/2510.01524)：会学习网站工具的浏览器 agent harness。核心思想：把网站已有的 search、filter、sort、create、edit 等潜在功能反向工程成可调用操作，减少对脆弱逐步 UI 推理的依赖。
+- [Scaling Agents for Computer Use](https://arxiv.org/abs/2510.02250): 把 computer-use agent 的多次执行轨迹转写为行为叙事并进行行为级比较，从而提升长程任务鲁棒性。
+- [AgentBuilder: Exploring Scaffolds for Prototyping User Experiences of Interface Agents](https://arxiv.org/abs/2510.04452)：探索 interface agents 用户体验原型的 scaffolds，适合 GUI agent harness。
+- [GUISpector: An MLLM Agent Framework for Automated Verification of Natural Language Requirements in GUI Prototypes](https://arxiv.org/abs/2510.04791)：GUI 需求验证 harness，将自然语言需求与原型截图对照，利用 MLLM 推理检查可见控件和布局状态，并输出逐条需求的不匹配报告。
+- [Agent+P: Guiding UI Agents via Symbolic Planning](https://arxiv.org/abs/2510.06042)：用符号规划引导 UI agent；核心思想：加入显式规划层，使界面动作基于符号任务结构选择，而不是直接反应式点击。
+- [WebDART](https://arxiv.org/abs/2510.06587)：用于复杂网页任务的动态分解与重规划框架。核心思想：把目标拆成导航、信息抽取和执行子任务，并随着网页状态变化不断重规划，提升 WebChoreArena 式长链网页操作的稳定性。
+- [ReInAgent: A Context-Aware GUI Agent Enabling Human-in-the-Loop Mobile Task Navigation](https://arxiv.org/abs/2510.07988)：支持人在环导航的上下文感知移动 GUI agent harness；核心思想是结合移动端状态、用户介入和任务进度信号来提升手机操作可靠性。
+- [Auto-scaling Continuous Memory for GUI Agent](https://arxiv.org/abs/2510.09038)：面向 GUI agent 的连续记忆 harness，把交互轨迹编码成固定长度连续表示。核心思想：在保留视觉状态细节的同时降低上下文成本，并用环境发现、任务合成、轨迹 rollout 与验证组成低成本记忆扩展飞轮。
+- [ReUseIt](https://arxiv.org/abs/2510.14308)：从既有尝试中合成可复用 workflow 的 web-agent harness。核心思想是从成功和失败的 web-task trajectory 中抽取带 execution guard 的 workflow，使后续执行能复用任务结构、发现错误并减少重复用户指导。
+- [Hi-Agent: Hierarchical Vision-Language Agents for Mobile Device Control](https://arxiv.org/abs/2510.14388)：补充computer use gui方向的agent harness，核心围绕《Hi-Agent: Hierarchical Vision-Language Agents for Mobile Device Control》。
+- [CORE: Reducing UI Exposure in Mobile Agents via Collaboration Between Cloud and Local LLMs](https://arxiv.org/abs/2510.15455)：CORE 通过云端和本地 LLM 协作减少移动 agent UI exposure，属于 GUI agent 安全/隐私 harness。
+- [GUIrilla: A Scalable Framework for Automated Desktop UI Exploration](https://arxiv.org/abs/2510.16051)：GUIrilla 是自动桌面 UI 探索框架，适合 Computer Use Agent Harness。
+- [WEBSERV: A Browser-Server Environment for Efficient Training of Reinforcement Learning-based Web Agents at Scale](https://arxiv.org/abs/2510.16252)：面向 Web agent 的 full-stack、RL-ready 环境；核心思想是结合高效隔离的服务器环境与稳定的浏览器观察/动作接口，支持大规模训练和评测。
+- [ColorAgent: Building A Robust, Personalized, and Interactive OS Agent](https://arxiv.org/abs/2510.19386)：类型：agent harness/可复用执行框架。核心价值：为 2.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [WebATLAS](https://arxiv.org/abs/2510.22732)：一种带动作模拟的记忆增强 web-agent harness。核心思想是通过探索形成持久 cognitive map，保存交互结果，并在真实网页行动前用 planner-simulator-critic loop 评估候选动作。
+- [MGA](https://arxiv.org/abs/2510.24168)：面向 observation-centric interaction 的记忆驱动 GUI agent。核心思想：用无意图 Observer 和结构化 state-delta memory 替代原始历史拼接，降低确认偏差、上下文过载和冗余专家模块。
+- [GUI-Rise](https://arxiv.org/abs/2510.27210)：一种结合结构化推理和历史摘要的 GUI navigation harness。核心思想是连接进度估计、决策推理、动作预测和紧凑历史摘要，并用奖励把摘要质量与后续动作表现绑定。
+- [HyperClick: Advancing Reliable GUI Grounding via Uncertainty Calibration](https://arxiv.org/abs/2510.27266)：为 GUI grounding 校准不确定性，使 agent 能识别不可靠坐标预测。
+- [COLA: Collaborative Multi-Agent Framework with Dynamic Task Scheduling for GUI Automation](https://doi.org/10.18653/v1/2025.emnlp-main.227)：补充computer use gui方向的agent harness，核心围绕《COLA: Collaborative Multi-Agent Framework with Dynamic Task Scheduling for GUI Automation》。
+- [Portal UX Agent - A Plug-and-Play Engine for Rendering UIs from Natural Language Specifications](https://arxiv.org/abs/2511.00843)：UI 渲染 agent engine，将自然语言规格转为受约束的界面工件，使用设计系统感知的规划和校验，而不是自由形式的一次性代码生成。
+- [Grounding Computer Use Agents on Human Demonstrations](https://arxiv.org/abs/2511.07332)：用人类演示 grounding 计算机使用 agent。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [OSGym: Scalable OS Infra for Computer Use Agents](https://arxiv.org/abs/2511.11672)：面向面向 computer-use agent 的可扩展 OS 沙箱基础设施的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [MEGA-GUI: Multi-stage Enhanced Grounding Agents for GUI Elements](https://arxiv.org/abs/2511.13087)：可作为computer-use and GUI agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Computer-Use Agents as Judges for Generative User Interface](https://arxiv.org/abs/2511.15567)：补充computer use gui方向的agent harness，核心围绕《Computer-Use Agents as Judges for Generative User Interface》。
+- [Building Browser Agents: Architecture, Security, and Practical Solutions](https://arxiv.org/abs/2511.19477)：讨论浏览器 agent 的架构、安全和工程实现问题；核心思想：把浏览器自动化作为包含感知、动作与安全边界的 agent harness。
+- [AgentBay](https://arxiv.org/abs/2512.04367)：一个用于 agentic system 的混合交互 sandbox，覆盖 Windows、Linux、Android、浏览器和代码解释器，通过 MCP/SDK 支持 agent 访问，并用自适应流协议支持人类随时接管。
+- [GAIR: GUI Automation via Information-Joint Reasoning and Group Reflection](https://arxiv.org/abs/2512.09396)：结合信息联合推理和群体反思的 GUI 自动化框架；核心思想是把视觉/UI 证据与反思式协调结合起来，提高 GUI 动作选择可靠性。
+- [AgentProg](https://arxiv.org/abs/2512.10371)（[开源代码](https://github.com/MobileLLM/AgentProg)；把长程 GUI 交互历史重写成带变量和控制流的程序化上下文，并用全局 belief state 维持移动 GUI 任务中的部分可观测状态）
+- [AgentPbD](https://doi.org/10.1109/vl-hcc65237.2025.00064)：从用户演示生成浏览器 agent workflow 的 harness。核心思想：把示范式编程轨迹转化为可交互的 agentic workflow，用于指导网页自动化，而不只依赖手写任务脚本。
+- [Autonomous Agents for Accessibility](https://doi.org/10.1109/ASE63991.2025.00349)：面向网页无障碍评测的代理式执行框架，用自主代理模拟视觉障碍用户。核心思路是让代理在网页界面中完成 GUI 交互式用户旅程，通过交互轨迹发现无障碍问题，而不是只依赖静态页面检查。
+- [WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment](https://arxiv.org/abs/2512.12692)：面向自主 web agent 的 action-aware tree search harness。核心思想是结合环境反馈搜索网页动作，而不是把浏览视为单条线性轨迹。
+- [MT-Agent: Constructing a GUI Agent via Modality Enhancement and Text-Guided Fusion](https://doi.org/10.1109/jiot.2025.3600573)：通过模态增强和文本引导融合构建 GUI agent；核心思想：结合界面视觉信号与文本指导，提升 UI 感知和动作落地能力。
+- [FC-MIR: A Mobile Screen Awareness Framework for Intent-Aware Recommendation based on Frame-Compressed Multimodal Trajectory Reasoning](https://arxiv.org/abs/2512.19107)：可作为computer-use and GUI agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [EchoTrail-GUI: Building Actionable Memory for GUI Agents via Critic-Guided Self-Exploration](https://arxiv.org/abs/2512.19396)：可作为计算机使用与 GUI agent的Agent Harness候选；核心关注“Building Actionable Memory for GUI Agents via Critic-Guided Self-Exploration”。
+- [KuiTest: Leveraging Knowledge in the Wild as GUI Testing Oracle for Mobile Apps](https://doi.org/10.1109/icse-seip66354.2025.00009)：面向计算机使用和 GUI 智能体的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection](https://arxiv.org/abs/2601.03928)：面向 UI grounding 的保位置视觉 token 选择。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [GUITester: Enabling GUI Agents for Exploratory Defect Discovery](https://arxiv.org/abs/2601.04500)：Agent Harness 条目；核心思想：用 GUI agent 做探索式缺陷发现。
+- [AgentOCR: Reimagining Agent History via Optical Self-Compression](https://arxiv.org/abs/2601.04786)：面向 agent history 的 optical self-compression 方法；核心思想是把交互历史压缩成视觉/OCR 式摘要，保留后续决策所需的 GUI 状态。
+- [C-World: A Computer Use Agent Environment Creator](https://arxiv.org/abs/2601.06328)：类型：benchmark/评测协议。核心价值：为 2.5.3 Agent Harness 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [LLM-Driven Accessible Interface: A Model-Based Approach](https://arxiv.org/abs/2601.06616)：补充面向计算机与图形界面使用的外部 LLM/VLM 工作流，重点是LLM-driven accessible interface workflow。
+- [OS-Symphony](https://arxiv.org/abs/2601.07779)（[开源代码](https://github.com/OS-Copilot/OS-Symphony)；Orchestrator + Reflection-Memory + 教程检索的跨平台 computer-use 框架）
+- [ExpSeek: Self-Triggered Experience Seeking for Web Agents](https://arxiv.org/abs/2601.08605)：网页 agent 的逐步主动经验检索机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [GUI-Eyes: Tool-Augmented Perception for Visual Grounding in GUI Agents](https://arxiv.org/abs/2601.09770)：面向视觉定位的工具增强 GUI 感知。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [CI4A](https://arxiv.org/abs/2601.14790)：面向网页自动化 agent 的语义组件接口层。核心思想是把 UI 组件封装成统一工具原语，使 agent 使用为机器优化的接口，而不是脆弱地操作面向人类的 DOM。
+- [GraphPilot: GUI Task Automation with One-Step LLM Reasoning Powered by Knowledge Graph](https://arxiv.org/abs/2601.17418)：基于知识图谱和单步 LLM 推理的 GUI 自动化 harness。核心思想是用结构化应用知识约束 GUI 决策，而不只依赖截图提示。
+- [Curiosity Driven Knowledge Retrieval for Mobile Agents](https://arxiv.org/abs/2601.19306)：为移动 agent 加入好奇心驱动的知识检索，属于移动 GUI agent 的信息获取 harness。
+- [CUA-Skill Agent](https://arxiv.org/abs/2601.21123)（[开源代码](https://github.com/microsoft/cua_skill)；结构化 GUI skill 库 + 参数化组合图 + 动态 skill 检索/实例化 + memory-aware recovery）
+- [BEAP-Agent](https://arxiv.org/abs/2601.21352)（开源代码：未公开；把 GUI 执行显式建模为 DFS，支持多级回溯与动态任务跟踪）
+- [Agent Alpha: Tree Search Unifying Generation, Exploration and Evaluation for Computer-Use Agents](https://arxiv.org/abs/2602.02995)：类型：agent harness/可复用执行框架。核心价值：为 2.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [ANCHOR](https://arxiv.org/abs/2602.07153)：面向 GUI agents 的 branch-point 数据生成框架。核心思想：从已验证种子示范出发，识别有意义的状态变化点，生成基于当前界面的任务变体，再执行并验证新轨迹，用于扩展桌面监督数据。
+- [Minitap mobile-use](https://arxiv.org/abs/2602.07787)（[开源代码](https://github.com/minitap-ai/mobile-use)；围绕 AndroidWorld 的任务分解式多代理移动端 harness，通过 supervisor、视觉定位和动作执行分工把移动 GUI 任务拆成可复核子目标）
+- [TreeCUA: Efficiently Scaling GUI Automation with Tree-Structured Verifiable Evolution](https://arxiv.org/abs/2602.09662)：TreeCUA 针对 GUI automation 的 tree-structured verifiable evolution，适合 computer-use harness。
+- [Secure Intent-Centric Mobile Agent OS](https://arxiv.org/abs/2602.10915)：提出移动运行时层来调解 Agent 意图、应用生态、权限与安全边界，而不只是让 Agent 操作屏幕。
+- [OpAgent](https://arxiv.org/abs/2602.13559)：模块化 web-navigation agent；核心思想是组合 planner、grounder、reflector 和 summarizer，并利用在线交互反馈在开放网页中恢复错误。
+- [EmbeWebAgent: Embedding Web Agents into Any Customized UI](https://arxiv.org/abs/2602.14865)：把 web agents 嵌入定制企业 UI 的框架。核心思想：使用轻量前端 hooks 和应用级访问能力，而不是只依赖截图或原始 DOM 树。
+- [World-Model-Augmented Web Agents with Action Correction](https://arxiv.org/abs/2602.15384)：带 action correction 的 web-agent harness。核心思想：用 world model 预测或修复网页动作，降低导航或交互偏离计划后的恢复脆弱性。
+- [IntentCUA: Learning Intent-level Representations for Skill Abstraction and Multi-Agent Planning in Computer-Use Agents](https://arxiv.org/abs/2602.17049)：基于 intent-level skill abstraction 的 multi-agent computer-use harness。核心思想：把可复用的常规子问题抽象到意图层，在嘈杂多窗口状态中稳定长程 GUI 执行。
+- [Human-Intervention Modeling for Web Agents](https://arxiv.org/abs/2602.17588)：collaborative web-agent harness component；核心思想是学习用户何时会监督、纠正、协作或接管，并把 intervention-aware policy 用于实时网页导航 agent。
+- [ActionEngine: From Reactive to Programmatic GUI Agents via State Machine Memory](https://arxiv.org/abs/2602.20502)：带 state-machine memory 的 programmatic GUI-agent 框架。核心思想是从反应式点击转向显式状态机控制，使 agent 能记住 GUI 状态并执行稳定流程。
+- [M2](https://arxiv.org/abs/2603.00503)：面向长周期 Web agent 的记忆增强 harness。核心思想：结合动态轨迹摘要和可复用经验检索，让 Web agent 在压缩上下文的同时保留与行动相关的经验。
+- [V-GEMS](https://arxiv.org/abs/2603.02626)（[代码](https://github.com/Vaultttttttttttt/V-GEMS)）：多模态网页遍历 agent，将视觉 grounding、显式 memory stack 与状态跟踪结合起来，帮助 agent 在深层网页任务中回溯并避免循环导航。
+- [WebFactory](https://arxiv.org/abs/2603.05044)：面向 grounded web agents 的自动闭环流水线。核心思想：合成网页环境和任务、执行轨迹并验证行为，减少 GUI/web agent 训练对不安全 live interaction 或稀缺人工示范的依赖。
+- [STRUCTUREDAGENT](https://arxiv.org/abs/2603.05294)：面向长程网页任务的分层规划 harness。核心思想：结合动态 AND/OR-tree planning 与 structured memory，让 web agent 能搜索、分解和恢复，而不是贪心执行单一动作链。
+- [Hierarchical Memory Tree](https://arxiv.org/abs/2603.07024)：面向 web agents 的 structured-memory harness；核心思想是把历史轨迹抽象为 intent、stage 和 action 三层，让 planner 校验可复用子目标，并由 actor 在新网站上落地可迁移动作模式。
+- [OSExpert](https://arxiv.org/abs/2603.07978)（开源代码：未找到稳定公开仓库；用 GUI-based depth-first exploration 学习专业 computer-use skills 的 harness；核心思想：结合探索式搜索、技能抽象和陌生界面迁移）
+- [SpecOps: A Fully Automated AI Agent Testing Framework in Real-World GUI Environments](https://arxiv.org/abs/2603.10268)：它提供 GUI agent grounding、规划、测试或恢复机制，适合补充 computer-use Agent Harness。
+- [Adaptive VLM Routing](https://arxiv.org/abs/2603.12823)：面向 computer-use agents 的模型路由层；核心思想是估计 GUI 动作难度和置信度，将每次 grounded action 路由给满足可靠性阈值的最低成本 VLM，并对高风险动作升级到更强模型。
+- [Web Agent 分层规划诊断](https://arxiv.org/abs/2603.14248)：面向 web agent 的过程诊断框架；核心思想是把高层规划、低层执行和 replanning 分开评估，定位失败究竟来自推理、视觉/页面 grounding，还是恢复控制，而不只看最终任务成功率。
+- [AdaZoom-GUI: Adaptive Zoom-based GUI Grounding with Instruction Refinement](https://arxiv.org/abs/2603.17441)：Agent Harness 条目；核心思想：通过自适应缩放和指令细化提升 GUI grounding。
+- [OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards](https://arxiv.org/abs/2603.19191)：提出面向 GUI 轨迹的多智能体 critic，并引入 OGRBench 评测跨平台 GUI outcome reward。
+- [Natural-Language Agent Harnesses](https://arxiv.org/abs/2603.25723)（[开源代码](https://github.com/curated-skills/LinguaClaw)；把 harness 逻辑外显成可编辑自然语言文档，用共享 runtime 执行、写回状态与工件）
+- [VACP: Visual Analytics Context Protocol](https://arxiv.org/abs/2603.29322)：面向 agent-ready 可视分析应用的 Visual Analytics Context Protocol；核心思想是向 agent 暴露可视化语义、任务和交互上下文，而不是只依赖截图或原始 DOM。
+- [Internal APIs Are All You Need: Shadow APIs, Shared Discovery, and the Case Against Browser-First Agent Architectures](https://arxiv.org/abs/2604.00694)：关于 agent 系统内部 API 接入的架构工作。核心思想：结合 shadow APIs 与 shared discovery，在可获得应用级接口时降低 browser-first agent 的脆弱性。
+- [Read More, Think More](https://arxiv.org/abs/2604.01535)：重新审视 web agent 的 observation reduction，把阅读范围和屏幕证据作为 harness 可控变量。
+- [ClickAIXR: On-Device Multimodal Vision-Language Interaction with Real-World Objects in Extended Reality](https://arxiv.org/abs/2604.04905)：端侧 XR 交互框架，将目标检测、视觉语言 grounding 和点击式选择结合，使用户或 agent 无需云端路由即可对真实物体触发多模态动作。
+- [IntentScore: Intent-Conditioned Action Evaluation for Computer-Use Agents](https://arxiv.org/abs/2604.05157)：面向面向 computer-use agent 的意图条件动作评估的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](https://arxiv.org/abs/2604.05477)：类型：agent harness/可复用执行框架。核心价值：为 2.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [MAESTRO: Adapting GUIs and Guiding Navigation with User Preferences in Conversational Agents with GUIs](https://arxiv.org/abs/2604.06134)：面向带 GUI 的对话 agent 的界面适配和导航引导框架；核心思想是依据用户偏好组织界面引导和导航动作。
+- [The Art of Building Verifiers for Computer Use Agents](https://arxiv.org/abs/2604.06240)：类型：agent harness/可复用执行框架。核心价值：为 2.5.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning](https://arxiv.org/abs/2604.06995)：UI-in-the-loop 多模态 GUI 推理范式。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Avenir-UX](https://arxiv.org/abs/2604.09581)：用于自动化 UX 评估的 GUI 接地网页交互框架。核心思路是模拟用户在真实网站上的访问路径，将动作轨迹与 SUS、SEQ 和边想边说式协议结合，生成结构化可用性报告。
+- [Agentic Compilation: Mitigating the LLM Rerun Crisis for Minimized-Inference-Cost Web Automation](https://arxiv.org/abs/2604.09718)：面向 Web 自动化的 harness 方向，通过编译或复用 agent 行为降低重复推理成本；设计关键词：Web automation、trajectory reuse、最小化推理成本、可复现执行。
+- [EE-MCP](https://arxiv.org/abs/2604.09815)（开源代码：未找到稳定公开仓库；自演化 MCP-GUI agent 框架；核心思想：自动生成环境、收集轨迹并学习经验库，用来平衡 GUI 动作与 MCP 工具调用）
+- [ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents](https://arxiv.org/abs/2604.11784)：类型：benchmark/评测协议。核心价值：为 2.5.3 Agent Harness 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [See, Point, Refine: Multi-Turn Approach to GUI Grounding with Visual Feedback](https://arxiv.org/abs/2604.13019)：提供可复用 agent 工作流或执行 harness，服务于GUI computer-use agents。
+- [Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](https://arxiv.org/abs/2604.13488)：该工作用多角色编排构建轻量 GUI agents，适合 Computer Use Agent Harness。
+- [UI-Zoomer: Uncertainty-Driven Adaptive Zoom-In for GUI Grounding](https://arxiv.org/abs/2604.14113)：它提供 GUI agent grounding、规划、测试或恢复机制，适合补充 computer-use Agent Harness。
+- [SkillDroid](https://arxiv.org/abs/2604.14872)：面向移动 GUI Agent 的技能编译 harness。核心思路是把成功的 LLM 手机操作轨迹编译为带定位器、参数槽、检索、回放和失败重编译机制的 UI 动作模板，使重复任务不再需要每一步重新调用 LLM 推理。
+- [Mango: Multi-Agent Web Navigation via Global-View Optimization](https://arxiv.org/abs/2604.18779)：带 global-view optimization 的 multi-agent web-navigation harness。核心思想：通过共享页面状态和任务进度协调多个浏览/导航 agent，而不是让它们各自做局部决策。
+- [FOCAL: Filtered On-device Continuous Activity Logging for Efficient Personal Desktop Summarization](https://arxiv.org/abs/2604.19541)：桌面活动日志 harness，在端侧过滤屏幕事件、选择性调用 VLM 摘要，并在隐私和算力约束下把连续计算机使用流组织成任务化个人日志。
+- [AgentLens](https://arxiv.org/abs/2604.20279)：用于移动 GUI agent 的自适应可视反馈交互 harness。核心思想是加入 Full UI、Partial UI 与 generated-UI 三类沟通模式，并通过 virtual display 让后台移动 agent 向用户暴露适量执行状态。
+- [VLAA-GUI: Knowing When to Stop, Recover, and Search, A Modular Framework for GUI Automation](https://arxiv.org/abs/2604.21375)：面向带停止、恢复和搜索模块的 GUI 自动化的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [AutoSurfer -- Teaching Web Agents through Comprehensive Surfing, Learning, and Modeling](https://arxiv.org/abs/2604.27253)：网页 agent 学习与建模框架；核心思想是收集浏览经验、建模网站行为，并用这些知识提升后续网页任务执行。
+- [AutoFocus: Uncertainty-Aware Active Visual Search for GUI Grounding](https://arxiv.org/abs/2605.02630)：AutoFocus 用不确定性感知主动视觉搜索改进 GUI grounding，适合 Computer Use Agent Harness。
+- [X-OmniClaw Technical Report: A Unified Mobile Agent for Multimodal Understanding and Interaction](https://arxiv.org/abs/2605.05765)：统一的移动端多模态理解与交互 agent；核心思想是把感知、规划和动作连接到移动 GUI 任务中，而不是把截图当成静态 VQA。
+- [Executable Agentic Memory](https://arxiv.org/abs/2605.12294)：把重复 GUI 操作流程转成可执行知识图谱的 GUI-agent memory harness。核心思想：通过状态感知探索和 action-group mining 构建程序性记忆，再用 value-guided 图搜索检索并执行长程 GUI routine，减少每一步重新规划的脆弱性。
+- [ToolCUA](https://arxiv.org/abs/2605.12481)（[开源代码](https://github.com/X-PLUG/ToolCUA)）：GUI 加工具的 computer-use harness，协调屏幕交互与工具执行，适合 OSWorld-MCP、MobileWorld 这类需要同时选择视觉动作和结构化工具的任务。
+- [PAGER: Bridging the Semantic-Execution Gap in Point-Precise Geometric GUI Control](https://arxiv.org/abs/2605.15963)：点级精确几何 GUI 控制框架；核心思想是弥合语义指令与精确 GUI 执行坐标之间的差距，减少 grounding-action mismatch。
+- [GUI-AC: Enhancing Continual Learning in GUI Agents](https://arxiv.org/abs/2606.10522)：提出 GUI-AC，用 grounding certainty 调整 advantage 权重和 clipping 范围，缓解 GUI agent 在界面分布持续变化下的 RFT 不稳定。
+- [ClueUp: Resolving Intent Ambiguity in Personalized Web Agents with Profile-Driven Clarification](https://doi.org/10.1109/icassp55912.2026.11464552)：通过 profile-driven clarification 解决个性化 web agent 的意图歧义；核心思想是在意图不清时先提出有依据的澄清问题再行动。
+- [Agent Mode: A Minimalist, Machine-Readable Web Protocol for Enhancing AI Agent Efficiency and Search Engine Optimization](https://doi.org/10.1109/icsft66733.2026.11506779)：面向 AI agent 效率的机器可读 Web 协议；核心思想是以更可靠的形式暴露网页内容和动作，减少临时页面解析。
+- [HiPlan](https://doi.org/10.3724/2096-7004.di.2026.0075)：带自适应全局-局部指导的网页 agent 分层规划 harness。
 - Browser-Use（[开源代码](https://github.com/browser-use/browser-use)；HAL/AssistantBench/Online Mind2Web 等榜单常见的浏览器 agent scaffold，把 Playwright 浏览器状态、动作执行、持久浏览器和工具扩展封装成可直接复用的 web automation harness）
 - Stagehand（[开源代码](https://github.com/browserbase/stagehand)；[文档](https://docs.stagehand.dev/)）：生产向浏览器自动化 harness，把确定性的 Playwright 代码与自然语言动作、抽取结合起来，可作为 Browserbase 路线的 browser-agent 基线。
 - Skyvern（[开源代码](https://github.com/Skyvern-AI/skyvern)；[主页](https://www.skyvern.com/)）：生产型网页工作流自动化 harness，用 LLM 与视觉组件处理浏览器导航、表单填写、workflow 执行和有状态网页任务。
-- [LiteCUA](https://arxiv.org/abs/2505.18829)（开源代码：未公开；把“计算机”抽象成 MCP server 的环境语义层，降低动作空间复杂度）
-- [AgentPbD](https://doi.org/10.1109/vl-hcc65237.2025.00064)：从用户演示生成浏览器 agent workflow 的 harness。核心思想：把示范式编程轨迹转化为可交互的 agentic workflow，用于指导网页自动化，而不只依赖手写任务脚本。
-- [UI-Evol](https://arxiv.org/abs/2505.21964)（[开源代码](https://github.com/microsoft/FIVE-UI-Evol)；可插拔知识演化模块，基于 Agent S2 在 OSWorld 上提升成功率并降低行为方差）
-- [CoAct-1](https://arxiv.org/abs/2508.03923)（[开源代码](https://github.com/SalesforceAIResearch/CoAct)；显式多代理协作，包含 `Orchestrator / GUI Operator / Programmer`）
-- [Autonomous Agents for Accessibility](https://doi.org/10.1109/ASE63991.2025.00349)：面向网页无障碍评测的代理式执行框架，用自主代理模拟视觉障碍用户。核心思路是让代理在网页界面中完成 GUI 交互式用户旅程，通过交互轨迹发现无障碍问题，而不是只依赖静态页面检查。
-- [MobileRAG](https://arxiv.org/abs/2509.03891)：检索增强的移动 Agent harness。核心思路是为移动 GUI Agent 加入检索、记忆和外部环境交互，使其能在 App 能力不足时恢复、从既往失败中学习，并减少重复界面探索。
-- [Agentic Lybic](https://arxiv.org/abs/2509.11067)（[开源代码](https://github.com/xlang-ai/OSWorld/tree/main/mm_agents/maestro)；FSM 驱动的 `Controller / Manager / Worker / Evaluator` 分工与质量控制）
-- [AgentProg](https://arxiv.org/abs/2512.10371)（[开源代码](https://github.com/MobileLLM/AgentProg)；把长程 GUI 交互历史重写成带变量和控制流的程序化上下文，并用全局 belief state 维持移动 GUI 任务中的部分可观测状态）
-- [OS-Symphony](https://arxiv.org/abs/2601.07779)（[开源代码](https://github.com/OS-Copilot/OS-Symphony)；Orchestrator + Reflection-Memory + 教程检索的跨平台 computer-use 框架）
-- [CUA-Skill Agent](https://arxiv.org/abs/2601.21123)（[开源代码](https://github.com/microsoft/cua_skill)；结构化 GUI skill 库 + 参数化组合图 + 动态 skill 检索/实例化 + memory-aware recovery）
-- [BEAP-Agent](https://arxiv.org/abs/2601.21352)（开源代码：未公开；把 GUI 执行显式建模为 DFS，支持多级回溯与动态任务跟踪）
-- [Minitap mobile-use](https://arxiv.org/abs/2602.07787)（[开源代码](https://github.com/minitap-ai/mobile-use)；围绕 AndroidWorld 的任务分解式多代理移动端 harness，通过 supervisor、视觉定位和动作执行分工把移动 GUI 任务拆成可复核子目标）
-- [Secure Intent-Centric Mobile Agent OS](https://arxiv.org/abs/2602.10915)：提出移动运行时层来调解 Agent 意图、应用生态、权限与安全边界，而不只是让 Agent 操作屏幕。
-- [OSExpert](https://arxiv.org/abs/2603.07978)（开源代码：未找到稳定公开仓库；用 GUI-based depth-first exploration 学习专业 computer-use skills 的 harness；核心思想：结合探索式搜索、技能抽象和陌生界面迁移）
-- [Natural-Language Agent Harnesses](https://arxiv.org/abs/2603.25723)（[开源代码](https://github.com/curated-skills/LinguaClaw)；把 harness 逻辑外显成可编辑自然语言文档，用共享 runtime 执行、写回状态与工件）
-- [Avenir-UX](https://arxiv.org/abs/2604.09581)：用于自动化 UX 评估的 GUI 接地网页交互框架。核心思路是模拟用户在真实网站上的访问路径，将动作轨迹与 SUS、SEQ 和边想边说式协议结合，生成结构化可用性报告。
-- [EE-MCP](https://arxiv.org/abs/2604.09815)（开源代码：未找到稳定公开仓库；自演化 MCP-GUI agent 框架；核心思想：自动生成环境、收集轨迹并学习经验库，用来平衡 GUI 动作与 MCP 工具调用）
-- [SkillDroid](https://arxiv.org/abs/2604.14872)：面向移动 GUI Agent 的技能编译 harness。核心思路是把成功的 LLM 手机操作轨迹编译为带定位器、参数槽、检索、回放和失败重编译机制的 UI 动作模板，使重复任务不再需要每一步重新调用 LLM 推理。
-- [AgentLens](https://arxiv.org/abs/2604.20279)：用于移动 GUI agent 的自适应可视反馈交互 harness。核心思想是加入 Full UI、Partial UI 与 generated-UI 三类沟通模式，并通过 virtual display 让后台移动 agent 向用户暴露适量执行状态。
-- [ToolCUA](https://arxiv.org/abs/2605.12481)（[开源代码](https://github.com/X-PLUG/ToolCUA)）：GUI 加工具的 computer-use harness，协调屏幕交互与工具执行，适合 OSWorld-MCP、MobileWorld 这类需要同时选择视觉动作和结构化工具的任务。
+- [OpenMCP](https://doi.org/10.1145/3805621.3807649)：面向 MCP-enabled computer-use agents 的自托管评测 harness，有助于标准化 GUI 与工具结合的评测。
+- [AssistEditor: Multi-Agent Collaboration for GUI Workflow Automation in Video Creation](https://doi.org/10.1145/3664647.3684998)：视频编辑 GUI 自动化 harness，围绕用户意图、时间线操作和应用 UI 动作协调多个 agent，将复杂编辑流程分解并在编辑器内执行。
+- [Intention-Based GUI Test Migration for Mobile Apps using Large Language Models](https://doi.org/10.1145/3728978)：移动 GUI 测试迁移工作流，将旧测试意图翻译为新 app 的动作，利用 LLM 推理界面变化来迁移交互序列，而不是脆弱地重放坐标。
+- [Talk to the Hand: an LLM-powered Chatbot with Visual Pointer as Proactive Companion for On-Screen Tasks](https://doi.org/10.1145/3706598.3715579)：补充带视觉指针交互的屏幕任务助手框架。
+- [MALACHITE—Enabling Users to Teach GUI-Aware Natural Language Interfaces](https://doi.org/10.1145/3716141)：让用户教会 GUI-aware natural-language interface 处理新命令；核心思想是通过交互式任务学习，用演示和纠正扩展 GUI 操作能力，而不是重新训练完整 agent。
+- [Scaling Test-time Compute in Mobile GUI Agents with Parallel Speculative Execution](https://doi.org/10.1145/3737902.3768356)：移动 GUI agent 的 test-time compute harness；核心思想是并行执行候选 GUI 动作分支来提升交互任务解决能力。
+- [Can I Trust You? Advancing GUI Task Automation with Action Trust Score](https://doi.org/10.1145/3746027.3755618)：提出 GUI 自动化中的动作可信度评分，可用于判断计算机使用智能体动作是否应执行。
+- [Enterprise-Ready Web Automation: A Framework for Democratizing the AI Agent](https://doi.org/10.5220/0014472900004052)：提出企业级网页自动化 AI 智能体框架。

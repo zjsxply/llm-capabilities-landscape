@@ -1,39 +1,247 @@
 # 4.4.3 Bench
 
+- [RSUD20K: A Dataset for Road Scene Understanding In Autonomous Driving](https://arxiv.org/abs/2401.07322)： 发布 dataset for Road Scene Understanding In Autonomous Driving，基准协议用驾驶场景数据评估场景级行为与任务指标。
+- [TUMTraf Event: Calibration and Fusion Resulting in a Dataset for Roadside Event-Based and RGB Cameras](https://arxiv.org/abs/2401.08474)： 发布 calibration and Fusion Resulting in a Dataset for Roadside Event-Based and RGB Cameras，基准协议用camera, RGB 图像, and 事件相机评估夜间和低照鲁棒性。
+- [MUSES: The Multi-Sensor Semantic Perception Dataset for Driving under Uncertainty](https://arxiv.org/abs/2401.12761)： 发布 multi-Sensor Semantic Perception Dataset for Driving under Uncertainty，基准协议用LiDAR, radar, and camera评估恶劣条件鲁棒性。
+- [Towards learning-based planning: The nuPlan benchmark for real-world autonomous driving](https://arxiv.org/abs/2403.04133)（[排行榜](https://eval.ai/web/challenges/challenge-page/1856/leaderboard/4360)）：评测自动驾驶感知、生成、规划或世界建模能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Embodied Understanding of Driving Scenarios](https://arxiv.org/abs/2403.04593)： 定义 embodied Understanding of Driving Scenarios，评测协议用驾驶场景数据衡量场景级行为与任务指标。
+- [Not All Errors Are Made Equal: A Regret Metric for Detecting System-level Trajectory Prediction Failures](https://arxiv.org/abs/2403.04745)： 提出 regret Metric for Detecting System-level Trajectory Prediction Failures，用轨迹数据按按后悔值加权的系统级失效衡量系统表现。
+- [Reality Bites: Assessing the Realism of Driving Scenarios with Large Language Models](https://arxiv.org/abs/2403.09906)： 发布 assessing the Realism of Driving Scenarios with Large Language Models，基准协议用驾驶场景数据评估场景级行为与任务指标。
+- [Automated Evaluation of Large Vision-Language Models on Self-Driving Corner Cases](https://arxiv.org/abs/2404.10595)：通过任务、评测协议或诊断设置评测 Autonomous Driving 能力，适合作为 Bench 条目。
+- [Analysis of a Modular Autonomous Driving Architecture: The Top Submission to CARLA Leaderboard 2.0 Challenge](https://arxiv.org/abs/2405.01394)（[CARLA 榜单](https://leaderboard.carla.org/)）：发布 top Submission to CARLA Leaderboard 2.0 Challenge，基准协议用HD maps评估闭环排行榜行为。
+- [OmniDrive](https://arxiv.org/abs/2405.01533)：arXiv 记录实际是包含 3D 驾驶任务和反事实推理的视觉语言数据集，当前 Agent Harness 标题疑似过期或错配。
+- [Towards Robust Physical-world Backdoor Attacks on Lane Detection](https://arxiv.org/abs/2405.05553)： 围绕 towards Robust Physical-world Backdoor Attacks on Lane Detection 做评测，使用驾驶场景数据衡量场景级行为与任务指标。
+- [AnoVox: A Benchmark for Multimodal Anomaly Detection in Autonomous Driving](https://arxiv.org/abs/2405.07865)： 发布 benchmark for Multimodal Anomaly Detection in Autonomous Driving，基准协议用camera评估异常分割与检测。
+- [ContrastAlign: Toward Robust BEV Feature Alignment via Contrastive Learning for Multi-Modal 3D Object Detection](https://arxiv.org/abs/2405.16873)： 发布 toward Robust BEV Feature Alignment via Contrastive Learning for Multi-Modal 3D Object Detection，基准协议用LiDAR, camera, and BEV评估场景级行为与任务指标。
+- [Benchmarking and Improving Bird’s Eye View Perception Robustness in Autonomous Driving](https://arxiv.org/abs/2405.17426)： 发布 benchmarking and Improving Bird’s Eye View Perception Robustness in Autonomous Driving，基准协议用camera, BEV, and HD maps评估3D 占用质量。
+- [Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving](https://arxiv.org/abs/2406.03877)（[排行榜](https://eval.ai/web/challenges/challenge-page/2098/leaderboard/4942)）：评测闭环端到端自动驾驶的多项能力。
+- [ROADWork: A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones](https://arxiv.org/abs/2406.07661)： 发布 dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones，基准协议用驾驶视频评估施工区识别与通行行为。
+- [Multiagent Multitraversal Multimodal Self-Driving: Open MARS Dataset](https://arxiv.org/abs/2406.09383)： 发布 open MARS Dataset，基准协议用LiDAR, camera, and 环视相机评估场景级行为与任务指标。
+- [Is Your HD Map Constructor Reliable under Sensor Corruptions?](https://arxiv.org/abs/2406.12214)： 定义 is Your HD Map Constructor Reliable under Sensor Corruptions?，评测协议用LiDAR, camera, and HD maps衡量传感器与特征腐蚀鲁棒性。
+- [NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking](https://arxiv.org/abs/2406.15349)（[公开榜单](https://huggingface.co/spaces/AGC2025/e2e-driving-navhard)）：提供数据驱动的自动驾驶仿真与评测协议。
+- [XLD: A Cross-Lane Dataset for Benchmarking Novel Driving View Synthesis](https://arxiv.org/abs/2406.18360)： 发布 cross-Lane Dataset for Benchmarking Novel Driving View Synthesis，基准协议用camera and 轨迹数据评估闭环驾驶行为。
+- [WOMD-Reasoning: A Large-Scale Dataset for Interaction Reasoning in Driving](https://arxiv.org/abs/2407.04281)： 发布 large-Scale Dataset for Interaction Reasoning in Driving，基准协议用HD maps评估场景级行为与任务指标。
+- [Dance of the ADS: Orchestrating Failures through Historically-Informed Scenario Fuzzing](https://arxiv.org/abs/2407.04359)：ScenarioFuzz 是场景化模糊测试方法，利用历史地图和驾驶上下文发现自动驾驶系统漏洞。
+- [When, Where, and What? A Novel Benchmark for Accident Anticipation and Localization with Large Language Models](https://arxiv.org/abs/2407.16277)： 发布 when, Where, and What? A Novel Benchmark for Accident Anticipation and Localization with Large Language Models，基准协议用驾驶视频评估事故预判、定位与预防。
+- [Testing Large Language Models on Driving Theory Knowledge and Skills for Connected Autonomous Vehicles](https://arxiv.org/abs/2407.17211)：补充自动驾驶方向的基准、数据集、指标或评测协议。
+- [DrivAerML: High-Fidelity Computational Fluid Dynamics Dataset for Road-Car External Aerodynamics](https://arxiv.org/abs/2408.11969)： 提出 high-Fidelity Computational Fluid Dynamics Dataset for Road-Car External Aerodynamics，用驾驶场景数据按车辆气动预测衡量系统表现。
+- [Can LLMs Understand Social Norms in Autonomous Driving Games?](https://arxiv.org/abs/2408.12680)： 围绕 can LLMs Understand Social Norms in Autonomous Driving Games? 做评测，使用驾驶场景数据衡量交通社会规范推理。
+- [RoboSense: Large-scale Dataset and Benchmark for Multi-sensor Low-speed Autonomous Driving](https://arxiv.org/abs/2408.15503)：评测 RoboSense: Large-scale Dataset and Benchmark for Multi-sensor Low-speed Autonomous Driving，为 Autonomous Driving 补充可复用的数据集、基准、指标或评测协议。
+- [TrafficGamer: Reliable and Flexible Traffic Simulation for Safety-Critical Scenarios with Game-Theoretic Oracles](https://arxiv.org/abs/2408.15538)： 发布 reliable and Flexible Traffic Simulation for Safety-Critical Scenarios with Game-Theoretic Oracles，基准协议用驾驶场景数据评估场景级行为与任务指标。
+- [UrBench: A Comprehensive Benchmark for Evaluating Large Multimodal Models in Multi-View Urban Scenarios](https://arxiv.org/abs/2408.17267)： 发布 comprehensive Benchmark for Evaluating Large Multimodal Models in Multi-View Urban Scenarios，基准协议用多视角相机评估多视角城市场景推理。
+- [TLD: A Vehicle Tail Light signal Dataset and Benchmark](https://arxiv.org/abs/2409.02508)： 发布 vehicle Tail Light signal Dataset and Benchmark，基准协议用事件相机, 驾驶视频, and 尾灯信号评估尾灯信号识别。
+- [Can LVLMs Obtain a Driver's License? A Benchmark Towards Reliable AGI for Autonomous Driving](https://arxiv.org/abs/2409.02914)： 发布 can LVLMs Obtain a Driver's License? A Benchmark Towards Reliable AGI for Autonomous Driving，基准协议用驾驶场景数据评估交通规则与驾驶理论知识。
+- [Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction](https://arxiv.org/abs/2409.17385)：提出面向轨迹预测的密度感知数据筛选与评测，用来暴露长尾场景分布掩盖的失效。
+- [Hi-Drive: Hierarchical POMDP Planning for Safe Autonomous Driving in Diverse Urban Environments](https://arxiv.org/abs/2409.18411)： 发布 hierarchical POMDP Planning for Safe Autonomous Driving in Diverse Urban Environments，基准协议用轨迹数据评估稀有事件率估计。
+- [SyntheOcc: Synthesize Geometric-Controlled Street View Images through 3D Semantic MPIs](https://arxiv.org/abs/2410.00337)： 提出 synthesize Geometric-Controlled Street View Images through 3D Semantic MPIs，用多视角相机 and 驾驶视频按多视角城市场景推理衡量系统表现。
+- [DrivingDojo Dataset: Advancing Interactive and Knowledge-Enriched Driving World Model](https://arxiv.org/abs/2410.10738)： 发布 advancing Interactive and Knowledge-Enriched Driving World Model，基准协议用驾驶视频评估场景级行为与任务指标。
+- [Bench4Merge: A Comprehensive Benchmark for Merging in Realistic Dense Traffic with Micro-Interactive Vehicles](https://arxiv.org/abs/2410.15912)： 提出 comprehensive Benchmark for Merging in Realistic Dense Traffic with Micro-Interactive Vehicles，用驾驶场景数据按密集交通汇入与微交互衡量系统表现。
+- [V2X-Radar: A Multi-modal Dataset with 4D Radar for Cooperative Perception](https://arxiv.org/abs/2411.10962)： 发布 multi-modal Dataset with 4D Radar for Cooperative Perception，基准协议用LiDAR, radar, and camera评估密集交通汇入与微交互。
+- [OpenAD: Open-World Autonomous Driving Benchmark for 3D Object Detection](https://arxiv.org/abs/2411.17761)（[排行榜](https://eval.ai/web/challenges/challenge-page/2418/leaderboard)）： 发布 open-World Autonomous Driving Benchmark for 3D Object Detection，基准协议用驾驶场景数据评估场景级行为与任务指标。
+- [SEED4D: A Synthetic Ego-Exo Dynamic 4D Data Generator, Driving Dataset and Benchmark](https://arxiv.org/abs/2412.00730)： 发布 synthetic Ego-Exo Dynamic 4D Data Generator, Driving Dataset and Benchmark，基准协议用LiDAR, camera, and 多视角相机评估多视角城市场景推理。
+- [COOOL: Challenge Of Out-Of-Label A Novel Benchmark for Autonomous Driving](https://arxiv.org/abs/2412.05462)： 提出 challenge Of Out-Of-Label A Novel Benchmark for Autonomous Driving，用驾驶视频按异常分割与检测衡量系统表现。
+- [doScenes: An Autonomous Driving Dataset with Natural Language Instruction for Human Interaction and Vision-Language Navigation](https://arxiv.org/abs/2412.05893)： 发布 autonomous Driving Dataset with Natural Language Instruction for Human Interaction and Vision-Language Navigation，基准协议用驾驶场景数据评估场景级行为与任务指标。
+- [Hidden Biases of End-to-End Driving Datasets](https://arxiv.org/abs/2412.09602)： 提出 hidden Biases of End-to-End Driving Datasets，用HD maps按闭环排行榜行为衡量系统表现。
+- [SEGT: A General Spatial Expansion Group Transformer for nuScenes Lidar-based Object Detection Task](https://arxiv.org/abs/2412.09658)（[nuScenes 排行榜](https://www.nuscenes.org/object-detection?externalData=all&mapData=all&modalities=Camera)）： 发布 general Spatial Expansion Group Transformer for nuScenes Lidar-based Object Detection Task，基准协议用LiDAR, 点云, and HD maps评估场景级行为与任务指标。
+- [OmniHD-Scenes: A Next-Generation Multimodal Dataset for Autonomous Driving](https://arxiv.org/abs/2412.10734)： 提出 next-Generation Multimodal Dataset for Autonomous Driving，用LiDAR, radar, and camera按3D 占用质量衡量系统表现。
+- [AutoTrust: Benchmarking Trustworthiness in Large Vision Language Models for Autonomous Driving](https://arxiv.org/abs/2412.15206)：提出或分析面向自动驾驶感知、规划与安全的基准、数据集或评测协议。
+- [Edge Feature-Enhanced Network for Collision Risk Assessment Using Traffic Scene Graphs](https://doi.org/10.1109/mits.2024.3458393)： 提出 edge Feature-Enhanced Network for Collision Risk Assessment Using Traffic Scene Graphs，用驾驶视频按场景级行为与任务指标衡量系统表现。
+- [Construction and Performance Evaluation of a Comprehensive Multi-Scenario Road Vehicle and Pedestrian Detection Dataset](https://doi.org/10.1109/aihcir65563.2024.00043)： 发布 construction and Performance Evaluation of a Comprehensive Multi-Scenario Road Vehicle and Pedestrian Detection Dataset，基准协议用camera评估场景级行为与任务指标。
+- [L-RadSet: A Long-Range Multimodal Dataset With 4D Radar for Autonomous Driving and Its Application](https://doi.org/10.1109/tiv.2024.3424942)： 发布 long-Range Multimodal Dataset With 4D Radar for Autonomous Driving and Its Application，基准协议用radar and 4D 场景数据评估场景级行为与任务指标。
+- [OpenLKA: an open dataset of lane keeping assist from market autonomous vehicles](https://arxiv.org/abs/2501.03287)：发布量产车辆真实车道保持辅助数据，包含 CAN 消息、视频、感知与横向轨迹信号。
+- [Embodied Scene Understanding for Vision Language Models via MetaVQA](https://arxiv.org/abs/2501.09167)：提出 MetaVQA，在驾驶数据上结合 VQA 与闭环仿真评估具身场景理解。
+- [A Comprehensive Evaluation of Four End-to-End AI Autopilots Using CCTest and the Carla Leaderboard](https://arxiv.org/abs/2501.12090)：用 CCTest 与 CARLA Leaderboard 比较端到端 AI autopilot，把闭环驾驶行为接到公开评测体系。
+- [Benchmarking Image Perturbations for Testing Automated Driving Assistance Systems](https://arxiv.org/abs/2501.12269)： 梳理3D 目标检测的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [DISC: Dataset for Analyzing Driving Styles in Simulated Crashes for Mixed Autonomy](https://arxiv.org/abs/2502.00050)： 发布 dataset for Analyzing Driving Styles in Simulated Crashes for Mixed Autonomy，基准协议用事件相机 and 轨迹数据评估事故预判、定位与预防。
+- [INSIGHT: Enhancing Autonomous Driving Safety through Vision-Language Models on Context-Aware Hazard Detection and Edge Case Evaluation](https://arxiv.org/abs/2502.00262)：用层级 VLM 框架评估自动驾驶危险检测与边界场景推理。
+- [SimBEV: A Synthetic Multi-Task Multi-Sensor Driving Data Generation Tool and Dataset](https://arxiv.org/abs/2502.01894)：评测自动驾驶。核心思想：围绕论文中的任务、数据或协议（A Synthetic Multi-Task Multi-Sensor Driving Data Generation Tool and Dataset）形成可复用比较基准。
 - [From Words to Collisions](https://arxiv.org/abs/2502.02145)：用 LLM 引导评估并生成安全关键驾驶场景。核心思想是把自然语言风险描述转化为对抗性交通情境，用于压力测试自动驾驶系统在稀有危险场景中的表现。
+- [TUMTraffic-VideoQA](https://arxiv.org/abs/2502.02449)：评估 traffic scenes 中 unified spatio-temporal video understanding。
+- [Para-Lane: Multi-Lane Dataset Registering Parallel Scans for Benchmarking Novel View Synthesis](https://arxiv.org/abs/2502.15635)： 发布 multi-Lane Dataset Registering Parallel Scans for Benchmarking Novel View Synthesis，基准协议用LiDAR, 环视相机, and 点云评估场景级行为与任务指标。
 - [A Comprehensive LLM-powered Framework for Driving Intelligence Evaluation](https://arxiv.org/abs/2503.05164)：评测复杂交通环境中的 driving behavior intelligence。核心思想是用专业驾驶员和乘客构建的自然语言评价数据，在低层感知指标之外衡量自动驾驶行为。
+- [PDB: Not All Drivers Are the Same - A Personalized Dataset for Understanding Driving Behavior](https://arxiv.org/abs/2503.06477)：评测自动驾驶。核心思想：围绕论文中的任务、数据或协议（Not All Drivers Are the Same - A Personalized Dataset for Understanding Driving Behavior）形成可复用比较基准。
 - [SCD-Bench](https://arxiv.org/abs/2503.06497)：评测自动驾驶 VLM 的安全认知能力。核心思路是把交互式驾驶场景、半自动专家修订标注和自动评分流程结合起来，使安全关键推理不再只由普通感知准确率衡量。
+- [Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark](https://arxiv.org/abs/2503.06983)：可作为自动驾驶的 Bench 候选：围绕 Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark 提供可比较的评测任务、数据或分析协议。
+- [Robusto-1 Dataset: Comparing Humans and VLMs on Real Out-Of-Distribution Autonomous Driving VQA from Peru](https://arxiv.org/abs/2503.07587)：提出来自秘鲁真实道路场景的自动驾驶 VQA 数据集，用于比较人类与 VLM 在分布外驾驶场景中的表现。
+- [PCLA: A Framework for Testing Autonomous Agents in the CARLA Simulator](https://arxiv.org/abs/2503.09385)：在 CARLA 自动驾驶仿真器中测试自主智能体。
 - [DriveLMM-o1](https://arxiv.org/abs/2503.10621)：评测自动驾驶场景中的逐步视觉推理。核心思路是把感知、预测和规划类 VQA 与显式推理轨迹配对，使驾驶模型不仅按最终答案评分，也按推理过程诊断。
 - [Capability-Driven Scenario Understanding Evaluation](https://arxiv.org/abs/2503.11400)：评估多模态大模型的自动驾驶场景理解能力。核心思路：按能力维度组织驾驶场景理解评测，从而区分感知、上下文推理和决策相关理解中的失败。
+- [Accid3nD](https://arxiv.org/abs/2503.12095)：提供面向 Vision Zero-style 自动驾驶安全分析的交通事故 3D dataset。
+- [MeshFleet: Filtered and Annotated 3D Vehicle Dataset for Domain Specific Generative Modeling](https://arxiv.org/abs/2503.14002)：评测autonomous-driving perception, planning, or world modeling，补充该能力方向的基准或挑战设置。
 - [AutoDrive-QA](https://arxiv.org/abs/2503.15778)：用多项选择问答评测城市自动驾驶场景中的视觉语言模型。核心思想：把开放式驾驶问答转为标准化选择题，并用驾驶域误解、传感器误读、逻辑错误、计算疏漏与歧义构造干扰项。
+- [ADS-Edit: A Multimodal Knowledge Editing Dataset for Autonomous Driving Systems](https://arxiv.org/abs/2503.20756)：围绕自动驾驶提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [SafeCast: Risk-Responsive Motion Forecasting for Autonomous Vehicles](https://arxiv.org/abs/2503.22541)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
 - [UniOcc](https://arxiv.org/abs/2503.24381)：评测自动驾驶中的 occupancy forecasting 与 prediction。核心思路是统一真实与仿真数据集，提供 2D/3D occupancy 标注、逐体素 flow 和质量指标，减少对次优伪标签评测的依赖。
+- [RASMD: RGB And SWIR Multispectral Driving Dataset for Robust Perception in Adverse Conditions](https://arxiv.org/abs/2504.07603)： 发布 rGB And SWIR Multispectral Driving Dataset for Robust Perception in Adverse Conditions，基准协议用RGB 图像 and SWIR 图像评估恶劣条件鲁棒性。
+- [ADDT - A Digital Twin Framework for Proactive Safety Validation in Autonomous Driving Systems](https://arxiv.org/abs/2504.09461)：定义高保真数字孪生验证平台，用于在多样故障和边缘场景中主动压力测试 ADS 安全性。
+- [RGB-Event based Pedestrian Attribute Recognition: A Benchmark Dataset and An Asymmetric RWKV Fusion Framework](https://arxiv.org/abs/2504.10018)： 提出 benchmark Dataset and An Asymmetric RWKV Fusion Framework，用camera, RGB 图像, and 事件相机按场景级行为与任务指标衡量系统表现。
+- [E2E Parking Dataset: An Open Benchmark for End-to-End Autonomous Parking](https://arxiv.org/abs/2504.10812)：补充自动驾驶方向的基准、数据集、指标或评测协议。
+- [Virtual Roads, Smarter Safety: A Digital Twin Framework for Mixed Autonomous Traffic Safety Analysis](https://arxiv.org/abs/2504.17968)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [AI2-Active Safety: AI-enabled Interaction-aware Active Safety Analysis with Vehicle Dynamics](https://arxiv.org/abs/2505.00322)：补充结合车辆动力学的交互感知主动安全分析任务。
+- [Spotting the Unexpected (STU): A 3D LiDAR Dataset for Anomaly Segmentation in Autonomous Driving](https://arxiv.org/abs/2505.02148)： 发布 3D LiDAR Dataset for Anomaly Segmentation in Autonomous Driving，基准协议用LiDAR and camera评估异常分割与检测。
+- [SynSHRP2: A Synthetic Multimodal Benchmark for Driving Safety-Critical Events Derived from Real-World Driving Data](https://arxiv.org/abs/2505.06276)：构建来源于真实驾驶数据的安全关键事件合成多模态基准。
+- [OpenLKA: An Open Dataset of Lane Keeping Assist from Recent Car Models under Real-world Driving Conditions](https://arxiv.org/abs/2505.09092)：评测自动驾驶。核心思想：围绕论文中的任务、数据或协议（An Open Dataset of Lane Keeping Assist from Recent Car Models under Real-world Driving Conditions）形成可复用比较基准。
+- [Safety2Drive: Safety-Critical Scenario Benchmark for the Evaluation of Autonomous Driving](https://arxiv.org/abs/2505.13872)： 发布 safety-Critical Scenario Benchmark for the Evaluation of Autonomous Driving，基准协议用LiDAR and camera评估事故预判、定位与预防。
+- [MultiDrive: A Co-Simulation Framework Bridging 2D and 3D Driving Simulation for AV Software Validation](https://arxiv.org/abs/2505.13959)：评测 MultiDrive: A Co-Simulation Framework Bridging 2D and 3D Driving Simulation for AV Software Validation，为 Autonomous Driving 补充可复用的数据集、基准、指标或评测协议。
 - [RealEngine](https://arxiv.org/abs/2505.16902)：提供用于评测自动驾驶 Agent 的真实感仿真框架。核心思路是结合多模态感知、真实场景渲染、闭环轨迹、多样交通场景、多 Agent 交互和可扩展执行，使驾驶 Agent 评测更可控也更接近真实环境。
+- [S2R-Bench: A Sim-to-Real Evaluation Benchmark for Autonomous Driving](https://arxiv.org/abs/2505.18631)： 发布 sim-to-Real Evaluation Benchmark for Autonomous Driving，基准协议用驾驶场景数据评估仿真到真实迁移。
 - [Drive4C](https://doi.org/10.1109/CVPRW67362.2025.00371)：面向语言引导自动驾驶的闭环基准，用于检验基础模型能力能否转化为实际驾驶行为。
+- [Automated Traffic Incident Response Plans using Generative Artificial Intelligence: Part 1 - Building the Incident Response Benchmark](https://arxiv.org/abs/2506.03381)：为自动驾驶补充基准、数据集、指标或评测协议。
 - [Pseudo-Simulation](https://arxiv.org/abs/2506.04218)：在真实数据上用合成未来观测评测自动驾驶策略。核心思路是在不进行完整交互式仿真的情况下近似闭环恢复与因果混淆影响，并提供 pseudo-simulation 公共榜单。
 - [DriveAction](https://arxiv.org/abs/2506.05667)：评测 VLA models 的类人驾驶决策。核心思想是基于多样真实驾驶场景构造 action-driven QA，并用驾驶员行为中的离散动作标签显式衡量决策偏好和场景覆盖。
 - [STSBench](https://arxiv.org/abs/2506.06218)：评什么：自动驾驶场景中多模态大语言模型的时空场景理解。核心思想：检查模型是否能围绕动态驾驶场景和时间关系推理，而不只是分类静态道路图像。
+- [Causality-Aware Safety Testing for Autonomous Driving Systems](https://arxiv.org/abs/2506.08688)：Causal-Fuzzer 建模输入场景、ADS 指令和违规之间的因果关系，探索因果多样的仿真安全测试场景。
 - [AD^2-Bench](https://arxiv.org/abs/2506.09557)：评什么：恶劣条件下自动驾驶场景中的多模态大语言模型。核心思想：用层级 chain-of-thought 式任务检查模型是否能推理受损驾驶场景，而不只是处理干净视觉输入。
+- [TARDIS STRIDE: A Spatio-Temporal Road Image Dataset and World Model for Autonomy](https://arxiv.org/abs/2506.11302)：提供面向自主系统的时空道路图像数据集和世界模型，关联驾驶世界模型评测。
+- [AGC-Drive: A Large-Scale Dataset for Real-World Aerial-Ground Collaboration in Driving Scenarios](https://arxiv.org/abs/2506.16371)：可作为自动驾驶的 Bench 候选：围绕 AGC-Drive: A Large-Scale Dataset for Real-World Aerial-Ground Collaboration in Driving Scenarios 提供可比较的评测任务、数据或分析协议。
+- [A Synthetic Benchmark for Collaborative 3D Semantic Occupancy Prediction in V2X Autonomous Driving](https://arxiv.org/abs/2506.17004)： 提出 synthetic Benchmark for Collaborative 3D Semantic Occupancy Prediction in V2X Autonomous Driving，用V2X按车路协同衡量系统表现。
 - [Drama-X](https://arxiv.org/abs/2506.17590)：评测驾驶场景中的细粒度意图预测与风险推理。核心思想是使用交通参与者意图和风险随时间变化的场景，让驾驶系统不仅检测物体，也要进行提前预判。
 - [AirV2X](https://arxiv.org/abs/2506.19283)：评测空地一体的 V2X 协同能力。核心思想是把空中、路侧与车端视角组合起来，在跨平台感知和通信约束下测试协同感知与规划系统。
+- [Risk-Based Filtering of Valuable Driving Situations in the Waymo Open Motion Dataset](https://arxiv.org/abs/2506.23433)： 提出 risk-Based Filtering of Valuable Driving Situations in the Waymo Open Motion Dataset，用驾驶场景数据按场景级行为与任务指标衡量系统表现。
 - [StyleDrive](https://arxiv.org/abs/2506.23982)：评测端到端自动驾驶中的驾驶风格意识。核心思想是在完成驾驶任务的同时，检查策略是否能区分并适配谨慎、普通或激进等风格相关行为。
+- [Box-QAymo: Box-Referring VQA Dataset for Autonomous Driving](https://arxiv.org/abs/2507.00525)： 发布 box-Referring VQA Dataset for Autonomous Driving，基准协议用事件相机评估视觉问答准确率与推理质量。
+- [CoInfra: A Large-Scale Cooperative Infrastructure Perception System and Dataset in Adverse Weather](https://arxiv.org/abs/2507.02245)：提供面向恶劣天气自动驾驶场景的大规模协同路侧感知系统与数据集。
+- [Stereo-based 3D Anomaly Object Detection for Autonomous Driving: A New Dataset and Baseline](https://arxiv.org/abs/2507.09214)：补充自动驾驶方向的基准、数据集、指标或评测协议。
+- [VRU-Accident](https://arxiv.org/abs/2507.09815)：面向 vulnerable road user 事故场景评估 VQA 和 dense captioning，聚焦自动驾驶安全关键推理。
+- [InterAct-Video](https://arxiv.org/abs/2507.14743)：构建面向城市交通的推理密集视频问答，评测多目标时空理解。
+- [A Comprehensive Evaluation of LiDAR Odometry Techniques](https://arxiv.org/abs/2507.16000)：比较多种 LiDAR 里程计方法及其评测条件，补充自动驾驶感知栈评估。
+- [RoadBench: A Vision-Language Foundation Model and Benchmark for Road Damage Understanding](https://arxiv.org/abs/2507.17353)：用视觉语言基础模型与 benchmark 评测道路损伤理解，将自动驾驶感知扩展到更具体的道路场景诊断。
 - [PDB-Eval](https://arxiv.org/abs/2507.18447)：评测多模态模型对个性化驾驶行为的描述与解释能力。核心思想：用解释和 QA 组件测试时序驾驶行为理解，补充一般驾驶场景感知基准。
 - [End-to-End Autonomous Driving through V2X Cooperation Challenge](https://arxiv.org/abs/2507.21610)：通过 V2X 协作评测端到端自动驾驶。核心思路是在通信、融合和多车规划约束下评测协同时间感知与端到端规划，而不是只看单车感知。
+- [Beyond Simulation: Benchmarking World Models for Planning and Causality in Autonomous Driving](https://arxiv.org/abs/2508.01922)： 提出 benchmarking World Models for Planning and Causality in Autonomous Driving，用轨迹数据按场景级行为与任务指标衡量系统表现。
+- [VIRTUE: Visual Interference from Roadside Billboard Targets on Urban End-to-End Autonomous Driving](https://doi.org/10.1109/itsc60802.2025.11423296)：作为自动驾驶的基准或评测协议候选，聚焦“Visual Interference from Roadside Billboard Targets on Urban End-to-End Autonomous Driving”。
+- [OpenLKA: An Open Dataset of Lane Keeping Assist from Production Vehicles Under Real-World Driving Conditions](https://doi.org/10.1109/itsc60802.2025.11423194)：提供来自量产车辆真实场景的车道保持数据集。
 - [Bench2ADVLM](https://arxiv.org/abs/2508.02028)：面向自动驾驶视觉语言模型的闭环基准。核心思路：在闭环中评估与驾驶相关的感知、推理和决策行为，而不只评分静态场景理解。
+- [Segment Any Vehicle: Semantic and Visual Context Driven SAM and A Benchmark](https://arxiv.org/abs/2508.04260)：围绕车辆分割构建语义与视觉上下文基准。
+- [Efficient Safety Testing of Autonomous Vehicles via Adaptive Search over Crash-Derived Scenarios](https://arxiv.org/abs/2508.06575)：补充基于事故场景自适应搜索的自动驾驶安全测试方法。
+- [STRIDE-QA: Visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes](https://arxiv.org/abs/2508.10427)： 发布 visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes，基准协议用驾驶场景数据评估视觉问答准确率与推理质量。
 - [DriveQA](https://arxiv.org/abs/2508.21824)：通过文本和视觉问题评测 LLM 与 MLLM 的驾驶知识。核心思路是系统覆盖交通规则、标志、路权、数值推理和空间布局，使驾驶 Agent 在普通场景理解数据集中少见的边界情况上接受测试。
+- [Can the Waymo Open Motion Dataset Support Realistic Behavioral Modeling? A Validation Study with Naturalistic Trajectories](https://arxiv.org/abs/2509.03515)：评测自动驾驶。核心思想：围绕论文中的任务、数据或协议（Can the Waymo Open Motion Dataset Support Realistic Behavioral Modeling? A Validation Study with Naturalistic Trajectories）形成可复用比较基准。
+- [StereoCarla: A High-Fidelity Driving Dataset for Generalizable Stereo](https://arxiv.org/abs/2509.12683)： 发布 high-Fidelity Driving Dataset for Generalizable Stereo，基准协议用camera评估场景级行为与任务指标。
+- [Do Vision-Language Models See Urban Scenes as People Do? An Urban Perception Benchmark](https://arxiv.org/abs/2509.14574)：补充面向自动驾驶能力的可复用基准、数据集、测试平台或评测协议。
+- [STEP: Structured Training and Evaluation Platform for benchmarking trajectory prediction models](https://arxiv.org/abs/2509.14801)： 发布 structured Training and Evaluation Platform for benchmarking trajectory prediction models，基准协议用轨迹数据评估闭环排行榜行为。
 - [DriveE2E](https://arxiv.org/abs/2509.23922)：通过 real-to-simulation 场景迁移构建的端到端自动驾驶闭环基准。核心思想：在 CARLA 式评测中回放真实路口交通，使驾驶 agent 面对真实动态场景，而不是手工脚本化场景。
 - [ODVBench](https://arxiv.org/abs/2509.24871)：作为 StreamForest 工作的一部分，评测自动驾驶场景中的在线视频理解。核心思想：用驾驶视频测试模型在时间状态、场景变化和持久事件记忆下的泛化能力。
+- [NuRisk: A Visual Question Answering Dataset for Agent-Level Risk Assessment in Autonomous Driving](https://arxiv.org/abs/2509.25944)：可作为自动驾驶的 Bench 候选：围绕 NuRisk: A Visual Question Answering Dataset for Agent-Level Risk Assessment in Autonomous Driving 提供可比较的评测任务、数据或分析协议。
+- [Drive&Gen: Co-Evaluating End-to-End Driving and Video Generation Models](https://arxiv.org/abs/2510.06209)： 定义 co-Evaluating End-to-End Driving and Video Generation Models，评测协议用驾驶视频衡量密集交通汇入与微交互。
+- [Beyond ADE and FDE: A Comprehensive Evaluation Framework for Safety-Critical Prediction in Multi-Agent Autonomous Driving Scenarios](https://arxiv.org/abs/2510.10086)：补充多智能体自动驾驶场景下安全关键预测评估框架。
 - [DriveCritic](https://arxiv.org/abs/2510.13108)：用上下文感知的人类偏好评测自动驾驶轨迹。核心思路是把困难驾驶场景与轨迹对偏好判断配对，使 VLM evaluator 能按贴近人类的上下文推理而非单纯几何指标接受检验。
+- [ADVersa: Abductive Driving Accident Video Understanding](https://doi.org/10.1109/tpami.2026.3663545)：提出面向驾驶事故视频的溯因理解任务。
+- [Waymo Open Dataset Challenges](https://waymo.com/open/challenges)：提供 Waymo 感知、运动预测、仿真和端到端驾驶任务的官方当前及历史挑战榜单；核心思想是把 Waymo 数据集作为自动驾驶系统的稳定公开比较入口。
+- [Fusion Meets Diverse Conditions: A High-Diversity Benchmark and Baseline for UAV-Based Multimodal Object Detection with Condition Cues](https://arxiv.org/abs/2510.13620)： 发布 high-Diversity Benchmark and Baseline for UAV-Based Multimodal Object Detection with Condition Cues，基准协议用RGB 图像, aerial views, and UAV views评估场景级行为与任务指标。
+- [When Planners Meet Reality: How Learned, Reactive Traffic Agents Shift nuPlan Benchmarks](https://arxiv.org/abs/2510.14677)：研究学习式反应交通智能体如何改变 nuPlan 类基准表现，有助于解释自动驾驶闭环评测结果。
+- [DrivAerStar: An Industrial-Grade CFD Dataset for Vehicle Aerodynamic Optimization](https://arxiv.org/abs/2510.16857)： 发布 industrial-Grade CFD Dataset for Vehicle Aerodynamic Optimization，基准协议用事件相机评估车辆气动预测。
 - [Evaluating Video Models as Simulators of Multi-Person Pedestrian Trajectories](https://arxiv.org/abs/2510.20182)：评测视频模型能否模拟多人行人轨迹。核心思想：把社会运动和轨迹一致性作为评测目标，使视频生成不只按视觉逼真度打分，而是按是否可作为模拟器来判断。
+- [UrbanIng-V2X](https://arxiv.org/abs/2510.23478)：发布跨多路口、多车和多基础设施的大规模 cooperative perception 数据集。
+- [RoadSens-4M: A Multimodal Smartphone & Camera Dataset for Holistic Road-way Analysis](https://arxiv.org/abs/2510.25211)： 发布 multimodal Smartphone & Camera Dataset for Holistic Road-way Analysis，基准协议用camera, 驾驶视频, and 智能手机传感器评估场景级行为与任务指标。
+- [WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios](https://arxiv.org/abs/2510.26125)：可作为自动驾驶的 Bench 候选：围绕 WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios 提供可比较的评测任务、数据或分析协议。
 - [VehicleWorld](https://aclanthology.org/2025.findings-emnlp.23/)：评什么：智能车舱交互中的 API agent。核心思想：提供可执行车辆模块、API、属性和实时状态，使 agent 必须在紧耦合子系统中建立环境认知并从工具调用错误中恢复。
+- [Driving Scenario Generation and Evaluation Using a Structured Layer Representation and Foundational Models](https://arxiv.org/abs/2511.01541)：用五层结构化表示和基础模型生成并评估稀有驾驶场景。核心思想：在显式驾驶场景 schema 内衡量合成场景的多样性和原创性，而不只依赖无约束生成视频。
+- [A Tool for Benchmarking Large Language Models' Robustness in Assessing the Realism of Driving Scenarios](https://arxiv.org/abs/2511.04267)：为自动驾驶补充基准、数据集、指标或评测协议。
+- [nuPlan-R: A Closed-Loop Planning Benchmark for Autonomous Driving via Reactive Multi-Agent Simulation](https://arxiv.org/abs/2511.10403)：通过反应式多智能体仿真提出自动驾驶闭环规划基准。
+- [CARScenes: Semantic VLM Dataset for Safe Autonomous Driving](https://arxiv.org/abs/2511.10701)：提供面向安全自动驾驶场景理解的语义 VLM 数据集。
+- [CATS-V2V](https://arxiv.org/abs/2511.11168)：提供复杂不利交通场景下的真实车车协同感知数据集。
 - [Driving Safety Bench / DSBench](https://arxiv.org/abs/2511.14592)：同时覆盖车外道路环境风险与车内行为风险，评测自动驾驶 VLM 的安全就绪度。
+- [Event-Chain Analysis for Automated Driving and ADAS Systems: Ensuring Safety and Meeting Regulatory Timing Requirements](https://arxiv.org/abs/2511.18092)：形式化驾驶系统的事件链时序分析，用于安全与法规验证。
+- [MAC-SLU: Multi-Intent Automotive Cabin Spoken Language Understanding Benchmark](https://arxiv.org/abs/2512.01603)： 发布 multi-Intent Automotive Cabin Spoken Language Understanding Benchmark，基准协议用车舱语音评估车舱多意图语音理解。
+- [RoboDriveVLM: A Novel Benchmark and Baseline towards Robust Vision-Language Models for Autonomous Driving](https://arxiv.org/abs/2512.01300)：评测自动驾驶智能体与模型的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
 - [AIGV-Bench](https://arxiv.org/abs/2512.06376)：评测 AI 生成驾驶视频是否足以支撑自动驾驶训练与评估；核心思想是诊断视觉伪影、不合理运动和交通语义违规，并衡量这些问题对下游感知任务的影响。
+- [WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](https://arxiv.org/abs/2512.10958)：从生成、重建、动作跟随、下游任务和人类偏好评测驾驶世界模型，并引入带理由的人类标注监督。
 - [Intention-Drive](https://arxiv.org/abs/2512.12302)：评测从高层人类意图到端到端自动驾驶动作的能力。核心思想：把复杂自然语言意图与传感器数据配对，并用 Imagined Future Alignment 衡量语义目标是否被满足，而不只看几何轨迹精度。
+- [Odyssey: An Automotive Lidar-Inertial Odometry Dataset for GNSS-denied situations](https://arxiv.org/abs/2512.14428)： 发布 automotive Lidar-Inertial Odometry Dataset for GNSS-denied situations，基准协议用LiDAR, GNSS-denied localization, and inertial signals评估GNSS 退化条件下的定位。
 - [SAVeD](https://arxiv.org/abs/2512.17724)：第一视角 ADAS near-miss 与 crash video benchmark。核心思想是整理 ADAS 车辆社交媒体视频，提供帧级事件标注和 VLLM baseline，使 driving-video model 能在少见的安全关键边缘案例上接受测试。
 - [DrivingGen](https://arxiv.org/abs/2601.01528)：评测自动驾驶场景中的生成式视频 world model。核心思想：用驾驶场景动态与可控性要求检验生成未来是否能服务具身规划，而不只是视觉上逼真。
+- [Assessment Scheme for Scenario Allocation in Automated Driving Based on a Hybrid Genetic-Fuzzy Framework](https://doi.org/10.3390/app16020659)：用 fuzzy inference 与 genetic rule optimization 估计场景复杂度和危险等级，从而在封闭场地与开放道路测试之间分配自动驾驶验证场景。
 - [HazardForge / MovSafeBench](https://arxiv.org/abs/2601.08470)：评测 VLM 在生成式危险移动场景中的安全判断。核心思路是用验证模块合成移动、闯入和远距离异常物体，并通过正常与异常场景 QA 测试模型的运动感知安全推理。
 - [AutoDriDM](https://arxiv.org/abs/2601.14702)：面向自动驾驶中 VLM 决策的可解释 benchmark。核心思想：评估视觉语言模型是否能产生有 grounding 且可解释的驾驶决策，而不只是输出感知标签。
 - [AgentDrive](https://arxiv.org/abs/2601.16964)：用 LLM 生成的驾驶场景评测自主系统中的 agentic reasoning；核心思想是以开放场景数据测试 agent 对自主系统情境的推理能力，而不只是对静态驾驶场景做分类。
 - [ScenePilot-4K](https://arxiv.org/abs/2601.19582)：评测第一视角自动驾驶场景中的 vision-language model。核心思想：用大规模 egocentric driving 数据和 benchmark 任务，测试模型是否能从车辆视角理解与驾驶相关的场景证据。
+- [HetroD: A High-Fidelity Drone Dataset and Benchmark for Autonomous Driving in Heterogeneous Traffic](https://arxiv.org/abs/2602.03447)： 发布 high-Fidelity Drone Dataset and Benchmark for Autonomous Driving in Heterogeneous Traffic，基准协议用HD maps评估场景级行为与任务指标。
+- [RoadSafe365](https://arxiv.org/abs/2602.07212)：评测 autonomous-driving scenarios 中的 real-world traffic-safety understanding。
+- [Performance Evaluation of V2X Communication Using Large-Scale Traffic Data](https://arxiv.org/abs/2602.07244)： 发布 performance Evaluation of V2X Communication Using Large-Scale Traffic Data，基准协议用V2X评估车路协同。
+- [ScenicRules: An Autonomous Driving Benchmark with Multi-Objective Specifications and Abstract Scenarios](https://arxiv.org/abs/2602.16073)：评测自动驾驶智能体与模型的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Boreas Road Trip: A Multi-Sensor Autonomous Driving Dataset on Challenging Roads](https://arxiv.org/abs/2602.16870)： 提出 multi-Sensor Autonomous Driving Dataset on Challenging Roads，用LiDAR, radar, and camera按闭环排行榜行为衡量系统表现。
+- [Dynamic Deception: When Pedestrians Team Up to Fool Autonomous Cars](https://arxiv.org/abs/2602.18079)：在 CARLA 中评估协同动态 adversarial patch 对自动驾驶智能体的攻击，显示行人协同可造成单个攻击者难以触发的系统级停车失败。
+- [Driving with A Thousand Faces: A Benchmark for Closed-Loop Personalized End-to-End Autonomous Driving](https://arxiv.org/abs/2602.18757)：评测闭环个性化端到端自动驾驶。
+- [UDVideoQA](https://arxiv.org/abs/2602.21137)：提供城市动态交通视频问答，评测多目标时空推理。
+- [TaCarla: A comprehensive benchmarking dataset for end-to-end autonomous driving](https://arxiv.org/abs/2602.23499)：提供可复用评测信号，服务于自动驾驶与驾驶世界模型，可补充闭环驾驶基准、模块化评测和开放/闭环指标相关性分析。
+- [A Reinforcement Learning Framework for Infrastructure-Driven Verification of Traffic Sign Visibility in Autonomous Vehicle Environments](https://doi.org/10.1109/SoutheastCon63549.2026.11476504)：用受约束强化学习搜索交通标志可见性的最坏扰动，并生成热力图以支持自动驾驶感知验证和基础设施就绪度评估。
+- [A Unified Testing Framework for ADAS and Automated Vehicles: Synthesis of Methodologies and Regulatory Landscapes](https://doi.org/10.1109/SoutheastCon63549.2026.11476015)：用 scene vectors、scene matrices、assertion structures 和 PERT-style verification costs 表示 ADAS 与自动驾驶测试，把场景同法规和设计规范连接起来。
+- [An Open-Source Modular Benchmark for Diffusion-Based Motion Planning in Closed-Loop Autonomous Driving](https://arxiv.org/abs/2603.01023)：提供可复用评测信号，服务于自动驾驶与驾驶世界模型，可补充闭环驾驶基准、模块化评测和开放/闭环指标相关性分析。
+- [面向汽车感知测试的逻辑场景合成数据生成](https://doi.org/10.1109/iv64158.2025.11097801)： 发布 synthetic Dataset Generation Using Logical Scenario Files for Automotive Perception Testing，基准协议用LiDAR评估场景级行为与任务指标。
+- [V2XScenes: A Multiple Challenging Traffic Conditions Dataset for Large-Range Vehicle-Infrastructure Collaborative Perception](https://doi.org/10.1109/iccv51701.2025.02636)： 发布 multiple Challenging Traffic Conditions Dataset for Large-Range Vehicle-Infrastructure Collaborative Perception，基准协议用V2X评估车路协同。
+- [A Framework for Multi-Scenario Performance Evaluation of Modular Autonomous Driving Systems](https://doi.org/10.4271/2025-01-7319)： 提出 framework for Multi-Scenario Performance Evaluation of Modular Autonomous Driving Systems，用驾驶场景数据按闭环排行榜行为衡量系统表现。
+- [A Collision-Induced Evaluation Framework for End-to-End Autonomous Driving Model](https://doi.org/10.1109/dsa66321.2025.00052)： 提出 collision-Induced Evaluation Framework for End-to-End Autonomous Driving Model，用驾驶场景数据按闭环驾驶行为衡量系统表现。
+- [Evaluation of Pretrained Multimodal Large Language Models in Assisted Driving Decision-Making](https://doi.org/10.1109/cvci66304.2025.11348136)： 提出 evaluation of Pretrained Multimodal Large Language Models in Assisted Driving Decision-Making，用驾驶场景数据按场景级行为与任务指标衡量系统表现。
+- [TAD-E2E: A Large-Scale End-to-End Autonomous Driving Dataset](https://doi.org/10.1109/iccv51701.2025.02469)： 发布 large-Scale End-to-End Autonomous Driving Dataset，基准协议用驾驶场景数据评估场景级行为与任务指标。
+- [AccidentX: A Large-Scale Multimodal BEV Dataset for Traffic Accident Analysis and Prevention](https://doi.org/10.1109/iros60139.2025.11245818)： 发布 large-Scale Multimodal BEV Dataset for Traffic Accident Analysis and Prevention，基准协议用事件相机, BEV, and 驾驶视频评估事故预判、定位与预防。
+- [A Performance Evaluation of Open Source Autonomous Driving Frameworks: Case Studies of Apollo and Autoware](https://doi.org/10.1109/access.2025.3549649)： 提出 case Studies of Apollo and Autoware，用轨迹数据按场景级行为与任务指标衡量系统表现。
+- [RCP-Bench: Benchmarking Robustness for Collaborative Perception Under Diverse Corruptions](https://doi.org/10.1109/cvpr52734.2025.01112)： 发布 benchmarking Robustness for Collaborative Perception Under Diverse Corruptions，基准协议用camera and V2X评估车路协同。
+- [CAAD: A High-Level Customizable-Agent Gym for Dependable Autonomous Driving](https://doi.org/10.1109/isssr65654.2025.00018)：定义面向可信自动驾驶的可定制 Agent Gym，主要是评测环境。
+- [Towards an LLM-Driven Simulation Pipeline for Safety-Critical Scenario Evaluation in Autonomous Vehicles](https://doi.org/10.1016/j.ifacol.2025.12.334)：面向安全关键 AV 仿真场景生成或评估的 LLM 驱动管线；介于 Harness 和 Bench 之间，但评测平台信号更强。
+- [DriveEval-Agent: A Closed-Loop Framework Combining Zero-Shot Benchmarking and Full Fine-Tuning for Multimodal Autonomous Driving](https://doi.org/10.1145/3743093.3770936)：标题强调面向多模态自动驾驶的闭环基准测试和微调，因此主要是评测框架。
+- [A SOTIF-Oriented Framework for Safety Assessment in Autonomous Vehicles using Integrated Fault Tree and Bayesian Network Analysis](https://doi.org/10.1145/3810950)：结合故障树和贝叶斯网络，在感知与决策不确定性下进行自动驾驶 SOTIF 安全评估。
+- [DOROS: A multilevel traffic dataset for dynamic urban scene understanding](https://doi.org/10.4218/etrij.2025-0063)： 提出 multilevel traffic dataset for dynamic urban scene understanding，用HD maps按场景级行为与任务指标衡量系统表现。
+- [Risk Assessment and LLM-Based Decision Support Framework for Urban Air Mobility Flight Operations in Hazardous Weather Conditions](https://doi.org/10.1109/taes.2025.3645711)： 将大语言模型推理用于aerial or airspace autonomy，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [A novel spatio-temporal dataset for vessel traffic flow prediction](https://doi.org/10.1016/j.oceaneng.2025.122748)： 将预测模型用于marine autonomy or vessel traffic，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [Scientific mapping of intelligent underwater vehicles: An integrated bibliometric and content analysis](https://doi.org/10.1016/j.eswa.2025.130924)： 梳理自动驾驶感知与规划的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [Large Language Model-Based Functional Scenario Generation for Automated Vehicle Safety Evaluation Using Vehicle and Pedestrian Traffic Accident Data](https://doi.org/10.1109/access.2025.3612989)：评测 Large Language Model-Based Functional Scenario Generation for Automated Vehicle Safety Evaluation Using Vehicle and Pedestrian Traffic Accident Data，为 Autonomous Driving 补充可复用的数据集、基准、指标或评测协议。
+- [State of the Art and First Synthetic Dataset for Misbehavior Detection with Collective Perception in (C-)V2X Networks*](https://doi.org/10.1109/pimrc62392.2025.11274651)： 梳理场景理解的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [Empirical Evaluation of Deep Learning based Autonomous Driving System with Real-Time Scene Classification Procedure](https://doi.org/10.1109/icimia67127.2025.11200907)：为自动驾驶补充基准、数据集、指标或评测协议。
+- [Benchmarking Generative Models for Traffic Scene Image Synthesis A Comparative Study](https://doi.org/10.1109/acai68217.2025.11406369)：评测交通场景图像合成中的生成模型。
+- [Fooling the Model, Failing the Road: Benchmarking Inertial Sensor Fidelity in Driving Simulators](https://doi.org/10.5753/eniac.2025.12416)：评测驾驶模拟器中的惯性传感器保真度。
+- [Crash-Based Safety Testing of Autonomous Vehicles: Insights From Generating Safety-Critical Scenarios Based on In-Depth Crash Data](https://doi.org/10.1109/tits.2025.3591012)：补充基于事故数据生成自动驾驶安全关键场景的测试方法。
+- [MARL-Based High-Risk Multivehicle Scenario Generation for Autonomous Vehicle Safety Testing](https://doi.org/10.1109/jiot.2025.3598604)：补充基于多智能体强化学习的自动驾驶高风险场景生成。
+- [Accelerating Autonomous Vehicle Safety Testing: A Framework Balancing Scenario Risk and Test Coverage](https://doi.org/10.1109/itsc60802.2025.11423116)：补充平衡场景风险和测试覆盖的自动驾驶安全测试框架。
+- [IntDT: A comprehensive roadside dual-lidar dataset and benchmarks for urban intersection digital twins](https://doi.org/10.1016/j.jag.2025.104980)：补充城市路口数字孪生的双激光雷达数据集和基准。
+- [AMACollision: An advanced framework for testing autonomous vehicles based on adversarial multi-agent](https://doi.org/10.1016/j.jss.2025.112578)：用对抗式多智能体碰撞场景测试自动驾驶车辆，支持安全关键验证。
 - [DriveCombo](https://arxiv.org/abs/2603.01637)：评测自动驾驶中的组合式交通规则推理。核心思路是用五级认知阶梯测试模型从单规则理解到多规则整合与冲突消解的能力，覆盖文本和视觉驾驶场景。
+- [TruckDrive: Long-Range Autonomous Highway Driving Dataset](https://arxiv.org/abs/2603.02413)：可作为自动驾驶方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Safety-Centered Scenario Generation for Autonomous Vehicles](https://arxiv.org/abs/2603.03574)： 提出 safety-Centered Scenario Generation for Autonomous Vehicles，用HD maps按密集交通汇入与微交互衡量系统表现。
+- [Modeling and Measuring Redundancy in Multisource Multimodal Data for Autonomous Driving](https://arxiv.org/abs/2603.06544)： 发布 modeling and Measuring Redundancy in Multisource Multimodal Data for Autonomous Driving，基准协议用LiDAR, camera, and HD maps评估场景级行为与任务指标。
+- [UAV traffic scene understanding: A regulation embedded multi-modal network and a unified benchmark](https://arxiv.org/abs/2603.10722)：提出嵌入法规约束的多模态无人机交通场景基准。
+- [DarkDriving: A Real-World Day and Night Aligned Dataset for Autonomous Driving in the Dark Environment](https://arxiv.org/abs/2603.18067)： 发布 real-World Day and Night Aligned Dataset for Autonomous Driving in the Dark Environment，基准协议用轨迹数据评估夜间和低照鲁棒性。
+- [The role of road features and vehicle dynamics in cost-effective autonomous vehicles safety testing: Insights from instance space analysis](https://arxiv.org/abs/2603.21066)：补充考虑道路特征和车辆动力学的自动驾驶安全测试分析。
 - [CounterScene](https://arxiv.org/abs/2603.21104)：面向安全关键驾驶 world model 的 counterfactual closed-loop evaluation framework。核心思想是识别因果关键交通参与者、建模交互依赖，并生成最小扰动的对抗场景，在保持轨迹真实性的同时暴露长时程碰撞风险。
 - [VehicleMemBench](https://arxiv.org/abs/2603.23840)：评什么：车载 agent 中多用户长期记忆。核心思想：让记忆影响模拟车载助手中的可执行工具状态结果，暴露偏好冲突和按用户绑定的召回失败。
+- [V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](https://arxiv.org/abs/2603.25275)：提供真实世界车机到无人机协同感知数据集。
+- [Can Users Specify Driving Speed? Bench2Drive-Speed: Benchmark and Baselines for Desired-Speed Conditioned Autonomous Driving](https://arxiv.org/abs/2603.25672)：评测期望速度条件下的自动驾驶。
+- [RailVQA: A Benchmark and Framework for Efficient Interpretable Visual Cognition in Automatic Train Operation](https://arxiv.org/abs/2603.27112)：提出 RailVQA，评测自动列车运行中的可解释视觉认知。
+- [V2X-QA](https://arxiv.org/abs/2604.02710)：评测 autonomous-driving MLLM 在 ego、infrastructure 与 cooperative V2X views 下的 reasoning。
+- [Confidence Intervals for Rate Estimation with Importance Sampling in Autonomous Vehicle Evaluation](https://arxiv.org/abs/2604.03827)： 定义 confidence Intervals for Rate Estimation with Importance Sampling in Autonomous Vehicle Evaluation，评测协议用事件相机衡量稀有事件率估计。
+- [Multimodal Backdoor Attack on VLMs for Autonomous Driving via Graffiti and Cross-Lingual Triggers](https://arxiv.org/abs/2604.04630)：通过涂鸦和跨语言触发测试自动驾驶 VLM 的多模态后门攻击。
+- [ACCIDENT](https://arxiv.org/abs/2604.09819)：面向交通监控视频的 vehicle accident detection benchmark dataset。
+- [AD4AD: Benchmarking Visual Anomaly Detection Models for Safer Autonomous Driving](https://arxiv.org/abs/2604.15291)：补充面向自动驾驶的具体评测项，重点是visual anomaly detection benchmark for autonomous driving。
+- [OVPD: A Virtual-Physical Fusion Testing Dataset of OnSite Auton-omous Driving Challenge](https://arxiv.org/abs/2604.20423)：发布 OnSite 实车在环测试数据，把虚拟背景交通、车路协同感知、20 支队伍片段、15 个原子场景、轨迹、控制命令和数字孪生环视观测结合起来，用于闭环驾驶验证。
+- [EgoDyn-Bench: Evaluating Ego-Motion Understanding in Vision-Centric Foundation Models for Autonomous Driving](https://arxiv.org/abs/2604.22851)：评测自动驾驶视觉中心基础模型的自运动理解。
+- [Do Open-Loop Metrics Predict Closed-Loop Driving? A Cross-Benchmark Correlation Study of NAVSIM and Bench2Drive](https://arxiv.org/abs/2605.00066)：提供可复用评测信号，服务于自动驾驶与驾驶世界模型，可补充闭环驾驶基准、模块化评测和开放/闭环指标相关性分析。
+- [From Concept to Capability: Evaluating 3D Gaussian Splatting for Synthetic Scene Editing in Autonomous Driving](https://arxiv.org/abs/2605.01995)： 发布 evaluating 3D Gaussian Splatting for Synthetic Scene Editing in Autonomous Driving，基准协议用LiDAR and camera评估场景级行为与任务指标。
+- [Beyond Self-Play and Scale: A Behavior Benchmark for Generalization in Autonomous Driving](https://arxiv.org/abs/2605.10034)：定义自动驾驶行为、仿真或泛化基准。
+- [MDrive: Benchmarking Closed-Loop Cooperative Driving for End-to-End Multi-agent Systems](https://arxiv.org/abs/2605.10904)：评测端到端多智能体系统的闭环协同驾驶。
+- [Systematic Discovery of Semantic Attacks in Online Map Construction through Conditional Diffusion](https://arxiv.org/abs/2605.14396)：通过条件扩散系统发现在线地图构建中的语义攻击，关联自动驾驶鲁棒性评测。
+- [PEDESTRIANQA](https://arxiv.org/abs/2605.24562)：把行人意图与轨迹预测转化为基于 PIE、JAAD、TITAN 与 IDD-PeD 的视频问答，检验 VLM 是否能把视觉运动线索连接到行人未来行为。
+- [Design insights and comparative evaluation of a hardware-based cooperative perception architecture for lane change prediction](https://doi.org/10.1016/j.robot.2026.105389)： 发布 design insights and comparative evaluation of a hardware-based cooperative perception architecture for lane change pr...，基准协议用camera评估密集交通汇入与微交互。
+- [A Novel Dataset and Model for Driver Attention Prediction in Interactive Dynamic Traffic](https://doi.org/10.1016/j.eswa.2026.132493)： 发布 novel Dataset and Model for Driver Attention Prediction in Interactive Dynamic Traffic，基准协议用驾驶场景数据评估驾驶员注意力预测。
+- [Wave-PINN: a wavelet-based physics-informed neural network for continuous pavement roughness evaluation from vehicle dynamics](https://doi.org/10.1016/j.ymssp.2026.114232)： 将任务专用建模方案用于infrastructure condition monitoring，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [Autonomous driving accelerated evaluation method for independent/dependent variables based on importance sampling](https://doi.org/10.1016/j.aap.2026.108454)： 定义 autonomous driving accelerated evaluation method for independent/dependent variables based on importance sampling，评测协议用驾驶场景数据衡量稀有事件率估计。
+- [Benchmarking Safe Reinforcement Learning Algorithms for Autonomous Driving: A Comparative Evaluation in Simulated Environments](https://doi.org/10.59324/ejaset.2026.4%282%29.10)： 梳理自动驾驶感知与规划的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [Urban high-risk scenarios for automated vehicle safety testing: A generation and generalization method based on accident data.](https://doi.org/10.1016/j.aap.2026.108480)：补充用于自动驾驶安全测试的城市高风险场景生成方法。
+- [TAU-106K](https://openreview.net/forum?id=Fb0q2uI4Ha)：提供综合 traffic accident understanding 数据集，覆盖事故视频与文本理解任务，补充自动驾驶安全视频评测。
+- [Multimodal two-wheeler driving dataset for autonomous driving applications](https://doi.org/10.1007/s44430-025-00013-1)：提供面向两轮车自动驾驶研究的多模态数据，把驾驶数据覆盖从四轮车辆扩展到两轮场景。
+- [Dense object detection methods in RAW UAV imagery based on YOLOv8](https://doi.org/10.1038/s41598-024-69106-y)： 发布 dense object detection methods in RAW UAV imagery based on YOLOv8，基准协议用UAV views评估场景级行为与任务指标。
+- [Scenario-Driven Evaluation of Autonomous Agents: Integrating Large Language Model for UAV Mission Reliability](https://doi.org/10.3390/drones9030213)： 定义 integrating Large Language Model for UAV Mission Reliability，评测协议用aerial views and UAV views衡量密集交通汇入与微交互。
+- [VioHawk: Detecting Traffic Violations of Autonomous Driving Systems through Criticality-Guided Simulation Testing](https://doi.org/10.1145/3650212.3680325)：作为自动驾驶的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Empirical evaluation of simulation-based fuzz testing for autonomous driving systems](https://doi.org/10.1007/s10664-025-10787-y)： 定义 empirical evaluation of simulation-based fuzz testing for autonomous driving systems，评测协议用驾驶场景数据衡量场景模糊测试中的失效发现。
+- [CCTest: Critical Configuration Testing for Autonomous Driving Systems](https://doi.org/10.1145/3696630.3728610)： 定义 critical Configuration Testing for Autonomous Driving Systems，评测协议用驾驶场景数据衡量场景级行为与任务指标。
+- [Asymmetric Explicit Synergy for Multi-Modal 3D Gaussian Pre-Training in Autonomous Driving](https://doi.org/10.3390/wevj17020102)： 提出 asymmetric Explicit Synergy for Multi-Modal 3D Gaussian Pre-Training in Autonomous Driving，用LiDAR按3D 占用质量衡量系统表现。
+- [Latest breakthroughs, research results, and challenges in intelligent control of autonomous vehicles](https://doi.org/10.1177/09544070251327616)： 梳理运动规划的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [MiTra: A Drone-Based Trajectory Data for an All-Traffic-State Inclusive Freeway with Ramps](https://doi.org/10.1038/s41597-025-05472-0)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [A naturalistic trajectory dataset with dense interaction for autonomous driving](https://doi.org/10.1038/s41597-025-05344-7)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [UR-MAT: A Multimodal, Material-Aware Synthetic Dataset of Urban Scenarios](https://doi.org/10.1145/3746027.3758314)：补充面向自动驾驶能力的可复用基准、数据集、测试平台或评测协议。
+- [Research and Quantitative Analysis on Dynamic Risk Assessment of Intelligent Connected Vehicles](https://doi.org/10.3390/wevj16080465)：为自动驾驶补充基准、数据集、指标或评测协议。
+- [Benchmark Dataset and Deep Model for Monocular Camera Calibration from Single Highway Images](https://doi.org/10.3390/s25185815)： 发布 benchmark Dataset and Deep Model for Monocular Camera Calibration from Single Highway Images，基准协议用camera and 多视角相机评估多视角城市场景推理。
+- [Multidimensional Evaluation of Autonomous Driving Test Scenarios Based on AHP-EWN-TOPSIS Models](https://doi.org/10.1007/s42154-024-00344-6)：结合 AHP、熵权法与 TOPSIS 准则评估自动驾驶测试场景。
+- [Test case sampling optimization for safety validation of automated driving systems](https://doi.org/10.1038/s41467-026-69675-8)：评测自动驾驶系统或驾驶场景理解；核心思想是测试交通特定的感知、规划、安全或时空 grounding。
+- [Agentic AI for Software-Defined Vehicles: A Generative Testing Framework for Autonomous Feature Assurance](https://doi.org/10.52783/jes.9181)：一种面向软件定义车辆功能保障的生成式测试框架；核心思路是用 Agentic AI 与生成式 AI 合成稀有驾驶、驾驶员行为和网络攻击测试用例。
+- [TUMTraf VideoQA: Dataset and Benchmark for Unified Spatio-Temporal Video Understanding in Traffic Scenes](https://traffix-videoqa.github.io/)：评测自动驾驶系统或驾驶场景理解；核心思想是测试交通特定的感知、规划、安全或时空 grounding。
+- [nuReasoning: A Reasoning-Centric Dataset and Benchmark for Long-Tail Autonomous Driving](https://arxiv.org/abs/2605.31572)：发布 nuReasoning，包含 20,000 段真实长尾驾驶片段，用于评测常识推理、空间关系、交通参与者交互推断和安全决策。

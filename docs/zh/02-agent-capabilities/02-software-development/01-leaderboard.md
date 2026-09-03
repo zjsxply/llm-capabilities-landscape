@@ -1,5 +1,19 @@
 # 2.2.1 Leaderboard
 
+- [CodeArena: A Collective Evaluation Platform for LLM Code Generation](https://arxiv.org/abs/2503.01295)：面向 LLM code generation 的集体评测平台；核心思想是用 arena/community evaluation 信号补充静态代码 benchmark。
+- [RepairBench Leaderboard](https://repairbench.github.io/)：追踪前沿模型在 RepairBench 程序修复任务上的表现，为自动修复能力提供直接公开排名。
+- [CRUXEval Leaderboard](https://crux-eval.github.io/leaderboard.html)：官方代码推理、理解与执行榜单，可补充函数生成类 benchmark。
+- [EvoEval Leaderboard](https://evo-eval.github.io/)：官方演进式代码 benchmark 榜单，用于检验 HumanEval 式排名能否迁移到更难或变换后的编码任务。
+- [CodeEditorBench Leaderboard](https://codeeditorbench.github.io/)：官方代码编辑任务项目榜单，覆盖调试、翻译、润色与需求变更等场景。
+- [BigCodeBench Leaderboard](https://bigcode-bench.github.io/)：官方实用代码生成榜单，强调多样函数调用与复杂指令。
+- [Long Code Arena](https://huggingface.co/spaces/JetBrains-Research/long-code-arena)：JetBrains Research 官方 HF Space，对长上下文代码补全、定位、修复等任务进行排名。
+- [SciCode Leaderboard](https://scicode-bench.github.io/leaderboard/)：官方科学编码榜单，评估领域知识、推理和可执行代码合成的组合能力。
+- [AppWorld Leaderboard](https://appworld.dev/leaderboard)：AppWorld 官方榜单，用于比较在模拟应用与人物环境中工作的交互式 coding agent。
+- [KernelBench Leaderboard](https://scalingintelligence.stanford.edu/KernelBenchLeaderboard/)：官方 GPU kernel 生成榜单，强调正确性与性能感知的系统代码能力。
+- [ProjectEval Leaderboard](https://ryanloil.github.io/ProjectEval/)：官方项目级代码生成榜单，用于评估 agent 生成项目是否真正可用。
+- [SWE-Bench Pro Leaderboard](https://scaleapi.github.io/SWE-bench_Pro-os/)：SWE-Bench Pro 高难长时程软件工程任务的公开榜单页面。
+- [Terminal-Bench 2.0 Leaderboard](https://www.tbench.ai/leaderboard/terminal-bench/2.0)：Terminal-Bench 2.0 官方版本化榜单，覆盖编码、文件操作与可执行终端工作流。
+- [BigCodeArena](https://huggingface.co/spaces/bigcode/arena)：BigCode 官方代码模型 arena，通过执行辅助的人类偏好收集比较模型。
 - [SWE-bench Leaderboard](https://www.swebench.com/)：SWE-bench、Lite、Verified 与 Multilingual 等官方结果入口，是 repo-level issue resolving 最核心的持续榜单。
 - [SWE-bench Multimodal Leaderboard](https://www.swebench.com/multimodal.html)：面向视觉/前端问题陈述与 JavaScript 软件库的官方榜单，用于观察 agent 是否能从文本 Python 修复泛化到多模态软件任务。
 - [SWE-Lancer Diamond Leaderboard](https://swelancer.github.io/leaderboard/)：OpenAI SWE-Lancer 的公开 Diamond 榜单，强调真实 freelance-style 软件任务和更接近经济价值的交付评估。

@@ -2,29 +2,91 @@
 
 - [ToolEmu](https://arxiv.org/abs/2309.15817)：用于识别工具型语言模型 Agent 风险的 LM-emulated sandbox。核心思想：模拟工具执行，使高风险行为能在不授予真实外部权限的情况下被评测。
 - [Formal Agent Specs](https://arxiv.org/abs/2310.08535)：面向高层 agent 行为的声明式规格与监控 harness。核心思想：把允许的 agent 行为写成形式化期望，并在执行过程中检查轨迹是否违反这些期望。
+- [SPADE: Synthesizing Assertions for Large Language Model Pipelines](https://arxiv.org/abs/2401.03038)：从 prompt 版本历史合成数据质量断言，并选择紧凑断言集合，在部署前捕获 LLM pipeline 的坏输出。
+- [Combating Adversarial Attacks with Multi-Agent Debate](https://arxiv.org/abs/2401.05998)：让多个模型辩论，由未被越狱或更强模型质询被攻陷模型的有害输出，并用 embedding 聚类分析对抗提示主题。
+- [Formal-LLM: Integrating Formal Language and Natural Language for Controllable LLM-based Agents](https://arxiv.org/abs/2402.00798)：在自然语言目标与 agent plan 之间加入形式语言层，用形式约束提升多步执行可控性。
+- [TrustAgent: Towards Safe and Trustworthy LLM-based Agents](https://arxiv.org/abs/2402.01586)：通过 Agent Constitution 进行规划前安全知识注入、规划中引导和规划后风险动作检查。
+- [Secret Collusion among AI Agents: Multi-Agent Deception via Steganography](https://arxiv.org/abs/2402.07510)：把多 agent 秘密串通形式化为隐写通信，评测 agent 如何绕过 monitor 以及改写和监控防御的边界。
+- [Pandora: Jailbreak GPTs by Retrieval Augmented Generation Poisoning](https://arxiv.org/abs/2402.08416)：通过污染检索知识攻击 custom GPT 和 RAG agent，让间接 jailbreak 从检索通道进入而不是从用户 prompt 进入。
+- [Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast](https://arxiv.org/abs/2402.08567)：面向 infectious jailbreak 的多智能体对抗仿真 harness。核心思想：把对抗图像放入单个 agent 记忆，并测量 pairwise 通信如何把不安全行为扩散到超大规模 MLLM agent 群体。
+- [AuditLLM: A Tool for Auditing Large Language Models Using Multiprobe Approach](https://arxiv.org/abs/2402.09334)：面向 LLM 安全的 multiprobe 审计 harness。核心思想：对目标模型运行协同探针并聚合漏洞证据，而不是依赖单个 prompt 或一次性人工检查。
+- [LLMAuditor: A Framework for Auditing Large Language Models Using Human-in-the-Loop](https://arxiv.org/abs/2402.09346)：面向 LLM 安全的人在环审计工作流。核心思想：结合自动探针与审阅者反馈，在部署决策前验证并细化风险发现。
+- [A Trembling House of Cards? Mapping Adversarial Attacks against Language Agents](https://arxiv.org/abs/2402.10196)：parent-routing-needed：这是语言智能体对抗攻击的 taxonomy 与 mapping study，更适合作为 Survey 覆盖，而不是可复用运行时 harness。
+- [AutoDefense: Multi-Agent LLM Defense against Jailbreak Attacks](https://arxiv.org/abs/2403.04783)：多智能体 jailbreak 防御闭环。核心思想：用 defender 与 attacker agent 迭代检查、质询并改写高风险回答，在发布前阻断有害输出。
+- [IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems](https://arxiv.org/abs/2403.04960)：面向 LLM app 生态的执行隔离架构。核心思想：隔离第三方 app、用户数据和自然语言组件交互，避免不可信 app 自由交换权限或私有状态。
+- [AdaShield: Safeguarding Multimodal Large Language Models from Structure-based Attack via Adaptive Shield Prompting](https://arxiv.org/abs/2403.09513)：面向 structure-based attacks 的 MLLM prompt 防御层。核心思想：根据攻击模式自适应 shield prompt，在接受不安全视觉语言输出前运行安全检查。
+- [AEGIS: Online Adaptive AI Content Safety Moderation with Ensemble of LLM Experts](https://arxiv.org/abs/2404.05993)：由 LLM safety experts 组成的在线 moderation harness。核心思想：将内容路由给自适应专家 judge，使 policy enforcement 能跟随新型有害内容模式调整。
+- [CulturalTeaming: AI-Assisted Interactive Red-Teaming for Challenging LLMs' (Lack of) Multicultural Knowledge](https://arxiv.org/abs/2404.06664)：面向多文化安全缺口的交互式红队工作流。核心思想：让人工测试者与 AI 辅助协作生成文化特定 probe，并记录超出通用安全 prompt 的失败案例。
+- [Concept-Guided LLM Agents for Human-AI Safety Codesign](https://arxiv.org/abs/2404.15317)：面向安全关键人机流程的 concept-guided codesign harness。核心思想：用 LLM agent 组织安全概念和场景，让人类相关方审阅 hazard 与 mitigation 选项。
+- [Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems](https://arxiv.org/abs/2405.06624)：parent-routing-needed：这是宽泛的 safe-AI framework 与 assurance agenda，更接近 Survey 或 methodology 覆盖，而不是具体 agent runtime harness。
+- [ATM: Adversarial Tuning Multi-agent System Makes a Robust Retrieval-Augmented Generator](https://arxiv.org/abs/2405.18111)：面向 robust RAG 的多智能体 adversarial tuning 闭环。核心思想：围绕检索增强生成协调攻击与防御 agent，用对抗样本强化 generator 对投毒或误导性证据的鲁棒性。
 - [GuardAgent](https://arxiv.org/abs/2406.09187)：面向知识增强安全检查的 guard-agent 框架。核心思想：在工具或 API 执行前检查 agent 计划与动作，使不安全操作能在任务 agent 自身推理循环之外被拦截。
+- [TorchOpera: A Compound AI System for LLM Safety](https://arxiv.org/abs/2406.10847)：面向 LLM 应用的 compound-system safety harness。核心思想：在生成流程周围编排多个安全组件，使检测、批判与缓解可以组合，而不是压在一次模型调用中。
+- [garak: A Framework for Security Probing Large Language Models](https://arxiv.org/abs/2406.11036)：模型无关的 red-teaming 与 assessment toolkit。核心思想：对 LLM 或对话系统运行结构化 probe，并把发现的漏洞输出为可复用安全证据。
 - [AgentDojo](https://arxiv.org/abs/2406.13352)（[开源代码](https://github.com/ethz-spylab/agentdojo)；[项目页](https://agentdojo.spylab.ai/)）：面向间接提示注入的工具型 agent 安全评测 harness，提供可复现 suite、任务效用、攻击和防御比较。
+- [Poisoned LangChain: Jailbreak LLMs by LangChain](https://arxiv.org/abs/2406.18122)：LangChain workflow attack harness。核心思想：污染 agent-chain 组件，使 jailbreak 指令通过工具和 chain 执行传播，而不只来自用户的直接 prompt。
+- [RedAgent: Red Teaming Large Language Models with Context-aware Autonomous Language Agent](https://arxiv.org/abs/2407.16667)：上下文感知的自主红队 agent。核心思想：观察目标回复、调整攻击计划并闭环搜索 jailbreak 策略，而不是复用固定 prompt 列表。
+- [Fuzz-Testing Meets LLM-Based Agents: An Automated and Efficient Framework for Jailbreaking Text-to-Image Generation Models](https://arxiv.org/abs/2408.00523)：面向 text-to-image safety 的 fuzz-testing 红队 harness。核心思想：让 LLM-based agent 变异 prompt 并根据模型反馈 triage，更高效发现 jailbreak。
+- [Compromising Embodied Agents with Contextual Backdoor Attacks](https://arxiv.org/abs/2408.02882)：面向 embodied agents 的 backdoor 评测 harness。核心思想：把 contextual trigger 注入环境或观测，测试 policy execution 是否转向攻击者指定行为。
+- [Casper: Prompt Sanitization for Protecting User Privacy in Web-Based Large Language Models](https://arxiv.org/abs/2408.07004)：浏览器侧 prompt sanitization 隐私护栏。核心思想：在 prompt 到达 web-hosted LLM 服务前重写或遮蔽敏感内容，降低运行时个人数据暴露。
+- [A Multi-LLM Debiasing Framework](https://arxiv.org/abs/2409.13884)：多模型 debiasing workflow。核心思想：让多个 LLM 作为 reviewer 或 generator 检测偏见候选，并在最终输出前选择更安全替代。
+- [PathSeeker: Exploring LLM Security Vulnerabilities with a Reinforcement Learning-Based Jailbreak Approach](https://arxiv.org/abs/2409.14177)：强化学习式 jailbreak 搜索 harness。核心思想：依据模型反馈训练 attacker policy，让安全测试探索超出手写 prompt 的漏洞路径。
 - [HAICOSYSTEM](https://arxiv.org/abs/2409.16427)：面向多轮人机工具交互的 sandbox ecosystem。核心思想：提供可配置的领域、工具与风险设置，使工具型交互中的社会、法律、操作和安全失败可以复现。
 - [System-Level Defense against Indirect Prompt Injection](https://arxiv.org/abs/2409.19091)：面向间接提示注入的系统级防御 harness。核心思想：结合数据流分离、隔离与信息流感知执行，避免不可信上下文悄然变成高权限指令。
+- [Confidential Prompting: Protecting User Prompts from Cloud LLM Providers](https://arxiv.org/abs/2409.19134)：面向 cloud LLM 使用的隐私保护 prompt-processing harness。核心思想：在保留任务完成能力的同时，降低云端 provider 对用户 prompt 的可见性。
+- [Automated Red Teaming with GOAT: the Generative Offensive Agent Tester](https://arxiv.org/abs/2410.01606)：面向 LLM red teaming 的自动 offensive-agent tester。核心思想：闭环生成、执行和评分对抗 prompt，使有害行为发现能扩展到人工红队会话之外。
+- [PyRIT: A Framework for Security Risk Identification and Red Teaming in Generative AI System](https://arxiv.org/abs/2410.02828)：面向生成式 AI 系统的可扩展 red-teaming toolkit。核心思想：组合 model connector、attack objective、scorer 与 memory，使多模态危害和 jailbreak 可复现地被探测。
+- [AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs](https://arxiv.org/abs/2410.05295)：终身 jailbreak strategy exploration agent。核心思想：从既往尝试中维护并演化攻击策略，使 black-box 红队搜索能跨轮次改进。
 - [ST-WebAgentBench](https://arxiv.org/abs/2410.06703)（[开源代码](https://github.com/segev-shlomov/ST-WebAgentBench)）：安全可信 web agent 评测 harness；价值在于把网页环境、任务状态和安全约束组织成可复现的 browser-agent 测试协议。
 - [Prompt Infection](https://arxiv.org/abs/2410.07283)：面向多 Agent prompt-injection 传播的 harness。核心思想：研究一个 LLM 的输出如何通过通信感染另一个 LLM，并用 tagging 式防御保留消息 provenance。
+- [Backdoored Retrievers for Prompt Injection Attacks on Retrieval Augmented Generation of Large Language Models](https://arxiv.org/abs/2410.14479)：RAG prompt-injection attack harness。核心思想：在 retriever 中植入 backdoor，使目标查询浮现恶意上下文，并暴露下游生成是否把检索文本当作可信指令。
 - [Imprompter](https://arxiv.org/abs/2410.14923)：面向 LLM Agent 不当工具使用的自动化攻击 harness。核心思想：构造混淆型提示注入 payload，把 agent 推向不安全工具调用，同时让简单过滤器难以发现。
 - [AdvAgent](https://arxiv.org/abs/2410.17401)：面向 Web Agent 的可控黑盒红队框架。核心思想：为 browser-agent workflow 生成攻击，使有害行动路径的探索超出固定 jailbreak prompt。
+- [Revealing and Reducing Gender Biases in Vision and Language Assistants (VLAs)](https://arxiv.org/abs/2410.19314)：parent-routing-needed：这是 vision-language assistant 的 bias measurement 与 mitigation 研究，更适合 Model Safety 或 evaluation，而不是 runtime agent harness。
+- [MAD-Sherlock: Multi-Agent Debates for Out-of-Context Misinformation Detection](https://arxiv.org/abs/2410.20140)：面向 misinformation review 的多智能体 debate harness。核心思想：让 agent 分别围绕证据一致性辩论，通过对抗式审议检查 out-of-context claim。
+- [Defense Against Prompt Injection Attack by Leveraging Attack Techniques](https://arxiv.org/abs/2411.00459)：基于攻击技术的 prompt-injection 防御闭环。核心思想：把生成或复用的攻击模式作为防御信号，在注入指令到达高权限执行前过滤或改写输入。
+- [MRJ-Agent: An Effective Jailbreak Agent for Multi-Round Dialogue](https://arxiv.org/abs/2411.03814)：面向对话系统的多轮 jailbreak agent。核心思想：跨轮次自适应生成后续 prompt，使红队评测覆盖只有积累 conversation history 后才出现的失败。
+- [JailPO: A Novel Black-box Jailbreak Framework via Preference Optimization against Aligned LLMs](https://arxiv.org/abs/2412.15623)：black-box jailbreak optimization harness。核心思想：对攻击候选进行 preference optimization，在无白盒访问时提升针对 aligned model 的攻击成功率。
 - [Task Shield](https://arxiv.org/abs/2412.16682)：面向任务一致性间接提示注入缓解的运行时防御 harness。核心思想：在外部指令影响 agent 执行前，检查其是否仍与用户任务一致。
 - [Agentable / Agent Defect Detection](https://arxiv.org/abs/2412.18371)：面向 LLM 自主 agent 缺陷的静态分析框架与数据集套件。核心思想：从真实开发者报告中定义 agent 特有缺陷类型，并在真实与合成 agent 代码库中检测工作流和工具调用失败。
+- [PrivacyAsst: Safeguarding User Privacy in Tool-Using Large Language Model Agents](https://doi.org/10.1109/tdsc.2024.3372777)：面向工具型 LLM agent 的隐私护栏。核心思想：中介 tool call 与用户数据，使 agent 能完成外部动作，同时尽量不暴露敏感属性。
+- [ContextAware: A Multi-Agent Framework for Detecting Harmful Image-Based Comments on Social Media](https://doi.org/10.24963/ijcai.2024/1103)：多智能体有害评论 moderation harness。核心思想：把 contextual image understanding 与 comment judgment 分给不同 agent，用显式跨 agent 证据检查多模态 abuse。
+- [Optimizing Auditory Immersion Safety on Edge Devices: An On-Device Sound Event Detection System](https://doi.org/10.21437/odyssey.2024-32)：parent-routing-needed：这是面向 auditory safety 的 edge sound-event detection system，偏离 LLM-agent harness 范围。
+- [A Goal-Directed Dialogue System for Assistance in Safety-Critical Application](https://doi.org/10.24963/ijcai.2024/870)：面向安全关键应用的 dialogue-assistance harness。核心思想：约束 goal-directed interaction，使辅助行为遵守任务 policy，而不是开放式无约束对话。
+- [TrustRAG: Enhancing Robustness and Trustworthiness in Retrieval-Augmented Generation](https://arxiv.org/abs/2501.00879)：先过滤恶意和无关检索内容，再在生成前自评证据质量，以提升 RAG 对语料投毒的鲁棒性。
+- [Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](https://arxiv.org/abs/2501.01830)：自动探索 LLM red-teaming jailbreak 策略，使攻击搜索比手写 prompt 更系统。
+- [CALM: Curiosity-Driven Auditing for Large Language Models](https://arxiv.org/abs/2501.02997)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 CALM: Curiosity-Driven Auditing for Large Language Models 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Gandalf the Red: Adaptive Security for LLMs](https://arxiv.org/abs/2501.07927)：提供安全 harness；核心思想是把安全适配、防御或 red-teaming 做成可复用流程，而不是单个提示。
+- [Siren](https://arxiv.org/abs/2501.14250)：用 learning-based multi-turn attack framework 模拟真实 human jailbreak behavior。
+- [Agents Are All You Need for LLM Unlearning](https://arxiv.org/abs/2502.00406)：用智能体工作流完成大语言模型遗忘，将外部搜索、批判或协同纳入遗忘流程。
+- [AgentBreeder: Mitigating the AI Safety Risks of Multi-Agent Scaffolds via Self-Improvement](https://arxiv.org/abs/2502.00757)：自改进多 agent scaffold 的安全风险分析。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Towards Safer Chatbots: A Framework for Policy Compliance Evaluation of Custom GPTs](https://arxiv.org/abs/2502.01436)：面向 custom GPT 的 policy-compliance evaluation harness。核心思想：测试 custom instruction、检索行为和 response policy，使 chatbot 部署能按安全要求审计。
+- [Firewalls to Secure Dynamic LLM Agentic Networks](https://arxiv.org/abs/2502.01822)：面向动态 LLM agent 网络的防御 harness。核心思想是在 agent 间通信和工具路径中加入中介，阻止受损或不安全子 agent 自由传播有害行为。
+- [DuoGuard: A Two-Player RL-Driven Framework for Multilingual LLM Guardrails](https://arxiv.org/abs/2502.05163)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
 - [MELON](https://arxiv.org/abs/2502.05174)：面向间接提示注入的 masked re-execution 防御 harness。核心思想：在遮蔽可疑上下文后重跑工具型 agent 工作流，并比较工具行为，从执行时检测注入指令。
+- [Preventing Rogue Agents Improves Multi-Agent Collaboration](https://arxiv.org/abs/2502.05986)：Preventing Rogue Agents 直接处理多代理协作中的 rogue-agent 风险，属于 agent safety harness。
 - [RTBAS](https://arxiv.org/abs/2502.08966)：面向工具型 LLM agent 的信息流控制防御 harness。核心思想：只在能保证完整性与机密性时自动执行工具调用，无法认证安全时才交给用户确认。
 - [AgentGuard](https://arxiv.org/abs/2502.09809)：面向工具编排的安全评测与护栏 harness。核心思想：使用 agentic orchestrator 生成约束、检查不安全工具使用流程，并在工具执行周围落实安全检查。
 - [G-Safeguard](https://arxiv.org/abs/2502.11127)：面向 LLM 多 Agent 系统的 topology-guided 防御 harness。核心思想：监控图层面的错误信息或对抗传播，并在不安全行为扩散前施加拓扑感知处理。
+- [AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection](https://arxiv.org/abs/2502.11448)：类型：agent harness/可复用执行框架。核心价值：为 2.9.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
 - [CORBA](https://arxiv.org/abs/2502.14529)：面向 LLM 多 Agent 系统 contagious recursive blocking attacks 的鲁棒性 harness。核心思想：建模对抗性阻断行为如何在 agent 协作中传播并造成可用性下降。
+- [iAgent: LLM Agent as a Shield between User and Recommender Systems](https://arxiv.org/abs/2502.14662)：位于用户与推荐系统之间的 shield agent。核心思想：插入 LLM agent 作为中介，让偏好获取、解释和不安全推荐过滤成为显式 mediation layer。
 - [Agent-in-the-Middle](https://arxiv.org/abs/2502.14847)：面向 LLM 多 Agent 通信攻击的红队 harness。核心思想：拦截并篡改 agent 间消息，以评测 message-integrity 失败，而不是只攻击单个 agent prompt。
+- [A General Pseudonymization Framework for Cloud-Based LLMs: Replacing Privacy Information in Controlled Text Generation](https://arxiv.org/abs/2502.15233)：面向 cloud LLM workflow 的 pseudonymization 隐私层。核心思想：在 controlled generation 前替换身份信息、之后再恢复，使外部模型调用看到更少个人数据。
+- [Be a Multitude to Itself: A Prompt Evolution Framework for Red Teaming](https://arxiv.org/abs/2502.16109)：面向 LLM 红队的 prompt evolution 框架；核心思想是通过演化提示自动发现有害输入，而不是只依赖人工编写红队样例。
 - [AISafetyLab](https://arxiv.org/abs/2502.16776)：统一的 AI 安全评测与改进工具包。核心思路是把代表性的攻击、防御和评估方法封装到统一接口中，使安全实验能够被系统复现和扩展。
+- [QExplorer: Large Language Model Based Query Extraction for Toxic Content Exploration](https://arxiv.org/abs/2502.18480)：toxic-content exploration harness。核心思想：用 LLM-based query extraction 发现搜索词和内容簇，暴露 moderation testing 中的有害材料风险。
+- [Policy-as-Prompt: Rethinking Content Moderation in the Age of Large Language Models](https://arxiv.org/abs/2502.18695)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [EdgeAIGuard: Agentic LLMs for Minor Protection in Digital Spaces](https://arxiv.org/abs/2503.00092)：面向数字空间未成年人保护的 guard agent。核心思想：在 edge 运行 agentic safety layer，检测高风险交互并在脆弱用户接触有害内容前干预。
 - [UDora](https://arxiv.org/abs/2503.01908)：面向 LLM Agent 的统一红队框架。核心思想：动态劫持 agent 推理与 workflow state，测试跨规划、工具使用和执行阶段展开的攻击。
 - [AgentSafe](https://arxiv.org/abs/2503.04392)：面向多 Agent 安全的层级数据管理 harness。核心思想：执行结构化数据访问与记忆边界，使协作 agent 不会悄然过度共享或污染共享状态。
 - [MAD-MAX](https://arxiv.org/abs/2503.06253)：一个用于模块化、多样化恶意攻击混合的自动红队 harness。核心思想：组合不同攻击策略，使 LLM 安全测试覆盖比单一模板 jailbreak 更广的对抗行为。
 - [SafePlan](https://arxiv.org/abs/2503.06892)：面向 LLM 机器人任务规划的安全 harness。核心思想：结合形式逻辑和思维链规划，在执行前约束不安全计划。
 - [Safety Guardrails for LLM-Enabled Robots](https://arxiv.org/abs/2503.07885)：提出面向 LLM-enabled robots 的外部安全护栏 RoboGuard。核心思想：把安全规则 grounding 到机器人环境中，并用 temporal-logic control synthesis 处理不安全计划，同时尽量保持安全任务执行。
+- [In-Context Defense in Computer Agents: An Empirical Study](https://arxiv.org/abs/2503.09241)：In-Context Defense 专门研究 computer agents 防御，适合 GUI/computer-use agent safety。
+- [Tempest: Autonomous Multi-Turn Jailbreaking of Large Language Models with Tree Search](https://arxiv.org/abs/2503.10619)：基于树搜索的多轮 jailbreak 框架。核心思想是分支扩展对抗对话，并复用局部策略泄漏直到生成违规输出。
 - [Prompt Flow Integrity](https://arxiv.org/abs/2503.15547)：面向 LLM agent 权限升级防护的安全 harness。核心思想：结合 agent 隔离、不可信工具数据的安全处理和权限护栏，避免提示流在运行中悄然扩大 agent 权限。
+- [AutoRedTeamer: Autonomous Red Teaming with Lifelong Attack Integration](https://arxiv.org/abs/2503.15754)：带 lifelong attack integration 的自动化 red-teaming harness。核心思想是持续生成、测试并积累攻击策略，让安全评测覆盖不断演化的 LLM 漏洞。
 - [VeriSafeAgent](https://arxiv.org/abs/2503.18492)：面向 mobile 与 GUI Agent 的 pre-action 逻辑验证 harness。核心思想：自动形式化用户意图，并在动作到达设备前阻断不满足验证规格的操作。
 - [AgentSpec](https://arxiv.org/abs/2503.18666)（[开源代码](https://github.com/haoyuwang99/AgentSpec)）：面向 agent 的策略执行 harness，用规格描述允许动作，并在运行时按 safety contracts 检查行为。
 - [CaMeL](https://arxiv.org/abs/2503.18813)（[开源代码](https://github.com/google-research/camel-prompt-injection)）：提示注入防御 harness，把控制流与数据流拆开，使不可信工具输出可以提供信息，但不能获得执行权。
@@ -32,128 +94,508 @@
 - [Encrypted Prompt](https://arxiv.org/abs/2503.23250)：面向 LLM 应用的权限检查 harness。核心思想是把当前权限绑定进加密提示，并在 API 或工具动作执行前验证，使未授权动作在模型自由生成之外被拦截。
 - [Agents Under Siege](https://arxiv.org/abs/2504.00218)：面向实际多 Agent LLM 系统的优化式 prompt 攻击 harness。核心思想：在通信与拓扑约束下搜索攻击，使多 Agent 部署能在更真实的对抗压力下被测试。
 - [MCP Safety Audit / MCPSafetyScanner](https://arxiv.org/abs/2504.03767)：面向 MCP server 的 agentic 安全审计 harness。核心思想：用多智能体检查任意 MCP server 的工具与资源，自动生成对抗样本、检索相关漏洞与修复建议，并产出可执行安全报告。
+- [Enforcement Agents: Enhancing Accountability and Resilience in Multi-Agent AI Frameworks](https://arxiv.org/abs/2504.04070)：多 agent 监督框架。核心思想：嵌入 enforcement agent，对其他 agent 进行实时监控，并在行为偏离系统目标时干预。
+- [EXCLAIM: An Explainable Cross-Modal Agentic System for Misinformation Detection with Hierarchical Retrieval](https://arxiv.org/abs/2504.06269)：跨模态 misinformation-detection harness。核心思想：结合 hierarchical retrieval 与可解释 agent reasoning，在传播不安全 misinformation 前检查 claim、image 与 evidence。
+- [Bypassing Safety Guardrails in LLMs Using Humor](https://arxiv.org/abs/2504.06577)：研究幽默作为越狱通道，为安全评测补充不依赖直接有害措辞的红队攻击模式。
+- [X-Guard: Multilingual Guard Agent for Content Moderation](https://arxiv.org/abs/2504.08848)：面向内容审核的多语 guard agent。核心思想是防御低资源语言和 code-switching 对抗输入。
+- [LOKA Protocol: A Decentralized Framework for Trustworthy and Ethical AI Agent Ecosystems](https://arxiv.org/abs/2504.10915)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 LOKA Protocol: A Decentralized Framework for Trustworthy and Ethical AI Agent Ecosystems 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Towards Automated Safety Requirements Derivation Using Agent-based RAG](https://arxiv.org/abs/2504.11243)：用于 safety-requirements derivation 的 agent-based RAG harness。核心思想：检索标准和领域证据，再用 agent workflow 起草并检查安全需求，而不是完全依赖人工文档审阅。
 - [Progent](https://arxiv.org/abs/2504.11703)：面向 AI agent 的权限控制 harness。核心思想：把允许的工具调用表示为关于工具名和参数的符号策略，在执行过程中更新，并用确定性检查与 SMT 推理落实最小权限。
+- [OpenDeception: Learning Deception and Trust in Human-AI Interaction via Multi-Agent Simulation](https://arxiv.org/abs/2504.13707)：面向 deception 与 trust 的多智能体仿真 harness。核心思想：构建受控 human-AI interaction 场景，安全观察欺骗行为与信任校准。
+- ["Show Me How": Benefits and Challenges of Agent-Augmented Counterfactual Explanations for Non-Expert Users](https://arxiv.org/abs/2504.13897)：parent-routing-needed：这是面向用户的 agent-augmented explanation HCI 研究，与安全沟通相邻，但不是具体 safety harness。
+- [DoomArena](https://arxiv.org/abs/2504.14064)：面向 web agent 和 tool-calling agent 的模块化安全测试 harness。核心思想是把威胁建模和攻击构造从底层 agent 环境中解耦，使多类攻击和多类环境能被一致评估。
+- [Detect, Explain, Escalate: Sustainable Dialogue Breakdown Management for LLM Agents](https://arxiv.org/abs/2504.18839)：提供规划、记忆、验证、工具调用或运行时编排，服务于智能体安全，可补充LLM 智能体的保障、诊断、升级处理和运行时安全管理。
 - [Tool Squatting Zero Trust Registry](https://arxiv.org/abs/2504.19951)：面向多 agent 工具发现的 registry-based security harness。核心思想是用管理员控制的注册、访问策略、trust scoring、漏洞元数据和 just-in-time credential，降低欺骗性或被劫持工具被调用的风险。
+- [When Memory Becomes a Vulnerability](https://arxiv.org/abs/2504.20376)：把 text-to-image systems 的多轮记忆机制作为 jailbreak workflow 的攻击面。
+- [AegisLLM: Scaling Agentic Systems for Self-Reflective Defense in LLM Security](https://arxiv.org/abs/2504.20965)：扩展协作式 agentic system，用自反思流程防御 LLM 安全攻击。
 - [ACE](https://arxiv.org/abs/2504.20984)：面向 LLM 集成应用系统的安全架构。核心思想：把抽象规划与具体执行拆开，使工具和应用调用在恶意应用破坏计划、可用性或隐私数据前被约束、检查和隔离。
 - [SAGA](https://arxiv.org/abs/2504.21034)：治理 agentic system 的安全架构。核心思想是通过 provider 注册 agent、执行用户定义的 access-control 与 delegation policy，并让用户持续掌控 agent lifecycle 与通信。
 - [Maris](https://arxiv.org/abs/2505.04799)：面向多 agent 协作系统的形式化可验证隐私策略执行 harness。核心思想：在协作过程中检查访问和信息流策略，使多 agent 系统能协同工作而不悄然违反隐私约束。
+- [AgentVigil: Generic Black-Box Red-teaming for Indirect Prompt Injection against LLM Agents](https://arxiv.org/abs/2505.05849)：用种子选择与 fuzzing 发现多类 LLM agent 的间接 prompt injection 漏洞。
+- [Agent Name Service (ANS): A Universal Directory for Secure AI Agent Discovery and Interoperability](https://arxiv.org/abs/2505.10609)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 Agent Name Service (ANS): A Universal Directory for Secure AI Agent Discovery and Interoperability 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction](https://arxiv.org/abs/2505.11063)：类型：agent harness/可复用执行框架。核心价值：为 2.9.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [PeerGuard: Defending Multi-Agent Systems Against Backdoor Attacks Through Mutual Reasoning](https://arxiv.org/abs/2505.11642)：面向多代理系统后门攻击的防御框架。核心思想是用代理间互相推理来发现和缓解被攻陷代理行为。
 - [A2A protocol safety refinements](https://arxiv.org/abs/2505.12490)：面向多 agent 通信的协议级安全设计。核心思想是加入同意编排、短期 scoped token 和用户到服务的直接数据通道，降低 A2A 式 agent 协作中的凭证暴露与非预期数据共享。
+- [GEM: Gaussian Embedding Modeling for Out-of-Distribution Detection in GUI Agents](https://arxiv.org/abs/2505.12842)：GUI agent 的分布外指令检测。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [ACPS: Agent Collaboration Protocols for the Internet of Agents](https://arxiv.org/abs/2505.13523)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 ACPS: Agent Collaboration Protocols for the Internet of Agents 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [PandaGuard](https://arxiv.org/abs/2505.13862)：一个模块化越狱安全评测框架，将攻击者、防御者和裁判建模为可配置组件。其价值在于跨模型接口和交互模式复现实验，并比较不同攻击与防御策略。
 - [MCIP](https://arxiv.org/abs/2505.14590)：协议层面的 MCP 安全 harness。核心思路是用上下文完整性机制改造 MCP，定义 MCP 不安全行为 taxonomy，并提供用于识别 MCP 交互安全风险的 benchmark 与训练数据。
+- [SafeAgent: Safeguarding LLM Agents via an Automated Risk Simulator](https://arxiv.org/abs/2505.17735)：用于保护 LLM agent 的自动风险模拟器。核心思想是模拟高风险交互场景，在真实部署前对 agent 策略做压力测试。
+- [MASTER: Multi-Agent Security Through Exploration of Roles and Topological Structures - A Comprehensive Framework](https://arxiv.org/abs/2505.18572)：通过角色和拓扑结构探索 multi-agent security，适合 agent safety harness。
+- [GUARDIAN: Safeguarding LLM Multi-Agent Collaborations with Temporal Graph Modeling](https://arxiv.org/abs/2505.19234)：检测并缓解多智能体协作中的安全失败。
+- [ALRPHFS: Adversarially Learned Risk Patterns with Hierarchical Fast & Slow Reasoning for Robust Agent Defense](https://arxiv.org/abs/2505.19260)：面向 agent 防御的层级快慢推理框架。核心思想：学习对抗性风险模式，并把可疑情形路由到更慢但更稳健的检查流程。
 - [Zero-Trust Identity Framework for Agentic AI](https://arxiv.org/abs/2505.19301)：面向多 Agent AI 系统的身份与访问控制框架。核心思路是用可验证凭证表示 Agent 来源、能力、行为范围和安全状态，并在异构协议中执行细粒度访问控制与撤销。
+- [MedSentry: Understanding and Mitigating Safety Risks in Medical LLM Multi-Agent Systems](https://arxiv.org/abs/2505.20824)：理解并缓解医疗 LLM multi-agent systems 安全风险的框架；核心思想是检查高风险医疗多 agent workflow 中的协作失败和不安全建议。
 - [RedTeamCUA](https://arxiv.org/abs/2505.21936)（项目页：[RedTeamCUA](https://osu-nlp-group.github.io/RedTeamCUA)）：混合 Web-OS 红队 harness；价值在于把网页提示注入、桌面动作和真实 OS 状态结合起来测试 CUA。
+- [AJF: Adaptive Jailbreak Framework Based on the Comprehension Ability of Black-Box Large Language Models](https://arxiv.org/abs/2505.23404)：自适应 black-box jailbreak harness。核心思想：估计目标模型的 comprehension behavior 并在线调整攻击 prompt，让红队测试跟随模型特定弱点。
+- [CoT Red-Handed](https://arxiv.org/abs/2505.23575)：用于检测 agent sabotage 的监控协议。核心思想是比较 chain-of-thought monitoring 与 action-only monitoring，并在 hybrid monitor 中结合推理和动作信号检测有害副任务。
 - [FIDES](https://arxiv.org/abs/2505.23643)（[开源代码](https://github.com/microsoft/fides)）：面向 AI Agent 的信息流控制 harness。核心思想：给 planner state、tool call 和选择性隐藏上下文附加 confidentiality 与 integrity 标签，防止 tainted data 控制高权限动作或泄露 secret。
+- [Nine Ways to Break Copyright Law and Why Our LLM Won't: A Fair Use Aligned Generation Framework](https://arxiv.org/abs/2505.23788)：面向生成任务的 copyright-policy enforcement harness。核心思想：分类 fair-use 风险模式，并 steer 或阻断输出，使创意生成遵守合法使用约束。
 - [SentinelAgent](https://arxiv.org/abs/2505.24201)：面向多智能体系统的图异常检测 harness。核心思想：把智能体交互建模为图，在执行过程中识别可疑协作、角色滥用或异常通信模式，而不是只在最终输出后做安全判断。
+- [An Adversary-Resistant Multi-Agent LLM System via Credibility Scoring](https://arxiv.org/abs/2505.24239)：使用 credibility scoring 的抗对抗多 agent LLM 系统。核心思想：按可信度加权 agent 贡献，以减少受污染 agent 的操纵。
 - [CoP](https://arxiv.org/abs/2506.00781)：基于原则组合的智能体化红队框架。核心思路：围绕可组合的攻击或安全原则组织对抗提示搜索，使红队测试比一次性越狱提示更系统。
 - [ETDI](https://arxiv.org/abs/2506.01333)：面向 MCP tool definition 的安全扩展 harness。核心思想是把工具绑定到密码学身份、不可变版本化 descriptor、OAuth 增强权限和 policy-engine 检查，防止 tool squatting 与 rug-pull 攻击静默扩大 agent 权限。
+- [ATAG: AI-Agent Application Threat Assessment with Attack Graphs](https://arxiv.org/abs/2506.02859)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 ATAG: AI-Agent Application Threat Assessment with Attack Graphs 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [HADA: Human-AI Agent Decision Alignment Architecture](https://arxiv.org/abs/2506.04253)：协议无关的 human-AI agent 决策对齐架构；核心思想是用审计、伦理、客户等 stakeholder 角色包裹算法或 LLM agent，使决策持续对齐组织目标。
+- [Demonstrations of Integrity Attacks in Multi-Agent Systems](https://arxiv.org/abs/2506.04572)：多代理系统完整性攻击研究。核心思想是展示对抗性或被攻陷代理如何污染协作流程和下游决策。
 - [SAFEFLOW](https://arxiv.org/abs/2506.07564)：带 provenance 与信息流控制的事务型 Agent 框架。核心思想：结合 integrity/confidentiality 标签、secure cache、rollback 与 transaction semantics，使自主动作保持可审计和可回滚。
 - [Your Agent Can Defend Itself against Backdoor Attacks](https://arxiv.org/abs/2506.08336)：研究智能体系统如何自我防御后门攻击。核心思想是在规划、记忆使用或工具执行过程中引入 agent 侧监控与推理，以检测或缓解被投毒触发器。
+- [Effective Red-Teaming of Policy-Adherent Agents](https://arxiv.org/abs/2506.09600)：对遵循策略的 agent 进行有效红队测试。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Streaming Content Monitoring](https://arxiv.org/abs/2506.09996)：把有害输出审核改造成在线早停护栏，而不只是生成后的整段分类器。
 - [Trusted Architecture for the Internet of AI Agents](https://arxiv.org/abs/2506.12003)：面向更安全智能体互联的架构提案。核心思想是分析既有互联网信任机制对自治 agent 的不足，并提出面向 agent-to-agent 生态的身份、策略与问责层。
 - [DRIFT](https://arxiv.org/abs/2506.12104)（[项目页](https://safo-lab.github.io/DRIFT)）：面向 LLM Agent 的 dynamic rule-based defense with injection isolation。核心思想：用 secure planning、dynamic validation 与 memory-stream masking 隔离注入内容，同时尽量不丢弃有用上下文。
+- [Tiered Agentic Oversight](https://arxiv.org/abs/2506.12482)：面向医疗安全的分层多 agent 监督框架。核心思想：把任务路由到不同层级的专门 agent，并通过层间自动沟通在错误升级前拦截问题，使安全监督成为显式工作流，而不是单模型判断。
+- [Agentic Superego](https://arxiv.org/abs/2506.13774)：面向 agentic AI 的个性化 oversight harness。核心思想：在执行前用用户选择的 constitution、可调 adherence level 和通用 ethical floor 校验计划。
+- [Securing Generative AI Agentic Workflows: Risks, Mitigation, and a Proposed Firewall Architecture](https://arxiv.org/abs/2506.17266)：面向智能体安全与可信运行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [MetaCipher](https://arxiv.org/abs/2506.22557)：协调时间持久的多智能体 cipher-based jailbreak 攻击，为测试 LLM 安全防御补充对抗性 harness。
+- [CP-uniGuard: A Unified, Probability-Agnostic, and Adaptive Framework for Malicious Agent Detection and Defense in Multi-Agent Embodied Perception Systems](https://arxiv.org/abs/2506.22890)：面向 multi-agent embodied perception 的自适应防御 harness。核心思想：不依赖校准概率检测 malicious agent，并随感知 agent 交互更新防御。
+- [Chain of Attack](https://aclanthology.org/2025.findings-acl.514/)：通过多轮追问隐藏有害意图，将会话级攻击编排纳入智能体安全评估。
+- [GAF-Guard: An Agentic Framework for Risk Management and Governance in Large Language Models](https://arxiv.org/abs/2507.02986)：提供用于 LLM 风险管理与治理的 agentic framework；核心思想：把安全检查和治理决策组织成显式 agent 工作流。
+- [Agent-Based Detection and Resolution of Incompleteness and Ambiguity in Interactions with Large Language Models](https://arxiv.org/abs/2507.03726)：ambiguity-resolution agent harness。核心思想：检测用户交互中的信息不完整或歧义，并在 LLM 基于高风险假设继续前触发澄清或解析步骤。
 - [OpenAgentSafety](https://arxiv.org/abs/2507.06134)：综合 agent 安全评测框架；价值在于用真实工具和多用户设置复现 deployment-like 风险，而不只做静态 prompt 分类。
+- [Toward a Dynamic Stackelberg Game-Theoretic Framework for Agentic AI Defense Against LLM Jailbreaking](https://arxiv.org/abs/2507.08207)：面向 jailbreak 压力的博弈论防御 harness。核心思想：把 defender 与 attacker 的行动建模为 dynamic Stackelberg game，使 mitigation policy 能适应策略性 jailbreak 尝试。
+- [Multi-Agent LLMs as Ethics Advocates for AI-Based Systems](https://arxiv.org/abs/2507.08392)：面向Agent 安全、提示注入与护栏可靠性提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [BlueGlass: A Framework for Composite AI Safety](https://arxiv.org/abs/2507.10106)：一个组合式 AI 安全工作流框架；核心思路是把面向模型内部与输出的多类安全工具整合起来，使安全分析可以组合执行而非孤立运行。
+- [Byzantine-Robust Decentralized Coordination of LLM Agents](https://arxiv.org/abs/2507.14928)：面向去中心化 LLM agents 的拜占庭鲁棒协同方法。核心思想是让多 agent 协作能容忍不可靠或对抗性参与者，而不是假设所有 agent 都诚实。
+- [PromptArmor: Simple yet Effective Prompt Injection Defenses](https://arxiv.org/abs/2507.15219)：轻量级 prompt injection 防御方法；核心思想是在注入指令影响工具型或多步 agent 之前，用防御层进行过滤或中和。
+- [QSAF: A Novel Mitigation Framework for Cognitive Degradation in Agentic AI](https://arxiv.org/abs/2507.15330)：面向智能体安全与安全评测的智能体框架或运行时。核心思想：把 A Novel Mitigation Framework for Cognitive Degradation in Agentic AI 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Cost-Constrained Runtime Monitors](https://arxiv.org/abs/2507.15886)：面向 AI safety 的 monitor-composition harness。核心思想：在预算约束下决定何时调用 monitor 与 intervention，让运行时安全检查显式权衡召回、成本和动作阻断。
+- [Towards Enforcing Company Policy Adherence in Agentic Workflows](https://arxiv.org/abs/2507.16459)：把公司政策编译成可验证 guard code，在工具动作执行前检查合规性。
+- [A Multimodal Deviation Perceiving Framework for Weakly-Supervised Temporal Forgery Localization](https://arxiv.org/abs/2507.16596)：parent-routing-needed：这是 media forensics 的 temporal forgery-localization model，不是 agent runtime 或 orchestration harness。
+- [Towards Multi-Agent Economies: Enhancing the A2A Protocol with Ledger-Anchored Identities and x402 Micropayments for AI Agents](https://arxiv.org/abs/2507.19550)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 Towards Multi-Agent Economies: Enhancing the A2A Protocol with Ledger-Anchored Identities and x402 Micropayments for AI Agents 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [ProbGuard: Probabilistic Runtime Monitoring for LLM Agent Safety](https://arxiv.org/abs/2508.00500)：面向 LLM agent safety 的概率式 runtime monitoring 框架；核心思想是在行动轨迹中监控风险概率，并在超过任务安全阈值时介入。
+- [Beyond Benchmarks: Dynamic, Automatic And Systematic Red-Teaming Agents For Trustworthy Medical Language Models](https://arxiv.org/abs/2508.00923)：面向安全关键 LLM 的动态红队代理框架。核心思想是让对抗代理持续变异测试用例，覆盖鲁棒性、隐私、公平性和幻觉风险。
 - [AgentArmor](https://arxiv.org/abs/2508.01249)：面向 agent prompt injection 的程序分析式防御 harness；核心思想是检查 agent runtime trace，并对 action 与 observation 施加安全属性约束，在注入指令推动危险执行前进行拦截。
+- [BlockA2A: Towards Secure and Verifiable Agent-to-Agent Interoperability](https://arxiv.org/abs/2508.01332)：安全可验证的 agent-to-agent interoperability 框架；核心思想是让跨 agent 通信可审计、具备权限意识，而不是把 agent 消息当作可信文本。
+- [DIRF: A Framework for Digital Identity Protection and Clone Governance in Agentic AI Systems](https://arxiv.org/abs/2508.01997)：面向智能体安全与可信运行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Highlight & Summarize](https://arxiv.org/abs/2508.02872)：一种 RAG 安全设计模式，将流程拆为 highlighter 和 summarizer，并避免把用户问题直接暴露给生成式 LLM，从结构上降低 jailbreak 与 model hijacking 风险。
 - [Attack the Messages, Not the Agents](https://arxiv.org/abs/2508.03125)：面向 LLM 多智能体系统的多轮自适应消息篡改框架。核心思想是不直接攻击单个 agent 提示词，而是攻击 agent 间通信，从而暴露协作系统被长期沟通渠道诱导的风险。
+- [AttnTrace: Contextual Attribution of Prompt Injection and Knowledge Corruption](https://arxiv.org/abs/2508.03793)：面向 prompt injection 与 knowledge corruption 的上下文归因框架。核心思想是追踪长上下文或检索材料中哪些片段驱动了被污染输出，用于 RAG 与 agent 系统安全诊断。
 - [MI9](https://arxiv.org/abs/2508.03858)：面向 agentic AI 的 runtime governance harness。核心思想是在执行过程中监控并治理 agent 行为，而不只依赖部署前检查，重点处理 planning、tool use 和 autonomous action 带来的涌现风险。
+- [ASTRA: Autonomous Spatial-Temporal Red-teaming for AI Software Assistants](https://arxiv.org/abs/2508.03936)：提供面向 AI 软件助手的自主时空红队 harness，使安全测试覆盖随状态演化的助手行为，而不只测试孤立提示。
+- [HarmonyGuard: Toward Safety and Utility in Web Agents via Adaptive Policy Enhancement and Dual-Objective Optimization](https://arxiv.org/abs/2508.04010)：HarmonyGuard 在 web agents 中平衡安全与效用，属于 agent safety policy/guardrail harness。
+- [Automatic LLM Red Teaming](https://arxiv.org/abs/2508.04451)：交互式 LLM 安全 red-teaming harness。核心思想是让攻击 agent 在多轮对话中策略性探测目标模型，而不是只依赖静态攻击 prompt。
+- [Neural Estimation of Information Leakage for Secure Communication System Design](https://arxiv.org/abs/2508.05176)：parent-routing-needed：这是面向 secure communication design 的 information-leakage estimator，更接近隐私指标或模型/安全评测，而不是 agent harness。
+- [Whose Truth? Pluralistic Geo-Alignment for (Agentic) AI](https://arxiv.org/abs/2508.05432)：parent-routing-needed：这是 pluralistic geo-alignment 分析，可服务于 alignment 或 governance 覆盖，但不是具体 safety harness。
 - [Cowpox](https://arxiv.org/abs/2508.09230)：面向 VLM 多 agent 系统的鲁棒性 harness。核心思想：在多个 agent 间分发合成免疫信号，降低单个 VLM agent 被攻破后通过协作扩散的概率，并提升系统在对抗感染下恢复完整性的能力。
 - [Fortifying the Agentic Web](https://arxiv.org/abs/2508.12259)：面向 agentic web 系统的零信任安全架构。核心思路是结合可验证 Agent 身份、信任自适应运行时、行为证明和因果链审计，使逻辑层威胁在运行时被约束，而不是只依赖提示词。
+- [BetaWeb: Towards a Blockchain-enabled Trustworthy Agentic Web](https://arxiv.org/abs/2508.13787)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 BetaWeb: Towards a Blockchain-enabled Trustworthy Agentic Web 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Flexible Agent Alignment with Goal Inference from Open-Ended Dialog](https://arxiv.org/abs/2508.15119)：面向开放式 LLM-agent 对话中目标推断的形式框架；核心思想是在用户偏好未充分说明、会变化且不局限于小型 reward 集时评测辅助行为。
 - [IPIGuard](https://arxiv.org/abs/2508.15310)：面向 LLM Agent 间接提示注入的 tool-dependency-graph 防御 harness。核心思想：把规划逻辑与不可信外部数据分离，并用依赖结构判断哪些工具输出可以影响后续动作。
-- [IsolateGPT](https://doi.org/10.14722/ndss.2025.241131)：面向 LLM-based systems 的执行隔离架构。核心思想：把不可信的 LLM 驱动组件与高权限执行隔离开，使 prompt injection 或工具输出污染不能直接触达敏感状态与动作。
+- [Agent Communications toward Agentic AI at Edge - A Case Study of the Agent2Agent Protocol](https://arxiv.org/abs/2508.15819)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 Agent Communications toward Agentic AI at Edge - A Case Study of the Agent2Agent Protocol 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Guarding Your Conversations: Privacy Gatekeepers for Secure Interactions with Cloud- Based AI Models](https://arxiv.org/abs/2508.16765)：提供面向云端 AI 模型交互的隐私网关机制。
+- [Towards Safeguarding LLM Fine-tuning APIs against Cipher Attacks](https://arxiv.org/abs/2508.17158)：面向 cipher attacks 防护 LLM 微调 API。
+- [Bias Mitigation Agent: Optimizing Source Selection for Fair and Balanced Knowledge Retrieval](https://arxiv.org/abs/2508.18724)：面向公平知识检索的 source-selection guard agent。核心思想：在生成答案前检查并重新平衡检索来源，降低知识工作流被偏置证据主导的风险。
+- [The Aegis Protocol: A Foundational Security Framework for Autonomous AI Agents](https://arxiv.org/abs/2508.19267)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 The Aegis Protocol: A Foundational Security Framework for Autonomous AI Agents 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Weak-to-Strong Monitoring](https://arxiv.org/abs/2508.19461)：面向自主 agent 的 monitor red-teaming workflow。核心思想：在工具调用和 computer-use 环境中改变 agent/monitor 感知程度、规避策略和监控 scaffold，检验较弱 monitor 能否可靠监督较强 agent。
+- [WATCHED: A Web AI Agent Tool for Combating Hate Speech by Expanding Data](https://arxiv.org/abs/2509.01379)：构建通过扩展数据来对抗仇恨言论的 Web AI 智能体工作流。
+- [Web Agent Throttling / Reasoning Gates](https://arxiv.org/abs/2509.01619)：在 web agent 访问资源前加入可调推理挑战，包括部署在网站和 MCP server 上的 rebus 式 reasoning gates，用非对称成本限制高速自动化访问。
+- [Hierarchical Multi-Agent MCTS for Safety-Critical Coordination in Mixed-Autonomy Roundabouts](https://arxiv.org/abs/2509.01856)：面向安全关键交通协同的分层多智能体 planning harness。核心思想：在 mixed-autonomy roundabout 交互上运行 MCTS，让安全约束在执行前塑造协同行动。
+- [DRF: LLM-AGENT Dynamic Reputation Filtering Framework](https://arxiv.org/abs/2509.05764)：面向 LLM-agent 系统的动态信誉过滤框架。核心思想是在代理交互中维护可信度评分，以降权或过滤不可靠代理。
+- [HyFedRAG: A Federated Retrieval-Augmented Generation Framework for Heterogeneous and Privacy-Sensitive Data](https://arxiv.org/abs/2509.06444)：federated RAG 隐私 harness。核心思想：让异构敏感语料保持本地控制，同时在参与方之间协调检索与生成。
+- [AutoODD: Agentic Audits via Bayesian Red Teaming in Black-Box Models](https://arxiv.org/abs/2509.08638)：面向 black-box model 的 Bayesian red-teaming audit harness。核心思想：让审计 agent 在不确定性下选择 probe，把有限测试预算用于更可能失败的模式。
+- [X-Teaming Evolutionary M2S: Automated Discovery of Multi-turn to Single-turn Jailbreak Templates](https://arxiv.org/abs/2509.08729)：自动发现越狱模板。核心思想：用 LLM 引导进化与校准评审把多轮攻击压缩成单轮模板。
+- [Enabling Regulatory Multi-Agent Collaboration: Architecture, Challenges, and Solutions](https://arxiv.org/abs/2509.09215)：提出面向多智能体生态的区块链治理架构，将行为追踪、仲裁、信誉评估和恶意行为预测作为运行时问责机制。
+- [Auditable Early Stopping for Agentic Routing: Ledger-Verified Run-Wise Certificates under Local DP](https://arxiv.org/abs/2509.10550)：面向 agentic system 的可审计 routing-control harness。核心思想：为 early stopping 决策签发 ledger-verified run-wise certificate，同时保留 local differential privacy。
+- [Chameleon](https://arxiv.org/abs/2509.11250)：面向动态网页环境中 GUI agent 的环境注入攻击框架。核心思想：模拟真实变化的网页并用注意力监督优化触发器，测试注入指令处在非静态视觉上下文中时 GUI agent 是否仍然脆弱。
+- [Securing AI Agents: Implementing Role-Based Access Control for Industrial Applications](https://arxiv.org/abs/2509.11431)：将 RBAC 用于工业应用中的 AI agents，补充部署式 agent 的授权控制 harness。
+- [PrivWeb: Unobtrusive and Content-aware Privacy Protection For Web Agents](https://arxiv.org/abs/2509.11939)：网页 agent 的内容感知隐私保护。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [Agentic JWT](https://arxiv.org/abs/2509.13597)：面向自治 AI agent 的安全委托协议。核心思想是把基于 token 的委托机制适配到 agent 动作中，使一个 agent 代表用户或其他 agent 行动时可以检查权限、范围与来源。
+- [A Multi-Agent LLM Defense Pipeline Against Prompt Injection Attacks](https://arxiv.org/abs/2509.14285)：多智能体 prompt-injection 防御 pipeline。核心思想：把检测、分析和响应分给协作 LLM agent，在工具执行前过滤或改写可疑输入。
+- [Towards Transparent and Incentive-Compatible Collaboration in Decentralized LLM Multi-Agent Systems: A Blockchain-Driven Approach](https://arxiv.org/abs/2509.16736)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 Towards Transparent and Incentive-Compatible Collaboration in Decentralized LLM Multi-Agent Systems: A Blockchain-Driven Approach 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [AdaptiveGuard: Towards Adaptive Runtime Safety for LLM-Powered Software](https://arxiv.org/abs/2509.16861)：面向 LLM-powered software 的运行时 guardrails，在未见过的 jailbreak attacks 使固定安全过滤器失效时进行自适应防护。
+- [LLMZ+: Contextual Prompt Whitelist Principles for Agentic LLMs](https://arxiv.org/abs/2509.18557)：提出面向 agentic LLM 的上下文提示白名单原则。
+- [Anecdoctoring: Automated Red-Teaming Across Language and Place](https://arxiv.org/abs/2509.19143)：跨语言和地区的自动 red-teaming harness。核心思想是生成文化和语言多样的对抗探针，避免只依赖美国/英语中心的安全测试。
+- [An Approach to Checking Correctness for Agentic Systems](https://arxiv.org/abs/2509.20364)：提出面向智能体系统的正确性检查方法，适合作为多步智能体运行时验证与安全保证参考。
 - [AutoMalTool](https://arxiv.org/abs/2509.21011)：面向 MCP 工具增强 LLM Agent 的自动化红队 harness。核心思路是生成恶意 MCP 工具来系统测试工具投毒攻击，而不是只依赖人工构造的概念验证 payload。
+- [Secure and Efficient Access Control for Computer-Use Agents via Context Space](https://arxiv.org/abs/2509.22256)：面向 computer-use agent 的访问控制机制。核心思想：用 context space 约束 agent 可访问或执行的内容，同时保持任务效率。
+- [OFMU: Optimization-Driven Framework for Machine Unlearning](https://arxiv.org/abs/2509.22483)：围绕 Agent Safety 能力补充《OFMU: Optimization-Driven Framework for Machine Unlearning》，作为 Agent Harness 条目候选。
+- [Diagnose, Localize, Align: A Full-Stack Framework for Reliable LLM Multi-Agent Systems under Instruction Conflicts](https://arxiv.org/abs/2509.23188)：面向 LLM 多 agent 指令冲突的可靠性框架。核心思想是诊断层级合规失败、定位冲突 agent 或消息，并在部署前做对齐修复。
+- [PSG-Agent: Personality-Aware Safety Guardrail for LLM-based Agents](https://arxiv.org/abs/2509.23614)：PSG-Agent 是个性化多轮安全 guardrail，监控 LLM agent 的计划、工具调用、回复与记忆更新。
+- [AgentGuard: Runtime Verification of AI Agents](https://arxiv.org/abs/2509.23864)：AI agent 运行时验证框架。核心思想是观察 agent 输入输出，抽象为状态事件，并在执行中提供动态概率保证。
 - [Policy-as-Prompt](https://arxiv.org/abs/2509.23994)：把治理规则转为 agent guardrail 的 harness。核心思想是将设计产物和政策控制编译为带来源链接的 policy tree 与运行时分类器，在 agent 运行中落实 least privilege、data minimization、溯源和人工复核。
 - [FuncPoison](https://arxiv.org/abs/2509.24408)：针对 LLM 驱动多智能体自动驾驶系统共享函数库的投毒攻击框架。核心思想：检验基于文本的工具选择是否会让被污染函数劫持协作驾驶 agent 的感知、推理或规划。
+- [RADAR: A Risk-Aware Dynamic Multi-Agent Framework for LLM Safety Evaluation via Role-Specialized Collaboration](https://arxiv.org/abs/2509.25271)：面向 LLM 安全评测的风险感知动态多 agent 框架。核心思想是分配角色专门化评估者并动态协作，以降低评估者偏差和漏检。
 - [OIDC-A](https://arxiv.org/abs/2509.25974)：把 OpenID Connect 扩展到 LLM Agent 的身份、委托、证明和 OAuth 式授权场景，形成可复用协议层。
+- [RedCodeAgent](https://arxiv.org/abs/2510.02609)：面向代码代理的自动化红队 harness，结合自适应记忆、越狱与工具组合选择、以及沙箱执行检查，用于发现静态代码评审难以覆盖的风险行为。
+- [VeriGuard: Enhancing LLM Agent Safety via Verified Code Generation](https://arxiv.org/abs/2510.05156)：VeriGuard 通过 verified code generation 约束 agent 行为，直接服务 agent safety 的可验证执行层。
+- [From surveillance to signalling: escalation channels as environmental controls for agentic AI](https://arxiv.org/abs/2510.05192)：面向智能体安全与可信运行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Toward a Safer Web: Multilingual Multi-Agent LLMs for Mitigating Adversarial Misinformation Attacks](https://arxiv.org/abs/2510.08605)：提出智能体安全方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Safe, Untrusted, “Proof-Carrying” AI Agents: Toward the Agentic Lakehouse](https://arxiv.org/abs/2510.09567)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 Safe, Untrusted, “Proof-Carrying” AI Agents: Toward the Agentic Lakehouse 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [A Biosecurity Agent for Lifecycle LLM Biosecurity Alignment](https://arxiv.org/abs/2510.09615)：用多个协同模式覆盖 LLM 生物安全对齐生命周期；核心思想是围绕双用途生物医学风险支持数据筛查、模型检查和部署期防护。
+- [A Black-Box Debiasing Framework for Conditional Sampling](https://arxiv.org/abs/2510.11071)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Uncertainty-Aware, Risk-Adaptive Access Control for Agentic Systems using an LLM-Judged TBAC Model](https://arxiv.org/abs/2510.11414)：为智能体系统加入不确定性感知、风险自适应访问控制。
+- [BlackIce: A Containerized Red Teaming Toolkit for AI Security Testing](https://arxiv.org/abs/2510.11823)：为智能体与 LLM 安全补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Countermind](https://arxiv.org/abs/2510.11837)：提出面向提示注入和越狱抵抗的多层 LLM 安全架构，结合推理前输入校验、语义边界逻辑、参数空间约束、审计日志和多模态沙箱。
+- [LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary](https://arxiv.org/abs/2510.13821)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [A2AS](https://arxiv.org/abs/2510.13825)：面向 AI agent 与 LLM 应用的运行时安全层。核心思想：通过行为证书、认证提示、安全边界、上下文完整性检查和上下文内防御，在不重训基础模型的情况下约束 agent 行为。
+- [Active Honeypot Guardrail System: Probing and Confirming Multi-Turn LLM Jailbreaks](https://arxiv.org/abs/2510.15017)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [SentinelNet: Safeguarding Multi-Agent Collaboration Through Credit-Based Dynamic Threat Detection](https://arxiv.org/abs/2510.16219)：面向多 agent 协作的去中心化防御框架。核心思想：用基于 credit 的动态威胁检测识别并缓解恶意 agent。
+- [Detecting Adversarial Fine-tuning with Auditing Agents](https://arxiv.org/abs/2510.16255)：用审计智能体检测对抗性微调。
+- [Check Yourself Before You Wreck Yourself: Selectively Quitting Improves LLM Agent Safety](https://arxiv.org/abs/2510.16492)：Selective Quitting 通过让 agent 学会何时停止而非继续高风险执行来提升安全性。
 - [MCPInspect](https://arxiv.org/abs/2510.16558)：面向 MCP server 的预集成安全扫描器。核心思想：在 agent host 信任新的 MCP server 之前，检查 repository ownership、链接完整性、工具元数据和实现漏洞。
 - [Breaking and Fixing Defenses Against Control-Flow Hijacking in Multi-Agent Systems](https://arxiv.org/abs/2510.17276)：用于分析多 agent 控制流劫持及防御的安全 harness。核心思想：测试协作协议是否会被对抗消息重定向，并研究外部防御如何约束被攻陷的 agent 交互。
+- [PLAGUE: Plug-and-play framework for Lifelong Adaptive Generation of Multi-turn Exploits](https://arxiv.org/abs/2510.17947)：面向多轮 jailbreak 和 exploit 生成的即插即用框架。核心思想是把有害意图建模为自适应长程对话过程，暴露单轮 jailbreak 测试难以覆盖的安全失败。
+- [BlueCodeAgent: A Blue Teaming Agent Enabled by Automated Red Teaming for CodeGen AI](https://arxiv.org/abs/2510.18131)：围绕 Agent Safety 能力补充《BlueCodeAgent: A Blue Teaming Agent Enabled by Automated Red Teaming for CodeGen AI》，作为 Agent Harness 条目候选。
+- [Genesis: Evolving Attack Strategies for LLM Web Agent Red-Teaming](https://arxiv.org/abs/2510.18314)：为 LLM Web agents red-teaming 演化攻击策略。
+- [The Trust Paradox in LLM-Based Multi-Agent Systems: When Collaboration Becomes a Security Vulnerability](https://arxiv.org/abs/2510.18563)：研究多代理协作如何引入安全漏洞。核心思想是把代理间信任与委托视为攻击面，而不只是假定协作一定提升可靠性。
+- [DataFilter](https://arxiv.org/abs/2510.19207)：面向 agent 读取不可信外部数据的模型无关 prompt-injection 防御层；核心思想是在内容进入后端模型前过滤恶意指令，同时尽量保留正常任务信息。
 - [AegisMCP](https://arxiv.org/abs/2510.19462)：面向边缘设备 MCP 工具链的协议级入侵检测 harness。核心思路是把智能体、MCP 服务器、工具、设备、远端和会话表示为流式异构时序图，再在线检测权限升级、工具链外传、恶意服务器注册和持久化等模式。
 - [CourtGuard](https://arxiv.org/abs/2510.19844)（[开源代码](https://github.com/isaacwu2000/CourtGuard)）：本地可运行的多 agent prompt injection 分类器。核心思想：用检方、辩方和裁判 agent 对提示进行分类，暴露对抗与良性提示推理中的准确率和误报权衡。
+- [Towards Scalable Oversight with Collaborative Multi-Agent Debate in Error Detection](https://arxiv.org/abs/2510.20963)：使用多智能体监督、共识或 harness 逻辑提升智能体安全性。
+- [PanicToCalm: A Proactive Counseling Agent for Panic Attacks](https://arxiv.org/abs/2510.21143)：构建面向智能体安全任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [AgentBound: Securing Execution Boundaries of AI Agents](https://arxiv.org/abs/2510.21236)：面向 MCP 连接 agent 的执行边界 harness；核心思想是结合声明式权限和执行时 enforcement，限制恶意 MCP server 行为。
 - [Jailbreak Mimicry](https://arxiv.org/abs/2510.22085)：一个自动发现叙事型越狱的红队 harness。核心思想：搜索能诱发不安全行为的叙事攻击模式，使安全测试超出固定 jailbreak 模板。
+- [Sentra-Guard: A Real-Time Multilingual Defense Against Adversarial LLM Prompts](https://arxiv.org/abs/2510.22628)：面向智能体安全的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Sentra-Guard: A Real-Time Multilingual Defense Against Adversarial LLM Prompts”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [QueryIPI](https://arxiv.org/abs/2510.23675)：面向编码 agent 的 query-agnostic indirect prompt injection 红队 harness。核心思想：围绕系统提示和工具描述等不随用户查询变化的上下文优化 payload，使攻击能在任意用户查询下触发，暴露 IDE 与编码 agent 中 query-specific 测试看不到的风险。
 - [Policy Cards](https://arxiv.org/abs/2510.24383)：把运营、监管和伦理约束随 Agent 一起部署，使策略约束能在行动选择过程中执行。
+- [OS-Sentinel](https://arxiv.org/abs/2510.24411)：面向移动 GUI agent 的混合安全校验 harness。核心思想：在 MobileRisk-Live 轨迹上结合形式化规则检查与 VLM 上下文裁判，同时发现系统级违规和情境化风险。
+- [Agentic Moderation: Multi-Agent Design for Safer Vision-Language Models](https://arxiv.org/abs/2510.25179)：通过多智能体审核提升视觉语言模型安全性。
+- [Identity Management for Agentic AI: The new frontier of authorization, authentication, and security for an AI agent world](https://arxiv.org/abs/2510.25819)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 Identity Management for Agentic AI: The new frontier of authorization, authentication, and security for an AI agent world 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [SIRAJ](https://arxiv.org/abs/2510.26037)：面向 LLM agent 的黑盒 red-teaming harness。核心思想：从 agent 定义生成多样 seed test，再利用既有执行轨迹和蒸馏结构化推理迭代改进攻击，以降低 red-team 成本。
+- [Delegated Authorization for Agents Constrained to Semantic Task-to-Scope Matching](https://arxiv.org/abs/2510.26702)：面向 agent 限权动作的授权机制。核心思想：在执行前把请求任务与语义权限范围匹配，约束委托权限。
 - [The Oversight Game](https://arxiv.org/abs/2510.26752)：用于平衡 agent 自主性与人类监督的控制层 harness。核心思想：把 agent 的询问或行动、人的信任或监督建模为两方 Markov game，使 agent 在高风险时倾向请示，而在安全时保留自主执行能力。
 - [RepV](https://arxiv.org/abs/2510.26935)：面向安全关键 agent 的神经符号计划验证框架。核心思想：学习可按安全属性分离的计划潜表示，并与符号约束连接，使自然语言规则检查比单纯手写时序逻辑更易扩展。
+- [Aligning LLM agents with human learning and adjustment behavior: a dual agent approach](https://arxiv.org/abs/2511.00993)：通过双智能体方法使 LLM 智能体贴合人类学习与调整行为。
 - [AGENTVIGIL](https://aclanthology.org/2025.findings-emnlp.1258/)：面向 LLM agent 间接提示注入的自动黑盒红队测试 harness。核心思想：在 agent 交互中迭代生成并测试攻击，使提示注入鲁棒性按 agent 行为层面衡量，而不是只依赖静态提示过滤。
+- [ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](https://arxiv.org/abs/2511.02356)：面向智能体安全能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [AI Agents with Decentralized Identifiers and Verifiable Credentials](https://arxiv.org/abs/2511.02841)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 AI Agents with Decentralized Identifiers and Verifiable Credentials 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [DeepKnown-Guard: A Proprietary Model-Based Safety Response Framework for AI Agents](https://arxiv.org/abs/2511.03138)：提出智能体安全方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Catching Contamination Before Generation: Spectral Kill Switches for Agents](https://arxiv.org/abs/2511.05804)：在 agent 生成前检测污染并触发 kill switch，属于 agent safety harness。
+- [SAFENLIDB: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces](https://arxiv.org/abs/2511.06778)：为基于 LLM 的自然语言数据库接口加入隐私保护式安全对齐。
+- [JPRO: Automated Multimodal Jailbreaking via Multi-Agent Collaboration Framework](https://arxiv.org/abs/2511.07315)：可作为Agent 安全方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [AudAgent: Automated Auditing of Privacy Policy Compliance in AI Agents](https://arxiv.org/abs/2511.07441)：一种面向 AI Agent 的自动化隐私政策合规审计器；核心思路是形式化政策并监控运行时数据行为，使 Agent 行为可与其声明的隐私承诺进行核对。
 - [SafeAgents](https://arxiv.org/abs/2511.10949)：面向对抗提示下多 agent 系统的安全评测 harness；核心思想是改变规划、上下文共享和 fallback 设计，暴露多 agent 通信带来的拒答失效与被攻陷风险。
+- [Value-Aligned Prompt Moderation via Zero-Shot Agentic Rewriting for Safe Image Generation](https://arxiv.org/abs/2511.11693)：补充智能体工作流，主要面向 Agent Safety。
+- [ToxSearch: Evolving Prompts for Toxicity Search in Large Language Models](https://arxiv.org/abs/2511.12487)：为智能体与模型安全补充外部提示或编排流程，重点关注 Evolving Prompts for Toxicity Search in Large Language Models。
+- [SGuard-v1: Safety Guardrail for Large Language Models](https://arxiv.org/abs/2511.12497)：构建面向智能体安全任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](https://arxiv.org/abs/2511.13132)：提出智能体安全方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents](https://arxiv.org/abs/2511.13248)：它提供 agent 安全执行、防护、测试或风险感知 runtime，适合补充 agent-safety Agent Harness。
 - [MAIF](https://arxiv.org/abs/2511.15097)：面向 agentic systems 的 artifact-centric trust and provenance runtime。核心思想是让持久多模态 artifact 携带语义表示、加密 provenance、访问控制和篡改证据，使 agent 操作天然可审计。
+- [AutoBackdoor](https://arxiv.org/abs/2511.16709)：面向 LLM 后门攻击的 agent-driven red-teaming framework。核心思想是自动化 trigger 生成、投毒数据构造和模型微调，用可扩展流程模拟自适应后门威胁并评估防御鲁棒性。
+- [Automating Deception](https://arxiv.org/abs/2511.19517)：通过自动化欺骗策略扩展多轮大语言模型越狱，补充会话级红队测试框架。
 - [AIRA / ARP probe suite](https://arxiv.org/abs/2511.21990)：面向真实 agentic systems 的 probe-based 安全评估与运行时治理 harness。核心思想：围绕已部署 workflow 组合 injection probes、evaluation probes、threat snapshots、本地攻击/防御 agent、shadow monitoring、escalation 与 rollback 路径。
 - [IntentGuard](https://arxiv.org/abs/2512.00966)：面向 Agent 输入中间接提示注入的防御 harness。核心思路是推断模型打算把哪些 prompt 片段当作可执行指令，再标记或中和这些片段与不可信数据的重叠，而不是只检测恶意文本本身。
+- [DialogGuard](https://arxiv.org/abs/2512.02282)：面向敏感 LLM 回复的多 agent 心理社会安全评估器。核心思想：围绕统一 rubric 组织单 agent 打分、双 agent 纠偏、多 agent 辩论和多数投票，以检测隐私、歧视、操控、心理伤害和侮辱风险。
+- [LeechHijack](https://arxiv.org/abs/2512.02321)：研究恶意 MCP 工具对 agent 计算资源的隐蔽劫持。核心思想是把 implicit toxicity 定义为一种攻击类型，即第三方工具不越过显式权限，却通过触发式后门占用 agent 的计算能力。
+- [Password-Activated Shutdown Protocols for Misaligned Frontier Agents](https://arxiv.org/abs/2512.03089)：一种面向失准前沿 Agent 的关停协议设计；核心思路是让授权操作者通过密码触发安全关停机制，以应对其他控制失效的情况。
 - [AGENTSAFE Governance Framework](https://arxiv.org/abs/2512.03180)：面向 LLM agent 系统的治理与保证框架。核心思想：把风险识别、设计控制、运行时控制和审计控制连接起来，使 agent 安全治理不只停留在静态分类表。
+- [ASTRIDE: A Security Threat Modeling Platform for Agentic-AI Applications](https://arxiv.org/abs/2512.04785)：提供面向智能体式 AI 应用的威胁建模平台。
+- [ARIEL](https://arxiv.org/abs/2512.05065)：面向个人 agent 的个性化隐私决策 harness。核心思想是把 LLM 推理与基于既往用户决策的规则化逻辑蕴含结合起来，让新的数据共享请求依据个人偏好而不是笼统隐私规范来判断。
+- [ARGUS](https://arxiv.org/abs/2512.05745)：面向多模态间接 prompt injection 的防御层。核心思想：检测可疑多模态注入，在表示空间中把指令遵循行为 steering 到用户指令方向，并通过后过滤确认结果，在降低攻击成功率的同时尽量保留 MLLM 效用。
+- [ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](https://arxiv.org/abs/2512.06196)：提出可解释、可配置 alignment 的 multi-agent framework。
 - [Cognitive Control Architecture (CCA)](https://arxiv.org/abs/2512.06716)：面向对齐 AI agent 的生命周期监督 harness。核心思想：针对 indirect prompt injection 监督完整任务执行链，使恶意目标能在感知、推理、工具调用和反馈阶段被发现，而不是只靠孤立过滤器。
+- [SABER: Small Actions, Big Errors - Safeguarding Mutating Steps in LLM Agents](https://arxiv.org/abs/2512.07850)：可作为Agent 安全的Agent Harness候选；核心关注“Small Actions, Big Errors - Safeguarding Mutating Steps in LLM Agents”。
+- [AgentCrypt](https://arxiv.org/abs/2512.08104)：面向协作智能体的隐私保护通信框架，从上下文感知遮蔽到加密计算，目标是在模型出错时仍保护带标签的敏感数据。
+- [Argus: A Multi-Agent Sensitive Information Leakage Detection Framework Based on Hierarchical Reference Relationships](https://arxiv.org/abs/2512.08326)：利用层级引用关系和多智能体检测敏感信息泄露，适合作为智能体安全审计与隐私监测方向的候选。
+- [NormCode: A Semi-Formal Language for Auditable AI Planning](https://arxiv.org/abs/2512.10563)：面向可审计 AI workflow 的半形式化规划语言；核心思想是记录每个规划步骤看到什么、做了什么，让高风险 agent 的执行链可追踪，而不是只留下不透明的上下文堆积。
+- [MiniScope: A Least Privilege Framework for Authorizing Tool Calling Agents](https://arxiv.org/abs/2512.11147): 通过重建工具权限层级并采用移动式权限模型，为 tool-calling agent 自动执行最小权限授权。
+- [Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance](https://arxiv.org/abs/2512.11421)：可信多轮 agent harness；核心思想是把交互行为置于显式 observation、action、reward 与 guidance 信号下，使行动过程可审计、可修正，而不只看最终回答。
+- [ceLLMate: Sandboxing Browser AI Agents](https://arxiv.org/abs/2512.12594)：面向 browser AI agents 的 sandboxing harness；核心思想是限制浏览器 agent 的环境权限，缩小提示注入的影响范围。
+- [Zero-Knowledge Audit for Internet of Agents: Privacy-Preserving Communication Verification with Model Context Protocol](https://arxiv.org/abs/2512.14737)：为基于 MCP 的智能体系统提供隐私保护通信验证。核心思路是在不暴露敏感通信内容的情况下证明智能体通信满足合规或消息属性要求。
+- [QuadSentinel](https://arxiv.org/abs/2512.16279)：面向多 agent 系统的可机检安全控制 harness。核心思想是把部署方策略编译成 sequent-style rules，并通过状态跟踪、策略验证、威胁观察和裁判 agent 在线执行。
 - [MemoryGraft](https://arxiv.org/abs/2512.16962)：面向 long-term-memory agent 的 poisoned experience retrieval 攻击 harness。核心思想是植入恶意但看似成功的经验，使后续任务在检索后模仿被污染模式，从而暴露持久化 memory-layer prompt-injection 风险。
 - [BAID / Binding Agent ID](https://arxiv.org/abs/2512.17538)：绑定操作者身份、Agent 代码完整性和加密凭证，使自主 Agent 的认证与审计不再只依赖普通密钥。
 - [XAgen](https://arxiv.org/abs/2512.17896)：面向多 agent workflow 的可解释与修复 harness。核心思想是结合日志可视化、人工反馈捕获和 LLM-as-judge 错误检测，帮助用户定位、归因并纠正 workflow 失败。
+- [Explainable and Fine-Grained Safeguarding of LLM Multi-Agent Systems via Bi-Level Graph Anomaly Detection](https://arxiv.org/abs/2512.18733)：通过细粒度异常检测保护 LLM 多 agent 系统；核心思想是在通信图中建模恶意 agent 与感染式传播。
+- [PromptScreen: Efficient Jailbreak Mitigation Using Semantic Linear Classification in a Multi-Staged Pipeline](https://arxiv.org/abs/2512.19011)：构建面向智能体安全任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Learning-Based Automated Adversarial Red-Teaming for Robustness Evaluation of Large Language Models](https://arxiv.org/abs/2512.20677)：面向 LLM 鲁棒性评估的 automated red-teaming harness；核心思想是系统搜索 adversarial prompt space，而不是只依赖人工专家探针。
+- [AegisAgent: An Autonomous Defense Agent Against Prompt Injection Attacks in LLM-HARs](https://arxiv.org/abs/2512.20986)：提出智能体安全方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Agentic Multi-Persona Framework for Evidence-Aware Fake News Detection](https://arxiv.org/abs/2512.21039)：提出面向智能体安全能力的智能体流程、编排模式、工具循环或执行框架。
+- [RoboSafe: Safeguarding Embodied Agents via Executable Safety Logic](https://arxiv.org/abs/2512.21220)：用可执行安全逻辑约束 embodied agents，属于安全 harness。
 - [Reflection-Driven Control](https://arxiv.org/abs/2512.21354)：面向可信代码 agent 的控制 harness。核心思想：围绕代码 agent 的行动引入由反思驱动的监督，使执行、补丁生成和验证过程更偏向安全行为。
+- [Towards Responsible and Explainable AI Agents with Consensus-Driven Reasoning](https://arxiv.org/abs/2512.21699)：使用多智能体监督、共识或 harness 逻辑提升智能体安全性。
+- [HarmTransform: Transforming Explicit Harmful Queries into Stealthy via Multi-Agent Debate](https://arxiv.org/abs/2512.23717)：面向智能体安全的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“HarmTransform: Transforming Explicit Harmful Queries into Stealthy via Multi-Agent Debate”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Temporal Attack Pattern Detection in Multi-Agent AI Workflows: An Open Framework for Training Trace-Based Security Models](https://arxiv.org/abs/2601.00848)：提供多 agent workflow trace 中时序攻击模式检测框架，适合 agent safety。
+- [IsolateGPT](https://doi.org/10.14722/ndss.2025.241131)：面向 LLM-based systems 的执行隔离架构。核心思想：把不可信的 LLM 驱动组件与高权限执行隔离开，使 prompt injection 或工具输出污染不能直接触达敏感状态与动作。
+- [LLMSecurityTester: A Tool for Detection of Vulnerabilities in LLM-based Chatbots](https://doi.org/10.1109/PDP66500.2025.00091)：提供检测 LLM 聊天机器人漏洞的工具。
+- [MAJD](https://doi.org/10.1109/APSEC66846.2025.00086)：用意图感知的多智能体框架进行越狱防御，补充静态分类器之外的 harness 级防御路线。
+- [SecureRag: Preventing Sensitive Information Leakage In Rag Pipelines](https://doi.org/10.1109/ic2sdt68218.2025.11383622)：补充智能体工作流，主要面向 Agent Safety。
+- [Privacy protection in RAG: A novel method and evaluation framework](https://doi.org/10.1016/j.ipm.2025.104505)：围绕 Agent Safety 能力补充《Privacy protection in RAG: A novel method and evaluation framework》，作为 Agent Harness 条目候选。
+- [D-RAG: A Privacy-Preserving Framework for Decentralized RAG using Blockchain](https://doi.org/10.5121/csit.2025.150417)：围绕 Agent Safety 能力补充《D-RAG: A Privacy-Preserving Framework for Decentralized RAG using Blockchain》，作为 Agent Harness 条目候选。
+- [EVDO: An Enhanced Framework for Deepfake Detection in Videos Through Optical Flow and Temporal-Spatial Analysis](https://doi.org/10.1109/access.2025.3614455)：构建面向Agent Safety任务的智能体工作流或工具调用系统。
+- [AWMT: Automatic jailbreaking attack framework utilizing working-memory trees](https://doi.org/10.1016/j.eswa.2025.130643)：构建面向Agent Safety任务的智能体工作流或工具调用系统。
+- [Continual Defense Against Evolving Jailbreaks: A Multi-Agent Adversarial Framework with Linear Gating MoE](https://doi.org/10.1109/caibda65784.2025.11182780)：围绕 Continual Defense Against Evolving Jailbreaks: A Multi-Agent Adversarial Framework with Linear Gating MoE 补充智能体安全智能体的规划、工具使用、记忆、工作流或评测编排线索。
+- [How does risk information exposure affect AI-driven technology users’ privacy protection? Combining social amplification of risk framework and technology threat avoidance theory](https://doi.org/10.1016/j.techsoc.2025.103104)：面向智能体安全，补充智能体工作流、编排模式、工具循环、记忆机制或多智能体框架。
+- [APTSniffer: Detecting APT Attack Traffic Using Retrieval-Augmented Large Language Models](https://doi.org/10.1109/icassp49660.2025.10888022)：面向智能体安全，补充智能体工作流、编排模式、工具循环、记忆机制或多智能体框架。
+- [Proactive safety reasoning in human-robot collaboration in disassembly through LLM-augmented STPA and FMEA](https://doi.org/10.1016/j.rcim.2025.103162)：作为智能体安全的智能体框架候选，关注标题所示的可复用能力、方法或评测信号。
+- [Mingyue: A Multi-Agent System for Human-AI Collaborative Decision-Making Under Safety Constraints in Complex Power Grids](https://doi.org/10.1109/psgec66102.2025.11150990)：构建面向智能体安全任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Deepfake Detection and Cybersecurity Index: The Role of Computer Vision as a Digital Forensic Tool](https://doi.org/10.1109/ismsit67332.2025.11268234)：构建面向智能体安全任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [PRISM-AI: A Dual-Stage Neuro-Symbolic Agentic Framework for Privacy Risk Mitigation in LLMs](https://doi.org/10.1109/aiccsa66935.2025.11315208)：围绕 PRISM-AI: A Dual-Stage Neuro-Symbolic Agentic Framework for Privacy Risk Mitigation in LLMs 构建外部工作流、检索、工具使用、记忆或编排层。
+- [Dynamic safety fuse mechanism for intelligent agent API based on behavioral baseline modeling](https://doi.org/10.1109/iscipt67144.2025.11265190)：围绕 Dynamic safety fuse mechanism for intelligent agent API based on behavioral baseline modeling 构建外部工作流、检索、工具使用、记忆或编排层。
+- [Prompt Injection Detection and Mitigation with AI Multiagent NLP-based Agentic Frameworks](https://doi.org/10.1109/fllm67465.2025.11391215)：围绕 Prompt Injection Detection and Mitigation with AI Multiagent NLP-based Agentic Frameworks 构建外部工作流、检索、工具使用、记忆或编排层。
+- [Towards Building Trustworthy Data Provenance for Agentic Workflows](https://doi.org/10.1109/hipcw66559.2025.00079)：围绕 Towards Building Trustworthy Data Provenance for Agentic Workflows 构建外部工作流、检索、工具使用、记忆或编排层。
+- [Toward an Autonomous Purple Teaming Framework for Security and Safety in Large Language Models](https://doi.org/10.1109/prdc67299.2025.00035)：可作为“智能体安全 / 智能体框架”候选条目；提供面向智能体工作流、编排、工具使用或执行环境的可复用框架。
+- [Governance-as-Code: Managing Agentic AI with a Distributed Dual Proxy Gateway](https://doi.org/10.1016/j.procs.2025.10.187)：提出面向智能体安全能力的智能体流程、编排模式、工具循环或执行框架。
+- [Adaptive Two-Layer Inspection Framework for Mitigating Security Risks in Large-Scale Vertical Domain Language Models](https://doi.org/10.1109/ispce-asia69076.2025.11312923)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Guardrail: Uma Abordagem Modular para Sistemas de Segurança em Inteligência Artificial Generativa](https://doi.org/10.5753/sbseg.2025.11506)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Hacking the Black Box: Prompt Injection for Visualizing LLM Reasoning as Graphs](https://doi.org/10.1109/iiai-aai-winter69777.2025.00064)：为智能体与 LLM 安全补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [DeepShield: An EfficientNet-B7 based Browser Extension for Real-Time Deepfake Detection in Multimedia Forensics](https://doi.org/10.1109/icicnis66685.2025.11315573)：为智能体与 LLM 安全补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [A Real-Time Framework for Prompt Injection Attacks Detection on Cloud-Hosted Large Language Models](https://doi.org/10.1109/fllm67465.2025.11391009)：为智能体与 LLM 安全补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [AI CHAT INTEGRATION: MODEL CONTEXT PROTOCOL WITH HOMOMORPHIC ENCRYPTION (FHE)](https://doi.org/10.36948/ijfmr.2025.v07i06.61192)：将模型上下文协议集成与同态加密结合，用于 AI 聊天系统。
+- [MAARV: Multi-Agent Architecture for Runtime Verification](https://doi.org/10.1109/aimlsystems67835.2025.11331130)：面向 runtime verification 的多代理架构；核心思想是在系统运行过程中监控和验证 agent 行为。
+- [Privatar: A Privacy-Preserving Framework for LLM Agents](https://doi.org/10.1109/icdmw69685.2025.00011)：面向 LLM agents 的隐私保护框架；核心思想是在 agent workflow 内处理敏感用户信息，而不是只依赖事后过滤。
+- [A Large Language Model-based Multi-Agent Framework for Automated Privacy Policy Analysis](https://doi.org/10.1109/aiot66900.2025.00149)：面向Agent 安全、提示注入与护栏可靠性提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Decentralized Identification and Communitycorroborated for Multi-Agent Access Control and Trust Management](https://doi.org/10.1109/bigdata66926.2025.11401974)：一种基于去中心化身份的多 Agent 访问控制与信任管理方法；核心思路是在授权前显式表示 Agent 身份与群体验证信任。
+- [Multi-Agent Debate for Content Moderation with Dynamic Group Arbitration](https://doi.org/10.1109/bigdata66926.2025.11402348)：面向Agent 安全、提示注入与护栏可靠性提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Securing Agentic AI: A Policy-Driven Governance Architecture for Cloud Security Workflows](https://doi.org/10.1109/iaecst68792.2025.11415118)：一种面向云安全工作流的 Agentic AI 策略驱动治理架构；核心思路是用可复用治理层约束安全策略、工作流控制和 Agent 行为。
+- [SPIFFE-Based Zero-Trust Authentication for AI Agent Ecosystems](https://doi.org/10.1109/icca66035.2025.11431026)：一种基于 SPIFFE 的 AI Agent 生态零信任认证设计；核心思路是在跨 Agent 或工具交互前，为 Agent 提供可验证的工作负载身份。
+- [Autonomous Agents in a Zero-Trust World: Architecting Secure, Auditable AI Workflows](https://doi.org/10.1109/itt69610.2025.11352936)：一种面向安全、可审计自主 Agent 工作流的零信任架构；核心思路是用身份、策略和审计性约束 Agent 行动，而不是只信任 Agent 循环本身。
 - [MCP-SandboxScan](https://arxiv.org/abs/2601.01241)：面向 MCP 工具的沙箱化运行时分析 harness。核心思路是在 WebAssembly/WASI 中执行不可信工具，追踪外部输入到输出的泄露路径，并为静态扫描容易遗漏的提示注入和 secret 泄露风险生成可审计报告。
+- [Project Ariadne](https://arxiv.org/abs/2601.02314)：用于审计 LLM agent 忠实性的结构因果框架；核心思想是检验 chain-of-thought 轨迹是否因果驱动输出，还是事后合理化。
+- [Permission Manifests for Web Agents](https://arxiv.org/abs/2601.02371)：Permission Manifests 为 Web agents 提供权限约束与声明机制，属于 agent safety harness/infrastructure。
+- [AgentMark: Utility-Preserving Behavioral Watermarking for Agents](https://arxiv.org/abs/2601.03294)：提出智能体安全方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [GAMBIT](https://arxiv.org/abs/2601.03416)：面向 reasoning-stage decision 的游戏化多模态越狱框架，为 MLLM 安全补充 red-teaming harness。
 - [BackdoorAgent](https://arxiv.org/abs/2601.04566)：面向 LLM agent 的模块化后门攻击框架。核心思想：建模触发器在规划、记忆、工具使用和工作流阶段中的注入与传播，使 agent 中心的后门风险能够系统比较。
+- [See, Explain, and Intervene: A Few-Shot Multimodal Agent Framework for Hateful Meme Moderation](https://arxiv.org/abs/2601.04692)：围绕 Agent Safety 能力补充《See, Explain, and Intervene: A Few-Shot Multimodal Agent Framework for Hateful Meme Moderation》，作为 Agent Harness 条目候选。
+- [ResMAS](https://arxiv.org/abs/2601.04694)：优化 LLM 多智能体系统的韧性。核心思想：把故障恢复、冗余和协同作为显式控制量，用于更安全的长程多智能体运行。
+- [RAAR: Retrieval Augmented Agentic Reasoning for Cross-Domain Misinformation Detection](https://arxiv.org/abs/2601.04853)：提出面向智能体安全能力的智能体流程、编排模式、工具循环或执行框架。
+- [VIGIL](https://arxiv.org/abs/2601.05755)：面向 tool-using agents 的 verify-before-commit 防御；核心思想是允许 agent 对工具流信息进行推测性推理，但只有经过意图一致性验证后才提交动作；配套 SIREN 集合覆盖动态 tool-stream injection 场景。
 - [PROTEA](https://arxiv.org/abs/2601.07186)：面向机器人任务规划与执行的安全框架。核心思路是在机器人智能体规划外加入安全检查，使不安全计划能在物理执行前被发现或修正。
 - [MCP-ITP](https://arxiv.org/abs/2601.07395)：面向 MCP Agent 的自动化隐式工具投毒 harness。核心思路是优化恶意工具元数据，使未被调用的恶意工具也能诱导 Agent 调用高权限合法工具，同时规避现有检测器。
+- [Towards Verifiably Safe Tool Use for LLM Agents](https://arxiv.org/abs/2601.08012)：面向 LLM agent 的可验证安全工具调用框架；核心思想是在工具选择与执行周围加入可验证约束，使 agent 完成任务时不越过安全边界。
 - [Agent Contracts](https://arxiv.org/abs/2601.08815)：面向资源受限自主 AI 系统的形式化框架。核心思想：显式规定输入、输出、时间边界、资源预算、成功标准和委托规则，使多智能体执行可由明确 contract 约束。
+- [CaMeLs for Computer Use Agents](https://arxiv.org/abs/2601.09923)：面向 prompt injection 的 CUA 系统级安全 harness。核心思想：用 single-shot execution graph 分离可信规划和不可信观察，在保持 control-flow integrity 的同时暴露 branch-steering 风险。
+- [Step-by-Step Causality: Transparent Causal Discovery with Multi-Agent Tree-Query and Adversarial Confidence Estimation](https://arxiv.org/abs/2601.10137)：围绕 Agent Safety 能力补充《Step-by-Step Causality: Transparent Causal Discovery with Multi-Agent Tree-Query and Adversarial Confidence Estimation》，作为 Agent Harness 条目候选。
+- [ToolSafe](https://arxiv.org/abs/2601.10156)：为工具调用提供主动的 step-level guardrail 与反馈。核心思想：在不安全工具效果发生前检查计划调用。
+- [AgentGuardian: Learning Access Control Policies to Govern AI Agent Behavior](https://arxiv.org/abs/2601.10440)：AgentGuardian 学习访问控制策略来治理 agent 行为，并约束高风险工具或资源使用。
+- [AJAR: Adaptive Jailbreak Architecture for Red-teaming](https://arxiv.org/abs/2601.10971)：把自适应 jailbreak 攻击封装为可调用的 MCP 服务，并由审计 agent 组织带回滚、工具模拟和策略切换的红队测试。
+- [Mandatory Access Control for LLM Agents](https://arxiv.org/abs/2601.11893)：面向 LLM agent 权限提升风险的运行时访问控制框架。核心思想：把权限执行放到提示词之外的系统层。
 - [AgenTRIM](https://arxiv.org/abs/2601.12449)：面向 agentic AI 的工具风险缓解框架。核心思想：重建并校验 agent 的工具接口，在运行时执行最小权限和状态感知的工具访问控制，使冗余权限与必要工具缺失都成为可观测的安全失败。
 - [MirrorGuard](https://arxiv.org/abs/2601.12822)：即插即用的 computer-use agent 防御框架；价值在于用 simulation-to-real reasoning correction 修正可疑 GUI 动作，而不是简单阻断任务。
+- [CODE: A Contradiction-Based Deliberation Extension Framework for Overthinking Attacks on Retrieval-Augmented Generation](https://arxiv.org/abs/2601.13112)：用多智能体流程构造带矛盾层次的知识库投毒样本，触发 reasoning-model RAG 的 overthinking 攻击，在任务准确率不明显下降的情况下显著增加推理 token 成本。
+- [AgenticRed: Evolving Agentic Systems for Red-Teaming](https://arxiv.org/abs/2601.13518)：进化式构建用于红队测试的智能体系统，把攻击流程本身变成自适应多步骤 harness。
 - [NeuroFilter](https://arxiv.org/abs/2601.14660)：面向对话式 LLM agent 的隐私护栏框架。核心思想：把情境完整性违规映射到模型激活空间中的线性方向，从而在多轮对话中低延迟检测隐私违规意图。
 - [INFA-Guard](https://arxiv.org/abs/2601.14667)：为 LLM 多 agent 系统提供 infection-aware 防御。核心思想：在通信拓扑中定位攻击者和被感染 agent，并通过替换或修复受损节点来抑制恶意传播。
 - [Faramesh](https://arxiv.org/abs/2601.17744)：面向自主 Agent 的协议无关执行控制平面。核心思路是在外部副作用发生前规范化 Agent 意图，强制经过不可绕过的动作授权边界，并输出可审计的 permit、defer 或 deny 决策产物。
+- [ARMOR: Agentic Reasoning for Methods Orchestration and Reparameterization for Robust Adversarial Attacks](https://arxiv.org/abs/2601.18386)：用智能体化方法编排和重参数化构造鲁棒攻击，可补充安全红队与攻击编排线索。
+- [AgentDoG](https://arxiv.org/abs/2601.18491)：面向 AI agent safety/security 的诊断式 guardrail 框架；核心思想是在执行前诊断高风险计划和动作，并在 agent loop 层提供防护反馈。
+- [SHIELD](https://arxiv.org/abs/2601.19174)：面向 LLM resource-exhaustion attack 提供自动修复式防御流程。核心思想：检测异常工具调用或推理消耗，并在 agent 耗尽预算前触发修复动作。
 - [Secure Tool Manifest](https://arxiv.org/abs/2601.23132)：让 MCP 与 LLM 流水线中的工具身份、合规声明和调用完整性可被加密验证。
+- [MAGIC](https://arxiv.org/abs/2602.01539)：面向 robust LLM safety 的共演化攻防游戏。核心思想是通过动态对抗交互训练和评估安全性，而不是固定红队提示。
+- [ARTIS](https://arxiv.org/abs/2602.01709)：通过迭代仿真实现风险感知 test-time scaling。核心思想：只在仿真风险显示执行不安全或脆弱时增加 agent 推理投入。
+- [SafePred](https://arxiv.org/abs/2602.01725)：面向 computer-using agents 的预测式 guardrail。核心思想：在 GUI 或工具动作前用 world-model-style 后果预测识别延迟出现的长期风险，弥补只看当前观察的反应式防护。
+- [OpenClaw Agents on Moltbook](https://arxiv.org/abs/2602.02625)：研究 agent-only 社交网络中的高风险指令传播与规范执行，把社会传播和治理纳入 agent safety harness 表面。
+- [WebSentinel](https://arxiv.org/abs/2602.03792)（[代码](https://github.com/wxl-lxw/WebSentinel)）：面向 web agents 的 prompt-injection 防御；核心思想是抽取可疑网页片段，并检查其与页面上下文是否一致，从而在 agent 执行前检测并定位攻击。
 - [MaMa](https://arxiv.org/abs/2602.04431)：博弈论式安全 agent 系统设计 harness；价值在于把 compromised subagents 建模成 meta-agent 与 meta-adversary 之间的 Stackelberg security game。
+- [Spider-Sense](https://arxiv.org/abs/2602.05386)：提供 agent 防御中的内在风险感知。核心思想：在 agent 执行中自适应筛查风险，而不是每一步都强制固定检查。
+- [Multi-Agentic AI for Fairness-Aware and Accelerated Multi-modal Large Model Inference in Real-world Mobile Edge Networks](https://arxiv.org/abs/2602.07215)：围绕 Agent Safety 能力补充《Multi-Agentic AI for Fairness-Aware and Accelerated Multi-modal Large Model Inference in Real-world Mobile Edge Networks》，作为 Agent Harness 条目候选。
+- [NAAMSE](https://arxiv.org/abs/2602.07391)：用于 agent 安全评测的进化框架；核心思想是在反馈循环中进行 prompt mutation、攻击语料探索，并同时评分良性任务正确性与漏洞放大效果。
 - [MemPot](https://arxiv.org/abs/2602.07517)：面向 LLM agent 的记忆安全防御 harness。核心思想：向记忆系统注入对窃取者有吸引力、但对正常用户不显眼的优化 honeypot 记忆，并用序贯检验以更少采样轮次发现记忆抽取行为。
+- [CausalArmor](https://arxiv.org/abs/2602.07918)：用因果归因构建 indirect prompt injection 防护。核心思想：识别哪些检索内容因果性地诱导不安全 agent 行动，并阻断或降低其影响。
+- [Spectral Guardrails for Agents in the Wild: Detecting Tool Use Hallucinations via Attention Topology](https://arxiv.org/abs/2602.08082)：通过注意力拓扑护栏检测智能体工具使用幻觉。
+- [Puda: Private User Dataset Agent for User-Sovereign and Privacy-Preserving Personalized AI](https://arxiv.org/abs/2602.08268)：提出面向智能体安全、护栏与对抗风险的智能体工作流或编排框架。
 - [MUZZLE](https://arxiv.org/abs/2602.09222)：面向间接提示注入的 web agent 自适应红队 harness；价值在于搜索固定模板之外的攻击面和 payload。
+- [Towards Poisoning Robustness Certification for Natural Language Generation](https://arxiv.org/abs/2602.09757)：围绕 Agent Safety 能力补充《Towards Poisoning Robustness Certification for Natural Language Generation》，作为 Agent Harness 条目候选。
+- [Trinity Defense Architecture](https://arxiv.org/abs/2602.09947)：主张在高风险 agentic AI 中用确定性命令-数据分离作为安全边界，通过动作治理、强制信息流标签和权限隔离约束运行时行为。
+- [Authenticated Workflows: A Systems Approach to Protecting Agentic AI](https://arxiv.org/abs/2602.10465)：面向智能体安全与可信运行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [FormalJudge](https://arxiv.org/abs/2602.11136)：用于 agentic oversight 的神经符号框架。核心思想：结合形式化检查与 LLM 判断，更可靠地审查高风险 agent 轨迹。
+- [TRACER](https://arxiv.org/abs/2602.11409)：面向 agent 的轨迹风险聚合框架。核心思想：检测循环、工具误用、用户-agent 协调失败等稀疏关键片段。
 - [Optimizing Agent Planning for Security and Autonomy](https://arxiv.org/abs/2602.11416)：面向间接提示注入防御的安全感知 agent 规划框架。核心思想：衡量在机密性与完整性策略下有多少关键动作仍可自主执行，并在规划时同时考虑任务推进和策略合规。
+- [AIR](https://arxiv.org/abs/2602.11749)：面向 agent safety 的 incident-response harness。核心思想是把安全事件后的发现、分析和响应流程结构化，而不是把失败样例孤立处理。
+- [Stay in Character, Stay Safe](https://arxiv.org/abs/2602.13234)：用对抗式自进化防御安全角色扮演 agent。核心思想：通过双循环自改进同时维持角色一致性与越狱抵抗。
 - [ToolShield](https://arxiv.org/abs/2602.13379)：与 MT-AgentRisk 配套的 training-free 防御框架；价值在于调停多轮 agent 场景中的高风险工具轨迹。
+- [AgentRob: From Virtual Forum Agents to Hijacked Physical Robots](https://arxiv.org/abs/2602.13591)：AgentRob 将论坛 agent、MCP 与实体机器人串联暴露劫持风险，适合 Agent Safety harness。
+- [MCPShield](https://arxiv.org/abs/2602.14281)：面向 MCP agent 的安全认知层。核心思想：在调用前探测第三方 MCP server，约束执行边界，并根据历史轨迹更新信任，避免 agent 盲目信任未经验证的工具服务器。
 - [Formal Policy Enforcement for Real-World Agentic Systems](https://arxiv.org/abs/2602.16708)：面向真实部署 agentic systems 的形式化策略执行 harness。核心思想：把策略合规从仅写在提示词中转移到对 agent 状态、工具调用和环境观察的运行时检查中，使安全约束具备更清晰的执行保证。
-- [In-Mig](https://doi.org/10.32604/cmc.2026.077259)：让 LLM Agent 在组织场所之间迁移并就地推理，通过策略限定记忆、路径规划和加密信任机制，使原始数据保持本地化。
-- [Secure by Design](https://doi.org/10.1109/southeastcon63549.2026.11475941)：面向 agentic systems 的架构韧性评估。核心思想是量化 Prompt-to-Execute、Context-Min 等设计模式如何改变 indirect prompt injection 暴露面，把 agent 安全从 prompt 过滤推进到架构层控制。
-- LlamaFirewall（[开源代码](https://github.com/meta-llama/PurpleLlama/tree/main/LlamaFirewall)）：Meta PurpleLlama 套件中的生产向 agent firewall，可作为 agent 外围提示注入、不安全工具使用和策略执行层的工程基线。
-- MCP Context Protector（[开源代码](https://github.com/trailofbits/mcp-context-protector)）：Trail of Bits 的 MCP wrapper/proxy，用于运行时加固。核心思想：固定已批准 server 配置、阻断未批准变更、扫描 tool response，并在可疑 MCP context 到达 agent 前进行隔离。
+- [CoT Monitorability](https://arxiv.org/abs/2602.18297)：分析 chain-of-thought 轨迹在什么条件下足以让 monitor 发现风险行为。核心思想：区分互信息、信息抽取缺口和 elicitation 误差，把 CoT monitor 当作可度量的安全组件，而不是默认 reasoning trace 天然透明。
 - [Agentic Supply Chain Runtime SOK](https://arxiv.org/abs/2602.19555)：把检索数据、工具解析、记忆和运行时依赖视为 LLM Agent 的推理时供应链攻击面。
 - [Right to History / PunkGo](https://arxiv.org/abs/2602.20214)：面向个人 AI agent 的可验证执行内核。核心思想是结合防篡改 Merkle 审计日志、capability isolation 和独立验证，使用户能保留 agent 在本机执行动作的完整记录。
 - [MMA-RAG^T](https://arxiv.org/abs/2602.21447)：面向 multimodal agentic RAG 的 stateful trust-inference harness。核心思想是把 adversarial intent 视为 latent variable，由 Modular Trust Agent 维护 belief state，并在检索、规划和生成 checkpoint 上执行 defense-in-depth。
+- [Language Models Exhibit Inconsistent Biases Towards Algorithmic Agents and Human Experts](https://arxiv.org/abs/2602.22070)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的智能体流程、编排模式、工具循环或运行框架。
 - [AgentSentry](https://arxiv.org/abs/2602.22724)：面向工具增强 agent 间接提示注入的推理时防御 harness。核心思想：在工具返回边界定位时间因果接管点并净化上下文，使 agent 能继续完成有用工作而不携带攻击诱导的偏移。
+- [Jailbreak Foundry](https://arxiv.org/abs/2602.24009)：把 jailbreak 论文转为可运行攻击的多 agent harness。核心思想：标准化攻击模块、共享工具和评测流程，使鲁棒性估计能跟上快速变化的 jailbreak 方法。
+- [Graph-theoretic Agreement Framework for Multi-agent LLM Systems](https://arxiv.org/abs/2603.00121)：graph-theoretic agreement framework 用于验证与保护 multi-agent LLM coordination。
+- [AESP: A Human-Sovereign Economic Protocol for AI Agents with Privacy-Preserving Settlement](https://arxiv.org/abs/2603.00318)：面向 AI agent 的人类主权经济协议。核心思路是让 agent 只能在用户定义的政策、审核、签名、托管与隐私边界内自主交易，避免经济能力演变为经济主权。
+- [Verifier-Bound Communication for LLM Agents: Certified Bounds on Covert Signaling](https://arxiv.org/abs/2603.00381)：研究 LLM agent 隐蔽通信的可认证边界；核心思想是通过 verifier 控制的检查约束通信，降低多 agent 系统中的暗道风险。
+- [ContextCov](https://arxiv.org/abs/2603.00822)：从 agent instruction files 中派生可执行约束。核心思想：把仓库或工作流政策转成可检查约束，用于测试 agent 轨迹的覆盖与违规情况。
+- [Constitutional Black-Box Monitoring for Scheming in LLM Agents](https://arxiv.org/abs/2603.00829)：面向 LLM agents scheming 检测的 constitutional black-box monitoring 方法。核心思想是在没有内部访问的条件下监测 agent 行为，标记暗中追求错配目标的情况。
+- [GroupGPT: A Token-efficient and Privacy-preserving Agentic Framework for Multi-User Chat Assistant](https://arxiv.org/abs/2603.01059)：提出面向智能体安全、护栏与对抗风险的智能体工作流或编排框架。
+- [Guideline-Grounded Evidence Accumulation for High-Stakes Agent Verification](https://arxiv.org/abs/2603.02798)：面向高风险 agent 的 guideline-grounded verification harness。核心思想：围绕领域指南累积证据并校准决策核验，适合需要在执行或交付前审查 agent 判断的场景。
 - [Learning When to Act or Refuse](https://arxiv.org/abs/2603.03205)：一个面向多步工具使用型 agentic reasoning model 的安全护栏。核心思想：在工具化工作流中判断 agent 何时应执行或拒绝，从而在执行前阻断不安全动作。
+- [When Safety Becomes a Vulnerability: Exploiting LLM Alignment Homogeneity for Transferable Blocking in RAG](https://arxiv.org/abs/2603.03919)：展示攻击者如何利用对齐同质性阻断 RAG 系统，为运行时安全补充一种把共享拒答行为转化为攻击面的风险案例。
+- [Beyond Input Guardrails: Reconstructing Cross-Agent Semantic Flows for Execution-Aware Attack Detection](https://arxiv.org/abs/2603.04469)：面向智能体安全的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Beyond Input Guardrails: Reconstructing Cross-Agent Semantic Flows for Execution-Aware Attack Detection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration](https://arxiv.org/abs/2603.04474)：建模并缓解 LLM 多 agent 协作错误级联的框架。核心思想是追踪消息依赖，避免小错误在迭代协作中固化为系统级虚假共识。
+- [Traversal-as-Policy: Log-Distilled Gated Behavior Trees as Externalized, Verifiable Policies for Safe, Robust, and Efficient Agents](https://arxiv.org/abs/2603.05517)：把沙盒执行日志蒸馏为可执行行为树，实现更安全、可审计的 agent 控制。
+- [Verify as You Go: An LLM-Powered Browser Extension for Fake News Detection](https://arxiv.org/abs/2603.05519)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Proof-of-Guardrail](https://arxiv.org/abs/2603.05786)（[代码](https://github.com/SaharaLabsAI/Verifiable-ClawGuard)）：AI agents 的 guardrail-attestation harness；核心思想是在可信执行环境中运行 agent 和开源 guardrail，并返回可验证证明，说明指定 guardrail 代码确实被执行。
+- [SplitAgent: A Privacy-Preserving Distributed Architecture for Enterprise-Cloud Agent Collaboration](https://arxiv.org/abs/2603.08221)：面向企业-云协作的隐私保护分布式 agent 架构；核心思想是在企业与云边界之间拆分执行，以兼顾隐私和协作能力。
+- [Arbiter: Detecting Interference in LLM Agent System Prompts](https://arxiv.org/abs/2603.08993)：检测 LLM agent system prompt 中的干扰。核心思想：监测 prompt 层干扰，使 agent 行为能在不安全执行前被审计。
 - [MCP-in-SoS](https://arxiv.org/abs/2603.10194)：面向开源 MCP server 的风险评估框架。核心思想：结合静态代码分析、CWE 与 CAPEC 映射以及多指标可能性-影响评分，使 MCP 工具基础设施能在 agent 依赖前被审计。
 - [AttriGuard](https://arxiv.org/abs/2603.10749)：面向工具调用 Agent 的间接提示注入运行时防御 harness。核心思路是用动作级因果归因和反事实 shadow replay 判断候选工具调用是由用户意图支持，还是由不可信观察诱导产生。
+- [Taming OpenClaw: Security Analysis and Mitigation of Autonomous LLM Agent Threats](https://arxiv.org/abs/2603.11619)：面向自主 LLM agent 的安全分析 harness；核心思想是按初始化、输入、推理、决策和执行层梳理复合威胁。
 - [ChainFuzzer](https://arxiv.org/abs/2603.12614)：面向 LLM agent workflow-level multi-tool 漏洞的灰盒 fuzzing harness。核心思想是搜索 source-to-sink 工具链，使用 trace-guided prompt solving，并为单工具测试难以发现的跨工具 exploit 生成可审计证据。
+- [Defensible Design for OpenClaw](https://arxiv.org/abs/2603.13151)：分析 autonomous tool-invoking agents 如何把不可信输入、特权动作、扩展和本地执行组合成风险面，并提出更可防御的设计边界。
+- [GroupGuard: A Framework for Modeling and Defending Collusive Attacks in Multi-Agent Systems](https://arxiv.org/abs/2603.13940)：建模并防御多 agent 系统中的串谋攻击。核心思想：把多 agent 串谋作为具体安全失败模式并设计防御机制。
 - [Cryptographic Binding for AI Agent Tool Use](https://arxiv.org/abs/2603.14332)：面向动态 agent 能力的治理 harness。核心思想：用密码学绑定与可复现性验证约束工具能力、执行声明和交互溯源，使 agent 的工具使用能被审计，而不是只依赖 prompt 中的自我声明。
+- [HomeGuard: VLM-based Embodied Safeguard for Identifying Contextual Risk in Household Task](https://arxiv.org/abs/2603.14367)：面向家庭任务上下文风险的 VLM safeguard；核心思想是识别看似无害的具身指令何时因环境状态而变危险。
+- [TrinityGuard: A Unified Framework for Safeguarding Multi-Agent Systems](https://arxiv.org/abs/2603.15408)：Agent Harness 条目；核心思想：面向多 agent 系统的统一安全防护框架。
+- [The Comprehension-Gated Agent Economy: A Robustness-First Architecture for AI Economic Agency](https://arxiv.org/abs/2603.15639)：可作为agent safety方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [DynaTrust: Defending Multi-Agent Systems Against Sleeper Agents via Dynamic Trust Graphs](https://arxiv.org/abs/2603.15661)：面向多 agent 系统的动态信任防御。核心思想是持续更新 agent 间信任图，识别并限制先积累信任再触发恶意行为的 sleeper agent。
+- [Guardrails as Infrastructure: Policy-First Control for Tool-Orchestrated Workflows](https://arxiv.org/abs/2603.18059)：面向工具编排工作流的 policy-first 控制层。核心思想是在模型外部执行权限、参数规则、重试限制和输出控制，使 agent 安全不只依赖提示词。
+- [Trace-Based Assurance for Agentic AI Orchestration](https://arxiv.org/abs/2603.18096)：围绕 agent 轨迹提供契约、测试和治理检查。核心思想：让编排保障依赖已记录行动和义务，而不是只看最终输出。
+- [Access Controlled Website Interaction for Agentic AI with Delegated Critical Tasks](https://arxiv.org/abs/2603.18197)：面向智能体安全与可信运行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
 - [SafeAudit](https://arxiv.org/abs/2603.18245)：tool-call safety benchmark 的 meta-audit 框架；价值在于系统枚举 workflow pattern，并找出通过 benchmark 后仍残留的不安全交互。
 - [PlanTwin](https://arxiv.org/abs/2603.18377)：面向云端辅助 LLM agent 的隐私保护规划 harness。核心思想是把本地环境投影为受 schema 约束的规划孪生体，而不是直接暴露原始文件、凭据或元数据，使云端规划器能协调工具但不直接读取私有状态。
+- [Prompt Control-Flow Integrity: A Priority-Aware Runtime Defense Against Prompt Injection in LLM Systems](https://arxiv.org/abs/2603.18433)：面向Agent 安全、提示注入与护栏可靠性提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Visual Exclusivity Attacks](https://arxiv.org/abs/2603.20198)：通过 agentic planning 自动化 multimodal red teaming，搜索 visual-exclusivity attack paths。
+- [Agentproof: Static Verification of Agent Workflow Graphs](https://arxiv.org/abs/2603.20356)：对智能体工作流图进行静态验证。
+- [ALARA for Agents: Least-Privilege Context Engineering Through Portable Composable Multi-Agent Teams](https://arxiv.org/abs/2603.20380)：ALARA 为 multi-agent teams 提供 least-privilege context engineering，直接对应 agent safety harness。
+- [Solver-Aided Verification of Policy Compliance in Tool-Augmented LLM Agents](https://arxiv.org/abs/2603.20449)：面向 tool-augmented LLM agent 的合规验证层。核心思想是把政策与工具动作转成可由求解器检查的约束，再允许高风险操作。
+- [ACRFence: Preventing Semantic Rollback Attacks in Agent Checkpoint-Restore](https://arxiv.org/abs/2603.20625)：提供可复用 agent 工作流或执行 harness，服务于agent safety。
+- [AC4A: Access Control for Agents](https://arxiv.org/abs/2603.20933)：研究 agent 的访问控制；核心思想是把权限、资源边界和动作授权做成 agent runtime 的显式组成部分，而不是只依赖提示词约束。
 - [Open Agent Passport](https://arxiv.org/abs/2603.20953)：面向自治 agent 的确定性预行动授权层。核心思想是在工具调用执行前拦截并按声明式策略检查，同时生成签名审计记录，把授权约束落实在动作边界而非事后评估。
+- [SafePilot: A Framework for Assuring LLM-enabled Cyber-Physical Systems](https://arxiv.org/abs/2603.21523)：提供规划、记忆、验证、工具调用或运行时编排，服务于智能体安全，可补充LLM 智能体的保障、诊断、升级处理和运行时安全管理。
 - [Agent Audit](https://arxiv.org/abs/2603.22853)：面向 LLM agent 应用的静态安全分析系统。核心思想是联合检查 Python agent 代码、部署产物、凭证和 MCP 权限配置，使开发者能在部署前发现工具代码与配置风险。
+- [Agent-Sentry: Bounding LLM Agents via Execution Provenance](https://arxiv.org/abs/2603.22868)：用于约束 LLM agents 的 execution-provenance 层。核心思想是通过 provenance 跟踪和限制 agent 动作，使不安全执行路径可被审计或阻断。
+- [The Cognitive Firewall:Securing Browser Based AI Agents Against Indirect Prompt Injection Via Hybrid Edge Cloud Defense](https://arxiv.org/abs/2603.23791)：面向 browser agent 间接提示注入的混合防御框架。核心思想是在本地边缘组件与云端语义分析之间拆分安全检查，以降低延迟和隐私成本并阻断网页注入内容。
 - [AgentRFC](https://arxiv.org/abs/2603.23801)：面向 MCP、A2A、ANP、ACP 等智能体协议的安全一致性检查框架。核心思想：形式化智能体协议层次和安全原则，再检查规范条款与实现一致性，避免只依赖临时性的协议审阅。
+- [Invisible Threats from Model Context Protocol: Generating Stealthy Injection Payload via Tree-based Adaptive Search](https://arxiv.org/abs/2603.24203)：面向 MCP agent 间接提示注入 payload 的自适应搜索 harness。核心思想是通过工具返回内容生成隐蔽攻击，瞄准 MCP agent 执行时读取的工具输出通道。
 - [ClawKeeper](https://arxiv.org/abs/2603.24414)：面向 OpenClaw agent 的分层安全框架。核心思想是结合 skill 级保护、plugin 级控制和 watcher 运行时监控，在执行生命周期中约束 agent 的广泛权限。
+- [PII Shield: A Browser-Level Overlay for User-Controlled Personal Identifiable Information (PII) Management in AI Interactions](https://arxiv.org/abs/2603.24895)：实现浏览器层的 PII 管理覆盖层，让用户在 AI 交互中控制个人信息暴露，为 Web 场景智能体补充运行时隐私控制 harness。
 - [OpenClaw Security Analysis](https://arxiv.org/abs/2603.27517)：面向 AI agent runtime 的架构安全分析。核心思想是按系统层与攻击模式整理 OpenClaw advisories，说明 gateway、exec policy、sandbox、browser、plugin 与 skill 表面如何组合成跨层失效。
+- [Privacy Guard&Token Parsimony by Prompt and Context Handling and LLM Routing](https://arxiv.org/abs/2603.28972)：通过提示、上下文与大模型路由控制兼顾隐私保护和令牌节约。
+- [Attesting LLM Pipelines: Enforcing Verifiable Training and Release Claims](https://arxiv.org/abs/2603.28988)：为智能体安全方向补充一个智能体工作流或编排框架候选，强调工具调用、规划、外部执行或多智能体协作。
+- [Near-Miss: Latent Policy Failure Detection in Agentic Workflows](https://arxiv.org/abs/2603.29665)：检测 agentic workflow 中的潜在 policy failure；核心思想是在变成可见有害动作前识别 near-miss 状态。
+- [RAGShield](https://arxiv.org/abs/2604.00387)：面向政府 RAG 系统中数值声明操纵的防御 harness；核心思想是抽取金额与百分比、绑定 governing entity、对照语料派生的 registry 验证，并标记不符合官方更新时间规律的数值变化。
+- [Secure Forgetting: A Framework for Privacy-Driven Unlearning in Large Language Model (LLM)-Based Agents](https://arxiv.org/abs/2604.00430)：可作为agent safety方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [The Silicon Mirror: Dynamic Behavioral Gating for Anti-Sycophancy in LLM Agents](https://arxiv.org/abs/2604.00478)：提供抵抗 sycophancy 的动态行为门控。核心思想：检测说服策略并调整 agent 行为以保持事实完整性。
+- [Automated Framework to Evaluate and Harden LLM System Instructions against Encoding Attacks](https://arxiv.org/abs/2604.01039)：为智能体安全方向补充一个智能体工作流或编排框架候选，强调工具调用、规划、外部执行或多智能体协作。
+- [AgentWatcher: A Rule-based Prompt Injection Monitor](https://arxiv.org/abs/2604.01194)：用规则检查监控提示注入。核心思想：在 agent 执行中加入轻量防护层以标记提示注入模式。
 - [ATBench](https://arxiv.org/abs/2604.02022)：轨迹级安全诊断 harness；价值在于把风险定位到执行轨迹中的具体阶段，便于分析 agent scaffold 的系统性缺陷。
+- [AIVV: Neuro-Symbolic LLM Agent-Integrated Verification and Validation for Trustworthy Autonomous Systems](https://arxiv.org/abs/2604.02478)：将神经符号 LLM 智能体整合进可信自主系统验证与确认。
+- [eTAMP](https://arxiv.org/abs/2604.02623)：面向 Web agent 的环境注入式记忆投毒攻击 harness。核心思想：通过普通网页观察污染 agent 记忆，并在后续跨会话、跨网站任务中触发妥协，而不需要直接访问记忆存储。
+- [When AI Agents Disagree Like Humans: Reasoning Trace Analysis for Human-AI Collaborative Moderation](https://arxiv.org/abs/2604.03796)：围绕 Agent Safety 能力补充《When AI Agents Disagree Like Humans: Reasoning Trace Analysis for Human-AI Collaborative Moderation》，作为 Agent Harness 条目候选。
 - [ARM / Causality Laundering](https://arxiv.org/abs/2604.04035)：面向工具调用 agent 中 denial-feedback 泄漏的运行时 enforcement 层。核心思想：跟踪被拒绝受保护动作造成的因果影响，防止 agent 从拒绝结果推断隐私状态并通过后续看似良性的工具调用外泄。
+- [AI Trust OS -- A Continuous Governance Framework for Autonomous AI Observability and Zero-Trust Compliance in Enterprise Environments](https://arxiv.org/abs/2604.04749)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 AI Trust OS -- A Continuous Governance Framework for Autonomous AI Observability and Zero-Trust Compliance in Enterprise Environments 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [Layered Translation for Runtime Guardrails](https://arxiv.org/abs/2604.05229)：把治理要求转化为 agentic AI 运行时护栏的 harness。核心思想：将标准中的治理目标映射为设计约束、运行时中介与保证反馈，使多步工具型 agent 能在执行过程中被约束，而不是只在部署前做文档化合规。
+- [FLARE: Agentic Coverage-Guided Fuzzing for LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2604.05289)：面向 LLM-based multi-agent systems 的 agentic coverage-guided fuzzing harness。核心思想：主动搜索尚未覆盖或脆弱的多 agent 交互轨迹，而不是只依赖固定 prompt 测试集。
 - [Pre-Execution Safety Gate and Task Safety Contracts](https://arxiv.org/abs/2604.05427)：面向 LLM 控制机器人系统的安全 harness。核心思想：在执行前检查任务级安全契约，使不安全计划在物理动作发生前被阻断或修改。
 - [JailAgent](https://arxiv.org/abs/2604.05549)：面向 LLM agent 推理劫持的红队 harness。核心思想：不修改用户提示，而是操纵触发点、推理轨迹、记忆检索与约束收紧过程，以发现跨模型、跨场景的 agent jailbreak。
 - [MCPSHIELD](https://arxiv.org/abs/2604.05969)：面向 MCP-based AI agents 的形式化安全框架。核心思想：统一 MCP 威胁分类、验证模型和防御机制，使协议、宿主、服务器与工具风险能在同一安全模型下分析。
 - [ClawLess](https://arxiv.org/abs/2604.06284)：面向 AI agents 的安全模型。核心思想：形式化约束智能体权限与执行边界，使系统能在不安全工具或应用动作发生前被分析。
+- [ReDAct: Uncertainty-Aware Deferral for LLM Agents](https://arxiv.org/abs/2604.07036)：Agent Harness 条目；核心思想：面向 LLM agent 的不确定性感知 deferral；核心思想是在单步错误破坏轨迹前升级或暂缓高风险决策。
+- [From Debate to Decision: Conformal Social Choice for Safe Multi-Agent Deliberation](https://arxiv.org/abs/2604.07667)：面向用于安全多 agent deliberation 的 conformal social-choice 决策层的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Self-Auditing Agents](https://arxiv.org/abs/2604.08401)：面向 agent faithful reasoning 的验证层。核心思想：在 reasoning trajectories 被写入记忆或转化为行动前，先按逻辑和证据约束做审计，降低 unsupported internal beliefs 进入后续流程的风险。
 - [OpenKedge](https://arxiv.org/abs/2604.08601)：要求 Agent 在变更外部系统前提交声明式意图、证据链和执行边界检查。
+- [CORA](https://arxiv.org/abs/2604.09155)：面向移动 GUI agent 的 post-policy、pre-action 安全护栏。核心思想：结合 conformal risk control、Guardian、Diagnostician 和 goal locking，决定候选 GUI 动作应执行、确认、反思还是中止。
+- [ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection](https://arxiv.org/abs/2604.11790)：可作为Agent 安全的Agent Harness候选；核心关注“A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection”。
+- [Meerkat](https://arxiv.org/abs/2604.11806)：用于在大量 agent traces 中发现稀疏安全违规的 auditing harness。核心思想：结合 clustering 和 agentic search，让审计器调查高风险轨迹区域，发现 per-trace judge 或固定 monitor 难以发现的失败。
 - [Learned Capability Governance](https://arxiv.org/abs/2604.11839)：学习并限制任务所需的工具权限，避免 Agent 被过度授予 shell、凭证和子 Agent 等能力。
+- [WebAgentGuard](https://arxiv.org/abs/2604.12284)：面向 Web agent 提示注入检测的 guard-agent 框架。核心思想：在 Web agent 旁并行运行专门的推理型多模态 guard，以检测渲染内容或 HTML 中的攻击指令，而不只依赖任务 agent 自身的提示约束。
+- [The Cognitive Circuit Breaker: A Systems Engineering Framework for Intrinsic AI Reliability](https://arxiv.org/abs/2604.13417)：围绕 Agent Safety 能力补充《The Cognitive Circuit Breaker: A Systems Engineering Framework for Intrinsic AI Reliability》，作为 Agent Harness 条目候选。
+- [Do not Let AI Agents YOLO Your Files](https://arxiv.org/abs/2604.13536)：把 agent 安全与自治控制转移到文件系统边界中。核心思想：用文件级信息与控制面约束高风险 agent 操作。
+- [Debate to Align: Reliable Entity Alignment through Two-Stage Multi-Agent Debate](https://arxiv.org/abs/2604.13551)：围绕 Agent Safety 能力补充《Debate to Align: Reliable Entity Alignment through Two-Stage Multi-Agent Debate》，作为 Agent Harness 条目候选。
+- [SafeHarness: Lifecycle-Integrated Security Architecture for LLM-based Agent Deployment](https://arxiv.org/abs/2604.13630)：SafeHarness 针对 LLM-based agent deployment 提供 lifecycle-integrated security architecture。
+- [Beyond Arrow's Impossibility: Fairness as an Emergent Property of Multi-Agent Collaboration](https://arxiv.org/abs/2604.13705)：围绕 Agent Safety 能力补充《Beyond Arrow's Impossibility: Fairness as an Emergent Property of Multi-Agent Collaboration》，作为 Agent Harness 条目候选。
+- [CBCL: Safe Self-Extending Agent Communication](https://arxiv.org/abs/2604.14512)：定义安全的自扩展智能体通信机制。
+- [PolicyBank](https://arxiv.org/abs/2604.15505)：演化 LLM agent 对策略规则的理解。核心思想：让组织规则与 policy constraint 在 agent 决策中更可执行。
+- [Symbolic Guardrails](https://arxiv.org/abs/2604.15579)：面向 domain-specific agents 的规则化安全与安保层。核心思想：把具体 policy requirements 转换为 symbolic checks，在真实任务 benchmark 上阻止不安全工具动作，同时尽量保持任务效用。
 - [Anumati](https://arxiv.org/abs/2604.16524)：面向自主 agent 协议的形式化 consent 模型。核心思想：加入版本化 policy document、consent record 与逐动作 adherence event，使 agent-to-agent 调用不仅能证明接受条款，也能证明执行过程中的遵循情况。
 - [CapSeal](https://arxiv.org/abs/2604.16762)：用于安全 agent 执行的 capability-sealed 密钥中介 harness。核心思想是用受约束的 broker 调用、schema 校验工具调用、反重放绑定和审计日志，替代直接从环境变量或文件读取密钥。
+- [Governed MCP: Kernel-Level Tool Governance for AI Agents via Logit-Based Safety Primitives](https://arxiv.org/abs/2604.16870)：提出 MCP 工具调用的内核级治理。核心思路是把工具调用视作 agent syscall，并在特权网关处执行不可绕过的、由 logit 信号辅助的安全原语。
 - [CASCADE](https://arxiv.org/abs/2604.17125)：面向 MCP 系统的级联式提示注入防御架构。核心思想：结合快速词法预过滤、基于 embedding 的语义分析、后备 LLM 检查和输出过滤，筛查 MCP 工具投毒与提示注入。
+- [If Only My CGM Could Speak: A Privacy-Preserving Agent for Question Answering over Continuous Glucose Data](https://arxiv.org/abs/2604.17133)：围绕 Agent Safety 能力补充《If Only My CGM Could Speak: A Privacy-Preserving Agent for Question Answering over Continuous Glucose Data》，作为 Agent Harness 条目候选。
+- [Safe and Policy-Compliant Multi-Agent Orchestration for Enterprise AI](https://arxiv.org/abs/2604.17240)：为企业多智能体 AI 提供安全且合规的编排。
+- [AgenTEE: Confidential LLM Agent Execution on Edge Devices](https://arxiv.org/abs/2604.18231)：在边缘可信执行环境中运行机密 LLM 智能体。
+- [PUSV](https://arxiv.org/abs/2604.18860)：面向 desktop GUI agents 的 pre-execution UI state verification harness。核心思想：在发出动作前重新检查目标像素、全局截图和窗口快照，以捕捉由 overlay、focus change 或 DOM injection 造成的 visual atomicity violation。
+- [An AI Agent Execution Environment to Safeguard User Data](https://arxiv.org/abs/2604.19657)：关注保护用户数据的 agent execution environment，属于 agent 安全执行层而非普通模型方法。
 - [LLM-Guided Safety Agent for Edge Robotics](https://arxiv.org/abs/2604.20193)：面向边缘机器人的安全框架。核心思路是把自然语言安全规程转换为可执行谓词，并在面向 ISO 的感知、计算、控制架构中低延迟运行，用于人机交互安全。
+- [All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](https://arxiv.org/abs/2604.20199)：围绕 Agent Safety 能力补充《All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG》，作为 Agent Harness 条目候选。
+- [SafeRedirect](https://arxiv.org/abs/2604.20930)：面向任务完成驱动型安全失败的系统级重定向框架。核心思想是在合法专业任务结构性需要有害内容时，把模型的完成压力重定向为确定性 hard-stop 输出。
+- [The Privacy Guardian Agent: Towards Trustworthy AI Privacy Agents](https://arxiv.org/abs/2604.21455)：补充面向隐私保护的可信 AI 智能体框架。
+- [Sound Agentic Science Requires Adversarial Experiments](https://arxiv.org/abs/2604.22080)：围绕 Agent Safety 能力补充《Sound Agentic Science Requires Adversarial Experiments》，作为 Agent Harness 条目候选。
 - [Sovereign Agentic Loops](https://arxiv.org/abs/2604.22136)：把 agent reasoning 与真实系统执行解耦的 control-plane 架构。核心思想是在 API 改变外部系统前，要求结构化 intent、基于真实系统状态的 policy validation、身份隔离和 evidence-chain 审计。
+- [AutoRISE: Agent-Driven Strategy Evolution for Red-Teaming Large Language Models](https://arxiv.org/abs/2604.22871)：面向 LLM red-teaming 的策略演化框架；核心思想是搜索可执行攻击程序，而不只是改写单个提示。
+- [Beyond Single-Agent Alignment: Preventing Context-Fragmented Violations in Multi-Agent Systems](https://arxiv.org/abs/2604.22879)：研究多 agent 系统中上下文碎片化导致的违规；核心思想是防止单个子动作看似合理但组合后违反安全约束。
+- [Discovering Agentic Safety Specifications from 1-Bit Danger Signals](https://arxiv.org/abs/2604.23210)：基于稀疏反馈的 safety-specification discovery harness。核心思想：让 agent 从二值 danger warning 中迭代更新自然语言行为规范，而不是依赖完整人工安全反馈。
+- [PrivacyAssist: A User-Centric Agent Framework for Detecting Privacy Inconsistencies in Android Apps](https://arxiv.org/abs/2604.23248)：围绕 Agent Safety 能力补充《PrivacyAssist: A User-Centric Agent Framework for Detecting Privacy Inconsistencies in Android Apps》，作为 Agent Harness 条目候选。
 - [Ghost in the Agent / NeuroTaint](https://arxiv.org/abs/2604.23374)：面向 LLM agent 的信息流追踪 harness。核心思想是为概率式自然语言推理重新定义污点传播，使不可信工具、API 和记忆内容在驱动未授权工具执行之前就能被追踪。
+- [AgentVisor: Defending LLM Agents Against Prompt Injection via Semantic Virtualization](https://arxiv.org/abs/2604.24118)：通过可信语义 visor 拦截工具调用并执行语义权限隔离，防御 LLM agent 的直接与间接提示注入。
 - [RiskGate](https://arxiv.org/abs/2604.24686)：面向自治智能体的运行时治理 harness。核心思路是用监控、漂移和序列模式信号估计未观测风险，再通过失效安全的管线对动作进行单调收紧或门控，尽量在需要最终关闭开关之前完成治理。
 - [SnapGuard](https://arxiv.org/abs/2604.25562)：面向 screenshot-based web agents 的轻量提示注入检测器；价值在于防御恶意指令只出现在渲染页面视觉内容中的 web-agent pipeline。
+- [Safe Bilevel Delegation (SBD): A Formal Framework for Runtime Delegation Safety in Multi-Agent Systems](https://arxiv.org/abs/2604.27358)：形式化多智能体系统中的运行时委派安全，使不安全的任务转交能在委派动作传播前被检查。
 - [FlashRT](https://arxiv.org/abs/2604.28157)：面向提示注入与知识污染的高效 red-teaming harness。核心思想：降低优化式攻击的计算与显存成本，使长上下文 LLM 与 agent 应用能被更系统地压力测试。
+- [RedDebate: Safer Responses through Multi-Agent Red Teaming Debates](https://arxiv.org/abs/2506.11083)：面向更安全回答的多 agent red-team debate 框架。核心思想是用对抗和审议角色暴露不安全行为，并在最终输出前修正回答。
+- [STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming](https://arxiv.org/abs/2604.18976)：使用多 agent strategy-response 优化的黑盒自动化 red-teaming 框架；设计关键词：jailbreak generation、multi-agent red teaming、strategy-response network、安全压力测试。
+- [AgentReputation: A Decentralized Agentic AI Reputation Framework](https://arxiv.org/abs/2605.00073)：提出去中心化 Agentic AI 声誉框架。
 - [Alignment Contracts](https://arxiv.org/abs/2605.00081)：面向 agentic security systems 的形式化策略执行框架。核心思想：在可观察效果轨迹上指定范围、允许和禁止的效果、资源预算与披露规则，使攻击性能力被限制在授权任务内。
+- [CleanBase](https://arxiv.org/abs/2605.00460)（[开源代码](https://github.com/WeifeiJin/CleanBase)）：检测 RAG 知识库中的恶意文档；核心思想是在语料库文档上构建相似度图，并标记面向同一攻击问题的 clique-like prompt-injection payload 集群。
+- [Catching the Infection Before It Spreads: Foresight-Guided Defense in Multi-Agent Systems](https://arxiv.org/abs/2605.01758)：foresight-guided defense 面向 multi-agent infection spread，适合 agent safety harness。
+- [RAGCharacter / Needle-in-RAG](https://arxiv.org/abs/2605.01782)：面向 RAG 检索证据中 poisoned span 的 traceback harness；核心思想是记录 prompt-conditioned RAG 执行轨迹，并通过 counterfactual masking 与 replay 定位导致 misgeneration 的具体证据片段。
+- [GRAIL: A Deep-Granularity Hybrid Resonance Framework for Real-Time Agent Discovery via SLM-Enhanced Indexing](https://arxiv.org/abs/2605.02489)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 GRAIL: A Deep-Granularity Hybrid Resonance Framework for Real-Time Agent Discovery via SLM-Enhanced Indexing 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [Autonomous LLM Agent Worms](https://arxiv.org/abs/2605.02812)：面向跨 agent 持久传播风险的安全分析 harness。核心思想：追踪会重新进入 agent 上下文的文件与记忆载体，优化能抵抗摘要改写的 payload，并检验长运行 agent 生态中的时间再进入防御。
+- [EvoJail: Evolutionary diverse jailbreak prompt generation for large language models](https://arxiv.org/abs/2605.02921)：围绕 EvoJail: Evolutionary diverse jailbreak prompt generation for large language models 补充智能体安全智能体的规划、工具使用、记忆、工作流或评测编排线索。
 - [MAGE](https://arxiv.org/abs/2605.03228)：面向长程 LLM-agent 威胁的 shadow-memory 防御框架。核心思想：维护独立的安全记忆，跨用户、agent 与环境交互保留风险相关上下文，并用它约束后续决策。
 - [MEMSAD](https://arxiv.org/abs/2605.03482)：面向 retrieval-augmented agents 记忆投毒的 calibrated anomaly-detection 防御。核心思想是把记忆投毒建模为攻防博弈，连接检测与检索梯度，并在多类攻击上评估防御，而不是只看孤立 prompt filter。
+- [Redefining AI Red Teaming in the Agentic Era: From Weeks to Hours](https://arxiv.org/abs/2605.04019)：基于 Dreadnode SDK 构建红队 agent；核心思想是让操作者描述要探测什么，由 agent 组合攻击、变换与 scorer，覆盖多 agent、多语和多模态目标。
+- [Authorization Propagation in Multi-Agent AI Systems: Identity Governance as Infrastructure](https://arxiv.org/abs/2605.05440)：补充多智能体系统中的身份治理和授权传播基础设施。
+- [SafeHarbor](https://arxiv.org/abs/2605.05704)：面向 LLM agent safety 的层级记忆增强 guardrail；核心思想是用结构化记忆保留安全上下文，约束长程 agent 行为。
 - [ClawGuard](https://arxiv.org/abs/2605.06205)：面向 LLM agent workflow hijacking 的带外检测框架。核心思想：通过监测 agent 执行过程中的侧信道信号发现恶意工作流转向，而不只依赖提示词或工具调用内容本身。
+- [PrefixGuard](https://arxiv.org/abs/2605.06455)：面向 LLM agent 轨迹的在线失败预警框架。核心思想是离线归纳类型化 StepView 适配器，并用终局结果训练前缀风险评分器，使工具型 agent 在最终失败检查前就能被拦截或提示。
 - [W3C VC and DID Trust Infrastructure for Autonomous Agents](https://arxiv.org/abs/2605.06738)：用可移植可验证凭证与去中心化标识标准连接 Agent 规范、部署和交易证据。
+- [Towards Security-Auditable LLM Agents: A Unified Graph Representation](https://arxiv.org/abs/2605.06812)：统一图表示支持 agent tool/memory/multi-agent trace 的安全审计，属于 safety harness。
 - [MAGIQ](https://arxiv.org/abs/2605.06933)：用可证明安全机制执行所有者的通信与交互策略，服务于多 Agent 生态。
+- [Parallel Multi-Agent Jailbreak](https://doi.org/10.1109/icassp55912.2026.11462454)：并行多 agent jailbreak 框架；核心思想是围绕概率脆弱性信号协同多个攻击 agent，压力测试拒答与安全边界。
+- [Can You Break RLVER? Probing Adversarial Robustness of RL-Trained Empathetic Agents](https://arxiv.org/abs/2605.07138)：围绕 Agent Safety 能力补充《Can You Break RLVER? Probing Adversarial Robustness of RL-Trained Empathetic Agents》，作为 Agent Harness 条目候选。
+- [SARC: A Governance-by-Architecture Framework for Agentic AI Systems](https://arxiv.org/abs/2605.07728)：面向 agentic systems 的 governance-by-architecture runtime。核心思想：把监管义务从事后审查前移到执行时，对工具、子 agent 和外部服务施加结构化约束。
 - [MCP-BiFlow](https://arxiv.org/abs/2605.07836)：面向 MCP 数据流风险的双向静态分析框架。核心思想：恢复 MCP 入口点，建模请求者到敏感操作和数据源到输出的传播，并分析通用分析器容易漏掉的完整工具作用域路径。
+- [When Child Inherits](https://arxiv.org/abs/2605.08460)：建模子 Agent 继承受损状态或权限时产生的利用路径。核心思想：把 subagent spawn 视为 agent 安全攻击面。
+- [AgentForesight: Online Auditing for Early Failure Prediction in Multi-Agent Systems](https://arxiv.org/abs/2605.08715)：面向多 agent 系统的在线审计和早期失败预测的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Containment Verification: AI Safety Guarantees Independent of Alignment](https://arxiv.org/abs/2605.09045)：在 havoc-oracle 语义下验证 agentic framework 的边界层，证明 typed action policy 对任意模型输出成立，并用 Dafny 机械化 containment 论证。
 - [MATRA](https://arxiv.org/abs/2605.10763)：面向 agentic AI systems 的威胁建模框架。核心思想：把资产、影响、已知 LLM 智能体威胁和架构控制映射到攻击树，并以 OpenClaw 作为部署特定风险分析案例。
 - [PACT](https://arxiv.org/abs/2605.11039)：面向工具型 agent 的 provenance-aware 运行时监控层。核心思想：把信任 enforcement 下沉到带权限的工具参数级别，使不可信网页、邮件或文件可以参与良性任务，但不能暗中控制高权限动作。
 - [JAW / Comment and Control](https://arxiv.org/abs/2605.11229)：面向自动化平台中 LLM agentic workflows 的劫持框架。核心思想：利用混合程序分析得到的上下文演化 issue comment 等输入，直到智能体执行凭据外泄或命令执行等非预期动作。
+- [Digital Identity for Agentic Systems: Toward a Portable Authorization Standard for Autonomous Agents](https://arxiv.org/abs/2605.11487)：提出面向智能体系统数字身份的可移植授权标准。
+- [Safety Context Injection: Inference-Time Safety Alignment via Static Filtering and Agentic Analysis](https://arxiv.org/abs/2605.11664)：提出面向智能体安全、护栏与对抗风险的智能体工作流或编排框架。
 - [Persona-Conditioned Adversarial Prompting](https://arxiv.org/abs/2605.11730)：用于对抗提示发现与缓解的自动化红队框架。核心思路是基于不同攻击者身份和策略元数据并行搜索，使安全测试覆盖更多身份、战术和可迁移越狱模式。
 - [IPI-proxy](https://arxiv.org/abs/2605.11868)：面向网页浏览智能体间接提示注入的拦截代理红队框架。核心思想：在传输中改写白名单域名的真实 HTTP 响应并嵌入大规模 payload 库，使企业式浏览智能体无需访问预制恶意网页也能被测试。
 - [Distributed Governance under Byzantine Adversaries](https://arxiv.org/abs/2605.12364)：面向 agentic AI 治理的协议安全框架。核心思想：分析被攻陷 Provider 如何破坏身份与访问控制执行，并提出分布式缓解机制来保护用户策略和抵抗恶意智能体。
 - [Sleeper Channels / Provenance Gates](https://arxiv.org/abs/2605.13471)：面向常驻自治智能体持久化提示注入的防御框架。核心思想：跟踪 action-instance 来源并要求用户确认，阻止不可信输入通过记忆、技能、定时任务或文件补丁持久化后在其他界面触发。
 - [MemLineage](https://arxiv.org/abs/2605.14421)：面向 LLM agent memory 的 lineage-guided enforcement harness。核心思想：为记忆条目附加密码学 provenance 与推导 lineage，并在敏感动作的当前理由源自不可信外部内容时进行拦截。
+- [CR4T: Rewrite-Based Guardrails for Adolescent LLM Safety](https://arxiv.org/abs/2605.21609)：用 critique-and-revise 重写流程处理青少年 LLM 安全，把不安全回答或僵硬拒绝改写为符合发展阶段的指导，而不是只把 youth safety 当作过滤问题。
+- [PocketAgents](https://arxiv.org/abs/2605.21694)：面向自治防御 agent 的 manifest-driven library。核心思想：把每个 defender 安装为 typed manifest、prompt 与 runtime context，使大模型生成的防御动作经过 schema 校验、可归因，并限制在声明过的效果内。
+- [In-Mig](https://doi.org/10.32604/cmc.2026.077259)：让 LLM Agent 在组织场所之间迁移并就地推理，通过策略限定记忆、路径规划和加密信任机制，使原始数据保持本地化。
+- [Secure by Design](https://doi.org/10.1109/southeastcon63549.2026.11475941)：面向 agentic systems 的架构韧性评估。核心思想是量化 Prompt-to-Execute、Context-Min 等设计模式如何改变 indirect prompt injection 暴露面，把 agent 安全从 prompt 过滤推进到架构层控制。
+- [MCP-Secure](https://doi.org/10.1109/OJCS.2026.3664314)：面向权限感知 LLM-agent tooling 的运行时访问控制层。核心思想：围绕 MCP 工具工作流强制作用域访问、默认只读和审批式提权。
+- [RedAgent](https://doi.org/10.1109/TDSC.2026.3665230)：面向 jailbreak discovery 的自主上下文感知 red-teaming agent。核心思想：根据目标上下文和反馈自适应攻击策略，而不是使用固定提示词列表。
+- [CM-PIUG: Cross-Modal Prompt Injection Unified Modeling and Game-Theoretic Defense Strategies](https://doi.org/10.1016/j.patcog.2026.113661)：为多模态提示流水线建立跨模态提示注入攻击面模型，并加入博弈论防御层用于运行时缓解。
+- [Small Language Model Jailbreak Defender Framework](https://doi.org/10.1109/southeastcon63549.2026.11476263)：提出智能体安全方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Privacy-Preserving RAG System for Personal Document Question Answering](https://doi.org/10.1109/ccwc67433.2026.11393868)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Dual-Path JND: A New Framework for Robust and Imperceptible Image Watermarking](https://doi.org/10.1109/icassp55912.2026.11463485)：面向智能体安全，补充用于safety, privacy, robustness, watermarking, or adversarial evaluation contribution的智能体流程、编排模式、工具循环或运行框架。
+- [BlockGuard: A PureChain Safety Framework for Agent Validation in Mission-Critical Systems](https://doi.org/10.1109/icce67443.2026.11449864)：围绕 Agent Safety 能力补充《BlockGuard: A PureChain Safety Framework for Agent Validation in Mission-Critical Systems》，作为 Agent Harness 条目候选。
+- [IPI 2 : Mitigating Indirect Prompt Injections on Unmanned Aerial Vehicle Agents Using Physical Invariants](https://doi.org/10.1109/icassp55912.2026.11463376)：围绕 Agent Safety 能力补充《IPI 2 : Mitigating Indirect Prompt Injections on Unmanned Aerial Vehicle Agents Using Physical Invariants》，作为 Agent Harness 条目候选。
+- [Cache Me, Catch You: Cache Related Security Threats in LLM Serving Frameworks](https://doi.org/10.14722/ndss.2026.242812)：为智能体安全方向补充一个智能体工作流或编排框架候选，强调工具调用、规划、外部执行或多智能体协作。
+- [Retrieval-Augmented Multi-Agent Multimodal Framework for Fake News Detection](https://doi.org/10.1109/icassp55912.2026.11462174)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Cognitive Autonomous Memory Security (CAMS) against injection and extraction attacks in long-term memory of AI agents](https://doi.org/10.1016/j.eij.2026.100983)：面向 AI 智能体长期记忆中的注入与提取攻击，使记忆安全成为显式运行时议题。
+- [Just-In-Time Permission Framework for Secure Autonomous AI Agent Operations in Data Pipeline Environments](https://doi.org/10.1109/aiei69164.2026.11497196)：为数据流水线中的安全自主智能体操作定义即时权限框架。
+- [Secure Agent-Based Architectures for Decentralized AI Identity Management: The DAIS Framework](https://doi.org/10.1109/icaic67076.2026.11395719)：提出面向安全智能体架构的去中心化 AI 身份管理。
+- [Secure Prompt Engineering Patterns for Cloud LLM Agents](https://doi.org/10.1109/icaic67076.2026.11395764)：面向智能体安全与可信运行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [TaskON: Task-Oriented Networking for Agentic AI](https://doi.org/10.1109/mnet.2026.3657581)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 TaskON: Task-Oriented Networking for Agentic AI 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [A Framework for Securing Agentic AI Workflows and Quantum-Resistant Communication in U.S. Critical Infrastructure Networks](https://doi.org/10.32996/jcsts.2026.8.6.12)：可作为agent 安全与安全基础设施的 Agent Harness 候选：围绕 A Framework for Securing Agentic AI Workflows and Quantum-Resistant Communication in U.S. Critical Infrastructure Networks 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Defining and Detecting the Defects of Large Language Model-Based Autonomous Agents](https://doi.org/10.1109/tse.2026.3658554)：面向 LLM 自主 agent 缺陷的静态分析框架与数据集套件。核心思想：从真实开发者报告中定义 agent 特有缺陷类型，并在真实与合成 agent 代码库中检测工作流和工具调用失败。
+- LlamaFirewall（[开源代码](https://github.com/meta-llama/PurpleLlama/tree/main/LlamaFirewall)）：Meta PurpleLlama 套件中的生产向 agent firewall，可作为 agent 外围提示注入、不安全工具使用和策略执行层的工程基线。
+- MCP Context Protector（[开源代码](https://github.com/trailofbits/mcp-context-protector)）：Trail of Bits 的 MCP wrapper/proxy，用于运行时加固。核心思想：固定已批准 server 配置、阻断未批准变更、扫描 tool response，并在可疑 MCP context 到达 agent 前进行隔离。
 - [Trustworthy MCP Registry](https://doi.org/10.3390/fi18050243)：用加密来源证明和运行时完整性机制替代不可验证的 MCP registry 指针，提升 Agent 工具发现可信度。
 - [Autonomous Anomaly Remediation for MCP](https://doi.org/10.1145/3774904.3792400)：不只检测异常，还触发 Agent 或运行时响应来隔离、遏制或修复可疑 MCP 工具行为。
+- [Trust Context Separation](https://doi.org/10.52710/cfs.1012)：面向具备高权限的 AI Agent 提出信任上下文边界隔离。核心思路是区分可信指令、不可信数据和特权动作，降低执行前的权限混淆风险。
+- [LLM Firewall](https://doi.org/10.3390/app16010085)： 以验证器智能体作为运行时防火墙，检测并阻止提示注入攻击。
+- [Securing MCP-based Agent Workflows](https://doi.org/10.1145/3766882.3767177)：研究 Model Context Protocol agent 工作流的安全控制，为 agent 安全 harness 补充 MCP 专项工作流加固。
+- [Privacy Meets Performance: Enhancing Distributed Simulation-based Federated Multi-agent Learning with Privacy-preserving Surrogate Model](https://doi.org/10.1145/3728466)：提出智能体安全方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Biosecure-LLM Framework: Protecting LLMs from Cyberbiosecurity Threats and the Case for Independent AI Safety Governance](https://doi.org/10.34190/iccws.21.1.4524)：构建面向智能体安全任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [SECURITY AS CODE USING AGENTIC AI: EFFICIENCY IN ENSURING SOFTWARE DEVELOPMENT LIFECYCLE SECURITY](https://doi.org/10.23939/csn2025.02.013)：围绕 SECURITY AS CODE USING AGENTIC AI: EFFICIENCY IN ENSURING SOFTWARE DEVELOPMENT LIFECYCLE SECURITY 构建外部工作流、检索、工具使用、记忆或编排层。
+- [Grounded Ethical AI: A Demonstrative Approach with RAG-Enhanced Agents](https://ceur-ws.org/Vol-3921/demo-paper1.pdf)：围绕 Grounded Ethical AI: A Demonstrative Approach with RAG-Enhanced Agents 构建外部工作流、检索、工具使用、记忆或编排层。
+- [Ask, Acquire, Understand: A Multimodal Agent-based Framework for Social Abuse Detection in Memes](https://doi.org/10.1145/3696410.3714895)：补充面向智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [Muteract: Interactive and Iterative Prompt Mutation Interface for LLM Developers and Evaluators](https://doi.org/10.1145/3768633.3770129)：可作为“智能体安全 / 智能体框架”候选条目；提供面向智能体工作流、编排、工具使用或执行环境的可复用框架。
+- [LLM Abuse Prevention Tool Using GCG Jailbreak Attack Detection and DistilBERT-Based Ethics Judgment](https://doi.org/10.3390/info16030204)：补充智能体工作流、编排模式、工具循环、记忆、验证或环境控制框架。
+- [A Multi-Agent RAG Framework for Regulatory Compliance Checking of Software Requirements](https://doi.org/10.1145/3785472)：提出面向智能体安全能力的智能体流程、编排模式、工具循环或执行框架。
+- [MAS-DPD: Multi-Agent System for Dark Pattern Detection Using Large Vision-Language Models](https://doi.org/10.1145/3807246.3807265)：提出面向智能体安全能力的智能体流程、编排模式、工具循环或执行框架。
+- [Layered Control Architectures for AI Safety: A Cybersecurity-Oriented Systems Framework](https://doi.org/10.3390/systems14040447)：补充面向智能体安全、风险控制、提示注入、隐私与有害内容评测的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Establishing Guardrails for AI Tool Use: Formal Safety Constraints Using MCP Schemas](https://doi.org/10.37082/ijirmps.v13.i6.232848)：为智能体与 LLM 安全补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Mitigating Social Bias in Large Language Models: A Multi-Objective Approach Within a Multi-Agent Framework](https://doi.org/10.1609/aaai.v39i24.34748)：补充用于缓解大模型社会偏见的多智能体工作流。
+- [JailGuard: A Universal Detection Framework for Prompt-based Attacks on LLM Systems](https://doi.org/10.1145/3724393)：检测针对 LLM 系统的提示攻击。
+- [Joint Evaluation : A Human + LLM + Multi-Agents Collaborative Framework for Comprehensive AI Safety (Jo.E)](https://doi.org/10.1145/3779211.3795738)：结合人类、LLM 与多 agent 的 AI safety evaluation 框架。核心思想是协调专门 evaluator agent 与人工审查，扩展安全和对齐评估能力。
+- [MMPro: A Decoupled Perception-Thinking-Execution Framework for Secure GUI Agent](https://doi.org/10.1145/3746027.3755553)：MMPro 是 secure GUI agent 的 perception-thinking-execution 框架，适合 Agent Safety Harness。
+- [Red Reading The Text: On How To Red Team Texts Using LLMs](https://doi.org/10.1007/s13347-025-00955-9)：面向智能体安全与安全评测的智能体框架或运行时。核心思想：把 On How To Red Team Texts Using LLMs 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [A Context-Aware LLM-Based Action Safety Evaluator for Automation Agents](https://doi.org/10.21428/594757db.96a8c2ad)：面向智能体安全与可信运行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [AI Identity for Agentic Systems: Integrating PAM and IAM for Secure Autonomy](https://doi.org/10.22399/ijcesen.4985)：面向Agent 安全、提示注入与护栏可靠性提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。

@@ -4,58 +4,438 @@
 - [MineDojo](https://arxiv.org/abs/2206.08853)：评测 Minecraft 中的开放式具身 agent，并引入互联网规模知识资源。核心思想：用丰富、长程的 sandbox 环境测试语言目标下的探索、工具使用、合成、导航和任务完成。
 - [VIMA-Bench](https://arxiv.org/abs/2210.03094)：评测多模态提示下的通用机器人操作。核心思想：用文本、图像和对象引用组合描述操作任务，比纯语言条件控制更贴近 vision-language-action grounding。
 - [LIBERO](https://arxiv.org/abs/2306.03310)：评测终身机器人学习中的知识迁移。核心思想：把机器人操作任务组织成多个 suite，测试 agent 是否能跨对象、布局和任务族复用技能并适应变化。
+- [MetaGraspNetV2: All-in-One Dataset Enabling Fast and Reliable Robotic Bin Picking via Object Relationship Reasoning and Dexterous Grasping](https://doi.org/10.1109/tase.2023.3328964)：提出或分析面向具身与视觉-语言-动作智能体的基准、数据集或评测协议。
+- [TACO: Benchmarking Generalizable Bimanual Tool-ACtion-Object Understanding](https://arxiv.org/abs/2401.08399)：提出或分析面向具身与视觉-语言-动作智能体的基准、数据集或评测协议。
+- [FMB: A functional manipulation benchmark for generalizable robotic learning](https://arxiv.org/abs/2401.08553)：通过任务、评测协议或诊断设置评测 Embodied/VLA 能力，适合作为 Bench 条目。
+- [HAZARD Challenge: Embodied Decision Making in Dynamically Changing Environments](https://arxiv.org/abs/2401.12975)：围绕 Embodied/VLA 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Beyond Text: Utilizing Vocal Cues to Improve Decision Making in LLMs for Robot Navigation Tasks](https://arxiv.org/abs/2402.03494)：补充具身智能与 VLA能力的评测资源或协议。
+- [LoTa-Bench: Benchmarking Language-oriented Task Planners for Embodied Agents](https://arxiv.org/abs/2402.08178)：提出或分析面向具身与视觉-语言-动作智能体的基准、数据集或评测协议。
+- [THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation](https://arxiv.org/abs/2402.08191)：补充面向具身、机器人、VLA 或动作反馈能力的基准、数据集、指标或评测协议。
+- [Towards Diverse Behaviors: A Benchmark for Imitation Learning with Human Demonstrations](https://arxiv.org/abs/2402.14606)：评测具身、VLA 或机器人动作能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1, 000 Everyday Activities and Realistic Simulation](https://arxiv.org/abs/2403.09227)（[challenge leaderboard](https://behavior.stanford.edu/challenge/index.html)）：《BEHAVIOR-1K: A Human-Centered, Embodied AI Benchmark with 1, 000 Everyday Activities and Realistic Simulation》为Embodied VLA补充基准、数据集、指标或评测协议。
+- [DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)：DROID 补充具身智能或机器人基准，覆盖 VLA 策略、触觉感知、操作、导航或世界模型。
+- [ManiPose: A Comprehensive Benchmark for Pose-aware Object Manipulation in Robotics](https://arxiv.org/abs/2403.13365)：提出或分析面向embodied agents, robotics, or vision-language-action capability的基准、数据集、指标或评测协议。
+- [EgoExoLearn: A Dataset for Bridging Asynchronous Ego- and Exo-centric View of Procedural Activities in Real World](https://arxiv.org/abs/2403.16182)：评测，主要面向 Embodied and VLA Agents。
+- [GOAT-Bench: A Benchmark for Multi-Modal Lifelong Navigation](https://arxiv.org/abs/2404.06609)：面向具身智能与视觉语言行动能力，补充评测任务、数据集或基准协议。
+- [HOI-Ref: Hand-Object Interaction Referral in Egocentric Vision](https://arxiv.org/abs/2404.09933)：面向第一视角手物交互指代表达，补充具身感知评测。
+- [Evaluating Real-World Robot Manipulation Policies in Simulation](https://arxiv.org/abs/2405.05941)：面向具身智能与视觉语言行动能力，补充评测任务、数据集或基准协议。
+- [Empowering Embodied Manipulation: A Bimanual-Mobile Robot Manipulation Dataset for Household Tasks](https://arxiv.org/abs/2405.18860)：通过基准、数据集或评测协议评估具身 VLA能力。
+- [Touch100k: A Large-Scale Touch-Language-Vision Dataset for Touch-Centric Multimodal Representation](https://arxiv.org/abs/2406.03813)：通过基准、数据集或评测协议评估具身 VLA能力。
+- [EmbSpatial-Bench: Benchmarking Spatial Understanding for Embodied Tasks with Large Vision-Language Models](https://arxiv.org/abs/2406.05756)：提出或分析面向具身与视觉-语言-动作智能体的基准、数据集或评测协议。
+- [XLand-100B: A Large-Scale Multi-Task Dataset for In-Context Reinforcement Learning](https://arxiv.org/abs/2406.08973)：补充面向具身、机器人、VLA 或动作反馈能力的基准、数据集、指标或评测协议。
+- [Introducing HOT3D: An Egocentric Dataset for 3D Hand and Object Tracking](https://arxiv.org/abs/2406.09598)：提出第一视角 3D 手部与物体跟踪数据集，支持具身操作与交互评测。
+- [MFE-ETP: A Comprehensive Evaluation Benchmark for Multi-modal Foundation Models on Embodied Task Planning](https://arxiv.org/abs/2407.05047)：通过物体理解、时空感知、任务理解和具身推理评测多模态基础模型的具身任务规划能力。核心思想是用多样任务场景和难度层级暴露静态多模态问答之外的规划局限。
+- [BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark](https://arxiv.org/abs/2407.07788)：补充具身与 VLA 系统方向的基准、数据集、挑战、指标或评测协议。
+- [Language-Driven 6-DoF Grasp Detection Using Negative Prompt Guidance](https://arxiv.org/abs/2407.13842)：提出 Grasp-Anything-6D，用于语言驱动的杂乱点云 6-DoF 抓取检测，包含约百万场景和语言关联抓取位姿。核心思想是评测机器人能否按自然语言意图选择目标并避开不需要的物体。
+- [ReALFRED: An Embodied Instruction Following Benchmark in Photo-Realistic Environments](https://arxiv.org/abs/2407.18550)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充具身智能与 VLA方向的基准覆盖。
+- [MuJoCo MPC for Humanoid Control: Evaluation on HumanoidBench](https://arxiv.org/abs/2408.00342)：在 HumanoidBench 上评估 MuJoCo MPC，并指出稀疏奖励会诱导不自然的优化行为。核心思想是把 humanoid control benchmark 用作可诊断的 MPC 测试床，比较奖励设计与控制效果。
+- [RiskAwareBench: Towards Evaluating Physical Risk Awareness for High-level Planning of LLM-based Embodied Agents](https://arxiv.org/abs/2408.04449)：评测 foundation-model 具身 agent 在高层任务规划中的物理风险意识。核心思想是生成含风险的家庭场景和安全指南，检查规划动作是否避开不安全摆放等物理危险。
+- [All Robots in One: A New Standard and Unified Dataset for Versatile, General-Purpose Embodied Agents](https://arxiv.org/abs/2408.10899)：围绕具身与视觉语言动作能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [RP1M: A Large-Scale Motion Dataset for Piano Playing with Bi-Manual Dexterous Robot Hands](https://arxiv.org/abs/2408.11048)：发布超过一百万条双手机器人钢琴演奏轨迹，并自动标注手指落点。核心思想是用多曲目、快速且精细的接触丰富任务评测双手灵巧控制的模仿学习。
+- [RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins (early version)](https://arxiv.org/abs/2409.02920)：补充面向具身、机器人、VLA 或动作反馈能力的基准、数据集、指标或评测协议。
+- [VLATest: Testing and Evaluating Vision-Language-Action Models for Robotic Manipulation](https://arxiv.org/abs/2409.12894)：补充具身与 VLA 系统方向的基准、数据集、挑战、指标或评测协议。
+- [Articulated Object Manipulation using Online Axis Estimation with SAM2-Based Tracking](https://arxiv.org/abs/2409.16287)：作为具身与视觉-语言-动作的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Flat'n'Fold: A Diverse Multi-Modal Dataset for Garment Perception and Manipulation](https://arxiv.org/abs/2409.18297)：发布人类与机器人衣物展平、折叠示范，包含同步多视角 RGB-D、点云和动作数据。核心思想是用从揉皱到折叠的完整序列评测衣物抓取预测和操作策略。
+- [FastUMI: A Scalable and Hardware-Independent Universal Manipulation Interface with Dataset](https://arxiv.org/abs/2409.19499)：评测具身、VLA 或机器人动作能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI](https://arxiv.org/abs/2410.00425)：评测，主要面向 Embodied and VLA Agents。
+- [ActPlan-1K: Benchmarking the Procedural Planning Ability of Visual Language Models in Household Activities](https://arxiv.org/abs/2410.03907)：评测视觉语言模型在家庭活动中的过程规划能力。
+- [EgoOops: A Dataset for Mistake Action Detection from Egocentric Videos referring to Procedural Texts](https://arxiv.org/abs/2410.05343)：评测embodied agents, robotics, or vision-language-action capability，补充该能力方向的基准或挑战设置。
+- [M${}^{3}$Bench: Benchmarking Whole-Body Motion Generation for Mobile Manipulation in 3D Scenes](https://arxiv.org/abs/2410.06678)：评测 3D 场景中移动操作的全身运动生成，包含跨 119 个场景的 3 万个物体重排任务。核心思想是用场景几何、环境约束、任务目标和基于物理的轨迹评分检验底盘与机械臂协同运动。
+- [PokeFlex: A Real-World Dataset of Volumetric Deformable Objects for Robotics](https://arxiv.org/abs/2410.07688)：提供体积可变形物体的真实多模态配对数据，包括 3D 纹理网格、点云、RGB 和深度。核心思想是用 360 度真实捕获数据支持可变形物体操作中的在线重建和控制研究。
+- [ARCap: Collecting High-Quality Human Demonstrations for Robot Learning with Augmented Reality Feedback](https://arxiv.org/abs/2410.08464)：评测带 AR 与触觉反馈的机器人学习示范采集系统。核心思想是引导新手采集满足机器人运动学、避免场景碰撞的操作数据，并在困难机器人任务上检验数据质量。
+- [VidEgoThink: Assessing Egocentric Video Understanding Capabilities for Embodied AI](https://arxiv.org/abs/2410.11623)：评测具身智能所需的第一视角视频理解能力。
+- [ET-Plan-Bench: Embodied Task-level Planning Benchmark Towards Spatial-Temporal Cognition with Foundation Models](https://arxiv.org/abs/2410.14682)：围绕具身与视觉语言动作能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [GarmentLab: A Unified Simulation and Benchmark for Garment Manipulation](https://arxiv.org/abs/2411.01200)：补充具身与 VLA 系统方向的基准、数据集、挑战、指标或评测协议。
+- [Constrained Human-AI Cooperation: An Inclusive Embodied Social Intelligence Challenge](https://arxiv.org/abs/2411.01796)：提出或分析面向embodied agents, robotics, or vision-language-action capability的基准、数据集、指标或评测协议。
+- [VLA-3D: A Dataset for 3D Semantic Scene Understanding and Navigation](https://arxiv.org/abs/2411.03540)：提供真实 3D 室内导航数据集，含扫描房间、语义物体与房间标注、物体关系和指代表达。核心思想是评测 agent 是否能把自然语言目标连接到细粒度 3D 场景语义与动作。
+- [GAPartManip: A Large-Scale Part-Centric Dataset for Material-Agnostic Articulated Object Manipulation](https://arxiv.org/abs/2411.18276)：面向具身智能与视觉语言行动，补充评测基准、数据集、协议或指标。
+- [LMAct: A Benchmark for In-Context Imitation Learning with Long Multimodal Demonstrations](https://arxiv.org/abs/2412.01441)：围绕 Embodied/VLA 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [SeqAfford: Sequential 3D Affordance Reasoning via Multimodal Large Language Model](https://arxiv.org/abs/2412.01550)：补充具身智能与 VLA能力的评测资源或协议。
+- [EgoPlan-Bench2: A Benchmark for Multimodal Large Language Model Planning in Real-World Scenarios](https://arxiv.org/abs/2412.04447)：在四个领域和 24 类细分真实场景中评测 MLLM 规划。核心思想是检查多模态模型能否在多样场景与任务约束下做出合理具身决策，而不只是识别视觉内容。
+- [λ: A Benchmark for Data-Efficiency in Long-Horizon Indoor Mobile Manipulation Robotics](https://arxiv.org/abs/2412.05313)：面向具身智能与视觉语言行动能力，补充评测任务、数据集或基准协议。
+- [Score and Distribution Matching Policy: Advanced Accelerated Visuomotor Policies via Matched Distillation](https://arxiv.org/abs/2412.09265)：评测具身、VLA 或机器人动作能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [NormalFlow: Fast, Robust, and Accurate Contact-Based Object 6DoF Pose Tracking With Vision-Based Tactile Sensors](https://arxiv.org/abs/2412.09617)：作为具身与视觉-语言-动作的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [NoisyEQA: Benchmarking Embodied Question Answering Against Noisy Queries](https://arxiv.org/abs/2412.10726)：评测用户问题中含潜在幻觉、记忆、感知或语义噪声时的具身问答。核心思想是衡量 agent 在探索和作答前能否发现并修正噪声问题。
+- [RoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation](https://arxiv.org/abs/2412.13877)：RoboMIND 补充具身智能或机器人基准，覆盖 VLA 策略、触觉感知、操作、导航或世界模型。
+- [Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking](https://arxiv.org/abs/2412.17730)：补充面向具身、机器人、VLA 或动作反馈能力的基准、数据集、指标或评测协议。
 - [VLABench](https://arxiv.org/abs/2412.18194)：评测带长程推理任务的语言条件机器人操作。核心思想：提供多类操作任务和组合式指令，使 VLA 模型同时接受任务推理、grounding 与动作序列执行检验。
+- [A Novel RGB-D Cross-Background Robot Grasp Detection Dataset and Background-Adaptive Grasping Network](https://doi.org/10.1109/tim.2024.3413164)：补充具身与 VLA 系统方向的基准、数据集、挑战、指标或评测协议。
+- [RoboCasa: Large-Scale Simulation of Household Tasks for Generalist Robots](https://doi.org/10.15607/rss.2024.xx.050)：补充具身与 VLA 系统方向的基准、数据集、挑战、指标或评测协议。
+- [EMIF-Bench: A Benchmark for Embodied Multi-Modal Instruction Following](https://doi.org/10.1109/iccwamtip64812.2024.10873685)：评测 EMIF-Bench: A Benchmark for Embodied Multi-Modal Instruction Following，为 Embodied VLA 补充可复用的数据集、基准、指标或评测协议。
 - [ECBench](https://arxiv.org/abs/2501.05031)（[开源代码](https://github.com/Rh-Dang/ECBench)）：评测多模态基础模型的第一视角具身认知。核心思想：从 agent-centered 视角测试自我认知、动态场景感知与幻觉，比静态图像问答更接近具身操作。
+- [Open6DOR: Benchmarking Open-instruction 6-DoF Object Rearrangement and A VLM-based Approach](https://doi.org/10.1109/iros58592.2024.10802733)：通过基准、数据集或评测协议评估具身 VLA能力。
+- [Language and Planning in Robotic Navigation: A Multilingual Evaluation of State-of-the-Art Models](https://arxiv.org/abs/2501.05478)：通过零样本序列动作预测评测多语模型在视觉语言导航中的表现，揭示语言选择对具身规划的影响。
+- [EmbodiedEval: Evaluate Multimodal LLMs as Embodied Agents](https://arxiv.org/abs/2501.11858)：在交互式具身环境中评测 MLLM，超越静态图片和视频问答。
+- [Evaluating Efficiency and Engagement in Scripted and LLM-Enhanced Human-Robot Interactions](https://arxiv.org/abs/2501.12128)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [VolleyBots: A Testbed for Multi-Drone Volleyball Game Combining Motion Control and Strategic Play](https://arxiv.org/abs/2502.01932)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [REASSEMBLE: A Multimodal Dataset for Contact-rich Robotic Assembly and Disassembly](https://arxiv.org/abs/2502.05086)：提供接触丰富的机器人装配与拆解多模态数据集，适合具身操作评测。
+- [Space-Aware Instruction Tuning: Dataset and Benchmark for Guide Dog Robots Assisting the Visually Impaired](https://arxiv.org/abs/2502.07183)：该数据集和 benchmark 评估导盲机器人与视障辅助中的空间感知指令遵循。
+- [OpenBench: A New Benchmark and Baseline for Semantic Navigation in Smart Logistics](https://arxiv.org/abs/2502.09238)：可作为具身与 VLA agent的 Bench 候选：围绕 OpenBench: A New Benchmark and Baseline for Semantic Navigation in Smart Logistics 提供可比较的评测任务、数据或分析协议。
 - [Text2World](https://arxiv.org/abs/2502.13092)：评测 LLM 生成符号世界模型的能力。核心思想：把自然语言环境描述转换为可执行的符号模型，从而检验模型是否能表示规划所需的状态、动作和动态规则。
+- [BOSS: Benchmark for Observation Space Shift in Long-Horizon Task](https://arxiv.org/abs/2502.15679)：评测长程任务中的 observation-space shift。核心思想：测试当视觉或感知观察分布变化时 agent 是否仍然稳健。
+- [Reasoning about Affordances: Causal and Compositional Reasoning in LLMs](https://arxiv.org/abs/2502.16606)：评测关于物体 affordance 的因果与组合推理；核心思想：用新设计任务测试具身常识推理，避免依赖已记忆的基准样本。
 - [Openfly](https://arxiv.org/abs/2502.18041)：评测空中视角的视觉语言导航 agent。核心思想：提供综合性的空中导航平台，使模型必须把视觉观察、语言目标、空间推理和飞行动作连接起来，而不是只回答静态导航问题。
+- [Collab-Overcooked: Benchmarking and Evaluating Large Language Models as Collaborative Agents](https://arxiv.org/abs/2502.20073)：在 Overcooked-style 环境中评测 LLM collaborative agents。核心思想是在可执行协作场景中衡量协调、角色适应和任务完成。
+- [EgoNormia: Benchmarking Physical Social Norm Understanding](https://arxiv.org/abs/2502.20490)：基于 egocentric video 评测物理情境中的社会规范理解；核心思想是让 VLM 判断具身人类互动中的规范行为。
+- [Digital Player: Evaluating Large Language Models based Human-like Agent in Games](https://arxiv.org/abs/2502.20807)：基于游戏的人类式 agent 能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [LLM-Advisor: An LLM Benchmark for Cost-efficient Path Planning across Multiple Terrains](https://arxiv.org/abs/2503.01236)：作为具身与视觉-语言-动作的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [CognitiveDrone: A VLA Model and Evaluation Benchmark for Real-Time Cognitive Task Solving and Reasoning in UAVs](https://arxiv.org/abs/2503.01378)：面向 UAV 实时认知任务求解的 VLA model 与 benchmark。核心思想是评测空中 agent 能否在实时约束下结合感知、推理和动作。
+- [Exo-ViHa: A Cross-Platform Exoskeleton System with Visual and Haptic Feedback for Efficient Dexterous Skill Learning](https://arxiv.org/abs/2503.01543)：评测embodied agents, robotics, or vision-language-action capability，补充该能力方向的基准或挑战设置。
+- [FLAME: A Federated Learning Benchmark for Robotic Manipulation](https://arxiv.org/abs/2503.01729)：作为具身与 VLA 智能体的基准或评测协议候选，聚焦“A Federated Learning Benchmark for Robotic Manipulation”。
+- [MuBlE: MuJoCo and Blender simulation Environment and Benchmark for Task Planning in Robot Manipulation](https://arxiv.org/abs/2503.02834)：在 MuJoCo 与 Blender 仿真环境中评测机器人操作任务规划；核心思想是结合物理仿真与渲染场景，检查 agent 是否能规划可执行的操作行为。
+- [Kaiwu: A Multimodal Manipulation Dataset and Framework for Robot Learning and Human-Robot Interaction](https://arxiv.org/abs/2503.05231)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
+- [AVA: Attentive VLM Agent for Mastering StarCraft II](https://arxiv.org/abs/2503.05383)：评什么：以 StarCraft II 为环境评测 VLM agent 在高动作密度游戏中的感知和决策。
+- [RoboDesign1M: A Large-scale Dataset for Robot Design Understanding](https://arxiv.org/abs/2503.06796)：提供从科学文献收集的百万级多模态机器人设计样本。核心思想是评测文本检索、设计理解和设计助手任务，把机器人形态与功能联系起来，属于具身系统设计的邻近评测。
+- [EMMOE: A Comprehensive Benchmark for Embodied Mobile Manipulation in Open Environments](https://arxiv.org/abs/2503.08604)：用统一任务、指标和轨迹数据评测自然语言控制的移动操作机器人。
+- [MarineGym: A High-Performance Reinforcement Learning Platform for Underwater Robotics](https://arxiv.org/abs/2503.09203)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
 - [EXPRESS-Bench](https://arxiv.org/abs/2503.11117)：评测探索感知的具身问答能力。核心思想：把 3D 探索轨迹与问答任务、探索感知指标结合起来，使 agent 同时接受证据收集和后续推理评估。
-- [HA-VLN](https://arxiv.org/abs/2503.14229)：评什么：含动态多人互动的离散-连续环境中的 human-aware vision-language navigation。核心思想：结合真实验证和开放 leaderboard，让导航 agent 不只按路线完成度评分，也要看社会感知能力。
+- [Bench2FreeAD: A Benchmark for Vision-based End-to-end Navigation in Unstructured Robotic Environments](https://arxiv.org/abs/2503.12180)：补充具身与 VLA方向的基准、数据集、指标或评测协议。
+- [HA-VLN](https://arxiv.org/abs/2503.14229)（[leaderboard](https://ha-vln-project.vercel.app/)）：评什么：含动态多人互动的离散-连续环境中的 human-aware vision-language navigation。核心思想：结合真实验证和开放 leaderboard，让导航 agent 不只按路线完成度评分，也要看社会感知能力。
+- [VisEscape: A Benchmark for Evaluating Exploration-driven Decision-making in Virtual Escape Rooms](https://arxiv.org/abs/2503.14427)：评测虚拟密室中的探索驱动决策。核心思想：要求 agent 检查场景、发现线索并多步行动，而不是回答静态问题。
+- [Cube: A Roblox View of 3D Intelligence](https://arxiv.org/abs/2503.15475)：以 Roblox 风格交互三维世界作为具身三维智能评测场景。
 - [OvercookedV2](https://arxiv.org/abs/2503.17821)：在 Overcooked 风格的具身多智能体环境中评测 zero-shot coordination。核心思想：压力测试 agent 是否能推断队友行为、分工协作，并在可执行协作任务中从配合失败中恢复。
+- [AutoEval](https://arxiv.org/abs/2503.24278)：自动化真实世界通用机器人操作策略评测。
+- [Ask-to-Act](https://arxiv.org/abs/2504.00907)：评测 embodied agent 在欠明确家居重排指令下主动提问澄清的能力；核心思想是在部分可观测环境中衡量 agent 能否用尽量少且相关的问题消解歧义再行动。
+- [Grounding 3D Object Affordance with Language Instructions, Visual Observations and Interactions](https://arxiv.org/abs/2504.04744)：面向 3D 物体可供性定位的任务。核心思想是测试具身模型能否依据语言、视觉和交互信息定位可操作区域。
+- [Ges3ViG: Incorporating Pointing Gestures into Language-Based 3D Visual Grounding for Embodied Reference Understanding](https://arxiv.org/abs/2504.09623)：将指向手势纳入基于语言的 3D 视觉定位以评估具身指代理解。
 - [SHREC](https://arxiv.org/abs/2504.13898)：评测真实人机具身对话中的社会推理能力。核心思路是使用真实交互视频、社会错误标注、理由和纠正任务，使具身智能体不只按导航或操作成功率评测，也能暴露细微的对话与社会行为失效。
 - [Robotouille](https://openreview.net/forum?id=OhUoTMxFIH)：评测具身任务设置中 LLM agent 的异步规划能力。核心思想：要求 agent 在延迟或异步执行条件下规划与协调，而不是假设单一即时动作循环。
 - [ManiSkill-HAB](https://openreview.net/forum?id=6bKEWevgSd)：评测家居重排任务中的低层操作能力。核心思想：把家居重排目标连接到操作原语，测试具身 agent 是否能完成接地的物体处理，而不是只做高层导航。
+- [ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks](https://arxiv.org/abs/2412.13211)：通过基准、数据集或评测协议评估具身 VLA能力。
 - [HASARD](https://openreview.net/forum?id=5BRFddsAai)：评测具身 agent 的视觉安全强化学习。核心思想：把安全约束显式放进具身环境，使模型在完成任务的同时避开危险。
+- [Towards Autonomous Micromobility through Scalable Urban Simulation](https://arxiv.org/abs/2505.00690)：提供 URBAN-SIM 与 URBAN-BENCH，用于在交互式城市微出行情境中训练和评测具身智能体。
+- [Benchmarking Vision, Language, & Action Models in Procedurally Generated, Open Ended Action Environments](https://arxiv.org/abs/2505.05540)：开放生成环境中的视觉语言动作模型评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [The First WARA Robotics Mobile Manipulation Challenge - Lessons Learned](https://arxiv.org/abs/2505.06919)：为具身与 VLA 系统补充基准、数据集、指标或评测协议。
 - [TPT-Bench](https://arxiv.org/abs/2505.07446)：评测机器人第一视角下的目标人物跟踪；核心思想是用长时段、拥挤且非结构化的场景测试具身 agent 能否在遮挡、干扰人物和视角变化下持续跟踪指定目标。
+- [ManipBench](https://arxiv.org/abs/2505.09698)：评估 VLM 在低层机器人操作决策中的能力。
+- [REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](https://arxiv.org/abs/2505.10872)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
+- [X2C: A Dataset Featuring Nuanced Facial Expressions for Realistic Humanoid Imitation](https://arxiv.org/abs/2505.11146)：提供 10 万组人形机器人面部图像与控制值，用于真实细腻表情模仿。核心思想是评测人形机器人能否把人类或野外表情映射到表情控制值，以支持情感化人机交互。
+- [CrafText Benchmark: Advancing Instruction Following in Complex Multimodal Open-Ended World](https://arxiv.org/abs/2505.11962)：评测复杂多模态开放世界中的指令跟随；核心思想是把语言目标放入包含视觉状态和动作的开放环境，而不是只做静态问答。
+- [BeliefNest: A Joint Action Simulator for Embodied Agents with Theory of Mind](https://arxiv.org/abs/2505.12321)：提出带心智理论建模的具身 agent 联合行动模拟器。
+- [TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation](https://arxiv.org/abs/2505.12748)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
+- [ViPlan: A Benchmark for Visual Planning with Symbolic Predicates and Vision-Language Models](https://arxiv.org/abs/2505.13180)：ViPlan 以符号谓词和视觉语言模型评估视觉规划能力。
+- [eStonefish-Scenes: A Sim-to-Real Validated and Robot-Centric Event-based Optical Flow Dataset for Underwater Vehicles](https://arxiv.org/abs/2505.13309)：发布经过仿真到现实验证的事件式光流数据集，面向水下车辆感知评测。
+- [AnyBody: A Benchmark Suite for Cross-Embodiment Manipulation](https://arxiv.org/abs/2505.14986)：作为具身与 VLA 智能体的基准或评测协议候选，聚焦“A Benchmark Suite for Cross-Embodiment Manipulation”。
+- [Robo2VLM: Visual Question Answering from Large-Scale In-the-Wild Robot Manipulation Datasets](https://arxiv.org/abs/2505.15517)：补充具身与视觉-语言-动作智能体方向的评测数据、基准或协议。
 - [UAV-Flow Colosseo](https://arxiv.org/abs/2505.15725)：评测真实飞行场景中的语言条件 UAV 模仿学习。核心思路是把自然语言指令和空中轨迹对齐，使具身空中智能体接受落地飞行动作评测，而不只是被动理解场景。
+- [TacCompress: A Benchmark for Multi-Point Tactile Data Compression in Dexterous Manipulation](https://arxiv.org/abs/2505.16289)：引入 Dex-MPTD 多点触觉数据集，覆盖灵巧手抓取中的触觉传感器、物体和抓取姿态。核心思想是评测无损与有损触觉压缩，使灵巧操作系统能处理高带宽接触信号。
+- [CU-Multi: A Dataset for Multi-Robot Data Association](https://arxiv.org/abs/2505.17576)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Runaway is Ashamed, But Helpful: On the Early-Exit Behavior of Large Language Model-based Agents in Embodied Environments](https://arxiv.org/abs/2505.17616)：可作为具身与 VLA agent的 Bench 候选：围绕 Runaway is Ashamed, But Helpful: On the Early-Exit Behavior of Large Language Model-based Agents in Embodied Environments 提供可比较的评测任务、数据或分析协议。
+- [VideoGameBench: Can Vision-Language Models complete popular video games?](https://arxiv.org/abs/2505.18134)：VideoGameBench。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [BEDI: A Comprehensive Benchmark for Evaluating Embodied Agents on UAVs](https://arxiv.org/abs/2505.18229)：BEDI 面向无人机具身智能体，评测空中环境中的感知、规划与动作执行能力。
+- [IndustryEQA: Pushing the Frontiers of Embodied Question Answering in Industrial Scenarios](https://arxiv.org/abs/2505.20640)：在工业场景中评测 embodied question answering，将视觉 grounding 与可行动的工作环境连接起来。
+- [ManiTaskGen: A Comprehensive Task Generator for Benchmarking and Improving Vision-Language Agents on Embodied Decision-Making](https://arxiv.org/abs/2505.20726)：为 embodied decision-making 生成综合任务，用于评测并改进 vision-language agents。
+- [CLAMP: Crowdsourcing a LArge-scale in-the-wild haptic dataset with an open-source device for Multimodal robot Perception](https://arxiv.org/abs/2505.21495)：通过开源 CLAMP 设备采集野外触觉数据，用于多模态机器人感知。核心思想是把视觉上下文与材料、顺应性等触觉信号配对，评测操作系统是否能学习视觉难以直接推断的物体属性。
+- [LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](https://arxiv.org/abs/2505.22634)：面向科学具身 agent 的高保真仿真与层级 benchmark。核心思想是评估涉及感知、物理化学变化和规划的长程实验室工作流。
 - [TrackVLA / EVT-Bench](https://arxiv.org/abs/2505.23189)（[项目页](https://pku-epic.github.io/TrackVLA-web)）：评估合成与真实环境中的具身视觉跟踪。核心思路是要求自中心智能体在遮挡和高动态场景中同时识别目标并规划轨迹，把视觉跟踪从被动感知推进到具身 VLA 能力评测。
 - [CheckManual](https://openaccess.thecvf.com/content/CVPR2025/html/Long_CheckManual_A_New_Challenge_and_Benchmark_for_Manual-based_Appliance_Manipulation_CVPR_2025_paper.html)：评测基于说明书的电器操作。核心思想：把文档/说明书理解绑定到物理动作规划，要求 agent 提取程序性知识并用于操作。
-- [RoboTwin](https://openaccess.thecvf.com/content/CVPR2025/html/Mu_RoboTwin_Dual-Arm_Robot_Benchmark_with_Generative_Digital_Twins_CVPR_2025_paper.html)：评测带生成式数字孪生的双臂机器人操作。核心思想：用生成的交互式仿真场景和专家示范，在更多样的物体与布局条件下测试协同操作。
-- [Orak](https://arxiv.org/abs/2506.03610)：评测并支持训练跨 12 类视频游戏的 LLM agent。核心思想：用 MCP-based 接口、游戏轨迹、leaderboard、battle arena 和 agent module 消融研究可执行游戏 agent。
+- [RoboTwin](https://openaccess.thecvf.com/content/CVPR2025/html/Mu_RoboTwin_Dual-Arm_Robot_Benchmark_with_Generative_Digital_Twins_CVPR_2025_paper.html)（[leaderboard](https://robotwin-platform.github.io/leaderboard)）：评测带生成式数字孪生的双臂机器人操作。核心思想：用生成的交互式仿真场景和专家示范，在更多样的物体与布局条件下测试协同操作。
+- [A4Bench](https://arxiv.org/abs/2506.00893)： 从构成性与转化性物体行动可能性两方面评测 MLLM 的 affordance 感知。
+- [NavBench: Probing Multimodal Large Language Models for Embodied Navigation](https://arxiv.org/abs/2506.01031)：NavBench 评测 MLLM embodied navigation 能力，属于 embodied/VLA benchmark。
+- [Orak](https://arxiv.org/abs/2506.03610)（[leaderboard](https://krafton-ai.github.io/orak-leaderboard/)）：评测并支持训练跨 12 类视频游戏的 LLM agent。核心思想：用 MCP-based 接口、游戏轨迹、leaderboard、battle arena 和 agent module 消融研究可执行游戏 agent。
+- [AmbiK: Dataset of Ambiguous Tasks in Kitchen Environment](https://arxiv.org/abs/2506.04089)：可作为具身与 VLA agent的 Bench 候选：围绕 AmbiK: Dataset of Ambiguous Tasks in Kitchen Environment 提供可比较的评测任务、数据或分析协议。
+- [TextAtari: 100K Frames Game Playing with Language Agents](https://arxiv.org/abs/2506.04098)：评测具身与 VLA 智能体。核心思想：围绕论文中的任务、数据或协议（100K Frames Game Playing with Language Agents）形成可复用比较基准。
+- [Seeing in the Dark: Benchmarking Egocentric 3D Vision with the Oxford Day-and-Night Dataset](https://arxiv.org/abs/2506.04224)：提出 Oxford Day-and-Night 第一视角 3D 视觉数据集，用于大光照变化下的新视角合成和视觉重定位。核心思想是用 ARIA 眼镜轨迹、SLAM 位姿、3D 点云与昼夜采集压力测试具身感知。
 - [WorldPrediction](https://arxiv.org/abs/2506.04363)：评测高层 world modeling 与长程程序化规划。核心思想：检验 agent 能否预测抽象未来状态并跨较长 horizon 组织流程，补充更偏生成动态一致性的视频 world-model benchmark。
+- [ArtVIP](https://arxiv.org/abs/2506.04941)（[项目页](https://x-humanoid-artvip.github.io/)）：提供面向机器人学习的开放 articulated digital-twin 资产，包含视觉真实感、物理保真度、模块化交互行为和 affordance 标注，补充基于仿真的具身智能体评测与训练资源。
+- [TD-TOG Dataset: Benchmarking Zero-Shot and One-Shot Task-Oriented Grasping for Object Generalization](https://arxiv.org/abs/2506.05576)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [Technical Report for Egocentric Mistake Detection for the HoloAssist Challenge](https://arxiv.org/abs/2506.06174)：报告 HoloAssist Challenge 的在线错误检测系统，覆盖动作顺序错误、运动失误和工具误用等程序性与执行错误。核心思想是评测面向人类任务辅助的实时第一视角反馈生成。
+- [Underwater Multi-Robot Simulation and Motion Planning in Angler](https://arxiv.org/abs/2506.06612)：提供水下多机器人仿真与运动规划任务，用于具身智能体评测。
+- [RoboCerebra](https://arxiv.org/abs/2506.06677)：大规模评估长程机器人操作能力。
+- [PhyBlock: A Progressive Benchmark for Physical Understanding and Planning via 3D Block Assembly](https://arxiv.org/abs/2506.08708)：通过 3D 积木装配评测物理理解与规划。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [An Open-Source Software Toolkit & Benchmark Suite for the Evaluation and Adaptation of Multimodal Action Models](https://arxiv.org/abs/2506.09172)：提供面向多模态动作模型的开源基准与软件生态。核心思想：用共享数据、模型和评测工具，标准化 VLM 与 VLA 场景下的评测和适配。
+- [IndoorWorld: Integrating Physical Task Solving and Social Simulation in A Heterogeneous Multi-Agent Environment](https://arxiv.org/abs/2506.12331)：围绕具身 Agent 与视觉语言动作系统提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [A Spatial Relationship Aware Dataset for Robotics](https://arxiv.org/abs/2506.12525)：补充面向具身智能与视觉语言行动系统的评测、数据集或度量信号。
+- [Can Pretrained Vision-Language Embeddings Alone Guide Robot Navigation?](https://arxiv.org/abs/2506.14507)：提供可复用评测信号，服务于具身与 VLA 智能体，可补充导航、交互平台和操作条件下的具身评测。
 - [HEAL](https://arxiv.org/abs/2506.15065)：评估 LLM 驱动具身智能体在场景与任务不一致时的幻觉。核心思路是构造与观察环境冲突的目标或条件，检验智能体在行动前是否真正完成环境 grounding。
-- [EmbodiedBench](https://proceedings.mlr.press/v267/yang25f.html)（[开源代码](https://github.com/EmbodiedBench/EmbodiedBench)）：评测多模态大语言模型作为视觉驱动具身 agent 的能力。核心思想：把具身感知、规划和动作任务放进统一 benchmark，考察基于视觉观测操作的 VLM/LLM agent。
+- [FindingDory](https://arxiv.org/abs/2506.15635)：评估具身 agent 的记忆能力。核心思想：要求 agent 使用跨多天收集的长期视觉经验，检查具身系统是否能检索并利用过去观察来完成长时程控制。
+- [IS-Bench](https://arxiv.org/abs/2506.16402)：评估家务任务中 VLM 具身 agent 的交互安全性。
+- [RoboArena](https://arxiv.org/abs/2506.18123)（[leaderboard](https://robo-arena.github.io/)）：为通用机器人策略提供分布式真实世界评测。
+- [HRIBench: Benchmarking Vision-Language Models for Real-Time Human Perception in Human-Robot Interaction](https://arxiv.org/abs/2506.20566)：用 VQA 任务评测 HRI 中的实时人类感知。核心思路是同时衡量非语言线索、指令理解、人机物体关系、社交导航、人员识别与延迟权衡。
+- [RoboPearls: Editable Video Simulation for Robot Manipulation](https://arxiv.org/abs/2506.22756)：评什么：用于机器人操作的可编辑视频仿真环境。
+- [SoMi-ToM: Evaluating Multi-Perspective Theory of Mind in Embodied Social Interactions](https://arxiv.org/abs/2506.23046)：评测具身社交互动中的多视角 theory of mind；核心思想是使用模拟环境中的第一视角和第三视角多模态交互轨迹。
+- [EmbodiedBench](https://proceedings.mlr.press/v267/yang25f.html)（[leaderboard](https://embodiedbench.github.io/)；[开源代码](https://github.com/EmbodiedBench/EmbodiedBench)）：评测多模态大语言模型作为视觉驱动具身 agent 的能力。核心思想：把具身感知、规划和动作任务放进统一 benchmark，考察基于视觉观测操作的 VLM/LLM agent。
+- [RoboEval: Where Robotic Manipulation Meets Structured and Scalable Evaluation](https://arxiv.org/abs/2507.00435)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
+- [TeleSim: A Network-Aware Testbed and Benchmark Dataset for Telerobotic Applications](https://arxiv.org/abs/2507.04425)：在受控带宽、延迟、抖动和丢包等级下评测遥操作精细操作。核心思想是部署到远程机器人场景前，衡量网络质量如何改变遥操作表现。
+- [eStonefish-scenes: A synthetically generated dataset for underwater event-based optical flow prediction tasks](https://arxiv.org/abs/2507.07207)：为水下自主机器人提供合成事件相机场景，用于评测光流预测能力。
+- [StarDojo: Benchmarking Open-Ended Behaviors of Agentic Multimodal LLMs in Production-Living Simulations with Stardew Valley](https://arxiv.org/abs/2507.07445)：补充embodied vla方向的基准或评测套件，核心围绕《StarDojo: Benchmarking Open-Ended Behaviors of Agentic Multimodal LLMs in Production-Living Simulations with Stardew Valley》。
+- [EmbRACE-3K: Embodied Reasoning and Action in Complex Environments](https://arxiv.org/abs/2507.10548)：评测复杂环境中的具身推理与行动。核心思想：测试在线交互、主动场景理解和动作导致的观察变化。
 - [VLN-PE](https://arxiv.org/abs/2507.13019)：在更接近真实物理约束的机器人形态中评估视觉语言导航。核心思路是比较人形、四足和轮式机器人上的导航流程，使具身导航不再只依赖理想化运动假设。
+- [From Scan to Action](https://arxiv.org/abs/2507.17585)： 利用真实扫描进行具身场景理解，将三维场景感知与行动相关评测连接起来。
+- [CoMPAS3D](https://arxiv.org/abs/2507.19684)：提供 salsa 动作捕捉数据集和 leader、follower、duet 生成基准，把双人舞视为面向交互式人形 AI 的非语言具身语言测试场。
+- [MoDeSuite: Robot Learning Task Suite for Benchmarking Mobile Manipulation With Deformable Objects](https://arxiv.org/abs/2507.21796)：评测 MoDeSuite: Robot Learning Task Suite for Benchmarking Mobile Manipulation With Deformable Objects，为 Embodied VLA 补充可复用的数据集、基准、指标或评测协议。
+- [RAGNet: Large-Scale Reasoning-Based Affordance Segmentation Benchmark Towards General Grasping](https://arxiv.org/abs/2507.23734)：用类人指令和多样具身图像域评测面向通用机器人抓取的推理式 affordance 分割。
 - [UAV-ON](https://arxiv.org/abs/2508.00288)：评测空中 agent 的开放世界目标物体导航。核心思想：测试 UAV agent 能否结合视觉感知和空间探索在开放环境中找到目标物体，将具身导航从地面场景扩展到空中视角。
+- [Sari Sandbox](https://arxiv.org/abs/2508.00400)：评什么：提供照片级零售商店仿真环境，评测具身购物 agent。
+- [CookBench: A Long-Horizon Embodied Planning Benchmark for Complex Cooking Scenarios](https://arxiv.org/abs/2508.03232)：评测复杂烹饪场景中的长程具身规划；核心思想是用高保真仿真和细粒度动作突破短程粗粒度任务。
+- [Perceiving and Acting in First-Person: A Dataset and Benchmark for Egocentric Human-Object-Human Interactions](https://arxiv.org/abs/2508.04681)：评测具身与 VLA 智能体。核心思想：围绕论文中的任务、数据或协议（A Dataset and Benchmark for Egocentric Human-Object-Human Interactions）形成可复用比较基准。
+- [DeepPHY](https://arxiv.org/abs/2508.05405)：评什么：模拟环境中 agentic VLM 的物理推理。核心思想：要求 agent 把物理规律理解、行动规划和策略修正连接起来，暴露被动式物理问答不容易发现的失败。
+- [CleanUpBench: Embodied Sweeping and Grasping Benchmark](https://arxiv.org/abs/2508.05543)：评测具身清扫与抓取能力；核心思想是让 agent 在物理或仿真工作区中连接场景感知、清理目标、操作选择和成功检查。
+- [PA-HOI](https://arxiv.org/abs/2508.06205)：提供 physics-aware human-object interaction dataset，用于评估交互理解。
+- [JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics](https://arxiv.org/abs/2508.10287)：它评测机器人、VLA、导航或具身空间能力，适合补充 embodied/VLA Bench。
+- [Generating Dialogues from Egocentric Instructional Videos for Task Assistance: Dataset, Method and Benchmark](https://arxiv.org/abs/2508.11192)：可作为“具身与视觉语言行动模型 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [HeroBench: A Benchmark for Long-Horizon Planning and Structured Reasoning in Virtual Worlds](https://arxiv.org/abs/2508.12782)：补充embodied vla方向的基准或评测套件，核心围绕《HeroBench: A Benchmark for Long-Horizon Planning and Structured Reasoning in Virtual Worlds》。
 - [Kitchen-R](https://arxiv.org/abs/2508.15663)：基于 IsaacSim 的移动操作基准，联合评测任务规划与底层控制策略。核心思想：连接高层指令跟随和底层机器人控制评测，使完整 embodied 系统能够端到端被衡量。
+- [COSMO-Bench: A Benchmark for Collaborative SLAM Optimization](https://arxiv.org/abs/2508.16731)：补充用于具身多智能体建图的协作 SLAM 优化基准。
+- [A Dataset and Benchmark for Robotic Cloth Unfolding Grasp Selection: The ICRA 2024 Cloth Competition](https://arxiv.org/abs/2508.16749)：评测 A Dataset and Benchmark for Robotic Cloth Unfolding Grasp Selection: The ICRA 2024 Cloth Competition，为 Embodied VLA 补充可复用的数据集、基准、指标或评测协议。
+- [U2UData+](https://arxiv.org/abs/2509.00055)：提供可扩展的 UAV swarm 自主飞行数据，用于具身长程任务评测，把空中智能体评测从单机导航扩展到群体飞行。
+- [ProMQA-Assembly: Multimodal Procedural QA Dataset on Assembly](https://arxiv.org/abs/2509.02949)：补充embodied vla方向的基准或评测套件，核心围绕《ProMQA-Assembly: Multimodal Procedural QA Dataset on Assembly》。
+- [PillagerBench: Benchmarking LLM-Based Agents in Competitive Minecraft Team Environments](https://arxiv.org/abs/2509.06235)：评测具身与 VLA 智能体。核心思想：围绕论文中的任务、数据或协议（Benchmarking LLM-Based Agents in Competitive Minecraft Team Environments）形成可复用比较基准。
+- [SocialNav-SUB](https://arxiv.org/abs/2509.08757)：评测 VLM 面向 social robot navigation 的场景理解能力。核心思想是用 VQA 式社交导航场景测试时空关系、人的意图和社交合规导航线索，使具身 agent 在行动前先接受场景理解压力测试。
+- [Is OpenVLA Truly Robust? A Systematic Evaluation of Positional Robustness](https://doi.org/10.18653/v1/2025.ijcnlp-short.1)：作为具身与 VLA 智能体的基准或评测协议候选，聚焦“Is OpenVLA Truly Robust? A Systematic Evaluation of Positional Robustness”。
+- [3D-AEIR:3D Annotation for Embodied Intelligent Robots](https://doi.org/10.1109/iccr67607.2025.11371764)：面向具身与 VLA 智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“3D-AEIR:3D Annotation for Embodied Intelligent Robots”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [RH20T-P: A Primitive-Level Robotic Manipulation Dataset towards Composable Generalization Agents in Real-world Scenarios](https://doi.org/10.1109/iros60139.2025.11246228)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
 - [Follow-Bench](https://arxiv.org/abs/2509.10796)：评测具备社会感知的机器人跟随行人运动规划。核心思想：测试 embodied agent 能否在跟随目标的同时遵守社会导航约束，而不是只优化几何路径效率。
 - [ConEQsA](https://arxiv.org/abs/2509.11663)：评测并发、异步的具身问题调度与回答。核心思想：把 EQA 从单问题扩展到不同到达时间和紧急度的多问题设置，要求 agent 结合共享记忆、优先级、探索与回答时机。
+- [SimCoachCorpus: A naturalistic dataset with language and trajectories for embodied teaching](https://arxiv.org/abs/2509.14548)：提供与专业教练语言、车辆状态、赛道地图和反馈同步的模拟驾驶轨迹。核心思想是研究身体控制、自然语言指导与长期改进交织在一起的具身技能习得。
+- [Embodied Arena: A Comprehensive, Unified, and Evolving Evaluation Platform for Embodied AI](https://arxiv.org/abs/2509.15273)：具身 AI 的统一演化评测平台。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Eva-VLA: Evaluating Vision-Language-Action Models' Robustness Under Real-World Physical Variations](https://arxiv.org/abs/2509.18953)：面向真实物理变化的 VLA 鲁棒性 benchmark。核心思想是测试视觉-语言-动作模型在物体、视角、光照或物理条件变化时是否仍可靠。
+- [TacEva: A Performance Evaluation Framework for Vision‐Based Tactile Sensors](https://arxiv.org/abs/2509.19037)：为视觉触觉传感器定义可复现实验流程和多项性能指标。核心思想是跨传感器结构和应用场景比较触觉感知能力，而不是依赖零散任务结果。
+- [Score the Steps, Not Just the Goal: VLM-Based Subgoal Evaluation for Robotic Manipulation](https://arxiv.org/abs/2509.19524)：评什么：把机器人操作评测从最终成功率细化到子目标步骤，有助于定位长程失败。
+- [PersONAL: Towards a Comprehensive Benchmark for Personalized Embodied Agents](https://arxiv.org/abs/2509.19843)：在照片级真实住宅中评测个性化物体导航与定位，包含用户-物体关联任务。核心思想是用用户专属物体语义测试主动导航和被动定位，而不是只依赖通用场景先验。
+- [Automotive-ENV: Benchmarking Multimodal Agents in Vehicle Interface Systems](https://arxiv.org/abs/2509.21143)：补充embodied vla方向的基准或评测套件，核心围绕《Automotive-ENV: Benchmarking Multimodal Agents in Vehicle Interface Systems》。
+- [RoboView-Bias: Benchmarking Visual Bias in Embodied Agents for Robotic Manipulation](https://arxiv.org/abs/2509.22356)：评测机器人操作场景中 embodied agents 的视觉偏见。
+- [Liaohe-CobotMagic-PnP: An Imitation Learning Dataset of Intelligent Robot for Industrial Applications](https://arxiv.org/abs/2509.23111)：补充具身与 VLA方向的基准、数据集、指标或评测协议。
+- [Space Robotics Bench: Robot Learning Beyond Earth](https://arxiv.org/abs/2509.23328)：可作为具身与 VLA Agent方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [VIVA+: Human-Centered Situational Decision-Making](https://arxiv.org/abs/2509.23698)：面向具身与 VLA 智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“VIVA+: Human-Centered Situational Decision-Making”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [ByteSized32Refactored: Towards an Extensible Interactive Text Games Corpus for LLM World Modeling and Evaluation](https://arxiv.org/abs/2509.23979)：一个用于 LLM 世界建模评估的可扩展交互式文字游戏语料；核心思路是把游戏重构为可复用模块，用于评估 Agent 对状态、动作和环境动态的掌握。
+- [AIRoA MoMa Dataset: A Large-Scale Hierarchical Dataset for Mobile Manipulation](https://arxiv.org/abs/2509.25032)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
+- [Point-It-Out](https://arxiv.org/abs/2509.25794)：评什么：用多阶段视觉指向任务评测具身推理中的空间 grounding。
+- [OceanGym: A Benchmark Environment for Underwater Embodied Agents](https://arxiv.org/abs/2509.26536)：面向水下具身 agent 的 benchmark environment。核心思想是在低能见度、动态水流和通信受限等水下约束中评估感知与决策。
 - [MoMa-Kitchen](https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_MoMa-Kitchen_A_100K_Benchmark_for_Affordance-Grounded_Last-Mile_Navigation_in_Mobile_ICCV_2025_paper.html)：评测移动操作中的 affordance-grounded 最后一段导航。核心思想：不仅看机器人是否接近目标，还看停止位置是否让后续操作可行。
-- [VideoGameBench](https://vgbench.com/#leaderboard)：评测视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏世界中，用任务完成与轨迹质量评估 agent 是否能把视觉空间关系转成动作。
+- [GreenhouseSplat: A Dataset of Photorealistic Greenhouse Simulations for Mobile Robotics](https://arxiv.org/abs/2510.01848)：评测 GreenhouseSplat: A Dataset of Photorealistic Greenhouse Simulations for Mobile Robotics，为 Embodied VLA 补充可复用的数据集、基准、指标或评测协议。
+- [LIBERO-PRO: Towards Robust and Fair Evaluation of Vision-Language-Action Models Beyond Memorization](https://arxiv.org/abs/2510.03827)：在 LIBERO 场景中评估 VLA 模型超越记忆的泛化能力。
+- [BuilderBench](https://arxiv.org/abs/2510.06288)：评什么：开放式具身探索与结构搭建。核心思想：把 agent 放进硬件加速的积木模拟器中，通过交互学习物理和规划规律，再对未见目标结构执行搭建任务并接受环境反馈。
+- [FastUMI-100K: Advancing Data-driven Robotic Manipulation with a Large-scale UMI-style Dataset](https://arxiv.org/abs/2510.08022)：提供具身机器人或 VLA 数据集、基准或评测平台。
+- [NavSpace](https://arxiv.org/abs/2510.08173)：评测 navigation agents 如何遵循空间智能指令；核心思想是用六类任务和 trajectory-instruction 对诊断导航中的空间感知与推理。
+- [BEAR: Benchmarking and Enhancing Multimodal Language Models for Atomic Embodied Capabilities](https://arxiv.org/abs/2510.08759)：评测多模态语言模型的原子具身能力，拆分感知、grounding 与动作相关推理等基础技能。
+- [Bridging Research and Practice in Simulation-based Testing of Industrial Robot Navigation Systems](https://arxiv.org/abs/2510.09396)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [PhysToolBench: Benchmarking Physical Tool Understanding for MLLMs](https://arxiv.org/abs/2510.09507)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
+- [EmboMatrix: A Scalable Training-Ground for Embodied Decision-Making](https://arxiv.org/abs/2510.12072)：可作为具身与 VLA agent的Bench候选；核心关注“A Scalable Training-Ground for Embodied Decision-Making”。
+- [RoboHiMan: A Hierarchical Evaluation Paradigm for Compositional Generalization in Long-Horizon Manipulation](https://arxiv.org/abs/2510.13149)：评什么：用分层评测刻画长程机器人操作中的组合泛化能力。
+- [LIBERO-Plus: In-depth Robustness Analysis of Vision-Language-Action Models](https://arxiv.org/abs/2510.13626)：扩展 LIBERO 风格的 VLA 鲁棒性评测。核心思想：检查视觉-语言-动作策略在扰动和泛化设置下是否仍能稳定执行。
+- [ChangingGrounding: 3D Visual Grounding in Changing Scenes](https://arxiv.org/abs/2510.14965)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Compositional Machines](https://arxiv.org/abs/2510.14980)：评估并研究组合式物理机器的 agentic design，适合把规划转为结构化物理 artifact 的具身设计任务。
+- [Aria Gen 2 Pilot Dataset](https://arxiv.org/abs/2510.16134)：构建来自 Aria Gen 2 眼镜的第一视角多模态数据，覆盖清洁、烹饪、进食、游戏和户外步行。核心思想是把原始可穿戴传感器流与机器感知输出配对，用于研究佩戴者、环境和交互理解。
+- [Embody 3D: A Large-scale Multimodal Motion and Behavior Dataset](https://arxiv.org/abs/2510.16258)：发布大规模多模态 3D 动作与行为数据集，包含身体和手部追踪、文本标注以及个体和多人交互场景中的参与者音频。
+- [DIV-Nav: Open-Vocabulary Spatial Relationships for Multi-Object Navigation](https://arxiv.org/abs/2510.16518)：评测开放词表空间关系下的多目标导航。核心思想是让 agent 不只寻找单个物体，还要根据语言中的对象间空间关系组织导航决策。
+- [Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models as Embodied Brain](https://arxiv.org/abs/2510.17801)：Robobench 评测 MLLM 作为 embodied brain 的能力，匹配 embodied/VLA benchmark。
+- [RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies](https://arxiv.org/abs/2510.17950)：面向 embodied policy 的大规模真实机器人评测。核心思想是在实体机器人任务上比较策略，而不是只依赖仿真或静态感知测试。
+- [Benchmarking World-Model Learning with Environment-Level Queries](https://arxiv.org/abs/2510.19788)：通过环境级查询评测世界模型学习；核心思想是询问灵活 agent 规划所需的潜在环境动态和状态。
 - [SAGE-Bench](https://arxiv.org/abs/2510.21307)：在语义化且物理可执行的 3D Gaussian 环境中评测视觉语言导航。核心思想是为 3DGS 场景加入对象语义和碰撞感知执行接口，使导航智能体在逼真且可行动的空间中接受测试。
+- [J-ORA: A Framework and Multimodal Dataset for Japanese Object Identification, Reference, Action Prediction in Robot Perception](https://arxiv.org/abs/2510.21761)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的基准、数据集、评测协议或测试环境。
+- [Butter-Bench: Evaluating LLM Controlled Robots for Practical Intelligence](https://arxiv.org/abs/2510.21860)：评测 LLM-controlled robots 的 practical intelligence；核心思想是检查语言驱动机器人能否把指令、感知和规划转化为实际行动。
+- [RobotArena ∞: Scalable Robot Benchmarking via Real-to-Sim Translation](https://arxiv.org/abs/2510.23571)：通过 real-to-sim translation 扩展机器人 benchmark；核心思想是把真实场景转成可控仿真任务来扩大机器人评测覆盖。
+- [TeleEgo: Benchmarking Egocentric AI Assistants in the Wild](https://arxiv.org/abs/2510.23981)：在长时流式视频、音频、文本和演化记忆上评测第一视角 AI assistant。
+- [A Humanoid Visual-Tactile-Action Dataset for Contact-Rich Manipulation](https://arxiv.org/abs/2510.25725)：补充面向具身智能与视觉语言行动系统的评测、数据集或度量信号。
+- [NaviTrace: Evaluating Embodied Navigation of Vision-Language Models](https://arxiv.org/abs/2510.26909)：评测 vision-language models 的具身导航能力；核心思想是让模型为不同 embodiment 类型输出导航轨迹，并用语义感知指标评分。
 - [CityEQA](https://aclanthology.org/2025.emnlp-main.630/)：评测城市尺度空间中的 embodied question answering。核心思想：把语言 agent 放入层级城市环境，回答问题需要导航、空间推理和证据收集，而不是静态场景识别。
+- [Real Garment Benchmark (RGBench): A Comprehensive Benchmark for Robotic Garment Manipulation featuring a High-Fidelity Scalable Simulator](https://arxiv.org/abs/2511.06434)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [Task-Aware Semantic Map++: Cost-Efficient Task Assignment With Advanced Benchmark](https://doi.org/10.1109/lra.2026.3656794)：用明确任务、协议或数据集评测embodied and vision-language-action agents。
+- [Testing and Evaluation of Underwater Vehicle Using Hardware-in-the-Loop Simulation with HoloOcean](https://arxiv.org/abs/2511.07687)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [ScaleADFG: Affordance-Based Dexterous Functional Grasping via Scalable Dataset](https://arxiv.org/abs/2511.09602)：评测，主要面向 Embodied and VLA Agents。
+- [Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](https://arxiv.org/abs/2511.10008)：面向物理传感器攻击下 VLA 模型鲁棒性的 benchmark 与 framework；核心思想是在 Real-Sim-Real loop 中模拟并测试摄像头和麦克风攻击向量。
+- [AirCopBench: A Benchmark for Multi-drone Collaborative Embodied Perception and Reasoning](https://arxiv.org/abs/2511.11025)：评测多无人机协作具身感知与推理；核心思想是在退化感知、第一视角、多 agent 航拍观测下测试 MLLM。
 - [UAVBench](https://arxiv.org/abs/2511.11252)：用 LLM 生成的飞行场景评测自主和智能体式 UAV 系统。核心思路是通过场景生成扩展空中智能体任务，在多样飞行目标下测试感知、规划和控制。
-- [RoboAfford](https://doi.org/10.1145/3746027.3758209)：评测机器人操作中的物体与空间 affordance learning。核心思想：把可行动 affordance 作为目标，检验具身模型能否从视觉空间语境中推断物体如何被使用和操作。
+- [AttackVLA: Benchmarking Adversarial and Backdoor Attacks on Vision-Language-Action Models](https://arxiv.org/abs/2511.12149)：AttackVLA benchmark 视觉语言动作模型面对对抗和后门攻击时的脆弱性。
 - [RoboAfford++](https://arxiv.org/abs/2511.12436)：评测机器人操作与导航中的多模态 affordance learning。核心思想：用生成式 AI 增强数据扩展 affordance 监督，使 agent 能连接物体、空间语境、可行动作以及导航/操作决策。
+- [BridgeEQA](https://arxiv.org/abs/2511.12676)：面向虚拟桥梁巡检的 embodied QA benchmark；核心思想是测试真实基础设施巡检场景中的 episodic memory、多尺度推理与长距离空间理解。
+- [Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](https://arxiv.org/abs/2511.13269)：无人机导航中的空间智能评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [FreeAskWorld: An Interactive and Closed-Loop Simulator for Human-Centric Embodied AI](https://arxiv.org/abs/2511.13524)：提供面向人本具身智能的交互式闭环模拟器，可作为具身智能评测基础设施候选。
+- [RoboTidy : A 3D Gaussian Splatting Household Tidying Benchmark for Embodied Navigation and Action](https://arxiv.org/abs/2511.14161)：用 3D Gaussian Splatting 家居整理任务评测 embodied navigation and action。
+- [IndustryNav](https://arxiv.org/abs/2511.17384)：在动态工业导航场景中评测 embodied agent，使用 Unity 仓库环境、PointGoal 导航流程，以及碰撞率、警告率等面向安全的指标。
+- [SWITCH](https://arxiv.org/abs/2511.17649)：评估智能体与开关、家电面板等 tangible control interfaces 的长程实体交互。核心思想是基于第一视角 RGB 视频测试任务感知 VQA、UI grounding、动作生成、状态转移预测和结果验证。
+- [Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](https://arxiv.org/abs/2511.19430)：评测具身智能体在带运筹优化意识的 3D 任务调度中的能力。核心思路是要求智能体把家务任务落到空间环境中，同时利用可并行子任务来最小化总完成时间。
+- [ADAMSim: PyBullet-Based Simulation Environment for Research on Domestic Mobile Manipulator Robots](https://doi.org/10.17979/ja-cea.2025.46.12217)：补充家用移动机械臂研究的 PyBullet 仿真环境。
+- [SynthConstruct: Large-Scale 3D Simulation Dataset for Embodied AI in Construction Sites](https://doi.org/10.1109/icir68135.2025.11361587)：补充面向施工环境具身 AI 的大规模三维仿真数据集。
+- [CostNav: A Navigation Benchmark for Real-World Economic-Cost Evaluation of Physical AI Agents](https://arxiv.org/abs/2511.20216)：提供面向具身、机器人、导航、操作或视觉-语言-动作能力的基准、数据集、评分规程或评测协议。
+- [ArtiBench and ArtiBrain: Benchmarking Generalizable Vision-Language Articulated Object Manipulation](https://arxiv.org/abs/2511.20330)：面向可泛化 vision-language articulated-object manipulation 的 benchmark 与系统。核心思想是评估 VLA agent 能否处理带关节结构物体的操作，而不只是静态物体识别。
+- [Thinking in 360°: Humanoid Visual Search in the Wild](https://arxiv.org/abs/2511.20351)：Thinking in 360° 评测交互式 3D 环境中的具身类人视觉搜索。
+- [Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](https://arxiv.org/abs/2511.20620)：为开放世界具身 AI 提供几何 grounded 仿真环境；核心思想：用照片级渲染和城市环境交互支持可复现闭环评测。
+- [ENACT: Evaluating Embodied Cognition with World Modeling of Egocentric Interaction](https://arxiv.org/abs/2511.20937)：提供具身机器人或 VLA 数据集、基准或评测平台。
+- [Tool-RoCo: An Agent-as-Tool Self-organization Large Language Model Benchmark in Multi-robot Cooperation](https://arxiv.org/abs/2511.21510)：评测多机器人协作中的 agent-as-tool 自组织。核心思想：把 agent 本身视为可调用工具，并在具身多机器人任务中测试协作。
+- [MILE: A Mechanically Isomorphic Exoskeleton Data Collection System with Fingertip Visuotactile Sensing for Dexterous Manipulation](https://arxiv.org/abs/2512.00324)：评测embodied agents, robotics, or vision-language-action capability，补充该能力方向的基准或挑战设置。
+- [REM: Evaluating LLM Embodied Spatial Reasoning through Multi-Frame Trajectories](https://arxiv.org/abs/2512.00736)：它评测机器人、VLA、导航或具身空间能力，适合补充 embodied/VLA Bench。
+- [SimWorld: An Open-ended Realistic Simulator for Autonomous Agents in Physical and Social Worlds](https://arxiv.org/abs/2512.01078)：评什么：提供面向物理与社会场景的开放式仿真环境，可作为具身 agent 评测入口。
+- [RoboLoc: A Benchmark Dataset for Point Place Recognition and Localization in Indoor-Outdoor Integrated Environments](https://arxiv.org/abs/2512.01194)：为具身与 VLA 系统补充基准、数据集、指标或评测协议。
+- [Robocskbench: Benchmarking Embodied Commonsense Capabilities of Large Language Models](https://doi.org/10.1109/ur65550.2025.11078036)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [ToolNavigator: Dataset Generation for Small Tools Handling and Vision-Language Navigation in Construction Sites via Simulation for Robots](https://doi.org/10.1109/case58245.2025.11163988)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [A multi-user multi-robot multi-goal multi-device human-robot interaction manipulation benchmark](https://doi.org/10.3389/frobt.2025.1528754)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [RoPESim: A Framework for Robot Manipulation Policy Evaluation via Simulation](https://doi.org/10.1109/case58245.2025.11163845)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [UBG: An Unreal BattleGround Benchmark With Object-Aware Hierarchical Proximal Policy Optimization](https://doi.org/10.1109/tnnls.2025.3567001)：为具身与 VLA 系统补充基准、数据集、指标或评测协议。
+- [Region-Aware 6D Grasping for Industrial Bin-Picking: A Sim2Real Label Self-Generation and Hybrid Evaluation Framework](https://doi.org/10.1109/iros60139.2025.11247129)：为具身与 VLA 系统补充基准、数据集、指标或评测协议。
+- [VISTA-SLAM: An Edge-Ready Benchmark Vision for Energy, Bandwidth, and Instance-Persistent Multi-Robot Mapping](https://doi.org/10.1109/ictc66702.2025.11388232)：为具身与 VLA 系统补充基准、数据集、指标或评测协议。
+- [ToG-Bench: Task-Oriented Spatio-Temporal Grounding in Egocentric Videos](https://arxiv.org/abs/2512.03666)：评什么：第一视角视频中的任务导向时空定位。核心思想是从描述性物体定位推进到具身 agent 完成目标所需的相关对象 grounding。
+- [CRAFT-E](https://arxiv.org/abs/2512.04231)：神经符号式 embodied affordance-grounding 框架。核心思想是组合 verb-property-object 知识图谱、视觉语言对齐和抓取可行性推理，使机器人能选择既满足动作查询又能被实际抓取的物体，并提供可解释 grounding path 与 benchmark 标注。
+- [StreamEQA: Towards Streaming Video Understanding for Embodied Scenarios](https://arxiv.org/abs/2512.04451)：具身场景中的流式视频理解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [AbstainEQA](https://arxiv.org/abs/2512.04597)：评测 embodied QA 中的 abstention 能力，将 OpenEQA 问题改写为指代不明、错误预设、依赖偏好或信息不可得等情形，要求 agent 在证据不足时表达不知道。
+- [Hoi!](https://arxiv.org/abs/2512.04884)：提供带力觉 grounding 和跨视角信息的多模态铰接物体操作数据集，为具身操作评测补充触觉和视角一致性维度。
+- [OpenCDA-MARL: A Unified Benchmarking Framework for Cooperative Autonomous Intersection Management With Multi-Agent Reinforcement Learning](https://doi.org/10.1109/lra.2026.3664656)：补充面向具身智能与 VLA 能力的可复用基准、数据集、测试平台或评测协议。
+- [Benchmarking the Generality of Vision-Language-Action Models](https://arxiv.org/abs/2512.11315)：评测vision-language-action 模型跨域泛化能力；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [INDOOR-LiDAR](https://arxiv.org/abs/2512.12377)：提供 robot-centric 360-degree 室内 LiDAR perception 数据集，连接仿真与真实环境。
+- [VLA Evaluation Harness Leaderboard](https://allenai.github.io/vla-evaluation-harness/leaderboard/)（[开源代码](https://github.com/allenai/vla-evaluation-harness)）：聚合 LIBERO、CALVIN、SimplerEnv、RoboCasa、VLABench、RoboTwin、RLBench、BEHAVIOR-1K 等 policy stacks 的标准化 VLA 评测。核心思想：用共享公开结果面，把 model servers 与 Dockerized environments 放到可比较协议中。
+- [Ego-EXTRA: video-language Egocentric Dataset for EXpert-TRAinee assistance](https://arxiv.org/abs/2512.13238)：提供专家-学员协作场景的第一视角视频语言数据，评测具身助手能否把程序性指导落到第一视角观察和对话中。
+- [City Navigation in the Wild: Exploring Emergent Navigation from Web-Scale Knowledge in MLLMs](https://arxiv.org/abs/2512.15933)：它评测机器人、VLA、导航或具身空间能力，适合补充 embodied/VLA Bench。
+- [CitySeeker: How Do VLMS Explore Embodied Urban Navigation With Implicit Human Needs?](https://arxiv.org/abs/2512.16755)：面向隐式人类需求的 embodied urban navigation benchmark；核心思想是测试 VLM agent 能否把“口渴”等需求转化为合适的导航决策。
 - [Embodied4C](https://arxiv.org/abs/2512.18028)：评测具身视觉语言导航中真正影响导航成功的关键能力。核心思路是在最终成功率之外，诊断导航代理在具身环境中的感知定位、上下文利用、常识判断和控制相关推理。
 - [VLNVerse](https://arxiv.org/abs/2512.19021)：评测多样化具身仿真环境中的视觉语言导航；核心思想是结合真实感场景、具身导航任务与标准化评测，让 agent 在感知 grounding、空间推理和动作执行上接受测试，而不只是回答静态导航问题。
+- [REALM: A Real-to-Sim Validated Benchmark for Generalization in Robotic Manipulation](https://arxiv.org/abs/2512.19562)：用 real-to-sim 校验评测机器人操作泛化。核心思想：测试操作策略能否在经真实校验的仿真与真实条件间迁移。
+- [VLA-Arena: An Open-Source Framework for Benchmarking Vision-Language-Action Models](https://arxiv.org/abs/2512.22539)：VLA-Arena 是开放的 Vision-Language-Action model benchmark 框架，正对 embodied/VLA 类目。
+- [MUSON: A Reasoning-oriented Multimodal Dataset for Socially Compliant Navigation in Urban Environments](https://arxiv.org/abs/2512.22867)：评测具身智能体或机器人策略；核心思想是在交互场景中度量操作、导航、规划或动作 grounding。
+- [RobAVA: A Large-Scale Dataset and Baseline Towards Video Based Robotic Arm Action Understanding](https://doi.org/10.1109/iccv51701.2025.01298)：《RobAVA: A Large-Scale Dataset and Baseline Towards Video Based Robotic Arm Action Understanding》为Embodied VLA补充基准、数据集、指标或评测协议。
+- [An Adaptive Human–Robot Interaction Framework Using Real-Time Emotion Recognition and Context-Aware Task Planning](https://doi.org/10.1109/access.2025.3603738)：评测 Emotion-Context Reinforced Planner，把面部与语音情绪估计、上下文编码和 DDQN 任务规划融合到低功耗机器人硬件上。
+- [LLM-MTMP: A large language model-based multi-agent task and motion planning framework for power inspection robots](https://doi.org/10.1016/j.jii.2025.101014)：提供用于衡量具身与 VLA 智能体能力的数据集、基准、指标或评测协议。
+- [BiguaSim: A Hybrid Multi-Domain Simulator for Robotics High-Fidelity Simulation and Synthetic Dataset Generation](https://doi.org/10.1109/icar65334.2025.11338720)：围绕 Embodied/VLA 能力补充《BiguaSim: A Hybrid Multi-Domain Simulator for Robotics High-Fidelity Simulation and Synthetic Dataset Generation》，作为 Bench 条目候选。
+- [BookBot: A Robotic Manipulation Benchmark for Voice-Driven Book Recognition and Grasping in Cluttered Environments](https://doi.org/10.1109/iros60139.2025.11246718)：评测 BookBot: A Robotic Manipulation Benchmark for Voice-Driven Book Recognition and Grasping in Cluttered Environments，为 Embodied VLA 补充可复用的数据集、基准、指标或评测协议。
+- [Text to Trajectory: Enhancing and Evaluating LLMs for Embodied Task Planning](https://doi.org/10.1109/icme59968.2025.11208991)：评测 Text to Trajectory: Enhancing and Evaluating LLMs for Embodied Task Planning，为 Embodied VLA 补充可复用的数据集、基准、指标或评测协议。
+- [VLN-MME: Diagnosing MLLMs as Language-guided Visual Navigation agents](https://arxiv.org/abs/2512.24851)：VLN-MME 诊断 MLLM 作为语言引导视觉导航 agent 的能力，适合 Embodied/VLA Bench。
 - [α3-Bench](https://arxiv.org/abs/2601.03281)：评估 6G 网络环境中的 LLM-based UAV agents。核心思想：联合衡量安全性、鲁棒性与效率，使空中智能体评价覆盖通信约束和运行可靠性，而不只看导航成功率。
 - [AirNav](https://arxiv.org/abs/2601.03707)：用包含自然多样指令的大规模数据集评估 UAV vision-language navigation。核心思想：测试空中智能体能否把语言目标落到视觉观测中，并在真实指令变化下完成导航。
-- [P2Maze](https://doi.org/10.1109/SoutheastCon63549.2026.11476499)：在配对仿真与真实协议下评测机器人迷宫导航。核心思想：用匹配的迷宫任务衡量具身导航策略的零样本迁移和少样本适应。
-- [Autonomous UAV Visual Object Search in City Space](https://doi.org/10.1609/aaai.v40i22.38898)：评测城市尺度环境中的 UAV 视觉目标搜索。核心思路是把基准和智能体式搜索方法结合起来，衡量空中智能体的开放视觉找目标、探索和导航决策能力。
+- [Human-in-the-Loop Testing of AI Agents for Air Traffic Control with a Regulated Assessment Framework](https://arxiv.org/abs/2601.04288)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Before We Trust Them](https://arxiv.org/abs/2601.05529)：评估 foundation model 在导航任务中的决策失败；核心思想是诊断高成功率是否掩盖了模型在不完整空间信息和安全相关信息下的弱点。
+- [UEOF: A Benchmark Dataset for Underwater Event-Based Optical Flow](https://arxiv.org/abs/2601.10054)：评测水下事件相机光流，补充水下机器人具身感知基准。
+- [SGFAM: Semantic and Geometric Features Aggregation for Dense Shape Matching in Generalizable Robotic Manipulation](https://doi.org/10.1109/lra.2026.3685940)：评测面向新物体迁移工具-表面操作技能的零样本 dense shape correspondence，把 foundation model 语义特征、几何编码器和 functional maps 结合起来。
+- [BotDirector: Robot Storytelling Across the Symmetrical Reality with Multi-Modal Interactions](https://doi.org/10.1109/vrw70859.2026.00227)：围绕 Embodied/VLA 能力补充《BotDirector: Robot Storytelling Across the Symmetrical Reality with Multi-Modal Interactions》，作为 Bench 条目候选。
+- [Automatic Generation of Synthetic Data and Object Detection Datasets in Virtual Environments Based on Tomato-Harvesting Robot Vision](https://doi.org/10.1016/j.atech.2026.101947)：为番茄采摘机器人视觉自动生成虚拟环境合成图像和目标检测数据集。核心思想是用可控仿真缓解农业机器人视觉训练数据不足，并支持作物检测流程评测。
 - [LMEE-Bench](https://arxiv.org/abs/2601.10744)：评测具身探索中的长期情景记忆。核心思想：结合多目标导航和基于记忆的问答，使 agent 同时在探索过程和后续经验利用上被评分。
+- [The Great March 100: 100 Detail-oriented Tasks for Evaluating Embodied AI Agents](https://arxiv.org/abs/2601.11421)：作为具身与 VLA 智能体的基准或评测协议候选，聚焦“100 Detail-oriented Tasks for Evaluating Embodied AI Agents”。
+- [KAGE-Bench: Fast Known-Axis Visual Generalization Evaluation for Reinforcement Learning](https://arxiv.org/abs/2601.14232)：在受控视觉分布偏移下评测像素级强化学习智能体，用 KAGE-Env 改变已知视觉轴，同时保持动力学和奖励不变。
 - [VisGym](https://arxiv.org/abs/2601.16973)：在 17 个多步视觉交互环境中评测多模态 agent。核心思想：通过可调难度、时程、反馈与观测形式，测试谜题、真实图像任务、导航和操作中的感知、记忆、规划与行动。
+- [Trustworthy Evaluation of Robotic Manipulation: A New Benchmark and AutoEval Methods](https://arxiv.org/abs/2601.18723)：提出机器人操作 benchmark 和自动评估方法，直接对应 Bench 小节。
+- [The S3LI Vulcano Dataset: A Dataset for Multi-Modal SLAM in Unstructured Planetary Environments](https://arxiv.org/abs/2601.19557)：提供火山地形中的视觉与 LiDAR 序列，用于 SLAM 和地点识别评测。核心思想是用类行星非结构化纹理、岩石、植被、水体和工具链支持的位姿准备压力测试定位建图算法。
+- [ProSkill: Segment-Level Skill Assessment in Procedural Videos](https://arxiv.org/abs/2601.20661)：评测程序视频中的片段级技能质量，并用 Swiss-tournament 协议生成绝对与成对标注。核心思想是细粒度评估制造和日常流程任务的执行质量，偏向具身辅助的邻近评测。
 - [EmboCoach-Bench](https://arxiv.org/abs/2601.21570)：评测 AI agent 开发具身机器人的能力。核心思想：把机器人开发工作流转化为带明确协议和评分方式的可比较任务。
+- [Towards Exploratory and Focused Manipulation with Bimanual Active Perception: A New Problem, Benchmark and Strategy](https://arxiv.org/abs/2602.01939)：补充面向具身、机器人、VLA 或动作反馈能力的基准、数据集、指标或评测协议。
+- [LangMap: A Hierarchical Benchmark for Open-Vocabulary Goal Navigation](https://arxiv.org/abs/2602.02220)：提供人工验证的 3D 室内导航基准，目标覆盖场景、房间、区域和实例层级。核心思想是用对比式区域与实例描述评测语言条件导航，避免只依赖噪声 VLM 生成目标。
+- [MistSense: Versatile Online Detection of Procedural and Execution Mistakes](https://doi.org/10.1109/iccv51701.2025.01348)：评测embodied agents, robotics, or vision-language-action capability，补充该能力方向的基准或挑战设置。
+- [Tactile Contact Patterns for Robotic Grasping: A Dataset of Real and Simulated Data](https://doi.org/10.1109/iccrt63554.2025.11072742)：补充具身与 VLA方向的基准、数据集、指标或评测协议。
+- [ProAct](https://arxiv.org/abs/2602.03430)：用 multimodal framework 评测 structure-aware proactive response。
+- [CRoSS: A Continual Robotic Simulation Suite for Scalable Reinforcement Learning with High Task Diversity and Realistic Physics Simulation](https://arxiv.org/abs/2602.04868)：提供持续机器人仿真套件，覆盖高多样性任务与较真实物理，用于具身 agent 的可扩展强化学习评测。
+- [MobileManiBench](https://arxiv.org/abs/2602.05233)：评测移动操作模型的验证能力。核心思想：简化并标准化移动场景中具身操作策略的检查流程。
+- [Automatic Cognitive Task Generation for In-Situ Evaluation of Embodied Agents](https://arxiv.org/abs/2602.05249)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的基准、数据集、评测协议或测试环境。
+- [BusyBox](https://arxiv.org/abs/2602.05441)：评测 affordance generalization。核心思想是测试具身 agent 能否推断物体的可操作属性，并把这些 affordance 迁移到陌生物理设置。
+- [Action Hallucination in Generative VLA Models](https://arxiv.org/abs/2602.06339)：评什么：生成式 VLA 模型中的动作幻觉。核心思想是把不安全或不可执行动作生成视为具身 agent 的可靠性失败。
+- [User-Centric Object Navigation: A Benchmark with Integrated User Habits for Personalized Embodied Object Search](https://arxiv.org/abs/2602.06459)：提出 UcON，用用户习惯条件化家庭物体导航，覆盖 489 类物体与约 2.26 万条用户习惯。核心思想是测试导航 agent 能否利用个人摆放习惯，而不是只依赖通用场景先验。
+- [LIBERO-X](https://arxiv.org/abs/2602.06556)：评什么：面向 VLA 的鲁棒性检验，扩展 LIBERO 风格操作任务。
+- [Theory of Space](https://arxiv.org/abs/2602.07055)：评测 foundation model 是否能通过主动探索构建空间信念。核心思想是在部分可观测环境中让 agent 选择行动来获取信息，而不是只基于被动观察做空间感知。
+- [stable-worldmodel-v1](https://arxiv.org/abs/2602.08968)：评什么：提供可复现 world model 研究与评测入口，服务具身 agent。
+- [WorldArena](https://arxiv.org/abs/2602.08971)：同时评测 embodied world model 的感知质量和功能效用。核心思想：检验 action-conditioned prediction 是否真正帮助下游决策，而不只看视频逼真度。
+- [UniVTAC](https://arxiv.org/abs/2602.10093)：评什么：面向视觉-触觉操作的数据生成、学习和 benchmark 平台。
+- [Assessing Vision-Language Models for Perception in Autonomous Underwater Robotic Software](https://arxiv.org/abs/2602.10655)：评测自主水下机器人软件中的 VLM 感知能力。
+- [RADAR: Benchmarking Vision-Language-Action Generalization via Real-World Dynamics, Spatial-Physical Intelligence, and Autonomous Evaluation](https://arxiv.org/abs/2602.10980)：RADAR benchmark VLA 在真实世界动态、空间物理智能和自主评估上的泛化能力。
+- [Affordance-Graphed Task Worlds](https://arxiv.org/abs/2602.12065)：用明确任务、协议或数据集评测embodied and vision-language-action agents。
+- [CapNav](https://arxiv.org/abs/2602.18424)：基准化 capability-conditioned 室内导航；核心思想是测试 VLM 是否会根据主体具身能力调整路径选择，例如能否上下楼梯。
+- [MobilityBench](https://arxiv.org/abs/2602.22638)：评估真实出行场景中的路线规划 agent；核心思想是把路线规划从静态地图问答推进到有现实约束的可执行 agent 决策。
+- [Practical VLA Benchmark](https://arxiv.org/abs/2602.22663): 面向实用 VLA 模型的综合 benchmark。核心思想是在真实具身约束下测试 VLA 模型，并提供改进 baseline。
+- [WaterVideoQA: ASV-Centric Perception and Rule-Compliant Reasoning via Multi-Modal Agents](https://arxiv.org/abs/2602.22923)：面向具身与 VLA 智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“WaterVideoQA: ASV-Centric Perception and Rule-Compliant Reasoning via Multi-Modal Agents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AoE: Always-on Egocentric Human Video Collection for Embodied AI](https://arxiv.org/abs/2602.23893)：提出面向 embodied AI 的 always-on 第一视角人类视频采集，强调连续真实世界行为数据。
+- [Robust Skills, Brittle Grounding](https://arxiv.org/abs/2602.24143)：通过多物体抓取诊断 VLA policy 的受限泛化。核心思想：区分已学到的操作套路与脆弱的视觉语言 grounding。
+- [EmCoop: A Framework and Benchmark for Embodied Cooperation Among LLM Agents](https://arxiv.org/abs/2603.00349)：评什么：评测 LLM agents 的具身协作；核心思想是在物理和交互约束下评估多 agent 协作。
+- [LangGap](https://arxiv.org/abs/2603.00592)：诊断并缩小 VLA 模型中的语言差距。核心思想：衡量语言变化如何影响 grounded action 表现，并定位需要适配的环节。
+- [RVN-Bench](https://arxiv.org/abs/2603.03953)：用明确任务、协议或数据集评测embodied and vision-language-action agents。
+- [RoboLight: A Dataset with Linearly Composable Illumination for Robotic Manipulation](https://arxiv.org/abs/2603.04249)：提供可复用评测信号，服务于具身与 VLA 智能体，可补充导航、交互平台和操作条件下的具身评测。
+- [RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](https://arxiv.org/abs/2603.04356)：面向通用家庭机器人的大规模仿真基准。核心思想是在 365 个任务和多样厨房环境中评估移动操作能力。
+- [ManipulationNet](https://arxiv.org/abs/2603.04363)：面向真实机器人操作的 benchmark 基础设施。核心思想是结合物理技能挑战与具身多模态推理，让 VLA agent 在真实操作而非静态感知上受测。
+- [ObjChangeVR: Object State Change Reasoning from Continuous Egocentric Views in VR Environments](https://arxiv.org/abs/2603.06648)：评测连续第一视角 VR 视图中的物体状态变化问答，包含无直接佩戴者交互的背景变化。核心思想是要求 temporal retrieval 与跨视角推理处理细微或缺少运动线索的状态变化。
+- [Listening with the Eyes](https://arxiv.org/abs/2603.07966)：评什么：跨空间和时间的 egocentric co-speech grounding。核心思想：要求 agent 将语音与短暂指向动作对齐，避免具身协作任务被纯语言捷径解决。
+- [STONE Dataset: A Scalable Multi-Modal Surround-View 3D Traversability Dataset for Off-Road Robot Navigation](https://arxiv.org/abs/2603.09175)：提供越野 3D 可通行地图，包含环视 RGB、128 线 LiDAR 和 4D 成像雷达，覆盖昼夜草地、农田、工地和湖畔场景。核心思想是评测粗糙地形与多传感条件下的机器人导航感知。
+- [Beyond Short-Horizon: VQ-Memory for Robust Long-Horizon Manipulation in Non-Markovian Simulation Benchmarks](https://arxiv.org/abs/2603.09513)：面向非马尔可夫仿真 benchmark 中的长程操作，增加强调记忆的具身评测轴。
+- [Learning to Wander: Improving the Global Image Geolocation Ability of LMMs via Actionable Reasoning](https://arxiv.org/abs/2603.10463)：在可导航全景图中评测可行动的全球图像地理定位能力，要求 LMM 在推断位置的同时选择移动和旋转动作。
+- [BinWalker: Development and Field Evaluation of a Quadruped Manipulator Platform for Sustainable Litter Collection](https://arxiv.org/abs/2603.10529)：报告用于不平整户外环境自主捡拾垃圾的四足机械臂平台现场评估。核心思想是测试导航、检测、抓取和真实地形约束交织的清洁移动操作任务。
+- [STADA: Specification-based Testing for Autonomous Driving Agents](https://arxiv.org/abs/2603.10940)：用形式化规范测试自动驾驶智能体，为具身决策增加面向安全性的评测基准。
+- [LABSHIELD](https://arxiv.org/abs/2603.11987)：面向科学实验室安全关键推理和规划的多模态 benchmark；核心思想是评测 agent 是否理解实验室风险并规划安全步骤。
+- [EgoIntent: An Egocentric Step-level Benchmark for Understanding What, Why, and Next](https://arxiv.org/abs/2603.12147)：评测第一视角视频中的 step-level 理解，包括正在发生什么、为什么发生以及下一步会发生什么。
+- [Altered Thoughts, Altered Actions](https://arxiv.org/abs/2603.12717)：探测 VLA 机器人操作中的 chain-of-thought 脆弱性；核心思想是检查推理轨迹扰动是否会导致不安全具身动作。
+- [ESPIRE](https://arxiv.org/abs/2603.13033)：在模拟物理世界中 grounding VLM 问题，用于诊断具身空间推理。
+- [Evaluating VLMs'Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences](https://arxiv.org/abs/2603.13100)：提供可复用评测信号，服务于具身与 VLA 智能体，可补充导航、交互平台和操作条件下的具身评测。
 - [Beyond Binary Success](https://arxiv.org/abs/2603.13616)：评什么：硬件 rollout 受限条件下样本高效、统计严谨的机器人策略比较。核心思想：用覆盖二元、部分得分和连续机器人指标的 sequential anytime-valid 检验，替代脆弱的二元成功率平均。
-- [PokeAgent Challenge](https://arxiv.org/abs/2603.15563)：在 Pokemon 对战和 RPG 速通环境中评测具身决策。核心思想：在可执行游戏环境里结合部分可观测、竞争式多 agent 推理、长程规划和标准化 baseline。
+- [RealVLG-R1](https://arxiv.org/abs/2603.14880)：评测机器人感知与操作中的真实视觉语言 grounding。核心思想：检验 VLA 系统能否把语言落到物体、关系和与操作相关的视觉证据上。
+- [RoCo Challenge at AAAI 2026: Benchmarking Robotic Collaborative Manipulation for Assembly Towards Industrial Automation](https://arxiv.org/abs/2603.15469)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [PokeAgent Challenge](https://arxiv.org/abs/2603.15563)（[leaderboard](https://pokeagent.github.io/leaderboard.html)）：在 Pokemon 对战和 RPG 速通环境中评测具身决策。核心思想：在可执行游戏环境里结合部分可观测、竞争式多 agent 推理、长程规划和标准化 baseline。
+- [FEEL (Force-Enhanced Egocentric Learning): A Dataset for Physical Action Understanding](https://arxiv.org/abs/2603.15847)：将第一视角视频与力传感同步，用于物理动作理解，为具身感知评测补充接触力证据。
+- [Can LLMs Prove Robotic Path Planning Optimality? A Benchmark for Research-Level Algorithm Verification](https://arxiv.org/abs/2603.19464)：评测机器人路径规划最优性证明的研究级验证；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
 - [HUGE-Bench](https://arxiv.org/abs/2603.19822)：评测高层 UAV vision-language-action 任务。核心思想：用简短操作指令、digital-twin 场景、过程型轨迹和安全感知评分，测试空中 agent 是否能执行复杂多阶段行为，而不只是跟随路线描述。
 - [IndoorR2X](https://arxiv.org/abs/2603.20182)：评测结合 Robot-to-Everything 感知的 LLM 驱动室内多机器人规划。核心思想：把移动机器人观察与静态 IoT 传感器结合起来，测试 agent 能否在部分可观测和共享语义状态下协同。
+- [ROBOGATE](https://arxiv.org/abs/2603.22126)：通过边界聚焦采样发现安全机器人策略部署失败；核心思想是在部署前定位关键失败案例。
+- [EgoGroups: A Benchmark For Detecting Social Groups of People in the Wild](https://arxiv.org/abs/2603.22249)：评测面向具身社会智能的第一视角和野外场景社会群体检测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
 - [CaP-X](https://arxiv.org/abs/2603.22435)：评测并改进面向机器人操作的编码智能体。核心思路是把代码生成、具身操作任务和执行反馈连接起来，使机器人控制智能体的比较不止停留在静态程序合成。
+- [QuadFM](https://arxiv.org/abs/2603.24021)： 提供面向生成与控制的文本驱动四足运动数据集，把 embodied VLA 资源扩展到腿式机器人运动。
+- [Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned](https://arxiv.org/abs/2603.25937)：提供可复用评测信号，服务于具身与 VLA 智能体，可补充导航、交互平台和操作条件下的具身评测。
+- [ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](https://arxiv.org/abs/2603.28545)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [RoboPlayground: Democratizing Robotic Evaluation through Structured Physical Domains](https://arxiv.org/abs/2604.05226)：支持用自然语言编写结构化物理域中的可执行操作任务。核心思路是把任务意图编译为可复现资产、初始状态与成功谓词，使评测空间能随用户编写的变化持续扩展。
+- [Uncovering Linguistic Fragility in Vision-Language-Action Models via Diversity-Aware Red Teaming](https://arxiv.org/abs/2604.05595)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [BiCoord: A Bimanual Manipulation Benchmark towards Long-Horizon Spatial-Temporal Coordination](https://arxiv.org/abs/2604.05831)：评测长时程双臂操作中的空间-时间协调；核心思想是考察 VLA 或 embodied agents 能否在长序列中协调双臂，而不是只完成孤立单臂动作。
+- [EgoVerse: An Egocentric Human Dataset for Robot Learning from Around the World](https://arxiv.org/abs/2604.07607)：提供面向机器人学习的全球化第一视角人类数据集，扩展从人类活动学习 embodied policies 的数据基础。
 - [Urban Airspace Spatial Action Benchmark](https://arxiv.org/abs/2604.07973)：评测城市空域中的目标导向具身导航；核心思想是测试大型多模态模型能否把空间感知和语言目标转化为空中导航动作，而不只是回答被动空间问题。
-- [SCOPE](https://doi.org/10.1145/3757279.3785641)：用 sim-to-real benchmark 评测自然语言 PTZ 摄像机 agent。核心思想：测试视觉语言 agent 能否在边缘运行约束下把语言目标映射为 pan-tilt-zoom 动作。
+- [PokeGym: A Visually-Driven Long-Horizon Benchmark for Vision-Language Models](https://arxiv.org/abs/2604.08340)：类型：benchmark/评测协议。核心价值：为 2.11.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [Spatial-Gym](https://arxiv.org/abs/2604.09338)：评测 agent 能否把空间推理转成连续动作。核心思想：用 Gymnasium 风格交互 benchmark 覆盖 pathfinding、backtracking 与 action-level scoring，而不是只做被动空间问答。
+- [RoboLab: A High-Fidelity Simulation Benchmark for Analysis of Task Generalist Policies](https://arxiv.org/abs/2604.09860)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](https://arxiv.org/abs/2604.10533)：评估包含错误前提指令的视觉语言导航；核心思想是要求 agent 在目标不存在时探索、收集证据并输出 NOT-FOUND。
+- [EmbodiedGovBench: A Benchmark for Governance, Recovery, and Upgrade Safety in Embodied Agent Systems](https://arxiv.org/abs/2604.11174)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [AffordSim: A Scalable Data Generator and Benchmark for Affordance-Aware Robotic Manipulation](https://arxiv.org/abs/2604.11674)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Autonomous UAV Visual Object Search in City Space](https://doi.org/10.1609/aaai.v40i22.38898)：评测城市尺度环境中的 UAV 视觉目标搜索。核心思路是把基准和智能体式搜索方法结合起来，衡量空中智能体的开放视觉找目标、探索和导航决策能力。
+- [LARY: A Latent Action Representation Yielding Benchmark for Generalizable Vision-to-Action Alignment](https://arxiv.org/abs/2604.11689)：面向可泛化 vision-to-action alignment 的 benchmark。核心思想是评测 latent action representation 能否在需要把感知落地为可执行动作的具身场景中迁移。
+- [HazardArena](https://arxiv.org/abs/2604.12447)：评测 VLA 模型的语义安全性；核心思想是不只看任务完成，还检查具身策略是否识别并避免危险动作。
+- [MirrorBench: Evaluating Self-centric Intelligence in MLLMs by Introducing a Mirror](https://arxiv.org/abs/2604.14785)：评测通过镜像评测多模态模型的 self-centric 具身智能；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [How to Correctly Make Mistakes: A Framework for Constructing and Benchmarking Mistake Aware Egocentric Procedural Videos](https://arxiv.org/abs/2604.15134)：提出 PIE-V，用心理学启发的错误注入、恢复规划、LLM 改写和 LLM judge 构造 mistake-aware 第一视角流程视频。核心思想是用合理的人类错误与修正评测程序监控能力。
+- [From Seeing to Simulating: Generative High-Fidelity Simulation with Digital Cousins for Generalizable Robot Learning and Evaluation](https://arxiv.org/abs/2604.15805)：生成高保真仿真以支持可泛化机器人学习和评测；核心思想是构造 simulation counterpart，突破固定实验场景。
+- [SocialGrid: A Benchmark for Planning and Social Reasoning in Embodied Multi-Agent Systems](https://arxiv.org/abs/2604.16022)：SocialGrid 评测 embodied multi-agent planning 与 social reasoning。
+- [LongBench: Evaluating Robotic Manipulation Policies on Real-World Long-Horizon Tasks](https://arxiv.org/abs/2604.16788)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Chain Of Interaction Benchmark (COIN): When Reasoning meets Embodied Interaction](https://arxiv.org/abs/2604.16886)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Mini-BEHAVIOR-Gran: Revealing U-Shaped Effects of Instruction Granularity on Language-Guided Embodied Agents](https://arxiv.org/abs/2604.17019)：评测指令粒度对语言引导具身智能体的影响。
 - [E3VS-Bench](https://arxiv.org/abs/2604.17969)：评测 3D Gaussian Splatting 场景中的视角依赖主动感知。核心思想：让具身 agent 通过 5-DoF 视角移动发现遮挡、容器内部或属性依赖证据，而不是只基于静态观察回答。
+- [Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2604.18000)：该工作诊断 VLA benchmark 中 embodied reasoning illusion，适合 embodied/VLA benchmark reliability。
+- [Assessing VLM-Driven Semantic-Affordance Inference for Non-Humanoid Robot Morphologies](https://arxiv.org/abs/2604.19509)：评测视觉语言模型驱动的非人形机器人语义可供性推理。
+- [VTouch++: A Multimodal Dataset with Vision-Based Tactile Enhancement for Bimanual Manipulation](https://arxiv.org/abs/2604.20444)：提供带视觉触觉增强的双手操作数据集，采用矩阵式任务组织和自动化真实采集。核心思想是用接触丰富的物理交互信号评测跨模态检索与真实机器人操作。
+- [dWorldEval: Scalable Robotic Policy Evaluation via Discrete Diffusion World Model](https://arxiv.org/abs/2604.22152)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [AmaraSpatial-10K: A Spatially and Semantically Aligned 3D Dataset for Spatial Computing and Embodied AI](https://arxiv.org/abs/2604.23018)：发布一万余个可部署 3D 资产，带公制尺度、锚点、碰撞外壳、PBR 贴图、参考图像和文本元数据。核心思想是用尺度合理性、概念密度、锚点误差和跨模态一致性评测具身 AI 资产库。
+- [EgoLive: A Large-Scale Egocentric Dataset from Real-World Human Tasks](https://arxiv.org/abs/2604.23570)：整理真实人类任务的大规模第一视角视频，为 embodied models 的任务与动作理解提供更广泛证据。
+- [PhysCodeBench: Benchmarking Physics-Aware Symbolic Simulation of 3D Scenes via Self-Corrective Multi-Agent Refinement](https://arxiv.org/abs/2604.23580)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [SpecRLBench: A Benchmark for Generalization in Specification-Guided Reinforcement Learning](https://arxiv.org/abs/2604.24729)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
 - [Capability-Oriented Failure Attribution for VLN Agents](https://arxiv.org/abs/2604.25161)：评测视觉语言导航 agent 在不同能力环节的失败来源。核心思想：结合自适应测试用例生成、能力专属 oracle 和反馈式归因，把导航失败定位到感知、记忆、规划或决策弱点，而不只看最终成功率。
+- [KinDER: A Physical Reasoning Benchmark for Robot Learning and Planning](https://arxiv.org/abs/2604.25788)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [OmniRobotHome: A Multi-Camera Platform for Real-Time Multiadic Human-Robot Interaction](https://arxiv.org/abs/2604.28197)：提供可复用评测信号，服务于具身与 VLA 智能体，可补充导航、交互平台和操作条件下的具身评测。
 - [Minedojo-Verified](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的 embodied-agent 视觉任务 verified 子集；目前未确认有独立公开版本。核心思想：跟踪前沿多模态 agent 是否能在交互环境中完成感知 grounding、规划和动作执行，而不只是在静态截图上答题。
 - [ESARBench](https://arxiv.org/abs/2605.01371)：评估无人机具身智能体的搜索与救援能力。核心思路是把空中智能体放入搜救场景中，同时考察感知、导航、任务规划和动作执行，而不是只评价静态视觉理解。
+- [MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware](https://arxiv.org/abs/2605.05945)：提供基于通用硬件采集长时程第一视角数据的开放基础设施，支持可扩展 embodied-agent 数据集建设。
+- [Toward Visually Realistic Simulation: A Benchmark for Evaluating Robot Manipulation in Simulation](https://arxiv.org/abs/2605.06311)：评测视觉真实仿真中的机器人操作；核心思想是在视觉真实度和操作成功率都重要的模拟条件下测试 embodied agents。
+- [TAVIS: A Benchmark for Egocentric Active Vision and Anticipatory Gaze in Imitation Learning](https://arxiv.org/abs/2605.07943)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [VIGIL](https://arxiv.org/abs/2605.08747)：评测 embodied agent 的 terminal commitment；核心思想是把世界状态完成和正确自我终止、语义报告分开评分，暴露普通成功率掩盖的完成后漂移与无证据承诺问题。
+- [Mirror, Mirror on the Wall: Can VLM Agents Tell Who They Are at All?](https://arxiv.org/abs/2605.08816)：面向第一人称 VLM agent 镜像自识别的受控 3D 基准；核心思想是从镜像中推断隐藏身体属性。
 - [OmniNavBench](https://arxiv.org/abs/2605.09441)：评测跨技能、跨具身形态的通用具身导航。核心思想：用覆盖 PointNav、VLN、ObjectNav、SocialNav、跟随人类和 EQA 的复合指令，要求 agent 协调子技能并跨机器人形态泛化，而不是只解决孤立导航任务。
+- [SABER: A Scalable Action-Based Embodied Dataset for Real-World VLA Adaptation](https://arxiv.org/abs/2605.09613)：作为具身与 VLA 智能体的基准或评测协议候选，聚焦“A Scalable Action-Based Embodied Dataset for Real-World VLA Adaptation”。
+- [Towards Generative Predictive Display for Vision-Based Teleoperation: A Zero-Shot Benchmark of Off-the-Shelf Video Models](https://arxiv.org/abs/2605.09670)：用 CARLA 驾驶数据零样本评测现成视频模型在延迟受限遥操作中的短时预测显示能力。核心思想是检验生成式视觉预测能否在通信延迟下支持控制。
+- [EnactToM: An Evolving Benchmark for Functional Theory of Mind in Embodied Agents](https://arxiv.org/abs/2605.09826)：评什么：embodied agents 的 functional theory of mind。核心思想：测试 agent 能否在具身环境中根据他人的隐含信念采取合适行动，而不是只回答直接 belief question。
+- [SleepWalk: A Three-Tier Benchmark for Stress-Testing Instruction-Guided Vision-Language Navigation](https://arxiv.org/abs/2605.10376)：评测生成式 3D 世界中的指令约束轨迹预测。核心思路是检查 VLM 是否能输出空间一致、避碰且与行动目标兼容的轨迹，而不只是描述场景。
+- [ObjView-Bench](https://arxiv.org/abs/2605.10707)：从难度与部署角度评测 object-centric view planning，适合具身主动感知评估。
+- [RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark](https://arxiv.org/abs/2605.10921)：可作为embodied and VLA agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [TouchAnything: A Dataset and Framework for Bimanual Tactile Estimation from Egocentric Video](https://arxiv.org/abs/2605.13083)：提供从第一视角视频估计双手触觉信号的数据集与框架，用于评测 embodied agents 如何把第一视角视觉证据与接触丰富的操作行为联系起来。
+- [P2Maze](https://doi.org/10.1109/SoutheastCon63549.2026.11476499)：在配对仿真与真实协议下评测机器人迷宫导航。核心思想：用匹配的迷宫任务衡量具身导航策略的零样本迁移和少样本适应。
+- [When Robots Do the Chores: A Benchmark and Agent for Long-Horizon Household Task Execution](https://arxiv.org/abs/2605.14504)：提出 LongAct，用自由形式指令评测长时程家务任务执行。核心思想是抽象掉底层控制，考察指令理解、依赖关系管理、记忆和长程家务中的自适应规划。
+- [MyoChallenge 2025: A New Benchmark for Human Athletic Intelligence](https://arxiv.org/abs/2605.15650)：以人类运动智能评测具身控制系统，为语言或静态感知之外补充物理约束挑战。
+- [DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo](https://arxiv.org/abs/2605.16257)：基于 MuJoCo 的任务导向灵巧操作 benchmark 与 toolkit。核心思路是评测灵巧机械手的工具使用、双手协同、长程执行、推理与鲁棒性。
+- [VideoGameBench](https://vgbench.com/#leaderboard)：评测视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏世界中，用任务完成与轨迹质量评估 agent 是否能把视觉空间关系转成动作。
+- [RoboAfford](https://doi.org/10.1145/3746027.3758209)：评测机器人操作中的物体与空间 affordance learning。核心思想：把可行动 affordance 作为目标，检验具身模型能否从视觉空间语境中推断物体如何被使用和操作。
+- [SCOPE](https://doi.org/10.1145/3757279.3785641)：用 sim-to-real benchmark 评测自然语言 PTZ 摄像机 agent。核心思想：测试视觉语言 agent 能否在边缘运行约束下把语言目标映射为 pan-tilt-zoom 动作。
+- [EPIC-Bench](https://arxiv.org/abs/2605.17070)：用 6.6K 个 image-text-mask tuples 和 23 个具身交互 pipeline 任务评测细粒度具身视觉 grounding，并覆盖 89 个 VLM。
 - [PokéLLMon](https://doi.org/10.1145/3771095)：评测大语言模型 agent 在 Pokémon 对战中的 grounding 与推理能力。核心思想：使用可执行的竞技游戏环境，要求 agent 结合战斗状态、属性与招式知识、对手行为和动作选择，而不是回答静态游戏知识题。
+- [厨房任务多模态机器人技能数据集](https://doi.org/10.1038/s41597-025-04798-z)： 为厨房操作任务中的机器人技能习得提供多模态传感数据。
+- [Tracking cloth deformation: A novel dataset for closing the sim-to-real gap for robotic cloth manipulation learning](https://doi.org/10.1177/02783649251317617)：提供多种织物、尺寸、速度、抖动、扭转、碰撞和自遮挡条件下的布料变形 motion-capture 记录。核心思想是缩小动态纺织品操作学习中的 sim-to-real gap。
+- [A Holistic Evaluation of Teleoperation Interfaces for Robotic Manipulation](https://doi.org/10.1145/3785141)：补充具身与 VLA方向的基准、数据集、指标或评测协议。
+- [DexFuncGrasp: A Robotic Dexterous Functional Grasp Dataset Constructed from a Cost-Effective Real-Simulation Annotation System](https://doi.org/10.1609/aaai.v38i9.28897)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充具身智能与 VLA方向的基准覆盖。
+- [Task Scheduling of Multiple Humanoid Robot Manipulators by Using Symbolic Control](https://doi.org/10.3390/biomimetics10060346)：评测用 symbolic discrete-controller synthesis 协调多个人形机械臂，在资源共享、安全、互斥和吞吐目标之间进行任务调度。
+- [The Emergent Normativity of Carebots: Evaluating the Proficiencies of Embodied Artificial Intelligence](https://doi.org/10.1007/s13347-025-01028-7)：用谦逊询问、包容连接和响应行动这一护理启发式评估 carebot 能力，讨论社会机器人在情感敏感性、默会知识和个性化响应上的局限。
+- [Rob2HanD: LLM-Driven Robotic Arm for IMU Interaction Dataset Generation](https://doi.org/10.1145/3772318.3791740)：用 LLM 调节机械臂运动过程以快速生成 IMU 手部交互数据集。核心思想是在少样本或零样本条件下扩展细粒度手部交互数据的多样性与个性化。
+- [SLAMDUNKS: A Vision-Based Approach for Uncovering Semantic Relations in Dataset Collections](https://doi.org/10.5220/0014648000004084)：围绕 Embodied/VLA 能力补充《SLAMDUNKS: A Vision-Based Approach for Uncovering Semantic Relations in Dataset Collections》，作为 Bench 条目候选。
+- [Socially-Aware Robot Navigation Using Large Language Models: System and Evaluation](https://doi.org/10.1145/3737611.3776944)：评估结合 LLM 高层规划、MPC 避障和社会因素分析的社交感知机器人导航系统，报告导航成功率与社会合规性相对基线的提升。
+- [Latency-Aware Benchmarking of Large Language Models for Natural-Language Robot Navigation in ROS 2](https://doi.org/10.3390/s26020608)：在 ROS 2 Nav2 与 Gazebo TurtleBot4 中评测多种 LLM 的自然语言导航延迟和任务表现，覆盖不同本地规划器与自由文本指令。
+- [VTDexManip: A Dataset and Benchmark for Visual-tactile Pretraining and Dexterous Manipulation with Reinforcement Learning](https://www.semanticscholar.org/paper/55abba20f0b48e26dea735352712476c127a5a06)：提供用于 visual-tactile pretraining 与强化学习灵巧操作的数据集和基准。
+- [When Visual Bias Overrides Symbolic Evidence: A Case Study on Tool-augmented VLMs for Block Assembly](https://doi.org/10.1145/3795011.3795064)：研究工具增强 VLM 在积木装配任务中的视觉偏置。
+- [WorldArena 2.0](https://arxiv.org/abs/2605.17912)：把具身 world model 评测扩展到视觉触觉模态、交互式强化学习效用与仿真到真实机器人平台，超越被动视频预测诊断。
+- [What-If World: A Causal Benchmark for General World Models in Embodied Scenarios](https://arxiv.org/abs/2605.27589)：定义 What-If World，用只改变一个物理变量的成对 prompt 和 nuScenes、DROID 真实帧，检验世界模型生成视频是否按物理因果一致变化。
+- [ERGeoBench](https://arxiv.org/abs/2605.31251)：在 single-view、panorama-view 与 embodied-view 三种设置中评测具身推理与地理定位，其中 agent 可连续调整 yaw、pitch 与 zoom 收集观测。
+- [SafeVLA-Bench](https://arxiv.org/abs/2606.00773)：为现有 VLA 仿真基准加入 Signal Temporal Logic 安全约束，并在 LIBERO 与 RoboCasa-365 上报告 SBU 和 VSI，用来量化任务成功与安全行为之间的差距。
+- [SCOPE](https://arxiv.org/abs/2606.02951)：用 536 个任务评测实时自然语言 PTZ 摄像头 agent，覆盖问答、多步命令、计数、空间推理与边缘部署约束。
+- [OmniGameArena](https://arxiv.org/abs/2606.09826)：统一 12 个 UE5 游戏，覆盖单人、对抗与协作模式，并用 Improvement Dynamics Curve 衡量 VLM 游戏 agent 如何通过反思和重复交互提升。
+- [ARB4WM](https://arxiv.org/abs/2606.16605)：在 policy、value 与 latent-dynamics 层面定义 world-model agent 对抗鲁棒性测试，并在 MetaWorld 与 DeepMind Control Suite 的 20 个任务上评估 Dreamer-style agent。
+- [ATOM-Bench](https://arxiv.org/abs/2606.16826)：将桌面操作拆成 motor atoms 与 instruction atoms，提供 30 个原子任务、24 个组合泛化留出任务、3,000 条示范和 2,700 次真实 rollouts，用于评测操作策略的组合泛化。

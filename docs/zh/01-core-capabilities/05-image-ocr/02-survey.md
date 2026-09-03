@@ -1,11 +1,42 @@
 # 1.5.2 Survey
 
+- [Visual Text Meets Low-level Vision: A Comprehensive Survey on Visual Text Processing](https://arxiv.org/abs/2402.03082)：综述低层视觉与文本感知交叉处的视觉文本处理。
+- [Large language model for table processing: a survey](https://arxiv.org/abs/2402.05121)：按表格理解、推理、生成、增强和问答组织 LLM 表格处理研究，为 OCR 邻近的文档智能提供表格专项综述视角。
 - [From Pixels to Insights: A Survey on Automatic Chart Understanding in the Era of Large Foundation Models](https://arxiv.org/abs/2403.12027)：覆盖基础模型时代图表理解的任务、数据集、方法与评测。
+- [Exploring the Frontier of Vision-Language Models: A Survey of Current Methodologies and Future Directions](https://arxiv.org/abs/2404.07214)：综述 VLM 架构、训练数据、对齐、评测和应用趋势，为窄义 OCR 之外的图像理解提供背景。
+- [The Evolution of Multimodal Model Architectures](https://arxiv.org/abs/2405.17927)：梳理多模态架构从双编码器和融合模块走向以 LLM 为中心的统一视觉语言系统的演进，这也是 OCR 与文档 VLM backbone 的背景。
+- [Charting the Landscape of Nefarious Uses of Generative Artificial Intelligence for Online Election Interference](https://arxiv.org/abs/2406.01862)：综述选举场景中生成式媒体滥用风险；这里只作为相邻 visual forensics 线索，而非核心 OCR 综述。
+- [Deep Learning based Visually Rich Document Content Understanding: A Survey](https://arxiv.org/abs/2408.01287)：系统梳理 visually rich document understanding，覆盖版面分析、文本识别、信息抽取、表格/表单解析和多模态文档推理。
+- [Surveying the Landscape of Image Captioning Evaluation: A Comprehensive Taxonomy, Trends, and Metrics Analysis](https://arxiv.org/abs/2408.04909)：按词面、语义、embedding、无参考和人类对齐等维度分类 image captioning 指标，说明 caption 质量不能简化为 OCR 正确率。
+- [Masked Image Modeling: A Survey](https://arxiv.org/abs/2408.06687)：综述 masked-image 预训练目标、mask 策略、重建目标和下游迁移，用于理解后续 OCR 与文档 VLM 所依赖的视觉编码器。
+- [Image Segmentation in Foundation Model Era: A Survey](https://arxiv.org/abs/2408.12957)：围绕 promptable mask、开放词表分割、适配和评测组织基础模型时代的图像分割，是文档与场景文字系统的相邻视觉 grounding 层。
+- [Advancing Object Detection in Transportation with Multimodal Large Language Models (MLLMs): A Comprehensive Review and Empirical Testing](https://arxiv.org/abs/2409.18286)：综述交通场景中的 MLLM 目标检测并加入实证测试，更适合作为应用视觉感知综述，而非 OCR 专项综述。
+- [Recent Advances of Multimodal Continual Learning: A Comprehensive Survey](https://arxiv.org/abs/2410.05352)：综述多模态系统在连续任务中保持和更新视觉语言能力的方法，这对应文档与 OCR agent 面对版式和领域变化时的部署问题。
+- [Natural Language Understanding and Inference with MLLM in Visual Question Answering: A Survey](https://arxiv.org/abs/2411.17558)：从语言理解、推断和多模态推理角度综述 VQA，涵盖图像问题如何同时考察文本、物体和视觉证据。
+- [Explainable and Interpretable Multimodal Large Language Models: A Comprehensive Survey](https://arxiv.org/abs/2412.02104)：组织 MLLM 可解释性方法，包括注意力、归因、rationale 和 probing 工具，可用于诊断 OCR 与文档理解失败。
+- [Toward Visual Grounding: A Survey](https://arxiv.org/abs/2412.20206)：综述短语 grounding、指代表达、区域定位和开放词表 grounding，是把抽取文本或文档答案关联回图像区域的关键背景。
+- [Large Vision-Language Model Alignment and Misalignment: A Survey Through the Lens of Explainability](https://arxiv.org/abs/2501.01346)：系统梳理该方向的方法、评测缺口或部署问题。
 - [Survey on Question Answering over Visually Rich Documents: Methods, Challenges, and Trends](https://arxiv.org/abs/2501.02235)：综述涉及版面、OCR、结构和推理挑战的文档问答。
+- [Multimodal Large Language Models for Text-rich Image Understanding: A Comprehensive Review](https://arxiv.org/abs/2502.16586)：综述 MLLM 在 text-rich image understanding 任务中的进展与挑战。
+- [A Comprehensive Survey on Composed Image Retrieval](https://arxiv.org/abs/2502.18495)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Keeping Yourself is Important in Downstream Tuning Multimodal Large Language Model](https://arxiv.org/abs/2503.04543)：综述并评测多模态大模型下游调优方法。
+- [Visual Text Processing: A Comprehensive Review and Unified Evaluation](https://arxiv.org/abs/2504.21682)：综述视觉文本处理从检测识别到重建和编辑的发展，并提出 VTPBench 与 VTPScore 统一评测。
 - [A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends](https://arxiv.org/abs/2507.09861)：从端到端多模态大语言模型视角更新文档理解研究。
+- [Multimodal Referring Segmentation: A Survey](https://arxiv.org/abs/2508.00265)：综述语言引导的 referring segmentation 方法与评估。
 - [Document Intelligence in the Era of Large Language Models](https://arxiv.org/abs/2510.13366)：把 OCR、版面分析、信息抽取、文档问答与流程自动化纳入 LLM 时代的文档智能分类框架。
 - [Scaling Beyond Context: A Survey of Multimodal Retrieval-Augmented Generation for Document Understanding](https://arxiv.org/abs/2510.15253)：回顾面向长文档与多页文档理解的多模态检索增强方法。
 - [Chart Accessibility](https://doi.org/10.1109/ACCESS.2025.3571626)：以无障碍为核心场景梳理图表替代文本生成、用户需求、数据集与评测缺口。
 - [Systematic Literature Review of Machine Learning Models and Applications for Text Recognition](https://doi.org/10.1109/ACCESS.2025.3618109)：综述文本识别模型、应用场景与评测问题，可作为文档和图像理解中 OCR 能力的背景入口。
+- [A Review on Vision-Language-Based Approaches: Challenges and Applications](https://doi.org/10.32604/cmc.2025.060363)：综述视觉语言方法中的表征学习、跨模态融合、应用和挑战，重点包括 grounding、鲁棒性和数据偏差。
+- [Pixels to prose: A comprehensive survey of image captioning techniques with deep learning and generative artificial intelligence](https://doi.org/10.1016/j.neucom.2025.132385)：从 CNN-RNN 到 Transformer 和生成式 AI 梳理 image captioning，强调数据集、指标和语义 grounding 缺口。
+- [Systematic Literature Review on General-Use Handwritten Document Processing Using OCR and LLM in Mobile Application](https://doi.org/10.1109/icimtech67074.2025.11265362)：系统综述移动应用中结合 OCR 与大模型的手写文档处理。
+- [A comprehensive survey of Vision-Language Models: Pretrained models, fine-tuning, prompt engineering, adapters, and benchmark datasets](https://doi.org/10.1016/j.inffus.2025.103623)：系统梳理该方向的方法、评测缺口或部署问题。
+- [A comparison study on optical character recognition models in mathematical equations and in any language](https://doi.org/10.1016/j.rico.2025.100532)：比较 OCR 模型在数学公式与多语种识别上的表现，为 OCR 鲁棒性提供超出普通印刷文本的综述式证据。
+- [Can VLMs Actually See and Read? A Survey on Modality Collapse in Vision-Language Models](https://doi.org/10.18653/v1/2025.findings-acl.1256)：综述 VLM 的 modality collapse，说明语言流畅但视觉识别和阅读能力退化的情形。
+- [Multimodal Information Fusion for Chart Understanding: A Survey of MLLMs - Evolution, Limitations, and Cognitive Enhancement](https://arxiv.org/abs/2602.10138)：从信息融合、局限与认知增强角度综述 MLLM 图表理解。
+- [Position: Evaluation of Visual Processing Should Be Human-Centered, Not Metric-Centered](https://arxiv.org/abs/2603.00643)：主张视觉处理评测应以人类使用场景、感知质量和任务后果为中心，而不是只优化孤立自动指标。
 - [A Survey of OCR Evaluation Methods and Metrics and the Invisibility of Historical Documents](https://arxiv.org/abs/2603.25761)：梳理 OCR 专项指标及历史文档评测盲点。
 - [Large Language Models in Document Intelligence: A Comprehensive Survey, Recent Advances, Challenges, and Future Trends](https://doi.org/10.1145/3768156)：综述 LLM 文档智能，覆盖 OCR 邻近抽取、版面理解与文档问答。
+- [Decoding Technical Diagrams: A Survey of AI Methods for Image Content Extraction and Understanding](https://doi.org/10.3390/info17020165)：聚焦技术图示理解，覆盖符号与文字抽取、关系解析、语义解释和技术视觉文档评测。
+- [Deep learning–driven image captioning: Progress through transformers and large language models](https://doi.org/10.1371/journal.pone.0345012)：综述 image captioning 从卷积编码器到 Transformer 与 LLM captioner 的进展，并讨论数据集偏差、评测和可控性。
+- [The evolution and open challenges of text-based visual question answering: a review of research and data trends](https://doi.org/10.1007/s11042-026-21656-1)：可作为图像理解与 OCR方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。

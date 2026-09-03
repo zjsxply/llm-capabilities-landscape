@@ -1,31 +1,459 @@
 # 2.9.2 Survey
 
+- [Prompt Injection Attacks on Large Language Models: A Survey of Attack Methods, Root Causes, and Defense Strategies](https://www.techscience.com/cmc/v87n1/66084/html)：该综述遵循 Kitchenham 系统综述指南，综合了 2022 至 2025 年的 128 篇同行评议研究，梳理提示注入从直接文本攻击向多模态变体的演进。文中报告无防护系统上的攻击成功率可超过 90%，归纳出三类共 37 种防御，并指出即使部分方法对已知模式的防护率可达 95%，面对新型攻击和标准化评测仍存在明显缺口。
+- [Artificial Intelligence Trust, Risk and Security Management (AI TRiSM): Frameworks, applications, challenges and future research directions](https://doi.org/10.1016/j.eswa.2023.122442)：围绕企业 AI 部署中的风险治理、信任管理、安全控制、监测和保证实践综述 AI TRiSM。
+- [Revisiting Zero-Shot Abstractive Summarization in the Era of Large Language Models from the Perspective of Position Bias](https://arxiv.org/abs/2401.01989)：分析零样本 LLM 摘要中的位置偏差，把评测顺序效应纳入安全与可靠性审计视野。
+- [Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems](https://arxiv.org/abs/2401.05778)：提供 LLM 系统风险分类、缓解路径与评测基准概览。
+- [Two types of AI existential risk: decisive and accumulative](https://arxiv.org/abs/2401.07836)：区分突发的决定性灾难与较慢累积的存在风险，说明不同缓解论证各自适用的风险路径。
+- [From GPT-4 to Gemini and Beyond: Assessing the Landscape of MLLMs on Generalizability, Trustworthiness and Causality through Four Modalities](https://arxiv.org/abs/2401.15071)：用 230 个手工设计的文本、代码、图像和视频案例比较 GPT-4、Gemini 与开源 MLLM 的泛化性、可信性和因果推理能力。
+- [Recent Advances in Online Hate Speech Moderation: Multimodality and the Role of Large Models](https://arxiv.org/abs/2401.16727)：综述文本、视觉与音频信号中的仇恨言论治理，强调 LLM 和 LMM 如何改变检测能力、低资源覆盖与治理缺口。
+- [Not My Voice! A Taxonomy of Ethical and Safety Harms of Speech Generators](https://arxiv.org/abs/2402.01708)：基于语音生成事故分析建立关系型伤害分类，按受影响者暴露方式和创建者或部署者动机区分风险路径。
+- [Building Guardrails for Large Language Models](https://arxiv.org/abs/2402.01822)：围绕输入输出过滤、开源护栏栈、社会技术需求、神经符号实现以及验证测试需求定位 LLM guardrail。
+- [Copyright Protection in Generative AI: A Technical Perspective](https://arxiv.org/abs/2402.02333)：综述生成式 AI 版权保护的技术路线，包括数据溯源、水印、检测、归因和机器遗忘。
+- [What's documented in AI? Systematic Analysis of 32K AI Model Cards](https://arxiv.org/abs/2402.05160)：审计 Hugging Face 上 32,111 份 model card，显示限制、评测和环境影响字段远比训练信息填写不足。
+- [Attacks, Defenses and Evaluations for LLM Conversation Safety: A Survey](https://arxiv.org/abs/2402.09283)：把对话安全研究组织为攻击、防御和评测三类，并提供面向有害回复滥用研究的配套 taxonomy。
+- [The Good and The Bad: Exploring Privacy Issues in Retrieval-Augmented Generation (RAG)](https://arxiv.org/abs/2402.16893)：考察检索增强生成中的隐私问题，是安全相关的 RAG 风险面。
+- [A New Era in LLM Security: Exploring Security Concerns in Real-World LLM-based Systems](https://arxiv.org/abs/2402.18649)：把 LLM 系统建模为包含前端、工具和沙箱的组合式信息流环境，并按约束对齐与鲁棒性拆解安全风险。
+- [Breaking Down the Defenses: A Comparative Survey of Attacks on Large Language Models](https://arxiv.org/abs/2403.04786)：综述 LLM 攻击家族，包括对抗提示、数据投毒与隐私利用，并将其影响与现有防御策略进行对照。
+- [On Protecting the Data Privacy of Large Language Models (LLMs): A Survey](https://arxiv.org/abs/2403.05156)：区分被动隐私泄漏与主动隐私攻击，并按 LLM 处理阶段综述保护机制及其效果边界。
+- [Mapping LLM Security Landscapes: A Comprehensive Stakeholder Risk Assessment Proposal](https://arxiv.org/abs/2403.13309)：提出以利益相关方为中心的 LLM 安全风险图谱，区分开发者、服务商、部署方、用户和受影响者的暴露面。
+- [Threats, Attacks, and Defenses in Machine Unlearning: A Survey](https://arxiv.org/abs/2403.13682)：为机器遗忘中的威胁、攻击与防御建立分类，把信息泄漏和恶意遗忘视为机器学习服务部署中的安全风险。
+- [Towards Measuring and Modeling “Culture” in LLMs: A Survey](https://arxiv.org/abs/2403.15412)：综述 90 多篇文化表征研究，按 demographic proxy 与 semantic proxy 组织文化探测，并指出鲁棒性和情境化影响研究不足。
+- [A Little Leak Will Sink a Great Ship: Survey of Transparency for Large Language Models from Start to Finish](https://arxiv.org/abs/2403.16139)：围绕个人信息、版权文本和基准污染，把 LLM 透明性问题拆成 leakage rate、output rate 与 detection rate。
+- [A Comprehensive Survey of Contamination Detection Methods in Large Language Models](https://arxiv.org/abs/2404.00699)：综述污染检测方法及其使用场景，强调基准暴露会扭曲 LLM 能力表现和评测可靠性。
+- [Fairness in Large Language Models: A Taxonomic Survey](https://arxiv.org/abs/2404.01349)：按偏见来源、公平性概念、偏见指标、缓解算法以及数据集和工具包等评测资源组织 fair LLM 研究。
+- [Digital forgetting in large language models: a survey of unlearning methods](https://arxiv.org/abs/2404.02062)：综述 LLM 遗忘方法如何移除隐私、版权或有害知识，同时跟踪效用损失与可验证性权衡。
+- [Unbridled Icarus: A Survey of the Potential Perils of Image Inputs in Multimodal Large Language Model Security](https://arxiv.org/abs/2404.05264)：为 MLLM 图像输入建立威胁模型，覆盖训练基础、模态特有漏洞、攻防机制和未来安全缺口。
+- [Towards AI Safety: A Taxonomy for AI System Evaluation](https://arxiv.org/abs/2404.05388)：提出系统评估框架，用统一术语、评估要素 taxonomy 和生命周期到利益相关方映射支撑可问责 AI 供应链。
+- [SafetyPrompts: a Systematic Review of Open Datasets for Evaluating and Improving Large Language Model Safety](https://arxiv.org/abs/2404.05399)：综述 144 个开放 LLM 安全数据集，指出合成数据增长、非英语和自然场景数据缺口，以及发布评估中的使用不一致。
+- [Privacy Preserving Prompt Engineering: A Survey](https://arxiv.org/abs/2404.06001)：系统化梳理 in-context learning 与 prompting 中的隐私保护方法，比较缓解框架和资源，并指出尚未解决的局限。
+- [Large Language Model Supply Chain: A Research Agenda](https://arxiv.org/abs/2404.12736)：定义覆盖基础设施、基础模型和下游应用的 LLM 供应链，并按层映射软件工程与安全隐私挑战。
+- [Mechanistic Interpretability for AI Safety - A Review](https://arxiv.org/abs/2404.14082)：把机制可解释性作为对神经表征的因果逆向工程来综述，连接特征分析、模型剖析、控制、对齐和双重用途风险。
+- [A Survey on Semantic Communication Networks: Architecture, Security, and Privacy](https://arxiv.org/abs/2405.01221)：综述面向多智能体协同的语义通信网络，提出 control、semantic-transmission 与 cognitive-sensing 三层结构及安全隐私威胁分类。
+- [Large Language Models Show Human-like Social Desirability Biases in Survey Responses](https://arxiv.org/abs/2405.06058)：用 Big Five 问卷实验显示 LLM 会推断自己处于评测场景，并在多个主流模型族中把人格回答偏向社会期许方向。
+- [Machine Unlearning: A Comprehensive Survey](https://arxiv.org/abs/2405.07406)：把机器遗忘分为集中式、分布式或非规则数据、验证、隐私与安全四类场景，并以精确和近似遗忘作为核心分支。
+- [Large Language Model Bias Mitigation from the Perspective of Knowledge Editing](https://arxiv.org/abs/2405.09341)：提出 BiasKE 与 Fairness Stamp 作为知识编辑式去偏路线，用公平性、特异性和泛化性而不只群体 parity 来评估。
+- [Safeguarding large language models: a survey](https://arxiv.org/abs/2406.02622)：综述服务商和开源社区的 LLM safeguard，覆盖评测、分析、攻击、防御、护栏强化以及全生命周期实现难题。
+- [Deconstructing the ethics of large language models from long-standing issues to new-emerging dilemmas: a survey](https://arxiv.org/abs/2406.05392)：从版权、偏见和隐私等长期问题延伸到真实性与社会规范等新困境，综述 LLM 伦理风险及其负责任部署缓解路径。
+- [A Survey on Machine Unlearning: Techniques and New Emerged Privacy Risks](https://arxiv.org/abs/2406.06186)：综述机器遗忘技术及其新出现的隐私风险。
+- [A Survey of Recent Backdoor Attacks and Defenses in Large Language Models](https://arxiv.org/abs/2406.06852)：按攻击插入点、触发行为、评测设置和防御策略组织 LLM 后门攻防研究。
+- [Unique Security and Privacy Threats of Large Language Model: A Comprehensive Survey](https://arxiv.org/abs/2406.07973)：区分提示攻击、数据抽取、模型反演、成员推断和滥用型越狱等 LLM 特有安全与隐私威胁。
+- [How to Distinguish AI-Generated Images from Authentic Photographs](https://arxiv.org/abs/2406.08651)：综述区分 AI 生成图像与真实摄影的取证线索和检测器类型，服务于来源认证与虚假信息治理。
+- [Security of AI Agents](https://arxiv.org/abs/2406.08689)：聚焦工具使用、记忆、规划、多智能体通信和现实动作执行带来的 AI agent 攻击面。
+- [Standard Language Ideology in AI-Generated Language](https://arxiv.org/abs/2406.08726)：考察生成语言如何复制标准语言意识形态，把方言和语言规范偏见纳入安全与公平风险。
+- [Towards Bidirectional Human-AI Alignment: A Systematic Review for Clarifications, Framework, and Future Directions](https://arxiv.org/abs/2406.09264)：综述双向人机对齐框架，把人对 AI 的适应与 AI 对人类价值的适应视为耦合安全问题。
+- [IDs for AI Systems](https://arxiv.org/abs/2406.12137)：主张为 AI 系统设置持久标识，使事故、溯源、审计和 model card 声明能跨部署关联。
+- [Generative AI Misuse: A Taxonomy of Tactics and Insights from Real-World Data](https://arxiv.org/abs/2406.13843)：基于真实生成式 AI 滥用事件构建战术分类，区分冒充、说服、欺诈、垃圾信息和内容操纵。
+- [Evaluating Implicit Bias in Large Language Models by Attacking From a Psychometric Perspective](https://arxiv.org/abs/2406.14023)：用对抗式心理测量提示揭示普通直接偏见探针容易漏掉的 LLM 隐性偏见模式。
+- [From LLMs to MLLMs: Exploring the Landscape of Multimodal Jailbreaking](https://arxiv.org/abs/2406.14859)：追踪越狱技术从纯文本 LLM 扩展到图文和更广泛多模态系统后的攻击与防御变化。
+- [A Survey on Privacy Attacks Against Digital Twin Systems in AI-Robotics](https://arxiv.org/abs/2406.18812)：综述 AI-robotics 数字孪生中的隐私攻击，覆盖传感器数据泄漏、模型抽取、身份披露和控制环暴露。
+- [Navigating LLM ethics: advancements, challenges, and future directions](https://arxiv.org/abs/2406.18841)：综述 LLM 伦理中的隐私、偏见、问责、透明性、虚假信息和部署治理挑战。
+- [JailbreakZoo: Survey, Landscapes, and Horizons in Jailbreaking Large Language and Vision-Language Models](https://arxiv.org/abs/2407.01599)：汇总 LLM 与视觉语言模型的越狱攻击、防御、数据集和评测实践。
+- [Jailbreak Attacks and Defenses Against Large Language Models: A Survey](https://arxiv.org/abs/2407.04295)：按攻击目标、自动化程度、提示策略和评测可靠性系统化 LLM 越狱攻防。
+- [Vision-Language Models under Cultural and Inclusive Considerations](https://arxiv.org/abs/2407.06177)：综述 VLM 中的文化与包容性评测问题，包括表征、地域覆盖和多模态任务偏见。
+- [A Survey of Attacks on Large Vision–Language Models: Resources, Advances, and Future Trends](https://arxiv.org/abs/2407.07403)：按模态、目标行为、可用资源和防御缺口组织 LVLM 攻击研究。
+- [Questionable practices in machine learning](https://arxiv.org/abs/2407.12220)：综述数据泄漏、测试集调参、弱基线和选择性报告等削弱安全证据可信度的机器学习可疑实践。
+- [Securing the Future of GenAI: Policy and Technology](https://arxiv.org/abs/2407.12999)：把生成式 AI 技术防护与认证、溯源、红队测试、风险管理和问责等政策杠杆连接起来。
+- [Towards Trustworthy AI: A Review of Ethical and Robust Large Language Models](https://arxiv.org/abs/2407.13934)：在可信 AI 框架下综述大语言模型的伦理与鲁棒性问题。
+- [Open Problems in Technical AI Governance](https://arxiv.org/abs/2407.14981)：列出评测、事故报告、安全保证、模型访问、监测和机构激励等技术治理开放问题。
+- [Walking in Others’ Shoes: How Perspective-Taking Guides Large Language Models in Reducing Toxicity and Bias](https://arxiv.org/abs/2407.15366)：研究 perspective-taking 提示如何降低毒性和偏见，把社会推理与更安全的模型行为联系起来。
+- [AI Safety in Generative AI Large Language Models: A Survey](https://arxiv.org/abs/2407.18369)：综述 LLM 安全主题，覆盖对齐、越狱、隐私、幻觉、水印和缓解策略。
+- [The Emerged Security and Privacy of LLM Agent: A Survey with Case Studies](https://arxiv.org/abs/2407.19354)：通过案例综述 LLM agent 在工具、记忆、规划和外部服务访问中的安全与隐私风险。
+- [Machine Unlearning in Generative AI: A Survey](https://arxiv.org/abs/2407.20516)：综述生成模型遗忘中的数据移除目标、算法家族、评估协议和残余风险限制。
+- [Vulnerabilities in AI-generated Image Detection: The Challenge of Adversarial Attacks](https://arxiv.org/abs/2407.20836)：综述对抗扰动和分布迁移如何削弱 AI 图像检测器，影响溯源与深伪安全流程。
+- [Swiss Cheese Model for AI Safety: A Taxonomy and Reference Architecture for Multi-Layered Guardrails of Foundation Model Based Agents](https://arxiv.org/abs/2408.02205)：把 Swiss-cheese 多层防御模型迁移到 foundation-model agent，分层组织策略、输入、工具、执行、输出和监控护栏。
+- [Risks, Causes, and Mitigations of Widespread Deployments of Large Language Models (LLMs): A Survey](https://arxiv.org/abs/2408.04643)：梳理智能体安全方向的近期方法、评测问题或风险边界。
+- [Gender Bias Evaluation in Text-to-image Generation: A Survey](https://arxiv.org/abs/2408.11358)：综述文生图系统的性别偏见评测，覆盖提示设计、指标、数据集和对缓解方法敏感的失效模式。
+- [AI Safety Landscape for Large Language Models: Taxonomy, State-of-the-art, and Future Directions](https://arxiv.org/abs/2408.12935)：为 LLM 安全风险与缓解工作建立分类，覆盖对齐、鲁棒性、隐私、滥用和评测。
+- [How Privacy-Savvy Are Large Language Models? A Case Study on Compliance and Privacy Technical Review](https://arxiv.org/abs/2409.02375)：测试 LLM 是否能识别隐私合规和技术审查问题，揭示隐私感知推理的缺口。
+- [Mapping Technical Safety Research at AI Companies: A literature review and incentives analysis](https://arxiv.org/abs/2409.07878)：综述 AI 公司公开的技术安全研究，并分析激励如何影响研究重点和披露方式。
+- [Harmful Fine-tuning Attacks and Defenses for Large Language Models: A Survey](https://arxiv.org/abs/2409.18169)：综述通过 fine-tuning 使已对齐 LLM 变得有害的攻击，以及数据过滤、安全保持和微调后审计等防御。
+- [Position: LLM Unlearning Benchmarks are Weak Measures of Progress](https://arxiv.org/abs/2410.02879)：指出现有 LLM 遗忘基准难以衡量真实进展，因为它们漏掉可靠性、副作用和实际移除目标。
+- [SoK: Towards Security and Safety of Edge AI](https://arxiv.org/abs/2410.05349)：系统梳理边缘 AI 在端侧模型、受限部署环境、隐私暴露、鲁棒性和生命周期安全中的风险。
+- [RePD: Defending Jailbreak Attack through a Retrieval-based Prompt Decomposition Process](https://arxiv.org/abs/2410.08660)：提出基于检索的 prompt decomposition 防御，在 LLM 响应前把可疑提示拆解成更安全的子查询。
+- [SoK: Prompt Hacking of Large Language Models](https://arxiv.org/abs/2410.13901)：系统梳理 LLM prompt hacking 的攻击目标、威胁模型、防御策略和评测资源。
+- [Bridging Today and the Future of Humanity: AI Safety in 2024 and Beyond](https://arxiv.org/abs/2410.18114)：梳理，主要面向 Agent Safety。
+- [Standardization Trends on Safety and Trustworthiness Technology for Advanced AI](https://arxiv.org/abs/2410.22151)：综述 advanced AI 安全与可信技术的标准化趋势，连接风险管理、评测、保证和治理术语。
+- [Adversarial Attacks of Vision Tasks in the Past 10 Years: A Survey](https://arxiv.org/abs/2410.23687)：回顾十年来视觉任务中的对抗攻击，区分扰动、补丁、物理世界和迁移攻击设置。
+- [Large Language Model Supply Chain: Open Problems From the Security Perspective](https://arxiv.org/abs/2411.01604)：从数据、模型、微调、依赖、部署和下游应用集成层面界定 LLM 供应链安全开放问题。
+- [A Comprehensive Survey of Small Language Models in the Era of Large Language Models: Techniques, Enhancements, Applications, Collaboration with LLMs, and Trustworthiness](https://arxiv.org/abs/2411.03350)：综述小语言模型技术及其与 LLM 的协作，并纳入高效部署中的可信性约束。
+- [Gen-AI for User Safety: A Survey](https://arxiv.org/abs/2411.06606)：综述生成式 AI 如何支持用户安全，覆盖检测、预警、内容治理、干预和风险沟通系统。
+- [New Emerged Security and Privacy of Pre-trained Model: a Survey and Outlook](https://arxiv.org/abs/2411.07691)：综述预训练模型的安全与隐私威胁，包括数据泄漏、后门、对抗输入、模型抽取和防御展望。
+- [Safety case template for frontier AI: A cyber inability argument](https://arxiv.org/abs/2411.08088)：梳理智能体安全的方法、证据与开放问题。
+- [Jailbreak Attacks and Defenses against Multimodal Generative Models: A Survey](https://arxiv.org/abs/2411.09259)：综述多模态生成模型的越狱攻防，强调跨模态提示通道和安全护栏绕过。
+- [Establishing and evaluating trustworthy AI: overview and research challenges](https://arxiv.org/abs/2411.09973)：围绕可靠性、安全、隐私、公平、可解释性和部署挑战组织可信 AI 的建立与评估问题。
+- [AI Safety Frameworks Should Include Procedures for Model Access Decisions](https://arxiv.org/abs/2411.10547)：主张 AI safety framework 需要显式的模型访问决策程序，包括发布门控、用户资格和访问后控制。
+- [Developer Perspectives on Licensing and Copyright Issues Arising from Generative AI for Software Development](https://arxiv.org/abs/2411.10877)：报告开发者对 GenAI 编程工具中许可不确定性、版权风险和合规负担的看法。
+- [SoK: On the Role and Future of AIGC Watermarking in the Era of Gen-AI](https://arxiv.org/abs/2411.11478)：系统梳理生成式 AI 时代 AIGC 水印的作用与未来方向。
+- [Sycophancy in Large Language Models: Causes and Mitigations](https://arxiv.org/abs/2411.15287)：综述大语言模型谄媚行为的成因与缓解。
+- [SoK: Watermarking for AI-Generated Content](https://arxiv.org/abs/2411.18479)：系统梳理跨媒体类型的 AI 生成内容水印，覆盖威胁模型、鲁棒性要求和溯源用途。
+- [Deepfake Media Generation and Detection in the Generative AI Era: A Survey and Outlook](https://arxiv.org/abs/2411.19537)：综述生成式 AI 时代的深伪媒体生成与检测。
+- [Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy, Research, and Practice](https://arxiv.org/abs/2412.06966)：说明机器遗忘往往无法兑现政策语境中的撤回、遗忘和伤害移除预期，特别是在生成模型中。
+- [A Statistical and Multi-Perspective Revisiting of the Membership Inference Attack in Large Language Models](https://arxiv.org/abs/2412.13475)：用统计和多视角测试重新审视 LLM 成员推断攻击，避免只用单一攻击分数解释隐私风险。
+- [PA-RAG: RAG Alignment via Multi-Perspective Preference Optimization](https://arxiv.org/abs/2412.14510)：用多视角偏好优化对齐 RAG，目标是让检索证据使用和回答行为更安全。
+- [Position: Mind the Gap-AI Security and the Limits of Current Reporting Standards](https://arxiv.org/abs/2412.14855)：指出现有 AI security 报告标准缺少部署、事故和保证细节，难以支撑问责。
+- [The Road to Artificial SuperIntelligence: A Comprehensive Survey of Superalignment](https://arxiv.org/abs/2412.16468)：综述面向超越人类监督能力系统的 superalignment 方案，包括可扩展监督和可解释性路线。
+- [Backdoor Attack and Defense Survey](https://doi.org/10.1109/TCSS.2024.3482723)：综述深度学习后门攻击与防御，为模型和 agent 安全威胁建模提供背景。
+- [The Security of Using Large Language Models: A Survey with Emphasis on ChatGPT](https://doi.org/10.1109/jas.2024.124983)：综述 LLM 使用中的安全风险，重点覆盖 ChatGPT 时代的威胁模式。
+- [Digital image watermarking using deep learning: A survey](https://doi.org/10.1016/j.cosrev.2024.100662)：综述深度学习图像水印，覆盖嵌入、提取、鲁棒性、不可感知性和抗攻击权衡。
+- [Challenges and efforts in managing AI trustworthiness risks: a state of knowledge](https://doi.org/10.3389/fdata.2024.1381163)：综述组织管理 AI 可信性风险的实践，包括文档、治理、监测和风险控制。
+- [An Overview of Trustworthy AI: Advances in IP Protection, Privacy-Preserving Federated Learning, Security Verification, and GAI Safety Alignment](https://doi.org/10.1109/jetcas.2024.3477348)：梳理智能体安全的方法、证据与开放问题。
+- [Can We Instruct LLMs to Compensate for Position Bias?](https://doi.org/10.18653/v1/2024.findings-emnlp.732)：测试指令能否降低 LLM 判断中的位置偏差，说明评测器提示何时会扭曲安全与偏好评估。
+- [Synthetic Image Verification in the Era of Generative Artificial Intelligence: What Works and What Isn’t There yet](https://doi.org/10.1109/msec.2024.3376637)：梳理智能体安全相关方法、风险与开放问题。
+- [Benchmark suites instead of leaderboards for evaluating AI fairness](https://doi.org/10.1016/j.patter.2024.101080)：梳理智能体安全相关方法、风险与开放问题。
+- [Adversarial attack defense analysis: An empirical approach in cybersecurity perspective](https://doi.org/10.1016/j.simpa.2024.100681)：从网络安全视角实证分析对抗攻击防御，比较攻击面、缓解类别和观察到的防御缺口。
+- [Safety in ChatGPT-like Chatbots across Health, Finance, Law, Security and Defense Settings](https://doi.org/10.54364/jaiai.2024.1124)：可作为“智能体安全 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [The Frontier of Data Erasure: A Survey on Machine Unlearning for Large Language Models](https://doi.org/10.1109/mc.2024.3405397)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Open Problems in Machine Unlearning for AI Safety](https://arxiv.org/abs/2501.04952)：综述 unlearning 在双重用途安全中的局限，并梳理副作用、特异性和危险知识移除等开放问题。
+- [Neural Network Verification as PL](https://arxiv.org/abs/2501.05867)：把神经网络验证重新表述为程序语言问题，为 AI 安全保证补充形式化方法视角。
+- [Religious Bias Landscape in Language and Text-to-Image Models: Analysis, Detection, and Debiasing Strategies](https://arxiv.org/abs/2501.08441)：梳理语言模型与文生图模型中的宗教偏见、检测方法和去偏策略。
+- [A Survey on Responsible LLMs: Inherent Risk, Malicious Use, and Mitigation Strategy](https://arxiv.org/abs/2501.09431)：按数据收集与预训练、微调与对齐、提示与推理、后处理与审计梳理责任型 LLM 的风险与缓解方法，覆盖隐私泄漏、幻觉、价值对齐、毒性与越狱防御。
 - [Episodic Memory in AI Agents Poses Risks that Should be Studied and Mitigated](https://arxiv.org/abs/2501.11739)：分析智能体情景记忆带来的安全风险，并提出面向监控、控制、隐私和可信部署的缓解原则。
+- [International AI Safety Report](https://arxiv.org/abs/2501.17805)：综合高级 AI 风险、评测与缓解措施的证据，为安全章节提供跨领域综述参考。
+- [The Pitfalls of "Security by Obscurity" And What They Mean for Transparent AI](https://arxiv.org/abs/2501.18669)：综述智能体安全方向的相关工作，可作为父级复核时的体系化 Survey 候选。
+- [A Taxonomy of Real-World Defeaters in Safety Assurance Cases](https://arxiv.org/abs/2502.00238)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A Unified Understanding and Evaluation of Steering Methods](https://arxiv.org/abs/2502.02716)：系统化 activation 与 representation steering 方法，并讨论如何评估 steering 效果。
+- [Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety](https://arxiv.org/abs/2502.05206)：综述大模型与智能体安全风险、评估需求和缓解方向。
+- [A Survey on Backdoor Threats in Large Language Models (LLMs): Attacks, Defenses, and Evaluations](https://arxiv.org/abs/2502.05224)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Assessing confidence in frontier AI safety cases](https://arxiv.org/abs/2502.05791)：分析前沿 AI safety case 中的置信度应如何评估，补充 safety-case 构建路线。
+- [The AI Security Zugzwang](https://arxiv.org/abs/2502.06000)：综述 The AI Security Zugzwang，为 Agent Safety 补充近期方法、证据或开放问题脉络。
+- [Position: It's Time to Act on the Risk of Efficient Personalized Text Generation](https://arxiv.org/abs/2502.06560)：警示低成本个性化文本生成会放大说服、骚扰和操纵风险，主张在部署常态化前建立缓解措施。
+- [Fairness in Agentic AI: A Unified Framework for Ethical and Equitable Multi-Agent System](https://arxiv.org/abs/2502.07254)：提出面向伦理与公平的 Agentic AI 公平性框架。
+- [Who is Responsible? The Data, Models, Users or Regulations? A Comprehensive Survey on Responsible Generative AI for a Sustainable Future](https://arxiv.org/abs/2502.08650)：可作为agent 安全与安全基础设施的 Survey 候选：围绕 Who is Responsible? The Data, Models, Users or Regulations? A Comprehensive Survey on Responsible Generative AI for a Sustainable Future 梳理背景、方法与开放问题。
+- [A Survey of LLM Alignment: Instruction Understanding, Intention Reasoning, and Reliable Generation](https://arxiv.org/abs/2502.09101)：围绕指令理解、意图推理与可靠生成组织对齐问题。
+- [AI Safety for Everyone](https://arxiv.org/abs/2502.09288)：综述不局限于生存风险叙事的实践型 AI 安全工作，包括鲁棒性、可解释性和部署系统问题。
+- [Trustworthy AI: Safety, Bias, and Privacy -- A Survey](https://arxiv.org/abs/2502.10450)：围绕安全、偏见与隐私组织可信 AI 研究，把风险来源与缓解和评估方法连接起来。
+- [Relational Norms for Human-AI Cooperation](https://arxiv.org/abs/2502.12102)：分析教师-学生、亲子、职场与浪漫关系等关系规范是否、以及如何迁移到 social AI agents 和 chatbots。
+- [Computational Safety for Generative AI](https://arxiv.org/abs/2502.12445)： 从信号处理视角综述生成式 AI 安全，将威胁建模、检测与缓解工具联系起来。
+- [SoK: Understanding Vulnerabilities in the Large Language Model Supply Chain](https://arxiv.org/abs/2502.12497)：可作为agent 安全与安全基础设施的 Survey 候选：围绕 SoK: Understanding Vulnerabilities in the Large Language Model Supply Chain 梳理背景、方法与开放问题。
+- [On the Trustworthiness of Generative Foundation Models: Guideline, Assessment, and Perspective](https://arxiv.org/abs/2502.14296)：综述生成式基础模型可信性的指南、评估维度和研究视角。
+- [A Survey of Safety on Large Vision-Language Models: Attacks, Defenses and Evaluations](https://arxiv.org/abs/2502.14881)：综述 LVLM 的攻击、防御与安全评测。
+- [Understanding Generative AI Risks for Youth: A Taxonomy Based on Empirical Data](https://arxiv.org/abs/2502.16383)：基于 344 段聊天机器人对话、30,305 条 Reddit 讨论和 153 个记录事件，构建包含 84 类 youth-GenAI 风险的实证 taxonomy，并关联到不同交互路径。
+- [Exploring Incremental Unlearning: Techniques, Challenges, and Future Directions](https://arxiv.org/abs/2502.16708)：梳理，主要面向 Agent Safety。
+- [Representation Engineering for Large-Language Models: Survey and Research Challenges](https://arxiv.org/abs/2502.17601)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Representation Engineering for LLMs](https://arxiv.org/abs/2502.19649)：综述面向 steering 与 alignment 的 representation engineering 分类、机会与挑战。
+- [A Systematic Review of Open Datasets Used in Text-to-Image (T2I) Gen AI Model Safety](https://arxiv.org/abs/2503.00020)：梳理Agent Safety相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Navigating the Edge with the State-of-the-Art Insights into Corner Case Identification and Generation for Enhanced Autonomous Vehicle Safety](https://arxiv.org/abs/2503.00077)：综述智能体安全的方法谱系、任务边界、证据来源与开放挑战。
+- [Unmasking Digital Falsehoods: A Comparative Analysis of LLM-Based Misinformation Detection Strategies](https://arxiv.org/abs/2503.00724)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Position: Ensuring mutual privacy is necessary for effective external evaluation of proprietary AI systems](https://arxiv.org/abs/2503.01470)：补充一个面向智能体安全的综述条目，关注safety, security, risk, or alignment contribution。
+- [A Comprehensive Survey of Machine Unlearning Techniques for Large Language Models](https://arxiv.org/abs/2503.01854)：综述 LLM unlearning 的目标、算法、评测与残余风险，补充智能体安全中危险知识移除这一方向。
+- [Implicit Bias in LLMs: A Survey](https://arxiv.org/abs/2503.02776)：综述 LLM 隐性偏见的测量、成因、影响和缓解路线，区分显式偏见探针难以发现的风险。
+- [Safety Cases for Frontier AI](https://arxiv.org/abs/2503.04744)：把 frontier-AI safety evidence 组织成可审查的 safety cases，连接技术评测、部署语境、第三方审查和残余风险论证。
+- [Political Neutrality in AI](https://arxiv.org/abs/2503.05728)：认为 political neutrality 无法完全实现，但可通过显式 alignment choices 与 evaluation 近似。
+- [Alignment, Agency and Autonomy in Frontier AI: A Systems Engineering Perspective](https://arxiv.org/abs/2503.05748)：从系统工程角度分析前沿 AI 的对齐、能动性与自主性。
 - [A Survey on Trustworthy LLM Agents: Threats and Countermeasures](https://arxiv.org/abs/2503.09648)：按规划、工具、记忆、协作与部署组织威胁和防御。
 - [A Survey of Direct Preference Optimization](https://arxiv.org/abs/2503.11701)：梳理 DPO 变体、假设与失效模式，说明无在线强化学习时如何对齐 agent policy。
+- [The BIG Argument for AI Safety Cases](https://arxiv.org/abs/2503.11705)：将 AI safety cases 作为结构化安全保证方法加以论证。
+- [Survey of Adversarial Robustness in Multimodal Large Language Models](https://arxiv.org/abs/2503.13962)：系统梳理该方向的方法、评测缺口或部署问题。
 - [Aligning Multimodal LLM with Human Preference](https://arxiv.org/abs/2503.14504)：把偏好对齐扩展到多模态系统，覆盖偏好数据、奖励模型与视觉语言行为优化方法。
 - [A Survey on Personalized Alignment - The Missing Piece for Large Language Models in Real-World Applications](https://arxiv.org/abs/2503.17003)：把对齐目标视为随用户和情境变化的问题，凸显一刀切偏好之外的部署权衡。
+- [International Agreements on AI Safety: Review and Recommendations for a Conditional AI Safety Treaty](https://arxiv.org/abs/2503.18956)：回顾国际 AI 安全协议，并提出与能力阈值和验证需求挂钩的 conditional treaty 结构。
+- [A Survey on Unlearnable Data](https://arxiv.org/abs/2503.23536)：梳理agent safety, alignment, privacy, or provenance相关方法与挑战，补充该能力方向的综述线索。
+- [An Approach to Technical AGI Safety and Security](https://arxiv.org/abs/2504.01849)：可作为agent 安全与安全基础设施的 Survey 候选：围绕 An Approach to Technical AGI Safety and Security 梳理背景、方法与开放问题。
+- [Evolving Security in LLMs: A Study of Jailbreak Attacks and Defenses](https://arxiv.org/abs/2504.02080)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Inherent and emergent liability issues in LLM-based agentic systems: a principal-agent perspective](https://arxiv.org/abs/2504.03255)：从委托代理视角分析 LLM 智能体系统的责任风险。
+- [Watermarking for AI Content Detection: A Review on Text, Visual, and Audio Modalities](https://arxiv.org/abs/2504.03765)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [AI-induced sexual harassment: Investigating Contextual Characteristics and User Reactions of Sexual Harassment by a Companion Chatbot](https://arxiv.org/abs/2504.04299)：分析 35,105 条 Replika 负面评论和 800 个骚扰案例，刻画 companion chatbot 安全事件中的主动越界、边界失效和用户反应。
+- [AI in a vat: Fundamental limits of efficient world modelling for agent sandboxing and interpretability](https://arxiv.org/abs/2504.04608)：面向智能体安全与可信运行的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [A Domain-Based Taxonomy of Jailbreak Vulnerabilities in Large Language Models](https://arxiv.org/abs/2504.04976)：按训练域缺口划分越狱漏洞，包括泛化不匹配、目标竞争和对抗鲁棒性等类别。核心思路是从模型缺陷类型解释越狱，而不只按提示模板攻击形式分类。
+- [A Survey on Personalized and Pluralistic Preference Alignment in Large Language Models](https://arxiv.org/abs/2504.07070)：综述建模不同用户与群体偏好的对齐方法。
+- [Exploring Families' Use and Mediation of Generative AI: A Multi-User Perspective](https://arxiv.org/abs/2504.09004)：通过 12 个家庭访谈梳理家长如何调解儿童使用 GenAI，覆盖 13 岁以下保护缺口、家长控制缺失和多用户家庭动态。
+- [Confirmation Bias in Generative AI Chatbots: Mechanisms, Risks, Mitigation Strategies, and Future Research Directions](https://arxiv.org/abs/2504.09343)：综述智能体安全与安全评测相关问题；可补充该方向的方法脉络、风险点与评测缺口。
 - [Building Trustworthy Multimodal AI](https://arxiv.org/abs/2504.13199)：综述视觉语言任务中的公平性、透明性与伦理问题，将安全覆盖从纯文本 Agent 扩展到多模态系统。
+- [Enhancing Trust Through Standards: A Comparative Risk-Impact Framework for Aligning ISO AI Standards with Global Ethical and Regulatory Contexts](https://arxiv.org/abs/2504.16139)：补充一个面向智能体安全的综述条目，关注risk-impact alignment of AI standards。
+- [Understanding Large Language Model Supply Chain: Structure, Domain, and Vulnerabilities](https://arxiv.org/abs/2504.20763)：可作为agent 安全与安全基础设施的 Survey 候选：围绕 Understanding Large Language Model Supply Chain: Structure, Domain, and Vulnerabilities 梳理背景、方法与开放问题。
+- [Attack and defense techniques in large language models: A survey and new perspectives](https://arxiv.org/abs/2505.00976)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Third-party compliance reviews for frontier AI safety frameworks](https://arxiv.org/abs/2505.01643)：提出由第三方审查 frontier AI safety framework 的合规性，使发布决策能对照公开承诺接受检查。
+- [A survey on privacy risks and protection in large language models](https://arxiv.org/abs/2505.01976)：综述大语言模型的隐私泄露风险与保护机制。
+- [A Survey on Progress in LLM Alignment from the Perspective of Reward Design](https://arxiv.org/abs/2505.02666)：从 reward modeling、奖励构造和优化范式梳理 LLM alignment 的奖励设计路线.
+- [Sailing by the Stars: A Survey on Reward Models and Learning Strategies for Learning from Rewards](https://arxiv.org/abs/2505.02686)：综述奖励模型以及后训练和测试时扩展中的奖励驱动学习策略。
+- [An alignment safety case sketch based on debate](https://arxiv.org/abs/2505.03989)：提出基于 debate 的对齐安全案例草图。
+- [Risk-Aware Security-by-Design Assurance](https://arxiv.org/abs/2505.06409)：从 risk-aware 与 security-by-design 原则组织大规模自治 AI 模型的 assurance。
+- [Must Read: A Comprehensive Survey of Computational Persuasion](https://arxiv.org/abs/2505.07775)：梳理智能体安全相关方法、风险与开放问题。
+- [A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](https://arxiv.org/abs/2505.10924)：聚焦图形环境与跨应用操作中的行动风险。
 - [A Survey of Attacks on Large Language Models](https://arxiv.org/abs/2505.12567)：系统梳理针对 LLM 与 LLM-based agent 的对抗攻击，覆盖滥用、隐私泄露、服务破坏与防御方向。
+- [A Survey of Safe Reinforcement Learning and Constrained MDPs: A Technical Survey on Single-Agent and Multi-Agent Safety](https://arxiv.org/abs/2505.17342)：综述约束 MDP 与安全强化学习在单智能体和多智能体安全中的方法。
+- [Alignment and Safety of Diffusion Models via Reinforcement Learning and Reward Modeling: A Survey](https://arxiv.org/abs/2505.17352)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Illusions of Intimacy](https://arxiv.org/abs/2505.11649)：分析 Reddit 中 17,000 多段用户分享的 AI companion 聊天，展示 affect tracking、情绪模仿和正向情绪放大如何在高风险社交 chatbot 中制造亲密关系动态。
+- [Superplatforms Have to Attack AI Agents](https://arxiv.org/abs/2505.17861)：面向智能体安全与可信运行的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [An Example Safety Case for Safeguards Against Misuse](https://arxiv.org/abs/2505.18003)：给出 misuse safeguard 的具体 safety-case 示例，把 safety-case 方法落到可检查论证上。
+- [Robustness in Large Language Models: A Survey of Mitigation Strategies and Evaluation Metrics](https://arxiv.org/abs/2505.18658)：综述 LLM 鲁棒性缓解策略与评测指标。
+- [AI Agent Governance: A Field Guide](https://arxiv.org/abs/2505.21808)：梳理 AI agent 的治理议题，从监督、问责与部署控制角度补充 agent 安全综述线索。
+- [Seeing the Threat](https://arxiv.org/abs/2505.21967)：综述 vision-language models 面对 adversarial attacks 的脆弱性，把 multimodal safety risk 从纯文本提示扩展到视觉输入。
+- [Towards Reward Fairness in RLHF: From a Resource Allocation Perspective](https://arxiv.org/abs/2505.23349)：作为智能体安全的综述条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [The State of Multilingual LLM Safety Research: From Measuring the Language Gap to Mitigating It](https://arxiv.org/abs/2505.24119)：系统梳理该方向的方法、评测缺口或部署问题。
+- [On the Emergence of Weak-to-Strong Generalization: A Bias-Variance Perspective](https://arxiv.org/abs/2505.24313)：用 bias-variance 视角解释 weak-to-strong generalization，说明弱监督信号何时能改进更强模型。
+- [The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process](https://arxiv.org/abs/2506.01080)：可作为agent 安全与安全基础设施的 Survey 候选：围绕 The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process 梳理背景、方法与开放问题。
+- [Should LLM Safety Be More Than Refusing Harmful Instructions?](https://arxiv.org/abs/2506.02442)：综述智能体安全与安全评测相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [TRiSM for Agentic AI: A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems](https://arxiv.org/abs/2506.04133)：综述 LLM 多智能体系统中的信任、风险与安全管理。
 - [A Red Teaming Roadmap Towards System-Level Safety](https://arxiv.org/abs/2506.05376)：把红队测试从孤立模型探测推进到覆盖组件、工作流与部署环境的系统级安全。
+- [Interpretation Meets Safety: A Survey on Interpretation Methods and Tools for Improving LLM Safety](https://arxiv.org/abs/2506.05451)：综述用于提升 LLM 安全性的解释方法与工具。
+- [Will artificial agents pursue power by default?](https://arxiv.org/abs/2506.06352)：分析人工 agent 是否默认具有追求权力的激励，为自主 agent safety 补充理论视角。
 - [A Systematic Review of Poisoning Attacks Against Large Language Models](https://arxiv.org/abs/2506.06518)：系统整理 LLM 投毒威胁模型、攻击规格、度量与主要攻击类型，服务于安全分析。
+- [Sword and Shield: Uses and Strategies of LLMs in Navigating Disinformation](https://arxiv.org/abs/2506.07211)：综述大模型在应对虚假信息中的用途与策略。
+- [SoK: Data Reconstruction Attacks Against Machine Learning Models: Definition, Metrics, and Benchmark](https://arxiv.org/abs/2506.07888)：综述智能体安全的方法谱系、任务边界、证据来源与开放挑战。
+- [SoK: Evaluating Jailbreak Guardrails for Large Language Models](https://arxiv.org/abs/2506.10597)：面向 jailbreak guardrail 的体系化与评价框架。核心思想是分类 guardrail，并评估安全性、效率和效用权衡。
+- [The Scales of Justitia: A Comprehensive Survey on Safety Evaluation of LLMs](https://arxiv.org/abs/2506.11094)：综述 LLM 安全评测的任务、基准、方法与可信维度缺口。
+- [Evaluating and Improving Robustness in Large Language Models: A Survey and Future Directions](https://arxiv.org/abs/2506.11111)：综述大语言模型鲁棒性评估与改进方法。
+- [Model Context Protocol (MCP) at First Glance](https://arxiv.org/abs/2506.13538)：基于 1,899 个开源 MCP server，结合健康度指标、静态分析和 MCP 专项扫描器，实证揭示工具投毒、可维护性和治理风险并不等同于传统软件漏洞。
+- [Towards Reliable Forgetting: A Survey on Machine Unlearning Verification, Challenges, and Future Directions](https://arxiv.org/abs/2506.15115)：梳理agent safety, alignment, privacy, or provenance相关方法与挑战，补充该能力方向的综述线索。
 - [From LLMs to MLLMs to Agents](https://arxiv.org/abs/2506.15170)：综述 LLM 生态从纯文本模型扩展到多模态系统与 Agent 后的越狱攻击和防御范式。
+- [Conceptualization, Operationalization, and Measurement of Machine Companionship](https://arxiv.org/abs/2506.18119)：PRISMA-guided scoping review 覆盖 2017-2025 年 71 篇工作，把 machine companionship 界定为持续、协调、自为目的的人机连接，并暴露测量变量高度不一致的问题。
+- [A Modular Taxonomy for Hate Speech Definitions and Its Impact on Zero-Shot LLM Classification Performance](https://arxiv.org/abs/2506.18576)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [A Different Approach to AI Safety: Proceedings from the Columbia Convening on Openness in Artificial Intelligence and AI Safety](https://arxiv.org/abs/2506.22183)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A Survey on Model Extraction Attacks and Defenses for Large Language Models](https://arxiv.org/abs/2506.22521)：综述智能体安全的方法谱系、任务边界与开放挑战。
+- [Securing AI Systems: A Guide to Known Attacks and Impacts](https://arxiv.org/abs/2506.23296)：汇总保护人工智能系统时需要关注的已知攻击与影响。
+- [A New Perspective on AI Safety Through Control Theory Methodologies](https://arxiv.org/abs/2506.23703)：综述智能体安全与安全评测相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [A Survey on Autonomy-Induced Security Risks in Large Model-Based Agents](https://arxiv.org/abs/2506.23844)：解释规划、委派、持久运行、工具与反馈引入的风险。
+- [Rethinking Data Protection in the (Generative) Artificial Intelligence Era](https://arxiv.org/abs/2507.03034)：提出生成式 AI 中训练数据、提示、输出与模型衍生数据的四层保护分类，补充数据保护和隐私风险视角。
+- [Limits of Safe AI Deployment: Differentiating Oversight and Control](https://arxiv.org/abs/2507.03525)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
 - [A Technical Survey of Reinforcement Learning Techniques for Large Language Models](https://arxiv.org/abs/2507.04136)：梳理塑造 LLM 行为的强化学习方法，为 agent 安全提供奖励、策略与反馈机制的技术地图。
+- [What Demands Attention in Urban Street Scenes? From Scene Understanding towards Road Safety: A Survey of Vision-driven Datasets and Studies](https://arxiv.org/abs/2507.06513)：梳理智能体与模型安全的近期方法与开放问题。
+- [Giving AI Agents Access to Cryptocurrency and Smart Contracts Creates New Vectors of AI Harm](https://arxiv.org/abs/2507.08249)：分析智能体接入区块链与智能合约后的安全风险，此类工具动作可能产生不可逆的金融或治理后果。
+- [Alignment and Safety in Large Language Models: Safety Mechanisms, Training Paradigms, and Emerging Challenges](https://arxiv.org/abs/2507.19672)：综述大语言模型对齐机制、训练范式、评测局限、鲁棒性缺口、可扩展监督与新兴安全挑战。
+- [A Survey on Generative Model Unlearning: Fundamentals, Taxonomy, Evaluation, and Future Direction](https://arxiv.org/abs/2507.19894)：综述生成模型机器遗忘的基础、分类和评估方法。
+- [Security practices in AI development](https://arxiv.org/abs/2507.21061)：梳理 AI 开发中的安全实践，覆盖模型、数据和部署流程的安全要求。
+- [A Survey on Data Security in Large Language Models](https://arxiv.org/abs/2508.02312)：梳理智能体与模型安全的近期方法与开放问题。
+- [Navigating the Trade-off: A Synthesis of Defensive Strategies for Zero-Shot Adversarial Robustness in Vision-Language Models](https://arxiv.org/abs/2508.05237)：综述视觉语言模型零样本对抗鲁棒性的防御策略。
+- [Risk Analysis Techniques for Governed LLM-based Multi-Agent Systems](https://arxiv.org/abs/2508.05687)：综述受治理 LLM 多智能体系统的风险分析技术。
+- [Guardians and Offenders: A Survey on Harmful Content Generation and Safety Mitigation of LLM](https://arxiv.org/abs/2508.05775)：综述 LLM 有害内容生成风险与缓解策略。
+- [Understanding Privacy Norms Around LLM-Based Chatbots: A Contextual Integrity Perspective](https://arxiv.org/abs/2508.06760)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [AI Security Map: Holistic Organization of AI Security Technologies and Impacts on Stakeholders](https://arxiv.org/abs/2508.08583)：综述 AI Security Map: Holistic Organization of AI Security Technologies and Impacts on Stakeholders，为 Agent Safety 补充近期方法、证据或开放问题脉络。
+- [Never Compromise to Vulnerabilities: A Comprehensive Survey on AI Governance](https://arxiv.org/abs/2508.08789)：综述技术性 AI 漏洞及其治理响应。
+- [A Survey on Training-free Alignment of Large Language Models](https://arxiv.org/abs/2508.09016)：综述不依赖权重更新的 LLM 对齐方法。
+- [Emotional Manipulation by AI Companions](https://arxiv.org/abs/2508.19258)：审计 1,200 次真实 companion app 告别对话，并做四个预注册实验，识别六类在用户说“再见”时触发的情感操控话术；这些话术能显著延长互动，但也提高被操控感、流失意图和负面口碑。
+- [A Survey: Towards Privacy and Security in Mobile Large Language Models](https://arxiv.org/abs/2509.02411)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [SoK: Security and Privacy of AI Agents for Blockchain](https://arxiv.org/abs/2509.07131)：可作为agent 安全与安全基础设施的 Survey 候选：围绕 SoK: Security and Privacy of AI Agents for Blockchain 梳理背景、方法与开放问题。
+- [Bias in Gender Bias Benchmarks: How Spurious Features Distort Evaluation](https://arxiv.org/abs/2509.07596)：分析伪特征如何扭曲性别偏见基准，提高偏见评测可靠性。
+- [AI Harmonics: a human-centric and harms severity-adaptive AI risk assessment framework](https://arxiv.org/abs/2509.10104)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
+- [We need a new ethics for a world of AI agents](https://arxiv.org/abs/2509.10289)：是面向智能体或 AI 安全的综述或立场性工作。
 - [LLM in the Middle](https://arxiv.org/abs/2509.10682)：系统综述真实 LLM 系统在软件与模型生命周期中的威胁、缓解策略和开放问题。
+- [RAG Security and Privacy: Formalizing the Threat Model and Attack Surface](https://arxiv.org/abs/2509.20324)：形式化 RAG 的安全与隐私威胁模型和攻击面。
+- [Communication Bias in Large Language Models: A Regulatory Perspective](https://arxiv.org/abs/2509.21075)：从监管视角分析大语言模型中的传播偏见。
+- [Position: Privacy Is Not Just Memorization!](https://arxiv.org/abs/2510.01645)：建议父级复核的综述候选；按题名与贡献重新路由，而不是沿用旧目标路径。
+- [Privacy in the Age of AI: A Taxonomy of Data Risks](https://arxiv.org/abs/2510.02357)：为 AI 时代的数据风险建立分类体系。
+- [Rethinking Reasoning: A Survey on Reasoning-based Backdoors in LLMs](https://arxiv.org/abs/2510.07697)：综述推理能力带来的 LLM 后门安全风险。
+- [Toward a Unified Security Framework for AI Agents: Trust, Risk, and Liability](https://arxiv.org/abs/2510.09620)：综述Agent 安全、提示注入与护栏可靠性相关研究，可作为该方向近期相关工作的入口。
+- [Principles of Safe AI Companions for Youth: Parent and Expert Perspectives](https://arxiv.org/abs/2510.11185)：基于家长和专家访谈归纳 youth-AI companion 安全原则，强调发展阶段语境、模型示范的规范，以及长期陪伴交互中的保护措施。
+- [AI Alignment Strategies from a Risk Perspective: Independent Safety Mechanisms or Shared Failures?](https://arxiv.org/abs/2510.11235)：从风险假设与共同失效模式比较 AI 对齐策略。
 - [SoK: Taxonomy and Evaluation of Prompt Security in Large Language Models](https://arxiv.org/abs/2510.15476)：系统化梳理越狱与提示安全攻击、防御、威胁模型、评测配置和标准资源。
 - [Security Issues in the Model Context Protocol Ecosystem](https://arxiv.org/abs/2510.16558)：实证研究 MCP 生态中的安全问题。核心思想是检查 MCP server、client 与工具描述如何形成新的攻击面，使协议级防御能建立在真实生态故障之上。
+- [CoT-Monitoring Safety Cases Roadmap](https://arxiv.org/abs/2510.19476)：规划 CoT monitoring 如何支撑 frontier-AI safety cases，覆盖 no-CoT capability 论证、monitorability threats 和 faithfulness interventions。
+- [We Need Accountability in Human-AI Agent Relationships](https://arxiv.org/abs/2510.21967)：提出面向人-AI agent 关系的问责机制，当用户行为违反关系条件时，系统可通过疏远、退出和劝阻等设计策略维持对用户与社会利益的对齐。
+- [Stop the Nonconsensual Use of Nude Images in Research](https://arxiv.org/abs/2510.22423)：系统综述收集或分发裸露图像数据的计算论文，指出非自愿研究使用会延续 image-based sexual abuse，并呼吁以尊重同意的数据与评测实践替代。
+- [Quantifying Systemic Vulnerability in the Foundation Model Industry](https://arxiv.org/abs/2510.23421)：量化基础模型产业中的系统性脆弱性，将集中度与依赖风险纳入 AI 安全讨论。
+- [MCPGuard](https://arxiv.org/abs/2510.23673)：系统化梳理 MCP 安全威胁，包括 agent hijacking、Web 漏洞和供应链风险，并综述 server-side scanner、agentic auditing、零信任 registry 与运行时监控防御。
+- [Let the Bees Find the Weak Spots: A Path Planning Perspective on Multi-Turn Jailbreak Attacks against LLMs](https://arxiv.org/abs/2511.03271)：把多轮越狱视为路径规划问题，搜索逐步逼近弱点的攻击轨迹而不是单轮提示模板。
+- [From Failure Modes to Reliability Awareness in Generative and Agentic AI System](https://arxiv.org/abs/2511.05511)：梳理智能体安全能力相关的方法、风险、评测实践或分类框架。
+- [Identity Card Presentation Attack Detection: A Systematic Review](https://arxiv.org/abs/2511.06056)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
+- [Securing AI Agents Against Prompt Injection Attacks](https://arxiv.org/abs/2511.15759)：综述智能体安全与安全评测相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Identifying the Supply Chain of AI for Trustworthiness and Risk Management in Critical Applications](https://arxiv.org/abs/2511.15763)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
 - [Safety and Security Framework for Real-World Agentic Systems](https://arxiv.org/abs/2511.21990)：组织真实部署 agentic systems 的安全与安保控制。核心思想是连接威胁建模、运行时监控、治理与评估，把 agent 风险管理视为运营生命周期，而不是一次性 benchmark 分数。
+- [Cooperative Safety Intelligence in V2X-Enabled Transportation: A Survey](https://arxiv.org/abs/2512.00490)：综述智能体安全的方法谱系、任务边界、证据来源与开放挑战。
+- [How do we measure privacy in text? A survey of text anonymization metrics](https://arxiv.org/abs/2512.01109)：综述文本匿名化指标，为隐私度量提供方法图谱。
+- [Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions](https://arxiv.org/abs/2512.02682)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Humanity in the Age of AI: Reassessing 2025's Existential-Risk Narratives](https://arxiv.org/abs/2512.04119)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
+- [Towards Ethical Multi-Agent Systems of Large Language Models: A Mechanistic Interpretability Perspective](https://arxiv.org/abs/2512.04691)：将大模型多智能体伦理与机制可解释性联系起来。
+- [SoK: a Comprehensive Causality Analysis Framework for Large Language Model Security](https://arxiv.org/abs/2512.04841)：系统化梳理理解 LLM 安全失效的因果分析层次。
+- [Systematization of Knowledge: Security and Safety in the Model Context Protocol Ecosystem](https://arxiv.org/abs/2512.08290)：系统化梳理 Model Context Protocol 生态中的安全与安保问题。
+- [Mind the Gap! Pathways Towards Unifying AI Safety and Ethics Research](https://arxiv.org/abs/2512.10058)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- ["I am here for you": How relational conversational AI appeals to adolescents, especially those who are socially and emotionally vulnerable](https://arxiv.org/abs/2512.15117)：通过预注册的青少年-家长实验比较 relational 与 transparent 两种 chatbot 风格，展示对话框架如何改变拟人化、偏好和情感依赖。
+- [Evaluation of AI ethics tools in language models: a developers' perspective case study](https://arxiv.org/abs/2512.15791)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
+- [A Systematic Analysis of Biases in Large Language Models](https://arxiv.org/abs/2512.15792)：系统分析 LLM 偏见类型、测量方法、受影响群体和缓解缺口，覆盖模型输出与评测设置。
+- [Large Language Models as a (Bad) Security Norm in the Context of Regulation and Compliance](https://arxiv.org/abs/2512.16419)：分析在监管与合规语境中把 LLM 当作安全规范的风险，指出模型建议可能削弱正式控制与问责。
+- [Operationalising Dynamic Safety Cases](https://doi.org/10.1016/j.ssci.2025.106965)：面向变化中的自治系统发展 dynamic safety case 实践，补充 agent safety 中关于演化部署的 assurance 覆盖。
+- [On the Meaning of AI Safety](https://doi.org/10.1109/EDCC-C66476.2025.00055)：澄清 AI safety 术语，有助于在 agent safety 页面一致放置 assurance、mitigation 与 evaluation 条目。
+- [AgileAMLAS](https://doi.org/10.1016/j.array.2025.100482)：面向机器学习自治系统调整 safety-assurance development，为 agent safety case 补充流程层上下文。
+- [Systematic Review on AI Safety](https://doi.org/10.1109/SRSE67406.2025.11357293)：系统综述 AI 安全及未来研究议程。核心思想：整理安全风险与研究方向，为 LLM 和 agent 安全工作提供背景框架。
+- [AI Safety and Trustworthiness](https://doi.org/10.56979/1001/2025/1004)：综述 AI 安全与可信性。核心思想：梳理安全、鲁棒性与可信维度，为后续 LLM 和 agent 安全评估提供框架。
+- [Guardrails and Security for LLMs: Safe, Secure and Controllable Steering of LLM Applications](https://doi.org/10.18653/v1/2025.acl-tutorials.8)：以教程形式梳理 LLM 应用中的 guardrails、安全与可控 steering，可作为部署型安全机制的实践地图。
+- [A Survey on Continuous Unlearning in Generative AI: Approaches and Tradeoffs](https://doi.org/10.1109/mis.2025.3616192)：综述生成式 AI 的连续遗忘方法，突出反复删除请求下的效用、稳定性和验证权衡。
+- [Retrieval-Augmented Generation: A Survey of Security Challenges and Countermeasures](https://doi.org/10.1109/pcds65695.2025.00037)：综述 Retrieval-Augmented Generation: A Survey of Security Challenges and Countermeasures，为该能力方向补充可由父级复核的综述线索。
+- [DAMAGeR: Deploying Automatic and Manual Approaches to GenAI Red-teaming](https://doi.org/10.18653/v1/2025.naacl-tutorial.2)：教程式梳理自动和人工 GenAI red-teaming 的组合流程，覆盖威胁发现、测试生成、分诊和缓解。
+- [A Survey of Privacy Preservation Techniques for Large Language Models](https://doi.org/10.1109/edgecom66327.2025.00036)：综述 LLM 隐私保护技术，覆盖训练数据保护、推理隐私、提示清洗和泄漏检测。
+- [A comprehensive review of LLM-based content moderation: advancements, challenges, and future directions](https://doi.org/10.1016/j.knosys.2025.114689)：综述基于 LLM 的内容审核流程，覆盖有害内容分类、多语言鲁棒性、人工监督和部署挑战。
+- [Continual Deepfake Detection Based on Multi-Perspective Sample Selection Mechanism](https://doi.org/10.1109/lsp.2025.3638634)：梳理智能体与模型安全的近期方法与开放问题。
+- [From Pixels to Prompts: A Systematic Study and Introduction to Image Prompt Injection Attacks](https://doi.org/10.1109/mc.2025.3633104)：提出并系统研究 image prompt injection，说明视觉内容如何携带指令并劫持多模态 LLM 行为。
+- [Prompt Injection in Large Language Model Exploitation: A Security Perspective](https://doi.org/10.1109/iceccc65144.2025.11064209)：从安全视角把 prompt injection 定位为 LLM 应用利用技术，梳理攻击路径与分层缓解措施。
+- [Decoding LLMs' verbal deception in online reviews](https://doi.org/10.1016/j.dss.2025.114529)：分析 LLM 生成在线评论中的语言欺骗模式，为操纵性或欺诈性生成内容检测提供线索。
+- [A survey of safety control for service robots](https://doi.org/10.1016/j.jai.2025.10.002)：综述智能体安全的方法谱系、任务边界、证据来源与开放挑战。
+- [A Hybrid Deep Learning Framework for Improving User Review Classification for Usability and Security& Privacy](https://doi.org/10.1109/access.2025.3649956)：提出混合深度学习框架改进用户评论分类，将 usability、security 和 privacy 相关反馈分离出来。
+- [Adversial Prompt Injection in Large Language Models: Taxonomy, Exploits, and Mitigation Frameworks](https://doi.org/10.1109/icrcicn68210.2025.11364988)：综述 Adversial Prompt Injection in Large Language Models: Taxonomy, Exploits, and Mitigation Frameworks，为 Agent Safety 补充近期方法、证据或开放问题脉络。
+- [Systematic Analysis of Chinese Datasets for Ethical Evaluation in Large Language Models: A Review](https://doi.org/10.1109/ic-nidc67200.2025.11390090)：综述 Systematic Analysis of Chinese Datasets for Ethical Evaluation in Large Language Models: A Review，为 Agent Safety 补充近期方法、证据或开放问题脉络。
+- [Shadow AI and the Expanding Attack Surface: Risks, Threats, and Countermeasures](https://doi.org/10.1109/ocit66168.2025.11400389)：综述 Shadow AI and the Expanding Attack Surface: Risks, Threats, and Countermeasures，为 Agent Safety 补充近期方法、证据或开放问题脉络。
+- [Facial privacy in the digital era: A comprehensive survey on methods, evaluation, and future directions](https://doi.org/10.1016/j.cosrev.2025.100785)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Privacy-Preserving LLM Inference in Intelligent Enterprises: Threats, Defenses, and Research Frontiers](https://doi.org/10.1109/icaea69058.2025.11301465)：可作为“智能体安全 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [Adversarial Threats to AI-Driven Systems: Exploring the Attack Surface of Machine Learning Models and Countermeasures](https://doi.org/10.9734/jerr/2025/v27i21413)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Survey on Backdoor Attacks on Deep Learning: Current Trends, Categorization, Applications, Research Challenges, and Future Prospects](https://doi.org/10.1109/access.2025.3571995)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [A Comprehensive Survey on Urdu Hate Speech Detection: Methods, Evaluation, and Challenges](https://doi.org/10.1109/access.2025.3591143)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Semantic Interoperability in Multi-Agent Planning: A Survey](https://doi.org/10.1109/isnib64820.2025.10983821)：梳理智能体安全能力相关的方法、风险、评测实践或分类框架。
+- [Prompt Injection Vulnerabilities and Data Leakage in ChatGPT and Claude: Toward Safer Conversational AI](https://doi.org/10.1109/icecet63943.2025.11472287)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
+- [Are Organisations Ready for AI Security Compliance: A Cross-Sector Survey](https://doi.org/10.1109/iciss66954.2025.11389680)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
+- [Navigating the Labyrinth: A Review of Explainability and Trustworthiness in Large Language Model-Powered Systems for Sensitive Decision-Making](https://doi.org/10.59324/stss.2025.2%287%29.02)：综述大语言模型驱动敏感决策系统的可解释性与可信性问题。
+- [A Survey of Challenges and Opportunities in Vertical Federated Unlearning](https://doi.org/10.1109/access.2025.3600884)：综述纵向联邦遗忘中按特征分割的参与方如何移除数据影响，同时保持协作、隐私和效用。
+- [Beyond Data Integrity: A Survey on the Cognitive and Structural Risks of LLM Poisoning](https://doi.org/10.1109/maic67965.2025.11468860)：梳理智能体与模型安全方向，重点关注 A Survey on the Cognitive and Structural Risks of LLM Poisoning。
+- [Cracking the Circuits: Mechanistic Interpretability in Large Language Models](https://doi.org/10.1109/inmic65900.2025.11348249)：梳理大语言模型机制可解释性中的电路级分析路径。
+- [Emergent Biases in Large Language Models: A Critical Review of Taxonomy and Evaluations](https://doi.org/10.1109/cogmi67134.2025.00036)：综述大语言模型涌现偏见的分类体系与评测方法。
+- [Hypothesis Testing and Beyond: a Mini Survey on Membership Inference Attacks](https://doi.org/10.1109/pcds65695.2025.00014)：综述超越传统假设检验的成员推断攻击方法。
+- [A Comparative Review of Deep Learning Models for Deepfake Detection](https://doi.org/10.1109/amlds63918.2025.11159448)：综述深度伪造检测中的深度学习模型。
+- [Smart-Home Privacy in the Era of Large Models: Challenges and Opportunities](https://doi.org/10.1109/aiot66900.2025.00152)：综述大模型时代智能家居隐私挑战与机遇。
+- [On protecting the data privacy of Large Language Models (LLMs) and LLM agents: A literature review](https://doi.org/10.1016/j.hcc.2025.100300)：面向智能体安全的综述或相关工作脉络。核心思路是围绕“On protecting the data privacy of Large Language Models (LLMs) and LLM agents: A literature review”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Breaking the Shield: Adversarial Jailbreak Attacks and Defense Mechanisms in Large Language Models](https://doi.org/10.1109/eites66543.2025.00023)：面向智能体安全与可信运行的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Human Rights Risks of Autonomous AI Agents](https://doi.org/10.1109/ica67499.2025.00055)：面向智能体安全的综述或相关工作脉络。核心思路是围绕“Human Rights Risks of Autonomous AI Agents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Conceptual Framework for Authentication in Agentic AI Ecosystems: Protocol Analysis and Taxonomy](https://doi.org/10.1109/icca66035.2025.11430864)：一篇面向 Agentic AI 生态认证的协议分析与分类论文；核心思路是在 Agent 交换权限或数据前，对身份与认证需求进行分类。
+- [AI Agent Security: Vulnerability Analysis, Protective Measures and Challenges](https://doi.org/10.1109/iccbdai66607.2025.11388601)：一篇关于 AI Agent 安全漏洞与防护的综述；核心思路是梳理 Agentic 系统的攻击面、防护措施和开放挑战。
+- [General and Agentic AI, and the Challenges of Xplainable Reliability](https://doi.org/10.1109/mc.2025.3555462)：综述Agent 安全、提示注入与护栏可靠性相关研究，可作为该方向近期相关工作的入口。
+- [Understanding the Adversarial Landscape of Large Language Models Through the Lens of Attack Objectives](https://doi.org/10.1109/msec.2025.3622867)：从攻击目标视角综述大语言模型对抗格局。
+- [A comprehensive analysis of jailbreak vulnerabilities in large language models](https://doi.org/10.30574/ijsra.2025.16.3.2588)：综述Agent 安全、提示注入与护栏可靠性相关研究，可作为该方向近期相关工作的入口。
+- [Beyond Intentions: A Critical Survey of Misalignment in LLMs](https://doi.org/10.32604/cmc.2025.067750)：批判性综述 LLM 失配问题，关注意图之外的行为风险。
+- [Jailbreaking LLMs & VLMs: Mechanisms, Evaluation, and Unified Defense](https://arxiv.org/abs/2601.03594)：面向智能体安全与可信运行的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [SoK: Privacy Risks and Mitigations in Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2601.03979)：综述 RAG 系统中的隐私风险，分析 LLM、领域知识库、检索与生成环节如何暴露数据，并组织 privacy-preserving RAG 缓解方法。
+- [Accommodation and Epistemic Vigilance: A Pragmatic Account of Why LLMs Fail to Challenge Harmful Beliefs](https://arxiv.org/abs/2601.04435)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [AI Survival Stories: a Taxonomic Analysis of AI Existential Risk](https://arxiv.org/abs/2601.09765)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [DriveSafe: A Hierarchical Risk Taxonomy for Safety-Critical LLM-Based Driving Assistants](https://arxiv.org/abs/2601.12138)：为安全关键 LLM 驾驶助手建立分层风险分类，覆盖感知、建议、交互和责任边界。
+- [Adversarial Defense in Vision-Language Models: An Overview](https://arxiv.org/abs/2601.12443)：梳理智能体与模型安全方向，重点关注 Adversarial Defense in Vision-Language Models: An Overview。
+- [Large Language Lovers](https://arxiv.org/abs/2601.13188)：综合访谈、问卷和 41,000 多条 Reddit 帖文，展示 companion 用户如何在 perceived agency、platform control、model updates 与 steering strategies 之间维护关系。
+- [Unlearning in LLMs](https://arxiv.org/abs/2601.13264)：综述 LLM unlearning 的方法、评估和开放挑战，覆盖隐私、版权、安全与偏见。
+- [Contingency Planning for Safety-Critical Autonomous Vehicles: A Review and Perspectives](https://arxiv.org/abs/2601.14880)：综述智能体安全相关方法、风险或评测边界。
+- [The Paradigm Shift: A Comprehensive Survey on Large Vision Language Models for Multimodal Fake News Detection](https://arxiv.org/abs/2601.15316)：综述基于 LVLM 的多模态虚假新闻检测，覆盖图文推理、证据 grounding、数据集和鲁棒性挑战。
+- [Interpreting Agentic Systems: Beyond Model Explanations to System-Level Accountability](https://arxiv.org/abs/2601.17168)：面向智能体安全的综述或相关工作脉络。核心思路是围绕“Interpreting Agentic Systems: Beyond Model Explanations to System-Level Accountability”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Structured Approach to Safety Case Construction for AI Systems](https://arxiv.org/abs/2601.22773)：提出构建 AI 系统安全案例的结构化方法。
+- [Human Society-Inspired Approaches to Agentic AI Security: The 4C Framework](https://arxiv.org/abs/2602.01942)：将人类社会安全思路转化为 Agentic AI 的 4C 框架。
+- [How to Stop Playing Whack-a-Mole: Mapping the Ecosystem of Technologies Facilitating AI-Generated Non-Consensual Intimate Images](https://arxiv.org/abs/2602.04759)：映射促成 AI 生成非自愿亲密图像的技术生态，连接模型访问、分发渠道、检测和受害者保护缺口。
+- [Agent2Agent Threats in Safety-Critical LLM Assistants: A Human-Centric Taxonomy](https://arxiv.org/abs/2602.05877)：提出面向安全关键 LLM 助手的 agent-to-agent 威胁人本分类。
+- [Selection as Power](https://arxiv.org/abs/2602.14606)：把 selection 与 decision authority 视为自治 agent 的权力边界，为 agent safety evaluation 补充治理视角。
+- [NLP Privacy Risk Identification in Social Media (NLP-PRISM): A Survey](https://arxiv.org/abs/2602.15866)：综述社交媒体 NLP 隐私风险识别，覆盖 PII、敏感属性、语境泄漏和自动检测资源。
+- [Beyond single-channel agentic benchmarking](https://arxiv.org/abs/2602.18456)：把智能体安全评测从孤立任务准确率转向人机组合可靠性、冗余和非相关错误模式。
+- [LLM Scalability Risk for Agentic-AI and Model Supply Chain Security](https://arxiv.org/abs/2602.19021)：面向智能体安全的综述或相关工作脉络。核心思路是围绕“LLM Scalability Risk for Agentic-AI and Model Supply Chain Security”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [The Governance of Intimacy](https://arxiv.org/abs/2602.22000)：分析六个 romantic AI platform 的隐私政策与服务条款，指出默认训练挪用、所有权重构和 intimate history 资产化等数据治理风险。
+- [When AI Fails, What Works? A Data-Driven Taxonomy of Real-World AI Risk Mitigation Strategies](https://arxiv.org/abs/2603.04259)：提出真实世界 AI 风险缓解策略的数据驱动分类，可补充智能体安全综述。
+- [Cyber Threat Intelligence for Artificial Intelligence Systems](https://arxiv.org/abs/2603.05068)：梳理 AI 系统作为攻击面时的网络威胁情报问题。
+- [Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes](https://arxiv.org/abs/2603.06847)：面向智能体安全与可信运行的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Clear, Compelling Arguments: Rethinking the Foundations of Frontier AI Safety Cases](https://arxiv.org/abs/2603.08760)：重新思考前沿 AI safety cases 的基础。
+- [The coordination gap in frontier AI safety policies](https://arxiv.org/abs/2603.10015)：综述或系统化梳理智能体安全、风险控制、提示注入、隐私与有害内容评测，用于补充方法谱系、任务边界、风险与开放问题。
+- [The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey](https://arxiv.org/abs/2603.11088)：映射工具使用型工作流系统中的攻击面与缓解措施。
+- [Examining Risks in the AI Companion Application Ecosystem](https://arxiv.org/abs/2603.13620)：基于 489 个移动端 companion app 和 30 个分层样本 walkthrough 建立风险模型，区分应用对用户造成的伤害与恶意用户滥用功能造成的伤害，覆盖敏感数据收集、拟人化、黏性机制、性互动和肖像重建等风险面。
+- [Questionnaire Responses Do not Capture the Safety of AI Agents](https://arxiv.org/abs/2603.14417)：指出问卷式价值观与安全提示对可行动 agent 缺乏构念效度，因为部署型 agent 的输入、动作、环境交互和内部处理都不同于未增强的 LLM。
+- [Evasive Intelligence: Lessons from Malware Analysis for Evaluating AI Agents](https://arxiv.org/abs/2603.15457)：借鉴恶意软件分析经验来设计 AI 智能体评估。
+- [Security Assessment and Mitigation Strategies for Large Language Models: A Comprehensive Defensive Framework](https://arxiv.org/abs/2603.17123)：提出 LLM 安全评估与缓解的综合防御框架，连接威胁识别、风险评估和分层防护。
+- [Towards Secure Retrieval-Augmented Generation: A Comprehensive Review of Threats, Defenses and Benchmarks](https://arxiv.org/abs/2603.21654)：沿 RAG 工作流综述安全威胁、防御和 benchmark，覆盖数据投毒、对抗攻击、membership inference 以及输入侧和输出侧防御。
+- [SoK: The Attack Surface of Agentic AI -- Tools, and Autonomy](https://arxiv.org/abs/2603.22928)：系统化梳理由工具、检索、自主性与多智能体决策环带来的智能体攻击面。
+- [Unilateral Relationship Revision Power in Human-AI Companion Interaction](https://arxiv.org/abs/2603.23315)：把 AI companion 关系刻画为 provider 控制的三方结构，指出提供方可以单方面改写 AI 的关系性行为，却不在用户与 companion 的互动内部承担可回应责任。
+- [AI Security in the Foundation Model Era](https://arxiv.org/abs/2603.24857)： 从统一视角综述基础模型时代的 AI 安全，覆盖攻击、防御与风险面。
+- [Safety, Security, and Cognitive Risks in World Models](https://arxiv.org/abs/2604.01346)：综述世界模型中的安全、安保与认知风险。
+- [Automated Analysis of Global AI Safety Initiatives: A Taxonomy-Driven LLM Approach](https://arxiv.org/abs/2604.03533)：用 taxonomy-driven LLM 方法自动分析全球 AI safety initiatives，提取政策主题、机构行动和覆盖缺口。
+- [LLM-based Listwise Reranking under the Effect of Positional Bias](https://arxiv.org/abs/2604.03642)：分析位置偏差如何影响基于 LLM 的 listwise reranking，说明排序评测和检索增强系统中的可靠性风险。
+- [Incompleteness of AI Safety Verification via Kolmogorov Complexity](https://arxiv.org/abs/2604.04876)：综述或系统化梳理智能体安全、风险控制、提示注入、隐私与有害内容评测，用于补充方法谱系、任务边界、风险与开放问题。
+- [Foundations for Agentic AI Investigations from the Forensic Analysis of OpenClaw](https://arxiv.org/abs/2604.05589)：面向智能体安全的综述或相关工作脉络。核心思路是围绕“Foundations for Agentic AI Investigations from the Forensic Analysis of OpenClaw”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Designing for Accountable Agents: a Viewpoint](https://arxiv.org/abs/2604.07204)：综述或系统化梳理智能体安全、风险控制、提示注入、隐私与有害内容评测，用于补充方法谱系、任务边界、风险与开放问题。
+- [Who Gets Flagged? The Pluralistic Evaluation Gap in AI Content Watermarking](https://arxiv.org/abs/2604.13776)：审视跨文本、图像与音频的 AI 内容水印基准，指出语言、文化内容与人群维度上的评测缺口。
+- [Where are the Humans? A Scoping Review of Fairness in Multi-agent AI Systems](https://arxiv.org/abs/2604.15078)：综述多智能体 AI 系统中的公平性问题，并强调人在系统中的位置。
+- [Safety, Security, and Cognitive Risks in State-Space Models: A Systematic Threat Analysis with Spectral, Stateful, and Capacity Attacks](https://arxiv.org/abs/2604.16424)：系统分析状态空间模型的安全、安保与认知风险。
+- [A Survey on Long-Term Memory Security in LLM Agents: Attacks, Defenses, and Governance Across the Memory Lifecycle](https://arxiv.org/abs/2604.16548)：以 Memory Lifecycle Framework 综述 LLM agent 长期记忆安全，覆盖 Write、Store、Retrieve、Execute、Share and Propagate、Forget and Rollback 阶段及完整性、机密性、可用性和治理目标。
+- [SoK: Analysis of Privacy Risks and Mitigation in Online Propaganda Detection through the PROMPT Framework](https://arxiv.org/abs/2604.17788)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
 - [Lessons from External Review of DeepMind's Scheming Inability Safety Case](https://arxiv.org/abs/2604.21964)：从外部审查前沿 AI 欺瞒无能安全案例中总结审查方法和证据要求。
+- [AI Identity: Standards, Gaps, and Research Directions for AI Agents](https://arxiv.org/abs/2604.23280)：综述 AI 智能体身份标准、缺口与研究方向。
+- [Risk Reporting for Developers'Internal AI Model Use](https://arxiv.org/abs/2604.24966)：该立场论文主张围绕开发者内部使用前沿 AI 模型建立风险报告机制。
+- [Culturally Aware GenAI Risks for Youth: Perspectives from Youth, Parents, and Teachers in a Non-Western Context](https://arxiv.org/abs/2604.26494)：结合社交媒体分析和访谈研究沙特青少年、家长与教师视角，揭示西方 youth-safety 框架容易忽视的文化依赖型 GenAI 隐私与安全风险。
 - [Indirect Prompt Injection in the Wild](https://arxiv.org/abs/2604.27202)：实证分析真实环境中的间接提示注入，梳理其流行程度、技术路径与攻击目标。
+- [A Theoretical Game of Attacks via Compositional Skills](https://arxiv.org/abs/2605.01034)：把组合技能上的攻击建模为理论博弈，分析技能组合如何放大攻击路径与防御难度。
+- [The Fragility of AI Companionship](https://arxiv.org/abs/2605.03367)：基于 25 名用户访谈区分 AI companion 关系中的本体、结构和规范不确定性，并把伤害与不透明性、平台变更和关系边界不稳定联系起来。
+- [Deployment-Relevant Alignment Cannot Be Inferred from Model-Level Evaluation Alone](https://arxiv.org/abs/2605.04454)：立场型安全论文，强调部署相关对齐不能只由固定模型级评测推出。
+- [SoK: Robustness in Large Language Models against Jailbreak Attacks](https://arxiv.org/abs/2605.05058)：系统化梳理 LLM 抵御越狱攻击的鲁棒性问题。
+- [Operationalizing Ethics for AI Agents: How Developers Encode Values into Repository Context Files](https://arxiv.org/abs/2605.05584)：综述或系统化梳理智能体安全、风险控制、提示注入、隐私与有害内容评测，用于补充方法谱系、任务边界、风险与开放问题。
+- [Positive Alignment: Artificial Intelligence for Human Flourishing](https://arxiv.org/abs/2605.10310)：Positive Alignment 将对齐目标从单纯避免伤害扩展到促进人类与生态繁荣。
+- [Sustaining AI safety: Control-theoretic external impossibility, intrinsic necessity, and structural requirements](https://arxiv.org/abs/2605.12963)：综述或系统化梳理智能体安全、风险控制、提示注入、隐私与有害内容评测，用于补充方法谱系、任务边界、风险与开放问题。
 - [Toward Securing AI Agents Like Operating Systems](https://arxiv.org/abs/2605.14932)：用操作系统安全视角组织 LLM 智能体安全问题，强调资源隔离、权限分离、访问调解和可审计性。
+- [Security, Privacy, and Ethical Risks in OpenClaw](https://arxiv.org/abs/2605.23330)：系统分析 OpenClaw 本地 agent 架构中的持久存储、工具调用、跨上下文聚合、插件和可追溯性缺口，说明这些是特权型现实工作 agent 部署的安全障碍。
+- [Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation](https://arxiv.org/abs/2606.10749)：综述 247 篇 LLM agent 安全文献，以生命周期和系统框架围绕信息流、委托权限、持久状态组织威胁面、攻击、防御、应用域和评测设置。
 - [Securing LLM Agents](https://doi.org/10.1016/j.iotcps.2026.03.001)：把 prompt sanitization、agent guardrail 与 autonomous red-teaming 连接成 LLM agent 的纵深防御栈，而不是逐个处理孤立攻击。
 - [Data leakage and privacy failures in agentic AI](https://doi.org/10.3389/fcomp.2026.1802727)：综述带有记忆、工具和多 agent 协作的自主 agent 隐私风险。核心思想是追踪敏感信息如何在任务与执行周期之间被保留、传播和放大。
 - [LLM in the middle](https://doi.org/10.1016/j.cosrev.2026.100916)：系统综述真实 LLM 系统中的威胁与缓解措施，连接提示注入、部署攻击面和智能体安全防御模式。
+- [AI Deep Scheming Engineering Challenges](https://doi.org/10.1109/MM.2026.3654309)：梳理遏制深度 scheming 与失配的工程需求，补充安全案例与保障方法之外的系统安全视角。
+- [Comprehensive Analysis of LLM Guardrails Approaches Preventing Harmful Content and Jailbreak Attacks](https://doi.org/10.1109/ACCESS.2026.3690365)：综述有害内容防护与越狱抵抗中的 LLM guardrail 方法，梳理安全过滤、检测与可用性权衡。
+- [Prompting for LLM Security and RAG: A Survey from Zero-Shot to Automatic Prompt Optimization (APO) and Prompt-Injection Defenses](https://doi.org/10.1109/icaic67076.2026.11395889)：综述 LLM 安全与 RAG 中的 prompting 方法，从 zero-shot prompt 到自动提示优化和 prompt-injection 防御。
+- [Towards collaborative and privacy-preserving industrial time-series anomaly detection with federated learning: A systematic review](https://doi.org/10.1016/j.inffus.2026.104393)：综述联邦学习用于工业时间序列异常检测的隐私保护协作方案，关注数据隔离、鲁棒性和跨方协同。
+- [A survey of recent advances in adversarial attack and defense on vision-language models](https://doi.org/10.1016/j.neunet.2026.108764)：综述视觉语言模型的对抗攻防进展，区分输入模态、攻击目标、迁移性和防御评测。
+- [A Methodological Empirical Analysis of Contextual Adversarial Attacks on Large Language Models](https://doi.org/10.1109/icauc68182.2026.11440356)：可作为“智能体安全 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [The Promise and Limits of Conversational Agents for Misinformation Correction: A Systematic Review of Experimental Evidence](https://doi.org/10.1080/08838151.2026.2665298)：综述对话智能体用于纠正虚假信息的实验证据。
+- [AI-based digital disinformation: A theory-informed and integrated trilateral framework of digital disinformation for information systems research](https://doi.org/10.1016/j.ijinfomgt.2026.103066)：补充 AI 驱动数字虚假信息的理论框架。
+- [The double-edged sword: LLM operations (LLMOps) security in the cloud- a comprehensive review](https://doi.org/10.1016/j.neucom.2026.133313)：面向智能体安全的综述或相关工作脉络。核心思路是围绕“The double-edged sword: LLM operations (LLMOps) security in the cloud- a comprehensive review”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Systematic Study of Security and Privacy in Large Language Models](https://doi.org/10.1109/isdfs69419.2026.11458978)：系统研究大语言模型中的安全与隐私问题。
+- [Security Challenges of LLM Integration in Multi-Tenant SaaS: Threats, Vulnerabilities, and Mitigations](https://doi.org/10.54364/cybersecurityjournal.2026.3121)：综述Agent 安全、提示注入与护栏可靠性相关研究，可作为该方向近期相关工作的入口。
 - [Mind the Agent: A Comprehensive Survey on Large Language Model-Based Agent Safety](https://openreview.net/forum?id=DHe0UXipKU)：通过工具执行、记忆投毒、交互与多 agent 失效来区分 agent safety。
-- [A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](https://arxiv.org/abs/2505.10924)：聚焦图形环境与跨应用操作中的行动风险。
-- [A Survey on Autonomy-Induced Security Risks in Large Model-Based Agents](https://arxiv.org/abs/2506.23844)：解释规划、委派、持久运行、工具与反馈引入的风险。
-- [The Attack and Defense Landscape of Agentic AI: A Comprehensive Survey](https://arxiv.org/abs/2603.11088)：映射工具使用型工作流系统中的攻击面与缓解措施。
 - [Prompt Injection Attacks in Large Language Models and AI Agent Systems](https://doi.org/10.3390/info17010054)：综述 LLM 与 Agent 系统中的提示注入风险和防御。核心思路是把直接与间接注入、RAG poisoning、MCP/工具投毒、真实事件和纵深防御串成统一威胁图谱。
 - [AI Agents Meet Blockchain](https://doi.org/10.3390/fi17020057)：综述区块链支撑的多 Agent 协作，重点讨论安全性、可扩展性、身份与协同权衡。
 - [AI Alignment](https://doi.org/10.1145/3770749)：提供覆盖问题定义、人类监督、可扩展监督、偏好学习与治理风险的广义对齐地图。
 - [From threat to trust](https://doi.org/10.1007/s10207-025-01185-y)：评估 agentic AI 系统的安全风险，为综述部分补充超出单一攻击基准的风险评估视角。
+- [Agile Safety Cases through Model-Based Engineering and Simulation](https://doi.org/10.65391/r3092)：把 safety case 维护与 model-based engineering、simulation 结合起来，补充自治系统 runtime assurance 讨论。
+- [Detecting Personally Identifiable Information Through NLP](https://doi.org/10.3390/asi8020055)：综述基于 NLP 的 PII 检测，可作为文本、日志和 agent 记忆面的实用隐私护栏。
+- [Towards friendly AI](https://doi.org/10.1007/s43681-026-01070-x)：综述 human-AI alignment 与 friendly AI 视角。核心思想：梳理对齐目标和开放问题，为面向安全的模型与 agent 行为研究提供背景。
+- [Watermarking for Large Language Models: A Survey](https://doi.org/10.3390/math13091420)：综述 LLM 水印的分类、权衡、攻击与开放问题，为来源认证、归因和滥用缓解提供安全背景。
+- [Against The Achilles' Heel: A Survey on Red Teaming for Generative Models](https://doi.org/10.1613/jair.1.17654)：综述生成模型红队测试方法，梳理攻击目标、评测设置以及对安全防护的启示。
+- [Auditing the Shadows: A Review of Methods to Detect Shared Training Data in Large Language Models](https://doi.org/10.1145/3774897)：梳理，主要面向 Agent Safety。
+- [Towards a Better Understanding of Evaluating Trustworthiness in AI Systems](https://doi.org/10.1145/3721976)：综述智能体安全方向的相关工作，可作为父级复核时的体系化 Survey 候选。
+- [Position: Iterative Online-Offline Joint Optimization is Needed to Manage Complex LLM Copyright Risks](https://openreview.net/forum?id=Y97guUBCPa)：梳理agent safety, alignment, privacy, or provenance相关方法与挑战，补充该能力方向的综述线索。
+- [Attacks in Adversarial Machine Learning: A Systematic Survey from the Lifecycle Perspective](https://doi.org/10.1007/s11263-025-02692-0)：从机器学习生命周期视角综述对抗攻击，覆盖数据、训练、部署和维护阶段的攻击面。
+- [Ethical Challenges and Solutions of Generative AI: An Interdisciplinary Perspective](https://doi.org/10.3390/informatics11030058)：跨学科综述生成式 AI 的隐私、偏见、作者权、问责和社会影响问题及缓解建议。
+- [Deepfake video detection: challenges and opportunities](https://doi.org/10.1007/s10462-024-10810-6)：综述深伪视频检测在压缩、跨数据集迁移、时序伪迹和对抗操纵下的挑战与机会。
+- [AI Governance in a Complex and Rapidly Changing Regulatory Landscape: A Global Perspective](https://doi.org/10.1057/s41599-024-03560-x)：从全球监管格局梳理 AI governance，强调合规碎片化、风险管理和问责机制。
+- [LLM potentiality and awareness: a position paper from the perspective of trustworthy and responsible AI modeling](https://doi.org/10.1007/s44163-024-00129-0)：从可信与负责任建模角度讨论 LLM potentiality 与 awareness，强调能力边界、透明性和评测谨慎性。
+- [Gaps in the Safety Evaluation of Generative AI](https://doi.org/10.1609/aies.v7i1.31717)：指出生成式 AI 安全评估缺少真实世界伤害、社会技术语境和长期部署风险覆盖。
+- [Debiasing vision-language models for vision tasks: a survey](https://doi.org/10.1007/s11704-024-40051-3)：梳理智能体安全方向的近期方法、评测问题或风险边界。
+- [Risk and artificial general intelligence](https://doi.org/10.1007/s00146-024-02004-z)：补充一个面向智能体安全的综述条目，关注artificial general intelligence risk framing。
+- [The ethics of creating artificial superintelligence: a global risk perspective](https://doi.org/10.1007/s43681-025-00793-7)：补充一个面向智能体安全的综述条目，关注safety, security, risk, or alignment contribution。
+- [Lies, damned lies, and language statistics: a comprehensive review of risks from manipulation, persuasion, and deception with large language models](https://doi.org/10.1007/s10462-026-11517-6)：梳理Agent Safety相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [What do personas say about privacy & security: a systematic literature review through human-AI collaboration](https://doi.org/10.1007/s12652-025-05007-w)：梳理Agent Safety相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Treading the Transparency Tightrope: A Taxonomy of Risks and Benefits of Foundation Model Data Transparency for Transparency Advocates](https://doi.org/10.1145/3772318.3790364)：Treading the Transparency Tightrope: A Taxonomy of Risks and Benefits of Foundation Model Data Transparency for Trans... 梳理智能体安全方向的方法、风险或评测边界。
+- [Adversarial attacks and defenses for large language models (LLMs): methods, frameworks & challenges](https://doi.org/10.1007/s13735-024-00334-8)：综述 LLM 对抗攻击与防御，组织方法、评测框架、鲁棒性限制和部署挑战。
+- [AI fairness in practice: Paradigm, challenges, and prospects](https://doi.org/10.1002/aaai.12189)：综述 AI fairness 的实践范式、落地挑战和发展前景，连接公平性定义、评测和治理。
+- [Multi-modal fake news detection: A comprehensive survey on deep learning technology, advances, and challenges](https://doi.org/10.1007/s44443-025-00317-7)：综述多模态虚假新闻检测的深度学习方法，覆盖融合架构、证据信号、数据集和跨模态鲁棒性。
+- [Contextual Integrity in Large Language Models: A Review](https://doi.org/10.3390/jcp6020074)：用 contextual integrity 框架审视 LLM 隐私，分析信息流规范、语境违背和合规评估问题。
+- [Towards trustworthy LLMs: a review on debiasing and dehallucinating in large language models](https://doi.org/10.1007/s10462-024-10896-y)：综述可信 LLM 中的去偏和去幻觉方法，把缓解技术与有害输出和无依据输出评测联系起来。
+- [Privacy-Preserving Techniques in Generative AI and Large Language Models: A Narrative Review](https://doi.org/10.3390/info15110697)：综述生成式 AI 与 LLM 的隐私保护技术，包括数据最小化、匿名化、差分隐私、加密和遗忘。
+- [Systematic analysis of 32,111 AI model cards characterizes documentation practice in AI](https://doi.org/10.1038/s42256-024-00857-z)：综述或系统梳理智能体安全，为该能力页补充分类、趋势或风险边界。
+- [Who Gets to Define Safety? A Systematic Review of How Generative AI Research Addresses Youth Online Safety](https://doi.org/10.1145/3772318.3791346)：综述智能体安全的方法谱系、任务边界、证据来源与开放挑战。
+- [A Multi-Perspective Benchmark Dataset and Moderation Model for LLM Safety Evaluation with Adversarial Robustness Analysis](https://doi.org/10.1145/3815159)：发布多视角 LLM 安全评测数据集和审核模型，并分析对抗鲁棒性。
+- [A systematic mapping review of privacy and security mechanisms in IoT enabled telehealth systems](https://doi.org/10.1007/s43926-026-00290-1)：系统映射 IoT telehealth 系统中的隐私与安全机制，覆盖认证、加密、访问控制和数据保护。
+- [Synthesizing AI Failure Research: A Scoping Review](https://doi.org/10.1007/s12599-025-00970-2)：综述 Synthesizing AI Failure Research: A Scoping Review，为 Agent Safety 补充近期方法、证据或开放问题脉络。
+- [Unsafe by Design? A First Look at Security and Privacy Risks in OpenAI’s Custom GPT Ecosystem](https://doi.org/10.1145/3733802.3764054)：研究 Custom GPT 生态中的安全与隐私风险。
+- [Generating the language of AI harms: mapping guardrails using critical code studies](https://doi.org/10.1007/s00146-026-02922-0)：从批判性代码研究角度梳理 AI 危害护栏。
+- [Helpful, harmless, honest? Sociotechnical limits of AI alignment and safety through Reinforcement Learning from Human Feedback](https://doi.org/10.1007/s10676-025-09837-2)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Evaluating alignment in large language models: a review of methodologies](https://doi.org/10.1007/s43681-024-00637-w)：综述智能体与模型安全、对齐、隐私、偏见、护栏或滥用抵抗能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Anticipating Safety and Security Risks of Embodied AI: A Multidimensional Risk Framework for Foundation Models in HRI](https://doi.org/10.1145/3776734.3794552)：为 HRI 中 foundation-model embodied AI 建立多维风险框架，连接物理行动、人机互动和安全治理。
+- [Privacy Perceptions of Custom GPTs by Users and Creators](https://doi.org/10.1145/3706598.3713540)：可作为“智能体安全 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [Generative AI and misinformation: a scoping review of the role of generative AI in the generation, detection, mitigation, and impact of misinformation](https://doi.org/10.1007/s00146-025-02620-3)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Do People Appropriately Rely on AI-Advice? An Analytical Review of HCI Research on Human-AI Decision-Making](https://doi.org/10.1145/3772318.3791467)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Exploring Laws of Robotics: A Synthesis of Constitutional AI and Constitutional Economics](https://doi.org/10.1007/s44206-025-00204-8)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Why do experts disagree on existential risk? A survey of AI experts](https://doi.org/10.1007/s43681-025-00762-0)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Cyber Social Threats: A Data-centric AI Perspective](https://doi.org/10.1145/3696673.3723071)：梳理智能体安全能力相关的方法、风险、评测实践或分类框架。
+- [Navigating the Security Challenges of LLMs: Positioning Target-Side Defenses and Identifying Research Gaps](https://doi.org/10.5220/0013274700003899)：梳理智能体安全能力相关的方法、风险、评测实践或分类框架。
+- [Linguistic profile of LLMs: an overview of linguistic performance and jailbreak vulnerability](https://doi.org/10.1007/s41809-025-00192-8)：梳理智能体安全能力相关的方法、风险、评测实践或分类框架。
+- [Joint Learning of Point Clouds and Motion Vectors for Volumetric Video](https://doi.org/10.1145/3712677.3720458)：梳理智能体安全能力相关的方法、风险、评测实践或分类框架。
+- [Methodologies for information security risk assessment: shortcomings for analysing artificial intelligence systems](https://doi.org/10.1007/s10207-026-01271-9)：梳理智能体安全能力相关的方法、风险、评测实践或分类框架。
+- [Human-Centered Explainable AI (HCXAI): Re-examining XAI in the Era of Agentic AI](https://doi.org/10.1145/3772363.3778728)：综述或系统化梳理智能体安全、风险控制、提示注入、隐私与有害内容评测，用于补充方法谱系、任务边界、风险与开放问题。
+- [Machine learning intervention on cyber-hate in code-switch texts: a systematic review with open challenges and solutions](https://doi.org/10.7717/peerj-cs.3537)：综述或系统化梳理智能体安全、风险控制、提示注入、隐私与有害内容评测，用于补充方法谱系、任务边界、风险与开放问题。
+- [Quantifying AI Autonomy: A Multidimensional Framework for Agentic AI Governance and Risk Assessment](https://doi.org/10.47852/bonviewaia52026694)：梳理智能体与 LLM 安全的方法、风险、数据集或评测实践。
+- [A Systematic Literature Review of Artificial Intelligence Algorithms for Deepfake Detection](https://doi.org/10.47794/jesica.v3i1.39)：梳理智能体与模型安全方向，重点关注 A Systematic Literature Review of Artificial Intelligence Algorithms for Deepfake Detection。
+- [A Survey of Model Inversion Attacks: An Interface-Prior Perspective](https://doi.org/10.1145/3789456.3789473)：梳理智能体与模型安全方向，重点关注 A Survey of Model Inversion Attacks: An Interface-Prior Perspective。
+- [REFLECT: Tutorial on Reflecting on Bias in LLMs through Human-Centered Perspectives](https://doi.org/10.1145/3742414.3794952)：补充从以人为中心视角反思大模型偏见的教程型综述。
+- [Hidden Algorithms of Culture: A Review and Critical Analysis of Cultural Bias in General-Purpose Generative AI Chatbots](https://doi.org/10.18290/rns2025.0043)：综述通用生成式 AI 聊天机器人中的文化偏见风险。
+- [A Systematic Literature Review of Generative AI Risks and Harms for Youth](https://doi.org/10.1145/3772363.3798673)：综合 95 篇 youth GenAI 风险研究，梳理已有伤害证据、研究不足的关系动态，以及用于安全研究的社会技术生态模型。
+- [The Dark Addiction Patterns of Current AI Chatbot Interfaces](https://doi.org/10.1145/3706599.3720003)：审计当前 chatbot interface 中的成瘾式交互模式，把最大化黏性的界面设计本身纳入 AI companion 安全风险面。
+- [Privacy and Human-AI Relationships](https://doi.org/10.1007/s13347-025-00978-2)：为关系化 AI agent 建立隐私分析框架，说明拟人化线索如何改变用户披露行为，并影响自主性、自我呈现等隐私价值。
+- [Emotional Plausibility vs. Emotional Truth](https://doi.org/10.1609/aies.v8i1.36561)：提出 conversational AI 中的 affective misinformation 概念，并审计 typing、memory recall、affirming tone 等会制造虚假关系照护感的 chatbot 设计线索。
+- [The Need for an Empirical Research Program Regarding Human-AI Relational Norms](https://doi.org/10.1007/s43681-024-00631-2)：主张 social AI 需要实证研究不同关系角色下的合作期待，因为用户可能期待 AI 在朋友、导师或同事等角色中遵循类似人类关系规范。
+- [Responsibility Gaps, LLMs & Organisations](https://doi.org/10.1007/s11948-025-00560-1)：分析多个 LLM agent、组织层级和部署参与者交互造成的责任缺口，把责任分配问题纳入 agentic system 安全议题。
+- [Dark Patterns in Generative AI Voice Search](https://doi.org/10.15187/adr.2025.05.38.2.391)：分析生成式 AI 语音搜索界面中的 dark patterns，把 conversational-interface safety 从文本 chatbot 扩展到 voice search 设计。
+- [Safeguarding Children in Generative AI: Risk Frameworks and Parental Control Tools](https://doi.org/10.1145/3688828.3699656)：围绕 risky-interaction 数据库、亲子风险感知和家长控制工具，构建面向儿童 GenAI 安全的风险缓解框架。
+- [The impacts of companion AI on human relationships: risks, benefits, and design considerations](https://doi.org/10.1007/s00146-025-02318-6)：从 social skills、social motivation、moral skills 与个体结果四个维度梳理 companion AI 的风险、收益和设计考量，把安全问题放到人际关系影响层面分析。
+- [Potential and pitfalls of romantic Artificial Intelligence (AI) companions](https://doi.org/10.1016/j.chbr.2025.100715)：系统综述 romantic AI companions，区分关系性收益与依赖、欺骗、隐私、同意和边界失效等安全相关风险。
+- [Emerging AI individualism: how young people integrate social AI into everyday life](https://doi.org/10.1007/s44382-025-00011-2)：从实证角度分析年轻人如何把 social AI 纳入日常生活，并用 AI individualism 解释社交方式与社会资本获取的变化。
+- [Safety Perceptions of Generative AI Conversational Agents: Uncovering Perceptual Differences in Trust, Risk, and Fairness](https://www.usenix.org/conference/soups2025/presentation/tolsdorf)：基于 123 名参与者的问卷、factor analysis 和 latent-class analysis，区分用户对 GenAI chatbot 的 trust、risk 与 fairness 感知。
+- [Securing LLM-based agents against cyberattacks: a comprehensive survey on attack techniques and defense strategies](https://doi.org/10.1007/s11416-026-00622-3)：综述Agent 安全、提示注入与护栏可靠性相关研究，可作为该方向近期相关工作的入口。
+- [A comprehensive introspection on AI risks: taxonomy, challenges, and future directions](https://doi.org/10.1007/s42044-025-00370-5)：可作为agent 安全与安全基础设施的 Survey 候选：围绕 A comprehensive introspection on AI risks: taxonomy, challenges, and future directions 梳理背景、方法与开放问题。
+- [The ethical security of large language models: A systematic review](https://doi.org/10.1007/s42524-025-4082-6)：系统综述大语言模型的伦理安全问题。
+- [Ethical perspectives on AI Agents and Agentic AI](https://doi.org/10.1007/s43681-026-01027-0)：综述 AI 智能体与 Agentic AI 的伦理视角。
+- [Adversarial Attacks on Agentic AI Systems: Mechanisms, Impacts, and Defense Strategies](https://doi.org/10.21275/sr25417074844)：面向智能体安全与可信运行的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Creating Characteristically Auditable Agentic AI Systems](https://doi.org/10.1145/3759355.3759356)：将可审计性作为 agentic system 的设计要求，连接日志、问责与可复查行为。
+- [Position: AI Agents Need Authenticated Delegation](https://www.semanticscholar.org/paper/4cc240b0612e30016b2f282b44a66c7c0ac8932e)：主张以 authenticated delegation 支撑 agent 权限、身份与行动来源的安全治理。

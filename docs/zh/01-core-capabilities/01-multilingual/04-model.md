@@ -3,22 +3,758 @@
 - [XLM-R](https://arxiv.org/abs/1911.02116)：奠基性的多语言预训练方法，在覆盖 100 种语言的 CommonCrawl 数据上扩展 masked-language-model 训练，以在无任务级翻译监督时提升跨语言迁移。
 - [mT5](https://arxiv.org/abs/2010.11934)：多语言 text-to-text 预训练路线，在 mC4 上训练 T5 风格 encoder-decoder，使多语言理解和生成共享统一序列到序列目标。
 - [BLOOMZ 与 mT0](https://arxiv.org/abs/2211.01786)：多语言指令调优路线，用 prompted multitask mixtures 把指令遵循能力迁移到未见任务和语言。
+- [LLaMA Beyond English: An Empirical Study on Language Capability Transfer](https://arxiv.org/abs/2401.01055)：实证研究 LLaMA 式模型中超越英语的语言能力迁移。
+- [Multilingual Instruction Tuning With Just a Pinch of Multilinguality](https://arxiv.org/abs/2401.01854)：测试少量多语言指令数据能否把指令遵循能力迁移到多种语言，而不依赖完整多语言调优混合数据。
+- [MPN: Leveraging Multilingual Patch Neuron for Cross-lingual Model Editing](https://arxiv.org/abs/2401.03190)：把 multilingual patch neurons 作为局部编辑目标，使单语言事实编辑能跨语言传播。
+- [Translate-Distill: Learning Cross-Language Dense Retrieval by Translation and Distillation](https://arxiv.org/abs/2401.04810)：通过翻译查询或文档并蒸馏检索行为，训练跨语言 dense retriever。
+- [Whose wife is it anyway? Assessing bias against same-gender relationships in machine translation](https://arxiv.org/abs/2401.04972)：检查机器翻译系统在翻译 same-gender spouse 指称时的性别化关系偏见。
+- [Discovering Low-rank Subspaces for Language-agnostic Multilingual Representations](https://arxiv.org/abs/2401.05792)：识别多语编码器中保持语言无关信号的低秩表示子空间。
+- [Towards Boosting Many-to-Many Multilingual Machine Translation with Large Language Models](https://arxiv.org/abs/2401.05861)：将大语言模型适配到 many-to-many 机器翻译，而非只覆盖以英语为中心的翻译方向。
+- [Adapting Large Language Models for Document-Level Machine Translation](https://arxiv.org/abs/2401.06468)：面向文档级机器翻译调优或提示 LLM，使句子输出能保持篇章上下文。
+- [Kun: Answer Polishment for Chinese Self-Alignment with Instruction Back-Translation](https://arxiv.org/abs/2401.06477)：结合指令反向翻译与答案润色，对中文指令响应进行自对齐。
+- [TransliCo: A Contrastive Learning Framework to Address the Script Barrier in Multilingual Pretrained Language Models](https://arxiv.org/abs/2401.06620)：用对比学习对齐转写文本与原始文字表示，重点解决多语预训练模型的文字体系障碍，而不是外部 agent 闭环。
+- [MAPO: Advancing Multilingual Reasoning through Multilingual Alignment-as-Preference Optimization](https://arxiv.org/abs/2401.06838)：用多语言偏好优化对齐跨语言推理行为。
+- [xCoT: Cross-lingual Instruction Tuning for Cross-lingual Chain-of-Thought Reasoning](https://arxiv.org/abs/2401.07037)：构建跨语言 chain-of-thought 指令数据，使一种语言中的推理轨迹迁移到其他语言。
+- [Question Translation Training for Better Multilingual Reasoning](https://arxiv.org/abs/2401.07817)：用翻译后的问题作为训练信号提升多语言推理，而不要求完整平行 rationale。
+- [Enhancing Document-level Translation of Large Language Model via Translation Mixed-instructions](https://arxiv.org/abs/2401.08088)：在 LLM 调优中混合翻译指令，以改进文档级机器翻译行为。
+- [Breaking the Curse of Multilinguality with Cross-lingual Expert Language Models](https://arxiv.org/abs/2401.10440)：引入跨语言专家语言模型，降低多语言训练中的语言间干扰。
+- [Cross-lingual Editing in Multilingual Language Models](https://arxiv.org/abs/2401.10521)：研究在一种语言中进行的知识编辑能否迁移到多语言模型的其他语言。
+- [LangBridge: Multilingual Reasoning Without Multilingual Supervision](https://arxiv.org/abs/2401.10695)：把语言特定编码器连接到推理型 LLM，使多语言推理不依赖多语言监督。
+- [Text Embedding Inversion Security for Multilingual Language Models](https://arxiv.org/abs/2401.12192)：测试多语言文本嵌入是否能被反演回包含敏感信息的源语言文本。
+- [How Far Can 100 Samples Go? Unlocking Overall Zero-Shot Multilingual Translation via Tiny Multi-Parallel Data](https://arxiv.org/abs/2401.12413)：展示少量多平行种子数据如何解锁更广泛的 zero-shot 多语言翻译。
+- [Improving Machine Translation with Human Feedback: An Exploration of Quality Estimation as a Reward Model](https://arxiv.org/abs/2401.12873)：把质量估计模型用作奖励信号，将类似人类反馈优化的思路用于机器翻译。
+- [MaLA-500: Massive Language Adaptation of Large Language Models](https://arxiv.org/abs/2401.13303)：将大语言模型适配到 500 种语言，扩展多语言覆盖。
+- [RomanSetu: Efficiently unlocking multilingual capabilities of Large Language Models via Romanization](https://arxiv.org/abs/2401.14280)：通过把非拉丁文字输入罗马化，在不改动模型词表的情况下释放 LLM 的多语言能力。
+- [Modular Adaptation of Multilingual Encoders to Written Swiss German Dialect](https://arxiv.org/abs/2401.14400)：用模块化适配让多语编码器处理资源稀缺的书面瑞士德语方言。
+- [Multilingual Text-to-Image Generation Magnifies Gender Stereotypes and Prompt Engineering May Not Help You](https://arxiv.org/abs/2401.16092)：评估多语言提示在 text-to-image 模型中如何放大性别刻板印象，以及提示工程为何难以缓解。
+- [TeenyTinyLlama: open-source tiny language models trained in Brazilian Portuguese](https://arxiv.org/abs/2401.16640)：发布专门在巴西葡萄牙语语料上训练的 tiny LLaMA 风格语言模型。
+- [Cross-Lingual Transfer from Related Languages: Treating Low-Resource Maltese as Multilingual Code-Switching](https://arxiv.org/abs/2401.16895)：将低资源马耳他语视为多语 code-switching 以改进跨语言迁移。
+- [Paramanu: Compact and Competitive Monolingual Language Models for Low-Resource Morphologically Rich Indian Languages](https://arxiv.org/abs/2401.18034)：为形态丰富的低资源印度语言训练紧凑的单语语言模型。
+- [CroissantLLM: A Truly Bilingual French-English Language Model](https://arxiv.org/abs/2402.00786)：构建法语与英语更均衡的双语 LLM，而不是只适配英语主导的基座模型。
+- [Predicting Machine Translation Performance on Low-Resource Languages: The Role of Domain Similarity](https://arxiv.org/abs/2402.02633)：把低资源翻译性能建模为可用数据与目标场景之间领域相似度的函数。
+- [KS-Lottery: Finding Certified Lottery Tickets for Multilingual Language Models](https://arxiv.org/abs/2402.02801)：在多语言语言模型中搜索可认证的 lottery-ticket 子网络。
+- [Soft Prompt Tuning for Cross-Lingual Transfer: When Less is More](https://arxiv.org/abs/2402.03782)：研究用于跨语言迁移的软提示调优。
+- [UltraLink: An Open-Source Knowledge-Enhanced Multilingual Supervised Fine-tuning Dataset](https://arxiv.org/abs/2402.04588)：提供知识增强的多语言监督微调数据集，用于训练指令模型。
+- [Multilingual E5 Text Embeddings: A Technical Report](https://arxiv.org/abs/2402.05672)：报告 Multilingual E5 文本嵌入模型，关联多语检索与表征能力。
+- [A Prompt Response to the Demand for Automatic Gender-Neutral Translation](https://arxiv.org/abs/2402.06041)：研究用于自动 gender-neutral translation 的提示策略。
+- [FaBERT: Pre-training BERT on Persian Blogs](https://arxiv.org/abs/2402.06617)：在博客文本上预训练 Persian BERT 变体，以提升非正式领域的波斯语建模。
+- [Aya Dataset: An Open-Access Collection for Multilingual Instruction Tuning](https://arxiv.org/abs/2402.06619)：发布开放访问的多语言指令微调数据集。
+- [GenTranslate: Large Language Models are Generative Multilingual Speech and Machine Translators](https://arxiv.org/abs/2402.06894)：把 LLM 用作跨语音与文本翻译场景的生成式多语言翻译器。
+- [Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model](https://arxiv.org/abs/2402.07827)：发布开放访问的多语言指令微调模型。
+- [Massively Multi-Cultural Knowledge Acquisition & LM Benchmarking](https://arxiv.org/abs/2402.09369)：收集多文化知识，并用它评测语言模型对文化特定事实的表示。
+- [Do Llamas Work in English? On the Latent Language of Multilingual Transformers](https://arxiv.org/abs/2402.10588)：分析多语言 Transformer 处理非英语输入时内部使用的 latent language。
+- [Python is Not Always the Best Choice: Embracing Multilingual Program of Thoughts](https://arxiv.org/abs/2402.10691)：用与任务语言更匹配的程序语言替代仅用英语 Python 的 program-of-thought 推理。
+- [An Empirical Study on Cross-lingual Vocabulary Adaptation for Efficient Language Model Inference](https://arxiv.org/abs/2402.10712)：研究用于高效语言模型推理的跨语言词表适配。
+- [CultureLLM: Incorporating Cultural Differences into Large Language Models](https://arxiv.org/abs/2402.10946)：把文化特定数据或对齐信号纳入 LLM，以减少文化错配响应。
+- [I Learn Better If You Speak My Language: Understanding the Superior Performance of Fine-Tuning Large Language Models with LLM-Generated Responses](https://arxiv.org/abs/2402.11192)：比较用目标语言 LLM 生成响应微调与使用英语中心响应数据的效果。
+- [LEIA: Facilitating Cross-Lingual Knowledge Transfer in Language Models with Entity-based Data Augmentation](https://arxiv.org/abs/2402.11485)：用实体级数据增强在语言模型中迁移跨语言事实知识。
+- [Advancing Translation Preference Modeling with RLHF: A Step Towards Cost-Effective Solution](https://arxiv.org/abs/2402.11525)：构建翻译质量偏好模型，使 RLHF 式优化能以更低成本用于机器翻译。
+- [Zero-Shot Video Translation via Token Warping](https://arxiv.org/abs/2402.12099)：使用 token warping 在没有成对视频翻译监督的情况下进行视频翻译。
+- [Enhancing Multilingual Capabilities of Large Language Models through Self-Distillation from Resource-Rich Languages](https://arxiv.org/abs/2402.12204)：把资源丰富语言中的行为自蒸馏到低资源语言，以提升多语言 LLM 能力。
+- [GlórIA: A Generative and Open Large Language Model for Portuguese](https://arxiv.org/abs/2402.12969)：发布面向葡萄牙语训练的开放生成式 LLM。
+- [Investigating Cultural Alignment of Large Language Models](https://arxiv.org/abs/2402.13231)：衡量 LLM 行为与不同语言和地区的文化规范是否一致。
+- [Investigating Multilingual Instruction-Tuning: Do Polyglot Models Demand for Multilingual Instructions?](https://arxiv.org/abs/2402.13703)：测试多语言基座模型是否仍需要多语言指令数据，或能从单语指令迁移。
+- [LexC-Gen: Generating Data for Extremely Low-Resource Languages with Large Language Models and Bilingual Lexicons](https://arxiv.org/abs/2402.14086)：结合 LLM 生成与双语词典，为极低资源语言生成训练数据。
+- [Unveiling Linguistic Regions in Large Language Models](https://arxiv.org/abs/2402.14700)：定位 LLM 表征中的语言相关区域，用于解释多语言行为编码位置。
+- [Efficient and Effective Vocabulary Expansion Towards Multilingual Large Language Models](https://arxiv.org/abs/2402.14714)：在控制再训练成本的同时，为多语言使用扩展 LLM 词表。
+- [Zero-shot cross-lingual transfer in instruction tuning of large language models](https://arxiv.org/abs/2402.14778)：研究指令调优在不同语言之间何时能够 zero-shot 迁移。
+- [Fine-tuning Large Language Models for Domain-specific Machine Translation](https://arxiv.org/abs/2402.15061)：针对通用翻译数据不足的专业领域微调 LLM 进行机器翻译。
+- [Unraveling Babel: Exploring Multilingual Activation Patterns of LLMs and Their Applications](https://arxiv.org/abs/2402.16367)：分析多语言激活模式，并将其用于语言感知的模型干预。
+- [Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models](https://arxiv.org/abs/2402.16438)：定位语言特定神经元，并研究控制这些神经元如何改变多语言行为。
+- [mEdIT: Multilingual Text Editing via Instruction Tuning](https://arxiv.org/abs/2402.16472)：通过指令调优让模型执行跨语言文本编辑任务。
+- [Can LLM Generate Culturally Relevant Commonsense QA Data? Case Study in Indonesian and Sundanese](https://arxiv.org/abs/2402.17302)：用 LLM 为印度尼西亚语与巽他语合成具备文化相关性的 commonsense QA 数据。
+- [Exploring Multilingual Concepts of Human Values in Large Language Models: Is Value Alignment Consistent, Transferable and Controllable across Languages?](https://arxiv.org/abs/2402.18120)：研究 LLM 中人类价值概念在跨语言场景下是否一致、可迁移且可控制。
+- [Fine-Tuned Machine Translation Metrics Struggle in Unseen Domains](https://arxiv.org/abs/2402.18747)：显示经过微调的机器翻译指标在未见领域中可靠性下降。
+- [AdaMergeX: Cross-Lingual Transfer with Large Language Models via Adaptive Adapter Merging](https://arxiv.org/abs/2402.18913)：通过参考任务和源语言、目标语言适配器的差异来合并出目标语言任务适配器，避免为每个任务-语言组合直接微调。
+- [What Is Missing in Multilingual Visual Reasoning and How to Fix It](https://arxiv.org/abs/2403.01404)：分析多语言视觉推理失败，并用 translate-test、visual programming 与图像 caption 三类干预分别处理多语言、复杂推理和多模态瓶颈。
+- [Analyzing and Adapting Large Language Models for Few-Shot Multilingual NLU: Are We There Yet?](https://arxiv.org/abs/2403.01929)：比较监督微调、指令调优和上下文学习在六种语言、三类 NLU 任务上的效果，指出指令调优的性能和成本折中更好，而目标语言适配并不能修复低资源 ICL 理解短板。
+- [IRCoder: Intermediate Representations Make Language Models Robust Multilingual Code Generators](https://arxiv.org/abs/2403.03894)：在约四百万个源代码文件及其编译器中间表示组成的 SLTrans 上继续因果语言建模训练，用共享 IR 对齐不同编程语言。
+- [Did Translation Models Get More Robust Without Anyone Even Noticing?](https://arxiv.org/abs/2403.03923)：重新测试多语言 MT 与 LLM 翻译器在拼写、缩写和格式噪声下的表现，显示近期开放模型即使没有专门鲁棒训练也显著强于旧 MT 系统。
+- [Breaking the Language Barrier: Can Direct Inference Outperform Pre-Translation in Multilingual LLM Applications?](https://arxiv.org/abs/2403.04792)：在 108 种语言和六类任务上比较 PaLM2 直接推理与先翻译成英语，发现多数语言中直接非英语推理优于预翻译。
+- [Tracing the Roots of Facts in Multilingual Language Models: Independent, Shared, and Transferred Knowledge](https://arxiv.org/abs/2403.05189)：结合 mLAMA 探针和 Wikipedia 来源追踪，把 multilingual BERT 中的事实知识区分为语言独立、跨语言共享和迁移三类模式。
+- [Cost-Performance Optimization for Processing Low-Resource Language Tasks Using Commercial LLMs](https://arxiv.org/abs/2403.05434)：衡量低资源语言在 GPT-4 中的 token 成本和任务质量，并比较 code-mixing、翻译、转写等交互策略以降低商业 LLM 调用成本。
+- [Revealing the Parallel Multilingual Learning within Large Language Models](https://arxiv.org/abs/2403.09073)：提出 Parallel Input in Multiple Languages，把同一输入翻译为多种语言并行提供给模型，以提升上下文理解并诱导更精确的神经元激活。
+- [Komodo: A Linguistic Expedition into Indonesia's Regional Languages](https://arxiv.org/abs/2403.09362)：发布覆盖印尼语、英语和 11 种印度尼西亚地区语言的 Komodo-7B base 与 instruct 模型，并与 GPT-3.5、Aya-101、Llama-2-Chat、Mixtral 和 Gemma 等系统比较。
+- [Is Translation All You Need? A Study on Solving Multilingual Tasks with Large Language Models](https://arxiv.org/abs/2403.10258)：指出翻译成英语可提升英语中心 LLM 的部分 NLP 任务表现，但在需要本地语言和文化细节的任务上，原生语言提示更有效。
+- [MYTE: Morphology-Driven Byte Encoding for Better and Fairer Multilingual Language Modeling](https://arxiv.org/abs/2403.10691)：用基于语素的编码替代字节或字符切分，缩短 99 种语言的序列长度，并降低非欧洲语言和非拉丁文字的困惑度差距。
+- [Optimizing Language Augmentation for Multilingual Large Language Models: A Case Study on Korean](https://arxiv.org/abs/2403.10882)：通过扩展词表、双语继续预训练和小规模高质量韩语指令数据调优构建面向韩语的 Bllossom 模型。
+- [RakutenAI-7B: Extending Large Language Models for Japanese](https://arxiv.org/abs/2403.15484)：发布 Apache 2.0 许可下的日语 7B foundation、instruction 与 chat 模型，并报告其在开放 7B 模型中的 Japanese LM Harness 最优表现。
+- [Synthetic Data Generation and Joint Learning for Robust Code-Mixed Translation](https://arxiv.org/abs/2403.16771)：用合成数据生成与联合学习提升 code-mixed 翻译鲁棒性。
+- [m3P: Towards Multimodal Multilingual Translation with Multimodal Prompt](https://arxiv.org/abs/2403.17556)：把图像作为语言无关锚点，并构建 InstrMulti102 多语言多模态指令数据，使 102 种语言的翻译表示通过 multimodal prompt 对齐。
+- [Latxa: An Open Language Model and Evaluation Suite for Basque](https://arxiv.org/abs/2403.20266)：发布开放 Basque 语言模型族及配套 Basque 评测套件，将低资源语言适配和评测从通用多语平均分中单独显式化。
+- [LLMs are Good Sign Language Translators](https://arxiv.org/abs/2404.00925)：把 LLM 翻译能力适配到 sign-language gloss 文本，检验大型文本模型能否超越专用序列模型改进手语翻译。
+- [IndoCulture: Exploring Geographically Influenced Cultural Commonsense Reasoning Across Eleven Indonesian Provinces](https://arxiv.org/abs/2404.01854)：构建按印尼省份划分的文化常识问题与 LLM 探针，更接近文化评测数据集，而不是多语言训练配方。
+- [Poro 34B and the Blessing of Multilinguality](https://arxiv.org/abs/2404.01856)：在芬兰语、英语和编程语言数据上训练 34B 开放解码器模型，用较均衡的多语预训练提升芬兰语能力。
+- [Backdoor Attacks on Multilingual Machine Translation](https://arxiv.org/abs/2404.02393)：显示在低资源翻译方向投毒不到 0.01% 的数据，也可能把后门行为迁移到高资源方向的多语 NMT 中。
+- [On the Multilingual Ability of Decoder-based Pre-trained Language Models: Finding and Controlling Language-Specific Neurons](https://arxiv.org/abs/2404.02431)：定位 decoder-only 多语预训练模型中的语言特定神经元，并表明操控不足 1% 的神经元即可引导生成语言。
+- [Sailor: Open Language Models for South-East Asia](https://arxiv.org/abs/2404.03608)：用东南亚语言语料和词表适配继续预训练开放 LLM，发布面向印尼语、泰语、越南语、马来语等区域语言的模型。
+- [Chinese Tiny LLM: Pretraining a Chinese-Centric Large Language Model](https://arxiv.org/abs/2404.04167)：记录小型中文中心 LLM 的预训练栈，包括中文占优数据构造和词表选择，用于资源高效的本地语言建模。
+- [Multilingual Pretraining and Instruction Tuning Improve Cross-Lingual Knowledge Alignment, But Only Shallowly](https://arxiv.org/abs/2404.04659)：提出 CLiKA 衡量跨语言知识对齐的性能、一致性和传导性，发现预训练与指令调优虽有帮助但只能形成较浅层对齐。
+- [Low-Resource Machine Translation through Retrieval-Augmented LLM Prompting: A Study on the Mambai Language](https://arxiv.org/abs/2404.04809)：在 LLM 提示中检索双语示例和词汇资源用于 Mambai 翻译，属于检索强化的低资源 MT 适配。
+- [SambaLingo: Teaching Large Language Models New Languages](https://arxiv.org/abs/2404.05829)：通过词表扩展、继续预训练和指令调优把开放 LLM 适配到新语言，并发布多种低代表性语言模型。
+- [Cendol: Open Instruction-tuned Generative Large Language Models for Indonesian Languages](https://arxiv.org/abs/2404.06138)：发布覆盖 decoder-only 与 encoder-decoder 架构的印尼语开放 LLM 族，在印尼本地语言任务上改进生成与指令遵循表现。
+- [Towards Robustness of Text-to-Visualization Translation Against Lexical and Phrasal Variability](https://arxiv.org/abs/2404.07135)：研究自然语言到可视化翻译在词汇和短语扰动下的鲁棒性，属于相邻语义解析应用而非多语模型。
+- [The Role of Language Imbalance in Cross-lingual Generalisation: Insights from Cloned Language Experiments](https://arxiv.org/abs/2404.07982)：用 cloned language 实验隔离数据不平衡影响，分析语料倾斜如何改变跨语言泛化而不受真实语言差异混淆。
+- [From Bytes to Borsch: Fine-Tuning Gemma and Mistral for the Ukrainian Language Representation](https://arxiv.org/abs/2404.09138)：面向乌克兰语微调 Gemma 与 Mistral，并分析字节级分词、目标语言数据和模型规模对乌克兰语表征质量的影响。
+- [CULTURE-GEN: Revealing Global Cultural Perception in Language Models through Natural Language Prompting](https://arxiv.org/abs/2404.10199)：用自然语言提示诱导语言模型给出国家层面的文化联想，主要是文化感知分析而非训练方法。
+- [A Progressive Framework of Vision-language Knowledge Distillation and Alignment for Multilingual Scene](https://arxiv.org/abs/2404.11249)：结合视觉语言知识蒸馏与渐进式对齐，提升多语场景文本或场景理解模型。
+- [Reuse Your Rewards: Reward Model Transfer for Zero-Shot Cross-Lingual Alignment](https://arxiv.org/abs/2404.12318)：把一种语言训练出的 reward model 迁移到其他语言生成对齐中，检验 zero-shot 跨语言偏好优化。
+- [mOthello: When Do Cross-Lingual Representation Alignment and Cross-Lingual Transfer Emerge in Multilingual Models?](https://arxiv.org/abs/2404.12444)：用受控的多语 Othello 环境追踪训练过程中表征对齐和跨语言迁移何时出现。
+- [Fine-Tuning Large Language Models to Translate: Will a Touch of Noisy Data in Misaligned Languages Suffice?](https://arxiv.org/abs/2404.14122)：检验少量噪声或语言错配数据是否仍能改进 LLM 机器翻译微调。
+- [Building a Large Japanese Web Corpus for Large Language Models](https://arxiv.org/abs/2404.17733)：描述大规模日语 Web 语料的构建与过滤流程，贡献主要是 LLM 预训练数据基础设施。
+- [Continual Pre-Training for Cross-Lingual LLM Adaptation: Enhancing Japanese Language Capabilities](https://arxiv.org/abs/2404.17790)：通过继续预训练把 LLM 适配到日语，并评估新增日语语料如何改变跨语言能力。
+- [Comparing LLM prompting with Cross-lingual transfer performance on Indigenous and Low-resource Brazilian Languages](https://arxiv.org/abs/2404.18286)：比较 LLM 提示式使用与跨语言迁移基线在巴西原住民和低资源语言上的表现，突出评测与适配取舍。
+- [The Power of Question Translation Training in Multilingual Reasoning: Broadened Scope and Deepened Insights](https://arxiv.org/abs/2405.01345)：扩展 question translation training 的多语推理实验，检验翻译问题如何在不同语言和任务设置中迁移推理行为。
+- [SaudiBERT: A Large Language Model Pretrained on Saudi Dialect Corpora](https://arxiv.org/abs/2405.06239)：在沙特方言语料上预训练 BERT 式语言模型，提升超出标准阿拉伯语资源的方言表征。
+- [SUTRA: Scalable Multilingual Language Model Architecture](https://arxiv.org/abs/2405.06694)：提出面向语言覆盖扩展的多语 LLM 架构与训练栈，同时控制语言特定适配成本。
+- [LexGen: Domain-aware Multilingual Lexicon Generation](https://arxiv.org/abs/2405.11200)：借助 LLM 生成领域感知的多语词典，贡献更偏术语与低资源迁移的数据生成工具。
+- [Chasing COMET: Leveraging Minimum Bayes Risk Decoding for Self-Improving Machine Translation](https://arxiv.org/abs/2405.11937)：用 COMET 引导的 minimum Bayes risk decoding 选择并回收更优译文，形成机器翻译输出的自改进循环。
+- [Targeted Multilingual Adaptation for Low-resource Language Families](https://arxiv.org/abs/2405.12413)：用定向数据选择把多语 LM 适配到相关低资源语族，而不是进行全语言继续训练。
+- [Multilingual Audio-Visual Speech Recognition with Hybrid CTC/RNN-T Fast Conformer](https://arxiv.org/abs/2405.12983)：构建结合 CTC 与 RNN-T 的 Fast Conformer 多语音视频 ASR 模型。
+- [Getting More from Less: Large Language Models are Good Spontaneous Multilingual Learners](https://arxiv.org/abs/2405.13816)：研究 LLM 如何从有限目标语言样例中获得目标语言行为，突出低资源自发适配动态。
+- [Vikhr: The Family of Open-Source Instruction-Tuned Large Language Models for Russian](https://arxiv.org/abs/2405.13929)：发布俄语导向的开放指令调优 LLM，通过俄语数据整理、监督调优和偏好式对齐构建。
+- [Aya 23: Open Weight Releases to Further Multilingual Progress](https://arxiv.org/abs/2405.15032)：发布覆盖 23 种语言的 Aya 23 开放权重 8B 和 35B 多语指令调优模型。
+- [CulturePark: Boosting Cross-cultural Understanding in Large Language Models](https://arxiv.org/abs/2405.15145)：构建文化特定场景和数据以提升 LLM 跨文化理解，介于合成数据对齐和文化评测之间。
+- [Looking Backward: Streaming Video-to-Video Translation with Feature Banks](https://arxiv.org/abs/2405.15757)：在流式 video-to-video translation 中加入 feature banks，用历史视觉上下文改进低延迟翻译视频生成。
+- [TransVIP: Speech to Speech Translation System with Voice and Isochrony Preservation](https://arxiv.org/abs/2405.17809)：构建能保留说话人音色和时长同步的 speech-to-speech translation 流水线，而非只做文本翻译。
+- [X-Instruction: Aligning Language Model in Low-resource Languages with Self-curated Cross-lingual Instructions](https://arxiv.org/abs/2405.19744)：使用自整理的跨语言指令数据，对低资源语言场景中的 LLM 进行对齐。
+- [The Fine-Tuning Paradox: Boosting Translation Quality Without Sacrificing LLM Abilities](https://arxiv.org/abs/2405.20089)：研究能够提升 MT 质量的翻译微调方案，同时衡量通用 LLM 能力是否被保留。
+- [InstructionCP: A fast approach to transfer Large Language Models into target language](https://arxiv.org/abs/2405.20175)：用指令感知继续预训练把 LLM 快速迁移到目标语言，避免完整目标语言重训。
+- [Multilingual Text Style Transfer: Datasets & Models for Indian Languages](https://arxiv.org/abs/2405.20805)：构建印度语言文本风格迁移数据集和基线模型，贡献是数据集加模型资源。
+- [LLMs Beyond English: Scaling the Multilingual Capability of LLMs with Cross-Lingual Feedback](https://arxiv.org/abs/2406.01771)：用跨语言反馈信号改进非英语 LLM 响应，将多语指令遵循能力扩展到英语之外。
+- [mCoT: Multilingual Instruction Tuning for Reasoning Consistency in Language Models](https://arxiv.org/abs/2406.02301)：构建多语 chain-of-thought 指令数据，使不同语言中的推理轨迹更一致。
+- [Parrot: Multilingual Visual Instruction Tuning](https://arxiv.org/abs/2406.02539)：提出多语视觉指令数据和调优方法，使图像扎根的指令遵循能跨语言工作。
+- [PhoWhisper: Automatic Speech Recognition for Vietnamese](https://arxiv.org/abs/2406.02555)：用越南语语音数据和评测适配 Whisper 式 ASR，属于语言特定语音模型条目。
+- [XL-HeadTags: Leveraging Multimodal Retrieval Augmentation for the Multilingual Generation of News Headlines and Tags](https://arxiv.org/abs/2406.03776)：用多模态检索增强生成多语新闻标题和标签，是应用型生成流水线而非通用多语训练。
+- [ABEX: Data Augmentation for Low-Resource NLU via Expanding Abstract Descriptions](https://arxiv.org/abs/2406.04286)：把抽象 intent 和 slot 描述扩展成合成样例，用于低资源 NLU 数据增强。
+- [MaskLID: Code-Switching Language Identification through Iterative Masking](https://arxiv.org/abs/2406.06263)：通过迭代遮蔽并解析语言片段来执行语码转换语言识别。
+- [mHuBERT-147: A Compact Multilingual HuBERT Model](https://arxiv.org/abs/2406.06371)：在 147 种语言上训练紧凑 HuBERT 语音表征模型，用于多语语音识别与迁移。
+- [Meta Learning Text-to-Speech Synthesis in over 7000 Languages](https://arxiv.org/abs/2406.06403)：把元学习用于覆盖数千种语言的 TTS，目标是极低资源语音生成的快速适配。
+- [Agent-SiMT: Agent-assisted Simultaneous Machine Translation with Large Language Models](https://arxiv.org/abs/2406.06910)：把 LLM 翻译包装进 agent-assisted simultaneous MT 策略，在延迟约束下做 READ 和 WRITE 决策。
+- [BertaQA: How Much Do Language Models Know About Local Culture?](https://arxiv.org/abs/2406.07302)：提出面向语言模型的本地文化问答探针，更接近文化知识基准而非可复用模型方法。
+- [TasTe: Teaching Large Language Models to Translate through Self-Reflection](https://arxiv.org/abs/2406.08434)：用自反思训练或推理流程教授 LLM 翻译，让模型批判并修订自己的译文。
+- [mOSCAR: A Large-scale Multilingual and Multimodal Document-level Corpus](https://arxiv.org/abs/2406.08707)：发布覆盖 163 种语言、3.03 亿文档和 200B token 的网页级图文交错语料，为多语多模态预训练提供公开数据基础。
+- [Sharing Matters: Analysing Neurons Across Languages and Tasks in LLMs](https://arxiv.org/abs/2406.09265)：分析哪些神经元在语言和任务之间共享，把多语迁移与内部激活重叠联系起来。
+- [ProxyLM: Predicting Language Model Performance on Multilingual Tasks via Proxy Models](https://arxiv.org/abs/2406.09334)：训练或选择更便宜的 proxy models，在完整评测前预测大型 LLM 的多语任务表现。
+- [ptt5-v2: A Closer Look at Continued Pretraining of T5 Models for the Portuguese Language](https://arxiv.org/abs/2406.10806)：研究葡萄牙语 T5 变体的继续预训练，分离语料、词表和训练选择对葡萄牙语生成与理解的影响。
+- [How Can We Effectively Expand the Vocabulary of LLMs with 0.01GB of Target Language Text?](https://arxiv.org/abs/2406.11477)：测试仅有 0.01GB 目标语言文本时的词表扩展，聚焦低数据词表和 embedding 适配。
+- [MEMLA: Enhancing Multilingual Knowledge Editing with Neuron-Masked Low-Rank Adaptation](https://arxiv.org/abs/2406.11566)：结合神经元遮蔽和 LoRA，让多语知识编辑更集中到语言相关参数并减少跨语言副作用。
+- [See It from My Perspective: How Language Affects Cultural Bias in Image Understanding](https://arxiv.org/abs/2406.11665)：显示 VLM 在西方图像理解划分上比东亚划分更准确，并把部分偏差追溯到文本预训练中的语言覆盖和更贴近文化的提示语言。
+- [Self-Distillation for Model Stacking Unlocks Cross-Lingual NLU in 200+ Languages](https://arxiv.org/abs/2406.12739)：通过样本高效自蒸馏把机器翻译编码器接入 LLM 骨干，保留多语表征对齐，同时避免 translate-test 解码误差和额外开销。
+- [Probing the Emergence of Cross-lingual Alignment during LLM Training](https://arxiv.org/abs/2406.13229)：用 BLOOM 训练检查点和神经元重叠探针说明，跨语言神经元共享与 zero-shot 迁移相关，且可能在预训练阶段退化。
+- [Encoder vs Decoder: Comparative Analysis of Encoder and Decoder Language Models on Multilingual NLU Tasks](https://arxiv.org/abs/2406.13469)：将 ScandEval 扩展到 decoder LM，在日耳曼语族多语 NLU 上比较 encoder 与 decoder，发现紧凑 encoder 常优于大得多的 decoder。
+- [Seamless Language Expansion: Enhancing Multilingual Mastery in Self-Supervised Models](https://arxiv.org/abs/2406.14092)：为 mHuBERT 加入 LoRA 适配、数据组合和重聚类保留策略，使模型学习普通话时不丢失已有语言的语音重合成能力。
+- [Exploring Design Choices for Building Language-Specific LLMs](https://arxiv.org/abs/2406.14670)：系统比较基座模型、词表扩展、初始化、继续预训练和数据选择如何影响单语或多语 LLM 的语言特定适配。
+- [1+1>2: Can Large Language Models Serve as Cross-Lingual Knowledge Aggregators?](https://arxiv.org/abs/2406.14721)：用低资源知识检测器、语言选择、答案替换和答案整合汇聚多语回答，以缩小不同语言间的性能差距。
+- [PARIKSHA: A Large-Scale Investigation of Human-LLM Evaluator Agreement on Multilingual and Multi-Cultural Data](https://arxiv.org/abs/2406.15053)：比较 10 种 Indic 语言中 30 个模型的 9 万条人工判断与 3 万条 LLM 评审分数，揭示直接评分一致性较弱和 GPT 评审自偏置。
+- [Shortcomings of LLMs for Low-Resource Translation: Retrieval and Understanding are Both the Problem](https://arxiv.org/abs/2406.15625)：在南克丘亚语到西班牙语的上下文翻译中检验检索到的语素释义、语法说明和例句，说明检索质量与语言理解都会限制低资源 MT。
+- [Ladder: A Model-Agnostic Framework Boosting LLM-based Machine Translation to the Next Level](https://arxiv.org/abs/2406.15741)：用伪 refinement triplets 和由易到难的分层微调训练 MT-Ladder，使小模型能够细化通用 LLM 翻译器的输出。
+- [Teaching LLMs to Abstain across Languages via Multilingual Feedback](https://arxiv.org/abs/2406.15948)：让模型在相关语言中生成多语自反馈来校准知识缺口下的 abstention，在 open-book、closed-book 和 commonsense QA 上提升低资源语言表现。
+- [Crosslingual Capabilities and Knowledge Barriers in Multilingual Large Language Models](https://arxiv.org/abs/2406.16135)：指出多语 LLM 除表层 MT 与嵌入对齐外仍有跨语言知识壁垒，并用 WikiText 等混合语言数据微调来缩小差距。
+- [Large Language Models Are Cross-Lingual Knowledge-Free Reasoners](https://arxiv.org/abs/2406.16655)：把多语推理拆成知识检索和无知识推理，显示无知识推理几乎可跨语言迁移，而跨语言知识检索才是主要瓶颈。
+- [Towards Fast Multilingual LLM Inference: Speculative Decoding and Specialized Drafters](https://arxiv.org/abs/2406.16758)：用定向预训练和微调训练语言特定 draft models 做 speculative decoding，在目标模型验证后续 token 的同时降低多语 LLM 推理时延。
+- [M2Lingual: Enhancing Multilingual, Multi-Turn Instruction Alignment in Large Language Models](https://arxiv.org/abs/2406.16783)：构建 M2Lingual，这一由 Evol 分类法生成的 18.2 万对合成多语多轮指令数据集，覆盖 70 种语言和 17 类以上 NLP 任务。
+- [A Three-Pronged Approach to Cross-Lingual Adaptation with Multilingual LLMs](https://arxiv.org/abs/2406.17377)：比较 Llama-2 的 Indic 迁移策略：优势语言监督、目标语言词序重排，以及面向相关低资源语言的继续预训练。
+- [CaLMQA: Exploring culturally specific long-form question answering across 23 languages](https://arxiv.org/abs/2406.17761)：构建 CaLMQA，包含 23 种语言中 5.17 万个非翻译收集的文化特定长问答问题，并评测 LLM 的事实性、相关性和错语种错误。
+- [BMIKE-53: Investigating Cross-Lingual Knowledge Editing with In-Context Learning](https://arxiv.org/abs/2406.17764)：构建覆盖 53 种语言的 BMIKE-53 跨语言上下文知识编辑基准，在 zsRE、CounterFact 和 WikiFactDiff 上测试 zero-shot、one-shot 与 few-shot demonstrations。
+- ["Vorbeşti Româneşte?" A Recipe to Train Powerful Romanian LLMs with English Instructions](https://arxiv.org/abs/2406.18266)：收集罗马尼亚语文本、翻译指令和基准来训练 RoLLM，展示英文指令配方也能产出较强的罗马尼亚语 LLM。
+- [The Multilingual Alignment Prism: Aligning Global and Local Preferences to Reduce Harm](https://arxiv.org/abs/2406.18682)：收集按 global harm 与 local harm 区分的多语人工红队提示，并在六种语言上优化对齐，同时控制通用能力损失。
+- [An Analysis of Multilingual FActScore](https://arxiv.org/abs/2406.19415)：拆解多语长文本生成中的 FActScore 事实抽取、事实评分和 Wikipedia 知识源环节，并为中低资源语言加入缓解策略。
+- [xTower: A Multilingual LLM for Explaining and Correcting Translation Errors](https://arxiv.org/abs/2406.19482)：在 TowerBase 上构建 xTower，用自由文本解释 MT 错误片段，并利用这些解释生成修正译文。
+- [Voices Unheard: NLP Resources and Models for Yorùbá Regional Dialects](https://arxiv.org/abs/2406.19564)：发布覆盖四种 Yorùbá 地区方言的 YORÙLECT 文本与语音语料，并评估面向 MT、ASR 和语音翻译的方言自适应微调。
+- [Breaking the Script Barrier in Multilingual Pre-Trained Language Models with Transliteration-Based Post-Training Alignment](https://arxiv.org/abs/2406.19759)：在 Mediterranean、Amharic、Farsi、南亚和东亚语群上使用转写式 post-pretraining alignment，改进不同文字系统但相关语言之间的迁移。
+- [Understanding and Mitigating Language Confusion in LLMs](https://arxiv.org/abs/2406.20052)：提出覆盖 15 种语言的 Language Confusion Benchmark，并测试 few-shot prompting、多语 SFT 和偏好调优能否让 LLM 按请求语言输出。
+- [M2QA: Multi-domain Multilingual Question Answering](https://arxiv.org/abs/2407.01091)：构建 M2QA，包含德语、土耳其语和中文在产品评论、新闻、创意写作三类领域中的 1.35 万条 SQuAD 式 QA，用于联合语言-领域适配。
+- [Cross-Lingual Transfer Learning for Speech Translation](https://arxiv.org/abs/2407.01130)：显示 Whisper encoder 嵌入形成共享语音语义空间，在仅用英译中语音翻译数据微调 decoder 后可实现 zero-shot 语音翻译迁移。
+- [Retrieval-augmented generation in multilingual settings](https://arxiv.org/abs/2407.01463)：构建 13 种语言的多语 RAG baseline，说明现成 retriever 和 generator 仍需要语言感知提示以及调整后的实体匹配指标。
+- [Breaking Language Barriers: Cross-Lingual Continual Pre-Training at Scale](https://arxiv.org/abs/2407.02118)：运行 40M 到 5B 参数规模的 40 组继续预训练实验，给出新语言适配中数据-参数分配、迁移时长和 replay 的 scaling-law 指引。
+- [Soft Language Prompts for Language Transfer](https://arxiv.org/abs/2407.02317)：在 16 种语言上组合 soft language prompts 与 task adapters，发现这种参数高效搭配常优于 language adapter 加 task adapter 的迁移方式。
+- [RLHF Can Speak Many Languages: Unlocking Multilingual Preference Optimization for LLMs](https://arxiv.org/abs/2407.02552)：构造可扩展的多语反馈数据，并在 23 种语言上做偏好优化，显示跨语言迁移和更大的偏好数据集能改进多语对齐。
+- [How Does Quantization Affect Multilingual LLMs?](https://arxiv.org/abs/2407.03211)：用自动指标、LLM judge 和人工评测比较量化多语 LLM，发现非拉丁文字和推理任务的质量损失比英语中心指标显示得更严重。
+- [TongGu: Mastering Classical Chinese Understanding with Knowledge-Grounded Large Language Models](https://arxiv.org/abs/2407.03937)：构建 Classical Chinese LLM，结合 ACCN-INS 两阶段指令数据、防遗忘的 redundancy-aware tuning，以及用于知识 grounded 回答的 CCU-RAG。
+- [Unlocking the Potential of Model Merging for Low-Resource Languages](https://arxiv.org/abs/2407.03994)：用 model merging 在没有目标语言 SFT 数据时合并低资源语言的语言建模和任务求解能力，并加入 slack variable 以保留关键参数。
+- [Generalists vs. Specialists: Evaluating Large Language Models for Urdu](https://arxiv.org/abs/2407.04459)：在 14 个 Urdu 任务上比较 GPT-4-Turbo、Llama-3-8B、XLM-R、mT5 和微调 Llama 变体，显示任务专用模型优于通用模型。
+- [SmurfCat at PAN 2024 TextDetox: Alignment of Multilingual Transformers for Text Detoxification](https://arxiv.org/abs/2407.05449)：用机器翻译和过滤扩充多语 detoxification 数据，微调 mT0 与 Aya 序列到序列模型，并为 PAN 2024 TextDetox 应用 ORPO 对齐。
+- [Faux Polyglot: A Study on Information Disparity in Multilingual Large Language Models](https://arxiv.org/abs/2407.05502)：评测跨语言 RAG 搜索，显示 LLM 在检索和生成答案时偏好与查询同语种的证据，缺少同语证据时又偏向高资源语言文档。
+- [LLaMAX: Scaling Linguistic Horizons of LLM by Enhancing Translation Capabilities Beyond 100 Languages](https://arxiv.org/abs/2407.05975)：通过词表扩展、数据增强和 LLaMA 系列继续多语预训练，把翻译支持扩展到 100 多种语言，并在 Flores-101 上评测。
+- [Mitigating Catastrophic Forgetting in Language Transfer via Model Merging](https://arxiv.org/abs/2407.08699)：提出 Branch-and-Merge，迭代合并语言适配微调模型，以提升保加利亚语和德语迁移并减少英语基座能力遗忘。
+- [sPhinX: Sample Efficient Multilingual Instruction Fine-Tuning Through N-shot Guided Prompting](https://arxiv.org/abs/2407.09879)：构建选择性多语合成指令数据，并用 LANGIT 的 N-shot guided finetuning 让翻译示例提升 Mistral-7B 和 Phi-3-Small 的多语基准表现。
+- [Multilingual Contrastive Decoding via Language-Agnostic Layers Skipping](https://arxiv.org/abs/2407.10795)：改造 contrastive decoding，跳过底部语言无关层以缓解 early-exit logits 与最终 logits 的语言不匹配，提升多语推理生成。
+- [Decoding Multilingual Moral Preferences: Unveiling LLM's Biases Through the Moral Machine Experiment](https://arxiv.org/abs/2407.15184)：用多语言 Moral Machine 困境提示测试 LLM 的道德偏好是否随提示语言变化，而非在不同文化语境中保持一致。
+- [ALLaM: Large Language Models for Arabic and English](https://arxiv.org/abs/2407.15390)：通过词表扩展、阿英混合预训练、平行和翻译数据以及偏好对齐，训练阿拉伯语与英语知识迁移的 decoder-only 模型。
+- [LLaST: Improved End-to-end Speech Translation System Leveraged by Large Language Models](https://arxiv.org/abs/2407.15415)：设计基于 LLM 的 speech-to-text translation 架构，结合 ASR 增强训练、多语数据增强和 dual-LoRA 优化，在 CoVoST-2 上验证。
+- [A Comparison of Language Modeling and Translation as Multilingual Pretraining Objectives](https://arxiv.org/abs/2407.15489)：在受控模型架构、训练数据、probing 和微调设置下比较 language modeling 与 translation 两类多语预训练目标。
+- [Perceptions of Linguistic Uncertainty by Language Models and Humans](https://arxiv.org/abs/2407.15814)：探查语言模型能否像人类一样把不确定性表达映射为数值概率，并区分他人陈述的不确定性与模型自身事实信念。
+- [PreAlign: Boosting Cross-Lingual Transfer by Early Establishment of Multilingual Alignment](https://arxiv.org/abs/2407.16222)：在常规 LM 预训练前用对齐词相似度初始化多语表示，并通过 code-switching 预训练保持这种对齐，以增强跨语言知识共享。
+- [Mixture of Modular Experts: Distilling Knowledge from a Multilingual Teacher into Specialized Modular Language Models](https://arxiv.org/abs/2407.19610)：把多语知识蒸馏与模块化 MoE 路由结合，用于 English、French、German 和 Python 输入，在压缩 LLM 行为时控制灾难性遗忘。
+- [mGTE: Generalized Long-Context Text Representation and Reranking Models for Multilingual Text Retrieval](https://arxiv.org/abs/2407.19669)：训练多语言长上下文表征与重排序模型。
+- [SeaLLMs 3: Open Foundation and Chat Multilingual Large Language Models for Southeast Asian Languages](https://arxiv.org/abs/2407.19672)：用高效语言增强技术和专门构造的指令调优数据，面向东南亚低资源与语码转换场景训练 foundation 和 chat LLM。
+- [In-Context Example Selection via Similarity Search Improves Low-Resource Machine Translation](https://arxiv.org/abs/2408.00397)：比较多语句向量检索策略为 in-context MT 选择示例，覆盖 English 到 French、German、Swahili 和 Wolof 的不同资源翻译方向。
+- [Fine-tuning multilingual language models in Twitter/X sentiment analysis: a study on Eastern-European V4 languages](https://arxiv.org/abs/2408.02044)：在 Czech、Slovak、Polish 和 Hungarian Twitter 情感数据上微调 BERT、BERTweet、Llama 与 Mistral 变体，并比较翻译和 in-context 设置。
+- [Do Large Language Models Speak All Languages Equally? A Comparative Study in Low-Resource Settings](https://arxiv.org/abs/2408.02237)：把情感和仇恨言论数据翻译到 Bangla、Hindi 与 Urdu，用于比较 LLM 在高资源和南亚低资源语言中的 zero-shot 表现。
+- [Pula: Training Large Language Models for Setswana](https://arxiv.org/abs/2408.02239)：发布 Setswana-English Pula 模型、Marothodi 语料、Medupi 指令数据，以及 Setswana 版 MMLU 和 ARC 基准，支持低资源双语训练。
+- [EgyBERT: A Large Language Model Pretrained on Egyptian Dialect Corpora](https://arxiv.org/abs/2408.03524)：在埃及方言 tweets 和论坛语料上预训练 Arabic 模型，并在十个数据集上与多方言 Arabic encoder 比较。
+- [SLIM-RAFT: A Novel Fine-Tuning Approach to Improve Cross-Linguistic Performance for Mercosur Common Nomenclature](https://arxiv.org/abs/2408.03936)：以葡萄牙语 TeenyTinyLLaMA 为源模型，用简化 retrieval-augmented finetuning 和精简 CoT 式提示适配 Mercosur nomenclature 分类。
+- [FuxiTranyu: A Multilingual Large Language Model Trained with Balanced Data](https://arxiv.org/abs/2408.06273)：从头训练 8B 模型，使用覆盖 43 种自然语言和 16 种编程语言的 600B 均衡 token，并继续做多语 SFT 与 DPO 对齐。
+- [Exploring Retrieval Augmented Generation in Arabic](https://arxiv.org/abs/2408.07425)：通过比较语义 embedding 检索器、LLM generator 以及文档和查询方言不匹配，系统研究 Arabic RAG 管线。
+- [Chinese Metaphor Recognition Using a Multi-stage Prompting Large Language Model](https://arxiv.org/abs/2408.09177)：用小模型生成带置信度的候选答案，再结合问题聚类示例和 heuristic-enhanced prompt，识别中文隐喻的本体、喻体与喻底。
+- [Multilingual Needle in a Haystack: Investigating Long-Context Behavior of Multilingual Large Language Models](https://arxiv.org/abs/2408.10151)：提出 MLNeedle 评测多语长上下文检索，控制 needle 语言、干扰文本语言和位置，覆盖单语与跨语检索。
+- [Synergistic Approach for Simultaneous Optimization of Monolingual, Cross-lingual, and Multilingual Information Retrieval](https://arxiv.org/abs/2408.10536)：用单语和跨语 QA pair 的 hybrid batch 微调多语检索模型，在 XQuAD-R、MLQA-R 和 MIRACL 上降低语言偏置。
+- [Multilingual Non-Factoid Question Answering with Silver Answers](https://arxiv.org/abs/2408.10604)：从 BBC 疑问式小标题和对应段落构建 MuNfQuAD，并在 38 种语言的 57.8 万 QA 对上训练 answer-paragraph selection 模型。
+- [Beneath the Surface of Consistency: Exploring Cross-lingual Knowledge Representation Sharing in LLMs](https://arxiv.org/abs/2408.10646)：复用知识编辑方法衡量 LLM 是否把事实答案存储在共享跨语表示中，发现文字系统相似性强烈影响表征共享。
+- [Beyond English-Centric LLMs: What Language Do Multilingual Language Models Think in?](https://arxiv.org/abs/2408.10811)：分析多语言语言模型内部使用何种语言，探查跨语言表征与推理行为。
+- [MoE-LPR: Multilingual Extension of Large Language Models through Mixture-of-Experts with Language Priors Routing](https://arxiv.org/abs/2408.11396)：把 LLM upcycle 为冻结原参数的 MoE，新增语言专家并用 language-prior routing 扩展语言能力，再用少于 1% 的原语言 replay 数据控制遗忘。
+- [IKUN for WMT24 General MT Task: LLMs Are here for Multilingual Machine Translation](https://arxiv.org/abs/2408.11512)：基于 Llama-3-8B 和 Mistral-7B 构建 WMT24 MT 系统，先在十种语言单语数据上继续预训练，再用 11 个方向平行数据微调。
+- [Quality or Quantity? On Data Scale and Diversity in Adapting Large Language Models for Low-Resource Translation](https://arxiv.org/abs/2408.12780)：指出低资源 LLM 翻译在预训练和 SFT 阶段都依赖平行数据，而宽泛 SFT 多样性会在美洲原住民和东北印度低资源语言上造成干扰。
+- [On the Limitations of Language-targeted Pruning: Investigating the Calibration Language Impact in Multilingual LLM Pruning](https://arxiv.org/abs/2408.14398)：比较多语 LLM 剪枝中的校准语言选择，分析 perplexity、下游迁移、潜在子空间、剪枝 mask 和单个神经元变化。
+- [Multilingual Arbitrage: Optimizing Data Pools to Accelerate Multilingual Progress](https://arxiv.org/abs/2408.14960)：按不同 teacher model 的语言强项路由合成数据生成，避免多语训练中过度依赖单一 teacher 导致坍缩和偏见传播。
+- [Language Adaptation on a Tight Academic Compute Budget: Tokenizer Swapping Works and Pure bfloat16 Is Enough](https://arxiv.org/abs/2408.15793)：研究德语和阿拉伯语的紧预算继续预训练，显示 tokenizer swapping 可提升 token 效率，纯 bfloat16 能加速小 GPU 语言适配。
+- [Jina-ColBERT-v2: A General-Purpose Multilingual Late Interaction Retriever](https://arxiv.org/abs/2408.16672)：改进 ColBERT 式 late-interaction 检索，在架构和多语训练管线上适配异构多语数据与高效索引。
+- [InkubaLM: A small language model for low-resource African languages](https://arxiv.org/abs/2408.17024)：训练 0.4B 非洲低资源语言小模型，并在 MT、QA、AfriMMLU、AfriXNLI 和情感任务上评测计算受限场景表现。
+- [How Much Data is Enough Data? Fine-Tuning Large Language Models for In-House Translation: Performance Evaluation Across Multiple Dataset Sizes](https://arxiv.org/abs/2409.03454)：用 1K 到 207K segment 的机构 translation memory 微调 Llama 3 8B Instruct，比较五个资源层级不同的翻译方向。
+- [Translating Step-by-Step: Decomposing the Translation Process for Improved Translation Quality of Long-Form Texts](https://arxiv.org/abs/2409.06790)：把长文本翻译拆为预翻译研究、起草、润色和校对多轮交互，在十个语言对上提升 Gemini 1.5 Pro 翻译质量。
+- [jina-embeddings-v3: Multilingual Embeddings With Task LoRA](https://arxiv.org/abs/2409.10173)：训练 570M 多语长上下文 embedding 模型，加入任务特定 LoRA adapters 和 Matryoshka 维度，覆盖检索、聚类、分类与匹配。
+- [Large Language Models are Good Multi-lingual Learners : When LLMs Meet Cross-lingual Prompts](https://arxiv.org/abs/2409.11056)：提出 MLPrompt，自动把模型难以遵循的规则约束翻译成另一种语言，以在长上下文中提高模型对遗漏指令的注意力。
+- [Egalitarian Language Representation in Language Models: It All Begins with Tokenizers](https://arxiv.org/abs/2409.11501)：提出 Grapheme Pair Encoding，显示基于字素的预分词比 byte-level tokenizer 更公平地表示 Tamil、Sinhala 和 Hindi 等复杂文字系统。
+- [EMMeTT: Efficient Multimodal Machine Translation Training](https://arxiv.org/abs/2409.13523)：把 decoder-only 与 encoder-decoder LM 接入 Canary speech encoder，并用多语多模态均衡采样和 2D bucketing 做联合语音文本 MT 训练。
+- [Towards Safe Multilingual Frontier AI](https://arxiv.org/abs/2409.13708)：在 24 种欧盟官方语言上评估 multilingual jailbreak 脆弱性，并把安全失败与语言资源程度关联，强调包容性多语安全测试。
+- [Mufu: Multilingual Fused Learning for Low-Resource Translation with LLM](https://arxiv.org/abs/2409.13949)：结合 LLM 的多语言融合学习改进低资源翻译，为多语言迁移提供模型侧路线。
+- [MQM-APE: Toward High-Quality Error Annotation Predictors with Automatic Post-Editing in LLM Translation Evaluators](https://arxiv.org/abs/2409.14335)：把 LLM 预测的 MQM 翻译错误交给 evaluator、automatic post-editor 与 pairwise quality verifier 过滤，在高低资源语言上提升错误标注质量。
+- [Choose the Final Translation from NMT and LLM hypotheses Using MBR Decoding: HW-TSC's Submission to the WMT24 General MT Shared Task](https://arxiv.org/abs/2409.14800)：结合 Transformer NMT 训练、LLM 继续预训练、SFT、contrastive preference optimization 和 MBR decoding 选择最终英中译文。
+- [EuroLLM: Multilingual Language Models for Europe](https://arxiv.org/abs/2409.16235)：开发面向欧洲语言的开放权重多语 LLM，包含数据过滤、scaling laws、多语 tokenizer，以及初始 1.7B base 和 instruction 模型。
+- [How Transliterations Improve Crosslingual Alignment](https://arxiv.org/abs/2409.17326)：在原文和转写数据上训练相关语言对的对齐变体，说明无需平行数据时转写也能改善句向量跨语对齐。
+- [EMMA-500: Enhancing Massively Multilingual Adaptation of Large Language Models](https://arxiv.org/abs/2409.17892)：用覆盖 546 种语言的 MaLA 语料继续预训练 Llama 2 7B，以提升低资源覆盖、跨语言迁移和任务泛化。
+- [Atlas-Chat: Adapting Large Language Models for Low-Resource Moroccan Arabic Dialect](https://arxiv.org/abs/2409.17912)：整合 Darija 资源、人工和合成数据以及质量控制后的英语翻译构建指令数据，并微调 2B、9B 和 27B Atlas-Chat 模型。
+- [GrEmLIn: A Repository of Green Baseline Embeddings for 87 Low-Resource Languages Injected with Multilingual Graph Knowledge](https://arxiv.org/abs/2409.18193)：把多语图知识注入 GloVe 式表示，为 87 种中低资源语言生成计算高效的静态 baseline embeddings。
+- [LangSAMP: Language-Script Aware Multilingual Pretraining](https://arxiv.org/abs/2409.18199)：在 500 多种语言的 XLM-R 继续预训练中，把语言和文字系统 embeddings 注入 Transformer block 输出，以改善 zero-shot 跨语迁移。
+- [Optimizing Cross-Client Domain Coverage for Federated Instruction Tuning of Large Language Models](https://arxiv.org/abs/2409.20135)：提出 FedDCA，通过多样化 client center 选择和 retrieval-augmented cross-client instruction sets，在隐私约束下提升低数据联邦指令调优。
+- [Layer Swapping for Zero-Shot Cross-Lingual Transfer in Large Language Models](https://arxiv.org/abs/2410.01335)：把 English math expert 与目标语言 instruction expert 合并，替换上下 Transformer 层，在没有目标语言数学数据时实现 zero-shot 非英语数学迁移。
+- [MetricX-24: The Google Submission to the WMT 2024 Metrics Shared Task](https://arxiv.org/abs/2410.03983)：用 DA、MQM 和 synthetic challenge 数据训练可有参照也可无参照的混合 MT 指标，增强对无关翻译和漏译等失败模式的鲁棒性。
+- [A Simple yet Effective Training-free Prompt-free Approach to Chinese Spelling Correction Based on Large Language Models](https://arxiv.org/abs/2410.04027)：利用 LLM 的 token 概率做中文拼写纠错，不依赖训练样本或提示工程，把上下文字符似然转化为轻量纠错信号。
+- [Lens: Rethinking Multilingual Enhancement for Large Language Models](https://arxiv.org/abs/2410.04407)：重新审视多语言增强，分离语言特定数据、跨语言迁移和继续调优对非英语 LLM 行为的影响。
+- [Casablanca: Data and Models for Multidialectal Arabic Speech Recognition](https://arxiv.org/abs/2410.04527)：通过社区采集构建多方言阿拉伯语 ASR 数据和基线，把方言覆盖而不只是现代标准阿拉伯语作为明确的语音识别训练目标。
+- [Optimizing the Training Schedule of Multilingual NMT using Reinforcement Learning](https://arxiv.org/abs/2410.06118)：用强化学习选择多语言 NMT 训练日程，动态调整语言对采样，而不是固定静态 curriculum。
+- [Mitigating the Language Mismatch and Repetition Issues in LLM-based Machine Translation via Model Editing](https://arxiv.org/abs/2410.07054)：用模型编辑缓解 LLM 翻译中的错语种输出和重复译文问题，避免完整重训模型。
+- [Linguistically-Informed Multilingual Instruction Tuning: Is There an Optimal Set of Languages to Tune?](https://arxiv.org/abs/2410.07809)：研究多语言指令调优中的语言选择，用语言学关系决定哪些语言应进入调优混合。
+- [Extracting and Combining Abilities For Building Multi-lingual Ability-enhanced Large Language Models](https://arxiv.org/abs/2410.07825)：从专门模型中抽取语言能力并组合为能力增强的多语 LLM，而不是依赖单一整体微调。
+- [Towards Multilingual LLM Evaluation for European Languages](https://arxiv.org/abs/2410.08928)：构建欧洲语言 LLM 评测视角，强调语言均衡诊断而非英语中心的汇总分。
+- [Language Imbalance Driven Rewarding for Multilingual Self-improving](https://arxiv.org/abs/2410.08964)：用语言不均衡感知奖励引导多语自改进，让弱势语言获得更强优化压力。
+- [The Same But Different: Structural Similarities and Differences in Multilingual Language Modeling](https://arxiv.org/abs/2410.09223)：分析多语言建模中哪些结构模式共享、哪些具备语言特异性，用于判断跨语迁移的适用边界。
+- [Watching the Watchers: Exposing Gender Disparities in Machine Translation Quality Estimation](https://arxiv.org/abs/2410.10995)：审计 MT 质量估计模型中的性别差异，说明评估器信号本身也可能带有偏见，而不只是翻译系统有偏。
+- [Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks](https://arxiv.org/abs/2410.11005)：测试方言变体下的推理表现，把方言公平性和鲁棒性作为多语 LLM 评测的显式目标。
+- [Sabiá-3 Technical Report](https://arxiv.org/abs/2410.12049)：报告面向葡萄牙语的 Sabiá-3 LLM 系列，包括用于提升 Lusophone 语言表现的数据与训练选择。
+- [Optimizing Low-Resource Language Model Training: Comprehensive Analysis of Multi-Epoch, Multi-Lingual, and Two-Stage Approaches](https://arxiv.org/abs/2410.12325)：比较多 epoch 训练、多语迁移和两阶段配方在低资源 LM 训练中的作用，判断稀缺目标语数据何时应重复或混合使用。
+- [Bridging the Language Gaps in Large Language Models with Inference-Time Cross-Lingual Intervention](https://arxiv.org/abs/2410.12462)：加入推理期跨语言干预，通过操控内部激活缩小非英语性能差距，而不更新权重。
+- [LLM-based Translation Inference with Iterative Bilingual Understanding](https://arxiv.org/abs/2410.12543)：把 LLM 翻译推理组织为迭代式双语理解，在定稿前反复检查源语和目标语语义。
+- [Scaling Laws for Multilingual Language Models](https://arxiv.org/abs/2410.12883)：总结多语言 LM 的 scaling law 现象，关联模型规模、语言数据分配和跨语言性能取舍。
+- [Boosting LLM Translation Skills without General Ability Loss via Rationale Distillation](https://arxiv.org/abs/2410.13944)：把翻译 rationale 蒸馏进 LLM，在提升 MT 质量的同时监控通用指令遵循能力是否保留。
+- [LlamaLens: Specialized Multilingual LLM for Analyzing News and Social Media Content](https://arxiv.org/abs/2410.15308)：将多语 LLM 专门化到新闻和社交媒体分析，目标是跨语言内容理解而非通用聊天表现。
+- [Multi-IF: Benchmarking LLMs on Multi-Turn and Multilingual Instructions Following](https://arxiv.org/abs/2410.15553)：评测 LLM 能否在多轮和多语言条件下保持指令遵循，暴露交互层面的多语失败。
+- [Do Large Language Models Have an English Accent? Evaluating and Improving the Naturalness of Multilingual LLMs](https://arxiv.org/abs/2410.15956)：衡量多语 LLM 输出中的英语腔痕迹，并研究调优或解码干预以生成更自然的非英语文本。
+- [Pangea: A Fully Open Multilingual Multimodal LLM for 39 Languages](https://arxiv.org/abs/2410.16153)：训练并开放覆盖 39 种语言的多语多模态 LLM，并用共享视觉语言指令数据支撑跨语图文任务。
+- [Exploring Pretraining via Active Forgetting for Improving Cross Lingual Transfer for Decoder Language Models](https://arxiv.org/abs/2410.16168)：在预训练中使用 active forgetting 减少语言特定干扰，提升 decoder-only LM 的跨语言迁移。
+- [Cross-lingual Transfer of Reward Models in Multilingual Alignment](https://arxiv.org/abs/2410.18027)：测试单语奖励模型如何迁移到多语对齐，厘清偏好信号何时可以跨语言复用。
+- [Key Algorithms for Keyphrase Generation: Instruction-Based LLMs for Russian Scientific Keyphrases](https://arxiv.org/abs/2410.18040)：将指令式 LLM 适配到俄语科学关键词生成，面向多语学术术语抽取与生成。
+- [Towards Understanding the Fragility of Multilingual LLMs against Fine-Tuning Attacks](https://arxiv.org/abs/2410.18210)：研究针对多语 LLM 的微调攻击，说明小规模恶意适配也可能削弱多语安全性或行为一致性。
+- [GrammaMT: Improving Machine Translation with Grammar-Informed In-Context Learning](https://arxiv.org/abs/2410.18702)：把语法信息注入上下文示例，使 LLM 翻译器能利用句法指导改进机器翻译。
+- [From English-Centric to Effective Bilingual: LLMs with Custom Tokenizers for Underrepresented Languages](https://arxiv.org/abs/2410.18836)：为代表性不足语言构建使用自定义 tokenizer 的双语 LLM，缓解英语中心词表带来的 token 低效。
+- [LLMs for Extremely Low-Resource Finno-Ugric Languages](https://arxiv.org/abs/2410.18902)：探索极低资源 Finno-Ugric 语言的 LLM 适配，处理语料稀缺同时限制调优和评测的问题。
+- [Not All Languages are Equal: Insights into Multilingual Retrieval-Augmented Generation](https://arxiv.org/abs/2410.21970)：分析多语 RAG 的语言差异，把不同资源水平语言中的检索失败和生成失败分开观察。
+- [Multilingual Vision-Language Pre-training for the Remote Sensing Domain](https://arxiv.org/abs/2410.23370)：用多语文本监督预训练遥感视觉语言模型，使卫星图像能被跨语言查询和理解。
+- [Multilingual Pretraining Using a Large Corpus Machine-Translated from a Single Source Language](https://arxiv.org/abs/2410.23956)：研究从单一源语言机器翻译得到的大规模语料能否支撑多语预训练与迁移。
+- [Constraint Back-translation Improves Complex Instruction Following of Large Language Models](https://arxiv.org/abs/2410.24175)：用约束反向翻译合成更难的指令数据，提升 LLM 对复杂约束的遵循能力。
+- [Dictionary Insertion Prompting for Multilingual Reasoning on Multilingual Large Language Models](https://arxiv.org/abs/2411.01141)：在提示中插入词典释义，使多语 LLM 能基于目标语词义进行推理。
+- [Prompting with Phonemes: Enhancing LLM Multilinguality for non-Latin Script Languages](https://arxiv.org/abs/2411.02398)：用音素提示表示非拉丁文字输入，为 tokenizer 覆盖不足的语言提供文字系统无关信号。
+- [Code-Switching Curriculum Learning for Multilingual Transfer in LLMs](https://arxiv.org/abs/2411.02460)：把语码转换样例组织成 curriculum，让模型从混合语言上下文中逐步学习多语迁移。
+- [Grounding Natural Language to SQL Translation with Data-Based Self-Explanations](https://arxiv.org/abs/2411.02948)：用基于数据的自解释扎根自然语言到 SQL 翻译，使生成 SQL 依赖表格证据而不只依赖表层文本。
+- [Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models](https://arxiv.org/abs/2411.03888)：评测并适配视觉语言模型，使其在多模态、多语言和多文化语境下检测仇恨言论。
+- [Tomato, Tomahto, Tomate: Do Multilingual Language Models Understand Based on Subword-Level Semantic Concepts?](https://arxiv.org/abs/2411.04530)：探测多语 LM 是否在子词层面编码语义概念，把 tokenizer 片段与跨语言语义表示联系起来。
+- [Fine-Grained Reward Optimization for Machine Translation using Error Severity Mappings](https://arxiv.org/abs/2411.05986)：把 MT 错误严重程度映射为细粒度奖励信号，使优化能区分惩罚重大和轻微翻译错误。
+- [Building a Taiwanese Mandarin Spoken Language Model: A First Attempt](https://arxiv.org/abs/2411.07111)：构建初步台湾华语口语语言模型，面向标准普通话文本模型未覆盖的语音和口语现象。
+- [Tucano: Advancing neural text generation for Portuguese](https://arxiv.org/abs/2411.07854)：用葡萄牙语特定数据和评测发展神经文本生成模型，而不是只依赖多语通用模型。
+- [Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers](https://arxiv.org/abs/2411.08745)：用 activation patching 区分 Transformer 内部的语言形式信号和语言无关概念表示。
+- [Xmodel-1.5: An 1B-scale Multilingual LLM](https://arxiv.org/abs/2411.10083)：报告 1B 规模多语 LLM，强调紧凑多语训练与评测，而不只是扩大模型规模。
+- [On the shortcut learning in multilingual neural machine translation](https://arxiv.org/abs/2411.10581)：分析多语言 NMT 中的 shortcut learning，识别模型何时依赖虚假语言对线索而非真正翻译理解。
+- [Transcending Language Boundaries: Harnessing LLMs for Low-Resource Language Translation](https://arxiv.org/abs/2411.11295)：用 LLM 提示或适配配方处理低资源翻译，聚焦平行数据稀缺的语言对。
+- [One Mind, Many Tongues: A Deep Dive into Language-Agnostic Knowledge Neurons in Large Language Models](https://arxiv.org/abs/2411.17401)：识别 LLM 中的语言无关知识神经元，用于解释事实知识如何跨语言共享。
+- [Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator](https://arxiv.org/abs/2411.17799)：把 sign units 视为 token，并加入检索以利用外部手语知识生成多语手语输出。
+- [Challenges in Adapting Multilingual LLMs to Low-Resource Languages using LoRA PEFT Tuning](https://arxiv.org/abs/2411.18571)：测试 LoRA PEFT 的低资源语言适配，揭示多语基座目标语覆盖较弱时的失败模式。
+- [Enhancing Function-Calling Capabilities in LLMs: Strategies for Prompt Formats, Data Integration, and Multilingual Translation](https://arxiv.org/abs/2412.01130)：通过提示格式、数据整合和工具调用样例的多语翻译来改进 LLM function calling。
+- [Alignment at Pre-training! Towards Native Alignment for Arabic LLMs](https://arxiv.org/abs/2412.03253)：把阿拉伯语对齐信号前移到预训练阶段，使安全和指令行为原生学习，而非只依赖后续 chat tuning。
+- [Marco-LLM: Bridging Languages via Massive Multilingual Training for Cross-Lingual Enhancement](https://arxiv.org/abs/2412.04003)：通过大规模多语训练构建 Marco-LLM，用广泛语言混合增强跨语言能力。
+- [AL-QASIDA: Analyzing LLM Quality and Accuracy Systematically in Dialectal Arabic](https://arxiv.org/abs/2412.04193)：系统评测 LLM 在阿拉伯语方言上的质量和准确性，使标准阿拉伯语分数之外的方言弱点可见。
 - [Aya Expanse](https://arxiv.org/abs/2412.04261)：多语言开放模型路线，结合更广语言覆盖、标注、偏好调优和安全迭代来改进多语言前沿行为。
+- [PolyIPA - Multilingual Phoneme-to-Grapheme Conversion Model](https://arxiv.org/abs/2412.09102)：构建多语音素到字形转换模型，把 IPA 式发音输入转换为语言特定书写形式。
+- [Large Language Models for Persian $ \leftrightarrow $ English Idiom Translation](https://arxiv.org/abs/2412.09993)：测试 LLM 的波斯语与英语习语互译，关注比喻意义迁移而非字面句子翻译。
+- [Efficient Continual Pre-training of LLMs for Low-resource Languages](https://arxiv.org/abs/2412.10244)：研究高效继续预训练配方，用较低计算成本加入低资源语言并控制遗忘。
+- [Adapting Chat Language Models Using Only Target Unlabeled Language Data](https://arxiv.org/abs/2412.11704)：仅用目标语无标注文本适配 chat LM，目标是在新语言中无需指令标注也能迁移。
+- [QUENCH: Measuring the gap between Indic and Non-Indic Contextual General Reasoning in LLMs](https://arxiv.org/abs/2412.11763)：衡量 Indic 与非 Indic 语言之间的上下文推理差距，定位多语 LLM 在 Indic 场景中的不足。
+- [Second Language (Arabic) Acquisition of LLMs via Progressive Vocabulary Expansion](https://arxiv.org/abs/2412.12310)：通过渐进式词表扩展让 LLM 获得阿拉伯语第二语言能力，在适配中逐步扩展 tokenizer 和 embedding。
+- [LinguaLIFT: An Effective Two-Stage Instruction Tuning Framework for Low-Resource Language Reasoning](https://arxiv.org/abs/2412.12499)：用两阶段指令调优框架提升低资源语言推理，把语言迁移和推理任务调优分开处理。
+- [Beyond Data Quantity: Key Factors Driving Performance in Multilingual Language Models](https://arxiv.org/abs/2412.12500)：分析语料规模之外影响多语 LM 性能的因素，包括语言混合与数据质量。
+- [Evaluating zero-shot multilingual aspect-based sentiment analysis with large language models](https://arxiv.org/abs/2412.12564)：跨语言评测 zero-shot aspect-based sentiment analysis，测试 LLM 情感推理能否在无任务微调时迁移。
+- [Pipeline Analysis for Developing Instruct LLMs in Low-Resource Languages: A Case Study on Basque](https://arxiv.org/abs/2412.13922)：拆解 Basque 指令 LLM 流水线，比较低资源模型开发中的数据收集、翻译、调优和评测选择。
+- [Cross-Lingual Transfer of Debiasing and Detoxification in Multilingual LLMs: An Extensive Investigation](https://arxiv.org/abs/2412.14050)：测试在一种语言中进行的去偏和 detoxification 能否迁移到多语 LLM 的其他语言。
+- [DRT: Deep Reasoning Translation via Long Chain-of-Thought](https://arxiv.org/abs/2412.17498)：用长链式思维推理改进需要深层语义或上下文推断的翻译案例。
+- [Investigating Length Issues in Document-level Machine Translation](https://arxiv.org/abs/2412.17592)：分析文档级 MT 中的长度错配和长度控制失败，因为篇章上下文会改变输出长度行为。
 - [Zero-Shot Prompting for LLM-Based Machine Translation Using In-Domain Target Sentences](https://doi.org/10.1109/taslp.2024.3519814)：把领域内目标语句用作 LLM 机器翻译的零样本示例，直接评估无平行样本时的提示侧适配。
+- [Code-Switching and Back-Transliteration Using a Bilingual Model](https://doi.org/10.18653/v1/2024.findings-eacl.102)：使用双语模型进行语码转换与反转写，面向混合文字和混合语言生成。
+- [AfriInstruct: Instruction Tuning of African Languages for Diverse Tasks](https://doi.org/10.18653/v1/2024.findings-emnlp.793)：构建覆盖多任务的非洲语言指令调优数据，使 LLM 学习代表性不足非洲语言中的任务遵循。
+- [Vikhr: Constructing a State-of-the-art Bilingual Open-Source Instruction-Following Large Language Model for Russian](https://doi.org/10.18653/v1/2024.mrl-1.15)：通过俄语数据整理、SFT 和对齐式调优构建开放俄语双语指令遵循 LLM。
+- [Analysing Translation Artifacts: A Comparative Study of LLMs, NMTs, and Human Translations](https://doi.org/10.18653/v1/2024.wmt-1.116)：比较 LLM、NMT 和人工译文中的翻译痕迹，区分系统特有 artifacts 与人工翻译模式。
+- [PAN 2024 Multilingual TextDetox: Exploring Different Regimes For Synthetic Data Training For Multilingual Text Detoxification](https://ceur-ws.org/Vol-3740/paper-280.pdf)：比较 PAN 2024 多语文本 detoxification 任务中的合成数据训练方案。
+- [Human Review for Post-Training Improvement of Low-Resource Language Performance in Large Language Models](https://doi.org/10.1109/ichi61247.2024.00095)：在后训练之后加入人工审阅，识别并改进 LLM 的低资源语言性能缺口。
+- [The First Neural Machine Translation System for the Karachay-Balkar Language](https://doi.org/10.1109/piere62470.2024.10805003)：构建首个 Karachay-Balkar 神经机器翻译系统，把神经翻译覆盖扩展到严重代表性不足语言。
+- [Large Language Model Translation of Indigenous Languages](https://doi.org/10.1109/ccece59415.2024.10667295)：评估 LLM 对原住民语言的翻译，聚焦标准 MT 数据和基准稀缺的场景。
+- [Digital Inclusion and Culture: Training LLaMA-2 to Empower Kichwa Communities](https://doi.org/10.1109/icedeg61611.2024.10702097)：为 Kichwa 社群使用适配 LLaMA-2，把语言训练与文化包容目标结合起来。
+- [Overview of the SIGHAN 2024 shared task for Chinese dimensional aspect-based sentiment analysis](https://doi.org/10.18653/v1/2024.sighan-1.19)：概述 SIGHAN 2024 中文维度化 aspect-based sentiment shared task，包括参赛系统和评测设置。
+- [Document-level Translation with LLM Reranking: Team-J at WMT 2024 General Translation Task](https://doi.org/10.18653/v1/2024.wmt-1.14)：在 WMT 2024 中用 LLM reranking 选择文档级译文，在候选翻译之上加入篇章感知选择。
+- [Adapting Open-Source Generative Large Language Models for Low-Resource Languages: A Case Study for Turkish](https://doi.org/10.18653/v1/2024.mrl-1.3)：以土耳其语为低资源案例适配开放生成式 LLM，比较目标语数据与调优选择。
+- [Exploring Very Low-Resource Translation with LLMs: The University of Edinburgh’s Submission to AmericasNLP 2024 Translation Task](https://doi.org/10.18653/v1/2024.americasnlp-1.25)：报告 AmericasNLP 2024 极低资源翻译系统，用 LLM 提示或适配处理原住民语言方向。
+- [Detecting and Translating Language Ambiguity with Multilingual LLMs](https://doi.org/10.18653/v1/2024.mrl-1.26)：用多语 LLM 检测语言歧义并进行翻译，面向歧义感知的跨语言生成。
+- [IOL Research Machine Translation Systems for WMT24 General Machine Translation Shared Task](https://doi.org/10.18653/v1/2024.wmt-1.8)：描述 IOL Research 的 WMT24 MT 系统，包括通用翻译中的系统组合和模型选择。
+- [The iimasNLP team at IberAuTexTification 2024: Integrating Graph Neural Networks, Multilingual LLMs, and Stylometry for Automatic Text Identification](https://ceur-ws.org/Vol-3756/IberAuTexTification2024_paper7.pdf)：在 IberAuTexTification 2024 中结合图神经网络、多语 LLM 特征和 stylometry 做自动文本识别。
+- [Investigating the Linguistic Performance of Large Language Models in Machine Translation](https://doi.org/10.18653/v1/2024.wmt-1.28)：从语言现象角度分析 LLM 机器翻译输出，超越单一汇总 MT 指标。
+- [Investigating the Potential of Task Arithmetic for Cross-Lingual Transfer](https://doi.org/10.18653/v1/2024.eacl-short.12)：把 task arithmetic 用于跨语言迁移，测试微调模型向量操作能否组合语言能力。
+- [Community OSCAR: A Community Effort for Multilingual Web Data](https://doi.org/10.18653/v1/2024.mrl-1.19)：构建 Community OSCAR 多语 Web 数据基础设施，强调用社区整理提升语言覆盖和数据质量。
+- [Towards Demonstration-Aware Large Language Models for Machine Translation](https://doi.org/10.18653/v1/2024.findings-acl.824)：让面向 MT 的 LLM 更显式地利用 demonstrations，改进示例条件下的翻译行为。
+- [Evaluating LLMs in Persian News Summarization](https://doi.org/10.1109/ikt65497.2024.10892758)：评测 LLM 的波斯语新闻摘要能力，测试新闻领域中的非英语摘要质量。
+- [Performance Analysis of Chinese Large Language Models in Solving Math Word Problems](https://doi.org/10.1109/ieir62538.2024.10960109)：分析中文 LLM 在数学应用题上的表现，探测语言特定推理行为而非单纯翻译。
+- [Representational Isomorphism and Alignment of Multilingual Large Language Models](https://doi.org/10.18653/v1/2024.findings-emnlp.823)：衡量多语 LLM 表示空间之间的同构性，用于诊断不同语言在内部是否对齐。
+- [ChatGPT Label: Comparing the Quality of Human-Generated and LLM-Generated Annotations in Low-Resource Language NLP Tasks](https://doi.org/10.1109/access.2024.3402809)：比较低资源 NLP 任务中的人工标签和 ChatGPT 生成标签，评估 LLM 标注能否替代稀缺专家数据。
+- [LLMs for Low Resource Languages in Multilingual, Multimodal and Dialectal Settings](https://doi.org/10.18653/v1/2024.eacl-tutorials.5)：面向低资源、多模态和方言场景的 LLM 技术教程综述，更适合作为路由参考而非单一模型条目。
+- [Enhancing Multilingual Hate Speech Detection: From Language-Specific Insights to Cross-Linguistic Integration](https://doi.org/10.1109/access.2024.3452987)：整合语言特定信号做多语仇恨言论检测，面向安全分类中的跨语言迁移。
+- [Overview of PAN 2024: Multi-author Writing Style Analysis, Multilingual Text Detoxification, Oppositional Thinking Analysis, and Generative AI Authorship Verification Condensed Lab Overview](https://doi.org/10.1007/978-3-031-71908-0_11)：概述 PAN 2024 多项任务，包括多语文本 detoxification，使 shared-task 协议和系统比较可检索。
+- [Re-thinking Machine Translation Post-Editing Guidelines](https://doi.org/10.26034/cm.jostrans.2024.4696)：重新审视 MT post-editing 指南，明确影响翻译训练数据和评测的人类编辑标准。
+- [LANDeRMT: Dectecting and Routing Language-Aware Neurons for Selectively Finetuning LLMs to Machine Translation](https://doi.org/10.18653/v1/2024.acl-long.656)：检测语言感知神经元并将其路由到机器翻译选择性微调中，减少全参数适配需求。
+- [Incorporating Dialect Understanding Into LLM Using RAG and Prompt Engineering Techniques for Causal Commonsense Reasoning](https://doi.org/10.18653/v1/2024.vardial-1.19)：结合面向方言的 RAG 和提示工程，提升方言输入下的因果常识推理。
+- [Grammar-based Data Augmentation for Low-Resource Languages: The Case of Guarani-Spanish Neural Machine Translation](https://doi.org/10.18653/v1/2024.naacl-long.354)：用基于语法的数据增强构造 Guarani-Spanish NMT 数据，面向平行语料有限的低资源翻译。
+- [Document-Level Machine Translation with Large-Scale Public Parallel Corpora](https://doi.org/10.18653/v1/2024.acl-long.712)：用大规模公开平行语料训练文档级 MT，使句子之外的上下文进入翻译模型。
+- [Information Parity: Measuring and Predicting the Multilingual Capabilities of Language Models](https://doi.org/10.18653/v1/2024.findings-emnlp.468)：定义 information parity 指标，用于预测语言模型在不同语言上的多语能力差距。
+- [John vs. Ahmed: Debate-Induced Bias in Multilingual LLMs](https://doi.org/10.18653/v1/2024.arabicnlp-1.18)：研究多语 LLM 中由辩论触发的偏见，显示姓名和语言如何影响论辩判断。
+- [OSACT 2024 Task 2: Arabic Dialect to MSA Translation](https://doi.org/10.63317/4zrvabtejteo)：描述 OSACT 2024 阿拉伯语方言到现代标准阿拉伯语翻译任务及其系统级发现。
+- [Bangla SBERT - Sentence Embedding Using Multilingual Knowledge Distillation](https://doi.org/10.1109/uemcon62879.2024.10754765)：把多语句向量知识蒸馏到 Bangla SBERT，用于孟加拉语语义相似度和检索任务。
+- [Sarcasm Detection in Multilingual Text through Embedding-Enhanced Language Models: BERT Variants](https://doi.org/10.1109/inmic64792.2024.11004369)：用 embedding-enhanced BERT 变体做多语讽刺检测，面向字面多语模型常遗漏的语用意义。
+- [IndicMOS: Multilingual MOS Prediction for 7 Indian languages](https://doi.org/10.21437/interspeech.2024-1967)：预测七种印度语言语音的 MOS，为语音生成或转换提供多语质量估计。
+- [Enhancing Neural Transducer for Multilingual ASR with Synchronized Language Diarization](https://doi.org/10.21437/interspeech.2024-1418)：为神经 transducer ASR 加入同步语言 diarization，使多语语音识别能追踪语言切换。
+- [Zero-Shot Cross-Lingual Knowledge Transfer in VQA via Multimodal Distillation](https://doi.org/10.1109/tcss.2024.3402270)：用多模态蒸馏把 VQA 知识跨语言迁移，对齐视觉问题表示，使零样本非英语 VQA 能利用源语言监督。
+- [Setting Standards in Turkish NLP: TR-MMLU for Large Language Model Evaluation](https://arxiv.org/abs/2501.00593)：提出 TR-MMLU 用于土耳其语 LLM 评测，在语言特定基准中标准化多任务测量。
+- [SLAM: Towards Efficient Multilingual Reasoning via Selective Language Alignment](https://arxiv.org/abs/2501.03681)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Multilingual Performance of a Multimodal Artificial Intelligence System on Multisubject Physics Concept Inventories](https://arxiv.org/abs/2501.06143)：在多语物理概念测验上评估多模态 AI 系统，探测跨语言学科推理能力。
+- [INTA: Intent-Based Translation for Network Configuration with LLM Agents](https://arxiv.org/abs/2501.08760)：用 LLM agent 把自然语言网络意图翻译为配置，使领域翻译结果可执行。
+- [Multilingual LLMs Struggle to Link Orthography and Semantics in Bilingual Word Processing](https://arxiv.org/abs/2501.09127)：显示多语 LLM 在双语词处理时难以连接拼写形式和语义，暴露正字法到语义的对齐缺口。
+- [Dual Debiasing](https://arxiv.org/abs/2501.10150)：在语言建模和翻译中减少刻板印象并保留事实性性别信息，为多语模型补充面向公平性的适配路线。
+- [Faster Machine Translation Ensembling with Reinforcement Learning and Competitive Correction](https://arxiv.org/abs/2501.15219)：用强化学习和竞争式修正加速 MT ensembling，同时保留多系统带来的质量收益。
+- [AdaMCoT: Rethinking Cross-Lingual Factual Reasoning Through Adaptive Multilingual Chain-of-Thought](https://arxiv.org/abs/2501.16154)：为跨语言事实推理自适应多语 chain-of-thought，动态选择推理语言或推理轨迹。
+- [Mitigating Hallucinated Translations in Large Language Models with Hallucination-focused Preference Optimization](https://arxiv.org/abs/2501.17295)：用面向 hallucination 的偏好优化减少 LLM 机器翻译输出中的无依据内容。
+- [Overestimation in LLM Evaluation: A Controlled Large-Scale Study on Data Contamination's Impact on Machine Translation](https://arxiv.org/abs/2501.18771)：研究数据污染如何抬高 LLM 机器翻译评测分数，用受控实验区分真实提升和记忆效应。
+- [MALT: Mechanistic Ablation of Lossy Translation in LLMs for a Low-Resource Language: Urdu](https://arxiv.org/abs/2502.00041)：用机制性消融定位 LLM 在 Urdu 低资源翻译中为何丢失信息。
+- [MorphBPE: A Morpho-Aware Tokenizer Bridging Linguistic Complexity for Efficient LLM Training Across Morphologies](https://arxiv.org/abs/2502.00894)：提出形态感知 BPE tokenizer，降低 LLM 训练中形态复杂语言的表示低效。
+- [FedP$^2$EFT: Federated Learning to Personalize PEFT for Multilingual LLMs](https://arxiv.org/abs/2502.04387)：在联邦场景中为多语言 LLM 个性化参数高效微调，通过贝叶斯稀疏选择学习客户端特定 LoRA rank。
+- [mmE5: Improving Multimodal Multilingual Embeddings via High-quality Synthetic Data](https://arxiv.org/abs/2502.08468)：用覆盖面、图文一致性和低噪声三类标准筛选合成多模态数据，训练 mmE5 以提升多语图文检索嵌入。
+- [Quality-Aware Decoding: Unifying Quality Estimation and Decoding](https://arxiv.org/abs/2502.08561)：把质量估计与解码统一起来，使 MT 生成能在显式质量信号下选择 token。
+- [Typhoon T1: An Open Thai Reasoning Model](https://arxiv.org/abs/2502.09042)：构建并开放泰语 reasoning model，聚焦目标语言推理能力而非单纯翻译适配。
+- [Data2Concept2Text: An Explainable Multilingual Framework for Data Analysis Narration](https://arxiv.org/abs/2502.09218)：面向多语言能力提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Asymmetric Conflict and Synergy in Post-training for LLM-based Multilingual Machine Translation](https://arxiv.org/abs/2502.11223)：面向多语言能力的模型、训练或算法工作。核心思想：以 Asymmetric Conflict and Synergy in Post-training for LLM-based Multilingual Machine Translation 为主要改进目标，作为 Model 条目的能力参考。
+- [LayAlign: Enhancing Multilingual Reasoning in Large Language Models via Layer-Wise Adaptive Fusion and Alignment Strategy](https://arxiv.org/abs/2502.11405)：用逐层自适应融合与对齐改进 LLM 表征中的多语推理。
+- [Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI](https://arxiv.org/abs/2502.11614)：比较多语场景下的人类文本检测和人类对 AI 文本的偏好，揭示生成文本自然度判断的语言差异。
+- [Exploring the Translation Mechanism of Large Language Models](https://arxiv.org/abs/2502.11806)：探测 LLM 内部翻译机制，分析表征如何从源语理解转向目标语生成。
+- [Translate Smart, not Hard: Cascaded Translation Systems with Quality-Aware Deferral](https://arxiv.org/abs/2502.12701)：构建带质量感知 defer 的级联 MT 系统，把昂贵翻译调用留给低置信输入。
+- [mStyleDistance: Multilingual Style Embeddings and their Evaluation](https://arxiv.org/abs/2502.15168)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Beyond Translation: LLM-Based Data Generation for Multilingual Fact-Checking](https://arxiv.org/abs/2502.15419)：用 LLM 生成多语事实核查数据而不只是直接翻译，提升语言和 claim 多样性。
+- [Steering into New Embedding Spaces: Analyzing Cross-Lingual Alignment Induced by Model Interventions in Multilingual Language Models](https://arxiv.org/abs/2502.15639)：分析把多语 embedding steering 到新空间的模型干预，测试这种操控如何改变跨语言对齐。
+- [Automatic Input Rewriting Improves Translation with Large Language Models](https://arxiv.org/abs/2502.16682)：在 LLM 翻译前自动重写源语输入，使复杂结构更容易被翻译模型处理。
+- [CoT2Align: Cross-Chain of Thought Distillation via Optimal Transport Alignment for Language Models with Different Tokenizers](https://arxiv.org/abs/2502.16806)：用最优传输对齐不同 tokenizer 下的 chain-of-thought 轨迹，使推理蒸馏能在 tokenizer 不同的多语模型之间迁移。
+- [Chitranuvad: Adapting Multi-lingual LLMs for Multimodal Translation](https://arxiv.org/abs/2502.20420)：把图像上下文接入多语 LLM 翻译流程，使多模态翻译不再只是文本到文本迁移。
+- [Large Language Models for Multilingual Previously Fact-Checked Claim Detection](https://arxiv.org/abs/2503.02737)：用多语 LLM prompting 与适配检索跨语言既有事实核查 claim，更适合作为事实核查检索评测候选。
+- [English K_Quantization of LLMs Does Not Disproportionately Diminish Multilingual Performance](https://arxiv.org/abs/2503.03592)：测试以英语校准的 K-quantization 对多语 LLM 行为的影响，发现压缩并不会特别损害非英语表现。
+- [Lost in Literalism: How Supervised Training Shapes Translationese in LLMs](https://arxiv.org/abs/2503.04369)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Implicit Cross-Lingual Rewarding for Efficient Multilingual Preference Alignment](https://arxiv.org/abs/2503.04647)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Preserving Cultural Identity with Context-Aware Translation Through Multi-Agent AI Systems](https://arxiv.org/abs/2503.04827)：用多智能体翻译流程保留文化身份与上下文，更像 Agent Harness 迁移候选而非纯模型训练条目。
+- [Gemini Embedding: Generalizable Embeddings from Gemini](https://arxiv.org/abs/2503.07891)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Enhancing Multilingual Language Models for Code-Switched Input Data](https://arxiv.org/abs/2503.07990)：在 Spanglish 代码转换推文上继续预训练 mBERT，并用词性标注、情感、NER 和语言识别检验混合语言表示是否改善。
+- [LLM Alignment for the Arabs: A Homogenous Culture or Diverse Ones?](https://arxiv.org/abs/2503.15003)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Enhancing Arabic Automated Essay Scoring with Synthetic Data and Error Injection](https://arxiv.org/abs/2503.17739)：生成带 CEFR 水平标注的阿拉伯语作文，并注入受控错误来训练和评测阿拉伯语自动作文评分模型。
+- [LANGALIGN: Enhancing Non-English Language Models via Cross-Lingual Embedding Alignment](https://arxiv.org/abs/2503.18603)：作为多语言能力的模型侧方法候选，聚焦“Enhancing Non-English Language Models via Cross-Lingual Embedding Alignment”。
+- [A Multilingual, Culture-First Approach to Addressing Misgendering in LLM Applications](https://arxiv.org/abs/2503.20302)：围绕文化本地化的多语数据和应用适配缓解 misgendering，更适合作为对齐与评测候选而非通用模型配方。
+- [The Impact of Code-switched Synthetic Data Quality is Task Dependent: Insights from MT and ASR](https://arxiv.org/abs/2503.23576)：研究 code-switch 合成数据质量对机器翻译、语音识别和语音翻译的影响，为多语模型补充跨任务数据增强路线。
+- [CONGRAD:Conflicting Gradient Filtering for Multilingual Preference Alignment](https://arxiv.org/abs/2503.23777)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [You Cannot Feed Two Birds with One Score: the Accuracy-Naturalness Tradeoff in Translation](https://arxiv.org/abs/2503.24013)：把翻译准确性与自然度评分拆开，说明单一 reward 或指标为何会误导 MT 模型选择与优化。
+- [Investigating and Scaling up Code-Switching for Multilingual Language Model Pre-Training](https://arxiv.org/abs/2504.01801)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Lost in Multilinguality: Dissecting Cross-lingual Factual Inconsistency in Transformer Language Models](https://arxiv.org/abs/2504.04264)：分析或改进多语言、跨语言、翻译或代码混合模型行为。
+- [M-Prometheus: A Suite of Open Multilingual LLM Judges](https://arxiv.org/abs/2504.04953)：发布开放的多语言 LLM judge 套件，用于跨语言评估模型输出。
+- [Enhancing Contrastive Demonstration Selection with Semantic Diversity for Robust In-Context Machine Translation](https://arxiv.org/abs/2504.09305)：用对比示例和语义多样性约束选择 in-context MT demonstrations，在不微调的情况下提升翻译鲁棒性。
+- [Can you map it to English? The Role of Cross-Lingual Alignment in the Multilingual Performance of LLMs](https://arxiv.org/abs/2504.09378)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Understanding LLMs' Cross-Lingual Context Retrieval: How Good It Is And Where It Comes From](https://arxiv.org/abs/2504.10906)：在跨语言机器阅读理解上评测 40 多个 LLM，并把上下文检索增益归因到后训练与对齐行为。
+- [Chinese-Vicuna: A Chinese Instruction-following Llama-based Model](https://arxiv.org/abs/2504.12737)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充多语言方向的模型覆盖。
+- [A Multimodal Recaptioning Framework to Account for Perceptual Diversity in Multilingual Vision-Language Modeling](https://arxiv.org/abs/2504.14359)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Trillion 7B Technical Report](https://arxiv.org/abs/2504.15431)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [A Post-trainer's Guide to Multilingual Training Data: Uncovering Cross-lingual Transfer Dynamics](https://arxiv.org/abs/2504.16677)：在最高 35B 参数模型上控制多语后训练数据混合，分析共享指令、语言比例和任务数据各自带来的跨语迁移。
+- [EarthMapper: Visual Autoregressive Models for Controllable Bidirectional Satellite–Map Translation](https://arxiv.org/abs/2504.19432)：把视觉自回归建模用于卫星图与地图之间的图像翻译，偏离多语言文本能力主轴。
+- [What Causes Knowledge Loss in Multilingual Language Models?](https://arxiv.org/abs/2504.20356)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Enhancing LLM Language Adaption through Cross-lingual In-Context Pre-training](https://arxiv.org/abs/2504.20484)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Sadeed: Advancing Arabic Diacritization Through Small Language Model](https://arxiv.org/abs/2504.21635)：训练小语言模型执行阿拉伯语变音恢复，聚焦低资源正字法恢复而非泛化翻译。
+- [PROM: Pivoted and Regulated Optimization for Multilingual Instruction Learning](https://doi.org/10.18653/v1/2025.naacl-short.19)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Detect, Disambiguate, and Translate: On-Demand Visual Reasoning for Multimodal Machine Translation with Large Vision-Language Models](https://doi.org/10.18653/v1/2025.naacl-long.74)：补充在多模态机器翻译中按需调用视觉推理的大型视觉语言模型方法。
+- [An Efficient Gloss-Free Sign Language Translation Using Spatial Configurations and Motion Dynamics with LLMs](https://doi.org/10.18653/v1/2025.naacl-long.197)：在 LLM 解码前编码空间构型和运动动态，绕开 sign-language translation 中的 gloss 中间瓶颈。
 - [When natural language is not enough: The limits of in-context learning demonstrations in multilingual reasoning](https://doi.org/10.18653/v1/2025.findings-naacl.412)：分析上下文示例在多语推理中的失效位置，指出少样本跨语言迁移的边界。
+- [Continual Learning in Multilingual Sign Language Translation](https://doi.org/10.18653/v1/2025.naacl-long.546)：研究 sign-language translation 的持续学习更新，使模型能增加语言或数据集并限制遗忘。
 - [Multilingual Reasoning via Self-training](https://doi.org/10.18653/v1/2025.naacl-long.577)：通过自训练提升多语推理，用模型生成的推理数据弥补监督多语资源不足。
+- [AI-Based Speaking Assistant: Supporting Non-Native Speakers' Speaking in Real-Time Multilingual Communication](https://arxiv.org/abs/2505.01678)：构建交互式 speaking assistant，根据任务背景、对话历史和用户查询生成参考表达，更接近通信 harness 或 HCI 系统。
+- [Behind Maya: Building a Multilingual Vision Language Model](https://arxiv.org/abs/2505.08910)：用 8 种语言的图文预训练数据集和多语 VLM 对齐构建 Maya，面向文化多样的视觉语言任务。
+- [The Tower of Babel Revisited: Multilingual Jailbreak Prompts on Closed-Source Large Language Models](https://arxiv.org/abs/2505.12287)：用多语 jailbreak prompts 探测闭源 LLM 安全性，更像多语安全基准或诊断而非模型方法。
+- [CMLFormer: A Dual Decoder Transformer with Switching Point Learning for Code-Mixed Language Modeling](https://arxiv.org/abs/2505.12587)：采用共享编码器和双解码器 Transformer，并加入 switching-point 目标来建模 code-mixed 语言转换与跨语言结构。
+- [ExTrans: Multilingual Deep Reasoning Translation via Exemplar-Enhanced Reinforcement Learning](https://arxiv.org/abs/2505.12996)：将示例增强的强化学习用于多语种深度推理翻译，把 RL 翻译方法扩展到高资源语言之外。
 - [Language-Specific Latent Process Hinders Cross-Lingual Performance](https://arxiv.org/abs/2505.13141)：分析阻碍跨语言迁移的语言特异潜变量过程，为多语性能差距提供模型侧解释。
-- [MPO](https://arxiv.org/abs/2505.16869)：提出面向多语言能力的模型侧方法，核心围绕 Multilingual Safety Alignment via Reward Gap Optimization。
-- [CulFiT](https://arxiv.org/abs/2505.19484)：提出面向多语言能力的模型侧方法，核心围绕 Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis。
+- [Cross-Lingual Representation Alignment Through Contrastive Image-Caption Tuning](https://arxiv.org/abs/2505.13628)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Language Mixing in Reasoning Language Models: Patterns, Impact, and Internal Causes](https://arxiv.org/abs/2505.14815)：分析或改进多语言、跨语言、翻译或代码混合模型行为。
+- [Tracing Multilingual Factual Knowledge Acquisition in Pretraining](https://arxiv.org/abs/2505.14824)：追踪多语事实知识在预训练过程中的出现时间，区分语言特定获取与跨语言迁移。
+- [Multilingual Prompting for Improving LLM Generation Diversity](https://arxiv.org/abs/2505.15229)：把多语言提示作为解码期多样性干预，用不同语言诱导 LLM 生成更多样的候选。
+- [NeoN: A Tool for Automated Detection, Linguistic and LLM-Driven Analysis of Neologisms in Polish](https://arxiv.org/abs/2505.15426)：结合法规则与 LLM 分析检测波兰语新词，更像工具或语言分析候选而非可复用多语模型方法。
+- [Image-to-Image Translation with Diffusion Transformers and CLIP-Based Image Conditioning](https://arxiv.org/abs/2505.16001)：用 CLIP 图像 embedding 条件化 diffusion transformers 做图像到图像翻译，偏离多语言文本建模主轴。
+- [Beyond Early-Token Bias](https://arxiv.org/abs/2505.16134)：研究多语言 LLM 中随模型和语言变化的位置效应。
+- [MPO](https://arxiv.org/abs/2505.16869)：最小化英语安全偏好与多语回答之间的 reward gap，把更强的英语安全对齐迁移到低资源语言。
+- [MIDB: Multilingual Instruction Data Booster for Enhancing Multilingual Instruction Synthesis](https://arxiv.org/abs/2505.17671)：基于专家修订样例训练 multilingual instruction-data booster，用于修复合成指令数据中的内容错误、机器翻译缺陷和本地化不足。
+- [Controlling Language Confusion in Multilingual LLMs](https://arxiv.org/abs/2505.19116)：用 ORPO 式惩罚降低非预期语言混杂，同时保持多语任务表现。
+- [CulFiT](https://arxiv.org/abs/2505.19484)：合成多语 critique 数据进行细粒度文化感知 LLM 训练，使输出更贴合本地文化预期。
+- [Improving Multilingual Math Reasoning for African Languages](https://arxiv.org/abs/2505.19848)：面向非洲语言改进数学推理，为低资源多语推理补充模型侧工作。
+- [Paths Not Taken: Understanding and Mending the Multilingual Factual Recall Pipeline](https://arxiv.org/abs/2505.20546)：分析或改进多语言、跨语言、翻译或代码混合模型行为。
+- [SeqPO-SiMT: Sequential Policy Optimization for Simultaneous Machine Translation](https://arxiv.org/abs/2505.20622)：将序列策略优化用于同声机器翻译，改善多语言生成中的延迟与质量取舍。
+- [Multilingual Pretraining for Pixel Language Models](https://arxiv.org/abs/2505.21265)：提出 PIXEL-M4，在英语、印地语、乌克兰语和简体中文渲染文本上做 tokenizer-free 像素级预训练，检验无固定词表的多语迁移。
+- [Language Neurons Perspective](https://arxiv.org/abs/2505.21505)：从 language neurons 角度分析 alignment 如何提升多语言能力，补充多语言能力形成的模型内部机制。
+- [Test-Time Scaling with Repeated Sampling Improves Multilingual Text Generation](https://arxiv.org/abs/2505.21941)：在推理时用重复采样提升多语文本生成，把采样预算作为测试时扩展机制。
+- [Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs](https://arxiv.org/abs/2505.22293)：用显式 reasoning 弥补低资源 MT 中并行数据不足，研究 LLM 推理何时可替代额外监督。
+- [Layer-wise MoE Multilingual Expansion](https://arxiv.org/abs/2505.22582)：用逐层 MoE 高效扩展 LLM 的多语言能力。
+- [ZIPA: A family of efficient models for multilingual phone recognition](https://arxiv.org/abs/2505.23170)：提供高效多语 phone recognition 模型，面向紧凑的跨语言音素建模。
+- [Multilingual Gloss-free Sign Language Translation: Towards Building a Sign Language Foundation Model](https://arxiv.org/abs/2505.24355)：把 gloss-free sign-language translation 推向 foundation-model 设置，直接从手语视频训练到多语言文本输出。
 - [When Language Shapes Thought: Cross-Lingual Transfer of Factual Knowledge in Question Answering](https://arxiv.org/abs/2505.24409)：研究问答中语言选择如何影响事实知识迁移，区分知识存储与跨语言表达能力。
-- [R2-MultiOmnia](https://doi.org/10.18653/v1/2025.acl-long.402)：提出面向多语言能力的模型侧方法，核心围绕 Leading Multilingual Multimodal Reasoning via Self-Training。
-- [Overcoming language barriers via machine translation with sparse Mixture-of-Experts fusion of large language models](https://doi.org/10.1016/j.ipm.2025.104078)：提出用于 LLM 机器翻译的稀疏专家混合融合，将多语生成从单模型提示扩展为可组合的模型侧方法。
+- [BPE Stays on SCRIPT](https://arxiv.org/abs/2505.24689)：用 structured encoding 提升 multilingual pretokenization 鲁棒性。
+- [Hierarchical Level-Wise News Article Clustering via Multilingual Matryoshka Embeddings](https://arxiv.org/abs/2506.00277)：用 multilingual Matryoshka embeddings 在多个粒度层级上进行新闻聚类。
+- [Emergent Abilities of Large Language Models under Continued Pretraining for Language Adaptation](https://arxiv.org/abs/2506.00288)：研究面向语言适配的 continued pretraining，衡量目标语言暴露增加后哪些多语能力会涌现。
+- [Whale: Large-Scale multilingual ASR model with w2v-BERT and E-Branchformer with large speech data](https://arxiv.org/abs/2506.01439)：结合 w2v-BERT、E-Branchformer 与大规模多语语音数据构建 ASR 模型。
+- [Mark My Words: A Robust Multilingual Model for Punctuation in Text and Speech Transcripts](https://arxiv.org/abs/2506.03793)：训练鲁棒多语标点恢复模型，同时覆盖普通文本和语音转录文本。
+- [TALL - A Trainable Architecture for Enhancing LLM Performance in Low-Resource Languages](https://arxiv.org/abs/2506.05057)：通过维度对齐层和轻量 adapter 连接 LLM 与双语翻译模型，在复用高资源 LLM 能力的同时保留低资源语言特征。
+- [Well Begun is Half Done: Low-resource Preference Alignment by Weak-to-Strong Decoding](https://arxiv.org/abs/2506.07434)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [CCI4.0: A Bilingual Pretraining Dataset for Enhancing Reasoning in Large Language Models](https://arxiv.org/abs/2506.07463)：发布 CCI4.0 这一 35TB 中英预训练语料，包含基础语料和链式思维子集，用推理轨迹增强双语 LLM 预训练。
+- [LLM-BT-Terms: Back-Translation as a Framework for Terminology Standardization and Dynamic Semantic Embedding](https://arxiv.org/abs/2506.08174)：用 LLM 引导的 back-translation 标准化术语，并跨语言动态更新语义 embedding。
+- [GigaChat Family: Efficient Russian Language Modeling Through Mixture of Experts Architecture](https://arxiv.org/abs/2506.09440)：报告基于 mixture-of-experts 架构的高效俄语语言建模，补充多语言模型家族线索。
+- [Mitigating Negative Interference in Multilingual Sequential Knowledge Editing through Null-Space Constraints](https://arxiv.org/abs/2506.10800)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [A Rigorous Evaluation of LLM Data Generation Strategies for Low-Resource Languages](https://arxiv.org/abs/2506.12158)：系统比较低资源合成数据策略，包括示例提示、标签摘要和自我修订，并用 LLM 生成数据训练小型分类器。
+- [Group then Scale: Dynamic Mixture-of-Experts Multilingual Language Model](https://arxiv.org/abs/2506.12388)：按层级参数偏移对语言分组，并把关键层扩展为语言组专家，以降低 multilingual LLM 中的负迁移。
+- [Language Surgery in Multilingual Large Language Models](https://arxiv.org/abs/2506.12450)：对多语 LLM 的语言组件做定向干预，把语言添加或移除视为模型编辑问题。
+- [An Interdisciplinary Approach to Human-Centered Machine Translation](https://arxiv.org/abs/2506.13468)：从人本约束与跨学科评测重构 MT，应先作为 survey 或 evaluation 材料复核后再决定是否留在 Model。
+- [Tower+: Bridging Generality and Translation Specialization in Multilingual LLMs](https://arxiv.org/abs/2506.17080)：连接通用 LLM 能力与翻译专门化，为兼顾广义指令行为和机器翻译质量补充多语言模型线索。
+- [Less Data Less Tokens: Multilingual Unification Learning for Efficient Test-Time Reasoning in LLMs](https://arxiv.org/abs/2506.18341)：用多语言统一学习降低测试时推理的数据和 token 成本。
+- [FineWeb2: One Pipeline to Scale Them All - Adapting Pre-Training Data Processing to Every Language](https://arxiv.org/abs/2506.20920)：分析或改进多语言、跨语言、翻译或代码混合模型行为。
+- [Decoding Memes: Benchmarking Narrative Role Classification across Multilingual and Multimodal Models](https://arxiv.org/abs/2506.23122)：评测多语多模态 meme 的叙事角色分类，更适合迁往 Bench 而非保留为模型条目。
+- [CycleVAR: Repurposing Autoregressive Model for Unsupervised One-Step Image Translation](https://arxiv.org/abs/2506.23347)：把自回归视觉模型改用于无监督一步图像翻译，该图像领域 translation 偏离多语言文本能力。
+- [Low-Resource Language Expansion and Translation Capacity Enhancement for LLM: A Study on the Uyghur](https://aclanthology.org/2025.acl-srw.32/)：用低资源语言数据扩展 LLM 到维吾尔语并增强翻译能力，聚焦目标语言适配。
+- [R2-MultiOmnia](https://doi.org/10.18653/v1/2025.acl-long.402)：用自训练提升多语多模态推理，把 Omni 式多模态模型扩展到更多语言。
+- [mRAKL: Multilingual Retrieval-Augmented Knowledge Graph Construction for Low-Resourced Languages](https://doi.org/10.18653/v1/2025.findings-acl.678)：结合检索增强与多语 LLM 抽取，为低资源语言构建知识图谱。
+- [Are Dialects Better Prompters? A Case Study on Arabic Subjective Text Classification](https://doi.org/10.18653/v1/2025.findings-acl.892)：测试方言阿拉伯语提示是否改善主观文本分类，是 Arabic LLM prompting 与适配诊断。
+- [A Reinforcement Learning Framework for Cross-Lingual Stance Detection Using Chain-of-Thought Alignment](https://doi.org/10.18653/v1/2025.findings-acl.1115)：跨语言对齐 chain-of-thought rationale，并用强化学习优化 stance detection。
+- [What Language Do Non-English-Centric Large Language Models Think in?](https://doi.org/10.18653/v1/2025.findings-acl.1350)：分析以非英语为中心的大语言模型在内部推理时采用何种语言表征。
+- [PDFMathTranslate: Scientific Document Translation Preserving Layouts](https://arxiv.org/abs/2507.03009)：在保留公式与版式的同时翻译科学 PDF，更像文档翻译系统而非可复用多语模型方法。
+- [Losing our Tail, Again: (Un)Natural Selection&Multilingual LLMs](https://arxiv.org/abs/2507.03933)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Smoothie-Qwen: Post-Hoc Smoothing to Reduce Language Bias in Multilingual LLMs](https://arxiv.org/abs/2507.05686)：通过后验平滑降低多语言 LLM 行为中的语言偏置。
+- [Improving Korean-English Cross-Lingual Retrieval: A Data-Centric Study of Language Composition and Model Merging](https://arxiv.org/abs/2507.08480)：面向多语言能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Improving Korean-English Cross-Lingual Retrieval: A Data-Centric Study of Language Composition and Model Merging”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [SEALGuard: Safeguarding the Multilingual Conversations in Southeast Asian Languages for LLM Software Systems](https://arxiv.org/abs/2507.08898)：面向多语言能力的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [An Exploration of Knowledge Editing for Arabic](https://arxiv.org/abs/2507.09629)：评测阿拉伯语事实的知识编辑方法，揭示多语 LLM edit 在英语之外的表现。
+- [Causal Language Control in Multilingual Transformers](https://arxiv.org/abs/2507.13410)：用稀疏特征 steering 实现多语言 Transformer 中的因果语言控制。
+- [Apple Intelligence Foundation Language Models](https://arxiv.org/abs/2507.13575)：报告 Apple Intelligence 的 3B 端侧模型和服务端 PT-MoE 模型，覆盖 KV-cache sharing、量化感知训练以及多语多模态部署。
+- [Seed-X: Building Strong Multilingual Translation LLM with 7B Parameters](https://arxiv.org/abs/2507.13618)：构建 7B 多语言翻译 LLM 系列，结合预训练、监督微调和推理型翻译模型。
+- [Optimizing ASR for Catalan-Spanish Code-Switching: A Comparative Analysis of Methodologies](https://arxiv.org/abs/2507.13875)：比较 Catalan-Spanish code-switching 的 ASR 适配方法，突出混合语言语音识别中的训练选择。
+- [From Neurons to Semantics: Evaluating Cross-Linguistic Alignment Capabilities of Large Language Models via Neurons Alignment](https://arxiv.org/abs/2507.14900)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Leveraging Synthetic Data for Question Answering with Multilingual LLMs in the Agricultural Domain](https://arxiv.org/abs/2507.16974)：从农业领域文档生成英语、印地语和旁遮普语 QA 数据，并微调 LLM 做本地化事实问答。
+- [LLaVA-NeuMT: Selective Layer-Neuron Modulation for Efficient Multilingual Multimodal Translation](https://arxiv.org/abs/2507.18940)：在 LLaVA 中选择层并调制神经元，分离语言特定与语言无关表征以支持多语多模态翻译。
+- [Advancing Dialectal Arabic to Modern Standard Arabic Machine Translation](https://arxiv.org/abs/2507.20301)：训练并评测方言阿拉伯语到现代标准阿拉伯语的 MT，聚焦方言规范化与翻译适配。
+- [Multi-turn Natural Language to Graph Query Language Translation](https://arxiv.org/abs/2508.01871)：研究多轮自然语言到图查询语言翻译，更接近数据库或工具语义解析而非多语 Model。
+- [Isolating Culture Neurons in Multilingual Large Language Models](https://arxiv.org/abs/2508.02241)：用 MUREL 文化文本和 neuron-localization 干预，将多语 LLM 中的文化特定神经元与语言特定神经元分离。
+- [FilBench: Can LLMs Understand and Generate Filipino?](https://arxiv.org/abs/2508.03523)：评测 LLM 的 Filipino 理解与生成能力，除非另有明确 Filipino 模型适配配方，否则更适合 Bench 复核。
+- [H-Net++: Hierarchical Dynamic Chunking for Tokenizer-Free Language Modelling in Morphologically-Rich Languages](https://arxiv.org/abs/2508.05628)：作为多语言能力的模型侧方法候选，聚焦“Hierarchical Dynamic Chunking for Tokenizer-Free Language Modelling in Morphologically-Rich Languages”。
+- [The Art of Breaking Words: Rethinking Multilingual Tokenizer Design](https://arxiv.org/abs/2508.06533)：从词表规模、预分词规则和语料组成系统研究多语 tokenizer，把 token-to-word 效率与推理成本和模型质量联系起来。
 - [Grounding Multilingual Multimodal LLMs With Cultural Knowledge](https://arxiv.org/abs/2508.07414)：用文化知识扎根多语多模态 LLM，使图文推理不只依赖表层翻译。
+- [SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders](https://arxiv.org/abs/2508.08211)：用稀疏自编码器 steering 个性化多语 LLM watermark 生成。
+- [MultiGen: Child-Friendly Multilingual Speech Generator with LLMs](https://arxiv.org/abs/2508.08715)：用 LLM 引导生成儿童友好的多语语音内容，属于需要路由复核的语音生成应用。
+- [Entangled in Representations: Mechanistic Investigation of Cultural Biases in Large Language Models](https://arxiv.org/abs/2508.08879)：通过机制性表征分析追踪文化偏见如何缠结在多语 LLM 层内。
+- [Leveraging Zipformer Model for Effective Language Identification in Code-Switched Child-Directed Speech](https://arxiv.org/abs/2508.09430)：将 Zipformer 架构用于 code-switched child-directed speech 的语言识别。
+- [UWBa at SemEval-2025 Task 7: Multilingual and Crosslingual Fact-Checked Claim Retrieval](https://arxiv.org/abs/2508.09517)：描述 SemEval 多语与跨语 fact-checked claim retrieval 系统，更像 shared-task system 或 Bench 候选而非核心 Model 覆盖。
+- [Breaking Language Barriers: Equitable Performance in Multilingual Language Models](https://arxiv.org/abs/2508.12662)：用受控合成 code-switched 数据微调 LLM，在保持高资源语言表现的同时提升低资源语言推理能力。
+- [When Alignment Hurts: Decoupling Representational Spaces in Multilingual Models](https://arxiv.org/abs/2508.12803)：作为多语言能力的模型侧方法候选，聚焦“Decoupling Representational Spaces in Multilingual Models”。
+- [Multilingual Averaging in Sparse Autoencoders](https://arxiv.org/abs/2508.14275)：通过稀疏自编码器中的多语言平均来解耦概念语义。核心思想：跨语言比较概念特征，使多语言表示更可解释。
+- [Diverse Signer Avatars with Manual and Non-Manual Feature Modelling for Sign Language Production](https://arxiv.org/abs/2508.15988)：用潜在扩散头像生成器和 sign feature aggregation 模块同时保留手部与面部线索，并改变 signer 外观以生成多样手语视频。
+- [Debiasing Multilingual LLMs in Cross-lingual Latent Space](https://arxiv.org/abs/2508.17948)：作为多语言能力的模型侧方法候选，聚焦“Debiasing Multilingual LLMs in Cross-lingual Latent Space”。
+- [Language-Specific Layer Matters](https://arxiv.org/abs/2508.18381)：通过语言特定层适配提升多语言视觉语言模型。
+- [Can Language Models Handle a Non-Gregorian Calendar?](https://arxiv.org/abs/2509.04432)：构建日本和历日期转换与日历算术测试，显示日语中心模型和前沿 LLM 也难以处理文化特定时间系统。
+- [MERLIN: Multi-Stage Curriculum Alignment for Multilingual Encoder-LLM Integration in Cross-Lingual Reasoning](https://arxiv.org/abs/2509.08105)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [CM-Align: Consistency-based Multilingual Alignment for Large Language Models](https://arxiv.org/abs/2509.08541)：面向多语言能力提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Boosting Data Utilization for Multilingual Dense Retrieval](https://arxiv.org/abs/2509.09459)：通过改造对比学习中的 mini-batch 与负样本利用提升多语稠密检索，重点放在数据效率而非单纯更换检索架构。
+- [Hala Technical Report: Building Arabic-Centric Instruction & Translation Models at Scale](https://arxiv.org/abs/2509.14008)：报告大规模训练的阿拉伯语中心指令与翻译模型。
+- [M-DaQ: Retrieving Samples with Multilingual Diversity and Quality for Instruction Fine-Tuning Datasets](https://arxiv.org/abs/2509.15549)：在多语言 instruction fine-tuning 数据中同时优化回答质量与跨语言语义多样性，进行样本检索与筛选。
+- [Transfer Neurons Hypothesis](https://arxiv.org/abs/2509.17030)：提出 transfer neurons 解释多语言 LLM 在不同语言 latent space 间转换的机制。
+- [Scaling, Simplification, and Adaptation: Lessons from Pretraining on Machine-Translated Text](https://arxiv.org/abs/2509.17317)：作为多语言能力的模型侧方法候选，聚焦“Lessons from Pretraining on Machine-Translated Text”。
+- [CorefInst: Leveraging LLMs for Multilingual Coreference Resolution](https://arxiv.org/abs/2509.17505)：把显性与零指代的多语共指消解改写为 decoder-only LLM 指令任务，并报告微调 Llama 3.1 超过专用多语 CR 基线。
+- [Cross-Cultural Transfer of Commonsense Reasoning in LLMs: Evidence from the Arab World](https://arxiv.org/abs/2509.19265)：在覆盖 13 个阿拉伯国家的文化常识数据上测试跨文化迁移，发现少量国家特定示例即可提升其他阿拉伯文化场景表现。
+- [AlignX: Advancing Multilingual Large Language Models with Multilingual Representation Alignment](https://arxiv.org/abs/2509.24338)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Investigating Language and Retrieval Bias in Multilingual Previously Fact-Checked Claim Detection](https://arxiv.org/abs/2509.25138)：分析多语言已核查声明检测中的语言偏差与检索偏差。
+- [Beyond the Final Layer: Intermediate Representations for Better Multilingual Calibration in Large Language Models](https://arxiv.org/abs/2510.03136)：利用模型中间表征改进 LLM 的多语种校准，为多语种行为可靠性补充表征层方法。
+- [Prompt Balance Matters: Understanding How Imbalanced Few-Shot Learning Affects Multilingual Sense Disambiguation in LLMs](https://arxiv.org/abs/2510.03762)：显示 few-shot 示例分布失衡会使 GPT-4o 与 Llama-3.1-70B 的多语词义消歧产生偏差，而英语受影响较小。
+- [Code-Switching In-Context Learning for Cross-Lingual Transfer of Large Language Models](https://arxiv.org/abs/2510.05678)：利用语码转换示例提升大语言模型的跨语言迁移能力，补充一种模型侧多语言适配方法。
+- [Test-Time Scaling of Reasoning Models for Machine Translation](https://arxiv.org/abs/2510.06471)：比较直接翻译、强制推理与后编辑场景，显示额外推理计算主要在任务专门化和自我修正型 MT 中发挥作用。
+- [Language Lives in Sparse Dimensions: Toward Interpretable and Efficient Multilingual Control for Large Language Models](https://arxiv.org/abs/2510.07213)：识别 LLM 中稀疏的跨语言转换维度，并用轻量干预控制输出语言，同时保持语义内容。
+- [Think Natively: Unlocking Multilingual Reasoning with Consistency-Enhanced Reinforcement Learning](https://arxiv.org/abs/2510.07300)：用一致性增强强化学习让多语推理轨迹和答案保持输入语言，同时提高非英语推理准确率。
+- [Multilingual Knowledge Graph Completion via Efficient Multilingual Knowledge Sharing](https://arxiv.org/abs/2510.07736)：结合 knowledge-level grouped MoE 与 iterative entity reranking，让 LLM 在五语言知识图谱补全中复用跨语言共享事实。
+- [The Price of Thought: A Multilingual Analysis of Reasoning, Performance, and Cost of Negotiation in Large Language Models](https://arxiv.org/abs/2510.08098)：在三种语言的自博弈谈判中比较 reasoning 与普通 LLM，衡量策略收益、推理成本和推理语言一致性之间的取舍。
+- [Contrastive Decoding for Synthetic Data Generation in Low-Resource Language Modeling](https://arxiv.org/abs/2510.08245)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [KORMo: Korean Open Reasoning Model for Everyone](https://arxiv.org/abs/2510.09426)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Bhasha-Rupantarika: Algorithm-Hardware Co-design approach for Multilingual Neural Machine Translation](https://arxiv.org/abs/2510.10676)：补充多语言的 Model 条目，重点是《Bhasha-Rupantarika: Algorithm-Hardware Co-design approach for Multilingual Neural Machine Translation》。
+- [Beyond Single-Reward: Multi-Pair, Multi-Perspective Preference Optimization for Machine Translation](https://arxiv.org/abs/2510.13434)：用多样本对和多视角偏好信号扩展机器翻译偏好优化，缓解单一奖励 DPO 的局限。
+- [Tahakom LLM Guidelines and Recipes: From Pre-training Data to an Arabic LLM](https://arxiv.org/abs/2510.13481)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Bridging the Semantic Gap: Contrastive Rewards for Multilingual Text-to-SQL](https://arxiv.org/abs/2510.13827)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Language steering in latent space to mitigate unintended code-switching](https://arxiv.org/abs/2510.13849)：补充多语言的 Model 条目，重点是《Language steering in latent space to mitigate unintended code-switching》。
+- [Parameter-Efficient Fine-Tuning for Low-Resource Languages: A Comparative Study of LLMs for Bengali Hate Speech Detection](https://arxiv.org/abs/2510.16985)：在孟加拉语仇恨言论数据上用 LoRA 与 QLoRA 微调 Gemma、Llama 和 Mistral，单张消费级 GPU 只训练不到 1% 参数。
+- [Online In-Context Distillation for Low-Resource Vision Language Models](https://arxiv.org/abs/2510.18117)：让小型 VLM 在推理时通过稀疏 demonstrations 向强教师模型学习，在低资源部署中避免完整微调。
+- [SemiAdapt and SemiLoRA: Efficient Domain Adaptation for Transformer-based Low-Resource Language Translation with a Case Study on Irish](https://arxiv.org/abs/2510.18725)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [SONAR-SLT: Multilingual Sign Language Translation via Language-Agnostic Sentence Embedding Supervision](https://arxiv.org/abs/2510.19398)：用语言无关的 SONAR 句向量监督手语翻译，并结合目标语言扩增与视频扰动，使 SLT 不再绑定单一 spoken language 标签。
+- [Conditions for Catastrophic Forgetting in Multilingual Translation](https://arxiv.org/abs/2510.19546)：通过受控 MT 微调实验指出模型与数据规模比例、指令遵循能力是多语灾难性遗忘的关键触发因素。
+- [Adapting Multilingual Models to Code-Mixed Tasks via Model Merging](https://arxiv.org/abs/2510.19782)：先在无标注代码混合文本上继续预训练，再把适配 checkpoint 与基座模型合并，最后微调下游代码混合分类任务。
+- [The Art of Asking: Multilingual Prompt Optimization for Synthetic Data](https://arxiv.org/abs/2510.19806)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](https://arxiv.org/abs/2510.20819)：提出 latent denoising diffusion bridge 在任意模态之间学习翻译桥，更偏相邻多模态转换而非语言多语建模。
+- [ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality](https://arxiv.org/abs/2510.22037)：研究多语言预训练、微调和解码中的自适应迁移缩放规律。
+- [LuxIT: A Luxembourgish Instruction Tuning Dataset from Monolingual Seed Data](https://arxiv.org/abs/2510.24434)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [A Configuration-First Framework for Reproducible, Low-Code Localization](https://arxiv.org/abs/2510.25692)：提供 radio-based localization 实验的配置优先低代码复现框架，因 localization 含义并非语言本地化而与多语 Model 明显偏轴。
+- [Rethinking Cross-lingual Alignment: Balancing Transfer and Cultural Erasure in Multilingual LLMs](https://arxiv.org/abs/2510.26024)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Distilling Multilingual Vision-Language Models: When Smaller Models Stay Multilingual](https://arxiv.org/abs/2510.26271)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Languages are Modalities: Cross-Lingual Alignment via Encoder Injection](https://arxiv.org/abs/2510.27254)：作为多语言能力的模型侧方法候选，聚焦“Cross-Lingual Alignment via Encoder Injection”。
+- [Data-Efficient Domain Adaptation for LLM-based MT using Contrastive Preference Optimization](https://arxiv.org/abs/2510.27556)：把模型原始译文作为 rejected、人工认可翻译记忆作为 chosen 构造 CPO 偏好对，用 1.47 万对样本接近大规模 SFT 的领域 MT 适配效果。
+- [Memory-enhanced Large Language Model for Cross-lingual Dependency Parsing via Deep Hierarchical Syntax Understanding](https://doi.org/10.18653/v1/2025.findings-emnlp.101)：在 LLM 跨语言依存句法分析中加入层级句法记忆，使结构知识能在语言之间迁移。
+- [SMART: Scalable Multilingual Approach for a Robust TOD System](https://doi.org/10.18653/v1/2025.emnlp-industry.108)：构建可扩展多语任务型对话系统，具体关注多语言 dialogue robustness，而非泛泛的语言覆盖。
+- [SHIFT: Selected Helpful Informative Frame for Video-guided Machine Translation](https://doi.org/10.18653/v1/2025.emnlp-main.161)：为视频引导机器翻译选择有帮助的视频帧，减少多模态翻译中的视觉上下文噪声。
+- [Multilingual Data Filtering using Synthetic Data from Large Language Models](https://doi.org/10.18653/v1/2025.findings-emnlp.495)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Multilingual Federated Low-Rank Adaptation for Collaborative Content Anomaly Detection across Multilingual Social Media Participants](https://doi.org/10.18653/v1/2025.emnlp-main.770)：把联邦学习与 LoRA 结合，使多语社交媒体参与方无需集中本地文本即可协同适配异常检测器。
+- [A Benchmark for Hindi Verb-Argument Structure Alternations](https://doi.org/10.18653/v1/2025.findings-emnlp.950)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [R-BPE: Improving BPE-Tokenizers with Token Reuse](https://doi.org/10.18653/v1/2025.emnlp-main.1169)：提出 R-BPE token reuse，让 BPE tokenizer 复用已有子词单元，在不从头重建多语词表的情况下提升分词效率。
+- [Facilitating Cross-lingual Transfer of Empathy through Language-independent Latent Diffusion: A Case Study in Chinese](https://doi.org/10.18653/v1/2025.findings-emnlp.1313)：用语言无关 latent diffusion 把 empathy modeling 迁移到中文，面向缺少直接标注数据的跨语言情感生成。
+- [Definition Generation for Word Meaning Modeling: Monolingual, Multilingual, and Cross-Lingual Perspectives](https://doi.org/10.18653/v1/2025.emnlp-main.1321)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Leveraging Loanword Constraints for Improving Machine Translation in a Low-Resource Multilingual Context](https://doi.org/10.18653/v1/2025.emnlp-main.1406)：补充多语言的 Model 条目，重点是《Leveraging Loanword Constraints for Improving Machine Translation in a Low-Resource Multilingual Context》。
+- [Overcoming language barriers via machine translation with sparse Mixture-of-Experts fusion of large language models](https://doi.org/10.1016/j.ipm.2025.104078)：提出用于 LLM 机器翻译的稀疏专家混合融合，将多语生成从单模型提示扩展为可组合的模型侧方法。
+- [Low-Resource Translation Optimization](https://doi.org/10.1016/j.mlwa.2025.100649): 通过高效 LLM 微调和定制提示工程优化低资源语言翻译。
+- [NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs](https://arxiv.org/abs/2511.07003)：研究基于 LLM 的可扩展多语机器翻译，并分析多语监督微调中的方向性退化问题。
+- [Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models](https://arxiv.org/abs/2511.07498)：提出 LAHIS 识别 language-specific 与 language-general attention heads，并在 Aya、Llama、Mistral 上利用这些头调控多语处理。
+- [AMI at WMT25 General Translation Task: How Low Can We Go? Finetuning Lightweight Llama Models for Low Resource Machine Translation](https://doi.org/10.18653/v1/2025.wmt-1.46)：为 WMT25 低资源 MT 微调轻量 Llama 模型，检验小型专用翻译模型在有限算力下的竞争力。
+- [Sub-1B Language Models for Low-Resource Languages: Training Strategies and Insights for Basque](https://doi.org/10.18653/v1/2025.mrl-main.35)：研究 10 亿参数以下 Basque 语言模型训练策略，重点比较低资源数据选择与紧凑模型容量。
+- [ChatPULI: Enhancement to the first Hungarian conversational model](https://doi.org/10.33039/ami.2025.10.010)：把匈牙利语 PULI 模型线扩展为 ChatPULI，用匈牙利语指令和对话数据适配会话能力。
+- [ArabicWeb-Edu: Educational Quality Data for Arabic LLM Training](https://doi.org/10.18653/v1/2025.arabicnlp-main.36)：整理教育质量导向的阿拉伯语网页数据，用过滤和领域质量控制支撑阿拉伯语 LLM 训练。
+- [Literary Translations and Synthetic Data for Machine Translation of Low-resourced Middle Eastern Languages](https://doi.org/10.18653/v1/2025.iwslt-1.10)：利用文学翻译与合成平行数据改进低资源中东语言机器翻译。
+- [Tokenization efficiency of current foundational large language models for the Ukrainian language](https://doi.org/10.3389/frai.2025.1538165)：比较当前 LLM tokenizer 对乌克兰语的 tokenization fertility，将词表覆盖与延迟、成本和低资源语言可用性联系起来。
+- [How Small Can You Go? Compact Language Models for On-Device Critical Error Detection in Machine Translation](https://arxiv.org/abs/2511.09748)：研究用于端侧机器翻译关键错误检测的紧凑语言模型。
+- [Two ways into the hall of mirrors: Language exposure and lossy memory drive cross-linguistic grammaticality illusions in language models](https://doi.org/10.18653/v1/2025.babylm-main.17)：用受控语言暴露与 lossy memory 设置解释语言模型中的跨语言 grammaticality illusions。
+- [Vicomtech@WMT 2025: Evolutionary Model Compression for Machine Translation](https://doi.org/10.18653/v1/2025.wmt-1.77)：把 evolutionary compression 用于 WMT 2025 MT 系统，目标是在缩小翻译模型的同时保留多语任务表现。
+- [Laniqo at WMT25 Terminology Translation Task: A Multi-Objective Reranking Strategy for Terminology-Aware Translation via Pareto-Optimal Decoding](https://doi.org/10.18653/v1/2025.wmt-1.107)：用 Pareto-optimal decoding 重排术语感知译文，在术语准确性与整体翻译质量之间做多目标权衡。
+- [Marco Large Translation Model at WMT2025: Transforming Translation Capability in LLMs via Quality-Aware Training and Decoding](https://doi.org/10.18653/v1/2025.wmt-1.33)：通过质量感知训练数据和 decoding 选择提升 WMT2025 LLM 翻译能力，而不是只依赖普通监督微调。
+- [LLMic: Building a Romanian Foundation Language Model](https://doi.org/10.1109/synasc69064.2025.00031)：构建 Romanian foundation language model LLMic，记录罗马尼亚语中心的数据准备与训练选择，补足开放基础模型稀缺语言。
+- [Language Drift in Multilingual Retrieval-Augmented Generation: Characterization and Decoding-Time Mitigation](https://arxiv.org/abs/2511.09984)：刻画多语言 RAG 中的语言漂移，并提出解码时缓解策略以提升多语言回答稳定性。
+- [Bootstrapping Post-Training for LLM Translator](https://doi.org/10.1109/taslpro.2025.3624962)：围绕 LLM 翻译做 bootstrapped post-training，用生成或过滤后的翻译监督把通用 LLM 专门化为更强译者。
+- [Tracing Multilingual Representations in LLMs with Cross-Layer Transcoders](https://arxiv.org/abs/2511.10840)：用跨层 transcoder 和 attribution graph 追踪多语 LLM，显示不同语言共享内部特征，而后层负责语言特异解码。
+- [Cross-lingual distillation for domain knowledge transfer with sentence transformers](https://doi.org/10.1016/j.knosys.2025.113079)：通过 sentence transformer 跨语言蒸馏迁移领域知识，使目标语言标注有限时仍能获得领域表征。
+- [M-MoE: Mixture of Mixture-of-Expert Model for CTC-based Streaming Multilingual ASR](https://doi.org/10.1109/icassp49660.2025.10887679)：在 CTC streaming ASR 中使用 mixture-of-mixture-of-experts 架构，把多语语音路由到不同专家组。
+- [uCLIP: Parameter-Efficient Multilingual Extension of Vision-Language Models with Unpaired Data](https://arxiv.org/abs/2511.13036)：冻结 CLIP 图像与多语文本编码器，只训练 1.7M 参数投影模块，用无配对英语表征提升低代表性语言图文检索。
+- [Integration of Multilingual NLP with 7-DOF Robotic Manipulation for Enhanced Domestic Tasks](https://doi.org/10.1109/icarm65671.2025.11293725)：把多语自然语言指令连接到 7-DOF 机械臂操作，更像具身控制应用而非核心多语模型方法。
+- [Does multilingual and multi-speaker modeling improve low-resource TTS? Experiments on Sámi languages](https://doi.org/10.21437/ssw.2025-30)：测试 multilingual 与 multi-speaker TTS 训练是否能提升低资源 Sámi 语言语音合成质量。
+- [A Semantics-Aware Head-Driven Approach for Multilingual Dependency Parsing](https://doi.org/10.1109/access.2025.3601225)：在多语依存句法分析中引入语义感知的 head-driven 方法，使跨语句法迁移利用语义中心而不只依赖表层依存标签。
+- [Beyond Intent Translation: Research Gaps in the Application of Generative AI for Intent-Based Networking](https://doi.org/10.1109/noms57970.2025.11073701)：主要梳理生成式 AI 在意图式网络中的研究空白；若保留在本页，应视为领域意图翻译而非核心多语模型方法。
+- [Automated Criterion-Based Thai Text Evaluation with Rationale and Improvement Guidance Using LLMs](https://doi.org/10.1109/isai-nlp66160.2025.11320478)：用 LLM 按显式标准评价泰语文本，同时生成理由和改进建议，属于泰语评价生成应用。
+- [Evaluating Large Language Models for Brazilian Portuguese Sentiment Analysis: A Comparative Study of Multilingual State-of-the-Art vs. Brazilian Portuguese Fine-Tuned LLMs](https://doi.org/10.5753/jbcs.2025.5793)：在 12 个巴西葡萄牙语情感数据集上比较 23 个多语和葡语微调 LLM，分析语言专门化何时可接近更大通用模型。
+- [Improving BGE-M3 Multilingual Dense Embeddings for Nigerian Low Resource Languages](https://doi.org/10.18653/v1/2025.winlp-main.33)：补充多语言的 Model 条目，重点是《Improving BGE-M3 Multilingual Dense Embeddings for Nigerian Low Resource Languages》。
+- [Adapting Large Language Models for Arabic: Comparative Evaluation, Fine-Tuning, and Ethical Deployment](https://doi.org/10.1109/access.2025.3623796)：补充多语言的 Model 条目，重点是《Adapting Large Language Models for Arabic: Comparative Evaluation, Fine-Tuning, and Ethical Deployment》。
+- [LLMForum-RAG: A Multilingual, Multi-domain Framework for Factual Reasoning via Weighted Retrieval and LLM Collaboration](https://doi.org/10.18653/v1/2025.findings-ijcnlp.88)：补充多语言的 Model 条目，重点是《LLMForum-RAG: A Multilingual, Multi-domain Framework for Factual Reasoning via Weighted Retrieval and LLM Collaboration》。
+- [Contextual Code-Mixed Translations with LLM-Based Data Augmentation](https://doi.org/10.1109/nmitcon65824.2025.11187436)：补充多语言的 Model 条目，重点是《Contextual Code-Mixed Translations with LLM-Based Data Augmentation》。
+- [SmolKalam: Ensemble Quality-Filtered Translation at Scale for High Quality Arabic Post-Training Data](https://arxiv.org/abs/2511.18411)：通过多模型集成翻译、质量过滤和 decoder-only ablation 把 Smoltalk2 转成 Arabic SmolKalam，用于高质量后训练数据。
+- [Cross-dialectal Arabic translation: comparative analysis on large language models](https://doi.org/10.3389/frai.2025.1661789)：在 QADI 与 MADAR 上评测 GPT-3.5、GPT-4、Gemini 和 GPT-5 的阿拉伯方言翻译，并结合相似度、TER、ROUGE 与 BLEU 等指标分析。
+- [Bringing Ladin to FLORES+](https://doi.org/10.18653/v1/2025.wmt-1.81)：把 Ladin 加入 FLORES+，为这一低资源 Romance 变体扩展多语 MT 评测覆盖。
+- [Tagged Span Annotation for Detecting Translation Errors in Reasoning LLMs](https://doi.org/10.18653/v1/2025.wmt-1.62)：为 reasoning LLM 的翻译错误标注 span，使错误可定位到片段而不只依赖句级分数。
+- [LLMs for Low-Resource Dialect Translation Using Context-Aware Prompting: A Case Study on Sylheti](https://arxiv.org/abs/2511.21761)：系统评测 Bangla 与 Sylheti 双向翻译，并用包含规则书、2260 项词典和真实性检查的 Sylheti-CAP 提示框架改进低资源方言 MT。
+- [Semi-Supervised Knowledge Distillation Framework towards Lightweight Large Language Model for Spoken Language Translation](https://doi.org/10.1109/icassp49660.2025.10888265)：用半监督知识蒸馏把 spoken language translation 压缩到更轻量的 LLM 导向模型中。
+- [An Approach to Training and Fine-tuning Large Language Models for Low-Resource Languages](https://doi.org/10.1109/aiiot65859.2025.11105278)：给出低资源语言数据稀缺时训练与微调 LLM 的流程。
+- [Non-autoregressive speech translation with understanding, translation, reordering and LLM-augmented correction](https://doi.org/10.1108/atsip-09-2025-0097)：提出 UTRo-NAST，将非自回归语音翻译拆成理解、翻译、重排和 LLM 校正，在低延迟下弥补流畅性不足。
+- [CACARA: Cross-Modal Alignment Leveraging a Text-Centric Approach for Cost-Effective Multimodal and Multilingual Learning](https://arxiv.org/abs/2512.00496)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [TriLex](https://arxiv.org/abs/2512.02799)：提供面向低资源南非语言的多语种情感分析框架。
+- [Enhancing Indian Sign Language Translation via Motion-Aware Modeling](https://doi.org/10.18653/v1/2025.wslp-main.7)：为印度手语翻译加入 motion-aware modeling，突出普通视觉文本对齐容易忽略的时间运动线索。
+- [Doppelganger-JC: Benchmarking the LLMs' Understanding of Cross-Lingual Homographs between Japanese and Chinese](https://doi.org/10.18653/v1/2025.ijcnlp-long.96)：检验 LLM 能否消解日中跨语言同形词，把共享文字系统下的歧义作为多语理解诊断。
+- [Memorization is Language-Sensitive: Analyzing Memorization and Inference Risks of LLMs in a Multilingual Setting](https://doi.org/10.18653/v1/2025.l2m2-1.9)：分析不同语言中的 memorization 与 inference risk 差异，把多语暴露视为隐私和泄漏风险变量而不是单一总分。
+- [Jina-VLM: Small Multilingual Vision Language Model](https://arxiv.org/abs/2512.04032)：聚焦多语言模型或低资源语言推理模型训练。
+- [Deep Neural Architecture for Context-Aware Tamil Text-To-Speech Synthesis with Multilingual Scalability](https://doi.org/10.1109/incacct65424.2025.11011368)：设计 context-aware Tamil TTS 架构，并把向其他语言扩展作为语音生成建模贡献。
+- [A Cyber-Physical Approach to Multilingual Content Generation with Sentiment Awareness for Intelligent E-Commerce Marketing](https://doi.org/10.1109/icoici65217.2025.11254177)：把多语内容生成与 sentiment-aware 电商营销信号结合，更像应用型多语生成系统。
+- [Don't Take it Literally! Idiom-aware Vietnamese Translation via In-context Learning](https://doi.org/10.18653/v1/2025.ijcnlp-long.97)：用 idiom-aware in-context examples 改进越南语非字面表达翻译，针对普通直译 MT 容易失效的场景。
+- [TenseLoC: Tense Localization and Control in a Multilingual LLM](https://doi.org/10.18653/v1/2025.mrl-main.17)：定位并控制多语 LLM 中的 tense 表征，使时态控制成为可操作的跨语言生成机制。
+- [Enhancing Cross-Lingual Aspect-Based Sentiment Analysis with Code-Mixed In-Context Demonstrations and Language-Specific Tags](https://doi.org/10.1109/cscwd64889.2025.11033355)：结合 code-mixed in-context demonstrations 与语言专属标签，在语言之间迁移 aspect-based sentiment analysis。
+- [Classifying German Language Proficiency Levels Using Large Language Models](https://arxiv.org/abs/2512.06483)：把德语 CEFR 式熟练度分类作为 LLM 评测与适配任务，比较大模型对学习者语言水平的判别能力。
+- [Incremental Tucker Decomposition for Scalable and Efficient Multilingual Speech Recognition](https://doi.org/10.1109/ijcnn64981.2025.11228863)：把 incremental Tucker decomposition 用于多语 ASR，使共享语音识别参数能更高效地压缩和更新。
+- [Research on Dynamic Curriculum Learning in Mongolian-Chinese Neural Machine Translation](https://doi.org/10.1109/ijcnn64981.2025.11228447)：在蒙古语-中文 NMT 中使用动态课程学习，通过样本调度稳定低资源翻译训练。
+- [A Unified Deep Learning Framework for Context-Preserving Text Data Cleaning in Multilingual Environments](https://doi.org/10.1109/iciiet65921.2025.11378729)：把多语文本清洗建模为保持上下文的深度学习流程，更接近多语系统的数据预处理。
+- [Creating Multilingual Communication Models Using NLP Powered AI Engines](https://doi.org/10.1109/ietacs68750.2025.11385434)：构建面向跨语言通信的 NLP 驱动多语模型，属于应用型多语生成系统。
+- [SenTAS++: Language-Tag Graph Attention and Cross-View Contrastive Fusion for Sentiment Analysis in Code-Mixed Language](https://doi.org/10.1109/icaaic64647.2025.11331076)：用 language-tag graph attention 与 cross-view contrastive fusion 处理 code-mixed 文本情感分类。
+- [Saarthi: Ensemble AI4Bharat IndicTrans2 and Gemini for Multilingual Indian Chatbot](https://doi.org/10.1109/aimlsystems67835.2025.11330894)：在印度多语聊天机器人中集成 AI4Bharat IndicTrans2 与 Gemini，展示翻译支撑式对话应用路线。
+- [HeritageLM: Culturally-Aware Multimodal Language Modeling with Memory-Enhanced Cross-Dialect Adaptation](https://doi.org/10.14569/ijacsa.2025.0161160)：为 HeritageLM 加入生成式记忆和跨方言适配，用于保留具有文化细节的方言语言。
+- [Lost in Translation, Found in Embeddings: Sign Language Translation and Alignment](https://arxiv.org/abs/2512.08040)：从嵌入对齐角度研究手语翻译，用表征空间分析揭示手语与口语语义对齐的偏差。
+- [Fluent Alignment with Disfluent Judges: Post-training for Lower-resource Languages](https://arxiv.org/abs/2512.08777)：用 on-policy 偏好优化在奖励模型本身不流利的情况下对齐低资源语言模型，避免依赖目标语言翻译式 SFT 数据。
+- [Beyond Characters: Position-Aware Metric and a Lightweight LLM for Low-Resource Bangla Punctuation Restoration](https://doi.org/10.1109/bigdata66926.2025.11402260)：构建轻量级大模型并引入位置感知指标，用于低资源孟加拉语标点恢复。
+- [Enhancing Neural Machine Translation from Spanish-Zapoteco by Fine-Tuning Transformer Models](https://doi.org/10.1109/ropec68163.2025.11354037)：微调 Transformer 模型用于低资源西班牙语至 Zapoteco 神经机器翻译。
+- [Adapter-Enhanced XLM-RoBERTa for Cognitive Natural Language Understanding in Low-Resource Languages](https://doi.org/10.1109/icicnct66124.2025.11232923)：补充用于低资源语言理解的适配器增强 XLM-RoBERTa。
+- [Chat with one voice: mitigating semantic disparity across languages for multilingual open-domain dialogue response generation systems](https://doi.org/10.1016/j.eswa.2025.129521)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Whose morality do they speak? Unraveling cultural bias in multilingual language models](https://doi.org/10.1016/j.nlp.2025.100172)：面向多语言能力的模型、训练或算法工作。核心思想：以 Whose morality do they speak? Unraveling cultural bias in multilingual language models 为主要改进目标，作为 Model 条目的能力参考。
+- [Where Does mBERT Understand Code-Mixing? Layer-Dependent Performance on Semantic Tasks](https://doi.org/10.1109/access.2025.3594135)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Multilingual Table Question Answering for Low-Resource Languages via Selective Question Translation and Cross-Lingual Adaptation](https://doi.org/10.1109/bigcomp64353.2025.00057)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Leveraging Federated Learning for Multilingual and Private Language Models via Model Clustering](https://doi.org/10.1109/flta67013.2025.11336764)：通过联邦学习与模型聚类构建多语言隐私语言模型。
+- [LIBERTUS: A Pretrained Multilingual Model for Cross-Lingual NLP Tasks](https://doi.org/10.1109/icccit62592.2025.10928159)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [A Global Hierarchical LLM Framework for Precise Responses through Subscriptions to Country LLMs](https://doi.org/10.1109/ictmod66732.2025.11371986)：面向多语言能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“A Global Hierarchical LLM Framework for Precise Responses through Subscriptions to Country LLMs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Toward Enhancing Cross-Lingual Domain Knowledge Sharing and Transferring for Multilingual Domain Adaptation in NMT](https://doi.org/10.1109/taslpro.2025.3570946)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [XDoGE: Multilingual Data Reweighting to Enhance Language Inclusivity in LLMs](https://arxiv.org/abs/2512.10545)：把 DoGE 扩展为 XDoGE，用代理模型学习多语数据权重，并将其用于六种差异语言的完整预训练或持续预训练。
+- [Improving Translation Quality by Selecting Better Data for LLM Fine-Tuning: A Comparative Analysis](https://arxiv.org/abs/2512.11388)：比较 TF-IDF、COMET Kiwi、QuRate、FD-Score 和随机选择用于日英 LLM 机器翻译微调，显示语义选择器更能提升译文质量。
+- [Are Large Language Models Really Effective for Training-Free Cold-Start Recommendation?](https://arxiv.org/abs/2512.13001)：审视 LLM 在 training-free cold-start recommendation 中的有效性；除非作为推荐系统特定评测保留，否则偏离多语模型主轴。
+- [Family helps one another: Dravidian NLP suite for Natural Language Understanding](https://doi.org/10.18653/v1/2025.findings-ijcnlp.120)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Smruti: Grammatical Error Correction for Gujarati using LLMs with Non-Parametric Memory](https://doi.org/10.18653/v1/2025.findings-ijcnlp.28)：面向多语言能力提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Multilingual Learning Strategies in Multilingual Large Language Models](https://doi.org/10.18653/v1/2025.mrl-main.34)：比较多语大模型内部的学习策略，分离语言混合、迁移和训练调度对多语能力的影响，而不是把所有语言视作单一数据池。
+- [Gamayun's Path to Multilingual Mastery: Cost-Efficient Training of a 1.5B-Parameter LLM](https://arxiv.org/abs/2512.21580)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [A Preliminary Study of AI Agent Model in Machine Translation](https://doi.org/10.18653/v1/2025.wmt-1.32)：研究机器翻译中的 AI 智能体模型。
+- [Improving Indigenous Language Machine Translation with Synthetic Data and Language-Specific Preprocessing](https://arxiv.org/abs/2601.03135)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [ELO: Efficient Layer-Specific Optimization for Continual Pretraining of Multilingual LLMs](https://arxiv.org/abs/2601.03648)：在多语 continual pretraining 中只优化选定层，以降低适配成本并保持跨语言覆盖。
+- [The Overlooked Role of Graded Relevance Thresholds in Multilingual Dense Retrieval](https://arxiv.org/abs/2601.04395)：分析多语言稠密检索中的分级相关性阈值。
+- [LANGSAE EDITING: Improving Multilingual Information Retrieval via Post-hoc Language Identity Removal](https://arxiv.org/abs/2601.04768)：用后验 sparse-autoencoder editing 识别并抑制多语嵌入中的语言身份单元，在不重训编码器的情况下改进跨语言检索。
+- [Do LLMs Need Inherent Reasoning Before Reinforcement Learning? A Study in Korean Self-Correction](https://arxiv.org/abs/2601.05459)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [When Abundance Conceals Weakness: Knowledge Conflict in Multilingual Models](https://arxiv.org/abs/2601.07041)：提出 CLEAR 框架，测试多语 LLM 如何在语言相关参数记忆与相互冲突的多语外部证据之间调和答案。
+- [The Roots of Performance Disparity in Multilingual Language Models: Intrinsic Modeling Difficulty or Design Choices?](https://arxiv.org/abs/2601.07220)：把多语性能差距归因到 tokenizer、数据暴露、编码和参数共享等设计因素，并与语言本身难度区分开来。
+- [Cultural Compass: A Framework for Organizing Societal Norms to Detect Violations in Human-AI Conversations](https://arxiv.org/abs/2601.07973)：定义社会文化规范分类法，并将其操作化为开放式人机对话中的 norm violation 检测。
+- [Qalb: Largest State-of-the-Art Urdu Large Language Model for 230M Speakers with Systematic Continued Pre-training](https://arxiv.org/abs/2601.08141)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Multicultural Spyfall: Assessing LLMs through Dynamic Multilingual Social Deduction Game](https://arxiv.org/abs/2601.09017)：用包含本地食物和地点的多语 Spyfall 社交推理游戏动态评测文化 grounding、策略对话和规则遵循。
+- [Efficient Multilingual Dialogue Processing via Translation Pipelines and Distilled Language Models](https://arxiv.org/abs/2601.09059)：结合前向翻译、2.55B 蒸馏多任务生成器和回译，处理多种 Indic 语言的临床对话摘要与问答。
+- [Improving Low-Resource Machine Translation via Round-Trip Reinforcement Learning](https://arxiv.org/abs/2601.12535)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [MemeLens: Multilingual Multitask VLMs for Memes](https://arxiv.org/abs/2601.12539)：整合 38 个 meme 数据集，训练带解释能力的多语多任务 VLM，覆盖 hate、propaganda、humour、sentiment 等 meme 理解任务。
 - [A Shared Geometry of Difficulty in Multilingual Language Models](https://arxiv.org/abs/2601.12731)：刻画多语模型共享的难度几何，便于比较语言特异与模型特异的失败模式。
+- [On Temperature-Constrained Non-Deterministic Machine Translation: Potential and Evaluation](https://arxiv.org/abs/2601.13729)：定义温度约束下的非确定性机器翻译，说明采样译文能覆盖翻译多模态性，但需要不同于单一确定输出的评测。
+- [Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](https://arxiv.org/abs/2601.14896)：用语言耦合 GRPO、语言耦合 rollout 采样与反一致性奖励项训练多语言 RAG，缓解跨语言知识偏置与冲突。
+- [SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics](https://arxiv.org/abs/2601.15809)：通过推理时干预增强摘要指标的多语言泛化。
+- [Better as Generators Than Classifiers: Leveraging LLMs and Synthetic Data for Low-Resource Multilingual Classification](https://arxiv.org/abs/2601.16278)：在 11 种语言和 4 类分类任务上生成合成数据并训练小模型，检验 LLM 更适合作为多语数据生成器而非直接分类器。
+- [Typhoon-S: Minimal Open Post-Training for Sovereign Large Language Models](https://arxiv.org/abs/2601.18129)：Typhoon-S 面向主权和区域场景，给出轻量开放的 LLM 后训练流程。
+- [LinguaMap: Which Layers of LLMs Speak Your Language and How to Tune Them?](https://arxiv.org/abs/2601.20009)：作为多语言能力的模型侧方法候选，聚焦“Which Layers of LLMs Speak Your Language and How to Tune Them?”。
+- [MiLorE-SSL: Scaling Multilingual Capabilities in Self-Supervised Models without Forgetting](https://arxiv.org/abs/2601.20300)：把 LoRA 与 soft mixture-of-experts 适配器加入自监督语音模型，用于连续扩展新语言并减轻灾难性遗忘。
+- [Stop Jostling: Adaptive Negative Sampling Reduces the Marginalization of Low-Resource Language Tokens by Cross-Entropy Loss](https://arxiv.org/abs/2601.22439)：用 adaptive negative sampling 缓解交叉熵训练对低资源语言 token 的边缘化。
+- [When Meanings Meet](https://arxiv.org/abs/2601.22851)：研究多语言语言模型训练中共享概念空间如何形成，以及其质量如何随语言变化。
+- [Bias Beyond Borders](https://arxiv.org/abs/2601.23001)：结合多语言政治意识形态评估与 steering，把跨语言价值控制作为模型侧能力问题呈现。
+- [From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization](https://arxiv.org/abs/2602.01068)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Typologically-Informed Candidate Reranking for LLM-based Translation into Low-Resource Languages](https://arxiv.org/abs/2602.01162)：用类型学特征重排 LLM 翻译候选，使低资源语言输出更贴近目标语言结构。
+- [No Shortcuts to Culture: Indonesian Multi-hop Question Answering for Complex Cultural Understanding](https://arxiv.org/abs/2602.03709)：No Shortcuts to Culture 补充多语或跨语言模型方法，面向低资源、语码转换或文化语境任务。
+- [Capacity Constraints and the Multilingual Penalty for Lexical Disambiguation](https://arxiv.org/abs/2602.05035)：用英语和西班牙语歧义词相关性判断量化 lexical disambiguation 的多语惩罚，并关联到表示、注意力和词表容量约束。
+- [Self-Improving Multilingual Long Reasoning via Translation-Reasoning Integrated Training](https://arxiv.org/abs/2602.05940)：TRIT 在不引入额外多语数据的情况下联合训练翻译与推理，提升 MMATH 正确率并让推理语言保持与问题一致。
+- [Do Multilingual LLMs have specialized language heads?](https://arxiv.org/abs/2602.08625)：识别多语 LLM 中的语言特定 attention heads，并测试移除未用语言 heads 是否能提升部署效率。
+- [Effective vocabulary expanding of multilingual language models for extremely low-resource languages](https://arxiv.org/abs/2602.09388)：作为多语言能力的模型侧方法候选，聚焦“Effective vocabulary expanding of multilingual language models for extremely low-resource languages”。
+- [The Script Tax: Measuring Tokenization-Driven Efficiency and Latency Disparities in Multilingual Language Models](https://arxiv.org/abs/2602.11174)：量化 tokenizer 带来的 script tax，显示相同语言内容在某些书写系统下会被切成更多 token 并显著变慢。
+- [Scaling Model and Data for Multilingual Machine Translation with Open Large Language Models](https://arxiv.org/abs/2602.11961)：研究 open LLM 在多语机器翻译中的模型扩展与数据扩展，通过 continued pretraining 和 instruction tuning 构建覆盖 46 种语言的 Gemma3 系列 MT 模型。
+- [Lamer-SSL: Layer-aware Mixture of LoRA Experts for Continual Multilingual Expansion of Self-supervised Models without Forgetting](https://arxiv.org/abs/2602.12746)：用 layer-aware LoRA 专家混合和 replay 做连续多语自监督语音扩展，把更多专家分配给语义更丰富的深层。
+- [Understanding Cultural Alignment in Multilingual LLMs via Natural Debate Statements](https://arxiv.org/abs/2602.12878)：从自然辩论陈述构建 Sociocultural Statements，并把 LLM 回答映射到 Hofstede 维度以比较中美模型族的文化对齐。
+- [Physical Commonsense Reasoning for Lower-Resourced Languages and Dialects: a Study on Basque](https://arxiv.org/abs/2602.14812)：评测 LLM 在 Basque 及方言环境中的物理常识推理，把低资源推理扩展到非问答任务。
+- [Indic-TunedLens](https://arxiv.org/abs/2602.15038)：解释印度语言场景中的多语言模型，为语言特异表征和跨语迁移行为补充模型侧诊断工具。
+- [Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment](https://arxiv.org/abs/2602.16660)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Differences in Typological Alignment in Language Models' Treatment of Differential Argument Marking](https://arxiv.org/abs/2602.17653)：在受控合成语料上训练 GPT-2 式模型，检验 differential argument marking 是否呈现类似人类语言的类型学规律。
 - [Multilingual Large Language Models do not comprehend all natural languages to equal degrees](https://arxiv.org/abs/2602.20065)：衡量多语 LLM 对不同自然语言的理解差异，把语言覆盖视为分级模型能力而非二元支持标记。
+- [Enhancing Multilingual Embeddings via Multi-Way Parallel Text Alignment](https://arxiv.org/abs/2602.21543)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Layer-Targeted Multilingual Knowledge Erasure](https://arxiv.org/abs/2602.22562)：在指定层面擦除多语言知识，将多语言表征控制与模型编辑和安全联系起来。
+- [NeuronMoE: Neuron-Guided Mixture-of-Experts for Efficient Multilingual LLM Extension](https://arxiv.org/abs/2603.05046)：按语言特异神经元多样性为各层分配稀疏专家，在保持 LayerMoE 性能的同时降低低资源多语言扩展参数量。
+- [Bolbosh: Script-Aware Flow Matching for Kashmiri Text-to-Speech](https://arxiv.org/abs/2603.07513)：构建开放的 Kashmiri TTS 系统，在发现零样本多语 Indic 基线失效后引入 script-aware flow matching。
 - [Tiny Aya](https://arxiv.org/abs/2603.11510)：研究小规模多语言模型的训练与扩展选择，关注低参数量下的语言覆盖能力。
+- [Normative Common Ground Replication (NormCoRe): Replication-by-Translation for Studying Norms in Multi-Agent AI](https://arxiv.org/abs/2603.11974)：用 replication-by-translation 研究多智能体 AI 在翻译后的文化语境中是否会形成一致规范。
+- [WhispSynth: Scaling Multilingual Whisper Corpus through Real Data Curation and A Novel Pitch-free Generative Framework](https://arxiv.org/abs/2603.14853)：构建 WhispSynth 多语耳语语音语料，用 DDSP pitch-free 生成、TTS 和真实数据整理扩展 Whisper 式语音资源。
 - [ShapleyLaw: A Game-Theoretic Approach to Multilingual Scaling Laws](https://arxiv.org/abs/2603.17945)：用 Shapley 式归因构建多语缩放规律，估计多语训练中各语言的贡献。
+- [Cross-Lingual LLM-Judge Transfer via Evaluation Decomposition](https://arxiv.org/abs/2603.18557)：将评测拆解为 Universal Criteria Set，使 LLM-as-a-Judge 能以很少或无需目标语言标注迁移到多语场景。
+- [Why Better Cross-Lingual Alignment Fails for Better Cross-Lingual Transfer: Case of Encoders](https://arxiv.org/abs/2603.18863)：面向多语言能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Why Better Cross-Lingual Alignment Fails for Better Cross-Lingual Transfer: Case of Encoders”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [DaPT](https://arxiv.org/abs/2603.19097)：提出面向多语言多跳问答的双路径框架。
+- [Vocabulary shapes cross-lingual variation of word-order learnability in language models](https://arxiv.org/abs/2603.19427)：研究词表选择如何塑造不同语言的词序可学习性差异，将 tokenizer 或 lexicon 设计与多语句法习得联系起来。
 - [Neither Here Nor There: Cross-Lingual Representation Dynamics of Code-Mixed Text in Multilingual Encoders](https://arxiv.org/abs/2603.19771)：分析多语编码器中的语码混合表示，解释语言混合时跨语言动态如何变化。
+- [Diffutron: A Masked Diffusion Language Model for Turkish Language](https://arxiv.org/abs/2603.20466)：补充面向多语言的模型侧工作，重点是masked diffusion language modeling for Turkish。
+- [Graph Fusion Across Languages using Large Language Models](https://arxiv.org/abs/2603.21248)：用 LLM 融合跨语言图信息，把图对齐转化为多语推理和表征任务。
+- [EnsemJudge: Enhancing Reliability in Chinese LLM-Generated Text Detection Through Diverse Model Ensembles](https://arxiv.org/abs/2603.27949)：用多样化检测器 ensemble 提高中英文语境下 Chinese LLM 生成文本检测的域外与对抗鲁棒性。
+- [Merge and Conquer: Instructing Multilingual Models by Adding Target Language Weights](https://arxiv.org/abs/2603.28263)：通过合并目标语言权重来适配指令多语模型，为低资源语言提供低成本 continual pretraining 替代方案。
+- [On the limited utility of parallel data for learning shared multilingual representations](https://arxiv.org/abs/2603.29026)：通过控制平行翻译数据比例训练模型，发现平行数据主要加速早期对齐，而不是决定最终共享多语表示。
+- [M-MiniGPT4: Multilingual VLLM Alignment via Translated Data](https://arxiv.org/abs/2603.29467)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [CV-18 NER: Augmented Common Voice for Named Entity Recognition from Arabic Speech](https://arxiv.org/abs/2604.02209)：为 Arabic Common Voice 18 增加命名实体标注，支撑形态复杂、资源不足场景中的端到端语音 NER。
+- [Pragmatics Meets Culture: Culturally-adapted Artwork Description Generation and Evaluation](https://arxiv.org/abs/2604.02557)：提出面向不同文化受众的艺术品描述生成任务，并用 pragmatic speaker model 与文化 grounded QA 提升听者理解。
 - [Multiple-Debias: A Full-process Debiasing Method for Multilingual Pre-trained Language Models](https://arxiv.org/abs/2604.02772)：提出面向多语预训练语言模型的全流程去偏方法，覆盖数据、训练与推理阶段。
+- [MERIT: Multilingual Expert-Reward Informed Tuning for Chinese-Centric Low-Resource Machine Translation](https://arxiv.org/abs/2604.04839)：提出 MERIT，用专家奖励引导中文到东南亚低资源语言 MT，过滤噪声挖掘语料并优化奖励驱动的翻译质量。
+- [Multilingual Language Models Encode Script Over Linguistic Structure](https://arxiv.org/abs/2604.05090)：显示多语言模型更编码文字系统而非语言结构。
+- [Bridging Linguistic Gaps: Cross-Lingual Mapping in Pre-Training and Dataset for Enhanced Multilingual LLM Performance](https://arxiv.org/abs/2604.10590)：在预训练阶段加入 cross-lingual mapping task，在嵌入空间中双向对齐语言，避免依赖大规模平行微调数据。
+- [Multilingual Multi-Label Emotion Classification at Scale with Synthetic Data](https://arxiv.org/abs/2604.12633)：构造覆盖 23 种语言、超过 100 万条的合成多标签情绪语料，结合文化适配和程序化过滤训练多语 transformer 分类器。
 - [English is Not All You Need](https://arxiv.org/abs/2604.13286)：研究多语言后训练数据组成，衡量语言多样性如何影响下游多语言和推理行为。
+- [Defragmenting Language Models: An Interpretability-based Approach for Vocabulary Expansion](https://arxiv.org/abs/2604.16656)：作为多语言能力的模型侧方法候选，聚焦“An Interpretability-based Approach for Vocabulary Expansion”。
+- [Copy First, Translate Later: Interpreting Translation Dynamics in Multilingual Pretraining](https://arxiv.org/abs/2604.17633)：分析多语言预训练中的翻译动态。
+- [FLiP: Towards understanding and interpreting multimodal multilingual sentence embeddings](https://arxiv.org/abs/2604.18109)：用因子化线性投影从多语言、多模态句向量中恢复词汇内容，从而在不只依赖下游任务的情况下揭示嵌入模型的语言与模态偏差。
+- [Zero-Shot Morphological Discovery in Low-Resource Bantu Languages via Cross-Lingual Transfer and Unsupervised Clustering](https://arxiv.org/abs/2604.22723)：结合跨语迁移和无监督聚类，在极少标注范式下发现低资源 Bantu 语言的名词类和形态模式。
+- [ClayScape: A GenAI-Supported Workflow for Designing Chinese Style Ceramics with Clay 3D Printing](https://arxiv.org/abs/2604.25657)：把生成式 AI 用于中国风陶瓷设计和陶土 3D 打印流程，属于文化设计生成而非核心多语语言建模。
+- [LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](https://arxiv.org/abs/2605.03299)：把 LLM 生成的跨语言线索注入 topic modeling，使不同语言的主题更好对齐。
+- [The Impact of Vocabulary Overlaps on Knowledge Transfer in Multilingual Machine Translation](https://arxiv.org/abs/2605.04196)：比较联合词表与分离词表、相关与非相关辅助语言，隔离词表重叠在多语 MT 知识迁移中的作用。
+- [Linear Semantic Segmentation for Low-Resource Spoken Dialects](https://arxiv.org/abs/2605.06276)：构建多体裁会话阿拉伯语语义分段基准，并提出简单线性方法处理低资源口语方言 discourse boundary。
+- [From Standard English to Singlish: A Retrieval-Augmented Approach for Code-Switched Creole Generation in Large Language Models](https://arxiv.org/abs/2605.07132)：用检索增强词汇资源生成 Singlish 代码转换文本，在无需微调的情况下实现可控替换并保持较高语义一致性。
+- [Crosslingual On-Policy Self-Distillation for Multilingual Reasoning](https://arxiv.org/abs/2605.09548)：通过跨语言在线策略自蒸馏提升多语种推理能力。
+- [Evolving Knowledge Distillation for Lightweight Neural Machine Translation](https://arxiv.org/abs/2605.09924)：演化式改造 teacher-student 蒸馏流程，在缩小 NMT 模型的同时尽量保留翻译质量。
+- [Continual Learning with Multilingual Foundation Model](https://arxiv.org/abs/2605.13415)：结合回译增强、动态欠采样、MLM 知识注入和多语基础模型，检测英语、西班牙语和意大利语中的 reclaimed slur。
+- [Granite Embedding Multilingual R2 Models](https://arxiv.org/abs/2605.13521)：发布覆盖 200 多种语言的 Granite Embedding R2 bi-encoder，支持长上下文检索、代码检索和 100M 参数以下紧凑剪枝模型。
+- [WARDEN: Endangered Indigenous Language Transcription and Translation with 6 Hours of Training Data](https://arxiv.org/abs/2605.13846)：在只有 6 小时标注音频的条件下构建 Wardaman 到英语的转写与翻译系统，面向濒危原住民语言支持。
+- [Merging Methods for Multilingual Knowledge Editing for Large Language Models: An Empirical Odyssey](https://arxiv.org/abs/2605.13919)：比较多种 vector-merging 方法用于多语知识编辑，检验 TSVM 式合并能否减少跨语言 edit interference。
+- [Adaptive Data Scheduling for Low-Resource MT](https://doi.org/10.1109/icosci66700.2026.11447592)：用强化学习调度低资源多语种机器翻译数据。
+- [Arabic Political-Bias Probing](https://doi.org/10.14569/ijacsa.2026.0170412)：在 domain adaptation 前后探测 Arabic 与 multilingual transformer 的政治偏见，补充多语公平性与适配诊断。
+- [Competence Collapse in Code-Mixed Generation: Spectral Evidence and Mechanistic Recovery via Cross-Lingual Activation Steering](https://doi.org/10.18653/v1/2026.loreslm-1.3)：识别 Hinglish 生成中的 competence collapse，并用跨语言 activation steering 恢复实用性，同时保持 code-mixed fidelity 与安全行为。
+- [Improving Language Identification for Code-Switched Speech: The Pivotal Role of Accented English](https://doi.org/10.18653/v1/2026.findings-eacl.242)：指出 accented English 是 code-switched speech 语言识别的重要混淆因素，并围绕这一声学错配调整训练或评测。
+- [Efficient Low-Resource Language Models Using Tokenizer Transfer](https://doi.org/10.18653/v1/2026.eacl-srw.49)：通过 tokenizer transfer 构建高效低资源语言模型，降低 tokenizer 和模型容量适配到代表性不足语言的成本。
+- [How multilingual are multilingual LLMs? A case study in Northern Sámi-Finnish Translation](https://doi.org/10.18653/v1/2026.loreslm-1.42)：以 Northern Sámi-Finnish 翻译为案例检验多语 LLM 是否真正覆盖低资源语对，而不只是高资源方向表现良好。
+- [Saudi Dialects to MSA Machine Translation: A Systematic Evaluation of LLMs](https://doi.org/10.1016/j.procs.2026.01.114)：系统评测 LLM 从沙特方言到现代标准阿拉伯语的翻译能力，把方言规范化作为具体 Arabic MT 压力测试。
+- [Mouthing-Enhanced Multimodal Hierarchical Contrastive Learning for Gloss-Free Sign Language Translation](https://doi.org/10.1109/icassp55912.2026.11463378)：为 gloss-free 手语翻译加入 mouthing 线索和层级对比学习。
+- [Developing a Sinhala Speech Recognition System Using Whisper](https://doi.org/10.1109/icarc68737.2026.11454008)：适配 Whisper 构建 Sinhala 语音识别系统，补足该低资源语言的 ASR 覆盖。
+- [NMGE: Nested Multi-Granularity Expert Groups for Complexity-Aware Routing in Multilingual Translation](https://doi.org/10.1109/icassp55912.2026.11461288)：用 nested multi-granularity expert groups 路由多语翻译，让句子复杂度影响专家选择。
+- [A Universal AI-Based Extractive Text Summarizer with Multilingual Translation and Speech Synthesis](https://doi.org/10.1109/iccsc67078.2026.11468585)：把抽取式摘要、多语翻译和语音合成组合成应用流水线，而不是独立多语模型。
+- [Joint Autoregressive Modeling of Multi-Talker Overlapped Speech Recognition and Translation](https://doi.org/10.1109/icassp55912.2026.11463830)：用自回归序列形式联合建模多说话人重叠语音识别与翻译。
+- [Multi Stage Training with Dynamic Data Balancing for Multilingual Speech Recognition and Translation](https://doi.org/10.1109/icassp55912.2026.11464449)：用多阶段训练和动态数据均衡处理多语语音识别与翻译中的数据不均衡。
+- [SRDiff: A Cross-Modal Diffusion Model for Satellite-to-Radar Translation in Precipitation Nowcasting](https://doi.org/10.1109/tgrs.2026.3686188)：用跨模态 diffusion 将卫星图像转换为雷达式降水场，是偏地学的 cross-modal translation 模型而非自然语言多语工作。
+- [Joint multilingual adaptive attention fusion based multi-teacher KD with contrastive learning for Indic LoRes cross-domain, multi-intent NLU](https://doi.org/10.1016/j.knosys.2026.115726)：结合自适应 attention fusion、多教师蒸馏和对比学习，处理 Indic 低资源跨领域 multi-intent NLU。
+- [Machine Learning and Deep Learning Approaches Based Sentiment Analysis for Multilingual Text](https://doi.org/10.1109/mpcon69668.2026.11508618)：比较机器学习与深度学习方法在多语文本情感分析上的表现，更像任务特定多语分类研究。
+- [Summarize-Pro: A Transformer-Based Framework for Multimodal and Multilingual Content Summarization](https://doi.org/10.1109/iitcee67948.2026.11394639)：提出用于多语多模态内容摘要的 transformer 框架，但贡献偏应用系统，后续需要分类复核。
+- [Improving cross-lingual dependency parsing via LLM-based transferring and self-optimizing synthetic data augmentation](https://doi.org/10.1016/j.eswa.2026.131600)：补充面向多语言的模型侧工作，重点是cross-lingual parsing with LLM transfer and synthetic data。
 - [Resolving Linguistic Asymmetry: Forging Symmetric Multilingual Embeddings Through Asymmetric Contrastive and Curriculum Learning](https://doi.org/10.3390/sym17091386)：结合非对称对比学习与课程学习，降低多语嵌入中的方向性不对称。
+- [Joint speech and text machine translation for up to 100 languages](https://doi.org/10.1038/s41586-024-08359-z)：构建覆盖最多 100 种语言的语音文本联合机器翻译模型，补充多语言模型在语音与文本翻译上的覆盖。
+- [Scaling neural machine translation to 200 languages](https://doi.org/10.1038/s41586-024-07335-x)：将神经机器翻译扩展到 200 种语言，是重要多语言模型参照。
+- [Towards Culturally Fair Multimodal Generation: Quantifying and Mitigating Orientalist Biases in Text-to-Visual Models](https://doi.org/10.1145/3746027.3755251)：量化 text-to-visual generation 中的 Orientalist bias，并测试缓解策略以提升文化公平性。
+- [ThermVision: Exploring FLUX for Synthesizing Hyper-Realistic Thermal Face Data and Animations via Image to Video Translation](https://doi.org/10.1145/3746027.3755448)：用 FLUX 合成热成像人脸数据并做图像到视频动画生成，属于多模态生成而非多语语言核心。
+- [SciRus: Tiny and Powerful Multilingual Encoder for Scientific Texts](https://doi.org/10.1134/s1064562424602178)：报告 SciRus 这一面向科学文本的小型多语编码器，在模型尺寸与跨语科学检索或分类覆盖之间做权衡。
+- [Personalized federated multilingual machine translation with multi-level knowledge fusion](https://doi.org/10.1007/s13042-025-02895-4)：用多层知识融合做个性化联邦多语机器翻译，使客户端无需集中私有语言数据也能共享翻译知识。
+- [Efficient multilingual spam detection on resource-constrained devices: a comparative analysis of QLoRA fine-tuning of Gemma 3, Qwen 3, and Llama 3.2 models](https://doi.org/10.1007/s40747-026-02247-x)：比较 QLoRA 微调的 Gemma、Qwen 与 Llama 在资源受限设备上的多语垃圾信息检测表现。
+- [Capturing Linguistic Diversity in Data Annotation: Learnings From Reviewing AI Generated Content in Swahili and English](https://doi.org/10.1145/3757232.3757340)：总结审核 Swahili 与 English AI 生成内容时的标注经验，凸显多语评测和训练中的数据质量风险。
+- [Building accurate translation-tailored large language models with language-aware instruction tuning](https://doi.org/10.1631/fitee.2400458)：用 language-aware instruction tuning 将 LLM 专门化为翻译模型，提升其相对普通指令跟随的翻译行为。
+- [GPT-SW3: An Autoregressive Language Model for the Scandinavian Languages](https://doi.org/10.63317/2pg96oituizk)：报告面向斯堪的纳维亚语言训练的 GPT 式自回归模型族，作为区域多语语言模型参考。
+- [Exploring Bengali Creative Storytelling Capabilities of Large Language Models Across Cultural Variations](https://doi.org/10.1145/3715070.3749228)：评测 LLM 在 Bengali 中跨文化变体的创意叙事能力，把文化敏感生成作为多语模型能力。
+- [Speech to speech translation system based on cloud-edge collaboration](https://doi.org/10.1007/s44336-026-00033-4)：用云边协同实现 expressive speech-to-speech translation，在扩展部署的同时保留源说话人特征。
+- [Cross-lingual sentiment analysis via multimodal transformer fusion and lightweight deep ensemble learning framework](https://doi.org/10.1007/s10115-026-02768-4)：结合 multimodal transformer fusion 与轻量 ensemble 做 cross-lingual sentiment analysis。
+- [Improving neural machine translation for low resource languages through non-parallel corpora: a case study of Egyptian dialect to modern standard Arabic translation](https://doi.org/10.1038/s41598-023-51090-4)：研究利用非平行语料进行半监督 Egyptian dialect 到现代标准阿拉伯语 MT，并用平行数据进行评测。
+- [Teaching Large Language Models to Translate on Low-resource Languages with Textbook Prompting](https://doi.org/10.63317/2khhjh3npfqr)：用 textbook-style prompts 教 LLM 执行低资源语言翻译，避免完全依赖传统平行语料微调。
+- [DanteLLM: Let’s Push Italian LLM Research Forward!](https://doi.org/10.63317/4za9ey2b3j4r)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充多语言方向的模型覆盖。
+- [An interpretable error correction method for enhancing code-to-code translation](https://openreview.net/forum?id=5e01f4ef7ffeedf3317a44461d18df9d)：为 code-to-code translation 增加可解释纠错层，除非按翻译迁移处理，否则与自然语言多语建模偏轴。
+- [Generative LLMs for Multilingual Temporal Expression Normalization](https://doi.org/10.3233/faia240940)：测试 Mistral、Gemma、Phi-2 和 Llama-3 的提示策略，用于跨语言与跨领域时间表达式归一化。
+- [Multilingual capabilities of GPT: A study of structural ambiguity](https://doi.org/10.1371/journal.pone.0326943)：用英语、韩语和日语相对从句歧义探测 GPT-3.5、GPT-4 与 GPT-4o，显示英语中心 attachment 偏好会迁移到其他语言。
+- [Large-scale detection of multilingual coordinated activity on Telegram](https://doi.org/10.1038/s44260-025-00056-w)：在 400 多万条英俄 Telegram 政治消息中检测 coordinated activity，更像多语社交媒体分析系统而非模型训练论文。
+- [Multilingual Data from the Agricultural Domain: Presenting the NWU-Pula/Imvula Corpora](https://doi.org/10.55492/v6i02.6739)：发布七种南非语言农业领域语料，并提供分词、词形还原和词性标注。
+- [DeepFinLLM 2.0: an optimized and scalable multilingual financial advisor unleashing strategic insights through multi-API orchestration and large language models](https://doi.org/10.1007/s10844-025-00988-8)：围绕 LLM 和多 API 构建多语金融顾问系统，更接近编排型应用而非核心 Model 覆盖。
+- [Robust Long-Context Multilingual Retrieval and Reasoning Enabled by Combined Neural and Symbolic Techniques](https://doi.org/10.1177/29498732261443192)：结合跨语言神经检索与符号推理，在超长多语文档问答中缓解 lost-in-the-middle 问题。
+- [The Development of Small-Scale Language Models for Low-Resource Languages, with a Focus on Kazakh and Direct Preference Optimization](https://doi.org/10.3390/bdcc9050137)：构建 1.94B 参数 Kazakh LLaMA-based 模型，包含清洗语料、Kazakh-aware tokenizer、分阶段训练和 DPO 对齐。
+- [Multimodal Large Language Model for Gloss-Free Video Sign Language Translation](https://doi.org/10.5755/j01.itc.55.1.40498)：提出 SL-LLaMA，在有限手语数据下微调 LLM-backed 多模态模型，实现 gloss-free video sign language translation。
+- [Can Language Models Induce Grammatical Knowledge from Indirect Evidence?](https://doi.org/10.5715/jnlp.32.360)：测试语言模型能否从间接证据中归纳语法知识，把稀疏线索习得作为模型诊断问题。
+- [Research on Mongolian–Chinese Neural Machine Translation Based on Implicit Linguistic Features and Deliberation Networks](https://doi.org/10.3390/electronics14153144)：补充蒙古语-中文神经机器翻译模型。
+- [Explainable multilingual NMT with adapters and mixture-of-experts: a study on low-resource Indic languages](https://doi.org/10.1007/s10772-026-10267-8)：把 adapter 与 mixture-of-experts 结合用于低资源 Indic NMT，在路由语言特异行为的同时解释哪些专家支持翻译决策。
+- [Reward-Driven Fine-Tuning with Entity Hallucination Index for Low-Resource Hindi Abstractive Summarisation](https://doi.org/10.1007/s42979-025-04684-w)：将实体幻觉指数驱动的奖励微调用于低资源印地语摘要。
+- [Improving Neural Machine Translation Through Code‐Mixed Data Augmentation](https://doi.org/10.1111/coin.70033)：分析或改进多语言、跨语言、翻译或代码混合模型行为。
+- [Multilingual and multicultural enhancement of large language model based on fine-tuning pre-trained model gemma2](https://doi.org/10.1117/12.3068238)：面向多语言能力提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [M2-VLP: Enhancing Multilingual Vision-Language Pre-Training via Multi-Grained Alignment](https://doi.org/10.1145/3696410.3714861)：用多粒度对齐增强多语视觉语言预训练，在更细语义层面对齐图文信号以支持跨语多模态理解。
+- [Enhancing Non-English Conversational Agents Using Synthetic Data Generation](https://doi.org/10.1145/3721201.3725444)：用合成数据适配非英语会话智能体，补足原生会话语料稀缺语言的对话覆盖。
+- [What is Jiaozi: Exploring User Control of Language Style in Multilingual Conversational Agents](https://doi.org/10.1145/3769872.3769887)：面向多语言能力提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Advancing sentiment analysis for low-resourced african languages using pre-trained language models](https://doi.org/10.1371/journal.pone.0325102)：将预训练语言模型适配到低资源非洲语言情感分析。
+- [Domain Knowledge Distillation for Multilingual Sentence Encoders in Cross-lingual Sentence Similarity Estimation](https://doi.org/10.26615/978-954-452-098-4-067)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Comparative Evaluation of Large Language Models for Intent Classification in Indonesian Text](https://doi.org/10.51967/tepian.v6i2.3355)：面向多语言能力的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Comparative Evaluation of Large Language Models for Intent Classification in Indonesian Text”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Qualifying Knowledge and Knowledge Sharing in Multilingual Models]()：面向多语言能力的模型分析候选。核心思路是拆分事实知识检索中的概念、关系、提示结构和查询语言，并用 mParaRel 覆盖 10 种语言的并行完形知识检索。
+- [VRCP: Vocabulary Replacement Continued Pretraining for Efficient Multilingual Language Models](https://www.semanticscholar.org/paper/eaad4827a1761ab49add6936ef492e3d0f4d99e4)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于多语言能力，可补充多语言训练、对齐、蒸馏、指令微调、知识编辑和数据过滤方法。
+- [Towards the Machine Translation of Scientific Neologisms]()：研究科学新词的机器翻译，关联多语科学术语处理。

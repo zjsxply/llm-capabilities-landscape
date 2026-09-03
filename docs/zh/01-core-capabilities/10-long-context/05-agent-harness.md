@@ -5,7 +5,43 @@
 - [LLMLingua](https://arxiv.org/abs/2310.05736)（[开源代码](https://github.com/microsoft/LLMLingua)）：可插拔上下文压缩组件，常用于长上下文代理中降低无关 token 干扰并提升有效信息密度。
 - [LongLLMLingua](https://arxiv.org/abs/2310.06839)（[开源代码](https://github.com/microsoft/LLMLingua)）：面向更长输入的压缩与重排策略，强调在高压缩率下保留关键推理证据。
 - [RAPTOR](https://arxiv.org/abs/2401.18059)（[开源代码](https://github.com/parthsarthi03/raptor)）：用递归摘要树组织文档记忆，让代理在不同粒度的上下文块之间检索和聚合证据。
+- [A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts](https://arxiv.org/abs/2402.09727)：提出 ReadAgent 提示系统，把文档片段分组成 memory episodes，压缩为 gist memories，并在需要细节时回查原文段落，在 QuALITY、NarrativeQA 和 QMSum 上扩展有效上下文。
 - [LongAgent](https://arxiv.org/abs/2402.11550)（[评测代码/数据](https://github.com/zuucan/needleinahaystack-plus)）：多 agent 协作式长上下文 harness；核心思想是把超长文本分配给多个 member agent，再由 leader agent 聚合局部证据，适合替代单次全量塞入 prompt 的处理方式。
+- [(Perhaps) Beyond Human Translation: Harnessing Multi-Agent Collaboration for Translating Ultra-Long Literary Texts](https://arxiv.org/abs/2405.11804)：提出 TransAgents，把 CEO、资深编辑、初级编辑、译者、本地化专家和校对员组成翻译公司式多智能体流程，先制定翻译指南，再顺序完成翻译、本地化、校对和质量检查。
 - [HippoRAG](https://arxiv.org/abs/2405.14831)（[开源代码](https://github.com/OSU-NLP-Group/HippoRAG)）：把知识图谱式关联和海马体启发的检索机制接入 RAG，适合长程事实联想与多跳证据组织。
+- [Toward Conversational Agents with Context and Time Sensitive Long-term Memory](https://arxiv.org/abs/2406.00057)：构建面向模糊查询和时间/事件查询的长对话记忆 RAG 设置，把 chain-of-table search、向量检索和提示式查询消歧结合起来处理模拟长对话。
 - [Chain-of-Agents](https://arxiv.org/abs/2406.02818)（[非官方实现](https://github.com/rudrankriyam/Chain-of-Agents)）：把长输入拆成 worker agent 串行处理并逐段传递中间消息，最后由 manager agent 汇总答案，适合长文档问答和摘要类任务。
+- [GraphReader: Building Graph-based Agent to Enhance Long-Context Abilities of Large Language Models](https://arxiv.org/abs/2406.14550)：把长文本结构化为图，让 agent 先规划，再调用函数读取节点内容和邻居，持续记录洞察并反思搜索状态，通过由粗到细的图探索后生成答案。
+- [HopRAG: Multi-Hop Reasoning for Logic-Aware Retrieval-Augmented Generation](https://arxiv.org/abs/2502.12442)：为检索增强生成加入逻辑感知的多跳检索与推理流程。
+- [Self-Taught Agentic Long Context Understanding](https://arxiv.org/abs/2502.15920)：面向长上下文理解的 agentic 框架。核心思想是结合问题澄清和上下文检索，把长文档问答处理成交互式 agent 过程。
+- [XpandA](https://arxiv.org/abs/2505.20625)：面向长上下文的 question-driven 多 agent harness。核心思想是动态切分超长文本，在集中式共享记忆中维护问题与信息状态，并按需重放相关分片，以降低多 agent 分块处理中的信息损失和延迟。
+- [TracLLM: A Generic Framework for Attributing Long Context LLMs](https://arxiv.org/abs/2506.04202)：长上下文 LLM 输出的通用归因框架。核心思想是在 RAG 和 agent 应用中追踪哪些上下文片段支撑生成声明。
+- [Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](https://arxiv.org/abs/2507.17061)：面向可扩展文档理解的自适应多代理框架。核心思想是动态路由长文档子任务并协调代理，而不是使用固定分块角色。
+- [Sculptor](https://arxiv.org/abs/2508.04664)：为 LLM 提供主动上下文管理工具，包括分片、摘要、隐藏与恢复、精确搜索，用于在长上下文推理中控制工作记忆。
+- [PiKV: KV Cache Management System for Mixture of Experts](https://arxiv.org/abs/2508.06526)：提供面向 MoE 的分布式 KV-cache 服务框架，结合 expert-sharded storage、PiKV routing、按查询相关性自适应保留条目的调度机制和压缩模块，用于长上下文推理。
+- [OnGoal: Tracking and Visualizing Conversational Goals in Multi-Turn Dialogue with Large Language Models](https://arxiv.org/abs/2508.21061)：实现一个聊天界面，实时跟踪用户目标，用示例解释 goal-alignment 评分，并可视化多轮写作对话中的目标推进轨迹。
 - [Graph of Agents](https://arxiv.org/abs/2509.06644)（[开源代码](https://github.com/tjoo512/graph-of-agents)）：面向长上下文的图式多 agent 协作 harness；核心思想是把文本块、局部 agent 输出与汇总节点组织成可扩展图结构，用局部处理和跨节点聚合替代单一长 prompt。
+- [Graph of Agents: Principled Long Context Modeling by Emergent Multi-Agent Collaboration](https://arxiv.org/abs/2509.21848)：把 Graph of Agents 形式化为长上下文多智能体架构，将 chunk 级 worker 与聚合节点组织成图拓扑，用局部分析和跨节点汇总替代单一超长 prompt。
+- [ReMemR1](https://arxiv.org/abs/2509.23040)：带可回看记忆的长上下文推理 harness；核心思想是在文档扫描过程中允许模型回调历史记忆状态，避免分散证据被线性覆盖和遗忘。
+- [ToM](https://arxiv.org/abs/2511.00489)：面向长上下文推理的 Tree-oriented MapReduce 框架。核心思想是把长文档解析为层级 DocTree，在节点上局部推理并向上聚合，比扁平 chunk ranking 更好保留文档结构。
+- [DocLens : A Tool-Augmented Multi-Agent Framework for Long Visual Document Understanding](https://arxiv.org/abs/2511.11552)：面向长视觉文档的 tool-augmented multi-agent harness；核心思想是在回答前定位证据页和细粒度视觉细节。
+- [Two-Faced Social Agents: Context Collapse in Role-Conditioned Large Language Models](https://arxiv.org/abs/2511.15573)：在 SAT 数学题和情感偏好任务中评估带社会经济角色设定的 social-agent simulation，衡量长角色上下文何时坍缩为单一最优身份而不再保留 persona 差异。
+- [Principled Context Engineering for RAG](https://arxiv.org/abs/2511.17908)：用于 RAG 的 conformal prediction 上下文过滤框架。核心思想：在保留目标覆盖率的前提下删除无关检索片段，使上下文缩减从启发式裁剪变成有统计保证的证据保留过程。
+- [Solving Context Window Overflow in AI Agents](https://arxiv.org/abs/2511.22729)：用 memory pointers 替代超长工具输出，使 agent 能访问任意长度结果而不把原始数据塞入上下文窗口，并在材料科学工作流中展示更低 token 消耗。
+- [Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding](https://arxiv.org/abs/2511.22850): 提出 SLEUTH 多智能体长文档 context-engineering 流程，通过检索、文本与视觉证据筛选、推理策略分析和答案合成来处理证据稀疏问题。
+- [From Context to EDUs: Faithful and Structured Context Compression via Elementary Discourse Unit Decomposition](https://arxiv.org/abs/2512.14244)：它提供上下文压缩、长程状态管理或程序化长上下文 workflow，适合补充 long-context Agent Harness。
+- [Disk-Based Shared KV Cache Management for Fast Inference in Multi-Instance LLM RAG Systems](https://doi.org/10.1109/cloud67622.2025.00029)：提出 Shared RAG-DCache，预计算检索文档块的磁盘 KV cache，利用查询等待时间预取，并在多个 RAG 推理实例之间共享缓存上下文以降低 TTFT。
+- [To Retrieve or To Think? An Agentic Approach for Context Evolution](https://arxiv.org/abs/2601.08747)：提出 Agentic Context Evolution，由 orchestrator 通过多数投票决定调用 retriever 获取新证据，还是调用 reasoner 做内部分析和修正，从而让多跳 QA 的上下文持续精简演化。
+- [Entropic Context Shaping](https://arxiv.org/abs/2601.11585)：面向 LLM agent 的信息论上下文过滤 harness。核心思想是衡量段落是否把模型推向正确答案，比词面相似度更好地区分有用上下文与干扰信息。
+- [LSTM-MAS](https://arxiv.org/abs/2601.11913)：受 long short-term memory 启发的长上下文多 agent harness。核心思想：把长输入分配给多个 agent，并协调类似记忆状态的更新，避免把 long-context processing 简化成单一不断膨胀的 prompt。
+- [Structured Context Engineering for File-Native Agentic Systems: Evaluating Schema Accuracy, Format Effectiveness, and Multi-File Navigation at Scale](https://arxiv.org/abs/2602.05447)：补充面向长上下文处理、压缩或文件原生上下文能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [Structured Prompt Language](https://arxiv.org/abs/2602.21257)：面向 LLM 的声明式上下文管理语言。核心思想是把 token 预算、检索、记忆和查询优化暴露为可编程上下文操作，而不是手写堆叠提示。
+- [The Missing Memory Hierarchy](https://arxiv.org/abs/2603.09023)：提出 LLM 上下文窗口的按需分页机制。核心思想是把上下文作为记忆层级管理，使长程 agent 能换入换出相关状态，而不是把所有工具和提示状态都留在上下文中。
+- [Chow-Liu Ordering for Chain-of-Agents](https://arxiv.org/abs/2603.09835)：面向 CoA-style systems 的 long-context harness refinement。核心思想：用 Chow-Liu trees 学习 chunk dependency structure，并按该结构遍历 chunks，以减少 bounded shared memory 中的信息损失。
+- [Recursive Language Models Meet Uncertainty: The Surprising Effectiveness of Self-Reflective Program Search for Long Context](https://arxiv.org/abs/2603.15653)：它提供上下文压缩、长程状态管理或程序化长上下文 workflow，适合补充 long-context Agent Harness。
+- [Conversation Tree Architecture](https://arxiv.org/abs/2603.21278)：用于多分支 LLM 对话的结构化框架。核心思想是把对话组织为上下文隔离的树节点，并显式规定上下文流动，以减少话题串扰和 logical context poisoning。
+- [Reasoner-Executor-Synthesizer: Scalable Agentic Architecture with Static O(1) Context Window](https://arxiv.org/abs/2603.22367)：Reasoner-Executor-Synthesizer 以静态 O(1) context 组织 agentic RAG，属于 long-context harness。
+- [ContextCurator](https://arxiv.org/abs/2604.11462)：面向长程 agent 的主动上下文整理框架。核心思想是把轻量策略模型与冻结任务执行器配对，在保留稀疏推理锚点的同时裁剪嘈杂环境历史。
+- [Context Kubernetes](https://arxiv.org/abs/2604.11623)：为 agentic AI 系统使用的企业知识上下文定义声明式编排方式。
+- [SLIDERS](https://arxiv.org/abs/2604.22294)：面向超大文档集合 QA 的 structured-reasoning harness。核心思想：把 salient evidence 抽取到关系数据库中，用 provenance 修复重复或不一致记录，并通过 SQL-backed persistent state 回答问题，而不是继续扩展 prompt。
+- [PolyKV: A Shared Asymmetrically-Compressed KV Cache Pool for Multi-Agent LLM Inference](https://arxiv.org/abs/2604.24971)：让多个并发 agent 共享一个非对称压缩 KV-cache pool，一次写入压缩后的 keys 与 values，并通过 HuggingFace DynamicCache 注入到各自独立的 agent 上下文。

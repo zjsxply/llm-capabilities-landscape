@@ -1,46 +1,482 @@
 # 1.7.3 Bench
 
 - `CountBench`（见 [Teaching CLIP to Count to Ten](https://arxiv.org/abs/2302.12066)）：评什么：视觉计数与数量概念的可靠性；核心思想：计数常是空间与组合推理的基础诊断项，可作为空间推理评测的辅助刻画维度。
-- [BLINK](https://arxiv.org/abs/2404.12390)（[开源代码](https://github.com/zeyofu/BLINK_Benchmark)）：评什么：多模态模型的核心视觉感知与空间相关能力（如相对深度、对应关系、多视角一致性等）；核心思想：把经典 CV 感知任务改写成多选式 VQA，强调“看得见但不一定感知到”的能力缺口。
+- [CatTrack: Single-Stage Category-Level 6D Object Pose Tracking via Convolution and Vision Transformer](https://doi.org/10.1109/tmm.2023.3284598)：作为空间与三维能力的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [PEGASUS: Physically Enhanced Gaussian Splatting Simulation System for 6DoF Object Pose Dataset Generation](https://arxiv.org/abs/2401.02281)：用物理增强的 Gaussian Splatting 仿真生成 6DoF object pose 数据集，使合成姿态数据更适合空间姿态估计评测。
+- [CloSe: A 3D Clothing Segmentation Dataset and Model](https://arxiv.org/abs/2401.12051)：发布三维服装分割数据集与基线模型，评测方法能否在可变形的 clothed-human 几何中分离衣物区域和形状。
+- [GauU-Scene: A Scene Reconstruction Benchmark on Large Scale 3D Reconstruction Dataset Using Gaussian Splatting](https://arxiv.org/abs/2401.14032)：提供面向 Gaussian Splatting 场景建模的大规模 3D reconstruction benchmark，在广泛场景数据上评估重建与渲染质量。
+- [GeoEval: Benchmark for Evaluating LLMs and Multi-Modal Models on Geometry Problem-Solving](https://arxiv.org/abs/2402.10104)：用主集、反向推理集、增强集和困难集评测 LLM 与多模态模型的几何解题能力，重点考察图文融合和分布外几何推理。
+- [MultiCorrupt: A Multi-Modal Robustness Dataset and Benchmark of LiDAR-Camera Fusion for 3D Object Detection*](https://arxiv.org/abs/2402.11677)：测试 LiDAR-camera 三维目标检测在协同传感器扰动下的鲁棒性，衡量点云、图像或标定信号退化时融合模型是否仍可靠。
+- [VisionGPT-3D: A Generalized Multimodal Agent for Enhanced 3D Vision Understanding](https://arxiv.org/abs/2403.09530)：评测一个从文本或图像输入中选择深度、网格和三维重建工具的多模态路由框架，空间目标是端到端生成的 3D 表示质量。
+- [Learning coherent matrixized representation in latent space for volumetric 4D generation](https://arxiv.org/abs/2403.13238)：在 ShapeNet、3DBiCar、DeformingThings4D 和 Objaverse 上评测体积式 4D 生成，衡量动画三维形状能否在时间维度保持颜色、几何和运动一致性。
+- [Find n' Propagate: Open-Vocabulary 3D Object Detection in Urban Environments](https://arxiv.org/abs/2403.13556)：为城市环境中的开放词汇 LiDAR 三维目标检测设计并比较自顶向下和自底向上基线，重点评测基于多传感器证据的 novel-category localization。
+- [CausalChaos! Dataset for Comprehensive Causal Action Question Answering Over Longer Causal Chains Grounded in Dynamic Visual Scenes](https://arxiv.org/abs/2404.01299)：评测动态视觉场景中的 causal action question answering，强调需要同时跟踪空间交互和时间变化的长因果链。
+- [GeoReF: Geometric Alignment Across Shape Variation for Category-level Object Pose Refinement](https://arxiv.org/abs/2404.11139)：评测跨形状差异的类别级物体姿态细化，用几何对齐、cross-cloud transformation 和姿态指标检验方法能否超越实例级 refinement。
+- [BLINK](https://arxiv.org/abs/2404.12390)（[榜单](https://zeyofu.github.io/blink/)；[开源代码](https://github.com/zeyofu/BLINK_Benchmark)）：评什么：多模态模型的核心视觉感知与空间相关能力（如相对深度、对应关系、多视角一致性等）；核心思想：把经典 CV 感知任务改写成多选式 VQA，强调“看得见但不一定感知到”的能力缺口。
+- [TableVQA-Bench: A Visual Question Answering Benchmark on Multiple Table Domains](https://arxiv.org/abs/2404.19205)：从渲染表格和生成问答构建 1,500 个视觉表格 QA 样本，测试 MLLM 能否从图像中读取表格布局、视觉编码和单元格关系。
+- [Multimodal LLMs Struggle with Basic Visual Network Analysis: a VNA Benchmark](https://arxiv.org/abs/2405.06634)：用最大度节点、signed triad balance 和连通分量计数等渲染图任务评测 VLM，暴露模型在网络空间布局解析上的失败。
+- [Reframing Spatial Reasoning Evaluation in Language Models: A Real-World Simulation Benchmark for Qualitative Reasoning](https://arxiv.org/abs/2405.15064)：用真实世界仿真场景测试语言模型的 qualitative spatial reasoning，要求模型基于关系和物理布局推理，而不是解模板化空间文字题。
+- [LLMGeo: Benchmarking Large Language Models on Image Geolocation In-the-wild](https://arxiv.org/abs/2405.20363)：评测大模型在野外图像地理定位上的能力，检验模型能否把视觉地标、场景上下文和世界知识转化为位置预测。
+- [Are Large Vision Language Models up to the Challenge of Chart Comprehension and Reasoning? An Extensive Investigation into the Capabilities and Limitations of LVLMs](https://arxiv.org/abs/2406.00257)：在多类图表推理任务上评测 LVLM，考察模型能否把视觉编码、表格数值和自然语言问题对齐，而不是生成幻觉式数据解释。
+- [Collaborative Novel Object Discovery and Box-Guided Cross-Modal Alignment for Open-Vocabulary 3D Object Detection](https://arxiv.org/abs/2406.00830)：在 ScanNetv2 与 SUN-RGBD 上评测开放词汇三维检测，衡量模型能否将三维点云与二维和文本先验对齐来定位并分类 novel objects。
+- [The 3D-PC: a benchmark for visual perspective taking in humans and machines](https://arxiv.org/abs/2406.04138)：在人类和机器之间比较 visual perspective taking，用三维场景测试观察者能否推断另一个视角下世界的样子。
+- [Omni6DPose: A Benchmark and Model for Universal 6D Object Pose Estimation and Tracking](https://arxiv.org/abs/2406.04316)：提供跨物体类别的通用 6D object pose estimation 与跟踪基准和模型。
+- [3D-GRAND: A Million-Scale Dataset for 3D-LLMs with Better Grounding and Less Hallucination](https://arxiv.org/abs/2406.05132)：提供 40,087 个 household 3D scenes 与 620 万条 grounded instructions，并用 3D-POPE 测量 3D-LLM 的幻觉和 grounding 可靠性。
+- [Situational Awareness Matters in 3D Vision Language Reasoning](https://arxiv.org/abs/2406.07544)：在 SQA3D 和 ScanQA 上评测 situation-grounded 3D question answering，把自我位置估计和从该视角回答问题两项能力拆开考察。
+- [MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations](https://arxiv.org/abs/2406.09401)：提供带层级 grounded language annotations 的 3D scene 数据，支持把物体、区域、属性和指令连接到显式三维场景结构的任务。
 - `DA-2K`（[Depth Anything V2](https://arxiv.org/abs/2406.09414)）：评什么：单图深度/相对深度等与三维几何强相关的视觉能力；核心思想：用相对深度与几何一致性作为空间理解的“底座型”观测信号（但其任务更偏传统视觉评测，而非对话式推理）。
+- [Revisiting Referring Expression Comprehension Evaluation in the Era of Large Multimodal Models](https://arxiv.org/abs/2406.16866)：重新审视大多模态模型时代的 referring expression comprehension，检验协议是否仍能测出细粒度 grounding，而不只是普通物体识别。
+- [NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](https://arxiv.org/abs/2406.17345)：标准化 novel view synthesis 的可复现实验，提供 NeRF 及相关 baseline，使渲染质量和场景重建比较不再过度依赖实现细节。
+- [CORE4D: A 4D Human-Object-Human Interaction Dataset for Collaborative Object REarrangement](https://arxiv.org/abs/2406.19353)：发布面向协作式 human-object-human rearrangement 的 4D 数据集，评测动态空间交互、物体运动和跨时间协同。
+- [VSP: Assessing the dual challenges of perception and reasoning in spatial planning tasks for VLMs](https://arxiv.org/abs/2407.01863)：把视觉空间规划拆成感知和推理子任务，测试 VLM 能否理解物体布局并为简单视觉场景生成行动计划。
+- [TAPVid-3D: A Benchmark for Tracking Any Point in 3D](https://arxiv.org/abs/2407.05921)：把任意点跟踪扩展到三维，评估方法能否在运动、遮挡和视角变化中保持点身份。
+- [GLBench: A Comprehensive Benchmark for Graph with Large Language Models](https://arxiv.org/abs/2407.07457)：在真实图数据上统一 GraphLLM 的监督与零样本评测，衡量结构和语义如何影响图推理，而不是普通场景几何。
+- [OmniNOCS: A unified NOCS dataset and model for 3D lifting of 2D objects](https://arxiv.org/abs/2407.08711)：统一从二维观测进行 NOCS 式三维物体 lifting，评估跨类别 canonical coordinates、姿态和形状恢复。
+- [Evaluating Modern Approaches in 3D Scene Reconstruction: NeRF vs Gaussian-Based Methods](https://arxiv.org/abs/2408.04268)：在统一实证协议下比较 NeRF 类方法与 Gaussian-based 三维场景重建，关注渲染质量、重建保真度和实际取舍。
+- [Can Large Language Models Understand Symbolic Graphics Programs?](https://arxiv.org/abs/2408.08313)：测试 LLM 对 symbolic graphics programs 的理解，要求模型从类似代码的绘图指令推断视觉布局和几何关系。
+- [OpenScan: A Benchmark for Generalized Open-Vocabulary 3D Scene Understanding](https://arxiv.org/abs/2408.11030)：在广义类别设置下测试 open-vocabulary 3D scene understanding，要求模型识别并 grounding 固定闭集标签之外的物体。
+- [Evaluating Large Language Models on Spatial Tasks: A Multi-Task Benchmarking Study](https://arxiv.org/abs/2408.14438)：在多个空间任务族上 benchmark LLM，区分关系理解、导航式推理、符号或几何空间推理中的失败模式。
+- [Space3D-Bench: Spatial 3D Question Answering Benchmark](https://arxiv.org/abs/2408.16662)：评测基于场景几何的 spatial 3D question answering，要求模型从三维证据回答关系、距离、布局和物体 grounding 问题。
+- [BOP-Distrib: Revisiting 6D Pose Estimation Benchmarks for Better Evaluation under Visual Ambiguities](https://arxiv.org/abs/2408.17297)：在视觉歧义下重新设计 6D pose evaluation，把姿态假设视作分布，减少对对称或视觉不可区分姿态的不公平惩罚。
+- [EgoPressure: A Dataset for Hand Pressure and Pose Estimation in Egocentric Vision](https://arxiv.org/abs/2409.02224)：采集 egocentric RGB-D、手部网格和压力标注，用于评测 hand pose 与接触压力估计中的手物空间交互。
+- [Multi-modal Situated Reasoning in 3D Scenes](https://arxiv.org/abs/2409.02389)：评测三维场景中的 situated reasoning，把多模态场景证据与依赖局部视角、物体关系和任务上下文的问题结合起来。
+- [UniDet3D: Multi-dataset Indoor 3D Object Detection](https://arxiv.org/abs/2409.04234)：通过基准、数据集或评测协议评估空间理解能力。
+- [LayeredFlow: A Real-World Benchmark for Non-Lambertian Multi-Layer Optical Flow](https://arxiv.org/abs/2409.05688)：评测非朗伯、多层场景中的 optical flow，在透明、反射或分层运动条件下检验传统单表面 flow 假设的失效。
+- [3DGCQA: A Quality Assessment Database for 3D AI-Generated Contents](https://arxiv.org/abs/2409.07236)：提供 AI 生成 3D 内容的质量评估数据库，用于评价生成空间资产的几何、纹理、真实感和感知质量。
+- [AutoGeo: Automating Geometric Image Dataset Creation for Enhanced Geometry Understanding](https://arxiv.org/abs/2409.09039)：从形式化几何子句生成 AutoGeo-100k 图文几何样本，评测其对 MLLM 几何图像描述和数学推理的提升。
+- [MinD-3D++: Advancing fMRI-Based 3D Reconstruction With High-Quality Textured Mesh Generation and a Comprehensive Dataset](https://arxiv.org/abs/2409.11315)：提供从 fMRI 信号重建 textured 3D meshes 的数据集和评测设置，把神经证据与形状、纹理和物体几何恢复连接起来。
+- [Seeing Through Their Eyes: Evaluating Visual Perspective Taking in Vision Language Models](https://arxiv.org/abs/2409.12969)：提出 Isle-Bricks 和 Isle-Dots 测试 visual perspective taking，衡量 VLM 能否推断另一个观察者看到什么，而不只是检测物体。
+- [AIM 2024 Sparse Neural Rendering Challenge: Dataset and Benchmark](https://arxiv.org/abs/2409.15041)：定义 AIM 2024 sparse neural rendering challenge，在输入视角有限时评测 novel-view synthesis 质量。
+- [Towards Generalizable Vision-Language Robotic Manipulation: A Benchmark and LLM-Guided 3D Policy](https://arxiv.org/abs/2410.01345)：把操作基准与 LLM-guided 3D policy 配对，测试语言条件策略能否跨物体、布局和三维动作约束泛化。
 - [SPACE](https://arxiv.org/abs/2410.06468)（[开源代码](https://github.com/apple/ml-space-benchmark)）：评什么：前沿模型的空间认知，覆盖导航式大尺度空间、物体形状/布局和空间注意/记忆；核心思想：把认知科学中的经典空间任务改写成文本与视觉双呈现协议，用来区分语言记忆、视觉空间表征和具身导航能力。
+- [Perceptual Quality Assessment of Trisoup-Lifting Encoded 3D Point Clouds](https://arxiv.org/abs/2410.06689)：为 Trisoup-Lifting 编码点云构建 WPC6.0，并评测无需完整解码的 bitstream-layer 无参考 PCQA。
+- [Perceptual Quality Assessment of Octree-RAHT Encoded 3D Point Clouds](https://arxiv.org/abs/2410.06729)：为 Octree-RAHT 编码点云构建 WPC5.0，并从几何和纹理码流因子评测无参考 PCQA。
+- [Do Vision-Language Models Represent Space and How? Evaluating Spatial Frame of Reference Under Ambiguities](https://arxiv.org/abs/2410.17385)：测试 VLM 在 ambiguous left-right、内在、相对或观察者中心描述冲突时，能否选择并维持正确的空间参考框架。
+- [3DGS-CD: 3D Gaussian Splatting-Based Change Detection for Physical Object Rearrangement](https://arxiv.org/abs/2411.03706)：用 3D Gaussian Splatting 场景表示评测物体实际重排后的变化检测，关注场景级空间差异而非单帧线索。
+- [An Empirical Analysis on Spatial Reasoning Capabilities of Large Multimodal Models](https://arxiv.org/abs/2411.06048)：对大多模态模型进行空间推理实证测试，定位感知、关系抽取和多步空间推断各自的失败点。
+- [Evaluating the Generation of Spatial Relations in Text and Image Generative Models](https://arxiv.org/abs/2411.07664)：用十类空间介词测试 LLM 与 text-to-image 模型，并把文本输出转为视觉场景，使跨模态 spatial-relation generation 可比较。
+- [LLM4DS: Evaluating Large Language Models for Data Science Code Generation](https://arxiv.org/abs/2411.11908)：主要评测 data-science code generation；在本页的相关性限于可执行流程中的图表、可视化和数据布局任务，而非直接空间感知。
+- [HELVIPAD: A Real-World Dataset for Omnidirectional Stereo Depth Estimation](https://arxiv.org/abs/2411.18335)：提供真实世界 omnidirectional stereo depth estimation 数据，评估 360 度几何恢复，而不只限于窄视场 stereo。
+- [GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks](https://arxiv.org/abs/2411.19325)：在遥感解译、地图或地点推理、地理视觉问答等 geospatial tasks 上 benchmark VLM。
+- [Real-Time Metric-Semantic Mapping for Autonomous Navigation in Outdoor Environments](https://arxiv.org/abs/2412.00291)：评测户外导航中的实时 metric-semantic mapping，衡量系统能否结合几何、语义标签和可通行场景结构。
+- [MixedGaussianAvatar: Realistically and Geometrically Accurate Head Avatar via Mixed 2D-3D Gaussians](https://arxiv.org/abs/2412.04955)：评测混合 2D-3D Gaussians 的头部 avatar 重建与渲染，强调几何准确性、真实感和面部细节保留。
+- [Extrapolated Urban View Synthesis Benchmark](https://arxiv.org/abs/2412.05256)：在外推相机位姿下评测自动驾驶场景的 novel-view synthesis，揭示仅用插值视角协议容易掩盖的城市重建过拟合。
 - [3DSRBench](https://arxiv.org/abs/2412.07825)（[项目页](https://3dsrbench.github.io/)）：评什么：三维空间推理的综合能力；核心思想：把距离、方向、遮挡、视角转换等 3D 推理需求组织成系统化题型，是 SPAR-Bench 引用链中的强基线。
+- [GT23D-Bench: A Comprehensive General Text-to-3D Generation Benchmark](https://arxiv.org/abs/2412.09997)：提供 40 万个 3D assets、层级 captions 和十项指标，用于评测通用 text-to-3D generation 的文本-三维对齐与内在 3D 质量。
+- [Do large language vision models understand 3D shapes?](https://arxiv.org/abs/2412.10908)：测试 LVLM 在方向、材质和纹理变化下匹配同一 3D shape 的能力，并与人类 shape abstraction 表现比较。
 - [VSI-Bench](https://arxiv.org/abs/2412.14171)（[开源代码](https://github.com/vision-x-nyu/thinking-in-space)）：评什么：真实空间中的视觉空间记忆与回忆；核心思想：用场景观察、记忆保持和空间问答检验 MLLM 是否能形成稳定的空间表征，而不只是识别单帧内容。
+- [Dora: Sampling and Benchmarking for 3D Shape Variational Auto-Encoders](https://arxiv.org/abs/2412.17808)：提出 Dora-bench 评测 3D shape VAE reconstruction，重点评分 latent representation 是否保留 sharp-edge 区域和细粒度几何。
 - [MapEval](https://arxiv.org/abs/2501.00316)（[开源代码](https://github.com/MapEval/MapEval-API)）：评什么：地图/地理空间推理与路线、周边、地点信息检索；核心思想：把 map tool、异构地理上下文与组合推理放进同一评测协议。
+- [ViGiL3D: A Linguistically Diverse Dataset for 3D Visual Grounding](https://arxiv.org/abs/2501.01366)：用多样语言模式评测 3D visual grounding，测试开放词汇方法能否在三维场景中根据分布外 prompt 定位被指称物体。
+- [CULTURE3D: A Large-Scale and Diverse Dataset of Cultural Landmarks and Terrains for Gaussian-Based Scene Rendering](https://arxiv.org/abs/2501.06927)：提供无人机采集的地标和地形场景及密集空间结构，用于评测大规模 Gaussian-based reconstruction 与 rendering。
+- [Scalable Benchmarking for Ego-Motion and 3D Reconstruction from Noisy Video](https://arxiv.org/abs/2501.14319)：提供 noisy-video 合成、基准和鲁棒学习流程，用于 ego-motion estimation 与 3D reconstruction。
+- [Exploring Primitive Visual Measurement Understanding and the Role of Output Format in Learning in Vision-Language Models](https://arxiv.org/abs/2501.15144)：评测 VLM 对基础视觉测量的理解。核心思想：用可控二维形状配置考察位置、遮挡、旋转、大小、颜色与输出格式影响。
+- [3DSES](https://arxiv.org/abs/2501.17534)：提供室内 LiDAR point-cloud segmentation 数据集，并结合真实标签与来自 3D model 的伪标签。
 - [RefDrone](https://arxiv.org/abs/2502.00392)：评测无人机场景中的指代表达理解。核心思路是用空中视角目标和关系密集语言，测试模型能否在尺度、视角和空间关系歧义下完成 grounding。
 - [Hypo3D](https://arxiv.org/abs/2502.00954)：评什么：三维 hypothetical reasoning；核心思想：让模型对“如果物体/视角/状态变化会怎样”的反事实空间问题作答，补足静态关系识别之外的想象式 3D 推理。
-- [ERQA](https://github.com/embodiedreasoning/ERQA)：评什么：具身/物理环境相关的推理问答（embodied reasoning QA），包含空间关系、行动与物理常识等；核心思想：把“空间理解”放入具身语境，用更接近机器人场景的问答形式测试模型的物理与空间推断。
+- [Mosaic3D: Foundation Dataset and Model for Open-Vocabulary 3D Segmentation](https://arxiv.org/abs/2502.02548)：构建跨三维场景数据集的 Mosaic3D-5.6M mask-text pairs，并在 ScanNet200、Matterport3D 和 ScanNet++ 上评测开放词汇 3D semantic 与 instance segmentation。
+- [Spatial457: A Diagnostic Benchmark for 6D Spatial Reasoning of Large Multimodal Models](https://arxiv.org/abs/2502.08636)：面向多模态模型 6D 空间推理的诊断基准。核心思想是评测三维位置、朝向和空间关系等精确能力，补足普通 2D 视觉空间问答。
+- [MITO: A Millimeter-Wave Dataset and Simulator for Non-Line-of-Sight Perception](https://arxiv.org/abs/2502.10259)：采集遮挡物体的 mmWave、RGB-D、mask 和原始雷达数据，并配套仿真器，评测 non-line-of-sight segmentation 与 classification。
+- [Defining and Evaluating Visual Language Models' Basic Spatial Abilities: A Perspective from Psychometrics](https://arxiv.org/abs/2502.11859)：提供可复用评测目标、排行榜或测量协议。
+- [GS-QA](https://arxiv.org/abs/2502.13196)：面向 Gaussian Splatting view synthesis 的综合质量评估 benchmark。
+- [Geolocation with Real Human Gameplay Data: A Large-Scale Dataset and Human-Like Reasoning Framework](https://arxiv.org/abs/2502.13759)：提供地理定位、空间辅助或 3D 推理基准或数据集。
+- [Forgotten Polygons: Multimodal Large Language Models are Shape-Blind](https://arxiv.org/abs/2502.15969)：多模态模型的形状与多边形理解失效评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [From Text to Space: Mapping Abstract Spatial Models in LLMs during a Grid-World Navigation Task](https://arxiv.org/abs/2502.16690)：通过 grid-world 导航任务探测 LLM 的文本到空间表征。
+- [SLABIM: A SLAM-BIM Coupled Dataset in HKUST Main Building](https://arxiv.org/abs/2502.16856)：发布真实建筑中的 SLAM trajectory 与 BIM geometry 配对数据，支持定位、建图和建筑模型对齐评测。
+- [Multi-Dimensional Quality Assessment for Text-to-3D Assets: Dataset and Model](https://arxiv.org/abs/2502.16915)：用与人类偏好对齐的多维评分和学习式评估模型评测文本到 3D 资产质量，为几何、纹理、语义和整体 3D 生成保真度提供评估轴。
+- [SpecDM: Hyperspectral Dataset Synthesis with Pixel-level Semantic Annotations](https://arxiv.org/abs/2502.17056)：补充空间理解方向的基准、数据集、指标或评测协议。
+- [GLUE3D: General language understanding evaluation for 3D point clouds](https://doi.org/10.1016/j.inffus.2025.104007)：评测 3D 点云上的通用语言理解能力；核心思想：把语言理解评测从文本和图像扩展到三维空间表示。
+- [VSP: Diagnosing the Dual Challenges of Perception and Reasoning in Spatial Planning Tasks for MLLMS](https://doi.org/10.1109/iccv51701.2025.00219)：类型：benchmark/评测协议。核心价值：为 1.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [IllusionBench: A Large-scale and Comprehensive Benchmark for Visual Illusion Understanding in Vision-Language Models](https://doi.org/10.1109/icme59968.2025.11208962)：评测 VLM 对视觉错觉的理解；核心思想是用大规模错觉样本检验模型的感知鲁棒性和容易诱发视觉幻觉的推理弱点。
+- [Bridging the reality gap: A benchmark for physical reasoning in general world models with various physical phenomena beyond mechanics](https://doi.org/10.1016/j.eswa.2025.126548)：评测空间与物理推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [FoREST: Frame of Reference Evaluation in Spatial Reasoning Tasks](https://arxiv.org/abs/2502.17775)：评测空间任务中的参照系推理，检验模型能否保持视角与坐标假设。
+- [SSL4EO-S12 v1.1: A Multimodal, Multiseasonal Dataset for Pretraining, Updated](https://arxiv.org/abs/2503.00168)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [From Dataset to Real-world: General 3D Object Detection via Generalized Cross-domain Few-shot Learning](https://arxiv.org/abs/2503.06282)：提出面向空间、三维与几何推理的基准、数据集或评测协议。
+- [EscapeCraft: A 3D Room Escape Environment for Benchmarking Complex Multimodal Reasoning Ability](https://arxiv.org/abs/2503.10042)：可作为空间理解与视觉定位的Bench候选；核心关注“A 3D Room Escape Environment for Benchmarking Complex Multimodal Reasoning Ability”。
+- [OSMa-Bench: Evaluating Open Semantic Mapping Under Varying Lighting Conditions](https://arxiv.org/abs/2503.10331)：评测光照变化下的 open semantic mapping，测试建图系统能否在照明变化中保持物体级语义一致性。
+- [Open3DVQA: A Benchmark for Comprehensive Spatial Reasoning with Multimodal Large Language Model in Open Space](https://arxiv.org/abs/2503.11094)：可作为空间与三维推理的 Bench 候选：围绕 Open3DVQA: A Benchmark for Comprehensive Spatial Reasoning with Multimodal Large Language Model in Open Space 提供可比较的评测任务、数据或分析协议。
+- [NuPlanQA: A Large-Scale Dataset and Benchmark for Multi-View Driving Scene Understanding in Multi-Modal Large Language Models](https://arxiv.org/abs/2503.12772)：评估多模态大模型对多视角驾驶场景的理解。
+- [CAT-3DGS Compression Benchmark](https://arxiv.org/abs/2503.12862)：评估 efficient 3DGS compression，补充空间表示压缩 benchmark。
+- [MM-Spatial / CA-VQA](https://arxiv.org/abs/2503.13111)：提供 3D 空间理解的监督数据和评测 benchmark，覆盖室内场景中的空间关系、尺度和距离估计以及 3D grounding。
+- [MMR: A Large-scale Benchmark Dataset for Multi-target and Multi-granularity Reasoning Segmentation](https://arxiv.org/abs/2503.13881)：提供面向视觉语言模型的大规模多目标、多粒度推理分割基准。
+- [CoSpace](https://arxiv.org/abs/2503.14161)：评估 VLM 的连续空间感知能力。核心思想是使用静态视点下连续转向获得的图像序列，测试模型能否重建并推理连续空间，而不是只理解孤立视角。
+- [Can Large Vision Language Models Read Maps Like a Human?](https://arxiv.org/abs/2503.14607)：像素地图导航与路径规划评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Panoptic-CUDAL: Rural Australia Point Cloud Dataset in Rainy Conditions](https://arxiv.org/abs/2503.16378)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Beyond Semantics: Rediscovering Spatial Awareness in Vision-Language Models](https://arxiv.org/abs/2503.17349)：提供可复用评测目标、排行榜或测量协议。
+- [4D-Bench: Benchmarking Multi-Modal Large Language Models for 4D Object Understanding](https://arxiv.org/abs/2503.17827)：多模态大模型 4D 物体理解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [ClaraVid: A Holistic Scene Reconstruction Benchmark from Aerial Perspective with Delentropy-Based Complexity Profiling](https://arxiv.org/abs/2503.17856)：提供航拍视角的整体场景重建基准，并包含场景复杂度画像。
+- [GeoBenchX: Benchmarking LLMs in Agent Solving Multistep Geospatial Tasks](https://arxiv.org/abs/2503.18129)：评测大模型智能体解决多步地理空间任务的能力，强调地图推理、工具调用与空间工作流执行。
+- [DynOPETs: A Versatile Benchmark for Dynamic Object Pose Estimation and Tracking in Moving Camera Scenarios](https://arxiv.org/abs/2503.19625)：DynOPETs 补充空间基准，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](https://arxiv.org/abs/2503.19764)：《OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations》为Spatial补充基准、数据集、指标或评测协议。
+- [LEGO-Puzzles: How Good Are MLLMs at Multi-Step Spatial Reasoning?](https://arxiv.org/abs/2503.19990)：LEGO-Puzzles 评测多步空间推理，适合 Spatial Bench。
+- [MATHGLANCE: Multimodal Large Language Models Do Not Know Where to Look in Mathematical Diagrams](https://arxiv.org/abs/2503.20745)：可作为空间理解与视觉定位的Bench候选；核心关注“Multimodal Large Language Models Do Not Know Where to Look in Mathematical Diagrams”。
+- [Visual Jenga](https://arxiv.org/abs/2503.21770)：提出通过 counterfactual object removal 与 inpainting 发现场景中物理和几何依赖关系的任务。
+- [Unveiling the Mist over 3D Vision-Language Understanding: Object-centric Evaluation with Chain-of-Analysis](https://arxiv.org/abs/2503.22420)：面向 3D 视觉语言理解的对象中心评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [SPAR-Bench](https://arxiv.org/abs/2503.22976)（[开源代码](https://github.com/fudan-zvg/SPAR)）：评什么：VLM 的三维空间感知与推理，覆盖单视角和多视角输入；核心思想：从带三维真值的场景生成多层级空间问答，兼顾深度、距离、关系与想象式空间推理。
 - [Compositional-ARC](https://arxiv.org/abs/2504.01445)：评什么：抽象空间推理中的系统泛化。核心思想：测试模型能否把平移、旋转等已知几何变换组合到未见过的新情形，而不是记忆单个 ARC 风格模式。
-- [PhysBench](https://physbench.github.io/#leaderboard)：评什么：物理世界理解与空间/因果推理。核心思想：把空间关系、物体运动、稳定性和交互结果预测放进同一榜单协议，用于筛选具备物理 grounding 的空间推理模型。
+- [FIORD](https://arxiv.org/abs/2504.01732)：提供带 LiDAR ground truth 的 fisheye indoor-outdoor 数据，用于 3D scene reconstruction benchmarking。
+- [NuScenes-SpatialQA: A Spatial Understanding and Reasoning Benchmark for Vision-Language Models in Autonomous Driving](https://arxiv.org/abs/2504.03164)：评估多视角驾驶场景中的 VLM 空间理解能力。
+- [TDBench: A Benchmark for Top-Down Image Understanding with Reliability Analysis of Vision-Language Models](https://arxiv.org/abs/2504.03748)：评测 VLM 的 top-down image understanding 与可靠性，空间视角明确。
+- [Objaverse++: Curated 3D Object Dataset with Quality Annotations](https://arxiv.org/abs/2504.07334)： 整理带质量标注的 3D object 数据，为空间生成与理解模型提供更干净的数据资源。
 - [AerialVG](https://arxiv.org/abs/2504.07836)：评估航拍视角下的视觉 grounding。核心思路是用高分辨率航拍图像和强调位置关系的描述，测试模型在外观线索不足时能否依靠空间关系定位目标。
+- [Gen3DEval: Using vLLMs for Automatic Evaluation of Generated 3D Objects](https://arxiv.org/abs/2504.08125)：评测spatial, 3D, reconstruction, or grounded perception，补充该能力方向的基准或挑战设置。
+- [Terramesh: A Planetary Mosaic of Multimodal Earth Observation Data](https://arxiv.org/abs/2504.11172)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [DeepWheel: Generating a 3D Synthetic Wheel Dataset for Design and Performance Evaluation](https://arxiv.org/abs/2504.11347)：提供面向Spatial能力的基准、数据集或评测协议。
 - [All-Angles](https://arxiv.org/abs/2504.15280)（[开源代码](https://github.com/Chenyu-Wang567/All-Angles-Bench)）：评什么：多视角（含 egocentric/exocentric）理解与跨视角一致推理；核心思想：同一场景不同视角下的对齐与推理是空间智能的关键难点，基准用多视角 QA 显式暴露这一点。
-- [PointArena（PointBench）](https://arxiv.org/abs/2505.09990)（[开源代码](https://github.com/pointarena/pointarena)）：评什么：pointing / 指向能力（让模型在图上点选/定位目标或区域）；核心思想：把空间 grounding 从文本描述提升到可操作的“指点”输出，使定位误差可度量。
+- [CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting](https://arxiv.org/abs/2504.15485)：通过遮挡对象计数评测空间推理。核心思想：要求 VLM 推断遮挡物后方的模式延续，而不是只识别可见对象。
+- [Vision language models are unreliable at trivial spatial cognition](https://arxiv.org/abs/2504.16061)：测试视觉语言模型在简单空间认知任务上的失败，暴露聚合 VQA 分数难以显示的低层空间缺陷。
+- [REHEARSE-3D: A Multi-Modal Emulated Rain Dataset for 3D Point Cloud De-Raining](https://arxiv.org/abs/2504.21699)：提供面向空间、三维、场景、点云或几何推理能力的基准、数据集、评分规程或评测协议。
+- [SITE: Towards Spatial Intelligence Thorough Evaluation](https://arxiv.org/abs/2505.05456)：类型：benchmark/评测协议。核心价值：为 1.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [RefRef: A Synthetic Dataset and Benchmark for Reconstructing Refractive and Reflective Objects](https://arxiv.org/abs/2505.05848)：提供用于重建折射和反射物体的合成场景，针对透明和镜面表面这类普通多视角几何或 radiance-field 方法容易失败的情况。
+- [Anymate: A Dataset and Baselines for Learning 3D Object Rigging](https://arxiv.org/abs/2505.06227)： 提供 3D object rigging 数据与基线，支撑 articulation-ready 空间资产生成评测。
+- [Distance Perception in Vision-Language Models for Blind Navigation and Scene Interpretation](https://doi.org/10.1109/aicaps68631.2026.11452885)：用明确任务、协议或数据集评测spatial reasoning。
+- [OpenCompass Open LMM Spatial Leaderboard](https://huggingface.co/spaces/opencompass/openlmm_spatial_leaderboard)：聚合多模态模型在常见感知与空间推理基准上的结果；核心思想是提供单一数据集之外的跨基准空间推理排名入口。
+- [FedRS-Bench: Realistic Federated Learning Datasets and Benchmarks in Remote Sensing](https://arxiv.org/abs/2505.08325)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [PointArena（PointBench）](https://arxiv.org/abs/2505.09990)（[arena/榜单](https://pointarena.github.io/)；[开源代码](https://github.com/pointarena/pointarena)）：评什么：pointing / 指向能力（让模型在图上点选/定位目标或区域）；核心思想：把空间 grounding 从文本描述提升到可操作的“指点”输出，使定位误差可度量。
+- [MIRAGE: A Multi-modal Benchmark for Spatial Perception, Reasoning, and Intelligence](https://arxiv.org/abs/2505.10604)：面向空间感知、推理与智能的多模态 benchmark；核心思想是结合物体属性、空间关系和动态推理，诊断空间理解缺口。
+- [GeoGrid-Bench: Can Foundation Models Understand Multimodal Gridded Geo-Spatial Data?](https://arxiv.org/abs/2505.10714)：评测空间与物理推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [MMS-VPR: Multimodal Street-Level Visual Place Recognition Dataset and Benchmark](https://arxiv.org/abs/2505.12254)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [SPaRC: A Spatial Pathfinding Reasoning Challenge](https://arxiv.org/abs/2505.16686)：二维网格寻路与规则约束空间推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [SpatialScore](https://arxiv.org/abs/2505.17012)：面向 multimodal spatial intelligence 的综合 benchmark。核心思想是用人工验证样本覆盖多种视觉数据类型、输入模态和 30 个空间任务，并结合数据驱动与 agent-based 方法分析和改进空间能力。
+- [MultiSPA / Multi-SpatialMLLM](https://arxiv.org/abs/2505.17015)：提供大规模多帧 3D/4D 空间数据和 benchmark，用于测试深度、对应关系、动态感知和多帧空间推理。
+- [Render-FM: A Foundation Model for Real-time Photorealistic Volumetric Rendering](https://arxiv.org/abs/2505.17338)：Render-FM: A Foundation Model for Real-time Photorealistic Volumetric Rendering 补充空间与三维能力方向的基准、数据集、指标或评测协议。
+- [USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning of LLMs as Urban Agents](https://arxiv.org/abs/2505.17572)：评测空间推理。核心思想：围绕论文中的任务、数据或协议（Benchmarking and Dissecting Spatiotemporal Reasoning of LLMs as Urban Agents）形成可复用比较基准。
+- [GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs](https://arxiv.org/abs/2505.17653)：GeoGramBench 评测几何程序推理，适合空间/几何推理 benchmark。
+- [Efficient 3DGS Compression Benchmark](https://arxiv.org/abs/2505.18197)：提供 efficient 3D Gaussian splatting 与 Gaussian point-cloud compression 的 benchmark and dataset。
+- [ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](https://arxiv.org/abs/2505.18675)：面向交通地图的细粒度视觉推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Can Multimodal Large Language Models Understand Spatial Relations?](https://arxiv.org/abs/2505.19015)：提供可复用评测目标、排行榜或测量协议。
+- [MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents](https://arxiv.org/abs/2505.20148)：它明确评测空间理解、空间规划或几何关系，适合补充 spatial Bench。
+- [MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](https://arxiv.org/abs/2505.20426)：类型：benchmark/评测协议。核心价值：为 1.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [DynamicVL: Benchmarking Multimodal Large Language Models for Dynamic City Understanding](https://arxiv.org/abs/2505.21076)：动态城市与地球观测理解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [ViewSpatial-Bench](https://arxiv.org/abs/2505.21500)（[开源代码](https://github.com/ZJU-REAL/ViewSpatial-Bench)）：评什么：多视角空间定位与视角转换；核心思想：同时考察 camera-centered 和 human-centered 空间框架，暴露模型从自我中心推理泛化到异我中心推理时的性能断层。
-- [Ego3D-Bench](https://vbdi.github.io/Ego3D-Bench-webpage/#leaderboard)：评什么：第一视角三维空间理解。核心思想：用 egocentric 观察中的深度、方向、视角转换和空间记忆任务检验模型是否能从自我中心视觉流中形成稳定三维表征。
-- [VLM4D](https://vlm4d.github.io/#leaderboard)：评什么：四维时空理解。核心思想：把动态三维场景、对象运动和跨时间空间关系纳入统一评测，补足静态图像空间关系 benchmark 对时间维度覆盖不足的问题。
-- [EASI Leaderboard Data](https://huggingface.co/datasets/lmms-lab-si/EASI-Leaderboard-Data/tree/main)：评什么：空间 VLM 多基准聚合榜单数据。核心思想：把 SPAR-Bench、MMSI-Bench、OmniSpatial、ViewSpatial、VSI-Bench 等空间推理结果放进统一数据入口，便于跨 benchmark 比较模型空间智能。
+- [SPR-128K: A New Benchmark for Spatial Plausibility Reasoning with Multimodal Large Language Models](https://arxiv.org/abs/2505.23265)：评测多模态大模型的空间合理性推理；核心思想是检查模型能否判断描述中的空间关系是否物理上合理。
+- [Quality Assessment of 3D Human Animation: Subjective and Objective Evaluation](https://arxiv.org/abs/2505.23301)：构建虚拟人动画主观评分数据集与客观预测器，用于评估非参数化人体模型场景中的感知真实感。
+- [ThinkGeo](https://arxiv.org/abs/2505.23752)：评测工具增强 agent 在遥感任务中的能力。核心思想是让查询基于卫星与航拍图像，要求结构化工具使用和多步规划，并同时评分推理步骤和最终答案。
 - [MMSI-Bench](https://arxiv.org/abs/2505.23764)（[开源代码](https://github.com/OpenRobotLab/MMSI-Bench)）：评什么：多图输入下的空间智能（multi-image spatial intelligence），要求模型在多张图之间建立空间一致理解；核心思想：用“多视角/多帧”输入显式测试跨图融合与空间关系推理，而不仅是单图问答。
+- [Point-MoE: Large-Scale Multi-Dataset Training with Mixture-of-Experts for 3D Semantic Segmentation](https://arxiv.org/abs/2505.23926)：提供面向Spatial能力的基准、数据集或评测协议。
+- [Seeing is Not Reasoning: MVPBench for Graph-based Evaluation of Multi-path Visual Physical CoT](https://arxiv.org/abs/2505.24182)：基于图结构的视觉物理链式推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Out of Sight, Not Out of Context? Egocentric Spatial Reasoning in VLMs Across Disjoint Frames](https://arxiv.org/abs/2505.24257)：评什么：在分离帧中评测第一人称视频的空间记忆和推理。
 - [CoSpace](https://openaccess.thecvf.com/content/CVPR2025/html/Zhu_CoSpace_Benchmarking_Continuous_Space_Perception_Ability_for_Vision-Language_Models_CVPR_2025_paper.html)：评什么：VLM 的连续空间感知。核心思想：超越离散的左/右、近/远标签，测试模型能否围绕连续空间布局推理。
 - [DepthCues](https://openaccess.thecvf.com/content/CVPR2025/html/Danier_DepthCues_Evaluating_Monocular_Depth_Perception_in_Large_Vision_Models_CVPR_2025_paper.html)：评什么：大视觉模型的单目深度感知。核心思想：测试模型是否能从单张图像理解深度线索，这是 3D 推理背后的基础空间感知能力。
 - [Spatial457](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Spatial457_A_Diagnostic_Benchmark_for_6D_Spatial_Reasoning_of_Large_CVPR_2025_paper.html)：评什么：大多模态模型的 6D 空间推理。核心思想：诊断位置、旋转和视角相关失败，补足简单二维空间关系测试看不到的问题。
+- [PhysGaia](https://arxiv.org/abs/2506.02794)：以物理感知的多体交互评测动态新视角合成，将空间生成质量与物理一致的场景动态联系起来。
+- [Auto-Annotation with Expert-Crafted Guidelines: A Study through 3D LiDAR Detection Benchmark](https://arxiv.org/abs/2506.02914)：提出面向空间、三维与几何推理的基准、数据集或评测协议。
 - [OmniSpatial](https://arxiv.org/abs/2506.03135)：评什么：综合空间推理，覆盖 dynamic reasoning、complex spatial logic、spatial interaction 与 perspective-taking；核心思想：以认知心理学能力轴组织 50 个细粒度子类，避免只测 left/right、near/far 等低层关系。
 - [RefSpatial-Bench](https://arxiv.org/abs/2506.04308)（[开源代码](https://github.com/Zhoues/RoboRefer)）：评什么：空间指代与空间关系理解（referring + spatial relations），常面向机器人/具身场景；核心思想：把空间 referring 任务定义为可复现的 runtime，并更强调对三维/相对位置语义的精确落地。
+- [STARE](https://arxiv.org/abs/2506.04633)：通过视觉模拟评测多模态空间认知；核心思想是覆盖 2D 与 3D 变换、立方体展开图折叠、七巧板式推理和真实空间任务，强调多步视觉模拟能力。
+- [From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes](https://arxiv.org/abs/2506.04897)：评测 3D 场景中的多层级视觉 grounding，超出单一物体引用；核心思想是检查模型能否把短语定位到任意 3D 位置、区域和空间目标。
+- [SAVVY: Spatial Awareness via Audio-Visual LLMs through Seeing and Hearing](https://arxiv.org/abs/2506.05414)：类型：benchmark/评测协议。核心价值：为 1.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [SpaCE-10](https://arxiv.org/abs/2506.07966)：评测 MLLM 的组合式空间智能。核心思想：定义原子空间能力并组合成更高层任务，在真实室内场景上覆盖点云和选择题等设置。
+- [GIQ](https://arxiv.org/abs/2506.08194)：评什么：围绕模拟与真实多面体的 3D 几何推理。核心思想：将图像与 3D mesh 配对，覆盖多类多面体，并测试重建、对称性、心理旋转和形状属性推理，暴露 VLM 在普通物体识别之外的几何理解短板。
+- [IntPhys 2: Benchmarking Intuitive Physics Understanding In Complex Synthetic Environments](https://arxiv.org/abs/2506.09849)：评测复杂合成环境中的 intuitive physics understanding。核心思想是用受控场景测试物体交互和因果预期等物理世界推理。
+- [SIRI-Bench: Challenging VLMs' Spatial Intelligence through Complex Reasoning Tasks](https://arxiv.org/abs/2506.14512)：类型：benchmark/评测协议。核心价值：为 1.7.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models](https://arxiv.org/abs/2506.18385)：提供 InternSpatial-Bench 评估 VLM 空间推理。
+- [MindCube: Spatial Mental Modeling from Limited Views](https://arxiv.org/abs/2506.21458)：从有限视角进行空间心智建模的基准；核心思想是评测模型能否从局部观测推断隐藏 3D 结构。
 - [MARBLE](https://arxiv.org/abs/2506.22992)：评什么：多模态空间推理与规划；核心思想：用 M-Portal 和 M-Cube 两类任务考察模型在视觉、物理和空间约束下进行多步计划构造与理解的能力。
 - [IR3D-Bench](https://arxiv.org/abs/2506.23329)（[项目页](https://ir3d-bench.github.io/)；[开源代码](https://github.com/LiuHengyu321/IR3D-Bench)；[数据集](https://huggingface.co/datasets/Piang/IR3D-Bench)）：评什么：不完整三维重建中的 3D scene graph generation。核心思想：把真实 3D 重建缺失、噪声和关系推断放进同一协议，检验模型能否在不完美空间证据下恢复场景关系。
+- [Geolocation Capability Evaluation for MLLMs](https://arxiv.org/abs/2506.23481)：评测多模态大模型的地理定位能力及相关隐私风险，为从视觉证据推断位置补充空间基准线索。
 - [PAC Bench](https://arxiv.org/abs/2506.23725)（[项目页](https://pacbench.github.io/)；[数据集](https://huggingface.co/datasets/lens-lab/pacbench)）：评什么：基础模型是否理解机器人操作策略的前置条件。核心思想：围绕物体属性、可供性和物理约束判断某个 manipulation policy 是否可执行，补足空间/具身任务中“能看见但不知道能不能做”的能力缺口。
+- [FORG3D: Flexible Object Rendering for Generating Vision-Language Spatial Reasoning Data from 3D Scenes](https://doi.org/10.18653/v1/2025.acl-demo.36)：评测 FORG3D: Flexible Object Rendering for Generating Vision-Language Spatial Reasoning Data from 3D Scenes，为 Spatial 补充可复用的数据集、基准、指标或评测协议。
+- [Infinite Ladder](https://arxiv.org/abs/2507.02978)：评估 VLM 的 spatial deformation reasoning。核心思想是生成可扩展步数的 2D 到 3D 形变任务，同时测试从操作到最终状态的正向推理和从最终状态反推操作的逆向推理。
+- [Spatio-Temporal LLM: Reasoning about Environments and Actions](https://arxiv.org/abs/2507.05258)：环境与动作时空推理提示评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [MagiC: Evaluating Multimodal Cognition Toward Grounded Visual Reasoning](https://arxiv.org/abs/2507.07297)：评测多模态认知中的 grounded visual reasoning；核心思想是通过图像证据驱动的问题区分真实视觉推理和模式化猜测。
 - [SpatialViz-Bench](https://arxiv.org/abs/2507.07610)：评测 MLLM 的空间可视化能力；核心思想是用认知空间可视化任务诊断心理旋转、空间变换和关系推理中的具体失败。
+- [FloorplanQA: A Benchmark for Spatial Reasoning in LLMs using Structured Representations](https://arxiv.org/abs/2507.07644)：评测 LLM 对结构化室内布局的空间推理；核心思想是基于 JSON 或 XML floorplan 设计距离、可见性、寻路和放置任务。
+- [SURPRISE3D: A Dataset for Spatial Understanding and Reasoning in Complex 3D Scenes](https://arxiv.org/abs/2507.07781)：SURPRISE3D 评测复杂 3D 场景中的空间理解与推理。
 - [TreeBench](https://arxiv.org/abs/2507.07999)（[开源代码](https://github.com/Haochen-Wang409/TreeVGR)）：评什么：视觉 grounded 推理的“可追溯证据链”与空间/关系推理可靠性；核心思想：把“回答正确”进一步约束为“能指认证据”，更强绑定到可验证的视觉证据组织。
+- [Plain-PCQA: No-Reference Point Cloud Quality Assessment by Analysis of Plain Visual and Geometrical Components](https://doi.org/10.1109/tcsvt.2024.3350180)：利用视觉与几何基础组件进行无参考点云质量评估。
+- [Zoom to Perceive Better: No-Reference Point Cloud Quality Assessment via Exploring Effective Multiscale Feature](https://doi.org/10.1109/tcsvt.2024.3362369)：通过基准、数据集或评测协议评估空间理解能力。
+- [Towards Co-Evaluation of Cameras, HDR, and Algorithms for Industrial-Grade 6DoF Pose Estimation](https://doi.org/10.1109/cvpr52733.2024.02141)：提供用于衡量空间理解能力的基准、数据集或评测协议。
+- [No-Reference Point Cloud Quality Assessment Through Structure Sampling and Clustering Based on Graph](https://doi.org/10.1109/tbc.2024.3482173)：提供用于衡量空间理解能力的基准、数据集或评测协议。
+- [Addressing challenges in industrial pick and place: A deep learning-based 6 Degrees-of-Freedom pose estimation solution](https://doi.org/10.1016/j.compind.2024.104130)：作为空间与三维能力的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [A Reduced-Reference Quality Assessment Metric for Textured Mesh Digital Humans](https://doi.org/10.1109/icassp48485.2024.10447636)：补充面向三维、空间、点云、高斯溅射或重建能力的基准、数据集、指标或评测协议。
+- [Large Language Models: Testing Their Capabilities to Understand and Explain Spatial Concepts (Short Paper)](https://doi.org/10.4230/lipics.cosit.2024.31)：补充面向空间与三维能力的评测、数据集或度量信号。
+- [Evaluating password strength based on information spread on social networks: A combined approach relying on data reconstruction and generative models](https://doi.org/10.1016/j.osnem.2024.100278)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的基准、数据集、指标或评测协议。
+- [Correctness Comparison of Open-Weight and Proprietary LLMs for Spatial Tasks](https://doi.org/10.1109/fmlds63805.2024.00027)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [MVItem: A Benchmark for Multi-View Cross-Modal Item Retrieval](https://doi.org/10.1109/access.2024.3447872)：评测 MVItem: A Benchmark for Multi-View Cross-Modal Item Retrieval，为 Spatial 补充可复用的数据集、基准、指标或评测协议。
+- [SAR-TEXT: A Large-Scale SAR Image-Text Dataset Built with SAR-Narrator and A Progressive Learning Strategy for Downstream Tasks](https://arxiv.org/abs/2507.18743)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [LRR-Bench: Left, Right or Rotate? Vision-Language models Still Struggle With Spatial Understanding Tasks](https://arxiv.org/abs/2507.20174)：评测左右与旋转等空间理解。核心思想：诊断 VLM 是否可靠处理空间关系与空间变换。
+- [GeoJSEval: An Automated Evaluation Framework for Large Language Models on JavaScript-Based Geospatial Computation and Visualization Code Generation](https://arxiv.org/abs/2507.20553)：评测基于 JavaScript 的地理空间计算与可视化代码生成。核心思路是检验模型是否理解地理空间 schema、前端库和可执行可视化行为，而不只是生成看似合理的代码片段。
+- [The Monado SLAM Dataset for Egocentric Visual-Inertial Tracking](https://arxiv.org/abs/2508.00088)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [From Pixels to Places: A Systematic Benchmark for Evaluating Image Geolocalization Ability in Large Language Models](https://arxiv.org/abs/2508.01608)：系统评测大模型的图像地理定位能力。
+- [VisualTrans: A Benchmark for Real-World Visual Transformation Reasoning](https://arxiv.org/abs/2508.04043)：评测真实世界视觉变换推理，检验模型能否推断变换过程，而不只是识别静态场景。
+- [Beyond the Visible: Benchmarking Occlusion Perception in Multimodal Large Language Models](https://arxiv.org/abs/2508.04059)：可作为空间理解与视觉定位的Bench候选；核心关注“Benchmarking Occlusion Perception in Multimodal Large Language Models”。
 - [B4DL](https://arxiv.org/abs/2508.05269)：评估多模态 LLM 对 4D LiDAR 的理解能力。核心思想：用面向该模态的标注和动态点云任务测试空间几何与时间交互，而不是只依赖图像或视频输入。
+- [SHREC 2025: Retrieval of Optimal Objects for Multi-modal Enhanced Language and Spatial Assistance (ROOMELSA)](https://arxiv.org/abs/2508.08781)：提供地理定位、空间辅助或 3D 推理基准或数据集。
+- [Advancing 3D Scene Understanding with MV-ScanQA Multi-View Reasoning Evaluation and TripAlign Pre-training Dataset](https://arxiv.org/abs/2508.11058)：为 3D 场景理解加入多视角推理评测和 TripAlign 预训练数据。
+- [Remove360: Benchmarking Residuals After Object Removal in 3D Gaussian Splatting](https://arxiv.org/abs/2508.11431)：围绕 Spatial 能力补充《Remove360: Benchmarking Residuals After Object Removal in 3D Gaussian Splatting》，作为 Bench 条目候选。
+- [Say It, See It: A Systematic Evaluation on Speech-Based 3D Content Generation Methods in Augmented Reality](https://arxiv.org/abs/2508.12498)：系统评测增强现实中的 speech-based 3D content generation，衡量语音命令能否转成可用且位置正确的三维对象。
+- [EASI](https://arxiv.org/abs/2508.13142)：评什么：MLLM 在既有与新增空间任务上的整体空间智能。核心思想：统一空间任务 taxonomy、评测协议、代码和 leaderboard data，用于比较空间感知、推理与规划能力。
+- [CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](https://arxiv.org/abs/2508.18753)：为 VLM 与专用 HOI 方法提供统一的人物交互评测。
+- [11Plus-Bench: Demystifying Multimodal LLM Spatial Reasoning with Cognitive-Inspired Analysis](https://arxiv.org/abs/2508.20068): 基于标准化空间能力测试评估多模态空间推理，并用专家标注刻画感知复杂度与推理过程。
+- [Understanding Space Is Rocket Science - Only Top Reasoning Models Can Solve Spatial Understanding Tasks](https://arxiv.org/abs/2509.02175)：它明确评测空间理解、空间规划或几何关系，适合补充 spatial Bench。
+- [GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](https://arxiv.org/abs/2509.04334)：面向 LVLM 的开放世界地理推理 benchmark。核心思想是结合视觉证据与空间世界知识来推断可能地点。
+- [Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](https://arxiv.org/abs/2509.06266)：Ego3D-Bench 评测第一视角多视图空间理解，适合 Spatial Bench。
+- [Human-in-the-Loop: Quantitative Evaluation of 3D Models Generation by Large Language Models](https://arxiv.org/abs/2509.07010)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Objectness Similarity: Capturing Object-Level Fidelity in 3D Scene Evaluation](https://arxiv.org/abs/2509.09143)：补充面向三维、空间、点云、高斯溅射或重建能力的基准、数据集、指标或评测协议。
+- [IMD: A 6-DoF Pose Estimation Benchmark for Industrial Metallic Objects](https://arxiv.org/abs/2509.11680)：为空间与三维理解补充基准、数据集、指标或评测协议。
+- [OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling](https://arxiv.org/abs/2509.12201)：提供面向 4D world modeling 的多领域多模态数据集，支持动态空间表示评测。
+- [EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](https://arxiv.org/abs/2509.12718)：评测局部可观测条件下的动态空间推理。核心思想是用局部可见迷宫与 match-2 消除任务测试空间理解、记忆和动态环境中的自适应规划。
+- [Layout-Aware OCR for Black Digital Archives with Unsupervised Evaluation](https://arxiv.org/abs/2509.13236)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [3D Gaussian Flats: Hybrid 2D/3D Photometric Scene Reconstruction](https://arxiv.org/abs/2509.16423)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [GeoPQA: Bridging the Visual Perception Gap in MLLMs for Geometric Reasoning](https://arxiv.org/abs/2509.17437)：评测 MLLM 几何推理中的视觉感知瓶颈；核心思想是先诊断模型能否感知推理所需的几何线索。
+- [SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models](https://arxiv.org/abs/2509.17664): 提出 MSMU 数据集和 MSMU-Bench，用于量化评估 3D 空间测量与理解，并结合 depth-encoded VLM 训练。
+- [TurnBack: A Geospatial Route Cognition Benchmark for Large Language Models through Reverse Route](https://arxiv.org/abs/2509.18173)：基于 reverse route 的地理空间路线认知 benchmark；核心思想是量化 LLM 能否从自然语言地理描述中推断路线和空间关系。
+- [RS3DBench: A Comprehensive Benchmark for 3D Spatial Perception in Remote Sensing](https://arxiv.org/abs/2509.18897)：评测遥感中的 3D spatial perception，聚焦地理空间三维结构、航拍或卫星视角以及场景尺度空间解译。
+- [SIBench](https://arxiv.org/abs/2509.18905)：评测 VLM 的视觉空间智能。核心思想：将近 20 个开源数据集组织为感知、空间理解和空间规划三个层级，揭示看见物体与推理三维空间结构之间的差距。
+- [Spatial Reasoning in Foundation Models: Benchmarking Object-Centric Spatial Understanding](https://arxiv.org/abs/2509.21922)：评测 Spatial Reasoning in Foundation Models: Benchmarking Object-Centric Spatial Understanding，为 Spatial 补充可复用的数据集、基准、指标或评测协议。
+- [Towards Fine-Grained Text-to-3D Quality Assessment: A Benchmark and A Two-Stage Rank-Learning Metric](https://arxiv.org/abs/2509.23841)：用组合式 prompts、大规模人工评分与两阶段 rank-learning metric 评估细粒度 text-to-3D 质量。
+- [Latent Visual Reasoning](https://arxiv.org/abs/2509.24251)：关注潜在空间与感知结构的视觉推理评测；核心思想是测试模型对文本未显式给出的隐含视觉关系进行推理。
+- [Blueprint-Bench](https://arxiv.org/abs/2509.25229)：要求 LLM、agent 与图像模型从公寓照片推断 2D 户型图，并按房间连通图与尺寸排序评分，用于比较空间智能。
+- [GeoSQL-Eval: First Evaluation of LLMs on PostGIS-Based NL2GeoSQL Queries](https://arxiv.org/abs/2509.25264)：用 GeoSQL-Bench 评测 LLM 的 PostGIS 自然语言到 GeoSQL 能力，覆盖概念理解、SQL 生成、schema 检索、执行准确性、鲁棒性和公开排行榜，补充地理空间数据库推理评测。
+- [SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](https://arxiv.org/abs/2509.25390)：评测空间推理；核心思想是用透视、旋转、3D 或连续空间变化暴露 VLM 弱点。
 - [MapIQ](https://openreview.net/forum?id=VSwRuGtB5n)：评什么：多模态大模型的地图问答。核心思想：在可视化地图界面下测试地理空间解释、地图语义和路线式推理。
-- [VideoGameBench](https://vgbench.com/#leaderboard)：评什么：视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏环境中，用任务完成和轨迹质量评估 agent 是否能把视觉空间关系转成连续动作。
+- [MapIQ: Benchmarking Multimodal Large Language Models for Map Question Answering](https://arxiv.org/abs/2507.11625)：补充面向空间与三维能力的评测、数据集或度量信号。
 - [STI-Bench](https://openaccess.thecvf.com/content/ICCV2025/html/Li_STI-Bench_Are_MLLMs_Ready_for_Precise_Spatial-Temporal_World_Understanding_ICCV_2025_paper.html)：评什么：MLLM 的精确时空世界理解。核心思想：连接静态空间推理和动态视频推理，要求模型在空间和时间上判断精确关系。
-- [DSI-Bench](https://arxiv.org/abs/2510.18873)：评什么：动态三维空间智能；核心思想：用近千个动态视频和九类 observer/object motion pattern，区分自运动、物体运动与相对空间关系推理。
-- [SpatialTree](https://spatialtree.github.io/#leaderboard)：评什么：树结构空间推理。核心思想：要求模型把复杂空间关系拆成层级化、可追溯的结构，观察空间推理是否能从局部关系组合到全局判断。
+- [MathSticks: A Benchmark for Visual Symbolic Compositional Reasoning with Matchstick Puzzles](https://arxiv.org/abs/2510.00483)：可作为空间理解与视觉定位的Bench候选；核心关注“A Benchmark for Visual Symbolic Compositional Reasoning with Matchstick Puzzles”。
+- [Understanding the Geospatial Reasoning Capabilities of LLMs: A Trajectory Recovery Perspective](https://arxiv.org/abs/2510.01639)：通过路网地图上的轨迹恢复评测 geospatial reasoning；核心思想是检查 LLM 是否能读取地图结构并恢复缺失路线证据。
+- [Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](https://arxiv.org/abs/2510.03863)：Spatial CAPTCHA 以生成式空间题检验人机差异，属于 spatial reasoning benchmark。
+- [AtomWorld](https://arxiv.org/abs/2510.04704)：在晶体材料上评估大语言模型空间推理，补充非生医范围的结构化科学空间基准。
+- [OBSR: Open Benchmark for Spatial Representations](https://arxiv.org/abs/2510.05879)：提出面向空间、三维与几何推理的基准、数据集或评测协议。
+- [Where on Earth? A Vision-Language Benchmark for Probing Model Geolocation Skills Across Scales](https://arxiv.org/abs/2510.10880)：评测跨尺度图像地理定位。核心思想：测试视觉识别、逐步推理和证据使用以定位地球上的地点。
+- [ODI-Bench: Can MLLMs Understand Immersive Omnidirectional Environments?](https://arxiv.org/abs/2510.11549)：面向沉浸式全景环境理解的 benchmark。核心思想是在 360 度视觉场景中测试 MLLM 的空间布局和视角推理能力。
+- [IL3D](https://arxiv.org/abs/2510.12095)：提供大规模 indoor-layout 数据、语言标注、benchmark 和 LLM-driven 3D scene generation baseline。
+- [Spatial-DISE](https://arxiv.org/abs/2510.13394)：基于认知分类评估 VLM 空间推理。核心思想：覆盖 intrinsic-static、intrinsic-dynamic、extrinsic-static 与 extrinsic-dynamic 四类空间推理，并提供评测与训练数据。
+- [Raindrop GS: A Benchmark for 3D Gaussian Splatting under Raindrop Conditions](https://arxiv.org/abs/2510.17719)：评测雨滴污染无约束图像和相机位姿估计时完整 3D Gaussian Splatting 重建流程的鲁棒性。
+- [DSI-Bench](https://arxiv.org/abs/2510.18873)（[结果页](https://dsibench.github.io/)）：评什么：动态三维空间智能；核心思想：用近千个动态视频和九类 observer/object motion pattern，区分自运动、物体运动与相对空间关系推理。
+- [Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](https://arxiv.org/abs/2510.19400): 提出 MV-RoboBench 评估机器人场景中的多视角空间推理，覆盖 spatial understanding 和 robotic execution 子任务。
+- [Toward A Better Understanding of Monocular Depth Evaluation](https://arxiv.org/abs/2510.19814)：分析单目深度指标对不同真值扰动的敏感性，指出现有指标对曲率错误不够敏感，并提出 relative-surface-normal 评分和可视化工具，使空间评测更贴近人类判断。
+- [PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding](https://arxiv.org/abs/2510.20155)： 提供细粒度、层级化 3D 部件理解数据集，可用于评测 part-aware spatial models。
+- [Stuck in the Matrix: Probing Spatial Reasoning in Large Language Models](https://arxiv.org/abs/2510.20198)：评什么：结构化网格中的文本空间推理。核心思想是用象限识别、几何变换、距离和多步空间操作测试模型。
+- [DogMo](https://arxiv.org/abs/2510.24117)：提供多视角 RGB-D 的 4D 犬类运动恢复数据集，扩展动态空间重建 benchmark。
 - [DecompSR](https://arxiv.org/abs/2511.02627)：评什么：分解式组合多跳空间推理。核心思想：程序化生成并校验任务，同时独立控制 productivity、substitutivity、overgeneralization 和 systematicity，用来诊断空间泛化失败点。
+- [IEC3D-AD: A 3D Dataset of Industrial Equipment Components for Unsupervised Point Cloud Anomaly Detection](https://arxiv.org/abs/2511.03267)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [VSI-SUPER](https://arxiv.org/abs/2511.04670)：视频空间 supersensing benchmark，包含长程视觉空间回忆和持续视觉空间计数任务，用于测试超出静态图像问答的空间认知。
+- [PALM Hand Prior](https://arxiv.org/abs/2511.05403)：提供 multi-subject hand prior 数据集与 baseline，补充手部空间表示评测线索。
+- [Referring Expressions as a Lens into Spatial Language Grounding in Vision-Language Models](https://arxiv.org/abs/2511.06146)：用指代表达理解评测 VLM 的空间语言 grounding；核心思想：测试模型能否把空间短语绑定到正确视觉目标。
+- [Perceptual Quality Assessment of 3D Gaussian Splatting: A Subjective Dataset and Prediction Metric](https://arxiv.org/abs/2511.08032)：评测退化 3D Gaussian Splatting 重建的感知质量。核心思路是结合受控主观数据集与直接作用于高斯基元的无参考预测器，使 3DGS 质量评估不再局限于渲染图像指标。
+- [Depth-Consistent 3D Gaussian Splatting via Physical Defocus Modeling and Multi-View Geometric Supervision](https://arxiv.org/abs/2511.10316)：Depth-Consistent 3D Gaussian Splatting via Physical Defocus Modeling and Multi-View Geometric Supervision 补充空间与三维能力方向的基准、数据集、指标或评测协议。
+- [Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](https://arxiv.org/abs/2511.10946)：评什么：评测 VLM 抽象三维感知和空间智能。
+- [VP-Bench](https://arxiv.org/abs/2511.11438)：用包含 30,000 个可视化提示、28 个模型的两阶段协议，评测 MLLM 是否能感知并利用 bounding boxes 等视觉提示。
+- [GeoX-Bench: Benchmarking Cross-View Geo-Localization and Pose Estimation Capabilities of Large Multimodal Models](https://arxiv.org/abs/2511.13259)：评测大多模态模型的跨视角地理定位和姿态估计能力；核心思想是检查模型能否把地面视角与俯视视角通过空间姿态推理连接起来。
+- [BEDLAM2.0](https://arxiv.org/abs/2511.14394)：提供运动中的合成人体与相机数据，用于动态人体空间建模的训练与评估。
+- [RoadBench](https://arxiv.org/abs/2511.18011)：评测城市道路标线与交通场景元素上的细粒度空间理解和推理；核心思想：用道路空间元素检验 MLLM 是否能处理普通空间 VQA 容易遗漏的布局、关系和推理细节。
+- [InfiniBench](https://arxiv.org/abs/2511.18200)：面向 visual spatial reasoning 的可定制 benchmark generator。核心思想是从自然语言场景描述合成参数化 3D 场景和视频，使评测能够按 scene complexity 隔离并分析模型失败模式。
+- [VibraVerse](https://arxiv.org/abs/2511.20422)：提供大规模几何-声学对齐数据集和几何到声音预测、声音引导形状重建、物理一致多模态表征学习等基准任务。
 - [SpatialBench](https://arxiv.org/abs/2511.21471)：评什么：MLLM 的层级化空间认知能力；核心思想：把空间智能拆成从基础观察到高层规划的五级框架，并用 15 类任务和能力导向指标衡量模型是否只会表面感知而缺少符号、因果和规划能力。
+- [Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation](https://arxiv.org/abs/2511.22121)：评测spatial, 3D, reconstruction, or grounded perception，补充该能力方向的基准或挑战设置。
+- [SRAM: Shape-Realism Alignment Metric for No Reference 3D Shape Evaluation](https://arxiv.org/abs/2512.01373)：提出无参考 3D shape realism metric，在没有真值网格时也能把生成几何与感知形状合理性对齐。
+- [Textured Geometry Evaluation: Perceptual 3D Textured Shape Metric via 3D Latent-Geometry Network](https://arxiv.org/abs/2512.01380)：用 latent geometry features 定义 textured 3D shape 的感知指标，同时评估表面形态与纹理-几何一致性。
+- [ReMindView-Bench](https://arxiv.org/abs/2512.02340)：评什么：多视角视觉空间推理。核心思想：系统改变视角模式和问题类型，测试 VLM 是否能在互补视角之间构建、对齐并维持空间心理模型，而不是只做单帧局部感知。
+- [HouseLayout3D](https://arxiv.org/abs/2512.02450)：评测野外全建筑尺度 3D layout estimation，并提供 training-free baseline。
+- [PoreTrack3D: A Benchmark for Dynamic 3D Gaussian Splatting in Pore-Scale Facial Trajectory Tracking](https://arxiv.org/abs/2512.02648)：评测 pore-scale facial trajectory tracking 中的动态 3DGS，强调变形面部几何的细粒度时间一致性。
 - [CartoMapQA](https://arxiv.org/abs/2512.03558)（[开源代码](https://github.com/ungquanghuy-kddi/CartoMapQA)）：评什么：制图地图理解与地理空间问答；核心思想：用符号识别、嵌入信息抽取、比例尺解释和路线推理等任务，暴露 VLM 在地图语义、OCR 与 geospatial reasoning 上的短板。
+- [RefBench-PRO](https://arxiv.org/abs/2512.06276)：用感知与推理导向案例评测 referring expression comprehension，检验模型是否能超越表面物体识别来完成 reference grounding。
+- [Voxify3D: Pixel Art Meets Volumetric Rendering](https://arxiv.org/abs/2512.07834)：围绕 Spatial 能力补充《Voxify3D: Pixel Art Meets Volumetric Rendering》，作为 Bench 条目候选。
+- [FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](https://arxiv.org/abs/2512.08016)：FRIEDA 评测地图和制图多步推理，适合 Spatial Bench。
+- [CoSPlan](https://arxiv.org/abs/2512.10342)：评估纠错式视觉顺序规划。核心思想是测试 VLM 能否识别非最优中间动作，并在迷宫导航、积木重排、图像重构和物体重组等任务中补全修正后的动作序列。
 - [MMSI-Video-Bench](https://arxiv.org/abs/2512.10863)（[开源代码](https://github.com/InternRobotics/MMSI-Video-Bench)）：评什么：视频输入下的空间智能；核心思想：用 1,106 个专家标注问题覆盖感知、规划、预测和跨视频推理，测试模型能否在连续视觉流中保持空间布局、运动和视角一致性。
+- [MultiEgo: A Multi-View Egocentric Video Dataset for 4D Scene Reconstruction](https://arxiv.org/abs/2512.11301)：提供用于 4D scene reconstruction 的多视角 egocentric video，评估从可穿戴或第一人称视角恢复动态场景。
+- [RealDrag: The First Dragging Benchmark with Real Target Image](https://arxiv.org/abs/2512.12287)：面向空间与三维能力，补充评测任务、数据集或基准协议。
+- [Emotional 3D Animation Generation in VR](https://arxiv.org/abs/2512.16081)：评估 VR 场景中情绪化 3D 动画生成模型，补充空间生成评测线索。
+- [R3ST: A Synthetic 3D Dataset with Realistic Trajectories](https://arxiv.org/abs/2512.16784)：为空间与三维理解补充基准、数据集、指标或评测协议。
+- [SceneDiff: A Benchmark and Method for Multiview Object Change Detection](https://arxiv.org/abs/2512.16908)：评测 multiview object change detection，并配套方法，把空间评测扩展到跨视角的场景级变化理解。
+- [R4D-Bench / 4D-RGPT](https://arxiv.org/abs/2512.17012)：评测 depth-aware dynamic scenes 中的 region-level 4D 理解。核心思想是在动态三维和四维视频问答中加入区域提示，要求模型围绕局部物体、深度和时间变化推理，而不只是理解整段视频语义。
+- [MMLANDMARKS: a Cross-View Instance-Level Benchmark for Geo-Spatial Understanding](https://arxiv.org/abs/2512.17492)：可作为“空间理解 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](https://arxiv.org/abs/2512.17495)：可作为空间理解与视觉定位的Bench候选；核心关注“Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation”。
+- [QuantiPhy: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](https://arxiv.org/abs/2512.19526)：面向 VLM 的定量物理推理 benchmark。核心思想是要求模型从视觉观察中推断物理和运动学量，而不只是回答定性 VQA 问题。
+- [Open-World Spatial Reasoning Benchmark](https://arxiv.org/abs/2512.19683)：在有度量真值的户外场景中评估空间推理。核心思想：使用行人视角视频、双目相机、LiDAR 与 GPS/IMU 生成可验证 3D 空间问题，超越简化室内场景。
+- [DSR Suite / DSR-Bench](https://arxiv.org/abs/2512.20557)：评估视频中的动态空间推理，包括 3D 几何、视角变化、物体轨迹和多物体交互。核心思想是用位姿、点云、掩码和轨迹等几何线索，从真实视频生成具备 4D 感知的训练与评测数据。
+- [GamiBench](https://arxiv.org/abs/2512.22207)：评什么：MLLM 的空间推理与 2D 到 3D 规划。核心思想：用包含可行和不可行折痕的折纸任务、多视角 VQA、跨视角一致性和物理可行性检查，评估整个推理过程而不仅是最终答案。
+- [RealX3D](https://arxiv.org/abs/2512.23437)：在 physically degraded 3D conditions 下评估 multi-view visual restoration and reconstruction。
+- [GeoBench: Rethinking Multimodal Geometric Problem-Solving via Hierarchical Evaluation](https://arxiv.org/abs/2512.24119)：面向多模态几何问题求解的分层 benchmark。核心思想是把视觉几何任务分层，区分感知、关系推理和最终求解中的失败。
+- [Thinking on Maps: How Foundation Model Agents Explore, Remember, and Reason Map Environments](https://arxiv.org/abs/2512.24504)：评测 foundation-model agents 在地图环境中的探索、记忆与推理；核心思想是把空间评测从静态地图问答推进到交互式经验驱动任务。
+- [RGBT-Ground Benchmark: Visual Grounding Beyond RGB in Complex Real-World Scenarios](https://arxiv.org/abs/2512.24561)：提供面向空间、三维、场景、点云或几何推理能力的基准、数据集、评分规程或评测协议。
+- [Splatwizard](https://arxiv.org/abs/2512.24742)：提供 3D Gaussian Splatting 压缩 benchmark toolkit，为空间表示压缩效率补充可复现评测。
+- [NoReGeo: Non-Reasoning Geometry Benchmark](https://arxiv.org/abs/2601.10254)：评什么：不依赖代数推理的 intrinsic geometric understanding。核心思想：先隔离模型是否编码空间关系，再讨论其是否会套用公式化几何解题流程。
+- [Spatial4D-Bench: A Versatile 4D Spatial Intelligence Benchmark](https://arxiv.org/abs/2601.00092)：Spatial4D-Bench 评测动态 4D spatial intelligence，适合 Spatial Bench。
+- [Can LLMs See Without Pixels? Benchmarking Spatial Intelligence from Textual Descriptions](https://arxiv.org/abs/2601.03590)：无像素文本描述下的空间智能评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [WHU-PCPR: A cross-platform heterogeneous point cloud dataset for place recognition in complex urban scenes](https://arxiv.org/abs/2601.06442)：提供复杂城市场景中的跨平台异构点云地点识别数据集，强调不同平台、传感器和采集条件下的定位泛化。
+- [Predicting When to Trust Vision-Language Models for Spatial Reasoning](https://arxiv.org/abs/2601.11644)：面向 VLM spatial reasoning 的可靠性 benchmark。核心思想是预测何时应信任视觉语言模型的空间关系回答，而不是把所有答案等同看待。
+- [CausalSpatial](https://arxiv.org/abs/2601.13304)：评测 object-centric causal spatial reasoning。核心思想：围绕碰撞、兼容性、遮挡和轨迹等任务询问物体运动后的后果，把空间评测从静态关系识别推进到因果结果预测。
+- [CityCube: Benchmarking Cross-view Spatial Reasoning on Vision-Language Models in Urban Environments](https://arxiv.org/abs/2601.14339)：评什么：城市环境中的跨视角空间推理。核心思想是用语义和几何复杂的城市视角测试空间理解、心理模拟和规划。
+- [PhysicsMind](https://arxiv.org/abs/2601.16007)：评什么：评测 VLM 和 video world model 的力学推理与预测。核心思想：围绕质心、杠杆平衡和牛顿惯性结合仿真与真实环境，同时测试视觉问答和生成运动是否遵守物理规律。
+- [m2sv: A Scalable Benchmark for Map-to-Street-View Spatial Reasoning](https://arxiv.org/abs/2601.19099)：可扩展的 map-to-street-view 空间推理 benchmark；核心思想是检验模型能否连接俯视地图信息与街景视角。
+- [Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models](https://arxiv.org/abs/2601.20354)：可作为空间理解与视觉定位的Bench候选；核心关注“Benchmarking Spatial Intelligence of Text-to-Image Models”。
+- [GeoRC: A Benchmark for Geolocation Reasoning Chains](https://arxiv.org/abs/2601.21278)：补充地理定位推理链基准。
+- [Lost in Space? Vision-Language Models Struggle with Relative Camera Pose Estimation](https://arxiv.org/abs/2601.22228)：用明确任务、协议或数据集评测spatial reasoning。
+- [MentisOculi](https://arxiv.org/abs/2602.02465)：用于心象推理的程序化 benchmark suite。核心思想是测试统一多模态模型能否在多步问题中形成、保持并操作视觉表征。
+- [HY3D-Bench](https://arxiv.org/abs/2602.03907)：评测 3D 资产生成质量，使几何、语义与可控性能够在空间生成模型之间比较。
+- [DRMOT](https://arxiv.org/abs/2602.04692)：提供用于 RGB-D referring multi-object tracking 的 dataset and framework。
+- [IndustryShapes: An RGB-D Benchmark dataset for 6D object pose estimation of industrial assembly components and tools](https://arxiv.org/abs/2602.05555)：提出面向空间、三维与几何推理的基准、数据集或评测协议。
+- [NVS-HO: A Benchmark for Novel View Synthesis of Handheld Objects](https://arxiv.org/abs/2602.05822)：评测手持物体的新视角合成，将以物体为中心的视角泛化补充为空间重建评估维度。
+- [Predicting Camera Pose from Perspective Descriptions for Spatial Reasoning](https://arxiv.org/abs/2602.06041)：把视角描述映射到相机位姿的空间推理评测；核心思想是测试模型是否理解视角几何，而不只是识别物体标签。
+- [MMEarth-Bench: Global Model Adaptation via Multimodal Test-Time Training](https://arxiv.org/abs/2602.06285)：可作为“空间理解 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [MapVerse: A Benchmark for Geospatial Question Answering on Diverse Real-World Maps](https://arxiv.org/abs/2602.10518)：评测多样真实地图上的地理空间问答；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [MathSpatial](https://arxiv.org/abs/2602.11635)：评测 MLLM 的数学空间推理能力；核心思想是使用经过验证的二维和三维教育几何题，尽量把空间推理从普通视觉感知噪声中分离出来。
+- [EPRBench: A High-Quality Benchmark Dataset for Event Stream Based Visual Place Recognition](https://arxiv.org/abs/2602.12919)：提供 event-stream visual place recognition 基准，并加入经 LLM 生成和人工修订的场景描述，把神经形态感知与空间地点识别评测连接起来。
+- [VisPhyWorld](https://arxiv.org/abs/2602.13294)：通过代码驱动的视频重建探测物理推理。核心思想是要求模型推断场景动力学并以程序方式重建，而不是只回答识别式 VQA。
+- [GPSBench](https://arxiv.org/abs/2602.16105)：评测 LLM 是否理解 GPS 坐标。核心思想是测试坐标数值与真实地理位置关系上的空间推理，而不只测地图图像或文字地名。
+- [SHREC 2025: Partial retrieval benchmark](https://doi.org/10.1016/j.cag.2025.104397)：提供 partial-shape retrieval benchmark，评估 3D 检索方法能否把不完整扫描或片段匹配到完整物体形状。
+- [HistCAD: A Constraint-Aware Parametric History-Based CAD Representation, Dataset, and Benchmark with Industrial Complexity](https://arxiv.org/abs/2602.19171)：提供具有工业复杂度的约束感知、参数化历史式 CAD 表示、数据集与基准。
+- [MentalBlackboard](https://arxiv.org/abs/2602.19357)：通过数学变换评估空间可视化能力。核心思想是在预测和规划设置中使用折纸、打孔等任务，测试 VLM 是否能在心理表征中操作空间结构。
+- [From Perception to Action: An Interactive Benchmark for Vision Reasoning](https://arxiv.org/abs/2602.21015)：面向动作约束视觉推理的交互式基准；核心思想是测试模型能否联合理解几何、接触、支撑关系和可行动作。
+- [SynthRender and IRIS Industrial Perception](https://arxiv.org/abs/2602.21141)：发布面向工业目标感知双向 sim-real transfer 的开源框架与数据集。
+- [PanoEnv: Exploring 3D Spatial Intelligence in Panoramic Environments with Reinforcement Learning](https://arxiv.org/abs/2602.21992)：提出面向全景环境的 VQA benchmark，专门考察三维空间理解与推理。
+- [Task-Oriented Spatial Representations for LLM-Based Spatial Reasoning: An Empirical Framework With Multi-Layer Controls](https://doi.org/10.1109/access.2026.3690723)：为空间推理方向补充一个基准、数据集或评测协议候选，可扩展该能力页的评测覆盖。
+- [Seeing Graphs Like Humans: Benchmarking Computational Measures and MLLMs for Similarity Assessment](https://arxiv.org/abs/2602.22416)：评测计算指标和 MLLM 在图相似性判断上的表现；核心思想是检验自动化和多模态判断是否符合人类对图结构相似性的视觉感知。
+- [Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](https://arxiv.org/abs/2602.22703)：评测 VLM 的几何感知能力。核心思想：把图形样例与 DSL 表示配对，以隔离几何感知失败。
+- [PointCoT: A Multi-modal Benchmark for Explicit 3D Geometric Reasoning](https://arxiv.org/abs/2602.23945)：构建 Point-Reason-Instruct，用显式链式推理评测多模态大模型的 3D 点云几何推理能力，重点考察几何依据充分的中间推理而不只是最终答案。
+- [IndoorGS: Geometric Cues Guided Gaussian Splatting for Indoor Scene Reconstruction](https://doi.org/10.1109/cvpr52734.2025.00087)：IndoorGS: Geometric Cues Guided Gaussian Splatting for Indoor Scene Reconstruction 补充空间与三维能力方向的基准、数据集、指标或评测协议。
+- [CAP: An Advanced No-Reference Quality Assessment Method for AI-Generated 3D Meshes](https://doi.org/10.1109/icme59968.2025.11210150)：CAP: An Advanced No-Reference Quality Assessment Method for AI-Generated 3D Meshes 补充空间与三维能力方向的基准、数据集、指标或评测协议。
+- [A benchmark dataset for objective quality assessment of view synthesis for neural radiance field (NeRF)](https://doi.org/10.1016/j.dib.2025.111484)：发布用于 NeRF view synthesis 客观质量评估的数据，支持将生成新视角与受控参考图像比较的指标。
+- [PANGAEA: Assessing Geospatial Foundation Models Capabilities through a Global and Inclusive Benchmark](https://doi.org/10.1109/mgrs.2025.3628194)：补充面向空间与三维能力的评测、数据集或度量信号。
+- [GPT as a Reviewer: Automatic Evaluation of Academic Papers](https://doi.org/10.1109/iccai66501.2025.00080)：补充面向空间与三维能力的评测、数据集或度量信号。
+- [Enhancing 3D Gaussian splatting with semantic and geometric priors: bridging neural rendering and 3D city modeling](https://doi.org/10.1080/13658816.2025.2608252)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [NEPose: A novel benchmark dataset with an improved framework for vision-based nasal endoscope pose estimation](https://doi.org/10.1016/j.patcog.2025.112724)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Topology optimization approach using a training-dataset-free neural network reparameterization framework](https://doi.org/10.1016/j.aei.2025.104111)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Fusion or Confusion? A Look at Dataset Pooling for Infrared Object Detection](https://doi.org/10.1109/cvprw67362.2025.00428)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Choosing 'Right' from Wrong: A Closer Look at Selection Bias in Spatial Multiple-Choice Questions in Large Multimodal Models](https://doi.org/10.1109/cvprw67362.2025.00058)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Assessing spatial dynamics of GEDI biomass prediction in managed versus unmanaged tropical forest ecosystems in Kenya](https://doi.org/10.15287/afr.2025.4245)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Reconstruction of high-precision gridded precipitation dataset in the alpine cold regions of the Qilian Mountains: An intelligent technological framework from downscaling to calibration](https://doi.org/10.1016/j.atmosres.2025.108387)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [A dataset of spatial cognition experiment in virtual reality system](https://doi.org/10.11922/11-6035.csd.2025.0019.zh)：围绕 Spatial 能力补充《A dataset of spatial cognition experiment in virtual reality system》，作为 Bench 条目候选。
+- [3DBench: A scalable benchmark for object and scene-level instruction-tuning of 3D large language models](https://doi.org/10.1016/j.neunet.2025.107566)：围绕 Spatial 能力补充《3DBench: A scalable benchmark for object and scene-level instruction-tuning of 3D large language models》，作为 Bench 条目候选。
+- [A Comparative Evaluation of 3D Gaussian Splatting and LiDAR for Digitizing Handheld Objects in VR](https://doi.org/10.1109/icvr66534.2025.11172601)：围绕 Spatial 能力补充《A Comparative Evaluation of 3D Gaussian Splatting and LiDAR for Digitizing Handheld Objects in VR》，作为 Bench 条目候选。
+- [MLLM4D-Bench](https://arxiv.org/abs/2603.00515)：评测内容：视觉 4D 时空理解和推理。核心思想：利用由立体视频转化的数据和时空任务，检验多模态模型是否理解随时间变化的动态 3D 空间，而不仅是静态空间关系。
+- [SpatialText](https://arxiv.org/abs/2603.03002)：结合真实 3D 室内描述与代码生成场景，隔离纯文本空间推理，评测 egocentric transformations 与 local reference frames，避免视觉感知干扰。
+- [OTS-Bench](https://arxiv.org/abs/2603.03714)：评测图像生成中的 order-to-space bias；核心思想是使用只改变实体提及顺序的成对 prompt，检查模型是否把文本顺序错误映射为空间布局或角色绑定。
+- [WanderDream](https://arxiv.org/abs/2603.06445)：通过 emulative simulation 评测具身/情境空间推理；核心思想是从有限观察生成想象中的全景轨迹，并测试模型在不能主动探索时是否能回答 spatial what-if 问题。
+- [VB: Visibility Benchmark for Visibility and Perspective Reasoning in Images](https://arxiv.org/abs/2603.06680)：通过是/否/放弃判断、可控最小编辑、置信度评分和不可回答原因码，评测图像中的可见性与视角推理。
+- [CanoVerse: 3D Object Scalable Canonicalization and Dataset for Generation and Pose](https://arxiv.org/abs/2603.07144)：提供可扩展 3D object canonicalization 以及面向生成和姿态任务的数据集。
+- [Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence](https://arxiv.org/abs/2603.07660)：评什么：由视频流演化出的整体 3D 空间智能。核心思想是从原始网络视频扩展细粒度 3D 空间数据，而不只依赖少量人工标注 QA。
+- [AGES: Anisotropic Gaussian Enhancement with Smoothness for Geometric-Consistent 3D Reconstruction Method](https://doi.org/10.12677/csa.2026.162059)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [Wavelet-Guided Geometric Feature Enhancement and Multimodal Fusion for Category-Level Object Pose Estimation](https://doi.org/10.1016/j.inffus.2026.104344)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [Library: A Large-Scale Outdoor Gaussian Splat Reconstruction Dataset](https://doi.org/10.1109/vrw70859.2026.00033)：围绕 Spatial 能力补充《Library: A Large-Scale Outdoor Gaussian Splat Reconstruction Dataset》，作为 Bench 条目候选。
+- [BladeNet3D: A High-Fidelity Structured CFD Dataset and Generation Pipeline for Data-Driven Design of Transonic Compressor Blades](https://doi.org/10.1016/j.ast.2026.112206)：围绕 Spatial 能力补充《BladeNet3D: A High-Fidelity Structured CFD Dataset and Generation Pipeline for Data-Driven Design of Transonic Compressor Blades》，作为 Bench 条目候选。
+- [ORDINALBENCH: A Benchmark Dataset for Diagnosing Generalization Limits in Ordinal Number Understanding of Vision-Language Models](https://arxiv.org/abs/2603.07786)：评测视觉语言模型的序数理解能力。核心思路是诊断模型是否能从视觉证据中泛化 first、second、last 等顺序关系，而不是依赖语言先验。
+- [Global Cross-Modal Geo-Localization: A Million-Scale Dataset and a Physical Consistency Learning Framework](https://arxiv.org/abs/2603.08491)：围绕 Spatial 能力补充《Global Cross-Modal Geo-Localization: A Million-Scale Dataset and a Physical Consistency Learning Framework》，作为 Bench 条目候选。
+- [GSStream: 3D Gaussian Splatting based Volumetric Scene Streaming System](https://arxiv.org/abs/2603.09718)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [Stepping VLMs onto the Court: Benchmarking Spatial Intelligence in Sports](https://arxiv.org/abs/2603.09896)：CourtSI 用运动场景评测动态 spatial intelligence，适合 Spatial Bench。
+- [Dyn-Bench](https://arxiv.org/abs/2603.12746)：评什么：评测物理 4D 场景中的 spatiotemporal reasoning 和 dynamic object grounding。核心思想：结合真实与合成视频、VQA 和 grounding 任务，使模型必须跟踪运动、交互和变化中的空间关系，而不是只理解静态视觉内容。
+- [Sky2Ground](https://arxiv.org/abs/2603.13740)：评测不同空地高度条件下的 site modeling。
+- [Unlocking the Latent Canvas: Eliciting and Benchmarking Symbolic Visual Expression in LLMs](https://arxiv.org/abs/2603.14505)：可作为spatial and visual reasoning方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [COPP-Net: No-Reference Point Cloud Quality Assessment via Weighted Patch Quality Prediction](https://doi.org/10.1109/tbc.2025.3597096)：评测spatial, 3D, reconstruction, or grounded perception，补充该能力方向的基准或挑战设置。
+- [RegR-PCQA: Deep Learning Based Colored Point Cloud Quality Assessment Using 3D-to-2D Regularized Representation](https://doi.org/10.1109/tmm.2025.3645602)：围绕 Spatial 能力补充《RegR-PCQA: Deep Learning Based Colored Point Cloud Quality Assessment Using 3D-to-2D Regularized Representation》，作为 Bench 条目候选。
+- [TRICKY 2025 HouseCat6D Object Pose Estimation Challenge with Specular and Transparent Surfaces](https://doi.org/10.1109/iccvw69036.2025.00349)：围绕 Spatial 能力补充《TRICKY 2025 HouseCat6D Object Pose Estimation Challenge with Specular and Transparent Surfaces》，作为 Bench 条目候选。
+- [SI23DCQA: Perceptual Quality Assessment of Single Image-to-3D Content](https://doi.org/10.1109/icme59968.2025.11210072)：围绕 Spatial 能力补充《SI23DCQA: Perceptual Quality Assessment of Single Image-to-3D Content》，作为 Bench 条目候选。
+- [Cellular Aggregation Graph Convolutional Network for Point Cloud Quality Assessment](https://doi.org/10.1109/tcsvt.2025.3624798)：评测 Cellular Aggregation Graph Convolutional Network for Point Cloud Quality Assessment，为 Spatial / Bench 补充基准或评测协议候选。
+- [FLAG3D++: A Benchmark for 3D Fitness Activity Comprehension With Language Instruction](https://doi.org/10.1109/tpami.2025.3590012)：补充空间理解方向的基准、数据集、指标或评测协议。
+- [PCAD: A Real-World Dataset for 6D Pose Industrial Anomaly Detection](https://doi.org/10.1109/wacvw65960.2025.00126)：补充空间理解方向的基准、数据集、指标或评测协议。
+- [Preliminary Study on Evaluation Framework of Neural Implicit Surface Compression](https://doi.org/10.1109/gcce65946.2025.11274881)：提出面向空间、三维与几何推理的基准、数据集或评测协议。
+- [360{\deg} Image Perception with MLLMs: A Comprehensive Benchmark and a Training-Free Method](https://arxiv.org/abs/2603.16179)：评测多模态大模型的全景图像感知能力。核心思路是检查模型能否理解普通单视角图像基准覆盖不足的环视上下文与空间关系。
+- [NeSy-Route: A Neuro-Symbolic Benchmark for Constrained Route Planning in Remote Sensing](https://arxiv.org/abs/2603.16307)：评什么：遥感场景中的神经符号约束路线规划。核心思想是同时评估视觉场景理解和显式约束下的规划，而不只测遥感感知。
+- [VIEW2SPACE](https://arxiv.org/abs/2603.16506)：评什么：评测 sparse multi-view visual reasoning。核心思想：利用物理仿真和精确 per-view metadata，检查模型能否整合不同视角的局部观察，而不是只解决单图或密集视频任务。
+- [The Truth, the Whole Truth, and Nothing but the Truth: Automatic Visualization Evaluation from Reconstruction Quality](https://arxiv.org/abs/2603.16873)：围绕 Spatial 能力补充《The Truth, the Whole Truth, and Nothing but the Truth: Automatic Visualization Evaluation from Reconstruction Quality》，作为 Bench 条目候选。
+- [Rethinking Change Detection: Benchmarking Multi-Agent Remote Sensing Image Change Understanding](https://doi.org/10.1109/icassp55912.2026.11462783)：补充空间理解方向的基准、数据集、指标或评测协议。
+- [Towards robust disparity estimation in satellite stereo imagery: a new high-quality benchmark dataset and a metadata-informed multi-range geometric encoding network](https://doi.org/10.1016/j.isprsjprs.2026.03.017)：提出面向空间、三维与几何推理的基准、数据集或评测协议。
+- [TrackDeform3D: Markerless and Autonomous 3D Keypoint Tracking and Dataset Collection for Deformable Objects](https://arxiv.org/abs/2603.17068)：提出面向空间、三维与几何推理的基准、数据集或评测协议。
 - [Grid Spatial Understanding（GSU）](https://arxiv.org/abs/2603.17333)：评什么：网格、具身参照系和坐标结构上的纯文本空间推理。核心思想：通过导航、目标定位和结构组合任务把空间推理从视觉感知中隔离出来。
+- [SceneHub4D: A Dataset and Evaluation Framework for 6-DoF 4D VR Scenes](https://doi.org/10.1109/tvcg.2026.3679140)：提供 6-DoF 4D VR scenes 的数据集与评测框架。
+- [3D Reconstruction Benchmark for Asset Inspection](https://arxiv.org/abs/2603.17358)：在资产巡检场景中评测 3D reconstruction。
+- [Thinking with Constructions: A Benchmark and Policy Optimization for Visual-Text Interleaved Geometric Reasoning](https://arxiv.org/abs/2603.18662)：评什么：带辅助构造的 visual-text interleaved geometric reasoning。核心思想：测试 MLLM 是否知道何时以及如何创建视觉辅助，而不是只被动读取静态图。
+- [MultihopSpatial](https://arxiv.org/abs/2603.18892)：评测内容：VLM 的多跳组合空间推理。核心思想：将一到三跳空间问题与 Acc@50IoU 边界框 grounding 指标结合，同时评测推理和定位，面向 VLA 相关场景。
+- [AGI2P: Benchmarking Aerial–Ground Image-to-Point cloud localization with a large-scale dataset](https://doi.org/10.1016/j.isprsjprs.2026.03.036)：用大规模数据集评测空地 image-to-point cloud 定位，把空间能力评测扩展到跨视角三维定位。
+- [GeoChallenge: A Multi-Answer Multiple-Choice Benchmark for Geometric Reasoning with Diagrams](https://arxiv.org/abs/2603.19252)：可作为空间理解与视觉定位的Bench候选；核心关注“A Multi-Answer Multiple-Choice Benchmark for Geometric Reasoning with Diagrams”。
+- [KidGym](https://arxiv.org/abs/2603.20209)：用受儿童智力测验启发的可定制 2D grid-based reasoning tasks 评测 MLLM，覆盖 execution、perception reasoning、learning、memory 与 planning。
+- [Mind over Space: Can Multimodal Large Language Models Mentally Navigate?](https://arxiv.org/abs/2603.21577)：评测 MLLM 能否在长时空尺度上进行 mental navigation；核心思想是测试构建空间表征，而非单视图反应式规划。
+- [Do 3D Large Language Models Really Understand 3D Spatial Relationships?](https://arxiv.org/abs/2603.23523)：审计 3D LLM 是否真正使用 3D 空间输入。核心思想是用文本-only QA 基线暴露 SQA3D 类评测中的文本捷径。
 - [See, Remember, Explore / S3-Bench](https://arxiv.org/abs/2603.23864)：评什么：带主动探索的流式空间问答。核心思想：要求 agent 只能使用特定时间点之前已观察到的信息作答，并在证据不足时采取探索动作补充观察，把空间推理从事后视频 QA 推进到在线记忆与感知问题。
+- [DreamHouse](https://arxiv.org/abs/2603.24866)：评测住宅建造场景中的物理生成式推理；核心思想是要求生成结构同时满足几何、结构、可建造性和规范检查，并支持行动与反馈的迭代评测。
+- [EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](https://arxiv.org/abs/2603.25135)：补充面向空间与三维能力的评测、数据集或度量信号。
+- [Not a fragment, but the whole: Map-based evaluation of data-driven Fire Danger Index models](https://arxiv.org/abs/2603.25469)：围绕 Spatial 能力补充《Not a fragment, but the whole: Map-based evaluation of data-driven Fire Danger Index models》，作为 Bench 条目候选。
+- [HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](https://arxiv.org/abs/2603.26362)：评测空间与物理推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [From Pixels to BFS: High Maze Accuracy Does Not Imply Visual Planning](https://arxiv.org/abs/2603.26839)：MazeBench 暴露 maze 高分与真实视觉规划之间的差距，适合 Spatial Bench。
+- [Mind the Shape Gap: A Benchmark and Baseline for Deformation-Aware 6D Pose Estimation of Agricultural Produce](https://arxiv.org/abs/2603.27429)：提供面向农产品 deformation-aware 6D pose estimation 的基准与基线。
+- [Learning Multi-View Spatial Reasoning from Cross-View Relations](https://arxiv.org/abs/2603.27967)：提供大规模多视角空间推理数据集；核心思想是教学和测试单图捷径无法解决的跨视角关系。
+- [Are VLMs Lost Between Sky and Space? LinkS$^2$Bench for UAV-Satellite Dynamic Cross-View Spatial Intelligence](https://arxiv.org/abs/2604.02020)：评测 UAV 与卫星视角之间的动态跨视角空间智能；核心思想是测试变化视角下的宏观-局部空间对齐。
+- [VoxelCodeBench: Benchmarking 3D World Modeling Through Code Generation](https://arxiv.org/abs/2604.02580)：VoxelCodeBench 通过代码生成评测 3D world modeling，补充 spatial/code-grounded benchmark。
+- [Can Vision-Language Models Think from the Sky? Unifying UAV Reasoning and Generation](https://arxiv.org/abs/2604.05377)：评测面向顶视空间歧义的 UAV-native 空中推理与生成；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Monocular Visual SLAM Simulation Evaluation](https://doi.org/10.1109/MFI67357.2025.11259365)：比较 ORB-SLAM3、DROID-SLAM、DPVO 与 DPV-SLAM，补充空间 SLAM 评测。
+- [EVGeoQA: Benchmarking LLMs on Dynamic, Multi-Objective Geo-Spatial Exploration](https://arxiv.org/abs/2604.07070)：围绕 Spatial 能力补充《EVGeoQA: Benchmarking LLMs on Dynamic, Multi-Objective Geo-Spatial Exploration》，作为 Bench 条目候选。
+- [PinpointQA: A Dataset and Benchmark for Small Object-Centric Spatial Understanding in Indoor Videos](https://arxiv.org/abs/2604.08991)：用明确任务、协议或数据集评测spatial reasoning。
+- [Spatial Competence Benchmark](https://arxiv.org/abs/2604.09594)：补充面向空间推理、三维重建与几何生成的基准、数据集、评测协议或测试环境。
+- [Light Field Referring Segmentation](https://doi.org/10.1109/TBC.2026.3659013)：提出 light-field referring segmentation benchmark 与 LLM-based 方法。
+- [Multi-View Point-Cloud Dataset Evaluation](https://doi.org/10.1109/ECTIDAMTNCON67592.2026.11459986)：从几何与信息论视角评估多视角点云数据集，补充空间数据集质量评估线索。
+- [BareBones](https://arxiv.org/abs/2604.10528)：评测 VLM 的零样本几何理解。核心思想是隔离几何结构理解能力，而不是依赖宽泛视觉问答汇总分数。
 - [Grid-world spatial world-model tasks](https://arxiv.org/abs/2604.10690)：评测 LLM 是否在迷宫任务中形成稳健空间世界模型。核心思想是比较 adjacency-token 与 visual-grid 表示、顺序邻近问题和组合距离推理，暴露空间规划的表示依赖失效。
+- [TraversalBench: Challenging Paths to Follow for Vision Language Models](https://arxiv.org/abs/2604.10999)：评测 VLM 的视觉路径遍历能力。核心思想：用可控路径图像测试模型对视觉轨迹的精确空间跟踪。
+- [Complex 4D Markerless Human Motion Capture Dataset](https://arxiv.org/abs/2604.12765)：提供 complex 4D markerless human motion capture 的 dataset 与 evaluation。
+- [DF3DV-1K](https://arxiv.org/abs/2604.13416)：提供 distractor-free novel view synthesis 的大规模数据集与 benchmark，强化空间生成评测。
+- [GeoAgentBench: A Dynamic Execution Benchmark for Tool-Augmented Agents in Spatial Analysis](https://arxiv.org/abs/2604.13888)：GeoAgentBench 是 tool-augmented agents 在空间分析中的动态执行 benchmark。
+- [Point-Cloud Compression JND Benchmark](https://doi.org/10.1109/TIM.2026.3680192)：为 point-cloud compression 中的 just-noticeable-difference measurement 提供 benchmark dataset 与 prediction network。
+- [Chain-of-Thought Degrades Visual Spatial Reasoning Capabilities of Multimodal LLMs](https://arxiv.org/abs/2604.16060)：系统评估 chain-of-thought 对视觉空间推理的负面影响；核心思想是诊断语言化推理何时损害空间感知。
+- [DENALI: A Dataset Enabling Non-Line-of-Sight Spatial Reasoning with Low-Cost LiDARs](https://arxiv.org/abs/2604.16201)：补充面向空间理解能力的可复用基准、数据集、测试平台或评测协议。
+- [Where Do Vision-Language Models Fail? World Scale Analysis for Image Geolocalization](https://arxiv.org/abs/2604.16248)：为空间与三维推理补充可复用评测线索，重点关注 Where Do Vision-Language Models Fail? World Scale Analysis for Image Geolocalization。
+- [Towards Symmetry-sensitive Pose Estimation: A Rotation Representation for Symmetric Object Classes](https://arxiv.org/abs/2604.18208)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [GSI-Bench](https://arxiv.org/abs/2604.20570)：评测图像编辑中的生成式空间智能；核心思想是检查多模态生成模型在保持编辑质量的同时是否遵守 3D 空间约束。
+- [SpaMEM: Benchmarking Dynamic Spatial Reasoning via Perception-Memory Integration in Embodied Environments](https://arxiv.org/abs/2604.22409)：在具身环境中通过感知与记忆整合评测动态空间推理；核心思想是检验 agent 能否在感知随时间变化时保持空间状态。
+- [Nothing Stands Still](https://doi.org/10.1016/j.isprsjprs.2025.01.010)：在几何和时间都大幅变化时评测 3D 点云配准，强调动态空间对齐而非静态匹配。
+- [Holo360D: A Large-Scale Real-World Dataset with Continuous Trajectories for Advancing Panoramic 3D Reconstruction and Beyond](https://arxiv.org/abs/2604.22482)：提供连续全景 3D 重建数据，包含配准点云、网格、相机位姿和高完整度深度图。
+- [DRAGON: A Benchmark for Evidence-Grounded Visual Reasoning over Diagrams](https://arxiv.org/abs/2604.25231)：评测 VLM 在图表问答中能否定位支撑答案的视觉证据区域，覆盖图表、地图、信息图、电路和科学示意图。
+- [AirZoo: A Unified Large-Scale Dataset for Grounding Aerial Geometric 3D Vision](https://arxiv.org/abs/2604.26567)：提供用于空中几何 3D 视觉 grounding 的统一大规模数据集，将空间基准扩展到航拍几何和视角相关 grounding。
+- [Fake3DGS: A Benchmark for 3D Manipulation Detection in Neural Rendering](https://arxiv.org/abs/2604.27590)：围绕 Fake3DGS: A Benchmark for 3D Manipulation Detection in Neural Rendering 补充可复用的空间理解基准、数据集或评测协议。
+- [CADFS: A Big CAD Program Dataset and Framework for Computer-Aided Design with Large Language Models](https://arxiv.org/abs/2605.01925)：提供面向 LLM 计算机辅助设计的大规模 CAD 程序数据集和框架。
+- [Spatial-Functional Intelligence](https://arxiv.org/abs/2605.02130)：评估多模态 LLM 是否不仅理解物体在哪里，也理解物体有什么用途。核心思想是把空间评估从几何关系推进到具身语义、可供性和功能推理。
+- [NICE FACT: Diagnosing and Calibrating VLMs in Quantitative Reasoning for Kinematic Physics](https://arxiv.org/abs/2605.08452)：用明确任务、协议或数据集评测spatial reasoning。
+- [Polaris-Bench](https://arxiv.org/abs/2605.09883)：通过把任务从笛卡尔坐标空间改写到极坐标空间来评测拓扑不变的视觉推理；核心思想是在保持逻辑约束等价的同时打破网格坐标捷径。
+- [3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](https://arxiv.org/abs/2605.10204)：提供反光、透明和低纹理物体 3D 重建大规模数据集。
+- [BenchCAD: A Comprehensive, Industry-Standard Benchmark for Programmatic CAD](https://arxiv.org/abs/2605.10865)：补充面向空间推理、三维重建与几何生成的基准、数据集、评测协议或测试环境。
+- [GeoR-Bench: Evaluating Geoscience Visual Reasoning](https://arxiv.org/abs/2605.11541)：评测地图、遥感和地球系统语境中的地学视觉推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Retrospective Dynamic Scene NVS Benchmark](https://arxiv.org/abs/2605.12437)：将 efficient dynamic-scene 3D Gaussian splatting 与 standardized novel-view-synthesis benchmark 结合。
+- [StayStill](https://arxiv.org/abs/2605.13693)：发布 large-scale 3D idle-animation dataset。
+- [CurveBench: A Benchmark for Exact Topological Reasoning over Nested Jordan Curves](https://arxiv.org/abs/2605.14068)：CurveBench 评测嵌套 Jordan 曲线上的精确拓扑推理，补充了普通空间关系问答之外的几何与拓扑基准。
+- [SceneFunRI](https://arxiv.org/abs/2605.14704)：评测场景中不可见功能对象的位置推理；核心思想是让模型根据任务意图、空间上下文和常识推断隐藏对象区域，而不只依赖可见证据。
+- [Maproute-Bench](https://doi.org/10.1109/ICASSP55912.2026.11460536)：评测俯视地图上的空间推理。核心思想是检验 VLM 的路线、关系和地图布局理解，而不只测自然场景空间感知。
+- [ERQA](https://github.com/embodiedreasoning/ERQA)：评什么：具身/物理环境相关的推理问答（embodied reasoning QA），包含空间关系、行动与物理常识等；核心思想：把“空间理解”放入具身语境，用更接近机器人场景的问答形式测试模型的物理与空间推断。
+- [PhysBench](https://physbench.github.io/#leaderboard)：评什么：物理世界理解与空间/因果推理。核心思想：把空间关系、物体运动、稳定性和交互结果预测放进同一榜单协议，用于筛选具备物理 grounding 的空间推理模型。
+- [Ego3D-Bench](https://vbdi.github.io/Ego3D-Bench-webpage/#leaderboard)：评什么：第一视角三维空间理解。核心思想：用 egocentric 观察中的深度、方向、视角转换和空间记忆任务检验模型是否能从自我中心视觉流中形成稳定三维表征。
+- [VLM4D](https://vlm4d.github.io/#leaderboard)：评什么：四维时空理解。核心思想：把动态三维场景、对象运动和跨时间空间关系纳入统一评测，补足静态图像空间关系 benchmark 对时间维度覆盖不足的问题。
+- [EASI Leaderboard Data](https://huggingface.co/datasets/lmms-lab-si/EASI-Leaderboard-Data/tree/main)：评什么：空间 VLM 多基准聚合榜单数据。核心思想：把 SPAR-Bench、MMSI-Bench、OmniSpatial、ViewSpatial、VSI-Bench 等空间推理结果放进统一数据入口，便于跨 benchmark 比较模型空间智能。
+- [MM-Conv](https://arxiv.org/abs/2605.21796)：基于第一视角 VR 交互、运动、视线、3D geometry 与 4,200 条 referring expressions，评测动态 3D 对话中的 context-aware grounding。
+- [OpenRef](https://arxiv.org/abs/2605.25706)：评测开放世界指代表达理解，覆盖多视觉域、多目标与无目标情形、专有名词和序数词，并引入 F1、N3R 与 training-free 多任务一致性检查器。
+- [SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks](https://arxiv.org/abs/2606.09669)：定义 SpatialWorld，提供 8 个仿真后端、760 个真人标注任务和统一协议，用于评测多模态 agent 的交互式空间理解。
+- [VideoGameBench](https://vgbench.com/#leaderboard)：评什么：视频游戏环境中的具身感知、导航、操作与规划。核心思想：把空间理解放进可行动的游戏环境中，用任务完成和轨迹质量评估 agent 是否能把视觉空间关系转成连续动作。
+- [SpatialTree](https://spatialtree.github.io/#leaderboard)：评什么：树结构空间推理。核心思想：要求模型把复杂空间关系拆成层级化、可追溯的结构，观察空间推理是否能从局部关系组合到全局判断。
+- [StructScan3D v1](https://doi.org/10.3390/s25113461)：提供用于 indoor building-element segmentation 与 BIM modeling 的 RGB-D dataset。
+- [Panoramic Object Importance Ranking](https://doi.org/10.1609/aaai.v39i7.32746)：定义全景场景中的细粒度目标重要性排序任务、数据集与方法。
+- [ViewGauss 6DoF Dataset](https://doi.org/10.1145/3746027.3758250)：提供面向 6DoF Gaussian Splatting 视频观看的头部运动数据集。
+- [Can Large Reasoning Models Reason about Spatial Relations?](https://doi.org/10.1145/3764912.3770841)：评测大型推理模型的空间关系推理能力，将关系理解与一般答案合理性区分开来。
+- [AutoGEEval: A Multimodal and Automated Evaluation Framework for Geospatial Code Generation on GEE with Large Language Models](https://doi.org/10.3390/ijgi14070256)：用 AutoGEEval-Bench 评测 Google Earth Engine 上的地理空间代码生成。核心思路是结合单元级测试、多模态问题生成与答案验证，使 LLM 生成的地理空间计算和可视化代码不只按文本合理性评分。
+- [Blind Quality Assessment of Dense 3D Point Clouds with Structure Guided Resampling](https://doi.org/10.1145/3664199)：通过结构引导重采样进行无参考 dense 3D point-cloud quality assessment。
+- [Adaptive Geometric Attention-Driven No-Reference Multi-Modal Point Cloud Quality Assessment](https://doi.org/10.1145/3795690)：评测 Adaptive Geometric Attention-Driven No-Reference Multi-Modal Point Cloud Quality Assessment，为 Spatial / Bench 补充基准或评测协议候选。
+- [WorldBench: Quantifying Geographic Disparities in LLM Factual Recall](https://doi.org/10.1145/3630106.3658967)：提供用于评估Spatial的任务或数据集，为 Spatial / Bench 补充具体测量目标。
+- [A Large-Scale Human-Centric Benchmark for Referring Expression Comprehension in the LMM Era](https://doi.org/10.52202/079017-2222)：作为空间与三维能力的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Metric from Human: Zero-shot Monocular Metric Depth Estimation via Test-time Adaptation](https://doi.org/10.52202/079017-3325)：补充一个面向空间与三维能力的基准条目，关注spatial, three-dimensional, or grounding contribution。
+- [MUSeg: A multimodal semantic segmentation dataset for complex underground mine scenes](https://doi.org/10.1038/s41597-025-05493-9)：补充空间理解方向的基准、数据集、指标或评测协议。
+- [Scene as Occupancy and Reconstruction: A Comprehensive Dataset for Unstructured Scene Understanding](https://doi.org/10.1038/s41597-025-05532-5)：补充空间理解方向的基准、数据集、指标或评测协议。
+- [MM-PCQA+: Advancing Multi-Modal Learning for Point Cloud Quality Assessment](https://doi.org/10.1145/3715134)：补充面向三维、空间、点云、高斯溅射或重建能力的基准、数据集、指标或评测协议。
+- [Embeddings Matter: A Case Study of Spatial Synonyms in Large Language Models](https://doi.org/10.1145/3764912.3770811)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [Large-Scale Indoor Visual–Geometric Multimodal Dataset and Benchmark for Novel View Synthesis](https://doi.org/10.3390/s24175798)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的基准、数据集、指标、审计或实证协议。
+- [Bayesian optimization with Gaussian-process-based active machine learning for improvement of geometric accuracy in projection multi-photon 3D printing](https://doi.org/10.1038/s41377-024-01707-8)：补充空间与三维理解方向的基准、数据集、挑战、指标或评测协议。
+- [The Role of 3D Printing in Advancing Automated Manufacturing Systems: Opportunities and Challenges](https://doi.org/10.3390/automation6020021)：补充空间与三维理解方向的基准、数据集、挑战、指标或评测协议。
+- [Subjective and Objective Quality-of-Experience Assessment for 3D Talking Heads](https://doi.org/10.1145/3664647.3680964)：补充空间与三维理解方向的基准、数据集、挑战、指标或评测协议。
+- [Perceptual Quality Assessment of Spatial Videos on Apple Vision Pro](https://doi.org/10.1145/3746269.3760422)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [ML-Based Materials Evaluation in 3D Printing](https://doi.org/10.3390/app15105523)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Exploring spatial reasoning performances of CNN on linear layout dataset](https://doi.org/10.1088/2632-2153/ad9706)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [MGASM-Net: morphology-guided multi-task learning network with anatomic spatial mamba for 3D airway segmentation](https://doi.org/10.1007/s40747-025-01995-6)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Synthetic Dataset and Enhanced YOLOv11 for Robust Financial Document Layout Analysis](https://doi.org/10.1145/3764727.3764745)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [An Evaluation Metric for Single Image-to-3D Models Based on Object Detection Perspective](https://doi.org/10.1145/3681758.3697992)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [Research on quality evaluation of 3D reconstruction model empowered by AI algorithm](https://doi.org/10.1117/12.3048372)：提供用于衡量空间理解能力的数据集、基准、指标或评测协议。
+- [3D Face Reconstruction with Deep Learning: Architectures, Datasets, and Benchmark Analysis](https://doi.org/10.3390/s26082540)：围绕 Spatial 能力补充《3D Face Reconstruction with Deep Learning: Architectures, Datasets, and Benchmark Analysis》，作为 Bench 条目候选。
+- [A Topology Standardized 3D Facial Dataset with Emotion and Action Unit Diversity for East Asians](https://doi.org/10.1038/s41597-026-07098-2)：围绕 Spatial 能力补充《A Topology Standardized 3D Facial Dataset with Emotion and Action Unit Diversity for East Asians》，作为 Bench 条目候选。
+- [T23D-QA: An Open Dataset and Benchmark for Text-driven 3D Generation Quality Assessment](https://doi.org/10.1145/3746027.3758302)：围绕 Spatial 能力补充《T23D-QA: An Open Dataset and Benchmark for Text-driven 3D Generation Quality Assessment》，作为 Bench 条目候选。
+- [A Benchmark Dataset for Evaluating Spatial Perception in Multimodal Large Models](https://doi.org/10.1145/3698385.3699875)：评测 A Benchmark Dataset for Evaluating Spatial Perception in Multimodal Large Models，为 Spatial 补充可复用的数据集、基准、指标或评测协议。
+- [SNC: A Framework for Verification and Generation of Spatial NLQ Corpora](https://doi.org/10.1145/3748777.3748780)：补充面向空间理解能力的可复用基准、数据集、测试平台或评测协议。
+- [Secure3D-CV: A scientific framework for integrity assessment of 3D data with an external Python library](https://doi.org/10.12688/openreseurope.22181.1)：补充面向空间推理、三维重建与几何生成的基准、数据集、评测协议或测试环境。
+- [Reference-Free Evaluation Metric for Fine-Grained 3D Shape Editing](https://doi.org/10.3390/app152413023)：补充面向空间推理、三维重建与几何生成的基准、数据集、评测协议或测试环境。
+- [MetaSpace](https://doi.org/10.1145/3798212)：面向具身 agent 空间认知的 metamorphic testing benchmark。核心思想是生成空间变换后的具身场景，使评估超越人工 VQA 或最终任务成功率，直接测试空间推理鲁棒性。
+- [Evaluating Intrinsic Geospatial Topological Reasoning in LLMs](https://doi.org/10.1145/3764915.3770722)：评测真实地理实体上的拓扑推理；核心思想是把语言内在空间拓扑能力与检索或几何编码能力分开。
+- [LLM Agents for Georelating - A New Task for Locating Events](https://doi.org/10.1145/3748636.3762733)：Georelating 将灾害报告中的复杂 locative expression 映射为受影响区域，是明确的地理空间推理任务。
+- [Do Large Language Models have Spatial Cognitive Abilities?](https://doi.org/10.1145/3716855)：评测空间推理。核心思想：围绕论文中的任务、数据或协议（Do Large Language Models have Spatial Cognitive Abilities?）形成可复用比较基准。
+- [DDFAV: Remote Sensing Large Vision Language Models Dataset and Evaluation Benchmark](https://doi.org/10.3390/rs17040719)：提供遥感大型视觉语言模型数据集与评估 benchmark。
+- [DB-3DME](https://arxiv.org/abs/2606.10142)：将 2,619 个带人类评分的 3D mesh 转化为自动网格评测基准，同时检验 VLM-as-judge 与微调 Qwen-2.5-VL-7B 评测器的人类对齐程度。

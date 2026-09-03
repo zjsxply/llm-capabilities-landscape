@@ -2,28 +2,43 @@
 
 论文与方法类工作：
 
-- Harbor（[开源代码](https://github.com/harbor-framework/harbor)；[官网](https://www.harborframework.com/)）：Terminal-Bench 2.0 生态中的通用 agent evaluation / RL environment 框架。
-  它把任务定义、Docker 环境、agent 运行、轨迹和结果管理统一起来，适合作为 terminal benchmark-side harness。
-- Terminus 2（[官方说明](https://www.tbench.ai/news/terminus)）：Terminal-Bench 团队维护的研究型终端 agent baseline。
-  它刻意保持最小 loop：模型向 tmux 发送命令、读取 buffer、继续决策；适合作为评测底座，但强榜单结果通常还要靠更细的上下文、超时、输出截断与完成检查设计。
-- Terminus-KIRA（[开源代码](https://github.com/krafton-ai/kira)；[技术博客](https://www.krafton.ai/blog/posts/2026-02-20-terminus_kira/terminus-en.html)）：KRAFTON 在 Terminus/Terminus 2 之上做的轻量终端 harness 改造。
-  关键改动包括更强的自完成检查、replanning prompt、避免重型依赖安装的通用提示，以及从 tmux `push and wait` 改为更高效的 `pull` 式读取。
 - [CAMEL-AI](https://arxiv.org/abs/2303.17760)（[开源代码](https://github.com/camel-ai/camel)）：多智能体协作框架；在终端任务里可作为角色化协作、工具调用与任务拆解的开放基线。
 - [OpenHands](https://arxiv.org/abs/2407.16741)（[开源代码](https://github.com/OpenHands/OpenHands)）：通用软件开发 agent 平台；在终端评测中适合作为成熟开源工程 agent 的强基线。
-- container-use（[开源代码](https://github.com/dagger/container-use)；[官网](https://container-use.com/)）：MCP server 和 CLI，为 coding agents 提供隔离容器、按分支隔离的工作区、命令历史和可检查日志，适合作为可审计执行与人工接管的终端 harness。
+- [RACONTEUR: A Knowledgeable, Insightful, and Portable LLM-Powered Shell Command Explainer](https://arxiv.org/abs/2409.02074)：把 shell 命令解析成结构化解释，结合命令解析器、LLM 自然语言说明和 MITRE ATT&CK tactic 映射，适合解释终端里不透明或有安全含义的命令序列。
+- [OSCAR: Operating System Control via State-Aware Reasoning and Re-Planning](https://arxiv.org/abs/2410.18963)：通过截图和 accessibility tree 反复读取操作系统状态，生成可执行 Python 动作，并在界面状态变化后重新规划，而不是一次性输出 GUI 指令。
+- [LLM-as-a-Judge for NL-to-Bash Validation](https://arxiv.org/abs/2506.11237)：用 LLM judge 在无参考答案下验证并修正 NL-to-Bash 输出，为终端自动化补充验证闭环。
+- [Everything is Context: Agentic File System Abstraction for Context Engineering](https://arxiv.org/abs/2512.05470)：面向终端与文件系统智能体工作流的智能体框架或运行时。核心思想：把 Agentic File System Abstraction for Context Engineering 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [LLM-in-Sandbox](https://arxiv.org/abs/2601.16206)：用于 eliciting agentic capability 的最小 computer-environment harness；核心思想是通过简单 sandbox 暴露文件管理、代码执行和外部资源访问，让模型借助类计算机环境解决更广泛任务。
 - [TerminalTraj](https://arxiv.org/abs/2602.01244)（[开源代码](https://github.com/multimodal-art-projection/TerminalTraj)）：面向 Dockerized environments 的终端 agent 轨迹生成框架。
   它关注可规模化构造环境、采集执行轨迹和生成训练数据，代表 terminal agent 从静态评测走向轨迹生产基础设施。
 - [TermiGen](https://arxiv.org/abs/2602.07274)：高保真终端环境与鲁棒轨迹合成 pipeline。
   它用可验证环境、失败恢复轨迹和执行反馈补足 open-weight terminal agent 的训练/评测数据缺口，适合作为 Terminal-Bench 类任务的数据生成侧基础设施。
+- [Fork, Explore, Commit: OS Primitives for Agentic Exploration](https://arxiv.org/abs/2602.08199)：面向对应能力的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
 - [OpenSage / SageAgent](https://arxiv.org/abs/2602.16891)（[开源代码](https://github.com/opensage-agent/opensage-adk)）：AI-centric ADK 路线，让 agent 在执行中自生成拓扑、工具与层级记忆。
   SageAgent 在 Terminal-Bench 2.0、SWE-Bench Pro 与 DevOps-Gym 上报告了强结果；设计重点是动态子代理、工具/skill 合成与图式记忆，而不是只靠固定 prompt。
+- [Agents Learn Their Runtime: Interpreter Persistence as Training-Time Semantics](https://arxiv.org/abs/2603.01209)：可作为terminal/runtime use方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
 - [OPENDEV](https://arxiv.org/abs/2603.05344)（[开源代码](https://github.com/opendev-to/opendev)）：Rust 实现的 terminal-native coding agent。
   设计重点是双代理规划/执行架构、惰性工具发现、模型路由、上下文压缩和跨 session memory，适合作为 terminal-first agent scaffold 的工程蓝图。
+- [Quine](https://arxiv.org/abs/2603.18030)：把 LLM agent 实现为原生 POSIX 进程。核心思想是用进程 ID、标准流、退出状态、环境变量和操作系统调度作为 agent 运行时，而不是在应用层重新实现这些机制。
 - [Meta-Harness](https://arxiv.org/abs/2603.28052)（[开源代码](https://github.com/stanford-iris-lab/meta-harness)；[TerminalBench-2 artifact](https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact)）：自动搜索并改写 LLM harness 代码的外层优化系统。
   在 TerminalBench-2 上，它从 Terminus 2 / Terminus-KIRA 等强基线出发，让 proposer agent 读取候选 harness 源码、得分与完整执行轨迹，在代码空间里发现更好的环境 bootstrap 与完成检查逻辑。
 - [TACO](https://arxiv.org/abs/2604.19572)（[开源代码](https://github.com/multimodal-art-projection/TACO)）：面向终端 agent 的自演化 observation compression 层。
   它从交互轨迹中发现、精炼并复用结构化压缩规则，在保留任务关键信号的同时降低长程终端历史的 token 噪声。
+- Terminus-KIRA（[开源代码](https://github.com/krafton-ai/kira)；[技术博客](https://www.krafton.ai/blog/posts/2026-02-20-terminus_kira/terminus-en.html)）：KRAFTON 在 Terminus/Terminus 2 之上做的轻量终端 harness 改造。
+  关键改动包括更强的自完成检查、replanning prompt、避免重型依赖安装的通用提示，以及从 tmux `push and wait` 改为更高效的 `pull` 式读取。
+- [Adaptive Shell Scripting with Quine Programs and Large Language Models](https://doi.org/10.1109/iccraids67816.2026.11519702)：把 quine 式自复制脚本作为 LLM 辅助 shell 自动化的控制面，强调脚本在执行中检查并改写自身命令逻辑的能力。
+- [Cognitive OS Agents: A Safe, Explainable, and Autonomous Architecture for Planning, Learning, and Acting at the Operating System Level](https://doi.org/10.1109/icmlas67792.2026.11484017)：设计安全可解释的认知 OS 智能体，用于规划、学习和行动。
+- Harbor（[开源代码](https://github.com/harbor-framework/harbor)；[官网](https://www.harborframework.com/)）：Terminal-Bench 2.0 生态中的通用 agent evaluation / RL environment 框架。
+  它把任务定义、Docker 环境、agent 运行、轨迹和结果管理统一起来，适合作为 terminal benchmark-side harness。
+- Terminus 2（[官方说明](https://www.tbench.ai/news/terminus)）：Terminal-Bench 团队维护的研究型终端 agent baseline。
+  它刻意保持最小 loop：模型向 tmux 发送命令、读取 buffer、继续决策；适合作为评测底座，但强榜单结果通常还要靠更细的上下文、超时、输出截断与完成检查设计。
+- container-use（[开源代码](https://github.com/dagger/container-use)；[官网](https://container-use.com/)）：MCP server 和 CLI，为 coding agents 提供隔离容器、按分支隔离的工作区、命令历史和可检查日志，适合作为可审计执行与人工接管的终端 harness。
 Terminal-Bench 2.0 榜单中的主要 agent（截至 2026-05-22，官方榜单显示 143 个提交条目；下面按公开信息和每个 agent 的高分记录）：
+- [AgentFlow](https://arxiv.org/abs/2604.20801)：多代理 harness 合成；核心思想：把角色、提示、工具、通信拓扑和协调协议一起搜索，直接优化 TerminalBench-2 这类任务的 harness 设计。
+- [Agentic Harness Engineering](https://arxiv.org/abs/2604.25850)（[开源代码](https://github.com/china-qijizhifeng/agentic-harness-engineering)）：observability-driven 的 coding-agent harness 自动演化。
+  它把 harness 视为可迭代优化的代码工件，结合执行轨迹、失败观测和多轮改写改进 Terminal-Bench 2.0 类任务的 scaffold。
+
+
 - Codex CLI（[开源代码](https://github.com/openai/codex)；[README](https://github.com/openai/codex/blob/main/README.md)）：OpenAI 的终端 coding agent，在榜单中以 GPT-5.5 组合达到最高档；设计重点是本地/云端终端执行、文件编辑、命令运行、审批与多 agent 工作流。
 - ForgeCode（[官方主页](https://forgecode.dev/)；[Agent 文档](https://forgecode.dev/docs/operating-agents/)）：Zsh-native 终端 coding harness；榜单高分显示其多代理、bounded context、快速工具纠错与模型切换策略对 Terminal-Bench 2.0 很关键。
 - TongAgents（[官方主页](https://tongagents.mybigai.ac.cn/zh.html)；[BIGAI 新闻](https://www.bigai.ai/blog/news/%E4%BA%A7%E5%93%81%E8%83%BD%E5%8A%9B%E9%A2%86%E8%B7%91%E5%85%A8%E7%90%83%EF%BC%81%E9%80%9A%E7%A0%94%E9%99%A2-tongagents-%E7%99%BB%E4%B8%8A%E5%A4%9A%E9%A1%B9%E5%9B%BD%E9%99%85%E6%99%BA%E8%83%BD/)）：BIGAI 的行业智能体平台；公开介绍强调结构化推理、多层容错、命令超时后台挂起、流式分段返回与异步完成通知。
@@ -45,13 +60,8 @@ Terminal-Bench 2.0 榜单中的主要 agent（截至 2026-05-22，官方榜单�
 - Claude Code（[官方产品页](https://www.claude.com/product/claude-code)）：Anthropic 的终端 coding agent；设计关键词是 repo-aware 工作流、命令执行、文件编辑、memory、hooks、MCP 与 subagents。
 - grok-cli（[开源代码](https://github.com/superagent-ai/grok-cli)）：面向 xAI/Grok 模型的开源 terminal-native agent；支持 headless 模式、子代理、Telegram 远程控制、hooks、sandbox 与项目级指令文件。
 - Goose（[开源代码](https://github.com/block/goose)；[官方文档](https://block.github.io/goose/)）：Block 开源的本地/桌面/CLI agent；强调任意模型接入、MCP 扩展、recipes、session persistence 与本地可审计执行。
-- [AgentFlow](https://arxiv.org/abs/2604.20801)：多代理 harness 合成；核心思想：把角色、提示、工具、通信拓扑和协调协议一起搜索，直接优化 TerminalBench-2 这类任务的 harness 设计。
 - OpenCode（[开源代码](https://github.com/sst/opencode)；[官方主页](https://opencode.ai/)）：开源 terminal-native coding agent；特点是模型无关、LSP 集成、多 session 并行、隐私优先与桌面/IDE/终端多入口。
 - Gemini CLI（[开源代码](https://github.com/google-gemini/gemini-cli)）：Google 的 Gemini 终端 agent；适合观察模型厂商官方 CLI 在 Terminal-Bench 2.0 上的基础 scaffold 表现。
-- [Agentic Harness Engineering](https://arxiv.org/abs/2604.25850)（[开源代码](https://github.com/china-qijizhifeng/agentic-harness-engineering)）：observability-driven 的 coding-agent harness 自动演化。
-  它把 harness 视为可迭代优化的代码工件，结合执行轨迹、失败观测和多轮改写改进 Terminal-Bench 2.0 类任务的 scaffold。
-
-
 - cchuter（[开源代码](https://github.com/cchuter/blobfish)）：teamblobfish 的榜单 agent；公开信息有限，主要价值在于提供一个可检查的社区提交实现。
 - Mini-SWE-Agent（[开源代码](https://github.com/SWE-agent/mini-swe-agent)）：Princeton/SWE-agent 系的极简软件工程 agent；适合用作低复杂度、易改造的 terminal/SWE baseline。
 - spoox-m（[开源代码](https://github.com/plaume8/spoox)）：TUM/社区提交的终端 agent；公开信息有限，但代码可用于查看其 Terminal-Bench 适配方式。

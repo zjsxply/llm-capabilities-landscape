@@ -1,9 +1,28 @@
 # 1.8.2 Survey
 
+- [Top-down Automated Theorem Proving (Notes for Sir Timothy)](https://arxiv.org/abs/2308.02540)：文章主张自动定理证明应直接建模数学家论文中使用的领域概念和带有不完美性的证明风格，而不是只从公理和有效的基础推理规则自底向上组合形式证明。
+- [Large Language Models for Mathematical Reasoning: Progresses and Challenges](https://arxiv.org/abs/2402.00157)：综述大语言模型数学推理中的提示、工具使用、验证、基准与可靠性挑战。
 - [A Survey on Deep Learning for Theorem Proving](https://arxiv.org/abs/2404.09939)：覆盖形式系统、证明搜索、数据集与定理证明评测。
+- [System 2 thinking in OpenAI's o1-preview model: Near-perfect performance on a mathematics exam](https://arxiv.org/abs/2410.07114)：分析 o1-preview 在形式化数学考试中的表现，并把 test-time deliberation 视为一种 System-2 式推理形态。
 - [A Survey of Mathematical Reasoning in the Era of Multimodal Large Language Model: Benchmark, Method and Challenges](https://arxiv.org/abs/2412.11936)：回顾图形、图表与图像支撑的数学推理。
+- [Formal Mathematical Reasoning: A New Frontier in AI](https://arxiv.org/abs/2412.16075)：综述 proof assistant 支撑的数学推理，覆盖形式化、定理证明、验证器反馈和评测瓶颈。
+- [Mathematics and Machine Creativity: A Survey on Bridging Mathematics with AI](https://arxiv.org/abs/2412.16543)：这篇综述把 LLM 和强化学习系统定位为能高速产生模式化候选的探索工具，强调其生成式创造力可以补充而非取代数学研究的演绎严谨性，并梳理 AI 与数学研究的交叉路径。
+- [A Survey on Feedback-based Multi-step Reasoning for Large Language Models on Mathematics](https://arxiv.org/abs/2502.14333)：综述 LLM 数学解题中的反馈式多步推理方法。
 - [A Survey on Mathematical Reasoning and Optimization with Large Language Models](https://arxiv.org/abs/2503.17726)：综述数学推理、优化、基准与工具增强方法。
+- [Plane Geometry Problem Solving with Multi-modal Reasoning: A Survey](https://arxiv.org/abs/2505.14340)：综述多模态平面几何求解中的图形理解、符号几何推理、数据集与 solver pipeline。
 - [Autoformalization in the Era of Large Language Models: A Survey](https://arxiv.org/abs/2505.23486)：解释自然语言数学到检查器可验证形式证明的桥梁。
+- [Towards Geometry Problem Solving in the Large Model Era: A Survey](https://arxiv.org/abs/2506.02690)：综述大模型时代几何问题求解的任务、方法与评测。
 - [A Survey on Large Language Models for Mathematical Reasoning](https://arxiv.org/abs/2506.08446)：近期大语言模型数学推理方法、数据集与开放问题总览。
+- [Large Language Models Don't Make Sense of Word Problems. A Scoping Review from a Mathematics Education Perspective](https://arxiv.org/abs/2506.24006)：从数学教育视角综述 word-problem 研究，并指出当前 LLM 多能解表层题型但难以理解真实语境。
+- [Foundation of Intelligence: Review of Math Word Problems from Human Cognition Perspective](https://arxiv.org/abs/2510.21999)：以五类认知能力组织 math word problem 求解研究，并比较神经网络与 LLM solver 的基准表现。
+- [AI for Mathematics: Progress, Challenges, and Prospects](https://arxiv.org/abs/2601.13209)：该综述把 AI for Mathematics 分成面向具体问题的模型，以及支持通用推理、检索和探索的基础系统；同时将数学严谨性既视为应用约束，也视为推动通用推理能力的测试场。
+- [A Survey of Multimodal Mathematical Reasoning: From Perception, Alignment to Reasoning](https://arxiv.org/abs/2603.08291)：从视觉感知、对齐到推理过程综述多模态数学推理。
+- [OpenCLAW-P2P v7.0-P2PCLAW: Resilient Multi-Layer Persistence, Live Reference Verification, and Production-Scale Evaluation of Decentralized AI Peer Review v7.0 -- Mathematical Corrections&Ecosystem Developments Edition](https://arxiv.org/abs/2604.19792)：描述去中心化同行评审、引用验证和数学更正工作流；该条更像评审基础设施，放在 Math 页的适配度存疑。
+- [Mathematical Reasoning in Large Language Models](https://arxiv.org/abs/2605.19723)：综述约 120 篇数学推理论文，覆盖数据集、架构、训练策略、工具集成、verifier-guided reasoning 与评测协议，是对模型与基准设计的广域地图，而非单一方法。
+- [Artificial Intelligence for Mathematical Reasoning: An Integrated Survey of Language Models, Neuro-symbolic Systems, and Verified Discovery](https://arxiv.org/abs/2606.08728)：梳理数学推理从规则式应用题和几何求解器到神经表达式生成、LLM prompting、多智能体系统、神经符号定理证明和可验证发现流程的演进。
 - [Solving Mathematical Problems using Large Language Models](https://doi.org/10.3724/2096-7004.di.2025.0064)：把 LLM 解数学题组织为提示、分解、验证、工具使用与答案综合的流程。
 - [Machine-Assisted Proof](https://doi.org/10.1090/noti3041)：综述机器辅助证明，将其作为连接形式化工具与 AI 辅助的数学推理流程。
+- [Towards robust automated math problem solving: a survey of statistical and deep learning approaches](https://doi.org/10.1007/s12065-024-00957-0)：综述自动数学解题从统计方法到神经网络和深度学习方法的发展，重点讨论鲁棒性与泛化。
+- [Mathematical Modeling Techniques in Virtual Reality Technologies: An Integrated Review of Physical Simulation, Spatial Analysis, and Interface Implementation](https://doi.org/10.3390/sym18020255)：综述虚拟现实系统中的物理仿真、空间分析与界面实现所需数学建模；它更偏领域基础设施，而非 LLM 数学推理综述。
+- [Towards the Automatic Mathematician](https://doi.org/10.1007/978-3-030-79876-5_2)：这篇扩展摘要综述用神经网络预测细粒度证明步骤、选择相关前提和生成有用猜想的进展，并以此勾勒 N2Formal 自动数学家的愿景及仍待解决的障碍。
+- [AI-driven research in pure mathematics and theoretical physics](https://doi.org/10.1038/s42254-024-00740-1)：这篇 Perspective 将纯数学和理论科学中的 AI 辅助发现分为 top-down、bottom-up 和 meta-mathematics 三类，比较各自的进展与局限，并主张人类专业知识与 AI 将形成理论研究不可分割的合作关系。

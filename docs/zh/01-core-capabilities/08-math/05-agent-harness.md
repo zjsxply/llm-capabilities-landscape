@@ -7,9 +7,116 @@
 - [LeanDojo](https://arxiv.org/abs/2306.15626)（[开源代码](https://github.com/lean-dojo/LeanDojo)）：把前提检索、proof state 交互与 verifier 反馈整合进 proof assistant in the loop 的可复现 runtime。
 - [ToRA](https://arxiv.org/abs/2309.17452)（[开源代码](https://github.com/microsoft/ToRA)）：将自然语言推理、代码执行与符号工具调用编排成统一 math agent loop。
 - [COPRA](https://arxiv.org/abs/2310.04353)（[开源代码](https://github.com/trishullab/copra)）：面向 Lean 的协作式证明代理，强调规划、检索与证明状态驱动的执行闭环。
+- [An Example of Evolutionary Computation + Large Language Model Beating Human: Design of Efficient Guided Local Search](https://arxiv.org/abs/2401.02051)：结合演化计算与大模型引导来设计高效局部搜索。
+- [AutoSAT: Automatically Optimize SAT Solvers via Large Language Models](https://arxiv.org/abs/2402.10705)：用 LLM 引导程序搜索来修改 SAT solver 启发式并评估候选 solver 变体，把求解器优化变成迭代 agent loop。
+- [LLM4ED: Large Language Models for Automatic Equation Discovery](https://arxiv.org/abs/2405.07761)：编排 LLM 假设生成、symbolic regression 和方程验证，从数据中发现 governing equations。
+- [Towards Automated Functional Equation Proving: A Benchmark Dataset and A Domain-Specific In-Context Agent](https://arxiv.org/abs/2407.14521)：将 functional-equation benchmark 与 domain-specific in-context proving agent 配对，由 agent 选择示例并引导方程证明步骤。
+- [OptiMUS-0.3: Using Large Language Models to Model and Solve Optimization Problems at Scale](https://arxiv.org/abs/2407.19633)：把自然语言优化问题转成可交给求解器的数学模型，并用建模检查与 solver 反馈迭代修正。
+- [AI-Assisted Generation of Difficult Math Questions](https://arxiv.org/abs/2407.21009)：通过 LLM 辅助生成与筛选循环产出更难数学题，把出题本身组织成 agentic workflow。
+- [miniCTX: Neural Theorem Proving with (Long-)Contexts](https://arxiv.org/abs/2408.03350)：提供长上下文定理证明 workflow，在生成 Lean 证明时检索或携带扩展形式化上下文。
+- [Bridging Large Language Models and Optimization: A Unified Framework for Text-attributed Combinatorial Optimization](https://arxiv.org/abs/2408.12214)：把 text-attributed combinatorial optimization 表述为 LLM 介导的管线，解析自然语言属性、构造优化实例并连接求解器。
+- [BEATS: Optimizing LLM Mathematical Capabilities with BackVerify and Adaptive Disambiguate based Efficient Tree Search](https://arxiv.org/abs/2409.17972)：结合 BackVerify、adaptive disambiguation 和 tree search，在推理时探索并剪枝数学推理路径。
+- [ImProver: Agent-Based Automated Proof Optimization](https://arxiv.org/abs/2410.04753)：用 agent 重写和优化形式证明，并利用 proof-assistant feedback 改善证明长度、结构或鲁棒性。
+- [LeanAgent: Lifelong Learning for Formal Theorem Proving](https://arxiv.org/abs/2410.06209)：构建 lifelong formal-proving agent，保存已解定理经验并在后续 Lean 目标上检索复用证明知识。
+- [Autoformulation of Mathematical Optimization Models Using LLMs](https://arxiv.org/abs/2411.01679)：从自然语言自动抽取变量、目标和约束，将优化模型 formulation 交给后续优化工具。
 - [Newclid](https://arxiv.org/abs/2411.11938)（[开源代码](https://github.com/Newclid/Newclid)）：面向几何证明的神经-符号代理框架，强调可验证搜索过程。
+- [Large language models for combinatorial optimization of design structure matrix](https://arxiv.org/abs/2411.12571)：把 LLM-guided search 用于 design-structure-matrix combinatorial optimization，用模型建议导航候选重排或分解。
+- [MATATA: Weakly Supervised End-to-End MAthematical Tool-Augmented Reasoning for Tabular Applications](https://arxiv.org/abs/2411.18915)：将表格数学问题路由到 tool-augmented reasoning，结合弱监督和表格上的可执行操作。
+- [Proposing and solving olympiad geometry with guided tree search](https://arxiv.org/abs/2412.10673)：用 guided tree search 同时提出和求解奥赛几何题，把问题生成与几何推理搜索耦合起来。
+- [BFS-Prover: Scalable Best-First Tree Search for LLM-based Automatic Theorem Proving](https://arxiv.org/abs/2502.03438)：用可扩展 best-first tree search 支持基于 LLM 的 Lean 定理证明。
+- [FANS - Formal Answer Selection for Natural Language Math Reasoning Using Lean4](https://arxiv.org/abs/2503.03238)：可作为数学与形式化推理的Agent Harness候选；核心关注“FANS - Formal Answer Selection for Natural Language Math Reasoning Using Lean4”。
+- [Local Look-Ahead Guidance via Verifier-in-the-Loop for Automated Theorem Proving](https://arxiv.org/abs/2503.09730)：Local Look-Ahead Guidance 采用 verifier-in-the-loop 改进自动定理证明，属于数学推理的验证型 harness。
 - [StepMathAgent](https://arxiv.org/abs/2503.10105)：面向数学解答的过程评测 agent；核心思想是通过 Tree-of-Error 表示对步骤进行切分、打分、聚合和错误组织，而不是只评最终答案。
+- [Automating Mathematical Proof Generation Using Large Language Model Agents and Knowledge Graphs](https://arxiv.org/abs/2503.11657)：Agent Harness 条目；核心思想：结合 LLM agent 与知识图谱自动生成数学证明。
+- [OptimAI: Optimization from Natural Language Using LLM-Powered AI Agents](https://arxiv.org/abs/2504.16918)：面向自然语言优化问题的多 agent harness，将问题转成数学形式，规划求解策略，执行代码，并用批判反馈与 UCB debug scheduling 进行修复。
+- [LLaMA-Berry: Pairwise Optimization for Olympiad-level Mathematical Reasoning via O1-like Monte Carlo Tree Search](https://doi.org/10.18653/v1/2025.naacl-long.375)：基于 MCTS 的奥赛级数学推理框架。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [APOLLO: Automated LLM and Lean Collaboration for Advanced Formal Reasoning](https://arxiv.org/abs/2505.05758)：协调 LLM 与 Lean 协作完成高级形式化推理。
+- [MM-Agent: LLM as Agents for Real-world Mathematical Modeling Problem](https://arxiv.org/abs/2505.14148)：把 LLM 作为处理真实数学建模问题的智能体，补充面向数学的 agent 工作流。
+- [HybridProver: Augmenting Theorem Proving with LLM-Driven Proof Synthesis and Refinement](https://arxiv.org/abs/2505.15740)：HybridProver 将 LLM-driven proof synthesis 与 refinement 接入 theorem proving，属于形式化数学 agent harness。
+- [Lean-SMT: An SMT tactic for discharging proof goals in Lean](https://arxiv.org/abs/2505.15796)：提供 Lean 等形式化推理工作流中的可复用策略。
+- [REAL-Prover: Retrieval Augmented Lean Prover for Mathematical Reasoning](https://arxiv.org/abs/2505.20613)：检索增强的 Lean 定理证明流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Step-Wise Formal Verification for LLM-Based Mathematical Problem Solving](https://arxiv.org/abs/2505.20869)：Agent Harness 条目；核心思想：用逐步形式化验证检查数学解题过程，而不只看最终答案。
+- [AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning](https://arxiv.org/abs/2505.23381)：面向几何题求解的神经符号 harness。核心思想：把多模态几何输入形式化，再通过演绎推理求解，而不是直接生成答案。
+- [LLM-Driven Instance-Specific Heuristic Generation and Selection](https://arxiv.org/abs/2506.00490)：用 LLM 为组合优化生成并选择实例特定启发式算法。
+- [Safe: Enhancing Mathematical Reasoning in Large Language Models via Retrospective Step-aware Formal Verification](https://arxiv.org/abs/2506.04592)：数学推理中的回溯式分步形式化验证。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [LeanTutor](https://arxiv.org/abs/2506.08321)：一个以 Lean 为验证后端的证明辅导 harness，结合自动形式化、证明检查、下一步提示生成与自然语言反馈；配套 PeanoBench 可用于研究“辅导过程是否可验证”，而不只是最终证明是否成功。
+- [Epistemic Ensemble for formal reasoning](https://arxiv.org/abs/2506.10903)：用于 autoformalization 评测的 LLM-as-judge harness。核心思想是结合多个 judge 视角和多粒度标准，在 gold formalization 成本很高时评估形式化数学陈述的细微质量差异。
 - [Prover Agent](https://arxiv.org/abs/2506.19923)（[开源代码](https://github.com/kAIto47802/Prover-Agent)）：以代理式搜索与工具交互提升 Lean 证明求解能力。
+- [Debate4MATH: Multi-Agent Debate for Fine-Grained Reasoning in Math](https://doi.org/10.18653/v1/2025.findings-acl.862)：用于细粒度数学推理的 multi-agent debate harness；核心思想是用结构化辩论暴露并解决数学推理错误。
+- [KELPS: A Framework for Verified Multi-Language Autoformalization via Semantic-Syntactic Alignment](https://arxiv.org/abs/2507.08665)：带验证的多语言 autoformalization 框架；核心思想是对齐语义方程和句法证明工件，让非形式数学能被形式系统检查。
+- [ProofCompass: Enhancing Specialized Provers with LLM Guidance](https://arxiv.org/abs/2507.14335)：用 LLM guidance 增强专用 prover 的混合证明工作流。核心思想：结合通用 LLM 引导和专用证明引擎来提升形式化推理。
+- [LeanTree: Accelerating White-Box Proof Search with Factorized States in Lean 4](https://arxiv.org/abs/2507.14722)：在 Lean 4 中用 factorized states 加速 white-box proof search；核心思想是结构化证明搜索状态，使定理证明 agent 更高效探索 Lean 目标。
+- [IMO 2025 Verification-and-Refinement Pipeline](https://arxiv.org/abs/2507.15855)：一种模型无关的数学 harness，结合候选生成、验证和修订，在 IMO 问题上显著超过基础模型 pass rate。
+- [A Toolbox, Not a Hammer - Multi-TAG: Scaling Math Reasoning with Multi-Tool Aggregation](https://arxiv.org/abs/2507.18973)：它提供数学求解、形式化证明或工具增强数学推理的 agent workflow，适合补充 math Agent Harness。
+- [CP-Agent: Agentic Constraint Programming](https://arxiv.org/abs/2508.07468)：把 constraint-programming 建模、求解和修复包进 agent loop，使 LLM 能借助 solver feedback formulation 和 debug 约束问题。
+- [Scaling up Multi-Turn Off-Policy RL and Multi-Agent Tree Search for LLM Step-Provers](https://arxiv.org/abs/2509.06493)：用 multi-agent tree search 扩展 LLM step-provers。核心思想是在多轮形式证明状态上协调 proof-search agents，并使用验证反馈。
+- [V-Math: An Agentic Approach to the Vietnamese National High School Graduation Mathematics Exams](https://arxiv.org/abs/2509.12251)：构建面向数学任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [PhysicsMinions: Winning Gold Medals in the Latest Physics Olympiads with a Coevolutionary Multimodal Multi-Agent System](https://arxiv.org/abs/2509.24855)：协同演化的多模态多 agent 物理奥赛求解。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Aristotle](https://arxiv.org/abs/2510.01346)：IMO 级自动定理证明系统。核心思想是把 Lean proof search、非形式化 lemma 生成与形式化、专用几何求解器整合成一个可验证证明流程。
+- [Aria: An Agent For Retrieval and Iterative Auto-Formalization via Dependency Graph](https://arxiv.org/abs/2510.04520)：面向检索与迭代自动形式化的代理。核心思想是用依赖图和迭代修正形式化研究级数学命题。
+- [Autoformalizer with Tool Feedback](https://arxiv.org/abs/2510.06857)：把 Lean 4 编译器反馈和多 LLM 一致性验证接入自动形式化循环，将语法检查与语义一致性检查作为工具来驱动形式化陈述的迭代修正。
+- [MASA: LLM-Driven Multi-Agent Systems for Autoformalization](https://arxiv.org/abs/2510.08988)：可作为数学与形式化推理的Agent Harness候选；核心关注“LLM-Driven Multi-Agent Systems for Autoformalization”。
+- [DRIFT: Decompose, Retrieve, Illustrate, then Formalize Theorems](https://arxiv.org/abs/2510.10815)：定理自动形式化工作流。核心思想：先分解并检索前置概念，再辅助说明，最后把陈述形式化给定理证明器。
+- [CodePlot-CoT: Mathematical Visual Reasoning by Thinking with Code-Driven Images](https://arxiv.org/abs/2510.11718)：用代码生成视觉辅助来支持数学视觉推理。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Ax-Prover: A Deep Reasoning Agentic Framework for Theorem Proving in Mathematics and Quantum Physics](https://arxiv.org/abs/2510.12787)：跨数学与量子物理的多 agent Lean 定理证明。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [LinearizeLLM: An Agent-Based Framework for LLM-Driven Exact Linear Reformulation of Nonlinear Optimization Problems](https://arxiv.org/abs/2510.15969)：用专门 agents 识别非线性优化模式并选择线性化技术，生成可交给求解器的精确线性重构。
+- [ProofFlow](https://arxiv.org/abs/2510.15981)：面向 faithful proof autoformalization 的 harness。核心思想：先构建人类证明步骤的依赖图，再把步骤形式化为中间引理，并用 ProofScore 同时衡量语法正确性、语义忠实度和结构保真度。
+- [OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling](https://arxiv.org/abs/2510.22192)：用层级思路生成与树搜索分解运筹优化建模问题，再综合变量、约束和目标函数。
+- [SIGMA: Search-Augmented On-Demand Knowledge Integration for Agentic Mathematical Reasoning](https://arxiv.org/abs/2510.27568)：面向 agentic mathematical reasoning 的搜索增强 harness。核心思想是在多步数学问题求解中按需整合来自多个搜索视角的知识。
+- [Mathematical exploration and discovery at scale](https://arxiv.org/abs/2511.02864)：AlphaEvolve 用 LLM 生成代码、自动评分和进化式选择搜索数学构造；在分析、组合、几何和数论的 67 个问题上，它重新找到大多数已知最优解并改进了其中一些，后续还可用证明助手验证结果。
+- [ThetaEvolve: Test-time Learning on Open Problems](https://arxiv.org/abs/2511.23473)：面向开放数学问题的测试时程序演化流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Achieving Olympia-Level Geometry Large Language Model Agent via Complexity Boosting Reinforcement Learning](https://arxiv.org/abs/2512.10534)：它提供数学求解、形式化证明或工具增强数学推理的 agent workflow，适合补充 math Agent Harness。
+- [Long-horizon Reasoning Agent for Olympiad-Level Mathematical Problem Solving](https://arxiv.org/abs/2512.10739)：它提供数学求解、形式化证明或工具增强数学推理的 agent workflow，适合补充 math Agent Harness。
+- [Gödel's Poetry](https://arxiv.org/abs/2512.14252)：它提供数学求解、形式化证明或工具增强数学推理的 agent workflow，适合补充 math Agent Harness。
+- [Do Multi-Agents Solve Better Than Single? Evaluating Agentic Frameworks for Diagram-Grounded Geometry Problem Solving and Reasoning](https://arxiv.org/abs/2512.16698)：比较多 agent 与单 agent 框架在图形几何题中的表现；核心思想：评估 agent 分工是否能提升视觉数学推理。
+- [OPT2CODE: A retrieval-augmented framework for solving linear programming problems](https://doi.org/10.1016/j.nlp.2025.100185)：检索相似 linear-programming formulations，并把问题文本转成可执行优化代码以获得 solver-based answers。
+- [MathMex-V2: A Large Language Model Enabled Math Search Engine](https://doi.org/10.1109/jcdl67857.2025.00063)：构建 LLM-enabled 数学搜索引擎，解析数学查询、检索相关表达式或文档，并返回 math-aware results。
+- [Seed-Prover 1.5: Mastering Undergraduate-Level Theorem Proving via Learning from Experience](https://arxiv.org/abs/2512.17260)：面向本科层级数学的 formal theorem-proving system。核心思想是在 Seed-Prover 路线基础上引入 experience learning，强化更难的 Lean proof search。
+- [UniMath-CoT: A Unified Framework for Multimodal Mathematical Reasoning with Re-Inference Affirmation](https://doi.org/10.18653/v1/2025.mathnlp-main.13)：在多模态数学推理框架中加入 re-inference affirmation，属于 math reasoning harness。
+- [AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](https://arxiv.org/abs/2512.20745): 把自然语言推理与 code interpreter 执行结合，训练模型在数学解题中交替进行工具调用、代码修正和推理。
+- [Next-Gen Theorem Proving: A Multi-Agent Paradigm for Automated Reasoning](https://doi.org/10.1109/cogmi67134.2025.00013)：面向数学推理提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Agentic Proof Automation: A Case Study](https://arxiv.org/abs/2601.03768)：展示 proof automation case study，由 agent 分解证明目标、调用验证工具并修订失败尝试。
+- [Isabellm](https://arxiv.org/abs/2601.04653)：面向 Isabelle/HOL 的 LLM 驱动定理证明器。核心思想是结合有界证明命令搜索、高层证明规划和验证器反馈，在本地或 API 模型上合成形式化证明。
+- [Numina-Lean-Agent: An Open and General Agentic Reasoning System for Formal Mathematics](https://arxiv.org/abs/2601.14027)：用通用 coding-agent 接口和可通过 MCP 扩展的工具处理形式数学，说明定理证明可以作为可复现的 agentic reasoning workflow。
+- [VisTIRA: Closing the Image-Text Modality Gap in Visual Math Reasoning via Structured Tool Integration](https://arxiv.org/abs/2601.14440)：VisTIRA 通过结构化工具集成支持 visual math reasoning，属于数学多模态推理 harness。
+- [PhysProver: Advancing Automatic Theorem Proving for Physics](https://arxiv.org/abs/2601.15737)：Agent Harness 条目；核心思想：面向物理的自动定理证明 agent，连接形式验证和科学推理。
+- [Formula-One Prompting: Equation-First Reasoning For Applied Mathematics](https://arxiv.org/abs/2601.19302)：可作为mathematical and formal reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [LeanArchitect: Automating Blueprint Generation for Humans and AI](https://arxiv.org/abs/2601.22554)：自动生成 Lean 形式化蓝图。核心思想：通过依赖图把非形式化数学文本连接到形式化声明。
+- [Monotonic Reference-Free Refinement](https://arxiv.org/abs/2601.23166)：面向 full-theorem autoformalization 的 inference-time refinement harness。核心思想：结合 theorem prover feedback 与 LLM judges，从形式有效性、逻辑保持、数学一致性和形式质量多维优化，并在没有 ground truth formalization 时只接受 certified improvements。
+- [Socratic-Geo: Synthetic Data Generation and Geometric Reasoning via Multi-Agent Interaction](https://arxiv.org/abs/2602.03414)：提供规划、记忆、验证、工具调用或运行时编排，服务于数学推理，可补充多智能体几何推理与合成数据生成流程。
+- [Enhancing Mathematical Problem Solving in LLMs through Execution-Driven Reasoning Augmentation](https://arxiv.org/abs/2602.03950)：可作为mathematical and formal reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Towards Real-World Industrial-Scale Verification: LLM-Driven Theorem Proving on seL4](https://arxiv.org/abs/2602.08384)：可作为mathematical and formal reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Towards Autonomous Mathematics Research](https://arxiv.org/abs/2602.10177)：探索自主数学研究工作流。
+- [MerLean: An Agentic Framework for Autoformalization in Quantum Computation](https://arxiv.org/abs/2602.16554)：面向量子计算的 agentic autoformalization framework。核心思想是通过 agent workflow 把量子计算推理转成形式化 artifact。
+- [M2F: Automated Formalization of Mathematical Literature at Scale](https://arxiv.org/abs/2602.17016)：自动大规模形式化数学文献。核心思想：管理跨文件依赖、导入、编译与项目级证明助手流程。
+- [A Minimal Agent for Automated Theorem Proving](https://arxiv.org/abs/2602.24273)：Minimal Agent for ATP 提供可比较的 theorem-proving agent baseline。
+- [Epistemic Gain, Aleatoric Cost: Uncertainty Decomposition in Multi-Agent Debate for Math Reasoning](https://arxiv.org/abs/2603.01221)：通过不确定性分解分析数学推理中的多 agent debate；核心思想是区分 epistemic gain 与 aleatoric communication cost。
 - [Code2Math](https://arxiv.org/abs/2603.03202)：用代码智能体演化数学问题的多智能体框架。核心思想：通过代码执行和可解性验证循环，把已有问题转化为更难但可解的新变体，将问题生成变成探索式智能体工作流。
+- [Discovering mathematical concepts through a multi-agent system](https://arxiv.org/abs/2603.04528)：该系统交替执行猜想生成、证明尝试、反例反馈和数据分布更新；在受控的概念恢复任务中，它仅凭多面体数据重新发现同调，并用消融实验检验哪些局部过程共同产生了数学上的有趣性。
+- [Mechanic: Sorrifier-Driven Formal Decomposition Workflow for Automated Theorem Proving](https://arxiv.org/abs/2603.24465)：用形式化分解工作流支持自动定理证明。
+- [Automatic Textbook Formalization](https://arxiv.org/abs/2604.03071)：30,000 个并行 Claude 4.5 Opus agent 在一周内把 500 多页的研究生代数组合学教材形式化，产出 13 万行代码和 5,900 个 Lean 声明；共享版本控制与公开 blueprint 使这项大规模形式化可恢复、可审计。
+- [ProofSketcher: Hybrid LLM + Lightweight Proof Checker for Reliable Math/Logic Reasoning](https://arxiv.org/abs/2604.06401)：可作为mathematical and formal reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Just Type It in Isabelle! AI Agents Drafting, Mechanizing, and Generalizing from Human Hints](https://arxiv.org/abs/2604.15713)：Agent Harness 条目；核心思想：把人类提示转化为 Isabelle 证明草稿、机械化和泛化流程；核心思想是将非形式化指导接入可执行形式化证明。
+- [Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](https://arxiv.org/abs/2604.15839)：Discover and Prove 是 Lean 4 hard-mode theorem proving 的开源 agentic framework。
+- [Lean Atlas: An Integrated Proof Environment for Scalable Human-AI Collaborative Formalization](https://arxiv.org/abs/2604.16347)：构建面向可扩展人机形式化的 Lean 集成证明环境。
+- [Understanding Tool-Augmented Agents for Lean Formalization: A Factorial Analysis](https://arxiv.org/abs/2604.16538)：对 Lean 形式化中的工具增强智能体做因子分析。
+- [Compile to Compress: Boosting Formal Theorem Provers by Compiler Outputs](https://arxiv.org/abs/2604.18587)：可作为mathematical and formal reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Dual-Cluster Memory Agent: Resolving Multi-Paradigm Ambiguity in Optimization Problem Solving](https://arxiv.org/abs/2604.20183)：从历史优化题解中构建建模与编码双簇记忆，再用结构化记忆导航、修复并切换求解路径。
+- [Doubly Saturated Ramsey Graphs: A Case Study in Computer-Assisted Mathematical Discovery](https://arxiv.org/abs/2604.21187)：用计算辅助流程进行 Ramsey 图数学发现。
+- [FormalScience](https://arxiv.org/abs/2604.23002)：面向科学内容的 human-in-the-loop Lean 自动形式化 harness。核心思想是结合 agentic 代码生成与专家反馈，把非形式化数学和科学推理转成可验证形式代码。
 - [QED](https://arxiv.org/abs/2604.24021)：面向开放数学问题的多 agent 证明生成系统；核心思想是把证明搜索、批判、验证焦点与修订分配给专门 agent，以应对研究级证明中的系统性失败模式。
+- [Faithful Autoformalization via Roundtrip Verification and Repair](https://arxiv.org/abs/2604.25031)：该工作用 roundtrip verification and repair 做 autoformalization，属于数学形式化验证 harness。
+- [DreamProver](https://arxiv.org/abs/2604.26311)：通过 wake-sleep 机制演化可迁移 lemma library 的 theorem-proving agent。核心思想：在证明尝试与抽象压缩之间交替，使 agent 为未见形式化证明构建紧凑可复用 lemmas。
+- [AI co-mathematician](https://arxiv.org/abs/2605.06651)：面向数学研究的 agentic workbench。核心思想是以交互式研究工作流支持猜想、探索、验证和迭代，而不是只生成单个证明或答案。
+- [Teaching Language Models to Think in Code](https://arxiv.org/abs/2605.07237)：可作为mathematical and formal reasoning方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
 - [STAR-PólyaMath](https://arxiv.org/abs/2605.19338)（[开源代码](https://github.com/Julius-Woo/STAR-PolyaMath)）：面向 MathArena Apex、AIME、Putnam、IMO、HMMT 与 USAMO 等榜单的多 agent 数学推理 harness；核心思想是用 Meta-Strategist、Reasoner-Verifier 和 challenge-step-replan 状态机长期维护策略、回溯失败分支并限制幻觉累积。
+- [Iteris: Agentic Research Loops for Computational Mathematics](https://arxiv.org/abs/2606.02484)：Iteris 把数值实验、对抗性构造搜索、算法设计和证明草稿串成面向计算数学开放问题的循环；两个案例分别产出共轭梯度与随机坐标下降的相图，以及 QR 列主元分解的反例，之后由专家核验和修正。
+- [LEAP: Supercharging LLMs for Formal Mathematics with Agentic Frameworks](https://arxiv.org/abs/2606.03303)：LEAP 让通用模型先写非形式化证明 blueprint，再拆解目标并反复利用 Lean 编译器反馈；其 Lean-IMO-Bench 专门暴露非套路的多步证明，框架把一次性解决率从 10% 以下提升到 70%，还形式化了一个开放组合学问题的子问题。
+- [LeanMarathon: Toward Reliable AI Co-Mathematicians through Long-Horizon Lean Autoformalization](https://arxiv.org/abs/2606.05400)：LeanMarathon 把持续演化的 Lean 文件同时作为证明骨架和共享的自然语言依赖图；按合约划分的 agent 与两阶段编排器先稳定目标命题，再在 CI 门控的并行轮次中从 DAG 叶节点向上证明，三次运行无 sorry 地形式化了四个 Erdős 问题中的七个定理。
+- [Goedel-Architect: Streamlining Formal Theorem Proving with Blueprint Generation and Refinement](https://arxiv.org/abs/2606.06468)：Goedel-Architect 先生成由定义和引理组成的依赖图 blueprint，再让带工具的证明器并行关闭开放节点，并把失败节点反馈给全局 blueprint 修订，避免递归拆解陷入同一死路；以 DeepSeek-V4-Flash 为骨干时，MiniF2F-test 和 PutnamBench 的 pass@1 分别达到 99.2% 和 75.6%。
+- [TheoremGraph: Bridging Formal and Informal Mathematics](https://arxiv.org/abs/2606.25363)：TheoremGraph 将 1,170 万个非形式化定理环境和 1,830 万条候选依赖，与 LeanGraph 的 388,105 个声明及 1,130 万条类型化边连接起来，再用语义表示跨越两种数学表述，并提供数据集、抽取器、API 和 MCP 检索；无需 LM reranker 时图扩展的 Recall@10 达到 0.775。
+- [LAMP: Lean-based Agentic framework with MCP and Proof Repair](https://arxiv.org/abs/2606.28841)：LAMP 不微调证明器，而是通过 MCP 把面向词上组合学的本体提供给 Planner、Builder 和 Verifier；项目新增八个模块、93 个 Lean 声明后，在 90 个不同难度的 CoW 定理上证明率达到 96.7%，去掉工具 grounding 或角色分工都会损失约 12 个百分点。
+- [Beyond the Library: An Agentic Framework for Autoformalizing Research Mathematics](https://arxiv.org/abs/2606.31134)：Theo 的编排器让通用代码 LLM 在 Mathlib 覆盖范围之外动态扩展 Lean 定义，并先用辅助引理验证扩展，再形式化目标定理；它对 PutnamBench 样本和七篇研究论文完成机器检查，其中两个形式化开发不需要 Lean 内核之外的公理。
+- [MechMath Agent Team: LLM Driven Agents for Mathematical Research](https://arxiv.org/abs/2607.04394)：MMAT 将数学研究拆成 Control、Execution 和 Augmentation 三个平面，让知识库管理器、自然语言证明器和形式语言证明器形成闭环；在两个月的部署中，它报告解决了覆盖五个数学领域的 11 个开放问题。
+- [ReasFlow: Assisting Reasoning-Centric Scientific Discovery in Applied Mathematics via a Knowledge-Based Multi-Agent System](https://arxiv.org/abs/2607.14178)：ReasFlow 将人类定位为首席研究者、agent 定位为研究生协作者，加入内部逻辑验证闭环和主动检索程序性启发的自我改进机制；它把文献综合、算法设计、定理证明、实验和写作统一起来，生成了五篇完整的理论型论文。
+- [Improving mathematical proving skills through interactive theorem proving](https://doi.org/10.5937/jesmac2402037s)：讨论 interactive theorem proving 作为数学证明技能训练环境；其贡献更偏教育实践，可能偏离 LLM agent harness 轴。

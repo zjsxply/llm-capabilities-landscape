@@ -3,6 +3,7 @@
 > 上级章节：0. 引言
 
 
+- [Exploring and Mitigating Adversarial Manipulation of Voting-Based Leaderboards](https://arxiv.org/abs/2501.07493)：研究并缓解投票式排行榜的对抗操纵。
 - [LMSYS Chatbot Arena](https://lmarena.ai/leaderboard/text) 更像文本场景下的最终用户体验总榜。
 - [Vision Arena](https://lmarena.ai/leaderboard/vision) 更像视觉场景下的最终用户体验总榜。
 - [LLM Stats](https://llm-stats.com/) 是持续聚合型模型总榜，把公开 benchmark、API 速度和价格等信号合成统一比较入口；适合快速查看通用模型在多项主流任务上的总体走势。

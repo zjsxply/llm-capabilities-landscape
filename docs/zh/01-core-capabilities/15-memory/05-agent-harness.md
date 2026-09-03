@@ -5,40 +5,368 @@
 - [MemoryBank](https://arxiv.org/abs/2305.10250)（[开源代码](https://github.com/zhongwanjun/MemoryBank-SiliconFriend)）：把长期记忆写入、检索和人格/偏好更新做成对话代理组件，适合追踪跨轮一致性。
 - [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)）：把探索经验沉淀为可调用 skill library 与长期记忆；虽然任务是 Minecraft，但它把“经验写入 -> 检索复用 -> 能力累积”做成了 agent harness 的经典形态。
 - [MemGPT](https://arxiv.org/abs/2310.08560)（[开源代码](https://github.com/cpacker/MemGPT)）：把长上下文问题转化为显式 memory tier 与调度策略，形成可复用的长程代理 runtime。
+- [Compress to Impress: Unleashing the Potential of Compressive Memory in Real-World Long-Term Conversations](https://arxiv.org/abs/2402.11975)：构建面向长程对话的压缩记忆流程，通过记忆生成与压缩保留关键历史信息，使对话智能体不必反复回放完整记录。
+- ["My agent understands me better": Integrating Dynamic Human-like Memory Recall and Consolidation in LLM-Based Agents](https://arxiv.org/abs/2404.00573)：把类人 recall 与 consolidation 接入 LLM agent，区分动态检索和长期记忆更新，以支持个性化交互。
+- [RAM: Towards an Ever-Improving Memory System by Learning from Communications](https://arxiv.org/abs/2404.12045)：从沟通轨迹中学习记忆更新，使记忆库能随重复交互持续改进，而不是停留在静态检索档案。
+- [HiAgent: Hierarchical Working Memory Management for Solving Long-Horizon Agent Tasks with Large Language Model](https://arxiv.org/abs/2408.09559)：用层级 working memory 管理长周期任务，把任务状态拆成不同层级，使 agent 能为子目标检索紧凑上下文。
+- [X-TURING: Towards an Enhanced and Efficient Turing Test for Long-Term Dialogue Agents](https://arxiv.org/abs/2408.09853)：提出长期对话 agent 的测试 harness，重点压力测试持久记忆、用户模拟和高效多会话评测。
 - [Agent Workflow Memory](https://arxiv.org/abs/2409.07429)（开源代码：未找到稳定公开仓库）：面向多步骤 agent 工作流的记忆机制；核心思想：让 agent 在任务执行中显式记录关键状态、工具结果和决策理由，后续步骤按需检索而非全量回灌。
+- [OmniQuery: Contextually Augmenting Captured Multimodal Memories to Enable Personal Question Answering](https://arxiv.org/abs/2409.08250)：为捕获到的多模态记忆生成上下文增强，使个人问答系统能检索并推理图片、事件和对话证据。
+- [A Compressive Memory-based Retrieval Approach for Event Argument Extraction](https://arxiv.org/abs/2409.09322)：把压缩记忆检索用于事件论元抽取，在缩小检索上下文的同时保留关键历史证据。
+- [Stable Hadamard Memory: Revitalizing Memory-Augmented Agents for Reinforcement Learning](https://arxiv.org/abs/2410.10132)：为 RL agent 加入 Stable Hadamard Memory 模块，用结构化记忆增强稳定长周期策略学习。
+- [TiMePReSt: Time and Memory Efficient Pipeline Parallel DNN Training with Removed Staleness](https://arxiv.org/abs/2410.14312)：通过移除 staleness 优化 pipeline-parallel DNN 训练的时间与内存效率，属于系统内存边界而非 agent 召回 harness。
 - [Zep](https://arxiv.org/abs/2501.13956)（[开源代码](https://github.com/getzep/graphiti)）：面向 agent memory 的时间知识图谱架构；核心思想：把事件、实体、关系和时间演化组织成可查询图，服务长期个性化和跨会话召回。
-- Letta（[开源代码](https://github.com/letta-ai/letta)；[文档](https://docs.letta.com/)）：MemGPT 后续演进出的开源 stateful-agent runtime，包含 memory blocks、skills、subagents、高级记忆管理和面向 continual learning 的运行时接口。
+- [MINDSTORES: Memory-Informed Neural Decision Synthesis for Task-Oriented Reinforcement in Embodied Systems](https://arxiv.org/abs/2501.19318)：将 memory-informed decision synthesis 用于 embodied system 的任务导向强化过程。
+- [Memento No More: Coaching AI Agents to Master Multiple Tasks via Hints Internalization](https://arxiv.org/abs/2502.01562)：让 agent 内化提示以掌握多任务的机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [TReMu: Towards Neuro-Symbolic Temporal Reasoning for LLM-Agents with Memory in Multi-Session Dialogues](https://arxiv.org/abs/2502.01630)：面向多会话记忆 LLM agent 的 neuro-symbolic temporal-reasoning harness。核心思想是结构化 temporal memory，使 agent 能跨 session 推理事件。
 - [A-MEM](https://arxiv.org/abs/2502.12110)（[开源代码](https://github.com/WujiangXu/A-mem)）：面向 agent 的动态记忆组织框架。核心思想：把记忆片段写成可链接、可演化的知识结构，支持后续检索、重组与反思。
+- [Enhancing Memory Efficiency in Large Language Model Training Through Chronos-aware Pipeline Parallelism](https://arxiv.org/abs/2503.03182)：用 Chronos-aware pipeline parallelism 提升 LLM 训练内存效率，边界是系统内存而非 agent 记忆。
+- [In Prospect and Retrospect: Reflective Memory Management for Long-term Personalized Dialogue Agents](https://arxiv.org/abs/2503.08026)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [AI-native Memory 2.0 / Second Me](https://arxiv.org/abs/2503.08102)：提出个人 AI 记忆架构，把长期用户状态、身份与可复用回忆组织成 agent memory harness 问题。
+- [MARS: Memory-Enhanced Agents with Reflective Self-improvement](https://arxiv.org/abs/2503.19271)：为智能体加入外部记忆管理、轨迹复用、反思或生命周期控制。
+- [Adaptive Memory-Based Optimization for RAG](https://arxiv.org/abs/2504.05312)：用自适应记忆优化检索增强生成，为依赖检索的 agent 和助手系统管理可复用检索状态。
+- [Decentralizing AI Memory: SHIMI, a Semantic Hierarchical Memory Index for Scalable Agent Reasoning](https://arxiv.org/abs/2504.06135)：面向可扩展 agent reasoning 的 semantic hierarchical memory index。核心思想是把 AI 记忆去中心化为结构化语义索引，使 agent 能在不断增长的历史上检索和推理。
+- [Task Memory Engine (TME): Enhancing State Awareness for Multi-Step LLM Agent Tasks](https://arxiv.org/abs/2504.08525)：面向智能体与模型记忆的智能体框架或运行时。核心思想：把 (TME): Enhancing State Awareness for Multi-Step LLM Agent Tasks 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Semantic Commit: Helping Users Update Intent Specifications for AI Memory at Scale](https://arxiv.org/abs/2504.09283)：把用户意图记忆更新视为语义提交，通过冲突检测和 LLM 辅助解决来规模化维护 intent specification 的一致性。
+- [HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding](https://arxiv.org/abs/2504.10739)：HippoMM 是受海马体启发的多模态记忆架构，面向长音视频事件理解。
 - [Mem0](https://arxiv.org/abs/2504.19413)（[开源代码](https://github.com/mem0ai/mem0)）：面向生产 agent 的可扩展长期记忆层。核心思想：用自动抽取、更新和检索的 memory pipeline 降低全量历史上下文依赖。
+- [UserCentrix: An Agentic Memory-augmented AI Framework for Smart Spaces](https://arxiv.org/abs/2505.00472)：可作为agent 记忆与个性化的 Agent Harness 候选：围绕 UserCentrix: An Agentic Memory-augmented AI Framework for Smart Spaces 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [MemEngine: A Unified and Modular Library for Developing Advanced Memory of LLM-based Agents](https://arxiv.org/abs/2505.02099)：用于开发 LLM-based agent memory 的模块化库；核心思想是把记忆构建、检索、更新和评估封装成可复用 runtime 模块。
+- [A Grounded Memory System For Smart Personal Assistants](https://arxiv.org/abs/2505.06328)：面向个人助理的 grounded memory harness。核心思想是结合感知、实体消歧、一致信息抽取和落地存储，让 agent 能可靠回忆真实用户情境。
+- [Retrospex: Language Agent Meets Offline Reinforcement Learning Critic](https://arxiv.org/abs/2505.11807)：一种利用历史经验和 offline RL critic 的语言 agent 框架。核心思想是把过去轨迹转化为后续决策可复用的反馈。
+- [AR Secretary Agent: Real-time Memory Augmentation via LLM-powered Augmented Reality Glasses](https://arxiv.org/abs/2505.11888)：把 AR 眼镜作为实时记忆增强接口，让 LLM secretary 捕获情境上下文并在交互中提示相关记忆。
+- [Recursive Question Understanding for Complex Question Answering over Heterogeneous Personal Data](https://arxiv.org/abs/2505.11900)：对异构个人数据上的复杂问题进行递归式理解。
 - [Record & Replay](https://arxiv.org/abs/2505.17716)：面向 LLM agent 的经验复用 harness；核心思想是记录既往任务轨迹，并在后续执行中 replay 有用经验，使 agent 无需重新训练也能迁移程序性知识。
+- [Collaborative Memory: Multi-User Memory Sharing in LLM Agents with Dynamic Access Control](https://arxiv.org/abs/2505.18279)：面向 LLM agent 的多用户记忆共享框架。核心思想是用动态访问控制暴露共享记忆，使 agent 能复用用户与群体知识，同时避免隐私边界混淆。
+- [Task Memory Engine: Spatial Memory for Robust Multi-Step LLM Agents](https://arxiv.org/abs/2505.19436)：面向稳健多步 LLM agent 的空间记忆引擎。核心思想是在步骤之间维护任务相关空间状态，避免 agent 在长流程中反复丢失环境上下文。
+- [MemGAS](https://arxiv.org/abs/2505.19549)：面向 conversational agent 的多粒度记忆 harness；核心思想是在多个粒度上关联记忆，自适应选择检索粒度，并在生成回复前细化检索到的记忆。
+- [MemGuide: Intent-Driven Memory Selection for Goal-Oriented Multi-Session LLM Agents](https://arxiv.org/abs/2505.20231)：可作为Agent 记忆的Agent Harness候选；核心关注“Intent-Driven Memory Selection for Goal-Oriented Multi-Session LLM Agents”。
+- [Can Past Experience Accelerate LLM Reasoning?](https://arxiv.org/abs/2505.20643)：它提供记忆写入、检索、经验复用、记忆演化或 memory runtime 机制，适合补充 memory Agent Harness。
+- [3DLLM-Mem: Long-Term Spatial-Temporal Memory for Embodied 3D Large Language Model](https://arxiv.org/abs/2505.22657)：3DLLM-Mem 同时提出 3D 空间-时间长期记忆机制和 3DMem-Bench，可补足 embodied agent memory。
+- [AnnaAgent: Dynamic Evolution Agent System with Multi-Session Memory for Realistic Seeker Simulation](https://arxiv.org/abs/2506.00551)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [MAPLE: Multi-Agent Adaptive Planning with Long-Term Memory for Table Reasoning](https://arxiv.org/abs/2506.05813)：Agent Harness 条目；核心思想：把多 agent 规划与长期记忆结合到表格推理流程中。
 - [MemoryOS](https://arxiv.org/abs/2506.06326)（[开源代码](https://github.com/BAI-LAB/MemoryOS)）：把 agent memory 拆成 storage、update、retrieve 与 consolidation 等 OS-like 操作；适合作为长期交互任务中的通用 memory runtime。
-- LangMem（[开源代码](https://github.com/langchain-ai/langmem)；[文档](https://langchain-ai.github.io/langmem/)）：面向 LangGraph/LangChain 的记忆 harness，提供记忆搜索、记忆管理工具和后台记忆更新，直接对应 memory-agent benchmark 中的写入、搜索、更新与复用生命周期。
+- [Contextual Experience Replay for Self-Improvement of Language Agents](https://arxiv.org/abs/2506.06698)：面向自改进语言 agent 的上下文经验回放机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems](https://arxiv.org/abs/2506.07398)：面向面向多 agent 系统的层次化记忆的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents](https://arxiv.org/abs/2506.14852): 提出面向 agent 的测试时计划记忆，从历史执行中抽取并适配可复用计划模板，以降低规划成本和延迟。
+- [Mem4Nav: Boosting Vision-and-Language Navigation in Urban Environments with a Hierarchical Spatial-Cognition Long-Short Memory System](https://arxiv.org/abs/2506.19433)：为城市视觉语言导航引入层级空间认知记忆，把短期路线状态和长期空间地标结合起来。
+- [Universal Retrieval for Multimodal Trajectory Modeling](https://arxiv.org/abs/2506.22056)：多模态 agent 轨迹的通用检索。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [Memory as a Service（MaaS）](https://arxiv.org/abs/2506.22815)：面向协作 agent 的服务化上下文记忆架构。核心思想：把记忆暴露为模块化服务，让多个 agent 共享、检索和更新任务上下文，而不是依赖单一的完整提示历史。
+- [Ella: Embodied Social Agents with Lifelong Memory](https://arxiv.org/abs/2506.24019)：带终身多模态记忆的具身社交 agent harness。核心思想是维护以名称为中心的语义记忆和交互记忆，使 agent 能从 3D 开放世界中的视觉观察与社交互动中持续学习。
+- [M2PA: A Multi-Memory Planning Agent for Open Worlds Inspired by Cognitive Theory](https://doi.org/10.18653/v1/2025.findings-acl.1191)：Agent Harness 条目；核心思想：面向开放世界任务的多记忆规划 agent，适合补充长期记忆和计划耦合的 harness。
 - [MemOS](https://arxiv.org/abs/2507.03724)（[开源代码](https://github.com/MemTensor/MemOS)）：把长期记忆、混合检索、跨任务经验复用和 token 节省做成 self-evolving memory OS，适合生产 agent 的 memory-first runtime。
+- [Agent KB: Leveraging Cross-Domain Experience for Agentic Problem Solving](https://arxiv.org/abs/2507.06229)：面向面向 agentic 问题求解的跨域经验共享的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
 - [MIRIX](https://arxiv.org/abs/2507.07957)（[开源代码](https://github.com/Mirix-AI/MIRIX)）：多代理记忆系统。核心思想：用专门的记忆管理 agent 维护短期、情景、语义与程序性记忆，服务长程任务中的跨会话调用。
+- [MemTool: Optimizing Short-Term Memory Management for Dynamic Tool Calling in LLM Agent Multi-Turn Conversations](https://arxiv.org/abs/2507.21428)：MemTool 针对多轮动态 tool calling 的短期记忆管理，连接工具调用与 agent memory。
+- [MemoCue: Empowering LLM-Based Agents for Human Memory Recall via Strategy-Guided Querying](https://arxiv.org/abs/2507.23633)：用于人类记忆回忆 agent 的策略引导查询 harness；核心思想是帮助 agent 选择记忆回忆策略和查询，而不是依赖一次性检索。
+- [Dynamic Context Adaptation for Consistent Role-Playing Agents with Retrieval-Augmented Generations](https://arxiv.org/abs/2508.02016)：提出 Amadeus 训练免调的 RAG 上下文适配框架，用于提升角色扮演智能体在画像外问题上的一致性。
+- [What Deserves Memory: Adaptive Memory Distillation for LLM Agents](https://arxiv.org/abs/2508.03341)：通过情节整合与语义蒸馏学习经验的未来价值，而不是依赖固定记忆启发式。
 - [RCR-Router](https://arxiv.org/abs/2508.04903)：面向结构化记忆多 agent LLM 系统的 role-aware context-routing harness。核心思想是按 agent 角色和交互轮次选择相关记忆子集，减少冗余上下文暴露，同时保留协作质量。
+- [Memp](https://arxiv.org/abs/2508.06433)：面向 agent 的 procedural memory harness。核心思想是把过往轨迹蒸馏成细粒度步骤说明和高层脚本，并持续构建、检索、更新、纠错与淘汰可复用程序性记忆。
+- [Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory](https://arxiv.org/abs/2508.08997)：面向异构多 agent 系统的 structured contextual memory 方法；核心思想是通过显式记忆结构让专门 agent 共享并保留任务上下文。
+- [Semantic Anchoring in Agentic Memory: Leveraging Linguistic Structures for Persistent Conversational Context](https://arxiv.org/abs/2508.12630)：提供智能体记忆方法；核心思想是锚定、存储或检索持久上下文，使后续交互保持连贯。
+- [Cognitive Workspace: Active Memory Management for LLMs - An Empirical Study of Functional Infinite Context](https://arxiv.org/abs/2508.13171)：它提供记忆写入、检索、经验复用、记忆演化或 memory runtime 机制，适合补充 memory Agent Harness。
+- [Coarse-to-Fine Grounded Memory for LLM Agent Planning](https://arxiv.org/abs/2508.15305)：面向 LLM agent planning 的记忆 harness；核心思想是把环境信息落到粗细两级记忆中，支持跨场景规划适配。
+- [Memento](https://arxiv.org/abs/2508.16153)：通过 episodic memory 存储过往经验，并根据环境反馈更新记忆选择策略，在不微调基础 LLM 的情况下适配 agent 行为。
+- [Learn to Memorize: Optimizing LLM-based Agents with Adaptive Memory Framework](https://arxiv.org/abs/2508.16629)：面向 LLM-based agents 的自适应记忆框架；核心思想是优化 agent 在 memory cycle 中何时记、记什么，而不是依赖人工固定规则。
+- [Persode: Personalized Visual Journaling with Episodic Memory-Aware AI Agent](https://arxiv.org/abs/2508.20585)：将 episodic memory 接入视觉日记 agent，用已记住的个人事件和视觉记录支持个性化回顾。
+- [MeVe: A Modular System for Memory Verification and Effective Context Control in Language Models](https://arxiv.org/abs/2509.01514)：面向记忆与上下文管理的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“MeVe: A Modular System for Memory Verification and Effective Context Control in Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Meta-Policy Reflexion: Reusable Reflective Memory and Rule Admissibility for Resource-Efficient LLM Agent](https://arxiv.org/abs/2509.03990)：面向资源高效 LLM agent 的反思记忆 harness；核心思想是从失败中存储可复用规则，并在新任务中先判断规则是否适用。
+- [ArcMemo: Abstract Reasoning Composition with Lifelong LLM Memory](https://arxiv.org/abs/2509.04439)：把抽象推理模式写入长期记忆以便复用。
+- [SEDM: Scalable Self-Evolving Distributed Memory for Agents](https://arxiv.org/abs/2509.09498)：SEDM 面向 agents 的 scalable self-evolving distributed memory，贡献在长期多代理记忆管理。
+- [Pre-Storage Reasoning for Episodic Memory: Shifting Inference Burden to Memory for Personalized Dialogue](https://arxiv.org/abs/2509.10852)：面向个性化对话的记忆写入策略；核心思想是在存储前先推理和结构化 episodic memory，从而降低后续检索与推理负担。
+- [Text2Mem](https://arxiv.org/abs/2509.11145)：面向 agent memory 系统的记忆操作语言。核心思想：把自然语言记忆命令编译成经过验证的 JSON 式操作，例如 merge、promote、demote、split、lock 和 expire，再适配到 SQL 原型或现有记忆框架。
+- [MOOM: Maintenance, Organization and Optimization of Memory in Ultra-Long Role-Playing Dialogues](https://arxiv.org/abs/2509.11860)：面向超长角色扮演对话的记忆维护、组织和优化框架。核心思想是管理长期 persona 与事件记忆，使对话 agent 在很长会话中保持一致。
+- [EgoMem: Lifelong Memory Agent for Full-duplex Omnimodal Models](https://arxiv.org/abs/2509.11914)：面向全双工全模态模型的 lifelong memory agent；核心思想是从实时音视频流中维护用户和经验记忆，用于后续个性化交互。
+- [H2R: Hierarchical Hindsight Reflection for Multi-Task LLM Agents](https://arxiv.org/abs/2509.12810)：面向多任务 LLM agent 的分层 hindsight reflection 框架。核心思想是把历史任务经验组织成可复用反思，在跨任务时调用，而不是把每个 episode 当成孤立过程。
+- [MemOrb: A Plug-and-Play Verbal-Reinforcement Memory Layer for E-Commerce Customer Service](https://arxiv.org/abs/2509.18713)：面向客服 agent 的插件式 verbal-reinforcement memory layer。核心思想是跨会话保存并强化可复用交互经验，减少重复错误。
+- [SAMULE: Self-Learning Agents Enhanced by Multi-level Reflection](https://arxiv.org/abs/2509.20562)：多级反思增强的自学习 agent 框架。核心思想是在多个粒度上进行反思，让 agent 保留并改进过往尝试中的经验。
+- [Meta-Memory: Retrieving and Integrating Semantic-Spatial Memories for Robot Spatial Reasoning](https://arxiv.org/abs/2509.20754)：面向机器人空间推理的 semantic-spatial memory 框架。核心思想是检索并整合地点与观察记忆，使机器人能回答复杂环境中的空间问题。
+- [SGMem: Sentence Graph Memory for Long-Term Conversational Agents](https://arxiv.org/abs/2509.21212)：面向长期对话 agent 的 sentence-graph memory 框架；核心思想是把对话记忆组织成句子级图结构，便于后续轮次检索并组合持久用户状态与事件状态。
+- [PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning](https://arxiv.org/abs/2509.22315)：整合 planning、retrieval 与 memory 以增强推理，适合 memory harness。
+- [MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](https://arxiv.org/abs/2509.24704)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [ReasoningBank](https://arxiv.org/abs/2509.25140)：把智能体成功和失败经验蒸馏为可检索的 reasoning memory，并在测试时继续写回，使后续任务复用可泛化策略。
+- [Mem-α: Learning Memory Construction via Reinforcement Learning](https://arxiv.org/abs/2509.25911)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory](https://arxiv.org/abs/2510.02373)：面向 LLM agent 记忆的主动防御框架；核心思想是在记忆写入和检索影响行为之前检查内容，降低后续记忆投毒风险。
+- [Constructing coherent spatial memory in LLM agents through graph rectification](https://arxiv.org/abs/2510.04195)：通过图校正为 LLM 智能体构建一致的空间记忆。
+- [COSMIR: Chain Orchestrated Structured Memory for Iterative Reasoning over Long Context](https://arxiv.org/abs/2510.04568)：面向长上下文迭代推理的链式编排结构化记忆 harness；核心思想是把记忆组织成可跨推理步骤更新和复用的结构化状态。
+- [Agentic Context Engineering](https://arxiv.org/abs/2510.04618)：把提示、证据和策略视为可演化 playbook，通过生成、反思和整理避免智能体和领域推理系统中的上下文坍缩。
+- [LEGOMem: Modular Procedural Memory for Multi-agent LLM Systems for Workflow Automation](https://arxiv.org/abs/2510.04851)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
 - [CAM](https://arxiv.org/abs/2510.05520)：面向 LLM 阅读理解的建构主义 agentic memory harness。核心思想：用增量聚类、层级摘要和自适应检索构建结构化记忆图式，使阅读 agent 能整合并回访长文本证据。
+- [MemWeaver](https://arxiv.org/abs/2510.07713)：基于文本交互历史的个性化生成层级记忆框架。核心思想是区分行为记忆和长期认知记忆，使 agent 能同时检索具体行为与持续演化的用户偏好。
+- [Enabling Personalized Long-term Interactions in LLM-based Agents through Persistent Memory and User Profiles](https://arxiv.org/abs/2510.07925)：该工作通过持久记忆和用户画像支持个性化长期 agent 交互。
+- [Agent Learning via Early Experience](https://arxiv.org/abs/2510.08558)：把 agent 自身早期交互数据作为隐式 world modeling 和 self-reflection 的监督信号，使其在 web 和 tool-use 环境中适配，而不只依赖专家示范。
+- [Mnemosyne: An Unsupervised, Human-Inspired Long-Term Memory Architecture for Edge-Based LLMs](https://arxiv.org/abs/2510.08601)：面向边缘 LLM 的无监督长期记忆架构；核心思想是在资源受限环境中维护持久记忆，让本地 agent 能召回并更新长程状态。
+- [ECHO](https://arxiv.org/abs/2510.10304)：面向 LM agent 的 hindsight trajectory rewriting harness。核心思想：把失败或高成本交互改写成反事实的改进轨迹，再作为经验记忆复用，以提高在线学习样本效率。
+- [AssoMem: Scalable Memory QA with Multi-Signal Associative Retrieval](https://arxiv.org/abs/2510.10397)：可作为Agent 记忆的Agent Harness候选；核心关注“Scalable Memory QA with Multi-Signal Associative Retrieval”。
+- [Memory as Action: Autonomous Context Curation for Long-Horizon Agentic Tasks](https://arxiv.org/abs/2510.12635)：把工作记忆整理作为长程工具使用中的 agent action policy 来学习。
+- [PISA](https://arxiv.org/abs/2510.15966)：一个受心理学启发的统一 agent 记忆系统，通过 schema 更新、schema 演化、schema 创建以及符号-神经混合检索，把记忆建模为可构造、可随任务调整的过程，并在 LOCOMO 与 AggQA 类评测中验证。
+- [EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](https://arxiv.org/abs/2510.16079)：面向经验驱动生命周期下的自演化 agent的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [RGMem](https://arxiv.org/abs/2510.16392)（[代码](https://github.com/fenhg297/RGMem)）：受 renormalization group 启发的语言 agent 自演化记忆框架。核心思想是把 episodic interaction 转成 semantic facts 和 user insights，再通过层级 coarse-graining、更新和 rescaling 形成动态用户画像，用于跨会话个性化。
+- [Learning from Supervision with Semantic and Episodic Memory: A Reflective Approach to Agent Adaptation](https://arxiv.org/abs/2510.19897)：结合语义记忆、情节记忆和反思进行 agent adaptation。
+- [Flexibly Utilize Memory for Long-Term Conversation via a Fragment-then-Compose Framework](https://doi.org/10.18653/v1/2025.emnlp-main.1069)：用 fragment-then-compose 机制支持长期对话记忆。
+- [EvoMem](https://arxiv.org/abs/2511.01912)：带 dual-evolving memory 的多 agent planning harness。核心思想是在跨 query 的 constraint memory 中保留任务规则，同时在当前问题内更新 query-feedback memory，帮助 agent 在迭代推理中跟踪约束并修复计划。
+- [MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End Reinforcement Learning](https://arxiv.org/abs/2511.02805)：MemSearcher 训练模型联合 reasoning、search 和 memory management，属于 agent memory/retrieval harness。
+- [Efficient On-Device Agents via Adaptive Context Management](https://arxiv.org/abs/2511.03728)：端侧 agent 的上下文管理 harness；核心思想是压缩对话状态、减少工具 schema 开销，并在工具选择后按需传入完整 schema。
+- [FLEX: Continuous Agent Evolution via Forward Learning from Experience](https://arxiv.org/abs/2511.06449)：面向基于累积经验的 agent 持续演化的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Trainable Graph Memory](https://arxiv.org/abs/2511.07800)：把经验转成策略的 agent memory harness。核心思想：把轨迹抽象成 decision-path graph，再蒸馏为可读的 meta-cognition，并用下游 reward feedback 优化策略权重。
+- [Spark](https://arxiv.org/abs/2511.08301)：面向 coding agents 的共享经验记忆架构。核心思想是让 agent 把可复用经验写入持久社区记忆，并在后续软件任务中检索建议，形成 agentic community of practice。
+- [ENGRAM](https://arxiv.org/abs/2511.12960)：轻量级对话记忆 harness，将用户轮次写入情节、语义和程序性记忆记录，再按类型检索证据以维持长期一致性。
+- [ENGRAM-R](https://arxiv.org/abs/2511.12987)：面向 large reasoning model 的 inference-time memory orchestration layer。核心思想是用 typed memory、紧凑 fact card 和显式 citation control 复用已有证据，避免重复推导，从而在 memory-heavy benchmark 上降低输入和推理 token，同时保持准确率。
+- [WebCoach](https://arxiv.org/abs/2511.12997)：模型无关的网页代理记忆 harness，压缩导航日志、存储情节轨迹，并在运行时注入跨会话检索到的建议。
+- [O-Mem](https://arxiv.org/abs/2511.13593)：面向个性化长程 agent 的记忆系统；核心思想是主动抽取和更新用户画像与事件记录，并分层检索 persona 属性和主题上下文以维持个性化一致性。
 - [Ask WhAI](https://arxiv.org/abs/2511.14780)：面向 role-primed 多 agent 交互的信念状态检查 harness。核心思想：记录和重放 agent 轨迹，进行 out-of-band 查询，并注入反事实证据，测试共享记忆与角色先验如何影响后续信念。
+- [A Simple Yet Strong Baseline for Long-Term Conversational Memory of LLM Agents](https://arxiv.org/abs/2511.17208)：面向 LLM agent 长期对话记忆的简单强基线。核心思想是为跨会话保存与检索对话历史提供可比较参考。
+- [Episodic Memory in Agentic Frameworks: Suggesting Next Tasks](https://arxiv.org/abs/2511.17775)：利用既往 agent 活动形成的 episodic memory 推荐后续任务，把存储经验转成 next-action 建议循环。
+- [General Agentic Memory Via Deep Research](https://arxiv.org/abs/2511.18423)：把记忆视为即时优化上下文构造，而不只是预先建立的静态存储。
+- [AME: An Efficient Heterogeneous Agentic Memory Engine for Smartphones](https://arxiv.org/abs/2511.19192)：面向智能手机 agent 的异构 agentic memory engine。核心思想是用高效、隐私友好且持续演化的向量记忆支持个性化 on-device agent 行为。
+- [LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph](https://arxiv.org/abs/2511.21037)：从每日 LLM 对话维护动态 learner memory graph，让教学 agent 跟踪掌握度、知识缺口和长期学习计划。
+- [Agentic Learner with Grow-and-Refine Multimodal Semantic Memory](https://arxiv.org/abs/2511.21678)：构建会随反复解题经验增长并精炼的多模态语义记忆。
+- [MemVerse: Multimodal Memory for Lifelong Learning Agents](https://arxiv.org/abs/2512.03627)：MemVerse 面向 lifelong learning agents 的 multimodal memory，明确属于 agent memory harness。
+- [PersonaMem-v2: Towards Personalized Intelligence via Learning Implicit User Personas and Agentic Memory](https://arxiv.org/abs/2512.06688)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution](https://arxiv.org/abs/2512.10696)：维护并精炼程序性记忆以支持 agent 演化。
+- [Unifying Dynamic Tool Creation and Cross-Task Experience Sharing through Cognitive Memory Architecture](https://arxiv.org/abs/2512.11303)：把动态工具创建与跨任务经验共享统一到记忆架构中；核心思想是保存可复用的工具构建经验，并在新任务需要相关能力时检索。
+- [Mistake Notebook Learning: Batch-Clustered Failures for Training-Free Agent Adaptation](https://arxiv.org/abs/2512.11485)：面向持久 agent 的训练无关适应机制；核心思想是把重复失败聚类成 mistake notebook，让 agent 在相似情境行动前检索过往错误。
+- [Memoria: A Scalable Agentic Memory Framework for Personalized Conversational AI](https://arxiv.org/abs/2512.12686)：面向个性化对话 AI 的可扩展 agentic memory framework。核心思想是管理长期用户和对话记忆，使 agent 能跨长交互进行个性化。
 - [Hindsight](https://arxiv.org/abs/2512.12818)（[开源代码](https://github.com/vectorize-io/hindsight)）：面向生产 agent 的 memory harness。核心思想：在任务后把执行轨迹沉淀为可检索经验，并在后续任务中通过 recall 与 reflection 复用。
+- [CogMem](https://arxiv.org/abs/2512.14118)：面向持续多轮推理的认知式记忆架构。核心思想是结合长期记忆、会话级 direct-access notes 和 focus-of-attention 重构机制，让 agent 检索紧凑的任务相关上下文，而不是不断追加完整历史。
+- [MOBIMEM](https://arxiv.org/abs/2512.15784)：面向移动端和桌面 agent 的记忆中心自演化 harness；核心思想：把画像、能力和执行记忆从模型权重中解耦，使部署后的 agent 能在不重新训练模型的情况下改进个性化、能力和效率。
+- [CodeMem: Architecting Reproducible Agents via Dynamic MCP and Procedural Memory](https://arxiv.org/abs/2512.15813)：面向可复现 agent 的程序性记忆架构；核心思想是结合动态 MCP 执行和可复用程序性记忆，让 agent 行为可重建并可跨运行改进。
+- [MemEvolve](https://arxiv.org/abs/2512.18746)：面向 agent 记忆系统的元演化框架。核心思想是在积累经验知识的同时演化记忆架构，并通过 EvolveLab 统一 encode、store、retrieve、manage 等模块化设计空间来比较记忆系统。
+- [Learning Hierarchical Procedural Memory for LLM Agents through Bayesian Selection and Contrastive Refinement](https://arxiv.org/abs/2512.18950)：面向 LLM agents 的层次化 procedural memory 框架；核心思想是在冻结基座模型的同时，通过 Bayesian selection 和 contrastive refinement 学习可复用程序记忆。
+- [Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents](https://arxiv.org/abs/2512.20092)：面向多会话 agent 的时间推理框架。核心思想是通过强化学习改进 agent 对跨会话记忆的检索、排序和推理。
+- [MemR3: Memory Retrieval via Reflective Reasoning for LLM Agents](https://arxiv.org/abs/2512.20237)：MemR3 将 reflective reasoning 用于 agent memory retrieval，属于可复用记忆检索机制。
+- [Synthesizing Procedural Memory: Challenges and Architectures in Automated Workflow Generation](https://arxiv.org/abs/2512.20278)：研究自动工作流生成中 procedural memory 的合成架构；核心思想是保存可复用程序，而不只是情节事实。
+- [LFGS: A lightweight framework for efficient 3D Gaussian Splatting with minimal memory footprint](https://doi.org/10.1016/j.cag.2025.104309)：降低 3D Gaussian Splatting 的内存占用，属于图形系统内存边界而非长期 agent memory harness。
+- [A Dynamic Virtual Memory Management System for LLMs on AI Chips](https://doi.org/10.1109/iccd65941.2025.00062)：提出面向 AI 芯片运行 LLM 的动态虚拟内存管理，重点是硬件内存调度而非对话召回。
+- [A Graph Enhanced Memory System for Long-Turn Dialogue Question Answering](https://doi.org/10.1109/icmlca66850.2025.11336286)：为长轮次对话问答加入图结构记忆；核心思想：把对话历史组织成可检索的关系记忆，服务多轮 agent。
 - [AstraNav-Memory](https://arxiv.org/abs/2512.21627)：面向具身导航 agent 的长时记忆 harness。核心思想：把视觉上下文压缩成紧凑的图像中心记忆 token，使导航策略能跨任务保留数百个空间语义观察，而不只依赖目标检测和重建式记忆。
+- [Memento 2: Learning by Stateful Reflective Memory](https://arxiv.org/abs/2512.22716)：可作为Agent 记忆的Agent Harness候选；核心关注“Learning by Stateful Reflective Memory”。
+- [Enhancing memory retrieval in generative agents through LLM-trained cross attention networks](https://doi.org/10.3389/fpsyg.2025.1591618)：面向 generative agents 的记忆检索 harness；核心思想是用 cross-attention 检索保留 agent 个体记忆，避免为每个 agent 重新训练模型。
+- [A Hybrid, Multi-Layered Memory Architecture for Collaborative Reasoning in Multi-Agent Systems](https://doi.org/10.1109/fllm67465.2025.11391226)：一种面向多 Agent 协作推理的多层记忆架构；核心思路是划分不同记忆层，使协作 Agent 能保存并复用推理上下文。
+- [Anchorchain: Immutable Referencing of Ai Memory States Through Blockchain-Indexed Volumetric Data Linking](https://doi.org/10.1109/issrew67781.2025.00083)：面向Agent 记忆与记忆增强系统提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Memory-Driven Agent Planning for Long-Horizon Tasks via Hierarchical Encoding and Dynamic Retrieval](https://doi.org/10.1109/aibdf67964.2025.11440855)：通过分层编码与动态检索支持长程 agent 规划。
+- [Warp-Cortex: An Asynchronous, Memory-Efficient Architecture for Million-Agent Cognitive Scaling on Consumer Hardware](https://arxiv.org/abs/2601.01298)：设计异步且内存高效的运行时，在消费级硬件上扩展大量 cognitive agents，重点是调度和共享资源限制。
+- [Agentic Memory](https://arxiv.org/abs/2601.01885)：面向 LLM agent 的统一长短期记忆管理框架。核心思想：学习在 agent 执行中何时存储、检索并组合短期和长期记忆。
+- [EverMemOS: A Self-Organizing Memory Operating System for Structured Long-Horizon Reasoning](https://arxiv.org/abs/2601.02163)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
 - [SimpleMem](https://arxiv.org/abs/2601.02553)：高效 lifelong memory pipeline。核心思想：把经验压缩成结构化记忆，合成语义摘要，并为后续任务做 intent-aware retrieval planning。
+- [MultiSessionCollab: Learning User Preferences with Memory to Improve Long-Term Collaboration](https://arxiv.org/abs/2601.02702)：它提供记忆写入、检索、经验复用、记忆演化或 memory runtime 机制，适合补充 memory Agent Harness。
+- [SYNAPSE: Empowering LLM Agents with Episodic-Semantic Memory via Spreading Activation](https://arxiv.org/abs/2601.02744)：面向 LLM agent 的情节-语义记忆架构。核心思想：把记忆建模为动态关联图，而不只依赖静态向量相似度。
+- [TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](https://arxiv.org/abs/2601.02845)：TiMem 为长期对话 agent 引入时间层级记忆整合机制。
+- [MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory](https://arxiv.org/abs/2601.03192)：结合情节记忆与运行时强化学习，让 agent 在不完整微调的情况下自我演化。
 - [MAGMA](https://arxiv.org/abs/2601.03236)：multi-graph agentic memory architecture。核心思想：拆分语义、时间、因果和实体视图，再用 policy-guided graph traversal 做检索。
+- [Membox: Weaving Topic Continuity into Long-Range Memory for LLM Agents](https://arxiv.org/abs/2601.03785)：面向 LLM agent 主题连续性的记忆机制。核心思想：把长程对话主题编织进可检索记忆，使 agent 保持连续性。
+- [Beyond Static Summarization: Proactive Memory Extraction for LLM Agents](https://arxiv.org/abs/2601.04463)：面向 LLM agents 的主动记忆抽取方法。核心思想是在后续任务需要之前识别并写入有用记忆，而不是只依赖静态总结。
+- [Memory Matters More: Event-Centric Memory as a Logic Map for Agent Searching and Reasoning](https://arxiv.org/abs/2601.04726)：面向 agent 搜索与推理的事件中心记忆 harness；核心思想是把经历组织成逻辑图，使检索能沿关系推理，而不是只做语义相似匹配。
+- [MemBuilder: Reinforcing LLMs for Long-Term Memory Construction via Attributed Dense Rewards](https://arxiv.org/abs/2601.05488)：Agent Harness 条目；核心思想：用归因式 dense rewards 训练长期记忆构建。
+- [StackPlanner: A Centralized Hierarchical Multi-Agent System with Task-Experience Memory Management](https://arxiv.org/abs/2601.05890)：带任务经验记忆的集中式层级多 agent 系统。核心思想：通过栈式层级组织规划，并在执行中复用既往任务经验。
+- [Memory-as-a-Tool](https://arxiv.org/abs/2601.05960)：把反馈蒸馏为可检索 guideline 的文件式记忆 harness。核心思想：将临时 critique 转成 agent 可控制的 memory tool，使后续尝试无需重复完整测试时修订即可复用反馈。
+- [TeleMem](https://arxiv.org/abs/2601.06037)：面向 agentic AI 的长期多模态记忆 harness。核心思想：通过叙事式抽取、结构化写入和多模态检索维护基于对话证据的用户画像，减少 schema 驱动的记忆幻觉。
+- [HiMeS: Hippocampus-inspired Memory System for Personalized AI Assistants](https://arxiv.org/abs/2601.06152)：提出面向个性化 AI 助手的海马体启发式记忆系统，用受生物机制启发的存储与检索结构支持长期助手记忆。
+- [Amory: Building Coherent Narrative-Driven Agent Memory through Agentic Reasoning](https://arxiv.org/abs/2601.06282)：为长期对话代理构建叙事一致的记忆；核心思想是维护演化中的故事结构，而不是孤立检索事实。
+- [HiMem: Hierarchical Long-Term Memory for LLM Long-Horizon Agents](https://arxiv.org/abs/2601.06377)：可作为Agent 记忆的Agent Harness候选；核心关注“Hierarchical Long-Term Memory for LLM Long-Horizon Agents”。
+- [Structured Episodic Event Memory](https://arxiv.org/abs/2601.06411)：为自治 agent 结合图记忆和动态 episodic memory；核心思想是保留关系事实和叙事推进，而不是扁平 RAG chunk。
+- [Temporal Semantic Memory](https://arxiv.org/abs/2601.07468)：面向 personalized LLM agents 的时态记忆 harness。核心思想：按语义发生时间和持续状态组织 memory，而不是只按对话顺序组织，再根据查询意图检索 time-valid memories。
+- [ES-Mem: Event Segmentation-Based Memory for Long-Term Dialogue Agents](https://arxiv.org/abs/2601.07582)：面向长期对话 agent 的事件分割记忆框架。核心思想是在存储和检索前把对话切分为事件，使后续回忆保留时间与情境结构。
+- [MemoBrain: Executive Memory as an Agentic Brain for Reasoning](https://arxiv.org/abs/2601.08079)：MemoBrain 将 executive memory 作为 agentic reasoning 组件，适合 Memory Agent Harness。
+- [AtomMem](https://arxiv.org/abs/2601.08323)：可学习的 memory-management harness；核心思想是把记忆拆成 create、read、update、delete 原子操作，并通过监督微调与强化学习学习何时编排这些操作。
+- [Fine-Mem](https://arxiv.org/abs/2601.08435)：面向 long-horizon memory management 的 fine-grained feedback harness；核心思想是为 memory operations 提供 chunk-level step reward 和 evidence-anchored reward attribution，使局部写入与检索和后续任务效用对齐。
+- [STITCH](https://arxiv.org/abs/2601.10702)：面向 agent 的 intent-aware memory system，用 latent goal、action type 与关键实体线索索引轨迹步骤，再按 intent compatibility 检索历史；该工作也提出了用于上下文感知记忆检索的 CAME-Bench。
+- [AI Agents Need Memory Control Over More Context](https://arxiv.org/abs/2601.11653)：强调长程 agent workflow 需要更强记忆控制。核心思想：把上下文漂移、干扰与记忆导致的不一致作为 harness 层面的失败来管理。
+- [Chain-of-Memory](https://arxiv.org/abs/2601.14287)：面向 LLM agent 的轻量级动态记忆构建机制。核心思想：维护可演化的记忆链，在后续交互中持续更新和复用，而不依赖重型图结构或完整历史提示。
+- [Aeon: High-Performance Neuro-Symbolic Memory Management for Long-Horizon LLM Agents](https://arxiv.org/abs/2601.15311)：把符号记忆结构与神经检索结合，用于长周期 LLM agents 的高吞吐记忆读写。
+- [MemWeaver: Weaving Hybrid Memories for Traceable Long-Horizon Agentic Reasoning](https://arxiv.org/abs/2601.18204)：面向可追踪长程 agentic reasoning 的混合记忆 harness。核心思想是编织多类记忆，让长任务保留 provenance 和可复用上下文。
+- [U-Fold: Dynamic Intent-Aware Context Folding for User-Centric Agents](https://arxiv.org/abs/2601.18285)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [FadeMem: Biologically-Inspired Forgetting for Efficient Agent Memory](https://arxiv.org/abs/2601.18642)：可作为Agent 记忆的Agent Harness候选；核心关注“Biologically-Inspired Forgetting for Efficient Agent Memory”。
+- [AMA](https://arxiv.org/abs/2601.20352)：collaborative memory-management harness；核心思想是用 constructor、retriever、judge 和 refresher agents 构建多粒度记忆、动态路由检索、验证证据并修复不一致记忆。
+- [BMAM](https://arxiv.org/abs/2601.20465)：脑启发式多 agent 记忆框架。核心思想：用多个专门化记忆子系统替代单一非结构化存储，以协同维持长时间交互中的时间性回忆和行为一致性。
 - [ShardMemo](https://arxiv.org/abs/2601.21545)：分片式 agentic memory 服务。核心思想：在带作用域的 ANN shards 和版本化 skill-library tier 之间路由 memory query，提升检索隔离与更新控制。
+- [E-mem: Multi-agent based Episodic Context Reconstruction for LLM Agent Memory](https://arxiv.org/abs/2601.21714)：多 agent 情节上下文重构记忆框架。核心思想：在检索前重建情节上下文，使长程推理保留依赖关系。
+- [Darwinian Memory: A Training-Free Self-Regulating Memory System for GUI Agent Evolution](https://arxiv.org/abs/2601.22528)：它提供记忆写入、检索、经验复用、记忆演化或 memory runtime 机制，适合补充 memory Agent Harness。
+- [MiTa: A Hierarchical Multi-Agent Collaboration Framework with Memory-integrated and Task Allocation](https://arxiv.org/abs/2601.22974)：结合层级多智能体协作、记忆和任务分配机制。
+- [Mem-T](https://arxiv.org/abs/2601.23014)：自主记忆 agent 框架。核心思想：让 agent 在层次化记忆数据库上选择记忆更新和检索操作，并通过密集化 reward 优化由延迟任务结果驱动的长周期记忆管理策略。
+- [PolarMem: A Training-Free Polarized Latent Graph Memory for Verifiable Multimodal Agents](https://arxiv.org/abs/2602.00415)：面向多模态 agent 的免训练 polarized latent graph memory；核心思想是以图式记忆保存和检索视觉推理状态，使后续回答更可追踪。
+- [Dual Latent Memory for Visual Multi-agent System](https://arxiv.org/abs/2602.00471)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Self-Consolidation for Self-Evolving Agents](https://arxiv.org/abs/2602.01966)：它提供记忆写入、检索、经验复用、记忆演化或 memory runtime 机制，适合补充 memory Agent Harness。
+- [xMemory](https://arxiv.org/abs/2602.02007)：decoupling-and-aggregation memory harness；核心思想是先把交互流拆成 events、components 和 groups，再自顶向下选择紧凑 evidence backbone，只在需要时扩展到原始消息。
+- [Live-Evo: Online Evolution of Agentic Memory from Continuous Feedback](https://arxiv.org/abs/2602.02369)：维护 experience bank 与 meta-guideline bank，让记忆在连续反馈流中在线演化。
+- [LatentMem](https://arxiv.org/abs/2602.03036)：面向 multi-agent systems 的 role-aware memory harness；核心思想是把原始交互轨迹存入 experience bank，并根据 agent 角色和任务上下文合成紧凑 latent memories。
+- [Memora](https://arxiv.org/abs/2602.03315)：面向 agents 的 harmonic memory representation；核心思想是通过 primary abstractions、具体 memory values 和 cue anchors 的连接平衡抽象与细节，并沿这些连接检索，而不只依赖直接相似度。
+- [Empirical-MCTS: Continuous Agent Evolution via Dual-Experience Monte Carlo Tree Search](https://arxiv.org/abs/2602.04248)：围绕 MCTS 推理过程积累和复用经验，外部 experience memory 是核心贡献，适合作为 memory harness 候选。
+- [UI-Mem: Self-Evolving Experience Memory for Online Reinforcement Learning in Mobile GUI Agents](https://arxiv.org/abs/2602.05832)：移动 GUI agent 的自演化经验记忆。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Learning to Share: Selective Memory for Efficient Parallel Agentic Systems](https://arxiv.org/abs/2602.05965)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [BudgetMem](https://arxiv.org/abs/2602.06025)：面向 runtime agent memory 的 query-aware budget-tier routing framework。核心思想：在低、中、高预算层之间路由记忆模块，以在执行时控制准确率与成本权衡。
+- [CAST](https://arxiv.org/abs/2602.06051)：character-and-scene episodic-memory harness；核心思想是按 time、place、topic 组织 3D scenes，并关联到 character profiles，同时结合 graph-based semantic memory。
+- [Rethinking Memory Mechanisms of Foundation Agents in the Second Half: A Survey](https://arxiv.org/abs/2602.06052)：foundation agent 记忆机制综述。核心思想是按记忆载体、认知机制和长程实用场景组织 agent memory。
+- [AgentSys: Secure and Dynamic LLM Agents Through Explicit Hierarchical Memory Management](https://arxiv.org/abs/2602.07398)：带显式层级记忆管理的安全动态 agent runtime。核心思想是显式化记忆作用域和更新，降低状态泄漏和漂移。
+- [MemFly: On-the-Fly Memory Optimization via Information Bottleneck](https://arxiv.org/abs/2602.07885)：面向 agent 的 on-the-fly memory optimization framework。核心思想：用 information bottleneck 原理压缩冗余历史，同时保留下游任务所需的精确检索能力。
+- [MemAdapter](https://arxiv.org/abs/2602.08369)：对齐异构 agent-memory 范式之间的检索。核心思想：训练 generative subgraph retriever 与轻量 alignment module，让 explicit、parametric 和 latent memory store 能以较低适配成本被查询或融合。
+- [PABU: Progress-Aware Belief Update for Efficient LLM Agents](https://arxiv.org/abs/2602.09138)：Agent Harness 条目；核心思想：用进度感知 belief update 减少 agent 历史冗余和重复行动。
+- [UMEM: Unified Memory Extraction and Management Framework for Generalizable Memory](https://arxiv.org/abs/2602.10652)：统一的记忆抽取与管理框架。核心思想：协调 insight 抽取和记忆库更新，使 agent 记忆能跨实例泛化。
+- [MetaMem: Evolving Meta-Memory for Knowledge Utilization through Self-Reflective Symbolic Optimization](https://arxiv.org/abs/2602.11182)：提供可复用 agent 工作流或执行 harness，服务于agent memory。
+- [VimRAG: Navigating Massive Visual Context in Retrieval-Augmented Generation via Multimodal Memory Graph](https://arxiv.org/abs/2602.12735)：Agent Harness 条目；核心思想：用多模态记忆图导航大规模视觉上下文。
+- [MAPLE: A Sub-Agent Architecture for Memory, Learning, and Personalization in Agentic AI Systems](https://arxiv.org/abs/2602.13258)：面向 memory、learning 和 personalization 的子 agent 架构。核心思想是把持久用户记忆、自适应学习和个性化拆成专门机制，而不是混在一个上下文存储里。
+- [REMem](https://arxiv.org/abs/2602.13530)：面向语言 agent 的 episodic memory harness；核心思想是把经历转成由 time-aware gist 与 fact 组成的混合图，再由 agentic retriever 迭代调用记忆工具完成回忆与推理。
 - [Hippocampus](https://arxiv.org/abs/2602.13594)：面向 agentic AI 的可扩展 memory module。核心思想：把长历史压缩成高效记忆结构，并评估检索延迟、token footprint 和下游记忆准确率。
+- [HyMem](https://arxiv.org/abs/2602.13933)：带动态检索调度的 hybrid memory 架构。核心思想：同时保留 raw text 与压缩记忆，并按任务复杂度决定检索粒度，缓解成本与记忆保真度之间的固定取舍。
+- [Neuromem: A Granular Decomposition of the Streaming Lifecycle in External Memory for LLMs](https://arxiv.org/abs/2602.13967)：Neuromem 分解外部记忆的 streaming lifecycle，适合 Memory Agent Harness。
+- [Precedent-Informed Reasoning: Mitigating Overthinking in Large Reasoning Models via Test-Time Precedent Learning](https://arxiv.org/abs/2602.14451)：面向检索先例以减少过度思考的测试时 precedent learning的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Mnemis](https://arxiv.org/abs/2602.15313)：双路长期记忆 harness；核心思想是把 base graph 上的相似检索与 hierarchical graph 上的自顶向下审慎遍历结合起来，兼顾局部匹配与全局记忆覆盖。
+- [MMA: Multimodal Memory Agent](https://arxiv.org/abs/2602.16493)：带可靠性感知检索的多模态记忆 agent。核心思想是在长程多模态决策前，按来源可信度、时间衰减和冲突共识为记忆条目评分。
+- [Agentic Unlearning: When LLM Agent Meets Machine Unlearning](https://arxiv.org/abs/2602.17692)：把遗忘机制扩展到带持久记忆的 agent。核心思想：在闭环交互中同时从参数与记忆中移除指定信息。
+- [From Lossy to Verified: A Provenance-Aware Tiered Memory for Agents](https://arxiv.org/abs/2602.17913)：带溯源的 agent 分层记忆。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [UMA](https://arxiv.org/abs/2602.18493)：把记忆操作与问答统一到单一 policy。核心思想：用显式 Memory Bank 做 CRUD 写记忆，专治超长流式状态跟踪。
+- [Latent Context Compilation: Distilling Long Context into Compact Portable Memory](https://arxiv.org/abs/2602.21221)：面向不改模型权重地把长上下文编译成紧凑可迁移记忆的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Pancake: Hierarchical Memory System for Multi-Agent LLM Serving](https://arxiv.org/abs/2602.21477)：可作为Agent 记忆的Agent Harness候选；核心关注“Hierarchical Memory System for Multi-Agent LLM Serving”。
+- [Contextual Memory Virtualisation: DAG-Based State Management and Structurally Lossless Trimming for LLM Agents](https://arxiv.org/abs/2602.22402)：把累积的 agent 状态视为版本化记忆。核心思路是将会话历史建模为 DAG，并提供 snapshot、branch 与 trim 原语，实现结构无损的上下文复用。
+- [U-Mem](https://arxiv.org/abs/2602.22406)：把 memory agent 从被动存储推进为主动知识获取系统。核心思想：用 cost-aware extraction cascade 和 semantic-aware Thompson sampling，让 agent 在不确定时主动寻找、验证和策展缺失记忆。
+- [ParamMem / ParamAgent](https://arxiv.org/abs/2602.23320)：面向 language agents 的 reflective-memory harness；核心思想是把跨样本、多样化 reflection patterns 编码进 parametric memory module，并与 episodic memory 结合，减少重复性的自我反思。
+- [ActMem](https://arxiv.org/abs/2603.00026)：面向 LLM agent 的行动型记忆框架。核心思想：把对话历史转换为因果和语义结构，再通过反事实推理和常识补全，让检索到的记忆支持冲突检测和决策。
 - [Semantic XPath](https://arxiv.org/abs/2603.01160)：面向对话 AI 的结构化记忆访问 harness。核心思想：用语义路径查询对话记忆，使智能体能检索目标状态，而不是扫描非结构化历史。
+- [Modular Memory is the Key to Continual Learning Agents](https://arxiv.org/abs/2603.01761)：Agent Harness 条目；核心思想：面向持续学习 agent 的模块化记忆；核心思想是拆分记忆模块，使 agent 能积累经验并长期个性化。
+- [GAM-RAG: Gain-Adaptive Memory for Evolving Retrieval in Retrieval-Augmented Generation](https://arxiv.org/abs/2603.01783)：为 RAG 加入 gain-adaptive retrieval memory，使系统能随证据效用变化和重复查询更新检索行为。
+- [FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](https://arxiv.org/abs/2603.02096)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [SuperLocalMemory](https://arxiv.org/abs/2603.02240)：local-first multi-agent memory system；核心思想是组合 SQLite/FTS 记忆存储、图聚类、per-agent provenance、Bayesian trust scoring 和 MCP 集成，支持私有记忆并防御 memory poisoning。
+- [PlugMem: A Task-Agnostic Plugin Memory Module for LLM Agents](https://arxiv.org/abs/2603.03296)：它提供记忆写入、检索、经验复用、记忆演化或 memory runtime 机制，适合补充 memory Agent Harness。
+- [MemSifter: Offloading LLM Memory Retrieval via Outcome-Driven Proxy Reasoning](https://arxiv.org/abs/2603.03379)：面向 agent 的记忆检索卸载方法。核心思想是用 outcome-driven proxy reasoning 判断哪些记忆值得检索，减少无关回忆同时保持下游任务成功率。
+- [AMV-L: Lifecycle-Managed Agent Memory for Tail-Latency Control in Long-Running LLM Systems](https://arxiv.org/abs/2603.04443)：为智能体加入外部记忆管理、轨迹复用、反思或生命周期控制。
+- [Adaptive Memory Admission Control for LLM Agents](https://arxiv.org/abs/2603.04549)：LLM agent 的记忆准入控制 harness。核心思想是决定哪些信息可以进入长期记忆，避免幻觉、过期或低价值信息无限积累。
+- [ChatNeuroSim: An LLM Agent Framework for Automated Compute-in-Memory Accelerator Deployment and Optimization](https://arxiv.org/abs/2603.08745)：用 LLM agent 自动化 compute-in-memory 加速器部署与优化，这里的 memory 指硬件架构流程。
+- [MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games](https://arxiv.org/abs/2603.09022)：可作为Agent 记忆的Agent Harness候选；核心关注“Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games”。
+- [TA-Mem: Tool-Augmented Autonomous Memory Retrieval for LLM in Long-Term Conversational QA](https://arxiv.org/abs/2603.09297)：面向用于长期对话问答的工具增强自主记忆检索的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [PRECEPT: Planning Resilience via Experience, Context Engineering&Probing Trajectories A Unified Framework for Test-Time Adaptation with Compositional Rule Learning and Pareto-Guided Prompt Evolution](https://arxiv.org/abs/2603.09641)：面向结合结构化规则检索、上下文工程和 prompt 演化的测试时适配的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [AutoAgent: Evolving Cognition and Elastic Memory Orchestration for Adaptive Agents](https://arxiv.org/abs/2603.09716)：带弹性记忆编排的自演化 agent 框架。核心思想：根据任务上下文适配记忆与认知流程，而不是使用固定 agent 脚本。
+- [Hybrid Self-evolving Structured Memory for GUI Agents](https://arxiv.org/abs/2603.10291)：Agent Harness 条目；核心思想：面向 GUI agent 的混合自演化结构化记忆框架。
+- [Joint Optimization of Multi-Agent Memory Systems](https://arxiv.org/abs/2603.12631)：面向专业化记忆 agent 系统的联合优化框架。核心思想是在构建、摘要和检索 agent 共享下游记忆目标时处理 agent 间依赖与 credit assignment。
+- [Your Code Agent Can Grow Alongside You with Structured Memory](https://arxiv.org/abs/2603.13258)：面向代码 agent 的结构化记忆路线；核心思想是保存项目演化轨迹和历史成功推理路径，让后续仓库任务可以复用。
+- [D-MEM: Dopamine-Gated Agentic Memory via Reward Prediction Error Routing](https://arxiv.org/abs/2603.14597)：dopamine-gated agentic memory mechanism。核心思想：用 reward-prediction-error 信号路由记忆更新，使 agent 保留更能支持未来决策的经验。
 - [RenderMem](https://arxiv.org/abs/2603.14669)：基于渲染的空间记忆检索 harness。核心思想：把已记忆的空间状态转换为可渲染视图供 agent 查询和检查，使记忆检索比纯文本摘要更具空间 grounding。
+- [Advancing Multimodal Agent Reasoning with Long-Term Neuro-Symbolic Memory](https://arxiv.org/abs/2603.15280)：可作为agent memory方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](https://arxiv.org/abs/2603.15421)：面向小模型 agent 的 adaptive memory-organization mechanism。核心思想：用 agent-driven clustering 组织记忆，使小模型 agent 不必携带完整上下文也能检索相关历史。
+- [SmartSearch](https://arxiv.org/abs/2603.15599)：面向对话记忆的检索 harness。核心思想：从原始对话历史中通过实体加权召回、多跳扩展以及 CrossEncoder 和 ColBERT 排名融合来检索，说明排序质量可能比复杂的写入期结构化更关键。
+- [NextMem: Towards Latent Factual Memory for LLM-based Agents](https://arxiv.org/abs/2603.15634)：Agent Harness 条目；核心思想：为 LLM agent 构建潜在事实记忆。
+- [Cost-Sensitive Store Routing](https://arxiv.org/abs/2603.15658)：面向多存储记忆 agent 的路由建模。核心思想是选择要查询的专门 memory store，在提升准确率的同时减少无关上下文 token 和检索成本。
+- [Compiled Memory: Not More Information, but More Precise Instructions for Language Agents](https://arxiv.org/abs/2603.15666)：把经验编译成精确指令的 memory kernel。核心思想：关注“哪些经验应改变后续行为”的 memory utility，而不只是把更多历史文本检索进上下文。
+- [MemX](https://arxiv.org/abs/2603.16171)：面向 AI assistant 的 local-first 长期记忆系统。核心思想是在本地存储栈上结合向量召回、关键词召回、RRF、四因素 reranking 和低置信拒答。
+- [AdaMem](https://arxiv.org/abs/2603.16496)：面向长程对话 agent 的 adaptive user-centric memory harness；核心思想是组合 working、episodic、persona 和 graph memories，并按问题与参与者动态路由检索后再综合证据。
+- [Chronos](https://arxiv.org/abs/2603.16862)：temporal-aware conversational-memory harness；核心思想是把对话索引成带时间解析的事件元组和 turn calendar，再通过动态提示与迭代工具调用检索时间敏感证据。
+- [Governed Memory: A Production Architecture for Multi-Agent Workflows](https://arxiv.org/abs/2603.17787)：面向多 agent workflow 的生产级记忆架构。核心思想：解决多个 agent 节点围绕共享实体行动时的记忆孤岛、治理碎片化、下游不可用、重复上下文和审计问题。
+- [Retrieval-Augmented LLM Agents: Learning to Learn from Experience](https://arxiv.org/abs/2603.18272)：Agent Harness 条目；核心思想：面向从经验中学习的检索增强 agent；核心思想是把过往任务轨迹作为未见任务的可复用经验。
+- [MemArchitect](https://arxiv.org/abs/2603.18330)：面向持久 agent 记忆的 policy-driven governance layer。核心思想是在普通 RAG 存储之上执行衰减、冲突解决、隐私控制和过期记忆抑制等生命周期策略。
+- [D-Mem](https://arxiv.org/abs/2603.18631)：面向 LLM agent 的双过程记忆系统。核心思想：结合快速抽象检索和较慢的细粒度上下文推理，使 agent 能处理需要详细历史证据而不只是语义相似度的记忆问题。
+- [MemMA](https://arxiv.org/abs/2603.18718)：协调记忆周期的多 agent 框架。核心思想：让构建、检索、利用和自修复由协作推理 agent 分担，使下游失败能够反向修正记忆库，而不是停留在孤立执行错误。
+- [Memori: A Persistent Memory Layer for Efficient, Context-Aware LLM Agents](https://arxiv.org/abs/2603.19935)：面向上下文感知 LLM agent 的持久记忆层。核心思想：提供模型无关记忆 API，使 agent 跨会话保持连续性且避免 prompt 膨胀。
+- [VARS](https://arxiv.org/abs/2603.20939)：面向 conversational agent 的 preference-memory 检索框架。核心思想是用长期和短期偏好向量表示用户，并从弱反馈 reward 中在线更新结构化偏好记忆的检索评分。
+- [Memory-Augmented Routing](https://arxiv.org/abs/2603.23013)：面向 persistent AI agent 的低成本推理框架。核心思想是用检索到的 conversational memory 处理重复性用户查询，让小模型在许多场景下无需昂贵 full-context 推理也能回答。
+- [MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation](https://arxiv.org/abs/2603.23234)：面向 cross-agent memory collaboration 的框架。核心思想是让 agent 共享、蒸馏和复用轨迹记忆，使协作能利用历史经验。
+- [Experiential Reflective Learning for Self-Improving LLM Agents](https://arxiv.org/abs/2603.24639)：自改进 agent 的经验反思学习机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [ElephantBroker](https://arxiv.org/abs/2603.25097)：面向可信 agent 的 cognitive runtime。核心思想：把 graph/vector memory、provenance scoring、consolidation、guardrails 和 audited tool interception 组合进一个 memory-centered runtime。
+- [MemBoost: A Memory-Boosted Framework for Cost-Aware LLM Inference](https://arxiv.org/abs/2603.26557)：面向通过复用既有答案和证据实现成本感知推理的记忆增强框架的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [GAAMA: Graph Augmented Associative Memory for Agents](https://arxiv.org/abs/2603.27910)：面向 agent 的 graph-augmented associative memory architecture。核心思想：把图结构与关联回忆结合，让长期记忆支持关系式检索，而不只是平面向量查找。
+- [APEX-EM](https://arxiv.org/abs/2603.29093)：在不更新模型权重的情况下复用结构化 procedural-episodic experience。核心思想：把计划、artifact、verifier feedback 和失败轨迹写成可检索的类 DAG 经验，用于跨任务迁移。
+- [MemFactory: Unified Inference&Training Framework for Agent Memory](https://arxiv.org/abs/2603.29493)：提供统一的 agent memory 推理与训练框架，把记忆构建、调用与优化封装为可复用的智能体 harness 组件。
 - [Oblivion](https://arxiv.org/abs/2604.00131)：decay-driven memory-control 机制。核心思想：用 activation 与 decay 决定 agent 记忆何时读取、写入、保留或遗忘。
+- [Omni-SimpleMem: Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory](https://arxiv.org/abs/2604.01007)：由自动研究引导的终身多模态 agent 记忆。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Reasoning Memory](https://arxiv.org/abs/2604.01348)：面向推理模型的检索增强程序性记忆框架。核心思想是把既有逐步推理轨迹拆成可复用子程序，并在后续问题中检索它们来辅助求解、验证和回溯。
 - [ByteRover](https://arxiv.org/abs/2604.01599)：agent-native memory 架构。核心思想：让负责推理的 LLM 同时整理、结构化和检索带 provenance 与 lifecycle metadata 的层级 context tree，避免独立 embedding 或图管线偏离 agent 原始记忆意图。
+- [Novel Memory Forgetting Techniques for Autonomous AI Agents: Balancing Relevance and Efficiency](https://arxiv.org/abs/2604.02280)：面向面向自主 agent 的预算化遗忘，以平衡记忆相关性和效率的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [SelRoute](https://arxiv.org/abs/2604.02431)：面向长期 conversational memory retrieval 的 query-type-aware 路由框架。核心思想是按查询类型路由到词法、语义、混合或词表增强检索路径，以提高召回和效率。
 - [Opal](https://arxiv.org/abs/2604.02522)：面向个人 AI 的私有记忆系统。核心思想：把个人记忆推理保留在受保护执行路径中，并用 privacy-preserving access pattern 做检索。
+- [LLMA-Mem](https://arxiv.org/abs/2604.03295)：面向多 agent LLM 系统的 lifelong memory 框架。核心思想是在灵活记忆拓扑和成本约束下研究团队规模与经验积累如何共同影响任务能力。
+- [Rashomon Memory](https://arxiv.org/abs/2604.03588)：为 agent 经验保留多个 goal-conditioned interpretation。核心思想：让并行记忆视角在检索时互相辩驳，并用 argumentation semantics 选择、组合或显式暴露冲突记忆，而不是强制写成唯一标准编码。
+- [Springdrift: An Auditable Persistent Runtime for LLM Agents with Case-Based Memory, Normative Safety, and Ambient Self-Perception](https://arxiv.org/abs/2604.04660)：提供可审计的长期 LLM agent 持久运行时。核心思想：结合追加式记忆、受监督进程、git 恢复、安全门控与环境自感知。
+- [HingeMem: Boundary Guided Long-Term Memory with Query Adaptive Retrieval for Scalable Dialogues](https://arxiv.org/abs/2604.06845)：面向面向可扩展对话的边界引导长期记忆与查询自适应检索的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [CLEAR: Context Augmentation from Contrastive Learning of Experience via Agentic Reflection](https://arxiv.org/abs/2604.07487)：补充memory方向的agent harness，核心围绕《CLEAR: Context Augmentation from Contrastive Learning of Experience via Agentic Reflection》。
+- [PRIME: Training Free Proactive Reasoning via Iterative Memory Evolution for User-Centric Agent](https://arxiv.org/abs/2604.07645)：带 iterative memory evolution 的 training-free proactive reasoning harness。核心思想：在多轮人机工具交互中通过演化记忆维护并细化用户意图，而不是只靠一次性提示。
+- [Lightweight LLM Agent Memory with Small Language Models](https://arxiv.org/abs/2604.07798)：可作为Agent 记忆的Agent Harness候选；核心关注“Lightweight LLM Agent Memory with Small Language Models”。
+- [ACGM](https://arxiv.org/abs/2604.07863)（[开源代码](https://github.com/S-Forouzandeh/ACGM-Agentic-Web)）：在多模态 web-agent 历史上学习 task-adaptive graph memory。核心思想：用按模态区分的时间衰减和稀疏图边，让 agent 检索当前网页任务状态真正需要的历史观察。
+- [PASK: Toward Intent-Aware Proactive Agents with Long-Term Memory](https://arxiv.org/abs/2604.08000)：结合长期记忆的 intent-aware proactive agent 框架；核心思想是利用持久记忆预判用户需求并主动行动，而不是逐轮被动响应。
+- [HyperMem](https://arxiv.org/abs/2604.08256)：面向长期对话的超图记忆架构。核心思想：用超边组织主题、片段和事实，使检索能够捕捉高阶关联，而不只依赖成对图关系。
 - [ClawVM](https://arxiv.org/abs/2604.10352)：面向 stateful tool-using agents 的 harness-managed virtual memory。核心思想：把 memory compaction、writeback 和 lifecycle fault 放到 harness 层观测。
+- [Mem$^2$Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](https://arxiv.org/abs/2604.10923)：它提供记忆写入、检索、经验复用、记忆演化或 memory runtime 机制，适合补充 memory Agent Harness。
+- [RoMem](https://arxiv.org/abs/2604.11544)：把 continuous temporal rotation 加入知识图谱记忆。核心思想：学习关系的变化速度，并把过时事实旋出相位，使持久事实和演化事实能在不删除历史的前提下排序。
+- [Synthius-Mem](https://arxiv.org/abs/2604.11563)：受大脑启发的长期 persona memory 架构。核心思想是围绕抗幻觉、persona 一致性和对抗鲁棒性设计存储与检索，而不只是节省 token。
+- [When to Forget: A Memory Governance Primitive](https://arxiv.org/abs/2604.12007)：When to Forget 提出 memory governance primitive，直接对应 agent memory 管理。
+- [Thought-Retriever: Don't Just Retrieve Raw Data, Retrieve Thoughts for Memory-Augmented Agentic Systems](https://arxiv.org/abs/2604.12231)：检索 thoughts 而非原始数据的 memory-augmented agent system；核心思想是把中间推理产物存为可复用上下文，供后续决策调用。
+- [Cooperative Memory Paging with Keyword Bookmarks for Long-Horizon LLM Conversations](https://arxiv.org/abs/2604.12376)：面向使用关键词书签和 recall 工具的长对话协作式记忆分页的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Dual-Trace Memory Encoding](https://arxiv.org/abs/2604.12948)：面向 LLM agent 跨 session 召回的记忆机制。核心思想是为每条存储事实配对一个具体 scene trace，使后续检索保留时间和情境上下文。
 - [Memory Transfer Learning](https://arxiv.org/abs/2604.14004)：研究 coding agents 中的跨域记忆迁移。核心思想：识别哪些经验抽象能跨仓库迁移，哪些记忆会伤害后续任务。
+- [BrainMem: Brain-Inspired Evolving Memory for Embodied Agent Task Planning](https://arxiv.org/abs/2604.16331)：Agent Harness 条目；核心思想：面向具身任务规划的演化记忆；核心思想是维护空间和时间经验，避免 agent 重复长程错误。
+- [StageMem: Lifecycle-Managed Memory for Language Models](https://arxiv.org/abs/2604.16774)：面向用于保留、置信控制和用户信任的生命周期管理记忆的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Federation over Text](https://arxiv.org/abs/2604.16778)：面向 multi-agent reasoning 的 shared-memory harness。核心思想：agents 各自解决本地任务并共享 reasoning traces，由中央服务蒸馏跨任务 insight library，供后续 agents 检索和复用。
+- [HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](https://arxiv.org/abs/2604.16839)：面向 LLM agents 的 Hebbian-learning and associative-memory mechanism。核心思想：用关联式记忆更新让相关经验相互强化，改善后续检索与行为。
+- [GenericAgent: A Token-Efficient Self-Evolving LLM Agent via Contextual Information Density Maximization (V1.0)](https://arxiv.org/abs/2604.17091)：类型：agent harness/可复用执行框架。核心价值：为 1.15.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [AnchorMem](https://arxiv.org/abs/2604.17377)：基于 anchored facts 和关联上下文的记忆构建方法。核心思想是在事实周围保留上下文锚点，使检索能够保留交互细节，而不是把历史过度压缩成孤立摘要。
+- [A Control Architecture for Training-Free Memory Use](https://arxiv.org/abs/2604.18206)：control architecture for training-free memory use 提供 memory 使用控制机制。
+- [HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](https://arxiv.org/abs/2604.18349)：面向长期对话 agent 的 hierarchical LLM-guided memory system。核心思想：把长交互历史组织成受引导的记忆层，使 agent 能跨会话维持个性化和回忆能力。
+- [WorldDB](https://arxiv.org/abs/2604.18478)：面向持久 agent 的 vector graph-of-worlds 记忆引擎。核心思想是通过 ontology-aware world graph 做写入时调和，使身份、取代关系、矛盾和时间有效性成为一等记忆操作。
+- [Mesh Memory Protocol](https://arxiv.org/abs/2604.19540)：面向多 agent LLM 系统的语义记忆共享协议。核心思想是让 agent 在长期 session 中按字段选择性接收、拒绝和融合同伴认知状态，而不是共享未分解的消息。
+- [Cognis](https://arxiv.org/abs/2604.19771)：面向 conversational AI agent 的上下文感知记忆架构。核心思想是结合 BM25 与向量库、RRF、上下文感知写入、时间增强和 reranking 来维护持久用户记忆。
+- [To Know is to Construct: Schema-Constrained Generation for Agent Memory](https://arxiv.org/abs/2604.20117)：面向用 schema-constrained generation 改善 agent 记忆构造与检索的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [IMPACT-CYCLE: A Contract-Based Multi-Agent System for Claim-Level Supervisory Correction of Long-Video Semantic Memory](https://arxiv.org/abs/2604.20136)：用 contract-based 多 agent 协同修正长视频 claim-level semantic memory，通过监督检查修复已存视频事实。
+- [Deterministic Projection Memory](https://arxiv.org/abs/2604.20158)：面向企业 agent 的无状态决策记忆架构。核心思想是用 append-only event log 和任务条件投影支持确定性重放、可审计性、多租户隔离和水平扩展。
+- [FSFM: A Biologically-Inspired Framework for Selective Forgetting of Agent Memory](https://arxiv.org/abs/2604.20300)：agent memory 的选择性遗忘框架；核心思想是把遗忘作为显式操作，删除过时或有害记忆并保留有用状态。
+- [Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents](https://arxiv.org/abs/2604.20572)：补充memory方向的agent harness，核心围绕《Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents》。
+- [Using Machine Mental Imagery for Representing Common Ground in Situated Dialogue](https://arxiv.org/abs/2604.21144)：面向把机器心理意象作为情境对话中的持久共同基础表征的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
 - [Memanto](https://arxiv.org/abs/2604.22085)：面向长程 agent 的 typed semantic memory layer。核心思想：结合固定记忆类别 schema、时间版本、冲突解决和低延迟 information-theoretic retrieval，降低生产 memory system 中图维护和多查询检索开销。
+- [ContextWeaver: Selective and Dependency-Structured Memory Construction for LLM Agents](https://arxiv.org/abs/2604.23069)：面向面向 LLM agent 的依赖结构化记忆构建的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Interactive Episodic Memory with User Feedback](https://arxiv.org/abs/2604.24893)：Agent Harness 条目；核心思想：带用户反馈的交互式 episodic memory；核心思想是通过用户交互改进长第一人称视频记忆检索。
+- [CogRAG+: Cognitive-Level Guided Diagnosis and Remediation of Memory and Reasoning Deficiencies in Professional Exam QA](https://arxiv.org/abs/2604.25928)：提供可复用 agent 工作流或执行 harness，服务于agent memory。
+- [Hierarchical Long-Term Semantic Memory for LinkedIn's Hiring Agent](https://arxiv.org/abs/2604.26197)：面向记忆与上下文管理的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Hierarchical Long-Term Semantic Memory for LinkedIn's Hiring Agent”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](https://arxiv.org/abs/2604.26622)：Agent Harness 条目；核心思想：面向长程 agent 记忆的视觉上下文检索；核心思想是检索视觉轨迹证据，而不是只依赖有损文本摘要。
+- [When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents](https://arxiv.org/abs/2604.27003)：研究 LLM agent 如何通过经验复用实现持续学习；核心思想是把适应从参数更新转向任务经验的存储、检索和复用。
+- [Learning When to Remember: Risk-Sensitive Contextual Bandits for Abstention-Aware Memory Retrieval in LLM-Based Coding Agents](https://arxiv.org/abs/2604.27283)：面向 LLM-based coding agents 的记忆检索 harness；核心思想是学习何时放弃复用历史修复轨迹，避免表面相似但不兼容的失败注入有害记忆。
+- [EviMem](https://arxiv.org/abs/2604.27695)（[开源代码](https://github.com/AIGeeksGroup/EviMem)）：用 evidence-gap diagnosis 改进长期会话记忆检索。核心思想：判断当前证据集中缺什么，再定向改写检索查询，并与分层记忆结构结合处理时间和多跳问题。
+- [Schema-Grounded Memory](https://arxiv.org/abs/2604.27906)：面向可靠 agent 记忆的 schema-aware 架构。核心思想是把持久记忆从非结构化召回推进到 system-of-record 操作，支持精确事实、更新、删除、关系、否定查询和显式未知。
+- [MemRouter](https://arxiv.org/abs/2605.00356)：面向长期 conversational agent 的写入侧记忆路由器。核心思想是用基于 embedding 的路由策略和轻量分类头替代每轮都由 LLM 生成式决定是否写入记忆。
+- [MemCoE](https://arxiv.org/abs/2605.00702)：学习长期个性化记忆中“如何记”和“记什么”。核心思想：先从 contrastive feedback 归纳全局 memory guideline，再用结构化过程奖励训练与 guideline 对齐的 memory policy。
+- [MemORAI](https://arxiv.org/abs/2605.01386)：面向 conversational agent 的图智能记忆框架。核心思想是结合选择性压缩、带 provenance 的多关系图，以及基于 Dynamic Weighted PageRank 的 query-adaptive 子图检索。
+- [RL Developer Memory](https://arxiv.org/abs/2605.01567)：面向强化学习 coding agent 的 local-first developer-memory 架构。核心思想是通过 safety-gated MCP 层暴露记忆，并把记忆选择建模为围绕仓库、终端、测试和执行轨迹的已记录上下文决策过程。
 - [GRAVITY](https://arxiv.org/abs/2605.01688)：长程对话记忆的 structured anchoring module。核心思想：向现有 memory system 注入关系、时间和主题 anchor，而不绑定单一架构。
 - [MemFlow](https://arxiv.org/abs/2605.03312)：面向小模型 agent 的 intent-driven memory orchestrator。核心思想：在多层记忆之间确定性路由请求，让小模型也能维持长程历史。
+- [RAG over Thinking Traces Can Improve Reasoning Tasks](https://arxiv.org/abs/2605.03344)：面向把既有思维轨迹作为可检索记忆来支持推理任务的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [MEMTIER](https://arxiv.org/abs/2605.03675)：面向长运行自主 agent 的分层记忆架构。核心思想是结合 episodic JSONL 存储、加权检索、异步巩固和自适应检索策略，降低长期运行中的记忆一致性损失。
+- [Governed Collaborative Memory as Artificial Selection in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2605.04264)：研究 LLM 多 agent 系统中的受治理协作记忆；核心思想是控制共享记忆如何被选择、保留和传播。
+- [TreeMem](https://arxiv.org/abs/2605.04811)：面向多 agent 记忆系统的 credit-assignment 框架。核心思想是从层级记忆树中派生 agent-specific reward，使记忆构建、摘要和检索 agent 能获得更清晰的优化反馈。
 - [True Memory](https://arxiv.org/abs/2605.04897)：对“存储不等于记忆”的系统化回应。核心思想：把 memory system 的关键能力定义为抽取、组织、更新、检索、遗忘和行动绑定，而不只是把历史文本放进向量库。
 - [Belief Memory](https://arxiv.org/abs/2605.05583)：partial observability 下的概率式 memory harness。核心思想：保存备选 belief，并在新观测与旧结论冲突时更新置信度。
+- [ExpWeaver](https://arxiv.org/abs/2605.07164)：面向 self-evolving agent 的运行时经验利用 harness。核心思想：把历史经验作为决策过程中的可选资源，使 agent 只在需要额外指导时调用记忆，而不是在初始化或每一步都机械注入经验。
+- [MemoRepair](https://arxiv.org/abs/2605.07242)：给 agentic memory store 增加 cascade repair 机制。核心思想：先撤回已失效来源的派生项，再构造经验证的 successor artifacts，并用 provenance closure 防止过期摘要、embedding、learned skill 或工具流程继续影响后续行动。
+- [MemCompiler: Compile, Don't Inject -- State-Conditioned Memory for Embodied Agents](https://arxiv.org/abs/2605.07594)：MemCompiler 将 embodied agent memory 编译为 state-conditioned memory，属于 memory harness。
+- [MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs](https://arxiv.org/abs/2605.08374)：补充memory方向的agent harness，核心围绕《MemQ: Integrating Q-Learning into Self-Evolving Memory Agents over Provenance DAGs》。
+- [Human-Inspired Memory Architecture](https://arxiv.org/abs/2605.08538)：受生物记忆启发的 LLM agent 记忆框架。核心思想是结合睡眠期巩固、遗忘、engram 成熟、再巩固、实体图和多线索检索，并用合成校准避免 benchmark 泄漏。
+- [EquiMem](https://arxiv.org/abs/2605.09278)：在 multi-agent debate 中校准共享记忆，且不再依赖额外 LLM 裁判。核心思想：把 memory update 建模为 zero-trust game，并用检索路径中的 equilibrium signal 过滤被污染或对抗性的 shared-memory entry。
 - [Nautilus Compass](https://arxiv.org/abs/2605.09863)：偏生产化的 persona-drift 与 memory layer。核心思想：检测黑盒 persona drift，并通过 plugin、MCP server 和 CLI 暴露记忆能力。
+- [MAGE](https://arxiv.org/abs/2605.10064)：基于 co-evolutionary knowledge graphs 的多 agent 自演化框架。核心思想：把 experience、corrections、tasks 和 skills 外化为图记忆，再通过任务条件检索和 bandit 更新引导冻结 learner agent。
+- [DeepRefine](https://arxiv.org/abs/2605.10488)：通过多轮缺陷诊断和定向更新动作修复 agent 编译出的知识库。核心思想：利用下游查询交互和 gain-beyond-draft reward，改进持久化 agent knowledge 中的不完整、不正确和冗余问题。
+- [Portable Agent Memory](https://arxiv.org/abs/2605.11032)：定义跨异构 agent 迁移持久化记忆状态的协议。核心思想：结合结构化 memory model、Merkle-DAG provenance、scoped access control 与抗注入 rehydration，让记忆能在不同 agent runtime 之间转移。
+- [Goal-Oriented Memory Reasoning](https://arxiv.org/abs/2605.12213)：面向 conversational agent 的 RAG 记忆框架。核心思想是在检索前显式推理缺失中间事实和任务目标，而不是只按原始用户话语做语义相似检索。
+- [PRISM](https://arxiv.org/abs/2605.12260)：面向长程 agent 的 intent-aware structured memory 上的 Pareto-efficient 检索框架。核心思想是结合层级 bundle search、结构化记忆压缩和检索侧推理组件，在准确率与服务成本之间做权衡。
+- [PersonalAI 2.0](https://arxiv.org/abs/2605.13481)：面向 personalized LLM agent 的规划增强图检索框架。核心思想是在外部知识图上进行自适应多阶段查询处理，以提升事实性和个性化回答。
+- [R^2-Mem: Reflective Experience for Memory Search](https://arxiv.org/abs/2605.13486)：面向记忆搜索的反思经验框架；核心思想是从成功和失败的历史搜索轨迹中学习，并在在线检索时复用经验。
+- [PREPING](https://arxiv.org/abs/2605.13880)：面向 agent 的任务前程序性记忆构建 harness。核心思想：让 agent 在看到目标任务前自生成练习任务，并用 proposer memory 控制练什么、存什么，从而减少冷启动记忆的冗余并提升可用性。
+- [EvolveMem:Self-Evolving Memory Architecture via AutoResearch for LLM Agents](https://arxiv.org/abs/2605.13941)：把记忆检索配置作为可演化动作空间，使记忆内容与检索策略共同适应。
+- [Grounded Continuation](https://arxiv.org/abs/2605.14175)：长对话 LLM 的 runtime verifier。核心思想：维护对话 claim 的显式 dependency graph，使 stale premise 和被撤回证据能在线性时间内被发现，再决定是否接受后续回复。
+- [ARPM](https://arxiv.org/abs/2605.14802)：面向长期 persona 一致性的时序记忆治理框架。核心思想是区分静态知识记忆和动态对话经验记忆，并通过按时间顺序读取证据来绑定答案。
 - [H-Mem](https://arxiv.org/abs/2605.15701)：混合演化记忆机制。核心思想：结合 temporal tree 与 knowledge-graph memory，让 agent 同时检索时间顺序和关系上下文。
+- [DimMem: Dimensional Structuring for Efficient Long-Term Agent Memory](https://arxiv.org/abs/2605.15759)：把长期 agent memory 按维度组织，使持久历史增长时检索和更新仍能保持效率。
 - [RecMem](https://arxiv.org/abs/2605.16045)：recurrence-based memory-consolidation 系统。核心思想：在模式复现时触发 consolidation，降低记忆构建成本，同时保持长时运行 agent 的准确率。
+- [FORGE: Self-Evolving Agent Memory With No Weight Updates via Population Broadcast](https://arxiv.org/abs/2605.16233)：在不更新权重的情况下为层级 ReAct agent 演化 prompt-injected 自然语言记忆。核心思路是把失败轨迹转化为规则或示例，在群体中广播最佳记忆，并冻结已收敛实例以节省计算。
+- [Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents](https://arxiv.org/abs/2606.11680)：提出 HORMA，把经验组织成类文件系统的层次记忆，并把摘要实体链接回原始轨迹，以在不扩张提示的情况下保留时间和因果上下文。
+- [AAMLA: An Autonomous Agentic Framework for Memory-Aware LLM-Aided Hardware Generation](https://doi.org/10.1109/vlsid68508.2026.00044)：在 LLM 辅助硬件生成中编排 memory-aware 设计约束，把 memory 作为电路和架构综合对象处理。
+- [Whose story wins? LLM-powered chatbots as sites and agents of memory-political contestation and corporate greenwashing](https://doi.org/10.2478/njms-2026-0004)：研究聊天机器人如何作为记忆政治争夺中的行动者，关注对话系统如何复现、竞争或重塑集体记忆叙事。
+- [Cognitive Modeling for Long-Horizon Agent Learning via Integrated Long-Term Memory and Reasoning](https://doi.org/10.1109/cnml68938.2026.11452287)：Agent Harness 条目；核心思想：将长期记忆与推理结合，用于长程 agent 学习。
+- [Causal-Salience Memory: Causality-Aware Memory and Explainable Preference Alignment for Personalized Agents](https://doi.org/10.1109/cisce69494.2026.11504499)：causal-salience memory 为 personalized agents 提供因果感知 memory retrieval。
+- [Agent Simulation in Virtual World With Memory and Planning](https://doi.org/10.1109/etfi68128.2026.11484746)：在虚拟世界中模拟具备记忆与规划的智能体。
+- [H-Mem: Hybrid Multi-Dimensional Memory Management for Long-Context Conversational Agents](https://doi.org/10.18653/v1/2026.eacl-long.363)：为智能体加入外部记忆管理、轨迹复用、反思或生命周期控制。
+- Letta（[开源代码](https://github.com/letta-ai/letta)；[文档](https://docs.letta.com/)）：MemGPT 后续演进出的开源 stateful-agent runtime，包含 memory blocks、skills、subagents、高级记忆管理和面向 continual learning 的运行时接口。
+- LangMem（[开源代码](https://github.com/langchain-ai/langmem)；[文档](https://langchain-ai.github.io/langmem/)）：面向 LangGraph/LangChain 的记忆 harness，提供记忆搜索、记忆管理工具和后台记忆更新，直接对应 memory-agent benchmark 中的写入、搜索、更新与复用生命周期。
+- [G-Memory](https://openreview.net/forum?id=mmIAp3cVS0)：追踪多 agent 系统中的层级记忆，使共享记忆与角色特定记忆状态显式化，便于调试协作和回忆失败。
+- [CAIM: Development and Evaluation of a Cognitive AI Memory Framework for Long-Term Interaction with Intelligent Agents](https://doi.org/10.1145/3742413.3789222)：构建用于长期智能体交互的认知式 AI memory 框架。
+- [CAIM: A Cognitive AI Memory Framework for Long-term Interaction with LLMs](https://doi.org/10.1145/3708557.3716342)：定义用于长期 LLM 交互的认知式记忆框架，组织跨重复用户 session 的存储、检索和更新。
+- [Human-Like Remembering and Forgetting in LLM Agents: An ACT-R-Inspired Memory Architecture](https://doi.org/10.1145/3765766.3765803)：实现 ACT-R 启发的 agent 记忆架构，显式建模 remembering 和 forgetting 动态，以支持更类人的长期交互。
+- [A memory fabric for conversational AI agents enabling shared and persistent multiuser memory](https://doi.org/10.1007/s44163-026-00992-z)：面向面向对话 AI agent 的共享持久多用户记忆层的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Towards Usable, Privacy Respecting Long-Term Memory for LLM-based Conversational Agents](https://doi.org/10.1145/3772363.3799198)：研究可用且尊重隐私的长期记忆。核心思想：把记忆设计视为带隐私与可用性约束的用户侧 agent 能力。
+- [EXAR: A Unified Experience-Grounded Agentic Reasoning Architecture](https://doi.org/10.1007/978-3-031-96559-3_1)：提出经验驱动的智能体推理架构，适合补充基于记忆的推理循环而非一次性提示。
+- [RECALLbot: Designing Agentic Memory and Reciprocal Disclosure for Human–Chatbot Relationships](https://doi.org/10.1145/3772318.3790714)：面向智能体记忆与长期上下文的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [MemIndex: Agentic Event-based Distributed Memory Management for Multi-agent Systems](https://doi.org/10.1145/3774946)：面向智能体与模型记忆的智能体框架或运行时。核心思想：把 Agentic Event-based Distributed Memory Management for Multi-agent Systems 外化为可复用的编排、工具调用、记忆或协议逻辑。

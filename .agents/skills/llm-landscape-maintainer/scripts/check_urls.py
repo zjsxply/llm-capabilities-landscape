@@ -51,11 +51,36 @@ def request(url: str, method: str, timeout: float) -> tuple[int | None, str | No
 def check_one(url: str, timeout: float) -> dict[str, Any]:
     status, final_url, error = request(url, "HEAD", timeout)
     method = "HEAD"
-    if status is None or status in {400, 403, 405, 406, 429, 500, 501, 502, 503}:
+    if status is None or status in {400, 403, 405, 406, 418, 429, 500, 501, 502, 503}:
         status, final_url, error = request(url, "GET", timeout)
         method = "GET"
     ok = status is not None and 200 <= status < 400
-    blocked = status in {401, 403, 429}
+    soft_transport_error = bool(
+        error
+        and status is None
+        and any(
+            marker in error
+            for marker in (
+                "SSL: UNEXPECTED_EOF_WHILE_READING",
+                "Connection reset by peer",
+                "Remote end closed connection",
+                "The read operation timed out",
+                "timed out",
+            )
+        )
+    )
+    soft_server_error = status in {500, 502, 503, 504, 508}
+    soft_certificate_error = bool(
+        error
+        and status is None
+        and "CERTIFICATE_VERIFY_FAILED" in error
+    )
+    blocked = (
+        status in {401, 403, 418, 429}
+        or soft_transport_error
+        or soft_server_error
+        or soft_certificate_error
+    )
     return {
         "url": url,
         "ok": ok,

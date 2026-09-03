@@ -1,67 +1,1504 @@
 # 4.3.4 Model
 
+- [Domain Generalization via Aggregation and Separation for Audio Deepfake Detection](https://doi.org/10.1109/tifs.2023.3324724)： 用 Aggregation and Separation for Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Question-Aware Global-Local Video Understanding Network for Audio-Visual Question Answering](https://doi.org/10.1109/tcsvt.2023.3318220)： 使用 Question-Aware Global-Local Video Understanding Network for Audio-Visual Question Answering 做视听场景理解、问答或跨模态推理。
+- [DialogMCF: Multimodal Context Flow for Audio Visual Scene-Aware Dialog](https://doi.org/10.1109/taslp.2023.3284511)： 用 Audio Visual Scene-Aware Dialog 建模视听场景、事件或跨模态推理。
+- [Auffusion: Leveraging the Power of Diffusion and Large Language Models for Text-to-Audio Generation](https://arxiv.org/abs/2401.01044)： 使用 Leveraging the Power of Diffusion and Large Language Models for Text-to-Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Efficient Parallel Audio Generation Using Group Masked Language Modeling](https://arxiv.org/abs/2401.01099)： 使用 Group Masked Language Modeling 做文本到音频、音效或 Foley 声音生成。
+- [COMOSVC: Consistency Model-Based Singing Voice Conversion](https://arxiv.org/abs/2401.01792)： 用 Consistency Model-Based Singing Voice Conversion 做语音转换、说话人克隆或语音编辑。
+- [Pheme: Efficient and Conversational Speech Generation](https://arxiv.org/abs/2401.02839)： 使用 Efficient and Conversational Speech Generation 做语音、音频或口语语言建模。
+- [STREAMVC: Real-Time Low-Latency Voice Conversion](https://arxiv.org/abs/2401.03078)：提供实时低延迟语音转换。
+- [MLCA-AVSR: Multi-Layer Cross Attention Fusion Based Audio-Visual Speech Recognition](https://arxiv.org/abs/2401.03424)： 使用 Multi-Layer Cross Attention Fusion Based Audio-Visual Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Multichannel AV-wav2vec2: A Framework for Learning Multichannel Multi-Modal Speech Representation](https://arxiv.org/abs/2401.03468)： 用 Learning Multichannel Multi-Modal Speech Representation 建模视听语音、事件或场景。
+- [EAT: Self-Supervised Pre-Training with Efficient Audio Transformer](https://arxiv.org/abs/2401.03497)： 使用 Efficient Audio Transformer 学习语音或音频表征，服务下游识别与生成任务。
+- [Class-Incremental Learning for Multi-Label Audio Classification](https://arxiv.org/abs/2401.04447)： 使用 Class-Incremental Learning for Multi-Label Audio Classification 做语音、音频或口语语言建模。
+- [Masked Audio Generation using a Single Non-Autoregressive Transformer](https://arxiv.org/abs/2401.04577)： 用 a Single Non-Autoregressive Transformer 生成文本条件音频、Foley 音效或视频对齐声音。
+- [HiCMAE: Hierarchical Contrastive Masked Autoencoder for Self-Supervised Audio-Visual Emotion Recognition](https://arxiv.org/abs/2401.05698)： 使用 Hierarchical Contrastive Masked Autoencoder for Self-Supervised Audio-Visual Emotion Recognition 做语音情感、副语言或情感对话建模。
+- [Towards High-Quality and Efficient Speech Bandwidth Extension With Parallel Amplitude and Phase Prediction](https://arxiv.org/abs/2401.06387)： 使用 Parallel Amplitude and Phase Prediction 做语音增强、带宽扩展或鲁棒音频恢复。
+- [ELLA-V: Stable Neural Codec Language Modeling with Alignment-guided Sequence Reordering](https://arxiv.org/abs/2401.07333)： 用 Alignment-guided Sequence Reordering 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [DurFlex-EVC: Duration-Flexible Emotional Voice Conversion with Parallel Generation](https://arxiv.org/abs/2401.08095)： 用 Parallel Generation 做语音转换、说话人克隆或语音编辑。
+- [ED-TTS: Multi-Scale Emotion Modeling Using Cross-Domain Emotion Diarization for Emotional Speech Synthesis](https://arxiv.org/abs/2401.08166)： 使用 Cross-Domain Emotion Diarization for Emotional Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [T-Foley: A Controllable Waveform-Domain Diffusion Model for Temporal-Event-Guided Foley Sound Synthesis](https://arxiv.org/abs/2401.09294)： 使用 A Controllable Waveform-Domain Diffusion Model for Temporal-Event-Guided Foley Sound Synthesis 做文本到音频、音效或 Foley 声音生成。
+- [On the Audio Hallucinations in Large Audio-Video Language Models](https://arxiv.org/abs/2401.09774)： 用 On the Audio Hallucinations in Large Audio-Video Language Models 学习语音或音频表征，服务识别、理解或生成。
+- [Large Language Models are Efficient Learners of Noise-Robust Speech Recognition](https://arxiv.org/abs/2401.10446)： 使用 Large Language Models are Efficient Learners of Noise-Robust Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Contextualized Automatic Speech Recognition With Attention-Based Bias Phrase Boosted Beam Search](https://arxiv.org/abs/2401.10449)： 使用 Attention-Based Bias Phrase Boosted Beam Search 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [StreamVoice: Streamable Context-Aware Language Modeling for Real-time Zero-Shot Voice Conversion](https://arxiv.org/abs/2401.11053)： 用 Real-time Zero-Shot Voice Conversion 做语音转换、说话人克隆或语音编辑。
+- [Using Large Language Model for End-to-End Chinese ASR and NER](https://arxiv.org/abs/2401.11382)： 用 End-to-End Chinese ASR and NER 改进 ASR、多语种转写或抗噪语音识别。
+- [ScoreDec: A Phase-Preserving High-Fidelity Audio Codec with a Generalized Score-Based Diffusion Post-Filter](https://arxiv.org/abs/2401.12160)：在神经音频 codec 后加入广义 score-based 扩散后滤波器，重点保留相位信息以提升低码率重建保真度。
+- [DITTO: Diffusion Inference-Time T-Optimization for Music Generation](https://arxiv.org/abs/2401.12179)： 使用 Diffusion Inference-Time T-Optimization for Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [EEND-M2F: Masked-attention mask transformers for speaker diarization](https://arxiv.org/abs/2401.12600)： 使用 Masked-attention mask transformers for speaker diarization 做说话人日志和多说话人语音分割。
+- [Multilingual and Fully Non-Autoregressive ASR with Large Language Model Fusion: A Comprehensive Study](https://arxiv.org/abs/2401.12789)： 用 Large Language Model Fusion: A Comprehensive Study 改进 ASR、多语种转写或抗噪语音识别。
+- [SpeechGPT-Gen: Scaling Chain-of-Information Speech Generation](https://arxiv.org/abs/2401.13527)： 使用 Scaling Chain-of-Information Speech Generation 做语音、音频或口语语言建模。
+- [VALL-T: Decoder-Only Generative Transducer for Robust and Decoding-Controllable Text-to-Speech](https://arxiv.org/abs/2401.14321)： 用 Robust and Decoding-Controllable Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [Lips Are Lying: Spotting the Temporal Inconsistency between Audio and Visual in Lip-Syncing DeepFakes](https://arxiv.org/abs/2401.15668)： 使用 Spotting the Temporal Inconsistency between Audio and Visual in Lip-Syncing DeepFakes 做音频深伪、欺骗攻击或声音真实性检测。
+- [Media2Face: Co-speech Facial Animation Generation With Multi-Modality Guidance](https://arxiv.org/abs/2401.15687)： 用 Multi-Modality Guidance 生成语音驱动 talking-head、面部动画或共语手势。
+- [OWSM v3.1: Better and Faster Open Whisper-Style Speech Models based on E-Branchformer](https://arxiv.org/abs/2401.16658)：用更快、更强的 E-Branchformer 骨干改进开放 Whisper 风格语音模型。
+- [ESPnet-SPK: full pipeline speaker embedding toolkit with reproducible recipes, self-supervised front-ends, and off-the-shelf models](https://arxiv.org/abs/2401.17230)： 用 reproducible recipes, self-supervised front-ends, and off-the-shelf models 做说话人验证、识别或表征提取。
+- [Proactive Detection of Voice Cloning with Localized Watermarking](https://arxiv.org/abs/2401.17264)：在语音局部嵌入水印以主动检测克隆语音，把溯源信号绑定到生成音频本身。
+- [What Do Self-Supervised Speech and Speaker Models Learn? New Findings from a Cross Model Layer-Wise Analysis](https://arxiv.org/abs/2401.17632)： 用 a Cross Model Layer-Wise Analysis 学习语音或音频表征，服务识别、理解或生成。
+- [EnCLAP: Combining Neural Audio Codec and Audio-Text Joint Embedding for Automated Audio Captioning](https://arxiv.org/abs/2401.17690)： 使用 Combining Neural Audio Codec and Audio-Text Joint Embedding for Automated Audio Captioning 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Dance-to-Music Generation with Encoder-based Textual Inversion](https://arxiv.org/abs/2401.17800)： 用 Encoder-based Textual Inversion 做音乐生成、伴奏生成或音频条件作曲。
+- [PAM: Prompting Audio-Language Models for Audio Quality Assessment](https://arxiv.org/abs/2402.00282)： 用 Audio Quality Assessment 对齐音频与文本表征。
+- [BATON: Aligning Text-to-Audio Model with Human Preference Feedback](https://arxiv.org/abs/2402.00744)： 使用 Human Preference Feedback 做文本到音频、音效或 Foley 声音生成。
+- [Audio Flamingo: A Novel Audio Language Model with Few-Shot Learning and Dialogue Abilities](https://arxiv.org/abs/2402.01831)： 使用 Few-Shot Learning and Dialogue Abilities 对齐音频与文本表征，服务音频语言理解。
+- [Natural language guidance of high-fidelity text-to-speech with synthetic annotations](https://arxiv.org/abs/2402.01912)： 用 synthetic annotations 改进文本转语音、韵律控制或零样本声音生成。
+- [Layer-Wise Analysis of Self-Supervised Acoustic Word Embeddings: A Study on Speech Emotion Recognition](https://arxiv.org/abs/2402.02617)： 使用 Layer-Wise Analysis of Self-Supervised Acoustic Word Embeddings: A Study on Speech Emotion Recognition 做语音情感、副语言或情感对话建模。
+- [Enhancing the Stability of LLM-based Speech Generation Systems through Self-Supervised Representations](https://arxiv.org/abs/2402.03407)： 使用 Self-Supervised Representations 学习语音或音频表征，服务下游识别与生成任务。
+- [MusicRL: Aligning Music Generation to Human Preferences](https://arxiv.org/abs/2402.04229)： 用 Aligning Music Generation to Human Preferences 做音乐生成、伴奏生成或音频条件作曲。
+- [It's Never Too Late: Fusing Acoustic Information into Large Language Models for Automatic Speech Recognition](https://arxiv.org/abs/2402.05457)：将声学信息融合进大语言模型，用于自动语音识别。
+- [Listening Between the Lines: Synthetic Speech Detection Disregarding Verbal Content](https://arxiv.org/abs/2402.05567)： 使用 Synthetic Speech Detection Disregarding Verbal Content 作为语音和音频模型的数据生成或适配路线。
+- [Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation](https://arxiv.org/abs/2402.05706)： 使用 Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation 做语音情感、副语言或情感对话建模。
+- [DiffSpeaker: Speech-Driven 3D Facial Animation with Diffusion Transformer](https://arxiv.org/abs/2402.05712)： 使用 Diffusion Transformer 做语音驱动 talking-head、面部动画或共语手势生成。
+- [SpiRit-LM: Interleaved Spoken and Written Language Model](https://arxiv.org/abs/2402.05755)： 使用 Interleaved Spoken and Written Language Model 做语音、音频或口语语言建模。
+- [MusicMagus: Zero-Shot Text-to-Music Editing via Diffusion Models](https://arxiv.org/abs/2402.06178)： 用 Diffusion Models 做可控音乐编辑、补全或音轨插入。
+- [A New Approach to Voice Authenticity](https://arxiv.org/abs/2402.06304)： 用 A New Approach to Voice Authenticity 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Cacophony: An Improved Contrastive Audio-Text Model](https://arxiv.org/abs/2402.06986)： 使用 An Improved Contrastive Audio-Text Model 做语音、音频或口语语言建模。
+- [Making Flow-Matching-Based Zero-Shot Text-to-Speech Laugh as You Like](https://arxiv.org/abs/2402.07383)： 用 Making Flow-Matching-Based Zero-Shot Text-to-Speech Laugh as You Like 改进文本转语音、韵律控制或零样本声音生成。
+- [BASE TTS: Lessons from building a billion-parameter Text-to-Speech model on 100K hours of data](https://arxiv.org/abs/2402.08093)： 用 building a billion-parameter Text-to-Speech model on 100K hours of data 改进文本转语音、韵律控制或零样本声音生成。
+- [An Embarrassingly Simple Approach for LLM with Strong ASR Capacity](https://arxiv.org/abs/2402.08846)： 使用 Strong ASR Capacity 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [MobileSpeech: A Fast and High-Fidelity Framework for Mobile Zero-Shot Text-to-Speech](https://arxiv.org/abs/2402.09378)： 使用 A Fast and High-Fidelity Framework for Mobile Zero-Shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [Arrange, Inpaint, and Refine: Steerable Long-term Music Audio Generation and Editing via Content-based Controls](https://arxiv.org/abs/2402.09508)： 使用 Content-based Controls 做可控音乐编辑、补全或音轨插入。
+- [Domain Adaptation for Contrastive Audio-Language Models](https://arxiv.org/abs/2402.09585)： 使用 Domain Adaptation for Contrastive Audio-Language Models 对齐音频与文本表征，服务音频语言理解。
+- [Zero-Shot Unsupervised and Text-Based Audio Editing Using DDPM Inversion](https://arxiv.org/abs/2402.10009)： 用 DDPM inversion 实现零样本文本引导音频编辑.
+- [Pushing the Limits of Zero-shot End-to-End Speech Translation](https://arxiv.org/abs/2402.10422)： 用 Pushing the Limits of Zero-shot End-to-End Speech Translation 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [APCodec: A Neural Audio Codec With Parallel Amplitude and Phase Spectrum Encoding and Decoding](https://arxiv.org/abs/2402.10533)：提出分别编码幅度谱和相位谱的神经音频编解码器，通过并行解码提升音频重建质量。
+- [Language-Codec: Reducing the Gaps Between Discrete Codec Representation and Speech Language Models](https://arxiv.org/abs/2402.12208)： 使用 Reducing the Gaps Between Discrete Codec Representation and Speech Language Models 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [StyleDubber: Towards Multi-Scale Style Learning for Movie Dubbing](https://arxiv.org/abs/2402.12636)： 使用 Towards Multi-Scale Style Learning for Movie Dubbing 做语音、音频或口语语言建模。
+- [OWSM-CTC: An Open Encoder-Only Speech Foundation Model for Speech Recognition, Translation, and Language Identification](https://arxiv.org/abs/2402.12654)： 用 Speech Recognition, Translation, and Language Identification 改进 ASR、多语种转写或抗噪语音识别。
+- [Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion](https://arxiv.org/abs/2402.14285)： 使用 Non-Differentiable Rule Guided Diffusion 做音乐生成、伴奏生成或音频条件作曲。
+- [ChatMusician: Understanding and Generating Music Intrinsically with LLM](https://arxiv.org/abs/2402.16153)： 使用 LLM 做音乐生成、伴奏生成或音频条件作曲。
+- [Self-Supervised Speech Quality Estimation and Enhancement Using Only Clean Speech](https://arxiv.org/abs/2402.16321)： 使用 Only Clean Speech 做音频或语音质量评估与增强。
+- [An Effective Mixture-Of-Experts Approach For Code-Switching Speech Recognition Leveraging Encoder Disentanglement](https://arxiv.org/abs/2402.17189)：用专家混合与编码器解耦改进 code-switching 语音识别。
+- [SongComposer: A Large Language Model for Lyric and Melody Composition in Song Generation](https://arxiv.org/abs/2402.17645)： 用 Lyric and Melody Composition in Song Generation 做歌声、歌词或旋律生成与编辑。
+- [FaceChain-ImagineID: Freely Crafting High-Fidelity Diverse Talking Faces from Disentangled Audio](https://arxiv.org/abs/2403.01901)： 使用 Disentangled Audio 做语音、音频或口语语言建模。
+- [A Robust Audio Deepfake Detection System via Multi-View Feature](https://arxiv.org/abs/2403.01960)： 用 Multi-View Feature 检测音频深伪、欺骗攻击或声音真实性问题。
+- [PixIT: Joint Training of Speaker Diarization and Speech Separation from Real-world Multi-speaker Recordings](https://arxiv.org/abs/2403.02288)： 使用 Real-world Multi-speaker Recordings 做说话人日志和多说话人语音分割。
+- [NaturalSpeech 3: Zero-Shot Speech Synthesis with Factorized Codec and Diffusion Models](https://arxiv.org/abs/2403.03100)：用因子化 codec 与扩散模型实现零样本语音合成。
+- [HAM-TTS: Hierarchical Acoustic Modeling for Token-Based Zero-Shot Text-to-Speech with Model and Data Scaling](https://arxiv.org/abs/2403.05989)： 使用 Model and Data Scaling 改进文本转语音、韵律控制或零样本声音生成。
+- [Multichannel Long-Term Streaming Neural Speech Enhancement for Static and Moving Speakers](https://arxiv.org/abs/2403.07675)： 使用 Multichannel Long-Term Streaming Neural Speech Enhancement for Static and Moving Speakers 做语音增强、带宽扩展或鲁棒音频恢复。
+- [WavCraft: Audio Editing and Generation with Large Language Models](https://arxiv.org/abs/2403.09527)： 用 Large Language Models 做提示引导或零样本音频编辑。
+- [Generalized Multi-Source Inference for Text Conditioned Music Diffusion Models](https://arxiv.org/abs/2403.11706)： 使用 Generalized Multi-Source Inference for Text Conditioned Music Diffusion Models 做音乐生成、伴奏生成或音频条件作曲。
+- [Prompt-Singer: Controllable Singing-Voice-Synthesis with Natural Language Prompt](https://arxiv.org/abs/2403.11780)： 使用 Natural Language Prompt 做语音、音频或口语语言建模。
+- [EmoVOCA: Speech-Driven Emotional 3D Talking Heads](https://arxiv.org/abs/2403.12886)： 用 Speech-Driven Emotional 3D Talking Heads 建模语音情感、副语言线索或情感对话。
+- [Exploring Green AI for Audio Deepfake Detection](https://arxiv.org/abs/2403.14290)： 用 Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [VoiceCraft: Zero-Shot Speech Editing and Text-to-Speech in the Wild](https://arxiv.org/abs/2403.16973)：用神经编解码语言建模推进零样本语音合成与编辑。
+- [Speaker Distance Estimation in Enclosures From Single-Channel Audio](https://arxiv.org/abs/2403.17514)： 使用 Single-Channel Audio 做语音、音频或口语语言建模。
+- [Detection of Deepfake Environmental Audio](https://arxiv.org/abs/2403.17529)： 用 Detection of Deepfake Environmental Audio 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Synthetic training set generation using text-to-audio models for environmental sound classification](https://arxiv.org/abs/2403.17864)： 使用 text-to-audio models for environmental sound classification 做文本到音频、音效或 Foley 声音生成。
+- [Dual-path Mamba: Short and Long-term Bidirectional Selective Structured State Space Models for Speech Separation](https://arxiv.org/abs/2403.18257)： 用 Speech Separation 分离语音或声音源。
+- [Siamese Vision Transformers are Scalable Audio-visual Learners](https://arxiv.org/abs/2403.19638)： 使用 Siamese Vision Transformers are Scalable Audio-visual Learners 做视听语音、事件或场景建模。
+- [3D-Speaker-Toolkit: An Open-Source Toolkit for Multimodal Speaker Verification and Diarization](https://arxiv.org/abs/2403.19971)：提供开源说话人验证与日志工具包，包含预训练模型和配方，服务多模态说话人研究。
+- [CM-TTS: Enhancing Real Time Text-to-Speech Synthesis Efficiency through Weighted Samplers and Consistency Models](https://arxiv.org/abs/2404.00569)： 用 Weighted Samplers and Consistency Models 改进文本转语音、韵律控制或零样本声音生成。
+- [WavLLM: Towards Robust and Adaptive Speech Large Language Model](https://arxiv.org/abs/2404.00656)： 使用 Towards Robust and Adaptive Speech Large Language Model 做语音、音频或口语语言建模。
+- [SPMamba: State-space model is all you need in speech separation](https://arxiv.org/abs/2404.02063)： 使用 State-space model is all you need in speech separation 做语音分离或多源音频重建。
+- [BRAVEn: Improving Self-supervised pre-training for Visual and Auditory Speech Recognition](https://arxiv.org/abs/2404.02098)： 使用 Improving Self-supervised pre-training for Visual and Auditory Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [SMITIN: Self-Monitored Inference-Time INtervention for Generative Music Transformers](https://arxiv.org/abs/2404.02252)： 使用 Self-Monitored Inference-Time INtervention for Generative Music Transformers 做音乐生成、伴奏生成或音频条件作曲。
+- [CLaM-TTS: Improving Neural Codec Language Model for Zero-Shot Text-to-Speech](https://arxiv.org/abs/2404.02781)： 用 Zero-Shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [RALL-E: Robust Codec Language Modeling with Chain-of-Thought Prompting for Text-to-Speech Synthesis](https://arxiv.org/abs/2404.03204)： 用 Chain-of-Thought Prompting for Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [SpeechAlign: Aligning Speech Generation to Human Preferences](https://arxiv.org/abs/2404.05600)： 使用 Aligning Speech Generation to Human Preferences 做语音、音频或口语语言建模。
+- [VoiceShop: A Unified Speech-to-Speech Framework for Identity-Preserving Zero-Shot Voice Editing](https://arxiv.org/abs/2404.06674)：提出保持说话人身份的零样本语音到语音编辑框架。
+- [CoVoMix: Advancing Zero-Shot Speech Generation for Human-like Multi-talker Conversations](https://arxiv.org/abs/2404.06690)： 使用 Advancing Zero-Shot Speech Generation for Human-like Multi-talker Conversations 做语音、音频或口语语言建模。
+- [GazePointAR: A Context-Aware Multimodal Voice Assistant for Pronoun Disambiguation in Wearable Augmented Reality](https://arxiv.org/abs/2404.08213)： 使用 A Context-Aware Multimodal Voice Assistant for Pronoun Disambiguation in Wearable Augmented Reality 做语音、音频或口语语言建模。
+- [Voice Attribute Editing With Text Prompt](https://arxiv.org/abs/2404.08857)： 用 Text Prompt 建模语音、音频或口语语言行为。
+- [Tango 2: Aligning Diffusion-based Text-to-Audio Generations through Direct Preference Optimization](https://arxiv.org/abs/2404.09956)： 使用 Direct Preference Optimization 做文本到音频、音效或 Foley 声音生成。
+- [VASA-1: Lifelike Audio-Driven Talking Faces Generated in Real Time](https://arxiv.org/abs/2404.10667)： 用 Lifelike Audio-Driven Talking Faces Generated in Real Time 生成语音驱动 talking-head、面部动画或共语手势。
+- [Listen Then See: Video Alignment with Speaker Attention](https://arxiv.org/abs/2404.13530)： 使用 Speaker Attention 做语音、音频或口语语言建模。
+- [Retrieval-Augmented Audio Deepfake Detection](https://arxiv.org/abs/2404.13892)： 用 Retrieval-Augmented Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [FlashSpeech: Efficient Zero-Shot Speech Synthesis](https://arxiv.org/abs/2404.14700)：提供高效零样本语音合成。
+- [Bayesian Example Selection Improves In-Context Learning for Speech, Text and Visual Modalities](https://arxiv.org/abs/2404.14716)： 使用 Bayesian Example Selection Improves In-Context Learning for Speech, Text and Visual Modalities 做语音、音频或口语语言建模。
+- [AudioScenic: Audio-Driven Video Scene Editing](https://arxiv.org/abs/2404.16581)： 用 Audio-Driven Video Scene Editing 建模语音、音频或口语语言行为。
+- [V2A-Mark: Versatile Deep Visual-Audio Watermarking for Manipulation Localization and Copyright Protection](https://arxiv.org/abs/2404.16824)： 用 Manipulation Localization and Copyright Protection 嵌入或检测可追踪语音音频水印。
+- [COCOLA: Coherence-Oriented Contrastive Learning of Musical Audio Representations](https://arxiv.org/abs/2404.16969)： 使用 Coherence-Oriented Contrastive Learning of Musical Audio Representations 做音乐生成、伴奏生成或音频条件作曲。
+- [T-CLAP: Temporal-Enhanced Contrastive Language-Audio Pretraining](https://arxiv.org/abs/2404.17806)：在语言-音频对比预训练中加入时序增强，以提升音频文本对齐。
+- [USAT: A Universal Speaker-Adaptive Text-to-Speech Approach](https://arxiv.org/abs/2404.18094)： 用 A Universal Speaker-Adaptive Text-to-Speech Approach 改进文本转语音、韵律控制或零样本声音生成。
+- [GSTalker: Real-time Audio-Driven Talking Face Generation via Deformable Gaussian Splatting](https://arxiv.org/abs/2404.19040)： 使用 Deformable Gaussian Splatting 做语音驱动 talking-head、面部动画或共语手势生成。
+- [Attention-Constrained Inference For Robust Decoder-Only Text-to-Speech](https://arxiv.org/abs/2404.19723)： 使用 Attention-Constrained Inference For Robust Decoder-Only Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [SemantiCodec: An Ultra Low Bitrate Semantic Audio Codec for General Sound](https://arxiv.org/abs/2405.00233)： 提出面向通用声音的超低码率语义音频 codec.
+- [SonicDiffusion: Audio-Driven Image Generation and Editing with Pretrained Diffusion Models](https://arxiv.org/abs/2405.00878)： 用 Pretrained Diffusion Models 建模语音、音频或口语语言行为。
+- [HateTinyLLM : Hate Speech Detection Using Tiny Large Language Models](https://arxiv.org/abs/2405.01577)： 使用 Tiny Large Language Models 做语音、音频或口语语言建模。
+- [Unveiling the Potential of LLM-Based ASR on Chinese Open-Source Datasets](https://arxiv.org/abs/2405.02132)： 使用 Unveiling the Potential of LLM-Based ASR on Chinese Open-Source Datasets 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [GMP-ATL: Gender-augmented Multi-scale Pseudo-label Enhanced Adaptive Transfer Learning for Speech Emotion Recognition via HuBERT](https://arxiv.org/abs/2405.02151)： 使用 HuBERT 做语音情感、副语言或情感对话建模。
+- [Mozart’s Touch: a lightweight multimodal music generation framework based on pre-trained large models](https://arxiv.org/abs/2405.02801)： 用 pre-trained large models 做音乐生成、伴奏生成或音频条件作曲。
+- [MMGER: Multi-Modal and Multi-Granularity Generative Error Correction With LLM for Joint Accent and Speech Recognition](https://arxiv.org/abs/2405.03152)： 使用 LLM for Joint Accent and Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Detecting music deepfakes is easy but actually hard](https://arxiv.org/abs/2405.04181)： 用 Detecting music deepfakes is easy but actually hard 检测音频深伪、欺骗攻击或声音真实性问题。
+- [An Investigation of Incorporating Mamba For Speech Enhancement](https://arxiv.org/abs/2405.06573)： 使用 An Investigation of Incorporating Mamba For Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Benchmarking Cross-Domain Audio-Visual Deception Detection](https://arxiv.org/abs/2405.06995)： 使用 Benchmarking Cross-Domain Audio-Visual Deception Detection 做视听语音、事件或场景建模。
+- [Unified Video-Language Pre-training with Synchronized Audio](https://arxiv.org/abs/2405.07202)： 用 Synchronized Audio 学习语音或音频表征，服务识别、理解或生成。
+- [SpeechVerse: A Large-scale Generalizable Audio Language Model](https://arxiv.org/abs/2405.08295)： 使用 A Large-scale Generalizable Audio Language Model 对齐音频与文本表征，服务音频语言理解。
+- [Neural Speech Coding for Real-Time Communications Using Constant Bitrate Scalar Quantization](https://arxiv.org/abs/2405.08417)： 用 Constant Bitrate Scalar Quantization 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Whole-Song Hierarchical Generation of Symbolic Music Using Cascaded Diffusion Models](https://arxiv.org/abs/2405.09901)： 使用 Cascaded Diffusion Models 做歌声、歌词或旋律生成与转换。
+- [Listen Again and Choose the Right Answer: A New Paradigm for Automatic Speech Recognition with Large Language Models](https://arxiv.org/abs/2405.10025)：用基于大模型的再次聆听范式改进自动语音识别。
+- [Faces that Speak: Jointly Synthesising Talking Face and Speech from Text](https://arxiv.org/abs/2405.10272)： 使用 Text 做语音、音频或口语语言建模。
+- [SSAMBA: Self-Supervised Audio Representation Learning With Mamba State Space Model](https://arxiv.org/abs/2405.11831)： 使用 Mamba State Space Model 学习语音或音频表征，服务下游识别与生成任务。
+- [Diff-BGM: A Diffusion Model for Video Background Music Generation](https://arxiv.org/abs/2405.11913)： 使用 A Diffusion Model for Video Background Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Images that Sound: Composing Images and Sounds on a Single Canvas](https://arxiv.org/abs/2405.12221)： 用 Composing Images and Sounds on a Single Canvas 建模语音、音频或口语语言行为。
+- [Contextualized Automatic Speech Recognition With Dynamic Vocabulary](https://arxiv.org/abs/2405.13344)： 用 Dynamic Vocabulary 改进 ASR、多语种转写或抗噪语音识别。
+- [Audio Mamba: Pretrained Audio State Space Model For Audio Tagging](https://arxiv.org/abs/2405.13636)： 用 Audio Tagging 学习语音或音频表征，服务识别、理解或生成。
+- [A Versatile Diffusion Transformer with Mixture of Noise Levels for Audiovisual Generation](https://arxiv.org/abs/2405.13762)： 用 Mixture of Noise Levels for Audiovisual Generation 学习语音或音频表征，服务识别、理解或生成。
+- [Self-Taught Recognizer: Toward Unsupervised Adaptation for Speech Foundation Models](https://arxiv.org/abs/2405.14161)： 使用 Toward Unsupervised Adaptation for Speech Foundation Models 学习语音或音频表征，服务下游识别与生成任务。
+- [Real-Time and Accurate: Zero-shot High-Fidelity Singing Voice Conversion with Multi-Condition Flow Synthesis](https://arxiv.org/abs/2405.15093)： 使用 Multi-Condition Flow Synthesis 做语音转换、说话人克隆或可控音色迁移。
+- [Crossmodal ASR Error Correction With Discrete Speech Units](https://arxiv.org/abs/2405.16677)：用离散语音单元为 ASR 错误校正提供跨模态声学证据，而不只依赖文本级语言模型纠错。
+- [MMDisCo: Multi-Modal Discriminator-Guided Cooperative Diffusion for Joint Audio and Video Generation](https://arxiv.org/abs/2405.17842)： 用 Joint Audio and Video Generation 建模语音、音频或口语语言行为。
+- [Instruct-MusicGen: Unlocking Text-to-Music Editing for Music Language Models via Instruction Tuning](https://arxiv.org/abs/2405.18386)： 使用 Instruction Tuning 做可控音乐编辑、补全或音轨插入。
+- [SoundCTM: Unifying Score-based and Consistency Models for Full-band Text-to-Sound Generation](https://arxiv.org/abs/2405.18503)： 用 Full-band Text-to-Sound Generation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Explainable Attribute-Based Speaker Verification](https://arxiv.org/abs/2405.19796)：通过同时预测可理解的声音属性与说话人身份决策，提升说话人验证的可解释性。
+- [AudioLCM: Text-to-Audio Generation with Latent Consistency Models](https://arxiv.org/abs/2406.00356)： 使用 Latent Consistency Models 做文本到音频、音效或 Foley 声音生成。
+- [Enhancing Zero-shot Text-to-Speech Synthesis with Human Feedback](https://arxiv.org/abs/2406.00654)： 用 Human Feedback 改进文本转语音、韵律控制或零样本声音生成。
+- [ControlSpeech: Towards Simultaneous Zero-shot Speaker Cloning and Zero-shot Language Style Control With Decoupled Codec](https://arxiv.org/abs/2406.01205)： 用 Decoupled Codec 做语音转换、说话人克隆或语音编辑。
+- [M2D-CLAP: Masked Modeling Duo Meets CLAP for Learning General-purpose Audio-Language Representation](https://arxiv.org/abs/2406.02032)： 使用 Masked Modeling Duo Meets CLAP for Learning General-purpose Audio-Language Representation 对齐音频与文本表征，服务音频语言理解。
+- [ERes2NetV2: Boosting Short-Duration Speaker Verification Performance with Computational Efficiency](https://arxiv.org/abs/2406.02167)： 使用 Computational Efficiency 做说话人验证、识别或说话人表征建模。
+- [Audio Mamba: Selective State Spaces for Self-Supervised Audio Representations](https://arxiv.org/abs/2406.02178)： 使用 Selective State Spaces for Self-Supervised Audio Representations 学习语音或音频表征，服务下游识别与生成任务。
+- [Multi-Stage Speech Bandwidth Extension with Flexible Sampling Rate Control](https://arxiv.org/abs/2406.02250)： 使用 Flexible Sampling Rate Control 做语音增强、带宽扩展或鲁棒音频恢复。
+- [SimpleSpeech: Towards Simple and Efficient Text-to-Speech with Scalar Latent Transformer Diffusion Models](https://arxiv.org/abs/2406.02328)：使用 scalar latent transformer diffusion 简化并加速文本到语音生成。
+- [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](https://arxiv.org/abs/2406.02430)：报告高质量、多功能的文本到语音生成模型族。
+- [How Do Neural Spoofing Countermeasures Detect Partially Spoofed Audio?](https://arxiv.org/abs/2406.02483)： 使用 How Do Neural Spoofing Countermeasures Detect Partially Spoofed Audio? 做音频深伪、欺骗攻击或声音真实性检测。
+- [LiveSpeech: Low-Latency Zero-shot Text-to-Speech via Autoregressive Modeling of Audio Discrete Codes](https://arxiv.org/abs/2406.02897)： 用 Autoregressive Modeling of Audio Discrete Codes 改进文本转语音、韵律控制或零样本声音生成。
+- [Generalized Fake Audio Detection via Deep Stable Learning](https://arxiv.org/abs/2406.03237)： 用 Deep Stable Learning 检测音频深伪、欺骗攻击或声音真实性问题。
+- [The PESQetarian: On the Relevance of Goodhart's Law for Speech Enhancement](https://arxiv.org/abs/2406.03460)： 使用 On the Relevance of Goodhart's Law for Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Retrieval Augmented Generation in Prompt-based Text-to-Speech Synthesis with Context-Aware Contrastive Language-Audio Pretraining](https://arxiv.org/abs/2406.03714)： 用 Context-Aware Contrastive Language-Audio Pretraining 改进文本转语音、韵律控制或零样本声音生成。
+- [Improving Zero-Shot Chinese-English Code-Switching ASR with kNN-CTC and Gated Monolingual Datastores](https://arxiv.org/abs/2406.03814)： 用 kNN-CTC and Gated Monolingual Datastores 改进 ASR、多语种转写或抗噪语音识别。
+- [SilentCipher: Deep Audio Watermarking](https://arxiv.org/abs/2406.03822)：提出深度音频水印方法，用于追踪和验证生成语音或音频。
+- [BLSP-Emo: Towards Empathetic Large Speech-Language Models](https://arxiv.org/abs/2406.03872)： 使用 Towards Empathetic Large Speech-Language Models 做语音、音频或口语语言建模。
+- [Beyond Performance Plateaus: A Comprehensive Study on Scalability in Speech Enhancement](https://arxiv.org/abs/2406.04269)： 用 A Comprehensive Study on Scalability in Speech Enhancement 增强或恢复退化语音。
+- [VidMuse: A Simple Video-to-Music Generation Framework with Long-Short-Term Modeling](https://arxiv.org/abs/2406.04321)： 用 Long-Short-Term Modeling 做音乐生成、伴奏生成或音频条件作曲。
+- [Prompt-guided Precise Audio Editing with Diffusion Models](https://arxiv.org/abs/2406.04350)： 用 Diffusion Models 做提示引导或零样本音频编辑。
+- [TraceableSpeech: Towards Proactively Traceable Text-to-Speech with Watermarking](https://arxiv.org/abs/2406.04840)： 使用 Watermarking 在语音和音频中嵌入或检测可追踪水印。
+- [LLM-based speaker diarization correction: A generalizable approach](https://arxiv.org/abs/2406.04927)： 用 A generalizable approach 做多说话人音频分割和说话人日志。
+- [VALL-E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers](https://arxiv.org/abs/2406.05370)：用神经编解码语言建模推进零样本语音合成与编辑。
+- [Autoregressive Diffusion Transformer for Text-to-Speech Synthesis](https://arxiv.org/abs/2406.05551)： 用 Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Separate and Reconstruct: Asymmetric Encoder-Decoder for Speech Separation](https://arxiv.org/abs/2406.05983)： 使用 Asymmetric Encoder-Decoder for Speech Separation 做语音分离或多源音频重建。
+- [RawBMamba: End-to-End Bidirectional State Space Model for Audio Deepfake Detection](https://arxiv.org/abs/2406.06086)： 用 Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Zero-Shot Audio Captioning Using Soft and Hard Prompts](https://arxiv.org/abs/2406.06295)： 使用 Soft and Hard Prompts 做自动音频字幕和音频语言表征学习。
+- [LoRA-Whisper: Parameter-Efficient and Extensible Multilingual ASR](https://arxiv.org/abs/2406.06619)：通过参数高效适配提升多语言 ASR 模型的可扩展性。
+- [SignMusketeers: An Efficient Multi-Stream Approach for Sign Language Translation at Scale](https://arxiv.org/abs/2406.06907)： 用 Sign Language Translation at Scale 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [A Non-autoregressive Generation Framework for End-to-End Simultaneous Speech-to-Any Translation](https://arxiv.org/abs/2406.06937)： 使用 A Non-autoregressive Generation Framework for End-to-End Simultaneous Speech-to-Any Translation 做语音翻译、同时翻译或 code-switching 语音理解。
+- [CodecFake: Enhancing Anti-Spoofing Models Against Deepfake Audios from Codec-Based Speech Synthesis Systems](https://arxiv.org/abs/2406.07237)：提升反欺骗模型对编解码语音合成系统生成深度伪造音频的防御能力。
+- [Single-Codec: Single-Codebook Speech Codec towards High-Performance Speech Generation](https://arxiv.org/abs/2406.07422)： 使用 Single-Codebook Speech Codec towards High-Performance Speech Generation 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [AV-DiT: Efficient Audio-Visual Diffusion Transformer for Joint Audio and Video Generation](https://arxiv.org/abs/2406.07686)： 用 Joint Audio and Video Generation 建模视听语音、事件或场景。
+- [VALL-E R: Robust and Efficient Zero-Shot Text-to-Speech Synthesis via Monotonic Alignment](https://arxiv.org/abs/2406.07855)： 使用 Monotonic Alignment 改进文本转语音、韵律控制或零样本声音生成。
+- [Can Large Language Models Understand Spatial Audio?](https://arxiv.org/abs/2406.07914)： 使用 Can Large Language Models Understand Spatial Audio? 做语音、音频或口语语言建模。
+- [LAFMA: A Latent Flow Matching Model for Text-to-Audio Generation](https://arxiv.org/abs/2406.08203)： 使用 A Latent Flow Matching Model for Text-to-Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Speech Emotion Recognition With ASR Transcripts: a Comprehensive Study on Word Error Rate and Fusion Techniques](https://arxiv.org/abs/2406.08353)： 使用 ASR Transcripts: a Comprehensive Study on Word Error Rate and Fusion Techniques 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Diff-A-Riff: Musical Accompaniment Co-creation via Latent Diffusion Models](https://arxiv.org/abs/2406.08384)： 用 Latent Diffusion Models 做音乐生成、伴奏生成或音频条件作曲。
+- [DubWise: Video-Guided Speech Duration Control in Multimodal LLM-based Text-to-Speech for Dubbing](https://arxiv.org/abs/2406.08802)： 用 Video-Guided Speech Duration Control in Multimodal LLM-based Text-to-Speech for Dubbing 改进文本转语音、韵律控制或零样本声音生成。
+- [Interpretable Temporal Class Activation Representation for Audio Spoofing Detection](https://arxiv.org/abs/2406.08825)： 使用 Interpretable Temporal Class Activation Representation for Audio Spoofing Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Action2Sound: Ambient-Aware Generation of Action Sounds from Egocentric Videos](https://arxiv.org/abs/2406.09272)： 使用 Egocentric Videos 做语音、音频或口语语言建模。
+- [On the Effects of Heterogeneous Data Sources on Speech-to-Text Foundation Models](https://arxiv.org/abs/2406.09282)： 用 On the Effects of Heterogeneous Data Sources on Speech-to-Text Foundation Models 学习语音或音频表征，服务识别、理解或生成。
+- [DiscreteSLU: A Large Language Model with Self-Supervised Discrete Speech Units for Spoken Language Understanding](https://arxiv.org/abs/2406.09345)： 用 Self-Supervised Discrete Speech Units for Spoken Language Understanding 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [MMM: Multi-Layer Multi-Residual Multi-Stream Discrete Speech Representation from Self-supervised Learning Model](https://arxiv.org/abs/2406.09869)： 使用 Self-supervised Learning Model 学习语音或音频表征，服务下游识别与生成任务。
+- [UniAudio 1.5: Large Language Model-driven Audio Codec is A Few-shot Audio Task Learner](https://arxiv.org/abs/2406.10056)： 用 Large Language Model-driven Audio Codec is A Few-shot Audio Task Learner 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Whisper-Flamingo: Integrating Visual Features into Whisper for Audio-Visual Speech Recognition and Translation](https://arxiv.org/abs/2406.10082)： 使用 Integrating Visual Features into Whisper for Audio-Visual Speech Recognition and Translation 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Improving child speech recognition with augmented child-like speech](https://arxiv.org/abs/2406.10284)： 用 augmented child-like speech 改进 ASR、多语种转写或抗噪语音识别。
+- [How Should We Extract Discrete Audio Tokens from Self-Supervised Models?](https://arxiv.org/abs/2406.10735)： 使用 Self-Supervised Models? 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Revisiting and Improving Scoring Fusion for Spoofing-aware Speaker Verification Using Compositional Data Analysis](https://arxiv.org/abs/2406.10836)： 用 Compositional Data Analysis 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Multi-Scale Accent Modeling and Disentangling for Multi-Speaker Multi-Accent Text-to-Speech Synthesis](https://arxiv.org/abs/2406.10844)： 使用 Multi-Scale Accent Modeling and Disentangling for Multi-Speaker Multi-Accent Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Joint Audio and Symbolic Conditioning for Temporally Controlled Text-to-Music Generation](https://arxiv.org/abs/2406.10970)： 使用 Joint Audio and Symbolic Conditioning for Temporally Controlled Text-to-Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [DiTTo-TTS: Diffusion Transformers for Scalable Text-to-Speech without Domain-Specific Factors](https://arxiv.org/abs/2406.11427)：使用 diffusion transformers 实现无需领域特定因素的可扩展文本到语音。
+- [Universal Score-based Speech Enhancement with High Content Preservation](https://arxiv.org/abs/2406.12194)： 使用 High Content Preservation 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Rapid Language Adaptation for Multilingual E2E Speech Recognition Using Encoder Prompting](https://arxiv.org/abs/2406.12611)： 用 Encoder Prompting 改进 ASR、多语种转写或抗噪语音识别。
+- [Coding Speech Through Vocal Tract Kinematics](https://arxiv.org/abs/2406.12998)： 使用 Vocal Tract Kinematics 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Investigating Low-Cost LLM Annotation for~Spoken Dialogue Understanding Datasets](https://arxiv.org/abs/2406.13269)： 使用 Investigating Low-Cost LLM Annotation for~Spoken Dialogue Understanding Datasets 作为语音和音频模型的数据生成或适配路线。
+- [Improving Text-To-Audio Models with Synthetic Captions](https://arxiv.org/abs/2406.15487)： 使用 Synthetic Captions 做文本到音频、音效或 Foley 声音生成。
+- [video-SALMONN: Speech-Enhanced Audio-Visual Large Language Models](https://arxiv.org/abs/2406.15704)： 使用 Speech-Enhanced Audio-Visual Large Language Models 做视听语音、事件或场景建模。
+- [Contextualized End-to-end Automatic Speech Recognition with Intermediate Biasing Loss](https://arxiv.org/abs/2406.16120)： 使用 Intermediate Biasing Loss 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [DreamVoice: Text-Guided Voice Conversion](https://arxiv.org/abs/2406.16314)：把文本提示作为语音转换控制信号，使说话人音色迁移同时支持内容和风格条件控制。
+- [Exploring the Capability of Mamba in Speech Applications](https://arxiv.org/abs/2406.16808)： 使用 Exploring the Capability of Mamba in Speech Applications 学习语音或音频表征，服务下游识别与生成任务。
+- [Beyond Silence: Bias Analysis through Loss and Asymmetric Approach in Audio Anti-Spoofing](https://arxiv.org/abs/2406.17246)： 使用 Loss and Asymmetric Approach in Audio Anti-Spoofing 做音频深伪、欺骗攻击或声音真实性检测。
+- [Temporal-Channel Modeling in Multi-head Self-Attention for Synthetic Speech Detection](https://arxiv.org/abs/2406.17376)： 用时序通道注意力建模检测合成语音.
+- [SpecMaskGIT: Masked Generative Modeling of Audio Spectrograms for Efficient Audio Synthesis and Beyond](https://arxiv.org/abs/2406.17672)： 使用 Masked Generative Modeling of Audio Spectrograms for Efficient Audio Synthesis and Beyond 做语音、音频或口语语言建模。
+- [Improving Robustness of LLM-based Speech Synthesis by Learning Monotonic Alignment](https://arxiv.org/abs/2406.17957)： 使用 Learning Monotonic Alignment 改进文本转语音、韵律控制或零样本声音生成。
+- [E2 TTS: Embarrassingly Easy Fully Non-Autoregressive Zero-Shot TTS](https://arxiv.org/abs/2406.18009)：提出简洁的全非自回归零样本文本转语音方法。
+- [SC-MoE: Switch Conformer Mixture of Experts for Unified Streaming and Non-streaming Code-Switching ASR](https://arxiv.org/abs/2406.18021)： 用 Unified Streaming and Non-streaming Code-Switching ASR 改进 ASR、多语种转写或抗噪语音识别。
+- [ArzEn-LLM: Code-Switched Egyptian Arabic-English Translation and Speech Recognition Using LLMs](https://arxiv.org/abs/2406.18120)：使用 LLM 处理中埃及阿拉伯语-英语 code-switching 翻译与语音识别。
+- [DeSTA: Enhancing Speech Language Models through Descriptive Speech-Text Alignment](https://arxiv.org/abs/2406.18871)： 使用 Descriptive Speech-Text Alignment 做语音、音频或口语语言建模。
+- [Subtractive Training for Music Stem Insertion Using Latent Diffusion Models](https://arxiv.org/abs/2406.19328)： 使用 Latent Diffusion Models 做可控音乐编辑、补全或音轨插入。
+- [Taming Data and Transformers for Audio Generation](https://arxiv.org/abs/2406.19388)： 用 Audio Generation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Bestow: Efficient and Streamable Speech Language Model with The Best of Two Worlds in GPT and T5](https://arxiv.org/abs/2406.19954)： 用 The Best of Two Worlds in GPT and T5 学习语音或音频表征，服务识别、理解或生成。
+- [Open-Source Conversational AI with SpeechBrain 1.0](https://arxiv.org/abs/2407.00463)： 使用 SpeechBrain 1.0 做语音、音频或口语语言建模。
+- [Towards Robust Speech Representation Learning for Thousands of Languages](https://arxiv.org/abs/2407.00837)： 使用 Towards Robust Speech Representation Learning for Thousands of Languages 学习语音或音频表征，服务下游识别与生成任务。
+- [Deepfake Audio Detection Using Spectrogram-based Feature and Ensemble of Deep Learning Models](https://arxiv.org/abs/2407.01777)： 使用 Spectrogram-based Feature and Ensemble of Deep Learning Models 做音频深伪、欺骗攻击或声音真实性检测。
+- [TTSlow: Slow Down Text-to-Speech With Efficiency Robustness Evaluations](https://arxiv.org/abs/2407.01927)： 用 Efficiency Robustness Evaluations 改进文本转语音、韵律控制或零样本声音生成。
+- [Robust Zero-Shot Text-to-Speech Synthesis with Reverse Inference Optimization](https://arxiv.org/abs/2407.02243)： 用 Reverse Inference Optimization 改进文本转语音、韵律控制或零样本声音生成。
+- [Learning Video Temporal Dynamics With Cross-Modal Attention For Robust Audio-Visual Speech Recognition](https://arxiv.org/abs/2407.03563)： 使用 Cross-Modal Attention For Robust Audio-Visual Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [High Fidelity Text-Guided Music Editing via Single-Stage Flow Matching](https://arxiv.org/abs/2407.03648)： 用 Single-Stage Flow Matching 做可控音乐编辑、补全或音轨插入。
+- [DG-SED: Domain Generalization for Sound Event Detection with Heterogeneous Training Data](https://arxiv.org/abs/2407.03654)： 用 Heterogeneous Training Data 构造语音或音频数据生成与适配信号。
+- [FunAudioLLM: Voice Understanding and Generation Foundation Models for Natural Interaction Between Humans and LLMs](https://arxiv.org/abs/2407.04051)：发布面向自然人机交互的语音理解与生成基础模型。
+- [DASS: Distilled Audio State Space Models are Stronger and More Duration-Scalable Learners](https://arxiv.org/abs/2407.04082)： 使用 Distilled Audio State Space Models are Stronger and More Duration-Scalable Learners 做语音、音频或口语语言建模。
+- [Semi-Supervised Learning For Code-Switching ASR With Large Language Model Filter](https://arxiv.org/abs/2407.04219)： 用 Large Language Model Filter 改进 ASR、多语种转写或抗噪语音识别。
+- [Sound-VECaps: Improving Audio Generation with Visually Enhanced Captions](https://arxiv.org/abs/2407.04416)： 使用 Visually Enhanced Captions 做文本到音频、音效或 Foley 声音生成。
+- [Seed-ASR: Understanding Diverse Speech and Contexts with LLM-based Speech Recognition](https://arxiv.org/abs/2407.04675)： 使用 LLM-based Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Fine-Grained and Interpretable Neural Speech Editing](https://arxiv.org/abs/2407.05471)： 用 Fine-Grained and Interpretable Neural Speech Editing 做语音转换、说话人克隆或语音编辑。
+- [Read, Watch and Scream! Sound Generation from Text and Video](https://arxiv.org/abs/2407.05551)： 用 Text and Video 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Learn and Don't Forget: Adding a New Language to ASR Foundation Models](https://arxiv.org/abs/2407.06800)：在降低遗忘的同时为 ASR 基础模型加入新语言能力。
+- [Listen and Speak Fairly: a Study on Semantic Gender Bias in Speech Integrated Large Language Models](https://arxiv.org/abs/2407.06957)： 使用 a Study on Semantic Gender Bias in Speech Integrated Large Language Models 做语音、音频或口语语言建模。
+- [Speech After Gender: A Trans-Feminine Perspective on Next Steps for Speech Science and Technology](https://arxiv.org/abs/2407.07235)： 用 Speech Science and Technology 建模语音、音频或口语语言行为。
+- [Source Tracing of Audio Deepfake Systems](https://arxiv.org/abs/2407.08016)： 用 Source Tracing of Audio Deepfake Systems 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Autoregressive Speech Synthesis without Vector Quantization](https://arxiv.org/abs/2407.08551)： 用 Autoregressive Speech Synthesis without Vector Quantization 改进文本转语音、韵律控制或零样本声音生成。
+- [Speech Slytherin: Examining the Performance and Efficiency of Mamba for Speech Separation, Recognition, and Synthesis](https://arxiv.org/abs/2407.09732)： 使用 Examining the Performance and Efficiency of Mamba for Speech Separation, Recognition, and Synthesis 做语音分离或多源音频重建。
+- [Speech-Copilot: Leveraging Large Language Models for Speech Processing Via Task Decomposition, Modularization, and Program Generation](https://arxiv.org/abs/2407.09886)： 使用 Task Decomposition, Modularization, and Program Generation 做语音、音频或口语语言建模。
+- [Qwen2-Audio Technical Report](https://arxiv.org/abs/2407.10759)：报告面向语音、音频理解和语音交互任务的音频语言模型族。
+- [MUSA: Multi-Lingual Speaker Anonymization via Serial Disentanglement](https://arxiv.org/abs/2407.11629)： 使用 Serial Disentanglement 做语音、音频或口语语言建模。
+- [Stepping Stones: A Progressive Training Strategy for Audio-Visual Semantic Segmentation](https://arxiv.org/abs/2407.11820)： 使用 A Progressive Training Strategy for Audio-Visual Semantic Segmentation 做视听语音、事件或场景建模。
+- [Scaling Sign Language Translation](https://arxiv.org/abs/2407.11855)： 用 Scaling Sign Language Translation 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [Laugh Now Cry Later: Controlling Time-Varying Emotional States of Flow-Matching-Based Zero-Shot Text-To-Speech](https://arxiv.org/abs/2407.12229)： 使用 Controlling Time-Varying Emotional States of Flow-Matching-Based Zero-Shot Text-To-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [Audio-visual Generalized Zero-shot Learning the Easy Way](https://arxiv.org/abs/2407.13095)： 使用 Audio-visual Generalized Zero-shot Learning the Easy Way 做视听语音、事件或场景建模。
+- [MEDIC: Zero-shot Music Editing with Disentangled Inversion Control](https://arxiv.org/abs/2407.13220)： 用 Disentangled Inversion Control 做可控音乐编辑、补全或音轨插入。
+- [MusiConGen: Rhythm and Chord Control for Transformer-Based Text-to-Music Generation](https://arxiv.org/abs/2407.15060)： 使用 Rhythm and Chord Control for Transformer-Based Text-to-Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [SELM: Enhancing Speech Emotion Recognition for Out-of-Domain Scenarios](https://arxiv.org/abs/2407.15300)： 使用 Enhancing Speech Emotion Recognition for Out-of-Domain Scenarios 做语音情感、副语言或情感对话建模。
+- [EMO-Codec: An In-Depth Look at Emotion Preservation Capacity of Legacy and Neural Codec Models with Subjective and Objective Evaluations](https://arxiv.org/abs/2407.15458)： 使用 Subjective and Objective Evaluations 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Computer Audition: From Task-Specific Machine Learning to Foundation Models](https://arxiv.org/abs/2407.15672)： 用 From Task-Specific Machine Learning to Foundation Models 学习语音或音频表征，服务识别、理解或生成。
+- [dMel: Speech Tokenization made Simple](https://arxiv.org/abs/2407.15835)： 用 Speech Tokenization made Simple 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [AutoAD-Zero: A Training-Free Framework for Zero-Shot Audio Description](https://arxiv.org/abs/2407.15850)： 使用 A Training-Free Framework for Zero-Shot Audio Description 做语音、音频或口语语言建模。
+- [Audio Prompt Adapter: Unleashing Music Editing Abilities for Text-to-Music with Lightweight Finetuning](https://arxiv.org/abs/2407.16564)： 使用 Lightweight Finetuning 做可控音乐编辑、补全或音轨插入。
+- [Scaling A Simple Approach to Zero-Shot Speech Recognition](https://arxiv.org/abs/2407.17852)：扩展一种简单的零样本语音识别方法。
+- [SLIM: Style-Linguistics Mismatch Model for Generalized Audio Deepfake Detection](https://arxiv.org/abs/2407.18517)：用 style-linguistics mismatch model 检测泛化音频 deepfake。
+- [Dynamic Language Group-based MoE: Enhancing Code-Switching Speech Recognition with Hierarchical Routing](https://arxiv.org/abs/2407.18581)： 用 Hierarchical Routing 改进 ASR、多语种转写或抗噪语音识别。
+- [EgoSonics: Generating Synchronized Audio for Silent Egocentric Videos](https://arxiv.org/abs/2407.20592)： 使用 Generating Synchronized Audio for Silent Egocentric Videos 做语音、音频或口语语言建模。
+- [Bailing-TTS: Chinese Dialectal Speech Synthesis Towards Human-like Spontaneous Representation](https://arxiv.org/abs/2408.00284)： 使用 Chinese Dialectal Speech Synthesis Towards Human-like Spontaneous Representation 改进文本转语音、韵律控制或零样本声音生成。
+- [Improving Audio Spectrogram Transformers for Sound Event Detection Through Multi-Stage Training](https://arxiv.org/abs/2408.00791)： 用 Multi-Stage Training 学习语音或音频表征，服务识别、理解或生成。
+- [Language Model Can Listen While Speaking](https://arxiv.org/abs/2408.02622)： 使用 Language Model Can Listen While Speaking 做语音、音频或口语语言建模。
+- [VQ-CTAP: Cross-Modal Fine-Grained Sequence Representation Learning for Speech Processing](https://arxiv.org/abs/2408.05758)： 使用 Cross-Modal Fine-Grained Sequence Representation Learning for Speech Processing 学习语音或音频表征，服务下游识别与生成任务。
+- [Temporal Variability and Multi-Viewed Self-Supervised Representations to Tackle the ASVspoof5 Deepfake Challenge](https://arxiv.org/abs/2408.06922)： 用 Temporal Variability and Multi-Viewed Self-Supervised Representations to Tackle the ASVspoof5 Deepfake Challenge 检测音频深伪、欺骗攻击或声音真实性问题。
+- [WavLM model ensemble for audio deepfake detection](https://arxiv.org/abs/2408.07414)： 使用 WavLM model ensemble for audio deepfake detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [PeriodWave: Multi-Period Flow Matching for High-Fidelity Waveform Generation](https://arxiv.org/abs/2408.07547)：用多周期 flow matching 直接生成高保真波形，面向音频周期结构而不是只做谱图后处理。
+- [Efficient Autoregressive Audio Modeling via Next-Scale Prediction](https://arxiv.org/abs/2408.09027)： 用 Next-Scale Prediction 建模语音、音频或口语语言行为。
+- [Combo: Co-speech holistic 3D human motion generation and efficient customizable adaptation in harmony](https://arxiv.org/abs/2408.09397)： 用 Co-speech holistic 3D human motion generation and efficient customizable adaptation in harmony 建模语音、音频或口语语言行为。
+- [Does Current Deepfake Audio Detection Model Effectively Detect ALM-Based Deepfake Audio?](https://arxiv.org/abs/2408.10853)： 用 Does Current Deepfake Audio Detection Model Effectively Detect ALM-Based Deepfake Audio? 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Style-Talker: Finetuning Audio Language Model and Style-Based Text-to-Speech Model for Fast Spoken Dialogue Generation](https://arxiv.org/abs/2408.11849)： 用 Fast Spoken Dialogue Generation 改进文本转语音、韵律控制或零样本声音生成。
+- [Video-Foley: Two-Stage Video-to-Sound Generation via Temporal Event Condition for Foley Sound](https://arxiv.org/abs/2408.11915)： 用 Temporal Event Condition for Foley Sound 生成文本条件音频、Foley 音效或视频对齐声音。
+- [SpeechPrompt: Prompting Speech Language Models for Speech Processing Tasks](https://arxiv.org/abs/2408.13040)： 用 Speech Processing Tasks 学习语音或音频表征，服务识别、理解或生成。
+- [SpeechCaps: Advancing Instruction-Based Universal Speech Models with Multi-Talker Speaking Style Captioning](https://arxiv.org/abs/2408.13891)： 使用 Multi-Talker Speaking Style Captioning 做自动音频字幕和音频语言表征学习。
+- [SimpleSpeech 2: Towards Simple and Efficient Text-to-Speech With Flow-Based Scalar Latent Transformer Diffusion Models](https://arxiv.org/abs/2408.13893)： 用 Flow-Based Scalar Latent Transformer Diffusion Models 改进文本转语音、韵律控制或零样本声音生成。
+- [Easy, Interpretable, Effective: openSMILE for voice deepfake detection](https://arxiv.org/abs/2408.15775)： 使用 openSMILE for voice deepfake detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Towards Logically Sound Natural Language Reasoning with Logic-Enhanced Language Model Agents](https://arxiv.org/abs/2408.16081)： 使用 Logic-Enhanced Language Model Agents 做语音、音频或口语语言建模。
+- [Enabling Beam Search for Language Model-Based Text-to-Speech Synthesis](https://arxiv.org/abs/2408.16373)： 使用 Enabling Beam Search for Language Model-Based Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [WHISMA: A Speech-LLM to Perform Zero-Shot Spoken Language Understanding](https://arxiv.org/abs/2408.16423)： 使用 A Speech-LLM to Perform Zero-Shot Spoken Language Understanding 做语音、音频或口语语言建模。
+- [SALSA: Speedy ASR-LLM Synchronous Aggregation](https://arxiv.org/abs/2408.16542)：提出 ASR 与 LLM 的同步聚合以提升语音处理效率。
+- [CrisperWhisper: Accurate Timestamps on Verbatim Speech Transcriptions](https://arxiv.org/abs/2408.16589)： 使用 Accurate Timestamps on Verbatim Speech Transcriptions 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [User-Driven Voice Generation and Editing through Latent Space Navigation](https://arxiv.org/abs/2408.17068)： 使用 Latent Space Navigation 做语音、音频或口语语言建模。
+- [Codec Does Matter: Exploring the Semantic Shortcoming of Codec for Audio Language Model](https://arxiv.org/abs/2408.17175)： 分析音频语言模型中的 codec 语义短板.
+- [Advancing Multi-Talker ASR Performance With Large Language Models](https://arxiv.org/abs/2408.17431)： 用 Large Language Models 改进 ASR、多语种转写或抗噪语音识别。
+- [Text-to-Speech for Unseen Speakers via Low-Complexity Discrete Unit-Based Frame Selection](https://arxiv.org/abs/2408.17432)： 使用 Low-Complexity Discrete Unit-Based Frame Selection 改进文本转语音、韵律控制或零样本声音生成。
+- [Progressive Residual Extraction Based Pre-Training for Speech Representation Learning](https://arxiv.org/abs/2409.00387)： 使用 Progressive Residual Extraction Based Pre-Training for Speech Representation Learning 学习语音或音频表征，服务下游识别与生成任务。
+- [Multi-scale Multi-instance Visual Sound Localization and Segmentation](https://arxiv.org/abs/2409.00486)： 使用 Multi-scale Multi-instance Visual Sound Localization and Segmentation 做语音、音频或口语语言建模。
+- [FLUX that Plays Music](https://arxiv.org/abs/2409.00587)： 使用 FLUX that Plays Music 做音乐生成、伴奏生成或音频条件作曲。
+- [SoCodec: A Semantic-Ordered Multi-Stream Speech Codec For Efficient Language Model Based Text-to-Speech Synthesis](https://arxiv.org/abs/2409.00933)： 用 Efficient Language Model Based Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [A Framework for Synthetic Audio Conversations Generation Using Large Language Models](https://arxiv.org/abs/2409.00946)： 使用 Large Language Models 作为语音和音频模型的数据生成或适配路线。
+- [EnCLAP++: Analyzing the EnCLAP Framework for Optimizing Automated Audio Captioning Performance](https://arxiv.org/abs/2409.01201)：分析 EnCLAP 在自动音频字幕中的作用，研究对比式音频语言表征选择如何影响字幕质量。
+- [Latent Watermarking of Audio Generative Models](https://arxiv.org/abs/2409.02915)：在潜变量音频生成流程中嵌入水印以支持溯源。
+- [FireRedTTS: A Foundation Text-To-Speech Framework for Industry-Level Generative Speech Applications](https://arxiv.org/abs/2409.03283)： 提出面向工业级生成式语音的基础文本转语音框架.
+- [Investigating Neural Audio Codecs For Speech Language Model-Based Speech Generation](https://arxiv.org/abs/2409.04016)： 用 Speech Language Model-Based Speech Generation 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Just ASR + LLM? A Study on Speech Large Language Models’ Ability to Identify And Understand Speaker in Spoken Dialogue](https://arxiv.org/abs/2409.04927)： 使用 Just ASR + LLM? A Study on Speech Large Language Models’ Ability to Identify 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [TF-Mamba: A Time-Frequency Network for Sound Source Localization](https://arxiv.org/abs/2409.05034)： 使用 A Time-Frequency Network for Sound Source Localization 学习语音或音频表征，服务下游识别与生成任务。
+- [Diffusion-based Speech Enhancement with Schrödinger Bridge and Symmetric Noise Schedule](https://arxiv.org/abs/2409.05116)： 使用 Schrödinger Bridge and Symmetric Noise Schedule 做语音增强、带宽扩展或鲁棒音频恢复。
+- [BigCodec: Pushing the Limits of Low-Bitrate Neural Speech Codec](https://arxiv.org/abs/2409.05377)： 改进低码率神经语音 codec 建模.
+- [Property Neurons in Self-Supervised Speech Transformers](https://arxiv.org/abs/2409.05910)： 使用 Property Neurons in Self-Supervised Speech Transformers 学习语音或音频表征，服务下游识别与生成任务。
+- [Continuous Learning of Transformer-based Audio Deepfake Detection](https://arxiv.org/abs/2409.05924)： 使用 Continuous Learning of Transformer-based Audio Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [SongCreator: Lyrics-based Universal Song Generation](https://arxiv.org/abs/2409.06029)： 使用 Lyrics-based Universal Song Generation 做歌声、歌词或旋律生成与转换。
+- [Retrieval Augmented Correction of Named Entity Speech Recognition Errors](https://arxiv.org/abs/2409.06062)：把外部检索到的实体知识接入 ASR 后纠错，专门修复命名实体转写错误。
+- [Latent Diffusion Bridges for Unsupervised Musical Audio Timbre Transfer](https://arxiv.org/abs/2409.06096)： 用 Unsupervised Musical Audio Timbre Transfer 做音乐生成、伴奏生成或音频条件作曲。
+- [Draw an Audio: Leveraging Multi-Instruction for Video-to-Audio Synthesis](https://arxiv.org/abs/2409.06135)： 用 Video-to-Audio Synthesis 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Enhancing Temporal Understanding in Audio Question Answering for Large Audio Language Models](https://arxiv.org/abs/2409.06223)： 用 Large Audio Language Models 对齐音频与文本表征。
+- [Spectral oversubtraction? An approach for speech enhancement after robot ego speech filtering in semi-real-time](https://arxiv.org/abs/2409.06274)： 用 speech enhancement after robot ego speech filtering in semi-real-time 增强或恢复退化语音。
+- [SpeechTaxi: On Multilingual Semantic Speech Classification](https://arxiv.org/abs/2409.06372)： 用 On Multilingual Semantic Speech Classification 建模语音、音频或口语语言行为。
+- [MoWE-Audio: Multitask AudioLLMs with Mixture of Weak Encoders](https://arxiv.org/abs/2409.06635)： 使用 Mixture of Weak Encoders 做语音、音频或口语语言建模。
+- [LLaMA-Omni: Seamless Speech Interaction with Large Language Models](https://arxiv.org/abs/2409.06666)： 使用 Large Language Models 做语音、音频或口语语言建模。
+- [Rethinking Mamba in Speech Processing by Self-Supervised Models](https://arxiv.org/abs/2409.07273)： 使用 Self-Supervised Models 学习语音或音频表征，服务下游识别与生成任务。
+- [VMAs: Video-to-Music Generation via Semantic Alignment in Web Music Videos](https://arxiv.org/abs/2409.07450)： 用 Semantic Alignment in Web Music Videos 做音乐生成、伴奏生成或音频条件作曲。
+- [SSR-Speech: Towards Stable, Safe and Robust Zero-shot Text-based Speech Editing and Synthesis](https://arxiv.org/abs/2409.07556)： 用 Stable, Safe and Robust Zero-shot Text-based Speech Editing and Synthesis 做语音转换、说话人克隆或语音编辑。
+- [Audio Decoding by Inverse Problem Solving](https://arxiv.org/abs/2409.07858)： 使用 Inverse Problem Solving 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Locality-Aware Cross-Modal Correspondence Learning for Dense Audio-Visual Events Detection](https://arxiv.org/abs/2409.07967)： 使用 Locality-Aware Cross-Modal Correspondence Learning for Dense Audio-Visual Events Detection 做视听语音、事件或场景建模。
+- [Large Language Model Can Transcribe Speech in Multi-Talker Scenarios with Versatile Instructions](https://arxiv.org/abs/2409.08596)： 使用 Versatile Instructions 做语音、音频或口语语言建模。
+- [LA-RAG:Enhancing LLM-based ASR Accuracy with Retrieval-Augmented Generation](https://arxiv.org/abs/2409.08597)： 使用 Retrieval-Augmented Generation 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [STA-V2A: Video-to-Audio Generation with Semantic and Temporal Alignment](https://arxiv.org/abs/2409.08601)： 用 Semantic and Temporal Alignment 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Rhythmic Foley: A Framework For Seamless Audio-Visual Alignment In Video-to-Audio Synthesis](https://arxiv.org/abs/2409.08628)： 用 Seamless Audio-Visual Alignment In Video-to-Audio Synthesis 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Exploring SSL Discrete Tokens for Multilingual ASR](https://arxiv.org/abs/2409.08805)： 用 Multilingual ASR 改进 ASR、多语种转写或抗噪语音识别。
+- [AccentBox: Towards High-Fidelity Zero-Shot Accent Generation](https://arxiv.org/abs/2409.09098)： 使用 Towards High-Fidelity Zero-Shot Accent Generation 做语音、音频或口语语言建模。
+- [Seed-Music: A Unified Framework for High Quality and Controlled Music Generation](https://arxiv.org/abs/2409.09214)： 使用 A Unified Framework for High Quality and Controlled Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Multi-modal Speech Transformer Decoders: When Do Multiple Modalities Improve Accuracy?](https://arxiv.org/abs/2409.09221)： 使用 When Do Multiple Modalities Improve Accuracy? 学习语音或音频表征，服务下游识别与生成任务。
+- [Wave-U-Mamba: An End-To-End Framework For High-Quality And Efficient Speech Super Resolution](https://arxiv.org/abs/2409.09337)： 用 High-Quality And Efficient Speech Super Resolution 评估或提升音频和语音质量。
+- [E1 TTS: Simple and Fast Non-Autoregressive TTS](https://arxiv.org/abs/2409.09351)：采用简化的非自回归生成路径加速 TTS，在保持自然度的同时降低逐 token 解码延迟。
+- [Prevailing Research Areas for Music AI in the Era of Foundation Models](https://arxiv.org/abs/2409.09378)： 用 Music AI in the Era of Foundation Models 做音乐生成、伴奏生成或音频条件作曲。
+- [Towards Diverse and Efficient Audio Captioning via Diffusion Models](https://arxiv.org/abs/2409.09401)： 使用 Diffusion Models 做自动音频字幕和音频语言表征学习。
+- [Target Speaker ASR with Whisper](https://arxiv.org/abs/2409.09543)： 用 Target Speaker ASR with Whisper 改进 ASR、多语种转写或抗噪语音识别。
+- [Effective Pre-Training of Audio Transformers for Sound Event Detection](https://arxiv.org/abs/2409.09546)： 用 Sound Event Detection 学习语音或音频表征，服务识别、理解或生成。
+- [ASR Error Correction Using Large Language Models](https://arxiv.org/abs/2409.09554)：使用大语言模型纠正自动语音识别错误。
+- [Large Language Model Based Generative Error Correction: A Challenge and Baselines For Speech Recognition, Speaker Tagging, and Emotion Recognition](https://arxiv.org/abs/2409.09785)： 用 Speech Recognition, Speaker Tagging, and Emotion Recognition 改进 ASR、多语种转写或抗噪语音识别。
+- [StyleTTS-ZS: Efficient High-Quality Zero-Shot Text-to-Speech Synthesis with Distilled Time-Varying Style Diffusion](https://arxiv.org/abs/2409.10058)： 用 Distilled Time-Varying Style Diffusion 改进文本转语音、韵律控制或零样本声音生成。
+- [Emo-DPO: Controllable Emotional Speech Synthesis through Direct Preference Optimization](https://arxiv.org/abs/2409.10157)： 使用 Direct Preference Optimization 改进文本转语音、韵律控制或零样本声音生成。
+- [DreamHead: Learning Spatial-Temporal Correspondence via Hierarchical Diffusion for Audio-driven Talking Head Synthesis](https://arxiv.org/abs/2409.10281)： 用 Hierarchical Diffusion for Audio-driven Talking Head Synthesis 生成语音驱动 talking-head、面部动画或共语手势。
+- [Leveraging Joint Spectral and Spatial Learning with MAMBA for Multichannel Speech Enhancement](https://arxiv.org/abs/2409.10376)： 用 MAMBA for Multichannel Speech Enhancement 增强或恢复退化语音。
+- [SMILE: Speech Meta In-Context Learning for Low-Resource Language Automatic Speech Recognition](https://arxiv.org/abs/2409.10429)： 使用 Speech Meta In-Context Learning for Low-Resource Language Automatic Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Investigating Training Objectives for Generative Speech Enhancement](https://arxiv.org/abs/2409.10753)： 使用 Investigating Training Objectives for Generative Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Exploring Prediction Targets in Masked Pre-Training for Speech Foundation Models](https://arxiv.org/abs/2409.10788)： 使用 Exploring Prediction Targets in Masked Pre-Training for Speech Foundation Models 学习语音或音频表征，服务下游识别与生成任务。
+- [Speaker-IPL: Unsupervised Learning of Speaker Characteristics with i-Vector based Pseudo-Labels](https://arxiv.org/abs/2409.10791)： 使用 i-Vector based Pseudo-Labels 做语音、音频或口语语言建模。
+- [Enhancing Code-switched Text-to-Speech Synthesis Capability in Large Language Models with only Monolingual Corpora](https://arxiv.org/abs/2409.10969)：只用单语语料训练 LLM 式 TTS 的 code-switch 合成能力，降低对成对混语语音数据的依赖。
+- [Improving Speech Emotion Recognition in Under-Resourced Languages via Speech-to-Speech Translation with Bootstrapping Data Selection](https://arxiv.org/abs/2409.10985)： 用 Speech-to-Speech Translation with Bootstrapping Data Selection 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [Enhancing Low-Resource Language and Instruction Following Capabilities of Audio Language Models](https://arxiv.org/abs/2409.10999)： 使用 Enhancing Low-Resource Language and Instruction Following Capabilities of Audio Language Models 对齐音频与文本表征，服务音频语言理解。
+- [Single-stage TTS with Masked Audio Token Modeling and Semantic Knowledge Distillation](https://arxiv.org/abs/2409.11003)： 使用 Masked Audio Token Modeling and Semantic Knowledge Distillation 改进文本转语音、韵律控制或零样本声音生成。
+- [An Explainable Probabilistic Attribute Embedding Approach for Spoofed Speech Characterization](https://arxiv.org/abs/2409.11027)： 使用 An Explainable Probabilistic Attribute Embedding Approach for Spoofed Speech Characterization 做音频深伪、欺骗攻击或声音真实性检测。
+- [Learning Source Disentanglement in Neural Audio Codec](https://arxiv.org/abs/2409.11228)： 用 Learning Source Disentanglement in Neural Audio Codec 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Chain-of-Thought Prompting for Speech Translation](https://arxiv.org/abs/2409.11538)： 使用 Chain-of-Thought Prompting for Speech Translation 做语音翻译、同时翻译或 code-switching 语音理解。
+- [Speaking from Coarse to Fine: Improving Neural Codec Language Model via Multi-Scale Speech Coding and Generation](https://arxiv.org/abs/2409.11630)： 用 Multi-Scale Speech Coding and Generation 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Mixture of Experts Fusion for Fake Audio Detection Using Frozen wav2vec 2.0](https://arxiv.org/abs/2409.11909)：在冻结 wav2vec 2.0 特征上使用 mixture-of-experts fusion 进行假音频检测。
+- [Low Frame-rate Speech Codec: a Codec Designed for Fast High-quality Speech LLM Training and Inference](https://arxiv.org/abs/2409.12117)： 用 Fast High-quality Speech LLM Training and Inference 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [WMCodec: End-to-End Neural Speech Codec with Deep Watermarking for Authenticity Verification](https://arxiv.org/abs/2409.12121)：在端到端神经语音编解码器中加入深度水印以验证真实性。
+- [Takin: A Cohort of Superior Quality Zero-shot Speech Generation Models](https://arxiv.org/abs/2409.12139)： 使用 A Cohort of Superior Quality Zero-shot Speech Generation Models 做语音、音频或口语语言建模。
+- [Large Language Models are Strong Audio-Visual Speech Recognition Learners](https://arxiv.org/abs/2409.12319)： 使用 Large Language Models are Strong Audio-Visual Speech Recognition Learners 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Preference Alignment Improves Language Model-Based TTS](https://arxiv.org/abs/2409.12403)： 使用 Preference Alignment Improves Language Model-Based TTS 改进文本转语音、韵律控制或零样本声音生成。
+- [AudioEditor: A Training-Free Diffusion-Based Audio Editing Framework](https://arxiv.org/abs/2409.12466)： 用 A Training-Free Diffusion-Based Audio Editing Framework 做提示引导或零样本音频编辑。
+- [MuCodec: Ultra Low-Bitrate Music Codec](https://arxiv.org/abs/2409.13216)： 用 Ultra Low-Bitrate Music Codec 做音乐生成、伴奏生成或音频条件作曲。
+- [Large Language Model Should Understand Pinyin for Chinese ASR Error Correction](https://arxiv.org/abs/2409.13262)：利用拼音理解提升基于 LLM 的中文 ASR 错误纠正。
+- [Audio Codec Augmentation for Robust Collaborative Watermarking of Speech Synthesis](https://arxiv.org/abs/2409.13382)：通过音频编解码增强提升语音合成水印的鲁棒性。
+- [WeSep: A Scalable and Flexible Toolkit Towards Generalizable Target Speaker Extraction](https://arxiv.org/abs/2409.15799)： 使用 A Scalable and Flexible Toolkit Towards Generalizable Target Speaker Extraction 做语音、音频或口语语言建模。
+- [Emotional Dimension Control in Language Model-Based Text-to-Speech: Spanning a Broad Spectrum of Human Emotions](https://arxiv.org/abs/2409.16681)： 用 Emotional Dimension Control in Language Model-Based Text-to-Speech: Spanning a Broad Spectrum of Human Emotions 改进文本转语音、韵律控制或零样本声音生成。
+- [Semi-Supervised Cognitive State Classification from Speech with Multi-View Pseudo-Labeling](https://arxiv.org/abs/2409.16937)： 使用 Multi-View Pseudo-Labeling 做语音、音频或口语语言建模。
+- [SpoofCeleb: Speech Deepfake Detection and SASV in the Wild](https://arxiv.org/abs/2409.17285)： 用 Speech Deepfake Detection and SASV in the Wild 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Internalizing ASR with Implicit Chain of Thought for Efficient Speech-to-Speech Conversational LLM](https://arxiv.org/abs/2409.17353)： 使用 Implicit Chain of Thought for Efficient Speech-to-Speech Conversational LLM 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [A Simple but Strong Baseline for Sounding Video Generation: Effective Adaptation of Audio and Video Diffusion Models for Joint Generation](https://arxiv.org/abs/2409.17550)： 用 Sounding Video Generation: Effective Adaptation of Audio and Video Diffusion Models for Joint Generation 建模语音、音频或口语语言行为。
+- [FlowMAC: Conditional Flow Matching for Audio Coding at Low Bit Rates](https://arxiv.org/abs/2409.17635)： 用 Audio Coding at Low Bit Rates 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Self-Supervised Learning of Deviation in Latent Representation for Co-speech Gesture Video Generation](https://arxiv.org/abs/2409.17674)： 用 Co-speech Gesture Video Generation 生成语音驱动 talking-head、面部动画或共语手势。
+- [EMOVA: Empowering Language Models to See, Hear and Speak with Vivid Emotions](https://arxiv.org/abs/2409.18042)： 用 Vivid Emotions 建模语音情感、副语言线索或情感对话。
+- [Speech to Reality: On-Demand Production using Natural Language, 3D Generative AI, and Discrete Robotic Assembly](https://arxiv.org/abs/2409.18390)： 使用 Natural Language, 3D Generative AI, and Discrete Robotic Assembly 做语音、音频或口语语言建模。
+- [Improving Multilingual ASR in the Wild Using Simple N-best Re-ranking](https://arxiv.org/abs/2409.18428)： 使用 Simple N-best Re-ranking 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Speech-Mamba: Long-Context Speech Recognition with Selective State Spaces Models](https://arxiv.org/abs/2409.18654)： 用 Selective State Spaces Models 改进 ASR、多语种转写或抗噪语音识别。
+- [Beyond Single-Audio: Advancing Multi-Audio Processing in Audio Large Language Models](https://arxiv.org/abs/2409.18680)： 使用 Advancing Multi-Audio Processing in Audio Large Language Models 做语音、音频或口语语言建模。
+- [Text2FX: Harnessing CLAP Embeddings for Text-Guided Audio Effects](https://arxiv.org/abs/2409.18847)： 使用 Harnessing CLAP Embeddings for Text-Guided Audio Effects 对齐音频与文本表征，服务音频语言理解。
+- [From Vision to Audio and Beyond: A Unified Model for Audio-Visual Representation and Generation](https://arxiv.org/abs/2409.19132)： 使用 From Vision to Audio and Beyond: A Unified Model for Audio-Visual Representation and Generation 做视听语音、事件或场景建模。
+- [Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](https://arxiv.org/abs/2409.19283)： 用 Neural Codec Language Models 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [PALM: Few-Shot Prompt Learning for Audio Language Models](https://arxiv.org/abs/2409.19806)： 用 Audio Language Models 对齐音频与文本表征。
+- [HDMoLE: Mixture of LoRA Experts with Hierarchical Routing and Dynamic Thresholds for Fine-Tuning LLM-based ASR Models](https://arxiv.org/abs/2409.19878)：用分层路由和动态阈值选择 LoRA 专家，高效微调 LLM-based ASR 并适配多语言或多域输入。
+- [Developing Instruction-Following Speech Language Model Without Speech Instruction-Tuning Data](https://arxiv.org/abs/2409.20007)： 使用 Developing Instruction-Following Speech Language Model Without Speech Instruction-Tuning Data 作为语音和音频模型的数据生成或适配路线。
+- [Melody Is All You Need For Music Generation](https://arxiv.org/abs/2409.20196)： 使用 Melody Is All You Need For Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [AfriHuBERT: A self-supervised speech representation model for African languages](https://arxiv.org/abs/2409.20201)： 使用 A self-supervised speech representation model for African languages 学习语音或音频表征，服务下游识别与生成任务。
+- [Moshi: a speech-text foundation model for real-time dialogue](https://arxiv.org/abs/2410.00037)：提出用于实时对话的语音-文本基础模型，连接语音生成与会话交互。
+- [Mamba for Streaming ASR Combined with Unimodal Aggregation](https://arxiv.org/abs/2410.00070)： 使用 Unimodal Aggregation 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [SSR: Alignment-Aware Modality Connector for Speech Language Models](https://arxiv.org/abs/2410.00168)： 用 Speech Language Models 学习语音或音频表征，服务识别、理解或生成。
+- [Zero-Shot Text-to-Speech from Continuous Text Streams](https://arxiv.org/abs/2410.00767)： 用 Continuous Text Streams 改进文本转语音、韵律控制或零样本声音生成。
+- [Decoding Hate: Exploring Language Models' Reactions to Hate Speech](https://arxiv.org/abs/2410.00775)： 使用 Exploring Language Models' Reactions to Hate Speech 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [MOSEL: 950,000 Hours of Speech Data for Open-Source Speech Foundation Model Training on EU Languages](https://arxiv.org/abs/2410.01036)： 用 Open-Source Speech Foundation Model Training on EU Languages 学习语音或音频表征，服务识别、理解或生成。
+- [Frozen Large Language Models Can Perceive Paralinguistic Aspects of Speech](https://arxiv.org/abs/2410.01162)： 用 Frozen Large Language Models Can Perceive Paralinguistic Aspects of Speech 建模语音情感、副语言线索或情感对话。
+- [Takin-VC: Expressive Zero-Shot Voice Conversion via Adaptive Hybrid Content Encoding and Enhanced Timbre Modeling](https://arxiv.org/abs/2410.01350)： 使用 Adaptive Hybrid Content Encoding and Enhanced Timbre Modeling 做语音转换、说话人克隆或可控音色迁移。
+- [Distilling an End-to-End Voice Assistant Without Instruction Training Data](https://arxiv.org/abs/2410.02678)： 使用 Distilling an End-to-End Voice Assistant Without Instruction Training Data 作为语音和音频模型的数据生成或适配路线。
+- [Enriching Music Descriptions with A Finetuned-LLM and Metadata for Text-to-Music Retrieval](https://arxiv.org/abs/2410.03264)： 使用 A Finetuned-LLM and Metadata for Text-to-Music Retrieval 做音乐生成、伴奏生成或音频条件作曲。
+- [Efficient Streaming LLM for Speech Recognition](https://arxiv.org/abs/2410.03752)： 使用 Efficient Streaming LLM for Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [SyllableLM: Learning Coarse Semantic Units for Speech Language Models](https://arxiv.org/abs/2410.04029)： 用 Speech Language Models 学习语音或音频表征，服务识别、理解或生成。
+- [HALL-E: Hierarchical Neural Codec Language Model for Minute-Long Zero-Shot Text-to-Speech Synthesis](https://arxiv.org/abs/2410.04380)： 用 Minute-Long Zero-Shot Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Editing Music with Melody and Text: Using ControlNet for Diffusion Transformer](https://arxiv.org/abs/2410.05151)： 使用 ControlNet for Diffusion Transformer 做可控音乐编辑、补全或音轨插入。
+- [Presto! Distilling Steps and Layers for Accelerating Music Generation](https://arxiv.org/abs/2410.05167)： 使用 Presto! Distilling Steps and Layers for Accelerating Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Can DeepFake Speech be Reliably Detected?](https://arxiv.org/abs/2410.06572)： 用 Can DeepFake Speech be Reliably Detected? 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Toward Robust Real-World Audio Deepfake Detection: Closing the Explainability Gap](https://arxiv.org/abs/2410.07436)： 用 Robust Real-World Audio Deepfake Detection: Closing the Explainability Gap 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Full-Rank No More: Low-Rank Weight Training for Modern Speech Recognition Models](https://arxiv.org/abs/2410.07771)： 使用 Low-Rank Weight Training for Modern Speech Recognition Models 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [IntrinsicVoice: Empowering LLMs with Intrinsic Real-time Voice Interaction Abilities](https://arxiv.org/abs/2410.08035)： 用 Intrinsic Real-time Voice Interaction Abilities 学习语音或音频表征，服务识别、理解或生成。
+- [DRCap: Decoding CLAP Latents with Retrieval-Augmented Generation for Zero-shot Audio Captioning](https://arxiv.org/abs/2410.09472)： 使用 Retrieval-Augmented Generation for Zero-shot Audio Captioning 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Double Jeopardy and Climate Impact in the Use of Large Language Models: Socio-economic Disparities and Reduced Utility for Non-English Speakers](https://arxiv.org/abs/2410.10665)： 使用 Double Jeopardy and Climate Impact in the Use of Large Language Models: Socio-economic Disparities 做语音、音频或口语语言建模。
+- [Both Ears Wide Open: Towards Language-Driven Spatial Audio Generation](https://arxiv.org/abs/2410.10676)： 使用 Towards Language-Driven Spatial Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Enhancing Retrieval-Augmented Audio Captioning with Generation-Assisted Multimodal Querying and Progressive Learning](https://arxiv.org/abs/2410.10913)： 使用 Generation-Assisted Multimodal Querying and Progressive Learning 做自动音频字幕和音频语言表征学习。
+- [Code Drift: Towards Idempotent Neural Audio Codecs](https://arxiv.org/abs/2410.11025)： 使用 Towards Idempotent Neural Audio Codecs 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [CleanUMamba: A Compact Mamba Network for Speech Denoising using Channel Pruning](https://arxiv.org/abs/2410.11062)： 使用 Channel Pruning 做语音增强、带宽扩展或鲁棒音频恢复。
+- [DMDSpeech: Distilled Diffusion Model Surpassing The Teacher in Zero-shot Speech Synthesis via Direct Metric Optimization](https://arxiv.org/abs/2410.11097)： 用 Direct Metric Optimization 改进文本转语音、韵律控制或零样本声音生成。
+- [FlashAudio: Rectified Flows for Fast and High-Fidelity Text-to-Audio Generation](https://arxiv.org/abs/2410.12266)： 用 Fast and High-Fidelity Text-to-Audio Generation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [ERVQ: Enhanced Residual Vector Quantization With Intra-and-Inter-Codebook Optimization for Neural Audio Codecs](https://arxiv.org/abs/2410.12359)： 用 Intra-and-Inter-Codebook Optimization for Neural Audio Codecs 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [MuVi: Video-to-Music Generation with Semantic Alignment and Rhythmic Synchronization](https://arxiv.org/abs/2410.12957)： 使用 Semantic Alignment and Rhythmic Synchronization 做音乐生成、伴奏生成或音频条件作曲。
+- [Failing Forward: Improving Generative Error Correction for ASR with Synthetic Data and Retrieval Augmentation](https://arxiv.org/abs/2410.13198)：结合合成数据和检索增强改进生成式 ASR 错误纠正。
+- [GAN-Based Speech Enhancement for Low SNR Using Latent Feature Conditioning](https://arxiv.org/abs/2410.13599)： 用 Latent Feature Conditioning 增强或恢复退化语音。
+- [Accelerating Codec-based Speech Synthesis with Multi-Token Prediction and Speculative Decoding](https://arxiv.org/abs/2410.13839)： 用 Multi-Token Prediction and Speculative Decoding 改进文本转语音、韵律控制或零样本声音生成。
+- [Takin-ADA: Emotion Controllable Audio-Driven Animation with Canonical and Landmark Loss Optimization](https://arxiv.org/abs/2410.14283)： 使用 Canonical and Landmark Loss Optimization 做语音情感、副语言或情感对话建模。
+- [SNAC: Multi-Scale Neural Audio Codec](https://arxiv.org/abs/2410.14411)：提出多尺度神经音频编解码器，可服务语音合成和音频生成系统。
+- [ImmerseDiffusion: A Generative Spatial Audio Latent Diffusion Model](https://arxiv.org/abs/2410.14945)： 使用 A Generative Spatial Audio Latent Diffusion Model 做语音、音频或口语语言建模。
+- [DM-Codec: Distilling Multimodal Representations for Speech Tokenization](https://arxiv.org/abs/2410.15017)： 用 Speech Tokenization 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Ichigo: Mixed-Modal Early-Fusion Realtime Voice Assistant](https://arxiv.org/abs/2410.15316)： 用 Mixed-Modal Early-Fusion Realtime Voice Assistant 建模语音、音频或口语语言行为。
+- [OpenMU: Your Swiss Army Knife for Music Understanding](https://arxiv.org/abs/2410.15573)： 用 Music Understanding 做音乐生成、伴奏生成或音频条件作曲。
+- [LSCodec: Low-Bitrate and Speaker-Decoupled Discrete Speech Codec](https://arxiv.org/abs/2410.15764)： 用 Low-Bitrate and Speaker-Decoupled Discrete Speech Codec 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Speech Synthesis From Continuous Features Using Per-Token Latent Diffusion](https://arxiv.org/abs/2410.16048)： 使用 Per-Token Latent Diffusion 改进文本转语音、韵律控制或零样本声音生成。
+- [Enhancing Low-Resource ASR through Versatile TTS: Bridging the Data Gap](https://arxiv.org/abs/2410.16726)： 用 Versatile TTS: Bridging the Data Gap 改进文本转语音、韵律控制或零样本声音生成。
+- [Continuous Speech Tokenizer in Text To Speech](https://arxiv.org/abs/2410.17081)： 使用 Continuous Speech Tokenizer in Text To Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [EmoGene: Audio-Driven Emotional 3D Talking-Head Generation](https://arxiv.org/abs/2410.17262)： 使用 Audio-Driven Emotional 3D Talking-Head Generation 做语音情感、副语言或情感对话建模。
+- [VoiceTextBlender: Augmenting Large Language Models with Speech Capabilities via Single-Stage Joint Speech-Text Supervised Fine-Tuning](https://arxiv.org/abs/2410.17485)： 使用 Single-Stage Joint Speech-Text Supervised Fine-Tuning 做语音、音频或口语语言建模。
+- [OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](https://arxiv.org/abs/2410.17799)： 使用 An End-to-end GPT Model for Seamless Voice Conversation 做语音、音频或口语语言建模。
+- [Decoding on Graphs: Faithful and Sound Reasoning on Knowledge Graphs through Generation of Well-Formed Chains](https://arxiv.org/abs/2410.18415)： 用 Generation of Well-Formed Chains 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Improving Speech-based Emotion Recognition with Contextual Utterance Analysis and LLMs](https://arxiv.org/abs/2410.20334)： 使用 Contextual Utterance Analysis and LLMs 做语音情感、副语言或情感对话建模。
+- [Enhancing TTS Stability in Hebrew using Discrete Semantic Units](https://arxiv.org/abs/2410.21502)： 使用 Discrete Semantic Units 改进文本转语音、韵律控制或零样本声音生成。
+- [Fast and High-Quality Auto-Regressive Speech Synthesis via Speculative Decoding](https://arxiv.org/abs/2410.21951)： 用 Speculative Decoding 改进文本转语音、韵律控制或零样本声音生成。
+- [Multimodal Semantic Communication for Generative Audio-Driven Video Conferencing](https://arxiv.org/abs/2410.22112)： 使用 Multimodal Semantic Communication for Generative Audio-Driven Video Conferencing 做语音、音频或口语语言建模。
+- [Robust and Unbounded Length Generalization in Autoregressive Transformer-Based Text-to-Speech](https://arxiv.org/abs/2410.22179)： 使用 Robust and Unbounded Length Generalization in Autoregressive Transformer-Based Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [APCodec+: A Spectrum-Coding-Based High-Fidelity and High-Compression-Rate Neural Audio Codec with Staged Training Paradigm](https://arxiv.org/abs/2410.22807)： 用 Staged Training Paradigm 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Improving Musical Accompaniment Co-creation via Diffusion Transformers](https://arxiv.org/abs/2410.23005)： 用 Diffusion Transformers 做音乐生成、伴奏生成或音频条件作曲。
+- [Lina-Speech: Gated Linear Attention and Initial-State Tuning for Multi-Sample Prompting Text-To-Speech Synthesis](https://arxiv.org/abs/2410.23320)： 用 Multi-Sample Prompting Text-To-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Stereo-Talker: Audio-driven 3D Human Synthesis with Prior-Guided Mixture-of-Experts](https://arxiv.org/abs/2410.23836)： 使用 Prior-Guided Mixture-of-Experts 做语音、音频或口语语言建模。
+- [Audio Is the Achilles' Heel: Red Teaming Audio Large Multimodal Models](https://arxiv.org/abs/2410.23861)： 使用 Red Teaming Audio Large Multimodal Models 做语音、音频或口语语言建模。
+- [I Can Hear You: Selective Robust Training for Deepfake Audio Detection](https://arxiv.org/abs/2411.00121)：通过选择性鲁棒训练提升音频 deepfake 检测器对真实噪声和生成伪迹变化的抗扰性。
+- [MDCTCodec: A Lightweight MDCT-Based Neural Audio Codec Towards High Sampling Rate and Low Bitrate Scenarios](https://arxiv.org/abs/2411.00464)： 用 A Lightweight MDCT-Based Neural Audio Codec Towards High Sampling Rate and Low Bitrate Scenarios 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Freeze-Omni: A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM](https://arxiv.org/abs/2411.00774)： 用 Frozen LLM 学习语音或音频表征，服务识别、理解或生成。
+- [Align-SLM: Textless Spoken Language Models with Reinforcement Learning from AI Feedback](https://arxiv.org/abs/2411.01834)： 使用 Reinforcement Learning from AI Feedback 做语音、音频或口语语言建模。
+- [EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech Via Emotion-Adaptive Spherical Vector](https://arxiv.org/abs/2411.02625)： 使用 Emotion-Adaptive Spherical Vector 改进文本转语音、韵律控制或零样本声音生成。
+- [CTC-Assisted LLM-Based Contextual ASR](https://arxiv.org/abs/2411.06437)： 使用 CTC-Assisted LLM-Based Contextual ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Debatts: Zero-Shot Debating Text-to-Speech Synthesis](https://arxiv.org/abs/2411.06540)： 使用 Zero-Shot Debating Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [StoryTeller: Improving Long Video Description through Global Audio-Visual Character Identification](https://arxiv.org/abs/2411.07076)： 使用 Global Audio-Visual Character Identification 做视听语音、事件或场景建模。
+- [CJST: CTC Compressor based Joint Speech and Text Training for Decoder-Only ASR](https://arxiv.org/abs/2411.07607)： 使用 CTC Compressor based Joint Speech and Text Training for Decoder-Only ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Transferable Adversarial Attacks Against ASR](https://arxiv.org/abs/2411.09220)： 使用 Transferable Adversarial Attacks Against ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Zero-shot Voice Conversion with Diffusion Transformers](https://arxiv.org/abs/2411.09943)： 用扩散 Transformer 实现零样本语音转换.
+- [XLSR-Mamba: A Dual-Column Bidirectional State Space Model for Spoofing Attack Detection](https://arxiv.org/abs/2411.10027)：将双列双向状态空间模型用于语音与音频安全中的 spoofing attack detection。
+- [DiMoDif: Discourse Modality-information Differentiation for Audio-visual Deepfake Detection and Localization](https://arxiv.org/abs/2411.10193)： 用 Audio-visual Deepfake Detection and Localization 检测并定位音频伪造片段。
+- [Hard-Synth: Synthesizing Diverse Hard Samples for ASR using Zero-Shot TTS and LLM](https://arxiv.org/abs/2411.13159)： 使用 Zero-Shot TTS and LLM 改进文本转语音、韵律控制或零样本声音生成。
+- [I2TTS: Image-Indicated Immersive Text-to-Speech Synthesis with Spatial Perception](https://arxiv.org/abs/2411.13314)：用图像提供空间感知线索来控制沉浸式 TTS，使合成语音带有场景位置与空间氛围。
+- [Gotta Hear Them All: Sound Source Aware Vision to Audio Generation](https://arxiv.org/abs/2411.15447)： 用 Sound Source Aware Vision to Audio Generation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [State-Space Large Audio Language Models](https://arxiv.org/abs/2411.15685)： 使用 State-Space Large Audio Language Models 对齐音频与文本表征，服务音频语言理解。
+- [k2SSL: A Faster and Better Framework for Self-Supervised Speech Representation Learning](https://arxiv.org/abs/2411.17100)：围绕 k2 序列操作重构自监督语音训练，以提升表征学习速度和下游准确率。
+- [Mechanisms of Multimodal Synchronization: Insights from Decoder-Based Video-Text-to-Speech Synthesis](https://arxiv.org/abs/2411.17690)： 使用 Decoder-Based Video-Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Video-Guided Foley Sound Generation with Multimodal Controls](https://arxiv.org/abs/2411.17698)： 用 Multimodal Controls 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Speech Separation using Neural Audio Codecs with Embedding Loss](https://arxiv.org/abs/2411.17998)： 使用 Neural Audio Codecs with Embedding Loss 做语音分离或多源音频重建。
+- [SALMONN-omni: A Codec-free LLM for Full-duplex Speech Understanding and Generation](https://arxiv.org/abs/2411.18138)： 用 Full-duplex Speech Understanding and Generation 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [DistinctAD: Distinctive Audio Description Generation in Contexts](https://arxiv.org/abs/2411.18180)： 使用 Distinctive Audio Description Generation in Contexts 做语音、音频或口语语言建模。
+- [TS3-Codec: Transformer-Based Simple Streaming Single Codec](https://arxiv.org/abs/2411.18803)： 使用 Transformer-Based Simple Streaming Single Codec 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Scaling Transformers for Low-Bitrate High-Quality Speech Coding](https://arxiv.org/abs/2411.19842)： 用 Low-Bitrate High-Quality Speech Coding 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [A Comparative Study of LLM-based ASR and Whisper in Low Resource and Code Switching Scenario](https://arxiv.org/abs/2412.00721)： 用 A Comparative Study of LLM-based ASR and Whisper in Low Resource and Code Switching Scenario 改进 ASR、多语种转写或抗噪语音识别。
+- [FreeCodec: A disentangled neural speech codec with fewer tokens](https://arxiv.org/abs/2412.01053)： 用 fewer tokens 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [AlignFormer: Modality Matching Can Achieve Better Zero-Shot Instruction-Following Speech-LLM](https://arxiv.org/abs/2412.01145)： 用 Modality Matching Can Achieve Better Zero-Shot Instruction-Following Speech-LLM 学习语音或音频表征，服务识别、理解或生成。
+- [GLM-4-Voice: Towards Intelligent and Human-Like End-to-End Spoken Chatbot](https://arxiv.org/abs/2412.02612)： 用 Intelligent and Human-Like End-to-End Spoken Chatbot 建模语音、音频或口语语言行为。
+- [Continuous Speech Tokens Makes LLMs Robust Multi-Modality Learners](https://arxiv.org/abs/2412.04917)： 用 Continuous Speech Tokens Makes LLMs Robust Multi-Modality Learners 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [From Voice to Value: Leveraging AI to Enhance Spoken Online Reviews on the Go](https://arxiv.org/abs/2412.05445)： 使用 Leveraging AI to Enhance Spoken Online Reviews on the Go 做语音、音频或口语语言建模。
+- [M6: multi-generator, multi-domain, multi-lingual and cultural, multi-genres, multi-instrument machine-generated music detection databases](https://arxiv.org/abs/2412.06001)： 用 multi-generator, multi-domain, multi-lingual and cultural, multi-genres, multi-instrument machine-generated music detection databases 做音乐生成、伴奏生成或音频条件作曲。
+- [Improving Music Source Separation with Diffusion and Consistency Refinement](https://arxiv.org/abs/2412.06965)： 使用 Diffusion and Consistency Refinement 做音乐生成、伴奏生成或音频条件作曲。
+- [TouchTTS: An Embarrassingly Simple TTS Framework that Everyone Can Touch](https://arxiv.org/abs/2412.08237)：提出轻量 TTS 框架，降低训练、推理与定制门槛，使非专家用户也能使用。
+- [Enhancing Code-Switching ASR Leveraging Non-Peaky CTC Loss and Deep Language Posterior Injection](https://arxiv.org/abs/2412.08651)：结合 non-peaky CTC 损失与深层语言后验注入，缓解 code-switching ASR 中语言切换处的识别偏差。
+- [EmoDubber: Towards High Quality and Emotion Controllable Movie Dubbing](https://arxiv.org/abs/2412.08988)： 使用 Towards High Quality and Emotion Controllable Movie Dubbing 做语音情感、副语言或情感对话建模。
+- [LYRA: An Efficient and Speech-Centric Framework for Omni-Cognition](https://arxiv.org/abs/2412.09501)： 用 An Efficient and Speech-Centric Framework for Omni-Cognition 建模语音、音频或口语语言行为。
+- [InternLM-XComposer2.5-OmniLive: A Comprehensive Multimodal System for Long-term Streaming Video and Audio Interactions](https://arxiv.org/abs/2412.09596)： 用 Long-term Streaming Video and Audio Interactions 建模语音、音频或口语语言行为。
+- [MERaLiON-AudioLLM: Bridging Audio and Language with Large Language Models](https://arxiv.org/abs/2412.09818)： 使用 Large Language Models 做语音、音频或口语语言建模。
+- [CosyVoice 2: Scalable Streaming Speech Synthesis with Large Language Models](https://arxiv.org/abs/2412.10117)：用大语言模型扩展流式语音合成。
+- [Patch-level Sounding Object Tracking for Audio-Visual Question Answering](https://arxiv.org/abs/2412.10749)： 使用 Patch-level Sounding Object Tracking for Audio-Visual Question Answering 做视听场景理解、问答或跨模态推理。
+- [VinTAGe: Joint Video and Text Conditioning for Holistic Audio Generation](https://arxiv.org/abs/2412.10768)： 使用 Joint Video and Text Conditioning for Holistic Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Multimodal Class-aware Semantic Enhancement Network for Audio-Visual Video Parsing](https://arxiv.org/abs/2412.11248)： 用 Audio-Visual Video Parsing 建模视听语音、事件或场景。
+- [Speech Foundation Models and Crowdsourcing for Efficient, High-Quality Data Collection](https://arxiv.org/abs/2412.11978)： 使用 Speech Foundation Models and Crowdsourcing for Efficient, High-Quality Data Collection 学习语音或音频表征，服务下游识别与生成任务。
+- [SpeechPrune: Context-Aware Token Pruning for Speech Information Retrieval](https://arxiv.org/abs/2412.12009)： 使用 Context-Aware Token Pruning for Speech Information Retrieval 做语音、音频或口语语言建模。
+- [Hierarchical Control of Emotion Rendering in Speech Synthesis](https://arxiv.org/abs/2412.12498)： 使用 Hierarchical Control of Emotion Rendering in Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Dense Audio-Visual Event Localization under Cross-Modal Consistency and Multi-Temporal Granularity Collaboration](https://arxiv.org/abs/2412.12628)： 使用 Dense Audio-Visual Event Localization under Cross-Modal Consistency and Multi-Temporal Granularity Collaboration 做视听语音、事件或场景建模。
+- [CAMEL: Cross-Attention Enhanced Mixture-of-Experts and Language Bias for Code-Switching Speech Recognition](https://arxiv.org/abs/2412.12760)：结合交叉注意力、专家混合与语言偏置建模改进 code-switching ASR。
+- [SongEditor: Adapting Zero-Shot Song Generation Language Model as a Multi-Task Editor](https://arxiv.org/abs/2412.13786)： 使用 Adapting Zero-Shot Song Generation Language Model as a Multi-Task Editor 做歌声、歌词或旋律生成与转换。
+- [LAMA-UT: Language Agnostic Multilingual ASR through Orthography Unification and Language-Specific Transliteration](https://arxiv.org/abs/2412.15299)： 用 Orthography Unification and Language-Specific Transliteration 改进 ASR、多语种转写或抗噪语音识别。
+- [SLAM-Omni: Timbre-Controllable Voice Interaction System with Single-Stage Training](https://arxiv.org/abs/2412.15649)： 用 Single-Stage Training 建模语音、音频或口语语言行为。
+- [Contrastive Learning for Task-Independent SpeechLLM-Pretraining](https://arxiv.org/abs/2412.15712)： 使用 Contrastive Learning for Task-Independent SpeechLLM-Pretraining 学习语音或音频表征，服务下游识别与生成任务。
+- [Fine-tuning Whisper on Low-Resource Languages for Real-World Applications](https://arxiv.org/abs/2412.15726)： 用 Real-World Applications 改进 ASR、多语种转写或抗噪语音识别。
+- [RiTTA: Modeling Event Relations in Text-to-Audio Generation](https://arxiv.org/abs/2412.15922)： 使用 Modeling Event Relations in Text-to-Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Interleaved Speech-Text Language Models for Simple Streaming Text-to-Speech Synthesis](https://arxiv.org/abs/2412.16102)： 用 Simple Streaming Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Enhancing Multilingual ASR for Unseen Languages via Language Embedding Modeling](https://arxiv.org/abs/2412.16474)： 用 Language Embedding Modeling 改进 ASR、多语种转写或抗噪语音识别。
+- [Speech Retrieval-Augmented Generation without Automatic Speech Recognition](https://arxiv.org/abs/2412.16500)： 使用 Speech Retrieval-Augmented Generation without Automatic Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [SemTalk: Holistic Co-Speech Motion Generation with Frame-Level Semantic Emphasis](https://arxiv.org/abs/2412.16563)： 使用 Frame-Level Semantic Emphasis 做语音、音频或口语语言建模。
+- [Autoregressive Speech Synthesis with Next-Distribution Prediction](https://arxiv.org/abs/2412.16846)： 用 Next-Distribution Prediction 改进文本转语音、韵律控制或零样本声音生成。
+- [Why Do Speech Language Models Fail to Generate Semantically Coherent Outputs? A Modality Evolving Perspective](https://arxiv.org/abs/2412.17048)： 使用 Why Do Speech Language Models Fail to Generate Semantically Coherent Outputs? A Modality Evolving 做语音、音频或口语语言建模。
+- [Maskmark: Robust Neuralwatermarking for Real and Synthetic Speech](https://doi.org/10.1109/icassp48485.2024.10447253)：提出面向真实与合成语音的鲁棒神经水印。
+- [ABC-CapsNet: Attention based Cascaded Capsule Network for Audio Deepfake Detection](https://doi.org/10.1109/cvprw63382.2024.00253)：用注意力级联胶囊网络捕捉音频 deepfake 的局部和层级伪造模式。
+- [HiFi-GANw: Watermarked Speech Synthesis via Fine-Tuning of HiFi-GAN](https://doi.org/10.1109/lsp.2024.3456673)： 使用 Fine-Tuning of HiFi-GAN 在语音和音频中嵌入或检测可追踪水印。
+- [Does Audio Deepfake Detection Rely on Artifacts?](https://doi.org/10.1109/icassp48485.2024.10446558)： 使用 Does Audio Deepfake Detection Rely on Artifacts? 做音频深伪、欺骗攻击或声音真实性检测。
+- [A study of guided masking data augmentation for deepfake speech detection](https://doi.org/10.21437/asvspoof.2024-26)： 使用 A study of guided masking data augmentation for deepfake speech detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [LLM-Based Expressive Text-to-Speech Synthesizer with Style and Timbre Disentanglement](https://doi.org/10.1109/iscslp63861.2024.10800531)： 使用 Style and Timbre Disentanglement 改进文本转语音、韵律控制或零样本声音生成。
+- [Integrated Method of Deep Learning and Large Language Model in Speech Recognition](https://doi.org/10.1109/iceict61637.2024.10671048)： 用 Integrated Method of Deep Learning and Large Language Model in Speech Recognition 改进 ASR、多语种转写或抗噪语音识别。
+- [Exploring generalization to unseen audio data for spoofing: insights from SSL models](https://doi.org/10.21437/asvspoof.2024-13)： 用 SSL models 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Wav2vec-VC: Voice Conversion via Hidden Representations of Wav2vec 2.0](https://doi.org/10.1109/icassp48485.2024.10447984)： 用 Hidden Representations of Wav2vec 2.0 做语音转换、说话人克隆或语音编辑。
+- [Srcodec: Split-Residual Vector Quantization for Neural Speech Codec](https://doi.org/10.1109/icassp48485.2024.10445966)： 用 Neural Speech Codec 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [A Hybrid CNN-LSTM Approach for Deepfake Audio Detection](https://doi.org/10.1109/aiiot58432.2024.10574576)： 用 Deepfake Audio Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Leveraging LLM for Augmenting Textual Data in Code-Switching ASR: Arabic as an Example](https://doi.org/10.21437/syndata4genai.2024-6)： 用 Augmenting Textual Data in Code-Switching ASR: Arabic as an Example 改进 ASR、多语种转写或抗噪语音识别。
+- [RW-VoiceShield: Raw Waveform-based Adversarial Attack on One-shot Voice Conversion](https://doi.org/10.21437/interspeech.2024-458)： 用 Raw Waveform-based Adversarial Attack on One-shot Voice Conversion 做语音转换、说话人克隆或语音编辑。
+- [Tri-stage training with language-specific encoder and bilingual acoustic learner for code-switching speech recognition](https://doi.org/10.1016/j.apacoust.2024.109883)： 用 language-specific encoder and bilingual acoustic learner for code-switching speech recognition 改进 ASR、多语种转写或抗噪语音识别。
+- [A Unified Approach to Multilingual Automatic Speech Recognition with Improved Language Identification for Indic Languages](https://doi.org/10.21437/interspeech.2024-2043)：把改进的语言识别模块纳入印度语种多语言 ASR，使统一模型能更可靠地区分相近语言输入。
+- [Moûsai: Efficient Text-to-Music Diffusion Models](https://doi.org/10.18653/v1/2024.acl-long.437)： 使用 Efficient Text-to-Music Diffusion Models 做音乐生成、伴奏生成或音频条件作曲。
+- [Expressive Text-to-Speech with Contextual Background for ICAGC 2024](https://doi.org/10.1109/iscslp63861.2024.10800495)： 使用 Contextual Background for ICAGC 2024 改进文本转语音、韵律控制或零样本声音生成。
+- [Synthetic Speech Detection Based on the Temporal Consistency of Speaker Features](https://doi.org/10.1109/lsp.2024.3381890)： 使用 the Temporal Consistency of Speaker Features 作为语音和音频模型的数据生成或适配路线。
+- [Tuning Large Language Model for Speech Recognition With Mixed-Scale Re-Tokenization](https://doi.org/10.1109/lsp.2024.3419719)： 使用 Mixed-Scale Re-Tokenization 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Emotional Speech Synthesis Based on Valence-Arousal-Dominance Model and Multi-Feature Codebook](https://doi.org/10.1109/ialp68296.2024.11156902)： 使用 Valence-Arousal-Dominance Model and Multi-Feature Codebook 改进文本转语音、韵律控制或零样本声音生成。
+- [Genhancer: High-Fidelity Speech Enhancement via Generative Modeling on Discrete Codec Tokens](https://doi.org/10.21437/interspeech.2024-590)： 使用 Generative Modeling on Discrete Codec Tokens 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Advancing speaker embedding learning: Wespeaker toolkit for research and production](https://doi.org/10.1016/j.specom.2024.103104)： 使用 Wespeaker toolkit for research and production 做说话人验证、识别或说话人表征建模。
+- [Hybrid Transformer Architectures With Diverse Audio Features for Deepfake Speech Classification](https://doi.org/10.1109/access.2024.3478731)： 使用 Diverse Audio Features for Deepfake Speech Classification 做音频深伪、欺骗攻击或声音真实性检测。
+- [X-TF-GridNet: A time-frequency domain target speaker extraction network with adaptive speaker embedding fusion](https://doi.org/10.1016/j.inffus.2024.102550)： 使用 adaptive speaker embedding fusion 做说话人验证、识别或说话人表征建模。
+- [Improving Domain Generalization in Speech Emotion Recognition with Whisper](https://doi.org/10.1109/icassp48485.2024.10446997)： 使用 Whisper 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Controllable Accented Text-to-Speech Synthesis With Fine and Coarse-Grained Intensity Rendering](https://doi.org/10.1109/taslp.2024.3378110)： 使用 Fine and Coarse-Grained Intensity Rendering 改进文本转语音、韵律控制或零样本声音生成。
+- [Conformer is All You Need for Visual Speech Recognition](https://doi.org/10.1109/icassp48485.2024.10446532)： 使用 Conformer is All You Need for Visual Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Extending Large Language Models for Speech and Audio Captioning](https://doi.org/10.1109/icassp48485.2024.10446343)： 使用 Extending Large Language Models for Speech and Audio Captioning 做自动音频字幕和音频语言表征学习。
+- [TA2V: Text-Audio Guided Video Generation](https://doi.org/10.1109/tmm.2024.3362149)： 使用 Text-Audio Guided Video Generation 做语音、音频或口语语言建模。
+- [One-Class Neural Network With Directed Statistics Pooling for Spoofing Speech Detection](https://doi.org/10.1109/tifs.2024.3352429)： 使用 Directed Statistics Pooling for Spoofing Speech Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [CrossMAE: Cross-Modality Masked Autoencoders for Region-Aware Audio-Visual Pre-Training](https://doi.org/10.1109/cvpr52733.2024.02523)： 使用 Cross-Modality Masked Autoencoders for Region-Aware Audio-Visual Pre-Training 做视听语音、事件或场景建模。
+- [Neural Codec Language Models for Disentangled and Textless Voice Conversion](https://doi.org/10.21437/interspeech.2024-1298)： 用 Disentangled and Textless Voice Conversion 做语音转换、说话人克隆或语音编辑。
+- [Speech Emotion Recognition with Multi-level Acoustic and Semantic Information Extraction and Interaction](https://doi.org/10.21437/interspeech.2024-2385)： 用 Multi-level Acoustic and Semantic Information Extraction and Interaction 建模语音情感、副语言线索或情感对话。
+- [BATON: Aligning Text-to-Audio Model Using Human Preference Feedback](https://doi.org/10.24963/ijcai.2024/502)： 使用 Human Preference Feedback 做文本到音频、音效或 Foley 声音生成。
+- [Visually Guided Binaural Audio Generation with Cross-Modal Consistency](https://doi.org/10.1109/icassp48485.2024.10446399)： 使用 Cross-Modal Consistency 做文本到音频、音效或 Foley 声音生成。
+- [Subject-Agnostic Transformer-Based Neural Speech Decoding from Surface and Depth Electrode Signals](https://doi.org/10.1101/2024.03.11.584533)： 使用 Surface and Depth Electrode Signals 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Constructing a Multi-Modal Based Underwater Acoustic Target Recognition Method With a Pre-Trained Language-Audio Model](https://doi.org/10.1109/tgrs.2024.3515171)： 使用 a Pre-Trained Language-Audio Model 做语音、音频或口语语言建模。
+- [Diffusion-based diverse audio captioning with retrieval-guided Langevin dynamics](https://doi.org/10.1016/j.inffus.2024.102643)： 使用 retrieval-guided Langevin dynamics 做自动音频字幕和音频语言表征学习。
+- [Multi-Model Dual-Transformer Network for Audio-Visual Speech Enhancement](https://doi.org/10.21437/avsec.2024-1)： 使用 Multi-Model Dual-Transformer Network for Audio-Visual Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Analysis of Speech Temporal Dynamics in the Context of Speaker Verification and Voice Anonymization](https://arxiv.org/abs/2412.17164)： 使用 Analysis of Speech Temporal Dynamics in the Context of Speaker Verification and Voice Anonymization 做说话人验证、识别或说话人表征建模。
+- [Towards Expressive Video Dubbing with Multiscale Multimodal Context Interaction](https://arxiv.org/abs/2412.18748)： 使用 Multiscale Multimodal Context Interaction 做语音、音频或口语语言建模。
+- [VoiceDiT: Dual-Condition Diffusion Transformer for Environment-Aware Speech Synthesis](https://arxiv.org/abs/2412.19259)： 用 Environment-Aware Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [ETTA: Elucidating the Design Space of Text-to-Audio Models](https://arxiv.org/abs/2412.19351)： 使用 Elucidating the Design Space of Text-to-Audio Models 做文本到音频、音效或 Foley 声音生成。
+- [TangoFlux: Super Fast and Faithful Text to Audio Generation with Flow Matching and Clap-Ranked Preference Optimization](https://arxiv.org/abs/2412.21037)： 用 Flow Matching and Clap-Ranked Preference Optimization 生成文本条件音频、Foley 音效或视频对齐声音。
+- [TSPE: Task-Specific Prompt Ensemble for Improved Zero-Shot Audio Classification](https://arxiv.org/abs/2501.00398)： 使用 Task-Specific Prompt Ensemble for Improved Zero-Shot Audio Classification 做语音、音频或口语语言建模。
+- [Whisper Turns Stronger: Augmenting Wav2Vec 2.0 for Superior ASR in Low-Resource Languages](https://arxiv.org/abs/2501.00425)： 使用 Augmenting Wav2Vec 2.0 for Superior ASR in Low-Resource Languages 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [SoundBrush: Sound as a Brush for Visual Scene Editing](https://arxiv.org/abs/2501.00645)： 使用 Sound as a Brush for Visual Scene Editing 做语音、音频或口语语言建模。
+- [MusicGen-Stem: Multi-stem music generation and edition through autoregressive modeling](https://arxiv.org/abs/2501.01757)：将自回归音乐生成扩展到多音轨生成与编辑。
+- [Reducing the Gap Between Pretrained Speech Enhancement and Recognition Models Using a Real Speech-Trained Bridging Module](https://arxiv.org/abs/2501.02452)：用真实噪声语音训练桥接模块，以缩小预训练语音增强与 ASR 性能之间的差距。
+- [LipGen: Viseme-Guided Lip Video Generation for Enhancing Visual Speech Recognition](https://arxiv.org/abs/2501.04204)： 使用 Viseme-Guided Lip Video Generation for Enhancing Visual Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [DrawSpeech: Expressive Speech Synthesis Using Prosodic Sketches as Control Conditions](https://arxiv.org/abs/2501.04256)： 用 Prosodic Sketches as Control Conditions 改进文本转语音、韵律控制或零样本声音生成。
+- [FleSpeech: Flexibly Controllable Speech Generation with Various Prompts](https://arxiv.org/abs/2501.04644)：贡献语音或音频生成/建模方法；核心思想是提升音频系统的可控性、grounding 或跨模态同步。
+- [FLowHigh: Towards Efficient and High-Quality Audio Super-Resolution with Single-Step Flow Matching](https://arxiv.org/abs/2501.04926)：把 flow matching 引入音频超分辨率，并设计适配该任务的概率路径，用单步采样重建高分辨率音频以降低扩散式方法的延迟。
+- [ZipEnhancer: Dual-Path Down-Up Sampling-based Zipformer for Monaural Speech Enhancement](https://arxiv.org/abs/2501.05183)： 使用 Dual-Path Down-Up Sampling-based Zipformer for Monaural Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [MARS6: A Small and Robust Hierarchical-Codec Text-to-Speech Model](https://arxiv.org/abs/2501.05787)： 使用 A Small and Robust Hierarchical-Codec Text-to-Speech Model 改进文本转语音、韵律控制或零样本声音生成。
+- [xLSTM-SENet: xLSTM for Single-Channel Speech Enhancement](https://arxiv.org/abs/2501.06146)： 用 Single-Channel Speech Enhancement 增强或恢复退化语音。
+- [TTS-Transducer: End-to-End Speech Synthesis with Neural Transducer](https://arxiv.org/abs/2501.06320)： 使用 Neural Transducer 改进文本转语音、韵律控制或零样本声音生成。
+- [Discrete Speech Unit Extraction via Independent Component Analysis](https://arxiv.org/abs/2501.06562)： 使用 Independent Component Analysis 做语音、音频或口语语言建模。
+- [SEAL: Speaker Error Correction using Acoustic-conditioned Large Language Models](https://arxiv.org/abs/2501.08421)： 使用 Acoustic-conditioned Large Language Models 做语音、音频或口语语言建模。
+- [Towards Lightweight and Stable Zero-shot TTS with Self-distilled Representation Disentanglement](https://arxiv.org/abs/2501.08566)： 用 Self-distilled Representation Disentanglement 改进文本转语音、韵律控制或零样本声音生成。
+- [Speech Synthesis along Perceptual Voice Quality Dimensions](https://arxiv.org/abs/2501.08791)：通过条件连续归一化流控制文本转语音中的感知声质，使语音生成能细粒度调节粗糙度、气息感、共鸣和重量等属性。
+- [LAVCap: LLM-based Audio-Visual Captioning using Optimal Transport](https://arxiv.org/abs/2501.09291)： 使用 Optimal Transport 做自动音频字幕和音频语言表征学习。
+- [Transferable Adversarial Attacks on Audio Deepfake Detection](https://arxiv.org/abs/2501.11902)：研究针对音频深伪检测器的可迁移对抗攻击，扩展语音真实性鲁棒性覆盖。
+- [BLR-MoE: Boosted Language-Routing Mixture of Experts for Domain-Robust Multilingual E2E ASR](https://arxiv.org/abs/2501.12602)： 用 Domain-Robust Multilingual E2E ASR 改进 ASR、多语种转写或抗噪语音识别。
+- [Efficient Emotion and Speaker Adaptation in LLM-Based TTS via Characteristic-Specific Partial Fine-Tuning](https://arxiv.org/abs/2501.14273)： 用 Characteristic-Specific Partial Fine-Tuning 改进文本转语音、韵律控制或零样本声音生成。
+- [AnyEnhance: A Unified Generative Model With Prompt-Guidance and Self-Critic for Voice Enhancement](https://arxiv.org/abs/2501.15417)：用统一 masked generative model 同时处理语音和歌声增强，加入参考音频 prompt guidance 与 self-critic 迭代改进输出。
+- [DanmuA11y: Making Time-Synced On-Screen Video Comments (Danmu) Accessible to Blind and Low Vision Users via Multi-Viewer Audio Discussions](https://arxiv.org/abs/2501.15711)： 使用 Multi-Viewer Audio Discussions 做语音、音频或口语语言建模。
+- [Music2Latent2: Audio Compression with Summary Embeddings and Autoregressive Decoding](https://arxiv.org/abs/2501.17578)： 使用 Summary Embeddings and Autoregressive Decoding 做音乐生成、伴奏生成或音频条件作曲。
+- [VoicePrompter: Robust Zero-Shot Voice Conversion with Voice Prompt and Conditional Flow Matching](https://arxiv.org/abs/2501.17612)： 用 Voice Prompt and Conditional Flow Matching 做语音转换、说话人克隆或语音编辑。
+- [Sparse Autoencoder Insights on Voice Embeddings](https://arxiv.org/abs/2502.00127)： 用 Sparse Autoencoder Insights on Voice Embeddings 建模语音、音频或口语语言行为。
+- [Deep Active Speech Cancellation with Mamba-Masking Network](https://arxiv.org/abs/2502.01185)： 使用 Mamba-Masking Network 学习语音或音频表征，服务下游识别与生成任务。
+- [mWhisper-Flamingo for Multilingual Audio-Visual Noise-Robust Speech Recognition](https://arxiv.org/abs/2502.01547)： 使用 mWhisper-Flamingo for Multilingual Audio-Visual Noise-Robust Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [ComplexDec: A Domain-robust High-fidelity Neural Audio Codec with Complex Spectrum Modeling](https://arxiv.org/abs/2502.02019)： 使用 Complex Spectrum Modeling 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Developing multilingual speech synthesis system for Ojibwe, Mi'kmaq, and Maliseet](https://arxiv.org/abs/2502.02703)： 使用 Developing multilingual speech synthesis system for Ojibwe, Mi'kmaq, and Maliseet 改进文本转语音、韵律控制或零样本声音生成。
+- [GenSE: Generative Speech Enhancement via Language Models using Hierarchical Modeling](https://arxiv.org/abs/2502.02942)：把语音增强改写为条件语言建模任务，通过层级语义和声学建模在噪声中保留可懂度与说话人一致性。
+- [Fine-grained Preference Optimization Improves Zero-shot Text-to-Speech](https://arxiv.org/abs/2502.02950)： 用 Fine-grained Preference Optimization Improves Zero-shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [High-Fidelity Simultaneous Speech-To-Speech Translation](https://arxiv.org/abs/2502.03382)：提出 Hibiki decoder-only 多流模型，同步处理源语音和目标语音，并用翻译困惑度弱监督学习逐词自适应延迟。
+- [UniForm: A Unified Diffusion Transformer for Audio-Video Generation](https://arxiv.org/abs/2502.03897)： 用 Audio-Video Generation 学习语音或音频表征，服务识别、理解或生成。
+- [Towards explainable spoofed speech attribution and detection: A probabilistic approach for characterizing speech synthesizer components](https://arxiv.org/abs/2502.04049)：通过概率属性嵌入识别语音合成器组件并检测伪造音频。
+- [Llasa: Scaling Train-Time and Inference-Time Compute for Llama-based Speech Synthesis](https://arxiv.org/abs/2502.04128)：为基于 Llama 的语音合成扩展训练时与推理时计算。
+- [XAttnMark: Learning Robust Audio Watermarking with Cross-Attention](https://arxiv.org/abs/2502.04230)：结合交叉注意力、部分参数共享与心理声学掩蔽损失，实现鲁棒的音频水印检测与归因。
+- [GenVC: Self-Supervised Zero-Shot Voice Conversion](https://arxiv.org/abs/2502.04519)： 用 Self-Supervised Zero-Shot Voice Conversion 做语音转换、说话人克隆或语音编辑。
+- [IndexTTS: An Industrial-Level Controllable and Efficient Zero-Shot Text-To-Speech System](https://arxiv.org/abs/2502.05512)：提供工业级可控 zero-shot text-to-speech 系统，面向高效语音生成。
+- [Audio-visual representation learning via knowledge distillation from speech foundation models](https://arxiv.org/abs/2502.05766)： 用 knowledge distillation from speech foundation models 建模视听语音、事件或场景。
 - [Learning Musical Representations for Music Performance Question Answering](https://arxiv.org/abs/2502.06710)：面向音视频音乐表演问答学习多模态音乐表示，强调密集音频与乐器感知推理。
+- [Visual-based spatial audio generation system for multi-speaker environments*](https://arxiv.org/abs/2502.07538)：结合人脸检测、单目深度估计和空间音频渲染，自动为多说话人视频生成双耳空间音频且不额外训练双耳数据集。
+- [SparQLe: Speech Queries to Text Translation Through LLMs](https://arxiv.org/abs/2502.09284)： 使用 LLMs 做语音翻译、同时翻译或 code-switching 语音理解。
+- [Video Soundtrack Generation by Aligning Emotions and Temporal Boundaries](https://arxiv.org/abs/2502.10154)：通过对齐情绪与时间边界生成视频配乐，提升视频与生成音频之间的情感和时间匹配。
+- [OWLS: Scaling Laws for Multilingual Speech Recognition and Translation Models](https://arxiv.org/abs/2502.10373)：发布 0.25B 到 18B 的多语种语音识别与翻译模型族，基于 150 种语言、36 万小时公开语音研究语音 scaling laws。
 - [SyncSpeech](https://arxiv.org/abs/2502.11094)：使用时间掩码 Transformer 实现高效低延迟文本到语音生成。
+- [Speech-FT: Merging Pre-Trained and Fine-Tuned Speech Representation Models for Cross-Task Generalization](https://arxiv.org/abs/2502.12672)： 使用 Merging Pre-Trained and Fine-Tuned Speech Representation Models for Cross-Task Generalization 学习语音或音频表征，服务下游识别与生成任务。
+- [Soundwave: Less is More for Speech-Text Alignment in LLMs](https://arxiv.org/abs/2502.12900)：研究 LLM 的语音文本对齐，强调更少但更合适的对齐数据可提升语音模型效果。
 - [SongGen](https://arxiv.org/abs/2502.13128)：使用单阶段自回归 Transformer 从文本生成歌声与伴奏，面向文本到歌曲建模。
+- [ATRI](https://arxiv.org/abs/2502.14627)：从跨模态对齐中的数据分布误差出发，缓解多语种音频文本检索不一致。
+- [ESPnet-SpeechLM: An Open Speech Language Model Toolkit](https://arxiv.org/abs/2502.15218)：把 SpeechLM 开发标准化为序列建模工作流，提供预处理、预训练、推理、评测与 1.7B 文本-语音配方的可复现实例。
 - [Slamming](https://arxiv.org/abs/2502.15814)：研究如何在单块 GPU、一天内训练 speech language model。
+- [Speech Enhancement Using Continuous Embeddings of Neural Audio Codec](https://arxiv.org/abs/2502.16240)： 使用 Continuous Embeddings of Neural Audio Codec 做语音增强、带宽扩展或鲁棒音频恢复。
+- [NotaGen: Advancing Musicality in Symbolic Music Generation with Large Language Model Training Paradigms](https://arxiv.org/abs/2502.18008)： 使用 Large Language Model Training Paradigms 做音乐生成、伴奏生成或音频条件作曲。
+- [Sparse Alignment Enhanced Latent Diffusion Transformer for Zero-Shot Speech Synthesis](https://arxiv.org/abs/2502.18924)：用稀疏对齐边界引导 latent diffusion Transformer，在不强制固定对齐路径的情况下提升零样本 TTS 自然度并支持快速 rectified-flow 采样。
 - [DualSpec](https://arxiv.org/abs/2502.18952)：用双谱图引导扩散模型从文本生成空间音频。
+- [PrimeK-Net: Multi-scale Spectral Learning via Group Prime-Kernel Convolutional Neural Networks for Single Channel Speech Enhancement](https://arxiv.org/abs/2502.19906)： 使用 Group Prime-Kernel Convolutional Neural Networks for Single Channel Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [ARTalk: Speech-Driven 3D Head Animation via Autoregressive Model](https://arxiv.org/abs/2502.20323)： 用 Autoregressive Model 建模语音、音频或口语语言行为。
 - [LLaSE-G1](https://arxiv.org/abs/2503.00493)：基于 LLaMA 做语音增强，并通过激励机制提升泛化能力。
 - [UniWav](https://arxiv.org/abs/2503.00733)：在同一预训练框架中统一语音表示学习与语音生成。
+- [DiffRhythm: Blazingly Fast and Embarrassingly Simple End-to-End Full-Length Song Generation with Latent Diffusion](https://arxiv.org/abs/2503.01183)： 用 Latent Diffusion 做歌声、歌词或旋律生成与编辑。
+- [FlowDec: A flow-based full-band general audio codec with high perceptual quality](https://arxiv.org/abs/2503.01485)：用条件流匹配构建全频段通用音频编解码器，在低码率重建质量和后处理计算量上改进语音与音频生成流水线。
+- [InfiniSST: Simultaneous Translation of Unbounded Speech with Large Language Model](https://arxiv.org/abs/2503.02969)：InfiniSST 用大模型处理无界语音流的同声传译，补充了在线语音翻译建模轴线。
+- [Deep Understanding of Sign Language for Sign to Subtitle Alignment](https://arxiv.org/abs/2503.03287)： 用 Sign to Subtitle Alignment 支持可扩展手语翻译或多模态手语理解。
+- [LLMVoX: Autoregressive Streaming Text-to-Speech Model for Any LLM](https://arxiv.org/abs/2503.04724)：构建可作为 LLM 语音输出层的自回归流式文本转语音模型。
+- [Training and Inference Efficiency of Encoder-Decoder Speech Models](https://arxiv.org/abs/2503.05931)：剖析 Whisper 式 encoder-decoder 语音模型训练效率，指出 padding 消耗过半计算，并通过优化 Canary-1B 的采样和 batching 提高有效 batch size。
+- [Late Fusion and Multi-Level Fission Amplify Cross-Modal Transfer in Text-Speech LMs](https://arxiv.org/abs/2503.06211)：用 late fusion 和 multi-level fission 替代早期融合，让 SmolTolk 在文本与更细粒度语音特征之间共享层级表征并减少训练计算。
+- [Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](https://arxiv.org/abs/2503.06273)： 使用 LLMs by Learning Language-Agnostic Speech Representations 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Synchronized Video-to-Audio Generation via Mel Quantization-Continuum Decomposition](https://arxiv.org/abs/2503.06984)： 用 Mel Quantization-Continuum Decomposition 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Linguistic Knowledge Transfer Learning for Speech Enhancement](https://arxiv.org/abs/2503.07078)： 使用 Linguistic Knowledge Transfer Learning for Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [An Exhaustive Evaluation of TTS- and VC-based Data Augmentation for ASR](https://arxiv.org/abs/2503.08954)：系统评估文本转语音和语音转换数据增强对 ASR 的影响，区分哪些合成语音属性能在不同模型设置下提升识别效果。
 - [LLM-based curation for audio-video foundation models](https://arxiv.org/abs/2503.09205)：用 LLM 做数据筛选，使音视频基础模型训练更具数据效率。
+- [TA-V2A: Textually Assisted Video-to-Audio Generation](https://arxiv.org/abs/2503.10700)：将 LLM 生成的文本语义引入 video-to-audio 扩散模型，弥补单纯帧特征丢失顺序上下文的问题。
+- [MMS-LLaMA: Efficient LLM-based Audio-Visual Speech Recognition with Minimal Multimodal Speech Tokens](https://arxiv.org/abs/2503.11315)：用精简的多模态语音 token 支持高效的 LLM 式音视频语音识别。
+- [Unlock Pose Diversity: Accurate and Efficient Implicit Keypoint-based Spatiotemporal Diffusion for Audio-driven Talking Portrait](https://arxiv.org/abs/2503.12963)： 使用 Accurate and Efficient Implicit Keypoint-based Spatiotemporal Diffusion for Audio-driven Talking Portrait 做语音、音频或口语语言建模。
+- [Crab: A Unified Audio-Visual Scene Understanding Model with Explicit Cooperation](https://arxiv.org/abs/2503.13068)： 用 Explicit Cooperation 建模视听场景、事件或跨模态推理。
+- [MAG: Multi-Modal Aligned Autoregressive Co-Speech Gesture Generation without Vector Quantization](https://arxiv.org/abs/2503.14040)： 使用 Multi-Modal Aligned Autoregressive Co-Speech Gesture Generation without Vector Quantization 做语音驱动 talking-head、面部动画或共语手势生成。
+- [Shushing! Let's Imagine an Authentic Speech from the Silent Video](https://arxiv.org/abs/2503.14928)： 使用 the Silent Video 做语音、音频或口语语言建模。
+- [STFTCodec: High-Fidelity Audio Compression through Time-Frequency Domain Representation](https://arxiv.org/abs/2503.16989)： 使用 Time-Frequency Domain Representation 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [DisentTalk: Cross-lingual Talking Face Generation via Semantic Disentangled Diffusion Model](https://arxiv.org/abs/2503.19001)： 使用 Semantic Disentangled Diffusion Model 做语音驱动 talking-head、面部动画或共语手势生成。
+- [Dolphin: A Large-Scale Automatic Speech Recognition Model for Eastern Languages](https://arxiv.org/abs/2503.20212)：面向东方语言训练大规模 ASR 模型，重点覆盖区域语言与多语种转写中的数据和语言覆盖缺口。
+- [FireRedTTS-1S: An Upgraded Streamable Foundation Text-to-Speech System](https://arxiv.org/abs/2503.20499)： 用 An Upgraded Streamable Foundation Text-to-Speech System 改进文本转语音、韵律控制或零样本声音生成。
+- [ReverBERT: A State Space Model for Efficient Text-Driven Speech Style Transfer](https://arxiv.org/abs/2503.20992)：将状态空间架构用于文本驱动的语音风格迁移。
+- [Text-Driven Voice Conversion via Latent State-Space Modeling](https://arxiv.org/abs/2503.20999)：通过潜在状态空间建模实现文本驱动的语音转换。
+- [Lend a Hand: Semi Training-Free Cued Speech Recognition via MLLM-Driven Hand Modeling for Barrier-free Communication](https://arxiv.org/abs/2503.21785)： 用 MLLM-Driven Hand Modeling for Barrier-free Communication 改进 ASR、多语种转写或抗噪语音识别。
+- [ReCoM: Realistic Co-Speech Motion Generation with Recurrent Embedded Transformer](https://arxiv.org/abs/2503.21847)： 用 Recurrent Embedded Transformer 学习语音或音频表征，服务识别、理解或生成。
+- [Modeling speech emotion with label variance and analyzing performance across speakers and unseen acoustic conditions](https://arxiv.org/abs/2503.22711)： 使用 label variance and analyzing performance across speakers and unseen acoustic conditions 做语音情感、副语言或情感对话建模。
+- [Teaching LLMs Music Theory with In-Context Learning and Chain-of-Thought Prompting: Pedagogical Strategies for Machines](https://arxiv.org/abs/2503.22853)： 使用 In-Context Learning and Chain-of-Thought Prompting: Pedagogical Strategies for Machines 做音乐生成、伴奏生成或音频条件作曲。
+- [SupertonicTTS: Towards Highly Efficient and Streamlined Text-to-Speech System](https://arxiv.org/abs/2503.23108)： 用 Highly Efficient and Streamlined Text-to-Speech System 改进文本转语音、韵律控制或零样本声音生成。
+- [DANTE-AD: Dual-Vision Attention Network for Long-Term Audio Description](https://arxiv.org/abs/2503.24096)： 用 Long-Term Audio Description 建模语音、音频或口语语言行为。
+- [Aligned Better, Listen Better for Audio-Visual Large Language Models](https://arxiv.org/abs/2504.02061)：提出 Dolphin 视听大模型，通过多尺度适配器实现空间对齐，并用时序视听训练减少视频理解中的弱音频利用和幻觉。
 - [Scaling Analysis of Interleaved Speech-Text Language Models](https://arxiv.org/abs/2504.02398)：研究交错语音-文本语言模型的 scaling 行为。
+- [F5R-TTS: Improving Flow-Matching based Text-to-Speech with Group Relative Policy Optimization](https://arxiv.org/abs/2504.02407)： 用 Group Relative Policy Optimization 改进文本转语音、韵律控制或零样本声音生成。
+- [A Practical Synthesis of Detecting AI-Generated Textual, Visual, and Audio Content](https://arxiv.org/abs/2504.02898)： 用 A Practical Synthesis of Detecting AI-Generated Textual, Visual, and Audio Content 建模语音、音频或口语语言行为。
+- [LoopGen: Training-Free Loopable Music Generation](https://arxiv.org/abs/2504.04466)： 使用 Training-Free Loopable Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [L3AC: Towards a Lightweight and Lossless Audio Codec](https://arxiv.org/abs/2504.04949)： 使用 Towards a Lightweight and Lossless Audio Codec 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [P2Mark: Plug-and-play Parameter-level Watermarking for Neural Speech Generation](https://arxiv.org/abs/2504.05197)： 用 Neural Speech Generation 嵌入或检测可追踪语音音频水印。
+- [TARO: Timestep-Adaptive Representation Alignment with Onset-Aware Conditioning for Synchronized Video-To-Audio Synthesis](https://arxiv.org/abs/2504.05684)：贡献语音或音频生成/建模方法；核心思想是提升音频系统的可控性、grounding 或跨模态同步。
+- [Extending Visual Dynamics for Video-to-Music Generation](https://arxiv.org/abs/2504.07594)：利用视觉动态引导视频条件音乐生成，可作为时间对齐的视觉到音频生成模型参考。
+- [Empowering Global Voices: A Data-Efficient, Phoneme-Tone Adaptive Approach to High-Fidelity Speech Synthesis](https://arxiv.org/abs/2504.07858)： 用 A Data-Efficient, Phoneme-Tone Adaptive Approach to High-Fidelity Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [On the Design of Diffusion-Based Neural Speech Codecs](https://arxiv.org/abs/2504.08470)： 使用 On the Design of Diffusion-Based Neural Speech Codecs 做神经音频编码、离散语音 token 或 codec 语言建模。
 - [SIFT-50M](https://arxiv.org/abs/2504.09081)：提供大规模多语言语音指令数据与微调方案，用于语音基础模型适配。
+- [EchoMask: Speech-Queried Attention-based Mask Modeling for Holistic Co-Speech Motion Generation](https://arxiv.org/abs/2504.09209)： 用 Holistic Co-Speech Motion Generation 建模语音、音频或口语语言行为。
+- [KeyVID: Keyframe-Aware Video Diffusion for Audio-Synchronized Visual Animation](https://arxiv.org/abs/2504.09656)： 用 Audio-Synchronized Visual Animation 建模语音、音频或口语语言行为。
+- [SafeSpeech: Robust and Universal Voice Protection Against Malicious Speech Synthesis](https://arxiv.org/abs/2504.09839)： 使用 Robust and Universal Voice Protection Against Malicious Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [ALMTokenizer: A Low-bitrate and Semantic-rich Audio Codec Tokenizer for Audio Language Modeling](https://arxiv.org/abs/2504.10344)：用可学习 query token 压缩跨帧上下文，并结合 MAE、语义先验量化和自回归预测损失，生成低码率且语义更丰富的音频 token。
+- [Efficient and Adaptive Simultaneous Speech Translation with Fully Unidirectional Architecture](https://arxiv.org/abs/2504.11809)：采用全单向架构实现自适应低延迟语音同传。
+- [FocusedAD: Character-centric Movie Audio Description](https://arxiv.org/abs/2504.12157)： 使用 Character-centric Movie Audio Description 做语音、音频或口语语言建模。
+- [GOAT-TTS: Expressive and Realistic Speech Generation via A Dual-Branch LLM](https://arxiv.org/abs/2504.12339)： 用 A Dual-Branch LLM 学习语音或音频表征，服务识别、理解或生成。
+- [The First VoicePrivacy Attacker Challenge](https://arxiv.org/abs/2504.14183)： 用 The First VoicePrivacy Attacker Challenge 建模语音、音频或口语语言行为。
+- [Protecting Your Voice: Temporal-aware Robust Watermarking](https://arxiv.org/abs/2504.14832)： 用 Temporal-aware Robust Watermarking 嵌入或检测可追踪语音音频水印。
+- [SOLIDO: A Robust Watermarking Method for Speech Synthesis via Low-Rank Adaptation](https://arxiv.org/abs/2504.15035)： 用 Low-Rank Adaptation 嵌入或检测可追踪语音音频水印。
 - [Kimi-Audio](https://arxiv.org/abs/2504.18425)：开放音频基础模型，包含 12.5 Hz tokenizer、LLM 式架构、flow-matching 流式 detokenizer、大规模音频预训练和 post-training 数据构建。
+- [APG-MOS: Auditory Perception Guided-MOS Predictor for Synthetic Speech](https://arxiv.org/abs/2504.20447)： 使用 Auditory Perception Guided-MOS Predictor for Synthetic Speech 作为语音和音频模型的数据生成或适配路线。
+- [TriniMark: A Robust Generative Speech Watermarking Method for Trinity-Level Attribution](https://arxiv.org/abs/2504.20532)： 用 Trinity-Level Attribution 嵌入或检测可追踪语音音频水印。
+- [AlignDiT: Multimodal Aligned Diffusion Transformer for Synchronized Speech Generation](https://arxiv.org/abs/2504.20629)： 用 Synchronized Speech Generation 学习语音或音频表征，服务识别、理解或生成。
+- [VividListener: Expressive and Controllable Listener Dynamics Modeling for Multi-Modal Responsive Interaction](https://arxiv.org/abs/2504.21718)： 使用 Expressive and Controllable Listener Dynamics Modeling for Multi-Modal Responsive Interaction 做语音、音频或口语语言建模。
+- [Wav2Prompt: End-to-End Speech Prompt Learning and Task-based Fine-tuning for Text-based LLMs](https://doi.org/10.18653/v1/2025.naacl-long.354)：端到端学习语音提示，使语音输入适配文本 LLM 任务。
+- [FlowDubber: Movie Dubbing with LLM-based Semantic-aware Learning and Flow Matching based Voice Enhancing](https://arxiv.org/abs/2505.01263)： 使用 LLM-based Semantic-aware Learning and Flow Matching based Voice Enhancing 做语音、音频或口语语言建模。
+- [A Synergistic Framework of Nonlinear Acoustic Computing and Reinforcement Learning for Real-World Human-Robot Interaction](https://arxiv.org/abs/2505.01998)：结合非线性声学计算与强化学习，形成从声学感知到机器人动作的真实人机交互闭环。
+- [TeMTG: Text-Enhanced Multi-Hop Temporal Graph Modeling for Audio-Visual Video Parsing](https://arxiv.org/abs/2505.02096)： 使用 Text-Enhanced Multi-Hop Temporal Graph Modeling for Audio-Visual Video Parsing 做视听语音、事件或场景建模。
 - [VITA-Audio](https://arxiv.org/abs/2505.03739)：高效端到端大语音语言模型，使用 Multiple Cross-modal Token Prediction 和四阶段渐进训练降低流式延迟。
+- [Language translation, and change of accent for speech-to-speech task using diffusion model](https://arxiv.org/abs/2505.04639)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [FLAM: Frame-Wise Language-Audio Modeling](https://arxiv.org/abs/2505.05335)：构建开放词表的逐帧语言-音频模型，可定位声音事件发生时间，而不只做整段音频检索。
+- [Multi-band Frequency Reconstruction for Neural Psychoacoustic Coding](https://arxiv.org/abs/2505.07235)： 用 Neural Psychoacoustic Coding 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [MiniMax-Speech: Intrinsic Zero-Shot Text-to-Speech with a Learnable Speaker Encoder](https://arxiv.org/abs/2505.07916)：提出带可学习说话人编码器的零样本文本转语音模型。
+- [Fast Text-to-Audio Generation with Adversarial Post-Training](https://arxiv.org/abs/2505.08175)：提出 ARC 对抗后训练，把 relativistic adversarial 目标与 contrastive discriminator 结合，在不蒸馏的情况下加速扩散/flow 文本到音频模型。
+- [Not that Groove: Zero-Shot Symbolic Music Editing](https://arxiv.org/abs/2505.08203)： 使用 Zero-Shot Symbolic Music Editing 做可控音乐编辑、补全或音轨插入。
+- [UWAV: Uncertainty-Weighted Weakly-Supervised Audio-Visual Video Parsing](https://arxiv.org/abs/2505.09615)： 用 Uncertainty-Weighted Weakly-Supervised Audio-Visual Video Parsing 建模视听语音、事件或场景。
+- [UDDETTS: Unifying Discrete and Dimensional Emotions for Controllable Emotional Text-to-Speech](https://arxiv.org/abs/2505.10599)： 用 Controllable Emotional Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [LipDiffuser: Lip-to-Speech Generation with Conditional Diffusion Models](https://arxiv.org/abs/2505.11391)： 使用 Conditional Diffusion Models 做视听语音识别、唇读或视觉语音生成。
+- [Text2midi-InferAlign: Improving Symbolic Music Generation with Inference-Time Alignment](https://arxiv.org/abs/2505.12669)： 使用 Inference-Time Alignment 做音乐生成、伴奏生成或音频条件作曲。
+- [OZSpeech: One-step Zero-shot Speech Synthesis with Learned-Prior-Conditioned Flow Matching](https://arxiv.org/abs/2505.12800)： 用 Learned-Prior-Conditioned Flow Matching 改进文本转语音、韵律控制或零样本声音生成。
 - [Calm-Whisper](https://arxiv.org/abs/2505.12969)：通过抑制不稳定注意力头降低 Whisper 在非语音输入上的幻觉。
+- [SPIRIT: Patching Speech Language Models against Jailbreak Attacks](https://arxiv.org/abs/2505.13541)： 用 Patching Speech Language Models against Jailbreak Attacks 学习语音或音频表征，服务识别、理解或生成。
+- [Score-Based Training for Energy-Based TTS Models](https://arxiv.org/abs/2505.13771)： 使用 Score-Based Training for Energy-Based TTS Models 改进文本转语音、韵律控制或零样本声音生成。
+- [Articulatory Feature Prediction from Surface EMG during Speech Production](https://arxiv.org/abs/2505.13814)： 使用 Surface EMG during Speech Production 做语音、音频或口语语言建模。
+- [A Semantic Information-based Hierarchical Speech Enhancement Method Using Factorized Codec and Diffusion Model](https://arxiv.org/abs/2505.13843)： 使用 Factorized Codec and Diffusion Model 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Forensic deepfake audio detection using segmental speech features](https://arxiv.org/abs/2505.13847)：用分段语音特征检测生成或篡改语音中的取证痕迹。
+- [BiCrossMamba-ST: Speech Deepfake Detection with Bidirectional Mamba Spectro-Temporal Cross-Attention](https://arxiv.org/abs/2505.13930)： 使用 Bidirectional Mamba Spectro-Temporal Cross-Attention 做音频深伪、欺骗攻击或声音真实性检测。
+- [Naturalness-Aware Curriculum Learning with Dynamic Temperature for Speech Deepfake Detection](https://arxiv.org/abs/2505.13976)： 使用 Dynamic Temperature for Speech Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [SeamlessEdit: Background Noise Aware Zero-Shot Speech Editing with in-Context Enhancement](https://arxiv.org/abs/2505.14066)： 用 in-Context Enhancement 做语音转换、说话人克隆或语音编辑。
 - [Llama-SMoP for AVSR](https://arxiv.org/abs/2505.14336)：通过稀疏投影器混合改进基于 LLM 的视听语音识别，实现更高效的多模态对齐。
+- [FMSD-TTS: Few-shot Multi-Speaker Multi-Dialect Text-to-Speech Synthesis for Ü-Tsang, Amdo and Kham Speech Dataset Generation](https://arxiv.org/abs/2505.14351)：面向卫藏、安多和康方言构建少样本多说话人、多方言 TTS，用合成语音扩展低资源藏语方言数据。
+- [Listen, Analyze, and Adapt to Learn New Attacks: An Exemplar-Free Class Incremental Learning Method for Audio Deepfake Source Tracing](https://arxiv.org/abs/2505.14601)： 使用 Listen, Analyze, and Adapt to Learn New Attacks: An Exemplar-Free Class Incremental Learning Method 做音频深伪、欺骗攻击或声音真实性检测。
 - [SALM-Duplex](https://arxiv.org/abs/2505.15670)：提出全双工 speech-to-speech language model 架构，直接建模用户连续输入与 Agent 语音输出的并行流。
 - [AudioMorphix](https://arxiv.org/abs/2505.16076)：提供免训练的扩散式音频编辑，在修改目标声音的同时保留原始录音。
+- [Selective Invocation for Multilingual ASR: A Cost-effective Approach Adapting to Speech Recognition Difficulty](https://arxiv.org/abs/2505.16168)：根据语音识别难度选择性调用更强模型，在多语种 ASR 中以动态推理策略平衡成本和准确率。
+- [SpecMaskFoley: Steering Pretrained Spectral Masked Generative Transformer Toward Synchronized Video-to-audio Synthesis via ControlNet](https://arxiv.org/abs/2505.16195)： 用 Steering Pretrained Spectral Masked Generative Transformer Toward Synchronized Video-to-audio Synthesis via ControlNet 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Meta-PerSER: Few-Shot Listener Personalized Speech Emotion Recognition via Meta-learning](https://arxiv.org/abs/2505.16220)： 用 Few-Shot Listener Personalized Speech Emotion Recognition via Meta-learning 建模语音情感、副语言线索或情感对话。
+- [Dysfluent WFST: A Framework for Zero-Shot Speech Dysfluency Transcription and Detection](https://arxiv.org/abs/2505.16351)：使用加权有限状态转导器进行零样本语音不流畅现象转写与检测。
+- [P2VA: Converting Persona Descriptions into Voice Attributes for Fair and Controllable Text-to-Speech](https://arxiv.org/abs/2505.17093)： 使用 Converting Persona Descriptions into Voice Attributes for Fair and Controllable Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [LLM-based Generative Error Correction for Rare Words with Synthetic Data and Phonetic Context](https://arxiv.org/abs/2505.17410)： 使用 Synthetic Data and Phonetic Context 作为语音和音频模型的数据生成或适配路线。
 - [Speechless](https://arxiv.org/abs/2505.17417)：在低资源语言中无需语音数据训练语音指令跟随能力。
-- [Analyzing Mitigation Strategies for Catastrophic Forgetting in End-to-End Training of Spoken Language Models](https://arxiv.org/abs/2505.17496)：提出面向语音和音频的模型侧方法，核心围绕 Analyzing Mitigation Strategies for Catastrophic Forgetting in End-to-End Training of Spoken Language Models。
+- [UniTTS: An end-to-end TTS system without decoupling of acoustic and semantic information](https://arxiv.org/abs/2505.17426)： 用 An end-to-end TTS system without decoupling of acoustic and semantic information 改进文本转语音、韵律控制或零样本声音生成。
+- [Exploring the Effect of Segmentation and Vocabulary Size on Speech Tokenization for Speech Language Models](https://arxiv.org/abs/2505.17446)： 使用 Exploring the Effect of Segmentation and Vocabulary Size on Speech Tokenization for Speech Language 做语音、音频或口语语言建模。
+- [Analyzing Mitigation Strategies for Catastrophic Forgetting in End-to-End Training of Spoken Language Models](https://arxiv.org/abs/2505.17496)： 用 Catastrophic Forgetting in End-to-End Training of Spoken Language Models 学习语音或音频表征，服务识别、理解或生成。
+- [What You Read Isn't What You Hear: Linguistic Sensitivity in Deepfake Speech Detection](https://arxiv.org/abs/2505.17513)： 使用 What You Read Isn't What You Hear: Linguistic Sensitivity in Deepfake Speech Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [CosyVoice 3: Towards In-the-wild Speech Generation via Scaling-up and Post-training](https://arxiv.org/abs/2505.17589)：通过多任务语音 tokenizer、可微奖励模型后训练、百万小时数据和 1.5B 参数规模，提升野外场景零样本多语种语音生成。
+- [RASMALAI: Resources for Adaptive Speech Modeling in Indian Languages with Accents and Intonations](https://arxiv.org/abs/2505.18609)： 用 Accents and Intonations 建模语音、音频或口语语言行为。
+- [CloneShield: A Framework for Universal Perturbation Against Zero-Shot Voice Cloning](https://arxiv.org/abs/2505.19119)： 使用 A Framework for Universal Perturbation Against Zero-Shot Voice Cloning 做语音、音频或口语语言建模。
 - [BR-ASR](https://arxiv.org/abs/2505.19179)：为 speech LLM 中的 ASR 加入可扩展上下文偏置检索。
+- [Towards Reliable Large Audio Language Model](https://arxiv.org/abs/2505.19294)： 使用 Towards Reliable Large Audio Language Model 对齐音频与文本表征，服务音频语言理解。
+- [SoloSpeech: Enhancing Intelligibility and Quality in Target Speech Extraction Through a Cascaded Generative Pipeline](https://arxiv.org/abs/2505.19314)： 用 a Cascaded Generative Pipeline 评估或提升音频和语音质量。
+- [VoiceStar: Robust Zero-Shot Autoregressive TTS with Duration Control and Extrapolation](https://arxiv.org/abs/2505.19462)： 用 Duration Control and Extrapolation 改进文本转语音、韵律控制或零样本声音生成。
+- [FlowSE: Efficient and High-Quality Speech Enhancement via Flow Matching](https://arxiv.org/abs/2505.19476)：学习从噪声 mel 谱到干净 mel 谱的条件 flow-matching 变换，在降低语音增强推理延迟的同时保持重建质量。
+- [Training-Free Multi-Step Audio Source Separation](https://arxiv.org/abs/2505.19534)： 使用 Training-Free Multi-Step Audio Source Separation 做语音分离或多源音频重建。
+- [MFA-KWS: Effective Keyword Spotting With Multi-Head Frame-Asynchronous Decoding](https://arxiv.org/abs/2505.19577)： 使用 Multi-Head Frame-Asynchronous Decoding 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Accelerating Diffusion-based Text-to-Speech Model Training with Dual Modality Alignment](https://arxiv.org/abs/2505.19595)： 用 Dual Modality Alignment 改进文本转语音、韵律控制或零样本声音生成。
+- [Zero-Shot Streaming Text to Speech Synthesis with Transducer and Auto-Regressive Modeling](https://arxiv.org/abs/2505.19669)： 使用 Transducer and Auto-Regressive Modeling 改进文本转语音、韵律控制或零样本声音生成。
+- [DiEmo-TTS: Disentangled Emotion Representations via Self-Supervised Distillation for Cross-Speaker Emotion Transfer in Text-to-Speech](https://arxiv.org/abs/2505.19687)： 使用 Self-Supervised Distillation for Cross-Speaker Emotion Transfer in Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [Accelerating Flow-Matching-Based Text-to-Speech via Empirically Pruned Step Sampling](https://arxiv.org/abs/2505.19931)： 用 Empirically Pruned Step Sampling 改进文本转语音、韵律控制或零样本声音生成。
+- [Multi-Timescale Motion-Decoupled Spiking Transformer for Audio-Visual Zero-Shot Learning](https://arxiv.org/abs/2505.19938)： 用 Audio-Visual Zero-Shot Learning 建模视听语音、事件或场景。
+- [Phir Hera Fairy: An English Fairytaler is a Strong Faker of Fluent Speech in Low-Resource Indian Languages](https://arxiv.org/abs/2505.20693)： 用 An English Fairytaler is a Strong Faker of Fluent Speech in Low-Resource Indian Languages 建模语音、音频或口语语言行为。
+- [VoiceMark: Zero-Shot Voice Cloning-Resistant Watermarking Approach Leveraging Speaker-Specific Latents](https://arxiv.org/abs/2505.21568)： 使用 Zero-Shot Voice Cloning-Resistant Watermarking Approach Leveraging Speaker-Specific Latents 在语音和音频中嵌入或检测可追踪水印。
+- [Loquacious Set: 25,000 Hours of Transcribed and Diverse English Speech Recognition Data for Research and Commercial Use](https://arxiv.org/abs/2505.21578)： 使用 25,000 Hours of Transcribed and Diverse English Speech Recognition Data for Research and Commercial 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Weakly Supervised Data Refinement and Flexible Sequence Compression for Efficient Thai LLM-based ASR](https://arxiv.org/abs/2505.22063)： 使用 Weakly Supervised Data Refinement and Flexible Sequence Compression for Efficient Thai LLM-based ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [A Linguistically Motivated Analysis of Intonational Phrasing in Text-to-Speech Systems: Revealing Gaps in Syntactic Sensitivity](https://arxiv.org/abs/2505.22236)： 使用 A Linguistically Motivated Analysis of Intonational Phrasing in Text-to-Speech Systems: Revealing Gaps in Syntactic 改进文本转语音、韵律控制或零样本声音生成。
+- [FAMA: The First Large-Scale Open-Science Speech Foundation Model for English and Italian](https://arxiv.org/abs/2505.22759)： 使用 The First Large-Scale Open-Science Speech Foundation Model for English and Italian 学习语音或音频表征，服务下游识别与生成任务。
+- [Towards LLM-Empowered Fine-Grained Speech Descriptors for Explainable Emotion Recognition](https://arxiv.org/abs/2505.23236)： 使用 Towards LLM-Empowered Fine-Grained Speech Descriptors for Explainable Emotion Recognition 做语音情感、副语言或情感对话建模。
+- [MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](https://arxiv.org/abs/2505.23305)： 使用 Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction 做音乐生成、伴奏生成或音频条件作曲。
+- [DeepFilterGAN: A Full-band Real-time Speech Enhancement System with GAN-based Stochastic Regeneration](https://arxiv.org/abs/2505.23515)： 使用 GAN-based Stochastic Regeneration 做语音增强、带宽扩展或鲁棒音频恢复。
+- [EmotionRankCLAP: Bridging Natural Language Speaking Styles and Ordinal Speech Emotion via Rank-N-Contrast](https://arxiv.org/abs/2505.23732)： 用 Bridging Natural Language Speaking Styles and Ordinal Speech Emotion via Rank-N-Contrast 对齐音频与文本表征。
+- [Improving Multilingual Speech Models on ML-SUPERB 2.0: Fine-tuning with Data Augmentation and LID-Aware CTC](https://arxiv.org/abs/2505.24200)：通过数据增强和语言识别感知 CTC 微调改进 ML-SUPERB 2.0 上的多语种语音模型。
+- [Discl-VC: Disentangled Discrete Tokens and In-Context Learning for Controllable Zero-Shot Voice Conversion](https://arxiv.org/abs/2505.24291)： 使用 Disentangled Discrete Tokens and In-Context Learning for Controllable Zero-Shot Voice Conversion 做语音转换、说话人克隆或可控音色迁移。
+- [A Perception-Based L2 Speech Intelligibility Indicator: Leveraging a Rater's Shadowing and Sequence-to-sequence Voice Conversion](https://arxiv.org/abs/2505.24304)： 使用 A Perception-Based L2 Speech Intelligibility Indicator: Leveraging a Rater's Shadowing and Sequence-to-sequence Voice Conversion 做语音转换、说话人克隆或可控音色迁移。
+- [DS-Codec: Dual-Stage Training with Mirror-to-NonMirror Architecture Switching for Speech Codec](https://arxiv.org/abs/2505.24314)： 用 Mirror-to-NonMirror Architecture Switching for Speech Codec 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [ACE-Step: A Step Towards Music Generation Foundation Model](https://arxiv.org/abs/2506.00045)： 用 A Step Towards Music Generation Foundation Model 做音乐生成、伴奏生成或音频条件作曲。
 - [OWSM v4](https://arxiv.org/abs/2506.00338)：通过数据扩展与清洗改进开放 Whisper-style 语音模型。
+- [RPRA-ADD: Forgery Trace Enhancement-Driven Audio Deepfake Detection](https://arxiv.org/abs/2506.00375)： 使用 Forgery Trace Enhancement-Driven Audio Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Causal Structure Discovery for Error Diagnostics of Children's ASR](https://arxiv.org/abs/2506.00402)： 使用 Causal Structure Discovery for Error Diagnostics of Children's ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Learning to Upsample and Upmix Audio in the Latent Domain](https://arxiv.org/abs/2506.00681)： 使用 Learning to Upsample and Upmix Audio in the Latent Domain 做语音、音频或口语语言建模。
+- [HASRD: Hierarchical Acoustic and Semantic Representation Disentanglement](https://arxiv.org/abs/2506.00843)： 使用 Hierarchical Acoustic and Semantic Representation Disentanglement 学习语音或音频表征，服务下游识别与生成任务。
+- [CoVoMix2: Advancing Zero-Shot Dialogue Generation with Fully Non-Autoregressive Flow Matching](https://arxiv.org/abs/2506.00885)：用全非自回归 flow matching 实现零样本多说话人对话生成，改善语音合成中的重叠语音和说话人一致性。
 - [NTPP](https://arxiv.org/abs/2506.00975)：面向双通道口语对话的生成式语音语言建模范式，使用 next-token-pair prediction。
+- [Few-step Adversarial Schrödinger Bridge for Generative Speech Enhancement](https://arxiv.org/abs/2506.01460)： 使用 Few-step Adversarial Schrödinger Bridge for Generative Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Silence is Golden: Leveraging Adversarial Examples to Nullify Audio Control in LDM-based Talking-Head Generation](https://arxiv.org/abs/2506.01591)： 使用 Leveraging Adversarial Examples to Nullify Audio Control in LDM-based Talking-Head Generation 做语音驱动 talking-head、面部动画或共语手势生成。
+- [Learning More with Less: Self-Supervised Approaches for Low-Resource Speech Emotion Recognition](https://arxiv.org/abs/2506.02059)： 用 Low-Resource Speech Emotion Recognition 建模语音情感、副语言线索或情感对话。
+- [Investigating the Reasonable Effectiveness of Speaker Pre-Trained Models and their Synergistic Power for SingMOS Prediction](https://arxiv.org/abs/2506.02232)： 使用 Investigating the Reasonable Effectiveness of Speaker Pre-Trained Models and their Synergistic Power for SingMOS 做语音、音频或口语语言建模。
+- [StarVC: A Unified Auto-Regressive Framework for Joint Text and Speech Generation in Voice Conversion](https://arxiv.org/abs/2506.02414)： 用 Joint Text and Speech Generation in Voice Conversion 做语音转换、说话人克隆或语音编辑。
+- [Prompt-Unseen-Emotion: Zero-shot Expressive Speech Synthesis with Prompt-LLM Contextual Knowledge for Mixed Emotions](https://arxiv.org/abs/2506.02742)： 使用 Prompt-LLM Contextual Knowledge for Mixed Emotions 改进文本转语音、韵律控制或零样本声音生成。
+- [Exploring listeners' perceptions of AI-generated and human-composed music for functional emotional applications](https://arxiv.org/abs/2506.02856)： 使用 Exploring listeners' perceptions of AI-generated and human-composed music for functional emotional applications 做音乐生成、伴奏生成或音频条件作曲。
+- [PartialEdit: Identifying Partial Deepfakes in the Era of Neural Speech Editing](https://arxiv.org/abs/2506.02958)： 用 Identifying Partial Deepfakes in the Era of Neural Speech Editing 检测音频深伪、欺骗攻击或声音真实性问题。
+- [TalkingMachines: Real-Time Audio-Driven FaceTime-Style Video via Autoregressive Diffusion Models](https://arxiv.org/abs/2506.03099)： 使用 Autoregressive Diffusion Models 做语音、音频或口语语言建模。
+- [HYFuse: Aligning Heterogeneous Speech Pre-Trained Representations in Hyperbolic Space for Speech Emotion Recognition](https://arxiv.org/abs/2506.03403)： 使用 Aligning Heterogeneous Speech Pre-Trained Representations in Hyperbolic Space for Speech Emotion Recognition 做语音情感、副语言或情感对话建模。
+- [Sounding that Object: Interactive Object-Aware Image to Audio Generation](https://arxiv.org/abs/2506.04214)： 使用 Interactive Object-Aware Image to Audio Generation 做文本到音频、音效或 Foley 声音生成。
 - [SLM-S2ST](https://arxiv.org/abs/2506.04392)：构建用于直接语音到语音翻译的多模态语言模型。
 - [Efficient speech-text joint decoding](https://arxiv.org/abs/2506.04518)：提升单一 speech language model 内语音与文本联合解码效率。
+- [LESS: Large Language Model Enhanced Semi-Supervised Learning for Speech Foundational Models](https://arxiv.org/abs/2506.04586)： 使用 Large Language Model Enhanced Semi-Supervised Learning for Speech Foundational Models 做语音、音频或口语语言建模。
+- [A Practitioner's Guide to Building ASR Models for Low-Resource Languages: A Case Study on Scottish Gaelic](https://arxiv.org/abs/2506.04915)： 使用 A Practitioner's Guide to Building ASR Models for Low-Resource Languages: A Case Study on 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [AudioLens: A Closer Look at Auditory Attribute Perception of Large Audio-Language Models](https://arxiv.org/abs/2506.05140)：分析大型音频语言模型如何内部表征听觉属性，为音频模型设计提供依据。
+- [Low-Resource Domain Adaptation for Speech LLMs via Text-Only Fine-Tuning](https://arxiv.org/abs/2506.05671)：通过纯文本微调和对齐检查，让 speech LLM 适配低资源领域。
+- [TADA: Training-free Attribution and Out-of-Domain Detection of Audio Deepfakes](https://arxiv.org/abs/2506.05802)：基于预训练语音表示与 k 近邻结构，免训练完成音频 deepfake 来源归因和未知生成器检测。
+- [Neural Spectral Band Generation for Audio Coding](https://arxiv.org/abs/2506.06732)： 使用 Neural Spectral Band Generation for Audio Coding 做神经音频编码、离散语音 token 或 codec 语言建模。
 - [Audio-aware decoding for large audio-language models](https://arxiv.org/abs/2506.07233)：通过音频感知解码降低大型音频语言模型中的对象幻觉。
+- [Speech Recognition on TV Series with Video-guided Post-Correction](https://arxiv.org/abs/2506.07323)： 用 Video-guided Post-Correction 改进 ASR、多语种转写或抗噪语音识别。
+- [SongBloom: Coherent Song Generation via Interleaved Autoregressive Sketching and Diffusion Refinement](https://arxiv.org/abs/2506.07634)：把自回归草图扩展与扩散细化交替结合，先短到长扩展歌曲结构，再由粗到细打磨细节，用于生成完整歌曲。
+- [PHRASED: Phrase Dictionary Biasing for Speech Translation](https://arxiv.org/abs/2506.09175)： 使用 Phrase Dictionary Biasing for Speech Translation 做语音翻译、同时翻译或 code-switching 语音理解。
+- [BemaGANv2: Discriminator Combination Strategies for GAN-based Vocoders in Long-Term Audio Generation](https://arxiv.org/abs/2506.09487)： 用 GAN-based Vocoders in Long-Term Audio Generation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Incorporating Linguistic Constraints from External Knowledge Source for Audio-Visual Target Speech Extraction](https://arxiv.org/abs/2506.09792)： 使用 External Knowledge Source for Audio-Visual Target Speech Extraction 做视听语音、事件或场景建模。
+- [Fine-Grained control over Music Generation with Activation Steering](https://arxiv.org/abs/2506.10225)： 使用 Activation Steering 做音乐生成、伴奏生成或音频条件作曲。
+- [RT-VC: Real-Time Zero-Shot Voice Conversion with Speech Articulatory Coding](https://arxiv.org/abs/2506.10289)： 使用 Speech Articulatory Coding 做语音转换、说话人克隆或可控音色迁移。
+- [Can Sound Replace Vision in LLaVA With Token Substitution?](https://arxiv.org/abs/2506.10416)：构建细粒度视听对齐评分数据，用 superaligned 表征测试音频 token 是否能在 LLaVA 式检索与生成中替代视觉 token。
+- [A Self-Refining Framework for Enhancing ASR Using TTS-Synthesized Data](https://arxiv.org/abs/2506.11130)： 使用 TTS-Synthesized Data 改进文本转语音、韵律控制或零样本声音生成。
+- [S2ST-Omni: Hierarchical Language-Aware SpeechLLM Adaptation for Multilingual Speech-to-Speech Translation](https://arxiv.org/abs/2506.11160)：通过层次化语言感知建模适配 SpeechLLM 做多语言语音到语音翻译，强化不依赖文本中转的直接语音翻译能力。
+- [CMT-LLM: Contextual Multi-Talker ASR Utilizing Large Language Models](https://arxiv.org/abs/2506.12059)： 使用 Contextual Multi-Talker ASR Utilizing Large Language Models 改进自动语音识别、多语种 ASR 或抗噪转写。
 - [ViSAGe](https://arxiv.org/abs/2506.12199)：从视频输入生成空间音频。
+- [SSLAM: Enhancing Self-Supervised Models with Audio Mixtures for Polyphonic Soundscapes](https://arxiv.org/abs/2506.12222)： 使用 Audio Mixtures for Polyphonic Soundscapes 学习语音或音频表征，服务下游识别与生成任务。
+- [StreamMel: Real-Time Zero-Shot Text-to-Speech Via Interleaved Continuous Autoregressive Modeling](https://arxiv.org/abs/2506.12570)： 用 Interleaved Continuous Autoregressive Modeling 改进文本转语音、韵律控制或零样本声音生成。
+- [Video-Guided Text-to-Music Generation Using Public Domain Movie Collections](https://arxiv.org/abs/2506.12573)：利用公共领域电影集合，以视觉语境引导文本到音乐生成。
+- [ZipVoice: Fast and High-Quality Zero-Shot Text-to-Speech with Flow Matching](https://arxiv.org/abs/2506.13053)：构建紧凑的流匹配零样本文本转语音模型，在保持语音质量的同时提升推理速度。
+- [Bi-directional Context-Enhanced Speech Large Language Models for Multilingual Conversational ASR](https://arxiv.org/abs/2506.13396)：为 speech large language models 引入双向上下文，服务多语言会话 ASR。
+- [Qwen vs. Gemma Integration with Whisper: A Comparative Study in Multilingual SpeechLLM Systems](https://arxiv.org/abs/2506.13596)： 使用 Whisper: A Comparative Study in Multilingual SpeechLLM Systems 改进自动语音识别、多语种 ASR 或抗噪转写。
 - [Stream-Omni](https://arxiv.org/abs/2506.13642)：用按模态设计的对齐机制连接视觉、语音和文本，使一个语言-视觉-语音模型支持同步多模态交互。
+- [Pushing the Performance of Synthetic Speech Detection with Kolmogorov-Arnold Networks and Self-Supervised Learning Models](https://arxiv.org/abs/2506.14153)： 使用 Kolmogorov-Arnold Networks and Self-Supervised Learning Models 学习语音或音频表征，服务下游识别与生成任务。
+- [Can we train ASR systems on Code-switch without real code-switch data? Case study for Singapore's languages](https://arxiv.org/abs/2506.14177)： 使用 Can we train ASR systems on Code-switch without real code-switch data? Case study for 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [AsyncSwitch: Asynchronous Text-Speech Adaptation for Code-Switched ASR](https://arxiv.org/abs/2506.14190)：先用大规模 code-switch 文本预暴露 ASR 解码器，再用少量语音-文本对齐编码器与解码器，降低混语 ASR 适配成本。
+- [Thinking in Directivity: Speech Large Language Model for Multi-Talker Directional Speech Recognition](https://arxiv.org/abs/2506.14973)：利用智能眼镜麦克风阵列训练 directional-SpeechLlama，并用序列化方向输出训练和对比方向增强实现定向识别、定位与旁人串音抑制。
+- [EmojiVoice: Towards long-term controllable expressivity in robot speech](https://arxiv.org/abs/2506.15085)： 用 long-term controllable expressivity in robot speech 建模语音、音频或口语语言行为。
+- [SonicVerse: Multi-Task Learning for Music Feature-Informed Captioning](https://arxiv.org/abs/2506.15154)： 使用 Multi-Task Learning for Music Feature-Informed Captioning 做音乐生成、伴奏生成或音频条件作曲。
 - [Sonic4D](https://arxiv.org/abs/2506.15759)：为沉浸式 4D 场景探索生成空间音频。
+- [EDNet: A Versatile Speech Enhancement Framework With Gating Mamba Mechanism and Phase Shift-Invariant Training](https://arxiv.org/abs/2506.16231)： 使用 Gating Mamba Mechanism and Phase Shift-Invariant Training 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Optimizing Multilingual Text-To-Speech with Accents & Emotions](https://arxiv.org/abs/2506.16310)： 使用 Accents & Emotions 改进文本转语音、韵律控制或零样本声音生成。
+- [Towards Bitrate-Efficient and Noise-Robust Speech Coding with Variable Bitrate RVQ](https://arxiv.org/abs/2506.16538)： 使用 Variable Bitrate RVQ 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [LM-SPT: LM-Aligned Semantic Distillation for Speech Tokenization](https://arxiv.org/abs/2506.16738)： 使用 LM-Aligned Semantic Distillation for Speech Tokenization 做语音、音频或口语语言建模。
+- [ITO-Master: Inference-Time Optimization for Audio Effects Modeling of Music Mastering Processors](https://arxiv.org/abs/2506.16889)： 用 Audio Effects Modeling of Music Mastering Processors 做音乐生成、伴奏生成或音频条件作曲。
+- [Instituto de Telecomunicações at IWSLT 2025: Aligning Small-Scale Speech and Language Models for Speech-to-Text Learning](https://arxiv.org/abs/2506.17019)： 用 Speech-to-Text Learning 学习语音或音频表征，服务识别、理解或生成。
 - [OpusLM](https://arxiv.org/abs/2506.17611)：提出一组开放统一的 speech language models。
+- [CultureMERT: Continual Pre-Training for Cross-Cultural Music Representation Learning](https://arxiv.org/abs/2506.17818)： 使用 Continual Pre-Training for Cross-Cultural Music Representation Learning 做音乐生成、伴奏生成或音频条件作曲。
+- [End-to-End Spoken Grammatical Error Correction](https://arxiv.org/abs/2506.18532)： 使用 End-to-End Spoken Grammatical Error Correction 做语音、音频或口语语言建模。
+- [USAD: Universal Speech and Audio Representation via Distillation](https://arxiv.org/abs/2506.18843)： 使用 Distillation 学习语音或音频表征，服务下游识别与生成任务。
+- [Let Your Video Listen to Your Music! -- Beat-Aligned, Content-Preserving Video Editing with Arbitrary Music](https://arxiv.org/abs/2506.18881)： 用 Arbitrary Music 做可控音乐编辑、补全或音轨插入。
+- [Step-by-Step Video-to-Audio Synthesis via Negative Audio Guidance](https://arxiv.org/abs/2506.20995)：用 negative audio guidance 逐步补全视频中缺失的声音事件，避免重复已有声源，并可从单参考视听数据训练。
+- [Post-Training for Deepfake Speech Detection](https://arxiv.org/abs/2506.21090)：将 post-training 用于深度伪造语音检测，补充语音真实性检测模型线。
 - [Aligning Spoken Dialogue Models from User Interactions](https://arxiv.org/abs/2506.21463)：用用户交互偏好对齐 spoken-dialogue models。
+- [Adapting Whisper for Parameter-efficient Code-Switching Speech Recognition via Soft Prompt Tuning](https://arxiv.org/abs/2506.21576)：用 soft prompt tuning 让 Whisper 适配 code-switching ASR，在降低完整微调成本的同时提升低资源混合语言识别。
+- [Language-Aware Prompt Tuning for Parameter-Efficient Seamless Language Expansion in Multilingual ASR](https://arxiv.org/abs/2506.21577)： 使用 Language-Aware Prompt Tuning for Parameter-Efficient Seamless Language Expansion in Multilingual ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Mettle: Meta-Token Learning for Memory-Efficient Audio-Visual Adaptation](https://arxiv.org/abs/2506.23271)： 用 Memory-Efficient Audio-Visual Adaptation 建模视听语音、事件或场景。
+- [Human-CLAP: Human-perception-based Contrastive Language-audio Pretraining](https://arxiv.org/abs/2506.23553)： 使用 Human-perception-based Contrastive Language-audio Pretraining 对齐音频与文本表征，服务音频语言理解。
+- [Scaling Under-Resourced TTS: A Data-Optimized Framework with Advanced Acoustic Modeling for Thai](https://doi.org/10.18653/v1/2025.acl-industry.42)： 使用 Advanced Acoustic Modeling for Thai 改进文本转语音、韵律控制或零样本声音生成。
+- [Mitigating Language Mismatch in SSL-Based Speaker Anonymization](https://arxiv.org/abs/2507.00458)： 使用 Mitigating Language Mismatch in SSL-Based Speaker Anonymization 做语音、音频或口语语言建模。
+- [Multi-interaction TTS toward professional recording reproduction](https://arxiv.org/abs/2507.00808)： 使用 Multi-interaction TTS toward professional recording reproduction 改进文本转语音、韵律控制或零样本声音生成。
+- [Sheep's Skin, Wolf's Deeds: Are LLMs Ready for Metaphorical Implicit Hate Speech?](https://doi.org/10.18653/v1/2025.acl-long.814)： 使用 Are LLMs Ready for Metaphorical Implicit Hate Speech? 做语音、音频或口语语言建模。
+- [MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing](https://arxiv.org/abs/2507.01384)： 用 Audio-Visual Video Parsing 建模视听语音、事件或场景。
+- [Analyzing and Mitigating Inconsistency in Discrete Speech Tokens for Neural Codec Language Models](https://doi.org/10.18653/v1/2025.acl-long.1498)： 用 Neural Codec Language Models 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Pronunciation Editing for Finnish Speech using Phonetic Posteriorgrams](https://arxiv.org/abs/2507.02115)： 使用 Phonetic Posteriorgrams 做语音、音频或口语语言建模。
+- [Spotlighting Partially Visible Cinematic Language for Video-to-Audio Generation via Self-distillation](https://arxiv.org/abs/2507.02271)： 用 Spotlighting Partially Visible Cinematic Language for Video-to-Audio Generation via Self-distillation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [De-AntiFake: Rethinking the Protective Perturbations Against Voice Cloning Attacks](https://arxiv.org/abs/2507.02606)： 使用 Rethinking the Protective Perturbations Against Voice Cloning Attacks 做语音、音频或口语语言建模。
+- [DeSTA2.5-Audio: Toward General-Purpose Large Audio Language Model With Self-Generated Cross-Modal Alignment](https://arxiv.org/abs/2507.02768)： 用 Self-Generated Cross-Modal Alignment 对齐音频与文本表征。
+- [EXPOTION: Facial Expression and Motion Control for Multimodal Music Generation](https://arxiv.org/abs/2507.04955)： 使用 Facial Expression and Motion Control for Multimodal Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Hear-Your-Click: Interactive Object-Specific Video-to-Audio Generation](https://arxiv.org/abs/2507.04959)： 使用 Interactive Object-Specific Video-to-Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Omni-Router: Sharing Routing Decisions in Sparse Mixture-of-Experts for Speech Recognition](https://arxiv.org/abs/2507.05724)： 使用 Sharing Routing Decisions in Sparse Mixture-of-Experts for Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Differentiable Reward Optimization for LLM based TTS system](https://arxiv.org/abs/2507.05911)： 用 LLM based TTS system 改进文本转语音、韵律控制或零样本声音生成。
+- [StreamUni: Achieving Streaming Speech Translation with a Unified Large Speech-Language Model](https://arxiv.org/abs/2507.07803)：补充面向流式语音翻译的统一大型语音语言模型。
 - [Audio Flamingo 3](https://arxiv.org/abs/2507.08128)：完全开放的大音频语言模型，包含统一语音、声音、音乐编码器、按需思考、长音频推理和课程式训练。
+- [RawTFNet: A Lightweight CNN Architecture for Speech Anti-Spoofing](https://arxiv.org/abs/2507.08227)： 使用 A Lightweight CNN Architecture for Speech Anti-Spoofing 做音频深伪、欺骗攻击或声音真实性检测。
+- [ILT-Iterative LoRA Training through Focus-Feedback-Fix for Multilingual Speech Recognition](https://arxiv.org/abs/2507.08477)： 用 Focus-Feedback-Fix for Multilingual Speech Recognition 改进 ASR、多语种转写或抗噪语音识别。
+- [FreeAudio: Training-Free Timing Planning for Controllable Long-Form Text-to-Audio Generation](https://arxiv.org/abs/2507.08557)：为可控长篇文本到音频生成提供免训练的时间规划方法。
+- [SemAlignVC: Enhancing zero-shot timbre conversion using semantic alignment](https://arxiv.org/abs/2507.09070)： 用 semantic alignment 建模语音、音频或口语语言行为。
+- [Mixture of LoRA Experts With Multi-Modal and Multi-Granularity LLM Generative Error Correction for Accented Speech Recognition](https://arxiv.org/abs/2507.09116)： 使用 Multi-Modal and Multi-Granularity LLM Generative Error Correction for Accented Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
 - [Continuous-Token Audio Language Modeling](https://arxiv.org/abs/2507.09834)：将语言模型式掩码下一个 token 预测扩展到连续值音频 token，用于生成式音频建模。
+- [Towards Scalable AASIST: Refining Graph Attention for Speech Deepfake Detection](https://arxiv.org/abs/2507.11777)： 使用 Refining Graph Attention for Speech Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Schrödinger Bridge Consistency Trajectory Models for Speech Enhancement](https://arxiv.org/abs/2507.11925)： 使用 Schrödinger Bridge Consistency Trajectory Models for Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Quantize More, Lose Less: Autoregressive Generation from Residually Quantized Speech Representations](https://arxiv.org/abs/2507.12197)： 用 Residually Quantized Speech Representations 学习语音或音频表征，服务识别、理解或生成。
+- [Enhancing In-Domain and Out-Domain EmoFake Detection via Cooperative Multilingual Speech Foundation Models](https://arxiv.org/abs/2507.12595)： 用 Cooperative Multilingual Speech Foundation Models 学习语音或音频表征，服务识别、理解或生成。
+- [Task-Specific Audio Coding for Machines: Machine-Learned Latent Features Are Codes for That Machine](https://arxiv.org/abs/2507.12701)：直接量化下游音频模型的中间特征，并用任务损失与 RVQ 损失联合约束，实现低于 200 bps 的机器任务导向音频编码。
+- [Autoregressive Speech Enhancement via Acoustic Tokens](https://arxiv.org/abs/2507.12825)： 使用 Acoustic Tokens 做语音增强、带宽扩展或鲁棒音频恢复。
+- [DiffRhythm+: Controllable and Flexible Full-Length Song Generation with Preference Optimization](https://arxiv.org/abs/2507.12890)：通过偏好优化实现可控、灵活的全曲歌曲生成。
+- [Conan: A Chunkwise Online Network for Zero-Shot Adaptive Voice Conversion](https://arxiv.org/abs/2507.14534)： 使用 A Chunkwise Online Network for Zero-Shot Adaptive Voice Conversion 做语音转换、说话人克隆或可控音色迁移。
+- [Multi-Sampling-Frequency Naturalness MOS Prediction Using Self-Supervised Learning Model with Sampling-Frequency-Independent Layer](https://arxiv.org/abs/2507.14647)： 使用 Self-Supervised Learning Model with Sampling-Frequency-Independent Layer 学习语音或音频表征，服务下游识别与生成任务。
+- [Frame-Level Temporal Difference Learning for Partial Deepfake Speech Detection](https://arxiv.org/abs/2507.15101)： 使用 Frame-Level Temporal Difference Learning for Partial Deepfake Speech Detection 做音频深伪、欺骗攻击或声音真实性检测。
 - [Step-Audio 2](https://arxiv.org/abs/2507.16632)：端到端多模态语音模型，结合 latent audio encoding、语言建模中的音频 token 生成和以推理为中心的强化学习。
 - [SALM](https://arxiv.org/abs/2507.16724)：使用结构化嵌入支持空间音频理解与编辑。
+- [HH-Codec: High Compression High-fidelity Discrete Neural Codec for Spoken Language Modeling](https://arxiv.org/abs/2507.18897)： 使用 High Compression High-fidelity Discrete Neural Codec for Spoken Language Modeling 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Self-Improvement for Audio Large Language Model using Unlabeled Speech](https://arxiv.org/abs/2507.20169)：在没有标注语音的目标域中，用模型解码信号筛选伪标签并结合强化学习优化来提升 audio large language model。
+- [Two Views, One Truth: Spectral and Self-Supervised Features Fusion for Robust Speech Deepfake Detection](https://arxiv.org/abs/2507.20417)： 用 Robust Speech Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Controllable Video-to-Music Generation with Multiple Time-Varying Conditions](https://arxiv.org/abs/2507.20627)：用随时间变化的视觉条件控制音乐生成，将视频驱动音频生成扩展到静态提示之外。
+- [The Risks and Detection of Overestimated Privacy Protection in Voice Anonymisation](https://arxiv.org/abs/2507.22534)： 使用 The Risks and Detection of Overestimated Privacy Protection in Voice Anonymisation 做语音、音频或口语语言建模。
+- [Adaptive Duration Model for Text Speech Alignment](https://arxiv.org/abs/2507.22612)： 使用 Adaptive Duration Model for Text Speech Alignment 做语音、音频或口语语言建模。
+- [Next Tokens Denoising for Speech Synthesis](https://arxiv.org/abs/2507.22746)： 用 Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Fusion of Modulation Spectrogram and ssl with Multi-Head Attention for Fake Speech Detection](https://arxiv.org/abs/2508.01034)： 使用 Multi-Head Attention for Fake Speech Detection 做语音、音频或口语语言建模。
+- [Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR](https://arxiv.org/abs/2508.01166)： 使用 Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Multi-Granularity Adaptive Time-Frequency Attention Framework for Audio Deepfake Detection under Real-World Communication Degradations](https://arxiv.org/abs/2508.01467)： 使用 Multi-Granularity Adaptive Time-Frequency Attention Framework for Audio Deepfake Detection under Real-World Communication Degradations 做音频深伪、欺骗攻击或声音真实性检测。
+- [Test-Time Training for Speech Enhancement](https://arxiv.org/abs/2508.01847)： 用 Speech Enhancement 增强或恢复退化语音。
+- [Neural Speech Extraction with Human Feedback](https://arxiv.org/abs/2508.03041)： 使用 Human Feedback 做语音、音频或口语语言建模。
+- [Parallel GPT: Harmonizing the Independence and Interdependence of Acoustic and Semantic Information for Zero-Shot Text-to-Speech](https://arxiv.org/abs/2508.04141)： 用 Zero-Shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [CLASP: Cross-modal Salient Anchor-based Semantic Propagation for Weakly-supervised Dense Audio-Visual Event Localization](https://arxiv.org/abs/2508.04566)： 使用 Cross-modal Salient Anchor-based Semantic Propagation for Weakly-supervised Dense Audio-Visual Event Localization 做视听语音、事件或场景建模。
+- [UniTalker: Conversational Speech-Visual Synthesis](https://arxiv.org/abs/2508.04585)： 使用 Conversational Speech-Visual Synthesis 做语音、音频或口语语言建模。
+- [REF-VC: Robust, Expressive and Fast Zero-Shot Voice Conversion with Diffusion Transformers](https://arxiv.org/abs/2508.04996)： 使用 Diffusion Transformers 做语音转换、说话人克隆或可控音色迁移。
+- [Towards Hallucination-Free Music: A Reinforcement Learning Preference Optimization Framework for Reliable Song Generation](https://arxiv.org/abs/2508.05011)：用强化学习偏好优化提升歌曲生成可靠性，把 hallucination 控制视为音频生成对齐问题。
+- [Speech LLMs in Low-Resource Scenarios: Data Volume Requirements and the Impact of Pretraining on High-Resource Languages](https://arxiv.org/abs/2508.05149)： 使用 Data Volume Requirements and the Impact of Pretraining on High-Resource Languages 学习语音或音频表征，服务下游识别与生成任务。
+- [NanoCodec: Towards High-Quality Ultra Fast Speech LLM Inference](https://arxiv.org/abs/2508.05835)：提出面向高质量超快速语音大模型推理的编解码方法。
+- [MeanAudio: Fast and Faithful Text-to-Audio Generation with Mean Flows](https://arxiv.org/abs/2508.06098)：用 MeanFlow 目标、guided velocity target、双文本编码器和 instantaneous-to-mean 课程训练，实现一次函数评估的文本到音频生成。
+- [Llasa+: Free Lunch for Accelerated and Streaming Llama-Based Speech Synthesis](https://arxiv.org/abs/2508.06262)： 用 Accelerated and Streaming Llama-Based Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Use Cases for Voice Anonymization](https://arxiv.org/abs/2508.06356)： 使用 Use Cases for Voice Anonymization 做语音、音频或口语语言建模。
+- [Whisfusion: Parallel ASR Decoding via a Diffusion Transformer](https://arxiv.org/abs/2508.07048)： 用 a Diffusion Transformer 改进 ASR、多语种转写或抗噪语音识别。
+- [AD-AVSR: Asymmetric Dual-stream Enhancement for Robust Audio-Visual Speech Recognition](https://arxiv.org/abs/2508.07608)： 用 Robust Audio-Visual Speech Recognition 改进 ASR、多语种转写或抗噪语音识别。
 - [Audio-Thinker](https://arxiv.org/abs/2508.08039)：面向大音频语言模型的强化学习框架，使用自适应 think-accuracy reward 和外部反馈。
+- [Optimal Transport Regularization for Speech Text Alignment in Spoken Language Models](https://arxiv.org/abs/2508.08131)：把 SLM 训练中的语音-文本对齐形式化为最优传输计划，并把对应正则损失加入训练以提升跨数据集泛化。
+- [Exploring Disentangled Neural Speech Codecs from Self-Supervised Representations](https://arxiv.org/abs/2508.08399)： 用 Self-Supervised Representations 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Fake-Mamba: Real-Time Speech Deepfake Detection Using Bidirectional Mamba as Self-Attention’s Alternative](https://arxiv.org/abs/2508.09294)： 用 Bidirectional Mamba as Self-Attention’s Alternative 检测音频深伪、欺骗攻击或声音真实性问题。
+- [UtterTune: LoRA-Based Target-Language Pronunciation Edit and Control in Multilingual Text-to-Speech](https://arxiv.org/abs/2508.09767)：用基于 LoRA 的编辑控制多语言文本转语音中的目标语言发音。
+- [Exploring Cross-Utterance Speech Contexts for Conformer-Transducer Speech Recognition Systems](https://arxiv.org/abs/2508.10456)： 使用 Exploring Cross-Utterance Speech Contexts for Conformer-Transducer Speech Recognition Systems 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Fake Speech Wild: Detecting Deepfake Speech on Social Media Platform](https://arxiv.org/abs/2508.10559)： 用 Detecting Deepfake Speech on Social Media Platform 检测音频深伪、欺骗攻击或声音真实性问题。
+- [LD-LAudio-V1: Video-to-Long-Form-Audio Generation Extension with Dual Lightweight Adapters](https://arxiv.org/abs/2508.11074)： 用 Dual Lightweight Adapters 生成文本条件音频、Foley 音效或视频对齐声音。
+- [MoE-TTS: Enhancing Out-of-Domain Text Understanding for Description-based TTS via Mixture-of-Experts](https://arxiv.org/abs/2508.11326)： 使用 Mixture-of-Experts 改进文本转语音、韵律控制或零样本声音生成。
+- [Representing Speech Through Autoregressive Prediction of Cochlear Tokens](https://arxiv.org/abs/2508.11598)： 使用 Autoregressive Prediction of Cochlear Tokens 做语音、音频或口语语言建模。
+- [FNH-TTS: A Fast, Natural, and Human-Like Speech Synthesis System with advanced prosodic modeling based on Mixture of Experts](https://arxiv.org/abs/2508.12001)： 用 advanced prosodic modeling based on Mixture of Experts 改进文本转语音、韵律控制或零样本声音生成。
+- [HuBERT-VIC: Improving Noise-Robust Automatic Speech Recognition of Speech Foundation Model via Variance-Invariance-Covariance Regularization](https://arxiv.org/abs/2508.12292)： 用 Variance-Invariance-Covariance Regularization 改进 ASR、多语种转写或抗噪语音识别。
+- [Cryfish: On deep audio analysis with Large Language Models](https://arxiv.org/abs/2508.12666)： 用 Large Language Models 学习语音或音频表征，服务识别、理解或生成。
 - [FoleySpace](https://arxiv.org/abs/2508.12918)：生成与视觉内容对齐的双耳空间音频。
+- [Rapidly Adapting to New Voice Spoofing: Few-Shot Detection of Synthesized Speech Under Distribution Shifts](https://arxiv.org/abs/2508.13320)： 用 Rapidly Adapting to New Voice Spoofing: Few-Shot Detection of Synthesized Speech Under Distribution Shifts 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Long-Context Speech Synthesis with Context-Aware Memory](https://arxiv.org/abs/2508.14713)： 用 Context-Aware Memory 改进文本转语音、韵律控制或零样本声音生成。
+- [Mitigating Hallucinations in LM-Based TTS Models via Distribution Alignment Using GFlowNets](https://arxiv.org/abs/2508.15442)： 使用 Distribution Alignment Using GFlowNets 改进文本转语音、韵律控制或零样本声音生成。
+- [DualMark: Identifying Model and Training Data Origins in Generated Audio](https://arxiv.org/abs/2508.15521)： 用 Identifying Model and Training Data Origins in Generated Audio 构造语音或音频数据生成与适配信号。
+- [MGSC: A Multi-granularity Consistency Framework for Robust End-to-end Asr](https://arxiv.org/abs/2508.15853)： 使用 A Multi-granularity Consistency Framework for Robust End-to-end Asr 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [QvTAD: Differential Relative Attribute Learning for Voice Timbre Attribute Detection](https://arxiv.org/abs/2508.15931)： 使用 Differential Relative Attribute Learning for Voice Timbre Attribute Detection 做语音、音频或口语语言建模。
+- [Benchmarking Training Paradigms, Dataset Composition, and Model Scaling for Child ASR in ESPnet](https://arxiv.org/abs/2508.16576)： 使用 Benchmarking Training Paradigms, Dataset Composition, and Model Scaling for Child ASR in ESPnet 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Improving Noise Robust Audio-Visual Speech Recognition via Router-Gated Cross-Modal Feature Fusion](https://arxiv.org/abs/2508.18734)： 用 Router-Gated Cross-Modal Feature Fusion 改进 ASR、多语种转写或抗噪语音识别。
+- [VibeVoice Technical Report](https://arxiv.org/abs/2508.19205)：提出 next-token diffusion 语音模型与连续语音 tokenizer，支持最长 90 分钟的多说话人长语音合成。
+- [Audio-Guided Visual Editing with Complex Multi-Modal Prompts](https://arxiv.org/abs/2508.20379)： 用 Complex Multi-Modal Prompts 建模语音、音频或口语语言行为。
+- [Leveraging Discriminative Latent Representations for Conditioning GAN-Based Speech Enhancement](https://arxiv.org/abs/2508.20859)： 使用 Leveraging Discriminative Latent Representations for Conditioning GAN-Based Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Learning Robust Spatial Representations from Binaural Audio through Feature Distillation](https://arxiv.org/abs/2508.20914)： 用 Feature Distillation 学习语音或音频表征，服务识别、理解或生成。
+- [SAFE Audio Deepfake System](https://arxiv.org/abs/2508.20983)：整合多语数据以提升 SAFE challenge 场景中的音频深伪检测鲁棒性。
+- [Generalizable Audio Spoofing Detection using Non-Semantic Representations](https://arxiv.org/abs/2509.00186)： 使用 Non-Semantic Representations 做音频深伪、欺骗攻击或声音真实性检测。
+- [MPO: Multidimensional Preference Optimization for Language Model-based Text-to-Speech](https://arxiv.org/abs/2509.00685)： 使用 Multidimensional Preference Optimization for Language Model-based Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
 - [AHAMask](https://arxiv.org/abs/2509.01787)：在无显式指令时提升大型音频语言模型的任务指定可靠性。
+- [Analysis of Speaker Verification Performance Trade-Offs with Neural Audio Codec Transmission](https://arxiv.org/abs/2509.02771)： 使用 Neural Audio Codec Transmission 做说话人验证、识别或说话人表征建模。
+- [Multi-level SSL Feature Gating for Audio Deepfake Detection](https://arxiv.org/abs/2509.03409)： 使用 Multi-level SSL Feature Gating for Audio Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [STSR: High-Fidelity Speech Super-Resolution via Spectral-Transient Context Modeling](https://arxiv.org/abs/2509.03913)： 使用 Spectral-Transient Context Modeling 做语音、音频或口语语言建模。
+- [TEn-CATG:Text-Enriched Audio-Visual Video Parsing with Multi-Scale Category-Aware Temporal Graph](https://arxiv.org/abs/2509.04086)： 使用 Multi-Scale Category-Aware Temporal Graph 做视听语音、事件或场景建模。
+- [Wav2DF-TSL: Two-stage Learning with Efficient Pre-training and Hierarchical Experts Fusion for Robust Audio Deepfake Detection](https://arxiv.org/abs/2509.04161)： 使用 Efficient Pre-training and Hierarchical Experts Fusion for Robust Audio Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Denoising GER: A Noise-Robust Generative Error Correction with LLM for Speech Recognition](https://arxiv.org/abs/2509.04392)： 使用 LLM for Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Serialized Output Prompting for Large Language Model-based Multi-Talker Speech Recognition](https://arxiv.org/abs/2509.04488)： 使用 Serialized Output Prompting for Large Language Model-based Multi-Talker Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Say More with Less: Variable-Frame-Rate Speech Tokenization via Adaptive Clustering and Implicit Duration Coding](https://arxiv.org/abs/2509.04685)： 用 Adaptive Clustering and Implicit Duration Coding 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Layer-wise Analysis for Quality of Multilingual Synthesized Speech](https://arxiv.org/abs/2509.04830)： 使用 Layer-wise Analysis for Quality of Multilingual Synthesized Speech 做语音、音频或口语语言建模。
+- [Efficient Video-to-Audio Generation via Multiple Foundation Models Mapper](https://arxiv.org/abs/2509.04957)： 用 Multiple Foundation Models Mapper 生成文本条件音频、Foley 音效或视频对齐声音。
+- [An Empirical Analysis of Discrete Unit Representations in Speech Language Modeling Pre-training](https://arxiv.org/abs/2509.05359)： 使用 An Empirical Analysis of Discrete Unit Representations in Speech Language Modeling Pre-training 学习语音或音频表征，服务下游识别与生成任务。
+- [LatinX: Aligning a Multilingual TTS Model with Direct Preference Optimization](https://arxiv.org/abs/2509.05863)：用基于 WER 和说话人相似度自动标注的偏好对做 DPO，对齐多语种 voice-cloning TTS 以保留跨语言说话人身份。
 - [DreamAudio](https://arxiv.org/abs/2509.06027)：通过控制细粒度声学特征实现个性化文本到音频扩散生成。
+- [No Encore: Unlearning as Opt-Out in Music Generation](https://arxiv.org/abs/2509.06277)： 用 Unlearning as Opt-Out in Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Accelerating Diffusion Transformer-Based Text-to-Speech with Transformer Layer Caching](https://arxiv.org/abs/2509.08696)： 用 Transformer Layer Caching 改进文本转语音、韵律控制或零样本声音生成。
 - [Delayed Streams Modeling](https://arxiv.org/abs/2509.08753)：用 delayed streams 支持低延迟生成场景中的流式序列到序列学习。
+- [GmSLM : Generative Marmoset Spoken Language Modeling](https://arxiv.org/abs/2509.09198)： 使用 Generative Marmoset Spoken Language Modeling 做语音、音频或口语语言建模。
+- [Bona fide Cross Testing Reveals Weak Spot in Audio Deepfake Detection Systems](https://arxiv.org/abs/2509.09204)： 用 Bona fide Cross Testing Reveals Weak Spot in Audio Deepfake Detection Systems 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Whisper Has an Internal Word Aligner](https://arxiv.org/abs/2509.09987)： 使用 Whisper Has an Internal Word Aligner 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Length-Aware Rotary Position Embedding for Text-Speech Alignment](https://arxiv.org/abs/2509.11084)： 使用 Length-Aware Rotary Position Embedding for Text-Speech Alignment 做语音、音频或口语语言建模。
+- [FuseCodec: Semantic-Contextual Fusion and Supervision for Neural Codecs](https://arxiv.org/abs/2509.11425)： 用 Neural Codecs 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Improving Out-of-Domain Audio Deepfake Detection via Layer Selection and Fusion of SSL-Based Countermeasures](https://arxiv.org/abs/2509.12003)： 使用 Layer Selection and Fusion of SSL-Based Countermeasures 做音频深伪、欺骗攻击或声音真实性检测。
+- [MSR-Codec: A Low-Bitrate Multi-Stream Residual Codec for High-Fidelity Speech Generation with Information Disentanglement](https://arxiv.org/abs/2509.13068)： 用 Information Disentanglement 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [GLAD: Global-Local Aware Dynamic Mixture-of-Experts for Multi-Talker ASR](https://arxiv.org/abs/2509.13093)： 用 Multi-Talker ASR 改进 ASR、多语种转写或抗噪语音识别。
+- [Self-Guided Target Sound Extraction and Classification Through Universal Sound Separation Model and Multiple Clues](https://arxiv.org/abs/2509.13741)： 使用 Universal Sound Separation Model and Multiple Clues 做语音分离或多源音频重建。
+- [Context-Enhanced Granular Edit Representation for Efficient and Accurate ASR Post-editing](https://arxiv.org/abs/2509.14263)： 用 Efficient and Accurate ASR Post-editing 改进 ASR、多语种转写或抗噪语音识别。
+- [SpeechOp: Inference-Time Task Composition for Generative Speech Processing](https://arxiv.org/abs/2509.14298)： 用 Generative Speech Processing 建模语音、音频或口语语言行为。
+- [Cross-Lingual F5-TTS: Towards Language-Agnostic Voice Cloning and Speech Synthesis](https://arxiv.org/abs/2509.14579)： 用 Language-Agnostic Voice Cloning and Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Towards Human-like Multimodal Conversational Agent by Generating Engaging Speech](https://arxiv.org/abs/2509.14627)： 使用 Generating Engaging Speech 做语音、音频或口语语言建模。
+- [Spatial Audio Motion Understanding and Reasoning](https://arxiv.org/abs/2509.14666)：先用空间音频编码器估计事件、方向和距离，再把结构化空间属性输入 LLM 来回答移动声源推理问题。
+- [How Does Instrumental Music Help SingFake Detection?](https://arxiv.org/abs/2509.14675)： 使用 How Does Instrumental Music Help SingFake Detection? 做音乐生成、伴奏生成或音频条件作曲。
+- [DAIEN-TTS: Disentangled Audio Infilling for Environment-Aware Text-to-Speech Synthesis](https://arxiv.org/abs/2509.14684)： 使用 Disentangled Audio Infilling for Environment-Aware Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [MELA-TTS: Joint Transformer-Diffusion Model with Representation Alignment for Speech Synthesis](https://arxiv.org/abs/2509.14784)： 使用 Representation Alignment for Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Towards Building Speech Large Language Models for Multitask Understanding in Low-Resource Languages](https://arxiv.org/abs/2509.14804)： 使用 Towards Building Speech Large Language Models for Multitask Understanding in Low-Resource Languages 做语音、音频或口语语言建模。
+- [Speech Language Models for Under-Represented Languages: Insights from Wolof](https://arxiv.org/abs/2509.15362)： 用 Speech Language Models for Under-Represented Languages: Insights from Wolof 学习语音或音频表征，服务识别、理解或生成。
+- [Beyond Video-to-SFX: Video to Audio Synthesis with Environmentally Aware Speech](https://arxiv.org/abs/2509.15492)： 用 Environmentally Aware Speech 生成文本条件音频、Foley 音效或视频对齐声音。
+- [AFT: An Exemplar-Free Class Incremental Learning Method for Environmental Sound Classification](https://arxiv.org/abs/2509.15523)： 使用 An Exemplar-Free Class Incremental Learning Method for Environmental Sound Classification 做语音、音频或口语语言建模。
 - [Thinking in Cocktail Party](https://arxiv.org/abs/2509.15612)：将链式思维和强化学习用于目标说话人自动语音识别。
+- [The Rhythm In Anything: Audio-Prompted Drums Generation with Masked Language Modeling](https://arxiv.org/abs/2509.15625)： 使用 Masked Language Modeling 做语音、音频或口语语言建模。
+- [Deep Dubbing: End-to-End Auto-Audiobook System with Text-to-Timbre and Context-Aware Instruct-TTS](https://arxiv.org/abs/2509.15845)： 使用 Text-to-Timbre and Context-Aware Instruct-TTS 做语音、音频或口语语言建模。
+- [Sound Separation and Classification with Object and Semantic Guidance](https://arxiv.org/abs/2509.15899)： 使用 Object and Semantic Guidance 做语音分离或多源音频重建。
+- [Similarity-Guided Diffusion for Long-Gap Music Inpainting](https://arxiv.org/abs/2509.16342)： 使用 Similarity-Guided Diffusion for Long-Gap Music Inpainting 做可控音乐编辑、补全或音轨插入。
+- [TF-CorrNet: Leveraging Spatial Correlation for Continuous Speech Separation](https://arxiv.org/abs/2509.16481)： 使用 Leveraging Spatial Correlation for Continuous Speech Separation 做语音分离或多源音频重建。
+- [An Octave-based Multi-Resolution CQT Architecture for Diffusion-based Audio Generation](https://arxiv.org/abs/2509.16603)： 使用 An Octave-based Multi-Resolution CQT Architecture for Diffusion-based Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [MBCodec:Thorough disentangle for high-fidelity audio compression](https://arxiv.org/abs/2509.17006)： 使用 Thorough disentangle for high-fidelity audio compression 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Bridging the gap between training and inference in LM-based TTS models](https://arxiv.org/abs/2509.17021)： 用 Bridging the gap between training and inference in LM-based TTS models 改进文本转语音、韵律控制或零样本声音生成。
+- [Sidon: Fast and Robust Open-Source Multilingual Speech Restoration for Large-scale Dataset Cleansing](https://arxiv.org/abs/2509.17052)：提供用于大规模数据清洗的开源多语种语音复原模型。
 - [Qwen3-Omni](https://arxiv.org/abs/2509.17765)：采用 Thinker-Talker MoE 架构的全模态模型，统一文本、图像、音频和视频感知与生成，并突出实时语音。
+- [Transformer-Encoder Trees for Efficient Multilingual Machine Translation and Speech Translation](https://arxiv.org/abs/2509.17930)： 使用 Transformer-Encoder Trees for Efficient Multilingual Machine Translation and Speech Translation 做语音翻译、同时翻译或 code-switching 语音理解。
+- [TMD-TTS: A Unified Tibetan Multi-Dialect Text-to-Speech Synthesis for Ü-Tsang, Amdo and Kham Speech Dataset Generation](https://arxiv.org/abs/2509.18060)：构建统一的藏语多方言 TTS 框架，覆盖卫藏、安多和康巴，通过方言标签和动态路由合成低资源平行语音。
 - [StereoFoley](https://arxiv.org/abs/2509.18272)：从视频生成对象感知的立体声音频。
+- [Explore the Reinforcement Learning for the LLM based ASR and TTS system](https://arxiv.org/abs/2509.18569)： 使用 Explore the Reinforcement Learning for the LLM based ASR and TTS system 改进文本转语音、韵律控制或零样本声音生成。
+- [HarmoniFuse: A Component-Selective and Prompt-Adaptive Framework for Multi-Task Speech Language Modeling](https://arxiv.org/abs/2509.18570)： 用 Multi-Task Speech Language Modeling 学习语音或音频表征，服务识别、理解或生成。
+- [Enhancing Noise Robustness for Neural Speech Codecs Through Resource-Efficient Progressive Quantization Perturbation Simulation](https://arxiv.org/abs/2509.19025)： 使用 Resource-Efficient Progressive Quantization Perturbation Simulation 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [ArtiFree: Detecting and Reducing Generative Artifacts in Diffusion-based Speech Enhancement](https://arxiv.org/abs/2509.19495)： 使用 Detecting and Reducing Generative Artifacts in Diffusion-based Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [PART: Progressive Alignment Representation Training for Multilingual Speech-To-Text with LLMs](https://arxiv.org/abs/2509.19745)： 用 Progressive Alignment Representation Training for Multilingual Speech-To-Text with LLMs 学习语音或音频表征，服务识别、理解或生成。
+- [CoMelSinger: Discrete Token-Based Zero-Shot Singing Synthesis With Structured Melody Control and Guidance](https://arxiv.org/abs/2509.19883)： 用 Structured Melody Control and Guidance 建模语音、音频或口语语言行为。
+- [WEST: LLM based Speech Toolkit for Speech Understanding, Generation, and Interaction](https://arxiv.org/abs/2509.19902)： 用 Speech Understanding, Generation, and Interaction 学习语音或音频表征，服务识别、理解或生成。
+- [Investigating Modality Contribution in Audio LLMs for Music](https://arxiv.org/abs/2509.20641)： 使用 Investigating Modality Contribution in Audio LLMs for Music 做音乐生成、伴奏生成或音频条件作曲。
+- [Addressing Gradient Misalignment in Data-Augmented Training for Robust Speech Deepfake Detection](https://arxiv.org/abs/2509.20682)： 使用 Addressing Gradient Misalignment in Data-Augmented Training for Robust Speech Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [The Impact of Audio Watermarking on Audio Anti-Spoofing Countermeasures](https://arxiv.org/abs/2509.20736)： 用 The Impact of Audio Watermarking on Audio Anti-Spoofing Countermeasures 为生成语音或音频加入可追踪水印。
+- [SPADE: Structured Pruning and Adaptive Distillation for Efficient LLM-TTS](https://arxiv.org/abs/2509.20802)： 使用 Structured Pruning and Adaptive Distillation for Efficient LLM-TTS 做语音、音频或口语语言建模。
+- [i-LAVA: Insights on Low Latency Voice-2-Voice Architecture for Agents](https://arxiv.org/abs/2509.20971)： 用 Insights on Low Latency Voice-2-Voice Architecture for Agents 建模语音、音频或口语语言行为。
 - [Guiding Audio Editing with Audio Language Model](https://arxiv.org/abs/2509.21625)：用音频语言模型分解并引导高层音频编辑指令。
+- [HuLA: Prosody-Aware Anti-Spoofing with Multi-Task Learning for Expressive and Emotional Synthetic Speech](https://arxiv.org/abs/2509.21676)： 使用 Multi-Task Learning for Expressive and Emotional Synthetic Speech 做音频深伪、欺骗攻击或声音真实性检测。
+- [Comprehend and Talk: Text to Speech Synthesis via Dual Language Modeling](https://arxiv.org/abs/2509.22062)： 用 Dual Language Modeling 改进文本转语音、韵律控制或零样本声音生成。
+- [DiaMoE-TTS: A Unified IPA-Based Dialect TTS Framework with Mixture-of-Experts and Parameter-Efficient Zero-Shot Adaptation](https://arxiv.org/abs/2509.22727)： 使用 Mixture-of-Experts and Parameter-Efficient Zero-Shot Adaptation 改进文本转语音、韵律控制或零样本声音生成。
+- [Generalizable Speech Deepfake Detection via Information Bottleneck Enhanced Adversarial Alignment](https://arxiv.org/abs/2509.23618)： 使用 Information Bottleneck Enhanced Adversarial Alignment 做音频深伪、欺骗攻击或声音真实性检测。
+- [Game-Oriented ASR Error Correction via RAG-Enhanced LLM](https://arxiv.org/abs/2509.23630)： 使用 RAG-Enhanced LLM 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [AudioMoG: Guiding Audio Generation with Mixture-of-Guidance](https://arxiv.org/abs/2509.23727)： 使用 Mixture-of-Guidance 做文本到音频、音效或 Foley 声音生成。
+- [Code-Switching Speech Recognition Under the Lens: Model- and Data-Centric Perspectives](https://arxiv.org/abs/2509.24310)：从模型与数据两侧分析 code-switching ASR，并用简化等价约束提示生成更合乎语言规律的混合语文本，服务于 TTS 语音数据增强。
+- [A Text-To-Text Alignment Algorithm for Better Evaluation of Modern Speech Recognition Systems](https://arxiv.org/abs/2509.24478)：提出用于更可靠评测现代语音识别输出的文本对齐算法。
+- [Training-Free Multimodal Guidance for Video to Audio Generation](https://arxiv.org/abs/2509.24550)： 使用 Training-Free Multimodal Guidance for Video to Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Word-Level Emotional Expression Control in Zero-Shot Text-to-Speech Synthesis](https://arxiv.org/abs/2509.24629)： 用 Word-Level Emotional Expression Control in Zero-Shot Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [VSSFlow: Unifying Video-conditioned Sound and Speech Generation via Joint Learning](https://arxiv.org/abs/2509.24773)： 用 Joint Learning 建模语音、音频或口语语言行为。
+- [VoiceBridge: General Speech Restoration with One-step Latent Bridge Models](https://arxiv.org/abs/2509.25275)： 使用 One-step Latent Bridge Models 做语音、音频或口语语言建模。
+- [Plug-and-Play Emotion Graphs for Compositional Prompting in Zero-Shot Speech Emotion Recognition](https://arxiv.org/abs/2509.25458)： 用 Compositional Prompting in Zero-Shot Speech Emotion Recognition 建模语音情感、副语言线索或情感对话。
+- [MARS: Sound Generation via Multi-Channel Autoregression on Spectrograms](https://arxiv.org/abs/2509.26007)： 使用 Multi-Channel Autoregression on Spectrograms 做文本到音频、音效或 Foley 声音生成。
+- [Scaling Spoken Language Models with Syllabic Speech Tokenization](https://arxiv.org/abs/2509.26634)：系统评估约 4-5 Hz 的音节级语音 token，证明压缩 token 流能接近或超过高帧率 token，同时显著降低自注意力成本。
+- [Room Impulse Response Synthesis via Differentiable Feedback Delay Networks for Efficient Spatial Audio Rendering](https://arxiv.org/abs/2510.00238)： 使用 Differentiable Feedback Delay Networks for Efficient Spatial Audio Rendering 做语音、音频或口语语言建模。
+- [SAGE-LD: Towards Scalable and Generalizable End-to-End Language Diarization via Simulated Data Augmentation](https://arxiv.org/abs/2510.00582)： 用 Simulated Data Augmentation 做多说话人音频分割和说话人日志。
+- [Multi-bit Audio Watermarking](https://arxiv.org/abs/2510.01968)： 使用 Multi-bit Audio Watermarking 在语音和音频中嵌入或检测可追踪水印。
+- [SoundReactor: Frame-level Online Video-to-Audio Generation](https://arxiv.org/abs/2510.02110)：贡献语音或音频生成/建模方法；核心思想是提升音频系统的可控性、grounding 或跨模态同步。
+- [Flamed-TTS: Flow Matching Attention-Free Models for Efficient Generating and Dynamic Pacing Zero-shot Text-to-Speech](https://arxiv.org/abs/2510.02848)： 用 Efficient Generating and Dynamic Pacing Zero-shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [Speak, Edit, Repeat: High-Fidelity Voice Editing and Zero-Shot TTS with Cross-Attentive Mamba](https://arxiv.org/abs/2510.04738)： 使用 Cross-Attentive Mamba 改进文本转语音、韵律控制或零样本声音生成。
+- [Provable Speech Attributes Conversion via Latent Independence](https://arxiv.org/abs/2510.05191)： 使用 Latent Independence 做语音、音频或口语语言建模。
+- [Sci-Phi: A Large Language Model Spatial Audio Descriptor](https://arxiv.org/abs/2510.05542)：提出大型语言模型空间音频描述器，关联空间音频理解与描述。
+- [Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](https://arxiv.org/abs/2510.05799)： 使用 Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [StereoSync: Spatially-Aware Stereo Audio Generation from Video](https://arxiv.org/abs/2510.05828)： 使用 Video 做文本到音频、音效或 Foley 声音生成。
+- [FoleyGRAM: Video-to-Audio Generation with GRAM-Aligned Multimodal Encoders](https://arxiv.org/abs/2510.05829)： 使用 GRAM-Aligned Multimodal Encoders 做文本到音频、音效或 Foley 声音生成。
+- [MeanVC: Lightweight and Streaming Zero-Shot Voice Conversion via Mean Flows](https://arxiv.org/abs/2510.08392)： 使用 Mean Flows 做语音转换、说话人克隆或可控音色迁移。
+- [SynthVC: Leveraging Synthetic Data for End-to-End Low Latency Streaming Voice Conversion](https://arxiv.org/abs/2510.09245)： 使用 Leveraging Synthetic Data for End-to-End Low Latency Streaming Voice Conversion 做语音转换、说话人克隆或可控音色迁移。
+- [Target speaker anonymization in multi-speaker recordings](https://arxiv.org/abs/2510.09307)： 使用 Target speaker anonymization in multi-speaker recordings 做语音、音频或口语语言建模。
+- [Knowledge-Decoupled Functionally Invariant Path With Synthetic Personal Data for Personalized ASR](https://arxiv.org/abs/2510.10401)： 用 Synthetic Personal Data for Personalized ASR 改进 ASR、多语种转写或抗噪语音识别。
+- [LSZone: A Lightweight Spatial Information Modeling Architecture for Real-time In-car Multi-zone Speech Separation](https://arxiv.org/abs/2510.10687)： 使用 A Lightweight Spatial Information Modeling Architecture for Real-time In-car Multi-zone Speech Separation 做语音分离或多源音频重建。
+- [Perturbation Self-Supervised Representations for Cross-Lingual Emotion TTS: Stage-Wise Modeling of Emotion and Speaker](https://arxiv.org/abs/2510.11124)： 使用 Perturbation Self-Supervised Representations for Cross-Lingual Emotion TTS: Stage-Wise Modeling of Emotion and Speaker 改进文本转语音、韵律控制或零样本声音生成。
+- [BridgeCode: A Dual Speech Representation Paradigm for Autoregressive Zero-Shot Text-to-Speech Synthesis](https://arxiv.org/abs/2510.11646)： 用 Autoregressive Zero-Shot Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [SeeingSounds: Learning Audio-to-Visual Alignment via Text](https://arxiv.org/abs/2510.11738)： 使用 Text 做语音、音频或口语语言建模。
+- [Audio Palette: A Diffusion Transformer with Multi-Signal Conditioning for Controllable Foley Synthesis](https://arxiv.org/abs/2510.12175)： 使用 Multi-Signal Conditioning for Controllable Foley Synthesis 做文本到音频、音效或 Foley 声音生成。
 - [DiSTAR](https://arxiv.org/abs/2510.12210)：将扩散与可扩展的 token 自回归表示结合，用于可控的零样本语音生成。
+- [StressTransfer: Stress-Aware Speech-to-Speech Translation with Emphasis Preservation](https://arxiv.org/abs/2510.13194)： 用 Emphasis Preservation 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [Acoustic Teleportation Via Disentangled Neural Audio Codec Representations](https://arxiv.org/abs/2510.13221)： 用 Disentangled Neural Audio Codec Representations 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Mismatch Aware Guidance for Robust Emotion Control in Auto-Regressive TTS Models](https://arxiv.org/abs/2510.13293)： 使用 Mismatch Aware Guidance for Robust Emotion Control in Auto-Regressive TTS Models 改进文本转语音、韵律控制或零样本声音生成。
+- [InteractiveOmni: A Unified Omni-modal Model for Audio-Visual Multi-turn Dialogue](https://arxiv.org/abs/2510.13747)：构建面向音视频多轮对话与语音生成的统一全模态模型。
+- [RLAIF-SPA: Structured AI Feedback for Semantic-Prosodic Alignment in Speech Synthesis](https://arxiv.org/abs/2510.14628)： 使用 Structured AI Feedback for Semantic-Prosodic Alignment in Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Beyond the Voice: Inertial Sensing of Mouth Motion for High Security Speech Verification](https://arxiv.org/abs/2510.15173)： 用 High Security Speech Verification 建模语音、音频或口语语言行为。
+- [SpeechLLMs for Large-scale Contextualized Zero-shot Slot Filling](https://arxiv.org/abs/2510.15851)： 使用 SpeechLLMs for Large-scale Contextualized Zero-shot Slot Filling 做语音、音频或口语语言建模。
+- [Audio-Visual Speech Enhancement for Spatial Audio - Spatial-VisualVoice and the MAVE Database](https://arxiv.org/abs/2510.16437)： 使用 Audio-Visual Speech Enhancement for Spatial Audio - Spatial-VisualVoice and the MAVE Database 做语音增强、带宽扩展或鲁棒音频恢复。
+- [U-Codec: Ultra Low Frame-rate Neural Speech Codec for Fast High-fidelity Speech Generation](https://arxiv.org/abs/2510.16718)： 用 Fast High-fidelity Speech Generation 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Schrödinger Bridge Mamba for One-Step Speech Enhancement](https://arxiv.org/abs/2510.16834)： 使用 Schrödinger Bridge Mamba for One-Step Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
 - [SARSteer](https://arxiv.org/abs/2510.17633)：面向大音频语言模型的推理时安全 steering 方法，把拒答向量 steering 适配到音频输入，同时缓解良性语音请求的过度拒答。
+- [MLMA: Towards Multilingual ASR With Mamba-based Architectures](https://arxiv.org/abs/2510.18684)： 用 Mamba-based Architectures 改进 ASR、多语种转写或抗噪语音识别。
+- [Adapting Language Balance in Code-Switching Speech](https://arxiv.org/abs/2510.18724)：在训练中标注并强化 code-switching 位置，缓解混合语音中的上下文偏置，并在阿拉伯语与中英混合语音设置中提升鲁棒性。
+- [AMAuT: A Flexible and Efficient Multiview Audio Transformer Framework Trained from Scratch](https://arxiv.org/abs/2510.19368)： 使用 Scratch 学习语音或音频表征，服务下游识别与生成任务。
+- [Re-evaluating Minimum Bayes Risk Decoding for Automatic Speech Recognition](https://arxiv.org/abs/2510.19471)：在英语和日语 ASR/ST 上比较 sample-based minimum Bayes risk decoding 与 beam search，显示高精度离线转写可受益于 MBR 推理。
+- [Speaking Clearly: A Simplified Whisper-Based Codec for Low-Bitrate Speech Coding](https://arxiv.org/abs/2510.20504)： 用 Low-Bitrate Speech Coding 改进 ASR、多语种转写或抗噪语音识别。
+- [PhoenixCodec: Taming Neural Speech Coding for Extreme Low-Resource Scenarios](https://arxiv.org/abs/2510.21196)：面向极低资源场景开发神经语音编码。
+- [Foley Control: Aligning a Frozen Latent Text-to-Audio Model to Video](https://arxiv.org/abs/2510.21581)：冻结 V-JEPA2 和 Stable Audio，只训练小型视频 cross-attention bridge，让文本控制全局语义、视频控制 Foley 时序和局部动态。
+- [The Limits of Data Scaling: Sub-token Utilization and Acoustic Saturation in Multilingual ASR](https://arxiv.org/abs/2510.22492)：分析 Whisper 在 49 种语言中的 sub-token 发现过程，并提出 acoustic saturation time 来刻画多语言 ASR 的 scaling 行为。
+- [SAO-Instruct: Free-form Audio Editing using Natural Language Instructions](https://arxiv.org/abs/2510.22795)： 使用 Natural Language Instructions 做提示引导或零样本音频编辑。
+- [Learning Linearity in Audio Consistency Autoencoders via Implicit Regularization](https://arxiv.org/abs/2510.23530)： 使用 Implicit Regularization 做语音、音频或口语语言建模。
+- [Bayesian Speech synthesizers Can Learn from Multiple Teachers](https://arxiv.org/abs/2510.24372)： 使用 Multiple Teachers 做语音、音频或口语语言建模。
+- [A Parameter-Efficient Multi-Scale Convolutional Adapter for Synthetic Speech Detection](https://arxiv.org/abs/2510.24852)： 用 Synthetic Speech Detection 构造语音或音频数据生成与适配信号。
 - [ALMGuard](https://arxiv.org/abs/2510.26096)：提出面向音频语言模型的 guardrail，通过识别安全对齐 shortcut 特征来防御音频特有的越狱威胁。
+- [Modeling strategies for speech enhancement in the latent space of a neural audio codec](https://arxiv.org/abs/2510.26299)： 使用 Modeling strategies for speech enhancement in the latent space of a neural audio codec 做语音增强、带宽扩展或鲁棒音频恢复。
+- [RECAST: Retrieval-Augmented Contextual ASR via Decoder-State Keyword Spotting](https://doi.org/10.18653/v1/2025.findings-emnlp.203)：用解码器状态关键词检测实现检索增强上下文 ASR。
+- [Towards Language-Agnostic STIPA: Universal Phonetic Transcription to Support Language Documentation at Scale](https://doi.org/10.18653/v1/2025.emnlp-main.1600)： 用 Universal Phonetic Transcription to Support Language Documentation at Scale 建模语音、音频或口语语言行为。
+- [FillerSpeech: Towards Human-Like Text-to-Speech Synthesis with Filler Insertion and Filler Style Control](https://doi.org/10.18653/v1/2025.emnlp-main.1730)： 使用 Filler Insertion and Filler Style Control 改进文本转语音、韵律控制或零样本声音生成。
+- [iKnow-audio: Integrating Knowledge Graphs with Audio-Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.1759)：将知识图谱与音频语言模型结合，用于知识增强的音频理解。
+- [Interleaved Instruction Tuning for Audio MLLMs](https://arxiv.org/abs/2511.02234)：评估 interleaved instruction tuning 对 audio multimodal language models 语义推理的影响。
+- [SyMuPe: Affective and Controllable Symbolic Music Performance](https://arxiv.org/abs/2511.03425)： 使用 Affective and Controllable Symbolic Music Performance 做音乐生成、伴奏生成或音频条件作曲。
+- [MIDI-LLM: Adapting Large Language Models for Text-to-MIDI Music Generation](https://arxiv.org/abs/2511.03942)： 使用 Adapting Large Language Models for Text-to-MIDI Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Ming-UniAudio: Speech LLM for Joint Understanding, Generation and Editing with Unified Representation](https://arxiv.org/abs/2511.05516)：使用融合语义和声学信息的连续 tokenizer MingTok-Audio，统一语音理解、生成和自然语言指令编辑。
+- [SPUR: A Plug-and-Play Framework for Integrating Spatial Audio Understanding and Reasoning into Large Audio-Language Models](https://arxiv.org/abs/2511.06606)：以即插即用框架把空间音频理解和推理整合进大型音频语言模型。
+- [E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis](https://arxiv.org/abs/2511.07099)： 用 Production LLM-based End-To-End Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Generating Novel and Realistic Speakers for Voice Conversion](https://arxiv.org/abs/2511.07135)： 使用 Generating Novel and Realistic Speakers for Voice Conversion 做语音转换、说话人克隆或可控音色迁移。
+- [Neural Directional Filtering Using a Compact Microphone Array](https://arxiv.org/abs/2511.07185)： 使用 a Compact Microphone Array 做语音、音频或口语语言建模。
+- [Omni-AVSR: Towards Unified Multimodal Speech Recognition with Large Language Models](https://arxiv.org/abs/2511.07253)：构建结合 LLM 的统一多模态语音识别模型，在一个框架中覆盖 audio-visual speech recognition。
+- [Diff-V2M: A Hierarchical Conditional Diffusion Model with Explicit Rhythmic Modeling for Video-to-Music Generation](https://arxiv.org/abs/2511.09090)：用带显式节奏建模的层次条件扩散做 video-to-music generation，强化时间与节拍对齐。
+- [POTSA: A Cross-Lingual Speech Alignment Framework for Speech-to-Text Translation](https://arxiv.org/abs/2511.09232)： 用 Speech-to-Text Translation 支持语音翻译、同时翻译或 code-switching 语音理解。
 - [Video Echoed in Music](https://arxiv.org/abs/2511.09585)：通过对齐视频事件与生成背景音乐之间的语义、时间与节奏线索，提升视频配乐生成质量。
+- [Towards Fine-Grained Code-Switch Speech Translation with Semantic Space Alignment](https://arxiv.org/abs/2511.10670)：用含语言专家组的 MoE speech projector、路由损失、多阶段 ASR/ST 训练和 transition loss 改进细粒度混语语音翻译。
+- [Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](https://arxiv.org/abs/2511.11039)：加入时间标记、绝对时间感知音频编码和段级 token 合并，使大型音频语言模型能处理时间定位与长音频任务。
+- [VoiceCraft-X: Unifying Multilingual, Voice-Cloning Speech Synthesis and Speech Editing](https://arxiv.org/abs/2511.12347)：在自回归神经 codec 语言模型中统一多语言零样本 TTS、声音克隆和语音编辑，并对齐文本与语音 token。
+- [PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement](https://arxiv.org/abs/2511.13300)： 用 Low-Hallucination Generative Speech Enhancement 增强或恢复退化语音。
+- [Auden-Voice: General-Purpose Voice Encoder for Speech and Language Understanding](https://arxiv.org/abs/2511.15145)： 使用 General-Purpose Voice Encoder for Speech and Language Understanding 做语音、音频或口语语言建模。
 - [Step-Audio-R1](https://arxiv.org/abs/2511.15848)：用 Modality-Grounded Reasoning Distillation 训练音频推理模型，使思维链扎根于声学证据。
+- [Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation](https://arxiv.org/abs/2511.16757)： 使用 Revisiting Audio-language Pretraining for Learning General-purpose Audio Representation 对齐音频与文本表征，服务音频语言理解。
+- [Speech Recognition Model Improves Text-to-Speech Synthesis using Fine-Grained Reward](https://arxiv.org/abs/2511.17555)： 用 Fine-Grained Reward 改进文本转语音、韵律控制或零样本声音生成。
+- [SingingSDS: A Singing-Capable Spoken Dialogue System for Conversational Roleplay Applications](https://arxiv.org/abs/2511.20972)： 用 Conversational Roleplay Applications 建模语音、音频或口语语言行为。
+- [3-Tracer: A Tri-level Temporal-Aware Framework for Audio Forgery Detection and Localization](https://arxiv.org/abs/2511.21237)：通过三粒度时序建模检测并定位音频伪造，同时关注整段真实性与伪造片段边界。
+- [Multi-Reward GRPO for Stable and Prosodic Single-Codebook TTS LLMs at Scale](https://arxiv.org/abs/2511.21270)： 使用 Multi-Reward GRPO for Stable and Prosodic Single-Codebook TTS LLMs at Scale 改进文本转语音、韵律控制或零样本声音生成。
+- [SONAR: Spectral-Contrastive Audio Residuals for Generalizable Deepfake Detection](https://arxiv.org/abs/2511.21325)： 使用 Spectral-Contrastive Audio Residuals for Generalizable Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [HarmonicAttack: An Adaptive Cross-Domain Audio Watermark Removal](https://arxiv.org/abs/2511.21577)：跨域移除音频水印，用于压力测试 AI 生成音频溯源方法的鲁棒性。
+- [Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth Extension](https://arxiv.org/abs/2511.21580)： 使用 Harmonic-Percussive Disentangled Neural Audio Codec for Bandwidth Extension 做语音增强、带宽扩展或鲁棒音频恢复。
+- [VSpeechLM: A Visual Speech Language Model for Visual Text-to-Speech Task](https://arxiv.org/abs/2511.22229)： 用 Visual Text-to-Speech Task 改进文本转语音、韵律控制或零样本声音生成。
+- [CoordSpeaker: Exploiting Gesture Captioning for Coordinated Caption-Empowered Co-Speech Gesture Generation](https://arxiv.org/abs/2511.22863)： 用 Coordinated Caption-Empowered Co-Speech Gesture Generation 生成音频字幕或学习音频语言表征。
+- [MoLT: Mixture of Layer-Wise Tokens for Efficient Audio-Visual Learning](https://arxiv.org/abs/2512.00115)： 使用 Mixture of Layer-Wise Tokens for Efficient Audio-Visual Learning 做视听语音、事件或场景建模。
+- [STCTS: Generative Semantic Compression for Ultra-Low Bitrate Speech via Explicit Text-Prosody-Timbre Decomposition](https://arxiv.org/abs/2512.00451)： 用 Explicit Text-Prosody-Timbre Decomposition 建模语音、音频或口语语言行为。
+- [Two-Dimensional Quantization for Geometry-Aware Audio Coding](https://arxiv.org/abs/2512.01537)： 用 Geometry-Aware Audio Coding 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Cross-Lingual Interleaving for Speech Language Models](https://arxiv.org/abs/2512.01865)：在无文本监督下跨语言混合离散语音 token，并构建 EN-FR spoken StoryCloze 与 TopicCloze 来评测跨语言 SLM 语义能力。
+- [Co-speech Gesture Video Generation via Motion-Based Graph Retrieval](https://arxiv.org/abs/2512.02576)： 用 Motion-Based Graph Retrieval 生成语音驱动 talking-head、面部动画或共语手势。
 - [ViSAudio](https://arxiv.org/abs/2512.03036)：进行端到端视频驱动的双耳空间音频生成。
-- [Seedance 1.5 pro](https://arxiv.org/abs/2512.13507)：提出面向语音和音频的模型侧方法，核心围绕 Native Audio-Visual Joint Generation Foundation Model。
+- [Beyond Boundary Frames: Audio-Visual Semantic Guidance for Context-Aware Video Interpolation](https://arxiv.org/abs/2512.03590)： 用 Context-Aware Video Interpolation 建模视听语音、事件或场景。
+- [RRPO: Robust Reward Policy Optimization for LLM-based Emotional TTS](https://arxiv.org/abs/2512.04552)： 使用 Robust Reward Policy Optimization for LLM-based Emotional TTS 改进文本转语音、韵律控制或零样本声音生成。
+- [Large Speech Model Enabled Semantic Communication](https://arxiv.org/abs/2512.04711)： 用 Large Speech Model Enabled Semantic Communication 建模语音、音频或口语语言行为。
+- [Contract-Driven QoE Auditing for Speech and Singing Services: From MOS Regression to Service Graphs](https://arxiv.org/abs/2512.04827)： 使用 MOS Regression to Service Graphs 做语音、音频或口语语言建模。
+- [Robust Feature Attenuation Backdoor for Speech Recognition](https://doi.org/10.1016/j.eswa.2025.127546)：通过 robust feature attenuation 研究 speech recognition 的 clean-label backdoor attack。
+- [Empowering Large Language Models for End-to-End Speech Translation Leveraging Synthetic Data](https://doi.org/10.21437/interspeech.2025-2341)：微调用于端到端 speech-to-speech translation 的小型 LLM，并补充 1000 小时合成语音翻译数据集。
+- [Audio Features Investigation for Singing Voice Deepfake Detection](https://doi.org/10.1109/icassp49660.2025.10888452)：研究用于检测歌声音频 deepfake 的音频特征，把合成语音取证扩展到歌声场景。
+- [Beyond Monolingual Limits: Fine-Tuning Monolingual ASR for Yoruba-English Code-Switching](https://doi.org/10.18653/v1/2025.calcs-1.3)：将单语 ASR 微调用于约鲁巴语-英语代码切换，补充低资源混合语音适配路线。
+- [A Two-Stage LoRA Strategy for Expanding Language Capabilities in Multilingual ASR Models](https://doi.org/10.1109/taslpro.2025.3578752)：用两阶段 LoRA 策略扩展多语自动语音识别模型的语言覆盖能力。
+- [Automatic Code-switched Academic Tunisian Arabic Speech Recognition](https://doi.org/10.1109/aiccsa66935.2025.11315311)：研究学术场景中突尼斯阿拉伯语 code-switched automatic speech recognition，在其他 code-switching ASR 方法之外补充低资源混合语音适配点。
+- [Spherical Lattice Vector Quantization in Neural Audio Coding](https://doi.org/10.23919/eusipco63237.2025.11226153)：将 spherical lattice vector quantization 用于神经音频编码。
+- [Towards Scalable and Robust Multilingual ASR for Indian Languages with MixLoRA-Whisper](https://doi.org/10.1109/asru65441.2025.11434786)：用混合专家低秩适配改造 Whisper，面向印度语言实现可扩展且鲁棒的多语种语音识别。
+- [Methods of efficient speech tokenization with multilingual semantic distillation](https://doi.org/10.21437/ssw.2025-9)： 用 multilingual semantic distillation 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [KAN You Hear the Truth? Audio Deepfake Detection with Kolmogorov–Arnold Networks](https://doi.org/10.23919/eusipco63237.2025.11226534)： 用 Kolmogorov–Arnold Networks 检测音频深伪、欺骗攻击或声音真实性问题。
+- [A Federated Deepfake Speech Detection Method Based on Layer-Wise Center-Guided Weighting Aggregation](https://doi.org/10.1109/wcsp68525.2025.1010653)： 用 Layer-Wise Center-Guided Weighting Aggregation 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Emergent Capability in Audio Deepfake Detection](https://doi.org/10.1109/iwbf63717.2025.11113428)： 用 Emergent Capability in Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [ThonburianTTS: Enhancing Neural Flow Matching Models for Authentic Thai Text-to-Speech](https://doi.org/10.1109/isai-nlp66160.2025.11320472)： 用 Authentic Thai Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [Monotonic Attention for Robust Text-to-Speech Synthesis in Large Language Model Frameworks](https://doi.org/10.21437/interspeech.2025-551)： 用 Robust Text-to-Speech Synthesis in Large Language Model Frameworks 改进文本转语音、韵律控制或零样本声音生成。
+- [Interpolating Speaker Identities for Synthetic Voice Generation](https://doi.org/10.21437/ssw.2025-26)： 用 Synthetic Voice Generation 构造语音或音频数据生成与适配信号。
+- [SyncVoice: Towards Video Dubbing with Vision-Augmented Pretrained TTS Model](https://arxiv.org/abs/2512.05126)：提出面向视频配音的视觉增强预训练文本到语音模型，将语音生成与视觉语境结合。
+- [FPO: Fine-Grained Preference Optimization Improves Zero-Shot Text-to-Speech](https://doi.org/10.1109/taslpro.2025.3648888)： 用 Fine-Grained Preference Optimization Improves Zero-Shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [Joint Training Framework for Accent and Speech Recognition Based on Conformer Low-Rank Adaptation](https://doi.org/10.1109/icassp49660.2025.10890688)： 使用 Conformer Low-Rank Adaptation 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Chain-of-Thought Distillation for ASR Error Correction with Multimodal Large Language Models](https://doi.org/10.1109/apsipaasc65261.2025.11249374)： 使用 Multimodal Large Language Models 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Audio-Video Dual-Modality Robust Watermarking](https://doi.org/10.1109/cost68045.2025.00018)： 使用 Audio-Video Dual-Modality Robust Watermarking 在语音和音频中嵌入或检测可追踪水印。
+- [Skip-Salsa: Skip Synchronous Fusion of ASR LLM Decoders](https://doi.org/10.21437/interspeech.2025-2669)： 使用 Skip Synchronous Fusion of ASR LLM Decoders 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [EATS-Speech: Emotion-Adaptive Transformation and Priority Synthesis for Zero-Shot Text-to-Speech](https://doi.org/10.21437/interspeech.2025-1638)： 使用 Emotion-Adaptive Transformation and Priority Synthesis for Zero-Shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [LIMMITS’25: Multilingual Streaming TTS With Neural Codecs for Indian Languages](https://doi.org/10.1109/icassp49660.2025.10890595)： 使用 Neural Codecs for Indian Languages 改进文本转语音、韵律控制或零样本声音生成。
+- [Detecting Codec-Based Deepfake Audio: A Multimodal Approach with Gated Cross-Attention and Sharpness-Aware Optimization](https://doi.org/10.1109/ijcnn64981.2025.11228755)： 使用 Gated Cross-Attention and Sharpness-Aware Optimization 做音频深伪、欺骗攻击或声音真实性检测。
+- [Audio Deepfake Source Tracing using Multi-Attribute Open-Set Identification and Verification](https://doi.org/10.21437/interspeech.2025-2001)： 使用 Multi-Attribute Open-Set Identification and Verification 做音频深伪、欺骗攻击或声音真实性检测。
+- [AA-SLLM: An Acoustically Augmented Speech Large Language Model for Speech Emotion Recognition](https://doi.org/10.21437/interspeech.2025-1915)： 使用 An Acoustically Augmented Speech Large Language Model for Speech Emotion Recognition 做语音情感、副语言或情感对话建模。
+- [Open-Set Speaker Identification Through Efficient Few-Shot Tuning With Speaker Reciprocal Points and Unknown Samples](https://doi.org/10.1109/taslpro.2025.3587591)： 使用 Speaker Reciprocal Points and Unknown Samples 做语音、音频或口语语言建模。
+- [Parameter-Efficient Fine-Tuning for Low-Resource Text-to-Speech via Cross-Lingual Continual Learning](https://doi.org/10.21437/interspeech.2025-1344)： 使用 Cross-Lingual Continual Learning 改进文本转语音、韵律控制或零样本声音生成。
+- [CLAD: Robust audio deepfake detection against manipulation attacks with contrastive learning](https://doi.org/10.1016/j.knosys.2025.115179)： 使用 contrastive learning 做音频深伪、欺骗攻击或声音真实性检测。
+- [Robust Neural Codec Language Modeling with Phoneme Position Prediction for Zero-Shot TTS](https://doi.org/10.21437/interspeech.2025-1641)： 使用 Phoneme Position Prediction for Zero-Shot TTS 改进文本转语音、韵律控制或零样本声音生成。
+- [Poisoning The Diffusion: A Simple and Robust Watermarking Method for Audio Generation](https://doi.org/10.1109/icassp49660.2025.10889187)： 使用 A Simple and Robust Watermarking Method for Audio Generation 在语音和音频中嵌入或检测可追踪水印。
+- [TAGMO: Temporal Control Audio Generation for Multiple Visual Objects Without Training](https://doi.org/10.1109/icassp49660.2025.10889172)： 使用 Temporal Control Audio Generation for Multiple Visual Objects Without Training 做文本到音频、音效或 Foley 声音生成。
+- [SpeechPalette: A Comprehensive Speech Editing Method for Text-Based Speech Editing, One-Shot TTS and Attributes Editing](https://doi.org/10.1109/tpami.2025.3626793)： 使用 A Comprehensive Speech Editing Method for Text-Based Speech Editing, One-Shot TTS and Attributes Editing 改进文本转语音、韵律控制或零样本声音生成。
+- [PriorSinger: Singing Voice Synthesis Model with Prior Condition Cross Attention](https://doi.org/10.1109/icassp49660.2025.10887689)： 使用 Prior Condition Cross Attention 做歌声、歌词或旋律生成与转换。
+- [DreamFoley: Scalable VLMs for High-Fidelity Video-to-Audio Generation](https://arxiv.org/abs/2512.06022)： 用 High-Fidelity Video-to-Audio Generation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Is Synthetic Data Truly Effective for Training Speech Language Models?](https://doi.org/10.21437/interspeech.2025-2693)： 使用 Is Synthetic Data Truly Effective for Training Speech Language Models? 作为语音和音频模型的数据生成或适配路线。
+- [Effective Techniques for Scaling Audio Encoder Pretraining](https://doi.org/10.1109/icassp49660.2025.10890012)： 使用 Effective Techniques for Scaling Audio Encoder Pretraining 学习语音或音频表征，服务下游识别与生成任务。
+- [Physics-Guided Deepfake Detection for Voice Authentication Systems](https://arxiv.org/abs/2512.06040)： 使用 Physics-Guided Deepfake Detection for Voice Authentication Systems 做音频深伪、欺骗攻击或声音真实性检测。
+- [Musimple: A Simplified Music Generation System with Diffusion Transformer](https://doi.org/10.1109/icasspw65056.2025.11011064)： 使用 Diffusion Transformer 做音乐生成、伴奏生成或音频条件作曲。
+- [VO2Lium : Voxygen and LIUM contribution for Blizzard 2025](https://doi.org/10.21437/blizzard.2025-2)： 使用 Voxygen and LIUM contribution for Blizzard 2025 做语音、音频或口语语言建模。
+- [SFNet: A Two-Stage Source-Filter-Based Neural Network for Real-Time Speech Bandwidth Extension](https://doi.org/10.1109/taslpro.2025.3637594)： 用 Real-Time Speech Bandwidth Extension 增强或恢复退化语音。
+- [Cloud Voice Security: Anti-Deepfake via Graph Attention Aggregation and Post-Quantum Cryptography for Cloud Service](https://doi.org/10.1109/jiot.2025.3607950)： 用 Graph Attention Aggregation and Post-Quantum Cryptography for Cloud Service 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Real-World Audio Deepfake Detection Using SSL-Based Speech Models and Diverse Training Data](https://doi.org/10.1109/ictai66417.2025.00212)： 用 SSL-Based Speech Models and Diverse Training Data 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Defence Against the Deepfake Arts : Improving Audio Deepfake Detection With Context Awareness](https://doi.org/10.21437/spsc.2025-11)： 用 Context Awareness 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Robust Audio Watermarking with Learnable Embedding Technique](https://doi.org/10.1109/itc-cscc66376.2025.11137601)： 用 Learnable Embedding Technique 嵌入或检测可追踪语音音频水印。
+- [MelVQGAN: An Enhanced Neural Codec with Fine-Grained Spectrogram Preservation for High-Fidelity Speech Generation](https://doi.org/10.1109/prai67447.2025.11412555)： 用 Fine-Grained Spectrogram Preservation for High-Fidelity Speech Generation 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [DSF-ACodec: A Dual-Scale Spectra Fusion Based Asymmetric Neural Speech Codec](https://doi.org/10.1109/dsp65409.2025.11075039)： 用 A Dual-Scale Spectra Fusion Based Asymmetric Neural Speech Codec 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [FoleyMaster: High-Quality Video-to-Audio Synthesis via MLLM-Augmented Prompt Tuning and Joint Semantic-Temporal Adaptation](https://doi.org/10.21437/interspeech.2025-300)： 用 MLLM-Augmented Prompt Tuning and Joint Semantic-Temporal Adaptation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Voice Privacy Protection with Adversarial Examples Using Anchor Speaker Embedding](https://doi.org/10.1109/apsipaasc65261.2025.11248997)： 用 Anchor Speaker Embedding 做说话人验证、识别或表征提取。
+- [SA-RAS: Speaker-Aware Style Retrieval Augmented Generation for Expressive Zero-Shot Text-to-Speech Synthesis](https://doi.org/10.21437/interspeech.2025-1684)： 用 Expressive Zero-Shot Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Augment Mandarin to Cantonese Speech Databases via Retrieval-Augmented Generation and Speech Synthesis](https://doi.org/10.21437/interspeech.2025-737)： 用 Retrieval-Augmented Generation and Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [DetailTTS: Learning Residual Detail Information for Zero-shot Text-to-speech](https://doi.org/10.1109/icassp49660.2025.10890840)： 用 Zero-shot Text-to-speech 改进文本转语音、韵律控制或零样本声音生成。
+- [LIMMITS'24: Multi-Speaker, Multi-Lingual INDIC TTS With Voice Cloning](https://doi.org/10.1109/ojsp.2025.3531782)： 用 Voice Cloning 改进文本转语音、韵律控制或零样本声音生成。
+- [Flexpéro: Flexible Expressive Zero-Shot Speech Refinement via In-Context Learning](https://doi.org/10.1109/lsp.2025.3586183)： 用 In-Context Learning 建模语音、音频或口语语言行为。
+- [Toward Data-Efficient Speech Synthesis: Active Learning-Based Corpus Construction for Multi-Speaker Text-to-Speech Synthesis](https://doi.org/10.1109/access.2025.3645005)： 用 Multi-Speaker Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [StableTTS: Towards Efficient Denoising Acoustic Decoder for Text to Speech Synthesis with Consistency Flow Matching](https://doi.org/10.1109/icasspw65056.2025.11011026)： 用 Consistency Flow Matching 改进文本转语音、韵律控制或零样本声音生成。
+- [SpeechCAT: Cross-Attentive Transformer for Audio to Motion Generation](https://doi.org/10.1109/hri61500.2025.10974020)： 用 Audio to Motion Generation 学习语音或音频表征，服务识别、理解或生成。
+- [Comparative Analysis of Deep Learning Models for Detecting Deepfake Audio Using MobileNet and Explainable AI](https://doi.org/10.4108/eai.28-4-2025.2357808)： 用 MobileNet and Explainable AI 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Evaluating Japanese Dialect Robustness Across Speech and Text-based Large Language Models](https://doi.org/10.1109/asru65441.2025.11434668)： 用 Evaluating Japanese Dialect Robustness Across Speech and Text-based Large Language Models 学习语音或音频表征，服务识别、理解或生成。
+- [LIST: Language-Independent Speech Token for Multilingual Speech Synthesis with Language Models](https://doi.org/10.21437/interspeech.2025-1752)： 用 Language Models 改进文本转语音、韵律控制或零样本声音生成。
+- [Toward Natural Emotional Text-to-Speech System with Fine-Grained Non-Verbal Expression Control](https://doi.org/10.1109/o-cocosda68185.2025.11385230)： 用 Fine-Grained Non-Verbal Expression Control 改进文本转语音、韵律控制或零样本声音生成。
+- [A Simple Method to Enhance Pre-trained Language Models with Speech Tokens for Classification](https://arxiv.org/abs/2512.07571)： 使用 Speech Tokens for Classification 做语音、音频或口语语言建模。
+- [Nanami: Hybrid Embedding With Voice Large Language Models for Audio Retrieval](https://doi.org/10.1109/access.2025.3628289)： 用 Voice Large Language Models for Audio Retrieval 学习语音或音频表征，服务识别、理解或生成。
+- [Bridging the Training-Inference Gap in TTS: Training Strategies for Robust Generative Postprocessing for Low-Resource Speakers](https://doi.org/10.21437/interspeech.2025-854)： 用 Robust Generative Postprocessing for Low-Resource Speakers 改进文本转语音、韵律控制或零样本声音生成。
+- [Benchmarking Large Language Models for Hate Speech Detection in Arabic Dialects: Focus on the Saudi Dialects](https://doi.org/10.14569/ijacsa.2025.0160978)： 用 Hate Speech Detection in Arabic Dialects: Focus on the Saudi Dialects 学习语音或音频表征，服务识别、理解或生成。
+- [Implementation of Machine Learning Techniques for Real-Time Deep Fake Voice Detection](https://doi.org/10.1109/aimv66517.2025.11203497)： 用 Real-Time Deep Fake Voice Detection 建模语音、音频或口语语言行为。
+- [VoiceRadar: Voice Deepfake Detection using Micro-Frequency and Compositional Analysis](https://doi.org/10.14722/ndss.2025.243389)： 用 Micro-Frequency and Compositional Analysis 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Switch Conformer with Universal Phonetic Experts for Multilingual ASR](https://doi.org/10.21437/interspeech.2025-1359)： 用 Universal Phonetic Experts for Multilingual ASR 改进 ASR、多语种转写或抗噪语音识别。
+- [BS-BGM: Leveraging Vision Language Models and Shot Boundary for Beat-Synced Video Background Music Generation](https://doi.org/10.1109/access.2025.3555297)： 用 Beat-Synced Video Background Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Detecting Audio Deepfakes on the Edge: Lightweight SSL-Based Detection in a Browser Plugin](https://doi.org/10.1109/sped67700.2025.11252312)： 用 Detecting Audio Deepfakes on the Edge: Lightweight SSL-Based Detection in a Browser Plugin 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Beyond Attacks: Advancing Fake Speech Detection with Attack-Agnostic Methods](https://doi.org/10.21437/interspeech.2025-1999)： 用 Attack-Agnostic Methods 建模语音、音频或口语语言行为。
+- [Multi AI Agents based Black Box Audio Transcriber and Aviation Incident Report Generator](https://doi.org/10.1109/icaect63952.2025.10958943)： 用 Multi AI Agents based Black Box Audio Transcriber and Aviation Incident Report Generator 建模语音、音频或口语语言行为。
+- [The Kolmogorov-Arnold Networks: A New Foundation Paradigm for Hierarchical Function Learning in ASV Anti-Spoofing Research](https://doi.org/10.1109/comnetsat68601.2025.11324962)：将 Kolmogorov-Arnold Network 用于 ASV 反欺骗中的层级函数学习，为伪造语音检测提供非传统神经结构。
+- [MMLoRA: Multitask Memory Parameter-Efficient Fine-Tuning for Multimodal SER](https://doi.org/10.21437/interspeech.2025-560)：把多任务记忆机制与 LoRA 参数高效微调结合，用于多模态语音情感识别中的共享与任务特定适配。
+- [Text-Infused Audio-Visual Video Parsing with Semantic-Aware Multimodal Contrastive Learning](https://doi.org/10.1109/icassp49660.2025.10890183)： 使用 Semantic-Aware Multimodal Contrastive Learning 做视听语音、事件或场景建模。
+- [Audio Diffusion with Large Language Models](https://doi.org/10.1109/icassp49660.2025.10888073)： 使用 Large Language Models 做语音、音频或口语语言建模。
+- [Prompt-Unseen-Emotion: Mixed Emotional Speech Synthesis With Prompt-LLM Contextual Knowledge](https://doi.org/10.1109/lsp.2025.3627104)： 使用 Prompt-LLM Contextual Knowledge 改进文本转语音、韵律控制或零样本声音生成。
+- [Exploring the Limits of Conformer CTC-Encoder for Speech Emotion Recognition using Large Language Models](https://doi.org/10.21437/interspeech.2025-2093)： 使用 Large Language Models 做语音情感、副语言或情感对话建模。
+- [AudioCache: Accelerate Audio Generation With Training-Free Layer Caching](https://doi.org/10.1109/icassp49660.2025.10889043)： 使用 Training-Free Layer Caching 做文本到音频、音效或 Foley 声音生成。
+- [Acoustic Phonetic Temporal Speech Representation](https://doi.org/10.1109/asru65441.2025.11434703)： 使用 Acoustic Phonetic Temporal Speech Representation 学习语音或音频表征，服务下游识别与生成任务。
+- [Cross-Attention Reprogramming for ASR: Bridging Discrete Speech Units and Pretrained Language Models](https://doi.org/10.1109/access.2025.3649090)： 使用 Bridging Discrete Speech Units and Pretrained Language Models 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Fine-tuning TitaNet-Large Model for Speaker Anonymization Attacker Systems](https://doi.org/10.1109/icassp49660.2025.10888822)： 使用 Fine-tuning TitaNet-Large Model for Speaker Anonymization Attacker Systems 做语音、音频或口语语言建模。
+- [Schrodinger Audio-Visual Editor: Object-Level Audiovisual Removal](https://arxiv.org/abs/2512.12875)： 用 Object-Level Audiovisual Removal 建模视听语音、事件或场景。
+- [DiffMV-ETS: Diffusion-based Multi-Voice Electromyography-to-Speech Conversion using Speaker-Independent Speech Training Targets](https://doi.org/10.21437/interspeech.2025-1914)： 使用 Speaker-Independent Speech Training Targets 做语音、音频或口语语言建模。
+- [Multimodal learning-based speech enhancement and separation, recent innovations, new horizons, challenges and real-world applications](https://doi.org/10.1016/j.compbiomed.2025.110082)： 使用 Multimodal learning-based speech enhancement and separation, recent innovations, new horizons, challenges and real-world applications 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Supervising Sound Localization by In-the-wild Egomotion](https://doi.org/10.1109/cvpr52734.2025.02229)： 使用 In-the-wild Egomotion 做语音、音频或口语语言建模。
+- [Precisely Controllable Neural Speech Synthesis](https://doi.org/10.1109/icassp49660.2025.10890772)： 使用 Precisely Controllable Neural Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [InvoxSVC: Any-to-any Zero-shot Singing Voice Conversion with In-Context Learning in Latent Flow Matching](https://doi.org/10.1109/icme59968.2025.11210176)： 使用 In-Context Learning in Latent Flow Matching 做语音转换、说话人克隆或可控音色迁移。
+- [Efficient Noise-Robust Hybrid Audiovisual Encoder with Joint Distillation and Pruning for Audiovisual Speech Recognition](https://doi.org/10.21437/interspeech.2025-1464)： 使用 Joint Distillation and Pruning for Audiovisual Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Advancing Hate Speech Detection: A Multilingual System Using LLAMA-2 for Real-Time Analysis of Audio, Video, and Text Content](https://doi.org/10.1109/icvadv63329.2025.10961123)： 使用 LLAMA-2 for Real-Time Analysis of Audio, Video, and Text Content 做语音、音频或口语语言建模。
+- [Is your model big enough? Training and interpreting large-scale monolingual speech foundation models](https://doi.org/10.21437/interspeech.2025-46)： 使用 Is your model big enough? Training and interpreting large-scale monolingual speech foundation models 学习语音或音频表征，服务下游识别与生成任务。
+- [Attention Weighting and Conditional Entropy-driven Quantization Loss for Neural Audio Codecs](https://doi.org/10.1109/icassp49660.2025.10889560)： 使用 Attention Weighting and Conditional Entropy-driven Quantization Loss for Neural Audio Codecs 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Mamba-Based Temporal Modeling for Event-Based Lip Reading](https://doi.org/10.1109/cvidl65390.2025.11085858)： 使用 Mamba-Based Temporal Modeling for Event-Based Lip Reading 做视听语音识别、唇读或视觉语音生成。
+- [AnyoneCue: Gloss-Prompted Fine-Grained and Personalized Cued Speech Video Generation](https://doi.org/10.1109/taslpro.2025.3641284)： 使用 Gloss-Prompted Fine-Grained and Personalized Cued Speech Video Generation 做语音、音频或口语语言建模。
+- [Pretrained Speech Models Learn Boundaries, Not Patterns: An Analysis of Supervised vs. Unsupervised Capabilities](https://doi.org/10.1109/sped67700.2025.11252189)： 使用 Pretrained Speech Models Learn Boundaries, Not Patterns: An Analysis of Supervised vs. Unsupervised Capabilities 做语音、音频或口语语言建模。
+- [Say Who You Want to Hear: Leveraging TTS Style Embeddings for Text-Guided Speech Extraction](https://doi.org/10.21437/clarity.2025-15)： 使用 Say Who You Want to Hear: Leveraging TTS Style Embeddings for Text-Guided Speech Extraction 改进文本转语音、韵律控制或零样本声音生成。
+- [SPCODEC: Split and Prediction for Neural Speech Codec](https://doi.org/10.21437/interspeech.2025-196)： 使用 Split and Prediction for Neural Speech Codec 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Weak-to-Strong Generalization in Speech Recognition](https://doi.org/10.1109/icassp49660.2025.10889835)： 使用 Weak-to-Strong Generalization in Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [CogCM: Cognition-Inspired Contextual Modeling for Audio-Visual Speech Enhancement](https://doi.org/10.1109/iccv51701.2025.01988)： 使用 Cognition-Inspired Contextual Modeling for Audio-Visual Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Mutual Semantic Bridged Tri-Tower Fusion for Audio-Visual Segmentation](https://doi.org/10.1109/icme59968.2025.11209503)： 使用 Mutual Semantic Bridged Tri-Tower Fusion for Audio-Visual Segmentation 做视听语音、事件或场景建模。
+- [Not Only Vision: Evolve Visual Speech Recognition via Peripheral Information](https://doi.org/10.1109/iccv51701.2025.00296)： 使用 Peripheral Information 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Federated Learning with Feature Space Separation for Speaker Recognition](https://doi.org/10.21437/interspeech.2025-364)： 使用 Feature Space Separation for Speaker Recognition 做说话人验证、识别或说话人表征建模。
+- [DiffStereo: End-to-End Mono-to-Stereo Audio Generation with Diffusion Transformer](https://doi.org/10.21437/interspeech.2025-1850)： 使用 Diffusion Transformer 做文本到音频、音效或 Foley 声音生成。
+- [Multimodal Emotion Recognition Using Speech and Facial Dynamics Transformer-Based Architecture](https://doi.org/10.1109/icicnct66124.2025.11232705)： 使用 Speech and Facial Dynamics Transformer-Based Architecture 做语音情感、副语言或情感对话建模。
+- [Enhancing Standard and Dialectal Frisian ASR: Multilingual Fine-tuning and Language Identification for Improved Low-resource Performance](https://doi.org/10.1109/icassp49660.2025.10889692)： 使用 Enhancing Standard and Dialectal Frisian ASR: Multilingual Fine-tuning and Language Identification for Improved Low-resource 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Research on Polyphonic Music Generation Algorithm Based on GPT Large Model](https://doi.org/10.1109/access.2025.3588847)： 用 GPT Large Model 做音乐生成、伴奏生成或音频条件作曲。
+- [NAT3DSound: 3D Spatial Sound Field Synthesis with Multi-Modal Non-Autoregressive Transformer](https://doi.org/10.1109/icassp49660.2025.10888008)： 用 Multi-Modal Non-Autoregressive Transformer 学习语音或音频表征，服务识别、理解或生成。
+- [Keypoints and Action Units Jointly Drive Talking Head Generation for Video Conferencing](https://doi.org/10.1109/tcsvt.2025.3560369)： 用 Video Conferencing 生成语音驱动 talking-head、面部动画或共语手势。
+- [Toward robust replay attack detection in Automatic Speaker Verification: A study of spectrum estimation and channel magnitude response modeling](https://doi.org/10.1016/j.csl.2025.101906)： 使用 Toward robust replay attack detection in Automatic Speaker Verification: A study of spectrum estimation 做音频深伪、欺骗攻击或声音真实性检测。
+- [Intelligent Approaches to Computer Testing of Perception and Production Skills of Russian EFL Speakers](https://doi.org/10.17323/jle.2025.19916)： 使用 Intelligent Approaches to Computer Testing of Perception and Production Skills of Russian EFL Speakers 做语音、音频或口语语言建模。
+- [Editorial: Special issue on security and privacy in speech communication](https://doi.org/10.1016/j.csl.2025.101890)： 使用 Special issue on security and privacy in speech communication 做语音、音频或口语语言建模。
+- [StealthPhase: Toward a Stealthy Backdoor Attack Against Speaker Recognition](https://doi.org/10.1109/tifs.2025.3642543)： 使用 Toward a Stealthy Backdoor Attack Against Speaker Recognition 做说话人验证、识别或说话人表征建模。
+- [Seedance 1.5 pro](https://arxiv.org/abs/2512.13507)： 用 Seedance 1.5 pro 建模语音、音频或口语语言行为。
+- [Hierarchical multi-source cues fusion for mono-to-binaural based Audio Deepfake Detection](https://doi.org/10.1016/j.inffus.2025.103097)： 用 mono-to-binaural based Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Mamba-based Hybrid Model for Speech Enhancement](https://doi.org/10.21437/interspeech.2025-1476)： 用 Speech Enhancement 增强或恢复退化语音。
+- [Viseme-Gated Multilayer Cross-Attentional Feature Fusion for Cognitively-Inspired Multimodal Speech Enhancement](https://doi.org/10.1109/taslpro.2025.3648801)： 用 Cognitively-Inspired Multimodal Speech Enhancement 增强或恢复退化语音。
+- [Dialogue-Pseudo: A Speaker Pseudonymization Framework for Privacy Protection in Dialogue Speech Data](https://doi.org/10.1109/ism66958.2025.00040)： 使用 A Speaker Pseudonymization Framework for Privacy Protection in Dialogue Speech Data 作为语音和音频模型的数据生成或适配路线。
+- [EmoJudge: LLM Based Post-Hoc Refinement for Multimodal Speech Emotion Recognition](https://doi.org/10.21437/interspeech.2025-1141)： 使用 LLM Based Post-Hoc Refinement for Multimodal Speech Emotion Recognition 做语音情感、副语言或情感对话建模。
+- [Wave-Spectrogram Cross-Modal Aggregation for Audio Deepfake Detection](https://doi.org/10.1109/icassp49660.2025.10890563)： 使用 Wave-Spectrogram Cross-Modal Aggregation for Audio Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Enhancing 3-D Sound Event Localization and Detection With Distance Estimation Using Reverberation and Spatial Coherence Features](https://doi.org/10.1109/jsen.2025.3583033)： 使用 Reverberation and Spatial Coherence Features 做语音、音频或口语语言建模。
+- [Scaling Multilingual Visual Speech Recognition](https://doi.org/10.1109/icassp49660.2025.10890395)： 使用 Scaling Multilingual Visual Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Research on Cross-Language Speech Synthesis Based on Diffusion Transformer](https://doi.org/10.1109/iccnea66167.2025.11211879)： 使用 Diffusion Transformer 改进文本转语音、韵律控制或零样本声音生成。
+- [SFA-DCSL: A Dynamically Hierarchical Enhancement PEFT Framework for Imbalanced Speech Emotion Recognition Research](https://doi.org/10.1109/spic68204.2025.11470819)： 使用 A Dynamically Hierarchical Enhancement PEFT Framework for Imbalanced Speech Emotion Recognition Research 做语音情感、副语言或情感对话建模。
+- [Physically Informed Spatial Regularization for Sound Event Localization and Detection](https://doi.org/10.1109/waspaa66052.2025.11230919)： 使用 Physically Informed Spatial Regularization for Sound Event Localization and Detection 做语音、音频或口语语言建模。
+- [Dual-Path State-Space Modeling With Cross-Domain Interaction for Multichannel Speech Enhancement](https://doi.org/10.1109/taslpro.2025.3618543)： 用 Cross-Domain Interaction for Multichannel Speech Enhancement 增强或恢复退化语音。
+- [Speech Enhancement with MAP-based Training for Robust ASR](https://doi.org/10.1109/icassp49660.2025.10887859)：通过 MAP 训练提升自动语音识别在噪声条件下的鲁棒性。
+- [Multilingual and Continuous Backchannel Prediction: A Cross-lingual Study](https://arxiv.org/abs/2512.14085)： 用 A Cross-lingual Study 建模语音、音频或口语语言行为。
+- [A Universal Speech Semantic Communication Framework for Multitask Applications Based on Unsupervised Models](https://doi.org/10.1109/jiot.2025.3611506)：提出面向多任务应用的无监督语音语义通信框架。
+- [Conversation Context-Aware Direct Preference Optimization for Style-Controlled Speech Synthesis](https://doi.org/10.1109/apsipaasc65261.2025.11249141)：将对话上下文感知的直接偏好优化用于风格可控语音合成。
+- [Emotion-Aware Music Generation for Personalized Soundtracks in Digital Media Using Transformer-Based AI Models](https://doi.org/10.1109/iccr67387.2025.11291633)：补充基于 Transformer 的情感条件音乐生成模型。
+- [TalkVerse: Democratizing Minute-Long Audio-Driven Video Generation](https://arxiv.org/abs/2512.14938)： 用 Democratizing Minute-Long Audio-Driven Video Generation 建模语音、音频或口语语言行为。
+- [On the Use of Self-Supervised Representation Learning for Speaker Diarization and Separation](https://arxiv.org/abs/2512.15224)： 使用 On the Use of Self-Supervised Representation Learning for Speaker Diarization and Separation 做说话人日志和多说话人语音分割。
+- [Task Vector in TTS: Toward Emotionally Expressive Dialectal Speech Synthesis](https://arxiv.org/abs/2512.18699)： 用 Emotionally Expressive Dialectal Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [In-Context Audio Control of Video Diffusion Transformers](https://arxiv.org/abs/2512.18772)： 用 In-Context Audio Control of Video Diffusion Transformers 学习语音或音频表征，服务识别、理解或生成。
+- [VALLR-Pin: Uncertainty-Factorized Visual Speech Recognition for Mandarin with Pinyin Guidance](https://arxiv.org/abs/2512.20032)： 用 Pinyin Guidance 改进 ASR、多语种转写或抗噪语音识别。
+- [Aliasing-Free Neural Audio Synthesis](https://arxiv.org/abs/2512.20211)： 使用 Aliasing-Free Neural Audio Synthesis 做语音、音频或口语语言建模。
+- [SACodec: Asymmetric Quantization with Semantic Anchoring for Low-Bitrate High-Fidelity Neural Speech Codecs](https://arxiv.org/abs/2512.20944)：用带语义锚定的非对称双量化实现低码率语音编码，同时提升重建保真度和下游语义信息。
+- [Customized Condition Controllable Generation for Video Soundtrack](https://doi.org/10.1109/cvpr52734.2025.02227)：在自定义条件下生成视频配乐，把可控音频生成扩展到视觉 grounding 场景。
+- [Graph-Guided Spatial-Temporal Diffusion Model for Speech Enhancement with Microphone Array](https://doi.org/10.1109/dsp65409.2025.11075136)：将图引导的时空扩散模型用于语音增强。
+- [Rare Word Recognition and Translation Without Fine-Tuning via Task Vector in Speech Models](https://arxiv.org/abs/2512.21894)： 用 Task Vector in Speech Models 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [A Language-Agnostic Hierarchical LoRA-MoE Architecture for CTC-based Multilingual ASR](https://arxiv.org/abs/2601.00557)：提出用于 CTC 多语种 ASR 的分层 LoRA-MoE 架构，适合补充语音模型中高效多语识别方向。
+- [Improving Code-Switching Speech Recognition with TTS Data Augmentation](https://arxiv.org/abs/2601.00935)： 使用 TTS Data Augmentation 改进文本转语音、韵律控制或零样本声音生成。
 - [SAFE-QAQ](https://arxiv.org/abs/2601.01392)：使用强化学习进行端到端慢思考音频文本欺诈检测，保留声学线索而不只依赖转写文本。
-- [LTX-2](https://arxiv.org/abs/2601.03233)：提出面向语音和音频的模型侧方法，核心围绕 Efficient Joint Audio-Visual Foundation Model。
+- [Omni2Sound: Towards Unified Video-Text-to-Audio Generation](https://arxiv.org/abs/2601.02731)： 用 Unified Video-Text-to-Audio Generation 生成文本条件音频、Foley 音效或视频对齐声音。
+- [UniSRCodec: Unified and Low-Bitrate Single Codebook Codec with Sub-Band Reconstruction](https://arxiv.org/abs/2601.02776)： 用 Sub-Band Reconstruction 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech](https://arxiv.org/abs/2601.03170)： 使用 Segment-Aware Conditioning for Training-Free Intra-Utterance Emotion and Duration Control in Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [LTX-2](https://arxiv.org/abs/2601.03233)： 用 LTX-2 建模语音、音频或口语语言行为。
+- [LEMAS: Large A 150K-Hour Large-scale Extensible Multilingual Audio Suite with Generative Speech Models](https://arxiv.org/abs/2601.04233)： 用 Generative Speech Models 建模语音、音频或口语语言行为。
+- [QMAVIS: Long Video-Audio Understanding using Fusion of Large Multimodal Models](https://arxiv.org/abs/2601.06573)： 使用 Fusion of Large Multimodal Models 做语音、音频或口语语言建模。
+- [Towards Comprehensive Semantic Speech Embeddings for Chinese Dialects](https://arxiv.org/abs/2601.07274)：面向语音与音频模型的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Towards Comprehensive Semantic Speech Embeddings for Chinese Dialects”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?](https://arxiv.org/abs/2601.08133)： 使用 How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation? 做视听语音、事件或场景建模。
+- [Decodable but not structured: linear probing enables Underwater Acoustic Target Recognition with pretrained audio embeddings](https://arxiv.org/abs/2601.08358)： 使用 pretrained audio embeddings 做语音、音频或口语语言建模。
+- [CallShield: Secure Caller Authentication over Real-Time Audio Channels](https://arxiv.org/abs/2601.09327)： 使用 Secure Caller Authentication over Real-Time Audio Channels 做语音、音频或口语语言建模。
+- [Improving Implicit Hate Speech Detection via a Community-Driven Multi-Agent Framework](https://arxiv.org/abs/2601.09342)： 使用 a Community-Driven Multi-Agent Framework 做语音、音频或口语语言建模。
+- [Diffusion-based Frameworks for Unsupervised Speech Enhancement](https://arxiv.org/abs/2601.09931)： 使用 Diffusion-based Frameworks for Unsupervised Speech Enhancement 做语音增强、带宽扩展或鲁棒音频恢复。
+- [EditEmoTalk: Controllable Speech-Driven 3D Facial Animation with Continuous Expression Editing](https://arxiv.org/abs/2601.10000)： 使用 Continuous Expression Editing 做语音驱动 talking-head、面部动画或共语手势生成。
+- [From SERPs to Sound: How Search Engine Result Pages and AI-generated Podcasts Interact to Influence User Attitudes on Controversial Topics](https://arxiv.org/abs/2601.11282)： 使用 How Search Engine Result Pages and AI-generated Podcasts Interact to Influence User Attitudes on 做语音、音频或口语语言建模。
+- [Now You See Me, Now You Don't: A Unified Framework for Expression Consistent Anonymization in Talking Head Videos](https://arxiv.org/abs/2601.11635)：在保留面部表情动态的同时匿名化 talking-head 视频，将身份移除与表情一致性解耦。
+- [NiMark: A Non-intrusive Watermarking Framework against Screen-shooting Attacks](https://arxiv.org/abs/2601.11978)： 使用 A Non-intrusive Watermarking Framework against Screen-shooting Attacks 在语音和音频中嵌入或检测可追踪水印。
+- [VidTune: Creating Video Soundtracks with Generative Music and Contextual Thumbnails](https://arxiv.org/abs/2601.12180)： 使用 Generative Music and Contextual Thumbnails 做音乐生成、伴奏生成或音频条件作曲。
+- [A Unified Neural Codec Language Model for Selective Editable Text to Speech Generation](https://arxiv.org/abs/2601.12480)： 用 Selective Editable Text to Speech Generation 改进文本转语音、韵律控制或零样本声音生成。
+- [SLAP: Scalable Language-Audio Pretraining with Variable-Duration Audio and Multi-Objective Training](https://arxiv.org/abs/2601.12594)：用可变时长音频与多目标训练预训练语言音频模型。
+- [CodeSep: Low-Bitrate Codec-Driven Speech Separation with Base-Token Disentanglement and Auxiliary-Token Serial Prediction](https://arxiv.org/abs/2601.12757)： 使用 Base-Token Disentanglement and Auxiliary-Token Serial Prediction 做语音分离或多源音频重建。
 - [ImmersiveFlow](https://arxiv.org/abs/2601.12950)：用 flow matching 将立体声转换为 7.1.4 空间音频。
+- [Arab Voices: Mapping Standard and Dialectal Arabic Speech Technology](https://arxiv.org/abs/2601.13319)： 使用 Mapping Standard and Dialectal Arabic Speech Technology 做语音、音频或口语语言建模。
+- [S 2 Voice: Style-Aware Autoregressive Modeling with Enhanced Conditioning for Singing Style Conversion](https://arxiv.org/abs/2601.13629)： 使用 Enhanced Conditioning for Singing Style Conversion 做语音、音频或口语语言建模。
+- [Performance and Complexity Trade-off Optimization of Speech Models During Training](https://arxiv.org/abs/2601.13704)： 用 Performance and Complexity Trade-off Optimization of Speech Models During Training 建模语音、音频或口语语言行为。
+- [Stream-Voice-Anon: Enhancing Utility of Real-Time Speaker Anonymization via Neural Audio Codec and Language Models](https://arxiv.org/abs/2601.13948)： 使用 Neural Audio Codec and Language Models 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Single-step Controllable Music Bandwidth Extension With Flow Matching](https://arxiv.org/abs/2601.14356)： 使用 Flow Matching 做音乐生成、伴奏生成或音频条件作曲。
+- [SpatialV2A: Visual-Guided High-fidelity Spatial Audio Generation](https://arxiv.org/abs/2601.15017)：基于视觉引导生成高保真空间音频，为音频页面补充空间音频生成模型。
+- [EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning](https://arxiv.org/abs/2601.15668)：把语音情感识别改写为可解释推理任务，构建 EmotionCoT-35K、强化韵律感知，并用 GRPO-PTR 奖励训练解释质量。
+- [Generation-Step-Aware Framework for Cross-Modal Representation and Control in Multilingual Speech-Text Models](https://arxiv.org/abs/2601.17387)： 用 Cross-Modal Representation and Control in Multilingual Speech-Text Models 学习语音或音频表征，服务识别、理解或生成。
+- [EuleroDec: A Complex-Valued RVQ-VAE for Efficient and Robust Audio Coding](https://arxiv.org/abs/2601.17517)：提出用于高效鲁棒音频编码的复值 RVQ-VAE。
+- [dLLM-ASR: A Faster Diffusion LLM-based Framework for Speech Recognition](https://arxiv.org/abs/2601.17902)：将扩散大语言模型解码适配到自动语音识别，目标是在不依赖常规逐 token 生成的情况下降低转写延迟。
+- [LLM-ForcedAligner: A Non-Autoregressive and Accurate LLM-Based Forced Aligner for Multilingual and Long-Form Speech](https://arxiv.org/abs/2601.18220)： 使用 A Non-Autoregressive and Accurate LLM-Based Forced Aligner for Multilingual and Long-Form Speech 做语音、音频或口语语言建模。
+- [A Hybrid Discriminative and Generative System for Universal Speech Enhancement](https://arxiv.org/abs/2601.19113)： 用 Universal Speech Enhancement 增强或恢复退化语音。
 - [Dynamic Multi-Expert Projectors](https://arxiv.org/abs/2601.19451)：用动态多专家 projector 与稳定路由提升多语言语音识别。
+- [GMS-CAVP: Improving Audio-Video Correspondence with Multi-Scale Contrastive and Generative Pretraining](https://arxiv.org/abs/2601.19606)： 使用 Multi-Scale Contrastive and Generative Pretraining 学习语音或音频表征，服务下游识别与生成任务。
+- [Improving X-Codec-2.0 for Multi-Lingual Speech: 25 Hz Latent Rate and 24 kHz Sampling](https://arxiv.org/abs/2601.20185)： 使用 25 Hz Latent Rate and 24 kHz Sampling 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [ASR for Affective Speech: Investigating Impact of Emotion and Speech Generative Strategy](https://arxiv.org/abs/2601.20319)： 用 Investigating Impact of Emotion and Speech Generative Strategy 建模语音情感、副语言线索或情感对话。
+- [Erasing Your Voice Before It's Heard: Training-free Speaker Unlearning for Zero-shot Text-to-Speech](https://arxiv.org/abs/2601.20481)： 使用 Erasing Your Voice Before It's Heard: Training-free Speaker Unlearning for Zero-shot Text-to-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [PhaseCoder: Microphone Geometry-Agnostic Spatial Audio Understanding for Multimodal LLMs](https://arxiv.org/abs/2601.21124)： 使用 Microphone Geometry-Agnostic Spatial Audio Understanding for Multimodal LLMs 做语音、音频或口语语言建模。
+- [Auditorily Embodied Conversational Agents: Effects of Spatialization and Situated Audio Cues on Presence and Social Perception](https://arxiv.org/abs/2601.22082)： 用 Effects of Spatialization and Situated Audio Cues on Presence and Social Perception 建模语音、音频或口语语言行为。
+- [Class-Aware Permutation-Invariant Signal-to-Distortion Ratio for Semantic Segmentation of Sound Scene with Same-Class Sources](https://arxiv.org/abs/2601.22504)： 使用 Same-Class Sources 做语音、音频或口语语言建模。
+- [CoVA: Text-Guided Composed Video Retrieval for Audio-Visual Content](https://arxiv.org/abs/2601.22508)： 使用 Text-Guided Composed Video Retrieval for Audio-Visual Content 做视听语音、事件或场景建模。
+- [High-Fidelity Generative Audio Compression at 0.275kbps](https://arxiv.org/abs/2602.00648)： 使用 High-Fidelity Generative Audio Compression at 0.275kbps 做语音、音频或口语语言建模。
+- [JoyStreamer: Unlocking Highly Expressive Avatars via Harmonized Text-Audio Conditioning](https://arxiv.org/abs/2602.00702)： 使用 Harmonized Text-Audio Conditioning 做语音、音频或口语语言建模。
+- [Adapting Where It Matters: Depth-Aware Adaptation for Efficient Multilingual Speech Recognition in Low-Resource Languages](https://arxiv.org/abs/2602.01008)：按深度选择性适配多语言语音识别模型，提高低资源语言适配效率。
+- [From Speech-to-Spatial: Grounding Utterances on A Live Shared View with Augmented Reality](https://arxiv.org/abs/2602.03059)： 用 Augmented Reality 建模语音、音频或口语语言行为。
+- [GRAM: Spatial general-purpose audio representations for real-world environments](https://arxiv.org/abs/2602.03307)： 用 real-world environments 学习语音或音频表征，服务识别、理解或生成。
+- [CoCoEmo: Composable and Controllable Human-Like Emotional TTS via Activation Steering](https://arxiv.org/abs/2602.03420)： 用 Activation Steering 改进文本转语音、韵律控制或零样本声音生成。
+- [Sounding Highlights: Dual-Pathway Audio Encoders for Audio-Visual Video Highlight Detection](https://arxiv.org/abs/2602.03891)： 使用 Dual-Pathway Audio Encoders for Audio-Visual Video Highlight Detection 做视听语音、事件或场景建模。
+- [Fine-Grained Frame Modeling in Multi-head Self-Attention for Speech Deepfake Detection](https://arxiv.org/abs/2602.04702)： 使用 Fine-Grained Frame Modeling in Multi-head Self-Attention for Speech Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [ARCHI-TTS: A flow-matching-based Text-to-Speech Model with Self-supervised Semantic Aligner and Accelerated Inference](https://arxiv.org/abs/2602.05207)： 用 Self-supervised Semantic Aligner and Accelerated Inference 改进文本转语音、韵律控制或零样本声音生成。
+- [HyperPotter: Spell the Charm of High-Order Interactions in Audio Deepfake Detection](https://arxiv.org/abs/2602.05670)： 用 Spell the Charm of High-Order Interactions in Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [(Computer) Vision in Action: Comparing Remote Sighted Assistance and a Multimodal Voice Agent in Inspection Sequences](https://arxiv.org/abs/2602.05671)： 使用 Comparing Remote Sighted Assistance and a Multimodal Voice Agent in Inspection Sequences 做语音、音频或口语语言建模。
+- [From Hallucination to Articulation: Language Model-Driven Losses for Ultra Low-Bitrate Neural Speech Coding](https://arxiv.org/abs/2602.06213)： 使用 Language Model-Driven Losses for Ultra Low-Bitrate Neural Speech Coding 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Scaling Speech Tokenizers with Diffusion Autoencoders](https://arxiv.org/abs/2602.06602)：把 diffusion-autoencoder 语音 tokenizer 扩展到 16 亿参数和 200 万小时数据，并在低 token rate 下保留语义与声学信息。
 - [AVERE](https://arxiv.org/abs/2602.07054)：使用偏好优化提升视听情绪推理能力，并减少对虚假线索的依赖。
+- [Global Rotation Equivariant Phase Modeling for Speech Enhancement with Deep Magnitude-Phase Interaction](https://arxiv.org/abs/2602.08556)： 使用 Deep Magnitude-Phase Interaction 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Gencho: Room Impulse Response Generation from Reverberant Speech and Text via Diffusion Transformers](https://arxiv.org/abs/2602.09233)： 用 Diffusion Transformers 学习语音或音频表征，服务识别、理解或生成。
+- [Evaluating Disentangled Representations for Controllable Music Generation](https://arxiv.org/abs/2602.10058)： 使用 Evaluating Disentangled Representations for Controllable Music Generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Frame-Level Internal Tool Use](https://arxiv.org/abs/2602.10230)：训练 audio language model 用内部 frame representations 做 temporal grounding，提升词定位、说话人分离和事件定位，并避免缓慢的 timestamp-token 生成。
+- [RE-LLM: Refining Empathetic Speech-LLM Responses by Integrating Emotion Nuance](https://arxiv.org/abs/2602.10716)： 使用 Integrating Emotion Nuance 做语音情感、副语言或情感对话建模。
+- [Cross-Modal Robustness Transfer (CMRT): Training Robust Speech Translation Models Using Adversarial Text](https://arxiv.org/abs/2602.11933)： 使用 Adversarial Text 做语音翻译、同时翻译或 code-switching 语音理解。
+- [OmniCustom: Sync Audio-Video Customization Via Joint Audio-Video Generation Model](https://arxiv.org/abs/2602.12304)： 用 Joint Audio-Video Generation Model 建模语音、音频或口语语言行为。
+- [Ontological grounding for sound and natural robot explanations via large language models](https://arxiv.org/abs/2602.13800)： 使用 large language models 做语音、音频或口语语言建模。
+- [What Do Neurons Listen To? A Neuron-level Dissection of a General-purpose Audio Model](https://arxiv.org/abs/2602.15307)： 使用 What Do Neurons Listen To? A Neuron-level Dissection of a General-purpose Audio Model 做语音、音频或口语语言建模。
+- [Color-based Emotion Representation for Speech Emotion Recognition](https://arxiv.org/abs/2602.16256)： 使用 Color-based Emotion Representation for Speech Emotion Recognition 做语音情感、副语言或情感对话建模。
+- [Spatial Audio Question Answering and Reasoning on Dynamic Source Movements](https://arxiv.org/abs/2602.16334)： 用 Spatial Audio Question Answering and Reasoning on Dynamic Source Movements 建模语音、音频或口语语言行为。
+- [Sound of Touch: Active Acoustic Tactile Sensing via String Vibrations](https://arxiv.org/abs/2602.16846)： 用 String Vibrations 建模语音、音频或口语语言行为。
+- [(b)=(d)-(t)+(p): Self-supervised Speech Models Discover Phonological Vector Arithmetic](https://arxiv.org/abs/2602.18899)： 使用 Self-supervised Speech Models Discover Phonological Vector Arithmetic 学习语音或音频表征，服务下游识别与生成任务。
+- [AuditoryHuM: Auditory Scene Label Generation and Clustering using Human-MLLM Collaboration](https://arxiv.org/abs/2602.19409)： 使用 Human-MLLM Collaboration 做语音、音频或口语语言建模。
+- [StyleStream: Real-Time Zero-Shot Voice Style Conversion](https://arxiv.org/abs/2602.20113)： 用 Real-Time Zero-Shot Voice Style Conversion 建模语音、音频或口语语言行为。
+- [Training-Free Intelligibility-Guided Observation Addition for Noisy ASR](https://arxiv.org/abs/2602.20967)：补充嘈杂 ASR 中无需训练的可懂度引导观测增强方法。
+- [Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](https://arxiv.org/abs/2602.20981)：提出含层级建模和 non-causal Mamba 的 MMHNet，使短片段训练的 video-to-audio 模型可泛化到超过 5 分钟的长视频配音。
+- [Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](https://arxiv.org/abs/2602.21646)： 使用 Speech-Text Fusion 做语音翻译、同时翻译或 code-switching 语音理解。
+- [TG-ASR: Translation-Guided Learning with Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition](https://arxiv.org/abs/2602.22039)： 用 Parallel Gated Cross Attention for Low-Resource Automatic Speech Recognition 改进 ASR、多语种转写或抗噪语音识别。
+- [When AI Writes, Whose Voice Remains? Quantifying Cultural Marker Erasure Across World English Varieties in Large Language Models](https://arxiv.org/abs/2602.22145)： 用 When AI Writes, Whose Voice Remains? Quantifying Cultural Marker Erasure Across World English Varieties in Large Language Models 学习语音或音频表征，服务识别、理解或生成。
+- [AR&D: A Framework for Retrieving and Describing Concepts for Interpreting AudioLLMs](https://arxiv.org/abs/2602.22253)：用 sparse autoencoder 将 AudioLLM 的多义激活分解为单义特征，再通过检索音频片段、自动命名和人工验证解释模型内部概念。
+- [Moving Speaker Separation via Parallel Spectral-Spatial Processing](https://arxiv.org/abs/2602.22487)： 使用 Parallel Spectral-Spatial Processing 做语音分离或多源音频重建。
 - [DashengTokenizer](https://arxiv.org/abs/2602.23765)：面向音频理解与生成统一建模的连续音频 tokenizer，把声学信息注入冻结语义特征。
-- [SarcasmMiner](https://arxiv.org/abs/2603.05275)：通过双轨后训练提升跨文本、声学与视觉线索的视听反讽推理鲁棒性。
+- [FlowPortrait: Reinforcement Learning for Audio-Driven Portrait Video Generation](https://arxiv.org/abs/2603.00159)： 用 Audio-Driven Portrait Video Generation 建模语音、音频或口语语言行为。
+- [Whisper-MLA: Reducing GPU Memory Consumption of ASR Models based on MHA2MLA Conversion](https://arxiv.org/abs/2603.00563)： 使用 MHA2MLA Conversion 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [SeaVIS: Sound-Enhanced Association for Online Audio-Visual Instance Segmentation](https://arxiv.org/abs/2603.01431)： 使用 Sound-Enhanced Association for Online Audio-Visual Instance Segmentation 做视听语音、事件或场景建模。
+- [Entropy-Guided GRVQ for Ultra-Low Bitrate Neural Speech Codec](https://arxiv.org/abs/2603.01476)： 使用 Entropy-Guided GRVQ for Ultra-Low Bitrate Neural Speech Codec 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Scores Know Bobs Voice: Speaker Impersonation Attack](https://arxiv.org/abs/2603.02781)： 用 Speaker Impersonation Attack 建模语音、音频或口语语言行为。
+- [Crab$^{+}$: A Scalable and Unified Audio-Visual Scene Understanding Model with Explicit Cooperation](https://arxiv.org/abs/2603.04128)： 用 Explicit Cooperation 建模视听场景、事件或跨模态推理。
+- [Temporal Pooling Strategies for Training-Free Anomalous Sound Detection with Self-Supervised Audio Embeddings](https://arxiv.org/abs/2603.04605)： 用 Self-Supervised Audio Embeddings 学习语音或音频表征，服务识别、理解或生成。
+- [SarcasmMiner](https://arxiv.org/abs/2603.05275)： 用 SarcasmMiner 建模语音、音频或口语语言行为。
+- [Latent-Mark: An Audio Watermark Robust to Neural Resynthesis](https://arxiv.org/abs/2603.05310)：把音频水印嵌入编解码器不变的潜空间，使溯源信号能抵抗神经重合成和语义压缩。
+- [Reconstruct! Don't Encode: Self-Supervised Representation Reconstruction Loss for High-Intelligibility and Low-Latency Streaming Neural Audio Codec](https://arxiv.org/abs/2603.05887)： 使用 Self-Supervised Representation Reconstruction Loss for High-Intelligibility and Low-Latency Streaming Neural Audio Codec 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [StreamVoiceAnon+: Emotion-Preserving Streaming Speaker Anonymization via Frame-Level Acoustic Distillation](https://arxiv.org/abs/2603.06079)： 使用 Frame-Level Acoustic Distillation 做语音情感、副语言或情感对话建模。
+- [Prosodic Boundary-Aware Streaming Generation for LLM-Based TTS with Streaming Text Input](https://arxiv.org/abs/2603.06444)： 使用 Streaming Text Input 改进文本转语音、韵律控制或零样本声音生成。
+- [Speak in Context: Multilingual ASR with Speech Context Alignment via Contrastive Learning](https://arxiv.org/abs/2603.06505)： 使用 Contrastive Learning 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [AV-Unified: A Unified Framework for Audio-Visual Scene Understanding](https://arxiv.org/abs/2603.06530)：用统一框架覆盖音视频场景理解任务，使模型能在事件、场景与跨模态推理目标间共享表征。
+- [Language-Aware Distillation for Multilingual Instruction-Following Speech LLMs with ASR-Only Supervision](https://arxiv.org/abs/2603.07025)：用仅 ASR 监督和语言感知目标蒸馏多语种指令跟随语音 LLM。
+- [Agora: Teaching the Skill of Consensus-Finding with AI Personas Grounded in Human Voice](https://arxiv.org/abs/2603.07339)： 使用 AI Personas Grounded in Human Voice 做语音、音频或口语语言建模。
+- [NLE: Non-autoregressive LLM-based ASR by Transcript Editing](https://arxiv.org/abs/2603.08397)： 用 Transcript Editing 改进 ASR、多语种转写或抗噪语音识别。
+- [Scalable Neural Vocoder from Range-Null Space Decomposition](https://arxiv.org/abs/2603.08574)： 使用 Range-Null Space Decomposition 做语音、音频或口语语言建模。
+- [SPAR-K: Scheduled Periodic Alternating Early Exit for Spoken Language Models](https://arxiv.org/abs/2603.09215)：面向语音与音频模型的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“SPAR-K: Scheduled Periodic Alternating Early Exit for Spoken Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [StuPASE: Towards Low-Hallucination Studio-Quality Generative Speech Enhancement](https://arxiv.org/abs/2603.09234)：面向低幻觉、棚录级生成式语音增强，补充语音生成可靠性方法。
+- [SENS-ASR: Semantic Embedding injection in Neural-transducer for Streaming Automatic Speech Recognition](https://arxiv.org/abs/2603.10005)： 使用 Semantic Embedding injection in Neural-transducer for Streaming Automatic Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [ID-LoRA: Identity-Driven Audio-Video Personalization with In-Context LoRA](https://arxiv.org/abs/2603.10256)： 用 In-Context LoRA 建模语音、音频或口语语言行为。
+- [Speaker Verification with Speech-Aware LLMs: Evaluation and Augmentation](https://arxiv.org/abs/2603.10827)：面向语音与音频模型的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [OSUM-Pangu: An Open-Source Multidimension Speech Understanding Foundation Model Built upon OpenPangu on Ascend NPUs](https://arxiv.org/abs/2603.10862)： 用 An Open-Source Multidimension Speech Understanding Foundation Model Built upon OpenPangu on Ascend NPUs 学习语音或音频表征，服务识别、理解或生成。
+- [Streaming Translation and Transcription Through Speech-to-Text Causal Alignment](https://arxiv.org/abs/2603.11578)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [RAF: Relativistic Adversarial Feedback For Universal Speech Synthesis](https://arxiv.org/abs/2603.11678)： 用 Universal Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [TASTE-Streaming: Towards Streamable Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](https://arxiv.org/abs/2603.12350)： 使用 Towards Streamable Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling 做语音、音频或口语语言建模。
+- [Integrated Spoofing-Robust Automatic Speaker Verification via a Three-Class Formulation and LLR](https://arxiv.org/abs/2603.13780)： 使用 a Three-Class Formulation and LLR 做音频深伪、欺骗攻击或声音真实性检测。
+- [DiFlowDubber: Discrete Flow Matching for Automated Video Dubbing via Cross-Modal Alignment and Synchronization](https://arxiv.org/abs/2603.14267)： 用 Cross-Modal Alignment and Synchronization 建模语音、音频或口语语言行为。
+- [Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations](https://arxiv.org/abs/2603.14432)： 使用 Affective and Contextually Aligned Nonverbal Vocalizations 改进文本转语音、韵律控制或零样本声音生成。
+- [Tap-to-Adapt: Learning User-Aligned Response Timing for Speech Agents](https://arxiv.org/abs/2603.14449)： 使用 Learning User-Aligned Response Timing for Speech Agents 做语音、音频或口语语言建模。
+- [LLMs and Speech: Integration vs. Combination](https://arxiv.org/abs/2603.15045)： 使用 Integration vs. Combination 做语音、音频或口语语言建模。
+- [AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](https://arxiv.org/abs/2603.15597)： 用 Acoustic Transfer 生成文本条件音频、Foley 音效或视频对齐声音。
 - [Paralinguistic Speech-LLM Alignment](https://arxiv.org/abs/2603.15981)：通过多任务强化学习对齐语音大模型的副语言理解与生成。
+- [Diffusion Models for Joint Audio-Video Generation](https://arxiv.org/abs/2603.16093)： 使用 Diffusion Models for Joint Audio-Video Generation 做语音、音频或口语语言建模。
+- [Polyglot-Lion: Efficient Multilingual ASR for Singapore via Balanced Fine-Tuning of Qwen3-ASR](https://arxiv.org/abs/2603.16184)：用均衡采样的公开英语、华语、泰米尔语和马来语语料微调紧凑 Qwen3-ASR，并去掉语言标签让模型从音频隐式识别语言。
+- [Making Separation-First Multi-Stream Audio Watermarking Feasible via Joint Training](https://arxiv.org/abs/2603.16805)： 用 Joint Training 嵌入或检测可追踪语音音频水印。
+- [Quantizer-Aware Hierarchical Neural Codec Modeling for Speech Deepfake Detection](https://arxiv.org/abs/2603.16914)： 用 Speech Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
 - [Zipper-LoRA](https://arxiv.org/abs/2603.17558)：通过 Zipper-LoRA 的动态参数解耦改进 Speech-LLM 多语种自动语音识别。
+- [Modeling Overlapped Speech with Shuffles](https://arxiv.org/abs/2603.17769)： 使用 Shuffles 做语音、音频或口语语言建模。
+- [FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](https://arxiv.org/abs/2603.19857)： 用 Structured Scripts 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Audio Avatar Fingerprinting: An Approach for Authorized Use of Voice Cloning in the Era of Synthetic Audio](https://arxiv.org/abs/2603.20165)： 使用 An Approach for Authorized Use of Voice Cloning in the Era of Synthetic Audio 作为语音和音频模型的数据生成或适配路线。
+- [OmniCodec: Low Frame Rate Universal Audio Codec with Semantic-Acoustic Disentanglement](https://arxiv.org/abs/2603.20638)： 用 Semantic-Acoustic Disentanglement 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [DiT-Flow: Speech Enhancement Robust to Multiple Distortions based on Flow Matching in Latent Space and Diffusion Transformers](https://arxiv.org/abs/2603.21608)： 使用 Flow Matching in Latent Space and Diffusion Transformers 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Disentangling Speaker Traits for Deepfake Source Verification via Chebyshev Polynomial and Riemannian Metric Learning](https://arxiv.org/abs/2603.21875)： 使用 Chebyshev Polynomial and Riemannian Metric Learning 做音频深伪、欺骗攻击或声音真实性检测。
+- [Ethio-ASR: Joint Multilingual Speech Recognition and Language Identification for Ethiopian Languages](https://arxiv.org/abs/2603.23654)：为五种埃塞俄比亚语言训练联合 multilingual ASR 与语言识别模型，并分析性别偏差和音系错误，补充极低资源语音建模。
 - [ACAVCaps](https://arxiv.org/abs/2603.24038)：构建大规模细粒度音频描述监督，用于训练更丰富的音频理解模型。
+- [Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](https://arxiv.org/abs/2603.24139)： 使用 A Dynamic Curriculum for Robust Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Joint Learning Global-Local Speaker Classification to Enhance End-to-End Speaker Diarization and Recognition](https://arxiv.org/abs/2603.25377)： 使用 Joint Learning Global-Local Speaker Classification to Enhance End-to-End Speaker Diarization and Recognition 做说话人日志和多说话人语音分割。
+- [CLAR: CIF-Localized Alignment for Retrieval-Augmented Speech LLM-Based Contextual ASR](https://arxiv.org/abs/2603.25460)：为 retrieval-augmented speech LLM 的上下文 ASR 提供 CIF 局部对齐。
+- [Voxtral TTS](https://arxiv.org/abs/2603.25551)： 使用 Voxtral TTS 改进文本转语音、韵律控制或零样本声音生成。
+- [Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods](https://arxiv.org/abs/2603.25767)： 使用 A Data-Centric Study of General-Purpose Audio Pre-Training Methods 学习语音或音频表征，服务下游识别与生成任务。
+- [LLaDA-TTS: Unifying Speech Synthesis and Zero-Shot Editing via Masked Diffusion Modeling](https://arxiv.org/abs/2603.26364)： 使用 Masked Diffusion Modeling 改进文本转语音、韵律控制或零样本声音生成。
+- [JAL-Turn: Joint Acoustic-Linguistic Modeling for Real-Time and Robust Turn-Taking Detection in Full-Duplex Spoken Dialogue Systems](https://arxiv.org/abs/2603.26515)： 用 Real-Time and Robust Turn-Taking Detection in Full-Duplex Spoken Dialogue Systems 建模语音、音频或口语语言行为。
+- [Two-Stage Acoustic Adaptation with Gated Cross-Attention Adapters for LLM-Based Multi-Talker Speech Recognition](https://arxiv.org/abs/2603.27205)： 使用 Gated Cross-Attention Adapters for LLM-Based Multi-Talker Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [On the Role of Encoder Depth: Pruning Whisper and LoRA Fine-Tuning in SLAM-ASR](https://arxiv.org/abs/2603.27981)： 用 On the Role of Encoder Depth: Pruning Whisper and LoRA Fine-Tuning in SLAM-ASR 改进 ASR、多语种转写或抗噪语音识别。
+- [Audio Language Model for Deepfake Detection Grounded in Acoustic Chain-of-Thought](https://arxiv.org/abs/2603.28021)： 用 Deepfake Detection Grounded in Acoustic Chain-of-Thought 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Advancing LLM-based phoneme-to-grapheme for multilingual speech recognition](https://arxiv.org/abs/2603.29217)： 用 multilingual speech recognition 改进 ASR、多语种转写或抗噪语音识别。
+- [T5Gemma-TTS Technical Report](https://arxiv.org/abs/2604.01760)： 用 T5Gemma-TTS Technical Report 建模语音、音频或口语语言行为。
+- [GAP-URGENet: A Generative-Predictive Fusion Framework for Universal Speech Enhancement](https://arxiv.org/abs/2604.01832)：结合生成式恢复与预测式增强线索，面向多种噪声和退化条件做通用语音增强。
+- [OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](https://arxiv.org/abs/2604.04348)：提出 UniHAGen 任务和 OmniSonic 框架，用 TriAttn-DiT 与 MoE gate 同时平衡屏内声音、屏外声音和人声条件。
+- [Rethinking Entropy Allocation in LLM-based ASR: Understanding the Dynamics between Speech Encoders and LLMs](https://arxiv.org/abs/2604.08003)： 使用 Rethinking Entropy Allocation in LLM-based ASR: Understanding the Dynamics between Speech Encoders and LLMs 改进自动语音识别、多语种 ASR 或抗噪转写。
 - [TASU2](https://arxiv.org/abs/2604.08384)：通过可控 CTC 式监督模拟来对齐语音大模型，并提升低资源语音适配效果。
+- [WAND: Windowed Attention and Knowledge Distillation for Efficient Autoregressive Text-to-Speech Models](https://arxiv.org/abs/2604.08558)： 用 Efficient Autoregressive Text-to-Speech Models 改进文本转语音、韵律控制或零样本声音生成。
+- [From Dispersion to Attraction: Spectral Dynamics of Hallucination Across Whisper Model Scales](https://arxiv.org/abs/2604.08591)：研究 Whisper 不同规模模型中的幻觉动态。
 - [Audio Flamingo Next](https://arxiv.org/abs/2604.10905)：新一代开放音频语言模型，加入更大规模推理数据、30 分钟音频支持和带时间戳 grounding 的 Temporal Audio Chain-of-Thought。
+- [Efficient Training for Cross-lingual Speech Language Models](https://arxiv.org/abs/2604.11096)： 使用 Efficient Training for Cross-lingual Speech Language Models 做语音、音频或口语语言建模。
+- [Efficient Emotion-Aware Iconic Gesture Prediction for Robot Co-Speech](https://arxiv.org/abs/2604.11417)： 用 Robot Co-Speech 建模语音情感、副语言线索或情感对话。
+- [MimicLM: Zero-Shot Voice Imitation through Autoregressive Modeling of Pseudo-Parallel Speech Corpora](https://arxiv.org/abs/2604.11552)： 用 Autoregressive Modeling of Pseudo-Parallel Speech Corpora 建模语音、音频或口语语言行为。
+- [StreamMark: A Deep Learning-Based Semi-Fragile Audio Watermarking for Proactive Deepfake Detection](https://arxiv.org/abs/2604.11917)：采用半脆弱音频水印，在良性变换下保持鲁棒，而在语义篡改语音时触发失效以辅助深伪检测。
+- [Why Your Tokenizer Fails in Information Fusion: A Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio Tokenization](https://arxiv.org/abs/2604.12145)： 使用 Why Your Tokenizer Fails in Information Fusion: A Timing-Aware Pre-Quantization Fusion for Video-Enhanced Audio 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [TokenSE: a Mamba-based discrete token speech enhancement framework for cochlear implants](https://arxiv.org/abs/2604.12246)： 使用 a Mamba-based discrete token speech enhancement framework for cochlear implants 做语音增强、带宽扩展或鲁棒音频恢复。
+- [An Ultra-Low Latency, End-to-End Streaming Speech Synthesis Architecture via Block-Wise Generation and Depth-Wise Codec Decoding](https://arxiv.org/abs/2604.12438)： 使用 Block-Wise Generation and Depth-Wise Codec Decoding 改进文本转语音、韵律控制或零样本声音生成。
+- [X-VC: Zero-shot Streaming Voice Conversion in Codec Space](https://arxiv.org/abs/2604.12456)： 用 Zero-shot Streaming Voice Conversion in Codec Space 做语音转换、说话人克隆或语音编辑。
+- [SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding](https://arxiv.org/abs/2604.13023)： 使用 Fine-Grained Temporal Grounding 对齐音频与文本表征，服务音频语言理解。
+- [ProSDD: Learning Prosodic Representations for Speech Deepfake Detection against Expressive and Emotional Attacks](https://arxiv.org/abs/2604.13229)： 用 Speech Deepfake Detection against Expressive and Emotional Attacks 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Towards Fine-grained Temporal Perception: Post-Training Large Audio-Language Models with Audio-Side Time Prompt](https://arxiv.org/abs/2604.13715)： 用 Audio-Side Time Prompt 对齐音频与文本表征。
+- [Character Beyond Speech: Leveraging Role-Playing Evaluation in Audio Large Language Models via Reinforcement Learning](https://arxiv.org/abs/2604.13804)：用角色扮演评测信号和强化学习训练音频大语言模型。
+- [UniPASE: A Generative Model for Universal Speech Enhancement with High Fidelity and Low Hallucinations](https://arxiv.org/abs/2604.14606)： 使用 High Fidelity and Low Hallucinations 做语音增强、带宽扩展或鲁棒音频恢复。
+- [Hierarchical Codec Diffusion for Video-to-Speech Generation](https://arxiv.org/abs/2604.15923)： 用 Video-to-Speech Generation 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [AST: Adaptive, Seamless, and Training-Free Precise Speech Editing](https://arxiv.org/abs/2604.16056)： 使用 Adaptive, Seamless, and Training-Free Precise Speech Editing 做语音、音频或口语语言建模。
+- [Polyglot: Multilingual Style Preserving Speech-Driven Facial Animation](https://arxiv.org/abs/2604.16108)： 使用 Multilingual Style Preserving Speech-Driven Facial Animation 做语音驱动 talking-head、面部动画或共语手势生成。
 - [Audio-DeepThinker](https://arxiv.org/abs/2604.18187)：面向音频语言模型的渐进式 reasoning-aware RL 框架，使用混合 reasoning-similarity reward。
-- [Mega-ASR](https://arxiv.org/abs/2605.19833)：扩展真实声学仿真，并结合 acoustic-to-semantic 渐进 SFT 与 WER-gated policy optimization，提升鲁棒 ASR。
-- [LatentOmni](https://arxiv.org/abs/2605.22012)：统一音视频 latent reasoning 框架，把文本推理与音视频 latent states 交替建模。
+- [Text-To-Speech with Chain-of-Details: modeling temporal dynamics in speech generation](https://arxiv.org/abs/2604.19330)： 使用 modeling temporal dynamics in speech generation 改进文本转语音、韵律控制或零样本声音生成。
+- [Towards Streaming Target Speaker Extraction via Chunk-wise Interleaved Splicing of Autoregressive Language Model](https://arxiv.org/abs/2604.19635)： 使用 Chunk-wise Interleaved Splicing of Autoregressive Language Model 做语音、音频或口语语言建模。
+- [Preferences of a Voice-First Nation: Large-Scale Pairwise Evaluation and Preference Analysis for TTS in Indian Languages](https://arxiv.org/abs/2604.21481)： 用 TTS in Indian Languages 改进文本转语音、韵律控制或零样本声音生成。
+- [DM-ASR: Diarization-aware Multi-speaker ASR with Large Language Models](https://arxiv.org/abs/2604.22467)： 使用 Large Language Models 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Spectro-Temporal Modulation Representation Framework for Human-Imitated Speech Detection](https://arxiv.org/abs/2604.23241)： 使用 Spectro-Temporal Modulation Representation Framework for Human-Imitated Speech Detection 学习语音或音频表征，服务下游识别与生成任务。
+- [Robust Accent Identification Via Voice Conversion and Non-Timbral Embeddings](https://arxiv.org/abs/2604.25332)： 使用 Voice Conversion and Non-Timbral Embeddings 做语音转换、说话人克隆或可控音色迁移。
+- [Mutual Forcing: Dual-Mode Self-Evolution for Fast Autoregressive Audio-Video Character Generation](https://arxiv.org/abs/2604.25819)： 用 Fast Autoregressive Audio-Video Character Generation 建模语音、音频或口语语言行为。
+- [SPG-Codec: Exploring the Role and Boundaries of Semantic Priors in Ultra-Low-Bitrate Neural Speech Coding](https://arxiv.org/abs/2604.26296)：研究超低码率神经语音编码中的语义先验，分析 HuBERT 与 Whisper 约束何时提升可懂度、降低音素幻觉，以及语义收益何时退场。
+- [Diffusion Reconstruction towards Generalizable Audio Deepfake Detection](https://arxiv.org/abs/2604.26465)： 使用 Diffusion Reconstruction towards Generalizable Audio Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Text-Utilization for Encoder-dominated Speech Recognition Models](https://arxiv.org/abs/2604.26514)： 使用 Text-Utilization for Encoder-dominated Speech Recognition Models 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [JaiTTS: A Thai Voice Cloning Model](https://arxiv.org/abs/2604.27607)： 使用 A Thai Voice Cloning Model 做语音、音频或口语语言建模。
+- [MMAudioReverbs: Video-Guided Acoustic Modeling for Dereverberation and Room Impulse Response Estimation](https://arxiv.org/abs/2605.00431)： 用 Dereverberation and Room Impulse Response Estimation 增强或恢复退化语音。
+- [MMAudio-LABEL: Audio Event Labeling via Audio Generation for Silent Video](https://arxiv.org/abs/2605.00495)： 用 Audio Generation for Silent Video 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Toward Fine-Grained Speech Inpainting Forensics:A Dataset, Method, and Metric for Multi-Region Tampering Localization](https://arxiv.org/abs/2605.02223)： 使用 A Dataset, Method, and Metric for Multi-Region Tampering Localization 作为语音和音频模型的数据生成或适配路线。
+- [The TTS-STT Flywheel: Synthetic Entity-Dense Audio Closes the Indic ASR Gap Where Commercial and Open-Source Systems Fail](https://arxiv.org/abs/2605.03073)： 用 Synthetic Entity-Dense Audio Closes the Indic ASR Gap Where Commercial and Open-Source Systems Fail 改进文本转语音、韵律控制或零样本声音生成。
+- [Deepfake Audio Detection Using Self-supervised Fusion Representations](https://arxiv.org/abs/2605.03420)： 用 Self-supervised Fusion Representations 检测音频深伪、欺骗攻击或声音真实性问题。
+- [MiniMind-O Technical Report: An Open Small-Scale Speech-Native Omni Model](https://arxiv.org/abs/2605.03937)： 用 An Open Small-Scale Speech-Native Omni Model 建模语音、音频或口语语言行为。
+- [Quantum Kernels for Audio Deepfake Detection Using Spectrogram Patch Features](https://arxiv.org/abs/2605.06035)： 使用 Spectrogram Patch Features 做音频深伪、欺骗攻击或声音真实性检测。
+- [Asymmetric Phase Coding Audio Watermarking](https://arxiv.org/abs/2605.07241)： 使用 Asymmetric Phase Coding Audio Watermarking 在语音和音频中嵌入或检测可追踪水印。
+- [Reducing Linguistic Hallucination in LM-Based Speech Enhancement via Noise-Invariant Acoustic-Semantic Distillation](https://arxiv.org/abs/2605.08608)： 用 Noise-Invariant Acoustic-Semantic Distillation 增强或恢复退化语音。
+- [EAR: Enhancing Uni-Modal Representations for Weakly Supervised Audio-Visual Video Parsing](https://arxiv.org/abs/2605.08723)： 使用 Enhancing Uni-Modal Representations for Weakly Supervised Audio-Visual Video Parsing 做视听语音、事件或场景建模。
+- [PoDAR: Power-Disentangled Audio Representation for Generative Modeling](https://arxiv.org/abs/2605.10084)： 使用 Power-Disentangled Audio Representation for Generative Modeling 学习语音或音频表征，服务下游识别与生成任务。
 - [DiffMusic](https://doi.org/10.1109/TASLPRO.2026.3660263)：基于扩散表示从单张图像生成音乐，更适合归入音频生成模型部分而非图像编辑。
+- [MOSAIC: A Unified Multilingual Deep Learning Framework for Detecting Manipulated Speech Audio Using Geometry-Aware Foundation Model Representations](https://doi.org/10.1109/icsadl67539.2026.11451915)：在统一多语言框架中使用 geometry-aware foundation-model 表征检测被操纵的语音音频。
+- [Lisa: Lightweight Yet Superb Neural Speech Coding](https://doi.org/10.1109/icassp55912.2026.11464260)：提出轻量级神经语音编码模型，为语音语言模型前端补充紧凑 codec 路线。
+- [Tri-View Collaborative Graph Learning for Robust Deepfake Speech Detection](https://doi.org/10.1109/tdsc.2026.3660668)： 用 Robust Deepfake Speech Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Reinforced Temporally Sparse Gating for High-Fidelity Speech Watermarking](https://doi.org/10.1109/lsp.2026.3690581)： 用 High-Fidelity Speech Watermarking 嵌入或检测可追踪语音音频水印。
+- [Relative Time Intervals Representation For Word-Level Timestamping With Masked Training](https://doi.org/10.1109/icassp55912.2026.11460608)： 使用 Masked Training 学习语音或音频表征，服务下游识别与生成任务。
+- [KD-Vocodec: A Low-Complexity Model for Joint Speech Coding And Enhancement Using Knowledge Distillation](https://doi.org/10.1109/icassp55912.2026.11461554)： 使用 Knowledge Distillation 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Progressive Refinement Training for Low-Resource Neural Speech Coding and Enhancement](https://doi.org/10.1109/icassp55912.2026.11463952)： 使用 Progressive Refinement Training for Low-Resource Neural Speech Coding and Enhancement 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [A Robust Region-Aware Framework for Audio Forgery Localization](https://doi.org/10.1109/taslpro.2026.3661237)： 使用 A Robust Region-Aware Framework for Audio Forgery Localization 检测并定位音频伪造片段。
+- [Linguard: Authenticating Speech Recordings Using Speech Recognition and Watermark](https://doi.org/10.1109/icassp55912.2026.11462384)： 使用 Speech Recognition and Watermark 在语音和音频中嵌入或检测可追踪水印。
+- [Voice Watermarking for Authentication and Copyright Protection Using Neural Models](https://doi.org/10.1109/icaiic68212.2026.11454410)： 使用 Neural Models 在语音和音频中嵌入或检测可追踪水印。
+- [EchoRAG: A Two-Stage Framework for Audio-Text Retrieval and Temporal Grounding](https://doi.org/10.1109/icassp55912.2026.11461592)： 使用 A Two-Stage Framework for Audio-Text Retrieval and Temporal Grounding 做语音、音频或口语语言建模。
+- [VChangeCodec: An Ultra Low-Complexity Neural Speech Codec with Built-In Voice Changer for Customized Real-Time Communication](https://doi.org/10.1109/icassp55912.2026.11461501)： 使用 Built-In Voice Changer for Customized Real-Time Communication 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [OACodec: Audio Attribute Disentanglement via Orthogonal Disentanglement and Mutual Information Minimization](https://doi.org/10.1016/j.neunet.2026.109128)： 使用 Orthogonal Disentanglement and Mutual Information Minimization 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [High Quality and Secure Speech Transmission at Low Bitrate via Semantic-Acoustic Hybrid Coding for Low-Altitude Intelligent Systems](https://doi.org/10.1109/tccn.2026.3657147)： 使用 Semantic-Acoustic Hybrid Coding for Low-Altitude Intelligent Systems 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [Human-like sequential sound-to-meaning transfer drives artificial speech comprehension](https://doi.org/10.64898/2026.05.13.723203)： 使用 Human-like sequential sound-to-meaning transfer drives artificial speech comprehension 做语音、音频或口语语言建模。
+- [SAQCodec: Semantic-Acoustic Fusion and Adaptive Quantization for Ultra-Low Bitrate Speech Coding](https://doi.org/10.1109/taslpro.2026.3657958)： 使用 Semantic-Acoustic Fusion and Adaptive Quantization for Ultra-Low Bitrate Speech Coding 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [T-Cache: Fast Inference For Masked Generative Transformer-Based TTS Via Prompt-Aware Feature Caching](https://doi.org/10.1109/icassp55912.2026.11463779)： 使用 Prompt-Aware Feature Caching 改进文本转语音、韵律控制或零样本声音生成。
+- [QFOCUS: Controllable Synthesis for Automated Speech Stress Editing to Deliver Human-Like Emphatic Intent](https://doi.org/10.1109/icassp55912.2026.11462400)： 用 Automated Speech Stress Editing to Deliver Human-Like Emphatic Intent 建模语音、音频或口语语言行为。
+- [SEP-ST: Incorporating Speech Entity Prompt Into Large Language Models for Speech Translation](https://doi.org/10.1109/icassp55912.2026.11464222)： 用 Speech Translation 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [Hierarchical Discrete Flow Matching For Multi-Codebook Codec-Based Text-To-Speech](https://doi.org/10.1109/icassp55912.2026.11463572)： 用 Multi-Codebook Codec-Based Text-To-Speech 改进文本转语音、韵律控制或零样本声音生成。
+- [IBPCodec : A Low-Bitrate Lightweight Speech Codec With Inter-Band Prediction](https://doi.org/10.1109/icassp55912.2026.11462198)： 用 Inter-Band Prediction 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Vocalnet-M2: Advancing Low-Latency Spoken Language Modeling via Integrated Multi-Codebook Tokenization and Multi-Token Prediction](https://doi.org/10.1109/icassp55912.2026.11461309)： 用 Integrated Multi-Codebook Tokenization and Multi-Token Prediction 学习语音或音频表征，服务识别、理解或生成。
+- [A Novel Ultrasonic Phased-Array Injection Attack on Voice-Controlled Devices](https://doi.org/10.1109/jiot.2026.3655361)： 用 A Novel Ultrasonic Phased-Array Injection Attack on Voice-Controlled Devices 建模语音、音频或口语语言行为。
+- [AVSCNet: A dual-branch network for synchronization detection and content consistency learning in audio-video forgery detection](https://doi.org/10.1016/j.neucom.2026.133067)： 用 synchronization detection and content consistency learning in audio-video forgery detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Extending ASR Evaluation Resources for Modern Greek Dialects](https://doi.org/10.18653/v1/2026.vardial-1.17)： 用 Modern Greek Dialects 改进 ASR、多语种转写或抗噪语音识别。
+- [Digital Speech–Language Assessment App with Adaptive Evaluation and Testing](https://doi.org/10.1109/icmcsi67283.2026.11412921)： 用 Adaptive Evaluation and Testing 建模语音、音频或口语语言行为。
+- [A Lightweight Real-Time Multilingual Video Communication System using On-Device Speech Translation](https://doi.org/10.1109/esic68176.2026.11496311)： 用 On-Device Speech Translation 支持语音翻译、同时翻译或 code-switching 语音理解。
+- [Automated Rawstory-to-Video Generation from Nasreddin Hodja Tales via an Expert-Inspired Multi-Stage Transformation Pipeline](https://doi.org/10.1109/iisec69317.2026.11418405)： 用 an Expert-Inspired Multi-Stage Transformation Pipeline 建模语音、音频或口语语言行为。
+- [Fusion-regularized alignment modality-adaptive audio-visual network for audio-visual zero-shot learning](https://doi.org/10.1016/j.neucom.2026.133693)： 使用 Fusion-regularized alignment modality-adaptive audio-visual network for audio-visual zero-shot learning 做视听语音、事件或场景建模。
+- [DAP-Whisper: A Robust Audio-Visual Speech Recognition System via Distribution-Aware Prompting and Consistency-Gated Modulation](https://doi.org/10.1016/j.eswa.2026.132369)： 使用 Distribution-Aware Prompting and Consistency-Gated Modulation 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Align2speak: Improving TTS for Low Resource Languages via ASR-Guided Online Preference Optimization](https://doi.org/10.1109/icassp55912.2026.11460913)： 使用 ASR-Guided Online Preference Optimization 改进文本转语音、韵律控制或零样本声音生成。
+- [Adaptive Self-Attention Across Domains for Music Genre Estimation: Deep Learning-Based Framework](https://doi.org/10.1109/access.2026.3676049)： 使用 Adaptive Self-Attention Across Domains for Music Genre Estimation: Deep Learning-Based Framework 做音乐生成、伴奏生成或音频条件作曲。
+- [DBFT-SD: Weakly Supervised Multimodal Detection of Sensitive Audio-Visual Content](https://doi.org/10.1109/icassp55912.2026.11464529)： 使用 Weakly Supervised Multimodal Detection of Sensitive Audio-Visual Content 做视听语音、事件或场景建模。
+- [A novel multi-modal attentional collaborative learning framework with semantic enhancement for audio-visual question answering](https://doi.org/10.1016/j.engappai.2026.114325)： 使用 semantic enhancement for audio-visual question answering 做视听场景理解、问答或跨模态推理。
+- [HierMamba: Multi-stage State-space Modeling for Multi-channel Speech Separation](https://doi.org/10.1109/nnice68970.2026.11466226)： 使用 Multi-stage State-space Modeling for Multi-channel Speech Separation 做语音分离或多源音频重建。
+- [EnTA-Align: Heterogeneous Model Ensemble with Dual-Path Fusion for Text-Audio Alignment](https://doi.org/10.1109/icassp55912.2026.11462543)： 使用 Dual-Path Fusion for Text-Audio Alignment 做语音、音频或口语语言建模。
+- [Few-Shot Recognition of Audio Deepfake Generators using Graph-Based Prototype Adaptation](https://doi.org/10.1109/icassp55912.2026.11464006)： 使用 Graph-Based Prototype Adaptation 做音频深伪、欺骗攻击或声音真实性检测。
+- [Sounds that Shape: Audio-Driven 3D Mesh Generation with Attribute-Decoupled Score Distillation Sampling](https://doi.org/10.1109/icassp55912.2026.11464799)： 使用 Attribute-Decoupled Score Distillation Sampling 做语音、音频或口语语言建模。
+- [MINA: Multimodal intention analysis of social media posts via LLM-guided audio-visual-text reasoning](https://doi.org/10.1016/j.patcog.2026.113700)： 使用 LLM-guided audio-visual-text reasoning 做视听语音、事件或场景建模。
+- [Emotion and noise-robust speaker identification via filter-free self-supervised learning](https://doi.org/10.1016/j.ipm.2026.104774)： 使用 filter-free self-supervised learning 做语音情感、副语言或情感对话建模。
+- [Stochastic Parrots or True Virtuosos? Digging Deeper Into the Audio-Video Understanding of AVQA Models](https://doi.org/10.18653/v1/2026.nlp4musa-1.3)： 使用 Stochastic Parrots or True Virtuosos? Digging Deeper Into the Audio-Video Understanding of AVQA Models 做语音、音频或口语语言建模。
+- [Grey-Box Prompt Tuning With Graph Alignment for Speech-Language Models](https://doi.org/10.1109/icassp55912.2026.11461757)： 使用 Graph Alignment for Speech-Language Models 做语音、音频或口语语言建模。
+- [LLM-driven fine-grained emotion parsing and parameterized mapping for conversational TTS](https://doi.org/10.1016/j.patcog.2026.113544)： 使用 LLM-driven fine-grained emotion parsing and parameterized mapping for conversational TTS 改进文本转语音、韵律控制或零样本声音生成。
+- [Discrete-Continuous Fusion With Adaptive Hierarchical Features For Audio Deepfake Detection](https://doi.org/10.1109/icassp55912.2026.11464945)： 使用 Adaptive Hierarchical Features For Audio Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [DUAP: Disentanglement-Based Universal Adversarial Perturbations for Robust Multilingual Speech Privacy Protection](https://doi.org/10.1109/tifs.2026.3671687)： 使用 Disentanglement-Based Universal Adversarial Perturbations for Robust Multilingual Speech Privacy Protection 做语音、音频或口语语言建模。
+- [Asynchrony-Aware Decoupled Multimodal Control for Cued Speech Video Generation](https://doi.org/10.1109/icassp55912.2026.11461568)： 使用 Asynchrony-Aware Decoupled Multimodal Control for Cued Speech Video Generation 做语音、音频或口语语言建模。
+- [TransLator AI-Powered Speech Translation and Lip-Aligned Video Regeneration System](https://doi.org/10.1109/iceci69159.2026.11519393)： 使用 TransLator AI-Powered Speech Translation and Lip-Aligned Video Regeneration System 做语音翻译、同时翻译或 code-switching 语音理解。
+- [An audio-augmented fusion model for weakly supervised video moment retrieval](https://doi.org/10.1016/j.neucom.2026.133272)： 使用 An audio-augmented fusion model for weakly supervised video moment retrieval 做语音、音频或口语语言建模。
+- [IPACue-TTS: Integrating Prosody and Articulatory Cues in Conditional Flow Matching for Multilingual Zero-Shot TTS](https://doi.org/10.1109/icassp55912.2026.11462369)： 使用 Integrating Prosody and Articulatory Cues in Conditional Flow Matching for Multilingual Zero-Shot TTS 改进文本转语音、韵律控制或零样本声音生成。
+- [Whisper-Aware Spectro-Transformer U-Net for Emotion- Preserving Multilingual Speech Enhancement](https://doi.org/10.36948/ijfmr.2026.v08i01.67991)： 使用 Whisper-Aware Spectro-Transformer U-Net for Emotion- Preserving Multilingual Speech Enhancement 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [A Personalized Real-Time Proactive Voice Memory Assistant](https://doi.org/10.1109/icassp55912.2026.11462192)： 使用 A Personalized Real-Time Proactive Voice Memory Assistant 做语音、音频或口语语言建模。
+- [Hearing movement, seeing sound: multimodal predictive coding in pianist-dancer interaction](https://doi.org/10.3389/fpsyg.2026.1820643)： 使用 multimodal predictive coding in pianist-dancer interaction 做神经音频编码、离散语音 token 或 codec 语言建模。
+- [nGPT as a Scalable Architecture for Speech Recognition and Translation](https://doi.org/10.1109/icassp55912.2026.11461315)： 使用 nGPT as a Scalable Architecture for Speech Recognition and Translation 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Adaptive Emotion-Aware Speech Synthesis on Edge Devices: A Lightweight Dynamic Model Adaptation Framework using LoRA and OnDevice Fine-Tuning](https://doi.org/10.1109/icears67481.2026.11416528)：补充用于端侧情感感知语音合成的轻量 LoRA 适配方法。
+- [Leveraging Synthetic Multilingual Speech for Automatic Speech Recognition Adaptation: A Comprehensive Cross-Language Analysis](https://doi.org/10.1109/iatmsi68868.2026.11465798)：系统分析合成多语种语音在 ASR 适配中的跨语言迁移效果，突出数据生成对低资源鲁棒性的贡献。
+- [Mixtures of Lightweight Articulatory Experts for Multilingual Asr](https://doi.org/10.1109/icassp55912.2026.11464701)：用轻量发音专家混合建模多语种 ASR，把发音器官结构先验注入高效专家路由。
+- [Speech Watermarking with Discrete Intermediate Representations](https://doi.org/10.1609/aaai.v39i23.34600)：把语音水印嵌入离散中间表示，利用向量量化潜在 ID 和 token 选择模块提升鲁棒性与不可感知性。
+- [Generalizable Audio Deepfake Detection via Risk-Aware Style Alignment and Structural Empirical Risk Minimization](https://doi.org/10.1145/3746027.3755593)： 用 Risk-Aware Style Alignment and Structural Empirical Risk Minimization 检测音频深伪、欺骗攻击或声音真实性问题。
+- [WhiADD: Semantic-Acoustic Fusion for Robust Audio Deepfake Detection](https://doi.org/10.1145/3746027.3755594)： 用 Robust Audio Deepfake Detection 检测音频深伪、欺骗攻击或声音真实性问题。
+- [ASTDT: an Interpretable Adaptive Spectro-Temporal Diffusion Transformer for audio deepfake detection](https://doi.org/10.1186/s13635-025-00217-3)： 使用 an Interpretable Adaptive Spectro-Temporal Diffusion Transformer for audio deepfake detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [ALOHA: Adapting Local Spatio-Temporal Context to Enhance the Audio-Visual Semantic Segmentation](https://doi.org/10.1145/3735975)： 使用 Adapting Local Spatio-Temporal Context to Enhance the Audio-Visual Semantic Segmentation 做视听语音、事件或场景建模。
+- [SepVAMark: Deep Separable Visual-Audio Fusion Watermarking for Source Tracing and Deepfake Detection](https://doi.org/10.1145/3746027.3755783)： 使用 Deep Separable Visual-Audio Fusion Watermarking for Source Tracing and Deepfake Detection 为生成语音或音频加入可追踪水印并支持真实性验证。
+- [EDM-TTS: Efficient Dual-Stage Masked Modeling for Alignment-Free Text-to-Speech Synthesis](https://openreview.net/forum?id=c7vkDg558Z)： 使用 Efficient Dual-Stage Masked Modeling for Alignment-Free Text-to-Speech Synthesis 改进文本转语音、韵律控制或零样本声音生成。
+- [Audio Deepfake Detection via a Fuzzy Dual-Path Time-Frequency Attention Network](https://doi.org/10.3390/s25247608)： 使用 a Fuzzy Dual-Path Time-Frequency Attention Network 做音频深伪、欺骗攻击或声音真实性检测。
+- [STFT-GradTTS: a robust, diffusion-based speech synthesis system with iSTFT decoder for Bangla](https://doi.org/10.1007/s10772-025-10241-w)： 用 iSTFT decoder for Bangla 改进文本转语音、韵律控制或零样本声音生成。
+- [A Visual Speech Language Model for Visual Text-to-Speech Task](https://doi.org/10.1145/3743093.3771012)： 用 Visual Text-to-Speech Task 改进文本转语音、韵律控制或零样本声音生成。
+- [Emofastspeech2: a multidimensional emotion disentanglement-based Speech synthesis model](https://doi.org/10.1117/12.3089520)： 用 a multidimensional emotion disentanglement-based Speech synthesis model 改进文本转语音、韵律控制或零样本声音生成。
+- [EmoDial-Reason: Unveiling Affective Reasoning in Speech-Emotion Dialogue](https://doi.org/10.1007/978-981-95-5761-5_39)： 用 Unveiling Affective Reasoning in Speech-Emotion Dialogue 建模语音情感、副语言线索或情感对话。
+- [FRADE: Forgery-aware Audio-distilled Multimodal Learning for Deepfake Detection](https://doi.org/10.1145/3664647.3681672)： 使用 Forgery-aware Audio-distilled Multimodal Learning for Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [TiVA: Time-Aligned Video-to-Audio Generation](https://doi.org/10.1145/3664647.3681027)： 使用 Time-Aligned Video-to-Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [AudioLCM: Efficient and High-Quality Text-to-Audio Generation with Minimal Inference Steps](https://doi.org/10.1145/3664647.3681072)： 用 Minimal Inference Steps 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Open set classification of sound event](https://doi.org/10.1038/s41598-023-50639-7)： 用 Open set classification of sound event 建模语音、音频或口语语言行为。
+- [Efficient Integration of ASR with Large Language Models to Enhance Video Search at Scale](https://doi.org/10.1145/3701716.3715220)： 用 Large Language Models to Enhance Video Search at Scale 改进 ASR、多语种转写或抗噪语音识别。
+- [Audio Deepfake Detection Using a Hybrid Model of Convolutional and Bidirectional Long Short-term Memory Networks](https://doi.org/10.11648/j.aas.20261101.11)： 用 a Hybrid Model of Convolutional and Bidirectional Long Short-term Memory Networks 检测音频深伪、欺骗攻击或声音真实性问题。
+- [JMSC: Joint Spatial–Temporal Modeling with Semantic Completion for Audio–Visual Learning](https://doi.org/10.3390/s26041288)： 用 Semantic Completion for Audio–Visual Learning 建模语音、音频或口语语言行为。
+- [HarmoniDPO: Video-guided Audio Generation via Preference-Optimized Diffusion](https://doi.org/10.1007/s11263-025-02636-8)： 用 Preference-Optimized Diffusion 生成文本条件音频、Foley 音效或视频对齐声音。
+- [Towards Energy-efficient Audio-visual Classification via Multimodal Interactive Spiking Neural Network](https://doi.org/10.1145/3721981)： 使用 Multimodal Interactive Spiking Neural Network 做视听语音、事件或场景建模。
+- [VidTune: Creating Video Soundtracks with Generative Music and Video-Based Thumbnails](https://doi.org/10.1145/3772318.3791572)： 使用 Generative Music and Video-Based Thumbnails 做音乐生成、伴奏生成或音频条件作曲。
+- [Toward Efficient and Accurate Prediction of Phonon‐Limited Carrier Mobility by First Principles](https://doi.org/10.1002/adfm.202423252)： 使用 First Principles 做语音、音频或口语语言建模。
+- [SyncTalklip: Highly Synchronized Lip-Readable Speaker Generation with Multi-Task Learning](https://doi.org/10.1145/3664647.3681386)： 使用 Multi-Task Learning 做视听语音识别、唇读或视觉语音生成。
+- [Self-distillation framework for improving fake speech detection in the domain variability scenario](https://doi.org/10.1007/s00521-024-10760-8)： 使用 Self-distillation framework for improving fake speech detection in the domain variability scenario 做语音、音频或口语语言建模。
+- [SIA: A Framework for Context-Aware Intent Clarification in Speech-Driven Immersive Analytics](https://doi.org/10.1145/3742413.3789063)： 使用 A Framework for Context-Aware Intent Clarification in Speech-Driven Immersive Analytics 做语音、音频或口语语言建模。
+- [Gesture2Prop: Conditional VR Prop Generation from Hand Gestures and Speech](https://doi.org/10.1145/3746058.3759017)： 使用 Hand Gestures and Speech 做语音、音频或口语语言建模。
+- [How do multi-modal large language models understand non-English visual hate? Insights from studying hate speech in Chinese-speaking communities on Instagram](https://doi.org/10.1177/29768624251383735)： 使用 studying hate speech in Chinese-speaking communities on Instagram 做语音、音频或口语语言建模。
+- [An Mcformer encoder integrating Mamba and Cgmlp for improved acoustic feature extraction](https://doi.org/10.1038/s41598-025-04979-1)： 使用 An Mcformer encoder integrating Mamba and Cgmlp for improved acoustic feature extraction 学习语音或音频表征，服务下游识别与生成任务。
+- [Temporal-aware multimodal event network for dense audio-visual event localization](https://doi.org/10.1117/12.3082748)： 使用 Temporal-aware multimodal event network for dense audio-visual event localization 做视听语音、事件或场景建模。
+- [Towards Scene-Aware Video-to-Spatial Audio Generation](https://doi.org/10.1007/s11263-025-02610-4)： 使用 Towards Scene-Aware Video-to-Spatial Audio Generation 做文本到音频、音效或 Foley 声音生成。
+- [Vox2Face: Speech-Driven Face Generation via Identity-Space Alignment and Diffusion Self-Consistency](https://doi.org/10.3390/info17020200)： 使用 Identity-Space Alignment and Diffusion Self-Consistency 做语音驱动 talking-head、面部动画或共语手势生成。
+- [Rethinking Implicit Hate Speech Detection: Focusing on Latent Hate Components via Dual-Process Argumentation](https://doi.org/10.1145/3774904.3792159)： 使用 Dual-Process Argumentation 做语音、音频或口语语言建模。
+- [On the Optimal Selection of Mel‐Frequency Cepstral Coefficients for Voice Deepfake Detection](https://doi.org/10.1111/exsy.70245)： 使用 On the Optimal Selection of Mel‐Frequency Cepstral Coefficients for Voice Deepfake Detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Distinguishability-Driven Voice Generation for Speaker Anonymization via Random Projection and GMM](https://doi.org/10.3390/bdcc10020043)： 使用 Random Projection and GMM 做语音、音频或口语语言建模。
+- [CIS: Checkpointed Inference for Data Drift-Resilient Model Serving at Edge Servers](https://doi.org/10.1145/3772052.3772261)： 使用 Checkpointed Inference for Data Drift-Resilient Model Serving at Edge Servers 作为语音和音频模型的数据生成或适配路线。
+- [Dynamic knowledge condensation with audio-selective transformer for audio deepfake detection](https://doi.org/10.1007/s10791-025-09746-4)： 使用 audio-selective transformer for audio deepfake detection 做音频深伪、欺骗攻击或声音真实性检测。
+- [Advanced prompt engineering techniques for generative sound synthesis models](https://doi.org/10.1145/3708319.3733669)： 使用 Advanced prompt engineering techniques for generative sound synthesis models 做语音、音频或口语语言建模。
+- [Enhancing Robustness in Audio Deepfake Detection for VR Applications using data augmentation and Mixup](https://doi.org/10.1145/3691573.3691617)： 使用 data augmentation and Mixup 做音频深伪、欺骗攻击或声音真实性检测。
+- [From Speaker to Dubber: Movie Dubbing with Prosody and Duration Consistency Learning](https://doi.org/10.1145/3664647.3680777)： 使用 Prosody and Duration Consistency Learning 做语音、音频或口语语言建模。
+- [Single-neuronal elements of speech production in humans](https://doi.org/10.1038/s41586-023-06982-w)： 使用 Single-neuronal elements of speech production in humans 做语音、音频或口语语言建模。
+- [Exploration of Whisper fine-tuning strategies for low-resource ASR](https://doi.org/10.1186/s13636-024-00349-3)： 使用 Exploration of Whisper fine-tuning strategies for low-resource ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Spectro-temporal acoustical markers differentiate speech from song across cultures](https://doi.org/10.1038/s41467-024-49040-3)： 使用 song across cultures 做歌声、歌词或旋律生成与转换。
+- [Video and Audio Deepfake Datasets and Open Issues in Deepfake Technology: Being Ahead of the Curve](https://doi.org/10.3390/forensicsci4030021)： 使用 Video and Audio Deepfake Datasets and Open Issues in Deepfake Technology: Being Ahead of 做音频深伪、欺骗攻击或声音真实性检测。
+- [StableVC: Style Controllable Zero-Shot Voice Conversion with Conditional Flow Matching](https://doi.org/10.1609/aaai.v39i24.34758)： 使用 Conditional Flow Matching 做语音转换、说话人克隆或可控音色迁移。
+- [Improving End-to-End Models for Children’s Speech Recognition](https://doi.org/10.3390/app14062353)： 使用 Improving End-to-End Models for Children’s Speech Recognition 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Weaving Sound Information to Support Real-Time Sensemaking of Auditory Environments: Co-Designing with a DHH User](https://doi.org/10.1145/3706598.3714268)： 使用 a DHH User 做语音、音频或口语语言建模。
+- [Dance2MIDI: Dance-driven multi-instrument music generation](https://doi.org/10.1007/s41095-024-0417-1)： 使用 Dance-driven multi-instrument music generation 做音乐生成、伴奏生成或音频条件作曲。
+- [Exploring the Potential of Large Language Models (LLMs) for Low-resource Languages: A Study on Named-Entity Recognition (NER) and Part-Of-Speech (POS) Tagging for Nepali Language](https://doi.org/10.63317/2kjhyimcfs9n)： 使用 Exploring the Potential of Large Language Models (LLMs) for Low-resource Languages: A Study on 做语音、音频或口语语言建模。
+- [EGGesture: Entropy-Guided Vector Quantized Variational AutoEncoder for Co-Speech Gesture Generation](https://doi.org/10.1145/3664647.3681392)： 使用 Entropy-Guided Vector Quantized Variational AutoEncoder for Co-Speech Gesture Generation 做语音驱动 talking-head、面部动画或共语手势生成。
+- [InstructSpeech: Following Speech Editing Instructions via Large Language Models](https://proceedings.mlr.press/v235/huang24k.html)： 使用 Large Language Models 做语音、音频或口语语言建模。
+- [Talking-head video generation with long short-term contextual semantics](https://doi.org/10.1007/s10489-024-06010-y)： 用 long short-term contextual semantics 生成语音驱动 talking-head、面部动画或共语手势。
+- [AKITalk: Audio-Implicit Keypoints for Identity-Preserving Talking-Head Video Synthesis](https://doi.org/10.1145/3769748.3773362)： 用 Identity-Preserving Talking-Head Video Synthesis 生成语音驱动 talking-head、面部动画或共语手势。
+- [Sonic Stage: Automatically Generating an Interactive Spatial Soundscape to Facilitate Dialogue Video Comprehension for Blind and Low Vision Viewers](https://doi.org/10.1145/3772363.3798425)： 使用 Automatically Generating an Interactive Spatial Soundscape to Facilitate Dialogue Video Comprehension for Blind and 做语音、音频或口语语言建模。
+- [Eva: An LLM-based Multilingual Voice-agent Network for Restaurant Operations](https://dblp.org/rec/conf/ifaamas/QinZ25)： 使用 An LLM-based Multilingual Voice-agent Network for Restaurant Operations 做语音、音频或口语语言建模。
+- [Interpretable Deepfake Voice Detection: A Hybrid Deep-Learning Model and Explanation Evaluation](https://ceur-ws.org/Vol-4017/paper_13.pdf)： 用 A Hybrid Deep-Learning Model and Explanation Evaluation 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Vdd: voice deepfake detection with three-channel acoustic representations and advanced split-attention networks](https://doi.org/10.1007/s11760-025-04126-3)： 用 three-channel acoustic representations and advanced split-attention networks 检测音频深伪、欺骗攻击或声音真实性问题。
+- [Low-Resource Speech Recognition by Fine-Tuning Whisper with Optuna-LoRA](https://doi.org/10.3390/app152413090)： 用 Low-Resource Speech Recognition by Fine-Tuning Whisper with Optuna-LoRA 改进 ASR、多语种转写或抗噪语音识别。
+- [AffectCodec: Emotion-Preserving Neural Speech Codec for Expressive Speech Modeling](https://arxiv.org/abs/2605.11098)： 用 Expressive Speech Modeling 建模神经音频 codec、离散语音 token 或 codec 语言模型。
+- [Boosting Omni-Modal Language Models: Staged Post-Training with Visually Debiased Evaluation](https://arxiv.org/abs/2605.12034)： 用 Visually Debiased Evaluation 学习语音或音频表征，服务识别、理解或生成。
+- [Too Good to Be True: A Study on Modern Automatic Speech Recognition for the Evaluation of Speech Enhancement](https://arxiv.org/abs/2605.12107)： 用 the Evaluation of Speech Enhancement 改进 ASR、多语种转写或抗噪语音识别。
+- [Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs](https://arxiv.org/abs/2605.12242)：用不流畅感知目标调优多语言语音纠错。
+- [NAACA](https://arxiv.org/abs/2605.13651)：为长音频语言模型加入振荡式工作记忆注意力门控，将显著事件路由到更高层推理。
+- [Refining Pseudo-Audio Prompts with Speech-Text Alignment for Text-Only Domain Adaptation in LLM-Based ASR](https://arxiv.org/abs/2605.14340)： 使用 Speech-Text Alignment for Text-Only Domain Adaptation in LLM-Based ASR 改进自动语音识别、多语种 ASR 或抗噪转写。
+- [Break-the-Beat! Controllable MIDI-to-Drum audio synthesis](https://arxiv.org/abs/2605.14555)： 使用 Break-the-Beat! Controllable MIDI-to-Drum audio synthesis 做音乐生成、伴奏生成或音频条件作曲。
+- [STCON NIST SRE24 System: Composite Speaker Recognition Solution for Challenging Scenarios](https://doi.org/10.21437/interspeech.2025-2170)：描述 STCON 面向 NIST SRE24 的复合说话人识别系统，在困难评测条件下组合多个识别组件。
+- [From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation](https://arxiv.org/abs/2605.16026)：用类型学语言编码、语言感知声学调制和类型学提示替代扁平语言标签，提升低资源条件下的多语 speech-to-speech translation。
+- [Mega-ASR](https://arxiv.org/abs/2605.19833)：扩展真实声学仿真，并结合 acoustic-to-semantic 渐进 SFT 与 WER-gated policy optimization，提升鲁棒 ASR。
+- [Synergistic Audio-Textual Cues: A Cross-Modal Framework for Weakly-Supervised Temporal Action Localization](https://doi.org/10.1016/j.patcog.2026.113526)：融合音频与文本线索进行弱监督时序动作定位，在缺少密集标注时改进事件边界发现。
+- [LatentOmni](https://arxiv.org/abs/2605.22012)：统一音视频 latent reasoning 框架，把文本推理与音视频 latent states 交替建模。
+- [Spatial-Temporal Decomposition and Alignment in Controllable Video-to-Music Generation](https://doi.org/10.1145/3746027.3755523)：分解并对齐视频中的时空线索，用于可控 video-to-music generation。
+- [An Edge-Enabled Low-Latency Cross-Lingual Speech-to-Text Framework for Efficient Human–Robot Interaction](https://doi.org/10.1177/2167647x261438099)：构建面向人机交互的低延迟跨语言语音转写框架。
+- [Language-Aware and Language-Agnostic Multilingual Speech Recognition with a Single Model](https://doi.org/10.5220/0013319500003905)：提出模型侧方法、训练配方、数据机制或对齐技术，服务于语音与音频模型，可补充多语言语音识别模型设计。

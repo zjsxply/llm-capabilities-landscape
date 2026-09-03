@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -48,6 +49,18 @@ def release_key_from_text(text: str) -> tuple[int, int]:
     return 999999, 0
 
 
+def release_key_from_record(record: dict[str, Any], bullet: str) -> tuple[int, int]:
+    url_key = release_key_from_text(first_url(bullet) or "")
+    if url_key[0] != 999999:
+        return url_key
+    raw_year = record.get("year")
+    if isinstance(raw_year, int) or (isinstance(raw_year, str) and raw_year.isdigit()):
+        year = int(raw_year)
+        if 1900 <= year <= 2100:
+            return year * 100 + 99, 0
+    return 999999, 0
+
+
 def first_url(markdown: str) -> str | None:
     match = re.search(r"\]\((https?://[^)]+)\)", markdown)
     return match.group(1) if match else None
@@ -69,6 +82,10 @@ def normalize_section(raw: Any) -> str:
     section = str(raw or "").strip()
     section = re.sub(r"^#+\s*", "", section)
     return section
+
+
+def normalize_bullet_spacing(markdown: str) -> str:
+    return re.sub(r"(\]\(https?://[^)]+\))([:：])\s*", r"\1\2 ", markdown.strip(), count=1)
 
 
 def section_label(section: str) -> str:
@@ -121,17 +138,32 @@ def find_section_bounds(lines: list[str], section: str) -> tuple[int, int]:
     return start, end
 
 
-def insert_bullets(path: Path, section: str, bullets: list[str], *, dry_run: bool) -> int:
+def render_bullets(
+    path: Path,
+    section: str,
+    records: list[dict[str, Any]],
+    *,
+    bullet_field: str,
+) -> tuple[str, dict[str, str]]:
     text = path.read_text(encoding="utf-8")
     lines = text.splitlines(keepends=True)
-    added = 0
-    for bullet in sorted(bullets, key=release_key_from_text):
+    outcomes: dict[str, str] = {}
+    ordered = sorted(records, key=lambda row: release_key_from_record(row, str(row[bullet_field])))
+    for record in ordered:
+        identifier = str(record.get("identifier") or "")
+        bullet = str(record[bullet_field])
+        bullet = bullet.strip()
+        if not bullet.startswith("- "):
+            bullet = f"- {bullet}"
         url = first_url(bullet)
-        if (url and url in text) or bullet in text:
+        if bullet in text:
+            outcomes[identifier] = "already_present"
             continue
+        if url and url in text:
+            raise RuntimeError(f"URL already exists with different content in {path}: {identifier}: {url}")
 
         start, end = find_section_bounds(lines, section)
-        key = release_key_from_text(bullet)
+        key = release_key_from_record(record, bullet)
         insert_at: int | None = None
         for index in range(start + 1, end):
             if not lines[index].startswith("- "):
@@ -145,11 +177,8 @@ def insert_bullets(path: Path, section: str, bullets: list[str], *, dry_run: boo
                 insert_at -= 1
         lines.insert(insert_at, bullet.rstrip("\n") + "\n")
         text = "".join(lines)
-        added += 1
-
-    if added and not dry_run:
-        path.write_text("".join(lines), encoding="utf-8")
-    return added
+        outcomes[identifier] = "added"
+    return "".join(lines), outcomes
 
 
 def load_overrides(path: Path | None) -> dict[str, dict[str, Any]]:
@@ -200,20 +229,20 @@ def collect_records(
                 or item.get("docs")
             )
             section = normalize_section(override.get("section") or item.get("section") or "")
-            english = str(
+            english = normalize_bullet_spacing(str(
                 override.get("suggested_english_bullet")
                 or override.get("english_bullet")
                 or item.get("suggested_english_bullet")
                 or item.get("english_draft")
                 or ""
-            ).strip()
-            chinese = str(
+            ))
+            chinese = normalize_bullet_spacing(str(
                 override.get("suggested_chinese_bullet")
                 or override.get("chinese_bullet")
                 or item.get("suggested_chinese_bullet")
                 or item.get("chinese_draft")
                 or ""
-            ).strip()
+            ))
             if not target_doc or not section or not english or not chinese:
                 raise SystemExit(
                     "Missing target_doc, section, or bilingual bullets for "
@@ -228,33 +257,97 @@ def collect_records(
                     "source_file": path.name,
                     "target_doc": target_doc,
                     "section": section,
+                    "year": item.get("year"),
+                    "url": first_url(english) or "",
                     "english_bullet": english,
                     "chinese_bullet": chinese,
                 }
             )
+    identifiers = [str(row["identifier"]) for row in records]
+    duplicates = sorted({identifier for identifier in identifiers if identifiers.count(identifier) > 1})
+    if duplicates:
+        raise SystemExit(f"Duplicate include identifiers: {duplicates[:20]}")
     return records
 
 
-def apply_records(root: Path, records: list[dict[str, Any]], *, dry_run: bool) -> dict[str, int]:
-    en_groups: dict[tuple[Path, str], list[str]] = {}
-    zh_groups: dict[tuple[Path, str], list[str]] = {}
+def apply_records(
+    root: Path,
+    records: list[dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> tuple[dict[str, int], list[dict[str, Any]]]:
+    en_groups: dict[tuple[Path, str], list[dict[str, Any]]] = {}
+    zh_groups: dict[tuple[Path, str], list[dict[str, Any]]] = {}
     for item in records:
         section = str(item["section"])
-        en_doc = resolve_english_target_doc(str(item["target_doc"]), section)
+        en_doc = Path(str(item["target_doc"]))
+        if not (root / en_doc).is_file():
+            en_doc = resolve_english_target_doc(str(item["target_doc"]), section)
         zh_doc = paired_zh_path(en_doc)
-        en_groups.setdefault((en_doc, section), []).append(str(item["english_bullet"]))
-        zh_groups.setdefault((zh_doc, section), []).append(str(item["chinese_bullet"]))
+        if not (root / en_doc).is_file() or not (root / zh_doc).is_file():
+            raise RuntimeError(f"Missing bilingual target for {item['identifier']}: {en_doc}, {zh_doc}")
+        en_groups.setdefault((en_doc, section), []).append(item)
+        zh_groups.setdefault((zh_doc, section), []).append(item)
 
     totals: dict[str, int] = {}
-    for (doc, section), bullets in sorted(en_groups.items()):
+    rendered: dict[Path, str] = {}
+    per_language: dict[str, dict[str, str]] = {str(row["identifier"]): {} for row in records}
+    ordered_groups = [
+        *(('en', key, value) for key, value in sorted(en_groups.items())),
+        *(('zh', key, value) for key, value in sorted(zh_groups.items())),
+    ]
+    for language, (doc, section), group_records in ordered_groups:
         path = root / doc
-        count = insert_bullets(path, section, bullets, dry_run=dry_run)
+        if not os.access(path, os.W_OK):
+            raise RuntimeError(f"Target is not writable: {path}")
+        bullet_field = "english_bullet" if language == "en" else "chinese_bullet"
+        new_text, outcomes = render_bullets(path, section, group_records, bullet_field=bullet_field)
+        rendered[path] = new_text
+        count = sum(value == "added" for value in outcomes.values())
         totals[str(doc)] = totals.get(str(doc), 0) + count
-    for (doc, section), bullets in sorted(zh_groups.items()):
-        path = root / doc
-        count = insert_bullets(path, section, bullets, dry_run=dry_run)
-        totals[str(doc)] = totals.get(str(doc), 0) + count
-    return totals
+        for identifier, outcome in outcomes.items():
+            per_language[identifier][language] = outcome
+
+    if not dry_run:
+        originals = {path: path.read_text(encoding="utf-8") for path in rendered}
+        temp_paths: dict[Path, Path] = {}
+        try:
+            for path, text in rendered.items():
+                temp = path.with_name(f".{path.name}.apply-{os.getpid()}.tmp")
+                temp.write_text(text, encoding="utf-8")
+                temp_paths[path] = temp
+            for path in rendered:
+                temp_paths[path].replace(path)
+        except Exception:
+            for path, text in originals.items():
+                path.write_text(text, encoding="utf-8")
+            raise
+        finally:
+            for temp in temp_paths.values():
+                temp.unlink(missing_ok=True)
+
+    results: list[dict[str, Any]] = []
+    for row in records:
+        identifier = str(row["identifier"])
+        outcomes = per_language[identifier]
+        if set(outcomes) != {"en", "zh"}:
+            raise RuntimeError(f"Incomplete bilingual apply result for {identifier}: {outcomes}")
+        if dry_run:
+            status = "dry_run"
+        elif all(value == "already_present" for value in outcomes.values()):
+            status = "already_present"
+        else:
+            status = "included"
+        results.append(
+            {
+                **row,
+                "status": status,
+                "docs": [str(row["target_doc"]), str(paired_zh_path(Path(str(row["target_doc"]))))],
+                "english_result": outcomes["en"],
+                "chinese_result": outcomes["zh"],
+            }
+        )
+    return totals, results
 
 
 def main() -> int:
@@ -275,10 +368,10 @@ def main() -> int:
     include_states = {state.lower() for state in args.include_state} or INCLUDE_STATES
     overrides = load_overrides(args.override_json)
     records = collect_records(args.source_dir, overrides=overrides, include_states=include_states)
-    totals = apply_records(args.root, records, dry_run=args.dry_run)
+    totals, results = apply_records(args.root, records, dry_run=args.dry_run)
 
     if args.included_out:
-        write_json(args.included_out, records)
+        write_json(args.included_out, results)
 
     print(f"include records: {len(records)}", flush=True)
     for doc, count in sorted(totals.items()):

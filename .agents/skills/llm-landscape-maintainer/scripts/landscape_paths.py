@@ -127,6 +127,18 @@ def resolve_english_target_doc(target_doc: str, section: str = "") -> Path:
         return path
 
     normalized = target_doc.replace("\\", "/").strip()
+    split_match = re.match(r"docs/en/(\d{2}-[^/]+)/(\d{2})-(.+?)/([^/]+\.md)$", normalized)
+    if split_match:
+        chapter_dir, _topic, slug, filename = split_match.groups()
+        chapter_base = Path("docs/en") / chapter_dir
+        for moved_topic_base in sorted(chapter_base.glob(f"??-{slug}")):
+            candidate = moved_topic_base / filename
+            if candidate.is_file():
+                return candidate
+            if section:
+                candidate = moved_topic_base / split_section_filename(section)
+                if candidate.is_file():
+                    return candidate
     old_match = re.match(r"docs/en/(\d{2})-(\d{2})-(.+)\.md$", normalized)
     if old_match:
         chapter, topic, slug = old_match.groups()
@@ -145,5 +157,14 @@ def resolve_english_target_doc(target_doc: str, section: str = "") -> Path:
             for candidate in candidates:
                 if candidate.is_file():
                     return candidate
+            chapter_base = Path("docs/en") / chapter_dir
+            for moved_topic_base in sorted(chapter_base.glob(f"??-{slug}")):
+                candidates = []
+                if section:
+                    candidates.append(moved_topic_base / split_section_filename(section))
+                candidates.append(moved_topic_base / "README.md")
+                for candidate in candidates:
+                    if candidate.is_file():
+                        return candidate
 
     return path

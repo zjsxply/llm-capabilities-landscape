@@ -1,9 +1,77 @@
 # 1.1.2 Survey
 
+- [Beyond Neutrality: Mapping Two Decades of Research on Machine Translation Bias (2005–2024)](https://doi.org/10.1177/21582440251392700)：结合文献计量和细读，梳理 2005 至 2024 年 Web of Science 与 Scopus 中机器翻译偏见研究的发表阶段、主题、方法和公平风险。
+- [A Survey of Multilingual Neural Machine Translation Based on Sparse Models](https://doi.org/10.26599/tst.2023.9010097)：按稀疏模型路线分类大规模多语神经机器翻译方法，比较参数效率、干扰缓解、建模原则和翻译质量取舍。
+- [Natural Language Processing for Dialects of a Language: A Survey](https://arxiv.org/abs/2401.05632)：围绕方言 NLP 综述资源稀缺、方言识别、规范化、生成、机器翻译和评测缺口，覆盖区域语言变体的建模问题。
+- [Claim Detection for Automated Fact-checking: A Survey on Monolingual, Multilingual and Cross-Lingual Research](https://arxiv.org/abs/2401.11969)：综述自动事实核查中的多语声明检测研究，按可验证性、优先级、相似度、数据来源和跨平台误信息场景组织现有系统。
+- [How do Large Language Models Handle Multilingualism?](https://arxiv.org/abs/2402.18815)：提出并验证 MWork 假设，分析 LLM 如何在中间层以英语为中心处理多语输入，同时用语言特定神经元保留输入与输出语言信息。
+- [From Handcrafted Features to LLMs: A Brief Survey for Machine Translation Quality Estimation](https://arxiv.org/abs/2403.14118)：回顾机器翻译质量估计从人工特征、传统机器学习、神经模型到 LLM 评估器的演进。
 - [A Survey on Multilingual Large Language Models: Corpora, Alignment, and Bias](https://arxiv.org/abs/2404.00929)：综述多语大语言模型的数据、对齐、评测与偏见问题，并把评测差距与上游选择联系起来。
 - [Multilingual Large Language Model: A Survey of Resources, Taxonomy and Frontiers](https://arxiv.org/abs/2404.04925)：梳理多语资源、任务分类、评测前沿与开放问题。
 - [Understanding Cross-Lingual Alignment: A Survey](https://arxiv.org/abs/2404.06228)：回顾跨语言对齐机制及其评测设置，解释迁移鲁棒性的来源。
+- [Culturally Aware and Adapted NLP: A Taxonomy and a Survey of the State of the Art](https://arxiv.org/abs/2406.03930)：提出文化感知与文化适配 NLP 的分类法，梳理文化知识表示、数据收集、适配方法和评测风险。
+- [The sociolinguistic foundations of language modeling](https://arxiv.org/abs/2407.09241)：从社会语言学角度把语言模型视为语言变体模型，并把语料构建同社会偏见、领域适配、对齐、语言变化和规模化联系起来。
+- [Pitfalls and Outlooks in Using COMET](https://arxiv.org/abs/2408.15366)：分析 COMET 机器翻译评测中的可靠性陷阱，包括指标误用、解释边界和更稳健的 MT 质量评估方向。
+- [Computational Approaches to Arabic-English Code-Switching](https://arxiv.org/abs/2410.13318)：综述 Arabic-English code-switching 的方法与资源，这是多语言混合语言场景中的难点。
+- [A Survey of Large Language Models for Arabic Language and its Dialects](https://arxiv.org/abs/2410.20238)：综述阿拉伯语 LLM 的架构、预训练数据、单语与多语覆盖、下游任务、开放程度和方言数据缺口。
+- [The Zeno’s Paradox of ‘Low-Resource’ Languages](https://arxiv.org/abs/2410.20817)：批判“低资源语言”作为固定标签的局限，讨论数据、工具和社区需求不断抬高资源门槛的问题。
+- [Survey of Cultural Awareness in Language Models: Text and Beyond](https://arxiv.org/abs/2411.00860)：综述文本与多模态场景中的语言模型文化意识。
+- [Why We Build Local Large Language Models: An Observational Analysis from 35 Japanese and Multilingual LLMs](https://arxiv.org/abs/2412.14471)：在日语与英语基准上比较 35 个日语、英语和多语 LLM，区分可跨语言迁移的一般能力与日语知识、英日翻译等本地语言能力。
+- [Overview of the First Workshop on Language Models for Low-Resource Languages (LoResLM 2025)](https://arxiv.org/abs/2412.16365)：总结 LoResLM 2025 关于低资源语言模型的数据构建、评测、适配和社区部署主题。
+- [A survey of multilingual large language models](https://doi.org/10.1016/j.patter.2024.101118)：综述多语 LLM 的数据、架构、对齐、评测、偏见和部署挑战，覆盖高资源与低资源语言场景。
+- [Recent Highlights in Multilingual and Multimodal Speech Translation](https://doi.org/10.18653/v1/2024.iwslt-1.29)：总结 IWSLT 中多语和多模态语音翻译的近期方向，覆盖语音到文本、语音到语音和视觉上下文翻译设置。
+- [Arabic Text Formality Modification: A Review and Future Research Directions](https://doi.org/10.1109/access.2024.3511661)：综述阿拉伯语正式度改写的数据集、规则方法、神经方法和评测实践，并覆盖方言与标准阿拉伯语之间的改写难点。
+- [Indigenous Languages Spoken in Argentina: A Survey of NLP and Speech Resources](https://arxiv.org/abs/2501.09943)：综述阿根廷原住民语言的自然语言处理与语音资源。
+- [A Survey of Code-switched Arabic NLP: Progress, Challenges, and Future Directions](https://arxiv.org/abs/2501.13419)：综述阿拉伯语内部方言切换与阿拉伯语和外语混合场景中的资源、方法、挑战与研究空白。
+- [Large Multimodal Models for Low-Resource Languages: A Survey](https://arxiv.org/abs/2502.05568)：综述低资源语言场景下大型多模态模型的数据构造、视觉增强、跨模态迁移与融合策略。
 - [A Survey of Multilingual Reasoning in Language Models](https://arxiv.org/abs/2502.09457)：综述多语推理的数据、方法与失败模式，把能力范围扩展到翻译质量之外。
+- [NaijaNLP: A Survey of Nigerian Low-Resource Languages](https://arxiv.org/abs/2502.19784)：梳理豪萨语、约鲁巴语、伊博语等尼日利亚低资源语言的 NLP 资源、方法与研究缺口。
+- [Parallel Corpora for Machine Translation in Low-resource Indic Languages: A Comprehensive Review](https://arxiv.org/abs/2503.04797)：综述低资源印度语系机器翻译的平行语料资源、构建方式与数据瓶颈。
 - [Bridging the Linguistic Divide: A Survey on Leveraging Large Language Models for Machine Translation](https://arxiv.org/abs/2504.01919)：回顾基于大语言模型的机器翻译方法与评测，为多语生成工作流提供背景。
+- [Automatic Evaluation Metrics for Document-level Translation: Overview, Challenges and Trends](https://arxiv.org/abs/2504.14804)：综述文档级机器翻译的有参考和无参考自动指标，覆盖传统指标、模型型指标、LLM-as-a-judge 方法，以及篇章上下文、对齐和可解释性难题。
+- [A Survey of NLP Progress in Sino-Tibetan Low-Resource Languages](https://aclanthology.org/2025.naacl-long.396/)：统计 ACL Anthology 中 Sino-Tibetan 低资源语言的覆盖情况，指出尽管相关语种、技术和讨论逐年增多，整体关注度仍然有限。
+- [Overcoming Data Scarcity in Generative Language Modelling for Low-Resource Languages: A Systematic Review](https://arxiv.org/abs/2505.04531)：系统综述低资源生成式语言建模中的数据稀缺问题，补充多语言覆盖。
+- [Cross-Linguistic Transfer in Multilingual NLP: The Role of Language Families and Morphology](https://arxiv.org/abs/2505.13908)：可作为多语言能力方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。
+- [Editing Across Languages: A Survey of Multilingual Knowledge Editing](https://arxiv.org/abs/2505.14393)：按跨语言编辑传播、局部性、可迁移性、语言不均衡和事实更新评测协议组织多语知识编辑研究。
+- [Charting the Landscape of African NLP: Mapping Progress and Shaping the Road Ahead](https://arxiv.org/abs/2505.21315)：基于 884 篇近年论文梳理非洲 NLP 进展、语言资源缺口、社区主导计划和低资源语言未来方向。
+- [The Landscape of Arabic Large Language Models](https://arxiv.org/abs/2506.01340)：综述阿拉伯语 LLM 的发展、资源、评测与能力缺口。
+- [Beyond the Sentence: A Survey on Context-Aware Machine Translation with Large Language Models](https://arxiv.org/abs/2506.07583)：综述 LLM 驱动的上下文感知机器翻译，覆盖提示、微调、自动后编辑和翻译智能体等超越句级基线的路线。
+- [Beyond Weaponization: NLP Security for Medium and Lower-Resourced Languages in Their Own Right](https://arxiv.org/abs/2507.03473)：综述多语言安全或能力缺口；核心思想是梳理中低资源语言中的风险与评测需求。
+- [Natural Language Processing for Tigrinya: Current State and Future Directions](https://arxiv.org/abs/2507.17974)：回顾 2011 至 2025 年 50 余篇 Tigrinya NLP 研究，覆盖形态处理、词性标注、命名实体识别、机器翻译、问答、语音识别和语音合成，并指出形态感知与社区参与式资源建设方向。
+- [Social Bias in Multilingual Language Models: A Survey](https://arxiv.org/abs/2508.20201)：综述多语种语言模型中的社会偏见测量、分析与缓解问题。
+- [Culture is Everywhere: A Call for Intentionally Cultural Evaluation](https://arxiv.org/abs/2509.01301)：呼吁有意识地开展文化评测，将文化视为模型评估的系统维度，而不是偶然的子群体标签。
+- [Multilingual Vision-Language Models, A Survey](https://arxiv.org/abs/2509.22123)：综述 33 个多语视觉语言模型和 23 个基准，比较语言中立表示与文化感知评测、数据设计之间的张力。
+- [Beyond Monolingual Assumptions: A Survey of Code-Switched NLP in the Era of Large Language Models across Modalities](https://arxiv.org/abs/2510.07037)：综述 LLM 时代跨模态语码转换 NLP，梳理混合语言场景中的任务、资源与评估问题。
+- [Evaluating Arabic Large Language Models: A Survey of Benchmarks, Methods, and Gaps](https://arxiv.org/abs/2510.13430)：综述 40 余个阿拉伯语 LLM 基准，按知识、NLP 任务、文化与方言、目标专项评测分类，并比较原生采集、翻译和合成数据方案。
+- [Tibetan Language and AI: A Comprehensive Survey of Resources, Methods and Challenges](https://arxiv.org/abs/2510.19144)：综述藏语 AI 的文本与语音资源、NLP 任务、机器翻译、LLM 进展、数据集和工具，并指出数据稀疏、正字法差异和统一评测指标缺失等瓶颈。
+- [Culture Cartography: Mapping the Landscape of Cultural Knowledge](https://arxiv.org/abs/2510.27672)：提出 CultureCartography 混合主动方法和 CultureExplorer 工具，让 LLM 的低置信问题与人工编辑共同暴露文化特定知识缺口。
+- [Multimodal Neural Machine Translation: A Survey of the State of the Art](https://aclanthology.org/2025.emnlp-main.1125/)：综述多模态神经机器翻译的里程碑、数据集和方法，聚焦视觉等非文本模态如何与文本输入共同提升翻译。
 - [Explainability and Interpretability of Multilingual Large Language Models: A Survey](https://doi.org/10.18653/v1/2025.emnlp-main.1033)：综述多语 LLM 的可解释与可解释性方法，将跨语言行为、偏差和诊断工具联系起来。
 - [From Challenges to Opportunities](https://doi.org/10.1109/MITP.2025.3569009)：综述智能体式 AI 面向低资源语言的机会与挑战，涵盖数据稀缺、跨语言迁移、工具生态缺口和多语言智能体部署风险。
+- [A Systematic Review of Few-Shot and Zero-Shot Learning for NLP in Low-Resource Languages: Insights and Challenges](https://doi.org/10.1109/IC3INA68387.2025.11325582)：系统回顾 2020 至 2025 年 21 篇低资源语言 NLP 研究，比较少样本与零样本在不同任务中的表现，并讨论提示学习、跨语言迁移、类型差异和基准偏差。
+- [Multimodal Methods for Improving Natural Language Processing in Low-Resource Languages:Survey](https://doi.org/10.1109/ICRTEECT67512.2025.11448668)：综述低资源 NLP 应用中的多模态补充路线和挑战，重点关注文本数据、解析器与标注资源不足时的建模选择。
+- [Video-guided Machine Translation: A Survey of Models, Datasets, and Challenges](https://doi.org/10.18653/v1/2025.ijcnlp-long.178)：综述视频引导机器翻译的模型、数据集与挑战，突出时序视觉上下文如何把多模态翻译推进到图像引导 MT 之外。
+- [A Systematic Review on Machine Translation and Transliteration Techniques for Code-Mixed Indo-Aryan Languages](https://doi.org/10.18653/v1/2025.wat-1.6)：系统综述 Indo-Aryan 语系 code-mixed 场景下的机器翻译和音译技术，聚焦区域性混合文字与混合语言处理。
+- [Research challenges and future directions in transformer-based neural machine translation](https://doi.org/10.1016/j.eswa.2025.131062)：综述基于 Transformer 的神经机器翻译研究挑战与未来方向；其多语言页相关性主要来自 MT 架构与评测缺口。
+- [Incorporating Diverse Perspectives in Cultural Alignment: Survey of Evaluation Benchmarks Through A Three-Dimensional Framework](https://doi.org/10.18653/v1/2025.emnlp-main.862)：用三维框架组织文化对齐评测基准，区分代表哪些人群视角、如何操作化文化概念，以及采用何种评测设置。
+- [Exploring cultural commonsense in multilingual large language models: A survey](https://doi.org/10.1016/j.is.2025.102649)：综述多语 LLM 中文化常识的资源、探测任务、跨文化知识差异和文化偏差评估问题。
+- [Machine Translation Performance for Low-Resource Languages: A Systematic Literature Review](https://doi.org/10.1109/access.2025.3562918)：按 PRISMA 流程系统分析 2020 至 2024 年 69 篇低资源机器翻译研究，评估数据稀缺、语言结构复杂性、NMT 效果和主动学习、数据增强、多语模型、迁移学习等改进策略。
+- [Overview of Research on Low-Resource Language Machine Translation Based on Artificial Intelligence](https://doi.org/10.1109/iccea65460.2025.11103314)：回顾 AI 低资源机器翻译中的数据增强、迁移学习、预训练、神经架构和稀缺平行语料下的评测挑战。
+- [Multilingual Relation Extraction: A Survey](https://doi.org/10.1109/access.2025.3604258)：综述多语关系抽取的方法、评测数据集、特征选择、目标领域、抽取层级、语言覆盖和低资源限制。
+- [Approaches for Summarization of Articles Across Multiple Languages: A Review](https://doi.org/10.1109/icmlas64557.2025.10968896)：综述跨多语言文章摘要方法。
+- [A decade of gender bias in machine translation](https://doi.org/10.1016/j.patter.2025.101257)：综述机器翻译中的性别偏见，适合多语言生成与偏见评测方向。
+- [Culturally-Grounded Governance for Multilingual Language Models: Rights, Data Boundaries, and Accountable AI Design](https://arxiv.org/abs/2602.00497)：面向多语言能力的综述或相关工作脉络。核心思路是围绕“Culturally-Grounded Governance for Multilingual Language Models: Rights, Data Boundaries, and Accountable AI Design”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Code Mixologist : A Practitioner's Guide to Building Code-Mixed LLMs](https://arxiv.org/abs/2602.11181)：综述 code-mixed LLM 的数据、建模、评测与安全问题，把 code-switching 研究整理成构建和测试混合语系统的实践指南。
+- [Multilingual Hate Speech Detection and Counterspeech Generation: A Comprehensive Survey and Practical Guide](https://arxiv.org/abs/2603.19279)：可作为多语言能力方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。
+- [Arabic Dialect NLP: A Unified Taxonomic, Methodological, and Trend‑Driven Survey](https://doi.org/10.70715/jitcai.2026.v3.i2.051)：从分类、方法和研究趋势三条线梳理阿拉伯方言 NLP，覆盖方言资源、任务、建模范式和低资源挑战。
+- [Multilingual NLP Models: A Review of Techniques, Tools, and Real-World Use Cases](https://doi.org/10.1109/iitcee67948.2026.11394472)：综述多语 NLP 技术和应用案例，覆盖情感分析、机器翻译、仇恨言论检测，以及 XLM-R、GPT-4、Llama-2、迁移学习、分词、偏见和跨语评测不一致问题。
+- [A Comprehensive Review of English-Tamil Machine Translation from Statistical Models to Neuro-Symbolic Approaches](https://doi.org/10.1109/icict68280.2026.11510898)：回顾英泰机器翻译从规则系统、统计系统到神经、混合、迁移学习和神经符号方法的演进，重点讨论泰米尔语数据稀缺与形态复杂性。
+- [Adversarial Robustness in Multilingual and Code-Mixed NLP: Insights From Indian Language Settings](https://doi.org/10.1109/access.2026.3691377)：可作为多语言能力方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。
+- [Lost in Translation? Found in Evaluation: A Comprehensive Survey on Sentence-Level Translation Evaluation](https://doi.org/10.1145/3735970)：综述句级机器翻译评测数据集、人工评估实践、自动指标、指标选择决策树和跨语言元评测缺口。
+- [A Comprehensive Survey on Transformer-Based Machine Translation: Identifying Research Gaps and Solutions for Large Language Models](https://doi.org/10.1145/3773076)：综述基于 Transformer 的机器翻译，并梳理 LLM 时代多语言生成中的研究缺口与解决方向。
+- [Arabic Natural Language Processing (NLP): A Comprehensive Review of Challenges, Techniques, and Emerging Trends](https://doi.org/10.3390/computers14110497)：综述阿拉伯语 NLP 的形态、方言、句法、变音符号、歧义和数据集挑战，并覆盖分词、规范化、命名实体识别、词性标注、情感分析、摘要、问答、机器翻译和 LLM 趋势。
+- [Large Language Model-Based Translation Agents: A Review and Future Perspectives](https://doi.org/10.63313/llcs.9146)：按工作流角色、规划与修订循环、人机交互、评测和未来方向综述 LLM 翻译智能体。
+- [Multilingual question answering systems for knowledge graphs - a survey](https://doi.org/10.3233/sw-243633)：综述知识图谱多语问答系统的语义解析、实体链接、跨语言检索、查询生成和评测设置。
+- [Detecting hate in diversity: a survey of multilingual code-mixed image and video analysis](https://doi.org/10.1186/s40537-025-01167-w)：综述多语和 code-mixed 图像、视频仇恨检测中的数据集、模态融合、语言混合现象和评测难点。
+- [Human-centered LLMs for Inclusive Language Technology: The Need to Embrace Variation Holistically in NLP](https://doi.org/10.15439/2025f4610)：主张包容语言技术应整体建模语言变体，而不是把变体当作需要消除的噪声。
+- [Tri-dimensional perspectives in hate speech detection: a review of multilingual, multimodal and fairness-aware approaches](https://doi.org/10.1007/s42452-025-08047-1)：可作为多语言能力方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。

@@ -1,24 +1,144 @@
 # 1.6.5 Agent Harness
 
+- [VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](https://arxiv.org/abs/2403.11481)：维护时间事件描述和目标跟踪状态两类结构化记忆，并调用片段定位、目标记忆查询等工具，让 LLM 从定向证据回答长视频问题。
+- [VURF: A General-purpose Reasoning and Self-refinement Framework for Video Understanding](https://arxiv.org/abs/2403.14743)：用指令-程序示例提示 LLM 生成可执行视频视觉程序，再通过 GPT-3.5 错误反馈和迭代示例自优化修复不支持的函数调用。
+- [VDMA: Video Question Answering with Dynamically Generated Multi-Agents](https://arxiv.org/abs/2407.03610)：为 EgoSchema 式视频问答动态生成任务专家 agent，并协调分阶段工具调用和答案选择，而不是依赖单一回答生成器。
 - [LMMs-Eval](https://arxiv.org/abs/2407.12772)（[开源代码](https://github.com/EvolvingLMMs-Lab/lmms-eval)）：多模态评测 harness，覆盖 Video-MME、LongVideoBench、Video-MMMU 等视频任务；适合作为复现实验和批量榜单提交的统一入口。
+- [Propose, Assess, Search: Harnessing LLMs for Goal-Oriented Planning in Instructional Videos](https://arxiv.org/abs/2409.20557)：用提出、评估、搜索式 LLM 编排处理教学视频中的目标导向规划。
+- [Adaptive Video Understanding Agent: Enhancing efficiency with dynamic frame sampling and feedback-driven reasoning](https://arxiv.org/abs/2410.20252)：让 LLM 在推理时按查询选择相关帧，并用自反思式语言反馈改进答案，同时减少实际访问的视频帧数。
 - [VideoChat-Online](https://arxiv.org/abs/2501.00584)（[开源代码](https://github.com/MCG-NJU/VideoChat-Online)）：在线/流式视频理解的参考实现，与 OVBench 的 benchmark-specific runtime 强绑定。
+- [ENTER: Event Based Interpretable Reasoning for VideoQA](https://arxiv.org/abs/2501.14194)：用于可解释 VideoQA 的事件图推理。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [VideoRAG](https://arxiv.org/abs/2502.01549)（[开源代码](https://github.com/HKUDS/VideoRAG)）：针对超长视频的检索增强生成工作流，把“找片段证据”外包给视频检索与索引结构。
+- [PreMind: Multi-Agent Video Understanding for Advanced Indexing of Presentation-style Videos](https://arxiv.org/abs/2503.00162)：面向 presentation-style video indexing 的多 agent 视频理解框架。核心思想是协调视觉、文本和时间线索，生成更丰富的长演示视频索引。
 - [LVAgent](https://arxiv.org/abs/2503.10200)（[开源代码](https://github.com/64327069/LVAgent)）：面向长视频问答的动态 agent；通过 task planning、迭代式工具调用和实时进度管理，在不同问题上自适应选择检索与分析路径。
+- [Logic-in-Frames: Dynamic Keyframe Search via Visual Semantic-Logical Verification for Long Video Understanding](https://arxiv.org/abs/2503.13139)：面向长视频理解的动态 keyframe-search harness。核心思想是通过语义逻辑验证选择证据帧，使视频推理聚焦相关时间证据。
 - [VideoMind](https://arxiv.org/abs/2503.13444)（[开源代码](https://github.com/yeliudev/VideoMind)）：把长视频理解拆成 planning、grounding、retrieval 与 reasoning 的 agentic pipeline，并用 Chain-of-LoRA 适配长视频任务。
+- [AssistPDA](https://arxiv.org/abs/2503.21904)： 构建在线视频监控助手，将异常预测、检测与分析统一到交互式 VLM 推理流程中。
+- [TimeSearch: Hierarchical Video Search with Spotlight and Reflection for Human-like Long Video Understanding](https://arxiv.org/abs/2504.01407)：带 spotlight 与 reflection 的层次化视频搜索框架；核心思想是在多个时间粒度上搜索长视频，并在回答前反思缺失证据。
+- [VideoAgent2: Enhancing the LLM-Based Agent System for Long-Form Video Understanding by Uncertainty-Aware CoT](https://arxiv.org/abs/2504.04471)：用不确定性感知 CoT 与工具化细粒度检查增强长视频 agent。
+- [RAVEN: An Agentic Framework for Multimodal Entity Discovery from Large-Scale Video Collections](https://arxiv.org/abs/2504.06272)：先推断视频集合主题，再动态生成实体 schema，并用 schema-guided 多模态抽取把大规模视频库转成可按领域实体和属性检索的结构化表示。
+- [ViSMaP: Unsupervised Hour-long Video Summarisation by Meta-Prompting](https://arxiv.org/abs/2504.15921)：用三个 LLM 组成生成、评审和优化提示的 meta-prompting 循环，从短片段描述生成长视频伪摘要，从而绕开小时级视频摘要标注。
 - [LiveCC](https://arxiv.org/abs/2504.16030)（[开源代码](https://github.com/showlab/LiveCC)）：面向直播体育等时间敏感场景的理解与字幕/解说生成链路。
 - [MR.Video](https://arxiv.org/abs/2504.16082)（[开源代码](https://github.com/ziqipang/MR-Video)）：把长视频理解组织成 MapReduce 风格的 evidence aggregation，先分段抽取局部证据，再全局汇总推理。
 - [TimeChat-Online](https://arxiv.org/abs/2504.17343)（[开源代码](https://github.com/yaolinli/TimeChat-Online)）：面向时间敏感的在线视频交互理解，强调在线状态更新与时间对齐。
+- [VideoMultiAgents: A Multi-Agent Framework for Video Question Answering](https://arxiv.org/abs/2504.20091)：面向视频问答的多代理框架。核心思想是把视觉、时间和语言推理拆给专门代理，再综合答案。
+- [AVA: Towards Agentic Video Analytics with Vision Language Models](https://arxiv.org/abs/2505.00254)：基于 VLM 的 agentic video analytics 框架。核心思想是把开放式视频分析转成可适配的 agent workflow，而不是固定视频理解任务。
+- [ViQAgent: Zero-Shot Video Question Answering via Agent with Open-Vocabulary Grounding Validation](https://arxiv.org/abs/2505.15928)：带开放词表 grounding validation 的零样本 VideoQA agent。核心思想是把视频问答与视觉证据校验结合起来，让 agent 验证视觉实体并减少无支撑回答。
 - [Deep Video Discovery](https://arxiv.org/abs/2505.18079)（[开源代码](https://github.com/microsoft/DeepVideoDiscovery)）：面向长视频理解的 agentic search harness；通过多粒度视频数据库和 search-centric tools，让 agent 按问题自适应规划、检索片段并汇总证据。
+- [ReAgent-V: A Reward-Driven Multi-Agent Framework for Video Understanding](https://arxiv.org/abs/2506.01300)：类型：agent harness/可复用执行框架。核心价值：为 1.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](https://arxiv.org/abs/2506.04953)：面向小时级长视频理解的检索 harness。核心思想：自适应选择视觉 pivot，使模型无需均匀密集采样也能围绕长视频推理。
+- [VideoChat-A1](https://arxiv.org/abs/2506.06097)：面向长视频理解的 chain-of-shot reasoning harness。核心思想是逐步选择与问题相关的镜头，并以 coarse-to-fine 多模态推理深入查看，而不是把冗余时间上下文全部交给模型。
+- [MAGNET: A Multi-agent Framework for Finding Audio-Visual Needles by Reasoning over Multi-Video Haystacks](https://arxiv.org/abs/2506.07016)：类型：agent harness/可复用执行框架。核心价值：为 1.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [CyberV: Cybernetics for Test-time Scaling in Video Understanding](https://arxiv.org/abs/2506.07971)：可作为视频理解的Agent Harness候选；核心关注“Cybernetics for Test-time Scaling in Video Understanding”。
 - [VideoDeepResearch](https://arxiv.org/abs/2506.10821)（[开源代码](https://github.com/yhy-2000/VideoDeepResearch)）：把“看片 -> 检索外部资料 -> 生成报告”组织成可复用长链路 pipeline。
 - [AdaVideoRAG](https://arxiv.org/abs/2506.13589)（[开源代码](https://github.com/xzc-zju/AdaVideoRAG)）：长视频 RAG harness；按任务自适应选择层级化索引和检索深度，减少固定抽帧或固定 chunk 策略的浪费。
+- [Ego-R1: Chain-of-Tool-Thought for Ultra-Long Egocentric Video Reasoning](https://arxiv.org/abs/2506.13654)：面向面向超长第一人称视频推理的 chain-of-tool-thought的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [AViLA: Asynchronous Vision-Language Agent for Streaming Multimodal Data Interaction](https://arxiv.org/abs/2506.18472)：可作为视频理解的Agent Harness候选；核心关注“Asynchronous Vision-Language Agent for Streaming Multimodal Data Interaction”。
+- [DIVE: Deep-search Iterative Video Exploration A Technical Report for the CVRR Challenge at CVPR 2025](https://arxiv.org/abs/2506.21891)：面向长视频挑战任务的深度搜索式迭代视频探索框架。核心思路是不依赖固定抽帧一次作答，而是反复搜索、检查并修正视频证据。
 - [Flash-VStream](https://arxiv.org/abs/2506.23825)（[开源代码](https://github.com/IVGSZ/Flash-VStream)）：长视频流式理解的 memory budget harness；强调实时性约束下的记忆更新与信息保真。
+- [Temporal Chain of Thought: Long-Video Understanding by Thinking in Frames](https://arxiv.org/abs/2507.02001)：长视频理解中的逐帧时间链式推理。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Interactive Text-to-Video Retrieval via Uncertainty Minimization](https://arxiv.org/abs/2507.15504)：把 text-to-video retrieval 组织为交互式 uncertainty-reduction workflow。
+- [Lava: Language Driven Scalable and Versatile Traffic Video Analytics](https://arxiv.org/abs/2507.19821)：把自然语言问题映射到大规模交通摄像头档案分析，用语言驱动的查询解释替代固定 SQL 式语义类别。
+- [StreamAgent](https://arxiv.org/abs/2508.01875)：面向流式视频理解的 agent；核心思想是预测未来可能包含任务相关信息的时间区间和空间区域，使 agent 能主动调整观察与响应，而不只是被动处理采样帧。
+- [ROVER: Recursive Reasoning Over Videos with Vision-Language Models for Embodied Tasks](https://arxiv.org/abs/2508.01943)：面向具身任务的递归视频推理 harness。核心思想是把连续相机帧流组织成迭代推理步骤，使 agent 能在长视觉序列中保持任务进度。
+- [VideoForest: Person-Anchored Hierarchical Reasoning for Cross-Video Question Answering](https://arxiv.org/abs/2508.03039)：用 person-anchored hierarchical reasoning 处理跨视频问答。
+- [Think Before You Segment: An Object-aware Reasoning Agent for Referring Audio-Visual Segmentation](https://arxiv.org/abs/2508.04418)：为指代表达音视频分割智能体加入对象感知推理。
+- [VSI: Visual Subtitle Integration for Keyframe Selection to enhance Long Video Understanding](https://arxiv.org/abs/2508.06869)：用 visual subtitle integration 进行 keyframe selection，属于长视频理解 harness。
 - [M3-Agent](https://arxiv.org/abs/2508.09736)（开源代码：暂未见稳定公开官方仓库）：面向长视频的长时记忆 agent；将“看、听、记、推理”拆成可交互模块，并配套 M3-Bench 检验记忆保留和跨模态证据调用。
+- [Towards Agentic AI for Multimodal-Guided Video Object Segmentation](https://arxiv.org/abs/2508.10572)：由 LLM 为每个输入动态组装低层多模态分割工具链，使 referring VOS 和音视频分割在免训练设置下按线索自适应执行。
+- [NoteIt: A System Converting Instructional Videos to Interactable Notes Through Multimodal Video Understanding](https://arxiv.org/abs/2508.14395)：把教学视频转成可编辑交互笔记：先抽取层次结构和多模态关键知识，再通过界面让用户自定义内容与呈现形式。
+- [See What You Need: Query-Aware Visual Intelligence through Reasoning-Perception Loops](https://arxiv.org/abs/2508.17932)：基于 reasoning-perception loop 的查询感知视频推理 harness；核心思想是让系统按问题决定需要检查的视觉证据，而不是均匀处理整段视频。
+- [ChainReaction](https://arxiv.org/abs/2508.21010)（[项目页](https://paritoshparmar.github.io/chainreaction/)）：面向 causal-why VideoQA 的模块化因果推理 harness。核心思想是先从视频-问题对中抽取自然语言 causal chain，再基于这些链回答，使视频因果推理更可解释，也更容易用 CauCo 等因果导向指标评估。
+- [CAViAR: Critic-Augmented Video Agentic Reasoning](https://arxiv.org/abs/2509.07680)：为视频 agent 加入 critic 增强推理。核心思想：结合视频感知、批判与修订来提升复杂长视频推理。
+- [NeuS-QA: Grounding Long-Form Video Understanding in Temporal Logic and Neuro-Symbolic Reasoning](https://arxiv.org/abs/2509.18041)：面向长视频 QA 的神经符号工作流。核心思想：把视频理解建立在时序逻辑与结构化推理上，而不只依赖均匀采帧。
+- [VideoJudge: Bootstrapping Enables Scalable Supervision of MLLM-as-a-Judge for Video Understanding](https://arxiv.org/abs/2509.21451)：用于视频理解评测的可扩展 MLLM-as-a-judge harness；核心思想是通过 bootstrapping 获得更细粒度监督，避免只依赖文本重叠指标评估开放视频答案。
+- [FrameThinker](https://arxiv.org/abs/2509.24304)：长视频推理 harness；核心思想是让模型多轮选择关键帧并更新推理状态，用可训练的 frame-spotlighting 动作策略替代固定均匀采样。
+- [Perceive, Verify and Understand Long Video: Multi-Granular Perception and Active Verification via Interactive Agents](https://arxiv.org/abs/2509.24943)：面向长视频理解的多粒度感知和主动验证 agent harness；核心思想是让 agent 自适应检查、验证和修正证据，而不是固定采样帧。
+- [PANDA](https://arxiv.org/abs/2509.26386)：构建面向通用视频异常检测的 agentic AI engineer，包含场景感知策略规划、优化和验证循环。
+- [TAMA: Tool-Augmented Multimodal Agent for Procedural Activity Understanding](https://arxiv.org/abs/2510.00161)：面向 procedural activity understanding 的 tool-augmented multimodal agent。核心思想是结合多模态感知与外部工具，使程序性活动助手能够理解烹饪、组装或实验等过程。
+- [VideoLucy: Deep Memory Backtracking for Long Video Understanding](https://arxiv.org/abs/2510.12422)：用于长视频理解的 deep memory backtracking 框架；核心思想是让 agent 回溯并验证相关视频证据，而不是依赖一次性摘要。
+- [DASR: Distributed Adaptive Scene Recognition - A Multi-Agent Cloud-Edge Framework for Language-Guided Scene Detection](https://doi.org/10.18653/v1/2025.emnlp-industry.57)：面向视频理解提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis](https://arxiv.org/abs/2511.00962)：面向零样本视频异常分析的统一推理框架。核心思想是超越帧级异常分数，给出异常事件的空间、语义和解释性推理。
+- [UniVA: Universal Video Agent towards Open-Source Next-Generation Video Generalist](https://arxiv.org/abs/2511.08521)：提出通用 video agent，面向开源 video generalist harness。
 - [GCAgent](https://arxiv.org/abs/2511.08909)（开源代码：暂未见稳定公开官方仓库）：面向长视频的图压缩 agent；用图结构压缩长视频事件与实体关系，再围绕问题做局部扩展和推理。
+- [Agentic Video Intelligence: A Flexible Framework for Advanced Video Exploration and Understanding](https://arxiv.org/abs/2511.14446)：提供面向高级视频探索与理解的灵活框架，为视频能力页补充一种支持交互式证据搜索而非单轮视频问答的智能体运行框架。
+- [Video-R4: Reinforcing Text-Rich Video Reasoning with Visual Rumination](https://arxiv.org/abs/2511.17490)：可作为视频理解的Agent Harness候选；核心关注“Reinforcing Text-Rich Video Reasoning with Visual Rumination”。
+- [SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](https://arxiv.org/abs/2511.17943)：用结合专业知识的 Deming-cycle 多智能体循环迭代理解科学视频，并生成教学式指导。
+- [EgoVITA: Learning to Plan and Verify for Egocentric Video Reasoning](https://arxiv.org/abs/2511.18242)：类型：agent harness/可复用执行框架。核心价值：为 1.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [VDC-Agent: When Video Detailed Captioners Evolve Themselves via Agentic Self-Reflection](https://arxiv.org/abs/2511.19436)：通过 agentic self-reflection 让视频详细描述器自我演化，属于视频 harness。
+- [VideoChat-M1](https://arxiv.org/abs/2511.19524)：基于 collaborative policy planning 的多 agent 视频理解 harness。核心思想：由多个 policy agent 生成、选择和改进工具调用计划，从时空复杂的视频中主动寻找线索。
 - [LongVT](https://arxiv.org/abs/2511.20785)（[开源代码](https://github.com/EvolvingLMMs-Lab/LongVT)）：面向长视频的原生 tool-calling 与“thinking with long videos”工作流，常被用作长视频场景的 agentic runtime 参考。
+- [TrafficLens: Multi-Camera Traffic Video Analysis Using LLMs](https://arxiv.org/abs/2511.20965)：把 LLM 推理与多摄像头交通视频检索结合，使用户能跨视角提出自然语言交通分析问题。
+- [Video-CoM](https://arxiv.org/abs/2511.23477)：基于 chain of manipulations 的交互式视频推理 harness。核心思想：让模型在推理中重新观看、聚焦和操作视觉证据，减少单次静态视频编码带来的信息瓶颈。
+- [SpecTemp](https://arxiv.org/abs/2512.00805)：一个长视频 speculative temporal reasoning 框架，由轻量 draft MLLM 提出关键帧，强 target MLLM 负责验证和细化，从而提升长视频证据检索与推理效率。
+- [WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](https://arxiv.org/abs/2512.02425)：类型：agent harness/可复用执行框架。核心价值：为 1.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [EEA](https://arxiv.org/abs/2512.03500)：一个长视频理解探索-利用 agent，自动发现任务相关语义查询，在视频片段上执行层级树搜索，并在覆盖未知片段与聚焦关键证据之间做权衡。
+- [DIG](https://arxiv.org/abs/2512.04000)：一种面向长视频理解的 query-type-aware frame-selection harness。核心思想是将全局问题交给高效均匀采样，只在局部问题需要精确证据时启用 grounded query-aware selection。
+- [VideoMem: Enhancing Ultra-Long Video Understanding via Adaptive Memory Management](https://arxiv.org/abs/2512.04540)：超长视频理解中的自适应记忆管理。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Active Video Perception (AVP)](https://arxiv.org/abs/2512.05774)：面向长视频的代理式取证框架，通过规划、定向观察和充分性反思循环直接获取像素证据；核心价值是把视频视为可交互的证据搜索环境，而不是一次性字幕或摘要输入。
+- [HFS: Holistic Query-Aware Frame Selection for Efficient Video Reasoning](https://arxiv.org/abs/2512.11534)：用 query-aware frame selection 提升视频推理效率，属于视频证据选择 harness。
+- [VideoARM](https://arxiv.org/abs/2512.12360)：带层次化记忆的长视频 agentic reasoning harness。核心思想：由控制器按需观察、思考、行动和写入记忆，构建粗到细的视频证据，而不是把全部帧预处理进固定上下文。
 - [SAGE](https://arxiv.org/abs/2512.13874)（[开源代码](https://github.com/allenai/SAGE)）：any-horizon 长视频推理 agent；把“何时单轮回答/何时多轮搜证据”做成可学习的策略。
+- [V-Agent: An Interactive Video Search System Using Vision-Language Models](https://arxiv.org/abs/2512.16925)：把路由、搜索和聊天 agent 叠加在 VLM 帧嵌入、ASR 转写嵌入和重排序模块上，让用户通过对话逐步细化多模态视频检索。
 - [LongShOTAgent](https://arxiv.org/abs/2512.16978)（[开源代码](https://github.com/mbzuai-oryx/longshot)）：围绕 LongShOTBench 的长视频 agentic system；用预处理、跨模态检索、工具调用和迭代 refinement 处理视觉、语音与环境音证据。
+- [LongVideoAgent: Multi-Agent Reasoning with Long Videos](https://arxiv.org/abs/2512.20618)：面向长视频的多 agent 推理框架；核心思想是协调检索、记忆和推理 agent 处理长视频证据，而不是把整段视频一次性压缩进上下文。
+- [VideoScaffold: Elastic-Scale Visual Hierarchies for Streaming Video Understanding in MLLMs](https://arxiv.org/abs/2512.22226)：面向流式视频理解的弹性视觉层级 harness。核心思想是为 MLLM 动态组织视觉上下文，使长视频或流式视频不只依赖静态稀疏采样。
+- [VideoZoomer: Reinforcement-Learned Temporal Focusing for Long Video Reasoning](https://arxiv.org/abs/2512.22315): 让长视频模型在推理过程中调用 temporal zoom 工具，逐步聚焦高帧率片段并获取细粒度证据。
+- [MAViS](https://doi.org/10.1109/TCE.2025.3650288)：用多 Agent、免训练方式完成指代表达视频目标分割，将视频 grounding 组织成协同推理与分割流程。
+- [Video RAG: Leveraging Semantic Chunking and Retrieval Augmented Generation for Enhanced Information Extraction](https://doi.org/10.1109/icecet63943.2025.11471900)：把语义分块和检索增强生成用于视频信息抽取，面向需要跨多模态片段取证的问题，而不是只做文本检索。
+- [Enhancing Interactive Querying with a Multimodal RAG System: Integrating Text, Video, and Document Analysis via LLaMA3](https://doi.org/10.1109/etcc65847.2025.11108584)：在 LLaMA3 驱动的多模态 RAG 界面中整合文本、视频和文档分析，使交互式查询能同时利用异构证据源。
+- [The Hybrid Deployment Architecture for Explainable and Robust Video Understanding](https://doi.org/10.1109/bigdata66926.2025.11400804)：面向视频理解提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Find Details in Long Videos: Tower-of-Thoughts and Self-Retrieval Augmented Generation for Video Understanding](https://doi.org/10.1109/icassp49660.2025.10890678)：面向视频理解的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [OmniAgent](https://arxiv.org/abs/2512.23646)：面向音视频理解的主动感知 harness。核心思想：动态规划并调用专门的单模态工具，让 omnimodal agent 主动提出感知查询，而不是依赖固定的密集预处理流程。
+- [GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval](https://arxiv.org/abs/2601.00584)：把查询改写成多种语义粒度，并生成 query-aware 视频描述，使零样本 moment retrieval 能在无需任务训练的情况下对齐粗粒度语言和细粒度视频证据。
+- [FastV-RAG: Towards Fast and Fine-Grained Video QA with Retrieval-Augmented Generation](https://arxiv.org/abs/2601.01513)：先由轻量 draft VLM 快速提出 RAG 候选答案，再由强 VLM 验证细化，并用实体相似度过滤保持检索知识对齐，约减半推理延迟。
+- [Semantic Event Graphs for Long-Form Video Question Answering](https://arxiv.org/abs/2601.06097)：构建符号化视频问答 harness，先检测和跟踪对象，把交互转成时间场景图，再按查询锚点裁剪并转写子图供 Gemini 式模型回答。
+- [TIR-Flow: Active Video Search and Reasoning with Frozen VLMs](https://arxiv.org/abs/2601.06176)：TIR-Flow 将主动视频搜索和工具化推理结合，适合 Video Agent Harness。
+- [Cascading Multi-Agent VAD](https://arxiv.org/abs/2601.06204)：将 VLM agents 与 embedding classifiers 组合为级联式多 agent 视频监控异常检测流程。
+- [Video Evidence to Reasoning Efficient Video Understanding via Explicit Evidence Grounding](https://arxiv.org/abs/2601.07761)：一种把感知 grounding 与高效推理解耦的视频 reasoning harness；核心思想是在生成简洁答案前先建立显式证据。
+- [Event-VStream: Event-Driven Real-Time Understanding for Long Video Streams](https://arxiv.org/abs/2601.15655)：面向长视频流实时理解的 event-driven harness。核心思想是用事件感知状态表示视频流，而不是固定间隔抽帧。
 - [EGAgent](https://arxiv.org/abs/2601.18157)（开源代码：暂未见稳定公开官方仓库）：面向 very long egocentric video 的 agentic workflow；核心在于按 query 主动检索、压缩和重组第一视角生活记录中的证据。
+- [ShotFinder: Imagination-Driven Open-Domain Video Shot Retrieval via Web Search](https://arxiv.org/abs/2601.23232)：把开放域视频镜头检索与 Web search 结合，属于视频信息检索 agent harness。
+- [ADx3: A Collaborative Workflow for High-Quality Accessible Audio Description](https://arxiv.org/abs/2602.02684)：面向面向视频无障碍的 human-in-the-loop 协作音频描述 workflow的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [VideoTemp-o3](https://arxiv.org/abs/2602.07801)：统一长视频 temporal grounding 与问答的 agentic thinking-with-videos 框架；核心思想是让系统按需定位、裁剪、修正不准确的时间证据，并基于 grounding 片段回答。
+- [Agentic Spatio-Temporal Grounding via Collaborative Reasoning](https://arxiv.org/abs/2602.13313)：协调空间推理与时间推理智能体进行免训练时空视频定位，通过“提出并评估”的循环和视觉记忆，从文本查询中定位目标时空轨迹。
+- [Towards Sparse Video Understanding and Reasoning](https://arxiv.org/abs/2602.13602)：可作为video understanding方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [EventMemAgent: Hierarchical Event-Centric Memory for Online Video Understanding with Adaptive Tool Use](https://arxiv.org/abs/2602.15329)：类型：agent harness/可复用执行框架。核心价值：为 1.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [DataCube: A Video Retrieval Platform via Natural Language Semantic Profiling](https://arxiv.org/abs/2602.16231)：提供交互式视频处理与检索平台，将 clip 画像为结构化语义表示，并结合混合检索、神经重排和深层语义匹配来构建任务特定视频子集或私有可搜索视频库。
+- [FactGuard: Agentic Video Misinformation Detection via Reinforcement Learning](https://arxiv.org/abs/2602.22963)：将强化学习用于智能体式视频虚假信息检测，为视频分析补充围绕证据收集和决策修正的验证型工作流。
+- [LE-NeuS](https://arxiv.org/abs/2602.23553)：面向长视频问答的低延迟 neuro-symbolic harness。核心思想：保留时序逻辑验证能力，同时用 CLIP 引导的自适应采样和定向时序检查降低命题检测开销。
+- [EgoGraph: Temporal Knowledge Graph for Egocentric Video Understanding](https://arxiv.org/abs/2602.23709)：为超长第一人称视频构造时间知识图；核心思想是编码长期事件和关系以支持查询时推理。
+- [Pyramidal Multimodal Memory](https://arxiv.org/abs/2603.01455)：面向长时程视频 agent 的记忆蒸馏 harness。核心思想是把逐字视频证据压缩成 gist 级层次记忆，使 agent 能在不耗尽上下文的情况下推理长视频。
+- [Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](https://arxiv.org/abs/2603.04977)：面向用于长视频理解的先假设后验证多 agent 推理的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Video Streaming Thinking](https://arxiv.org/abs/2603.12262)：一种让 VideoLLM 同时观看和推理的流式视频 reasoning harness。核心思想：把推理过程摊入连续到来的片段中，使助手不必等完整视频结束后才开始思考，同时保持连贯的视频状态。
+- [A4VL](https://arxiv.org/abs/2603.14052)：面向长视频推理的多 agent 感知-行动联盟；核心思想是在多轮中交替进行线索引导感知、答案生成、互评、剪枝和重新探索，直到团队形成可接受答案。
+- [Symphony](https://arxiv.org/abs/2603.17307)：认知启发的长视频理解多 agent 系统；核心思想是把长视频问题拆成细粒度子任务，定位相关片段，并通过带反思的协作完成最终推理。
+- [VideoAtlas](https://arxiv.org/abs/2603.17948)：面向长视频的可导航环境表示；核心思想是把视频暴露为递归视觉网格，让 master-worker agent 逐层缩放、收集证据，并使探索计算随时长近似对数增长。
+- [HORNet](https://arxiv.org/abs/2603.18850)：面向视频问答的任务引导帧选择 harness。核心思想是学习冻结 VLM 在回答具体问题时需要观看哪些帧，把视觉证据获取与答案生成解耦，减少均匀采样造成的浪费。
+- [VideoSeek](https://arxiv.org/abs/2603.20185)：长周期视频 agent harness。核心思想：利用视频逻辑流和多粒度观察工具，让 agent 主动寻找与答案关键相关的证据，而不是穷尽解析全部帧。
+- [VideoDetective](https://arxiv.org/abs/2603.22285)：面向长视频问答的线索搜寻 harness；核心思想是结合 query relevance 与片段间内在关联，通过假设、验证和精炼循环定位支撑答案的稀疏片段。
+- [LensWalk](https://arxiv.org/abs/2603.24558)：agentic video understanding harness。核心思想：让推理器通过视频工具主动选择时间范围和采样密度，形成按需收集证据的 reason-plan-observe 循环，而不是依赖固定帧预处理。
+- [VideoTIR: Accurate Understanding for Long Videos with Efficient Tool-Integrated Reasoning](https://arxiv.org/abs/2603.25021)：VideoTIR 将长视频理解拆为高效工具集成推理，适合 Video Agent Harness。
+- [Progressive Video Condensation with MLLM Agent for Long-form Video Understanding](https://arxiv.org/abs/2604.02891)：用 MLLM agent 渐进压缩长视频，在上下文限制下支持长视频理解。
+- [QVAD](https://arxiv.org/abs/2604.03040)：用 question-centric agentic workflow 做高效 training-free video anomaly detection。
+- [AURA: Always-On Understanding and Real-Time Assistance via Video Streams](https://arxiv.org/abs/2604.04184)：AURA 面向 always-on 视频流理解和实时辅助，适合 Video Agent Harness。
+- [G2F-RAG](https://arxiv.org/abs/2604.04372)：训练无关的视频 RAG harness，把检索到的图证据重新渲染到视觉空间；核心思想是由 agent 构建和检索视频知识图，再把选中的证据融合成可审计的推理帧。
 - [SVAgent](https://arxiv.org/abs/2604.05079)（开源代码：未确认公开）：storyline-guided 长视频问答 agent；核心思想是用 storyline agent 从选定帧持续构建叙事状态，让跨模态决策 agent 分别基于视觉和文本证据作答，再由 meta-agent 对齐冲突预测。
+- [LOLGORITHM: Funny Comment Generation Agent For Short Videos](https://arxiv.org/abs/2604.09729)：使用模块化短视频评论生成流程，先摘要视频、分类内容风格、检索语义示例和热点 meme 信号，再生成适配 YouTube 或抖音等平台的幽默评论。
+- [Video-ToC: Video Tree-of-Cue Reasoning](https://arxiv.org/abs/2604.20473)：类型：agent harness/可复用执行框架。核心价值：为 1.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [UpstreamQA: A Modular Framework for Explicit Reasoning on Video Question Answering Tasks](https://arxiv.org/abs/2604.23145)：提供可复用 agent 工作流或执行 harness，服务于video understanding and temporal reasoning。
+- [MarkIt: Training-Free Visual Markers for Precise Video Temporal Grounding](https://arxiv.org/abs/2604.25886)：面向用于精确视频时间定位的免训练视觉标记的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [ReFineVQA](https://doi.org/10.1109/WACV61042.2026.00738)：为视频问答迭代优化视频描述。核心思想是对中间描述生成反馈，使最终答案 grounding 在修正后的视频叙事中。
+- [VRAgent](https://doi.org/10.1109/WACV61042.2026.00787)：面向零样本多模态视频检索的自优化 agent。核心思想是迭代改进检索查询和证据检查，使视频搜索不再只是单次嵌入匹配。
+- [MACF](https://arxiv.org/abs/2605.00444)：面向可扩展长视频理解的紧凑潜变量多 agent 协作框架；核心思想是把视频感知预算分配给局部 agent，再由协调器聚合任务充分的潜在证据，避免把视频过早压缩成文本。
+- [Video Active Perception: Effective Inference-Time Long-Form Video Understanding with Vision-Language Models](https://arxiv.org/abs/2605.01662)：面向用于长视频理解的推理时主动帧获取的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Response-G1](https://arxiv.org/abs/2605.07575)：用在线 query-guided scene graph、历史图检索和 trigger prompting 决定主动流式 VideoLLM 何时保持沉默、何时响应。
 - [VideoSEAL](https://arxiv.org/abs/2605.12571)（开源代码：暂未见稳定公开官方仓库）：面向 agentic long video understanding 的证据校准框架；核心思想是把答案生成权与证据对齐/校验解耦，缓解长视频 agent 在检索片段和最终回答之间的错配。
 - [ReTool-Video](https://arxiv.org/abs/2605.13228)（开源代码：未确认公开）：递归式工具调用视频 agent；核心思想是把高层视频意图落到细粒度 MetaAug-Video Tool Library 上的可执行工具链，并在运行时修复、替换或分解无法直接匹配的动作。
 - [VideoSeeker](https://arxiv.org/abs/2605.16079)（开源代码：论文称将公开，暂未确认稳定公开仓库）：面向视频理解的原生 agentic tool invocation；强调 instance-level 工具选择，把 search、grounding 和 verification 纳入模型决策过程。
+- [RAG4VAD](https://doi.org/10.1016/j.ins.2026.123589)：用 training-free retrieval-augmented generation workflow 做 explainable video anomaly detection。
+- [MACD Video Anomaly Detection](https://doi.org/10.1049/sfw2/6947479)：用 multi-agent counterfactual dialectics 做 online video anomaly detection。
+- [Accelerating Long Video Understanding via Compressed Scene Graph-Enabled Chain-of-Thought](https://doi.org/10.1145/3746027.3754765)：把长视频压缩成场景图证据，再将该结构输入思维链推理，从而减少下游 VideoQA 模型需要直接查看的原始时间上下文。
+- [Towards An Improved Video RAG Workflow With Orchestration Support in A Visual Data Management System](https://doi.org/10.1145/3735654.3735945)：把视频 RAG 编排嵌入可视化数据管理系统，重点处理索引、检索和流程协调如何作为视频数据操作被统一管理。
+- [VidCog: Empowering LLM with Long Video Understanding via Human-like Temporal Cognitive Loop](https://doi.org/10.1145/3743093.3771043)：用类人时间认知循环增强长视频理解；核心思想：用迭代循环控制信息获取与时间整合，替代碎片化多步视频推理。
+- [GraphVideoAgent: Enhancing Long-form Video Understanding with Entity Relation Graphs](https://doi.org/10.1145/3746027.3755537)：用实体关系图组织长视频证据，为视频理解补充结构化 agent 工作流。

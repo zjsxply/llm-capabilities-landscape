@@ -1,0 +1,72 @@
+# 1.16.2 Survey
+
+- [Agent AI: Surveying the Horizons of Multimodal Interaction](https://arxiv.org/abs/2401.03568)：把 Agent AI 定义为能感知视觉、语言与环境信号并在物理或虚拟世界中行动的具身多模态智能体，组织视角落在 next-embodied-action prediction、外部知识、多感官输入与人类反馈。
+- [MARG: Multi-Agent Review Generation for Scientific Papers](https://arxiv.org/abs/2401.04259)：研究由多个专门化 LLM 审稿智能体讨论全文的论文反馈生成流程，把实验、清晰度与影响力评论拆成子任务，并用泛化评论比例和高质量评论数量评估效果。
+- [LLM Multi-Agent Systems: Challenges and Open Problems](https://arxiv.org/abs/2402.03578)：围绕任务分配、迭代辩论、分层上下文与记忆管理组织 LLM 多智能体开放问题，并把这些协同难题联系到区块链和分布式系统应用。
+- [Graph Neural Network Meets Multi-Agent Reinforcement Learning: Fundamentals, Applications, and Future Directions](https://arxiv.org/abs/2404.04898)：综述图神经网络如何支持多智能体强化学习，覆盖基础机制、应用模式和协同问题。
+- [Advancing Social Intelligence in AI Agents: Technical Challenges and Open Questions](https://arxiv.org/abs/2404.11023)：将 Social-AI 界定为能感知、推断、学习并回应其他人类或人工智能体情感、行为与认知的系统，研究边界横跨 NLP、机器人、HCI、视觉、语音与多模态学习。
+- [From Persona to Personalization: A Survey on Role-Playing Language Agents](https://arxiv.org/abs/2404.18231)：从 persona 设计到个性化综述角色扮演语言 agent。
+- [LLM-based Multi-Agent Reinforcement Learning: Current and Future Directions](https://arxiv.org/abs/2405.11106)：综述 LLM 强化学习如何从单智能体扩展到协作式 MARL，重点放在共同目标下的通信、协同以及 human-in-the-loop 或 human-on-the-loop 场景。
+- [Position: Foundation Agents as the Paradigm Shift for Decision Making](https://arxiv.org/abs/2405.17009)：把 foundation agent 定位为融合感知、记忆与推理的决策系统，路线图覆盖大规模交互数据收集、自监督预训练、适配，以及知识和价值对齐。
+- [AI Agents Under Threat: A Survey of Key Security Challenges and Future Pathways](https://arxiv.org/abs/2406.02630)：把 AI agent 安全缺口归纳为多步用户输入不可预测、内部执行复杂、运行环境变化以及与不可信外部实体交互四类。
+- [Self-assessment, Exhibition, and Recognition: a Review of Personality in Large Language Models](https://arxiv.org/abs/2406.17624)：按自评人格、外显人格和人格识别三类组织 LLM 人格研究，说明在社会智能体群体中使用 persona 行为前应如何测量。
+- [The Oscars of AI Theater: A Survey on Role-Playing with Language Models](https://arxiv.org/abs/2407.11484)：按数据、模型与对齐、智能体架构和评测划分角色扮演语言模型研究，并指出动态角色档案和高层 persona 一致性的风险点。
+- [Scaffolded Language Models with Language Supervision for Mixed-Autonomy: A Survey](https://arxiv.org/abs/2410.16392)：把提示、工具和 scaffold 代码视为多步语言模型系统中的非参数变量，综述语言监督与反馈如何优化这些混合自主 scaffold。
+- [From Individual to Society: A Survey on Social Simulation Driven by Large Language Model-based Agents](https://arxiv.org/abs/2412.03563)：将 LLM-agent 社会模拟分为个体模拟、情景模拟和社会模拟，并以真人参与研究的成本、规模与伦理约束界定 agent society 的适用边界。
+- [A Survey on Multi-Generative Agent System: Recent Advances and New Frontiers](https://arxiv.org/abs/2412.17481)：定义 LLM-based multi-agent system，并把应用组织为复杂任务求解、特定情景模拟和生成式智能体评估，同时区分当前挑战与后续方向。
+- [Thinking with Many Minds: Using Large Language Models for Multi-Perspective Problem-Solving](https://arxiv.org/abs/2501.02348)：提出 synthetic deliberation，让多个承载不同视角的 LLM 智能体并行探索观点，再通过综合步骤保留复杂问题求解所需的认知灵活性。
+- [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://arxiv.org/abs/2501.06322)：综述基于 LLM 的多智能体系统协作机制。
+- [Optimization and Learning in Open Multi-Agent Systems](https://arxiv.org/abs/2501.16847)：综述开放多智能体系统中的优化与学习问题。
+- [When One LLM Drools, Multi-LLM Collaboration Rules](https://arxiv.org/abs/2502.04506)：主张在复杂、主观任务中采用多 LLM 协作，并按 API、文本、logits 与权重等信息交换层级组织协作方式。
+- [Stop Overvaluing Multi-Agent Debate -- We Must Rethink Evaluation and Embrace Model Heterogeneity](https://arxiv.org/abs/2502.08788)：从评测实践与模型异质性角度反思多智能体辩论研究。
+- [Position: Stop Acting Like Language Model Agents Are Normal Agents](https://arxiv.org/abs/2502.10420)：指出不应把语言模型 agent 按普通 agent 处理，为多 agent 与 agentic-system 综述澄清概念边界。
+- [A Roadmap Towards Improving Multi-Agent Reinforcement Learning With Causal Discovery And Inference](https://arxiv.org/abs/2503.17803)：用带因果增强的协作式 MARL 实验讨论因果发现与推断可能改进策略效果、收敛效率、泛化、安全性和可解释性的环节。
+- [LLMs Working in Harmony: A Survey on the Technological Aspects of Building Effective LLM-Based Multi Agent Systems](https://arxiv.org/abs/2504.01963)：综述构建有效 LLM 多智能体系统的技术要点，涵盖协作、通信与系统设计。
+- [Adaptive Human-Agent Teaming: A Review of Empirical Studies from the Process Dynamics Perspective](https://arxiv.org/abs/2504.10918)：从 T4 过程动态视角综述人机组队，覆盖团队形成、任务与角色发展、团队发展和团队改进，并关注角色、共享心理模型和 backup behavior 的评测指标。
+- [A Trustworthy Multi-LLM Network: Challenges,Solutions, and A Use Case](https://arxiv.org/abs/2505.03196)：围绕可信多大模型网络梳理挑战、方案与应用案例。
+- [Beyond Frameworks: Unpacking Collaboration Strategies in Multi-Agent Systems](https://arxiv.org/abs/2505.12467)：把 LLM 多智能体协作拆成治理方式、参与控制、交互动态和对话历史管理四个维度，并在证据整合与结构化证据综合任务上评估准确率和效率。
+- [Multi-Party Conversational Agents: A Survey](https://arxiv.org/abs/2505.18845)：综述多方对话智能体，覆盖协作、轮次管理、角色分工与交互评测。
+- [Literature Review Of Multi-Agent Debate For Problem-Solving](https://arxiv.org/abs/2506.00066)：综述多智能体辩论作为问题求解模式的角色设定、交互协议与评测问题。
+- [Agentic AI and Multiagentic: Are We Reinventing the Wheel?](https://arxiv.org/abs/2506.01463)：从经典 intelligent agent 与 multi-agent system 理论审视 agentic 和 multiagentic 术语，回到自主性、反应性、主动性、社会能力和 BDI 架构等概念边界。
+- [From Conversation to Orchestration: HCI Challenges and Opportunities in Interactive Multi-Agentic Systems](https://arxiv.org/abs/2506.20091)：从 HCI 角度考察 AutoGen、OpenAI Swarm 等多智能体系统，突出编排、冲突解决、透明度和用户控制等交互挑战。
+- [Position: LLM Social Simulations Are a Promising Research Method](https://proceedings.mlr.press/v267/anthis25a.html)：将 LLM 社会模拟定位为研究方法，基于与真人被试的经验比较提出五类挑战，包括富上下文提示、社会科学数据微调和迭代评估。
+- [GenAI-based Multi-Agent Reinforcement Learning towards Distributed Agent Intelligence: A Generative-RL Agent Perspective](https://arxiv.org/abs/2507.09495)：从生成式强化学习视角综述多智能体与分布式智能体智能。
+- [Adaptability in Multi-Agent Reinforcement Learning: A Framework and Unified Review](https://arxiv.org/abs/2507.10142)：把 adaptability 作为 MARL 综述视角，关注智能体数量、任务目标和执行条件变化时算法是否仍可靠。
+- [A survey of multi-agent geosimulation methodologies: from ABM to LLM](https://arxiv.org/abs/2507.23694)：综述从 agent-based modeling 到 LLM 组件的地理模拟方法，把感知、记忆、规划和行动等智能体活动形式化为地理多智能体平台架构。
+- [Toward Goal-Oriented Communication in Multi-Agent Systems: An overview](https://arxiv.org/abs/2508.07720)：综述资源受限下的目标导向通信，结合信息论、通信理论和机器学习来讨论群体机器人、边缘智能与分布式控制中的协同。
+- [Taxonomy of Hierarchical Multi-Agent Systems](https://arxiv.org/abs/2508.12683)：综述层级多智能体系统的设计模式、协调机制与工业应用。核心思想是按层级、委派与协调方式组织多智能体架构，帮助跨领域比较可复用的 swarm 与 subagent harness 模式。
+- [Can Lessons From Human Teams Be Applied to Multi-Agent Systems? The Role of Structure, Diversity, and Interaction Dynamics](https://arxiv.org/abs/2510.07488)：把人类团队科学中的结构、多样性和交互动态变量迁移到 LLM-agent 团队，在常识和社会推理任务上比较扁平团队与层级团队。
+- [Challenges in Credit Assignment for Multi-Agent Reinforcement Learning in Open Agent Systems](https://arxiv.org/abs/2510.27659)：分析开放智能体系统中多智能体强化学习的 credit assignment 难题。
+- [Distributed Multi-Agent AI Systems: Scalability, Challenges, and Applications](https://doi.org/10.1109/icdcsw63273.2025.00083)：综述分布式多智能体 AI 系统，覆盖 agent swarm 超出单一中心化 runner 后的可扩展性、通信、协同与部署挑战。
+- [Agentic AI in Action: A Review of Architectures, Communication, and Coordination in Intelligent Multi-Agent Systems](https://doi.org/10.1109/nkcon66957.2025.11345772)：从 agentic AI 架构、通信协议和协调机制三条线综述智能多智能体系统，强调群体协作不只是单 agent 推理能力的叠加。
+- [A Survey on the Feedback Mechanism of LLM-based AI Agents](https://doi.org/10.24963/ijcai.2025/1175)：将 LLM agent 反馈机制分为内部反馈、外部反馈、多智能体反馈和人类反馈，并同时梳理用于迭代优化 agent 策略的评测协议与基准。
+- [SurveyPilot: an Agentic Framework for Automated Human Opinion Collection from Social Media](https://doi.org/10.18653/v1/2025.acl-long.221)：提出有限状态编排的智能体框架，从社交媒体自动收集可追溯的人类意见，并用多样性搜索缓解偏差、对照真实调查结果评估。
+- [Revisão Sistemática da Literatura integrando Sistemas Multiagente e Large Language Models](https://doi.org/10.5753/wesaac.2025.37538)：通过系统文献综述识别、筛选、评估并综合 multi-agent systems 与 LLMs 交叉研究证据，面向现实问题领域组织材料。
+- [Towards fluid human-agent collaboration: From dynamic collaboration patterns to models of theory of mind reasoning](https://doi.org/10.3389/frobt.2025.1532693)：把 fluid collaboration 定义为伙伴任务和资源使用随情境即时变化的协作形态，并把动态 Theory-of-Mind 推理连接到 Cooperative Cuisine 人机协作环境。
+- [Multi-Perspective Explanations for Multi-Agent Systems](https://doi.org/10.1109/acsos-c66519.2025.00037)：把边界放在能同时解释多个利益相关方或多个智能体视角的多智能体系统解释上，而不是单智能体 rationale 生成。
+- [Architecture of decentralized multi-agent systems](https://doi.org/10.1109/colcaci67437.2025.11230899)：综述去中心化多智能体架构选择，以控制权和协同职责的分布方式区分其与中心化 swarm runner 的差异。
+- [Reinforcement Learning Models for Multi-Agent Environment – An Extensive Study](https://doi.org/10.1109/iccds64403.2025.11209219)：综述多智能体环境中的强化学习模型。
+- [A Comparative Survey of Trust-Building Methods in Multi-Agent AI Systems](https://doi.org/10.1109/cogmi67134.2025.00063)：综述多智能体 AI 系统中的信任构建方法。
+- [Role-Playing Agents Driven by Large Language Models: Current Status, Challenges, and Future Trends](https://arxiv.org/abs/2601.10122)：梳理角色扮演智能体从规则模板、语言风格模仿到以人格建模和记忆机制为核心的认知模拟演进，并突出心理量表角色建模、记忆增强提示和动机情境决策控制。
+- [Social Catalysts, Not Moral Agents: The Illusion of Alignment in LLM Societies](https://arxiv.org/abs/2602.02598)：用带利他 anchoring agents 的公共物品博弈区分局部合作提升与真正规范内化，揭示 LLM 社会中的策略性服从和迁移失败。
+- [Towards Adaptive, Scalable, and Robust Coordination of LLM Agents: A Dynamic Ad-Hoc Networking Perspective](https://arxiv.org/abs/2602.08009)：将 LLM 智能体协调建模为自适应动态临时网络问题。
+- [The Five Ws of Multi-Agent Communication: Who Talks to Whom, When, What, and Why - A Survey from MARL to Emergent Language and LLMs](https://arxiv.org/abs/2602.11583)：综述 MARL、涌现语言与 LLM agent 中谁与谁、何时、说什么以及为何通信。
+- [Developing AI Agents with Simulated Data: Why, what, and how?](https://arxiv.org/abs/2602.15816)：给出基于仿真的合成数据教程框架，说明数字孪生何时能生成多样训练数据，以及数据量、数据质量和设计分析上的约束。
+- [Cognitive Models and AI Algorithms Provide Templates for Designing Language Agents](https://arxiv.org/abs/2602.22523)：把认知模型和经典 AI 算法视为模块化语言智能体模板，说明角色划分与组合模式如何迁移到 swarm 设计中。
+- [The Future of AI is Many, Not One](https://arxiv.org/abs/2603.29075)：从复杂系统、组织行为和科学哲学论证认知多样的 AI 团队比单一超级模型更能拓宽解空间并延缓过早共识。
+- [Differentiable Mixture-of-Agents Incentivizes Swarm Intelligence of Large Language Models](https://arxiv.org/abs/2605.15706)：提出 DMoA 这一自演化多智能体框架，用可微、上下文感知的路由机制实现稀疏激活，对比固定通信拓扑的局限。
+- [Orchestration and Verification of Agentic AI Systems: A Survey of Multi-Agent Collaboration and Safety](https://doi.org/10.59324/ejaset.2026.4%282%29.16)：综述智能体 AI 系统中的编排与验证，强调多智能体协作必须配套监控、安全检查和轨迹级验证。
+- [AI agents: opportunity, hype, and the way through](https://doi.org/10.20517/aiagent.2026.07)：区分 AI agent 系统中的长期机会与夸大叙事，为智能体研究定位。
+- [Agent-Based Hybrid AI Models and Technologies: A Systematic Literature Review](https://doi.org/10.1109/access.2026.3661027)：系统综述 agent-based hybrid AI，把神经、符号与智能体协同成分分开讨论，对象范围是混合推理技术而非单一 swarm 框架。
+- [Modeling and Operation of Underwater Intelligent Communication Systems: A Survey of Multi-Agent Reinforcement Learning-Based Approaches](https://doi.org/10.1109/comst.2026.3689477)：将 MARL 综述范围限定在水下智能通信系统，关注分布式智能体在通信和环境约束下如何协同建模与运行。
+- [A Vision for Autonomous Data Agent Collaboration: From Query-by-Integration to Query-by-Collaboration](https://vldb.org/cidrdb/2026/a-vision-for-autonomous-data-agent-collaboration-from-query-by-integration-to-query-by-collaboration.html)：把数据管理愿景转向可协作回答查询的 autonomous data agents，设计视角从 schema integration 转为 query-by-collaboration。
+- [Bridging manual heuristics and automated shaping: Elevating exploration via intrinsic-driven dual-agent collaboration](https://doi.org/10.1016/j.eswa.2026.131283)：研究由 intrinsic exploration 信号和自动 shaping 替代手工启发式的双智能体强化学习协作，并以探索效率作为评测边界。
+- [A Trustworthy Agentic Multi-LLM Network: Challenges, Solutions, and a Use Case](https://doi.org/10.1109/mwc.2026.3666842)：总结可信智能体式多大模型网络及其部署挑战。
+- [A Systematic Literature Review of Agentic AI: Definitions, Architectures, and Challenges](https://doi.org/10.1109/access.2026.3668138)：通过正式系统文献综述协议整理 Agentic AI 的定义、架构与挑战，有助于区分 agent 自主性、编排和部署问题。
+- [A Survey on Large Language Model-Based Social Agents in Game-Theoretic Scenarios](https://openreview.net/forum?id=Q13xLqyQh2)：从博弈论场景综述基于大语言模型的社会智能体，梳理多智能体系统中的策略互动、协调与社会行为评估。
+- [Beyond Pretend-Reality Dualism: Frame Analysis of LLM-powered Role Play with Social Agents](https://doi.org/10.1145/3687272.3690894)：用 frame analysis 研究 LLM 驱动的社会智能体角色扮演，澄清 pretend 与 reality 框架如何影响社会智能体交互设计。
+- [Large Language Model Applied in Multi-agent SystemA Survey](https://doi.org/10.54254/2755-2721/109/20241330)：综述 LLM 对多智能体系统中合作、推理和适应能力的影响，核心问题是如何有效把 LLM 能力整合到 MAS agent 中。
+- [A survey on LLM-based multi-agent systems: workflow, infrastructure, and challenges](https://doi.org/10.1007/s44336-024-00009-2)：按 profile、perception、self-action、mutual interaction 和 evolution 组织 LLM 多智能体系统，并沿该工作流综述基础设施、基准和安全挑战。
+- [Conversational Agents: An Exploration into Chatbot Evolution, Architecture, and Important Techniques](https://doi.org/10.55549/epstem.1518795)：从规则式聊天机器人到机器学习和 NLP 架构综述 conversational agents，以演进阶段、系统架构和对话技术为分类轴。
+- [Assessing Interaction Quality in Human-AI Dialogue: An Integrative Review and Multi-Layer Framework for Conversational Agents](https://doi.org/10.3390/make8020028)：综合 125 项经验研究，把 conversational agent 的用户感知交互质量分成实用核心、社会情感层和伦理信任层。
+- [Agentic AI systems in the age of generative models: architectures, cloud scalability, and real-world applications](https://doi.org/10.1007/s10462-025-11458-6)：从架构、云端可扩展性和真实应用部署综述生成模型时代的 agentic AI systems，以基础设施和实际运行作为组织框架。

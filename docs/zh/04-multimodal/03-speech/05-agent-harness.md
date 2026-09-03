@@ -2,14 +2,29 @@
 
 - [AudioGPT](https://arxiv.org/abs/2304.12995)（[开源代码](https://github.com/AIGC-Audio/AudioGPT)）：早期音频 agent harness，使用 ChatGPT/LangChain 风格规划调用 speech、singing、audio 和 talking-head foundation models 作为工具。
 - [WavJourney](https://arxiv.org/abs/2307.14335)（[开源代码](https://github.com/Audio-AGI/WavJourney)；[demo](https://audio-agi.github.io/WavJourney_demopage/)）：组合式音频创作 harness，把文本意图分解为故事、语音、音乐和音效生成 workflow。
+- [A Near-Real-Time Processing Ego Speech Filtering Pipeline Designed for Speech Interruption During Human-Robot Interaction](https://arxiv.org/abs/2405.13477)：构建实时人机交互管线，过滤机器人自身语音，使机器人说话时仍能监听并检测用户打断。
+- [Towards Achieving Human Parity on End-to-end Simultaneous Speech Translation via LLM Agent](https://arxiv.org/abs/2407.21646)：用 LLM agent 协调听取、翻译与输出时机，面向低延迟端到端同声传译。
+- [Audio-Agent: Leveraging LLMs For Audio Generation, Editing and Composition](https://arxiv.org/abs/2410.03335)：把音频生成、编辑与编曲工具交给 LLM 规划器调度，使复杂音频请求可被分解为可执行步骤。
+- [Aligning Audio-Visual Joint Representations with an Agentic Workflow](https://arxiv.org/abs/2410.23230)：通过智能体式工作流迭代对齐音视频联合表征，而不是只依赖一次固定编码器前向过程。
+- [Grasp What You Want: Embodied Dexterous Grasping System Driven by Your Voice](https://arxiv.org/abs/2412.10694)：把口语意图接入具身灵巧抓取流程，将语音命令落到目标物选择与机器人手控制。
+- [LLM-Enhanced Dialogue Management for Full-Duplex Spoken Dialogue Systems](https://arxiv.org/abs/2502.14145)：为全双工口语系统加入 LLM 对话管理器，重点处理重叠语音中的打断与响应控制。
 - [ReelWave](https://arxiv.org/abs/2503.07217)：面向电影声音生成的多 agent harness。核心思想：由 Sound Director agent 通过多模态对话协调屏内与屏外声音 agent，在多场景视频叙事中对齐语音、音效、环境声与音乐。
 - [Dopamine Audiobook](https://arxiv.org/abs/2504.11002)：用于情感化有声书生成的免训练多 Agent harness。核心思路是围绕多模态输入拆分语音设计和音频设计角色，在语义与时间上对齐语音、音效和音乐，并加入与人类偏好对齐的自动评测。
+- [DialogueAgents: A Hybrid Agent-Based Speech Synthesis Framework for Multi-Party Dialogue](https://arxiv.org/abs/2504.14482)：把多人对话语音合成拆成智能体角色，协调说话人轮次、交互上下文与表达性语音生成。
+- [LLAMAPIE: Proactive In-Ear Conversation Assistants](https://arxiv.org/abs/2505.04066)：提出入耳式会话助手，持续感知现场对话并主动提供上下文相关支持，而不等待显式请求。
 - [AudioGenie](https://arxiv.org/abs/2505.22053)：面向 multimodality-to-multiaudio generation 的 training-free multi-agent harness。核心思想是协调细粒度多模态理解、音频类型规划和生成等专门 agent，使 speech、music、song 与 sound effects 能从混合输入中合成。
+- [Interactive Real-Time Speaker Diarization Correction with Human Feedback](https://arxiv.org/abs/2509.18377)：在流式说话人日志系统外加入人工反馈闭环，使用户纠错能在会话进行中更新说话人标签。
 - [AudioToolAgent](https://arxiv.org/abs/2510.02995)（[开源代码](https://github.com/GLJS/AudioToolAgent)）：面向 audio-language model 的 agentic harness。核心思想：将音频理解与生成任务路由到外部工具，使听觉智能体能拆解工作流，而不是只依赖单次端到端模型调用。
+- [Audio-Maestro: Enhancing Large Audio-Language Models with Tool-Augmented Reasoning](https://arxiv.org/abs/2510.11454)：为大型音频语言模型加入工具增强推理。核心思路是让模型调用外部音频分析工具并整合带时间戳的工具输出，从而提升端到端推理之外的结构化音频推理能力。
+- [From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era](https://arxiv.org/abs/2510.20276)：把音乐智能体视为从生成延伸到署名、权利追踪和后流媒体价值分配的端到端系统。
 - [LVAS-Agent / LVAS-Bench](https://aclanthology.org/2025.emnlp-main.1133/)：面向长视频音频合成的多 agent harness。核心思想：把长视频配音分解为场景切分、脚本生成、音频设计与音频合成，并用 LVAS-Bench 的专业长视频集合进行系统评测。
 - [Open Full-duplex Voice Agent](https://doi.org/10.1109/ASRU65441.2025.11434669)：一个开源全双工语音到语音智能体框架。核心思想：把标准文本 LLM 转化为能在全双工交互中听说并处理打断的语音智能体，而不是只进行回合式文本交换。
+- [Orchestrating Audio: Multi-Agent Framework for Long-Video Audio Synthesis](https://doi.org/10.18653/v1/2025.emnlp-main.1133)：面向长视频音频合成的多 agent harness。核心思想：把长视频配音分解为场景切分、脚本生成、音频设计与音频合成，并用 LVAS-Bench 的专业长视频集合进行系统评测。
+- [AudioFab](https://arxiv.org/abs/2512.24645)：用于工具学习的开源音频智能体框架。核心思想：把分散的音频处理工具封装到自然语言接口后，简化依赖管理，并提升复杂音频任务中的工具选择与协作效率。
+- [Towards Robust Dysarthric Speech Recognition: LLM-Agent Post-ASR Correction Beyond WER](https://arxiv.org/abs/2601.21347)：把 LLM agent 用作构音障碍语音的 ASR 后校正器，强调超越词错误率的语义恢复。
+- [Building Enterprise Realtime Voice Agents from Scratch: A Technical Tutorial](https://arxiv.org/abs/2603.05413)：面向语音与音频模型的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
 - Pipecat（[开源代码](https://github.com/pipecat-ai/pipecat)；[文档](https://docs.pipecat.ai/)）：开源 Python 框架，用于实时语音和多模态对话 agent，覆盖 STT、LLM、TTS、WebRTC/WebSocket transports、pipeline composition 和 subagents。
 - LiveKit Agents（[开源代码](https://github.com/livekit/agents)；[文档](https://docs.livekit.io/agents/)）：面向 conversational multimodal voice agents 的实时 programmable-participant 框架，包含 tool calls、telephony、MCP integrations、job scheduling 和测试支持。
 - TEN Framework（[开源代码](https://github.com/TEN-framework/ten-framework)）：实时多模态 conversational-AI 框架，包含 voice assistant examples、VAD、turn detection、memory、RTC/WebSocket integrations 和 agent orchestration 组件。
-- [AudioFab](https://arxiv.org/abs/2512.24645)：用于工具学习的开源音频智能体框架。核心思想：把分散的音频处理工具封装到自然语言接口后，简化依赖管理，并提升复杂音频任务中的工具选择与协作效率。
 - [MIST](https://arxiv.org/abs/2605.06897)：面向智能家居的多模态语音工具调用助手框架。核心思想：把语音交互、多模态上下文和可执行设备工具连接起来，使工具使用型 agent 不局限于纯文本 API 调用。
+- [SoundStager: Interactive Design of Story-Driven GenAI Soundscapes for Video](https://doi.org/10.1145/3772318.3790870)：提供面向视频的故事驱动音景交互式生成 AI 工作流。

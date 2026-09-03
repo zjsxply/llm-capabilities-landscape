@@ -7,59 +7,450 @@
 - `CountBench`（见 [Teaching CLIP to Count to Ten](https://arxiv.org/abs/2302.12066)；[数据集](https://huggingface.co/datasets/vikhyatk/CountBenchQA)）：评什么：视觉计数与数量概念可靠性；核心思想：用“数得准不准”诊断视觉基础能力与偏置（常与 VQA/偏差诊断结合使用）。
 - [HallusionBench](https://arxiv.org/abs/2310.14566)（[开源代码](https://github.com/tianyi-lab/HallusionBench)；[数据集](https://huggingface.co/datasets/lmms-lab/HallusionBench)）：评什么：视觉幻觉与视觉错觉驱动的错误；核心思想：用可控视觉错觉与图像-上下文推理题诊断“看图胡说”的具体类型。
 - [MMMU](https://arxiv.org/abs/2311.16502)（[主页/榜单](https://mmmu-benchmark.github.io/#leaderboard)；[数据集](https://huggingface.co/datasets/MMMU/MMMU)；[评测代码](https://github.com/MMMU-Benchmark/MMMU)）：评什么：多学科多模态理解与推理；核心思想：用跨学科题型与统一评分协议，衡量“看图 + 读题 + 推理”一体化能力。
+- [MM-SAP: A Comprehensive Benchmark for Assessing Self-Awareness of Multimodal Large Language Models in Perception](https://arxiv.org/abs/2401.07529)：评测 MLLM 是否知道自己能从图像中感知什么、不能感知什么。核心思想是用感知知识象限把视觉证据上的自我认知与幻觉诊断关联起来。
+- [SceMQA: A Scientific College Entrance Level Multimodal Question Answering Benchmark](https://arxiv.org/abs/2402.05138)：评测大学入学阶段科学多模态问答，覆盖数学、物理、化学和生物，并结合选择题、自由回答、知识点标签和答案解释来考察科学推理。
+- [ChartX and ChartVLM: A Versatile Benchmark and Foundation Model for Complicated Chart Reasoning](https://arxiv.org/abs/2402.12185)：评测 18 类图表、7 类任务和 22 个学科主题上的复杂图表推理，重点是从可视化内容中抽取数值并进行推理，而不是普通图像描述。
+- [MM-Soc: Benchmarking Multimodal Large Language Models in Social Media Platforms](https://arxiv.org/abs/2402.14154)：评测多模态社交媒体理解，覆盖虚假信息、仇恨言论、情绪和社会语境生成等任务，并结合已有数据集与大规模 YouTube tagging 数据集。
+- [A Cognitive Evaluation Benchmark of Image Reasoning and Description for Large Vision Language Models](https://arxiv.org/abs/2402.18409)：用 251 张语义丰富的 Cookie-Theft 风格图像评测 LVLM 认知能力，包含八类推理能力标注，并设置图像描述与视觉问答两类任务。
+- [VLKEB: A Large Vision-Language Model Knowledge Editing Benchmark](https://arxiv.org/abs/2403.07350)：评测 LVLM 知识编辑的可靠性、局部性、泛化性和可迁移性，用更可靠的图像收集方式检查编辑知识能否迁移到相关视觉语境。
+- [B-AVIBench: Toward Evaluating the Robustness of Large Vision-Language Model on Black-Box Adversarial Visual-Instructions](https://arxiv.org/abs/2403.09346)：评测 LVLM 面对黑盒对抗视觉指令的鲁棒性，覆盖图像攻击、文本攻击和内容偏置触发，包含 316K 个对抗视觉指令样本。
+- [EXAMS-V: A Multi-Discipline Multilingual Multimodal Exam Benchmark for Evaluating Vision Language Models](https://arxiv.org/abs/2403.10378)：用 20,932 道多语言考试题评测 VLM，覆盖 20 个学科，并包含图像、表格、地图、图表、科学符号和方程，来源横跨 11 种语言和多种教育体系。
+- [IllusionVQA: A Challenging Optical Illusion Dataset for Vision Language Models](https://arxiv.org/abs/2403.15952)：评测 VLM 在视觉错觉问答上的表现，考察模型能否基于具有欺骗性的视觉证据作答，而不是依赖表层语言先验。
 - [MMStar](https://arxiv.org/abs/2403.20330)（[项目页](https://mmstar-benchmark.github.io/)；[开源代码](https://github.com/MMStar-Benchmark/MMStar)；[数据集](https://huggingface.co/datasets/Lin-Chen/MMStar)）：评什么：vision-indispensable 的综合多模态评测；核心思想：用多维子能力轴与“多模态增益/泄漏”等分析指标，衡量模型是否真正利用视觉输入。
+- [IsoBench: Benchmarking Multimodal Foundation Models on Isomorphic Representations](https://arxiv.org/abs/2404.01266)：评测基础模型在同构表示之间是否保持能力一致，把数学、科学、算法和游戏问题分别呈现为视觉、文本和数学形式。
+- [What Are We Measuring When We Evaluate Large Vision-Language Models? An Analysis of Latent Factors and Biases](https://arxiv.org/abs/2404.02415)：分析视觉语言评测中的潜在因子和偏置，包括生成长度偏置与跨基准迁移结构，更像是 benchmark 质量审计而非新增任务集。
+- [MathWriting: A Dataset For Handwritten Mathematical Expression Recognition](https://arxiv.org/abs/2404.10690)：提供 230K 个人类手写和 400K 个合成手写数学表达式样本，支持在线笔迹识别，也可渲染为离线公式 OCR 数据。
+- [SEED-Bench-2-Plus: Benchmarking Multimodal Large Language Models with Text-Rich Visual Comprehension](https://arxiv.org/abs/2404.16790)：用 2.3K 道人工精标选择题评测文本密集视觉理解，目标是图像内嵌文字必须被读取并参与推理的场景。
+- [Exploring the Capability of LLMs in Performing Low-Level Visual Analytic Tasks on SVG Data Visualizations](https://arxiv.org/abs/2404.19097)：评测 LLM 在 SVG 数据可视化上的低层分析任务能力，考察文本化图表编码能否支持取值、比较和可视分析推理。
 - [Vibe-Eval](https://arxiv.org/abs/2405.02287)（[开源代码](https://github.com/reka-ai/reka-vibe-eval)）：评什么：多模态模型在多维任务上的综合能力；核心思想：用更接近人类主观偏好的标注与评分协议，提供覆盖面更广的综合评测套件。
-- [MTVQA](https://arxiv.org/abs/2405.11985)（[项目页](https://mtvqa.github.io/)；[开源代码](https://github.com/bytedance/MTVQA)）：评什么：多语言“文本中心”视觉问答（读图中文字并理解）；核心思想：覆盖多语言与低资源语言，强调文字感知与跨语言理解的一体化评测。
+- [MTVQA](https://arxiv.org/abs/2405.11985)（[项目页](https://bytedance.github.io/MTVQA/)；[开源代码](https://github.com/bytedance/MTVQA)）：评什么：多语言“文本中心”视觉问答（读图中文字并理解）；核心思想：覆盖多语言与低资源语言，强调文字感知与跨语言理解的一体化评测。
+- [LOVA3: Learning to Visual Question Answering, Asking and Assessment](https://arxiv.org/abs/2405.14974)：把视觉问答、提问生成和答案评估作为联动学习环节来评测，扩展了只看答题准确率的 VQA 评测。
+- [VLind-Bench: Measuring Language Priors in Large Vision-Language Models](https://arxiv.org/abs/2406.08702)：衡量 LVLM 对语言先验的依赖，通过让文本模式与视觉证据冲突的图文问题暴露忽视图像导致的幻觉风险。
 - [MuirBench](https://arxiv.org/abs/2406.09411)（[项目页](https://muirbench.github.io/)；[开源代码](https://github.com/muirbench/MuirBench)；[数据集](https://huggingface.co/datasets/muirbench/MuirBench)）：评什么：多图输入下的鲁棒 multi-image understanding；核心思想：把多图任务拆成一组稳健性/一致性子任务，专门检验跨图对齐与抗干扰能力。
-- [CharXiv](https://arxiv.org/abs/2406.18521)（[项目页](https://princeton-nlp.github.io/CharXiv/)；[数据集](https://huggingface.co/datasets/princeton-nlp/CharXiv)）：评什么：科研论文场景的图表/插图与图文对齐理解；核心思想：把“图-文证据对齐”做成可量化问答。
-- [Vision Arena](https://huggingface.co/spaces/WildVision/vision-arena)：评什么：开放式图像对话模型的人类偏好/竞技场式比较。核心思想：用 pairwise battle 补充固定 VQA/OCR 题集，适合观察真实开放图像问答中的模型偏好排序。
+- [SUGARCREPE++ Dataset: Vision-Language Model Sensitivity to Semantic and Lexical Alterations](https://arxiv.org/abs/2406.11171)：评测 VLM 对语义和词汇扰动的敏感性，用受控文本改写检查图文匹配模型是否保持精确语义。
+- [DocGenome: An Open Large-scale Scientific Document Benchmark for Training and Testing Multi-modal Large Language Models](https://arxiv.org/abs/2406.11633)：从 arXiv 开放科学文档中标注 153 个学科的 500K 篇论文，构建覆盖多页抽取、图表和公式等文档内格式的科学文档 benchmark。
+- [VRSBench: A Versatile Vision-Language Benchmark Dataset for Remote Sensing Image Understanding](https://arxiv.org/abs/2406.12384)：用更高质量的目标信息和多任务视觉语言标注评测遥感图像理解，弥补既有遥感数据集单任务和质控不足的问题。
+- [Benchmarking Multi-Image Understanding in Vision and Language Models: Perception, Knowledge, Reasoning, and Multi-Hop Reasoning](https://arxiv.org/abs/2406.12742)：提出 MIRB 多图关系理解基准，覆盖感知、视觉世界知识、推理和多跳推理，区别于单图输入的 VLM benchmark。
+- [PIN: A Knowledge-Intensive Dataset for Paired and Interleaved Multimodal Documents](https://arxiv.org/abs/2406.13923)：发布成对与交错的多模态文档数据，把结构化 Markdown 与完整页面版面图像结合起来，支持知识密集型文档理解和跨模态关系推理。
+- [Measuring the Measurers: Quality Evaluation of Hallucination Benchmarks for Large Vision-Language Models](https://arxiv.org/abs/2406.17115)：审计 LVLM 幻觉 benchmark 的质量和失败覆盖，不是再给模型做一套普通 VQA 排名。
+- [CharXiv](https://arxiv.org/abs/2406.18521)（[项目页](https://princeton-nlp.github.io/CharXiv/)；[数据集](https://huggingface.co/datasets/princeton-nlp/CharXiv)；[榜单](https://charxiv.github.io/#leaderboard)）：评什么：科研论文场景的图表/插图与图文对齐理解；核心思想：把“图-文证据对齐”做成可量化问答。
+- [MindBench: A Comprehensive Benchmark for Mind Map Structure Recognition and Analysis](https://arxiv.org/abs/2407.02842)：评测双语思维导图和结构化图示识别，标注文本、版面、层级和元素交互，覆盖普通文档 OCR benchmark 常忽略的结构关系。
+- [FlowLearn: Evaluating Large Vision-Language Models on Flowchart Understanding](https://arxiv.org/abs/2407.05183)：发布 3,858 张科学流程图和 10,000 张模拟流程图，配有组件、OCR、Mermaid 与 VQA 标注；GPT-4V 的节点计数最高为 58%，Claude 的 OCR 最高为 83%，且没有模型在所有任务上都最好。
 - [VLMs are Blind](https://arxiv.org/abs/2407.06581)（[项目页](https://vlmsareblind.github.io/)）：评什么：VLM 在极简单视觉原语任务上的可靠性；核心思想：用人类几乎无难度的几何/空间/计数小测试，诊断模型是否真的“看见”关键证据。
+- [NTSEBENCH: Cognitive Reasoning Benchmark for Vision Language Models](https://arxiv.org/abs/2407.10380)：评测谜题、序列和类比等多模态认知推理，强调超出常识 VQA 的空间与文本模式推理。
+- [MM-Vet v2: A Challenging Benchmark to Evaluate Large Multimodal Models for Integrated Capabilities](https://arxiv.org/abs/2408.00765)：在 MM-Vet 的识别、知识、空间、语言生成、OCR 和数学等综合能力轴上，新增 image-text sequence understanding 来评测交错图文序列。
+- [GlyphPattern: An Abstract Pattern Recognition for Vision-Language Models](https://arxiv.org/abs/2408.05894)：评测视觉语言模型的抽象图案识别能力；核心思想：把视觉 glyph 图案与人工描述配对，测试抽象能力而不是常见物体识别。
+- [Multimodal Causal Reasoning Benchmark: Challenging Multimodal Large Language Models to Discern Causal Links Across Modalities](https://arxiv.org/abs/2408.08105)：评测 MLLM 能否跨视觉与文本模态识别因果关系，而不是只依赖相关性或目标识别。
+- [TWLV-I: Analysis and Insights from Holistic Evaluation on Video Foundation Models](https://arxiv.org/abs/2408.11318)：提供视频基础模型的整体评测信号，在本页中作为图像理解的时间维扩展，而非 OCR 专项测试。
+- [MMR: Evaluating Reading Ability of Large Multimodal Models](https://arxiv.org/abs/2408.14594)：评测文本密集图像上的复杂阅读、推理和空间理解，针对简单抽取型 OCR 问题已难区分模型能力的情况。
+- [EvoChart: A Benchmark and a Self-Training Approach Towards Real-World Chart Understanding](https://arxiv.org/abs/2409.01577)：评测真实世界图表理解，并配套合成图表自训练数据，强调对图表数值和关系的视觉理解。
 - [MMMU-Pro](https://arxiv.org/abs/2409.02813)（[主页/榜单](https://mmmu-benchmark.github.io/#leaderboard)；[数据集](https://huggingface.co/datasets/MMMU/MMMU_Pro)；[评测代码](https://github.com/MMMU-Benchmark/MMMU)）：评什么：更强“必须看图”的多模态 STEM；核心思想：把题面文本嵌入图像、过滤可纯文本作答题，并增强迷惑性选项，使评测更依赖视觉输入与推理链路。
-- [OmniDocBench 1.5](https://arxiv.org/abs/2412.07626)（[开源代码](https://github.com/opendatalab/OmniDocBench)；[数据集](https://huggingface.co/datasets/opendatalab/OmniDocBench)）：评什么：文档解析的模块化能力（版面、段落、表格、结构等）；核心思想：用模块化指标与工程化 runtime（如 hybrid matching、CDM、Docker 化）把“文档解析能力”拆解可测。
-- [OCRBench v2](https://arxiv.org/abs/2501.00321)（[评测实现汇总](https://github.com/Yuliang-Liu/MultimodalOCR)）：评什么：多模态 OCR（读图中文字并完成理解/推理）；核心思想：把 OCR 与下游推理耦合，区分“读不到”和“读到了但不会用”。
-- [EMMA](https://arxiv.org/abs/2501.05444)（[主页/榜单](https://emma-benchmark.github.io/)；[数据集](https://huggingface.co/datasets/luckychao/EMMA-mini)；[开源代码](https://github.com/EMMA-Bench/EMMA)）：评什么：跨数学/物理/化学/编码的“有机多模态推理”；核心思想：构造必须跨模态串联证据的题型，并提供生成与评测脚本以复现比较。
+- [CDM: A Reliable Metric for Fair and Accurate Formula Recognition Evaluation](https://arxiv.org/abs/2409.03643)：提出 Character Detection Matching 用于公式识别评测，通过渲染后的字符级匹配减少等价 LaTeX 字符串和符号变体带来的不公平。
+- [READoc: A Unified Benchmark for Realistic Document Structured Extraction](https://arxiv.org/abs/2409.05137)：把文档结构化抽取定义为统一任务来评测，覆盖真实原始文档与结构化输出需求，缓解既有 benchmark 分散和局部化的问题。
+- [Dynamic Multimodal Evaluation with Flexible Complexity by Vision-Language Bootstrapping](https://arxiv.org/abs/2410.08695)：通过视觉语言 bootstrapping 构建动态多模态评测，针对静态 benchmark 的数据污染和复杂度固定问题。
+- [MCTBench: Multimodal Cognition towards Text-Rich Visual Scenes Benchmark](https://arxiv.org/abs/2410.11538)：在文本密集视觉场景中评测认知能力，包含视觉推理和内容创作任务，补充只关注文字感知的 benchmark。
+- [MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](https://arxiv.org/abs/2410.12332)：用 2K 个人工标注图像对和开放式提示评测 multi-context visual grounding，要求模型跨图定位目标实例。
+- [HumanEval-V: Evaluating Visual Understanding and Reasoning Abilities of Large Multimodal Models Through Coding Tasks](https://arxiv.org/abs/2410.12381)：评测编码任务中的图示理解，包含六类人工标注视觉推理任务，模型必须先理解图表再生成代码。
+- [MultiChartQA: Benchmarking Vision-Language Models on Multi-Chart Problems](https://arxiv.org/abs/2410.14179)：评测多图表多跳问答，要求模型跨多个图表抽取并整合信息，而不是解决孤立单图表问题。
+- [Advancements in Visual Language Models for Remote Sensing: Datasets, Capabilities, and Enhancement Techniques](https://arxiv.org/abs/2410.17283)：综述遥感 VLM 数据集和能力轴，为本页中图像语言 benchmark 如何扩展到自然图像之外提供证据。
+- [AutoBench-V: Can Large Vision-Language Models Benchmark Themselves?](https://arxiv.org/abs/2410.21259)：研究由 LVLM 自动构建视觉 benchmark，针对多模态评测中的人工成本、静态数据和污染问题。
+- [Image2Struct: Benchmarking Structure Extraction for Vision-Language Models](https://arxiv.org/abs/2410.22456)：要求 VLM 从图像生成 LaTeX 或 HTML 等可渲染结构，再把渲染结果与源图比较，用于评测结构抽取能力。
+- [M-Longdoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework](https://arxiv.org/abs/2411.06176)：用 851 个样本评测数百页多模态长文档上的开放式问答，文档包含文本、图和表，并采用检索感知阅读设定。
+- [Large Vision-Language Models for Remote Sensing Visual Question Answering](https://arxiv.org/abs/2411.10857)：评测生成式 LVLM 在遥感视觉问答中的表现，重点是卫星图像上的开放式回答，而非传统判别式遥感流水线。
+- [CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](https://arxiv.org/abs/2411.18145)：评测通用和遥感专用 VLM 的层级化遥感能力，覆盖 Earth observation 感知与推理。
+- [TQA-Bench: Evaluating LLMs for Multi-Table Question Answering with Scalable Context and Symbolic Extension](https://arxiv.org/abs/2411.19504)：评测异构多表关系数据上的问答，强调可扩展上下文序列化、符号扩展和单表 QA 缺少的跨表推理。
+- [Assessing GPT model uncertainty in mathematical OCR tasks via entropy analysis](https://arxiv.org/abs/2412.01221)：用熵和互信息分析公式图像转 LaTeX 的 OCR 不确定性，比较不同图像分辨率下输出 token 序列的条件熵。
+- [CC-OCR: A Comprehensive and Challenging OCR Benchmark for Evaluating Large Multimodal Models in Literacy](https://arxiv.org/abs/2412.02210)：评测 OCR literacy，覆盖多场景文本阅读、多语言文本阅读、文档解析和关键信息抽取四条 track，包含 39 个子集和 7,058 张完整标注图像。
+- [BigDocs: An Open and Permissively-Licensed Dataset for Training Multimodal Models on Document and Code Tasks](https://arxiv.org/abs/2412.04626)：BigDocs-7.5M 是许可宽松的多模态文档数据集，覆盖 30 类文档和代码任务，并记录过滤与质控流程。
+- [OmniDocBench 1.5](https://arxiv.org/abs/2412.07626)（[开源代码](https://github.com/opendatalab/OmniDocBench)；[数据集](https://huggingface.co/datasets/opendatalab/OmniDocBench)；[榜单](https://github.com/opendatalab/OmniDocBench#leaderboard)）：评什么：文档解析的模块化能力（版面、段落、表格、结构等）；核心思想：用模块化指标与工程化 runtime（如 hybrid matching、CDM、Docker 化）把“文档解析能力”拆解可测。
+- [CoMT: A Novel Benchmark for Chain of Multi-modal Thought on Large Vision-Language Models](https://arxiv.org/abs/2412.12932)：评测可包含视觉操作的 multimodal chain-of-thought，针对既有多模态推理 benchmark 只输出文本带来的局限。
+- [Multi-modal, Multi-task, Multi-criteria Automatic Evaluation with Vision Language Models](https://arxiv.org/abs/2412.14613)：提出多任务、多标准的 VLM 自动评测设定，把生成文本质量评价从单一图像描述指标扩展到多类任务标准。
+- [FiVL: A Framework for Improved Vision-Language Alignment through the Lens of Training, Evaluation and Explainability](https://arxiv.org/abs/2412.14672)：从训练、评测和可解释性三个角度分析视觉语言对齐，提供对齐质量和解释信号，而不是单一 OCR 得分。
+- [REFINESUMM: Self-Refining MLLM for Generating a Multimodal Summarization Dataset](https://doi.org/10.18653/v1/2024.acl-long.743)：用自精炼 MLLM 流水线生成多模态摘要数据集，使视觉文档摘要成为可复用的评测与数据构建场景。
+- [OCRBench v2](https://arxiv.org/abs/2501.00321)（[评测实现汇总](https://github.com/Yuliang-Liu/MultimodalOCR)；[Codesota 榜单](https://www.codesota.com/ocr/benchmark/ocrbench-v2)）：评什么：多模态 OCR（读图中文字并完成理解/推理）；核心思想：把 OCR 与下游推理耦合，区分“读不到”和“读到了但不会用”。
+- [IllusionBench+: A Large-scale and Comprehensive Benchmark for Visual Illusion Understanding in Vision-Language Models](https://arxiv.org/abs/2501.00848)：IllusionBench+ 大规模评测视觉语言模型的视觉错觉理解与视觉幻觉失败模式。
+- [Acknowledging Focus Ambiguity in Visual Questions](https://arxiv.org/abs/2501.02201)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“Acknowledging Focus Ambiguity in Visual Questions”。
+- [EMMA](https://arxiv.org/abs/2501.05444)（[主页](https://emma-benchmark.github.io/)；[榜单](https://emma-benchmark.github.io/#leaderboard)；[数据集](https://huggingface.co/datasets/luckychao/EMMA-mini)；[开源代码](https://github.com/EMMA-Bench/EMMA)）：评什么：跨数学/物理/化学/编码的“有机多模态推理”；核心思想：构造必须跨模态串联证据的题型，并提供生成与评测脚本以复现比较。
+- [CHIRP: A Fine-Grained Benchmark for Open-Ended Response Evaluation in Vision-Language Models](https://arxiv.org/abs/2501.09672)：评测 VLM 长篇开放回答，使用细粒度标准，并在分析自动评测、AI 评测和人工评测缺陷后提出 CHIRP。
+- [MM-IQ: Benchmarking Human-Like Abstraction and Reasoning in Multimodal Models](https://arxiv.org/abs/2502.00698)：评估多模态模型的人类式抽象和推理能力。
+- [SARChat-Bench-2M: A Multi-Task Vision-Language Benchmark for SAR Image Interpretation](https://arxiv.org/abs/2502.08168)：评测合成孔径雷达图像的多任务视觉语言解读，把图像理解 benchmark 从光学图像扩展到 SAR 图像。
+- [EventSTR: A Benchmark Dataset and Baselines for Event Stream based Scene Text Recognition](https://arxiv.org/abs/2502.09020)：提供 9,928 个高清事件相机样本，并标注中英文文本，用于低光、运动模糊和复杂背景下的 scene text recognition。
+- [REAL-MM-RAG: A Real-World Multi-Modal Retrieval Benchmark](https://arxiv.org/abs/2502.12342)：真实世界多模态检索基准；核心思想是在证据可能来自文本、视觉或跨模态组合时比较检索与生成能力。
 - [SimpleVQA](https://arxiv.org/abs/2502.13059)（[开源代码](https://github.com/SimpleVQA/SimpleVQA)）：评什么：多模态事实性（factuality）与“图像是否真正被使用”；核心思想：通过简单但严格的 VQA 协议，识别模型是否依赖语言先验而非视觉证据。
-- [RealWorldQA](https://huggingface.co/datasets/xai-org/RealworldQA)：评什么：真实世界场景图像上的问答正确性；核心思想：用真实环境图像与可直接核验的简短问答，减少合成数据分布与模板化题型带来的高估。
+- [GroundCap: A Visually Grounded Image Captioning Dataset](https://arxiv.org/abs/2502.13898)：为 52,016 个电影帧提供 grounded captions，通过 tag 关联目标身份和动作，使描述文本能被具体视觉元素核验。
+- [What Is a Good Caption? A Comprehensive Visual Caption Benchmark for Evaluating Both Correctness and Coverage of MLLMs](https://arxiv.org/abs/2502.14914)：从正确性与覆盖度评测视觉描述。核心思想：区分 caption 是否事实正确以及是否覆盖重要视觉证据。
+- [KITAB-Bench: A Comprehensive Multi-Domain Benchmark for Arabic OCR and Document Understanding](https://arxiv.org/abs/2502.14949)：在多样版式与文本密集领域评测阿拉伯语 OCR 和文档理解能力。
+- [PairBench: Are Vision-Language Models Reliable at Comparing What They See?](https://arxiv.org/abs/2502.15210)：补充image ocr方向的基准或评测套件，核心围绕《PairBench: Are Vision-Language Models Reliable at Comparing What They See?》。
 - [VisFactor](https://arxiv.org/abs/2502.16435)（[开源代码](https://github.com/CUHK-ARISE/VisFactor)）：评什么：多模态模型的基础视觉认知（偏“视觉原语”）；核心思想：把基础视觉子能力系统化拆分为可控子测，降低语言投机空间。
-- [IDP Leaderboard](https://idp-leaderboard.org/)：评什么：企业智能文档处理中的 OCR、表格抽取、KIE、VQA、分类与长文档处理。核心思想：把 document AI 工程侧常见任务组织成公开榜单式评测入口，补齐学术 DocVQA/OCRBench 对真实业务文档覆盖不足的问题。
+- [MCiteBench: A Benchmark for Multimodal Citation Text Generation in MLLMs](https://arxiv.org/abs/2503.02589)：评测多模态 citation text generation，考察 MLLM 能否基于视觉与文本学术语境生成有依据的引用陈述。
+- [Vision-Language Models Struggle to Align Entities across Modalities](https://arxiv.org/abs/2503.03854)：提供可复用评测目标、排行榜或测量协议。
+- [Chart-HQA: A Benchmark for Hypothetical Question Answering in Charts](https://arxiv.org/abs/2503.04095)：评测反事实图表问答，在同一图表问题上加入 hypothetical assumptions，迫使模型根据图表内容而非参数记忆推理。
+- [A Benchmark for Multi-Lingual Vision-Language Learning in Remote Sensing Image Captioning](https://arxiv.org/abs/2503.04592)：评测多语言遥感图像描述，把卫星图像理解与跨语言 caption generation 结合起来。
+- [VLForgery Face Triad: Detection, Localization and Attribution via Multimodal Large Language Models](https://arxiv.org/abs/2503.06142)：评测人脸伪造的检测、定位和归因，要求 MLLM 不只判断真假，还要解释伪造区域和来源线索。
+- [VisualSimpleQA: A Benchmark for Decoupled Evaluation of Large Vision-Language Models in Fact-Seeking Question Answering](https://arxiv.org/abs/2503.06492)：评测 VLM 的视觉事实问答。核心思想：解耦视觉识别与答案生成，以定位错误来自“没看见”还是“没答对”。
+- [OWLViz: An Open-World Benchmark for Visual Question Answering](https://arxiv.org/abs/2503.07631)：OWLViz 是 open-world VQA benchmark，适合 Image/OCR 的视觉问答诊断。
+- [MOAT](https://arxiv.org/abs/2503.09348)：评估 LMM 在真实视觉问题中的能力整合和复杂指令 grounding。核心思想是把 OCR、计数、空间关系以及文本或视觉指令 grounding 纳入九类视觉语言能力 taxonomy。
+- [Towards Understanding Graphical Perception in Large Multimodal Models](https://arxiv.org/abs/2503.10857)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [OmniDiff: A Comprehensive Benchmark for Fine-Grained Image Difference Captioning](https://arxiv.org/abs/2503.11093)：用多样真实与合成场景评测细粒度图像差异描述，强调视觉变化定位和语义表达。
+- [Fine-Grained Open-Vocabulary Object Detection with Fined-Grained Prompts: Task, Dataset and Benchmark](https://arxiv.org/abs/2503.14862)：评测带细粒度提示的开放词表目标检测，强调目标定位和标签粒度，而不是粗类别识别。
+- [A Vision Centric Remote Sensing Benchmark](https://arxiv.org/abs/2503.15816)：以 vision-centric 协议评测遥感模型，强调卫星图像感知而非语言提示主导的评测。
+- [REVAL: A Comprehension Evaluation on Reliability and Values of Large Vision-Language Models](https://arxiv.org/abs/2503.16566)：评什么：面向 LVLM 的可靠性与价值观理解评测，适合图像能力页。
+- [Benchmarking Visual Language Models on Standardized Visualization Literacy Tests](https://arxiv.org/abs/2503.16632)：提供可复用评测目标、排行榜或测量协议。
+- [Unmasking Deceptive Visuals: Benchmarking Multimodal Large Language Models on Misleading Chart Question Answering](https://arxiv.org/abs/2503.18172)：评测 MLLM 在误导性图表问答上的表现，检查模型能否识别欺骗性可视编码并依据图表证据作答。
+- [Where is this coming from? Making groundedness count in the evaluation of Document VQA models](https://arxiv.org/abs/2503.19120)：评测 Document VQA 的 groundedness。核心思想：把答案来源证据纳入评分，使文档模型不只按最终文本正确性评价。
+- [BiblioPage: A Dataset of Scanned Title Pages for Bibliographic Metadata Extraction](https://arxiv.org/abs/2503.19658)：面向扫描标题页书目元数据抽取的数据集。核心思想是在版式高度变化的历史和真实标题页上评测文档模型。
+- [Texture or Semantics? Vision-Language Models Get Lost in Font Recognition](https://arxiv.org/abs/2503.23768)：诊断 VLM 在字体识别这一视觉文本感知边界任务上的失败。
 - [XLRS-Bench](https://arxiv.org/abs/2503.23771)（[项目页](https://xlrs-bench.github.io/home_page.html)；[开源代码](https://github.com/AI9Stars/XLRS-Bench)）：评什么：超大分辨率遥感图像的感知与推理；核心思想：用超高分辨率、遥感 domain 语义与跨尺度细粒度任务挑战通用 VLM。
+- [SARLANG-1M: A Benchmark for Vision–Language Modeling in SAR Image Understanding](https://arxiv.org/abs/2504.03254)：基准化评测 SAR 图像理解中的视觉语言建模，将遥感 VLM 评测扩展到非光学图像。
+- [Evaluating ‘Graphical Perception’ with Multimodal LLMs](https://arxiv.org/abs/2504.04221)：评测多模态大模型的图形感知能力。
+- [SCAM: A Real-World Typographic Robustness Evaluation for Multimodal Foundation Models](https://arxiv.org/abs/2504.04893)：评测多模态基础模型的真实世界字体排印鲁棒性，暴露视觉文本呈现带来的失败。
 - [ChartQAPro](https://arxiv.org/abs/2504.05506)（[开源代码](https://github.com/vis-nlp/ChartQAPro)；[数据集](https://huggingface.co/datasets/ahmed-masry/ChartQAPro)）：评什么：图表理解与图表问答；核心思想：覆盖多样图表类型并提高推理占比，配套可复现评测脚本。
+- [V-MAGE: A Game Evaluation Framework for Assessing Visual-Centric Capabilities in Multimodal Large Language Models](https://arxiv.org/abs/2504.06148)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“A Game Evaluation Framework for Assessing Visual-Centric Capabilities in Multimodal Large Language Models”。
+- [NoTeS-Bank: Benchmarking Neural Transcription and Search for Scientific Notes Understanding](https://arxiv.org/abs/2504.09249)：评测科学笔记理解中的神经转写和搜索；核心思想是检查模型能否阅读手写或技术性笔记并检索科学内容。
+- [Plot2XML / Draw with Thought](https://arxiv.org/abs/2504.09479)：评测科学图示到可编辑 XML 的重建能力。核心思想：将图示理解拆成 coarse-to-fine planning 与结构感知代码生成，检验 MLLM 是否保留语义和结构信息。
+- [Mitigating Long-tail Distribution in Oracle Bone Inscriptions: Dataset, Model, and Benchmark](https://arxiv.org/abs/2504.09555)：提供甲骨文识别数据集和 benchmark，聚焦低资源 OCR 场景中长尾古文字类别。
+- [Can VLMs Assess Similarity Between Graph Visualizations?](https://arxiv.org/abs/2504.09859)：评测 VLM 能否判断图可视化之间的相似性；核心思想：把模型判断与图相似度指标和类人视觉感知进行比较。
+- [COUNTS: Benchmarking Object Detectors and Multimodal Large Language Models under Distribution Shifts](https://arxiv.org/abs/2504.10158)：它给图像理解、OCR、文档解析或细粒度视觉能力提供评测，适合补充 image/OCR Bench。
+- [XY-Cut++: Advanced Layout Ordering via Hierarchical Mask Mechanism on a Novel Benchmark](https://arxiv.org/abs/2504.10258)：用新 benchmark 评测文档阅读顺序恢复；核心思想是把 layout ordering 作为文档理解和 RAG 前处理中的可测能力。
+- [VisualPuzzles: Decoupling Multimodal Reasoning Evaluation from Domain Knowledge](https://arxiv.org/abs/2504.10342)：弱化领域知识依赖的多模态推理基准；核心思想是用视觉谜题结构衡量推理能力，而不是事实记忆。
+- [Unchecked and Overlooked: Addressing the Checkbox Blind Spot in Large Language Models with CheckboxQA](https://arxiv.org/abs/2504.10419)：评测 VLM 是否能正确理解真实文档流程中的复选框和勾选标记；核心思想是捕捉文本中心系统容易漏掉的小型高影响视觉符号。
+- [ColorBench: Can VLMs See and Understand the Colorful World? A Comprehensive Benchmark for Color Perception, Reasoning, and Robustness](https://arxiv.org/abs/2504.10514)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Visual language models show widespread visual deficits on neuropsychological tests](https://arxiv.org/abs/2504.10786)：它给图像理解、OCR、文档解析或细粒度视觉能力提供评测，适合补充 image/OCR Bench。
+- [Evaluating Menu OCR and Translation: A Benchmark for Aligning Human and Automated Evaluations in Large Vision-Language Models](https://arxiv.org/abs/2504.13945)：评测菜单 OCR 与翻译；核心思想是在人类与自动评估之间对齐文本密集视觉输入中的识别错误和多语翻译错误。
+- [Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation](https://arxiv.org/abs/2504.14988)：从面向人类与面向机器的评价轴测试 LVLM 的细粒度图像能力，覆盖识别、表征、对齐和扰动敏感性。
+- [Unveiling the Lack of LVLM Robustness to Fundamental Visual Variations: Why and Path Forward](https://arxiv.org/abs/2504.16727)：V2R-Bench 测试 LVLM 对基础视觉变化的鲁棒性，而不只看静态视觉问答准确率。
+- [HRScene](https://arxiv.org/abs/2504.18406)：评什么：VLM 在真实与合成诊断场景中的高分辨率图像理解。核心思想：结合 25 个真实数据集和两个诊断集，测试模型能否利用超大图像中的细粒度区域，而不是因 regional divergence 或 lost-in-the-middle 丢失证据。
+- [More Clear, More Flexible, More Precise: A Comprehensive Oriented Object Detection benchmark for UAV](https://arxiv.org/abs/2504.20032)：评测 UAV 图像中的旋转目标检测，强调精确 rotated boxes 和航拍场景鲁棒性，而不是普通水平框检测。
+- [HCT-QA: A Benchmark for Question Answering on Human-Centric Tables](https://arxiv.org/abs/2504.20047)：构建人本表格问答基准，用于评估多模态表格理解能力。
+- [GDI-Bench: A Benchmark for General Document Intelligence with Vision and Reasoning Decoupling](https://arxiv.org/abs/2505.00063)：评什么：将视觉解析与推理解耦的通用文档智能 benchmark。
 - [Omni-Chart-600K](https://doi.org/10.18653/v1/2025.findings-naacl.226)：评估多类型图表理解能力。核心思想：扩大图表类型覆盖，使文档模型和视觉语言模型不只在常见柱状图、折线图和饼图上测试。
-- [PointArena（PointBench）](https://arxiv.org/abs/2505.09990)（[开源代码](https://github.com/pointarena/pointarena)）：评什么：pointing/指向定位能力（在图上点选/定位目标或区域）；核心思想：把 grounding 从文本变成可度量的空间输出，定位误差可直接评估。
+- [TabComp: A Dataset for Visual Table Reading Comprehension](https://doi.org/10.18653/v1/2025.findings-naacl.320)：TabComp 用表格图像、问题和生成式答案评测视觉表格阅读理解。
+- [MLLM-Enhanced Face Forgery Detection: A Vision-Language Fusion Solution](https://arxiv.org/abs/2505.02013)：评测 MLLM 辅助的视觉语言融合人脸伪造检测，把图像真实性评测扩展到普通 VQA 之外。
+- [CM1 - A Dataset for Evaluating Few-Shot Information Extraction with Large Vision Language Models](https://arxiv.org/abs/2505.04214)：评什么：LVLM 在少样本手写文档信息抽取中的能力。核心思想是在标注有限的场景下测试 key-value extraction。
+- [Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](https://arxiv.org/abs/2505.05026)：评测 MLLM 是否理解界面如何引导用户行为的基准；核心思想是测试模型对布局、可供性和用户流程线索的视觉推理。
+- [Toward Advancing License Plate Super-Resolution in Real-World Scenarios: A Dataset and Benchmark](https://arxiv.org/abs/2505.06393)：提供真实场景车牌超分辨率数据集和 benchmark，把图像恢复质量与 OCR 式下游可读性关联起来。
+- [PointArena（PointBench）](https://arxiv.org/abs/2505.09990)（[arena/榜单](https://pointarena.github.io/)；[开源代码](https://github.com/pointarena/pointarena)）：评什么：pointing/指向定位能力（在图上点选/定位目标或区域）；核心思想：把 grounding 从文本变成可度量的空间输出，定位误差可直接评估。
 - [WildDoc](https://arxiv.org/abs/2505.11015)：评什么：真实野外文档理解的全面性与鲁棒性；核心思想：从 OCRBench v2 后续引用链补足更接近真实采集噪声、复杂版面和多任务文档理解的压力测试。
+- [MIRACL-VISION: A Large, multilingual, visual document retrieval benchmark](https://arxiv.org/abs/2505.11651)：评测多语言视觉文档检索或 OCR 相邻的图像理解能力。
+- [RVTBench: A Benchmark for Visual Reasoning Tasks](https://arxiv.org/abs/2505.11838)：评测 visual reasoning tasks；核心思想是让模型在隐式文本查询下解释视觉输入并完成多步视觉推理。
+- [ChartEdit: How Far Are MLLMs From Automating Chart Analysis? Evaluating MLLMs' Capability via Chart Editing](https://arxiv.org/abs/2505.11935)：通过 chart editing 评测 MLLM 的图表分析能力。核心思想是要求模型理解并修改图表内容，暴露静态 chart QA 看不到的失败。
+- [Reasoning-OCR: Can Large Multimodal Models Solve Complex Logical Reasoning Problems from OCR Cues?](https://arxiv.org/abs/2505.12766)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [ChartMuseum: Testing Visual Reasoning Capabilities of Large Vision-Language Models](https://arxiv.org/abs/2505.13444)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [VoQA: Visual-only Question Answering](https://arxiv.org/abs/2505.14227)：评测 visual-only question answering，问题和场景都嵌入图像；核心思想是检查模型能否先读出视觉中的问题，再基于同一视觉输入推理作答。
 - [ViC-Bench](https://arxiv.org/abs/2505.14404)：评估 MLLM 的视觉交织式思维链能力。核心思路是允许模型生成自由形式的中间视觉状态，并检验这些状态是否支撑忠实的逐步多模态推理。
+- [The Devil is in Fine-tuning and Long-tailed Problems:A New Benchmark for Scene Text Detection](https://arxiv.org/abs/2505.15649)：提出关注微调与长尾问题的场景文本检测基准。
 - [PhyX](https://arxiv.org/abs/2505.15929)（[项目页](https://phyx-bench.github.io/)；[数据集](https://huggingface.co/datasets/Cloudriver/PhyX)；[开源代码](https://github.com/killthefullmoon/PhyX)）：评什么：视觉场景下的物理推理；核心思想：以真实高保真视觉情境承载大学水平物理题，并提供多版本输入（如 Text-DeRedundancy）与评测脚本减少“读题冗余”带来的偏置。
-- [OCR Arena](https://www.ocrarena.ai/)：评什么：OCR/文档模型的竞技场式比较。核心思想：把 OCR、文档解析、表格抽取和视觉问答模型放进持续公开比较入口，作为 OCRBench、OmniDocBench 与 IDP Leaderboard 之外的实用补充。
+- [Redemption Score: A Multi-Modal Evaluation Framework for Image Captioning via Distributional, Perceptual, and Linguistic Signal Triangulation](https://arxiv.org/abs/2505.16180)：为图像描述、OCR 与文档理解补充基准、数据集、指标或评测协议。
 - [MMDocRAG](https://arxiv.org/abs/2505.16470)（[项目页](https://mmdocrag.github.io/MMDocRAG/)；[开源代码](https://github.com/MMDocRAG/MMDocRAG)）：评什么：多页、多证据链的文档问答与多模态 RAG；核心思想：同时评估检索、证据选择和“文本 + 图像证据”整合，避免只测文本化 DocQA。
 - [OCR-Reasoning Benchmark](https://arxiv.org/abs/2505.17163)：评什么：复杂 text-rich image reasoning；核心思想：把 OCR 读取得分与读后推理明确拆开，测试模型能否在密集文字、表格和图像证据上完成组合推理。
+- [ViDoRe Benchmark V2: Raising the Bar for Visual Retrieval](https://arxiv.org/abs/2505.17166)：扩展视觉文档检索评测，直接支撑文档理解与多模态检索能力跟踪。
+- [CHART-6: Human-Centered Evaluation of Data Visualization Understanding in Vision-Language Models](https://arxiv.org/abs/2505.17202)：补充image ocr方向的基准或评测套件，核心围绕《CHART-6: Human-Centered Evaluation of Data Visualization Understanding in Vision-Language Models》。
+- [InfoDet: A Dataset for Infographic Element Detection](https://arxiv.org/abs/2505.17473)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“A Dataset for Infographic Element Detection”。
+- [TEDI: Trustworthy and Ethical Dataset Indicators to Analyze and Compare Dataset Documentation](https://arxiv.org/abs/2505.17841)：定义用于评估数据集文档质量和伦理性的指标；它更接近 benchmark 来源与 data-card 审计证据，而不是视觉 OCR 任务本身。
 - [InfoChartQA](https://arxiv.org/abs/2505.19028)：评什么：信息图风格图表的多模态问答；核心思想：从 ChartQAPro 引用链补足 infographic chart 场景，覆盖更强版式变化、文本说明和图表语义融合。
+- [ReadBench](https://arxiv.org/abs/2505.19091)：通过把纯文本 benchmark 的上下文转写成文字图像，评估 VLM 的密集文本视觉阅读能力。核心思想：保持提示和问题不变，只把证据改为视觉文本输入，观察长文本和多页图像文本下阅读与推理如何退化。
+- [Decomposing Complex Visual Comprehension into Atomic Visual Skills for Vision Language Models](https://arxiv.org/abs/2505.20021)：复杂视觉理解中的原子视觉技能评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [MMTBENCH: A Unified Benchmark for Complex Multimodal Table Reasoning](https://arxiv.org/abs/2505.21771)：MMTBENCH 聚焦复杂多模态表格推理，补充文档/表格理解 benchmark。
+- [NegVQA: Can Vision Language Models Understand Negation?](https://arxiv.org/abs/2505.22946)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [ChartMind: A Comprehensive Benchmark for Complex Real-world Multimodal Chart Question Answering](https://arxiv.org/abs/2505.23242)：ChartMind 评测复杂真实世界多模态图表问答。
 - [VLMs are Biased](https://arxiv.org/abs/2505.23941)（[项目页](https://vlmsarebiased.github.io/)；[开源代码](https://github.com/anvo25/vlms-are-biased)）：评什么：VLM 的视觉偏置与“记忆替代看图”的失败模式；核心思想：用客观计数/对照构造揭示模型被熟悉对象先验牵引而忽视真实像素证据。
 - [Agent-X](https://arxiv.org/abs/2505.24876)（[开源代码](https://github.com/mbzuai-oryx/Agent-X)；[数据集](https://huggingface.co/datasets/Tajamul21/Agent-X)）：评什么：视觉中心的多步 agentic task；核心思想：把图像、多图、视频和网页等视觉上下文放进真实工具使用环境，并用 step-level 指标评估推理链与工具调用质量。
+- [Abstractive Visual Understanding of Multi-modal Structured Knowledge: A New Perspective for MLLM Evaluation](https://arxiv.org/abs/2506.01293)：评测 MLLM 对多模态结构化知识的抽象视觉理解，关注从结构图文中归纳语义而非直接读数。
+- [Do You See Me : A Multidimensional Benchmark for Evaluating Visual Perception in Multimodal LLMs](https://arxiv.org/abs/2506.02022)：Do You See Me 评测多模态 LLM 的多维视觉感知，强调模型是否真正利用图像证据。
+- [MMRB](https://arxiv.org/abs/2506.04280)：评测多图输入上的结构化视觉推理；核心思想是覆盖空间、时间和语义多图子任务，并配套 chain-of-thought-style 标注和可扩展句级匹配评测。
+- [MMRefine: Unveiling the Obstacles to Robust Refinement in Multimodal Large Language Models](https://arxiv.org/abs/2506.04688)：MMRefine 明确提出多模态错误 refinement benchmark，可补充 MLLM 自修正评测。
+- [MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark](https://arxiv.org/abs/2506.05587)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Unblocking Fine-Grained Evaluation of Detailed Captions: An Explaining AutoRater and Critic-and-Revise Pipeline](https://arxiv.org/abs/2506.07631)：用 explaining AutoRater 和 critic-and-revise loop 评测详细图像描述，强调细粒度错误归因而不是单一 caption 分数。
+- [FlagEvalMM: A Flexible Framework for Comprehensive Multimodal Model Evaluation](https://arxiv.org/abs/2506.09081)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“A Flexible Framework for Comprehensive Multimodal Model Evaluation”。
+- [AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](https://arxiv.org/abs/2506.09082)：评测视觉基础模型的原子视觉能力。核心思想：把视觉能力拆成细粒度基础项，避免错误被宽泛 VQA 分数掩盖。
 - [SFE](https://arxiv.org/abs/2506.10521)（[赛页](https://internscience.github.io/sfe-competition-2025/)；[数据集](https://huggingface.co/datasets/PrismaX/SFE)）：评什么：科学考试风格的理解、推理与表达；核心思想：以更贴近科研/科学考试表述的题目与评分协议测试科学推理能力。
+- [MANBench: Is Your Multimodal Model Smarter than Human?](https://arxiv.org/abs/2506.11080)：补充image ocr方向的基准或评测套件，核心围绕《MANBench: Is Your Multimodal Model Smarter than Human?》。
+- [Argus Inspection: Do Multimodal Large Language Models Possess the Eye of Panoptes?](https://arxiv.org/abs/2506.14805)：补充image ocr方向的基准或评测套件，核心围绕《Argus Inspection: Do Multimodal Large Language Models Possess the Eye of Panoptes?》。
+- [Robustness Evaluation of OCR-based Visual Document Understanding under Multi-Modal Adversarial Attacks](https://arxiv.org/abs/2506.16407)：评什么：OCR-based visual document understanding 在多模态对抗攻击下的鲁棒性。核心思想是同时扰动文本、版式和视觉信号。
+- [Escaping the SpuriVerse: Can Large Vision-Language Models Generalize Beyond Seen Spurious Correlations?](https://arxiv.org/abs/2506.18322)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“Can Large Vision-Language Models Generalize Beyond Seen Spurious Correlations?”。
+- [EXPERT: An Explainable Image Captioning Evaluation Metric with Structured Explanations](https://arxiv.org/abs/2506.24016)：围绕流畅性、相关性和描述性用结构化解释评估图像描述，使 caption 分数更可审计。
+- [CaughtCheating: Is Your MLLM a Good Cheating Detective? Exploring the Boundary of Visual Perception and Reasoning](https://arxiv.org/abs/2507.00045)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“Is Your MLLM a Good Cheating Detective? Exploring the Boundary of Visual Perception and Reasoning”。
+- [Chart Question Answering from Real-World Analytical Narratives](https://arxiv.org/abs/2507.01627)：用真实分析叙事和多视图图表构造 chart QA；核心思想是把问题锚定在真实分析上下文，而不是合成图表模板。
+- [ExpliCIT-QA: Explainable Code-Based Image Table Question Answering](https://arxiv.org/abs/2507.11694)：提出面向图像表格的可解释代码式问答任务，同时考察表格读取与可执行推理。
+- [COREVQA: A Crowd Observation and Reasoning Entailment Visual Question Answering Benchmark](https://arxiv.org/abs/2507.13405)：COREVQA 明确构造 crowd observation and reasoning entailment VQA benchmark。
+- [Teaching Vision-Language Models to Ask: Resolving Ambiguity in Visual Questions](https://arxiv.org/abs/2507.13773)：提出 ClearVQA，评估 VLM 面对歧义视觉问题时是否会主动澄清。
+- [OCRGenBench: A Comprehensive Benchmark for Evaluating OCR Generative Capabilities](https://arxiv.org/abs/2507.15085)：面向图像生成文字能力的 OCR benchmark。核心思想是评估生成模型能否在多样视觉场景中生成可读且准确的文字。
+- [Beyond Isolated Dots: Benchmarking Structured Table Construction as Deep Knowledge Extraction](https://arxiv.org/abs/2507.16271)：把结构化表格构建作为深层知识抽取来评测的基准；核心思想是要求模型构建连贯表格结构，而不是只抽取孤立单元格。
+- [LED Benchmark: Diagnosing Structural Layout Errors for Document Layout Analysis](https://arxiv.org/abs/2507.23295)：用合并、拆分、缺失等标准化结构错误类型诊断文档布局预测，暴露仅靠重叠度指标难以发现的失败。
 - [Table Recognition with Vision LLMs](https://www.ijcai.org/proceedings/2025/279)：评什么：vision LLM 的表格识别与推理。核心思想：把 benchmark 和 neighbor-guided toolchain reasoner 结合起来，同时评估结构化表格解析和下游推理。
+- [Oedipus and the Sphinx: Benchmarking and Improving Visual Language Models for Complex Graphic Reasoning](https://arxiv.org/abs/2508.00323)：评测视觉语言模型的复杂图形推理能力。
 - [M4Bench](https://www.ijcai.org/proceedings/2025/762)：评什么：面向 MLLM 的多领域、多粒度、多图理解。核心思想：测试模型是否能跨多张图和多种粒度协调证据，而不是把每张图孤立处理。
+- [Can Large Multimodal Models Actively Recognize Faulty Inputs? A Systematic Evaluation Framework of Their Input Scrutiny Ability](https://arxiv.org/abs/2508.04017)：评什么：评测多模态模型能否主动识别有缺陷输入，而不是被动回答。
+- [VER-Bench: Evaluating MLLMs on Reasoning with Fine-Grained Visual Evidence](https://arxiv.org/abs/2508.04852)：评测 MLLM 基于细粒度视觉证据的推理；核心思想是要求模型利用细微视觉线索，而不是只依赖显著图像元素。
+- [Finding Needles in Images: Can Multi-modal LLMs Locate Fine Details?](https://arxiv.org/abs/2508.05053)：测试多模态 LLM 能否在复杂图像和文档中定位细粒度细节；核心思想是视觉版 needle-in-a-haystack 检索。
+- [CountQA: How Well Do MLLMs Count in the Wild?](https://arxiv.org/abs/2508.06585)：评测 MLLM 在复杂真实图像中的 object counting；核心思想是突破稀疏物体和简单合成布局的计数评测。
+- [MDK12-Bench: A Comprehensive Evaluation of Multimodal Large Language Models on Multidisciplinary Exams](https://arxiv.org/abs/2508.06851)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“A Comprehensive Evaluation of Multimodal Large Language Models on Multidisciplinary Exams”。
+- [VisR-Bench: An Empirical Study on Visual Retrieval-Augmented Generation for Multilingual Long Document Understanding](https://arxiv.org/abs/2508.07493)：面向多语长文档理解的 visual RAG benchmark；核心思想是评测模型在跨语言视觉结构化文档上的检索与推理。
+- [InterChart: Benchmarking Visual Reasoning Across Decomposed and Distributed Chart Information](https://arxiv.org/abs/2508.07630)：评什么：VLM 在多张相关图表之间整合信息和推理的能力。核心思想是把实体推断、数值比较与跨图聚合放在同一任务中，而不是只读单张图表。
+- [Re: Verse - Can Your VLM Read a Manga?](https://arxiv.org/abs/2508.08508)：评测 VLM 对漫画叙事的理解。核心思想：用连续视觉叙事检验时间因果与跨画格一致性。
+- [The Perils of Chart Deception: How Misleading Visualizations Affect Vision-Language Models](https://arxiv.org/abs/2508.09716)：评测误导性图表设计对 VLM 的影响。核心思想：用截断坐标轴、反转坐标轴、不合理 3D 效果等误导性编码压力测试图表理解。
+- [HumanSense: From Multimodal Perception to Empathetic Context-Aware Responses through Reasoning MLLMs](https://arxiv.org/abs/2508.10576)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“From Multimodal Perception to Empathetic Context-Aware Responses through Reasoning MLLMs”。
+- [GRAFT: GRaPH and Table Reasoning for Textual Alignment - A Benchmark for Structured Instruction Following and Visual Reasoning](https://arxiv.org/abs/2508.15690)：评什么：图表和表格上的结构化指令遵循与视觉推理。核心思想是用合成图表/表格和多步问题，要求答案完全基于图像证据。
+- [DocHop-QA: Towards Multi-Hop Reasoning over Multimodal Document Collections](https://arxiv.org/abs/2508.15851)：DocHop-QA 评测多模态文档集合上的多跳推理。
+- [Mind the (Language) Gap: Towards Probing Numerical and Cross-Lingual Limits of LVLMs](https://arxiv.org/abs/2508.17334)：面向 cricket scorecards 的 VQA benchmark，用于数值和跨语推理。核心思想是在半结构化表格图像上同时测试阅读、算术和语言迁移。
 - [DashboardQA](https://arxiv.org/abs/2508.17398)：评什么：交互式 dashboard 上的多模态 agent 问答；核心思想：把图表理解、控件状态和页面级信息检索放进同一任务，诊断 agent 是否能围绕可视化界面主动取证。
+- [MetaGen: A DSL, Database, and Benchmark for VLM-Assisted Metamaterial Generation](https://arxiv.org/abs/2508.17568)：用领域 DSL、数据库和 benchmark 评测 VLM 辅助超材料生成，测试专门科学场景中的结构化视觉设计理解。
+- [SEAM: Semantically Equivalent Across Modalities Benchmark for Vision-Language Models](https://arxiv.org/abs/2508.18179)：SEAM 评测跨模态语义等价性，可作为视觉-语言一致性和图像理解诊断 Bench。
+- [LPLC: A Dataset for License Plate Legibility Classification](https://arxiv.org/abs/2508.18425)：提供车牌可读性分类数据集，用于衡量车牌图像是否足够清晰，可支撑 OCR 或后续识别。
+- [The Percept-V Challenge: Can Multimodal LLMs Crack Simple Perception Problems?](https://arxiv.org/abs/2508.21143)：Percept-V Challenge 用简单感知问题检测多模态模型，适合 Image Bench。
+- [Safe-LLaVA: A Privacy-Preserving Vision-Language Dataset and Benchmark for Biometric Safety](https://arxiv.org/abs/2509.00192)：评测 VLM 的 biometric safety 风险；核心思想是测试 MLLM 是否推断或泄露年龄、种族、身体特征等敏感属性。
+- [E-ARMOR: Edge Case Assessment and Review of Multilingual Optical Character Recognition](https://arxiv.org/abs/2509.03615)：可作为document, table, OCR, and image-text understanding方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Do MLLMs Really Understand the Charts?](https://arxiv.org/abs/2509.04457)：评什么：检验 MLLM 是否真正理解图表，而不是依赖表面语言线索。
 - [HiPhO](https://arxiv.org/abs/2509.07894)（[数据集](https://huggingface.co/datasets/SciYu/HiPhO)；[开源代码](https://github.com/SciYu/HiPhO)）：评什么：最新高物/奥赛题的物理推理（含多模态输入）；核心思想：用高难度奥赛题降低“常识式猜测”，更强调严谨推导与物理建模。
+- [Visual-TableQA: Open-Domain Benchmark for Reasoning over Table Images](https://arxiv.org/abs/2509.07966)：评测表格图像上的推理。核心思想：把开放域表格渲染为图像，测试 VLM 能否读取结构并回答推理问题。
+- [VQualA 2025 Challenge on Visual Quality Comparison for Large Multimodal Models: Methods and Results](https://arxiv.org/abs/2509.09190)：报告大多模态模型视觉质量比较挑战，评测成对或相对图像质量判断，而不是文本抽取。
+- [An Agentic Toolkit for Adaptive Information Extraction from Regulatory Documents](https://arxiv.org/abs/2509.11773)：面向复杂监管文档信息抽取的 benchmark 与 agentic toolkit；核心思想是结合密集专家标注、多语言监管文档页面，以及 planner-executor-corresponder workflow 来做文档 KIE 与 QA。
+- [PATIMT-Bench: A Multi-Scenario Benchmark for Position-Aware Text Image Machine Translation in Large Vision-Language Models](https://arxiv.org/abs/2509.12278)：提出 position-aware text image machine translation benchmark，覆盖多场景图文翻译。
+- [ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](https://arxiv.org/abs/2509.15695)：ORIC 评测上下文不一致场景中的 object recognition 与幻觉，适合 MLLM perception benchmark。
 - [Seeing Culture](https://arxiv.org/abs/2509.16517)：评测文化丰富图像中的 visual reasoning and grounding。核心思想是要求 VLM 选择相关视觉证据并推理欠代表文化语境，使图像理解不止停留在物体识别或普通 VQA。
+- [MIR](https://arxiv.org/abs/2509.17040)：评估渐进式多图交错推理，要求模型把图像区域和相邻文本对应起来，并跨图连接证据。
+- [Vision Language Models Are Not (Yet) Spelling Correctors](https://arxiv.org/abs/2509.17418)：评测从视觉输入进行拼写纠错；核心思想是要求 VLM 发现并修正图像中的文本错误，把 OCR 从识别扩展到文本修复。
+- [RealBench](https://arxiv.org/abs/2509.17421)：评什么：真实用户生成场景中的中文多图像理解。核心思想：收集 9,000 多个样本和近 70,000 张图片，覆盖多种分辨率与场景结构，暴露闭源和开源多模态模型在中文多图设置下的差距。
+- [Losing the Plot: How VLM responses degrade on imperfect charts](https://arxiv.org/abs/2509.18425)：评什么：评测 VLM 在不完美图表上的鲁棒性和退化模式。
+- [ColorBlindnessEval: Can Vision-Language Models Pass Color Blindness Tests?](https://arxiv.org/abs/2509.19070)：它给图像理解、OCR、文档解析或细粒度视觉能力提供评测，适合补充 image/OCR Bench。
+- [SCORE: A Semantic Evaluation Framework for Generative Document Parsing](https://arxiv.org/abs/2509.19345)：面向生成式文档解析的语义评测框架。核心思想：按语义正确性评价解析输出，而不只看字符串或版面重合。
+- [TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](https://arxiv.org/abs/2509.21205)：面向鲁棒视觉表格理解的大规模数据集。核心思想：压力测试渲染或拍摄表格图像中的表格读取与结构理解。
+- [CircuitSense: A Hierarchical MLLM Benchmark Bridging Visual Comprehension and Symbolic Reasoning in Engineering Design Process](https://arxiv.org/abs/2509.22339)：评测 MLLM 在工程设计图中的视觉理解与符号建模能力；核心思想：用分层技术图任务连接视觉证据、线路模型和数学推理。
+- [Chimera: Diagnosing Shortcut Learning in Visual-Language Understanding](https://arxiv.org/abs/2509.22437)：它给图像理解、OCR、文档解析或细粒度视觉能力提供评测，适合补充 image/OCR Bench。
+- [CompareBench: A Benchmark for Visual Comparison Reasoning in Vision-Language Models](https://arxiv.org/abs/2509.22737)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“A Benchmark for Visual Comparison Reasoning in Vision-Language Models”。
+- [MRAG-Suite: A Diagnostic Evaluation Platform for Visual Retrieval-Augmented Generation](https://arxiv.org/abs/2509.24253)：面向 visual RAG 的诊断评测平台；核心思想是整合 WebQA、Chart-RAG、Visual-RAG 与 MRAG-Bench，并加入难度和歧义分析。
+- [VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](https://arxiv.org/abs/2509.25339)：它给图像理解、OCR、文档解析或细粒度视觉能力提供评测，适合补充 image/OCR Bench。
+- [Logo-VGR: Visual Grounded Reasoning for Open-world Logo Recognition](https://arxiv.org/abs/2509.25811)：面向 open-world logo recognition 的 visual grounded reasoning benchmark；核心思想是测试 MLLM 能否在闭集标签记忆之外识别并推理 logo。
+- [Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](https://arxiv.org/abs/2509.26165)：评什么：面向人类中心场景理解的多模态综合评测。
+- [MR2-Bench: Going Beyond Matching to Reasoning in Multimodal Retrieval](https://arxiv.org/abs/2509.26378)：从匹配走向推理的多模态检索 benchmark。核心思想是要求模型对检索到的多模态证据进行推理，而不只是对齐 query 和 item embedding。
 - [GroundingSuite](https://openaccess.thecvf.com/content/ICCV2025/html/Hu_GroundingSuite_Measuring_Complex_Multi-Granular_Pixel_Grounding_ICCV_2025_paper.html)（[开源代码](https://github.com/hustvl/GroundingSuite)）：评什么：复杂多粒度 pixel grounding。核心思想：在多个定位粒度上测试 grounding，为视觉问答、GUI grounding 和具身感知流水线提供基础评测。
 - [MC-Bench](https://openaccess.thecvf.com/content/ICCV2025/html/Xu_MC-Bench_A_Benchmark_for_Multi-Context_Visual_Grounding_in_the_Era_ICCV_2025_paper.html)（[项目页](https://xuyunqiu.github.io/MC-Bench)）：评什么：MLLM 时代的多上下文视觉 grounding。核心思想：要求模型在多个上下文之间定位并对齐证据，是文档、GUI 和具身视觉 agent 的基础能力。
 - [MMReason](https://openaccess.thecvf.com/content/ICCV2025/html/Yao_MMReason_An_Open-Ended_Multi-Modal_Multi-Step_Reasoning_Benchmark_for_MLLMs_Toward_ICCV_2025_paper.html)：评什么：开放式多模态多步推理。核心思想：要求围绕视觉证据进行更长的自由形式推理，补足选择题 VQA 的局限。
 - [OCR Hinders RAG / OHR-Bench](https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_OCR_Hinders_RAG_Evaluating_the_Cascading_Impact_of_OCR_on_ICCV_2025_paper.html)（[开源代码](https://github.com/opendatalab/OHR-Bench)）：评什么：OCR 错误如何级联影响检索增强生成。核心思想：在不完美文档抽取下评估下游 RAG 可靠性，而不是把 OCR 质量当作孤立指标。
+- [OIG-Bench: A Multi-Agent Annotated Benchmark for Multimodal One-Image Guides Understanding](https://arxiv.org/abs/2510.00069)：评测 one-image guides 的多模态理解能力；核心思想是测试模型能否理解由文本、图像和符号混排构成的结构化视觉指南，并用多 agent 标注构建任务集。
 - [UNIDOC-BENCH](https://arxiv.org/abs/2510.03663)（[开源代码](https://github.com/SalesforceAIResearch/UniDoc-Bench)）：评什么：文档中心的多模态 RAG；核心思想：在真实 PDF 页面的文本、表格、图像证据上统一比较 text-only、image-only、融合式和联合检索式 MM-RAG。
+- [Your Vision-Language Model Can't Even Count to 20: Exposing the Failures of VLMs in Compositional Counting](https://arxiv.org/abs/2510.04401)：组合式视觉计数能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [GPT-5 Model Corrected GPT-4V's Chart Reading Errors, Not Prompting](https://arxiv.org/abs/2510.06782)：分析 GPT-5 相比 GPT-4V 在图表阅读错误修正上的表现。
+- [The Visual Iconicity Challenge: Evaluating Vision-Language Models on Sign Language Form-Meaning Mapping](https://arxiv.org/abs/2510.08482)：通过 Visual Iconicity Challenge 评测视觉语言模型对手语形式与意义映射的理解。
+- [BLINK-Twice: You see, but do you observe? A Reasoning Benchmark on Visual Perception](https://arxiv.org/abs/2510.09361)：区分“看见”和“观察”的视觉感知推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Beyond Seeing: Evaluating Multimodal LLMs on Tool-Enabled Image Perception, Transformation, and Reasoning](https://arxiv.org/abs/2510.12712)：评测工具增强的图像感知、变换和推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [VQArt-Bench: A Semantically Rich VQA Benchmark for Art and Cultural Heritage](https://arxiv.org/abs/2510.12750)：评测图像、OCR 与视觉文档理解的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [FreshTab: Sourcing Fresh Data for Table-to-Text Generation Evaluation](https://arxiv.org/abs/2510.13598)：用 fresh data 评测 table-to-text generation，降低表格推理和表格文本化 benchmark 的污染风险。
+- [Res-Bench: Benchmarking the Robustness of Multimodal Large Language Models to Dynamic Resolution Input](https://arxiv.org/abs/2510.16926)：Res-Bench 评测多模态模型对动态分辨率输入的鲁棒性，适合 Image Bench。
+- [From Charts to Code: A Hierarchical Benchmark for Multimodal Models](https://arxiv.org/abs/2510.17932)：提出 Chart2Code 三级任务：图表复现、图表编辑和长表转图表，用可执行代码输出评测实际图表理解。
+- [I Spy With My Model's Eye: Visual Search as a Behavioural Test for MLLMs](https://arxiv.org/abs/2510.19678)：用视觉搜索范式作为 MLLM 的行为测试；核心思想：诊断模型是否呈现类似人类的 pop-out 和搜索行为，而不是只看任务准确率。
 - [M4DocBench](https://arxiv.org/abs/2510.21603)：评什么：多模态、多跳、多文档、多轮 deep research；核心思想：由 Doc-Researcher 引入完整证据链标注，专门测试跨文档视觉语义保留、动态检索粒度和迭代式证据累积。
+- [Diagnosing Bottlenecks in Data Visualization Understanding by Vision-Language Models](https://arxiv.org/abs/2510.21740)：面向 VLM chart/data visualization understanding 的诊断评测；核心思想是区分视觉编码、信息传递和数据推理环节中的失败来源。
+- [OCR-Quality: A Human-Annotated Dataset for OCR Quality Assessment](https://arxiv.org/abs/2510.21774)：提供 OCR 质量评估的人类标注，把噪声文本识别输出转化为可直接评分的文档质量任务。
+- [STATUS Bench: A Rigorous Benchmark for Evaluating Object State Understanding in Vision-Language Models](https://arxiv.org/abs/2510.22571)：评测 VLM 是否识别 opened、broken、empty、filled 等物体状态，用状态敏感的视觉理解补充 OCR-heavy 图像测试。
 - [DiagramEval](https://arxiv.org/abs/2510.25761)：通过图结构评测 LLM 生成的 diagram。核心思想是把 SVG 式图示解析为节点和关系，使图示质量能按结构忠实度判断，而不只依赖通用图像相似度。
 - [ChartAB](https://arxiv.org/abs/2510.26781)：评什么：图表 grounding 与 dense alignment；核心思想：要求模型抽取表格数据、定位可视化元素、识别图表属性，并用结构化 JSON 与双图对齐任务评估细粒度图表感知。
+- [Do Vision-Language Models Measure Up? Benchmarking Visual Measurement Reading with MeasureBench](https://arxiv.org/abs/2510.26865)：补充image ocr方向的基准或评测套件，核心围绕《Do Vision-Language Models Measure Up? Benchmarking Visual Measurement Reading with MeasureBench》。
+- [F2TEval: Human-Aligned Multi-Dimensional Evaluation for Figure-to-Text Task](https://doi.org/10.18653/v1/2025.emnlp-main.195)：为图表转文本任务加入人类对齐的多维评测。
+- [Spot The Ball](https://arxiv.org/abs/2511.00261)：评测 VLM 的 visual social inference。核心思想是从运动图像中移除球，让模型依据球员凝视、姿态和朝向定位球的位置，从而暴露模型是使用行为线索，还是依赖表层空间启发式。
+- [Text or Pixels? Evaluating Efficiency and Understanding of LLMs with Visual Text Inputs](https://doi.org/10.18653/v1/2025.findings-emnlp.558)：比较文本输入与像素渲染文本输入下的 LLM 评测，同时衡量语言证据以视觉形式呈现时的理解效果和效率。
+- [TVQACML: Benchmarking Text-Centric Visual Question Answering in Multilingual Chinese Minority Languages](https://doi.org/10.18653/v1/2025.emnlp-main.705)：评测中文少数民族语言中的 text-centric VQA；核心思想是把 OCR-heavy VQA 与低资源多语理解结合起来。
+- [Chart2Code53: A Large-Scale Diverse and Complex Dataset for Enhancing Chart-to-Code Generation](https://doi.org/10.18653/v1/2025.emnlp-main.799)：评测视觉文档、图表、表格与 OCR 推理。核心思想：围绕论文中的任务、数据或协议（A Large-Scale Diverse and Complex Dataset for Enhancing Chart-to-Code Generation）形成可复用比较基准。
+- [ProcVQA: Benchmarking the Effects of Structural Properties in Mined Process Visualizations on Vision-Language Model Performance](https://doi.org/10.18653/v1/2025.findings-emnlp.1266)：评测 VLM 在 mined process visualizations 上的表现；核心思想是改变结构类型和结构密度来诊断图表理解脆弱性。
+- [TIU-Bench: A Benchmark for Evaluating Large Multimodal Models on Text-rich Image Understanding](https://doi.org/10.18653/v1/2025.findings-emnlp.1318)：评测大多模态模型对富文本图像的理解；核心思想：测试必须读取图中嵌入文本才能回答的 OCR 驱动视觉推理。
 - [TIR-Bench](https://arxiv.org/abs/2511.01833)：评什么：agentic thinking-with-images；核心思想：要求模型在推理链中创建或调用图像处理工具，覆盖旋转 OCR、仪表读取、迷宫、找不同、视觉搜索等 13 类动态视觉任务。
+- [ChartM3: A Multi-Stage Code-Driven Pipeline for Constructing Multi-Dimensional and Multi-Step Visual Reasoning Data in Chart Comprehension](https://arxiv.org/abs/2511.02415)：通过代码驱动流水线构建多维、多步图表推理数据；核心思想是用计算密集的视觉推理任务压力测试 chart comprehension。
 - [MME-CC](https://arxiv.org/abs/2511.03146)：评什么：多模态认知能力（cognitive capacity）诊断；核心思想：以更具挑战性的多维子项衡量综合能力边界（暂未见稳定官方代码仓库）。
+- [ThaiOCRBench: A Task-Diverse Benchmark for Vision-Language Understanding in Thai](https://arxiv.org/abs/2511.04479)：面向泰语 text-rich visual understanding 的多任务 benchmark。核心思想是在泰语 OCR、文档和场景文字任务上评测 VLM，补足高资源 OCR benchmark 的覆盖不足。
+- [SDS KoPub VDR: A Benchmark Dataset for Visual Document Retrieval in Korean Public Documents](https://arxiv.org/abs/2511.04910)：评什么：韩文公共文档的视觉文档检索。核心思想是在真实非英文官方文档结构下评估检索与理解能力。
+- [Beyond the Pixels: VLM-based Evaluation of Identity Preservation in Reference-Guided Synthesis](https://arxiv.org/abs/2511.08087)：用 VLM 判断 reference-guided synthesis 中的身份保持，关注生成图像是否保留参考身份线索。
+- [DiagramIR: An Automatic Pipeline for Educational Math Diagram Evaluation](https://arxiv.org/abs/2511.08283)：用于教育数学图表评测的自动 pipeline；核心思想是评测模型能否解析视觉数学图表，并产出或判断基于图表证据的解答。
+- [Hierarchical structure understanding in complex tables with VLLMs: a benchmark and experiments](https://arxiv.org/abs/2511.08298)：评测 VLLM 对复杂表格层级结构的理解能力，可补充文档与表格理解基准。
+- [Language-Guided Invariance Probing of Vision-Language Models](https://arxiv.org/abs/2511.13494)：用语言引导探测视觉语言模型的不变性。
+- [FinCriticalED: A Visual Benchmark for Financial Fact-Level OCR](https://arxiv.org/abs/2511.14998)：面向金融事实级 OCR 的视觉基准；核心思想是评测文档模型能否从视觉证据中准确抽取关键金融事实。
+- [Evaluating Multimodal Large Language Models on Vertically Written Japanese Text](https://arxiv.org/abs/2511.15059)：评什么：MLLM 对竖排日文文档文本的识别与理解。核心思想是测试常见 benchmark 覆盖不足的书写方向和版式。
+- [HVCU-Bench / VCU-Bridge](https://arxiv.org/abs/2511.18121)：评估层级化视觉内涵理解。核心思想是诊断从具体视觉线索、语义桥接到抽象内涵的多层路径，并要求显式的证据到推断轨迹。
+- [DocPTBench: Benchmarking End-to-End Photographed Document Parsing and Translation](https://arxiv.org/abs/2511.18434)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Perceptual Taxonomy: Evaluating and Guiding Hierarchical Scene Reasoning in Vision-Language Models](https://arxiv.org/abs/2511.19526)：Perceptual Taxonomy 评估分层场景推理，适合 Image/OCR 文档中的视觉诊断 Bench。
+- [CaptionQA: Is Your Caption as Useful as the Image Itself?](https://arxiv.org/abs/2511.21025)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“Is Your Caption as Useful as the Image Itself?”。
+- [SO-Bench](https://arxiv.org/abs/2511.21750)：评估多模态 LLM 在 UI 截图、自然图像、文档和图表上的 schema-grounded 结构化输出能力。核心思想是把视觉输入与多样 JSON schema 配对，同时测试视觉推理和格式约束遵循。
+- [WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](https://arxiv.org/abs/2511.22154)：面向可穿戴第一视角真实场景的 VQA benchmark。
+- [Charts Are Not Images: On the Challenges of Scientific Chart Editing](https://arxiv.org/abs/2512.00752)：评测视觉文档、图表、表格与 OCR 推理。核心思想：围绕论文中的任务、数据或协议（On the Challenges of Scientific Chart Editing）形成可复用比较基准。
+- [Value-Guided Iterative Refinement and the DIQ-H Benchmark for Evaluating VLM Robustness](https://arxiv.org/abs/2512.03992)：评测 VLM 在对抗条件、价值不一致和错误传播下的鲁棒性；核心思想：从静态精修输入走向更接近部署环境的视觉扰动。
+- [Visual Reasoning Tracer: Object-Level Grounded Reasoning Benchmark](https://arxiv.org/abs/2512.05091)：评什么：MLLM 的对象级、证据定位式视觉推理。核心思想是要求模型给出对象、像素或位置等中间证据，而不只输出最终答案。
+- [ChromouVQA: Benchmarking Vision-Language Models under Chromatic Camouflaged Images](https://arxiv.org/abs/2512.05137)：用 Ishihara 风格的彩色伪装图像评测 VLM 的视觉问答能力；核心思想：通过颜色间隔、密度、几何形状和遮挡变化，测试模型能否从复杂背景中分离目标。
+- [VisChainBench](https://arxiv.org/abs/2512.06759)：评估低语言提示下的多轮、多图视觉推理。核心思想是构造连续、相互依赖的 visual-to-visual 任务，让模型必须跨图像维护上下文，而不是依赖语言先验或静态比较。
+- [IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](https://arxiv.org/abs/2512.09663)：评什么：面向红外图像理解的 MLLM benchmark，补充常规可见光图像评测。
+- [Benchmarking Document Parsers on Mathematical Formula Extraction from PDFs](https://arxiv.org/abs/2512.09874)：评测文档解析器从 PDF 中抽取数学公式；核心思想是使用带精确 LaTeX ground truth 的合成 PDF 和语义感知指标来评估公式解析。
+- [Towards Fine-Grained Recognition with Large Visual Language Models: Benchmark and Optimization Strategies](https://arxiv.org/abs/2512.10384)：提出 LVLM 细粒度识别 benchmark，补充粗粒度视觉推理之外的识别能力评测。
 - [DOCR-Inspector](https://arxiv.org/abs/2512.10619)（[开源代码](https://github.com/ZZZZZQT/DOCR-Inspector)）：评什么：真实文档解析结果的细粒度错误检测与质量评估；核心思想：用 VLM-as-a-Judge 对文档图像和解析输出逐项检查，按 28 类错误与 Chain-of-Checklist 诊断解析失败，并配套 DOCRcaseBench。
+- [TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](https://arxiv.org/abs/2512.10652)：从感知、篡改检测和幻觉感知推理三个方面评测可解释 deepfake 检测；核心思想：不仅要求模型判断媒体是否被篡改，还要求给出可靠证据。
+- [PubTables-v2: A new large-scale dataset for full-page and multi-page table extraction](https://arxiv.org/abs/2512.10888)：提供整页和多页表格抽取的大规模数据集。
+- [CAPTURE: A Benchmark and Evaluation for LVLMs in CAPTCHA Resolving](https://arxiv.org/abs/2512.11323)：评测 LVLM 解决 CAPTCHA 的能力，强调扭曲文本识别、视觉推理和对抗式人机验证图像中的鲁棒性。
+- [Read or Ignore? A Unified Benchmark for Typographic-Attack Robustness and Text Recognition in Vision-Language Models](https://arxiv.org/abs/2512.11899)：评测 VLM 何时应读取图中文字、何时应忽略误导性 typographic attack；核心思想是避免把所有图中文字都压制掉的防御。
+- [V-REX: Benchmarking Exploratory Visual Reasoning via Chain-of-Questions](https://arxiv.org/abs/2512.11995)：通过问题链评测探索式视觉推理；核心思想：考察模型能否主动把视觉问题分解为寻找证据的子问题。
+- [CMER-Bench](https://arxiv.org/abs/2512.13731)：通过 CMER-Bench、MER-17M、CMER-3M 与 CMERNet 评测复杂数学表达式识别，重点是多行符号 OCR，而不是普通文本识别。
+- [JMMMU-Pro](https://arxiv.org/abs/2512.14620)：评估日语图像化多学科多模态理解。核心思想是把题干文本和视觉内容合成为单张图像，让模型必须进行综合视觉-文本感知，而不是从纯文本作答。
+- [PixelArena: A benchmark for Pixel-Precision Visual Intelligence](https://arxiv.org/abs/2512.16303)：评测 pixel-precision visual intelligence，关注粗粒度图像级 VQA 准确率掩盖的精细空间判断。
+- [FPBench: A Comprehensive Benchmark of Multimodal Large Language Models for Fingerprint Analysis](https://arxiv.org/abs/2512.18073)：面向指纹分析的多模态模型基准；核心思想是测试细粒度视觉比较和法证式推理，而不只是普通图像问答。
+- [Towards Natural Language-Based Document Image Retrieval: New Dataset and Benchmark](https://arxiv.org/abs/2512.20174)：基于自然语言的文档图像检索数据集和 benchmark。核心思想是用细粒度文本查询检索文档图像，测试 OCR 和文档版面理解。
+- [Benchmarking and Enhancing VLM for Compressed Image Understanding](https://arxiv.org/abs/2512.20901)：评测 VLM 在低码率压缩图像上的理解能力；核心思想：测试图像受到实际压缩约束后，视觉理解是否仍然可靠。
+- [LLM-Free Image Captioning Evaluation in Reference-Flexible Settings](https://arxiv.org/abs/2512.21582)：用大规模人工判断训练 LLM-free supervised metric，在 reference-based 与 reference-free 场景下评测图像 caption。
+- [DarkQA: Benchmarking Vision-Language Models on Visual-Primitive Question Answering in Low-Light Indoor Scenes](https://arxiv.org/abs/2512.24985)：评测低光室内场景下的 VLM visual-primitive QA；核心思想是检查模型在 24/7 embodied operation 所需的视觉退化条件下是否可靠。
+- [Arabic OCR in the Age of Multimodal Models: A Comprehensive Comparative Evaluation](https://doi.org/10.1109/bigdata66926.2025.11402448)：比较多模态模型时代的阿拉伯语 OCR 能力，在 KITAB-Bench 和多语言 OCR 资源之外补充语言特定的文本识别评测点。
+- [MSR2: A Benchmark for Multi-Source Retrieval and Reasoning in Visual Question Answering](https://doi.org/10.18653/v1/2025.knowledgenlp-1.24)：评测需要多源检索和推理的 VQA，把视觉识别与证据获取、证据整合分开考察。
+- [A Deep Cross-modal Prompt Learning Network for Artificial Intelligence Generated Image Quality Assessment](https://doi.org/10.1016/j.displa.2025.103208)：用跨模态 prompt learning 评测 AI 生成图像质量，为图像理解 benchmark 提供相邻的质量判断信号。
+- [Towards Comprehensive Lecture Slides Understanding: Large-Scale Dataset and Effective Method](https://doi.org/10.1109/iccv51701.2025.00424)：用大规模数据集评测 lecture slides understanding，覆盖幻灯片文档中的文本、版面、图示和教学结构。
+- [Can multimodal large language models understand visual metaphors? An evaluation of MLLM's multi-perspective understanding capabilities for visual metaphors](https://doi.org/10.1016/j.eswa.2025.130672)：从多视角评测 MLLM 对视觉隐喻的理解，考察超出字面目标识别的抽象图像解释能力。
+- [Geometric-embedded vision transformer for flow field predictions of NACA-series rudder profiles at different angles of attack](https://doi.org/10.1016/j.oceaneng.2025.122998)：评测几何嵌入式 vision transformer 对 NACA 舵面不同攻角流场的预测，是领域视觉预测 benchmark，并非 OCR 或文档理解任务。
+- [Automated Security Compliance Evaluation Using Hierarchical RAG for IoT Devices with Large-Scale Documentation](https://doi.org/10.1109/iotsms68530.2025.11408530)：评测面向大规模 IoT 文档的分层 RAG 安全合规分析，邻近文档 QA，但核心是合规检索而非视觉 OCR。
+- [AI-Generated Archival Document Title Evaluation](https://doi.org/10.1109/icicn67355.2025.11430446)：评测 AI 生成档案文档标题的质量，把文档理解与标题质量、档案元数据可用性关联起来。
+- [Dataset Documentation for Responsible AI: Analysis of Suitability and Usage for Health Datasets](https://doi.org/10.1101/2025.11.18.689064)：分析健康数据集文档的适用性和使用说明，更接近 dataset documentation 审计，而非图像 OCR benchmark。
+- [Assessing Robustness of Multi-Modal Large Language Models in Image Classification through Hierarchical WordNet-Based Evaluation](https://doi.org/10.1109/icassp49660.2025.10889743)：用层级 WordNet 协议评测 MLLM 图像分类鲁棒性，关注错误的语义严重程度而非 OCR 准确率。
+- [LUOJIA-VG: A New Dataset for Complex Scene Understanding in Remote Sensing Visual Reasoning](https://doi.org/10.1109/igarss55030.2025.11313883)：提供复杂场景遥感视觉 grounding 数据集，强调航拍图像中的目标区域关系推理。
+- [Evolutionary-Algorithm-Based Automatic Prompt Generation for Vision-Language Model Evaluation](https://doi.org/10.1109/access.2025.3648351)：用进化算法评测 VLM 自动 prompt 生成，关注 prompt 多样性和评测压力，而不只是固定数据集。
+- [Do Multimodal Large Language Models Compete with Specialized Object Detection Models? A Quantitative Benchmark](https://doi.org/10.1109/bigdata66926.2025.11402578)：定量比较 MLLM 与专用目标检测模型，衡量通用多模态模型在哪些检测场景中能或不能替代专门系统。
+- [ChartEval: LLM-Driven Chart Generation Evaluation Using Scene Graph Parsing](https://doi.org/10.18653/v1/2025.ijcnlp-demo.10)：通过将生成图表解析为 scene graph 来评测图表生成，衡量图表结构和元素保真度，而不只看图像相似度。
+- [A Comparative Evaluation of Open-Source Vision Language Models for Image Captioning](https://doi.org/10.1109/idap68205.2025.11222357)：比较开源 VLM 的图像描述表现，提供模型层面的 captioning 实证评测，而非新的 OCR 数据集。
+- [BlueprintSymVL: A discriminative benchmark for VLM symbol recognition in engineering blueprints](https://doi.org/10.1016/j.rineng.2025.108171)：评测 VLM 对工程蓝图符号的识别能力；核心思想：测试模型能否在密集技术图中识别领域符号。
+- [ICT-QA: Question Answering Over Multi-Modal Contexts Including Image, Chart, and Text Modalities](https://doi.org/10.1109/cvprw67362.2025.00019)：评什么：评测图像、图表和文本混合上下文中的问答能力。
+- [M3DocVQA: Multi-Modal Multi-Page Multi-Document Understanding](https://doi.org/10.1109/iccvw69036.2025.00649)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“Multi-Modal Multi-Page Multi-Document Understanding”。
+- [TRH2TQA: Table Recognition with Hierarchical Relationships to Table Question-Answering on Business Table Images](https://doi.org/10.1109/wacv61041.2025.00857)：带层级关系的 table recognition 与 table QA benchmark。核心思想是评测模型在复杂商业表格问答前能否保留表格结构。
+- [ChipVQA: Benchmarking Visual Language Models for Chip Design](https://doi.org/10.23919/date64628.2025.10992791)：评测 VLM 理解芯片设计图、流程图和波形等视觉材料的能力。
+- [Unveiling and Bridging the Functional Perception Gap in MLLMs: Atomic Visual Alignment and Hierarchical Evaluation via PET-Bench](https://arxiv.org/abs/2601.02737)：通过原子视觉对齐与分层任务评测 MLLM 的功能性感知，揭示视觉识别与可用感知之间的差距。
+- [MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models](https://arxiv.org/abs/2601.03331)：评测 VLM 的错误推理识别能力。核心思想：测试模型能否发现错误推理过程，并从多模态输入中判别错误类型。
+- [What Users Leave Unsaid: Under-Specified Queries Limit Vision-Language Models](https://arxiv.org/abs/2601.06165)：可作为图像、文档、图表与通用多模态理解的Bench候选；核心关注“Under-Specified Queries Limit Vision-Language Models”。
 - [BabyVision](https://arxiv.org/abs/2601.06521)（[开源代码](https://github.com/UniPat-AI/BabyVision)）：评什么：超越语言提示的核心视觉推理能力；核心思想：以更“早期视觉/组合概念”的题型诊断模型视觉能力短板。
+- [SketchJudge](https://arxiv.org/abs/2601.06944)：评测 MLLM 对手绘图示的评分能力。核心思想是用非结构化草图和 rubric 式图示评估施压，而不是只测干净的印刷图或普通图像问答。
+- [KidVis: Do Multimodal Large Language Models Possess the Visual Perceptual Capabilities of a 6-Year-Old?](https://arxiv.org/abs/2601.08292)：把 MLLM 视觉感知与儿童视觉能力进行对照的诊断基准；核心思想是暴露流畅多模态回答背后的基础视觉感知缺陷。
+- [ViDoRe V3](https://arxiv.org/abs/2601.08620)：评测复杂真实文档场景中的多模态 RAG。核心思想是结合视觉元素、多文档综合与来源 grounding，而不是孤立评测检索和生成。
+- [MathDoc: Benchmarking Structured Extraction and Active Refusal on Noisy Mathematics Exam Papers](https://arxiv.org/abs/2601.10104)：MathDoc 评测噪声数学试卷的结构抽取和主动拒答，适合 OCR/document understanding benchmark。
+- [Evaluating Self-Correcting Vision Agents Through Quantitative and Qualitative Metrics](https://arxiv.org/abs/2601.11637)：评什么：vision-language agents 自我纠错的定量边界。核心思想：用 diagnostic micro-benchmark 把最终任务成功与纠错行为分开，定位视觉 agent 在迭代式工具规划中的失败环节。
+- [Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation](https://arxiv.org/abs/2601.12061)：评测 codebook-injected prompts 和 gold-label-free assessment 支持的 LLM 辅助对话分段；它是邻近文档处理的文本标注 benchmark，不是 OCR 任务。
+- [Rethinking Composed Image Retrieval Evaluation: A Fine-Grained Benchmark from Image Editing](https://arxiv.org/abs/2601.16125)：评测由可控图像编辑合成的细粒度组合图像检索；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [DuwatBench: Bridging Language and Visual Heritage through an Arabic Calligraphy Benchmark for Multimodal Understanding](https://arxiv.org/abs/2601.19898)：用六类阿拉伯书法风格和句子级检测标注评测阿拉伯书法理解，暴露多语多模态模型在 OCR 与视觉-文本对齐上的弱点。
+- [ChartE3: A Comprehensive Benchmark for End-to-End Chart Editing](https://arxiv.org/abs/2601.21694)：面向用户意图的端到端图表编辑 benchmark；核心思想是评估模型在细粒度编辑时能否保持图表结构，而不是只依赖代码或文本中间表示。
+- [VDE Bench: Evaluating The Capability of Image Editing Models to Modify Visual Documents](https://arxiv.org/abs/2602.00122)：评测图像编辑模型能否修改视觉文档并保持文字风格和版面；适合补充文档 grounding 的视觉编辑能力。
+- [VIA-Bench](https://arxiv.org/abs/2602.01816)：评测多模态模型面对视觉错觉和异常图像时的鲁棒性；核心思想是用人工复核的问题覆盖颜色、运动、格式塔、几何、空间和异常场景，检查模型是否依赖脆弱视觉先验。
 - [WorldVQA](https://arxiv.org/abs/2602.02537)：评测多模态大模型中的原子世界知识。核心思想：提出依赖真实世界实体、属性和关系识别的视觉问答，补充偏 OCR 和偏图表的图像评测。
+- [High-Resolution Underwater Camouflaged Object Detection: GBU-UCOD Dataset and Topology-Aware and Frequency-Decoupled Networks](https://arxiv.org/abs/2602.03591)：提出 GBU-UCOD 高分辨率水下伪装目标检测数据集，强调水下退化条件下的细粒度目标可见性。
+- [OCRTurk: A Comprehensive OCR Benchmark for Turkish](https://arxiv.org/abs/2602.03693)：提供土耳其语 OCR benchmark，补充低资源语言文档解析和 OCR 鲁棒性评测。
+- [RAWDet-7: A Multi-Scenario Benchmark for Object Detection and Description on Quantized RAW Images](https://arxiv.org/abs/2602.03760)：在七类场景中评测量化 RAW 图像上的目标检测和描述，考察常规图像信号处理之前的视觉鲁棒性。
+- [VISTA-Bench: Do Vision-Language Models Really Understand Visualized Text as Well as Pure Text?](https://arxiv.org/abs/2602.04802)：评测 VLM 对视觉化文本的理解是否接近纯文本。核心思想：比较同等内容以图片呈现和以文本呈现时的表现差异。
+- [UNIKIE-BENCH: Benchmarking Large Multimodal Models for Key Information Extraction in Visual Documents](https://arxiv.org/abs/2602.07038)：评什么：评测视觉文档中的关键信息抽取能力。
+- [DISBench / DeepImageSearch](https://arxiv.org/abs/2602.10809)：评测内容：视觉历史中的上下文感知图像检索。核心思想：把图像检索改写为自主探索任务，要求 agent 在时间性视觉流和隐含上下文线索上推理，而不是把查询与孤立图像做匹配。
+- [Benchmarking Vision-Language Models for French PDF-to-Markdown Conversion](https://arxiv.org/abs/2602.11960)：它给图像理解、OCR、文档解析或细粒度视觉能力提供评测，适合补充 image/OCR Bench。
+- [Visual Reasoning Benchmark: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education](https://arxiv.org/abs/2602.12196)：评什么：小学真实课堂视觉题上的多模态推理。核心思想：在文本捷径不足的视觉数学场景中测试空间和关系推理能力。
+- [ExStrucTiny: A Benchmark for Schema-Variable Structured Information Extraction from Document Images](https://arxiv.org/abs/2602.12203)：可作为document, table, OCR, and image-text understanding方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [ExtractBench: A Benchmark and Evaluation Methodology for Complex Structured Extraction](https://arxiv.org/abs/2602.12247)：评测复杂文档结构化抽取。核心思想：在宽 schema 与企业级可靠性要求下测试 PDF-to-JSON 抽取。
+- [PlotChain: Deterministic Checkpointed Evaluation of Multimodal LLMs on Engineering Plot Reading](https://arxiv.org/abs/2602.13232)：评什么：MLLM 对工程图表的确定性读数能力。核心思想：用带已知检查点的生成式 plot families 测试定量值恢复，而不只看 OCR 或 caption 质量。
+- [DTBench](https://arxiv.org/abs/2602.13812)（[开源代码](https://github.com/ZJU-DAILY/DTBench)）：评测目标 schema 约束下的 document-to-table 抽取。核心思想：从真实表格反向生成文档，并按 5 个大类和 13 个细类组织能力维度，暴露结构化抽取中的推理、忠实性和冲突处理问题。
+- [ChartEditBench: Evaluating Grounded Multi-Turn Chart Editing in Multimodal Language Models](https://arxiv.org/abs/2602.15758)：评测有依据的多轮图表编辑。核心思想：检验多模态模型能否在迭代可视化编辑中保持图表状态与用户偏好。
+- [ViTaB-A: Evaluating Multimodal Large Language Models on Visual Table Attribution](https://arxiv.org/abs/2602.15769)：评测多模态大模型的视觉表格归因能力。
+- [Do Large Language Models Understand Data Visualization Rules?](https://arxiv.org/abs/2602.20137)：评测 LLM 是否理解数据可视化设计规则，用规则判断补充图表 QA 对有效和误导性可视编码的考察。
+- [AIForge-Doc: A Benchmark for Detecting AI-Forged Tampering in Financial and Form Documents](https://arxiv.org/abs/2602.20569)：评测金融与表单文档中 AI 伪造篡改的检测能力，把文档理解扩展到真实性与篡改识别。
+- [FewMMBench](https://arxiv.org/abs/2602.21854)（[数据集](https://huggingface.co/datasets/mustafaa/FewMMBench)）：评测 MLLM 的 multimodal few-shot learning，覆盖多类理解任务，并比较 zero-shot、few-shot、retrieval-based demonstrations 与 CoT-augmented prompting。
+- [SPM-Bench: Benchmarking Large Language Models for Scanning Probe Microscopy](https://arxiv.org/abs/2602.22971)：面向扫描探针显微图像的 LLM/VLM 基准；核心思想是测试模型是否能理解科学仪器图像，而不只处理普通自然图像。
 - [AgentVista](https://arxiv.org/abs/2602.23166)（[开源代码](https://github.com/hkust-nlp/AgentVista)）：评什么：现实视觉场景中的超难多模态 agent 任务；核心思想：从 Agent-X 引用链扩展到更开放、更接近真实环境的视觉任务，强调场景理解、行动选择和多步反馈。
+- [Advancing Multimodal Judge Models through a Capability-Oriented Benchmark and MCTS-Driven Data Generation](https://arxiv.org/abs/2603.00546)：面向多模态 judge model 的能力导向基准与 MCTS 数据生成方法；核心思想是按视觉能力维度评测判断能力，而不是只看最终标签一致性。
+- [UNICBench: UNIfied Counting Benchmark for MLLM](https://arxiv.org/abs/2603.00595)：UNICBench 是跨 image/text/audio 的统一 counting benchmark，补充 MLLM 基础视觉计数能力。
+- [DOCFORGE-BENCH: A Comprehensive 0-shot Benchmark for Document Forgery Detection and Analysis](https://arxiv.org/abs/2603.01433)：评测零样本文档伪造检测与分析。核心思路是测试文档理解模型能否识别被篡改的视觉和版面证据，而不只是抽取文本。
+- [Real5-OmniDocBench: A Full-Scale Physical Reconstruction Benchmark for Robust Document Parsing in the Wild](https://arxiv.org/abs/2603.04205)：Real5-OmniDocBench 用物理重建场景评测 document parsing 鲁棒性，补充真实文档 OCR benchmark。
+- [PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing](https://arxiv.org/abs/2603.04598)：评测带显式负例、多图查询和改写测试的组合图像检索；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [VLM-RobustBench: A Comprehensive Benchmark for Robustness of Vision-Language Models](https://arxiv.org/abs/2603.06148)：评什么：评测 VLM 在真实图像扰动下的鲁棒性。
+- [AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions](https://arxiv.org/abs/2603.07394)：评测 VLM 面对模糊视觉问题时的响应策略；核心思想是跳出清晰图文问答，考察模型能否识别歧义、给出语境合适的回答，并避免过度自信。
+- [VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](https://arxiv.org/abs/2603.07888)：评什么：评测 VLM 对细微视觉差异的比较推理能力。
+- [Reading $\neq$ Seeing: Diagnosing and Closing the Typography Gap in Vision-Language Models](https://arxiv.org/abs/2603.08497)：Typography Gap 系统评测 VLM 对字体、字号、样式和颜色的识别能力。
+- [OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](https://arxiv.org/abs/2603.09326)：它给图像理解、OCR、文档解析或细粒度视觉能力提供评测，适合补充 image/OCR Bench。
+- [OmniEarth: A Benchmark for Evaluating Vision-Language Models in Geospatial Tasks](https://arxiv.org/abs/2603.09471)：评测视觉语言模型在地理空间任务上的表现，扩展遥感与空间化视觉理解的基准覆盖。
+- [IMTBench: A Multi-Scenario Cross-Modal Collaborative Evaluation Benchmark for In-Image Machine Translation](https://arxiv.org/abs/2603.10495)：评估九种语言和真实场景下的端到端图像内机器翻译，同时衡量翻译质量、背景保持、图像质量与渲染文本一致性。
 - [FinDocBench](https://arxiv.org/abs/2603.11044)：评什么：金融 PDF 的目录结构、跨页表格拼接和单元格级定位；核心思想：用专家验证的金融文档类别与 TocEDS、cross-page TEDS、C-IoU 等指标评估审计级文档解析。
+- [GPT4o-Receipt: A Dataset and Human Study for AI-Generated Document Forensics](https://arxiv.org/abs/2603.11442)：评测 AI 生成文档取证。核心思想：比较模型与人类对合成收据图像和真实收据的识别能力。
 - [MADQA](https://arxiv.org/abs/2603.12180)：评什么：多文档集合中的 agentic document QA；核心思想：把准确率和检索/阅读 effort 绑定，诊断 agent 是策略性导航还是暴力遍历。
+- [GRADE: Benchmarking Discipline-Informed Reasoning in Image Editing](https://arxiv.org/abs/2603.12264)：评什么：图像编辑中的学科知识驱动推理。核心思想是用需要结构化领域知识的编辑任务，而不是只测自然图像常识。
+- [KazakhOCR: A Synthetic Benchmark for Evaluating Multimodal Models in Low-Resource Kazakh Script OCR](https://arxiv.org/abs/2603.13238)：用合成 benchmark 评测低资源哈萨克文字 OCR，聚焦通用多语言 OCR 资源覆盖不足的文字系统。
+- [MIBench: Evaluating LMMs on Multimodal Interaction](https://arxiv.org/abs/2603.13427)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [VTC-Bench](https://arxiv.org/abs/2603.15030)：评什么：agentic multimodal model 的组合式视觉工具链调用；核心思想：把视觉任务拆成可组合工具调用序列，评估模型是否会选择、排序和校验多个视觉工具而不是一次性作答。
+- [MMKU-Bench: A Multimodal Update Benchmark for Diverse Visual Knowledge](https://arxiv.org/abs/2603.15117)：补充image ocr方向的基准或评测套件，核心围绕《MMKU-Bench: A Multimodal Update Benchmark for Diverse Visual Knowledge》。
 - [VAREX](https://arxiv.org/abs/2603.15118)（[项目页](https://udibarzi.github.io/varex-bench/)；[数据集](https://huggingface.co/datasets/ibm-research/VAREX)；[开源代码](https://github.com/udibarzi/varex-bench)）：评什么：政府表单上的多模态结构化抽取；核心思想：为每份文档提供唯一 schema 与四种输入模态，区分模型“会读字段”和“会按 schema 稳定输出”。
+- [LED: A Benchmark for Evaluating Layout Error Detection in Document Analysis](https://arxiv.org/abs/2603.17265)：评测文档分析中的版面错误检测；核心思想是超越 IoU 等重叠指标，检查区域合并、拆分、遗漏和逻辑结构不一致等解析错误。
+- [Benchmarking PDF Parsers on Table Extraction with LLM-based Semantic Evaluation](https://arxiv.org/abs/2603.18652)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [ProactiveBench](https://arxiv.org/abs/2603.19466)：评测 MLLM 在遮挡物体识别、图像增强、粗略草图理解等多模态任务中，是否会主动请求有用的用户干预。
+- [Rethinking Ground Truth: A Case Study on Human Label Variation in MLLM Benchmarking](https://arxiv.org/abs/2603.19744)：研究 MLLM benchmark 中的人类标签差异，用 ground-truth 分歧质疑视觉理解任务的单标签评分。
+- [When Visuals Aren't the Problem: Evaluating Vision-Language Models on Misleading Data Visualizations](https://arxiv.org/abs/2603.22368)：评测视觉语言模型对误导性数据可视化的处理能力。
+- [DISCO: Document Intelligence Suite for COmparative Evaluation](https://arxiv.org/abs/2603.23511)：DISCO 分离评测 OCR pipeline 与 VLM document QA，是 document intelligence benchmark suite。
+- [Beyond Accuracy: Introducing a Symbolic-Mechanistic Approach to Interpretable Evaluation](https://arxiv.org/abs/2603.23517)：提出 symbolic-mechanistic 评测视角，把模型行为拆解到超出总准确率的机制层面，可用于视觉推理 benchmark 的可解释诊断。
+- [PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](https://arxiv.org/abs/2603.24078)：补充image ocr方向的基准或评测套件，核心围绕《PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation》。
 - [MDPBench](https://arxiv.org/abs/2603.28130)（[开源代码](https://github.com/Yuliang-Liu/MultimodalOCR/tree/main/MDPBench)）：评什么：真实场景中的多语言文档解析；核心思想：覆盖 17 种语言、数字文档与拍照文档，重点暴露非拉丁文字和低资源语言下的解析退化。
+- [AMIGO: Agentic Multi-Image Grounding Oracle Benchmark](https://arxiv.org/abs/2603.28662)：agentic multi-image grounding oracle 基准；核心思想是评测 agent 能否在多图之间识别、比较并定位目标，同时给出可验证证据。
+- [BigEarthNet.txt: A Large-Scale Multi-Sensor Image-Text Dataset and Benchmark for Earth Observation](https://arxiv.org/abs/2603.29630)：评测地球观测图文理解。核心思想：提供多传感器遥感图文数据和更丰富标注来评测 VLM。
+- [TextAnchor-Bench / Q-Mask](https://arxiv.org/abs/2604.00161)：评估 OCR 导向 VLM 的细粒度文本区域定位能力。核心思想是测试模型能否在识别文本内容前先把查询文本锚定到正确空间区域，从而区分文本在哪里与文本是什么。
+- [OmniSch: A Multimodal PCB Schematic Benchmark For Structured Diagram Visual Reasoning](https://arxiv.org/abs/2604.00270)：评什么：评测 PCB schematic 的结构化图推理；核心思想是把示意图转为包含属性、连通性和几何信息的机器可读 netlist graph。
+- [A Benchmark of State-Space Models vs. Transformers and BiLSTM-based Models for Historical Newspaper OCR](https://arxiv.org/abs/2604.00725)：比较 state-space、Transformer 和 BiLSTM 模型在历史报纸 OCR 上的表现，重点是退化档案文本识别。
+- [Benchmarking and Mechanistic Analysis of Vision-Language Models for Cross-Depiction Assembly Instruction Alignment](https://arxiv.org/abs/2604.00913)：评测装配说明中的跨描绘对齐，考察 VLM 能否连接图示、不同 depiction 和过程语言。
+- [TableVision: A Large-Scale Benchmark for Spatially Grounded Reasoning over Complex Hierarchical Tables](https://arxiv.org/abs/2604.03660)：可作为document, table, OCR, and image-text understanding方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [FeynmanBench: Benchmarking Multimodal LLMs on Diagrammatic Physics Reasoning](https://arxiv.org/abs/2604.03893)：面向物理图示推理的多模态 LLM 基准；核心思想是要求模型读取图结构并结合物理推理，而不是依赖文本捷径。
+- [Benchmarking and Evaluating VLMs for Software Architecture Diagram Understanding](https://arxiv.org/abs/2604.04009)：补充image ocr方向的基准或评测套件，核心围绕《Benchmarking and Evaluating VLMs for Software Architecture Diagram Understanding》。
+- [Discovering Failure Modes in Vision-Language Models using RL](https://arxiv.org/abs/2604.04733)：训练 RL questioner 自动诱发 VLM 错误，把计数、空间、视角和组合等盲点转化为可扩展的失败模式发现协议。
+- [From PDF to RAG-Ready: Evaluating Document Conversion Frameworks for Domain-Specific Question Answering](https://arxiv.org/abs/2604.04948)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [The Character Error Vector: Decomposable errors for page-level OCR evaluation](https://arxiv.org/abs/2604.06160)：把字符错误分解为可诊断的向量，用于页级 OCR 评测，比单一总体错误率更能定位识别失败。
+- [Appear2Meaning: A Cross-Cultural Benchmark for Structured Cultural Metadata Inference from Images](https://arxiv.org/abs/2604.07338)：评测从图像推断结构化文化元数据。
 - [ParseBench](https://arxiv.org/abs/2604.08538)（[开源代码](https://github.com/run-llama/ParseBench)）：评什么：文档解析的语义正确性、表格/图表保真与视觉 grounding；核心思想：把企业文档里最影响自动决策的解析失败拆成可评测维度。
+- [Grid2Matrix](https://arxiv.org/abs/2604.09687)：诊断 VLM 的细粒度视觉读出失败。核心思想：在受控网格大小和颜色复杂度下把彩色网格映射为数字矩阵，暴露视觉编码仍保留细节但端到端语言输出丢失信息的情况。
+- [Improving Layout Representation Learning Across Inconsistently Annotated Datasets via Agentic Harmonization](https://arxiv.org/abs/2604.11042)：评测来源数据集标注体系不一致时的版面表示学习，并用 agentic harmonization 对齐文档版面标签。
+- [GlotOCR Bench: OCR Models Still Struggle Beyond a Handful of Unicode Scripts](https://arxiv.org/abs/2604.12978)：用干净和退化渲染文本评测 100 多种 Unicode script 上的 OCR 泛化；核心思想是暴露英语中心 OCR 测试掩盖的文字系统覆盖缺口。
+- [TableNet A Large-Scale Table Dataset with LLM-Powered Autonomous](https://arxiv.org/abs/2604.13041)：提供大规模表格结构识别数据集，由 LLM-powered multi-agent pipeline 根据可控视觉、结构和语义参数生成。
+- [ReactBench](https://arxiv.org/abs/2604.15994)：评估化学反应图中的拓扑推理能力。核心思想是用包含分支、汇合和环路的真实科学图表，测试 MLLM 是否理解全局图结构，而不仅是识别局部元素。
+- [Mind's Eye: A Benchmark of Visual Abstraction, Transformation and Composition for Multimodal LLMs](https://arxiv.org/abs/2604.16054)：评测 MLLM 视觉抽象、变换和组合能力的基准；核心思想是测试模型是否能操作视觉关系与变换，而不只是识别物体。
+- [Adverse-to-the-eXtreme Panoptic Segmentation: URVIS 2026 Study and Benchmark](https://arxiv.org/abs/2604.16984)：评测极端不利视觉条件下的 panoptic segmentation，强调困难场景鲁棒性而非文本中心 OCR。
+- [DistortBench: Benchmarking Vision Language Models on Image Distortion Identification](https://arxiv.org/abs/2604.19966)：评测视觉语言模型的无参考图像失真识别；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Beyond Single Plots: A Benchmark for Question Answering on Multi-Charts](https://arxiv.org/abs/2604.21344)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [MuDABench](https://arxiv.org/abs/2604.22239)：评估大规模半结构化文档集合上的分析型问答。核心思想是要求模型跨大量文档进行抽取、聚合和定量综合，并同时评估最终答案与中间事实覆盖率。
+- [When VLMs'Fix'Students: Identifying and Penalizing Over-Correction in the Evaluation of Multi-line Handwritten Math OCR](https://arxiv.org/abs/2604.22774)：评测多行手写数学 OCR 与过度纠错问题，用 PINK 惩罚把学生错误悄悄修正而非忠实转写的模型。
+- [TexOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction](https://arxiv.org/abs/2604.22880)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [ShredBench](https://arxiv.org/abs/2604.23813)：评估碎片化文档重建中的多模态推理能力。核心思想是从可更新的 Markdown 来源生成碎片文档，测试模型能否在英文、中文、代码和表格场景下跨越视觉断裂与语义断裂完成重建。
 - [HLE-VL](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的 HLE 风格视觉语言评测；目前未确认有独立公开版本。核心思想：即使具体评测子集只在 model card 中出现，也应跟踪模型厂商对高难视觉知识与推理任务的关注。
+- [When Good OCR Is Not Enough: Benchmarking OCR Robustness for Retrieval-Augmented Generation](https://arxiv.org/abs/2605.00911)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [DiagramNet](https://arxiv.org/abs/2605.01338)：评估非标准系统级图表的识别与推理能力。核心思想是围绕芯片设计类图表设置列举、定位、连接和电路问答任务，要求模型恢复结构、数据流与接口，而不只是读取普通图表文本。
+- [Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](https://arxiv.org/abs/2605.01882)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [MHPR: Multidimensional Human Perception and Reasoning Benchmark for Large Vision-Languate Models](https://arxiv.org/abs/2605.03485)：评测LVLM 的多维人类中心感知与推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
 - [CC-OCR V2](https://arxiv.org/abs/2605.03903)（[开源代码](https://github.com/eioss/CC-OCR-V2)）：评什么：真实企业文档处理中的 OCR literacy；核心思想：覆盖文本识别、文档解析、文档 grounding、关键信息抽取和文档问答五条 OCR-centric track，强调 hard/corner cases。
+- [MSD-Score: Multi-Scale Distributional Scoring for Reference-Free Image Caption Evaluation](https://arxiv.org/abs/2605.06080)：通过多尺度图像 patch 与文本 token 分布比较来做无参考 image caption evaluation，为物体幻觉、属性缺失和关系错误提供可分解诊断。
+- [ChartREG++: Towards Benchmarking and Improving Chart Referring Expression Grounding under Diverse referring clues and Multi-Target Referring](https://arxiv.org/abs/2605.07415)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [How Far Is Document Parsing from Solved? PureDocBench: A Source-TraceableBenchmark across Clean, Degraded, and Real-World Settings](https://arxiv.org/abs/2605.07492)：覆盖清洁、退化和真实场景的可追溯文档解析基准；核心思想是评测文档噪声下解析结果是否保持结构和证据。
+- [DocScope](https://arxiv.org/abs/2605.08888)：评估长篇富视觉文档中的可验证推理。核心思想是把页定位、区域定位、事实抽取和最终答案验证拆开评分，暴露仅看答案准确率时被掩盖的证据链失败。
+- [Multi-domain Multi-modal Document Classification Benchmark with a Multi-level Taxonomy](https://arxiv.org/abs/2605.10550)：用多级 taxonomy 评测多领域多模态文档分类，同时考察视觉版面线索和文本语义。
+- [SenseBench: A Benchmark for Remote Sensing Low-Level Visual Perception and Description in Large Vision-Language Models](https://arxiv.org/abs/2605.10576)：评测大视觉语言模型在遥感低层视觉感知与描述中的能力；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Vision2Code](https://arxiv.org/abs/2605.11307)：评估跨领域图像到代码生成能力。核心思想是渲染模型生成的可执行程序，再用面向具体数据域的评分规程与源图像对比，从而区分代码执行失败与视觉重建质量不足。
+- [Unlocking UML Class Diagram Understanding in Vision Language Models](https://arxiv.org/abs/2605.11634)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [ShapeCodeBench: A Renewable Benchmark for Perception-to-Program Reconstruction of Synthetic Shape Scenes](https://arxiv.org/abs/2605.11680)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [DocAtlas: Multilingual Document Understanding Across 80+ Languages](https://arxiv.org/abs/2605.12623)：通过合成渲染流水线和统一结构标注，在 80 多种语言、9 类任务上评测多语言文档理解。
+- [CiteVQA](https://arxiv.org/abs/2605.12882)：评估文档视觉问答中的证据归因能力。核心思想是要求答案同时给出元素级边界框引用，并用 Strict Attributed Accuracy 同时衡量答案与证据区域是否正确。
+- [On the Cultural Anachronism and Temporal Reasoning in Vision Language Models](https://arxiv.org/abs/2605.15071)：评测视觉语言模型中的文化时代错置和时间推理失败；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [VCG-Bench: Towards A Unified Visual-Centric Benchmark for Structured Generation and Editing](https://arxiv.org/abs/2605.15677)：类型：benchmark/评测协议。核心价值：为 1.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [ForMaT: Dataset for Visually-Grounded Multilingual PDF Translation](https://arxiv.org/abs/2605.15794)：提供 15 个语言对、3,956 份带版面元数据的 PDF，评测视觉 grounded 的 PDF 翻译和保格式文档重建。
+- [Evaluation of Large Language Model’s Cross-Cultural Non-Verbal Behavior Understanding](https://doi.org/10.1109/btfm69084.2026.11484108)：评估大模型跨文化非语言行为理解。
+- [A benchmark and method for photographed table reasoning](https://doi.org/10.1016/j.patcog.2026.113355)：评测拍照表格推理，将透视畸变、拍摄噪声、表格结构和下游推理放在同一协议中考察。
+- [Benchmarking CUDA, CuPy, and Triton Kernel Optimizations for 3D Point Cloud Segmentation: An Empirical Comparison of Latency, Memory Efficiency, and GPU Utilization](https://doi.org/10.69987/jacs.2026.60503)：衡量 3D 点云分割中的 GPU kernel 优化在延迟、内存和利用率上的取舍，是视觉处理效率相关的系统 benchmark，偏离图像 OCR 主轴。
+- [UniTabBank: A Large Scale Multi-Lingual, Multi-Layout, Multi-Type, Multi-Format Dataset for Table Detection](https://doi.org/10.1109/wacv61042.2026.00627)：提供跨语言、版式、表格类型和格式的大规模表格检测数据集，强化识别前的表格定位覆盖。
+- [AI-driven road inspection with SUD-ROAD: High-resolution LiDAR benchmark and a novel cross-dimensional semantic segmentation pipeline](https://doi.org/10.1016/j.compeleceng.2026.110993)：提出 SUD-ROAD 高分辨率 LiDAR 道路巡检和语义分割 benchmark，邻近视觉理解但不是 OCR 任务。
+- [Zero-Shot Table Extraction in Business Documents: A Unified Benchmark with Error Taxonomy and Ecological Analysis](https://doi.org/10.1109/wacv61042.2026.00483)：评测 business document 中表格检测与表格结构识别的零样本 VLM 和专用检测器，并加入可操作错误分类与能耗分析。
+- [Multi-scene Traditional Mongolian OCR and Its Public Dataset](https://doi.org/10.3724/2096-7004.di.2025.0119)：提供多场景传统蒙古文 OCR 公开数据集，补充竖排文字和场景文本识别覆盖。
+- [Enginuity](https://arxiv.org/abs/2606.03410)：通过工程图 VQA 和零部件表抽取评测 VLM 对工程图纸的理解，重点考察技术图中的符号、版面和组件推理。
+- [Vision Arena](https://huggingface.co/spaces/WildVision/vision-arena)：评什么：开放式图像对话模型的人类偏好/竞技场式比较。核心思想：用 pairwise battle 补充固定 VQA/OCR 题集，适合观察真实开放图像问答中的模型偏好排序。
+- [RealWorldQA](https://huggingface.co/datasets/xai-org/RealworldQA)：评什么：真实世界场景图像上的问答正确性；核心思想：用真实环境图像与可直接核验的简短问答，减少合成数据分布与模板化题型带来的高估。
+- [IDP Leaderboard](https://idp-leaderboard.org/)：评什么：企业智能文档处理中的 OCR、表格抽取、KIE、VQA、分类与长文档处理。核心思想：把 document AI 工程侧常见任务组织成公开榜单式评测入口，补齐学术 DocVQA/OCRBench 对真实业务文档覆盖不足的问题。
+- [OCR Arena](https://www.ocrarena.ai/)：评什么：OCR/文档模型的竞技场式比较。核心思想：把 OCR、文档解析、表格抽取和视觉问答模型放进持续公开比较入口，作为 OCRBench、OmniDocBench 与 IDP Leaderboard 之外的实用补充。
+- [OpenCompass Open VLM Leaderboard](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)：聚合 MMMU、MMStar、OCRBench 等多模态基准上的开放 VLM 结果。核心思想是为图像理解、文档推理、OCR 与多模态问答模型提供跨基准的综合排名入口。
+- [MMTableBench: A Multi-level Multimodal Benchmark for Reasoning and Layout Complexity in Table QA](https://doi.org/10.1145/3774904.3792367)：从推理和版面复杂度评测多模态表格问答。
+- [Towards Fine-Grained Document Tampering Detection: New Dataset and Benchmark](https://doi.org/10.1007/978-981-95-5676-2_1)：提出文档篡改检测数据集与基准，将文档理解评测扩展到真实性判断和细粒度伪造分析。
+- [S3 Agent: Unlocking the Power of VLLM for Zero-Shot Multi-Modal Sarcasm Detection](https://doi.org/10.1145/3690642)：评测基于 VLLM agent 的零样本多模态讽刺检测，关注图文语用理解而非 OCR。
+- [HumanEval-V: Systematic Evaluation of Visual Reasoning in Large Multimodal Models for Code Generation](https://doi.org/10.1145/3813804)：面向图像理解与 OCR，补充用于chart or visual-code reasoning evaluation的基准、数据集、指标、审计或实证协议。
+- [OpenLEAF: A Novel Benchmark for Open-Domain Interleaved Image-Text Generation](https://doi.org/10.1145/3664647.3685511)：评测开放域交错图文生成，考察模型能否生成连贯的多模态序列，而不是孤立 caption。
+- [Towards High Robust Vision-Language Large Models: Benchmark and Method](https://doi.org/10.1145/3746027.3758234)：评测 vision-language large model 的鲁棒性，并配套提出提升鲁棒性的方法。
+- [Spatial-Aware Parametric UMAP Network: An Interpretable Deep Learning Analytical Framework for Mineral Prospectivity Mapping](https://doi.org/10.1007/s11053-025-10627-2)：评测面向矿产远景制图的空间感知深度学习分析框架，是地学图像分析 benchmark，位于 OCR/文档主轴之外。
+- [An Application of ChatGPT4o to Generate Requirement Definition Documents and Its Evaluation: An Industrial Case Study](https://doi.org/10.1145/3779657.3779687)：在工业案例中评测 ChatGPT-4o 生成需求定义文档的效果，邻近文档生成评估但不是视觉 OCR。
+- [mSOP-765k: A Benchmark For Multi-Modal Structured Output Predictions](https://openreview.net/forum?id=OBaCMeVx13)：评测多模态结构化输出预测，把视觉理解与 schema-like 目标下的可靠结构化生成连接起来。
+- [Before the First Token: Benchmarking Data Preprocessing in Vision-Language Models](https://doi.org/10.1145/3805621.3807641)：评测 VLM 推理前的数据预处理，衡量图像预处理选择如何影响下游视觉语言评测。
+- [MRBench](https://doi.org/10.1145/3746027.3755442)：评什么：跨 visually similar、same-entity、attribute-associated 和 independent image relations 的知识型多图推理。核心思想：把多图输入与自适应检索结合起来，测试 MLLM 能否整合外部知识并跨图推理。
+- [Making Multimodal LLMs Reliable Chart Data Extractors: A Benchmark and Training Framework](https://doi.org/10.1145/3772318.3790721)：用明确任务、协议或数据集评测image, OCR, document, chart, or diagram understanding。
+- [SciTableQA: A Question-Answering Benchmark for Complex Scientific Tables](https://doi.org/10.1007/978-3-032-05409-8_7)：评测复杂科学表格问答；核心思想是同时检查表格结构解析和科学上下文理解，而不是只读普通文本。
+- [TaiwanVQA: A Benchmark for Visual Question Answering for Taiwanese Daily Life](https://www.semanticscholar.org/paper/9c898b589af81686d7892eb0c3f40e4c7a4f680a)：评测台湾日常生活场景中的视觉问答能力。
+- [Fidel: a large-scale sentence level Amharic OCR dataset](https://doi.org/10.1007/s10032-026-00593-7)：可作为图像理解与 OCR方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [MosaicDoc: A Large-Scale Bilingual Benchmark for Visually Rich Document Understanding](https://doi.org/10.1609/aaai.v40i4.37282)：评测图像、OCR 与视觉文档理解的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [ReceiptQA: A Question-Answering Dataset for Receipt Understanding](https://doi.org/10.3390/math13111760)：评测视觉文档、图表、表格与 OCR 推理。核心思想：围绕论文中的任务、数据或协议（A Question-Answering Dataset for Receipt Understanding）形成可复用比较基准。

@@ -1,21 +1,37 @@
 # 2.4.3 Bench
 
-- [ResearchArena](https://arxiv.org/abs/2406.10291)：评测学术调研与综述生成；核心思想是把“检索文献 -> 对比方法 -> 写出结构化 survey”做成可评分的研究型 benchmark。
+- [SciFact](https://arxiv.org/abs/2004.14974)：给定科学声明，检索论文摘要并判断支持或反驳；它更像 claim verification，但对后续 evidence-grounded QA 的证据召回和立场判断很关键。
+- [QASPER](https://arxiv.org/abs/2105.03011)：基于 NLP 论文全文回答问题，并标注支持证据；它把科学 QA 从摘要推进到全文论文，但领域和文档集合仍相对受控。
+- [OARelatedWork](https://arxiv.org/abs/2405.01930)：提供基于开放获取论文的大规模 related-work generation 数据集，将 related work section 与被引论文全文配对，要求系统选择并综合真实来源。
+- [ResearchArena](https://arxiv.org/abs/2406.10291)（[开源代码](https://github.com/cxcscmu/ResearchArena)）：将学术综述拆成文献发现、相关性与影响力筛选、层级知识组织三个阶段，并用可在本地重建的 1200 万篇全文论文和 7900 篇综述环境比较 LLM agent 与关键词检索。
+- [RelevAI-Reviewer: A Benchmark on AI Reviewers for Survey Paper Relevance](https://arxiv.org/abs/2406.10294)：RelevAI-Reviewer 将综述论文相关性建模为四选一候选论文筛选任务，构建了 25,164 个“主题提示加候选论文”样本。BERT 端到端分类器优于传统机器学习基线，形成了用于自动同行评审的具体基准和公开挑战。
+- [SciER: An Entity and Relation Extraction Dataset for Datasets, Methods, and Tasks in Scientific Documents](https://arxiv.org/abs/2410.21155)：发布面向科学文档全文实体与关系抽取的基准，包含超过 24,000 个实体、12,000 个关系以及分布外测试集。
+- [OpenScholar / ScholarQABench](https://arxiv.org/abs/2411.14199)（[开源代码](https://github.com/AkariAsai/OpenScholar)；[演示](https://open-scholar.allen.ai/)）：以专家编写的跨领域问题、长篇参考答案和引用准确性检查，评测大规模科学文献检索与有引用支撑的综合。
 - [ResearchRubrics](https://arxiv.org/abs/2412.02077)（[开源代码](https://github.com/scaleapi/researchrubrics)）：评测研究型长文产出质量；核心思想是用 rubric 将“覆盖、证据、引用、可复核性、结构与写作质量”等维度显式化并可比。
+- [Highlighting Case Studies in LLM Literature Review of Interdisciplinary System Science](https://arxiv.org/abs/2503.16515)：在四个系统综述案例上评测证据抽取，通过引文复现忠实度、专家评定的研究问题答案和嵌入相似度交叉验证；论文报告引文准确率超过 95%，研究问题回答准确率约为 83%。
+- [arXiv2Table](https://arxiv.org/abs/2504.10284)：用真实用户需求、检索干扰项和面向可用性的评分评测文献综述表格生成，不再假设系统预先获得标准表格 schema。
 - [BrowseComp-ZH](https://arxiv.org/abs/2504.19314)（[开源代码](https://github.com/PALIN2018/BrowseComp-ZH)；[Leaderboard](https://huggingface.co/spaces/PALIN2018/BrowseComp-ZH)；[Deep Research SOTA on BrowseComp-ZH](https://www.wizwand.com/sota/deep-research-on-browsecomp-zh-score)）：评测中文互联网环境中的高难网页浏览与多跳检索推理；核心思想是把中文网页生态中的平台碎片化、跨页检索与信息整合难点显式 benchmark 化，常被 deep-search/deep-research agent 用作 SOTA 对照。
+- [Research Impact Summarization](https://arxiv.org/abs/2505.14838)：利用带时间信息的引用意图分析评测论文影响总结，要求概括后续工作的确认、批评及影响演变，而不只统计引用量。
+- [MIR](https://arxiv.org/abs/2506.00249)：评测针对科学问题检索可提供方法启发的既有工作，并通过方法启发数据集与 Methodology Adjacency Graph 衡量概念上的可用性。
 - [Deep Research Bench](https://arxiv.org/abs/2506.06287)（[Leaderboard](https://drb.futuresearch.ai/)）：评测可复现网页研究 agent；核心思想是用 89 个多步骤网页研究任务和 frozen `RetroSearch` 网页语料，避免 live web 漂移，同时审计长轨迹中的工具使用、遗忘与幻觉。
+- [ScIRGen: Synthesize Realistic and Large-Scale RAG Dataset for Scientific Research](https://arxiv.org/abs/2506.11117)：为科学研究信息需求合成真实的大规模 RAG 数据集。
+- [Deep Research Arena](https://www.deepresearcharena.com/)：评什么：公开 deep research 对战与榜单式比较。核心思想：把产品化 deep research 系统、开源 harness 和商业 agent 放在持续 arena 入口中比较，补充论文 benchmark 对真实部署系统覆盖不足的问题。
 - [DeepResearch Bench](https://arxiv.org/abs/2506.11763)（[主页](https://deepresearch-bench.github.io/)；[开源代码](https://github.com/Ayanami0730/deep_research_bench)）：评测 deep research agent 在 22 个领域上的长链路检索、证据组织与报告生成能力；核心思想是联合 `RACE` 与 `FACT` 两套协议，分别衡量报告质量与引用可信度。
 - [Characterizing Deep Research](https://arxiv.org/abs/2508.04183)：评测 deep research 的宽域概念探索能力；核心思想是在形式化定义里把 deep research 和普通长文问答区分开，强调高 fan-out、跨概念检索与推理密集的信息探索。
 - [BrowseComp-VL](https://arxiv.org/abs/2508.05748)：多模态 deep research 的补充评测子基准；核心思想是把视觉网页证据纳入 deep research 轨迹合成与评测。
 - [BrowseComp-Plus](https://arxiv.org/abs/2508.06600)（[开源代码](https://github.com/texttron/BrowseComp-Plus)）：评测固定语料库上的 deep research agent；核心思想是从 BrowseComp 派生出可控文档集合、人工核验支持文档和 hard negatives，让研究者能分离检索质量、引用准确性与 agent 上下文工程。
+- [Expert Preference-based Evaluation of Automated Related Work Generation](https://arxiv.org/abs/2508.07955)：用 GREP 模拟专家偏好的多轮细粒度评价，发现通用 LLM judge 难以稳定判断 related work 是否满足验证约束和领域写作标准。
 - [ReportBench](https://arxiv.org/abs/2508.15804)（[开源代码](https://github.com/ByteDance-BandAI/ReportBench)）：评测 deep research agent 生成学术综述报告的质量；核心思想是从专家综述反推任务，并分别检查引用文献相关性、引用支撑关系和非引用事实正确性。
+- [SurveyGen](https://arxiv.org/abs/2508.17647)：用 4,200 多篇人类综述和 242,143 条引用构建质量感知数据集，评估从全自动到 human-guided 写作不同参与度下的 citation quality 和 critical analysis。
 - [DeepScholar-Bench](https://arxiv.org/abs/2508.20033)（[开源代码](https://github.com/guestrin-lab/deepscholar)）：评测生成式学术研究综合；核心思想是从近期高质量 arXiv 论文抽取任务，让系统检索、综合并引用相关工作，自动衡量知识综合、检索质量与可验证性。
 - [DeepTRACE](https://arxiv.org/abs/2509.04499)：评测 deep research 与生成式搜索系统的证据追踪可靠性；核心思想是把答案、来源和引用拆成 statement-level 支撑矩阵，审计结论是否真的被引用证据支持。
+- [AirQA](https://arxiv.org/abs/2509.16952)：在 13,956 篇 AI 论文上评测多模态、多任务问答，并提供 ExTrActor 生成的工具交互轨迹，用于训练和测试文献研究智能体。
 - [DRBench](https://arxiv.org/abs/2510.00172)（[开源代码](https://github.com/ServiceNow/drbench)，[数据集](https://huggingface.co/datasets/ServiceNow/drbench)）：评测企业 deep research。核心思想：要求 agent 跨公开网页、私有文件、邮件、聊天和生产力工具检索证据并生成带引用报告，明确区别于已有的 Dr. Bench。
 - [Dr. Bench](https://arxiv.org/abs/2510.02190)：评测 deep research agent 从短答案到完整报告的多维表现；核心思想是同时覆盖任务分解、跨源检索、多阶段推理、信息整合和结构化输出，避免只按最终答案评分。
+- [PaperArena](https://arxiv.org/abs/2510.10909)（[项目页](https://paperarena-ai.github.io/)；[开源代码](https://github.com/Melmaphother/PaperArena)）：评测工具辅助的多论文推理，要求智能体调用解析、检索和计算工具，整合来自多篇论文与多种格式的证据。
 - [LiveResearchBench](https://arxiv.org/abs/2510.14240)（[主页](https://livedeepresearch.github.io/)；[开源代码](https://github.com/SalesforceAIResearch/LiveResearchBench)）：评测面向真实动态网页环境的用户中心 deep research；核心思想是以 live、user-centric、multi-faceted 任务和 `DeepEval` 多协议评测，显式考察实时检索、综合分析与引用关联质量。
-- [Deep Research Arena](https://www.deepresearcharena.com/)：评什么：公开 deep research 对战与榜单式比较。核心思想：把产品化 deep research 系统、开源 harness 和商业 agent 放在持续 arena 入口中比较，补充论文 benchmark 对真实部署系统覆盖不足的问题。
 - [DeepWideSearch](https://arxiv.org/abs/2510.20168)：评测 agentic information seeking 中“深度多跳推理”和“宽域信息收集”的同时满足能力；核心思想是要求 agent 在大量候选信息里完成多跳检索路径推理，暴露反思不足、检索不足和上下文溢出等失败模式。
+- [MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering](https://arxiv.org/abs/2511.16283)：面向科学问答开发多意图 RAG。
 - [DEER](https://arxiv.org/abs/2512.17776)：评测 deep research agent 的专家级报告生成；核心思想是用专家报告任务同时考察报告质量、领域专业性和 report-wide claim verification，减少只看文风或局部引用的偏差。
 - [DeepSynth-Eval](https://arxiv.org/abs/2601.03540)：评测 deep survey writing 中的检索后信息整合。核心思想：提供 oracle context 和 checklist 式客观评分，把 synthesis 质量与 retrieval 质量拆开看。
 - [Over-Searching](https://arxiv.org/abs/2601.05503)：评测 search-augmented agent 的另一类失败：过度搜索。核心思想：用搜索效率指标衡量不必要检索、噪声证据吸收，以及成本与质量之间的折中。
@@ -38,14 +54,28 @@
 - [DEEPSYNTH](https://arxiv.org/abs/2602.21143)（[开源代码](https://github.com/agentdeepsynthesis/deepsynth-bench)）：评测跨来源深度信息综合；核心思想是用 120 个跨 7 个领域的真实耗时任务，要求 agent 收集官方数据源、形成假设、做结构化推理并给出可核验洞见。
 - [TRACE](https://arxiv.org/abs/2602.21230)：评什么：deep research agent 的轨迹级综合评测。核心思想：用 trajectory-aware 指标同时看正确性、证据质量、效率和推理健壮性，避免只用最终分数造成 high-score illusion。
 - [DeepConsult](https://arxiv.org/abs/2602.21658)：评测面向“咨询式问题”的长链路调研与报告生成；核心思想是把 open-ended research 约束为可评分的长文产出与过程规范。
+- [LitBench: A Graph-Centric Large Language Model Benchmarking Tool For Literature Tasks](https://arxiv.org/abs/2603.00051)：通过自动构造领域文献图来评测文献任务。核心思想是从用户选定的学术子图生成节点级和边级训练/评测数据，使 literature agent 被测试的是领域术语、引用关系和 related-work 结构连接能力，而不只是通用文本生成。
 - [Super Research](https://arxiv.org/abs/2603.00582)：评什么：超宽、超深的复杂问题研究。核心思想：把需要大规模证据收集、长期规划和异质来源综合的问题单独提出，覆盖 Deep Research 与 Wide Search 的交叉区域。
 - [DeepFact](https://arxiv.org/abs/2603.05912)：评测 deep research 报告事实性。核心思想：让 benchmark 条目和审计 agent 共同演化，使 claim-level 标签保持可修订、可证据支撑，而不是一次性固定。
 - [MyScholarQA](https://arxiv.org/abs/2603.16120)：用真实用户评测 personalized deep research。核心思想：检查 agent 是否能理解个体研究偏好与信息需求，而不是只优化通用任务报告质量。
 - [TRQA（Total Recall QA）](https://arxiv.org/abs/2603.18516)：评测深调研系统在长证据链下的事实找回与整合能力；核心思想是通过高召回要求把“搜得全不全、引得准不准”显式化。
+- [SciArena](https://sciarena.allen.ai/SciArena_An_Open_Evaluation_Platform_for_Foundation_Models_in_Scientific_Literature_Tasks.pdf)（[平台](https://sciarena.allen.ai/)）：面向科学文献理解、综合、有引用支撑的回答和用户偏好收集的开放评测平台。
 - [MiroEval](https://arxiv.org/abs/2603.28407)：评什么：深研系统的过程和结果。核心思想：把最终报告、事实核验和过程审计一起评。
 - [Reference Hallucination Detection](https://arxiv.org/abs/2604.03173)：评测商业 LLM 与 deep research agent 中的伪造、无效和过期引用。核心思想：区分 broken link 与 invented citation，并提供大规模 URL validity 审计工具。
+- [Does ChatGPT Ignore Article Retractions and Other Reliability Concerns?](https://doi.org/10.1002/leap.2018)：让 ChatGPT 4o-mini 对 217 篇已撤稿或存在其他可靠性问题的论文生成 6,510 份质量报告，显示文献综述助手即使给出高评价也可能遗漏撤稿与错误信号。
+- [EpiBench](https://arxiv.org/abs/2604.05557)：评测基于科学论文的 episodic 多模态研究工作流。核心思想是要求 agent 多轮主动检索论文、对齐图表证据、在记忆中持续使用已积累证据，并回答需要跨论文比较的客观问题，同时提供过程级诊断。
 - [Towards Knowledgeable Deep Research](https://arxiv.org/abs/2604.07720)：评什么：知识增强 deep research 的框架与评测。核心思想：把外部知识组织、检索和报告生成放进同一协议，区分“会搜索”与“会形成知识结构”的差别。
 - [PaperScope](https://arxiv.org/abs/2604.11307)：评什么：跨海量科学论文的 agentic deep research。核心思想：基于 2,000 多篇 AI 论文的知识图谱，并联合正文、表格和图像证据，评测跨多篇相关论文的检索、推理、总结与问题求解。
 - [DR3-Eval](https://arxiv.org/abs/2604.14683)（[开源代码](https://github.com/NJU-LINK/DR3-Eval)）：评什么：真实、多模态、可复现的深研评测。核心思想：用用户文件、静态 sandbox 和细粒度 rubric。
+- [AutoResearchBench](https://arxiv.org/abs/2604.25256)（[项目页](https://cheryou.github.io/autoresearchbench.github.io/)；[开源代码](https://github.com/CherYou/AutoResearchBench)）：以 1,000 个专家整理问题评测精确定位目标论文，以及广泛收集满足指定条件的论文集合。
+- [Bloom-Eval: A Hierarchical Evaluation Benchmark for Automatic Survey Generation Based on Bloom's Taxonomy](https://doi.org/10.18653/v1/2026.acl-long.1315)：Bloom-Eval 提供六层级、跨学科的自动学术综述生成基准，结合确定性标准与抽象能力评估。
 - [Cited but Not Verified](https://arxiv.org/abs/2605.06635)：评测 deep research 报告中的 source attribution。核心思想：可复现解析 Markdown 引用，再在报告尺度评估链接有效性、相关性与事实支撑。
 - [ViDR](https://arxiv.org/abs/2605.13034)：评什么：多模态深研报告与视觉证据对齐。核心思想：要求报告结论能回指到具体视觉来源，减少“引用了页面但视觉证据不支撑结论”的多模态幻觉。
+- [REFLECT](https://arxiv.org/abs/2605.19196)：通过对证据、主张和评审条件进行受控扰动，评测用于证据型 deep-research agent 的 LLM 裁判是否可靠。
+- [DeepScholar-Bench](https://openreview.net/forum?id=BkYlCIfaBB)：用 live research synthesis 任务评估 related work 生成，围绕知识综合、检索质量和可验证性打分，适合作为写作讨论中“文献定位支撑论证”的评测协议。
+- [PEQQS](https://doi.org/10.1145/3746252.3761653)：构建面向科学文献的 extractive quantity-focused QA 基准，要求系统检索数值证据并返回结构化数量，而不是生成宽泛文字答案。
+- [RWGBench](https://arxiv.org/abs/2606.24894)：输入目标论文的 title、abstract、可选 introduction 和大规模候选文献库，输出能选择、放置、组织和框架化引用的 related work section。
+- [Phantom References](https://arxiv.org/abs/2607.00738)：审计顶会论文中通过同行评审仍存活的幻影引用，把参考文献作为可验证表面来衡量无支持科学主张如何进入正式论文记录。
+- [Generating Multiple Choice Questions from Scientific Literature via Large Language Models](https://doi.org/10.1109/ickg63256.2024.00035)：把科学论文转换成多项选择题，将论文理解、干扰项生成和题目质量检查组织成面向科学文献的教育工作流。
+- [AISE-Bench: A Full-Cycle Curated Benchmark for Information Seeking on Academic Knowledge Graphs](https://arxiv.org/abs/2607.20498)：以 1,133 个真实学术知识图谱检索请求、已验证的 API 轨迹和参数及带来源的答案，分别评测智能体的规划、执行、引文落地与回答质量。
+- [SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration](https://arxiv.org/abs/2607.20926)：SciExplore 在跨学科专家策划任务上评测科学智能体的数据库导航、歧义文献检索、参考文献补全和跨源证据综合能力。

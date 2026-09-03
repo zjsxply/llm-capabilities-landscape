@@ -2,60 +2,451 @@
 
 （以下按发布时间排序，覆盖 video knowledge、video reasoning、motion/perception、long-video、multi-video、streaming 与 agentic/web-video 等子任务。）
 
+- [Sports-QA: A Large-Scale Video Question Answering Benchmark for Complex and Professional Sports](https://arxiv.org/abs/2401.01505)：评测专业体育视频问答，强调细粒度动作识别、规则知识与赛事事件推理，区别于日常场景 VideoQA。
+- [Anim-400K: A Large-Scale Dataset for Automated End to End Dubbing of Video](https://arxiv.org/abs/2401.05314)：作为视频理解的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [Video Anomaly Detection and Explanation via Large Language Models](https://arxiv.org/abs/2401.05702)：把监控视频异常检测改写成 LLM 风格的时间定位与自然语言解释任务，减少对人工阈值化 anomaly score 的依赖。
 - [ContPhy](https://arxiv.org/abs/2402.06119)：评测连续物理过程与动态理解；核心思想是连续变化条件下的物理一致性与状态预测。
+- [Open-ended VQA benchmarking of Vision-Language models by exploiting Classification datasets and their semantic hierarchy](https://arxiv.org/abs/2402.07270)：补充视频理解能力的评测资源或协议。
+- [TV-TREES: Multimodal Entailment Trees for Neuro-Symbolic Video Reasoning](https://arxiv.org/abs/2402.19467)：为电视片段生成多模态 entailment tree，检查模型能否用相互连接的文本-视频前提解释答案，而不只是单步识别。
+- [Panda-70M: Captioning 70M Videos with Multiple Cross-Modality Teachers](https://arxiv.org/abs/2402.19479)：Panda-70M 补充视频理解基准，覆盖视频字幕、视频语言推理或第一视角视频分析。
+- [Multimodal ArXiv: A Dataset for Improving Scientific Comprehension of Large Vision-Language Models](https://arxiv.org/abs/2403.00231)：评测视频或多模态理解能力，为父级复核补充基准、数据集、指标或实证协议线索。
 - [TempCompass](https://arxiv.org/abs/2403.00476)：评测时间定位与事件顺序理解；核心思想是细粒度时序对齐与时间点检索。
-- [Video-MME](https://arxiv.org/abs/2405.21075)（[项目页](https://mme-benchmark.github.io/)；[开源代码](https://github.com/MME-Benchmarks/Video-MME)）：评测视频分析的全谱系能力；核心思想：用更系统的任务覆盖与评测协议把“视频理解”拆成可对比维度，并提供一键评测脚本。
-- [LVBench](https://arxiv.org/abs/2406.08035)：评测长视频理解；核心思想是以更长时间跨度与更强信息检索需求区分长视频能力。
-- [LongVideoBench](https://arxiv.org/abs/2407.15754)：评测长视频理解；核心思想是把 `frames + subtitles + question` 交织输入，并显式参数化帧预算（如 `max_num_frames`）实现可复现比较。（[项目页](https://longvideobench.github.io/)；[数据集](https://huggingface.co/datasets/longvideobench/LongVideoBench)；[开源代码](https://github.com/longvideobench/LongVideoBench)）
+- [Benchmarking Micro-Action Recognition: Dataset, Methods, and Applications](https://arxiv.org/abs/2403.05234)：《Benchmarking Micro-Action Recognition: Dataset, Methods, and Applications》为Video补充基准、数据集、指标或评测协议。
+- [Learning Spatiotemporal Inconsistency via Thumbnail Layout for Face Deepfake Detection](https://arxiv.org/abs/2403.10261)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [PREGO: Online Mistake Detection in PRocedural EGOcentric Videos](https://arxiv.org/abs/2404.01933)：评测程序性第一视角视频中的在线错误检测。
+- [Narrative Action Evaluation with Prompt-Guided Multimodal Interaction](https://arxiv.org/abs/2404.14471)：通过提示引导的多模态交互评估叙事动作。
+- [Uncovering what, why and How: A Comprehensive Benchmark for Causation Understanding of Video Anomaly](https://arxiv.org/abs/2405.00181)：把视频异常理解从检测和定位推进到回答异常是什么、为什么发生以及严重程度如何。
+- [WorldQA: Multimodal World Knowledge in Videos through Long-Chain Reasoning](https://arxiv.org/abs/2405.03272)：用 303 段视频和 1,007 个问答样本评测长链推理，要求联合视觉证据、常识与世界知识作答。
+- [Light-VQA+: A Video Quality Assessment Model for Exposure Correction with Vision-Language Guidance](https://arxiv.org/abs/2405.03333)：Light-VQA+: A Video Quality Assessment Model for Exposure Correction with Vision-Language Guidance 补充视频理解方向的基准、数据集、指标或评测协议。
+- [How Good is my Video-LMM? Complex Video Reasoning and Robustness Evaluation Suite for Video-LMMs](https://arxiv.org/abs/2405.03690)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [CinePile: A Long Video Question Answering Dataset and Benchmark](https://arxiv.org/abs/2405.08813)：基于电影剧本与情节构造长视频问答，强调需要持续叙事上下文的问题，而不是随机抽几帧即可作答。
+- [STAR: A Benchmark for Situated Reasoning in Real-World Videos](https://arxiv.org/abs/2405.09711)：通过情境抽象和逻辑 grounding 问答评测真实视频中的 situated reasoning，检查模型能否利用周围情境推理。
+- [Video-MME](https://arxiv.org/abs/2405.21075)（[项目页](https://mme-benchmark.github.io/)；[开源代码](https://github.com/MME-Benchmarks/Video-MME)；[榜单](https://video-mme.github.io/home_page.html#leaderboard)）：评测视频分析的全谱系能力；核心思想：用更系统的任务覆盖与评测协议把“视频理解”拆成可对比维度，并提供一键评测脚本。
+- [LVBench](https://arxiv.org/abs/2406.08035)（[榜单](https://lvbench.github.io/)）：评测长视频理解；核心思想是以更长时间跨度与更强信息检索需求区分长视频能力。
+- [Gazing Into Missteps: Leveraging Eye-Gaze for Unsupervised Mistake Detection in Egocentric Videos of Skilled Human Activities](https://arxiv.org/abs/2406.08379)：利用眼动信号做无监督第一视角熟练操作错误检测，避免依赖特定领域的 mistake 标注。
+- [MMWorld: Towards Multi-discipline Multi-faceted World Model Evaluation in Videos](https://arxiv.org/abs/2406.08407)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Test of Time: A Benchmark for Evaluating LLMs on Temporal Reasoning](https://arxiv.org/abs/2406.09170)：用合成时序逻辑任务隔离顺序、持续时间与区间关系推理，降低真实世界事实被预训练记忆污染的风险。
+- [Needle In A Video Haystack: A Scalable Synthetic Framework for Benchmarking Video MLLMs](https://arxiv.org/abs/2406.09367)：补充视频理解能力的评测资源或协议。
+- [Real-Time Deepfake Detection in the Real-World](https://arxiv.org/abs/2406.09398)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [First Multi-Dimensional Evaluation of Flowchart Comprehension for Multimodal Large Language Models](https://arxiv.org/abs/2406.10057)：提出 FlowCE 多维评测多模态模型的流程图理解能力，更像图表理解迁移候选而非核心视频基准。
+- [VANE-Bench: Video Anomaly Evaluation Benchmark for Conversational LMMs](https://arxiv.org/abs/2406.10326)：评测 conversational LMM 在深伪、篡改内容、交通事故与犯罪等异常视频中的识别、定位和解释能力。
+- [VELOCITI: Benchmarking Video-Language Compositional Reasoning with Strict Entailment](https://arxiv.org/abs/2406.10889)：用 strict entailment 协议评测短视频组合推理，分解考察人物、动作和时序关系理解。
+- [VideoVista: A Versatile Benchmark for Video Understanding and Reasoning](https://arxiv.org/abs/2406.11303)：通过任务、评测协议或诊断设置评测 Video 能力，适合作为 Bench 条目。
+- [ViLCo-Bench: VIdeo Language COntinual learning Benchmark](https://arxiv.org/abs/2406.13123)：评测视频语言持续学习，衡量模型吸收新视频文本任务时对旧任务的保持与迁移能力。
+- [HCQA @ Ego4D EgoSchema Challenge 2024](https://arxiv.org/abs/2406.15771)：HCQA @ Ego4D EgoSchema Challenge 2024 补充视频理解方向的基准、数据集、指标或评测协议。
+- [ReXTime: A Benchmark Suite for Reasoning-Across-Time in Videos](https://arxiv.org/abs/2406.19392)：专门设置问题证据与答案分布在不同视频片段的 reasoning-across-time 任务，强调跨片段因果与时序依赖。
+- [Tarsier: Recipes for Training and Evaluating Large Video Description Models](https://arxiv.org/abs/2407.00634)：评测视频或多模态理解能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [CLIPVQA: Video Quality Assessment via CLIP](https://arxiv.org/abs/2407.04928)：补充视频理解能力的评测资源或协议。
+- [LongVideoBench](https://arxiv.org/abs/2407.15754)：评测长视频理解；核心思想是把 `frames + subtitles + question` 交织输入，并显式参数化帧预算（如 `max_num_frames`）实现可复现比较。（[项目页](https://longvideobench.github.io/)；[数据集](https://huggingface.co/datasets/longvideobench/LongVideoBench)；[开源代码](https://github.com/longvideobench/LongVideoBench)；[榜单](https://longvideobench.github.io/index.html#leaderboard)）
+- [UNQA: Unified No-Reference Quality Assessment for Audio, Image, Video, and Audio-Visual Content](https://arxiv.org/abs/2407.19704)：统一音频、图像、视频和音视频内容的无参考质量评估，使视频质量可在同一多模态 QA 设置下打分。
+- [GRAB: A Challenging Graph Analysis Benchmark for Large Multimodal Models](https://arxiv.org/abs/2408.11817)：提供面向Video能力的基准、数据集或评测协议。
+- [LMM-VQA: Advancing Video Quality Assessment With Large Multimodal Models](https://arxiv.org/abs/2408.14008)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Toward Adaptive Human-Centric Video Anomaly Detection: A Comprehensive Framework and a New Benchmark](https://arxiv.org/abs/2408.14329)：提出 HuVAD 隐私保护式人类中心异常检测数据与持续学习评测，面向稀有且多样的人类异常行为适应。
+- [E.T. Bench: Towards Open-Ended Event-Level Video-Language Understanding](https://arxiv.org/abs/2409.18111)：面向视频理解能力，补充评测任务、数据集或基准协议。
+- [Q-Bench-Video: Benchmark the Video Quality Understanding of LMMs](https://arxiv.org/abs/2409.20063)：评测 LMM 对自然视频、AIGC 视频和低层失真来源的视频质量理解，而不只考语义内容理解。
+- [UAL-Bench: The First Comprehensive Unusual Activity Localization Benchmark](https://arxiv.org/abs/2410.01180)：整合 UAG-OOPS、UAG-SSBD 和 UAG-Movies，评测错误操作与事故等 unusual activity 的时间定位。
+- [Vinoground: Scrutinizing LMMs over Dense Temporal Reasoning with Short Videos](https://arxiv.org/abs/2410.02763)：通过基准、数据集或评测协议评估视频理解能力。
+- [AirLetters: An Open Video Dataset of Characters Drawn in the Air](https://arxiv.org/abs/2410.02921)：要求识别人类在空中写出的字母，依赖长期运动轨迹整合而非静态外观线索。
+- [MMEgo: Towards Building Egocentric Multimodal LLMs for Video QA](https://arxiv.org/abs/2410.07177)：构建面向第一视角的多模态 LLM Video QA 基准，评测第一人称视觉理解与问答能力。
 - [TVBench](https://arxiv.org/abs/2410.07752)：评测时序理解与运动相关感知；核心思想是把变化/运动作为主要信号，而非静态单帧识别。
+- [VERIFIED: A Video Corpus Moment Retrieval Benchmark for Fine-Grained Video Understanding](https://arxiv.org/abs/2410.08593)：提出或分析面向video understanding capability的基准、数据集、指标或评测协议。
+- [LVD-2M: A Long-take Video Dataset with Temporally Dense Captions](https://arxiv.org/abs/2410.10816)：补充面向视频理解或时序推理能力的基准、数据集、指标或评测协议。
+- [BQA: Body Language Question Answering Dataset for Video Large Language Models](https://arxiv.org/abs/2410.13206)：提供面向Video能力的基准、数据集或评测协议。
+- [MotionBank: A Large-scale Video Motion Benchmark with Disentangled Rule-based Annotations](https://arxiv.org/abs/2410.13790)：用解耦的规则化运动标注评测 large motion model，覆盖人体、物体和相机运动模式。
+- [Can LVLMs Describe Videos like Humans? A Five-in-One Video Annotations Benchmark for Better Human-Machine Comparison](https://arxiv.org/abs/2410.15270)：提供面向Video能力的基准、数据集或评测协议。
 - [VideoWebArena](https://arxiv.org/abs/2410.19100)（[项目页](https://videowebarena.github.io/)；[开源代码](https://github.com/ljang0/videowebarena)）：评测长上下文多模态 agent 在网页任务中的视频理解；核心思想是把 tutorial/video evidence、网页状态和可执行动作放进同一环境，按任务成功率衡量“看视频后会不会操作”。
+- [ProMQA: Question Answering Dataset for Multimodal Procedural Activity Understanding](https://arxiv.org/abs/2410.22211)：提供面向多模态过程活动理解的问答数据集。
 - [TOMATO](https://arxiv.org/abs/2410.23266)：评测时序推理与动作理解；核心思想是围绕事件边界与状态转移构造问题。
+- [Language-Guided Hierarchical Fine-Grained Image Forgery Detection and Localization](https://arxiv.org/abs/2410.23556)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [StreamingBench: Assessing the Gap for MLLMs to Achieve Streaming Video Understanding](https://arxiv.org/abs/2411.03628)（[榜单](https://streamingbench.github.io/)）：面向视频理解能力，补充评测任务、数据集或基准协议。
+- [EVQAScore: Efficient Video Question Answering Data Evaluation](https://arxiv.org/abs/2411.06908)：提出无参考 Video QA 数据质量评分，用关键词抽取衡量答案相关性与 caption-question 对齐，服务 VideoLLM 训练数据筛选。
+- [VideoCogQA: A Controllable Benchmark for Evaluating Cognitive Abilities in Video-Language Models](https://arxiv.org/abs/2411.09105)：用可控合成视频探测符号化和抽象感知能力，使认知难度可调而不是固定在真实视频分布上。
+- [VidComposition: Can MLLMs Analyze Compositions in Compiled Videos?](https://arxiv.org/abs/2411.10979)：评测 MLLM 对 compiled videos 中视觉元素组合、交互和构图关系的细粒度理解，补足只考抽象视频理解的基准。
+- [Towards Open-Vocabulary Audio-Visual Event Localization](https://arxiv.org/abs/2411.11278)：把 audio-visual event localization 推向 open-vocabulary 设置，要求定位并分类训练集中未见过的可听可见事件。
+- [On the Consistency of Video Large Language Models in Temporal Comprehension](https://arxiv.org/abs/2411.12951)：提供面向视频理解的基准、数据集、挑战任务或评测协议。
+- [VideoEspresso: A Large-Scale Chain-of-Thought Dataset for Fine-Grained Video Reasoning via Core Frame Selection](https://arxiv.org/abs/2411.14794)：通过 core-frame selection 与 chain-of-thought 标注构造细粒度视频推理数据，减少冗余逐帧监督。
+- [VIVID-10M: A Dataset and Baseline for Versatile and Interactive Video Local Editing](https://arxiv.org/abs/2411.15260)：发布大规模真实视频局部编辑指令与 baseline，更像视频生成/编辑评测迁移候选。
+- [MovieBench: A Hierarchical Movie Level Dataset for Long Video Generation](https://arxiv.org/abs/2411.15262)：为长视频生成组织 movie-level 多场景叙事与角色一致性数据，更适合迁往生成基准。
+- [LongVALE: Vision-Audio-Language-Event Benchmark Towards Time-Aware Omni-Modal Perception of Long Videos](https://arxiv.org/abs/2411.19772)：用视觉、音频、语音和语言证据上的细粒度事件标注评测长视频全模态时序感知。
+- [VIDHALLUC: Evaluating Temporal Hallucinations in Multimodal Large Language Models for Video Understanding](https://arxiv.org/abs/2412.03735)：提供用于评估Video的任务或数据集，为 Video / Bench 补充具体测量目标。
+- [Neptune: The Long Orbit to Benchmarking Long Video Understanding](https://arxiv.org/abs/2412.09582)：通过可扩展长视频问答评测跨长时间跨度与多模态证据推理，减少只靠少量帧即可解题的样本。
 - [CG-Bench](https://arxiv.org/abs/2412.12075)：评测长链路视频理解与复杂推理/生成；核心思想是提高组合推理与输出约束强度，减少“短路”。
+- [Track the Answer: Extending TextVQA from Image to Video with Spatio-Temporal Clues](https://arxiv.org/abs/2412.12502)：用时空线索把 TextVQA 从图像扩展到视频。
+- [HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](https://arxiv.org/abs/2412.17574)：提供面向视频理解的基准、数据集、挑战任务或评测协议。
+- [SCBench: A Sports Commentary Benchmark for Video LLMs](https://arxiv.org/abs/2412.17637)：评测体育解说生成与理解，使用细粒度、时间密集的体育视频，避免模型只看少量帧完成任务。
+- [Reversed in Time: A Novel Temporal-Emphasized Benchmark for Cross-Modal Video-Text Retrieval](https://arxiv.org/abs/2412.19178)：用时间反转和时序 hard negative 强化视频文本检索评测，诊断模型是否真正理解动作顺序。
+- [FineVQ: Fine-Grained User Generated Content Video Quality Assessment](https://arxiv.org/abs/2412.19238)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [CaReBench: A Fine-Grained Benchmark for Video Captioning and Retrieval](https://arxiv.org/abs/2501.00513)：补充面向视频理解或时序推理能力的基准、数据集、指标或评测协议。
 - [OVBench](https://arxiv.org/abs/2501.00584)（[开源代码](https://github.com/MCG-NJU/VideoChat-Online)）：评测在线/流式视频理解与交互；核心思想：把“边接收视频边更新状态并作答”作为输入协议的一部分，并提供可复现的在线视频运行与评测脚本。
+- [HLV-1K: A Large-scale Hour-Long Video Benchmark for Time-Specific Long Video Understanding](https://arxiv.org/abs/2501.01645)：小时级长视频中的时间定位理解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [MotionBench](https://arxiv.org/abs/2501.02955)：评测运动理解与细粒度动作感知；核心思想是覆盖多种运动模式并提供统一评测协议。
 - [OVOBench](https://arxiv.org/abs/2501.05510)：评测在线视频/在线交互理解；核心思想是面向在线场景的实时性约束与状态持续更新。
-- [MMVU](https://arxiv.org/abs/2501.12380)：评测通用视频理解与问答；核心思想是以更系统的任务分解/问题类型覆盖，诊断从事实回忆到理解推理的能力谱。
-- [Video-MMMU（VideoMMMU）](https://arxiv.org/abs/2501.13826)：评测“看视频学知识”的问答能力；核心思想是除绝对准确率外引入 `delta accuracy` 等增量指标，并规范输入组织（例如把题图追加到视频最后一帧）以便统一评测。（[项目页](https://videommmu.github.io/)；[数据集](https://huggingface.co/datasets/lmms-lab/VideoMMMU)；[开源代码](https://github.com/EvolvingLMMs-Lab/VideoMMMU)）
-- [VideoAutoArena](https://videoautoarena.github.io/)：评测开放式视频分析模型的自动竞技场式比较；核心思想是通过用户模拟、模型对战和自动裁判补足固定选择题 benchmark 的真实用户任务覆盖不足。
+- [TB-Bench: Training and Testing Multi-Modal AI for Understanding Spatio-Temporal Traffic Behaviors from Dashcam Images/Videos](https://arxiv.org/abs/2501.05733)：评测多模态 AI 对行车记录仪图像和视频中时空交通行为的理解；核心思想是测试模型能否理解动态驾驶场景，而不只是孤立帧。
+- [X-LeBench: A Benchmark for Extremely Long Egocentric Video Understanding](https://arxiv.org/abs/2501.06835)：X-LeBench 评测极长 egocentric video understanding，补充长视频/第一视角能力。
+- [TimeLogic: A Temporal Logic Benchmark for Video QA](https://arxiv.org/abs/2501.07214)：评测 Video QA 中的时序逻辑推理，关注模型能否跟踪事件顺序、持续时间与逻辑时序关系。
+- [Do generative video models understand physical principles?](https://arxiv.org/abs/2501.09038)：测试生成式视频模型是否理解物理规律，而不只是生成逼真像素。
+- [MMVU](https://arxiv.org/abs/2501.12380)（[榜单](https://mmvu-benchmark.github.io/#leaderboard)）：评测通用视频理解与问答；核心思想是以更系统的任务分解/问题类型覆盖，诊断从事实回忆到理解推理的能力谱。
+- [Video-MMMU（VideoMMMU）](https://arxiv.org/abs/2501.13826)：评测“看视频学知识”的问答能力；核心思想是除绝对准确率外引入 `delta accuracy` 等增量指标，并规范输入组织（例如把题图追加到视频最后一帧）以便统一评测。（[项目页](https://videommmu.github.io/)；[榜单](https://videommmu.github.io/#Leaderboard)；[数据集](https://huggingface.co/datasets/lmms-lab/VideoMMMU)；[开源代码](https://github.com/EvolvingLMMs-Lab/VideoMMMU)）
+- [A Video-grounded Dialogue Dataset and Metric for Event-driven Activities](https://arxiv.org/abs/2501.18324)：补充视频理解的 Bench 条目，重点是《A Video-grounded Dialogue Dataset and Metric for Event-driven Activities》。
+- [MJ-VIDEO: Fine-Grained Benchmarking and Rewarding Video Preferences in Video Generation](https://arxiv.org/abs/2502.01719)：面向视频生成的细粒度偏好基准。核心思想是评估生成视频的指令对齐、幻觉、安全和偏见。
+- [Hier-EgoPack: Hierarchical Egocentric Video Understanding With Diverse Task Perspectives](https://arxiv.org/abs/2502.02487)：评什么：以多任务视角组织第一人称视频理解，适合视频 benchmark。
 - [Video-OCR Benchmark](https://arxiv.org/abs/2502.06445)（[开源代码](https://github.com/video-db/ocr-benchmark)）：评测 VLM 与传统 OCR 在视频帧文字识别上的差异；核心思想是把视频文本识别从单图 OCR 中拆出来，显式比较抽帧、时间冗余和端到端视觉语言模型的收益。
+- [EgoTextVQA: Towards Egocentric Scene-Text Aware Video Question Answering](https://arxiv.org/abs/2502.07411)：自我中心视频中的场景文本问答基准；核心思想是要求模型在第一视角视频的时序过程中读取并使用文本。
+- [Moment of Untruth](https://arxiv.org/abs/2502.08544)：提出 negative-aware video moment retrieval，检验系统在查询片段不存在时能否拒绝定位，而不是总返回看似合理的时间戳。
+- [UCVL](https://arxiv.org/abs/2502.09325)： 用问答式异常理解和 GPT-4o 响应评估，评测大多模态模型的犯罪监控视频分析能力。
+- [SVBench: A Benchmark with Temporal Multi-Turn Dialogues for Streaming Video Understanding](https://arxiv.org/abs/2502.10810)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [MET-Bench: Multimodal Entity Tracking for Evaluating the Limitations of Vision-Language and Reasoning Models](https://arxiv.org/abs/2502.10886)：构建多模态实体跟踪基准，评估视觉语言与推理模型。
+- [Akan Cinematic Emotions (ACE): A Multimodal Multi-party Dataset for Emotion Recognition in Movie Dialogues](https://arxiv.org/abs/2502.10973)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [MomentSeeker: A Task-Oriented Benchmark For Long-Video Moment Retrieval](https://arxiv.org/abs/2502.12558)：MomentSeeker 评测长视频中的任务导向时刻检索，强调超越短片段问答的时间定位能力。
+- [Memory Helps, but Confabulation Misleads: Understanding Streaming Events in Videos with MLLMs](https://arxiv.org/abs/2502.15457)：评测视频理解的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
 - [MimeQA](https://arxiv.org/abs/2502.16671)（[开源代码](https://github.com/MIT-MI/MimeQA)，[数据集](https://huggingface.co/datasets/hzli1202/MimeQA)）：评什么：默剧视频中的非语言社交理解。核心思想：用无声的表达性表演作为视频问答来源，测试 foundation model 是否理解手势、姿态、情绪和社交意图，而不是只依赖语言主导的社会推理。
+- [All-in-one: Understanding and Generation in Multimodal Reasoning with the MAIA Benchmark](https://arxiv.org/abs/2502.16989)：面向意大利语的视频多模态推理 benchmark，覆盖理解与生成；核心思想是在本地语言环境下评测视频推理，而不是只依赖英文翻译题。
+- [Sherlock](https://arxiv.org/abs/2502.18863)：提出多场景视频异常事件抽取与定位任务，要求基于 LLM 的视频系统输出事件四元组并完成时间 grounding。
+- [InternVQA: Advancing Compressed Video Quality Assessment with Distilling Large Foundation Model](https://arxiv.org/abs/2502.19026)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [HAICBench](https://arxiv.org/abs/2502.20811)：用人工标注的视频 caption 与 QA 数据评测人类动作理解，重点覆盖细粒度动作属性、人物区分和按时间顺序描述交互过程。
+- [Deciphering the Complaint Aspects: Towards an Aspect-Based Complaint Identification Model with Video Complaint Dataset in Finance](https://arxiv.org/abs/2503.00054)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [Is Your Video Language Model a Reliable Judge?](https://arxiv.org/abs/2503.05977)：video language model 作为 judge 的可靠性研究。核心思想是测试 VLM 自动评测在视频任务中是否一致可信。
+- [UrbanVideo-Bench](https://arxiv.org/abs/2503.06157)：用第一人称城市运动视频评测 video-language model。核心思想是结合真实与模拟无人机视频，围绕 recall、perception、reasoning 和 navigation 出题，测试具身视频认知能力。
+- [VACT: A Video Automatic Causal Testing System and a Benchmark](https://arxiv.org/abs/2503.06163)：围绕视频理解提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [ALLVB: All-in-One Long Video Understanding Benchmark](https://arxiv.org/abs/2503.07298)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [DAVE: Diagnostic benchmark for Audio Visual Evaluation](https://arxiv.org/abs/2503.09321)：诊断音视频评测失败。核心思想：区分音视频理解 benchmark 中的视觉偏置与模态混淆。
+- [TIME: Temporal-Sensitive Multi-Dimensional Instruction Tuning and Robust Benchmarking for Video-LLMs](https://arxiv.org/abs/2503.09994)：用 temporal-sensitive 多维 benchmark 评测 Video-LLM 的时间理解；核心思想是按时间维度诊断模型失败，而不是只看通用视频 QA 分数。
+- [OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding](https://arxiv.org/abs/2503.10500)：评测时空 omni-object 视频 grounding，要求模型在时间维度上定位文本提到的全部目标及其交互对象。
+- [Reasoning is All You Need for Video Generalization: A Counterfactual Benchmark with Sub-question Evaluation](https://arxiv.org/abs/2503.10691)：评测视频理解中的反事实推理；核心思想是用多维视频 benchmark 和子问题评测诊断 MLLM 是否能超越已观察事件进行泛化。
 - [ViSpeak](https://arxiv.org/abs/2503.12769)：评测视频到语言的实时/半实时表达；核心思想是强调时间一致性、信息覆盖与输出流畅性。
+- [AUTV: Creating Underwater Video Datasets with Pixel-wise Annotations](https://arxiv.org/abs/2503.12828)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [UCF-Crime-DVS](https://arxiv.org/abs/2503.12905)：提出 event-based video anomaly detection dataset，并给出 spiking-neural-network baselines。
 - [EgoTempo](https://arxiv.org/abs/2503.13646)：评测第一视角视频的时序与动作理解；核心思想是利用 egocentric 视角的遮挡、快速运动与交互性提高难度。
+- [ExDDV](https://arxiv.org/abs/2503.14421)：提供带解释导向标注的视频 deepfake detection 数据集。
 - [FAVOR-Bench](https://arxiv.org/abs/2503.14935)（[项目页](https://favor-bench.github.io/)；[开源代码](https://github.com/FAVOR-Bench/FAVOR-Bench)；[数据集](https://huggingface.co/datasets/zl2048/FAVOR)）：评测细粒度视频运动理解；核心思想是覆盖第一视角与第三视角视频、闭集问答和开放描述，专门诊断模型是否真正看懂动作细节、运动轨迹和时间动态。
+- [DocVideoQA: Towards Comprehensive Understanding of Document-Centric Videos through Question Answering](https://arxiv.org/abs/2503.15887)：DocVideoQA 通过问答评测文档中心视频理解。
+- [V2P-Bench: Evaluating Video-Language Understanding with Visual Prompts for Better Human-Model Interaction](https://arxiv.org/abs/2503.17736)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Shot Sequence Ordering for Video Editing: Benchmarks, Metrics, and Cinematology-Inspired Computing Methods](https://arxiv.org/abs/2503.17975)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
 - [VideoSimpleQA](https://arxiv.org/abs/2503.18923)：评测基础视频事实问答；核心思想是用低歧义 QA 协议快速区分“看到了没有/记住了没有”。
+- [Audio-centric Video Understanding Benchmark without Text Shortcut](https://arxiv.org/abs/2503.19951)：该工作提出无文本捷径的 audio-centric video understanding benchmark，补足视频理解中声音证据依赖。
+- [BASKET](https://arxiv.org/abs/2503.20781)：发布用于细粒度球员技能估计的大规模篮球视频数据集。
+- [MAVERIX: Multimodal Audio-Visual Evaluation and Recognition IndeX](https://arxiv.org/abs/2503.21699)：补充video方向的基准或评测套件，核心围绕《MAVERIX: Multimodal Audio-Visual Evaluation and Recognition IndeX》。
+- [VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness](https://arxiv.org/abs/2503.21755)：评测视频生成的内在真实性。核心思想：不只看视觉质量和时间平滑性，而是检查物理规律、常识、解剖结构与组合一致性。
+- [OmniMMI: A Comprehensive Multi-modal Interaction Benchmark in Streaming Video Contexts](https://arxiv.org/abs/2503.22952)：OmniMMI 是 streaming video context 下的多模态交互 benchmark，覆盖实时/连续视频交互能力。
+- [H2VU-Benchmark: A Comprehensive Benchmark for Hierarchical Holistic Video Understanding](https://arxiv.org/abs/2503.24008)：从层级化与整体理解角度扩展视频评测，覆盖比单轴视频问答更丰富的任务与场景。
+- [VideoSetDiff: Identifying and Reasoning Similarities and Differences in Similar Videos](https://doi.org/10.1109/iccv51701.2025.01138)：评估相似视频异同识别与推理的 benchmark。核心思想是测试细粒度比较式视频理解，而不是单视频识别。
+- [BeSIM: A Benchmark for Evaluating the Interpretation of Social Interactions in Brazil Using Multimodal Large Language Models](https://doi.org/10.1109/sibgrapi67909.2025.11223485)：用 MLLM 评估巴西语境社会互动解释的 benchmark。核心思想是评估文化接地的视频社会互动理解，而不只是物体或事件识别。
+- [SCVBench: A Benchmark with Multi-turn Dialogues for Story-Centric Video Understanding](https://doi.org/10.24963/ijcai.2025/255)：它围绕长视频、时间理解或视频问答构造评测，适合补充 video Bench。
+- [Morpheus: Benchmarking Physical Reasoning of Video Generative Models with Real Physical Experiments](https://arxiv.org/abs/2504.02918)：用真实物理实验评测视频生成模型的物理推理。核心思想是把生成动态与实验支撑的物理结果对比，而不是只看视觉上是否 plausible。
+- [InstructionBench: An Instructional Video Understanding Benchmark](https://arxiv.org/abs/2504.05040)：可作为视频理解的Bench候选；核心关注“An Instructional Video Understanding Benchmark”。
+- [The 1st Solution for 4th PVUW MeViS Challenge: Unleashing the Potential of Large Multimodal Models for Referring Video Segmentation](https://arxiv.org/abs/2504.05178)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
+- [FMNV: A Dataset of Media-Published News Videos for Fake News Detection](https://arxiv.org/abs/2504.07687)：提供媒体发布新闻视频的假新闻检测数据集，为视频真实性评测补充非单纯合成篡改的 misinformation 场景。
+- [VCR-Bench: A Comprehensive Evaluation Framework for Video Chain-of-Thought Reasoning](https://arxiv.org/abs/2504.07956)：评测视频 chain-of-thought 推理过程；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [RealCam-Vid: High-resolution Video Dataset with Dynamic Scenes and Metric-scale Camera Movements](https://arxiv.org/abs/2504.08212)：补充一个面向视频理解的基准条目，关注video understanding or audio-visual evaluation contribution。
+- [VideoAds for Fast-Paced Video Understanding](https://arxiv.org/abs/2504.09282)：快节奏广告视频理解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [DVLTA-VQA: Decoupled Vision-Language Modeling With Text-Guided Adaptation for Blind Video Quality Assessment](https://arxiv.org/abs/2504.11733)：作为视频理解的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [Are Vision LLMs Road-Ready? A Comprehensive Benchmark for Safety-Critical Driving Video Understanding](https://arxiv.org/abs/2504.14526)：面向安全关键驾驶视频理解的基准。核心思想是在复杂自动驾驶场景中评估 VLLM，而不只做通用视频问答。
+- [Video-MMLU: A Massive Multi-Discipline Lecture Understanding Benchmark](https://arxiv.org/abs/2504.14693)：评测多学科讲座视频理解；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [IV-Bench](https://arxiv.org/abs/2504.15415)（[开源代码](https://github.com/multimodal-art-projection/IV-Bench)）：评测 image-grounded video perception and reasoning；核心思想是把参考图像、视频和文本问题一起输入，检查模型能否把外部视觉上下文融入视频理解而不是只依赖当前视频帧。
 - [LiveSports3K](https://arxiv.org/abs/2504.16030)：评测直播体育场景下的理解与字幕/解说相关能力；核心思想是以直播分布与时间敏感信息为挑战。
+- [Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness](https://arxiv.org/abs/2504.16936)：从有效性、效率、泛化和鲁棒性多方面评估 MLLM 的音视频能力。
+- [Latent Video Dataset Distillation](https://arxiv.org/abs/2504.17132)：提供面向Video能力的基准、数据集或评测协议。
+- [VideoVista-CulturalLingo: 360° Horizons-Bridging Cultures, Languages, and Domains in Video Comprehension](https://arxiv.org/abs/2504.17821)：它围绕长视频、时间理解或视频问答构造评测，适合补充 video Bench。
+- [VEU-Bench: Towards Comprehensive Understanding of Video Editing](https://arxiv.org/abs/2504.17828)：视频编辑理解能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [SeriesBench: A Benchmark for Narrative-Driven Drama Series Understanding](https://arxiv.org/abs/2504.21435)：SeriesBench 面向连续叙事剧集理解，补充长视频/叙事视频 benchmark。
 - [Minerva](https://arxiv.org/abs/2505.00681)：评测复杂视频推理与知识整合；核心思想是更长链路推理与跨模态信息融合。
+- [RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](https://arxiv.org/abs/2505.02064)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [DiffVQA: Video Quality Assessment Using Diffusion Feature Extractor](https://arxiv.org/abs/2505.03261)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
+- [R^3-VQA: "Read the Room" by Video Social Reasoning](https://arxiv.org/abs/2505.04147)：面向视频社交推理的 benchmark。核心思想是评测模型能否从视频中读取社交线索、推断心理状态或互动语境，而不只是描述物体。
+- [Video Dataset Condensation with Diffusion Models](https://arxiv.org/abs/2505.06670)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [VCRBench: Exploring Long-form Causal Reasoning Capabilities of Large Video Language Models](https://arxiv.org/abs/2505.08455)：评测视频理解；核心思想是测试基于视频证据的因果、时序或长程推理。
+- [Temporally-Grounded Language Generation: A Benchmark for Real-Time Vision-Language Models](https://arxiv.org/abs/2505.11326)：面向实时 vision-language models 的 benchmark。核心思想是评估生成话语不仅语义正确，还要与流式视觉输入在时间上对齐。
+- [Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](https://arxiv.org/abs/2505.11842)：面向视频 LVLM 的安全基准。核心思想是评估风险依赖时间动态的有害或对抗视频输入。
+- [Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](https://arxiv.org/abs/2505.12702)：用分钟级视频、遮挡、消失与再出现以及镜头切换评测长程指代表达视频目标分割，强调超越短可见片段的语言驱动跟踪能力。
+- [LoVR: A Benchmark for Long Video Retrieval in Multimodal Contexts](https://arxiv.org/abs/2505.13928)：面向多模态长视频检索的基准。核心思想是评估长视频及细粒度片段定位，而不是只检索短视频或粗粒度字幕。
 - [VideoEval-Pro](https://arxiv.org/abs/2505.14640)：评测更专业的长视频理解/评测协议鲁棒性；核心思想是更严格的评测设置与更贴近实际的长视频任务组织。
+- [Daily-Omni](https://arxiv.org/abs/2505.17862)：面向跨模态时间对齐的音视频 QA benchmark，测试模型能否联合同步音频和视频证据进行推理，而不是只依赖单一模态。
+- [Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM](https://arxiv.org/abs/2505.18110)：评测音频、视觉和语音联合的片段理解。核心思想：要求模型同时利用视觉线索、环境音和语音来定位并解释视频片段。
+- [RTime-QA: A Benchmark for Atomic Temporal Event Understanding in Large Multi-modal Models](https://arxiv.org/abs/2505.19125)：评估大多模态模型 atomic temporal event understanding 的 benchmark。核心思想是测试视频模型是否能理解细粒度事件时间，而不是依赖静态视觉线索答题。
+- [A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking](https://arxiv.org/abs/2505.19858)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [EmoNet-Face: An Expert-Annotated Benchmark for Synthetic Emotion Recognition](https://arxiv.org/abs/2505.20033)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [TUNA: Comprehensive Fine-grained Temporal Understanding Evaluation on Dense Dynamic Videos](https://arxiv.org/abs/2505.20124)：可作为视频理解的Bench候选；核心关注“Comprehensive Fine-grained Temporal Understanding Evaluation on Dense Dynamic Videos”。
+- [ReaMOT](https://arxiv.org/abs/2505.20381)：评测基于推理的多目标跟踪，要求模型将目标轨迹与更高层时间推理相连接。
 - [MME-VideoOCR](https://arxiv.org/abs/2505.21333)：评测视频中的动态文字感知、识别与推理；核心思想是把 text-in-video 当成视频理解的关键维度，覆盖多语言、多场景和 OCR-to-reasoning 问题。
 - [Video-Holmes](https://arxiv.org/abs/2505.21374)：评测“侦探式”视频推理与证据链对齐；核心思想是用可解释线索链约束推理过程，降低拍脑袋结论。
+- [A2Seek](https://arxiv.org/abs/2505.21962)：用高分辨率航拍视频、时间和区域标注以及因果自然语言解释评估航拍异常理解。
+- [VidText: Towards Comprehensive Evaluation for Video Text Understanding](https://arxiv.org/abs/2505.22810)：视频中文字理解能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [VideoReasonBench](https://arxiv.org/abs/2505.23359)：评测时序、因果与多步推理；核心思想是显式要求跨片段线索整合而非单帧识别。
+- [VCapsBench: A Large-scale Fine-grained Benchmark for Video Caption Quality Evaluation](https://arxiv.org/abs/2505.23484)：可作为视频理解的Bench候选；核心关注“A Large-scale Fine-grained Benchmark for Video Caption Quality Evaluation”。
+- [Evidence-Grounded Temporal Reasoning in Operating Room Long Video Understanding](https://doi.org/10.1109/isbi61048.2026.11515743)：评测手术室长视频中的证据支撑时间推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [OpenCompass Open VLM Video Leaderboard](https://huggingface.co/spaces/opencompass/openvlm_video_leaderboard)：聚合 Video-MME、MVBench、MLVU、LongVideoBench 等常见视频基准上的 video-capable VLM 结果；核心思想是提供单一数据集之外的跨基准视频理解排名入口。
+- [VF-Eval: Evaluating Multimodal LLMs for Generating Feedback on AIGC Videos](https://arxiv.org/abs/2505.23693)：补充video方向的基准或评测套件，核心围绕《VF-Eval: Evaluating Multimodal LLMs for Generating Feedback on AIGC Videos》。
 - [ScaleLong](https://arxiv.org/abs/2505.23922)（[开源代码](https://github.com/multimodal-art-projection/ScaleLong)）：评测多时间尺度长视频理解；核心思想是把秒级、分钟级、小时级上下文放到统一评测协议里，诊断模型随视频长度增长时的检索、记忆与跨片段推理退化。
-- [Q-Bench-Video](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Q-Bench-Video_Benchmark_the_Video_Quality_Understanding_of_LMMs_CVPR_2025_paper.html)：评什么：大多模态模型的视频质量理解。核心思想：把视频质量感知与质量推理做成显式 benchmark 目标，补充事件中心的视频问答。
-- [VidHalluc](https://openaccess.thecvf.com/content/CVPR2025/html/Li_VidHalluc_Evaluating_Temporal_Hallucinations_in_Multimodal_Large_Language_Models_for_CVPR_2025_paper.html)（[项目页](https://people-robots.github.io/vidhalluc)）：评什么：视频 MLLM 的时序幻觉。核心思想：测试模型是否编造视频中并不存在的事件、动作或时间关系。
+- [Time Blindness: Why Video-Language Models Can't See What Humans Can?](https://arxiv.org/abs/2505.24867)：面向纯时间感知的视频语言基准。核心思想是在噪声式帧序列中编码信息，迫使模型捕捉时间模式，而不是依赖空间语义。
 - [LongVALE](https://openaccess.thecvf.com/content/CVPR2025/html/Geng_LongVALE_Vision-Audio-Language-Event_Benchmark_Towards_Time-Aware_Omni-Modal_Perception_of_Long_Videos_CVPR_2025_paper.html)：评什么：长视频中时间感知的全模态理解。核心思想：对齐视觉、音频、语言和事件证据，使长视频理解覆盖跨模态时序 grounding。
-- [VELOCITI](https://openaccess.thecvf.com/content/CVPR2025/html/Saravanan_VELOCITI_Benchmarking_Video-Language_Compositional_Reasoning_with_Strict_Entailment_CVPR_2025_paper.html)：评什么：带严格蕴含约束的视频-语言组合推理。核心思想：要求模型判断视频内容上的细粒度 entailment，而不是只在宽泛摘要之间选择。
 - [OmniMMI](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_OmniMMI_A_Comprehensive_Multi-modal_Interaction_Benchmark_in_Streaming_Video_Contexts_CVPR_2025_paper.html)：评什么：流式视频上下文中的多模态交互。核心思想：把在线交互和多模态输入纳入 benchmark，测试模型在视频证据持续到达时更新状态的能力。
-- [V-STaR](https://v-star-bench.github.io/#leaderboard)：评测视频空间-时间推理；核心思想是把对象运动、事件顺序和跨片段 grounding 作为独立压力点，补足 Video-MME/LongVideoBench 中时空推理维度的细分诊断。
+- [Q-Bench-Video](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Q-Bench-Video_Benchmark_the_Video_Quality_Understanding_of_LMMs_CVPR_2025_paper.html)：评什么：大多模态模型的视频质量理解。核心思想：把视频质量感知与质量推理做成显式 benchmark 目标，补充事件中心的视频问答。
+- [VELOCITI](https://openaccess.thecvf.com/content/CVPR2025/html/Saravanan_VELOCITI_Benchmarking_Video-Language_Compositional_Reasoning_with_Strict_Entailment_CVPR_2025_paper.html)：评什么：带严格蕴含约束的视频-语言组合推理。核心思想：要求模型判断视频内容上的细粒度 entailment，而不是只在宽泛摘要之间选择。
+- [VidHalluc](https://openaccess.thecvf.com/content/CVPR2025/html/Li_VidHalluc_Evaluating_Temporal_Hallucinations_in_Multimodal_Large_Language_Models_for_CVPR_2025_paper.html)（[项目页](https://people-robots.github.io/vidhalluc)）：评什么：视频 MLLM 的时序幻觉。核心思想：测试模型是否编造视频中并不存在的事件、动作或时间关系。
+- [Contra4: Evaluating Contrastive Cross-Modal Reasoning in Audio, Video, Image, and 3D](https://arxiv.org/abs/2506.01275)：评测音频、视频、图像和 3D 输入之间的对比式跨模态推理；核心思想：要求模型判断哪个模态包含回答问题所需的证据。
+- [Towards Scalable Video Anomaly Retrieval: A Synthetic Video-Text Benchmark](https://arxiv.org/abs/2506.01466)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
+- [EPFL-Smart-Kitchen-30: Densely annotated cooking dataset with 3D kinematics to challenge video and language models](https://arxiv.org/abs/2506.01608)：提供带 3D 运动学标注的密集烹饪视频，用细粒度人类活动理解挑战视频语言模型。
+- [VidEvent: A Large Dataset for Understanding Dynamic Evolution of Events in Videos](https://arxiv.org/abs/2506.02448)：通过事件脚本、层级、逻辑关系和预测任务评测视频中的动态事件理解，检验模型是否能跟踪视觉事件随时间演化，而不只是描述孤立片段。
+- [Technical Report for Ego4D Long-Term Action Anticipation Challenge 2025](https://arxiv.org/abs/2506.02550)：提供面向Video能力的基准、数据集或评测协议。
+- [MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos](https://arxiv.org/abs/2506.04141)：评测围绕视频证据的多模态深度推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [TextVidBench: A Benchmark for Long Video Scene Text Understanding](https://arxiv.org/abs/2506.04983)：为视频理解补充基准、数据集、指标或评测协议。
 - [VideoMathQA](https://arxiv.org/abs/2506.05349)（[项目页](https://mbzuai-oryx.github.io/VideoMathQA)；[开源代码](https://github.com/mbzuai-oryx/VideoMathQA)）：评测视频中的数学推理；核心思想是让模型跨视觉、音频、文本和长时序线索理解教学/解题过程，连接视频理解与数学推理能力。
+- [SIV-Bench: A Video Benchmark for Social Interaction Understanding and Reasoning](https://arxiv.org/abs/2506.05425)：SIV-Bench 评测视频中的社会互动理解与推理，补充 video reasoning benchmark。
 - [Morse-500](https://arxiv.org/abs/2506.05523)：评测更细粒度的视频推理与线索追踪；核心思想是以更高密度的推理点与更严格的答案约束做诊断。
 - [EASG-Bench](https://arxiv.org/abs/2506.05787)（[开源代码](https://github.com/fpv-iplab/EASG-bench)）：评测基于 egocentric action scene graph 的视频问答；核心思想是从带时空 grounding 的动态图生成 QA，重点检查 actor、action、object 关系与时序顺序理解。
+- [SVD: Spatial Video Dataset](https://arxiv.org/abs/2506.06037)：提供面向视频与空间理解的空间视频数据集。
+- [Movie Facts and Fibs (MF2): A Benchmark for Long Movie Understanding](https://arxiv.org/abs/2506.06275)：可作为视频理解的Bench候选；核心关注“A Benchmark for Long Movie Understanding”。
+- [ExAct: A Video-Language Benchmark for Expert Action Analysis](https://arxiv.org/abs/2506.06277)：专家级动作视频分析评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [Video-CoT](https://arxiv.org/abs/2506.08817)：评什么：带 chain-of-thought 标注的时空视频理解。核心思想：把细粒度视频问答与推理轨迹配对，使时间和空间证据整合能够被更显式地诊断。
 - [CausalVQA](https://arxiv.org/abs/2506.09943)：评测真实视频中的物理因果推理；核心思想是用 counterfactual、hypothetical、anticipation、planning 等问题类型，要求模型基于视觉证据预测事件后果而非套用语言先验。
+- [A Shortcut-aware Video-QA Benchmark for Physical Understanding via Minimal Video Pairs](https://arxiv.org/abs/2506.09987)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [TempVS](https://arxiv.org/abs/2506.10415)（[代码与数据](https://github.com/yjsong22/TempVS)）：评测图像序列中的 temporal grounding 与事件顺序推理。核心思想是结合事件关系推断、句子排序、图像排序和基础 grounding 检查，观察 MLLM 是否真正理解视觉事件的先后顺序。
+- [CogStream: Context-guided Streaming Video Question Answering](https://arxiv.org/abs/2506.10516)：评什么：面向流式视频问答，检验模型在时间推进中的上下文维护。
+- [VRBench: A Benchmark for Multi-Step Reasoning in Long Narrative Videos](https://arxiv.org/abs/2506.10857)：评测长叙事视频中的多步推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Benchmarking Trustworthiness in Multimodal LLMs for Video Understanding](https://arxiv.org/abs/2506.12336)：补充video方向的基准或评测套件，核心围绕《Benchmarking Trustworthiness in Multimodal LLMs for Video Understanding》。
 - [HiVU](https://arxiv.org/abs/2506.13589)（[开源代码](https://github.com/xzc-zju/AdaVideoRAG)）：评测长视频问答中的分层索引与证据检索；核心思想是把视频拆成多粒度索引层级，诊断模型是否能在超长视频里定位有效片段而非均匀抽帧。
+- [Leader360V](https://arxiv.org/abs/2506.14271)：提供大规模真实 360-degree video 数据集，支持多环境多任务学习。
+- [OpenEvents V1: Large-Scale Benchmark Dataset for Multimodal Event Grounding](https://arxiv.org/abs/2506.18372)：提供大规模多模态事件 grounding benchmark，用于定位并推理视频式多模态流中的事件证据。
+- [ShotBench](https://arxiv.org/abs/2506.21356)：评测视觉语言模型的电影镜头语言理解；核心思想是用专家标注的电影图像和视频问答测试构图、镜头运动、光线、剪辑等细粒度影视线索。
+- [VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation](https://arxiv.org/abs/2506.21556)：提供面向Video能力的基准、数据集或评测协议。
+- [VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](https://arxiv.org/abs/2506.21742)：可作为视频理解的Bench候选；核心关注“Visual Relational Reasoning in Videos Beyond Explicit Cues”。
+- [Can Video Large Multimodal Models Think Like Doubters-or Double-Down: A Study on Defeasible Video Entailment](https://arxiv.org/abs/2506.22385)：研究视频 LMM 在新增证据改变初始蕴含判断时，是会修正解释还是继续固守原结论。
+- [HumanVideo-MME: Benchmarking MLLMs for Human-Centric Video Understanding](https://arxiv.org/abs/2507.04909)：面向 MLLM 人类中心视频理解的 benchmark。核心思想是评估通用视频 benchmark 覆盖不足的人物动作、互动和社会信号。
+- [MUVOD: A Novel Multi-View Video Object Segm entation Dataset and a Benchmark for 3D Segmentation](https://arxiv.org/abs/2507.07519)：发布带标注的多视角视频数据，用于动态场景 4D 目标分割，把 NeRF 和 3D Gaussian Splatting 的分割评测从静态场景扩展到视频。
+- [OST-Bench: Evaluating the Capabilities of MLLMs in Online Spatio-temporal Scene Understanding](https://arxiv.org/abs/2507.07984)：评测 MLLM 在线时空场景理解的 benchmark；核心思想是检验模型能否随时间更新场景状态，而不是只依赖孤立帧回答。
+- [ProactiveVideoQA: A Comprehensive Benchmark Evaluating Proactive Interactions in Video Large Language Models](https://arxiv.org/abs/2507.09313)：ProactiveVideoQA 评测 video LLM 主动交互能力，补足流式/交互式视频评测。
+- [UGC-VideoCaptioner: An Omni UGC Video Detail Caption Model and New Benchmarks](https://arxiv.org/abs/2507.11336)：评测用户生成短视频的细粒度全模态 captioning；核心思想是对真实短视频进行音频和视觉均衡标注。
 - [AnyCap](https://arxiv.org/abs/2507.12841)：通过统一框架、数据集与 benchmark 评估可控 omni-modal captioning。核心思想：测试 captioning 系统能否依据视觉、音频与时间证据满足可控描述要求，而不只是生成通用 caption。
+- [Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding](https://arxiv.org/abs/2507.15028)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [ReasonVQA: A Multi-Hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](https://arxiv.org/abs/2507.16403)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Temporally-Constrained Video Reasoning Segmentation and Automated Benchmark Construction](https://arxiv.org/abs/2507.16718)：评测带时间约束的视频推理分割并自动构造 benchmark；核心思想是要求模型在时间约束下定位隐式描述的对象或事件。
 - [CausalStep](https://arxiv.org/abs/2507.16878)：评测显式逐步因果推理；核心思想是把视频切成因果关联单元并采用顺序作答协议，防止模型利用全局上下文捷径直接猜最终答案。
+- [VideoMind: An Omni-Modal Video Dataset with Intent Grounding for Deep-Cognitive Video Understanding](https://arxiv.org/abs/2507.18552)：评测 VideoMind: An Omni-Modal Video Dataset with Intent Grounding for Deep-Cognitive Video Understanding，为 Video 补充可复用的数据集、基准、指标或评测协议。
+- [VAGU and GtS](https://arxiv.org/abs/2507.21507)：以 LLM 辅助评测联合视频异常定位与理解，为视频语言推理补充异常定位维度。
+- [iSafetyBench: A Video-Language Benchmark for Safety in Industrial Environment](https://arxiv.org/abs/2508.00399)：可作为视频理解的Bench候选；核心关注“A Video-Language Benchmark for Safety in Industrial Environment”。
+- [HateClipSeg: A Segment-Level Annotated Dataset for Fine-Grained Hate Video Detection](https://arxiv.org/abs/2508.01712)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [SVC 2025](https://arxiv.org/abs/2508.04129)：定义面向视频及相关信号的 multimodal deception detection challenge。
+- [MOSEv2](https://arxiv.org/abs/2508.05630)：为 complex scenes 提供更具挑战性的 video object segmentation benchmark。
+- [Q-CLIP: Unleashing the Power of Vision-Language Models for Video Quality Assessment through Unified Cross-Modal Adaptation](https://arxiv.org/abs/2508.06092)：为视频理解补充基准、数据集、指标或评测协议。
+- [AURA: A Fine-Grained Benchmark and Decomposed Metric for Audio-Visual Reasoning](https://arxiv.org/abs/2508.07470)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [A Bilingual, Open World Video Text Dataset and Real-Time Video Text Spotting With Contrastive Learning](https://doi.org/10.1109/tcsvt.2024.3454331)：提出双语开放世界视频文本数据与实时 spotting 设置，用于评测富文本视频理解。
+- [Uncertainty-aware Action Decoupling Transformer for Action Anticipation](https://doi.org/10.1109/cvpr52733.2024.01764)：提供面向视频理解的基准、数据集、挑战任务或评测协议。
+- [SciOL and MuLMS-Img: Introducing A Large-Scale Multimodal Scientific Dataset and Models for Image-Text Tasks in the Scientific Domain](https://doi.org/10.1109/wacv57701.2024.00450)：提供面向Video能力的基准、数据集或评测协议。
+- [CALLM: Cascading Autoencoder and Large Language Model for Video Anomaly Detection](https://doi.org/10.1109/ipta62886.2024.10755883)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [Harnessing LLMs for VQA: A Prompted Benchmark with Animate/Inanimate Keywords](https://doi.org/10.1109/ictc62082.2024.10826596)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [Beyond Essentials: Nuanced and Diverse Text-to-video Retrieval](https://doi.org/10.1109/bigdata62323.2024.10825297)：补充视频理解的 Bench 条目，重点是《Beyond Essentials: Nuanced and Diverse Text-to-video Retrieval》。
+- [AIGC-VQA: A Holistic Perception Metric for AIGC Video Quality Assessment](https://doi.org/10.1109/cvprw63382.2024.00640)：AIGC-VQA: A Holistic Perception Metric for AIGC Video Quality Assessment 补充视频理解方向的基准、数据集、指标或评测协议。
+- [MVCD: Multi-Dimensional Video Compression Dataset](https://doi.org/10.1109/vcip63160.2024.10849883)：面向视频理解，补充评测基准、数据集、协议或指标。
+- [Exploring the Capability of Multimodal LLMs with Yonkoma Manga: The YManga Dataset and Its Challenging Tasks](https://doi.org/10.18653/v1/2024.findings-emnlp.506)：评测 Exploring the Capability of Multimodal LLMs with Yonkoma Manga: The YManga Dataset and Its Challenging Tasks，为 Video 补充可复用的数据集、基准、指标或评测协议。
+- [The Escalator Problem: Identifying Implicit Motion Blindness in AI for Accessibility](https://arxiv.org/abs/2508.07989)：面向多模态模型隐式运动盲区的可访问性 benchmark。核心思想是测试 escalator 等对盲人和低视力用户关键的运动线索失败。
 - [M3-Bench](https://arxiv.org/abs/2508.09736)：评测长视频智能体的跨模态长程记忆；核心思想是同时包含视觉、音频和文本记忆信号，要求模型在长期上下文中保持、检索和组合历史证据。
+- [VideoAVE: A Multi-Attribute Video-to-Text Attribute Value Extraction Dataset and Benchmark Models](https://arxiv.org/abs/2508.11801)：构造公开视频到文本的电商属性值抽取数据集，覆盖 14 个领域和 172 个属性，并提供产品视频信息结构化 benchmark model。
+- [OVG-HQ: Online Video Grounding with Hybrid-Modal Queries](https://arxiv.org/abs/2508.11903)：补充视频理解的 Bench 条目，重点是《OVG-HQ: Online Video Grounding with Hybrid-Modal Queries》。
+- [EGOILLUSION: Benchmarking Hallucinations in Egocentric Video Understanding](https://arxiv.org/abs/2508.12687)：评测 egocentric video understanding 中的 hallucination；核心思想是用人工标注的视听问题触发错误视觉或听觉判断。
+- [Beyond Simple Edits: Composed Video Retrieval with Dense Modifications](https://arxiv.org/abs/2508.14039)：用密集文本修改评测组合式视频检索，要求系统根据细粒度时间和动作变化检索目标视频。
+- [Video-LevelGauge: Investigating Contextual Positional Bias in Large Video Language Models](https://arxiv.org/abs/2508.19650)：Video-LevelGauge 评估长视频模型的上下文位置偏差，适合 Video Bench。
+- [VideoRewardBench: Comprehensive Evaluation of Multimodal Reward Models for Video Understanding](https://arxiv.org/abs/2509.00484)：VideoRewardBench 针对视频理解中的多模态奖励模型给出专门评测维度，适合补充 Video Bench。
+- [TempCore: Are Video QA Benchmarks Temporally Grounded? A Frame Selection Sensitivity Analysis and Benchmark](https://arxiv.org/abs/2509.01167)：视频 QA 的时序 grounding 审计与基准；核心思想是检查答案是否依赖正确帧，而不是静态视觉或语言先验。
+- [STROKEVISION-BENCH: A MULTIMODAL VIDEO AND 2D POSE BENCHMARK FOR TRACKING STROKE RECOVERY](https://arxiv.org/abs/2509.07994)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
+- [MESH - Understanding Videos Like Human: Measuring Hallucinations in Large Video Models](https://arxiv.org/abs/2509.08538)：评测大型视频模型中的 hallucination，适合视频理解可靠性 benchmark。
+- [Dr.V: A Hierarchical Perception-Temporal-Cognition Framework to Diagnose Video Hallucination by Fine-grained Spatial-Temporal Grounding](https://arxiv.org/abs/2509.11866)：可作为视频理解的Bench候选；核心关注“A Hierarchical Perception-Temporal-Cognition Framework to Diagnose Video Hallucination by Fine-grained Spatial-Temporal Grounding”。
+- [Cinéaste: A Fine-grained Contextual Movie Question Answering Benchmark](https://arxiv.org/abs/2509.14227)：细粒度情境化电影问答 benchmark。核心思想是诊断电影视频中的叙事和上下文推理，而不只是短片段识别。
+- [Frame Sampling Strategies Matter: A Benchmark for small vision language models](https://arxiv.org/abs/2509.14769)：在受控 frame-sampling 策略下评测小型 VLM；核心思想是暴露帧选择偏差，避免把视频 benchmark 分数和隐藏采样策略混在一起。
+- [Efficient Multimodal Dataset Distillation via Generative Models](https://arxiv.org/abs/2509.15472)：提供面向Video能力的基准、数据集或评测协议。
+- [VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](https://arxiv.org/abs/2509.16538)：为视频理解补充基准、数据集、指标或评测协议。
+- [VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction](https://arxiv.org/abs/2509.19002)：通过旅行视频行程重建评测地理空间与时间理解；核心思想是把视频 benchmark 推向长距离户外轨迹与路线重建。
+- [ConViS-Bench: Estimating Video Similarity Through Semantic Concepts](https://arxiv.org/abs/2509.19245)：补充video方向的基准或评测套件，核心围绕《ConViS-Bench: Estimating Video Similarity Through Semantic Concepts》。
+- [EgoInstruct: An Egocentric Video Dataset of Face-to-face Instructional Interactions with Multi-modal LLM Benchmarking](https://arxiv.org/abs/2509.22019)：补充视频理解的 Bench 条目，重点是《EgoInstruct: An Egocentric Video Dataset of Face-to-face Instructional Interactions with Multi-modal LLM Benchmarking》。
+- [NeMo: Needle in a Montage for Video-Language Understanding](https://arxiv.org/abs/2509.24563)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Can you SPLICE it together? A Human Curated Benchmark for Probing Visual Reasoning in VLMs](https://arxiv.org/abs/2509.24640)：评测教学视频中的事件级视觉推理；核心思想：在人工筛选的视频片段上测试时间、因果、空间、上下文和常识推理。
+- [v-HUB: A Benchmark for Video Humor Understanding from Vision and Sound](https://arxiv.org/abs/2509.25773)：基于视觉和声音的视频幽默理解 benchmark。核心思想是评估多模态幽默理解，而不只是字面事件识别。
+- [TimeScope: Towards Task-Oriented Temporal Grounding In Long Videos](https://arxiv.org/abs/2509.26360)：它围绕长视频、时间理解或视频问答构造评测，适合补充 video Bench。
 - [VRBench](https://openaccess.thecvf.com/content/ICCV2025/html/Yu_VRBench_A_Benchmark_for_Multi-Step_Reasoning_in_Long_Narrative_Videos_ICCV_2025_paper.html)：评什么：长叙事视频中的多步推理。核心思想：把长视频故事和显式推理步骤、时间戳配对，使时序证据链能被检查，而不是只看最终答案。
-Video reasoning（时序/因果/多跳推理）：
+- [Addressing the ID-Matching Challenge in Long Video Captioning](https://arxiv.org/abs/2510.06973)：补充面向视频理解或时序推理能力的基准、数据集、指标或评测协议。
+- [Few-Shot Adaptation Benchmark for Remote Sensing Vision-Language Models](https://arxiv.org/abs/2510.07135)：在十个遥感场景分类数据集上评测遥感视觉语言模型的 few-shot adaptation，更像遥感 VLM 迁移候选。
+- [VideoNorms: Benchmarking Cultural Awareness of Video Language Models](https://arxiv.org/abs/2510.08543)：用视频片段与社会文化规范配对评测 VideoLLM 的文化感知；核心思想是检查模型能否从视频证据中理解不同文化下的规范遵守与违反。
+- [SciVideoBench](https://arxiv.org/abs/2510.08559)：基于多学科科学实验视频构造科学视频推理题，联合考察领域知识、时空感知和逻辑推理。
+- [RO-Bench: Large-scale robustness evaluation of MLLMs with text-driven counterfactual videos](https://arxiv.org/abs/2510.08936)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [CFVBench: A Comprehensive Video Benchmark for Fine-grained Multimodal Retrieval-Augmented Generation](https://arxiv.org/abs/2510.09266)：补充video方向的基准或评测套件，核心围绕《CFVBench: A Comprehensive Video Benchmark for Fine-grained Multimodal Retrieval-Augmented Generation》。
 - [OmniVideoBench](https://arxiv.org/abs/2510.10689)（[项目页](https://omnivideobench.github.io/omnivideobench_home/)；[开源代码](https://github.com/NJU-LINK/OmniVideoBench)）：评测长视频全模态理解；核心思想是把视觉、音频、OCR 和 ASR 等证据放进同一评测协议，检查模型是否能在长视频中跨模态整合信息。
+- [LSVOS 2025 Challenge Report: Recent Advances in Complex Video Object Segmentation](https://arxiv.org/abs/2510.11063)：评测视频理解。核心思想：围绕论文中的任务、数据或协议（Recent Advances in Complex Video Object Segmentation）形成可复用比较基准。
+- [SVAG-Bench](https://arxiv.org/abs/2510.13016)：大规模评测多实例时空视频动作定位能力。
+- [MMLongCite: A Benchmark for Evaluating Fidelity of Long-Context Vision-Language Models](https://arxiv.org/abs/2510.13276)：评估长上下文视觉语言模型 fidelity 的 benchmark。核心思想是用 citation-style grounding 检查模型是否忠实使用扩展视觉上下文，而不是生成无依据答案。
+- [AVAR-Net](https://arxiv.org/abs/2510.13630)：发布音视频异常识别 benchmark dataset，并配套轻量多模态框架。
+- [ESTP-Bench / Eyes Wide Open](https://arxiv.org/abs/2510.14560)：评测主动式第一视角 streaming-video assistant。核心思想：检查 Video-LLM 能否在正确时机回答，同时保持同步感知、推理与效率。
+- [LongInsightBench: A Comprehensive Benchmark for Evaluating Omni-Modal Models on Human-Centric Long-Video Understanding](https://arxiv.org/abs/2510.17305)：评测 omni-modal model 的 human-centric long-video understanding；核心思想是在长视频中结合视觉、音频和文本证据理解人物、动作、视角和上下文。
+- [MT-Video-Bench](https://arxiv.org/abs/2510.17722)：在多轮对话中评估视频理解。核心思想：用精心构造的多轮视频对话检查感知 grounding、交互性、跨轮记忆和答案一致性，补足单轮视频 QA 的不足。
+- [IF-VidCap](https://arxiv.org/abs/2510.18726)：评估可控视频字幕生成中的指令遵循能力。核心思想：不再只看字幕是否描述充分，而是要求模型按用户指定约束生成字幕，并在 1,400 个样本上同时评分格式正确性和内容正确性。
+- [Is This Tracker On? A Benchmark Protocol for Dynamic Tracking](https://arxiv.org/abs/2510.19819)：以真实运动复杂度、遮挡和重识别失败分析来评测动态点跟踪能力。
+- [MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](https://arxiv.org/abs/2510.21406)：评测具有多层视觉对应关系的多模态未裁剪视频检索，将视频评估扩展到短裁剪片段之外。
+- [EventFormer: A Node-graph Hierarchical Attention Transformer for Action-centric Video Event Prediction](https://arxiv.org/abs/2510.21786)：定义 action-centric video event prediction 与结构化事件标注，评测视频模型能否预测语义上合理的后续事件，而不只是低层运动延续。
+- [MUStReason: A Benchmark for Diagnosing Pragmatic Reasoning in Video-LMs for Multimodal Sarcasm Detection](https://arxiv.org/abs/2510.23727)：它围绕长视频、时间理解或视频问答构造评测，适合补充 video Bench。
+- [Perception, Understanding and Reasoning, A Multimodal Benchmark for Video Fake News Detection](https://arxiv.org/abs/2510.24816)：按感知、理解和推理阶段评测多模态视频假新闻检测；核心思想：评价检测过程，而不只看最终真假标签。
+- [Hallucination Localization in Video Captioning](https://arxiv.org/abs/2510.25225)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [StreamingCoT](https://arxiv.org/abs/2510.25332)：评测 streaming VideoQA 中随时间演化的 multimodal chain-of-thought。核心思想：标注逐秒动态和 reasoning path，使答案能够随视频流展开而变化。
+- [EgoExo-Con: Exploring View-Invariant Video Temporal Understanding](https://arxiv.org/abs/2510.26113)：它围绕长视频、时间理解或视频问答构造评测，适合补充 video Bench。
+- [Which Way Does Time Flow? A Psychophysics-Grounded Evaluation for Vision-Language Models](https://arxiv.org/abs/2510.26241)：评测 VLM 能否判断短视频的时间箭头；核心思想是用心理物理学验证的正放/倒放片段测试超出物体识别的时间理解。
+- [MME-CoF](https://arxiv.org/abs/2510.26802)：评测视频模型的 zero-shot reasoning。核心思想是用 Chain-of-Frame 任务覆盖空间、几何、物理、时间和具身逻辑等维度，检验视频模型是否具备超出生成质量的推理能力。
+- [CueBench](https://arxiv.org/abs/2511.00613)：用 conditional 与 absolute anomaly events 评测真实世界上下文感知的视频异常理解。
+- [PunMemeCN: A Benchmark to Explore Vision-Language Models' Understanding of Chinese Pun Memes](https://doi.org/10.18653/v1/2025.emnlp-main.944)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [NOAH VideoLLM Hallucination](https://arxiv.org/abs/2511.06475)：评测 video large language models 中 narrative-prior-driven hallucination and omission。
+- [MVU-Eval](https://arxiv.org/abs/2511.07250)：面向多视频理解构造数千段视频和问答样本，同时覆盖基础感知与高阶推理任务。
+- [CAMP-VQA: Caption-Embedded Multimodal Perception for No-Reference Quality Assessment of Compressed Video](https://arxiv.org/abs/2511.07290)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
 - [CrossVid](https://arxiv.org/abs/2511.12263)：评测跨多个视频的对比、检索与聚合推理；核心思想是多视频证据组织与一致性推理，而非单视频问答。
+- [Reasoning Text-to-Video Retrieval via Digital Twin Video Representations and Large Language Models](https://arxiv.org/abs/2511.12371)：提出 reasoning text-to-video retrieval，评测隐式文本查询到视频检索的推理能力。
+- [Segment Anything Across Shots](https://arxiv.org/abs/2511.13715)：结合跨镜头视频分割方法与 benchmark，评测跨 shot change 的目标分割。
+- [Can World Simulators Reason? Gen-ViRe: A Generative Visual Reasoning Benchmark](https://arxiv.org/abs/2511.13853)：评测 world simulator 的生成式视觉推理；核心思想是测试逐帧视觉模拟能否支撑连续物理推理。
+- [OmniGround](https://arxiv.org/abs/2511.16937)：评什么：复杂真实场景中的视频时空 grounding。核心思想：使用覆盖 81 类对象的 3,475 个视频、复杂语言查询和 Forward-Backward-Refinement 标注，测试时间定位与细粒度对象 grounding。
+- [ViMix-14M: A Curated Multi-Source Video-Text Dataset with Long-Form, High-Quality Captions and Crawl-Free Access](https://arxiv.org/abs/2511.18382)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [ChineseVideoBench: Benchmarking Multi-modal Large Models for Chinese Video Question Answering](https://arxiv.org/abs/2511.18399)：评什么：中文视频问答基准，连接视频理解和中文多语言评测。
+- [DHAuDS: A Dynamic and Heterogeneous Audio Benchmark for Test-Time Adaptation](https://arxiv.org/abs/2511.18421)：为视频理解补充基准、数据集、指标或评测协议。
+- [EventBench: Towards Comprehensive Benchmarking of Event-based MLLMs](https://arxiv.org/abs/2511.18448)：EventBench 为 event-based MLLMs 提供统一 benchmark 与多任务指标。
+- [ORIGAMISPACE: Benchmarking Multimodal LLMs in Multi-Step Spatial Reasoning with Mathematical Constraints](https://arxiv.org/abs/2511.18450)：提供面向Video能力的基准、数据集或评测协议。
+- [CFG-Bench](https://arxiv.org/abs/2511.18685)（[项目页](https://cfg-bench.github.io/)）：评测面向具身场景的细粒度视频动作智能。核心思想是把 1,368 个视频与 19,562 个问题配对，覆盖 physical interaction、temporal-causal relation、intentional understanding 和 evaluative judgment，检查模型能否把视觉观察转成可行动知识，而不只是表面描述。
+- [FSU-QA](https://arxiv.org/abs/2511.18735)：评测 MLLM 与 world model 的视觉 foresight intelligence。核心思想是要求模型基于视觉证据预判并解释未来事件，同时衡量 world-model 预测能否为面向未来的 VQA 提供语义一致证据。
+- [Pistachio](https://arxiv.org/abs/2511.19474)：构建 synthetic、balanced、long-form 视频异常 benchmark，面向短监控片段之外的可控异常覆盖。
+- [CounterVQA](https://arxiv.org/abs/2511.19923)：通过分级难度评测视频 VLM 的反事实推理能力，重点考察模型能否推断未发生的替代结果和多跳因果链，而不只是识别已观察事件。
+- [WaymoQA: A Multi-View Visual Question Answering Dataset for Safety-Critical Reasoning in Autonomous Driving](https://arxiv.org/abs/2511.20022)：面向安全关键自动驾驶推理的多视角 VQA 数据集；核心思想是测试模型能否整合多路相机视角并推理驾驶场景安全，而不只是描述单张图像。
+- [AVFakeBench: A Comprehensive Audio-Video Forgery Detection Benchmark for AV-LMMs](https://arxiv.org/abs/2511.21251)：为 AV-LMM 定义音视频伪造检测基准。
+- [TAPVid-360](https://arxiv.org/abs/2511.21946)：评测从窄视场视频中追踪 360-degree 场景任意点的能力，补充视频点跟踪基准。
+- [CVBench: Benchmarking Cross-Video Synergies for Complex Multimodal Reasoning](https://arxiv.org/abs/2508.19542)：CVBench 评测 cross-video synergies 和复杂多模态推理，适合视频理解 benchmark。
+- [HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](https://arxiv.org/abs/2512.00885)：评测视频问答中的细粒度手物交互动态。
+- [IVCR-200K: A Large-Scale Multi-turn Dialogue Benchmark for Interactive Video Corpus Retrieval](https://arxiv.org/abs/2512.01312)：作为视频理解的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [ViRectify: A Challenging Benchmark for Video Reasoning Correction with Multimodal Large Language Models](https://arxiv.org/abs/2512.01424)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [PAI-Bench](https://arxiv.org/abs/2512.01989)：评估 video generation、conditional video generation 与 video understanding 中的 Physical AI 能力。核心思想：用真实世界案例和任务对齐指标检查模型是否保持物理合理性、预测能力与因果动态理解。
+- [Towards Unified Video Quality Assessment](https://arxiv.org/abs/2512.02224)：为视频理解补充基准、数据集、指标或评测协议。
+- [ViDiC](https://arxiv.org/abs/2512.03405)：评测 video difference captioning。核心思想是用 1,000 组视频对和 4,000 多个比较性 checklist item，分别评分 similarity 和 difference，覆盖主体、风格、背景、运镜、运动、地点和播放方式等维度。
+- [From Segments to Scenes: Temporal Understanding in Autonomous Driving via Vision-Language Model](https://arxiv.org/abs/2512.05277)：该工作面向自动驾驶视频的 temporal understanding benchmark，补充长视频时序理解评测。
+- [Know-Show: Benchmarking Video-Language Models on Spatio-Temporal Grounded Reasoning](https://arxiv.org/abs/2512.05513)：评测视频语言模型是否把动作推理 grounding 到视觉与时间证据。
+- [A Large-Scale Multimodal Dataset and Benchmarks for Human Activity Scene Understanding and Reasoning](https://arxiv.org/abs/2512.07136)：评测 A Large-Scale Multimodal Dataset and Benchmarks for Human Activity Scene Understanding and Reasoning，为 Video 补充可复用的数据集、基准、指标或评测协议。
+- [MeViS](https://arxiv.org/abs/2512.10945)：提供 referring motion expression video segmentation 数据集，强调按动作表达定位视频目标。
+- [The N-Body Problem](https://arxiv.org/abs/2512.11393)：评测模型如何从单人第一视角视频推断多人并行执行方案，要求处理时间约束、共享物体与物理可行的多人计划。
+- [JointAVBench: A Benchmark for Joint Audio-Visual Reasoning Evaluation](https://arxiv.org/abs/2512.12772)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [KFS-Bench: Comprehensive Evaluation of Key Frame Sampling in Long Video Understanding](https://arxiv.org/abs/2512.14017)：它围绕长视频、时间理解或视频问答构造评测，适合补充 video Bench。
+- [VICTOR: Dataset Copyright Auditing in Video Recognition Systems](https://arxiv.org/abs/2512.14439)：补充视频理解的 Bench 条目，重点是《VICTOR: Dataset Copyright Auditing in Video Recognition Systems》。
+- [HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](https://arxiv.org/abs/2512.14870)：补充video方向的基准或评测套件，核心围绕《HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering》。
+- [AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](https://arxiv.org/abs/2512.16250)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [LongShOTBench](https://arxiv.org/abs/2512.16978)（[项目页](https://mbzuai-oryx.github.io/LongShOT/)；[数据集](https://huggingface.co/datasets/MBZUAI/longshot-bench)；[开源代码](https://github.com/mbzuai-oryx/longshot)）：评测长视频中的 omni-modal reasoning 与 agentic tool use；核心思想是把视觉、语音和环境音证据、开放式问答、多轮对话和可解释评分 rubric 放进同一评测协议。
-
-
+- [Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection](https://arxiv.org/abs/2512.20086)：为视频理解补充基准、数据集、指标或评测协议。
+- [Beyond the Last Frame: Process-aware Evaluation for Generative Video Reasoning](https://arxiv.org/abs/2512.24952)：Beyond the Last Frame 针对生成式视频推理的过程化评估，补充只看最后帧的 Video Bench。
+- [MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](https://arxiv.org/abs/2601.02536)：基于电影 recap 视频的多模态开放问答基准；核心思想是评测超越短片段识别的叙事与时序理解能力。
+- [SOVABench: A Vehicle Surveillance Action Retrieval Benchmark for Multimodal Large Language Models](https://arxiv.org/abs/2601.04824)：可作为video understanding方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Perception Test 2025: Challenge Summary and a Unified VQA Extension](https://arxiv.org/abs/2601.06287)：评测Perception Test 挑战结果和统一 VQA 扩展下的多模态感知评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Video-MSR](https://arxiv.org/abs/2601.09430)：评测视频中的多跳空间推理；核心思想是围绕动态视觉证据测试约束定位、链式引用检索、路线规划和反事实物理推断。
+- [ViSIL: Unified Evaluation of Information Loss in Multimodal Video Captioning](https://arxiv.org/abs/2601.09851)：用明确任务、协议或数据集评测video understanding and temporal reasoning。
+- [Adaptive Multi-Stage Video Anomaly Reasoning](https://arxiv.org/abs/2601.10165)： 提出面向多阶段视频异常推理的 benchmark dataset 与方法。
+- [MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning](https://arxiv.org/abs/2601.10649)：文化与多语言长视频推理基准；核心思想是测试长视频模型能否跨语言处理有文化背景的证据。
+- [STEC: A Reference-Free Spatio-Temporal Entropy Coverage Metric for Evaluating Sampled Video Frames](https://arxiv.org/abs/2601.13974)：提出无参考时空熵覆盖指标，评估抽样帧是否保留有代表性的空间与时间视频内容。
+- [LiViBench](https://arxiv.org/abs/2601.15016)：评测内容：全模态交互式直播视频理解。核心思想：在视频、音频、语音和实时评论上覆盖感知、推理和直播特有任务，并用 human-in-the-loop 标注构建交互视频场景。
+- [FineVAU](https://arxiv.org/abs/2601.17258)：提出面向 fine-grained video anomaly understanding 的 human-aligned benchmark。
+- [PhoStream: Benchmarking Real-World Streaming for Omnimodal Assistants in Mobile Scenarios](https://arxiv.org/abs/2601.22575)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Surveillance Facial Image Quality Assessment: A Multi-dimensional Dataset and Lightweight Model](https://arxiv.org/abs/2602.07403)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [Demo-ICL-Bench](https://arxiv.org/abs/2602.08439)：评测视频 in-context learning 能力；核心思想是让模型先从字幕或视频 demonstrations 中学习程序性知识，再回答目标 instructional video 的问题。
+- [Beyond Closed-Pool Video Retrieval: A Benchmark and Agent Framework for Real-World Video Search and Moment Localization](https://arxiv.org/abs/2602.10159)：该 benchmark 将视频检索从 closed-pool 扩展到真实视频搜索和 moment localization。
+- [VideoSTF: Stress-Testing Output Repetition in Video Large Language Models](https://arxiv.org/abs/2602.10639)：压力测试 VideoLLM 的输出重复问题。核心思想是评估普通视频理解准确率 benchmark 难以捕捉的严重重复生成循环。
+- [TwiFF (Think With Future Frames): A Large-Scale Dataset for Dynamic Visual Reasoning](https://arxiv.org/abs/2602.10675)：评什么：带 future frames 的 dynamic visual reasoning。核心思想：把 visual chain-of-thought 从静态图像扩展到需要时间证据的指令、预测和镜头运动场景。
+- [Stress Tests REVEAL Fragile Temporal and Visual Grounding in Video-Language Models](https://arxiv.org/abs/2602.11244)：REVEAL 作为 temporal/visual grounding stress test，适合 Video Bench 的稳健性诊断。
+- [KPM-Bench](https://arxiv.org/abs/2602.17768)：面向细粒度视频理解的 kinematic parsing motion benchmark。核心思想：结合肢体级运动描述、motion-focused QA 和 hallucination 评测，检查模型能否精确描述人体运动而不是输出泛化动作标签。
+- [Rodent-Bench](https://arxiv.org/abs/2602.18540)：评测MLLM 对啮齿动物行为视频的标注能力；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [TPRU: Advancing Temporal and Procedural Understanding in Large Multimodal Models](https://arxiv.org/abs/2602.18884)：面向大多模态模型时序与过程理解的基准；核心思想是测试模型是否能追踪步骤顺序、状态变化和过程依赖。
+- [HOCA-Bench: Beyond Semantic Perception to Predictive World Modeling via Hegelian Ontological-Causal Anomalies](https://arxiv.org/abs/2602.19571)：通过 ontological 和 causal 物理异常评测 Video-LLM 的预测性世界建模；核心思想是测试模型是否理解什么不应存在或发生。
+- [A Very Big Video Reasoning Suite](https://arxiv.org/abs/2602.20159)：评测超越视觉质量的视频推理能力；核心思想是测试视觉环境中的时空连续性、交互和因果关系。
+- [RIVER: A Real-Time Interaction Benchmark for Video LLMs](https://arxiv.org/abs/2603.03985)：RIVER 是实时交互视频理解 benchmark，补充离线 Video Bench。
+- [VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding](https://arxiv.org/abs/2603.07071)：VirtueBench 评测长视频理解中的不确定性与可信性，适合 Video Bench。
+- [MA-EgoQA: Question Answering over Egocentric Videos from Multiple Embodied Agents](https://arxiv.org/abs/2603.09827)：可作为视频理解的Bench候选；核心关注“Question Answering over Egocentric Videos from Multiple Embodied Agents”。
+- [EgoPointVQA](https://arxiv.org/abs/2603.12533)：评测手势 grounding 的第一视角视频问答；核心思想是要求模型从 egocentric video 中推断指向意图，并用时空 grounding 回答指示性问题。
+- [VCBench: A Streaming Counting Benchmark for Spatial-Temporal State Maintenance in Long Videos](https://arxiv.org/abs/2603.12703)：用长视频流式计数检验模型是否能在播放过程中持续维护时空世界状态。
+- [Geometry-Guided Camera Motion Understanding in VideoLLMs](https://arxiv.org/abs/2603.13119)：面向视频理解的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Geometry-Guided Camera Motion Understanding in VideoLLMs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [GenState-AI: State-Aware Dataset for Text-to-Video Retrieval on AI-Generated Videos](https://arxiv.org/abs/2603.14426)：面向 AI-generated videos 构造状态转移型 text-to-video retrieval 基准，用时间 hard negatives 和语义 hard negatives 诊断模型是否真正 grounding 到关键终态证据。
+- [LongVidSearch](https://arxiv.org/abs/2603.14468)：评测长视频中的 agentic multi-hop evidence retrieval planning；核心思想是要求 agent 通过标准化证据访问工具收集必要的非连续片段，并同时统计答案准确率和工具调用成本。
+- [A Skill-augmented Agentic Framework and Benchmark for Multi-Video Understanding](https://arxiv.org/abs/2603.14733)：该工作同时提供 skill-augmented framework 与 multi-video understanding benchmark。
+- [Face-to-Face: A Video Dataset for Multi-Person Interaction Modeling](https://arxiv.org/abs/2603.14794)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
+- [IRIS: A Real-World Benchmark for Inverse Recovery and Identification of Physical Dynamic Systems from Monocular Video](https://arxiv.org/abs/2603.16432)：用 220 段真实 4K、60 fps 视频和实测物理参数评测从单目视频反演物理系统参数与识别控制方程。
+- [SocialOmni](https://arxiv.org/abs/2603.16859)：评测 omni-modal 模型的音视频社交交互能力；核心思想是同时测试说话人区分、打断时机控制和自然打断生成，在时间与上下文约束下考察交互能力，而不只看静态视频理解。
+- [Narrative Aligned Long Form Video Question Answering](https://arxiv.org/abs/2603.19481)：NA-VQA 评测长视频叙事推理和跨事件因果链，适合 Video Bench。
+- [CoVR-R:Reason-Aware Composed Video Retrieval](https://arxiv.org/abs/2603.20190)：评测组合视频检索中由文本修改隐含的因果和时序后效推理。
+- [FeedBench](https://arxiv.org/abs/2603.20354)：评什么：评测结构敏感的短视频理解。核心思想：用 timeline-grounded labels 表示 hook、剪辑理由、张力、叙事结构、视觉包装和传播线索，检查视频模型是否理解互联网短视频如何随时间组织注意力。
+- [MVPBench: A Multi-Video Perception Evaluation Benchmark for Multi-Modal Video Understanding](https://arxiv.org/abs/2603.22756)：面向多模态视频理解的多视频感知基准；核心思想是要求模型跨多个视频比较和汇总，而不是只理解单一视频流。
+- [UW-VOS](https://arxiv.org/abs/2603.24006)：发布大规模水下视频目标分割数据集。
 - [GameplayQA](https://arxiv.org/abs/2603.24329)（[项目页](https://hats-ict.github.io/gameplayqa/)；[数据集](https://huggingface.co/datasets/wangyz1999/GameplayQA)；[标注软件](https://github.com/wangyz1999/sync-video-label)）：评测面向 3D 虚拟 agent 的决策密集、POV 同步多视频理解；核心思想是用多个第一视角游戏视频流和 Self/Other/World 标注检查时间 grounding、跨视频指代和 agent 角色归因。
+- [Anomaly-Led Captioning Benchmark](https://doi.org/10.1109/TMM.2025.3607837)：提出 anomaly-led caption 生成模型与 benchmark，把视频异常检测和自然语言异常事件描述连接起来。
+- [PSCS-I](https://doi.org/10.1109/ACCESS.2025.3636727)：提供 photorealistic synthetic indoor-crowd simulations，用于 panic and violence behavior analysis。
+- [VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset](https://doi.org/10.21437/interspeech.2025-1713)：提供基于视频字幕的音视频深度伪造检测数据集。
+- [AVQACL: A Novel Benchmark for Audio-Visual Question Answering Continual Learning](https://doi.org/10.1109/cvpr52734.2025.00309)：补充一个面向视频理解的基准条目，关注video understanding or audio-visual evaluation contribution。
+- [Knowledge Distillation Based Lightweight Satellite Video Motion Target Detection Algorithm](https://doi.org/10.1109/igarss55030.2025.11243809)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [Borrowing Eyes for the Blind Spot: Overcoming Data Scarcity in Malicious Video Detection Via Cross-Domain Retrieval Augmentation](https://doi.org/10.1109/iccv51701.2025.02110)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [Dual-PST: Dual-Branch SpatioTemporal-Planar Network for Video Forgery Detection](https://doi.org/10.1109/icassp49660.2025.10890154)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [A Novel Multi-Scale Spectral-Guided Graph Attention Network for DeepFake Video Detection](https://doi.org/10.1109/isdfs65363.2025.11011972)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [QualiVision: Multi-Modal Video Quality Assessment with Quality-Aware Fusion and Discriminative Learning Strategies](https://doi.org/10.1109/iccvw69036.2025.00364)：补充视频理解方向的基准、数据集、指标或评测协议。
+- [Assessing the Effectiveness of Immersive VR in Dragon Dance Learning: A Comparative Study with Image and Video Methods](https://doi.org/10.1109/icvr66534.2025.11172561)：面向视频理解，补充评测任务、数据集或基准协议。
+- [GAI-Enabled Task-Driven Semantic Communication for Surveillance Video](https://doi.org/10.1109/tcomm.2025.3649653)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
+- [Virtual Pass-Through: Evaluating 3D Gaussian Splatting as an Alternative to Conventional Video Pass-Through in Static Environments](https://doi.org/10.1109/ismar67309.2025.00131)：提供用于衡量视频理解能力的数据集、基准、指标或评测协议。
+- [Role-Playing in Vision-Language Models: A Comprehensive Evaluation of Image Description Performance](https://doi.org/10.1109/ijcnn64981.2025.11228995)：评测 role-playing prompt 下的图像描述表现，更像图像 VLM 评测迁移候选而非视频 Bench。
+- [Event-Stream VAD Benchmark](https://arxiv.org/abs/2603.24991)：提出基于事件流的视频异常检测 baseline 与 benchmark datasets，把 VAD 评测扩展到非 RGB 帧输入。
+- [Cinematic-aware shot sequence ordering: Benchmark datasets, Kendall tau loss, and cinematology embedding](https://doi.org/10.1016/j.neucom.2025.132034)：为视频理解补充基准、数据集、指标或评测协议。
+- [Role of Visual Saliency in Video Quality Assessments](https://doi.org/10.1109/access.2025.3578043)：为视频理解补充基准、数据集、指标或评测协议。
+- [PerceptionComp](https://arxiv.org/abs/2603.26653)：评测复杂的感知中心视频推理；核心思想是要求模型整合多个时间上分散的视觉证据和组合约束，而不是从单个显著片段直接作答。
+- [A Benchmarking Methodology to Assess Open-Source Video Large Language Models in Automatic Captioning of News Videos](https://arxiv.org/abs/2603.27662)：提出开源视频大模型新闻视频字幕评测方法，补充视频语言评估。
+- [Video-Oasis](https://arxiv.org/abs/2603.29616)：评测视频理解 benchmark 本身的可靠性；核心思想是识别不依赖视觉或时序信息也能作答的样本，并提炼更真实的时空理解挑战。
+- [EC-Bench](https://arxiv.org/abs/2603.29943)：评测超长视频中的枚举与计数。核心思想是要求模型识别应计数对象并在稀疏事件中保持时间一致性，而不是只输出最终数字。
+- [Omni-MMSI](https://arxiv.org/abs/2604.00267)：评测内容：基于原始音频、视觉和语音的身份归因式社交互动理解。核心思想：要求模型判断谁在说话、哪些社交线索属于哪位参与者，以及多人互动中的指代如何解析。
+- [CL-VISTA: Benchmarking Continual Learning in Video Large Language Models](https://arxiv.org/abs/2604.00677)：基准化 Video-LLM 在非平稳视频数据下的持续学习；核心思想是评测适应和遗忘，而不只是静态任务准确率。
 - [VideoZeroBench](https://arxiv.org/abs/2604.01569)：评什么：带时空证据校验的长视频问答。核心思想：不只看答案是否正确，还检查支撑答案的时间区间与空间框位置，暴露“答案看似合理但没有真实 grounding”的视频推理缺口。
+- [ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](https://arxiv.org/abs/2604.03819)：构建视频活动篡改定位基准，补充视频理解与取证评测。
+- [VSAS-Bench: Real-Time Evaluation of Visual Streaming Assistant Models](https://arxiv.org/abs/2604.07634)：评测实时视觉流助手模型；核心思想是不只看离线视频 QA 准确率，还评估主动性、延迟和在线状态更新。
+- [Open-Ended Video Game Glitch Detection with Agentic Reasoning and Temporal Grounding](https://arxiv.org/abs/2604.07818)：用明确任务、协议或数据集评测video understanding and temporal reasoning。
+- [SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations](https://arxiv.org/abs/2604.07990)：可作为视频理解方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [VLM Action-Quality Evaluation](https://arxiv.org/abs/2604.08294)：实证评测 VLM 是否能判断 action quality，为视频模型补充动作质量理解评测轴。
+- [EgoEverything: A Benchmark for Human Behavior Inspired Long Context Egocentric Video Understanding in AR Environment](https://arxiv.org/abs/2604.08342)：用明确任务、协议或数据集评测video understanding and temporal reasoning。
+- [CrashSight: A Phase-Aware, Infrastructure-Centric Video Benchmark for Traffic Crash Scene Understanding and Reasoning](https://arxiv.org/abs/2604.08457)：面向交通事故场景理解与推理的阶段感知、基础设施视角视频 benchmark；核心思想是评估模型能否从车辆和路侧视角理解事故阶段。
+- [From Frames to Events: Rethinking Evaluation in Human-Centric Video Anomaly Detection](https://arxiv.org/abs/2604.09327)：补充面向视频理解与时序推理的基准、数据集、评测协议或测试环境。
+- [LVSum: A Benchmark for Timestamp-Aware Long Video Summarization](https://arxiv.org/abs/2604.10024)：用 13 个领域的人工时间戳标注评测长视频摘要，同时衡量语义覆盖与时间对齐保真度。
+- [OmniScript: Towards Audio-Visual Script Generation for Long-Form Cinematic Video](https://arxiv.org/abs/2604.11102)：提出长篇电影视频到脚本生成评测，使用人工标注脚本和层级化时序评估覆盖动作、对白、表情与音频线索。
+- [EgoEsportsQA: An Egocentric Video Benchmark for Perception and Reasoning in Esports](https://arxiv.org/abs/2604.12320)：评测电竞环境中的高速第一视角视频感知与推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [RefereeBench: Are Video MLLMs Ready to be Multi-Sport Referees](https://arxiv.org/abs/2604.15736)：在 11 个运动项目、925 段视频和 6,475 个问答对上评测基于规则的裁判决策，覆盖犯规存在性、类型、严重程度、责任和处罚。
+- [Spatiotemporal Sycophancy: Negation-Based Gaslighting in Video Large Language Models](https://arxiv.org/abs/2604.17873)：评测否定式 video gaslighting 下的时空迎合；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Robust Test-Time Video-Text Retrieval](https://arxiv.org/abs/2604.20851)：在 query shifts 下评测并适配 video-text retrieval。
+- [Grounding Video Reasoning in Physical Signals](https://arxiv.org/abs/2604.21873)：基准化 what、when、where 三维 grounded physical video understanding；核心思想是要求物理事件的时间和空间定位。
+- [EmoTrans: A Benchmark for Understanding, Reasoning, and Predicting Emotion Transitions in Multimodal LLMs](https://arxiv.org/abs/2604.23348)：用情绪转移视频评测 multimodal LLM，覆盖情绪变化检测、状态识别、转移推理和下一情绪预测。
+- [PushupBench: Your VLM is not good at counting pushups](https://arxiv.org/abs/2604.23407)：用明确任务、协议或数据集评测video understanding and temporal reasoning。
+- [OmniVTG](https://arxiv.org/abs/2604.25276)：提供大规模开放世界 video temporal grounding 数据集及配套训练范式。
+- [DualFact+: A Multimodal Fact Verification Framework for Procedural Video Understanding](https://arxiv.org/abs/2604.25584)：补充面向视频理解与时序推理的基准、数据集、评测协议或测试环境。
+- [SpecVQA: A Benchmark for Spectral Understanding and Visual Question Answering in Scientific Images](https://arxiv.org/abs/2604.28039)：在七类科学光谱图像上评测专业 spectral understanding 与 VQA，更适合作为科学图像理解迁移候选。
 - [ZeroVideo](https://github.com/ByteDance-Seed/Seed2.0)：Seed2.0 model card 报告的高难真实视频评测；目前未确认有独立公开版本。核心思想：跟踪模型厂商用于压力测试超长、真实视频推理的内部或 model-card-only 视频集，即使当前只有聚合结果公开。
+- [VISTA: Video Interaction Spatio-Temporal Analysis Benchmark](https://arxiv.org/abs/2605.01391)：评测多实体之间自由形式、多动作的视频交互时空分析；适合补充单动作视频 QA 之外的能力。
+- [Retrieving Any Relevant Moments](https://arxiv.org/abs/2605.02623)：为通用视频 moment retrieval 提供 benchmark 与模型覆盖。
+- [AffectSeek: Agentic Affective Understanding in Long Videos under Vague User Queries](https://arxiv.org/abs/2605.05640)：在模糊用户查询下评测长视频中的情感片段定位、情绪预测和证据化解释。
+- [EgoPro-Bench: Benchmarking Personalized Proactive Interaction in Egocentric Video Streams](https://arxiv.org/abs/2605.07299)：类型：benchmark/评测协议。核心价值：为 1.6.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [SYNCR](https://arxiv.org/abs/2605.08412)：评测带 synthetic grounding 的跨视频推理；核心思想是用可控合成线索检查模型是否能在多个视频之间建立对应关系、定位证据并完成组合推断。
+- [StreamingBench](https://doi.org/10.1109/ICASSP55912.2026.11463959)：评测 MLLM 的流式视频理解能力。核心思想是衡量模型能否在线处理持续变化的视频输入，而不是依赖完整片段或离线摘要。
+- [Real-World Supervised Open-Set VAD Benchmark](https://doi.org/10.1109/tmm.2026.3660108)：评测真实世界监督式视频异常检测中的开放集异常识别，强调已知类别之外的异常泛化。
+- [Short Video Anomaly Detection Benchmark](https://doi.org/10.1016/j.patcog.2026.113739)：提供短视频异常检测 benchmark，并给出 temporal-guided multi-feature fusion 弱监督基线。
+- [The Microsoft-Northwestern-WITNESS Benchmark for Deepfake Detection](https://doi.org/10.1109/mis.2026.3668398)：提供面向 deepfake 检测的 WITNESS benchmark，补充视频真实性与生成媒体检测评测线索。
+- [Multimodal fake news video explanation: Dataset, model and evaluation](https://doi.org/10.1016/j.ipm.2026.104769)：提供用于虚假新闻视频解释的数据集、模型和评测设置，把视频 misinformation 评测从二分类检测扩展到可解释分析。
+- [VideoAutoArena](https://videoautoarena.github.io/)：评测开放式视频分析模型的自动竞技场式比较；核心思想是通过用户模拟、模型对战和自动裁判补足固定选择题 benchmark 的真实用户任务覆盖不足。
+- [V-STaR](https://v-star-bench.github.io/#leaderboard)：评测视频空间-时间推理；核心思想是把对象运动、事件顺序和跨片段 grounding 作为独立压力点，补足 Video-MME/LongVideoBench 中时空推理维度的细分诊断。
+Video reasoning（时序/因果/多跳推理）：
+- [Tracking the Truth: Object-Centric Spatio-Temporal Monitoring for Video Large Language Models](https://arxiv.org/abs/2605.08974)：评测 Video-LLM 的对象中心时空监控；核心思想是跨时间跟踪身份、状态和关系，而不是只看最终答案。
+- [ProCauEval](https://arxiv.org/abs/2605.09422)：评什么：通过 perturbation 评测大型多模态模型的视频 causal discovery。核心思想：系统操纵视觉和文本证据配置，区分模型看到了什么和它在视频因果推理中实际使用了什么。
 - [EgoMemReason](https://arxiv.org/abs/2605.09874)（[项目页](https://egomemreason.github.io/)；[数据集](https://huggingface.co/datasets/Ted412/EgoMemReason)；[开源代码](https://github.com/Ziyang412/EgoMemReason)）：评测长时第一视角视频的记忆驱动推理；核心思想是从 LongVideoBench 引用链扩展到生活记录式 egocentric video，要求模型保留、检索并组合长期个人视觉证据。
 - [TOC-Bench](https://arxiv.org/abs/2605.09904)：评测视频大模型的 temporal object consistency；核心思想是追踪同一对象跨时间片段的身份、属性和状态一致性，避免模型只凭局部帧做静态识别。
+- [FLARE: Full-Modality Long-Video Audiovisual Retrieval Benchmark with User-Simulated Queries](https://arxiv.org/abs/2605.10228)：评测结合完整模态证据和用户模拟查询的长视频音视频检索；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [RealStreamEval / EvoStreaming](https://arxiv.org/abs/2605.10343)：评测流式视频助手在逐帧多轮观察中的响应时机，并惩罚不必要回答。核心思想：让模型在观看过程中自行决定何时回答，从而把视觉理解能力与实时视频助手所需的交互策略区分开。
+- [BARISTA](https://arxiv.org/abs/2605.12074)：面向组合式视觉理解的多任务 egocentric video benchmark。核心思想：基于咖啡制作流程的逐帧场景图，派生 grounding、hand-object interaction、activity、relation 与 temporal QA 等任务。
+- [ViMU: Benchmarking Video Metaphorical Understanding](https://arxiv.org/abs/2605.14607)：基准化视频隐喻理解；核心思想是评测直接可见内容之外的隐含意义和创作者意图。
+- [GRASP: Learning to Ground Social Reasoning in Multi-Person Non-Verbal Interactions](https://arxiv.org/abs/2605.15764)：用 gaze 和 gesture grounding 评测多人非语言视频中的社会推理；核心思想是把高层社会问答连接到细粒度互动线索。
+- [PairAnom](https://doi.org/10.5220/0014210600004084)：提出 pairwise fine-grained multi-class video anomaly detection benchmark dataset。
+- [MHBench Motion Hallucination](https://doi.org/10.1609/aaai.v39i4.32463)：评估 VideoLLMs 的 motion hallucination，补充视频模型幻觉可靠性评测。
+- [Procedure-Aware Action Quality Assessment: Datasets and Performance Evaluation](https://doi.org/10.1007/s11263-024-02146-z)：提供过程感知动作质量评估的数据集与性能评测。
+- [BEATSCORE: Beat-Synchronous Contrastive Alignment and Event-Centric Grading for Long-Term Sports Assessment](https://doi.org/10.3390/s26072157)：用节拍同步对比对齐和事件中心评分评估长期体育表现，强调时间对齐的运动评估。
+- [Unlocking Creator-AI Synergy: Challenges, Requirements, and Design Opportunities in AI-Powered Short-Form Video Production](https://doi.org/10.1145/3613904.3642476)：围绕 Video 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [A multimodal biomechanics dataset with synchronized kinematics and internal tissue motions during reaching](https://doi.org/10.1038/s41597-026-07019-3)：提供面向Video能力的基准、数据集或评测协议。
+- [Local-Deepfake-CN: A Local DeepFake Dataset of Chinese Real Audio-Video](https://doi.org/10.1145/3746278.3759390)：补充视频理解的 Bench 条目，重点是《Local-Deepfake-CN: A Local DeepFake Dataset of Chinese Real Audio-Video》。
+- [Adaptive multipath selection mechanism for IoT video transmission: performance evaluation and deployment](https://doi.org/10.1007/s11042-026-21179-9)：评估 IoT 视频传输中的自适应多路径选择和部署表现，更像网络系统迁移候选而非视频理解。
+- [Training and Evaluation Methods for Vision-Language Model Towards Improved General Visual Inspection](https://doi.org/10.2493/jjspe.91.1150)：讨论面向通用视觉检测的 VLM 训练与评估，除非以视频序列为核心，否则更像制造业视觉检测迁移候选。
+- [Towards Emotion Analysis in Short-form Videos: A Large-Scale Dataset and Baseline](https://doi.org/10.1145/3731715.3733453)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Multimodal Video Summarization Using Machine Learning: A Comprehensive Benchmark of Feature Selection and Classifier Performance](https://doi.org/10.3390/a18090572)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Pioneering Explainable Video Fact-Checking with a New Dataset and Multi-role Multimodal Model Approach](https://doi.org/10.1609/aaai.v39i27.35048)：补充可解释视频事实核查的数据集和多模态模型基线。
+- [BasketVision: Benchmarking MLLMs' Grasp of Complex Dynamic Systems](https://doi.org/10.1145/3784833.3784850)：评测 MLLM 理解复杂动态系统的基准；核心思想是用类似体育比赛的时序交互测试跟踪、因果和事件状态推理。
+- [Pause and Think](https://arxiv.org/abs/2606.00616)：评测 video-grounded assistive action suggestion，强调 grounded reasoning、temporal consistency 与 context-aware planning，用视频证据判断何时以及如何提供帮助。
+- [MBench](https://arxiv.org/abs/2606.00793)：从 entity、environment 与 causal consistency 三类维度、12 个子能力评测 video world model 的记忆能力，使长程视频状态跟踪可以被单独度量，而不只看逐帧生成质量。

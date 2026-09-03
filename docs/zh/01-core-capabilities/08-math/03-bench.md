@@ -7,54 +7,248 @@
 - [GSM8K](https://arxiv.org/abs/2110.14168)（[开源代码](https://github.com/openai/grade-school-math)）：评什么：多步小学应用题的文本数学推理；核心思想：用高频、可复现的小学题型刻画基础算术与多步推理链条，是非形式化数学的常用起点。
 - [ProofNet](https://arxiv.org/abs/2302.12433)（[开源代码](https://github.com/zhangir-azerbayev/ProofNet)）：评什么：本科数学题的形式化证明；核心思想：以较系统化的课程级题目覆盖更多证明套路，常用于“草拟到形式化”的联合评测。
 - [TheoremQA](https://arxiv.org/abs/2305.12524)（[开源代码](https://github.com/wenhuchen/TheoremQA)）：评什么：定理驱动的数学与科学问答；核心思想：要求模型识别可用定理并完成符号或数值推理，是从 word problem 走向 theorem-grounded reasoning 的重要桥接集。
-- [MathVista](https://arxiv.org/abs/2310.02255)（[开源代码](https://github.com/lupantech/MathVista)）：评什么：图表/几何/视觉题面下的数学推理；核心思想：将图文信息整合进数学解题链条，强调视觉解析与符号推理耦合。
+- [MathVista](https://arxiv.org/abs/2310.02255)（[榜单](https://mathvista.github.io/#leaderboard)；[开源代码](https://github.com/lupantech/MathVista)）：评什么：图表/几何/视觉题面下的数学推理；核心思想：将图文信息整合进数学解题链条，强调视觉解析与符号推理耦合。
+- [CHAMP: A Competition-level Dataset for Fine-Grained Analyses of LLMs' Mathematical Reasoning Capabilities](https://arxiv.org/abs/2401.06961)：用细粒度题型与解题技能标注评测竞赛级数学推理，使诊断不只停留在总体准确率。
+- [Evaluating LLMs' Mathematical and Coding Competency through Ontology-guided Interventions](https://arxiv.org/abs/2401.09395)：通过 ontology-guided perturbations 和干预测试模型在概念受控变化下是否保持数学与代码能力。
 - AIME 2024（[AIME I 数据集](https://huggingface.co/datasets/MathArena/aime_2024_I)；[AIME II 数据集](https://huggingface.co/datasets/MathArena/aime_2024_II)）：评什么：AIME 竞赛数学短答案题；核心思想：在保持竞赛题高区分度的同时，相对更早年份常用于与既有工作横向对齐（但更易受训练数据覆盖影响）。
-- [OlympiadBench](https://arxiv.org/abs/2402.14008)（[开源代码](https://github.com/OpenBMB/OlympiadBench)）：评什么：竞赛级数学与物理题（含中英双语、图题与证明题）；核心思想：更贴近奥赛场景的复杂推理，覆盖多语言与多模态输入，适合作为“更真实、更难”的综合压力测试。
-- [MathVision](https://arxiv.org/abs/2402.14804)：评什么：视觉数学题（更强调图形、表格或视觉呈现的数学信息）；核心思想：以视觉输入驱动数学推理，常要求 OCR、结构化解析与可执行计算协作。
-- [MathVerse](https://arxiv.org/abs/2403.14624)（[开源代码](https://github.com/ZrrSkywalker/MathVerse)）：评什么：图表、几何图和题干组合的视觉数学；核心思想：通过文本、图像和去题干等对照拆解“看懂图”与“会做题”。
-- [LiveBench Mathematics](https://arxiv.org/abs/2406.19314)（[开源代码](https://github.com/LiveBench/LiveBench)）：评什么：动态更新综合榜单中的数学分项。核心思想：用持续刷新题目降低静态数学集污染，并把数学能力放在同一模型综合评测框架里横向比较。
+- [Q-Bench<inline-formula><tex-math notation="LaTeX">$^+$</tex-math><alternatives><mml:math><mml:msup><mml:mrow/><mml:mo>+</mml:mo></mml:msup></mml:math><inline-graphic xlink:href="zhang-ieq1-3445770.gif"/></alternatives></inline-formula>: A Benchmark for Multi-Modal Foundation Models on Low-Level Visi](https://arxiv.org/abs/2402.07116)：面向多模态基础模型的低层视觉感知基准；除非用于图表、图形或视觉符号解析，否则与 Math 页关联较弱。
+- [OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset](https://arxiv.org/abs/2402.10176)：提供 180 万条由 GSM8K 和 MATH 派生的数学指令微调样本及 code-aided rationales，主要服务数学推理轨迹训练与受控评测。
+- [FormulaReasoning: A Dataset for Formula-Based Numerical Reasoning](https://arxiv.org/abs/2402.12692)：评测基于公式的数值推理，要求模型选择、实例化并计算相关公式，而不是只解普通应用题。
+- [OlympiadBench](https://arxiv.org/abs/2402.14008)（[榜单](https://github.com/OpenBMB/OlympiadBench#leaderboard)；[开源代码](https://github.com/OpenBMB/OlympiadBench)）：评什么：竞赛级数学与物理题（含中英双语、图题与证明题）；核心思想：更贴近奥赛场景的复杂推理，覆盖多语言与多模态输入，适合作为“更真实、更难”的综合压力测试。
+- [ConceptMath: A Bilingual Concept-wise Benchmark for Measuring Mathematical Reasoning of Large Language Models](https://arxiv.org/abs/2402.14660)：按数学概念在中英双语环境中测量推理能力，帮助区分概念理解失败、语言因素和题型因素。
+- [MathVision](https://arxiv.org/abs/2402.14804)（[榜单](https://mathllm.github.io/mathvision/)；[开源代码](https://github.com/mathllm/MATH-V)）：评什么：视觉数学题（更强调图形、表格或视觉呈现的数学信息）；核心思想：以视觉输入驱动数学推理，常要求 OCR、结构化解析与可执行计算协作。
+- [GSM-Plus: A Comprehensive Benchmark for Evaluating the Robustness of LLMs as Mathematical Problem Solvers](https://arxiv.org/abs/2402.19255)：补充面向数学推理或过程监督能力的基准、数据集、指标或评测协议。
+- [Reasoning Abilities of Large Language Models: In-Depth Analysis on the Abstraction and Reasoning Corpus](https://arxiv.org/abs/2403.11793)：用 ARC 任务分析抽象模式推理，是邻近的符号推理探针，而非直接数学基准。
+- [MathVerse](https://arxiv.org/abs/2403.14624)（[榜单](https://mathverse-cuhk.github.io/#leaderboard)；[开源代码](https://github.com/ZrrSkywalker/MathVerse)）：评什么：图表、几何图和题干组合的视觉数学；核心思想：通过文本、图像和去题干等对照拆解“看懂图”与“会做题”。
+- [Can LLMs Master Math? Investigating Large Language Models on Math Stack Exchange](https://arxiv.org/abs/2404.00344)：基于 Math Stack Exchange 问题构建评测，测试模型处理社区来源、非教材式数学问题与解释的能力。
+- [MARIO Eval: Evaluate Your Math LLM with your Math LLM-A mathematical dataset evaluation toolkit](https://arxiv.org/abs/2404.13925)：提供用数学 LLM 构造、筛选和评估数学数据集的工具链，重点是 evaluator workflow 而非单一静态题集。
+- [LogicBench: Towards Systematic Evaluation of Logical Reasoning Ability of Large Language Models](https://arxiv.org/abs/2404.15522)：以多类任务和难度层级系统评估逻辑推理，可作为数学密集评测中的邻近符号推理基准。
+- [MathChat: Benchmarking Mathematical Reasoning and Instruction Following in Multi-Turn Interactions](https://arxiv.org/abs/2405.19444)：评测多轮对话中的数学推理，要求模型跟随不断变化的指令并维持解题状态。
+- [Evaluating Mathematical Reasoning of Large Language Models: A Focus on Error Identification and Correction](https://arxiv.org/abs/2406.00755)：评测模型能否识别并修正数学解题轨迹中的错误，把过程诊断和最终答案求解区分开。
+- [LLMs Are Not Intelligent Thinkers: Introducing Mathematical Topic Tree Benchmark for Comprehensive Evaluation of LLMs](https://arxiv.org/abs/2406.05194)：把数学主题组织成树状基准，使模型表现能按概念层级和主题覆盖进行诊断。
+- [Distributional MIPLIB: a Multi-Domain Library for Advancing ML-Guided MILP Methods](https://arxiv.org/abs/2406.06954)：提供多领域 mixed-integer linear programming 实例库，用于评测 ML-guided optimization 方法。
+- [Reliable Evaluation and Benchmarks for Statement Autoformalization](https://arxiv.org/abs/2406.07222)：研究 statement autoformalization 的可靠评测，强调 checker-compatible 目标和自然语言到形式数学的基准设计。
+- [GraphEval36K: Benchmarking Coding and Reasoning Capabilities of Large Language Models on Graph Datasets](https://arxiv.org/abs/2406.16176)：用 3.6 万个任务评测图推理和图算法编码能力；它通过组合结构邻近数学推理，但不是核心数学基准。
+- [MathOdyssey: Benchmarking Mathematical Problem-Solving Skills in Large Language Models Using Odyssey Math Data](https://arxiv.org/abs/2406.18321)：提供用于评估Math的任务或数据集，为 Math / Bench 补充具体测量目标。
+- [LiveBench Mathematics](https://arxiv.org/abs/2406.19314)（[榜单](https://livebench.ai/)；[开源代码](https://github.com/LiveBench/LiveBench)）：评什么：动态更新综合榜单中的数学分项。核心思想：用持续刷新题目降低静态数学集污染，并把数学能力放在同一模型综合评测框架里横向比较。
+- [Is Your Model Really A Good Math Reasoner? Evaluating Mathematical Reasoning with Checklist](https://arxiv.org/abs/2407.08733)：提供用于评估Math的任务或数据集，为 Math / Bench 补充具体测量目标。
 - [PutnamBench / Putnam-200](https://arxiv.org/abs/2407.11214)（[开源代码](https://github.com/trishullab/PutnamBench)）：评什么：Putnam 竞赛的形式化证明与可验证求解；核心思想：将 `Lean + Python + 搜索工具` 明确为多轮代理运行时，基准本身更像“proof assistant in the loop”的 benchmark-side harness 定义。
+- [CMMaTH: A Chinese Multi-modal Math Skill Evaluation Benchmark for Foundation Models](https://arxiv.org/abs/2407.12023)：补充数学推理方向的基准、数据集、挑战、指标或评测协议。
+- [Steamroller Problems: An Evaluation of LLM Reasoning Capability with Automated Theorem Prover Strategies](https://arxiv.org/abs/2407.20244)：用自动定理证明器策略问题测试 LLM 是否能跟随经典 steamroller-style 任务中的困难逻辑后果。
+- [MathFish: Evaluating Language Model Math Reasoning via Grounding in Educational Curricula](https://arxiv.org/abs/2408.04226)：把数学评测锚定到教育课程体系，使错误能按年级主题和前置技能分析。
+- [InfinityMath: A Scalable Instruction Tuning Dataset in Programmatic Mathematical Reasoning](https://arxiv.org/abs/2408.07089)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充数学方向的基准覆盖。
+- [MathScape: Evaluating MLLMs in multimodal Math Scenarios through a Hierarchical Benchmark](https://arxiv.org/abs/2408.07543)：用层级场景 taxonomy 评测多模态数学，区分视觉感知、符号解释和数学求解。
+- [Tangram: A Challenging Benchmark for Geometric Element Recognizing](https://arxiv.org/abs/2408.13854)：测试 tangram-style 图形中的几何元素识别，强调下游推理前的视觉几何解析。
+- [CMM-Math: A Chinese Multimodal Math Dataset To Evaluate and Enhance the Mathematics Reasoning of Large Multimodal Models](https://arxiv.org/abs/2409.02834)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充数学方向的基准覆盖。
+- [Scheherazade: Evaluating Chain-of-Thought Math Reasoning in LLMs with Chain-of-Problems](https://arxiv.org/abs/2410.00151)：把相关数学题串成 chain-of-problems 序列，评测 chain-of-thought 推理能否跨依赖步骤迁移。
+- [Evaluating Robustness of Reward Models for Mathematical Reasoning](https://arxiv.org/abs/2410.01729)：对数学 reward models 做解题扰动鲁棒性测试，暴露 verifier preference 何时不能跟踪正确推理。
 - [GSM-Symbolic](https://arxiv.org/abs/2410.05229)（[开源代码](https://github.com/apple/ml-gsm-symbolic)）：评什么：GSM8K 风格题目的符号化变量替换与难度扰动；核心思想：用可控变体检验模型是否依赖表面模式而非稳健数学推理。
-- [Omni-MATH](https://arxiv.org/abs/2410.07985)（[项目页](https://omni-math.github.io/)）：评什么：奥赛级数学题，带更细粒度领域与难度分层；核心思想：替代趋于饱和的传统集合，强调子领域诊断与可解释的难度分层。
+- [Fine-grained Hallucination Detection and Mitigation in Language Model Mathematical Reasoning](https://arxiv.org/abs/2410.06304)：补充数学能力的评测资源或协议。
+- [Omni-MATH](https://arxiv.org/abs/2410.07985)（[项目页与结果](https://omni-math.github.io/)；[开源代码](https://github.com/KbsdJames/Omni-MATH)）：评什么：奥赛级数学题，带更细粒度领域与难度分层；核心思想：替代趋于饱和的传统集合，强调子领域诊断与可解释的难度分层。
+- [FormalAlign: Automated Alignment Evaluation for Autoformalization](https://arxiv.org/abs/2410.10135)：补充数学能力的评测资源或协议。
+- [Concept-Reversed Winograd Schema Challenge: Evaluating and Improving Robust Reasoning in Large Language Models via Abstraction](https://arxiv.org/abs/2410.12040)：Concept-Reversed Winograd Schema Challenge: Evaluating and Improving Robust Reasoning in Large Language Models via Ab... 补充数学与符号推理方向的基准、数据集、指标或评测协议。
+- [When Not to Answer: Evaluating Prompts on GPT Models for Effective Abstention in Unanswerable Math Word Problems](https://arxiv.org/abs/2410.13029)：评测模型在不可回答数学应用题上的 abstention 能力，检查其是否识别缺失或矛盾信息而非强行求解。
+- [A Formal Framework for Assessing and Mitigating Emergent Security Risks in Generative AI Models: Bridging Theory and Dynamic Risk Mitigation](https://arxiv.org/abs/2410.13897)：提出生成式 AI 安全风险的形式化评估框架；其评测目标是安全风险而非数学推理，Math 页适配度较弱。
+- [Polymath: A Challenging Multi-modal Mathematical Reasoning Benchmark](https://arxiv.org/abs/2410.14702)（[榜单](https://polymathbenchmark.github.io/#leaderboard)）：用高难图文题评测多模态数学推理，并提供公开 leaderboard。
+- [STEM-POM: Evaluating Language Models Math-Symbol Reasoning in Document Parsing](https://arxiv.org/abs/2411.00387)：评测 STEM 文档解析中的数学符号推理，关注模型能否从文档中恢复符号结构。
 - [DynaMath](https://arxiv.org/abs/2411.00836)：评什么：更动态/多样的视觉数学推理；核心思想：通过更丰富的题面变化与组合形式，减少模板化作答并强调鲁棒泛化。
 - [FrontierMath / Epoch Benchmarking Hub](https://arxiv.org/abs/2411.04872)（[官方基准页](https://epoch.ai/benchmarks/frontiermath)）：评什么：专家编写、可自动验证的前沿难题；核心思想：强强调抗污染与可验证接口，用“少量但极难且可验”的题目刻画推理上限。
+- [Evaluating GPT-4 at Grading Handwritten Solutions in Math Exams](https://arxiv.org/abs/2411.05231)：提出或分析面向mathematical or symbolic reasoning的基准、数据集、指标或评测协议。
+- [UTMath: Math Evaluation with Unit Test via Reasoning-to-Coding Thoughts](https://arxiv.org/abs/2411.07240)：把数学推理转成 code-oriented thoughts 和单元测试，通过可执行检查来评分答案。
+- [A Lean Dataset for International Math Olympiad: Small Steps towards Writing Math Proofs for Hard Problems](https://arxiv.org/abs/2411.18872)：提供 IMO 风格证明题的 Lean 形式化，强调以小步可验证方式逼近高难形式证明。
+- [U-MATH: A University-Level Benchmark for Evaluating Mathematical Skills in LLMs](https://arxiv.org/abs/2412.03205)（[榜单](https://huggingface.co/spaces/toloka/u-math-leaderboard)）：通过基准、数据集或评测协议评估数学能力。
+- [ProcessBench: Identifying Process Errors in Mathematical Reasoning](https://arxiv.org/abs/2412.06559)：通过任务、评测协议或诊断设置评测 Math 能力，适合作为 Bench 条目。
 - [HARP](https://arxiv.org/abs/2412.08819)：评什么：更强调高难数学推理的抗污染评测。核心思想：通过更严格的数据时效与题目构成，降低“背题命中”对结果的影响。
+- [Fine-Tuning Large Language Models for Solving Math Word Problems: A Case Study with LLaMA-3](https://doi.org/10.1109/ispcem64498.2024.00024)：实证评估 LLaMA-3 在数学应用题上的微调效果，更像小规模 case-study benchmark 而非通用评测套件。
+- [What is the True Performance of Large Multimodal Models in Visual Context-Based Mathematical Reasoning? An Analysis of Multiple Datasets and Future Research Directions](https://doi.org/10.1109/ictc62082.2024.10827294)：跨多个 visual-context mathematical reasoning 数据集重新评测大多模态模型，并分析结果为何随数据集设计变化。
+- [Can Vision-Language Models Evaluate Handwritten Math?](https://arxiv.org/abs/2501.07244)：类型：benchmark/评测协议。核心价值：为 1.8.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [UGMathBench](https://arxiv.org/abs/2501.13766)：评测本科层级数学推理，并提供动态题目变体；核心思想是覆盖 16 个学科和多种答案类型，用随机化版本和 effective accuracy 衡量稳健推理而非记忆答案。
+- [Do Large Language Models Truly Understand Geometric Structures?](https://arxiv.org/abs/2501.13773)：评测 LLM 是否理解几何结构；核心思想是把几何关系识别从最终答案中分离出来，减少碰巧答对带来的误判。
+- [Leveraging Online Olympiad-Level Math Problems for LLMs Training and Contamination-Resistant Evaluation](https://arxiv.org/abs/2501.14275)：利用线上奥赛级数学题扩大数据规模并降低高难数学评测的污染风险。
 - [The Karp Dataset](https://arxiv.org/abs/2501.14705)：评什么：围绕 NP 完全性归约的详细证明进行数学推理评测。核心思想：把数学评测从数值应用题推进到理论计算机科学证明构造，覆盖从本科练习到论文归约的不同难度。
+- [DrawEduMath: Evaluating Vision Language Models with Expert-Annotated Students' Hand-Drawn Math Images](https://arxiv.org/abs/2501.14877)：DrawEduMath 评测学生手写数学图像上的 VLM 能力，是自然图像化数学推理的清晰 benchmark。
+- [From Informal to Formal - Incorporating and Evaluating LLMs on Natural Language Requirements to Verifiable Formal Proofs](https://arxiv.org/abs/2501.16207)：把形式化验证拆成子任务，评测自然语言需求到可验证形式证明的转换。
 - [AIME 2025](https://huggingface.co/datasets/MathArena/aime_2025)：评什么：AIME 竞赛数学短答案题（每年 I/II 各 15 题）；核心思想：高难、短题面、强区分度，已成为推理模型报告中的高频标尺之一。
 - [HMMT Feb 2025](https://huggingface.co/datasets/MathArena/hmmt_feb_2025)（[官方档案](https://www.hmmt.org/www/archive/2025/feb/)）：评什么：HMMT 二月赛的竞赛数学题；核心思想：与 AIME 互补，题型与难度分布不同，适合提供更高区分度与更接近团队赛/综合题风格的压力测试。
+- [MATH-Perturb: Benchmarking LLMs' Math Reasoning Abilities against Hard Perturbations](https://arxiv.org/abs/2502.06453)：在保持推理结构的同时扰动数学题，检验模型是否超越记忆题型。
+- [Mathematical Reasoning in Large Language Models: Assessing Logical and Arithmetic Errors across Wide Numerical Ranges](https://arxiv.org/abs/2502.08680)：提供可复用评测目标、排行榜或测量协议。
 - [MathConstruct](https://arxiv.org/abs/2502.10197)：评什么：构造性证明与构造型数学问题；核心思想：把“给出满足条件的对象/构造”作为主要压力点，补充只要求最终数值或选择答案的数学评测。
 - [NumericBench](https://arxiv.org/abs/2502.11075)：评什么：数字识别、算术、大小比较、数值检索、数值摘要与数值逻辑等基础 numeracy 能力。核心思想：暴露结构化数学 benchmark 高分可能掩盖的底层数值理解缺陷。
+- [Autoformalization in the Wild: Assessing LLMs on Real-World Mathematical Definitions](https://arxiv.org/abs/2502.12065)：Autoformalization in the Wild 评测真实数学定义 autoformalization，属于形式化数学 benchmark。
+- [A Combinatorial Identities Benchmark for Theorem Proving via Automated Theorem Generation](https://arxiv.org/abs/2502.17840)：评测数学推理与定理证明。核心思想：围绕论文中的任务、数据或协议（A Combinatorial Identities Benchmark for Theorem Proving via Automated Theorem Generation）形成可复用比较基准。
+- [MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors](https://arxiv.org/abs/2502.18940)：评测 LLM 数学 tutor 的开放式教学能力；核心思想是评估教学行为，而不是只看最终数学答案。
+- [Mv-Math: Evaluating Multimodal Math Reasoning in Multi-Visual Contexts](https://arxiv.org/abs/2502.20808)：类型：benchmark/评测协议。核心价值：为 1.8.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [MiniF2F in Rocq: Automatic Translation Between Proof Assistants - A Case Study](https://arxiv.org/abs/2503.04763)：评什么：把 miniF2F 转成 Rocq，支持跨 proof assistant 评测。
+- [VisNumBench: Evaluating Number Sense of Multimodal Large Language Models](https://arxiv.org/abs/2503.14939)：多模态模型视觉数感评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Beyond Final Answers: Evaluating Large Language Models for Math Tutoring](https://arxiv.org/abs/2503.16460)：评测 LLM 超越最终答案的数学辅导能力；核心思想是衡量解释、反馈和教学质量，而不是只看答案正确性。
 - [OlymMATH](https://arxiv.org/abs/2503.21380)：评什么：奥赛风格高难数学任务。核心思想：用更接近竞赛真实难度分布的题目刻画模型在高难数学推理上的上限。
+- [USAMO 2025 Proof Evaluation](https://arxiv.org/abs/2503.21934)：评测 2025 USA Math Olympiad 上的完整解答推理。核心思想：通过专家人工批改证明轨迹，暴露只看最终答案的数学 benchmark 难以发现的证明缺陷。
 - [BeyondAIME](https://huggingface.co/datasets/ByteDance-Seed/BeyondAIME)：评什么：高于 AIME 难度的竞赛数学补充集；核心思想：当 `AIME` 接近饱和时用于拉开模型差距，强调更高难与更强推理深度。
+- [Brains vs. Bytes: Evaluating LLM Proficiency in Olympiad Mathematics](https://arxiv.org/abs/2504.01995)：面向奥数推理严谨性的评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Explain with Visual Keypoints Like a Real Mentor! A Benchmark for Multimodal Solution Explanation](https://arxiv.org/abs/2504.03197)：该 benchmark 评测带 visual keypoints 的 multimodal solution explanation，补充数学解释与视觉证据维度。
+- [Benchmarking Convolutional Neural Network and Graph Neural Network based Surrogate Models on a Real-World Car External Aerodynamics Dataset](https://arxiv.org/abs/2504.06699)：评测汽车空气动力学仿真的 surrogate models；该条更像工程机器学习数据集，偏离 LLM 数学推理轴。
+- [GeoSense: Evaluating Identification and Application of Geometric Principles in Multimodal Reasoning](https://arxiv.org/abs/2504.12597)：评测多模态推理中的几何原则识别与应用。核心思想是测试模型能否先把视觉几何映射到正确数学原则，再进行求解。
+- [Evaluating Intermediate Reasoning of Code-Assisted Large Language Models for Mathematics](https://arxiv.org/abs/2504.17665)：它提供数学、形式化证明或多模态数学评测，适合补充 math Bench。
 - [PolyMath](https://arxiv.org/abs/2504.18428)（[开源代码](https://github.com/QwenLM/PolyMath)，[数据集](https://hf.co/datasets/Qwen/PolyMath)）：评什么：18 种语言、4 个难度层级下的数学推理。核心思想：以数学作为主任务轴，同时显式测量多语言迁移、语言一致性失败和随难度变化的退化。
+- [Benchmarking Multimodal Mathematical Reasoning with Explicit Visual Dependency](https://arxiv.org/abs/2504.18589)：显式视觉依赖的多模态数学推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [APE-Bench: Evaluating Automated Proof Engineering for Formal Math Libraries](https://arxiv.org/abs/2504.19110)：评测数学推理与定理证明。核心思想：围绕论文中的任务、数据或协议（Evaluating Automated Proof Engineering for Formal Math Libraries）形成可复用比较基准。
+- [BLADE: Benchmark suite for LLM-driven Automated Design and Evolution of iterative optimisation heuristics](https://arxiv.org/abs/2504.20183)：提出 BLADE，评估 LLM 自动设计和演化优化启发式算法的能力。
 - [ProverBench](https://arxiv.org/abs/2504.21801)（[开源代码](https://github.com/deepseek-ai/DeepSeek-Prover-V2)）：评什么：Lean 4 形式化数学证明，包含 325 个形式化问题和部分 2024-2025 AIME 题；核心思想：补充 miniF2F/PutnamBench 之外的可验证 formal proving 压力测试，观察自然语言推理到形式证明的差距。
 - [MathArenaApex](https://matharena.ai/apex/)（[数据集](https://huggingface.co/datasets/MathArena/apex_2025)）：评什么：从多项竞赛中筛出的“更难题”集合；核心思想：用“难题聚合”获得更稳定的区分度，便于做 test-time scaling 或多次采样的对比。
 - [MathArenaApex（shortlist）](https://huggingface.co/datasets/MathArena/apex-shortlist)：评什么：更小、更难的难题子集；核心思想：用于快速迭代评测或高成本推理设置下的对比。
 - [MathArena Kangaroo（MathKangaroo）](https://matharena.ai/kangaroo/)（[数据集](https://huggingface.co/datasets/MathArena/kangaroo_2025)）：评什么：基于 Kangaroo 竞赛的数学题（常为图文或多选格式）；核心思想：用相对更大众化、覆盖面更广的竞赛题型测试模型在“易中难混合”分布下的稳健性。
+- [Are Multimodal LLMs Robust Against Adversarial Perturbations? RoMMath: A Systematic Evaluation on Multimodal Math Reasoning](https://aclanthology.org/2025.naacl-long.582/)：系统评测多模态大模型在数学推理任务中面对对抗扰动时的鲁棒性。
 - [FormalMATH](https://arxiv.org/abs/2505.02735)：评什么：大模型的形式化数学推理能力；核心思想：把自然语言数学题转入 proof assistant 可验证环境，专门测形式化陈述、证明搜索与验证闭环。
+- [CombiBench: Benchmarking LLM Capability for Combinatorial Mathematics](https://arxiv.org/abs/2505.03171)：组合数学推理能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Beyond Theorem Proving: Formulation, Framework and Benchmark for Formal Problem-Solving](https://arxiv.org/abs/2505.04528)：该工作把 formal problem-solving 从定理证明扩展为可验证任务和 benchmark，适合 Mathematics Bench。
 - [DeepMath-Creative](https://arxiv.org/abs/2505.08744)：评什么：大语言模型的数学创造力。核心思想：测试模型能否产生非常规构造和创造性解题思路，而不是只会解标准数学题。
+- [OntoURL: A Benchmark for Evaluating Large Language Models on Symbolic Ontological Understanding, Reasoning and Learning](https://arxiv.org/abs/2505.11031)：评测 LLM 的 symbolic ontological understanding、reasoning 与 learning，更像邻近的形式符号基准，而非直接竞赛数学题集。
 - [HARDMath2](https://arxiv.org/abs/2505.11774)（[开源代码](https://github.com/JamesRoggeveen/hardmath2_eval)，[数据集](https://huggingface.co/datasets/JVRoggeveen/HARDMath2)）：评什么：带大量近似方法的科学与工程应用数学题。核心思想：用渐近分析、WKB 方法、边界层、非线性 PDE 等研究生课程主题覆盖并非以精确闭式解为核心的数学能力。
 - [RealMath](https://arxiv.org/abs/2505.12575)：评什么：来自数学论文和数学论坛的研究级数学任务。核心思想：把可验证研究问题、论坛讨论和持续刷新机制结合起来，降低静态竞赛题污染，并更直接测试模型理解真实数学研究材料的能力。
-- [MathArena](https://arxiv.org/abs/2505.23281)（[开源代码](https://github.com/eth-sri/matharena)）：评什么：近期竞赛题上的抗污染评测与持续更新；核心思想：将“发布时间”与“评测时点”纳入协议，用更接近真实发布节奏的题目缓解污染。
+- [Ineq-Comp](https://arxiv.org/abs/2505.12680)：评什么：不等式自动定理证明中的组合推理。核心思想：把基础不等式系统变换成多步组合版本，测试 Lean prover 是否能识别并组合人类直觉中的证明结构。
+- [Towards Spoken Mathematical Reasoning: Benchmarking Speech-based Models over Multi-faceted Math Problems](https://arxiv.org/abs/2505.15000)：面向复杂数学问题的语音数学推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [MIRB](https://arxiv.org/abs/2505.15585)：评什么：数学信息检索。核心思想：在 12 个数据集上统一语义陈述检索、数学问答检索、premise 检索和公式检索，测试检索系统是否能处理数学语义与符号表达。
+- [SMART](https://arxiv.org/abs/2505.16646)：一个基于 Polya 解题理论的多维数学 benchmark，将数学问题解决拆成语义理解、数学推理、算术计算和反思修正四个维度，并用 All-Pass Score 衡量完整过程成功率。
+- [ConstructiveBench / Enumerate-Conjecture-Prove](https://arxiv.org/abs/2505.18492)：评什么：数学竞赛中的答案构造题。核心思想：用 3,640 道形式化构造题数据集，配合 ECP 神经符号流程，让 LLM 枚举候选、归纳猜想，并在 Lean 中验证构造。
+- [AI4Math: A Native Spanish Benchmark for University-Level Mathematical Reasoning in Large Language Models](https://arxiv.org/abs/2505.18978)：原生西班牙语大学数学推理 benchmark。
+- [TabularMath: Understanding Math Reasoning over Tables with Large Language Models](https://arxiv.org/abs/2505.19563)：评估大语言模型在表格上下文中的数学推理能力，为数学能力测试补充结构化表格场景。
+- [MathArena](https://arxiv.org/abs/2505.23281)（[榜单](https://matharena.ai/?view=problem)；[开源代码](https://github.com/eth-sri/matharena)）：评什么：近期竞赛题上的抗污染评测与持续更新；核心思想：将“发布时间”与“评测时点”纳入协议，用更接近真实发布节奏的题目缓解污染。
+- [Can LLMs Reason Abstractly Over Math Word Problems Without CoT? Disentangling Abstract Formulation From Arithmetic Computation](https://arxiv.org/abs/2505.23701)：区分数学文字题中的抽象建模与算术计算。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [ASyMOB](https://arxiv.org/abs/2505.23851)：评测代数符号数学操作。核心思想是用大规模符号挑战测试积分、微分方程、代数化简和基于扰动的泛化，暴露模型对记忆模式而非符号理解的依赖。
+- [Are Your Generated Instances Truly Useful? GenBench-MILP: A Benchmark Suite for MILP Instance Generation](https://arxiv.org/abs/2505.24779)：评测生成的 mixed-integer linear programming 实例是否对下游 MILP 算法测试有用，而不只检查语法有效。
+- [STORM-BORN: A Challenging Mathematical Derivations Dataset Curated via a Human-in-the-Loop Multi-Agent Framework](https://arxiv.org/abs/2506.01531)：高难数学推导数据集。核心思想：通过人在回路的多 agent 策划生成更难、更可靠推理链的推导题。
+- [FinChain: A Symbolic Benchmark for Verifiable Chain-of-Thought Financial Reasoning](https://arxiv.org/abs/2506.02515)：评测可验证的金融 chain-of-thought 推理；核心思想是要求带透明中间步骤的多步符号金融推理。
 - [VideoMathQA](https://arxiv.org/abs/2506.05349)（[项目页](https://mbzuai-oryx.github.io/VideoMathQA)；[开源代码](https://github.com/mbzuai-oryx/VideoMathQA)）：评什么：视频中的多模态数学推理。核心思想：把讲解视频、视觉题面、音频和文本线索组织成数学问答，检验模型是否能从动态教学/解题过程里抽取公式、概念和推理步骤。
+- [MATP-BENCH: Can MLLM Be a Good Automated Theorem Prover for Multimodal Problems?](https://arxiv.org/abs/2506.06034)：类型：benchmark/评测协议。核心价值：为 1.8.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs](https://arxiv.org/abs/2506.06727)：LMM 中基于图形的数学推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [Mathematical Proof as a Litmus Test](https://arxiv.org/abs/2506.17114)：用数学证明任务揭示高级推理模型的失败模式。核心思想是强调证明构造与验证，使模型不只按最终答案正确率接受数学评测。
 - [ProcessBench](https://aclanthology.org/2025.acl-long.50/)：评什么：数学推理过程中的错误定位。核心思想：评分模型能否找出解题轨迹中的第一个错误步骤，用步骤级推理可靠性补足只看最终答案的数学评测。
+- [BenNumEval: A Benchmark to Assess LLMs' Numerical Reasoning Capabilities in Bengali](https://doi.org/10.18653/v1/2025.findings-acl.915)：评测孟加拉语数值推理；核心思想是把数学与数值推理评测扩展到英语中心分布之外。
 - [ReliableMath](https://arxiv.org/abs/2507.03133)：评什么：覆盖可解与不可解情形的可靠数学推理。核心思想：检验模型在题目条件不可能成立或超出能力时，能否避免编造答案。
 - [LLMThinkBench](https://arxiv.org/abs/2507.04023)：评什么：基础数学推理中的准确率与效率权衡。核心思想：用动态生成的基础数学任务和 overthinking score 诊断推理模型是否消耗过多 token 却没有获得准确率收益。
+- [CriticLeanBench](https://arxiv.org/abs/2507.06181)：评测 Lean formalization 的语义忠实度判断；核心思想是让模型区分正确与错误的 autoformalization，把 formal mathematics 流程中的 critic 阶段显式化。
+- [VAR-MATH](https://arxiv.org/abs/2507.12885)：通过现有数学题的符号化多实例变体评估数学推理。核心思想是把 AMC/AIME 风格题目参数化成结构等价的题族，让模型必须解决一组问题而不是记住固定数值形式。
+- [MathOPEval: A Fine-grained Evaluation Benchmark for Visual Operations of MLLMs in Mathematical Reasoning](https://arxiv.org/abs/2507.18140)：类型：benchmark/评测协议。核心价值：为 1.8.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [INTEGRALBENCH: Benchmarking LLMs with Definite Integral Problems](https://arxiv.org/abs/2507.21130)：评测 LLM 的定积分求解能力；核心思想是提供符号与数值积分任务，暴露数学推理和计算失败。
+- [A Compute-Matched Re-Evaluation of TroVE on MATH](https://arxiv.org/abs/2507.22069)：评测数学推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [CHECK-MAT: Checking Hand-Written Mathematical Answers for the Russian Unified State Exam](https://arxiv.org/abs/2507.22958)：评测手写数学答案检查能力；核心思想是测试 VLM 能否在考试式场景中读取、核验和评分手写解题步骤。
+- [VisionMath: Vision-Form Mathematical Problem-Solving](https://doi.org/10.1109/iccv51701.2025.00116)：补充math方向的基准或评测套件，核心围绕《VisionMath: Vision-Form Mathematical Problem-Solving》。
+- [MAT-VB: MAthematical Text-Vision Benchmark](https://doi.org/10.1109/jcdl67857.2025.00050)：数学 text-vision benchmark。核心思想是用数学内容中的图文对评估数学图像描述和文本到图像检索。
+- [Math Natural Language Inference: this should be easy!](https://arxiv.org/abs/2507.23063)：测试数学陈述上的自然语言推理，关注对数学基础模型而言应较容易的蕴含与矛盾情形。
+- [Proof2Hybrid: Automatic Mathematical Benchmark Synthesis for Proof-Centric Problems](https://arxiv.org/abs/2508.02208)：面向证明中心问题自动合成数学 benchmark；核心思想是生成 hybrid proof tasks，使证明评测更可扩展且可检查。
+- [Hide and Seek Game](https://arxiv.org/abs/2508.03396)：评测并改进对欺骗性数学推理错误的诊断。核心思想是用 Sneaky 与 Diagnosis 两个对抗角色生成细微错误推理轨迹并检测它们，形成复杂错误诊断数据集，让评测不只看最终答案。
+- [GanitBench: A bi-lingual benchmark for evaluating mathematical reasoning in Vision Language Models](https://arxiv.org/abs/2508.03737)：面向 VLM 数学推理的双语 benchmark。
+- [MathReal: We Keep It Real! A Real Scene Benchmark for Evaluating Math Reasoning in Multimodal Large Language Models](https://arxiv.org/abs/2508.06009)：类型：benchmark/评测协议。核心价值：为 1.8.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [GeoLaux: A Benchmark for Evaluating Models'Geometry Performance on Long-Step Problems Requiring Auxiliary Lines](https://arxiv.org/abs/2508.06226)：评测需要辅助线的长步骤几何问题；核心思想是标注需要显式辅助构造的计算题和证明题。
 - [Putnam-AXIOM](https://arxiv.org/abs/2508.08292)：评什么：Putnam 风格大学竞赛数学及其可程序扰动变体。核心思想：在自然语言证明评估之外加入污染鲁棒变体，检查模型是否真正掌握解题结构而不是复述已见题解。
+- [PutnamGAP](https://arxiv.org/abs/2508.08833)：通过生成竞赛级数学题的数学等价变体来压力测试高级数学推理，衡量模型对语言和参数变化的敏感性。
+- [We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning](https://arxiv.org/abs/2508.10433)：We-Math 2.0 面向视觉数学推理提供体系化评测与 MathBook 任务组织，适合放入数学/多模态数学 benchmark。
 - [Beyond Solving Math Quiz](https://arxiv.org/abs/2508.11252)：评什么：推理模型在信息不足的数学题中，是否会先追问缺失条件再求解。核心思想：把不完整题目纳入数学评测，使主动澄清、过度思考和幻觉式补条件等问题可被观察，而不是只看最终答案是否正确。
-- [MathCanvas](https://arxiv.org/abs/2510.14958)（[项目页](https://mathcanvas.github.io/)）：评什么：更强调草图、图形与“在画布上推理”的多模态数学；核心思想：把数学推理与可视化表达绑定，要求模型在多模态表征间来回映射。
+- [LeanGeo / LeanGeo-Bench](https://arxiv.org/abs/2508.14644)（[代码](https://github.com/project-numina/LeanGeo/tree/master)）：在 Lean 4 中形式化竞赛级几何，并提供覆盖 IMO 与高阶几何题的 benchmark，用于评测模型在证明助手验证约束下的几何推理能力。
+- [Lean Meets Theoretical Computer Science: Scalable Synthesis of Theorem Proving Challenges in Formal-Informal Pairs](https://arxiv.org/abs/2508.15878)：它提供数学、形式化证明或多模态数学评测，适合补充 math Bench。
+- [MaRVL-QA: A Benchmark for Mathematical Reasoning over Visual Landscapes](https://arxiv.org/abs/2508.17180)：评测视觉景观上的数学推理；核心思想是用数学曲面图隔离 MLLM 的视觉空间推理与符号推理。
+- [Saturation-Driven Dataset Generation for LLM Mathematical Reasoning in the TPTP Ecosystem](https://arxiv.org/abs/2509.06809)：提供用于衡量数学能力的数据集、基准、指标或评测协议。
+- [RIMO: An Easy-to-Evaluate, Hard-to-Solve Olympiad Benchmark for Advanced Mathematical Reasoning](https://arxiv.org/abs/2509.07711)：面向高阶奥赛数学的 benchmark，设计目标是难解但易评；核心思想是保留高级题目难度，同时用适合自动评测的答案形式减少评分噪声。
+- [Multimodal Mathematical Reasoning Embedded in Aerial Vehicle Imagery: Benchmarking, Analysis, and Exploration](https://arxiv.org/abs/2509.10059)：基于无人机图像的多模态数学推理 benchmark。核心思想是测试接地图像的距离、面积、轨迹和空间分析推理。
+- [GeoRef: Referring Expressions in Geometry via Task Formulation, Synthetic Supervision, and Reinforced MLLM-based Solutions](https://arxiv.org/abs/2509.21050)：几何 referring-expression 任务与 benchmark。核心思想是在几何题求解前，测试多模态模型能否根据自然语言引用识别并解释几何元素。
+- [DOoM: Difficult Olympiads of Math](https://arxiv.org/abs/2509.23529)：开源俄语数学与物理奥赛 benchmark；核心思想是覆盖从学校题到大学奥赛和入学考试题的多层难度。
+- [Atomic Thinking of LLMs: Decoupling and Exploring Mathematical Reasoning Abilities](https://arxiv.org/abs/2509.25725)：数学推理能力的原子化拆解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation](https://arxiv.org/abs/2509.26076): 在带 web search 和 SageMath 等工具的 agentic 环境中评估研究级数学证明生成。
+- [SKYLENAGE Technical Report: Mathematical Reasoning and Contest-Innovation Benchmarks for Multi-Level Math Evaluation](https://arxiv.org/abs/2510.01241)：提供多层次数学推理与竞赛创新基准；核心思想：用结构化诊断题和竞赛式任务缓解现有公开数学评测的天花板效应。
+- [FormalML](https://arxiv.org/abs/2510.02335)：评测机器学习理论中的 formal subgoal completion。核心思想是从优化和概率证明中抽取 Lean 4 proof obligations，要求模型结合 premise retrieval 完成短小但 research-level 的形式化子目标。
+- [BrokenMath](https://arxiv.org/abs/2510.04721)：评测自然语言 theorem proving 中的 sycophancy；核心思想是把高难竞赛题改写成可证明为假的命题，并测试模型或 agentic system 是否会生成看似有说服力但无效的证明。
+- [MathRobust-LV: Evaluation of Large Language Models' Robustness to Linguistic Variations in Mathematical Reasoning](https://arxiv.org/abs/2510.06430)：通过真实测验风格的题目改写，评测数学推理在语言变化下的鲁棒性。
+- [RefGrader](https://arxiv.org/abs/2510.09021)：评估奥林匹克风格数学证明的自动评分，包括错误检测、严重性判断和部分分校准。核心思想是用 agentic workflow 抽取参考解、生成题目级 rubric，并比较多步评分设计与人工分数的一致性。
+- [MATH-Beyond: A Benchmark for RL to Expand Beyond the Base Model](https://arxiv.org/abs/2510.11653)：评什么：RL 是否真的扩展基础模型之外的数学能力。核心思想是避开高采样预算下已被基础模型接近解完的饱和数学题集。
+- [PMWP: A Benchmark for Math Word Problem Solving in Persian](https://doi.org/10.18653/v1/2026.silkroadnlp-1.8)：评测波斯语数学应用题求解；核心思想是在低资源语言环境中评估数学推理。
+- [Max It or Miss It: Benchmarking LLM On Solving Extremal Problems](https://arxiv.org/abs/2510.12997)：基准化约束极值问题求解；核心思想是单独考察优化推理，而不是普通单答案计算。
+- [Hard2Verify: A Step-Level Verification Benchmark for Open-Ended Frontier Math](https://arxiv.org/abs/2510.13744)：面向开放式前沿数学的逐步验证 benchmark。核心思想是评估 verifier 能否发现高难数学证明中不充分或错误的步骤。
+- [MathMist: A Parallel Multilingual Benchmark Dataset for Mathematical Problem Solving and Reasoning](https://arxiv.org/abs/2510.14305)：基于并行多语数据评测数学问题求解；核心思想是比较同一数学问题在不同语言表达下的推理一致性。
+- [MathCanvas](https://arxiv.org/abs/2510.14958)（[项目页与榜单](https://mathcanvas.github.io/#leaderboard)）：评什么：更强调草图、图形与“在画布上推理”的多模态数学；核心思想：把数学推理与可视化表达绑定，要求模型在多模态表征间来回映射。
+- [AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](https://arxiv.org/abs/2510.21436)：提供 AutoOpt-11k，并将手写或印刷优化模型图像转换为 LaTeX、Pyomo 脚本和求解流程，补充多模态优化建模基准。
+- [DynaSolidGeo](https://arxiv.org/abs/2510.22340)（[项目页](https://zgca-ai4edu.github.io/DynaSolidGeo/)）：一个面向 VLM 的动态多模态立体几何 benchmark，从专家种子题生成变体，并同时评估最终答案与 reasoning-chain 的逻辑有效性。
+- [MMTutorBench: The First Multimodal Benchmark for AI Math Tutoring](https://arxiv.org/abs/2510.23477)：它提供数学、形式化证明或多模态数学评测，适合补充 math Bench。
+- [RLMEval: Evaluating Research-Level Neural Theorem Proving](https://arxiv.org/abs/2510.25427)：评什么：评测研究级 neural theorem proving 和 autoformalization。
+- [AMO-Bench](https://arxiv.org/abs/2510.26768)（[榜单](https://amo-bench.github.io/#Leaderboard)；[数据集](https://huggingface.co/datasets/GAIR/AMO-Bench)）：用原创高中数学竞赛题评测高级数学推理。核心思想是使用专家验证的至少 IMO 难度题目，并采用 final-answer 自动判分以降低歧义和污染风险。
+- [CombiGraph-Vis: A Curated Multimodal Olympiad Benchmark for Discrete Mathematical Reasoning](https://arxiv.org/abs/2510.27094)：提供面向组合图类问题的多模态奥赛离散数学推理基准。
 - [HMMT Nov 2025](https://huggingface.co/datasets/MathArena/hmmt_nov_2025)（[官方档案](https://www.hmmt.org/www/archive/2025/nov/)）：评什么：HMMT 十一月赛的竞赛数学题；核心思想：同上，以更新近赛题作为抗污染补充。
-- [LiveMathBench](https://huggingface.co/datasets/opencompass/LiveMathBench)：评什么：近期持续更新的数学评测。核心思想：以近时效题目降低污染并提供更贴近真实部署期的能力观察。
-- [IMO-Bench](https://arxiv.org/abs/2511.01846)（[项目页](https://imobench.github.io/)；[开源代码](https://github.com/google-deepmind/superhuman/tree/main/imobench)）：评什么：IMO 任务族的统一协议；核心思想：把 `短答案可验证`（IMO-AnswerBench）、`长证明生成`（ProofBench）与 `证明评分`（GradingBench）拆成可复现子基准与 protocol，明确区分 answer solving 与 proof evaluation。
-- [MathHalu](https://doi.org/10.1109/icassp55912.2026.11460764)：评什么：数学推理过程中的幻觉检测。核心思想：对中间解题步骤进行判别，使看似合理但缺乏支撑的数学推理链在最终答案评分前暴露出来。
+- [LiveMathBench](https://huggingface.co/datasets/opencompass/LiveMathBench)（[G-Pass@k 榜单](https://open-compass.github.io/GPassK/)）：评什么：近期持续更新的数学评测。核心思想：以近时效题目降低污染并提供更贴近真实部署期的能力观察。
+- [UTMath: A Benchmark for Math Evaluation with Unit Test](https://doi.org/10.18653/v1/2025.findings-emnlp.315)：UTMath 用 unit tests 评测数学答案，适合 Mathematics Bench。
+- [Can Large Language Models Win the International Mathematical Games?](https://doi.org/10.18653/v1/2025.emnlp-main.488)：补充math方向的基准或评测套件，核心围绕《Can Large Language Models Win the International Mathematical Games?》。
+- [StatsChartMWP: A Dataset for Evaluating Multimodal Mathematical Reasoning Abilities on Math Word Problems with Statistical Charts](https://doi.org/10.18653/v1/2025.findings-emnlp.695)：它提供数学、形式化证明或多模态数学评测，适合补充 math Bench。
+- [CMedCalc-Bench: A Fine-Grained Benchmark for Chinese Medical Calculations in LLM](https://doi.org/10.18653/v1/2025.emnlp-main.1302)：评测中文医学计算能力；核心思想是在专门医学场景中评估细粒度计算与推理。
+- [IMO-Bench](https://arxiv.org/abs/2511.01846)（[项目页与榜单](https://imobench.github.io/#leaderboard)；[开源代码](https://github.com/google-deepmind/superhuman/tree/main/imobench)）：评什么：IMO 任务族的统一协议；核心思想：把 `短答案可验证`（IMO-AnswerBench）、`长证明生成`（ProofBench）与 `证明评分`（GradingBench）拆成可复现子基准与 protocol，明确区分 answer solving 与 proof evaluation。
+- [FATE](https://arxiv.org/abs/2511.02872)：评测多难度层级的前沿代数 theorem proving。核心思想：提供从高年级本科到超过 PhD 资格考试难度的形式化代数任务，暴露自然语言数学推理与 Lean 式形式化之间的差距。
+- [FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis](https://arxiv.org/abs/2511.06522)：基于递归程序合成的视觉数学推理 benchmark。核心思想是让模型从图像推断分形生成程序，测试从有限视觉证据抽象出符号规则的能力。
+- [GGBench](https://arxiv.org/abs/2511.11134)（[项目页](https://opendatalab-raiser.github.io/GGBench/)）：评测 unified multimodal model 的几何生成式推理能力，要求模型理解几何指令并主动构造视觉解，而不只是回答判别式问题。
+- [MOOT: a Repository of Many Multi-Objective Optimization Tasks](https://arxiv.org/abs/2511.16882)：收集大量多目标优化任务，使优化算法和 LLM-assisted solvers 能在 tradeoff-heavy objectives 上横向比较。
+- [MathSight: A Benchmark Exploring Have Vision-Language Models Really Seen in University-Level Mathematical Reasoning?](https://arxiv.org/abs/2511.23112)：大学水平视觉数学推理基准；核心思想是诊断 VLM 在解数学题时是否真正使用图形和视觉符号。
+- [IndiMathBench: Autoformalizing Mathematical Reasoning Problems with a Human Touch](https://arxiv.org/abs/2512.00997)：评测数学推理问题的 autoformalization，包含人工把关的 benchmark 设计。
+- [MiniF2F-Dafny: LLM-Guided Mathematical Theorem Proving via Auto-Active Verification](https://arxiv.org/abs/2512.10187)：它提供数学、形式化证明或多模态数学评测，适合补充 math Bench。
+- [MSC-180: A Benchmark for Automated Formal Theorem Proving from Mathematical Subject Classification](https://arxiv.org/abs/2512.18256)：评什么：从数学主题分类出发评测自动形式证明。
+- [LeanCat: A Benchmark Suite for Formal Category Theory in Lean (Part I: 1-Categories)](https://arxiv.org/abs/2512.24796)：评什么：面向 Lean 形式化范畴论的 benchmark suite。
 - [FinMathBench](https://ojs.aaai.org/index.php/AAAI/article/view/40358)：评什么：公式驱动的金融数学推理。核心思想：把量化金融和公式变换作为数学推理任务来测，而不是只把金融当成领域知识问答。
 - [NoReGeo](https://ojs.aaai.org/index.php/AAAI/article/view/38960)：评什么：用于暴露非推理捷径的几何任务。核心思想：通过让捷径策略失效的题型，把真实几何推理和模式匹配区分开。
+- [EternalMath](https://arxiv.org/abs/2601.01400)：面向前沿数学的 living benchmark。核心思想是把最新同行评议数学文献转化为可执行、可验证的推理任务，使 benchmark 随人类发现持续演化。
+- [Do Instruction-Tuned Models Always Perform Better Than Base Models? Evidence from Math and Domain-Shifted Benchmarks](https://arxiv.org/abs/2601.13244)：在数学与领域迁移基准上比较指令调优模型和基座模型。
+- [M3Kang: Evaluating Multilingual Multimodal Mathematical Reasoning in Vision-Language Models](https://arxiv.org/abs/2601.16218)：评什么：VLM 的 multilingual multimodal mathematical reasoning。核心思想：从 Kangaroo Math Competition 构造题目，对比 VLM 与人类在多语言视觉数学题上的表现。
+- [Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](https://arxiv.org/abs/2601.18944)：评什么：真实程序验证条件上的神经定理证明。核心思想是用现有自动证明器难以处理的 VC 测试模型证明能力。
+- [MGSM-Pro: A Simple Strategy for Robust Multilingual Mathematical Reasoning Evaluation](https://arxiv.org/abs/2601.21225)：评测超越英文 GSM 风格任务的鲁棒多语数学推理评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](https://arxiv.org/abs/2601.23048)：可作为mathematical and formal reasoning方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
 - [AIME 2026](https://huggingface.co/datasets/MathArena/aime_2026)：评什么：同上；核心思想：通过“更近年真题”缓解污染风险，常用于检验真实泛化而非背题。
 - [HMMT Feb 2026](https://huggingface.co/datasets/MathArena/hmmt_feb_2026)：评什么：2026 年 2 月 HMMT 竞赛题。核心思想：把 HMMT 风格竞赛数学压力点更新到最新真实赛题，也对齐 Kimi K2.6 等前沿模型卡中报告的近期竞赛数学版本。
+- [Evaluation of Large Language Models as Solution Generators in Complex Optimization](https://doi.org/10.1109/mci.2025.3580520)：评测 LLM 作为复杂优化问题候选解生成器的表现，关注优化质量而不只是文本正确性。
+- [MATH-IDN: A Multilingual Mathematical Problem Solving Dataset Featuring Local Languages in Indonesia](https://doi.org/10.18653/v1/2026.findings-eacl.231)：提供印尼地方语言数学问题求解数据，测试英语和标准印尼语之外的多语言数学推理。
+- [ConvexBench](https://arxiv.org/abs/2602.01075)：评测 LLM 是否能识别凸函数。核心思想：用凸分析任务测试对优化和研究级推理重要的数学概念理解，补充竞赛算术或证明题之外的数学评测。
+- [Construction-Verification: A Benchmark for Applied Mathematics in Lean 4](https://arxiv.org/abs/2602.01291)：Construction-Verification 是 Lean 4 applied mathematics benchmark，强调构造性求解与验证。
+- [TabularMath: Evaluating Computational Extrapolation in Tabular Learning via Program-Verified Synthesis](https://arxiv.org/abs/2602.02523)：TabularMath 用 program-verified synthesis 评测 tabular computational extrapolation。
+- [MathlibLemma](https://arxiv.org/abs/2602.02561)：评测内容：Lean 中的 folklore lemma 生成和形式化证明。核心思想：挖掘、形式化并证明可复用的中间数学事实，再用非平凡、类型检查通过的 Lean statement 基准评测定理证明器。
+- [Learning to Repair Lean Proofs from Compiler Feedback](https://arxiv.org/abs/2602.02990)：评测基于编译器反馈修复 Lean 证明。核心思想：把错误证明与编译器消息转成带解释的监督修复目标。
+- [Comparative-Signal Math Evaluation](https://arxiv.org/abs/2602.03061)：评测模型可能不知道答案时的数学推理。核心思想是用比较式统计信号降低高难题上直接准确率带来的排名不稳定。
+- [Consequence-Based Utility](https://arxiv.org/abs/2602.06291)：面向研究级数学的 oracle-free evaluation 方法。核心思想：通过候选解是否能提升相关可验证问题的下游求解效果来评分，降低对未解问题直接专家验证的依赖。
+- [Constructing Industrial-Scale Optimization Modeling Benchmark](https://arxiv.org/abs/2602.10450)：用工业规模混合整数规划评测自然语言到优化建模能力，将规格说明与参考建模和求解器代码对齐。
+- [PRIME: A Process-Outcome Alignment Benchmark for Verifiable Reasoning in Mathematics and Engineering](https://arxiv.org/abs/2602.11570)：评测数学和工程可验证推理中的过程-结果对齐；核心思想是惩罚由错误推导得到的正确答案。
+- [DeepVision-103K: A Visually Diverse, Broad-Coverage, and Verifiable Mathematical Dataset for Multimodal Reasoning](https://arxiv.org/abs/2602.16742)：提供视觉多样且可验证的多模态数学推理数据集；适合评测和训练数学任务中的视觉反思能力。
+- [BankMathBench: A Benchmark for Numerical Reasoning in Banking Scenarios](https://arxiv.org/abs/2602.17072)：评什么：评测银行场景中的数值推理；核心思想是把数学评测从抽象应用题推进到金融约束和计算。
+- [VeriSoftBench: Repository-Scale Formal Verification Benchmarks for Lean](https://arxiv.org/abs/2602.18307)：它提供数学、形式化证明或多模态数学评测，适合补充 math Bench。
+- [QEDBench](https://arxiv.org/abs/2602.20629)（[开源代码](https://github.com/qqliu/Yale-QEDBench)）：通过把 AI judge 与课程专用及专家 rubric 对照，评测大学级数学证明自动评价中的对齐缺口。
+- [LemmaBench](https://arxiv.org/abs/2602.24173)：评测来自近期论文的 research-level mathematical theorem proving；核心思想是自动从 arXiv 提取并改写 lemmas 为自包含陈述，使后续 benchmark 刷新能降低污染风险。
+- [SorryDB](https://arxiv.org/abs/2603.02668)：评测 AI provers 处理真实 Lean formalization 任务的能力；核心思想是持续从 GitHub Lean 项目收集开放的 `sorry` goals，让形式化证明 agent 面对新鲜且贴近社区需求的任务，而不是固定竞赛题集。
+- [CompMath-MCQ](https://arxiv.org/abs/2603.03334)：评测更高阶的计算数学能力。核心思想是用多项选择协议测试研究生层次的计算数学概念，超越初等题和竞赛题。
+- [TaoBench](https://arxiv.org/abs/2603.12744)：评测内容：自动定理证明器在标准 Mathlib 定义之外的泛化能力。核心思想：用从零构建和混合定义框架形式化陶哲轩的 Analysis I，并与等价 Mathlib 表述对照，以分离定义框架泛化失败。
+- [ScratchMath](https://arxiv.org/abs/2603.24961)：评测手写数学草稿中的多模态错误分析。核心思想：要求模型从真实学生手写过程解释并分类错误原因，而不只是给出题目答案。
 - [FormalProofBench](https://arxiv.org/abs/2603.26996)：评什么：高级本科与研究生数学题的 Lean 4 证明生成。核心思想：把自然语言题目与形式化陈述配对，并要求模型输出可被检查器接受的证明，从而把形式证明评测推进到奥赛题和本科题之外。
-- [LiveMathematicianBench](https://arxiv.org/abs/2604.01754)（[项目页](https://livemathematicianbench.github.io/)；[数据集](https://huggingface.co/LiveMathematicianBench)）：评什么：基于最新 arXiv 的定理理解与 proof sketch 选择；核心思想：用持续更新的题源压制污染，并区分表面匹配和真实数学理解。
+- [LiveMathematicianBench](https://arxiv.org/abs/2604.01754)（[项目页与榜单](https://livemathematicianbench.github.io/)；[数据集](https://huggingface.co/LiveMathematicianBench)）：评什么：基于最新 arXiv 的定理理解与 proof sketch 选择；核心思想：用持续更新的题源压制污染，并区分表面匹配和真实数学理解。
+- [SenseMath: Do LLMs Have Number Sense? Evaluating Shortcut Use, Judgment, and Generation](https://arxiv.org/abs/2604.01988)：评测 LLM 的 number sense、shortcut use、judgment 和 generation；核心思想是检验模型是真正理解数字，还是利用表面模式。
+- [Document-Level Numerical Reasoning across Single and Multiple Tables in Financial Reports](https://arxiv.org/abs/2604.03664)：可作为mathematical and formal reasoning方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
 - [Beyond Accuracy](https://arxiv.org/abs/2604.06799)：评什么：在独立控制复杂度因素下的代数推理失败。核心思想：分别调节嵌套深度、算子难度、中间状态数量和依赖链结构，使失败原因不再被单一准确率掩盖。
-- [MathNet](https://arxiv.org/abs/2604.18584)（[项目页](https://mathnet.mit.edu/)）：评什么：多语言、多模态奥赛题与数学检索；核心思想：把 `问题求解 + 数学语义检索 + RAG` 放进同一套协议，专门测“会做题”与“会找相似题”。
+- [SD1K](https://doi.org/10.11922/11-6035.csd.2025.0120.zh)：面向 reasoning LLM 的高难数学问题数据集。核心思想是提供紧凑的高难度题集，用于测试超出常规练习题求解的数学推理。
+- [Riemann-Bench: A Benchmark for Moonshot Mathematics](https://arxiv.org/abs/2604.06802)：类型：benchmark/评测协议。核心价值：为 1.8.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [$k$-server-bench: Automating Potential Discovery for the $k$-Server Conjecture](https://arxiv.org/abs/2604.07240)：围绕 $k$-server conjecture 的代码化自动数学发现 benchmark；核心思想是让 agent 发现 potential function，并用图结构线性不等式检查提供可执行反例信号。
+- [Too long; didn't solve](https://arxiv.org/abs/2604.07593)：Too long; did not solve 分析数学 benchmark 的 prompt/solution length 结构因素，补充 math benchmark reliability。
+- [MathNet](https://arxiv.org/abs/2604.18584)（[项目页与结果](https://mathnet.mit.edu/#results)；[数据集](https://huggingface.co/datasets/shaden/MathNet)）：评什么：多语言、多模态奥赛题与数学检索；核心思想：把 `问题求解 + 数学语义检索 + RAG` 放进同一套协议，专门测“会做题”与“会找相似题”。
+- [Do LLMs Game Formalization? Evaluating Faithfulness in Logical Reasoning](https://arxiv.org/abs/2604.19459)：评测大模型逻辑形式化的忠实性。
+- [MathDuels](https://arxiv.org/abs/2604.21916)：同时评测 LLM 作为出题者和解题者的数学能力。核心思想：超越固定数学题集，检查模型能否生成有区分度的问题并解答对手生成的问题，暴露静态 benchmark 接近饱和后看不出的能力差异。
+- [Benchmarking Testing in Automated Theorem Proving](https://arxiv.org/abs/2604.23698)：该工作评测 automated theorem proving 中 testing/semantic correctness，补充形式化数学评测。
+- [MATH-PT](https://arxiv.org/abs/2604.25926)：面向欧洲葡萄牙语与巴西葡萄牙语的数学推理 benchmark。核心思想是在葡萄牙语变体中评测数学推理，而不是依赖英语或翻译数学数据集。
 - USAMO 2026（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：评什么：2026 年 USA Mathematical Olympiad 的证明型奥赛数学题。核心思想：用近期证明写作竞赛题补充 AIME 式短答案任务，难度更高且污染风险更低；这里按 model card 评测版本记录，不把它当作本仓库已确认的独立公开 benchmark package。
 - [Beyond Benchmarks: MathArena as an Evaluation Platform](https://arxiv.org/abs/2605.00674)：评什么：把 MathArena 从单次 benchmark 扩展为持续数学评测平台；核心思想：持续接入新竞赛、新题型和统一协议，让榜单随模型能力提升而轮换难度。
+- [MathHalu](https://doi.org/10.1109/icassp55912.2026.11460764)：评什么：数学推理过程中的幻觉检测。核心思想：对中间解题步骤进行判别，使看似合理但缺乏支撑的数学推理链在最终答案评分前暴露出来。
+- [MathlibPR](https://arxiv.org/abs/2605.07147)：面向形式化数学库的 PR merge-readiness benchmark。核心思想：用真实 Mathlib4 PR 历史评测模型和 agent 能否区分 build-passing 但仍需修改或拒绝的 PR 与可合并 PR。
+- [MathConstraint](https://arxiv.org/abs/2605.08498)：用 solver-verified、可自适应生成的实例评测组合推理。核心思想：使用可参数化的约束满足问题，使难度能随模型进步继续扩展，并检验 sandboxed SAT/SMT 工具访问如何改变表现。
+- [Soohak](https://arxiv.org/abs/2605.09063)：由数学家 curated 的研究级数学推理 benchmark。核心思想：用新编写问题和面向 ill-posed questions 的 refusal subset，评测模型能否进行研究级推理并在题设不成立时拒答；需注明公开数据集计划在 2026 年晚些时候发布。
+- [Strategy Diversity Evaluation](https://arxiv.org/abs/2605.09292)：在 final-answer accuracy 之外评测数学推理。核心思想：依据 AoPS-derived strategy families 标注模型解法，衡量模型是否能恢复多样有效策略，而不只是给出正确答案。
+- [FormalRewardBench: A Benchmark for Formal Theorem Proving Reward Models](https://arxiv.org/abs/2605.10141)：评测 formal theorem proving 的 reward models；核心思想是在二值验证奖励稀疏的证明搜索场景中，衡量学习型 reward model 是否能提供有效中间信用。
+- [GeoBuildBench: A Benchmark for Interactive and Executable Geometry Construction from Natural Language](https://arxiv.org/abs/2605.13167)：评什么：评测从自然语言到交互式、可执行几何构造；核心思想是把非形式化几何问题落到可检查构造程序。
+- [Formal Conjectures](https://arxiv.org/abs/2605.13171)：开放且持续演化的 Lean 4 verified mathematical discovery benchmark。核心思想：形式化活跃研究 conjectures 与已解问题，使 AI 系统能在 proof assistant 验证协议下尝试证明发现和 proof autoformalization。
+- [MathAtlas: A Benchmark for Autoformalization in the Wild](https://arxiv.org/abs/2605.14061)：评测研究生和研究级数学的 autoformalization；核心思想是从真实数学教材和材料构造大规模形式化任务，而不只使用奥赛风格问题。
+- [CSLibPremiseBench: Structure-Guided Premise Retrieval and Label Robustness for Lean 4 Computer-Science Theorems](https://arxiv.org/abs/2605.14549)：评测 Lean 4 计算机科学定理的 premise retrieval 与标签鲁棒性；核心思想是固定真实 CSLib 版本，在可复现 formal proving 设置中测试定理和 lemma 检索。
+- [First Proof Second Batch](https://arxiv.org/abs/2606.18119)：该评测让 AI 系统解决数学家从多个领域研究过程中自然产生的十道研究级问题，并公开题目、人类解答、AI 解答、审稿意见和执行日志，使正确性判断不再只依赖一个分数。
+- [FormalRx: Rectify and eXamine Semantic Failures in Autoformalization](https://arxiv.org/abs/2607.04655)：用 28 类 SCI Error Taxonomy 和 FormalRx-Test 把自动形式化从不透明的成败评分变成可诊断评估；配套 FormalRx-8B 的 verdict F1 为 0.88、分类 F1 为 0.71、定位准确率为 0.75、纠正准确率为 0.73。
+- [MILPBench: A Large-scale Benchmark Test Suite for Mixed Integer Linear Programming Problems](https://doi.org/10.1145/3712256.3726324)：提供大规模 mixed-integer linear programming 测试套件，用于比较优化求解器和 learning-assisted MILP 方法。
+- [FGeo-Eval: Evaluation System for Plane Geometry Problem Solving](https://doi.org/10.3390/sym17060902)：用专门系统解析、求解并评分平面几何任务，评测几何问题求解能力。
+- [MathemaTikZ: A Dataset and Benchmark for Mathematical Diagram Generation](https://doi.org/10.1145/3698205.3729558)：通过把题目描述映射为 TikZ-style 图示来评测数学图生成，并评分视觉符号忠实度。
+- [A Multimodal AI System: Comparing LLMs and Theorem Proving Systems](https://doi.org/10.3390/electronics15040892)：在多模态数学设置中比较 LLM 与 theorem-proving systems，把系统比较本身作为评测协议。
+- [MathEval: A Comprehensive Benchmark for Evaluating Large Language Models on Mathematical Reasoning Capabilities](https://doi.org/10.1007/s44366-025-0053-z)：大语言模型数学推理能力综合评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Rethinking and Improving Autoformalization: Towards a Faithful Metric and a Dependency Retrieval-based Approach]()：提供可复用评测目标、排行榜或测量协议。
+- [Hot off the Press: Pareto-Optimal Fronts for Benchmarking Symbolic Regression Algorithms](https://doi.org/10.1145/3795101.3814639)：在 34 个 SRBench 数据集上通过穷举短表达式搜索和常数拟合构造绝对 Pareto 的准确率-复杂度前沿，显示许多方法仍远离可达到的前沿。

@@ -2,23 +2,540 @@
 
 - [ReAct](https://arxiv.org/abs/2210.03629)（[开源代码](https://github.com/ysymyth/ReAct)）是工具调用最常见的通用 agent loop 基线：`reasoning -> action -> observation`。在 τ2-Bench、VitaBench 这类“多步工具链”任务上，核心差异更多来自 runtime（参数校验、重试、回退、状态管理）而非专用 solver。
 - [ToolLLM](https://arxiv.org/abs/2307.16789)（[开源代码](https://github.com/OpenBMB/ToolBench)）：在大规模真实 API 集合上执行工具检索、参数对齐与多步调用，是 tool-use solver agent 的代表性实现。
+- [Using LLM to select the right SQL Query from candidates](https://arxiv.org/abs/2401.02115)：用 LLM 生成测试数据库和期望执行结果来重排候选 SQL，把 Text-to-SQL 选择转化为执行引导的工具流程。
+- [EASYTOOL: Enhancing LLM-based Agents with Concise Tool Instruction](https://arxiv.org/abs/2401.06201)：把异构、冗长的工具文档压缩成统一的简洁工具说明，使智能体不必在上下文中携带大量不一致的 API 手册。
+- [WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models](https://arxiv.org/abs/2401.13919)：构建多模态网页智能体，通过截图感知页面状态、推理下一步动作，并端到端执行浏览器操作。
+- ["Task Success" is not Enough: Investigating the Use of Video-Language Models as Behavior Critics for Catching Undesirable Agent Behaviors](https://arxiv.org/abs/2402.04210)：用视频语言模型审查智能体执行轨迹，捕捉任务成功率指标容易漏掉的不安全或不良行为。
+- [AnyTool: Self-Reflective, Hierarchical Agents for Large-Scale API Calls](https://arxiv.org/abs/2402.04253)：提出自反思的层级 API 智能体，在大规模工具库中检索工具、分解请求并修复失败调用。
+- [Can Large Language Model Agents Simulate Human Trust Behaviors?](https://arxiv.org/abs/2402.04559)：将大语言模型智能体作为人类信任行为模拟器，在交互式决策场景中研究依赖、校准与信任变化。
+- [More Agents Is All You Need](https://arxiv.org/abs/2402.05120)：说明通过采样和投票实例化多个智能体即可提升推理表现，把智能体数量变成简单的编排变量。
+- [OS-Copilot: Towards Generalist Computer Agents with Self-Improvement](https://arxiv.org/abs/2402.07456)：构建通用操作系统控制智能体，通过自我改进循环规划、执行并修正计算机使用动作。
+- [OptiMUS: Scalable Optimization Modeling with (MI)LP Solvers and Large Language Models](https://arxiv.org/abs/2402.10172)：结合大语言模型与数学规划求解器，使优化模型可通过结构化建模流程生成、检查并求解。
+- [DataDreamer: A Tool for Synthetic Data Generation and Reproducible LLM Workflows](https://arxiv.org/abs/2402.10379)：提供可复现实验工具，串联合成数据生成、模型参与评测、蒸馏与微调工作流。
+- [KG-Agent: An Efficient Autonomous Agent Framework for Complex Reasoning over Knowledge Graph](https://arxiv.org/abs/2402.11163)：用知识图谱智能体循环处理复杂 KG 推理，将结构化图访问、自主分解和答案生成结合起来。
+- [Interpreting Conversational Dense Retrieval by Rewriting-Enhanced Inversion of Session Embedding](https://arxiv.org/abs/2402.12774)：用查询改写和会话嵌入反演解释对话式稠密检索器在多轮会话中编码了什么。
+- [Agent-Pro: Learning to Evolve via Policy-Level Reflection and Optimization](https://arxiv.org/abs/2402.17574)：引入策略层反思与优化，让智能体根据经验修订自身决策策略。
+- [Learning to Use Tools via Cooperative and Interactive Agents](https://arxiv.org/abs/2403.03031)：通过智能体间协作交互学习工具使用，把工具选择与执行反馈组织成协同学习循环。
+- [RAGGED: Towards Informed Design of Scalable and Stable RAG Systems](https://arxiv.org/abs/2403.09040)：研究可扩展、稳定的 RAG 系统设计，突出检索、生成与系统级鲁棒性的权衡。
+- [Arcee’s MergeKit: A Toolkit for Merging Large Language Models](https://arxiv.org/abs/2403.13257)：提供合并大语言模型检查点的工程工具，把模型组合变成可复用的工作流组件。
+- [Towards Practical Tool Usage for Continually Learning LLMs](https://arxiv.org/abs/2404.09339)：研究持续学习 LLM 的实用工具使用机制，强调智能体如何在任务变化中保留并更新工具知识。
+- [Demonstration of DB-GPT: Next Generation Data Interaction System Empowered by Large Language Models](https://arxiv.org/abs/2404.10209)：展示 DB-GPT 数据交互栈，把 LLM 接入数据库、检索组件和任务流程，用于对话式数据工作。
+- [AirGapAgent: Protecting Privacy-Conscious Conversational Agents](https://arxiv.org/abs/2405.05175)：在对话智能体中隔离敏感上下文与外部调用，用 air-gap 模式降低隐私泄露风险。
+- [Smurfs: Multi-Agent System using Context-Efficient DFSDT for Tool Planning](https://arxiv.org/abs/2405.05955)：在多智能体系统中使用上下文高效的深度优先搜索决策树，让智能体规划工具调用而不挤占过多上下文。
+- [Open-SQL Framework: Enhancing Text-to-SQL on Open-source Large Language Models](https://arxiv.org/abs/2405.06674)：把开源 LLM、schema 上下文和执行反馈组织成 Text-to-SQL 框架，用于结构化数据库查询。
+- [Leveraging Lecture Content for Improved Feedback: Explorations with GPT-4 and Retrieval Augmented Generation](https://arxiv.org/abs/2405.06681)：在 GPT-4 生成反馈前检索课程材料，把教学上下文显式作为学习反馈的工具来源。
+- [Agent Design Pattern Catalogue: A Collection of Architectural Patterns for Foundation Model based Agents](https://arxiv.org/abs/2405.10467)：整理基础模型智能体的可复用架构模式，为规划器、记忆、工具和控制循环提供设计词汇表。
+- [Question-Based Retrieval using Atomic Units for Enterprise RAG](https://arxiv.org/abs/2405.12363)：把企业知识拆成可由问题触发的原子单元进行检索，而不只依赖文档块。
+- [Empowering Large Language Models to Set up a Knowledge Retrieval Indexer via Self-Learning](https://arxiv.org/abs/2405.16933)：让大语言模型通过自学习建立并验证检索索引器，降低 RAG 知识库的人工搭建成本。
+- [An LLM-Tool Compiler for Fused Parallel Function Calling](https://arxiv.org/abs/2405.17438)：把多个函数调用编译成融合的并行工具调用，在独立调用可同时执行时降低串行工具延迟。
+- [Conv-CoA: Improving Open-domain Question Answering in Large Language Models via Conversational Chain-of-Action](https://arxiv.org/abs/2405.17822)：提出 conversational chain-of-action，用对话式行动步骤协调检索和答案生成来解决开放域问答。
+- [A System for Quantifying Data Science Workflows with Fine-Grained Procedural Logging and a Pilot Study](https://arxiv.org/abs/2405.17845)：用细粒度过程日志记录数据科学工作，使工作流步骤可以作为智能体动作轨迹被量化、回放和研究。
+- [COS-Mix: Cosine Similarity and Distance Fusion for Improved Information Retrieval](https://arxiv.org/abs/2406.00638)：融合余弦相似度与余弦距离信号，改进稀疏数据场景下的 RAG 检索。
+- [A Theory for Token-Level Harmonization in Retrieval-Augmented Generation](https://arxiv.org/abs/2406.00944)：分析检索证据与生成输出之间的 token 级交互，为 RAG 管线提供对齐检索上下文和解码过程的理论视角。
+- [UniOQA: A Unified Framework for Knowledge Graph Question Answering with Large Language Models](https://arxiv.org/abs/2406.02110)：围绕 LLM 驱动的图访问统一知识图谱问答，使一个框架能处理多类 KGQA 查询形式。
+- [Understanding Retrieval Robustness for Retrieval-Augmented Image Captioning](https://arxiv.org/abs/2406.02265)：测试检索质量如何影响图像描述，把多模态 RAG 的鲁棒性问题从最终描述分数中拆出来。
+- [Graph Neural Network Enhanced Retrieval for Question Answering of Large Language Models](https://arxiv.org/abs/2406.06572)：在文档关系上引入图神经检索，使问答能利用连通证据而不是孤立文本块。
+- [Dialogue Action Tokens: Steering Language Models in Goal-Directed Dialogue with a Multi-Turn Planner](https://arxiv.org/abs/2406.11978)：把话语表示为对话动作，并用多轮规划器引导目标导向对话。
+- [Can Tool-augmented Large Language Models be Aware of Incomplete Conditions?](https://arxiv.org/abs/2406.12307)：测试工具增强 LLM 在调用工具前是否能发现前置条件缺失，突出可靠工具执行中的条件检查。
+- [SQLFixAgent: Towards Semantic-Accurate Text-to-SQL Parsing via Consistency-Enhanced Multi-Agent Collaboration](https://arxiv.org/abs/2406.13408)：用一致性增强的多智能体协作修复 Text-to-SQL 输出，使其更接近语义正确查询。
+- [Autonomous Agents for Collaborative Task under Information Asymmetry](https://arxiv.org/abs/2406.14928)：研究在信息不对称下协作的智能体，各参与方只能基于局部任务状态进行协调。
+- [Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs](https://arxiv.org/abs/2406.16218)：把执行轨迹作为生成式优化的反馈信号，让 LLM 系统基于运行证据更新提示、代码和工作流参数。
+- [Enabling Large Language Models to Perform Power System Simulations with Previously Unseen Tools: A Case of Daline](https://arxiv.org/abs/2406.17215)：用模块化专业知识和工具说明封装 Daline 潮流仿真器，使 LLM 能运行此前未见过的电力系统仿真工具。
+- [ACE: A Generative Cross-Modal Retrieval Framework with Coarse-To-Fine Semantic Modeling](https://arxiv.org/abs/2406.17507)：用 ACE 处理 A Generative Cross-Modal Retrieval Framework with Coarse-To-Fine Semantic Modeling。
+- [Symbolic Learning Enables Self-Evolving Agents](https://arxiv.org/abs/2406.18532)：从智能体经验中学习符号规则，支持语言智能体自我演化。
+- [Simulating Classroom Education with LLM-Empowered Agents](https://arxiv.org/abs/2406.19226)：用教师与学生智能体模拟课堂教育，将教学、互动和反馈循环显式化。
+- [Tools Fail: Detecting Silent Errors in Faulty Tools](https://arxiv.org/abs/2406.19228)：检测故障工具中的静默错误，使工具增强智能体能识别看似合理但实际错误的调用结果。
+- [Towards End-to-End Optimization of LLM-based Applications with Ayo](https://arxiv.org/abs/2407.00326)：把“Towards End-to-End Optimization of LLM-based Applications with Ayo”作为具体的工具介导流程来处理。
+- [From RAG to Riches: Retrieval Interlaced with Sequence Generation](https://arxiv.org/abs/2407.00361)：把检索交织到序列生成过程中，使证据查找不再只是生成前的一次性步骤。
+- [GenArtist: Multimodal LLM as an Agent for Unified Image Generation and Editing](https://arxiv.org/abs/2407.05600)：用多模态智能体封装图像生成与编辑工具，对复杂视觉指令进行结果验证和自我修正。
+- [Autonomous Prompt Engineering in Large Language Models](https://arxiv.org/abs/2407.11000)：把“Autonomous Prompt Engineering in Large Language Models”作为具体的工具介导流程来处理。
+- [WTU-EVAL: A Whether-or-Not Tool Usage Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2407.12823)：用 WTU-EVAL 处理 A Whether-or-Not Tool Usage Evaluation Benchmark for Large Language Models。
+- [SQLfuse: Enhancing Text-to-SQL Performance through Comprehensive LLM Synergy](https://arxiv.org/abs/2407.14568)：用 SQLfuse 处理 Enhancing Text-to-SQL Performance through Comprehensive LLM Synergy。
+- [MathViz-E: A Case-study in Domain-Specialized Tool-Using Agents](https://arxiv.org/abs/2407.17544)：展示数学可视化智能体如何选择领域工具，为数学任务生成并改进可视化解释。
+- [A Study on the Implementation Method of an Agent-Based Advanced RAG System Using Graph](https://arxiv.org/abs/2407.19994)：实现基于智能体的 Graph RAG 系统，用图结构改进扁平检索之外的知识问答。
+- [An autonomous GIS agent framework for geospatial data retrieval](https://arxiv.org/abs/2407.21024)：围绕“An autonomous GIS agent framework for geospatial data retrieval”组织检索增强处理。
+- [Tulip Agent - Enabling LLM-Based Agents to Solve Tasks Using Large Tool Libraries](https://arxiv.org/abs/2407.21778)：让智能体递归搜索、使用并更新大型工具库，而不是把所有工具描述都塞入提示。
+- [Golden-Retriever: High-Fidelity Agentic Retrieval Augmented Generation for Industrial Knowledge Base](https://arxiv.org/abs/2408.00798)：面向工业知识库设计 agentic RAG，强调企业场景中的高保真检索与回答生成。
+- [An Empirical Comparison of Video Frame Sampling Methods for Multi-Modal RAG Retrieval](https://arxiv.org/abs/2408.03340)：围绕“An Empirical Comparison of Video Frame Sampling Methods for Multi-Modal RAG Retrieval”组织检索增强处理。
+- [SEA-SQL: semantic-enhanced text-to-SQL with adaptive refinement](https://arxiv.org/abs/2408.04919)：用 SEA-SQL 处理 semantic-enhanced text-to-SQL with adaptive refinement。
+- [Agent Q: Advanced Reasoning and Learning for Autonomous AI Agents](https://arxiv.org/abs/2408.07199)：结合搜索、自我批评与强化学习，提升自主智能体在多步交互任务中的表现。
+- [Visual Agents as Fast and Slow Thinkers](https://arxiv.org/abs/2408.08862)：把视觉智能体推理拆分为快速感知与慢速审慎推理，为多模态智能体提供双速度控制模式。
+- [Enhancing Spectral Knowledge Interrogation: A Reliable Retrieval-Augmented Generative Framework on Large Language Models](https://arxiv.org/abs/2408.11557)：用 Enhancing Spectral Knowledge Interrogation 处理 A Reliable Retrieval-Augmented Generative Framework on Large Language Models。
+- [GRATR: Zero-Shot Evidence Graph Retrieval-Augmented Trustworthiness Reasoning](https://arxiv.org/abs/2408.12333)：为信息不完全的多智能体博弈构建证据图，用于零样本可信度推理。
+- [Efficient and Scalable Estimation of Tool Representations in Vector Space](https://arxiv.org/abs/2409.02141)：估计工具的向量空间表示，使智能体能在大规模工具库中更高效地检索和选择工具。
+- [ChatCam: Empowering Camera Control through Conversational AI](https://arxiv.org/abs/2409.17331)：用 ChatCam 处理 Empowering Camera Control through Conversational AI。
+- [PEAR: Position-Embedding-Agnostic Attention Re-weighting Enhances Retrieval-Augmented Generation with Zero Inference Overhead](https://arxiv.org/abs/2409.19745)：用 PEAR 处理 Position-Embedding-Agnostic Attention Re-weighting Enhances Retrieval-Augmented Generation with Zero Inference Overhead。
+- [Beyond Scores: A Modular RAG-Based System for Automatic Short Answer Scoring With Feedback](https://arxiv.org/abs/2409.20042)：用模块化 RAG 流水线为短答题评分并生成可解释反馈，而不只是输出分数。
+- [Recursive Abstractive Processing for Retrieval in Dynamic Datasets](https://arxiv.org/abs/2410.01736)：通过递归嵌入、聚类与摘要构建层级摘要，使动态数据集可按多粒度检索。
+- [TS-Reasoner: Domain-Oriented Time Series Inference Agents for Reasoning and Automated Analysis](https://arxiv.org/abs/2410.04047)：构建面向领域的时间序列推理智能体，把推理与自动化分析流程结合起来处理时序数据。
+- [Retrieval-Augmented Decision Transformer: External Memory for In-context RL](https://arxiv.org/abs/2410.07071)：为 Decision Transformer 加入检索式外部记忆，用历史轨迹作为强化学习决策的上下文支持。
+- [RoRA-VLM: Robust Retrieval-Augmented Vision Language Models](https://arxiv.org/abs/2410.08876)：通过检索物体、场景与实体知识增强视觉语言模型，面向知识密集型视觉任务。
+- [LLM Chain Ensembles for Scalable and Accurate Data Annotation](https://arxiv.org/abs/2410.13006)：把“LLM Chain Ensembles for Scalable and Accurate Data Annotation”作为具体的工具介导流程来处理。
+- [RAG4ITOps: A Supervised Fine-Tunable and Comprehensive RAG Framework for IT Operations and Maintenance](https://arxiv.org/abs/2410.15805)：用 RAG4ITOps 处理 A Supervised Fine-Tunable and Comprehensive RAG Framework for IT Operations and Maintenance。
+- [VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](https://arxiv.org/abs/2410.16400)：用 VipAct 处理 Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use。
+- [Beyond Browsing: API-Based Web Agents](https://arxiv.org/abs/2410.16464)：把网页智能体从视觉浏览推进到 API 级交互，通过结构化服务调用完成网页任务。
+- [Breaking ReAct Agents: Foot-in-the-Door Attack Will Get You In](https://arxiv.org/abs/2410.16950)：展示针对 ReAct 智能体的 Foot-in-the-Door 攻击，利用工具交互上下文逐步升级恶意指令。
+- [Asynchronous Tool Usage for Real-Time Agents](https://arxiv.org/abs/2410.21620)：让实时智能体异步发起和处理工具调用，避免严格阻塞式 action-observation 循环。
+- [Infant Agent: A Tool-Integrated, Logic-Driven Agent with Cost-Effective API Usage](https://arxiv.org/abs/2411.01114)：结合工具集成与逻辑驱动控制，构建成本敏感的 API 使用智能体。
+- [DynaSaur: Large Language Agents Beyond Predefined Actions](https://arxiv.org/abs/2411.01747)：让智能体在预定义工具不足时动态生成新动作，突破固定动作集合限制。
+- [Social-RAG: Retrieving from Group Interactions to Socially Ground Proactive AI Generation to Group Preferences](https://arxiv.org/abs/2411.02353)：用 Social-RAG 处理 Retrieving from Group Interactions to Socially Ground Proactive AI Generation to Group Preferences。
+- [Watson: A Cognitive Observability Framework for the Reasoning of Foundation Model-Powered Agents](https://arxiv.org/abs/2411.03455)：为基础模型智能体增加可观测性，追踪推理行为并暴露认知层面的失败模式。
+- [AgentOps: Enabling Observability of LLM Agents](https://arxiv.org/abs/2411.05285)：定义 LLM 智能体可观测性所需的 artifacts 与轨迹，便于监控推理、行动、失败和安全相关行为。
+- [Game-theoretic LLM: Agent Workflow for Negotiation Games](https://arxiv.org/abs/2411.05990)：用博弈论策略、角色交互和工作流级决策控制组织谈判游戏智能体。
+- [Task-Aligned Tool Recommendation for Large Language Models](https://arxiv.org/abs/2411.09613)：提出工具使用方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [CODECLEANER: Elevating Standards with A Robust Data Contamination Mitigation Toolkit](https://arxiv.org/abs/2411.10842)：提供检测和缓解代码基准污染的工具包，支持更干净的评测工作流。
+- [CATP-LLM: Empowering Large Language Models for Cost-Aware Tool Planning](https://arxiv.org/abs/2411.16313)：在成本约束下规划工具调用，在答案质量与候选工具路径开销之间做权衡。
+- [Advanced System Integration: Analyzing OpenAPI Chunking for Retrieval-Augmented Generation](https://arxiv.org/abs/2411.19804)：研究 OpenAPI 规格如何切块以服务 RAG，改进工具调用智能体对 API 描述的检索。
+- [SIMS: Simulating Stylized Human-Scene Interactions with Retrieval-Augmented Script Generation](https://arxiv.org/abs/2411.19921)：用 SIMS 处理 Simulating Stylized Human-Scene Interactions with Retrieval-Augmented Script Generation。
+- [Examining Identity Drift in Conversations of LLM Agents](https://arxiv.org/abs/2412.00804)：考察 LLM 智能体在对话中的身份漂移，暴露长时运行智能体的记忆与人设稳定性问题。
+- [SLA Management in Reconfigurable Multi-Agent RAG: A Systems Approach to Question Answering](https://arxiv.org/abs/2412.06832)：在可重构多智能体 RAG 中管理服务级目标，把问答系统作为协同服务流程自适应调整。
+- [Automatic Database Configuration Debugging using Retrieval-Augmented Language Models](https://arxiv.org/abs/2412.07548)：用检索增强语言模型诊断数据库配置问题，并推荐调试动作。
+- [Leveraging Graph-RAG and Prompt Engineering to Enhance LLM-Based Automated Requirement Traceability and Compliance Checks](https://arxiv.org/abs/2412.08593)：围绕“Leveraging Graph-RAG and Prompt Engineering to Enhance LLM-Based Automated Requirement Traceability and Compliance Checks”组织检索增强处理。
+- [ColorFlow: Retrieval-Augmented Image Sequence Colorization](https://arxiv.org/abs/2412.11815)：从图像序列中检索增强证据，引导时间一致的图像序列上色。
+- [Auto-Cypher: Improving LLMs on Cypher generation via LLM-supervised generation-verification framework](https://arxiv.org/abs/2412.12612)：用 Auto-Cypher 处理 Improving LLMs on Cypher generation via LLM-supervised generation-verification framework。
+- [Multi-modal Agent Tuning: Building a VLM-Driven Agent for Efficient Tool Usage](https://arxiv.org/abs/2412.15606)：提出面向工具使用与工具介导的智能体交互的智能体工作流、工具循环、编排模式或多智能体系统。
+- [DeRAG: Decentralized Multi-Source RAG System with Optimized Pyth Network](https://doi.org/10.1109/ispa63168.2024.00022)：用 Pyth 网络优化的多源 RAG 设计去中心化检索，避免单一集中证据源。
+- [REANO: Optimising Retrieval-Augmented Reader Models through Knowledge Graph Generation](https://doi.org/10.18653/v1/2024.acl-long.115)：生成知识图谱来优化检索增强阅读模型，在阅读前改进证据组织。
+- [Multi-Agent Knowledge Graph Question Answering Framework Based on Lightweight Large Language Model](https://doi.org/10.1109/uv63228.2024.11189149)：协调轻量级 LLM 智能体访问知识图谱，使问答能分解推理和检索角色。
+- [Similarity Thresholds in Retrieval-Augmented Generation](https://doi.org/10.1109/is61756.2024.10705214)：研究 RAG 中相似度阈值选择，把检索截断设为答案管线中的可调环节。
+- [Enhancing Dietary Supplement Question Answer via Retrieval-Augmented Generation (RAG) with LLM](https://doi.org/10.1101/2024.09.11.24313513)：用 RAG 回答膳食补充剂问题，在 LLM 生成前检索领域证据。
+- [A Chat Bot for Enrollment of Xi 'an Jiaotong-Liverpool University Based on RAG*](https://doi.org/10.1109/iwceaa63616.2024.10823979)：实现面向大学招生咨询的 RAG 聊天机器人，用检索到的校园信息约束回答。
+- [Optimizing Legal Information Access: Federated Search and RAG for Secure AI-Powered Legal Solutions](https://doi.org/10.1109/bigdata62323.2024.10825815)：结合 federated search 与 RAG，在安全检索法律信息后生成 AI 辅助法律回答。
+- [TPTU-v2: Boosting Task Planning and Tool Usage of Large Language Model-based Agents in Real-world Industry Systems](https://doi.org/10.18653/v1/2024.emnlp-industry.27)：提出面向工具使用与工具介导的智能体交互的智能体工作流、工具循环、编排模式或多智能体系统。
+- [Retrieval-Augmented Dynamic Prompt Tuning for Incomplete Multimodal Learning](https://arxiv.org/abs/2501.01120)：结合检索样例进行动态提示调优，以处理缺失模态输入。
+- [PIKE-RAG](https://arxiv.org/abs/2501.11551)：结合专门知识检索与 rationale-augmented generation，补充面向工具化知识使用的可复用 RAG 编排模式。
+- [LLM-AutoDiff: Auto-Differentiate Any LLM Workflow](https://arxiv.org/abs/2501.16673)：把提示词和工作流组件视作可训练文本参数，用 backward-engine 反馈优化多调用和智能体式 LLM 流水线。
 - [ToolFactory](https://arxiv.org/abs/2501.16945)：从 REST API 文档自动生成工具。核心思想是让 LLM 理解 API 文档、合成可调用工具包装，并暴露给 agent，从而减少接入新服务时的手工工具工程。
+- [ChatIoT: Large Language Model-based Security Assistant for Internet of Things with Retrieval-Augmented Generation](https://arxiv.org/abs/2502.09896)：用 ChatIoT 处理 Large Language Model-based Security Assistant for Internet of Things with Retrieval-Augmented Generation。
+- [OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](https://arxiv.org/abs/2502.11271)：OctoTools 是训练无关、可扩展的多工具 agent framework，适合 Tool Use Agent Harness。
+- [ToolCoder: A Systematic Code-Empowered Tool Learning Framework for Large Language Models](https://arxiv.org/abs/2502.11404)：面向 LLM 的代码增强工具学习框架。核心思想是把生成代码作为中间工具层，使模型系统化地构造和调用工具。
+- [Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger](https://arxiv.org/abs/2502.12961)：带 meta-cognition trigger 的 tool-use harness。核心思想是让模型通过监控不确定性或推理状态来判断何时需要调用工具。
+- [Passage Query Methods for Retrieval and Reranking in Conversational Agents](https://arxiv.org/abs/2503.00238)：比较对话智能体中的 passage query 检索与重排策略，关注对话上下文如何转成搜索查询。
+- [AskToAct: Enhancing LLMs Tool Use via Self-Correcting Clarification](https://arxiv.org/abs/2503.01940)：工具使用前的自校正式澄清流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Graph Retrieval-Augmented LLM for Conversational Recommendation Systems](https://arxiv.org/abs/2503.06430)：围绕“Graph Retrieval-Augmented LLM for Conversational Recommendation Systems”组织检索增强处理。
+- [ASTRA: A Negotiation Agent with Adaptive and Strategic Reasoning via Tool-integrated Action for Dynamic Offer Optimization](https://arxiv.org/abs/2503.07129)：构建谈判智能体，将工具集成到策略推理中以动态优化报价。
+- [Advanced Tool Learning and Selection System (ATLASS): A Closed-Loop Framework Using LLM](https://arxiv.org/abs/2503.10071)：构建工具学习与工具选择的闭环框架。
+- [CoSTA∗: Cost-Sensitive Toolpath Agent for Multi-turn Image Editing](https://arxiv.org/abs/2503.10613)：面向多轮图像编辑的代价敏感 toolpath agent。核心思想是把编辑过程规划成 AI 工具调用序列，在工具成本和子任务成功率之间取舍，而不是依赖单一图像编辑模型。
+- [PLAY2PROMPT: Zero-shot Tool Instruction Optimization for LLM Agents via Tool Play](https://arxiv.org/abs/2503.14432)：通过 tool play 做零样本工具说明优化。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [CoLLM: A Large Language Model for Composed Image Retrieval](https://arxiv.org/abs/2503.19910)：把大语言模型推理用于组合式图像检索，将参考图像与文本修改条件匹配到目标图像。
+- [CodeTool: Enhancing Programmatic Tool Invocation of LLMs via Process Supervision](https://arxiv.org/abs/2503.20840)：面向 programmatic tool invocation 的 process-supervised harness；核心思想是用逐步代码生成和即时/潜在过程奖励引导工具调用。
 - [Factored Agents](https://arxiv.org/abs/2503.22931)：面向工具使用的 agent 架构，将高层规划与 in-context learning 同工具格式记忆拆开。核心思想：用专门组件减少格式错误、字段缺失和 API 字段幻觉，同时保留动态环境中的适应性。
+- [T1: Tool-integrated Self-verification for Test-time Compute Scaling in Small Language Models](https://arxiv.org/abs/2504.04718)：面向测试时计算扩展的工具集成自验证。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [FactGuard: Leveraging Multi-Agent Systems to Generate Answerable and Unanswerable Questions for Enhanced Long-Context LLM Extraction](https://arxiv.org/abs/2504.05607)：用多智能体生成可回答与不可回答问题，用于压力测试长上下文信息抽取。
+- [Dynamic Evaluation Framework for Personalized and Trustworthy Agents: A Multi-Session Approach to Preference Adaptability](https://arxiv.org/abs/2504.06277)：跨多次会话评测个性化智能体，衡量偏好适应性和可信行为随时间的变化。
+- [Enhancing Product Search Interfaces with Sketch-Guided Diffusion and Language Agents](https://arxiv.org/abs/2504.08739)：结合草图引导扩散和语言智能体，使商品搜索同时利用视觉草图和对话式细化。
+- [Improving RAG for Personalization with Author Features and Contrastive Examples](https://arxiv.org/abs/2504.08745)：用作者特征和对比样例个性化 RAG，使检索与生成贴合用户写作上下文。
+- [MCP Bridge: A Lightweight, LLM-Agnostic RESTful Proxy for Model Context Protocol Servers](https://arxiv.org/abs/2504.08999)：为 MCP 工具服务器提供 RESTful 代理层。
+- [MMKB-RAG: A Multi-Modal Knowledge-Based Retrieval-Augmented Generation Framework](https://arxiv.org/abs/2504.10074)：用模型生成的语义标签和多模态知识过滤改进外部多模态知识库上的检索增强生成。
+- [AutoStyle-TTS: Retrieval-Augmented Generation based Automatic Style Matching Text-to-Speech Synthesis](https://arxiv.org/abs/2504.10309)：检索匹配的风格参考，为文本转语音合成自动选择并条件化说话风格。
+- [CDF-RAG: Causal Dynamic Feedback for Adaptive Retrieval-Augmented Generation](https://arxiv.org/abs/2504.12560)：用因果动态反馈调整 RAG 检索决策，而不是保持固定检索策略。
+- [InstructRAG: Leveraging Retrieval-Augmented Generation on Instruction Graphs for LLM-Based Task Planning](https://arxiv.org/abs/2504.13032)：基于 instruction graph 的检索增强任务规划框架。核心思想是用可复用任务知识 grounding thought-action-observation planning。
+- [A Framework for Testing and Adapting REST APIs as LLM Tools](https://arxiv.org/abs/2504.15546)：REST API 转 LLM tool 的测试与适配框架；核心思想是测试、包装和适配 API endpoint，使 LLM agent 能可靠调用。
+- [When2Call: When (not) to Call Tools](https://arxiv.org/abs/2504.18851)：研究 agent 何时应该或不应该调用工具。核心思想是把 tool necessity 变成显式决策，避免不必要、昂贵或有害的工具调用。
 - [Secure MCP Gateways](https://arxiv.org/abs/2504.19997)：提出用于企业 AI 集成的简化安全 MCP 网关。核心思想是在 agent 与企业工具之间加入网关层，集中管理 MCP 连接、认证、策略检查与可观测性。
+- [Time-aware ReAct Agent for Temporal Knowledge Graph Question Answering](https://doi.org/10.18653/v1/2025.findings-naacl.334)：在 ReAct 智能体中加入时间感知机制，用于时间知识图谱问答。
+- [RAG-MCP: Mitigating Prompt Bloat in LLM Tool Selection via Retrieval-Augmented Generation](https://arxiv.org/abs/2505.03275)：用检索缓解 MCP 工具选择中的提示膨胀。
+- [ScaleMCP: Dynamic and Auto-Synchronizing Model Context Protocol Tools for LLM Agents](https://arxiv.org/abs/2505.06416)：面向 LLM agent 的动态、自动同步 MCP 工具层；核心思想是让工具定义与运行时可用性保持同步，减少 MCP 工具调用中的过期上下文失败。
+- [Control Plane as a Tool: A Scalable Design Pattern for Agentic AI Systems](https://arxiv.org/abs/2505.06817)：将控制平面作为 agentic AI 系统的可扩展工具模式。
+- [ParaView-MCP: An Autonomous Visualization Agent with Direct Tool Use](https://arxiv.org/abs/2505.07064)：通过 MCP 让自主可视化智能体直接使用工具。
+- [ToolACE-DEV: Self-Improving Tool Learning via Decomposition and EVolution](https://arxiv.org/abs/2505.07512)：基于 decomposition 与 evolution 的自改进工具学习框架；核心思想是不只依赖强模型蒸馏来改进工具使用数据和行为。
+- [KAQG: A Knowledge-Graph-Enhanced RAG for Difficulty-Controlled Question Generation](https://arxiv.org/abs/2505.07618)：用知识图谱增强 RAG 生成难度可控的问题。
+- [Patchwork: A Unified Framework for RAG Serving](https://arxiv.org/abs/2505.07833)：统一 RAG serving 组件，使检索、生成和部署选择能在一个服务框架中管理。
+- [OMGM: Orchestrate Multiple Granularities and Modalities for Efficient Multimodal Retrieval](https://arxiv.org/abs/2505.07879)：在多模态 RAG 中跨模态、跨知识粒度组织粗到细检索，用于知识型视觉问答。
+- [Unveiling Knowledge Utilization Mechanisms in LLM-based Retrieval-Augmented Generation](https://arxiv.org/abs/2505.11995)：分析 LLM RAG 系统如何使用检索知识，区分证据被复制、忽略或转换的情况。
+- [Align-GRAG: Anchor and Rationale Guided Dual Alignment for Graph Retrieval-Augmented Generation](https://arxiv.org/abs/2505.16237)：用锚点与理由引导图检索对齐，使 Graph RAG 证据更贴合推理路径。
+- [Minimalist RL for Multi-Agent RAG](https://arxiv.org/abs/2505.17086)：用轻量强化学习循环改进多智能体检索增强系统。
+- [BRIT: Bidirectional Retrieval over Unified Image-Text Graph](https://arxiv.org/abs/2505.18450)：在统一图文图上执行双向检索，连接视觉与文本证据。
+- [OptiMindTune: A Multi-Agent Framework for Intelligent Hyperparameter Optimization](https://arxiv.org/abs/2505.19205)：协调多个智能体搜索超参数、评估候选项并细化优化决策。
+- [DGRAG: Distributed Graph-based Retrieval-Augmented Generation in Edge-Cloud Systems](https://arxiv.org/abs/2505.19847)：在边缘与云资源之间分布式执行图 RAG，协调知识和计算分离时的检索。
+- [VisualToolAgent (VisTA): A Reinforcement Learning Framework for Visual Tool Selection](https://arxiv.org/abs/2505.20289)：类型：agent harness/可复用执行框架。核心价值：为 1.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [MIRROR: Multi-agent Intra- and Inter-Reflection for Optimized Reasoning in Tool Learning](https://arxiv.org/abs/2505.20670)：面向工具学习的多 agent 内外反思流程。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Agent-Environment Alignment via Automated Interface Generation](https://arxiv.org/abs/2505.21055)：自动生成动作接口，减少 LLM 智能体对动作效果的预期与环境真实状态转移之间的不匹配。
+- [RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](https://arxiv.org/abs/2505.21413)：RefTool 让 agent 依据参考资料自动创建工具，属于 tool creation 与 knowledge-intensive tool-use harness。
 - [AgentDNS](https://arxiv.org/abs/2505.22368)：面向 LLM agent 的服务发现与命名协议。核心思想：为 agent 提供 root-domain 机制，用于跨厂商发现、解析并安全调用第三方 agent 和工具，补足 MCP 与 A2A 周边的互操作缺口。
+- [RocqStar: Leveraging Similarity-driven Retrieval and Agentic Systems for Rocq generation](https://arxiv.org/abs/2505.22846)：结合相似度驱动的前提检索与智能体生成循环，用于 Rocq 证明代码生成。
+- [ComposeRAG: A Modular and Composable RAG for Corpus-Grounded Multi-Hop Question Answering](https://arxiv.org/abs/2506.00232)：把 RAG 拆解为可组合模块，用于语料 grounded 的多跳问答。
+- [MCP-Zero: Active Tool Discovery for Autonomous LLM Agents](https://arxiv.org/abs/2506.01056)：面向自主 agent 的主动工具发现机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Retrieval-Augmented Generation of Ontologies from Relational Databases](https://arxiv.org/abs/2506.01232)：用检索增强从关系数据库生成本体，连接数据库 schema 与语义表示。
+- [RAISE: Reasoning Agent for Interactive SQL Exploration](https://arxiv.org/abs/2506.01273)：提出交互式探索 SQL 数据库的推理智能体，而不是一次性生成单条查询。
+- [A Study on the MCP x A2A Framework for Enhancing Interoperability of LLM-based Autonomous Agents](https://arxiv.org/abs/2506.01804)：研究 MCP 与 A2A 在 LLM 自治智能体互操作中的结合。
+- [VerificAgent: Integrating Expert Knowledge and Fact-Checked Memory for Robust Domain-Specific Task Planning](https://arxiv.org/abs/2506.02539)：结合专家知识与事实核查记忆，使领域任务规划能在执行前验证步骤。
+- [World Modelling Improves Language Model Agents](https://arxiv.org/abs/2506.02918)：面向工具调用语言 agent 的世界模型层。核心思想是在 function calling 之外预测未来环境状态，在真实环境反复试错成本高时改进规划。
+- [Mind the Metrics: Patterns for Telemetry-Aware In-IDE AI Application Development using the Model Context Protocol (MCP)](https://arxiv.org/abs/2506.11019)：总结基于 MCP 的 IDE 内 AI 应用 telemetry-aware 模式；核心思想是连接 prompt trace、评测反馈和工具遥测，让开发者 agent 可观测、可改进。
+- [RAG+: Enhancing Retrieval-Augmented Generation with Application-Aware Reasoning](https://arxiv.org/abs/2506.11555)：用面向应用的推理扩展 RAG，同时检索知识和对应应用示例。
+- [AgentOrchestra: Orchestrating Multi-Agent Intelligence with the Tool-Environment-Agent(TEA) Protocol](https://arxiv.org/abs/2506.12508)：Tool-Environment-Agent 编排协议；核心思想是把工具、环境和 agent 作为带版本与生命周期的一等资源管理，并绑定运行上下文。
+- [XGraphRAG: Interactive Visual Analysis for Graph-based Retrieval-Augmented Generation](https://arxiv.org/abs/2506.13782)：为图 RAG 增加交互式可视分析，让用户检查并引导图检索路径。
+- [Enhancing Document-Level Question Answering via Multi-Hop Retrieval-Augmented Generation with LLaMA 3](https://arxiv.org/abs/2506.16037)：用 LLaMA 3 的多跳 RAG 回答文档级问题，串联跨段落证据。
+- [RAGentA: Multi-Agent Retrieval-Augmented Generation for Attributed Question Answering](https://arxiv.org/abs/2506.16988)：协调多个 RAG 智能体生成带证据归属的问答结果。
+- [NaviAgent: Bilevel Planning on Tool Navigation Graph for Large-Scale Orchestration](https://arxiv.org/abs/2506.19500)：补充tool use方向的agent harness，核心围绕《NaviAgent: Bilevel Planning on Tool Navigation Graph for Large-Scale Orchestration》。
+- [Doc2Agent: Scalable Generation of Tool-Using Agents from API Documentation](https://arxiv.org/abs/2506.19998)：从 API 文档生成工具使用 agent。核心思想：把 API 文档转成可执行 agent 接口，减少人工编写工具封装的成本。
+- [FaSTA*: Fast-Slow Toolpath Agent with Subroutine Mining for Efficient Multi-turn Image Editing](https://arxiv.org/abs/2506.20911)：面向多轮图像编辑的 fast-slow toolpath agent。核心思想是结合 LLM 高层规划、较慢但精确的工具执行、局部搜索与子程序挖掘，降低组合式编辑任务成本。
+- [EraRAG: Efficient and Incremental Retrieval Augmented Generation for Growing Corpora](https://arxiv.org/abs/2506.20963)：通过层级 LSH 图组织支持增长语料上的 Graph-RAG 增量更新，降低检索增强系统反复全量重建成本。
+- [Towards the "Digital Me": A vision of authentic Conversational Agents powered by personal Human Digital Twins](https://arxiv.org/abs/2506.23826)：把个人 Human Digital Twin 设想为真实对话智能体的记忆和身份底座。
+- [MassTool: A Multi-Task Search-Based Tool Retrieval Framework for Large Language Models](https://arxiv.org/abs/2507.00487)：面向大规模工具检索的搜索式框架。核心思想是结合 query 理解与多任务搜索，让工具增强 LLM 在执行前先从海量工具中筛出候选。
+- [Agent-as-Tool: A Study on the Hierarchical Decision Making with Reinforcement Learning](https://arxiv.org/abs/2507.01489)：可作为工具使用的Agent Harness候选；核心关注“A Study on the Hierarchical Decision Making with Reinforcement Learning”。
 - [Gradientsys](https://arxiv.org/abs/2507.06520)：带有 ReAct 式编排的多智能体 LLM 调度器。核心思想：通过调度与反馈协调专门化 agent，使多步骤工具或 workflow 执行被显式管理，而不是交给单一大 prompt。
+- [KVFlow: Efficient Prefix Caching for Accelerating LLM-Based Multi-Agent Workflows](https://arxiv.org/abs/2507.07400)：面向 LLM 多 agent 工作流的前缀缓存加速层；核心思想是在 agent 与轮次之间复用共享上下文，降低协同工具执行的延迟与成本。
+- [ToolRegistry: A Protocol-Agnostic Tool Management Library for Function-Calling LLMs](https://arxiv.org/abs/2507.10593)：面向 function-calling LLM 的协议无关工具管理库。核心思想是独立于单一工具协议来注册、描述和路由工具，降低工具生态维护成本。
+- [Semantic Context for Tool Orchestration](https://arxiv.org/abs/2507.10820)：面向工具使用与工具编排的智能体框架或运行时。核心思想：把 Semantic Context for Tool Orchestration 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [From REST to MCP](https://arxiv.org/abs/2507.16044)：MCP server 构建的实证研究与生成 harness。核心思想：分析官方 MCP server 如何包装 REST API，再修复和转换 OpenAPI specification，使面向 agent 的工具更正确且更低复杂度。
+- [AgentMaster: A Multi-Agent Conversational Framework Using A2A and MCP Protocols for Multimodal Information Retrieval and Analysis](https://arxiv.org/abs/2507.21105)：结合 A2A 与 MCP 的多 agent 对话框架；核心思想是用协议化方式协调 agents、tools 和 resources 完成多模态信息检索与分析。
+- [AutoTIR: Autonomous Tools Integrated Reasoning via Reinforcement Learning](https://arxiv.org/abs/2507.21836)：面向 autonomous tool-integrated reasoning 的框架；核心思想是把工具选择和执行纳入推理循环，而不是固定的外部辅助。
 - [Agent Network Protocol](https://arxiv.org/abs/2508.00007)：面向开放式 agent-to-agent 网络的协议提案。核心思想是标准化身份、发现、协商与消息交换，让不同厂商和服务中的智能体能互操作，而不是依赖一次性集成代码。
+- [Blueprint First, Model Second: A Framework for Deterministic LLM Workflow](https://arxiv.org/abs/2508.02721)：Blueprint First, Model Second 先构造确定性工作流蓝图，再进行模型执行。
+- [Unified Tool Integration for LLMs: A Protocol-Agnostic Approach to Function Calling](https://arxiv.org/abs/2508.02979)：面向工具增强 LLM 应用的协议无关函数调用 harness；核心思想是抽象不同工具协议，自动生成 schema，并支持多来源工具的并发执行。
+- [A Closed-Loop Multi-Agent Framework for Aerodynamics-Aware Automotive Styling Design](https://arxiv.org/abs/2508.03370)：闭合汽车造型提案与气动评估之间的多智能体设计迭代循环。
+- [Planning Agents on an Ego-Trip: Leveraging Hybrid Ego-Graph Ensembles for Improved Tool Retrieval in Enterprise Task Planning](https://arxiv.org/abs/2508.05888)：面向工具使用与结构化工具交互提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [HGMF](https://arxiv.org/abs/2508.07602)：用 hierarchical Gaussian mixture 框架扩展 MCP 工具调用，把工具路由与调用稳定性纳入可复用 harness 设计。
+- [Efficient Agent: Optimizing Planning Capability for Multimodal Retrieval Augmented Generation](https://arxiv.org/abs/2508.08816)：优化多模态 RAG 智能体的规划能力，使检索步骤适应新闻等时效性图文任务。
+- [An LLM + ASP Workflow for Joint Entity-Relation Extraction](https://arxiv.org/abs/2508.12611)：面向工具使用与结构化工具交互提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [GTool: Graph Enhanced Tool Planning with Large Language Model](https://arxiv.org/abs/2508.12725)：面向 LLM 的图增强工具规划框架。核心思想是把工具依赖和执行结构表示成图，从而更稳定地规划多步工具调用。
+- [Scaling Multi-Agent Epistemic Planning through GNN-Derived Heuristics](https://arxiv.org/abs/2508.12840)：用 GNN 派生启发式扩展多智能体认识规划，引导对信念和知识状态的搜索。
+- [An automatic patent literature retrieval system based on LLM-RAG](https://arxiv.org/abs/2508.14064)：围绕“An automatic patent literature retrieval system based on LLM-RAG”组织检索增强处理。
 - [MCP-Universe](https://arxiv.org/abs/2508.14704)（[开源代码](https://github.com/SalesforceAIResearch/MCP-Universe)）：更像工具生态层的 agent harness，不只是 benchmark 数据集；它把 MCP server、任务、执行器、UI 和评测记录组织到同一运行环境，适合复现实验和对比不同 tool-use scaffold。
+- [Chain-of-Query: Unleashing the Power of LLMs in SQL-Aided Table Understanding via Multi-Agent Collaboration](https://arxiv.org/abs/2508.15809)：面向工具使用与工具编排的智能体框架或运行时。核心思想：把 Unleashing the Power of LLMs in SQL-Aided Table Understanding via Multi-Agent Collaboration 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](https://arxiv.org/abs/2508.19855)：通过 agentic GraphRAG 统一图构建与图检索，用于复杂推理。
+- [VerlTool](https://arxiv.org/abs/2509.01055)：面向工具使用型 agentic RL 的模块化框架，与 VeRL 对齐并标准化工具 API、执行流程和跨域扩展机制。
+- [Open-World KG-RAG Multi-Agent Collaboration](https://arxiv.org/abs/2509.01238)：协调多个智能体在知识图谱上执行开放世界检索增强生成，补充可复用的图检索编排模式。
+- [Code2MCP: Transforming Code Repositories into MCP Services](https://arxiv.org/abs/2509.05941)：Code2MCP 将代码仓库转为 MCP services，补足工具生态构建与 MCP 接入基础设施。
+- [AgentX: Towards Orchestrating Robust Agentic Workflow Patterns with FaaS-hosted MCP Services](https://arxiv.org/abs/2509.07595)：基于 FaaS-hosted MCP services 编排 agentic workflow patterns 的框架。核心思想是通过托管 MCP 服务组合工具使用流程，让 agent 更稳健地跨工具路由。
+- [Agentic LLMs for Question Answering over Tabular Data](https://arxiv.org/abs/2509.09234)：用智能体流程处理表格问答，让大语言模型检查、规划并查询大规模异构表格。
+- [GBV-SQL: Guided Generation and SQL2Text Back-Translation Validation for Multi-Agent Text2SQL](https://arxiv.org/abs/2509.12612)：用引导式生成与 SQL 到文本反向验证构成可复用的多智能体 Text2SQL 工作流。
+- [One Agent to Serve All: a Lite-Adaptive Stylized AI Assistant for Millions of Multi-Style Official Accounts](https://arxiv.org/abs/2509.17788)：用轻量自适应助手架构服务大量公众号写作风格，而不必维护多个独立智能体。
+- [Failure Makes the Agent Stronger: Enhancing Accuracy through Structured Reflection for Reliable Tool Interactions](https://arxiv.org/abs/2509.18847)：面向可靠工具交互的结构化反思框架。核心思想是让 agent 在多轮工具调用失败后诊断并修复，而不是重复错误调用。
+- [Dynamic ReAct: Scalable Tool Selection for Large-Scale MCP Environments](https://arxiv.org/abs/2509.20386)：补充面向大规模 MCP 环境的动态工具选择机制。
+- [Think-on-Graph 3.0: Efficient and Adaptive LLM Reasoning on Heterogeneous Graphs via Multi-Agent Dual-Evolving Context Retrieval](https://arxiv.org/abs/2509.21710)：通过多 agent 双向演化上下文检索，在异构图上进行自适应推理。
+- [Learning How to Use Tools, Not Just When: Pattern-Aware Tool-Integrated Reasoning](https://arxiv.org/abs/2509.23292)：该工作从 pattern-aware tool-integrated reasoning 研究如何使用工具，直接属于 tool-use harness。
+- [APRIL: API Synthesis with Automatic Prompt Optimization and Reinforcement Learning](https://arxiv.org/abs/2509.25196)：通过自动提示优化与强化学习进行 API 合成。
+- [PALADIN: Self-Correcting Language Model Agents to Cure Tool-Failure Cases](https://arxiv.org/abs/2509.25238)：PALADIN 针对 tool-failure cases 做自纠错 agent，属于工具故障恢复 harness。
+- [ReTAG: Retrieval-Enhanced, Topic-Augmented Graph-Based Global Sensemaking](https://arxiv.org/abs/2509.25814)：结合检索、主题增强和图组织，对大规模信息集合做全局 sensemaking。
+- [GEM](https://arxiv.org/abs/2510.01051)：面向 agentic LLM 的 Gym-style 环境模拟器；核心思想是统一 environment-agent 接口、异步向量化执行、wrapper、工具和多交互环境 baseline。
+- [TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](https://arxiv.org/abs/2510.01279)：类型：agent harness/可复用执行框架。核心价值：为 1.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Stream RAG: Instant and Accurate Spoken Dialogue Systems with Streaming Tool Usage](https://arxiv.org/abs/2510.02044)：面向口语对话系统的 streaming tool-use 框架；核心思想是在对话进行中检索和调用工具，而不是等待整轮结束后再处理。
+- [ARUQULA - An LLM based Text2SPARQL Approach using ReAct and Knowledge Graph Exploration Utilities](https://arxiv.org/abs/2510.02200)：用 ARUQULA 处理 An LLM based Text2SPARQL Approach using ReAct and Knowledge Graph Exploration Utilities。
+- [Learning to Route](https://arxiv.org/abs/2510.02388)：一个 rule-driven hybrid-source RAG 框架，由 routing agent 在文档和数据库增强路径之间选择，rule-making expert agent 根据 QA 反馈改进路由规则，并用 path-level meta-cache 复用历史决策。
+- [StepChain GraphRAG: Reasoning Over Knowledge Graphs for Multi-Hop Question Answering](https://arxiv.org/abs/2510.02827)：把图检索步骤与推理串联起来，使多跳问答沿显式知识图谱路径展开。
+- [In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](https://arxiv.org/abs/2510.05592)：通过 in-the-flow optimization 协调 planner、executor、verifier 等模块，改进工具增强 agent。
+- [Extending Resourcelink: Patterns for Large Dataset Processing in MCP Applications](https://arxiv.org/abs/2510.05968)：扩展 MCP Resourcelink 模式，用于处理超出上下文窗口的大型数据集。
+- [ToolMem: Enhancing Multimodal Agents with Learnable Tool Capability Memory](https://arxiv.org/abs/2510.06664)：可作为工具使用的Agent Harness候选；核心关注“Enhancing Multimodal Agents with Learnable Tool Capability Memory”。
+- [Adaptive Tool Generation with Models as Tools and Reinforcement Learning](https://arxiv.org/abs/2510.06825)：类型：agent harness/可复用执行框架。核心价值：为 1.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Prompt Optimization Across Multiple Agents for Representing Diverse Human Populations](https://arxiv.org/abs/2510.07064)：跨多个智能体优化提示，以表示多样化人群而不是单一平均人格。
+- [Who Stole Your Data? A Method for Detecting Unauthorized RAG Theft](https://arxiv.org/abs/2510.07728)：围绕“Who Stole Your Data? A Method for Detecting Unauthorized RAG Theft”组织检索增强处理。
+- [When LLM Agents Meet Graph Optimization: An Automated Data Quality Improvement Approach](https://arxiv.org/abs/2510.08952)：用 LLM 智能体结合图优化识别并改进数据质量问题。
+- [Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering](https://arxiv.org/abs/2510.13381)：用 2D 先验与 SDF 引导构成动态城市场景渲染工作流。
+- [NetMCP: Network-Aware Model Context Protocol Platform for LLM Capability Extension](https://arxiv.org/abs/2510.13467)：面向 LLM 能力扩展的 network-aware MCP 平台。核心思想是通过 MCP 接入外部网络服务，同时考虑网络状态和服务约束。
+- [MAFA: A Multi-Agent Framework for Enterprise-Scale Annotation with Configurable Task Adaptation](https://arxiv.org/abs/2510.14184)：提供可配置的多智能体标注框架，面向企业规模的数据标注任务。
+- [Natural Language Tools](https://arxiv.org/abs/2510.14453)：用自然语言工具输出替代 JSON/function call 的工具调用框架。核心思想：把工具选择与最终回答格式解耦，使模型在刚性 schema 或原生函数调用不稳定时，仍能通过语言化描述完成工具调用。
+- [ToolCritic: Detecting and Correcting Tool-Use Errors in Dialogue Systems](https://arxiv.org/abs/2510.17052)：检测并纠正对话系统中的工具使用错误；核心思想是加入 critic 循环，在对话继续前验证工具调用并修复误用。
+- [A Mimamsa Inspired Framework For Instruction Sequencing In AI Agents](https://arxiv.org/abs/2510.17691)：围绕“A Mimamsa Inspired Framework For Instruction Sequencing In AI Agents”组织智能体协同。
+- [GRETEL: A Goal-driven Retrieval and Execution-based Trial Framework for LLM Tool Selection Enhancing](https://arxiv.org/abs/2510.17843)：面向工具选择的目标驱动检索与试执行框架；核心思想是在采用检索到的工具前检查功能可行性，而不只依赖文本相似度。
+- [Modeling Layered Consciousness with Multi-Agent Large Language Models](https://arxiv.org/abs/2510.17844)：围绕“Modeling Layered Consciousness with Multi-Agent Large Language Models”组织智能体协同。
+- [Repairing Tool Calls Using Post-tool Execution Reflection and RAG](https://arxiv.org/abs/2510.17874)：在工具执行后进行反思并检索相关修复样例，用于修复失败工具调用。
+- [JAUNT: Joint Alignment of User Intent and Network State for QoE-centric LLM Tool Routing](https://arxiv.org/abs/2510.18550)：面向 QoE 的 LLM tool-routing 框架。核心思想是联合对齐用户意图和网络状态，让 agent 选择同时满足任务目标与服务质量约束的工具。
+- [ToolDreamer](https://arxiv.org/abs/2510.19791)：面向大规模工具库的工具检索框架。核心思想：先根据用户查询生成假想工具描述，再用这些描述与真实工具说明对齐检索，在 LLM 看到受限工具集合之前分担一部分工具选择推理。
+- [ToolScope: Enhancing LLM Agent Tool Use through Tool Merging and Context-Aware Filtering](https://arxiv.org/abs/2510.20036)：通过工具合并和上下文感知过滤管理候选工具，使 agent 在大型工具库中降低提示长度和选择噪声。
+- [DeepAgent: A General Reasoning Agent with Scalable Toolsets](https://arxiv.org/abs/2510.21618)：面向带可扩展工具发现与执行的通用推理 agent的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Tools are under-documented: Simple Document Expansion Boosts Tool Retrieval](https://arxiv.org/abs/2510.22670)：基于文档扩展的工具检索改进方法。核心思想是补强文档不足的工具描述，使 agent 更稳定地检索和选择正确工具。
+- [Graph-Guided Concept Selection for Efficient Retrieval-Augmented Generation](https://arxiv.org/abs/2510.24120)：用图引导选择概念，在保留有效 RAG 上下文的同时降低检索成本。
+- [MCP-Flow](https://arxiv.org/abs/2510.24284)：面向真实 MCP 工具体系的 web-agent 驱动管线，用于服务器发现、工具使用数据合成和轨迹生成。
+- [OrchDAG: Complex Tool Orchestration in Multi-Turn Interactions with Plan DAGs](https://arxiv.org/abs/2510.24663)：用 plan DAGs 编排多轮交互中的复杂工具调用。
+- [Bridging Tool Dependencies and Domain Knowledge: A Graph-Based Framework for In-Context Planning](https://arxiv.org/abs/2510.24690)：连接工具依赖与领域知识的 graph-based harness；核心思想是把 tool schema 与流程文档融合成知识图谱，让 agent 生成符合工具交互关系的计划。
+- [GAP: Graph-Based Agent Planning with Parallel Tool Use and Reinforcement Learning](https://arxiv.org/abs/2510.25320)：支持并行工具调用的图式 agent 规划。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [ToolScope: An Agentic Framework for Vision-Guided and Long-Horizon Tool Use](https://arxiv.org/abs/2510.27363)：它提供工具路由、工具生成、MCP 设计或多工具编排机制，适合补充 tool-use Agent Harness。
+- [Asynchronous Risk-Aware Multi-Agent Packet Routing for Ultra-Dense LEO Satellite Networks](https://arxiv.org/abs/2510.27506)：围绕“Asynchronous Risk-Aware Multi-Agent Packet Routing for Ultra-Dense LEO Satellite Networks”组织智能体协同。
+- [PROPEX-RAG: Enhanced GraphRAG using Prompt-Driven Prompt Execution](https://arxiv.org/abs/2511.01802)：用 prompt-driven prompt execution 增强 GraphRAG，使检索和推理步骤成为显式提示操作。
+- [Tool-to-Agent Retrieval: Bridging Tools and Agents for Scalable LLM Multi-Agent Systems](https://arxiv.org/abs/2511.01854)：把工具映射到合适 agent 的检索框架；核心思想是连接工具描述与 agent 能力，使大规模多 agent 编排不局限于固定小团队。
+- [Test-Time Adaptation for LLM Agents](https://doi.org/10.48550/arXiv.2511.04847)：面向陌生工具或 web 环境的部署时适应 harness。核心思想是从环境格式中学习轻量语法对齐，并在执行任务前通过 dynamics-grounding 探索形成上下文内世界模型。
+- [Building Specialized Software-Assistant ChatBot with Graph-Based Retrieval-Augmented Generation](https://arxiv.org/abs/2511.05297)：基于图检索增强生成构建软件助手聊天机器人，使回答能利用结构化项目知识。
+- [MCP4IFC: IFC-Based Building Design Using Large Language Models](https://arxiv.org/abs/2511.05533)：面向 IFC 建筑设计的开源 MCP framework；核心思想是把标准建筑数据操作暴露为 agent 可执行工具。
+- [AGRAG: Advanced Graph-based Retrieval-Augmented Generation for LLMs](https://arxiv.org/abs/2511.05549)：通过 minimum-cost maximum-influence 子图生成构造 graph-RAG 推理路径，使检索证据不只是扁平 chunk 列表。
+- [CoEdge-RAG: Optimizing Hierarchical Scheduling for Retrieval-Augmented LLMs in Collaborative Edge Computing](https://arxiv.org/abs/2511.05915)：在协同边缘资源上对检索增强 LLM 任务做层级调度。
+- [Structured RAG for Answering Aggregative Questions](https://arxiv.org/abs/2511.08505)：为聚合型问题组织结构化检索，需要合并大量语料项而不是少数段落。
+- [Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning](https://arxiv.org/abs/2511.10037)：超越 ReAct 的规划器中心工具增强推理。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [One Request, Multiple Experts: LLM Orchestrates Domain Specific Models via Adaptive Task Routing](https://arxiv.org/abs/2511.12484)：从单次大模型请求出发，自适应编排多个领域专家模型。
+- [AutoTool: Efficient Tool Selection for Large Language Model Agents](https://arxiv.org/abs/2511.14650)：面向 LLM agent 的高效工具选择机制。核心思想：通过学习或缓存工具选择决策，减少反复调用 LLM 选择工具的成本。
+- [Cluster-based Adaptive Retrieval: Dynamic Context Selection for RAG Applications](https://arxiv.org/abs/2511.14769)：用聚类自适应决定 RAG 查询应从增长语料中检索多少上下文。
+- [Agent-as-a-Graph: Knowledge Graph-Based Tool and Agent Retrieval for LLM Multi-Agent Systems](https://arxiv.org/abs/2511.18194)：用知识图谱进行多 agent 系统中的工具与 agent 检索；核心思想是把 agent、工具和能力表示为图节点，以便编排时检索合适协作者或工具。
+- [HuggingR$^{4}$: A Progressive Reasoning Framework for Discovering Optimal Model Companions](https://arxiv.org/abs/2511.18715)：从大型模型仓库发现合适 model companion 的渐进式推理框架。核心思想是在候选模型规模巨大且元数据不完整时，帮助 agent 选择合适模型作为工具。
+- [Z-Space: A Multi-Agent Tool Orchestration Framework for Enterprise-Grade LLM Automation](https://arxiv.org/abs/2511.19483)：面向工具使用与智能体工具编排的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Z-Space: A Multi-Agent Tool Orchestration Framework for Enterprise-Grade LLM Automation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [VISTA-Gym](https://arxiv.org/abs/2511.19773)：面向 VLM agent 的工具集成视觉推理环境。核心思想：统一多模态任务、视觉工具、可执行交互循环、可验证反馈与轨迹日志，用于可扩展的 agentic 训练和评估。
+- [Agent0-VL: Exploring Self-Evolving Agent for Tool-Integrated Vision-Language Reasoning](https://arxiv.org/abs/2511.19900)：类型：benchmark/评测协议。核心价值：为 1.11.3 Agent Harness 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Chatty-KG: A Multi-Agent AI System for On-Demand Conversational Question Answering over Knowledge Graphs](https://arxiv.org/abs/2511.20940)：构建面向知识图谱问答的多智能体对话系统，补充工具与图结构支撑的回答生成路线。
+- [ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration](https://arxiv.org/abs/2511.21689)：ToolOrchestra 聚焦模型与工具编排以解决复杂任务，贡献在外部工具/模型 orchestration。
+- [RP-ReAct](https://arxiv.org/abs/2512.03560)：面向复杂工具使用任务的 planner-executor harness；核心思想：让 Reasoner Planner Agent 监督一个或多个 ReAct 风格 proxy executor，并把大型工具输出移入外部存储，以便在小上下文窗口下按需访问。
+- [GTM: Simulating the World of Tools for AI Agents](https://arxiv.org/abs/2512.04535)：面向 AI agent 的工具世界仿真 harness。核心思想：提供可控工具环境，用于训练和评测 agent 的工具发现与协同。
+- [DART: Leveraging Multi-Agent Disagreement for Tool Recruitment in Multimodal Reasoning](https://arxiv.org/abs/2512.07132)：利用多智能体分歧判断何时调用 OCR、grounding、空间推理等专门视觉工具。
+- [Experience-Evolving Multi-Turn Tool-Use Agent with Hybrid Episodic-Procedural Memory](https://arxiv.org/abs/2512.07287)：带 hybrid episodic-procedural memory 的多轮 tool-use agent。核心思想是在工具使用 episode 之间同时保留情节轨迹和可复用过程知识，从而持续改进行为。
+- [UniMark: Artificial Intelligence Generated Content Identification Toolkit](https://arxiv.org/abs/2512.12324)：用 UniMark 处理 Artificial Intelligence Generated Content Identification Toolkit。
+- [AgentSHAP: Interpreting LLM Agent Tool Importance with Monte Carlo Shapley Value Estimation](https://arxiv.org/abs/2512.12597)：面向 LLM agent 的工具级解释框架。核心思想是用 Monte Carlo Shapley value 估计工具调用或工具类型对结果的贡献，使 agent 输出更可审计。
+- [Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-Editors](https://arxiv.org/abs/2512.13860)：通过层级 LLM-as-editor verification 优化 tool calling 上下文。
+- [Optimizing Agentic Language Model Inference via Speculative Tool Calls](https://arxiv.org/abs/2512.15834)：可作为工具调用与检索增强执行的 Agent Harness 候选：围绕 Optimizing Agentic Language Model Inference via Speculative Tool Calls 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [AdaTooler-V: Adaptive Tool-Use for Images and Videos](https://arxiv.org/abs/2512.16918)：类型：agent harness/可复用执行框架。核心价值：为 1.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Dynamic Tool Dependency Retrieval for Lightweight Function Calling](https://arxiv.org/abs/2512.17052)：面向轻量 function calling 的动态工具依赖检索 harness；核心思想是在降低工具上下文开销的同时保留正确调用所需依赖。
+- [Transductive Visual Programming: Evolving Tool Libraries from Experience for Spatial Reasoning](https://arxiv.org/abs/2512.20934)：类型：agent harness/可复用执行框架。核心价值：为 1.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [MindWatcher: Toward Smarter Multimodal Tool-Integrated Reasoning](https://arxiv.org/abs/2512.23412)：类型：agent harness/可复用执行框架。核心价值：为 1.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [ChaTCL: LLM-Based Multi-Agent RAG Framework for TCL Script Generation](https://doi.org/10.1109/iseda65950.2025.11101624)：用多智能体 RAG 生成 TCL 脚本，将检索与智能体角色结合到硬件设计自动化中。
+- [A hallucination suppression strategy for RAG models based on dynamic threshold retrieval](https://doi.org/10.1109/isceic67854.2025.11405683)：通过动态调整检索阈值，在生成前抑制 RAG 幻觉。
+- [QRAG: Using Learnable Graph Queries for Retrieval Augmented Generation](https://doi.org/10.1109/ccwc62904.2025.10903812)：为 RAG 学习图查询，使检索面向结构化证据而非固定相似度匹配。
+- [MA-mRAG: Collaborative Multi-Agent RAG for Enhancing Multimodal LLMs in VQA](https://doi.org/10.23919/ccc64809.2025.11179281)：在多模态 RAG 中协调多个智能体，提升视觉问答能力。
+- [EmotionGraphRAG: Enhancing LLM-Based Emotion Analysis through Graph Retrieval-Augmented Generation](https://doi.org/10.1109/ngdn66208.2025.11182137)：用 Graph RAG 为大语言模型情绪分析加入关系证据。
+- [Research on Retrieval-Augmented Generation Methods Based on Agent Workflows and Applications](https://doi.org/10.1109/icaita67588.2025.11137885)：围绕智能体工作流梳理并应用 RAG 方法，强调工作流层面的检索集成。
+- [Semantic Reasoning Query Rewriting (SRQR): A Multi-Agent RAG to Answer Complex Queries](https://doi.org/10.1109/mlprae67267.2025.11290814)：用多智能体语义推理在 RAG 回答前重写复杂查询。
+- [IKG-Agent: Intent-driven Knowledge Graph Agent for Adaptive Workflow Reasoning](https://doi.org/10.1109/ijcnn64981.2025.11228190)：用知识图谱智能体循环处理复杂 KG 推理，将结构化图访问、自主分解和答案生成结合起来。
+- [CM-MRAG: A multimodal retrieval-augmented framework for content moderation](https://doi.org/10.1016/j.eswa.2025.130768)：把多模态 RAG 用于内容审核，在判断敏感内容前检索视觉与文本上下文。
+- [ARTeMIS: Agent-based Rewriting and Test Case Management with Intelligent Supervision](https://doi.org/10.5753/sbqs.2025.15058)：用受监督智能体改写需求并管理测试用例，将软件质量流程接入智能体控制。
+- [BlendHouse: A Cloud-Native Vector Database System in ByteHouse](https://doi.org/10.1109/icde65448.2025.00325)：在 ByteHouse 中实现云原生向量数据库，为 RAG 系统提供可扩展向量检索基础设施。
+- [An Adaptive Framework Embedded With LLM for Knowledge Graph Construction](https://doi.org/10.1109/tmm.2025.3557717)：把“An Adaptive Framework Embedded With LLM for Knowledge Graph Construction”作为具体的工具介导流程来处理。
+- [PAWSSP: A Two-Stage Parallelism-Aware Algorithm for Joint Workflow Scheduling and Service Placement in Edge Computing](https://doi.org/10.1109/tsc.2025.3643326)：用两阶段并行感知调度，在边缘计算中联合安排工作流和服务放置。
+- [Side-Channel Attacks on Protected Cryptographic Devices in Agentic AI: A Wavelet Scattering-Based Multi-Channel CNN Approach](https://doi.org/10.1109/tccn.2025.3626384)：把 wavelet scattering 多通道 CNN 用于 agentic AI 场景下的侧信道攻击分析。
+- [R2D-EQ: a two-stage workflow for risk reasoning and decision-making in earthquake emergency scenarios](https://doi.org/10.1016/j.eswa.2025.130178)：用两阶段工作流处理地震应急场景，将风险推理与决策分开。
+- [An LLM-Powered Multi-Agent Framework for Automated Controller Tuning and Calibration](https://doi.org/10.1109/peas66638.2025.11403728)：协调 LLM 智能体自动完成控制器调参和校准。
+- [A Prompt-Driven Modular Framework for LLM-Based Agents in Scalable Interactive Learning Systems](https://doi.org/10.1109/aann66429.2025.11257597)：围绕“A Prompt-Driven Modular Framework for LLM-Based Agents in Scalable Interactive Learning Systems”组织智能体协同。
+- [C-Pilot: Accelerating Administrative Workflows in Schools through a Multi-Agent System](https://doi.org/10.1109/icce-taiwan66881.2025.11207894)：用多智能体系统加速学校行政工作流。
+- [Dual-Stream Hierarchical Mixed-Routing Graph Attention Network Integrating ReAct Agent-Driven Embeddings for Phage-Host Interaction Prediction](https://doi.org/10.1109/bibm66473.2025.11356403)：围绕“Dual-Stream Hierarchical Mixed-Routing Graph Attention Network Integrating ReAct Agent-Driven Embeddings for Phage-Host Interaction Prediction”组织智能体协同。
+- [Synergistic Multi-Agent Knowledge Enhancement Framework for Various Information Extraction Tasks](https://doi.org/10.1109/cac67268.2025.11487723)：围绕“Synergistic Multi-Agent Knowledge Enhancement Framework for Various Information Extraction Tasks”组织智能体协同。
+- [Mimicking the Mavens: Agent-Based Opinion Synthesis and Emotion Prediction for Social Media Influencers](https://doi.org/10.23919/jsc.2025.0016)：用 Mimicking the Mavens 处理 Agent-Based Opinion Synthesis and Emotion Prediction for Social Media Influencers。
+- [DanceAgent: Dance Movement Refinement With LLM Agent](https://doi.org/10.1109/tvcg.2025.3642740)：用 LLM 智能体通过迭代动作分析与修正改进舞蹈动作。
+- [Summarizing Computer Science Teaching Assistant Feedback with Large Language Models](https://doi.org/10.1109/compsac65507.2025.00029)：把“Summarizing Computer Science Teaching Assistant Feedback with Large Language Models”作为具体的工具介导流程来处理。
+- [Visibility into Agentic AI for Required System Theory and Increasing Harms in Algorithmic System](https://doi.org/10.1109/iscon65210.2025.11340987)：围绕“Visibility into Agentic AI for Required System Theory and Increasing Harms in Algorithmic System”组织智能体协同。
+- [A Dual-Agent Multimodal Framework for Emotion and Engagement Recognition in Classrooms](https://doi.org/10.1109/ica67499.2025.00048)：围绕“A Dual-Agent Multimodal Framework for Emotion and Engagement Recognition in Classrooms”组织智能体协同。
+- [ML to Predict Effectiveness of the MCP Authorization Model for LLM-Powered Agent](https://doi.org/10.14569/ijacsa.2025.0161201)：预测 MCP 授权模型对 LLM 智能体的有效性，重点考察访问控制行为。
+- [Real-Time Closed-Loop E2E Driving: Dataset Refinement and Causal Reasoning in Digital-Twin Evaluation](https://doi.org/10.23919/iccas66577.2025.11301207)：用 Real-Time Closed-Loop E2E Driving 处理 Dataset Refinement and Causal Reasoning in Digital-Twin Evaluation。
+- [Scaling Multi-MCP AI Agents Beyond Context Limits](https://doi.org/10.1109/csitss67709.2025.11294866)：通过组织跨 MCP server 的工具与资源交互，把多 MCP 智能体扩展到上下文限制之外。
+- [Multi-Agent Enhanced Retrieval-Augmented Generation for Open-Domain Table Question Answering](https://doi.org/10.1109/icacte66284.2025.11412132)：用多智能体增强开放域表格问答中的 RAG 流程。
+- [Resilient LLM-DBMS Pipelines via Event-Driven Fallback Orchestration](https://doi.org/10.1109/cascon66301.2025.00113)：把“Resilient LLM-DBMS Pipelines via Event-Driven Fallback Orchestration”作为具体的工具介导流程来处理。
+- [Dynamic Retrieval Strategy Optimization in Retrieval-Augmented Generation Based on User Feedback](https://doi.org/10.1109/cisat66811.2025.11181715)：围绕“Dynamic Retrieval Strategy Optimization in Retrieval-Augmented Generation Based on User Feedback”组织检索增强处理。
+- [AI Oracle: A Blockchain-Powered Oracle for LLMs and AI Agents](https://doi.org/10.1109/cvc65719.2025.00007)：用 AI Oracle 处理 A Blockchain-Powered Oracle for LLMs and AI Agents。
+- [Chat2DB: Chatting to the Database with Interactive Agent Assisted Language Models](https://doi.org/10.1109/icde65448.2025.00367)：用 Chat2DB 处理 Chatting to the Database with Interactive Agent Assisted Language Models。
+- [The Irrational LLM: Implementing Cognitive Agents with Weighted Retrieval-Augmented Generation](https://doi.org/10.1109/icccn65249.2025.11134012)：用 The Irrational LLM 处理 Implementing Cognitive Agents with Weighted Retrieval-Augmented Generation。
+- [Design and Implementation of an AI Agent for Natural Language-Driven Database Operations](https://doi.org/10.1109/icicnis66685.2025.11315754)：补充自然语言驱动数据库操作智能体。
+- [ToolFiVe: Enhancing Tool-Augmented LLMs via Tool Filtering and Verification](https://doi.org/10.1109/icassp49660.2025.10887544)：工具增强 LLM 的工具过滤与验证。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Agentic Graph-RAG: A Multi-Agent Framework for Robust, Decomposed Multi-Hop Reasoning](https://doi.org/10.1109/iccc68654.2025.11437910)：以多智能体 Graph-RAG 工作流进行分解式多跳推理，关联检索与工具编排推理。
+- [GRACE: Graph-Adapted Case-Augmented Execution for Tool Use in Large Language Models](https://doi.org/10.1109/icpads67057.2025.11323200)：面向工具使用的图适配案例增强执行 harness；核心思想是结合工具依赖结构与历史案例检索，帮助 agent 在动态 API 空间中选择可执行的工具组合。
+- [RSAgent: Learning to Reason and Act for Text-Guided Segmentation via Multi-Turn Tool Invocations](https://arxiv.org/abs/2512.24023)：通过多轮工具调用完成文本引导分割。
+- [Snip-Cache: A code snippet caching system for LLM-based command-driven IoT systems](https://doi.org/10.1016/j.iot.2025.101852)：为基于 LLM 的命令驱动物联网系统引入代码片段缓存。
+- [Expert Multi-Agent Conversational System Using Retrieval-Augmented Generation and Dynamic Text-to-SQL for Government Transparency](https://doi.org/10.1109/access.2025.3635530)：面向工具使用与结构化工具交互提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [M3-RAG: Unified Multimodal and Multilingual Retrieval-Augmented Generation](https://doi.org/10.1109/iccea65460.2025.11102259)：可作为工具使用方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [MMM-RAG: A Multi-Agent Multi-Feature Method for Multimodal Retrieval-Augmented Generation](https://doi.org/10.1109/icpads67057.2025.11323162)：提出多智能体、多特征的多模态 RAG 方法。
+- [Agentic RAG with Human-in-the-Retrieval](https://doi.org/10.1109/icsa-c65153.2025.00074)：可作为工具调用与检索增强执行的 Agent Harness 候选：围绕 Agentic RAG with Human-in-the-Retrieval 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [ADOPT: Adaptive Dependency-Guided Joint Prompt Optimization for Multi-Step LLM Pipelines](https://arxiv.org/abs/2512.24933)：围绕 ADOPT: Adaptive Dependency-Guided Joint Prompt Optimization for Multi-Step LLM Pipelines 补充工具使用智能体的规划、工具使用、记忆、工作流或评测编排线索。
+- [ToolReAGt: Tool Retrieval for LLM-based Complex Task Solution via Retrieval Augmented Generation](https://doi.org/10.18653/v1/2025.knowllm-1.7)：提出 ToolReAGt，用于复杂 LLM 任务中的工具检索。
+- [A Multimodal Retrieval-Augmented Generation System with ReAct Agent Logic for Multi-Hop Reasoning](https://doi.org/10.20535/2786-8729.6.2025.330777)：面向工具使用与工具检索的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Agentic AI System for Data-Driven Question Answering Using SQL Generation with Large Language Models](https://doi.org/10.23919/eusipco63237.2025.11226235)：面向工具使用与结构化工具交互提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [A Modular Reference Architecture for MCP-Servers Enabling Agentic BIM Interaction](https://arxiv.org/abs/2601.00809)：围绕“A Modular Reference Architecture for MCP-Servers Enabling Agentic BIM Interaction”组织智能体协同。
+- [CaveAgent: Transforming LLMs into Stateful Runtime Operators](https://arxiv.org/abs/2601.01569)：面向面向工具型 agent 的有状态运行时操作的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [A Dynamic Retrieval-Augmented Generation System with Selective Memory and Remembrance](https://arxiv.org/abs/2601.02428)：为动态 RAG 增加选择性记忆和 remembrance，使有用检索上下文能跨交互保留。
+- [AWARE-US: Preference-Aware Infeasibility Resolution in Tool-Calling Agents](https://arxiv.org/abs/2601.02643)：面向工具调用 agent 的偏好感知不可行性处理框架。核心思想是在结构化数据库查询缺约束或无结果时，放宽约束但不丢弃用户重视的要求。
 - [ToolGate](https://arxiv.org/abs/2601.04688)：面向 LLM 工具使用的契约约束与可验证执行 harness；核心思想是用符号状态表示可信世界信息，并通过 Hoare-style contracts 决定工具结果是否可提交，从而给工具调用提供可检查的安全与状态演化保证。
+- [From Idea to Co-Creation: A Planner-Actor-Critic Framework for Agent Augmented 3D Modeling](https://arxiv.org/abs/2601.05016)：面向 Blender 建模的规划、执行和批评工作流；核心思想是把可执行建模命令、迭代评审和人工监督组织成工具调用 harness。
+- [Effects of personality steering on cooperative behavior in Large Language Model agents](https://arxiv.org/abs/2601.05302)：围绕“Effects of personality steering on cooperative behavior in Large Language Model agents”组织智能体协同。
+- [Beyond Static Tools: Test-Time Tool Evolution for Scientific Reasoning](https://arxiv.org/abs/2601.07641)：面向科学推理的测试时工具演化 harness。核心思想：让 agent 在推理时适配或创建工具，而不是只依赖固定工具箱。
+- [TOOLQP](https://arxiv.org/abs/2601.07782)：基于查询规划的多步工具检索 harness。核心思想是把抽象用户目标迭代分解成检索查询，使 agent 能在大规模动态工具库中找到可组合工具。
+- [ACE-Router: Generalizing History-Aware Routing from MCP Tools to the Agent Web](https://arxiv.org/abs/2601.08276)：把 history-aware routing 从 MCP tools 扩展到 agent web，属于 tool/agent routing infrastructure。
+- [GraphSearch: Agentic Search-Augmented Reasoning for Zero-Shot Graph Learning](https://arxiv.org/abs/2601.08621)：结合图感知查询规划与拓扑感知检索，把 search-augmented reasoning 扩展到零样本节点分类和链接预测。
+- [SAGE: Tool-Augmented LLM Task Solving Strategies in Scalable Multi-Agent Environments](https://arxiv.org/abs/2601.09750)：研究可扩展多 agent 环境中的工具增强任务求解策略；核心思想是把工具使用与 agent 协作组织成可复用求解策略。
+- [Enhancing Model Context Protocol (MCP) with Context-Aware Server Collaboration](https://arxiv.org/abs/2601.11595)：为 MCP 式服务器协作加入共享上下文存储，使专门服务器能用持久工作流状态协调执行。
+- [Constructing a Dataset to Support Agent-Based Modeling of Online Interactions: Users, Topics, and Interaction Networks](https://arxiv.org/abs/2601.12628)：用 Constructing a Dataset to Support Agent-Based Modeling of Online Interactions 处理 Users, Topics, and Interaction Networks。
+- [Sutradhara: An Intelligent Orchestrator-Engine Co-design for Tool-based Agentic Inference](https://arxiv.org/abs/2601.12967)：面向工具使用与智能体工具编排的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Sutradhara: An Intelligent Orchestrator-Engine Co-design for Tool-based Agentic Inference”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AdaTIR: Adaptive Tool-Integrated Reasoning via Difficulty-Aware Policy Optimization](https://arxiv.org/abs/2601.14696)：按任务难度自适应工具整合推理。核心思想：判断何时调用工具、何时直接推理，从而减少不必要的工具依赖。
+- [Replayable Financial Agents: A Determinism-Faithfulness Assurance Harness for Tool-Using LLM Agents](https://arxiv.org/abs/2601.15322)：面向金融 tool-using agent 的确定性与忠实性保障 harness；核心思想是复放工具调用和中间状态，把确定性执行、轨迹忠实复现和金融工具风险分析分开评估。
+- [Gen-DBA: Generative Database Agents](https://arxiv.org/abs/2601.16409)：把数据库管理表述为生成式数据库智能体，用于规划并执行 DBMS 任务。
+- [Towards a Declarative Agentic Layer for Intelligent Agents in MCP-Based Server Ecosystems](https://arxiv.org/abs/2601.17435)：面向工具使用与智能体工具编排的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Towards a Declarative Agentic Layer for Intelligent Agents in MCP-Based Server Ecosystems”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AdaReasoner: Dynamic Tool Orchestration for Iterative Visual Reasoning](https://arxiv.org/abs/2601.18631)：面向视觉推理的动态工具编排 harness。核心思想：学习何时调用哪些工具，以及如何在迭代推理中组合这些工具。
+- [A2RAG: Adaptive Agentic Graph Retrieval for Cost-Aware and Reliable Reasoning](https://arxiv.org/abs/2601.21162)：自适应执行图检索以实现成本敏感且可靠的推理，在证据质量和检索开销之间权衡。
+- [LLM-Assisted Op-Amp Behavioral-Level Design via Agentic Human-Mimicking Reasoning](https://arxiv.org/abs/2601.21321)：围绕“LLM-Assisted Op-Amp Behavioral-Level Design via Agentic Human-Mimicking Reasoning”组织智能体协同。
+- [astra-langchain4j: Experiences Combining LLMs and Agent Programming](https://arxiv.org/abs/2601.21879)：用 astra-langchain4j 处理 Experiences Combining LLMs and Agent Programming。
+- [Optimizing Agentic Workflows using Meta-tools](https://arxiv.org/abs/2601.22037)：面向工具使用与智能体工具编排的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Optimizing Agentic Workflows using Meta-tools”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Synapse Compendium Aware Federated Knowledge Exchange for Tool Routed LLMs](https://arxiv.org/abs/2602.00911)：提供可复用 agent 工作流或执行 harness，服务于tool use。
+- [Evolving from Tool User to Creator via Training-Free Experience Reuse in Multimodal Reasoning](https://arxiv.org/abs/2602.01983)：面向从固定工具调用到免训练工具创建的经验复用的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [CoLT: Reasoning with Chain of Latent Tool Calls](https://arxiv.org/abs/2602.04246)：用 latent tool-call chain 进行推理；核心思想是在减少显式 token-level chain 成本的同时保留工具化推理结构。
+- [Learning the value systems of agents with preference-based and inverse reinforcement learning](https://arxiv.org/abs/2602.04518)：围绕“Learning the value systems of agents with preference-based and inverse reinforcement learning”组织智能体协同。
+- [ToolSelf: Unifying Task Execution and Self-Reconfiguration via Tool-Driven Intrinsic Adaptation](https://arxiv.org/abs/2602.07883)：面向工具驱动的内在适应与自重配置的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [SCOUT-RAG](https://arxiv.org/abs/2602.08400)：在分布式领域中编排可扩展的 Graph-RAG 遍历，为无法集中知识图谱的场景补充检索规划型工具使用框架。
+- [DA-RAG: Dynamic Attributed Community Search for Retrieval-Augmented Generation](https://arxiv.org/abs/2602.08545)：用动态属性社区搜索为 RAG 检索图社区。
+- [Taming Scylla: Understanding the multi-headed agentic daemon of the coding seas](https://arxiv.org/abs/2602.08765)：用 Taming Scylla 处理 Understanding the multi-headed agentic daemon of the coding seas。
+- [Budget-Constrained Agentic Large Language Models: Intention-Based Planning for Costly Tool Use](https://arxiv.org/abs/2602.11541)：它提供工具路由、工具生成、MCP 设计或多工具编排机制，适合补充 tool-use Agent Harness。
+- [FlowMind: Execute-Summarize for Structured Workflow Generation from LLM Reasoning](https://arxiv.org/abs/2602.11782)：围绕 FlowMind: Execute-Summarize for Structured Workflow Generation from LLM Reasoning 补充工具使用智能体的规划、工具使用、记忆、工作流或评测编排线索。
+- [CM2](https://arxiv.org/abs/2602.12268)：面向多轮、多步 agentic tool use 的 checklist reward 框架。核心思想：把每一轮应达成的行为拆成有证据支撑的二元标准，使缺少直接可验证终局奖励的工具调用任务也能被优化和评测。
+- [ADEPT: RL-Aligned Agentic Decoding of Emotion via Evidence Probing Tools - From Consensus Learning to Ambiguity-Driven Emotion Reasoning](https://arxiv.org/abs/2602.12714)：用 ADEPT 处理 RL-Aligned Agentic Decoding of Emotion via Evidence Probing Tools - From Consensus Learning to Ambiguity-Driven Emotion Reasoning。
+- [Human Tool: An MCP-Style Framework for Human-Agent Collaboration](https://arxiv.org/abs/2602.12953)：提出面向工具使用与工具介导的智能体交互的智能体工作流或编排框架。
+- [MLAT / Machine Learning as a Tool](https://arxiv.org/abs/2602.14295)：把预训练统计机器学习模型作为 LLM agent workflow 中的一等可调用工具。核心思想：由 agent 按上下文选择传统或统计 ML 组件，而不是把这些能力都重新塞进语言模型内部。
+- [HyperRAG: Reasoning N-ary Facts over Hypergraphs for Retrieval Augmented Generation](https://arxiv.org/abs/2602.14470)：将 n 元事实表示为超图，使 RAG 能检索并推理高阶关系。
+- [Atomix](https://arxiv.org/abs/2602.14849)：面向可靠 agentic 工具调用的事务型运行时。核心思想是让工具效果具备进度感知和回滚安全性，避免失败、推测或失败分支泄漏非预期副作用。
+- [From Transcripts to AI Agents: Knowledge Extraction, RAG Integration, and Robust Evaluation of Conversational AI Assistants](https://arxiv.org/abs/2602.15859)：面向工具使用与智能体工具编排的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“From Transcripts to AI Agents: Knowledge Extraction, RAG Integration, and Robust Evaluation of Conversational AI Assistants”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [From Tool Orchestration to Code Execution: A Study of MCP Design Choices](https://arxiv.org/abs/2602.15945)：它提供工具路由、工具生成、MCP 设计或多工具编排机制，适合补充 tool-use Agent Harness。
+- [ReIn: Conversational Error Recovery with Reasoning Inception](https://arxiv.org/abs/2602.17022)：ReIn 面向 tool-integrated conversational agents 的 error diagnosis 与 recovery planning。
+- [StoryLensEdu: Personalized Learning Report Generation through Narrative-Driven Multi-Agent Systems](https://arxiv.org/abs/2602.17067)：用 StoryLensEdu 处理 Personalized Learning Report Generation through Narrative-Driven Multi-Agent Systems。
+- [Why Agent Caching Fails and How to Fix It: Structured Intent Canonicalization with Few-Shot Learning](https://arxiv.org/abs/2602.18922)：用 Why Agent Caching Fails and How to Fix It 处理 Structured Intent Canonicalization with Few-Shot Learning。
+- [Robust and Efficient Tool Orchestration via Layered Execution Structures with Reflective Correction](https://arxiv.org/abs/2602.18968)：带 reflective correction 的 robust tool-orchestration harness。核心思想：把工具组织与逐步语言推理解耦，使多工具 workflow 能以更低开销执行和修复。
+- [TAPE: Tool-Guided Adaptive Planning and Constrained Execution in Language Model Agents](https://arxiv.org/abs/2602.19633)：补充tool use方向的agent harness，核心围绕《TAPE: Tool-Guided Adaptive Planning and Constrained Execution in Language Model Agents》。
+- [Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees](https://arxiv.org/abs/2603.00324)：为工具使用型多模态推理提供组合式保形保证。
+- [Contract-based Agentic Intent Framework for Network Slicing in O-RAN](https://arxiv.org/abs/2603.01663)：围绕“Contract-based Agentic Intent Framework for Network Slicing in O-RAN”组织智能体协同。
+- [An Interactive Multi-Agent System for Evaluation of New Product Concepts](https://arxiv.org/abs/2603.05980)：围绕“An Interactive Multi-Agent System for Evaluation of New Product Concepts”组织智能体协同。
+- [Test-Driven AI Agent Definition (TDAD): Compiling Tool-Using Agents from Behavioral Specifications](https://arxiv.org/abs/2603.08806)：把 agent prompt 视为可编译产物，并用生成的行为测试迭代修订。
+- [A Control-Theoretic Foundation for Agentic Systems](https://arxiv.org/abs/2603.10779)：围绕“A Control-Theoretic Foundation for Agentic Systems”组织智能体协同。
+- [One Supervisor, Many Modalities: Adaptive Tool Orchestration for Autonomous Queries](https://arxiv.org/abs/2603.11545)：Agent Harness 条目；核心思想：自适应多模态工具编排；核心思想是分解自主查询，并把子任务路由到对应模态工具。
+- [ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](https://arxiv.org/abs/2603.12740)：类型：agent harness/可复用执行框架。核心价值：为 1.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Context is all you need: Towards autonomous model-based process design using agentic AI in flowsheet simulations](https://arxiv.org/abs/2603.12813)：用 Context is all you need 处理 Towards autonomous model-based process design using agentic AI in flowsheet simulations。
+- [Auditing Cascading Risks in Multi-Agent Systems via Semantic-Geometric Co-evolution](https://arxiv.org/abs/2603.13325)：围绕“Auditing Cascading Risks in Multi-Agent Systems via Semantic-Geometric Co-evolution”组织智能体协同。
+- [Querying Everything Everywhere All at Once: Supervaluationism for the Agentic Lakehouse](https://arxiv.org/abs/2603.13380)：用 Querying Everything Everywhere All at Once 处理 Supervaluationism for the Agentic Lakehouse。
+- [Mitigating KG Quality Issues: A Robust Multi-Hop GraphRAG Retrieval Framework](https://arxiv.org/abs/2603.14828)：用 Mitigating KG Quality Issues 处理 A Robust Multi-Hop GraphRAG Retrieval Framework。
+- [Lore: Repurposing Git Commit Messages as a Structured Knowledge Protocol for AI Coding Agents](https://arxiv.org/abs/2603.15566)：用 Lore 处理 Repurposing Git Commit Messages as a Structured Knowledge Protocol for AI Coding Agents。
+- [DynaRAG: Bridging Static and Dynamic Knowledge in Retrieval-Augmented Generation](https://arxiv.org/abs/2603.18012)：结合静态语料与动态外部知识检索，用于回答时效性 RAG 查询。
+- [Don't Vibe Code, Do Skele-Code: Interactive No-Code Notebooks for Subject Matter Experts to Build Lower-Cost Agentic Workflows](https://arxiv.org/abs/2603.18122)：提出交互式 no-code notebooks，使领域专家能够构建低成本 agentic workflows。
+- [Graph-of-Constraints Model Predictive Control for Reactive Multi-agent Task and Motion Planning](https://arxiv.org/abs/2603.18400)：围绕“Graph-of-Constraints Model Predictive Control for Reactive Multi-agent Task and Motion Planning”组织智能体协同。
+- [Beyond detection: cooperative multi-agent reasoning for rapid onboard EO crisis response](https://arxiv.org/abs/2603.19858)：用 Beyond detection 处理 cooperative multi-agent reasoning for rapid onboard EO crisis response。
+- [Utility-Guided Agent Orchestration for Efficient LLM Tool Use](https://arxiv.org/abs/2603.19896)：可作为tool use方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Agentic Physical-AI for Self-Aware RF Systems](https://arxiv.org/abs/2603.20692)：围绕“Agentic Physical-AI for Self-Aware RF Systems”组织智能体协同。
+- [GMPilot: An Expert AI Agent For FDA cGMP Compliance](https://arxiv.org/abs/2603.20815)：用 GMPilot 处理 An Expert AI Agent For FDA cGMP Compliance。
+- [Query, Decompose, Compress: Structured Query Expansion for Efficient Multi-Hop Retrieval](https://arxiv.org/abs/2603.21024)：通过查询分解与压缩提升多跳检索效率。
+- [DS2SC-Agent: A Multi-Agent Automated Pipeline for Rapid Chiplet Model Generation](https://arxiv.org/abs/2603.21190)：用 DS2SC-Agent 处理 A Multi-Agent Automated Pipeline for Rapid Chiplet Model Generation。
+- [APISENSOR: Robust Discovery of Web API from Runtime Traffic Logs](https://arxiv.org/abs/2603.23852)：用 APISENSOR 处理 Robust Discovery of Web API from Runtime Traffic Logs。
+- [From Inference Routing to Agent Orchestration: Declarative Policy Compilation with Cross-Layer Verification](https://arxiv.org/abs/2603.27299)：用 From Inference Routing to Agent Orchestration 处理 Declarative Policy Compilation with Cross-Layer Verification。
+- [ATLAS-RTC](https://arxiv.org/abs/2603.27905)：面向 LLM 智能体输出的 token 级运行时控制层。核心思想：在解码过程中依据输出合约监测生成，并在结构化输出或工具调用格式出错前施加偏置、掩码或回滚。
+- [Cognitive Friction: A Decision-Theoretic Framework for Bounded Deliberation in Tool-Using Agents](https://arxiv.org/abs/2603.30031)：面向 tool-using agents 的 bounded deliberation 决策框架。核心思想：在拥塞、时间衰减和证据不清时，显式建模 agent 何时继续查询、何时停止并行动。
+- [Temporal Memory for Resource-Constrained Agents: Continual Learning via Stochastic Compress-Add-Smooth](https://arxiv.org/abs/2604.00067)：用 Temporal Memory for Resource-Constrained Agents 处理 Continual Learning via Stochastic Compress-Add-Smooth。
+- [Open, Reliable, and Collective: A Community-Driven Framework for Tool-Using AI Agents](https://arxiv.org/abs/2604.00137)：面向工具使用型 AI agent 的社区框架；核心思想是把可靠性、可复现性和共同维护纳入共享工具-agent 基础设施。
+- [Harnessing Hype to Teach Empirical Thinking: An Experience With AI Coding Assistants](https://arxiv.org/abs/2604.01110)：用 Harnessing Hype to Teach Empirical Thinking 处理 An Experience With AI Coding Assistants。
+- [Runtime Burden Allocation for Structured LLM Routing in Agentic Expert Systems: A Full-Factorial Cross-Backend Methodology](https://arxiv.org/abs/2604.01235)：面向 agentic expert system 的结构化路由方法；核心思想是把可靠路由动作拆成 prompt、parser、schema、后端和运行时检查共同承担的系统负担。
+- [Profile-Then-Reason: Bounded Semantic Complexity for Tool-Augmented Language Agents](https://arxiv.org/abs/2604.04131)：面向 tool-augmented language agents 的 bounded execution framework。核心思想：先合成显式 workflow profile，再在结构内推理，减少反复反应式重算和错误传播。
+- [COSMO-Agent: Tool-Augmented Agent for Closed-loop Optimization,Simulation,and Modeling Orchestration](https://arxiv.org/abs/2604.05547)：用 COSMO-Agent 处理 Tool-Augmented Agent for Closed-loop Optimization,Simulation,and Modeling Orchestration。
+- [Feedback Adaptation for Retrieval-Augmented Generation](https://arxiv.org/abs/2604.06647)：围绕“Feedback Adaptation for Retrieval-Augmented Generation”组织检索增强处理。
+- [Trust-as-a-Service: Task-Specific Orchestration for Effective Task Completion via Model Context Protocol-Aided Agentic AI](https://arxiv.org/abs/2604.07065)：用 Trust-as-a-Service 处理 Task-Specific Orchestration for Effective Task Completion via Model Context Protocol-Aided Agentic AI。
+- [TRUSTDESC: Preventing Tool Poisoning in LLM Applications via Trusted Description Generation](https://arxiv.org/abs/2604.07536)：通过从实现生成可信工具描述来防御 tool poisoning；核心思想是用静态分析和 LLM 辅助摘要得到忠实于实现的工具描述，降低恶意或误导性 schema 文本风险。
+- [LogAct: Enabling Agentic Reliability via Shared Logs](https://arxiv.org/abs/2604.07988)：用 LogAct 处理 Enabling Agentic Reliability via Shared Logs。
+- [When to Trust Tools? Adaptive Tool Trust Calibration For Tool-Integrated Math Reasoning](https://arxiv.org/abs/2604.08281)：面向工具增强数学推理的信任校准框架。核心思想是在推理过程中决定何时依赖外部工具、何时怀疑或复核工具输出。
+- [QFS-Composer: Query-focused summarization pipeline for less resourced languages](https://arxiv.org/abs/2604.10687)：用 QFS-Composer 处理 Query-focused summarization pipeline for less resourced languages。
+- [AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition](https://arxiv.org/abs/2604.12735)：用 AffectAgent 处理 Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition。
+- [Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs](https://arxiv.org/abs/2604.12896)：perception programs 将视觉工具线索接入语言模型推理，属于 visual tool-use harness。
+- [Learning Probabilistic Responsibility Allocations for Multi-Agent Interactions](https://arxiv.org/abs/2604.13128)：围绕“Learning Probabilistic Responsibility Allocations for Multi-Agent Interactions”组织智能体协同。
+- [AgentSPEX](https://arxiv.org/abs/2604.13346)：面向结构化 LLM-agent workflow 的 agent specification 与 execution language。核心思想：把控制流和模块结构从隐式 reactive prompting 中外化为显式语言和运行时。
+- [ToolOmni: Enabling Open-World Tool Use via Agentic learning with Proactive Retrieval and Grounded Execution](https://arxiv.org/abs/2604.13787)：Agent Harness 条目；核心思想：面向开放世界工具检索与 grounded execution；核心思想是结合主动检索和 agentic learning 以适配未见、持续变化的工具库。
+- [Acts of Configuration: Rethinking Provenance, Temporality and Legitimacy in Post-Mortem Agents](https://arxiv.org/abs/2604.13996)：用 Acts of Configuration 处理 Rethinking Provenance, Temporality and Legitimacy in Post-Mortem Agents。
+- [Beyond Chat and Clicks: GUI Agents for In-Situ Assistance via Live Interface Transformation](https://arxiv.org/abs/2604.14668)：用 Beyond Chat and Clicks 处理 GUI Agents for In-Situ Assistance via Live Interface Transformation。
+- [Bounded Autonomy for Enterprise AI: Typed Action Contracts and Consumer-Side Execution](https://arxiv.org/abs/2604.14723)：Agent Harness 条目；核心思想：通过 typed action contracts 实现有界自治；核心思想是让模型提出行动，由 consumer-side executor 强制授权和请求有效性。
+- [RaTA-Tool: Retrieval-based Tool Selection with Multimodal Large Language Models](https://arxiv.org/abs/2604.14951)：可作为tool use方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Skill-RAG: Failure-State-Aware Retrieval Augmentation via Hidden-State Probing and Skill Routing](https://arxiv.org/abs/2604.15771)：提出工具使用方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [A Case Study on the Impact of Anonymization Along the RAG Pipeline](https://arxiv.org/abs/2604.15958)：围绕“A Case Study on the Impact of Anonymization Along the RAG Pipeline”组织检索增强处理。
+- [Small Model as Master Orchestrator: Learning Unified Agent-Tool Orchestration with Parallel Subtask Decomposition](https://arxiv.org/abs/2604.17009)：small model master orchestrator 学习 parallel subtask decomposition 和 agent-tool orchestration。
+- [Latent Preference Modeling for Cross-Session Personalized Tool Calling](https://arxiv.org/abs/2604.17886)：cross-session personalized tool calling 结合偏好建模与工具调用，属于 tool-use harness。
+- [Self-Describing Structured Data with Dual-Layer Guidance: A Lightweight Alternative to RAG for Precision Retrieval in Large-Scale LLM Knowledge Navigation](https://arxiv.org/abs/2604.19777)：用 Self-Describing Structured Data with Dual-Layer Guidance 处理 A Lightweight Alternative to RAG for Precision Retrieval in Large-Scale LLM Knowledge Navigation。
+- [SkillGraph](https://arxiv.org/abs/2604.19793)：面向工具序列推荐的图先验框架；核心思想是从成功工具调用轨迹中挖掘执行转移规律，并把候选检索与排序拆开，使 agent 能规划数据依赖的 API 链路，而不是只依赖语义相似度。
+- [JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](https://arxiv.org/abs/2604.19821)：面向 language agents 的 joint tool-prompt reflective optimization framework。核心思想：利用执行反馈同时优化工具描述和 agent 提示，提升大规模、领域化工具空间中的调用稳定性。
+- [AtomicRAG: Atom-Entity Graphs for Retrieval-Augmented Generation](https://arxiv.org/abs/2604.20844)：用 AtomicRAG 处理 Atom-Entity Graphs for Retrieval-Augmented Generation。
+- [Tool Attention](https://arxiv.org/abs/2604.21816)（[开源代码](https://github.com/asadani/tool-attention)）：面向 MCP-style agent 的动态工具门控与 lazy schema loading 中间件。核心思想：上下文中只保留紧凑工具摘要，仅为 gate 后的 top-k 工具加载完整 schema，从而降低大工具生态中的重复 token 开销；其端到端收益主要是基于仿真的 projection。
+- [Complete Cyclic Subtask Graphs](https://arxiv.org/abs/2604.22820)：面向长程工具使用的多 agent 工作流拓扑。核心思想是让可执行子任务节点全连接，并由状态分析与路由 agent 选择跳转，从而研究回访、恢复、成本和瓶颈。
+- [R$^3$AG: Retriever Routing for Retrieval-Augmented Generation](https://arxiv.org/abs/2604.22849)：用 R$^3$AG 处理 Retriever Routing for Retrieval-Augmented Generation。
+- [SWIFT](https://arxiv.org/abs/2604.25012)：面向 agent 任务的摊销式工作流设计框架。核心思想是从既有优化轨迹中迁移结构先验和接口契约，而不是每个任务重新做高成本 workflow 搜索。
+- [FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](https://arxiv.org/abs/2604.25135)：提供可复用 agent 工作流或执行 harness，服务于tool use。
+- [Reinforced Agent: Inference-Time Feedback for Tool-Calling Agents](https://arxiv.org/abs/2604.27233)：Agent Harness 条目；核心思想：面向工具调用 agent 的推理时反馈；核心思想是在执行循环内用评估器纠正工具选择和参数。
+- [SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters](https://arxiv.org/abs/2605.00528)：用 SAGA 处理 Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters。
+- [Separating Intelligence from Execution: A Workflow Engine for the Model Context Protocol](https://arxiv.org/abs/2605.00827)：把智能推理与重复 MCP 执行分离的 workflow engine。核心思想：把已解决工具流程缓存为 MCP-native orchestration，使 agent 后续无需每次重新推理所有调用。
+- [ARIADNE: Agentic Reward-Informed Adaptive Decision Exploration via Blackboard-Driven MCTS for Competitive Program Generation](https://arxiv.org/abs/2605.02431)：用 ARIADNE 处理 Agentic Reward-Informed Adaptive Decision Exploration via Blackboard-Driven MCTS for Competitive Program Generation。
+- [Robust Agent Compensation (RAC): Teaching AI Agents to Compensate](https://arxiv.org/abs/2605.03409)：用 Robust Agent Compensation (RAC) 处理 Teaching AI Agents to Compensate。
+- [Multi-Agent Strategic Games with LLMs](https://arxiv.org/abs/2605.03604)：围绕“Multi-Agent Strategic Games with LLMs”组织智能体协同。
+- [TSCG: Deterministic Tool-Schema Compilation for Agentic LLM Deployments](https://arxiv.org/abs/2605.04107)：面向面向生产级 agent 工具目录的确定性工具 schema 编译的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [GEM: Graph-Enhanced Mixture-of-Experts with ReAct Agents for Dialogue State Tracking](https://arxiv.org/abs/2605.04449)：用 GEM 处理 Graph-Enhanced Mixture-of-Experts with ReAct Agents for Dialogue State Tracking。
+- [DADL](https://arxiv.org/abs/2605.05247)：面向企业工具库的 LLM 智能体声明式描述语言。核心思想：一次性描述 REST API、认证、分页、响应裁剪和访问分类，再由执行层暴露大规模工具目录，而不是为每个包装器部署一个 MCP server。
+- [FoodCHA: Multi-Modal LLM Agent for Fine-Grained Food Analysis](https://arxiv.org/abs/2605.05499)：用 FoodCHA 处理 Multi-Modal LLM Agent for Fine-Grained Food Analysis。
+- [Switchcraft: AI Model Router for Agentic Tool Calling](https://arxiv.org/abs/2605.07112)：提供可复用 agent 工作流或执行 harness，服务于tool use。
+- [Planning Horizon in Data-Centric Tool Calling](https://arxiv.org/abs/2605.08477)：研究面向数据任务的工具调用 agent 是否需要显式逐步规划；核心思想是在工具调用流程中比较不同规划跨度，帮助 agent scaffold 判断细粒度分解何时有益、何时反而影响执行。
+- [MCP-Cosmos: World Model-Augmented Agents for Complex Task Execution in MCP Environments](https://arxiv.org/abs/2605.09131)：面向 MCP 环境的 world-model-augmented agent framework；核心思想是在执行前模拟工具环境状态转移，让 agent 在 MCP 工具体系下先优化计划再行动。
+- [Agentic AI for Particle-Based Simulation: Automating SPH Workflows for Debris Flow Modeling](https://arxiv.org/abs/2605.09265)：用 Agentic AI for Particle-Based Simulation 处理 Automating SPH Workflows for Debris Flow Modeling。
+- [RubricRefine](https://arxiv.org/abs/2605.09730)：训练前的工具调用可靠性修复层；核心思想：先生成任务/注册表特定 rubric，再在执行前修正 inter-tool contract 错误。
+- [PruneTIR: Inference-Time Tool Call Pruning for Effective yet Efficient Tool-Integrated Reasoning](https://arxiv.org/abs/2605.09931)：面向 tool-integrated reasoning 的推理时工具调用裁剪方法。核心思想是在保留代码解释器等外部工具推理增益的同时减少不必要工具调用。
+- [CCD-Level and Load-Aware Thread Orchestration for In-Memory Vector ANNS on Multi-Core CPUs](https://arxiv.org/abs/2605.10090)：把“CCD-Level and Load-Aware Thread Orchestration for In-Memory Vector ANNS on Multi-Core CPUs”作为具体的工具介导流程来处理。
+- [RFAmpDesigner: A Self-Evolving Multi-Agent LLM Framework for Automated Radio Frequency Amplifier Design](https://arxiv.org/abs/2605.10093)：用 RFAmpDesigner 处理 A Self-Evolving Multi-Agent LLM Framework for Automated Radio Frequency Amplifier Design。
+- [Route Before Retrieve: Activating Latent Routing Abilities of LLMs for RAG vs. Long-Context Selection](https://arxiv.org/abs/2605.10235)：用 Route Before Retrieve 处理 Activating Latent Routing Abilities of LLMs for RAG vs. Long-Context Selection。
+- [Agent-First Tool API: A Semantic Interface Paradigm for Enterprise AI Agent Systems](https://arxiv.org/abs/2605.10555)：面向企业 agent 工具的 semantic interface paradigm。核心思想：围绕语义标识、结构化返回、多步交互和作用域授权等 agent 需求重构 API，而不是沿用面向人的 CRUD 假设。
+- [LLARS: Enabling Domain Expert&Developer Collaboration for LLM Prompting, Generation and Evaluation](https://arxiv.org/abs/2605.10593)：用 LLARS 处理 Enabling Domain Expert&Developer Collaboration for LLM Prompting, Generation and Evaluation。
+- [The Semantic Training Gap: Ontology-Grounded Tool Architectures for Industrial AI Agent Systems](https://arxiv.org/abs/2605.11234)：面向工具使用与智能体工具编排的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“The Semantic Training Gap: Ontology-Grounded Tool Architectures for Industrial AI Agent Systems”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [GRAFT: Graph-Tokenized LLMs for Tool Planning](https://arxiv.org/abs/2605.11706)：Agent Harness 条目；核心思想：面向工具规划的 graph-tokenized 表示；核心思想是编码有向工具依赖，帮助 LLM 协调多步工具链。
+- [Beyond Cooperative Simulators: Generating Realistic User Personas for Robust Evaluation of LLM Agents](https://arxiv.org/abs/2605.12894)：用 Beyond Cooperative Simulators 处理 Generating Realistic User Personas for Robust Evaluation of LLM Agents。
+- [ChromaFlow: A Negative Ablation Study of Orchestration Overhead in Tool-Augmented Agent Evaluation](https://arxiv.org/abs/2605.14102)：关于工具增强 agent 评测中编排开销的负向消融研究；核心思想是把真实工具使用收益和 scaffold 带来的额外协调成本区分开。
+- [Latency-Quality Routing for Functionally Equivalent Tools in LLM Agents](https://arxiv.org/abs/2605.14241)：围绕“Latency-Quality Routing for Functionally Equivalent Tools in LLM Agents”组织智能体协同。
+- [DermAgent: A Self-Reflective Agentic System for Dermatological Image Analysis with Multi-Tool Reasoning and Traceable Decision-Making](https://arxiv.org/abs/2605.14403)：用 DermAgent 处理 A Self-Reflective Agentic System for Dermatological Image Analysis with Multi-Tool Reasoning and Traceable Decision-Making。
+- [MediaClaw: Multimodal Intelligent-Agent Platform Technical Report](https://arxiv.org/abs/2605.14771)：用 MediaClaw 处理 Multimodal Intelligent-Agent Platform Technical Report。
+- [PBT-Bench: Benchmarking AI Agents on Property-Based Testing](https://arxiv.org/abs/2605.15229)：用 PBT-Bench 处理 Benchmarking AI Agents on Property-Based Testing。
+- [Who Owns This Agent? Tracing AI Agents Back to Their Owners](https://arxiv.org/abs/2605.16035)：围绕“Who Owns This Agent? Tracing AI Agents Back to Their Owners”组织智能体协同。
 - [Contract-Driven Model Context Protocols](https://doi.org/10.1109/SoutheastCon63549.2026.11476405)：面向多 agent MCP 系统的 contract-oriented interoperability framework。核心思想是用机器可读 contract、运行时校验和 policy enforcement，让独立构建的 agent 与工具在明确接口和信任边界下协作。
+- [AI-Driven Agent System for Local MCP Task Automation And Dynamic Tool Integration](https://doi.org/10.1109/ICESIC67389.2026.11496512)：通过动态工具集成自动化本地 MCP 任务。
+- [Structsoup: A Unified Adaptive Framework for Structure-Aware Retrieval-Augmented Generation](https://doi.org/10.1109/icassp55912.2026.11463625)：用 Structsoup 处理 A Unified Adaptive Framework for Structure-Aware Retrieval-Augmented Generation。
+- [A Comparative Analysis of Retrieval-Augmented Generation Architectures with Semantic Hashing for Enterprise Knowledge Systems](https://doi.org/10.1109/iisec69317.2026.11418525)：围绕“A Comparative Analysis of Retrieval-Augmented Generation Architectures with Semantic Hashing for Enterprise Knowledge Systems”组织检索增强处理。
+- [Dual-layer prompt ensembles: Leveraging system- and user-level instructions for robust LLM-based query expansion and rank fusion](https://doi.org/10.1016/j.inffus.2026.104160)：用 Dual-layer prompt ensembles 处理 Leveraging system- and user-level instructions for robust LLM-based query expansion and rank fusion。
+- [Age-Inclusive Shared Mobility via Agent-Based Modeling: Lessons from China for African Cities](https://doi.org/10.1016/j.sciaf.2026.e03320)：用 Age-Inclusive Shared Mobility via Agent-Based Modeling 处理 Lessons from China for African Cities。
+- [Dynamic Cognitive Cycle-Driven Multimodal Agent for Knowledge Graph Completion](https://doi.org/10.1016/j.eswa.2026.132001)：围绕“Dynamic Cognitive Cycle-Driven Multimodal Agent for Knowledge Graph Completion”组织智能体协同。
+- [Streamlining risk assessment for predictive maintenance: Can AI be trusted as an assistant?](https://doi.org/10.1016/j.aei.2026.104803)：用 Streamlining risk assessment for predictive maintenance 处理 Can AI be trusted as an assistant?。
+- [Look and check: A multi-label classification pipeline via multi-agent cooperation](https://doi.org/10.1016/j.neucom.2026.133626)：用 Look and check 处理 A multi-label classification pipeline via multi-agent cooperation。
+- [An operations memory-enhanced multi-agent system for human-centric manufacturing process monitoring and decision support](https://doi.org/10.1016/j.cirp.2026.04.080)：围绕“An operations memory-enhanced multi-agent system for human-centric manufacturing process monitoring and decision support”组织智能体协同。
+- [MCP-Based Caching Framework for Intelligent Wireless Control Agents](https://doi.org/10.1109/icce67443.2026.11449867)：围绕“MCP-Based Caching Framework for Intelligent Wireless Control Agents”组织智能体协同。
+- [Enhancing Field Data Reusability through a Dataset Selection Assistant](https://doi.org/10.1016/j.procs.2026.02.019)：把“Enhancing Field Data Reusability through a Dataset Selection Assistant”作为具体的工具介导流程来处理。
+- [Layered Large Language Models in Technical Automation: A Mixture-of-Agents Approach](https://doi.org/10.1109/iccsc67078.2026.11468379)：用 Layered Large Language Models in Technical Automation 处理 A Mixture-of-Agents Approach。
+- [EvoRoute: An Evolutionary Multi-Agent Framework for Sustainable and Congestion-Aware Routing in Intelligent Transportation Systems](https://doi.org/10.1109/comsnets67989.2026.11418273)：用 EvoRoute 处理 An Evolutionary Multi-Agent Framework for Sustainable and Congestion-Aware Routing in Intelligent Transportation Systems。
+- [Multi-Agent LLM Closed-Loop Optimization for NP-Hard Problems](https://doi.org/10.1109/southeastcon63549.2026.11476226)：围绕“Multi-Agent LLM Closed-Loop Optimization for NP-Hard Problems”组织智能体协同。
+- [Foehn: An open-hardware asynchronous scheduling hub for high-throughput liquid-handling workflow](https://doi.org/10.1016/j.ohx.2026.e00748)：用 Foehn 处理 An open-hardware asynchronous scheduling hub for high-throughput liquid-handling workflow。
+- [Why Technology Doesn’t Normally Make You Dumber, but Agentic AI Will](https://doi.org/10.1080/10447318.2026.2631678)：围绕“Why Technology Doesn’t Normally Make You Dumber, but Agentic AI Will”组织智能体协同。
+- [DDD-Enforcer: An AI-Powered Multi-Agent System for Real-Time Domain-Driven Design Enforcement](https://doi.org/10.1109/iisec69317.2026.11418529)：用 DDD-Enforcer 处理 An AI-Powered Multi-Agent System for Real-Time Domain-Driven Design Enforcement。
+- [Domain-specific SQL generation with LLMs: A hybrid framework combining knowledge graphs and retrieval-augmentation](https://doi.org/10.1016/j.aei.2026.104560)：结合知识图谱与检索增强进行领域 SQL 生成。
+- [Version 6.1.25 - AI-KM: An integrated platform for knowledge management and agent workflow orchestration](https://doi.org/10.1016/j.softx.2026.102585)：把知识管理与智能体工作流编排封装为一体化软件平台。
+- [A Benchmarkable Modular Tool-Augmented Chatbot Architecture for Business Use Cases](https://doi.org/10.1109/access.2026.3672311)：面向带可 benchmark 化评测接口的模块化工具增强 chatbot 架构的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Exp-ToolPlan: Contrastive Experience Learning for Similar Tool Selection](https://doi.org/10.1109/gaiis69281.2026.11519215)：补充tool use方向的agent harness，核心围绕《Exp-ToolPlan: Contrastive Experience Learning for Similar Tool Selection》。
+- [Tool-Use Failure Analysis and Recovery Framework for LLM Agents](https://doi.org/10.1109/icaace69793.2026.11508644)：面向 LLM 工具调用失败的实用恢复层。核心思想：定位工具学习或执行失败发生的位置，并让 agent 进入针对性修复动作，而不是把工具错误当作普通生成错误。
+- [StreamKnight: Stream Tool Injection and Monitoring Technique](https://doi.org/10.1109/iccsc67078.2026.11468695)：面向 MCP 工具调用的 stream tool-injection and monitoring harness。核心思想：每一步只暴露当前需要的工具路径，同时监控全部工具调用，降低多 server MCP 执行中的 token 开销和参数错误。
+- [Graph Co-Pilot: Explicit API Dependency Modeling for Reliable Multi-Tool LLM Reasoning](https://doi.org/10.1109/nnice68970.2026.11465471)：面向 multi-tool reasoning 的 API dependency modeling harness。核心思想：从“多选一”的工具检索转向显式 API 依赖图，为复杂任务调度关联工具调用。
+- [DynaSaur](https://openreview.net/forum?id=lv0cJ2pWVd)：让大语言模型 agent 超越预定义动作，动态生成行动接口，适用于静态工具目录过于受限的 tool-use 场景。
+- [ToolTree](https://openreview.net/forum?id=Ef5O9gNNLE)：用双反馈 Monte Carlo tree search 和双向剪枝做工具规划，为长工具链增加显式搜索 harness。
+- [In-the-Flow Agentic System Optimization](https://openreview.net/forum?id=Mf5AleTUVK)：在执行过程中优化 agentic system，把规划和工具使用改进变成在线 harness 变量，而不只是离线 prompt 设计。
 - mcp-use（[开源代码](https://github.com/mcp-use/mcp-use)；[文档](https://mcp-use.com/docs)）：无独立论文，但提供 MCP server、MCP app、Inspector 和部署链路，适合作为工程侧 MCP tool-use harness，特别是把工具定义、调试、观测和发布合在一个 SDK 中。
 - mcp-agent（[开源代码](https://github.com/lastmile-ai/mcp-agent)；[文档](https://docs.mcp-agent.com/)）：MCP-native agent SDK，把 server 生命周期管理、路由、orchestrator/evaluator-optimizer 模式和 durable execution 做成可复用的工具使用 harness 组件。
 - OpenAI Agents SDK（[开源代码](https://github.com/openai/openai-agents-python)；[文档](https://openai.github.io/openai-agents-python/)）：开源 workflow SDK，核心抽象包含 tools、MCP、handoffs、guardrails、sessions 和 tracing，可作为工程化 tool-using agents 的实用基线，而不只是 benchmark scaffold。
-- [ATLAS-RTC](https://arxiv.org/abs/2603.27905)：面向 LLM 智能体输出的 token 级运行时控制层。核心思想：在解码过程中依据输出合约监测生成，并在结构化输出或工具调用格式出错前施加偏置、掩码或回滚。
 - [Meta-Agent-Workflow](https://doi.org/10.1145/3701716.3715247)：面向工具使用的 agent harness，通过构造、检索和细化可复用 workflow 来支持 LLM agent。核心思想：把反复出现的工具调用轨迹沉淀成 workflow 资产，让后续任务复用并调整结构化执行计划，而不是每次从一次性 ReAct 循环开始。
-- [SkillGraph](https://arxiv.org/abs/2604.19793)：面向工具序列推荐的图先验框架；核心思想是从成功工具调用轨迹中挖掘执行转移规律，并把候选检索与排序拆开，使 agent 能规划数据依赖的 API 链路，而不是只依赖语义相似度。
-- [DADL](https://arxiv.org/abs/2605.05247)：面向企业工具库的 LLM 智能体声明式描述语言。核心思想：一次性描述 REST API、认证、分页、响应裁剪和访问分类，再由执行层暴露大规模工具目录，而不是为每个包装器部署一个 MCP server。
-- [Planning Horizon in Data-Centric Tool Calling](https://arxiv.org/abs/2605.08477)：研究面向数据任务的工具调用 agent 是否需要显式逐步规划；核心思想是在工具调用流程中比较不同规划跨度，帮助 agent scaffold 判断细粒度分解何时有益、何时反而影响执行。
-- [RubricRefine](https://arxiv.org/abs/2605.09730)：训练前的工具调用可靠性修复层；核心思想：先生成任务/注册表特定 rubric，再在执行前修正 inter-tool contract 错误。
-- [AOP](https://www.semanticscholar.org/paper/2dccab11b1feb5424437a79f047c8a91c1818634)：面向复杂查询回答的自动化、交互式 LLM pipeline 编排 harness；核心思想是让系统组合、检查并修订多步 LLM pipeline，而不是把复杂查询压成单个 prompt 或固定流程。
+- [AOP](https://vldb.org/cidrdb/2025/aop-automated-and-interactive-llm-pipeline-orchestration-for-answering-complex-queries.html)：面向复杂查询回答的自动化、交互式 LLM pipeline 编排 harness；核心思想是让系统组合、检查并修订多步 LLM pipeline，而不是把复杂查询压成单个 prompt 或固定流程。
 - [Toolbelt-MCP](https://doi.org/10.1007/978-3-032-11442-6_38)：面向关系数据库工具使用的 MCP proof-of-concept harness。核心思想：把 SQL 执行与基于图的表关系路径发现封装为工具，使 LLM 能通过 MCP 动作探索复杂数据库 schema 并回答数据问题。
+- [An Adaptive Multi-Source Retrieval-Augmented Generation Framework Integrating Query Complexity Awareness and Confidence-Aware Fusion](https://doi.org/10.3390/app16052495)：围绕“An Adaptive Multi-Source Retrieval-Augmented Generation Framework Integrating Query Complexity Awareness and Confidence-Aware Fusion”组织检索增强处理。
+- [MetaRAG: Identifying Website Owner using Meta-Path-Guided Dynamic Graph Retrieval-Augmented Generation](https://doi.org/10.1145/3800961)：用 MetaRAG 处理 Identifying Website Owner using Meta-Path-Guided Dynamic Graph Retrieval-Augmented Generation。
+- [Retrieval-Augmented Generation for Multi-Hop Question Answering Based on Structured Planning](https://doi.org/10.1145/3789506)：围绕“Retrieval-Augmented Generation for Multi-Hop Question Answering Based on Structured Planning”组织检索增强处理。
+- [Design and performance of AI agents interfacing with an atomic layer deposition tool](https://doi.org/10.1063/5.0318770)：评估智能体与原子层沉积工具交互的设计和性能，把实验仪器控制作为 harness 重点。
+- [SpaRAGraph: Spatial Reasoning using Retrieval-Augmented Generation](https://doi.org/10.1145/3799424)：在 RAG 中加入空间图检索，使回答能基于空间关系而不只是纯文本推理。
+- [Context-Aware Fine-Grained Graph RAG for Query-Focused Summarization](https://doi.org/10.1145/3746252.3760935)：用细粒度、上下文感知的 Graph RAG 为查询聚焦摘要检索证据。
+- [Optimizing RAG systems with query intent analysis and hybrid retrieval strategies](https://doi.org/10.1117/12.3073381)：通过查询意图分析与混合检索策略选择优化 RAG 系统。
+- [OB-GRAG: LLM Assisted Graph Creation and Querying via Domain Specific Ontology](https://ceur-ws.org/Vol-3964/paper10.pdf)：用领域本体指导大语言模型辅助建图与查询，服务于 Graph RAG。
+- [Cross-Modal Retrieval and Semantic Refinement for Remote Sensing Image Captioning](https://doi.org/10.3390/rs16010196)：结合跨模态检索与语义精炼，改进遥感图像描述生成。
+- [Business-RAG: Information Extraction for Business Insights](https://doi.org/10.5220/0012812800003764)：构建面向商业洞察的 RAG 信息抽取流程，把检索到的企业文本转为结构化业务信息。
+- [Sphinteract: Resolving Ambiguities in NL2SQL Through User Interaction](https://doi.org/10.14778/3717755.3717772)：用 Sphinteract 处理 Resolving Ambiguities in NL2SQL Through User Interaction。
+- [A tool-augmented LLM workflow for automated research contribution patterns extraction from citation sentences](https://doi.org/10.1007/s00799-025-00438-4)：提出面向工具使用与工具介导的智能体交互的智能体工作流或编排框架。
+- [LLM-based and Retrieval-Augmented Control Code Generation](https://doi.org/10.1145/3643795.3648384)：用检索增强的大语言模型提示生成控制代码，引入相关示例与领域上下文。
+- [GPT is an effective tool for multilingual psychological text analysis](https://doi.org/10.1073/pnas.2308950121)：评估 GPT 作为多语言心理文本分析工具，展示面向社会科学编码的轻量工具使用流程。
+- [Automated Validating and Fixing of Text-to-SQL Translation with Execution Consistency](https://doi.org/10.1145/3725271)：把“Automated Validating and Fixing of Text-to-SQL Translation with Execution Consistency”作为具体的工具介导流程来处理。
+- [Pic2Plate: A Vision-Language and Retrieval-Augmented Framework for Personalized Recipe Recommendations](https://doi.org/10.3390/s25020449)：用 Pic2Plate 处理 A Vision-Language and Retrieval-Augmented Framework for Personalized Recipe Recommendations。
+- [Retrieval-Augmented Generation to Generate Knowledge Assets and Creation of Action Drivers](https://doi.org/10.3390/app15116247)：围绕“Retrieval-Augmented Generation to Generate Knowledge Assets and Creation of Action Drivers”组织检索增强处理。
+- [Enhancing Retrieval-Augmented Generation Models with Knowledge Graphs: Innovative Practices Through a Dual-Pathway Approach](https://doi.org/10.1007/978-981-97-5678-0_34)：用 Enhancing Retrieval-Augmented Generation Models with Knowledge Graphs 处理 Innovative Practices Through a Dual-Pathway Approach。
+- [Old IR Methods Meet RAG](https://doi.org/10.1145/3626772.3657935)：围绕“Old IR Methods Meet RAG”组织检索增强处理。
+- [Combining Retrieval-Augmented Generation and Few-Shot Learning for Model Synthesis of Uncommon DSLs](https://doi.org/10.18420/modellierung2024-ws-007)：围绕“Combining Retrieval-Augmented Generation and Few-Shot Learning for Model Synthesis of Uncommon DSLs”组织检索增强处理。
+- [IR-RAG @ SIGIR24: Information Retrieval's Role in RAG Systems](https://doi.org/10.1145/3626772.3657984)：用 IR-RAG @ SIGIR24 处理 Information Retrieval's Role in RAG Systems。
+- [An integrating RAG-LLM and deep Q-network framework for intelligent fish control systems](https://doi.org/10.1038/s41598-025-05892-3)：围绕“An integrating RAG-LLM and deep Q-network framework for intelligent fish control systems”组织检索增强处理。
+- [Max–Min semantic chunking of documents for RAG application](https://doi.org/10.1007/s10791-025-09638-7)：围绕“Max–Min semantic chunking of documents for RAG application”组织检索增强处理。
+- [Expertise-guided LLM agent for autonomous optical power optimization in field-deployed optical networks](https://doi.org/10.1364/jocn.588873)：围绕“Expertise-guided LLM agent for autonomous optical power optimization in field-deployed optical networks”组织智能体协同。
+- [Unsupervised Cycle Detection in Agentic Applications (Work In Progress Paper)](https://doi.org/10.1145/3777911.3801105)：围绕“Unsupervised Cycle Detection in Agentic Applications (Work In Progress Paper)”组织智能体协同。
+- [Agentic AI for Autonomous Data Engineering: A Self-Healing Pipeline Framework on Google Cloud](https://doi.org/10.62970/ijirct.v12.i3.2605014)：用 Agentic AI for Autonomous Data Engineering 处理 A Self-Healing Pipeline Framework on Google Cloud。
+- [From Probabilistic Pedestrian Intent to Risk-Optimal Trajectories: A Prediction-Driven Planning Framework in Shared Spaces](https://doi.org/10.3390/systems14040434)：用 From Probabilistic Pedestrian Intent to Risk-Optimal Trajectories 处理 A Prediction-Driven Planning Framework in Shared Spaces。
+- [Artificial Intelligence in Transcriptomics: From Human-in-the-Loop to Agentic AI](https://doi.org/10.3390/jpm16040181)：用 Artificial Intelligence in Transcriptomics 处理 From Human-in-the-Loop to Agentic AI。
+- [AI Can See What You Can't See: How LLM-Agents Complement Human-Based Gender-Inclusive Usability Testing](https://doi.org/10.1145/3801978)：用 AI Can See What You Can't See 处理 How LLM-Agents Complement Human-Based Gender-Inclusive Usability Testing。
+- [High-performance in-situ ML Inference with dalotia: A Lightweight Tensor Loader API for Science Codes](https://doi.org/10.1145/3773656.3773664)：用 High-performance in-situ ML Inference with dalotia 处理 A Lightweight Tensor Loader API for Science Codes。
+- [MTC-SQL: a memory-enhanced and task-decomposed correction method for text-to-SQL](https://doi.org/10.1007/s41060-025-00995-6)：用 MTC-SQL 处理 a memory-enhanced and task-decomposed correction method for text-to-SQL。
+- [LLM-Driven Generative Agents for Simulating Occupant Feedback in Built Environments](https://doi.org/10.1061/jccee5.cpeng-7365)：围绕“LLM-Driven Generative Agents for Simulating Occupant Feedback in Built Environments”组织智能体协同。
+- [Automating Ecological and Fisheries Modelling With Agentic AI](https://doi.org/10.1111/faf.70079)：围绕“Automating Ecological and Fisheries Modelling With Agentic AI”组织智能体协同。
+- [Fully Distributed Observer-Based Dynamic Double-Event-Triggered Bipartite Consensus Tracking of Fractional-Order Multi-Agent Systems with Input Saturation](https://doi.org/10.3390/fractalfract10030162)：围绕“Fully Distributed Observer-Based Dynamic Double-Event-Triggered Bipartite Consensus Tracking of Fractional-Order Multi-Agent Systems with Input Saturation”组织智能体协同。
+- [Agent-Based Models of Sexual Selection in Bird Vocalizations Using Generative Approaches](https://doi.org/10.3390/app151910481)：围绕“Agent-Based Models of Sexual Selection in Bird Vocalizations Using Generative Approaches”组织智能体协同。
+- [AI-Assisted Rapid Quality Analysis in Implementation Science: Methodological Study](https://doi.org/10.2196/81149)：用 AI-Assisted Rapid Quality Analysis in Implementation Science 处理 Methodological Study。
+- [A dual-channel converter valve fault prediction model based on attention-LSTM and LLM agent](https://doi.org/10.1177/14727978251374350)：围绕“A dual-channel converter valve fault prediction model based on attention-LSTM and LLM agent”组织智能体协同。
+- [EvoAgent-SQL: An Evolutionary Multi-Agent Text2SQL Framework Integrating User Feedback and Reflective Adaptation](https://doi.org/10.3390/sym18050792)：把用户反馈与反思机制结合到进化式多智能体 Text2SQL 中。
+- [Agent-Driven Orchestration for RESTful Enterprise APIs](https://doi.org/10.52783/jisem.v11i2s.14496)：围绕“Agent-Driven Orchestration for RESTful Enterprise APIs”组织智能体协同。
+- [AgencyTree: Automated Multimedia Workflow Generation with Robust Planning via an Abstract Capability Tree](https://doi.org/10.1145/3812545)：Agent Harness 条目；核心思想：自动生成多媒体工作流；核心思想是在抽象能力树上规划，用模型能力约束可行 workflow。
+- [AgentTOD: A Task-Oriented Dialogue Agent with a Flexible and Adaptive API Calling Paradigm](https://doi.org/10.1145/3745021)：具备自适应 API 调用的任务型对话 agent；核心思想是让对话策略灵活决定何时以及如何调用 API，而不是遵循固定服务调用脚本。
+- [DesDD: A Design-Enabled Framework with Dual-Layer Debugging for LLM-based Iterative API Orchestrating](https://doi.org/10.1145/3755881.3755911)：面向 LLM-based iterative API orchestration 的双层调试框架；核心思想是在 API 调用规划和执行外加入设计化调试，使工具工作流能从编排错误中恢复。
+- [Model Context Protocol for Agentic AI: Enabling Contextual Interoperability Across Systems](https://doi.org/10.22399/ijcesen.3678)：把 MCP 视为智能体系统的上下文互操作基础设施，可补充标准化工具发现与调用的 tool-use harness 条目。
+- [Human in the loop chain of code prompting for deterministic tool development with generative AI](https://doi.org/10.1007/s44163-025-00704-z)：面向工具使用与结构化工具交互提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Research on Multi-Agent Question Answering Based on Large Language Models](https://doi.org/10.1145/3728199.3728217)：研究基于大语言模型的多智能体问答系统。
+- [Orion: A Multi-Agent Framework for Optimizing RAG Systems through Specialized Agent Collaboration](https://doi.org/10.1145/3755881.3755909)：通过专门化智能体协作优化 RAG 系统。
+- [Bridging the Deterministic-Cognitive Gap: An MCP-Based Orchestration Framework for Transforming Enterprise System APIs into Agent-Ready Process Architectures](https://doi.org/10.48175/ijarsct-28493)：面向工具使用与智能体工具编排的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Bridging the Deterministic-Cognitive Gap: An MCP-Based Orchestration Framework for Transforming Enterprise System APIs into Agent-Ready Process Architectures”组织可复用线索，便于比较相关模型、评测或智能体工作流。

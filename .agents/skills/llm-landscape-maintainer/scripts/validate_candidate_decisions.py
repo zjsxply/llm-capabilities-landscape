@@ -92,25 +92,71 @@ def validate_pair(
         if state in INCLUDE_STATES:
             counts["include"] += 1
             missing = []
-            if not text_field(item, "target_doc", "target_docs", "docs"):
+            duplicate_alias = bool(text_field(item, "duplicate_of"))
+            if not text_field(
+                item,
+                "target_doc",
+                "target_docs",
+                "target_doc_en",
+                "target_en",
+                "target",
+                "docs",
+            ):
                 missing.append("target_doc")
-            if not text_field(item, "section"):
+            if not text_field(item, "section", "target_section", "target_en", "target"):
                 missing.append("section")
-            if not text_field(item, "suggested_english_bullet", "english_bullet", "english_draft"):
+            if not duplicate_alias and not text_field(
+                item,
+                "suggested_english_bullet",
+                "english_bullet",
+                "english_draft",
+                "en_tldr",
+                "tldr_en",
+                "concise_en",
+                "tldr",
+            ):
                 missing.append("english_bullet")
-            if not text_field(item, "suggested_chinese_bullet", "chinese_bullet", "chinese_draft"):
+            if not duplicate_alias and not text_field(
+                item,
+                "suggested_chinese_bullet",
+                "chinese_bullet",
+                "chinese_draft",
+                "zh_tldr",
+                "tldr_zh",
+                "concise_zh",
+                "tldr",
+            ):
                 missing.append("chinese_bullet")
-            if not text_field(item, "reason", "rationale", "note"):
+            if not text_field(
+                item,
+                "reason",
+                "reason_en",
+                "reason_zh",
+                "rationale",
+                "note",
+                "evidence",
+                "evidence_en",
+                "evidence_summary",
+            ):
                 missing.append("reason")
             if missing:
                 errors.append(f"{decision_path}: include item {index} {identifier(item)} missing {', '.join(missing)}")
         elif state in REJECT_STATES:
             counts["reject"] += 1
-            if not text_field(item, "reason", "rationale", "note"):
+            if not text_field(
+                item,
+                "reason",
+                "reason_en",
+                "reason_zh",
+                "rationale",
+                "note",
+                "concise_en",
+                "concise_zh",
+            ):
                 errors.append(f"{decision_path}: reject item {index} {identifier(item)} missing reason")
         elif state in DEFER_STATES:
             counts["defer"] += 1
-            if not text_field(item, "reason", "rationale", "note"):
+            if not text_field(item, "reason", "reason_en", "reason_zh", "rationale", "note"):
                 errors.append(f"{decision_path}: defer item {index} {identifier(item)} missing reason")
         else:
             counts["unknown"] += 1
@@ -156,10 +202,24 @@ def main() -> int:
     all_errors: list[str] = []
     totals = {"include": 0, "reject": 0, "defer": 0, "unknown": 0}
     checked = 0
-    for decision_path in sorted(args.decision_dir.glob("chunk-*.json")):
+    chunk_paths = sorted(args.chunk_dir.glob("chunk-*.json"))
+    decision_paths = sorted(args.decision_dir.glob("chunk-*.json"))
+    chunk_names = {path.name for path in chunk_paths}
+    decision_names = {path.name for path in decision_paths}
+    for missing_name in sorted(chunk_names - decision_names):
+        all_errors.append(
+            f"{args.decision_dir}: missing decision file for input chunk "
+            f"{args.chunk_dir / missing_name}"
+        )
+    for extra_name in sorted(decision_names - chunk_names):
+        all_errors.append(
+            f"{args.decision_dir / extra_name}: no matching input chunk "
+            f"under {args.chunk_dir}"
+        )
+
+    for decision_path in decision_paths:
         chunk_path = args.chunk_dir / decision_path.name
         if not chunk_path.exists():
-            all_errors.append(f"{decision_path}: missing matching chunk input {chunk_path}")
             continue
         memo_path = find_memo(decision_path, args.memo_dir)
         errors, counts = validate_pair(

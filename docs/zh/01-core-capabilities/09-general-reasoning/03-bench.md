@@ -1,49 +1,615 @@
 # 1.9.3 Bench
 
+- [GPT-4 passes the bar exam](https://doi.org/10.1098/rsta.2023.0254)：在 Uniform Bar Exam 组成部分和 Multistate Bar Examination 式选择题上评估 GPT-4，用人类律师资格考试百分位衡量法律推理表现，而不是发布新的开放基准。
+- [The 2023 International Planning Competition](https://doi.org/10.1002/aaai.12169)：报告 IPC 2023 自动规划竞赛的赛道与结果，用标准规划领域、实例和竞赛计分协议评测规划器。
 - [ARC（ARC-AGI-1）](https://github.com/fchollet/ARC)：评什么：抽象推理与归纳（小网格变换/规律归纳）；核心思想：以极小数据与强分布外泛化为核心，迫使方法依赖程序归纳/规则抽取，而非语言模板。
 - [BIG-Bench Hard](https://arxiv.org/abs/2210.09261)（[开源代码](https://github.com/suzgunmirac/BIG-Bench-Hard)）：评什么：BIG-Bench 中人工筛出的高难推理子任务；核心思想：作为 chain-of-thought 基线常用集合，覆盖符号、常识、算法与语言推断。
 - [AGIEval](https://arxiv.org/abs/2304.06364)（[开源代码](https://github.com/ruixiangcui/AGIEval)）：评什么：来自标准化考试和人类能力测试的通用推理；核心思想：用更接近人类考试的题型补充合成任务，覆盖语言、数学、逻辑和专业知识。
 - [MuSR](https://arxiv.org/abs/2310.16049)（[开源代码](https://github.com/Zayne-sprague/MuSR)）：评什么：多步软推理，含 murder mystery、object placement 和 team allocation 等任务；核心思想：要求模型在长题干中维护约束并逐步排除候选。
 - [GPQA](https://arxiv.org/abs/2311.12022)（[开源代码](https://github.com/idavidrein/gpqa)）：评什么：研究生级、抗搜索的科学问答；核心思想：强调专家级推理和抗数据泄漏，常作为通用推理模型的硬题基线。
-- [LiveBench](https://arxiv.org/abs/2406.19314)（[开源代码](https://github.com/LiveBench/LiveBench)）：评什么：持续更新、含推理/数学/编码/语言/数据分析等任务；核心思想：通过时间更新和自动评分降低污染，适合做近时效能力跟踪。
+- [LogicAsker: Evaluating and Improving the Logical Reasoning Ability of Large Language Models](https://arxiv.org/abs/2401.00757)：从形式化规则生成逻辑推理问题，要求模型回答并解释，使错误能对应到具体逻辑形式而非笼统 QA 准确率。
+- [Advancing Spatial Reasoning in Large Language Models: An In-Depth Evaluation and Enhancement Using the StepGame Benchmark](https://arxiv.org/abs/2401.03991)：使用 StepGame 的合成空间关系故事测试 LLM 能否推断多跳相对位置，并通过任务变体区分空间推理能力与提示格式影响。
+- [Prometheus-Vision: Vision-Language Model as a Judge for Fine-Grained Evaluation](https://arxiv.org/abs/2401.06591)：评测视觉语言模型作为细粒度评审器的能力，用 rubric 式多模态评分检查自动评测器能否超越粗粒度偏好标签来评价图像条件输出。
+- [PUB: A Pragmatics Understanding Benchmark for Assessing LLMs’ Pragmatics Capabilities](https://arxiv.org/abs/2401.07078)：引入覆盖 implicature、presupposition、指代和话语上下文理解的语用学基准，衡量 LLM 能否推断话语中未明说的会话含义。
+- [MMToM-QA: Multimodal Theory of Mind Question Answering](https://arxiv.org/abs/2401.08743)：构造多模态 Theory of Mind 问答，要求模型结合图像证据和文本推断信念、意图与视角，使心理状态推理依赖跨模态上下文。
+- [Code Prompting Elicits Conditional Reasoning Abilities in Text+Code LLMs](https://arxiv.org/abs/2401.10065)：比较自然语言提示与代码式表示在受控 if-then 问题上的表现，检验代码提示是否能激发文本和代码模型的条件推理。
+- [CivRealm: A Learning and Reasoning Odyssey in Civilization for Decision-Making Agents](https://arxiv.org/abs/2401.10568)：在 Civilization 式回合制环境中评估决策智能体，把学习、规划、外交和长期资源选择放进同一个游戏模拟协议。
+- [Benchmarking LLMs via Uncertainty Quantification](https://arxiv.org/abs/2401.12794)：用不确定性量化分数评估 LLM 答案，对照正确性、置信度、校准和拒答行为，而不只看原始准确率。
+- [CMMU: A Benchmark for Chinese Multi-modal Multi-type Question Understanding and Reasoning](https://arxiv.org/abs/2401.14011)：提供多类型中文多模态问题，测试模型能否结合图像理解、中文语义和推理，而不是只解翻译自英文的题型。
+- [Evaluating Gender Bias in Large Language Models via Chain-of-Thought Prompting](https://arxiv.org/abs/2401.15585)：通过比较不同提示条件和推理轨迹衡量 chain-of-thought 输出中的性别偏见，使逐步解释里的刻板印象泄漏可见。
+- [Can Large Language Models be Trusted for Evaluation? Scalable Meta-Evaluation of LLMs as Evaluators via Agent Debate](https://arxiv.org/abs/2401.16788)：通过 agent debate 进行可扩展元评测，检验大语言模型作为评测者是否可信。
+- [Conditional and Modal Reasoning in Large Language Models](https://arxiv.org/abs/2401.17169)：用受控逻辑形式探测 LLM 对条件句和模态算子的处理，区分有效的必然性、可能性和蕴含判断与表面合理性。
+- [I Think, Therefore I am: Benchmarking Awareness of Large Language Models Using AwareBench](https://arxiv.org/abs/2401.17882)：提出 AwareBench，通过身份、能力、上下文和交互状态问题测试模型自我意识与情境意识，而不是普通知识回忆。
+- [A Chain-of-Thought Is as Strong as Its Weakest Link: A Benchmark for Verifiers of Reasoning Chains](https://arxiv.org/abs/2402.00559)：面向推理链验证器设计基准，要求定位 chain-of-thought 中的薄弱步骤，因此评测对象是过程检查而不只是最终答案一致性。
+- [How Well Can LLMs Negotiate? NegotiationArena Platform and Analysis](https://arxiv.org/abs/2402.05863)：提出 NegotiationArena 多轮议价平台，评估 LLM 智能体在受控谈判中出价、推断对手和达成有利交易的能力。
+- [OpenToM: A Comprehensive Benchmark for Evaluating Theory-of-Mind Reasoning Capabilities of Large Language Models](https://arxiv.org/abs/2402.06044)：用 OpenToM 场景评测 Theory of Mind，系统变化信念状态、观察信息和角色，从普通常识问答中分离心理状态追踪。
+- [Can Graph Descriptive Order Affect Solving Graph Problems with LLMs?](https://arxiv.org/abs/2402.07140)：通过改变节点和边的文本描述顺序测试图问题求解敏感性，衡量 LLM 图推理是否对等价图表示保持不变。
+- [AQA-Bench: An Interactive Benchmark for Evaluating LLMs' Sequential Reasoning Ability](https://arxiv.org/abs/2402.09404)：用交互式问答步骤评测顺序推理，评分模型能否在多步问题中请求、整合并利用中间信息。
+- [STEER: Assessing the Economic Rationality of Large Language Models](https://arxiv.org/abs/2402.09552)：用风险、时间、社会偏好和战略选择决策题衡量经济理性，将 LLM 行为与规范模型和行为经济学预期比较。
+- [When LLMs Meet Cunning Texts: A Fallacy Understanding Benchmark for Large Language Models](https://arxiv.org/abs/2402.11100)：构造带欺骗性或修辞陷阱文本的 fallacy understanding 任务，评估模型能否识别错误论证而不只是判断主题或情绪。
+- [Direct Evaluation of Chain-of-Thought in Multi-hop Reasoning with Knowledge Graphs](https://arxiv.org/abs/2402.11199)：直接评分多跳知识图谱推理中的 chain-of-thought 步骤，检查中间实体和关系是否真正支撑最终答案。
+- [CofCA: A STEP-WISE Counterfactual Multi-hop QA benchmark](https://arxiv.org/abs/2402.11924)：提供逐步反事实多跳问答，要求模型在事实变化后更新中间推理，而不是沿用原始上下文答案。
+- [Are LLM-based Evaluators Confusing NLG Quality Criteria?](https://arxiv.org/abs/2402.12055)：评估基于 LLM 的评测器是否混淆自然语言生成质量准则。
+- [GTBench: Uncovering the Strategic Reasoning Limitations of LLMs via Game-Theoretic Evaluations](https://arxiv.org/abs/2402.12348)：用博弈论设置测试战略推理，考察模型是否能预判其他玩家、分析收益并选择接近均衡的行动。
+- [Archer: A Human-Labeled Text-to-SQL Dataset with Arithmetic, Commonsense and Hypothetical Reasoning](https://arxiv.org/abs/2402.12554)：提供带人工标注的 Text-to-SQL 问题，要求算术、常识和假设推理，使 SQL 生成评测不只停留在 schema 匹配。
+- [TreeEval: Benchmark-Free Evaluation of Large Language Models through Tree Planning](https://arxiv.org/abs/2402.13125)：让 LLM 在生成树上做规划，并用 tree search 检查正确性，从而避免依赖固定静态 benchmark 集合。
+- [Making Reasoning Matter: Measuring and Improving Faithfulness of Chain-of-Thought Reasoning](https://arxiv.org/abs/2402.13950)：衡量并改进思维链忠实性，把推理质量与可验证解释联系起来。
+- [CriticBench: Benchmarking LLMs for Critique-Correct Reasoning](https://arxiv.org/abs/2402.14809)：通过要求模型发现并修复错误答案来测试 critique-correct reasoning，衡量 critique 是否改善推理路径，而不只是换一个最终答案。
+- [ToMBench: Benchmarking Theory of Mind in Large Language Models](https://arxiv.org/abs/2402.15052)：通过 ToMBench 的信念、意图、情绪、知识和社会推理任务评测 Theory of Mind，并用受控提示考察心理状态推断。
+- [Measuring Bargaining Abilities of LLMs: A Benchmark and A Buyer-Enhancement Method](https://arxiv.org/abs/2402.15813)：通过买卖双方谈判任务评测 bargaining ability，跟踪成交、盈余、让步行为，以及面向买方的提示是否改善谈判结果。
+- [Are LLMs Capable of Data-based Statistical and Causal Reasoning? Benchmarking Advanced Quantitative Reasoning with Data](https://arxiv.org/abs/2402.17644)：在数据表和研究描述上评测高级定量推理，要求统计比较、因果解释和基于证据的结论，而非纯文本常识。
+- [CogBench: a large language model walks into a psychology lab](https://arxiv.org/abs/2402.18225)：把心理学实验室中的认知任务改造成 LLM 评测，围绕记忆、决策偏差、学习和社会认知使用实验式协议，而不是单轮 QA。
+- [Functional Benchmarks for Robust Evaluation of Reasoning Performance, and the Reasoning Gap](https://arxiv.org/abs/2402.19450)：提出可生成大量受控变体的功能型推理基准，揭示任务模板成绩与稳健分布外推理之间的 reasoning gap。
+- [CR-LT-KGQA: A Knowledge Graph Question Answering Dataset Requiring Commonsense Reasoning and Long-Tail Knowledge](https://arxiv.org/abs/2403.01395)：构造同时需要长尾实体和常识连接的 KGQA 样例，测试模型能否在稀疏图知识上推理，而不是依赖热门事实。
+- [NPHardEval4V: A Dynamic Reasoning Benchmark of Multimodal Large Language Models](https://arxiv.org/abs/2403.01777)：从 NP-hard 问题族动态生成多模态任务，使视觉推理难度可控，并通过动态实例降低记忆化风险。
+- [Can large language models reason and plan?](https://arxiv.org/abs/2403.04121)：在受控规划任务上评估 LLM 推理与规划，对比看似合理的计划文本和形式化前提、目标、动作效果下的真实有效性。
+- [Rethinking Generative Large Language Model Evaluation for Semantic Comprehension](https://arxiv.org/abs/2403.07872)：重新设计生成式 LLM 的语义理解评测，强调开放回答评估和意义保持，而不是狭窄分类准确率。
+- [PuzzleVQA: Diagnosing Multimodal Reasoning Challenges of Language Models with Abstract Visual Patterns](https://arxiv.org/abs/2403.13315)：用抽象视觉规律谜题做 VQA，诊断模型能否从图像中推断形状、关系和规则模式，而不是依赖自然图像先验。
+- [Benchmarking Chinese Commonsense Reasoning of LLMs: From Chinese-Specifics to Reasoning-Memorization Correlations](https://arxiv.org/abs/2403.14112)：用中文特有题项和记忆化检查评测中文常识推理，把文化语境推理与数据集回忆区分开。
+- [Towards Human-AI Deliberation: Design and Evaluation of LLM-Empowered Deliberative AI for AI-Assisted Decision-Making](https://arxiv.org/abs/2403.16812)：评估 LLM 驱动的协商式决策辅助系统，关注人机协商流程中的讨论质量、参与者支持和决策结果。
+- [Can Multiple-choice Questions Really Be Useful in Detecting the Abilities of LLMs?](https://arxiv.org/abs/2403.17752)：通过比较选项效应、自由回答替代形式和干扰项敏感性，检验多项选择格式是否真的能诊断 LLM 能力。
+- [CheckEval: A reliable LLM-as-a-Judge framework for evaluating text generation using checklists](https://arxiv.org/abs/2403.18771)：提出 CheckEval，把文本生成评价准则拆成 checklist 项，使 LLM-as-judge 分数依赖显式逐项检查。
+- [Can Language Models Recognize Convincing Arguments?](https://arxiv.org/abs/2404.00750)：通过要求模型判断论证是否有说服力来测试 argument-quality recognition，重点考察修辞与证据推理而非事实问答。
+- [Auxiliary task demands mask the capabilities of smaller language models](https://arxiv.org/abs/2404.02418)：用简化任务变体显示辅助任务要求会遮蔽小模型的真实能力，把推理能力与格式和指令负担区分开。
+- [Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators](https://arxiv.org/abs/2404.04475)：为 AlpacaEval 加入长度控制评分，降低自动评测器对冗长回答的偏好，使成对指令跟随判断更少受输出长度混淆。
+- [Evaluation of an LLM in Identifying Logical Fallacies: A Call for Rigor When Adopting LLMs in HCI Research](https://arxiv.org/abs/2404.05213)：研究 LLM 在 HCI 研究语境中识别逻辑谬误的能力，强调将模型判断用作研究工具前需要严格验证。
+- [RAR-b: Reasoning as Retrieval Benchmark](https://arxiv.org/abs/2404.06347)：把 reasoning as retrieval 形式化，测试模型能否找回作答所需的相关前提和事实，从而区分检索失败与后续推断失败。
+- [CausalBench: A Comprehensive Benchmark for Causal Learning Capability of LLMs](https://arxiv.org/abs/2404.06349)：在因果发现、效应估计和反事实推理任务上评测 LLM 的因果学习能力，强调结构化变量和因果图判断。
+- [When Hindsight is Not 20/20: Testing Limits on Reflective Thinking in Large Language Models](https://arxiv.org/abs/2404.09129)：通过给模型重新考虑早先判断的机会来探测 reflective thinking，衡量 hindsight 式提示何时纠错、何时只是为错误答案补理由。
+- [Eyes Can Deceive: Benchmarking Counterfactual Reasoning Abilities of Multi-modal Large Language Models](https://arxiv.org/abs/2404.12966)：用视觉证据与默认假设冲突的图文场景评测多模态反事实推理，测试模型能否在条件改变后更新结论。
+- [Evidence from counterfactual tasks supports emergent analogical reasoning in large language models](https://arxiv.org/abs/2404.13070)：用反事实任务变体测试类比迁移，检查模型是否映射案例间的关系结构，而不是复制表层内容。
+- [A Closer Look at Classification Evaluation Metrics and a Critical Reflection of Common Evaluation Practice](https://arxiv.org/abs/2404.16958)：审计分类指标与常见评测实践，说明 accuracy、F-score、类别不平衡和平均方式如何扭曲模型比较。
+- [Holmes: A Benchmark to Assess the Linguistic Competence of Language Models](https://arxiv.org/abs/2404.18923)：Holmes 通过受控语法和语义对照评估语言能力，检验模型是否能超越表面流利度进行泛化。
+- [Do Large Language Models Understand Conversational Implicature- A case study with a Chinese sitcom](https://arxiv.org/abs/2404.19509)：用中文情景喜剧对话测试会话含义理解，要求模型结合说话者意图、上下文和文化语用线索推断未明说意义。
+- [ACORN: Aspect-wise Commonsense Reasoning Explanation Evaluation](https://arxiv.org/abs/2405.04818)：按方面评估常识推理解释，评分生成 rationale 是否覆盖相关常识关系，而不是只匹配最终答案。
+- [Initialization is Critical to Whether Transformers Fit Composite Functions by Reasoning or Memorizing](https://arxiv.org/abs/2405.05409)：用复合函数学习实验区分 Transformer 的推理与记忆，展示初始化如何影响模型是否学到组合规则。
+- [MM-InstructEval: Zero-Shot Evaluation of (Multimodal) Large Language Models on Multimodal Reasoning Tasks](https://arxiv.org/abs/2405.07229)：在多模态推理任务上评估零样本指令跟随，把图像条件提示与任务评分结合起来比较 MLLM 的推理行为。
+- [Elements of World Knowledge (EWOK): A cognition-inspired framework for evaluating basic world knowledge in language models](https://arxiv.org/abs/2405.09605)：EWOK 用认知启发的最小对物理和社会场景评测基础世界知识，专门暴露常识推理失败。
+- [SOK-Bench: A Situated Video Reasoning Benchmark with Aligned Open-World Knowledge](https://arxiv.org/abs/2405.09713)：将视频与对齐的开放世界知识结合做 situated reasoning，要求模型同时利用时间性视觉证据和外部常识事实。
+- [M3CoT: A Novel Benchmark for Multi-Domain Multi-step Multi-modal Chain-of-Thought](https://arxiv.org/abs/2405.16473)：在多领域、多步骤的多模态 chain-of-thought 任务上评测模型，把图文问题与 rationale 配对以检查中间多模态推断。
+- [Efficient multi-prompt evaluation of LLMs](https://arxiv.org/abs/2405.17202)：研究高效多提示评测，用提示样本估计模型表现，目标是量化提示方差和评测成本而不是新增任务领域。
+- [Thai Winograd Schemas: A Benchmark for Thai Commonsense Reasoning](https://arxiv.org/abs/2405.18375)：提供泰语 Winograd 式代词消解题，以语言特有歧义测试泰语常识推理，而不是只依赖英文题翻译。
+- [LLMs achieve adult human performance on higher-order theory of mind tasks](https://arxiv.org/abs/2405.18870)：在高阶 false-belief 和 perspective-taking 任务上比较 LLM 与成人表现，把心理学式 Theory of Mind 协议作为评测对象。
+- [Easy Problems That LLMs Get Wrong](https://arxiv.org/abs/2405.19616)：收集看似简单但 LLM 会答错的问题，作为脆弱推理、指令解析和捷径依赖的诊断探针。
+- [PertEval: Unveiling Real Knowledge Capacity of LLMs with Knowledge-Invariant Perturbations](https://arxiv.org/abs/2405.19740)：对 benchmark 问题施加知识不变扰动，使正确答案理论上不变，用来衡量模型表现来自知识还是提示敏感性。
+- [MARS: Benchmarking the Metaphysical Reasoning Abilities of Language Models with a Multi-task Evaluation Dataset](https://arxiv.org/abs/2406.02106)：引入多任务 metaphysical reasoning 数据集，要求模型围绕 identity、persistence、causation 和 modality 推理，而不是回答普通事实知识。
+- [The CLRS-Text Algorithmic Reasoning Language Benchmark](https://arxiv.org/abs/2406.04229)：把 CLRS 算法任务改写成文本形式的图和程序轨迹问题，测试分布外与组合式算法推理，而不是已知谜题召回。
+- [OCDB: Revisiting Causal Discovery with a Comprehensive Benchmark and Evaluation Framework](https://arxiv.org/abs/2406.04598)：在真实数据集上重新评测因果发现，用 CPDAG/DAG 结构指标、因果效应检查和可解释性导向对比来评估生成因果图。
+- [Towards a Benchmark for Causal Business Process Reasoning with LLMs](https://arxiv.org/abs/2406.05506)：定义因果业务流程推理任务，要求模型从流程轨迹中推断原因和影响，把因果推理引入工作流和流程挖掘场景。
+- [Decision-Making Behavior Evaluation Framework for LLMs under Uncertain Context](https://arxiv.org/abs/2406.05972)：从风险偏好、概率加权和损失厌恶三个维度衡量不确定情境下的决策行为，并与规范和行为决策理论预期对比。
+- [Open-LLM-Leaderboard: From Multi-choice to Open-style Questions for LLMs Evaluation, Benchmark, and Arena](https://arxiv.org/abs/2406.07545)（[榜单](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard)）：记录 Open LLM Leaderboard 从选择题到开放式评测与 arena 的变化。
+- [Judging the Judges: A Systematic Investigation of Position Bias in Pairwise Comparative Assessments by LLMs](https://arxiv.org/abs/2406.07791)：通过交换回答顺序系统衡量成对 LLM-as-judge 比较中的位置偏差，并量化不同评测器和任务上的偏好翻转。
+- [ConMe: Rethinking Evaluation of Compositional Reasoning for Modern VLMs](https://arxiv.org/abs/2406.08164)：用受控属性、关系和词序测试 VLM 组合性，检验模型是否真正推理视觉组合，而不是利用数据集先验。
+- [A Better LLM Evaluator for Text Generation: The Impact of Prompt Output Sequencing and Optimization](https://arxiv.org/abs/2406.09972)：通过改变评分、理由和指令输出顺序测试 LLM-as-evaluator 提示格式，衡量 sequencing 对文本生成评分一致性的影响。
+- [TEG-DB: A Comprehensive Dataset and Benchmark of Textual-Edge Graphs](https://arxiv.org/abs/2406.10310)：引入 TEG-DB 文本边图数据集集合，让节点和边都带自然语言描述，用于评测图分析方法对边文本信息的利用。
+- [StrucText-Eval: Evaluating Large Language Model's Reasoning Ability in Structure-Rich Text](https://arxiv.org/abs/2406.10621)：评测 LLM 在结构丰富文本中的推理，要求模型解析并利用表格、列表、版式和嵌套文档结构，而不只是处理平面段落。
+- [Exposing the Achilles' Heel: Evaluating LLMs Ability to Handle Mistakes in Mathematical Reasoning](https://arxiv.org/abs/2406.10834)：评测 LLM 是否能识别并修正数学解答中的错误步骤，说明只看最终答案会掩盖模型处理错误推理链的失败。
+- [MDCR: A Dataset for Multi-Document Conditional Reasoning](https://arxiv.org/abs/2406.11784)：构造答案依赖多文档条件组合和用户具体情况的问题，例如根据分散的奖学金规则判断资格。
+- [Exploring and Benchmarking the Planning Capabilities of Large Language Models](https://arxiv.org/abs/2406.13094)：把经典规划和自然语言规划任务合成一套基准，并用生成式难度等级评测 many-shot ICL、微调、CoT 和分布外规划。
+- [MoreHopQA: More Than Multi-hop Reasoning](https://arxiv.org/abs/2406.13397)：把多跳问答扩展到需要更多跳推理的评测设置。
+- [LLMs as models for analogical reasoning](https://arxiv.org/abs/2406.13803)：用语义词、字母和抽象符号类比测试灵活关系映射与重表征，并用干扰项暴露表层关联捷径。
+- [MR-BEN: A Comprehensive Meta-Reasoning Benchmark for Large Language Models](https://arxiv.org/abs/2406.13975)：MR-BEN 面向元推理，测试模型是否知道何时推理、选择何种策略以及如何监控推理，而不只解对象层任务。
+- [African or European Swallow? Benchmarking Large Vision-Language Models for Fine-Grained Object Classification](https://arxiv.org/abs/2406.14496)：用视觉相近类别评测 VLM 细粒度物体分类，测试模型是否能区分细微物种或物体属性，而不是只给出粗粒度标签。
+- [MMLU-SR: A Benchmark for Stress-Testing Reasoning Capability of Large Language Models](https://arxiv.org/abs/2406.15468)：把 MMLU 中的关键术语替换为局部定义的虚拟术语，使模型必须应用题内定义，而不是依赖熟悉词汇线索。
+- [CaT-Bench: Benchmarking Language Model Understanding of Causal and Temporal Dependencies in Plans](https://arxiv.org/abs/2406.15823)：引入 CaT-Bench 菜谱计划步骤顺序预测任务，评分模型能否从因果与时间依赖中判断必要的前后关系。
+- [Can LLM Graph Reasoning Generalize beyond Pattern Memorization?](https://arxiv.org/abs/2406.15992)：通过变化图结构和问题实例，测试图推理能否超越记忆化模式，检查 LLM 是否能组合式解决图任务。
+- [Chain-of-Probe: Examing the Necessity and Accuracy of CoT Step-by-Step](https://arxiv.org/abs/2406.16144)：逐步探测 CoT 中每一步的必要性和正确性，重点检查模型在生成 rationale 前可能已经得到答案的 early-answering 行为。
+- [Evaluating the Ability of Large Language Models to Reason about Cardinal Directions](https://arxiv.org/abs/2406.16528)：区分方位世界知识召回与模板化空间推理，通过地图、移动方式和人物变化揭示模型何时真正计算方向。
+- [Multi-LogiEval: Towards Evaluating Multi-Step Logical Reasoning Ability of Large Language Models](https://arxiv.org/abs/2406.17169)：Multi-LogiEval 用结构化逻辑题评估多步逻辑推理，要求模型跨多个推理步骤串联前提。
+- [LLMs instead of Human Judges? A Large Scale Empirical Study across 20 NLP Evaluation Tasks](https://arxiv.org/abs/2406.18403)：在 20 个 NLP 评测任务上运行 LLM-as-judge 实验，衡量 LLM 替代人工标注时的一致性、稳定性和任务敏感性。
+- [LiveBench](https://arxiv.org/abs/2406.19314)（[榜单](https://livebench.ai/)；[开源代码](https://github.com/LiveBench/LiveBench)）：评什么：持续更新、含推理/数学/编码/语言/数据分析等任务；核心思想：通过时间更新和自动评分降低污染，适合做近时效能力跟踪。
+- [GraphArena: Benchmarking Large Language Models on Graph Computational Problems](https://arxiv.org/abs/2407.00379)：在图计算问题上评测大模型。
+- [FRoG: Evaluating Fuzzy Reasoning of Generalized Quantifiers in Large Language Models](https://arxiv.org/abs/2407.01046)：评测广义量词上的模糊推理，检查 LLM 是否能处理模糊数量词和分级真值，而不只处理清晰逻辑算子。
+- [Compare without Despair: Reliable Preference Evaluation with Generation Separability](https://arxiv.org/abs/2407.01878)：提出 generation separability 用于可靠偏好评测，衡量系统能否区分真正更好的输出和难以区分的比较对。
+- [Is Your Large Language Model Knowledgeable or a Choices-Only Cheater?](https://arxiv.org/abs/2407.01992)：从 UnifiedQA 常识数据集中构建 820 题 contrast set，测试 MCQA 表现来自选项捷径还是题目知识。
+- [GraCoRe: Benchmarking Graph Comprehension and Complex Reasoning in Large Language Models](https://arxiv.org/abs/2407.02936)：跨图类型和任务族评测图理解与复杂推理，将基本图读取与多步结构推断分开诊断。
+- [Planetarium: A Rigorous Benchmark for Translating Text to Structured Planning Languages](https://arxiv.org/abs/2407.03321)：要求模型把自然语言规划问题翻译成形式化规划语言，并用规划器检查语义规划正确性。
 - [LogicVista](https://arxiv.org/abs/2407.04973)（[开源代码](https://github.com/Yijia-Xiao/LogicVista)）：评什么：视觉逻辑推理（更接近“看图做逻辑题/谜题”）；核心思想：用视觉谜题把逻辑约束落到可见结构上，减少纯文本推理的捷径。
+- [ReFeR: Improving Evaluation and Reasoning through Hierarchy of Models](https://arxiv.org/abs/2407.12877)：利用模型层级改进评测与推理，对比不同模型层级的 judge 和 solver 行为，暴露评测信号何时不可靠。
+- [Do These LLM Benchmarks Agree? Fixing Benchmark Evaluation with BenchBench](https://arxiv.org/abs/2407.13696)：引入 BenchBench 元评测协议检查不同 LLM benchmark 是否一致，使用 benchmark-level 相关性和分歧诊断。
+- [Answer, Assemble, Ace: Understanding How LMs Answer Multiple Choice Questions](https://arxiv.org/abs/2407.15018)：分析语言模型如何回答和组装多选题选项，说明选项呈现与答案组装方式会改变测得准确率。
+- [Improving Minimum Bayes Risk Decoding with Multi-Prompt](https://arxiv.org/abs/2407.15343)：在条件生成任务上研究多提示 minimum-Bayes-risk decoding，用实验显示提示多样性如何改进输出选择。
+- [Visual Riddles: a Commonsense and World Knowledge Challenge for Large Vision and Language Models](https://arxiv.org/abs/2407.19474)：用图像消解文本中欠规范的常识谜题，测试 LVLM 是否能结合视觉上下文与世界知识。
+- [CLR-Fact: Evaluating the Complex Logical Reasoning Capability of Large Language Models over Factual Knowledge](https://arxiv.org/abs/2407.20564)：CLR-Fact 评估事实知识上的复杂逻辑推理，要求模型结合事实与逻辑约束，而不是检索孤立陈述。
+- [DebateQA: Evaluating Question Answering on Debatable Knowledge](https://arxiv.org/abs/2408.01419)：构造可争议知识问答，允许多个有依据的答案存在，强调证据敏感回答而不是固定单标签事实 QA。
+- [Exploring Reasoning Biases in Large Language Models Through Syllogism: Insights from the NeuBAROCO Dataset](https://arxiv.org/abs/2408.04403)：用英语和日语三段论比较逻辑准确率与人类式信念偏差，覆盖前提一致和不一致条件。
+- [SPARK: Multi-Vision Sensor Perception and Reasoning Benchmark for Large-scale Vision-Language Models](https://arxiv.org/abs/2408.12114)：在多视觉传感器感知与推理任务上评测大规模 VLM，要求模型融合不同传感器证据进行空间和场景级推断。
+- [Zero-Shot Visual Reasoning by Vision-Language Models: Benchmarking and Analysis](https://arxiv.org/abs/2409.00106)：通过需要关系、属性和规则推断的视觉任务族分析 VLM 零样本视觉推理，而不依赖任务专门训练。
+- [MMLU-Pro+: Evaluating Higher-Order Reasoning and Shortcut Learning in LLMs](https://arxiv.org/abs/2409.02257)：在 MMLU-Pro 上加入多正确答案题，并用 shortcut selection ratio、correct pair identification ratio 等指标暴露捷径学习。
+- [CKnowEdit: A New Chinese Knowledge Editing Dataset for Linguistics, Facts, and Logic Error Correction in LLMs](https://arxiv.org/abs/2409.05806)：收集中文语言、事实和逻辑错误纠正案例用于知识编辑，测试模型在不同错误类型上的编辑一致性。
+- [To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning](https://arxiv.org/abs/2409.12183)：跨任务类别比较 chain-of-thought 与直接作答，显示 CoT 增益主要集中在数学和符号推理，而非所有 benchmark。
+- [How Do Multimodal Large Language Models Handle Complex Multimodal Reasoning? Placing Them in an Extensible Escape Game](https://doi.org/10.1109/iccv51701.2025.00457)：用可扩展逃脱游戏评测复杂多模态推理。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Bilingual Evaluation of Language Models on General Knowledge in University Entrance Exams with Minimal Contamination](https://arxiv.org/abs/2409.12746)：用低污染的大学入学考试题评测双语一般知识，并比较语言与考试领域对模型表现的影响。
+- [LLMs Still Can't Plan; Can LRMs? A Preliminary Evaluation of OpenAI's o1 on PlanBench](https://arxiv.org/abs/2409.13373)：在 o1 类推理模型上重跑 PlanBench 式规划测试，检查更强 deliberation 是否改善计划合法性、可执行性和目标满足。
+- [Probing Mechanical Reasoning in Large Vision Language Models](https://arxiv.org/abs/2410.00318)：用机械图示和物理机构探测 LVLM，测试模型是否能推断部件运动和相互作用，而不只是命名可见物体。
+- [Lexical-Prior-Free Planning: A Symbol-Agnostic Pipeline that Enables LLMs and LRMs to Plan under Obfuscated Interfaces](https://doi.org/10.32604/cmc.2025.074520)：面向混淆符号接口的规划 benchmark 与 pipeline；核心思想是去掉 predicate 与 action 名称中的语义提示，测试模型是否具备超越词汇记忆的结构化规划能力。
+- [GPTRC: A large-scale dataset for evaluating question-answering capabilities and limitations of large language models](https://doi.org/10.1016/j.dib.2025.112291)：一个用于评估 LLM 问答能力与局限的大规模数据集；核心思路是提供可复用 QA 数据，以检查通用问答在哪些情况下成功或失败。
+- [Defining and evaluating decision and composite risk in language models applied to natural language inference](https://doi.org/10.1016/j.engappai.2025.112253)：围绕通用推理提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Comparative Evaluation of Reasoning and Inference in LLM-Based and Diffusion-Based Approaches](https://doi.org/10.1109/access.2025.3632686)：围绕通用推理提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Towards Evaluation of Language Models with Skill Dimensions: A Case Study on Narrative Question Answering](https://doi.org/10.18653/v1/2025.starsem-1.34)：围绕通用推理提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [POSIX: A Prompt Sensitivity Index For Large Language Models](https://arxiv.org/abs/2410.02185)：定义 POSIX 提示敏感性指数，量化语义相近提示变体下模型排名和输出的变化。
+- [Agent-Oriented Planning in Multi-Agent Systems](https://arxiv.org/abs/2410.02189)：定义多智能体系统中的规划问题，让 meta-agent 拆解和分配任务，评估编排计划而不是单智能体答案。
+- [Aligning with Logic: Measuring, Evaluating and Improving Logical Consistency in Large Language Models](https://arxiv.org/abs/2410.02205)：用传递性、交换性和否定不变性测试衡量逻辑偏好一致性，并评估 REPAIR 数据精炼能否提高判断稳定性。
 - [ProcBench](https://arxiv.org/abs/2410.03117)（[开源代码](https://github.com/ifujisawa/proc-bench)；[数据集](https://huggingface.co/datasets/ifujisawa/procbench)）：评什么：多步推理与“按流程执行”的能力；核心思想：把程序性/步骤性正确性作为主要评价对象，减少只看最终答案的偶然性。
+- [TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation](https://arxiv.org/abs/2410.03608)：为指令自动生成 checklist，并用逐项检查评估或改进输出，把含糊的任务成功转化为可解释子标准。
+- [How Do Large Language Models Understand Graph Patterns? A Benchmark for Graph Pattern Comprehension](https://arxiv.org/abs/2410.05298)：用结构化图模式理解任务评测大模型，而不是只做传统图问答。
+- [ACPBench: Reasoning about Action, Change, and Planning](https://arxiv.org/abs/2410.05669)：聚焦动作、变化和规划中的前置条件、效果、frame axioms 与时间变化，而不是表面合理性。
+- [EVOLvE: Evaluating and Optimizing LLMs For Exploration](https://arxiv.org/abs/2410.06238)：在 bandit 环境中用 regret 评估上下文内探索，并研究算法引导提示和蒸馏如何改善探索行为。
+- [∀uto∃∨∧L: Autonomous Evaluation of LLMs for Truth Maintenance and Reasoning Tasks](https://arxiv.org/abs/2410.08437)：自动生成 truth-maintenance 和逻辑推理任务，并带形式化真值，使任务合成与验证可扩展推理评测。
+- [Solving the Challenge Set without Solving the Task: On Winograd Schemas as a Test of Pronominal Coreference Resolution](https://arxiv.org/abs/2410.09448)：说明 Winograd 挑战集可在不具备广泛代词共指能力时被解出，用诊断分析暴露 benchmark 特定捷径。
+- [MIRAGE: Evaluating and Explaining Inductive Reasoning Process in Language Models](https://arxiv.org/abs/2410.09542)：MIRAGE 评估并解释归纳推理过程，测试模型如何从样例推断规则以及其假设在哪些位置偏离。
+- [TMGBench: A Systematic Game Benchmark for Evaluating Strategic Reasoning Abilities of LLMs](https://arxiv.org/abs/2410.10479)：TMGBench 用游戏任务评测策略推理，衡量模型是否能围绕规则、对手、收益和多步策略进行推断。
+- [Plausibly Problematic Questions in Multiple-Choice Benchmarks for Commonsense Reasoning](https://arxiv.org/abs/2410.10854)：审计常识多选题中的 plausibly problematic items，识别歧义或干扰项设计削弱 benchmark 有效性的样例。
+- [WILT: A Multi-Turn, Memorization-Robust Inductive Logic Benchmark for LLMs](https://arxiv.org/abs/2410.10998)：使用多轮归纳逻辑交互和抗记忆化生成规则，测试模型能否在对话中推断并修正潜在程序。
+- [OmnixR: Evaluating Omni-modality Language Models on Reasoning across Modalities](https://arxiv.org/abs/2410.12219)：引入 OmnixR，包含 synthetic omnified 子集和专家标注真实子集，混合文本、图像、音频和视频证据评测跨模态推理。
+- [Measuring Free-Form Decision-Making Inconsistency of Language Models in Military Crisis Simulations](https://arxiv.org/abs/2410.13204)：在军事危机模拟中测量自由形式决策不一致性，测试语言模型在开放式战略场景中是否保持稳定偏好和计划。
+- [Limits to scalable evaluation at the frontier: LLM as Judge won't beat twice the data](https://arxiv.org/abs/2410.13341)：分析前沿可扩展 LLM-as-judge 评测的限制，将更多 judge 数据与人工标签对照，显示 judge 扩展何时不再提高可靠性。
+- [LAR-ECHR: A New Legal Argument Reasoning Task and Dataset for Cases of the European Court of Human Rights](https://arxiv.org/abs/2410.13352)：把欧洲人权法院案件中的论证链转成下一陈述选择任务，要求模型跟随法律推理结构而不是检索案件事实。
+- [SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](https://arxiv.org/abs/2410.13648)：揭示 LLM 在显式心智理论推断与隐式应用之间的差距。
+- [RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs](https://arxiv.org/abs/2410.13987)：RiTeK 提供文本知识图谱复杂推理数据集，要求模型把文本表达的图事实沿多跳路径组合起来。
+- [A Comprehensive Evaluation of Cognitive Biases in LLMs](https://arxiv.org/abs/2410.15413)：跨多类偏差场景评测 LLM 认知偏差行为，并将模型选择与人类式偏差模式及去偏提示条件对比。
+- [Reverse Question Answering: Can an LLM Write a Question so Hard (or Bad) that it Can't Answer?](https://arxiv.org/abs/2410.15512)：要求模型根据给定答案生成问题再回答这些问题，暴露出题能力和解题能力之间的一致性缺口。
+- [Reflection-Bench: Evaluating Epistemic Agency in Large Language Models](https://arxiv.org/abs/2410.16270)：Reflection-Bench 评测认识论能动性，衡量模型是否监控不确定性、寻找证据并修正信念，而不是只给出自信答案。
+- [A Theoretical Understanding of Chain-of-Thought: Coherent Reasoning and Error-Aware Demonstration](https://arxiv.org/abs/2410.16540)：给出 coherent CoT 和 error-aware demonstration 的形式化理解；它主要是推理可靠性的理论与方法证据，而非独立 benchmark。
+- [CausalEval: Towards Better Causal Reasoning in Language Models](https://arxiv.org/abs/2410.16676)：引入 CausalEval 评测语言模型因果推理，将因果识别、干预和反事实判断与普通事实问答区分开。
+- [Learning Mathematical Rules with Large Language Models](https://arxiv.org/abs/2410.16973)：用规则学习实验测试 LLM 能否从样例归纳数学规则，并泛化到保留的结构化输出。
+- [ReasonAgain: Using Extractable Symbolic Programs to Evaluate Mathematical Reasoning](https://arxiv.org/abs/2410.19056)：从数学数据集中抽取符号程序并重新生成变体，测试表面形式变化但解题结构不变时模型是否保持鲁棒。
+- [Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation](https://arxiv.org/abs/2410.20774)：测试 LLM judge 对不确定性标记的鲁棒性，衡量 hedging 等表达是否改变对可比答案的判断。
+- [Can Large Language Models Act as Symbolic Reasoners?](https://arxiv.org/abs/2410.21490)：在形式化输入的符号推理任务上评测 LLM，检查答案是否遵循符号操作而非自然语言 plausibility。
+- [GRS-QA - Graph Reasoning-Structured Question Answering Dataset](https://arxiv.org/abs/2411.00369)：为多跳 QA 对附加显式图推理结构，使分析能定位哪条关系路径产生答案或导致失败。
+- [Exploring Response Uncertainty in MLLMs: An Empirical Evaluation under Misleading Scenarios](https://arxiv.org/abs/2411.02708)：构造误导场景测试 MLLM，并测量从正确到错误的翻转，用回答不确定性诊断视觉推理脆弱性。
+- [Explore the Reasoning Capability of LLMs in the Chess Testbed](https://arxiv.org/abs/2411.06655)：以国际象棋作为推理测试床，评测走子合法性、棋盘状态跟踪和显式规则下的策略选择。
+- [Contextualized Evaluations: Taking the Guesswork Out of Language Model Evaluations](https://arxiv.org/abs/2411.07237)：提出 contextualized evaluation 协议，将任务上下文和评测假设附着到分数上，减少语言模型比较中的歧义。
+- [ExpressivityBench: Can LLMs Communicate Implicitly?](https://arxiv.org/abs/2411.08010)：用信息论任务测试情绪、身份、语气等隐式沟通能力，衡量 LLM 是否能在不直说的情况下传达内容。
+- [Compound-QA: A Benchmark for Evaluating LLMs on Compound Questions](https://arxiv.org/abs/2411.10163)：使用五类相互依赖子问题组成的复合问题，评测模型是否先分解依赖再给出单一答案。
+- [Enhancing Reasoning Capabilities of LLMs via Principled Synthetic Logic Corpus](https://arxiv.org/abs/2411.12498)：构建 ALT 和 FLD 合成逻辑语料，并研究原则化形式样例训练如何改变 LLM 推理，因此更接近数据和训练路线。
+- [Evaluating the Robustness of Analogical Reasoning in Large Language Models](https://arxiv.org/abs/2411.14215)：用字母串、数字矩阵和故事类比的受控变体压力测试类比推理，区分结构迁移和捷径匹配。
+- [Do LLMs Really Think Step-by-step In Implicit Reasoning?](https://arxiv.org/abs/2411.15862)：通过比较隐藏、提示或显式展示中间推理的问题设置，测试 LLM 是否真的进行隐式逐步推理。
+- [GraphOTTER: Evolving LLM-based Graph Reasoning for Complex Table Question Answering](https://arxiv.org/abs/2412.01230)：为复杂表格问答演化图推理管线，通过建图和迭代推理提升表格答案，而不是新增数据集。
+- [CharacterBox: Evaluating the Role-Playing Capabilities of LLMs in Text-Based Virtual Worlds](https://arxiv.org/abs/2412.05631)：评测 LLM 在文本虚拟世界中的角色扮演能力。
+- [GameArena: Evaluating LLM Reasoning through Live Computer Games](https://arxiv.org/abs/2412.06394)：通过实时电脑游戏评估 LLM 推理，要求模型解释游戏状态、规划动作并在交互式游玩中适应，而非回答静态问题。
+- [RuleArena: A Benchmark for Rule-Guided Reasoning with LLMs in Real-World Scenarios](https://arxiv.org/abs/2412.08972)：使用航空行李、NBA 交易和税务场景，在真实规则书下测试长上下文规则推理、逻辑和算术。
+- [JuStRank: Benchmarking LLM Judges for System Ranking](https://arxiv.org/abs/2412.09569)：把 LLM judge 作为系统排序器评测，比较 judge 输出用于系统排名时的一致性、果断性和偏差。
+- [Codenames as a Benchmark for Large Language Models](https://arxiv.org/abs/2412.11373)：用合作词板游戏 Codenames 测试语言、心智理论、认识状态和横向推理，覆盖单模型和成对 LLM 玩法。
+- [MiMoTable: A Multi-scale Spreadsheet Benchmark with Meta Operations for Table Reasoning](https://arxiv.org/abs/2412.11711)：引入 MiMoTable，包含七个领域的真实电子表格，并用六类 meta operations 标注难度来评测表格推理。
+- [Benchmarking and Improving Large Vision-Language Models for Fundamental Visual Graph Understanding and Reasoning](https://arxiv.org/abs/2412.13540)：定义 22 个视觉图理解与推理任务，并结合结构感知微调来诊断 LVLM 的图推理失败。
+- [Mind Your Theory: Theory of Mind Goes Deeper Than Reasoning](https://arxiv.org/abs/2412.13631)：探测更深层 Theory of Mind，把表层心理状态回答与需要嵌套信念追踪和社会推断的任务区分开。
+- [AntiLeak-Bench: Preventing Data Contamination by Automatically Constructing Benchmarks with Updated Real-World Knowledge](https://arxiv.org/abs/2412.13670)：AntiLeak-Bench 自动利用更新的真实世界知识构建基准，通过时间新鲜度降低污染和记忆化。
+- [Beyond Math: Stories as a Testbed for Memorization-Constrained Reasoning in LLMs](https://arxiv.org/abs/2412.14368)：把故事作为受记忆约束的推理测试，要求模型从新叙事中推断情节和人物关系，而不是依赖已知数学模板。
+- [StructTest: Benchmarking LLMs' Reasoning through Compositional Structured Outputs](https://arxiv.org/abs/2412.18011)：通过摘要、代码、HTML 和数学中的结构化输出评测组合式指令遵循，并使用确定性规则检查器评分。
+- [Plancraft: an evaluation dataset for planning with LLM agents](https://arxiv.org/abs/2412.21033)：引入 Plancraft Minecraft 合成规划数据集，包含纯文本和多模态接口，以及可解与故意不可解任务实例。
+- [ToMATO: Verbalizing the Mental States of Role-Playing LLMs for Benchmarking Theory of Mind](https://arxiv.org/abs/2501.08838)：基于角色扮演对话的 Theory of Mind 基准。核心思想是显式化一阶和二阶心理状态，并转化为问答标签。
+- [Vision-Language Models Do Not Understand Negation](https://arxiv.org/abs/2501.09425)：测试 VLM 在否定视觉语言陈述上的失败，补充模型是否真正跟踪逻辑极性而非表面共现的受控推理基准。
 - [JustLogic](https://arxiv.org/abs/2501.14851)：评什么：减少先验知识捷径后的演绎推理。核心思想：生成可控的逻辑论证，系统调节推理深度、语言形式和任务复杂度，以支持更细粒度的错误分析。
-- [ARC-AGI-2（ARC Prize）](https://github.com/arcprize/ARC-AGI-2)：评什么：更强调泛化与抗“刷榜”策略的 ARC 系能力；核心思想：典型有效解法强绑定 `DSL / program synthesis + executor + scoring/search` 的 benchmark-specific runtime，而不是纯对话式提示工程。
+- [GraphICL: Unlocking Graph Learning Potential in LLMs through Structured Prompt Design](https://arxiv.org/abs/2501.15755)：通过结构化提示设计评测 LLM 在文本属性图上的上下文学习能力，为通用推理补充图结构任务覆盖。
+- [Histoires Morales: A French Dataset for Assessing Moral Alignment](https://arxiv.org/abs/2501.17117)：将 Moral Stories 改编为法语并由母语者精修，用法国法语语境评测道德对齐和后果推理。
+- [ARC-AGI-2（ARC Prize）](https://github.com/arcprize/ARC-AGI-2)（[榜单](https://arcprize.org/leaderboard)）：评什么：更强调泛化与抗“刷榜”策略的 ARC 系能力；核心思想：典型有效解法强绑定 `DSL / program synthesis + executor + scoring/search` 的 benchmark-specific runtime，而不是纯对话式提示工程。
 - [VPCT](https://huggingface.co/datasets/camelCase12/vpct-1)：评什么：视觉模式与规律补全类谜题；核心思想：以 pattern completion/推断为主，常用于检验模型是否能从视觉结构中抽取生成规则。
+- [ReasoningWeekly: A General Knowledge and Verbal Reasoning Challenge for Large Language Models](https://arxiv.org/abs/2502.01584)：评测常识和语言推理；核心思想是使用非专家可理解但对前沿模型仍有挑战的 Sunday Puzzle 风格题目。
 - [iVISPAR](https://arxiv.org/abs/2502.03214)：评什么：交互式视觉-空间推理与规划；核心思想：把滑块谜题改造成 VLM agent 可交互环境，分别用 2D、3D 与文本模态测量空间规划能力。
+- [Self-Rationalization in the Wild: A Large Scale Out-of-Distribution Evaluation on NLI-related tasks](https://arxiv.org/abs/2502.04797)：在 19 个 NLI 相关数据集上做分布外 self-rationalization 评测，检查解释是在支撑预测还是掩盖脆弱标签选择。
+- [WHODUNIT: Evaluation benchmark for culprit detection in mystery stories](https://arxiv.org/abs/2502.07747)：评测推理故事中的 culprit detection，要求模型在叙事中综合线索、动机与矛盾。
+- [CryptoX : Compositional Reasoning Evaluation of Large Language Models](https://arxiv.org/abs/2502.07813)：评什么：用密码学风格的组合约束评测 LLM 的组合推理能力。
+- [Word Synchronization Challenge: A Benchmark for Word Association Responses for Large Language Models](https://arxiv.org/abs/2502.08312)：评测词语联想同步能力，评分 LLM 回答与人类联想模式的一致性，而不只看事实正确性。
+- [EnigmaEval: A Benchmark of Long Multimodal Reasoning Challenges](https://arxiv.org/abs/2502.08859)：长程多模态谜题式推理挑战。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [CoSER](https://arxiv.org/abs/2502.09082)：评估既有文学角色上的角色扮演语言智能体。核心思路是利用真实书籍对话、角色经历、内心想法和规定情境表演协议，使人格模拟不只按表面对话风格评分。
+- [MME-CoT: Benchmarking Chain-of-Thought in Large Multimodal Models for Reasoning Quality, Robustness, and Efficiency](https://arxiv.org/abs/2502.09621)：跨数学、科学、OCR、逻辑和时空等领域评测多模态 CoT 推理。
 - [ZEROBench](https://arxiv.org/abs/2502.09696)（[开源代码](https://github.com/jonathan-roberts1/zerobench)）：评什么：对视觉谜题/规律类任务的泛化与鲁棒性；核心思想：强调“零样本迁移”式的压力测试，检验是否依赖训练分布的捷径。
+- [MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?](https://arxiv.org/abs/2502.09933)：评测 many-shot in-context 模式识别推理。核心思想：检验模型能否聚合大量样例并把归纳出的模式迁移到新样例。
+- [Do Large Language Models Reason Causally Like Us? Even Better?](https://arxiv.org/abs/2502.10215)：评估大语言模型的因果推理行为。
+- [CounterBench: A Benchmark for Counterfactuals Reasoning in Large Language Models](https://arxiv.org/abs/2502.11008)：评测大语言模型的反事实推理能力，检验模型能否遵循被改写的前提，而不是回到记忆事实或常识默认答案。
+- [CORDIAL: Can Multimodal Large Language Models Effectively Understand Coherence Relationships?](https://arxiv.org/abs/2502.11300)：评测多模态大模型是否理解连贯关系。
+- [HellaSwag-Pro: A Large-Scale Bilingual Benchmark for Evaluating the Robustness of LLMs in Commonsense Reasoning](https://arxiv.org/abs/2502.11393)：大规模双语常识推理鲁棒性 benchmark。核心思想是检验模型是否真正理解常识变体，而不是记忆表达模式。
+- [Ad-hoc Concept Forming in the Game Codenames as a Means for Evaluating Large Language Models](https://arxiv.org/abs/2502.11707)：用 Codenames 作为临时概念形成的游戏协议，测试模型能否在游戏约束下为词组形成共享线索。
+- [Inference-Time Computations for LLM Reasoning and Planning: A Benchmark and Insights](https://arxiv.org/abs/2502.12521)：评测推理和规划中的推理时计算。核心思想：比较额外搜索、采样或深思在何时提升任务结果，何时只是浪费算力。
 - [NaturalReasoning](https://arxiv.org/abs/2502.13124)（数据集：[facebook/natural_reasoning](https://huggingface.co/datasets/facebook/natural_reasoning)）：评什么：真实来源中的自然推理问题。核心思想：用 280 万道跨 STEM、经济和社会科学等领域的高难问题覆盖更自然的推理分布，既可用于训练也可用于评估。
+- [ExpliCa: Evaluating Explicit Causal Reasoning in Large Language Models](https://arxiv.org/abs/2502.15487)：把因果关系识别与解释质量分开评测，测试模型是否能说明因果答案背后的机制。
+- [Zero-Shot Commonsense Validation and Reasoning with Large Language Models: An Evaluation on SemEval-2020 Task 4 Dataset](https://arxiv.org/abs/2502.15810)：在零样本 LLM 设置下重新评测 SemEval-2020 Task 4，检查荒谬陈述验证和常识解释是否无需任务微调。
+- [InductionBench](https://arxiv.org/abs/2502.15823)：评什么：从观测到的输入输出数据中做归纳推理。核心思想：测试模型能否归纳简单 subregular function 的规则，而不只是应用显式演绎规则，从而暴露科学式规律发现能力缺口。
+- [Multimodal Inconsistency Reasoning (MMIR): A New Benchmark for Multimodal Reasoning Models](https://arxiv.org/abs/2502.16033)：多模态不一致推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Patterns Over Principles: The Fragility of Inductive Reasoning in LLMs under Noisy Observations](https://arxiv.org/abs/2502.16169)：评测噪声观测下的归纳推理。核心思想是测试 LLM 是否能推断稳定原则，而不是在带噪样例中拟合表面模式。
+- [LR2Bench: Evaluating Long-chain Reflective Reasoning Capabilities of Large Language Models via Constraint Satisfaction Problems](https://arxiv.org/abs/2502.17848)：通过约束满足问题评测长链反思推理；核心思想是考察假设、回溯和自我修正，而不只看最终答案正确率。
+- [Agent Trading Arena: A Study on Numerical Understanding in LLM-Based Agents](https://arxiv.org/abs/2502.17967)：用智能体交易竞技场研究大模型智能体的数值理解能力。
+- [TextGames: Learning to Self-Play Text-Based Puzzle Games via Language Model Reasoning](https://arxiv.org/abs/2502.18431)：TextGames 通过文本解谜游戏评估语言模型的自博弈、状态跟踪与多步推理能力。
+- [Exploring Graph Learning Tasks with Pure LLMs: A Comprehensive Benchmark and Investigation](https://arxiv.org/abs/2502.18771)：在多类图学习任务上评测纯大语言模型，覆盖结构理解、领域迁移、少样本或零样本表现、鲁棒性与数据泄漏问题。
+- [BIG-Bench Extra Hard](https://arxiv.org/abs/2502.19187)：在 BBH 逐渐饱和后延续 BIG-Bench 路线，构造更难的通用推理任务，以保持对多类 reasoning skill 的区分度。
+- [DeltaBench](https://arxiv.org/abs/2502.19361)：评估模型、过程奖励模型和 critic 是否能在数学、代码和通用推理任务的长 CoT 轨迹中发现错误。
+- [The Mighty ToRR: A Benchmark for Table Reasoning and Robustness](https://arxiv.org/abs/2502.19412)：跨多个数据集与表格表示格式评测 table reasoning 与鲁棒性，检验模型能否稳定处理表格证据，而不是只在单一 table QA 集合上排序。
+- [Can LLM Assist in the Evaluation of the Quality of Machine Learning Explanations?](https://arxiv.org/abs/2502.20635)：评估 LLM 能否为机器学习解释质量打分，将模型判断与解释质量标准对比，而不是测试普通推理准确率。
+- [PersuasiveToM](https://arxiv.org/abs/2502.21017)：在 persuasive dialogues 中评测 machine theory-of-mind reasoning。
+- [Reasoning Robustness Benchmark](https://arxiv.org/abs/2503.04550)：评什么：新颖、不完整、重排或扰动输入下的推理鲁棒性。核心思想：通过位置、指令、数值和前提变化检验模型是否依赖记忆化推理模式。
+- [Compositional Causal Reasoning Evaluation in Language Models](https://arxiv.org/abs/2503.04556)：评测通用推理与社会推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [CAUSAL3D: A Comprehensive Benchmark for Causal Learning from Visual Data](https://arxiv.org/abs/2503.04852)：在 3D 视觉场景中评测因果学习，测试模型能否从受控视觉数据中恢复因果因素、干预和反事实效果。
+- [MastermindEval: A Simple But Scalable Reasoning Benchmark](https://arxiv.org/abs/2503.05891)：基于 Mastermind 式推理的可扩展 benchmark。核心思想：用简单游戏基底生成可控的演绎推理任务。
+- [ProJudge: A Multi-Modal Multi-Discipline Benchmark and Instruction-Tuning Dataset for Mllm-Based Process Judges](https://arxiv.org/abs/2503.06553)：类型：benchmark/评测协议。核心价值：为 1.9.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [MRCEval: A Comprehensive, Challenging and Accessible Machine Reading Comprehension Benchmark](https://arxiv.org/abs/2503.07144)：引入 MRCEval 机器阅读理解基准，强调具有挑战性且易获取的问答题，用于测试模型对篇章证据的利用。
 - [ROLETHINK](https://arxiv.org/abs/2503.08193)：评估角色扮演语言智能体的内心想法推理能力。核心思路是将生成的角色想法与文学原文独白和专家角色分析比较，使角色智能体不只按表面对话评分，也要接受隐含动机推理检验。
+- [Can Large Reasoning Models do Analogical Reasoning under Perceptual Uncertainty?](https://arxiv.org/abs/2503.11207)：评测大型推理模型在感知不确定条件下的类比推理能力。
+- [Line of Duty: Evaluating LLM Self-Knowledge via Consistency in Feasibility Boundaries](https://arxiv.org/abs/2503.11256)：通过可行性边界一致性评测大模型自我知识。
+- [RESPONSE: Benchmarking the Ability of Language Models to Undertake Commonsense Reasoning in Crisis Situation](https://arxiv.org/abs/2503.11348)：引入 RESPONSE 危机场景常识推理基准，测试语言模型能否在紧急约束下选择情境合适行动。
+- [VERIFY: A Benchmark of Visual Explanation and Reasoning for Investigating Multimodal Reasoning Fidelity](https://arxiv.org/abs/2503.11557)：VERIFY 是明确命名的视觉解释与推理 benchmark，补足多模态模型在非识别式视觉推理上的评测轴。
+- [Evaluation of LLM Reasoning Under Uncertainty: An Atomic Comparison to Normative Approaches](https://doi.org/10.23919/fusion65864.2025.11123952)：将大模型不确定性推理与规范方法进行对照评测。
+- [Auditing Chain-of-Thought Reasoning via Perturbation-Based Attribution](https://doi.org/10.1109/reacs67479.2025.11413414)：用基于扰动的归因审计链式思维推理。
+- [OPTiCAL: An Abstract Positional Reasoning Benchmark for Vision Language Models](https://doi.org/10.1109/icdmw69685.2025.00171)：引入 OPTiCAL 抽象位置推理基准，用合成视觉布局测试 VLM 对相对位置关系的推断，而不是物体识别能力。
+- [CaLQuest.PT: Towards the Collection and Evaluation of Natural Causal Ladder Questions in Portuguese for AI Agents](https://aclanthology.org/2025.loreslm-1.26/)：收集葡萄牙语自然因果阶梯问题，并评估 AI agent 在关联、干预和反事实推理上的表现，把因果推理测试扩展到非英语提示。
+- [SPIN-Bench: How Well Do LLMs Plan Strategically and Reason Socially?](https://arxiv.org/abs/2503.12349)：SPIN-Bench 明确评测战略规划与社会推理，属于一般推理中规划/交互维度的 benchmark。
+- [Evaluation of Large Language Models for Understanding Counterfactual Reasoning in Texts](https://doi.org/10.1109/bigdata66926.2025.11402112)：测试 LLM 是否遵循文本中的反事实前提，检查答案是否随假设替代情境变化，而不是回到事实或常识默认答案。
+- [Position Bias Across LLM Model Families](https://doi.org/10.1109/intcec65580.2025.11255828)：通过交换答案位置衡量不同 LLM 家族的偏好变化，把位置敏感性作为比较、问答或 judge 式评测中的偏差诊断。
 - [MPBench](https://arxiv.org/abs/2503.12505)：评什么：多模态推理中的过程错误识别。核心思想：同时测试步骤正确性、答案聚合和推理过程搜索，使分数能暴露多模态推理轨迹失败的位置。
+- [Overview of the NTCIR-18 Automatic Evaluation of LLMs (AEOLLM) Task](https://arxiv.org/abs/2503.13038)：记录 NTCIR-18 AEOLLM 自动评测 LLM 输出的 shared task 设置，包括赛道、提交系统和评测发现。
+- [DNR Bench: Benchmarking Over-Reasoning in Reasoning LLMs](https://arxiv.org/abs/2503.15793)：可作为通用推理的Bench候选；核心关注“Benchmarking Over-Reasoning in Reasoning LLMs”。
 - [VisualQuest](https://arxiv.org/abs/2503.19936)：评什么：抽象视觉推理与符号/文化/语言知识整合；核心思想：用非照片化、风格化图像与定向问题检查模型能否把视觉识别和抽象语义推断结合起来。
+- [How Well Can Vison-Language Models Understand Humans' Intention? An Open-ended Theory of Mind Question Evaluation Benchmark](https://arxiv.org/abs/2503.22093)：构建 30 道开放式图像问题评测 VLM 心智理论，要求模型从视觉场景推断意图、信念和心理状态。
 - [QuestBench](https://arxiv.org/abs/2503.22674)（[开源代码](https://github.com/google-deepmind/questbench)，[数据集](https://huggingface.co/datasets/belindazli/QuestBench)）：评什么：在信息不足的推理任务中能否问出正确澄清问题。核心思想：把缺失信息获取形式化为约束推理问题，评分模型是否能在解题前提出最小必要问题。
+- [L0-Reasoning Bench](https://arxiv.org/abs/2503.22832)：评什么：语言模型推理中的程序性正确性。核心思想：要求模型为简单合成 Python 函数生成无错误执行轨迹，把步骤级过程可靠性与最终答案正确性分开评估。
 - [VGRP-Bench](https://arxiv.org/abs/2503.23064)：评什么：视觉网格推理谜题；核心思想：用 20 类不同难度的 grid puzzle 系统控制线索数、网格大小与规则复杂度，诊断 LVLM 的感知、规则理解和逻辑推理瓶颈。
+- [Rubrik's Cube: Testing a New Rubric for Evaluating Explanations on the CUBE dataset](https://arxiv.org/abs/2503.23899)：把教育启发的 rubric 应用于 CUBE 解释和 2.6 万条人类/模型标注解释，测试超越答案准确率的 rubric 评分。
+- [ACPBench Hard](https://arxiv.org/abs/2503.24378)：评什么：关于行动、变化与规划的生成式推理。核心思想：把 ACPBench 的原子规划推理题改成开放式作答，并配套验证算法，测试模型离开多选脚手架后的规划推理能力。
+- [MDK12-Bench: A Multi-Discipline Benchmark for Evaluating Reasoning in Multimodal Large Language Models](https://arxiv.org/abs/2504.05782)：多学科多模态推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [DeduCE](https://arxiv.org/abs/2504.07080)：评估 LLM 推理中的演绎一致性。核心思想是扰动基准题，并分别测量前提理解和多跳推断，揭示最终准确率可能掩盖的推理跳数失败。
+- [PuzzleBench: A Fully Dynamic Evaluation Framework for Large Multimodal Models on Puzzle Solving](https://arxiv.org/abs/2504.10885)：面向多模态谜题求解的动态 benchmark。核心思想是按可控难度生成新谜题实例，降低静态题集污染和难度固化对评测的影响。
+- [TextArena](https://arxiv.org/abs/2504.11442)：开源竞争性文本游戏环境套件，用于评估 agentic behavior。核心思想是用单人和多人环境、在线对战和 TrueSkill 式分数评测代理行为。
+- [Finding Flawed Fictions: Evaluating Complex Reasoning in Language Models via Plot Hole Detection](https://arxiv.org/abs/2504.11900)：通过剧情漏洞检测评测复杂推理，测试语言模型能否发现叙事矛盾。
+- [FLIP Reasoning Challenge](https://arxiv.org/abs/2504.12256)：用来自人类验证任务的排序问题评测 AI 推理；核心思想：通过简单的视觉时间顺序判断测试不能只靠表层感知完成的推理。
 - [GraphOmni](https://arxiv.org/abs/2504.12764)（[开源代码](https://github.com/GAI-Community/GraphOmni)）：评什么：图论任务中的理解、推理与生成。核心思想：把图结构解析、算法性推理和图生成任务组织成可扩展 benchmark framework，补足通用推理中对结构化对象的覆盖。
+- [Do LLMs Have Habits in Self-Evaluation? Prototypical Self-Evaluation Enhanced Named Entity Recognition for LLMs](https://doi.org/10.1109/taslpro.2026.3682045)：研究 LLM 在命名实体识别自评中的习惯性模式，并将 prototype-enhanced self-checking 与普通 NER 评测行为对比。
+- [Cross-platform evaluation of reasoning capabilities in foundation models](https://doi.org/10.1016/j.ipm.2026.104878)：跨基础模型平台比较推理行为，把平台选择和提示环境作为会影响测得推理表现的变量。
+- [CPG-EVAL: A Multi-Tiered Benchmark for Evaluating the Chinese Pedagogical Grammar Competence of Large Language Models](https://arxiv.org/abs/2504.13261)：跨五个层级和任务测试中文教学语法能力，关注 LLM 是否能解释、诊断和教授中文语法点。
+- [THOUGHTTERMINATOR](https://arxiv.org/abs/2504.13367)：评测 reasoning model 的 overthinking。核心思想是把题目难度与 token 消耗对齐分析，并用 DUMB500 等极简单任务配合困难任务诊断推理预算校准失败。
+- [PLANET: A Collection of Benchmarks for Evaluating LLMs' Planning Capabilities](https://arxiv.org/abs/2504.14773)：评测面向 LLM 规划能力的 benchmark 集合；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [VisuLogic](https://arxiv.org/abs/2504.15279)（[开源代码](https://github.com/VisuLogic-Benchmark/VisuLogic-Eval)）：评什么：视觉逻辑与规则推断；核心思想：把逻辑推理与视觉结构紧耦合，强调可诊断的逻辑错误类型划分。
 - [ActionReasoningBench](https://openreview.net/forum?id=NUD03NBDOE)：评什么：带有或不带 ramification constraints 的动作推理。核心思想：测试模型能否在显式状态变化规则下推出行动后果，而不是只靠常识先验作答。
+- [Rosetta-PL: Propositional Logic as a Benchmark for Large Language Model Reasoning](https://arxiv.org/abs/2505.00001)：评什么：LLM 的命题逻辑推理与泛化。核心思想是在受控逻辑命题上测试推理，而不是语言模式记忆。
+- [Chain-of-Probe: Examining the Necessity and Accuracy of CoT Step-by-Step](https://doi.org/10.18653/v1/2025.findings-naacl.140)：检验 CoT 步骤是否必要且准确，为最终答案分数之外的过程级诊断提供依据。
 - [Planetarium](https://aclanthology.org/2025.naacl-long.560/)：评什么：从自然语言规划问题到结构化规划语言的转换。核心思想：用形式化规划表示使语义正确性可检查，连接自然语言推理与可执行规划。
+- [TRAVELER: A Benchmark for Evaluating Temporal Reasoning across Vague, Implicit and Explicit References](https://arxiv.org/abs/2505.01325)：评什么：覆盖模糊、隐式和显式时间指代的 temporal reasoning 基准。
+- [R-Bench: Graduate-level Multi-disciplinary Benchmarks for LLM & MLLM Complex Reasoning Evaluation](https://arxiv.org/abs/2505.02018)：评测研究生级多学科复杂推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Enigme: Generative Text Puzzles for Evaluating Reasoning in Language Models](https://arxiv.org/abs/2505.04914)：Enigme 生成解可控的文本谜题，评估语言模型是否通过组合推理解决新谜题，而不是记忆已有谜题答案。
+- [Measuring General Intelligence with Generated Games](https://arxiv.org/abs/2505.07215)：用可生成游戏环境评测通用推理能力。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [KRISTEVA: Close Reading as a Novel Task for Benchmarking Interpretive Reasoning](https://arxiv.org/abs/2505.09825)：可作为通用推理的Bench候选；核心关注“Close Reading as a Novel Task for Benchmarking Interpretive Reasoning”。
+- [A large-scale evaluation of commonsense knowledge in humans and large language models](https://arxiv.org/abs/2505.10309)：在大规模常识套件上比较人类与 LLM，定位模型判断与人类常识反应分歧最大的类别。
+- [Human-Aligned Bench: Fine-Grained Assessment of Reasoning Ability in MLLMs vs. Humans](https://arxiv.org/abs/2505.11141)：它提供通用推理、视觉谜题或结构化推理评测，适合补充 general reasoning Bench。
+- [Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs](https://arxiv.org/abs/2505.11556)：评测分布式信息下的集体推理。核心思想：用 hidden-profile 任务测试多 agent 系统能否汇聚局部证据，而不是放大局部偏见。
+- [IQBench: How "Smart" Are Vision-Language Models? A Study with Human IQ Tests](https://arxiv.org/abs/2505.12000)：补充general reasoning方向的基准或评测套件，核心围绕《IQBench: How "Smart" Are Vision-Language Models? A Study with Human IQ Tests》。
+- [TIME: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios](https://arxiv.org/abs/2505.12891)：评测真实场景中的时间推理；核心思想是覆盖密集时间线、快速变化新闻事件和社交对话中的时间依赖。
+- [Role-Playing Evaluation for Large Language Models](https://arxiv.org/abs/2505.13157)：从情绪理解、决策、道德对齐与角色内一致性评测 LLM 角色扮演能力，补充紧凑的人格行为评测轴。
+- [Tokenization Constraints in LLMs: A Study of Symbolic and Arithmetic Reasoning Limits](https://arxiv.org/abs/2505.14178)：研究 tokenization 约束下的符号和算术推理，用 token-awareness 分析显示 subword segmentation 如何破坏原子操作。
+- [KORGym: A Dynamic Game Platform for LLM Reasoning Evaluation](https://arxiv.org/abs/2505.14552)：KORGym 是动态游戏平台式推理评测，可补充一般推理中的交互环境压力测试。
+- [SATBench: Benchmarking LLMs' Logical Reasoning via Automated Puzzle Generation from SAT Formulas](https://arxiv.org/abs/2505.14615)：评什么：基于 SAT 派生谜题的逻辑推理。核心思想是从 SAT 公式自动生成谜题，使正确性可检查、难度可系统控制。
+- [LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](https://arxiv.org/abs/2505.15616)：LENS 是多层级多模态推理评测，适合一般推理 benchmark。
+- [“AI just keeps guessing”: Using ARC Puzzles to Help Children Identify Reasoning Errors in Generative AI](https://arxiv.org/abs/2505.16034)：在教育研究中用 ARC 谜题帮助儿童识别生成式 AI 的推理错误，评测重点是 ARC 失败分析和学习者诊断，而不是新的模型榜单。
+- [Sudoku-Bench](https://arxiv.org/abs/2505.16135)：评什么：数独变体中的创造性多步逻辑推理。核心思想：要求模型推断新约束，而不是套用记忆中的标准数独模式。
+- [ScholarBench: A Bilingual Benchmark for Abstraction, Comprehension, and Reasoning Evaluation in Academic Contexts](https://arxiv.org/abs/2505.16566)：面向学术语境的双语 abstraction、comprehension 与 reasoning benchmark。
+- [RBench-V: A Primary Assessment for Visual Reasoning Models with Multi-modal Outputs](https://arxiv.org/abs/2505.16770)：类型：benchmark/评测协议。核心价值：为 1.9.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation](https://arxiv.org/abs/2505.17123)：评测 LLM 多轮推理；核心思想是构建带自动评测协议的交互式推理任务，而不是只测单轮提示。
+- [Is Your LLM Really Mastering the Concept? A Multi-Agent Benchmark](https://arxiv.org/abs/2505.17512)：用多智能体基准检验大模型是否真正掌握概念。
+- [Towards Dynamic Theory of Mind: Evaluating LLM Adaptation to Temporal Evolution of Human States](https://arxiv.org/abs/2505.17663)：动态 Theory of Mind 评测。核心思想是测试 LLM 能否随人类状态变化更新心理状态推断。
 - [SeePhys](https://arxiv.org/abs/2505.19099)：评什么：基于图像的物理推理；核心思想：让视觉元素成为解题必需信息，用跨教育阶段和物理子领域的问题暴露“只靠题干文字走捷径”的模型缺陷。
-- [REASONING GYM / Reasoning Gym Eval](https://arxiv.org/abs/2505.24760)：评什么：带可验证奖励的程序化推理环境；核心思想：用可生成、可判分的任务族覆盖逻辑、算法、符号与组合推理，适合作为强化学习和 test-time search 的通用 harness。
+- [GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning](https://arxiv.org/abs/2505.20672)：引入 GIFARC 合成类比数据集，借鉴人类直觉的 ARC 式推理来评测抽象和类比迁移。
+- [MME-Reasoning: A Comprehensive Benchmark for Logical Reasoning in MLLMs](https://arxiv.org/abs/2505.21327)：系统评测多模态大模型的逻辑推理，匹配视觉与通用推理能力轴。
+- [THINK-Bench: Evaluating Thinking Efficiency and Chain-of-Thought Quality of Large Reasoning Models](https://arxiv.org/abs/2505.22113)：THINK-Bench 评测思考效率和 CoT 质量，补充一般推理中的效率/过程质量维度。
+- [PBEBench](https://arxiv.org/abs/2505.23126)：通过多步 Programming by Examples 字符串变换评测归纳推理能力，并提供可控难度的生成流程；其困难样例能暴露当前 reasoning model 在规则归纳与程序合成上的明显短板。
+- [Video Editing for Audio-Visual Dubbing](https://arxiv.org/abs/2505.23406)：主要贡献音视频配音的视频编辑方法，更适合多模态生成应用方向，而非通用推理评测。
+- [Don't Take the Premise for Granted: Evaluating the Premise Critique Ability of Large Language Models](https://arxiv.org/abs/2505.23715)：可作为通用推理的Bench候选；核心关注“Evaluating the Premise Critique Ability of Large Language Models”。
+- [Benchmarking Abstract and Reasoning Abilities Through A Theoretical Perspective](https://arxiv.org/abs/2505.23833)：在形式化“模式抽取与规则应用”框架下评测抽象推理。核心思想是检查模型能否抽取与表层表示无关的结构并稳定应用规则，而不是依赖表面线索。
+- [GridRoute: A Benchmark for LLM-Based Route Planning with Cardinal Movement in Grid Environments](https://arxiv.org/abs/2505.24306)：在网格地图和方位移动约束下评测 LLM 路径规划，并检验 Algorithm-of-Thought prompt 是否帮助模型利用经典寻路指导。
+- [REASONING GYM / Reasoning Gym Eval](https://arxiv.org/abs/2505.24760)（[榜单与开源代码](https://github.com/open-thought/reasoning-gym-eval)）：评什么：带可验证奖励的程序化推理环境；核心思想：用可生成、可判分的任务族覆盖逻辑、算法、符号与组合推理，适合作为强化学习和 test-time search 的通用 harness。
+- [SATA-BENCH: Select All That Apply Benchmark for Multiple Choice Questions](https://arxiv.org/abs/2506.00643)：评测“多选且全选正确项”的选择题推理。核心思想：要求模型识别所有正确选项，而不是只选一个答案。
+- [GuessBench: Sensemaking Multimodal Creativity in the Wild](https://arxiv.org/abs/2506.00814)：类型：benchmark/评测协议。核心价值：为 1.9.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [TurnBench-MS](https://arxiv.org/abs/2506.01341)：评什么：多轮、多步推理中的状态维护与约束更新；核心思想：把推理过程拆进连续交互回合，检验模型是否能在前后轮信息变化下保持一致决策。
+- [VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](https://arxiv.org/abs/2506.02387)：在多模态观察与多智能体交互中评测 VLM 的策略能力，而不是孤立视觉问答。
+- [XToM: Exploring the Multilingual Theory of Mind for Large Language Models](https://arxiv.org/abs/2506.02461)：XToM 评估多语言 Theory of Mind，测试心理状态推理是否能跨语言迁移，而不是依赖英语场景。
+- [DRE-Bench](https://arxiv.org/abs/2506.02648)：通过动态抽象推理任务评估流体智能。核心思想：按认知层级组织任务并生成变体，要求模型推断和迁移规则，而不是记忆固定题目。
+- [EvaLearn](https://arxiv.org/abs/2506.02672)：评什么：顺序解题中的学习能力与学习效率。核心思想：把问题按任务类型组织成序列，让模型可利用前序解题经验，并同时评估表现和学习效率。
+- [More or Less Wrong: A Benchmark for Directional Bias in LLM Comparative Reasoning](https://arxiv.org/abs/2506.03923)：评什么：评测逻辑等价比较题中的方向性措辞偏差，适合补充一般推理鲁棒性。
+- [TableEval: A Real-World Benchmark for Complex, Multilingual, and Multi-Structured Table Question Answering](https://arxiv.org/abs/2506.03949)：评测真实场景中的复杂、多语言、多结构表格问答能力。
+- [RELIC: Evaluating Complex Reasoning via the Recognition of Languages In-Context](https://arxiv.org/abs/2506.05205)：可作为通用推理的Bench候选；核心关注“Evaluating Complex Reasoning via the Recognition of Languages In-Context”。
+- [PuzzleWorld: A Benchmark for Multimodal, Open-Ended Reasoning in Puzzlehunts](https://arxiv.org/abs/2506.06211)：多模态开放式 puzzlehunt 推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Visual Graph Arena: Evaluating Visual Conceptualization of Vision and Multimodal Large Language Models](https://arxiv.org/abs/2506.06242)：它提供通用推理、视觉谜题或结构化推理评测，适合补充 general reasoning Bench。
+- [BIS Reasoning 1.0: The First Large-Scale Japanese Benchmark for Belief-Inconsistent Syllogistic Reasoning](https://arxiv.org/abs/2506.06955)：构建大规模日语三段论题集，专门加入逻辑有效但信念不一致的结论，在统一零样本协议下暴露 belief bias。
+- [Com2: A Causal-Guided Benchmark for Exploring Complex Commonsense Reasoning in Large Language Models](https://arxiv.org/abs/2506.07064)：引入 Com2 因果引导复杂常识推理基准，围绕因果依赖和日常事件构造问题。
+- [Temporalizing Confidence: Evaluation of Chain-of-Thought Reasoning with Signal Temporal Logic](https://arxiv.org/abs/2506.08243)：用信号时序逻辑评测思维链推理，为置信度与推理轨迹评估加入时间约束。
+- [TTT-Bench: A Benchmark for Evaluating Reasoning Ability with Simple and Novel Tic-Tac-Toe-style Games](https://arxiv.org/abs/2506.10209)：可作为通用推理的Bench候选；核心关注“A Benchmark for Evaluating Reasoning Ability with Simple and Novel Tic-Tac-Toe-style Games”。
+- [WGSR-Bench: Wargame-based Game-theoretic Strategic Reasoning Benchmark for Large Language Models](https://arxiv.org/abs/2506.10264)：评测战争推演场景中的博弈论战略推理能力。核心思路是用对抗性战略决策设置要求模型同时处理对手、收益与条件变化，而不是只回答孤立逻辑题。
 - [LogiPlan](https://arxiv.org/abs/2506.10527)：评测结构化关系图上的逻辑规划与关系推理。核心思想：通过对象数量、关系类型与关系链深度控制难度，并覆盖计划生成、一致性检测和关系查询任务，检验模型是否真正遵守图结构约束，而不是只生成貌似合理的文本。
+- [How Well Can Reasoning Models Identify and Recover from Unhelpful Thoughts?](https://arxiv.org/abs/2506.10979)：推理模型识别并恢复无效思路的能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning](https://arxiv.org/abs/2506.11128)：使用 PyETR 生成 383 道形式化推理题，并按 Erotetic Theory 的谬误模式标注错误，而不只统计准确率。
+- [Tracing LLM Reasoning Processes with Strategic Games: A Framework for Planning, Revision, and Resource-Constrained Decision Making](https://arxiv.org/abs/2506.12012)：用战略游戏跟踪 LLM 推理过程的框架。核心思想是不只看最终答案，而是评估游戏中的规划、修订和资源约束决策。
+- [S4C: Speculative Sampling with Syntactic and Semantic Coherence for Efficient Inference of Large Language Models](https://arxiv.org/abs/2506.14158)：贡献带句法和语义一致性检查的 speculative sampling 推理加速方法，因此属于效率方法而非推理 benchmark。
+- [MDBench: A Synthetic Multi-Document Reasoning Benchmark Generated with Knowledge Guidance](https://arxiv.org/abs/2506.14927)：引入 MDBench 知识引导合成多文档推理基准，答案需要组合多个文档中的证据。
+- [MinosEval: Distinguishing Factoid and Non-Factoid for Tailored Open-Ended QA Evaluation with LLMs](https://arxiv.org/abs/2506.15215)：通过区分 factoid 与 non-factoid 问题评测 open-ended QA。
+- [CLEAR-3K: Assessing Causal Explanatory Capabilities in Language Models](https://arxiv.org/abs/2506.17180)：评测语言模型的因果解释能力；核心思想是判断一个陈述是否因果解释另一个陈述，从而区分真实解释与表面语义相关。
+- [TReB: A Comprehensive Benchmark for Evaluating Table Reasoning Capabilities of Large Language Models](https://arxiv.org/abs/2506.18421)：评什么：面向表格、数据库和数据仓库场景的表格推理综合基准。
+- [Language Models Might Not Understand You: Evaluating Theory of Mind via Story Prompting](https://arxiv.org/abs/2506.19089)：可编程的 theory of mind 与 world modeling benchmark；核心思想是从 storyboard 合成可控故事提示，降低污染并测试组合式社会推理。
+- [Baba is LLM: Reasoning in a Game with Dynamic Rules](https://arxiv.org/abs/2506.19095)：Baba is LLM 以动态规则游戏检验规则操纵和规划推理，是通用推理 benchmark 候选。
 - [Decrypto Benchmark](https://arxiv.org/abs/2506.20664)：评什么：合作与竞争通信游戏中的多 agent 推理和 theory of mind。核心思想：用交互式游戏平台测试模型如何推断其他 agent 的信念、线索和意图。
+- [OmniEval: A Benchmark for Evaluating Omni-modal Models with Visual, Auditory, and Textual Inputs](https://arxiv.org/abs/2506.20960)：覆盖视觉、听觉与文本输入的全模态评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [From General Reasoning to Domain Expertise: Uncovering the Limits of Generalization in Large Language Models](https://arxiv.org/abs/2506.21580)：对比通用推理表现与领域专家任务表现，通过跨领域评测揭示宽泛 reasoning benchmark 何时无法预测专门能力。
+- [FinEval-KR: A Financial Domain Evaluation Framework for Large Language Models' Knowledge and Reasoning](https://arxiv.org/abs/2506.21591)：引入 FinEval-KR 韩语金融领域知识与推理评测框架，用金融专门问题和推理任务评测 LLM。
+- [Agent-to-Agent Theory of Mind: Testing Interlocutor Awareness among Large Language Models](https://arxiv.org/abs/2506.22957)：评什么：大模型 agent 之间的 interlocutor awareness。核心思想是测试 agent 在交互中是否能推理其他 agent 的知识与意图。
+- [MMReason: An Open-Ended Multi-Modal Multi-Step Reasoning Benchmark for MLLMs Toward AGI](https://arxiv.org/abs/2506.23563)：评测开放式多模态多步推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Positional Bias in Binary Question Answering: How Uncertainty Shapes Model Preferences](https://arxiv.org/abs/2506.23743)：测量不确定条件下二元问答的位置偏差，测试答案顺序和不确定性表述如何改变模型偏好。
 - [ZebraLogic](https://proceedings.mlr.press/v267/lin25i.html)（[榜单](https://huggingface.co/spaces/WildEval/ZebraLogic)，[数据集](https://huggingface.co/datasets/allenai/ZebraLogicBench)）：评什么：可控复杂度的逻辑格谜题与 CSP 式演绎推理。核心思想：通过控制变量数、约束数和冲突结构观察模型推理随搜索空间增大时的崩塌点。
 - [StrucText-Eval](https://aclanthology.org/2025.acl-long.11/)：评什么：结构丰富文本上的推理。核心思想：利用标题、列表、表格等结构信号测试模型是否真正使用文档组织方式，而不是把文本压平为普通问答。
 - [RuleArena](https://aclanthology.org/2025.acl-long.27/)（[开源代码](https://github.com/skyriver-2000/rulearena)）：评什么：真实场景中的规则引导推理。核心思想：把显式规则与现实任务结合起来，让模型必须应用领域约束，而不是只给出貌似合理的答案。
+- [RolePlot: A Systematic Framework for Evaluating and Enhancing the Plot-Progression Capabilities of Role-Playing Agents](https://doi.org/10.18653/v1/2025.acl-long.603)：评估并增强角色扮演智能体的情节推进能力，在角色一致性和内心推理之外补充叙事状态演进这一评测轴。
+- [V-ALPHASOCIAL: Benchmark and Self-Reflective Chain-of-Thought Generation for Visual Social Commonsense Reasoning](https://doi.org/10.18653/v1/2025.findings-acl.975)：评测视觉社会常识推理并包含自反思推理轨迹；核心思想是同时测试视觉 grounding 与社会推断。
+- [Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](https://doi.org/10.18653/v1/2025.acl-long.1142)：为多跳 QA 推理过程加入 PER、PER-DP、PER-QA 和 PSE 指标，检测最终答案之外的侥幸续推和潜在推理中断。
+- [DIALECT-COPA: Extending the Standard Translations of the COPA Causal Commonsense Reasoning Dataset to South Slavic Dialects](https://doi.org/10.18653/v1/2024.vardial-1.7)：把 COPA 扩展到南斯拉夫语族方言，测试因果常识在方言变化下的迁移，而不是只看标准语翻译。
+- [CausalLink: An Interactive Evaluation Framework for Causal Reasoning](https://doi.org/10.18653/v1/2025.findings-acl.1147)：引入 CausalLink 交互式因果推理框架，让模型在干预条件下作答并接受结构化因果评测反馈。
+- [M³GQA: A Multi-Entity Multi-Hop Multi-Setting Graph Question Answering Benchmark](https://doi.org/10.18653/v1/2025.acl-long.1478)：构建面向多实体多跳问题的 GraphRAG 基准，覆盖六种设置，并从实体图采样和精修 ground-truth 推理路径。
+- [Scaling LLM Planning: NL2FLOW for Parametric Problem Generation and Rigorous Evaluation](https://arxiv.org/abs/2507.02253)：通过参数化生成的 workflow composition 问题评测 LLM 规划；核心思想是把结构化中间表示转成可扩展规划任务并进行严格评测。
+- [Self-Correction Bench: Uncovering and Addressing the Self-Correction Blind Spot in Large Language Models](https://arxiv.org/abs/2507.02778)：面向自我纠错盲点的 benchmark。核心思想是比较模型修正自身错误和修正同样外部错误的能力，暴露 reflection 式推理的边界。
+- [Advanced Financial Reasoning at Scale: A Comprehensive Evaluation of Large Language Models on CFA Level III](https://arxiv.org/abs/2507.02954)：在 CFA Level III 式金融推理题上评估 LLM，强调投资组合管理判断、构造式回答和专业考试评分，而不是普通金融问答。
 - [MoMentS](https://arxiv.org/abs/2507.04415)：评测真实短片场景中的多模态 Theory of Mind 能力；核心思想是用叙事丰富的视频问题覆盖多类心理状态，测试模型能否从社会语境推断信念、意图与情绪。
+- [Hyperphantasia: A Benchmark for Evaluating the Mental Visualization Capabilities of Multimodal LLMs](https://arxiv.org/abs/2507.11932)：补充general reasoning方向的基准或评测套件，核心围绕《Hyperphantasia: A Benchmark for Evaluating the Mental Visualization Capabilities of Multimodal LLMs》。
+- [HATS : Hindi Analogy Test Set for Evaluating Reasoning in Large Language Models](https://arxiv.org/abs/2507.13238)：引入 Hindi analogy test set，用印地语特有类比题探测英语之外的关系迁移能力。
+- [Comparing Apples to Oranges: A Dataset & Analysis of LLM Humour Understanding from Traditional Puns to Topical Jokes](https://arxiv.org/abs/2507.13335)：评测模型能否解释双关、网络笑话、脱口秀和时事段子中的幽默，强调语用推理与现实知识理解。
+- [FormulaOne](https://arxiv.org/abs/2507.13337)：评什么：超越普通竞赛编程的深层算法推理。核心思想：从图上的一元二阶逻辑生成图论、逻辑与优化难题，要求模型具备真实算法洞察，而不是匹配常见竞赛题模板。
+- [How LLMs Comprehend Temporal Meaning in Narratives: A Case Study in Cognitive Evaluation of LLMs](https://arxiv.org/abs/2507.14307)：评测 LLM 理解叙事时间意义的能力，补充面向时间推理的细粒度探针。
+- [METER: Multi-modal Evidence-based Thinking and Explainable Reasoning - Algorithm and Benchmark](https://arxiv.org/abs/2507.16206)：评测多模态推理；核心思想是把基于证据的推理行为与 benchmark 协议结合，使中间推理质量可检查。
+- [Are LLM Belief Updates Consistent with Bayes' Theorem?](https://arxiv.org/abs/2507.17951)：语言模型信念更新的贝叶斯一致性评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Can LLMs Solve ASP Problems? Insights from a Benchmarking Study (Extended Version)](https://arxiv.org/abs/2507.19749)：面向通用推理的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Can LLMs Solve ASP Problems? Insights from a Benchmarking Study (Extended Version)”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [IQ Test for LLMs: An Evaluation Framework for Uncovering Core Skills in LLMs](https://arxiv.org/abs/2507.20208)：可作为通用推理的Bench候选；核心关注“An Evaluation Framework for Uncovering Core Skills in LLMs”。
+- [CompoST: A Benchmark for Analyzing the Ability of LLMs To Compositionally Interpret Questions in a QALD Setting](https://arxiv.org/abs/2507.21257)：评测 QALD 场景中的问题组合解释能力；核心思想是检查模型把自然语言问题映射到结构化答案时是否保持组合语义。
+- [MPCC: A Novel Benchmark for Multimodal Planning with Complex Constraints in Multimodal Large Language Models](https://arxiv.org/abs/2507.23382)：MPCC 评测带复杂约束的多模态规划能力，是通用推理中的多步规划 Bench。
 - [Can LLM-Reasoning Models Replace Classical Planning?](https://arxiv.org/abs/2507.23589)：在 PDDL 风格 classical planning 问题上评测推理模型。核心思想是把生成计划与 Fast Downward 对照，并检查可执行有效性，暴露语言模型规划是否真正保持状态、资源和约束，而不只是生成看似合理的动作文本。
+- [Cascaded Information Disclosure for Generalized Evaluation of Problem Solving Capabilities](https://arxiv.org/abs/2507.23776)：Cascaded Information Disclosure 是通用问题解决能力评估协议，适合 General Reasoning Bench。
+- [Everyone Contributes! Incentivizing Strategic Cooperation in Multi-LLM Systems via Sequential Public Goods Games](https://arxiv.org/abs/2508.02076)：评什么：用 sequential public goods game 评测多 LLM 系统的战略合作。
+- [Transparent Objects Pose Estimation via RGB-D Enhancement and Depth-Directed Feature Fusion](https://doi.org/10.1109/tie.2025.3645469)：主要贡献透明物体姿态估计的 RGB-D 增强和 depth-directed feature fusion 方法；它更像偏离本页的视觉模型论文，而非通用推理基准。
+- [Talking to the Mona Lisa? LLM-based Role-playing Agent Enables Artworks in Virtual Exhibitions to Speak](https://doi.org/10.1109/ijcnn64981.2025.11227929)：提出虚拟展览中的 LLM 角色扮演 agent，让艺术品与参观者对话；这是交互应用研究而非 benchmark 协议。
+- [Linking generative AI and morphological analysis to conduct foresight evaluation](https://doi.org/10.1108/fs-02-2025-0027)：将生成式 AI 与形态分析结合用于 foresight evaluation，更像应用型决策支持研究，而不是可复用的通用推理基准。
+- [Countdown planning benchmark](https://arxiv.org/abs/2508.02900)：评什么：在完全明确的算术状态转移模型下进行规划。核心思想：用结果可验证且可控生成的 Countdown 游戏实例测试模型是否能做组合式规划，而不是依赖松散的旅行规划类任务。
+- [Game Reasoning Arena: A Framework and Benchmark for Assessing Reasoning Capabilities of Large Language Models via Game Play](https://arxiv.org/abs/2508.03368)：在 Game Reasoning Arena 中通过游戏任务评测大模型推理。
+- [EvolvR: Self-Evolving Pairwise Reasoning for Story Evaluation to Enhance Generation](https://arxiv.org/abs/2508.06046)：把自演化成对推理用于故事评价，测试 LLM judge 能否通过显式推理轨迹比较叙事并改进生成反馈。
+- [CHBench: A Cognitive Hierarchy Benchmark for Evaluating Strategic Reasoning Capability of LLMs](https://arxiv.org/abs/2508.11944)：CHBench 面向 cognitive hierarchy 策略推理，衡量模型在博弈论任务中预测不同层级对手推理的能力。
+- [REVEAL -- Reasoning and Evaluation of Visual Evidence through Aligned Language](https://arxiv.org/abs/2508.12543)：评测 REVEAL -- Reasoning and Evaluation of Visual Evidence through Aligned Language，为 General Reasoning 补充可复用的数据集、基准、指标或评测协议。
+- [TR-MMLU Benchmark for Large Language Models: Performance Evaluation, Challenges, and Opportunities for Improvement](https://arxiv.org/abs/2508.13044)：将 MMLU 适配到土耳其语，并分析土耳其语语言和概念覆盖暴露出的、英文 MMLU 中不明显的性能缺口。
+- [OptimalThinkingBench](https://arxiv.org/abs/2508.13141)：评测 reasoning model 的过度思考和思考不足。核心思想：将简单问题上的 overthinking 与困难推理上的 underthinking 放入同一协议，并用 thinking-adjusted accuracy 衡量模型是否合理分配推理开销。
+- [PuzzleJAX: A Benchmark for Reasoning and Learning](https://arxiv.org/abs/2508.16821)：用 JAX 打包谜题式推理任务，使 benchmark 实例、学习实验和 solver 评测共享快速的程序化环境。
+- [Detecting and Characterizing Planning in Language Models](https://arxiv.org/abs/2508.18098)：检测并刻画语言模型内部的规划行为。
+- [LongReasonArena](https://arxiv.org/abs/2508.19363)：评估长推理而不只是长上下文理解。核心思想是用包含检索和回溯的可扩展算法任务，把推理长度扩展到极大 token 预算，观察模型随推理步数增长的性能衰减。
+- [AgentCoMa](https://arxiv.org/abs/2508.19988)：一个混合常识与数学推理的 compositional benchmark，每道题都包含常识步骤和数学步骤，用于暴露只组合单一推理类型的 benchmark 难以发现的脆弱性。
+- [The Rarity Blind Spot: A Framework for Evaluating Statistical Reasoning in LLMs](https://arxiv.org/abs/2509.00245)：引入 Distinctive Feature Mining 与 DiFBench，要求模型在文档集合中找出出现比例低于 10% 的稀有特征。
+- [SATQuest: A Verifier for Logical Reasoning Evaluation and Reinforcement Fine-Tuning of LLMs](https://arxiv.org/abs/2509.00930)：带验证器的逻辑推理评测与强化微调框架；核心思想是借助 SAT 式验证使逻辑推理结果更可判定。
+- [Can Large Language Models Master Complex Card Games?](https://arxiv.org/abs/2509.01328)：评什么：用复杂纸牌游戏评测模型的策略推理能力。
+- [STORI: A Benchmark and Taxonomy for Stochastic Environments](https://arxiv.org/abs/2509.01793)：引入 STORI stochastic Atari 基准和五类 stochasticity taxonomy，用 noisy observations、action corruption 与 non-stationarity 评测 RL 鲁棒性。
+- [Loong: Synthesize Long Chain-of-Thoughts at Scale through Verifiers](https://arxiv.org/abs/2509.03059): 结合 LoongBench 和 LoongEnv，用可执行 verifier 支持长 CoT 推理评测、合成数据生成和跨领域答案检查。
+- [Do Language Models Follow Occam's Razor? An Evaluation of Parsimony in Inductive and Abductive Reasoning](https://arxiv.org/abs/2509.03345)：评估语言模型在归纳和溯因推理中是否遵循奥卡姆剃刀。
+- [Chain or tree? Re-evaluating complex reasoning from the perspective of a matrix of thought](https://arxiv.org/abs/2509.03918)：比较 chain、tree 和 matrix-of-thought 组织方式重新评估复杂推理，测量推理结构选择如何影响多步任务表现。
+- [Talking with Oompa Loompas: A novel framework for evaluating linguistic acquisition of LLM agents](https://arxiv.org/abs/2509.07389)：评测 LLM agent 能否通过与只懂 Tinkatongue 的 bot 互动反馈，习得并使用新构造语言 Tinkatongue。
+- [Calibrating MLLM-as-a-judge via Multimodal Bayesian Prompt Ensembles](https://arxiv.org/abs/2509.08777)：用 Bayesian prompt ensembles 校准多模态 LLM-as-judge，通过集成不确定性稳定图文评测分数。
+- [Do Large Language Models Favor Recent Content? A Study on Recency Bias in LLM-Based Reranking](https://arxiv.org/abs/2509.11353)：评测基于 LLM 的重排序中的近期内容偏置。
+- [MORABLES: A Benchmark for Assessing Abstract Moral Reasoning in LLMs with Fables](https://arxiv.org/abs/2509.12371)：基于寓言的抽象道德推理 benchmark。核心思想是用短篇叙事测试超出普通阅读理解的深层推断和道德抽象能力。
+- [Reasoning with Preference Constraints: A Benchmark for Language Models in Many-to-One Matching Markets](https://arxiv.org/abs/2509.13131)：在多对一匹配市场问题上评测语言模型。核心思路是测试模型是否能满足结构化偏好约束和市场规则，而不是只选择看似合理的选项。
+- [Japanese Children's Riddles as a Benchmark for Machine Insight and Metacognition](https://arxiv.org/abs/2509.14704)：引入来自日本儿童谜语的 NazoNazo Benchmark，针对 insight-based 表征转移和元认知验证，而不是知识召回。
+- [DivLogicEval](https://arxiv.org/abs/2509.15587)：评估自然语言中的经典逻辑推理，题目由多样且反直觉的陈述组合构成。核心思想：用专门的逻辑任务分布和削弱偏差/随机性的指标，减少通用 benchmark 中多种能力混杂、语言覆盖不足和随机作答带来的干扰。
+- [SERA: Self-referential assessment framework for bidirectional generative commonsense reasoning](https://doi.org/10.1016/j.knosys.2026.116152)：用双向自指生成评估常识推理，检查模型能否一致地生成并验证成对常识陈述。
+- [Planning with ComPlanAI: Comparative insights from a human–AI evaluation of comprehensive plans](https://doi.org/10.1016/j.cities.2026.106898)：ComPlanAI 对比人类与 AI 对综合城市规划的评价，关注规划质量准则和决策支持判断，而非泛化的通用推理。
+- [Majority Logic as Stochastic Computing Primitive for Binomial Tail Evaluation](https://doi.org/10.1109/aixdke67294.2026.00029)：研究 majority logic 作为随机计算中的 binomial-tail evaluation 原语；它更像硬件或数值方法论文，后续应考虑从 LLM 推理基准列表中延后处理。
+- [NUMINA: A Natural Understanding Benchmark for Multi-dimensional Intelligence and Numerical Reasoning Abilities](https://arxiv.org/abs/2509.16656)：评测多维自然理解与数值推理能力，为单一数学题集之外的综合推理诊断提供补充。
+- [seqBench: A Tunable Benchmark to Quantify Sequential Reasoning Limits of LLMs](https://arxiv.org/abs/2509.16866)：可调的 sequential reasoning 边界 benchmark；核心思想是控制逻辑深度、回溯等复杂度维度，测量 LLM 推理链在何处失效。
+- [MSCoRe: A Benchmark for Multi-Stage Collaborative Reasoning in LLM Agents](https://arxiv.org/abs/2509.17628)：评什么：评测 LLM agent 在多阶段协作推理中的任务分解、交互和合成能力。
+- [Reasoning Core](https://arxiv.org/abs/2509.18083)：面向符号推理的可扩展 RLVR environment。核心思想是程序化生成覆盖 PDDL planning、一阶逻辑、上下文无关文法解析、因果推理和方程求解的可验证任务，并用外部工具检查和连续难度控制支撑训练与评测。
+- [CogniLoad](https://arxiv.org/abs/2509.18458)：评什么：受控认知负荷下的自然语言推理。核心思想：生成可调内在难度、干扰密度和任务长度的逻辑谜题，让失败分析比单一长上下文推理分数更具因素可分性。
+- [StyleBench: Evaluating thinking styles in Large Language Models](https://arxiv.org/abs/2509.20868)：可作为通用推理的Bench候选；核心关注“Evaluating thinking styles in Large Language Models”。
+- [SAGE: A Realistic Benchmark for Semantic Understanding](https://arxiv.org/abs/2509.21310)：引入 SAGE 语义理解基准，用真实语言任务测试模型能否保持意义，而不只依赖表层词汇重合。
+- [Artificial Phantasia: Evidence for Propositional Reasoning-Based Mental Imagery in Large Language Models](https://arxiv.org/abs/2509.23108)：构造新的 mental-imagery items 评测 LLM 的命题推理式心理表象能力。
+- [RCI: A Score for Evaluating Global and Local Reasoning in Multimodal Benchmarks](https://arxiv.org/abs/2509.23673)：定义多模态 benchmark 的全局和局部推理一致性分数，区分最终答案正确与中间推理是否使用正确证据。
+- [GEAR: A General Evaluation Framework for Abductive Reasoning](https://arxiv.org/abs/2509.24096)：提供溯因推理通用评测框架，关注假设形成与解释选择，而不只是最终答案问答。
+- [Can Large Language Models Express Uncertainty Like Human?](https://arxiv.org/abs/2509.24202)：评测大模型表达不确定性的方式是否接近人类不确定性沟通。
+- [ChessArena: A Chess Testbed for Evaluating Strategic Reasoning Capabilities of Large Language Models](https://arxiv.org/abs/2509.24239)：用于评估 LLM 战略推理能力的国际象棋 testbed；核心思想是用棋局决策探测规划、战术和长程策略一致性。
+- [Rethinking and Benchmarking Large Language Models for Graph Reasoning](https://arxiv.org/abs/2509.24260)：用受控图任务重新审视 LLM 图推理，将结构推理失败与提示格式、图表示方式的影响分开。
+- [Analyzing Dialectical Biases in LLMs for Knowledge and Reasoning Benchmarks](https://arxiv.org/abs/2510.00962)：分析知识与推理基准中的辩证偏差，测量相反论证形式或辩论框架如何改变模型判断。
+- [Toward a unified framework for data-efficient evaluation of large language models](https://arxiv.org/abs/2510.04051)：提出数据高效大模型评测的统一框架。
+- [NegotiationGym: Self-Optimizing Agents in a Multi-Agent Social Simulation Environment](https://arxiv.org/abs/2510.04368)：用于多 agent 谈判与合作的可配置环境；核心思想是在社会仿真中评测自优化 agent 的策略、沟通和协商结果质量。
+- [LexiCon: a Benchmark for Planning under Temporal Constraints in Natural Language](https://arxiv.org/abs/2510.05972)：LexiCon 评测自然语言时间约束下的规划，要求模型在排序、时长和截止时间规则下安排动作。
+- [FURINA: A Fully Customizable Role-Playing Benchmark via Scalable Multi-Agent Collaboration Pipeline](https://arxiv.org/abs/2510.06800)：通过可扩展 multi-agent collaboration pipeline 生成可定制 role-playing benchmark。
+- [EconCausal: A Context-Aware Causal Reasoning Benchmark for Large Language Models in Social Science](https://arxiv.org/abs/2510.07231)：评测社会科学场景中的上下文感知因果推理；核心思想：测试 LLM 能否在制度环境变化下区分结构性因果机制与表层相关。
+- [If Probable, Then Acceptable? Understanding Conditional Acceptability Judgments in Large Language Models](https://arxiv.org/abs/2510.08388)：测试 conditional acceptability judgment，把概率与规范或语义可接受性分开，揭示模型何时把“可能发生”误当作“可接受”。
+- [RegexPSPACE: A Benchmark for Evaluating LLM Reasoning on PSPACE-complete Regex Problems](https://arxiv.org/abs/2510.09227)：用 PSPACE-complete regex 问题评测 LLM 推理能力。
+- [ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](https://arxiv.org/abs/2510.09351)：在常识问答上评分小语言模型的推理轨迹，检查中间步骤是否忠实于答案证据。
+- [DixitWorld: Evaluating Multimodal Abductive Reasoning in Vision-Language Models with Multi-Agent Dixit Gameplay](https://arxiv.org/abs/2510.10117)：通过多智能体 Dixit 游戏评测多模态溯因推理，检查模型能否从视觉与社交线索推断隐含关联。
+- [MorphoBench: A Benchmark with Difficulty Adaptive to Model Reasoning](https://arxiv.org/abs/2510.14265)：随模型推理能力调整难度，作为前沿推理模型的动态压力测试。
+- [MoReBench: Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes](https://arxiv.org/abs/2510.16380)：可作为通用推理的Bench候选；核心关注“Evaluating Procedural and Pluralistic Moral Reasoning in Language Models, More than Outcomes”。
+- [Illusions of reflection: open-ended task reveals systematic failures in Large Language Models' reflective reasoning](https://arxiv.org/abs/2510.18254)：该工作用 open-ended reflective reasoning 任务诊断 LLM 反思能力失效，属于通用推理评测补充。
+- [StarBench: A Turn-Based RPG Benchmark for Agentic Multimodal Decision-Making and Information Seeking](https://arxiv.org/abs/2510.18483)：用回合制 RPG 场景评测 agentic multimodal decision-making 与 information seeking。
+- [Can They Dixit? Yes they Can! Dixit as a Playground for Multimodal Language Model Capabilities](https://arxiv.org/abs/2510.19892)：用 Dixit 桌游作为多模态评测场景，测试图像牌解释、线索生成和规则约束下的社会推理。
+- [The Dog the Cat Chased Stumped the Model: Measuring When Language Models Abandon Structure for Shortcuts](https://arxiv.org/abs/2510.20543)：评测语言模型是否真正解析 center-embedded sentences，而不是依赖语义捷径；核心思想是用受控理解题区分结构理解和熟悉事件模式。
+- [Deep Reasoning Dataset (DeepRD)](https://arxiv.org/abs/2510.22371)：评估大推理模型在图连通性和自然语言证明规划复杂度提升时的崩溃边界。核心思想：用可扩展难度的生成过程，暴露固定 benchmark 因复杂度过低而掩盖的推理失效。
+- [PRISM-Bench](https://arxiv.org/abs/2510.23594)：评测带 chain-of-thought 错误检测的视觉谜题推理。核心思想是要求模型在视觉谜题解题轨迹中找出第一个错误步骤，衡量推理过程可靠性，而不只看最终答案准确率。
+- [APTBench](https://arxiv.org/abs/2510.24397)：评什么：基础模型在 post-training 之前的 agentic 潜力。核心思想：把真实代理任务和成功轨迹转成轻量的多选题与文本补全题，覆盖计划、行动、软件工程和深度研究，用于在完整端到端 agent 评测之前筛查 checkpoint。
+- [SynthWorlds](https://arxiv.org/abs/2510.24427)：把推理能力与参数化世界知识区分开来评估。核心思想：构造结构相同的真实映射世界和合成映射世界，使模型必须基于关系推理，而不是依赖已知事实。
+- [AgentFrontier / ZPD Exam](https://arxiv.org/abs/2510.24695)：评什么：刚好超出 agent 独立能力边界的前沿推理任务。核心思想：按最近发展区合成任务，并用同一引擎构造动态 benchmark，用来观察 agent 能力边界。
+- [RiddleBench: A New Generative Reasoning Benchmark for LLMs](https://arxiv.org/abs/2510.24932)：用谜题式任务评测生成式推理；核心思想是要求模型推断隐含约束并生成答案，而不是只在固定选项中选择。
+- [Are Language Models Efficient Reasoners? A Perspective from Logic Programming](https://arxiv.org/abs/2510.25626)：在 logic programming 场景中同时评估演绎正确性和忽略无关事实的能力；核心思想是把推理效率作为独立可测能力，而不只报告最终准确率。
+- [Normative Reasoning in Large Language Models: A Comparative Benchmark from Logical and Modal Perspectives](https://arxiv.org/abs/2510.26606)：构建规范模态与认识模态推理数据集，将 LLM 在义务、许可上的表现与结构相近的知识模态对比。
+- [MM-OPERA](https://arxiv.org/abs/2510.26937)：评什么：大型视觉语言模型的开放式联想推理。核心思想：用远程项目联想和上下文联想任务，配合自由回答与过程感知 judge，测试 LVLM 是否能超越封闭式视觉问答完成创造性与收敛性联想。
+- [Mechanics of Learned Reasoning 1: TempoBench, A Benchmark for Interpretable Deconstruction of Reasoning System Performance](https://arxiv.org/abs/2510.27544)：面向 reasoning-system performance 可解释分解的 benchmark；核心思想是用形式化 grounded decision-chain tasks 研究推理结构，补足临时数据集和纯 proof-assistant 任务之间的空缺。
+- [ORGEval: Graph-Theoretic Evaluation of LLMs in Optimization Modeling](https://arxiv.org/abs/2510.27610)：用图论标准评测 LLM 的优化建模能力；核心思想是检查模型能否把问题描述转化为结构有效的优化模型。
 - [TurnaboutLLM](https://aclanthology.org/2025.emnlp-main.101/)：评什么：基于侦探游戏证据的演绎推理。核心思想：用受约束的谜案场景测试模型是否能组合证据、排除备选解释，并避免补造无支撑事实。
+- [TurnaboutLLM: A Deductive Reasoning Benchmark from Detective Games](https://arxiv.org/abs/2505.15712)：来自侦探游戏的演绎推理 benchmark；核心思想是用游戏化证据和矛盾结构测试模型能否推出唯一一致解释。
+- [ARC-GEN: A Mimetic Procedural Benchmark Generator for the Abstraction and Reasoning Corpus](https://arxiv.org/abs/2511.00162)：补充general reasoning方向的基准或评测套件，核心围绕《ARC-GEN: A Mimetic Procedural Benchmark Generator for the Abstraction and Reasoning Corpus》。
+- [Recipe2Plan: Evaluating Planning Abilities of LLMs for Efficient and Feasible Multitasking with Time Constraints Between Actions](https://doi.org/10.18653/v1/2025.findings-emnlp.229)：评估带时间约束多任务可行规划能力的 benchmark。核心思想是测试模型能否在真实时间约束下安排相互依赖的动作。
+- [Certain but not Probable? Differentiating Certainty from Probability in LLM Token Outputs for Probabilistic Scenarios](https://arxiv.org/abs/2511.00620)：比较概率情境中 token 输出里的 certainty 与 probability 信号，测试 LLM 是否混淆自信表述和概率估计。
+- [Can LLMs Truly Plan? A Comprehensive Evaluation of Planning Capabilities](https://doi.org/10.18653/v1/2025.findings-emnlp.702)：系统评测 LLM 的规划能力；核心思想是压力测试模型能否形成并维持计划，而不是只生成局部看似合理的步骤。
+- [Seeing Cause and Time: A Visually Grounded Evaluation of Multimodal Models](https://aclanthology.org/2025.findings-emnlp.1036/)：评测多模态模型对视觉 grounded 的因果与时间关系理解，要求答案利用图像中的事件顺序和因果结构证据。
+- [ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation](https://arxiv.org/abs/2511.01163)：面向全模态生成的互惠跨模态推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [$\left|\,\circlearrowright\,\boxed{\text{BUS}}\,\right|$: A Large and Diverse Multimodal Benchmark for evaluating the ability of Vision-Language Models to understand Rebus Puzzles](https://arxiv.org/abs/2511.01340)：它提供通用推理、视觉谜题或结构化推理评测，适合补充 general reasoning Bench。
+- [EngTrace: A Symbolic Benchmark for Verifiable Process Supervision of Engineering Reasoning](https://arxiv.org/abs/2511.01650)：面向工程推理可验证过程监督的 symbolic benchmark；核心思想是用符号检查评估工程任务中的中间推理过程。
 - [LTD-Bench](https://arxiv.org/abs/2511.02347)（[开源代码](https://github.com/walktaster/LTD-Bench)，[数据集](https://huggingface.co/datasets/walktaster/LTD_Bench)）：评什么：让模型“画出来”的语言与空间概念推理。核心思想：要求模型用点阵或可执行代码绘图，把抽象语言理解、几何关系和视觉输出对齐放到同一个可判定任务里。
+- [The ORCA Benchmark: Evaluating Real-World Calculation Accuracy in Large Language Models](https://arxiv.org/abs/2511.02589)：评测 LLM 真实世界计算准确性的基准；核心思想是在实际计算语境中测试数值推理，而不是只做合成算术题。
+- [Measuring Aleatoric and Epistemic Uncertainty in LLMs: Empirical Evaluation on ID and OOD QA Tasks](https://arxiv.org/abs/2511.03166)：在分布内和分布外 QA 任务上评估 aleatoric 与 epistemic uncertainty，将答案正确性与不确定性校准分开。
+- [RUST-BENCH: Benchmarking LLM Reasoning on Unstructured Text within Structured Tables](https://arxiv.org/abs/2511.04491)：评测模型在结构化表格中的非结构化文本上进行推理；核心思想是检查模型能否同时利用自由文本证据与表格结构，而不是把单元格当作孤立片段。
+- [OckBench: Measuring the Efficiency of LLM Reasoning](https://arxiv.org/abs/2511.05722)：评什么：评测推理效率和过度思考问题，避免只看准确率。
+- [Multimodal LLMs Do Not Compose Skills Optimally Across Modalities](https://arxiv.org/abs/2511.08113)：评测多模态 skill composition；核心思想是检查 MLLM 能否跨模态组合能力，而不只是分别解决单一模态任务。
+- [Squid Game](https://arxiv.org/abs/2511.10691)：在动态对抗博弈中评估 LLM。核心思想：用带资源约束和非对称信息的淘汰式交互关卡测试推理、规划、合作与鲁棒性，超越良性静态 prompt。
+- [ARCTraj: A Dataset and Benchmark of Human Reasoning Trajectories for Abstract Problem Solving](https://arxiv.org/abs/2511.11079)：记录人类解决 ARC 式抽象问题的推理轨迹，使模型评测可以对照过程痕迹而不只看最终网格。
+- [An Analysis of Architectural Impact on LLM-based Abstract Visual Reasoning: A Systematic Benchmark on RAVEN-FAIR](https://arxiv.org/abs/2511.11916)：使用 RAVEN-FAIR 比较 single-shot、repetition、self-reflection 和 multi-agent 架构的抽象视觉推理，并用 SSIM 与 LPIPS 评分输出。
+- [CURE: Cultural Understanding and Reasoning Evaluation - A Framework for "Thick" Culture Alignment Evaluation in LLMs](https://arxiv.org/abs/2511.12014)：用真实语境和推理评测 thick cultural alignment，避免把文化理解简化为去语境化强制选择题。
 - [ARCHE](https://arxiv.org/abs/2511.12485)：评什么：从科学论证中抽取潜在推理链。核心思想：要求模型把演绎、归纳和溯因步骤组织成 reasoning logic tree，并同时评估实体覆盖与逐步逻辑有效性。
+- [PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](https://arxiv.org/abs/2511.13021)：PragWorld 通过最小语言变化和对话动态评测局部世界模型，检验模型是否更新隐含情境状态。
+- [DEVAL: A Framework for Evaluating and Improving the Derivation Capability of Large Language Models](https://arxiv.org/abs/2511.14813)：DEVAL 评估推导能力，关注模型能否从前提推出目标结论，并在反馈下改进推导步骤。
+- [VisReason: A Large-Scale Dataset for Visual Chain-of-Thought Reasoning](https://arxiv.org/abs/2511.17731)：它提供通用推理、视觉谜题或结构化推理评测，适合补充 general reasoning Bench。
+- [SPHINX](https://arxiv.org/abs/2511.20814)：评测带可验证答案的合成视觉感知与推理。核心思想是用 motif、tile、chart、icon 和几何基元程序化生成 25 类谜题，使视觉推理既可精确评测，也适合大规模 RLVR 式训练。
+- [RefineBench: Evaluating Refinement Capability of Language Models via Checklists](https://arxiv.org/abs/2511.22173)：可作为通用推理的Bench候选；核心关注“Evaluating Refinement Capability of Language Models via Checklists”。
+- [Moral Compass: A Data-Driven Benchmark for Ethical Cognition in AI](https://doi.org/10.24963/ijcai.2024/1059)：提出 Moral Decision Dataset、Moral Decision Knowledge Graph 和 Ethics Scoring Algorithm，用于歧义情境下的上下文敏感伦理认知。
+- [RecToM](https://arxiv.org/abs/2511.22275)：评测 LLM-based conversational recommender system 中的 machine theory of mind，把 ToM 评测扩展到推荐对话。
+- [LLM-Cave: A benchmark and light environment for large language models reasoning and decision-making system](https://arxiv.org/abs/2511.22598)：引入 LLM-Cave 轻量环境评测推理和决策，让模型处理有状态任务，而不只是回答静态问题。
 - [CrossWordBench](https://openreview.net/forum?id=bJCQMKwPVq)：评什么：面向 LLM 与 LVLM 的可控生成谜题推理。核心思想：生成类似填字游戏的任务并调节难度，使推理表现不再只依赖固定静态谜题集。
+- [CrossWordBench: Evaluating the Reasoning Capabilities of LLMs and LVLMs with Controllable Puzzle Generation](https://arxiv.org/abs/2504.00043)：生成可控 crossword 式谜题，评测文本与视觉约束的交互推理。
 - [ENIGMATA-Eval](https://papers.neurips.cc/paper_files/paper/2025/hash/058460c719f190500568b341bd06875f-Abstract-Conference.html)（[项目页](https://seed-enigmata.github.io/)）：评什么：可生成、可验证的逻辑谜题推理。核心思想：用 36 类 puzzle family 同时服务 RLVR 训练和独立评测，强调问题可程序生成、答案可验证和难度可控。
+- [Beware of Reasoning Overconfidence: Pitfalls in the Reasoning Process for Multi-solution Tasks](https://arxiv.org/abs/2512.01725)：评测多解推理和过度自信；核心思想是检查模型能否给出多样且完整的解集，而不是自信地给出一个局部答案。
+- [AsymPuzl: An Asymmetric Puzzle for multi-agent cooperation](https://arxiv.org/abs/2512.03466)：面向信息不对称合作的双 agent puzzle benchmark；核心思想是隔离评测 agent 能否共享互补观察并通过沟通收敛，而不是依赖开放式角色扮演。
+- [TaskEval: Synthesised Evaluation for Foundation-Model Tasks](https://arxiv.org/abs/2512.04442)：从任务 meta-model、人类反馈协议和 eval synthesizer 合成任务专属评测器，并在图表抽取和文档问答上演示。
+- [LexGenius: An Expert-Level Benchmark for Large Language Models in Legal General Intelligence](https://arxiv.org/abs/2512.04578)：一个专家级中文法律通用智能基准；核心思路是按维度、任务和能力组织法律评估，而不是只看最终答案准确率。
+- [Towards A Cultural Intelligence and Values Inferences Quality Benchmark for Community Values and Common Knowledge](https://arxiv.org/abs/2512.05176)：提出 CIVIQ，将 KorNAT 式国家 alignment benchmark 改造成面向美国 community values 与 common knowledge 的文化智能评测。
+- [MM-CoT:A Benchmark for Probing Visual Chain-of-Thought Reasoning in Multimodal Models](https://arxiv.org/abs/2512.08228)：提供可复用评测目标、排行榜或测量协议。
+- [Reasoning Models Ace the CFA Exams](https://arxiv.org/abs/2512.08270)：用 CFA 考试评估推理模型的专业推理能力。
+- [Causal Judge Evaluation: Calibrated Surrogate Metrics for LLM Systems](https://arxiv.org/abs/2512.11150)：用校准 surrogate metric 估计 LLM 系统改动的因果效应，区分 judge 分数变化和真实质量提升。
+- [LoopBench: Discovering Emergent Symmetry Breaking Strategies with LLM Swarms](https://arxiv.org/abs/2512.13713)：评测 LLM swarms 在分布式 symmetry breaking 中的协调能力；核心思想是用受限图着色协作任务测试元认知、通信与群体推理。
+- [Assessing the Visual Enumeration Abilities of Specialized Counting Architectures and Vision-Language Models](https://arxiv.org/abs/2512.15254)：评估视觉语言模型和专用计数架构的视觉枚举能力。
+- [S3IT Spatial Social Intelligence](https://arxiv.org/abs/2512.19992)：评测空间情境中的社会智能推理，把人物关系、位置和社会意图放入同一测试。
+- [The Drill-Down and Fabricate Test (DDFT): A Protocol for Measuring Epistemic Robustness in Language Models](https://arxiv.org/abs/2512.23850)：用于测量认知鲁棒性的 drill-down 协议；核心思想是在连续追问压力下检验模型能否区分已知事实和编造细节。
+- [Do Large Language Models Know What They Are Capable Of?](https://arxiv.org/abs/2512.24661)：可作为通用推理的Bench候选；核心关注“Do Large Language Models Know What They Are Capable Of?”。
+- [ChaosBench-Logic](https://arxiv.org/abs/2601.01982)：评什么：混沌动力系统上的逻辑与符号推理。核心思想：用确定但难预测的系统测试形式推理，避免把看似随机的输出误当作普通模式匹配。
+- [Tape: A Cellular Automata Benchmark for Evaluating Rule-Shift Generalization in Reinforcement Learning](https://arxiv.org/abs/2601.04695)：用 cellular automata 任务测试强化学习中的规则迁移泛化，衡量策略在转移规则变化时能否适应。
+- [Evaluative Fingerprints: Stable and Systematic Differences in LLM Evaluator Behavior](https://arxiv.org/abs/2601.05114)：分析 3,240 次 LLM judge 评测，揭示稳定的评测器 fingerprint，包括 judge 间分歧、严厉程度、证据行为和 rubric 分数模式。
+- [Measuring Iterative Temporal Reasoning with Time Puzzles](https://arxiv.org/abs/2601.07148)：用基于约束的日期谜题衡量迭代时间推理，并包含工具或网页搜索辅助多步时间推断的设置。
+- [Judging Against the Reference: Uncovering Knowledge-Driven Failures in LLM-Judges on QA Evaluation](https://arxiv.org/abs/2601.07506)：展示当参考答案与参数知识冲突时 reference-conditioned LLM judge 会失败，用于测试 QA 评测中的知识驱动偏差。
+- [Structure First, Reason Next: Enhancing a Large Language Model using Knowledge Graph for Numerical Reasoning in Financial Documents](https://arxiv.org/abs/2601.07754)：主要提出知识图谱增强的金融文档数值推理方法，属于模型侧增强而非独立 benchmark。
+- [Kinship Data Benchmark for Multi-hop Reasoning](https://arxiv.org/abs/2601.07794)：生成带婚姻约束的文化特定族谱，并提出多跳亲属关系问题，测试家族结构规则下的关系组合。
+- [CAUSALT3](https://arxiv.org/abs/2601.08258)：评什么：迎合与过度怀疑条件下的因果判断。核心思想：用策划因果推理题暴露模型在社会压力或反向 framing 下放弃合理因果推断的情况。
+- [ErrEval: Error-Aware Evaluation for Question Generation through Explicit Diagnostics](https://arxiv.org/abs/2601.10406)：为问题生成错误加入显式诊断，识别幻觉、答案不匹配等失败类型，而不是合并成单一分数。
+- [Are LLMs Smarter Than Chimpanzees? An Evaluation on Perspective Taking and Knowledge State Estimation](https://arxiv.org/abs/2601.12410)：评测视角采择与知识状态估计，为 theory-of-mind 推理补充需要根据主体信念预测行动的测试。
+- [Unseen Theory-of-Computation Tasks](https://arxiv.org/abs/2601.13392)：评什么：未见过的计算理论问题推理。核心思想：用新的形式计算任务区分概念推理和对教材或 benchmark 模式的记忆。
+- [Reasoning or Pattern Matching?](https://arxiv.org/abs/2601.13705)：评什么：大视觉语言模型的视觉谜题推理。核心思想：用可控谜题变体区分真正的视觉推理和捷径式模式匹配。
+- [CogToM: A Comprehensive Theory of Mind Benchmark inspired by Human Cognition for Large Language Models](https://arxiv.org/abs/2601.15628)：CogToM 是受人类认知启发的 Theory of Mind 基准，按发展心理类别和难度组织心理状态任务。
+- [LOGICAL-COMMONSENSEQA: A Benchmark for Logical Commonsense Reasoning](https://arxiv.org/abs/2601.16504)：将常识问答重构为 statement pair 上的逻辑组合任务，使用 AND、OR 和 NEITHER/NOR plausibility operators。
+- [A Syllogistic Probe: Tracing the Evolution of Logic Reasoning in Large Language Models](https://arxiv.org/abs/2601.17426)：通过三段论推理任务探测大语言模型逻辑推理能力的演化。
+- [JaxARC: A High-Performance JAX-based Environment for Abstraction and Reasoning Research](https://arxiv.org/abs/2601.17564)：实现无状态 JAX ARC 环境，支持大规模并行、多 ARC 数据集、灵活动作空间、wrapper 和可复现实验配置，用于大规模 RL 式抽象推理研究。
+- [TSRBench](https://arxiv.org/abs/2601.18744)：评测 generalist model 的多模态时间序列推理。核心思想：在 14 个领域组织感知、推理、预测和决策任务，检验模型能否把语义推理与数值时间模式结合起来。
+- [OPT-Engine](https://arxiv.org/abs/2601.19924)：评测内容：LLM 在可控复杂度下的优化建模能力。核心思想：将典型运筹优化问题从线性规划扩展到混合整数规划，用来诊断建模、约束遵循和 solver-integrated reasoning 的失败点。
+- [Persona Prompting as a Lens on LLM Social Reasoning](https://arxiv.org/abs/2601.20757)：用人格提示作为探测大模型社会推理的工具。
+- [Failing to Explore](https://arxiv.org/abs/2601.22345)：评什么：评测有限交互预算下的探索行为。核心思想：用可控的连续和离散交互环境检查语言模型是否能发现有用行动，而不是过早利用脆弱的局部假设。
+- [Models Know Models Best: Evaluation via Model-Preferred Formats](https://arxiv.org/abs/2601.22699)：评测多选题格式效应，用基于模型偏好信号训练的分类器在 symbol-based 与 cloze-style 评分之间选择。
+- [ASP-Bench: From Natural Language to Logic Programs](https://arxiv.org/abs/2602.01171)：引入 ASP-Bench，包含 128 个自然语言问题实例，用于评测将规格转成 Answer Set Programs，并由参考验证器检查。
+- [EvalQReason: A Framework for Step-Level Reasoning Evaluation in Large Language Models](https://arxiv.org/abs/2602.02295)：提供逐步推理评测框架；核心思想是在中间步骤评估推理轨迹，而不是把推理质量压缩成答案正确与否。
+- [Understanding Multi-Agent LLM Frameworks: A Unified Benchmark and Experimental Analysis](https://arxiv.org/abs/2602.03128)：评什么：统一评测并分析多 agent LLM framework 的协作模式和收益。
+- [VRIQ](https://arxiv.org/abs/2602.05382)：评什么：VLM 的视觉推理 IQ。核心思想：同时测试非语言抽象推理和自然图像推理，避免把视觉智能简化为物体识别或纯文本逻辑。
+- [Learning to Judge: LLMs Designing and Applying Evaluation Rubrics](https://arxiv.org/abs/2602.08672)：测试 LLM 是否能自行设计并应用评测 rubric，衡量模型定义标准的一致性和可靠性。
+- [Are Language Models Sensitive to Morally Irrelevant Distractors?](https://arxiv.org/abs/2602.09416)：通过向情境加入与道德无关的干扰项测试 moral reasoning 鲁棒性，衡量规范事实不变时模型判断是否仍会漂移。
+- [MILE-RefHumEval: A Reference-Free, Multi-Independent LLM Framework for Human-Aligned Evaluation](https://arxiv.org/abs/2602.09624)：引入 MILE-RefHumEval，无参考地集成多个独立提示的 LLM evaluator，并使用 human-aligned 的离散和连续评分 schema。
+- [Linear-LLM-SCM: Benchmarking LLMs for Coefficient Elicitation in Linear-Gaussian Causal Models](https://arxiv.org/abs/2602.10282)：评测大模型在线性高斯结构因果模型中的系数引出能力。
 - [GENIUS](https://arxiv.org/abs/2602.11144)：评估统一多模态模型的生成式流体智能。核心思路是测试模式归纳、约束推理和对新颖视觉生成任务的适应能力，而不只考察已学习视觉模式的复现。
+- [BaziQA-Benchmark](https://arxiv.org/abs/2602.12889)：评什么：符号推理与时间组合推理。核心思想：用结构化、时间依赖的问题暴露模型在时间组合和规则应用上的失败。
+- [MATEO: A Multimodal Benchmark for Temporal Reasoning and Planning in LVLMs](https://arxiv.org/abs/2602.14589)：MATEO 评测 LVLM 的多模态时间推理与规划，要求模型从视觉时间证据中排序事件并规划动作。
+- [On the Out-of-Distribution Generalization of Reasoning in Multimodal LLMs for Simple Visual Planning Tasks](https://arxiv.org/abs/2602.15460)：评测视觉规划任务上多模态推理的分布外泛化；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [The Token Games](https://arxiv.org/abs/2602.17831)：通过模型互相出题的 puzzle duel 评测推理能力。核心思想：把 puzzle 表示为可验证解的 Python boolean function，并用成对 duel 结果计算模型 rating，减少对固定人工题库的依赖。
+- [Adaptive Collaboration of Arena-Based Argumentative LLMs for Explainable and Contestable Legal Reasoning](https://arxiv.org/abs/2602.18916)：用 arena-based argumentative collaboration 做法律推理，输出可解释、可争辩的论证轨迹，而不只是最终法律答案。
+- [INDUCTION](https://arxiv.org/abs/2602.18956)：评什么：一阶逻辑中的有限结构概念合成。核心思想：要求模型在有限结构上归纳形式概念，使归纳式逻辑泛化可以被显式检查。
+- [CausalFlip](https://arxiv.org/abs/2602.20094)：评什么：超越语义匹配的因果判断。核心思想：在保留或改变因果结构时翻转表层语义，检验模型是否真正跟踪因果关系而不是词面线索。
+- [CausalReasoningBenchmark: A Real-World Benchmark for Disentangled Evaluation of Causal Identification and Estimation](https://arxiv.org/abs/2602.20571)：在真实世界因果推理问题上拆分因果识别与因果效应估计，使模型在不同因果分析阶段分别得分。
+- [Evaluating Theory of Mind and Internal Beliefs in LLM-Based Multi-agent Systems](https://arxiv.org/abs/2603.00142)：评测通用推理与社会推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [TACIT Benchmark](https://arxiv.org/abs/2603.00206)：评什么：覆盖空间、因果、逻辑、图和计数任务的程序化视觉推理。核心思想：生成可控视觉任务，使生成式和判别式模型都能在可验证结构下评测。
+- [CollabEval: Enhancing LLM-as-a-Judge via Multi-Agent Collaboration](https://arxiv.org/abs/2603.00993)：评估通过多智能体协作改进 LLM-as-judge，衡量协作式评审是否减少偏差和评价不一致。
+- [Pencil Puzzle Bench](https://arxiv.org/abs/2603.02119)：评什么：纸笔谜题中的多步可验证推理。核心思想：用确定性谜题规则和逐步检查测试约束维护，而不只看最终答案是否貌似合理。
+- [Reasoning Core](https://arxiv.org/abs/2603.02208)：可程序生成的可验证符号推理任务套件；核心思想是用外部求解器生成并验证 PDDL planning、一阶逻辑、语法、因果和方程任务，可同时服务评测、课程学习和强化学习奖励。
+- [Engineering Reasoning and Instruction (ERI) Benchmark: A Large Taxonomy-driven Dataset for Foundation Models and Agents](https://arxiv.org/abs/2603.02239)：评测跨工程领域、子领域和意图类型的工程推理与指令能力；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [NeuroCognition](https://arxiv.org/abs/2603.02540)：评测 LLM 与多模态模型的基础认知能力；核心思想是把 Raven 式关系推理、空间工作记忆和 Wisconsin Card Sorting 式认知灵活性改造成可扩展测试，补充普通任务完成率 benchmark。
+- [ITLC at SemEval-2026 Task 11: Normalization and Deterministic Parsing for Formal Reasoning in LLMs](https://arxiv.org/abs/2603.02676)：描述 SemEval Task 11 系统，用 normalization 和 deterministic parsing 处理形式推理输入，并与 shared-task 协议输出对齐评测。
+- [Prompt-Dependent Ranking of Large Language Models with Uncertainty Quantification](https://arxiv.org/abs/2603.03336)：在提示相关不确定性量化下排序大模型。
+- [T2S-Bench](https://arxiv.org/abs/2603.03790)：评什么：文本到结构的推理。核心思想：要求模型把自然语言转换成结构化表示，并结合 Structure-of-Thought prompting 诊断失败位置。
+- [Same Input, Different Scores: A Multi Model Study on the Inconsistency of LLM Judge](https://arxiv.org/abs/2603.04417)：通过让多个 judge 模型评分同一输入研究 LLM judge 不一致性，量化同一回答何时获得不同评价。
+- [X-RAY](https://arxiv.org/abs/2603.05290)：评什么：面向 LLM 推理函数的校准形式化探针。核心思想：用经过验证的探针族映射推理能力，而不是只依赖任务准确率汇总。
+- [Evaluation of Deontic Conditional Reasoning in Large Language Models: The Case of Wason's Selection Task](https://arxiv.org/abs/2603.06416)：构建含 deontic 与 descriptive conditionals 的 Wason Selection Task 数据集，比较规则类型效应和 matching-bias 错误。
+- [Beyond Scaling: Assessing Strategic Reasoning and Rapid Decision-Making Capability of LLMs in Zero-sum Environments](https://arxiv.org/abs/2603.09337)：它提供通用推理、视觉谜题或结构化推理评测，适合补充 general reasoning Bench。
+- [EsoLang-Bench](https://arxiv.org/abs/2603.09678)：评什么：在小众 esoteric programming languages 上的分布外算法推理。核心思想：把同一批编程题翻译成不熟悉但图灵完备的语言，降低模型依赖 Python 或 JavaScript 记忆模式的空间。
+- [The Dunning-Kruger Effect in Large Language Models: An Empirical Study of Confidence Calibration](https://arxiv.org/abs/2603.09985)：评估 Dunning-Kruger 式置信度校准行为，比较不同能力水平下模型自信程度与任务准确率。
+- [Evaluating Adjective-Noun Compositionality in LLMs: Functional vs Representational Perspectives](https://arxiv.org/abs/2603.09994)：从功能和表征两个视角评测 adjective-noun compositionality，测试模型能否系统组合修饰词与名词。
+- [Quantal Response Equilibrium as a Measure of Strategic Sophistication: Theory and Validation for LLM Evaluation](https://arxiv.org/abs/2603.10029)：提出用 quantal response equilibrium 衡量 LLM 的策略成熟度，把通用推理评测落到博弈论中偏离完全理性均衡的行为模式上。
+- [SemBench: A Universal Semantic Framework for LLM Evaluation](https://arxiv.org/abs/2603.11687)：提出用于 LLM 评估的通用语义框架。
+- [MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning](https://arxiv.org/abs/2603.12266)：评测程序可验证的视觉 grounded 组合推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [Omanic](https://arxiv.org/abs/2603.16654)：评什么：带子问题分解与中间答案标注的开放域多跳推理。核心思想：把逐步标注作为诊断单位，使推理失败能在最终答案评分前被定位。
+- [TurnWise: The Gap between Single- and Multi-turn Language Model Capabilities](https://arxiv.org/abs/2603.16759)：评估单轮和多轮语言模型能力之间的差距；核心思想是检验模型在交互展开时能否保持状态、约束和推理质量。
+- [PJB: A Reasoning-Aware Benchmark for Person-Job Retrieval](https://arxiv.org/abs/2603.17386)：PJB 用 reasoning-aware 的人岗匹配任务评测 person-job retrieval，要求模型把候选证据与岗位约束对齐，而非关键词检索。
+- [GAIN: A Benchmark for Goal-Aligned Decision-Making of Large Language Models under Imperfect Norms](https://arxiv.org/abs/2603.18469)：引入 GAIN，包含招聘、客服、广告和金融四域 1,200 个场景，在五类上下文压力下测试 norm-goal 权衡。
+- [Generative Active Testing: Efficient LLM Evaluation via Proxy Task Adaptation](https://arxiv.org/abs/2603.19264)：通过代理任务自适应提高大模型评测的数据效率。
+- [COINBench: Moving Beyond Individual Perspectives to Collective Intent Understanding](https://arxiv.org/abs/2603.21329)：可作为general reasoning方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [IslamicMMLU: A Benchmark for Evaluating LLMs on Islamic Knowledge](https://arxiv.org/abs/2603.23750)：评测涵盖古兰经、圣训和教法学轨道的伊斯兰知识评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
 - [ARC-AGI-3](https://arxiv.org/abs/2603.24621)（[官方页](https://arcprize.org/arc-agi/3/)；[开发者工具](https://github.com/arcprize/ARC-AGI-3-Agents)）：评什么：交互式程序归纳与小游戏式任务求解；核心思想：把 ARC 从静态 grid completion 推向可行动环境，要求 agent 通过观察、试探、状态记忆和策略搜索学习新规则。
+- [Gaze patterns predict preference and confidence in pairwise AI image evaluation](https://arxiv.org/abs/2603.24849)：研究成对 AI 图像评价中的 gaze patterns，将人类注意、偏好和置信度信号联系起来；它更像评价行为研究而非通用 LLM 推理基准。
+- [Competition and Cooperation of LLM Agents in Games](https://arxiv.org/abs/2604.00487)：通过游戏任务研究 LLM 智能体的竞争与合作行为。
+- [CRIT](https://arxiv.org/abs/2604.01634)：评测自然图像、视频和富文本来源上的跨模态多跳推理。核心思想：用图生成需要视觉与文本证据互补的任务，并通过人工验证测试集诊断推理链是否真正 grounded 在相关模态证据上。
+- [Evaluating the Formal Reasoning Capabilities of Large Language Models through Chomsky Hierarchy](https://arxiv.org/abs/2604.02709)：以 Chomsky hierarchy 系统评测 formal reasoning，属于通用形式推理 benchmark。
+- [DeltaLogic: Minimal Premise Edits Reveal Belief-Revision Failures in Logical Reasoning Models](https://arxiv.org/abs/2604.02733)：在逻辑推理题中使用 minimal premise edits 测试信念修正，衡量模型是否会随小幅前提变化更新结论。
+- [Analysis of Optimality of Large Language Models on Planning Problems](https://arxiv.org/abs/2604.02910)：通过将生成计划与规划问题约束下的合法解和最优解对比，分析 LLM planning optimality。
 - [DeonticBench](https://arxiv.org/abs/2604.04443)：评什么：在显式规则下围绕义务、许可和禁止进行推理。核心思想：在法律与政策式场景中测试长上下文规则推理，并可选择把规则翻译成可执行 Prolog 轨迹。
+- [Personalized RewardBench: Evaluating Reward Models with Human Aligned Personalization](https://arxiv.org/abs/2604.07343)：将 RewardBench 扩展到个性化设置，测试 reward model 是否按个人偏好而非单一聚合偏好排序输出。
+- [Robust Reasoning Benchmark](https://arxiv.org/abs/2604.08571)：评测 LLM 推理鲁棒性；核心思想是在扰动或困难变体下考察推理行为，而不只看标准准确率。
 - [CONDESION-BENCH](https://arxiv.org/abs/2604.09029)：评测组合动作空间中的条件决策能力。核心思想：要求模型在显式可行性条件下组合出有效动作，而不是从固定候选选项中做选择。
-- [General365](https://arxiv.org/abs/2604.11778)（[项目页与榜单](https://general365.github.io/)）：评什么：背景知识限制在 K-12 水平的宽泛通用推理。核心思想：用 365 道种子题和 1,095 道变体覆盖八类任务，把推理难度与专业领域知识尽量解耦。
+- [ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification](https://arxiv.org/abs/2604.10159)：引入 ODUTQA-MDC 开放域欠规范表格问答任务，要求模型先通过多轮澄清对话处理歧义表格问题。
+- [Knowledge Conflicts for Faithful LLM Reasoning](https://arxiv.org/abs/2604.11209)：评测知识冲突下的忠实推理，并配套缓解方法，使冲突处理成为推理评测中的显式目标。
+- [METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](https://arxiv.org/abs/2604.11502)：跨多个上下文层级评估因果推理，测试模型能否连接局部证据、广义语境和反事实含义，而不是依赖孤立线索作答。
+- [General365](https://arxiv.org/abs/2604.11778)（[项目页](https://general365.github.io/)；[榜单](https://general365.github.io/#leaderboard)）：评什么：背景知识限制在 K-12 水平的宽泛通用推理。核心思想：用 365 道种子题和 1,095 道变体覆盖八类任务，把推理难度与专业领域知识尽量解耦。
+- [Evaluating Relational Reasoning in LLMs with REL](https://arxiv.org/abs/2604.12176)：可作为general reasoning方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Topology-Aware Reasoning over Incomplete Knowledge Graph with Graph-Based Soft Prompting](https://arxiv.org/abs/2604.12503)：主要提出用于不完整知识图谱问答的 graph-based soft prompting，并在四个 multi-hop KBQA benchmark 上评测，而不是新增 benchmark。
+- [Complexity-Induced Limits](https://arxiv.org/abs/2604.13371)：评估有限离散状态空间问题中的推理鲁棒性。核心思想是在 SAT、图着色、汉诺塔、数独、魔方等任务中系统提高复杂度，并用确定性验证器只接受完全合法的解。
+- [On Cost-Effective LLM-as-a-Judge Improvement Techniques](https://arxiv.org/abs/2604.13717)：在 RewardBench 2 上比较 ensemble scoring、criteria injection、calibration context 和 adaptive escalation，改进 LLM judge 成本-准确率权衡。
 - [LongCoT](https://arxiv.org/abs/2604.14140)：评什么：专家设计题中的长程 chain-of-thought 推理。核心思想：在最终答案可验证的前提下，隔离模型管理大量相互依赖推理步骤时的失败。
+- [DPrivBench: Benchmarking LLMs'Reasoning for Differential Privacy](https://arxiv.org/abs/2604.15851)：评测LLM 对差分隐私设计与验证的推理能力；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [How Hypocritical Is Your LLM judge? Listener-Speaker Asymmetries in the Pragmatic Competence of Large Language Models](https://arxiv.org/abs/2604.15873)：通过比较 listener 和 speaker 角色测试语用评测不对称，衡量 LLM judge 是否一致应用会话标准。
+- [EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions](https://arxiv.org/abs/2604.16456)：评什么：评测全双工交互中断下的状态更新推理；核心思想是检查模型能否在用户和系统轮次重叠时保持并修正状态。
+- [ArgBench: Benchmarking LLMs on Computational Argumentation Tasks](https://arxiv.org/abs/2604.17366)：引入 ArgBench，将 33 个论证数据集合并为 46 个任务，覆盖论证挖掘、质量评估、推理和生成。
+- [Heterogeneity in Formal Linguistic Competence of Language Models: Is Data the Real Bottleneck?](https://arxiv.org/abs/2604.17930)：用受控语言任务评测形式语言能力异质性，考察数据暴露而非架构是否解释能力差距。
+- [MIRROR: A Hierarchical Benchmark for Metacognitive Calibration in Large Language Models](https://arxiv.org/abs/2604.19809)：MIRROR 以多层级实验评测元认知校准，适合 General Reasoning Bench。
+- [DialToM: A Theory of Mind Benchmark for Forecasting State-Driven Dialogue Trajectories](https://arxiv.org/abs/2604.20443)：通过让模型根据心理状态画像预测一致的对话轨迹来评测 Theory of Mind，区分状态识别与功能性使用。
+- [Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation](https://arxiv.org/abs/2604.20749)：评测情境化对话推荐，要求模型先从对话上下文推断动态和隐含用户偏好，再进行推荐。
+- [OptiVerse: A Comprehensive Benchmark towards Optimization Problem Solving](https://arxiv.org/abs/2604.21510)：评测跨数学规划、组合优化和实现场景的优化问题求解；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Judging the Judges: A Systematic Evaluation of Bias Mitigation Strategies in LLM-as-a-Judge Pipelines](https://arxiv.org/abs/2604.23178)：系统评估 LLM-as-judge 流水线中的偏差缓解策略，对比去偏提示和协议对 judge 偏好扭曲的影响。
+- [GR-Ben: A General Reasoning Benchmark for Evaluating Process Reward Models](https://arxiv.org/abs/2605.01203)：评测跨推理和决策任务的过程奖励模型通用推理评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [AMSnet-q: Unsupervised Circuit Identification and Performance Labeling for AMS Circuits](https://arxiv.org/abs/2605.01404)：贡献模拟与混合信号电路的无监督识别和性能标注，属于电子设计自动化而非通用推理评测。
 - [SOTOPIA-TOM](https://arxiv.org/abs/2605.02307)：通过心智理论场景评估多智能体互动中的信息管理能力，将社会智能体评测从表层对话质量扩展到信息状态推理。
+- [Revisiting Graph-Tokenizing Large Language Models: A Systematic Evaluation of Graph Token Understanding](https://arxiv.org/abs/2605.03514)：系统评估图 token 化大模型的图 token 理解能力。
+- [NoisyCausal: A Benchmark for Evaluating Causal Reasoning Under Structured Noise](https://arxiv.org/abs/2605.04313)：NoisyCausal 评测结构化噪声下的因果推理，测试模型能否从混杂因素和 noisy observations 中分离真实因果信号。
+- [Causal Probing for Internal Visual Representations in Multimodal Large Language Models](https://arxiv.org/abs/2605.05593)：对多模态 LLM 内部视觉表征做因果探针分析，更像模型诊断探针，后续应考虑路由到多模态模型诊断。
+- [Causal Reinforcement Learning for Complex Card Games: A Magic The Gathering Benchmark](https://arxiv.org/abs/2605.06066)：用 Magic: The Gathering 作为因果强化学习基准，在干预和复杂状态转移下测试战略卡牌决策。
+- [ScaleLogic](https://arxiv.org/abs/2605.06638)：在可控难度下评测和训练长程逻辑推理；核心思想是独立调节证明深度和逻辑表达力，从而在可验证任务上观察强化学习扩展规律。
+- [NSMQ Riddles: A Benchmark of Scientific and Mathematical Riddles for Quizzing Large Language Models](https://arxiv.org/abs/2605.07051)：评测用于测试非西方科学和数学推理覆盖度的谜题 benchmark；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [From 0-Order Selection to 2-Order Judgment: Combinatorial Hardening Exposes Compositional Failures in Frontier LLMs](https://arxiv.org/abs/2605.07268)：可作为general reasoning方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Mathematical Reasoning via Intervention-Based Time-Series Causal Discovery Using LLMs as Concept Mastery Simulators](https://arxiv.org/abs/2605.07600)：将 LLM 作为 concept mastery simulator 用于基于干预的时间序列因果发现，把数学推理评测连接到因果发现轨迹。
+- [GraphInstruct: A Progressive Benchmark for Diagnosing Capability Gaps in LLM Graph Generation](https://arxiv.org/abs/2605.09997)：GraphInstruct 是 progressive benchmark，用于诊断 LLM graph generation 能力缺口。
+- [Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](https://arxiv.org/abs/2605.12398)：用答案 plausibility score 估计题目难度，把多个貌似合理选项之间的分布和混淆程度作为 LLM 题目难度诊断。
+- [MMCL-Bench](https://arxiv.org/abs/2605.12703)：评什么：评测模型从视觉规则、流程和证据中进行多模态上下文学习的能力。核心思想：要求模型从图片、截图、手册、视频或混合教学上下文中归纳 task-local rules，并在新视觉样例上按严格 rubric 应用。
+- [CommonWhy: A Dataset for Evaluating Entity-Based Causal Commonsense Reasoning in Large Language Models](https://arxiv.org/abs/2605.12918)：评什么：entity-based causal commonsense reasoning。核心思想：要求模型把特定实体事实与显式因果常识解释连接起来，而不是只做选择题判断。
+- [Cattle Trade: A Multi-Agent Benchmark for LLM Bluffing, Bidding, and Bargaining](https://arxiv.org/abs/2605.14537)：评测多 agent 的虚张声势、竞价和讨价还价能力；核心思想是把模型放入策略交易互动中，考察谈判、对手建模和识别/使用欺骗的能力。
+- [Zero-Shot Goal Recognition with Large Language Models](https://arxiv.org/abs/2605.15333)：在经典 PDDL benchmark 上评估前沿 LLM 的零样本 goal recognition，衡量证据累积如何改变推断目标。
+- [LPDS: Evaluating LLM Robustness Through Logic-Preserving Difficulty Scaling](https://arxiv.org/abs/2605.15393)：通过在保持底层逻辑不变的前提下提升题目难度来评估 LLM 鲁棒性，使受控推理扰动下的捷径依赖更可测。
+- [PKR-QA](https://doi.org/10.1609/aaai.v40i29.39638)：评什么：问答中的过程性知识推理。核心思想：从过程知识图谱构造问题，要求模型围绕步骤、依赖关系和任务知识模块推理。
+- [Decoupling Metacognition from Cognition: A Framework for Quantifying Metacognitive Ability in LLMs](https://doi.org/10.1609/aaai.v39i24.34723)：将大模型元认知能力与任务认知分离量化。
+- [Physical Common Sense Violation Detection](https://doi.org/10.1145/3746027.3755124)：构建检测图像中物理常识违背的挑战数据集，并给出有效模型基线。
+- [A Suite of LMs Comprehend Puzzle Statements as Well or Better Than Humans](https://doi.org/10.1162/opmi.a.344)：评估语言模型对 puzzle statements 的理解能力，并与人类表现比较。
+- [WhodunitBench: Evaluating Large Multimodal Agents via Murder Mystery Games](https://doi.org/10.52202/079017-2751)：在谋杀谜案游戏中评测多模态 agent，要求整合证据、嫌疑人行为和线索来识别凶手。
+- [CT-Bench: Benchmarking Large Language Models on Chinese Text-to-Table Generation](https://doi.org/10.1145/3767695.3769492)：引入 CT-Bench 中文 text-to-table generation 基准，评测 LLM 能否把中文描述转换为正确的表格结构和内容。
+- [Multi-Dimensional Evaluation of Auto-Generated Chain-of-Thought Traces in Reasoning Models](https://doi.org/10.3390/ai7010035)：从多个维度评估自动生成的 chain-of-thought traces，评分对象是推理轨迹质量而不只是最终答案正确性。
+- [Language models cannot reliably distinguish belief from knowledge and fact](https://doi.org/10.1038/s42256-025-01113-8)：用受控 belief、knowledge 和 fact 陈述显示语言模型会混淆心理状态归因和事实真值判断。
+- [Evaluating Psychological Competency via Chinese Q&A in Large Language Models](https://doi.org/10.3390/app15169089)：用中文心理学概念问答评估 LLM 回答是否体现稳定概念理解，而不是流畅但浅层的解释。
+- [Bridging Time Gaps: Temporal Logic Relations for Enhancing Temporal Reasoning in Large Language Models](https://doi.org/10.1145/3726302.3730173)：使用 temporal-logic relation structures 测试并增强时间推理，关注模型如何连接时间表达与事件之间的间隔。
+- [A Construction Grammar Corpus of Varying Schematicity: A Dataset for the Evaluation of Abstractions in Language Models](https://doi.org/10.63317/355syr7kekqb)：用覆盖具体到图式化模式的构式语法语料，测试语言模型是否能跨构式层级表征抽象。
+- [Revisiting the Self-Consistency Challenges in Multi-Choice Question Formats for Large Language Model Evaluation](https://doi.org/10.63317/25utbi4ozviv)：通过改变题目格式和答案选项审计多选题 self-consistency，衡量等价 MCQ 呈现何时改变 LLM 输出。
+- [A publicly available benchmark for assessing large language models’ ability to predict how humans balance self-interest and the interest of others](https://doi.org/10.1038/s41598-025-01715-7)：用行为选择数据测试 LLM 能否预测人类在社会决策场景中如何权衡自利与他人利益。
+- [RLG-RAG: Guiding the Knowledge Retrieval and Evaluation in Retrieval-Augmented Generation Framework by Reasoning Logic](https://doi.org/10.1145/3701716.3715554)：引入 reasoning-logic graph 指导 RAG 检索与评测，用显式逻辑结构选择证据并评价生成答案。
+- [The Illusion of Causality in LLMs: A Developmentally Grounded Analysis of Semantic Scaffolding and Benchmark–Capability Mismatches](https://doi.org/10.3390/make8030057)：用发展心理启发的脚手架分析 LLM 的因果错觉，对照语义提示和基准设计以揭示能力错配。
+- [Transformers-as-a-Jury: Mimicking LLM-as-a-Judge Text Evaluation on Edge Devices](https://doi.org/10.1145/3770501.3770530)：用轻量 transformer jury 在边缘设备上模拟 LLM-as-a-judge 文本评测，评测轴是 judge 可靠性与部署成本。
+- [DL-ReasonSuite: A Benchmark for Evaluating Description Logic Reasoning in Large Language Models](https://doi.org/10.3390/app16041821)：引入 DL-ReasonSuite 描述逻辑推理基准，测试 LLM 在 ontology-style satisfiability、subsumption 和 entailment 任务上的表现。
+- [Multi Table QA: Evaluating Modern LLM Strategies on Table Understanding](https://doi.org/10.70267/cai.25v2n3.117142)：比较现代 LLM 策略在多表问答中的表现，重点看模型能否协调多张表证据，而不是孤立求解单表。
+- [Evaluating the Critical Thinking of Large Language Models: Insights and Limitations](https://doi.org/10.1177/18344909251406111)：通过论证分析、推断和证据评价提示评估 LLM 批判性思维，展示其超出事实问答后的局限。
+- [Evaluating Theory-of-Mind in Large Language Models Through Opponent Modeling](https://doi.org/10.1145/3717511.3747081)：用 opponent modeling 任务评估 Theory of Mind，评分模型能否在战略场景中推断另一主体的目标、信念和可能行动。
+- [TemporalCook: Benchmarking Temporal and Procedural Reasoning in Multimodal Large Language Models](https://doi.org/10.1145/3746276.3760469)：评测多模态大语言模型的时间与程序性推理能力。
+- [Large language models still struggle with false beliefs](https://doi.org/10.1038/s42256-025-01145-0)：评估大语言模型在 false-belief 任务上的局限。
+- [A Benchmark for Evaluating Cognitive Reasoning in Modern Language Models](https://doi.org/10.3390/app16041918)：用明确任务、协议或数据集评测general reasoning。
+- [A Framework for Evaluating AI Agents in Open-Ended Conversations via Scripted Simulation](https://doi.org/10.1145/3711896.3737390)：通过 scripted simulation 评测开放式对话中的 AI agents。
+- [Eliciting and Improving the Causal Reasoning Abilities of Large Language Models with Conditional Statements](https://doi.org/10.1162/coli_a_00548)：评什么：用条件句评测并改进模型因果推理能力。
+- [Chess-World-Model](https://arxiv.org/abs/2605.30100)：基于一千万盘真实棋局评测精确棋盘状态跟踪，并用真实棋局留出集与随机合法走子划分区分记忆局面和学习状态更新规则。
+- [Interactive Reasoning Games](https://arxiv.org/abs/2606.00103)：通过 474 个可执行游戏评测主动取证与信念更新，衡量多轮查询、鲁棒性与元认知适应，而不是静态选答案。
+- [SIMMER](https://arxiv.org/abs/2606.14574)：用厨房领域符号 world model、77 个动作、262 个物体和状态机 executor 检测 LLM 可执行规划中的潜在失败与不可逆失败。

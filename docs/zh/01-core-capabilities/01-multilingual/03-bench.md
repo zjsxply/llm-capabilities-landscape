@@ -1,38 +1,688 @@
 # 1.1.3 Bench
 
 - [XNLI](https://arxiv.org/abs/1809.05053)：评测跨语言自然语言推断（NLI）；核心思想是把推断题（蕴含/矛盾/中立）扩展到多语设置，测量跨语言语义对齐与推理一致性。
-- [TyDi QA](https://arxiv.org/abs/2003.05002)：评测多语言问答（更强调“母语提问”的真实性与语言多样性）；核心思想是覆盖类型学更分散的语言，并以 QA 协议测量检索/理解在跨语言下的鲁棒性。
+- [TyDi QA](https://arxiv.org/abs/2003.05002)（[排行榜](https://github.com/google-research-datasets/tydiqa/blob/master/leaderboard.md)）：评测多语言问答（更强调“母语提问”的真实性与语言多样性）；核心思想是覆盖类型学更分散的语言，并以 QA 协议测量检索/理解在跨语言下的鲁棒性。
 - [FLORES-200](https://arxiv.org/abs/2207.04672)（[开源代码](https://github.com/facebookresearch/flores)）：评测大规模多语机器翻译与跨语生成；核心思想是以高覆盖语言集合与标准化参考译文，衡量多语生成质量与跨语言迁移。
+- [German Text Embedding Clustering Benchmark](https://arxiv.org/abs/2401.02709)：评测跨领域德语文本 embedding 聚类，比较不同聚类算法、单语与多语编码器、降维策略，以及继续预训练对德语短文本聚类的影响。
+- [MiTTenS: A Dataset for Evaluating Gender Mistranslation](https://arxiv.org/abs/2401.06935)：评测 26 种语言与英语互译中的 gender mistranslation，结合人工构造的失效模式段落、合成长段落和自然领域文本，对比机器翻译系统与基础模型的有害性别误译。
+- [MAPLE: Multilingual Evaluation of Parameter Efficient Finetuning of Large Language Models](https://arxiv.org/abs/2401.07598)：用两个合成多语指令微调数据集和覆盖 40 种语言的 6 个下游任务评测 Llama-2-7B、Mistral-7B 的 PEFT，衡量低秩适配能否缩小英语与非英语性能差距。
+- [The Neglected Tails in Vision-Language Models](https://arxiv.org/abs/2401.12425)：用 LLM 统计 VLM 预训练文本中的概念同义词频次来定位长尾视觉概念，再在 CLIP、GPT-4V 和 Stable Diffusion 上测试稀有概念识别与生成失败。
+- [MT-Ranker: Reference-free machine translation evaluation by inter-system ranking](https://arxiv.org/abs/2401.17099)：把无参考 MT 评测改写为系统间成对排序：给定源句和两个候选译文，评测器判断哪一个更好，并用与人工判断的相关性验证。
+- [CIDAR: Culturally Relevant Instruction Dataset For Arabic](https://arxiv.org/abs/2402.03177)：包含 1 万组经过人工文化对齐审核的阿拉伯语 instruction-output pairs，面向阿拉伯地区语境评测和调优指令遵循，而不是依赖英语中心数据翻译。
+- [KMMLU: Measuring Massive Multitask Language Understanding in Korean](https://arxiv.org/abs/2402.11548)：构建 KMMLU，包含来自韩国原生考试的 35,030 道专家级选择题，覆盖 45 个学科，并评测 27 个开源与闭源 LLM，避免依赖英语基准翻译。
+- [NEO-BENCH: Evaluating Robustness of Large Language Models with Neologisms](https://arxiv.org/abs/2402.12261)：用近期英语新词压力测试语言时间漂移，将含新词句子与近似的替代词句子对照，覆盖机器翻译、自然语言理解任务和困惑度评测。
+- [ArabicMMLU: Assessing Massive Multitask Language Understanding in Arabic](https://arxiv.org/abs/2402.12840)（[Open Arabic LLM Leaderboard](https://huggingface.co/spaces/OALL/Open-Arabic-LLM-Leaderboard)）：用 MMLU 风格学科题和 Open Arabic LLM Leaderboard 评测阿拉伯语多任务语言理解，使阿拉伯语能力不再只依赖英语翻译基准外推。
+- [The Impact of Demonstrations on Multilingual In-Context Learning: A Multidimensional Analysis](https://arxiv.org/abs/2402.12976)：在 5 个模型家族、9 个分类与生成数据集、56 种类型学多样语言上分析多语 in-context demonstration，区分示例质量与 prompt 模板带来的影响。
+- [Enhanced Hallucination Detection in Neural Machine Translation through Simple Detector Aggregation](https://arxiv.org/abs/2402.13331)：聚合互补的神经机器翻译幻觉检测器，测试简单 detector aggregation 是否比单个检测器更可靠地发现幻觉译文。
+- [OMGEval: An Open Multilingual Generative Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2402.13524)：在中文、俄语、法语、西班牙语和阿拉伯语中每种语言提供 804 个经人工核验的开放式问题，并用本地化提示和 GPT-4 裁判评分评测生成式 LLM。
+- [Multi-FAct: Assessing Multilingual LLMs' Multi-Regional Knowledge using FActScore](https://arxiv.org/abs/2402.18045)：把 FActScore 式长文本事实性评测扩展到多语 LLM 输出，结合非英语 Wikipedia 和区域多样主题，检验英语之外生成内容的事实准确性。
+- [An Improved Traditional Chinese Evaluation Suite for Foundation Model](https://arxiv.org/abs/2403.01858)：提出 TMMLU+，这是繁体中文选择题基准，覆盖从小学到专业级的 66 个学科，规模为 TMMLU 的 6 倍且分布更均衡，并评测闭源模型和 26 个开源中文 LLM。
+- [IndicVoices: Towards building an Inclusive Multilingual Speech Dataset for Indian Languages](https://arxiv.org/abs/2403.01926)：发布 IndicVoices，包含 22 种印度语言、145 个地区、16,237 名说话人的 7,348 小时自然语音，其中 1,639 小时已转写，并配套标准化采集与转写协议。
+- [Evaluating the Elementary Multilingual Capabilities of Large Language Models with MultiQ](https://arxiv.org/abs/2403.03814)：提供覆盖 137 种语言的 2.74 万个开放问答题，同时报告答案准确率和语言忠实度，区分模型是否知道答案与是否用提示语言作答。
+- [A Measure for Transparent Comparison of Linguistic Diversity in Multilingual NLP Data Sets](https://arxiv.org/abs/2403.03909)：提出相对于参考语言样本的特征集合 Jaccard 多样性分数，结合类型学数据库和文本自动特征，指出数据集缺失的结构性语言类型。
+- [SeeGULL Multilingual: a Dataset of Geo-Culturally Situated Stereotypes](https://arxiv.org/abs/2403.05696)：构建 SeeGULL Multilingual，包含 20 种语言中 25,000 多条地理文化定位的刻板印象，并有 23 个地区的人类标注，用于多语安全与公平评测。
+- [GlossLM: A Massively Multilingual Corpus and Pretrained Model for Interlinear Glossed Text](https://arxiv.org/abs/2403.06399)：汇集 1,800 种语言的 45 万多个 interlinear glossed text 样例，规范化形态句法标签，并评测 IGT 生成以支持跨语言迁移和语言记录。
+- [CLIcK: A Benchmark Dataset of Cultural and Linguistic Intelligence in Korean](https://arxiv.org/abs/2403.06412)：使用来自韩国官方考试和教材的 1,995 个问答对，按语言与文化大类划分并标注所需知识点，评测 13 个语言模型的韩语文化与语言智能。
+- [Is Context Helpful for Chat Translation Evaluation?](https://arxiv.org/abs/2403.08314)：对机器翻译聊天场景中的自动指标做元评测，比较有参考与无参考指标，并分析对话上下文何时能提升与人工判断的相关性，尤其关注非英语方向。
+- [DIALECTBENCH: A NLP Benchmark for Dialects, Varieties, and Closely-Related Languages](https://arxiv.org/abs/2403.11009)：汇总 281 个方言、变体和近缘语言上的 10 类文本级 NLP 任务，用于衡量标准语与非标准变体之间的性能差距。
+- [Lost in Translation? Translation Errors and Challenges for Fair Assessment of Text-to-Image Models on Multilingual Concepts](https://arxiv.org/abs/2403.11092)：审计 CoCo-CroLa 多语文生图提示，修正西班牙语、日语和中文翻译错误，重新评测基线 T2I 模型，并用文本相似度预测图像基准结果受影响程度。
+- [A New Massive Multilingual Dataset for High-Performance Language Technologies](https://arxiv.org/abs/2403.14009)：HPLT 提供 75 种语言的多语网页单语语料，含约 5.6 万亿去重词 token，并配套覆盖 18 个语对、9,600 万对齐句对的英语中心平行语料。
+- [KazQAD: Kazakh Open-Domain Question Answering Dataset](https://arxiv.org/abs/2404.04487)：发布哈萨克语 ODQA 基准，包含近 6,000 个独立问题、约 1.2 万个段落相关性判断、80 万段哈萨克语维基语料，并给出检索、阅读理解和完整 ODQA 基线。
+- [MLaKE: Multilingual Knowledge Editing Benchmark for Large Language Models](https://arxiv.org/abs/2404.04990)：用英语、中文、日语、法语和德语中的 4,072 个多跳问题与 5,360 个单跳问题评测多语言知识编辑，题型包含自由生成和选择式事实链查询。
+- [Khayyam Challenge (PersianMMLU): Is Your LLM Truly Wise to The Persian Language?](https://arxiv.org/abs/2404.06644)：构建 Khayyam Challenge / PersianMMLU，包含来自 38 类考试任务的 20,192 道波斯语四选一题，覆盖不同学段、学科、难度元数据、人类作答率和解析。
+- [XNLIeu: a dataset for cross-lingual NLI in Basque](https://arxiv.org/abs/2404.06996)：先机器翻译再由专业人员后编辑，将 XNLI 扩展到巴斯克语，并比较单语与多语 LLM 的巴斯克语 NLI 策略及翻译构造测试集的影响。
+- [Heron-Bench: A Benchmark for Evaluating Vision Language Models in Japanese](https://arxiv.org/abs/2404.07824)：用面向日本语境构造的图像问答对评测日语 VLM 能力，并按能力维度比较日语基线 VLM 与 GPT-4V 等闭源强模型的差距。
+- [Quantifying Multilingual Performance of Large Language Models Across Languages](https://arxiv.org/abs/2404.11553)：量化大语言模型跨语言表现，为多语言能力差距提供评测证据。
+- [NormAd: A Framework for Measuring the Cultural Adaptability of Large Language Models](https://arxiv.org/abs/2404.12464)：提出 NormAd 与 NormAd-Eti，包含 75 个国家社交礼仪规范的 2,600 个情境，用抽象价值到具体社会规范不同层级测试 LLM 的文化适应性和可接受性判断。
+- [CultureBank: An Online Community-Driven Knowledge Base Towards Culturally Aware Language Technologies](https://arxiv.org/abs/2404.15238)：从 TikTok 的 1.2 万条和 Reddit 的 1.1 万条用户自述中构建文化描述符与情境，用 CultureBank 评测 LLM 文化意识和微调后的零样本迁移。
+- [WorldValuesBench: A Large-Scale Benchmark Dataset for Multi-Cultural Value Awareness of Language Models](https://arxiv.org/abs/2404.16308)：基于 World Values Survey 中 94,728 名参与者的回答构造 2,000 多万个价值预测样例，让模型依据人口统计语境和价值问题生成评分。
+- [IndicGenBench: A Multilingual Benchmark to Evaluate Generation Capabilities of LLMs on Indic Languages](https://arxiv.org/abs/2404.16816)：覆盖 29 种印度语言、13 种文字和 4 个语族，包含人工整理的生成任务，如跨语言摘要、机器翻译和跨语言问答。
+- [Evaluation of geographical distortions in language models](https://arxiv.org/abs/2404.17401)：提出四个对比地理距离与语义距离的指标，在 10 个语言模型上检测空间知识扭曲和地理表征偏差。
+- [Evaluation of Few-Shot Learning for Classification Tasks in the Polish Language](https://arxiv.org/abs/2404.17832)：定义由 7 个波兰语原生分类任务组成的 few-shot 基准，在 0-shot 与 16-shot 设置下比较微调、线性探测、SetFit 和上下文学习，以及商业与开源模型。
+- [101 Billion Arabic Words Dataset](https://arxiv.org/abs/2405.01590)：从 Common Crawl WET 文件中挖掘并清洗 1,010 亿阿拉伯语词，减少阿拉伯语 LLM 对英语翻译数据的依赖，并提供原生区域阿拉伯语文本用于训练与评测。
+- [Bridging the Bosphorus: Advancing Turkish Large Language Models through Strategies for Low-Resource Language Adaptation and Benchmarking](https://arxiv.org/abs/2405.04685)：研究土耳其语低资源 LLM 适配，比较英语预训练模型转适配与土耳其语从头预训练，并在数据稀缺约束下评测土耳其语指令微调和语言能力。
+- [From Human Judgements to Predictive Models: Unravelling Acceptability in Code-Mixed Sentences](https://arxiv.org/abs/2405.05572)：研究 code-mixed 句子可接受性的人工判断与预测模型。
+- [Evaluating Dialect Robustness of Language Models via Conversation Understanding](https://arxiv.org/abs/2405.05688)：把 MD3 扩展为面向美国英语和印度英语会话理解的 M-MD3，用目标词预测与目标词选择任务衡量 Llama3、GPT-4 和 GPT-3.5 的方言鲁棒性差距。
+- [PL-MTEB: Polish Massive Text Embedding Benchmark](https://arxiv.org/abs/2405.10138)：提出 PL-MTEB，包含分类、聚类、成对分类、信息检索和语义文本相似度 5 类共 30 个波兰语 embedding 任务，并评测 30 个波兰语与多语模型。
+- [FAME-MT Dataset: Formality Awareness Made Easy for Machine Translation Purposes](https://arxiv.org/abs/2405.11942)：发布 FAME-MT，包含 112 个欧洲语对的 1,120 万条带正式/非正式标签的译文，用于让 MT 系统控制目标语语体正式度。
+- [Tagengo: A Multilingual Chat Dataset](https://arxiv.org/abs/2405.12612)：提供 74 种语言的 7 万多个 prompt-response 对，并在 6 种语言的 MT-Bench 变体上评测多语聊天微调，显示广覆盖多语数据优于只针对单一目标语言训练。
+- [M4U: Evaluating Multilingual Understanding and Reasoning for Large Multimodal Models](https://arxiv.org/abs/2405.15638)：使用 1 万个多语言多模态样本，覆盖科学、工程和医疗中的 64 个学科、16 个子领域和 6 种语言；GPT-4o 平均准确率仅 47.6%。
+- [Extending the Massive Text Embedding Benchmark to French](https://arxiv.org/abs/2405.20468)：将 MTEB 扩展到法语句向量评测，整合 15 个已有数据集和 3 个新法语数据集，覆盖 8 类任务、51 个 embedding 模型、统计检验和公开榜单。
+- [Open Ko-LLM Leaderboard: Evaluating Large Language Models in Korean with Ko-H5 Benchmark](https://arxiv.org/abs/2405.20574)（[结果](https://huggingface.co/datasets/open-ko-llm-leaderboard/results)）：介绍 Open Ko-LLM Leaderboard 与 Ko-H5 Benchmark，用私有测试集、泄漏分析、分数相关性研究和时间序列榜单追踪来评测韩语 LLM。
+- [clembench-2024: A Challenging, Dynamic, Complementary, Multilingual Benchmark and Underlying Flexible Framework for LLMs as Multi-Action Agents](https://arxiv.org/abs/2405.20859)：通过自对弈会话游戏自动评分 LLM 的指令遵循、策略目标导向和语言理解，并用动态游戏框架改变提示语言、降低数据污染风险。
+- [The Scandinavian Embedding Benchmarks: Comprehensive Assessment of Multilingual and Monolingual Text Embedding](https://arxiv.org/abs/2406.02396)：把斯堪的纳维亚语言文本 embedding 评测接入 MTEB，包含 24 个任务、10 个子任务和 4 类任务，并比较 26 个以上公开与商业模型。
+- [IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models](https://arxiv.org/abs/2406.03368)：提出 IrokoBench，覆盖 17 种低资源非洲语言，由人工翻译构建，包含自然语言推断、数学推理和知识选择题问答，并评测零样本、少样本和 translate-test 设置。
+- [Evaluating the IWSLT2023 Speech Translation Tasks: Human Annotations, Automatic Metrics, and Segmentation](https://arxiv.org/abs/2406.03881)：对 IWSLT 2023 语音翻译共享任务输出进行人工评测，采用自动重分段和带片段上下文的 direct assessment，并分析自动指标与分段影响。
+- [mCSQA: Multilingual Commonsense Reasoning Dataset with Unified Creation Strategy by Language Models and Humans](https://arxiv.org/abs/2406.04215)：通过语言模型生成、修订、验证和人工检查构建 mCSQA，面向语言特定常识问答，而不是把英语 CommonsenseQA 直接翻译成多语版本。
+- [M3GIA: A Cognition Inspired Multilingual and Multimodal General Intelligence Ability Benchmark](https://arxiv.org/abs/2406.05343)：围绕 CHC 智力模型的五个认知因素构造多语言多模态评测，覆盖英语、中文、法语、西班牙语、葡萄牙语和韩语，并加入原生文化语境数据与人类对照。
+- [CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark](https://arxiv.org/abs/2406.05967)：评测文化多样的多语言视觉问答。
+- [LINGOLY: A Benchmark of Olympiad-Level Linguistic Reasoning Puzzles in Low-Resource and Extinct Languages](https://arxiv.org/abs/2406.06196)：用 1,133 道语言学奥林匹克题构建 LingOly，覆盖 90 多种多为低资源或已灭绝语言，包含 6 种题型、5 级人类难度，并用直接准确率和无上下文基线抑制记忆捷径。
+- [MultiPragEval: Multilingual Pragmatic Evaluation of Large Language Models](https://arxiv.org/abs/2406.07736)：包含英语、德语、韩语和中文的 1,200 个语用学问题单元，并按 Grice 会话准则组织，用于测试上下文意识和隐含意义推断。
+- [Linguistic Bias in ChatGPT: Language Models Reinforce Dialect Discrimination](https://arxiv.org/abs/2406.08818)：用 10 种英语方言的母语者文本提示 GPT-3.5 Turbo 和 GPT-4，并结合语言特征标注与母语者评价，衡量刻板印象、贬损内容和默认标准语倾向。
+- [BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages](https://arxiv.org/abs/2406.09948)：评测不同文化与语言中的日常知识。
+- [SEACrowd: A Multilingual Multimodal Data Hub and Benchmark Suite for Southeast Asian Languages](https://arxiv.org/abs/2406.10118)：将 SEACrowd 建成东南亚数据枢纽，覆盖近 1,000 种语言的文本、图像和音频资源，并在 13 个任务上评测 36 种东南亚本土语言。
+- [DevBench: A multimodal developmental benchmark for language learning](https://arxiv.org/abs/2406.10215)：用 7 个词汇、句法和语义语言任务，把视觉语言模型同儿童和成人行为数据比较，同时衡量准确率和类人反应模式。
+- [Error Span Annotation: A Balanced Approach for Human Evaluation of Machine Translation](https://arxiv.org/abs/2406.11580)：提出 Error Span Annotation 机器翻译人工评测协议，将 direct assessment 的连续评分与 MQM 式错误严重度片段标注结合，以降低专家标注成本。
+- [AI-Assisted Human Evaluation of Machine Translation](https://arxiv.org/abs/2406.12419)：提出 ESA-AI 机器翻译人工评测协议，用偏召回的质量估计预填错误片段，使标注质量保持 ESA 水平，同时将每个错误片段标注时间从 71 秒降至 31 秒。
+- [Can Large Language Models Code Like a Linguist?: A Case Study in Low Resource Sound Law Induction](https://arxiv.org/abs/2406.12725)：把低资源 sound-law induction 表述为 programming-by-examples，评测 LLM 生成的 Python 音变程序，并与既有自动 SLI 方法和合成数据微调方案比较。
+- [Chumor 1.0: A Truly Funny and Challenging Chinese Humor Understanding Dataset from Ruo Zhi Ba](https://arxiv.org/abs/2406.12754)：从文化特定的弱智吧中文笑话构建 Chumor，标注解释，并通过中文母语者 A/B 测试显示人工解释优于 GPT-4o 和 ERNIE Bot。
+- [Is It Good Data for Multilingual Instruction Tuning or Just Bad Multilingual Evaluation for Large Language Models?](https://arxiv.org/abs/2406.12822)：区分原生与翻译式多语指令数据、原生与翻译式测试集，分析哪些基准类型能暴露翻译缺陷和语言特定知识缺口对多语微调的影响。
+- [On the Evaluation Practices in Multilingual NLP: Can Machine Translation Offer an Alternative to Human Translations?](https://arxiv.org/abs/2406.14267)：用 SOTA 机器翻译模型把 4 个多语 NLP 测试任务翻译到 198 种语言，分析机器翻译测试集何时会高估低资源和未见语言上的模型表现。
+- [MultiTalk: Enhancing 3D Talking Head Generation Across Languages with Multilingual Video Dataset](https://arxiv.org/abs/2406.14272)：提出多语 3D talking-head 生成任务，收集 20 种语言 420 多小时视频，加入语言特定风格 embedding，并定义多语 lip-sync 准确率指标。
+- [Leveraging LLMs for Bangla Grammar Error Correction: Error Categorization, Synthetic Data, and Model Evaluation](https://arxiv.org/abs/2406.14284)：划分 12 类孟加拉语语法错误，收集母语者真实错误，并通过规则噪声注入构造 Vaiyakarana 数据集，包含 567,422 对错误句与正确句。
+- [ExU: AI Models for Examining Multilingual Disinformation Narratives and Understanding their Spread](https://arxiv.org/abs/2406.15443)：把多语虚假信息分析聚焦到 rumour stance classification 和 claim retrieval，并用事实核查员与记者的用户需求调研约束工具设计。
+- [Disce aut Deficere: Evaluating LLMs Proficiency on the INVALSI Italian Benchmark](https://arxiv.org/abs/2406.17535)：将意大利 INVALSI 教育测评改造成自动化 LLM 评测，并把模型能力与人类在意大利学校能力测验上的表现进行对照。
+- [Spanish and LLM Benchmarks: Is MMLU Lost in Translation?](https://arxiv.org/abs/2406.17789)：分析西班牙语 MMLU 的翻译质量，指出翻译版类别分数会混合模型能力、翻译伪影以及英语源题带来的文化偏差。
+- [PrExMe! Large Scale Prompt Exploration of Open Source LLMs for Machine Translation and Summarization Evaluation](https://arxiv.org/abs/2406.18528)：提出 PrExMe，用大规模 prompt exploration 检验开源 LLM 作为机器翻译和摘要评测器的表现，面向低资源或时间受限的评测场景。
+- [From Local Concepts to Universals: Evaluating the Multicultural Understanding of Vision-Language Models](https://arxiv.org/abs/2407.00263)：提出 GlobalRG，包含覆盖 50 个国家文化多样图像的 universal concept retrieval，以及覆盖 15 个国家文化特定概念的 visual grounding 任务。
+- [Improving Multilingual Instruction Finetuning via Linguistically Natural and Diverse Datasets](https://arxiv.org/abs/2407.01853)：用单语语料、英语导向 LLM 和打分函数构造语言自然的多语指令微调数据，在多语摘要上相对翻译式数据提升 17.57%，相对模板式数据提升 15.23%。
+- [GPT-4 vs. Human Translators: A Comprehensive Evaluation of Translation Quality Across Languages, Domains, and Expertise Levels](https://arxiv.org/abs/2407.03658)：通过多轮标注，在多个语对和领域中比较 GPT-4 与初级、中级、高级人工译员的错误数量，揭示其在低资源方向和特定领域中的翻译弱点。
+- [M5 - A Diverse Benchmark to Assess the Performance of Large Multimodal Models Across Multilingual and Multicultural Vision-Language Tasks](https://arxiv.org/abs/2407.03791)：构建 M5，包含 8 个数据集、5 类视觉语言任务和 41 种语言，重点覆盖代表性不足语言与文化多样图像，用于多语多模态评测。
+- [NADI 2024: The Fifth Nuanced Arabic Dialect Identification Shared Task](https://arxiv.org/abs/2407.04910)：定义第五届细粒度阿拉伯语方言识别共享任务，用于评测方言阿拉伯语理解。
+- [A Principled Framework for Evaluating on Typologically Diverse Languages](https://arxiv.org/abs/2407.05022)：提出类型学驱动的语言采样框架和多样性指标，用于在无法覆盖全部语言时选择更有代表性的多语评测语言集合。
+- [An Empirical Study of Gendered Stereotypes in Emotional Attributes for Bangla in Multilingual Large Language Models](https://arxiv.org/abs/2407.06432)：测试闭源和开源 LLM 在孟加拉语中的性别化情绪归因，重点考察同理、恐惧、内疚、愤怒、勇敢和权威等低资源语境下的刻板印象。
+- [NativQA: Multilingual Culturally-Aligned Natural Query for LLMs](https://arxiv.org/abs/2407.09823)：构建 MultiNativQA，包含 7 种语言约 6.4 万个人工标注 QA 对，问题来自 9 个地区母语者并覆盖 18 个主题，用于评测文化对齐的自然问答。
+- [Building pre-train LLM Dataset for the INDIC Languages: a case study on Hindi](https://arxiv.org/abs/2407.09855)：整理 12.8 亿 token 的印地语预训练语料，覆盖多个领域和主要印地语方言，并说明面向印度语言 LLM 的数据收集与预处理流程。
+- [Benchmarking Vision Language Models for Cultural Understanding](https://arxiv.org/abs/2407.10920)：构建 CulturalVQA，包含 2,378 个图像问题对、每题 1 到 5 个答案，覆盖五大洲 11 个国家的服饰、食物、饮品、仪式和传统等文化维度。
+- [Empowering Persian LLMs for Instruction Following: A Novel Dataset and Training Approach](https://arxiv.org/abs/2407.11186)：提出 FarsInstruct 与波斯语指令微调流程，使用原生波斯语数据和不同训练方案评测低资源指令遵循，而不只依赖英文提示翻译。
+- [M2DS: Multilingual Dataset for Multi-document Summarisation](https://arxiv.org/abs/2407.12336)：基于 BBC 多语新闻构建多文档摘要数据，在 5 种语言中配对源文档集合与摘要，把 MDS 评测从纯英语集合扩展到多语场景。
+- [TurkishMMLU: Measuring Massive Multitask Language Understanding in Turkish](https://arxiv.org/abs/2407.12402)：使用 1 万多道专家编写的土耳其高中课程题，覆盖 9 个学科，并在零样本、少样本、思维链和题目难度分析协议下评测开闭源 LLM。
+- [SpeciaLex: A Benchmark for In-Context Specialized Lexicon Learning](https://arxiv.org/abs/2407.13297)：用 18 个子任务、1,785 个实例测试模型在上下文中学习专门词表约束的能力，任务包括检查、识别、改写和开放生成。
+- [INDIC QA BENCHMARK: A Multilingual Benchmark to Evaluate Question Answering capability of LLMs for Indic Languages](https://arxiv.org/abs/2407.13522)：评测 11 种主要印度语言中的上下文扎根问答，包含抽取式与生成式设置，并比较多语 LLM 与 translate-test 流程。
+- [Long Input Benchmark for Russian Analysis](https://arxiv.org/abs/2408.02439)：定义 LIBRA 俄语长输入基准，用于分析 LLM 是否能处理长篇俄语文档和扩展 token 序列，而不只是在短文本翻译任务上表现良好。
+- [MultiHateClip: A Multilingual Benchmark Dataset for Hateful Video Detection on YouTube and Bilibili](https://arxiv.org/abs/2408.03468)：发布 MultiHateClip，用于 YouTube 与 Bilibili 上的多语仇恨视频检测，把仇恨言论评测从纯文本扩展到多模态视频证据。
+- [Speech-MASSIVE: A Multilingual Speech Dataset for SLU and Beyond](https://arxiv.org/abs/2408.03900)：构建 Speech-MASSIVE，将 MASSIVE 扩展到多语 spoken language understanding，使语音模型可在多语言意图和槽位任务上评测。
+- [Hindi-BEIR : A Large Scale Retrieval Benchmark in Hindi](https://arxiv.org/abs/2408.09437)：由翻译版 BEIR 子集、已有印地语 IR 数据和合成检索数据组成印地语检索基准，覆盖 8 类任务的 15 个数据集，并评测多语 retriever 与 reranker。
+- [Benchmarking LLMs for Translating Classical Chinese Poetry:Evaluating Adequacy, Fluency, and Elegance](https://arxiv.org/abs/2408.09945)：使用 PoetMT，每首中国古典诗都配有公认优雅译文，并用 GPT-4 式指标、BLEU、COMET、BLEURT 和人工评价衡量准确性、流畅度与文采。
+- [Event Stream-based Sign Language Translation: A High-Definition Benchmark Dataset and A Novel Baseline](https://arxiv.org/abs/2408.10488)：提出 Event-CSL 高清事件相机手语翻译基准，包含 14,827 个视频、14,821 个 gloss、2,544 个中文文本词，并覆盖多场景、视角、光照和相机运动。
+- [Expanding FLORES+ Benchmark for more Low-Resource Settings: Portuguese-Emakhuwa Machine Translation Evaluation](https://arxiv.org/abs/2408.11457)：把 FLORES+ dev 与 devtest 从葡萄牙语扩展到莫桑比克低资源语言 Emakhuwa，包含后编辑、充分性检查、多参考译文，以及 NMT 和多语 MT 基线。
+- [The Russian-focused embedders' exploration: ruMTEB benchmark and Russian embedding model design](https://arxiv.org/abs/2408.12503)：将 MTEB 扩展为俄语 ruMTEB，覆盖语义文本相似度、分类、重排序和检索等 7 类任务，并配套开放框架与榜单。
+- [Guardians of the Machine Translation Meta-Evaluation: Sentinel Metrics Fall In!](https://arxiv.org/abs/2408.13831)：引入 sentinel metrics 审计 WMT 机器翻译指标元评测，检查排名鲁棒性、公平性，以及对模仿人工评价或输出连续分数指标的偏置。
+- [Native vs Non-Native Language Prompting: A Comparative Analysis](https://arxiv.org/abs/2409.07054)：比较母语与非母语提示下的模型行为。
+- [Cracking the Code: Multi-domain LLM Evaluation on Real-World Professional Exams in Indonesia](https://arxiv.org/abs/2409.08564)：提出 IndoCareer，包含 8,834 道印尼职业认证选择题，覆盖医疗、金融、创意、旅游、教育和法律六类行业，用于测试本地职业知识。
+- [L3Cube-IndicQuest: A Benchmark Question Answering Dataset for Evaluating Knowledge of LLMs in Indic Context](https://arxiv.org/abs/2409.08706)：构建 L3Cube-IndicQuest，在英语和 19 种印度语言中每种语言提供 200 个事实问答对，覆盖 5 个印度区域领域，用于评测多语 LLM 的区域知识。
+- [DynamicNER: A Dynamic, Multilingual, and Fine-Grained Dataset for LLM-based Named Entity Recognition](https://arxiv.org/abs/2409.11022)：构建 DynamicNER 多语细粒度命名实体识别数据集，用于 LLM-based NER，强调动态实体类别和多语标注，而不是固定英文 schema。
+- [RoMath: A Mathematical Reasoning Benchmark in Romanian](https://arxiv.org/abs/2409.11074)：提出 RoMath 罗马尼亚语数学推理基准，用罗马尼亚语题目测试 LLM 解题能力，而不是从英文数学基准外推。
+- [AraDiCE: Benchmarks for Dialectal and Cultural Capabilities in LLMs](https://arxiv.org/abs/2409.11404)：评测语言模型在阿拉伯语相关场景中的方言和文化能力。
 - [Linguini](https://arxiv.org/abs/2409.12126)（[开源代码](https://github.com/facebookresearch/linguini)，[数据集](https://huggingface.co/datasets/facebook/linguini)）：评测 language-agnostic linguistic reasoning。核心思想：从国际语言学奥林匹克式题目出发，让模型在不知道目标语言的情况下从上下文归纳词法、句法和语义规律，补足多语言评测中过度依赖已见语种知识的问题。
+- [CamelEval: Advancing Culturally Aligned Arabic Language Models and Benchmarks](https://arxiv.org/abs/2409.12623)：在指出 Open Arabic LLM Leaderboard 局限后提出 CamelEval，并结合 Juhaina 模型研究评测文化对齐的阿英双语 LLM 行为。
+- [MURI: High-Quality Instruction Tuning Datasets for Low-Resource Languages via Reverse Instructions](https://arxiv.org/abs/2409.12958)：通过 reverse instructions 和翻译流程，从低资源语言原生文本生成 MURI-IT，包含 200 多万 instruction-output 对，并用过滤保持文化相关性。
+- [Exploring Multilingual Probing in Large Language Models: A Cross-Language Analysis](https://arxiv.org/abs/2409.14459)：把 probing 从英语扩展到多种语言，在开源 LLM 中比较高资源与低资源语言的逐层 probing 准确率和表示向量相似性。
+- [Kalahi: A handcrafted, grassroots cultural LLM evaluation suite for Filipino](https://arxiv.org/abs/2409.15380)：提出 Kalahi，由菲律宾语母语者手写 150 个文化提示；最佳 LLM 准确率为 46.0%，而母语者表现为 89.10%。
+- [CHBench: A Chinese Dataset for Evaluating Health in Large Language Models](https://arxiv.org/abs/2409.15766)：构建 CHBench 安全导向中文健康基准，包含 6,493 条心理健康和 2,999 条身体健康条目，覆盖多样场景，用于评估安全医学回答。
+- [Can LLMs Really Learn to Translate a Low-Resource Language from One Grammar Book?](https://arxiv.org/abs/2409.19151)：检验语法书提示是否真的教会模型翻译 Kalamang、尼泊尔语和瓜拉尼语，区分平行例句与语法解释带来的收益，并加入语法性判断和 gloss 预测探针。
+- [What the Harm? Quantifying the Tangible Impact of Gender Bias in Machine Translation with a Human-centered Study](https://arxiv.org/abs/2410.00545)：通过 90 名参与者的后编辑实验度量 MT 性别偏见伤害，将阴性译文纠错同更高技术负担、时间成本和经济成本联系起来。
+- [On the Implications of Verbose LLM Outputs: A Case Study in Translation Evaluation](https://arxiv.org/abs/2410.00863)：基于 WMT 2024 MT 输出分析 LLM 译文冗长问题，指出安全、版权和短输入上下文会触发冗长，且忽略该现象会在自动和人工评测中不公平地惩罚系统。
+- [CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming](https://arxiv.org/abs/2410.02677)：提出 CulturalBench，包含 1,696 道人工编写并经 5 名标注者验证的问题，覆盖 45 个全球区域和 17 个主题，使用 Human-AI CulturalTeaming 压测文化知识。
+- [GlobeSumm: A Challenging Benchmark Towards Unifying Multi-lingual, Cross-lingual and Multi-document News Summarization](https://arxiv.org/abs/2410.04087)：定义 MCMS 任务，收集以事件为中心的多语新闻报道并用 protocol-guided prompting 生成参考摘要，评测多语、跨语和多文档摘要中的冲突、冗余与遗漏。
+- [FAMMA: A Benchmark for Financial Domain Multilingual Multimodal Question Answering](https://arxiv.org/abs/2410.04526)：包含 FAMMA-Basic 的 1,945 道金融教材和考试题及解析，以及 FAMMA-LivePro 的 103 道隐藏专家题，覆盖 8 个金融子领域和英中法多模态输入。
+- [Beyond Correlation: Interpretable Evaluation of Machine Translation Metrics](https://arxiv.org/abs/2410.05183)：用数据过滤和译文重排序两个可解释代理任务评测 MT 指标，而不只看与人工评分的相关性，揭示不同指标适合哪些新型 MT 评测用途。
+- [MEXA: Multilingual Evaluation of English-Centric LLMs via Cross-Lingual Alignment](https://arxiv.org/abs/2410.05873)：提出 MEXA，用平行句计算中间层英非语对齐，估计英语中心 LLM 如何把英语理解迁移到非英语语言。
+- [Modeling User Preferences with Automatic Metrics: Creating a High-Quality Preference Dataset for Machine Translation](https://arxiv.org/abs/2410.07779)：通过专业语言学家对多个 MT 系统译文做句级质量评估，再用自动指标诱导大规模偏好，构建 MT-Pref 翻译偏好数据。
+- [IsoChronoMeter: A Simple and Effective Isochronic Translation Evaluation Metric](https://arxiv.org/abs/2410.11127)：提出面向配音翻译的无参考 isochrony 指标，用文本转语音时长预测器衡量译文语音是否保持源语时间长度。
+- [WorldCuisines: A Massive-Scale Benchmark for Multilingual and Multicultural Visual Question Answering on Global Cuisines](https://arxiv.org/abs/2410.12705)：构建美食 VQA 基准，包含来自 9 个语族的 30 种语言和方言、100 多万组图文对，并提供 1.2 万与 6 万规模评测集用于菜名和来源识别。
+- [Qtok: A Comprehensive Framework for Evaluating Multilingual Tokenizer Quality in Large Language Models](https://arxiv.org/abs/2410.12989)：提出 Qtok 多语 tokenizer 质量指标，衡量语言覆盖、token 完整性和跨语言分布，并评测来自 58 个公开模型的 13 种 tokenizer。
+- [Better to Ask in English: Evaluation of Large Language Models on English, Low-resource and Cross-Lingual Settings](https://arxiv.org/abs/2410.13153)：用零样本和 5 种 prompt 设置比较 GPT-4、Llama 2、Gemini 在英语、孟加拉语、印地语、乌尔都语和跨语翻译提示中的表现。
+- [Cross-Lingual Auto Evaluation for Assessing Multilingual LLMs](https://arxiv.org/abs/2410.13394)：将 Recon 测试集的 500 条人工标注指令和 6 种语言人工分数，与 Hercule 跨语评测器结合；Hercule 利用英语参考答案给目标语回答打分。
 - [MIRAGE-Bench](https://arxiv.org/abs/2410.13716)（[开源代码](https://github.com/vectara/mirage-bench)）：评测多语言 RAG 回答生成与裁判效率；核心思想是在 18 种语言的人类问题上结合启发式特征、LLM pairwise judge 和 surrogate judge，降低多语 RAG arena 评测成本。
+- [Adapting Multilingual LLMs to Low-Resource Languages using Continued Pre-training and Synthetic Corpus](https://arxiv.org/abs/2410.14815)：通过 4,000 亿真实与合成印地语-英语 token 的持续预训练，将 Nemotron-Mini 适配为 Hindi-English 4B 模型，并评测 base 与 instruct 版本的印地语能力。
+- [ChitroJera: A Regionally Relevant Visual Question Answering Dataset for Bangla](https://arxiv.org/abs/2410.14991)：提供基于区域相关图片和问题的孟加拉语 VQA 数据，测试 VLM 对孟加拉语和本地视觉文化语境的理解，而不是只依赖英文 VQA 翻译。
+- [CROPE: Evaluating In-Context Adaptation of Vision and Language Models to Culture-Specific Concepts](https://arxiv.org/abs/2410.15453)：定义 CROPE 文化特定概念 VQA 基准，用视觉和文本描述区分模型参数中的文化知识与上下文适应能力。
+- [M-RewardBench: Evaluating Reward Models in Multilingual Settings](https://arxiv.org/abs/2410.15522)：用 23 种类型多样语言的 2,870 个偏好实例评测奖励模型，覆盖聊天、安全、推理和翻译偏好，并衡量英语与非英语之间的性能差距。
+- [JMMMU: A Japanese Massive Multi-discipline Multimodal Understanding Benchmark for Culture-aware Evaluation](https://arxiv.org/abs/2410.17250)：构建 JMMMU 日语文化感知多学科多模态理解基准，将大规模多学科多模态题本地化，用于联合测试日语、领域知识和文化语境。
+- [MM-Eval: A Multilingual Meta-Evaluation Benchmark for LLM-as-a-Judge and Reward Models](https://arxiv.org/abs/2410.17578)：为 LLM-as-a-judge 和奖励模型提供多语言元评测基准。
+- [Gazelle: An Instruction Dataset for Arabic Writing Assistance](https://arxiv.org/abs/2410.18163)：发布 Gazelle 阿拉伯语写作辅助指令数据集，面向编辑、改写、风格化辅助等阿拉伯语生成任务的评测和调优。
+- [Can Code-Switched Texts Activate a Knowledge Switch in LLMs? A Case Study on English-Korean Code-Switching](https://arxiv.org/abs/2410.18436)：测试 code-switched 文本是否会激活 LLM 的知识切换。
+- [Bielik 7B v0.1: A Polish Language Model - Development, Insights, and Evaluation](https://arxiv.org/abs/2410.18565)：评测波兰语模型 Bielik 7B v0.1，记录其在波兰语 benchmark 上的表现、训练经验，以及相对通用多语系统的差距。
+- [How Good Are LLMs for Literary Translation, Really? Literary Translation Evaluation with Humans and LLMs](https://arxiv.org/abs/2410.18697)：构建 LITEVAL-CORPUS，包含段落级人工核验译文和 9 个 MT 系统输出，四个语对共 2,000 多个译文与 13,000 个已评句子。
+- [CAMEL-Bench: A Comprehensive Arabic LMM Benchmark](https://arxiv.org/abs/2410.18976)：提出 CAMEL-Bench 阿拉伯语大多模态模型基准，测试阿拉伯语视觉语言理解，而不是依赖英文多模态基准的阿拉伯语翻译。
+- [Thank You, Stingray: Multilingual Large Language Models Can Not (Yet) Disambiguate Cross-Lingual Word Sense](https://arxiv.org/abs/2410.21573)：评测多语 LLM 的跨语言词义消歧能力，测试模型能否在词形和意义跨语言变化时区分不同词义。
+- [Benchmarking LLM Guardrails in Handling Multilingual Toxicity](https://arxiv.org/abs/2410.22153)：评测 LLM guardrails 对多语毒性内容的处理能力，检验有害内容出现在英语之外时审核行为是否仍然可靠。
+- [Evaluating Cultural and Social Awareness of LLM Web Agents](https://arxiv.org/abs/2410.23252)：评测 LLM web agents 的文化与社会意识，衡量浏览器智能体是否能处理文化扎根网页任务和社会规范，而不只是一般网页导航。
+- [Swan and ArabicMTEB: Dialect-Aware, Arabic-Centric, Cross-Lingual, and Cross-Cultural Embedding Models and Benchmarks](https://arxiv.org/abs/2411.01192)：将 Swan embedding 模型与 ArabicMTEB 配套，后者是方言感知、阿拉伯语中心的 embedding 基准，覆盖跨语言和跨文化检索与表示任务。
 - [MILU](https://arxiv.org/abs/2411.02538)：评测印度语言的多任务语言理解。核心思想：覆盖 10 种印度语言与英语，并纳入文化相关学科题，作为广义翻译版 MMLU 的垂直补充。
+- [ProverbEval: Exploring LLM Evaluation Challenges for Low-resource Language Understanding](https://arxiv.org/abs/2411.05049)：以谚语作为低资源语言理解压力测试，检验 LLM 是否能理解带文化负载的比喻表达，而不只是做字面翻译。
+- [How Good is Your Wikipedia? Auditing Data Quality for Low-resource and Multilingual NLP](https://arxiv.org/abs/2411.05527)：审计多语和低资源 Wikipedia 的 NLP 数据质量，衡量来自 Wikipedia 的资源是否足以可靠支撑模型训练与评测。
+- [Fineweb-Edu-Ar: Machine-translated Corpus to Support Arabic Small Language Models](https://arxiv.org/abs/2411.06402)：构建 Fineweb-Edu-Ar 机器翻译阿拉伯语教育语料，用于小语言模型，并评测翻译式教育网页数据是否有助于阿拉伯语 SLM 训练。
+- [Controlled Evaluation of Syntactic Knowledge in Multilingual Language Models](https://arxiv.org/abs/2411.07474)：对多语 LM 进行受控句法知识评测，用有针对性的句法测试把语法能力同宽泛 benchmark 平均分区分开。
+- [P-MMEval: A Parallel Multilingual Multitask Benchmark for Consistent Evaluation of LLMs](https://arxiv.org/abs/2411.09116)：提出 P-MMEval 平行多语多任务基准，通过对齐任务实例在不同语言间一致比较 LLM。
+- [All Languages Matter: Evaluating LMMs on Culturally Diverse 100 Languages](https://arxiv.org/abs/2411.16508)：在 100 种语言的文化多样内容上评测大多模态模型，检验视觉语言能力是否能迁移到高资源语言和文化之外。
 - [INCLUDE](https://arxiv.org/abs/2411.19799)：评测带区域知识的多语言理解。核心思想：从 44 种语言的区域学术和职业考试中取题，减少对英文翻译知识的偏置。
+- [Uhura: A Benchmark for Evaluating Scientific Question Answering and Truthfulness in Low-Resource African Languages](https://arxiv.org/abs/2412.00948)：通过人工翻译的 ARC-Easy 和 TruthfulQA 变体，在 6 种类型差异明显的低资源非洲语言上评测科学问答与真实性。
+- [SailCompass: Towards Reproducible and Robust Evaluation for Southeast Asian Languages](https://arxiv.org/abs/2412.01186)：在 3 种主要东南亚语言、8 个任务和 14 个数据集上评测 LLM，任务类型涵盖生成、选择题和分类，并检查提示配置与校准策略。
+- [A 2-step Framework for Automated Literary Translation Evaluation: Its Promises and Pitfalls](https://arxiv.org/abs/2412.01340)：用两阶段自动流程评测英译韩文学翻译，输出细粒度可解释指标，同时指出韩语敬语等文化敏感维度与人工一致性仍不足。
 - [GMMLU / Global MMLU](https://arxiv.org/abs/2412.03304)：评测 42 种语言上的 MMLU 式知识理解。核心思想：在可比学科知识协议下比较高、中、低资源语言表现，暴露语言与文化资源差距。
+- [Opportunities and Challenges of Large Language Models for Low-Resource Languages in Humanities Research](https://arxiv.org/abs/2412.04497)：系统评估 LLM 在低资源语言人文学术研究中的用途，覆盖语言变体、历史文献、文化表达、文学分析、数据可得性、适配性和文化敏感性。
+- [KULTURE Bench: A Benchmark for Assessing Language Model in Korean Cultural Context](https://arxiv.org/abs/2412.07251)：用韩国文化新闻、成语和诗歌数据评测文化理解，覆盖词、句和段落层面的推理，避免只用英文文化基准翻译外推。
+- [Y-NQ: English-Yorùbá Evaluation dataset for Open-Book Reading Comprehension and Text Generation](https://arxiv.org/abs/2412.08279)：发布 Y-NQ 英语-约鲁巴语开放书阅读理解与文本生成数据，把约鲁巴语评测数据同开放书 QA 和生成协议结合。
+- [BEIR-NL: Zero-shot Information Retrieval Benchmark for the Dutch Language](https://arxiv.org/abs/2412.08329)：把公开 BEIR 检索数据翻译为荷兰语，评测 BM25、dense retriever 和 reranker，并通过回译分析量化翻译构造基准带来的伪影。
+- [The Roles of English in Evaluating Multilingual Language Models](https://arxiv.org/abs/2412.08392)：区分“英语作为评测接口”和“英语作为自然语言”两种角色，指出英语提示可能抬高任务分数，却掩盖目标语言理解不足。
+- [MALAMUTE: A Multilingual, Highly-granular, Template-free, Education-based Probing Dataset](https://arxiv.org/abs/2412.10105)：提供来自 71 本大学教材、经专家撰写和同行审核的 cloze probes，覆盖英语、西班牙语、波兰语以及 8 个领域，并细分到子领域和概念级教育知识。
+- [MT-LENS: An all-in-one Toolkit for Better Machine Translation Evaluation](https://arxiv.org/abs/2412.11615)：扩展 LM-eval-harness 以评测 MT 质量、性别偏见、毒性和拼写错误鲁棒性，整合多个数据集、指标、系统比较和交互式译文分析。
+- [Findings of the WMT 2024 Shared Task on Discourse-Level Literary Translation](https://arxiv.org/abs/2412.11732)：报告 WMT 2024 语篇级文学翻译共享任务，在更长文学上下文中评测系统，关注连贯性、风格和跨句一致性。
+- [Exploring Cross-Lingual Latent Transplantation: Mutual Opportunities and Open Challenges](https://arxiv.org/abs/2412.12686)：提出 XTransplant 探测框架，通过跨语言移植 latent activations 测试多语能力和文化适应性，尤其关注低资源语言与文化。
+- [Domain-adaptative Continual Learning for Low-resource Tasks: Evaluation on Nepali](https://arxiv.org/abs/2412.13860)：评测尼泊尔语低资源任务中的领域自适应持续学习，检验持续更新是否提升任务表现并避免抹除既有语言能力。
+- [Chumor 2.0: Towards Benchmarking Chinese Humor Understanding](https://arxiv.org/abs/2412.17729)：用 Chumor 2.0 扩展中文幽默理解评测，面向文化特定中文笑话的理解与解释，而不是英语幽默数据集。
+- [Towards Global AI Inclusivity: A Large-Scale Multilingual Terminology Dataset](https://arxiv.org/abs/2412.18367)：构建面向全球 AI 包容性的大规模多语术语数据集，补足常见 NLP 资源中代表性不足语言与领域的术语覆盖。
+- [Findings of the WMT24 General Machine Translation Shared Task: The LLM Era Is Here but MT Is Not Solved Yet](https://doi.org/10.18653/v1/2024.wmt-1.1)（[共享任务](https://www2.statmt.org/wmt24/translation-task.html)）：总结 WMT24 通用机器翻译共享任务，是重要多语言评测协议。
+- [Benchmarking LLaMA-3 on Arabic Language Generation Tasks](https://doi.org/10.18653/v1/2024.arabicnlp-1.24)：在现代标准阿拉伯语和阿拉伯方言的自然语言生成基准上评测 LLaMA-3-70B，并与 ChatGPT 等闭源 LLM 比较。
+- [Benchmarking and Improving Long-Text Translation with Large Language Models](https://doi.org/10.18653/v1/2024.findings-acl.428)：评测并改进大语言模型的长文本翻译。
+- [Do LLMs Speak Kazakh? A Pilot Evaluation of Seven Models](https://doi.org/10.18653/v1/2024.sigturk-1.8)：在哈萨克语上试点评测 7 个 LLM，为突厥语族低资源语言提供诊断，检验模型是否真正处理哈萨克语而不是依赖邻近高资源语言。
+- [The UNLP 2024 Shared Task on Fine-Tuning Large Language Models for Ukrainian](https://doi.org/10.63317/57pbivswb65o)：总结 UNLP 2024 乌克兰语 LLM 微调共享任务，定义面向乌克兰语适配的评测设置，而不是英语中心 LLM 微调。
+- [VarDial Evaluation Campaign 2024: Commonsense Reasoning in Dialects and Multi-Label Similar Language Identification](https://doi.org/10.18653/v1/2024.vardial-1.1)：报告 VarDial 2024 的方言常识推理和多标签相似语言识别任务，在语言变体与近缘语言上测试模型。
+- [Re-Evaluating Evaluation for Multilingual Summarization](https://doi.org/10.18653/v1/2024.emnlp-main.1085)：审计多语摘要评测实践，比较指标行为和跨语言假设，避免只从英语中心或翻译测试集外推摘要质量。
+- [Findings of the WMT 2024 Shared Task Translation into Low-Resource Languages of Spain: Blending Rule-Based and Neural Systems](https://doi.org/10.18653/v1/2024.wmt-1.57)：报告 WMT 2024 面向西班牙低资源语言翻译共享任务的协议与系统结果，对比规则系统、神经系统和混合 MT 系统。
+- [A Comprehensive Evaluation of Large Language Models for Turkish Abstractive Dialogue Summarization](https://doi.org/10.1109/access.2024.3454342)：在土耳其语抽象式对话摘要上评测 LLM，用土耳其语会话输入检验模型是否能超越英语对话摘要数据集。
+- [A High-quality Seed Dataset for Italian Machine Translation](https://doi.org/10.18653/v1/2024.wmt-1.43)：发布 WMT 2024 高质量意大利语机器翻译种子数据集，为 MT 系统训练与评测提供经整理的意大利语平行数据。
+- [Expanding the FLORES+ Multilingual Benchmark with Translations for Aragonese, Aranese, Asturian, and Valencian](https://doi.org/10.18653/v1/2024.wmt-1.41)：为 FLORES+ 增加阿拉贡语、阿兰语、阿斯图里亚斯语和瓦伦西亚语译文，为西班牙低资源语言补充标准化 MT 评测数据。
+- [ItaEval and TweetyIta: A New Extensive Benchmark and Efficiency-First Language Model for Italian](https://aclanthology.org/2024.clicit-1.6/)：提出意大利语模型评测基准 ItaEval，并配套效率优先的 TweetyIta 模型，使意大利语任务表现和模型成本可以一起比较。
+- [From Corpus to Benchmark: Evaluating Pretrained Language Models for Indonesian-Javanese Krama Translation](https://doi.org/10.1109/ialp68296.2024.11156402)：把印尼语-Javanese Krama 平行材料转化为翻译基准，测试预训练语言模型在低资源且讲究语体等级的语对上的表现。
+- [A Comparative Evaluation of Retrieval-Augmented Generation For Arabic Documents](https://doi.org/10.1109/acit62805.2024.10877197)：比较面向阿拉伯语文档的 RAG 配置，评测阿拉伯语检索与生成行为，而不是假设英文文档问答设置可直接迁移。
+- [Are LLMs Breaking MT Metrics? Results of the WMT24 Metrics Shared Task](https://doi.org/10.18653/v1/2024.wmt-1.2)：总结 WMT24 Metrics Shared Task 对 LLM 输出是否破坏 MT 指标可靠性的检验，在 2024 WMT 协议下比较指标与人工判断的相关性。
+- [Kardeş-NLU: Transfer to Low-Resource Languages with the Help of a High-Resource Cousin – A Benchmark and Evaluation for Turkic Languages](https://doi.org/10.18653/v1/2024.eacl-long.100)：构建突厥语族 NLU 基准，研究从高资源近缘语言向低资源突厥语言迁移的效果，并显示收益高度依赖任务和语对。
+- [MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language](https://doi.org/10.18653/v1/2024.findings-emnlp.36)：用低资源 MMLU 风格基准评测马来语多任务语言理解，目标是 Bahasa Melayu 原生问题，而不是纯英语或高资源语言翻译评测。
+- [TURSpider: A Turkish Text-to-SQL Dataset and LLM-Based Study](https://doi.org/10.1109/access.2024.3498841)：通过人工土耳其语翻译将 Spider 改造成 TURSpider，保留复杂跨领域 SQL、嵌套查询难度和土耳其语自然语言输入，用于 Text-to-SQL 评测。
+- [ViGLUE: A Vietnamese General Language Understanding Benchmark and Analysis of Vietnamese Language Models](https://doi.org/10.18653/v1/2024.findings-naacl.261)：用 ViGLUE 的 12 个任务评测越南语语言理解，比较越南语专用模型与多语基线模型，揭示不同任务上的优势与缺口。
+- [Applying Transformer-Based Neural Networks to Corpus Linguistic Data for Predictive Text Generation in Multilingual Environments](https://doi.org/10.1109/esci59607.2024.10497447)：在多语环境的语料语言学数据上评测 Transformer 预测式文本生成，把该任务作为跨语言生成评测，而不是纯英语设置。
+- [Explainable CED: A Dataset for Explainable Critical Error Detection in Machine Translation](https://doi.org/10.18653/v1/2024.naacl-srw.4)：提出 Explainable CED 机器翻译严重错误检测数据集，将错误标签与解释配对，使系统同时接受严重翻译错误检测和解释能力评测。
+- [Evaluation of Medium-Sized Language Models in German and English Language](https://doi.org/10.5121/ijnlc.2024.13101)：比较中型语言模型在德语和英语中的表现，通过双语评测暴露英语单语模型报告中看不到的语言特定差距。
+- [Brandeis at VarDial 2024 DSL-ML Shared Task: Multilingual Models, Simple Baselines and Data Augmentation](https://doi.org/10.18653/v1/2024.vardial-1.22)：记录 VarDial 2024 DSL-ML 共享任务系统，使用多语模型、简单基线和数据增强来区分方言与相似语言。
+- [ThaiBKD: Effective of Continual Pre-Training LLM in Thai Language Based on Knowledge Dataset](https://doi.org/10.1109/isai-nlp64410.2024.10799288)：在知识数据集上评测泰语持续预训练，衡量 ThaiBKD 是否能在低资源数据约束下提升泰语 LLM 表现。
+- [LaFresCat: A Catalan Multi-Accent Speech Dataset for Text-to-Speech](https://doi.org/10.21437/iberspeech.2024-42)：发布 LaFresCat 加泰罗尼亚语多口音 TTS 数据集，为语音合成评测提供口音多样的加泰罗尼亚语语音数据。
+- [Benchmark Arabic news posts and analyzes Arabic sentiment through RMuBERT and SSL with AMCFFL technique](https://doi.org/10.1016/j.eij.2024.100601)：用 RMuBERT 与半监督 AMCFFL 技术评测阿拉伯语新闻帖情感分析，面向阿拉伯语社交新闻情绪而非一般多语分类。
+- [Evaluation of open and closed-source LLMs for low-resource language with zero-shot, few-shot, and chain-of-thought prompting](https://doi.org/10.1016/j.nlp.2024.100124)：提供可复用评测目标、排行榜或测量协议。
 - [CultureVerse / CultureVLM](https://arxiv.org/abs/2501.01282)：评测视觉语言模型的多文化理解能力。核心思路是用覆盖 100 多个国家和地区的文化概念与多模态问题，测试 VLM 是否能超越以西方为中心的视觉先验。
-- [MMTEB](https://arxiv.org/abs/2502.13595)（[开源代码](https://github.com/embeddings-benchmark/mteb)）：评测大规模多语文本嵌入；核心思想是在 250 多种语言和 500 多个质量控制任务上统一比较 embedding 的检索、分类、聚类和语义匹配能力。
+- [LLMzSzŁ: a comprehensive LLM benchmark for Polish](https://arxiv.org/abs/2501.02266)：提出 LLMzSzL 综合波兰语 LLM 基准，汇集波兰语任务来衡量语言理解与生成，而不是只看宽泛多语平均分。
+- [End-to-End Bangla AI for Solving Math Olympiad Problem Benchmark: Leveraging Large Language Model Using Integrated Approach](https://arxiv.org/abs/2501.04425)：以孟加拉语数学奥赛题为目标，评测结合任务微调、检索增强生成、提示、数据增强和迭代推理的 LLM 配置。
+- [VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models](https://arxiv.org/abs/2501.04962)：评估端到端口语语言模型的世界知识理解能力。
+- [Towards Multilingual LLM Evaluation for Baltic and Nordic languages: A study on Lithuanian History](https://arxiv.org/abs/2501.09154)：以立陶宛历史问题研究波罗的海与北欧语言的多语 LLM 评测，把本地历史知识作为语言特定诊断。
+- [Mind the Inclusivity Gap: Multilingual Gender-Neutral Translation Evaluation with mGeNTE](https://arxiv.org/abs/2501.09409)：提出 mGeNTE，评测英语到西班牙语、德语、意大利语和希腊语的包容性 gender-neutral translation，检验指令跟随 LM 能否在有性别形态的语言中保持中性。
+- [PIER: A Novel Metric for Evaluating What Matters in Code-Switching](https://arxiv.org/abs/2501.09512)：提出代码转换质量评估指标，帮助多语种基准在表面准确率之外衡量混合语言行为。
+- [Can xLLMs Understand the Structure of Dialog? Exploring Multilingual Response Generation in Complex Scenarios](https://arxiv.org/abs/2501.11269)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [IndicMMLU-Pro: Benchmarking Indic Large Language Models on Multi-Task Language Understanding](https://arxiv.org/abs/2501.15747)：评测 Indic languages 的多任务语言理解；核心思想是把 MMLU-Pro 式评测扩展到语言和文化多样的印度语境。
+- [Reasoning Over the Glyphs: Evaluation of LLM's Decipherment of Rare Scripts](https://arxiv.org/abs/2501.17785)：评估大模型对稀有文字系统的破译和推理能力。
+- [BOUQuET: dataset, Benchmark and Open initiative for Universal Quality Evaluation in Translation](https://arxiv.org/abs/2502.04314)：提供基于段落级非英语源文本的多中心、多语域翻译质量基准，检验多语系统是否能在高资源句级翻译之外保持意义。
+- [Evaluation of Multilingual Image Captioning: How far can we get with CLIP models?](https://arxiv.org/abs/2502.06600)：评测多语 CLIPScore 变体用于图像描述质量判断，结合质量感知的机器翻译 caption 人类判断和重用的多语推理数据，衡量与人工评价的相关性。
+- [Tokenization Standards for Linguistic Integrity: Turkish as a Benchmark](https://arxiv.org/abs/2502.07057)：用 6,200 个土耳其语 MMLU 风格问题评估 tokenizer，指标包括词表大小、token 数、处理时间、土耳其语 token 比例和语素级 token purity。
+- [BenchMAX: A Comprehensive Multilingual Evaluation Suite for Large Language Models](https://arxiv.org/abs/2502.07346)：类型：benchmark/评测协议。核心价值：为 1.1.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [FoQA: A Faroese Question-Answering Dataset](https://arxiv.org/abs/2502.07642)：法罗语问答数据集。核心思想：为主流 benchmark 覆盖不足的低资源语言增加本土 QA 评测。
+- [Evaluating o1-Like LLMs: Unlocking Reasoning for Translation through Comprehensive Analysis](https://arxiv.org/abs/2502.11544)：评测推理型 LLM 的翻译表现，检验深度推理是否提升多语言生成质量。
+- [FaMTEB: Massive Text Embedding Benchmark in Persian Language](https://arxiv.org/abs/2502.11571)：提出 FaMTEB 波斯语大规模文本 embedding 基准，把波斯语检索与表示任务纳入 MTEB 式评测生态。
+- [Can Language Models Learn Typologically Implausible Languages?](https://arxiv.org/abs/2502.12317)：评测语言模型是否能学习类型学上不合理的语言。
+- [WMT24++: Expanding the Language Coverage of WMT24 to 55 Languages & Dialects](https://arxiv.org/abs/2502.12404)：把 WMT24 扩展到 55 种语言和方言。核心思想：扩大机器翻译评测覆盖面，避免多语言能力只由高资源语言代表。
+- [CoCo-CoLa: Evaluating and Improving Language Adherence in Multilingual LLMs](https://arxiv.org/abs/2502.12476)：定义 CoCo-CoLa 多语 LLM 语言遵循基准，测试模型是否按要求语种作答，并提出由评测指导的改进方法。
+- [MVL-SIB: A Massively Multilingual Vision-Language Benchmark for Cross-Modal Topical Matching](https://arxiv.org/abs/2502.12852)：评什么：大规模多语言视觉语言 benchmark，评测跨模态主题匹配。
+- [Linguistic Generalizations are not Rules: Impacts on Evaluation of LMs](https://arxiv.org/abs/2502.13195)：批判把语法能力简化为规则遵守的二值探针，主张构建能衡量频率、语境、功能等梯度语言泛化的评测。
+- [A Large and Balanced Corpus for Fine-grained Arabic Readability Assessment](https://arxiv.org/abs/2502.13520)：发布用于细粒度阿拉伯语可读性评估的大规模均衡语料，使阿拉伯语文本难度评测不再局限于粗粒度年级标签。
+- [MMTEB](https://arxiv.org/abs/2502.13595)（[开源代码](https://github.com/embeddings-benchmark/mteb)；[MTEB 榜单](https://huggingface.co/spaces/mteb/leaderboard)）：评测大规模多语文本嵌入；核心思想是在 250 多种语言和 500 多个质量控制任务上统一比较 embedding 的检索、分类、聚类和语义匹配能力。
 - [GIMMICK](https://arxiv.org/abs/2502.13766)：评测全球包容的多模态文化知识。核心思想是组合多语言、多文化与多模态任务，避免只在高资源、英语或西方中心样本上衡量文化能力。
+- [SEA-HELM: Southeast Asian Holistic Evaluation of Language Models](https://arxiv.org/abs/2502.14301)：提供面向东南亚语言与文化能力的一体化多语言评测。
+- [Batayan: A Filipino NLP benchmark for evaluating Large Language Models](https://arxiv.org/abs/2502.14911)：面向菲律宾语的 LLM NLP benchmark。核心思想：直接测试菲律宾语理解与推理，而不是只依赖英文翻译 benchmark。
+- [Evaluating Multimodal Generative AI with Korean Educational Standards](https://arxiv.org/abs/2502.15422)：可作为多语言与文化语境评测的Bench候选；核心关注“Evaluating Multimodal Generative AI with Korean Educational Standards”。
+- [LegalBench.PT: A Benchmark for Portuguese Law](https://arxiv.org/abs/2502.16357)：提出 LegalBench.PT 葡萄牙语法律基准，提供法律语言任务，用于评测葡萄牙语法律推理和领域理解。
+- [UrduLLaMA 1.0: Dataset Curation, Preprocessing, and Evaluation in Low-Resource Settings](https://arxiv.org/abs/2502.16961)：评测从 Llama-3.1-8B 派生的乌尔都语低资源模型：持续预训练使用 1.28 亿 Urdu token，LoRA 微调用 4.1 万条 Urdu 指令和约 5 万个英乌翻译对。
+- [MULTITAT: Benchmarking Multilingual Table-and-Text Question Answering](https://arxiv.org/abs/2502.17253)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [NusaAksara: A Multimodal and Multilingual Benchmark for Preserving Indonesian Indigenous Scripts](https://arxiv.org/abs/2502.18148)：可作为多语言与文化语境评测的Bench候选；核心关注“A Multimodal and Multilingual Benchmark for Preserving Indonesian Indigenous Scripts”。
+- [HuAMR: A Hungarian AMR Parser and Dataset](https://arxiv.org/abs/2502.20552)：围绕多语言能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [WebFAQ: A Multilingual Collection of Natural Q&A Datasets for Dense Retrieval](https://arxiv.org/abs/2502.20936)：收集面向多语 dense retrieval 的自然问答数据，让检索模型处理网页 FAQ 风格查询与答案，而不是只依赖英文检索基准翻译。
+- [ECLeKTic: a Novel Challenge Set for Evaluation of Cross-Lingual Knowledge Transfer](https://arxiv.org/abs/2502.21228)：评测跨语言迁移、多语言检索、代码混合或历史多语言知识。
+- [Palm: A Culturally Inclusive and Linguistically Diverse Dataset for Arabic LLMs](https://arxiv.org/abs/2503.00151)：可作为多语言能力的 Bench 候选：围绕 Palm: A Culturally Inclusive and Linguistically Diverse Dataset for Arabic LLMs 提供可比较的评测任务、数据或分析协议。
+- [Jawaher: A Multidialectal Dataset of Arabic Proverbs for LLM Benchmarking](https://arxiv.org/abs/2503.00231)：提供可复用评测目标、排行榜或测量协议。
+- [MiLiC-Eval: Benchmarking Multilingual LLMs for China's Minority Languages](https://arxiv.org/abs/2503.01150)：评测多语言能力。核心思想：围绕论文中的任务、数据或协议（Benchmarking Multilingual LLMs for China's Minority Languages）形成可复用比较基准。
+- [Multilingual Relative Clause Attachment Ambiguity Resolution in Large Language Models](https://arxiv.org/abs/2503.02971)：评测 LLM 的多语关系从句附着歧义消解能力，跨语言测试句法偏好和歧义处理。
+- [LINGOLY-TOO](https://arxiv.org/abs/2503.02972)：在模板化正字法混淆下评估语言推理。核心思想是改写语言学奥赛风格题目，在保留解题逻辑的同时削弱记忆和语言知识捷径，从而区分真正推理与对原始语言形式的熟悉度。
+- [QE4PE: Word-level Quality Estimation for Human Post-Editing](https://arxiv.org/abs/2503.03044)：用 42 名专业后编辑员、两个翻译方向和四种错误片段高亮方式，研究词级机器翻译质量估计对后编辑速度、质量和编辑选择的影响。
+- [DongbaMIE: A Multimodal Information Extraction Dataset for Evaluating Semantic Understanding of Dongba Pictograms](https://arxiv.org/abs/2503.03644)：发布 DongbaMIE 东巴象形文字多模态信息抽取数据集，通过图文抽取任务评测稀有文字的语义理解。
+- [Exploring the Multilingual NLG Evaluation Abilities of LLM-Based Evaluators](https://arxiv.org/abs/2503.04360)：评估 LLM 评测器在高低资源语言中的 NLG 判断能力，关注与人工评价的一致性及扰动鲁棒性。
+- [Sign Language Translation using Frame and Event Stream: Benchmark Dataset and Algorithms](https://arxiv.org/abs/2503.06484)：发布 VECSL 手语翻译数据集，包含由 DVS346 事件相机采集的 15,676 个同步 RGB-event 样本，用于测试运动模糊和光照变化下的鲁棒性。
+- [Advancing Vietnamese Information Retrieval with Learning Objective and Benchmark](https://arxiv.org/abs/2503.07470)：将越南语信息检索基准与学习目标分析结合，在越南语查询和文档上评测检索器，而不只依赖英文 IR 翻译。
+- [VisTW: Benchmarking Vision-Language Models for Traditional Chinese in Taiwan](https://arxiv.org/abs/2503.10427)：可作为多语言与文化语境评测的Bench候选；核心关注“Benchmarking Vision-Language Models for Traditional Chinese in Taiwan”。
 - [MMLU-ProX](https://arxiv.org/abs/2503.10497)（数据集：[li-lab/MMLU-ProX](https://huggingface.co/datasets/li-lab/MMLU-ProX)）：评测更难的跨语言学科/专业知识（MMLU-Pro 风格的跨语扩展）；核心思想是用更高难度、更强调鲁棒性的专业题补齐“多语 + 专业知识”维度。
+- [Probing LLMs for Multilingual Discourse Generalization Through a Unified Label Set](https://arxiv.org/abs/2503.10515)：评测多语言能力；核心思想是暴露跨语言迁移、语码转换、翻译、偏见或特定语言推理失败。
+- [CULEMO: Cultural Lenses on Emotion - Benchmarking LLMs for Cross-Cultural Emotion Understanding](https://arxiv.org/abs/2503.10688)：提供可复用评测目标、排行榜或测量协议。
+- [LAG-MMLU: Benchmarking Frontier LLM Understanding in Latvian and Giriama](https://arxiv.org/abs/2503.11911)：评测前沿 LLM 对拉脱维亚语和 Giriama 的理解。核心思想：把 MMLU 式评测扩展到主流多语言集合覆盖不足的语言。
+- [TLUE: A Tibetan Language Understanding Evaluation Benchmark](https://arxiv.org/abs/2503.12051)：提供藏语语言理解评测基准，为多语种 LLM 评测补充低资源汉藏语系覆盖。
+- [A Framework to Assess Multilingual Vulnerabilities of LLMs](https://arxiv.org/abs/2503.13081)：通过自动化框架在 8 种资源水平不同的语言上评测 6 个 LLM 的安全脆弱性，并在 2 种语言中用人工评价验证自动判断。
+- [Fuxi](https://arxiv.org/abs/2503.15837)：用 21 项任务评测古汉语理解与生成，包含诗歌创作、对联补全、规则校验和微调评测器，并提供 benchmark、toolkit 与 baselines，面向低资源古典语言能力。
+- [SaudiCulture: A benchmark for evaluating large language models’ cultural competence within Saudi Arabia](https://arxiv.org/abs/2503.17485)：提供可复用评测目标、排行榜或测量协议。
+- [PM4Bench: Benchmarking Large Vision-Language Models with Parallel Multilingual Multi-Modal Multi-task Corpus](https://arxiv.org/abs/2503.18484)：评测多语言能力。核心思想：围绕论文中的任务、数据或协议（Benchmarking Large Vision-Language Models with Parallel Multilingual Multi-Modal Multi-task Corpus）形成可复用比较基准。
+- [COMI-LINGUA: Expert Annotated Large-Scale Dataset for Multitask NLP in Hindi-English Code-Mixing](https://arxiv.org/abs/2503.21670)：提供专家标注的印地语-英语代码混合多任务数据集，为多语种和代码混合评测补充具体资源。
 - [JEEM](https://arxiv.org/abs/2503.21910)：评测约旦、阿联酋、埃及和摩洛哥四类阿拉伯语语境下的 vision-language understanding。核心思想是结合具有文化信息的 image captioning 与 visual question answering，测试 VLM 的方言与文化泛化能力。
+- [MultiClaimNet: A Massively Multilingual Dataset of Fact-Checked Claim Clusters](https://arxiv.org/abs/2503.22280)：发布 MultiClaimNet 大规模多语事实核查 claim clusters 数据集，支持跨语言事实性和声明聚类评测。
 - [HRET](https://arxiv.org/abs/2503.22968)：通过 registry-based 工具包评测韩语模型能力，整合主要韩语 benchmark、推理后端、评测方法、语言一致性检查，以及面向韩语的形态感知词汇多样性和关键词遗漏诊断。
+- [XL-Suite: Cross-Lingual Synthetic Training and Evaluation Data for Open-Ended Generation](https://arxiv.org/abs/2503.22973)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [The Challenge of Achieving Attributability in Multilingual Table-to-Text Generation with Question-Answer Blueprints](https://arxiv.org/abs/2503.23204)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [KOFFVQA: An Objectively Evaluated Free-Form VQA Benchmark for Large Vision-Language Models in the Korean Language](https://arxiv.org/abs/2503.23730)：韩语自由形式 VQA 评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [MultiBLiMP 1.0: A Massively Multilingual Benchmark of Linguistic Minimal Pairs](https://arxiv.org/abs/2504.02768)：提供大规模多语言最小对基准来评估语法知识。
+- [GlotEval: A Test Suite for Massively Multilingual Evaluation of Large Language Models](https://arxiv.org/abs/2504.04155)：面向大规模多语言 LLM evaluation 的 test suite。
+- [NativQA Framework: Enabling LLMs and VLMs with Native, Local, and Everyday Knowledge](https://arxiv.org/abs/2504.05995)：构建多语和多模态的 native-local knowledge 资源；核心思想是把本地日常知识评测从文本扩展到图像、音频和视频，覆盖低代表性地区与语言。
+- [Kaleidoscope: In-language Exams for Massively Multilingual Vision Evaluation](https://arxiv.org/abs/2504.07072)：提供覆盖 18 种语言和 14 个学科的原生语言多模态考试，评测 VLM 在非英语翻译提示之外的多语言视觉推理能力。
+- [Do LLMs Understand Your Translations? Evaluating Paragraph-level MT with Question Answering](https://arxiv.org/abs/2504.07583)：评测多语言能力；核心思想是暴露跨语言迁移、语码转换、翻译、偏见或特定语言推理失败。
 - [NorEval](https://arxiv.org/abs/2504.07749)：评测挪威语理解与生成能力。核心思想是整合 24 个高质量数据集、human baselines 和 prompts，覆盖 Bokmaal 与 Nynorsk，使挪威语模型表现不再只依赖单一书面标准或任务族。
 - [MultiLoKo](https://arxiv.org/abs/2504.10356)（[开源代码](https://github.com/facebookresearch/MultiLoKo)）：评测 31 种语言中的本地知识与跨语知识迁移；核心思想是同时提供语言本地题、人工翻译题和机器翻译题，区分“知道事实”和“能用目标语言稳定表达/检索事实”。
+- [NusaDialogue: Dialogue Summarization and Generation for Underrepresented and Extremely Low-Resource Languages](https://arxiv.org/abs/2504.11248)：提出 NusaDialogue，面向代表性不足和极低资源语言的对话摘要与生成，把会话评测扩展到高资源语言之外。
+- [AskQE: Question Answering as Automatic Evaluation for Machine Translation](https://arxiv.org/abs/2504.11582)：把 MT 评测改写为围绕源文和译文的问答，检查译文是否保留可回答的信息，而不仅是同参考译文表面匹配。
+- [Building Russian Benchmark for Evaluation of Information Retrieval Models](https://arxiv.org/abs/2504.12879)：面向信息检索评测的 Russian benchmark。核心思想是结合改编、翻译和新建数据集，评估俄语 zero-shot retrieval。
+- [Translation Analytics for Freelancers: I. Introduction, Data Preparation, Baseline Evaluations](https://arxiv.org/abs/2504.14619)：为个人译者建立 translation analytics 基线，把机器翻译、LLM、CAT 工具集成、质量评价、错误定位、术语表生成和领域适配作为可测工作流组件。
+- [FarsEval-PKBETS](https://arxiv.org/abs/2504.14690)：提供 4,000 个波斯语问题，题型包括选择、短答和描述式回答，覆盖医学、法律、宗教、波斯语、本地知识、社会常识、伦理、偏见和生成。
+- [Multilingual Performance Biases of Large Language Models in Education](https://arxiv.org/abs/2504.17720)：考察教育场景中 LLM 的多语性能偏差，在教育任务上跨语言比较模型行为，揭示语言资源差异带来的影响。
+- [Mind the Language Gap: Automated and Augmented Evaluation of Bias in LLMs for High- and Low-Resource Languages](https://arxiv.org/abs/2504.18560)：用自动和增强式评测比较高资源与低资源语言中的偏见检测，揭示按英语校准的偏见测试在哪些语言上无法迁移。
+- [Evaluating Large Language Models on Multiword Expressions in Multilingual and Code-Switched Contexts](https://arxiv.org/abs/2504.20051)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [RDF-Based Structured Quality Assessment Representation of Multilingual LLM Evaluations](https://arxiv.org/abs/2504.21605)：用 RDF 表示多语 LLM 评测质量评估，将 benchmark 结果和元数据结构化，使跨语言评测证据可查询和比较。
+- [Developing Japanese CLIP Models Leveraging an Open-weight LLM for Large-scale Dataset Translation](https://doi.org/10.18653/v1/2025.naacl-srw.15)：用开源权重 LLM 翻译构造大规模日语图文训练数据，并在日语图文检索和 caption 对齐任务上评测 Japanese CLIP 模型。
+- [Taxi1500: A Dataset for Multilingual Text Classification in 1500 Languages](https://doi.org/10.18653/v1/2025.naacl-short.36)：覆盖 1500 种语言的多语文本分类数据集。核心思想是把评测扩展到常见多语 benchmark 通常遗漏的大量低资源语言。
+- [Advancing Persian LLM Evaluation](https://doi.org/10.18653/v1/2025.findings-naacl.147)：评什么：补充低资源波斯语 LLM 评测。
+- [Thank You, Stingray: Multilingual Large Language Models Can Not (Yet) Disambiguate Cross-Lingual Word Senses](https://doi.org/10.18653/v1/2025.findings-naacl.178)：评测多语言能力；核心思想是暴露跨语言迁移、语码转换、翻译、偏见或特定语言推理失败。
+- [UCL-Bench: A Chinese User-Centric Legal Benchmark for Large Language Models](https://doi.org/10.18653/v1/2025.findings-naacl.444)：用法律从业者需求调研设计 5 类法律场景下的 22 个中文实践任务，并结合专家答案指导和 GPT-4 用户模拟器做多轮对话评测。
+- [SHADES: Towards a Multilingual Assessment of Stereotypes in Large Language Models](https://doi.org/10.18653/v1/2025.naacl-long.600)：提供覆盖 16 种语言、20 个地区和多类身份维度的平行刻板印象数据集，用于评测基础模型与指令微调模型中的文化特定偏见。
+- [AI agents may be worth the hype but not the resources (yet): An initial exploration of machine translation quality and costs in three language pairs in the legal and news domains](https://arxiv.org/abs/2505.01560)：围绕多语言能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Same evaluation, more tokens: On the effect of input length for machine translation evaluation using Large Language Models](https://arxiv.org/abs/2505.01761)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [IndicSQuAD: A Comprehensive Multilingual Question Answering Dataset for Indic Languages](https://arxiv.org/abs/2505.03688)：面向 Indic languages 的综合多语 QA 数据集。核心思想是评测主流 QA benchmark 覆盖不足的印度语言问答能力。
+- [NBF at SemEval-2025 Task 5: Light-Burst Attention Enhanced System for Multilingual Subject Recommendation](https://arxiv.org/abs/2505.03711)：描述 SemEval-2025 Task 5 多语主题推荐系统，使用 light-burst attention 跨语言评测主题或学科分类。
+- [LiTransProQA: an LLM-based Literary Translation evaluation metric with Professional Question Answering](https://arxiv.org/abs/2505.05423)：可作为多语言能力的 Bench 候选：围绕 LiTransProQA: an LLM-based Literary Translation evaluation metric with Professional Question Answering 提供可比较的评测任务、数据或分析协议。
+- [Exploring the Feasibility of Multilingual Grammatical Error Correction with a Single LLM up to 9B parameters: A Comparative Study of 17 Models](https://arxiv.org/abs/2505.06004)：比较 17 个 9B 以下模型在单一 LLM 多语语法纠错中的表现，检验一个紧凑模型能否跨语言处理 GEC。
+- [Unpacking Robustness in Inflectional Languages: Adversarial Evaluation and Mechanistic Insights](https://arxiv.org/abs/2505.07856)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [WorldView-Bench: A Benchmark for Evaluating Global Cultural Perspectives in Large Language Models](https://arxiv.org/abs/2505.09595)：可作为多语言与文化语境评测的Bench候选；核心关注“A Benchmark for Evaluating Global Cultural Perspectives in Large Language Models”。
+- [XRAG: Cross-lingual Retrieval-Augmented Generation](https://arxiv.org/abs/2505.10089)：跨语检索增强生成 benchmark。核心思想是测试用户语言和检索证据语言不一致时的生成能力。
+- [Tiny QA Benchmark++: Ultra-Lightweight, Synthetic Multilingual Dataset Generation & Smoke-Tests for Continuous LLM Evaluation](https://arxiv.org/abs/2505.12058)：把 52 题英文 gold set、基于 LiteLLM 的生成器和 10 种语言现成包组合成 CI 风格多语 QA smoke test，用于捕捉 prompt、tokenizer 和微调回归。
+- [Multilingual LLM-as-a-Judge Reliability](https://arxiv.org/abs/2505.12201)：在 25 种语言和多个任务上评估 judge 一致性，暴露多语言可靠性差距。
+- [IRLBench: A Multi-modal, Culturally Grounded, Parallel Irish-English Benchmark for Open-Ended LLM Reasoning Evaluation](https://arxiv.org/abs/2505.13498)：面向开放式推理的多模态、文化扎根、Irish-English 平行 benchmark。核心思想是用文化扎根提示测试低资源多语推理，而不是只翻译英语任务。
+- [CS-Sum: A Benchmark for Code-Switching Dialogue Summarization and the Limits of Large Language Models](https://arxiv.org/abs/2505.13559)：评测中英、泰米尔英、马来英 code-switching 对话摘要，检验 LLM 能否在混合语言对话中保留语义。
+- [SlangDIT: Benchmarking LLMs in Interpretative Slang Translation](https://arxiv.org/abs/2505.14181)：提出 SlangDIT 解释式俚语翻译基准，评测 LLM 是否能保留意义、语境和文化细微差异，而不是逐字翻译俚语。
+- [MUG-Eval: A Proxy Evaluation Framework for Multilingual Generation Capabilities in Any Language](https://arxiv.org/abs/2505.14395)：面向任意语言生成能力的代理评测框架；核心思想是把已有 benchmark 转换为对话任务，并用任务准确率评测多语言生成。
 - [X-WebAgentBench](https://arxiv.org/abs/2505.15372)（[开源代码](https://github.com/WPENGxs/X-WebAgentBench)）：评测多语言交互式 Web agent 的规划与交互能力；核心思想是把 agentic web 任务扩展到多语言环境，检查跨语对齐方法是否真的能支撑全球化 agent 服务。
+- [MAPS: A Multilingual Benchmark for Agent Performance and Security](https://arxiv.org/abs/2505.15935)：MAPS 已形成多语 agent 性能与安全评测任务，且可落到 Multilingual 的 Bench。
+- [KoBALT: Korean Benchmark For Advanced Linguistic Tasks](https://arxiv.org/abs/2505.16125): 用专家构造题评估韩语高级语言理解，覆盖句法、语义、语用、语音音系和形态等语言学维度。
+- [MIDAS](https://arxiv.org/abs/2505.16216)：评什么：六种语言中的习语理解。核心思想：把习语与含义配对，测试模型依赖记忆、上下文线索还是组合推理，补足多语 benchmark 中偏学科知识或翻译的覆盖。
+- [Evaluating Large Language Model with Knowledge Oriented Language Specific Simple Question Answering](https://arxiv.org/abs/2505.16591)：提出 KoLasSimpleQA，用语言特定的简单稳定问题评测多语言事实知识。
 - [ARB](https://arxiv.org/abs/2505.17021)：用具有语言和文化语境的阿拉伯语图文任务评测多模态推理，避免只用英语中心的多模态基准外推阿拉伯语能力。
+- [EXECUTE: A Multilingual Benchmark for LLM Token Understanding](https://arxiv.org/abs/2505.17784)：提出 EXECUTE 多语 LLM token understanding 基准，测试模型能否跨语言理解 tokenization 和 token 级约束。
+- [Fann or Flop: A Multigenre, Multiera Benchmark for Arabic Poetry Understanding in LLMs](https://arxiv.org/abs/2505.18152)：评测 LLM 对不同时代、体裁、格律、隐喻、语义和文化语境下阿拉伯诗歌的理解。
+- [Purdah and Patriarchy: Evaluating and Mitigating South Asian Biases in Open-Ended Multilingual LLM Generations](https://arxiv.org/abs/2505.18466)：评测多语言能力；核心思想是暴露跨语言迁移、语码转换、翻译、偏见或特定语言推理失败。
+- [MAVL: A Multilingual Audio-Video Lyrics Dataset for Animated Song Translation](https://arxiv.org/abs/2505.18614)：发布 MAVL 多语音视频歌词数据集，用于动画歌曲翻译，将歌词、音频和视觉语境对齐以支持多模态翻译评测。
+- [Cross-Lingual Pitfalls: Automatic Probing Cross-Lingual Weakness of Multilingual Large Language Models](https://arxiv.org/abs/2505.18673)：评测跨语言迁移、多语言检索、代码混合或历史多语言知识。
+- [MMATH: A Multilingual Benchmark for Mathematical Reasoning](https://arxiv.org/abs/2505.19126)：评测多语言数学推理；核心思想是用跨语系高质量数学题检验 reasoning 能否从英语迁移到其他语言。
+- [How Well Do Large Reasoning Models Translate? A Comprehensive Evaluation for Multi-Domain Machine Translation](https://arxiv.org/abs/2505.19987)：评测大型推理模型在多领域机器翻译中的表现，检验推理型模型是否能在领域迁移下保持翻译质量，而不只是在通用 MT 集合上表现良好。
+- [BLUCK: A Benchmark Dataset for Bengali Linguistic Understanding and Cultural Knowledge](https://arxiv.org/abs/2505.21092)：面向 Bengali 语言理解与文化知识的 benchmark。核心思想是评测 LLM 在英语中心测试覆盖不足的语言和文化问题上的表现。
+- [PSRB: A Comprehensive Benchmark for Evaluating Persian ASR Systems](https://arxiv.org/abs/2505.21230)：提出 PSRB 综合波斯语 ASR 基准，在波斯语语音上评测识别系统，而不是从高资源 ASR 结果外推。
+- [Found in Translation: Measuring Multilingual LLM Consistency as Simple as Translate then Evaluate](https://arxiv.org/abs/2505.21999)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [Multilingual vs Crosslingual Retrieval of Fact-Checked Claims](https://arxiv.org/abs/2505.22118)：研究 47 种语言、283 个语言组合中的既有事实核查声明检索，区分多语言与跨语言设置，并把 LLM reranking 作为强基线。
+- [Comprehensive Evaluation on Lexical Normalization: Boundary-Aware Approaches for Unsegmented Languages](https://arxiv.org/abs/2505.22273)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [MEDAL: A Framework for Benchmarking LLMs as Multilingual Open-Domain Chatbots and Dialogue Evaluators](https://arxiv.org/abs/2505.22777)：通过多智能体流程构造多语开放域对话评测数据：从多样 seed contexts 生成用户-聊天机器人对话，再用 GPT-4.1 做多维分析。
+- [CaMMT: Benchmarking Culturally Aware Multimodal Machine Translation](https://arxiv.org/abs/2505.24456)：用 5,800 多组图像、英文 caption 与区域语言 caption 三元组评测文化感知多模态翻译，比较纯文本和图像条件 VLM 在文化特定项、消歧和性别标记上的翻译质量。
+- [VietMix: A Naturally-Occurring Parallel Corpus and Augmentation Framework for Vietnamese-English Code-Mixed Machine Translation](https://arxiv.org/abs/2505.24472)：提供专家翻译的越英 code-mixed 平行语料和数据增强流程，提升低资源语对的混合语言机器翻译，并给出可迁移的语料构建方法。
+- [Disentangling Language and Culture for Evaluating Multilingual Large Language Models](https://arxiv.org/abs/2505.24635)：通过区分语言媒介和文化语境评测 multilingual MLLMs；核心思想是跨语言测试本土与跨文化问题。
+- [Pakistani-Language Political Bias](https://arxiv.org/abs/2506.00068)：评估 Urdu、Punjabi、Sindhi、Pashto、Balochi 中的意识形态立场与 framing，为多语言 benchmark 补充低资源政治偏见维度。
 - [Hanfu-Bench](https://arxiv.org/abs/2506.01565)：以不同时期的汉服为专家构造的视觉文化测试场，评测跨时代文化理解与转创能力。
+- [IndicRAGSuite: Large-Scale Datasets and a Benchmark for Indian Language RAG Systems](https://arxiv.org/abs/2506.01615)：作为多语言能力的基准或评测协议候选，聚焦“Large-Scale Datasets and a Benchmark for Indian Language RAG Systems”。
+- [Minimal Pair-Based Evaluation of Code-Switching](https://arxiv.org/abs/2506.01840)：评测多语言能力；核心思想是暴露跨语言迁移、语码转换、翻译、偏见或特定语言推理失败。
+- [From Guidelines to Practice: A New Paradigm for Arabic Language Model Evaluation](https://arxiv.org/abs/2506.01920)：提出 Arabic Depth Mini Dataset 及阿拉伯语模型评估指南。
+- [M3FinMeeting: A Multilingual, Multi-Sector, and Multi-Task Financial Meeting Understanding Evaluation Dataset](https://arxiv.org/abs/2506.02510)：构建 M3FinMeeting 多语金融会议理解评测数据，结合多行业和多任务，在金融特定会议语境中测试模型理解能力。
+- [Isharah: A Large-Scale Multi-Scene Dataset for Continuous Sign Language Recognition](https://arxiv.org/abs/2506.03615)：发布大规模多场景连续手语识别数据集，测试手语识别在不同场景下的鲁棒性，而不是只在受控孤立片段上评测。
+- [Cultural Bias Matters: A Cross-Cultural Benchmark Dataset and Sentiment-Enriched Model for Understanding Multimodal Metaphors](https://arxiv.org/abs/2506.06987)：用带情感标注的跨文化多模态隐喻数据评测文化理解能力。
+- [mSTEB: Massively Multilingual Evaluation of LLMs on Speech and Text Tasks](https://arxiv.org/abs/2506.08400)：面向语音和文本任务的大规模多语 benchmark。核心思想是把 LLM 评测从英语和少数高资源语言扩展到低资源语音文本场景。
+- [Rethinking Multilingual Vision-Language Translation: Dataset, Evaluation, and Adaptation](https://arxiv.org/abs/2506.11820)：提供图像中多语文本翻译的数据和评测；核心思想是联合测试 OCR、视觉 grounding 与翻译，而不是把它们拆成孤立子任务。
+- [TurBLiMP: A Turkish Benchmark of Linguistic Minimal Pairs](https://arxiv.org/abs/2506.13487)：提供覆盖 16 类现象的土耳其语语言最小对，用于测试单语与多语语言模型的语法敏感性。
+- [Lost in the Mix: Evaluating LLM Understanding of Code-Switched Text](https://arxiv.org/abs/2506.14012)：评测 LLM 对 code-switched text 的理解；核心思想是测试同一语篇中自然混合多种语言的真实输入。
+- [SANSKRITI: A Comprehensive Benchmark for Evaluating Language Models' Knowledge of Indian Culture](https://arxiv.org/abs/2506.15355)：面向印度文化知识的语言模型基准。核心思想是用大规模 QA 集评估地域和社会文化理解。
+- [COSMMIC: Comment-Sensitive Multimodal Multilingual Indian Corpus for Summarization and Headline Generation](https://arxiv.org/abs/2506.15372)：提出 COSMMIC，面向摘要与标题生成的评论敏感多模态多语印度语料，将评论与媒体内容结合评测印度语言生成。
+- [PL-Guard: Benchmarking Language Model Safety for Polish](https://arxiv.org/abs/2506.16322)：构建人工标注的波兰语安全分类数据集及对抗扰动版本，并评测与微调 Llama-Guard-3、HerBERT 等 LLM 式和分类器式 guard 模型。
+- [MUCAR: Benchmarking Multilingual Cross-Modal Ambiguity Resolution for Multimodal Large Language Models](https://arxiv.org/abs/2506.17046)：评测多模态 LLM 的 multilingual cross-modal ambiguity resolution；核心思想是测试模型在多语言文本与视觉上下文交互时能否消解歧义指称。
+- [Chengyu-Bench: Benchmarking Large Language Models for Chinese Idiom Understanding and Use](https://arxiv.org/abs/2506.18105)：包含 2,937 个经人工核验的样例和 1,765 个常用成语，评测褒贬倾向、语境适切性和开放式填空中的成语理解与使用。
+- [Multi-lingual Functional Evaluation](https://arxiv.org/abs/2506.20793)：把功能性基准扩展到多语场景。核心思想是将 GSM-Symbolic 和 IFEval 模板翻译到更多语言，比较静态多语分数与可执行式数学、指令遵循表现之间的差距。
+- [ParEval-Repo: A Benchmark Suite for Evaluating LLMs with Repository-level HPC Translation Tasks](https://arxiv.org/abs/2506.20938)：用科学计算和 AI mini-applications 测试 GPGPU 执行模型之间的仓库级 HPC 代码翻译，评估 LLM 是否能迁移完整代码库而不只是单个 kernel。
+- [skLEP: A Slovak General Language Understanding Benchmark](https://arxiv.org/abs/2506.21508)：斯洛伐克语通用语言理解 benchmark。核心思想：用本土任务评测斯洛伐克语理解，而不是只依赖英文翻译套件。
+- [The Translation Barrier Hypothesis: Multilingual Generation with Large Language Models Suffers from Implicit Translation Failure](https://arxiv.org/abs/2506.22724)：评测多语言能力；核心思想是暴露跨语言迁移、语码转换、翻译、偏见或特定语言推理失败。
+- [BelarusianGLUE: Towards a Natural Language Understanding Benchmark for Belarusian](https://doi.org/10.18653/v1/2025.acl-long.25)：包含约 1.5 万个白俄罗斯语 NLU 实例，覆盖情感分析、语言可接受性、词义语境、Winograd schema challenge 和文本蕴含 5 个任务。
+- [BABELEDITS: A Benchmark and a Modular Approach for Robust Cross-lingual Knowledge Editing of Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.438)：评测跨语言知识编辑，检查一种语言中的事实编辑是否能迁移到其他语言、保持鲁棒，并避免不必要的事实改动。
+- [VMLU Benchmarks: A comprehensive benchmark toolkit for Vietnamese LLMs](https://doi.org/10.18653/v1/2025.acl-long.563)：评什么：越南语 LLM 综合 benchmark 工具包。
+- [TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law](https://arxiv.org/abs/2507.00875)：构建 TransLaw，大规模香港判例法专业翻译数据集与多智能体基准，面向法律 MT 质量和真实翻译流程评测。
+- [Navigating the Political Compass](https://doi.org/10.18653/v1/2025.findings-acl.883)：评测多语言 LLM 在不同语言与国籍设定下的政治倾向行为，揭示跨语言和文化差异。
+- [Global MMLU: Understanding and Addressing Cultural and Linguistic Biases in Multilingual Evaluation](https://doi.org/10.18653/v1/2025.acl-long.919)：Global MMLU。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [KE-MHISTO: Towards a Multilingual Historical Knowledge Extraction Benchmark for Addressing the Long-Tail Problem](https://doi.org/10.18653/v1/2025.findings-acl.1042)：评测跨语言迁移、多语言检索、代码混合或历史多语言知识。
+- [CulturalBench: A Robust, Diverse and Challenging Benchmark for Measuring LMs' Cultural Knowledge Through Human-AI Red-Teaming](https://doi.org/10.18653/v1/2025.acl-long.1247)：通过多样化人机红队任务评估文化知识。
+- [ConLoan: A Contrastive Multilingual Dataset for Evaluating Loanwords](https://doi.org/10.18653/v1/2025.acl-long.1453)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Towards Inclusive Arabic LLMs: A Culturally Aligned Benchmark in Arabic Large Language Model Evaluation](https://aclanthology.org/2025.acl-long.1579/)：提供文化包容且语言多样的阿拉伯语 LLM 评测基准。
+- [AfroCS-xs: Creating a Compact, High-Quality, Human-Validated Code-Switched Dataset for African Languages](https://doi.org/10.18653/v1/2025.acl-long.1601)：提供紧凑且经人工验证的非洲语言代码混合数据集，将混合语言评测扩展到高资源语对之外。
+- [A Dataset for Automatic Assessment of TTS Quality in Spanish](https://arxiv.org/abs/2507.01805)：发布西班牙语自动 TTS 质量评估数据集，为西班牙语语音合成系统提供语音质量标签和评测数据。
+- [McBE: A Multi-task Chinese Bias Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2507.02088)：评什么：面向中文 LLM 的多任务 bias evaluation benchmark。
+- [BMMR: A Large-Scale Bilingual Multimodal Multi-Discipline Reasoning Dataset](https://arxiv.org/abs/2507.03483)：类型：benchmark/评测协议。核心价值：为 1.1.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Nunchi-Bench: Benchmarking Language Models on Cultural Reasoning with a Focus on Korean Superstition](https://arxiv.org/abs/2507.04014)：提出 Nunchi-Bench，以韩国迷信为核心的文化推理基准，测试隐含文化推断，而不是一般韩语事实问答。
+- [LinguaMark: Do Multimodal Models Speak Fairly? A Benchmark-Based Evaluation](https://arxiv.org/abs/2507.07274)：评测多模态模型的多语言公平性。核心思想：衡量 LMM 输出能否跨语言保持可靠，而不只在英语中心图文环境中表现较好。
+- [From KMMLU-Redux to Pro: A Professional Korean Benchmark Suite for LLM Evaluation](https://arxiv.org/abs/2507.08924)：补充multilingual方向的基准或评测套件，核心围绕《From KMMLU-Redux to Pro: A Professional Korean Benchmark Suite for LLM Evaluation》。
+- [MCEval](https://arxiv.org/abs/2507.09701)：动态多语言文化评测框架，覆盖 13 种文化和语言，并通过反事实与混杂因素改写分析文化意识和偏见。
 - [Absher](https://arxiv.org/abs/2507.10216)：通过谚语、方言和地区特定选择题评测模型对沙特方言与文化语境的理解。
+- [Marco-Bench-MIF: On Multilingual Instruction-Following Capability of Large Language Models](https://arxiv.org/abs/2507.11882)：将 IFEval 本地化为覆盖 30 种语言的 Marco-Bench-MIF，调整语言约束和文化指代，使指令遵循分数不再只是英语提示的机器翻译结果。
+- [POLYCHARTQA: Benchmarking Large Vision-Language Models with Multilingual Chart Question Answering](https://arxiv.org/abs/2507.11939)：PolyChartQA 是多语言 chart QA benchmark，补充 multilingual multimodal evaluation。
+- [Evaluating Text Style Transfer: A Nine-Language Benchmark for Text Detoxification](https://arxiv.org/abs/2507.15557)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [HW-MLVQA: Elucidating Multilingual Handwritten Document Understanding with a Comprehensive VQA Benchmark](https://arxiv.org/abs/2507.15655)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [3LM: Bridging Arabic, STEM, and Code through Benchmarking](https://arxiv.org/abs/2507.15850)：连接 Arabic、STEM 与 code 的 benchmark。核心思想是在英语中心测试覆盖不足的 Arabic 场景中评测多语 STEM 与编程能力。
+- [LingBench++](https://arxiv.org/abs/2507.16809)：评测受国际语言学奥林匹克启发的多步与跨文化语言推理。核心思想是为低资源与跨文化语言任务加入结构化推理轨迹、分步评价和 typological metadata，并提供检索增强与假设检验式 agentic baseline。
 - [MultiNRC](https://arxiv.org/abs/2507.17476)：评测原生多语推理与文化相关常识；核心思想是用母语题而不是英译题，直接暴露词法、文化和语言游戏差异。
-- [MAPS](https://aclanthology.org/2026.findings-eacl.42/)（数据集：[Fujitsu-FRE/MAPS](https://huggingface.co/datasets/Fujitsu-FRE/MAPS)）：评测多语 agent 的性能与安全性；核心思想是把 GAIA、MATH、SWE-bench 和 Agent Security Benchmark 等任务翻译到多种语言，观察能力退化与安全回归。
+- [Factual Inconsistencies in Multilingual Wikipedia Tables](https://arxiv.org/abs/2507.18406)：构建多语 Wikipedia 表格事实不一致评测数据，测试模型能否发现跨语言表格冲突和事实漂移。
+- [AraTable: Benchmarking LLMs' Reasoning and Understanding of Arabic Tabular Data](https://arxiv.org/abs/2507.18442)：评测阿拉伯语表格推理与理解。核心思想：面向阿拉伯语结构化数据推理，而不是沿用英语表格 benchmark。
+- [CodeMixBench: Evaluating Code-Mixing Capabilities of LLMs Across 18 Languages](https://arxiv.org/abs/2507.18791)：评测 18 种语言上的 code-mixing 能力；核心思想是测试同一句或同一语篇内切换语言的真实对话输入。
+- [Towards Inclusive NLP: Assessing Compressed Multilingual Transformers across Diverse Language Benchmarks](https://arxiv.org/abs/2507.19699)：在阿拉伯语、英语和印度语言基准上比较多语与单语 Transformer，并加入剪枝和量化设置，揭示压缩策略与语言资源水平的交互影响。
+- [When Scale Meets Diversity: Evaluating Language Models on Fine-Grained Multilingual Claim Verification](https://arxiv.org/abs/2507.20700)：评测语言模型的细粒度多语言声明验证能力。
+- [VN-MTEB: Vietnamese Massive Text Embedding Benchmark](https://arxiv.org/abs/2507.21500)：Vietnamese massive text embedding benchmark。核心思想是提供广泛越南语检索和 embedding 任务，补充英语中心 MTEB 覆盖不足。
+- [IndoPref: A Multi-Domain Pairwise Preference Dataset for Indonesian](https://arxiv.org/abs/2507.22159)：包含 522 个印尼语提示和针对 5 个指令微调 LLM 的 4,099 个人工成对偏好，评测多领域印尼语生成的自然度与质量。
+- [Evaluating LLMs' Multilingual Capabilities for Bengali: Benchmark Creation and Performance Analysis](https://arxiv.org/abs/2507.23248)：构建并分析面向孟加拉语的 LLM 多语种能力评测基准，补充低资源原生语言覆盖。
+- [UrBLiMP: A Benchmark for Evaluating the Linguistic Competence of Large Language Models in Urdu](https://arxiv.org/abs/2508.01006)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [ArzEn-MultiGenre: An aligned parallel dataset of Egyptian Arabic song lyrics, novels, and subtitles, with English translations](https://arxiv.org/abs/2508.01411)：对齐埃及阿拉伯语与英语的歌词、小说和字幕，为 MT 系统提供跨体裁方言阿拉伯语评测数据，补足现代标准阿拉伯语之外的覆盖。
+- [MyCulture: Exploring Malaysia's Diverse Culture under Low-Resource Language Constraints](https://arxiv.org/abs/2508.05429)：提出 MyCulture，在低资源语言约束下评测马来西亚文化，测试模型对马来西亚特定文化的理解，而不依赖英语中心提示。
+- [TASE: Token Awareness and Structured Evaluation for Multilingual Language Models](https://arxiv.org/abs/2508.05468)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [SEADialogues: A Multilingual Culturally Grounded Multi-turn Dialogue Dataset on Southeast Asian Languages](https://arxiv.org/abs/2508.07069)：发布 SEADialogues 东南亚语言多语文化扎根多轮对话数据集，在区域规范和语境上评测对话系统。
+- [Reveal-Bangla: A Dataset for Cross-Lingual Multi-Step Reasoning Evaluation](https://arxiv.org/abs/2508.08933)：将 Reveal 人工翻译为孟加拉语，包含二元和非二元问题，用来比较英语中心和孟加拉语中心小模型是否能利用相关孟加拉语推理步骤。
+- [UNVEILING](https://arxiv.org/abs/2508.11260)：诊断 Linguistics Olympiad puzzles 为什么仍然难倒 LLM。核心思想是为 41 种低资源语言的 629 道题标注语言学特征，分析形态复杂度和与英语特征重合度如何影响可解性。
+- [SEA-BED: How Do Embedding Models Represent Southeast Asian Languages?](https://arxiv.org/abs/2508.12243)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [LoraxBench: A Multitask, Multilingual Benchmark Suite for 20 Indonesian Languages](https://arxiv.org/abs/2508.12459)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [Tokenization Standards and Evaluation in Natural Language Processing: A Comparative Analysis of Large Language Models on Turkish](https://arxiv.org/abs/2508.13058)：比较面向大语言模型的土耳其语 tokenization 标准，把土耳其语形态结构和 tokenizer 行为作为评测目标。
+- [DocHPLT: A Massively Multilingual Document-Level Translation Dataset](https://arxiv.org/abs/2508.13079)：发布 50 种与英语配对语言的 1.24 亿个对齐文档对，共 42.6 亿句，并可通过 pivot 形成 2,500 个额外非英语文档翻译方向。
+- [GRILE: A Benchmark for Grammar Reasoning and Explanation in Romanian LLMs](https://arxiv.org/abs/2508.14279)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [Evaluating Multilingual and Code-Switched Alignment in LLMs via Synthetic Natural Language Inference](https://arxiv.org/abs/2508.14735)：用合成自然语言推理评估多语和 code-switched alignment；核心思想是检验对齐行为在语言混用场景下是否保持稳定。
+- [WangchanThaiInstruct: An instruction-following Dataset for Culture-Aware, Multitask, and Multi-domain Evaluation in Thai](https://arxiv.org/abs/2508.15239)：发布 WangchanThaiInstruct 泰语指令遵循数据集，用于文化感知、多任务和多领域评测。
+- [XLQA: A Benchmark for Locale-Aware Multilingual Open-Domain Question Answering](https://arxiv.org/abs/2508.16139)：评什么：locale-aware 多语开放域问答。核心思想是评估会随文化、地区和语言语境变化的答案，而不是假设所有语言共享同一答案。
+- [ParamBench: A Graduate-Level Benchmark for Evaluating LLM Understanding on Indic Subjects](https://arxiv.org/abs/2508.16185)：评测 Indic 语境下研究生层级学科理解。核心思想：覆盖具有本土文化语境的学科问题，超出翻译式或基础事实型多语言测试。
+- [M3TQA: Massively Multilingual Multitask Table Question Answering](https://arxiv.org/abs/2508.16265)：评什么：大规模多语多任务表格问答。核心思想是在多语言表格上测试结构化理解，而不是只覆盖英文表格。
+- [Cetvel: A Unified Benchmark for Evaluating Language Understanding, Generation and Cultural Capacity of LLMs for Turkish](https://arxiv.org/abs/2508.16431)：土耳其语理解、生成与文化能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [MEENA (PersianMMMU): Multimodal-Multilingual Educational Exams for N-level Assessment](https://arxiv.org/abs/2508.17290)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [UI-Level Evaluation of ALLaM 34B: Measuring an Arabic-Centric LLM via HUMAIN Chat](https://arxiv.org/abs/2508.17378)：通过 HUMAIN Chat 用户界面评测阿拉伯语中心模型 ALLaM 34B，衡量产品层面的阿拉伯语交互质量，而不只看离线基准分数。
+- [Bangla-Bayanno: A 52K-Pair Bengali Visual Question Answering Dataset with LLM-Assisted Translation Refinement](https://arxiv.org/abs/2508.19887)：Bangla-Bayanno 包含 5.2 万对孟加拉语 VQA 样例，覆盖 4,750 多张图像，并经 LLM 辅助翻译修订以提升开放式孟加拉语多模态问答质量。
+- [KRETA: A Benchmark for Korean Reading and Reasoning in Text-Rich VQA Attuned to Diverse Visual Contexts](https://arxiv.org/abs/2508.19944)：韩语富文本 VQA 阅读与推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Languages Still Left Behind: Toward a Better Multilingual Machine Translation Benchmark](https://arxiv.org/abs/2508.20511)：构建面向低覆盖语言的多语言机器翻译基准，补足主流评测仍遗漏的语言范围。
+- [The Gold Medals in an Empty Room: Diagnosing Metalinguistic Reasoning in LLMs with Camlang](https://arxiv.org/abs/2509.00425)：评什么：用 Camlang 诊断元语言推理是否真实而非模式匹配。
+- [PalmX 2025: The First Shared Task on Benchmarking LLMs on Arabic and Islamic Culture](https://arxiv.org/abs/2509.02550)：定义面向阿拉伯语与伊斯兰文化的 LLM 共享任务，扩展文化扎根的阿拉伯语评测。
+- [Expanding the WMT24++ Benchmark with Rumantsch Grischun, Sursilvan, Sutsilvan, Surmiran, Puter, and Vallader](https://arxiv.org/abs/2509.03148)：将 WMT24++ 扩展到 Rumantsch Grischun 以及 Sursilvan、Sutsilvan、Surmiran、Puter、Vallader 等罗曼什语变体，补充变体级 MT 评测数据。
+- [SinhalaMMLU: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in Sinhala](https://arxiv.org/abs/2509.03162)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [SiLVERScore: Semantically-Aware Embeddings for Sign Language Generation Evaluation](https://arxiv.org/abs/2509.03791)：提出无需回译的 embedding-based 手语生成指标，在 PHOENIX-14T 和 CSL-Daily 的正确/随机配对区分上达到 ROC AUC 0.99。
+- [MultiWikiQA: A Reading Comprehension Benchmark in 300+ Languages](https://arxiv.org/abs/2509.04111)：MultiWikiQA 评测 300 多种语言的阅读理解，把多语言 QA 覆盖扩展到长尾语言。
+- [Do LLMs exhibit the same commonsense capabilities across languages?](https://arxiv.org/abs/2509.06401)：评测跨语言常识生成能力。核心思想：把常识三元组生成扩展到多种语言，以暴露语言相关能力差距。
+- [CMHG: A Dataset and Benchmark for Headline Generation of Minority Languages in China](https://arxiv.org/abs/2509.09990)：为藏语、维吾尔语和传统蒙古文构建标题生成数据集与母语者标注测试集，补充中国少数民族语言的多语生成评测。
 - [Ko-PIQA](https://arxiv.org/abs/2509.11303)：从韩语网页数据和人工修订中构造 PIQA 式对比问题，在原生韩语语境中测试日常常识。
+- [MTEB-NL](https://arxiv.org/abs/2509.12340)：评什么：荷兰语文本 embedding 在检索与非检索任务上的能力。核心思想：把荷兰语数据集整理进 MTEB 生态，让特定语言的表征质量被单独观察，而不是淹没在宽泛多语言平均值中。
+- [HistoryBankQA: Multilingual Temporal Question Answering on Historical Events](https://arxiv.org/abs/2509.12720)：基于覆盖 10 种语言、超过 1,000 万历史事件的 HistoryBank 构建 HistoryBankQA，评测历史事件时间问答，而不只考察当代事实。
+- [Linguistic Nepotism: Trading-off Quality for Language Preference in Multilingual RAG](https://arxiv.org/abs/2509.13930)：评什么：评测 multilingual RAG 中语言偏好与回答质量之间的权衡。
+- [Audio-Based Crowd-Sourced Evaluation of Machine Translation Quality](https://arxiv.org/abs/2509.14023)：比较 10 个 WMT MT 系统的纯文本和基于音频的众包评测，检验面向语音翻译使用场景的听觉质量评价是否可靠。
+- [Overview of the TREC 2024 NeuCLIR Track](https://arxiv.org/abs/2509.14355)：总结 TREC 2024 NeuCLIR，包含 8 个任务上的 274 个提交 run，覆盖中文、波斯语、俄语新闻，中文学术摘要，CLIR、MLIR、报告生成和技术文档检索。
+- [Ticket-Bench: A Kickoff for Multilingual and Regionalized Agent Evaluation](https://arxiv.org/abs/2509.14477)：评测多语言与区域化 agent 行为。核心思想：用工单式服务任务同时考察语言、区域语境与 agent 执行能力。
+- [Introducing OmniGEC: A Silver Multilingual Dataset for Grammatical Error Correction](https://arxiv.org/abs/2509.14504)：发布多语语法纠错 silver 数据，通过生成错误句和改正句平行样本，把 GEC 评测与训练扩展到英语之外。
+- [KAIO: A Collection of More Challenging Korean Questions](https://arxiv.org/abs/2509.14752)：面向前沿 LLM 的高难度韩语问题集合；核心思想是用原生韩语难题补足翻译式或已饱和多语评测难以暴露的韩语推理与知识缺口。
+- [Extending Automatic Machine Translation Evaluation to Book-Length Documents](https://arxiv.org/abs/2509.17249)：提出 SEGALE 书长文档 MT 评测方案，通过分句与对齐把自动指标扩展到任意长度文档译文，并处理漏译和过译。
+- [DIVERS-Bench: Evaluating Language Identification Across Domain Shifts and Code-Switching](https://arxiv.org/abs/2509.17768)：提出 DIVERS-Bench，评测领域迁移和代码转换下的语种识别，并发布覆盖 10 个代码转换语对的 DIVERS-CS。
+- [Evaluating the Creativity of LLMs in Persian Literary Text Generation](https://arxiv.org/abs/2509.18401)：在覆盖 20 个主题的用户生成波斯文学提示上评测文学生成，并借鉴 Torrance 创造力维度，从原创性、流畅性、灵活性和展开度评分。
+- [DRISHTIKON: A Multimodal Multilingual Benchmark for Testing Language Models' Understanding on Indian Culture](https://arxiv.org/abs/2509.19274)：DRISHTIKON 是印度文化的多模态多语 benchmark，适合 multilingual/cultural capability 评测。
+- ["Be My Cheese?": Assessing Cultural Nuance in Multilingual LLM Translations](https://arxiv.org/abs/2509.21577)：用 87 个 LLM 生成的电商营销邮件译文开展文化细微差异翻译评测，覆盖 20 种语言的 24 个地区方言，并由人工评价文化适切性和本地化质量。
 - [Multilingual Text-to-SQL](https://arxiv.org/abs/2509.24405)：评估语言模型和协作语言智能体在多语言 Text-to-SQL 任务中的能力。核心思路：检验自然语言查询跨语言变化时，数据库推理和 SQL 生成是否仍然可靠。
+- [QFrBLiMP: a Quebec-French Benchmark of Linguistic Minimal Pairs](https://arxiv.org/abs/2509.25664)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Generating Difficult-to-Translate Texts](https://arxiv.org/abs/2509.26592)：生成难翻译文本以压力测试翻译能力。
+- [MENLO](https://arxiv.org/abs/2509.26601)：评估 47 个 language varieties 中 native-like response quality。核心思想是用人工标注的成对偏好和 audience-design 质量维度，测试多语模型是否能达到本族语者认可的表达质量，而不只是语义正确。
+- [Culture In a Frame: C3B as a Comic-Based Benchmark for Multimodal Culturally Awareness](https://arxiv.org/abs/2510.00041)：基于漫画的多模态文化感知 benchmark；核心思想是用文化语境化漫画和跨语任务检查 MLLM 是否理解图像字面内容之外的规范与语境。
+- [TASER: Translation Assessment via Systematic Evaluation and Reasoning](https://arxiv.org/abs/2510.00255)：提出 TASER，基于大型推理模型逐步系统评估翻译质量，并在 WMT24 Metrics 的有参考和无参考设置中评测。
+- [EuroSpeech: A Multilingual Speech Corpus](https://arxiv.org/abs/2510.00514)：从 22 个欧洲议会录音构建 EuroSpeech，抽取 6.1 万多小时对齐语音，其中 19 种语言超过 1,000 小时、22 种超过 500 小时。
+- [ALARB: An Arabic Legal Argument Reasoning Benchmark](https://arxiv.org/abs/2510.00694)：阿拉伯语法律论证推理 benchmark；核心思想是在阿拉伯语法律语境中评测论证理解和推理，而不是依赖英语法律 QA 套件。
+- [Let's Play Across Cultures: A Large Multilingual, Multicultural Benchmark for Assessing Language Models' Understanding of Sports](https://arxiv.org/abs/2510.01247)：使用 CultSportQA 跨文化体育基准，包含 60 个国家、6 大洲的 33,000 道多语多文化题，文本和图像选择题分为历史、规则和情境三类。
+- [Idiom Understanding as a Tool to Measure the Dialect Gap](https://arxiv.org/abs/2510.05026)：用习语理解任务揭示语言模型评测中的方言差距。
+- [COLE: a Comprehensive Benchmark for French Language Understanding Evaluation](https://arxiv.org/abs/2510.05046)：面向法语理解评测的综合 benchmark；核心思想是提供语言特定的能力套件，而不是从英语任务外推。
+- [Camellia: Benchmarking Cultural Biases in LLMs for Asian Languages](https://arxiv.org/abs/2510.05291)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [CDTP: A Large-Scale Chinese Data-Text Pair Dataset for Comprehensive Evaluation of Chinese LLMs](https://arxiv.org/abs/2510.06039)：围绕多语言能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [OASIS: A Multilingual and Multimodal Dataset for Culturally Grounded Spoken Visual QA](https://arxiv.org/abs/2510.06371)：面向文化扎根 spoken visual QA 的多语多模态数据集；核心思想是结合语音、图像、语言和文化上下文，评测超越英语文本 QA 的 grounded understanding。
+- [LuxInstruct: A Cross-Lingual Instruction Tuning Dataset For Luxembourgish](https://arxiv.org/abs/2510.07074)：基于英语、法语和德语对齐数据构建卢森堡语指令微调数据，避免把指令机器翻译成卢森堡语，以保持低资源语言和文化一致性。
+- [Measuring Moral LLM Responses in Multilingual Capacities](https://arxiv.org/abs/2510.08776)：评估 multilingual LLM settings 下 moral-response behavior 的变化。
+- [Benchmarking Chinese Commonsense Reasoning with a Multi-hop Reasoning Perspective](https://arxiv.org/abs/2510.08800)：从多跳推理视角评测中文常识推理；核心思想是检验模型是否能组合多个常识事实，而不是依赖单一线索作答。
+- [Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors](https://arxiv.org/abs/2510.09536)：面向多语 typographical errors 的鲁棒性 benchmark。核心思想是测试 LLM 在自然噪声多语输入上的表现，而不是假设文本干净。
+- [Beyond Fertility: Analyzing STRR as a Metric for Multilingual Tokenization Evaluation](https://arxiv.org/abs/2510.09947)：提出 STRR 作为超越 fertility 的多语 tokenizer 指标，比较 6 个 tokenizer 在 7 种语言和 2 个领域中的表现，揭示词表分配和单 token 保留差距。
+- [Culturally-Aware Conversations: A Framework & Benchmark for LLMs](https://arxiv.org/abs/2510.11563)：用需要文化特定规范、偏好和语境处理的对话场景评测 culturally aware dialogue，而不是只看一般多语回复流畅度。
+- [CRaFT: An Explanation-Based Framework for Evaluating Cultural Reasoning in Multilingual Language Models](https://arxiv.org/abs/2510.14014)：基于解释评测多语文化推理；核心思想是检查正确答案是否由文化语境化解释支撑，而不是只看选项是否答对。
+- [Measuring the Effect of Disfluency in Multilingual Knowledge Probing Benchmarks](https://arxiv.org/abs/2510.15115)：通过比较模板化 MLAMA prompts 与句级翻译，在斯拉夫语和其他语族中测试多语知识探针里的不流畅与翻译伪影。
+- [KITE: A Benchmark for Evaluating Korean Instruction-Following Abilities in Large Language Models](https://arxiv.org/abs/2510.15558)：韩语指令遵循能力 benchmark。核心思想是用韩语形态、敬语、数字系统等语言文化约束测试模型是否真正遵循指令。
+- [ChiKhaPo: A Large-Scale Multilingual Benchmark for Evaluating Lexical Comprehension and Generation in Large Language Models](https://arxiv.org/abs/2510.16928)：面向多语言词汇理解和生成的大规模 benchmark，覆盖低资源语言能力。
+- [DiscoTrack: A Multilingual LLM Benchmark for Discourse Tracking](https://arxiv.org/abs/2510.17013)：面向 discourse tracking 的多语言 LLM benchmark。
+- [KoSimpleQA: A Korean Factuality Benchmark with an Analysis of Reasoning LLMs](https://arxiv.org/abs/2510.18368)：提出 KoSimpleQA，包含 1,000 个答案明确的韩语文化短事实问题；评测中最强模型正确率也只有 33.7%。
+- [BLiSS 1.0: Evaluating Bilingual Learner Competence in Second Language Small Language Models](https://arxiv.org/abs/2510.19419)：用来自 280 多万学习者句子的 136,867 个受控三元组定义二语学习者能力的 selective tolerance，对比 corrected、自然学习者错误和人工错误版本。
+- [From Facts to Folklore: Evaluating Large Language Models on Bengali Cultural Knowledge](https://arxiv.org/abs/2510.20043)：提出 BLanCK 孟加拉文化知识数据集，覆盖民间传统、饮食文化和区域方言，并比较无上下文与提供上下文时 LLM 的文化问答表现。
+- [Multilingual Political Fairness on EuroParl](https://arxiv.org/abs/2510.20508)：使用 21 语种并行 EuroParl 数据集评估翻译中的政治公平性，揭示多语言 LLM 在不同党派和语言之间的质量差异。
+- [CantoNLU: A benchmark for Cantonese natural language understanding](https://arxiv.org/abs/2510.20670)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [Irish-BLiMP: A Linguistic Benchmark for Evaluating Human and Language Model Performance in a Low-Resource Setting](https://arxiv.org/abs/2510.20957)：用人工审校的爱尔兰语最小对覆盖 11 类语言特征，评估低资源濒危语言中的细粒度语法能力，并揭示人类与现有 LLM 的差距。
+- [Estonian Native Large Language Model Benchmark](https://arxiv.org/abs/2510.21193)：评测爱沙尼亚语原生大模型能力。核心思想：在低覆盖语言中结合语法、词汇、摘要、知识与领域任务。
+- [A Diagnostic Benchmark for Sweden-Related Factual Knowledge](https://arxiv.org/abs/2510.21360)：面向瑞典相关人物与事件的诊断式事实 QA benchmark；核心思想是用本地文化问题替代美国中心翻译题。
+- [PerCoR: Evaluating Commonsense Reasoning in Persian via Multiple-Choice Sentence Completion](https://arxiv.org/abs/2510.22616)：从 40 多个新闻、文化和网页来源构造 10.6 万道波斯语常识选择式句子补全题，并用对抗过滤挑选更具迷惑性的干扰项。
 - [AfriMTEB](https://arxiv.org/abs/2510.23896)：评测非洲语言文本嵌入与检索/分类等表示能力；核心思想是在 59 种语言、14 类任务和 38 个数据集上扩展 MMTEB，补齐多语评测中非洲语言长期被低估的问题。
 - [Global PIQA](https://arxiv.org/abs/2510.24081)（数据集：[mrlbenchmarks/global-piqa-nonparallel](https://huggingface.co/datasets/mrlbenchmarks/global-piqa-nonparallel)）：评测跨语言的物理常识与日常合理性判断（PIQA 风格）；核心思想是用常识可判定的对比选项题型，测量“语言变化”对常识推理稳定性的影响。
+- [Beyond MCQ: An Open-Ended Arabic Cultural QA Benchmark with Dialect Variants](https://arxiv.org/abs/2510.24328)：把阿拉伯文化问题扩展为开放问答和方言变体，评测 LLM 是否能处理超出选择题识别的阿拉伯文化问答。
+- [PISA-Bench: The PISA Index as a Multilingual and Multimodal Metric for the Evaluation of Vision-Language Models](https://arxiv.org/abs/2510.24792)：它提供多语言、多文化或跨语言能力评测信号，适合补充 multilingual Bench。
+- [A Critical Study of Automatic Evaluation in Sign Language Translation](https://arxiv.org/abs/2510.25434)：在释义、幻觉和鲁棒性等受控条件下测试手语翻译自动指标，比较 BLEU、chrF、ROUGE、BLEURT、G-Eval 和 GEMBA 式 direct assessment。
+- [Are Language Models Borrowing-Blind? A Multilingual Evaluation of Loanword Identification across 10 Languages](https://arxiv.org/abs/2510.26254)：评测十种语言中的 loanword identification，检验多语言词汇意识。
+- [NOVA-63: Native Omni-lingual Versatile Assessments of 63 Disciplines](https://doi.org/10.18653/v1/2025.emnlp-main.364)：NOVA-63 是跨 63 学科的 omni-lingual assessment，适合 Multilingual Bench。
+- [B-REASO: A Multi-Level Multi-Faceted Bengali Evaluation Suite for Foundation Models](https://doi.org/10.18653/v1/2025.findings-emnlp.492)：面向 Bengali 的多层次、多侧面 foundation model evaluation suite。
+- [PhonoThink: Improving Large Language Models' Reasoning on Chinese Phonological Ambiguities](https://doi.org/10.18653/v1/2025.emnlp-main.961)：通过 PhonoThink 评测中文音系歧义推理，测试 LLM 是否能消解同音类歧义，而不是只依赖表层汉字线索。
+- [Refined Assessment for Translation Evaluation: Rethinking Machine Translation Evaluation in the Era of Human-Level Systems](https://doi.org/10.18653/v1/2025.findings-emnlp.1203)：面向高性能 MT 系统重新设计更细粒度的评测，捕捉粗粒度质量分数容易漏掉的细微翻译差异。
+- [FLUID QA: A Multilingual Benchmark for Figurative Language Usage in Dialogue across English, Chinese, and Korean](https://doi.org/10.18653/v1/2025.emnlp-main.1540)：在英语、中文和韩语对话中评测 figurative language 理解与使用，测试习语和语用解释，而不仅是字面问答。
+- [TounsiBench: Benchmarking Large Language Models for Tunisian Arabic](https://doi.org/10.18653/v1/2025.emnlp-main.1756)：提出 TounsiBench 突尼斯阿拉伯语基准，评测 LLM 对低资源阿拉伯方言的理解，而不只看现代标准阿拉伯语。
 - [Trojsten Benchmark](https://doi.org/10.18653/v1/2025.emnlp-main.1779)：评什么：斯洛伐克语开放作答的 STEM 竞赛题求解，覆盖数学、物理和编程。核心思想：用低资源语言的原生题目和 rubric 评分暴露翻译题或英语中心 STEM 评测不容易发现的推理失效。
+- [BengaliMoralBench: A Benchmark for Auditing Moral Reasoning in Large Language Models within Bengali Language and Culture](https://arxiv.org/abs/2511.03180)：审计孟加拉语和孟加拉文化中的道德推理；核心思想是把伦理评测从英语中心和西方规范数据集中扩展出来。
+- [ChiMDQA: Towards Comprehensive Chinese Document QA with Fine-Grained Evaluation](https://arxiv.org/abs/2511.03656)：用细粒度标注评测中文多文档问答，覆盖多类业务场景；核心思想：测试模型跨多个中文文档整合证据的能力，而不是孤立短上下文问答。
+- [POLIS-Bench: Towards Multi-Dimensional Evaluation of LLMs for Bilingual Policy Tasks in Governmental Scenarios](https://arxiv.org/abs/2511.04705)：面向政府场景双语政策任务的 benchmark。核心思想是用最新双语政府语料评估模型的政策理解与任务执行能力。
+- [CAMEO8](https://doi.org/10.1109/IEEEDATA.2025.3638721)：评测多语言文化对话与安全行为。核心思想是跨语言检验文化敏感对话和安全要求，而不是只依赖翻译后的对话样本。
+- [IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs](https://arxiv.org/abs/2511.04727)：评测 VLM 的文化与多语言理解。核心思想：测试印度语言和文化语境下的视觉理解，而不仅是翻译文本。
+- [Reliable Annotation in Low-Resource NLP](https://doi.org/10.1109/ACCESS.2025.3643829)：评测低资源 NLP 中的多 LLM 标注。核心思想：把 mixture-of-agents 标注框架与单模型标注对照，检验低资源语言场景下的标注可靠性。
+- [MTQ-Eval: Multilingual Text Quality Evaluation for Language Models](https://arxiv.org/abs/2511.09374)：评测语言模型的多语文本质量判断能力；核心思想是超越单任务指标，检查 LLM evaluator 的质量判断能否跨语言迁移。
+- [An Icelandic Linguistic Benchmark for Large Language Models](https://aclanthology.org/2025.nodalida-1.5/)：为大语言模型提供冰岛语语言学基准，补充低资源北日耳曼语支的多语能力诊断。
+- [Evalita-LLM Leaderboard](https://huggingface.co/spaces/evalitahf/evalita_llm_leaderboard)（[论文](https://aclanthology.org/2025.clicit-1.61/)）：用十个意大利语原生任务和多种 prompt 设置评测 Italian LLM 能力。核心思想是通过公开排行榜做可复现意大利语评测，而不是从英文翻译基准推断表现。
+- [SynergyScore: Leveraging Pretrained Language Models for Effective Evaluation of Code-Switched Sentences](https://doi.org/10.1109/access.2025.3585782)：利用预训练语言模型评估 code-switched sentences，在 PIER 等混合语言评测之外补充一句级质量度量。
+- [Reasoning or Memorization? Investigating LLMs’ Capability in Restoring Chinese Internet Homophones](https://doi.org/10.18653/v1/2025.knowllm-1.11)：通过中文互联网谐音还原区分记忆与推理，评测 LLM 能否从带噪谐音替换中恢复目标词。
+- [IberBench: LLM evaluation on Iberian languages](https://doi.org/10.1016/j.csl.2025.101899)：整合 101 个伊比利亚语言数据集，覆盖情感、情绪、毒性检测、摘要等 22 类任务，用于在英语中心基准之外评测 LLM。
+- [Word-level Cross-lingual Structure in Large Language Models](https://aclanthology.org/2025.mrl-main.6/)：探测 LLM 中词级跨语言结构，评测多语模型内部词汇表示如何在不同语言间对齐。
+- [Evaluating Modern Large Language Models on Low-Resource and Morphologically Rich Languages:A Cross-Lingual Benchmark Across Cantonese, Japanese, and Turkish](https://arxiv.org/abs/2511.10664)：评什么：面向粤语、日语和土耳其语的低资源和形态丰富语言 benchmark。
 - [DiscoX（Disco-X）](https://arxiv.org/abs/2511.10984)：评测面向专家领域的 discourse-level 翻译与跨句一致性；核心思想是用更长语篇与领域术语约束，暴露“句内翻译正确但跨句不一致/指代错配”等多语难点。
+- [LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](https://arxiv.org/abs/2511.11334)：提供超过 1.7 万题的老挝语多维基准，覆盖文化知识、K12 推理和老挝语-中文-英文翻译，并区分开放与隐藏子集。
+- [AfriSpeech-MultiBench: A Verticalized Multidomain Multicountry Benchmark Suite for African Accented English ASR](https://arxiv.org/abs/2511.14255)：提出 AfriSpeech-MultiBench 非洲口音英语 ASR 基准，覆盖 10 多个国家的 100 多种口音和金融、法律、医疗、呼叫中心、命名实体、幻觉鲁棒性等 7 个领域。
+- [AraLingBench A Human-Annotated Benchmark for Evaluating Arabic Linguistic Capabilities of Large Language Models](https://arxiv.org/abs/2511.14295)：用人工标注题目评估 LLM 的阿拉伯语语言能力，覆盖语法、词法、拼写、阅读理解与句法。
+- [SiTa - Sinhala and Tamil Speaker Diarization Dataset in the Wild](https://aclanthology.org/2025.chipsal-1.8/)：SiTa 收集野外僧伽罗语和泰米尔语说话人分离数据，使南亚多语语音 diarization 能在自然场景而非受控录音上评测。
+- [SweSAT-1.0: The Swedish University Entrance Exam as a Benchmark for Large Language Models](https://aclanthology.org/2025.nodalida-1.36/)：把瑞典大学入学考试转化为 LLM 基准，用本土教育评测协议测试瑞典语阅读、推理和知识能力。
+- [LiveCLKTBench: Towards Reliable Evaluation of Cross-Lingual Knowledge Transfer in Multilingual LLMs](https://arxiv.org/abs/2511.14774)：评测多语言 LLM 的跨语言知识迁移可靠性。
+- [HinTel-AlignBench: A Framework and Benchmark for Hindi-Telugu with English-Aligned Samples](https://arxiv.org/abs/2511.15183)：提出 HinTel-AlignBench 印地语-泰卢固语 VLM 基准，使用多样原生来源并与英语样例对齐，避免未经验证的自动翻译和窄领域评测。
+- [HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning](https://arxiv.org/abs/2511.15574)：建模并评测大语言模型中的汉语二语习得能力。
+- [Automated Evaluation for Terminology Translation Related to the EEA Agreement](https://doi.org/10.18653/v1/2025.wmt-1.59)：评测 EEA Agreement 相关术语翻译，关注一般 MT 指标容易忽略的法律与机构术语一致性错误。
+- [Language Confusion and Multilingual Performance: A Case Study of Thai-Adapted Large Language Models](https://doi.org/10.18653/v1/2025.chomps-main.5)：研究泰语适配 LLM 的语言混淆与多语表现，检查泰语专门化是否带来不必要的语言切换或跨语言退化。
+- [TurkColBERT: A Benchmark of Dense and Late-Interaction Models for Turkish Information Retrieval](https://arxiv.org/abs/2511.16528)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [FGVIrony: A Chinese Dataset of Fine-grained Verbal Irony](https://doi.org/10.1016/j.ipm.2025.104169)：基于 FGVIrony 数据集定义中文细粒度言语反讽识别任务，要求模型预测上下文丰富的细粒度反讽标签，而不是只做二分类。
+- [Assessing the Performance and Efficiency of Mamba ASR in Low-Resource Scenarios](https://doi.org/10.21437/interspeech.2025-1624)：评估 Mamba ASR 在低资源场景中的性能和效率，同时衡量稀缺语音条件下的识别质量与计算表现。
+- [Estonian WinoGrande Dataset: Comparative Analysis of LLM Performance on Human and Machine Translation](https://arxiv.org/abs/2511.17290)：由翻译专家将 WinoGrande 测试集本地化并文化适配到爱沙尼亚语，再比较模型在人译题与提示引导机译常识题上的表现。
+- [How do LLMs perform on Turkish? A multi-faceted multi-prompt evaluation](https://doi.org/10.1016/j.eswa.2025.127421)：用 multi-prompt 协议评测土耳其语 LLM 的理解与可信度，每个测试实例配多条指令，以衡量鲁棒性和不同提示来源带来的敏感性差异。
+- [LLM-Based Response Generation for Korean Adolescents: A Study Using the NAVER Knowledge iN Q&A Dataset with RAG](https://doi.org/10.4258/hir.2025.31.2.136)：基于 NAVER Knowledge iN 构建韩国青少年问答响应生成数据，并评测 RAG 式 LLM 系统能否生成反映韩国文化语境的青少年支持回答。
+- [IndicST: Indian Multilingual Translation Corpus For Evaluating Speech Large Language Models](https://doi.org/10.1109/icasspw65056.2025.11011192)：提出 IndicST 印度多语翻译语料，用于评测 speech large language models 在印度语言语音翻译上的表现。
+- [Evaluation Score Prediction for Japanese Songs Based on Melody Fitness to Lyrics](https://doi.org/10.1109/apsipaasc65261.2025.11249130)：根据旋律与歌词的匹配度预测日语歌曲评价分数，利用已对齐歌词的旋律训练数据估计 lyric-melody alignment。
+- [BLiMP-IT: Harnessing Automatic Minimal Pair Generation for Italian Language Model Evaluation](https://aclanthology.org/2025.clicit-1.8/)：提出 BLiMP-IT，自动生成意大利语最小对用于语言模型评测，把 BLiMP 式语法诊断适配到意大利语。
+- [RuSimulBench a Benchmark for Assessing the Quality of Language Models in Russian](https://doi.org/10.23919/fruct65909.2025.11008128)：提出 RuSimulBench 俄语语言模型质量评测基准，为俄语模型提供语言特定评测，而不是依赖宽泛多语平均分。
+- [TriFine: A Large-Scale Dataset of Vision-Audio-Subtitle for Tri-Modal Machine Translation and Benchmark with Fine-Grained Annotated Tags](https://aclanthology.org/2025.coling-main.547/)：提供带细粒度标签的视觉、音频和字幕对齐数据，评测可利用视觉与声学上下文的三模态机器翻译。
+- [Consistency Rating of Semantic Transparency: an Evaluation Method for Metaphor Competence in Idiom Understanding Tasks](https://aclanthology.org/2025.coling-main.697/)：提出面向习语任务的 semantic transparency 一致性评分，通过模型处理字面、隐喻和部分透明含义的方式评测 metaphor competence。
+- [IndicParam: Benchmark to evaluate LLMs on low-resource Indic Languages](https://arxiv.org/abs/2512.00333)：用人工策划题目评测低资源 Indic languages；核心思想是暴露高资源翻译评测无法覆盖的印度低资源语言能力缺口。
+- [MKE-PLLM: A benchmark for multilingual knowledge editing on pretrained large language model](https://doi.org/10.1016/j.neucom.2025.130979)：评测预训练 LLM 的多语知识编辑，衡量编辑后事实在不同语言变体中是否正确、局部且稳定。
+- [Multimetric Evaluation of LLMs on Major Indian Language Translation Tasks](https://doi.org/10.1109/asiancon66527.2025.11280892)：用多种指标评测 LLM 在主要印度语言翻译任务上的表现，跨印度语对比较翻译质量，而不只依赖单一 BLEU 式分数。
+- [Fine-Grained Evaluation of English-Russian MT in 2025: Linguistic Challenges Mirroring Human Translator Training](https://doi.org/10.18653/v1/2025.wmt-1.61)：用借鉴人工译员训练的语言学挑战做英俄 MT 细粒度评测，针对粗粒度自动分数容易漏掉的错误。
+- [The evaluation and reception of the translation quality of three translation modalities in live-streaming contexts: computer-assisted simultaneous interpreting, machine translation (MT) with human revision and raw MT](https://doi.org/10.1080/13556509.2025.2494566)：在直播场景中比较计算机辅助同传、人工修订 MT 和原始 MT，同时评测翻译质量与受众接受度。
+- [WMT25 Multilingual Instruction Shared Task](https://doi.org/10.18653/v1/2025.wmt-1.23)：评估 30 种语言上的多语 instruction following。核心思想是把机器翻译、语言推理、开放生成、跨语摘要和 judge 任务放在统一 shared task 中，并结合自动评价与人工标注。
+- [Turkuaz-RAG](https://doi.org/10.1109/ASYU67174.2025.11208268)：一个面向土耳其语的多上下文检索 benchmark，基于新闻问答构建，覆盖比较、时间推理等问题类型；适合补充低资源语言 RAG 在多证据检索上的评测。
+- [Findings of the WMT25 General Machine Translation Shared Task: Time to Stop Evaluating on Easy Test Sets](https://doi.org/10.18653/v1/2025.wmt-1.22)：报告 WMT25 通用机器翻译 shared task，强调用更困难测试集评测多语言翻译能力。
+- [Cross-Lingual Prompt Steerability: Towards Accurate and Robust LLM Behavior across Languages](https://arxiv.org/abs/2512.02841)：Agent Harness 条目；核心思想：评测 system prompt 在跨语言场景中的 steerability 和稳健性。
+- [A new benchmark dataset and mixture-of-experts language models for adversarial natural language inference in Vietnamese](https://doi.org/10.1016/j.eswa.2025.130109)：提供越南语 adversarial NLI benchmark dataset，可补充多语言鲁棒性评测。
+- [CamelEval: Advancing Benchmarks for Arabic Language Models in Generative Tasks](https://doi.org/10.1109/access.2025.3646336)：面向生成任务推进阿拉伯语 LLM 评测，覆盖指令遵循和开放问答等能力；核心思想：提供以阿拉伯语为中心的评测，而不是只依赖英文基准翻译。
+- [CoupletEval: A Novel Benchmark for Assessing Chinese Linguistic Proficiency in Large Language Models](https://doi.org/10.1109/icaita67588.2025.11137930)：以中文对联评估 LLM 语言能力的 benchmark。核心思想是检查普通中文问答评测较少覆盖的格律、语义和可解释约束。
+- [Bridging the Gap in Less-Resourced Languages: Building a Benchmark for Kyrgyz Language Models](https://doi.org/10.1109/ubmk67458.2025.11206960)：评什么：Kyrgyz 低资源语言模型能力。核心思想是用反映本地语言和文化特征的数据，而不是简单翻译英文题集。
+- [DaLA: Danish Linguistic Acceptability Evaluation Guided by Real World Errors](https://arxiv.org/abs/2512.04799)：基于真实丹麦语错误模式和受控 corruption 函数构建语言可接受性基准，评测模型对丹麦语语法错误的敏感性。
+- [SEA-SafeguardBench: Evaluating AI Safety in SEA Languages and Cultures](https://arxiv.org/abs/2512.05501)：用八种东南亚语言的人工核验安全数据评测防护模型，覆盖本地化伤害场景与内容生成设置。
+- [M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG](https://arxiv.org/abs/2512.05959)：评什么：大规模多语言、多文化、多模态 RAG benchmark。
+- [Script Gap: Evaluating LLM Triage on Indian Languages in Native vs Roman Scripts in a Real World Setting](https://arxiv.org/abs/2512.10780)：评测印度语言在本土文字与罗马化文字下的 LLM 分诊表现。核心思想：测试书写系统变化是否影响真实分类与辅助质量。
+- [DharmaBench: Evaluating Language Models on Buddhist Texts in Sanskrit and Tibetan](https://doi.org/10.18653/v1/2025.ijcnlp-long.114)：评测 Sanskrit 与 Classical Tibetan 佛教文本上的语言模型能力；核心思想是用 13 个分类和检测任务覆盖低资源历史语言。
+- [HQ-MPSD: A Multilingual Artifact-Controlled Benchmark for Partial Deepfake Speech Detection](https://arxiv.org/abs/2512.13012)：构建 HQ-MPSD 多语局部深伪语音数据集，包含 8 种语言、550 名说话人和 350.8 小时语音，并用强制对齐拼接点和背景效果减少低层伪影。
+- [Open-ViTabQA: A novel benchmark for Vietnamese question answering on open domain wikipedia table](https://doi.org/10.1016/j.knosys.2025.114391)：评什么：面向越南语开放域维基表格问答的 benchmark。
+- [UAlign: LLM Alignment Benchmark for the Ukrainian Language](https://doi.org/10.18653/v1/2025.unlp-1.4)：评测乌克兰语环境中的 LLM alignment；核心思想是在英语中心评测覆盖不足的语言场景中检查安全性与指令对齐行为。
+- [VLegal-Bench: Cognitively Grounded Benchmark for Vietnamese Legal Reasoning of Large Language Models](https://arxiv.org/abs/2512.14554)：面向 LLM 的越南语法律 reasoning benchmark；核心思想是用 Bloom-style cognitive levels 和专家交叉验证的权威法律文本样本，测试本地语言专业推理能力。
+- [BHRE-RAG: A Benchmark and Retrieval-Augmented Framework for Advancing Comprehension-Based Question Answering in Bangla](https://doi.org/10.1109/iccit68739.2025.11491594)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [Evaluating Zero-Shot and Few-Shot Learning on the Turkish Massive Multitask Language Understanding Dataset](https://doi.org/10.1109/icsai68704.2025.11345826)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [An Agentic Approach to Synthetic Data Generation: Building and Benchmarking a COPA Dataset for Indonesian Language and Dialects](https://doi.org/10.1109/isriti68345.2025.11393252)：一个面向印尼语及方言的 COPA 风格基准，采用 Agentic 合成数据方法构建；核心思路是把本地语言常识评估扩展到翻译英文任务之外。
+- [Multilingual QA-RAG: Evaluating LLMs' Contradiction Handling in English and Kazakh](https://doi.org/10.1109/snpd65828.2025.11254178)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
 - [AncientBench](https://arxiv.org/abs/2512.17756)：评什么：出土文献与传世古汉语语料的理解。核心思想：把古文字理解拆成字形、读音、词义和上下文任务，覆盖现代语言 benchmark 难以触及的历史中文材料。
+- [Language Dominance in Multilingual Large Language Models](https://doi.org/10.18653/v1/2025.blackboxnlp-1.7)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Probing the Limits of Multilingual Language Understanding: Low-Resource Language Proverbs as LLM Benchmark for AI Wisdom](https://doi.org/10.18653/v1/2025.codi-1.11)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [SeCoRel: Multilingual Discourse Analysis in DISRPT 2025](https://doi.org/10.18653/v1/2025.disrpt-1.6)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Ara-HOPE: Human-Centric Post-Editing Evaluation for Dialectal Arabic to Modern Standard Arabic Translation](https://arxiv.org/abs/2512.21787)：提供面向 dialectal Arabic 到 Modern Standard Arabic 翻译的 human-centric post-editing evaluation。
+- [LAILA: A Large Trait-Based Dataset for Arabic Automated Essay Scoring](https://arxiv.org/abs/2512.24235)：发布 LAILA，包含 7,859 篇阿拉伯语作文，并标注整体分和 7 个特质分，用于 prompt-specific 与 cross-prompt 的阿拉伯语自动作文评分。
+- [GENDEROUS: Machine Translation and Cross-Linguistic Evaluation of a Gender-Ambiguous Dataset](https://doi.org/10.18653/v1/2025.gebnlp-1.27)：评测多语言能力。核心思想：围绕论文中的任务、数据或协议（Machine Translation and Cross-Linguistic Evaluation of a Gender-Ambiguous Dataset）形成可复用比较基准。
+- [Findings of the WMT25 Shared Task on Automated Translation Evaluation Systems: Linguistic Diversity is Challenging and References Still Help](https://doi.org/10.18653/v1/2025.wmt-1.24)：提供可复用评测目标、排行榜或测量协议。
+- [Rating Prediction in Brazilian Portuguese: A Benchmark of Large Language Models](https://doi.org/10.5753/jbcs.2025.5667)：围绕多语言能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [JP-TL-Bench: Anchored Pairwise LLM Evaluation for Bidirectional Japanese-English Translation](https://arxiv.org/abs/2601.00223)：用无参考的成对 LLM 比较评测日英双向翻译，候选系统统一对照冻结 anchor set，并通过 Bradley-Terry 胜率和 0 到 10 的 LT 分数聚合。
+- [An Empirical Study of On-Device Translation for Real-Time Live-Stream Chat on Mobile Devices](https://arxiv.org/abs/2601.02641)：构建 LiveChatBench，包含 1,000 个韩英直播聊天句对，并在 5 台移动设备上评测端侧翻译，记录模型选择、领域适配、CPU 负载和发热限制。
+- [Pearmut: Human Evaluation of Translation Made Trivial](https://arxiv.org/abs/2601.02933)：在 Pearmut 中实现可操作的机器翻译人工评测协议，包括 DA、ESA 和 MQM，并支持文档级上下文、绝对与对比判断、注意力检查以及静态或动态分配。
+- [OLA: Output Language Alignment in Code-Switched LLM Interactions](https://arxiv.org/abs/2601.03589)：评测代码转换 LLM 交互中的输出语言对齐，考察模型能否从混合语言上下文和语用线索推断期望回复语言。
+- [PartisanLens: A Multilingual Dataset of Hyperpartisan and Conspiratorial Immigration Narratives in European Media](https://arxiv.org/abs/2601.03860)：包含 1,617 条西班牙语、意大利语和葡萄牙语超党派移民新闻标题，并标注政治话语维度；随后测试 LLM 作为分类器和自动标注器，包括模拟标注者画像。
+- [From National Curricula to Cultural Awareness: Constructing Open-Ended Culture-Specific Question Answering Dataset](https://arxiv.org/abs/2601.04632)：用明确任务、协议或数据集评测multilingual and multicultural evaluation。
+- [Thunder-KoNUBench: A Corpus-Aligned Benchmark for Korean Negation Understanding](https://arxiv.org/abs/2601.04693)：用语料对齐样例评测韩语否定理解，为翻译式多语言问答之外补充语言特定的语义诊断。
+- [Afri-MCQA](https://arxiv.org/abs/2601.05699)：评测非洲语言上的多模态文化问答。核心思想是使用母语者构建的文本与语音问答样本，避免从英语或高资源多语数据推断非洲语言能力。
+- [MITRA: A Large-Scale Parallel Corpus and Multilingual Pretrained Language Model for Machine Translation and Semantic Retrieval for Pāli, Sanskrit, Buddhist Chinese, and Tibetan](https://arxiv.org/abs/2601.06400)：提出 MITRA，包含梵文、中文和藏文佛教文本的 174 万平行句对，并提供面向巴利语、梵语、佛教汉语和藏语的 MT 与语义检索模型。
+- [Do Language Models Reason Across Languages?](https://arxiv.org/abs/2601.06644)：评测跨多语文档的两跳推理。核心思想：检查模型能否忠实组合不同语言中的 bridge evidence 与 answer-span evidence，并用 sub-question prompting 暴露组合失败。
+- [TurkBench: A Benchmark for Evaluating Turkish Large Language Models](https://arxiv.org/abs/2601.07020)：评什么：面向土耳其语 LLM 的专门评测基准。
+- [Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation](https://arxiv.org/abs/2601.07338)：用四类非字面翻译及人工评分评测翻译评价可靠性，并提出反思式多 agent 评价器来处理字面 MT 指标和 LLM judge 容易失效的场景。
+- [VULCA-Bench](https://arxiv.org/abs/2601.07986)：通过艺术评论评测多文化视觉语言理解。核心思想是考察跨文化传统的高阶文化解读能力，并包含中英双语覆盖，而不只测表层视觉识别。
+- [CLaS-Bench](https://arxiv.org/abs/2601.08331)：评测跨语言对齐与 steering，检验干预能否在不同语言间稳定迁移。
+- [INDIC DIALECT: A Multi Task Benchmark to Evaluate and Translate in Indian Language Dialects](https://arxiv.org/abs/2601.10388)：评什么：在多任务协议下评测印度语言方言理解与翻译；核心思想是考察方言鲁棒性，而不仅是标准化印度语言。
+- [Contextually Mediated Factual Recall](https://arxiv.org/abs/2601.12555)：评测目标实体通过上下文间接引入时的多语事实回忆。核心思想：跨语言比较直接查询与 context-mediated prompt，暴露孤立事实问答掩盖的召回失败。
+- [UbuntuGuard](https://arxiv.org/abs/2601.12696)：用专家构造的非洲语言对抗查询、policy responses 与 reference responses 评测文化接地安全，并比较 static、dynamic 与 multilingual guardian models。
+- [Injecting Knowledge from Social Science Journals to Improve Indonesian Cultural Understanding by LLMs](https://arxiv.org/abs/2601.12921)：从 151 种印尼社会科学期刊构建 IndoSoSci，并在 IndoCulture 上评测 RAG 式文化知识注入，提升印尼文化理解基准表现。
+- [Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs](https://arxiv.org/abs/2601.13099)：Alexandria 包含 10.7 万轮英语-阿拉伯方言多轮会话，覆盖 13 个阿拉伯国家、11 个领域、城市来源元数据和说话人与受话人性别配置，用于机器翻译评测。
+- [A Hybrid Protocol for Large-Scale Semantic Dataset Generation in Low-Resource Languages: The Turkish Semantic Relations Corpus](https://arxiv.org/abs/2601.13253)：通过 FastText 聚类、Gemini 分类和词典整合，构建 84.3 万个土耳其语语义关系对，覆盖同义、反义和共同下位词，并用检索与分类任务验证。
+- [LongSpeech: A Scalable Benchmark for Transcription, Translation and Understanding in Long Speech](https://arxiv.org/abs/2601.13539)：提出 LongSpeech，包含 10 万多个约 10 分钟语音片段，并标注 ASR、语音翻译、摘要、语种识别、说话人数、内容分离和问答。
 - [XCR-Bench](https://arxiv.org/abs/2601.14063)：评测围绕文化特定项的跨文化推理能力。核心思想：使用平行跨文化句对、CSI 标注和多种任务形式，测试模型能否识别并改写文化语义，而不是只做表层翻译。
+- [Common to Whom? Regional Cultural Commonsense and LLM Bias in India](https://arxiv.org/abs/2601.15550)：用明确任务、协议或数据集评测multilingual and multicultural evaluation。
+- [ChiEngMixBench](https://arxiv.org/abs/2601.16217)：评测自然 spontaneous 的中英 code-mixed generation，补充多语混合语言生成 benchmark。
+- [MultiLexNorm++: A Unified Benchmark and a Generative Model for Lexical Normalization for Asian Languages](https://arxiv.org/abs/2601.16623)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [PingPong: A Natural Benchmark for Multi-Turn Code-Switching Dialogues](https://arxiv.org/abs/2601.17277)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [CLM-Bench: Benchmarking and Analyzing Cross-lingual Misalignment of LLMs in Knowledge Editing](https://arxiv.org/abs/2601.17397)：使用 1,010 个中文优先的 CounterFact 对并与英文对齐，测试跨语言知识编辑迁移，揭示中文和英文表示中的编辑向量近乎正交。
+- [ReLE: A Scalable System and Structured Benchmark for Diagnosing Capability Anisotropy in Chinese LLMs](https://arxiv.org/abs/2601.17399)：用于诊断中文 LLM 能力各向异性的结构化 benchmark 与系统；核心思想是呈现中文场景下不均衡的能力画像，而非只报告总分。
+- [AVMeme Exam: A Multimodal Multilingual Multicultural Benchmark for LLMs' Contextual and Cultural Knowledge and Thinking](https://arxiv.org/abs/2601.17645)：整理 1,000 多个标志性互联网声音和视频，配套问答、元数据和敏感性标签，评测多模态模型的表层内容、语境、情绪、用法和文化知识。
+- [PEAR: Pairwise Evaluation for Automatic Relative Scoring in Machine Translation](https://arxiv.org/abs/2601.18006)：提出 PEAR，有监督无参考 MT 指标，通过成对人工判断监督预测两个候选译文质量差异的方向和幅度。
+- [CommonLID: Re-evaluating State-of-the-Art Language Identification Performance on Web Data](https://arxiv.org/abs/2601.18026)：评什么：在噪声 Web 数据上重新评估语言识别能力。
+- [SICL-AT: Another way to adapt Auditory LLM to low-resource task](https://arxiv.org/abs/2601.18904)：评测低资源音频任务中的 speech in-context adaptation，比较 vanilla ICL、基于高资源语音任务后训练的 MetaSICL，以及直接微调基线。
+- [UrduBench: An Urdu Reasoning Benchmark using Contextually Ensembled Translations with Human-in-the-Loop](https://arxiv.org/abs/2601.21000)：通过人工验证的上下文集成翻译构造 MGSM、MATH-500、CommonSenseQA 和 OpenBookQA 的乌尔都语推理评测，暴露低资源语言对齐失效。
+- [Beyond a Single Reference: Training and Evaluation with Paraphrases in Sign Language Translation](https://arxiv.org/abs/2601.21128)：在 YouTubeASL 和 How2Sign 上用 LLM 生成手语翻译释义参考，比较 ParaScore 策略，并提出与人工判断相关性更高的 BLEUpara。
+- [MasalBench: A Benchmark for Contextual and Cross-Cultural Understanding of Persian Proverbs in LLMs](https://arxiv.org/abs/2601.22050)：评测 8 个 LLM 的波斯语谚语理解，区分语境中识别谚语与匹配等价英语谚语；后者最佳模型准确率从 0.90 以上降至 0.79。
+- [DialectLLM: A Dialect-Aware Dialog(ue) Generation Framework Beyond Standard American English](https://arxiv.org/abs/2601.22888)：提出 DialectLLM，包含 9 种英语方言的平行对话数据，并由语言学家验证词汇、正字法和形态句法转换规则。
+- [DimABSA: Building Multilingual and Multidomain Datasets for Dimensional Aspect-Based Sentiment Analysis](https://arxiv.org/abs/2601.23022)：包含 6 种语言、4 个领域、42,590 个句子中的 76,958 个方面实例，在 ABSA 标签上加入 valence-arousal 分数，并用 continuous F1 评测 3 个子任务。
+- [Beyond Training for Cultural Awareness: The Role of Dataset Linguistic Structure in Large Language Models](https://arxiv.org/abs/2602.01161)：从数据集中心视角研究文化对齐，为阿拉伯语、中文和日语微调数据计算语言、语义和结构指标，用于预测文化表现。
+- [PARSE: An Open-Domain Reasoning Question Answering Benchmark for Persian](https://arxiv.org/abs/2602.01246)：提出波斯语开放域推理问答基准。
+- [AmharicStoryQA: A Multicultural Story Question Answering Benchmark in Amharic](https://arxiv.org/abs/2602.02774)：用埃塞俄比亚不同地区叙事构建 Amharic 长文本故事问答基准，把语言覆盖与区域文化理解区分开来评测。
+- [Tokenization and Morphological Fidelity in Uralic NLP: A Cross-Lingual Evaluation](https://arxiv.org/abs/2602.04241)：在 6 种乌拉尔语中比较 BPE、OBPE 和 Unigram tokenization，并以词性标注为受控下游任务衡量形态保真度和迁移行为。
+- ["Be My Cheese?": Cultural Nuance Benchmarking for Machine Translation in Multilingual LLMs](https://arxiv.org/abs/2602.04729)：对 7 个多语 LLM 在 15 种目标语言中的文化本地化做人工评测，每种语言 5 名母语评分者，并以 0 到 3 分评价全文及习语、双关、节日和文化概念片段。
 - [GreekMMLU](https://arxiv.org/abs/2602.05150)：评测希腊语原生多任务语言理解；核心思想是用来自学术、职业和政府考试的希腊语题目替代英译题，检验模型是否真正覆盖目标语言的教育与文化语境。
+- [NeuCLIRTech: Chinese Monolingual and Cross-Language Information Retrieval Evaluation in a Challenging Domain](https://arxiv.org/abs/2602.05334)：构建 NeuCLIRTech，包含 110 个查询和 35,962 个相关性判断，语料为中文原生技术文档及其英文机译，支持中文单语检索和英文查询跨语言检索。
+- [MEVS](https://arxiv.org/abs/2602.05932)：发布人工翻译的 multilingual value survey，评估 LLM 在不同语言中的价值判断是否一致。
+- [compar:IA](https://arxiv.org/abs/2602.06669)：通过面向法国用户的公开盲测 arena 评测法语模型偏好。核心思想是收集真实法语 prompt 和偏好判断，使 French model alignment 能被直接测量，而不是从英语 arena 外推。
+- [Conceptual Cultural Index: A Metric for Cultural Specificity via Relative Generality](https://arxiv.org/abs/2602.09444)：定义句子级文化特异性指标 Conceptual Cultural Index，并在 400 个句子上验证；相比直接 LLM 打分，区分文化特定句与一般句的 AUC 提升超过 10 个点。
 - [Macaron](https://arxiv.org/abs/2602.10732)：评测多语多文化推理；核心思想是用人工编写的模板把推理类型和文化因素解耦，在 20 个国家/文化语境与 20 种语言/方言中比较英语题与本地语言题的差异。
+- [Towards Reliable Machine Translation: Scaling LLMs for Critical Error Detection and Safety](https://arxiv.org/abs/2602.11444)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Towards Personalized Bangla Book Recommendation: A Large-Scale Multi-Entity Book Graph Dataset](https://arxiv.org/abs/2602.12129)：发布 RokomariBG 孟加拉语图书推荐图，包含 127,302 本书、63,723 名用户、16,601 名作者、1,515 个类别、2,757 家出版社和 209,602 条评论，并在 Top-N 推荐上评测。
+- [ALPS: A Diagnostic Challenge Set for Arabic Linguistic & Pragmatic Reasoning](https://arxiv.org/abs/2602.17054)：用明确任务、协议或数据集评测multilingual and multicultural evaluation。
+- [Cross-Lingual Sentiment Misalignment: Auditing Multilingual Language Models for Inversion Risk, Dialectal Representation, and Affective Stability](https://arxiv.org/abs/2602.17469)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [CLEF HIPE-2026: Evaluating Accurate and Efficient Person-Place Relation Extraction from Multilingual Historical Texts](https://arxiv.org/abs/2602.17663)：定义 CLEF 多语历史文本 person-place 关系抽取评测，从噪声文本中分类 at 与 isAt 两类关系，并联合考察准确率、计算效率和领域泛化。
+- [ArabicNumBench: Evaluating Arabic Number Reading in Large Language Models](https://arxiv.org/abs/2602.18776)：评测模型读取阿拉伯数字与西方阿拉伯数字的能力；核心思想：在多种上下文和提示策略下测试数字读写，而不只评测一般阿拉伯语生成。
+- [BURMESE-SAN: Burmese NLP Benchmark for Evaluating Large Language Models](https://arxiv.org/abs/2602.18788)：在 7 个理解、推理和生成子任务上系统评测缅甸语 LLM 能力，并由母语者构建数据以减少翻译伪影、保留文化真实性。
+- [Blackbird Language Matrices: A Framework to Investigate the Linguistic Competence of Language Models](https://arxiv.org/abs/2602.20966)：构造句内、序列间和候选答案间多层结构的选择题式 language matrices，跨多种语言探测 chunking、语法属性和系统性模式使用。
+- [TARAZ](https://arxiv.org/abs/2602.22827)：评测波斯语短答案文化知识与推理，补充英语中心文化问答之外的语言特定评测。
+- [A Typologically Grounded Evaluation Framework for Word Order and Morphology Sensitivity in Multilingual Masked LMs](https://arxiv.org/abs/2603.00432)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Voices of Civilizations: A Multilingual QA Benchmark for Global Music Understanding](https://arxiv.org/abs/2603.00533)：用 38 种语言的 380 首完整音乐和 1,190 道人工核验选择题评测音频 LLM 的文化理解，题目涉及语言、地区、情绪和主题。
+- [VietJobs: A Vietnamese Job Advertisement Dataset](https://arxiv.org/abs/2603.05262)：收集越南 34 个省市的 48,092 条招聘广告和 1,500 多万词，并在职位类别分类与薪资估计任务上评测模型。
+- [Automated evaluation of LLMs for effective machine translation of Mandarin Chinese to English](https://arxiv.org/abs/2603.09998)：比较 Google Translate、GPT-4、GPT-4o 和 DeepSeek 的中文到英文新闻与文学翻译，用语义和情感相似度指标并结合专家译者复核。
+- [Leveraging Wikidata for Geographically Informed Sociocultural Bias Dataset Creation: Application to Latin America](https://arxiv.org/abs/2603.10001)：从 2.6 万多篇 Wikipedia 文章和 Wikidata 链接构建 LatamQA，将拉美文化知识转成西班牙语、葡萄牙语和英语选择题，用于偏见与知识评测。
+- [Multilingual Reasoning Gym](https://arxiv.org/abs/2603.10793)：评测内容：跨语言的程序化生成推理。核心思想：将 94 类任务模板翻译并验证到 14 种语言中，使可验证推理环境能够评测跨语言推理并支持并行数据生成。
+- [CLARIN-PT-LDB](https://arxiv.org/abs/2603.12872)：评测欧洲葡萄牙语 LLM 能力，提供覆盖语言、文化与 civility 的公开排行榜和基准套件。核心思想是显式评估 PT-PT，而不是依赖英文翻译基准或巴西葡萄牙语代理数据。
+- [SEA-Vision](https://arxiv.org/abs/2603.15409)：评测东南亚语言的多语文档解析与文本中心视觉问答。核心思想是覆盖真实文字体系、版式和场景文字条件，补足高资源 OCR 与英语中心套件的盲区。
+- [BanglaSocialBench: A Benchmark for Evaluating Sociopragmatic and Cultural Alignment of LLMs in Bangladeshi Social Interaction](https://arxiv.org/abs/2603.15949)：包含 1,719 个母语者核验的孟加拉语社会互动实例，覆盖称呼、亲属推理和社会习俗，并以零样本方式评测 12 个 LLM 的社会语用对齐。
+- [PashtoCorp: A 1.25-Billion-Word Corpus, Evaluation Suite, and Reproducible Pipeline for Low-Resource Language Development](https://arxiv.org/abs/2603.16354)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Many Dialects, Many Languages, One Cultural Lens: Evaluating Multilingual VLMs for Bengali Culture Understanding Across Historically Linked Languages and Regional Dialects](https://arxiv.org/abs/2603.21165)：评测多语言 VLM 对孟加拉文化及相关语言方言的理解。
+- [Rashid: A Cipher-Based Framework for Exploring In-Context Language Learning](https://arxiv.org/abs/2603.22497)：可作为multilingual capability方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Chitrakshara: A Large Multilingual Multimodal Dataset for Indian languages](https://arxiv.org/abs/2603.23521)：Chitrakshara 覆盖 11 种印度语言，包含 1.93 亿图像、300 亿文本 token、5,000 万多语交错文档，并提供 4,400 万图文对用于 Indic VLM 数据质量与覆盖分析。
+- [MMTIT-Bench](https://arxiv.org/abs/2603.23896)：评测跨语言、跨视觉场景的 text-image machine translation；核心思想是用人工验证的文档、场景和网页图像，覆盖 14 种非英文且非中文语言，测试端到端视觉文本翻译能力。
+- [DecepGPT: Schema-Driven Deception Detection with Multicultural Datasets and Robust Multimodal Learning](https://arxiv.org/abs/2603.23916)：构建 T4-Deception，多文化视听欺骗检测数据包含 1,695 个基于 To Tell The Truth 形式的样本，并加入 cue-level 描述和推理链以支持可审计多模态判断。
+- [ALBA: A European Portuguese Benchmark for Evaluating Language and Linguistic Dimensions in Generative LLMs](https://arxiv.org/abs/2603.26516)：从语言与语言学维度评测欧洲葡萄牙语生成式大模型。
+- [TailNLG: A Multilingual Benchmark Addressing Verbalization of Long-Tail Entities](https://arxiv.org/abs/2603.27768)：评测多语种长尾实体的语言化表达，为多语评测增加长尾生成维度。
+- [JaWildText](https://arxiv.org/abs/2603.27942)：评估 VLM 对日语场景文本的理解能力。核心思想是覆盖混合文字、竖排书写、密集场景文本问答、票据关键信息抽取和手写 OCR，暴露以拉丁文字为主的多语言基准难以发现的问题。
+- [Can LLM Agents Identify Spoken Dialects like a Linguist?](https://arxiv.org/abs/2603.29541)：测试瑞士德语口语方言识别，将 ASR 音系转写、方言地图、元音历史和规则提供给 LLM agent，并与 HuBERT 和人类语言学家基线比较。
+- [GaelEval: Benchmarking LLM Performance for Scottish Gaelic](https://arxiv.org/abs/2604.02135)：用明确任务、协议或数据集评测multilingual and multicultural evaluation。
+- [An Empirical Study of Many-Shot In-Context Learning for Machine Translation of Low-Resource Languages](https://arxiv.org/abs/2604.02596)：研究英译 10 种真正低资源 FLORES+ 语言的 many-shot ICL，测试检索质量、领域外样例和样例排序，并考虑长上下文推理成本。
+- [Are Arabic Benchmarks Reliable? QIMMA's Quality-First Approach to LLM Evaluation](https://arxiv.org/abs/2604.03395)（[排行榜](https://huggingface.co/spaces/qimma/leaderboard)）：通过自动化评审和人工复核清洗 Arabic LLM benchmarks，发布多领域评测套件与可复现排行榜流程。
+- [Distributional Open-Ended Evaluation of LLM Cultural Value Alignment Based on Value Codebook](https://arxiv.org/abs/2604.06210)：基于 value codebook 对开放生成中的文化价值取向做分布式评估；核心思想是评测模型生成的价值倾向，而不只是多选式文化知识。
+- [ValueGround: Evaluating Culture-Conditioned Visual Value Grounding in MLLMs](https://arxiv.org/abs/2604.06484)：评测 MLLM 的文化条件化视觉价值 grounding；核心思想是检查文化价值判断在视觉场景选项中是否仍然适切。
+- [SemEval-2026 Task 9: Detecting Multilingual, Multicultural and Multievent Online Polarization](https://arxiv.org/abs/2604.06817)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Language Bias under Conflicting Information in Multilingual LLMs](https://arxiv.org/abs/2604.07123)：把 conflicting needles in a haystack 扩展到 5 种新闻领域语言，衡量长上下文和不同提示语言下模型在冲突证据中更信任哪种语言。
+- [Lessons Without Borders? Evaluating Cultural Alignment of LLMs Using Multilingual Story Moral Generation](https://arxiv.org/abs/2604.08797)：用明确任务、协议或数据集评测multilingual and multicultural evaluation。
 - [Litmus (Re)Agent](https://arxiv.org/abs/2604.08970)：评估在缺少直接基准结果时对多语言模型表现的预测能力。核心思想：在任务、语言和证据场景中区分可访问证据与隐藏真值，再测试能检索并综合表现预测的智能体系统。
+- [INDOTABVQA](https://arxiv.org/abs/2604.11970)：评估印尼语文档图像上的跨语言表格视觉问答。核心思想是把真实表格文档与印尼语、英语、印地语和阿拉伯语问题配对，同时暴露低资源语言和结构化表格推理短板。
+- [Universal NER v2: Towards a Massively Multilingual Named Entity Recognition Benchmark](https://arxiv.org/abs/2604.12744)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Round-Trip Translation Diagnostics](https://arxiv.org/abs/2604.12911)：通过往返翻译压力测试评估前沿模型的多语能力主张。核心思想是区分真实多语能力与翻译版数学或事实回忆 benchmark 上的分数提升。
+- [KMMMU: Evaluation of Massive Multi-discipline Multimodal Understanding in Korean Language and Context](https://arxiv.org/abs/2604.13058)：KMMMU 是韩语本土多学科多模态 benchmark，适合 multilingual multimodal evaluation。
+- [Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language](https://arxiv.org/abs/2604.15841)：用明确任务、协议或数据集评测multilingual and multicultural evaluation。
+- [JFinTEB](https://arxiv.org/abs/2604.15882)（[开源代码](https://github.com/retarfi/JFinTEB)）：评测日语金融文本 embedding。核心思想：把金融文本中的检索和分类任务放入统一协议，比较日语专用、多语和商业 embedding model 在领域场景中的表现。
+- [ltzGLUE: Luxembourgish General Language Understanding Evaluation](https://arxiv.org/abs/2604.17976)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Multilingual VLM Resources](https://arxiv.org/abs/2604.18347)：评估英语、法语、德语、意大利语和西班牙语下的视觉语言模型能力。核心思想是把既有多模态任务通过再生成与翻译构造成受控的多语言评测套件，用来观察跨语言迁移和非英语 VLM 能力。
+- [LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation](https://arxiv.org/abs/2604.18490)：提出 LQM 语言学驱动 MT 错误分类体系，包含社会语言学、语用、语义、形态句法、正字法和字形学 6 个层级，并配套阿拉伯方言评测数据。
+- [MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](https://arxiv.org/abs/2604.18914)：评测多语言场景中的性别感知形态生成。
+- [SAHM: A Benchmark for Arabic Financial and Shari'ah-Compliant Reasoning](https://arxiv.org/abs/2604.19098)：围绕监管、教法、企业材料、情感分析、摘要和事件原因任务评测阿拉伯语金融与 Shari'ah 合规推理。
+- [The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](https://arxiv.org/abs/2604.20225)：用明确任务、协议或数据集评测multilingual and multicultural evaluation。
+- [RespondeoQA: a Benchmark for Bilingual Latin-English Question Answering](https://arxiv.org/abs/2604.20738)：RespondeoQA 提供 Latin-English 双语 QA/translation benchmark，补充 multilingual QA。
+- [Culture-Aware Machine Translation in Large Language Models: Benchmarking and Investigation](https://arxiv.org/abs/2604.24361)：通过 novel-driven parallel dataset 和多维文化翻译指标评测 culture-aware machine translation；核心思想是检查 LLM 翻译能否保留文化语境含义，而不只满足句级 adequacy。
+- [Benchmarking Source-Sensitive Reasoning in Turkish: Humans and LLMs under Evidential Trust Manipulation](https://arxiv.org/abs/2604.24665)：可作为multilingual capability方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [GAIA-v2-LILT: Multilingual Adaptation of Agent Benchmark beyond Translation](https://arxiv.org/abs/2604.24929)：通过功能对齐、文化对齐和难度校准，把 GAIA 式 agent 任务扩展到多语言环境。
+- [Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](https://arxiv.org/abs/2604.25423)：通过跨语言 demonstratives 测试 LLM 是否捕捉 embodied cognition 与文化差异。
+- [Prosa: Rubric-Based Evaluation of LLMs on Real User Chats in Brazilian Portuguese](https://arxiv.org/abs/2605.01630)：用二元 rubric 和多裁判过滤评测真实巴西葡萄牙语多轮聊天；适合补充非英语真实用户对话质量评测。
+- [A Multimodal Dataset for Visually Grounded Ambiguity in Machine Translation](https://arxiv.org/abs/2605.02035)：提出 VIDA，包含 2,500 个视觉依赖歧义样例和 span-level disambiguation-centric metrics，测试多模态 MT 是否能用图像证据消解歧义表达。
+- [SemEval-2026 Task 7: Everyday Knowledge Across Diverse Languages and Cultures](https://arxiv.org/abs/2605.02601)：在扩展版 BLEnD 上组织 SemEval-2026 Task 7，覆盖 30 多个语言-文化组合，含短答和选择题两条赛道，并禁止用测试数据训练、微调或 few-shot。
+- [CrossCult-KIBench: A Benchmark for Cross-Cultural Knowledge Insertion in MLLMs](https://arxiv.org/abs/2605.06115)：用 9,800 个图像扎根案例评测 MLLM 跨文化知识插入，覆盖英语、中文和阿拉伯语文化群体中的 49 个视觉场景，并包含单次插入和顺序插入设置。
+- [MultiSoc-4D: A Benchmark for Diagnosing Instruction-Induced Label Collapse in Closed-Set LLM Annotation of Bengali Social Media](https://arxiv.org/abs/2605.06940)：使用 5.8 万条孟加拉语社交媒体评论，按类别、情感、仇恨言论和讽刺四维标注，诊断 LLM 标注中的 instruction-induced fallback-label collapse。
+- [MLAIRE](https://arxiv.org/abs/2605.07249)：评测带显式语种偏好的多语检索。核心思想：把语义相关性和“返回查询语种证据”的偏好分开，并使用 LPR、Lang-nDCG 等 language-aware metrics。
+- [MAPS](https://aclanthology.org/2026.findings-eacl.42/)（数据集：[Fujitsu-FRE/MAPS](https://huggingface.co/datasets/Fujitsu-FRE/MAPS)）：评测多语 agent 的性能与安全性；核心思想是把 GAIA、MATH、SWE-bench 和 Agent Security Benchmark 等任务翻译到多种语言，观察能力退化与安全回归。
+- [Dynamic Meta-Metrics: Source-Sentence Conditioned Weighting for MT Evaluation](https://arxiv.org/abs/2605.09098)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [What Does LLM Refinement Actually Improve? A Systematic Study on Document-Level Literary Translation](https://arxiv.org/abs/2605.13368)：系统研究文档级文学 MT refinement，覆盖 9 个 LLM、7 个语对、9 种粒度组合和 5 种 refine 策略，分析何时段级 refinement 能提升质量。
 - [ABJAD](https://doi.org/10.1109/icerai69511.2026.11494583)：评测模型对阿拉伯语修辞与表达品质的保持，而不只是一般阿拉伯语事实问答。
+- [A Morphology-Aware Evaluation of Turkish Syntax in Large Language Models](https://doi.org/10.18653/v1/2026.sigturk-1.9)：从形态感知角度评估 LLM 的土耳其语句法能力，补充语言特定的语法诊断。
+- [Nahw: A Comprehensive Benchmark of Arabic Grammar Understanding, Error Detection, Correction, and Explanation](https://doi.org/10.18653/v1/2026.eacl-long.296)：通过阿拉伯语语法理解、错误检测、纠正和解释任务进行评测，把语法能力转化为多步诊断，而不是单一答案问答。
+- [Towards the First NLP Benchmark for Ladin - an Extremely Low-Resource Language](https://doi.org/10.18653/v1/2026.findings-eacl.55)：为极低资源的 Val Badia Ladin 变体构建首个公开 NLP 基准，包含情感分析和多项选择问答数据集。
+- [Zero-Shot vs. Supervised: Evaluating Multilingual LLMs for 3R Content Moderation in Malaysia](https://doi.org/10.1109/datascimi67380.2026.11524006)：比较零样本与监督式多语言 LLM 在马来西亚 3R 内容审核中的表现，把 race、religion 和 royalty 敏感类别作为多语分类压力测试。
+- [Relative-to-human benchmark Cognitive Divergence and semantic comprehensibility in Chinese–Uyghur LLM translation](https://doi.org/10.3389/fpsyg.2026.1732609)：用 Mean Dependency Distance 和 Cognitive Divergence 指标比较中维 LLM 翻译与人工参考译文，将句法距离与语义可理解性联系起来。
+- [Serbian SuperGLUE: Towards an Evaluation Benchmark for South Slavic Language Models](https://doi.org/10.18653/v1/2026.loreslm-1.30)：把 SuperGLUE 风格 NLU 任务适配到塞尔维亚语，为南斯拉夫语支语言模型提供标准化评测点，而不是只看宽泛多语平均值。
+- [Beyond Multilinguality: Typological Limitations in Multilingual Models for Meitei Language](https://doi.org/10.18653/v1/2026.sigtyp-main.5)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Cultural Evaluation of LLMs in Russian: Catchphrases and Cultural Types](https://doi.org/10.28995/2075-7182-2025-23-117-128)：通过俄罗斯 catchphrases 和文化类型评测文化知识，测试 LLM 是否理解超出字面词义的俄罗斯特定指代。
 - [MMMLU](https://huggingface.co/datasets/openai/MMMLU)：评测多语环境下的通识与学科知识选择题能力；核心思想是把同类知识题迁移到多语输入，以统一的多选题协议对齐比较不同语言下的知识保持与理解鲁棒性。
 - [CVLUE](https://doi.org/10.1609/aaai.v39i8.32884)：评测中文视觉语言理解。核心思想是提供中文中心的多模态 benchmark，避免视觉语言能力只通过英文或翻译式图文任务衡量。
+- [BLiMP-NL: A corpus of Dutch minimal pairs and acceptability judgments for language model evaluation](https://doi.org/10.1162/coli_a_00559)：提供荷兰语最小对与可接受性判断，用于评测语言模型的语法能力。
+- [OVQA: A Dataset for Visual Question Answering and Multimodal Research in Odia Language](https://ufal.mff.cuni.cz/ovqa)：提供 Odia 视觉问答与问题生成数据，包含 English-Odia 图像 grounding QA 对，补充低资源多模态评测覆盖。
+- [Benchmarking Open-Source Large Language Models on Code-Switched Tagalog-English Retrieval Augmented Generation](https://doi.org/10.12720/jait.16.2.233-242)：评测开源 LLM 在 Tagalog-English 代码转换 RAG 上的表现，测试用户问题与证据混合菲律宾语和英语时的检索增强回答。
+- [A Comparative Study of AI-Powered Tools for Arabic-English and English-Arabic Translation](https://doi.org/10.17507/jltr.1606.24)：用 BLEU 比较 7 个 AI 翻译平台在阿英和英阿两个方向上相对人工翻译的表现，结果显示 Gemini 在两方向均为参评系统最高。
+- [Evaluating large language models' Arabic grammar error corrections and explanations](https://doi.org/10.7717/peerj-cs.3486)：评测 LLM 的阿拉伯语语法错误纠正与解释能力，面向资源不足的 Arabic GECE，要求模型检测、纠正并解释语法错误。
+- [Analysis of Korean Culture and Language Vocabulary: Taking CLIcK's KC_Society Subset as an Example](https://doi.org/10.1145/3768801.3768920)：分析 CLIcK 的 KC_Society 子集中的韩国文化与语言词汇，用韩语文化子集检查知识基准要求 LLM 掌握哪些内容。
+- [Knowing the Words, Missing the Meaning: Evaluating LLMs’ Cultural Understanding Through Sino-Korean Words and Four-Character Idioms](https://doi.org/10.3390/app15137561)：提出基于 Sino-Korean words 和四字成语的韩国文化理解基准，测试韩语 NLP 中的评价含义和文化解释。
+- [Evaluation of Arabic Large Language Models on Moroccan Dialect](https://doi.org/10.48084/etasr.10331)：评测阿拉伯语 LLM 在摩洛哥方言上的表现，将方言阿拉伯语理解同现代标准阿拉伯语能力区分开来。
+- [A Comprehensive Evaluation of Embedding Models and LLMs for IR and QA Across English and Italian](https://doi.org/10.3390/bdcc9050141)：评测 embedding 模型和 LLM 在英语与意大利语 IR 和 QA 中的表现，比较跨语言检索与回答质量。
+- [Evaluating Multilingual Language Models for Cross-Lingual ESG Issue Identification](https://doi.org/10.63317/4ify52wiiomk)：评测多语模型的跨语言 ESG 议题识别能力，测试金融领域议题分类器能否跨语言迁移。
+- [A unified evaluation framework for multilingual translation optimization of large language models based on the EUAS‑20 dataset](https://doi.org/10.1117/12.3111337)：在统一评测框架中使用 EUAS-20 数据集做多语言 LLM 翻译优化评测，衡量不同语言和优化设置下的翻译表现。
+- [SKR1: Benchmark for Testing Knowledge About Slovak Realia for Large Language Models](https://doi.org/10.18267/j.aip.300)：测试 LLM 对斯洛伐克本地 realia 的了解，使用国家特定文化和事实问题，而不是通用翻译知识题。
+- [Mapping Cultural Sentiments in Indonesian Digital Literature: An Annotated and Validated Multicultural Dataset](https://doi.org/10.54963/dtra.v5i1.1968)：构建印尼数字文学文化情感数据集，由受训标注者依据文化扎根的情绪词典标注正负中性极性，并进行语言学验证和民族志核验。
+- [MemeBridge: A Dataset for Benchmarking and Mitigating the Bidirectional Cultural Gap in Meme Interpretation](https://www.xiameng.org/KDD_Meme_Bridge.pdf)：定义 MemeBridge 数据集，用 meme 理解评测源文化与目标受众之间的双向文化差距，并把同一设置用于基准测试和缓解方法。
+- [A Chinese Elementary Science Question Dataset in Problem-Solving Process Generation](https://doi.org/10.1038/s41597-026-06618-4)：发布用于小学科学问题解题过程生成的 Chinese Science Question 数据集，将答案、支撑知识和年级适配推理与中国科学教育标准对齐。
+- [COMET for Low-Resource Machine Translation Evaluation: A Case Study of English-Maltese and Spanish-Basque](https://doi.org/10.63317/59mm6uhq2ihq)：在英马耳他语和西班牙语-巴斯克语上研究 COMET 低资源 MT 评测，检验人工与平行资源稀缺时的指标可靠性。
+- [A Comparative Evaluation of Probabilistic and Transformer-Based Topic Models Across Diverse and Multilingual Text Corpora](https://doi.org/10.1007/s11063-025-11820-3)：在多样多语文本语料上比较概率式和 Transformer 式主题模型，评测主题模型在语言和语料变化下的鲁棒性。
+- [A test of meaning, form, and culture in Kurmanji: An evaluation of large language models’ performance](https://doi.org/10.12688/openreseurope.20871.1)：从意义、形式和文化维度评测 LLM 的库尔曼吉语表现，关注形态丰富低资源语言中的语义细微差别和文化嵌入。
+- [Semantic mapping of Hindi text-to-image generation using CUB dataset](https://doi.org/10.1038/s41598-025-20537-1)：用 CUB 数据集做 Hindi text-to-image 语义映射，评测印地语提示生成图像时是否保留细粒度视觉概念。
+- [Isolating LLM Performance Gains in Pre-training versus Instruction-tuning for Mid-resource Languages: The Ukrainian Benchmark Study](https://doi.org/10.26615/978-954-452-098-4-100)：通过中资源乌克兰语 benchmark study 区分预训练与指令微调带来的 LLM 性能增益，分离语言数据效应和对齐效应。
+- [Evaluating the Impact of Prompt Formats on Llama2 and Phi3 Using Turkish Language Instruction Dataset](https://doi.org/10.29130/dubited.1533514)：在两个土耳其语指令数据集上用 5 种 prompt format 训练 Llama2 和 Phi3，比较提示模板选择如何改变土耳其语生成和评测结果。
+- [Authorship Attribution of Arabic Criminal Texts Using Large Language Models: A Comparative Evaluation of ChatGPT, DeepSeek, and Gemini](https://doi.org/10.65930/yctcgz27)：比较 ChatGPT、DeepSeek 和 Gemini 在阿拉伯语犯罪文本作者归因上的表现，把司法取证场景中的阿拉伯语写作作为 LLM 归因评测域。
+- [How well do Large Language Models handle Machine Translation?](https://doi.org/10.1075/ts.25064.gut)：比较 GPT-3.5、GPT-4 和 DeepSeek-V3 在西班牙语到捷克语翻译中的表现，覆盖营销与文学两类文本，由 132 名捷克语母语者评价自然度和语法，并用 Levenshtein distance 检查一致性。
+- [Evaluating LLM Capabilities in Low-Resource Contexts: A Case Study of Persian Linguistic and Cultural Tasks](https://doi.org/10.26615/978-954-452-100-4-012)：在低资源波斯语语言与文化任务上评测 LLM，同时测试波斯语语境中的语言能力和文化扎根知识。
+- [Arabic WikiTableQA: Benchmarking Question Answering over Arabic Tables Using Large Language Models](https://doi.org/10.3390/electronics14193829)：提出 Arabic WikiTableQA，用 LLM 评测阿拉伯语表格问答，面向结构化阿拉伯语内容，而不是英语 SQL 式 TableQA 数据。
+- [KLSBench: Evaluating LLM Capabilities on Korean Literary Sinitic Texts in Historical Context](https://doi.org/10.3390/app16020953)：评测 LLM 对韩文语境中 Korean Literary Sinitic 历史文本的理解；核心思想是测试当代高资源多语 benchmark 覆盖不到的低资源历史语言能力。
+- [GATmath and GATLc: Comprehensive benchmarks for evaluating Arabic large language models](https://doi.org/10.1371/journal.pone.0329129)：类型：benchmark/评测协议。核心价值：为 1.1.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [reVISION: A Polish Benchmark for Evaluating Vision-Language Models on Multimodal National Exam Data](https://doi.org/10.15439/2025f2608)：用波兰国家考试中的多模态题目评测视觉语言模型；核心思想：在非英语教育场景中大规模测试多模态理解与推理。
+- [Evaluating Large Language Models on Chinese Zero Anaphora: A Symmetric Winograd-Style Minimal-Pair Benchmark](https://doi.org/10.3390/sym18010047)：用对称 Winograd 风格最小对评估 LLM 的中文零形回指能力。
+- [Mix-Lingual Relation Extraction: Dataset and a Training Approach](https://doi.org/10.1007/s11390-024-4314-y)：提供可复用评测信号，服务于多语言能力，可补充原生语言、跨语言检索、语法、生成和多语言评测覆盖。
+- [A benchmark dataset for evaluating gender sensitivity in Korean political discourse with large language models](https://doi.org/10.1038/s41597-025-06344-3)：围绕多语言能力提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [PersianMHQA: A Dataset for Open Domain Persian Multi-hop Question Answering Based on Wikipedia Encyclopedia](https://doi.org/10.1145/3711826)：可作为多语言能力方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [Liar, Liar, LLM on Fire: Investigating Deception in Turkish Text Generation](https://doi.org/10.1145/3811025)：研究土耳其语文本生成中的欺骗现象。

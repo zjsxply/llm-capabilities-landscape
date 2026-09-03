@@ -1,19 +1,596 @@
 # 2.10.4 Model
 
+- [Automatically Identifying CVE Affected Versions With Patches and Developer Logs](https://doi.org/10.1109/tdsc.2023.3264567)：将漏洞修复补丁与开发日志证据匹配到 CVE 受影响版本范围，使版本判定能利用维护轨迹而不只依赖公告文本。
+- [Universal Vulnerabilities in Large Language Models: Backdoor Attacks for In-context Learning](https://arxiv.org/abs/2401.05949)：说明带毒的上下文示例无需更新参数也能在大模型中植入后门行为，暴露安全部署中的训练外模型漏洞。
+- [Large Language Model as Synthesizer: Fusing Diverse Inputs for Better Automatic Vulnerability Repair](https://arxiv.org/abs/2401.15459)：用大模型融合漏洞报告、代码上下文和修复提示等异构证据，生成自动漏洞修复候选补丁。
+- [Large Language Model for Vulnerability Detection: Emerging Results and Future Directions](https://arxiv.org/abs/2401.15468)：研究基于大模型的漏洞检测器在代码分析场景中的表现，并指出安全代码推理仍需改进的模型适配与评测缺口。
+- [Finetuning Large Language Models for Vulnerability Detection](https://arxiv.org/abs/2401.17010)：在漏洞检测数据上微调通用大模型，检验监督适配相较单纯提示是否能提升代码安全分类能力。
+- [Instruction Tuning for Secure Code Generation](https://arxiv.org/abs/2402.09497)：构建安全代码指令数据并调优代码大模型，使其更倾向生成既功能正确又避免常见弱点的代码。
+- [On the Vulnerability of LLM/VLM-Controlled Robotics](https://arxiv.org/abs/2402.10340)：分析大语言模型和视觉语言模型控制策略如何被诱导产生不安全机器人动作，将多模态推理失败连接到网络物理攻击面。
+- [DeepCode AI Fix: Fixing Security Vulnerabilities with Large Language Models](https://arxiv.org/abs/2402.13291)：描述一个基于大模型的修复模型，为检测到的安全漏洞生成源码补丁，并在真实缺陷模式上评估补丁质量。
+- [Chain-of-Thought Prompting of Large Language Models for Discovering and Fixing Software Vulnerabilities](https://arxiv.org/abs/2402.17230)：测试链式思维提示是否能通过显式安全推理步骤提升大模型发现漏洞和生成补丁的能力。
+- [Unveiling Typographic Deceptions: Insights of the Typographic Vulnerability in Large Vision-Language Model](https://arxiv.org/abs/2402.19150)：研究大视觉语言模型中的排版式对抗输入，展示图像内文字如何在安全相关场景中操纵模型输出。
+- [LLM4Decompile: Decompiling Binary Code with Large Language Models](https://arxiv.org/abs/2403.05286)：训练并评估用于二进制到源码反编译的大模型，为恶意软件和漏洞分析提供模型侧逆向能力。
+- [ACFix: Guiding LLMs With Mined Common RBAC Practices for Context-Aware Repair of Access Control Vulnerabilities in Smart Contracts](https://arxiv.org/abs/2403.06838)：用挖掘出的常见角色访问控制实践引导大模型修复智能合约，使补丁保留上下文相关的授权逻辑。
+- [Robustness, Security, Privacy, Explainability, Efficiency, and Usability of Large Language Models for Code](https://arxiv.org/abs/2403.07506)：从安全、隐私、鲁棒性、可解释性、效率和开发者可用性等方面梳理代码大模型风险与改进方向。
+- [Efficiently Detecting Reentrancy Vulnerabilities in Complex Smart Contracts](https://arxiv.org/abs/2403.11254)：通过建模复杂合约交互来改进智能合约重入漏洞检测，而不是只依赖浅层语法指标。
+- [Leveraging Large Language Models to Detect NPM Malicious Packages](https://arxiv.org/abs/2403.12196)：将大模型用于 NPM 包元数据和代码分析，从语义与行为线索中识别恶意软件包。
+- [A Study of Vulnerability Repair in JavaScript Programs with Large Language Models](https://arxiv.org/abs/2403.13193)：评估大模型生成的 JavaScript 漏洞修复，区分补丁正确性、安全改进和语言特有失败模式。
+- [Combining Fine-Tuning and LLM-Based Agents for Intuitive Smart Contract Auditing with Justifications](https://arxiv.org/abs/2403.16073)：把微调后的智能合约审计器与 LLM agent 结合，既输出疑似漏洞，也生成面向审计人员的理由说明。
+- [FoC: Figure Out the Cryptographic Functions in Stripped Binaries with LLMs](https://arxiv.org/abs/2403.18403)：利用大模型识别去符号二进制中的密码学函数，支持缺少符号和源码时的逆向分析。
+- [Vulnerability Detection with Code Language Models: How Far are We?](https://arxiv.org/abs/2403.18624)：基准测试代码语言模型的漏洞检测能力，指出预训练代码表示在真实安全缺陷上仍然失败的环节。
+- [Dialectical Alignment: Resolving the Tension of 3H and Security Threats of LLMs](https://arxiv.org/abs/2404.00486)：提出一种对齐策略，在有用性、诚实性和无害性之间平衡安全威胁行为，而不是只优化安全拒答。
+- [Enchanting Program Specification Synthesis by Large Language Models using Static Analysis and Program Verification](https://arxiv.org/abs/2404.00762)：结合大模型规格生成、静态分析和验证反馈，为安全关键代码生成可检查的程序性质。
+- [An Investigation into Misuse of Java Security APIs by Large Language Models](https://arxiv.org/abs/2404.03823)：衡量大模型误用 Java 安全 API 的频率，揭示其在密码学和安全库使用上的失败模式。
+- [LLMs for Cyber Security: New Opportunities](https://arxiv.org/abs/2404.11338)：综述大模型应用于漏洞分析、威胁情报和防御自动化等网络安全任务的模型侧机会。
+- [Vul-LMGNNs: Fusing language models and online-distilled graph neural networks for code vulnerability detection](https://arxiv.org/abs/2404.14719)：融合语言模型代码表示与在线蒸馏图神经网络，同时利用 token 语义和程序结构信号检测漏洞。
+- [When Fuzzing Meets LLMs: Challenges and Opportunities](https://arxiv.org/abs/2404.16297)：梳理大模型生成输入、测试桩和引导信号如何增强模糊测试，并指出覆盖率与缺陷验证上的模型限制。
+- [Double Backdoored: Converting Code Large Language Model Backdoors to Traditional Malware via Adversarial Instruction Tuning Attacks](https://arxiv.org/abs/2404.18567)：展示对抗性指令微调可将代码大模型后门转化为生成恶意软件的行为，把模型投毒与可执行攻击载荷联系起来。
+- [LLM Security Guard for Code](https://arxiv.org/abs/2405.01103)：使用大模型守卫检查生成代码中的安全缺陷，再将代码交给下游开发流程。
+- [Codexity: Secure AI-assisted Code Generation](https://arxiv.org/abs/2405.03927)：研究安全的 AI 辅助代码生成，并分析减少代码模型使用过程中引入漏洞的缓解策略。
+- [SPVR: syntax-to-prompt vulnerability repair based on large language models](https://arxiv.org/abs/2405.04994)：将语法级漏洞线索转换为定向提示，引导大模型修复存在缺陷的代码。
+- [DoLLM: How Large Language Models Understanding Network Flow Data to Detect Carpet Bombing DDoS](https://arxiv.org/abs/2405.07638)：将大模型适配到网络流描述，使其能从流量模式中识别地毯式轰炸 DDoS 行为。
+- [Uncovering Logit Suppression Vulnerabilities in LLM Safety Alignment](https://arxiv.org/abs/2405.13068)：识别安全对齐大模型中的 logit 抑制失效，说明输出概率控制可能形成可利用的拒答绕过。
+- [LLM-Assisted Static Analysis for Detecting Security Vulnerabilities](https://arxiv.org/abs/2405.17238)：将大模型推理与静态分析告警结合，用于优先排序并解释源码中的可能安全漏洞。
+- [Code Repair with LLMs gives an Exploration-Exploitation Tradeoff](https://arxiv.org/abs/2405.17503)：把大模型代码修复刻画为搜索问题，强调多样化候选探索与利用高置信补丁模式之间的权衡。
+- [BadRAG: Identifying Vulnerabilities in Retrieval Augmented Generation of Large Language Models](https://arxiv.org/abs/2406.00083)：刻画检索增强生成中的漏洞，包括恶意或排序不佳的上下文如何扭曲大模型回答。
+- [Generalization-Enhanced Code Vulnerability Detection via Multi-Task Instruction Fine-Tuning](https://arxiv.org/abs/2406.03718)：通过多任务指令微调提升代码大模型在不同漏洞类型和检测数据集之间的泛化能力。
+- [Security Vulnerability Detection with Multitask Self-Instructed Fine-Tuning of Large Language Models](https://arxiv.org/abs/2406.05892)：生成自指令安全任务并联合微调大模型，用于漏洞检测。
+- [M2CVD: Multi-Model Collaboration for Code Vulnerability Detection](https://arxiv.org/abs/2406.05940)：融合多个模型的代码漏洞检测预测，利用互补优势降低误报和漏报。
+- [LLAMAFUZZ: Large Language Model Enhanced Greybox Fuzzing](https://arxiv.org/abs/2406.07714)：使用大模型生成的引导信号改进灰盒模糊测试中的输入变异和路径探索。
+- [Vul-RAG: Enhancing LLM-based Vulnerability Detection via Knowledge-level RAG](https://arxiv.org/abs/2406.11147)：为大模型漏洞检测加入漏洞知识检索，使判断能够引用 CWE 式概念和已知缺陷模式。
+- [Assessing the Effectiveness of LLMs in Android Application Vulnerability Analysis](https://arxiv.org/abs/2406.18894)：在 Android 漏洞分析任务上评估大模型，指出移动端 API 和生命周期行为对代码模型的挑战。
+- [Revisiting the Performance of Deep Learning-Based Vulnerability Detection on Realistic Datasets](https://arxiv.org/abs/2407.03093)：在更真实的数据集上重新评估深度漏洞检测器，暴露由清洗过度或重复样本导致的性能高估。
+- [Identifying Smart Contract Security Issues in Code Snippets from Stack Overflow](https://arxiv.org/abs/2407.13271)：将安全模型用于 Stack Overflow 智能合约片段，检测社区复用代码中的脆弱模式。
+- [Beyond Static Pattern Matching? Rethinking Automatic Cryptographic API Misuse Detection in the Era of LLMs](https://arxiv.org/abs/2407.16576)：比较大模型和传统模式匹配在密码学 API 误用检测中的表现，检验语义推理是否能减少脆弱规则。
+- [Automated Software Vulnerability Static Code Analysis Using Generative Pre-Trained Transformer Models](https://arxiv.org/abs/2408.00197)：使用生成式预训练 Transformer 进行静态漏洞分析，面向需要语义上下文的源码弱点。
+- [MCGMark: An Encodable and Robust Online Watermark for LLM-Generated Malicious Code](https://arxiv.org/abs/2408.01354)：为大模型生成的恶意代码设计在线水印，使有害程序在经过代码变换后仍可追踪。
+- [From Generalist to Specialist: Exploring CWE-Specific Vulnerability Detection](https://arxiv.org/abs/2408.02329)：按 CWE 类别专门化漏洞检测器，检验更窄的安全标签是否优于通用模型。
+- [Black-Box Adversarial Attacks on LLM-Based Code Completion](https://arxiv.org/abs/2408.02509)：提出黑盒攻击，在无法访问模型内部的情况下操纵大模型代码补全生成易受攻击的输出。
+- [VulScribeR: Exploring RAG-based Vulnerability Augmentation with LLMs](https://arxiv.org/abs/2408.04125)：利用检索增强生成扩展漏洞描述及上下文，以改进下游漏洞分析。
+- [Towards Explainable Network Intrusion Detection using Large Language Models](https://arxiv.org/abs/2408.04342)：将大模型用于网络入侵检测，并为流量为何被判定为恶意提供自然语言解释。
+- [A Jailbroken GenAI Model Can Cause Substantial Harm: GenAI-powered Applications are Vulnerable to PromptWares](https://arxiv.org/abs/2408.05061)：展示越狱后的生成式模型可被用于针对 GenAI 应用的 PromptWare 攻击。
+- [A RAG-Based Question-Answering Solution for Cyber-Attack Investigation and Attribution](https://arxiv.org/abs/2408.06272)：构建面向事件证据的检索增强问答模型，用于网络攻击调查与归因。
+- [DeepREST: Automated Test Case Generation for REST APIs Exploiting Deep Reinforcement Learning](https://arxiv.org/abs/2408.08594)：利用深度强化学习生成 REST API 测试用例，以覆盖手写测试之外的安全相关行为。
+- [A Disguised Wolf Is More Harmful Than a Toothless Tiger: Adaptive Malicious Code Injection Backdoor Attack Leveraging User Behavior as Triggers](https://arxiv.org/abs/2408.10334)：把代码生成后门建模为攻击者、模型分发者和用户之间的博弈，展示模型可根据推断出的用户技能水平选择性注入恶意代码。
+- [ANVIL: Anomaly-based Vulnerability Identification without Labelled Training Data](https://arxiv.org/abs/2408.16028)：将行级漏洞检测改写为掩码代码异常评分，结合重构差异、交叉熵、置信度和结构复杂度信号，不依赖有标签漏洞训练数据。
+- [Outside the Comfort Zone: Analysing LLM Capabilities in Software Vulnerability Detection](https://arxiv.org/abs/2408.16400)：比较六个漏洞检测专用开源模型与六个通用 LLM，并微调其中三个通用模型，揭示源码漏洞检测中的基准标签噪声和窄域过拟合问题。
+- [Advancing Cyber Incident Timeline Analysis Through Rule Based AI and Large Language Models](https://arxiv.org/abs/2409.02572)：提出 GenDFIR，将事件工件预处理为结构化知识库，再用 Llama 3.1 8B RAG 智能体从合成 DFIR 数据中重建取证时间线。
+- [PromSec: Prompt Optimization for Secure Generation of Functional Source Code with Large Language Models (LLMs)](https://arxiv.org/abs/2409.12699)：把用于清除漏洞的生成式对抗图神经网络与 LLM 提示优化循环结合，以更少查询生成安全且功能保持的 Python 和 Java 代码。
+- [Boosting Cybersecurity Vulnerability Scanning based on LLM-supported Static Application Security Testing](https://arxiv.org/abs/2409.15735)：提出 LSAST，将本地部署 LLM 分析、检索和 SAST 扫描结果结合，使静态漏洞扫描能利用最新漏洞知识且不暴露私有代码。
+- [APILOT: Navigating Large Language Models to Generate Secure Code by Sidestepping Outdated API Pitfalls](https://arxiv.org/abs/2409.16526)：维护可快速更新的过时 API 数据集，并用版本感知增强生成引导 LLM 写代码，在七个模型上减少过时 API 推荐。
+- [On the Vulnerability of Applying Retrieval-Augmented Generation within Knowledge-Intensive Application Domains](https://arxiv.org/abs/2409.17275)：研究 RAG 检索器在语料、查询和目标信息组合下的通用投毒，并提出检测保持高查询相似度的投毒文档的方法。
+- [Comparing Unidirectional, Bidirectional, and Word2vec Models for Discovering Vulnerabilities in Compiled Lifted Code](https://arxiv.org/abs/2409.17513)：在 LLVM 提升函数上训练 GPT-2 嵌入并输入 LSTM，发现单向嵌入在编译代码漏洞分类上优于 BERT、RoBERTa 和 Word2vec。
+- [StagedVulBERT: Multigranular Vulnerability Detection With a Novel Pretrained Code Model](https://arxiv.org/abs/2410.05766)：提出 CodeBERT-HLS 层次化 token 与语句编码器，并用于粗到细的函数级检测和语句级漏洞定位。
+- [CodeCipher: Learning to Obfuscate Source Code Against LLMs](https://arxiv.org/abs/2410.05797)：通过变换 LLM embedding 矩阵学习 token 混淆映射，在保持代码补全、摘要和翻译行为的同时隐藏源码隐私。
+- [Hallucinating AI Hijacking Attack: Large Language Models and Malicious Code Recommenders](https://arxiv.org/abs/2410.06462)：展示编程上下文会让 LLM 推荐幻觉化或攻击者可控制的 API 与包端点，从复制代码到恶意基础设施形成域名抢注攻击路径。
+- [LLM-SmartAudit: Advanced Smart Contract Vulnerability Detection](https://arxiv.org/abs/2410.09381)：使用专门化会话式 LLM 智能体协同审计智能合约，并用有标签数据集和真实合约数据检测传统工具遗漏的逻辑漏洞。
+- [FTSmartAudit: A Knowledge Distillation-Enhanced Framework for Automated Smart Contract Auditing Using Fine-Tuned LLMs](https://arxiv.org/abs/2410.13918)：更偏模型侧智能合约审计条目；它用多阶段知识蒸馏、外部领域知识和奖励引导学习训练轻量审计模型。
+- [From Solitary Directives to Interactive Encouragement! LLM Secure Code Generation by Natural Language Prompting](https://arxiv.org/abs/2410.14321)：提出 SecCode，用交互式鼓励提示循环完成代码生成、漏洞检测修复和交叉检查，且只依赖自然语言提示。
+- [The Best Defense is a Good Offense: Countering LLM-Powered Cyberattacks](https://arxiv.org/abs/2410.15396)：利用攻击型 LLM 对输入的信任、偏置、记忆限制和问题视野狭窄来防御 LLM 网络攻击智能体，并在黑盒提示场景和自建 CTF 机器上测试。
+- [Insights and Current Gaps in Open-Source LLM Vulnerability Scanners: A Comparative Analysis](https://arxiv.org/abs/2410.16527)：比较 Garak、Giskard、PyRIT 和 CyberSecEval 等开源 LLM 红队扫描器，并指出攻击成功检测的可靠性缺口。
+- [ProveRAG: Provenance-Driven Vulnerability Analysis With Automated Retrieval-Augmented LLMs](https://arxiv.org/abs/2410.17406)：为漏洞分析检索 NVD 和 CWE 证据，并加入自我批判机制，使 LLM 输出包含可核验的利用与缓解依据。
+- [CTINexus: Automatic Cyber Threat Intelligence Knowledge Graph Construction Using Large Language Models](https://arxiv.org/abs/2410.21060)：用优化的上下文学习、示例检索、层次化实体对齐和长距离关系预测，从 150 篇真实 CTI 报告构建网络威胁知识图谱。
+- [SQL Injection Jailbreak: a structural disaster of large language models](https://arxiv.org/abs/2411.01565)：用类 SQL 注入载荷攻击 LLM 外部提示构造结构，并评估 Self-Reminder-Key 作为简单自适应防御。
+- [Fixing Security Vulnerabilities with AI in OSS-Fuzz](https://arxiv.org/abs/2411.03346)：将 AutoCodeRover 式 LLM 智能体改造成 OSS-Fuzz 漏洞修复器，用 exploit 输入的测试执行定位待修代码并动态判断补丁正确性。
+- [Enhancing Security Control Production With Generative AI](https://arxiv.org/abs/2411.04284)：用上下文学习与检索增强提示为 AWS 云服务生成 Gherkin 安全控制代码，把控制规则编写从数天压缩到分钟级。
+- [ChatHTTPFuzz: large language model-assisted IoT HTTP fuzzing](https://arxiv.org/abs/2411.11929)：把 LLM 用于 IoT HTTP 模糊测试，生成协议感知请求以触发设备 Web 处理器中的漏洞。
+- [ProSec: Fortifying Code LLMs with Proactive Security Alignment](https://arxiv.org/abs/2411.12882)：从 CWE 合成诱发漏洞的编码场景及修复样本，再用偏好学习把代码 LLM 对齐到安全编码实践且不损害通用能力。
+- [Evaluating Large Language Models' Capability to Launch Fully Automated Spear Phishing Campaigns: Validated on Human Subjects](https://arxiv.org/abs/2412.00586)：评估 LLM 是否能自动化端到端鱼叉式钓鱼活动，并通过真人受试者验证活动效果。
+- [Beyond Text-Visual Attention: Exploiting Visual Cues for Effective Token Pruning in VLMs](https://arxiv.org/abs/2412.01818)：主要是偏离网络安全主线的 VLM 效率论文；在此只与对抗或安全敏感多模态输入下的视觉 token 剪枝相关。
+- [AI-Based Attacker Models for Enhancing Multi-Stage Cyberattack Simulations in Smart Grids Using Co-Simulation Environments](https://arxiv.org/abs/2412.03979)：在智能电网协同仿真环境中构建 AI 攻击者模型，用于生成并测试多阶段网络攻击对电力系统行为的影响。
+- [Buster: Incorporating Backdoor Attacks into Text Encoder to Mitigate NSFW Content Generation](https://arxiv.org/abs/2412.07249)：偏离网络安全行动主线；它向文生图文本编码器注入语义后门，把 NSFW 提示重定向到良性目标且推理开销较低。
+- [Ontology-Aware RAG for Improved Question-Answering in Cybersecurity Education](https://arxiv.org/abs/2412.14191)：把网络安全领域本体加入 RAG 问答，使教学答案能更稳定地检索并组织安全概念。
+- [Combining GPT and Code-Based Similarity Checking for Effective Smart Contract Vulnerability Detection](https://arxiv.org/abs/2412.18225)：结合 GPT 分析与代码相似度检查来识别智能合约漏洞，用相似性证据约束 LLM 的安全判断。
+- [On the Validity of Traditional Vulnerability Scoring Systems for Adversarial Attacks Against LLMs](https://arxiv.org/abs/2412.20087)：检验 CVSS 等传统漏洞评分指标能否合理衡量针对 LLM 的对抗攻击，并指出哪些评分因素需要适配模型特有攻击面。
+- [Enhancing vulnerability detection efficiency: An exploration of light-weight LLMs with hybrid code features](https://doi.org/10.1016/j.jisa.2024.103925)：研究结合混合代码特征的轻量级 LLM 漏洞检测，目标是在不依赖大模型完整推理成本的情况下提升安全代码筛查效率。
+- [Applying Contrastive Learning to Code Vulnerability Type Classification](https://doi.org/10.18653/v1/2024.emnlp-main.666)：将对比学习用于代码漏洞类型分类。
+- [SecureQwen: Leveraging LLMs for vulnerability detection in python codebases](https://doi.org/10.1016/j.cose.2024.104151)：将 Qwen 系列大模型适配到 Python 代码库漏洞检测，把领域微调作为通用代码模型提示之外的检测路线。
+- [Behavior Speaks Louder: Rethinking Malware Analysis Beyond Family Classification](https://doi.org/10.1109/trustcom63139.2024.00048)：用 LLM 辅助生成 Android 恶意行为标签，并通过 API 到行为标签的反馈机制，把恶意软件分析从不一致的家族命名转向攻击链行为报告。
+- [GRACE: Empowering LLM-based software vulnerability detection with graph structure and in-context learning](https://doi.org/10.1016/j.jss.2024.112031)：把程序图结构和上下文示例加入 LLM 漏洞检测，使代码语义和依赖关系线索参与安全代码分类。
+- [Reinforcement Learning Meets Network Intrusion Detection: A Transferable and Adaptable Framework for Anomaly Behavior Identification](https://doi.org/10.1109/tnsm.2024.3352586)：将入侵检测建模为深度强化学习智能体，通过奖励函数优先选择异常点，并在 IDS2017、IDS2018、NSL-KDD、UNSW-NB15 和 CIC-IoT2023 上验证迁移性。
+- [FELLMVP: An Ensemble LLM Framework for Classifying Smart Contract Vulnerabilities](https://doi.org/10.1109/blockchain62396.2024.00021)：基于 Solidity 调用图和外部函数调用表示微调八个漏洞类型专用 LLM，再用集成模型进行智能合约漏洞类型分类。
+- [File Hijacking Vulnerability: The Elephant in the Room](https://doi.org/10.14722/ndss.2024.23038)：系统刻画文件劫持类 CVE，并提出动态分析工具 JERRY，通过模拟文件内容和路径劫持来发现安全边界绕过零日漏洞。
+- [Research on the LLM-Driven Vulnerability Detection System Using LProtector](https://doi.org/10.1109/icdsca63855.2024.10859408)：在 LProtector 中结合 GPT-4o 与 RAG，对 Big-Vul 中的 C/C++ 代码做漏洞二分类，并与漏洞检测基线比较。
+- [Exploration On Prompting LLM With Code-Specific Information For Vulnerability Detection](https://doi.org/10.1109/sse62657.2024.00049)：评估加入相似代码检索、数据流图、链式思维、信息位置和温度设置的漏洞检测提示，验证这些代码特定信息对 GPT 检测的影响。
+- [Autonomous Cyberattack with Security-Augmented Generative Artificial Intelligence](https://doi.org/10.1109/csr61664.2024.10679470)：用 LoRA 和 RAG 将本地 Mistral 7B 适配到公开提权资料，展示普通 PC 上低成本 LLM 辅助 Linux 渗透测试的可行性。
+- [Vulnerability prediction using pre-trained models: An empirical evaluation](https://doi.org/10.1109/mascots64422.2024.10786510)：微调并比较 BERT、GPT-2、T5、CodeBERT、CodeGPT 和 CodeT5 做易受攻击组件预测，将模型选择作为主要经验变量。
+- [Large Language Models for Hardware Security (Invited, Short Paper)](https://doi.org/10.1109/tps-isa62245.2024.00055)：梳理 LLM 可支持的硬件安全任务，包括 Verilog 漏洞推理、安全断言和硬件缺陷修复，同时指出可信性挑战。
+- [Detecting Source Code Vulnerabilities Using Fine-Tuned Pre-Trained LLMs](https://doi.org/10.1109/icsp62129.2024.10846595)：在 SARD 的 Java CWE 样本上用 LoRA 微调 Qwen2-7B，并与 GNN 和 LSTM 漏洞检测模型比较。
+- [KGNN: Combining KAN Networks and Graph Neural Networks for APT Attack Detection](https://doi.org/10.1109/icftic64248.2024.10913110)：从 APT 威胁情报中抽取实体和关系，用 KAN 增强图特征后交给 GNN 进行攻击检测。
+- [Generative AI in Cyber Security of Cyber Physical Systems: Benefits and Threats](https://doi.org/10.1109/hsi61632.2024.10613562)：作为网络物理系统的综述式风险背景，区分 GenAI 防御用途与恶意自动化、隐私泄露和对抗攻击等威胁。
+- [Large language models in source code static analysis](https://doi.org/10.1109/ivmem63006.2024.10659715)：在工业静态分析器 Svace 中评估 LLM 对变量误用检测、告警核验、库函数规格生成和跨语言测试翻译的支持。
+- [Exploring AI for Vulnerability Detection and Repair](https://doi.org/10.1109/cars61786.2024.10778769)：比较 ChatGPT、Gemini 和 Phind 在 CWE 标注 C 代码片段上的漏洞检测与修复能力，以检测准确率和修复质量作为证据。
+- [Leveraging Large Language Models and Machine Learning for Smart Contract Vulnerability Detection](https://arxiv.org/abs/2501.02229)：在标注 Solidity 合约上微调 LLM 并训练传统机器学习基线，覆盖重入、整数溢出、时间戳依赖和危险委托调用等漏洞类型。
+- [CGP-Tuning: Structure-Aware Soft Prompt Tuning for Code Vulnerability Detection](https://arxiv.org/abs/2501.04510)：将结构感知软提示调优用于代码漏洞检测，使模型适配更关注安全相关代码结构。
+- [EXION: Exploiting Inter-and Intra-Iteration Output Sparsity for Diffusion Models](https://arxiv.org/abs/2501.05680)：偏离网络安全主线；该工作通过利用去噪迭代内部和跨迭代的输出稀疏性来加速扩散模型推理。
+- [Improving Network Threat Detection by Knowledge Graph, Large Language Model, and Imbalanced Learning](https://arxiv.org/abs/2501.16393)：结合知识图谱、不平衡学习和 LLM 对用户活动模式的解释，提升在线顺序威胁检测的捕获率与可解释性。
+- [One-for-All Does Not Work! Enhancing Vulnerability Detection by Mixture-of-Experts (MoE)](https://arxiv.org/abs/2501.16454)：用 mixture-of-experts 改进漏洞检测，强调安全代码推理需要专门化专家而不是单一通用检测器。
+- [An Optimal Cascade Feature-Level Spatiotemporal Fusion Strategy for Anomaly Detection in CAN Bus](https://arxiv.org/abs/2501.18821)：设计级联式时空特征融合模型做 CAN 总线异常检测，面向车载网络入侵信号。
+- [Low-Cost and Comprehensive Non-textual Input Fuzzing with LLM-Synthesized Input Generators](https://arxiv.org/abs/2501.19282)：用 LLM 合成结构化非文本输入生成器，降低对非纯文本攻击面程序进行模糊测试的成本。
+- [A Match Made in Heaven? AI-driven Matching of Vulnerabilities and Security Unit Tests](https://arxiv.org/abs/2502.03365)：把已知漏洞与安全单元测试自动匹配，支持面向回归测试的漏洞验证，而不是泛化代码分类。
+- [Multilingual Cyber Threat Detection in Tweets/X Using ML, DL, and LLM: A Comparative Analysis](https://arxiv.org/abs/2502.04346)：比较机器学习、深度学习和 LLM 分类器在多语言 Tweets/X 帖子中识别网络威胁信号的效果。
+- [SCALM: Detecting Bad Practices in Smart Contracts Through LLMs](https://arxiv.org/abs/2502.04347)：用 LLM 分析智能合约中的不良实践，关注显式漏洞标签之外的可维护性和安全反模式。
+- [Idioms: Neural Decompilation With Joint Code and Type Definition Prediction](https://arxiv.org/abs/2502.04536)：通过联合预测代码与类型定义改进神经反编译，补充模型侧逆向工程能力线。
+- [Enhancing Phishing Email Identification with Large Language Models](https://arxiv.org/abs/2502.04759)：评估并解释 LLM 在钓鱼邮件识别中的作用。
+- [Large Language Models for In-File Vulnerability Localization Can Be “Lost in the End”](https://arxiv.org/abs/2502.06898)：指出长文件上下文会削弱 LLM 对靠后代码区域的漏洞定位能力，说明安全代码模型需要位置敏感评测。
+- [APT-LLM: Embedding-Based Anomaly Detection of Cyber Advanced Persistent Threats Using Large Language Models](https://arxiv.org/abs/2502.09385)：用 BERT 系列嵌入编码系统溯源轨迹，再输入自编码器，面向 DARPA Transparent Computing 中极端不平衡的 APT 检测。
 - [PRIMUS](https://arxiv.org/abs/2502.11191)：提供面向网络安全 LLM 的持续预训练、指令微调与推理蒸馏数据，并在公开网络安全基准上评估。
+- [Rethinking Audio-Visual Adversarial Vulnerability from Temporal and Modality Perspectives](https://arxiv.org/abs/2502.11858)：偏离网络安全行动主线；其贡献是面向音视频模型鲁棒性的时间不变性攻击、模态错配攻击和对抗训练防御。
+- [LAMD: Context-Driven Android Malware Detection and Classification with LLMs](https://arxiv.org/abs/2502.13055)：利用上下文驱动的 LLM 表示进行 Android 恶意软件检测与分类。
+- [SmartLLM: Smart Contract Auditing using Custom Generative AI](https://arxiv.org/abs/2502.13167)：结合微调与 RAG 提升智能合约审计和漏洞分析能力。
+- [Human-AI Collaboration in Cloud Security: Cognitive Hierarchy-Driven Deep Reinforcement Learning](https://arxiv.org/abs/2502.16054)：提出云防御强化学习模型，用认知层级 DQN 在攻击图上预判 APT 行为，并通过人类 SOC 分析员实验评估。
+- [Malware Classification from Memory Dumps Using Machine Learning, Transformers, and Large Language Models](https://arxiv.org/abs/2503.02144)：比较传统机器学习、RNN、Transformer 和 Gemini 提示在恶意软件内存转储特征上的分类效果，结果显示特征筛选后的 XGBoost 和随机森林强于 LLM few-shot 基线。
+- [LogLLaMA: Transformer-based log anomaly detection with LLaMA](https://arxiv.org/abs/2503.14849)：在系统日志上微调 LLaMA，并加入基于强化学习的异常识别以支持日志安全监测。
+- [UntrustVul: An Automated Approach for Identifying Untrustworthy Alerts in Vulnerability Detection Models](https://arxiv.org/abs/2503.14852)：当模型标出的可疑代码行既不像历史漏洞模式、也不会通过数据或控制依赖影响脆弱后继行时，将该漏洞检测告警判为不可信。
+- [Exploiting Mixture-of-Experts Redundancy Unlocks Multimodal Generative Abilities](https://arxiv.org/abs/2503.22517)：偏离网络安全主线；该工作分析混合专家模型冗余以解锁多模态生成能力，并非网络防御或漏洞分析方法。
+- [Improving the Context Length and Efficiency of Code Retrieval for Tracing Security Vulnerability Fixes](https://arxiv.org/abs/2503.22935)：提出 SITPatchTracer，用三阶段检索流程和层次化 commit diff 嵌入在完整仓库中定位静默漏洞修复补丁。
+- [Generating Mitigations for Downstream Projects to Neutralize Upstream Library Vulnerability](https://arxiv.org/abs/2503.24273)：提出 LUMEN，在无法升级依赖或获取上游补丁时，检索已有 workaround 或根据漏洞复现行为生成类型化缓解策略，保护受影响的下游项目。
+- [AttackLLM: LLM-based Attack Pattern Generation for an Industrial Control System](https://arxiv.org/abs/2504.04187)：用 LLM 生成工业控制系统攻击模式。
+- [TrafficLLM](https://arxiv.org/abs/2504.04222)：通过通用流量表示增强 LLM 的网络流量分析能力，补充模型侧网络安全推理路线。
+- [SmartBugBert: BERT-Enhanced Vulnerability Detection for Smart Contract Bytecode](https://arxiv.org/abs/2504.05002)：结合反编译 opcode 序列、控制流图片段、微调 BERT 与 LightGBM，在字节码层检测四类以太坊智能合约漏洞。
+- [Enhancing Smart Contract Vulnerability Detection in DApps Leveraging Fine-Tuned LLM](https://arxiv.org/abs/2504.05006)：在 215 个 DApp 项目的 4,998 份合约上微调 Llama3-8B 与 Qwen2-7B，面向代币价格操纵等难以机器审计的逻辑漏洞。
+- [Security Vulnerabilities in Ethereum Smart Contracts: A Systematic Analysis](https://arxiv.org/abs/2504.05968)：综述式分析以太坊智能合约安全，复现溢出、重入、访问控制、拒绝服务、短地址、早期交易和特权函数暴露等案例，而非提出新检测模型。
+- [LLM-IFT](https://arxiv.org/abs/2504.07015)：用 LLM 执行安全硬件中的信息流跟踪。核心思想：把语言模型推理用于硬件安全分析，从设计工件中推断信息流和策略违规。
+- [Exploring Vulnerabilities and Concerns in Solana Smart Contracts](https://arxiv.org/abs/2504.07419)：系统整理 Solana 智能合约漏洞类型并比较安全分析工具与以太坊差异，更像区块链安全背景资料而不是新模型架构。
+- [MOS: Towards Effective Smart Contract Vulnerability Detection through Mixture-of-Experts Tuning of Large Language Models](https://arxiv.org/abs/2504.12234)：补充通过专家混合调优提升大模型智能合约漏洞检测的方法。
+- [Large Language Models for Validating Network Protocol Parsers](https://arxiv.org/abs/2504.13515)：提出 PARVAL，用 LLM 将 RFC 标准和解析器实现转换为统一格式规范，再差分比较以发现语义级协议解析漏洞。
+- [Trace Gadgets: Minimizing Code Context for Machine Learning-Based Vulnerability Prediction](https://arxiv.org/abs/2504.13676)：把漏洞预测上下文压缩到覆盖漏洞路径的关键语句，使机器学习检测器在未见真实代码上的泛化优于宽泛静态扫描上下文。
+- [AI-Based Vulnerability Analysis of NFT Smart Contracts](https://arxiv.org/abs/2504.16113)：在 16,527 份 NFT 合约上训练随机森林，检测可变代理风险、ERC-721 重入、无限铸造、缺失约束和公开销毁等五类漏洞。
+- [FLAG: Formal and LLM-assisted SVA Generation for Formal Specifications of On-Chip Communication Protocols](https://arxiv.org/abs/2504.17226)：结合语法模板、时序图形式化检查和 LLM 文本过滤，从片上通信协议的非正式文档生成 SystemVerilog 断言。
+- [Validating Network Protocol Parsers with Traceable RFC Document Interpretation](https://arxiv.org/abs/2504.18050)：把 RFC 要求解释为可追溯检查，用于验证网络协议解析器，将规范证据连接到解析器安全测试。
+- [LLMpatronous: Harnessing the Power of LLMs For Vulnerability Detection](https://arxiv.org/abs/2504.18423)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Secret Breach Detection in Source Code with Large Language Models](https://arxiv.org/abs/2504.18784)：先用正则抽取疑似密钥、令牌和凭证，再用微调 LLM 分类，从而在源码仓库中减少 secret 检测误报。
+- [Llama-3.1-FoundationAI-SecurityLLM-Base-8B Technical Report](https://arxiv.org/abs/2504.21039)：提出 Foundation-Sec-8B，在 Llama 3.1 架构上用精心筛选的网络安全语料继续预训练，并在既有与新增安全基准上评估专用安全任务能力。
+- [Annotating and Auditing the Safety Properties of Unsafe Rust](https://arxiv.org/abs/2504.21312)：定义 Safety Tags 并实现静态 linter，用于检查 unsafe Rust API 文档是否一致说明本地要求、被调方要求和结构体不变量。
+- [LLM Security: Vulnerabilities, Attacks, Defenses, and Countermeasures](https://arxiv.org/abs/2505.01177)：综述式条目，梳理 LLM 漏洞、攻击、防御和对策；它更像模型风险背景，而不是新的网络安全模型。
+- [Enhancing Large Language Models with Faster Code Preprocessing for Vulnerability Detection](https://arxiv.org/abs/2505.05600)：加速面向 LLM 漏洞检测的代码预处理并提升检测 F1，将代码规范化纳入网络安全模型管线。
+- [Automated Alert Classification and Triage (AACT): An Intelligent System for the Prioritisation of Cybersecurity Alerts](https://arxiv.org/abs/2505.09843)：面向安全运营中心的告警分级与 triage，补充用于缓解分析员告警负载的模型侧告警筛选系统。
+- [Analysing Safety Risks in LLMs Fine-Tuned with Pseudo-Malicious Cyber Security Data](https://arxiv.org/abs/2505.09974)：用 garak 和 OWASP LLM Top 10 探针验证伪恶意网络安全数据微调会削弱模型安全韧性，并测试在指令回答中显式加入安全注意事项的缓解策略。
+- [SVA-ICL: Improving LLM-based Software Vulnerability Assessment via In-Context Learning and Information Fusion](https://arxiv.org/abs/2505.10008)：通过上下文学习和信息融合改进基于 LLM 的软件漏洞评估，为网络安全模型部分补充提示侧推理方法。
+- [Exploiting Radiance Fields for Grasp Generation on Novel Synthetic Views](https://arxiv.org/abs/2505.11467)：偏离网络安全主线；该工作用高斯泼溅生成新视角来改进 GraspNet-1Billion 上的机器人抓取，并非网络安全模型。
+- [TechniqueRAG: Retrieval Augmented Generation for Adversarial Technique Annotation in Cyber Threat Intelligence Text](https://arxiv.org/abs/2505.11988)：将 RAG 用于网络威胁情报文本中的对抗技术标注，用检索到的安全知识支撑技术标签。
+- [Capturing the Effects of Quantization on Trojans in Code LLMs](https://arxiv.org/abs/2505.14200)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [An Empirical Analysis of EOS Blockchain: Architecture, Contract, and Security](https://arxiv.org/abs/2505.15051)：从架构、去中心化、性能、合约漏洞、检测平台和真实攻击分析 EOS 区块链，更适合作为区块链安全背景而不是学习模型。
+- [Leveraging Large Language Models for Command Injection Vulnerability Analysis in Python: An Empirical Study on Popular Open-Source Projects](https://arxiv.org/abs/2505.15088)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Learning to Focus: Context Extraction for Efficient Code Vulnerability Detection with Language Models](https://arxiv.org/abs/2505.17460)：用上下文抽取提升语言模型代码漏洞检测效率，把输入聚焦到与安全相关的程序区域。
+- [An Initial Exploration of Fine-tuning Small Language Models for Smart Contract Reentrancy Vulnerability Detection](https://arxiv.org/abs/2505.19059)：研究小型语言模型能否在开发者可用硬件上适配 Solidity 重入漏洞检测。
+- [CPA-RAG:Covert Poisoning Attacks on Retrieval-Augmented Generation in Large Language Models](https://arxiv.org/abs/2505.19864)：提出针对 RAG 系统的隐蔽投毒攻击，展示恶意文档如何操纵检索增强输出且不易被发现。
+- [Respond to Change With Constancy](https://arxiv.org/abs/2505.20866)：用 LLM 指令调优处理非独立同分布网络流量分类。核心思想：把语言模型训练适配到分布漂移的网络安全流量，使分类器能泛化到固定流量模式之外。
+- [BugWhisperer: Fine-Tuning LLMs for SoC Hardware Vulnerability Detection](https://arxiv.org/abs/2505.22878)：面向 SoC 硬件漏洞检测微调大模型，把网络安全模型覆盖从软件代码扩展到硬件安全推理。
+- [LPASS: Linear Probes as Stepping Stones for vulnerability detection using compressed LLMs](https://arxiv.org/abs/2505.24451)：用线性探针在微调前估计压缩 LLM 的漏洞检测效果，并为 BERT 与 Gemma 在 MITRE Top 25 C/C++ 样本上的层剪枝选择截断点。
+- [Propagation-Based Vulnerability Impact Assessment for Software Supply Chains](https://arxiv.org/abs/2506.01342)：提出全生态调用图级漏洞传播分析和 VPSS 评分，用于量化 Java Maven 软件供应链中的下游影响范围。
 - [Synthetic Security Graphs](https://arxiv.org/abs/2506.06226)：在标注网络安全数据不足时合成安全图，用于训练入侵检测模型。
+- [Exposing Hidden Backdoors in NFT Smart Contracts: A Static Security Analysis of Rug Pull Patterns](https://arxiv.org/abs/2506.07974)：对 49,940 份已验证 NFT 合约做大规模 Slither 静态分析，并根据后门指标和漏洞共现模式划分 rug pull 风险等级。
+- [When Simple Model Just Works: Is Network Traffic Classification in Crisis?](https://arxiv.org/abs/2506.08655)：重新审视网络流量分类与攻击检测中的模型选择。
+- [Identifying Helpful Context for LLM-based Vulnerability Repair: A Preliminary Study](https://arxiv.org/abs/2506.11561)：面向网络安全智能体与安全任务的模型、训练或算法工作。核心思想：以 A Preliminary Study 为主要改进目标，作为 Model 条目的能力参考。
+- [LEA](https://arxiv.org/abs/2506.12100)：用 LLM embedding 量化漏洞分析中生成式模型回答的来源贡献，为 cyber reasoning 补充归因模型。
+- [MalGuard](https://arxiv.org/abs/2506.14466)：实时检测 PyPI 恶意包并输出可操作安全信号。
+- [ETrace : Event-Driven Vulnerability Detection in Smart Contracts via LLM-Based Trace Analysis](https://arxiv.org/abs/2506.15790)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Towards Effective Complementary Security Analysis Using Large Language Models](https://arxiv.org/abs/2506.16899)：研究大语言模型如何补充既有安全分析工具与流程。
+- [LASA: Enhancing SoC Security Verification with LLM-Aided Property Generation](https://arxiv.org/abs/2506.17865)：结合 LLM 驱动的 RAG 与形式化属性验证反馈，为基于总线的 SoC 设计生成非 vacuous 的 SystemVerilog 安全断言。
+- [Adaptive alert prioritisation in security operations centres via learning to defer with human feedback](https://arxiv.org/abs/2506.18462)：用带人工反馈的 learning-to-defer 进行 SOC 告警优先级排序，建模自动 triage 何时应交给分析员。
+- [FuncVul: An Effective Function Level Vulnerability Detection Model using LLM and Code Chunk](https://arxiv.org/abs/2506.19453)：用 LLM 辅助标注构建 code chunk 数据集，并微调 GraphCodeBERT，比整函数分类器更准确地检测 C/C++ 与 Python 脆弱函数。
+- [SACL: Understanding and Combating Textual Bias in Code Retrieval with Semantic-Augmented Reranking and Localization](https://arxiv.org/abs/2506.20081)：偏离网络安全主线；该工作分析代码检索的文本偏置，并用语义增强重排改进代码生成，而不是安全专用检测器。
+- [Advancing Jailbreak Strategies: A Hybrid Approach to Exploiting LLM Vulnerabilities and Bypassing Modern Defenses](https://arxiv.org/abs/2506.21972)：偏离网络安全行动主线；其贡献是绕过 LLM 防御的混合越狱策略，更接近智能体安全攻击覆盖。
+- [AGI Enabled Solutions For IoX Layers Bottlenecks In Cyber-Physical-Social-Thinking Space](https://arxiv.org/abs/2506.22487)：宽泛的 IoX 基础设施论文；与网络安全的关系来自其为网络物理社会系统瓶颈提供 AGI 支撑，而不是具体安全模型。
+- [Improving vulnerability type prediction and line-level detection via adversarial training-based data augmentation and multi-task learning](https://arxiv.org/abs/2506.23534)：结合嵌入层对抗式数据增强与多任务学习，让漏洞类型预测和行级漏洞检测共享稀有类别的安全语义信号。
+- [CLeVeR: Multi-modal Contrastive Learning for Vulnerability Code Representation](https://doi.org/10.18653/v1/2025.findings-acl.414)：学习面向软件漏洞检测的多模态对比表征，将网络安全模型从纯文本代码嵌入扩展到多源软件证据。
+- [Autonomous Cyber Defence agent with DRL and augmented LLM](https://doi.org/10.1016/j.comnet.2025.111162)：设计并评测结合深度强化学习与增强 LLM 的自动化网络防御 agent。
+- [Autonomous Multi-agent Cyber Defense: A Novel Approach Using Reinforcement Learning with Hierarchical LLM Critics](https://doi.org/10.1109/cars67163.2025.11337724)：一种结合强化学习与分层 LLM critic 的多 Agent 网络防御方法；核心思路是用学习策略协调防御者，并用 LLM critic 进行高层评估。
 - [Less Data, More Security](https://arxiv.org/abs/2507.02964)：用少量 token 的资源高效 domain-adaptive continuous pretraining 专门化 cybersecurity LLM。
+- [Improving LLM Reasoning for Vulnerability Detection via Group Relative Policy Optimization](https://arxiv.org/abs/2507.03051)：使用 group relative policy optimization 提升 LLM 漏洞检测推理能力，补充基于强化学习的网络安全模型训练路线。
+- [White-Basilisk: A Hybrid Model for Code Vulnerability Detection](https://arxiv.org/abs/2507.08540)：提出 2 亿参数的紧凑漏洞检测器，将 Mamba 层、线性自注意力和混合专家路由结合起来处理长上下文代码库。
+- [LLM-Stackelberg Games: Conjectural Reasoning Equilibria and Their Applications to Spearphishing](https://arxiv.org/abs/2507.09407)：把鱼叉式钓鱼建模为 LLM 参与的 Stackelberg 博弈，用猜想推理均衡分析攻击者和防御者行为。
+- [Explicit Vulnerability Generation with LLMs: An Investigation Beyond Adversarial Attacks](https://arxiv.org/abs/2507.10054)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Adaptive Linguistic Prompting (ALP) Enhances Phishing Webpage Detection in Multimodal Large Language Models](https://arxiv.org/abs/2507.13357)：用自适应语言提示增强多模态大模型的钓鱼网页检测能力。
+- [Revisiting Pre-trained Language Models for Vulnerability Detection](https://arxiv.org/abs/2507.16887)：重新评估 18 个预训练语言模型在漏洞检测中的微调与提示表现，揭示数据泄漏、截断、扰动鲁棒性和真实场景泛化问题。
+- [CASCADE: LLM-Powered JavaScript Deobfuscator at Google](https://arxiv.org/abs/2507.17691)：将 LLM 驱动的 JavaScript 去混淆用于 Google 场景，补充网络安全中的模型侧逆向分析条目。
+- [Resolving Indirect Calls in Binary Code via Cross-Reference Augmented Graph Neural Networks](https://arxiv.org/abs/2507.18801)：提出 CupidCall，在加入数据和代码交叉引用的 CFG 以及编译器生成的 callsite-callee 对上训练关系图卷积模型，以解析二进制间接调用。
+- [SAEL: Leveraging Large Language Models with Adaptive Mixture-of-Experts for Smart Contract Vulnerability Detection](https://arxiv.org/abs/2507.22371)：融合 LLM 漏洞解释、prompt-tuned CodeT5/T5 特征和自适应混合专家门控，提升智能合约漏洞检测。
 - [Cyber-Zero](https://arxiv.org/abs/2508.00910)：在缺少或不适合运行时反馈环境的网络安全场景中训练 cybersecurity agents。
+- [The Dark Side of Upgrades: Uncovering Security Risks in Smart Contract Upgrades](https://arxiv.org/abs/2508.02145)：审计智能合约升级行为和不安全升级模式，关注 upgradeability 如何削弱不可变性并扩大合约安全风险。
+- [Resource-efficient automatic software vulnerability assessment via knowledge distillation and particle swarm optimization](https://arxiv.org/abs/2508.02840)：用粒子群优化搜索紧凑学生模型架构，再通过知识蒸馏从大教师模型迁移 MegaVul 漏洞评估能力。
+- [Model Compression vs. Adversarial Robustness: An Empirical Study on Language Models for Code](https://arxiv.org/abs/2508.03949)：评估剪枝、量化和蒸馏后的代码语言模型在对抗攻击下的鲁棒性，显示压缩可保留效用但会削弱安全关键代码任务的抗攻击能力。
+- [Security Analysis of ChatGPT: Threats and Privacy Risks](https://arxiv.org/abs/2508.09426)：系统分析 ChatGPT 面临的安全威胁与隐私风险，整理相关漏洞类型和攻防问题，可作为风险背景而不是新的网络安全模型。
+- [Large Language Models for Power System Security: A Novel Multi-Modal Approach for Anomaly Detection in Energy Management Systems](https://arxiv.org/abs/2508.10044)：将 SCADA 数值分析、HMI 视觉标记与规则检查结合为 EMS 生成式 AI 异常检测器，用于识别隐蔽攻击、数据库篡改和显示污染。
+- [BERTector: Intrusion Detection Based on Joint-Dataset Learning](https://arxiv.org/abs/2508.10327)：构建基于 BERT 的入侵检测器，结合流量感知 NSS tokenizer、混合数据集监督微调和 LoRA，实现更泛化的网络流量分类。
+- [Code Vulnerability Detection Across Different Programming Languages with AI Models](https://arxiv.org/abs/2508.11710)：在多语言脆弱与安全代码片段上微调 CodeBERT 和 CodeLlama，并加入集成与可解释步骤以降低误报。
+- [Alert or Noise? Reducing False Positives with ActiveBehavioral Analysis for Cloud Security](https://arxiv.org/abs/2508.12584)：用轻量行为探针对 AWS 错误配置进行可利用性验证，在不影响服务的前提下降低静态规则式云安全告警误报。
+- [SecFSM: Knowledge Graph-Guided Verilog Code Generation for Secure Finite State Machines in Systems-on-Chip](https://arxiv.org/abs/2508.12910)：用安全知识图谱引导 Verilog 有限状态机生成，针对 LLM 生成硬件控制逻辑中的安全漏洞。
+- [The Application of Transformer-Based Models for Predicting Consequences of Cyber Attacks](https://arxiv.org/abs/2508.13030)：用 BERT 和层次注意力网络将 MITRE CWE 攻击后果分类为可用性、访问控制、机密性、完整性和其他标签。
+- [Towards Scalable and Interpretable Mobile App Risk Analysis via Large Language Models](https://arxiv.org/abs/2508.15606)：提出 Mars，先用风险识别树筛选 Android 应用特征，再交给 LLM 判定风险，并为应用商店审核生成证据链。
+- [Risk Assessment and Security Analysis of Large Language Models](https://arxiv.org/abs/2508.17329)：偏向通用 LLM 安全；提出用熵加权信号做动态风险评分，并结合 BERT-CRF 输入过滤、对抗训练、差分隐私噪声和水印。
+- [MalLoc: Toward Fine-Grained Android Malicious Payload Localization via LLMs](https://arxiv.org/abs/2508.17856)：利用 LLM 代码理解在 Android 恶意软件中细粒度定位恶意载荷逻辑，使分析超出应用级检测。
 - [CTF-Dojo](https://arxiv.org/abs/2508.18370)：用 CTF-Dojo 训练语言模型 agent 发现漏洞，重点是面向漏洞发现的 execution-grounded learning。
+- [SIExVulTS: Sensitive Information Exposure Vulnerability Detection System Using Transformer Models and Static Analysis](https://arxiv.org/abs/2508.19472)：结合句向量、CodeQL 查询和 GraphCodeBERT 数据流验证，在 Java 项目中检测 CWE-200 敏感信息暴露漏洞。
+- [VulSolver: Vulnerability Detection via LLM-Driven Constraint Solving](https://arxiv.org/abs/2509.00882)：用 LLM 驱动的约束求解进行漏洞检测，补充模型侧安全分析方法。
+- [Asymmetry Vulnerability and Physical Attacks on Online Map Construction for Autonomous Driving](https://arxiv.org/abs/2509.06071)：属于网络物理安全但偏离传统网络安全模型；揭示在线高精地图构建的对称性偏置，并用摄像头致盲和对抗补丁发起攻击。
+- [PatchSeeker: Mapping NVD Records to their Vulnerability-fixing Commits with LLM Generated Commits and Embeddings](https://arxiv.org/abs/2509.07540)：生成更丰富的提交信息摘要和嵌入，将稀疏 NVD 记录映射到漏洞修复提交，并相较 Prospector 提升 MRR 与 Recall@10。
+- [Ensembling Large Language Models for Code Vulnerability Detection: An Empirical Evaluation](https://arxiv.org/abs/2509.12629)：面向网络安全智能体与安全任务的模型、训练或算法工作。核心思想：以 An Empirical Evaluation 为主要改进目标，作为 Model 条目的能力参考。
+- [SALT4Decompile: Inferring Source-level Abstract Logic Tree for LLM-Based Binary Decompilation](https://arxiv.org/abs/2509.14646)：从二进制中构建源级抽象逻辑树，并用于微调与修正 LLM 反编译结果以恢复源级语义。
+- [STAF: Leveraging LLMs for Automated Attack Tree-Based Security Test Generation](https://arxiv.org/abs/2509.20190)：用四步自校正 RAG 流程把汽车攻击树转换为可执行安全测试套件，并比较 GPT-4.1 与 DeepSeek 的效果。
+- [Automated Vulnerability Validation and Verification: A Large Language Model Approach](https://arxiv.org/abs/2509.24037)：通过 RAG、生成式容器环境、exploit 代码、迭代修正和测试用例，把 CVE 信息编排成可复现的漏洞验证流程。
+- [Memory-Augmented Log Analysis with Phi-4-mini: Enhancing Threat Detection in Structured Security Logs](https://arxiv.org/abs/2510.00529)：提出 DM-RAG，用短期摘要、FAISS 长期记忆、Phi-4-mini 推理和贝叶斯记忆融合来检测结构化安全日志中的威胁。
+- [Semantics-Aligned, Curriculum-Driven, and Reasoning-Enhanced Vulnerability Repair Framework](https://arxiv.org/abs/2510.01002)：提出 SeCuRepair，以“先解释再编辑”的漏洞修复范式结合语义强化学习和难度感知课程训练，并在 BigVul 与 PrimeVul_AVR 上评估。
+- [MulVuln: Enhancing Pre-trained LMs with Shared and Language-Specific Knowledge for Multilingual Vulnerability Detection](https://arxiv.org/abs/2510.04397)：为多语言漏洞检测学习共享代码知识和语言特定知识，在 REEF 数据集中覆盖七种编程语言和 4,466 个 CVE。
+- [Secure-Instruct: An Automated Pipeline for Synthesizing Instruction-Tuning Datasets Using LLMs for Secure Code Generation](https://arxiv.org/abs/2510.07189)：合成成对的易受攻击与安全代码指令，并微调 LLM 以生成更安全的代码，为减少生成代码漏洞提供数据生成与指令调优路线。
+- [L2M-AID: Autonomous Cyber-Physical Defense by Fusing Semantic Reasoning of Large Language Models with Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2510.07363)：融合 LLM 语义推理与多智能体强化学习做 autonomous cyber-physical defense，把网络缓解决策建模为可学习的控制问题。
+- [VisualDAN: Exposing Vulnerabilities in VLMs with Visual-Driven DAN Commands](https://arxiv.org/abs/2510.09699)：偏向通用 VLM 安全；训练携带 DAN 式指令的单张对抗图像，绕过 MiniGPT-4、InstructBLIP 和 LLaVA 类模型的安全防护。
+- [GPS Spoofing Attack Detection in Autonomous Vehicles Using Adaptive DBSCAN](https://arxiv.org/abs/2510.10766)：用自适应 DBSCAN 阈值检测自动驾驶 GPS 欺骗，阈值由 GPS 与车载传感器位移误差动态更新。
+- [Unveiling the Vulnerability of Graph-LLMs: An Interpretable Multi-Dimensional Adversarial Attack on TAGs](https://arxiv.org/abs/2510.12233)：提出 IMDGA，同时扰动图结构和文本属性，以可解释方式暴露文本属性图 Graph-LLM 的脆弱性。
+- [TITAN](https://arxiv.org/abs/2510.14670)：把路径规划模型与 MITRE 派生本体上的图执行器结合，通过可执行关系链和证据回答网络威胁情报查询。
+- [OCR-APT: Reconstructing APT Stories from Audit Logs using Subgraph Anomaly Detection and LLMs](https://arxiv.org/abs/2510.15188)：结合子图异常检测与 LLM 叙事重建分析 APT 审计日志。
+- [Secure Retrieval-Augmented Generation Against Poisoning Attacks](https://arxiv.org/abs/2510.25025)：提出 RAGuard，先扩大检索范围，再用 chunk 级困惑度波动和文本相似度过滤来检测投毒文档。
+- [SecureReviewer: Enhancing Large Language Models for Secure Code Review through Secure-aware Fine-tuning](https://arxiv.org/abs/2510.26457)：面向安全代码审查微调 LLM，将漏洞感知审查行为作为模型侧训练目标。
+- [Penetrating the Hostile: Detecting DeFi Protocol Exploits Through Cross-Contract Analysis](https://arxiv.org/abs/2511.00408)：提出 DeFiTail，学习跨合约静态数据流中的攻击逻辑，用于检测 DeFi 协议的访问控制和闪电贷 exploit。
+- [ConneX: Automatically Resolving Transaction Opacity of Cross-Chain Bridges for Security Analysis](https://arxiv.org/abs/2511.01393)：用 LLM 缩减跨链桥交易记录中的语义候选，再通过交易数值校验配对跨链交易，服务资金追踪和安全分析。
+- [Characterizing Build Compromises Through Vulnerability Disclosure Analysis](https://arxiv.org/abs/2511.01395)：从 621 条 NVD 漏洞披露构建构建流程攻击向量分类，并用 168 起软件供应链攻击进行验证。
+- [VulInstruct: Teaching LLMs Root-Cause Reasoning for Vulnerability Detection via Security Specifications](https://arxiv.org/abs/2511.04014)：面向网络安全智能体与安全任务的模型、训练或算法工作。核心思想：以 Teaching LLMs Root-Cause Reasoning for Vulnerability Detection via Security Specifications 为主要改进目标，作为 Model 条目的能力参考。
+- [Explaining Software Vulnerabilities with Large Language Models](https://arxiv.org/abs/2511.04179)：实现 SAFE IDE 插件，用 GPT-4o 为 SAST 告警生成原因、影响和缓解建议，帮助开发者理解漏洞。
+- [QLCoder: A Query Synthesizer For Static Analysis of Security Vulnerabilities](https://arxiv.org/abs/2511.08462)：从 CVE 元数据自动合成 CodeQL 查询，使用带执行反馈的 LLM 循环、语言服务器指导和查询文档 RAG。
+- [How Can We Effectively Use LLMs for Phishing Detection?: Evaluating the Effectiveness of Large Language Model-based Phishing Detection Models](https://arxiv.org/abs/2511.09606)：评估如何有效使用大语言模型进行钓鱼检测。
+- [Retrofit Binary Security](https://arxiv.org/abs/2511.11439)：把 continual learning with controlled forgetting 用于 binary security detection and analysis。
+- [AutoMalDesc](https://arxiv.org/abs/2511.13333)：支持面向 cyber-threat research 的 large-scale script analysis。
+- [BGP Security with LLMs](https://arxiv.org/abs/2511.14467)：提出 BGPShield，用 LLM 嵌入刻画自治系统行为画像与路由策略依据，并通过分段聚合在拓扑之外检测 BGP 异常。
+- [Retrieval-Augmented Few-Shot Prompting Versus Fine-Tuning for Code Vulnerability Detection](https://arxiv.org/abs/2512.04106)：比较随机 few-shot、检索增强示例、仅检索标注和微调模型在多标签代码漏洞检测中的效果。
+- [CKG-LLM: LLM-Assisted Detection of Smart Contract Access Control Vulnerabilities Based on Knowledge Graphs](https://arxiv.org/abs/2512.06846)：补充结合知识图谱和大模型的智能合约访问控制漏洞检测方法。
+- [Membership Leakage in Vulnerability Prediction](https://arxiv.org/abs/2512.08291)：在 LSTM、BiGRU 与 CodeBERT 漏洞预测器上评估成员推断攻击，并比较防御方法以衡量安全代码模型的训练数据隐私泄漏。
+- [USCSA: Evolution-Aware Security Analysis for Proxy-Based Upgradeable Smart Contracts](https://arxiv.org/abs/2512.08372)：补充面向可升级代理智能合约的模型侧安全分析方法。
+- [Superposition as Lossy Compression: Measure with Sparse Autoencoders and Connect to Adversarial Vulnerability](https://arxiv.org/abs/2512.13568)：偏向通用可解释性与鲁棒性；用稀疏自编码器熵度量 superposition，并发现对抗训练可能增加有效特征数。
 - [Policy-Value Guided MDP-MCTS](https://arxiv.org/abs/2512.15150)：结合 Transformer 语义先验、符号化 MDP 结构和策略-价值引导的 MCTS 来推断符合 ATT&CK 的网络杀伤链，可作为网络威胁情报重建的模型侧推理方法。
+- [From Retrieval to Reasoning: A Framework for Cyber Threat Intelligence NER with Explicit and Adaptive Instructions](https://arxiv.org/abs/2512.19414)：提出 TTPrompt，将网络威胁情报中的战术、技术和过程映射为显式 NER 指令，并用少量标注错误反馈自我细化规则。
 - [AWDP](https://doi.org/10.1109/TDSC.2025.3575064)：使用深度强化学习自动化 Windows 域渗透决策，更适合作为模型侧网络行动技术而不是 Agent harness。
+- [Cyber Threat Mitigation with Knowledge-Infused Reinforcement Learning and LLM-Guided Policies](https://doi.org/10.1109/pst65910.2025.11268866)：把强化学习与 LLM 引导策略结合，使威胁缓解决策能同时利用外部知识和学习到的控制策略。
 - [LOSVER](https://doi.org/10.1109/ASE63991.2025.00092)：利用行级可修改性信号引导预训练代码模型关注易受攻击区域，用于漏洞检测与分类。
 - [LLM Assistance for Memory Safety](https://doi.org/10.1109/ICSE55347.2025.00023)：结合 LLM 代码转换与轻量静态分析，将 C 代码迁移到 Checked C 注解并支持内存安全验证。
 - [GVI](https://doi.org/10.1109/ICSE55347.2025.00214)：提示 LLM 从种子缺陷合成漏洞样本，为深度漏洞检测器扩充训练数据。
+- [PhantomPulse: An AI-Based Vulnerability Scanner with Predictive CVSS Scoring using Ensemble Learning](https://doi.org/10.1109/amcai66110.2025.11474343)：用集成学习扫描漏洞并预测 CVSS 严重度，补充网络防御中的模型侧优先级排序方法。
+- [Research on a Network Traffic Intrusion Detection System Based on MAMBA-KAN](https://doi.org/10.1109/caibda65784.2025.11183131)：主要是模型侧入侵检测条目；它用 MAMBA-KAN 对网络流量建模并分类入侵，而不是外部 agent 编排。
 - [ZeroByX](https://doi.org/10.1109/ICITEICS64870.2025.11341519)：面向网络安全任务专门化大语言模型，为领域适配的网络安全推理与辅助能力提供模型侧案例。
 - [GAPPO](https://doi.org/10.1109/Trustcom66490.2025.00376)：使用图注意力增强的强化学习进行高效网络攻击路径规划，延续网络安全模型侧的攻击路径优化方向。
-- [Minerva](https://arxiv.org/abs/2602.00513)：提出面向网络安全的模型侧方法，核心围绕 Reinforcement Learning with Verifiable Rewards for Cyber Threat Intelligence LLMs。
+- [Hybrid RL Cyber-Defense Explainability](https://doi.org/10.1109/MILCOM64451.2025.11310039)：用 SHAP 与奖励分解解释 CAGE Challenge 2 网络防御智能体，该智能体结合深度强化学习、规则系统和 LLM 组件。
+- [SmartGuard](https://doi.org/10.1016/j.eswa.2025.126479)：用 LLM-enhanced framework 做 smart-contract vulnerability detection，补充模型侧网络安全分析方法。
+- [LLM-Sec](https://doi.org/10.1109/COINS65080.2025.11125787)：刻画闭环硬件安全流程，让 LLM 借助验证与安全反馈参与设计威胁检测和修复。
+- [Web Attack Traffic Classification and Payload Extraction Via Lightweight LLM Fine-Tuning](https://doi.org/10.1109/ICCC68654.2025.11437743)：微调轻量 LLM 进行 Web 攻击流量分类与 payload 提取，扩展网络流量层面的 cyber model 覆盖。
+- [Enhancing Obfuscation Attack Detection via LLM](https://doi.org/10.1109/ICNCIS67521.2025.11296127)：结合 LLM 数据增强、微调与量化检测混淆攻击，为对抗性流量识别补充 cyber model 路线。
+- [SCoVerLLM](https://doi.org/10.1109/SMC58881.2025.11342674)：用上下文学习和链式思维提示增强 LLM 对智能合约漏洞的语义推理，减少对易维护失效规则集的依赖。
+- [Deep-Learning Network-Abnormality Identification](https://doi.org/10.1109/ICDCECE65353.2025.11035518)：将 deep learning 用于 traffic classification 与 network-abnormality identification。
+- [Attentional Residual GAN for Secure Image Steganography](https://doi.org/10.1080/01969722.2025.2566662)：用 chaotic PSO 优化的 threefold attentional residual GAN 做 secure image steganography。
+- [Adaptive Semantic Anomaly Detection for LLM Phishing](https://doi.org/10.58496/mjcsc/2025/015)：通过自适应语义异常信号检测 LLM 生成的钓鱼活动。
+- [Enhanced Vulnerability Localization: Harmonizing Task-Specific Tuning and General LLM Prompting](https://doi.org/10.1109/icsme64153.2025.00020)：结合任务特定调优和通用 LLM 提示来定位漏洞，将模型侧安全代码分析从粗粒度检测扩展到定位。
+- [Steering Large Language Models for Vulnerability Detection](https://doi.org/10.1109/icassp49660.2025.10887736)：研究如何引导大语言模型进行漏洞检测，为安全代码分析补充表征控制方法。
+- [On the Effectiveness of Instruction-Tuning Local LLMs for Identifying Software Vulnerabilities](https://arxiv.org/abs/2512.20062)：把漏洞分析重表述为 CWE 识别，并显示指令微调本地 LLM 可支持比纯 API 模型更私密的软件安全流程。
+- [HgtJIT: Just-in-Time Vulnerability Detection Based on Heterogeneous Graph Transformer](https://doi.org/10.1109/tdsc.2025.3586669)：构建异构图 Transformer 进行提交级漏洞检测，比度量和文本特征式 JIT 检测器更精细地表示漏洞引入提交。
+- [Misactivation-Aware Stealthy Backdoor Attacks on Neural Code Understanding Models](https://doi.org/10.1109/tse.2025.3614128)：研究针对神经代码理解模型的隐蔽后门攻击，为代码分析模型补充鲁棒性与供应链风险线索。
+- [KG4VA: Constructing Vulnerability Knowledge Graph for Software Vulnerability Assessment](https://doi.org/10.1109/tsc.2025.3607682)：构建面向软件漏洞评估的漏洞知识图谱，为网络安全分析管线补充结构化漏洞证据。
+- [Retrieve, Refine, or Both? Using Task-Specific Guidelines for Secure Python Code Generation](https://doi.org/10.1109/icsme64153.2025.00041)：使用任务特定的安全编码指南改进 LLM 生成 Python 代码，并分析检索、改写或二者结合在减少安全缺陷时何时有效。
+- [Endogenous Security for Air Traffic Control: An Edge-Enabled Large-Lightweight Model Framework in Sensor-Clouds](https://doi.org/10.1109/mnet.2025.3633416)：在空中交通管制的 sensor-cloud 环境中使用 edge-enabled large-lightweight model framework 支撑 endogenous security。
+- [Leveraging LLMs for Detecting Security Threats in Virtual Network Functions](https://doi.org/10.1109/cscloud66326.2025.00031)：将大语言模型用于检测 virtual network functions 中的安全威胁，把网络功能安全分析补充到代码漏洞之外的网络安全模型线。
+- [VLD-LP: Vulnerability Detection and Root Cause Localization with Large Language Model and Parameter-efficient Language Model Tuning](https://doi.org/10.1109/smc58881.2025.11343151)：结合大语言模型与参数高效调优进行漏洞检测和 root-cause localization，把网络安全模型覆盖从检测结论扩展到可定位的解释证据。
+- [Contrastive Analysis: Extracting Discriminative Features From Highly Similar Vulnerable-Patched Codes for Vulnerability Detection](https://doi.org/10.1109/tifs.2025.3638145)：从高度相似的 vulnerable-patched 代码对中提取判别特征，强化在表层代码相似但安全差异关键的场景下的源码漏洞检测。
+- [Trusting the Machine: How Secure is LLM-Generated RTL Code?](https://doi.org/10.1109/mlcad65511.2025.11189213)：评估 LLM 生成 RTL 中的硬件安全弱点，把代码生成模型与寄存器传输级设计漏洞验证连接起来。
+- [Unknown web attack threat detection based on large language model](https://doi.org/10.1016/j.asoc.2025.112905)：训练基于 LLM 的未知 Web 攻击流量检测器，用语义化请求特征识别签名规则之外的攻击 payload。
+- [Enhancing Fine-Grained Vulnerability Detection With Reinforcement Learning](https://doi.org/10.1109/tse.2025.3603400)：用强化学习改进细粒度漏洞定位和分类，让安全代码模型获得二分类标签之外的奖励反馈。
+- [Harnessing Large Language Models for Passive SCADA Security Risk Assessment: A Case Study](https://doi.org/10.1109/balkancom65827.2025.11185982)：将 LLM 推理用于被动 SCADA 观测，在不主动探测关键系统的情况下评估工业控制安全风险。
+- [ALDExA: Automated LLM-Assisted Detection of CVE Exploitation Attempts in Host-Captured Data](https://doi.org/10.1109/access.2025.3575258)：在主机采集遥测中用 LLM 辅助抽取证据并解释攻击上下文，检测 CVE 利用尝试。
+- [Synth Vuln: An Asset and Findings Generator Supporting Vulnerability Management Research](https://doi.org/10.1109/cars67163.2025.11337721)：生成合成资产与漏洞发现记录，在真实企业漏洞管理数据稀缺时支撑漏洞管理实验。
+- [Hit The Bullseye On The First Shot: Improving LLMs Using Multi-Sample Self-Reward Feedback for Vulnerability Repair](https://doi.org/10.1109/ase63991.2025.00071)：用多样本自奖励反馈改进 LLM 漏洞修复，使模型偏好一次生成即可修复缺陷的补丁。
+- [Enhancing long-tailed software vulnerability type classification via adaptive data augmentation and prompt tuning](https://doi.org/10.1016/j.asoc.2025.113612)：结合自适应数据增强与提示调优，提升少见 CWE 类别上的长尾漏洞类型分类。
+- [Classifying IoT Botnet Attacks With Kolmogorov-Arnold Networks: A Comparative Analysis of Architectural Variations](https://doi.org/10.1109/access.2025.3528940)：比较 Original-KAN、Fast-KAN、Jacobi-KAN、Deep-KAN 与 Chebyshev-KAN，并在三个 IoT 僵尸网络数据集上对照 MLP、CNN、LSTM 和 GRU 基线。
+- [SPICED+: Syntactical Bug Pattern Identification and Correction of Trojans in A/MS Circuits Using LLM-Enhanced Detection](https://doi.org/10.1109/tvlsi.2025.3527382)：用 LLM 增强的语法缺陷模式检测识别并修正模拟与混合信号电路中的硬件木马。
+- [Generating vulnerability security fixes with Code Language Models](https://doi.org/10.1016/j.infsof.2025.107786)：用代码语言模型生成漏洞安全修复，并评估生成补丁能否在保留功能的同时移除缺陷。
+- [Towards cost-efficient vulnerability detection with cross-modal adversarial reprogramming](https://doi.org/10.1016/j.jss.2025.112365)：通过跨模态对抗重编程把预训练模型低成本适配到漏洞检测任务。
+- [Software Vulnerability Detection in Source Code Using Superb Fairy-Wren Deep Transformer Guided Model for Next Generation Software Security](https://doi.org/10.1109/icirca65293.2025.11089899)：将深度 Transformer 引导模型用于源码漏洞检测，服务下一代软件安全筛查。
+- [Enhancing Security in Third-Party Library Reuse - Comprehensive Detection of 1-day Vulnerability through Code Patch Analysis](https://doi.org/10.14722/ndss.2025.240576)：通过分析安全补丁并匹配下游项目中的脆弱代码片段，检测第三方库复用中的 1-day 漏洞。
+- [LASSO: LLM-Aided Security Property Generation for Assertion-based SoC Verification](https://doi.org/10.1109/mlcad65511.2025.11189178)：用 LLM 生成面向断言式 SoC 验证的安全属性，把硬件安全意图转化为可检查断言。
+- [Enhancing vulnerability repair through the extraction and matching of repair patterns](https://doi.org/10.1016/j.jss.2025.112528)：抽取并匹配修复模式，使自动漏洞修复可复用常见修复策略，而不是完全从零生成补丁。
+- [Enhancing Automated Vulnerability Repair Through Dependency Embedding and Pattern Store](https://doi.org/10.1109/saner64311.2025.00026)：结合依赖嵌入与修复模式库，引导自动漏洞修复生成与上下文兼容的补丁。
+- [A Comparative Study of Machine Learning and Large Language Models for SQL and NoSQL Injection Vulnerability Detection](https://doi.org/10.1109/sist61657.2025.11139190)：比较传统机器学习与 LLM 在检测 SQL 和 NoSQL 注入漏洞上的表现。
+- [♪ With a Little Help from My (LLM) Friends: Enhancing Static Analysis with LLMs to Detect Software Vulnerabilities](https://doi.org/10.1109/llm4code66737.2025.00008)：用 LLM 推理增强静态分析告警，使漏洞检测器能排序、解释并验证可疑代码路径。
+- [Multi-source cross-domain vulnerability detection based on code pre-trained model](https://doi.org/10.1016/j.infsof.2025.107764)：基于预训练代码模型进行多源跨域训练，提升项目和领域迁移下的漏洞检测能力。
+- [Shield Broken: Black-Box Adversarial Attacks on LLM-Based Vulnerability Detectors](https://doi.org/10.1109/tse.2025.3638998)：设计针对 LLM 漏洞检测器的黑盒对抗攻击，展示代码变换如何规避模型式安全分类器。
+- [RISK-4-Auto: Residually Interconnected and Superimposed Kolmogorov-Arnold Networks for Automotive Network Traffic Classification](https://doi.org/10.1109/tnsm.2025.3625404)：使用残差互联和叠加式 Kolmogorov-Arnold 网络进行车载流量分类，面向车内网络攻击检测。
+- [RLV: LLM-based vulnerability detection by retrieving and refining contextual information](https://doi.org/10.1016/j.jss.2025.112756)：在 LLM 分类前检索并细化漏洞相关上下文，减少代码片段视野过窄导致的漏判。
+- [Hardware Security Benchmarks for Open-Source SystemVerilog Designs](https://doi.org/10.1109/secdev66745.2025.00031)：提供开源 SystemVerilog 硬件安全基准，支撑 RTL 漏洞分析模型的训练与评估。
+- [HADA: Leveraging Multi-Source Data to Train Large Language Models for Hardware Security Assertion Generation](https://doi.org/10.1109/mlcad65511.2025.11189143)：用多源硬件安全数据训练 LLM 生成断言，用于发现设计级安全缺陷。
+- [The Dangerous Effects of a Frustratingly Easy LLMs Jailbreak Attack](https://doi.org/10.1109/access.2025.3589112)：研究一种简单的 LLM 越狱攻击；该条更接近智能体安全攻击候选，暂保留并标记为待迁移。
+- [Recommending Security Requirements through Asset Identification and Threat Mapping](https://doi.org/10.1109/re63999.2025.00066)：把识别出的资产映射到威胁并推荐安全需求，将需求工程与模型辅助威胁分析连接起来。
+- [Multimodal Fusion for Vulnerability Detection: Integrating Sequence and Graph-Based Analysis with LLM Augmentation](https://doi.org/10.1109/mapr67746.2025.11133833)：融合序列特征、图式程序分析与 LLM 增强，用于多模态源码漏洞检测。
+- [Facilitating Access Control Vulnerability Detection in Modern Java Web Applications With Accurate Permission Check Identification](https://doi.org/10.1109/tifs.2025.3614424)：识别 Java Web 应用中的权限检查，使访问控制漏洞检测能围绕授权逻辑而不只是语法特征推理。
+- [When in Doubt Throw It Out: Building on Confident Learning for Vulnerability Detection](https://doi.org/10.1109/icse-nier66352.2025.00011)：用置信学习过滤噪声漏洞标签，改进漏洞检测器训练数据。
+- [Beyond Static Analysis: Detecting SQL Injection via Context-Aware Code Review in Web Applications](https://doi.org/10.1109/icocics68032.2025.11384074)：通过超越静态规则的上下文感知代码审查，检测 Web 应用中的 SQL 注入漏洞。
+- [Side-Channel Attack on AES Based on KAN Network](https://doi.org/10.1109/dsis67228.2025.11390579)：用 Kolmogorov-Arnold 网络学习 AES 侧信道泄漏，并结合信念传播在一次侧信道观测下恢复密钥。
+- [A Malicious Code Detection Method Based on GNN Model Improved by KANs](https://doi.org/10.1109/acira67680.2025.11335028)：用 Kolmogorov-Arnold 网络组件改进图神经恶意代码检测器，服务结构化恶意软件分析。
+- [A Heterogeneous Graph and Multi-Feature Fusion Based Framework for Smart Contract Vulnerability Detection](https://doi.org/10.1109/ijcnn64981.2025.11227855)：构建异构图与多特征融合框架，结合语义和结构信号检测智能合约漏洞。
+- [Fine-Tuned Small Language Model for Accurate and Private CWE Detection in Python Code](https://doi.org/10.1109/iccit68739.2025.11491733)：微调本地小语言模型进行 Python 代码 CWE 检测，在避免远程 API 依赖的同时支持隐私保护。
+- [Enhancing Vulnerability Mining with Large Language Model](https://doi.org/10.1109/dsc67331.2025.00009)：用 LLM 推理从代码与安全证据中挖掘漏洞候选，扩展模型辅助漏洞发现。
+- [Beyond Signature-based Defense: Deep Learning Frameworks for Concealed Cyber Exploit Detection](https://doi.org/10.1109/icicnis66685.2025.11315642)：将深度学习用于隐蔽 exploit 检测，面向签名式防御难以覆盖的攻击。
+- [Java Source Code Vulnerability Detection Using Large Language Model](https://doi.org/10.1016/j.procs.2025.09.405)：将 LLM 用于 Java 源码漏洞检测，关注该语言特有的代码安全模式。
+- [Explainable Retrieval and Graph Augmented Code Vulnerability Repair Recommendations](https://doi.org/10.1109/bigdata66926.2025.11402509)：结合检索与图增强，为代码漏洞生成可解释的修复建议。
+- [Graph Neural Network-Based Automatic Detection and Repair of Code Vulnerabilities](https://doi.org/10.1109/citce67565.2025.11360011)：用图神经网络建模程序结构，自动检测并修复代码漏洞。
+- [Learning never stops: Improving software vulnerability type identification via incremental learning](https://doi.org/10.1016/j.jss.2025.112544)：用增量学习持续更新漏洞类型识别器，并减少对旧弱点类别的遗忘。
+- [Research on Requirement Vulnerability Detection Method Based on Graph Neural Network and Counterfactual Explanation](https://doi.org/10.1109/rew66121.2025.00031)：用图神经网络和反事实解释检测安全需求中的漏洞倾向。
+- [IFSVD: Integrating function and slice level features for interpretable vulnerability detection](https://doi.org/10.1109/icac65379.2025.11196569)：整合函数级与程序切片级特征，使漏洞检测结果更具可解释性。
+- [AI-Driven Open Source Component Security Analysis and Intelligent Vulnerability Prediction Model](https://doi.org/10.1109/icicke65317.2025.11136289)：分析开源组件安全特征并用 AI 预测潜在漏洞。
+- [FedMVA: Enhancing software vulnerability assessment via federated multimodal learning](https://doi.org/10.1016/j.jss.2025.112469)：用联邦多模态学习做软件漏洞评估，在保护分布式项目数据的同时融合多类证据。
+- [Finding Insecure State Dependency in DApps via Multi-Source Tracing and Semantic Enrichment](https://doi.org/10.1109/ase63991.2025.00129)：结合多源执行追踪与语义增强，检测去中心化应用中的不安全状态依赖。
+- [Generative AI cybersecurity and resilience](https://doi.org/10.3389/frai.2025.1568360)：讨论生成式 AI 如何支持威胁检测、事件响应和防御自动化等网络安全韧性场景；作为宽泛模型侧背景保留。
+- [Interpretable Vulnerability Detection Reports](https://doi.org/10.1109/ase63991.2025.00168)：生成可解释的漏洞检测报告，使模型输出包含证据和解释，而不只是“有漏洞或无漏洞”标签。
+- [Using Kolmogorov-Arnold network for cyber-physical system security: A fast and efficient approach](https://doi.org/10.1016/j.ijcip.2025.100768)：将 Kolmogorov-Arnold 网络用于网络物理系统安全检测，强调高效建模以快速识别攻击。
+- [Towards Using LLMs in the Reverse Engineering of Software Systems to Object Constraint Language](https://doi.org/10.1109/saner64311.2025.00096)：用 LLM 在逆向工程中恢复对象约束规格，支持对遗留软件行为的安全分析。
+- [LLM-Aided Automatic Modeling for Security Protocol Verification](https://doi.org/10.1109/icse55347.2025.00197)：用 LLM 构建安全协议验证所需的形式化模型，降低协议分析前的手工建模成本。
+- [Securing AI Code Generation Through Automated Pattern-Based Patching](https://doi.org/10.1109/dsn-w65791.2025.00077)：对 AI 生成代码应用自动模式化补丁，在部署前修复常见生成代码漏洞。
+- [Detecting and Analysing Cyber Attacks Based on Graph Neural Networks, Ontologies and Large Language Models](https://doi.org/10.1109/edm65517.2025.11096818)：结合图神经网络、本体和 LLM 检测网络攻击并解释攻击证据。
+- [Research on TTP Data Augmentation Methods Based on the ATT&CK Framework](https://doi.org/10.1109/cscwd64889.2025.11033315)：基于 ATT&CK 框架扩增战术、技术与过程数据，用于改进网络威胁情报模型训练。
+- [Federated Retrieval-Augmented Generation-Based LLM for Enhanced Cyber Threat Detection in the Internet-of-Energy](https://doi.org/10.1109/mnet.2025.3619162)：将联邦学习与 RAG 结合，用于能源互联网场景中的 LLM 网络威胁检测。
+- [TransferFuzz-Pro: Large Language Model Driven Code Debugging Technology for Verifying Propagated Vulnerability](https://doi.org/10.1109/tse.2025.3584774)：在 TransferFuzz-Pro 中引入 LLM 驱动调试，验证复用代码中的传播漏洞是否真实存在。
+- [Leveraging Large Language Models for Efficient Vulnerability Detection in IoT Firmware](https://doi.org/10.1109/iccect64621.2025.11339749)：将 LLM 代码分析用于 IoT 固件，以更少人工逆向成本检测嵌入式漏洞。
+- [AV-Agent: A Bottom-Up Interpretable Malware Classifier Based on Large Language Models](https://doi.org/10.1109/tifs.2025.3597221)：构建可解释的 LLM 恶意软件分类器，自底向上聚合低层证据形成恶意判定。
+- [Leveraging Large Language Models for Detection and Intelligent Analysis of Phishing Threats](https://doi.org/10.1109/cyber-ai66431.2025.11233620)：用 LLM 检测钓鱼威胁，并分析消息、URL 与上下文证据以辅助防守方分诊。
+- [LLM-LADE: Large language model-based log anomaly detection with explanation](https://doi.org/10.1016/j.knosys.2025.114064)：用 LLM 检测日志异常，并生成解释帮助分析员理解可疑系统行为。
+- [PhishNet: A Real-Time, Scalable Ensemble Framework for Smishing Attack Detection Using Transformers and LLMs](https://doi.org/10.32604/cmc.2025.069491)：结合 Transformer 与 LLM 集成组件，进行实时、可扩展的短信钓鱼攻击检测。
+- [General Network Traffic Anomaly Detection Method Based on Large Language Models](https://doi.org/10.1109/mlnlp66797.2025.11389023)：把网络流量时间序列转换为重构文本原型和模板，使 LLM 能在较少大规模训练数据的情况下泛化异常检测。
+- [Smart Contract Vulnerability Detection using Prompt Engineering with Reasoning Models](https://doi.org/10.1109/mapr67746.2025.11133797)：用结构化推理提示和智能体角色链进行零样本智能合约漏洞检测，无需微调即可利用推理模型能力。
+- [Towards Secure Cloud-Native Computing: Unveiling Kubernetes Misconfigurations with Large Language Models](https://doi.org/10.1109/cloud67622.2025.00019)：构建 Kubernetes 常见错误配置分类，并测试 LLM 作为云原生安全与性能缺陷的语义检测器。
+- [LLM Assisted Dual-View Awareness Framework for Smart Contract Vulnerability Detection](https://doi.org/10.1109/issre66568.2025.00022)：结合基于 RAG 的语义感知和图结构特征，让 LLM 辅助的智能合约检测同时利用代码语义与合约结构。
+- [LLM-AE-MP: Web Attack Detection Using a Large Language Model with Autoencoder and Multilayer Perceptron](https://doi.org/10.1016/j.eswa.2025.126982)：可作为“网络安全 / 模型”候选条目；提出与模型训练、架构、对齐、推理、适配或数据构造相关的方法。
+- [VDMAF: Cross-language source code vulnerability detection using multi-head attention fusion](https://doi.org/10.1016/j.infsof.2025.107739)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Improving distributed learning-based vulnerability detection via multi-modal prompt tuning](https://doi.org/10.1016/j.jss.2025.112442)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Smart Contract Vulnerability Detection Using Large Language Models and Graph Structural Analysis](https://doi.org/10.32604/cmc.2025.061185)：结合 LLM 语义分析与图结构分析来检查智能合约漏洞，减少对预定义规则知识的依赖。
+- [Enhancing Smart Contract Security with Explainable AI: A Framework for Re-entrancy Vulnerability Detection and Explanation](https://doi.org/10.1109/sieds65500.2025.11021147)：将 BiLSTM 检测与可解释 AI 反馈结合，使重入漏洞告警能展示导致判定的代码交互。
+- [Enhancing Smart Contract Security Through DevSecOps: An Adaptive Approach for Vulnerability Detection](https://doi.org/10.1109/access.2025.3606572)：把自适应漏洞检测嵌入区块链 DevSecOps 与 CI/CD 流程，使智能合约安全检查在部署前持续运行。
+- [CAPRA: Context-Aware patch risk assessment for detecting immature vulnerability in open-source software](https://doi.org/10.1016/j.cose.2025.104540)：在补丁合并前做上下文感知静态分析，识别开源待合并变更中的内存泄漏和 use-after-free 风险。
+- [Enhance CVE Severity Prediction From Vulnerability Description with Auxiliary Sentence](https://doi.org/10.1109/cscwd64889.2025.11033290)：为 CVE 描述严重性预测加入辅助句子，缓解漏洞文本长度和词频长尾分布对预测模型的影响。
+- [LEGEM: A Scalable and Adversarial-Resilient Framework for Cross-Platform IoT Binary Vulnerability Detection](https://doi.org/10.1109/jiot.2025.3630683)：融合 LLM 与图嵌入，并通过多模态数据构造、对抗样本和自适应训练验证循环检测跨平台 IoT 二进制漏洞。
+- [Towards Generalizable Instruction Vulnerability Prediction via LLM-Enhanced Code Representation](https://doi.org/10.1109/ase63991.2025.00177)：提出 CIVP，用 LLM 提取指令语义嵌入，构建指令执行图，并用多跳扩散 GraphSAGE 与伪标签预测未见程序中的 bit-flip 指令脆弱性。
+- [TEDVIL: Leveraging Transformer-Based Embeddings for Vulnerability Detection in Lifted Code](https://doi.org/10.1109/access.2025.3565980)：在 LLVM lifted code 上用 Transformer embedding 训练 LSTM 漏洞检测器，发现 GPT-2 embedding 在栈缓冲区溢出检测上优于 BERT、RoBERTa、GPT-1 和 word2vec。
+- [ISGraphVD: Precise Vulnerability Detection for IoT Supply Chains Based on Identifier Sensitive Graph](https://doi.org/10.1109/issre66568.2025.00021)：使用标识符敏感图来识别 IoT 复用开源组件中的 tiny-patch N-day 漏洞，并抵抗编译器和配置差异干扰。
+- [LLMs-Driven Vulnerability Detection Combining LogicASG Reasoning with In-Context Learning](https://doi.org/10.1109/compsac65507.2025.00149)：结合 LogicASG 推理与上下文学习提示，降低智能合约漏洞检测对高质量标注数据集的依赖。
+- [A Comprehensive Comparison of LLaMA 3.1 and Traditional ML Approaches in Automated Vulnerability Detection](https://doi.org/10.1109/aiccsa66935.2025.11315404)：在二分类和多标签漏洞检测任务上比较 LoRA 微调的 LLaMA 3.1 与随机森林、SVM、LSTM 基线。
+- [Neuro-Symbolic Fusion for Cognitive Threat Reasoning in Cyber Deception Environments](https://doi.org/10.1109/icrito66076.2025.11241720)：融合神经模式识别、知识图谱与概率符号推理，并用强化学习动态优化网络欺骗场景中的威胁推理。
+- [Research on AI-Based Fuzzing for Wireless Communication Protocols in Intelligent Connected Vehicles](https://doi.org/10.1109/eiecs67708.2025.11283552)：用 ChatGPT 和 DeepSeek 生成无线协议模糊测试用例，并结合覆盖率引导变异和自适应调度测试智能网联车的蓝牙与 Wi-Fi。
+- [Towards Practical N-Day Attack Detection: A Few-Shot Learning Perspective](https://doi.org/10.1109/isaeece66033.2025.11159944)：把 N-day 攻击检测表述为多类别流量分类，并评估 Mistral、Llama、Qwen 指令模型的零样本与少样本提示。
+- [Dynamic stealthy backdoor attack against anomaly detectors in industrial control systems](https://doi.org/10.1016/j.ins.2025.123066)：为网络安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [A Generative Model for Unsupervised Detection of Cyber Threats to Mitigate Adversarial Vulnerabilities in Explainable AI Systems](https://doi.org/10.1109/iccds64403.2025.11209169)：研究自编码器、GAN 与深度信念网络用于无监督入侵检测、对抗样本生成和网络防御特征提取。
+- [Optimizing DDoS Attack Detection in IoT Networks Using a Sparse Autoencoder: Work in Progress](https://doi.org/10.1109/icaitech66481.2025.11387490)：用稀疏自编码器压缩 CICIoT2023 特征，再交给随机森林分类器进行轻量 IoT DDoS 检测。
+- [A New Two-Stage Fusion-Based Approach to Cyber Threat Detection Using Graph Neural Networks](https://doi.org/10.1109/kse68178.2025.11309469)：在攻击图上融合 SAGEConv 与 GCN 两个分支，使入侵检测同时利用大规模图采样和关系结构。
+- [Deep Learning-based Intrusion Detection Systems: Enhancing Cyber Defense Mechanisms](https://doi.org/10.1109/isac364032.2025.11156515)：梳理并应用自编码器、循环网络和卷积模型，在云环境中进行实时主机与数据入侵检测。
+- [Deep Learning-Driven Token Semantics for Smart Contract Vulnerability Identification](https://doi.org/10.1109/aistemedu67077.2025.11403947)：在智能合约 token 级语义上微调 CodeBERT，捕捉语法或规则分析容易遗漏的漏洞线索。
+- [Ethical Risk Modeling for Trustworthy ML-Based Cyber Defense](https://doi.org/10.1109/escience65000.2025.00057)：提出 Ethic-Guard，量化 ML 网络防御系统中的公平性和隐私暴露风险，并在风险偏高时触发重训或特征剔除。
+- [A Bio-Inspired Deep Learning Intrusion Detection Framework for Cyber-Physical System Security](https://doi.org/10.1109/intellisecai66368.2025.11473168)：用仿生特征选择与时序深度学习改进互联系统中的网络物理入侵检测。
+- [Attack Identification in Industrial Control Systems Using TabNet](https://doi.org/10.1109/sita67914.2025.11273377)：利用 TabNet 的序列注意力和稀疏特征选择，在 ICS-Flow 与 Westermo 数据集上进行工业控制多类别攻击检测。
+- [RAG-SmartVuln: Enhancing Smart Contract Vulnerability Detection via Retrieval-Augmented LLMs](https://doi.org/10.1109/mapr67746.2025.11134018)：微调 Qwen2.5-Code，并用 RAG 引入外部安全知识，提高智能合约漏洞检测的准确性与可解释性。
+- [AI-Powered Ransomware Detection Framework via Memory Dump Analysis](https://doi.org/10.1109/icrteect67512.2025.11448685)：从内存转储中提取行为特征，先用 Isolation Forest 筛出异常，再用随机森林完成勒索软件检测。
+- [RETO: Reinforcement learning enhanced terminology optimization for cyber threat intelligence summarization](https://doi.org/10.1016/j.neucom.2025.131339)：为网络安全补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Cognitive Cyber Armor: AI-Driven Resilience against Intelligent Threat Actors](https://doi.org/10.1109/iceconf65644.2025.11379541)：结合 Robust PCA 预处理、mRMR 特征选择和图注意力分类器，在演化威胁模式下检测恶意行为。
+- [Analyzing Cyber Attack Patterns and Detection Strategies Through T-Pot Honeypot Deployment](https://doi.org/10.1109/icosec67334.2025.11459680)：分析 Cowrie、Tanner、H0neytr4p 和 CiscoASA 蜜罐收集的 69 万余次攻击，提炼攻击者模式与检测策略。
+- [GenAI-Based Threat Intelligence Model: A Comparative Performance Analysis with Traditional Tools](https://doi.org/10.1109/ubmk67458.2025.11206986)：将基于生成式 AI 的威胁情报模型与传统网络安全工具进行比较。
+- [Efficient DDoS Detection and Mitigation in Decentralized SDN Environments via Zero-Training Large Language Model and Port-Level Features](https://doi.org/10.1109/ichbc68357.2025.11414495)：结合免训练大模型推理与端口级特征检测和缓解 DDoS 攻击。
+- [Enhancing Log Analysis for Intrusion Detection Using Large Language Models](https://doi.org/10.1109/lciot64881.2025.11118614)：用大语言模型增强入侵检测中的日志分析。
+- [Detecting DeFi Fraud With a Graph-Transformer Language Model](https://doi.org/10.1109/tifs.2025.3612184)：用图 Transformer 语言模型检测 DeFi 欺诈。
+- [CEGT: Smart contract vulnerability detection via Connectivity-Enhanced GCN-Transformer](https://doi.org/10.1016/j.jss.2025.112454)：补充用于智能合约漏洞检测的图 Transformer 模型。
+- [Silence False Alarms: Identifying Anti-Reentrancy Patterns on Ethereum to Refine Smart Contract Reentrancy Detection](https://doi.org/10.14722/ndss.2025.230167)：补充通过识别反重入模式降低智能合约检测误报的方法。
+- [Intelligent Dark Web Monitoring: Threat Prediction using NLP and LLM Techniques](https://doi.org/10.1109/icscss64956.2025.11501128)：抓取 onion 站点内容，用 Sentence Transformers 嵌入帖子，并通过 LLM 辅助 NLP 对暗网 CTI 信号分类和排序。
+- [My Model is Malware to You: Transforming AI Models into Malware by Abusing TensorFlow APIs](https://doi.org/10.1109/sp61157.2025.00012)：分析通过滥用 TensorFlow API 将模型工件转化为恶意软件的风险。
+- [Large Language Models for Out-of-Distribution Attack Detection in 6G Networks](https://doi.org/10.1109/nfv-sdn66355.2025.11349498)：将 5G-NIDD 样本转换为文本，并用 leave-one-attack-out 协议评估 LLM 对未见 6G 网络攻击类型的检测能力。
+- [Cyber Threat Intelligence Framework using Graph Attention Networks for Dark Web Activity Monitoring](https://doi.org/10.1109/ic2nc67409.2025.11376163)：补充用于暗网威胁情报监控的图注意力模型。
+- [Hawkeyes: An intelligent honeypot allocation strategy for cyber deception using reinforcement learning](https://doi.org/10.1016/j.comnet.2025.111982)：补充用于网络欺骗蜜罐分配的强化学习策略。
+- [Large Language Model-Based Malware Detection for the Windows Operating System](https://doi.org/10.65879/3070-5789.2025.01.09)：补充面向 Windows 环境的大模型恶意软件检测方法。
+- [Real Time Phishing Site Detection Using Transformer Ensemble Models](https://doi.org/10.1109/icaaic64647.2025.11330770)：补充实时钓鱼网站检测的 Transformer 集成模型。
+- [A Lightweight Cross-Modal Transformer with Temporal Masking for Scalable IoT and 6G Cyber Defense](https://doi.org/10.1109/ictct69201.2025.00058)：补充面向 IoT 和 6G 网络防御的跨模态 Transformer 方法。
+- [VulAKC: An Attention-Driven AKConv Network for Source Code Vulnerability Detection](https://doi.org/10.1109/eiecs67708.2025.11283480)：用中心性 RGB 特征编码程序依赖图，并通过注意力驱动的自适应核卷积检测 C/C++ 源码漏洞。
+- [Deep Learning and Real-Time Cyber Threat Intelligence Correlation-Based AI-Powered Intrusion Detection Systems for Cloud Computing Platforms](https://doi.org/10.1109/icft66708.2025.11336550)：补充结合实时网络威胁情报关联的深度学习入侵检测方法。
+- [Smart Contract Vulnerability Detection Using CodeBERT for Token-Level Semantics Understanding](https://doi.org/10.1109/itechsecom64750.2025.11307426)：利用 CodeBERT 的词元级语义信息检测智能合约漏洞。
+- [Smart Contract Vulnerability Detection Based on Residual Dilated Convolution with Multi-Head Attention](https://doi.org/10.1109/apsec66846.2025.00057)：结合残差空洞卷积与多头注意力检测智能合约漏洞。
+- [A Smart Contract Vulnerability Detection Method Based on Comprehensive Code Graph and Temporal Feature Enhancement Networks](https://doi.org/10.1016/j.bcra.2025.100416)：结合代码图与时序特征增强网络进行智能合约安全建模。
+- [Evaluating LIME-Based Explainability for Phishing URL Detection Across Multiple Machine Learning Models](https://doi.org/10.1109/icetisi67983.2025.11406019)：比较多种钓鱼 URL 检测模型的 LIME 可解释性。
+- [TMF-Net: Multimodal smart contract vulnerability detection based on multiscale transformer fusion](https://doi.org/10.1016/j.inffus.2025.103189)：用多尺度 Transformer 融合进行多模态智能合约漏洞检测，补充面向合约安全分析的模型侧路径。
+- [FusedBoostNet: A Lightweight Hybrid Model for Consumer-Grade Intrusion Detection](https://doi.org/10.1109/tce.2025.3634568)：提出面向消费级设备入侵检测的轻量混合模型，为入侵检测方向补充边缘侧网络防御模型。
+- [Agentic AI for Cybersecurity: Explainable Graph Neural Networks with Federated and Reinforcement Learning for Threat Prediction and Mitigation](https://doi.org/10.1109/fit67061.2025.11333757)：结合可解释图神经网络、联邦学习与强化学习，用于网络威胁预测和缓解。
+- [Multimodal Fusion for Smart Contract Vulnerability Detection: An Experimental Dive](https://doi.org/10.1109/iscit67082.2025.11231648)：测试用于智能合约漏洞检测的多模态融合设计。
+- [Automated vulnerability score prediction through lightweight generative AI](https://doi.org/10.1016/j.knosys.2025.114406)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Beyond Code Explanations: a Ray of Hope for Cross-Language Vulnerability Repair](https://doi.org/10.1109/aiware69974.2025.00017)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [GraphLLM-CPS: LLM Node Embeddings for Anomaly Detection in Cyber-Physical Systems](https://doi.org/10.1109/camad67323.2025.11229892)：使用 LLM 节点嵌入进行信息物理系统异常检测。
+- [Efficient Voice Phishing Detection using the Agentic AI Approach](https://doi.org/10.1109/icce-asia67487.2025.11263515)：面向网络安全 Agent 与安全评测提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [LLM-Powered Deep Reinforcement Learning for Predictive Cyber Threat Mitigation](https://doi.org/10.1109/icuis67429.2025.11380737)：面向网络安全智能体与评测的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“LLM-Powered Deep Reinforcement Learning for Predictive Cyber Threat Mitigation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Agentic AI for Cyber Defense: LLM-Guided Hierarchical Multi-Agent Reinforcement Learning](https://doi.org/10.1109/milcom64451.2025.11310253)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Can we use LLMs to recover Trace Links between Source Code and Security Requirements?](https://doi.org/10.1109/rew66121.2025.00035)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Approach to Forming Vulnerability Datasets for Fine-Tuning AI Agents](https://doi.org/10.1109/smartindustrycon65166.2025.10986048)：面向网络安全智能体与安全任务的模型、训练或算法工作。核心思想：以 Approach to Forming Vulnerability Datasets for Fine-Tuning AI Agents 为主要改进目标，作为 Model 条目的能力参考。
+- [Using LLMs to Identify Personal Data Processing in Source Code](https://doi.org/10.1109/spw67851.2025.00018)：面向网络安全 Agent 与安全评测提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Evaluating the Potential of Large Language Models in Security-Related Software Requirements Classification](https://doi.org/10.5753/sbes.2025.9935)：评估 LLM 在安全相关软件需求分类中的能力。
+- [Staged LLM-Based Original Entry Point Identification Using Disassembled Code](https://doi.org/10.1109/candar68384.2025.00010)：用分阶段 LLM 推理分析反汇编代码并识别原始入口点，补充逆向工程模型任务。
+- [Optimizing Code Vulnerability Detection via GRPO and SFT Fine-Tuning of Compact LLMs](https://doi.org/10.1109/dsc67331.2025.00038)：通过监督微调和 GRPO 优化小型语言模型的代码漏洞检测能力。
+- [SoCureLLM: An LLM-Driven Approach for Large-Scale System-on-Chip Security Verification and Policy Generation](https://doi.org/10.1109/host64725.2025.11050068)：用 LLM 驱动的推理进行 SoC 安全验证与策略生成，为软件漏洞分析之外补充硬件安全方向。
+- [Binary Code Similarity Detection via LLM-Based Source Code Conversion](https://doi.org/10.1109/jiot.2025.3579231)：通过 LLM 辅助源码转换支持二进制代码相似性检测。
+- [Scalable and Generalizable RL Agents for Attack Path Discovery via Continuous Invariant Spaces](https://doi.org/10.1109/raid67961.2025.00029)：用可扩展强化学习 agent 与连续不变空间进行攻击路径发现。
+- [SecureCodeRL: Security-Aware Reinforcement Learning for Code Generation with Partial-Credit Rewards](https://arxiv.org/abs/2601.01184)：在 PPO 训练中结合部分功能奖励与 Bandit 安全奖励，让代码模型提升可执行正确性的同时避免奖励不安全捷径。
+- [HogVul: Black-box Adversarial Code Generation Framework Against LM-based Vulnerability Detectors](https://arxiv.org/abs/2601.05587)：用粒子群优化协同词法与语法扰动，生成可逃避基于语言模型漏洞检测器的黑盒对抗代码。
+- [Cyber Threat Detection and Vulnerability Assessment System Using Generative AI and Large Language Model](https://arxiv.org/abs/2601.06213)：在抽取的网络攻击数据上训练 RoBERTa 式威胁检测器，以增强相较 SecurityBERT 基线的上下文理解。
+- [Compositional Generalization for Smart-Contract Security](https://arxiv.org/abs/2601.06914)：把重入检测拆分为外部调用、状态更新、数据依赖和数据流顺序四个原子任务，再用合成组合任务后训练 LLM。
+- [Vulnerability of LLMs'Stated Beliefs? LLMs Belief Resistance Check Through Strategic Persuasive Conversation Interventions](https://arxiv.org/abs/2601.13590)：偏离网络安全行动主线；评估多轮说服干预如何削弱 LLM 在事实、医疗和偏见问题上的陈述信念稳定性，并发现置信度提示有时会加速信念动摇。
+- [IntelliSA: An Intelligent Static Analyzer for IaC Security Smell Detection Using Symbolic Rules and Neural Inference](https://arxiv.org/abs/2601.14595)：将 IaC 安全坏味道符号规则与 LLM 教师、紧凑学生模型结合，用神经过滤降低误报，同时保留静态分析的广覆盖。
+- [Tri-LLM Cooperative Federated Zero-Shot Intrusion Detection with Semantic Disagreement and Trust-Aware Aggregation](https://arxiv.org/abs/2602.00219)：面向网络安全智能体与评测的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Tri-LLM Cooperative Federated Zero-Shot Intrusion Detection with Semantic Disagreement and Trust-Aware Aggregation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Minerva](https://arxiv.org/abs/2602.00513)：提供 CTI 数据集、任务专用验证器和 MinervaRL 自训练流程，使 LLM 通过可验证奖励学习结构化 CTI 输出，而不只依赖监督微调。
+- [Beyond Function-Level Analysis](https://arxiv.org/abs/2602.06751)：将漏洞检测扩展到跨过程上下文，面向超越单函数的安全推理。
+- [Agentic Knowledge Distillation: Autonomous Training of Small Language Models for SMS Threat Detection](https://arxiv.org/abs/2602.10869)：用前沿 LLM 作为自主教师，合成并迭代数据来训练端侧小型短信钓鱼检测模型。
+- [Enhancing Continual Learning for Software Vulnerability Prediction: Addressing Catastrophic Forgetting via Hybrid-Confidence-Aware Selective Replay for Temporal LLM Fine-Tuning](https://arxiv.org/abs/2602.23834)：在按双月划分的 CVE 时间窗口上用 LoRA 微调 Phi-2，并以 Hybrid-CASR 置信度与类别均衡回放缓解时间漂移下的灾难性遗忘。
+- [SecureRAG-RTL](https://arxiv.org/abs/2603.05689)：用检索增强和多 agent 推理提升 RTL 设计中的零样本硬件漏洞检测。
+- [Detecting Cryptographically Relevant Software Packages with Collaborative LLMs](https://arxiv.org/abs/2603.07204)：在本地运行多个 LLM 并用多数投票识别密码学相关软件包，服务 crypto-agility 与后量子迁移资产盘点。
+- [Revisiting Vulnerability Patch Identification on Data in the Wild](https://arxiv.org/abs/2603.17266)：发现基于 NVD 链接提交训练的安全补丁检测器在真实野外补丁上 F1 最多下降 90%，并用少量人工识别补丁与 NVD 数据混合来提升鲁棒性。
+- [Cross-Ecosystem Vulnerability Analysis for Python Applications](https://arxiv.org/abs/2603.18693)：把 vendored 原生库解析到 OS 包或上游版本，拼接 Python 与二进制调用图，并用可达性分析减少 Python 依赖漏洞扫描误报。
+- [ConceptCoder: Improve Code Reasoning via Concept Learning](https://arxiv.org/abs/2603.23470)：先训练代码模型识别人类可理解的代码概念，再进行漏洞推理，相比普通微调提升缺陷与漏洞检测。
+- [Software Supply Chain Smells: Lightweight Analysis for Secure Dependency Management](https://arxiv.org/abs/2603.24282)：把软件供应链坏味道定义为结构化风险指标，并用 Dirty-Waters 比较 Maven 与 NPM 中的可追溯性、签名和注册表保障差异。
+- [Bridging Code Property Graphs and Language Models for Program Analysis](https://arxiv.org/abs/2603.24837)：连接代码属性图与 LLM 以支持仓库级漏洞分析。核心思路是用图结构程序证据缓解上下文窗口和嵌入检索在安全推理中的限制。
+- [A Large-scale Empirical Study on the Generalizability of Disclosed Java Library Vulnerability Exploits](https://arxiv.org/abs/2603.25997)：在 28,150 个 Java 库历史版本上执行 259 个公开 exploit，检验受影响版本判定的泛化性，并总结 exploit 迁移策略。
+- [ORACAL: A Robust and Explainable Multimodal Framework for Smart Contract Vulnerability Detection with Causal Graph Enrichment](https://arxiv.org/abs/2603.28128)：将 CFG、DFG 与调用图构成的异构图用 RAG 安全上下文增强，并加入因果注意力和 PGExplainer 触发路径解释，用于鲁棒智能合约漏洞检测。
+- [Multi-Agent LLM Governance for SDN-IoT Defense](https://arxiv.org/abs/2604.01127)：把快速 per-switch PPO 缓解与较慢的 LLM 治理分离，后者在压力测试和非回归检查后更新机器可解析安全策略。
+- [Assertain: Automated Security Assertion Generation Using Large Language Models](https://arxiv.org/abs/2604.01583)：把 RTL 设计映射到 CWE 与威胁模型，并用 LLM 自反思生成可执行 SystemVerilog Assertions，服务硬件安全形式化验证。
+- [Explainable Autonomous Cyber Defense using Adversarial Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2604.04442)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [LLM4CodeRE](https://arxiv.org/abs/2604.06095)：用多适配器和统一 seq2seq 训练把 LLM 适配到恶意软件逆向工程，同时支持汇编到源码反编译和源码到汇编翻译。
+- [Guiding Symbolic Execution with Static Analysis and LLMs for Vulnerability Discovery](https://arxiv.org/abs/2604.06506)：提出 SAILOR，用静态分析定位、LLM 合成 harness、符号执行和具体重放在大型 C/C++ 项目中发现内存安全漏洞。
+- [Vulnerability Detection with Interprocedural Context in Multiple Languages: Assessing Effectiveness and Cost of Modern LLMs](https://arxiv.org/abs/2604.08417)：在 509 个 ReposVul 漏洞上比较 Claude Haiku 4.5、GPT-4.1 Mini、GPT-5 Mini 和 Gemini 3 Flash，并用目标函数、调用者和被调用者上下文衡量跨过程检测质量、成本与解释。
+- [VulWeaver: Weaving Broken Semantics for Grounded Vulnerability Detection](https://arxiv.org/abs/2604.10767)：用确定性规则和 LLM 语义推理构建增强统一依赖图，再结合切片上下文、隐式使用/定义/声明信息和专家元提示进行有依据的 Java 漏洞检测。
+- [Tug-of-War within A Decade: Conflict Resolution in Vulnerability Analysis via Teacher-Guided Retrieval-Augmented Generations](https://arxiv.org/abs/2604.14172)：构建 CRVA-TGRAG，结合父文档分段、CVE 集成检索与教师引导偏好优化，减少 LLM 漏洞分析中的陈旧知识冲突。
+- [NFTDELTA: Detecting Permission Control Vulnerabilities in NFT Contracts through Multi-View Learning](https://arxiv.org/abs/2604.15118)：补充 NFT 合约权限控制漏洞检测的多视角学习方法。
+- [Analyzing Chain of Thought (CoT) Approaches in Control Flow Code Deobfuscation Tasks](https://arxiv.org/abs/2604.15390)：分析控制流代码去混淆中的思维链方法，补充网络安全模型条目。
+- [SynthFix: Adaptive Neuro-Symbolic Code Vulnerability Repair](https://arxiv.org/abs/2604.17184)：用路由模型在监督微调和带编译器符号反馈的奖励微调之间分配漏洞修复样本，提升 JavaScript 与 C 基准上的 LLM 修复准确率。
+- [SAGE: Signal-Amplified Guided Embeddings for LLM-based Vulnerability Detection](https://arxiv.org/abs/2604.19031)：用任务条件 sparse autoencoder 恢复并放大 LLM embedding 中较弱的漏洞信号，用于代码漏洞检测。
+- [Train in Vain: Functionality-Preserving Poisoning to Prevent Unauthorized Use of Code Datasets](https://arxiv.org/abs/2604.22291)：提出 FunPoison，将短小、可编译的 weak-use 片段注入已执行代码路径，使仅污染 10% 代码数据即可削弱未授权 CodeLLM 训练，同时保持功能正确。
+- [Learning Generalizable Multimodal Representations for Software Vulnerability Detection](https://arxiv.org/abs/2604.25711)：为软件漏洞检测学习可泛化的多模态表征，将网络安全模型覆盖从纯文本代码提示扩展到多源软件证据。
+- [OpenSOC-AI: Democratizing Security Operations with Parameter Efficient LLM Log Analysis](https://arxiv.org/abs/2604.26217)：用 LoRA 在 SOC 日志样例上微调 TinyLlama，执行威胁分类、MITRE ATT&CK 映射和严重性评估，并公开 adapter 与数据集。
+- [VulStyle: A Multi-Modal Pre-Training for Code Stylometry-Augmented Vulnerability Detection](https://arxiv.org/abs/2604.26313)：在 490 万个函数上联合预训练源码 token、非终结 AST 节点和代码风格特征，再跨五个漏洞数据集微调以捕捉高风险编程风格信号。
+- [SafeTune](https://arxiv.org/abs/2604.27238)：缓解面向 RTL 代码生成的 LLM 微调数据投毒。核心思想：在训练侧加固硬件代码生成模型，而不只是事后检查生成 RTL。
+- [How Code Representation Shapes False-Positive Dynamics in Cross-Language LLM Vulnerability Detection](https://arxiv.org/abs/2604.27714)：比较 Qwen3 与 Llama 漏洞检测器的文本和剪枝 AST 表示，显示文本微调会放大跨语言误报，并提出双表示一致性检查。
+- [VulKey: Automated Vulnerability Repair Guided by Domain-Specific Repair Patterns](https://arxiv.org/abs/2605.01769)：用 CWE 类型、语法动作和语义关键元素三级修复模式引导 LLM 漏洞修复，先匹配专家模式再由微调模型生成补丁。
+- [Mitigating False Positives in Static Memory Safety Analysis of Rust Programs via Reinforcement Learning](https://arxiv.org/abs/2605.04000)：从 Rust MIR 特征和静态分析反馈中学习强化学习式告警抑制策略，并用 cargo-fuzz 验证降低内存安全分析误报。
 - [SecureForge](https://arxiv.org/abs/2605.08382)：审计 LLM 生成代码中的漏洞，并优化安全系统提示以减少安全缺陷且保持测试通过率。
+- [VulTriage: Triple-Path Context Augmentation for LLM-Based Vulnerability Detection](https://arxiv.org/abs/2605.09461)：为 LLM 漏洞检测提示加入控制流与数据流口语化描述、CWE 模式检索和功能语义摘要，提升成对与分类式检测表现。
+- [Attack-Path Modeling and Reinforcement Learning for Cybersecurity Governance](https://arxiv.org/abs/2605.09792)：结合攻击路径建模与强化学习，把治理成熟度转化为缓解规划决策，补充模型侧网络防御优化路线。
+- [MARGIN: Margin-Aware Regularized Geometry for Imbalanced Vulnerability Detection](https://arxiv.org/abs/2605.10240)：用 margin-aware regularized geometry 与 hyperspherical prototype modeling 处理漏洞检测中的频率不平衡和难度不平衡。
+- [AutoSOUP: Safety-Oriented Unit Proof Generation for Component-level Memory-Safety Verification](https://arxiv.org/abs/2605.10712)：通过 Safety-Oriented Unit Proofs 自动化组件级内存安全验证。核心思路是用 hybrid LLM-as-function-call 自动化生成 proof artifacts，降低内存安全证明对专家人工工作的依赖。
+- [Threat Modelling using Domain-Adapted Language Models: Empirical Evaluation and Insights](https://arxiv.org/abs/2605.10808)：面向网络安全智能体与评测的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Threat Modelling using Domain-Adapted Language Models: Empirical Evaluation and Insights”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Security Incentivization: An Empirical Study of how Micropayments Impact Code Security](https://arxiv.org/abs/2605.13100)：更接近软件过程实证证据而非模型贡献；把团队奖励与静态分析问题密度绑定，并衡量激励对代码安全改进的影响。
 - [VectraYX-Nano](https://arxiv.org/abs/2605.13989)：通过课程学习训练小型西班牙语网络安全语言模型，并加入原生工具使用能力。
+- [VulATMHD: Joint adaptive triplet mining and hybrid distillation for type-aware vulnerability classification](https://doi.org/10.1016/j.infsof.2026.108037)：用 adaptive triplet mining 与 hybrid distillation 做类型感知漏洞分类，将安全代码分析从二分类扩展到漏洞类型区分。
+- [When fixes teach: Repair-aware contrastive learning for optimization-resilient binary vulnerability detection](https://doi.org/10.1016/j.sysarc.2026.103722)：用 repair-aware contrastive learning 提升二进制漏洞检测在编译优化变化下的鲁棒性。
+- [Hierarchical Graph Transformer with Adaptive Community Integration for Smart Contract Vulnerability Detection](https://doi.org/10.1016/j.eswa.2026.132639)：在层级图 Transformer 中引入 adaptive community integration，用于检测智能合约漏洞。
+- [Domain-aware graph neural networks for source code vulnerability detection](https://doi.org/10.1016/j.infsof.2026.108104)：用 domain-aware graph neural networks 做源代码漏洞检测，为安全代码建模补充图表示路线。
+- [LLMBA: Efficient Behavior Analytics via Large Pretrained Models in Zero Trust Networks](https://doi.org/10.1109/tifs.2026.3666459)：用多层级行为编码对 LLM 做自监督微调，再蒸馏为低成本学生模型，用于零信任网络中的内部威胁行为分析。
+- [TBTrackerX: Fantastic Trigger Bots and Where to Find Malicious Campaigns on X](https://doi.org/10.14722/ndss.2026.241239)：构建用于收集 X 平台触发式机器人回复的框架，发现 2,647 个机器人在关键词触发后发送 4,452 条诱导非法支付或凭据窃取的回复。
+- [CLVUL: A contrastive learning framework for unified vulnerability detection, localization, and CWE classification with continual and zero-shot adaptation](https://doi.org/10.1016/j.jss.2026.112917)：提出关于 CLVUL: A contrastive learning framework for unified vulnerability detection, localization, and CWE classification with continual and zero-shot adaptation 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [BADS: A backdoor attack against code intent summarization engines](https://doi.org/10.1016/j.infsof.2026.108018)：提出关于 BADS: A backdoor attack against code intent summarization engines 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Data Distribution Matters: Enhancing model generalization in Data-Driven Materials Discovery by intentionally exploiting both positive and negative data](https://doi.org/10.1016/j.actphy.2026.100291)：提出关于 Data Distribution Matters: Enhancing model generalization in Data-Driven Materials Discovery by intentionally exploiting both positive and negative data 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [CLMDA:Cross language vulnerability detection based on multimodal learning and domain adaptation](https://doi.org/10.1016/j.knosys.2026.115336)：提出网络安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [SLVD-CC: Enhancing statement-level vulnerability detection via context clarification](https://doi.org/10.1016/j.scico.2026.103469)：提出网络安全方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Evaluating the Vulnerability of Deepfake Image Detection Models to Adversarial Manipulations](https://doi.org/10.1109/isdfs69419.2026.11459083)：对 deepfake 图像检测器进行对抗操纵压力测试，更像安全可靠性评估候选，而不是网络安全行动模型。
+- [STMWF: Multi-Tab Website Fingerprinting via Spatial–Temporal Sequence Analysis](https://doi.org/10.1109/tifs.2026.3663998)：把 Tor 多标签页网站指纹识别建模为空间-时间序列分析任务，面向加密流量去匿名化攻击。
+- [A Self-Supervised and Explainable Framework for Zero-Day Attack Detection and Mitigation in Windows Firewall](https://doi.org/10.1109/icfact66887.2026.11518255)：用自监督异常检测与可解释性识别签名式 Windows 防火墙规则难以覆盖的零日攻击行为。
+- [Cyber Sentry - Protecting Users from Zero-Day Phishing](https://doi.org/10.1109/icdsaai69492.2026.11505218)：提出轻量客户端 Cyber Sentry 框架，在终端用户交互前检测钓鱼 IP 并阻断恶意应用。
+- [Digital Human-Assisted Smart Contract Vulnerability Detection Under Limited Sample Constraints](https://doi.org/10.1109/icassp55912.2026.11461273)：使用基于 LLM 的数字人框架，并对齐环境、用户、场景与行为模式，在少样本条件下检测智能合约漏洞。
+- [Toward Context-Aware Alert Classification in Security Operations Centers Using LLMs](https://doi.org/10.1109/icaic67076.2026.11395735)：用 LLM 结合 SOC 上下文对 SIEM 告警分类，帮助分析员降低安全运营中心的误报分诊负担。
+- [Malware Deep Analysis and Network Security Defense Mechanism Based on Multimodal Data Fusion](https://doi.org/10.1109/iscait69154.2026.11477236)：融合静态与行为恶意软件模态，提升深度恶意软件分析和网络防御对单一特征检测器之外场景的泛化。
+- [VDM-IoT: Context Enhanced Knowledge Graph-Prompted LLMs for Internet of Things Vulnerability Description Mappings](https://doi.org/10.1109/jiot.2026.3661184)：从 MITRE 和 NVD 构建 IoT 漏洞知识图谱，检索推理路径并提示 LLM 生成带解释的 ATT&CK tactics/techniques 映射。
+- [LLM-Driven Cyber Threat Intelligence Extraction for Cloud Ecosystems](https://doi.org/10.1109/mpcon69668.2026.11508604)：用 LLM 对云日志、漏洞情报和事件报告做语义推理，抽取 IoC、攻击路径和攻击者画像用于云 CTI。
+- [Dynamic vulnerability assessment of urban rail transit systems using spatiotemporal deep learning](https://doi.org/10.1016/j.ress.2026.112910)：用时空深度学习动态更新城市轨道交通系统脆弱性估计；可检索元数据尚未公开更细架构细节。
+- [Context-Aware Enterprise Vulnerability Prioritization and Remediation Recommendations Using Semantic Learning](https://doi.org/10.1109/icsadl67539.2026.11451870)：结合 Sentence-BERT 漏洞/修复文本嵌入、资产风险特征和 learning-to-rank，在 CVSS 之外排序企业漏洞与修复建议。
+- [Transfer learning strategies for vulnerability detection in software binaries](https://doi.org/10.1016/j.neunet.2026.109069)：比较全序列微调、token 级微调和冻结特征抽取三种迁移策略，用 transformer 在 x86/ARM 与 Linux/Windows 数据集上做二进制代码漏洞分类。
+- [ThreatMAMBA: Achieving High-Robustness Cyber Threat Attribution During the Evolution of Attacks](https://doi.org/10.1109/tifs.2026.3685967)：用状态空间选择机制和对比学习编码时间化 CTI 知识图谱，在事件早期和后期都进行攻击者归因。
+- [Large language models for climate vulnerability assessment: a reproducible framework with uncertainty quantification](https://doi.org/10.3389/feart.2026.1792665)：偏离网络安全主线；将 GPT-4、Claude 与 conformal prediction 结合，为气候脆弱性评估提供不确定性区间。
+- [COTVD: A function-level vulnerability detection framework using chain-of-thought reasoning with large language models](https://doi.org/10.1016/j.infsof.2026.108043)：提供结合大模型 chain-of-thought 推理的函数级漏洞检测框架，并发布配套 artifact package。
+- [BiD-Accel: Accelerated bidimensional input-aware SDC vulnerability assessment for GPU static instructions](https://doi.org/10.1016/j.future.2026.108372)：扩展 GPU fault-injection 工具，加入指令级归因，把注入故障映射到静态指令以加速双维 SDC 脆弱性分析。
+- [An Empirical Analysis of Transformer-Based Models with LIME Explainability for JavaScript Vulnerability Detection](https://doi.org/10.1109/icecte69292.2026.11429428)：在函数级 JavaScript 漏洞数据上微调 CodeBERT、CodeT5+、PLBART 和 UniXcoder，并用 LIME 检查预测是否依赖有意义的代码特征。
+- [SAGE-Prompt: An Effective Semantic-Aware Graph Enhanced Prompting Technique for Smart Contract Vulnerability Detection](https://doi.org/10.1016/j.eswa.2026.132904)：可作为“网络安全 / 模型”候选条目；提出与模型训练、架构、对齐、推理、适配或数据构造相关的方法。
+- [Software Vulnerability Detection via Multimodal Retrieval and Hierarchical Decision Making](https://doi.org/10.1016/j.scico.2026.103491)：提出面向网络安全能力的模型侧方法、训练信号、架构或适配策略。
+- [Accurate Identification of the Vulnerability-Introducing Commit based on Differential Analysis of Patching Patterns](https://doi.org/10.14722/ndss.2026.230140)：提出面向网络安全能力的模型侧方法、训练信号、架构或适配策略。
+- [Fine-Tuning and Semantic Prompt Enrichment for LLM-Based Smart Contract Vulnerability Detection](https://doi.org/10.1109/saner-c67878.2026.00012)：先按 DASP Top 10 知识与带标签 Solidity 函数微调 GPT-4o，再用经验证的代码摘要增强提示，提升智能合约漏洞检测。
+- [ULTIMATE: A Multi-Agent Deep Reinforcement Learning Framework for false-positive optimized enterprise intrusion detection](https://doi.org/10.1016/j.array.2026.100896)：使用多智能体深度强化学习优化企业入侵检测中的误报问题。
+- [A Semi-Supervised and Evasion-Aware Framework for Reducing Alert Fatigue in Security Operations Centers (SoC)](https://doi.org/10.1109/iciccs67901.2026.11502746)：用半监督和规避感知检测方法缓解安全运营中心的告警疲劳。
+- [AI-Empowered Smart Contract Vulnerability Detection for Decentralized Blockchain Systems](https://doi.org/10.1109/tnse.2026.3658785)：提出面向去中心化区块链系统的 AI 智能合约漏洞检测方法。
+- [AegisGuard: A Context-Aware Framework for Semantic Vulnerability Detection and Risk Stratification](https://doi.org/10.1109/access.2026.3663577)：融合系统遥测、RAG 威胁情报和专用 LLM 推断 CVE 适用性，并结合权限、暴露面和服务关键性给出五级风险标签。
+- [Adaptive Intrusion Detection Enhanced by Cyber Threat Intelligence](https://doi.org/10.1109/iciss67859.2026.11453603)：提出 DICI++，把多源 CTI 与 SVM、K-Means、GRU/LSTM 时序模型、在线学习和对抗更新结合用于自适应入侵检测。
+- [Network Intrusion Detection based on Hybrid Telemetry Analysis using Transformer-LSTM Architecture](https://doi.org/10.1109/smartindustrycon68821.2026.11493109)：使用基于混合遥测数据的 Transformer-LSTM 架构开展网络入侵检测。
+- [Toward Efficient Deobfuscation via Large Language Models](https://doi.org/10.1109/access.2026.3660477)：面向网络安全智能体与评测的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Toward Efficient Deobfuscation via Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Weighted Reciprocal Rank Fusion RAG for Context-Aware DoS Attack Mitigation](https://doi.org/10.1109/ccnc65079.2026.11366368)：用融合排序 RAG 进行上下文感知的 DoS 攻击缓解。
+- [Automated Binary Code Analysis Technology Enhanced by Variable Knowledge Graph](https://doi.org/10.1109/gaiis69281.2026.11519107)：用变量知识图谱增强二进制代码分析。
+- [Hybrid LLM-Vision Pipeline for Detection of Malicious QR Codes in Social Engineering Attacks](https://doi.org/10.1109/icipcn67432.2026.11438814)：面向网络安全智能体与评测的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Hybrid LLM-Vision Pipeline for Detection of Malicious QR Codes in Social Engineering Attacks”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Fine-Tuning Open-Source Large Language Models for Cybersecurity and IT Support: A Comparative Study on LLM Fine-Tuning Techniques](https://doi.org/10.1109/ojcs.2026.3685799)：面向网络安全智能体与评测的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Fine-Tuning Open-Source Large Language Models for Cybersecurity and IT Support: A Comparative Study on LLM Fine-Tuning Techniques”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A semantic-Technical Approach to Analyzing the Consequences of Multi-Stage Cyber Attacks in Industrial Control Systems](https://doi.org/10.1109/smartindustrycon68821.2026.11492931)：分析工业控制系统多阶段网络攻击后果。
+- [Generating evasive payloads for assessing Web Application Firewalls with Reinforcement Learning and Pre-trained Language Models](https://doi.org/10.54654/isj.v2i25.1128)：用强化学习和预训练语言模型生成规避载荷，用于评估 Web Application Firewall 的防护能力。
 - [Prior-Knowledge PPO for Attack-Path Optimization](https://doi.org/10.1186/s42400-024-00288-8)：使用先验知识引导的 PPO 优化网络攻击路径，属于网络安全模型部分中的强化学习式攻防行动技术。
 - [PenQA](https://doi.org/10.3390/app15042117)：提供用于增强语言模型渗透测试能力的指令数据，是网络安全能力中的模型侧数据训练方案。
+- [A Novel Framework for Detecting Anomalies in Network Security using LLM and Deep Learning](https://doi.org/10.52783/jes.8791)：结合大模型与深度学习检测网络安全异常。
+- [Hierarchical Multi-Agent Reinforcement Learning for IIoT Defense](https://doi.org/10.1145/3814961)：将分层多智能体强化学习用于自适应 IIoT 防御，补充网络防御 RL 模型条目。
+- [Efficient anomaly detection in tabular cybersecurity data using LLMs](https://doi.org/10.1038/s41598-025-88050-z)：将大语言模型用于表格化网络安全异常检测。核心思想：把 LLM 表示适配到结构化安全数据，使异常检测能够利用语言模型先验。
+- [LLMs for MITRE extraction](https://doi.org/10.1007/978-3-032-00633-2_5)：用大语言模型为网络威胁情报抽取 MITRE ATT&CK 信息。
+- [Network Traffic Tokenizer](https://doi.org/10.1145/3801228.3801306)：设计并评估面向 LLM 的网络流量 tokenizer。核心思想：把流量结构转成模型可处理的 token，使 LLM 能用于网络流量解释。
+- [MCL-VD: Multi-modal contrastive learning with LoRA-enhanced GraphCodeBERT for effective vulnerability detection](https://doi.org/10.1007/s10515-025-00543-3)：结合多模态对比学习和 LoRA 增强的 GraphCodeBERT 进行漏洞检测，为网络安全模型补充代码表征路线。
+- [A zero-shot framework for cross-project vulnerability detection in source code](https://doi.org/10.1007/s10664-025-10749-4)：结合 CodeBERT embedding 与迭代伪标签，在没有目标项目标注的情况下支持跨项目源码漏洞检测。
+- [DeepDesc: integrating retrieval-augmented generation with large language models for smart contract vulnerability detection](https://doi.org/10.1007/s10664-025-10770-7)：将 RAG 增强的 LLM 代码描述与深度分类器结合，用于智能合约漏洞检测，覆盖机器可审计缺陷和业务逻辑缺陷。
+- [PVDetector: Pretrained Vulnerability Detection on Vulnerability-enriched Code Semantic Graph](https://doi.org/10.1145/3768582)：利用漏洞增强的代码语义图进行预训练式软件漏洞检测。
+- [CodingCare: AI Code Generation Security Framework for Common Vulnerability Mitigation](https://doi.org/10.1145/3732945.3732990)：提出面向常见漏洞缓解的 AI 代码生成安全框架，把生成式编码辅助与安全代码分析连接起来。
+- [Long-range context modeling for software vulnerability detection using an XLNet-based approach](https://doi.org/10.1038/s41598-026-36196-9)：将 XLNet 的长程上下文建模用于软件漏洞检测，面向超出短片段范围的代码安全信号。
+- [A Context-Aware Lightweight Framework for Source Code Vulnerability Detection](https://doi.org/10.3390/fi17120557)：结合 Transformer token encoder、动态知识图嵌入、图注意力和 vulnerable-patched 代码对的对比学习，用于上下文感知的源码漏洞检测。
+- [Out of Sight, Out of Mind: Better Automatic Vulnerability Repair by Broadening Input Ranges and Sources](https://doi.org/10.1145/3597503.3639222)：通过扩大输入代码范围和证据来源改进自动漏洞修复，使修复模型获得更完整的上下文。
+- [Pairing Security Advisories with Vulnerable Functions Using Open-Source LLMs](https://doi.org/10.1007/978-3-031-64171-8_18)：用开源 LLM 将安全公告与脆弱函数配对，把自然语言漏洞报告连接到具体代码位置。
+- [Optimized DDoS Detection in Software‐Defined IIoT Using a Hybrid Deep Neural Network Model](https://doi.org/10.1002/itl2.70012)：提出 IIoT Attack Shield 混合深度神经模型，在软件定义工业物联网中低成本检测 DDoS。
+- [Abundant Modalities Offer More Nutrients: Multi-Modal-Based Function-Level Vulnerability Detection](https://doi.org/10.1145/3731557)：利用多模态函数级证据而非仅 token 代码进行软件漏洞检测。
+- [CEVD: Cluster-Based Ensemble Learning for Cross-Project Vulnerability Detection](https://doi.org/10.3390/fi18020085)：用基于聚类的集成学习缓解跨项目漏洞检测中的领域偏移。
+- [Vulnerability Detection in AI‐Generated and Human‐Written Code of Multiple Programming Languages With Structured Learning](https://doi.org/10.1002/stvr.70021)：用结构化学习检测多语言中 AI 生成与人工编写代码的漏洞。
+- [ShieldGPT: An LLM-based Framework for DDoS Mitigation](https://doi.org/10.1145/3663408.3663424)：用 ShieldGPT 框架解释 DDoS 证据并给出缓解动作建议。
+- [LASP: LLM Assisted Security Property Generation for SoC Verification](https://doi.org/10.1145/3670474.3685967)：用 LLM 辅助生成 SoC 安全属性，使硬件设计可接受形式化验证。
+- [Where is it? Tracing the Vulnerability-Relevant Files from Vulnerability Reports](https://doi.org/10.1145/3597503.3639202)：把漏洞报告追踪到最相关的源码文件，缩小补丁定位和漏洞分诊的搜索范围。
+- [Vision: Identifying Affected Library Versions for Open Source Software Vulnerabilities](https://doi.org/10.1145/3691620.3695516)：识别开源库漏洞影响的版本范围，改进依赖风险分析中的公告到版本映射。
+- [FIRE: Combining Multi-Stage Filtering with Taint Analysis for Scalable Recurring Vulnerability Detection](https://www.usenix.org/conference/usenixsecurity24/presentation/feng-siyue)：结合多阶段过滤与污点分析，规模化发现重复出现的漏洞。
+- [An Empirical Evaluation of Large Language Models in Static Code Analysis for PHP Vulnerability Detection](https://doi.org/10.3897/jucs.134739)：实证评估 LLM 在 PHP 静态漏洞分析中的作用，衡量模型式审查能否替代规则检查。
+- [Effective Vulnerable Function Identification based on CVE Description Empowered by Large Language Models](https://doi.org/10.1145/3691620.3695013)：用 LLM 将 CVE 描述映射到脆弱函数，从稀疏公告文本中改进代码定位。
+- [T-RAP: A Template-guided Retrieval-Augmented Vulnerability Patch Generation Approach](https://doi.org/10.1145/3671016.3672506)：结合修复模板与检索增强生成，基于相似修复生成漏洞补丁。
+- [Beyond REST: Introducing APIF for Comprehensive API Vulnerability Fuzzing](https://doi.org/10.1145/3678890.3678928)：提出 APIF，用于超越 REST 接口的综合 API 漏洞模糊测试。
+- [Strengthening Supply Chain Security with Fine-Grained Safe Patch Identification](https://doi.org/10.1145/3597503.3639104)：识别细粒度安全补丁，使软件供应链修复能区分安全修复、风险更新和无关更新。
+- [Incremental learning research for webshell detection](https://doi.org/10.1007/s44443-025-00235-8)：将增量学习用于 WebShell 检测，使检测器无需完全重训也能吸收新变体。
+- [Toward a Robust Detection of PowerShell Malware against Code Mixing and Obfuscation by Using Sentence Transformer and Similarity Learning](https://doi.org/10.1145/3771542)：使用句向量 Transformer 与相似度学习，在代码混杂和混淆条件下检测 PowerShell 恶意软件。
+- [MultiGLICE: Combining Graph Neural Networks and Program Slicing for Multiclass Software Vulnerability Detection](https://doi.org/10.3390/computers14030098)：结合图神经网络与程序切片进行多类别软件漏洞检测。
+- [Evaluating Large Language Models for Vulnerability Detection Under Realistic Conditions](https://doi.org/10.1007/978-3-032-00644-8_8)：在真实条件下评估 LLM 漏洞检测，揭示简化数据集掩盖的性能缺口。
+- [A Study on Vulnerability Explanation Using Large Language Models](https://doi.org/10.5220/0013379200003890)：研究 LLM 如何解释软件漏洞，重点覆盖成因、影响和修复细节，而不只是检测结果。
+- [Enhanced intrusion detection in smart grids using extended long short-term memory variants](https://doi.org/10.26555/ijain.v11i4.2169)：用扩展 LSTM 变体处理动态电网遥测，增强智能电网入侵检测。
+- [MPDA: a data augmentation approach to improve deep learning for software vulnerability detection](https://doi.org/10.1007/s10664-025-10698-y)：用 MPDA 数据增强改进深度漏洞检测器的脆弱代码样本训练。
+- [AISTIP: AI Security Threat Intelligence Platform to Gather Knowledge from Technical Documents](https://doi.org/10.5220/0014404700004052)：从技术文档中抽取安全威胁情报，填充 AI 辅助 CTI 平台。
+- [Hybrid backdoor attacks for deep code models](https://doi.org/10.1371/journal.pone.0338083)：提出针对深度代码模型的混合触发后门攻击，用于测试模型面对更隐蔽投毒策略时的鲁棒性。
+- [End-to-End Intrusion Detection in Data Security Using Attention-Based Large Language Model](https://doi.org/10.62836/iaet.v3i1.485)：用注意力式语言模型进行数据安全场景中的端到端入侵检测。
+- [Large Language Models are Edge-Case Generators: Crafting Unusual Programs for Fuzzing Deep Learning Libraries](https://doi.org/10.1145/3597503.3623343)：用 LLM 生成异常边界程序，对深度学习库进行模糊测试并触发库缺陷。
+- [Enhancing AI-driven Cybersecurity Awareness Smart Consultant using RAG Method with Hybrid Knowledge Based](https://doi.org/10.59395/ijadis.v7i1.1488)：基于混合知识源构建 RAG 网络安全意识顾问，用于安全教育和建议生成。
+- [A Hybrid KAN-BiLSTM Transformer with Multi-Domain Dynamic Attention Model for Cybersecurity](https://doi.org/10.3390/technologies13060223)：偏离本页主线；尽管标题写网络安全，摘要主要关注网络霸凌检测而非网络安全行动。
+- [Localized large language model TCNNet 9B for Taiwanese networking and cybersecurity](https://doi.org/10.1038/s41598-025-90320-9)：将 9B 繁体中文 LLM 领域适配到台湾网络产业和网络安全术语及任务。
+- [Interleaving Static Analysis and LLM Prompting](https://doi.org/10.1007/s10009-025-00780-7)：将静态分析迭代与 LLM 提示交替执行，根据分析器中间结果推断错误规格。
+- [Magneto: A Step-Wise Approach to Exploit Vulnerabilities in Dependent Libraries via LLM-Empowered Directed Fuzzing](https://doi.org/10.1145/3691620.3695531)：用 LLM 增强的定向模糊测试分步利用依赖库漏洞。
+- [You Got Phished! Analyzing How to Provide Useful Feedback in Anti-Phishing Training with LLM Teacher Models](https://doi.org/10.3390/electronics14193872)：在用户误判钓鱼样例后，用 LLM 教师模型生成反钓鱼训练反馈。
+- [Exploring Cognitive Vulnerabilities: Self-Persuasion in Jailbreaking LLMs](https://doi.org/10.3390/electronics14163259)：偏离网络安全行动主线；分析利用自我说服提示绕过 LLM 安全防护的越狱方法。
+- [Bridging the Security Gap: An Empirical Analysis of LLM-API Integration Vulnerabilities and Mitigation Strategies](https://doi.org/10.1145/3731806.3731831)：实证分析 LLM 与 API 集成引入的漏洞，并整理面向应用构建者的缓解策略。
+- [ReSym: Harnessing LLMs to Recover Variable and Data Structure Symbols from Stripped Binaries](https://doi.org/10.1145/3658644.3670340)：用 LLM 恢复去符号二进制中的变量和数据结构符号，提高逆向工程可读性。
+- [Automatically Inspecting Thousands of Static Bug Warnings with Large Language Model: How Far Are We?](https://doi.org/10.1145/3653718)：在大规模静态缺陷告警上测试 LLM 检查能力，衡量模型分诊能否降低误报。
+- [Smart Contract Vulnerability Detection: The Role of Large Language Model (LLM)](https://doi.org/10.1145/3687251.3687253)：评估 LLM 相比既有分析工具在智能合约漏洞检测中的作用。
+- [Intelligent Threat Detection—AI-Driven Analysis of Honeypot Data to Counter Cyber Threats](https://doi.org/10.3390/electronics13132465)：对蜜罐数据进行 AI 分析，帮助防守方检测和刻画活跃网络威胁。
+- [ProRLearn: boosting prompt tuning-based vulnerability detection by reinforcement learning](https://doi.org/10.1007/s10515-024-00438-9)：结合自动提示调优与强化学习奖励，使预训练语言模型更好利用源码语义和漏洞领域知识。
+- [X-FuseRLSTM: A Cross-Domain Explainable Intrusion Detection Framework in IoT Using the Attention-Guided Dual-Path Feature Fusion and Residual LSTM](https://doi.org/10.3390/s25123693)：结合深度编码器、稀疏 Transformer、注意力双路径融合、残差 LSTM 与 XAI 诊断，进行跨域 IoT 入侵检测。
+- [The role of generative AI in cyber security](https://doi.org/10.54517/m2796)：宽泛综述型背景而非模型贡献；讨论生成式 AI 在威胁检测、事件响应和安全决策支持中的用途。
+- [Mystique: Automated Vulnerability Patch Porting with Semantic and Syntactic-Enhanced LLM](https://doi.org/10.1145/3715718)：切片漏洞相关语义上下文，抽取原补丁函数和目标脆弱函数签名，并用微调 LLM 及迭代检查跨分支移植补丁。
+- [Exploring Prompt Patterns for Effective Vulnerability Repair in Real-World Code by Large Language Models](https://doi.org/10.1145/3716815.3729010)：评估 5,826 个真实脆弱代码样本，引入 CFG 提示，并从修复失败类型中总结面向 LLM 漏洞修复的提示模式。
+- [Integrating Deep Cross Networks and BiLSTM for Scalable Vulnerability Analysis](https://doi.org/10.1145/3776759.3776855)：提出 VulnDetectNet，融合统计特征编码、Deep Cross 高阶交互、BiLSTM 序列语义、门控融合与 focal loss 训练来检测源码漏洞。
+- [Cognitive-Aware Plugin for Vulnerability Feedback](https://doi.org/10.1145/3769694.3771158)：提出 VS Code 插件，把静态分析、眼动与摄像头认知信号和 LLM 结合，为程序员生成上下文感知的漏洞反馈。
+- [A proactive approach to software security using DCodeBERT for vulnerability management](https://doi.org/10.11591/eei.v15i1.11100)：提出 DCodeBERT，共享-私有多任务 CodeBERT 框架，在 C、C++、Java 和 Python 的脆弱、干净与修复代码片段上训练以支持检测和修复。
+- [AN OVERVIEW OF LARGE LANGUAGE MODEL APPROACHES FOR AUTOMATED SOFTWARE VULNERABILITY DETECTION](https://doi.org/10.23939/csn2026.01.162)：综述型条目；梳理 LLM 如何增强静态与动态软件安全测试，并讨论可扩展性、可靠性和早期预防限制。
+- [Mutation based improvement of security test case quality for broken access control](https://doi.org/10.1186/s13635-026-00226-w)：为 improper pathname limitation 和 CSRF 等访问控制缺陷定义 15 个变异算子，并用 mutation score 改进安全测试质量。
+- [Large Language Models in Software Security Analysis](https://doi.org/10.1145/3770922)：刻画 LLM 驱动的 cyber reasoning system，结合漏洞检测、修复、程序分析辅助和多语言约束求解来支持软件安全。
+- [AI-related Vulnerabilities within CVEs: Are We Ready Yet? A Study of Vulnerability Disclosure in AI Products](https://doi.org/10.1145/3733799.3762969)：研究 AI 模型嵌入软件系统后，现有 CVE 披露流程能否充分表达 AI 产品相关漏洞。
+- [Securing Language Models Against Vulnerability Encoding](https://doi.org/10.1145/3696630.3731466)：研究用微调和对抗训练降低 LLM 生成代码中的漏洞编码，并给出面向 SQL 注入、XSS 和缓冲区溢出等不安全模式的评估框架。
+- [FORTIFY: Feature-Oriented Representation and Graph Topology Integration for Path-Level Vulnerability Detection](https://doi.org/10.1145/3777420)：从程序依赖图重构切片组合图，并建模为加权边超图，在 API 调用线索稀疏时进行路径级漏洞检测。
+- [SRDC: Semantics-based Ransomware Detection and Classification with LLM-assisted Pre-training](https://doi.org/10.1609/aaai.v39i27.35080)：用 LLM 辅助预训练结合内部特征语义与外部勒索软件知识，检测零日勒索软件并分类其家族。
+- [An Improved Software Source Code Vulnerability Detection Method: Combination of Multi-Feature Screening and Integrated Sampling Model](https://doi.org/10.3390/s25061816)：提出 MFISM，从 AST 中提取漏洞相关特征，筛选判别特征，并结合集成过采样和异常值检测做源码漏洞检测。
+- [Efficient Adaptation of Large Language Models for Smart Contract Vulnerability Detection](https://doi.org/10.1145/3727582.3728688)：用专用分类头替代 token 级生成，并通过 LoRA 选择性冻结底层 Transformer 层，以高效适配 Solidity 漏洞检测。
+- [Enhancing Security in Smart Robot Digital Twins Through Intrusion Detection Systems](https://doi.org/10.3390/app15094596)：在数字孪生架构中评估随机森林与 SVM 入侵检测器，使用 CICIDS2017、CIC Modbus 和 4SICS 2015 工业安全数据集。
+- [Weighted quality criteria for cyber threat intelligence: assessment and prioritisation in the MISP data model](https://doi.org/10.1007/s10207-025-01080-6)：基于 MISP 数据模型定义可量化 CTI 质量标准，用于评估情报准确性、时效性、标准化、运营意义和优先级。
+- [Asset Discovery in Critical Infrastructures: An LLM-Based Approach](https://doi.org/10.3390/electronics14163267)：使用混合专家 LLM 架构，结合被动和主动软件探测及物理传感器，在工业控制系统中进行上下文感知资产发现。
+- [Go Source Code Vulnerability Detection Method Based on Graph Neural Network](https://doi.org/10.3390/app15126524)：在并发函数结构上使用 GraphSAGE，并结合污点传播链和 Transformer 注意力来检测 Go 源码漏洞。
+- [Intelligent Detection of Cyber Attack Patterns in Industrial IoT Using Pretrained Language Models](https://doi.org/10.3390/electronics14204094)：微调 SecBERT、SecRoBERTa 与 CyBERT 检测 IIoT 攻击模式，并加入漏洞到战术映射与不确定情形下的检索回退。
+- [Beyond Semantic Noise: A Dual-Verification Framework for Thai-English Code-Mixed Malicious Script Detection via XAI-Guided Selective Integration](https://doi.org/10.3390/jcp6020051)：通过 Dempster-Shafer 和条件互信息选择融合 WangChanBERTa 语义嵌入与结构统计，并用 XAI 校验检测泰英混写恶意脚本。
+- [Automated Trust-Aware Software Vulnerability Scoring via Explainable Feature Alignment](https://doi.org/10.1145/3787279.3787294)：用 Integrated Gradients token 与官方 CVSS 定义的语义对齐来审计 BERT 式 CVSS 指标预测器，并输出可解释信任分数。
+- [A Multi-layer Dynamic Security Framework for DeFi Smart Contracts](https://doi.org/10.1145/3758316.3762819)：提出 CrossGuard 调用白名单、Trace2Inv 运行时不变量生成和生态依赖风险分析，用于 DeFi 智能合约防御。
+- [Poster: Code HarvETHter: Corpus-Driven Decompilation of Ethereum Smart Contracts](https://doi.org/10.1145/3719027.3760714)：介绍 HarvETHter，利用区块链语料知识把 Ethereum、Binance 和 Polygon 上的 EVM 合约反编译为 Solidity 源码。
+- [Efficient network defense policies via GNN-enhanced reinforcement learning](https://doi.org/10.1007/s11227-025-07431-3)：将 GraphSAGE 集成进 PPO actor-critic 学习，使防御策略能利用主机邻居依赖与 APT 攻击路径信息。
+- [Labeling Network Intrusion Detection System (NIDS) Rules with MITRE ATT&CK Techniques: Machine Learning vs. Large Language Models](https://doi.org/10.3390/bdcc9020023)：比较机器学习和大模型用于给入侵检测规则标注 MITRE ATT&CK 技术的效果。
+- [A graph attention network-based multi-agent reinforcement learning framework for robust detection of smart contract vulnerabilities](https://doi.org/10.1038/s41598-025-14032-w)：结合图注意力网络与多智能体强化学习，提升智能合约漏洞检测鲁棒性。
+- [Domain Knowledge-Infused Synthetic Data Generation for LLM-Based ICS Intrusion Detection: Mitigating Data Scarcity and Imbalance](https://doi.org/10.3390/electronics15020371)：利用领域知识生成合成数据，缓解基于大语言模型的工控入侵检测中的数据稀缺与类别不平衡。
+- [HAL-Net: fusing bidirectional LSTMs and hierarchical attention for fine-grained vulnerability detection in smart contracts](https://doi.org/10.1117/12.3113732)：结合双向 LSTM 与层次化注意力进行细粒度智能合约漏洞检测，为软件安全分析补充一种模型侧方法。
+- [Experiences in Exploiting Reinforcement Learning for Network Traffic Classification and Attack Detection](https://doi.org/10.5220/0014300900004052)：研究强化学习在网络流量分类与攻击检测中的应用。
+- [Improving Internet of Things Cyber Attack Detection with Information Gain and Decision Tree](https://doi.org/10.35314/p2c33t87)：将信息增益特征选择与决策树用于物联网网络攻击检测。
+- [ORTHRUS: Achieving High Quality of Attribution in Provenance-based Intrusion Detection Systems](https://www.semanticscholar.org/paper/cac38680575ce681f24be1c637bc1a0ce7705899)：面向基于 provenance 的入侵检测提升归因质量，使检测结果能沿系统事件溯源证据回追原因，而不只是输出异常告警。
+- [Hybrid AI-Based dynamic risk assessment framework with explainable AI practices for composite product cybersecurity certification](https://doi.org/10.1007/s10207-026-01218-0)：结合混合 AI 与可解释方法做网络安全认证风险评估。
+- [SIFT: enhance the performance of vulnerability detection by incorporating structural knowledge and multi-task learning](https://doi.org/10.1007/s10515-025-00507-7)：从代码属性图构造代码结构矩阵，用 Sinkhorn Divergence 将结构知识损失与交叉熵联合训练，增强 PLM 漏洞检测性能。
+- [CyBERTa: a hybrid self-updating framework for automated extraction of MITRE ATT&CK tactics and techniques from security text](https://doi.org/10.1007/s11227-026-08537-y)：构建 DeBERTa-SetFit MLOps 管线，读取更新的 ATT&CK STIX 发布、增量适配 few-shot 分类器，并从非结构化 CTI 文本排序 tactics 与 techniques。
+- [An improved transformer for entity recognition in chinese cyber threat intelligence reports](https://doi.org/10.1186/s42400-026-00588-1)：用 Transformer 改进中文网络威胁情报实体识别。
+- [Identifying Relationships between Attack Patterns using Large Language Models](https://doi.org/10.1587/transfun.2024cip0005)：利用 LLM 识别攻击模式之间的关系。
+- [Automated Vulnerability Repair Using Prototype-Based Deep Metric Learning with Normative Compliance Constraints](https://doi.org/10.3390/engproc2026123040)：将深度度量学习用于自动漏洞修复。
+- [Leveraging LLMs for Non-Security Experts in Threat Hunting: Detecting Living off the Land Techniques](https://doi.org/10.3390/make7020031)：用 LLM 帮助非安全专家检测 living-off-the-land 威胁行为。
+- [Explainable Recommendation of Software Vulnerability Repair Based on Metadata Retrieval and Multifaceted LLMs](https://doi.org/10.3390/make7040149)：面向网络安全智能体与安全评测的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Large Language Models for Synthetic Dataset Generation of Cybersecurity Indicators of Compromise](https://doi.org/10.3390/s25092825)：用 LLM 生成网络安全入侵指标合成数据集。
+- [Reframing Paths as Logic: Semantic Segmentation for Vulnerability Detection](https://doi.org/10.1145/3798272)：结合 taint propagation 与 LLM 语义检查进行路径敏感漏洞检测。核心思路是切分并总结候选漏洞路径，使可行性与跨过程一致性能被更精细地检查。

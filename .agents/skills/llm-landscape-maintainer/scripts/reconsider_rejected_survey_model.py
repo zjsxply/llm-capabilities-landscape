@@ -126,7 +126,8 @@ def display_name(title: str) -> str:
 
 
 def section_doc(chapter: str, topic: str, slug: str, section: str) -> str:
-    return (Path("docs/en") / CHAPTER_DIRS[chapter] / f"{topic}-{slug}" / split_section_filename(section)).as_posix()
+    legacy = f"docs/en/{chapter}-{topic}-{slug}.md"
+    return resolve_english_target_doc(legacy, section).as_posix()
 
 
 def classify_target(text: str, kind: str) -> tuple[str, str]:

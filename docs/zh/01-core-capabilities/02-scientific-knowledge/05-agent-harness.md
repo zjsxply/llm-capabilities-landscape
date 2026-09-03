@@ -4,9 +4,175 @@
 - [RARR](https://arxiv.org/abs/2210.08726)（[开源代码](https://github.com/anthonywchen/RARR)）：`retrieve -> revise -> cite` 框架，适合把知识回答改写为“带引用的可核验结论”。
 - [Chain-of-Verification](https://arxiv.org/abs/2309.11495)：提出“先答，再拆验证问题，再回填修订”的通用 factuality workflow；当前未见稳定公开官方代码仓库。
 - [DSPy](https://arxiv.org/abs/2310.03714)（[开源代码](https://github.com/stanfordnlp/dspy)）：把检索、提示与评分器组织为可编译/可评测的 program；常用于把 “RAG/证据组织/答案格式” 变成可调参的 harness，而不是一次性 prompt。
+- [Accelerated exploration of heterogeneous CO2 hydrogenation catalysts by Bayesian-optimized high-throughput and automated experimentation](https://doi.org/10.1016/j.checat.2023.100888)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [GPTArticleExtractor: An automated workflow for magnetic material database construction](https://arxiv.org/abs/2401.05875)：自动从文献中抽取磁性材料的化合物、结构与转变温度，并把生成记录逐条回查到原论文以校验材料数据库。
+- [ChemReasoner: Heuristic Search over a Large Language Model's Knowledge Space using Quantum-Chemical Feedback](https://arxiv.org/abs/2402.10980)：把催化剂发现建成迭代搜索闭环，用 LLM 生成假设，再用原子图神经网络反馈、结构检查、吸附能和反应能垒评分引导探索。
+- [SciAgent: Tool-augmented Language Models for Scientific Reasoning](https://arxiv.org/abs/2402.11451)：构建工具增强科学推理 harness，让模型从 MathFunc 检索、理解并调用工具，并在覆盖五个科学领域的 SciToolBench 上评测工具使用能力。
+- [Science Checker Reloaded: A Bidirectional Paradigm for Transparency and Logical Reasoning](https://arxiv.org/abs/2402.13897)：面向长科学或工业文档，用查询扩展改进稀疏检索，再展示中间推理和基于文档的回答，使用户能检查证据路径。
+- [Verif.ai: Towards an Open-Source Scientific Generative Question-Answering System with Referenced and Verifiable Answers](https://arxiv.org/abs/2402.18589)：构建面向Scientific Knowledge任务的智能体工作流或工具调用系统。
+- [Machine learning the electric field response of condensed phase systems using perturbed neural network potentials](https://arxiv.org/abs/2403.12319)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Change-Agent: Toward Interactive Comprehensive Remote Sensing Change Interpretation and Analysis](https://arxiv.org/abs/2403.19646)：把多层级遥感变化解释模型与 LLM 控制器结合，让用户在一个交互流程中请求变化检测、变化描述、目标计数和原因分析。
+- [Transforming the synthesis of carbon nanotubes with machine learning models and automation](https://arxiv.org/abs/2404.01006)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [OpenChemIE: An Information Extraction Toolkit For Chemistry Literature](https://arxiv.org/abs/2404.01462)：编排文档级化学信息抽取，分别处理文本、表格和图像中的反应信息，再用化学规则整合为最终反应列表。
+- [Construction and Application of Materials Knowledge Graph in Multidisciplinary Materials Science via Large Language Model](https://arxiv.org/abs/2404.03080)：利用大语言模型构建并应用跨学科材料知识图谱。
+- [LLM-SR: Scientific Equation Discovery via Programming with Large Language Models](https://arxiv.org/abs/2404.18400)：通过演化式程序搜索发现科学方程，由 LLM 基于科学先验提出方程骨架，再用数据拟合优化参数。
+- [AlabOS: A Python-based Reconfigurable Workflow Management Framework for Autonomous Laboratories](https://arxiv.org/abs/2405.13930)：提供自治实验室工作流管理，用模块化实验任务和资源预约机制并行编排合成与表征流程，避免设备冲突。
+- [RS-Agent: Automating Remote Sensing Tasks through Intelligent Agent](https://arxiv.org/abs/2406.07089)：用 LLM 中央控制器、动态工具执行、任务感知检索和 DualRAG 规划并执行多类遥感任务工作流。
+- [LLMatDesign: Autonomous Materials Discovery with Large Language Models](https://arxiv.org/abs/2406.13163)：把用户材料设计目标转化为 LLM agent 的材料修改与工具评估循环，并通过自反思在小数据场景下调整设计。
+- [Leveraging Chemistry Foundation Models to Facilitate Structure Focused Retrieval Augmented Generation in Multi-Agent Workflows for Catalyst and Materials Design](https://arxiv.org/abs/2408.11793)：把化学基础模型嵌入接入多智能体 RAG 流程，使催化剂与材料设计 agent 能检索结构相关证据，而不只依赖文本相似度。
+- [HoneyComb: A Flexible LLM-Based Agent System for Materials Science](https://arxiv.org/abs/2409.00135)：结合 MatSciKB、归纳构建的 ToolHub 和自适应检索，让材料 agent 能在文献证据与 API 工具之间选择以完成领域推理和计算。
+- [A Journey With THeSeuSS: Automated Python Tool for Modeling IR and Raman Vibrational Spectra of Molecules and Solids](https://arxiv.org/abs/2409.06597)：把 DFT 和 DFTB 振动光谱仿真封装成自动化 Python 工作流，用于预测 IR 与 Raman 光谱并和既有计算及实验结果对照。
+- [Interpreting Multi-band Galaxy Observations with Large Language Model-Based Agents](https://arxiv.org/abs/2409.14807)：用 mephisto 多 agent 框架调用 CIGALE 星系光谱能量分布模型，通过树搜索和动态知识库解释 JWST 多波段星系观测。
+- [dZiner: Rational Inverse Design of Materials with AI Agents](https://arxiv.org/abs/2410.03963)：实现用于材料逆向设计的化学家 agent，结合文献上下文、第一性原理计算和物理约束代理模型提出具有目标性质的化合物。
+- [LLM-based SPARQL Query Generation from Natural Language over Federated Knowledge Graphs](https://arxiv.org/abs/2410.06062)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [HLM-Cite: Hybrid Language Model Workflow for Text-based Scientific Citation Prediction](https://arxiv.org/abs/2410.09112)：用混合语言模型流程预测科学引文，先缩小候选论文集合，再推理论文间隐含逻辑关系，避免只按表面文本相似度匹配引用。
+- [Real-time experiment-theory closed-loop interaction for autonomous materials science](https://arxiv.org/abs/2410.17430)：展示 AMASE 自驱材料闭环，让机器人实验和计算预测反复交互以快速绘制温度-成分相图。
+- [ChemToolAgent: The Impact of Tools on Language Agents for Chemistry Problem Solving](https://arxiv.org/abs/2411.07228)：把 ChemCrow 扩展为化学工具使用评测 harness，并通过专家错误分析区分专用合成工具有帮助的任务和主要依赖化学推理的任务。
+- [Botfip-LLM: An Enhanced Multimodal Scientific Computing Framework Leveraging Knowledge Distillation from Large Language Models](https://arxiv.org/abs/2411.15525)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Automating quantum computing laboratory experiments with an agent-based AI framework](https://arxiv.org/abs/2412.07978)：提出 k-agents，用实验室知识 agent 和执行 agent 将量子实验拆成状态机，分析结果并驱动超导量子硬件上的闭环状态转移。
+- [Magneto: Combining Small and Large Language Models for Schema Matching](https://arxiv.org/abs/2412.08194)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [A Library for Learning Neural Operators](https://arxiv.org/abs/2412.10354)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [An automated framework for exploring and learning potential-energy surfaces](https://arxiv.org/abs/2412.16736)：提供 autoplex 工作流，用于自动探索势能面、拟合原子间势函数，并和原子级仿真软件互操作。
+- [LLM Agent for Fire Dynamics Simulations](https://arxiv.org/abs/2412.17146)：围绕 FireFOAM 构建 FoamPilot，支持检索求解器代码、用自然语言配置算例、提交 HPC 作业并初步分析仿真结果。
+- [TGformer: A Graph Transformer Framework for Knowledge Graph Embedding](https://doi.org/10.1109/tkde.2024.3486747)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Transforming Research Laboratories with Connected Digital Twins](https://doi.org/10.1016/j.ynexs.2024.100004)：提出面向科学知识的智能体流程或编排模式。
+- [Knowledge Graphs - The Future of Integration in CRIS Systems for Uses of Assistance to Scientific Reasoning](https://doi.org/10.1016/j.procs.2024.11.072)：围绕 Knowledge Graphs - The Future of Integration in CRIS Systems for Uses of Assistance to Scientific Reasoning 构建外部工作流、检索、工具使用、记忆或编排层。
 - [Agent Laboratory](https://arxiv.org/abs/2501.04227)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)）：面向科研助手的多阶段工作流；覆盖文献检索、实验执行与报告写作。
+- [ChemAgent: Self-updating Library in Large Language Models Improves Chemical Reasoning](https://arxiv.org/abs/2501.06590)：ChemAgent 通过自更新库和工具化推理处理化学任务，适合 Scientific Knowledge Agent Harness。
+- [MOFA: Discovering Materials for Carbon Capture with a GenAI- and Simulation-Based Workflow](https://arxiv.org/abs/2501.10651)：提供开放的 GenAI 与仿真结合工作流，在高性能计算系统上进行高通量金属有机框架发现，串联生成、筛选、仿真与在线学习。
+- [Hypothesis Generation for Materials Discovery and Design Using Goal-Driven and Constraint-Guided LLM Agents](https://arxiv.org/abs/2501.13299)：可作为科学知识与科研发现的 Agent Harness 候选：围绕 Hypothesis Generation for Materials Discovery and Design Using Goal-Driven and Constraint-Guided LLM Agents 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [FACTS&EVIDENCE: An Interactive Tool for Transparent Fine-Grained Factual Verification of Machine-Generated Text](https://arxiv.org/abs/2503.14797)：透明细粒度事实核查交互工具。核心思想：超越二分类事实性分数，暴露证据和 claim 级检查过程。
+- [HyperNOs: Automated and Parallel Library for Neural Operators Research](https://arxiv.org/abs/2503.18087)：把 Fourier 与卷积神经算子接入 Ray Tune 超参数搜索、并行执行和多数据集训练流程，自动化神经算子研究。
 - [AgentRxiv](https://arxiv.org/abs/2503.18102)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)）：共享式研究记忆与协作预印本服务器；让研究 agent 能上传、检索并复用前序结果。
+- [A Multi-Agent Framework Integrating Large Language Models and Generative AI for Accelerated Metamaterial Design](https://arxiv.org/abs/2503.19889)：用 CrossMatAgent 协调图案分析、结构合成、提示工程和监督 agent，生成可仿真且可 3D 打印的超材料设计。
+- [FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modelingg](https://arxiv.org/abs/2503.19940)：面向科学知识与科学建模，补充智能体工作流、编排模式、工具循环、记忆机制或多智能体框架。
+- [AstroAgents: A Multi-Agent AI for Hypothesis Generation from Mass Spectrometry Data](https://arxiv.org/abs/2503.23170)：基于质谱数据生成假设的多代理系统。核心思想是用 agent 协作把科学测量结果转化为候选假设。
+- [LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph](https://arxiv.org/abs/2504.03137)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [CollEX - A Multimodal Agentic RAG System Enabling Interactive Exploration of Scientific Collections](https://arxiv.org/abs/2504.07643)：可作为科学知识与科研发现的 Agent Harness 候选：围绕 CollEX - A Multimodal Agentic RAG System Enabling Interactive Exploration of Scientific Collections 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [The AI Scientist-v2](https://arxiv.org/abs/2504.08066)（[开源代码](https://github.com/SakanaAI/AI-Scientist-v2)）：端到端自动科研系统；核心思想是用 agentic tree search 和实验管理 agent 迭代生成假设、运行实验、分析结果、绘图并撰写论文。
+- [AI-University: An LLM-based platform for instructional alignment to scientific classrooms](https://arxiv.org/abs/2504.08846)：构建面向Scientific Knowledge任务的智能体工作流或工具调用系统。
+- [Adaptive AI decision interface for autonomous electronic material discovery](https://arxiv.org/abs/2504.13344)：构建面向scientific knowledge, materials, climate, or autonomous discovery的外部流程，补充工具调用、编排或执行闭环覆盖。
+- [Reshaping MOFs synthesis conditions mining with a dynamic multi-agents framework of large language model](https://arxiv.org/abs/2504.18880)：用动态多 agent LLM 框架从论文全文中挖掘 MOF 合成条件。核心思想：协调专项抽取、检查和修复 agents，把文献转成 synthesis-condition tables，而不是只依赖摘要或人工整理。
+- [Predicting neutron experiments from first principles: A workflow powered by machine learning](https://arxiv.org/abs/2504.19352)：用机器学习驱动流程从第一性原理预测中子实验。
+- [PhenoAssistant: A Conversational Multi-Agent AI System for Automated Plant Phenotyping](https://arxiv.org/abs/2504.19818)：让植物科学用户用自然语言驱动表型分析，由 LLM 编排表型抽取、数据可视化和模型训练工具。
+- [Foam-Agent: Towards Automated Intelligent CFD Workflows](https://arxiv.org/abs/2505.04997)：Foam-Agent 将 CFD 多阶段流程封装成多代理自动化 workflow，属于科学计算 agent harness。
+- [Multicrossmodal Automated Agent for Integrating Diverse Materials Science Data](https://arxiv.org/abs/2505.15132)：使用自动化智能体整合多种材料科学数据模态。
+- [Apax: A Flexible and Performant Framework for the Development of Machine-Learned Interatomic Potentials](https://arxiv.org/abs/2505.22168)：为科学知识构建智能体、工作流、工具或系统脚手架，因此更适合作为 Agent Harness 候选。
 - [SafeScientist](https://arxiv.org/abs/2505.23559)（[开源代码](https://github.com/ulab-uiuc/SafeScientist)）：面向科研 agent 的风险感知 harness；核心思想是在任务输入、协作讨论、工具调用和伦理审稿环节加入安全监控，用 SciSafetyBench 检验拒答与风险规避能力。
+- [MACS: Multi-Agent Reinforcement Learning for Optimization of Crystal Structures](https://arxiv.org/abs/2506.04195)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
 - [Materials Discovery Agents](https://arxiv.org/abs/2506.05616)：面向材料发现的科学智能体 harness。核心思想是结合规划、物理约束评估与科学家反馈，让自治发现智能体能在领域约束下提出并修正实验。
 - [AlphaEvolve](https://arxiv.org/abs/2506.13131)（开源代码：暂未见稳定公开官方仓库）：面向科学与算法发现的演化式 coding agent；核心思想是让 LLM 直接修改程序，并通过一个或多个自动 evaluator 的反馈进行群体式搜索与迭代优化。
+- [LLM-guided Chemical Process Optimization with a Multi-Agent Approach](https://arxiv.org/abs/2506.20921)：用 constraint generation、parameter validation、simulation 和 optimization guidance 等专门 agent，使化工过程优化能从极简工艺描述开始，而不必预先给定操作边界。
+- [Doc2SAR: A Synergistic Framework for High-Fidelity Extraction of Structure-Activity Relationships from Scientific Documents](https://arxiv.org/abs/2506.21625)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [TeamMedAgents: Pareto-Efficient Multi-Agent Medical Reasoning Through Teamwork Theory](https://arxiv.org/abs/2508.08115)：基于 teamwork theory 的多 agent 医学推理框架。核心思想是用团队角色与协调模式组织专科医学 agent，以提升更低成本的临床推理能力。
+- [MCP-enabled LLM for meta-optics inverse design: leveraging differentiable solver without LLM expertise](https://arxiv.org/abs/2508.10277)：补充面向科学知识与科研推理能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [Operating advanced scientific instruments with AI agents that learn on the job](https://arxiv.org/abs/2509.00098)：构建面向scientific knowledge, materials, climate, or autonomous discovery的外部流程，补充工具调用、编排或执行闭环覆盖。
+- [ChemBOMAS: Accelerated BO in Chemistry with LLM-Enhanced Multi-Agent System](https://arxiv.org/abs/2509.08736)：结合 LLM 生成伪数据、混合 RAG 引导的搜索空间划分和 UCB 子空间选择，加速化学贝叶斯优化。
+- [SciML Agents: Write the Solver, Not the Solution](https://arxiv.org/abs/2509.09936)：面向科学机器学习的 agent 工作流，重点是写 solver 而非直接给答案。核心思想是让 agent 为科学问题构造可复用计算求解器。
+- [Towards Fully Automated Molecular Simulations: Multi-Agent Framework for Simulation Setup and Force Field Extraction](https://arxiv.org/abs/2509.10210)：可作为科学知识与科研发现的 Agent Harness 候选：围绕 Towards Fully Automated Molecular Simulations: Multi-Agent Framework for Simulation Setup and Force Field Extraction 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [MatSKRAFT: A framework for large-scale materials knowledge extraction from scientific tables](https://arxiv.org/abs/2509.10448)：把文献表格转成图表示并交给约束驱动 GNN 处理，从数万篇论文中规模化抽取材料性质和组成信息。
+- [Eigen-1](https://arxiv.org/abs/2509.21193)：结合隐式检索与自适应多 agent refinement 的科学推理 harness。核心思想：用 monitor-based token-level retrieval、分层解答修复和质量感知迭代推理提升高难科学问答，同时降低工具调用和 token 开销。
+- [Steering an Active Learning Workflow Towards Novel Materials Discovery via Queue Prioritization](https://arxiv.org/abs/2509.25538)：通过队列优先级引导主动学习流程走向新材料发现，补充科学搜索的工作流控制。
+- [ArgoLOOM: agentic AI for fundamental physics from quarks to cosmos](https://arxiv.org/abs/2510.02426)：提出面向基础物理的 agentic 框架，连接宇宙学、对撞机物理和核科学的计算工具，使发现流程能够复用分析和观测量。
+- [Agentic Additive Manufacturing Alloy Evaluation](https://arxiv.org/abs/2510.02567)：通过 MCP 调用 thermophysical property diagram 和 lack-of-fusion process map 等工具，让 agent 分析 SS316L、IN718 及成分变体，并根据工具结果动态调整合金评估轨迹。
+- [Zephyrus: An Agentic Framework for Weather Science](https://arxiv.org/abs/2510.04017)：面向天气科学的 agentic framework。核心思想是连接结构化天气基础模型和 LLM 推理，支持交互式气象工作流。
+- [Biomedical reasoning in action: Multi-agent System for Auditable Biomedical Evidence Synthesis](https://arxiv.org/abs/2510.05335)：面向 biomedical evidence synthesis 的可审计多 agent 系统。核心思想是协调模块化 agent 整合证据，并为生物医学研究问题暴露推理轨迹。
+- [Hypothesis Hunting with Evolving Networks of Autonomous Scientific Agents](https://arxiv.org/abs/2510.08619)：用 autonomous scientific agents 搜索演化假设网络的框架。核心思想是让 agent 在大型科学数据集中持续探索候选假设，支持开放式发现。
+- [LeMat-Synth: a multi-modal toolbox to curate broad synthesis procedure databases from scientific literature](https://arxiv.org/abs/2510.26824)：提供多模态工具箱，从科学文献中整理大规模合成步骤数据库。
+- [Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders](https://arxiv.org/abs/2511.06846)：面向科学知识与科学建模能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [SciAgent](https://arxiv.org/abs/2511.08151)：面向通用科学推理的统一多代理框架。核心思想是由 coordinator 判断题目领域和难度，再编排符号推导、概念建模、数值计算和验证 worker systems 来处理奥赛级科学任务。
+- [LOCA](https://arxiv.org/abs/2511.10515)：面向奥赛级物理题的推理 agent harness；核心思想：把长解答拆成序列化、可验证的原子步骤，并在生成最终答案前通过 augment-review 循环反复修正。
+- [CoSineVerifier](https://arxiv.org/abs/2512.01224)：面向计算型科学问题的工具增强答案验证器。核心思想：调用外部执行器处理代数等价、符号化简和物理常数代入，避免把答案验证简化成语义匹配。
+- [Exploring LLMs for Scientific Information Extraction Using The SciEx Framework](https://arxiv.org/abs/2512.10004)：把 PDF parsing、多模态检索、抽取和聚合拆成可组合的科学信息抽取框架，使 schema 或 ontology 快速变化时不必重建整条 pipeline。
+- [AGAPI-Agents: An Open-Access Agentic AI Platform for Accelerated Materials Design on AtomGPT.org](https://arxiv.org/abs/2512.11935)：提供开放的材料设计智能体平台，编排 LLM 与材料科学 API 来完成数据检索、建模和多步骤设计流程。
+- [AI4EOSC: a Federated Cloud Platform for Artificial Intelligence in Scientific Research](https://arxiv.org/abs/2512.16455)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Beyond designer’s knowledge: Generating materials design hypotheses via a large language model](https://doi.org/10.1016/j.actamat.2025.121307)：围绕 Scientific Knowledge 能力补充《Beyond designer’s knowledge: Generating materials design hypotheses via a large language model》这一路线，将其作为 Agent Harness 条目记录。
+- [From LLM to Agent: A large-language-model-driven machine learning framework for catalyst design of MgH2 dehydrogenation](https://doi.org/10.1016/j.jma.2025.08.021)：使用 LLM 驱动的机器学习框架形成催化剂设计智能体流程。
+- [Cloud synthesis: a global closed-loop feedback powered by autonomous AI-driven catalyst design agent](https://doi.org/10.20517/aiagent.2025.02)：描述闭环自治 AI 催化剂设计智能体。
+- [From pages to patterns: Towards extracting catalytic knowledge from structure and text for transition-metal complexes and metal-organic frameworks](https://doi.org/10.1016/j.jcat.2025.116174)：提供面向科学知识、材料、气候、化学或物理能力的智能体工作流、编排模式或工具使用系统。
+- [Unlocking deep eutectic solvent knowledge through a large language model-driven framework and an interactive AI agent](https://doi.org/10.1016/j.gce.2025.05.006)：补充智能体工作流，主要面向 Scientific Knowledge。
+- [A general LLM-powered text mining framework: Applied to extract high entropy alloys](https://doi.org/10.1016/j.commatsci.2025.114476)：围绕 A general LLM-powered text mining framework: Applied to extract high entropy alloys 构建外部工作流、检索、工具使用或智能体编排方法。
+- [Advancing Scientific Workflows: A Human-LLM Note-Taking System with Case-Based Reasoning](https://doi.org/10.1109/cai64502.2025.00055)：围绕 Advancing Scientific Workflows: A Human-LLM Note-Taking System with Case-Based Reasoning 构建外部工作流、检索、工具使用或智能体编排方法。
+- [Harnessing AI for Understanding Scientific Literature: Innovations and Applications of Chat-Agent System in Battery Recycling Research](https://doi.org/10.1016/j.mtener.2025.101818)：构建面向科学知识任务的工作流、工具循环、检索管线或多智能体执行框架。
+- [Chat-microreactor: A large-language-model-based assistant for designing continuous flow systems](https://doi.org/10.1016/j.ces.2025.121567)：作为科学知识的智能体框架条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [PlantScience.ai: An LLM-Powered Virtual Scientist for Plant Science](https://doi.org/10.1101/2025.10.24.684337)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [From task-specific language models to research agents](https://doi.org/10.1016/j.ailsci.2025.100141)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [FinGPT-Agent: An Advanced Framework for Multimodal Research Report Generation with Task-Adaptive Optimization and Hierarchical Attention](https://doi.org/10.1109/nnice64954.2025.11064539)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Automated extraction of materials system charts using a large language model framework](https://doi.org/10.1016/j.scriptamat.2025.116815)：面向科学知识与科学建模，补充智能体工作流、编排模式、工具循环、记忆机制或多智能体框架。
+- [EVA: An Efficient and Versatile Generative Engine for Targeted Discovery of Novel Analog Circuits](https://doi.org/10.1109/dac63849.2025.11133012)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Uncovering novel scientific insights with a synergistic GNN-LLM framework](https://doi.org/10.1016/j.knosys.2025.114527)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Multi-agent coordination of data-driven and physics-based models for automated design of ultra-high-performance concrete beams](https://doi.org/10.1016/j.aei.2025.104297)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [BioLabAgents: A Multi-Agent Framework for Scientific Idea Generation and Evaluation on Biomedical Research Trajectories](https://doi.org/10.1109/bibm66473.2025.11356120)：面向生物医学科学想法生成与评估的多 agent 框架。核心思想是协调多个 agent 基于生物医学研究轨迹提出并评估研究想法。
+- [TrustSciAgent: Towards Rigorous and Trustworthy Agents for Scientific Research](https://doi.org/10.1109/trustcom66490.2025.00384)：面向科学研究的可信 agent 框架。核心思想是用 evidence-reasoning-validation pipeline 让科学 agent 产出更严谨、可验证的结果。
+- [From Text to Simulation: A Multi-Agent LLM Workflow for Automated Chemical Process Design](https://arxiv.org/abs/2601.06776)：通过任务理解、拓扑生成、参数配置和评估分析四类专门 agent，把文本工艺说明转成经验证的仿真流程图。
+- [Agentic AI and Machine Learning for Accelerated Materials Discovery and Applications](https://arxiv.org/abs/2601.09027)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Literature-driven scientific theory generation](https://arxiv.org/abs/2601.16282)：一种从文献规模化合成定性和定量科学理论的 pipeline。核心思想：基于大规模源论文生成理论，并检验文献 grounding 是否比参数记忆生成更能匹配既有证据、预测后续研究结果。
+- [Polymer-Agent](https://arxiv.org/abs/2601.16376)：提供面向早期聚合物发现的终端式闭环，把 LLM 推理与性质预测、按性质引导的 SMILES 生成、结构修改、合成可达性和合成复杂度过滤结合起来，使候选聚合物更接近可合成的单体级结构。
+- [El Agente S\'olido: A New Age(nt) for Solid State Simulations](https://arxiv.org/abs/2602.17886)：把自然语言固态模拟目标转化为分层 Quantum ESPRESSO 工作流，覆盖结构生成、输入构造、执行与后处理。
+- [LAMMI-Pathology: A Tool-Centric Bottom-Up LVLM-Agent Framework for Molecularly Informed Medical Intelligence in Pathology](https://arxiv.org/abs/2602.18773)：面向面向分子信息病理推理的工具中心 LVLM-agent 编排的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [EmbodiedAct](https://arxiv.org/abs/2602.20639)：把 LLM grounded 到科学仿真软件具身动作中的科学发现 harness。核心思想：把被动的“执行后回答”流程改成紧密的感知-执行循环，使 agent 能发现数值异常、主动干预并稳定长程科学建模任务。
+- [A Novel Multi-Agent Architecture to Reduce Hallucinations of Large Language Models in Multi-Step Structural Modeling](https://arxiv.org/abs/2603.07728)：协调专门化智能体完成 OpenSeesPy 结构建模与分析，降低长步骤工程工作流中的幻觉和错误累积。
+- [From Phase Prediction to Phase Design: A ReAct Agent Framework for High-Entropy Alloy Discovery](https://arxiv.org/abs/2603.11068)：用 ReAct agent framework 将高熵合金研究从相预测推进到相设计。
+- [Mimosa](https://arxiv.org/abs/2603.28986)：面向自主科学研究的自演化多智能体框架。核心思想：通过 MCP 发现工具，由 meta-orchestrator 生成任务特定 workflow 拓扑，让代码生成 agent 执行子任务，并根据实验反馈和完整日志迭代改进 workflow。
+- [PolyJarvis: LLM Agent for Autonomous Polymer MD Simulations](https://arxiv.org/abs/2604.02537)：通过 MCP server 连接 LLM 与 RadonPy，让聚合物 MD 从自然语言输入一路执行单体构建、力场设置、平衡和性质抽取。
+- [From Papers to Property Tables: A Priority-Based LLM Workflow for Materials Data Extraction](https://arxiv.org/abs/2604.07584)：用三层优先级从完整论文抽取 shock-physics shot-level 记录：先直接从正文或表格抽取，再用经验证的控制方程推导，最后在必要时做图像数字化，并统一单位和做物理合理性校验。
+- [Multi-Agent Orchestration for High-Throughput Materials Screening on a Leadership-Class System](https://arxiv.org/abs/2604.07681)：在 leadership-class computing systems 上编排多智能体进行高通量材料筛选。
+- [Mechanistic Interpretability Tool for AI Weather Models](https://arxiv.org/abs/2604.20467)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Enhancing Research Idea Generation through Combinatorial Innovation and Multi-Agent Iterative Search Strategies](https://arxiv.org/abs/2604.20548)：面向研究想法生成的 agent harness。核心思想是让多个 agent 在既有知识组合空间中迭代提出、批判和改进候选想法。
+- [Dr.Sai: An agentic AI for real-world physics analysis at BESIII](https://arxiv.org/abs/2604.22541)：用多 agent 工作流把自然语言任务转为 BESIII 真实高能物理分析中的仿真、重建和统计分析步骤。
+- [Born-Qualified: An Autonomous Framework for Deploying Advanced Energy and Electronic Materials](https://arxiv.org/abs/2605.00639)：围绕 Born-Qualified: An Autonomous Framework for Deploying Advanced Energy and Electronic Materials 构建外部工作流、检索、工具使用或智能体编排方法。
+- [KAISA: Knowledge And Internal States Augmented Agent for Chemistry Knowledge Question Answering](https://doi.org/10.1109/iccece69169.2026.11399756)：用知识与内部状态增强化学问答智能体。
+- [KnowMat](https://doi.org/10.1007/s40192-026-00455-4)（[开源代码](https://github.com/hasan-sayeed/KnowMat2)）：把材料科学全文 PDF 和表格解析为 schema-aligned JSON；当 evaluator 发现覆盖缺口时会重跑抽取，再由两阶段 manager 聚合、校验和纠错，同时保留作者原始表述和数值 surrogate。
+- [SciTrue](https://doi.org/10.18653/v1/2026.eacl-demo.27)：具备来源级问责的科学 claim verification 系统。核心思想是把每个 claim 组成部分连接到可检查的科学证据，使归因和上下文对齐可以被审计。
+- [Development of an LLM-Driven Abaqus MCP-Integrated Finite Element Analysis Automation System with Hallucination Suppression and Performance Improvement](https://doi.org/10.7734/coseik.2026.39.2.123)：用 LLM 驱动并集成 MCP 的工作流自动化 Abaqus 有限元分析，同时抑制幻觉并提升执行效果。
+- [A Generalizable Automated Geophysical Agent Workflow for Accessible Subsurface Hydrology Analysis](https://doi.org/10.1016/j.bdes.2026.100042)：提供可泛化的 agent workflow，用于更易获取的地下水文分析。
+- [From trial-and-error to intelligent workflows: machine learning and simulations for scalable 2D material synthesis](https://doi.org/10.1088/2053-1583/ae2692)：围绕 From trial-and-error to intelligent workflows: machine learning and simulations for scalable 2D material synthesis 构建外部工作流、检索、工具使用或智能体编排方法。
+- [Agent-Enhanced Heterogeneous Graph RAG for Academic Question Answering](https://doi.org/10.1145/3774904.3792960)：面向异构学术图的科学 RAG harness。核心思想是按查询复杂度自适应检索，并在回答学术问题前检查证据是否充分。
+- [A self-correcting multi-agent LLM framework for language-based physics simulation and explanation](https://doi.org/10.1038/s44387-025-00057-z)：使用自纠错多智能体 LLM 框架进行基于语言的物理仿真与解释，为科学推理补充物理工作流智能体框架。
+- [Agentic Knowledge Graphs of the LiFePO 4 Cathode for Lithium Ion Battery: Balancing Discovery and Stability with LLMs](https://doi.org/10.1021/acs.jcim.5c02572)：用 LLM 支持的 agentic knowledge graphs 组织 LiFePO4 正极研究，在材料发现与稳定性证据之间做平衡。
+- [An automatic end-to-end chemical synthesis development platform powered by large language models](https://doi.org/10.1038/s41467-024-54457-x)：[An automatic end-to-end chemical synthesis development platform powered by large language models](https://doi.org/10.1038/s41467-024-54457-x): 构建由大语言模型驱动的端到端化学合成开发平台.
+- [Universal machine learning aided synthesis approach of two-dimensional perovskites in a typical laboratory](https://doi.org/10.1038/s41467-023-44236-5)：[Universal machine learning aided synthesis approach of two-dimensional perovskites in a typical laboratory](https://doi.org/10.1038/s41467-023-44236-5): 用机器学习辅助典型实验室自动合成二维钙钛矿.
+- [A dynamic knowledge graph approach to distributed self-driving laboratories](https://doi.org/10.1038/s41467-023-44599-9)：[A dynamic knowledge graph approach to distributed self-driving laboratories](https://doi.org/10.1038/s41467-023-44599-9): 用动态知识图谱支持分布式自驱实验室.
+- [Closed-loop transfer enables artificial intelligence to yield chemical knowledge](https://doi.org/10.1038/s41586-024-07892-1)：[Closed-loop transfer enables artificial intelligence to yield chemical knowledge](https://doi.org/10.1038/s41586-024-07892-1): 通过闭环迁移让 AI 产出化学知识.
+- [Closed-Loop Framework for Discovering Stable and Low-Cost Bifunctional Metal Oxide Catalysts for Efficient Electrocatalytic Water Splitting in Acid](https://doi.org/10.1021/jacs.5c04079)：构建用于发现稳定低成本双功能催化剂的闭环发现框架。
+- [Large language models for causal hypothesis generation in science](https://doi.org/10.1088/2632-2153/ada47f)：围绕 Scientific Knowledge 能力补充《Large language models for causal hypothesis generation in science》这一路线，将其作为 Agent Harness 条目记录。
+- [Annotating Materials Science Text: A Semi-automated Approach for Crafting Outputs with Gemini Pro](https://doi.org/10.1007/s40192-024-00356-4)：围绕 Scientific Knowledge 能力补充《Annotating Materials Science Text: A Semi-automated Approach for Crafting Outputs with Gemini Pro》这一路线，将其作为 Agent Harness 条目记录。
+- [Mining Solid-State Electrolytes from Metal-Organic Framework Databases through Large Language Models and Representation Clustering.](https://doi.org/10.1021/jacs.5c12212)：结合 LLM 与表示聚类从 MOF 数据库中挖掘固态电解质。
+- [CatFlow: An Automated Workflow for Training Machine Learning Potentials to Compute Free Energies in Dynamic Catalysis](https://doi.org/10.1021/acs.jpcc.4c05568)：自动训练机器学习势函数以计算动态催化中的自由能。
+- [Catalysis AI Agent Guides Discovering the Universal Design Principle of Cu‐Based Single‐Atom Alloy Catalysts for CO2 Electroreduction](https://doi.org/10.1002/anie.202524612)：使用催化 AI 智能体指导催化剂设计原则发现。
+- [An automated evaluation agent for Q&A pairs and reticular synthesis conditions](https://doi.org/10.1039/d5dd00413f)：构建用于科学问答对与 reticular synthesis 条件的自动评估智能体，体现化学工作流中的智能体式评估。
+- [Intelligent Systems for Inorganic Nanomaterial Synthesis](https://doi.org/10.3390/nano15080631)：提供面向科学知识、材料、气候、化学或物理能力的智能体工作流、编排模式或工具使用系统。
+- [SciAgents: Automating Scientific Discovery Through Bioinspired Multi‐Agent Intelligent Graph Reasoning](https://doi.org/10.1002/adma.202413523)：补充智能体工作流，主要面向 Scientific Knowledge。
+- [Delocalized, asynchronous, closed-loop discovery of organic laser emitters](https://doi.org/10.1126/science.adk9227)：补充智能体工作流，主要面向 Scientific Knowledge。
+- [Reproducibility in automated chemistry laboratories using computer science abstractions](https://doi.org/10.1038/s44160-024-00649-8)：围绕Scientific Knowledge补充《Reproducibility in automated chemistry laboratories using computer science abstractions》这一智能体流程、编排或运行时框架。
+- [A document-level information extraction pipeline for layered cathode materials for sodium-ion batteries](https://doi.org/10.1038/s41597-024-03196-1)：为科学知识构建智能体、工作流、工具或系统脚手架，因此更适合作为 Agent Harness 候选。
+- [Automated Benchtop Synthesis of a Quadrillion-Plus Member Core@Multishell Nanoparticle Library Using a Massively Generalizable Nanochemical Reaction.](https://doi.org/10.1021/acsnano.5c15984)：构建面向scientific knowledge, materials, climate, or autonomous discovery的外部流程，补充工具调用、编排或执行闭环覆盖。
+- [Automating structure–activity analysis for electrochemical nitrogen reduction catalyst design through multi-agent collaborations](https://doi.org/10.1093/nsr/nwaf372)：构建面向scientific knowledge, materials, climate, or autonomous discovery的外部流程，补充工具调用、编排或执行闭环覆盖。
+- [Autonomous Synthesis and Inverse Design of Electrochromic Polymers with High Efficiency and Accuracy.](https://doi.org/10.1021/jacs.5c12241)：构建面向scientific knowledge, materials, climate, or autonomous discovery的外部流程，补充工具调用、编排或执行闭环覆盖。
+- [Usability and extensibility: imperatives for next-generation LLM agents in chemistry](https://doi.org/10.1007/s11426-025-3262-6)：围绕 Scientific Knowledge 能力补充《Usability and extensibility: imperatives for next-generation LLM agents in chemistry》，作为 Agent Harness 条目候选。
+- [AutoSEE: An Artificial Intelligence Agent for Automated Solid Electrolyte Exploration](https://doi.org/10.1021/acsenergylett.6c00020)：围绕 AutoSEE: An Artificial Intelligence Agent for Automated Solid Electrolyte Exploration 构建外部工作流、检索、工具使用或智能体编排方法。
+- [Autonomous Chemistry and Materials Innovation Driven by Scientific Agents](https://doi.org/10.1021/jacsau.6c00213)：围绕 Autonomous Chemistry and Materials Innovation Driven by Scientific Agents 构建外部工作流、检索、工具使用或智能体编排方法。
+- [Named Entity Recognition Models for Machine Learning Interatomic Potentials: A User‐Centric Approach to Knowledge Extraction from Scientific Literature](https://doi.org/10.1002/aidi.202500036)：围绕 Named Entity Recognition Models for Machine Learning Interatomic Potentials: A User‐Centric Approach to Knowledge Extraction from Scientific Literature 构建外部工作流、检索、工具使用或智能体编排方法。
+- [From Literature to Lab: Hardware-Independent Autonomous Chemical Synthesis with Reinforcement Learning](https://doi.org/10.1145/3701716.3715178)：围绕 From Literature to Lab: Hardware-Independent Autonomous Chemical Synthesis with Reinforcement Learning 构建外部工作流、检索、工具使用或智能体编排方法。
+- [Superlative mechanical energy absorbing efficiency discovered through self-driving lab-human partnership](https://doi.org/10.1038/s41467-024-48534-4)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Active Learning Guided Discovery of High Entropy Oxides Featuring High H2-production.](https://doi.org/10.1021/jacs.4c06272)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [An integrated self-optimizing programmable chemical synthesis and reaction engine](https://doi.org/10.1038/s41467-024-45444-3)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [A high-throughput experimentation platform for data-driven discovery in electrochemistry](https://doi.org/10.1126/sciadv.adu4391)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [LASP to the Future of Atomic Simulation: Intelligence and Automation](https://doi.org/10.1021/prechem.4c00060)：提供面向 Scientific Knowledge 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [AURORA - An Automatic Robotic Platform for Materials Discovery](https://doi.org/10.1021/acsami.5c02605)：构建面向Scientific Knowledge任务的智能体工作流或工具调用系统。
+- [ReactionSeek: LLM-powered literature data mining and knowledge discovery in organic synthesis](https://doi.org/10.1038/s41467-026-70180-1)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [AI Agents for Enabling Autonomous Experiments at ORNL’s HPC and Manufacturing User Facilities](https://doi.org/10.1145/3731599.3767592)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Accelerating the Discovery of Abiotic Vesicles with AI-Guided Automated Experimentation.](https://doi.org/10.1021/acs.langmuir.4c04181)：提出科学知识方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Agentic AI scientists and the rise of virtual laboratories](https://doi.org/10.1097/ms9.0000000000004925)：提出面向科学知识与自主发现的智能体工作流或编排框架。
+- [schema-miner pro: Agentic AI for Ontology Grounding Over LLM-Discovered Scientific Schemas in a Human-in-the-Loop Workflow](https://doi.org/10.1177/22104968261431521)：提出面向科学知识与自主发现的智能体工作流或编排框架。
+- [Intelligent, Personalized Scientific Assistant via Large Language Models for Solid-State Battery Research](https://doi.org/10.1021/acsmaterialslett.4c02674)：提出面向科学知识的智能体流程或编排模式。
+- [A Self-Driving Lab for Nano- and Advanced Materials Synthesis](https://doi.org/10.1021/acsnano.4c17504)：补充科学知识方向可复用的编排、提示、规划、工具使用、记忆或环境管理逻辑。
+- [DietNerd: A Nutrition Question-Answering System That Summarizes and Evaluates Peer-Reviewed Scientific Articles](https://doi.org/10.3390/app14199021)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Self-exploring automated experiments for discovery, optimization, and control of unsteady vortex-dominated flow phenomena](https://doi.org/10.1103/physrevfluids.9.124701)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Materials Informatics Framework for Accelerated Discovery of High-Refractive-Index 2D Materials](https://doi.org/10.1021/acsnano.5c10644)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [AP‐Lab: An AI‐Driven Autonomous Pilot‐Scale Platform Bridging Materials Discovery and Industrial Manufacturing](https://doi.org/10.1002/advs.74293)：构建面向科学知识任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Causal Discovery through Synergizing Large Language Model and Data-Driven Reasoning](https://doi.org/10.1145/3711896.3736874)：把大模型推理与数据驱动方法结合用于因果发现。
+- [MiRA: A Zero-Shot Mixture-of-Reasoning Agents Framework for Multimodal Answering of Science Questions](https://doi.org/10.3390/app16010372)：用混合推理智能体回答多模态科学问题。
+- [SLM-MATRIX: a multi-agent trajectory reasoning and verification framework for enhancing language models in materials data extraction](https://doi.org/10.1038/s41524-025-01719-x)：面向材料数据抽取的多代理轨迹推理与验证框架。核心思想是结合抽取、推理和验证代理，服务科学信息工作流。
+- [BioR5: A Three-Layer Architecture for Biological Reasoning in Scientific AI](https://doi.org/10.1145/3731599.3767400)：面向科学 AI 中生物推理的三层架构；核心思想是在多种专门生物推理模式和工具之间进行分流，而不是依赖单一通用方法。
+- [GeneAgent: self-verification language agent for gene-set analysis using domain databases](https://doi.org/10.1038/s41592-025-02748-6)：GeneAgent 是带 self-verification 的基因集分析 agent，适合 Scientific Knowledge Agent Harness。

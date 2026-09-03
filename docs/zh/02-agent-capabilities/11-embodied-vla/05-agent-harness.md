@@ -3,80 +3,713 @@
 MineDojo、CALVIN、VIMA 和 LIBERO 本身也是 benchmark-side harness：它们定义环境、观测、动作空间、任务重置和成功检查。可复用设计模式是 `观察多模态状态 -> 解析语言目标 -> 计划/子目标 -> 行动 -> 验证环境状态 -> 恢复`。
 - [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)；[项目页](https://voyager.minedojo.org/)）：经典开放式 Minecraft agent，包含自动课程、code-as-action、执行反馈和持续增长的技能库，直接对应 MineDojo 风格长程具身 agent 评测。
 - [JARVIS-1](https://arxiv.org/abs/2311.05997)（[开源代码](https://github.com/CraftJarvis/JARVIS-1)；[项目页](https://craftjarvis.github.io/JARVIS-1/)）：开放世界 Minecraft 多任务 agent，包含多模态记忆和动作 grounding，可作为 Voyager 之外的历史性游戏 agent harness。
+- [AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents](https://arxiv.org/abs/2401.12963)：用 VLM 做场景理解与 grounding、用 LLM 为机器人集群生成多样且安全的任务指令，并通过遥操作和自主策略采集真实场景 episode。
+- [SERL: A Software Suite for Sample-Efficient Robotic Reinforcement Learning](https://arxiv.org/abs/2401.16013)：提供可复用的机器人强化学习软件 harness，包含离策略学习、奖励计算、环境重置工具和真实机器人训练基础设施。
+- [Multimodal Embodied Interactive Agent for Cafe Scene](https://arxiv.org/abs/2402.00290)：提出 MEIA，用视觉语言场景记忆保存咖啡馆环境信息，并把自然语言服务目标转化为可执行机器人动作计划。
+- [InCoRo: In-Context Learning for Robotics Control with Feedback Loops](https://arxiv.org/abs/2402.05188)：把 LLM 控制器、场景理解单元和机器人反馈闭环组织在一起，使执行命令能随环境变化持续调整。
+- [WebLINX: Real-World Website Navigation with Multi-Turn Dialogue](https://arxiv.org/abs/2402.05930)：定义会话式浏览器控制任务，agent 通过检索式 HTML 剪枝、截图和动作历史来执行多轮网站导航。
+- [Introspective Planning: Aligning Robots' Uncertainty with Inherent Task Ambiguity](https://arxiv.org/abs/2402.06529)：加入基于检索的 uncertainty calibration planner，用内省推理示例把模糊指令匹配到更安全的机器人计划。
+- [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329)：提供可移植机器人教学接口，把示范采集转化为可复用的具身 agent harness。
+- [Probabilistically Correct Language-Based Multi-Robot Planning Using Conformal Prediction](https://arxiv.org/abs/2402.15368)：构建 S-ATLAS 分布式 LLM 规划器，用 conformal prediction 分配不确定性，并为自然语言指令下的机器人团队瞄准用户指定成功率。
+- [Never-Ending Behavior-Cloning Agent for Robotic Manipulation](https://arxiv.org/abs/2403.00336)：通过 skill-shared 3D 语义渲染和表示蒸馏，让语言条件操作 agent 持续吸收新的场景语义和机器人技能。
+- [Hierarchical Diffusion Policy for Kinematics-Aware Multi-Task Robotic Manipulation](https://arxiv.org/abs/2403.03890)：把操作分成高层 next-best-pose 规划器和低层运动学感知 diffusion controller，用于长程多任务机器人动作。
+- [Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation](https://arxiv.org/abs/2403.04436)：提出 H2O 实时遥操作框架，用 RGB 相机人体动作、sim-to-data 筛选和全身动作模仿器把人类动作迁移到真实 humanoid。
+- [DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation](https://arxiv.org/abs/2403.07788)：提供面向灵巧操作的可扩展、可移植动捕数据采集系统。
+- [TeleMoMa: A Modular and Versatile Teleoperation System for Mobile Manipulation](https://arxiv.org/abs/2403.07869)：把 RGB-D 相机、VR 控制器、键盘和摇杆等接口统一成模块化遥操作系统，用于在仿真和真实机器人上采集移动操作示范。
+- [OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation](https://arxiv.org/abs/2403.07870)：提供面向机器人操作的通用遥操作系统。
+- [Tina: Think, Interaction, and Action Framework for Zero-Shot Vision Language Navigation](https://arxiv.org/abs/2403.08833)：把零样本 VLN 组织为思考、环境提问和动作选择，使 agent 能先主动查询关键感知线索再决定导航动作。
+- [GaussNav: Gaussian Splatting for Visual Navigation](https://arxiv.org/abs/2403.11625)：把 3D Gaussian Splatting 地图作为持久视觉记忆，保留几何、语义和纹理信息以支持 instance image-goal navigation。
 - [MineStudio](https://arxiv.org/abs/2403.12067)（[开源代码](https://github.com/CraftJarvis/MineStudio)）：开源 Minecraft agent 开发包，覆盖数据、训练、评测和轨迹工具，连接 MineDojo 与更新的游戏 agent benchmark。
+- [Embodied LLM Agents Learn to Cooperate in Organized Teams](https://arxiv.org/abs/2403.12482)：用 prompt 指定团队角色和领导结构来协调 embodied LLM agents，减少多智能体协作中的冗余汇报和沟通混乱。
+- [Yell At Your Robot: Improving On-the-Fly from Language Corrections](https://arxiv.org/abs/2403.12910)：加入 human-in-the-loop 语言纠错通道，让自然语言反馈监督调用低层语言条件机器人技能的高层策略。
+- [Empowering Large Language Models on Robotic Manipulation with Affordance Prompting](https://arxiv.org/abs/2404.11027)：通过可供性提示增强大模型机器人操作能力。
+- [RoboHop: Segment-based Topological Map Representation for Open-World Visual Navigation](https://arxiv.org/abs/2405.05792)：用基于片段的拓扑地图表示开放世界视觉导航，使具身规划更结构化。
+- [Robots can feel: LLM-based Framework for Robot Ethical Reasoning](https://arxiv.org/abs/2405.05824)：在机器人决策外包裹逻辑推理和模拟情绪权重，使 LLM 控制器能处理道德上模糊的具身动作。
+- [MC-GPT: Empowering Vision-and-Language Navigation with Memory Map and Reasoning Chains](https://arxiv.org/abs/2405.10620)：结合记忆地图与推理链来完成视觉语言导航。
+- [GameVLM: A Decision-making Framework for Robotic Task Planning Based on Visual Language Models and Zero-sum Games](https://arxiv.org/abs/2405.13751)：把 VLM 决策 agent 与专家评估 agent 编排成 zero-sum game 循环，用于排序和修正机器人任务计划。
+- [LLM-based Robot Task Planning with Exceptional Handling for General Purpose Service Robots](https://arxiv.org/abs/2405.15646)：为通用服务机器人提供带异常处理的 LLM 任务规划。
+- [DiPPeST: Diffusion-based Path Planner for Synthesizing Trajectories Applied on Quadruped Robots](https://arxiv.org/abs/2405.19232)：把目标条件 diffusion 轨迹生成器、实时相机反应式局部路径修正和视觉伺服执行结合起来，用于四足机器人路径规划。
+- [RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots](https://arxiv.org/abs/2406.02523)：提供大规模仿真 harness，包含真实感厨房场景、可交互资产和 100 个日常操作任务，用于训练与评估通用机器人。
+- [Trust the PRoC3S: Solving Long-Horizon Robotics Problems with LLMs and Constraint Satisfaction](https://arxiv.org/abs/2406.05572)：把 LLM 生成的技能代码转成连续约束满足问题，使长程机器人计划能按运动学和物理约束检查与修复。
+- [SlideSLAM: Sparse, Lightweight, Decentralized Metric-Semantic SLAM for Multirobot Navigation](https://arxiv.org/abs/2406.17249)：为异构机器人团队提供去中心化 metric-semantic SLAM 闭环，包含物体级地图、语义驱动 loop closure 和通信感知地图融合。
+- [Manipulate-Anything: Automating Real-World Robots using Vision-Language Models](https://arxiv.org/abs/2406.18915)：用 VLM 自动生成真实机器人操作数据，使系统无需 privileged state、手工技能或固定物体实例也能执行操作。
+- [ROS-LLM: A ROS framework for embodied AI with task feedback and structured reasoning](https://arxiv.org/abs/2406.19741)：把聊天式 LLM agent 接入 ROS actions 和 services，并从输出中抽取 sequence、behavior tree 或 state machine，同时支持人类和环境反馈反思。
+- [Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512)：提供沉浸式遥操作接口，用 stereoscopic active visual feedback 和操作者手臂手部镜像来采集 humanoid 示范数据。
+- [LLM-A*: Large Language Model Enhanced Incremental Heuristic Search on Path Planning](https://arxiv.org/abs/2407.02511)：把 LLM 的全局环境理解与 A-star 式增量启发搜索结合，使机器人路径既保持有效性，又利用更宽的场景上下文。
+- [Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning](https://arxiv.org/abs/2407.03162)：使用 VR 头显、低成本触觉设备和安全约束，提供实时双手灵巧遥操作示范以支持模仿学习。
+- [Robotic Control via Embodied Chain-of-Thought Reasoning](https://arxiv.org/abs/2407.08693)：在机器人动作选择前加入 embodied chain-of-thought prompting，使 VLA 策略先围绕任务上下文推理，而不是直接输出低层控制。
+- [Long-Horizon Planning for Multi-Agent Robots in Partially Observable Environments](https://arxiv.org/abs/2407.10031)：提出 LLaMAR，在部分可观测多机器人任务中采用 plan-act-correct-verify 架构，并利用执行反馈自我修正。
+- [EPD: Long-term Memory Extraction, Context-awared Planning and Multi-iteration Decision @ EgoPlan Challenge ICML 2024](https://arxiv.org/abs/2407.19510)：串联 egocentric progress video 的长期记忆抽取、上下文感知下一步动作规划和多轮决策复核，用于 EgoPlan 任务执行。
+- [Perceive, Reflect, and Plan: Designing LLM Agent for Goal-Directed City Navigation without Instructions](https://arxiv.org/abs/2408.04168)：构建城市导航循环，让 LLM agent 根据地标自定位、反思空间上下文，并在没有逐步导航指令时规划到目标描述位置。
+- [Can LLM be a Good Path Planner based on Prompt Engineering? Mitigating the Hallucination for Path Planning](https://arxiv.org/abs/2408.13184)：通过把空间 prompt 转成关系链，并在派生路线结构上使用 curriculum Q-learning，缓解 LLM 路径规划中的幻觉。
+- [VernaCopter: Disambiguated Natural-Language-Driven Robot via Formal Specifications](https://arxiv.org/abs/2409.09536)：把自然语言机器人指令翻译为 signal temporal logic 规格，使 LLM motion planner 能生成歧义更少、更可靠的路径。
+- [PLATO: Planning with LLMs and Affordances for Tool Manipulation](https://arxiv.org/abs/2409.11580)：结合 LLM 规划与 affordance 进行具身工具操作。
+- [OLiVia-Nav: An Online Lifelong Vision Language Approach for Mobile Robot Social Navigation](https://arxiv.org/abs/2409.13675)：把 VLM 社会语境编码与在线 lifelong learning 结合，使移动机器人能在人类中心环境中自适应导航行为。
+- [ReMEmbR: Building and Reasoning Over Long-Horizon Spatio-Temporal Memory for Robot Navigation](https://arxiv.org/abs/2409.13682)：从长程机器人导航视频构建 retrieval-augmented memory，用时间、空间和图像证据索引后续具身问答。
+- [DROP: Dexterous Reorientation via Online Planning](https://arxiv.org/abs/2409.14562)：用在线 sampling-based predictive control 和视觉姿态估计，在执行时搜索 contact-rich in-hand reorientation 动作。
+- [KARMA: Augmenting Embodied AI Agents with Long-and-Short Term Memory Systems](https://arxiv.org/abs/2409.14908)：为 embodied LLM planning 加入双记忆系统，将长期 3D scene graph 与短期物体状态更新结合，用于家庭任务执行。
+- [Whole-Body Teleoperation for Mobile Manipulation at Zero Added Cost](https://arxiv.org/abs/2409.15095)：把移动底盘动作委托给学习控制器，操作者只控制末端执行器，从而无需新增硬件即可实现移动操作机器人的全身遥操作。
+- [AIR-Embodied: An Efficient Active 3DGS-based Interaction and Reconstruction Framework with Embodied Large Language Model](https://arxiv.org/abs/2409.16019)：运行主动重建闭环，由多模态 LLM 判断 3DGS 状态、选择视角和交互动作，并通过闭环推理修正执行。
+- [Robi Butler: Remote Multimodal Interactions with Household Robot Assistant](https://arxiv.org/abs/2409.20548)：实现远程家用机器人交互接口，将第一视角视频、语音或文本以及指向手势输入 LLM 行为模块，生成多步开放词汇计划。
+- [A Digital Twin Framework for Physical-Virtual Integration in V2X-Enabled Connected Vehicle Corridors](https://arxiv.org/abs/2410.00356)：实现 C-V2X 走廊数字孪生，同步车辆行为、信号配时、通信和交通仿真，并把信号建议与事件通知反馈到物理走廊。
+- [SPINE: Online Semantic Planning for Missions with Incomplete Natural Language Specifications in Unstructured Environments](https://arxiv.org/abs/2410.03035)：运行在线语义规划闭环，由 LLM 推断任务缺失细节，同时机器人持续建图、选择语义子目标、规划并在无预建地图场景中重规划。
+- [MO-DDN: A Coarse-to-Fine Attribute-based Exploration Agent for Multi-object Demand-driven Navigation](https://arxiv.org/abs/2410.03488)：定义包含个人偏好和多物体搜索的 demand-driven navigation，并用 C2FAgent 在多个决策层级做粗到细的属性探索。
+- [GRAPPA: Generalizing and Adapting Robot Policies via Online Agentic Guidance](https://arxiv.org/abs/2410.06473)：用 advisor、grounding、monitoring 和 robotic agent 等角色化对话智能体包裹基础机器人策略，通过物体 grounding 和视觉运动反馈在线修正动作分布。
+- [G2TR: Generalized Grounded Temporal Reasoning for Robot Instruction Following by Combining Large Pre-trained Models](https://arxiv.org/abs/2410.07494)：把时间指令 grounding 拆成事件区间检索、交互帧空间推理和语义物体跟踪，使机器人能执行引用过去人类动作的命令。
+- [Web Agents with World Models: Learning and Leveraging Environment Dynamics in Web Navigation](https://arxiv.org/abs/2410.13232)：Computer Use 迁移候选；WMA 浏览器 agent 在选择长程网页导航动作前预测下一步网页观测和不可逆动作后果。
+- [Vision-Language Navigation with Energy-Based Policy](https://arxiv.org/abs/2410.14250)：学习 energy-based navigation policy，用能量分数把状态-动作对同专家 occupancy measure 对齐，并在 R2R、REVERIE、RxR 和 R2R-CE 上验证。
+- [MARLIN: Multi-Agent Reinforcement Learning Guided by Language-Based Inter-Robot Negotiation](https://arxiv.org/abs/2410.14383)：在 LLM 机器人间协商和已学习多智能体策略之间切换，让语言计划先引导早期不安全的 MARL 训练，再逐步交给训练后的控制器。
+- [Creating and Repairing Robot Programs in Open-World Domains](https://arxiv.org/abs/2410.18893)：RoboRepair 跟踪 LLM 生成机器人程序的失败执行，保留已完成的世界状态变化，再让 LLM 合成避免重复成功步骤的恢复代码。
+- [CaStL: Constraints as Specifications Through Llm Translation for Long-Horizon Task and Motion Planning](https://arxiv.org/abs/2410.22225)：用分阶段 LLM 翻译从自然语言中抽取目标、动作顺序和阻塞约束，写成 PDDL 与 Python 后交给定制规划器求解长程 TAMP。
+- [From Context to Action: Analysis of the Impact of State Representation and Context on the Generalization of Multi-Turn Web Navigation Agents](https://arxiv.org/abs/2410.23555)：通过消融交互历史和页面表示来分析 LLM 浏览器 agent 的上下文管理，说明这些选择如何影响跨网站、类别和地理位置的多轮导航泛化。
+- [Dynamem: Online Dynamic Spatio-Semantic Memory for Open World Mobile Manipulation](https://arxiv.org/abs/2411.04999)：维护在线 3D 点云记忆并支持开放词汇物体定位，使移动操作机器人能在人或机器人改变环境后更新物体状态并继续执行任务。
+- [Towards an Efficient Synthetic Image Data Pipeline for Training Vision-Based Robot Systems](https://arxiv.org/abs/2411.06166)：定义机器人视觉训练用合成图像流水线，覆盖生成、标注、domain randomization 与系统集成等组件。
+- [Learning Multi-Agent Loco-Manipulation for Long-Horizon Quadrupedal Pushing](https://arxiv.org/abs/2411.07104)：采用层次化多智能体强化学习完成四足机器人长程推动，高层结合 RRT 子目标与集中式策略，中层用去中心化 goal-conditioned policy，低层执行预训练 locomotion 控制。
+- [Zero-shot Object-Centric Instruction Following: Integrating Foundation Models with Traditional Navigation](https://arxiv.org/abs/2411.07848)：LIFGIF 在机器人建图过程中把物体中心语言指令 grounding 到地标 factor graph，把 foundation model 语义和传统导航结合起来。
+- [Open-World Task and Motion Planning via Vision-Language Model Inferred Constraints](https://arxiv.org/abs/2411.08253)：把 VLM 生成的离散动作顺序约束和连续空间约束注入 TAMP 求解器，使开放世界操作目标能在参数化技能上搜索。
+- [MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](https://arxiv.org/abs/2411.12977)：为 Minecraft agent 加入显式 belief-desire-action 表示、自然语言智能体间通信和多组件记忆，用于教学式与协作式文化学习。
+- [ShowUI: One Vision-Language-Action Model for GUI Visual Agent](https://arxiv.org/abs/2411.17465)：在截图和动作历史上使用 UI-guided visual token selection 与交错式 vision-language-action streaming，用于 GUI grounding 和导航。
+- [MALMM: Multi-Agent Large Language Models for Zero-Shot Robotic Manipulation](https://arxiv.org/abs/2411.17636)：把零样本操作拆给高层规划、低层控制代码生成和转移监督等专门 LLM agent，并用逐步环境观测从中间失败中恢复。
+- [SCoTT: Strategic Chain-of-Thought Tasking for Wireless-Aware Robot Navigation in Digital Twins](https://arxiv.org/abs/2411.18212)：在无线热力图和射线追踪数字孪生上使用 VLM 提示，把导航拆成链式推理子任务，以同时权衡路径长度和信号质量。
+- [Efficient Multi-Robot Motion Planning for Manifold-Constrained Manipulators by Randomized Scheduling and Informed Path Generation](https://arxiv.org/abs/2412.00366)：提出 StAC，通过给各机器人路径插入等待和协调动作来组合轨迹，并把调度失败反馈给低层采样规划器以生成更可行的路径。
+- [Learning Dynamic Weight Adjustment for Spatial-Temporal Trajectory Planning in Crowd Navigation](https://arxiv.org/abs/2412.00555)：在时空人群导航优化器外加入学习式权重预测器，根据行人观测在线调节安全、效率和目标达成等目标权重。
+- [Hijacking Vision-and-Language Navigation Agents with Adversarial Environmental Attacks](https://arxiv.org/abs/2412.02795)：优化 3D 攻击物体外观，使预训练 VLN agent 在未见过的指令和路径上偏离原路线或提前终止。
+- [Agent Journey Beyond RGB: Unveiling Hybrid Semantic-Spatial Environmental Representations for Vision-and-Language Navigation](https://arxiv.org/abs/2412.06465)：用 SUSA 通过视角级文本描述和增量深度探索地图丰富 VLN 状态，把局部动作 grounding 到语义与轨迹级空间记忆上。
+- [Non-Prehensile Tool-Object Manipulation by Integrating LLM-Based Planning and Manoeuvrability-Driven Controls](https://arxiv.org/abs/2412.06931)：把 LLM 规划与可操纵性驱动控制结合，用于非抓取式工具和物体操作。
+- [TidyBot++: An Open-Source Holonomic Mobile Manipulator for Robot Learning](https://arxiv.org/abs/2412.10447)：发布低成本全向移动操作平台，支持任意机械臂和手机遥操作，用于采集家庭移动操作示范。
+- [TelePreview: A User-Friendly Teleoperation System with Virtual Arm Assistance for Enhanced Effectiveness](https://arxiv.org/abs/2412.13548)：向遥操作员实时预览映射后的虚拟机器人手臂动作，提升安全性、易用性和跨平台灵巧示范采集效果。
+- [The One RING: a Robotic Indoor Navigation Generalist](https://arxiv.org/abs/2412.14401)：通过在仿真中随机化机器人尺寸、旋转轴和相机参数训练 embodiment-agnostic 室内导航策略，并部署到多种仿真与真实机器人。
+- [SCENIC: Scene-aware Semantic Navigation with Instruction-guided Control](https://arxiv.org/abs/2412.15664)：用目标中心 canonicalization 和自中心距离场生成受文本控制且适应 3D 地形与局部几何约束的人体运动。
+- [Sketch-MoMa: Teleoperation for Mobile Manipulator via Interpretation of Hand-Drawn Sketches](https://arxiv.org/abs/2412.19153)：用 VLM 解读叠加在相机观测上的手绘草图，推断用户想表达的低层移动操作任务，并送入识别和运动规划。
+- [Vinci: A Real-time Embodied Smart Assistant based on Egocentric Vision-Language Model](https://arxiv.org/abs/2412.21080)：在手机或可穿戴相机上运行 always-on 自中心助手，能针对实时和历史视频回答语音问题，并生成分步骤任务演示。
+- [A Bimanual Teleoperation System of Humanoid Robots for Dexterous Manipulation](https://doi.org/10.1109/robio64047.2024.10907314)：提供面向灵巧操作的 humanoid 双臂遥操作系统，协调远程手臂与手部控制，而不是只依赖自主策略执行。
+- [Language-Guided Pattern Formation for Swarm Robotics with Multi-Agent Reinforcement Learning](https://doi.org/10.1109/iros58592.2024.10801665)：Model 迁移候选；其可复用贡献更像是面向群体图案形成的语言条件多智能体强化学习，而不是外部编排层。
+- [OperateLLM: Integrating Robot Operating System (ROS) Tools in Large Language Models](https://doi.org/10.1109/icocet63343.2024.10730448)：把 ROS 工具暴露给 LLM 控制器，使语言推理能够调用机器人操作系统接口来检查状态并执行动作。
+- [Robot Manipulation Planning with Large Pre-Trained Models of Language, Vision, and Action](https://doi.org/10.1109/ictc62082.2024.10827612)：串联预训练语言、视觉和动作模型，把操作指令与环境观测转化为可执行机器人计划。
+- [Proposal and Demonstration of a Robot Behavior Planning System Utilizing Video with Open Source Models in Real-World Environments](https://doi.org/10.1109/iros58592.2024.10801903)：演示一个行为规划闭环，利用真实环境视频和开源感知或语言模型选择机器人动作，而不是局限在固定仿真器内。
+- [Digital twin-enabled multi-robot system for collaborative assembly of unorganized parts](https://doi.org/10.1016/j.jii.2024.100764)：用数字孪生镜像无序零件装配过程，协调多机器人，并在物理执行前验证协同抓取或运动计划。
+- [Continually Learning Planning Agent for Large Environments guided by LLMs](https://doi.org/10.1109/cai59869.2024.00076)：描述面向大环境的 LLM 引导规划 agent，会随经验更新规划知识，可作为记忆与持续规划候选。
+- [LAC: Using LLM-based Agents as the Controller to Realize Embodied Robot](https://doi.org/10.1109/robio64047.2024.10907494)：用 LLM-based agent 作为机器人控制器，把语言层任务推理连接到具身动作命令。
+- [Human Multi-dimensional Stiffness Skills Transfer for Robot Teleoperation System](https://doi.org/10.1109/smc54092.2024.10831061)：通过遥操作系统迁移人类多维刚度行为，为机器人执行加入阻抗或顺应性线索，而不只是回放位置命令。
+- [A Scalable Platform for Robot Learning and Physical Skill Data Collection](https://doi.org/10.1109/iros58592.2024.10801516)：提供机器人学习与物理技能数据采集平台，标准化示范捕获和跨具身训练流程复用。
+- [A Digital Twin Framework for Robot Grasp and Motion Generation](https://doi.org/10.1109/swc62898.2024.00314)：用数字孪生在虚拟环境中生成并检查机器人抓取和运动，再把计划迁移到物理执行。
+- [ChatNav: Leveraging LLM to Zero-Shot Semantic Reasoning in Object Navigation](https://doi.org/10.1109/tcsvt.2024.3485907)：用 LLM 语义推理推断目标物体位置线索并指导零样本 ObjectNav，无需针对导航任务训练专门策略。
+- [Semantic navigation for automated robotic inspection and indoor environment quality monitoring](https://doi.org/10.1016/j.autcon.2024.105949)：把语义导航同巡检和室内环境质量传感结合，让机器人按建筑对象和空间语义选择监测路线。
+- [Toward Fully Autonomous Aviation: PIBOT, a Humanoid Robot Pilot for Human-Centric Aircraft Cockpits](https://doi.org/10.1109/mra.2024.3505774)：PIBOT 面向现有人类座舱接口，把感知、检查单执行和 humanoid 对飞行控制器的操作结合起来实现自主航空。
+- [Engine Agnostic Graph Environments for Robotics (EAGERx): A Graph-Based Framework for Sim2real Robot Learning](https://doi.org/10.1109/mra.2024.3433172)：EAGERx 把机器人学习系统表示成引擎无关的计算图，使传感器、执行器、环境和控制器能在仿真与硬件间复用。
+- [Embodied VideoAgent: Persistent Memory from Egocentric Videos and Embodied Sensors Enables Dynamic Scene Understanding](https://arxiv.org/abs/2501.00358)：从自中心视频以及深度、姿态等具身传感器构建持久场景记忆，并在观察到物体活动时用 VLM 自动更新记忆。
 - [UAV-VLA](https://arxiv.org/abs/2501.05014)：面向大规模空中任务生成的视觉-语言-动作系统。核心思路是把任务级语言和视觉上下文转化为 UAV 行动方案，使空中任务分解和执行成为智能体运行时的一部分。
 - [Generalized Mission Planning for Heterogeneous Multi-Robot Teams](https://arxiv.org/abs/2501.16539)：面向异构多机器人任务规划的 LLM harness。核心思想：从语言目标构造层级任务树，让不同能力的机器人获得协同子任务并执行团队任务。
 - [VL-Nav](https://arxiv.org/abs/2502.00931)：一种神经符号视觉语言导航 harness。核心思想是结合 VLM 推理、符号化 3D 场景图、图像记忆、任务分解、探索启发式和重规划，使机器人能在未知室内外环境中执行复杂指令。
+- [Scalable, Training-Free Visual Language Robotics: a modular multi-model framework for consumer-grade GPUs](https://arxiv.org/abs/2502.01071)：提供面向消费级 GPU 的模块化多模型机器人框架，属于 harness 级组合。
+- [AdaptBot: Combining LLM with Knowledge Graphs and Human Input for Generic-to-Specific Task Decomposition and Knowledge Refinement](https://arxiv.org/abs/2502.02067)：AdaptBot 结合 LLM、知识图谱与人类反馈，把通用用户目标转成可执行的具身子任务计划，并持续精炼任务知识。
+- [EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds](https://arxiv.org/abs/2502.05857)：训练把状态和动作交错建模的自中心 transformer，并用非对称 predictor 与 observer 分支联合学习感知、未来预测和行动。
+- [Automatic Robot Task Planning by Integrating Large Language Model with Genetic Programming](https://arxiv.org/abs/2502.07772)：LLM-GP-BT 把自然语言机器人任务转成行为树计划，再用 genetic programming 配置并改进控制策略。
 - [MuJoCo Playground](https://arxiv.org/abs/2502.08844)：基于 MuJoCo 的可复用机器人学习环境套件。核心思想：打包仿真、任务和评测脚手架，使 embodied policies 能在标准化控制设置下开发与比较。
+- [3D-Grounded Vision-Language Framework for Robotic Task Planning: Automated Prompt Synthesis and Supervised Reasoning](https://arxiv.org/abs/2502.08903)：把 2D 图像映射到点云生成提示，并用小语言模型监督 VLM 输出，以增强机器人任务规划中的 3D 定位。
+- [Closed-Loop Vision-Language Planning for Multi-Agent Coordination](https://arxiv.org/abs/2502.10148)：面向多 agent 协调的闭环视觉语言规划框架；核心思想是在部分可观测多 agent 任务中结合视觉状态反馈与语言规划。
+- [NavRAG: Generating User Demand Instructions for Embodied Navigation through Retrieval-Augmented LLM](https://arxiv.org/abs/2502.11142)：构建具身智能体框架、仿真器、RAG 规划器或可复用执行 harness。
+- [InstructRobot: A Model-Free Framework for Mapping Natural Language Instructions into Robot Motion](https://arxiv.org/abs/2502.12861)：将自然语言指令映射为机器人运动，属于 model-free embodied instruction harness。
+- [SoFar](https://arxiv.org/abs/2502.13143)：用语言化 semantic orientation 连接 3D 空间推理和 6-DoF 物体操作，使 VLM agent 能基于朝向感知推理生成机器人动作。
 - [MapNav](https://arxiv.org/abs/2502.13451)：为基于 VLM 的视觉语言导航提供语义地图记忆表示。核心思想：把导航记忆标注在地图上，使具身 agent 能依据持久空间上下文选择路线。
 - [Mem2Ego](https://arxiv.org/abs/2502.14254)：面向长程具身导航的全局到自中心记忆 harness。核心思路是维护以环境为中心的场景记忆，并把它转换回自中心行动上下文，使 VLM 导航智能体能够在长时间探索中利用历史观察。
+- [Pick-and-place Manipulation Across Grippers Without Retraining: A Learning-optimization Diffusion Policy Approach](https://arxiv.org/abs/2502.15613)：Model 迁移候选；核心方法是带约束去噪的 diffusion policy，使 pick-and-place 轨迹能零样本适配未见过的夹爪。
+- [Distributional Treatment of Real2Sim2Real for Object-Centric Agent Adaptation in Vision-Driven DLO Manipulation](https://arxiv.org/abs/2502.18615)：用 likelihood-free inference 估计可变形线性物体的物理参数后验，再把这些分布用于仿真训练和零样本真实部署。
+- [Data-Efficient Multi-Agent Spatial Planning with LLMs](https://arxiv.org/abs/2502.18822)：研究 LLM 驱动的 data-efficient multi-agent spatial planning。
 - [ATLAS Navigator](https://arxiv.org/abs/2502.20386)：基于 language-embedded Gaussian Splatting 的主动导航 harness。核心思想：把 3D 场景表示、语言目标和任务驱动探索连接起来，使 embodied agent 能依托更丰富的空间记忆导航，而不只依赖当前第一视角观察。
+- [LLMDR: LLM-Driven Deadlock Detection and Resolution in Multi-Agent Pathfinding](https://arxiv.org/abs/2503.00717)：在已学习 MAPF 策略外加入 LLM 死锁检测器和 prioritized-planning 解析器，为受阻多智能体路径生成定制恢复策略。
+- [NeSyC: A Neuro-symbolic Continual Learner For Complex Embodied Tasks In Open Domains](https://arxiv.org/abs/2503.00870)：NeSyC 用 neuro-symbolic continual learning 泛化具身行动知识，属于 embodied agent harness。
+- [OceanSim: A GPU-Accelerated Underwater Robot Perception Simulation Framework](https://arxiv.org/abs/2503.01074)：提供 GPU 加速水下仿真器，包含物理式图像与声纳渲染，用于实时感知测试和快速合成数据生成。
+- [Few-shot Sim2Real Based on High Fidelity Rendering with Force Feedback Teleoperation](https://arxiv.org/abs/2503.01301)：把高保真渲染和力反馈遥操作结合起来采集仿真示范，并训练少样本 sim-to-real 视觉运动策略。
+- [RoboDexVLM: Visual Language Model-Enabled Task Planning and Motion Control for Dexterous Robot Manipulation](https://arxiv.org/abs/2503.01616)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Code-as-Symbolic-Planner: Foundation Model-Based Robot Planning via Symbolic Code Generation](https://arxiv.org/abs/2503.01700)：用基础模型生成符号代码规划器，支持机器人任务与运动规划。
+- [A Generative System for Robot-to-Human Handovers: from Intent Inference to Spatial Configuration Imagery](https://arxiv.org/abs/2503.03579)：结合视觉与语言线索推断交接意图，并用扩散式空间构型生成来规划更接近人类协作的机器人递交姿态。
+- [Reward-Centered ReST-MCTS: A Robust Decision-Making Framework for Robotic Manipulation in High Uncertainty Environments](https://arxiv.org/abs/2503.05226)：用 reward-centered ReST-MCTS 支持高不确定性机器人操作决策。
+- [Graphormer-Guided Task Planning: Beyond Static Rules with LLM Safety Perception](https://arxiv.org/abs/2503.06866)：面向具身与 VLA 智能体的智能体框架或运行时。核心思想：把 Beyond Static Rules with LLM Safety Perception 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Instruction-Augmented Long-Horizon Planning: Embedding Grounding Mechanisms in Embodied Mobile Manipulation](https://arxiv.org/abs/2503.08084)：提供具身智能体 harness；核心思想是围绕机器人或无人机执行组织感知、规划、反馈或控制循环。
 - [General-Purpose Aerial Intelligent Agents](https://arxiv.org/abs/2503.08302)：面向开放世界空中任务执行的 LLM 驱动无人机智能体框架。核心思路是结合机载语言推理、机器人自主能力和软硬件协同，使空中智能体能够理解高层目标并在物理世界执行。
+- [Long-Term Planning Around Humans in Domestic Environments with 3D Scene Graphs](https://arxiv.org/abs/2503.09173)：在 3D scene graph 中加入人类活动、偏好和空间关系，使家庭机器人能按人类活动调整长程轨迹。
+- [NVP-HRI](https://arxiv.org/abs/2503.09335)：把自然语音、姿态线索和大语言模型接入零样本人机交互循环。
+- [Multi-Agent LLM Actor-Critic Framework for Social Robot Navigation](https://arxiv.org/abs/2503.09758)：用并行 LLM actor、群体与个体 critic、熵式分数融合和 re-query 验证来协调社交机器人导航，再接受控制信号。
 - [SmartWay](https://arxiv.org/abs/2503.10069)：结合增强路点预测和回溯机制的零样本视觉语言导航框架。核心思路是整合空间路点生成、多模态推理、历史信息和恢复行为，使智能体能适应连续三维导航环境。
+- [GameChat: Multi-LLM Dialogue for Safe, Agile, and Socially Optimal Multi-Agent Navigation in Constrained Environments](https://arxiv.org/abs/2503.12333)：可作为具身与 VLA agent的 Agent Harness 候选：围绕 GameChat: Multi-LLM Dialogue for Safe, Agile, and Socially Optimal Multi-Agent Navigation in Constrained Environments 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Being-0: A Humanoid Robotic Agent with Vision-Language Models and Modular Skills](https://arxiv.org/abs/2503.12533)：结合 VLM 和 modular skills 的 humanoid robotic agent。核心思想是在一个具身控制栈中结合感知、语言推理和可复用机器人技能。
+- [HybridGen: VLM-Guided Hybrid Planning for Scalable Data Generation of Imitation Learning](https://arxiv.org/abs/2503.13171)：用 VLM 将专家示范拆成物体中心位姿变换和可规划片段，再通过混合规划扩增轨迹，自动生成模仿学习数据。
 - [PORTAL](https://arxiv.org/abs/2503.13356)：为大量 3D 游戏中的 agent 提供语言引导的 policy-generation harness。核心思想：生成行为树 policy，并用游戏指标和视觉语言反馈迭代改进，使可执行游戏环境中的执行循环可复用。
-- [AirVista-II](https://arxiv.org/abs/2504.09583)：面向具身无人机动态场景语义理解的智能体系统。核心思路：把空中感知与推理组织为具身智能体流程，而不是被动图像或视频理解任务。
+- [FLEX: A Framework for Learning Robot-Agnostic Force-Based Skills Involving Sustained Contact Object Manipulation](https://arxiv.org/abs/2503.13418)：学习物体中心的力空间操作技能，把持续接触物体动力学与机器人硬件解耦，以便在 Kinova、Panda 和 UR5 等平台间迁移。
+- [MoK-RAG: Mixture of Knowledge Paths Enhanced Retrieval-Augmented Generation for Embodied AI Environments](https://arxiv.org/abs/2503.13882)：用于 embodied AI 场景生成的多源 RAG 框架。核心思路是把 3D 资产划分为不同知识路径，并结合自动与人工评测，帮助 embodied agent 生成多样化模拟场景。
+- [RoboFactory: Exploring Embodied Agent Collaboration with Compositional Constraints](https://arxiv.org/abs/2503.16408)：研究多个具身 agent 如何在组合约束下协同完成 grounded task execution，把协作结构本身作为可复用运行时要素。
+- [RoboTron-Nav: A Unified Framework for Embodied Navigation Integrating Perception, Planning, and Prediction](https://arxiv.org/abs/2503.18525)：将感知、规划与预测整合到具身导航框架中。
+- [Thinking agents for zero-shot generalization to qualitatively novel tasks](https://arxiv.org/abs/2503.19815)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models](https://arxiv.org/abs/2503.22020)：面向 vision-language-action models 的 visual chain-of-thought reasoning。核心思想是显式化中间视觉推理步骤，使 VLA policy 更好连接感知、推理与动作。
+- [REMAC: Self-Reflective and Self-Evolving Multi-Agent Collaboration for Long-Horizon Robot Manipulation](https://arxiv.org/abs/2503.22122)：用自反思和自演化模块实现长程机器人操作中的自适应多智能体规划。
+- [AINav: Large Language Model-Based Adaptive Interactive Navigation](https://arxiv.org/abs/2503.22942)：提供由 LLM 驱动的 adaptive interactive navigation harness。
+- [Exploring GPT-4 for Robotic Agent Strategy with Real-Time State Feedback and a Reactive Behaviour Framework](https://arxiv.org/abs/2503.23601)：提供具身智能体 harness；核心思想是围绕机器人或无人机执行组织感知、规划、反馈或控制循环。
+- [GenSwarm: Scalable Multi-Robot Code-Policy Generation and Deployment via Language Models](https://arxiv.org/abs/2503.23875)：用语言模型生成并部署可扩展多机器人代码策略。
+- [HACTS: a Human-As-Copilot Teleoperation System for Robot Learning](https://arxiv.org/abs/2503.24070)：提供 Human-as-Copilot 遥操作系统，用于机器人学习数据采集。
+- [Visual Environment-Interactive Planning for Embodied Complex-Question Answering](https://arxiv.org/abs/2504.00775)：面向具身复杂问答的视觉环境交互规划框架。核心思想是让 agent 在规划回答抽象多步问题时主动利用环境观察。
+- [LLM-mediated Dynamic Plan Generation with a Multi-Agent Approach](https://arxiv.org/abs/2504.01637)：提供具身智能体 harness；核心思想是围绕机器人或无人机执行组织感知、规划、反馈或控制循环。
+- [SynWorld: Virtual Scenario Synthesis for Agentic Action Knowledge Refinement](https://arxiv.org/abs/2504.03561)：SynWorld 生成虚拟场景以精炼 agentic action knowledge，适合 embodied/VLA agent harness。
+- [A Multi-Modal Interaction Framework for Efficient Human-Robot Collaborative shelf-picking](https://arxiv.org/abs/2504.06593)：结合指向手势、语音命令、机器人视听反馈、LLM chain-of-thought 模块、物理仿真和关系图规划，用于人机协作货架拣选。
+- [FindAnything: Open-Vocabulary and Object-Centric Mapping for Robot Exploration in Any Environment](https://arxiv.org/abs/2504.08603)：构建带物体级聚合视觉语言特征的稠密体素子地图，为探索机器人提供开放词汇语义记忆以支持定位和规划。
+- [CL-CoTNav: Closed-Loop Hierarchical Chain-of-Thought for Zero-Shot Object-Goal Navigation with Vision-Language Models](https://arxiv.org/abs/2504.09000)：用 VLM 驱动的层次化 chain-of-thought 闭环和导航反馈，在未知环境中选择 ObjectNav 动作。
+- [Humanoid Agent via Embodied Chain-of-Action Reasoning with Multimodal Foundation Models for Zero-Shot Loco-Manipulation](https://arxiv.org/abs/2504.09532)：Humanoid-COA 把 foundation model 推理接入感知-推理-行动闭环，将指令分解为 embodied chain-of-action 步骤以完成零样本 loco-manipulation。
+- [AirVista-II](https://arxiv.org/abs/2504.09583)：把动态空中场景理解视为具身 UAV 感知与推理问题，连接飞行上下文、视觉观测和语义决策，而不是被动图像或视频分析。
 - [ApexNav](https://arxiv.org/abs/2504.14478)：结合自适应探索与目标中心语义融合的零样本目标导航 harness。核心思路是在语义线索和几何探索线索之间切换，并长期记忆目标及相似物体，以提升噪声检测下的导航可靠性。
+- [Phoenix: A Motion-Based Self-Reflection Framework for Fine-Grained Robotic Action Correction](https://arxiv.org/abs/2504.14588)：用基于运动的自反思和纠错包裹机器人动作执行，更适合作为执行 harness 而非单纯策略。
+- [WALL-E 2.0: World Alignment by NeuroSymbolic Learning improves World Model-based LLM Agents](https://arxiv.org/abs/2504.15785)：面向 world-model-based LLM agent 的 world alignment harness。核心思想是加入符号化环境知识，使 agent 的先验知识与特定环境动态更好对齐。
+- [MOSAIC: A Skill-Centric Algorithmic Framework for Long-Horizon Manipulation Planning](https://arxiv.org/abs/2504.16738)：通过选择预定义 skill generator 和 connector 规划长程操作，并用物理仿真估计每个技能最可能成功的区域。
+- [Robotic Task Ambiguity Resolution via Natural Language Interaction](https://arxiv.org/abs/2504.17748)：通过自然语言交互解决机器人任务歧义，把澄清对话加入具身闭环。
+- [Collaborating Action by Action: A Multi-agent LLM Framework for Embodied Reasoning](https://arxiv.org/abs/2504.17950)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Hierarchical Temporal Logic Task and Motion Planning for Multi-Robot Systems](https://arxiv.org/abs/2504.18899)：把 hierarchical temporal logic 规格转成 product graph，同时处理机器人团队的任务分配和 graph-of-convex-sets 运动规划。
 - [RoboVerse](https://arxiv.org/abs/2504.18904)（[开源代码](https://github.com/RoboVerseOrg/RoboVerse)；[项目页](https://roboverseorg.github.io)）：开放机器人学习平台，包含任务、机器人、场景、MetaSim 资产，以及与 LIBERO、ManiSkill、RLBench、robosuite 和 SimplerEnv 的集成，可作为 robot/VLA 评测基础设施。
+- [Robot Motion Planning using One-Step Diffusion with Noise-Optimized Approximate Motions](https://arxiv.org/abs/2504.19652)：Model 迁移候选；论文提出图像条件 one-step diffusion 运动规划器，并用各向异性噪声优化实现实时机器人控制。
+- [SimPRIVE](https://arxiv.org/abs/2504.21454)： 提供用于研究物理机器人与虚拟环境交互的仿真框架。
+- [Semantic Intelligence: Integrating GPT-4 with A Planning in Low-Cost Robotics](https://arxiv.org/abs/2505.01931)：在低成本 ROS2 机器人上把 GPT-4 语义推理与 A* 路径规划结合起来，用语言中介的导航框架替代硬编码任务逻辑，同时保持几何路径精度。
+- [VECSR: Virtually Embodied Common Sense Reasoning System](https://arxiv.org/abs/2505.02144)：把 s(CASP) 常识推理器接入 VirtualHome，将高层家庭任务分解为可解释的中层指令，并与 GPT-4o 决策进行比较。
+- [Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation](https://arxiv.org/abs/2505.02836)：用于 3D 场景生成的语言视觉 agentic 框架；核心思想是编排多模态场景构建步骤，使 3D 环境能通过 agent workflow 生成。
+- [RoboOS: A Hierarchical Embodied Framework for Cross-Embodiment and Multi-Agent Collaboration](https://arxiv.org/abs/2505.03673)：面向 cross-embodiment 与 multi-agent collaboration 的层级具身框架。核心思想是用可复用层组织 embodied agents，使技能和协作能跨平台迁移。
+- [CityNavAgent: Aerial Vision-and-Language Navigation with Hierarchical Semantic Planning and Global Memory](https://arxiv.org/abs/2505.05622)：带层级语义规划和全局记忆的 aerial vision-and-language navigation agent。核心思想是结合地图尺度规划与记忆，使 agent 能在复杂城市场景中导航。
+- [Multi-Agent Systems for Robotic Autonomy with LLMs](https://arxiv.org/abs/2505.05762)：协调任务分析、机器人设计与强化学习设计 agent，将任务输入转化为机器人设计和控制策略。
 - [UAV-CodeAgents](https://arxiv.org/abs/2505.07236)：基于语言和卫星图像进行无人机任务规划的 multi-agent ReAct harness。核心思想：结合视觉接地点选、多 agent 轨迹生成和反应式目标修订，使空中 agent 能把高层指令转成可执行任务。
+- [RAI: Flexible Agent Framework for Embodied AI](https://arxiv.org/abs/2505.07532)：提供机器人多智能体框架，包含 ROS 2、LLM、仿真、数字孪生、实体机器人 embodiment 和多智能体部署工具。
+- [Imagine, Verify, Execute: Memory-Guided Agentic Exploration with Vision-Language Models](https://arxiv.org/abs/2505.07815)：面向具身探索的记忆引导 VLM agent；核心思想是结合记忆与“想象、验证、执行”循环，让探索决策建立在累积场景证据上。
 - [Air-Ground Collaboration for Language-Specified Missions](https://arxiv.org/abs/2505.09108)：面向未知环境语言任务的空地协作具身 harness。核心思想：协调空中与地面 agent，把自然语言目标分解、探索并执行到互补 embodiment 上。
+- [Real-Time Verification of Embodied Reasoning for Generative Skill Acquisition](https://arxiv.org/abs/2505.11175)：为具身技能获取加入实时验证；核心思想是在复杂环境中实时检查生成技能，提高具身 agent 学习效率。
+- [RoboFAC: A Comprehensive Framework for Robotic Failure Analysis and Correction](https://arxiv.org/abs/2505.12224)：提供机器人失败分析与纠正框架，把执行时诊断和恢复显式化。
 - [FlightGPT](https://arxiv.org/abs/2505.12835)：基于视觉语言模型的 UAV 视觉语言导航框架。核心思路是连接视觉观测、语言目标和显式路线推理，使空中导航决策更具泛化性和可解释性。
+- [Sketch Interface for Teleoperation of Mobile Manipulator to Enable Intuitive and Intended Operation: A Proof of Concept](https://arxiv.org/abs/2505.13931)：实现移动端网页草图接口，用用户绘图表达导航和操作任务，在保留人工监督的同时降低操作负担。
+- [BAR: A Backward Reasoning based Agent for Complex Minecraft Tasks](https://arxiv.org/abs/2505.14079)：面向复杂 Minecraft 任务的 backward-reasoning LLM agent；核心思想是从目标状态反向推出可执行子目标，补充具身环境中只做前向分解的规划路线。
+- [REFLEX: Metacognitive Reasoning for Reflective Zero-Shot Robotic Planning with Large Language Models](https://arxiv.org/abs/2505.14899)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Metacognitive Reasoning for Reflective Zero-Shot Robotic Planning with Large Language Models”。
+- [Scan, Materialize, Simulate: A Generalizable Framework for Physically Grounded Robot Planning](https://arxiv.org/abs/2505.14938)：通过扫描、具象化和仿真构建物理 grounding 的机器人规划框架。
+- [CoNav: Collaborative Cross-Modal Reasoning for Embodied Navigation](https://arxiv.org/abs/2505.16663)：用于具身导航的协同跨模态推理，在行动选择中协调视觉、语言与导航信号。
+- [LA-RCS: LLM-Agent-Based Robot Control System](https://arxiv.org/abs/2505.18214)：可作为具身与 VLA agent的Agent Harness候选；核心关注“LLM-Agent-Based Robot Control System”。
+- [WorldEval](https://arxiv.org/abs/2505.19017)：用世界模型评估真实世界机器人策略。
+- [SPADE: Towards Scalable Path Planning Architecture on Actionable Multi-Domain 3D ScenE Graphs](https://arxiv.org/abs/2505.19098)：在 actionable multi-domain 3D scene graph 上先求解稀疏全局层，再剪枝可通行边并迭代细化局部几何路径。
+- [Towards Humanoid Robot Autonomy: A Dynamic Architecture Integrating Continuous thought Machines (CTM) and Model Context Protocol (MCP)](https://arxiv.org/abs/2505.19339)：一种结合连续思维机与 MCP 的人形机器人自治架构；核心思路是连接推理、工具访问和机器人动作循环，以支持更动态的具身自治。
+- [EMAC+: Embodied Multimodal Agent for Collaborative Planning with VLM+LLM](https://arxiv.org/abs/2505.19905)：结合 VLM 与 LLM 的具身多模态规划 agent。核心思想是把视觉场景理解和语言层协同规划拆给专门模块，用于具身任务。
+- [Agentic 3D Scene Generation with Spatially Contextualized VLMs](https://arxiv.org/abs/2505.20129)：Agentic 3D Scene Generation 用 spatially contextualized VLMs 生成 3D 场景，服务 embodied AI 环境构建。
+- [Robot Operation of Home Appliances by Reading User Manuals](https://arxiv.org/abs/2505.20424)：让机器人阅读用户手册来操作家用电器，属于 embodied tool-use harness。
+- [DORAEMON](https://arxiv.org/abs/2505.21969)：基于 VLM 的零样本导航 harness。核心思想：结合语义-空间拓扑记忆、RAG-VLM 决策支持、Policy-VLM 控制和导航保障机制，提升陌生室内环境中的具身导航可靠性。
+- [Spot-On: A Mixed Reality Interface for Multi-Robot Cooperation](https://arxiv.org/abs/2505.22539)：提供混合现实界面，让人类在抽屉、门和基础设施控制等任务中给多台四足机器人分配任务并监控执行。
 - [VLM-RRT](https://arxiv.org/abs/2505.23267)：用视觉语言模型引导 RRT 搜索的无人机导航框架。核心思路：结合语言目标、视觉 grounding 与采样式规划，使空中智能体能把观测和目标转化为导航轨迹。
+- [WorldGym: World Model as An Environment for Policy Evaluation](https://arxiv.org/abs/2506.00613)：补充具身与视觉-语言-动作智能体方向的外部编排或执行框架。
+- [EvolveNav: Empowering LLM-Based Vision-Language Navigation via Self-Improving Embodied Reasoning](https://arxiv.org/abs/2506.01551)：Model 迁移候选；它通过自改进 chain-of-thought 监督训练 LLM-based VLN reasoner，而不是增加新的外部控制器。
+- [Realizing Text-Driven Motion Generation on NAO Robot: A Reinforcement Learning-Optimized Control Pipeline](https://arxiv.org/abs/2506.05117)：通过 NPR-loss 角度网络把文本生成的人体动作映射为 NAO 关节角，并用强化学习全身控制器稳定执行。
+- [Self-Improving Loops for Visual Robotic Planning](https://arxiv.org/abs/2506.06658)：Model 迁移候选；SILVR 用自采集机器人轨迹迭代更新文本条件视频规划模型，并在 MetaWorld 与真实机器人任务上验证。
+- [Prime the search: Using large language models for guiding geometric task and motion planning by warm-starting tree search](https://arxiv.org/abs/2506.07062)：面向几何 task-and-motion planning 的规划 harness。核心思想：用 LLM 预热树搜索，让物体搬移规划优先探索更有希望的动作分支。
+- [HOI-PAGE: Zero-Shot Human-Object Interaction Generation with Part Affordance Guidance](https://arxiv.org/abs/2506.07209)：构建 part affordance graph，并用该结构指导三阶段流水线，从文本提示零样本生成 4D human-object interaction。
+- [LLM-Enhanced Rapid-Reflex Async-Reflect Embodied Agent for Real-Time Decision-Making in Dynamically Changing Environments](https://arxiv.org/abs/2506.07223)：把规则式 rapid-reflex agent 与异步 LLM 反思、latency-to-action 评测协议结合，使 HAZARD 任务能先即时反应、再后台修正计划。
+- [Hierarchical Scoring with 3D Gaussian Splatting for Instance Image-Goal Navigation](https://arxiv.org/abs/2506.07338)：结合 3D Gaussian Splatting 和跨层语义评分，为 instance image-goal navigation 选择信息量更高的视角，减少冗余渲染和轨迹采样。
 - [Language-Grounded Hierarchical Planning and Execution with Multi-Robot 3D Scene Graphs](https://arxiv.org/abs/2506.07454)：一个具身多机器人规划 harness。核心思想：用语言 grounding 与 3D scene graph 状态协调多机器人分层任务规划和执行。
+- [Taking Flight with Dialogue: Enabling Natural Language Control for PX4-based Drone Agent](https://arxiv.org/abs/2506.07509)：提供具身智能体 harness；核心思想是围绕机器人或无人机执行组织感知、规划、反馈或控制循环。
+- [Robotic System for Chemical Experiment Automation with Dual Demonstration of End-effector and Jig Operations](https://arxiv.org/abs/2506.11384)：让化学实验人员同时示范末端执行器动作和 jig 操作，并同步生成机器人与辅助装置命令以更新实验自动化流程。
+- [Prompting with the Future: Open-World Model Predictive Control with Interactive Digital Twins](https://arxiv.org/abs/2506.13761)：用交互式数字孪生进行开放世界模型预测控制，以仿真前瞻包裹具身动作。
 - [GRaD-Nav++](https://arxiv.org/abs/2506.14009)：面向视觉无人机导航的机载视觉语言动作框架。核心思路是结合语言指令 grounding、高斯辐射场仿真、可微动力学和实时机载执行，使空中智能体能在非结构化环境中跟随高层指令。
+- [Narrate2Nav: Real-Time Visual Navigation with Implicit Language Reasoning in Human-Centric Environments](https://arxiv.org/abs/2506.14233)：训练实时 vision-action 导航模型，使视觉编码器隐式嵌入语言推理和社交线索并输出低层运动命令。
 - [DyNaVLM](https://arxiv.org/abs/2506.15096)：带动态视角和自修正图记忆的 zero-shot vision-language navigation harness。核心思想：在探索过程中维护并修正导航图，使路线决策能利用累积空间证据，而不是只依赖单步观察。
+- [CodeDiffuser: Attention-Enhanced Diffusion Policy via VLM-Generated Code for Instruction Ambiguity](https://arxiv.org/abs/2506.16652)：用 VLM 生成代码处理扩散策略中的指令歧义，把代码生成纳入控制流程。
+- [Mirror Eyes: Explainable Human-Robot Interaction at a Glance](https://arxiv.org/abs/2506.18466)：在机器人头部屏幕眼睛中镜像其关注的物理区域，帮助人类监控 pick-and-place 执行并更早中断错误动作。
+- [STEP Planner: Constructing cross-hierarchical subgoal tree as an embodied long-horizon task planner](https://arxiv.org/abs/2506.21030)：具身长程任务中的跨层级子目标树规划。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [FrankenBot: Brain-Morphic Modular Orchestration for Robotic Manipulation with Vision-Language Models](https://arxiv.org/abs/2506.21627)：围绕 VLM 进行模块化编排以完成机器人操作，其主要可复用资产是模块组合方式。
+- [LMPVC and Policy Bank: Adaptive voice control for industrial robots with code generating LLMs and reusable Pythonic policies](https://arxiv.org/abs/2506.22028)：构建 ROS2 语音控制 harness，由 LLM 生成机器人代码，并用 Policy Bank 保存可复用 Python policy 以支持教学和任务适配。
 - [RALLY](https://arxiv.org/abs/2507.01378)：一个面向 agentic UAV swarm 的 LLM 驱动 harness。核心思想：用角色自适应协调支持耦合导航，使多个空中智能体分担规划和执行职责。
+- [LogicGuard: Improving Embodied LLM agents through Temporal Logic based Critics](https://arxiv.org/abs/2507.03293)：用时序逻辑 critic 改善 embodied LLM agent；核心思想是在执行前用时序约束检查计划，避免不安全或不一致行为。
 - [Conditional Multi-Stage Failure Recovery](https://arxiv.org/abs/2507.06016)：面向具身 agent 的失败恢复 harness。核心思想：把执行期错误送入分阶段诊断、恢复规划、动作修复和事后反思流程，使具身任务能从环境与规划失败中恢复，而不是第一次出错就终止。
 - [SkyVLN](https://arxiv.org/abs/2507.06564)：面向城市环境的 UAV 视觉语言导航与 NMPC 控制框架。核心思路是把语言目标 grounding 与模型预测飞行控制结合起来，使空中智能体能在受约束城市场景中执行路线决策。
+- [Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data](https://arxiv.org/abs/2507.10741)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [FOUNDER: Grounding Foundation Models in World Models for Open-Ended Embodied Decision Making](https://arxiv.org/abs/2507.12496)：结合 foundation models 与 world models 的开放式具身决策 harness；核心思想是把基础模型表示落到 world-model 状态空间中，用想象生成策略。
+- [VLMgineer: Vision Language Models as Robotic Toolsmiths](https://arxiv.org/abs/2507.12644)：将视觉语言模型用于机器人造具与用具流程，体现具身工具构造能力。
 - [Enter the Mind Palace](https://arxiv.org/abs/2507.12846)：面向长时程 active embodied question answering 的推理与规划 harness。核心思想：把长期空间记忆和证据记忆外显化，使 embodied agent 能持续导航、收集观察并回答问题。
+- [LaViPlan: Language-Guided Visual Path Planning with RLVR](https://arxiv.org/abs/2507.12911)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Language-Guided Visual Path Planning with RLVR”。
+- [BT-TL-DMPs: A Novel Robot TAMP Framework Combining Behavior Tree, Temporal Logic and Dynamical Movement Primitives](https://arxiv.org/abs/2507.14582)：把 signal temporal logic 任务约束转成反应式 behavior tree，并用 STL-constrained DMP optimization 支持长程操作执行。
+- [HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatrics](https://arxiv.org/abs/2507.15518)：把实时具身戏剧组织成层级多智能体系统；演员 agent 依据 persona、记忆与目标即兴对话，并通过开信、拿武器等道具动作更新共享场景状态。
+- [Compositional Coordination for Multi-Robot Teams with Large Language Models](https://arxiv.org/abs/2507.16068)：面向具身与 VLA 智能体的智能体框架或运行时。核心思想：把 with Large Language Models 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [A Pragmatist Robot: Learning to Plan Tasks by Experiencing the Real World](https://arxiv.org/abs/2507.16713)：Agent Harness 条目；核心思想：通过真实世界经验学习任务规划的机器人 agent。
+- [Towards Multimodal Social Conversations with Robots: Using Vision-Language Models](https://arxiv.org/abs/2507.19196)：Survey/position 迁移候选；它界定 VLM 模块如何为自主社交机器人提供视觉社交上下文，而不是报告已部署的机器人控制 harness。
+- [Think, Act, Learn: A Framework for Autonomous Robotic Agents using Closed-Loop Large Language Models](https://arxiv.org/abs/2507.19854)：Think-Act-Learn 为机器人 agent 提供闭环规划、执行和学习框架，核心贡献在 embodied agent workflow。
+- [Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots](https://arxiv.org/abs/2507.20217)：把 humanoid 多模态传感器融合为语义占据栅格，并发布用于感知和下游规划的全景占据数据集。
+- [A Human-in-The-Loop Approach to Robot Action Replanning Through LLM Common-Sense Reasoning](https://arxiv.org/abs/2507.20870)：把人类自然语言反馈插入由单段 RGB 视频生成的机器人计划，用 LLM 常识推理修复潜在失败、调整目标并纠正幻觉步骤。
 - [DISCOVERSE](https://arxiv.org/abs/2507.21981)：面向复杂高保真环境的机器人仿真基础设施；核心思想是提供高效模拟世界与接口，使 embodied agent 能在小规模固定场景之外开发和评测。
-- [Mixture of Skill-Based Vision-and-Language Navigation Agents](https://arxiv.org/abs/2508.07642)：围绕分解技能构建的具身导航智能体 harness。核心思路：把 VLN 行为拆成类似技能的组件并组合用于导航决策，使技能组织成为 embodied-agent 运行时的一部分。
+- [NarraGuide: an LLM-based Narrative Mobile Robot for Remote Place Exploration](https://arxiv.org/abs/2508.01235)：为远程临场机器人加入位置感知的 LLM 叙事与对话层，使用户在遥控游览陌生博物馆时能围绕当前展区提问和获得导览。
+- [RoboMemory: A Brain-inspired Multi-memory Agentic Framework for Interactive Environmental Learning in Physical Embodied Systems](https://arxiv.org/abs/2508.01415)：面向具身环境学习的多记忆 agentic framework。核心思想是结合空间、情节和程序性记忆，使机器人在部分可观测环境中适应。
+- [VPN: Visual Prompt Navigation](https://arxiv.org/abs/2508.01766)：用顶视图地图上的用户绘制视觉提示替代语言路线指令，并在由 R2R 与 R2R-CE 扩展出的离散和连续 VLN 任务上评测 VPNet。
+- [HyCodePolicy: Hybrid Language Controllers for Multimodal Monitoring and Decision in Embodied Agents](https://arxiv.org/abs/2508.02629)：Agent Harness 条目；核心思想：用混合语言控制器支持多模态监测和具身决策。
+- [Navigation Pixie: Implementation and Empirical Study Toward on-Demand Navigation Agents in Commercial Metaverse](https://arxiv.org/abs/2508.03216)：采用松耦合 metaverse 导航 agent，把结构化空间元数据与 LLM 语言解析结合起来，在商业 Cluster 世界中按需引导用户。
+- [Guided Reality: Generating Visually-Enriched AR Task Guidance with LLMs and Vision Models](https://arxiv.org/abs/2508.03547)：编排 LLM 指令生成、视觉引导类型选择、关键交互点提取与空间 AR 嵌入，为真实任务执行生成动态可视化 overlay。
+- [Text2VR: Automated instruction Generation in Virtual Reality using Large language Models for Assembly Task](https://arxiv.org/abs/2508.03699)：用大语言模型为虚拟现实装配任务自动生成指令。
+- [XARP Tools: An Extended Reality Platform for Humans and AI Agents](https://arxiv.org/abs/2508.04108)：通过 WebSocket procedure 和 Model Context Protocol 暴露 Python 到 Unity 的 XR 工具运行时，使人类开发者和 AI agent 不写 Unity 端代码也能控制 XR 场景。
+- [OmniEAR: Benchmarking Agent Reasoning in Embodied Tasks](https://arxiv.org/abs/2508.05614)：GroundAct 测试 LLM agent 是否能把动作 grounding 到结构化环境状态，包括前置条件、工具使用和隐式协作约束。
+- [Triple-S: A Collaborative Multi-LLM Framework for Solving Long-Horizon Implicative Tasks in Robotics](https://arxiv.org/abs/2508.07421)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Mixture of Skill-Based Vision-and-Language Navigation Agents](https://arxiv.org/abs/2508.07642)：具身导航 agent harness 采用分解技能结构；核心思路是把 VLN 行为拆成类似技能的组件并组合用于导航决策，使技能组织成为 embodied-agent 运行时的一部分。
+- [MoRoCo: An Online Topology-Adaptive Framework for Multi-Operator Multi-Robot Coordination under Restricted Communication](https://arxiv.org/abs/2508.07657)：为多操作员机器人队伍维护有时延上界的间歇通信骨干，并在视频、遥操作或状态请求变化时支持机器人脱离、重入与团队规模调整。
+- [AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile Robotic Manipulation](https://arxiv.org/abs/2508.07770)：构建具身智能体框架、仿真器、RAG 规划器或可复用执行 harness。
+- [Scene Graph-Guided Proactive Replanning for Failure-Resilient Embodied Agent](https://arxiv.org/abs/2508.11286)：将当前 RGB-D 场景图与成功示范的参考图比较，若子任务边界出现语义或空间不匹配，就触发推理模块在失败发生前修正计划。
 - [DEXTER-LLM](https://arxiv.org/abs/2508.14387)：面向未知环境多机器人协同的动态可解释 LLM harness。核心思想：让机器人团队的任务分配与协同过程显式化，以支持重规划和人工检查。
+- [Taming VR Teleoperation and Learning from Demonstration for Multi-Task Bimanual Table Service Manipulation](https://arxiv.org/abs/2508.14542)：把高保真 VR 遥操作与基于 100 条示范训练的 ACT 策略结合起来：脆弱餐桌服务子任务用遥操作执行，披萨放置由学习策略完成。
+- [An Embodied AR Navigation Agent: Integrating BIM with Retrieval-Augmented Generation for Language Guidance](https://arxiv.org/abs/2508.16602)：在 BIM 数据上编排 Triage、Search 和 Response 三个 LLM agent，使具身 AR 导览员能理解开放式目的地查询并生成语言路线指引。
+- [MSNav: Zero-Shot Vision-and-Language Navigation with Dynamic Memory and LLM Spatial Reasoning](https://arxiv.org/abs/2508.16654)：结合动态记忆与 LLM 空间推理，实现零样本 vision-and-language navigation。
+- [From reactive to cognitive: brain-inspired spatial intelligence for embodied agents](https://arxiv.org/abs/2508.17198): 为 embodied navigation 构建结构化空间记忆和 allocentric cognitive map，并按语义目标检索空间知识。
+- [CARIS: A Context-Adaptable Robot Interface System for Personalized and Scalable Human-Robot Interaction](https://arxiv.org/abs/2509.00660)：提供可跨场景迁移的 Wizard-of-Oz 机器人控制界面，整合遥操作、人类感知、人机对话和多模态记录，用于心理陪伴和导览 HRI 试点。
+- [World Model Implanting for Test-time Adaptation of Embodied Agents](https://arxiv.org/abs/2509.03956)：WorMI 通过轨迹原型检索和 compound attention，在测试时组合可插拔领域 world model，以支持零样本和少样本具身适配。
+- [What-If Analysis of Large Language Models: Explore the Game World Using Proactive Thinking](https://arxiv.org/abs/2509.04791)：Agent Harness 条目；核心思想：用主动 what-if 分析探索游戏世界并辅助决策。
+- [COMMET: A System for Human-Induced Conflicts in Mobile Manipulation of Everyday Tasks](https://arxiv.org/abs/2509.04836)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“A System for Human-Induced Conflicts in Mobile Manipulation of Everyday Tasks”。
+- [Risk-Bounded Multi-Agent Visual Navigation via Iterative Risk Allocation](https://arxiv.org/abs/2509.08157)：在视觉多智能体路径规划中加入风险分配层，把全局风险预算动态分给 CBS 规划的各个 agent，而不是直接删除高风险边。
+- [Exploratory Retrieval-Augmented Planning For Continual Embodied Instruction Following](https://arxiv.org/abs/2509.08222)：面向持续具身指令跟随的检索增强规划框架。核心思想是建立环境上下文记忆，并在动态任务执行中查询它。
+- [AssemMate: Graph-Based LLM for Robotic Assembly Assistance](https://arxiv.org/abs/2509.11617)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Graph-Based LLM for Robotic Assembly Assistance”。
+- [HARMONIC: A Content-Centric Cognitive Robotic Architecture](https://arxiv.org/abs/2509.13279)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“A Content-Centric Cognitive Robotic Architecture”。
+- [Towards an Embodied Composition Framework for Organizing Immersive Computational Notebooks](https://arxiv.org/abs/2509.13291)：研究 human-in-the-loop XR 组合工作流，让分析者通过具身交互排列沉浸式 notebook 单元，同时维持执行顺序和视觉连贯性。
+- [OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft](https://arxiv.org/abs/2509.13347)：研究 Minecraft 式具身环境中的层级动作空间与开源 agentic model。
 - [Agentic UAVs](https://arxiv.org/abs/2509.13352)：一种集成工具调用的 LLM 驱动 UAV 自主性 harness。核心思想是组织感知、推理、行动、集成和学习层，使空中智能体能查询数据库、调用外部系统，并在模拟搜救场景中形成任务决策。
-- [SpatialGPT](https://doi.org/10.1145/3748636.3762753)：一种以空间链式思考和结构化空间记忆为核心的零样本视觉语言导航框架。核心思路是外化空间状态，使路线决策建立在持续场景结构上，而不是只依赖单步视觉语言匹配。
+- [FSR-VLN: Fast and Slow Reasoning for Vision-Language Navigation with Hierarchical Multi-modal Scene Graph](https://arxiv.org/abs/2509.13733): 将层级多模态场景图与快慢导航推理结合，用于长距离视觉语言导航，是具备空间记忆和检索机制的 embodied agent harness。
+- [PhysicalAgent: Towards General Cognitive Robotics with Foundation World Models](https://arxiv.org/abs/2509.13903)：Agent Harness 条目；核心思想：基于 foundation world models 的认知机器人 agent 框架。
+- [RealMirror: A Comprehensive, Open-Source Vision-Language-Action Platform for Embodied AI](https://arxiv.org/abs/2509.14687)：面向具身 AI 的开源 vision-language-action 平台；核心思想是提供统一栈来采集、训练、评测和部署真实或仿真机器人上的 VLA policy。
+- [STARC: See-Through-Wall Augmented Reality Framework for Human-Robot Collaboration in Emergency Response](https://arxiv.org/abs/2509.15507)：融合机器人 LiDAR-inertial mapping、救援人员佩戴式 LiDAR 与 AR overlay，把机器人检测到的隐藏人员和危险投射到救援人员视野中。
+- [Video-to-BT: Generating Reactive Behavior Trees from Human Demonstration Videos for Robotic Assembly](https://arxiv.org/abs/2509.16611)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Generating Reactive Behavior Trees from Human Demonstration Videos for Robotic Assembly”。
+- [RoboSeek: You Need to Interact with Your Objects](https://arxiv.org/abs/2509.17783)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“You Need to Interact with Your Objects”。
+- [AI Agent Access (A\^3) Network: An Embodied, Communication-Aware Multi-Agent Framework for 6G Coverage](https://arxiv.org/abs/2509.18526)：把去中心化 MARL 与链路级通信指标耦合起来，使移动 agent 能在无固定基础设施的 6G 覆盖场景中同时探索、服务用户、维护回传并按需扩队。
 - [VLN-Zero](https://arxiv.org/abs/2509.18592)：一个用于零样本迁移的具身导航 harness。核心思想：结合快速探索、缓存经验和神经符号视觉语言规划，使机器人导航不依赖特定任务训练也能适应。
+- [Growing with Your Embodied Agent: A Human-in-the-Loop Lifelong Code Generation Framework for Long-Horizon Manipulation Skills](https://arxiv.org/abs/2509.18597)：面向具身与视觉-语言-动作智能体的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Agentic Scene Policies: Unifying Space, Semantics, and Affordances for Robot Action](https://arxiv.org/abs/2509.19571)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Unifying Space, Semantics, and Affordances for Robot Action”。
+- [SceneWeaver: All-in-One 3D Scene Synthesis with an Extensible and Self-Reflective Agent](https://arxiv.org/abs/2509.20414)：可扩展、自反思的 3D 场景合成 agent；核心思想是把场景构建、自检和可扩展模块结合起来生成更丰富的环境。
+- [SAGE: Scene Graph-Aware Guidance and Execution for Long-Horizon Manipulation Tasks](https://arxiv.org/abs/2509.21928)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Scene Graph-Aware Guidance and Execution for Long-Horizon Manipulation Tasks”。
 - [JanusVLN](https://arxiv.org/abs/2509.22548)：带有双隐式记忆的具身导航框架。核心思想：分离语义记忆与空间记忆，使视觉语言 agent 在连续导航决策中保持路径相关上下文。
 - [See, Point, Fly](https://arxiv.org/abs/2509.22653)：面向无人机导航的免训练 VLM 框架；核心思路是把开放词汇目标转化为视觉指向与飞行动作步骤，使无人机智能体无需针对特定任务训练也能执行导航。
 - [Advancing Audio-Visual Navigation Through Multi-Agent Collaboration in 3D Environments](https://arxiv.org/abs/2509.22698)：面向 3D 环境音视频导航的多智能体 harness；核心思想是把导航推理拆分给协作智能体，使视觉线索、声学线索与路径决策能在具身探索过程中协同起来。
 - [Leave No Observation Behind](https://arxiv.org/abs/2509.23224)：面向 VLA action chunk 的实时纠错 harness。核心思想：利用持续到来的观察发现过期或失败的动作片段，并在线修正执行，使具身 agent 能在连续控制中恢复。
+- [Ask, Reason, Assist: Robot Collaboration via Natural Language and Temporal Logic](https://arxiv.org/abs/2509.23506)：定义点对点机器人求助协议：机器人用 LLM 生成自然语言援助请求，用 BNF grammar 把候选帮助翻译成 STL，经 MILP 求解后按 makespan 影响选择 helper。
 - [RAVEN](https://arxiv.org/abs/2509.23563)：使用开放集语义记忆和行为自适应的空中导航框架；核心思想是在变化或未见过的空中场景中维护环境记忆并调整导航行为，而不是把 VLN 只当作固定策略预测任务。
+- [Control Your Robot: A Unified System for Robot Control and Policy Deployment](https://arxiv.org/abs/2509.23823)：提供跨平台机器人数据采集、控制和策略部署的模块化系统。核心思想：标准化 API 与闭环流程，使 VLA 和模仿学习策略能以更少硬件专用胶水代码完成训练与部署。
+- [Memory Transfer Planning: LLM-driven Context-Aware Code Adaptation for Robot Manipulation](https://arxiv.org/abs/2509.24160)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
+- [ViReSkill: Vision-Grounded Replanning with Skill Memory for LLM-Based Planning in Lifelong Robot Learning](https://arxiv.org/abs/2509.24219)：面向 lifelong robot planning 的视觉接地重规划与 skill memory 框架。核心思想是用场景接地反馈和可复用技能记忆修复新机器人任务中的符号计划。
+- [PhysiAgent: An Embodied Agent Framework in Physical World](https://arxiv.org/abs/2509.24524)：面向物理世界任务的具身 agent 框架。核心思想：连接感知、规划与动作模块，使 agent 能在物理环境中运行。
 - [Prompting Robot Teams with Natural Language](https://arxiv.org/abs/2509.24575)：面向机器人团队的自然语言编排框架；核心思想是把人类语言指令转化为多机器人协同行为，将团队分工与具身执行纳入 agent 运行时。
+- [LLM-Handover: Exploiting LLMs for Task-Oriented Robot-Human Handovers](https://arxiv.org/abs/2509.24706)：在 RGB-D 观察上结合 LLM 推理与部件分割，选择能保留交接后用途的抓取方式，并在家庭物体硬件交接中做零样本测试。
 - [Cogito, Ergo Ludo](https://arxiv.org/abs/2509.25052)：面向游戏学习的推理与规划 agent。核心思想：用显式推理、规划和反馈包裹游戏交互，使 agent 在可执行环境中获得策略，而不只是回答静态游戏问题。
+- [SRMP: Search-Based Robot Motion Planning Library](https://arxiv.org/abs/2509.25352)：提供面向操作的 search-based motion-planning 库，包含 Python/C++ API、仿真器集成、MoveIt 插件和多机器人规划能力，以生成可重复轨迹。
+- [COMRES-VLM: Coordinated Multi-Robot Exploration and Search using Vision Language Models](https://arxiv.org/abs/2509.26324)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [Conflict-Based Search as a Protocol: A Multi-Agent Motion Planning Protocol for Heterogeneous Agents, Solvers, and Independent Tasks](https://arxiv.org/abs/2510.00425)：把 CBS 重构为协调协议，只要求异构机器人规划器暴露带时空约束的单智能体规划 API，从而在 A*、RRT、优化、扩散和强化学习求解器之间集中消解冲突。
+- [Prometheus: Universal, Open-Source Mocap-Based Teleoperation System with Force Feedback for Dataset Collection in Robot Learning](https://arxiv.org/abs/2510.01023)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models](https://arxiv.org/abs/2510.01642)：面向 VLA 执行失败的 reasoning-and-recovery harness；核心思想是让机器人在行动中诊断失败并恢复，而不只是预测下一步动作。
+- [ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation](https://arxiv.org/abs/2510.02298)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation”。
+- [HEHA: Hierarchical Planning for Heterogeneous Multi-Robot Exploration of Unknown Environments](https://arxiv.org/abs/2510.04161)：把异构探索拆成全局与局部规划，并用 PEAF routing 为无人机、轮式机器人和腿式机器人求解带 traversability 约束的有界次优分配。
+- [Social Agent: Mastering Dyadic Nonverbal Behavior Generation via Conversational LLM Agents](https://arxiv.org/abs/2510.04637)：用会话式 LLM 智能体生成双人非语言行为，把对话层面的社会推理与手势、姿态和互动时机等具身表现连接起来。
+- [Constrained Natural Language Action Planning for Resilient Embodied Systems](https://arxiv.org/abs/2510.06357)：在 LLM 机器人规划器外加入符号规划监督，把显式硬约束转化为可重复检查，并用于 ALFWorld 与真实四足机器人 pick-and-place。
+- [FLEET: Formal Language-Grounded Scheduling for Heterogeneous Robot Teams](https://arxiv.org/abs/2510.07417)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for Human-Robot Interaction](https://arxiv.org/abs/2510.07778)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
+- [Executable Analytic Concepts as the Missing Link Between VLM Insight and Precise Manipulation](https://arxiv.org/abs/2510.07975)：面向具身与 VLA 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Executable Analytic Concepts as the Missing Link Between VLM Insight and Precise Manipulation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Towards Reliable LLM-based Robot Planning via Combined Uncertainty Estimation](https://arxiv.org/abs/2510.08044)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
+- [Failure Prediction at Runtime for Generative Robot Policies](https://arxiv.org/abs/2510.09459)：为生成式机器人策略进行运行时失败预测，把监控纳入具身执行。
+- [RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model](https://arxiv.org/abs/2510.10975)：RoVer 把机器人奖励模型作为 VLA 模型测试时 verifier。
+- [ManiAgent: An Agentic Framework for General Robotic Manipulation](https://arxiv.org/abs/2510.11660)：提出面向通用机器人操作的 agentic 框架，直接对应 Agent Harness 分类。
+- [RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](https://arxiv.org/abs/2510.14968)：可作为具身与 VLA agent的 Agent Harness 候选：围绕 RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [GaussGym](https://arxiv.org/abs/2510.15352)：面向从像素学习 locomotion 的开源 real-to-sim 框架。核心思想：把 Gaussian-splatting 重建、仿真与策略评测连接起来，使视觉 grounding 的 locomotion agent 能在照片级 real-to-sim 环境中测试。
+- [VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](https://arxiv.org/abs/2510.16907)：强化多轮 VLM agent 的 world-model reasoning；核心思想是训练并编排 agent 在多轮交互中围绕世界动态推理。
+- [OmniVIC: A Self-Improving Variable Impedance Controller with Vision-Language In-Context Learning for Safe Robotic Manipulation](https://arxiv.org/abs/2510.17150)：用带检索增强 in-context 示例的 VLM 和实时力/力矩反馈，为接触丰富操作生成自适应阻抗参数。
+- [NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](https://arxiv.org/abs/2510.19429)：NeSyPr 面向受限在线推理条件下的 embodied reasoning，提供 neurosymbolic proceduralization 式执行框架。
+- [LaViRA: Language-Vision-Robot Actions Translation for Zero-Shot Vision Language Navigation in Continuous Environments](https://arxiv.org/abs/2510.19655)：面向连续未知环境的零样本视觉语言导航框架，将决策分解为语言层规划、视觉 grounding 与机器人控制动作。
+- [Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](https://arxiv.org/abs/2510.19732)：用周期性摘要 token 训练 transformer，使具身 agent 在上下文限制下创建和检索压缩记忆。
+- [EmbodiedBrain: Expanding Performance Boundaries of Task Planning for Embodied Intelligence](https://arxiv.org/abs/2510.20578)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
+- [PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments](https://arxiv.org/abs/2510.21111)：面向物理环境的主动视觉推理框架。核心思想是让多模态 agent 通过移动、检查和操作场景来补足缺失证据，再回答或行动。
+- [Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning](https://arxiv.org/abs/2510.21302)：Reliable Code-as-Policies 使用神经符号框架提高具身任务规划的可验证性。
 - [Next-Generation LLM for UAV](https://arxiv.org/abs/2510.21739)：基于 LLM 的 UAV 框架，用于把自然语言转化为自主飞行行为。核心思路是把语言理解、任务规划和飞行执行纳入同一个空中智能体闭环。
+- [FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation](https://arxiv.org/abs/2510.21744)：面向长程机器人操作的 tree-search control layer；核心思想是用 diffusion forcing 局部细化轨迹片段，并用 Monte Carlo tree diffusion 把 test-time compute 分配到最脆弱的操作阶段。
+- [EasyUUV: An LLM-Enhanced Universal and Lightweight Sim-to-Real Reinforcement Learning Framework for UUV Attitude Control](https://arxiv.org/abs/2510.22126)：把并行化 sim-to-real RL 与自适应 S-Surface 控制器结合，并由多模态 LLM 根据视觉和文本反馈在线调节 UUV 姿态控制参数。
+- [CGoT: A Novel Inference Mechanism for Embodied Multi-Agent Systems Using Composable Graphs of Thoughts](https://arxiv.org/abs/2510.22235)：提出 composable graphs of thoughts，用于自动驾驶车运送服务机器人并协同完成办公园区任务的车-机器人系统。
+- [PIP-LLM: Integrating PDDL-Integer Programming with LLMs for Coordinating Multi-Robot Teams Using Natural Language](https://arxiv.org/abs/2510.22784)：将 LLM 指令理解、PDDL 与整数规划结合成多机器人规划 harness；核心思想是用形式化规划和优化让自然语言团队协作任务可执行、可验证。
+- [Dexbotic: Open-Source Vision-Language-Action Toolbox](https://arxiv.org/abs/2510.23511)：开源 vision-language-action toolbox；核心思想是提供 embodied perception、action 与 policy evaluation 的可复用组件，而不只是单个机器人模型。
+- [PFEA: An LLM-based High-Level Natural Language Planning and Feedback Embodied Agent for Human-Centered AI](https://arxiv.org/abs/2510.24109)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“An LLM-based High-Level Natural Language Planning and Feedback Embodied Agent for Human-Centered AI”。
+- [LagMemo: Language 3D Gaussian Splatting Memory for Multi-modal Open-vocabulary Multi-goal Visual Navigation](https://arxiv.org/abs/2510.24118)：为多模态开放词汇视觉导航加入 3D Gaussian Splatting 记忆。
+- [Using VLM Reasoning to Constrain Task and Motion Planning](https://arxiv.org/abs/2510.25548)：用视觉语言模型推理约束任务与运动规划，把感知语言推理接入具身规划循环。
+- [Debate2Create: Robot Co-design via Large Language Model Debates](https://arxiv.org/abs/2510.25850)：用设计 agent、控制 agent 和多个 LLM judge 组成 debate loop，并用 MuJoCo 物理评估来约束 morphology 与 reward 方案。
+- [RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot Collaboration](https://arxiv.org/abs/2510.26536)：RoboOS-NeXT 提供基于记忆的框架，支持多个机器人长期、可扩展且稳健地协作。
 - [Running VLAs at Real-time Speed](https://arxiv.org/abs/2510.26742)（[代码](https://github.com/Dexmal/realtime-vla)）：面向实时 VLA 机器人控制的流式推理 harness。核心思路是削减多视角 VLA 策略周边的推理开销，使动作生成能够在消费级硬件上达到实时控制频率。
 - [SPINE-HT](https://arxiv.org/abs/2510.26915)：面向非结构化环境中异构机器人协作的 grounded generative-intelligence harness。核心思想：把自然语言任务分解为可行子任务，按机器人能力分配，并利用在线感知反馈修正计划。
+- [Teaching LLMs to See and Guide: Context-Aware Real-Time Assistance in Augmented Reality](https://arxiv.org/abs/2511.00730)：在增强现实中提供上下文感知实时辅助，属于 wearable embodied agent harness。
+- [Don't Just Search, Understand: Semantic Path Planning Agent for Spherical Tensegrity Robots in Unknown Environments](https://arxiv.org/abs/2511.01236)：构建 LLM 驱动的 SATPlanner，通过自适应观察窗口在开阔区域收窄、复杂障碍附近扩展，为 tensegrity 机器人做语义路径规划。
+- [Floor Plan-Guided Visual Navigation Incorporating Depth and Directional Cues](https://arxiv.org/abs/2511.01493)：Model 迁移候选；GlocDiff 将扩散式 waypoint policy 同时条件化于 RGB 提取的局部深度线索和 floor-plan 全局方向线索，以避免先探索建图再导航。
+- [DR. WELL: Dynamic Reasoning and Learning with Symbolic World Model for Embodied LLM-Based Multi-Agent Collaboration](https://arxiv.org/abs/2511.04646)：去中心化神经符号 embodied multi-agent collaboration harness；核心思想是在部分信息下协商角色、确认联合分配，并把符号计划落到执行结果中。
 - [Isaac Lab](https://arxiv.org/abs/2511.04831)：面向机器人学习的 GPU 加速仿真框架。核心思想：提供可复用的多模态机器人环境、传感器和策略评测流程，使 embodied-agent harness 不必依赖一次性模拟器。
+- [VLM-Driven Skill Selection for Robotic Assembly Tasks](https://arxiv.org/abs/2511.05680)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [LLM-GROP: Visually Grounded Robot Task and Motion Planning with Large Language Models](https://arxiv.org/abs/2511.07727)：LLM-GROP 用大语言模型执行视觉接地的机器人任务和运动规划。
+- [Robot Confirmation Generation and Action Planning Using Long-context Q-Former Integrated with Multimodal LLM](https://arxiv.org/abs/2511.17335)：结合长上下文 Q-Former 与多模态 LLM 进行机器人确认生成和行动规划。
+- [AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](https://arxiv.org/abs/2511.18960)：AVA-VLA 通过 active visual attention 改进 VLA models，属于 embodied/VLA harness。
+- [Subgoal Graph-Augmented Planning for LLM-Guided Open-World Reinforcement Learning](https://arxiv.org/abs/2511.20993)：用 subgoal graph 支持 LLM-guided open-world 强化学习规划。
+- [MADRA: Multi-Agent Debate for Risk-Aware Embodied Planning](https://arxiv.org/abs/2511.21460)：用 multi-agent debate 支持风险感知 embodied planning。
+- [LLM-Based Generalizable Hierarchical Task Planning and Execution for Heterogeneous Robot Teams with Event-Driven Replanning](https://arxiv.org/abs/2511.22354)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“LLM-Based Generalizable Hierarchical Task Planning and Execution for Heterogeneous Robot Teams with Event-Driven Replanning”。
+- [BINDER: Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands](https://arxiv.org/abs/2511.22364)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Instantly Adaptive Mobile Manipulation with Open-Vocabulary Commands”。
+- [MG-Nav: Dual-Scale Visual Navigation via Sparse Spatial Memory](https://arxiv.org/abs/2511.22609)：一种带稀疏空间记忆的双尺度视觉导航框架；核心思路是在紧凑记忆图上进行全局规划，并用局部几何增强控制完成长程导航。
 - [MindPower](https://arxiv.org/abs/2511.23055)：为基于 VLM 的具身智能体加入心智理论推理。核心思路是在具身决策循环中显式建模其他主体的信念与意图，使智能体能够在社交或协作不确定性下规划。
+- [SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot](https://arxiv.org/abs/2511.23300)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot”。
+- [LLM-Driven Corrective Robot Operation Code Generation with Static Text-Based Simulation](https://arxiv.org/abs/2512.02002)：把 LLM 配置为静态文本模拟器，为机器人操作代码生成提供纠错反馈，减少对实体执行或定制仿真器的依赖。
+- [Vision to Geometry: 3D Spatial Memory for Sequential Embodied MLLM Reasoning and Exploration](https://arxiv.org/abs/2512.02458)：为顺序具身 MLLM 推理构建 3D 空间记忆。核心思想：在连续具身任务中连接感知、空间记忆、探索与不可行目标处理。
+- [SIMA 2: A Generalist Embodied Agent for Virtual Worlds](https://arxiv.org/abs/2512.04797)：面向虚拟世界的通用 embodied agent；核心思想是在多种 3D 环境中连接感知、语言目标和行动，而不是只服务单一游戏。
+- [AREA3D: Active Reconstruction Agent with Unified Feed-Forward 3D Perception and Vision-Language Guidance](https://arxiv.org/abs/2512.05131)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [XR-DT: Extended Reality-Enhanced Digital Twin for Agentic Mobile Robots](https://arxiv.org/abs/2512.05270)：把 AR、VR 与 mixed-reality 层同实时传感、Unity 仿真、XR 人类反馈、轨迹预测和 HA-MPPI 控制结合，用于 human-aware 移动机器人规划。
+- [Embodied Tree of Thoughts: Deliberate Manipulation Planning with Embodied World Model](https://arxiv.org/abs/2512.08188)：面向机器人操作的 Real2Sim2Real planning harness；核心思想是在真实执行前，通过物理数字孪生和 VLM 反思诊断扩展候选操作计划。
+- [Mind to Hand: Purposeful Robotic Control via Embodied Reasoning](https://arxiv.org/abs/2512.08580)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
+- [Scene-agnostic Hierarchical Bimanual Task Planning via Visual Affordance Reasoning](https://arxiv.org/abs/2512.09310)：把 visual point grounding、bimanual subgoal planning 和面向技能库的 interaction-point prompting 串联起来，从单张场景图生成同步双手操作计划。
+- [CrossAgent / OpenHA](https://arxiv.org/abs/2512.09706)（[代码](https://github.com/CraftJarvis/OpenHA)）：面向 Minecraft 具身 agent 的 cross-level action 框架。核心思想是让同一个 agent 在 high-level API 与更低层动作等异构行动粒度之间选择，使长时程具身任务能按步骤自适应使用不同接口，而不是固定在单一 action space。
+- [RoboNeuron: A Middle-Layer Infrastructure for Agent-Driven Orchestration in Embodied AI](https://arxiv.org/abs/2512.10394)：连接 MCP-style agent tools 与机器人中间件的 middleware harness；核心思想是从 ROS schema 生成 agent 可调用工具，并用稳定接口隔离 VLA backend、执行和机器人集成。
 - [LEO-RobotAgent](https://arxiv.org/abs/2512.10605)：面向语言驱动具身操作的通用机器人智能体；核心思路是把语言目标、感知、规划和机器人动作组织成可复用的具身智能体执行闭环。
+- [SAGA: Open-World Mobile Manipulation via Structured Affordance Grounding](https://arxiv.org/abs/2512.12842)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Open-World Mobile Manipulation via Structured Affordance Grounding”。
+- [Multi-Robot Motion Planning From Vision and Language Using Heat-Inspired Diffusion](https://arxiv.org/abs/2512.13090)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Multi-Robot Motion Planning From Vision and Language Using Heat-Inspired Diffusion”。
 - [VLA-AN](https://arxiv.org/abs/2512.15258)：面向空中导航的机载视觉-语言-动作框架。核心思路是在复杂环境中以高效的无人机导航闭环组织感知、语言目标 grounding 与动作选择。
+- [MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Model for Embodied Task Planning](https://arxiv.org/abs/2512.16909)：可作为具身与 VLA agent的Agent Harness候选；核心关注“State-Aware Unified Scene Graphs with Vision-Language Model for Embodied Task Planning”。
 - [ImagineNav++](https://arxiv.org/abs/2512.17435)：一种具身导航 harness，引导视觉语言模型在动作选择前想象场景结构。核心思想：把生成的空间假设作为外部推理上下文，使导航 agent 不只依赖当前视野进行规划。
+- [ESearch-R1: Learning Cost-Aware MLLM Agents for Interactive Embodied Search via Reinforcement Learning](https://arxiv.org/abs/2512.18571)：cost-aware embodied-search agent 框架；核心思想是在不同成本下平衡询问人类、检索 episodic memory 与物理导航。
+- [Affordance RAG: Hierarchical Multimodal Retrieval With Affordance-Aware Embodied Memory for Mobile Manipulation](https://arxiv.org/abs/2512.18987)：从预探索图像构建 affordance-aware embodied memory，按区域与视觉语义检索候选目标，并用可操作性分数重排后再执行。
+- [Vision-Language-Policy Model for Dynamic Robot Task Planning](https://arxiv.org/abs/2512.19178)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Vision-Language-Policy Model for Dynamic Robot Task Planning”。
+- [MaP-AVR: A Meta-Action Planner for Agents Leveraging Vision Language Models and Retrieval-Augmented Generation](https://arxiv.org/abs/2512.19453)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“A Meta-Action Planner for Agents Leveraging Vision Language Models and Retrieval-Augmented Generation”。
+- [RoboCade: Gamifying Robot Data Collection](https://arxiv.org/abs/2512.21235)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Gamifying Robot Data Collection”。
 - [LookPlanGraph](https://arxiv.org/abs/2512.21243)：带 VLM 图增强的具身指令执行 harness。核心思想是在视觉观察周围构建并更新结构化图上下文，使具身 agent 能基于持久场景关系规划，而不是只依赖单帧感知。
+- [Quadrupped-Legged Robot Movement Plan Generation using Large Language Model](https://arxiv.org/abs/2512.21293)：把高层 LLM 指令解析卸载到外部服务器，再利用 LiDAR、IMU 和里程计融合，把生成的运动计划 grounding 为 Jueying Lite 3 四足机器人的 ROS 导航命令。
 - [HELP](https://arxiv.org/abs/2512.21723)：面向家庭任务的 hierarchical embodied-language planner。核心思想是把自然语言任务执行拆给多个 LLM-based subtask agents，使其结合环境信息与可用机器人技能推理，并在家庭任务和真实机器人设置中验证。
+- [Envision: Embodied Visual Planning via Goal-Imagery Video Diffusion](https://arxiv.org/abs/2512.22626)：Model 迁移候选；它先用区域感知的指令注意力合成目标图像，再用首末帧条件化视频扩散模型想象与动作相关的操作轨迹。
+- [OpenGround: Active Cognition-based Reasoning for Open-World 3D Visual Grounding](https://arxiv.org/abs/2512.23020)：可作为embodied and VLA agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [World In Your Hands: A Large-Scale and Open-source Ecosystem for Learning Human-centric Manipulation in the Wild](https://arxiv.org/abs/2512.24310)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“A Large-Scale and Open-source Ecosystem for Learning Human-centric Manipulation in the Wild”。
+- [Align While Search: Belief-Guided Exploratory Inference for World-Grounded Embodied Agents](https://arxiv.org/abs/2512.24461)：面向 world-grounded embodied agent 的 test-time exploratory inference harness。核心思想是在部分可观测环境中先通过 posterior-guided search 修正信念，再执行动作。
+- [Optimizing and Attacking Embodied Intelligence](https://doi.org/10.1109/ICME59968.2025.11209370)：把 instruction decomposition 与 adversarial robustness 作为可复用的具身智能控制和攻击机制来研究。
+- [Towards instructional collaborative robots: From video-based learning to feedback-adapted instruction](https://doi.org/10.1016/j.jmsy.2025.08.018)：把基于视频的学习与反馈自适应指令结合，用于协作机器人。
+- [Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly](https://doi.org/10.1016/j.rcim.2025.103207)：用图驱动的多认知智能体架构支持人机协同拆解。
+- [LLMs as NAO Robot 3D Motion Planners](https://doi.org/10.1109/iccvw69036.2025.00258)：将大语言模型用于 NAO 机器人的三维运动规划，把语言模型作为具身规划中的外部组件。
+- [Sim2Surf: A Sim2Real Surface Classifier for Vision-Based Tactile Sensors With a Bilevel Adaptation Pipeline](https://doi.org/10.1109/jsen.2025.3530712)：Model 迁移候选；核心贡献是面向视觉触觉表面分类的 bilevel sim-to-real adaptation pipeline，而不是外部具身智能体工作流。
+- [LLM - Driven Adaptive Autonomous Robot Navigation via Multimodal Fusion for Diverse Environments](https://doi.org/10.1109/iv64158.2025.11097694)：在 FPGA 上融合 LiDAR 点云与 Triple-RGB 相机流，再用 LLM 识别行人属性并动态调整高密度动态空间中的社会化导航优先级。
+- [Low-cost wheeled-humanoid robot teleoperation system for imitation learning](https://doi.org/10.1108/ir-07-2025-0259)：仅用摄像头和麦克风组合 fiducial-marker 双臂遥操作、人类姿态驱动的移动 piloting、语音夹爪命令和 error-enhanced imitation learning。
+- [MoCam-VR: An Occlusion-Resilient Low-Cost Dexterous Hand-arm Teleoperation System for Imitation Learning](https://doi.org/10.1109/icus66297.2025.11294473)：使用手部安装的 motion-capture camera 和多视角 VR 反馈降低手指与环境遮挡，实现无需标定的灵巧手臂遥操作。
+- [DIH-Tele: Dexterous In-Hand Teleoperation Framework for Learning Multiobjects Manipulation With Tactile Sensing](https://doi.org/10.1109/tmech.2025.3532653)：构建带触觉灵巧手、多模态数据采集和 fused imitation learning 的手内遥操作栈，用于计数和选择性移除等多物体操作任务。
+- [DART: Dexterous Augmented Reality Teleoperation Platform for Large-Scale Robot Data Collection in Simulation](https://doi.org/10.1109/icra55743.2025.11128299)：通过云端仿真中的 AR 遥操作众包采集灵巧操作数据，将轨迹写入 DexHub，并验证用仿真数据训练的策略能否迁移到真实机器人。
+- [Geometric Optimization Frameworks in Mobile Robot Path Planning](https://doi.org/10.1109/access.2025.3600708)：Survey 迁移记录；它综述 Delaunay triangulation、model predictive control 与 artificial potential field 等移动机器人路径规划优化框架，而不是提出运行时 harness。
+- [ARMOR: Egocentric Perception for Bimanual Robot Collision Avoidance and Motion Planning](https://doi.org/10.1109/case58245.2025.11164065)：在双臂机器人上加入类似可穿戴的深度传感器，并把 egocentric perception 流与 transformer imitation policy 结合，用于低延迟避碰。
+- [Exploring the Potential of LLM-based Chatbots for Task Scheduling in Robot Operations](https://doi.org/10.1109/icarsc65809.2025.10970151)：测试 LLM chatbot 作为 AMR job-shop 操作的文本调度器，在同一调度问题中同时处理任务分配、机器人排程和行驶时间优化。
+- [LLM-Driven Hierarchical Planning: Long-horizon Task Allocation for Multi-Robot Systems in Cross-Regional Environments](https://doi.org/10.1109/iros60139.2025.11247013)：构建三阶段多机器人规划器：augmented scene graph 促使 LLM 生成简化 LTL 任务序列，启发式分配器分派子任务，再由模板转成可执行机器人指令。
+- [3DS-Plan: A Perception-Planning-Co-Design Framework to Facilitate Robot Task Planning with Open-Vocabulary 3D Scene](https://doi.org/10.1109/wrcsara68202.2025.11195059)：用 foundation model 做开放词汇 3D 场景感知与生成，将对象和场景细节输入长时程机器人任务规划，避免封闭对象类别限制。
+- [Semantic Navigation with Embodied AI for Humanoid Robots in Personalized Household Environments](https://doi.org/10.1109/humanoids65713.2025.11203027)：把 3D semantic SLAM 与 LLM 生成的自然语言场景表示结合，使 humanoid robot 能在个性化家庭中执行口头导航任务。
+- [You are my eyes: Integrating human intelligence and LLMs in AR-assisted motion planning for industrial mobile robots](https://doi.org/10.1016/j.rcim.2025.103174)：用 AR 人工场景标注连接人类空间感知与 LLM 推理，为工业移动机器人运动规划提供结构化几何和语义约束。
+- [Evaluating Generative AI Models for Code Generation Tasks Using Embedding-Based Semantic Similarity](https://doi.org/10.1109/codit66093.2025.11321666)：Off-axis 移除记录；它用 embedding-based semantic similarity 比较代码生成 LLM 在 Python 任务上的表现，不涉及具身环境或机器人执行。
+- [Taming Sparse Giants: Deploying Mixture-of-Experts on 3D Heterogeneous Compute-in-Memory Systems](https://doi.org/10.1109/iccd65941.2025.00047)：Off-axis 硬件记录；OPTIMEX 将 MoE expert projection 映射到 3D SRAM/ReRAM compute-in-memory 层，以优化面积、能耗、延迟和困惑度。
+- [Agent-Based Financial Report Indicator Extraction with Large Language Models](https://doi.org/10.12677/airr.2025.146127)：Off-axis 移除记录；可复用机制是基于 LLM 的财报指标抽取，不是物理、仿真、机器人或 VLA 执行。
+- [Rag-Based Fine-Tuning of an Llm-Enabled Spiritual Wisdom Chatbot](https://doi.org/10.1109/iconat66879.2025.11362904)：Off-axis 移除记录；它用 LoRA 在灵性文本问答数据上微调 DeepSeek-based RAG chatbot，而不是控制具身 agent。
+- [Towards zero-shot robot tool manipulation in industrial context: A modular VLM framework enhanced by multimodal affordance representation](https://doi.org/10.1016/j.rcim.2025.103161)：ToolManip 将工业工具使用拆给 task-manager、affordance-analyst、motion-planner 和 execution-inspector VLM agent，并配有 agent-specific memory 以及独立的空间和力 affordance 表示。
+- [IFDRDTS: intelligent food delivery robot and its digital twin system for dining assistance tasks](https://doi.org/10.1080/01691864.2025.2490601)：结合 LLM 意图推断、用餐空间 digital twin、语音命令策略生成和 PDDL 动作序列，为老年用户自适应用餐配送辅助。
+- [A Hybrid Motion Optimization Framework for the Humanoid Upper-Body Robot: Safe and Dexterous Object Carrying](https://doi.org/10.1109/lra.2025.3546091)：Control 迁移记录；三层优化器分别选择搬运构型、腰臂轨迹和双臂 nullspace motion，用于安全的人形上半身物体搬运。
+- [Research on robot autonomous inspection visual perception system based on improved YOLOv11 and SLAM](https://doi.org/10.1109/cisce65916.2025.11065155)：把 YOLOv11 目标检测、多线 LiDAR SLAM 与全局-局部路径规划集成到工业自主巡检机器人中。
+- [Vision-Language Guided Adaptive Robot Action Planning: Responding to Intermediate Results and Implicit Human Intentions](https://doi.org/10.1109/iros60139.2025.11246314)：用 visual prompts 和 VLM 生成动作序列，根据环境变化推断隐式人类意图，并在动作失败或外部干扰后重新生成计划。
+- [Mapping the Knowledge Construction Process Through Interactions with an Embodied GenAI Agent in Mixed Reality](https://doi.org/10.1109/icalt64023.2025.00066)：Interaction-study 记录；它用 learning analytics 和 process mining 分析学生与 MR embodied GenAI agent 的对话，而不是机器人控制。
+- [An Open-Vocabulary 3D Scene Graph Framework for LLM-Based Robot Task Planning](https://doi.org/10.1109/isrimt67769.2025.11413222)：把 RGB 图像和点云融合成开放词汇 3D scene graph，用 VLM 与 LLM 丰富对象关系，并按任务抽取相关子图用于机器人规划。
+- [DRP: A Decomposition-Reflection-Prediction Framework for Long-Horizon Robot Task Planning using Large Language Models](https://doi.org/10.1109/iros60139.2025.11245900)：通过 rule-based decomposition、多视角 reflection 和 state-change prediction 向 LLM 任务规划注入环境知识，以提高长时程计划的可执行性。
+- [MossVLN: Memory-Observation Synergistic System for Continuous Vision-Language Navigation](https://doi.org/10.1109/tmm.2025.3586105)：结合 observation-driven waypoint prediction、对齐的视觉文本线索和 memory-based navigation decision，减少连续 VLN 中的 waypoint 歧义。
+- [Multimodal Interaction for Human-Robot Collaboration in Assembly: An LLM-Enhanced Approach](https://doi.org/10.1109/case58245.2025.11164080)：融合语音、手势、图形界面和隐式意图识别，并用 LLM 做自然语言理解与任务规划，服务装配协作。
+- [Exploring Spontaneous Social Interaction Swarm Robotics Powered by Large Language Models](https://doi.org/10.1109/iros60139.2025.11246362)：让去中心化 swarm robot 使用本地 LLM 推理和自然语言机器人间消息，在执行时发现同伴、协商、协作并纠错。
+- [LegUp: Legged Robots Assisting each Other over High Obstacles via Large Language Model-based Task Decomposition](https://doi.org/10.1109/icar65334.2025.11338613)：用 LLM-based task decomposition 将跨越高障碍的互助行为拆分给协作腿式机器人，把物理通行问题转成协同子任务。
+- [AnyBipe: An Automated End-to-End Framework for Training and Deploying Bipedal Robots Powered by Large Language Models](https://doi.org/10.1109/iros60139.2025.11246492)：用 LLM 生成奖励函数，并监督训练、量化评估、安全检查和部署，从而自动化双足机器人 RL 策略开发。
+- [AAGE: Air-Assisted Ground Robotic Autonomous Exploration in Large-Scale Unknown Environments](https://doi.org/10.1109/tro.2025.3543275)：把 UAV 快速 BEV 勘察与 UGV 细粒度探索配对，利用共享空中上下文以及层次化和注意力引导规划来聚焦点云采集。
+- [OVL-MAP: An Online Visual Language Map Approach for Vision-and-Language Navigation in Continuous Environments](https://doi.org/10.1109/lra.2025.3540577)：构建在线开放词汇语义地图，预测 instruction-conditioned waypoint，并用 DD-PPO action module 执行连续 VLN。
+- [From Ontologies to Knowledge Augmented Large Language Models for Automation: A decision-making guidance for achieving human–robot collaboration in Industry 5.0](https://doi.org/10.1016/j.compind.2025.104329)：用 ontology-backed knowledge augmentation 引导 Industry 5.0 人机协作中的 LLM 决策，而不是只依赖自由形式提示。
+- [Generative AI for automated task modelling and task allocation in human robot collaborative applications](https://doi.org/10.1016/j.cirp.2025.04.081)：用 large multimodal model 与 digital twin 将资源、工具和任务的视频音频记录转成任务模型、序列和人机资源分配方案。
+- [“Thanks for the Practice!”: LLM-Powered Social Robot as Tandem Language Partner at University](https://doi.org/10.1109/hri61500.2025.10973837)：评测 OpenChat-3.5 驱动的人形机器人作为德语 tandem language partner，并比较沉浸式和双语对话模式对焦虑与被评判感的影响。
+- [Online Prediction of User Enjoyment in Human-Robot Dialogue with LLMs](https://doi.org/10.1109/hri61500.2025.10973944)：用 LLM 对候选机器人话语逐轮预测用户愉悦度，为 companion-robot dialogue 的在线适配提供反馈信号。
+- [CCM-FCC: LLM-powered cognition-centered AI agent framework for proactive human-robot collaboration](https://doi.org/10.1016/j.rcim.2025.103145)：把主动人机协作拆成用于结构化任务理解的 cognition core，以及激活感知、分析和决策模块的 functional cluster。
+- [Human-robot collaborative visual inspection with Large Language Models](https://doi.org/10.1016/j.rcim.2025.103154)：实现完全离线的闭环视觉巡检助手，用 speech-to-text 和本地 code-generating LLM 将自然语言指令转成定制机器人控制代码。
+- [LLM-driven agent for speech-enabled control of industrial robots: A case study in snow-crab quality inspection](https://doi.org/10.1016/j.rineng.2025.106660)：连接语音界面、LLM agent、WebSocket 机器人控制工具和实时视觉，使 KUKA 单元能回答雪蟹质量问题并执行巡检动作。
+- [Integrative AI framework for robotics: LLM-enabled reinforcement learning in object manipulation and task planning](https://doi.org/10.1016/j.robot.2025.105197)：将 GPT-4 语境任务规划、PPO-based skill sequencing、自适应加权决策模块和低层 RL 控制结合，用于移动操作臂 pick-and-place。
+- [Spatial-Semantic Reasoning using Large Language Models for Efficient UAV Search Operations](https://doi.org/10.1109/ecmr65884.2025.11163229)：在 3D 搜索上下文和轨迹规划约束上使用 LLM 空间语义推理，引导 UAV 执行目标搜索。
+- [A Multimodal Large Model to Enhance Robot Understanding of Human Intentions for Accurate Human Robot Collaborative Manufacturing](https://doi.org/10.1016/j.ifacol.2025.09.474)：在 multimodal large-model layer 中融合视觉、音频和 EEG 信号，以推断协同制造和拆解场景中的人类意图。
+- [Decision-Making Algorithm Based on Multiple Context-Aware Agents for Human-Robot Interaction](https://doi.org/10.1109/ijcnn64981.2025.11228520)：把 HRI 决策组织成 request validation、map validation 与 response generation agent，并用 RAG 关联非结构化请求和结构化导航服务上下文。
+- [Task-Aware Semantic Map: Autonomous Robot Task Assignment Beyond Commands](https://doi.org/10.1109/icra55743.2025.11127372)：构建 TASMap，使机器人从语义地图中的物体状态推断 contextual 和 spatial task proposal，而不是等待明确人类命令。
+- [CLGA: A Collaborative LLM Framework for Dynamic Goal Assignment in Multi-Robot Systems](https://doi.org/10.1109/iros60139.2025.11246692)：用 LLM pre-planning 和外部求解器生成准确初始目标分配，再切换到小模型在环境变化时快速在线重分配。
+- [Centralized LLM-Driven Multi-Robot Coordination for Cooperative Object Transportation](https://doi.org/10.1109/arso64737.2025.11124964)：把自然语言运输请求转成 ROS central host 可解析的层级 JSON 命令，并结合 A-star 与 DWA 导航分发多机器人任务。
+- [Trustworthy Robot Behavior Tree Generation Based on Multi-Source Heterogeneous Knowledge Graph](https://doi.org/10.1109/icra55743.2025.11127406)：从多源异构知识图谱生成机器人 behavior tree，并用 plan transformation 和 BT merging 提升 GPT 辅助任务计划的可信度。
+- [AI Chatbot-Driven Human-Robot Interaction for Humanoid Robot Control Via ROS 2 and Vision Base Tracking](https://doi.org/10.23919/iccas66577.2025.11301214)：连接 Mistral chatbot、MediaPipe 手势识别、ROS 2 Humble 机械臂与导航控制、LiDAR 和 Jetson 硬件，实现语音与手势驱动的人形机器人操作。
+- [Evolutionary Hybrid Optimization for Multi-Robot Task Allocation with LLM Guidance](https://doi.org/10.1109/robio66223.2025.11376276)：用 LLM 语义推理引导 evolutionary crossover 和 mutation，再用 SUSD derivative-free local optimization 求解多机器人任务分配。
+- [Task Allocation for Multi-UAV Exploration Based on Capability Modeling and Semantic Evaluation](https://doi.org/10.1109/icus66297.2025.11294328)：同时建模 UAV 感知、机动性、续航和区域语义价值，并用 capacity-constrained strategy 平衡多 UAV 探索负载。
+- [LLM-RLNav: Grounding Natural Language Instructions for Robots via LLM Decomposition and Reinforcement Learning](https://doi.org/10.1109/upinlbs68186.2025.11468430)：用 LLM 分解机器人自然语言导航指令，再通过强化学习导航策略 grounding 这些子任务。
+- [Reinforcement Learning-enhanced Adaptive Task Planning for Household Embodied Agents with Large Language Models](https://doi.org/10.1109/aiac68175.2025.11332408)：用 LLM 根据环境状态和目标生成家庭子目标序列并评分预定义动作，再以 GRPO fine-tuning 使规划器对齐成功执行轨迹。
+- [RoboGPT: An LLM-Based Long-Term Decision-Making Embodied Agent for Instruction Following Tasks](https://doi.org/10.1109/tcds.2025.3543364)：补充具身与视觉-语言-动作智能体方向的外部编排或执行框架。
+- [Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration](https://doi.org/10.1109/cvpr52734.2025.02748)：面向具身多 agent 任务的协作树搜索 harness。核心思想：在可能的协同行动序列上进行共享搜索来协调多个 agent。
+- [From Intentions to Actions: Workflow Generation with LLMs for Robots](https://doi.org/10.1109/fllm67465.2025.11391122)：用 LLM 将高层意图生成机器人工作流；核心思想：把自然语言目标转换为结构化机器人动作序列。
+- [VRobotix: A Scalable and Cost-Effective Virtual-Reality-Based Robotic Manipulation Dataset Generation Framework](https://doi.org/10.1109/iros60139.2025.11247610)：提供可扩展、基于虚拟现实的机器人操作数据集生成框架。
+- [GRHP: Graph-Fused Hierarchical Planning for Embodied Long-Horizon Robotic Task](https://doi.org/10.1016/j.engappai.2025.113413)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Behavior tree generation and adaptation for a social robot control with LLMs](https://doi.org/10.1016/j.robot.2025.105165)：提供具身智能体 harness；核心思想是围绕机器人或无人机执行组织感知、规划、反馈或控制循环。
+- [Generating Natural Language Explanations for LMM-Driven Robot Behavior](https://doi.org/10.1109/aiiot65859.2025.11105251)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [LLM-Guided Multi-Agent System for Natural Language-Based Robot Navigation](https://doi.org/10.1109/aiiot65859.2025.11105295)：将 LLM 引导的多智能体协调用于自然语言机器人导航。
+- [Active Exploration for Embodied Task Planning via Vision-Language Models](https://doi.org/10.1109/cac67268.2025.11486917)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [LRSA: A Cross-Modal Lightweight Mapping, Revisitable, and Self-Evolving Exploration Agent for Indoor Digital-Twin Scenes](https://doi.org/10.1109/cait68620.2025.11424778)：一种面向室内数字孪生场景的可重访、自进化探索 Agent；核心思路是结合跨模态建图与类似记忆的重访机制支持具身探索。
+- [VST-LLM HRI: Multimodal Human-Robot Interaction via Large Language Model Prompts](https://doi.org/10.1109/ccai65422.2025.11189831)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [Zero-Shot Robotic Control via Custom LLM Agents: A Lightweight Framework for Embodied Learning](https://doi.org/10.1109/chilecon66915.2025.11476245)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [Integration of Large Language Model Agents with Robot Operating System for Human-Robot Interaction and Task Allocation in Complex Environments](https://doi.org/10.1109/icai67591.2025.11324725)：一个把 LLM Agent 与 ROS 结合的人机交互和任务分配框架；核心思路是把机器人中间件和任务分配暴露为 Agentic 执行循环。
+- [LLM-Based Human-Robot Collaboration Task Sequence Optimization Method Fusing Scene Semantics and Object Attributes](https://doi.org/10.1109/icemce68156.2025.11467024)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Causal-Planner: Causal Interaction Disentangling with Episodic Memory Gating for Autonomous Planning](https://doi.org/10.1109/iros60139.2025.11245887)：为自主规划加入因果交互解耦和情节记忆门控。核心思想：让规划利用已记忆的因果交互，而不只依赖当前观察或反应式策略。
+- [Multimodal Autonomous Robotic Long-Horizon Task Planning via Embodied Language Model and Behavior Trees](https://doi.org/10.1109/iros60139.2025.11246018)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Human-in-the-loop Learning for Adaptive Robot Manipulation using Large Language Models and Behavior Trees](https://doi.org/10.1109/iros60139.2025.11246114)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Large Language Model-Based Robot Task Planning from Voice Command Transcriptions](https://doi.org/10.1109/iros60139.2025.11246378)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Interactive Object Detection by Mitigating Uncertainty of Robot Task Plans using Large Language Model](https://doi.org/10.1109/iros60139.2025.11246834)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [ModuLoop: Low-Level Code Generation Using Modular Synthesizer and Closed-Loop Debugger for Robotic Control](https://doi.org/10.1109/lra.2025.3623437)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Language-Vision Embodied Agents in Robotic Systems for Industrial Sorting](https://doi.org/10.1109/meet67398.2025.11335601)：面向具身 Agent 与视觉语言动作系统提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [TAV-Nav: A Tool-Augmented VLM Navigator for Safe and Efficient Lunar Rover Path Planning](https://doi.org/10.1109/ricai68060.2025.11385111)：面向具身 Agent 与视觉语言动作系统提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Adaptive Retrieval-Augmented Embodied Intelligence RAG Reasoning Framework](https://doi.org/10.1109/seai65851.2025.11108876)：面向具身与 VLA 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Adaptive Retrieval-Augmented Embodied Intelligence RAG Reasoning Framework”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Interactive Semantics-Enhanced Vision-Language Model-Driven Hypergraph Reasoning for Robotic Decision-Making in Proactive Human–Robot Collaboration](https://doi.org/10.1109/tase.2025.3628670)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [LGRobo: Local Action and Global Planning Embodied Artificial Intelligence](https://doi.org/10.1109/upinlbs68186.2025.11468427)：面向具身 Agent 与视觉语言动作系统提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Robot System Assistant (RoSA): evaluation of touch and speech input modalities for on-site HRI and telerobotics](https://doi.org/10.3389/frobt.2025.1561188)：面向具身与视觉-语言-动作智能体的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Demonstrating GPU Parallelized Robot Simulation and Rendering for Generalizable Embodied AI with ManiSkill3](https://doi.org/10.15607/rss.2025.xxi.021)：展示面向通用具身 AI 的 GPU 并行机器人仿真与渲染，补充可扩展的 embodied-agent 评测基座。
+- [From Perception to Symbolic Task Planning: Vision-Language Guided Human-Robot Collaborative Structured Assembly](https://arxiv.org/abs/2601.00978)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Action-Sketcher](https://arxiv.org/abs/2601.01618)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
 - [Genie Sim 3.0](https://arxiv.org/abs/2601.02078)：用于规模化数据采集和策略评测的高保真人形机器人仿真平台。核心思想：结合 LLM 辅助场景生成和统一操作环境，让具身 agent 能在多样、逼真的场景中接受测试。
 - [Current Agents Fail to Leverage World Model as Tool for Foresight](https://arxiv.org/abs/2601.03905)：评测 agent 将世界模型作为前瞻工具的能力。核心思想：显式呈现围绕世界模型的规划循环，测试 agent 能否在行动前模拟未来结果。
+- [CoINS: Counterfactual Interactive Navigation via Skill-Aware VLM](https://arxiv.org/abs/2601.03956)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Actively Obtaining Environmental Feedback for Autonomous Action Evaluation Without Predefined Measurements](https://arxiv.org/abs/2601.04235)：面向具身与 VLA 智能体的智能体框架或运行时。核心思想：把 Actively Obtaining Environmental Feedback for Autonomous Action Evaluation Without Predefined Measurements 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [SeqWalker: Sequential-Horizon Vision-and-Language Navigation with Hierarchical Planning](https://arxiv.org/abs/2601.04699)：补充视觉语言导航中的序列视野层次规划方法。
+- [Follow the Signs: Using Textual Cues and LLMs to Guide Efficient Robot Navigation](https://arxiv.org/abs/2601.06652)：利用 LLM 从标牌、房间号和布局线索中推断规律，并用语义置信网格引导机器人探索。
 - [SpatialNav](https://arxiv.org/abs/2601.06806)：一个基于空间场景图的零样本视觉语言导航框架。核心思路是先让智能体探索环境，构建全局空间与语义结构，再用以智能体为中心的地图支撑 grounded 导航决策。
+- [Fiducial Exoskeletons: Image-Centric Robot State Estimation](https://arxiv.org/abs/2601.08034)：提供可打印的逐连杆 fiducial mount 和图像中心优化，从单张 RGB 图像恢复 robot-camera extrinsics、连杆姿态与关节状态，服务后续 3D 控制。
+- [Real2Sim based on Active Perception with automatically VLM-generated Behavior Trees](https://arxiv.org/abs/2601.08454)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Real2Sim based on Active Perception with automatically VLM-generated Behavior Trees”。
 - [VLingNav](https://arxiv.org/abs/2601.08665)：结合自适应推理与视觉辅助语言记忆的具身导航框架；核心思想是从视觉观察中维护语言化记忆，使连续导航决策能够利用持久路径上下文。
+- [EmboTeam: Grounding LLM Reasoning into Reactive Behavior Trees via PDDL for Embodied Multi-Robot Collaboration](https://arxiv.org/abs/2601.11063)：把大模型推理落地为反应式行为树以支持具身多机器人协作。
 - [VLAgents](https://arxiv.org/abs/2601.11250)：为高效 VLA 推理提供 policy-server runtime。核心思想：通过服务层暴露 VLA policy，使具身 agent 执行循环和环境 harness 可以复用。
+- [GaussExplorer](https://arxiv.org/abs/2601.13132)：在 3D Gaussian Splatting 场景上构建问题驱动的 embodied exploration，结合 VLM 推理与视角调整。
+- [LogicEnvGen](https://arxiv.org/abs/2601.13556)：根据任务逻辑生成多样化具身 AI 仿真环境；核心思想是用任务逻辑结构构造环境变体，服务具身 agent 评测和训练。
+- [Probing Prompt Design for Socially Compliant Robot Navigation with Vision Language Models](https://arxiv.org/abs/2601.14622)：补充面向具身智能与视觉语言行动系统的编排流程或智能体框架。
+- [FARE](https://arxiv.org/abs/2601.14681)：用 fast-slow agentic loop 支持机器人探索，为具身探索补充区分快速反应与慢速审慎推理的 harness。
+- [V-CAGE: Context-Aware Generation and Verification for Scalable Long-Horizon Embodied Tasks](https://arxiv.org/abs/2601.15164)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Real-Time Robot Execution with Masked Action Chunking](https://arxiv.org/abs/2601.20130)：通过 masked action chunking 支持实时机器人执行，适合 VLA 运行时 harness。
+- [Demonstration-Free Robotic Control via LLM Agents](https://arxiv.org/abs/2601.20334)：使用 LLM agent 进行无示范机器人控制；核心思想是依靠 agent 规划和交互循环驱动机器人行为，而不是依赖示范数据。
+- [MemCtrl: Using MLLMs as Active Memory Controllers on Embodied Agents](https://arxiv.org/abs/2601.20831)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [DSCD-Nav](https://arxiv.org/abs/2601.21409)：面向目标导航的 debate-style 决策框架。核心思想是在部分可观测环境中用双立场交叉检查和证据感知仲裁替代一次性动作评分。
 - [IROS](https://arxiv.org/abs/2601.21506)：面向实时 VLM 室内导航的双过程 harness。核心思想：把快速反应式控制与较慢的视觉语言推理分开，使室内 agent 能在持续行动时根据观察修订计划。
+- [A2Eval](https://arxiv.org/abs/2602.01640)：面向 embodied VLM 的 agentic 自动评测 harness；核心思想是由 Data Agent 归纳能力维度，再由 Eval Agent 生成可执行评价 pipeline，在降低成本的同时保持排名一致性。
+- [AgenticLab: A Real-World Robot Agent Platform that Can See, Think, and Act](https://arxiv.org/abs/2602.01662)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
 - [From Knowing to Doing Precisely](https://arxiv.org/abs/2602.01811)：为 VLA 模型提供自纠错和终止框架。核心思想：在动作执行外包裹纠错与停止检查，避免长程操作在错误累积后继续执行。
+- [A Modern System Recipe for Situated Embodied Human-Robot Conversation with Real-Time Multimodal LLMs and Tool-Calling](https://arxiv.org/abs/2602.04157)：把实时多模态 LLM 与机器人注意力和主动感知工具接口配对。核心思想是在低延迟对话中决定看什么、何时看和说什么，并用人工标注的工具决策与交互评分验证系统。
+- [SCALE](https://arxiv.org/abs/2602.04208)：基于自不确定性的 VLA 自适应观察与执行框架；核心思想是在不确定性高时分配更多感知或动作努力。
+- [From Assumptions to Actions](https://arxiv.org/abs/2602.04326)：把 LLM 推理转成具身 agent 的不确定性感知规划。核心思想：显式化假设，并在具身不确定性下把假设转化为行动。
+- [Affordance-Aware Interactive Decision-Making and Execution for Ambiguous Instructions](https://arxiv.org/abs/2602.05273)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Affordance-Aware Interactive Decision-Making and Execution for Ambiguous Instructions”。
 - [MerNav](https://arxiv.org/abs/2602.05467)：用于零样本目标物体导航的 Memory-Execute-Review 框架。核心思路：用记忆、执行与复查环节包装导航过程，使具身智能体在物体搜索中能够恢复并泛化。
+- [Leveraging Adaptive Group Negotiation for Heterogeneous Multi-Robot Collaboration with Large Language Models](https://arxiv.org/abs/2602.06967)：用自适应群体协商组织异构多机器人协作；核心思想：通过协商与规划协调受空间约束的长程机器人团队，而不是依赖单一集中式提示。
+- [ARGOS: Automated Functional Safety Requirement Synthesis for Embodied AI via Attribute-Guided Combinatorial Reasoning](https://arxiv.org/abs/2602.07007)：通过属性引导推理为具身 AI 合成功能安全需求。
+- [MosaicThinker](https://arxiv.org/abs/2602.07082)：类型：agent harness/可复用执行框架。核心价值：为 2.11.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [RLinf-USER: A Unified and Extensible System for Real-World Online Policy Learning in Embodied AI](https://arxiv.org/abs/2602.07837)：提供面向真实世界在线策略学习的具身 AI 统一系统，处理仿真外部署、数据采集与长程训练限制。
 - [Grounding Generative Planners in Verifiable Logic](https://arxiv.org/abs/2602.08373)：一种混合式具身 AI 规划 harness。核心思路：把生成式规划与可验证逻辑结合起来，使具身智能体能在行动前或行动中检查计划约束与可信性。
-- [One Agent to Guide Them All](https://arxiv.org/abs/2602.15400)：围绕显式世界表征构建的视觉语言导航智能体。核心思路：把世界状态作为外部导航结构显式化，使 MLLM 的路线决策不只依赖一次性的视觉语言推断。
+- [Sci-VLA: Agentic VLA Inference Plugin for Long-Horizon Tasks in Scientific Experiments](https://arxiv.org/abs/2602.09430)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior](https://arxiv.org/abs/2602.09628)：保留多个全身遥操作专家策略，并用 motion prior 做 gated expert selection，避免把多样 humanoid 动作蒸馏成单一策略时的性能损失。
+- [Instruct2Act: From Human Instruction to Actions Sequencing and Execution via Robot Action Network for Robotic Manipulation](https://arxiv.org/abs/2602.09940)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation](https://arxiv.org/abs/2602.09973)：提供具身智能体 harness；核心思想是围绕机器人或无人机执行组织感知、规划、反馈或控制循环。
+- [AIvilization v0](https://arxiv.org/abs/2602.10429)：一个带资源约束和长期画像的大规模可执行社会仿真 harness。核心思想：在沙盒经济中通过行动、交易、记忆与重规划研究 agent 自治性。
+- [From Natural Language to Materials Discovery:The Materials Knowledge Navigation Agent](https://arxiv.org/abs/2602.11123)：MKNA 把自然语言材料目标转化为数据库检索、性质预测、结构生成和稳定性评估等工具调用。
+- [UniManip: General-Purpose Zero-Shot Robotic Manipulation with Agentic Operational Graph](https://arxiv.org/abs/2602.13086)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“General-Purpose Zero-Shot Robotic Manipulation with Agentic Operational Graph”。
+- [ProAct: A Dual-System Framework for Proactive Embodied Social Agents](https://arxiv.org/abs/2602.14048)：把低延迟行为流与较慢的长时程社会推理分离，再把主动意图注入连续机器人手势，用于具身社交交互。
+- [PhyScensis](https://arxiv.org/abs/2602.14968)：用物理增强的大语言模型智能体完成复杂物理场景摆放，连接推理、约束与空间动作规划。
+- [One Agent to Guide Them All](https://arxiv.org/abs/2602.15400)：一种使用显式世界表征的视觉语言导航智能体。核心思路：把世界状态外化为可交互的导航结构，使 MLLM 的路线决策不只依赖一次性的视觉语言推断。
+- [FAST-EQA](https://arxiv.org/abs/2602.15813)：通过全局与局部区域相关性实现高效 embodied question answering。核心思想：选择有信息量的区域，减少具身 agent 的盲目探索。
+- [ReasonNavi: Human-Inspired Global Map Reasoning for Zero-Shot Embodied Navigation](https://arxiv.org/abs/2602.15864)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [MARVL: Multi-Stage Guidance for Robotic Manipulation via Vision-Language Models](https://arxiv.org/abs/2602.15872)：用多阶段视觉语言推理引导机器人操作。
+- [MALLVI](https://arxiv.org/abs/2602.16898)：面向通用机器人操作的多 agent 框架。核心思想：协调感知、规划和操作决策等专门 agent。
+- [SparTa: Sparse Graphical Task Models from a Handful of Demonstrations](https://arxiv.org/abs/2602.16911)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Sparse Graphical Task Models from a Handful of Demonstrations”。
 - [VLA-Perf](https://arxiv.org/abs/2602.18397)：面向实时 VLA 推理的性能分析框架。核心思想是建模 VLA 架构、长上下文视觉输入、硬件部署、边缘或云端执行与网络条件之间的时延权衡，使具身智能体运行时能围绕控制环约束设计。
+- [Global Commander and Local Operative](https://arxiv.org/abs/2602.18941)：用于场景导航的双 agent 框架。核心思想：把全局路径推理与局部具身执行分开。
+- [Safe and Interpretable Multimodal Path Planning for Multi-Agent Cooperation](https://arxiv.org/abs/2602.19304)：支持多智能体协作中的安全可解释多模态路径规划。
+- [NovaPlan: Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning](https://arxiv.org/abs/2602.20119)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning”。
+- [Notes-to-Self: Scratchpad Augmented VLAs for Memory Dependent Manipulation Tasks](https://arxiv.org/abs/2602.21013)：为依赖记忆的操作任务给 VLA 加入 scratchpad 记忆，使外显笔记成为具身执行 harness 的组成部分。
+- [Reflective Test-Time Planning](https://arxiv.org/abs/2602.21198)：面向 embodied LLM 的反思式测试时规划 harness。核心思想：在试验中和试验后反思，使机器人在后续尝试中复用失败信息。
+- [Self-Correcting VLA: Online Action Refinement via Sparse World Imagination](https://arxiv.org/abs/2602.21633)：通过稀疏世界想象进行在线动作细化，把纠错作为 VLA 动作外部闭环。
+- [Hierarchical LLM-Based Multi-Agent Framework with Prompt Optimization for Multi-Robot Task Planning](https://arxiv.org/abs/2602.21670)：用上层 LLM agent 分解任务、下层 agent 生成 PDDL 问题，并在规划失败后通过 TextGrad 式 prompt 更新与共享 meta-prompt 改进多机器人任务规划。
+- [VCA: Vision-Click-Action Framework for Precise Manipulation of Segmented Objects in Target Ambiguous Environments](https://arxiv.org/abs/2602.23583)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Vision-Click-Action Framework for Precise Manipulation of Segmented Objects in Target Ambiguous Environments”。
+- [KEEP: A KV-Cache-Centric Memory Management System for Efficient Embodied Planning](https://arxiv.org/abs/2602.23592)：通过静态-动态 KV cache 构建、多跳重计算与层均衡加载管理具身 agent 记忆，降低长程规划延迟。
+- [Test-Driven Robot Controller](https://arxiv.org/abs/2603.00455)：面向可靠机器人控制器的测试驱动 agentic 框架。核心思想：通过结构化仿真测试迭代诊断并修复生成的控制器代码。
+- [Zero-Shot Robotic Manipulation via 3D Gaussian Splatting-Enhanced Multimodal Retrieval-Augmented Generation](https://arxiv.org/abs/2603.00500)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Zero-Shot Robotic Manipulation via 3D Gaussian Splatting-Enhanced Multimodal Retrieval-Augmented Generation”。
+- [SIAgent: Spatial Interaction Agent via LLM-powered Eye-Hand Motion Intent Understanding in VR](https://arxiv.org/abs/2603.00522)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [I-Perceive](https://arxiv.org/abs/2603.00600)：面向移动操作机器人的语言条件主动感知模型。核心思想：选择能获取任务相关信息的视角，服务室内具身任务。
+- [Uni-Skill: Building Self-Evolving Skill Repository for Generalizable Robotic Manipulation](https://arxiv.org/abs/2603.02623)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Building Self-Evolving Skill Repository for Generalizable Robotic Manipulation”。
+- [IMR-LLM: Industrial Multi-Robot Task Planning and Program Generation using Large Language Models](https://arxiv.org/abs/2603.02669)：用 LLM 进行多机器人任务规划与程序生成。
+- [Retrieve-Reason-Act Robots](https://arxiv.org/abs/2603.02688)：让机器人在行动前检索外部指令和任务知识，并进行显式推理。核心思想：把检索和推理作为具身控制流程中的独立步骤，而不是只依赖策略记忆。
+- [TagaVLM](https://arxiv.org/abs/2603.02972)：为视觉语言导航加入 topology-aware global action reasoning。核心思想：用场景拓扑约束长程导航决策。
+- [MA-CoNav: A Master-Slave Multi-Agent Framework with Hierarchical Collaboration and Dual-Level Reflection for Long-Horizon Embodied VLN](https://arxiv.org/abs/2603.03024)：把长程 VLN 拆成 master/slave agent 来分别承担语言理解、视觉感知与具身执行，并用分层协作和双层反思降低单一 agent 的决策漂移。
+- [Large-Language-Model-Guided State Estimation for Partially Observable Task and Motion Planning](https://arxiv.org/abs/2603.03704)：用大模型引导的状态估计支持部分可观测任务与运动规划。
+- [PROSPECT](https://arxiv.org/abs/2603.03739)：结合语义空间融合的流式视觉语言导航 harness。核心思想：把实时观察与预测表示结合，用于连续路线决策。
+- [IROSA: Interactive Robot Skill Adaptation Using Natural Language](https://arxiv.org/abs/2603.03897)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [Act, Think or Abstain](https://arxiv.org/abs/2603.05147)：面向 VLA 模型的复杂度感知自适应推理框架；核心思想是在不确定时让具身 agent 选择行动、继续思考或拒动。
+- [Critic in the Loop: A Tri-System VLA Framework for Robust Long-Horizon Manipulation](https://arxiv.org/abs/2603.05185)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [RoboPocket: Improve Robot Policies Instantly with Your Phone](https://arxiv.org/abs/2603.05504)：构建面向embodied agents, robotics, or vision-language-action capability的外部流程，补充工具调用、编排或执行闭环覆盖。
+- [RACAS: Controlling Diverse Robots With a Single Agentic System](https://arxiv.org/abs/2603.05621)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Multimodal Behavior Tree Generation: A Small Vision-Language Model for Robot Task Planning](https://arxiv.org/abs/2603.06084)：补充面向具身、机器人、导航、操作或视觉-语言-动作能力的智能体工作流、编排模式、提示循环或工具化执行框架。
 - [RoboCritics](https://arxiv.org/abs/2603.06842)：用专家运动级评价器增强 LLM 机器人编程的框架。核心思路是检查执行轨迹中的碰撞、关节速度违规和不安全姿态，并把结构化修正反馈回编程循环。
+- [T2Nav Algebraic Topology Aware Temporal Graph Memory and Loop Detection for ZeroShot Visual Navigation](https://arxiv.org/abs/2603.06918)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Agentic AI-Driven UAV Network Deployment: An LLM-Enhanced Exact Potential Game Approach](https://arxiv.org/abs/2603.07456)：提出具身与 VLA方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [Viewpoint-Agnostic Grasp Pipeline using VLM and Partial Observations](https://arxiv.org/abs/2603.07866)：先用开放词表检测与可提示分割定位语言目标，再从 RGB-D 构建物体中心点云、补偿遮挡下的不可靠深度，并规划避碰且可执行的抓取。
+- [See and Switch: Vision-Based Branching for Interactive Robot-Skill Programming](https://arxiv.org/abs/2603.08057)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [MoMaStage](https://arxiv.org/abs/2603.08383)：用 skill-state graph 支持长程室内移动操作。核心思想：结合图引导规划与闭环执行，处理家庭尺度任务。
+- [R2F: Repurposing Ray Frontiers for LLM-free Object Navigation](https://arxiv.org/abs/2603.08475)：把 ray-frontier 探索重新用于开放词表目标导航，利用 frontier ray 携带的语义线索进行决策，避免推理时反复调用大模型。
+- [Interactive World Simulator for Robot Policy Training and Evaluation](https://arxiv.org/abs/2603.08546)：提供用于机器人策略训练与评估的交互式世界模拟器，是可复用的具身 agent 基础设施。
+- [See, Plan, Rewind: Progress-Aware Vision-Language-Action Models for Robust Robotic Manipulation](https://arxiv.org/abs/2603.09292)：面向鲁棒机器人操作的进度感知 VLA 框架；核心思想是在操作偏离目标时监控进度并回退或调整计划。
+- [NS-VLA: Towards Neuro-Symbolic Vision-Language-Action Models](https://arxiv.org/abs/2603.09542)：可作为embodied and VLA agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [TiPToP: A Modular Open-Vocabulary Planning System for Robotic Manipulation](https://arxiv.org/abs/2603.09971)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“A Modular Open-Vocabulary Planning System for Robotic Manipulation”。
+- [Decision-Aware Uncertainty Evaluation of Vision-Language Model-Based Early Action Anticipation for Human-Robot Interaction](https://arxiv.org/abs/2603.10061)：评估 VLM 在部分第一视角观察下做早期动作预测时的不确定性校准，重点是置信度是否足以支撑后续人机协作决策。
+- [Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation](https://arxiv.org/abs/2603.10675)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
 - [OnFly](https://arxiv.org/abs/2603.10682)：面向机载无人机智能体的零样本空中视觉语言导航框架。核心思路是结合双智能体决策架构、混合轨迹记忆、语义-几何验证和滚动时域规划，稳定长程导航。
+- [Grounding Robot Generalization in Training Data via Retrieval-Augmented VLMs](https://arxiv.org/abs/2603.11426)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [RoboClaw: An Agentic Framework for Scalable Long-Horizon Robotic Tasks](https://arxiv.org/abs/2603.11558)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“An Agentic Framework for Scalable Long-Horizon Robotic Tasks”。
+- [Red-Teaming VLA Models](https://arxiv.org/abs/2603.12510)：用 quality-diversity prompt generation 对 VLA 模型进行 red teaming；核心思想是搜索多样攻击提示以暴露机器人策略失败。
+- [MineEvolve: Self-Evolution with Accumulated Knowledge for Long-Horizon Embodied Minecraft Agents](https://arxiv.org/abs/2603.13131)：MineEvolve 关注 long-horizon Minecraft agents 的自进化与经验积累，属于 embodied agent harness。
+- [Stiffness Copilot: An Impedance Policy for Contact-Rich Teleoperation](https://arxiv.org/abs/2603.14068)：在遥操作中加入共享控制式阻抗选择，用仿真接触信息监督腕部相机策略预测方向相关刚度，使接触丰富操作能在线调节柔顺性。
+- [AeroGen: Agentic Drone Autonomy through Single-Shot Structured Prompting&Drone SDK](https://arxiv.org/abs/2603.14236)：结合结构化 guardrail prompting 与 Drone SDK，从自然语言任务提示生成满足约束的 UAV 控制程序，并在仿真和真实无人机环境中评估。
+- [CORAL: COntextual Reasoning And Local Planning in A Hierarchical VLM Framework for Underwater Monitoring](https://arxiv.org/abs/2603.14786)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [SignNav: Leveraging Signage for Semantic Visual Navigation in Large-Scale Indoor Environments](https://arxiv.org/abs/2603.16166)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [CABTO: Context-Aware Behavior Tree Grounding for Robot Manipulation](https://arxiv.org/abs/2603.16809)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [EmergeNav: Structured Embodied Inference for Zero-Shot Vision-and-Language Navigation in Continuous Environments](https://arxiv.org/abs/2603.16947)：Agent Harness 条目；核心思想：评测连续环境中的零样本视觉语言导航；核心思想是加入执行结构，让 VLM 先验转化为稳定长程导航行动。
+- [AgentVLN: Towards Agentic Vision-and-Language Navigation](https://arxiv.org/abs/2603.17670)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
+- [RPMS: Enhancing LLM-Based Embodied Planning through Rule-Augmented Memory Synergy](https://arxiv.org/abs/2603.17831)：结合结构化规则检索、轻量 belief-state 记忆门控和规则优先的冲突仲裁，使 LLM 具身规划在稀疏反馈下仍能满足严格动作前置条件。
+- [Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model](https://arxiv.org/abs/2603.18091)：VLA 动作生成的自验证框架；核心思想是在执行前草拟并验证候选动作，减少具身错误。
 - [GoalVLM](https://arxiv.org/abs/2603.18210)：协作式多智能体 object-goal navigation harness。核心思想：把 VLM 语义评分、开放词表分割、空间推理与 frontier selection 放入决策闭环，使多个 agent 能围绕自由语言目标协同搜索。
+- [MERGE: Guided Vision-Language Models for Multi-Actor Event Reasoning and Grounding in Human-Robot Interaction](https://arxiv.org/abs/2603.18988)：面向人机群体交互中对人物、物体和事件的情境 grounding的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Constraint-aware Path Planning from Natural Language Instructions Using Large Language Models](https://arxiv.org/abs/2603.19257)：允许用户用自然语言描述带路线数量、长度、仓库位置和任务约束的路径规划问题，并用 LLM 解析、验证和修正解。
+- [Speculative Policy Orchestration: A Latency-Resilient Framework for Cloud-Robotic Manipulation](https://arxiv.org/abs/2603.19418)：面向具身智能与视觉语言行动，补充外部工作流、工具、检索、规划或多智能体框架。
+- [CeRLP: A Cross-embodiment Robot Local Planning Framework for Visual Navigation](https://arxiv.org/abs/2603.19602)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [The Robot's Inner Critic: Self-Refinement of Social Behaviors through VLM-based Replanning](https://arxiv.org/abs/2603.20164)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [SpatialFly: Geometry-Guided Representation Alignment for UAV Vision-and-Language Navigation in Urban Environments](https://arxiv.org/abs/2603.21046)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [DyGeoVLN: Infusing Dynamic Geometry Foundation Model into Vision-Language Navigation](https://arxiv.org/abs/2603.21269)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [PRM-as-a-Judge: A Dense Evaluation Paradigm for Fine-Grained Robotic Auditing](https://arxiv.org/abs/2603.21669)：可作为embodied and VLA agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Can a Robot Walk the Robotic Dog: Triple-Zero Collaborative Navigation for Heterogeneous Multi-Agent Systems](https://arxiv.org/abs/2603.21723)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [From Instructions to Assistance: a Dataset Aligning Instruction Manuals with Assembly Videos for Evaluating Multimodal LLMs](https://arxiv.org/abs/2603.22321)：面向具身智能与视觉语言行动，补充用于embodied question answering, robot task planning, navigation, or multi-robot orchestration的智能体流程、编排模式、工具循环或运行框架。
+- [CATNAV: Cached Vision-Language Traversability for Efficient Zero-Shot Robot Navigation](https://arxiv.org/abs/2603.22800)：缓存基于 VLM 的可通行性评估，并用视觉推理做 embodiment-aware 轨迹选择，用于零样本机器人导航。
+- [DUPLEX](https://arxiv.org/abs/2603.23909)：面向机器人任务的 dual-system planning harness。核心思想：限制 LLM 负责结构化信息抽取，把计划综合交给符号规划器。
+- [ELITE: Experiential Learning and Intent-Aware Transfer for Self-improving Embodied Agents](https://arxiv.org/abs/2603.24018)：Agent Harness 条目；核心思想：面向具身 agent 的经验学习和意图感知迁移；核心思想是复用物理交互反馈，减少重复的具身规划失败。
+- [SOMA: Strategic Orchestration and Memory-Augmented System for Vision-Language-Action Model Robustness via In-Context Adaptation](https://arxiv.org/abs/2603.24060)：面向 VLA 鲁棒性的策略编排与记忆增强系统；核心思想是用 in-context adaptation、编排和记忆恢复具身失败。
+- [Chameleon](https://arxiv.org/abs/2603.24576)：面向长程机器人操作的情节记忆框架；核心思想是存储并复用操作经验，让具身 agent 在长任务中调用相关经历。
+- [SABER](https://arxiv.org/abs/2603.24935)：面向 VLA 模型的隐蔽 agentic 黑盒攻击框架；核心思想是用 agentic loop 组织对具身策略的黑盒攻击。
+- [Beyond Viewpoint Generalization: What Multi-View Demonstrations Offer and How to Synthesize Them for Robot Manipulation?](https://arxiv.org/abs/2603.26757)：补充面向具身、机器人、VLA 或动作反馈能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
 - [ReMemNav](https://arxiv.org/abs/2603.26788)：面向零样本目标导航的记忆增强框架。核心思路是在具身导航中加入可复用记忆机制，使智能体在执行任务时能够恢复目标位置与探索上下文。
+- [SpatialAnt: Autonomous Zero-Shot Robot Navigation via Active Scene Reconstruction and Visual Anticipation](https://arxiv.org/abs/2603.26837)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [ROSClaw: An OpenClaw ROS 2 Framework for Agentic Robot Control and Interaction](https://arxiv.org/abs/2603.26997)：提供用于智能体机器人控制与交互的 ROS 2 框架。
+- [HeteroHub: An Applicable Data Management Framework for Heterogeneous Multi-Embodied Agent System](https://arxiv.org/abs/2603.28010)：为异构具身多智能体系统提供以数据为中心的基础设施，整合 agent-task-environment 静态元数据、任务对齐训练语料和实时传感流，用于上下文敏感执行与闭环控制。
+- [EgoSim: Egocentric World Simulator for Embodied Interaction Generation](https://arxiv.org/abs/2604.01001)：提出用于生成具身交互的第一人称世界模拟器，可作为具身智能体基础设施候选。
 - [MetaNav](https://arxiv.org/abs/2604.02318)：一种具备元认知的视觉语言导航 harness。核心思想：结合持久 3D 语义记忆、历史感知规划和反思式修正，使免训练 VLN agent 能发现低效游走、调整探索策略并减少重复访问。
+- [QuadAgent: A Responsive Agent System for Vision-Language Guided Quadrotor Agile Flight](https://arxiv.org/abs/2604.02786)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
 - [Speculative Verification for VLA](https://arxiv.org/abs/2604.02965)：一种结合开环动作块规划与轻量闭环验证的 VLA 控制 harness；核心思想是在保持高吞吐动作生成的同时在线检查观测，使具身智能体能在误差累积主导执行前发现过期或不安全的动作块。
+- [Human-Robot Copilot for Data-Efficient Imitation Learning](https://arxiv.org/abs/2604.03613)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [ROSClaw: A Hierarchical Semantic-Physical Framework for Heterogeneous Multi-Agent Collaboration](https://arxiv.org/abs/2604.04664)：面向异构多 agent 协作的层级语义-物理框架；核心思想是连接高层语义协调与具身物理执行。
 - [StarVLA](https://arxiv.org/abs/2604.05014)（[开源代码](https://github.com/starVLA/starVLA)）：模块化 VLA 开发代码库，提供 benchmark-agnostic 的数据、模型、训练和评测组件，更适合作为 VLA agent 开放基础设施，而不是单个模型 checkpoint。
+- [KITE: Keyframe-Indexed Tokenized Evidence for VLM-Based Robot Failure Analysis](https://arxiv.org/abs/2604.07034)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [AEROS: A Single-Agent Operating Architecture with Embodied Capability Modules](https://arxiv.org/abs/2604.07039)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [A Physical Agentic Loop for Language-Guided Grasping with Execution-State Monitoring](https://arxiv.org/abs/2604.07395)：在现有 grasp-and-lift 原语外加入事件式执行状态流，监测空抓、滑落、停滞、超时和语义错误，并把有界修正反馈给语言引导操作循环。
+- [RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](https://arxiv.org/abs/2604.07774)：它提供机器人、VLA 或具身任务规划与控制 workflow，适合补充 embodied/VLA Agent Harness。
+- [HiRO-Nav: Hybrid ReasOning Enables Efficient Embodied Navigation](https://arxiv.org/abs/2604.08232)：HiRO-Nav 用 hybrid reasoning 改善 embodied navigation，属于导航 agent harness 候选。
+- [Visually-grounded Humanoid Agents](https://arxiv.org/abs/2604.08509)：Visually-grounded Humanoid Agents 面向仅凭视觉和目标行动的数字人/embodied agent。
+- [OOWM: Structuring Embodied Reasoning and Planning via Object-Oriented Programmatic World Modeling](https://arxiv.org/abs/2604.09580)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
 - [ABot-Claw](https://arxiv.org/abs/2604.10096)：面向持久、协作和自演化机器人的具身智能体运行框架。核心思路是在 OpenClaw 之上加入统一具身接口、跨具身多模态记忆、能力调度和基于 critic 的反馈，使自然语言目标能够闭环到物理机器人动作和重新规划。
+- [3D-Anchored Lookahead Planning for Persistent Robotic Scene Memory via World-Model-Based MCTS](https://arxiv.org/abs/2604.11302)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [CLASP: Closed-loop Asynchronous Spatial Perception for Open-vocabulary Desktop Object Grasping](https://arxiv.org/abs/2604.11320)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Closed-loop Asynchronous Spatial Perception for Open-vocabulary Desktop Object Grasping”。
+- [M2HRI: An LLM-Driven Multimodal Multi-Agent Framework for Personalized Human-Robot Interaction](https://arxiv.org/abs/2604.11975)：为每个机器人赋予不同的 LLM 驱动人格和长期记忆，并依据机器人身份与用户感知协调多机器人 HRI 行为。
+- [Evolvable Embodied Agent for Robotic Manipulation via Long Short-Term Reflection and Optimization](https://arxiv.org/abs/2604.13533)：可作为embodied and VLA agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [AgentComm: Semantic Communication for Embodied Agents](https://arxiv.org/abs/2604.13558)：提供具身 agent 的语义通信机制。核心思想：研究让具身 agent 在原始观察之外进行协调的通信协议。
+- [ESCAPE: Episodic Spatial Memory and Adaptive Execution Policy for Long-Horizon Mobile Manipulation](https://arxiv.org/abs/2604.13633)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [EmbodiedClaw: Conversational Workflow Execution for Embodied AI Development](https://arxiv.org/abs/2604.13800)：面向 embodied AI development 的对话式工作流执行框架；核心思想是用结构化对话执行具身开发流程。
+- [Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection](https://arxiv.org/abs/2604.13942)：面向具身与 VLA 智能体的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception](https://arxiv.org/abs/2604.14089)：将 Universal Manipulation Interface 从受限视觉扩展到 3D 空间感知，可作为具身数据与接口基础设施。
+- [SpaceMind: A Modular and Self-Evolving Embodied Vision-Language Agent Framework for Autonomous On-orbit Servicing](https://arxiv.org/abs/2604.14399)：面向在轨服务的模块化、自演化 embodied VLA framework。核心思想：把知识、工具和推理拆成可扩展维度，并用 skill modules 与动态路由支撑多阶段具身任务。
+- [Long-Term Memory for VLA Agents](https://arxiv.org/abs/2604.15671)：为开放世界任务中的 VLA agent 加入长期记忆；核心思想是保留任务相关经验，支撑更长程具身执行。
+- [Semantic Area Graph Reasoning for Multi-Robot Language-Guided Search](https://arxiv.org/abs/2604.16263)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
 - [FineCog-Nav](https://arxiv.org/abs/2604.16298)：一个面向无人机视觉语言导航的零样本智能体框架，采用细粒度认知模块。核心思路是用结构化协议协同语言、感知、注意力、记忆、想象、推理和决策模块，并通过 AerialVLN-Fine 诊断指令遵循和长程导航能力。
+- [ReconVLA: An Uncertainty-Guided and Failure-Aware Vision-Language-Action Framework for Robotic Control](https://arxiv.org/abs/2604.16677)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“An Uncertainty-Guided and Failure-Aware Vision-Language-Action Framework for Robotic Control”。
+- [EmbodiedHead: Real-Time Listening and Speaking Avatar for Conversational Agents](https://arxiv.org/abs/2604.17211)：为对话式 LLM agent 提供实时 talking-head 接口，结合 rectified-flow DiT、可微渲染器和单流听说协议，避免依赖未来 interlocutor 音频。
+- [Seeing Isn't Believing: Mitigating Belief Inertia via Active Intervention in Embodied Agents](https://arxiv.org/abs/2604.17252)：通过主动干预缓解具身智能体的信念惯性，契合具身智能体纠错与恢复工作流。
+- [EmbodiedLGR: Integrating Lightweight Graph Representation and Retrieval for Semantic-Spatial Memory in Robotic Agents](https://arxiv.org/abs/2604.18271)：为机器人 agent 构建轻量语义-空间图记忆，使位置、事件和物体查询能在接近人机交互所需的响应时间内完成检索。
+- [SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy](https://arxiv.org/abs/2604.18557)：把单人-物体交互技能迁移到双人-物体-双人协作操作，通过保持交互关系的 retargeting 和 solo-to-cooperative synergy 处理多 humanoid 协同。
 - [HELM: Harness-Enhanced Long-horizon Memory](https://arxiv.org/abs/2604.18791)：面向长程 VLA 操作的模型无关 harness。核心思想：在 VLA policy 外加入外部记忆、验证和恢复，使长任务中的执行失败可以被诊断并纠正。
 - [Explore Like Humans](https://arxiv.org/abs/2604.19034)：一种带在线 SG-Memo 构建的具身智能体自主探索框架。核心思路是在探索过程中构建空间与语义记忆，使后续导航决策能够利用持续演化的环境模型。
+- [Bimanual Robot Manipulation via Multi-Agent In-Context Learning](https://arxiv.org/abs/2604.20348)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Bimanual Robot Manipulation via Multi-Agent In-Context Learning”。
+- [Reasoning About Traversability: Language-Guided Off-Road 3D Trajectory Planning](https://arxiv.org/abs/2604.21249)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“Language-Guided Off-Road 3D Trajectory Planning”。
+- [DM$^3$-Nav: Decentralized Multi-Agent Multimodal Multi-Object Semantic Navigation](https://arxiv.org/abs/2604.22014)：在没有中心协调器的条件下执行多模态开放词表、多目标语义导航，让 agent 共享局部地图和目标证据并分散式探索。
+- [CodeGraphVLP: Code-as-Planner Meets Semantic-Graph State for Non-Markovian Vision-Language-Action Models](https://arxiv.org/abs/2604.22238)：把 code-as-planner 与语义图状态结合处理非马尔可夫 VLA 任务，属于 agent harness 编排。
+- [RecoverFormer: End-to-End Contact-Aware Recovery for Humanoid Robots](https://arxiv.org/abs/2604.22911)：面向具身智能与视觉语言行动，补充用于robot manipulation, navigation, explanation, embodied interaction, or robot-design workflow的智能体流程、编排模式、工具循环或运行框架。
+- [AgenticCache: Cache-Driven Asynchronous Planning for Embodied AI Agents](https://arxiv.org/abs/2604.24039)：面向 embodied AI agent 的缓存驱动异步规划框架；核心思想是复用缓存计划和观察，支撑长程具身执行。
 - [AsyncShield](https://arxiv.org/abs/2604.24086)：面向异步云端 VLA 导航的即插即用边缘适配器。核心思想：通过延迟感知控制和安全过滤补偿网络抖动与过期视觉语言意图，使云端 VLA policy 更适合连续移动导航闭环。
+- [Agent-Centric Observation Adaptation for Robust Visual Control under Dynamic Perturbations](https://arxiv.org/abs/2604.24661)：围绕 Embodied/VLA 能力补充《Agent-Centric Observation Adaptation for Robust Visual Control under Dynamic Perturbations》，作为 Agent Harness 条目候选。
 - [GS-Playground](https://arxiv.org/abs/2604.25459)：面向视觉机器人学习的高吞吐照片级仿真基础设施。核心思想：结合 Gaussian Splatting 资产与多模态仿真接口，让具身策略能在视觉丰富环境中以更高吞吐训练和评测。
-- [Embodied EvoAgent](https://doi.org/10.1145/3746027.3754880)：连接多模态大模型与世界模型的脑启发具身 agent 范式；核心思想是在感知、世界建模和动作之间构建 agent 框架，使具身系统围绕环境状态推理，而不是只依赖单个被动多模态模型。
+- [Atomic-Probe Governance for Skill Updates in Compositional Robot Policies](https://arxiv.org/abs/2604.26689)：可作为embodied and VLA agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Robot Planning and Situation Handling with Active Perception](https://arxiv.org/abs/2604.26988)：提供可复用 agent 工作流或执行 harness，服务于embodied and vision-language-action agents。
+- [Sentinel-VLA: A Metacognitive VLA Model with Active Status Monitoring for Dynamic Reasoning and Error Recovery](https://arxiv.org/abs/2605.01191)：带主动状态监控和错误恢复的元认知 VLA 框架；核心思想是在执行中监测状态，并在失败出现时触发推理或恢复。
+- [Anticipation-VLA: Solving Long-Horizon Embodied Tasks via Anticipation-based Subgoal Generation](https://arxiv.org/abs/2605.01772)：通过 anticipation-based subgoal generation 解决长程具身任务；核心思想是在行动前预测有用子目标，降低长程规划失败。
+- [Phone2Act: A Low-Cost, Hardware-Agnostic Teleoperation System for Scalable VLA Data Collection](https://arxiv.org/abs/2605.01948)：作为具身与 VLA 智能体的智能体执行框架候选，聚焦“A Low-Cost, Hardware-Agnostic Teleoperation System for Scalable VLA Data Collection”。
+- [IntenBot: Flexible and Imprecise Multimodal Input for LLMs to Understand User Intentions for Casual and Human-Like HRI](https://arxiv.org/abs/2605.04585)：用 LLM 从随意且不精确的多模态 HRI 输入中推断用户意图，使语音、手势等信号能补充不完整的显式命令。
+- [BrickCraft: Visuomotor Skill Composition with Situated Manual Guidance for Long-Horizon Interlocking Brick Assembly](https://arxiv.org/abs/2605.07605)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [SimWorld Studio: Automatic Environment Generation with Evolving Coding Agent for Embodied Agent Learning](https://arxiv.org/abs/2605.09423)：面向面向具身 agent 学习的自动 3D 环境生成的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Kintsugi](https://arxiv.org/abs/2605.09487)：基于修复可执行知识库的具身 agent 白盒策略学习 harness。核心思想：把策略知识表示为类型化谓词、算子、schema、monitor、恢复规则和经验记录，并且只通过确定性验证门接纳局部编辑。
 - [Continual Harness](https://arxiv.org/abs/2605.09998)：为长程具身任务中的自改进 foundation agent 提供在线适应 harness。核心思想：把适应循环放在基座模型外部，使任务反馈能在长时交互中更新行为。
+- [EmbodiSkill: Skill-Aware Reflection for Self-Evolving Embodied Agents](https://arxiv.org/abs/2605.10332)：EmbodiSkill 使用 skill-aware reflection 支持 embodied agents 自演化。
 - [RIO](https://arxiv.org/abs/2605.11564)：面向跨 embodiment 机器人学习与部署的灵活 robot I/O 基础设施层。核心思想：标准化机器人控制、遥操作、传感器、数据格式与策略部署，使 embodied-agent runtime 能以更少的专用代码迁移到不同硬件。
+- [Embodied Multi-Agent Coordination by Aligning World Models Through Dialogue](https://arxiv.org/abs/2605.12920)：为 PARTNR 增加自然语言对话通道，使部分可观测的家庭 agent 能共享观察、对齐世界模型并协调行动。
+- [Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models](https://arxiv.org/abs/2605.13119)：可作为embodied and VLA agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Guide, Think, Act: Interactive Embodied Reasoning in Vision-Language-Action Models](https://arxiv.org/abs/2605.13632)：面向 VLA 模型的交互式具身推理框架；核心思想是把引导、思考和动作组织成闭环具身工作流。
+- [ASH: Agents that Self-Hone via Embodied Learning](https://arxiv.org/abs/2605.14211)：可作为embodied and VLA agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [TeachAnything: A Multimodal Crowdsourcing Platform for Training Embodied AI Agents in Symmetrical Reality](https://arxiv.org/abs/2605.14556)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Hybrid LLM-based Intelligent Framework for Robot Task Scheduling](https://arxiv.org/abs/2605.15486)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Box-Chain VLA](https://doi.org/10.1109/icassp55912.2026.11464640)：为机器人操作提供显式 reasoning-to-action 接口；核心思想是把中间空间推理 artifact 连接到可执行 VLA 动作。
+- [Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](https://arxiv.org/abs/2605.22283)：提出 SOMA，将可移动头部相机的多视角观测聚合为持久 spatial-semantic memory，使 VLA 能操作当前视野外的目标。
+- [Embodied-BenchClaw](https://arxiv.org/abs/2606.11909)：用三智能体五阶段 pipeline 自动构造具身空间智能基准，并包含可扩展 skill library、质量控制以及机器人和空间任务实例生成。
+- [FPC-VLA](https://doi.org/10.1016/j.eswa.2026.131742)：带 supervisor 的 VLA 失败预测与纠正框架；核心思想是在执行前或执行中预测并修正可能失败的动作。
+- [Map-Free Robot Navigation via Episodic Semantic Reasoning](https://doi.org/10.1109/ICAIII69475.2026.11521605)：结合视觉语言模型和大语言模型进行无地图机器人导航，为具身导航补充基于情节语义推理的 Agent Harness。
+- [ARIA](https://sreal.ucf.edu/wp-content/uploads/2026/03/ARIA_Toward_Human_Centered_Embodied_AI_Instruction_in_Real_Time_Augmented_Reality.pdf)：提供实时增强现实教学智能体架构，结合 LLM 提示、多模态触发、persona 控制、延迟基准和用户体验评估，支撑具身人机交互。
+- [Spatially-Aware Embodied Agents in XR](https://doi.org/10.1109/VRW70859.2026.00182)：提供面向 XR 的 spatially-aware embodied agent 统一框架，连接 AR/XR 场景理解与智能体执行。
+- [Frame-First AR](https://doi.org/10.1109/AIxVR67263.2026.00048)：结合 egocentric scene graph 与 VLM 语义做 AR 空间推理，适合实时场景上的具身智能体接口。
+- [Agent-Specific Prompt Engineering for LLM-Guided RL Exploration](https://doi.org/10.1109/access.2026.3683466)：自动把每个 agent 的数值和符号特征编码为 LLM-guided RL exploration prompt，减少人工描述 agent-specific 特征时引入的偏差。
+- [HiMRAG: Hierarchical Multimodal Retrieval-Augmented Generation for Robot Task Planning](https://doi.org/10.1109/lra.2026.3662582)：先从视觉快照识别家电及其文档，再用任务导向的多模态 RAG 把自然语言请求转成操作复杂家电的动作序列。
+- [Adaptive Visual-Tactile Fusion for Contact-Rich Dexterous Manipulation](https://doi.org/10.1109/lra.2026.3681124)：面向具身智能与视觉语言行动，补充用于robot manipulation, navigation, explanation, embodied interaction, or robot-design workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Scene twin: Automatic generation of environment surrogates for mobile robot task execution](https://doi.org/10.1016/j.eswa.2026.132064)：面向具身智能与视觉语言行动，补充用于robot manipulation, navigation, explanation, embodied interaction, or robot-design workflow的智能体流程、编排模式、工具循环或运行框架。
+- [LAGCN: Low-Cost Aerial-Ground Collaborative Navigation in Unknown Environments](https://doi.org/10.1109/lra.2026.3664197)：用轻量 UAV 相机向感知受限的地面车辆提供相对位置观测和语义鸟瞰图，引导其在未知环境中高效安全导航。
+- [VL-GRiP3: A hierarchical pipeline leveraging vision-language models for autonomous robotic 3D grasping](https://doi.org/10.1016/j.rcim.2026.103244)：把自然语言抓取命令映射到 VLM 物体理解、点云抓取位姿生成和可执行 3D 机器人抓取，面向工业场景降低低层编程负担。
+- [From insight to action: Embodied multi-agent system integrating vision language model for digital twin-assisted human-robot collaborative assembly](https://doi.org/10.1016/j.jmsy.2026.02.013)：构建面向具身与 VLA 智能体任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Designing Emotionally Intelligent Embodied Agents for Immersive Virtual Reality Experiences](https://doi.org/10.1109/aixvr67263.2026.00023)：提出 EMBRACE 模块化 VR agent 框架，结合自然语言处理、情绪推断、表现力语音合成和面部动画，并通过用户研究比较 empathic 与 nonempathic agent 条件。
+- [Curiosity-Driven Zero-Shot Object Navigation With Vision-Language Models](https://doi.org/10.1109/lra.2026.3655277)：补充面向具身、机器人、导航、操作或视觉-语言-动作能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [Toward Embodied Intelligence: An Architecture for Natural Dialogue and Action Execution in Assistive Robots](https://doi.org/10.1109/icara69401.2026.11480310)：整合多模态感知、LLM 对话与推理、本地记忆和安全感知动作规划，使 assistive mobile robot 能理解室内日常任务请求并安全执行。
+- [From Pixels to Plans: A High-Fidelity Knowledge Graph Grounding Framework for LLM-Based Robotic Action](https://doi.org/10.1109/icwr69602.2026.11513364)：为具身与 VLA 智能体方向补充一个智能体工作流或编排框架候选，强调工具调用、规划、外部执行或多智能体协作。
+- [EED: Embodied Environment Description Through Robotic Visual Exploration](https://doi.org/10.1109/lra.2026.3662652)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Design of Embodied Intelligent Agent Collaborative Decision-Making Framework Based on Visual-Spatial-Semantic Data Fusion](https://doi.org/10.1109/etai68332.2026.11485026)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Environment-Driven and LLM-Guided Multi-Robot Task Inference and Allocation Under Temporal Logic Specifications](https://doi.org/10.1109/tase.2026.3659055)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Act or ask: Interactive construction robots via vision-language models with confidence-guided decision deferral](https://doi.org/10.1016/j.aei.2026.104454)：补充面向具身与视觉语言动作的外部 LLM/VLM 工作流，重点是VLM confidence-guided ask-or-act robot interaction。
+- [D-RMGPT: Robot-assisted collaborative tasks driven by large multimodal models](https://doi.org/10.1016/j.birob.2026.100334)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [USV-3.0: Cognitive maritime navigation through vision-language models, Human-in-the-Loop learning, and spatio-temporal memory](https://doi.org/10.1016/j.oceaneng.2026.125010)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [Agentic HRC: Achieving context alignment via memory for Human–Robot Collaboration](https://doi.org/10.1016/j.rcim.2026.103307)：在人机协作中用记忆实现上下文对齐。
+- [SpatialGPT](https://doi.org/10.1145/3748636.3762753)：一种以空间链式思考和结构化空间记忆为核心的零样本视觉语言导航框架。核心思路是外化空间状态，使路线决策建立在持续场景结构上，而不是只依赖单步视觉语言匹配。
+- [Embodied EvoAgent](https://doi.org/10.1145/3746027.3754880)：连接多模态大模型与世界模型的脑启发具身 agent 范式；核心思想是在感知、世界建模和动作之间构建 agent 框架，使具身系统围绕环境状态推理，而不是只依赖单个被动多模态模型。
 - vla-evaluation-harness（[开源代码](https://github.com/allenai/vla-evaluation-harness)；[leaderboard](https://allenai.github.io/vla-evaluation-harness/leaderboard/)）：统一 VLA 评测与部署 harness，连接 Dockerized benchmarks、model servers 和 evaluation jobs，覆盖 LIBERO、CALVIN、SimplerEnv、RoboCasa、VLABench、RoboTwin、RLBench、BEHAVIOR-1K、OpenVLA-style servers 等 policy stacks。
+- [NavGemini](https://doi.org/10.1007/s44267-025-00105-x)：面向视觉语言导航的多模态 LLM agent。核心思想：用多模态推理连接导航指令、视觉观察和动作。
+- [VLM-Nav](https://doi.org/10.1371/journal.pone.0345778)：由单目视觉和 VLM 推理驱动的无地图 UAV 导航 harness。核心思想：在没有预建地图时连接视觉观察、语言目标与空中动作选择。
+- [scene_synthesizer: A Python Library for Procedural Scene Generation in Robot Manipulation](https://doi.org/10.21105/joss.07561)： 提供面向机器人操作的程序化场景生成库，为具身智能体提供可复用环境构建基础设施。
+- [LLM-based automated kitting](https://doi.org/10.1088/1757-899X/1342/1/012049)：在实体协作机器人 kitting 单元中实现自然语言人机通信，结合内部知识和视觉反馈来适配制造指令。
+- [A Multimodal Agentic AI Framework for Intuitive Human–Robot Collaboration](https://doi.org/10.3390/s26061958)：结合语音、视线、运动规划辅助和协作机器人控制，让非专家用户通过自然多模态交互委派机器人任务。
+- [Gaze-Enhanced and LLM-Enabled System for Intuitive Human-Robot Collaboration](https://doi.org/10.1061/9780784486115.102)：结合凝视信号与 LLM 交互支持直觉式人机协作，为多模态 HRI 补充 harness 模式。
+- [AIRSPEED: An Open-source Data Production Platform for Embodied Artificial Intelligence](https://doi.org/10.1145/3806827)：通过统一机器人与仿真接口解耦硬件和软件，支持遥操作、示教、合成数据生成和标准化数据生产，用于具身 AI 训练。
+- [Toward Universal Embodied Planning in Scalable Heterogeneous Field Robots Collaboration and Control](https://doi.org/10.1002/rob.22522)：构建异构野外机器人协作 pipeline，包含数据生成、监督微调和 MRED 错误诊断指标，用于连接自然语言命令与多机器人协调。
+- [Elmo: An Embodied Conversational Assistant For Community Repair Cafés](https://doi.org/10.1145/3719160.3737627)：报告 embodied conversational assistant 在 repair café 中的 pilot 部署，分析志愿 repairer 如何使用该探针，以及上下文时机、建议质量和工作流整合上的设计问题。
+- [Using LLMs to Develop Personalities for Embodied Conversational Agents in Virtual Reality](https://doi.org/10.1145/3726986.3727048)：提出具身与 VLA方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [NoisyEQA: benchmarking Embodied Question Answering with imperfect queries from non-expert users](https://doi.org/10.55092/rl20260014)：面向具身智能与视觉语言行动，补充用于embodied question answering, robot task planning, navigation, or multi-robot orchestration的智能体流程、编排模式、工具循环或运行框架。
+- [Cross-generator image authenticity verification: multi-modal feature fusion and distribution difference analysis](https://doi.org/10.7717/peerj-cs.3655)：面向具身智能与视觉语言行动，补充用于embodied question answering, robot task planning, navigation, or multi-robot orchestration的智能体流程、编排模式、工具循环或运行框架。
+- [Cross-embodiment human-like behavior execution for humanoid robots](https://doi.org/10.55092/rl20260015)：面向具身智能与视觉语言行动，补充用于embodied, robot, navigation, manipulation, or action-feedback capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Benefit-cost frontier-aware semantic reasoning for zero-shot object navigation](https://doi.org/10.1007/s10489-026-07144-x)：面向具身智能与视觉语言行动，补充用于robot manipulation, navigation, explanation, embodied interaction, or robot-design workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Establishing the tactile ability of dexterous hands: a review of research on tactile acquisition, feedback, and perception](https://doi.org/10.1007/s41315-026-00521-2)：面向具身智能与视觉语言行动，补充用于robot manipulation, navigation, explanation, embodied interaction, or robot-design workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Machine Learning for Predicting Mechanical Properties of 3D-Printed Polymers from Process Parameters: A Review](https://doi.org/10.3390/polym18040499)：面向具身智能与视觉语言行动，补充用于robot manipulation, navigation, explanation, embodied interaction, or robot-design workflow的智能体流程、编排模式、工具循环或运行框架。
+- [PERIA: Perceive, Reason, Imagine, Act via Holistic Language and Vision Planning for Manipulation](https://doi.org/10.52202/079017-0558)：提供面向embodied agents, robotics, or vision-language-action capability的工作流、检索或工具循环、验证方法、提示策略或编排框架。
+- [GPU-accelerated Conflict-based Search for Multi-agent Embodied Intelligence](https://doi.org/10.1007/s11633-025-1568-y)：加速多智能体路径规划中的 conflict-based search，面向动态机器人与交通场景中 embodied agents 的更快协调。
+- [Talk to your Cobot: faster and more efficient error-handling in a robotic system with a multi-modal Conversational Agent](https://doi.org/10.1145/3670653.3677484)：把文本、触摸和语音多模态对话 agent 接入协作机器人错误处理，使操作者能更快理解并解决机器人报错。
+- [Walk2Run: A Bio-Rhythm-Inspired Unified Control Framework for Humanoid Robot Walking and Running](https://doi.org/10.1007/s42235-025-00760-2)：构建面向具身与 VLA 智能体任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Development of a 3D Vision Robot System to Grasp Objects on the Conveyor Using Artificial Intelligence](https://doi.org/10.1007/s13369-025-10630-y)：构建面向具身与 VLA 智能体任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Beyond tutoring: a child-centered AI framework for embodied construction in culturally-grounded steam education](https://doi.org/10.1007/s10639-026-14030-z)：围绕 Embodied/VLA 能力补充《Beyond tutoring: a child-centered AI framework for embodied construction in culturally-grounded steam education》，作为 Agent Harness 条目候选。
+- [Formation control and path planning of multi-robot systems via large language models](https://doi.org/10.1007/s11432-024-4290-4)：补充面向具身、机器人、导航、操作或视觉-语言-动作能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [ACKnowledge: A Computational Framework for Human Compatible Affordance-based Interaction Planning in Real-world Contexts](https://doi.org/10.1145/3706598.3713791)：补充面向具身、机器人、导航、操作或视觉-语言-动作能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [Framework for LLM-Enabled Construction Robot Task Planning: Knowledge Base Preparation and Robot-LLM Dialogue for Interior Wall Painting](https://doi.org/10.3390/robotics14090117)：补充智能体工作流、编排模式、工具循环、记忆、验证或环境控制框架。
+- [A Latency-Optimized LLM-based Multimodal Dialogue System for Embodied Conversational Agents in VR](https://doi.org/10.1145/3717511.3749287)：提出面向具身智能与 VLA 能力的智能体流程、编排模式、工具循环或执行框架。
+- [CA-VLN: Collaborative Agents in MLLM-Powered Visual-Language Navigation](https://doi.org/10.3390/s26041254)：采用双 agent VLN 架构，由 Knowledge Agent 注入常识语义上下文，由 Hierarchical History Agent 构建情节记忆以支持长程导航。
+- [BestMan: a modular mobile manipulator platform for embodied AI with unified simulation-hardware APIs](https://doi.org/10.1007/s11704-025-41109-6)：提出面向具身智能与 VLA 能力的智能体流程、编排模式、工具循环或执行框架。
+- [Physical Simulation‐Based Correction of LLM‐Generated Tool‐Using Primitives](https://doi.org/10.1049/ell2.70575)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [AgentHands: Generating Interactive Hand Gestures for Spatially Grounded Agent Conversations in XR](https://doi.org/10.1145/3772318.3790938)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [Welcome to the Shop! Field Trial of a VLM-Powered Autonomous Shop Worker Robot](https://doi.org/10.1145/3757279.3785619)：补充面向具身智能体、机器人、VLA 策略与动作反馈环的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [RAGLRO: Retrieval‐Augmented Generation With Large Language Models for Robotic Operations](https://doi.org/10.1049/cit2.70105)：补充面向具身与视觉语言动作的外部 LLM/VLM 工作流，重点是RAG and LLM workflow for robotic operations。
+- [Household Task Planning with Multi-Objects State and Relationship Using Large Language Models Based Preconditions Verification](https://doi.org/10.5220/0013188400003890)：在多物体状态上用大模型前置条件验证进行家庭任务规划。
+- [Human–robot interaction through joint robot planning with large language models](https://doi.org/10.1007/s11370-024-00570-1)：补充具身与视觉-语言-动作智能体方向的外部编排或执行框架。
+- [EmbodiedFly: Embodied LLM Agent with an Autonomous Reconfigurable Drone](https://doi.org/10.1145/3772079)：围绕自主可重构无人机构建具身 LLM agent；核心思想：把 LLM 推理与传感、交互和物理执行连接到无人机平台。
+- [Text2RLab: No-Code Methodology for Robotic Programming and Interaction in Laboratory Tasks](https://doi.org/10.1145/3708557.3716350)：可作为具身与 VLA Agent方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [MMCNav: MLLM-empowered Multi-agent Collaboration for Outdoor Visual Language Navigation](https://doi.org/10.1145/3731715.3733393)：面向具身与 VLA 智能体的智能体框架或运行时。核心思想：把 MLLM-empowered Multi-agent Collaboration for Outdoor Visual Language Navigation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Clarifying Constraints in Interactive Robot Learning with Language Feedback](https://doi.org/10.1145/3757279.3785583)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Robot Planning via LLM Proposals and Symbolic Verification](https://doi.org/10.3390/make8010022)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Plug-and-Play LLM Knowledge Extraction for Robot Navigation: A Fine-Tuning-Free Edge Framework](https://doi.org/10.3390/make8020049)：提供规划、记忆、验证、工具调用或运行时编排，服务于具身与 VLA 智能体，可补充语言到动作控制、外部规划、记忆、验证和多机器人协作流程。
+- [Streamlining Human–Robot Interaction: Integrating LLM-Based Planning into Modular Robotic Frameworks](https://doi.org/10.3390/s26061978)：将基于 LLM 的规划集成进模块化机器人框架。
+- [AgentSpec: Understanding Embodied Agent Scaffolds Through Controlled Composition](https://arxiv.org/abs/2606.14674)：提出 AgentSpec，用标准化接口把感知、记忆、推理、反思、行动和学习等模块组合为 typed embodied agent scaffold。

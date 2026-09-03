@@ -1,10 +1,106 @@
 # 1.7.2 Survey
 
+- [A Survey on 3D Gaussian Splatting](https://arxiv.org/abs/2401.03890)：A Survey on 3D Gaussian Splatting 补充空间综述，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [Advances in 3D Generation: A Survey](https://arxiv.org/abs/2401.17807)：综述与 Spatial 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
+- [A Comprehensive Survey on 3D Content Generation](https://arxiv.org/abs/2402.01166)：面向空间与三维能力，梳理近期工作、分类边界与开放问题。
+- [3D Gaussian Splatting as a New Era: A Survey](https://arxiv.org/abs/2402.07181)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [A Comprehensive Survey of 3D Dense Captioning: Localizing and Describing Objects in 3D Scenes](https://arxiv.org/abs/2403.07469)：按三维场景表示、物体定位、语言描述、数据集与评测指标梳理 3D dense captioning，用于刻画物体级 grounded scene understanding。
+- [General Place Recognition Survey: Toward Real-World Autonomy](https://arxiv.org/abs/2405.04812)：综述与梳理 Spatial 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [Deep Learning-Based Object Pose Estimation: A Comprehensive Survey](https://arxiv.org/abs/2405.07801)：[Deep Learning-Based Object Pose Estimation: A Comprehensive Survey](https://arxiv.org/abs/2405.07801): 系统综述深度学习目标姿态估计.
+- [A Survey On Text-to-3D Contents Generation In The Wild](https://arxiv.org/abs/2405.09431)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [A Survey of Generative Techniques for Spatial-Temporal Data Mining](https://arxiv.org/abs/2405.09592)：综述时空数据挖掘中的生成建模，覆盖轨迹、交通、气候等结构化时空信号上的预测、仿真、补全与表示学习任务。
+- [When LLMs step into the 3D World: A Survey and Meta-Analysis of 3D Tasks via Multi-modal Large Language Models](https://arxiv.org/abs/2405.10255)：综述与梳理 Spatial 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [Leveraging generative AI for urban digital twins: a scoping review on the autonomous generation of urban data, scenarios, designs, and 3D city models for smart city advancement](https://arxiv.org/abs/2405.19464)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [A Survey on Text-Guided 3-D Visual Grounding: Elements, Recent Advances, and Future Directions](https://arxiv.org/abs/2406.05785)：综述三维、空间、视觉定位或重建能力，为父级复核提供近期综述线索。
+- [Discrete Latent Perspective Learning for Segmentation and Detection](https://arxiv.org/abs/2406.10475)：综述或系统梳理空间与三维理解，为该能力页补充分类、趋势或风险边界。
+- [A Survey on Deep Stereo Matching in the Twenties](https://arxiv.org/abs/2407.07816)：综述三维、空间、视觉定位或重建能力，为父级复核提供近期综述线索。
+- [3DGS.zip: A survey on 3D Gaussian Splatting Compression Methods](https://arxiv.org/abs/2407.09510)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [3D Gaussian Splatting: Survey, Technologies, Challenges, and Opportunities](https://arxiv.org/abs/2407.17418)：3D Gaussian Splatting 补充空间综述，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [Learning-Based Multi-View Stereo: A Survey](https://arxiv.org/abs/2408.15235)：综述学习式多视角立体重建的流程、数据集与重建失败模式。
+- [Geometric Signatures of Compositionality Across a Language Model's Lifetime](https://arxiv.org/abs/2410.01444)：分析语言模型训练检查点中的表示几何如何变化，用线性可分性和几何结构追踪组合性、空间关系与关系概念是否逐步成形。
+- [Towards Foundation Models for 3D Vision: How Close are We?](https://arxiv.org/abs/2410.10799)：从数据规模、三维表示、预训练目标、下游感知与重建任务等维度评估 3D foundation model 距离二维基础模型范式还有多远。
+- [3D Gaussian Splatting in Robotics: A Survey](https://arxiv.org/abs/2410.12262)：3D Gaussian Splatting in Robotics 补充空间综述，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [Radar and Camera Fusion for Object Detection and Tracking: A Comprehensive Survey](https://arxiv.org/abs/2410.19872)：综述与梳理 Spatial 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [Generative Artificial Intelligence Meets Synthetic Aperture Radar: A survey](https://arxiv.org/abs/2411.05027)：综述与梳理 Spatial 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [Video-3D LLM: Learning Position-Aware Video Representation for 3D Scene Understanding](https://arxiv.org/abs/2412.00493)：Video-3D LLM 补充空间综述，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [Editing implicit and explicit representations of radiance fields: a survey](https://arxiv.org/abs/2412.17628)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [A review of recent advances in 3D Gaussian Splatting for optimization and reconstruction](https://doi.org/10.1016/j.imavis.2024.105304)：综述 3DGS 优化与重建变体，关注初始化、densification、正则化、渲染质量与场景重建中的几何保真度问题。
+- [A survey of methods for addressing the challenges of referring image segmentation](https://doi.org/10.1016/j.neucom.2024.127599)：综述或系统梳理空间与三维理解，为该能力页补充分类、趋势或风险边界。
+- [Survey on Monocular Metric Depth Estimation](https://arxiv.org/abs/2501.11841)：综述单目度量深度估计在空间理解、重建与导航中的方法。
+- [NeRFs for the Real World Survey](https://arxiv.org/abs/2501.13104)：综述真实世界 NeRF 的鲁棒性、采集假设与实际渲染约束。
+- [Foundational Models for 3D Point Clouds: A Survey and Outlook](https://arxiv.org/abs/2501.18594)：综述点云基础模型、多模态三维表征学习，以及可扩展空间理解面临的开放问题。
+- [Towards spatial computing: recent advances in multimodal natural interaction for XR headsets](https://arxiv.org/abs/2502.07598)：综述空间、三维、场景、点云或几何推理能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Mapping the Landscape of Generative AI in Network Monitoring and Management](https://arxiv.org/abs/2502.08576)：梳理生成式 AI 在网络监测与管理中的任务轴，包括遥测生成、异常检测、流量预测、配置辅助和运维风险。
+- [3DGS Compression Survey](https://arxiv.org/abs/2502.19457)：综述 3D Gaussian Splatting 压缩方法、趋势与未来方向。
+- [3D Human Interaction Generation: A Survey](https://arxiv.org/abs/2503.13120)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
 - [How to Enable LLM with 3D Capacity? A Survey of Spatial Reasoning in LLM](https://arxiv.org/abs/2504.05786)：综述语言模型获得和评测三维空间推理能力的方法。
 - [A Survey of Large Language Model-Powered Spatial Intelligence Across Scales: Advances in Embodied Agents, Smart Cities, and Earth Science](https://arxiv.org/abs/2504.09848)：把空间智能从物体关系扩展到具身、城市与地球科学尺度。
+- [Digital Twin Generation from Visual Data: A Survey](https://arxiv.org/abs/2504.13159)：综述从视觉数据生成数字孪生体的方法及其在机器人、设计和建造中的用途。
+- [Recent Advances and Future Directions in Extended Reality (XR): Exploring AI-Powered Spatial Intelligence](https://arxiv.org/abs/2504.15970)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
 - [A Review of 3D Object Detection with Vision-Language Models](https://arxiv.org/abs/2504.18738)：综述视觉语言模型驱动的 3D 目标检测，覆盖点云、体素、CLIP 式表示和语言 grounding 路线，可补充空间感知综述。
+- [A survey on 3D reconstruction techniques in plant phenotyping: From classical methods to Neural Radiance Fields (NeRF), 3D Gaussian Splatting (3DGS), and beyond](https://arxiv.org/abs/2505.00737)：梳理空间理解的方法、证据与开放问题。
+- [3D Scene Generation Survey](https://arxiv.org/abs/2505.05474)：综述 3D scene generation 的方法、表示、评测与在沉浸媒体、机器人和具身 AI 中的应用。
 - [Large Language Models for Computer-Aided Design](https://arxiv.org/abs/2505.08137)：把 CAD 视为空间设计自动化场景，覆盖 text-to-CAD、约束推理、代码生成与设计评估。
+- [Reasoning Segmentation for Images and Videos: A Survey](https://arxiv.org/abs/2505.18816)：综述图像和视频中的推理分割，连接分割任务与隐式视觉推理。
+- [3D Shape Generation: A Survey](https://arxiv.org/abs/2506.22678)：综述 3D 形状生成的表示、模型族与评测问题。
+- [Transformer-based Spatial Grounding: A Comprehensive Survey](https://arxiv.org/abs/2507.12739)：梳理空间与三维理解的方法、风险、数据集或评测实践。
+- [Advances in Feed-Forward 3D Reconstruction and View Synthesis: A Survey](https://arxiv.org/abs/2507.14501)：综述 3D 重建、视图合成或空间表征方法。
 - [Reconstructing 4D Spatial Intelligence: A Survey](https://arxiv.org/abs/2507.21045)：回顾超越静态空间问答的动态几何与时空理解。
+- [A Survey on 3D Gaussian Splatting Applications: Segmentation, Editing, and Generation](https://arxiv.org/abs/2508.09977)：综述三维高斯泼溅在分割、编辑和生成中的应用，补充空间模型覆盖。
+- [3D and 4D World Modeling: A Survey](https://arxiv.org/abs/2509.07996)：综述 3D 与 4D 世界建模的表示、生成、重建和动态场景理解。
+- [Mind Meets Space: Rethinking Agentic Spatial Intelligence from a Neuroscience-inspired Perspective](https://arxiv.org/abs/2509.09154)：综述空间智能；核心思想是连接空间认知、3D 推理与智能体动作需求。
+- [From Fields to Splats](https://arxiv.org/abs/2509.23555)：综述从 NeRF 到 3D Gaussian Splatting 的实时神经场景表示，覆盖 SLAM、远程呈现、机器人与 3D 内容。
+- [Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling](https://arxiv.org/abs/2510.20835)：梳理Spatial相关的方法、风险、数据集或部署模式，可补充该能力方向的综述视角。
+- [Survey of Multimodal Geospatial Foundation Models: Techniques, Applications, and Challenges](https://arxiv.org/abs/2510.22964)：梳理空间与三维能力的近期方法与开放问题。
+- [A Survey on Collaborative SLAM with 3D Gaussian Splatting](https://arxiv.org/abs/2510.23988)：综述基于 3D Gaussian Splatting 表示的协同 SLAM 方法。
 - [Multimodal Spatial Reasoning in the Large Model Era: A Survey and Benchmarks](https://arxiv.org/abs/2510.25760)：组织多模态空间任务、方法与基准家族。
 - [Spatial Reasoning in Multimodal Large Language Models: A Survey of Tasks, Benchmarks and Methods](https://arxiv.org/abs/2511.15722)：为多模态大语言模型空间推理任务与方法提供聚焦导览。
+- [Gaussian Splatting in the AI Era](https://doi.org/10.1109/ISAICS66888.2025.11350102)：综述 AI era 下的 Gaussian splatting 方法，补充 3DGS 相关空间生成与重建脉络。
+- [Point Cloud Compression Survey and Benchmark](https://doi.org/10.1109/TPAMI.2025.3594355)：综述 deep learning-based point-cloud compression，并提供比较方法的 benchmark structure。
+- [Volumetric Video Technical Overview](https://doi.org/10.1109/MMSP64401.2025.11324019)：综述 immersive volumetric video 的采集、表示、压缩与显示问题。
+- [Visual Grounding in 2D and 3D: A unified perspective and survey](https://doi.org/10.1016/j.inffus.2025.103625)：以输入模态、指代表达类型、定位目标、数据集、指标和开放词汇 grounding 设置统一梳理二维与三维视觉 grounding。
+- [A survey of language-grounded multimodal 3D scene understanding](https://doi.org/10.1016/j.knosys.2025.113650)：综述语言 grounding 的多模态 3D scene understanding，覆盖三维视觉 grounding、问答、dense captioning、导航和指令跟随数据集。
+- [Review of Advances in Three-Dimensional Visual Perception of Spatial Objects Based on Deep Learning](https://doi.org/10.1109/icicml67980.2025.11333654)：概述深度学习三维物体视觉感知方法，覆盖检测、分割、姿态估计、重建以及空间物体理解中的数据集和传感器选择。
+- [Comprehensive Review of Digital Twin Technology for Deformable Objects: Integration of Modeling, Rendering, and Simulation](https://doi.org/10.1109/access.2025.3582863)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [From visual understanding to 6D pose reconstruction: A cutting-edge review of deep learning-based object pose estimation](https://doi.org/10.1016/j.displa.2025.103069)：面向空间与三维能力，梳理近期工作、分类边界与开放问题。
+- [Human reconstruction using 3D Gaussian Splatting: a brief survey](https://doi.org/10.3389/frai.2025.1709229)：面向空间与三维能力，梳理近期工作、分类边界与开放问题。
+- [A Survey of 3D Gaussian Splatting: Optimization Techniques, Applications, and AI-Driven Advancements](https://doi.org/10.1109/iitcee64140.2025.10915497)：综合 3DGS 优化技术、应用场景与 AI 辅助改进，覆盖重建、渲染和场景生成流程。
+- [A Survey and New Perspective of Sensing in the Dark for Intelligent Transportation Systems](https://doi.org/10.1109/tits.2025.3600557)：梳理空间与三维能力的近期方法与开放问题。
+- [Survey on 3D Reconstruction Techniques: Large-Scale Urban City Reconstruction and Requirements](https://doi.org/10.1109/tvcg.2025.3540669)：综述空间、三维、场景、点云或几何推理能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Diffusion Models for 3D Generation: A Survey](https://doi.org/10.26599/cvm.2025.9450452)：综述基于 diffusion 的 3D 生成方法，覆盖空间内容的表示与生成流程。
+- [3DGS-SLAM Survey](https://arxiv.org/abs/2602.04251)：综述 3D Gaussian Splatting SLAM，聚焦性能、鲁棒性与下一代方向。
+- [Overview and Comparison of AVS Point Cloud Compression Standard](https://arxiv.org/abs/2602.08613)：比较 AVS 点云压缩标准与 profile，重点是编码工具、几何和属性压缩、测试条件以及与三维媒体流程的互操作性。
+- [Deep Sketch‐Based 3D Modeling: A Survey](https://arxiv.org/abs/2603.03287)：综述基于深度学习的草图到结构化 3D 资产建模方法。
+- [Natural Language Interfaces for Spatial and Temporal Databases: A Comprehensive Overview of Methods, Taxonomy, and Future Directions](https://arxiv.org/abs/2603.23375)：综述空间与时序数据库自然语言接口的方法、分类与未来方向。
+- [Bridging the Dimensionality Gap: A Taxonomy and Survey of 2D Vision Model Adaptation for 3D Analysis](https://arxiv.org/abs/2604.03334)：围绕taxonomy of 2D vision adaptation for 3D analysis梳理方法、证据与开放问题，补充空间与三维能力方向的综述或分类线索。
+- [Depth Registers Unlock W4A4 on SwiGLU: A Reader/Generator Decomposition](https://arxiv.org/abs/2604.18128)：从 reader/generator 分解研究 SwiGLU 模型的 W4A4 低比特量化，depth registers 是架构信号而不是空间基准综述。
+- [Comparative Evaluation of NeRF and Gaussian Splatting Geometry](https://arxiv.org/abs/2604.18205)：比较 NeRF 与 Gaussian-splatting representations 的 geometric-accuracy behavior。
+- [3D Generation for Embodied AI and Robotic Simulation: A Survey](https://arxiv.org/abs/2604.26509)：综述用于构建具身智能与机器人仿真环境的 3D 生成方法。
+- [3D Reconstruction Techniques in the Manufacturing Domain: Applications, Research Opportunities and Use Cases](https://arxiv.org/abs/2604.28064)：综述或系统化梳理空间推理、三维重建与几何生成，用于补充方法谱系、任务边界、风险与开放问题。
+- [Bridging cross-modalities: Deep learning approaches for sketch-based 3D shape retrieval](https://doi.org/10.1016/j.ipm.2026.104895)：综述从草图检索 3D 形状的跨模态深度学习方法，补充空间表示和 3D 资产检索综述。
+- [Explicit to Implicit presentation for 3D Unbounded Open Scenes Reconstruction: The Survey](https://doi.org/10.1016/j.eswa.2026.132219)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [Recent advances of local mechanisms in vision foundation models: A survey and outlook](https://doi.org/10.1016/j.cviu.2026.104679)：综述视觉基础模型中的局部机制，包括局部注意力、窗口化处理、卷积混合结构，以及它们对空间细节和密集预测的影响。
+- [Artificial Intelligence for Design of Spatial Structures and Joints: A State-of-the-Art Review](https://doi.org/10.1016/j.jobe.2026.115266)：综述建筑空间结构与节点设计中的 AI 方法，覆盖结构找形、拓扑或几何优化、连接设计、性能预测和工程约束。
+- [3D Single Object Tracking in Point Clouds: A Review](https://doi.org/10.32604/cmc.2026.076652)：围绕3D point-cloud single-object tracking review梳理方法、证据与开放问题，补充空间与三维能力方向的综述或分类线索。
 - [3D asset generation: a survey of evolution towards autoregressive and agent-driven paradigms](https://doi.org/10.1007/s11704-025-50381-5)：综述 3D 资产生成，覆盖与空间模型构建相关的自回归和智能体驱动范式。
+- [Synthetic Data for Image-Based 3D Detection](https://doi.org/10.1007/s10462-025-11431-3)：综述 image-based 3D detection 的合成数据自动生成，为空间感知和 3D 模型训练补充数据引擎视角。
+- [Deep Learning for 3D Point Clouds](https://doi.org/10.1007/978-981-97-9570-3)：以专著形式系统梳理 point-cloud representation、perception 与 generation 方法。
+- [3D Vision-Based Manufacturing Anomaly Detection Survey](https://doi.org/10.1007/s42524-025-4189-9)：综述制造异常检测中的 3D vision 方法，补充工业空间检测视角。
+- [Advancing AI-Driven Geospatial Analysis and Data Generation: Methods, Applications and Future Directions](https://doi.org/10.3390/ijgi14020056)：围绕 Spatial 能力补充《Advancing AI-Driven Geospatial Analysis and Data Generation: Methods, Applications and Future Directions》这一路线，将其作为 Survey 条目记录。
+- [A survey on surface reconstruction based on 3D Gaussian splatting](https://doi.org/10.7717/peerj-cs.3034)：聚焦基于 3D Gaussian Splatting 的 surface reconstruction，比较各方法如何从 splat 表示恢复显式几何、法线、网格和照片级渲染。
+- [Deep learning based computer vision under the prism of 3D point clouds: a systematic review](https://doi.org/10.1007/s00371-023-03237-7)：综述与梳理 Spatial 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [Deep Learning for 3D Reconstruction, Augmentation, and Registration: A Review Paper](https://doi.org/10.3390/e26030235)：梳理空间理解的方法、证据与开放问题。
+- [Discriminating Spectral–Spatial Feature Extraction for Hyperspectral Image Classification: A Review](https://doi.org/10.3390/s24102987)：综述高光谱分类中的 spectral-spatial 特征提取，覆盖手工特征、CNN 或 transformer 编码器、注意力机制与类别区分难点。
+- [Scene reconstruction techniques for autonomous driving: a review of 3D Gaussian splatting](https://doi.org/10.1007/s10462-024-10955-4)：综述自动驾驶场景中的 3DGS 重建，强调户外采集、动态物体、传感器融合、地图尺度重建和实时渲染约束。
+- [A review on 3D Gaussian splatting for sparse view reconstruction](https://doi.org/10.1007/s10462-025-11171-4)：综述三维、空间、点云、高斯溅射或重建能力，补充近期方法、基准、风险或开放问题脉络。
+- [A Survey of 3D Reconstruction: The Evolution from Multi-View Geometry to NeRF and 3DGS](https://doi.org/10.3390/s25185748)：面向空间与三维能力，梳理近期工作、分类边界与开放问题。
+- [A Comprehensive Review of Vision-Based 3D Reconstruction Methods](https://doi.org/10.3390/s24072314)：面向空间与三维能力，梳理近期工作、分类边界与开放问题。
+- [A Study on Systematic Improvement of Transformer Models for Object Pose Estimation](https://doi.org/10.3390/s25041227)：A Study on Systematic Improvement of Transformer Models for Object Pose Estimation 梳理空间与三维能力方向的方法、风险或评测边界。
+- [Innovative AI techniques for photorealistic 3D clothed human reconstruction from monocular images or videos: a survey](https://doi.org/10.1007/s00371-024-03641-7)：综述单目图像和视频中的 clothed human reconstruction 流程，覆盖人体先验、服装几何、纹理恢复、运动和照片级渲染。
+- [Implicit vs. explicit a comparative survey on NeRF and 3DGS for large-scale aerial scene editing](https://doi.org/10.1007/s10791-026-10029-9)：比较 NeRF 隐式表示与 3DGS 显式表示在大规模航拍场景编辑中的可编辑性、几何控制、渲染速度和重建保真度。
+- [Monocular RGB 6D object pose estimation for augmented reality: a survey](https://doi.org/10.1007/s10055-026-01315-4)：综述增强现实中的单目 RGB 6D object pose estimation，按姿态表示、对应关系学习、合成数据、遮挡处理和 AR 部署约束分类。
+- [Kolmogorov–Arnold Networks for Sensor Data Processing: A Comprehensive Survey of Architectures, Applications, and Open Challenges](https://doi.org/10.3390/s26082515)：综述传感器数据处理中的 Kolmogorov-Arnold Network 架构，覆盖时间序列、成像、多模态 sensing、效率、可解释性和部署挑战。
+- [Towards A New Era of Geo-Foundation Models: Expert-Guided Multimodal Alignment and Geospatial Context Awareness](https://doi.org/10.1145/3748636.3762756)：可作为“空间理解 / 综述”候选条目；梳理该方向的方法谱系、评测边界、风险或开放问题。
+- [Place recognition meet multiple modalities: a comprehensive review, current challenges and future development](https://doi.org/10.1007/s10462-025-11367-8)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Video-Based 3D Reconstruction: A Review of Photogrammetry and Visual SLAM Approaches](https://doi.org/10.3390/jimaging12030128)：综述或系统化梳理空间推理、三维重建与几何生成，用于补充方法谱系、任务边界、风险与开放问题。
+- [Trends and Techniques in 3D Reconstruction and Rendering: A Survey with Emphasis on Gaussian Splatting](https://doi.org/10.3390/s25123626)：综述三维重建与渲染技术，重点覆盖高斯溅射方法。

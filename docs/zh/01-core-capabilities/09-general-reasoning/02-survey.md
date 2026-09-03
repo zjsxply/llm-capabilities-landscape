@@ -1,18 +1,103 @@
 # 1.9.2 Survey
 
+- [Exploring the Reasoning Abilities of Multimodal Large Language Models (MLLMs): A Comprehensive Survey on Emerging Trends in Multimodal Reasoning](https://arxiv.org/abs/2401.06805)：按任务类型、模态交互、基准族和开放失效模式组织多模态推理，超出纯文本推理范围。
+- [In-context Learning with Retrieved Demonstrations for Language Models: A Survey](https://arxiv.org/abs/2401.11624)：综述检索示例驱动的上下文学习流程，覆盖示例选择、排序、检索来源和评测影响。
+- [A Survey to Recent Progress Towards Understanding In-Context Learning](https://arxiv.org/abs/2402.02212)：综合上下文学习涌现的机制解释、贝叶斯视角、优化视角和经验研究。
+- [A survey of table reasoning with large language models](https://arxiv.org/abs/2402.08259)：围绕表格理解、表格问答、事实验证、程序辅助方法和评测缺口梳理表格推理。
+- [Large Language Models(LLMs) on Tabular Data: Prediction, Generation, and Understanding - A Survey](https://arxiv.org/abs/2402.17944)：综述结构化数据上的表格预测、合成表生成和表格理解，展示 LLM 表格推理的互补用途。
+- [Large Language Models and Causal Inference in Collaboration: A Survey](https://arxiv.org/abs/2403.09606)：把 LLM 与因果推断视为双向协作，覆盖因果发现、效应估计、反事实推理和假设风险。
+- [LLMs as Writing Assistants: Exploring Perspectives on Sense of Ownership and Reasoning](https://arxiv.org/abs/2404.00027)：借写作助手研究拆分所有权感、修订控制和显式推理支持如何影响人类使用 LLM 建议。
+- [LLM as a Mastermind: A Survey of Strategic Reasoning with Large Language Models](https://arxiv.org/abs/2404.01230)：综述博弈交互、规划、对手建模、谈判和多智能体决策中的战略推理。
+- [Beyond Accuracy: Evaluating the Reasoning Behavior of Large Language Models - A Survey](https://arxiv.org/abs/2404.01869)：把评测重点从最终准确率转向推理行为，覆盖轨迹质量、鲁棒性、一致性和过程级诊断。
+- [Relevant or Random: Can LLMs Truly Perform Analogical Reasoning?](https://arxiv.org/abs/2404.12728)：审视类比推理，区分关系映射能力与词汇线索或检索捷径造成的表面表现。
+- [Beyond Chain-of-Thought: A Survey of Chain-of-X Paradigms for LLMs](https://arxiv.org/abs/2404.15676)：为 Chain-of-X 提示范式建立分类，涵盖思维、工具、验证、批判、知识和多模态中间结构。
+- [Enhancing Decision-Making in Optimization through LLM-Assisted Inference: A Neural Networks Perspective](https://arxiv.org/abs/2405.07212)：从神经网络推理、代理模型和人类引导搜索流程角度综述 LLM 辅助优化决策。
+- [Towards Better Chain-of-Thought: A Reflection on Effectiveness and Faithfulness](https://arxiv.org/abs/2405.18915)：回顾 CoT 何时提升答案质量，以及解释何时会变成不忠实的事后合理化或评测伪影。
+- [Anthropocentric bias in language model evaluation](https://arxiv.org/abs/2407.03859)：批判语言模型评测中的人类中心假设及其对能力解读的影响。
+- [Multi-Step Reasoning with Large Language Models, a Survey](https://arxiv.org/abs/2407.11511)：综述多步 LLM 推理中的问题分解、中间状态控制、验证和基准协议。
+- [Reinforcement Learning for LLM Post-Training: A Survey](https://arxiv.org/abs/2407.16216)：回顾影响推理行为的后训练强化学习目标、偏好信号、奖励建模和对齐权衡。
+- [LASP: Surveying the State-of-the-Art in Large Language Model-Assisted AI Planning](https://arxiv.org/abs/2409.01806)：综述 LLM 辅助规划系统中的计划生成、验证、重规划、规划器集成和规划域基准。
+- [Preference Tuning with Human Feedback on Language, Speech, and Vision Tasks: A Survey](https://arxiv.org/abs/2409.11564)：按奖励模型、比较数据、优化算法和多模态任务覆盖组织人类反馈偏好调优。
+- [From Linguistic Giants to Sensory Maestros: A Survey on Cross-Modal Reasoning with Large Language Models](https://arxiv.org/abs/2409.18996)：综述语言驱动感知输入中的跨模态推理，覆盖感知、对齐、多模态 CoT 和评测。
+- [Everything Everywhere All at Once: LLMs can In-Context Learn Multiple Tasks in Superposition](https://arxiv.org/abs/2410.05603)：研究多个任务同时进入上下文时的学习现象，揭示任务推断和示例使用中的叠加效应。
+- [A Survey of Uncertainty Estimation in LLMs: Theory Meets Practice](https://arxiv.org/abs/2410.15326)：连接不确定性理论与 LLM 置信度估计、校准、选择性预测和风险感知部署实践。
+- [Cognitive Biases in Large Language Models: A Survey and Mitigation Experiments](https://arxiv.org/abs/2412.00323)：综述 LLM 输出中的认知偏差现象，并结合缓解实验讨论推理可靠性。
+- [Neural-Symbolic Reasoning over Knowledge Graphs: A Survey from a Query Perspective](https://arxiv.org/abs/2412.10390)：从查询形式、符号约束、神经打分和基准覆盖组织知识图谱上的神经符号推理。
+- [A Research Agenda for Usability and Generalisation in Reinforcement Learning](https://arxiv.org/abs/2412.16970)：把强化学习的可用性和泛化作为议程轴线，讨论可复现实验环境、评测迁移和可部署决策策略。
+- [Large Language Models Meet Graph Neural Networks: A Perspective of Graph Mining](https://arxiv.org/abs/2412.19211)：综述 LLM 与 GNN 在图挖掘中的接口，包括图表示、图任务推理和混合模型设计。
+- [Position: Theory of Mind Benchmarks are Broken for Large Language Models](https://arxiv.org/abs/2412.19726)：主张 LLM 的 ToM 基准需要更严格的任务效度、污染控制和交互式评测边界。
 - [Comprehensive Survey on Prompts Generating via Knowledge-Guided Chain-of-Thought](https://doi.org/10.26599/ijcs.2024.9100038)：聚焦由显式知识引导 CoT 构造的提示生成方法，用于提升复杂推理任务表现。
+- [Artificial Intelligence and the Illusion of Understanding: A Systematic Review of Theory of Mind and Large Language Models](https://doi.org/10.1089/cyber.2024.0536)：系统回顾 LLM 的 ToM 主张，区分社会认知证据、基准伪影和拟人化解释。
 - [Test-time Computing: from System-1 Thinking to System-2 Thinking](https://arxiv.org/abs/2501.02497)：综述测试时计算，从快速 System-1 响应到审慎 System-2 推理。
 - [Towards Large Reasoning Models: A Survey of Reinforced Reasoning with Large Language Models](https://arxiv.org/abs/2501.09686)：回顾强化推理中的奖励、搜索、验证与训练流程。
 - [Reasoning Language Models: A Blueprint](https://arxiv.org/abs/2501.11223)：将推理语言模型视为训练与推理时推理设计的蓝图。
+- [A Survey of Theory of Mind in Large Language Models: Evaluations, Representations, and Safety Risks](https://arxiv.org/abs/2502.06470)：综述大语言模型 Theory of Mind 的评测、表征与安全风险。
 - [A Survey of In-Context Reinforcement Learning](https://arxiv.org/abs/2502.07978)：综述上下文内强化学习，将上下文中的策略适配与推理、决策联系起来。
 - [Logical Reasoning in Large Language Models: A Survey](https://arxiv.org/abs/2502.09100)：覆盖形式化、符号化与规则约束推理任务及失败模式。
+- [Evaluating Step-by-step Reasoning Traces: A Survey](https://arxiv.org/abs/2502.12289)：综述逐步推理轨迹的评价方法，包括过程质量、忠实性与打分机制。
+- [From Principles to Applications: A Comprehensive Survey of Discrete Tokenizers in Generation, Comprehension, Recommendation, and Information Retrieval](https://arxiv.org/abs/2502.12448)：综述离散 tokenizer 在生成、理解、推荐和检索中的原理与应用。
 - [From System 1 to System 2: A Survey of Reasoning Large Language Models](https://arxiv.org/abs/2502.17419)：综述从快速生成到审慎多步推理的演进。
+- [LLM Post-Training: A Deep Dive into Reasoning Large Language Models](https://arxiv.org/abs/2502.21321)：系统梳理 reasoning LLM 的后训练方法。
+- [A Survey on Enhancing Causal Reasoning Ability of Large Language Models](https://arxiv.org/abs/2503.09326)：回顾提升 LLM 因果推理能力的提示、数据增强、微调、工具使用和评测策略。
+- [Towards Reasoning Era: A Survey of Long Chain-of-Thought for Reasoning Large Language Models](https://arxiv.org/abs/2503.09567)：综述 reasoning large language model 的长链式思维方法、训练路线和开放问题。
+- [Multimodal Chain-of-Thought Reasoning: A Comprehensive Survey](https://arxiv.org/abs/2503.12605)：综述图像、视频、音频等多模态场景中的 CoT 推理范式。
 - [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](https://arxiv.org/abs/2503.16419)：回顾高效推理中的自适应计算与成本质量权衡。
+- [Understanding R1-Zero-Like Training: A Critical Perspective](https://arxiv.org/abs/2503.20783)：批判性分析 R1-Zero 类训练及其对推理模型的假设。
+- [A Survey of Efficient Reasoning for Large Reasoning Models: Language, Multimodality, and Beyond](https://arxiv.org/abs/2503.21614)：综述减少冗余推理轨迹并改善 LRM 成本质量权衡的方法。
+- [Efficient Inference for Large Reasoning Models: A Survey](https://arxiv.org/abs/2503.23077)：综述降低 deliberative reasoning 推理 token、内存和延迟成本的方法。
+- [Harnessing the Reasoning Economy: A Survey of Efficient Reasoning for Large Language Models](https://arxiv.org/abs/2503.24377)：综述降低 System-2 推理成本且保持准确率的高效推理方法。
+- [A Survey of Scaling in Large Language Model Reasoning](https://arxiv.org/abs/2504.02181)：综述推理能力如何随数据、模型规模、推理计算和多智能体协作扩展。
+- [Why Reasoning Matters? A Survey of Advancements in Multimodal Reasoning (v1)](https://arxiv.org/abs/2504.03151)：综述多模态推理进展，并说明推理为何是跨模态能力核心。
 - [A Survey of Frontiers in LLM Reasoning: Inference Scaling, Learning to Reason, and Agentic Systems](https://arxiv.org/abs/2504.09037)：连接推理时扩展、学习推理与 agentic reasoning systems。
+- [Position: Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!](https://arxiv.org/abs/2504.09762)：警示不要把中间 token 拟人化为忠实的推理或思考轨迹。
+- [Rethinking Theory of Mind Benchmarks for LLMs: Towards A User-Centered Perspective](https://arxiv.org/abs/2504.10839)：梳理把人类 ToM 任务直接迁移到 LLM 评测中的理论与方法限制，并主张以用户为中心、交互式地定义社会推理基准。
 - [Efficient Reasoning Models](https://arxiv.org/abs/2504.10903)：以计算效率为推理综述主轴，覆盖小型模型、自适应推理与成本质量权衡。
+- [Meta-Thinking in LLMs via Multi-Agent Reinforcement Learning: A Survey](https://arxiv.org/abs/2504.14520)：从多智能体强化学习角度综述 LLM 的元思考能力。
+- [Principles and Guidelines for the Use of LLM Judges](https://arxiv.org/abs/2504.19076)：围绕任务设定、评分规程、校准、偏差控制和可靠性检查提炼 LLM 裁判使用原则。
+- [Reinforced MLLM: A Survey on RL-Based Reasoning in Multimodal Large Language Models](https://arxiv.org/abs/2504.21277)：综述用于提升多模态大模型推理能力的强化学习方法。
+- [Consistency in Language Models: Current Landscape, Challenges, and Future Directions](https://arxiv.org/abs/2505.00268)：把一致性作为推理可靠性轴线，覆盖事实、逻辑、时间和自一致性评测场景。
+- [100 Days After DeepSeek-R1: A Survey on Replication Studies and More Directions for Reasoning Language Models](https://arxiv.org/abs/2505.00551)：总结 DeepSeek-R1 发布后早期复现实验，并梳理强化学习、蒸馏、评测和高效推理方向。
 - [Perception, Reason, Think, and Plan](https://arxiv.org/abs/2505.04921)：把多模态推理视为感知、审慎推理、规划与行动导向认知的一体化循环。
+- [Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory](https://arxiv.org/abs/2505.10981)：以概率论重新解释测试时扩展中的提示策略，说明采样、投票和搜索何时改善推理。
+- [Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](https://arxiv.org/abs/2505.15510)：统一梳理文本式与图文交错式多模态 CoT 方法，帮助理解 LVLM 推理。
 - [Reasoning Beyond Language](https://arxiv.org/abs/2505.16782)：以 latent chain-of-thought 为中心，研究隐藏状态中的推理轨迹而非完全显式的文字推理链。
+- [On the Mechanisms of Weak-to-Strong Generalization: A Theoretical Perspective](https://arxiv.org/abs/2505.18346)：从理论机制解释弱监督何时能引出更强模型行为，以及泛化失败可能出现在哪里。
+- [Using Large Language Models to Tackle Fundamental Challenges in Graph Learning: A Comprehensive Survey](https://arxiv.org/abs/2505.18475)：综述 LLM 在图学习中的表示、推理、生成、数据稀缺和图任务泛化用途。
+- [Large Language Models for Planning: A Comprehensive and Systematic Survey](https://arxiv.org/abs/2505.19683)：系统综述 LLM 规划的任务定义、提示或工具式规划器耦合、反馈循环和评测领域。
+- [It's High Time: A Survey of Temporal Question Answering](https://arxiv.org/abs/2505.20243)：围绕时间感知表示、时间推理操作、数据集和评测协议综述时序问答。
+- [Revisiting Test-Time Scaling: A Survey and a Diversity-Aware Method for Efficient Reasoning](https://arxiv.org/abs/2506.04611)：综述测试时扩展，并加入多样性感知的高效推理方法以控制样本冗余。
+- [Does It Make Sense to Speak of Introspection in Large Language Models?](https://arxiv.org/abs/2506.05068)：考察“内省”是否能作为语言模型能力的合理表述。
+- [Large Language Models for Combinatorial Optimization: A Systematic Review](https://arxiv.org/abs/2507.03637)：可作为通用推理与优化的 Survey 候选：围绕 Large Language Models for Combinatorial Optimization: A Systematic Review 梳理背景、方法与开放问题。
+- [A Survey on Latent Reasoning](https://arxiv.org/abs/2507.06203)：梳理推理模型、推理时扩展或强化推理方法。
+- [Reasoning in Computer Vision: Taxonomy, Models, Tasks, and Methodologies](https://arxiv.org/abs/2508.10523)：综述视觉推理中的关系、时序、因果、符号与常识任务，并比较相应模型和评测协议。
+- [Explain Before You Answer: A Survey on Compositional Visual Reasoning](https://arxiv.org/abs/2508.17298)：综述视觉推理中的分解、grounding 和多步推理方法。
+- [Implicit Reasoning in Large Language Models: A Comprehensive Survey](https://arxiv.org/abs/2509.02350)：综述 latent 与非显式文本化推理方法，作为显式 CoT 的替代路线。
 - [A Survey of Reinforcement Learning for Large Reasoning Models](https://arxiv.org/abs/2509.08827)：综述大推理模型中的强化学习目标、奖励设计、训练数据、基础设施和规模化挑战。
+- [Reinforcement Learning Meets Large Language Models: A Survey of Advancements and Applications Across the LLM Lifecycle](https://arxiv.org/abs/2509.16679)：综述贯穿 LLM 生命周期的强化学习方法。
+- [Enhancing Large Language Model Reasoning with Reward Models: An Analytical Survey](https://arxiv.org/abs/2510.01925)：分析 outcome、process 和 preference reward model 如何支持搜索、验证、训练与推理时计算。
 - [A Survey of Inductive Reasoning for Large Language Models](https://arxiv.org/abs/2510.10182)：综述 LLM 归纳推理的方法、基准、沙箱式评测、数据增强、后训练与测试时扩展。
+- [Putting on the Thinking Hats: A Survey on Chain of Thought Fine-tuning from the Perspective of Human Reasoning Mechanism](https://arxiv.org/abs/2510.13170)：从人类推理机制视角综述监督与强化链式思维微调。
+- [Test-time Scaling of LLMs: A Survey from A Subproblem Structure Perspective](https://arxiv.org/abs/2511.14772)：按子问题结构组织测试时扩展，覆盖分解、搜索分配、聚合和计算效率权衡。
+- [Stabilizing Reinforcement Learning with LLMs: Formulation and Practices](https://arxiv.org/abs/2512.01374)：系统化总结大模型强化学习稳定化实践，使 RL 训练稳定性成为推理模型综述中的独立轴线。
+- [Breaking the Reasoning Barrier A Survey on LLM Complex Reasoning through the Lens of Self-Evolution](https://doi.org/10.18653/v1/2025.findings-acl.386)：从 self-evolution 视角综述 LLM 复杂推理，梳理模型如何通过迭代数据、反馈与优化循环改进推理行为。
+- [Modeling Reasoning as Markov Decision Processes: A Theoretical Investigation into NLP Transformer Models](https://doi.org/10.1109/icecai66283.2025.11170436)：把 NLP Transformer 推理建模为马尔可夫决策过程，将推理轨迹与状态、动作、奖励和策略行为联系起来。
+- [Neuro-Symbolic AI for Advanced Signal and Image Processing: A Review of Recent Trends and Future Directions](https://doi.org/10.1109/access.2025.3598909)：综述信号与图像处理中的神经符号推理，重点关注感知流程中的符号约束、鲁棒性和不确定性。
+- [A Survey of Complex Reasoning Enhancement Methods for Large Language Models](https://doi.org/10.1109/iccwamtip68645.2025.11352613)：综述 LLM 复杂推理增强方法，覆盖提示工程、知识注入、微调、验证和外部工具支持。
+- [Large Language Model (LLM) based Question and Answering System (QAS): A systematic literature review](https://doi.org/10.1109/ict4da67218.2025.11282707)：系统综述基于 LLM 的问答系统，按架构、检索使用、评测证据和答案生成中的推理限制组织。
+- [Neuro-Symbolic Reasoning: Performance, Challenges, and Benchmarks: A Systematic Literature Review](https://doi.org/10.53982/ajeas.2025.0301.05-j)：系统综述神经符号推理的性能、挑战和基准。
+- [Reinforcement Learning for Prompt Optimization in Language Models: A Comprehensive Survey of Methods, Representations, and Evaluation Challenges](https://doi.org/10.62762/tetai.2025.790504)：梳理推理模型、推理时扩展或强化推理方法。
+- [Towards a Mechanistic Understanding of Large Reasoning Models: A Survey of Training, Inference, and Failures](https://arxiv.org/abs/2601.19928)：从机制视角综述大推理模型的训练、推理与失效模式。
+- [Reasoning Capabilities of Large Language Models. Lessons Learned from General Game Playing](https://arxiv.org/abs/2602.19160)：从通用博弈中总结大模型推理能力经验。
+- [The Reasoning Error About Reasoning: Why Different Types of Reasoning Require Different Representational Structures](https://arxiv.org/abs/2603.21736)：以 position 形式论证因果、逻辑、空间、社会和时间推理需要不同的表征结构。
 - [Wiring the 'Why'](https://arxiv.org/abs/2604.08016)：提出 LLM 溯因推理的统一分类与综述，连接哲学基础、任务定义、基准设计和模型行为分析。
+- [Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond](https://arxiv.org/abs/2604.22748)：Agentic World Modeling 将世界模型能力拆为预测、模拟和演化三层，并映射到物理、数字、社会与科学环境；该分类把基于模型的 agent 与长程推理所需的规律、反馈和行动循环连接起来。
+- [Position: Artificial Intelligence Needs Meta Intelligence -- the Case for Metacognitive AI](https://arxiv.org/abs/2605.15567)：主张把元认知 AI 作为监控不确定性、自我评估、策略选择和失效感知的推理层。
+- [A Primer in Post-Training Reasoning Data: What We Know About How It Works](https://arxiv.org/abs/2606.02113)：综述 150 多篇推理数据后训练研究和系统报告，按数据对象、有用性标准、构造流程和规模化规律组织该领域。
+- [Test-Time Scaling in Multimodal Foundation Models: A Comprehensive Survey of Generation and Reasoning](https://arxiv.org/abs/2606.08231)：综述多模态基础模型的 test-time scaling，为多模态生成和推理中的推理时计算策略建立统一分类。
+- [Bridging the Agent-World Gap: Text World Models for LLM-based Agents](https://arxiv.org/abs/2606.09032)：综述面向 LLM agent 的 text world model，把网页、终端、API 响应和对话等文本状态转移建模用于规划、学习和评测。
+- [Table intelligence with large language models: A comprehensive survey and unified benchmark](https://doi.org/10.1016/j.cosrev.2026.100996)：结合表格智能综述与统一基准，覆盖表格理解、推理、生成和任务迁移。
 - [A short survey on small reasoning models: training, inference, applications, and research directions](https://doi.org/10.1007/s11704-025-50990-0)：综述小型推理模型，覆盖紧凑推理系统的训练、推理、部署与研究方向。
+- [How to evaluate the cognitive abilities of LLMs](https://doi.org/10.1038/s41562-024-02096-z)：给出评估 LLM 认知能力的方法论建议，避免把测试表现过度解释为类人推理。
+- [Federated reasoning LLMs: a survey](https://doi.org/10.1007/s11704-025-50480-3)：围绕分布式数据、隐私保护训练或推理、协同推理和部署约束综述联邦推理 LLM。
+- [A Comprehensive Review of Neuro-symbolic AI for Robustness, Uncertainty Quantification, and Intervenability](https://doi.org/10.1007/s13369-025-10887-3)：以鲁棒性、不确定性量化和可干预性为可靠性轴线综述神经符号 AI。
+- [Large Language Models in Multi Criteria Decision Making: A Systematic Review, Taxonomy, and Future Research Agenda](https://doi.org/10.65069/ara21202614)：系统综述 LLM 在多准则决策中的用途，提出面向偏好敏感推理的分类和未来议程。

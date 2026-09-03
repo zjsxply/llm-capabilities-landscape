@@ -19,11 +19,16 @@
 - [Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills)（多技能 deep research 套件；outline/字段扩展/并行 research/最终 report）
 - [deep-research](https://github.com/wshuyi/deep-research/tree/main/skills/deep-research)（中文流程型 deep research skill；强调事实分层与中间产物留存）
 - [ARIS research skills](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/tree/main/skills)（论文：[ARIS](https://arxiv.org/abs/2605.03042)；skills.sh 示例：[research-pipeline](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/research-pipeline)、[research-lit](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/research-lit)、[citation-audit](https://skills.sh/wanshuiyin/auto-claude-code-research-in-sleep/citation-audit)）覆盖文献检索、多源检索、research-wiki 记忆、新颖性检查、跨模型审阅和引用/主张审计，更接近可执行科研 harness，而不是单个报告提示词。
-- [parallel-deep-research](https://skills.sh/parallel-web/parallel-agent-skills/parallel-deep-research) 适合在最终综合前并行做来源发现和材料阅读的 deep research 工作流。
-- [firecrawl-deep-research](https://skills.sh/firecrawl/firecrawl-workflows/firecrawl-deep-research) 适合基于 provider crawling 与内容抽取的检索到报告工作流。
+- [parallel-deep-research](https://skills.sh/parallel-web/parallel-agent-skills/parallel-deep-research) 按所选深度档位异步启动 `parallel-cli research`，以 run ID 轮询并把带引用的报告与元数据分别写入 Markdown 和 JSON，同时保留 interaction ID 供后续研究沿用上下文。
+- [firecrawl-deep-research](https://skills.sh/firecrawl/firecrawl-workflows/firecrawl-deep-research) 将用户给出的时长映射为快速、深入或穷尽式采集，逐档扩大检索词和抓取来源数量，并要求最终报告列出反方证据、不确定性、完整来源与复跑参数；若任务是论文综述，则明确转交其论文索引 skill。
 - [doublecheck](https://github.com/github/awesome-copilot/tree/main/skills/doublecheck) 适合抽取主张、搜索来源，并检查证据支持或矛盾关系，可补充 Reference Hallucination Detection 和 Cited but Not Verified 等引用可靠性评测。
 - [search-layer](https://github.com/blessonism/openclaw-search-skills/tree/main/search-layer)（更偏 deep research 底层检索层：多源并行搜索、去重、排序与引用链追踪）
 - [last30days-skill](https://github.com/mvanhorn/last30days-skill) 和 [last30days-skill-cn](https://github.com/Jesseovo/last30days-skill-cn) 是面向最近一个月信息发现的 skills，覆盖社交平台、新闻、社区和网页来源；当 deep research 更需要新鲜度和跨平台趋势覆盖，再进入长文综合时很有用。
 - [deep-research-pro](https://clawhub.ai/parags/deep-research-pro)（商业风格长报告模板）
 - [deepresearchwork](https://clawhub.ai/jiacode/deepresearchwork)（任务拆步明确的调研模板）
 - [in-depth-research](https://clawhub.ai/ivangdavila/in-depth-research)（纵深追问型长报告模板）
+- [DeepXiv SDK](https://github.com/DeepXiv/deepxiv_sdk)（论文：[DeepXiv](https://arxiv.org/abs/2603.00084)；skills.sh：[deepxiv-cli](https://skills.sh/deepxiv/deepxiv_sdk/deepxiv-cli)）通过 CLI、SDK、MCP 和可安装 skills 封装面向 agent 的论文检索与渐进式阅读，使 agent 能先获取元数据和指定章节，只在必要时加载全文。
+- [AutoPaperSkill](https://github.com/Zachary709/AutoPaperSkill) 通过查找可靠论文来源、结果去重，以及保存 PDF、元数据、代码、项目链接与图表来构建本地文献库；它还会生成结构化中文阅读报告，并刷新可搜索的 `papers.html` 索引。
+- [openalex-database](https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/openalex-database) 封装 OpenAlex client 与查询辅助脚本，可在学术图谱上执行论文、作者、机构、引用、开放获取、趋势、主题、抽样和批量元数据查询。
+- [systematic-literature-review](https://skills.sh/huangwb8/chineseresearchlatex/systematic-literature-review) 把系统综述封装成协议驱动的流程：界定问题，制定检索与筛选标准，记录研究选择，抽取证据，并把保留文献综合为结构化综述。
+- [literature-review](https://skills.sh/jackspace/claudeskillz/literature-review) 执行结构化文献综述流程，覆盖范围界定、多源检索、去重、标题与摘要筛选、主题综合、引用核验和格式化综述生成。

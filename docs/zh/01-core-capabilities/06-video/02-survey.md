@@ -1,8 +1,56 @@
 # 1.6.2 Survey
 
-- [Video Understanding with Large Language Models: A Survey](https://arxiv.org/abs/2312.17432)：视频语言架构、任务、数据集与挑战的基础总览。
-- [VideoLLM Benchmarks and Evaluation: A Survey](https://arxiv.org/abs/2505.03829)：梳理 VideoLLM 的任务、指标、基准与评测局限。
-- [A Survey on Video Temporal Grounding with Multimodal Large Language Model](https://arxiv.org/abs/2508.10922)：聚焦视频中时间证据的定位与推理。
-- [Video Understanding by Design: How Datasets Shape Architectures and Insights](https://arxiv.org/abs/2509.09151)：分析视频数据集如何塑造视频理解研究中的架构选择与结论。
-- [Video Understanding](https://arxiv.org/abs/2603.17840)：把几何与时空线索同语义推理连接起来，作为统一视频理解模型的主线。
-- [Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)：把视频理解与幻觉检测及证据可靠性联系起来。
+- [Video Understanding with Large Language Models: A Survey](https://arxiv.org/abs/2312.17432)：将 Vid-LLM 分为视频分析器、视频嵌入器及二者结合三类，并整理任务、数据集、基准与评测方法。
+- [Advancing Video Anomaly Detection: A Concise Review and a New Dataset](https://arxiv.org/abs/2402.04857)：把 VAD 模型进展同数据集缺口联系起来，并发布含 14 类场景的多视角监控异常数据集 MSAD。
+- [The Revolution of Multimodal Large Language Models: A Survey](https://arxiv.org/abs/2402.12451)：面向视觉 MLLM 总结架构、模态对齐、训练策略、视觉 grounding、图像生成/编辑与视觉理解任务。
+- [Networking Systems for Video Anomaly Detection: A Tutorial and Survey](https://arxiv.org/abs/2405.10347)：将 VAD 放入可部署的 NSVAD 系统视角，覆盖学习框架、边缘与 IoVT 场景、开放资源和系统挑战。
+- [Efficient multimodal large language models: a survey](https://arxiv.org/abs/2405.10739)：整理高效 MLLM 的结构与策略、代表模型时间线、应用场景以及边缘计算约束。
+- [Video anomaly detection in 10 years: a survey and outlook](https://arxiv.org/abs/2405.19387)：回顾弱监督、自监督和无监督等深度 VAD 范式，并讨论数据集/模型耦合与 VLM 特征提取器。
+- [A Comprehensive Review of Multimodal Large Language Models: Performance and Challenges Across Different Tasks](https://arxiv.org/abs/2408.01319)：比较 MLLM 在文本、视觉、音频、视频和生理序列等任务中的应用重点、短板与后续方向。
+- [Deep Learning for Video Anomaly Detection: A Review](https://arxiv.org/abs/2409.05383)：建立半监督、弱监督、全监督、无监督和开放集五类 VAD taxonomy，并纳入大模型 VAD、数据集、代码与指标。
+- [From Seconds to Hours: Reviewing MultiModal Large Language Models on Comprehensive Long Video Understanding](https://arxiv.org/abs/2409.18938)：对比图像、短视频与长视频 MM-LLM，重点说明长程时序依赖、模型设计、训练方法和不同长度基准。
+- [Human Action Anticipation: A Survey](https://arxiv.org/abs/2410.14045)：统一 action anticipation、activity forecasting、intent/goal prediction 等任务，并比较 11 个动作预判数据集上的指标与方法。
+- [Privacy-Preserving Video Anomaly Detection: A Survey](https://arxiv.org/abs/2411.14565)：定义 P2VAD，并按数据、特征和系统层隐私方法组织 VAD 研究，同时讨论隐私泄漏与外观偏置。
+- [Video Quality Assessment: A Comprehensive Survey](https://arxiv.org/abs/2412.04508)：回顾 UGC 视频质量评估算法和心理物理质量数据库，从自然统计模型延伸到深度网络与 LMM 质量预测器。
+- [A Comprehensive Survey of Action Quality Assessment: Method and Benchmark](https://arxiv.org/abs/2412.11149)：提出按模态组织的 AQA taxonomy，并为视频 AQA 方法建立统一数据集和标准化评测协议。
+- [Video anomaly detection: A systematic review of issues and prospects](https://doi.org/10.1016/j.neucom.2024.127726)：Neurocomputing 系统性回顾 VAD 的问题与前景，可作为监控异常检测任务设定的紧凑参考。
+- [Video Question Answering: A survey of the state-of-the-art](https://doi.org/10.1016/j.jvcir.2024.104320)：JVCIR 的视频问答最新进展综述，聚焦如何把时序视觉证据同自然语言问题关联起来。
+- [A Decade of Action Quality Assessment: Largest Systematic Survey of Trends, Challenges, and Future Directions](https://arxiv.org/abs/2502.02817)：按 PRISMA 回顾 200 余篇 AQA 论文，涵盖定义、框架、指标、数据集、趋势、挑战和未来方向。
+- [A Survey on Video Analytics in Cloud-Edge-Terminal Collaborative Systems](https://arxiv.org/abs/2502.06581)：回顾云-边-端协同视频分析架构、资源管理、任务卸载、边缘/云侧处理以及 LLM 和多模态机会。
+- [SAM2 for Image and Video Segmentation Survey](https://arxiv.org/abs/2503.12781)：分析 SAM 与 SAM2 的基础、静态图像和视频分割应用、跨域适应以及 200 余篇相关工作的局限。
+- [VideoLLM Benchmarks and Evaluation: A Survey](https://arxiv.org/abs/2505.03829)：整理 VideoLLM 基准特征、封闭/开放/专项评测协议、性能趋势以及时序和时空测试缺口。
+- [A Challenge to Build Neuro-Symbolic Video Agents](https://arxiv.org/abs/2505.13851)：综述视频理解相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Leveraging Auxiliary Information in Text-to-Video Retrieval: A Review](https://arxiv.org/abs/2505.23952)：回顾 81 篇利用物体、时空上下文、语音和改写 caption 等辅助信息的文本到视频检索研究。
+- [Video Scene Parsing Survey](https://arxiv.org/abs/2506.13552)：回顾语义、实例、全景、跟踪和开放词表视频解析，并比较时序一致性相关的数据集和指标。
+- [LLMs for Crash Detection in Video](https://arxiv.org/abs/2507.02074)：回顾面向视频事故检测的 LLM/VLM 融合策略、数据集、模型结构、性能基准和部署挑战。
+- [The Evolution of Video Anomaly Detection](https://arxiv.org/abs/2507.21649)：统一 DNN 与 LLM 路线下的 VAD，说明 MLLM 如何改变标注、输入模态、模型结构和任务目标。
+- [Segment Anything for Video Review](https://arxiv.org/abs/2507.22792)：以过去记忆、当前帧特征和未来运动预测三条线组织 SAM/SAM2 视频目标分割与跟踪方法。
+- [A Survey on Video Temporal Grounding with Multimodal Large Language Model](https://arxiv.org/abs/2508.10922)：按 MLLM 功能角色、训练范式和视频特征处理组织 VTG-MLLM，并整理基准与评测协议。
+- [A Survey on Video Anomaly Detection via Deep Learning: Human, Vehicle, and Environment](https://arxiv.org/abs/2508.14203)：按监督层级、在线/主动/持续适应以及人、车、环境三类场景组织 VAD 研究。
+- [Looking Beyond the Obvious: A Survey on Abstract Concept Recognition for Video Understanding](https://arxiv.org/abs/2508.20765)：回顾视频抽象概念识别的任务和数据集，并讨论基础模型时代重新处理高层语义推理的机会。
+- [Video Understanding by Design: How Datasets Shape Architectures and Insights](https://arxiv.org/abs/2509.09151)：解释数据集中的运动复杂度、时间跨度、层级结构和多模态丰富度如何推动视频模型架构选择。
+- [Rethinking Visual Intelligence: Insights from Video Pretraining](https://arxiv.org/abs/2510.24448)：综述视频预训练或视频理解能力。
+- [Traffic Anomaly VLM Survey](https://doi.org/10.1109/ITSC60802.2025.11423492)：回顾视频交通异常检测中的 prompt learning、端到端微调和特征适配器式 VLM 方法，并整理数据集与指标。
+- [Abnormal Behavior Detection in Video Surveillance Survey](https://doi.org/10.1016/j.engappai.2025.113438)：Engineering Applications of AI 综述 optimized-ML 异常行为检测在 intelligence-information 视频监控系统中的应用。
+- [Bridging Multimodal and Video Summarization: A Unified Survey](https://doi.org/10.18653/v1/2025.newsum-main.11)：ACL workshop 综述统一多模态摘要与视频摘要，关注证据选择、时间覆盖和摘要质量评估。
+- [Multimodal Video Moment Retrieval: A Survey](https://doi.org/10.1109/ijcnn64981.2025.11227753)：IJCNN 综述多模态视频片段检索，连接语言、视觉和其他模态线索以完成时间 grounding。
+- [A Comprehensive Survey on Video Summarization: Challenges and Advances](https://doi.org/10.1109/tcsvt.2025.3596006)：TCSVT 综述视频摘要挑战与进展，用更广的方法和评测视角补充 LLM 视频摘要条目。
+- [Remote Sensing Video Tracking: Current Status, Challenges, and Future](https://doi.org/10.1109/jstars.2025.3573572)：JSTARS 回顾遥感视频跟踪的现状、挑战和未来方向，覆盖航空与卫星视频流场景。
+- [Real-Time Deep Anomaly Detection: An Overview of Benchmark Datasets and Performance Metrics](https://doi.org/10.1016/j.trpro.2025.03.091)：概览实时深度异常检测的数据集和性能指标，可支撑监控式 VAD 评测实践。
+- [A survey on video emotion recognition: Segmentation, classification, and explainable AI techniques](https://doi.org/10.1016/j.image.2025.117442)：回顾视频情感识别中的分割、分类和可解释 AI 技术。
+- [Multi-modal Video Summarization: A Comprehensive Survey](https://doi.org/10.1109/icrm66809.2025.11349049)：ICRM 综述多模态视频摘要，区分多信号摘要构建与单一路视频 skim。
+- [Advances in Computer Vision for Public Safety: AI-Powered Video Surveillance](https://doi.org/10.1109/iccca66364.2025.11325229)：IEEE ICCCA 综述线索，关注公共安全监测和事件检测中的 AI 视频监控。
+- [Video Understanding: Through A Temporal Lens](https://arxiv.org/abs/2602.00683)：可作为视频理解方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。
+- [Video Understanding](https://arxiv.org/abs/2603.17840)：将视频理解划分为低层几何、高层语义和统一视频模型三条线，用于组织可扩展时空推理。
+- [Distorted or Fabricated? A Survey on Hallucination in Video LLMs](https://arxiv.org/abs/2604.12944)：把 Vid-LLM 幻觉分为动态失真和内容捏造，并回顾评测、缓解方法与根因。
+- [Is Video Anomaly Detection Misframed?](https://arxiv.org/abs/2605.12725)：以立场/分析形式主张 VAD 应回到单场景、空间感知和可解释 normality，而非弱监督多场景语义标签。
+- [Edge-IoT Video Anomaly Detection Survey](https://doi.org/10.1016/j.iswa.2026.200635)：面向边缘 IoT 的 VAD 综述，聚焦输入模态与实时应用约束。
+- [Spiking Neural Networks for Video Analysis](https://doi.org/10.1016/j.neunet.2026.108844)：回顾用于视频分析的脉冲神经网络模型和架构，突出事件式时间处理。
+- [Lightweight Video Anomaly Detection for Industrial Contexts: A Multi-Axis Taxonomy of Modeling, Efficiency, and Operational Robustness](https://doi.org/10.1109/estream70144.2026.11511513)：为轻量工业 VAD 建立多轴 taxonomy，覆盖建模、效率和运行鲁棒性。
+- [Language-Guided Video Object Segmentation Survey](https://doi.org/10.1007/s44336-025-00018-9)：追踪语言引导 VOS 从指代查询到推理式分割的演进，并整理数据集和推理感知评测。
+- [Transformers for Video Anomaly Detection](https://doi.org/10.1007/s00521-025-11218-1)：回顾 Transformer 与 Vision Transformer 在 VAD 中的用法、优势、局限和技术挑战。
+- [Generative Artificial Intelligence and the Evolving Challenge of Deepfake Detection: A Systematic Analysis](https://doi.org/10.3390/jsan14010017)：回顾 deepfake 生成与检测，包括 GAN/扩散方法、取证和混合检测器、可解释性、实时应用与监管问题。
+- [A review of deep learning based multimodal forgery detection for video and audio](https://doi.org/10.1007/s42452-025-07629-3)：回顾音视频伪造检测的融合策略、公开数据集、基准、跨域泛化和轻量部署需求。
+- [Video understanding with image, audio, and text](https://doi.org/10.1117/12.3049519)：SPIE proceedings 元数据将其标记为结合图像、音频和文本信号的视频理解论文。
+- [Video Summarization Using Deep Learning and Optimization Approaches: A Systematic Review](https://doi.org/10.1145/3798047)：系统分类二十年来的视频摘要方法，涵盖深度学习、优化、单/多视角设置、数据集和评测。
+- [Computational and Deep Learning Approaches for Video Analysis: An Engineering Perspective on Methods, Challenges, and Future Directions](https://doi.org/10.1007/s11831-026-10523-9)：Springer 摘要将视频分析放入数字取证视角，覆盖视频伪造检测流程、时空检测器和 XAI 取证工程。

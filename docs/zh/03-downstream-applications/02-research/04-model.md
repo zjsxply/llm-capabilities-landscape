@@ -1,17 +1,250 @@
 # 3.2.4 Model
 
-- [Spark](https://arxiv.org/abs/2504.20090)：将检索增强科研想法生成与基于 60 万条 OpenReview 评审训练的 Judge 评审模型结合，提供任务专用的科学评审信号。
-- [REMOR](https://arxiv.org/abs/2505.11718)：结合推理型 LLM 与多目标强化学习生成同行评审，使输出对齐多个评审质量维度。
-- [SciGPT](https://arxiv.org/abs/2509.08032)：面向科学文献理解对 Qwen3 做领域适配，结合领域蒸馏、长文档稀疏 MoE attention 和本体感知知识适配。
+- [AlphaSAGE: Structure-Aware Alpha Mining via GFlowNets for Robust Exploration](https://arxiv.org/abs/2509.25055)： AlphaSAGE 使用结构感知的关系图编码器、生成流网络和多面向稠密奖励来探索公式化 alpha 表达式，目标是挖掘多样、新颖且具有预测力的信号组合。它自动化的是量化科研侧的因子发现，而不是业务性的订单执行。
+- [PPSGen: Learning to Generate Presentation Slides for Academic Papers](https://www.ijcai.org/Proceedings/13/Abstracts/310.html)：PPSGen 用回归模型学习句子重要性，再以整数线性规划选择并对齐短语和句子来生成幻灯片；论文在 200 对论文与幻灯片上进行评测，给出了前大模型时代具体的论文到幻灯片抽取与优化方法。
+- [Learning to Generate Posters of Scientific Papers](https://arxiv.org/abs/1604.01219)：用论文与海报配对数据学习面板结构和属性，再合成各面板内容；同时发布带面板标注的 Poster-Paper 数据集，使科研海报生成有了可测的训练与评估对象。
+- [Learning to Generate Posters of Scientific Papers by Probabilistic Graphical Models](https://arxiv.org/abs/1702.06228)：提出带完整面板与属性标注的 NJU-Fudan Paper-Poster 数据集，并将 MAP 布局推断与递归页面切分结合起来，直接检验生成海报是否满足设计约束。
+- [AI Feynman: a Physics-Inspired Method for Symbolic Regression](https://arxiv.org/abs/1905.11481)：AI Feynman 先递归利用对称性、可分离性、可组合性和量纲结构，再结合神经拟合，在 Feynman 的 100 个方程上全部恢复规律，并把更难测试集的成功率从 15% 提高到 90%。
+- [DOC2PPT: Automatic Presentation Slides Generation from Scientific Documents](https://arxiv.org/abs/2101.11796)：在层次化序列到序列模型中联合处理内容选择、改写、图像检索和布局预测，并以约 6000 组文档与幻灯片配对数据支撑科研演示生成。
+- [Towards Topic-Aware Slide Generation for Academic Papers with Unsupervised Mutual Learning](https://doi.org/10.1609/aaai.v35i15.17564)：该方法从学术幻灯片中挖掘常见主题，用对数线性模型构造伪目标分布，并在没有标注训练目标的条件下协同训练两个句子抽取器；标注测试数据和人工判断用于评估所得的论文到幻灯片内容。
+- [AI Descartes: Combining Data and Theory for Derivable Scientific Discovery](https://arxiv.org/abs/2109.01634)：AI Descartes 将符号回归与守恒定律等逻辑公理结合，让系统在稀疏数据下区分拟合相近但只有一个能从理论推导出的公式。
+- [Neural Content Extraction for Poster Generation of Scientific Papers](https://arxiv.org/abs/2112.08550)：把 poster generation 的内容选择问题独立出来，先决定每个 panel 应抽取哪些文本、图和表，再交给后续版面与视觉组织步骤。
+- [AI Research Associate for Early-Stage Scientific Discovery](https://arxiv.org/abs/2202.03199)：AI Research Associate 在低偏置、带不变量的本体中搜索简约假设，并将其编译成可解释的张量计算图，以便在稀疏噪声观测上训练和检验。
+- [Interpretable Machine Learning for Science with PySR and SymbolicRegression.jl](https://arxiv.org/abs/2305.01582)：PySR 提供可分布式运行的多种群 evolve--simplify--optimize 循环，支持运行时算子融合和自动微分，并用 EmpiricalBench 评估从历史数据恢复科学方程。
+- [AutomaTikZ](https://arxiv.org/abs/2310.00367)：把 scientific vector graphics 表示成 TikZ 程序，构造 120K caption-TikZ drawing 对的 DaTikZ，并在 DaTikZ 上 fine-tune LLaMA 与引入 CLIP embedding 的 CLiMA。
+- [Research about the Ability of LLM in the Tamper-Detection Area](https://arxiv.org/abs/2401.13504)：评估通用 LLM 在篡改检测提示中的表现，区分基础篡改识别与更难的领域证据核查能力。
+- [Reviewer2](https://arxiv.org/abs/2402.10886)：训练两个模型：一个生成 reviewer 可能关注的 aspect questions，另一个在论文和 aspect question 条件下生成对应 review，从而显式建模 reviewer 意见分布。
+- [MMSR: Symbolic regression is a multi-modal information fusion task](https://arxiv.org/abs/2402.18603)：MMSR 将数据到表达式的发现建模为多模态融合，在符号回归目标中联合训练对比对齐，并在包括 SRBench 在内的多个主流数据集上取得更好结果；代码已公开。
+- [Monitoring AI-Modified Content at Scale](https://arxiv.org/abs/2403.07183)：用大规模语料和词汇信号监测 AI 改写内容进入科学写作与同行评审的分布漂移。
+- [Generalizing the SINDy approach with nested neural networks](https://arxiv.org/abs/2404.15742)：Nested SINDy 在 SINDy 核心前后加入神经层，使方程发现能够表示组合函数和乘积结构，同时明确指出优化过程仍存在局限。
+- [The Inefficiency of Genetic Programming for Symbolic Regression - Extended Version](https://arxiv.org/abs/2404.17292)：等式饱和将表达式压缩为语义唯一结构；在两个真实数据集上的穷举比较显示，遗传编程只探索其中很小一部分，还会重复评估同构公式。
+- [OptPDE: Discovering Novel Integrable Systems via AI-Human Collaboration](https://arxiv.org/abs/2405.04484)：OptPDE 通过最大化守恒量数量来优化 PDE 系数，并报告四组可积 PDE，其中三组据作者所知为新结果。论文深入分析其中一个新族，并提出由机器学习生成可解释候选、再由人类验证和分析的 AI 与人协作流程。
+- [Classifying Scientific Peer Reviews: Distinguishing Authentic, Generic, and AI-Generated Feedback](https://doi.org/10.1109/fmlds67896.2025.00068)：把同行评审真实性建模为真实反馈、通用反馈和 AI 生成反馈的三分类任务，为学术诚信系统提供同行评审专用的检测问题。
+- [Automated novelty evaluation of academic paper: A collaborative approach integrating human and large language model knowledge](https://doi.org/10.1002/asi.70005)：结合人类和 LLM 知识进行学术论文自动新颖性评价，为研究想法和论文评审系统提供学术新颖性信号。
+- [Causality Pursuit from Heterogeneous Environments via Neural Adversarial Invariance Learning](https://arxiv.org/abs/2405.04715)：FAIR-NN 通过对回归解进行对抗测试，寻找在不同环境中条件行为保持不变的预测变量；其 Gumbel 松弛和随机梯度下降上升法在给定异质性条件下恢复准因果变量，并在模拟和真实数据上验证。
+- [Multi-objective SINDy for parameterized model discovery from single transient trajectory data](https://arxiv.org/abs/2405.08771)：该方法为 SINDy 引入来自固定点、周期轨道、拟周期轨道和混沌吸引子的软约束，在瞬态拟合、吸引子拟合与稀疏性之间进行多目标优化，以更少的瞬态轨迹发现参数化动力学。
+- [Symmetry-Informed Governing Equation Discovery](https://arxiv.org/abs/2405.16756)：该方法从 ODE 对称性推导等变约束，并将其注入稀疏回归和遗传编程方程发现，以压缩搜索空间、提高抗噪性和方程恢复概率；代码已公开。
+- [Scalable and Flexible Causal Discovery with an Efficient Test for Adjacency](https://arxiv.org/abs/2406.09177)：提出 Differentiable Adjacency Test，以一个具有等价性证明、并由两个神经网络求解的松弛问题，替代图邻接判断所需的指数数量条件独立检验；DAT-Graph 支持观测与干预数据，能以当前最佳精度学习 1,000 变量图，并提高大规模 RNA 测序数据上的干预效应预测精度。
+- [A hybrid method for structural-parametric identification of dynamic systems](https://doi.org/10.17212/2782-2001-2025-2-111-122)：GP-SINDy 先用遗传编程从观测数据确定微分方程结构，再以稀疏辨识估计参数；三个动力系统上的测试得到准确度较高且复杂度较低的模型。
+- [ARGUABLY @ AI Debater-NLPCC 2021 Task 3: Argument Pair Extraction from Peer Review and Rebuttals](https://doi.org/10.1007/978-3-030-88483-3_48)：面向同行评审意见与作者回复之间的论点配对抽取，以 ERNIE 2.0 词元表征替换共享任务基线的表示方式，并加入双重注意力捕获长距离依赖，相对 NLPCC 多任务基线取得 8.81% 的 F1 提升。
+- [NeurReview: A Neural Architecture Based Conformity Prediction of Peer Reviews](https://doi.org/10.1109/access.2022.3224019)：通过建模评审结构以及评审者与作者、其他评审者之间的互动，预测单份评审与元评审是否一致；该方法在两个源自 ICLR 开放评审的数据集上验证，并利用跨评审分歧、情感与推荐分数一致性等特征识别失配评审。
+- [The Quality Assist: A Technology-Assisted Peer Review Based on Citation Functions to Predict the Paper Quality](https://doi.org/10.1109/access.2022.3225871)：不使用评审意见，仅依据引文功能标签、非引文句特征和参考文献来源预测录用结果、论文质量与评审分数；在 ICLR 2017-2020 数据上，论文质量分类准确率达到 0.75，对优质论文的召回率达到 0.99。
+- [ElicitationGPT: Text Elicitation Mechanisms via Language Models](https://arxiv.org/abs/2406.09363)：ElicitationGPT 通过黑盒 ChatGPT 把自由文本中的信息转换为预测分数，从而评价文本报告；论文证明该机制具有 properness，并在同行评议上检验其与人类偏好的一致性，而不依赖领域手工评分表。
+- [Automated Peer Reviewing in Paper SEA](https://arxiv.org/abs/2407.12857)：先把多种评审格式标准化，再用标准化数据微调模型生成建设性评审，并用错配分数支持自校正；它和 Reviewer2 的关注点提示不同，重点是把混乱的真实评审文本整理成统一监督格式。
+- [Simplifying Scholarly Abstracts for Accessible Digital Libraries Using Language Models](https://arxiv.org/abs/2408.03899)：用语言模型把学术摘要改写为更易读版本，将摘要简化作为数字图书馆中科学传播的文档转换步骤。
+- [Active Symbolic Discovery of Ordinary Differential Equations via Phase Portrait Sketching](https://arxiv.org/abs/2409.01416)：APPS 在采样一批初始条件前先勾勒信息量高的相空间区域，从而减少混沌轨迹发散带来的数据存储负担。大量实验表明，与使用被动采集数据训练的基线相比，这种主动采集策略能够发现更准确的 ODE 表达式。
+- [Constraining genetic symbolic regression via semantic backpropagation](https://arxiv.org/abs/2409.07369)：该方法将语义反向传播加入基因表达式编程，使领域约束能够沿表达式树传播为纠正反馈，从而在 Feynman 式方程发现任务中提升物理一致的恢复率和抗噪性。
+- [Extracting Affect Aggregates from Longitudinal Social Media Data with Temporal Adapters for Large Language Models](https://arxiv.org/abs/2409.17990)：在英国 Twitter 用户面板的完整时间线上微调 Llama 3 8B 的 Temporal Adapters，并用成熟问卷提取纵向情绪与态度聚合指标。在新冠疫情初期，多项集体情绪估计与英国代表性调查呈强正相关且具有统计显著性，在不同训练种子和提示表述下保持稳健，并与基于标注数据的分类器结果一致。
+- [Causal Inference with Generative Artificial Intelligence: Application to Texts as Treatments*](https://arxiv.org/abs/2410.00903)：GenAI-Powered Inference 使用 LLM 对文本处理的内部表示，而不是从头学习因果表示，证明识别条件和双重机器学习性质，规避关键的 overlap 失败，并在模拟实验和 Llama 3 文本实验中改善估计。
+- [Text2Chart31: Instruction Tuning for Chart Generation with Automatic Feedback](https://arxiv.org/abs/2410.04064)：Text2Chart31 构建覆盖 31 类 Matplotlib 图表的 1.11 万组描述、代码、数据表与图像数据，并以自动反馈强化学习进行指令微调，在无需人工反馈的情况下提升复杂图表生成能力。
+- [‘Quis custodiet ipsos custodes?’ Who will watch the watchmen? On Detecting AI-generated peer-reviews](https://arxiv.org/abs/2410.09770)：论文提出基于词频的检测器和基于评审再生成的检测器，用于识别 ChatGPT 撰写的同行评审，并针对 token 攻击和改写进行压力测试。防御策略可减轻改写影响；RR 更稳健，而 TF 在无攻击时更强，代码、数据集和模型均已公开。
+- [Symmetry Discovery for Different Data Types](https://arxiv.org/abs/2410.09841)：LieSD 从训练好的输入输出映射中利用输入、输出和梯度求解李代数空间，以发现连续对称性；它扩展到多通道和张量数据，并在四类具有对称性的任务上无需群采样即可识别正确的基数量。
+- [Almost-Linear RNNs Yield Highly Interpretable Symbolic Codes in Dynamical Systems Reconstruction](https://arxiv.org/abs/2410.14240)：AL-RNN 从时间序列学习简约的分段线性动力学表示，并生成保持拓扑性质的符号编码，在 Lorenz 和 Rossler 系统中恢复最小形式，也在经验数据上得到可解释编码。
+- [On uniqueness in structured model learning](https://arxiv.org/abs/2410.22009)：在完整无噪测量下，所提正则化可将缺失模型组件唯一识别为 PDE 的正则化最小解；在不完整有噪数据下，参数化神经组件在给定网络条件下收敛到该解。
+- [CycleResearcher: Improving Automated Research via Automated Review](https://arxiv.org/abs/2411.00816)：对开源 LLM 做面向完整科研与评审循环的后训练；CycleResearcher 负责起草和修订论文，CycleReviewer 模拟同行评审，并用 Review-5k 与 Research-14k 把评审反馈转成迭代强化学习信号。
+- [Rethinking Scale: The Efficacy of Fine-Tuned Open-Source LLMs in Large-Scale Reproducible Social Science Research](https://arxiv.org/abs/2411.00890)：经过微调的小型开源 LLM 在大规模社会科学文本分类上可达到或超过 ChatGPT-4；研究还量化训练集规模对增益的影响，并据此提出兼顾隐私与效果的混合工作流。
+- [Symbolic regression via MDLformer-guided search: from minimizing prediction error to minimizing description length](https://arxiv.org/abs/2411.03753)：SR4MDL 训练 MDLformer 估计描述长度，并将其作为趋向正确形式的单调搜索目标，在 133 个基准问题中恢复约 50 个公式，并在 122 个未见黑盒问题上展示泛化能力。
+- [Learning interpretable network dynamics via universal neural symbolic regression](https://arxiv.org/abs/2411.06833)：该方法将神经网络拟合与预训练符号回归结合，自动推断可解释的网络动力学方程，并在物理、生化、生态和流行病学等十多个场景中评估，而非局限于单一领域案例。
+- [TRENDy: Temporal Regression of Effective Non-linear Dynamics](https://arxiv.org/abs/2412.03496)：TRENDy 先级联多尺度滤波，再拟合与未知输入 PDE 参数空间匹配的神经 ODE，使低维有效动力学对噪声更稳健。它在合成和真实数据上自动定位 Turing 与 Hopf 分岔，并以眼斑蜥蜴图案发育为真实科学分析案例，展示了从观测到可解释动力学假设的可复用路径。
+- [OpenReviewer: A Specialized Large Language Model for Generating Critical Scientific Paper Reviews](https://arxiv.org/abs/2412.11948)：用 7.9 万条专家评审微调 Llama-OpenReviewer-8B，并封装成从 PDF 抽取全文到按模板生成批判性评审的流程。
+- [Learning to Generate Research Idea with Dynamic Control](https://arxiv.org/abs/2412.14626)：训练可控的科研想法生成，而不是只依赖静态提示。核心思想：在生成过程中引入动态控制信号，使 novelty、feasibility 和 topic constraints 能随想法形成过程被调节。
+- [Tests for model misspecification in simulation-based inference: from local distortions to global model checks](https://arxiv.org/abs/2412.15100)：该方法把模型错设重构为针对受控模拟器扰动的一组假设检验，并连接异常检测、模型验证与残差拟合优度；自校准训练算法在合成场景和引力波事件 GW150914 上得到验证。
+- [Noise-Resilient Symbolic Regression with Dynamic Gating Reinforcement Learning](https://arxiv.org/abs/2501.01085)：NRSR 用动态门控模块过滤高噪声信号，并用混合路径熵奖励增强探索来学习符号选择策略，在高噪声和干净数据基准上都超过多种符号回归基线。
+- [SpaceTime: Causal Discovery from Non-Stationary Time Series](https://arxiv.org/abs/2501.10235)：SPACETIME 结合 MDL 评分、非参数函数模型与核差异检验，从非平稳多情境时序中联合推断因果图、机制变点和因果关系不变的情境分组。
+- [Citation recommendation based on argumentative zoning of user queries](https://arxiv.org/abs/2501.18292)：构建多任务模型，同时完成引文推荐和用户引用句的论证分区分类，并按新的论证分区方案标注 PubMed Central 语料；实验表明，显式建模引用句的修辞意图能提升引文推荐效果。
+- [SyMANTIC: An Efficient Symbolic Regression Method for Interpretable and Parsimonious Model Discovery in Science and Beyond](https://arxiv.org/abs/2502.03367)：SyMANTIC 是面向科学模型发现的高效符号回归方法，强调可解释、简洁表达式和跨领域可复用性。
+- [Was Tournament Selection All We Ever Needed? A Critical Reflection on Lexicase Selection](https://arxiv.org/abs/2502.18093)：在含噪合成问题和真实符号回归问题上，下采样提高泛化并减少代码膨胀；加入下采样的 tournament selection 与 epsilon-lexicase 表现相近但速度显著更快。
+- [DeepReview](https://arxiv.org/abs/2503.08569)：用 DeepReview-13K 训练 DeepReviewer-14B，使评审过程显式包含结构化分析、文献检索和证据化论证；它和 ReviewAgents 类似都学习人类式深度评审，但更强调把评审推理过程整理成可监督的长链条。
+- [GraphEval](https://arxiv.org/abs/2503.12600)：把复杂研究想法拆成观点图，再在节点和边上传播评价信号；其中 label propagation 版本把 idea review 变成图结构上的质量传播问题。
+- [Neural-Guided Equation Discovery](https://arxiv.org/abs/2503.16953)：借助模块化的语法引导蒙特卡洛树搜索系统 MGMT 综述神经引导方程发现方法。实验比较七种表格数据编码器，发现监督学习通常优于强化学习，并表明语法规则动作空间以及 risk-seeking 或 AmEx 搜索优于 token 级动作。
+- [OmniScience: A Domain-Specialized LLM for Scientific Reasoning and Discovery](https://arxiv.org/abs/2503.17604)：以科学文献自适应预训练、科学任务指令微调和推理蒸馏构建科学推理模型，并在通用科学与电池发现任务上评测。
+- [Structuring Scientific Innovation: A Framework for Modeling and Discovering Impactful Knowledge Combinations](https://arxiv.org/abs/2503.18865)：该框架学习历史突破性工作中具有区分力的方法组合，再用受推理引导的蒙特卡洛搜索为新研究问题提出有潜力的知识重组方案。
+- [ScholarCopilot: Training Large Language Models for Academic Writing with Accurate Citations](https://arxiv.org/abs/2504.00824)：ScholarCopilot 在 50 万篇 arXiv 论文上联合训练学术文本生成与引文检索：模型生成 [RET] token 决定何时查询论文库，使 7B 模型能够在写作中匹配上下文相关的参考文献，而非依赖固定式 RAG 提示。
+- [DUE: A Deep Learning Framework and Library for Modeling Unknown Equations](https://arxiv.org/abs/2504.10373)：DUE 将用于学习未知 ODE、PDE、DAE、IDE、SDE 和部分观测动力学的深度学习框架与开源库打包起来，同时支持对计算昂贵的已知方程进行代理建模；其跨领域示例使方程发现成为可复用的科研软件。
+- [Physics Informed Constrained Learning of Dynamics from Static Data](https://arxiv.org/abs/2504.12675)：通过消息传递优化平衡控制方程约束与观测拟合，使模型能从静态或部分观测样本推断一阶动力学；实验既恢复了非线性物理依赖，也在代谢通量分析中优于既有估计器。
+- [HypoGen](https://arxiv.org/abs/2504.12976)：评测从结构化论文数据生成科学假设。核心思想是把论文派生的问题、常规假设、概念翻转和假设转换成带显式推理轨迹的条件生成任务。
+- [OpenReviewer](https://aclanthology.org/2025.naacl-demo.44)：用约 79K 高置信专家评审微调 Llama-3.1-8B-Instruct，使模型学习结构化、批判性和会议模板跟随。
+- [REMOR](https://arxiv.org/abs/2505.11718)：结合 reasoning LLM 与多目标强化学习生成同行评审，使输出平衡多个评审质量维度，而不是只优化 verdict 一致性。
+- [CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design](https://arxiv.org/abs/2505.12285)：面向自动 heuristic design 的协同演化 harness。核心思想是让算法和语言模型提案一起演化，把 heuristic search 变成 agentic discovery loop。
+- [TruthHypo / Toward Reliable Scientific Hypothesis Generation](https://arxiv.org/abs/2505.14599)：训练假设真实性与幻觉检测器，使生成系统能用可学习可靠性信号过滤文献支撑薄弱的备选项。
+- [CHIMERA](https://arxiv.org/abs/2505.20779)：通过定义 idea recombination 抽取任务、微调 LLM 抽取器并构建科学想法重组知识库，为训练能提出跨学科方向的 hypothesis-generation 模型提供结构化素材。
+- [Leveraging GANs for citation intent classification and its impact on citation network analysis](https://arxiv.org/abs/2505.21162)：研究用参数量较少的 GAN 引用意图分类模型分析学术影响，并表明按引用类型过滤会显著改变引用网络中的论文中心性排名。
+- [A VLM-Based Method for Visual Anomaly Detection in Robotic Scientific Laboratories](https://arxiv.org/abs/2506.05405)：用视觉语言模型监控机器人实验室场景中的异常状态，把视觉异常检测作为自动化实验设施的模型侧安全信号。
+- [Sparse Interpretable Deep Learning with LIES Networks for Symbolic Regression](https://arxiv.org/abs/2506.08267)：LIES 结合可解释基础激活、过采样、稀疏性损失和训练后剪枝提取紧凑公式，并在符号回归基准上优于基线。
+- [HypER](https://arxiv.org/abs/2506.12937)：训练小模型区分有效和无效的文献扎根推理链，并用带来源的推理监督提升假设生成。它虽然面向假设生成，但同样适合科研 QA：模型要学会哪类自然语言证据链真正支持回答，而不是只学引用格式。
+- [Model Specification Search in Correlated Factor Models Using Bee Swarm Optimization](https://doi.org/10.1080/10705511.2025.2612170)：采用蜂群优化联合搜索相关因子测量模型的因子维度与最优题项；通过改变因子相关、交叉载荷、噪声题项和结构复杂度的模拟评估恢复能力，并给出超参数建议。
+- [LazyReview](https://aclanthology.org/2025.acl-long.165)：通过专家标注和 silver annotation 构建 lazy-thinking 数据，并用 instruction fine-tuning 提升模型识别细粒度 lazy thinking 的能力。
+- [PAP2PAT](https://aclanthology.org/2025.findings-acl.496)：使用 outline-guided chunk-based generation 解决论文到专利 description 的超长生成问题。
+- [DeepReview](https://aclanthology.org/2025.acl-long.1420)：构建 DeepReview-13K，捕捉结构化分析、文献检索和证据化论证等中间步骤，再训练 DeepReviewer。
+- [Leveraging Generative Artificial Intelligence for Causal Inference with Unstructured Data](https://arxiv.org/abs/2507.03897)：GenAI-Powered Inference 无需微调开源语言模型和扩散模型，即可生成文本或图像并提取有保证地捕捉底层结构的低维表示；下游机器学习据此估计带不确定性的因果效应，并在审查、图像特征和政治修辞任务中进行预测推断。
+- [GUIDE](https://arxiv.org/abs/2507.08870)：用研究想法评价样本监督微调建议模型，再按人工评分分布相似度和文本相似度筛选高质量建议继续训练；它和直接预测论文分数的工作不同，真实评分主要用于训练“如何给想法提修改建议”。
+- [Automated Novelty Evaluation of Academic Paper](https://arxiv.org/abs/2507.11330)：用人类知识和大语言模型知识辅助模型预测学术论文的方法新颖性；它和 CHIMERA 的重组抽取不同，训练目标是判断论文方法是否形成了新的技术组合。
+- [Trustworthy scientific inference with generative models](https://arxiv.org/abs/2508.02602)：Frequentist-Bayes 将 AI 生成的后验改造成局部有效置信区域，在训练与目标数据一致时提供最小尺寸保证和可解释覆盖率诊断；案例涵盖偏移源识别、竞争理论协调与有偏观测。
+- [ReviewRL: Towards Automated Scientific Review with RL](https://arxiv.org/abs/2508.10308)：面向自动科研评审的 retrieval-augmented harness；核心思想是结合 ArXiv-MCP 上下文生成和评审优化，提高反馈的事实性与分析深度。
+- [Improving the Accuracy of Amortized Model Comparison with Self-Consistency](https://arxiv.org/abs/2508.20614)：为四种摊销贝叶斯模型比较估计器加入基于无标签真实数据的 self-consistency 损失，并在一个人工案例和两个真实案例中，对照解析方法或 bridge sampling，比较封闭世界与模型失配开放世界下的表现。
+- [Table2LaTeX-RL](https://arxiv.org/abs/2509.17589)：把表格图像到 LaTeX 代码作为多模态生成任务，用 GRPO 和双 reward 训练：一个 reward 评估 LaTeX 结构，另一个 reward 评估渲染结果的视觉 fidelity。
+- [Adaptive L1 Regularization for Neural Network-Based Symbolic Regression](https://doi.org/10.1109/cec65147.2025.11042914)：以 L1adapt 取代 Equation Learner 突然切换的两阶段稀疏化日程：训练过程中根据模型当前预测精度持续调节 L1 惩罚。渐进约束避免从拟合精度到剪枝的离散跳变，使可微符号回归网络在整个训练阶段持续权衡方程拟合度与结构简洁性。
+- [Probabilistic Symbolic Regression for Equation Discovery via Operator-induced and Regularized Symbolic Forests](https://arxiv.org/abs/2509.19710)：将表达式表示为符号树集成，以复杂度先验控制树拓扑，并通过 Occam 窗口汇总模型不确定性。论文分别证明任意精度符号近似下的后验集中、精确有限公式下的近参数收敛率，以及模型错设下的 oracle 集中；实验报告预测准确性、复杂度控制、结构恢复和材料描述符公式。
 - [AI-Noether](https://arxiv.org/abs/2509.23004)：提出用于科学定律发现的溯因推理系统，通过建议修正公理系统来对齐 AI 推导定律与规范理论。
+- [Scaling Generalist Data-Analytic Agents](https://arxiv.org/abs/2509.25084)：提出 DataMind 来训练开源通用数据分析 agent。核心思想是用 easy-to-hard 任务分类、知识增强生成和稳定的代码式多轮 rollout 合成多样数据分析任务，使 agent 能处理大规模异构文件和长流程。
+- [Expert Credibility Prediction Model Based on Fuzzy C-Means Clustering and Similarity Association](https://doi.org/10.1109/tfuzz.2025.3574947)：面向科技评价中的评审专家可信度预测，先以模糊 C 均值聚类专家属性，再用递归特征消除筛选变量、以 Gower 距离构造专家关联特征，并在真实专家可信度数据集上训练前馈神经网络。
 - [NAIPv2](https://arxiv.org/abs/2509.25179)：用领域-年份配对比较和 reviewer tendency signal 训练去偏的论文质量估计器。
-- [Scientific novelty via knowledge recombination and propagation](https://doi.org/10.1016/j.eswa.2025.129794)：结合图结构与 LLM 分析，通过知识重组和传播刻画科学新颖性。
-- [Transformer-Based Novelty Scoring](https://doi.org/10.1109/ISMSIT67332.2025.11267836)：使用 Transformer 流水线评估研究想法的新颖性，属于 AI 辅助选题与评审中的模型侧方法。
-- [A unified multimodal understanding and generation model for cross-disciplinary scientific research](https://arxiv.org/abs/2601.01363)：提出面向跨学科科研理解与生成的统一多模态模型。
+- [Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations](https://arxiv.org/abs/2510.05571)：EvoPresent 用 PresAesth 多任务 RL 审美模型完成打分、缺陷修正和比较，并在 650 篇论文演示资源与 2000 组不同审美水平的幻灯片对上评估自我改进。
+- [Foundation Inference Models for Equation Discovery](https://arxiv.org/abs/2510.12618)：用基础推理模型实现快速粗粒化和方程发现，补充自动化科研中的科学建模路线。
+- [ReviewGuard: Enhancing Deficient Peer Review Detection via LLM-Driven Data Augmentation](https://arxiv.org/abs/2510.16549)：ReviewGuard 将经人工验证的 GPT-4.1 标注、合成评审增广和微调结合起来检测缺陷评审；混合真实与合成数据使 Qwen3-8B 的 recall 从 0.5499 提高到 0.6653，F1 从 0.5606 提高到 0.7073。
+- [AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](https://arxiv.org/abs/2510.21935)：AutoSciDACT 将从模拟科学数据学习的对比表示与 New Physics Learning Machine 两样本检验结合，把新颖性检测变成能为异常附加统计结论的完整流程。
+- [Practical Author Name Disambiguation under Metadata Constraints: A Contrastive Learning Approach for Astronomy Literature](https://arxiv.org/abs/2511.10722)：NAND 将作者消歧改写为 Siamese 相似度学习，只使用作者名、标题和摘要，绕开许多既有系统依赖的邮箱、期刊和机构信息。它用 ORCID 关联的物理学数据集进行真实条件评测，成对消歧准确率最高达 94%，聚类 F1 超过 95%，直接自动化学术记录整理。
+- [SemanticCite](https://arxiv.org/abs/2511.16198)：把引用验证建模为全文证据支持分类，训练或微调轻量 Qwen3 模型完成 claim extraction/refinement 和 support checking，输出 Supported、Partially Supported、Unsupported、Uncertain。
+- [SciPostGen: Bridging the Gap between Scientific Papers and Poster Layouts](https://arxiv.org/abs/2511.22490)：SciPostGen 将论文结构与海报元素数量关联起来并发布大规模配对语料；其检索增强布局生成器先找结构相容的海报，再施加创作者约束。
+- [Semantic Reconstruction of Adversarial Plagiarism: A Context-Aware Framework for Detecting and Restoring "Tortured Phrases" in Scientific Literature](https://arxiv.org/abs/2512.10435)：利用局部科学语境检测并重构对抗式改写的 tortured phrases，恢复可能的原始术语。
+- [LLM as a Neural Architect: Controlled Generation of Image Captioning Models Under Strict API Contracts](https://arxiv.org/abs/2512.14706)：构建 LLM 引导的神经结构生成流水线，在严格 API 契约下组合 CNN 编码器和序列解码器，产出可运行的图像描述模型。
+- [Training AI Co-Scientists Using Rubric Rewards](https://arxiv.org/abs/2512.23707)：用 rubric reward 训练 AI co-scientist 模型，把科研辅助作为领域化模型训练目标。
+- [From Memorization to Creativity: LLM as a Designer of Novel Neural-Architectures](https://arxiv.org/abs/2601.02997)：用 LLM 设计新型神经网络架构，把模型设计中的创造性视为科学生成问题，而不只是普通 architecture search。
+- [Sci-Reasoning: A Dataset Decoding AI Innovation Patterns](https://arxiv.org/abs/2601.04577)：Sci-Reasoning 将高质量机器学习论文与其前序工作连接，并用人工核验的推理说明标出 gap-driven reframing、跨域综合和表征转换等可复用创新模式，为训练科研 agent 提供结构化信号。
+- [Higher-Order Knowledge Representations for Agentic Scientific Reasoning](https://arxiv.org/abs/2601.04878)： 用超图知识表示为科学智能体的假设生成提供可验证结构。
+- [LLMs as Science Journalists: Supporting Early-stage Researchers in Communicating Their Science to the Public](https://arxiv.org/abs/2601.05821)：训练 LLM Journalist 以科学记者身份追问早期研究者的社会影响和表达清晰度；模拟与真人研究显示，它提出的问题更相关，也比通用 LLM 更受欢迎。
+- [Bayesian symbolic regression via posterior sampling.](https://doi.org/10.1098/rsta.2024.0590)：采用序贯蒙特卡洛、自适应退火和归一化边际似然，在含噪条件下更稳健地采样不确定的符号方程，并相较遗传编程基线降低过拟合。
+- [Content-based quality evaluation of scientific papers using coarse feature and knowledge entity network](https://doi.org/10.1016/j.jksuci.2024.102119)：该可解释论文质量模型融合结构、可读性、引用、语义新颖性和知识实体网络特征，对论文进行接收、存疑或拒绝分类，并在 ICLR 论文上使用随机森林和 SHAP 分析。
+- [Navigating Ideation Space: Decomposed Conceptual Representations for Positioning Scientific Ideas](https://arxiv.org/abs/2601.08901)：Ideation Space 将论文拆成问题、方法和发现三个维度，从而分层检索能提供方法启发的前序工作，并判断一个新想法究竟是哪一方面具有新颖性。
+- [OUTLINEFORGE: Hierarchical Reinforcement Learning with Explicit States for Scientific Writing](https://arxiv.org/abs/2601.09858)：OUTLINEFORGE 将论文提纲视为显式层级状态上的长程强化学习问题，以反向提纲重建和价值引导奖励共同优化事实正确性、篇章连贯性与引文忠实度。
 - [Reward Modeling for Scientific Writing Evaluation](https://arxiv.org/abs/2601.11374)：训练面向科学写作评价的奖励模型，关注通用写作质量之外的专家领域要求。
-- [EchoReview](https://arxiv.org/abs/2602.00733)：从科学引用回声中学习自动同行评审信号，缓解评审监督稀缺与单一来源偏差。
-- [TableTale](https://arxiv.org/abs/2602.22908)：建模科学论文中表格与上下文文本之间的叙事关系。
+- [Capability-Aware Early-Stage Research Idea Evaluation](https://arxiv.org/abs/2601.12473)：用作者能力表征、研究想法文本和论文接收或评分结果训练早期想法评价器；它和只看想法文本的评审模型不同，把“谁来执行这个想法”也作为分数来源的一部分。
+- [Beyond Error-Based Optimization: Experience-Driven Symbolic Regression with Goal-Conditioned Reinforcement Learning](https://arxiv.org/abs/2601.14693)：该方法将符号回归表述为目标条件强化学习，利用后见经验回放从历史搜索轨迹训练动作价值网络，并结合全点满足二元奖励与结构引导探索，使搜索依据表达式结构而非难以区分的拟合误差推进。
+- [Learning to Discover at Test Time](https://arxiv.org/abs/2601.16175)：TTT-Discover 在测试时针对当前优化问题继续强化学习，用问题专属经验追求一个极佳解，并用开放模型在数学、GPU kernel、算法和生物任务上取得强结果。
+- [Learning to Ideate for Machine Learning Engineering Agents](https://arxiv.org/abs/2601.17596)：MLE-Ideator 将 ideation 与 implementation 分离，并通过强化学习训练专门的 Ideator 模型，使机器学习工程代理能先生成更有战略性的研究想法再进入实现阶段。
+- [ROIDS: Robust Outlier-Aware Informed Down-Sampling](https://arxiv.org/abs/2601.19477)：发现信息化下采样会过度选择离群点，使遗传编程符号回归偏向过拟合公式，因而在子集构造时排除疑似离群点；ROIDS 在超过 80% 的真实问题上优于 IDS，并在各比较选择策略中取得最佳平均排名。
+- [RATE: Reviewer Profiling and Annotation-free Training for Expertise Ranking in Peer Review Systems](https://arxiv.org/abs/2601.19637)：**TLDR：** 发布 LR-bench，收集 2024 至 2025 年 AI 与 NLP 稿件中 1,055 个人工五级论文-审稿人熟悉度标注；RATE 再从审稿人近期论文的关键词画像构造弱检索偏好进行训练，并在 LR-bench 和 CMU 金标准数据集上超过强嵌入基线。
+- [EchoReview](https://arxiv.org/abs/2602.00733)：从 citation echoes 中学习自动同行评审监督，利用后续论文如何引用和讨论一项工作来减少对稀缺专家评审标签的依赖。
+- [ATLAS : Adaptive Self-Evolutionary Research Agent with Task-Distributed Multi-LLM Supporters](https://arxiv.org/abs/2602.02709)：用专门 meta-agents 训练 active research agent，结合 EvoDPO、inspection-agent 反馈和 proxy-KL-gated reference updates 实现自适应自进化。
+- [PiT-PO](https://arxiv.org/abs/2602.10576)：用 physics-informed token-regularized policy optimization 适配 LLM 做科学方程发现。核心思想是让生成器从搜索反馈中通过强化学习更新，同时约束物理有效性并抑制冗余 token 模式，突破只靠提示词做符号回归的静态范式。
+- [Author-in-the-Loop Response Generation and Evaluation](https://arxiv.org/abs/2602.11173)：提出 Re3 Align 数据集，把 review、author response 和 revised manuscript 三者对齐，用 complete paper records、sentence-level edit annotations 和 aligned review-response-edit triplets 训练模型理解回复承诺与真实修订的一致性。
+- [GAME: Genetic Algorithms with marginalised ensembles for model-independent reconstruction of cosmological quantities](https://arxiv.org/abs/2602.12870)：GAME 不再依赖单个随机符号回归方程，而是按拟合优度和平滑度对多个遗传算法重构结果加权，并结合路径积分与集成方差校正不确定性；这套自动方程发现方法在合成函数、宇宙钟 H(z) 和超新星距离数据上得到验证。
+- [Symbolic recovery of PDEs from measurement data](https://arxiv.org/abs/2602.15603)：用有理函数符号网络从测量数据恢复可解释 PDE，并在表达能力和测量条件满足时建立函数空间层面的恢复与可辨识性结果。
+- [DeepInnovator: Triggering the Innovative Capabilities of LLMs](https://arxiv.org/abs/2602.18920)：把科研构思能力作为训练目标，而不是只靠提示词和 agent 脚手架。核心思想是从未标注文献中自动抽取结构化研究知识，并用 Next Idea Prediction 训练范式让模型反复预测、评估和修正可能的研究想法。
+- [VaSST: Variational Inference for Symbolic Regression using Soft Symbolic Trees](https://arxiv.org/abs/2602.23561)：VaSST 将离散符号表达式树放松为概率软树，并用变分推断进行优化。基于后验的选择过程能够显式表示候选公式的不确定性；在模拟数据和 Feynman Symbolic Regression Database 上的实验显示，它在结构恢复和预测准确率方面优于或接近其他符号回归方法。
+- [The Alien Space of Science: Sampling Coherent but Cognitively Unavailable Research Directions](https://arxiv.org/abs/2603.01092)：将 16,068 篇 AI 论文拆为 idea atom，并联合学习可行性与社群可达性模型，从而采样现有研究共同体在结构上不太可能提出、但仍具科学连贯性的研究方向。
+- [TikZilla](https://arxiv.org/abs/2603.03072)：引入更大规模 scientific graphics 数据，并用面向可编译性、语义一致性和图形结构质量的领域奖励信号训练模型生成更稳定的 TikZ 科学图程序。
+- [MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier](https://arxiv.org/abs/2603.03756)：MOOSE-Star 将科学发现拆成受动机引导的检索与有界组合，使直接训练假设生成在其最佳情形下从指数复杂度降到对数复杂度，并发布 TOMATO-Star 训练语料。
+- [DARE: Aligning LLM Agents with the R Statistical Ecosystem via Distribution-Aware Retrieval](https://arxiv.org/abs/2603.04743)：让 LLM agent 更好对齐 R 统计生态。核心思想：按数据分布需求检索统计工具，而不只按函数名语义匹配。
+- [Symmetry-Constrained Language-Guided Program Synthesis for Discovering Governing Equations from Noisy and Partial Observations](https://arxiv.org/abs/2603.06869)：结合类型化对称性约束文法、语言引导程序合成和不确定性感知的贝叶斯选择，从含噪或不完整观测中恢复可审计方程，并在 133 个动力系统上评估。
+- [AutoResearch-RL: Perpetual Self-Evaluating Reinforcement Learning Agents for Autonomous Neural Architecture Discovery](https://arxiv.org/abs/2603.07300)：AutoResearch-RL 将自主架构研究形式化为 MDP：固定评测环境、可编辑训练文件和依据验证 bits-per-byte 奖励更新的 PPO 元学习器彼此分离。
+- [Symbolic Discovery of Stochastic Differential Equations with Genetic Programming](https://arxiv.org/abs/2603.09597)：将遗传编程符号回归扩展到随机微分方程，联合优化漂移和扩散函数，并展示准确恢复、高维扩展、稀疏采样鲁棒性及随机 PDE 泛化。
+- [RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation](https://arxiv.org/abs/2603.09723)：构造 RMR-75K，把 review segments 映射到对应 rebuttal segments，并带有 perspective labels 和 impact categories，使 rebuttal 成为 actionable review feedback generation 的监督信号。
+- [Detecting Miscitation on the Scholarly Web through LLM-Augmented Text-Rich Graph Learning](https://arxiv.org/abs/2603.12290)：LAGMiD 先用 LLM 追踪多跳引用证据链，再将其中间推理蒸馏到图神经网络，并仅将复杂案例回退给 LLM，从而以较低推理成本检测学术网页中的错误引用。
+- [Data-driven Progressive Discovery of Physical Laws](https://arxiv.org/abs/2603.13727)：CoSR 将物理定律发现建模为符号知识单元组成的链，而不是一次性表达式搜索。它复现从开普勒第三定律到万有引力定律的渐进路径，并在湍流对流、圆管流、激光-金属相互作用和飞机气动尺度律问题上验证该方法，以提升可解释性和泛化能力。
 - [AI Can Learn Scientific Taste](https://arxiv.org/abs/2603.14473)：把 scientific taste 形式化为偏好建模，先用社区反馈训练 Scientific Judge，再以其为奖励模型训练 Scientific Thinker。
-- [LLMs learn scientific taste from institutional traces across the social sciences](https://arxiv.org/abs/2603.16659)：用不同社会科学领域的发表结果微调 LLM 评价器，使其在低可验证性的研究 pitch 场景中学习排序判断。
-- [Cicq](https://doi.org/10.1007/s11192-026-05594-1)：结合引用影响与内容质量信号做自动化文献评价，可补充 scientific taste 与论文质量评估模型线索。
-- [ScilinkBERT](https://doi.org/10.1007/s11227-025-07838-y)：将 BERT 风格语言模型适配到带引用上下文的科学文本，用于文献理解。
+- [AI Scientist via Synthetic Task Scaling](https://arxiv.org/abs/2603.17216)：用合成机器学习挑战训练 AI-scientist agent。核心思想是自动采样主题、提出经过 Hugging Face API 验证的数据集、生成并自调试代码，再用这些合成任务上的 teacher trajectories 提升 Qwen3 学生模型在 MLGym 式科研任务上的表现。
+- [CNPE](https://arxiv.org/abs/2603.17588)：面向 LLM 论文评价的 comparison-native 框架。核心思想是构造有信息量的论文对并聚合相对判断，使学术评价减少对不稳定绝对分数尺度的依赖。
+- [AutoPipe](https://arxiv.org/abs/2603.18773)：通过 learning-to-rank surrogate 和 Bayesian optimization 推荐 SFT+RL 配置，重点是用早期 proxy、历史 run 和配置空间减少真实后训练成本；它适合放在预算受限 benchmaxxing 中作为训练 recipe 搜索器。
+- [MoRI: Learning Motivation-Grounded Reasoning for Scientific Ideation in Large Language Models](https://arxiv.org/abs/2603.19044)：MoRI 面向科研构思训练动机驱动推理，用显式动机结构帮助 LLM 生成更有新颖性和可行性的研究想法。
+- [Knowledge-Informed Pretrained Model for Causal Discovery](https://arxiv.org/abs/2603.20842)：构建融合知识信号的因果发现预训练模型，扩展模型侧科学推理支持。
+- [EvoIdeator: Evolving Scientific Ideas through Checklist-Grounded Reinforcement Learning](https://arxiv.org/abs/2603.21728)：用 checklist-grounded reinforcement learning 演化科研想法；核心思想是为研究提案改进提供可操作反馈。
+- [MAGNET: Autonomous Expert Model Generation via Decentralized Autoresearch and BitNet Training](https://arxiv.org/abs/2603.25813)：在去中心化普通硬件上生成、训练并服务领域专家语言模型。核心思想是把 autoresearch 的数据集和超参数搜索，与 BitNet b1.58 三值训练、DiLoCo 式专家合并、CPU-native serving 和贡献追踪结合起来。
+- [Conference Paper Acceptance Prediction with Quality Assessment using Machine Learning](https://doi.org/10.1109/aide69088.2026.11544258)：该框架把 ICLR 和 ICML 论文转换为结构化的分章节表示，将 SciBERT 与 UMAP 特征和连贯性、抄袭、完整性信号结合，在录用论文上训练监督自编码器以识别接近拒稿的异常，并推荐投稿会议。
+- [Research Hypothesis Generation over Scientific Knowledge Graphs](https://doi.org/10.1016/j.knosys.2025.113280)：用科学知识图谱作为结构化证据生成 research hypothesis，补充一种模型侧科研 ideation 方法，使候选关系可追踪而不只是自由 brainstorm。
+- [Scientific novelty via knowledge recombination and propagation](https://doi.org/10.1016/j.eswa.2025.129794)：结合图结构与 LLM 分析，通过知识重组和传播刻画科学新颖性。
+- [SMURF](https://doi.org/10.1109/eScience65000.2025.00091)：把不同科学模态的预计算 embedding 对齐到共享空间，用保持几何结构的对齐和少量语义匹配数据的弱监督支持联邦多模态检索。
+- [GPT-Rosalind](https://openai.com/index/introducing-genebench-pro/)：OpenAI 与 GeneBench-Pro、LifeSciBench 关联的生命科学训练方法。核心思想是通过面向 genomics 与 broader life-science research workflow 的领域训练专门化 frontier model，使模型学习多步骤分析、工具支撑推理和研究者式判断，而不是只记忆生物医学事实。
+- [REM-CTX](https://arxiv.org/abs/2604.00248)：在自动评审强化学习中加入图表和外部学术信号的对应奖励，使评审必须对论文内容和辅助上下文保持一致；它和 REMOR 的文本评审奖励相比，更强调评审是否真正利用论文图表与外部证据。
+- [Scientific Graphics Program Synthesis via Dual Self-Consistency Reinforcement Learning](https://arxiv.org/abs/2604.06079)：用 LaTeX 可编译反馈和 render-and-compare 奖励做强化学习，使训练目标同时约束语法、视觉和语义。
+- [GIANTS](https://arxiv.org/abs/2604.09793)：从父论文预测下游论文的核心洞察，并用洞察相似度作为训练和强化学习信号；它和 DeepInnovator 都利用论文之间的时间关系，但 GIANTS 更关注从已有文献预见后来论文的关键洞察。
+- [GoodPoint: Learning Constructive Scientific Paper Feedback from Author Responses](https://arxiv.org/abs/2604.11924)：从作者回应中学习建设性科研反馈，使模型更关注可行动、可定位、会触发作者修订的 reviewer comment。
+- [Debate as Reward](https://arxiv.org/abs/2604.16723)：把多智能体辩论转化为科学构思的 RL post-training 奖励信号，使研究想法质量成为可训练反馈，而不只是 prompt 阶段的评论。
+- [A2DEPT: Large Language Model-Driven Automated Algorithm Design via Evolutionary Program Trees](https://arxiv.org/abs/2604.24043)：A2DEPT 用分层算子和轻量修复循环进化完整程序树，突破 LLM 启发式设计依赖固定模板的限制；在标准组合优化基准上，相对最强 AHD 基线将平均归一化最优性差距降低 9.8%。
+- [Rewarding the Scientific Process: Process-Level Reward Modeling for Agentic Data Analysis](https://arxiv.org/abs/2604.24198)：提出面向数据分析 agent 的环境感知生成式过程奖励模型 DataPRM。核心思想是让 verifier 主动与执行状态交互以发现 silent errors，并用 reflection-aware ternary reward 区分可修正探索、正确进展和真实失败。
+- [SeaEvo: Advancing Algorithm Discovery with Strategy Space Evolution](https://arxiv.org/abs/2604.24372)：SeaEvo 面向 automated algorithm discovery 的 strategy-space evolution harness。
+- [Evolving Idea Graphs with Learnable Edits-and-Commits for Multi-Agent Scientific Ideation](https://arxiv.org/abs/2605.04922)：把科学想法表示为可编辑图，让智能体定位薄弱点、执行学习到的 edits，并提交迭代后的研究方案供 benchmark 与专家评审。
+- [Knowledge-Graph Paths as Intermediate Supervision for Self-Evolving Search Agents](https://arxiv.org/abs/2605.05702)：把知识图谱路径作为 self-evolving search agent 的中间监督，为搜索策略提供可追踪关系信号，而不只依赖最终答案反馈。
+- [Learning Neural Hybrid Surrogates for Gradient-Based Falsification](https://arxiv.org/abs/2605.07541)：- 神经混合自动机从数据学习潜在模式、模式条件向量场与转移守卫，再以梯度最优控制搜索安全违例，并在原系统上复跑候选以保证可靠性；该闭环以更少模拟预算在多数基准规格中找到反例。
+- [GenAI Powered Dynamic Causal Inference with Unstructured Data](https://arxiv.org/abs/2605.07834)：该框架为序列处理特征提取生成式 AI 表示，联合学习各特征的去混杂器，并用边际结构模型估计且提供渐近有效置信区间；模拟实验能恢复目标效应并达到名义覆盖率，香港抗议文本随机实验则显示处理效果取决于特征位置。
+- [AHD Agent: Agentic Reinforcement Learning for Automatic Heuristic Design](https://arxiv.org/abs/2605.08756)：AHD Agent 面向 automatic heuristic design 的 agentic RL workflow，属于 algorithm discovery harness。
+- [Epistemic Uncertainty for Test-Time Discovery](https://arxiv.org/abs/2605.11328)：UG-TTT 维护多个低秩适配器，把它们预测的互信息分歧作为认识不确定性探索奖励，避免策略优化塌缩到熟悉的变异模式。
+- [AutoLLMResearch: Training Research Agents for Automating LLM Experiment Configuration -- Learning from Cheap, Optimizing Expensive](https://arxiv.org/abs/2605.11518)：训练 agent 自动配置昂贵 LLM 实验。核心思想是把架构和超参数搜索形式化为 LLMConfig-Gym 上的长程多保真 MDP，让 agent 从低成本实验中学习可迁移原则，再更有选择地优化高成本设置。
+- [Graphs of Research](https://arxiv.org/abs/2605.14790)：把种子论文的两跳引用邻域组织成论文发展有向图，并用图序列化输入监督微调模型预测种子论文构思；它和 GIANTS 的父论文到下游洞察不同，更强调局部引用图如何编码研究发展路径。
+- [SMCEvolve: Principled Scientific Discovery via Sequential Monte Carlo Evolution](https://arxiv.org/abs/2605.15308)：把科学发现表述为 sequential Monte Carlo sampler，包含自适应 parent resampling、mutation acceptance、收敛控制和有限样本复杂度保证。
+- [Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](https://arxiv.org/abs/2605.21491)：训练模型在执行实验前筛选研究想法。核心思想是从 PapersWithCode 构造 11,488 个带客观结果的 idea pair，并用 supervised fine-tuning 与 reinforcement learning 把比较式 idea evaluation 变成模型侧 scientific-taste 信号。
+- [MechRL: Reinforcement Learning Agents Perform Circuit Discovery for Mechanistic Interpretability](https://arxiv.org/abs/2605.26343)：MechRL 将 circuit discovery 变成依据因果 faithfulness 奖励从计算图删边的策略，并把学到的删边过程迁移到未见行为。
+- [The Compressive Knowledge Graph Hypothesis](https://arxiv.org/abs/2605.27176)：研究哪些图事实真正影响假设生成，和“把完整知识图谱塞给模型”的做法不同，它强调子图选择、证据压缩和冗余控制。
+- [GraphReview](https://arxiv.org/abs/2605.27204)：把科学论文评估建模为语义论文图上的 message passing。核心思想是在 claim、evidence 和章节节点之间传播评审信号，使 LLM 论文评价利用结构化比较证据，而不是只读平面稿件文本。
+- [Domain agnostic features for robust novelty assessment of scientific publication](https://doi.org/10.1007/s11192-026-05687-x)：通过在 STEM 领域和文本改写下保持稳定的 Transformer 损失分布特征估计论文新颖性。
+- [Patent Value Evaluation and Intelligent Claim Generation](https://doi.org/10.1002/eng2.70884)：以结构感知的增量预训练让 LLM 联合表示技术段落、法律约束和层级化权利要求，再把专利价值评估与权利要求生成结合，用于科研成果转化。
+- [Exploring Scientific Hypothesis Generation with Mamba](https://aclanthology.org/2024.nlp4science-1.17)：将科学假设生成放到状态空间模型上训练和评估，检验长序列建模能否承担假设生成；它把任务本身作为可训练序列建模问题。
+- [Paper SEA](https://aclanthology.org/2024.findings-emnlp.595)：把 GPT-4 的 review standardization 能力沉淀为 SEA-S，再为后续 generation 和 analysis 提供更稳定训练数据。
+- [Text2Chart31](https://aclanthology.org/2024.emnlp-main.640)：构造 31 类 Matplotlib 图表数据集，包含 description、code、data table 和 plot，并提出带自动反馈的 reinforcement learning-based instruction tuning，覆盖 3D、volumetric、gridded 等复杂图表类型。
+- [MLE-RL](https://openreview.net/forum?id=nElqyHPHAz)：以 MLE-Dojo 等 Kaggle 任务为训练语料，关注如何让 agent 从历史竞赛轨迹和执行反馈中学习自我改进策略；它代表从 benchmark consumption 走向 benchmark-driven agent training 的路线。
+- [Incorporating Peer Reviews and Rebuttal Counter-Arguments for Meta-Review Generation](https://doi.org/10.1145/3511808.3557360)：该 meta-review 生成方法显式表示评审者之间及评审者与作者之间的论证关系，把 rebuttal 中的反论据纳入生成，并利用这些话语结构产出 meta-review；自动评测和人工评测都优于忽略交互结构的基线。
+- [Deep recognition of partial differential equations based on reinforcement learning and genetic algorithm](https://doi.org/10.1007/s11227-025-07162-5)：结合强化学习优化的 LSTM 遍历策略、遗传更新和知识引导约束，从含噪数据中恢复多个系统的复杂 PDE。
+- [Modelo hibrido en cascada para la asignación de revisores en artículos científicos](https://doi.org/10.24054/rcta.v2i48.4492)：三阶段级联分别预测摘要是否通过、学科领域和审稿速度，并为各阶段选择不同文本表示与分类器；在 213 篇文章和 117 名审稿人的五折验证中，macro-F1 分别达到 0.663、0.966 和 0.9578。
+- [Automatic Presentation Slide Generation Using LLMs](https://scholarworks.sjsu.edu/etd_theses/5444)：该研究在科学论文到幻灯片数据集 PS5K 上微调 Longformer-Encoder-Decoder 和 BIGBIRD-Pegasus，并在长文档约束下比较抽象式与混合式摘要方案。输入容量更长的模型处理整篇论文时表现更好，使用章节与幻灯片配对训练取得了最佳 ROUGE-2 和 ROUGE-L 结果。
+- [Gotcha GPT: Ensuring the Integrity in Academic Writing](https://doi.org/10.1021/acs.jcim.4c01203)：在约 400 段 AI 生成和 400 段人工科研文本上，以随机 50/50 训练测试划分训练决策树、随机森林、极端随机树和 AdaBoost 分类器；论文报告 0.97 至 0.99 的准确率以及精确率、召回率、F1、MCC、Kappa 和混淆矩阵，并在 GitHub 发布 Colab 教程。
+- [Identifying Careless Survey Respondents Through Machine Learning Using Responses to a Gibberish Scale](https://doi.org/10.1177/25152459251378420)：将有意义的问卷题项与无意义乱码量表结合，后者用于获得不依赖题意的回答，再利用所得数据和监督式机器学习识别粗心作答者；作者报告该方法在有效性和通用性上达到或超过既有的题项法与事后分析方法。
+- [Influence-Guided Symbolic Regression](https://arxiv.org/abs/2605.29184)：IGSR 让 LLM 生成基函数，并用 influence score 进行细粒度筛选和 MCTS 搜索，目标是提升科学方程发现的可解释搜索效率。
+- [MIRAI: Prediction and Generation of High-Impact Academic Research](https://arxiv.org/abs/2606.05443)：MIRAI 仅根据论文标题、摘要和日期预测五年 PageRank 与引用数，再用这一影响力信号引导研究想法生成，使想法获得比无该信号的基线更高的影响力评价。
+- [Phrase-Based Presentation Slides Generation for Academic Papers](https://doi.org/10.1609/aaai.v31i1.10481)：该方法从学术论文中抽取短语，学习短语显著性及短语之间的层级关系，再以贪心算法选择并对齐关键短语，生成简洁且结构化的演示文稿；论文在真实的论文与幻灯片数据集上进行了评测。
+- [KID-Review: Knowledge-Guided Scientific Review Generation with Oracle Pre-training](https://doi.org/10.1609/aaai.v36i10.21418)：通过引入多类知识并采用 oracle 预训练稳定学习、扩大评审要点覆盖，生成供人工评审参考的科学论文初稿评语，并同时使用人工与自动指标进行评估。
+- [Automatic Slide Generation for Scientific Papers](https://sciknow.github.io/sciknow2019/papers/SciKnow_2019_paper_1.pdf)：该工作训练神经句子排序模型，融合句子语义、上下文与表层特征，再通过整数线性规划和名词短语抽取，将受长度约束的候选内容组织为两级科研幻灯片要点；与人工制作的演示文稿对照时，其生成内容的 ROUGE 指标优于既有抽取式基线。
+- [EGTR-Review](https://arxiv.org/abs/2606.06025)：用 multi-agent teacher 轨迹训练轻量 evidence-grounded peer-review 生成模型。核心思想是把分解、检索和验证轨迹蒸馏到 student reviewer，使评审生成保留证据链而不必运行完整教师系统。
+- [Unsupervised Skill Discovery for Agentic Data Analysis](https://arxiv.org/abs/2606.06416)：DataCOPE 不依赖标签，通过轨迹验证信号、报告 checklist verifier、推理 agreement verifier 和对比式 skill 蒸馏发现可复用的数据分析技能。
+- [FunctionEvolve: Structure-Guided Symbolic Regression with LLMs](https://arxiv.org/abs/2606.07704)：FunctionEvolve 将表达式树显式纳入搜索，通过局部树编辑保留有效子表达式，并按结构拟合系数，降低精确符号恢复对不透明候选评分的依赖。
+- [Contemporary AI lacks the imagination to diverge or negate in science](https://arxiv.org/abs/2606.08251)：在 25,139 组科学家对新颖性、可行性、真实性概率和采用意愿的评分上后训练 Qwen3-14B 奖励模型，使其学到科研品味，较 SOTA 评估器最高提升 27%，并接近人类审稿人一致性。
+- [GUIDE: Towards Scalable Advising for Research Ideas](https://aclanthology.org/2026.acl-long.1984)：GUIDE 研究模型规模、数据重加权、上下文长度、置信度估计和结构化推理如何影响对科研假设与实验设计的自动建议。一个结合压缩文献库与结构化推理的较小模型，在其自排序前 30% 的 ICLR 2025 投稿上取得高于 DeepSeek-R1 的录用率；限制为高置信度预测时，录用率超过 90%。
+- [ATLAS: Active Theory Learning for Automated Science](https://arxiv.org/abs/2606.12386)：ATLAS 主动选择自动科学中的实验问题，用 theory-learning 反馈寻找最能增加机制信息量的实验。
+- [Agentic Symbolic Search: Characterizing PDEs Beyond Hand-crafted Expressions, Meshes, and Neural Networks](https://arxiv.org/abs/2606.20467)：ASYS 将先验引导的符号程序、演化修正和梯度系数拟合结合，生成超越手工公式、网格数值解和黑盒神经 surrogate 的可解释 PDE 表示。
+- [Learning the ARTS of Search for Automated Discovery](https://arxiv.org/abs/2606.21891)：ARTS 训练推理模型读取发现日志，区分假设本身差与实现失败，选择下一步实验，并在自动发现过程中复用树搜索知识。
+- [ReviewGuard（impact-aligned peer review）](https://arxiv.org/abs/2606.24892)：不再模仿当下的接收或拒稿偏好，而把未来 citation impact 作为审稿生成的对齐目标。该两阶段方法在 20,861 篇 AI/ML OpenReview 论文上学习，并以 impact-aligned reinforcement learning 为早期可能被低估的论文提供额外编辑信号；它不同于 Bench 中同名的 deficient-review detector。
+- [Autodata: An agentic data scientist to create high quality synthetic data](https://arxiv.org/abs/2606.25996)：Autodata 将 data-scientist agent 本身作为可优化对象，学习如何生成更高质量的训练和评测数据。
+- [Scientific discovery as meta-optimization: a combinatorial optimization case study](https://arxiv.org/abs/2606.26728)：把科学发现视为在理论与实验空间中的 meta-optimization，并用组合优化案例研究 LLM 如何搜索假设和实验方案。
+- [Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks](https://arxiv.org/abs/2606.29082)：在数百个优化任务的进化搜索轨迹上训练模型，使其学习可迁移的发现策略，而不是只记住单个任务解。
+- [Evidence-Informed LLM Beliefs for Continual Scientific Discovery](https://arxiv.org/abs/2606.29182)：为持续科学发现循环加入 evidence-informed belief updates，使下一步假设搜索由累积验证证据引导，而不是只依赖静态 reward。
+- [Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis for Scientific Ideation Agents](https://arxiv.org/abs/2606.31229)：通过样本高效的工具使用轨迹合成训练科研构思智能体，使其能灵活浏览文献和推理研究机会，而不是依赖固定手写 ideation 流程。
+- [Graph-Native Reinforcement Learning Enables Traceable Scientific Hypothesis Generation through Conceptual Recombination](https://arxiv.org/abs/2607.00924)：提出 Graph-PRefLexOR：用 GRPO 微调图原生推理模型，把机制探索、图构建、模式提取和假设综合拆成显式阶段，使因果关系可检查、可复用。在 100 个材料科学与力学开放问题上，相比对应 base model 提升 40--65%，推理轨迹可追溯性更强，语义多样性约为基线的 2--3 倍。
+- [Symbolic Discovery of Iterative Algorithms: A Continuous Latent Space Bayesian Optimization Framework](https://arxiv.org/abs/2607.01552)：先用变分自编码器学习离散更新规则的连续潜表示，再在潜空间中以贝叶斯优化搜索符号迭代算法；两个案例在不预设函数形式的条件下发现新更新式，搜索耗时低于数学规划基线。
+- [All you need is SAMPAT](https://arxiv.org/abs/2607.09235)：采用由多元多项式和解析变换组成的三层架构学习光滑函数，同时导出封闭代数表达式；通过连接约束可选择多项式、有理式、三角函数、高斯或混合逼近族，基准实验显示其以更简洁表示取得有竞争力的精度。
+- [Discovering Latent Response Laws in Forced Physical Systems](https://arxiv.org/abs/2607.09801)：提出 FLARE 强迫响应潜变量自编码器，从高维观测学习紧凑响应坐标和稀疏的输入依赖动力学，以支持可解释的长时段方程滚动预测。
+- [GAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization](https://arxiv.org/abs/2607.10127)：GAE 结合图感知程序表示、强化优化的亲本与变异选择以及在线 LLM 更新，以发现符号化物理方程。
+- [ToolSciVer: Multimodal Scientific Claim Verification with Visual Tool Augmented Reinforcement Learning](https://arxiv.org/abs/2607.16131)：训练多模态科学主张核验器调用面向表格、图表和局部放大的类型化工具，将论文视觉内容转成可支撑主张的证据，并联合奖励答案正确、工具有效和取证效率。
+- [Distribution-First Population Simulation: Collapse, Calibration, and Recall in Non-WEIRD LLM Persona Modeling](https://arxiv.org/abs/2607.18310)：在基于 2,414 名土耳其受访者的 World Values Survey 数据上，独立人格 agent 会塌缩到众数答案；无需训练的 Verbalized Sampling 能提高保真度却会过度分散。把采样分布以 O(1) 成本分配给 grounded 角色可保留总体效果，但记忆攻击和预订任务实验限制了个体层面的解释。
+- [Assessing the Quality of Scientific Publications: A Thorough Analysis of Citation-Based and Content-Oriented Metrics for Evaluating Research Impact and Scholarly Contribution](https://doi.org/10.23939/mmc2025.04.1109)：论文把引用指标与内容分析结合为 AI 学术出版物评价指标，在案例研究中进行比较，并明确讨论透明度、偏差和伦理边界。
+- [Pointer-Augmented Autoregressive Generation of Patent Claims with Joint Topology and Content Decoding](https://arxiv.org/abs/2607.24040)：在解码时用指针头预测专利权利要求的依赖森林，并以违例加权偏好训练改进层级范围约束和前项引用一致性。
+- [From Execution to Capability: Scientific Experience Consolidation via Procedural Knowledge Synthesis](https://arxiv.org/abs/2607.24459)：SciConsolidate 对比已验证的成功与失败轨迹提炼可迁移程序，经验证门控后复用，再由更强教师把抽象程序具体化为可执行监督，并在 SciCode 上实证 abstraction-execution gap。
+- [SciFigAlign: Scoring Scientific Figures by Fine-tuned Alignment of Visuals with Manuscript Evidence](https://arxiv.org/abs/2607.27066)：SciFigAlign 在 3,857 张同行评审论文图表上微调多模态评分器，结合论文证据评估图表的清晰度、相关性、信息量和结构。
+- [An Automatic Paper-Reviewer Recommendation Algorithm Based on Depth and Breadth](https://doi.org/10.1109/tetci.2024.3402694)：GMCTS 从两个方向优化审稿人分配：以最大权重论文-审稿人匹配保证深度，以最广泛的不重复专长覆盖保证广度；同时约束论文需求、审稿人工作量和多类利益冲突，并报告主题覆盖率提高 90.5%、召回率提高 12.67%。
+- [Transformer-Based Novelty Scoring](https://doi.org/10.1109/ISMSIT67332.2025.11267836)：使用 Transformer 流水线为研究想法打新颖性分数，为 AI 辅助选题和评审提供可训练的候选筛查信号。
+- [Cicq](https://doi.org/10.1007/s11192-026-05594-1)：把 LLM 对 contribution、soundness 和 presentation 的内容评审与 citation-sentiment 信号结合，再用 venue tier 构造的区间标签训练 ordered logistic model 做自动化文献评价。
+- [Evolution-guided Bayesian optimization for constrained multi-objective optimization in self-driving labs](https://doi.org/10.1038/s41524-024-01274-x)：在贝叶斯优化中加入进化式引导，使 self-driving labs 能在多目标和实验约束下平衡探索与利用。
+- [Evolving scientific discovery by unifying data and background knowledge with AI Hilbert](https://doi.org/10.1038/s41467-024-50074-w)：AI Hilbert 将理论引导的规律发现写成混合整数或半定多项式优化，并用 Positivstellensatz 证书对得到的推导进行原则化验证。
+- [Discovering governing equations from data by sparse identification of nonlinear dynamical systems](https://doi.org/10.1073/pnas.1517384113)：SINDy 在候选项库中以导数拟合误差和稀疏性为约束识别有效项，直接从观测轨迹恢复动力系统的控制方程。
+- [Data-driven discovery of partial differential equations](https://doi.org/10.1126/sciadv.1602614)：PDE-FIND 将稀疏方程发现扩展到偏微分方程，构造空间与时间导数项库，再选出能够解释观测场的少量有效项。
+- [Distilling free-form natural laws from experimental data](https://doi.org/10.1126/science.1165893)：Eureqa 在实验测量上搜索自由形式数学表达式，并偏好能够复现观测的简洁方程，奠定了数据驱动规律发现的早期通用路线。
+- [Discovering physical laws with parallel symbolic enumeration](https://doi.org/10.1038/s43588-025-00904-8)：提出并行符号枚举，通过并行评估数百万个候选表达式并复用计算，提高跨合成数据和实验数据的可解释物理规律发现效率与准确性。
+- [CiteFuncRanker: an LLM-based pairwise ranking framework for multi-functional citation analysis](https://doi.org/10.1007/s11192-026-05764-1)：将多功能引文功能分析重构为成对排序：通过系统化标签配对与聚合，让大语言模型在少量监督下比较不同引文角色的相对重要性。在 ACL-ARC 上报告 MR 2.04、MRR 0.68、NDCG@3 0.66、86.67% 的 Top-3 accuracy 和 70.6% 的 Top-3 F1；结构化提示使少数类别 F1 最高提升至 74.6%。
+- [Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering](https://arxiv.org/abs/2607.28568)：Frontis-MA1 用执行反馈监督的 SFT 与 RL 训练 Draft、Improve、Debug、Crossover 四种程序演化算子，再由 OpenMLE-Evo 组合成长程搜索；在 MLE-Bench Lite 上 Medal Average 从 39.39% 提升到 60.61%，加入异步经验引导搜索后达 71.21%，并迁移到 NatureBench Lite。
+- [LieStoNet: Learning Lie Symmetries from Spatiotemporal Data for Stochastic Dynamical Systems](https://arxiv.org/abs/2608.01582)：先从轨迹增量学习漂移与扩散代理，再通过约束随机确定方程、Lie 括号闭包、代数公理和基独立性发现可投影 Lie 生成元；还可并行分析 Fokker-Planck 方程，并在典型 SDE 上恢复与真值一致的对称代数。
+- [Verifier-Guided Model Discovery for Physical Dynamical Systems with Pretrained Symbolic Transformers](https://arxiv.org/abs/2608.02662)：该 verifier-guided ODEFormer 流程跨多条轨迹依据动力学与物理可接受性筛选方程候选，说明重建保真度 alone 并不能决定符号规律是否可发现。
+- [Internalizing Academic Writing Workflows for Introduction Generation via Struct-Aware Policy Learning](https://arxiv.org/abs/2608.03138)：StructPO 将分阶段的学术引言写作和修订内化为结构感知策略，相比外部多智能体工作流提升连贯性和效率。
+- [Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing](https://arxiv.org/abs/2608.07437)：Fisher-R1-14B 使用合成假设检验任务和经过验证的统计奖励进行强化学习训练。在覆盖经济学、生物学和医学的 425 个真实 P-Bench 任务上，它选择统计方法、计算 p 值并得出结论的可靠性更高，相比 DeepSeek-V4-Pro 单次成功率相对提升 21%。
+- [Scaling Automatic Research Agents via World Models](https://arxiv.org/abs/2608.12564)：World Model RL 用学习到的世界模型替代自动科研后训练中的昂贵沙箱执行，再用 Online Debiasing 和 Inverse-Variance Denoising 处理有偏且嘈杂的奖励。两项机制改善收敛保证，训练速度提升 3–4 倍，4B/9B agent 在留出基准上超过更大的开放权重模型。
+- [Training AI Scientists to Replicate Research](https://arxiv.org/abs/2608.13331)：Replica 定义了可扩展的论文复现任务空间，并提供与人工科研复现质量判断一致的自动量规评审器；论文进一步用这些奖励训练 27B 的 Faraday AI Scientist，使其在留出复现任务上超过 Claude Opus 4.8 和 GPT-5.5。
+- [Intern-S2-Preview: Scientific Agentic Foundation Model](https://arxiv.org/abs/2608.13505)：Intern-S2-Preview 将渲染科学文档、图文交错语料与监督微调、多任务强化学习、智能体强化学习和在线策略蒸馏结合起来。397B 模型在科学、多模态、智能体和通用基准上评测；独立的 Memory Decoder 则在不改变冻结骨干的情况下提升科学专业化效果。
+- [Model for generating the structure of a scientific publication using generative AI](https://doi.org/10.1109/ismsit67332.2025.11267973)：所提算法输入论文类型、科学领域和研究目标，生成与语境匹配的章节序列；LLM 交互示例展示了 IMRAD 等结构模板，同时指出原创性和过度依赖风险。
+- [AI Research Preference Models](https://arxiv.org/abs/2608.13940)：RPM 依据候选方案、代码和既有结果预测哪些科研解值得昂贵执行，agentic 版本还会运行小规模试验。集成到 AIRA-dojo 并在 AIRS-Bench 上评测后，两种变体将归一化分从 0.684 提升至 0.711 和 0.729，并在约 15 小时内达到无指导 agent 的 24 小时结果。
+- [Enhancing Automated Text Coding in Online Learning Research: A Systematic Calibration Framework for Large Language Models](https://doi.org/10.1109/tlt.2026.3661363)：OLLM-C 不改模型权重而校准提示：在 8,671 条评论和 15 套编码方案上，它把 GPT-4o 的平均 kappa 从 0.45--0.57 提升，并显示社会情感编码一致性高于复杂认知编码。
+- [Generative AI-Based Hypothesis Generation for Self-Evolving Machine Learning in Research Applications](https://doi.org/10.1109/etecom66111.2025.11319090)：把生成式 AI 用于 self-evolving ML 研究中的假设生成，使模型改进循环能从候选假设出发再进入实验验证。
+- [Causal Local States: Scalable Simultaneous Causal Network Inference and Forecasting for Dynamical Systems](https://arxiv.org/abs/2608.17452)：Causal Local States 联合推断局部格兰杰因果邻域并预测动力系统，为每个节点选择足以实现近优预测的最小邻居集合；在三个难度递增的基准上，其网络重建和预测表现接近已知真实网络的模型。
+- [NestyNet. IV. Laws Chosen by Nothing in Advance](https://arxiv.org/abs/2608.21491)：将分段神经代理模型的解析导数、稀疏方程库搜索与算子因子化结构搜索结合，使方程发现不再受固定候选库限制；它从 30 年小行星星历中恢复简化 Kepler 层级并由对称性确定离心系数，同时在 57 个实值 ODE、26 个复值系统和耦合 Maxwell 案例上验证了发现能力。
+- [What Should a Large Language Model See? Physical Invariants as a Data Representation for PDE Discovery](https://arxiv.org/abs/2608.25189)：将物理不变量测量结果作为 LLM 的直接输入用于 PDE 发现，在模拟场上近乎三倍提升方程恢复准确率。
+- [Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty](https://arxiv.org/abs/2608.25660)：Think-Probe-Respond 在推理阶段从模型隐藏状态中探测潜在的新颖性判断，并将其反馈给最终回答。它针对“理由像人但判断失准”的问题，使新颖性判断性能提升 22.30%，并减轻系统性的中等新颖偏差。
+- [Neuro-symbolic PRM: Enhancing Scientific Reasoning via Structured Traces and Symbolic Verification](https://arxiv.org/abs/2608.26329)：将定量 STEM 推理拆分为符号有效性与语义依据两部分：确定性验证器先对可执行且单位一致的步骤进行硬过滤，过程奖励模型只在验证通过的轨迹上判断语义依据。反事实符号扰动生成保持形式约束但逻辑错误的困难负样本，推理时采用验证器优先的约束搜索，使形式检查覆盖的操作得到保证，并让学习式评分专注于验证器无法识别的剩余语义错误。
+- [InternReviewer&InternAdvocate: Objective Reward and Evaluation for Agentic Reinforcement Learning in Peer Review and Rebuttal](https://arxiv.org/abs/2608.28612)：InternReviewer 与 InternAdvocate 用强化学习训练评审和 rebuttal agent，把参考文献锚定的语义对齐、结构合规和实时检索日志引文核验合并为奖励，提升推理深度与引用准确性。
+- [Test-Time Scaling for Scientific Equation Discovery](https://arxiv.org/abs/2608.28660)：该研究将 Best-of-N、修订、树搜索和进化搜索统一为固定预算下的 LLM 方程发现计算分配；LLM-SRBench 结果显示搜索宽度比 controller 和 population 分支更关键，并提高并行墙钟效率。
+- [Small Language Models as Judges for Rubric-Based Reinforcement Learning](https://arxiv.org/abs/2608.30005)：该工作用预测单条评价标准是否满足的Qwen3-1.7B probe替代昂贵的生成式rubric评审器，并构造PointRubric和RaR-Science-Static来检验它；作为GRPO奖励模型时，probe达到0.643，而8B生成式评审器为0.594，评审耗时少10.7倍。
+- [COGTRL: Training LLMs for Scientific Discovery Assistance using Cognitive Traces via Reinforcement Learning](https://arxiv.org/abs/2608.30109)：COGTRL 用轨迹级 RL 训练交错的认知轨迹与科研步骤，将约束、失败方案和迭代决策显式纳入训练；两个 3B 模型相对匹配基线的方法质量提升 7.85 分并接近更大模型。
+- [Understanding before verifying: Claim normalization for automated citation verification](https://arxiv.org/abs/2608.30145)：Claim-Normalized Citation Verification 在证据检索和分类前改写引用主张，解决范围、视角和命题纠缠；18 个 classifier 上 encoder macro F1 提升 12%、生成式 LLM 提升 10%，达到人工证据水平。
+- [SPARK: Skeleton-Guided Reasoning Synthesis from Large-Scale Scientific Literature](https://arxiv.org/abs/2608.30214)：SPARK把论文中的“主张—证据—推导”结构作为合成监督的基本单位，生成机制推理、假设证伪、定量推导和边界校准任务，并过滤矛盾样本；由此得到的Spark-234K能用更少样本训练出更强的科学推理模型。
+- [Learning the Geometry of Admissible Hypotheses through Inductive Bias in Training Distributions](https://arxiv.org/abs/2608.31028)：gated VAE 从编码稀疏性、逻辑依赖、PDE 家族和物理可行性的训练分布中学习 11 维可接受 PDE 假设流形；这些偏置降低方程重构的结构和参数恢复错误。
+- [PaperGym: Rubric-Centered Evolution for Research-Plan Generation](https://arxiv.org/abs/2608.31119)：PaperGym 从论文目标与背景生成问题、从方法与实验提取不泄漏标准，把每篇论文变成训练环境；rubric 先用于 self-teaching、再用于 GRPO 奖励，优于单阶段方案，并发布 PaperGym-20k 及 Innov、Design benchmark。
+- [EGT-KG: Evidence-Grounded Typed KG Retrieval for Practical Scientific QA with Small Language Models](https://arxiv.org/abs/2609.00479)：EGT-KG让本地小模型使用自动生成或专家定义的 typed relation schema，在科学问答中沿证据关系检索，而不是只拼接平面段落；在文献问答基准上，Llama-3 8B的最佳配置将六维S3CRF总分相对普通RAG提高了14.67%。
+- [Enhancing Scholarly Knowledge Graphs via Domain-Specific Entity Detection and Linking](https://doi.org/10.63317/43szrv2r8njb)：该学术知识图谱模型把 LLM/少样本 NER 和实体链接与专家在环标注结合起来，降低科研文本标注成本，并将异构研究内容对齐到可复用的科学概念；四个领域的展示支持其领域无关设计。
+- [Unsupervised Learning of Progress Coordinates during Weighted Ensemble Simulations: Application to NTL9 Protein Folding](https://doi.org/10.1021/acs.jctc.4c01136)：该方法在加权系综采样过程中在线训练卷积变分自编码器，在潜空间识别离群构象，并据此自动寻找进展坐标，无需人工设计反应坐标。在蛋白折叠示例中，这个反馈环将折叠速率估计效率提升三倍以上，体现的是 AI 对科学实验采样的自适应控制，而非普通预测。
+- [Sparse, interpretable, and parsimonious reduced-order modeling of hydrodynamic forces in undulating swimmers](https://doi.org/10.1063/5.0305318)：SINDy-Fish 在高保真 CFD 轨迹上使用混合整数稀疏回归，并用 Akaike 信息准则权衡方程简洁性与精度。它不只是预测升力和阻力，而是提取显式控制方程，包括描述升力的自限非线性振子，从而支持可解释的科学模型发现以及后续高效实验或控制。
+- [IRIS at LLMs4OL 2025 Tasks B, C and D: Enhancing Ontology Learning Through Data Enrichment and Type Filtering](https://doi.org/10.52825/ocp.v6i.2895)： IRIS 通过输入数据增强、追加术语/类型定义，以及在分类体系和关系预测前按语义相似度筛选候选类型来改进 LLM 本体学习。在七个本体-任务组合上，各个干预都比原始设置提高 precision-recall，组合方法在其中五项达到最佳；它把输入整理和候选裁剪明确为可复用的推理时方法，用于自动组织研究知识。

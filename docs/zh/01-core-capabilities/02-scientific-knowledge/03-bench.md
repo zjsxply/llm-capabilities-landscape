@@ -1,60 +1,452 @@
 # 1.2.3 Bench
 
 - [GPQA Diamond](https://arxiv.org/abs/2311.12022)（数据集：[Idavidrein/gpqa](https://huggingface.co/datasets/Idavidrein/gpqa)）：评测研究生水平的科学问答（多选，偏“Google-proof”）；核心思想是由专家构造高难题并弱化直接检索命中，让能力更依赖知识理解与推理而非搜索片段匹配。
-- [OlympiadBench](https://arxiv.org/abs/2402.14008)：评测奥林匹克竞赛级双语多模态科学题；核心思想是用数学、物理等高难竞赛问题压力测试模型跨语言、跨模态的专业推理能力。
-- [MMLU-Pro](https://arxiv.org/abs/2406.01574)（数据集：[TIGER-Lab/MMLU-Pro](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro)）：评测更难、更鲁棒的多学科专业知识；核心思想是提高题目难度并减少捷径/污染带来的虚高，使得“靠背答案”更难奏效。
+- [Bioinfo-Bench](https://doi.org/10.1101/2023.10.18.563023)：提供评测 LLM 生物信息学技能的 benchmark framework，将生信能力测量归入 Scientific Knowledge，而不是泛化 Research Bench。
+- [Crash testing machine learning force fields for molecules, materials, and interfaces: model analysis in the TEA Challenge 2023](https://doi.org/10.1039/d4sc06529h)：在分子、材料与界面体系上基准测试机器学习力场，揭示模型优势、短板与迁移边界。
+- [AstroLLaMA-Chat: Scaling AstroLLaMA with Conversational and Diverse Datasets](https://arxiv.org/abs/2401.01916)：用混合天文学问答、指令和对话数据评测天文学专用对话 LLM，并把领域微调的 AstroLLaMA 变体与通用聊天模型对照。
+- [Structure-based out-of-distribution (OOD) materials property prediction: a benchmark study](https://arxiv.org/abs/2401.08032)：[Structure-based out-of-distribution (OOD) materials property prediction: a benchmark study](https://arxiv.org/abs/2401.08032): 评测基于结构的材料性质分布外预测.
+- [SciMMIR: Benchmarking Scientific Multi-modal Information Retrieval](https://arxiv.org/abs/2401.13478)：评测科学论文文本、图表和表格之间的多模态检索，检查系统能否匹配论文中的跨模态证据，而不只是检索段落文本。
+- [ChaosBench: A Multi-Channel, Physics-Based Benchmark for Subseasonal-to-Seasonal Climate Prediction](https://arxiv.org/abs/2402.00712)：用多通道物理变量评测次季节到季节尺度气候预测，强调长时程天气和气候动力学，而不只看短期预报误差。
+- [The Challenges of the Nonlinear Regime for Physics-Informed Neural Networks](https://arxiv.org/abs/2402.03864)：分析 PINN 在非线性 PDE 区域的失效模式，用受控物理问题说明残差最小化何时不再产生可靠科学解。
+- [OlympiadBench](https://arxiv.org/abs/2402.14008)（[榜单](https://github.com/OpenBMB/OlympiadBench#leaderboard)）：评测奥林匹克竞赛级双语多模态科学题；核心思想是用数学、物理等高难竞赛问题压力测试模型跨语言、跨模态的专业推理能力。
+- [Rethinking Scientific Summarization Evaluation: Grounding Explainable Metrics on Facet-aware Benchmark](https://arxiv.org/abs/2402.14359)：构建 facet-aware 科学摘要评测和可解释指标，把摘要质量锚定到方法、结果、目标与背景等论文侧面，而不是只看整体文本重叠。
+- [Benchmarking Data Science Agents](https://arxiv.org/abs/2402.17168)：评测 agent 的端到端数据科学任务能力，包括检查数据、编写分析代码、拟合模型和报告结果，并使用统一协议打分。
+- [Systematic assessment of various universal machine‐learning interatomic potentials](https://arxiv.org/abs/2403.05729)：[Systematic assessment of various universal machine‐learning interatomic potentials](https://arxiv.org/abs/2403.05729): 系统评估通用机器学习原子间势.
+- [DrivAerNet: A Parametric Car Dataset for Data-Driven Aerodynamic Design and Graph-Based Drag Prediction](https://arxiv.org/abs/2403.08055)：发布带 CFD 阻力标签的参数化汽车几何数据，用于评测图模型在汽车气动设计和阻力预测中的表现。
+- [DesignQA: A Multimodal Benchmark for Evaluating Large Language Models' Understanding of Engineering Documentation](https://arxiv.org/abs/2404.07917)：评测模型对工程文档的多模态理解，要求回答设计问题时同时利用文字规格、图纸和示意图。
+- [Validating Deep-Learning Weather Forecast Models on Recent High-Impact Extreme Events](https://arxiv.org/abs/2404.17652)：在近期高影响极端事件上验证深度学习天气预报模型，检查总体预报增益是否同样适用于罕见高温、风暴和强降水案例。
+- [SciFIBench: Benchmarking Large Multimodal Models for Scientific Figure Interpretation](https://arxiv.org/abs/2405.08807)：评测大多模态模型的科学图表解读能力，重点覆盖研究场景中的图形、示意图和视觉证据问答。
+- [MMLU-Pro](https://arxiv.org/abs/2406.01574)（数据集：[TIGER-Lab/MMLU-Pro](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro)，[榜单](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro)）：评测更难、更鲁棒的多学科专业知识；核心思想是提高题目难度并减少捷径/污染带来的虚高，使得“靠背答案”更难奏效。
+- [ACE Metric: Advection and Convection Evaluation for Accurate Weather Forecasting](https://arxiv.org/abs/2406.04678)：定义面向平流和对流行为的天气预报指标，检查模型是否保留关键物理输运模式，而不只优化总体误差。
+- [ConDiff: A Challenging Dataset for Neural Solvers of Partial Differential Equations](https://arxiv.org/abs/2406.04709)：评测 ConDiff: A Challenging Dataset for Neural Solvers of Partial Differential Equations，为 Scientific Knowledge 补充可复用的数据集、基准、指标或评测协议。
+- [Toward Reliable Ad-hoc Scientific Information Extraction: A Case Study on Two Materials Datasets](https://arxiv.org/abs/2406.05348)：用两个材料数据集构建案例评测临时性科学信息抽取，强调抽取变量和材料记录的可靠性。
+- [Probing out-of-distribution generalization in machine learning for materials](https://arxiv.org/abs/2406.06489)：[Probing out-of-distribution generalization in machine learning for materials](https://arxiv.org/abs/2406.06489): 探测材料机器学习的分布外泛化能力.
+- [DISCOVERYWORLD: A Virtual Environment for Developing and Evaluating Automated Scientific Discovery Agents](https://arxiv.org/abs/2406.06769)：提供交互式虚拟实验室来评测科学发现 agent，系统需要操作物体、运行实验并推断隐藏因果规则。
+- [Are Large Language Models Good Statisticians?](https://arxiv.org/abs/2406.07815)：评测 LLM 在假设检验、回归解释和不确定性推理等统计任务上的表现，把统计能力与一般语言流畅性区分开。
+- [CS-Bench: A Comprehensive Benchmark for Large Language Models towards Computer Science Mastery](https://arxiv.org/abs/2406.08587)（[榜单](https://csbench.github.io/)）：评测计算机科学掌握程度，覆盖概念、推理和问题求解题型，作为通用专业问答之外的领域专项对照。
+- [SciKnowEval: Evaluating Multi-level Scientific Knowledge of Large Language Models](https://arxiv.org/abs/2406.09098)（[榜单](https://scipilots.org/sciknoweval/)）：分层评测 LLM 的科学知识，把基础事实记忆、概念理解和推理型科学问答区分开。
+- [DrivAerNet++: A Large-Scale Multimodal Car Dataset with Computational Fluid Dynamics Simulations and Deep Learning Benchmarks](https://arxiv.org/abs/2406.09624)：用多模态车身几何、CFD 仿真输出和深度学习基线扩展汽车气动评测，覆盖阻力和流场预测。
+- [LLMs Are Prone to Fallacies in Causal Inference](https://arxiv.org/abs/2406.12158)：探测 LLM 的因果推断谬误，检验模型能否区分有效因果结论与常见统计推理错误。
+- [A Comprehensive Evaluation of Generative Models in Calorimeter Shower Simulation](https://arxiv.org/abs/2406.12898)：评测高能物理量能器簇射仿真中的生成模型，把保真度和效率与探测器仿真目标对照。
+- [WEATHER-5K: A Large-scale Global Station Weather Dataset Towards Comprehensive Time-series Forecasting Benchmark](https://arxiv.org/abs/2406.14399)：发布全球站点观测时间序列数据，用于比较模型对局地天气时间动态的预测能力，而不只依赖格点再分析数据。
+- [Evaluating and improving the predictive accuracy of mixing enthalpies and volumes in disordered alloys from universal pretrained machine learning potentials](https://arxiv.org/abs/2406.17499)：用无序合金混合焓和体积检验通用预训练原子间势，通过热力学性质暴露跨体系迁移缺口。
+- [CSPBench: a benchmark and critical evaluation of Crystal Structure Prediction](https://arxiv.org/abs/2407.00733)：基准化评测晶体结构预测方法，用严格协议把生成结构与已知或计算得到的材料参考进行排序比较。
+- [NeurIPS 2024 ML4CFD Competition: Harnessing Machine Learning for Computational Fluid Dynamics in Airfoil Design](https://arxiv.org/abs/2407.01641)（[竞赛页](https://www.codabench.org/competitions/3282/)）：定义面向翼型设计的 CFD 竞赛，在气动场和设计相关预测精度上评测代理模型。
 - [DiscoveryBench](https://arxiv.org/abs/2407.01725)（[开源代码](https://github.com/allenai/discoverybench)）：评测数据驱动科学发现；核心思想是给定研究目标和数据集，让 agent 做统计分析、语义推理与发现生成，并用分面评价衡量结论质量。
+- [MMSci: A Dataset for Graduate-Level Multi-Discipline Multimodal Scientific Understanding](https://arxiv.org/abs/2407.04903)：评测研究生水平的多学科多模态科学理解，要求模型把领域文本与图、表和公式结合起来。
+- [On the Importance of Learning Non‐Local Dynamics for Stable Data‐Driven Climate Modeling: A 1D Gravity Wave‐QBO Testbed](https://arxiv.org/abs/2407.05224)：提出一维重力波 QBO 气候仿真测试床，衡量模型是否学到长时稳定滚动所需的非局地动力学。
+- [SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers](https://arxiv.org/abs/2407.09413)：[SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers](https://arxiv.org/abs/2407.09413): 提供面向科学论文的多模态问答数据集.
 - [LAB-Bench](https://arxiv.org/abs/2407.10362)：评测面向生物学研究的语言模型能力；核心思想是覆盖文献理解、实验方案、数据库导航、DNA/蛋白序列处理等实用研究任务，而不只考教材式科学问答。
+- [WindsorML: High-Fidelity Computational Fluid Dynamics Dataset For Automotive Aerodynamics](https://arxiv.org/abs/2407.19320)：WindsorML: High-Fidelity Computational Fluid Dynamics Dataset For Automotive Aerodynamics 补充科学知识与科学建模方向的基准、数据集、指标或评测协议。
 - [BLADE](https://arxiv.org/abs/2408.09667)（[开源代码](https://github.com/behavioral-data/BLADE)）：评测数据分析型科学 agent；核心思想是要求 agent 根据真实研究问题和数据集生成可辩护的数据分析，覆盖变量选择、数据变换和统计建模等科学决策。
-- [ScienceAgentBench](https://arxiv.org/abs/2410.05080)（[开源代码](https://github.com/OSU-NLP-Group/ScienceAgentBench)）：评测数据驱动科学发现中的 agent 实操能力；核心思想是从同行评审论文抽取任务，并把输出统一为可自动评测的自包含 Python 程序。
+- [Benchmarking AI-based data assimilation to advance data-driven global weather forecasting](https://arxiv.org/abs/2408.11438)：评测用于推进数据驱动全球天气预报的 AI 数据同化方法。
+- [WeQA: A Benchmark for Retrieval Augmented Generation in Wind Energy Domain](https://arxiv.org/abs/2408.11800)：提供风能领域检索增强问答基准，检验专业术语下的科学 RAG。
+- [Towards a Unified Benchmark and Framework for Deep Learning-Based Prediction of Nuclear Magnetic Resonance Chemical Shifts](https://arxiv.org/abs/2408.15681)：统一深度学习预测 NMR 化学位移的数据和基线，为化学模型提供共享的光谱性质预测评测框架。
+- [ClimDetect: A Benchmark Dataset for Climate Change Detection and Attribution](https://arxiv.org/abs/2408.15993)：提供气候变化检测与归因任务，检验模型能否从气候数据中识别变化信号并判断可能驱动因素。
+- [Assessing Generative Language Models in Classification Tasks: Performance and Self-evaluation Capabilities in the Environmental and Climate Change Domain](https://arxiv.org/abs/2408.17362)：评测生成式语言模型在环境与气候变化分类任务中的表现，并考察模型是否能自我评估预测结果。
+- [Evaluation of Tropical Cyclone Track and Intensity Forecasts from Artificial Intelligence Weather Prediction (AIWP) Models](https://arxiv.org/abs/2409.06735)：评估 AI 天气预报模型对热带气旋路径和强度的预测，把风暴路径能力与强度预测可靠性分开考察。
+- [WeatherReal: A Benchmark Based on In-Situ Observations for Evaluating Weather Models](https://arxiv.org/abs/2409.09371)：用原位观测评测天气模型，减少只依赖再分析数据验证真实预报精度的问题。
+- [Hydrogen under Pressure as a Benchmark for Machine-Learning Interatomic Potentials](https://arxiv.org/abs/2409.13390)：用高压氢作为机器学习原子间势基准。
+- [EvAlignUX: Advancing UX Research through LLM-Supported Exploration of Evaluation Metrics](https://arxiv.org/abs/2409.15471)：研究 LLM 辅助探索 UX 评价指标，把以人为中心研究中的度量设计作为科学方法评测对象。
+- [Best practices for fitting machine learning interatomic potentials for molten salts: A case study using NaCl-MgCl2](https://arxiv.org/abs/2409.17869)：在 NaCl-MgCl2 熔盐案例上评估机器学习原子间势的拟合选择，用于诊断仿真精度与迁移表现。
+- [CLLMate: A Multimodal Benchmark for Weather and Climate Events Forecasting](https://arxiv.org/abs/2409.19058)：CLLMate: A Multimodal Benchmark for Weather and Climate Events Forecasting 补充科学知识与科学建模方向的基准、数据集、指标或评测协议。
+- [AstroMLab 2: AstroLLaMA-2-70B Model and Benchmarking Specialised LLMs for Astronomy](https://arxiv.org/abs/2409.19750)：基准化评测天文学专用 LLM，包括 AstroLLaMA-2-70B 在领域问答和天文学对话任务中的表现。
+- [ScienceAgentBench](https://arxiv.org/abs/2410.05080)（[开源代码](https://github.com/OSU-NLP-Group/ScienceAgentBench)，[榜单](https://hal.cs.princeton.edu/scienceagentbench)）：评测数据驱动科学发现中的 agent 实操能力；核心思想是从同行评审论文抽取任务，并把输出统一为可自动评测的自包含 Python 程序。
 - [KORBench](https://arxiv.org/abs/2410.06526)：评测尽量与“背知识”正交的推理能力；核心思想是构造任务使成功更多依赖推理结构而非事实记忆，从而更好分离知识存量与推理机制。
+- [Testing NeuralGCM's capability to simulate future heatwaves based on the 2021 Pacific Northwest heatwave event](https://arxiv.org/abs/2410.09120)：补充一个面向科学知识与科学建模的基准条目，关注evaluation of NeuralGCM on extreme-event simulation。
+- [Open Materials 2024 (OMat24) Inorganic Materials Dataset and Models](https://arxiv.org/abs/2410.12771)：发布无机材料数据集和模型，用于评测材料基础模型。
+- [LabSafety Bench: Benchmarking LLMs on Safety Issues in Scientific Labs](https://arxiv.org/abs/2410.14182)：评测scientific knowledge, materials, climate, or autonomous discovery，补充该能力方向的基准或挑战设置。
+- [ClimaQA: An Automated Evaluation Framework for Climate Question Answering Models](https://arxiv.org/abs/2410.16701)：提供气候问答模型的自动化评测框架，用气候领域问题与参考资料检查答案质量。
+- [Kinetix: Investigating the Training of General Agents through Open-Ended Physics-Based Control Tasks](https://arxiv.org/abs/2410.23208)：用开放式物理控制任务评测通用 agent，把物理动力学理解与策略学习联系起来。
+- [MassSpecGym: A benchmark for the discovery and identification of molecules](https://arxiv.org/abs/2410.23326)：基准化评测基于质谱证据的分子发现与识别，检验模型能否从谱图推断候选分子。
+- [LLM4Mat-bench: benchmarking large language models for materials property prediction](https://arxiv.org/abs/2411.00177)：评测科学知识、材料、气候、化学或物理能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [APEBench: A Benchmark for Autoregressive Neural Emulators of PDEs](https://arxiv.org/abs/2411.00180)：评测 PDE 系统的自回归神经仿真器，强调科学仿真代理模型的滚动稳定性和精度。
+- [EEE-Bench: A Comprehensive Multimodal Electrical And Electronics Engineering Benchmark](https://arxiv.org/abs/2411.01492)：通过电路、图示、概念和计算题评测多模态电气与电子工程知识。
+- [Energy Price Modelling: A Comparative Evaluation of four Generations of Forecasting Methods](https://arxiv.org/abs/2411.03372)：比较四代能源价格预测方法，把能源价格作为科学时间序列建模的评测对象。
+- [SciDQA: A Deep Reading Comprehension Dataset over Scientific Papers](https://arxiv.org/abs/2411.05338)：评测科学论文深度阅读理解，要求模型基于论文级上下文回答问题，而不是只读孤立摘要。
+- [Open Catalyst Experiments 2024 (OCx24): Bridging Experiments and Computational Models](https://arxiv.org/abs/2411.11783)：用催化剂数据连接实验和计算模型，形成可评测的科学数据资源。
+- [Masala-CHAI: A Large-Scale SPICE Netlist Dataset for Analog Circuits by Harnessing AI](https://arxiv.org/abs/2411.14299)：发布大规模模拟电路 SPICE 网表，用于评测电路理解和电路生成模型。
 - [RE-Bench](https://arxiv.org/abs/2411.15114)：评测前沿 AI 研发 agent 的研究工程能力；核心思想是用开放式机器学习研究环境与人类专家 8 小时尝试记录对照，衡量 agent 在真实研发任务中的进展速度与上限。
+- [Probing the limitations of multimodal language models for chemistry and materials research](https://arxiv.org/abs/2411.16955)：评测多模态语言模型在化学与材料研究任务中的局限。
+- [The Well: a Large-Scale Collection of Diverse Physics Simulations for Machine Learning](https://arxiv.org/abs/2412.00568)：汇集多类物理仿真数据，使代理模型和基础模型能够在多个物理系统上进行比较。
+- [PANGAEA: A Global and Inclusive Benchmark for Geospatial Foundation Models](https://arxiv.org/abs/2412.04204)：在全球分布的遥感任务上评测地理空间基础模型，强调地理多样性和 Earth-observation 评测的包容性。
+- [Benchmarking large language models for materials synthesis: the case of atomic layer deposition](https://arxiv.org/abs/2412.10477)：在原子层沉积材料合成知识上评测大语言模型。
+- [CHIPS-FF: Evaluating Universal Machine Learning Force Fields for Material Properties](https://arxiv.org/abs/2412.10516)：在材料性质任务上评测通用机器学习力场。
+- [Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges](https://arxiv.org/abs/2412.11427)：梳理生成式 AI 科学发现的评测需求，在本节中更适合作为 benchmark 设计参考，而不是独立数据集。
+- [PDENNEval: A Comprehensive Evaluation of Neural Network Methods for Solving PDEs](https://doi.org/10.24963/ijcai.2024/573)：跨代表性方程比较神经网络 PDE 求解方法，关注数值精度、泛化能力和求解器行为。
+- [SciTrust: Evaluating the Trustworthiness of Large Language Models for Science](https://doi.org/10.1109/scw63240.2024.00017)：面向科学知识与科学建模，补充评测基准、数据集、协议或指标。
+- [Overview of the Context24 Shared Task on Contextualizing Scientific Claims](https://doi.org/10.18653/v1/2024.sdp-1.3)：定义科学声明语境化共享任务，评测系统能否围绕研究断言检索或生成论文依据上下文。
+- [Evaluation of machine learning models for the accelerated prediction of Density Functional Theory calculated 19F chemical shifts based on local atomic environments](https://doi.org/10.1016/j.aichem.2024.100078)：比较基于局部原子环境预测 DFT 计算氟-19 化学位移的机器学习模型，面向加速 NMR 性质估计。
+- [Large Language Model-Driven Database for Thermoelectric Materials](https://arxiv.org/abs/2501.00564)：用 LLM 辅助抽取构建热电材料数据库，评测从文献到材料数据库的构建流程。
+- [Establishing baselines for generative discovery of inorganic crystals](https://arxiv.org/abs/2501.02144)：建立无机晶体生成发现的可比较 baseline，便于评估材料生成模型在稳定性、新颖性和多样性之间的取舍。
+- [Challenging Reaction Prediction Models to Generalize to Novel Chemistry](https://arxiv.org/abs/2501.06669)：在常规训练分布之外的化学场景中压力测试反应预测模型，衡量其对新反应区域的泛化能力。
 - [Does Table Source Matter?](https://arxiv.org/abs/2501.13042)：评测多模态科学表格理解与推理。核心思想是结合科学表格结构数据、表格图像和推理任务，测试模型是否能处理来源差异带来的版式和数值证据，而不只是阅读线性化表格文本。
 - [HLE-Verified](https://arxiv.org/abs/2501.14249)（数据集：[lmms-lab/HLE-Verified](https://huggingface.co/datasets/lmms-lab/HLE-Verified)）：评测经人工审核的可验证子集；核心思想是减少题目歧义与不可判定样本，提升评测可信度。
-- [Humanity's Last Exam（HLE）](https://arxiv.org/abs/2501.14249)（数据集：[cais/hle](https://huggingface.co/datasets/cais/hle)）：评测极高难、跨学科的专家级题目；核心思想是用高难度题集压力测试模型知识与推理上限。
+- [Humanity's Last Exam（HLE）](https://arxiv.org/abs/2501.14249)（数据集：[cais/hle](https://huggingface.co/datasets/cais/hle)，[榜单](https://lastexam.ai/)）：评测极高难、跨学科的专家级题目；核心思想是用高难度题集压力测试模型知识与推理上限。
+- [MedAgentBench: A Realistic Virtual EHR Environment to Benchmark Medical LLM Agents](https://arxiv.org/abs/2501.14654)：在真实感虚拟电子病历环境中评估医疗 LLM agent。
+- [HardML: A Benchmark For Evaluating Data Science And Machine Learning knowledge and reasoning in AI](https://arxiv.org/abs/2501.15627)：评测数据科学与机器学习知识推理。核心思想：使用覆盖现代 ML 实践的专家手写高难选择题。
+- [MedXpertQA: Benchmarking Expert-Level Medical Reasoning and Understanding](https://arxiv.org/abs/2501.18362)：评测专家级医学推理与理解；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [UGPhysics](https://arxiv.org/abs/2502.00334)（[开源代码](https://github.com/YangLabHKUST/UGPhysics)，[数据集](https://huggingface.co/datasets/UGPhysics/ugphysics)）：评测本科物理知识与推理，覆盖中英双语题、13 个主题和多种答案格式；核心思想是把公式推导、概念判断和数值计算放进同一物理学科评测协议。
+- [AtmosSci-Bench: Evaluating the Recent Advance of Large Language Model for Atmospheric Science](https://arxiv.org/abs/2502.01159)：可作为科学知识与领域推理的Bench候选；核心关注“Evaluating the Recent Advance of Large Language Model for Atmospheric Science”。
+- [Universal Machine Learning Interatomic Potentials are Ready for Solid Ion Conductors](https://arxiv.org/abs/2502.09970)：评估通用机器学习原子间势在固态离子导体模拟中的准确性与适用性。
+- [SciClaimHunt: A Large Dataset for Evidence-based Scientific Claim Verification](https://arxiv.org/abs/2502.10003)：评测基于证据的科学声明验证；核心思想是为不同用户需求下的科学 claim 检索并判断证据。
+- [PhysReason: A Comprehensive Benchmark towards Physics-Based Reasoning](https://arxiv.org/abs/2502.12054)：类型：benchmark/评测协议。核心价值：为 1.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [PeerQA: A Scientific Question Answering Dataset from Peer Reviews](https://arxiv.org/abs/2502.13668)：基于同行评审问题的科学文档问答评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [OBELiX: A Curated Dataset of Crystal Structures and Experimentally Measured Ionic Conductivities for Lithium Solid-State Electrolytes](https://arxiv.org/abs/2502.14234)：整理锂固态电解质的实验离子电导率与晶体结构数据，为稀缺电导率数据上的材料模型评测提供基准数据。
+- [Fact or Guesswork? Evaluating Large Language Model's Medical Knowledge with Structured One-Hop Judgment](https://arxiv.org/abs/2502.14275)：评什么：用结构化 one-hop 判断题隔离医学事实知识召回，与复杂医学推理基准形成互补。
 - [MLGym](https://arxiv.org/abs/2502.14499)（[开源代码](https://github.com/facebookresearch/MLGym)）：评测开放式 AI 研究 agent；核心思想是在类 Gym 环境中让 agent 产生想法、处理数据、实现方法、训练模型并迭代实验。
-- [SuperGPQA](https://arxiv.org/abs/2502.14739)（数据集：[m-a-p/SuperGPQA](https://huggingface.co/datasets/m-a-p/SuperGPQA)）：评测更长尾、更贴近职业场景的专业问答；核心思想是把“真实工作中常见但长尾”的专业问题规模化为可评测题集。
+- [SuperGPQA](https://arxiv.org/abs/2502.14739)（数据集：[m-a-p/SuperGPQA](https://huggingface.co/datasets/m-a-p/SuperGPQA)，[榜单](https://supergpqa.github.io/)）：评测更长尾、更贴近职业场景的专业问答；核心思想是把“真实工作中常见但长尾”的专业问题规模化为可评测题集。
 - [Auto-Bench](https://arxiv.org/abs/2502.15224)：评测 LLM/agent 的科学发现能力；核心思想是把科学发现抽象为带 oracle 交互的因果图发现与干预决策，让模型在自然科学和社会科学场景中迭代提出假设、行动并解释结论。
+- [Theoretical physics benchmark (TPBench)—a dataset and study of AI reasoning capabilities in theoretical physics](https://arxiv.org/abs/2502.15815)：评测研究级理论物理推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Towards Fully-Automated Materials Discovery via Large-Scale Synthesis Dataset and Expert-Level LLM-as-a-Judge](https://arxiv.org/abs/2502.16457)：构建大规模材料合成数据集和专家级 LLM-as-judge 协议，用于评估自动化合成规划与发现输出。
+- [Can Language Models Falsify? Evaluating Algorithmic Reasoning with Counterexample Creation](https://arxiv.org/abs/2502.19414)：它给科学知识、科学推理或专业科学任务提供明确评测协议，适合补充 scientific knowledge Bench。
 - [BixBench](https://arxiv.org/abs/2503.00096)：评测计算生物学中的 LLM agent 实操能力；核心思想是用 50 多个真实生物数据分析场景和近 300 个开放问答，要求 agent 探索数据、执行多步分析并解释结果。
-- [PaperBench](https://arxiv.org/abs/2504.01848)（[开源代码](https://github.com/openai/preparedness)）：评测 AI agent 从头复现 AI 研究论文的能力；核心思想是把 20 篇 ICML 2024 Spotlight/Oral 论文拆成 8,316 个可评分子任务，覆盖论文理解、代码实现与实验执行。
+- [MMSciBench: Benchmarking Language Models on Chinese Multimodal Scientific Problems](https://arxiv.org/abs/2503.01891)：可作为科学知识与领域推理的Bench候选；核心关注“Benchmarking Language Models on Chinese Multimodal Scientific Problems”。
+- [A Foundational Potential Energy Surface Dataset for Materials](https://arxiv.org/abs/2503.04070)：提供用于训练与评测通用原子间势的基础势能面数据集。
+- [Quantifying the Reasoning Abilities of LLMs on Real-world Clinical Cases](https://arxiv.org/abs/2503.04691)：在结构化真实临床病例上评估推理质量。
+- [MedAgentsBench: Benchmarking Thinking Models and Agent Frameworks for Complex Medical Reasoning](https://arxiv.org/abs/2503.07459)：在复杂临床推理任务上评估思考模型和 agent 框架。
+- [SciVerse: Unveiling the Knowledge Comprehension and Visual Reasoning of LMMs on Multi-modal Scientific Problems](https://arxiv.org/abs/2503.10627)：SciVerse 是多模态科学问题 benchmark，覆盖科学知识理解与视觉推理。
+- [TBHubbard: tight-binding and extended Hubbard model dataset for metal-organic frameworks](https://arxiv.org/abs/2503.12554)：提供面向金属有机框架的 tight-binding 与扩展 Hubbard 模型数据集，支撑电子结构预测的评测与建模。
+- [MicroVQA: A Multimodal Reasoning Benchmark for Microscopy-Based Scientific Research](https://arxiv.org/abs/2503.13399)：评测基于显微图像的多模态科学推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning](https://arxiv.org/abs/2503.13517)：评测科学长上下文理解、推理与信息抽取；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [MMCR: Benchmarking Cross-Source Reasoning in Scientific Papers](https://arxiv.org/abs/2503.16856)：科学论文跨来源推理评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Physics: Benchmarking Foundation Models on University-Level Physics Problem Solving](https://arxiv.org/abs/2503.21821)：评测大学水平物理问题求解；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [PaperBench](https://arxiv.org/abs/2504.01848)（[开源代码](https://github.com/openai/preparedness)，[结果](https://github.com/openai/preparedness/blob/main/project/paperbench/README.md)）：评测 AI agent 从头复现 AI 研究论文的能力；核心思想是把 20 篇 ICML 2024 Spotlight/Oral 论文拆成 8,316 个可评分子任务，覆盖论文理解、代码实现与实验执行。
+- [AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning in LLMs](https://arxiv.org/abs/2504.02404)：麻醉学推理 benchmark 与数据套件。核心思想是测试通用医学问答考试难以覆盖的专科临床推理需求。
+- [FEABench: Evaluating Language Models on Multiphysics Reasoning Ability](https://arxiv.org/abs/2504.06260)：评测语言模型和 agent 是否能搭建有限元仿真来解决多物理推理问题。
+- [SCI-Reason: A Dataset with Chain-of-Thought Rationales for Complex Multimodal Reasoning in Academic Areas](https://arxiv.org/abs/2504.06637)：可作为科学知识与领域推理的Bench候选；核心关注“A Dataset with Chain-of-Thought Rationales for Complex Multimodal Reasoning in Academic Areas”。
+- [ClimateBench-M: A Multi-Modal Climate Data Benchmark with a Simple Generative Method](https://arxiv.org/abs/2504.07394)：把气候评测扩展到多模态气候数据，并配套简单生成式基线来评估气候场建模。
+- [How to Detect and Defeat Molecular Mirage: A Metric-Driven Benchmark for Hallucination in LLM-based Molecular Comprehension](https://arxiv.org/abs/2504.12314)：面向分子理解幻觉的 metric-driven benchmark。核心思想是评估 LLM 在科学推理任务中是否依赖捷径或编造分子事实。
+- [CRAB](https://arxiv.org/abs/2504.12342)（数据集：[zhm0/CRAB](https://huggingface.co/datasets/zhm0/CRAB)）：评测 retrieval-augmented LLM 的生物医学 curation 能力。核心思想：用 citation-based curation metric 检查系统能否在英文、法文、德文和中文材料中选择并整合相关参考，同时过滤噪声。
 - [AI Idea Bench 2025](https://arxiv.org/abs/2504.14191)：评测 AI 研究想法生成；核心思想是以论文及其 inspired works 构成可对照材料，从与真实后续工作的贴合度和通用参考材料判断两个维度评估想法质量。
-- [PhyBench](https://arxiv.org/abs/2504.16074)（数据集：[Eureka-Lab/PHYBench](https://huggingface.co/datasets/Eureka-Lab/PHYBench)）：评测物理知识与物理推理；核心思想是把物理领域对概念、定律与推导的需求显式化，避免仅靠表面语言模式取巧。
+- [PhyBench](https://arxiv.org/abs/2504.16074)（数据集：[Eureka-Lab/PHYBench](https://huggingface.co/datasets/Eureka-Lab/PHYBench)，[榜单](https://www.phybench.cn/leaderboard)）：评测物理知识与物理推理；核心思想是把物理领域对概念、定律与推导的需求显式化，避免仅靠表面语言模式取巧。
+- [Virology Capabilities Test (VCT): A Multimodal Virology Q&A Benchmark](https://arxiv.org/abs/2504.16137)：评测病毒学实验流程的多模态排障能力；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Evaluating Multi-Hop Reasoning in Large Language Models: A Chemistry-Centric Case Study](https://arxiv.org/abs/2504.16414)：可作为科学知识与领域推理的Bench候选；核心关注“A Chemistry-Centric Case Study”。
 - [SuperChem (text-only)](https://arxiv.org/abs/2505.05331)：评测化学领域的文本科学问答/推理；核心思想是用学科垂类题目显式衡量模型在化学知识与推理链条上的能力，而非被通用 QA 掩盖。
-- [HealthBench](https://arxiv.org/abs/2505.08775)：评测医学相关问答与临床/健康知识应用；核心思想是用更贴近医疗语境的题目与评分方式，压力测试模型在高风险知识领域的可靠性。
+- [CellVerse: Do Large Language Models Really Understand Cell Biology?](https://arxiv.org/abs/2505.07865)：CellVerse 通过语言驱动的单细胞分析任务评估 LLM 对细胞生物学的理解。
+- [BioProBench: Comprehensive Dataset and Benchmark in Biological Protocol Understanding and Reasoning](https://arxiv.org/abs/2505.07889)：评测生物实验方案理解与推理。核心思想：测试模型是否理解生物 protocol 中严格的程序逻辑，而不只是记忆教材事实。
+- [HealthBench](https://arxiv.org/abs/2505.08775)（[结果](https://openai.com/index/healthbench/)）：评测医学相关问答与临床/健康知识应用；核心思想是用更贴近医疗语境的题目与评分方式，压力测试模型在高风险知识领域的可靠性。
+- [Beyond Accuracy: EcoL2 Metric for Sustainable Neural PDE Solvers](https://arxiv.org/abs/2505.12556)：提出 EcoL2，从精度和计算可持续性两方面评估神经 PDE 求解器，使能耗或效率进入科学模型比较。
+- [MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation](https://arxiv.org/abs/2505.15054)：MolLangBench 评估语言提示下的分子结构识别、编辑与生成。
+- [SciCUEval: A Comprehensive Dataset for Evaluating Scientific Context Understanding in Large Language Models](https://arxiv.org/abs/2505.15094)：评测科学知识与科学推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [MedFrameQA: A Multi-Image Medical VQA Benchmark for Clinical Reasoning](https://arxiv.org/abs/2505.16964)：通过诊断图像序列评估多图医学 VQA 推理。
+- [EarthSE: A Benchmark for Evaluating Earth Scientific Exploration Capability of LLMs](https://arxiv.org/abs/2505.17139)：补充scientific knowledge方向的基准或评测套件，核心围绕《EarthSE: A Benchmark for Evaluating Earth Scientific Exploration Capability of LLMs》。
+- [Multiphysics Bench: Benchmarking and Investigating Scientific Machine Learning for Multiphysics PDEs](https://arxiv.org/abs/2505.17575)：在耦合多物理 PDE 上基准化评测科学机器学习方法，检验模型能否处理相互作用的物理过程，而不只是单方程场景。
 - [BiomedSQL](https://arxiv.org/abs/2505.20321)：评测生物医学知识库上的 text-to-SQL 科学推理；核心思想是把问题落到基因-疾病、组学因果与药物审批等数据库中，要求模型同时具备 SQL 生成和生物医学领域推理能力。
+- [FD-Bench: A Modular and Fair Benchmark for Data-driven Fluid Simulation](https://arxiv.org/abs/2505.20349)：提供模块化且公平的数据驱动流体模拟基准。
+- [MSEarth: A Multimodal Benchmark for Earth Science Phenomenon Discovery with MLLMs](https://arxiv.org/abs/2505.20740)：可作为科学知识与领域推理的Bench候选；核心关注“A Multimodal Benchmark for Earth Science Phenomenon Discovery with MLLMs”。
+- [Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations](https://arxiv.org/abs/2505.21318)：通过模块化化学操作评测化学推理。核心思想：不只考答案记忆，而是考化学推理所需的结构化操作。
 - [SciSafetyBench](https://arxiv.org/abs/2505.23559)（[开源代码](https://github.com/ulab-uiuc/SafeScientist)）：评测科学研究 agent 的安全意识与工具使用风险；核心思想是用 240 个高风险科研任务、30 个模拟科学工具和 120 个工具风险任务检查 agent 是否会拒绝或规避危险研究流程。
+- [MedHELM: Holistic Evaluation of Large Language Models for Medical Tasks](https://arxiv.org/abs/2505.23802)：MedHELM 是医学任务的综合 LLM 评测，适合 Scientific Knowledge Bench。
+- [MSQA: Benchmarking LLMs on Graduate-Level Materials Science Reasoning and Knowledge](https://arxiv.org/abs/2505.23982)：MSQA: Benchmarking LLMs on Graduate-Level Materials Science Reasoning and Knowledge 补充科学知识与科学建模方向的基准、数据集、指标或评测协议。
+- [ScienceMeter: Tracking Scientific Knowledge Updates in Language Models](https://arxiv.org/abs/2505.24302)：评什么：科学知识更新方法在过去、当前和未来科学知识上的表现。核心思想是把知识保持与知识更新分开评分，避免模型为了吸收新知识而遗忘既有科学事实。
 - [EXP-Bench](https://arxiv.org/abs/2505.24785)（[开源代码](https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench)）：评测 AI agent 完整开展 AI 研究实验的能力；核心思想是从 51 篇顶级 AI 论文抽取 461 个任务，要求 agent 基于研究问题和不完整代码提出假设、设计实验、实现执行并分析结果。
+- [PhySense](https://arxiv.org/abs/2505.24823)：评估基于物理原理的推理能力，题目设计为专家可通过关键物理原则高效求解。核心思想：诊断模型是否能给出简洁、专家式的推理路径，还是依赖冗长不透明且未抓住主导原理的解答。
 - [EEE-Bench](https://openaccess.thecvf.com/content/CVPR2025/html/Li_EEE-Bench_A_Comprehensive_Multimodal_Electrical_And_Electronics_Engineering_Benchmark_CVPR_2025_paper.html)：评什么：电气与电子工程的多模态知识。核心思想：覆盖通用 STEM VQA 中不足的工程图、工程概念和计算任务。
 - [MicroVQA](https://openaccess.thecvf.com/content/CVPR2025/html/Burgess_MicroVQA_A_Multimodal_Reasoning_Benchmark_for_Microscopy-Based_Scientific_Research_CVPR_2025_paper.html)（[项目页](https://jmhb0.github.io/microvqa)，[数据集](https://huggingface.co/datasets/jmhb/microvqa)）：评什么：显微科学研究中的多模态推理。核心思想：使用显微图像而非通用图片，测试模型能否围绕研究级生物视觉证据推理。
-- [ResearchCodeBench](https://arxiv.org/abs/2506.02314)（[开源代码](https://github.com/PatrickHua/ResearchCodeBench)）：评测从新近 ML 论文实现研究代码的能力；核心思想是用真实 research-code challenge 检查模型是否能理解论文方法并完成可运行实现。
+- [PHYSICS](https://arxiv.org/abs/2506.00022)（[arena](https://phyarena.github.io/)）：评什么：从高中到研究生层级的教材派生物理推理题。核心思想：把精筛物理问题、推理路径和 Rule+Model 评价协议结合起来，专门处理单位、化简和精度等物理评测难点。
+- [ClinBench-HPB: A Clinical Benchmark for Evaluating LLMs in Hepato-Pancreato-Biliary Diseases](https://arxiv.org/abs/2506.00095)：面向肝胆胰疾病的临床 benchmark。核心思想是评估标准化通用医学考试之外的 HPB 专科临床推理能力。
+- [Benchmarking Universal Machine Learning Interatomic Potentials for Real-Time Analysis of Inelastic Neutron Scattering Data](https://arxiv.org/abs/2506.01860)：评测预训练原子间势在中子散射流程中的声子与振动谱分析能力。
+- [ResearchCodeBench](https://arxiv.org/abs/2506.02314)（[开源代码](https://github.com/PatrickHua/ResearchCodeBench)，[榜单](https://researchcodebench.github.io/leaderboard/index.html)）：评测从新近 ML 论文实现研究代码的能力；核心思想是用真实 research-code challenge 检查模型是否能理解论文方法并完成可运行实现。
+- [HSSBench: Benchmarking Humanities and Social Sciences Ability for Multimodal Large Language Models](https://arxiv.org/abs/2506.03922)：提供可复用评测目标、排行榜或测量协议。
+- [MedAgentGym](https://arxiv.org/abs/2506.04405)：面向 code-centric biomedical data science 的可扩展 agent 训练与评测环境；核心思想是把生物医学任务封装进可执行沙盒，提供反馈、标准答案和多轮轨迹生成。
+- [MuSciClaims: Multimodal Scientific Claim Verification](https://arxiv.org/abs/2506.04585)：多模态科学声明核验评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [PhysLab: A Benchmark Dataset for Multi-Granularity Visual Parsing of Physics Experiments](https://arxiv.org/abs/2506.06631)：评测物理实验的多粒度视觉解析；核心思想是检查模型能否在多个层级识别、解析并推理实验物理视觉证据。
 - [Atomic Reasoning for Scientific Table Claim Verification](https://arxiv.org/abs/2506.06972)：评测基于科学表格的细粒度 claim verification。核心思想是把密集表格推理拆成 atomic steps，使模型依据精确证据使用情况被评估，而不只是给出粗粒度 entailment 标签。
+- [CLAIM-BENCH](https://arxiv.org/abs/2506.08235)：评估科学 claim-evidence 推理。核心思想：标注 AI 论文中的 claim-evidence 对，并联合评估 claim 抽取、证据抽取与 claim-evidence 链接验证。
+- [ClimateViz: A Benchmark for Statistical Reasoning and Fact Verification on Scientific Charts](https://arxiv.org/abs/2506.08700)：面向科学图表上的统计推理与事实核查构建基准。
+- [Benchmarking Multimodal LLMs on Recognition and Understanding over Chemical Tables](https://arxiv.org/abs/2506.11375)：面向化学表格理解的多模态科学 benchmark。核心思想是测试 MLLM 能否识别化学表格中的符号、结构和领域关系，而不是把表格当普通文本。
+- [Stress-Testing Multimodal Foundation Models for Crystallographic Reasoning](https://arxiv.org/abs/2506.13051)：评测多模态基础模型的晶体学推理。核心思想：用物理约束协议检验模型是否能跨晶体结构泛化而非记忆视觉模式。
+- [The NordDRG AI Benchmark for Large Language Models](https://arxiv.org/abs/2506.13790)：面向 Diagnosis-Related Group 推理的医疗编码 benchmark；核心思想是评测 LLM 能否在可透明审计的条件下完成医院报销分组相关的临床编码判断。
+- [SciVer: Evaluating Foundation Models for Multimodal Scientific Claim Verification](https://arxiv.org/abs/2506.15569)：SciVer 评测基础模型在多模态科学语境中验证 claim 的能力，适合科学知识/事实核验交叉 benchmark。
+- [PhysUniBench](https://arxiv.org/abs/2506.17667)：评测本科层级多模态物理推理；核心思想是将 3,304 道物理题与图示绑定，覆盖主要物理分支，测试模型能否结合概念、公式和视觉解释。
+- [RWESummary: A Framework and Test for Choosing Large Language Models to Summarize Real-World Evidence (RWE) Studies](https://arxiv.org/abs/2506.18819)：用于选择 LLM 总结 real-world evidence studies 的 framework/test；核心思想是把结构化 RWE 研究摘要纳入医学科研助手评测。
+- [Sequential Diagnosis with Language Models](https://arxiv.org/abs/2506.22405)：用 NEJM-CPC 疑难病例评测逐步临床诊断。核心思想：只有在模型明确询问时才揭示病例细节，并同时评分诊断准确率和问诊、检查成本。
+- [Automated LLM Speedrunning Benchmark](https://arxiv.org/abs/2506.22419)：评测 AI agent 复现 NanoGPT speedrun 改进的能力。核心思想是向 agent 提供历史记录脚本和可选提示，验证其能否实现可正确执行并提升运行速度的训练优化。
+- [A Benchmark for Quantum Chemistry Relaxations via Machine Learning Interatomic Potentials.](https://arxiv.org/abs/2506.23008)：在量子化学结构弛豫任务上评测机器学习原子间势，衡量学习到的力是否能导向正确优化几何。
 - [LLM-SRBench](https://proceedings.mlr.press/v267/shojaee25a.html)（[开源代码](https://github.com/deep-symbolic-mathematics/llm-srbench)）：评测 LLM 在科学符号回归与方程发现中的真实泛化。核心思想：用跨科学领域的变换与合成任务区分“记住已知公式”和“从数据中发现可解释规律”。
+- [EvolveBench](https://aclanthology.org/2025.acl-long.788/)：评测 evolving knowledge 上的 temporal awareness。核心思想：测试 LLM 在事实随时间变化时能否更新答案和推理，而不是把知识当成静态事实库。
+- [MedVAL: Toward Expert-Level Medical Text Validation with Language Models](https://arxiv.org/abs/2507.03152)：可作为科学知识与领域推理的Bench候选；核心关注“Toward Expert-Level Medical Text Validation with Language Models”。
+- [EMERGE: A Benchmark for Updating Knowledge Graphs with Emerging Textual Knowledge](https://arxiv.org/abs/2507.03617)：补充科学知识的 Bench 条目，重点是《EMERGE: A Benchmark for Updating Knowledge Graphs with Emerging Textual Knowledge》。
+- [ABench-Physics: Benchmarking Physical Reasoning in LLMs via High-Difficulty and Dynamic Physics Problems](https://arxiv.org/abs/2507.04766): 提出高难度物理推理基准，包含研究生或奥赛级静态题与可自动变体的动态子集，用于检验物理建模和鲁棒性。
+- [RainShift: A Benchmark for Precipitation Downscaling Across Geographies](https://arxiv.org/abs/2507.04930)：RainShift: A Benchmark for Precipitation Downscaling Across Geographies 补充科学知识与科学建模方向的基准、数据集、指标或评测协议。
+- [MP-ALOE: an r2SCAN dataset for universal machine learning interatomic potentials](https://arxiv.org/abs/2507.05559)：发布近百万条 r2SCAN 计算数据和基准套件，用于训练与测试 universal machine-learning interatomic potentials。
+- [Thermodynamic Prediction Enabled by Automatic Dataset Building and Machine Learning](https://arxiv.org/abs/2507.07293)：评测自动构建数据集后的热力学性质预测，把文献或数据抽取质量与下游机器学习精度连接起来。
+- [OPENXRD: A Comprehensive Benchmark Framework for LLM/MLLM XRD Question Answering](https://arxiv.org/abs/2507.09155)：评测 LLM 与 MLLM 的 X 射线衍射知识问答，为材料科学 QA 补充任务。
+- [Can Multimodal Foundation Models Understand Schematic Diagrams? An Empirical Study on Information-Seeking QA over Scientific Papers](https://arxiv.org/abs/2507.10787)：科学论文示意图信息检索问答评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Atmos-Bench: 3D Atmospheric Structures for Climate Insight](https://arxiv.org/abs/2507.11085)：评测 Atmos-Bench: 3D Atmospheric Structures for Climate Insight，为 Scientific Knowledge 补充可复用的数据集、基准、指标或评测协议。
+- [The Ever-Evolving Science Exam](https://arxiv.org/abs/2507.16514)：动态科学考试评测。核心思想：让科学题目持续演化，使分数更能反映当前推理能力并降低静态记忆影响。
+- [Bike-Bench: A Bicycle Design Benchmark for Generative Models with Objectives and Constraints](https://arxiv.org/abs/2508.00830)：可作为科学知识与领域推理的Bench候选；核心关注“A Bicycle Design Benchmark for Generative Models with Objectives and Constraints”。
+- [The Open DAC 2025 Dataset for Sorbent Discovery in Direct Air Capture](https://arxiv.org/abs/2508.03162)：发布用于直接空气捕集吸附剂发现的大规模吸附数据集与模型评测场景。
+- [PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](https://arxiv.org/abs/2508.05132)：评测临床医学伦理对齐。核心思想：以 principlism 框架构造问题，使模型处理伦理权衡而不只是医学事实。
+- [ClimateSOM: A Visual Analysis Workflow for Climate Ensemble Datasets](https://arxiv.org/abs/2508.06732)：提供气候集合数据的可视分析工作流，用自组织映射帮助比较和解释气候模拟成员。
+- [SciRerankBench: Benchmarking Rerankers Towards Scientific Retrieval-Augmented Generated LLMs](https://arxiv.org/abs/2508.08742)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [CITE: A Comprehensive Benchmark for Heterogeneous Text-Attributed Graphs on Catalytic Materials](https://arxiv.org/abs/2508.15392)：构建催化材料文本属性异构图基准。
+- [OwkinZero: Accelerating Biological Discovery with AI](https://arxiv.org/abs/2508.16315)：可作为scientific knowledge方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Global properties of the energy landscape: a testing and training arena for machine learned potentials](https://arxiv.org/abs/2508.16425)：以动力学跃迁网络构建机器学习势的测试与训练场，超越静态精度评测。
+- [Robust Diagram Reasoning: A Framework for Enhancing LVLM Performance on Visually Perturbed Scientific Diagrams](https://arxiv.org/abs/2508.16972)：提出 SciDiagram-Robust 以及扰动鲁棒性和视觉退化一致性指标，用于评估 LVLM 在噪声、模糊或遮挡科学图表上的推理。
+- [Universal machine learning potentials under pressure](https://arxiv.org/abs/2508.17792)：在 0 到 150 GPa 条件下基准测试通用 MLIP，并显示高压可靠性下降可通过针对性微调缓解。
+- [CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics](https://arxiv.org/abs/2508.18124)：CMPhysBench 评估 LLM 在凝聚态物理中的知识与推理能力。
+- [Unveiling the Actual Performance of Neural-based Models for Equation Discovery on Graph Dynamical Systems](https://arxiv.org/abs/2508.18173)：评测神经方程发现模型在图动力系统上的真实表现，检查其能否从节点交互数据恢复动力学方程。
+- [MATRIX: Multi-Agent simulaTion fRamework for safe Interactions and conteXtual clinical conversational evaluation](https://arxiv.org/abs/2508.19163)：提供临床对话评测的多 agent 模拟框架。核心思想：建模安全交互与上下文风险管理，而不只看流畅度或任务完成。
+- [SciReas / SciReas-Pro](https://arxiv.org/abs/2508.19202)：评什么：同时涉及知识与推理负荷的科学问题求解。核心思想：整理多类科学推理任务并构造更难的 Pro 子集，再用 KRUX 式 probe 区分失败来自任务知识缺失，还是来自对已知信息的推理不足。
+- [Med-RewardBench: Benchmarking Reward Models and Judges for Medical Multimodal Large Language Models](https://arxiv.org/abs/2508.21430)：评估医学多模态大模型 reward models and judges 的 benchmark。核心思想是检查 judge 与 reward model 是否符合专业且上下文敏感的医学多模态偏好。
+- [FLUID: A Fine-Grained Lightweight Urban Signalized-Intersection Dataset of Dense Conflict Trajectories](https://arxiv.org/abs/2509.00497)：发布城市信号交叉口密集冲突轨迹数据，用于评测交通动力学和安全冲突预测模型。
+- [IndiaWeatherBench: A Dataset and Benchmark for Data-Driven Regional Weather Forecasting over India](https://arxiv.org/abs/2509.00653)：基准化评测印度区域天气预报，使用本地气象数据检验模型在季风和南亚次大陆天气模式下的表现。
+- [MatPROV: A Provenance Graph Dataset of Material Synthesis Extracted from Scientific Literature](https://arxiv.org/abs/2509.01042)：发布从科学文献中抽取材料合成过程的 provenance graph 数据集，支持结构化科研信息抽取与推理。
+- [A Comprehensive Assessment and Benchmark Study of Large Atomistic Foundation Models for Phonons](https://arxiv.org/abs/2509.03401)：在数千种晶体材料上评测通用 machine-learning potentials 的声子力、原子间力常数与晶格热导率预测能力。
+- [MedRevQA / MedChangeQA](https://arxiv.org/abs/2509.04304)：评什么：模型对过时医学知识的记忆。核心思想：从系统综述中构造 QA，其中包含医学共识随时间改变的样本，测试模型是否仍保留过时生物医学事实而不是使用当前证据。
+- [GeoAnalystBench](https://arxiv.org/abs/2509.05881)：评测地理空间分析 workflow 与代码生成；核心思想是用专家验证的真实 geospatial Python 任务，并从 workflow 有效性、结构对齐、语义相似度和代码质量多维评分。
+- [DischargeSim: A Simulation Benchmark for Educational Doctor–Patient Communication at Discharge](https://arxiv.org/abs/2509.07188)：评测出院场景中的医患沟通。核心思想：模拟就诊后的患者教育，考察个性化、安全性与沟通质量。
+- [Benchmarking Universal Interatomic Potentials on Zeolite Structures](https://arxiv.org/abs/2509.07417)：在沸石结构上将通用解析势和预训练 ML 原子间势与 DFT、实验参考进行基准比较。
 - [SimpleQA Verified](https://arxiv.org/abs/2509.07968)：评测模型的“参数化事实性”（短答案、可判定事实问答）；核心思想是用更高质量的可核验 factoid 问答，测量不开工具时的事实记忆与幻觉风险。
+- [MatQnA: A Benchmark Dataset for Multi-modal Large Language Models in Materials Characterization and Analysis](https://arxiv.org/abs/2509.11335)：评测多模态大模型在材料表征与分析中的能力，为科学视觉推理补充专门数据集。
+- [InPhyRe Discovers: Large Multimodal Models Struggle in Inductive Physical Reasoning](https://arxiv.org/abs/2509.12263)：评测大多模态模型的归纳式物理推理能力；核心思想：测试模型能否从观察中归纳物理规律，而不是只回答静态物理题。
 - [SIRBench-V1](https://arxiv.org/abs/2509.16226)：评测 LLM 能否在新环境中从少量样例归纳潜在科学规律，超越显式方程拟合任务。
+- [From Scores to Steps: Diagnosing and Improving LLM Performance in Evidence-Based Medical Calculations](https://arxiv.org/abs/2509.16584)：可作为科学知识与领域推理的Bench候选；核心关注“Diagnosing and Improving LLM Performance in Evidence-Based Medical Calculations”。
+- [Everyday Physics in Korean Contexts: A Culturally Grounded Physical Reasoning Benchmark](https://arxiv.org/abs/2509.17807)：评测科学知识与科学推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [The Open Catalyst 2025 (OC25) Dataset and Models for Solid-Liquid Interfaces](https://arxiv.org/abs/2509.17862)：提供大型数据集与模型，用于评测固液催化界面上的原子预测能力。
+- [CFD-LLMBench](https://arxiv.org/abs/2509.20374)：评测 LLM 在 computational fluid dynamics 中的能力。核心思想是结合 CFD 知识问答、数值与物理推理以及 OpenFOAM 式 workflow implementation，使科学评测同时覆盖概念理解和可执行仿真实践。
+- [MLIP Arena: Advancing Fairness and Transparency in Machine Learning Interatomic Potentials via an Open, Accessible Benchmark Platform](https://arxiv.org/abs/2509.20630)（[榜单](https://huggingface.co/spaces/atomind/mlip-arena)）：提供开放的机器学习原子间势基准平台，强调公平透明的模型比较。
+- [CaTS-Bench: Can Language Models Describe Time Series?](https://arxiv.org/abs/2509.20823)：评测语言模型描述时间序列数据的能力。
+- [CrystalGym: A New Benchmark for Materials Discovery Using Reinforcement Learning](https://arxiv.org/abs/2509.23156)：提供晶体材料发现的 RL 环境，让 agent 用直接 DFT 奖励优化 band gap、bulk modulus、density 等目标性质。
+- [FedAgentBench](https://arxiv.org/abs/2509.23803)：评测面向联邦医学影像分析的 server-client LLM agents，重点覆盖客户端选择、预处理、标签协调和隐私保护生物医学 workflow 中的跨站点编排。
+- [How Effective Are Time-Series Models for Precipitation Nowcasting? A Comprehensive Benchmark for GNSS-Based Precipitation Nowcasting](https://arxiv.org/abs/2509.25263)：比较 GNSS 降水临近预报中的时间序列模型，评测从大气信号数据进行短时降雨预测的能力。
+- [Mechanisms of Matter: Language Inferential Benchmark on Physicochemical Hypothesis in Materials Synthesis](https://arxiv.org/abs/2509.25281)：面向材料合成 physicochemical hypothesis reasoning 的 benchmark。核心思想是评估 LLM 能否生成受机理约束支持的材料合成假设。
+- [BioML-bench](https://doi.org/10.1101/2025.09.01.673319)：评测 AI agents 的端到端生物医学机器学习 workflow，检查系统能否完成生物医学 ML 分析，而不是只回答孤立生物学问题。
+- [Evaluating the Use of Large Language Models as Synthetic Social Agents in Social Science Research](https://arxiv.org/abs/2509.26080)：面向科学知识与科学建模，补充评测基准、数据集、协议或指标。
+- [Probing the Critical Point (CritPt) of AI Reasoning: a Frontier Physics Research Benchmark](https://arxiv.org/abs/2509.26574): 用未发表的现代物理研究挑战评估 frontier physics reasoning，覆盖多个物理方向和分解子任务。
 - [MMCR](https://openaccess.thecvf.com/content/ICCV2025/html/Tian_MMCR_Benchmarking_Cross-Source_Reasoning_in_Scientific_Papers_ICCV_2025_paper.html)：评什么：科学论文中的跨来源推理。核心思想：整合文本、图、表和论文上下文等多种来源，让 scientific-paper reasoning 显式成为多模态任务。
+- [AstroMMBench](https://arxiv.org/abs/2510.00063)：评估多模态大模型对天文图像的理解能力。核心思想：用 6 个天体物理子领域的 621 道专家审核选择题，测试通用 MLLM 是否能理解专业科学图像，而不只是日常视觉场景。
+- [PRISM-Physics](https://arxiv.org/abs/2510.03185)：从过程层面评估物理推理。核心思想：把解题过程表示为公式因果 DAG，从而评估中间依赖、错误和推理路径，而不只看最终答案。
+- [Large Language Models Achieve Gold Medal Performance at the International Olympiad on Astronomy & Astrophysics (IOAA)](https://arxiv.org/abs/2510.05016)：评什么：用 IOAA 风格天文与天体物理任务评测科学推理上限。
 - [CMT-Benchmark](https://arxiv.org/abs/2510.05228)：评测凝聚态理论中的研究级推理与可程序判分物理任务；核心思想是用非对易算符、QMC、DMRG 等专家题型测试模型是否能处理前沿物理推导和计算约束。
-- [AstaBench](https://arxiv.org/abs/2510.21652)（[开源代码](https://github.com/allenai/asta-bench)）：评测综合科研 agent 能力；核心思想是用 11 个科研 benchmark 和标准化工具环境覆盖文献检索、代码执行、数据分析和科学发现流程。
+- [NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](https://arxiv.org/abs/2510.07172)：评什么：LLM agent 的可泛化科学定律发现能力。核心思想是检验 agent 是否能发现可迁移规律，而不是只拟合已见科学样例。
+- [DyReMe](https://arxiv.org/abs/2510.09275)：面向医学诊断的动态 benchmark。核心思想：从公开考试式医学 QA 转向带临床混杂因素和可信性检查的诊断场景，降低数据污染导致的分数膨胀。
+- [StatEval](https://arxiv.org/abs/2510.09517)：评估统计学知识与推理。核心思想：同时覆盖本科/研究生层级统计题和研究级证明题，并用人类校验配合可扩展题目构造流程。
+- [InteractScience: Programmatic and Visually-Grounded Evaluation of Interactive Scientific Demonstration Code Generation](https://arxiv.org/abs/2510.09724)：它给科学知识、科学推理或专业科学任务提供明确评测协议，适合补充 scientific knowledge Bench。
+- [ExpVid: A Benchmark for Experiment Video Understanding & Reasoning](https://arxiv.org/abs/2510.11606)：评测实验视频理解与推理；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [ACADREASON](https://arxiv.org/abs/2510.11652)：评估学术研究问题上的推理能力。核心思想：从近年顶级出版物中抽取并专家标注计算机科学、经济学、法学、数学和哲学问题，测试 LLM 与 agent 的高层次学术推理。
+- [MatSciBench: Benchmarking the Reasoning Ability of Large Language Models in Materials Science](https://arxiv.org/abs/2510.12171)：类型：benchmark/评测协议。核心价值：为 1.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [MedKGEval: A Knowledge Graph-Based Multi-Turn Evaluation Framework for Open-Ended Patient Interactions with Clinical LLMs](https://arxiv.org/abs/2510.12224)：评什么：用知识图谱支撑多轮临床互动评测，补充医学知识和长上下文能力。
+- [Continuous SUN (Stable, Unique, and Novel) Metric for Generative Modeling of Inorganic Crystals](https://arxiv.org/abs/2510.12405)：为无机晶体生成模型提出连续的稳定性、唯一性与新颖性评测指标。
+- [AtomBench](https://arxiv.org/abs/2510.16165)：评测 GPT、diffusion 与 flow 架构下的生成式原子结构模型。
+- [Optimization Benchmark for Diffusion Models on Dynamical Systems](https://arxiv.org/abs/2510.19376)：评测 diffusion-model optimization 在 dynamical systems 上的表现，连接生成模型与科学动力系统任务。
+- [AstaBench](https://arxiv.org/abs/2510.21652)（[开源代码](https://github.com/allenai/asta-bench)，[榜单](https://huggingface.co/spaces/allenai/asta-bench-leaderboard)）：评测综合科研 agent 能力；核心思想是用 11 个科研 benchmark 和标准化工具环境覆盖文献检索、代码执行、数据分析和科学发现流程。
+- [AQCat25: Unlocking spin-aware, high-fidelity machine learning potentials for heterogeneous catalysis](https://arxiv.org/abs/2510.22938)：发布面向异相催化机器学习势评测与训练的自旋感知高保真数据集。
+- [SciTrust 2.0: A Comprehensive Framework for Evaluating Trustworthiness of Large Language Models in Scientific Applications](https://arxiv.org/abs/2510.25908)：评测科学应用中 LLM 的 trustworthiness；核心思想是把科学可靠性维度组织进统一框架，用来判断模型是否能用于高风险研究场景。
+- [Lean4Physics / LeanPhysBench](https://arxiv.org/abs/2510.26094)：评测 Lean 4 中的大学物理推理。核心思想是把形式化物理库和 200 个经同行审阅的物理命题结合起来，要求模型用 proof-assistant-checkable reasoning 解决物理问题。
+- [QuantumBench: A Benchmark for Quantum Problem Solving](https://arxiv.org/abs/2511.00092)：补充scientific knowledge方向的基准或评测套件，核心围绕《QuantumBench: A Benchmark for Quantum Problem Solving》。
+- [Probing Logical Reasoning of MLLMs in Scientific Diagrams](https://doi.org/10.18653/v1/2025.emnlp-main.542)：评测 MLLM 在科学食物网和食物链图中的视觉 grounded 逻辑推理。核心思想：用复杂度递增的结构化问题模板，检验模型是否真正利用科学图示中的视觉证据。
+- [DAMBench: A Multi-Modal Benchmark for Deep Learning-based Atmospheric Data Assimilation](https://arxiv.org/abs/2511.01468)：基准化评测多模态大气数据同化，检验深度模型能否融合观测与大气状态来初始化预报。
+- [Epidemiology of Large Language Models: A Benchmark for Observational Distribution Knowledge](https://arxiv.org/abs/2511.03070)：评测 observational distribution knowledge；核心思想是检查模型是否理解流行病学分布和观察性事实，而不只是回答记忆型知识题。
 - [LPFQA](https://arxiv.org/abs/2511.06346)（数据集：[m-a-p/LPFQA](https://huggingface.co/datasets/m-a-p/LPFQA)）：评测来自专业论坛/社区语境的长尾问答；核心思想是让问题更贴近日常专业交流形式，强调检索与综合归纳。
+- [mmJEE-Eval: A Bilingual Multimodal Benchmark for Evaluating Scientific Reasoning in Vision-Language Models](https://arxiv.org/abs/2511.09339)：使用 JEE Advanced 风格题的双语多模态科学推理基准；核心思想是区分科学推理表达和模式匹配。
+- [CLINB](https://arxiv.org/abs/2511.11597)：评测基础模型的气候科学智能。核心思想是用真实用户问题、多模态 grounded evidence 和气候科学家 rubric，同时测试专家级综合能力，以及引用和图片是否真正支撑答案。
+- [AA-Omniscience: Evaluating Cross-Domain Knowledge Reliability in Large Language Models](https://arxiv.org/abs/2511.13029)：跨领域知识可靠性与未知意识评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [When AI Does Science: Evaluating the Autonomous AI Scientist KOSMOS in Radiation Biology](https://arxiv.org/abs/2511.13825)：评估 autonomous AI scientist KOSMOS 在放射生物学问题上的表现。核心思想是用 random-gene null baseline 检查 agent 生成的科学假设是否具有真实生物学意义。
+- [ATLAS: A High-Difficulty, Multidisciplinary Benchmark for Frontier Scientific Reasoning](https://arxiv.org/abs/2511.14366)：用高难跨学科任务评测前沿科学推理，缓解普通 benchmark 饱和。
+- [MedBench v4: A Robust and Scalable Benchmark for Evaluating Chinese Medical Language Models, Multimodal Models, and Intelligent Agents](https://arxiv.org/abs/2511.14439)：评测中文医学 LLM、多模态模型与智能 agent。核心思想：提供大规模云端评测基础设施，覆盖专科轨道与临床工作流压力。
+- [SciEGQA: A Dataset for Scientific Evidence-Grounded Question Answering and Reasoning](https://arxiv.org/abs/2511.15090)：面向科学文档的 evidence-grounded QA benchmark。核心思想是要求模型定位证据区域并对科学文档结构进行推理。
+- [ChemO / ChemLabs](https://arxiv.org/abs/2511.16205)：基于 2025 年国际化学奥林匹克题目评估多模态化学推理。核心思想是把需要视觉输出的化学任务改写为可自动评测形式，并用负责分解、感知、推理和审计的层级多代理系统求解。
+- [OceanForecastBench: A Benchmark Dataset for Data-Driven Global Ocean Forecasting](https://arxiv.org/abs/2511.18732)：评测数据驱动全球海洋预报，围绕海洋状态变量和长时程海洋动力学比较模型。
+- [VeriSciQA: An Auto-Verified Dataset for Scientific Visual Question Answering](https://arxiv.org/abs/2511.19899)：自动验证的科学视觉问答数据集。核心思想是从科学论文图表生成并验证 VQA 项，让评测更聚焦图表理解而非通用图像问答。
 - [CGBench](https://openreview.net/forum?id=UEGEHy1IQE)（[开源代码](https://github.com/owencqueen/cgbench)，[数据集](https://huggingface.co/datasets/owencqueen/cgbench_data)）：评测临床遗传学文献解释；核心思想是贴近 ClinGen 专家流程，让模型从论文中抽取实验结果、判断证据强度并解释遗传变异相关证据。
+- [CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](https://arxiv.org/abs/2510.11985)：CGBench 评测临床遗传学研究中的科学推理，属于 scientific knowledge/reasoning benchmark。
 - [Chemistry RAG Benchmark](https://openreview.net/forum?id=qG4dL0bart)：评什么：化学领域的 retrieval-augmented generation。核心思想：测试模型是否能检索、整合和引用化学证据，而不是只依赖参数化领域记忆。
 - [MAC](https://openreview.net/forum?id=0aHOVhkuOB)：评什么：live multimodal scientific understanding。核心思想：让科学 MLLM 评测更接近当前研究材料，并降低静态多模态科学题集饱和的风险。
+- [MAC: A Live Benchmark for Multimodal Large Language Models in Scientific Understanding](https://arxiv.org/abs/2508.15802)：类型：benchmark/评测协议。核心价值：为 1.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [SUPERChem: A Multimodal Reasoning Benchmark in Chemistry](https://arxiv.org/abs/2512.01274)：评测专家级多模态化学推理。核心思想：在化学问题中结合文本、分子结构、图示和过程级推理。
+- [QuantumCanvas: A Multimodal Benchmark for Visual Learning of Atomic Interactions](https://arxiv.org/abs/2512.01519)：补充科学知识的 Bench 条目，重点是《QuantumCanvas: A Multimodal Benchmark for Visual Learning of Atomic Interactions》。
+- [BlendedNet++: A Large-Scale Blended Wing Body Aerodynamics Dataset and Benchmark](https://arxiv.org/abs/2512.03280)：发布融合翼身布局气动数据和基线，用于评测神经代理模型对飞机流场和力的预测能力。
+- [Evaluation of Foundational Machine Learned Interatomic Potentials for Migration Barrier Predictions](https://arxiv.org/abs/2512.03642)：在电池相关结构上基准测试基础 MLIP 对离子迁移势垒和几何结构的预测能力。
+- [6 Fingers, 1 Kidney: Natural Adversarial Medical Images Reveal Critical Weaknesses of Vision-Language Models](https://arxiv.org/abs/2512.04238)：评测 VLM 面对罕见解剖变异的鲁棒性。核心思想：用天然对抗性的医学图像暴露普通病例 benchmark 难以发现的失败。
+- [CARDBiomedBench: A Benchmark for Evaluating Large Language Model Performance in Biomedical Research](https://doi.org/10.1016/j.landig.2025.100943)：评测 LLM 在生物医学研究中的表现。核心思想：用数据密集的生物医学问答测试神经退行性疾病等领域的推理。
+- [Genome-Bench: A Scientific Reasoning Benchmark from Real-World Expert Discussions](https://doi.org/10.1101/2025.06.02.657538)：可作为科学知识与领域推理的Bench候选；核心关注“A Scientific Reasoning Benchmark from Real-World Expert Discussions”。
+- [ChemPaperBench: A Multi-Domain Benchmark for Literature-Grounded Chemical Reasoning of LLM-Based Multi-Agent Systems](https://doi.org/10.1109/icdmw69685.2025.00014)：评估 LLM-based multi-agent systems 文献接地化学推理的 benchmark。核心思想是测试 agent 能否从最新科学论文中抽取信息并完成化学任务推理。
+- [PathBench: Advancing the Benchmark of Large Multimodal Models for Pathology Image Understanding at Patch and Whole Slide Level](https://doi.org/10.1109/tmi.2025.3584857)：可作为科学知识与领域推理的Bench候选；核心关注“Advancing the Benchmark of Large Multimodal Models for Pathology Image Understanding at Patch and Whole Slide Level”。
+- [LeMat-GenBench](https://arxiv.org/abs/2512.04562)：提供晶体生成模型的统一评估框架和公开排行榜，评测稳定性、新颖性、多样性等材料发现指标。
+- [Benchmarking universal machine learning interatomic potentials for supported nanoparticles: decoupling energy accuracy from structural exploration](https://arxiv.org/abs/2512.05221)：评测通用原子间势在负载纳米颗粒催化剂中的表现，并区分能量精度与结构探索质量。
 - [SymPyBench](https://arxiv.org/abs/2512.05954)：评什么：带动态参数化物理题和可执行 Python 标准答案的科学推理。核心思想：用 SymPy 支撑的解题代码生成题目变体，不只统计准确率，也衡量一致性、失败率和跨变体混淆。
+- [CarBench: A Comprehensive Benchmark for Neural Surrogates on High-Fidelity 3D Car Aerodynamics](https://arxiv.org/abs/2512.07847)：在高保真 3D 汽车气动场景中评测神经代理模型。
+- [TechImage-Bench: Rubric-Based Evaluation for Technical Image Generation](https://arxiv.org/abs/2512.12220)：基于 rubric 的技术图像生成 benchmark。核心思想是用领域 rubric 评估生物示意图、技术图等信息密集型科学插图。
+- [Evaluating large language models on multimodal chemistry olympiad exams](https://arxiv.org/abs/2512.14989)：评测 LLM 在多模态化学奥赛题上的表现。核心思想：同时测试符号图、分子结构和高阶化学推理。
+- [Geometric Laplace Neural Operator](https://arxiv.org/abs/2512.16409)：Geometric Laplace Neural Operator 补充科学知识与科学建模方向的基准、数据集、指标或评测协议。
+- [Tackling dataset curation challenges towards reliable machine learning: a case study on thermoelectric materials](https://arxiv.org/abs/2512.18653)：提供面向Scientific Knowledge能力的基准、数据集或评测协议。
+- [QMBench](https://arxiv.org/abs/2512.19753)：评什么：LLM agent 的研究级量子材料推理。核心思想：覆盖结构性质、电子性质、热力学、对称性和计算方法问题，要求模型应用凝聚态知识与研究工作流，而不只是回答教材式物理题。
+- [FEM-Bench: A Structured Scientific Reasoning Benchmark for Evaluating Code-Generating LLMs](https://arxiv.org/abs/2512.20732)：它给科学知识、科学推理或专业科学任务提供明确评测协议，适合补充 scientific knowledge Bench。
+- [A Multi-fidelity Double-Delta Wing Dataset and Empirical Scaling Laws for GNN-based Aerodynamic Field Surrogate](https://arxiv.org/abs/2512.20941)：发布多保真气动数据集，并研究 GNN-based 场代理模型的 scaling laws。
+- [PhononBench:A Large-Scale Phonon-Based Benchmark for Dynamical Stability in Crystal Generation](https://arxiv.org/abs/2512.21227)：用大规模声子分析评测 AI 生成晶体的动力学稳定性，把材料生成评测从静态结构指标扩展到稳定性维度。
+- [LiveProteinBench: A Contamination-Free Benchmark for Assessing Models'Specialized Capabilities in Protein Science](https://arxiv.org/abs/2512.22257)：面向蛋白科学专门能力的污染受控 benchmark；核心思想是用 live 或新鲜度受控的蛋白任务评测超越记忆型生物医学事实的领域推理。
+- [SciEvalKit: An Open-source Evaluation Toolkit for Scientific General Intelligence](https://arxiv.org/abs/2512.22334)：SciEvalKit 是面向科学智能的开源评测 toolkit，覆盖多学科和多任务能力。
+- [HiSciBench](https://arxiv.org/abs/2512.22899)：评估从阅读到发现的层级化 scientific intelligence。核心思想是把任务组织为科学素养、文献解析、基于文献的 QA、文献综述生成和科学发现，并覆盖多学科与多模态输入。
+- [The Open Polymers 2026 (OPoly26) Dataset and Evaluations](https://arxiv.org/abs/2512.23117)：发布开放聚合物原子数据集与评测套件，用于检验大分子体系中的学习势模型。
+- [RxnBench: A Multimodal Benchmark for Evaluating Large Language Models on Chemical Reaction Understanding from Scientific Literature](https://arxiv.org/abs/2512.23565)：评测 MLLM 对科学 PDF 中化学反应图和上下文的理解；核心思想是把反应图解析与化学推理组织成分层 QA 任务。
 - [Encyclo-K](https://arxiv.org/abs/2512.24867)（数据集：[m-a-p/Encyclo-K](https://huggingface.co/datasets/m-a-p/Encyclo-K)）：评测“书籍级/长篇”专业知识掌握；核心思想是从书籍材料抽取可组合的原子知识点，衡量长期知识内化而非短片段记忆。
 - [MME-SCI](https://ojs.aaai.org/index.php/AAAI/article/view/37829)：评什么：MLLM 的科学多模态理解。核心思想：构建更全面、更有挑战性的科学 benchmark，把科学视觉证据和领域推理放在一起评估。
+- [MME-SCI: A Comprehensive and Challenging Science Benchmark for Multimodal Large Language Models](https://arxiv.org/abs/2508.13938)：补充scientific knowledge方向的基准或评测套件，核心围绕《MME-SCI: A Comprehensive and Challenging Science Benchmark for Multimodal Large Language Models》。
+- [A Chemically Grounded Evaluation Framework for Generative Models in Materials Discovery](https://arxiv.org/abs/2601.00886)：从化学有效性出发评估材料发现生成模型，检查候选材料是否满足领域约束，而不只看生成分布相似度。
+- [MedDialogRubrics: A Comprehensive Benchmark and Evaluation Framework for Multi-turn Medical Consultations in Large Language Models](https://arxiv.org/abs/2601.03023)：面向多轮医疗咨询的 benchmark 和 rubric 框架。核心思想是在类临床对话中评估信息收集和诊断推理，而不是单轮医学问答。
+- [A3-Bench](https://arxiv.org/abs/2601.09274)：评测基于 anchor 与 attractor 激活的记忆驱动科学推理；核心思想是为科学推理题标注可激活的知识锚点和吸引结构，并用 AAUI 等指标衡量模型是否在多步推理中调用并整合了正确先验知识。
+- [Patient-Similarity Cohort Reasoning in Clinical Text-to-SQL](https://arxiv.org/abs/2601.09876)：它给科学知识、科学推理或专业科学任务提供明确评测协议，适合补充 scientific knowledge Bench。
+- [MedConsultBench: A Full-Cycle, Fine-Grained, Process-Aware Benchmark for Medical Consultation Agents](https://arxiv.org/abs/2601.12661)：用明确任务、协议或数据集评测scientific and medical knowledge evaluation。
+- [Teaching and Evaluating LLMs to Reason About Polymer Design Related Tasks](https://arxiv.org/abs/2601.16312)：评测LLM 的聚合物设计知识覆盖与推理能力；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [MRAG: Benchmarking Retrieval-Augmented Generation for Bio-medicine](https://arxiv.org/abs/2601.16503)：评测生物医学领域的检索增强生成。核心思想：跨英文与中文资源测试生物医学检索和有依据回答生成。
+- [C2NP: A Benchmark for Learning Scale-Dependent Geometric Invariances in 3D Materials Generation](https://arxiv.org/abs/2601.19076)：评测材料生成模型在晶体到纳米颗粒尺度转换中的表现，考察表面截断、晶格恢复和尺度相关几何不变性。
 - [FrontierScience](https://arxiv.org/abs/2601.21165)：评测专家级前沿科学推理，覆盖物理、化学和生物学的 Olympiad 与 Research 两个子集。核心思想是由领域专家构造极难、可核验的问题，以研究式知识综合和高难竞赛推理同时压力测试模型科学能力。
-- [FIRE-Bench](https://arxiv.org/abs/2602.02905)（[开源代码](https://github.com/maitrix-org/FIRE-Bench)）：评测科研 agent 对既有科学洞见的全流程再发现能力；核心思想是只给高层研究问题，让 agent 自主构思、实验、执行与归纳，再用 claim-level precision/recall/F1 衡量是否重建了论文中的可验证结论。
+- [BioAgent Bench](https://arxiv.org/abs/2601.21800)：评测 AI agents 在 RNA-seq、variant calling、metagenomics 等常见生物信息 pipeline 上的表现，并通过压力测试和 artifact 级评分衡量流程进展与结果有效性。
+- [Retrieval-Infused Reasoning Sandbox: A Benchmark for Decoupling Retrieval and Reasoning Capabilities](https://arxiv.org/abs/2601.21937)：它给科学知识、科学推理或专业科学任务提供明确评测协议，适合补充 scientific knowledge Bench。
+- [TCBench: A Benchmark for Tropical Cyclone Track and Intensity Forecasting at the Global Scale](https://arxiv.org/abs/2601.23268)：在全球尺度评测热带气旋路径和强度预测。
+- [QUASAR: A Universal Autonomous System for Atomistic Simulation and a Benchmark of Its Capabilities](https://arxiv.org/abs/2602.00185)：评测科学知识与科学推理。核心思想：围绕论文中的任务、数据或协议（A Universal Autonomous System for Atomistic Simulation and a Benchmark of Its Capabilities）形成可复用比较基准。
+- [MATRIX: A Multimodal Benchmark and Post-Training Framework for Materials Science](https://arxiv.org/abs/2602.00376)：材料科学多模态推理 benchmark；核心思想是测试模型能否整合实验视觉证据和物理理论。
+- [From Knowledge to Inference: Scaling Laws of Specialized Reasoning on GlobalHealthAtlas](https://arxiv.org/abs/2602.00491)：提供多语言公共卫生推理数据集。核心思想：在多个领域和语言中覆盖带安全与证据约束的公共卫生推理。
+- [A New Workflow for Materials Discovery Bridging the Gap Between Experimental Databases and Graph Neural Networks](https://arxiv.org/abs/2602.00756)：评估把实验数据库记录转换为图神经网络输入的材料发现工作流，用于性质筛选。
+- [Symmetry-restricted energy landscapes as a benchmark for machine learned interatomic potentials](https://arxiv.org/abs/2602.02237)：用对称性受限能量景观评测机器学习原子间势，检查其是否保持材料结构路径上的物理约束。
+- [FermBench: A new benchmark for measuring the capabilities of LLMs on fermentation knowledge](https://doi.org/10.1016/j.caeai.2026.100577)：评测LLM 的发酵知识能力评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [ABSortQA: An Evaluation of Chemical Reasoning in Large Language Models Through Pairwise Comparison of Acid and Base Strength](https://doi.org/10.1109/southeastcon63549.2026.11476267)：评测通过酸碱强度成对比较评测化学推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [RAGPPI: Retrieval-Augmented Generation Benchmark for Protein-Protein Interactions in Drug Discovery](https://doi.org/10.18653/v1/2026.eacl-long.203)：评测蛋白质相互作用推理中的 RAG。核心思想：检验 RAG 系统能否识别药物发现中蛋白质相互作用的生物学影响。
+- [TCMI-F-6D benchmark construction and quantitative assessment of interdisciplinary foundational competencies in traditional Chinese medicine informatics using large language models](https://doi.org/10.3389/frai.2026.1780967)：评测六维中医药信息学基础能力评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Assessing Factual Knowledge in Large Language Models Using Prime Recall](https://doi.org/10.1109/iisec69317.2026.11418425)：通过 Prime Recall 评估大模型事实知识。
+- [Evaluating the Limits of Long-Horizon Reasoning in Chemistry: A High-Difficulty Benchmark via Chain-of-Thought Filtering](https://doi.org/10.1109/iscait69154.2026.11477437)：用经过思维链筛选的高难度问题评测化学推理，补充现有化学问答评测。
+- [FIRE-Bench](https://arxiv.org/abs/2602.02905)（[开源代码](https://github.com/maitrix-org/FIRE-Bench)，[榜单](https://firebench.github.io/)）：评测科研 agent 对既有科学洞见的全流程再发现能力；核心思想是只给高层研究问题，让 agent 自主构思、实验、执行与归纳，再用 claim-level precision/recall/F1 衡量是否重建了论文中的可验证结论。
+- [ChemPro: A Progressive Chemistry Benchmark for Large Language Models](https://arxiv.org/abs/2602.03108)：面向 LLM 的渐进式化学 benchmark。核心思想是按难度与推理类型组织化学题，覆盖记忆、数值推理、长程推理和多概念综合。
+- [CPIQA: Climate Paper Image Question Answering Dataset for Retrieval-Augmented Generation with Context-based Query Expansion](https://doi.org/10.18653/v1/2025.climatenlp-1.15)：提供面向科学知识与科研推理能力的基准、数据集、评分规程或评测协议。
+- [Evaluation of Effectiveness of Large Language Models in Ontology and Knowledge Graph Creation](https://doi.org/10.17821/srels/2025/v62i2/171792)：可作为“科学知识 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [There are significant differences among artificial intelligence large language models when answering scientific questions](https://doi.org/10.3389/frai.2025.1664303)：比较不同 LLM 回答科学问题的表现，展示模型之间在科学问答准确性和可靠性上的差异。
+- [Development of an Aerospace Engineering Evaluation Set for Large Language Model Benchmarking](https://doi.org/10.2514/6.2025-0702)：补充面向大模型评测的航空航天工程评估集。
+- [Aviation Language Understanding Evaluation (ALUE) – Large Language Model Benchmark with Aviation Datasets](https://doi.org/10.2514/6.2025-3247)：补充面向大模型的航空领域语言理解基准。
+- [Mapping the Web of Science, a large-scale graph and text-based dataset with LLM embeddings](https://arxiv.org/abs/2602.04630)：发布带 LLM embedding 的 Web of Science 图与文本数据集，支撑学术检索、聚类和科学图谱推理评测。
+- [From Evaluation to Design: Using Potential Energy Surface Smoothness Metrics to Guide Machine Learning Interatomic Potential Architectures](https://arxiv.org/abs/2602.04861)：通过受控键长变形测试势能面平滑性，发现普通能量和力回归指标容易漏掉的 MLIP 伪影。
 - [BABE](https://arxiv.org/abs/2602.05857)：Seed2.0 报告中列出的科学/生物相关评测；核心思想是用更科学语境的材料与问题考察“研究式理解与推理”（具体构造与任务形态以论文/报告为准）。
-- [AIRS-Bench](https://arxiv.org/abs/2602.06855)（[开源代码](https://github.com/facebookresearch/airs-bench)）：评测前沿 AI 研究代理的端到端科研流程；核心思想是把 idea generation、实验分析与迭代修订放进同一套任务。
-- [ResearchGym](https://arxiv.org/abs/2602.15112)（[开源代码](https://github.com/Anikethh/ResearchGym)）：评测真实 AI 研究任务中的长时程 agent；核心思想是给出问题陈述、裁剪代码库、评估脚本和基线分数，让 agent 在有限预算内推进开放式研究目标。
-- [SciVisAgentBench](https://arxiv.org/abs/2603.29139)（[开源代码](https://github.com/KuangshiAi/SciVisAgentBench)）：评测科学数据分析与可视化 agent；核心思想是覆盖多个应用领域、数据类型和可视化操作，检查 agent 是否能把科学数据转化为可靠图形表达。
-- [LABBench2](https://arxiv.org/abs/2604.09554)（[开源代码](https://github.com/EdisonScientific/labbench2)）：评测更真实的生物研究任务；核心思想是在 LAB-Bench 基础上扩大任务规模并强化文件处理、外部 runner 和工具开关等 agent 评测接口。
+- [AIRS-Bench](https://arxiv.org/abs/2602.06855)（[开源代码](https://github.com/facebookresearch/airs-bench)，[榜单](https://github.com/facebookresearch/airs-bench#leaderboard)）：评测前沿 AI 研究代理的端到端科研流程；核心思想是把 idea generation、实验分析与迭代修订放进同一套任务。
+- [SciFlow-Bench: Evaluating Structure-Aware Scientific Diagram Generation via Inverse Parsing](https://arxiv.org/abs/2602.09809)：它给科学知识、科学推理或专业科学任务提供明确评测协议，适合补充 scientific knowledge Bench。
+- [SimuScene](https://arxiv.org/abs/2602.10840)：评测用代码模拟物理场景的生成能力。核心思想：要求模型把跨物理领域的概念转成可执行仿真，并用人工核验测试和视觉奖励实验检查物理表达是否可靠。
+- [Knowing When Not to Answer: Abstention-Aware Scientific Reasoning](https://arxiv.org/abs/2602.14189)：可作为科学知识方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [ResearchGym](https://arxiv.org/abs/2602.15112)（[开源代码](https://github.com/Anikethh/ResearchGym)，[榜单](https://anikethh.github.io/ResearchGym/)）：评测真实 AI 研究任务中的长时程 agent；核心思想是给出问题陈述、裁剪代码库、评估脚本和基线分数，让 agent 在有限预算内推进开放式研究目标。
+- [Classroom Final Exam: An Instructor-Tested Reasoning Benchmark](https://arxiv.org/abs/2602.19517)：类型：benchmark/评测协议。核心价值：为 1.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Performance of universal machine learning potentials in global optimization](https://arxiv.org/abs/2602.23515)：评测通用学习势在无约束全局结构优化过程中的表现。
+- [How Well Do Multimodal Models Reason on ECG Signals?](https://arxiv.org/abs/2603.00312)：评测ECG 信号上多模态推理轨迹的语义正确性；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Advances, challenges and prospective research when geographical information science meets digital twin](https://doi.org/10.1080/27525783.2025.2610851)：梳理地理信息科学与数字孪生交汇处的评测问题，在本节中更适合作为地理空间 benchmark 设计参考。
+- [Probing Materials Knowledge in LLMs: From Latent Embeddings to Reliable Predictions](https://arxiv.org/abs/2603.01834)：探测 LLM embedding 和预测头中的材料知识，检验潜在表示能否支撑可靠的材料性质推断。
+- [SciTaRC: Benchmarking QA on Scientific Tabular Data that Requires Language Reasoning and Complex Computation](https://arxiv.org/abs/2603.08910)：评测科学表格数据问答。核心思想：要求围绕科学表格进行语言推理与复杂计算，而不只是查表。
+- [Neural Field Thermal Tomography: A Differentiable Physics Framework for Non-Destructive Evaluation](https://arxiv.org/abs/2603.11045)：用可微物理框架进行神经场热层析成像，评测无损检测中的热场重建和材料内部状态推断。
+- [Using a Human-AI Teaming Approach to Create and Curate Scientific Datasets with the SciLire System](https://arxiv.org/abs/2603.12638)：评估 SciLire 这一人机协作流程从文献创建和整理科学数据集的能力，强调数据集质量控制。
+- [SciDesignBench: Benchmarking and Improving Language Models for Scientific Inverse Design](https://arxiv.org/abs/2603.12724)：SciDesignBench 评测科学逆向设计任务，适合 Scientific Knowledge Bench。
+- [Step-CoT: Stepwise Visual Chain-of-Thought for Medical Visual Question Answering](https://arxiv.org/abs/2603.13878)：评测医学视觉问答中的分步推理。核心思想：为医学 VQA 提供结构化临床推理监督，而不是自由形式解释。
+- [Infinite Problem Generator: Verifiably Scaling Physics Reasoning Data with Agentic Workflows](https://arxiv.org/abs/2603.14486)：评什么：评测可验证生成的物理推理问题；核心思想是用 agentic workflow 扩展科学推理任务并保持可检查性。
+- [InterveneBench](https://arxiv.org/abs/2603.15542)：评测真实社会系统中的 intervention reasoning 与 causal study design。核心思想：要求模型完成面向政策干预的端到端研究设计推理，而不是回答孤立因果题，使科学推理更贴近真实研究实践。
+- [CURE: A Multimodal Benchmark for Clinical Understanding and Retrieval Evaluation](https://arxiv.org/abs/2603.19274)：评测基于权威医学文献的临床多模态理解与检索；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [ReXInTheWild: A Unified Benchmark for Medical Photograph Understanding](https://arxiv.org/abs/2603.19517)：评测面向远程医疗场景的医学照片理解和多模态推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [SimulCost](https://arxiv.org/abs/2603.20253)（[开源代码](https://github.com/Rose-STL-Lab/SimulCost-Bench)）：评测物理仿真参数调优中的 cost-aware LLM agent；核心思想是在 single-round guess 与 multi-round adjustment 任务中同时统计准确率和仿真成本，把科研工具调用成本显式纳入评测，而不只计算 token。
+- [Physics-Informed Ultrasonic SVM for Coating Interfacial Stiffness Evaluation](https://doi.org/10.1016/j.ijmecsci.2026.111702)：用物理约束 SVM 从超声测量评估涂层界面刚度，把无损检测信号与力学性质估计联系起来。
+- [Assessing the Robustness of Climate Foundation Models under No-Analog Distribution Shifts](https://arxiv.org/abs/2603.23043)：面向科学知识与科学建模，补充用于scientific-modeling, physics-informed learning, benchmark, or scientific-AI survey contribution的基准、数据集、指标、审计或实证协议。
+- [DepthCharge: A Domain-Agnostic Framework for Measuring Depth-Dependent Knowledge in Large Language Models](https://arxiv.org/abs/2603.23514)：DepthCharge 提供跨领域 follow-up questioning 的知识深度测量框架。
+- [Introduction of Applied Aerodynamics Surrogate Modeling Benchmark Cases](https://doi.org/10.2514/6.2025-0036)：提出应用气动代理建模 benchmark 案例，用标准气动数据和任务比较代理模型。
+- [Toward efficient dielectric material discovery: a comparative evaluation of Transformer and AutoML-based inverse learning](https://doi.org/10.1080/21870764.2025.2570561)：比较 Transformer 与 AutoML 逆向学习在介电材料发现中的表现，评测候选材料生成和性质目标匹配。
+- [Unveiling the limits of deep learning models in hydrological extrapolation tasks](https://doi.org/10.5194/hess-29-5871-2025)：通过基准、数据集或评测协议评估科学知识能力。
+- [Quantitative evaluation of the dependence of the Portevin-Le Chatelier effect on temperature and strain rate in an Al–Mg alloy (AA5083-H111): Insights from machine learning](https://doi.org/10.1016/j.euromechsol.2025.105989)：用机器学习量化 AA5083-H111 铝镁合金中 Portevin-Le Chatelier 效应随温度和应变率变化的规律。
+- [MoDeST: A dataset for Multi Domain Scientific Title Generation](https://doi.org/10.1016/j.knosys.2025.113557)：提供多领域科学标题生成数据集，评测模型能否根据研究内容生成简洁论文标题。
+- [ClimateIE: A Dataset for Climate Science Information Extraction](https://doi.org/10.18653/v1/2025.climatenlp-1.6)：定义气候科学信息抽取任务，把气候文本转成结构化变量、事件或关系以支撑证据分析。
+- [MolQuest: A Benchmark for Agentic Evaluation of Abductive Reasoning in Chemical Structure Elucidation](https://arxiv.org/abs/2603.25253)：评测化学结构解析中的 agentic 溯因推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Doctorina MedBench: End-to-End Evaluation of Agent-Based Medical AI](https://arxiv.org/abs/2603.25821)：通过模拟医生-患者交互评测 agent-based medical AI；核心思想是测试多步问诊、材料分析和临床决策行为，而不只是标准化医学题问答。
+- [HighlightBench: Benchmarking Markup-Driven Table Reasoning in Scientific Documents](https://arxiv.org/abs/2603.26784)：评测科学文档中的 markup-driven table reasoning。核心思想是测试 MLLM 能否识别高亮、下划线和加粗等线索，并把它们作为表格推理的逻辑指令使用。
+- [SEEPS4ALL: an open dataset for the verification of daily precipitation forecasts using station climate statistics](https://doi.org/10.5194/essd-18-713-2026)：提供用于日降水预报验证的开放数据集，使用站点气候统计来比较降水预报质量。
+- [When Choices Become Priors: Contrastive Decoding for Scientific Figure Multiple-Choice QA](https://arxiv.org/abs/2603.28026)：评估科学图表多选 QA 中的答案选项先验；核心思想是检查模型是否依赖视觉证据，而不是选择看似合理的选项。
+- [SciVisAgentBench](https://arxiv.org/abs/2603.29139)（[开源代码](https://github.com/KuangshiAi/SciVisAgentBench)，[榜单](https://scivisagentbench.github.io/leaderboard.html)）：评测科学数据分析与可视化 agent；核心思想是覆盖多个应用领域、数据类型和可视化操作，检查 agent 是否能把科学数据转化为可靠图形表达。
+- [Starrydata: from published plots to shared materials data](https://doi.org/10.1080/27660400.2025.2506976)：把已发表图表转化为共享材料数据，评测从论文图像抽取和复用材料实验数据的流程。
+- [AQVolt26: High-Temperature r$^2$SCAN Halide Dataset for Universal ML Potentials and Solid-State Batteries](https://arxiv.org/abs/2604.02524)：发布高温卤化物数据集，用于评测固态电池场景中的通用原子间势。
+- [PolyReal: A Benchmark for Real-World Polymer Science Workflows](https://arxiv.org/abs/2604.02934)：评测真实聚合物科学 workflow；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [BibTeX Citation Hallucinations in Scientific Publishing Agents: Evaluation and Mitigation](https://arxiv.org/abs/2604.03159)：评什么：带 web search 的 scientific publishing agents 是否会产生 BibTeX 字段级幻觉。核心思想：按论文热度和新近程度分层测试 BibTeX 条目，暴露联网 agent 仍会出现的引用错误。
+- [Benchmarking Multi-turn Medical Diagnosis: Hold, Lure, and Self-Correction](https://arxiv.org/abs/2604.04325)：用明确任务、协议或数据集评测scientific and medical knowledge evaluation。
+- [DISSECT: Diagnosing Where Vision Ends and Language Priors Begin in Scientific VLMs](https://arxiv.org/abs/2604.06250)：诊断科学视觉语言模型何时依赖视觉证据或语言先验。
+- [CoRE MOF DB: A curated experimental metal-organic framework database with machine-learned properties for integrated material-process screening](https://doi.org/10.1016/j.matt.2025.102140)：提供带机器学习性质的实验金属有机框架数据库，用于材料与工艺一体化筛选。
+- [PMP-Inspired Earth-System Model Evaluation](https://arxiv.org/abs/2604.06567)：提出用于评估 deep-learning earth-system models 的 evaluation framework。
+- [LitXBench: A Benchmark for Extracting Experiments from Scientific Literature](https://arxiv.org/abs/2604.07649)：用 `LitXAlloy` 评测实验级文献抽取；该密集合金数据集来自 19 篇论文的 1,426 条测量，并以 Python objects 而不是扁平 CSV/JSON 存储，便于审计和程序化校验。
+- [CatBench framework for benchmarking machine learning interatomic potentials in adsorption energy predictions for heterogeneous catalysis](https://doi.org/10.1016/j.xcrp.2025.102968)：评测机器学习原子间势在异相催化吸附能预测中的表现。
+- [GeoMMBench and GeoMMAgent](https://arxiv.org/abs/2604.08896)：评测地学和遥感中的专家级多模态智能，覆盖多学科、多传感器和多任务类型。核心思想：检查模型能否把领域知识、视觉 grounding 和推理结合起来完成地理空间解读，并用 GeoMMAgent 提供检索与感知结合的 agent 基线。
+- [MCERF: Advancing Multimodal LLM Evaluation of Engineering Documentation with Enhanced Retrieval](https://arxiv.org/abs/2604.09552)：评测增强检索下的多模态工程文档问答，检验模型能否把答案扎根到检索到的图纸和规格说明。
+- [LABBench2](https://arxiv.org/abs/2604.09554)（[开源代码](https://github.com/EdisonScientific/labbench2)，[榜单](https://labs.edisonscientific.com/benchmarks/labbench2)）：评测更真实的生物研究任务；核心思想是在 LAB-Bench 基础上扩大任务规模并强化文件处理、外部 runner 和工具开关等 agent 评测接口。
+- [COMPOSITE-Stem](https://arxiv.org/abs/2604.09836)：用专家编写的理化生数任务评测超越封闭答案形式的前沿 STEM 推理。
+- [From UAV Imagery to Agronomic Reasoning: A Multimodal LLM Benchmark for Plant Phenotyping](https://arxiv.org/abs/2604.09907)：评测多模态 LLM 在 UAV 农学图像上的植物表型推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [TimeSeriesExamAgent: Creating Time Series Reasoning Benchmarks at Scale](https://arxiv.org/abs/2604.10291)：明确创建大规模时间序列推理 benchmark，可补充结构化时间证据和数值推理评测。
+- [Text2Arch: A Dataset for Generating Scientific Architecture Diagrams from Natural Language Descriptions](https://arxiv.org/abs/2604.14941)：评测从自然语言描述生成科学架构图，把文本理解与结构化图示构建连接起来。
+- [PRL-Bench: A Comprehensive Benchmark Evaluating LLMs'Capabilities in Frontier Physics Research](https://arxiv.org/abs/2604.15411)：评测前沿物理研究任务中的长程探索与程序化科学推理，可补足静态科学问答评测。
+- [QMutBench: A Dataset of Quantum Circuit Mutants](https://arxiv.org/abs/2604.15870)：提供量子电路 mutant 数据，用于测试分析或修复方法能否发现电路级行为变化和错误。
+- [SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](https://arxiv.org/abs/2604.17141)：跨领域和多维影响指标评测科学影响力预测，避免只以单一引用数作为目标。
+- [QuantumQA: Enhancing Scientific Reasoning via Physics-Consistent Dataset and Verification-Aware Reinforcement Learning](https://arxiv.org/abs/2604.18176)：评测基于物理一致数据的量子力学科学推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [ThermoQA: A Three-Tier Benchmark for Evaluating Thermodynamic Reasoning in Large Language Models](https://arxiv.org/abs/2604.19758)：评测具有程序化真值的三层开放式工程热力学推理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Navigating Order-(Dis)Order Family Trees via Group-Subgroup Transitions](https://arxiv.org/abs/2604.21386)：通过关联有序候选结构与已知无序母相，校验生成材料的新颖性声明。
 - [HealthBench Professional](https://arxiv.org/abs/2604.27470)：评测真实临床医生对话中的大模型表现。核心思想：把医学评测从一般消费者健康问答推进到 clinician-facing 场景，更直接考察安全性、细微差别和实际可用性。
 - [BioMysteryBench Verified](https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench)：评测真实数据上的高难生物信息学谜题，Claude Opus 4.7 system card 报告了 verified 子集。核心思想：要求模型交错进行计算分析与生物学推理，并按客观答案而非固定分析路径评分。
 - [BioPipelineBench Verified](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)：Anthropic model card 中的生物信息学 workflow 评测，覆盖 targeted sequence analysis、long-read analysis、metagenome assembly、chromatin profiling 等；verified 子集未公开发布。核心思想：测试模型能否执行真实计算生物 pipeline。
 - [HLE-Rolling](https://agi.safe.ai/)（更新日志：[centerforaisafety/hle](https://github.com/centerforaisafety/hle/blob/main/hle-rolling-changes.txt)）：评测动态维护的 HLE fork；核心思想是持续修正题目、加入新样本和维护 live submission，降低静态高难题库被污染或逐渐饱和的风险。
+- [NucBench](https://doi.org/10.1016/j.anucene.2026.112223)：评测 LLM 的核工程知识与推理能力。核心思想是用领域专门任务检验专业科学能力，而不止依赖通用科学问答。
 - HealthBench Consensus（见 [GPT-5.5 system card](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)）：OpenAI 使用的 HealthBench 系列评分变体；目前未确认有独立公开 benchmark package。核心思想：在 HealthBench 与 HealthBench Professional 之外，跟踪共识式医学安全与有用性判断。
 - OpenAI 内部生物与化学风险评测（见 [GPT-5.5 system card](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)）：封闭集合，包含 multimodal troubleshooting virology、tacit knowledge and troubleshooting、hard-negative protein binding prediction、DNA sequence design for transcription-factor binding、protocol troubleshooting 等；未公开发布。它们值得跟踪，因为前沿 model card 已用这些评测监控高风险湿实验、蛋白和序列设计能力。
 - [ProtocolQA Open-Ended](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)：GPT-5.5 model card 中的评测，把 FutureHouse ProtocolQA 风格湿实验排障题改成开放式短答；OpenAI 修改后的集合未公开发布。核心思想：取消多选脚手架后检查模型能否诊断 protocol error。
 - Structural biology benchmark（见 [Claude Opus 4.7 system card](https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf)）：Anthropic 内部结构生物学评测，要求模型仅根据结构数据推断生物分子功能；未公开发布。核心思想：测试超越纯文本生物问答的 structure-function reasoning。
 - [TroubleshootingBench](https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf)：OpenAI 在 GPT-5.5 system card 中报告的内部生物排障 benchmark，未公开发布。核心思想：用专家撰写的湿实验流程和非公开、依赖 tacit knowledge 的错误，测试模型是否具备实际排障知识。
+- [Extreme Weather Bench: A framework and benchmark for evaluation of high-impact weather](https://arxiv.org/abs/2605.01126)：提供评估高影响天气预测与分析系统的 benchmark framework。
+- [CarCrashNet: A Large-Scale Dataset and Hierarchical Neural Solver for Data-Driven Structural Crash Simulation](https://arxiv.org/abs/2605.07098)：发布碰撞仿真数据和层级神经求解器，用于评测数据驱动结构碰撞动力学。
+- [Can Agents Price a Reaction? Evaluating LLMs on Chemical Cost Reasoning](https://arxiv.org/abs/2605.07251)：评测 LLM 的化学成本推理；核心思想是检验 agent 是否能在化学工作流中推理反应定价和成本约束。
+- [Structure-Centric Graph Foundation Model via Geometric Bases](https://arxiv.org/abs/2605.08689)：面向科学知识与科学建模，补充用于scientific-modeling, physics-informed learning, benchmark, or scientific-AI survey contribution的基准、数据集、指标、审计或实证协议。
+- [ClinicalBench](https://arxiv.org/abs/2605.11143)：评测 MIMIC-IV 跨住院记录中的 assertion-aware 临床 QA 检索。核心思想：给患者知识图谱事实附加否定、时间性和归属标签，并检验 intent-aware KG-RAG 相比 dense retrieval baseline 是否能提升经医生裁定的答案质量。
+- [Assessing foundational atomistic models for iron alloys under Earth's core conditions](https://arxiv.org/abs/2605.13594)：在地核压力与温度条件下基准测试 17 个原子级基础模型的铁合金模拟能力，揭示热电子效应缺失带来的局限。
+- [Physics-R1 / PhysOlym-A](https://arxiv.org/abs/2605.14040)：从污染、翻译漂移和多选题饱和三个角度审计视觉物理评测。核心思想：发布经审计的多模态物理语料和开放式奥赛风格 held-out evaluation，用于测试视觉物理推理。
+- [MedHELM](https://doi.org/10.1038/s41591-025-04151-2)（[结果](https://crfm.stanford.edu/helm/medhelm/v2.0.0/)）：对 LLM 的医疗任务能力进行整体评测。核心思想是组合多类临床与生物医学任务，使医疗能力不只由单一考试式问答衡量。
+- [PersianSciQA](https://doi.org/10.26615/978-954-452-098-4-004)：提供波斯语科学问答数据集，补充英语中心问答之外的多语言科学知识评测。
+- [Crystal-Stability Prediction Evaluation Framework](https://doi.org/10.1038/s42256-025-01055-1)：以科学有效性为核心评估机器学习晶体稳定性预测。
+- [SimXRD-4M](https://openreview.net/forum?id=mkuB677eMM)：提供大规模模拟 X-ray diffraction 数据和晶体对称性分类基准。
+- [Li–P–S Electrolyte Materials as a Benchmark for Machine-Learned Interatomic Potentials](https://doi.org/10.1021/acs.jctc.5c02006)：面向 Li-P-S 电解质材料基准测试机器学习原子间势，关注固态离子传导模拟的有效性。
+- [Benchmarking machine learning models for predicting lithium ion migration](https://doi.org/10.1038/s41524-025-01571-z)：基准化评测用于预测锂离子迁移的机器学习模型，补充材料性质评测轴线。
+- [Screening of Material Defects using Universal Machine‐Learning Interatomic Potentials](https://doi.org/10.1002/smll.202503956)：检验通用机器学习原子间势能否支撑大规模缺陷筛选，为可迁移原子模型补充缺陷场景评测线索。
+- [Applicability of universal machine learning interatomic potentials to the simulation of steels](https://doi.org/10.1088/1361-651x/adb483)：评估通用机器学习原子间势在钢铁模拟、组成变化与合金元素影响建模中的适用性。
+- [High Structural Error Rates in "Computation-Ready" MOF Databases Discovered by Checking Metal Oxidation States.](https://doi.org/10.1021/jacs.5c04914)：通过金属氧化态检查揭示计算就绪 MOF 数据库中的结构错误率，服务于材料建模数据可靠性诊断。
+- [A dataset of chemical reaction pathways incorporating halogen chemistry](https://doi.org/10.1038/s41597-025-05944-3)：发布覆盖卤素化学反应路径的量子化学计算数据集，用于训练和评测机器学习原子间势。
+- [MatKG: An autonomously generated knowledge graph in Material Science](https://doi.org/10.1038/s41597-024-03039-z)：[MatKG: An autonomously generated knowledge graph in Material Science](https://doi.org/10.1038/s41597-024-03039-z): 提供自动生成的材料科学知识图谱.
+- [Metal-Organic Framework Stability in Water and Harsh Environments from Data-Driven Models Trained on the Diverse WS24 Data Set.](https://doi.org/10.1021/jacs.4c05879)：[Metal-Organic Framework Stability in Water and Harsh Environments from Data-Driven Models Trained on the Diverse WS24 Data Set.](https://doi.org/10.1021/jacs.4c05879): 用 WS24 数据集建模金属有机框架稳定性.
+- [Semantic integration of diverse data in materials science: Assessing Orowan strengthening](https://doi.org/10.1038/s41597-024-03169-4)：以 Orowan 强化为例评估材料科学多源数据的语义整合。
+- [Second-harmonic generation tensors from high-throughput density-functional perturbation theory](https://doi.org/10.1038/s41597-024-03590-9)：提供二次谐波产生张量的高通量密度泛函微扰数据。
+- [A research database for experimental electrocatalysis: Advancing data sharing and reusability.](https://doi.org/10.1063/5.0280821)：构建可复用的实验电催化数据库，提升科学建模与发现的数据共享。
+- [Revolutionizing Scientific Figure Decoding](https://doi.org/10.1007/s40192-026-00443-8)：评测多模态 LLM 从材料科学图形中抽取数据，覆盖 stress-strain curves、heatmaps、3D plots、contour plots 等视觉格式，重点测试从图而不是纯文本表格恢复定量材料性质。
+- [Long-Range Interactions in High-Dimensional Neural Network Potentials: A Benchmark Study for Small Organic Molecules.](https://doi.org/10.1021/acs.jpcb.5c05387)：评测含长程相互作用的小有机分子 high-dimensional neural-network potentials。
+- [A multimodal dataset of causal mechanisms in materials science literature](https://doi.org/10.1038/s41597-026-06598-5)：发布材料科学文献中 causal mechanisms 的多模态数据集，用于机器可操作的科学知识抽取。
+- [Enhancing geometric representations for molecules with equivariant vector-scalar interactive message passing](https://doi.org/10.1038/s41467-023-43720-2)：评测科学知识、材料、气候、化学或物理能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Universally Accurate or Specifically Inadequate? Stress‐Testing General Purpose Machine Learning Interatomic Potentials](https://doi.org/10.1002/aidi.202500031)：压力测试通用机器学习原子间势，区分广泛迁移能力与特定体系失效。
+- [Evaluation of five global AI models for predicting weather in Eastern Asia and Western Pacific](https://doi.org/10.1038/s41612-024-00769-0)：比较五个全球 AI 天气模型在东亚和西太平洋区域的预报表现，突出区域天气验证。
+- [MaScQA: Investigating Materials Science Knowledge of Large Language Models](https://doi.org/10.1039/d3dd00188a)：用材料科学问答评测 LLM 的领域知识，检查材料概念、性质和推理题上的表现。
+- [MS25: Materials Science-Focused Benchmark Data Set for Machine Learning Interatomic Potentials](https://doi.org/10.1021/acs.jcim.5c01262)：围绕科学知识能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- ["Slim" Benchmark Sets for Faster Method Development.](https://doi.org/10.1021/acs.jctc.5c00512)：围绕科学知识能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [ORDerly: Data Sets and Benchmarks for Chemical Reaction Data](https://doi.org/10.1021/acs.jcim.4c00292)：通过基准、数据集或评测协议评估科学知识能力。
+- [Benchmark dataset and deep learning method for global tropical cyclone forecasting](https://doi.org/10.1038/s41467-025-61087-4)：通过基准、数据集或评测协议评估科学知识能力。
+- [matbench-genmetrics: A Python library for benchmarking crystal structure generative models using time-based splits of Materials Project structures](https://doi.org/10.21105/joss.05618)：提供用于衡量科学知识能力的基准、数据集或评测协议。
+- [Crystal Structure Prediction and Performance Assessment of Hydrogen Storage Materials: Insights from Computational Materials Science](https://doi.org/10.3390/en17143591)：提供用于衡量科学知识能力的基准、数据集或评测协议。
+- [Large Language Models' Expert-level Global History Knowledge Benchmark (HiST-LLM)](https://doi.org/10.52202/079017-1016)：提供用于衡量科学知识能力的基准、数据集或评测协议。
+- [Accelerating Community-Wide Evaluation of AI Models for Global Weather Prediction by Facilitating Access to Model Output](https://doi.org/10.1175/bams-d-24-0057.1)：补充一个面向科学知识与科学建模的基准条目，关注scientific-knowledge, scientific-modeling, or autonomous-research contribution。
+- [EDARA: An ERA5-based Dataset for Atmospheric River Analysis](https://doi.org/10.1038/s41597-024-03679-1)：补充一个面向科学知识与科学建模的基准条目，关注scientific-knowledge, scientific-modeling, or autonomous-research contribution。
+- [Digital Twin for Chemical Science: a case study on water interactions on the Ag(111) surface](https://doi.org/10.1038/s43588-025-00857-y)：补充一个面向科学知识与科学建模的基准条目，关注scientific-knowledge, scientific-modeling, or autonomous-research contribution。
+- [Benchmarking scientific machine-learning approaches for flow prediction around complex geometries](https://doi.org/10.1038/s44172-025-00513-3)：补充一个面向科学知识与科学建模的基准条目，关注scientific-knowledge, scientific-modeling, or autonomous-research contribution。
+- [MatFold: systematic insights into materials discovery models’ performance through standardized cross-validation protocols](https://doi.org/10.1039/d4dd00250d)：提供面向Scientific Knowledge能力的基准、数据集或评测协议。
+- [Dataset of tensorial optical and transport properties of materials from the Wannier function method](https://doi.org/10.1038/s41597-025-05396-9)：提供面向Scientific Knowledge能力的基准、数据集或评测协议。
+- [Challenges in Using Conversational AI for Data Science](https://doi.org/10.1145/3736733.3736748)：提供面向Scientific Knowledge能力的基准、数据集或评测协议。
+- [Pitfalls in Artificial Intelligence Powered Discovery Due to Electrocatalyst Evaluation Methodologies](https://doi.org/10.1021/acselectrochem.5c00153)：提供面向Scientific Knowledge能力的基准、数据集或评测协议。
+- [AI-Powered Workflow for Constructing Organic Materials Databases from the Literature: Integrating Large Language Models](https://doi.org/10.1021/acsomega.5c03612)：补充科学知识方向的基准、数据集、指标或评测协议。
+- [Systematically Verified Experimental Thermoelectric Dataset For Data-driven Approaches](https://doi.org/10.1007/s40192-026-00446-5)：提供经过系统核验的实验热电数据集，用于数据驱动热电材料建模和筛选。
+- [Terra: A Multimodal Spatio-Temporal Dataset Spanning the Earth](https://doi.org/10.52202/079017-2121)：补充科学知识能力的评测资源或协议。
+- [Science-Gym: a simple testbed for AI-driven scientific discovery](https://doi.org/10.1007/s10994-025-06914-x)：提供用于衡量科学知识能力的数据集、基准、指标或评测协议。
+- [Recommendations for Comprehensive and Independent Evaluation of Machine Learning‐Based Earth System Models](https://doi.org/10.1029/2024jh000496)：提供用于衡量科学知识能力的数据集、基准、指标或评测协议。
+- [Selecting Tangible Media for Immersive Exploration of Volumetric Scientific Data](https://doi.org/10.1145/3772318.3790354)：评估用于沉浸式探索体积科学数据的 tangible media 选择，把可视化交互作为科学分析任务。
+- [Evaluating multimodal commercial and open-source large language models for dynamical astronomy: a benchmark study of resonant behavior classification](https://doi.org/10.1038/s41598-026-45926-y)：在动力天文学共振行为分类任务上基准化评测多模态 LLM，比较商业和开源系统。
+- [Beyond Classical Force Fields: Physics‐Driven Assessment of the Grappa Machine‐Learned Force Field on the FoldBind Dataset](https://doi.org/10.1002/cphc.202500815)：在 FoldBind 数据集上用物理驱动诊断评估 Grappa 学习力场，超出普通经典力场对照。
+- [Computational, Data Science, and Experimental Evaluation and Design of Homogeneous Transfer Hydroformylation Catalysts](https://doi.org/10.1021/acs.organomet.5c00504)：结合计算、数据科学和实验依据评估并设计均相转移氢甲酰化催化剂。
+- [NLP-QA: A Large-scale Benchmark for Informative Question Answering over Natural Language Processing Documents](https://doi.org/10.1145/3746252.3761625)：评测面向 NLP 文档的信息性问答能力。
+- [AnaFig: A Human-Aligned Dataset for Scientific Figure Analysis](https://doi.org/10.1145/3746027.3758226)：提供面向科学知识与科研推理能力的基准、数据集、评分规程或评测协议。
+- [A framework for evaluating the chemical knowledge and reasoning abilities of large language models against the expertise of chemists](https://doi.org/10.1038/s41557-025-01815-x)：以化学家专业能力为参照评测大语言模型。核心思想：用专家期待衡量化学知识和推理，而不只做通用科学问答。
+- [An evaluation framework for clinical use of large language models in patient interaction tasks](https://doi.org/10.1038/s41591-024-03328-5)：评测大语言模型在临床患者交互任务中的表现。核心思想：把医学评测从静态问答推进到更接近医患互动的任务质量。
+- [APBench and benchmarking large language model performance in fundamental astrodynamics problems for space engineering](https://doi.org/10.1038/s41598-025-91150-5)：类型：benchmark/评测协议。核心价值：为 1.2.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [ChemLit-QA: a human evaluated dataset for chemistry RAG tasks](https://doi.org/10.1088/2632-2153/adc2d6)：人类评估的 chemistry RAG task dataset。核心思想是评测 retrieval-augmented systems 能否基于证据回答化学问题。
+- [Beyond End-to-End: Understanding the Limits of LLMs in Scientific Problem Solving](https://doi.org/10.1145/3731599.3767405)：评测科学知识与科学推理的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Factual Knowledge Assessment of Language Models Using Distractors]()：评测语言模型的事实知识掌握情况。
+- [Bias-Aware Physics Foundation Model Benchmark](https://arxiv.org/abs/2605.29283)：用 8 类物理动力学、25 个测试 regime 与 60,000 次测量评测 physics foundation model，区分分布内拟合与分布转移下的泛化。
+- [CausalPhys](https://arxiv.org/abs/2606.05966)：用视频与图像问题、专家因果图、因果图接地指标和 CRFT 评测 VLM 的因果物理世界理解。
+- [EngVQA](https://arxiv.org/abs/2606.10833)：用来自五个工程学科的 696 道题和八阶段自动过程评价检验 VLM 是否像工程师一样推理，评测中间工程推理过程而不只看最终答案。

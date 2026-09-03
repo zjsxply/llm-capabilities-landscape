@@ -1,11 +1,189 @@
 # 2.6.5 Agent Harness
 
-- AutoGPT（[开源代码](https://github.com/Significant-Gravitas/AutoGPT)）：持续运行式自治代理框架，把任务队列、工具调用、长期执行与结果回写组织成可反复迭代的 agent loop，是公开生态里最早一批强调 long-running autonomy 的实现。
 - [Voyager](https://arxiv.org/abs/2305.16291)（[开源代码](https://github.com/MineDojo/Voyager)）以 Minecraft 为平台做“终身学习”式长时程代理，核心 harness 是 `自动课程生成 + skill library + 可执行反馈` 的长期自增量闭环。
 - [MemGPT](https://arxiv.org/abs/2310.08560)（[开源代码](https://github.com/cpacker/MemGPT)）把长时运行的核心矛盾显式化为“记忆管理/上下文调度”问题，通过外部 memory 与检索将对话/任务状态从上下文窗口中外置。
-- LangGraph（[开源代码](https://github.com/langchain-ai/langgraph)）把 long-running agent 的控制流显式化为 state graph，并提供 checkpointer 等机制，适合把 `checkpoint/rollback/分支恢复/可重复执行` 写进运行时。
+- [When is Tree Search Useful for LLM Planning? It Depends on the Discriminator](https://arxiv.org/abs/2402.10890)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Shall We Team Up: Exploring Spontaneous Cooperation of Competing LLM Agents](https://arxiv.org/abs/2402.12327)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Middleware for LLMs: Tools Are Instrumental for Language Agents in Complex Environments](https://arxiv.org/abs/2402.14672)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [Large Language Model for Participatory Urban Planning](https://arxiv.org/abs/2402.17161)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Playing NetHack with LLMs: Potential & Limitations as Zero-Shot Agents](https://arxiv.org/abs/2403.00690)：提出面向长程任务的智能体流程、工具编排、评测循环或交互式执行框架。
+- [Trial and Error: Exploration-Based Trajectory Optimization for LLM Agents](https://arxiv.org/abs/2403.02502)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [Do LLM Agents Have Regret? A Case Study in Online Learning and Games](https://arxiv.org/abs/2403.16843)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Scaling Instructable Agents Across Many Simulated Worlds](https://arxiv.org/abs/2404.10179)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [ALPINE: Unveiling the Planning Capability of Autoregressive Learning in Language Models](https://arxiv.org/abs/2405.09220)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Can Graph Learning Improve Planning in LLM-based Agents?](https://arxiv.org/abs/2405.19119)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [SelfGoal: Your Language Agents Already Know How to Achieve High-level Goals](https://arxiv.org/abs/2406.04784)：围绕Long-running补充《SelfGoal: Your Language Agents Already Know How to Achieve High-level Goals》这一智能体流程、编排或运行时框架。
+- [Hello Again! LLM-powered Personalized Agent for Long-term Dialogue](https://arxiv.org/abs/2406.05925)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [Octo-planner: On-device Language Model for Planner-Action Agents](https://arxiv.org/abs/2406.18082)：补充一个面向长程任务执行的智能体框架条目，关注on-device planner-action language agents。
+- [Solving Motion Planning Tasks with a Scalable Generative Model](https://arxiv.org/abs/2407.02797)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Converging Paradigms: The Synergy of Symbolic and Connectionist AI in LLM-Empowered Autonomous Agents](https://arxiv.org/abs/2407.08516)：提供面向该能力的外部工作流、工具调用、规划、检索或多智能体编排，补充长程任务方向的智能体编排覆盖。
+- [Real-Time Anomaly Detection and Reactive Planning with Large Language Models](https://arxiv.org/abs/2407.08735)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Sibyl: Simple yet Effective Agent Framework for Complex Real-world Reasoning](https://arxiv.org/abs/2407.10718)：提供面向该能力的外部工作流、工具调用、规划、检索或多智能体编排，补充长程任务方向的智能体编排覆盖。
+- [System-1.x: Learning to Balance Fast and Slow Planning with Language Models](https://arxiv.org/abs/2407.14414)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
 - [SeePlanAct (SPA)](https://arxiv.org/abs/2407.15711)（[开源代码](https://github.com/oriyor/assistantbench)；AssistantBench 配套 web agent，在 SeeAct 之上加入显式 planning 与 memory 组件，用于长程网页任务中的阶段计划、信息传递和最终答案聚合）
+- [Optimus-1: Hybrid Multimodal Memory Empowered Agents Excel in Long-Horizon Tasks](https://arxiv.org/abs/2408.03615)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [Enhancing Decision-Making for LLM Agents via Step-Level Q-Value Models](https://arxiv.org/abs/2409.09345)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [EIA: Environmental Injection Attack on Generalist Web Agents for Privacy Leakage](https://arxiv.org/abs/2409.11295)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [CoPS: Empowering LLM Agents with Provable Cross-Task Experience Sharing](https://arxiv.org/abs/2410.16670)：补充一个面向长程任务执行的智能体框架条目，关注cross-task experience sharing for LLM agents。
 - [Magentic-One](https://arxiv.org/abs/2411.04468)（[开源代码](https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one)；[当前文档](https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/magentic-one.html)）：通用多智能体 harness，包含 orchestrator、web surfer、file surfer、coder 和终端式执行 agent，适合长时程 web/file/code 任务以及 GAIA、AssistantBench 类工作流。
+- [Autonomous Industrial Control using an Agentic Framework with Large Language Models](https://arxiv.org/abs/2411.05904)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Towards Adaptive Mechanism Activation in Language Agent](https://arxiv.org/abs/2412.00722)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New Environments](https://arxiv.org/abs/2412.04759)：提出面向长程任务的智能体流程、工具编排、评测循环或交互式执行框架。
+- [Chasing Progress, Not Perfection: Revisiting Strategies for End-to-End LLM Plan Generation](https://arxiv.org/abs/2412.10675)：面向长程任务执行，补充智能体工作流、编排模式、工具循环、记忆机制或多智能体框架。
+- [Cocoa: Co-Planning and Co-Execution with AI Agents](https://arxiv.org/abs/2412.10999)：通过共同规划与共同执行协调 AI agents，面向更长链条的多步任务。
+- [Heterogeneous Swarms: Jointly Optimizing Model Roles and Weights for Multi-LLM Systems](https://arxiv.org/abs/2502.04510)：异构多 LLM 系统的角色与权重联合优化。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Nexus: A Lightweight and Scalable Multi-Agent Framework for Complex Tasks Automation](https://arxiv.org/abs/2502.19091)：轻量可扩展的多 agent 复杂任务自动化框架。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Beyond Black-Box Benchmarking: Observability, Analytics, and Optimization of Agentic Systems](https://arxiv.org/abs/2503.06745)：定义智能体系统在开发、测试与维护中的可观测性、分析与优化需求。
+- [SagaLLM](https://arxiv.org/abs/2503.11951)：面向事务一致性的多 agent 规划 harness。核心思想是结合持久记忆、独立验证 agent、checkpoint 和补偿动作，使长流程任务能从中间状态不一致或执行中断中恢复。
+- [Self-Resource Allocation in Multi-Agent LLM Systems](https://arxiv.org/abs/2504.02051)：多 agent LLM 系统中的资源分配机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Enhancing LLM-Based Agents via Global Planning and Hierarchical Execution](https://arxiv.org/abs/2504.16563)：该工作提出 global planning 与 hierarchical execution 的 agent 框架，直接服务长链路任务执行。
+- [HALO: Hierarchical Autonomous Logic-Oriented Orchestration for Multi-Agent LLM Systems](https://arxiv.org/abs/2505.13516)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Multi-Agent Collaboration via Evolving Orchestration](https://arxiv.org/abs/2505.19591)：面向多 agent 协作中的自适应编排的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954)：开放式自改进 agent 框架；核心思想是让 agent 随时间提出、实现并验证对自身解题机制的修改。
+- [Unifying Language Agent Algorithms with Graph-based Orchestration Engine for Reproducible Agent Research](https://arxiv.org/abs/2505.24354)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“Unifying Language Agent Algorithms with Graph-based Orchestration Engine for Reproducible Agent Research”。
+- [Dyna-Think: Synergizing Reasoning, Acting, and World Model Simulation in AI Agents](https://arxiv.org/abs/2506.00320)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Agents of Change: Self-Evolving LLM Agents for Strategic Planning](https://arxiv.org/abs/2506.04651)：Agents of Change 面向 adversarial stochastic environment 中的长期战略规划，补充 long-horizon agent harness。
+- [AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](https://arxiv.org/abs/2506.06017)：基于价值引导层级搜索的 agent 设计。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Thinking vs. Doing: Agents that Reason by Scaling Test-Time Interaction](https://arxiv.org/abs/2506.07976)：Thinking vs. Doing 研究通过 test-time interaction 扩展 agent 推理，适合 Long-Running Agent Harness。
+- [Agentic Neural Networks: Self-Evolving Multi-Agent Systems via Textual Backpropagation](https://arxiv.org/abs/2506.09046)：通过文本反向传播自演化的多 agent 系统。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Improving LLM Agent Planning with In-Context Learning via Atomic Fact Augmentation and Lookahead Search](https://arxiv.org/abs/2506.09171)：通过上下文 atomic fact 增强与 lookahead search 改进 LLM agent 规划。
+- [Augmenting Multi-Agent Communication with State Delta Trajectory](https://arxiv.org/abs/2506.19209)：面向多 agent 系统的通信机制。核心思想：在 agent 间传递紧凑 state delta，使协作保留任务相关变化而不膨胀完整历史。
+- [CONSENSAGENT: Towards Efficient and Effective Consensus in Multi-Agent LLM Interactions Through Sycophancy Mitigation](https://doi.org/10.18653/v1/2025.findings-acl.1141)：通过缓解 sycophancy 改善多 agent 共识的框架；核心思想是用结构化交互提升共识质量，而不是让 agent 通过无批判模仿收敛。
+- [Gödel Agent: A Self-Referential Agent Framework for Recursively Self-Improvement](https://doi.org/10.18653/v1/2025.acl-long.1354)：提出自指式智能体框架用于递归自我改进，把改进循环纳入运行时设计。
+- [Self-supervised Pretraining for Integrated Prediction and Planning of Automated Vehicles](https://arxiv.org/abs/2507.09537)：面向长程任务执行能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Aime: Towards Fully-Autonomous Multi-Agent Framework](https://arxiv.org/abs/2507.11988)：全自主多 agent 任务框架。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Enabling Self-Improving Agents to Learn at Test Time With Human-In-The-Loop Guidance](https://arxiv.org/abs/2507.17131)：human-in-the-loop self-improving agent harness；核心思想是让 agent 识别知识缺口、向专家请求更新，并维护带时间戳的内部知识库。
+- [MetaAgent: Automatically Constructing Multi-Agent Systems Based on Finite State Machines](https://arxiv.org/abs/2507.22606)：基于有限状态机自动构建多 agent 系统。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [HomerAgent](https://arxiv.org/abs/2508.09124)（[开源代码](https://github.com/microsoft/OdysseyBench)）是 OdysseyBench 配套的长程办公 workflow agent，用显式记忆维护阶段结果，适合分析长期任务中的上下文遗忘、错误复用和阶段间依赖失败。
+- [AgentCDM: Enhancing Multi-Agent Collaborative Decision-Making via ACH-Inspired Structured Reasoning](https://arxiv.org/abs/2508.11995)：面向多 agent 系统的结构化协同决策 harness。核心思想：借鉴 ACH 推理，在 agent 间比较假设与证据。
+- [Self-Organizing Agent Network for LLM-based Workflow Automation](https://arxiv.org/abs/2508.13732)：面向 workflow automation 的 self-organizing agent-network harness；核心思想是增量构建形式化 agent network，控制深层嵌套业务流程和工具序列。
+- [Murakkab: Resource-Efficient Agentic Workflow Orchestration in Cloud Platforms](https://arxiv.org/abs/2508.18298)：面向云平台 agentic workflow 的资源高效编排 harness；核心思想是解耦 workflow 逻辑与模型、硬件选择，提高服务效率。
+- [A Concurrent Modular Agent: Framework for Autonomous LLM Agents](https://arxiv.org/abs/2508.19042)：面向长程智能体执行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Aegis: Taxonomy and Optimizations for Overcoming Agent-Environment Failures in LLM Agents](https://arxiv.org/abs/2508.19504)：诊断并缓解 agent-environment failure 的框架。核心思想：分类环境诱发的执行崩溃，并围绕这些失败模式优化 agent 循环。
+- [HiVA: Self-organized Hierarchical Variable Agent via Goal-driven Semantic-Topological Evolution](https://arxiv.org/abs/2509.00189)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“Self-organized Hierarchical Variable Agent via Goal-driven Semantic-Topological Evolution”。
+- [Batch Query Processing and Optimization for Agentic Workflows](https://arxiv.org/abs/2509.02121)：面向 agentic workflow 的系统优化层。核心思想：跨多步工具使用流程批处理并优化重复 query，而不是孤立服务每次调用。
+- [Learning When to Plan: Efficiently Allocating Test-Time Compute for LLM Agents](https://arxiv.org/abs/2509.03581)：LLM agent 的规划预算分配机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Maestro: Joint Graph & Config Optimization for Reliable AI Agents](https://arxiv.org/abs/2509.04642)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“Joint Graph & Config Optimization for Reliable AI Agents”。
+- [ProfilingAgent: Profiling-Guided Agentic Reasoning for Adaptive Model Optimization](https://arxiv.org/abs/2509.05584)：为长程运行智能体补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Orchestrator: Active Inference for Multi-Agent Systems in Long-Horizon Tasks](https://arxiv.org/abs/2509.05651)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“Active Inference for Multi-Agent Systems in Long-Horizon Tasks”。
+- [Difficulty-Aware Agentic Orchestration for Query-Specific Multi-Agent Workflows](https://arxiv.org/abs/2509.11079)：面向查询难度的多 agent 工作流编排。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Agent2: An Agent-Generates-Agent Framework for Reinforcement Learning Automation](https://arxiv.org/abs/2509.13368)：用生成器智能体把任务描述和环境代码转化为可执行的强化学习目标智能体，并通过训练反馈持续改进，实现 RL 智能体设计自动化。
+- [Who is Introducing the Failure? Automatically Attributing Failures of Multi-Agent Systems via Spectrum Analysis](https://arxiv.org/abs/2509.13782)：多 agent 系统的失败归因机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Aegis: Automated Error Generation and Attribution for Multi-Agent Systems](https://arxiv.org/abs/2509.14295)：多 agent 系统的自动错误生成与归因。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [(P)rior(D)yna(F)low: A Priori Dynamic Workflow Construction via Multi-Agent Collaboration](https://arxiv.org/abs/2509.14547)：通过 multi-agent collaboration 预先构造动态 workflow，适合长程 agent harness。
 - [ARE](https://arxiv.org/abs/2509.17158)（[开源代码](https://github.com/facebookresearch/meta-agents-research-environments)）把 long-running harness 做成动态环境运行时，支持异步事件、状态演化、外部工具和评测日志，适合研究持续执行中的计划更新与上下文维护。
+- [Federation of Agents: A Semantics-Aware Communication Fabric for Large-Scale Agentic AI](https://arxiv.org/abs/2509.20175)：大规模 agent 的语义感知通信结构。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [InfiAgent: Self-Evolving Pyramid Agent Framework for Infinite Scenarios](https://arxiv.org/abs/2509.22502)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“Self-Evolving Pyramid Agent Framework for Infinite Scenarios”。
+- [Test-Time Policy Adaptation for Enhanced Multi-Turn Interactions with LLMs](https://arxiv.org/abs/2509.23166)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“Test-Time Policy Adaptation for Enhanced Multi-Turn Interactions with LLMs”。
+- [CORRECT: COndensed eRror RECognition via knowledge Transfer in multi-agent systems](https://arxiv.org/abs/2509.24088)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“COndensed eRror RECognition via knowledge Transfer in multi-agent systems”。
+- [ELHPlan: Efficient Long-Horizon Task Planning for Multi-Agent Collaboration](https://arxiv.org/abs/2509.24230)：面向多 agent 协作的高效长程规划 harness。核心思想：结构化任务规划，使协作 agent 能跨较长执行周期协调。
+- [MAS2: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems](https://arxiv.org/abs/2509.24323)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Memory Management and Contextual Consistency for Long-Running Low-Code Agents](https://arxiv.org/abs/2509.25250)：面向长程智能体执行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [DyFlow: Dynamic Workflow Framework for Agentic Reasoning](https://arxiv.org/abs/2509.26062)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Reasoning-Aware Prompt Orchestration: A Foundation Model for Multi-Agent Language Model Coordination](https://arxiv.org/abs/2510.00326)：通过 reasoning-aware prompt orchestration 协调多 agent 语言模型；核心思想是在专门 agent 和动态切换之间保持逻辑一致性。
+- [Stochastic Self-Organization in Multi-Agent Systems](https://arxiv.org/abs/2510.00685)：多 agent 系统中的随机自组织机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Speculative Actions](https://arxiv.org/abs/2510.04371)：面向顺序式 agent 的通用加速 harness。核心思想：让更快模型预测可能的后续动作并并行执行分支，只提交匹配分支，从而在预测正确时降低延迟并保持行为不变。
+- [Toward Systems Foundations for Agentic Exploration](https://arxiv.org/abs/2510.05556)：围绕 branch、backtrack、snapshot 和 restore 的系统支持，是 agentic exploration 的基础 harness 议题。
+- [Planning with Schemas](https://arxiv.org/abs/2510.07091)：研究长程 agent 的动作表示选择。核心思想：用可实例化的 schema-level planning 替代穷举式 action-list planning，在动作空间扩张时降低认知带宽压力。
+- [Traceability and Accountability in Role-Specialized Multi-Agent LLM Pipelines](https://arxiv.org/abs/2510.07614)：可追踪的角色专门化多 agent pipeline。核心思想：保留结构化交接与执行记录，使软件任务失败能回溯到具体阶段。
+- [MUSE](https://arxiv.org/abs/2510.08002)：面向长程 agent 的 self-evolving harness；核心思想是在每个子任务后把轨迹反思转化为结构化层级经验记忆，并在跨应用规划和执行中复用。
+- [COMPASS: Enhancing Agent Long-Horizon Reasoning with Evolving Context](https://arxiv.org/abs/2510.08790)：通过演化上下文帮助长程 agent 保留关键证据并稳定重新规划。
+- [Failure-Driven Workflow Refinement](https://arxiv.org/abs/2510.10035)：基于失败轨迹改进 LLM 工作流。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Context-Folding](https://arxiv.org/abs/2510.11967)：一种长程 agent 上下文管理 harness。核心思想：让 agent 为子任务分支执行，并在完成后把子轨迹折叠成紧凑摘要，从而压缩活动上下文并保留任务进度。
+- [Towards Engineering Multi-Agent LLMs: A Protocol-Driven Approach](https://arxiv.org/abs/2510.12120)：面向工程化 multi-agent LLM systems 的 protocol-driven approach。核心思想是显式规定交互协议，使多 agent workflow 更可控、更可比较。
+- [Metacognitive Self-Correction for Multi-Agent System via Prototype-Guided Next-Execution Reconstruction](https://arxiv.org/abs/2510.14319)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Memory-Augmented State Machine Prompting: A Novel LLM Agent Framework for Real-Time Strategy Games](https://arxiv.org/abs/2510.18395)：把状态机提示与轻量记忆结合，使 LLM 智能体能在即时战略决策循环中保持战术连贯性。
+- [PARL: Prompt-based Agents for Reinforcement Learning](https://arxiv.org/abs/2510.21306)：为长程运行智能体补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [ReCode: Unify Plan and Action for Universal Granularity Control](https://arxiv.org/abs/2510.23564)：统一 plan 与 action 的多粒度控制框架；核心思想是让 agent 在高层规划和底层执行之间灵活切换，而不是被固定边界限制。
+- [ReCAP: Recursive Context-Aware Reasoning and Planning for Large Language Model Agents](https://arxiv.org/abs/2510.23822)：ReCAP 针对长程任务做递归上下文感知推理和规划，属于 long-running agent harness。
+- [The Geometry of Dialogue: Graphing Language Models to Reveal Synergistic Teams for Multi-Agent Collaboration](https://arxiv.org/abs/2510.26352)：通过 dialogue geometry 建模多 agent 协作中的团队组成；核心思想是识别协同 agent team，而不是依赖不透明模型配对。
+- [Sherlock: Reliable and Efficient Agentic Workflow Execution](https://arxiv.org/abs/2511.00330)：面向 agentic workflow 执行可靠性的 harness。核心思想：监控步骤级输出，避免错误在后续工具与推理阶段中静默传播。
+- [AgentPro: Enhancing LLM Agents with Automated Process Supervision](https://doi.org/10.18653/v1/2025.emnlp-main.506)：Agent Harness 条目；核心思想：通过自动过程监督增强 LLM agent 的长程执行。
+- [Continual Learning, Not Training: Online Adaptation For Agents](https://arxiv.org/abs/2511.01093)：把在线适应视为 agent 部署中的 continual learning，适合 long-running agent harness。
+- [Continuum](https://arxiv.org/abs/2511.02230)：面向多轮 agent workload 的 serving runtime。核心思想是在短工具调用暂停期间用 time-to-live 策略保留 KV cache，在保持连续性的同时降低完成时间和排队开销。
+- [ReAcTree: Hierarchical LLM Agent Trees with Control Flow for Long-Horizon Task Planning](https://arxiv.org/abs/2511.02424)：带控制流的层级 LLM agent 树。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Scaling Agent Learning via Experience Synthesis](https://arxiv.org/abs/2511.03773)：面向可扩展 agent 学习的经验合成基础设施。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [AgentEvolver: Towards Efficient Self-Evolving Agent System](https://arxiv.org/abs/2511.10395)：面向自演化 agent system 的框架；核心思想是让 agent 基于经验修订自身策略或组件，而不是依赖固定提示脚手架。
+- [VIGIL: A Reflective Runtime for Self-Healing Agents](https://arxiv.org/abs/2512.07094)：面向自修复 agent 的反思式运行时。核心思想：加入运行时内省与故障诊断，使脆弱 agent 栈能在执行中修复自身。
+- [Asynchronous Reasoning: Training-Free Interactive Thinking LLMs](https://arxiv.org/abs/2512.10931)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [AgentBalance: Backbone-then-Topology Design for Cost-Effective Multi-Agent Systems under Budget Constraints](https://arxiv.org/abs/2512.11426)：面向预算约束的多 agent 系统设计方法。核心思想是先选择模型 backbone，再优化通信拓扑，使 MAS 部署能在成本与任务质量之间折中。
+- [SCOPE: Prompt Evolution for Enhancing Agent Effectiveness](https://arxiv.org/abs/2512.15374)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [AgentInfer](https://arxiv.org/abs/2512.18337)：面向多轮工具型 agent 的效率架构。核心思想：协同设计双模型层级协作、cache-aware 调度、语义记忆 speculative decoding 和异步记忆压缩，以降低长 agent 循环中的系统性延迟。
+- [GenEnv: Difficulty-Aligned Co-Evolution Between LLM Agents and Environment Simulators](https://arxiv.org/abs/2512.19682)：agent 与环境模拟器的难度对齐式共同演化。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [ABBEL: LLM Agents Acting through Belief Bottlenecks Expressed in Language](https://arxiv.org/abs/2512.20111)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“LLM Agents Acting through Belief Bottlenecks Expressed in Language”。
+- [Toward Co-Working with Autonomous Agents: Rethinking Operations of Automation Systems](https://doi.org/10.1109/etfa65518.2025.11205572)：可作为“长程任务执行 / 智能体框架”候选条目；提供面向智能体工作流、编排、工具使用或执行环境的可复用框架。
+- [Unlocking Agentic AI Service Deployment Complexity: Simulation-Guided Strategy Orchestration and Optimization](https://doi.org/10.1109/icpads67057.2025.11323008)：为长程运行智能体补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Knowledge Assistant for Joint Utility: A Multi-Agent LLM-Driven Conversational System for Automated Task Execution](https://doi.org/10.1109/cins67018.2025.11412089)：为长程运行智能体补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Towards Orchestrating Agentic Applications as FaaS Workflows](https://doi.org/10.1109/ipdpsw66978.2025.00156)：把 agentic application 看作 FaaS workflow 的编排方案。核心思想是把 agent 及其工具封装成 serverless workflow 组件，由运行时管理执行、扩缩容与 guardrail。
+- [AutoHMA-LLM: Efficient Task Coordination and Execution in Heterogeneous Multi-Agent Systems Using Hybrid Large Language Models](https://doi.org/10.1109/tccn.2025.3528892)：面向异构多 agent 系统进行任务协调与执行；核心思想是跨混合 LLM agent 路由工作，把任务编排做成显式运行时层。
+- [Dual-State Architecture](https://arxiv.org/abs/2512.20660)：为可靠 LLM agents 设计双状态架构，区分持久状态与工作状态以提升长程执行稳定性。
+- [Thought Management System for long-horizon, goal-driven LLM agents](https://doi.org/10.1016/j.jocs.2025.102740)：面向长程智能体执行的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Enforcing Temporal Constraints for LLM Agents](https://arxiv.org/abs/2512.23738)：面向 LLM agents 的时间约束执行框架；核心思想是把 deadline、顺序、等待和时间依赖显式纳入 agent 规划与执行。
+- [InfiAgent](https://arxiv.org/abs/2601.03204)：面向通用自主 agent 的 infinite-horizon 框架，关注超出固定 episode 的持续执行。
+- [Nalar](https://arxiv.org/abs/2601.05109)：面向长时运行 agent 进程部署和管理的 serving framework，而不只是单次模型调用提示。
+- [MegaFlow: Large-Scale Distributed Orchestration System for the Agentic Era](https://arxiv.org/abs/2601.07526)：面向面向 agent-环境交互的大规模分布式编排的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Beyond Entangled Planning: Task-Decoupled Planning for Long-Horizon Agents](https://arxiv.org/abs/2601.07577)：可作为长程 agent 规划的 Agent Harness 候选：围绕 Beyond Entangled Planning: Task-Decoupled Planning for Long-Horizon Agents 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Learning Latency-Aware Orchestration for Parallel Multi-Agent Systems](https://arxiv.org/abs/2601.10560)：Agent Harness 条目；核心思想：面向并行多 agent 系统的延迟感知编排方法。
+- [CTHA: Constrained Temporal Hierarchical Architecture for Stable Multi-Agent LLM Systems](https://arxiv.org/abs/2601.10738)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Toward Agentic AI: Task-Oriented Communication for Hierarchical Planning of Long-Horizon Tasks](https://arxiv.org/abs/2601.13685)：为长程运行智能体方向补充一个智能体工作流或编排框架候选，强调工具调用、规划、外部执行或多智能体协作。
+- [MAS-Orchestra: Understanding and Improving Multi-Agent Reasoning Through Holistic Orchestration and Controlled Benchmarks](https://arxiv.org/abs/2601.14652)：多 agent 推理的整体编排与受控评测。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic](https://arxiv.org/abs/2601.16486)：面向 agent 场景的时间感知测试时扩展。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assembly](https://arxiv.org/abs/2601.22623)：异构模型组装下的协同多 agent 规划。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [AgentRx: Diagnosing AI Agent Failures from Execution Trajectories](https://arxiv.org/abs/2602.02475)：基于执行轨迹诊断 AI agent 失败。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Verified Critical Step Optimization for LLM Agents](https://arxiv.org/abs/2602.03412)：LLM agent 的关键步骤验证与优化。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [AOrchestra: Automating Sub-Agent Creation for Agentic Orchestration](https://arxiv.org/abs/2602.03786)：面向 agent 编排的自动子 agent 创建。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing](https://arxiv.org/abs/2602.04837)：可作为长程运行 agent 工作流的Agent Harness候选；核心关注“Open-Ended Self-Improvement via Experience Sharing”。
+- [PreFlect: From Retrospective to Prospective Reflection in Large Language Model Agents](https://arxiv.org/abs/2602.07187)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [TodoEvolve: Learning to Architect Agent Planning Systems](https://arxiv.org/abs/2602.07839)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Learning to Compose for Cross-domain Agentic Workflow Generation](https://arxiv.org/abs/2602.11114)：将 agentic workflow 自动生成为可执行 operator graph/code，属于 workflow-generation harness。
+- [AWCP: A Workspace Delegation Protocol for Deep-Engagement Collaboration across Remote Agents](https://arxiv.org/abs/2602.20493)：将跨远程 agent 的 workspace delegation 协议化，契合长程协作 agent 的 runtime/harness 方向。
+- [SideQuest: Model-Driven KV Cache Management for Long-Horizon Agentic Reasoning](https://arxiv.org/abs/2602.22603)：面向长程 agentic reasoning 的 KV cache 管理机制。核心思想：围绕 side task 管理缓存上下文，使长流程保持高效和连贯。
+- [RetroAgent: From Solving to Evolving via Retrospective Dual Intrinsic Feedback](https://arxiv.org/abs/2603.08561)：用于自演化 agent 的回溯式反馈机制。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [EPOCH: An Agentic Protocol for Multi-Round System Optimization](https://arxiv.org/abs/2603.09049)：面向带反馈跟踪的 prompt、代码和机器学习系统多轮优化协议的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Spend Less, Reason Better: Budget-Aware Value Tree Search for LLM Agents](https://arxiv.org/abs/2603.12634)：Budget-Aware Value Tree Search 关注长程 agent 的预算约束和中途决策，适合 Long-Running harness。
+- [A Subgoal-driven Framework for Improving Long-Horizon LLM Agents](https://arxiv.org/abs/2603.19685)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Efficient Failure Management for Multi-Agent Systems with Reasoning Trace Representation](https://arxiv.org/abs/2603.21522)：利用 reasoning-trace representation 的多 agent failure-management 框架。核心思想是显式表示失败和轨迹，使 agent 团队能在执行中诊断和恢复。
+- [Environment Maps: Structured Environmental Representations for Long-Horizon Agents](https://arxiv.org/abs/2603.23610)：维护持久且与智能体无关的环境表示，帮助长程智能体降低动态界面中的级联错误。
+- [SEVerA: Verified Synthesis of Self-Evolving Agents](https://arxiv.org/abs/2603.25111)：Agent Harness 条目；核心思想：面向自演化 agent 的验证式合成；核心思想是为会重写或调优自身的 agent 程序加入安全和正确性约束。
+- [AgentCollab](https://arxiv.org/abs/2603.26034)：自评驱动的高效 agent 协作 harness。核心思想：让低成本 agent 监控自身进展，只在困难轨迹片段上升级到更强推理层，从而改善长周期执行的准确率和成本权衡。
+- [OrgAgent: Organize Your Multi-Agent System like a Company](https://arxiv.org/abs/2604.01020)：公司式层级 multi-agent harness。核心思想：把协作组织成 governance、execution 和 compliance 层，使 agent 团队以显式组织结构协调任务。
+- [Autolearn: Learn by Surprise, Commit by Proof](https://arxiv.org/abs/2604.01951)：面向长程任务执行，补充用于self-improving learning loop with proof or verification signal的智能体流程、编排模式、工具循环或运行框架。
+- [KAIJU: An Executive Kernel for Intent-Gated Execution of LLM Agents](https://arxiv.org/abs/2604.02375)：面向 LLM agent 的 intent-gated executive kernel。核心思想是通过显式意图检查来门控 agent 动作，使长程执行保持可控和可审计。
+- [EMS: Multi-Agent Voting via Efficient Majority-then-Stopping](https://arxiv.org/abs/2604.02863)：面向面向高效多 agent 投票的可靠性感知 majority-then-stopping的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [Uncertainty as a Planning Signal: Multi-Turn Decision Making for Goal-Oriented Conversation](https://arxiv.org/abs/2604.03924)：面向长程任务执行，补充用于multi-turn decision-making and planning signal for goal-oriented conversation的智能体流程、编排模式、工具循环或运行框架。
+- [AgentGate: A Lightweight Structured Routing Engine for the Internet of Agents](https://arxiv.org/abs/2604.06696)：Agent Harness 条目；核心思想：面向 Internet of Agents 的结构化路由；核心思想是在延迟、隐私和成本约束下把请求分发给专门 agent。
+- [Don't Overthink It: Inter-Rollout Action Agreement as a Free Adaptive-Compute Signal for LLM Agents](https://arxiv.org/abs/2604.08369)：面向 LLM agents 的 training-free adaptive-compute controller。核心思想：用不同 rollout 的动作一致性判断步骤难度，只给困难时间步分配更多模型调用，减少长程执行中的统一过度思考。
+- [Agentic Aggregation for Parallel Scaling of Long-Horizon Agentic Tasks](https://arxiv.org/abs/2604.11753)：面向长程 agentic 任务的并行聚合的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Autogenesis: A Self-Evolving Agent Protocol](https://arxiv.org/abs/2604.15034)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](https://arxiv.org/abs/2604.17148)：基于图结构的多 agent 协作框架。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Hive: A Multi-Agent Infrastructure for Algorithm- and Task-Level Scaling](https://arxiv.org/abs/2604.17353)：Agent Harness 条目；核心思想：面向算法级和任务级扩展的多 agent 基础设施；核心思想是在增加推理工作量时控制依赖和成本。
+- [WorkflowGen:an adaptive workflow generation mechanism driven by trajectory experience](https://arxiv.org/abs/2604.19756)：由 trajectory experience 驱动的 adaptive workflow-generation mechanism。核心思想：复用历史执行轨迹，为重复的业务查询、工具调用和编排任务生成成本更低、更稳定的 workflow。
+- [Learning to Evolve: A Self-Improving Framework for Multi-Agent Systems via Textual Parameter Graph Optimization](https://arxiv.org/abs/2604.20714)：面向通过文本参数图优化实现自改进多 agent 系统的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [HARBOR: Automated Harness Optimization](https://arxiv.org/abs/2604.20938)：自动化 harness 优化框架。核心思想是把 context compaction、tool caching、semantic memory、trajectory reuse 与 sandbox glue 等长程 agent 外壳组件作为可优化对象。
+- [Sema: Semantic Transport for Real-Time Multimodal Agents](https://arxiv.org/abs/2604.20940)：面向降低实时多模态 agent 音频与截图传输开销的语义传输层的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [AEL: Agent Evolving Learning for Open-Ended Environments](https://arxiv.org/abs/2604.21725)：AEL 关注 open-ended environments 中跨 episode 自演化，属于长程 agent harness。
+- [Active Learning for Communication Structure Optimization in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2605.05703)：用主动学习优化 LLM 多 agent 系统的通信结构；核心思想是选择信息量高的任务来改进协作拓扑。
+- [On Time, Within Budget: Constraint-Driven Online Resource Allocation for Agentic Workflows](https://arxiv.org/abs/2605.06110)：在显式时间与预算约束下调度 agentic workflow；核心思想是在有依赖的子任务和异构模型/工具之间做在线资源分配。
+- [Slipstream: Trajectory-Grounded Compaction Validation for Long-Horizon Agents](https://arxiv.org/abs/2605.08580)：验证长程 agent 轨迹压缩；核心思想是在 agent 继续执行前，用未来所需轨迹信息对摘要进行 grounding。
+- [EvoMAS: Learning Execution-Time Workflows for Multi-Agent Systems](https://arxiv.org/abs/2605.08769)：面向多 agent 系统的执行时 workflow 适应的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [TacoMAS: Test-Time Co-Evolution of Topology and Capability in LLM-based Multi-Agent Systems](https://arxiv.org/abs/2605.09539)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [PIVOT: Bridging Planning and Execution in LLM Agents via Trajectory Refinement](https://arxiv.org/abs/2605.11225)：PIVOT 通过环境交互反复细化 planning-execution trajectories，适合 Long-Running harness。
+- [CANTANTE: Optimizing Agentic Systems via Contrastive Credit Attribution](https://arxiv.org/abs/2605.13295)：通过 contrastive credit attribution 优化 agentic 系统；核心思想是把系统级得分归因到局部 agent 与 workflow 参数。
+- [FlowCompile: An Optimizing Compiler for Structured LLM Workflows](https://arxiv.org/abs/2605.13647)：面向结构化 LLM workflow 编译，以及在准确率和延迟约束下配置子 agent的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [GraphBit: A Graph-based Agentic Framework for Non-Linear Agent Orchestration](https://arxiv.org/abs/2605.13848)：面向面向 agent 的确定性图编排、状态路由、分层记忆和工具调用的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [APWA: A Distributed Architecture for Parallelizable Agentic Workflows](https://arxiv.org/abs/2605.15132)：类型：agent harness/可复用执行框架。核心价值：为 2.6.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Life-Harness](https://arxiv.org/abs/2605.22166)：在不改模型权重或环境的情况下，将反复出现的交互失败转化为 environment contracts、skills、action-realization rules 与 trajectory-regulation interventions，从运行时适配确定性 LLM agent。
+- [Polar](https://arxiv.org/abs/2605.24220)：为任意 agent harness 提供可扩展异步强化学习 rollout 框架，代理 LLM API 调用并重建 token-faithful trajectories 供训练使用。
+- [AutoScientists](https://arxiv.org/abs/2605.28655)（[项目页](https://autoscientists.openscientist.ai)；[开源代码](https://github.com/mims-harvard/AutoScientists)）从 Research 交叉列入，代表长程实验 harness。核心思想是用 heartbeat loop 反复唤醒 agents 读取持久共享状态，在证据或停滞改变搜索空间时重组团队，并跨大量计算实验维护 result logs 与 dead-end registries。
+- [Lean4Agent](https://arxiv.org/abs/2606.06523)：面向 agent workflow 和 trajectory 的形式化验证 harness。核心思想是用 Lean4 与 FormalAgentLib 建模 workflow 假设和语义一致性，再用验证结果定位执行失败并驱动 LeanEvolve 修订工作流。
+- [An Efficient Cross-Agent Spatial–Temporal Collaboration Framework for Environmental Perception in IoV](https://doi.org/10.1109/tccn.2026.3686792)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [Self-Healing AI Architecture: Recovery Patterns for Agentic Degradation](https://doi.org/10.1109/icdsaai69492.2026.11505144)：补充长运行智能体退化后的自恢复模式。
+- AutoGPT（[开源代码](https://github.com/Significant-Gravitas/AutoGPT)）：持续运行式自治代理框架，把任务队列、工具调用、长期执行与结果回写组织成可反复迭代的 agent loop，是公开生态里最早一批强调 long-running autonomy 的实现。
+- LangGraph（[开源代码](https://github.com/langchain-ai/langgraph)）把 long-running agent 的控制流显式化为 state graph，并提供 checkpointer 等机制，适合把 `checkpoint/rollback/分支恢复/可重复执行` 写进运行时。
+- [Plan-and-Act](https://openreview.net/forum?id=ybA4EcMmUZ)：面向长程任务的规划 harness，把显式规划和动作执行分离，使规划质量能在持续任务中被改进和评估。
+- [Agentic Plan Caching](https://openreview.net/forum?id=n4V3MSqK77)：为重复 agent workflow 增加测试时记忆，通过缓存并复用 plan，降低长时 agent 遇到相似任务时的延迟和成本。
 - Deep Agents（[开源代码](https://github.com/langchain-ai/deepagents)；[文档](https://docs.langchain.com/oss/python/deepagents/overview)）：batteries-included 长程 agent harness，包含 planning、subagents、filesystem state、上下文管理、shell access、持久记忆、人工审批、skills、tools 与 MCP 集成。
+- [Memory Matters: The Need to Improve Long-Term Memory in LLM-Agents](https://doi.org/10.1609/aaaiss.v2i1.27688)：补充面向长程运行或环境交互智能体能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [Cloud-Native Distributed LLM Platforms For Multi-Agent Conversational AI And Enterprise Architecture](https://doi.org/10.63278/jicrcr.vi.3535)：为长程运行智能体补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [A Platform for Scalable Development of Migrating ITACO Agents Across Multiple Devices](https://doi.org/10.1145/3765766.3765876)：为长程运行智能体补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [AEPIS: Agent-Enabled Planning at Scale](https://doi.org/10.1145/3731443.3771341)：面向长程规划与执行提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。

@@ -1,22 +1,137 @@
 # 1.14.3 Bench
 
+- [One Prompt To Rule Them All: LLMs for Opinion Summary Evaluation](https://arxiv.org/abs/2402.11683)：补充写作能力的评测资源或协议。
+- [Shaping Human-AI Collaboration: Varied Scaffolding Levels in Co-writing with Language Models](https://arxiv.org/abs/2402.11723)：比较不同脚手架强度的共写界面，衡量引导方式如何改变协作、主体性和写作结果。
+- [Reading Subtext: Evaluating Large Language Models on Short Story Summarization with Writers](https://arxiv.org/abs/2403.01061)：与未发表短篇小说作者共同评测故事摘要，发现摘要常有忠实性错误，且自动指标或 LLM judge 与作者评分相关性较弱。
+- [FaaF: Facts as a Function for the evaluation of generated text](https://arxiv.org/abs/2403.03888)：用函数调用式事实抽取与核验评估生成文本事实召回，尤其面向 RAG 输出，以低于纯提示 judge 的成本识别无支撑事实。
+- [LMStyle Benchmark: Evaluating Text Style Transfer for Chatbots](https://arxiv.org/abs/2403.08943)：提供聊天机器人文本风格迁移的自动化 benchmark，测试回复能否在保持语义的同时迁移到指定风格。
+- [Writing with AI Lowers Psychological Ownership, but Longer Prompts Can Help](https://arxiv.org/abs/2404.03108)：通过受控写作实验测量 AI 辅助写作中的心理所有权，并显示更长、更自主的提示可部分恢复所有权感。
+- [Evaluating Character Understanding of Large Language Models via Character Profiling from Fictional Works](https://arxiv.org/abs/2404.12726)：从虚构作品构建人物画像评测，检查模型能否依据叙事证据推断人物特质、关系与动机。
+- [SemEval-2024 Task 8: Multidomain, Multimodel and Multilingual Machine-Generated Text Detection](https://arxiv.org/abs/2404.14183)：SemEval-2024 Task 8 在多生成器、多领域和多语言条件下评测机器生成文本检测，并分别设置二分类检测、来源归因和人类到机器文本变点检测任务，使跨领域及混合作者鲁棒性可以直接比较。
+- [Automated Long Answer Grading with RiceChem Dataset](https://arxiv.org/abs/2404.14316)：使用 RiceChem 长答案数据集评测化学扩展回答的自动评分，关注与 rubric 对齐的学生写作评价。
+- [On the Evaluation of Machine-Generated Reports](https://arxiv.org/abs/2405.00982)：分析机器生成报告的评测方式，关注指标能否捕捉事实性、结构、完整性和实用性。
+- [Evaluating Large Language Models for Structured Science Summarization in the Open Research Knowledge Graph](https://arxiv.org/abs/2405.02105)：在 Open Research Knowledge Graph 的结构化科学摘要任务上测试 LLM，要求输出符合研究贡献槽位等 schema。
+- [Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT](https://arxiv.org/abs/2406.09056)：提出 CUDRT 作为 LLM 生成文本检测的综合评测框架，强调跨领域、模型、提示和扰动条件下的可靠性。
+- [Evaluation of Instruction-Following Ability for Large Language Models on Story-Ending Generation](https://arxiv.org/abs/2406.16356)：提供用于衡量写作与长文本生成能力的数据集、基准、指标或评测协议。
 - [Suri](https://arxiv.org/abs/2406.19371)（[开源代码](https://github.com/chtmp223/suri)）：评什么：长文生成中的多约束指令遵循。核心思想：把长文任务里的主题、格式、长度、风格和内容约束拆成可检查维度，专门测试模型能否在长输出中持续满足多个细粒度要求。
+- [FineSurE: Fine-grained Summarization Evaluation using LLMs](https://arxiv.org/abs/2407.00908)：将摘要质量拆成细粒度错误或维度判断，让 LLM 评测器定位事实、覆盖和连贯性问题，而不是只给整体分数。
+- [Pron vs Prompt: Can Large Language Models already Challenge a World-Class Fiction Author at Creative Text Writing?](https://arxiv.org/abs/2407.01119)：将 LLM 创意文本与世界级小说作者作品比较，把人类文学偏好和作者归因纳入写作评测。
+- [Towards Enhancing Coherence in Extractive Summarization: Dataset and Experiments with LLMs](https://arxiv.org/abs/2407.04855)：提供抽取式摘要连贯性数据集和 LLM 实验，评测句子选择与排序，而不只看内容重合。
+- [LongLaMP: A Benchmark for Personalized Long-form Text Generation](https://arxiv.org/abs/2407.11016)：评测个性化长文本生成，检查系统能否在长输出中持续利用用户画像或历史信息。
 - [LongWriter / LongBench-Write](https://arxiv.org/abs/2408.07055)（[开源代码](https://github.com/THUDM/LongWriter)）：评什么：1 万词级长文本生成与长度扩展能力。核心思想：通过 LongWrite-Ruler 与 LongBench-Write 暴露模型“能读长上下文”并不等于“能稳定写长输出”，尤其关注长度控制、结构延展和中后段退化。
-- [EQ-Bench Creative Writing](https://eqbench.com/creative_writing.html)：评什么：创意写作与长篇风格化文本的主观质量。核心思想：用开放写作 prompt 和社区榜单持续比较模型在文学性、表达、叙事节奏和风格控制上的差异，适合作为学术 benchmark 之外的产品化参考。
 - [LongGenBench](https://arxiv.org/abs/2409.02076)：评什么：长上下文 LLM 的长文生成。核心思想：用更长输入、更长输出和多维质量评价，把摘要式短输出与真正的长文成稿区分开。
+- [AI Suggestions Homogenize Writing Toward Western Styles and Diminish Cultural Nuances](https://arxiv.org/abs/2409.11360)：研究 AI 建议如何同质化写作风格并削弱文化细微差异。
+- [Small Language Models can Outperform Humans in Short Creative Writing: A Study Comparing SLMs with Humans and LLMs](https://arxiv.org/abs/2409.11547)：用人工偏好或质量判断比较小语言模型、大模型和人类在短篇创意写作任务上的表现。
 - [HelloBench](https://arxiv.org/abs/2409.16191)：评什么：LLM 长文本生成能力。核心思想：围绕长输出场景构造多类型 prompt 与评价协议，观察模型在长篇连贯性、重复、结构稳定性和指令满足上的系统退化。
-- [LongProc](https://arxiv.org/abs/2501.05414)（[开源代码](https://github.com/princeton-pli/LongProc)）：评什么：长过程性文本生成。核心思想：要求模型生成食谱、教程、工作流、说明书等过程性长文，评估步骤顺序、依赖一致性、完整性和可执行性，而不是只看单段语言流畅度。
-- [WritingBench](https://arxiv.org/abs/2503.05244)（[开源代码](https://github.com/X-PLUG/WritingBench)）：评什么：生成式写作能力，覆盖 6 个核心写作领域和 100 个子领域。核心思想：把写作任务拆成与查询相关的评价标准，用更贴近真实需求的 prompt、rubric 和评审协议衡量模型是否能写出符合目的、风格、结构和内容约束的长文。
+- [When Stereotypes GTG: The Impact of Predictive Text Suggestions on Gender Bias in Human-AI Co-Writing](https://arxiv.org/abs/2409.20390)：衡量预测文本建议如何影响人机共写中的性别偏见，将建议设计与最终文本偏见联系起来。
+- [CS4: Measuring the Creativity of Large Language Models Automatically by Controlling the Number of Story-Writing Constraints](https://arxiv.org/abs/2410.04197)：通过改变故事写作约束数量与具体程度，减少模型复述训练语料的可能，并自动测试创造力、指令遵循和叙事连贯性。
+- [Mitigating the Impact of Reference Quality on Evaluation of Summarization Systems with Reference-Free Metrics](https://arxiv.org/abs/2410.10867)：检验 reference-free 摘要指标能否降低低质量或噪声参考摘要带来的评测不稳定性。
+- [DomainSum: A Hierarchical Benchmark for Fine-Grained Domain Shift in Abstractive Text Summarization](https://arxiv.org/abs/2410.15687)：构建层级化摘要领域迁移 benchmark，衡量系统在粗粒度与细粒度领域变化下的性能退化。
+- [AIDBench: A benchmark for evaluating the authorship identification capability of large language models](https://arxiv.org/abs/2411.13226)：评测 LLM 是否能从写作样本识别作者身份，覆盖不同作者以及人类/生成文本的归因能力。
+- [Do LLMs Agree on the Creativity Evaluation of Alternative Uses?](https://arxiv.org/abs/2411.15560)：测试多个 LLM judge 对 Alternative Uses Task 创造力评分的一致性，揭示新颖性和有用性判断在模型间的差异。
+- [Evaluate Summarization in Fine-Granularity: Auto Evaluation with LLM](https://arxiv.org/abs/2412.19906)：使用 LLM 自动 judge 做细粒度摘要评分，将局部内容错误与整体摘要质量区分开。
+- [SumSurvey: An Abstractive Dataset of Scientific Survey Papers for Long Document Summarization](https://doi.org/10.18653/v1/2024.findings-acl.574)：以科学综述论文作为长文档摘要目标，测试模型能否把多论文综合内容压缩成忠实摘要。
+- [CCSum: A Large-Scale and High-Quality Dataset for Abstractive News Summarization](https://doi.org/10.18653/v1/2024.naacl-long.406)：面向抽象新闻摘要构建大规模样本集，用于检验模型在新闻要点覆盖、压缩表达和事实一致性上的表现。
+- [ParaRev: Building a dataset for Scientific Paragraph Revision annotated with revision instruction](https://arxiv.org/abs/2501.05222)：构建带修订指令的科学段落修订数据集 ParaRev。
+- [LongProc](https://arxiv.org/abs/2501.05414)（[开源代码](https://github.com/princeton-pli/LongProc)，[榜单](https://princeton-pli.github.io/LongProc/)）：评什么：长过程性文本生成。核心思想：要求模型生成食谱、教程、工作流、说明书等过程性长文，评估步骤顺序、依赖一致性、完整性和可执行性，而不是只看单段语言流畅度。
+- [Agent-as-Judge for Long-Narrative Summaries](https://arxiv.org/abs/2501.09993)：评什么：长叙事的事实性摘要。核心思想：用 agentic judge 检查长摘要的事实准确性，而不是只依赖词面重合。
+- [OpenGenAlign: A Preference Dataset and Benchmark for Trustworthy Reward Modeling in Open-Ended, Long-Context Generation](https://arxiv.org/abs/2501.13264)：评测长文本或开放式生成；核心思想是在真实提示下度量奖励建模、偏好对齐或写作质量。
+- [ExPerT](https://arxiv.org/abs/2501.14956)：评什么：个性化长文本生成。核心思想：评估输出是否满足用户特定写作偏好，并提供可解释的评测信号。
+- [Policies and Evaluation for Online Meeting Summarization](https://arxiv.org/abs/2502.03111)：研究在线会议摘要的策略与评测，为写作和长文本生成补充来自交互场景的摘要评测线索。
+- [IssueBench](https://arxiv.org/abs/2502.08395)：用 millions of realistic prompts 衡量 LLM writing assistance 中的 issue bias。
+- [EssayJudge: A Multi-Granular Benchmark for Assessing Automated Essay Scoring Capabilities of Multimodal Large Language Models](https://arxiv.org/abs/2502.11916)：可作为写作与文本生成的 Bench 候选：围绕 EssayJudge: A Multi-Granular Benchmark for Assessing Automated Essay Scoring Capabilities of Multimodal Large Language Models 提供可比较的评测任务、数据或分析协议。
+- [NUTSHELL: A Dataset for Abstract Generation from Scientific Talks](https://arxiv.org/abs/2502.16942)：把 ACL 会议报告录音与论文摘要配对，用于 speech-to-abstract generation，评测系统能否从报告中生成忠实的科学摘要。
+- [LongEval](https://arxiv.org/abs/2502.19103)：通过直接生成与 plan-based generation 两种范式评测长文本生成。核心思想：随着输出变长，衡量长度满足度、信息密度和质量退化。
+- [Argument Summarization and its Evaluation in the Era of Large Language Models](https://arxiv.org/abs/2503.00847)：研究论证摘要及其 LLM 评测，并构建人工 benchmark 数据集。
+- [WritingBench](https://arxiv.org/abs/2503.05244)（[开源代码](https://github.com/X-PLUG/WritingBench)，[榜单](https://huggingface.co/spaces/WritingBench/WritingBench)）：评什么：生成式写作能力，覆盖 6 个核心写作领域和 100 个子领域。核心思想：把写作任务拆成与查询相关的评价标准，用更贴近真实需求的 prompt、rubric 和评审协议衡量模型是否能写出符合目的、风格、结构和内容约束的长文。
+- [LongInOutBench](https://arxiv.org/abs/2503.06868)：评估长输入到长输出的生成能力。核心思想：诊断模型在长文生成中是否会遗漏输入中间位置的重要信息，即 long generation 场景下的 lost-in-the-middle 问题。
+- [DeFine](https://arxiv.org/abs/2503.07170)：用分解式细粒度标注评估长文生成。核心思想是提供层级主题和内容标注，让模型在结构、覆盖和深度上被检验，而不是只看最终文本的表面流畅度。
+- [CoKe: Customizable Fine-Grained Story Evaluation via Chain-of-Keyword Rationalization](https://arxiv.org/abs/2503.17136)：用可定制评价标准和 chain-of-keyword 理由评测故事，使 judge 决策比单一整体故事分数更可检查。
+- [Poor Alignment and Steerability of Large Language Models: Evidence from College Admission Essays](https://arxiv.org/abs/2503.20062)：以大学申请文书写作为 steerability 测试，揭示 LLM 在高风险个人写作中遵循偏好和对齐控制的失败点。
+- [StyleRec: A Benchmark Dataset for Prompt Recovery in Writing Style Transformation](https://arxiv.org/abs/2504.04373)：评测写作风格迁移中的 prompt recovery，检查系统能否从改写文本反推出背后的风格控制提示。
+- [StoryReasoning Dataset: Using Chain-of-Thought for Scene Understanding and Grounded Story Generation](https://arxiv.org/abs/2505.10292)：提供带 chain-of-thought 理由的场景理解与 grounded story generation 数据，测试生成叙事是否遵循视觉或场景证据。
 - [WebNovelBench](https://arxiv.org/abs/2505.14818)：评什么：网络小说式长篇叙事写作。核心思想：把 LLM 生成小说放到真实 web novel 分布中比较，关注人物、情节、叙事节奏、章节延续和读者偏好，而不是只评短故事片段。
 - [UNCLE](https://arxiv.org/abs/2505.16922)：评什么：长文生成中的不确定性表达。核心思想：专门检查模型是否能在长文里用合适、校准的语言表达不确定性，避免在开放写作中把模糊信息写成过度确定的断言。
 - [P2P](https://arxiv.org/abs/2505.17104)：评测自动论文到海报生成。核心思想：把研究论文转化为结构化 poster，并细粒度评价内容选择、版式组织和图文摘要的忠实性。
-- [ExpertLongBench](https://arxiv.org/abs/2506.01241)：评什么：专家级长文生成任务。核心思想：用结构化 checklist 评审专业长文，强调任务特定要求、可核验子标准和长文整体质量，减少只靠单一总分 judge 的不稳定性。
+- [CreataSet / CrEval](https://arxiv.org/abs/2505.19236)：用跨领域 pairwise comparison 评测文本创造力。核心思想是利用共享上下文指令和大规模人类/合成创意回复对，训练并测试与人类创造力判断对齐的 evaluator。
+- [PatentMind: A Multi-Aspect Reasoning Graph for Patent Similarity Evaluation](https://arxiv.org/abs/2505.19347)：用多维推理图表示专利相似性，评测系统能否超越表层词面重合来比较发明。
+- [APE: A Data-Centric Benchmark for Efficient LLM Adaptation in Text Summarization](https://arxiv.org/abs/2505.19912)：围绕写作与摘要提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [AdParaphrase v2.0: Generating Attractive Ad Texts Using a Preference-Annotated Paraphrase Dataset](https://arxiv.org/abs/2505.20826)：发布带偏好标注的广告改写数据，评测广告文本在保持原意的同时是否更具吸引力。
+- [Argument Representation Coverage](https://arxiv.org/abs/2505.23654)：评什么：长文档摘要中的论证保留。核心思想：自底向上表示原文论证，并衡量生成摘要是否覆盖关键论证结构。
+- [MSumBench](https://arxiv.org/abs/2506.00549)：评什么：跨领域、跨语言摘要。核心思想：加入领域特定标准和多语言覆盖，避免只用单一英文领域 rubric 判断摘要质量。
+- [ExpertLongBench](https://arxiv.org/abs/2506.01241)（[榜单](https://huggingface.co/spaces/launch/ExpertLongBench)）：评什么：专家级长文生成任务。核心思想：用结构化 checklist 评审专业长文，强调任务特定要求、可核验子标准和长文整体质量，减少只靠单一总分 judge 的不稳定性。
+- [EssayBench](https://arxiv.org/abs/2506.02596)：评估多体裁中文作文写作。核心思想：用体裁特定 rubric 与层次化评分检查结构、修辞和批判性思维，而不是只依赖粗粒度文本质量指标。
+- [Identifying Reliable Evaluation Metrics for Scientific Text Revision](https://arxiv.org/abs/2506.04772)：评测科学文本修订、写作质量或写作指标。
+- [TeXpert](https://arxiv.org/abs/2506.16990)：评什么：多层级 LaTeX 代码生成。核心思想：测试模型能否生成可编译、结构化的科研文档 artifact，而不只是普通文本。
+- [Statistical Multicriteria Evaluation of LLM-Generated Text](https://arxiv.org/abs/2506.18082)：可作为写作与文本生成的 Bench 候选：围绕 Statistical Multicriteria Evaluation of LLM-Generated Text 提供可比较的评测任务、数据或分析协议。
 - [Arena-Write](https://arxiv.org/abs/2506.18841)（[数据集](https://huggingface.co/datasets/THU-KEG/Arena-Write)）：评什么：真实写作 prompt 下的 pairwise 偏好与 Elo 排名。核心思想：把长文写作结果放进 arena-style 比较，补足单一 rubric critic 难以捕捉整体偏好的问题。
-- [ASAP 2.0](https://doi.org/10.1016/j.asw.2025.100954)：评估基于材料的写作质量。核心思路：提供面向大规模评分的数据集，用于检验生成文本或学生写作是否能忠实、有效地利用给定材料。
 - [LitBench](https://arxiv.org/abs/2507.00769)：评什么：基于人工标注故事对比的创意写作自动评测可靠性。核心思想：提供标准化偏好 benchmark 和配对数据集，用来测试 LLM judge 与 reward model 对文学生成质量的判断。
+- [Targeted Syntactic Evaluation for Grammatical Error Correction](https://doi.org/10.18653/v1/2025.acl-long.1026)：用定向句法测试项评测语法纠错，将具体语法现象与总体纠错分数区分开。
+- [AI-generated stories favour stability over change: homogeneity and cultural stereotyping in narratives generated by gpt-4o-mini](https://arxiv.org/abs/2507.22445)：分析 gpt-4o-mini 生成叙事的同质化、文化刻板印象，以及偏好稳定情节而非变化情节的倾向。
+- [PREF: Reference-Free Evaluation of Personalised Text Generation in LLMs](https://arxiv.org/abs/2508.10028)：提供个性化文本生成的 reference-free 协议，无需 gold target 即可评分输出是否满足用户偏好。
+- [Paper-Introduction Writing Benchmark](https://arxiv.org/abs/2508.14273)：评什么：LLM 撰写研究论文 Introduction 的能力。核心思想：把学术 Introduction 写作做成显式 benchmark，考察动机、定位、结构和学术语气。
+- [T2R-bench](https://arxiv.org/abs/2508.19813)：评估从真实工业表格生成文章级报告的能力。核心思想：用覆盖 19 个行业领域的 457 个双语表格和报告质量评分协议，测试模型能否把结构化表格证据转化为连贯、准确的报告。
+- [Benchmark of stylistic variation in LLM-generated texts](https://arxiv.org/abs/2509.10179)：衡量 LLM 生成文本中的风格变化，使评测者能区分可控风格多样性与泛化流畅度。
+- [RedNote-Vibe: A Dataset for Capturing Temporal Dynamics of AI-Generated Text in Lifestyle Social Media](https://arxiv.org/abs/2509.22055)：跟踪小红书生活方式帖中 AI 生成文本的时间变化，用于评测时间漂移、平台文风和社交媒体文本真实性。
+- [From Internal Representations to Text Quality: A Geometric Approach to LLM Evaluation](https://arxiv.org/abs/2509.25359)：将内部表示几何与生成文本质量联系起来，提供区别于仅看输出文本的诊断信号。
+- [CML-Bench: A Framework for Evaluating and Enhancing LLM-Powered Movie Scripts Generation](https://arxiv.org/abs/2510.06231)：评测写作与长文本生成。核心思想：围绕论文中的任务、数据或协议（A Framework for Evaluating and Enhancing LLM-Powered Movie Scripts Generation）形成可复用比较基准。
+- [WritingPreferenceBench](https://arxiv.org/abs/2510.14616)：在控制客观正确性、事实性和长度后，评估跨文化主观写作偏好。核心思想：用英文和中文创意写作偏好对，测试 reward model 与 LLM judge 是否真正捕捉风格、创造性和情感共鸣，而不只是识别客观错误。
+- [Readability Reconsidered: A Cross-Dataset Analysis of Reference-Free Metrics](https://arxiv.org/abs/2510.15345)：跨数据集比较 reference-free 可读性指标，分析可读性分数何时可迁移、何时主要反映数据集伪影。
 - [CreativityPrism](https://arxiv.org/abs/2510.20091)：评测 LLM 在发散思维、创意写作和逻辑推理中的创造力。核心思想：把质量、新颖性和多样性拆开衡量，避免把创意写作能力和其他创造性生成能力混在一起。
+- [FicSim: A Dataset for Multi-Faceted Semantic Similarity in Long-Form Fiction](https://arxiv.org/abs/2510.20926)：构建多语义侧面的长篇小说相似度数据集，测试指标能否捕捉情节、人物、场景和主题相似性。
 - [LongWeave](https://arxiv.org/abs/2510.24345)：评什么：真实相关且可验证的长文生成。核心思想：让长文任务既贴近真实写作需求，又能通过引用、事实和结构化约束进行核验，连接写作质量与可验证性。
+- [BookAsSumQA: An Evaluation Framework for Aspect-Based Book Summarization via Question Answering](https://arxiv.org/abs/2511.06183)：用面向不同方面的问题评测书籍摘要，通过可回答性暴露长篇叙事摘要中的遗漏或无支撑内容。
+- [CreBench](https://arxiv.org/abs/2511.13626)：评什么：从 idea、process 到 product 的人类对齐创造力。核心思想：跨创意生成多个阶段评估，而不只评价最终作品。
+- [FEANEL: A Benchmark for Fine-Grained Error Analysis in K-12 English Writing](https://arxiv.org/abs/2511.22883)：为 K-12 英语写作提供细粒度错误标签，用于诊断语法、用法、组织和修改支持失败。
+- [2K-Characters-10K-Stories: A Quality-Gated Stylized Narrative Dataset with Disentangled Control and Sequence Consistency](https://arxiv.org/abs/2512.05557)：发布带解耦控制信号和序列一致性检查的风格化故事数据，支持人物风格与长篇叙事连续性评测。
+- [FIND](https://arxiv.org/abs/2512.18601)：评什么：文档不一致性查找。核心思想：向真实文档插入专家编写的不一致点，测试模型能否完成审计。
+- [DramaBench](https://arxiv.org/abs/2512.19012)（[榜单](https://dramabench.pages.dev/web/leaderboard.html)）：评什么：戏剧剧本续写。核心思想：从情节、人物、风格、连贯性和戏剧约束等维度评估长篇叙事续写。
+- [SlideTailor: Personalized Presentation Slide Generation for Scientific Papers](https://arxiv.org/abs/2512.20292)：评测从科研论文生成个性化演示幻灯片的能力，要求输出贴合用户的展示偏好。
+- [ASAP 2.0](https://doi.org/10.1016/j.asw.2025.100954)：评估基于材料的写作质量。核心思路：提供面向大规模评分的数据集，用于检验生成文本或学生写作是否能忠实、有效地利用给定材料。
+- [The AraGenEval Shared Task on Arabic Authorship Style Transfer and AI Generated Text Detection](https://doi.org/10.18653/v1/2025.arabicnlp-sharedtasks.1)：定义阿拉伯语作者风格迁移和 AI 生成文本检测共享任务，补充非英语风格与来源判别评测。
+- [Not too long do read: Evaluating LLM-generated extreme scientific summaries](https://arxiv.org/abs/2512.23206)：评测极短科学摘要，检查 LLM 在严苛长度压缩下能否保留关键科研主张。
+- [Artificial intelligence-generated content (AIGC) quality evaluation: a comprehensive indicator system grounded in both users and literature](https://doi.org/10.1108/el-08-2025-0332)：从用户视角和文献证据出发提出 AIGC 质量指标体系，为生成文本评价提供多标准 rubric。
+- [MDD-TD: A dataset of large language model text source and content authenticity detection](https://doi.org/10.11922/11-6035.csd.2025.0191.zh)：发布用于检测大模型文本来源和内容真实性的数据集，支持文本溯源及人类/模型文本分析。
+- [AI-Generated Versus Human Text: Introducing a New Dataset for Benchmarking and Analysis](https://doi.org/10.1109/tai.2025.3544183)：发布 AI 生成文本与人类文本数据，用于检测器 benchmark 和不同来源文本语言特征分析。
+- [SPoRC-VIST](https://arxiv.org/abs/2601.01062)：评测从图像序列生成播客式视觉叙事，包含 4,000 组图像-对话样本，并衡量对话自然度、叙事深度和视觉一致性。
+- [WRAVAL](https://arxiv.org/abs/2601.03268)：评什么：语气和风格修改等写作辅助任务。核心思想：在缺少预定义评测数据的实际写作辅助场景中建立 benchmark，尤其关注小语言模型。
+- [RIGOURATE](https://arxiv.org/abs/2601.04350)：评测内容：科学论文声明是否相对于正文证据被夸大。核心思想：从论文正文检索支持证据，并判断声明与证据是否相称，把学术写作中的证据克制性转化为可衡量指标。
 - [SlidesGen-Bench](https://arxiv.org/abs/2601.09487)：用计算式与量化指标评测自动幻灯片生成；核心思想是把代码驱动和图像式幻灯片系统都转成渲染结果来比较，使版式、内容覆盖和可靠性处在同一协议下评分。
+- [PodBench](https://arxiv.org/abs/2601.14903)：评测指令感知的播客脚本生成；核心思想是用 800 个结构化样本测试长上下文、多说话人、面向音频表达的写作，并结合量化约束和质量评审。
+- [AI Personalization Paradox: Reading Highlights for Personalized AI-Assisted Writing Increases Engagement but Undermines Autonomy and Ownership](https://arxiv.org/abs/2601.17846)：评测带阅读高亮的个性化写作助手界面，发现其提升投入度但降低感知自主性和心理所有权。
 - [CDAT / Conditional Divergent Association Task](https://arxiv.org/abs/2601.20546)：通过区分新颖性与语境适切性来评测语言创造力。核心思想：修正 Divergent Association Task 只偏重新颖性的缺陷，把创造力放到具体语境中衡量，避免把随机或噪声式用词误判为创作能力。
+- [CLFEC: A New Task for Unified Linguistic and Factual Error Correction in paragraph-level Chinese Professional Writing](https://arxiv.org/abs/2602.23845)：定义中文专业段落写作中的语言错误与事实错误统一纠错任务，并比较提示、检索增强和 agentic 纠错基线。
+- [PresentBench](https://arxiv.org/abs/2603.07244)（[榜单](https://presentbench.github.io/)）：评什么：基于细粒度 rubric 的幻灯片生成。核心思想：用 rubric 协议评分演示内容、结构、版式和视觉忠实度，而不只看整体偏好。
+- [Why AI-Generated Text Detection Fails: Evidence from Explainable AI Beyond Benchmark Accuracy](https://arxiv.org/abs/2603.23146)：用可解释 AI 分析诊断 AI 文本检测器，说明高 benchmark accuracy 可能掩盖脆弱线索、领域捷径和不可靠判定。
+- [PosterReward / PosterBench](https://arxiv.org/abs/2603.29855)：评什么：高质量 graphic-design poster 生成和 poster reward model。核心思想：用多个 MLLM 共识构造 70K poster preference pairs，训练级联式 PosterReward judge 来评估 typography、layout 与 aesthetics，并同时发布 PosterRewardBench 评测 reward model、PosterBench 评测 text-to-image poster 生成。
+- [POEMetric](https://arxiv.org/abs/2604.03695)：评什么：诗歌生成质量。核心思想：从格律、主题、创造性、词汇多样性、情感和意象等维度评分，使诗歌评测比单纯偏好判断更结构化。
 - [PaperWritingBench](https://arxiv.org/abs/2604.05018)：评什么：AI research paper 写作。核心思想：把摘要、引言、相关工作、方法、实验叙述等论文写作环节组织成可评测任务，检查学术写作的结构、论证、引用上下文和段落质量。
 - [HoWToBench](https://arxiv.org/abs/2604.19071)：评什么：人类水平写作能力。核心思想：提出 Tree of Writing，将写作拆成意图理解、素材组织、结构规划、局部段落生成、全局修订等节点，做更细粒度的写作过程评测。
+- [Beyond Rating: A Comprehensive Evaluation and Benchmark for AI Reviews](https://arxiv.org/abs/2604.19502)：对 AI 评审进行超越单一评分的综合评测。
+- [LongSumEval](https://arxiv.org/abs/2604.25130)：评什么：基于问答的长文档摘要评测。核心思想：把摘要评估转化为结构化问题，通过答案暴露遗漏、无支撑或需要修订的内容。
+- [Co-Writing with AI: An Empirical Study of Diverse Academic Writing Workflows](https://arxiv.org/abs/2604.25389)：实证比较多种 AI 辅助学术写作流程，记录规划、起草、修改、资料使用和最终作者身份决策的分工方式。
+- [EditPropBench](https://arxiv.org/abs/2605.02083)：评什么：科学论文中的事实编辑传播。核心思想：测试局部事实修改能否在相关 claim、表格和叙述上下文中一致传播。
+- [DoGMaTiQ: Automated Generation of Question-and-Answer Nuggets for Report Evaluation](https://arxiv.org/abs/2605.04458)：从源材料自动生成问答 nugget，使报告评测能够检查长输出是否覆盖必要事实和可回答内容。
+- [StoryRMB](https://arxiv.org/abs/2605.04831)：评什么：评测 reward models 对人类故事偏好的建模能力。核心思想：用一个 chosen story 和多个 rejected stories 进行对比，检查 reward model 是否能捕捉叙事结构、连贯性和人类偏好，而不只是在短回答 helpfulness 上表现良好。
+- [NARRA-Gym for Evaluating Interactive Narrative Agents](https://arxiv.org/abs/2605.08503)：提供交互式叙事环境，评测智能体在多轮故事推进、选择处理和叙事连贯性上的表现。
+- [When Style Similarity Scores Fail: Diagnosing Raw CSD Cosine in Artist-Style Evaluation](https://arxiv.org/abs/2605.09030)：诊断 raw CSD cosine 在艺术家风格评价中的失效情形，说明风格相似度分数何时会误排生成结果并需要校准。
+- [PaperFit-Bench](https://arxiv.org/abs/2605.10341)：评测科研文档的视觉排版优化；核心思想是通过渲染、检查和编辑闭环，把可编译的 LaTeX 论文修复成接近出版质量的 PDF，覆盖浮动体、公式、表格和页面布局缺陷。
+- [DocFormBench](https://arxiv.org/abs/2606.01936)：用准确率与效率指标评测文档格式化，并配套 DocFormFlow 将目标定位与修改执行解耦，专门衡量保持版式的编辑能力。
+- [Evaluation and Optimization of Large Language Models for Cross-Cultural Sentiment Analysis and Text Generation](https://doi.org/10.1109/aieta69357.2026.11508902)：评测并优化 LLM 的跨文化情感分析和文本生成，关注输出能否保留文化特定的情感线索。
+- [Trusting AI to detect AI? A systematic evaluation of the reliability and robustness of current AIGC detection tools for student academic work](https://doi.org/10.1016/j.compedu.2026.105616)：系统测试当前 AIGC 检测工具在学生学术写作上的可靠性和鲁棒性，而不只报告整体准确率。
+- [A Comprehensive Evaluation of Fine-Tuned LLMs as AI-Generated Text Detectors Under Adversarial and Multi-Domain Conditions](https://doi.org/10.1109/access.2026.3689209)：在对抗与多领域设置下评估微调 LLM 作为 AI 生成文本检测器。
+- [EQ-Bench Creative Writing](https://eqbench.com/creative_writing.html)：评什么：创意写作与长篇风格化文本的主观质量。核心思想：用开放写作 prompt 和社区榜单持续比较模型在文学性、表达、叙事节奏和风格控制上的差异，适合作为学术 benchmark 之外的产品化参考。
+- [LLM Stats Best AI for Writing](https://llm-stats.com/leaderboards/best-ai-for-writing)：评什么：按模型质量、速度和价格聚合的产品化写作表现。核心思想：把公开模型信号整理成持续更新的写作榜单，适合作为第三方参考面，而不是单一论文 benchmark。
+- [Instructional Mechanisms for Professional Writing: A Comparison of Scaffolded Annotation and ChatGPT](https://doi.org/10.1145/3772318.3790915)：比较 scaffolded annotation 与 ChatGPT 作为专业写作教学机制时，对反馈、修改和学习支持的影响。
+- [Evaluating AI-Generated Emails: A Comparative Efficiency Analysis](https://doi.org/10.5430/wjel.v14n2p502)：比较 AI 生成邮件的效率与质量，将邮件起草作为实际职场写作评测场景。
+- [New Paradigm for Evaluating Scholar Summaries: A Facet-aware Metric and a Meta-evaluation Benchmark](https://doi.org/10.1145/3733597)：提出 facet-aware 学术摘要指标和 meta-evaluation benchmark，检验摘要指标能否追踪学术内容维度。
+- [HTEKG: A Human-Trait-Enhanced Literary Knowledge Graph with Language Model Evaluation](https://doi.org/10.5220/0013013600003838)：构建融合人类特质的文学知识图谱，并用其评测语言模型的人物与文学理解。
+- [QuerySum: A Multi-Document Query-Focused Summarization Dataset Augmented with Similar Query Clusters](https://doi.org/10.1609/aaai.v38i17.29836)：为多文档 query-focused summarization 提供相似查询簇，测试系统能否针对细微查询差异调整摘要内容。
+- [Evaluation of the Feedback Impact Generated by Generative Artificial Intelligence on Writing Ability in Descriptive Texts](https://doi.org/10.15294/lc.v19i2.21540)：衡量生成式 AI 反馈对描述文写作能力的影响，将反馈质量与学生修改和写作结果联系起来。
+- [TSTBench: A Comprehensive Benchmark for Text Style Transfer](https://doi.org/10.3390/e27060575)：评测文本风格迁移任务，检查语义保持、风格迁移强度和生成质量。
+- [Graph-based Key Opinion Analyzer: Multifaceted Evaluation of Critical Opinions and Omission Detection in Summarization](https://doi.org/10.1145/3701716.3715179)：围绕写作与摘要提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [RottenReviews: Benchmarking Review Quality with Human and LLM-Based Judgments](https://doi.org/10.1145/3746252.3761506)：可作为写作与文本生成的 Bench 候选：围绕 RottenReviews: Benchmarking Review Quality with Human and LLM-Based Judgments 提供可比较的评测任务、数据或分析协议。
+- [A Novel Benchmark for Persian Table-to-Text Generation: A New Dataset and Baseline Experiments](https://doi.org/10.1145/3748648)：可作为写作与长文本生成方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [The Promises and Pitfalls of Large Language Models as Feedback Providers: A Study of Prompt Engineering and the Quality of AI-Driven Feedback](https://doi.org/10.3390/ai6020035)：面向写作与长文本生成的可复用评测、数据集、协议或诊断研究。核心思路是围绕“The Promises and Pitfalls of Large Language Models as Feedback Providers: A Study of Prompt Engineering and the Quality of AI-Driven Feedback”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Benchmarking AI Text Detection: Assessing Detectors Against New Datasets, Evasion Tactics, and Enhanced LLMs]()：提供可复用评测目标、排行榜或测量协议。
+- [AI Writers Have a Consistent Stylometric Footprint, but AI Editors Do Not](https://arxiv.org/abs/2608.27855)： 在 8 个 LLM 和 5 个领域上，熵与词汇多样性能够稳定区分机器生成文本和人工写作；AI 编辑则会降低熵，并使词汇密度成为主导信号，因此编辑文本比生成文本更难与人工原文区分。

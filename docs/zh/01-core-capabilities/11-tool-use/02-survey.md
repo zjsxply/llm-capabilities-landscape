@@ -1,16 +1,55 @@
 # 1.11.2 Survey
 
+- [Personal LLM Agents: Insights and Survey about the Capability, Efficiency and Security](https://arxiv.org/abs/2401.05459)：从能力、效率和安全三条线梳理个人 LLM agent，将工具访问、个性化记忆和用户数据风险作为相互牵制的设计约束。
+- [When Large Language Models Meet Vector Databases: A Survey](https://arxiv.org/abs/2402.01763)：综述向量数据库作为 LLM 系统检索底座的角色，覆盖 embedding 存储、索引、相似度搜索、RAG 应用和部署挑战。
+- [How NeRFs and 3-D Gaussian Splatting Are Reshaping SLAM: A Survey](https://arxiv.org/abs/2402.13255)：相邻的空间工具系统综述，说明 NeRF 与 3D Gaussian Splatting 如何改变 SLAM 地图、重建流水线和机器人或 AR 感知栈。
 - [What Are Tools Anyway? A Survey from the Language Model Perspective](https://arxiv.org/abs/2403.15452)：澄清工具、API、行动、外部资源与 skills 的边界。
+- [Exploring Autonomous Agents through the Lens of Large Language Models: A Review](https://arxiv.org/abs/2404.04442)：按规划、记忆、工具使用、多智能体协作和应用模式综述 LLM agent 架构，为外部执行循环提供宽口径分类。
+- [A Survey on Retrieval-Augmented Text Generation for Large Language Models](https://arxiv.org/abs/2404.10981)：按检索来源、retriever-generator 耦合、知识注入、评测和失败模式组织 retrieval-augmented text generation。
+- [A Survey on RAG Meeting LLMs: Towards Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2405.06211)：从检索语料、chunking、增强策略、生成、评测到部署限制梳理 retrieval-backed LLM 系统。
+- [On the Brittle Foundations of ReAct Prompting for Agentic Large Language Models](https://arxiv.org/abs/2405.13966)：梳理工具使用相关方法、风险与开放问题。
 - [Tool Learning with Large Language Models: A Survey](https://arxiv.org/abs/2405.17935)：回顾工具发现、选择、调用、反馈、数据集与基准。
+- [Research Trends for the Interplay between Large Language Models and Knowledge Graphs](https://arxiv.org/abs/2406.08223)：综述工具使用的方法谱系、任务边界与开放挑战。
+- [Temporal Knowledge Graph Question Answering: A Survey](https://arxiv.org/abs/2406.14191)：Temporal Knowledge Graph Question Answering: A Survey 梳理工具使用方向的方法、风险或评测边界。
 - [LLM With Tools: A Survey](https://arxiv.org/abs/2409.18807)：从系统视角梳理工具表示、规划、执行反馈与评测。
+- [A Comprehensive Survey of Retrieval-Augmented Generation (RAG): Evolution, Current Landscape and Future Directions](https://arxiv.org/abs/2410.12837)：综述工具使用、API 使用、检索或智能体工具编排能力，补充近期方法、基准、风险或开放问题脉络。
+- [A Survey of Large Language Model-Based Generative AI for Text-to-SQL: Benchmarks, Applications, Use Cases, and Challenges](https://arxiv.org/abs/2412.05208)：梳理工具使用相关方法、风险与开放问题。
 - [A Survey on LLM Test-Time Compute via Search](https://arxiv.org/abs/2501.10069)：把搜索视为测试时计算原语，连接任务结构、模型画像、搜索算法与 agent 框架。
+- [A Comprehensive Survey on Integrating Large Language Models with Knowledge-Based Methods](https://arxiv.org/abs/2501.13947)：可作为工具调用与检索增强执行的 Survey 候选：围绕 A Comprehensive Survey on Integrating Large Language Models with Knowledge-Based Methods 梳理背景、方法与开放问题。
+- [Position: Emergent Machina Sapiens Urge Rethinking Multi-Agent Paradigms](https://arxiv.org/abs/2502.04388)：立场论文，主张更强 AI 系统需要重新设计多智能体范式，并显式处理协同、通信、治理和交互假设。
+- [Interpretable Text Embeddings and Text Similarity Explanation: A Survey](https://arxiv.org/abs/2502.14862)：综述可解释文本嵌入与文本相似度解释方法，可用于检索与 RAG 诊断。
+- [Graph-Based Re-ranking: Emerging Techniques, Limitations, and Opportunities](https://arxiv.org/abs/2503.14802)：梳理tool use, retrieval, API use, or structured retrieval相关方法与挑战，补充该能力方向的综述线索。
+- [Retrieval-Augmented Generation in Industry: An Interview Study on Use Cases, Requirements, Challenges, and Evaluation](https://arxiv.org/abs/2508.14066)：可作为工具调用与检索增强执行的 Survey 候选：围绕 Retrieval-Augmented Generation in Industry: An Interview Study on Use Cases, Requirements, Challenges, and Evaluation 梳理背景、方法与开放问题。
+- [Filtered Vector Search: State-of-the-art and Research Challenges](https://doi.org/10.14778/3750601.3750700)：教程式综述带关系过滤的向量检索，总结 RAG 工具后端常见的优化策略和 recall 稳定性问题。
 - [Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions](https://arxiv.org/abs/2503.23278)：回顾现代工具中间件中的 MCP 生态与安全问题。
+- [Humanizing LLMs: A Survey of Psychological Measurements with Tools, Datasets, and Human-Agent Applications](https://arxiv.org/abs/2505.00049)：综述心理测量工具、数据集和人机应用场景；对工具使用页的价值在于把测量仪器和任务都视为评测接口。
 - [A survey of agent interoperability protocols](https://arxiv.org/abs/2505.02279)：比较 MCP、ACP、A2A 与 ANP 作为工具访问、agent 通信和跨系统协同的协议层。
 - [From Standalone LLMs to Integrated Intelligence](https://arxiv.org/abs/2506.04565)：以 compound AI systems 为框架，组织模型、检索器、工具、规划器与评估器的组合方式。
 - [Survey of LLM Agent Communication with MCP](https://arxiv.org/abs/2506.05364)：从 Mediator、Observer、Publish-Subscribe、Broker 等软件设计模式综述 MCP 场景下的智能体通信与工具编排。
 - [Dynamic and Parametric Retrieval-Augmented Generation](https://arxiv.org/abs/2506.06704)：综述动态与参数化检索增强生成，澄清工具型智能体依赖的检索行为。
+- [Compound AI Systems Optimization: A Survey of Methods, Challenges, and Future Directions](https://arxiv.org/abs/2506.08234)：综述多组件 AI 工作流的优化方法。
+- [Conversational Agents: A Framework for Evaluation (CAFE) (Dagstuhl Perspectives Workshop 24352)](https://arxiv.org/abs/2506.11112)：Dagstuhl 对话 agent 评估框架，按任务目标、交互上下文、用户影响和系统行为组织评测，而不是只给单一对话指标。
 - [Engineering RAG Systems for Real-World Applications: Design, Development, and Evaluation](https://arxiv.org/abs/2506.20869)：综述真实 RAG 系统在设计、开发与评估中的工程实践。
+- [A Survey of Optimization Modeling Meets LLMs: Progress and Future Directions](https://arxiv.org/abs/2508.10047)：综述 LLM 如何建模、求解、解释和交互优化问题，把数学求解器与建模语言纳入工具使用边界。
+- [From Search to Reasoning: a Five-Level Rag Capability Framework for Enterprise Data](https://arxiv.org/abs/2509.21324)：提出企业数据 RAG 五级能力阶梯，从简单搜索推进到受治理数据上的推理，明确各成熟度阶段检索工具应提供什么。
 - [SoK](https://arxiv.org/abs/2512.06914)：把信任与授权不匹配定义为委派工具使用和多 agent 交互中的核心风险边界。
+- [ReGraphRAG: Reorganizing Fragmented Knowledge Graphs for Multi-Perspective Retrieval-Augmented Generation](https://doi.org/10.18653/v1/2025.findings-emnlp.290)：重组碎片化知识图谱以支持多视角 RAG，把 graph restructuring 本身作为检索阶段干预，而不只是生成端提示技巧。
+- [Review of Graph Retrieval-Augmented Generation Research](https://doi.org/10.12677/airr.2025.142040)：综述 GraphRAG 中的图构建、图检索、答案生成和评测，补充纯文本 RAG 综述之外的图结构视角。
+- [A Survey of Retrieval-Augmented Generation (RAG) for Large Language Models](https://doi.org/10.1109/ictbai68361.2025.00008)：综述依赖外部知识的 LLM 系统中的 RAG 架构、检索组件、生成策略、评测实践和开放挑战。
+- [Exploring Research and Tools in AI Security: A Systematic Mapping Study](https://doi.org/10.1109/access.2025.3567195)：面向工具使用能力，梳理近期工作、分类边界与开放问题。
+- [Text to SQL AI Agentic Workflow Implementations: A Systematic Literature Review](https://doi.org/10.1109/icatc68823.2025.11407744)：系统综述 text-to-SQL agent workflow，覆盖 schema 理解、查询规划、执行反馈和数据库工具部署问题。
+- [From Static Templates to Dynamic Runtime Graphs: A Survey of Workflow Optimization for LLM Agents](https://arxiv.org/abs/2603.22386)：综述优化工具、检索、代码执行、记忆和验证流程的 agentic computation graphs。
+- [Agentic Tool Use in Large Language Models](https://arxiv.org/abs/2604.00835)：把工具使用方法组织为提示式即插即用、监督式工具学习和奖励驱动工具策略学习，连接训练路线、评测与失败模式。
 - [The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration](https://arxiv.org/abs/2603.22862)：梳理多工具编排中的路由、组合、轨迹与协同。
+- [Agentic AI in Engineering and Manufacturing: Industry Perspectives on Utility, Adoption, Challenges, and Opportunities](https://arxiv.org/abs/2604.09633)：从产业视角综述工程与制造中的 agentic AI，按效用、采用障碍、工作流集成和运营挑战组织。
 - [A Systematic Security Analysis of Model Context Protocol](https://doi.org/10.1109/ICAIC67076.2026.11395848)：系统分析 MCP 的漏洞、利用方式与缓解措施，把工具使用安全落到服务器、客户端和协议行为层面。
+- [Emerging materials for next-generation energy storage: A roadmap to solid-state and beyond](https://doi.org/10.1016/j.nxener.2026.100588)：偏轴材料路线图，仅作为相邻发现线索保留；主体是固态及下一代储能材料，不是 LLM 工具使用。
+- [Personalized Federated Learning for Sovereign Personal AI Agents: A Review](https://doi.org/10.1109/icecco67619.2026.11488769)：综述 sovereign personal AI agent 的个性化联邦学习，强调用户数据本地性、个性化和分布式适配。
+- [Enabling Intelligence in Digital Twins Through Semantic Enrichment and Multi-Agent Systems: A Systematic Literature Review](https://doi.org/10.1109/access.2026.3671689)：系统综述数字孪生中的语义增强和多智能体系统；当 agent 使用结构化领域模型作为外部操作工具时与本页相邻。
+- [Knowledge Graph Interoperability and Reasoning: A Brief Survey of Alignment Techniques and Retrieval-Augmented Generation Approaches](https://doi.org/10.1109/icsc67292.2026.00068)：梳理工具使用与检索方向，重点关注 Knowledge Graph Interoperability and Reasoning: A Brief Survey of Alignment Techniques and Retrieval-Augmented Generation Approaches。
+- [Retrieval-Augmented Generation (RAG): Architecture, Ethical Challenges, and Optimization Strategies](https://doi.org/10.1109/icmlas67792.2026.11483907)：梳理工具使用与检索方向，重点关注 Retrieval-Augmented Generation (RAG): Architecture, Ethical Challenges, and Optimization Strategies。
 - [LLM-Based Agents for Tool Learning](https://doi.org/10.1007/s41019-025-00296-9)：从 agent 视角梳理工具发现、选择、调用、反馈利用与工具学习评测。
+- [Large Language Models Meet Next-Generation Networking Technologies: A Review](https://doi.org/10.3390/fi16100365)：综述 LLM 与下一代网络技术结合，覆盖网络管理、优化和面向协议的应用。
+- [Knowledge Graph Combined with Retrieval-Augmented Generation for Enhancing LMs Reasoning: A Survey](https://doi.org/10.54097/h21fky45)：综述知识图谱与 RAG 结合增强语言模型推理，重点在图构建、检索、grounding 和答案生成。
+- [Rethinking Pseudo Word Learning in Zero-Shot Composed Image Retrieval: From an Object-Aware Perspective](https://doi.org/10.1145/3726302.3730074)：相邻的 composed image retrieval 工作；在这里的价值是 object-aware retrieval 视角，而不是通用工具编排。
+- [Agent-based approaches in studying algorithm-mediated communication: a methodological review](https://doi.org/10.1007/s44382-026-00022-7)：综述用于研究 algorithm-mediated communication 的 agent-based 方法，与工具使用的交集在仿真和交互建模。

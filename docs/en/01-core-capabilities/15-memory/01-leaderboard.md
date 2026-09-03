@@ -4,3 +4,5 @@
 - [MemoryAgentBench](https://github.com/HUST-AI-HYZ/MemoryAgentBench): Public code and evaluation entry point for incremental interactive agent memory, useful for comparing external memory modules, summary memory, and full-context strategies.
 - [MemGUI-Bench](https://github.com/lgy0404/MemGUI-Bench): An entry point for mobile GUI agent memory evaluation, useful for observing retention and cross-session learning in GUI tasks across sessions.
 - [EvoMemBench](https://github.com/DSAIL-Memory/EvoMemBench): An entry point for self-evolving memory evaluation, useful for comparing in-episode/cross-episode and knowledge/execution memory.
+- [Bench'd AI memory scoreboard](https://benchd.ai/): An independent public memory leaderboard that aggregates memory-system results across tasks such as LoCoMo and LongMemEval.
+  It is not the official page for those individual benchmarks, but it is a useful ranking view for comparing practical memory systems across multiple long-term-memory protocols.

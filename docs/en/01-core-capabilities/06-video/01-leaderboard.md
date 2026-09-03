@@ -1,8 +1,13 @@
 # 1.6.1 Leaderboard
 
 - [Video-MME Leaderboard](https://video-mme.github.io/home_page.html#leaderboard): Continuous leaderboard for multitask understanding of short, medium, and long videos; a useful baseline reference for broad video VLM capability.
+- [LVBench Leaderboard](https://lvbench.github.io/): official leaderboard for long-video understanding. It is useful for tracking models under longer temporal spans and retrieval-heavy video QA settings.
 - [LongVideoBench Leaderboard](https://longvideobench.github.io/index.html#leaderboard): Continuous leaderboard for long-context interleaved video-language understanding; suitable for comparing different frame budgets, subtitle inputs, and long-range retrieval strategies.
 - [VideoAutoArena](https://videoautoarena.github.io/): Continuous leaderboard that compares open-ended video analysis models through user simulation, model battles, and automatic judging; useful for covering real user video tasks that multiple-choice benchmarks miss.
 - [Video-MMMU Leaderboard](https://videommmu.github.io/#Leaderboard): Continuous leaderboard for knowledge acquisition and QA in professional videos across disciplines; useful for tracking whether video models can learn from tutorial or lecture-style videos.
 - [MMVU Leaderboard](https://mmvu-benchmark.github.io/#leaderboard): Continuous leaderboard for general video understanding and QA; useful for cross-screening strong video agent runtimes alongside Video-MME and Video-MMMU.
 - [V-STaR Leaderboard](https://v-star-bench.github.io/#leaderboard): Continuous leaderboard for video spatial-temporal reasoning; useful for specifically observing object motion, event ordering, and cross-segment grounding.
+- [StreamingBench Leaderboard](https://streamingbench.github.io/): official leaderboard for streaming video understanding. It is useful for comparing online video models that must answer while visual evidence arrives incrementally.
+- [FAVOR-Bench Leaderboard](https://favor-bench.github.io/): official leaderboard for fine-grained video motion understanding. It is useful for comparing first-person and third-person motion reasoning beyond coarse action recognition.
+- [OmniVideoBench Leaderboard](https://omnivideobench.github.io/omnivideobench_home/): official leaderboard for omni-modal long-video understanding. It is useful for comparing models that combine visual, audio, OCR, and ASR evidence.
+- [OpenCompass Open VLM Video Leaderboard](https://huggingface.co/spaces/opencompass/openvlm_video_leaderboard): widely used Hugging Face aggregate leaderboard for video-capable VLMs. It is useful for comparing Video-MME, MVBench, MLVU, and related video-understanding results from one entry point.

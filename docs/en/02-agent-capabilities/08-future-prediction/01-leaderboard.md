@@ -1,5 +1,7 @@
 # 2.8.1 Leaderboard
 
+- [TS-Arena](https://arxiv.org/abs/2512.20761): Provides a live pre-registration platform for time-series forecasting, helping evaluate predictions before outcomes are known.
+- [CT Open](https://arxiv.org/abs/2604.16742): A live open-access clinical-trial outcome prediction platform, useful as a domain-specific future-prediction leaderboard.
 - [ForecastBench Leaderboard](http://www.forecastbench.org/): A real future-event forecasting leaderboard that continuously and dynamically generates and updates questions; useful for comparing probabilistic forecasts, calibration, and expert/crowd baselines on unresolved questions.
 - [Metaculus FutureEval](https://www.metaculus.com/futureeval/): Metaculus's continuous AI forecasting leaderboard; updated daily with a unified log score and comparing AI models, the Metaculus community, and professional forecasters in one view.
 - [FutureSearch Evaluations](https://evals.futuresearch.ai/): The official FutureSearch evaluation entry, aggregating DRB and BTF-2; useful for tracking the "research-judgment" ability of deep research agents and forecasting agents in one reproducible framework.
@@ -7,3 +9,10 @@
 - [TemporalBench Leaderboard](https://huggingface.co/spaces/Melady/TemporalBench_Leaderboard): The official Hugging Face leaderboard for TemporalBench; useful for comparing context-driven, event-driven, and time-series forecasting abilities.
 - [Echo](https://echo.unipat.ai/): UniPat's dynamic future-prediction leaderboard and training system; useful for observing sustained forecasting performance after combining multi-point alignment Elo, Train-on-Future, and AI-native prediction APIs.
 - [Impermanent Dashboard](https://impermanent.timecopilot.dev/): TimeCopilot's live temporal-generalization dashboard; useful for tracking real-time extrapolation performance of time-series forecasting models on rolling data streams.
+- [FutureX Leaderboard](https://futurex-ai.github.io/): The official FutureX weekly leaderboard for live future-event prediction, tracking model performance on dynamically collected unresolved events and vertical FutureX-Pro domains.
+- [CryptoBench Leaderboard](https://cryptobench.space/): A crypto-native live benchmark leaderboard, updated around expert-authored retrieval and prediction tasks spanning on-chain intelligence, market data, DeFi, derivatives, and MEV signals.
+- [OpenFinArena FinDeepForecast Leaderboard](https://openfinarena.com/fin-deep-forecast): The OpenFinArena live leaderboard for financial deep forecasting, comparing deep-research and search-enabled systems on market-foresight tasks.
+- [Prediction Arena](https://www.predictionarena.ai/): A public live arena for AI forecasters trading on Kalshi and Polymarket-style questions, reporting account value, PnL, return, Sharpe, and trade history.
+- [QuantSightBench Leaderboard](https://quantsightbench.com/): The official interval-forecasting leaderboard for calibrated 90% prediction intervals over 1,000 real-world numerical forecasting questions.
+- [KellyBench Leaderboard](https://www.gr.inc/releases/introducing-kellybench): General Reasoning's public KellyBench results table for season-long sports-betting decision agents, reporting ROI, ruin avoidance, bankroll, and market-relative log loss.
+- [Foresight Arena](https://foresightarena.xyz/): A public on-chain benchmark arena for AI forecasters, complementing future-event forecasting leaderboards with prediction submissions and posterior resolution.

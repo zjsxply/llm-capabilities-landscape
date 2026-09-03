@@ -1,63 +1,593 @@
 # 4.4.4 Model
 
+- [Socially Intelligent Reinforcement Learning for Optimal Automated Vehicle Control in Traffic Scenarios](https://doi.org/10.1109/tase.2023.3347264)：用社会感知奖励训练自动车辆控制策略，使自车在交互交通中兼顾通行效率和礼让行为。
+- [On Exploring Shape and Semantic Enhancements for RGB-X Semantic Segmentation](https://doi.org/10.1109/tiv.2023.3296219)：在 RGB-X 语义分割中注入形状线索和语义增强模块，用于道路场景的多模态解析。
+- [Road friction estimation based on vision for safe autonomous driving](https://doi.org/10.1016/j.ymssp.2023.111019)：从视觉驾驶观测估计路面摩擦，为不同路面条件下的安全运动控制提供关键感知信号。
+- [Pedestrian Crossing Intention Prediction From Surveillance Videos for Over-the-Horizon Safety Warning](https://doi.org/10.1109/tits.2023.3314051)：从监控视频预测行人过街意图，使车辆能在行人进入车载传感器范围前获得超视距安全预警。
+- [Planning-Inspired Hierarchical Trajectory Prediction via Lateral-Longitudinal Decomposition for Autonomous Driving](https://doi.org/10.1109/tiv.2023.3307116)：将轨迹预测分解为横向和纵向分量，把规划结构引入受地图约束的未来运动建模。
+- [Motion Planner With Fixed-Horizon Constrained Reinforcement Learning for Complex Autonomous Driving Scenarios](https://doi.org/10.1109/tiv.2023.3273857)：采用固定时域约束强化学习改进复杂交通场景中的运动规划；Crossref 仅提供元数据，未给出摘要。
+- [Motion Planning Using Feasible and Smooth Tree for Autonomous Driving](https://doi.org/10.1109/tvt.2023.3343694)：提出可行且平滑的树搜索运动规划器；DOI 元数据未显示 LLM 工作流、记忆、工具或多智能体编排。
+- [LiDAR video object segmentation with dynamic kernel refinement](https://doi.org/10.1016/j.patrec.2023.12.013)：在 LiDAR 视频帧之间动态细化卷积核，提高点云驾驶序列中的时序目标分割质量。
+- [Holistic Autonomous Driving Understanding by Bird'View Injected Multi-Modal Large Models](https://arxiv.org/abs/2401.00988)：向多模态大模型注入鸟瞰图 token，使驾驶场景理解同时利用多视角图像、BEV 结构和语言提示。
+- [BEV-TSR: Text-Scene Retrieval in BEV Space for Autonomous Driving](https://arxiv.org/abs/2401.01065)：定义 BEV 空间的文本-场景检索任务，用语言查询匹配鸟瞰驾驶场景，为感知和规划提供检索式支撑。
+- [Off-Road LiDAR Intensity Based Semantic Segmentation](https://arxiv.org/abs/2401.01439)：把 LiDAR 强度作为越野语义分割的补充信号，用于区分仅靠几何形状难以分开的点云类别。
+- [Spatial-Temporal Large Language Model for Traffic Prediction](https://arxiv.org/abs/2401.10134)：将时空交通状态表示为 token 序列，适配大语言模型完成交通预测。
+- [InverseMatrixVT3D: An Efficient Projection Matrix-Based Approach for 3D Occupancy Prediction](https://arxiv.org/abs/2401.12422)：用逆投影矩阵公式替代较重的视角变换步骤，提升多视角相机 3D 占用预测效率。
+- [LIV-GaussMap: LiDAR-Inertial-Visual Fusion for Real-Time 3D Radiance Field Map Rendering](https://arxiv.org/abs/2401.14857)：将 LiDAR、惯性和视觉测量融合到 Gaussian-map 辐射场中，用于实时街景渲染与建图。
+- [Learning Online Belief Prediction for Efficient POMDP Planning in Autonomous Driving](https://arxiv.org/abs/2401.15315)：学习在线 belief 预测以加速 POMDP 规划，降低自动驾驶部分可观测场景中的树搜索成本。
+- [MixSup: Mixed-grained Supervision for Label-efficient LiDAR-based 3D Object Detection](https://arxiv.org/abs/2401.16305)：用粗粒度与细粒度标签混合监督训练 LiDAR 3D 检测器，减少完整 3D 框标注需求。
+- [Real-time Traffic Object Detection for Autonomous Driving](https://arxiv.org/abs/2402.00128)：面向自动驾驶部署优化交通目标的实时检测，而不是提出通用驾驶智能体。
+- [LimSim++: A Closed-Loop Platform for Deploying Multimodal LLMs in Autonomous Driving](https://arxiv.org/abs/2402.01246)：提供闭环仿真平台，用于部署多模态 LLM 驾驶智能体并评估其交互式交通行为。
+- [Hybrid-Prediction Integrated Planning for Autonomous Driving](https://arxiv.org/abs/2402.02426)：把混合轨迹预测集成进规划器，使自车能针对周围交通参与者的多种可能行为进行规划。
+- [OASim: an Open and Adaptive Simulator based on Neural Rendering for Autonomous Driving](https://arxiv.org/abs/2402.03830)：构建基于神经渲染的自适应驾驶场景模拟器，用于闭环自动驾驶评测。
+- [Driving Everywhere with Large Language Model Policy Adaptation](https://arxiv.org/abs/2402.05932)：利用 LLM 将场景上下文转化为策略调整信号，使驾驶策略能跨环境适配。
+- [Diffusion-ES: Gradient-free Planning with Diffusion for Autonomous Driving and Zero-Shot Instruction Following](https://arxiv.org/abs/2402.06559)：结合扩散轨迹先验与演化策略搜索，实现无梯度规划和零样本指令跟随。
+- [Diff-RNTraj: A Structure-Aware Diffusion Model for Road Network-Constrained Trajectory Generation](https://arxiv.org/abs/2402.07369)：用受道路网络结构约束的扩散模型生成轨迹，在合成移动轨迹中保持地图拓扑。
+- [GenAD: Generative End-to-End Autonomous Driving](https://arxiv.org/abs/2402.11502)：把端到端驾驶表述为基于感知、地图和运动 token 的生成式轨迹建模。
+- [DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models](https://arxiv.org/abs/2402.12289)：构建视觉语言驾驶模型，通过多模态提示连接场景感知、推理和规划。
+- [VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning](https://arxiv.org/abs/2402.13243)：在地图和交通参与者向量上引入概率规划，扩展向量化端到端驾驶方法。
+- [Learning to Model Diverse Driving Behaviors in Highly Interactive Autonomous Driving Scenarios With Multiagent Reinforcement Learning](https://arxiv.org/abs/2402.13481)：用多智能体强化学习建模交互场景中的不同驾驶风格，不是 LLM 或工具编排型运行框架。
+- [Think2Drive: Efficient Reinforcement Learning by Thinking in Latent World Model for Quasi-Realistic Autonomous Driving (in CARLA-v2)](https://arxiv.org/abs/2402.16720)：在强化学习中滚动预测潜在世界模型来训练驾驶策略，提高 CARLA-v2 场景中的样本效率。
+- [DriveDreamer-2: LLM-Enhanced World Models for Diverse Driving Video Generation](https://arxiv.org/abs/2403.06845)：利用 LLM 增强的世界模型，在多视角相机和地图条件下生成多样、可控的驾驶视频。
+- [Adaptive Fusion of Single-View and Multi-View Depth for Autonomous Driving](https://arxiv.org/abs/2403.07535)： 主要用camera, 多视角相机, and HD maps评估场景理解与多视角城市场景推理，后续应检查是否更适合归入 Bench。
+- [SemCity: Semantic Scene Generation with Triplane Diffusion](https://arxiv.org/abs/2403.07773)：使用 triplane diffusion 表示生成语义化城市场景，为自动驾驶环境的场景合成提供模型路线。
+- [Offboard Occupancy Refinement With Hybrid Propagation for Autonomous Driving](https://arxiv.org/abs/2403.08504)：OccFiner 通过局部多帧传播和带显式多视角几何的区域级全局传播，在离线阶段细化视觉语义场景补全结果。
+- [Intention-Aware Denoising Diffusion Model for Trajectory Prediction](https://arxiv.org/abs/2403.09190)：IDM 将意图不确定性和动作不确定性拆成相互依赖的扩散过程，用较低推理成本生成多样化未来轨迹。
+- [Generalized Predictive Model for Autonomous Driving](https://arxiv.org/abs/2403.09630)：GenAD 在超过 2000 小时网络驾驶视频上训练大规模 latent diffusion 视频预测模型，并可适配为动作条件预测器和运动规划器。
+- [T4P: Test-Time Training of Trajectory Prediction via Masked Autoencoder and Actor-Specific Token Memory](https://arxiv.org/abs/2403.10052)：T4P 用 masked autoencoder 表征学习和 actor-specific token memory 在测试时更新轨迹预测器，以应对跨数据集分布偏移。
+- [RangeLDM: Fast Realistic LiDAR Point Cloud Generation](https://arxiv.org/abs/2403.10094)：RangeLDM 先用 Hough voting 修正 range image 投影，再以 VAE 压缩和 range-guided discriminator 生成真实感 LiDAR 点云。
+- [Driving Style Alignment for LLM-powered Driver Agent](https://arxiv.org/abs/2403.11368)： 主要用驾驶场景数据评估自动驾驶感知与规划与场景级行为与任务指标，后续应检查是否更适合归入 Bench。
+- [Diffusion-Based Environment-Aware Trajectory Prediction](https://arxiv.org/abs/2403.11643)：使用带微分运动约束和交互感知引导的扩散轨迹生成器，完成不确定交通中的多智能体轨迹预测。
+- [TrajectoryNAS: A Neural Architecture Search for Trajectory Prediction](https://arxiv.org/abs/2403.11695)：将神经架构搜索用于轨迹预测。
+- [GraphBEV: Towards Robust BEV Feature Alignment for Multi-Modal 3D Object Detection](https://arxiv.org/abs/2403.11848)：通过 graph matching 局部深度校正和全局 BEV 对齐融合 LiDAR 与相机特征，提升标定噪声下的 3D 检测鲁棒性。
+- [M2DA: Multi-Modal Fusion Transformer Incorporating Driver Attention for Autonomous Driving](https://arxiv.org/abs/2403.12552)： 主要用LiDAR评估端到端驾驶与闭环驾驶行为，后续应检查是否更适合归入 Bench。
+- [AMP: Autoregressive Motion Prediction Revisited with Next Token Prediction for Autonomous Driving](https://arxiv.org/abs/2403.13331)：AMP 将运动预测改写为 GPT 式 next-token prediction，在统一 token 空间中表示历史和未来交通参与者状态。
+- [UniTraj: A Unified Framework for Scalable Vehicle Trajectory Prediction](https://arxiv.org/abs/2403.15098)：UniTraj 统一轨迹数据集、模型和指标，用来研究跨域迁移以及数据规模和多样性对泛化的影响。
+- [MSCoTDet: Language-Driven Multi-Modal Fusion for Improved Multispectral Pedestrian Detection](https://arxiv.org/abs/2403.15209)：MSCoTDet 用 LLM 生成多光谱 chain-of-thought 提示，并通过语言驱动融合缓解 RGB 与热成像行人检测的模态偏置。
+- [Are NeRFs ready for autonomous driving? Towards closing the real-to-simulation gap](https://arxiv.org/abs/2403.16092)：通过在真实和 NeRF 渲染数据上评估自动驾驶检测器与在线建图模型，研究 real-to-sim gap，并用微调提升对渲染伪影的鲁棒性。
+- [DriveCoT: Integrating Chain-of-Thought Reasoning with End-to-End Driving](https://arxiv.org/abs/2403.16996)：DriveCoT 提供 CARLA 传感器、控制和 chain-of-thought 标签，并训练 DriveCoT-Agent 预测推理步骤与最终驾驶决策。
+- [AIDE: An Automatic Data Engine for Object Detection in Autonomous Driving](https://arxiv.org/abs/2403.17373)：AIDE 迭代发现感知失败、筛选数据、自动标注目标并生成验证场景，用于开放世界自动驾驶检测。
+- [SLEDGE: Synthesizing Driving Environments with Generative Models and Rule-Based Traffic](https://arxiv.org/abs/2403.17933)：SLEDGE 用 raster-to-vector autoencoder 和 Diffusion Transformer 生成交通参与者框与车道图，再作为规则交通仿真的初始状态。
+- [GraphAD: Interaction Scene Graph for End-to-end Autonomous Driving](https://arxiv.org/abs/2403.19098)：GraphAD 将自车、道路参与者和地图元素表示为 interaction scene graph，使端到端驾驶聚焦碰撞相关和路线相关关系。
+- [SubjectDrive: Scaling Generative Data in Autonomous Driving via Subject Control](https://arxiv.org/abs/2403.19438)：SubjectDrive 在驾驶场景生成中加入 subject control，提高数据多样性，让合成样本能持续改进下游感知模型。
+- [Multi-Frame, Lightweight & Efficient Vision-Language Models for Question Answering in Autonomous Driving](https://arxiv.org/abs/2403.19838)：EM-VLM4AD 用轻量多帧 VLM 回答 DriveLM 式驾驶问题，在降低内存和算力的同时保留交通视角推理能力。
+- [CtRL-Sim: Reactive and Controllable Driving Agents with Offline Reinforcement Learning](https://arxiv.org/abs/2403.19918)：CtRL-Sim 从物理增强的 Nocturne 日志训练 return-conditioned 多智能体行为模型，可按奖励控制反应式交通参与者。
+- [SGD: Street View Synthesis with Gaussian Splatting and Diffusion Prior](https://arxiv.org/abs/2403.20079)：SGD 用相邻帧和 LiDAR 深度条件下的扩散先验正则化 3D Gaussian splatting，用于街景新视角合成。
+- [Towards Realistic Scene Generation with LiDAR Diffusion Models](https://arxiv.org/abs/2404.00815)：LiDM 用曲线级、点级和 patch 级几何先验压缩 LiDAR 场景，使 latent diffusion 能高效生成真实感 64 线点云。
+- [Versatile Behavior Diffusion for Generalized Traffic Agent Simulation](https://arxiv.org/abs/2404.02524)：VBD 是基于扩散模型的交通场景生成器，用于在仿真中生成真实、可控的多交通参与者交互。
+- [LidarDM: Generative LiDAR Simulation in a Generated World](https://arxiv.org/abs/2404.02903)：LidarDM 构建一体化 4D world generator，先生成 3D 场景、加入动态交通参与者，再渲染时间一致且布局可控的 LiDAR 序列。
+- [Light the Night: A Multi-Condition Diffusion Framework for Unpaired Low-Light Enhancement in Autonomous Driving](https://arxiv.org/abs/2404.04804)：LightDiff 用深度、RGB 和文本控制的无配对多条件扩散模型增强低光驾驶图像，并以感知奖励对齐检测模型。
+- [HPNet: Dynamic Trajectory Forecasting with Historical Prediction Attention](https://arxiv.org/abs/2404.06351)：HPNet 引入 historical prediction attention，使连续轨迹预测在重叠观察窗口中共享运动目标并保持时间一致。
+- [RoadBEV: Road Surface Reconstruction in Bird’s Eye View](https://arxiv.org/abs/2404.06605)： 梳理路面重建的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [SparseAD: Sparse Query-Centric Paradigm for Efficient End-to-End Autonomous Driving](https://arxiv.org/abs/2404.06892)：SparseAD 用跨检测、跟踪、在线建图、预测和规划共享的稀疏场景 query 取代 dense BEV 特征。
+- [LetsGo: Large-Scale Garage Modeling and Rendering via LiDAR-Assisted Gaussian Primitives](https://arxiv.org/abs/2404.09748)：LetsGo 结合 IMU、LiDAR 和鱼眼相机采集，以及 LiDAR 辅助 Gaussian splatting、深度正则和多分辨率 Gaussian，用于大型车库渲染。
+- [A Point-Based Approach to Efficient LiDAR Multi-Task Perception](https://arxiv.org/abs/2404.12798)：PAttFormer 用 point-based transformer encoder 和 3D deformable-attention detection head 同时完成 LiDAR 语义分割与目标检测。
+- [PLUTO: Pushing the Limit of Imitation Learning-based Planning for Autonomous Driving](https://arxiv.org/abs/2404.14327)：PLUTO 通过纵横向感知架构、批量辅助损失和对比式驾驶行为增强，提升 imitation-learning 规划。
+- [ControlTraj: Controllable Trajectory Generation with Topology-Constrained Diffusion Model](https://arxiv.org/abs/2404.15380)：ControlTraj 将道路段嵌入和行程属性输入 geographic denoising UNet，生成受道路拓扑约束的移动轨迹。
+- [A Cognitive-Driven Trajectory Prediction Model for Autonomous Driving in Mixed Autonomy Environment](https://arxiv.org/abs/2404.17520)：在混合自主交通轨迹预测中加入感知安全和动态决策线索，并在 NGSIM、HighD 和 MoCAD 上测试鲁棒性。
+- [SemanticFormer: Holistic and Semantic Traffic Scene Representation for Trajectory Prediction Using Knowledge Graphs](https://arxiv.org/abs/2404.19379)： 主要用轨迹数据评估轨迹预测与场景级行为与任务指标，后续应检查是否更适合归入 Bench。
+- [PACER+: On-Demand Pedestrian Animation Controller in Driving Scenarios](https://arxiv.org/abs/2404.19722)：PACER+ 在单一策略中结合行人动作跟踪和轨迹跟随，为驾驶仿真生成可控且多样的行人行为。
+- [RAG-based Explainable Prediction of Road Users Behaviors for Automated Driving using Knowledge Graphs and Large Language Models](https://arxiv.org/abs/2405.00449)：结合交通知识图谱检索和 LLM 推理，对道路使用者行为进行可解释预测，服务自动驾驶决策。
+- [LidaRF: Delving into Lidar for Neural Radiance Field on Street Scenes](https://arxiv.org/abs/2405.00900)：LidaRF 将显式 LiDAR 几何融合进辐射解码，加入遮挡感知深度监督和训练视角增强，提升街景 NeRF 新视角合成。
+- [Multi-Space Alignments Towards Universal LiDAR Segmentation](https://arxiv.org/abs/2405.01538)：M3Net 通过数据、特征和标签空间对齐，用一套参数训练跨任务、跨数据集和跨传感器模态的 LiDAR 分割模型。
+- [Vision-based 3D occupancy prediction in autonomous driving: a review and outlook](https://arxiv.org/abs/2405.02595)： 梳理3D 占用预测的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [UniGen: Unified Modeling of Initial Agent States and Trajectories for Generating Autonomous Driving Scenarios](https://arxiv.org/abs/2405.03807)：通过共享场景表征联合建模交通参与者初始状态和未来轨迹，用于生成新驾驶场景。
+- [DriveWorld: 4D Pre-Trained Scene Understanding via World Models for Autonomous Driving](https://arxiv.org/abs/2405.04390)：DriveWorld 用 memory state-space model、dynamic memory bank、static scene propagation 和 task prompt 从多相机驾驶视频进行预训练。
+- [Multi-Modal Data-Efficient 3D Scene Understanding for Autonomous Driving](https://arxiv.org/abs/2405.05258)：LaserMix++ 通过 multi-modal laser mixing、camera-to-LiDAR distillation 和 open-vocabulary language supervision 改进半监督 LiDAR 分割。
+- [VLM-Auto: VLM-based Autonomous Driving Assistant with Human-like Behavior and Understanding for Complex Road Scenes](https://arxiv.org/abs/2405.05885)：VLM-Auto 结合 VLM 文本接口、CARLA 和 ROS2，从道路场景理解中调整驾驶行为，并提供用于微调的 prompt-image 数据集。
+- [CarDreamer: Open-Source Learning Platform for World-Model-Based Autonomous Driving](https://arxiv.org/abs/2405.09111)：CarDreamer 提供 Gym 兼容驾驶任务、world-model backbone、优化奖励和任务开发工具，用于 world-model reinforcement learning。
+- [GEOcc: Geometrically Enhanced 3D Occupancy Network With Implicit-Explicit Depth Fusion and Contextual Self-Supervision](https://arxiv.org/abs/2405.10591)：GEOcc 融合显式 lift-based depth 与隐式 projection transformer，并加入 context-aware self-training loss 做纯视觉 3D 占用预测。
+- [MagicDrive3D: Controllable 3D Generation for Any-View Rendering in Street Scenes](https://arxiv.org/abs/2405.14475)：MagicDrive3D 将多视角视频生成转成 3D 街景生成，使用道路图、3D 目标、文本条件和 fault-tolerant Gaussian splatting。
+- [An Empirical Study of Training State-of-the-Art LiDAR Segmentation Models](https://arxiv.org/abs/2405.14870)：提出 MMDetection3D-lidarseg 统一工具箱和基准套件，支持稀疏卷积后端与数据增强来训练 LiDAR 分割模型。
+- [Continuously Learning, Adapting, and Improving: A Dual-Process Approach to Autonomous Driving](https://arxiv.org/abs/2405.15324)：LeapAD 选择驾驶关键目标，将决策拆分为 analytic 与 heuristic 过程，并通过微调和记忆转移语言化驾驶经验。
+- [Vista: A Generalizable Driving World Model with High Fidelity and Versatile Controllability](https://arxiv.org/abs/2405.17398)：Vista 引入运动实例和结构损失、用于长时序一致滚动预测的 latent replacement，以及灵活动作条件，提升驾驶世界模型的真实感和可控性。
+- [DC-Gaussian: Improving 3D Gaussian Splatting for Reflective Dash Cam Videos](https://arxiv.org/abs/2405.17705)：DC-Gaussian 将 3D Gaussian splatting 适配到普通行车记录仪视频，用自适应图像分解统一处理挡风玻璃反光与遮挡。
+- [Is a 3D-Tokenized LLM the Key to Reliable Autonomous Driving?](https://arxiv.org/abs/2405.18361)：该工作指出 2D-tokenized 驾驶 VLM 缺少可靠 3D 几何先验，并引入 DETR 式 3D perception token 来支撑 LLM 规划。
+- [SparseDrive: End-to-End Autonomous Driving via Sparse Scene Representation](https://arxiv.org/abs/2405.19620)： 梳理端到端驾驶的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [S3Gaussian: Self-Supervised Street Gaussians for Autonomous Driving](https://arxiv.org/abs/2405.20323)：S3Gaussian 通过 4D 一致性自监督分解静态与动态街景元素，避免依赖带跟踪的 3D 车辆框来重建街景高斯。
+- [OccSora: 4D Occupancy Generation Models as World Simulators for Autonomous Driving](https://arxiv.org/abs/2405.20337)：OccSora 将 4D occupancy 压缩为时空离散 token，并训练 diffusion transformer 来模拟长时序 3D 场景演化。
+- [LanEvil: Benchmarking the Robustness of Lane Detection to Environmental Illusions](https://arxiv.org/abs/2406.00934)：LanEvil 针对阴影、反光等 14 类自然环境错觉评测车道线检测鲁棒性，因此更像模型评测证据而非检测网络本身。
+- [Unleashing Generalization of End-to-End Autonomous Driving with Controllable Long Video Generation](https://arxiv.org/abs/2406.01349)：Delphi 通过多视角共享噪声扩散和特征对齐生成最长 40 帧可控驾驶视频，用于提升端到端规划器泛化。
+- [Validity Learning on Failures: Mitigating the Distribution Shift in Autonomous Vehicle Planning](https://arxiv.org/abs/2406.01544)：VL(on failure) 从预训练规划器的失败 rollout 中挖掘无效状态，并学习 validity 信号以缓解 imitation planning 的协变量偏移。
+- [Dynamic 3D Gaussian Fields for Urban Areas](https://arxiv.org/abs/2406.03175)：用 3D Gaussian fields 建模动态城市场景，支持自动驾驶环境的重建与仿真。
+- [Dualad: Disentangling the Dynamic and Static World for End-to-End Driving](https://arxiv.org/abs/2406.06264)：DualAD 将动态交通参与者和静态场景结构解耦建模，通过时序 belief 传播和 dynamic-static cross-attention 支撑相机端到端驾驶。
+- [PanoSSC: Exploring Monocular Panoptic 3D Scene Reconstruction for Autonomous Driving](https://arxiv.org/abs/2406.07037)：PanoSSC 将相机 occupancy 扩展为 panoptic 3D scene reconstruction，分别预测前景与背景，并用 3D instance mask decoder 聚合实例。
+- [EFFOcc: Learning Efficient Occupancy Networks from Minimal Labels for Autonomous Driving](https://arxiv.org/abs/2406.07042)：EFFOcc 以 2D operator fusion 架构和最小标签训练框架降低 3D occupancy 网络的计算与密集标注成本。
+- [Enhancing End-to-End Autonomous Driving with Latent World Model](https://arxiv.org/abs/2406.08481)：LAW 通过当前特征和自车轨迹预测未来 latent scene state，对端到端驾驶特征进行自监督预训练并改善轨迹预测。
+- [BEVSpread: Spread Voxel Pooling for Bird's-Eye-View Representation in Vision-Based Roadside 3D Object Detection](https://arxiv.org/abs/2406.08785)： 主要用环视相机, BEV, and HD maps评估3D 目标检测与场景级行为与任务指标，后续应检查是否更适合归入 Bench。
+- [SimGen: Simulator-conditioned Driving Scene Generation](https://arxiv.org/abs/2406.09386)：SimGen 在级联扩散管线中混合仿真与真实数据，并引入 DIVA 驾驶视频数据集来提升可控场景生成的多样性。
+- [CarLLaVA: Vision language models for camera-only closed-loop driving](https://arxiv.org/abs/2406.10165)：CarLLaVA 采用 LLaVA 视觉编码器和 LLaMA backbone，同时输出路径与 waypoint，用纯相机输入完成 CARLA 闭环驾驶。
+- [Planning with Adaptive World Models for Autonomous Driving](https://arxiv.org/abs/2406.10714)：该方法用 BehaviorNet 学习 nuPlan 中城市特有的反应式交通参与者行为，并将其作为自适应世界模型嵌入模型预测规划。
+- [RouteFinder: Towards Foundation Models for Vehicle Routing Problems](https://arxiv.org/abs/2406.15007)：RouteFinder 将多类车辆路径问题表示为带属性的广义 VRP 子集，结合 transformer encoder、全局属性嵌入、多任务强化学习和 adapter 微调。
+- [SegNet4D: Efficient Instance-Aware 4D Semantic Segmentation for LiDAR Point Cloud](https://arxiv.org/abs/2406.16279)：SegNet4D 将 4D LiDAR 解析拆成单帧语义分割和运动目标分割两个实时子任务，避免依赖沉重的 4D 卷积。
+- [End-to-End Autonomous Driving Without Costly Modularization and 3D Manual Annotation](https://arxiv.org/abs/2406.17680)：UAD 用无监督 proxy 训练视觉端到端规划器，减少对监督式模块化感知和昂贵 3D 人工标注的依赖。
+- [VDG: Vision-Only Dynamic Gaussian for Driving Simulation](https://arxiv.org/abs/2406.18198)：VDG 将自监督视觉里程计与 pose-free dynamic Gaussian splatting 结合，使纯 RGB 视频可初始化深度、姿态与静动态分解。
+- [Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](https://arxiv.org/abs/2407.02077)：利用层级时间上下文改进基于相机的语义场景补全。
+- [MTMamba: Enhancing Multi-Task Dense Scene Understanding by Mamba-Based Decoders](https://arxiv.org/abs/2407.02228)：使用基于 Mamba 的解码器提升多任务 dense scene understanding。
+- [AutoSplat: Constrained Gaussian Splatting for Autonomous Driving Scene Reconstruction](https://arxiv.org/abs/2407.02598)：AutoSplat 为 3D Gaussian splatting 加入道路、天空、反射高斯和动态目标约束，用于多视角一致的驾驶场景重建。
+- [Occupancy as Set of Points](https://arxiv.org/abs/2407.04049)：将 3D occupancy 表示为点集，改进自动驾驶感知中的场景占用建模。
+- [BEVWorld: A Multimodal World Simulator for Autonomous Driving via Scene-Level BEV Latents](https://arxiv.org/abs/2407.05679)：BEVWorld 学习场景级 BEV latent 作为多模态世界模拟器，可在 LiDAR、相机、地图和自车动作条件下预测未来场景。
+- [VQA-Diff: Exploiting VQA and Diffusion for Zero-Shot Image-to-3D Vehicle Asset Generation in Autonomous Driving](https://arxiv.org/abs/2407.06516)：VQA-Diff 将 VQA 语义线索与扩散模型结合，从单张图像零样本生成 3D 车辆资产，无需任务专用 3D 监督。
+- [SGLC: Semantic Graph-Guided Coarse-Fine-Refine Full Loop Closing for LiDAR SLAM](https://arxiv.org/abs/2407.08106)：SGLC 为 LiDAR SLAM 构建语义图，并通过 coarse、fine、refine 三阶段闭环检测缩小候选而非只依赖几何描述子。
+- [SciQu: Accelerating Materials Properties Prediction with Automated Literature Mining for Self-Driving Laboratories](https://arxiv.org/abs/2407.08270)： 梳理自动驾驶感知与规划的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [Global-Local Collaborative Inference with LLM for Lidar-Based Open-Vocabulary Detection](https://arxiv.org/abs/2407.08931)：该方法结合全局 LLM 语义推理和局部 LiDAR 证据，从点云与图像中完成开放词表 3D 检测。
+- [Streetscapes: Large-scale Consistent Street View Generation Using Autoregressive Video Diffusion](https://arxiv.org/abs/2407.13759)：Streetscapes 使用自回归视频扩散生成大规模、时间一致的街景序列，为驾驶场景合成提供数据来源。
+- [GaussianBeV: 3D Gaussian Representation meets Perception Models for BeV Segmentation](https://arxiv.org/abs/2407.14108)：GaussianBeV 将 3D Gaussian 场景表示转换为 BEV 特征，使其可接入分割模型完成相机 BEV 解析。
+- [RoadFormer+: Delivering RGB-X Scene Parsing Through Scale-Aware Information Decoupling and Advanced Heterogeneous Feature Fusion](https://arxiv.org/abs/2407.21631)：通过尺度感知解耦和异构特征融合改进 RGB-X 场景解析。
+- [DRAMA: An Efficient End-to-end Motion Planner for Autonomous Driving with Mamba](https://arxiv.org/abs/2408.03601)：DRAMA 在端到端规划中使用 Mamba sequence module 替代更重的时序建模，以提升多模态输入下的运动规划效率。
+- [VLM-MPC: Vision Language Foundation Model (VLM)-Guided Model Predictive Controller (MPC) for Autonomous Driving](https://arxiv.org/abs/2408.04821)：VLM-MPC 用视觉语言基础模型指导模型预测控制，将相机观测和语言推理转化为更安全的控制目标。
+- [FlatFusion: Delving Into Details of Sparse Transformer-Based Camera-LiDAR Fusion for Autonomous Driving](https://arxiv.org/abs/2408.06832)：FlatFusion 分析 sparse transformer 相机-LiDAR 融合细节，并提出更扁平的融合设计以减少过度模态专用处理。
+- [Panacea+: Panoramic and Controllable Video Generation for Autonomous Driving](https://arxiv.org/abs/2408.07605)：Panacea+ 生成可控条件下的全景多视角驾驶视频，主要服务于感知和仿真数据，而不只是 3D 检测器。
+- [A Conflicts-Free, Speed-Lossless KAN-Based Reinforcement Learning Decision System for Interactive Driving in Roundabouts](https://arxiv.org/abs/2408.08242)：该决策系统将 Kolmogorov-Arnold Network 函数建模与强化学习结合，在环岛交互驾驶中避免冲突且不牺牲速度。
+- [V2X-VLM: End-to-End V2X Cooperative Autonomous Driving Through Large Vision-Language Models](https://arxiv.org/abs/2408.09251)：V2X-VLM 在视觉语言模型中对齐路侧和自车观测，用于协同感知、推理和端到端驾驶决策。
+- [Leveraging Temporal Contexts to Enhance Vehicle-Infrastructure Cooperative Perception](https://arxiv.org/abs/2408.10531)：该协同感知模型利用车路协同帧之间的时间上下文，在稀疏或有噪观测下改进 V2X 3D 目标检测。
+- [CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving](https://arxiv.org/abs/2408.10845)：CoVLA 提供成对视觉、语言和动作数据，使驾驶 VLA 模型能同时学习场景视频、文本推理和可执行驾驶动作。
+- [GaussianOcc: Fully Self-Supervised and Efficient 3D Occupancy Estimation with Gaussian Splatting](https://arxiv.org/abs/2408.11447)：利用 Gaussian splatting 进行全自监督 3D occupancy estimation，为驾驶场景感知提供高效模型路线。
+- [Driving in the Occupancy World: Vision-Centric 4D Occupancy Forecasting and Planning via World Models for Autonomous Driving](https://arxiv.org/abs/2408.14197)：Drive-OccWorld 从历史 BEV memory 预测未来 occupancy 和 flow，并用速度、转向和轨迹动作条件化世界模型用于规划。
+- [GenDDS: Generating Diverse Driving Video Scenarios with Prompt-to-Video Generative Model](https://arxiv.org/abs/2408.15868)：GenDDS 结合 SDXL、ControlNet 和 Hotshot-XL 构建 prompt-to-video 驾驶生成器，合成罕见天气、交通和道路场景。
+- [DriveGenVLM: Real-world Video Generation for Vision Language Model based Autonomous Driving](https://arxiv.org/abs/2408.16647)：DriveGenVLM 在 Waymo 数据上训练 DDPM 视频生成器，并检验生成驾驶视频是否仍适合下游 VLM 理解。
+- [OmniRe: Omni Urban Scene Reconstruction](https://arxiv.org/abs/2408.16760)：OmniRe 构建 3DGS scene graph 和 canonical Gaussian actor，覆盖车辆、行人、骑行者等动态目标以生成高保真城市数字孪生。
+- [Trustworthy Human-AI Collaboration: Reinforcement Learning with Human Feedback and Physics Knowledge for Safe Autonomous Driving](https://arxiv.org/abs/2409.00858)：PE-RLHF 将人类示范或干预与交通流等物理知识共同纳入强化学习循环，以稳定安全驾驶策略训练。
+- [Real-time Accident Anticipation for Autonomous Driving Through Monocular Depth-Enhanced 3D Modeling](https://arxiv.org/abs/2409.01256)：AccNet 结合单目深度 3D 场景建模、多任务学习和 Binary Adaptive Loss for Early Anticipation，从行车记录仪视频提前预测事故。
+- [GGS: Generalizable Gaussian Splatting for Lane Switching in Autonomous Driving](https://arxiv.org/abs/2409.02382)：GGS 通过虚拟车道生成和 diffusion loss 改进大视角变化下的 generalizable Gaussian splatting，用于换道视角合成。
+- [OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous Driving](https://arxiv.org/abs/2409.03272)：OccLLaMA 用 VQVAE-like tokenizer 离散化语义 occupancy，并自回归统一 occupancy、language 和 action token。
+- [DreamForge: Motion-Aware Autoregressive Video Generation for Multi-View Driving Scenes](https://arxiv.org/abs/2409.04003)：DreamForge 加入 perspective guidance、object-wise position encoding 和 motion-aware temporal attention，自回归生成长时程多视角驾驶视频。
+- [MyGo: Consistent and Controllable Multi-View Driving Video Generation with Camera Control](https://arxiv.org/abs/2409.06189)：MyGo 将车载相机参数注入预训练视频扩散模型，并用极线约束和邻近视角信息提升可控多视角生成的一致性。
+- [Deep Height Decoupling for Precise Vision-Based 3D Occupancy Prediction](https://arxiv.org/abs/2409.07972)： 主要用BEV and HD maps评估3D 占用预测与3D 占用质量，后续应检查是否更适合归入 Bench。
+- [SoVAR: Building Generalizable Scenarios from Accident Reports for Autonomous Driving Testing](https://arxiv.org/abs/2409.08081)：SoVAR 从事故报告中抽取碰撞信息并匹配地图数据，重建可用于仿真的自动驾驶安全测试场景。
+- [ChatSUMO: Large Language Model for Automating Traffic Scenario Generation in Simulation of Urban MObility](https://arxiv.org/abs/2409.09040)：ChatSUMO 用 LLM agent 将用户需求转换为 Python、OpenStreetMap 和 SUMO 仿真步骤，自动生成交通场景。
+- [Traffic Scene Generation from Natural Language Description for Autonomous Vehicles with Large Language Model](https://arxiv.org/abs/2409.09575)：TTSG 通过 prompt analysis、road retrieval、agent planning 和 plan-aware road ranking，将自然语言交通描述落地为可行场景。
+- [LeGEND: A Top-Down Approach to Scenario Generation of Autonomous Driving Systems Assisted by Large Language Models](https://arxiv.org/abs/2409.10066)：LeGEND 用 LLM 解析自然语言功能场景，再逐层细化为 logical 和 concrete scenarios，以控制测试场景多样性。
+- [SEAL: Towards Safe Autonomous Driving via Skill-Enabled Adversary Learning for Closed-Loop Scenario Generation](https://arxiv.org/abs/2409.10320)：SEAL 学习 human-like adversarial skills 和 objective functions 来扰动闭环场景，生成真实的安全关键行为以强化驾驶策略。
+- [Video Token Sparsification for Efficient Multimodal LLMs in Autonomous Driving](https://arxiv.org/abs/2409.11182)：VTS 用轻量 proposal model 裁剪连续驾驶视频帧中的冗余视觉 token，在保留显著信息的同时降低 MLLM 延迟和显存。
+- [DrivingForward: Feed-forward 3D Gaussian Splatting for Driving Scene Reconstruction from Flexible Surround-view Input](https://arxiv.org/abs/2409.12753)：利用前馈式 3D Gaussian splatting，从灵活环视输入中重建驾驶场景。
+- [CVT-Occ: Cost Volume Temporal Fusion for 3D Occupancy Prediction](https://arxiv.org/abs/2409.13430)：CVT-Occ 沿 voxel 视线采样历史图像特征构建 temporal cost volume，用较低额外计算改进单目 3D occupancy 预测。
+- [Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving](https://arxiv.org/abs/2409.15730)：LatentDriver 将未来环境状态和自车动作表示为 mixture distribution，在输出确定控制前缓解世界模型 self-delusion。
+- [Reasoning Multi-Agent Behavioral Topology for Interactive Autonomous Driving](https://arxiv.org/abs/2409.18031)：为交互式自动驾驶建模多智能体行为拓扑。
+- [Navigation-Guided Sparse Scene Representation for End-to-End Autonomous Driving](https://arxiv.org/abs/2409.18341)：SSR 学习紧凑的导航引导场景 token，用于端到端驾驶，减少对显式感知标注输出的依赖。
+- [Uncertainty-Guided Enhancement on Driving Perception System Via Foundation Models](https://arxiv.org/abs/2410.01144)：用不确定性选择性调用高成本基础模型，细化目标分类等驾驶感知输出。
+- [Remember and Recall: Associative-Memory-Based Trajectory Prediction](https://arxiv.org/abs/2410.02201)：FMTP 将轨迹经验压缩进可学习的离散 fragmented memory array，使预测器能在陌生场景中召回相关运动经验。
+- [From Imitation to Exploration: End-to-end Autonomous Driving based on World Model](https://arxiv.org/abs/2410.02253)：RAMBLE 将 imitation learning 与 world-model reinforcement learning 结合，用 RGB 与 LiDAR 上下文探索示范数据之外的强交互交通场景。
+- [ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](https://arxiv.org/abs/2410.04509)：ErrorRadar 定义面向 K-12 数学 MLLM 的多模态错误检测，包含错误步骤定位和错误类别判断；这是数学推理基准，不是自动驾驶雷达模型。
+- [ComDrive: Comfort-Oriented End-to-End Autonomous Driving](https://arxiv.org/abs/2410.05051)：ComDrive 提取稀疏 3D 空间特征，用条件 DDPM 规划器采样时间一致轨迹，再由双流评分器选择兼顾舒适性和安全性的控制轨迹。
+- [LiDAR-GS:Real-time LiDAR Re-Simulation using Gaussian Splatting](https://arxiv.org/abs/2410.05111)：LiDAR-GS 将 3D Gaussian splatting 适配到 LiDAR 重仿真，用可微激光束 splatting、neural Gaussian range cues 和动态实例分解生成深度、强度与 ray-drop 通道。
+- [Gen-Drive: Enhancing Diffusion Generative Driving Policies with Reward Modeling and Reinforcement Learning Fine-Tuning](https://arxiv.org/abs/2410.05582)：Gen-Drive 用行为扩散模型生成未来交互场景，配合 VLM 辅助偏好奖励模型和强化学习微调，把规划改成 generation-then-evaluation 范式。
+- [Motion Forecasting in Continuous Driving](https://arxiv.org/abs/2410.06007)：RealMotion 将预测放入连续驾驶流程，通过累积场景上下文和串联历史预测，在相邻场景之间传递运动信息。
+- [Autonomous Driving in Unstructured Environments: How Far Have We Come?](https://arxiv.org/abs/2410.07701)： 梳理端到端驾驶的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [AdvDiffuser: Generating Adversarial Safety-Critical Driving Scenarios via Guided Diffusion](https://arxiv.org/abs/2410.08453)：AdvDiffuser 用扩散模型学习合理的背景车辆群体行为，再用轻量 adversarial guide 生成可迁移的安全关键仿真场景。
+- [Dual-AEB: Synergizing Rule-Based and Multimodal Large Language Models for Effective Emergency Braking](https://arxiv.org/abs/2410.08616)：Dual-AEB 将快速规则式紧急制动控制器与 MLLM 场景理解分支结合，在开放场景中识别风险而不牺牲响应速度。
+- [Fusion Matrix Prompt Enhanced Self-Attention Spatial-Temporal Interactive Traffic Forecasting Framework](https://arxiv.org/abs/2410.09356)：FMPESTF 构造动态 traffic fusion matrix prompt 作为自注意力查询，同时建模空间异质性、时间片重要性和交通网络节点流关系。
+- [LoRD: Adapting Differentiable Driving Policies to Distribution Shifts](https://arxiv.org/abs/2410.09681)：LoRD 用低秩残差解码器和多任务微调适配可微 prediction-planning-control 栈，并通过闭环评估衡量域外驾驶与遗忘问题。
+- [CAFuser: Condition-Aware Multimodal Fusion for Robust Semantic Perception of Driving Scenes](https://arxiv.org/abs/2410.10791)：CAFuser 从 RGB 输入识别环境条件并生成 condition token，再用模态专用 adapters 指导传感器融合，提升语义与全景感知鲁棒性。
+- [DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation](https://arxiv.org/abs/2410.13571)：DriveDreamer4D 将驾驶世界模型作为数据机器，生成受控轨迹视频，并用 cousin synthetic data 合并真实数据来优化 4D Gaussian 场景重建。
+- [UniDrive: Towards Universal Driving Perception Across Camera Configurations](https://arxiv.org/abs/2410.13864)：UniDrive 通过 ground-aware projection 把不同相机配置映射到优化的虚拟相机，使视觉 3D 感知不再强绑定某一车辆的内外参。
+- [Generalizing Motion Planners with Mixture of Experts for Autonomous Driving](https://arxiv.org/abs/2410.15774)： 梳理运动规划的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting](https://arxiv.org/abs/2410.17084)：GS-LIVM 融合 LiDAR、惯性与视觉建图，用 voxel-based 3D Gaussians、covariance-centered 初始化和 Gaussian-process 正则化实现实时户外渲染。
+- [FreeVS: Generative View Synthesis on Free Driving Trajectory](https://arxiv.org/abs/2410.18079)：FreeVS 生成带位姿控制的 pseudo-image view priors，在无需逐场景重建的情况下合成自由新轨迹上的驾驶视角。
+- [DynamicCity: Large-Scale 4D Occupancy Generation from Dynamic Scenes](https://arxiv.org/abs/2410.18084)：从动态场景生成大规模 4D occupancy，用于驾驶世界建模。
+- [Senna: Bridging Large Vision-Language Models and End-to-End Autonomous Driving](https://arxiv.org/abs/2410.22313)：Senna 将 LVLM 高层规划和低层轨迹预测解耦：Senna-VLM 从多视角提示生成自然语言规划决策，Senna-E2E 再输出精确轨迹。
+- [EMMA: End-to-End Multimodal Model for Autonomous Driving](https://arxiv.org/abs/2410.23262)：EMMA 基于 MLLM，把原始相机输入、导航和自车状态统一映射为文本形式的轨迹、目标和道路图元素，并用任务提示完成多项驾驶输出。
+- [X-Drive: Cross-modality consistent multi-sensor data synthesis for driving scenarios](https://arxiv.org/abs/2411.01123)：X-Drive 用双分支 latent diffusion 联合合成 LiDAR 点云和多视角图像，通过极线跨模态条件和文本、框、图像、点云控制保持一致性。
+- [Imagine-2-Drive: Leveraging High-Fidelity World Models via Multi-Modal Diffusion Policies](https://arxiv.org/abs/2411.10171)：Imagine-2-Drive 结合可联合预测未来观测的 DiffDreamer 世界模型和扩散策略 actor，在世界模型中进行样本高效的 CARLA 驾驶策略学习。
+- [DeSiRe-GS: 4D Street Gaussians for Static-Dynamic Decomposition and Surface Reconstruction for Urban Driving Scenes](https://arxiv.org/abs/2411.11921)：DeSiRe-GS 用 2D motion masks、可微 Gaussian 空间动态先验、几何正则和时序跨视角一致性，自监督分解静动态街景并重建表面。
+- [LaVida Drive: Vision-Text Interaction VLM for Autonomous Driving with Token Selection, Recovery and Enhancement](https://arxiv.org/abs/2411.12980)：LaVida Drive 通过 query-aware token selection 和 spatial-temporal token recovery 保留高分辨率驾驶细节，避免普通视频降采样损失 VQA 关键线索。
+- [Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](https://arxiv.org/abs/2411.13076)：Hints of Prompt 为驾驶 MLLM 注入 affinity、semantic 和 question hints，并通过 hint fusion 强化交互场景与长尾场景的视觉表征。
+- [MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](https://arxiv.org/abs/2411.13807)：面向自动驾驶场景，通过自适应控制生成高分辨率长视频。
+- [Tra-MoE: Learning Trajectory Prediction Model from Multiple Domains for Adaptive Policy Conditioning](https://arxiv.org/abs/2411.14519)：Tra-MoE 使用跨域训练的稀疏门控专家混合轨迹预测器，并将预测 2D trajectory masks 转化为机器人策略的自适应条件信号。
+- [VisionPAD: A Vision-Centric Pre-training Paradigm for Autonomous Driving](https://arxiv.org/abs/2411.14716)：VisionPAD 用仅图像监督的 3D Gaussian splatting、多帧光度一致性和 voxel velocity estimation 预训练视觉中心自动驾驶骨干网络。
+- [LiDAR-Based End-to-End Temporal Perception for Vehicle-Infrastructure Cooperation](https://arxiv.org/abs/2411.14927)：LET-VIC 通过 temporal self-attention、VIC cross-attention 和 calibration-error compensation 融合车端与路侧 LiDAR 序列，完成协同检测与跟踪。
 - [DiffusionDrive](https://arxiv.org/abs/2411.15139)：面向端到端自动驾驶的 truncated diffusion policy，使用多模态先验锚点、缩短去噪日程和级联 diffusion decoder。
+- [EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](https://arxiv.org/abs/2411.15582)：EMD 向 street Gaussians 加入可学习运动嵌入，使静态区域和动态目标在高质量新视角合成中分解得更准确。
+- [From Dashcam Videos to Driving Simulations: Stress Testing Automated Vehicles against Rare Events](https://arxiv.org/abs/2411.16027)：该框架用 prompt-engineered VLM 将事故行车记录仪视频转成 CARLA 的 SCENIC 脚本，并通过行为相似度反馈迭代细化仿真。
+- [Language Driven Occupancy Prediction](https://arxiv.org/abs/2411.16072)：LOcc 通过把图像文本标签迁移到 LiDAR 点和 voxel 生成密集 3D language occupancy 监督，再训练 geometry head 与 language head 做开放词表占用预测。
+- [SplatAD: Real-Time Lidar and Camera Rendering with 3D Gaussian Splatting for Autonomous Driving](https://arxiv.org/abs/2411.16816)：SplatAD 将 3D Gaussian splatting 扩展到实时相机与 LiDAR 渲染，显式建模 rolling shutter、LiDAR intensity 和 ray dropout 以服务仿真。
+- [LHPF: Look back the History and Plan for the Future in Autonomous Driving](https://arxiv.org/abs/2411.17253)：LHPF 在解码当前轨迹前聚合历史规划意图，并加入舒适性辅助任务，使模仿学习规划更连续、更接近人类驾驶。
+- [FASIONAD : FAst and Slow FusION Thinking Systems for Human-Like Autonomous Driving with Adaptive Feedback](https://arxiv.org/abs/2411.18013)：FASIONAD 将驾驶拆分为快速数据驱动规划器和慢速 LLM 推理系统，通过分数反馈切换和视觉提示处理复杂或长尾场景。
+- [ReconDreamer: Crafting World Models for Driving Scene Reconstruction via Online Restoration](https://arxiv.org/abs/2411.19548)：ReconDreamer 逐步把世界模型知识注入驾驶场景重建，用 DriveRestorer 和 progressive data updates 渲染大幅偏离原轨迹的驾驶动作。
+- [LiDAR-EDIT: LiDAR Data Generation by Editing the Object Layouts in Real-World Scenes](https://arxiv.org/abs/2412.00592)：LiDAR-EDIT 通过 spherical voxelization 和生成式补全在真实 LiDAR 扫描中删除或插入用户控制的目标，同时保留真实背景和标签。
+- [HoloDrive: Holistic 2D-3D Multi-Modal Street Scene Generation for Autonomous Driving](https://arxiv.org/abs/2412.01407)：HoloDrive 通过 BEV-to-camera 与 camera-to-BEV 变换、深度预测和时序渐进训练，联合生成相机图像和 LiDAR 点云。
+- [InfinityDrive: Breaking Time Limits in Driving World Models](https://arxiv.org/abs/2412.01522)：InfinityDrive 用时空联合建模、memory injection and retention 以及 adaptive memory-curve loss，把驾驶世界模型扩展到分钟级高分辨率视频生成。
+- [HUGSIM: A Real-Time, Photo-Realistic and Closed-Loop Simulator for Autonomous Driving](https://arxiv.org/abs/2412.01718)： 主要用RGB 图像评估运动规划与闭环驾驶行为，后续应检查是否更适合归入 Bench。
+- [Fast LiDAR Data Generation with Rectified Flows](https://arxiv.org/abs/2412.02241)：R2Flow 用 rectified flows 替代多步 diffusion 采样，并用 Transformer 处理 LiDAR range 与 reflectance 图像，实现快速 LiDAR 数据生成。
+- [TREND: Unsupervised 3D Representation Learning via Temporal Forecasting for LiDAR Perception](https://arxiv.org/abs/2412.03054)：TREND 通过 recurrent embeddings 和 temporal neural field 预测未来 LiDAR 观测，并用可微渲染损失学习无监督 3D 表征。
+- [Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion](https://arxiv.org/abs/2412.03515)：ScoreLiDAR 将扩散式 3D LiDAR scene completion 蒸馏成更少采样步的模型，并用 structural loss 保持场景级几何和关键点关系。
+- [Seeing Beyond Views: Multi-View Driving Scene Video Generation with Holistic Attention](https://arxiv.org/abs/2412.03520)：CogDriving 使用带 holistic 4D attention 的 Diffusion Transformer、轻量 BEV layout controller 和目标重加权，保持多视角驾驶视频跨时间与相机一致。
+- [FreeSim: Toward Free-viewpoint Camera Simulation in Driving Scenes](https://arxiv.org/abs/2412.03566)：FreeSim 先生成轻微偏离轨迹的视角并逐步加入重建，再扩展到更大视角偏移，以提升离轨相机仿真质量。
+- [ARCON: Advancing Auto-Regressive Continuation for Driving Videos](https://arxiv.org/abs/2412.03758)：ARCON 在大视觉模型中交替延续 semantic tokens 和 RGB tokens，再用 optical-flow texture stitching 提升视觉质量，生成更长的一致驾驶视频。
+- [InfiniCube: Unbounded and Controllable Dynamic 3D Driving Scene Generation with World-Guided Video Models](https://arxiv.org/abs/2412.03934)：InfiniCube 用 HD maps、目标框和文本控制 sparse-voxel world，再把 guided videos 提升为可控动态 3D Gaussians，生成无边界 3D 驾驶场景。
+- [CALMM-Drive: Confidence-Aware Autonomous Driving with Large Multimodal Model](https://arxiv.org/abs/2412.04209)：CALMM-Drive 让 LMM 输出 top-k 置信度加权的 CoT 驾驶决策，再用扩散轨迹生成和层级细化进行不确定性感知规划。
+- [UniMLVG: Unified Framework for Multi-View Long Video Generation with Comprehensive Control Capabilities for Autonomous Driving](https://arxiv.org/abs/2412.04842)：训练统一多视角视频生成框架，在可控条件下生成长时程环视驾驶视频。
+- [UniScene: Unified Occupancy-centric Driving Scene Generation](https://arxiv.org/abs/2412.05435)：UniScene 先生成 semantic occupancy 作为 meta-scene layout，再用 Gaussian joint rendering 与 prior-guided sparse modeling 生成驾驶视频和 LiDAR。
+- [PPT: Pre-Training with Pseudo-Labeled Trajectories for Motion Forecasting](https://arxiv.org/abs/2412.06491)：PPT 用现成 3D 检测与跟踪产生的伪标注轨迹预训练运动预测模型，再通过少量有标注数据微调提升低数据和跨域预测能力。
+- [LOGen: Toward Lidar Object Generation by Point Diffusion](https://arxiv.org/abs/2412.07385)：LOGen 将 LiDAR 生成聚焦到前景目标，用可控 point diffusion 生成带 intensity 的目标点云，适配 nuScenes 和 KITTI-360 风格扫描。
+- [RoboTron-Drive: All-in-One Large Multimodal Model for Autonomous Driving](https://arxiv.org/abs/2412.07689)：RoboTron-Drive 对图像和多视角视频进行 curriculum pre-training，再用标准化自动驾驶数据集微调，统一处理感知、预测与规划任务。
+- [RAC3: Retrieval-Augmented Corner Case Comprehension for Autonomous Driving with Vision-Language Models](https://arxiv.org/abs/2412.11050)：RAC3 用 frequency-spatial fusion encoder、hard-negative 跨模态对齐、HNSW 检索、多模态 CoT prompting 和持续更新增强 VLM 的 corner-case 理解。
+- [SceneDiffuser: Efficient and Controllable Driving Simulation Initialization and Rollout](https://arxiv.org/abs/2412.12129)：SceneDiffuser 用 amortized diffusion prior 同时处理交通场景初始化和 rollout，并加入硬约束与 LLM few-shot language constraints 提升可控仿真。
+- [SafeDrive: Knowledge- and Data-Driven Risk-Sensitive Decision-Making for Autonomous Vehicles with Large Language Models](https://arxiv.org/abs/2412.13238)：SafeDrive 结合风险量化、场景记忆检索、LLM 推理和反思模块，在高速、交叉口和环岛数据上做风险敏感决策。
+- [An Efficient Occupancy World Model via Decoupled Dynamic Flow and Image-assisted Training](https://arxiv.org/abs/2412.13772)：DFIT-OccWorld 通过分离动态 voxel flow 与静态位姿变换预测 4D occupancy，并用 image-assisted differentiable rendering 正则未来体素。
+- [DriveGPT: Scaling Autoregressive Behavior Models for Driving](https://arxiv.org/abs/2412.14415)：DriveGPT 把驾驶建模为未来 agent state token 的自回归预测，通过扩展 Transformer 规模和训练数据同时服务行为规划与运动预测。
+- [VLM-AD: End-to-End Autonomous Driving through Vision-Language Model Supervision](https://arxiv.org/abs/2412.14446)：VLM-AD 在训练阶段使用视觉语言模型作为教师，提供推理监督和结构化动作标签，但推理时不需要调用 VLM。
+- [GSRender: Deduplicated Occupancy Prediction via Weakly Supervised 3D Gaussian Splatting](https://arxiv.org/abs/2412.14579)：GSRender 用 3D Gaussian splatting 做弱监督占用预测，通过相邻帧 ray compensation 和动态目标损失减少重复预测。
+- [OpenEMMA: Open-Source Multimodal Model for End-to-End Autonomous Driving](https://arxiv.org/abs/2412.15208)：OpenEMMA 将 MLLM 改造成开源端到端驾驶框架，对驾驶场景进行 chain-of-thought 推理提示，并在挑战性场景上微调。
+- [LiHi-GS: LiDAR-Supervised Gaussian Splatting for Highway Driving Scene Reconstruction](https://arxiv.org/abs/2412.15447)：LiHi-GS 面向高速公路场景，用 LiDAR 深度监督和传感器建模改进 Gaussian splatting，以重建和渲染稀疏、高速驾驶环境。
+- [SOUS VIDE: Cooking Visual Drone Navigation Policies in a Gaussian Splatting Vacuum](https://arxiv.org/abs/2412.16346)：SOUS VIDE 在 Gaussian-splatting 仿真器中训练视觉无人机导航策略，属于空中导航策略而非道路自动驾驶模型。
+- [Forget Vectors at Play: Universal Input Perturbations Driving Machine Unlearning in Image Classification](https://arxiv.org/abs/2412.16780)：该文研究图像分类中的输入扰动式机器遗忘，用 class-level forget vectors 擦除类别影响；标题里的 driving 不是自动驾驶含义。
+- [OLiDM: Object-aware LiDAR Diffusion Models for Autonomous Driving](https://arxiv.org/abs/2412.17226)：OLiDM 通过 object-scene progressive generation 和 object semantic alignment 生成 object-aware LiDAR 场景，保留用户控制的目标提示和标注。
+- [ARSGaussian: 3D Gaussian Splatting with LiDAR for aerial remote sensing novel view synthesis](https://arxiv.org/abs/2412.18380)：ARSGaussian 将 LiDAR 约束的 3D Gaussian splatting 用于航空遥感新视角合成，属于遥感重建而不是道路驾驶。
+- [DrivingGPT: Unifying Driving World Modeling and Planning with Multi-Modal Autoregressive Transformers](https://arxiv.org/abs/2412.18607)：DrivingGPT 定义交错图像与动作 token 的多模态驾驶语言，用 next-token prediction 统一动作条件视频世界建模和轨迹规划。
+- [DriveEditor: A Unified 3D Information-Guided Framework for Controllable Object Editing in Driving Scenes](https://arxiv.org/abs/2412.19458)：利用 3D 信息控制驾驶视频中的目标位置和外观编辑，用于数据增强和评测。
+- [DrivingWorld: Constructing World Model for Autonomous Driving via Video GPT](https://arxiv.org/abs/2412.19505)：DrivingWorld 将 Video GPT 改造成驾驶世界模型，用时空融合、next-state 与 next-token 目标以及 masking 和 reweighting 控制长时程视频生成。
+- [TiGDistill-BEV: Multi-View BEV 3D Object Detection via Target Inner-Geometry Learning Distillation](https://arxiv.org/abs/2412.20911)：TiGDistill-BEV 通过 inner-depth supervision、inner-feature BEV distillation 以及 inter-keypoint 和 channel similarity，把 LiDAR 教师知识迁移到纯相机 BEV 检测器。
 - [Traj-LLM](https://doi.org/10.1109/TIV.2024.3418522)：将预训练大语言模型用于自动驾驶轨迹预测。
 - [Cloud-edge MLLM ADAS](https://doi.org/10.1109/JIOT.2024.3509628)：构建云边协同 MLLM ADAS，在边缘端微调 CogVLM2、云端使用 GPT-4o 推理，在驾驶辅助质量、延迟、能耗与 QoS 之间权衡。
+- [AdaptiveOcc: Adaptive Octree-Based Network for Multi-Camera 3D Semantic Occupancy Prediction in Autonomous Driving](https://doi.org/10.1109/tcsvt.2024.3492289)：用自适应八叉树网络进行多相机 3D 语义占据预测，为自动驾驶感知补充高效占据建模方法。
+- [Continual Learning for Motion Prediction Model via Meta-Representation Learning and Optimal Memory Buffer Retention Strategy](https://doi.org/10.1109/cvpr52733.2024.01462)：用元表示学习与记忆缓冲保留策略改进运动预测的持续学习。
+- [Weakly Supervised Monocular 3D Object Detection by Spatial-Temporal View Consistency](https://doi.org/10.1109/tpami.2024.3466915)：用时空视角一致性进行弱监督单目 3D 目标检测。
+- [PARA-Drive: Parallelized Architecture for Real-Time Autonomous Driving](https://doi.org/10.1109/cvpr52733.2024.01463)：并行化感知、预测和规划分支，使端到端驾驶在满足实时延迟的同时保留跨任务交互。
+- [Rethinking Imitation-based Planners for Autonomous Driving](https://doi.org/10.1109/icra57147.2024.10611364)：重新设计 imitation-learning 规划器的轨迹解码和训练损失，强调闭环规划质量而非只优化开环模仿。
+- [SceneControl: Diffusion for Controllable Traffic Scene Generation](https://doi.org/10.1109/icra57147.2024.10610324)：用条件扩散生成可控交通场景，使仿真能系统改变道路上下文和交通参与者行为。
+- [VistaRAG: Toward Safe and Trustworthy Autonomous Driving Through Retrieval-Augmented Generation](https://doi.org/10.1109/tiv.2024.3396450)：用检索到的视觉和文本案例支撑驾驶场景推理，使自动驾驶模型的决策更安全且更可解释。
+- [Sora for Senarios Engineering of Intelligent Vehicles: V&V, C&C, and Beyonds](https://doi.org/10.1109/tiv.2024.3379989)： 梳理场景生成的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [Segmentation of Road Negative Obstacles Based on Dual Semantic-Feature Complementary Fusion for Autonomous Driving](https://doi.org/10.1109/tiv.2024.3376534)：融合互补语义特征来分割道路负障碍，覆盖普通可行驶区域分割容易漏掉的坑洼和低矮危险物。
+- [Decouple Ego-View Motions for Predicting Pedestrian Trajectory and Intention](https://doi.org/10.1109/tip.2024.3445734)：先从自车视角视频中解耦相机自运动和行人运动，再联合预测行人未来轨迹与过街意图。
+- [Ptu: Pre-Trained Model for Network Traffic Understanding](https://doi.org/10.1109/icnp61940.2024.10858503)：为网络流量理解预训练表征；这里的 traffic 是通信网络流量而非道路自动驾驶，需父级路由确认。
+- [LHADRO: A Robust Control Framework for Autonomous Vehicles Under Cyber-Physical Attacks](https://doi.org/10.1109/tifs.2024.3497808)：用分布鲁棒控制提升自动车辆在感知或执行遭受网络物理攻击时的决策稳定性。
+- [VLAAD: Vision and Language Assistant for Autonomous Driving](https://doi.org/10.1109/wacvw60836.2024.00107)：微调面向驾驶场景问答和决策支持的视觉语言助手，将视觉上下文与自然语言解释连接起来。
+- [Autonomous chemistry: Navigating self-driving labs in chemical and material sciences](https://doi.org/10.1016/j.matt.2024.06.003)： 将任务专用建模方案用于chemistry or materials self-driving laboratories，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [Multimodal Perception and Decision-Making Systems for Complex Roads Based on Foundation Models](https://doi.org/10.1109/tsmc.2024.3444277)：将基础模型感知与多模态道路场景决策模块结合，面向复杂道路先完成传感器融合再选择动作。
+- [Synthesizing Realistic Traffic Events From UAV Perspectives: A Mask-Guided Generative Approach Based on Style-Modulated Transformer](https://doi.org/10.1109/tiv.2024.3510563)：用 mask guidance 和 style-modulated Transformer 生成 UAV 视角交通事件，为驾驶分析提供航拍场景合成数据。
+- [Imaginative Intelligence for Intelligent Vehicles: Sora Inspired New Directions for New Mobility and Vehicle Intelligence](https://doi.org/10.1109/tiv.2024.3393638)：讨论 Sora 式视频生成在车辆智能中的仿真、场景想象和世界模型数据生成作用；父级应确认是否更适合 Survey。
+- [Smart Mobility With Agent-Based Foundation Models: Towards Interactive and Collaborative Intelligent Vehicles](https://doi.org/10.1109/tiv.2024.3457759)：把 agent-based foundation models 作为交互式智能车辆的共享感知、推理与协同模块。
+- [LLMs Based Autonomous Vehicle for Postal Service](https://doi.org/10.1109/icic63915.2024.11116047)： 将大语言模型推理用于a non-road-driving domain，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [Toward Robust LiDAR-Camera Fusion in BEV Space via Mutual Deformable Attention and Temporal Aggregation](https://doi.org/10.1109/tcsvt.2024.3366664)：用 mutual deformable attention 和时序聚合对齐 LiDAR 与相机 BEV 特征，提升鲁棒 3D 检测。
+- [LowRankOcc: Tensor Decomposition and Low-Rank Recovery for Vision-Based 3D Semantic Occupancy Prediction](https://doi.org/10.1109/cvpr52733.2024.00936)：通过低秩张量分解和恢复压缩视觉 3D 语义占用表示，降低密集 voxel 预测成本。
+- [Dynamic object detection using sparse LiDAR data for autonomous machine driving and road safety applications](https://doi.org/10.1016/j.eswa.2024.124636)：从稀疏 LiDAR 中检测动态道路目标，面向自动化机械驾驶和道路安全监测的轻量感知。
+- [Using a Diffusion Model for Pedestrian Trajectory Prediction in Semi-Open Autonomous Driving Environments](https://doi.org/10.1109/jsen.2024.3382406)：将扩散模型用于半开放驾驶环境中的行人轨迹预测，在不确定场景下生成多模态未来路径。
+- [FARFusion: A Practical Roadside Radar-Camera Fusion System for Far-Range Perception](https://doi.org/10.1109/lra.2024.3387700)：融合路侧雷达和相机流完成远距离感知，将协同 3D 检测扩展到车载传感器范围之外。
+- [OpenAnnotate2: Multi-Modal Auto-Annotating for Autonomous Driving](https://doi.org/10.1109/tiv.2024.3381602)：跨模态自动标注自动驾驶场景，为点云和图像感知模型训练生成标签。
+- [C2L-PR: Cross-Modal Camera-to-LiDAR Place Recognition via Modality Alignment and Orientation Voting](https://doi.org/10.1109/tiv.2024.3423392)：对齐相机和 LiDAR 描述子，并通过方向投票实现驾驶环境中的跨模态地点识别。
+- [Auxiliary Network Enhanced Hierarchical Graph Reinforcement Learning for Vehicle Repositioning](https://doi.org/10.1109/tits.2024.3383720)：使用带辅助网络的层级图强化学习做车队车辆重定位；父级应确认是否应归入交通运营而非自动驾驶模型。
+- [V2IViewer: Towards Efficient Collaborative Perception via Point Cloud Data Fusion and Vehicle-to-Infrastructure Communications](https://doi.org/10.1109/tnse.2024.3479770)：通过车路通信链路融合点云，用于高效协同感知和路侧辅助 3D 检测。
+- [STGNNM: Spatial-Temporal Graph Neural Network with Mamba for Cellular Traffic Prediction](https://doi.org/10.1109/wcsp62071.2024.10827036)：结合时空图建模和 Mamba 序列模块预测蜂窝网络流量；该 traffic 很可能是网络流量而非道路自动驾驶。
+- [Efficient and Balanced Exploration-Driven Decision Making for Autonomous Racing Using Local Information](https://doi.org/10.1109/tiv.2024.3432713)：用基于局部赛道信息的探索驱动强化学习，实现高效且稳定的自动驾驶赛车决策。
+- [MIM: High-Definition Maps Incorporated Multi-View 3D Object Detection](https://doi.org/10.1109/tits.2024.3520814)：将高精地图先验注入多视角相机 3D 检测，用车道和道路布局上下文改进 BEV 目标定位。
+- [LinkOcc: 3D Semantic Occupancy Prediction With Temporal Association](https://doi.org/10.1109/tcsvt.2024.3486019)：在时间维度关联 voxel 预测，用 temporal association 稳定 3D 语义占用和场景补全。
+- [DynaNav-SVO: Dynamic Stereo Visual Odometry With Semantic-Aware Perception for Autonomous Navigation](https://doi.org/10.1109/tiv.2024.3414653)：在立体视觉里程计中加入语义感知，使自主导航可处理动态目标干扰。
+- [Game-Theoretic Driver Modeling and Decision-Making for Autonomous Driving With Temporal-Spatial Attention-Based Deep Q-Learning](https://doi.org/10.1109/tiv.2024.3470910)：结合博弈论驾驶员建模和时空注意力深度 Q 学习，实现交互感知的自动驾驶决策。
+- [Enhancing Autonomous Driving: A Low-Cost Monocular End-to-End Framework With Multi-Task Integration and Temporal Fusion](https://doi.org/10.1109/tiv.2024.3366245)：DOI 元数据显示这是带多任务集成和时序融合的低成本单目端到端自动驾驶模型，不是 Agent 运行框架。
+- [Pix2Planning: End-to-End Planning by Vision-language Model for Autonomous Driving on Carla Simulator](https://doi.org/10.1109/iv55156.2024.10588479)：使用视觉语言模型在 CARLA 中做端到端规划，贡献更像规划模型而非编排基础设施。
+- [Rule-Compliant Multi-Agent Driving Corridor Generation using Reachable Sets and Combinatorial Negotiations](https://doi.org/10.1109/iv55156.2024.10588548)：使用可达集和组合协商为多车生成符合规则的驾驶走廊；Crossref 仅提供元数据，未给出摘要。
+- [HazardVLM: A Video Language Model for Real-Time Hazard Description in Automated Driving Systems](https://doi.org/10.1109/tiv.2024.3451350)：构建面向自动驾驶系统实时危险描述的视频语言模型。
+- [DEMO: A Dynamics-Enhanced Learning Model for multi-horizon trajectory prediction in autonomous vehicles](https://doi.org/10.1016/j.inffus.2024.102924)：加入动力学增强的多时域轨迹预测，强调车辆运动动态，而不只是短时位置外推。
+- [Interactive Critical Scenario Generation for Autonomous Vehicles Testing Based on In-Depth Crash Data Using Reinforcement Learning](https://doi.org/10.1109/tiv.2024.3415961)：基于深度事故数据用强化学习生成交互式关键场景，用于自动驾驶车辆测试。
+- [Safer Conflict-Based Search: Risk-Constrained Optimal Pathfinding for Multiple Connected and Automated Vehicles](https://doi.org/10.1109/TASE.2024.3383421)：把风险约束和轨迹规划集成进 conflict-based search，使多辆 CAV 能在显式安全阈值下生成最优路径。
+- [GCP: Guarded Collaborative Perception with Spatial-Temporal Aware Malicious Agent Detection](https://arxiv.org/abs/2501.02450)：结合置信度缩放的空间一致性、历史 BEV 运动流重建异常和联合时空 Benjamini-Hochberg 检验，检测协同感知中的恶意智能体。
+- [LiMoE: Mixture of LiDAR Representation Learners from Automotive Scenes](https://arxiv.org/abs/2501.04004)：用 range image、稀疏 voxel 和原始点三类 LiDAR 表征做混合专家预训练，再把对比混合特征和语义 logits 蒸馏到统一 3D 网络。
+- [LargeAD: Large-Scale Cross-Sensor Data Pretraining for Autonomous Driving](https://arxiv.org/abs/2501.04005)：将视觉基础模型生成的 superpixels 与 LiDAR 点云对齐，进行跨传感器对比预训练，提升驾驶数据上的 3D 检测和分割迁移能力。
+- [Vision-Language Models for Autonomous Driving: CLIP-Based Dynamic Scene Understanding](https://arxiv.org/abs/2501.05566)：把 CLIP 式视觉语言对齐用于动态驾驶场景理解，让语言监督增强场景感知的可查询性。
+- [Generative Planning with 3D-vision Language Pre-training for End-to-End Autonomous Driving](https://arxiv.org/abs/2501.08861)：GPVL 结合 BEV 层面的 3D 视觉语言预训练和自回归跨模态语言模型，同时生成整体驾驶决策和细粒度轨迹。
+- [DiMA](https://arxiv.org/abs/2501.09757)：通过 surrogate tasks 与联合训练，把多模态 LLM 的驾驶知识蒸馏到高效视觉端到端规划器中，使推理时 LLM 可选，并改善长尾场景规划和碰撞率。
+- [Multi-LiCa: A Motion- and Targetless Multi - LiDAR-to-LiDAR Calibration Framework](https://arxiv.org/abs/2501.11088)：无需标靶、额外模态或初始变换即可自动标定多 LiDAR；对感知栈有用，但不是 Agent Harness。
 - [AdaWM](https://arxiv.org/abs/2501.13072)：使用自适应 world model 做自动驾驶规划。
+- [MetaOcc: Spatio-Temporal Fusion of Surround-View 4D Radar and Camera for 3D Occupancy Prediction with Dual Training Strategies](https://arxiv.org/abs/2501.15384)：融合环视 4D radar 与相机做 3D occupancy，通过 radar height self-attention、层级局部-全局多模态融合和双训练策略增强恶劣天气鲁棒性。
 - [Diffusion-Based Planning for Autonomous Driving with Flexible Guidance](https://arxiv.org/abs/2501.15564)：用带灵活引导的扩散式规划生成类人驾驶行为。
+- [Collaborative Joint Perception and Prediction](https://arxiv.org/abs/2501.15860)：为联网自动驾驶定义 Co-P&P，将 collaborative scene completion 与 joint perception and prediction 解耦，使 V2X 感知信息也能服务于运动预测。
+- [UniMM Multi-Agent Simulation](https://arxiv.org/abs/2501.17015)：重新审视自动驾驶评估中的 mixture models，用于真实多智能体行为仿真。
+- [Scenario Understanding of Traffic Scenes Through Large Visual Language Models](https://arxiv.org/abs/2501.17131)：用 LVLM 为城市场景做描述与分类，支持自动驾驶中的可扩展场景理解。
+- [VLM-Assisted Continual learning for Visual Question Answering in Self-Driving](https://arxiv.org/abs/2502.00843)：把自动驾驶 VQA 与持续学习结合，用选择性记忆回放、教师学生蒸馏和投影层正则，缓解感知、预测和规划问题序列训练中的遗忘。
 - [TeLL-Drive](https://arxiv.org/abs/2502.01387)：利用教师大模型指导强化学习，提升自动驾驶决策。
+- [INTACT](https://arxiv.org/abs/2502.01896)：通过 adversarial curriculum training 提升 LiDAR 感知在安全关键自动驾驶中的噪声鲁棒性。
+- [Unified Spatial–Temporal Edge-Enhanced Graph Networks for Pedestrian Trajectory Prediction](https://arxiv.org/abs/2502.02504)：UniEdge 把行人历史轨迹表示为统一时空图，将跨时间交互转化为一阶边，在一次图推理中建模轨迹预测所需的时空依赖。
+- [Uncertainty Quantification for Collaborative Object Detection Under Adversarial Attacks](https://arxiv.org/abs/2502.02537)：提出 TUQCP，将对抗训练、学习式不确定性估计和 conformal calibration 结合，用于未知攻击下的鲁棒协同目标检测。
 - [Robust Autonomy Emerges from Self-Play](https://arxiv.org/abs/2502.03349)：通过 self-play 训练更鲁棒的自动驾驶行为。
+- [Factorized Implicit Global Convolution for Automotive Computational Fluid Dynamics Prediction](https://arxiv.org/abs/2502.04317)：用 factorized implicit global convolution 预测汽车计算流体力学场；这是车辆空气动力学而非道路驾驶感知或规划。
+- [AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting](https://arxiv.org/abs/2502.04981)：结合视觉语言指导与 Gaussian Splatting，自动标注自动驾驶场景中的开放式 3D 语义占据。
 - [Occ-LLM](https://arxiv.org/abs/2502.06419)：用基于 occupancy 的大语言模型增强自动驾驶。
+- [Transfer Your Perspective: Controllable 3D Generation from Any Viewpoint in a Driving Scene](https://arxiv.org/abs/2502.06682)：从自车传感数据生成协同驾驶视角，结合仿真先验与图像条件生成，把单车日志扩展成多智能体感知数据。
 - [Semi-Supervised Vision-Centric 3D Occupancy World Model](https://arxiv.org/abs/2502.07309)：构建面向自动驾驶的半监督视觉中心 3D occupancy world model。
+- [Divide and Merge: Motion and Semantic Learning in End-to-End Autonomous Driving](https://arxiv.org/abs/2502.07631)：用 Neural-Bayes motion queries 和交互式语义解码拆分端到端驾驶中的语义与运动学习，降低检测、跟踪、预测和规划之间的负迁移。
+- [CP-Guard+: A New Paradigm for Malicious Agent Detection and Defense in Collaborative Perception](https://arxiv.org/abs/2502.07807)：补充协同感知中的恶意智能体检测和防御方法。
+- [Predictive Planner for Autonomous Driving with Consistency Models](https://arxiv.org/abs/2502.08033)：将一致性模型用于自动驾驶预测式规划。
+- [CoDynTrust: Robust Asynchronous Collaborative Perception via Dynamic Feature Trust Modulus](https://arxiv.org/abs/2502.08169)：用不确定性感知的 dynamic feature trust modulation 和多尺度融合，抑制自动驾驶协同感知中由时间异步带来的低质量特征。
 - [MaskGWM](https://arxiv.org/abs/2502.11663)：通过视频 mask 重建构建可泛化的 driving world model。
 - [RAD](https://arxiv.org/abs/2502.13144)：用大规模 3DGS 强化学习训练端到端驾驶策略。
 - [Building reliable sim driving agents by scaling self-play](https://arxiv.org/abs/2502.14706)：通过扩展 self-play 训练可靠驾驶仿真智能体，用于测试与压力场景。
+- [AVD2](https://arxiv.org/abs/2502.14801)：用事故视频扩散和语言对齐的事故描述增强自动驾驶安全关键场景理解。
 - [CurricuVLM](https://arxiv.org/abs/2502.15119)：用个性化安全关键课程学习提升自动驾驶视觉语言模型表现。
 - [VLM-E2E](https://arxiv.org/abs/2502.18042)：在端到端自动驾驶中加入多模态驾驶员注意力融合。
+- [CoopDETR: A Unified Cooperative Perception Framework for 3D Detection via Object Query](https://arxiv.org/abs/2502.19313)：用 object query 统一自动驾驶协同 3D 感知。
+- [CarPlanner: Consistent Auto-regressive Trajectory Planning for Large-scale Reinforcement Learning in Autonomous Driving](https://arxiv.org/abs/2502.19908)：用一致性自回归规划器支持大规模强化学习，把生成-选择式轨迹规划、专家引导奖励和视角不变策略学习结合起来。
+- [VDT-Auto: End-to-end Autonomous Driving with VLM-Guided Diffusion Transformers](https://arxiv.org/abs/2502.20108)：用 BEV 几何和微调 VLM 的文本状态输出条件化 diffusion Transformer 动作头，以 VLM 语义引导端到端轨迹生成。
+- [Hazardnet: A Small-Scale Vision Language Model for Real-Time Traffic Safety Detection at Edge Devices](https://arxiv.org/abs/2502.20572)：提出面向边缘设备实时交通安全检测的小型视觉语言模型。
+- [FlexDrive: Toward Trajectory Flexibility in Driving Scene Gaussian Splatting Reconstruction and Rendering](https://arxiv.org/abs/2502.21093)：通过 inverse view warping 和 depth bootstrap 为离轨视角提供监督，提升驾驶场景 Gaussian Splatting 在记录自车轨迹之外的渲染质量。
+- [Glad: A Streaming Scene Generator for Autonomous Driving](https://arxiv.org/abs/2503.00045)：以逐帧方式生成长时驾驶视频，将上一帧 latent features 作为当前帧噪声先验传播，提升 corner-case 数据生成和仿真的时间一致性。
+- [QDCNN: Quantum Deep Learning for Enhancing Safety and Reliability in Autonomous Transportation Systems](https://arxiv.org/abs/2503.01916)：将量子卷积网络用于自主交通系统的安全性和可靠性建模；父级应确认是否属于道路自动驾驶模型范围。
+- [TS-CGNet: Temporal-Spatial Fusion Meets Centerline-Guided Diffusion for BEV Mapping](https://arxiv.org/abs/2503.02578)：把 centerline-guided diffusion 和时空融合加入 BEV mapping，用地图先验与深度感知推理处理遮挡、低光和恶劣天气场景。
+- [Enhancing Autonomous Driving Safety with Collision Scenario Integration](https://arxiv.org/abs/2503.03957)：SafeFusion 用安全导向指标训练规划器，CollisionGen 则通过自然语言提示、生成模型和规则仿真生成碰撞与近碰撞场景。
+- [Safety-Critical Traffic Simulation with Adversarial Transfer of Driving Intentions](https://arxiv.org/abs/2503.05180)：IntSim 将周围交通参与者的驾驶意图与运动规划解耦，并优化对抗意图迁移来合成事故高风险交互。
+- [GoalFlow: Goal-Driven Flow Matching for Multimodal Trajectories Generation in End-to-End Autonomous Driving](https://arxiv.org/abs/2503.05689)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“GoalFlow: Goal-Driven Flow Matching for Multimodal Trajectories Generation in End-to-End Autonomous Driving”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Collision Risk Estimation via Loss Prediction in End-to-End Autonomous Driving](https://arxiv.org/abs/2503.07425)：RiskMonitor 读取端到端规划器的 planning 与 motion tokens，并预测规划路径上未来 collision loss 是否为正，作为即插即用风险估计。
 - [AlphaDrive](https://arxiv.org/abs/2503.07608)：面向自动驾驶 VLM 的强化学习和推理框架，使用针对规划和长尾驾驶决策的 GRPO 式奖励。
+- [DriveTransformer: Unified Transformer for Scalable End-to-End Autonomous Driving](https://arxiv.org/abs/2503.07656)：用任务并行的 agent、map 和 planning query 替代顺序式感知-预测-规划，减少累计误差和 dense BEV 的扩展成本。
 - [FASIONAD++](https://arxiv.org/abs/2503.08162)：结合高层指令、信息瓶颈与自适应反馈，以增强自动驾驶安全性。
+- [HiP-AD: Hierarchical and Multi-Granularity Planning with Deformable Attention for Autonomous Driving in a Single Decoder](https://arxiv.org/abs/2503.08612)：用带可变形注意力的层级多粒度规划处理自动驾驶。
+- [Other Vehicle Trajectories Are Also Needed: A Driving World Model Unifies Ego-Other Vehicle Trajectories in Video Latent Space](https://arxiv.org/abs/2503.09215)：EOT-WM 用自车和其他车辆轨迹共同控制驾驶视频生成，将 BEV 轨迹匹配到图像中的车辆，避免世界模型只控制自车。
+- [Hybrid Rendering for Multimodal Autonomous Driving: Merging Neural and Physics-Based Simulation](https://arxiv.org/abs/2503.09464)：结合神经重建与物理 mesh agent，并用 NeRF2GS 训练在任意位置放置动态目标、调整环境条件和交互式渲染新驾驶视角。
 - [Finetuning Generative Trajectory Model with RLHF](https://arxiv.org/abs/2503.10434)：用人类反馈强化学习微调生成式轨迹模型。
+- [DriveGEN: Generalized and Robust 3D Detection in Driving via Controllable Text-to-Image Diffusion Generation](https://arxiv.org/abs/2503.11122)：用可控文本到图像扩散生成多样驾驶场景，提升视觉中心 3D 检测在分布偏移下的鲁棒性。
+- [DynRsl-VLM: Enhancing Autonomous Driving Perception with Dynamic Resolution Vision-Language Models](https://arxiv.org/abs/2503.11265)：在驾驶 VLM 中使用动态视觉分辨率，使模型能把计算集中到安全相关区域，而不是均匀处理所有视角。
+- [Centaur: Robust End-to-End Autonomous Driving with Test-Time Training](https://arxiv.org/abs/2503.11650)：用测试时训练提升端到端自动驾驶鲁棒性。
+- [Hydra-NeXt: Robust Closed-Loop Driving with Open-Loop Training](https://arxiv.org/abs/2503.12030)：把轨迹预测、控制预测和轨迹细化统一到一个模型中，使开环训练的规划器在闭环驾驶中反应更快且更符合运动学约束。
+- [DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving](https://arxiv.org/abs/2503.12170)：用统一扩散建模方法处理自动驾驶。
+- [Logic-RAG: Augmenting Large Multimodal Models with Visual-Spatial Knowledge for Road Scene Understanding](https://arxiv.org/abs/2503.12663)：从感知输出构建一阶逻辑道路场景知识库，并检索逻辑关系来提升 LMM 对驾驶视频的视觉空间推理。
+- [CDKFormer: Contextual Deviation Knowledge-Based Transformer for Long-Tail Trajectory Prediction](https://arxiv.org/abs/2503.12695)：从个体运动和群体交互中提取 contextual deviation 特征，并输入 Transformer，重点建模长尾车辆轨迹预测中的罕见样本。
 - [SparseAlign](https://arxiv.org/abs/2503.12982)：构建全稀疏协同目标检测框架，用于车路协同感知。
+- [InsightDrive: Insight Scene Representation for End-to-End Autonomous Driving](https://arxiv.org/abs/2503.13047)：用 insight 场景表示支持端到端自动驾驶。
+- [ACCO](https://arxiv.org/abs/2503.13946)：用 anchor-centric communication 替代网格化协同感知，选择高置信 anchor features，并在 OPV2V 与 DAIR-V2X 上通过 local alignment 和 spatial cross-attention 融合。
+- [Bridging Past and Future: End-to-End Autonomous Driving with Historical Prediction and Planning](https://arxiv.org/abs/2503.14182)：构建结合历史上下文、预测与规划的端到端自动驾驶模型，将时间维度的驾驶行为纳入策略设计。
+- [Tracking Meets Large Multimodal Models for Driving Scenario Understanding](https://arxiv.org/abs/2503.14498)：把跟踪信息注入大多模态模型，以增强驾驶场景理解。
+- [Generating Multimodal Driving Scenes via Next-Scene Prediction](https://arxiv.org/abs/2503.14945)：通过下一场景预测生成多模态驾驶场景。
+- [DRoPE: Directional Rotary Position Embedding for Efficient Agent Interaction Modeling](https://arxiv.org/abs/2503.15029)：为自动驾驶轨迹生成引入 directional rotary position embedding，提升交通参与体之间交互建模的效率。
+- [DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](https://arxiv.org/abs/2503.15208)：解耦时空扩散并注入 metric depth，面向带更强几何控制的 4D 驾驶场景生成。
+- [MiLA: Multi-view Intensive-fidelity Long-term Video Generation World Model for Autonomous Driving](https://arxiv.org/abs/2503.15875)：用 coarse-to-refine 设计、时间渐进去噪和联合去噪-校正流生成分钟级多视角驾驶视频，降低长时程失真。
+- [TripNet: Learning Large-scale High-fidelity 3D Car Aerodynamics with Triplane Networks](https://arxiv.org/abs/2503.17400)：用 triplane 神经表示学习高保真 3D 汽车空气动力学；这是车辆设计仿真而非自动驾驶模型能力。
+- [Vehicle-SceneInteraction: A Text-Driven 3-D Lidar Place Recognition Method for Autonomous Driving](https://arxiv.org/abs/2503.18035)：Des4Pos 用多尺度融合注意力、双向 LSTM 上下文和文本-点云跨模态对齐，在 3D LiDAR 地图中定位文本描述的地点。
+- [Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](https://arxiv.org/abs/2503.18108)：SceneCrafter 用交互式 3D Gaussian Splatting 驾驶仿真器研究合成数据效果，生成真实交通场景以训练端到端驾驶模型。
+- [ReconDreamer++: Harmonizing Generative and Reconstructive Models for Driving Scene Representation](https://arxiv.org/abs/2503.18438)：结合生成式和重建式模型，通过新轨迹可变形对齐与地面表征细化改进闭环驾驶场景重建质量。
 - [FM4SU](https://arxiv.org/abs/2503.18730)：用知识图谱构造符号化驾驶场景基础模型，把 BEV 场景图序列化为 token 序列，用于学习场景演化与下一场景预测。
 - [TraF-Align](https://arxiv.org/abs/2503.19391)：面向自动驾驶异步多智能体感知进行轨迹感知特征对齐。
+- [Perception-Enhanced Multitask Multimodal Semantic Communication for UAV-Assisted Integrated Sensing and Communication System](https://arxiv.org/abs/2503.19594)：用感知增强的多任务融合优化 UAV 辅助感知通信系统；若保留，父级应路由到通信或航空系统方向。
+- [Rigid-Deformation Decomposition AI Framework for 3D Spatio-Temporal Prediction of Vehicle Collision Dynamics](https://arxiv.org/abs/2503.19712)：将车辆碰撞动态分解为全局刚体运动与局部形变，通过 RigidNet、DeformationNet、frozen-anchor 和 quaternion-increment 训练进行时空预测。
+- [Resilient Sensor Fusion under Adverse Sensor Failures via Multi-Modal Expert Fusion](https://arxiv.org/abs/2503.19776)：MoME 将 LiDAR-camera 3D 检测解耦为 camera-only、LiDAR-only 和融合专家解码器，提高传感器失效时的感知鲁棒性。
 - [GAIA-2](https://arxiv.org/abs/2503.20523)：面向自动驾驶的可控多视角生成式 world model，基于自车动态、交通参与者布局、环境因素和道路语义等结构化条件。
+- [Towards Generating Realistic 3D Semantic Training Data for Autonomous Driving](https://arxiv.org/abs/2503.21449)：用扩散式合成生成带标签的真实感 3D 语义驾驶场景，缩小仿真点云与真实分割训练数据之间的域差距。
+- [CoGen: 3D Consistent Video Generation via Adaptive Conditioning for Autonomous Driving](https://arxiv.org/abs/2503.22231)：用自适应 3D 条件实现一致的自动驾驶视频生成。
+- [VLM-C4L: Continual Core Dataset Learning with Corner Case Optimization via Vision-Language Models for Autonomous Driving](https://arxiv.org/abs/2503.23046)：用 VLM 选择 continual core dataset 并优化 corner-case 覆盖，把罕见驾驶事件转化为有针对性的数据学习信号。
 - [OpenDriveVLA](https://arxiv.org/abs/2503.23463)：vision-language-action 模型，将 2D 与 3D 视觉 token 对齐到语言嵌入，并自回归解码具备 grounding 的驾驶动作。
-- [WoTE](https://arxiv.org/abs/2504.01941)：引入 BEV world model 做在线轨迹评估，通过预测未来 BEV 状态，让端到端驾驶策略在执行前比较候选规划。
+- [MPDrive: Improving Spatial Understanding with Marker-Based Prompt Learning for Autonomous Driving](https://arxiv.org/abs/2504.00379)：用 marker-based prompt learning 强化驾驶 VLM 的空间 grounding，使提示聚焦与规划相关的道路场景结构。
+- [Contextualized Autonomous Drone Navigation Using LLMs Deployed in Edge-Cloud Computing](https://arxiv.org/abs/2504.00607)：在边云计算中部署 LLM 做上下文化自主无人机导航；这是航空机器人而非道路自动驾驶。
+- [NeuRadar: Neural Radiance Fields for Automotive Radar Point Clouds](https://arxiv.org/abs/2504.00859)：把神经辐射场扩展到 radar，同时生成 radar、camera 和 LiDAR 输出，并用确定性与概率点云表示建模 radar 回波。
+- [WoTE](https://arxiv.org/abs/2504.01941)：使用低延迟 BEV world model 在线预测未来 BEV 状态，在端到端规划决策前评估候选轨迹。
+- [Toward Real-world BEV Perception: Depth Uncertainty Estimation via Gaussian Splatting](https://arxiv.org/abs/2504.01957)：GaussianLSS 在 Lift-Splat-Shoot 中加入 Gaussian depth-uncertainty 建模，使多视角 BEV 感知能显式处理预测与规划中的深度不确定性。
+- [Data Scaling Laws for End-to-End Autonomous Driving](https://arxiv.org/abs/2504.04338)：在 16 到 8192 小时内部数据上测量简单端到端驾驶架构的扩展规律，同时覆盖开环指标和闭环仿真。
+- [Inverse++: Vision-Centric 3D Semantic Occupancy Prediction Assisted with 3D Object Detection](https://arxiv.org/abs/2504.04732)：为纯视觉 occupancy prediction 增加 3D 目标检测辅助分支，强化中间特征对小型动态目标和 vulnerable road users 的表达。
+- [CAFE-AD: Cross-Scenario Adaptive Feature Enhancement for Trajectory Planning in Autonomous Driving](https://arxiv.org/abs/2504.06584)：通过自适应特征剪枝和跨场景特征插值改进 nuPlan 长尾场景下的模仿学习轨迹规划。
+- [Drive in Corridors: Enhancing the Safety of End-to-End Autonomous Driving via Corridor Learning and Planning](https://arxiv.org/abs/2504.07507)：学习可行驶走廊并将其用于规划，为端到端轨迹预测加入显式安全包络。
+- [A Constrained Optimization Approach for Gaussian Splatting from Coarsely-Posed Images and Noisy Lidar Point Clouds](https://arxiv.org/abs/2504.09129)： 主要用LiDAR, camera, and 点云评估场景理解与场景级行为与任务指标，后续应检查是否更适合归入 Bench。
+- [Decoupled Diffusion Sparks Adaptive Scene Generation](https://arxiv.org/abs/2504.10485)：通过解耦扩散和目标条件 token 生成可控自动驾驶场景。
 - [On-board LLMs for autonomous driving](https://arxiv.org/abs/2504.11514)：将本地 LLM 模块与 MPC、RAG、LoRA 微调和量化结合，在不依赖云端的情况下增强驾驶控制与人机交互。
-- [LightEMMA](https://arxiv.org/abs/2505.00284)：提出面向自动驾驶的模型侧方法，核心围绕 Lightweight End-to-End Multimodal Model for Autonomous Driving。
+- [Towards a Multi-Agent Vision-Language System for Zero-Shot Novel Hazardous Object Detection for Autonomous Driving Safety](https://arxiv.org/abs/2504.13399)：结合 VLM 与检测模块，在自动驾驶场景中进行零样本危险物体检测。
+- [WeatherGen](https://arxiv.org/abs/2504.13561)：用 Spider Mamba diffusion 生成多样恶劣天气 LiDAR 点云，用于驾驶感知训练。
+- [Adaptive Field Effect Planner for Safe Interactive Autonomous Driving on Curved Roads](https://arxiv.org/abs/2504.14747)：结合人工势场、Frenet 坐标和粒子群优化，在弯道交互场景中进行安全规划。
+- [DiVE: Efficient Multi-View Driving Scenes Generation Based on Video Diffusion Transformer](https://arxiv.org/abs/2504.19614)：用高效扩散 Transformer 生成多视角驾驶场景视频。
+- [Breaking Down Monocular Ambiguity: Exploiting Temporal Evolution for 3D Lane Detection](https://arxiv.org/abs/2504.20525)：GTA-Net 通过自车运动中的时序几何聚合和实例一致性建模，缓解单目 3D 车道检测的深度歧义。
+- [LightEMMA](https://arxiv.org/abs/2505.00284)：提供轻量 VLM 端到端驾驶框架，在 nuScenes 预测任务上支持快速更换模型、公平评估和驾驶 VLM 的计算开销分析。
+- [Safety-Critical Traffic Simulation with Guided Latent Diffusion Model](https://arxiv.org/abs/2505.00515)：在图 VAE 潜空间中用可控安全关键目标引导扩散去噪，生成物理合理的对抗交通场景。
+- [ParkDiffusion: Heterogeneous Multi-Agent Multi-Modal Trajectory Prediction for Automated Parking using Diffusion Models](https://arxiv.org/abs/2505.00586)：用带地图和参与者类型条件的扩散模型预测自动泊车中车辆与行人的多模态轨迹。
 - [DualDiff](https://arxiv.org/abs/2505.01857)：使用带语义融合的双分支扩散模型进行自动驾驶场景重建。
+- [RADE: Learning Risk-Adjustable Driving Environment via Multi-Agent Conditional Diffusion](https://arxiv.org/abs/2505.03178)：用多智能体条件扩散学习风险可调驾驶环境，用于可控自动驾驶压力场景。
+- [Multi-Agent Reinforcement Learning-based Cooperative Autonomous Driving in Smart Intersections](https://arxiv.org/abs/2505.04231)：构建 RSU-centric V2I cooperative driving system，先用 conservative Q-learning 和 behavior cloning 预训练策略，再在无信号交叉口仿真中用 MAPPO 微调。
 - [LVLM-MPC Collaboration for Autonomous Driving](https://arxiv.org/abs/2505.04980)：将大视觉语言模型与自动生成的 MPC 控制器结合，把高层驾驶指令转化为受安全约束且可扩展的控制策略。
+- [Multi-Objective Reinforcement Learning for Adaptable Personalized Autonomous Driving](https://arxiv.org/abs/2505.05223)：用多目标强化学习训练个性化驾驶策略，在安全、效率、舒适性和用户偏好之间做权衡。
+- [DSDrive: Distilling Large Language Model for Lightweight End-to-End Autonomous Driving with Unified Reasoning and Planning](https://arxiv.org/abs/2505.05360)：把 LLM 推理蒸馏进轻量端到端驾驶模型，使统一推理和规划不必在线调用大语言模型。
 - [Human-Centric LLM-Guided Driving](https://arxiv.org/abs/2505.06875)：将快速控制、慢速大模型指导和强化学习结合，用于以人为中心的自动驾驶。
+- [VALISENS: A Validated Innovative Multi-Sensor System for Cooperative Automated Driving](https://arxiv.org/abs/2505.06980)：在 V2X 协同感知测试平台中融合车载和路侧 LiDAR、radar、RGB 与 thermal sensors，并加入 sensor-health monitoring 以提升 vulnerable-road-user 感知鲁棒性。
+- [CrashSage: A Large Language Model-Centered Framework for Contextual and Interpretable Traffic Crash Analysis](https://arxiv.org/abs/2505.07853)：以 LLM 为核心解释上下文交通证据，输出碰撞原因和风险因素的可解释分析。
+- [Extending Large Vision-Language Model for Diverse Interactive Tasks in Autonomous Driving](https://arxiv.org/abs/2505.08725)：将大型视觉语言模型扩展到多样交互式自动驾驶任务。
+- [TransDiffuser: End-to-end Trajectory Generation with Decorrelated Multi-modal Representation for Autonomous Driving](https://arxiv.org/abs/2505.09315)：用解耦多模态表示生成端到端自动驾驶轨迹。
+- [VRU-CIPI](https://arxiv.org/abs/2505.09935)：预测 intersections 中 vulnerable road users 的 crossing intentions，用于提升自动驾驶安全推理。
+- [LLM Crash Causation Analysis](https://arxiv.org/abs/2505.09949)：用 large language models 识别 freeway crash causation 中的关键 contributing factors。
+- [GaussianFormer3D: Multi-Modal Gaussian-based Semantic Occupancy Prediction with 3D Deformable Attention](https://arxiv.org/abs/2505.10685)：用从 LiDAR voxel 初始化的紧凑 3D Gaussians 表示语义占据，再通过 LiDAR-guided 3D deformable attention 与相机融合进行细化。
 - [LD-Scene](https://arxiv.org/abs/2505.11247)：用大模型引导扩散生成可控的对抗性安全关键驾驶场景。
+- [TS-VLM: Text-Guided SoftSort Pooling for Vision-Language Models in Multi-View Driving Reasoning](https://arxiv.org/abs/2505.12670)：用 Text-Guided SoftSort Pooling 按查询语义排序并融合多视角视觉特征，降低实时驾驶 VLM 推理中的高成本注意力。
+- [iPad: Iterative Proposal-centric End-to-End Autonomous Driving](https://arxiv.org/abs/2505.15111)：把规划 proposal 置于特征抽取中心，用 ProFormer 的 proposal-anchored attention 以及 proposal-centric 建图和预测辅助任务实现 planning-aware E2E driving。
+- [AgentThink](https://arxiv.org/abs/2505.15298)：为自动驾驶 VLM 配置 driving tool library、结构化自验证推理数据和基于 GRPO 的工具调用能力，使 chain-of-thought reasoning 变得 tool-aware 且可评测。
+- [Challenger: Affordable Adversarial Driving Video Generation](https://arxiv.org/abs/2505.15880)：以较低成本生成对抗驾驶视频，面向感知和规划模型的视觉 corner case 压力测试。
+- [VERDI: VLM-Embedded Reasoning for Autonomous Driving](https://arxiv.org/abs/2505.15925)：在训练阶段把 VLM 的 commonsense reasoning 蒸馏进自动驾驶栈，避免部署时的大模型推理开销，同时保留可分解的决策知识。
+- [Toward Theoretical Insights into Diffusion Trajectory Distillation via Operator Merging](https://arxiv.org/abs/2505.16024)：从 operator merging 角度分析扩散轨迹蒸馏，解释多步去噪如何压缩为更快的轨迹生成。
 - [DriveMoE](https://arxiv.org/abs/2505.16278)：在 VLA 驾驶模型中加入场景专用视觉专家和行为专用动作专家，用 MoE 路由动态选择摄像头信息与驾驶行为模块。
-- [Raw2Drive](https://arxiv.org/abs/2505.16394)：提出面向自动驾驶的模型侧方法，核心围绕 Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving (in CARLA v2)。
+- [Raw2Drive](https://arxiv.org/abs/2505.16394)：用双流 model-based reinforcement learning 训练端到端驾驶，并通过 guidance mechanism 对齐 privileged world model 与 raw-sensor world model。
+- [AdvReal: Physical adversarial patch generation framework for security evaluation of object detection systems](https://arxiv.org/abs/2505.16402)：在二维与三维空间生成更真实的物理对抗补丁，用视角、重光照和服装变化压力测试自动驾驶目标检测器。
+- [Learning Generalized and Flexible Trajectory Models from Omni-Semantic Supervision](https://arxiv.org/abs/2505.17437)：用 omni-semantic supervision 训练轨迹模型，使运动预测能利用更丰富的场景语义并跨轨迹任务泛化。
+- [Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](https://arxiv.org/abs/2505.17659)：把安全可行轨迹规划表述为语言建模，用 tokenized planning output 将序列模型训练信号引入驾驶控制。
+- [SafeMVDrive: Multi-view Safety-Critical Driving Video Synthesis in the Real World Domain](https://arxiv.org/abs/2505.17727)：把安全关键轨迹生成器与真实域多视角视频生成器耦合，并加入视觉上下文和 GRPO 式调优来生成高风险驾驶片段。
+- [ProphetDWM: A Driving World Model for Rolling Out Future Actions and Videos](https://arxiv.org/abs/2505.18650)：联合滚动预测未来驾驶视频与动作，为 driving world model 增加 action control 和 action prediction，而不要求预先给定同长度动作序列。
+- [How Do Images Align and Complement LiDAR? Towards a Harmonized Multi-modal 3D Panoptic Segmentation](https://arxiv.org/abs/2505.18956)：研究图像与 LiDAR 在 3D 全景分割中的互补关系，并通过 Transformer 融合协调两种模态。
+- [DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving](https://arxiv.org/abs/2505.19239)：通过联合预测点云、2D 语义和图像自监督学习驾驶世界知识，并用 future spatial attention 适配下游任务。
+- [DiffVLA: Vision-Language Guided Diffusion Planning for Autonomous Driving](https://arxiv.org/abs/2505.19381)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“DiffVLA: Vision-Language Guided Diffusion Planning for Autonomous Driving”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [VLMLight: Safety-Critical Traffic Signal Control via Vision-Language Meta-Control and Dual-Branch Reasoning Architecture](https://arxiv.org/abs/2505.19486)：用视觉语言 meta-control 和双分支推理做安全关键交通信号控制；父级应确认是否归入交通控制方向。
 - [ReasonPlan](https://arxiv.org/abs/2505.20024)：统一场景预测与决策推理，用于闭环自动驾驶规划。
+- [See through the Dark: Learning Illumination-affined Representations for Nighttime Occupancy Prediction](https://arxiv.org/abs/2505.20641)：学习照明相关特征用于夜间 occupancy prediction，在光照变化削弱相机线索时改进 BEV 场景补全。
+- [GeoDrive: 3D Geometry-Informed Driving World Model with Precise Action Control](https://arxiv.org/abs/2505.22421)：将 3D geometry 注入驾驶世界模型，使生成未来能跟随精确自车动作控制，而不只是粗粒度场景提示。
 - [S4-Driver](https://arxiv.org/abs/2505.24139)：通过可扩展自监督训练和稀疏 3D 视觉表示，将多模态语言模型特征迁移到端到端运动规划。
 - [ROAD](https://arxiv.org/abs/2505.24317)：结合交通法规知识图谱、VLM 推理和 RAG 式奖励分配，使自动驾驶强化学习不只依赖手写奖励，而能显式优化事故责任与守法行为。
+- [GaussianFusion: Gaussian-Based Multi-Sensor Fusion for End-to-End Autonomous Driving](https://arxiv.org/abs/2506.00034)：用带显式和隐式属性的紧凑 2D Gaussian 作为中间载体融合多传感器驾驶证据，比展平注意力或 dense BEV 融合更可解释。
+- [DriveMind: A Dual Visual Language Model-based Reinforcement Learning Framework for Autonomous Driving](https://arxiv.org/abs/2506.00819)：结合双视觉语言模型和强化学习进行自动驾驶决策。
+- [RadarSplat: Radar Gaussian Splatting for High-Fidelity Data Synthesis and 3D Reconstruction of Autonomous Driving Scenes](https://arxiv.org/abs/2506.01379)：将 Gaussian splatting 扩展到雷达条件下的驾驶场景重建与合成，结合 radar、LiDAR 和相机几何。
+- [LongDWM: Cross-Granularity Distillation for Building a Long-Term Driving World Model](https://arxiv.org/abs/2506.01546)：把长时程驾驶世界建模拆成大运动学习和双向连续运动学习，并用跨粒度蒸馏减少 rollout 漂移。
+- [Research on Driving Scenario Technology Based on Multimodal Large Lauguage Model Optimization](https://arxiv.org/abs/2506.02014)：面向自动驾驶提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [TO-GATE: Clarifying Questions and Summarizing Responses with Trajectory Optimization for Eliciting Human Preference](https://arxiv.org/abs/2506.02827)：用轨迹优化辅助澄清问题和总结回答来引出人类偏好；父级应确认其是否确属自动驾驶任务。
+- [Driving-Scene Gaussian Splatting with Bilateral Grids](https://arxiv.org/abs/2506.05280)：统一 appearance codes 与 bilateral grids，提升 driving-scene Gaussian Splatting 的光度鲁棒性。
+- [HMVLM: Multistage Reasoning-Enhanced Vision-Language Model for Long-Tailed Driving Scenarios](https://arxiv.org/abs/2506.05883)：用多阶段视觉语言建模增强长尾驾驶场景推理。
+- [DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning](https://arxiv.org/abs/2506.06659)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Generalized Trajectory Scoring for End-to-end Multimodal Planning](https://arxiv.org/abs/2506.06664)：为多模态候选轨迹加入通用评分模型，重点解决计划选择，而不只是生成轨迹候选。
+- [Genesis: Multimodal Driving Scene Generation with Spatio-Temporal and Cross-Modal Consistency](https://arxiv.org/abs/2506.07497)：在共享潜空间中联合生成多视角视频和 LiDAR，耦合 DiT 视频扩散、3D-VAE 编码和 BEV-aware LiDAR 生成。
+- [R3D2: Realistic 3D Asset Insertion via Diffusion for Autonomous Driving Simulation](https://arxiv.org/abs/2506.07826)：用轻量一步扩散模型把完整 3D asset 插入 Gaussian-splatting 驾驶场景，并生成合理的阴影、反射和遮挡效果。
 - [ReCogDrive](https://arxiv.org/abs/2506.08052)：通过强化训练把 VLM 驾驶认知注入 diffusion planner，用连续轨迹生成替代直接在语言空间输出动作。
+- [Scaling Laws of Motion Forecasting and Planning - A Technical Report](https://arxiv.org/abs/2506.08228)：研究运动预测和规划模型的规模规律，把数据量与模型容量变化本身作为评估目标，而不是提出新规划架构。
+- [Cosmos-Drive-Dreams: Scalable Synthetic Driving Data Generation with World Foundation Models](https://arxiv.org/abs/2506.09042)：用世界基础模型生成可扩展的合成驾驶数据。
+- [Adv-BMT: Bidirectional Motion Transformer for Safety-Critical Traffic Scenario Generation](https://arxiv.org/abs/2506.09485)：在对抗初始化后用双向 motion Transformer 做逆向交通运动预测，无需碰撞数据即可生成安全关键交互。
 - [R2SE](https://arxiv.org/abs/2506.09800)：提出面向端到端驾驶的强化细化流程：识别困难样本、训练残差 specialist policy，并在保留 generalist policy 的同时扩展策略容量。
+- [ReSim: Reliable World Simulation for Autonomous Driving](https://arxiv.org/abs/2506.09981)：面向评测和规划构建可靠驾驶世界仿真，强调仿真保真度和一致性，而不是单一感知模型。
+- [QuadricFormer](https://arxiv.org/abs/2506.10977)：把驾驶场景表示为 superquadric，用于自动驾驶中的高效 3D 语义占用预测。
+- [Poutine: Vision-Language-Trajectory Pre-Training and Reinforcement Learning Post-Training Enable Robust End-to-End Autonomous Driving](https://arxiv.org/abs/2506.11234)：结合视觉-语言-轨迹预训练与 RL 后训练，提升端到端驾驶鲁棒性。
 - [AutoVLA](https://arxiv.org/abs/2506.13757)：驾驶 VLA 模型，把连续轨迹 token 化为可行离散动作，并结合监督训练与强化微调。
+- [Toward Safety-First Human-Like Decision Making for Autonomous Vehicles in Time-Varying Traffic Flow](https://arxiv.org/abs/2506.14502)：提出安全优先的人类式决策策略，通过层级机制和注意力处理密集、时变交通流。
+- [NetRoller: Interfacing General and Specialized Models for End-to-End Autonomous Driving](https://arxiv.org/abs/2506.14589)：连接通用模型与专用模型以支持端到端自动驾驶。
+- [ParkFormer: A Transformer-Based Parking Policy with Goal Embedding and Pedestrian-Aware Control](https://arxiv.org/abs/2506.16856)：训练带目标嵌入和行人感知控制的 Transformer 停车策略，用于相机和 BEV 停车场景。
+- [Long-Term Traffic Simulation with Interleaved Autoregressive Motion and Scenario Generation](https://arxiv.org/abs/2506.17213)：InfGen 在 next-token 模型中交错闭环运动仿真和场景生成，使长时程 rollout 中交通参与者可以进入或离开场景。
+- [ELMAR: Enhancing LiDAR Detection with 4D Radar Motion Awareness and Cross-modal Uncertainty](https://arxiv.org/abs/2506.17958)：把 4D radar 运动线索和跨模态不确定性注入 LiDAR 检测，提升互补传感器下的动态目标感知。
 - [Drive-R1](https://arxiv.org/abs/2506.18234)：面向驾驶领域的 VLM，通过监督式推理数据和强化学习连接场景推理与运动规划。
+- [Self-Supervised Multimodal NeRF for Autonomous Driving](https://arxiv.org/abs/2506.19615)：在 LiDAR 和相机数据上自监督学习动态 NeRF，用于自动驾驶场景的新视角合成。
+- [MADrive](https://arxiv.org/abs/2506.21520)：引入记忆增强的驾驶场景建模。核心思想：利用驾驶场景记忆提升自动驾驶模型的时间一致性与未来场景预测能力。
+- [TrajTok: Technical Report for 2025 Waymo Open Sim Agents Challenge](https://arxiv.org/abs/2506.21618)：在 Waymo Open Sim Agents 场景中把驾驶轨迹离散化为 next-token 行为生成信号，并结合数据驱动与规则覆盖以及空间感知标签平滑。
+- [SceneDiffuser++: City-Scale Traffic Simulation via a Generative World Model](https://arxiv.org/abs/2506.21976)：用生成式世界模型进行城市级交通仿真、场景生成和交通参与者行为建模。
+- [Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis](https://arxiv.org/abs/2506.23263)：通过反映 causal entities 合成自车视角交通事故视频，使生成的安全数据保留与碰撞相关的目标交互。
+- [OcRFDet: Object-Centric Radiance Fields for Multi-View 3D Object Detection in Autonomous Driving](https://arxiv.org/abs/2506.23565)：从多视角相机构建 object-centric radiance fields，使 3D 目标检测器能利用跨视角一致几何。
+- [Epona: Autoregressive Diffusion World Model for Autonomous Driving](https://arxiv.org/abs/2506.24113)：结合自回归 rollout 与扩散生成，使驾驶世界模型能延展未来场景并保持视觉真实感。
 - [World4Drive](https://arxiv.org/abs/2507.00603)：基于视觉基础模型特征构建 intention-aware physical latent world model，用于生成和评估多模态规划轨迹。
-- [ReAL-AD](https://arxiv.org/abs/2507.12499)：提出面向端到端自动驾驶的 reasoning-augmented learning，将决策过程组织为驾驶策略、驾驶决策与驾驶操作三个层级。
-- [Orbis](https://arxiv.org/abs/2507.13162)：面向长时程预测的紧凑 driving world model，研究 hybrid tokenization 和连续自回归建模。
-- [Cooptrack](https://arxiv.org/abs/2507.19239)：研究端到端协同时序感知，用于高效自动驾驶跟踪与感知。
-- [TurboTrain](https://arxiv.org/abs/2508.04682)：通过多 Agent 时空预训练与梯度冲突抑制，更高效地训练协同驾驶感知和预测模型。
-- [EvaDrive](https://arxiv.org/abs/2508.09158)：将端到端规划表述为多目标对抗式策略优化，用轨迹生成器、可训练 critic 和 Pareto 选择实现多轮规划细化。
-- [ImagiDrive](https://arxiv.org/abs/2508.11428)：在统一的想象与规划框架中结合 VLM 与 driving world model，用于自动驾驶决策。
-- [ViLaD](https://arxiv.org/abs/2508.12603)：将视觉语言扩散框架用于端到端自动驾驶，以扩散式规划替代顺序动作生成。
-- [ReflectDrive](https://arxiv.org/abs/2509.20109)：reflective VLA 框架，用 discrete diffusion 和 latent reflection 改善安全关键轨迹生成。
-- [DriveMind](https://arxiv.org/abs/2510.04532)：基于 DriveMind 数据和 SFT、GRPO 训练检验 plan-aligned reasoning 是否真正驱动轨迹规划，揭示 VLM 驾驶模型中的 reasoning-planning disconnect。
+- [LLM-based Realistic Safety-Critical Driving Video Generation](https://arxiv.org/abs/2507.01264)：用 LLM 引导生成真实感安全关键驾驶视频，为自动驾驶评测与训练补充数据生成路径。
+- [ECCV 2024 W-CODA: 1st Workshop on Multimodal Perception and Comprehension of Corner Cases in Autonomous Driving](https://arxiv.org/abs/2507.01735)：这是 workshop proceedings 元数据而非单一模型贡献；父级应路由或移除该 Model 主条目。
+- [DriveMRP: Enhancing Vision-Language Models with Synthetic Motion Data for Motion Risk Prediction](https://arxiv.org/abs/2507.02948)：用合成运动数据微调视觉语言模型，使 BEV 和轨迹线索改进 motion risk prediction。
+- [DIVER: Reinforced Diffusion Breaks Imitation Bottlenecks in End-to-End Autonomous Driving](https://arxiv.org/abs/2507.04049)：用强化扩散突破端到端驾驶中的模仿学习瓶颈。
+- [SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement](https://arxiv.org/abs/2507.04263)：用 soft-braid attention 进行多智能体轨迹细化。
+- [NavigScene: Bridging Local Perception and Global Navigation for Beyond-Visual-Range Autonomous Driving](https://arxiv.org/abs/2507.05227)：提供导航引导的语言数据，并分别设计推理、偏好优化和 VLA 融合范式，让驾驶模型利用超出局部视觉的全局路线信息。
+- [LeAD: The LLM Enhanced Planning System Converged with End-to-end Autonomous Driving](https://arxiv.org/abs/2507.05754)：将 LLM 增强规划与端到端自动驾驶结合，用语言引导的推理支持驾驶策略决策。
+- [MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding](https://arxiv.org/abs/2507.06072)：用驾驶状态的潜在因果图和视觉语言对齐模块建模自车行为，减少视频与语言模态中的伪相关。
+- [Context-Aware Multi-modal Enhanced Risk Anticipation](https://arxiv.org/abs/2507.06444)：CAMERA 融合行车视频、文本标注和驾驶员注意图，并用场景复杂度与 gaze entropy 自适应调整事故预警阈值。
+- [STRAP: Spatial-Temporal Risk-Attentive Vehicle Trajectory Prediction for Autonomous Driving](https://arxiv.org/abs/2507.08563)：将风险势场注入时空轨迹编码，并用风险加权损失强调近距离跟车和激进行为等高风险场景。
+- [$I^{\mathbf{2}}$-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting](https://arxiv.org/abs/2507.09144)：为自动驾驶世界预测构建动态 4D 占据场景 tokenization。
+- [Traffic Anomaly Detection with Video Foundation Models](https://arxiv.org/abs/2507.09338)：证明经过 masked-video 和驾驶域预训练的简洁 Video ViT 编码器，可用更低复杂度达到专用交通异常检测模型的效果。
+- [RCG: Safety-Critical Scenario Generation for Robust Autonomous Driving via Real-World Crash Grounding](https://arxiv.org/abs/2507.10749)：用驾驶日志和高事故密度视频学习 crash-informed 行为嵌入，将对抗场景生成锚定到真实事故语义而不是手工风险分数。
+- [ReAL-AD](https://arxiv.org/abs/2507.12499)：把端到端驾驶拆成策略、战术决策和操作三个层级，并先用 VLM 场景理解形成高层意图再解码轨迹。
+- [World model-based end-to-end scene generation for accident anticipation in autonomous driving](https://arxiv.org/abs/2507.12762)：把 prompt 引导的 world-model 视频生成与图时序事故预测结合，用合成边缘场景和新风险数据集提升事故预判提前量。
+- [Orbis](https://arxiv.org/abs/2507.13162)：用 469M 参数的紧凑设计研究长时程驾驶 world model，并对比离散 token 建模与连续自回归 flow matching。
+- [Exploring the limitations of kNN noisy feature detection and recovery for self-driving labs](https://arxiv.org/abs/2507.16833)：Classification concern：该工作检测和恢复材料自驱实验室数据中的噪声特征，不是道路自动驾驶。
+- [CRUISE V2X Gaussian Splatting](https://arxiv.org/abs/2507.18473)：用分解式 Gaussian Splatting 重建 V2X 场景，使动态交通参与者可编辑，并能从自车、路侧和协同视角渲染。
+- [Diverse and Adaptive Behavior Curriculum for Autonomous Driving: A Student-Teacher Framework with Multi-Agent RL](https://arxiv.org/abs/2507.19146)：用图式多智能体 RL 教师自动生成交通行为课程，再训练部分可观测驾驶学生覆盖常规和安全关键场景。
+- [Cooptrack](https://arxiv.org/abs/2507.19239)：传输稀疏 instance-level 特征并学习跨 Agent 关联，用于协同 3D 跟踪，而不是停留在单帧协同感知。
+- [GS-Occ3D: Scaling Vision-Only Occupancy Reconstruction with Gaussian Splatting](https://arxiv.org/abs/2507.19451)：用 Gaussian splatting 扩展自动驾驶中的纯视觉占据重建。
+- [I2V-GS: Infrastructure-to-Vehicle View Transformation with Gaussian Splatting for Autonomous Driving Data Generation](https://arxiv.org/abs/2507.23683)：用 Gaussian Splatting、adaptive depth warp 和级联 inpainting 将路侧基础设施视角转换为车端视角，并发布 RoadSight 数据集。
+- [Controllable Pedestrian Video Editing for Multi-View Driving Scenarios via Motion Sequence](https://arxiv.org/abs/2508.00299)：把多相机中的行人区域拼接成统一画布，再用姿态序列控制行人插入、替换和移除，保持跨视角一致性。
+- [Adverse Weather-Independent Framework Towards Autonomous Driving Perception through Temporal Correlation and Unfolded Regularization](https://arxiv.org/abs/2508.01583)：Advent 利用短时同质性、打乱后的时序片段和 unfolded regularizer，使感知 backbone 无需清晰参考图也能适配雾、雨和混合天气。
+- [Context-Aware Risk Assessment and its Application in Autonomous Driving](https://arxiv.org/abs/2508.02919)：从目标运动学、RSS 式安全包络和 probabilistic-max 融合计算方向性风险指数，并实时调节驾驶控制指令。
+- [LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](https://arxiv.org/abs/2508.03692)：把自然语言解析成自车中心场景图，再用三分支扩散和自回归 rollout 生成可控 4D LiDAR 序列。
+- [TurboTrain](https://arxiv.org/abs/2508.04682)：结合 masked spatiotemporal pretraining 和梯度冲突抑制，在 V2X 序列上简化协同感知与预测的联合训练。
+- [DistillDrive: End-to-End Multi-Mode Autonomous Driving Distillation by Isomorphic Hetero-Source Planning Model](https://arxiv.org/abs/2508.05402)：把异源规划器中的多模态规划知识蒸馏进同构端到端驾驶模型，在不保留完整模块化栈的情况下保留 mode 多样性。
+- [IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model](https://arxiv.org/abs/2508.06571)：用 reward world model 训练驾驶 VLA 策略，以学习到的未来和奖励信号引导动作学习，而不只依赖模仿标签。
+- [StableAvatar: Infinite-Length Audio-Driven Avatar Video Generation](https://arxiv.org/abs/2508.08248)：分类提示：该工作是无限长度音频驱动 avatar 视频生成，不是自动驾驶感知、规划或世界模型贡献。
+- [EvaDrive](https://arxiv.org/abs/2508.09158)：把轨迹规划建模为生成器与多目标 critic 的多轮对抗博弈，用 Pareto 选择保留偏好权衡而不是压成单一 reward。
+- [How Safe Will I Be Given What I Saw? Calibrated Prediction of Safety Chances for Image-Controlled Autonomy](https://arxiv.org/abs/2508.09346)：从图像控制自主系统输入中预测校准后的安全概率，把视觉上下文转化为控制决策中的概率风险估计。
+- [ImagiDrive](https://arxiv.org/abs/2508.11428)：把 VLM 驾驶智能体和 driving world model 连接起来，让想象出的未来场景通过 early stopping 和轨迹选择迭代修正规划。
+- [EvoPSF: Online Evolution of Autonomous Driving Models via Planning-State Feedback](https://arxiv.org/abs/2508.11453)：用规划不确定性和 agent-attention 信号触发在线自监督更新，重点修正可能导致规划失败的目标预测。
+- [InstDrive: Instance-Aware 3D Gaussian Splatting for Driving Scenes](https://arxiv.org/abs/2508.12015)：将动态驾驶场景拆成 instance-aware Gaussian 表示，提升对象级重建和可编辑仿真，而不是只维护单一背景场。
+- [Belief-Conditioned One-Step Diffusion: Real-Time Trajectory Planning with Just-Enough Sensing](https://arxiv.org/abs/2508.12166)：以 pose-belief raster 和 sensor mask 条件化一步扩散规划，估计完成任务所需的最小传感器组合。
+- [ViLaD](https://arxiv.org/abs/2508.12603)：用 masked diffusion 替代自回归 VLA 动作解码，并行生成驾驶决策序列，同时支持双向推理。
+- [Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](https://arxiv.org/abs/2508.13305)：面向多视角自动驾驶 VLM 进行视觉 token pruning，结合 diversity-aware 与 view-adaptive 选择。
+- [Adversarial Generation and Collaborative Evolution of Safety-Critical Scenarios for Autonomous Vehicles](https://arxiv.org/abs/2508.14527)：ScenGE 让 LLM 基于结构化驾驶知识构造合理对抗车辆，再在复杂交通流中协同演化安全关键场景。
+- [Seeing Clearly, Forgetting Deeply: Revisiting Fine-Tuned Video Generators for Driving Simulation](https://arxiv.org/abs/2508.16512)：审视驾驶仿真中微调视频生成器的表现，关注视觉清晰度是否伴随驾驶场景一致性损失。
+- [DETNO: A Diffusion-Enhanced Transformer Neural Operator for Long-Term Traffic Forecasting](https://arxiv.org/abs/2508.19389)：在 Transformer neural operator 后加入扩散细化，使长时程交通预测保留 shock wave 和拥堵边界，而不是退化成过度平滑结果。
+- [FlyMeThrough: Human-AI Collaborative 3D Indoor Mapping with Commodity Drones](https://arxiv.org/abs/2508.20034)：Classification concern：该工作是面向建筑导航和设施数据的无人机室内建图系统，不是道路自动驾驶模型。
+- [AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving](https://arxiv.org/abs/2509.01944)：通过推理监督、自反思信号和强化式激励训练驾驶 VLA，使其输出更连贯的解释和动作序列。
+- [OccTENS: 3D Occupancy World Model via Temporal Next-Scale Prediction](https://arxiv.org/abs/2509.03887)：把占据世界建模改写为 temporal next-scale prediction，以提升 3D occupancy 生成的可控性、效率和长时程保真度。
+- [A Knowledge-Driven Diffusion Policy for End-to-End Autonomous Driving Based on Expert Routing](https://arxiv.org/abs/2509.04853)：KDP 将时间一致的扩散动作生成与稀疏专家路由结合，根据场景上下文激活可复用驾驶专家。
+- [OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision](https://arxiv.org/abs/2509.05578)：把 dense 3D occupancy 同时作为预测输出和隐式监督，使 VLA 模型能从 2D 驾驶输入中学习细粒度空间结构。
+- [Adaptive Evolution Factor Risk Ellipse Framework for Reliable and Safe Autonomous Driving](https://arxiv.org/abs/2509.06375)：用 adaptive evolution-factor risk ellipse 表示交互式驾驶风险，提供比固定鲁棒控制更少保守且可解释的安全边界。
+- [Semantic Causality-Aware Vision-Based 3D Occupancy Prediction](https://arxiv.org/abs/2509.08388)：为纯视觉 3D 语义占用加入因果损失，使语义预测和体素重建共同优化，减少级联模块误差。
+- [BEVTraj: Map-Free End-to-End Trajectory Prediction in Bird's-Eye View with Deformable Attention and Sparse Goal Proposals](https://arxiv.org/abs/2509.10080)：直接从 BEV 传感器特征预测轨迹，用 deformable attention 和稀疏目标 proposal 降低对 HD map 的依赖。
+- [DECAMP: Towards Scene-Consistent Multi-Agent Motion Prediction with Disentangled Context-Aware Pre-Training](https://arxiv.org/abs/2509.10426)：把行为模式学习与潜特征重建解耦，并加入协同空间-运动 pretext，用于场景一致的多智能体运动预测。
+- [TeraSim-World: Worldwide Safety-Critical Data Synthesis for End-to-End Autonomous Driving](https://arxiv.org/abs/2509.13164)：从真实地图和交通需求出发合成地理锚定的安全关键数据，并结合对抗事件和街景约束的传感器渲染。
+- [AdaThinkDrive: Adaptive Thinking via Reinforcement Learning for Autonomous Driving](https://arxiv.org/abs/2509.13769)：用强化学习自适应分配驾驶模型的思考量，面向日常场景和困难场景之间更高效的 reasoning allocation。
+- [MAP: End-to-End Autonomous Driving with Map-Assisted Planning](https://arxiv.org/abs/2509.13926)：将分割式在线地图特征和自车状态送入规划模块，降低端到端轨迹预测中的 off-road 行为。
+- [Digital Twin-based Cooperative Autonomous Driving in Smart Intersections: A Multi-Agent Reinforcement Learning Approach](https://arxiv.org/abs/2509.15099)：为无信号交叉口构建 digital-twin、RSU-centric cooperative driving system，先用 conservative Q-learning 和 behavior cloning 预训练，再用带 self-attention 的 MAPPO 微调。
+- [OpenViGA: Video Generation for Automotive Driving Scenes by Streamlining and Fine-Tuning Open Source Models with Public Data](https://arxiv.org/abs/2509.15479)：基于公开数据和开源模型构建自动驾驶场景视频生成系统。核心思想：显式分析 tokenizer、世界模型和解码器设计，使驾驶视频生成能在学术规模下可复现地研究。
+- [SMART: Scalable Multi-Agent Reasoning and Trajectory Planning in Dense Environments](https://arxiv.org/abs/2509.15737)：提出 SMART 分层多车轨迹规划框架，在密集交通中结合 RL priority estimation、large-step hybrid A* search 和 distributed optimization。
+- [RadarGaussianDet3D: An Efficient and Effective Gaussian-based 3D Detector with 4D Automotive Radars](https://arxiv.org/abs/2509.16119)：把稀疏 4D 毫米波雷达点表示为 Gaussian 特征，在保留速度线索的同时提升实时 3D 检测的 BEV 表征质量。
+- [Temporal Logic-Based Multi-Vehicle Backdoor Attacks against Offline RL Agents in End-to-end Autonomous Driving](https://arxiv.org/abs/2509.16950)：用时序逻辑定义可物理部署的多车后门触发器，攻击 offline-RL 端到端驾驶策略，而非像素级补丁。
+- [CoBEVMoE: Heterogeneity-aware Feature Fusion with Dynamic Mixture-of-Experts for Collaborative Perception](https://arxiv.org/abs/2509.17107)：提出 CoBEVMoE，在 BEV 空间用 dynamic mixture-of-experts 融合多智能体异构观测，提升 collaborative perception。
+- [DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](https://arxiv.org/abs/2509.17940)：将面向安全的 DPO 用于端到端自动驾驶策略学习。
+- [RDAR: Reward-Driven Agent Relevance Estimation for Autonomous Driving](https://arxiv.org/abs/2509.19789)：面向自动驾驶估计奖励驱动的交通参与者相关性，支持交互感知规划。
+- [ReflectDrive](https://arxiv.org/abs/2509.20109)：结合 discrete diffusion 和学习式 reflection 机制修正不安全 VLA 轨迹，避免依赖昂贵的梯度引导。
+- [Autoregressive End-to-End Planning with Time-Invariant Spatial Alignment and Multi-Objective Policy Refinement](https://arxiv.org/abs/2509.20938)：在自回归端到端规划中加入 time-invariant spatial alignment 和多目标策略细化，稳定规划步骤间的空间特征。
+- [BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving](https://arxiv.org/abs/2509.23589)：用 diffusion bridge policy 做闭环轨迹规划，在起点和目标约束之间连接采样计划，而不是从零开始去噪。
+- [INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception](https://arxiv.org/abs/2509.23700)：围绕 quality-aware instance filtering、dual-branch detection routing 和 cross-agent local instance fusion 构建 LiDAR 协同感知，在 DAIR-V2X 与 V2V4Real 上降低通信带宽。
+- [Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](https://arxiv.org/abs/2509.23993)：将 R1 式强化微调用于多智能体交通仿真，通过后训练改进行为模型 rollout，而不只依赖模仿学习。
+- [BEV-VLM: Trajectory Planning via Unified BEV Abstraction](https://arxiv.org/abs/2509.25249)：通过统一 BEV abstraction 进行轨迹规划，将 VLM 式推理锚定在鸟瞰空间结构上。
+- [From Seeing to Predicting: A Vision-Language Framework for Trajectory Forecasting and Controlled Video Generation](https://arxiv.org/abs/2510.00806)：在视觉语言框架中连接轨迹预测与可控视频生成。
+- [DriveMind](https://arxiv.org/abs/2510.04532)：构建 plan-aligned 驾驶 VQA 语料，并用 SFT 与 GRPO 检验自然语言推理是否因果性提升 VLM 轨迹规划。
+- [Progressive Gaussian Transformer with Anisotropy-aware Sampling for Open Vocabulary Occupancy Prediction](https://arxiv.org/abs/2510.04759)：用渐进式 Gaussian 场景 token 和 anisotropy-aware sampling，在几何精度与文本对齐的开放词表占用特征之间取平衡。
+- [EB-MBD: Emerging-Barrier Model-Based Diffusion for Safe Trajectory Optimization in Highly Constrained Environments](https://arxiv.org/abs/2510.07700)：将 emerging barrier function 接入 model-based diffusion，避免狭窄规划空间中的轨迹采样违反硬约束。
+- [ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](https://arxiv.org/abs/2510.08562)：建模归一化残差轨迹，让端到端规划器预测相对稳定参考的偏差，而不是直接预测完整轨迹。
+- [Game-Theoretic Risk-Shaped Reinforcement Learning for Safe Autonomous Driving](https://arxiv.org/abs/2510.10960)：用博弈论风险估计和安全约束塑造 RL 奖励，使策略显式响应交互车辆和突发危险。
+- [Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling](https://arxiv.org/abs/2510.11083)：用 flow matching 建模交互行为并进行自动驾驶规划。
+- [Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](https://arxiv.org/abs/2510.11092)：联合建模自车轨迹规划与场景演化，使驾驶策略能考虑自身计划动作与未来环境动态的相互影响。
+- [Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory](https://arxiv.org/abs/2510.12220)：Classification concern：该工作是用 Koopman 动力学加速通用文生图扩散采样，并非道路自动驾驶模型。
+- [CoIRL-AD: Collaborative-Competitive Imitation-Reinforcement Learning in Latent World Models for Autonomous Driving](https://arxiv.org/abs/2510.12560)：在 latent world model 中结合模仿学习和强化学习，显式平衡自动驾驶交互中的协作和竞争。
 - [DriveVLA-W0](https://arxiv.org/abs/2510.12796)：通过未来图像预测加入密集 world-model supervision，缓解稀疏动作标签的 supervision deficit。
+- [A Diffusion-Refined Planner with Reinforcement Learning Priors for Confined-Space Parking](https://arxiv.org/abs/2510.14000)：用 RL prior 引导扩散式停车规划，在狭小空间中处理高精度机动和复杂动作分布。
+- [DriveGen3D](https://arxiv.org/abs/2510.15264)：用高效视频扩散提升前馈式驾驶场景生成。核心思想：生成时间一致的 3D 驾驶场景，以支持自动驾驶仿真与感知训练。
+- [VDRive: Leveraging Reinforced VLA and Diffusion Policy for End-to-end Autonomous Driving](https://arxiv.org/abs/2510.15446)：通过未来观测 token 预测预训练 VLA 状态理解，再用强化学习微调和扩散策略头进行语义与几何共同约束的动作生成。
 - [DiffVLA++](https://arxiv.org/abs/2510.17148)：通过指标引导对齐连接认知推理与端到端自动驾驶。
+- [SparseWorld: A Flexible, Adaptive, and Efficient 4D Occupancy World Model Powered by Sparse and Dynamic Queries](https://arxiv.org/abs/2510.17482)：用受自车状态调制的稀疏动态 query 替代固定 occupancy grid，实现范围自适应感知和状态条件化 4D 预测。
+- [OmniNWM: Omniscient Driving Navigation World Models](https://arxiv.org/abs/2510.18313)：提出 OmniNWM，将 RGB、语义、深度、占据、动作控制和奖励信号统一到全景驾驶世界模型中。
+- [From Forecasting to Planning: Policy World Model for Collaborative State-Action Prediction](https://arxiv.org/abs/2510.19654)：提出 Policy World Model，用协同状态-动作预测把驾驶世界预测与轨迹规划统一起来。
+- [Scaling Up Occupancy-centric Driving Scene Generation: Dataset and Method](https://arxiv.org/abs/2510.22973)：构建 Nuplan-Occ 并训练以 occupancy 为中心的驾驶场景生成模型，用时间一致的语义占据监督加强自动驾驶世界生成。
+- [ZTRS: Zero-Imitation End-to-end Autonomous Driving with Trajectory Scoring](https://arxiv.org/abs/2510.24108)：不依赖模仿标签训练端到端驾驶，而是通过候选轨迹评分把监督信号从示范转为轨迹评估。
+- [AD-SAM: Fine-Tuning the Segment Anything Vision Foundation Model for Autonomous Driving Perception](https://arxiv.org/abs/2510.27047)：将 SAM 微调为道路场景语义分割模型，并加入 dual encoder 与 deformable decoder 来适应驾驶图像的空间几何复杂性。
+- [Embodied Cognition Augmented End2End Autonomous Driving](https://arxiv.org/abs/2511.01334)：E3AD 用 comparative learning 和 embodied-cognition 信号增强端到端驾驶，减少对单纯标签监督视觉特征的依赖。
+- [UniLION: Towards Unified Autonomous Driving Model with Linear Group RNNs](https://arxiv.org/abs/2511.01768)：用 linear group RNN 替代二次复杂度注意力，使统一自动驾驶模型高效处理 LiDAR、多视角图像和时序序列。
+- [Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation](https://arxiv.org/abs/2511.05609)：Classification concern：该工作是基于 Schrödinger bridge 的通用文生 3D 方法，不属于自动驾驶模型。
+- [LLM-Guided Reinforcement Learning with Representative Agents for Traffic Modeling](https://arxiv.org/abs/2511.06260)：用代表性 Agent 和 LLM 指导提高基于 Agent 的交通建模可扩展性和稳定性，属于交通建模而非 AV Harness。
+- [LaneDiffusion: Improving Centerline Graph Learning via Prior Injected BEV Feature Generation](https://arxiv.org/abs/2511.06272)：用扩散模型生成注入先验的 BEV 特征，以恢复遮挡或不可见的车道中心线图，支撑后续路径规划。
+- [A Low-Rank Method for Vision Language Model Hallucination Mitigation in Autonomous Driving](https://arxiv.org/abs/2511.06496)：通过低秩方法缓解自动驾驶场景中的 VLM 幻觉。
+- [UniMM-V2X: MoE-Enhanced Multi-Level Fusion for End-to-End Cooperative Autonomous Driving](https://arxiv.org/abs/2511.09013)：提出 UniMM-V2X，用 MoE-enhanced multi-level fusion 贯通感知、预测和规划，构建端到端 cooperative autonomous driving 框架。
+- [VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous Driving](https://arxiv.org/abs/2511.12405)：为开放世界驾驶检索视觉-语言-动作样例，用 action retrieval 将端到端决策锚定到相似历史场景。
+- [GUIDE: Gaussian Unified Instance Detection for Enhanced Obstacle Perception in Autonomous Driving](https://arxiv.org/abs/2511.12941)： 主要用环视相机 and HD maps评估3D 占用预测与3D 占用质量，后续应检查是否更适合归入 Bench。
+- [Decoupling Scene Perception and Ego Status: A Multi-Context Fusion Approach for Enhanced Generalization in End-to-End Autonomous Driving](https://arxiv.org/abs/2511.13079)：延后融合 ego status，并把场景感知上下文与自车状态捷径解耦，以提升端到端驾驶泛化。
+- [DAP: A Discrete-token Autoregressive Planner for Autonomous Driving](https://arxiv.org/abs/2511.13306)：用离散 token 自回归规划处理自动驾驶。
+- [DriveLiDAR4D: Sequential and Controllable LiDAR Scene Generation for Autonomous Driving](https://arxiv.org/abs/2511.13309)：生成时序 LiDAR 点云并可控放置前景目标，覆盖一次性 LiDAR 生成器难以模拟的动态场景。
+- [FisheyeGaussianLift: BEV Feature Lifting for Surround-View Fisheye Camera Perception](https://arxiv.org/abs/2511.17210)：利用标定几何、像素级深度分布和 Gaussian 式 lifting，把鱼眼多相机图像提升为 BEV 分割特征。
+- [QueryOcc: Query-based Self-Supervision for 3D Semantic Occupancy](https://arxiv.org/abs/2511.17221)：通过 query 直接利用传感器导出的几何和语义结构，在没有人工 3D 标注时学习图像到 3D 语义占用。
+- [MDG: Masked Denoising Generation for Multi-Agent Behavior Modeling in Traffic Environments](https://arxiv.org/abs/2511.17496)：用按 agent 和时间步独立加噪的时空张量重建建模多智能体行为，实现快速可控生成。
+- [UniFlow: Zero-Shot LiDAR Scene Flow for Autonomous Vehicles](https://arxiv.org/abs/2511.18254)：学习可迁移的 LiDAR 场景流先验，在不同传感器上做零样本 3D 运动估计。
+- [GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](https://arxiv.org/abs/2511.18729)：用约束引导的 flow matching 进行端到端自动驾驶规划。
+- [A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](https://arxiv.org/abs/2511.19004)：T2LDM 用自条件表征引导文本到 LiDAR 扩散生成，缓解文本-LiDAR 配对稀缺和点云过度平滑问题。
+- [IDSplat: Instance-Decomposed 3D Gaussian Splatting for Driving Scenes](https://arxiv.org/abs/2511.19235)：在不依赖人工目标轨迹标注的情况下，把静态背景和动态物体分解为独立 3D Gaussian 组件。
+- [Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for Autonomous Driving](https://arxiv.org/abs/2511.19912)：面向低延迟轨迹决策压缩驾驶 VLA 的感知-语言-动作推理流程。
+- [CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous Driving via Chain-of-Causality Visual-Language-Action Model](https://arxiv.org/abs/2511.19914)：用 chain-of-causality VLA 建模研究对抗域迁移，强调从视觉扰动到驾驶动作的可解释因果链。
+- [Risk-Aware Forward Collision Warning](https://arxiv.org/abs/2511.19952)：用 hierarchical spatio-temporal attention 与 adaptive risk-aware decision 做复杂场景下的前向碰撞预警。
 - [Map-World](https://arxiv.org/abs/2511.20156)：将 masked action planning 与 path-weighted BEV world model 结合，在不依赖手工 anchor 或单一 teacher mode 的情况下训练多模态轨迹假设。
+- [AD-R1: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving with Impartial World Models](https://arxiv.org/abs/2511.20325)：结合公正世界模型进行闭环强化学习，用于端到端自动驾驶。
+- [Learning from Risk: LLM-Guided Generation of Safety-Critical Scenarios with Prior Knowledge](https://arxiv.org/abs/2511.20726)：利用 LLM 与先验知识生成安全关键场景，扩展自动驾驶压力测试数据生成方法。
+- [HybridWorldSim: A Scalable and Controllable High-fidelity Simulator for Autonomous Driving](https://arxiv.org/abs/2511.22187)：结合静态背景神经重建和动态参与者生成建模，构建高保真可控驾驶仿真。
 - [DriveVGGT](https://arxiv.org/abs/2511.22264)：将 visual geometry transformer 适配到多摄像头自动驾驶，用 temporal video attention 与标定约束提升尺度一致的场景重建。
+- [CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous Driving](https://arxiv.org/abs/2511.22532)：为驾驶 VLA 模型加入显式思维链推理。
+- [Seeing before Observable: Potential Risk Reasoning in Autonomous Driving via Vision Language Models](https://arxiv.org/abs/2511.22928)：微调 VLM 从异常行为或常识违背等细微信号推断尚未显性出现的潜在风险。
+- [Toward Automatic Safe Driving Instruction: A Large-Scale Vision Language Model Approach](https://arxiv.org/abs/2511.23311)：用大规模 VLM 从道路前视视频生成安全导向驾驶指令，关注比普通目标检测更广的风险事件监控。
+- [SimScale](https://arxiv.org/abs/2511.23369)：扩展由真实世界重建得到的 driving simulation，让 agents 接触 rare、diverse 和 out-of-distribution 情况，而不局限于固定日志回放。
+- [TrajDiff: End-to-end Autonomous Driving without Perception Annotation](https://arxiv.org/abs/2512.00723)：用无需感知标注的扩散方法实现端到端自动驾驶。
+- [RoaD: Rollouts as Demonstrations for Closed-Loop Supervised Fine-Tuning of Autonomous Driving Policies](https://arxiv.org/abs/2512.01993)：把闭环 rollout 当作监督微调示范，使策略接触自身会访问到的状态，而不只学习日志中的人工轨迹。
+- [Vehicle Dynamics Embedded World Models for Autonomous Driving](https://arxiv.org/abs/2512.02417)：把车辆动力学嵌入 driving world model，使 latent rollout 同时服务环境预测和策略学习。
+- [VLM as Strategist: Adaptive Generation of Safety-critical Testing Scenarios via Guided Diffusion](https://arxiv.org/abs/2512.02844)：面向自动驾驶提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [SurfFill: Completion of LiDAR Point Clouds via Gaussian Surfel Splatting](https://arxiv.org/abs/2512.03010)：用 Gaussian surfel splats 补全稀疏或缺失 LiDAR 几何，并借助图像结构恢复点云采集中丢失的细节。
+- [ReCamDriving: LiDAR-Free Camera-Controlled Novel Trajectory Video Generation](https://arxiv.org/abs/2512.03621)：一种免 LiDAR、由相机控制的驾驶视频生成框架；核心思路是利用相机位姿与 3DGS 渲染，生成可控的新轨迹驾驶视频。
 - [dVLM-AD](https://arxiv.org/abs/2512.04459)：通过可控推理增强自动驾驶扩散视觉语言模型，以应对分布外驾驶场景。
+- [E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](https://arxiv.org/abs/2512.04733)：在 human-centric driving VLA 中加入情绪感知信号，使端到端动作受乘员或驾驶者情绪影响，而不只由场景几何决定。
+- [FreeGen: Feed-Forward Reconstruction-Generation Co-Training for Free-Viewpoint Driving Scene Synthesis](https://arxiv.org/abs/2512.04830)：联合训练前馈重建和生成模块，使驾驶场景合成在离轨迹视角和自由视点仿真中保持一致。
 - [LA-RL](https://arxiv.org/abs/2512.05686)：在高速公路自动驾驶强化学习中加入语言动作引导与安全保证。
+- [Toward Efficient and Robust Behavior Models for Multi-Agent Driving Simulation](https://arxiv.org/abs/2512.05812)：使用 instance-centric 局部坐标、对称上下文编码和带自适应奖励变换的 adversarial inverse RL，构建高效鲁棒的多智能体仿真行为模型。
+- [BeLLA: End-to-End Birds Eye View Large Language Assistant for Autonomous Driving](https://arxiv.org/abs/2512.06096)：把语言助手建立在 BEV 表征上，使多相机空间结构支撑可解释场景推理和轨迹决策。
+- [Spatial Retrieval Augmented Autonomous Driving](https://arxiv.org/abs/2512.06865)：为自动驾驶推理和规划加入空间检索增强。
 - [Mimir](https://arxiv.org/abs/2512.07130)：使用带不确定性传播的层次化目标驱动扩散进行端到端自动驾驶规划。
+- [Optimization-Guided Diffusion for Interactive Scene Generation](https://arxiv.org/abs/2512.07661)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Optimization-Guided Diffusion for Interactive Scene Generation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [DiffusionDriveV2](https://arxiv.org/abs/2512.07745)：对 truncated diffusion driving policy 做 RL-constrained 优化，同时保持多模态轨迹多样性。
+- [Controllable risk scenario generation from human crash data for autonomous vehicle testing](https://arxiv.org/abs/2512.07874)：低置信说明：本轮 arXiv HTML 读取超时；标题和本地上下文仅表明它从人类事故数据生成可控 AV 测试风险场景，仍需补读摘要。
+- [Latent Chain-of-Thought World Modeling for End-to-End Driving](https://arxiv.org/abs/2512.10226)：用潜在思维链世界建模处理端到端驾驶。
+- [FutureX: Enhance End-to-End Autonomous Driving via Latent Chain-of-Thought World Model](https://arxiv.org/abs/2512.11226)：用潜在思维链世界模型增强端到端驾驶；需与文档中 FutureX 预测 benchmark 区分。
 - [WAM-Diff](https://arxiv.org/abs/2512.11872)：将掩码扩散、专家混合与在线强化学习用于自动驾驶 VLA 轨迹生成。
+- [GenieDrive: Towards Physics-Aware Driving World Model with 4D Occupancy Guided Video Generation](https://arxiv.org/abs/2512.12751)：用 4D 占用引导的视频生成构建物理感知驾驶世界模型。
+- [CoRA: A Collaborative Robust Architecture with Hybrid Fusion for Efficient Perception](https://arxiv.org/abs/2512.13191)：结合 feature-level fusion 与 object-level correction，使协同感知在低通信成本下修正姿态误差带来的空间偏移。
+- [Post-Training and Test-Time Scaling of Generative Agent Behavior Models for Interactive Autonomous Driving](https://arxiv.org/abs/2512.13262)：结合 GRBO 后训练和 Warm-K 测试时采样，使生成式行为模型在保持多智能体运动真实性的同时提升闭环安全性。
 - [MindDrive](https://arxiv.org/abs/2512.13636)：通过在线强化学习训练的驾驶 VLA 模型，用两组 LoRA experts 分别承担场景决策和轨迹动作生成。
+- [Privacy-Aware Cooperative Perception](https://arxiv.org/abs/2512.16265)：研究 cooperative perception 中 raw spatial sensor data 的 privacy-aware sharing。
+- [TakeAD: Preference-Based Post-Optimization for End-to-End Autonomous Driving With Expert Takeover Data](https://arxiv.org/abs/2512.17370)：用专家接管数据对端到端驾驶进行基于偏好的后优化。
+- [LangDriveCTRL](https://arxiv.org/abs/2512.17445)：用多模态智能体按自然语言编辑驾驶场景，把自动驾驶场景生成与可控编辑连接起来。
+- [CrashChat](https://arxiv.org/abs/2512.18878)：构建用于 multitask traffic crash video analysis 的 multimodal large language model。
+- [WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving](https://arxiv.org/abs/2512.19133)：在潜在世界模型规划器中进行强化微调，用想象未来状态作为驾驶动作优化载体。
+- [LiDARDraft: Generating LiDAR Point Cloud from Versatile Inputs](https://arxiv.org/abs/2512.20105)：从多种控制输入生成真实且多样的 LiDAR 点云，在复杂点云分布和用户可控场景条件之间取得平衡。
+- [GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](https://arxiv.org/abs/2512.23180)：把语言特征嵌入 3D Gaussian primitive，统一 3D 场景理解和多模态驾驶场景生成。
+- [DriveLaW:Unifying Planning and Video Generation in a Latent Driving World](https://arxiv.org/abs/2512.23421)：在潜在驾驶世界中统一规划与视频生成。
+- [LSRE: Latent Semantic Rule Encoding for Real-Time Semantic Risk Detection in Autonomous Driving](https://arxiv.org/abs/2512.24712)：面向自动驾驶提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
 - [LLM-Based V2X Sensor Data Fusion](https://doi.org/10.1109/ICCCN65249.2025.11133978)：使用基于 LLM 的 V2X 多模态传感器融合以提升道路安全与隐私。
 - [Modular VLA for Autonomous Driving](https://doi.org/10.1109/ICCE-Asia67487.2025.11263635)：在模块化 VLA 自动驾驶设置中连接感知、语言推理与动作。
 - [VLR-Driver](https://doi.org/10.1109/ICCV51701.2025.02503)：构建面向具身自动驾驶的大型视觉-语言-推理模型。
@@ -67,35 +597,326 @@
 - [LLM-Guided DRL for Safe AV Decisions](https://doi.org/10.1016/j.trc.2025.105511)：用大模型指导深度强化学习，以改善自动驾驶车辆的安全决策。
 - [LLM-augmented hierarchical reinforcement learning](https://doi.org/10.1016/j.eswa.2025.128736)：将类人驾驶决策建模为 LLM 增强的层级强化学习问题，将高层决策引导与策略优化分层处理。
 - [LoCo-VLM](https://doi.org/10.1109/ITSC60802.2025.11423082)：通过事件触发、松耦合 VLM 分支和 Signal Temporal Logic 一致性检查，把 VLM 决策接入端到端规划，同时降低幻觉与延迟风险。
-- [HanoiWorld](https://arxiv.org/abs/2601.01577)：使用 JEPA 风格世界模型训练自动车辆控制器，强调安全感知的潜在预测而非像素重建。
-- [ThinkDrive](https://arxiv.org/abs/2601.04714)：通过链式思维引导的渐进强化微调提升自动驾驶推理与决策能力。
-- [Scene-Adaptive Diffusion Candidate Sets](https://arxiv.org/abs/2602.03112)：通过场景自适应扩散细化生成端到端自动驾驶轨迹候选集。
-- [SDD Planner](https://arxiv.org/abs/2602.04329)：使用扩散式规划在轨迹安全约束与驾驶风格之间取得平衡。
+- [Memory-Augmented Traffic Anomaly Detection](https://doi.org/10.1016/j.patcog.2025.111789)：用 memory-augmented multi-task framework 做 driving videos 中的 unsupervised traffic anomaly detection。
+- [GNN-Based 3D Object Detection for Autonomous Driving](https://doi.org/10.1109/ICTC66702.2025.11388623)：评估基于 GNN 的自动驾驶 3D 目标检测系统。
+- [TrafficInternVL: Spatially-Guided Fine-Tuning with Caption Refinement for Fine-Grained Traffic Safety Captioning and Visual Question Answering](https://doi.org/10.1109/iccvw69036.2025.00559)：通过空间引导与 caption refinement 微调交通场景 VLM，用于细粒度交通安全描述和视觉问答。
+- [ScNet: Scene-Consistency Network Learning for Multi-Agent Motion Forecasting](https://doi.org/10.1109/icme59968.2025.11210215)：在一次前向传播中联合预测所有交通参与者轨迹，用双学生模型、跨网络对比学习、场景引导细化和无锚解码器减少场景级预测不一致。
+- [MHTraj: A Multi-Domain Hybrid Graph Neural Network With Causal-Spatial Modeling for Multi-Agent Trajectory Prediction](https://doi.org/10.1109/tnse.2025.3602212)：这是带因果-空间建模的混合图神经轨迹预测模型；元数据未显示外部 Agent 工作流。
+- [SVD-BDRL: A trustworthy autonomous driving decision framework based on sparse voxels and blockchain enhancement](https://doi.org/10.1016/j.aej.2025.11.040)：聚焦基于稀疏体素和区块链增强的可信决策框架，更像模型或系统方法而非 Harness 编排。
+- [CARIM: Caption-Based Autonomous Driving Scene Retrieval via Inclusive Text Matching](https://doi.org/10.1109/iccv51701.2025.02046)：提出基于 caption 和包容式文本匹配的驾驶场景检索；是有用的检索方法，但本身不是完整 Agent Harness。
+- [HGSim: High-fidelity and generalizable simulation frame-work for autonomous driving scenes](https://doi.org/10.1016/j.neucom.2025.131784)：高保真、可泛化的驾驶场景仿真框架；元数据未显示 LLM 或工具编排。
+- [Safety-Critical Multi-Agent MCTS for Mixed Traffic Coordination at Unsignalized Intersections](https://doi.org/10.1109/tits.2025.3598727)：将多智能体蒙特卡洛树搜索用于无信号交叉口混合交通协调，属于规划算法。
+- [Critical scenarios adversarial generation method for intelligent vehicles testing based on hierarchical reinforcement architecture.](https://doi.org/10.1016/j.aap.2025.108013)：用分层强化学习架构生成安全关键车辆测试场景，可补充自动驾驶压力测试与场景合成方法。
+- [Safety-Aligned Reasoning for Automated Vehicles with Large Language Models](https://doi.org/10.1016/j.ifacol.2025.12.518)：将基于 LLM 的安全对齐推理用于自动驾驶车辆，把语言推理与驾驶安全决策连接起来。
+- [Interactive Adversarial Scenario Generation for Autonomous Driving: A Continual Learning Framework with Safety Constraints](https://doi.org/10.1109/itsc60802.2025.11423840)：结合持续学习和安全约束生成交互式自动驾驶对抗场景。
+- [DiffCrash: leveraging denoising diffusion probabilistic models to expand high-risk testing scenarios using in-depth crash data](https://doi.org/10.1016/j.eswa.2025.128140)：用去噪扩散和深度事故数据扩展高风险自动驾驶测试场景，弥补原始事故记录稀缺的问题。
+- [MELON: Hierarchical multi-agent trajectory prediction with spatio-temporal uncertainty adaptation](https://doi.org/10.1016/j.knosys.2025.115143)：加入带时空不确定性自适应的层次化多智能体轨迹预测，面向交互交通中的不确定性预测。
+- [PE-RLHF: Reinforcement Learning with Human Feedback and physics knowledge for safe and trustworthy autonomous driving](https://doi.org/10.1016/j.trc.2025.105262)：在 RLHF 中结合人类反馈和物理知识，用偏好信号与物理一致性共同调优安全驾驶行为。
+- [DiffSCTG: Diffusion-based Safety-Critical Trajectory Generation for Autonomous Vehicles](https://doi.org/10.1109/cisce65916.2025.11065683)：将扩散模型用于安全关键轨迹生成，为自动驾驶车辆测试生成对抗或罕见车辆运动。
+- [Robust Motion Control Policy Learning for Autonomous Driving Under Coupled Uncertainties](https://doi.org/10.1109/cvci66304.2025.11348424)：在耦合不确定性下学习运动控制策略，关注环境与车辆状态不确定性同时出现时的鲁棒性。
+- [DriveScape: High-Resolution Driving Video Generation by Multi-View Feature Fusion](https://doi.org/10.1109/cvpr52734.2025.01602)：通过多视角特征融合生成高分辨率驾驶视频，面向驾驶世界建模中一致的合成相机数据。
+- [Can Small Quantized VLMs Drive? An Experimental Evaluation of Small Quantized VLMs for Autonomous Driving](https://doi.org/10.1109/icdmw69685.2025.00440)：一项关于小型量化 VLM 用于自动驾驶的实验评估；核心思路是检验压缩视觉语言模型能否保留驾驶相关感知与推理能力。
+- [DeepMF: Deep Motion Factorization for Closed-Loop Safety-Critical Driving Scenario Simulation](https://doi.org/10.1109/ijcnn64981.2025.11228221)：为闭环安全关键驾驶场景仿真分解深层运动模式，将可复用行为因子与场景 rollout 区分开。
+- [Heterogeneous Multiscale Cooperative Perception for Connected Autonomous Vehicles via V2X Interaction](https://doi.org/10.1109/jiot.2025.3560738)：建模异构多尺度 V2X 协同感知，在不同感知尺度之间融合网联车辆信息。
+- [Brimory: Bringing Humanoid Memory Into Trajectory Prediction Model for Autonomous Driving](https://doi.org/10.1109/jiot.2025.3571492)：把类人记忆加入轨迹预测模型，用记忆到的交互模式改进自动驾驶运动预测。
+- [Risk-Aware Stochastic Vehicle Trajectory Prediction With Spatial-Temporal Interaction Modeling](https://doi.org/10.1109/ojits.2025.3530268)：用时空交互结构建模风险感知的随机车辆轨迹预测。
+- [Pedestrian Crossing Direction Prediction at Intersections for Pedestrian Safety](https://doi.org/10.1109/ojits.2025.3574082)：预测交叉口行人过街方向，为自动驾驶安全增加弱势道路使用者意图信号。
+- [SA-TP$^{2}$: A Safety-Aware Trajectory Prediction and Planning Model for Autonomous Driving](https://doi.org/10.1109/tro.2025.3600144)：联合处理安全感知轨迹预测和规划，把未来运动预测与规划器安全约束耦合起来。
+- [Deep Semantic Communication for Knowledge Sharing in Internet of Vehicles](https://doi.org/10.1109/JIOT.2025.3531910)：提出 SCKS，通过 generative distillation 与 GAN-based semantic decoding 在车辆和 RSU 之间共享神经网络知识，并适配异构接收端。
+- [RoCooper: Robust Cooperative Perception Under Vehicle-to-Vehicle Communication Impairments](https://doi.org/10.1109/INFOCOM55648.2025.11044682)：在 V2V 通信受损时用历史增强、多尺度聚合和区域块优先级恢复协同感知特征，再融合邻车视角。
+- [Anytime CAV Sorting Algorithm for Mixed-Traffic Multi-Lane Highways](https://doi.org/10.1109/ITSC60802.2025.11423288)：用 symbolic synthesis、heuristic initialization 和 cached branch-and-bound search 生成高层命令，在混合交通中把稀疏 CAV 调度到目标车道。
+- [HAFNet](https://doi.org/10.1109/TITS.2026.3651733)：用 Agent-Foreground List 关联 RoI、二次采样前景区域并传输 proxy-point features，在 DAIR-V2X 与 V2V4Real 上以较低带宽完成协同 3D 目标检测。
+- [Extensible Heterogeneous Collaborative Perception in Autonomous Vehicles with Codebook Compression](https://doi.org/10.3390/robotics14120186)：把黑盒 agent features 映射到 canonical space 并传输 codebook indices，使异构协同感知栈通过调节 prompts 接入新 agents。
+- [HanoiWorld](https://arxiv.org/abs/2601.01577)：以 JEPA 式潜在世界模型和循环长时域规划训练车辆控制器，在 Highway-Env 中用自监督想象降低强化学习的样本需求。
+- [Towards Efficient 3D Object Detection for Vehicle-Infrastructure Collaboration via Risk-Intent Selection](https://arxiv.org/abs/2601.03001)：RiSe 用势场-轨迹相关模型和意图驱动区域预测选择风险关键 BEV 特征，减少车路协同 3D 检测的通信冗余。
+- [FROST-Drive: Scalable and Efficient End-to-End Driving with a Frozen Vision Encoder](https://arxiv.org/abs/2601.03460)：冻结预训练 VLM 视觉编码器，再接入 Transformer 融合适配器和 GRU 控制解码器，使端到端驾驶复用通用视觉先验。
+- [Hierarchical GNN-Based Multi-Agent Learning for Dynamic Queue-Jump Lane and Emergency Vehicle Corridor Formation](https://arxiv.org/abs/2601.04177)：用高层 GNN 规划器、低层轨迹控制器、图注意力和 MAPPO 训练协同车辆，为应急车辆形成动态通行走廊。
+- [UniDrive-WM: Unified Understanding, Planning and Generation World Model For Autonomous Driving](https://arxiv.org/abs/2601.04453)：在驾驶世界模型中统一理解、规划与生成。
+- [Spatial-Temporal Feedback Diffusion for Traffic Imputation](https://arxiv.org/abs/2601.04572)：用反馈引导扩散补全缺失的时空交通状态，使交通流补全不再只是一次性序列预测。
+- [ThinkDrive](https://arxiv.org/abs/2601.04714)：先进行链式思维监督微调，再用难度感知的渐进强化学习提升驾驶 LLM 的推理深度和人类意图对齐。
+- [Driving on Registers](https://arxiv.org/abs/2601.05083)：引入 register 式潜在槽位组织自动驾驶中的场景和规划信息，使模型具备持久内部表征。
+- [FLARE: Learning Future-Aware Latent Representations from Vision-Language Models for Autonomous Driving](https://arxiv.org/abs/2601.05611)：从 VLM 学习 future-aware latent representation，使当前场景特征编码可能的后续驾驶结果。
+- [SGDrive: Scene-to-Goal Hierarchical World Cognition for Autonomous Driving](https://arxiv.org/abs/2601.05640)：构建从场景到目标的层级世界认知，用于自动驾驶。
+- [Listen, Look, Drive: Coupling Audio Instructions for User-aware VLA-based Autonomous Driving](https://arxiv.org/abs/2601.12142)：将音频指令与 VLA 自动驾驶结合。
+- [DualShield: Safe Model Predictive Diffusion via Reachability Analysis for Interactive Autonomous Driving](https://arxiv.org/abs/2601.15729)：把 Hamilton-Jacobi 可达性值注入扩散去噪以主动引导安全规划，并用控制屏障值函数作为执行阶段的反应式安全盾。
+- [GTA: Generative Traffic Agents for Simulating Realistic Mobility Behavior](https://arxiv.org/abs/2601.16778)：面向自动驾驶智能体与模型的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [SG-CADVLM: A Context-Aware Decoding Powered Vision Language Model for Safety-Critical Scenario Generation](https://arxiv.org/abs/2601.18442)：在驾驶 VLM 中使用上下文感知解码生成安全关键场景。
+- [Transformer-Based Multi-Agent Trajectory Anomaly Detection](https://arxiv.org/abs/2601.20367)：把多车异常运动视作无监督轨迹序列问题，用 Transformer 的时序上下文发现偏离正常交互的交通参与者。
+- [Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving](https://arxiv.org/abs/2601.22032)：将 Video JEPA 预训练适配到驾驶，并把仿真器生成的多模态轨迹蒸馏进 proposal-centric planner。
+- [GaussianOcc3D: A Gaussian-Based Adaptive Multi-modal 3D Occupancy Prediction](https://arxiv.org/abs/2601.22729)：用连续 3D Gaussian 基元替代密集体素，并结合 LiDAR 深度聚合、熵平滑和不确定性感知相机-LiDAR 融合做语义占用。
+- [MTDrive: Multi-turn Interactive Reinforcement Learning for Autonomous Driving](https://arxiv.org/abs/2601.22930)：用多轮交互式强化学习改进自动驾驶，为驾驶策略加入交互学习闭环。
+- [V2X-DSC: Multi-Agent Collaborative Perception with Distributed Source Coding Guided Communication](https://arxiv.org/abs/2602.00687)：把带宽受限 cooperative perception 表述为 distributed source coding，用 conditional codec 压缩 BEV 特征，使接收端只重构超出本地上下文的新信息。
+- [HERMES: A Holistic End-to-End Risk-Aware Multimodal Embodied System with Vision-Language Models for Long-Tail Autonomous Driving](https://arxiv.org/abs/2602.00993)：用 foundation-model-assisted 长尾场景和规划标注，把 hazard-centric 风险线索注入端到端轨迹规划。
+- [UniDWM: Towards a Unified Driving World Model via Multifaceted Representation Learning](https://arxiv.org/abs/2602.01536)：通过多方面表征学习统一驾驶世界建模中的场景理解、预测和生成信号。
+- [UniDriveDreamer: A Single-Stage Multimodal World Model for Autonomous Driving](https://arxiv.org/abs/2602.02002)：构建单阶段多模态驾驶世界模型，避免未来场景想象中的重建和生成分阶段割裂。
+- [Scene-Adaptive Diffusion Candidate Sets](https://arxiv.org/abs/2602.03112)：通过场景条件扩散生成多样且可行的候选轨迹集合，让规划器从自适应候选中选择而不是依赖固定锚点库。
+- [ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](https://arxiv.org/abs/2602.03213)：在驾驶视频世界模型中加入 instance-masked attention 和 instance-masked loss，使多视角生成帧中的目标身份与轨迹保持一致。
+- [InstaDrive: Instance-Aware Driving World Models for Realistic and Consistent Video Generation](https://arxiv.org/abs/2602.03242)：提出实例感知驾驶世界模型，生成时间一致的多视角驾驶视频。
+- [Natural Language Instructions for Scene-Responsive Human-in-the-Loop Motion Planning in Autonomous Driving using Vision-Language-Action Models](https://arxiv.org/abs/2602.04184)：将驾驶 VLA 规划器适配到自由文本乘客指令，把自然语言偏好转化为随场景变化的轨迹选择。
+- [AppleVLM: End-to-end Autonomous Driving with Advanced Perception and Planning-Enhanced Vision-Language Models](https://arxiv.org/abs/2602.04256)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“AppleVLM: End-to-end Autonomous Driving with Advanced Perception and Planning-Enhanced Vision-Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [SDD Planner](https://arxiv.org/abs/2602.04329)：结合 multi-source style-aware encoder 和 style-guided diffusion trajectory generator，通过调节去噪优先级让偏好驾驶风格保持在安全约束内。
+- [LSA: Localized Semantic Alignment for Enhancing Temporal Consistency in Traffic Video Generation](https://arxiv.org/abs/2602.05966)：在生成的交通视频帧之间做 localized semantic alignment，重点提升时间一致性而非单帧画质。
+- [DriveWorld-VLA: Unified Latent-Space World Modeling with Vision-Language-Action for Autonomous Driving](https://arxiv.org/abs/2602.06521)：把潜在空间世界建模与 VLA 预测统一起来，让想象未来状态和动作生成处于同一表示空间。
 - [SteerVLA](https://arxiv.org/abs/2602.08440)：在长尾驾驶场景中引导视觉-语言-动作模型，将高层语义推理与可落地车辆控制结合起来。
-- [Masked VLA Diffusion for Driving](https://arxiv.org/abs/2602.20577)：使用掩码视觉-语言-动作扩散提升端到端自动驾驶控制的效率与可解释性。
+- [ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](https://arxiv.org/abs/2602.10884)：构建面向端到端自动驾驶的时间残差世界模型。
+- [Self-Supervised JEPA-based World Models for LiDAR Occupancy Completion and Forecasting](https://arxiv.org/abs/2602.12540)：将 JEPA 式自监督用于 LiDAR occupancy completion 和 forecasting，在缺少密集人工占据标签时学习世界模型结构。
+- [HiST-VLA: A Hierarchical Spatio-Temporal Vision-Language-Action Model for End-to-End Autonomous Driving](https://arxiv.org/abs/2602.13329)：面向自动驾驶智能体与模型的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [A Generalizable Physics-guided Causal Model for Trajectory Prediction in Autonomous Driving](https://arxiv.org/abs/2602.13936)：在轨迹预测中加入物理约束和因果结构，使运动预测更依赖可迁移动力学而不是局部数据相关性。
+- [DriveFine: Refining-Augmented Masked Diffusion VLA for Precise and Robust Driving](https://arxiv.org/abs/2602.14577)：在 masked diffusion VLA 规划中加入可插拔 block-MoE refinement expert，将灵活解码与显式自校正结合。
+- [Safe-SDL:Establishing Safety Boundaries and Control Mechanisms for AI-Driven Self-Driving Laboratories](https://arxiv.org/abs/2602.15061)：定义 AI 自驱实验室的 syntax-to-safety gap，并提出形式化安全规范、运行时监控和控制机制；该条偏离道路自动驾驶。
+- [SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World](https://arxiv.org/abs/2602.18887)：在稀疏驾驶世界表征上做细粒度安全推理，强调无需 dense scene token 的风险感知规划。
+- [L3DR: 3D-aware LiDAR Diffusion and Rectification](https://arxiv.org/abs/2602.19064)：用 3D 残差点偏移网络和 Welsch loss 修正 range-view LiDAR 扩散伪影，在点云生成中恢复更清晰的局部几何。
+- [Masked VLA Diffusion for Driving](https://arxiv.org/abs/2602.20577)：把运动学可行 waypoint 离散成紧凑 action code，再用掩码 VLA 扩散规划，在保留语义解释的同时避免自回归逐 token 生成的延迟。
+- [VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](https://arxiv.org/abs/2602.20794)：为 VLM 自动驾驶加入跨视角几何 grounding。
+- [ParkDiffusion++: Ego Intention Conditioned Joint Multi-Agent Trajectory Prediction for Automated Parking using Diffusion Models](https://arxiv.org/abs/2602.20923)：用自车泊车意图条件化扩散式联合多智能体轨迹预测，覆盖自动泊车中的车辆和行人。
+- [UFO: Unifying Feed-Forward and Optimization-based Methods for Large Driving Scene Modeling](https://arxiv.org/abs/2602.20943)：统一 feed-forward 和 optimization-based 大场景建模，试图兼顾快速推理与迭代式场景拟合质量。
 - [NoRD](https://arxiv.org/abs/2602.21172)：数据高效 driving VLA 路线，在没有密集推理标注时使用 difficulty-aware GRPO 修正。
+- [MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](https://arxiv.org/abs/2602.21952)：为自动驾驶模型加入渐进式多模态推理。
+- [Unleashing the Potential of Diffusion Models for End-to-End Autonomous Driving](https://arxiv.org/abs/2602.22801)：研究扩散模型作为端到端自动驾驶策略。
+- [Risk-Aware World Model Predictive Control for Generalizable End-to-End Autonomous Driving](https://arxiv.org/abs/2602.23259)：用风险感知世界模型预测控制提升端到端驾驶泛化。
+- [TSC: Topology-Conditioned Stackelberg Coordination for Multi-Agent Reinforcement Learning in Interactive Driving](https://arxiv.org/abs/2602.23896)：用 topology-conditioned Stackelberg coordination 与动态优先级图训练密集交互交通中的去中心化自动驾驶策略。
+- [Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](https://arxiv.org/abs/2603.01007)：用稠密深度引导的 2D-to-3D view transformer 和区域专家 Transformer，缓解纯相机占用预测中的几何错位与类别空间不均衡。
 - [Explicit Learning from Failures for VLA Driving](https://arxiv.org/abs/2603.01063)：在强化优化过程中显式学习失败案例，从而提升自动驾驶 VLA 策略。
-- [KnowDiffuser](https://arxiv.org/abs/2603.10441)：结合知识引导、扩散规划和大模型推理，用于自动驾驶规划。
+- [Unifying Language-Action Understanding and Generation for Autonomous Driving](https://arxiv.org/abs/2603.01441)：统一自动驾驶中的语言-动作理解与生成。
+- [WhisperNet: A Scalable Solution for Bandwidth-Efficient Collaboration](https://arxiv.org/abs/2603.01708)：采用 receiver-centric feature request 与 collaborative feature routing，让自动驾驶协同感知 agents 在带宽受限时只共享全局最有用的感知特征。
+- [LaST-VLA: Thinking in Latent Spatio-Temporal Space for Vision-Language-Action in Autonomous Driving](https://arxiv.org/abs/2603.01928)：提出面向自动驾驶 VLA 的潜在时空推理机制。
+- [SaFeR: Safety-Critical Scenario Generation for Autonomous Driving Test via Feasibility-Constrained Token Resampling](https://arxiv.org/abs/2603.04071)：通过可行性约束的 token 重采样生成自动驾驶安全关键测试场景。
+- [CATNet](https://arxiv.org/abs/2603.05255)：用 spatio-temporal recurrent synchronization、wavelet-enhanced denoising 与 adaptive feature selection 处理协同感知中的时延和多源噪声，再进行鲁棒融合。
+- [Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models](https://arxiv.org/abs/2603.06049)：Curious-VLA 在模仿学习中扩展可行轨迹，并用 diversity-aware RL sampling 与 spanning reward 避免 narrow-policy collapse。
+- [ReconDrive: Fast Feed-Forward 4D Gaussian Splatting for Autonomous Driving Scene Reconstruction](https://arxiv.org/abs/2603.07552)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“ReconDrive: Fast Feed-Forward 4D Gaussian Splatting for Autonomous Driving Scene Reconstruction”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Human-Aware Robot Behaviour in Self-Driving Labs](https://arxiv.org/abs/2603.08420)：研究 AI 自驱实验室中与人共处的机器人行为，而不是道路交通中的车辆感知或规划，因此属于实验室自动化偏轴候选。
+- [Graph Based Semantic Encoder Decoder Framework for Task Oriented Communications in Connected Autonomous Vehicles](https://arxiv.org/abs/2603.08438)：把联网车辆场景编码为压缩 scene graph，在降低传输数据量的同时为碰撞规避、协同感知和交通风险评估重建任务相关表示。
+- [Comparative Analysis of Patch Attack on VLM-Based Autonomous Driving Architectures](https://arxiv.org/abs/2603.08897)：比较 VLM 自动驾驶架构中的补丁攻击脆弱性，关注视觉扰动如何从感知传播到语言引导决策。
+- [MetaDAT: Generalizable Trajectory Prediction via Meta Pre-training and Data-Adaptive Test-Time Updating](https://arxiv.org/abs/2603.09419)：结合元预训练和数据自适应测试时更新，使轨迹预测器能在新交通域中调整而不必完整重训。
+- [EvoDriveVLA: Evolving Driving VLA Models via Collaborative Perception-Planning Distillation](https://arxiv.org/abs/2603.09465)：通过协同感知-规划蒸馏演化驾驶 VLA 模型，把 perception 与 planning 知识共同压缩到策略中。
+- [StyleVLA: Driving Style-Aware Vision Language Action Model for Autonomous Driving](https://arxiv.org/abs/2603.09482)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“StyleVLA: Driving Style-Aware Vision Language Action Model for Autonomous Driving”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [PC-Diffuser: Path-Consistent Capsule CBF Safety Filtering for Diffusion-Based Trajectory Planner](https://arxiv.org/abs/2603.10330)：为基于扩散的轨迹规划加入路径一致的胶囊 CBF 安全过滤，补充驾驶规划安全方法。
+- [KnowDiffuser](https://arxiv.org/abs/2603.10441)：先由 LLM 从结构化场景推断上下文相关 meta-action，再用这些 meta-action 条件化扩散规划器生成连续且物理可行的轨迹。
+- [DynVLA: Learning World Dynamics for Action Reasoning in Autonomous Driving](https://arxiv.org/abs/2603.11041)：为自动驾驶动作推理学习世界动力学，扩展具备动力学感知的驾驶 VLA 模型。
 - [Senna-2](https://arxiv.org/abs/2603.11219)：通过面向一致性的三阶段训练范式，对齐高层 VLM 决策和低层轨迹规划。
+- [DriveXQA: Cross-modal Visual Question Answering for Adverse Driving Scene Understanding](https://arxiv.org/abs/2603.11380)：同时提供恶劣天气多传感器 VQA 数据集和 MVX-LLM，后者用双重 cross-attention projector 融合四类视觉模态与传感器失效信息。
+- [Risk-Controllable Multi-View Diffusion for Driving Scenario Generation](https://arxiv.org/abs/2603.11534)：生成风险可控的多视角驾驶场景，扩展可控自动驾驶仿真。
+- [Composing Driving Worlds through Disentangled Control for Adversarial Scenario Generation](https://arxiv.org/abs/2603.12864)：用 disentangled control 组合驾驶世界，生成对抗场景时分别控制场景因素和交互行为。
 - [Collaborative Imitation and Reinforcement Learning](https://arxiv.org/abs/2603.13842)：在端到端自动驾驶中并行结合模仿学习与强化学习，而不是只做顺序微调。
+- [OpenCOOD-Air: Prompting Heterogeneous Ground-Air Collaborative Perception with Spatial Conversion and Offset Prediction](https://arxiv.org/abs/2603.13919)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“OpenCOOD-Air: Prompting Heterogeneous Ground-Air Collaborative Perception with Spatial Conversion and Offset Prediction”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [WorldVLM: Combining World Model Forecasting and Vision-Language Reasoning](https://arxiv.org/abs/2603.14497)：结合世界模型预测和视觉语言推理，使驾驶模型既能想象未来状态，也能用语言语义解释或选择动作。
+- [AutoMoT: A Unified Vision-Language-Action Model with Asynchronous Mixture-of-Transformers for End-to-End Autonomous Driving](https://arxiv.org/abs/2603.14851)：用异步 Mixture-of-Transformers VLA 架构实现端到端自动驾驶。
 - [PerlAD](https://arxiv.org/abs/2603.14908)：使用基于伪仿真的强化学习改进闭环端到端自动驾驶策略。
+- [FAR-Drive: Frame-AutoRegressive Video Generation in Closed-Loop Autonomous Driving](https://arxiv.org/abs/2603.14938)：逐帧自回归生成闭环驾驶视频，用反馈让后续帧反映先前仿真运动。
+- [Bridging Scene Generation and Planning: Driving with World Model via Unifying Vision and Motion Representation](https://arxiv.org/abs/2603.14948)：在驾驶世界模型中统一视觉场景生成和运动表征，使想象场景能直接服务规划。
+- [Learning from Mistakes: Post-Training for Driving VLA with Takeover Data](https://arxiv.org/abs/2603.14972)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Learning from Mistakes: Post-Training for Driving VLA with Takeover Data”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [TrajFlow: Nation-wide Pseudo GPS Trajectory Generation with Flow Matching Models](https://arxiv.org/abs/2603.15009)：用 flow matching、轨迹协调和重建生成全国尺度伪 GPS 移动轨迹，更接近交通流数据建模而不是自动驾驶策略。
 - [ADV-0](https://arxiv.org/abs/2603.15221)：通过闭环极小极大优化联合训练驾驶策略与长尾对抗场景。
+- [CorrectionPlanner: Self-Correction Planner with Reinforcement Learning in Autonomous Driving](https://arxiv.org/abs/2603.15771)：把强化学习得到的自校正能力加入规划器，使其能在初始 proposal 后修正不安全或低质量轨迹。
 - [DriveVLM-RL](https://arxiv.org/abs/2603.18315)：通过静态与动态路径学习 VLM 派生语义奖励，用于更安全的自动驾驶控制。
+- [DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding](https://arxiv.org/abs/2603.19219)：对三维驾驶场景进行 tokenization，以统一多视角重建与理解。
+- [X-World: Controllable Ego-Centric Multi-Camera World Models for Scalable End-to-End Driving](https://arxiv.org/abs/2603.19979)：构建动作条件的多相机视频世界模型，根据历史相机流和候选自车动作生成未来观测，用于可复现的 VLA 闭环评估。
+- [Fusing Driver Perceived and Physical Risk for Safety Critical Scenario Screening in Autonomous Driving](https://arxiv.org/abs/2603.20232)：把驾驶员感知风险与物理碰撞风险结合起来筛选安全关键场景，使场景选择同时有人的风险感知和运动学依据。
+- [GTLR-GS: Geometry-Texture Aware LiDAR-Regularized 3D Gaussian Splatting for Realistic Scene Reconstruction](https://arxiv.org/abs/2603.23192)：以 LiDAR 度量几何先验重写街景 Gaussian splatting，在固定表示预算下按几何和纹理重要性分配并细化 Gaussian。
+- [Adaptive risk inversion with iterative exploration for high-risk AV-VRU interactions.](https://doi.org/10.1016/j.aap.2026.108417)：通过自适应风险反演探索自动驾驶车辆与弱势道路使用者的高风险交互。
+- [Learning What They Pretend to Think: Adversarial ToM for Safety-Critical Driving Policies](https://doi.org/10.1109/access.2026.3658373)：为安全关键驾驶策略建模对抗性心理理论，将其他交通参与者意图建模与自动驾驶安全连接起来。
+- [Enhancing Autonomous Vehicle Testing Through High-Risk Powered Two-Wheeler Trajectory Generation Using a Conditional Denoising Diffusion Probabilistic Model](https://doi.org/10.1109/jiot.2026.3659671)：用条件扩散生成高风险动力两轮车轨迹，用于自动驾驶车辆测试。
+- [MASC: Joint Motion-Aware and VLM-Semantic Augmentation for Contextual Traffic Anomaly Detection](https://doi.org/10.1016/j.patcog.2026.113952)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“MASC: Joint Motion-Aware and VLM-Semantic Augmentation for Contextual Traffic Anomaly Detection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Distributed Deep Point Cloud Feature Compression for Vehicle-to-Vehicle Cooperative Perception](https://doi.org/10.1109/TMM.2026.3655479)：提出 DPFC，通过 ego feature 条件化 V2V 协同感知消息，并用 rate-perception optimization 压缩点云特征，在降低带宽的同时保留感知效用。
+- [Attention-Aided Generative Semantic Coding for Privacy-Preserving Traffic Status Monitoring](https://doi.org/10.1109/LSP.2026.3667822)：把 traffic-status monitoring 表述为 privacy-preserving semantic coding，在 RCooper 式交通数据上联合权衡压缩、图像重建、交通参与者分割和隐私遮蔽。
+- [Efficient Cooperative Trajectory Planning Using Cognitive-Based Risk Models for Multi-Agent Systems in Non-Convex Environments](https://doi.org/10.1109/LRA.2026.3668568)：用 hierarchical search 与 centralized optimization 为 car-like agents 规划轨迹，并在密集城市场景中引入 cognitive risk model 和 homotopy quality guidance。
+- [ACDD: Multi-traffic Participant Interactive Motion Prediction with Agent -Centric Scene Modeling and Dual-Layer Decoding](https://doi.org/10.1007/s44196-025-01111-z)：使用参与者中心场景建模和双层解码进行多交通参与者交互运动预测。
+- [RIOcc: Efficient Cross-Modal Fusion Transformer with Collaborative Feature Refinement for 3D Semantic Occupancy Prediction](https://doi.org/10.1109/iccv51701.2025.02398)：把 LiDAR 与相机证据编码到统一 BEV 表示，再用 LiDAR 双分支池化、相机小波和语义编码器以及多尺度跨模态 Transformer 细化几何与语义。
+- [SfmOcc: Vision-Based 3D Semantic Occupancy Prediction in Urban Environments](https://doi.org/10.1109/lra.2025.3557227)：仅用视觉监督训练 3D 语义占用，通过 bundle adjustment 对齐序列图像、估计深度，并投影开放词表语义图生成伪标签。
+- [SG-RoadSeg+: End-to-End Freespace Detection Upgraded at Data, Feature, and Loss Levels](https://doi.org/10.1109/tim.2025.3579733)：在 SG-RoadSeg stereo encoder 上加入 TAZ disparity-normal 表示、freespace disparity projection linearity loss 和随机透视增强以提升可行驶空域分割。
+- [L-PCD: latent-guided point cloud diffusion for lidar object augmentation in driving scenes](https://doi.org/10.1016/j.inffus.2025.103886)：用 latent-guided point cloud diffusion 进行 LiDAR 目标增强，结合扩散生成和多模态融合来补充驾驶点云感知训练样本。
+- [TCP: Text-Guided Cascade Network for Pedestrian Crossing Intention Prediction](https://doi.org/10.1109/tits.2025.3628676)：将行人轨迹与 LLM 生成的视频文本描述对齐，用轻量级级联结构同时预测未来坐标和过街意图，并用 center-aware 分类器增强 JAAD 与 PIE 上的区分度。
+- [Street2Air: A Framework for Synthesizing Aerial Vehicle Views from Ground Images](https://doi.org/10.1109/icmla66185.2025.00069)：把街景车辆样本转成 3D assets 并合成俯视空中场景，为细粒度车辆分类补足昂贵的 aerial-view 训练数据。
+- [Efficient 3D-Gaussian-Splatting-Based Path Planning for Ground Vehicles on Uneven Terrain](https://doi.org/10.1109/itsc60802.2025.11423024)：用 3D Gaussian Splatting 作为轻量地形表示，从崎岖地面中估计可通行属性并支撑地面车辆路径规划。
+- [ConsistentGS: Modeling Off-Trajectory Driving Scenes With View-Consistent Diffusion Priors](https://doi.org/10.1109/lra.2025.3623014)：通过 raycast 采样伪视角、用扩散先验修复退化渲染，并以多视角一致性梯度门控减少 off-trajectory 场景重建中的雾化伪影。
+- [Generative AI-Augmented Graph Reinforcement Learning for Adaptive UAV Swarm Optimization](https://doi.org/10.1109/jiot.2025.3529904)： 将强化学习、图神经建模用于aerial or airspace autonomy，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [SDGOCC: Semantic and Depth-Guided Bird’s-Eye View Transformation for 3D Multimodal Occupancy Prediction](https://doi.org/10.1109/cvpr52734.2025.00633)：用像素语义和 LiDAR 共点深度引导相机到 BEV 的 lifting，再把融合后的 occupancy 知识蒸馏回视角变换模块。
+- [Multi-agent interaction-aware behavior intention prediction using graph mixture of experts attention network on urban roads](https://doi.org/10.1016/j.eswa.2025.126485)：用 graph mixture-of-experts attention 建模城市道路多智能体交互意图，把图交互和专家路由结合到行为意图预测中。
+- [Boost Query-Centric Network Efficiency for Multi-Agent Motion Forecasting](https://doi.org/10.1109/lra.2025.3539080)：用状态空间模型做时间运动编码，并让级联解码器在多种预测 mode 间共享 query，以降低 query-centric motion forecasting 的时空开销。
+- [KAN-LSTM Enhanced Multi-Agent Advantage Actor-Critic Reinforcement Learning for Autonomous Ramp Merging](https://doi.org/10.1109/tvt.2025.3593661)：把 Kolmogorov-Arnold Networks 和 LSTM 融入多智能体 advantage actor-critic 匝道汇入策略，并用 action inspector 与 MPC 层约束交互安全。
+- [Text-Scene Retrieval for Driving Scenes in Transportation Cyber-Physical Systems](https://doi.org/10.1109/tits.2025.3562058)：用 DETR3D 抽取目标特征、构造空间关系图，并与 T5 生成的实体关系文本图对齐，实现文本到驾驶场景检索。
+- [Real-Time Multi-Modal Risk Assessment Framework with Temporal Prediction for Intelligent Vehicle Control](https://doi.org/10.1109/icacr68388.2025.11360071)：结合多模态风险评估与时间预测，使车辆控制能实时预判近未来危险。
+- [Visual Risk-Aware Decision-Making Method for Autonomous Driving](https://doi.org/10.1109/icus66297.2025.11294445)：把视觉风险估计作为自动驾驶控制的显式决策信号，而不是只把感知当作中性场景描述。
+- [Knowledge Transfer via Dynamic Policy Fusion Between Autonomous Driving Agents](https://doi.org/10.1109/ictai66417.2025.00193)：通过动态策略融合在驾驶智能体之间迁移知识，使不同上下文训练出的策略可以组合。
+- [The Risk-Driven Reinforcement Learning-Based Left-Turn Motion Control for Intelligent Vehicles at Unsignalized Intersections](https://doi.org/10.1109/cvci66304.2025.11348555)：用风险信号塑造无信号交叉口左转运动控制的强化学习奖励，针对高冲突规划场景。
+- [Controllable and Realistic Safety-critical Scenario Generation for Autonomous Driving Based on Diffusion Models](https://doi.org/10.1109/cac67268.2025.11486668)：用扩散模型生成可控且真实的安全关键场景，面向自动驾驶验证中的罕见事件。
+- [LSTPointGMN: Lightweight Spatial-Temporal Graph Mamba Network for Gesture Recognition Using Millimeter-Wave Radar](https://doi.org/10.1109/ijcnn64981.2025.11228173)：用基于图的 spatial-temporal Mamba blocks 做毫米波雷达手势识别，这是 HCI 雷达模型而非道路自动驾驶模型。
+- [TrAME: Trajectory-Anchored Multi-View Editing for Text-Guided 3D Gaussian Manipulation](https://doi.org/10.1109/tmm.2025.3557618)：通过 trajectory-anchored 双分支更新循环和 view-consistent attention control 保持文本引导 3D Gaussian 编辑的多视角一致性，更偏通用 3D 编辑而非驾驶控制。
+- [Traffic Scene Representation and Encoding With Graph Structure Learning and Exploration](https://doi.org/10.1109/tits.2025.3582574)：SceneGNN 学习包含交通参与者交互和车道连通性的异构场景图，避免固定距离阈值漏掉长程或间接交互。
+- [SAMOccNet:Refined SAM-based surrounding semantic occupancy perception for autonomous driving](https://doi.org/10.1016/j.neucom.2025.130918)：用 SAM-refined 环视语义占据感知，将基础分割先验引入 3D occupancy prediction。
+- [MJTG: A Multi-Vehicle Joint Trajectory Generator for Complex and Rare Scenarios](https://doi.org/10.1109/tvt.2025.3567636)： 主要用轨迹数据评估场景生成与场景级行为与任务指标，后续应检查是否更适合归入 Bench。
+- [A Planner-Agnostic Monitor for Behaviour Feasibility of Autonomous Vehicles Using a Bayesian Discriminator](https://doi.org/10.1109/tits.2025.3582573)：MonitorGAN 只用正常驾驶数据训练贝叶斯对抗判别器，在不依赖特定规划器或真实异常样本的情况下识别 planner impasse 并估计自身不确定性。
+- [SAMUNet: Enhancing pillar-based 3D object detection in autonomous driving with Shape-aware Mini-Unet](https://doi.org/10.1016/j.imavis.2025.105703)：在 pillar-based 3D detection 中加入 shape-aware Mini-Unet，加强自动驾驶 3D 目标检测的形状线索。
+- [Diversity-Driven Multi-Head Attention for Enhanced Trajectory Prediction](https://doi.org/10.1109/access.2025.3574749)：在轨迹预测中加入 diversity-driven multi-head attention，让不同注意力头捕获多样行为模式，同时平衡长历史信息和局部动态变化。
+- [PA-TCP: Interpretable End-to-End Autonomous Driving Through Parallel Adaptive Attention Mechanism and State Representation](https://doi.org/10.1109/iv64158.2025.11097569)：用并行空间和通道注意力及自适应权重选择关键环境特征，使端到端驾驶控制决策具备更可解释的状态表征。
+- [Texture generation and adaptive fusion networks for image inpainting](https://doi.org/10.1016/j.displa.2025.103287)：结合纹理生成和自适应融合网络进行图像修复，作为驾驶图像缺失或退化区域恢复的生成式方法。
+- [Bidirectional motion-aware GAN for future frame prediction in autonomous driving](https://doi.org/10.1016/j.ins.2025.122887)：用双向 motion-aware GAN 预测自动驾驶未来帧，显式建模前后时序运动以改善视频预测。
+- [Novel UAV-based 3D reconstruction using dense LiDAR point cloud and imagery: A geometry-aware 3D gaussian splatting approach](https://doi.org/10.1016/j.jag.2025.104590)：用 LiDAR 引导的深度、法线、曲率和局部一致性损失、球谐一致性及 density control 改进 UAV 大场景 3D Gaussian 重建，并非道路驾驶模型。
+- [Joint prediction and understanding of multimodal traffic flow with a bidirectional temporal dynamic spatial hypergraph neural network model](https://doi.org/10.1016/j.trc.2025.105358)：用双向时序动态空间超图网络联合预测和理解多模态交通流，捕获高阶交通交互结构。
+- [A Multi-Modal Architecture With Spatio-Temporal-Text Adaptation for Video-Based Traffic Accident Anticipation](https://doi.org/10.1109/tcsvt.2025.3552895)：MASTTA 在 CLIP 视觉和文本编码器上加入 temporal、spatial 与 text adapters，使事故预判能对齐视频线索和潜在文本语义，同时只微调轻量模块。
+- [Hierarchical Reinforcement Learning Shared Steering Control Strategy Considering Driver-Vehicle-Road Risk Assessment](https://doi.org/10.1109/tits.2025.3631304)： 梳理车辆控制的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [On the Suitability of Small-Sized Vehicles for Autonomous-Driving Research](https://doi.org/10.1109/ai2e64943.2025.10982988)：考察小型实体车辆是否适合作为自动驾驶研究平台，覆盖离线数据、仿真和真实测试，而不是提出新的模型方法。
+- [Certificating Safety of Imitation Learning for Autonomous Driving With Learnable Weighted Control Barrier Functions](https://doi.org/10.1109/lra.2025.3597485)：把碰撞约束扩展为可学习加权的 control-barrier basis functions，并嵌入可微二次规划层，降低安全 imitation planner 的过度保守问题。
+- [LEAD: LLM-enhanced deep reinforcement learning for stable decision-making in critical autonomous driving scenarios](https://doi.org/10.1016/j.neucom.2025.131619)：LEAD 将 LLM 增强的推理信号接入深度强化学习，提高关键自动驾驶场景中的稳定决策。
+- [Mambafusion: State-space model-driven object-scene fusion for multi-modal 3D object detection](https://doi.org/10.1016/j.patcog.2025.112820)：Mambafusion 用状态空间驱动的 object-scene fusion 融合多模态证据，面向 3D 目标检测建模长程序列依赖。
+- [Interactive Decision-Making Integrating Graph Neural Networks and Model Predictive Control for Autonomous Driving](https://doi.org/10.1109/tits.2025.3532936)：上层用 plan-informed graph attention 预测其他交通参与者对自车意图的响应并给出交互引导，下层 MPC 负责安全和车辆运动学约束。
+- [Search-to-Crash: Generating safety-critical scenarios from in-depth crash data for testing autonomous vehicles](https://doi.org/10.1016/j.energy.2025.137174)： 主要用驾驶场景数据评估场景理解与基于事故数据的安全关键场景，后续应检查是否更适合归入 Bench。
+- [Optimal scheduling of shared autonomous electric vehicles with multi-agent reinforcement learning: A MAPPO-based approach](https://doi.org/10.1016/j.neucom.2025.129343)：将 MAPPO 用于共享自动电动车调度，把多智能体强化学习用于车队级资源分配而非单车感知。
+- [Real-time localization and navigation method for autonomous vehicles based on multi-modal data fusion by integrating memory transformer and DDQN](https://doi.org/10.1016/j.imavis.2025.105484)：把 memory Transformer 与 DDQN 融合到多模态实时定位导航中，结合时序记忆和强化学习决策。
+- [Goal-guided multi-agent motion prediction with interactive state refinement](https://doi.org/10.1016/j.aei.2025.103242)：通过 goal-guided 多智能体运动预测和 interactive state refinement，在预测过程中迭代细化交互状态。
+- [Enduring, Efficient and Robust Trajectory Prediction Attack in Autonomous Driving via Optimization-Driven Multi-Frame Perturbation Framework](https://doi.org/10.1109/cvpr52734.2025.01606)：通过优化 LiDAR 诱导的多帧对抗物体摆放攻击轨迹预测器，把扰动从短暂单点攻击扩展为更持久、鲁棒的多帧攻击。
+- [QCTF: A Quantized Communication and Transferable Fusion Framework for Multi-Agent Collaborative Perception](https://doi.org/10.1109/tits.2025.3574725)：用多尺度残差向量量化压缩协同感知通信，再通过 channel-aware selection 和未标注真实数据做仿真到现实的融合适配。
+- [Multi-class Agent Trajectory Prediction with Selective State Spaces for autonomous driving](https://doi.org/10.1016/j.engappai.2025.111027)：用 selective state spaces 做多类别智能体轨迹预测，在轨迹数据上建模长程时序依赖。
+- [Every Scene All at Once: Exhaustive Multi-Agent Interaction Generation with Controlled Diffusion Model](https://doi.org/10.1109/itsc60802.2025.11423125)：先枚举冲突点的通行顺序排列，再用图优化求可行动力学锚点，并以可控扩散模型生成同一场景下所有可行动的多智能体交互模式。
+- [AI Blinks, Chaos Winks: Adversarial Vulnerability of Object Detection in High-Density Urban Mobility Scenarios](https://doi.org/10.1109/bigdata66926.2025.11401571)：在南亚高密度城市交通图像上用 FGSM 白盒扰动压力测试 YOLOv5，展示细微对抗噪声下目标检测性能的急剧下降。
+- [Learning to Be Adversarial Yet Compliant: Safety-Critical Driving Scenario Generation via Safe Reinforcement Learning](https://doi.org/10.1109/acai68217.2025.11406633)：CASG 用层级 safe deep reinforcement learning、动作预过滤和 hybrid advantage function 生成既遵守交通规则又具对抗性的安全关键场景。
+- [Reinforcement Learning-Based Critical Scenario Generation for Safety Verification of Autonomous Cyber-Physical Systems](https://doi.org/10.1109/cress68073.2025.11452455)：MCSG 将真实驾驶数据抽象为 maneuver-level 参数，并用层级强化学习和复合奖励在 CARLA 中平衡场景真实性、可行性与碰撞关键性。
+- [Research on Autopilot Trajectory Splicing and Reconstruction Based on Hierarchical Reinforcement Machine Learning](https://doi.org/10.1109/raiic65850.2025.11170161)：用层级 RL 规划器结合场景语义解析、行为预测、多目标优化、时空图卷积和注意力机制完成轨迹拼接与重建。
+- [Research on Hybrid Intelligent Decision-Making and Pattern Recognition Methods in Autonomous Driving Systems](https://doi.org/10.1109/iccea65460.2025.11102393)：结合 LSTM 感知、自适应决策优化、模糊逻辑和贝叶斯网络，处理自动驾驶模式识别与决策中的环境不确定性。
+- [Vision-Enhanced Multimodal Large Language Model for Accident Analysis](https://doi.org/10.1109/cbase67452.2025.11335578)：用视觉增强多模态大语言模型进行事故分析。
+- [Safety-Constrained Real-Time Decision Making for Autonomous Vehicles via NEURAL-QWEN](https://doi.org/10.1109/aiac68175.2025.11332512)：NEURAL-QWEN 结合 MoE 路由、AdaLoRA、Time Fusion Transformer、联邦协同、constitutional safety constraints 和 RLHF，实现低延迟安全约束驾驶决策。
+- [Generating risky and realistic scenarios for autonomous vehicle tests involving powered two-wheelers: A novel reinforcement learning framework.](https://doi.org/10.1016/j.aap.2025.108038)：利用强化学习生成涉及机动两轮车的真实高风险自动驾驶测试场景。
+- [High-Risk Trajectories Generation for Safety Testing of Autonomous Vehicles Based on In-Depth Crash Data](https://doi.org/10.1109/tits.2025.3576236)：基于深度事故数据生成高风险轨迹，用于自动驾驶安全测试。
+- [Behavior-Pred: A semantic-enhanced trajectory pre-training framework for motion forecasting](https://doi.org/10.1016/j.inffus.2025.103086)：为自动驾驶运动预测引入语义增强的轨迹预训练框架。
+- [Semantic Hierarchy-Guided Adversarial Attack for Autonomous Driving](https://doi.org/10.1109/lra.2025.3580923)：用语义层级引导对抗攻击，压力测试自动驾驶感知模型。
+- [Safety and Comfort-Aware Multi-Agent Reinforcement Learning Framework for Critical Scenarios Generation Towards ADS Testing](https://doi.org/10.1109/isceic67854.2025.11405592)：使用多智能体强化学习生成兼顾安全与舒适性的自动驾驶系统关键测试场景。
+- [HyDRA: Hybrid Domain-Aware Robust Architecture for Heterogeneous Collaborative Perception](https://arxiv.org/abs/2603.23975)：提出面向驾驶场景异构协同感知的领域感知鲁棒架构。
+- [Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving](https://arxiv.org/abs/2603.25740)：将驾驶 VLA 模型对齐到个性化偏好，把驾驶风格或用户偏好作为显式 policy-alignment 目标。
+- [DRUM: Diffusion-based Raydrop-aware Unpaired Mapping for Sim2Real LiDAR Segmentation](https://arxiv.org/abs/2603.26263)：用预训练扩散先验把合成 LiDAR 翻译成真实风格扫描，显式复现反射强度和 raydrop 噪声，并以 raydrop-aware masked guidance 保持样本一致性。
+- [Drive-Through 3D Vehicle Exterior Reconstruction via Dynamic-Scene SfM and Distortion-Aware Gaussian Splatting](https://arxiv.org/abs/2603.26638)：在经销商 drive-through 视频中用 SAM 3 mask、运动门控、车轮遮罩、畸变感知匹配和 Gaussian splatting 重建移动汽车外观。
+- [Uni-World VLA: Interleaved World Modeling and Planning for Autonomous Driving](https://arxiv.org/abs/2603.27287)：面向自动驾驶智能体与模型的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [HMPDM: A Diffusion Model for Driving Video Prediction with Historical Motion Priors](https://arxiv.org/abs/2603.27371)：通过 temporal latent conditioning 和 motion-aware pyramid encoder 把历史运动先验注入扩散视频预测，生成更连贯的未来驾驶场景。
+- [VistaGEN: Consistent Driving Video Generation with Fine-Grained Control Using Multiview Visual-Language Reasoning](https://arxiv.org/abs/2603.28353)：用多视角视觉语言推理生成一致驾驶视频。
+- [AutoWorld: Scaling Multi-Agent Traffic Simulation with Self-Supervised World Models](https://arxiv.org/abs/2603.28963)：用自监督世界模型扩展多智能体交通仿真，减少对手工行为规则的依赖。
+- [SparseDriveV2: Scoring is All You Need for End-to-End Autonomous Driving](https://arxiv.org/abs/2603.29163)：用基于评分的稀疏建模处理端到端自动驾驶。
+- [Towards Viewpoint-Robust End-to-End Autonomous Driving with 3D Foundation Model Priors](https://arxiv.org/abs/2604.00597)：用 3D foundation model prior 提升端到端自动驾驶的视角鲁棒性，缓解摄像机视点变化造成的泛化问题。
+- [Efficient Equivariant Transformer for Self-Driving Agent Modeling](https://arxiv.org/abs/2604.01466)：提出用于自动驾驶智能体建模的高效等变 Transformer，关联驾驶行为预测。
+- [Dynamic Risk Generation for Autonomous Driving: Naturalistic Reconstruction of Vehicle-E-Scooter Interactions](https://arxiv.org/abs/2604.02573)：基于自然交互重建自动驾驶动态风险场景，可补充驾驶场景生成模型。
+- [ExploreVLA: Dense World Modeling and Exploration for End-to-End Autonomous Driving](https://arxiv.org/abs/2604.02714)：把 dense world modeling 与探索目标结合，让端到端驾驶 VLA 训练接触更有信息量的未来状态。
+- [Safety-Aligned 3D Object Detection: Single-Vehicle, Cooperative, and End-to-End Perspectives](https://arxiv.org/abs/2604.03325)：从单车、协同和端到端视角梳理安全对齐 3D 目标检测。
+- [Super Agents and Confounders: Influence of surrounding agents on vehicle trajectory prediction](https://arxiv.org/abs/2604.03463)：用 Shapley 归因揭示许多周边交通参与者会伤害预测，再用条件信息瓶颈压缩并屏蔽非因果交互特征。
 - [Sim2Real-AD](https://arxiv.org/abs/2604.03497)：提供模块化仿真到现实框架，用于部署视觉语言模型指导的自动驾驶强化学习。
+- [DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](https://arxiv.org/abs/2604.03685)：汇集事件、RGB、热成像、4D 雷达和双 LiDAR 驾驶数据，并给出 2D/3D 标注与融合基线，后续更适合按 Bench 路由。
+- [SGTA Traffic Agent](https://arxiv.org/abs/2604.03697)：用场景图做多模态交通视频理解，把交通感知同 agent-style reasoning 连接起来。
 - [DriveVA](https://arxiv.org/abs/2604.04198)：驾驶 world model，在共享 latent 生成过程中联合解码未来视觉预测和动作序列。
+- [Part-Level 3D Gaussian Vehicle Generation with Joint and Hinge Axis Estimation](https://arxiv.org/abs/2604.05070)：从单图或稀疏多视角输入生成可动画化的 3D Gaussian 车辆资产，并估计关节和铰链轴，让仿真能表现车轮和车门运动。
+- [Evaluation as Evolution: Transforming Adversarial Diffusion into Closed-Loop Curricula for Autonomous Vehicles](https://arxiv.org/abs/2604.07378)：将对抗扩散转化为自动驾驶闭环课程。
+- [Orion-Lite: Distilling LLM Reasoning into Efficient Vision-Only Driving Models](https://arxiv.org/abs/2604.08266)：把 LLM 推理蒸馏到高效 vision-only 驾驶模型中，在保留推理收益的同时降低部署成本。
 - [VLA-World](https://arxiv.org/abs/2604.09059)：把未来帧想象与 VLA 推理统一起来，先生成可行动作约束下的未来场景，再用该想象状态修正轨迹规划。
+- [SCORP: Scene-Consistent Multi-agent Diffusion Planning with Stable Online Reinforcement Post-Training for Cooperative Driving](https://arxiv.org/abs/2604.11734)：把 scene-consistent 多智能体扩散规划与稳定在线 RL 后训练结合，用于协同驾驶。
+- [Unveiling the Surprising Efficacy of Navigation Understanding in End-to-End Autonomous Driving](https://arxiv.org/abs/2604.12208)：分析 navigation understanding 对端到端自动驾驶的作用，将导航语义作为提升规划质量的关键信号。
 - [FeaXDrive](https://arxiv.org/abs/2604.12656)：为端到端自动驾驶加入可行性感知的轨迹中心扩散规划。
+- [Heterogeneous Self-Play for Realistic Highway Traffic Simulation](https://arxiv.org/abs/2604.16406)：用异构 self-play 生成更真实的高速公路交通仿真，通过多种策略类型丰富 agent 行为。
+- [Infrastructure-Centric World Models: Bridging Temporal Depth and Spatial Breadth for Roadside Perception](https://arxiv.org/abs/2604.17651)：面向自动驾驶与驾驶 VLA 系统的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Infrastructure-Centric World Models: Bridging Temporal Depth and Spatial Breadth for Roadside Perception”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Driving risk emerges from the required two-dimensional joint evasive acceleration](https://arxiv.org/abs/2604.17841)：用二维联合规避加速度刻画驾驶风险。
+- [OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models](https://arxiv.org/abs/2604.17915)：用 VLA 模型统一多种驾驶范式，使感知、语言理解和动作生成在同一模型中协同。
+- [Towards Safe Mobility: A Unified Transportation Foundation Model enabled by Open-Ended Vision-Language Dataset](https://arxiv.org/abs/2604.22260)：通过开放式视觉语言数据集构建统一交通 foundation model，面向更广泛的安全移动任务。
+- [HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation](https://arxiv.org/abs/2604.28196)：把 HERMES 扩展为统一驾驶世界模型，同时服务 3D 场景理解和生成。
+- [AFFormer: Adaptive Feature Fusion Transformer for V2X Cooperative Perception under Channel Impairments](https://arxiv.org/abs/2605.01888)：提出 AFFormer，用 Transformer 自适应融合时间、智能体间和跨模态特征，以缓解 V2X cooperative perception 中的噪声、衰落和干扰。
+- [Conditional Flow-VAE for Safety-Critical Traffic Scenario Generation](https://arxiv.org/abs/2605.04366)：用 conditional Flow-VAE 生成安全关键交通场景，将潜变量密度建模与可控罕见事件合成结合。
+- [Ground4D: Spatially-Grounded Feedforward 4D Reconstruction for Unstructured Off-Road Scenes](https://arxiv.org/abs/2605.04435)：通过 voxel-grounded temporal Gaussian aggregation 和 query-conditioned temporal attention，稳定非结构化越野场景中的前馈式 4D 重建。
+- [CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies](https://arxiv.org/abs/2605.04470)：用从反事实到交互的强化微调改进驾驶策略。
+- [ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete Diffusion Driving](https://arxiv.org/abs/2605.04647)：用基于强化学习的自编辑对齐离散扩散驾驶模型。
+- [Driver-WM: A Driver-Centric Traffic-Conditioned Latent World Model for In-Cabin Dynamics Rollout](https://arxiv.org/abs/2605.05092)：构建以驾驶员为中心、受交通条件约束的潜在世界模型，用于车舱动态 rollout。
+- [Can Attribution Predict Risk? From Multi-View Attribution to Planning Risk Signals in End-to-End Autonomous Driving](https://arxiv.org/abs/2605.06264)：把多视角 attribution map 转化为规划风险信号，检验解释结果能否成为可执行安全线索。
+- [VECTOR-Drive: Tightly Coupled Vision-Language and Trajectory Expert Routing for End-to-End Autonomous Driving](https://arxiv.org/abs/2605.08830)：联合路由视觉语言专家和轨迹专家，用于端到端驾驶。
+- [Beyond Self-Play: Hierarchical Reasoning for Continuous Motion in Closed-Loop Traffic Simulation](https://arxiv.org/abs/2605.09153)：为闭环交通仿真的连续运动加入层次化推理，超越单纯 self-play 策略竞争。
 - [ConFixGS](https://arxiv.org/abs/2605.09688)：用置信度感知的扩散先验修复自动驾驶场景中的前馈式三维高斯表示。
+- [DriveFuture: Future-Aware Latent World Models for Autonomous Driving](https://arxiv.org/abs/2605.09701)：学习 future-aware latent world model，使驾驶策略面向预测的场景演化优化，而不是只依赖当前感知。
+- [MTA-RL: Robust Urban Driving via Multi-modal Transformer-based 3D Affordances and Reinforcement Learning](https://arxiv.org/abs/2605.10177)：用 Transformer 融合 RGB 与 LiDAR 预测几何感知的 3D affordance，再把这些紧凑语义作为强化学习驾驶策略的观测。
+- [CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving](https://arxiv.org/abs/2605.10426)：使用多专家世界模型进行自动驾驶 VLA 推理。
+- [Traversability Risk Assessment and Path Planning for Off-Road Autonomous Vehicles in Winter Conditions](https://doi.org/10.1002/rob.70242)：结合 speed-distribution prediction、VBN-LSTM traversability risk modeling 与 Hybrid A* planning，让越野自动驾驶车辆在冬季绕开打滑、侧翻、碰撞和陷车等风险。
+- [DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](https://arxiv.org/abs/2605.10564)：通过潜在状态预测建模长程驾驶未来。
+- [MambaNetBurst: Direct Byte-level Network Traffic Classification without Tokenization or Pretraining](https://arxiv.org/abs/2605.11034)：把 Mamba 序列建模用于字节级通信网络流量分类，标题中的 traffic 不是道路交通，偏离自动驾驶主题。
+- [HorizonDrive: Self-Corrective Autoregressive World Model for Long-horizon Driving Simulation](https://arxiv.org/abs/2605.11596)：提出自校正自回归世界模型用于长时程驾驶仿真，减少长 rollout 中的误差累积。
 - [MindVLA-U1](https://arxiv.org/abs/2605.12624)：统一流式 VLA 架构，在一次前向传播中结合可选自回归语言 token 与 flow-matching 连续动作轨迹。
+- [Belief-Space Residual Risk for Automated Driving under Localization Uncertainty](https://arxiv.org/abs/2605.12710)：把残余风险估计扩展到自车位姿 belief space，以高斯分布建模定位不确定性，并用粒子式协方差融合计算碰撞概率。
+- [Causality-Aware End-to-End Autonomous Driving via Ego-Centric Joint Scene Modeling](https://arxiv.org/abs/2605.13646)：通过以自车为中心的联合场景建模，使驾驶策略具备更强因果感知。
 - [MAPLE](https://arxiv.org/abs/2605.14201)：面向驾驶 VLA 的 latent multi-agent rollout 方法，结合监督微调和全局及 agent-specific 奖励的强化学习。
 - [SafeAlign-VLA](https://arxiv.org/abs/2605.19524)：面向驾驶 VLA 的安全对齐框架，结合 counterfactual safety pairing、负样本增强监督学习和强化学习。
 - [HEAT](https://arxiv.org/abs/2605.19631)：用 trajectory-guided world model 提升跨城市、传感器和交通分布的异构端到端驾驶。
 - [CoPhy](https://arxiv.org/abs/2605.21139)：把 VLM 知识蒸馏进 BEV encoder，并用自回归 BEV world model 支撑前瞻式动作优化。
+- [Hyper-V2X: Hypernetworks for Estimating Epistemic and Aleatoric Uncertainty in Cooperative Bird's-Eye-View Semantic Segmentation](https://arxiv.org/abs/2605.21309)：提出 Hyper-V2X，用 Bayesian hypernetwork 从融合的多智能体特征中估计 epistemic 和 aleatoric uncertainty，服务 V2X cooperative BEV segmentation。
 - [LVDrive](https://arxiv.org/abs/2605.22089)：在预训练视觉骨干监督下加入高层 latent 空间未来场景预测，以增强 driving VLA 训练。
+- [INTACT](https://arxiv.org/abs/2606.04437)：通过 ego-guided typed sparse evidence query，让异构协同感知车辆只返回疑似目标和证据不足区域的局部证据，从而支持 zero-training collaborator insertion。
+- [Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation](https://arxiv.org/abs/2606.15869)：提出 Metis 世界动作模型，用 Mixture-of-Transformers 专家解耦未来视频生成和动作预测，以降低推理延迟并提升驾驶与城市导航泛化。
+- [GraphBEV++: Multi-Modal Feature Alignment for Autonomous Driving](https://arxiv.org/abs/2606.16354)：提出 GraphBEV++，用 LocalAlign-v2 和 GlobalAlign-v2 修正 LiDAR 与相机投影错位，并兼容 LSS 与 query-based BEV 表征。
+- [IoT-Enabled Cooperative Autonomous Driving: A Hierarchical Spatial–Temporal Transformer Framework for Trajectory Prediction](https://doi.org/10.1109/jiot.2026.3654101)：用于协同轨迹预测的层级时空 Transformer；DOI 元数据不支持放在 Agent Harness。
 - [DuSA](https://doi.org/10.1016/j.knosys.2026.116002)：使用结合 LLM 引导强化学习的双循环自学习框架改进自动驾驶策略。
 - [NavDrive](https://doi.org/10.1109/TITS.2026.3650852)：使用导航引导的 diffusion policy 改进端到端自动驾驶安全性。
+- [MonoRange: Monocular 3-D Object Detection Based on Object-Centric Range Map in Adverse Weather Conditions](https://doi.org/10.1109/tits.2026.3652840)：基于 object-centric range map 做单目 3D 检测，试图在雨雾、低照等恶劣天气下恢复目标深度线索。
+- [Contextual Graph Modeling for Open-Set Object Detection in Multi-View Autonomous Driving](https://doi.org/10.1109/ojvt.2026.3687800)：用多视角相机之间的上下文图关系识别开放集道路目标，而不是只检测闭集类别。
+- [RVC-KCD: Temporal Integrity Verification and Geometry-Constrained Decoding for Safety-Oriented Drivable Corridor Estimation](https://doi.org/10.1109/icaace69793.2026.11509159)：通过时序完整性校验和几何约束解码估计可行驶走廊，使走廊预测满足安全规划所需的一致性。
+- [Predicted occupancy map-based online safety verification and resilient motion planning for autonomous driving](https://doi.org/10.1016/j.trc.2026.105577)：把预测占用图同时作为在线安全验证器和规划输入，在未来占用空间违反安全约束时触发韧性重规划。
+- [RDPA: A Concealed and Perilous Physical Adversarial Attack for Nighttime Traffic Signs Recognition](https://doi.org/10.1016/j.eswa.2026.132647)：设计针对夜间交通标志识别的隐蔽物理攻击，暴露低照驾驶下的感知安全失效模式。
+- [Spatial Balancing for RGB-Thermal Semantic Segmentation in Autonomous Driving: A Study From Analysis to Improvement](https://doi.org/10.1109/tro.2026.3677009)：分析 RGB-热成像语义分割中的空间偏置，并重平衡跨模态特征，使热成像在 RGB 证据薄弱区域发挥作用。
+- [DrivingEditor: 4D Composite Gaussian Splatting for Reconstruction and Edition of Dynamic Autonomous Driving Scenes](https://doi.org/10.1109/tip.2026.3659733)：用 4D composite Gaussian splats 表示动态驾驶场景，支持对移动交通参与者和背景的重建与可控编辑。
+- [A new generation of embodied intelligent plant protection unmanned vehicle integrated with hydrostatic transmission and four-wheel drive technology: design, development and application](https://doi.org/10.1016/j.compag.2026.111525)：介绍集成静液压传动和四轮驱动的农业植保无人车，属于农业车辆设计而非道路自动驾驶模型。
+- [Toward Sustainable Data Collection Processes for Autonomous Vehicles](https://doi.org/10.1109/access.2026.3651902)：关注自动驾驶数据采集流程和数据集生命周期的可持续性，而不是具体感知、预测、规划或驾驶策略模型。
+- [C2F-LGNet: A coarse-to-fine framework with local-global differential modeling for traffic prediction](https://doi.org/10.1016/j.neunet.2026.109086)：用粗到细网络分别建模局部和全局交通差分动态，再融合两类信息进行交通流预测。
+- [MCF-LLM: MultiModal cross-fusion large language model for traffic flow prediction](https://doi.org/10.1016/j.asoc.2026.115300)：把 LLM 式预测器用于交通流预测，在序列预测前对多源交通信号做跨模态融合。
+- [Physics-informed neural operator for forecasting vehicle-induced bridge vibration trajectories](https://doi.org/10.1016/j.engappai.2026.114708)：用物理信息神经算子预测车辆荷载引起的桥梁振动轨迹，属于基础设施监测而非道路驾驶模型。
+- [Depth-aware sparse queries for efficient multi-view BEV perception](https://doi.org/10.1016/j.neucom.2026.133585)：用深度感知稀疏 query 将多视角相机证据提升到 BEV，比密集 query 网格更高效地完成 3D 感知。
+- [DiffVecMap: A Robust Online Vectorized HD Map Construction Method With a Diffusion Model](https://doi.org/10.1109/lra.2026.3682549)：把扩散去噪用于在线矢量化高精地图构建，提高噪声感知下车道线和地图元素恢复质量。
+- [DPS-Net: Direction-Aware Pseudo-Stereo Network for Accurate Road Surface Reconstruction](https://doi.org/10.1109/tcsvt.2026.3650947)：用方向感知伪双目网络从驾驶图像恢复路面几何，为可行驶区域建模提供路面重建信号。
+- [Accelerated prediction of elastic constants in cubic crystals via interpretable machine learning: From metallic alloys to broader material systems](https://doi.org/10.1016/j.matchemphys.2026.132056)：用可解释机器学习预测立方晶体弹性常数，属于材料科学而非自动驾驶。
+- [Hierarchical Semantic Segmentation for Autonomous Driving in Unstructured Traffic](https://doi.org/10.1109/access.2026.3691496)：以语义层级分割非结构化交通场景，在保留粗粒度可行驶区域结构的同时细化道路参与者类别。
+- [Robust Cross-Entropy Optimization for Safe and Stable Motion Planning in Autonomous Driving](https://doi.org/10.1109/cnml68938.2026.11452278)：用 cross-entropy optimization 在安全和稳定性目标下采样并细化运动计划，更接近规划模型而非基准条目。
+- [A Dual Residual Transformer Architecture for Indoor Semantic Occupancy Prediction](https://doi.org/10.1016/j.patcog.2026.113667)：把双残差 Transformer 用于室内语义占用预测，属于空间感知方法但不是道路自动驾驶。
+- [Learning a Unified Risk Map for Autonomous Driving in Partially Observable Environments](https://doi.org/10.1109/lra.2026.3666393)：在部分可观测环境中学习统一风险图，使规划器能推理隐藏危险而不只依赖当前可见目标。
+- [Spatial-Temporal Fusion for Vision-Based 3D Object Detection in Autonomous Driving](https://doi.org/10.1109/icaace69793.2026.11508800)：将跨帧时序图像证据与空间视角特征融合，用于驾驶场景中的纯视觉 3D 目标检测。
+- [An Analysis of Autonomous Vehicle Crash Risk Prediction Models Using Structured and Unstructured Data Fusion](https://doi.org/10.12815/kits.2026.25.1.117)：比较融合结构化变量与非结构化文本或场景证据的碰撞风险预测器，核心贡献是风险建模而非驾驶控制。
+- [Secondary salinization in facility agricultural soils detrimentally affects the spatial distribution of earthworm communities: dominant drivers and ecological risks.](https://doi.org/10.1016/j.jenvman.2026.129454)：建模农业土壤盐渍化与蚯蚓分布相关的生态风险，和自动驾驶感知或规划无关。
+- [Integrated Navigation Research for Outdoor Multi-sensor Off-road Vehicle Based on PID-Pure Pursuit](https://doi.org/10.1109/nnice68970.2026.11466204)：将户外多传感器导航与 PID-Pure Pursuit 控制结合，用于越野车辆低层路径跟踪，而非 VLM 驾驶。
+- [Semantic Communication for The Internet of Vehicles: Concepts, Enabling Technologies, and Open Research Directions](https://doi.org/10.1109/iccsic69301.2026.11521531)：综述车联网语义通信，包括协同感知与 V2X 消息传输，因此更像 Survey 路由候选。
+- [DRPVLM: A generative multimodal large language model for real-time driving risk prediction.](https://doi.org/10.1016/j.aap.2026.108505)：用生成式多模态大语言模型从视觉和交通上下文证据预测实时驾驶风险，将 VLM 场景理解与安全预警连接起来。
+- [CEST: Enhancing Multi-Agent Perception via Communication-Efficient Spatial–Temporal Fusion](https://doi.org/10.1109/tits.2026.3658043)：补充多智能体感知中的通信高效时空融合方法。
 - [DiffScene](https://doi.org/10.1609/aaai.v39i8.32951)：用扩散方法生成自动驾驶安全关键场景。
 - [LiDAR-LLM](https://doi.org/10.1609/aaai.v39i9.33001)：探索将 LLM 用于驾驶场景中的 3D LiDAR 理解。
+- [Structured Prompting and Collaborative Multi-Agent Knowledge Distillation for Traffic Video Interpretation and Risk Inference](https://doi.org/10.3390/computers14110490)：结合 structured prompting 与 collaborative multi-agent distillation，在复杂高速公路条件下解释交通视频并推断风险。
 - [VLA-MP](https://doi.org/10.3390/s25196163)：结合 VLA 感知与物理约束动作生成用于自动驾驶。
 - [Social Predictive Intelligent Driver Model](https://doi.org/10.1007/s42154-024-00289-w)：提出面向自动驾驶仿真的社会感知驾驶员行为模型，用于刻画交互密集的交通场景。
 - [LLM-Guided DRL with Contrastive Safety Regularization](https://doi.org/10.1007/s44163-025-00812-w)：将大模型指导和对比式安全正则加入自动驾驶深度强化学习。
+- [EAR-CCPM-Net](https://doi.org/10.3390/app15179299)：用跨模态协同感知网络做 early accident risk prediction。
+- [MemRoadNet: Human-like Memory Integration for Free Road Space Detection](https://doi.org/10.3390/s25216600)：在自动驾驶 free road space detection 的语义分割中加入类人的 episodic、semantic 和 working memory banks，使训练与推理能检索历史道路模式。
+- [InstaDrive: street view generation based on the unified instance segmentation input of vehicles and map elements](https://doi.org/10.55092/rl20260004)：将车辆 3D boxes、矢量化地图标注、相机外参与文本提示投影成统一 instance-segmentation 控制，再用 Stable Diffusion 合成多视角一致的驾驶全景图。
+- [HBEVOcc: Height-Aware Bird’s-Eye-View Representation for 3D Occupancy Prediction from Multi-Camera Images](https://doi.org/10.3390/s26030934)：在 BEV occupancy 特征中加入 height-aware deformable attention，使多相机模型在不承担完整 voxel 内存成本的情况下保留潜在高度结构。
+- [Risk Mitigation Strategies for Artificial Intelligence-Enabled Self-Driving Laboratories](https://doi.org/10.1177/15356760251412428)： 将任务专用建模方案用于chemistry or materials self-driving laboratories，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [A glance over the past decade: road scene parsing towards safe and comfortable autonomous driving](https://doi.org/10.1007/s43684-025-00096-y)： 梳理语义分割的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [LiDAR Data Augmentation for Semantic Segmentation: A Statistical Intensity Model](https://doi.org/10.12720/jait.16.2.223-232)：把 SemanticKITTI 的 LiDAR intensity 统计分布迁移到 KITTI-CARLA 合成点云，使语义分割模型能减少真实标注数据依赖。
+- [TinyBEV: Compact Temporal Fusion for Multi-View 3D Perception](https://doi.org/10.1145/3769102.3774633)：用线性复杂度 state-space fusion 取代 BEV-camera cross-attention，并加入 time-conditioned history aggregation，面向边缘部署的多视角 3D 检测。
+- [DeMo: Decoupling Motion Forecasting into Directional Intentions and Dynamic States](https://doi.org/10.52202/079017-3383)：DeMo 将运动预测解耦为方向意图和动态状态，使轨迹预测分别处理高层意图与低层运动变化。
+- [Vehiclesim: realistic and 3D-aware video editing with one image for autonomous driving](https://doi.org/10.1007/s00530-025-01927-x)：Vehiclesim 从单张图像进行真实且 3D-aware 的驾驶视频编辑，用于构造可控自动驾驶视频场景。
+- [Test Large Language Models on Driving Theory Knowledge and Skills for Connected Autonomous Vehicles](https://doi.org/10.1145/3691555.3696825)：评估远端或边缘 LLM 是否具备足够驾驶理论和技能理解，能为网联自动驾驶车辆在长尾场景中生成辅助驾驶指令。
+- [A revolutionary paradigm in chemistry and materials science research: self-driving laboratories.](https://doi.org/10.1039/d5cc01959a)： 梳理自动驾驶感知与规划的方法与开放挑战；该条更像 Survey，需父级路由确认后再移出当前 Bench 或 Model 位置。
+- [Mixture of Semantic and Spatial Experts for Explainable Traffic Prediction](https://doi.org/10.1145/3746252.3761412)：SS-MoE 用粗细粒度 LLM prompts 注入语义交通上下文，并通过 semantic 与 spatial experts 同时完成流量、速度和需求预测及事后解释。
+- [QANPRODrive: a VLM-based clustering approach for safety-critical driving scenarios](https://doi.org/10.1117/12.3102290)：用 VLM 在预设 prompts 下生成驾驶场景描述，再以规则分类器筛选交叉口、转弯、施工区和超车等安全关键子集。
+- [A Comparative Study on Self-Driving Scenario Code Generation Through Prompt Engineering Based on LLM-Specific Characteristics](https://doi.org/10.3390/app152312502)：比较针对不同 LLM 特性的 prompt engineering 如何影响自动驾驶场景代码生成。
+- [Engineering a Sustainable Future: Harnessing Automation, Robotics, and Artificial Intelligence with Self-Driving Laboratories](https://doi.org/10.1021/acssuschemeng.4c02177)： 将任务专用建模方案用于chemistry or materials self-driving laboratories，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [Quadratic memory-augmented spatio-temporal transformer graph convolutional recurrent network for traffic forecasting](https://doi.org/10.1007/s13042-024-02474-z)：用二次 memory-augmented 时空 Transformer 图卷积循环网络预测交通流，结合记忆机制、Transformer 和图建模。
+- [Domain-Adapted MLLMs for Interpretable Road Traffic Accident Analysis Using Remote Sensing Imagery](https://doi.org/10.3390/ijgi15010008)：用 LoRA 分阶段微调开源 VLM，使其在遥感图像和结构化事故数据上完成环境描述、事故分类和 CoT 因果解释。
+- [LS-Occ:light specific-target-focus vision-based 3D occupancy prediction with adaptive combined head](https://doi.org/10.1007/s00138-026-01793-1)：LS-Occ 以 light specific-target-focus 和 adaptive combined head 改进视觉 3D occupancy prediction。
+- [An intrinsic dynamics capture network for long-term airspace traffic prediction](https://doi.org/10.1371/journal.pone.0338949)： 将Transformer 建模、预测模型用于aerial or airspace autonomy，并非道路自动驾驶条目，应作为 needs parent routing 处理。
+- [Prunario: Testing Autonomous Driving Systems by Pruning Likely Redundant Scenarios](https://doi.org/10.1145/3798262)： 主要用驾驶场景数据评估场景理解与场景级行为与任务指标，后续应检查是否更适合归入 Bench。
+- [Automated and logically exhaustive generation of traffic scenarios at road junctions using a multi-level danger definition](https://doi.org/10.1007/s10270-026-01372-y)：用多层危险定义在道路交叉口自动且逻辑穷尽地生成交通场景，面向形式化覆盖安全关键情形。
+- [BlindSpotFuzz: testing autonomous driving systems through blind-spot-guided fuzzing](https://doi.org/10.1007/s10515-026-00597-x)： 主要用驾驶场景数据评估自动驾驶感知与规划与场景模糊测试中的失效发现，后续应检查是否更适合归入 Bench。
+- [Multi-method control approaches for cruise control in intelligent vehicles](https://doi.org/10.1177/09544070261449108)： 主要用驾驶场景数据评估车辆控制与场景模糊测试中的失效发现，后续应检查是否更适合归入 Bench。
+- [Think2Drive: Efficient Reinforcement Learning by Thinking with Latent World Model for Autonomous Driving (in CARLA-V2)](https://doi.org/10.1007/978-3-031-72995-9_9)：Think2Drive 在潜在世界模型中进行 imagined rollout 来训练强化学习驾驶策略，提高 CARLA-V2 中的样本效率。
+- [Optimizing Autonomous Vehicle Performance Using Improved Proximal Policy Optimization](https://doi.org/10.3390/s25061941)：在 PPO 中加入 Levy-flight 探索，使自动驾驶策略能搜索更大的策略空间并降低陷入城市交通局部最优的风险。
+- [LiDAR-Based Negative Obstacle Detection for Unmanned Ground Vehicles in Orchards](https://doi.org/10.3390/s24247929)：通过倾斜安装 LiDAR 缩小盲区，并用多帧点云高度、密度和点距跳变检测果园沟渠或坑洼；该条偏农业越野 UGV 而非道路自动驾驶。
+- [FusionOcc: Multi-Modal Fusion for 3D Occupancy Prediction](https://doi.org/10.1145/3664647.3681293)：在 2D 与 3D 空间融合 LiDAR 点云和环视图像，先用点云深度预测 dense depth，再把 voxelized point features 与 view-transformed image features 对齐。
+- [Research on vehicle trajectory planning algorithm integrating spatiotemporal constraints and adaptive curvature](https://doi.org/10.1038/s41598-025-28018-1)： 主要用轨迹数据评估运动规划与场景级行为与任务指标，后续应检查是否更适合归入 Bench。
+- [Bridging Video and Symbols: A Hybrid AI for Edge Traffic-Risk Reasoning](https://doi.org/10.1145/3747327.3763041)：将视频感知与符号推理结合，在边缘端进行交通风险推理，突出 hybrid AI 的可解释风险判断。
+- [Atten-LTC-Enhanced MoE Model for Agent Trajectory Prediction in Autonomous Driving](https://doi.org/10.3390/s26020479)：结合注意力、Liquid Time-Constant 动态、时空特征和专家混合框架，同时支持单智能体和多智能体轨迹预测。
+- [Enhancing Road Safety and Sustainability: A Multi-Scale Temporal Model for Vehicle Trajectory Anomaly Detection in Road Network Interactions](https://doi.org/10.3390/su18020597)：MTRI 用 contrastive conditional diffusion 生成异常轨迹、建模轨迹与道路网络交互，并用多尺度时间特征检测复杂异常。
+- [MA-DDSCNet: multi-agent dynamic diffusion semantic communication network for task-oriented multi-modal fusion in autonomous driving](https://doi.org/10.7717/peerj-cs.3669)：通过时空对齐、memory gating、可微离散量化和层级蒸馏，把相机、LiDAR 与车辆状态压缩成可在车辆、RSU 和云端共享的任务加权语义 tokens。
+- [Enhancing vehicle trajectory prediction using deep spatial–temporal graph convolutional networks with residual connections](https://doi.org/10.1007/s42454-026-00097-z)：用带残差连接的深度时空图卷积网络增强车辆轨迹预测，面向轨迹数据中的空间交互和时间依赖。
+- [SBF-DRL: A Multi-Vehicle Safety Enhancement Framework Based on Deep Reinforcement Learning with Integrated Safety Barrier Function](https://doi.org/10.3390/wevj17010024)：把 safety barrier function 融入深度强化学习，通过冗余本地监控和 MDP meta-control 策略切换保障多车系统低碰撞率。
+- [Attention-Based LiDAR–Camera Fusion for 3D Object Detection in Autonomous Driving](https://doi.org/10.3390/wevj16060306)：用通道注意力自适应加权 LiDAR 几何特征和相机语义特征，再用 center-point detector 在 BEV 空间回归 3D boxes。
+- [Urban Road Anomaly Monitoring Using Vision–Language Models for Enhanced Safety Management](https://doi.org/10.3390/app15052517)：基于 InternVL 构建 URA-VLMs，结合异常检测、积水深度估计、安全等级评估、多步 prompting 和 RAG 监测城市道路异常。
+- [BiAttentionNet: a dual-branch automatic driving image segmentation network integrating spatial and channel attention mechanisms](https://doi.org/10.1038/s41598-025-95470-4)：把实时驾驶图像分割拆成 detail branch 和 semantic branch，再用空间与通道注意力融合低层边界和高层上下文。
+- [Communication-aware Diffusion Models for Multi-Agent Trajectory Forecasting in Connected and Autonomous Vehicles](https://doi.org/10.1145/3769102.3774636)：在扩散式轨迹预测推理阶段加入 communication-aware guidance，使网联车辆和路侧单元可共享观测而无需重训基础模型。
+- [Toward Realistic Autonomous Driving Dataset Augmentation: A Real–Virtual Fusion Approach with Inconsistency Mitigation](https://doi.org/10.3390/s26030987)：补充自动驾驶数据增强中的真实-虚拟融合和不一致缓解方法。
+- [TrafficDiff: diffusion model based adversarial traffic scenario controllable generation for autonomous driving robust evaluation](https://doi.org/10.1007/s10044-025-01561-3)：用扩散模型生成可控对抗交通场景，用于自动驾驶鲁棒性评测。
+- [Lane Change Prediction of Surrounding Vehicles using Video Vision Transformers](https://doi.org/10.12785/ijcds/1571024445)：用 video vision transformer 预测周围车辆变道，利用时间视觉上下文而不是单帧线索。
+- [Off-Road Autonomous Vehicle Semantic Segmentation and Spatial Overlay Video Assembly](https://doi.org/10.3390/s26061944)：发布 off-road autonomous vehicle 数据集，加入 confusion-aware loss 改进语义分割，并用 spatial-overlay video encoding 在分割中间表示中保留 RGB 上下文。

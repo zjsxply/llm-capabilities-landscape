@@ -1,48 +1,194 @@
 # 2.5.3 Bench
 
-- [WebArena](https://arxiv.org/abs/2307.13854)（[开源代码](https://github.com/web-arena-x/webarena)）：评测自主网页 agent 在真实可复现网站中的任务完成；核心思想是把电商、论坛、GitLab、地图等完整 Web 应用封装成可重置环境，用最终状态而非只看文本回答评估网页操作。
-- [VisualWebArena](https://arxiv.org/abs/2401.13649)（[开源代码](https://github.com/web-arena-x/visualwebarena)）：评测多模态网页 agent；核心思想是在 WebArena 式真实网站基础上加入图像、布局和视觉线索依赖任务，检验 agent 是否能把截图理解与 DOM/文本信息结合起来。
-- [OSWorld / OSWorld-Verified](https://arxiv.org/abs/2404.07972)：评测 desktop computer-use 的通用基准；核心思想是把真实操作系统任务抽象成可复现的观察-行动-验证闭环；官方 leaderboard 同时维护原始任务与 verified 轨迹/子集。
-- [AndroidWorld](https://arxiv.org/abs/2405.14573)（[开源代码](https://github.com/google-research/android_world)）：评测移动端 GUI agent 的任务完成与泛化；核心思想是用真实 Android 模拟器与可动态实例化任务，把手机操作标准化为可执行 benchmark。
-- [WindowsAgentArena](https://arxiv.org/abs/2409.08264)（[ICML 2025 论文](https://proceedings.mlr.press/v267/bonatti25a.html)，[开源代码](https://github.com/microsoft/WindowsAgentArena)）：评测 Windows 生态中的 GUI agent 与 skill 组合；核心思想是让真实桌面任务在统一环境里可复现、可回放、可自动比较。
+- [WebArena](https://arxiv.org/abs/2307.13854)（[leaderboard](https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ/edit?usp=sharing)，[开源代码](https://github.com/web-arena-x/webarena)）：评测自主网页 agent 在真实可复现网站中的任务完成；核心思想是把电商、论坛、GitLab、地图等完整 Web 应用封装成可重置环境，用最终状态而非只看文本回答评估网页操作。
+- [VisualWebArena](https://arxiv.org/abs/2401.13649)（[leaderboard](https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ/edit?usp=sharing)，[开源代码](https://github.com/web-arena-x/visualwebarena)）：评测多模态网页 agent；核心思想是在 WebArena 式真实网站基础上加入图像、布局和视觉线索依赖任务，检验 agent 是否能把截图理解与 DOM/文本信息结合起来。
+- [OmniACT: A Dataset and Benchmark for Enabling Multimodal Generalist Autonomous Agents for Desktop and Web](https://arxiv.org/abs/2402.17553)：围绕 OmniACT: A Dataset and Benchmark for Enabling Multimodal Generalist Autonomous Agents for Desktop and Web 补充可复用的GUI 计算机使用基准、数据集或评测协议。
+- [OSWorld / OSWorld-Verified](https://arxiv.org/abs/2404.07972)（[项目页与榜单](https://os-world.github.io/)）：评测 desktop computer-use 的通用基准；核心思想是把真实操作系统任务抽象成可复现的观察-行动-验证闭环；官方 leaderboard 同时维护原始任务与 verified 轨迹/子集。
+- [Large Language Models for Mobile GUI Text Input Generation: An Empirical Study](https://arxiv.org/abs/2404.08948)：补充一个面向计算机与图形界面使用的基准条目，关注LLM evaluation for mobile GUI text input。
+- [UIClip: A Data-driven Model for Assessing User Interface Design](https://arxiv.org/abs/2404.12500)：围绕 Computer Use (GUI) 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [AndroidWorld](https://arxiv.org/abs/2405.14573)（[开源代码](https://github.com/google-research/android_world)；[官方榜单](https://docs.google.com/spreadsheets/d/1cchzP9dlTZ3WXQTfYNhh3avxoLipqHN75v1Tb86uhHo/edit?gid=0#gid=0)）：评测移动端 GUI agent 的任务完成与泛化；核心思想是用真实 Android 模拟器与可动态实例化任务，把手机操作标准化为可执行 benchmark。
+- [VideoGUI: A Benchmark for GUI Automation from Instructional Videos](https://arxiv.org/abs/2406.10227)：通过基准、数据集或评测协议评估计算机使用 GUI能力。
+- [GUI-WORLD: A Dataset for GUI-oriented Multimodal LLM-based Agents](https://arxiv.org/abs/2406.10819)：围绕 GUI-WORLD: A Dataset for GUI-oriented Multimodal LLM-based Agents 补充可复用的GUI 计算机使用基准、数据集或评测协议。
+- [Vision-driven Automated Mobile GUI Testing via Multimodal Large Language Model](https://arxiv.org/abs/2407.03037)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充计算机与图形界面使用方向的基准覆盖。
+- [Systematic Categorization, Construction and Evaluation of New Attacks against Multi-modal Mobile GUI Agents](https://arxiv.org/abs/2407.09295)：补充面向GUI、移动端、屏幕或网页导航智能体能力的基准、数据集、指标或评测协议。
+- [AMEX: Android Multi-annotation Expo Dataset for Mobile GUI Agents](https://arxiv.org/abs/2407.17490)：《AMEX: Android Multi-annotation Expo Dataset for Mobile GUI Agents》为Computer Use GUI补充基准、数据集、指标或评测协议。
+- [WindowsAgentArena](https://arxiv.org/abs/2409.08264)（[项目页与结果](https://microsoft.github.io/WindowsAgentArena/)，[ICML 2025 论文](https://proceedings.mlr.press/v267/bonatti25a.html)，[开源代码](https://github.com/microsoft/WindowsAgentArena)）：评测 Windows 生态中的 GUI agent 与 skill 组合；核心思想是让真实桌面任务在统一环境里可复现、可回放、可自动比较。
+- [WebQuest: A Benchmark for Multimodal QA on Web Page Sequences](https://arxiv.org/abs/2409.13711)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充计算机与图形界面使用方向的基准覆盖。
+- [IW-Bench: Evaluating Large Multimodal Models for Converting Image-to-Web](https://arxiv.org/abs/2409.18980)：IW-Bench: Evaluating Large Multimodal Models for Converting Image-to-Web 补充计算机与图形界面使用方向的基准、数据集、指标或评测协议。
+- [From Interaction to Impact: Towards Safer AI Agent Through Understanding and Evaluating Mobile UI Operation Impacts](https://arxiv.org/abs/2410.09006)：From Interaction to Impact: Towards Safer AI Agent Through Understanding and Evaluating Mobile UI Operation Impacts 补充计算机与图形界面使用方向的基准、数据集、指标或评测协议。
+- [SPA-Bench: A Comprehensive Benchmark for SmartPhone Agent Evaluation](https://arxiv.org/abs/2410.15164)：围绕 SPA-Bench: A Comprehensive Benchmark for SmartPhone Agent Evaluation 补充可复用的GUI 计算机使用基准、数据集或评测协议。
+- [Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping](https://arxiv.org/abs/2410.16232)：通过基准、数据集或评测协议评估计算机使用 GUI能力。
+- [Toward cultural interpretability: A linguistic anthropological framework for describing and evaluating large language models](https://arxiv.org/abs/2411.05200)：补充面向GUI、移动端、屏幕或网页导航智能体能力的基准、数据集、指标或评测协议。
+- [ViSTa Dataset: Do vision-language models understand sequential tasks?](https://arxiv.org/abs/2411.13211)：评测 ViSTa Dataset: Do vision-language models understand sequential tasks?，为 Computer Use GUI 补充可复用的数据集、基准、指标或评测协议。
+- [DroidCall: A Dataset for LLM-powered Android Intent Invocation](https://arxiv.org/abs/2412.00402)：评测，主要面向 Computer Use (GUI)。
 - [A3](https://arxiv.org/abs/2501.01149)（[开源代码](https://github.com/YuxiangChai/A3)）：评测移动 GUI agent 在真实 Android 任务中的关键状态达成；核心思想是用 essential-state procedural evaluation 规避只看最后截图或静态 app 的脆弱性，更直接检查任务中必须发生的状态转移。
+- [AutoGUI: Scaling GUI Grounding with Automatic Functionality Annotations from LLMs](https://arxiv.org/abs/2502.01977)：AutoGUI 通过自动功能标注扩展 GUI grounding 数据/评测，适合 computer-use GUI benchmark 线。
 - [WorldGUI](https://arxiv.org/abs/2502.08047)（[开源代码](https://github.com/showlab/WorldGUI)）：评测桌面 GUI agent 从任意中间状态启动时的自动化能力；核心思想是把真实用户常见的“半完成/非默认界面”纳入任务初态，检验 planning 与恢复能力而不是只测标准起点。
+- [Bi-Fact: A Bidirectional Factorization-based Evaluation of Intent Extraction from UI Trajectories](https://arxiv.org/abs/2502.13149)：评测 GUI 轨迹中的意图抽取；核心思想是把用户意图分解为原子事实，并评分系统是否从 UI 历史中恢复正确行动目标。
 - [MM-BrowseComp](https://arxiv.org/abs/2502.14595)：评测多模态浏览与信息获取（含 GUI/网页交互成分）；核心思想是把“看、点、读、写”纳入同一条可执行轨迹并可评分。
+- [Cheems: A Practical Guidance for Building and Evaluating Chinese Reward Models from Scratch](https://arxiv.org/abs/2502.17173)：补充面向GUI、移动端、屏幕或网页导航智能体能力的基准、数据集、指标或评测协议。
+- [WebGames: Challenging General-Purpose Web-Browsing AI Agents](https://arxiv.org/abs/2502.18356)：可作为计算机使用与 GUI agent的Bench候选；核心关注“Challenging General-Purpose Web-Browsing AI Agents”。
+- [Programming with Pixels: Can Computer-Use Agents do Software Engineering?](https://arxiv.org/abs/2502.18525)：Programming with Pixels 检验 computer-use agents 能否完成软件工程任务，适合 GUI/Computer Use Bench。
+- [AutoEval: A Practical Framework for Autonomous Evaluation of Mobile Agents](https://arxiv.org/abs/2503.02403)：可作为计算机使用与 GUI agent的Bench候选；核心关注“A Practical Framework for Autonomous Evaluation of Mobile Agents”。
+- [WinClick: GUI Grounding with Multimodal Large Language Models](https://arxiv.org/abs/2503.04730)：WinClick 面向 GUI grounding，评测/训练 MLLM 点击定位能力，适合 GUI benchmark。
+- [SmartBench: Is Your LLM Truly a Good Chinese Smartphone Assistant?](https://arxiv.org/abs/2503.06029)：它评测 GUI、移动端、屏幕理解或 computer-use agent 能力，适合补充 computer-use Bench。
 - [BEARCUBS](https://arxiv.org/abs/2503.07919)（[项目页](https://bear-cubs.github.io/)）：评测 computer-using web agent 在 live web 中完成信息查找、浏览与多模态交互的能力；核心思想是用会持续变化的真实网页内容、视频理解和 3D 导航等任务，避免纯文本检索绕过真实网页操作。
-- [ScreenSpot-Pro](https://arxiv.org/abs/2504.07981)：评测专业高分辨率截图上的 GUI grounding。核心思想：要求模型按自然语言指令定位很小的 UI 目标，压力测试高分辨率感知和精确坐标定位，而不只看任务级成功率。
+- [DeskVision: Large Scale Desktop Region Captioning for Advanced GUI Agents](https://arxiv.org/abs/2503.11170)：面向 GUI agent 的桌面区域描述数据。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction](https://arxiv.org/abs/2503.15661)：评测桌面 GUI 感知、grounding 与动作预测；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [On the Robustness of GUI Grounding Models Against Image Attacks](https://arxiv.org/abs/2504.04716)：图像攻击下 GUI grounding 的鲁棒性评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [ScreenSpot-Pro](https://arxiv.org/abs/2504.07981)（[leaderboard](https://gui-agent.github.io/grounding-leaderboard/screenspot)）：评测专业高分辨率截图上的 GUI grounding。核心思想：要求模型按自然语言指令定位很小的 UI 目标，压力测试高分辨率感知和精确坐标定位，而不只看任务级成功率。
+- [Explorer: Robust Collection of Interactable GUI Elements](https://arxiv.org/abs/2504.09352)：补充面向计算机 GUI 使用能力的可复用基准、数据集、测试平台或评测协议。
 - [RealWebAssist](https://arxiv.org/abs/2504.10445)（[开源代码](https://github.com/SCAI-JHU/RealWebAssist)）：评测真实用户长程网页协助；核心思想是把模糊、会变化、需要分阶段确认的用户指令组织成长序列任务，补足一次性网页 benchmark 对真实协助场景的覆盖不足。
+- [The Obvious Invisible Threat: LLM-Powered GUI Agents' Vulnerability to Fine-Print Injections](https://arxiv.org/abs/2504.11281)：评估 GUI agent 面对细小文字提示注入时的脆弱性。
 - [REAL](https://arxiv.org/abs/2504.11543)（[开源代码](https://github.com/agi-inc/REAL)）：评测自主 agent 在真实网站确定性仿真中的表现。核心思想：用常见网站的高保真可重置副本和多轮实用任务，保留真实浏览器交互，同时让复位、评分和安全控制可复现。
+- [LearnAct: Few-Shot Mobile GUI Agent with a Unified Demonstration Benchmark](https://arxiv.org/abs/2504.13805)：LearnAct 包含移动 GUI agent 的统一 demonstration benchmark，适合 Computer Use Bench。
+- [Toward a Human-Centered Evaluation Framework for Trustworthy LLM-Powered GUI Agents](https://arxiv.org/abs/2504.17934)：面向 GUI agent 的可信人本评测框架；核心思想是在最终任务成功率之外评估计算机使用行为的可信性。
 - [TurkingBench](https://aclanthology.org/2025.naacl-long.188/)（[项目页](https://github.com/turkingbench/turkingbench.github.io)）：评测 web agent 在众包式网页任务上的表现。核心思想：用人工任务网站和多模态上下文测试 web agent 是否能遵循真实任务说明，而不是只导航固定 demo 站点。
 - [OSUniverse](https://arxiv.org/abs/2505.03570)（[开源代码](https://github.com/agentsea/osuniverse)）：评测复杂、多模态、桌面导向 GUI 导航任务；核心思想是用跨应用、跨模态的真实桌面任务补足 OSWorld 之后对视觉理解、工具选择和长链路导航的综合压力测试。
+- [Mobile-Bench-v2: A More Realistic and Comprehensive Benchmark for VLM-based Mobile Agents](https://arxiv.org/abs/2505.11891)：更真实的 VLM 移动 agent 评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [OSWorld-G](https://arxiv.org/abs/2505.13227)（[开源代码](https://github.com/xlang-ai/osworld-g)，[数据集](https://huggingface.co/datasets/xlangai/Jedi)）：评测 computer-use agent 的 GUI grounding。核心思想：通过 UI 交互数据的分解与合成，让 grounding 依赖软件常识、布局理解和细粒度操作，而不只是短 referring expression 定位。
 - [RedTeamCUA / RTC-Bench](https://arxiv.org/abs/2505.21936)（[项目页](https://osu-nlp-group.github.io/RedTeamCUA)）：评测混合 Web-OS 环境中 computer-use agent 的间接提示注入风险；核心思想是用真实 GUI/网页动作空间和红队样例暴露跨应用执行时的攻击面。
-- [WebChoreArena](https://arxiv.org/abs/2506.01952)（[开源代码](https://github.com/WebChoreArena/WebChoreArena)）：评测网页 agent 处理繁琐复杂网页任务的能力；核心思想是把人类也会觉得重复、分支多、容易出错的 web chores 做成可执行 benchmark，放大鲁棒性和耐心执行问题。
+- [Open CaptchaWorld: A Comprehensive Web-based Platform for Testing and Benchmarking Multimodal LLM Agents](https://arxiv.org/abs/2505.24878)：在交互式 CAPTCHA 上评测多模态 web agents；核心思想是测试视觉推理和多步浏览器操作，而不只是静态感知。
+- [FormFactory: An Interactive Benchmarking Suite for Multimodal Form-Filling Agents](https://arxiv.org/abs/2506.01520)：面向多模态表单填写 agent 的交互式 benchmark suite。核心思想是评测 agent 能否通过视觉理解、字段映射和键鼠动作完成真实在线表单。
+- [WebChoreArena](https://arxiv.org/abs/2506.01952)（[leaderboard](https://docs.google.com/spreadsheets/d/1RGyJ0QOxGj196KTfUK0SZeVl5IkM928_38wzIkQVxCs/edit?usp=sharing)，[开源代码](https://github.com/WebChoreArena/WebChoreArena)）：评测网页 agent 处理繁琐复杂网页任务的能力；核心思想是把人类也会觉得重复、分支多、容易出错的 web chores 做成可执行 benchmark，放大鲁棒性和耐心执行问题。
 - [VPI-Bench](https://arxiv.org/abs/2506.02456)（数据集：[VPI-Bench/vpi-bench](https://huggingface.co/datasets/VPI-Bench/vpi-bench)）：评测 computer-use / browser-use agent 面对视觉提示注入攻击的安全性；核心思想是把恶意指令嵌入网页视觉内容中，检查 agent 是否会把屏幕文字误当作用户指令执行。
+- [DeepShop](https://arxiv.org/abs/2506.02839)：评测 web agent 在复杂在线购物任务中的表现。核心思想是围绕商品属性、筛选器和排序偏好扩展真实购物查询，并同时评估细粒度约束与整体任务成功率。
+- [macOSWorld: A Multilingual Interactive Benchmark for GUI Agents](https://arxiv.org/abs/2506.04135)：评测macOS 应用中的多语言交互式 GUI agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Atomic-to-Compositional Generalization for Mobile Agents with A New Benchmark and Scheduling System](https://arxiv.org/abs/2506.08972)：评测移动 agent 的原子到组合泛化；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [AgentSynth](https://arxiv.org/abs/2506.14205)：用可扩展合成任务和轨迹评测通用 computer-use agent；核心思想是把容易生成的子任务组合成长程任务，并通过子任务数量控制难度，观察任务变长时成功率急剧下降。
 - [GUI-Robust](https://arxiv.org/abs/2506.14477)（[开源代码](https://github.com/chessbean1/GUI-Robust)）：评测 GUI agent 面对真实异常场景时的鲁棒性；核心思想是在常规 GUI 轨迹中加入遮挡、误触、弹窗和环境异常等干扰，观察 agent 是否能从非理想界面状态中恢复。
 - [OS-Harm](https://arxiv.org/abs/2506.14866)（[开源代码](https://github.com/tml-epfl/os-harm)）：评测 computer-use agent 在操作系统任务中的安全性；核心思想是基于 OSWorld 覆盖恶意用户请求、提示注入和模型误行为三类风险，检查 agent 是否会在邮件、浏览器、代码编辑器等应用中执行危险动作。
+- [Understanding GUI Agent Localization Biases through Logit Sharpness](https://arxiv.org/abs/2506.15425)：通过 logit sharpness 分析 GUI 智能体定位偏差。
 - [OSWorld-Human](https://arxiv.org/abs/2506.16042)（[OSWorld-Human Efficiency Leaderboard](https://github.com/WukLab/osworld-human)；[开源代码](https://github.com/WukLab/osworld-human)）：评测 computer-use agent 相对人类参考轨迹的效率；核心思想是在 OSWorld 上加入人工标注轨迹，用 weighted excess steps 等指标区分“能完成”和“以合理步骤完成”。
+- [Toward Autonomous UI Exploration: The UIExplorer Benchmark](https://arxiv.org/abs/2506.17779)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [UI-Vision](https://proceedings.mlr.press/v267/nayak25a.html)（[开源代码](https://github.com/uivision/UI-Vision)）：评测桌面中心的 GUI 视觉感知与交互。核心思想：隔离 GUI 感知和元素理解瓶颈，这些瓶颈即使在高层计划正确时也会限制动作型桌面 agent。
+- [WinSpot: GUI Grounding Benchmark with Multimodal Large Language Models](https://doi.org/10.18653/v1/2025.acl-short.85)：多模态大模型 GUI grounding 评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
 - [AndroidLab](https://aclanthology.org/2025.acl-long.107/)：评测系统化多模态框架下的 Android 自主 agent。核心思想：统一环境、动作空间、训练和 benchmark 协议，使移动端 agent 能超越临时 app 操作任务进行比较。
 - [TransBench](https://aclanthology.org/2025.findings-acl.645/)：评测 GUI agent 在动态数字环境中的迁移性。核心思想：跨变化且相互连接的平台测试 grounding 和执行，而不是假设单一冻结 app 状态。
+- [WebArXiv](https://arxiv.org/abs/2507.00938)：评测多模态 web agent 在静态、可复现 arXiv 任务上的表现；核心思想：使用固定网页快照、确定性真值和标准化动作轨迹，在保留真实网站导航压力的同时降低 live web 变化带来的不稳定性。
 - [CRAB](https://aclanthology.org/2025.findings-acl.1113/)：评测跨网页、桌面和移动环境的多模态语言模型 agent。核心思想：提供带图结构细粒度评测的跨环境 benchmark，避免 GUI-agent 进展绑定到单一界面家族。
+- [OS-MAP: How Far Can Computer-Using Agents Go in Breadth and Depth?](https://arxiv.org/abs/2507.19132)：评测computer-use agent 在任务广度、深度和异质性上的能力；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [MMBench-GUI](https://arxiv.org/abs/2507.19478)（[开源代码](https://github.com/open-compass/MMBench-GUI)）：评测 Windows、macOS、Linux、iOS、Android 与 Web 的跨平台 GUI agent；核心思想是把 GUI 内容理解、元素定位、任务自动化和任务协作分层评估，并用效率-质量面积指标衡量执行冗余。
+- [FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](https://arxiv.org/abs/2507.21071)：FingerTip 20K 评测 proactive/personalized mobile LLM agents，匹配移动 GUI agent benchmark。
+- [NaturalGAIA: A Verifiable Benchmark and Hierarchical Framework for Long-Horizon GUI Tasks](https://arxiv.org/abs/2508.01330)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [MVISU-Bench: Benchmarking Mobile Agents for Real-World Tasks by Multi-App, Vague, Interactive, Single-App and Unethical Instructions](https://arxiv.org/abs/2508.09057)：用多类真实指令评测移动端 agent。核心思想：在同一移动任务集中覆盖多应用、模糊、交互式、单应用和不道德请求。
 - [FineState-Bench](https://arxiv.org/abs/2508.09241)（[开源代码](https://github.com/AnonymousThewarehouse/FineState-Bench)，[数据集](https://huggingface.co/datasets/Willtime2006/Static-FineBench)）：评测 GUI agent 的细粒度状态控制；核心思想是把感知、定位、操作和状态达成拆成多阶段指标，专门暴露真实 GUI 操作中精细控制与视觉定位瓶颈。
+- [WebMall - A Multi-Shop Benchmark for Evaluating Web Agents](https://arxiv.org/abs/2508.13024): 提供离线多商店 web agent 基准，覆盖跨店比价、异构商品检索、替代品/互补品搜索和 checkout。
+- [You Don't Know Until You Click:Automated GUI Testing for Production-Ready Software Evaluation](https://arxiv.org/abs/2508.14104)：面向 production-ready software evaluation 的 GUI 测试 benchmark。核心思想是要求自动化 agent 点击真实界面，发现不交互就无法暴露的问题。
+- [A Functionality-Grounded Benchmark for Evaluating Web Agents in E-commerce Domains](https://arxiv.org/abs/2508.15832)：基于网站功能的电商网页 agent 评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [InquireBench / InquireMobile](https://arxiv.org/abs/2508.19679)：评估移动 GUI agent 是否会在关键决策点主动请求人工协助。核心思想是把主动询问和行动前确认视为安全相关能力，而不是默认完全自动化总是合理。
+- [UI-Bench: A Benchmark for Evaluating Design Capabilities of AI Text-to-App Tools](https://arxiv.org/abs/2508.20410)：评测 AI text-to-app 工具的界面设计能力，适合 GUI 与应用生成 benchmark。
+- [FlashAdventure: A Benchmark for GUI Agents Solving Full Story Arcs in Diverse Adventure Games](https://arxiv.org/abs/2509.01052)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [IndusGCC: A Data Benchmark and Evaluation Framework for GUI-Based General Computer Control in Industrial Automation](https://arxiv.org/abs/2509.01199)：面向工业自动化中 GUI 通用计算机控制的数据基准和评测框架；核心思想是在带有领域状态与控制约束的工业界面上测试 GUI agent。
+- [MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents](https://arxiv.org/abs/2509.06477)：可作为计算机使用与 GUI agent的Bench候选；核心关注“A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents”。
+- [Benchmarking MLLM-based Web Understanding: Reasoning, Robustness and Safety](https://arxiv.org/abs/2509.21782)：该网页理解 benchmark 评测 MLLM 对页面结构和可操作网页元素的推理、鲁棒性与安全性。
+- [IWR-Bench: Can LVLMs reconstruct interactive webpage from a user interaction video?](https://arxiv.org/abs/2509.24709)：评测根据用户交互视频重建交互式网页；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [SCUBA](https://arxiv.org/abs/2509.26506)（[开源代码](https://github.com/SalesforceAIResearch/SCUBA)）：评测 Salesforce 企业软件中的 computer-use 能力；核心思想是把 CRM 式表单、记录、权限和业务对象放进真实企业 GUI 任务，强调专业 SaaS 操作中的状态一致性与业务规则遵循。
 - [UINavBench](https://openaccess.thecvf.com/content/ICCV2025/html/Agrawal_UINavBench_A_Framework_for_Comprehensive_Evaluation_of_Interactive_Digital_Agents_ICCV_2025_paper.html)：评什么：移动界面导航中的交互式数字 agent。核心思想：为 UI 环境中的任务执行提供综合评估框架，让导航和动作 grounding 不只停留在静态截图指点。
+- [Agent-ScanKit: Unraveling Memory and Reasoning of Multimodal Agents via Sensitivity Perturbations](https://arxiv.org/abs/2510.00496)：用视觉、文本和结构扰动诊断多模态 GUI agent 的记忆与推理。
+- [Ground-Truth Alignment for mobile-use agents](https://arxiv.org/abs/2510.02204)：评测移动端 agent 的 chain-of-thought 是否与 ground-truth action 对齐。核心思想是把看似合理的推理和真正可执行的动作对齐分开评估，暴露 VLM agent 说一套、做一套带来的过度信任风险。
 - [BrowserArena](https://arxiv.org/abs/2510.02418)：评测真实开放网页上的 web agent 导航；核心思想是收集用户提交的 live web 任务并用 arena 式比较与逐步人工反馈定位 captcha、弹窗和直接 URL 导航等真实网页失败模式。
+- [WAREX](https://arxiv.org/abs/2510.03285)：评什么：既有 benchmark 上 web agent 面对真实不稳定性的可靠性。核心思想：在 WebArena、WebVoyager 和 REAL 中注入客户端、服务端、网络、站点修改及攻击式扰动，测量离开稳定容器后名义成功率会下降多少。
+- [MacroBench: A Novel Testbed for Web Automation Scripts via Large Language Models](https://arxiv.org/abs/2510.04363)：评测从自然语言生成浏览器自动化宏脚本；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [MLLM as a UI Judge](https://arxiv.org/abs/2510.08783)：评估多模态大模型能否预测人类对用户界面的感知。核心思路是把界面质量与主观感知判断转化为可比较的评测信号，补充仅看元素定位或任务完成率的 GUI 评测。
+- [WARC-Bench: Web Archive Based Benchmark for GUI Subtask Executions](https://arxiv.org/abs/2510.09872)：用 Web ARChive 文件构造沙盒网页，评测多模态 agent 的短程 GUI 子任务执行。
+- [ColorBench: Benchmarking Mobile Agents with Graph-Structured Framework for Complex Long-Horizon Tasks](https://arxiv.org/abs/2510.14621)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [AndroidControl-Curated: Revealing the True Potential of GUI Agents through Benchmark Purification](https://arxiv.org/abs/2510.18488)：补充computer use gui方向的基准或评测套件，核心围绕《AndroidControl-Curated: Revealing the True Potential of GUI Agents through Benchmark Purification》。
+- [CUARewardBench: A Benchmark for Evaluating Reward Models on Computer-using Agent](https://arxiv.org/abs/2510.18596)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [OSWorld-MCP](https://arxiv.org/abs/2510.24563)（[项目页](https://osworld-mcp.github.io/)）：评测 computer-use agent 在 GUI 操作之外调用 MCP 工具的能力；核心思想是在真实 OSWorld 式环境中引入 158 个跨常用应用的 MCP 工具，并同时报告任务准确率、工具调用率和平均完成步数。
+- [GUI Knowledge Bench: Revealing the Knowledge Gap of VLMs in GUI Tasks](https://arxiv.org/abs/2510.26098)：评测跨平台和应用的 GUI 知识缺口；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Can Agent Conquer Web? Exploring the Frontiers of ChatGPT Atlas Agent in Web Games](https://arxiv.org/abs/2510.26298)：用 Web games 探索和评测 ChatGPT Atlas 类 Web agent 能力。
+- [GUI-360\°: A Comprehensive Dataset and Benchmark for Computer-Using Agents](https://arxiv.org/abs/2511.04307)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption through Empirical and Theoretical Analysis](https://arxiv.org/abs/2511.04481)：通过经验和理论能耗估计评测 sustainable web agents。
+- [DigiData: Training and Evaluating General-Purpose Mobile Control Agents](https://arxiv.org/abs/2511.07413)：DigiData 同时提供移动控制 agent 的训练与评估数据，适合 Computer Use Bench。
+- [ProBench: Benchmarking GUI Agents with Accurate Process Information](https://arxiv.org/abs/2511.09157)：ProBench 评测 GUI agents 的准确过程信息，区别于编程 ProBench，适合 computer-use GUI benchmark。
+- [UI-CUBE](https://arxiv.org/abs/2511.17131)：评估企业级 computer-use agent，重点超越最终任务准确率。核心思想：加入界面变化、多分辨率测试、自动机式验证和运行可靠性检查，覆盖简单 UI 操作与复杂企业工作流。
+- ["Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents](https://arxiv.org/abs/2511.20067)：为 computer-use agents 的自主任务完成提供 vision-based judge。
+- [CANVAS: A Benchmark for Vision-Language Models on Tool-Based User Interface Design](https://arxiv.org/abs/2511.20737)：评测 CANVAS: A Benchmark for Vision-Language Models on Tool-Based User Interface Design，为 Computer Use GUI 补充可复用的数据集、基准、指标或评测协议。
+- [OpenApps](https://arxiv.org/abs/2511.20766)：评估 UI-agent 在 app 变体中的可靠性。核心思想是提供可大规模改变外观和内容的轻量可配置 app，测试 agent 是否能超越单一固定环境实例保持可靠。
+- [MPR-GUI: Benchmarking and Enhancing Multilingual Perception and Reasoning in GUI Agents](https://arxiv.org/abs/2512.00756)：它评测 GUI、移动端、屏幕理解或 computer-use agent 能力，适合补充 computer-use Bench。
+- [Evaluating Long-Context Reasoning in LLM-Based WebAgents](https://arxiv.org/abs/2512.04307)：可作为计算机使用与 GUI agent的Bench候选；核心关注“Evaluating Long-Context Reasoning in LLM-Based WebAgents”。
+- [Zoom in, Click out: Unlocking and Evaluating the Potential of Zooming for GUI Grounding](https://arxiv.org/abs/2512.05941)：可作为计算机使用与 GUI agent的Bench候选；核心关注“Unlocking and Evaluating the Potential of Zooming for GUI Grounding”。
+- [MobiBench: Multi-Branch, Modular Benchmark for Mobile GUI Agents](https://arxiv.org/abs/2512.12634)：补充computer use gui方向的基准或评测套件，核心围绕《MobiBench: Multi-Branch, Modular Benchmark for Mobile GUI Agents》。
+- [MobileWorldBench: Towards Semantic World Modeling For Mobile Agents](https://arxiv.org/abs/2512.14014): 评估 mobile GUI agent 的语义 world model，并发布 MobileWorld 数据和可接入规划框架的 world-model 方法。
+- [VenusBench-GD: A Comprehensive Multi-Platform GUI Benchmark for Diverse Grounding Tasks](https://arxiv.org/abs/2512.16501)：VenusBench-GD 是多平台 GUI grounding benchmark，能直接落到 Computer Use Bench。
 - [MobileWorld](https://arxiv.org/abs/2512.19432)（[开源代码](https://github.com/Tongyi-MAI/MobileWorld)）：评测自主移动 agent 在 agent-user 交互与 MCP 增强环境中的任务完成；核心思想是把移动端 GUI 操作、用户澄清和外部工具调用放进统一 benchmark，补足 AndroidWorld 的静态任务边界。
-- [macOSWorld](https://openreview.net/forum?id=YJxGJP8feU)（[项目页](https://macos-world.github.io/)，[开源代码](https://github.com/showlab/macosworld)）：评测 macOS 上的交互式 GUI agent。核心思想：覆盖原生应用中的多语言任务，补足 Windows 或 Ubuntu 中心 benchmark 之外的 OS 生态。
+- [AndroidLens: Long-latency Evaluation with Nested Sub-targets for Android GUI Agents](https://arxiv.org/abs/2512.21302)：用带嵌套子目标的长延迟移动任务评测 Android GUI agent。
+- [Comparative Analysis of Gemini 2.0 Flash, Microsoft Copilot, and ChatGPT-4o’s Accuracy in Translating UI Images into Front-End Web Code](https://doi.org/10.1016/j.procs.2025.09.026)：比较多模态模型将界面图像转换为前端网页代码的能力。
+- [UINavBench: A Framework for Comprehensive Evaluation of Interactive Digital Agents](https://doi.org/10.1109/iccv51701.2025.02168)：评测交互式数字 agent 的导航与操作；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [D-GARA](https://arxiv.org/abs/2511.16590)：评测 Android GUI agent 在真实异常下的鲁棒性。核心思想是在移动端任务中注入中断、弹窗、权限对话框和其他异常 UI 状态，测试 agent 的恢复能力，而不是只看理想静态任务完成。
+- [Hidden Forms: A Dataset to Fill Masked Interfaces from Language Commands](https://doi.org/10.18653/v1/2025.realm-1.7)：根据语言命令填充被遮蔽界面的数据集；核心思想是测试 agent 是否能从指令推断缺失 UI 字段并执行表单填写。
+- [Evaluating LLMs for Multimodal GUI Test Generation in Android Applications](https://doi.org/10.5753/sast.2025.13852)：评估 LLM 在 Android 应用多模态 GUI 测试生成中的能力；核心思想是测试模型能否把 GUI 上下文转化为有效的移动端测试动作。
 - [D-GARA](https://ojs.aaai.org/index.php/AAAI/article/view/38795)：评什么：GUI agent 在动态真实异常中的鲁棒性。核心思想：把异常处理本身作为 benchmark，测试 agent 是否能从界面扰动中恢复，而不只完成理想路径任务。
+- [KGCE](https://arxiv.org/abs/2601.01366)：评测跨平台教育软件 agent，覆盖 Windows、Android 和协同任务，并通过知识增强 dual-graph evaluator 分解目标、细粒度验证任务完成情况。
+- [ProSoftArena](https://arxiv.org/abs/2601.02399)（[项目页](https://prosoftarena.github.io)）：在专业软件环境中评测多模态 agent，包含跨 6 个学科、13 个应用的 436 个真实任务层级，并使用可执行的真实计算机环境评测。
+- [WebGym](https://arxiv.org/abs/2601.02439)：大规模评测和训练 visual web agents；核心思想是提供近 30 万个真实网页任务、rubric-based evaluation 和高吞吐 rollout 系统，用于多网站强化学习。
+- [The Behavioral Fabric of LLM-Powered GUI Agents: Human Values and Interaction Outcomes](https://arxiv.org/abs/2601.16356)：面向 LLM-powered GUI agents 的行为评测。核心思想是研究 GUI agent 动作如何影响人类价值和交互结果，而不只看任务完成率。
+- [MobileBench-OL](https://arxiv.org/abs/2601.20335)：评测中文真实 app 环境中的移动 GUI agent。核心思想：在 80 个 app 上构建 1,080 个任务，覆盖任务执行、推理、探索和噪声鲁棒性，并通过 reset 机制支持可重复的在线自动评测。
 - [OS-Marathon](https://arxiv.org/abs/2601.20650)（[项目页](https://os-marathon.github.io/)）：评测 computer-use agent 的长程重复 GUI 任务；核心思想是让 agent 在长时间、重复但状态会累积变化的桌面操作中保持节奏、记忆和错误恢复能力。
+- [Continual GUI Agents](https://arxiv.org/abs/2601.20732)：变化 GUI 环境中的持续 agent 适应评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [VAF](https://arxiv.org/abs/2601.21961)：评测 UI 设计中的非恶意视觉属性因素如何影响 web-agent 决策。核心思想：生成受控网页变体并比较 agent 行为，把普通视觉偏好/鲁棒性影响与对抗攻击区分开。
+- [SimGym: Traffic-Grounded Browser Agents for Offline A/B Testing in E-Commerce](https://arxiv.org/abs/2602.01443)：面向电商 browser agent 的 traffic-grounded benchmark。核心思想是用离线 A/B 风格模拟，根据真实用户流量与网站结果评估浏览器 agent 行为。
+- [GuideWeb: A Benchmark for Automatic In-App Guide Generation on Real-World Web UIs](https://arxiv.org/abs/2602.01917)：面向GUI 计算机使用智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“GuideWeb: A Benchmark for Automatic In-App Guide Generation on Real-World Web UIs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [MemGUI-Bench](https://arxiv.org/abs/2602.06075)（[开源代码](https://github.com/lgy0404/MemGUI-Bench)）：评测移动 GUI agent 的记忆能力；核心思想是用跨会话、跨应用和动态环境任务专门测 memory retention 与 cross-session learning。
+- [GEBench: Benchmarking Image Generation Models as GUI Environments](https://arxiv.org/abs/2602.09007)：评什么：把图像生成模型作为 GUI 环境来评测 GUI agent。
+- [A11y-CUA Dataset: Characterizing the Accessibility Gap in Computer Use Agents](https://arxiv.org/abs/2602.09310)：A11y-CUA 数据集刻画 computer-use agents 的无障碍差距，适合 Computer Use Bench。
+- [See, Plan, Snap: Evaluating Multimodal GUI Agents in Scratch](https://arxiv.org/abs/2602.10814)：评测在 Scratch 中构造程序的多模态 GUI agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [AmbiBench: Benchmarking Mobile GUI Agents Beyond One-Shot Instructions in the Wild](https://arxiv.org/abs/2602.11750)：评测模糊指令和意图对齐下的移动 GUI agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [AgenticShop](https://arxiv.org/abs/2602.12315)：评测开放网页上的个性化商品筛选。核心思想：要求 agent 在嘈杂电商信息中浏览、推断用户偏好并生成可核验购物建议，而不只是在固定网站上导航。
+- [AutoWebWorld: Synthesizing Infinite Verifiable Web Environments via Finite State Machines](https://arxiv.org/abs/2602.14296)：基于有限状态机合成可验证网页环境。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Persona2Web](https://arxiv.org/abs/2602.17003)：评测开放网页上的 personalized web agents；核心思想是把长期用户历史与含糊查询配对，要求 agent 根据偏好和上下文消歧，而不是只依赖显式指令。
+- [ProactiveMobile](https://arxiv.org/abs/2602.21858)：评测移动设备上的主动智能，把 mobile-agent 评测从被动指令执行扩展到主动协助。
+- [SUPERGLASSES: Benchmarking Vision Language Models as Intelligent Agents for AI Smart Glasses](https://arxiv.org/abs/2602.22683)：它评测 GUI、移动端、屏幕理解或 computer-use agent 能力，适合补充 computer-use Bench。
+- [On the Suitability of LLM-Driven Agents for Dark Pattern Audits](https://arxiv.org/abs/2603.03881)：评什么：评测 LLM 驱动 agent 的 dark pattern 审计能力；核心思想是测试自主网页导航能否识别胁迫性或操纵性界面设计。
 - [TimeWarp](https://arxiv.org/abs/2603.04949)：评测 web agent 对网站变化的鲁棒性。核心思想：在容器化历史 UI、设计和布局版本中回放任务，避免 agent 只适配一个冻结网页版本。
 - [OSExpert-Eval](https://arxiv.org/abs/2603.07978)：评测 computer-use agent 能否高效掌握专业 GUI 技能。核心思想：用接近专家分解和细粒度动作要求的任务比较 agent，暴露其在陌生界面上的迁移慢和探索低效问题。
+- [PIRA-Bench: A Transition from Reactive GUI Agents to GUI-based Proactive Intent Recommendation Agents](https://arxiv.org/abs/2603.08013)：GUI agent 主动意图推荐评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [CUAAudit: Meta-Evaluation of Vision-Language Models as Auditors of Autonomous Computer-Use Agents](https://arxiv.org/abs/2603.10577)：对视觉语言模型作为 autonomous computer-use agent 审计者的能力做元评测；核心思想是检验外部 VLM auditor 是否真的能可靠检查 CUA 行为。
+- [GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](https://arxiv.org/abs/2603.15039)：评测从感知到执行的中文移动 GUI agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [MedSPOT: A Workflow-Aware Sequential Grounding Benchmark for Clinical GUI](https://arxiv.org/abs/2603.19993)：MedSPOT 是临床软件中的顺序 GUI grounding benchmark，尽管领域是医疗，但能力轴是 GUI 操作。
+- [Ego2Web](https://arxiv.org/abs/2603.22529)：评测由第一视角视频 grounding 的网页 agent。核心思想：把 egocentric video perception 与在线网页执行任务配对，要求 agent 先识别用户周围的物体和情境，再完成相关网页操作。
 - [CUA-Suite / VideoCUA](https://arxiv.org/abs/2603.24440)：为 computer-use agent 提供大规模真人视频演示和密集标注。核心思想：用连续的专业桌面工作流视频评测和训练桌面 agent，而不是只依赖稀疏截图。
+- [WebTestBench](https://arxiv.org/abs/2603.25226)：评测 computer-use agents 的端到端自动化网页测试能力，连接浏览器操作与软件测试目标。
+- [Vision2Web: A Hierarchical Benchmark for Visual Website Development with Agent Verification](https://arxiv.org/abs/2603.26648)：评什么：评测从视觉需求到网站实现的 agent 能力，并引入分层验证。
+- ["What Did It Actually Do?": Understanding Risk Awareness and Traceability for Computer-Use Agents](https://arxiv.org/abs/2603.28551)：研究 computer-use agent 的风险意识与可追踪性；核心思想是评估 CUA 轨迹是否说明了 agent 做了什么、为什么做以及引入了哪些风险。
+- [PSPA-Bench: A Personalized Benchmark for Smartphone GUI Agent](https://arxiv.org/abs/2603.29318)：PSPA-Bench 评测个性化智能手机 GUI agent，任务边界明确，适合 Computer Use Bench。
+- [GUIDE: Interpretable GUI Agent Evaluation via Hierarchical Diagnosis](https://arxiv.org/abs/2604.04399)：它评测 GUI、移动端、屏幕理解或 computer-use agent 能力，适合补充 computer-use Bench。
+- [Comparing Human Oversight Strategies for Computer-Use Agents](https://arxiv.org/abs/2604.04918)：补充计算机使用方向的基准、数据集、指标或评测协议。
+- [VenusBench-Mobile: A Challenging and User-Centric Benchmark for Mobile GUI Agents with Capability Diagnostics](https://arxiv.org/abs/2604.06182)：VenusBench-Mobile 是面向移动 GUI agent 的用户中心 benchmark，适合 Computer Use Bench。
+- [Same Outcomes, Different Journeys: A Trace-Level Framework for Comparing Human and GUI-Agent Behavior in Production Search Systems](https://arxiv.org/abs/2604.07929)：评测生产搜索系统中人类与 GUI-agent 行为的轨迹级比较；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation](https://arxiv.org/abs/2604.08455)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Turing Test on Screen: A Benchmark for Mobile GUI Agent Humanization](https://arxiv.org/abs/2604.09574)：面向 mobile GUI agent 人类化的 benchmark；核心思想是评估移动端 agent 的屏幕交互是否接近人类，而不只看任务是否完成。
+- [MobiFlow: Real-World Mobile Agent Benchmarking through Trajectory Fusion](https://arxiv.org/abs/2604.09587)：类型：benchmark/评测协议。核心价值：为 2.5.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [HealthAdminBench: Evaluating Computer-Use Agents on Healthcare Administration Tasks](https://arxiv.org/abs/2604.09937)：补充computer use gui方向的基准或评测套件，核心围绕《HealthAdminBench: Evaluating Computer-Use Agents on Healthcare Administration Tasks》。
 - [OS-Blind](https://arxiv.org/abs/2604.10577)（[项目页](https://limenlp.github.io/OS_Blind/)）：评测用户指令无害但执行上下文可能有害时的 CUA 安全盲点；核心思想是让危害来自环境状态或执行后果，要求 agent 在 GUI 操作前主动识别风险。
+- [AgentWebBench: Benchmarking Multi-Agent Coordination in Agentic Web](https://arxiv.org/abs/2604.10938)：面向 agentic web 任务的多 agent 协作基准；核心思想是评测网页操作 agent 之间的委派、通信和任务闭环。
+- [RiskWebWorld](https://arxiv.org/abs/2604.13531)：评测 GUI agent 在真实电商风控工作流中的表现；核心思想是用接近生产风控管线的调查任务和 Gymnasium 兼容环境测试长链专业网页操作能力。
+- [GUI-Perturbed](https://arxiv.org/abs/2604.14262)：评什么：评测 GUI grounding models 在 domain randomization 下的稳健性。核心思想：独立扰动截图和指令，以隔离空间推理、缩放稳健性和 reasoning calibration 失败，这些问题在单个固定截图评测中难以暴露。
+- [FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems](https://arxiv.org/abs/2604.14956)：跨平台、设备和操作系统的 GUI agent 联邦基准；核心思想是评测 GUI 策略是否能泛化到单一 app、设备或 OS 栈之外。
+- [HalluClear: Diagnosing, Evaluating and Mitigating Hallucinations in GUI Agents](https://arxiv.org/abs/2604.17284)：评测GUI agent 幻觉诊断、评测与缓解；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Do LLMs Need to See Everything? A Benchmark and Study of Failures in LLM-driven Smartphone Automation using Screentext vs. Screenshots](https://arxiv.org/abs/2604.17817)：该 benchmark 比较 smartphone automation 中 screentext 与 screenshot observation，适合 GUI/computer-use。
 - [OS-SPEAR](https://arxiv.org/abs/2604.24348)：从安全、性能、效率与鲁棒性四个维度评测 OS agent。核心思想：提供 OS-agent 轨迹和失败类型分析工具，而不只报告最终任务成功率。
 - [Odysseys](https://arxiv.org/abs/2604.24964)（[项目页](https://odysseys-website.pages.dev/)）：评测网页 agent 的真实长程 GUI 任务；核心思想是用现实网站中的多阶段目标和状态依赖测试 agent 的导航、信息整合、错误恢复与持续执行能力。
+- [GUI Grounders](https://doi.org/10.18653/v1/2026.findings-eacl.144)：评测 GUI grounder 是否真正理解 UI 元素，而不只是定位视觉目标。
+- [InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?](https://arxiv.org/abs/2604.27419)：可作为computer-use and GUI agents方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
 - [WindowsWorld](https://arxiv.org/abs/2604.27776)：评测 Windows 上的跨应用 GUI 工作流；核心思想是把多应用、多检查点的职业流程显式化，专门放大跨应用协调与阶段性核验失败。
+- [FineState-Bench: Benchmarking State-Conditioned Grounding for Fine-grained GUI State Setting](https://arxiv.org/abs/2604.27974)：FineState-Bench 评测细粒度 GUI 状态设定中的 state-conditioned grounding，适合 GUI Bench。
+- [Covering Human Action Space for Computer Use: Data Synthesis and Benchmark](https://arxiv.org/abs/2605.12501)：评测通过数据合成和 benchmark 覆盖 computer-use 人类动作空间；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
 - [SaaS-Bench](https://arxiv.org/abs/2605.15777)（[开源代码](https://github.com/UniPat-AI/SaaS-Bench)）：评测真实 SaaS 系统上的专业工作流；核心思想是把可部署的多应用业务流程、检查点验证和长链路状态维护放进 self-hosted SaaS 环境。
+- [MUIAnno](https://arxiv.org/abs/2605.17656)：为多类真实移动应用 UI 提供专家标注，覆盖 UI 元素理解、结构和标签信息，支撑移动自动化与无障碍场景中的 GUI agent 感知评测。
+- [macOSWorld](https://openreview.net/forum?id=YJxGJP8feU)（[项目页](https://macos-world.github.io/)，[开源代码](https://github.com/showlab/macosworld)）：评测 macOS 上的交互式 GUI agent。核心思想：覆盖原生应用中的多语言任务，补足 Windows 或 Ubuntu 中心 benchmark 之外的 OS 生态。
+- [CutVerse](https://arxiv.org/abs/2605.19484)：评测专业媒体后期制作中的 GUI agent。核心思想是收集 Premiere Pro、Photoshop 等工具上的专家演示，并把屏幕录制与底层日志解析为组合式 GUI action trajectory，用于长程创意编辑任务。
+- [AgentHijack](https://arxiv.org/abs/2605.25707)：在弹窗、分辨率变化和竞争应用等常见非恶意环境扰动下评测 computer-use agent，关注动态执行干扰中的鲁棒性，而不是对抗性劫持本身。
+- [AndroidDaily](https://arxiv.org/abs/2605.27761)：评测真实闭源 Android 应用上的移动 GUI agent。核心思想是用外部可观察 guideline 和过程感知 evaluator，在没有隐藏 app 状态的条件下验证 350 个日常任务，覆盖交通、购物、社交媒体、内容创作和工具类工作流。
+- [Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](https://arxiv.org/abs/2605.29447)：定义 GUI-RobustEval 的 1,216 个可执行错误恢复测试，并提出 RoTS 树式轨迹合成流程，为 robust GUI agent 生成恢复数据。
+- [DragOn](https://arxiv.org/abs/2606.06322)：补充面向桌面、浏览器和移动 UI 的拖拽 grounding benchmark 与数据集，覆盖拖放、滑动和高亮等点击中心 GUI 数据集代表不足的交互。
+- [WeaveBench](https://arxiv.org/abs/2606.09426)：用 8 个工作域的 114 个真实长程任务测试 computer-use agent，要求 GUI、CLI、代码编辑、浏览器和外部工具在同一轨迹中协同，并使用 trajectory-aware 标准评分。
+- [iOSWorld](https://arxiv.org/abs/2606.09764)：围绕持久用户身份、26 个自建 iOS 应用和 133 个跨应用任务构建原生 iOS simulator benchmark，把个性化和设备本地历史放在 phone-agent 评测中心。
+- [STAGE-Claw](https://arxiv.org/abs/2606.10394)：在真实个人计算环境中自动构建 state-based personal-agent 场景并按最终状态评测，减少对静态 artifact 或粗粒度任务成功率的依赖。
+- [Workflow-GYM](https://arxiv.org/abs/2606.11042)：评测专业软件领域中的长程高价值 GUI 工作流，覆盖比现有大多数 computer-use benchmark 更长、更专业的任务。
+- [MyPCBench](https://arxiv.org/abs/2606.16748)：跨用户数字生活评测 personally intelligent computer-use agent，纳入历史数据、登录状态和个性化网页任务，补足非个人化 live-web 评测难以覆盖的场景。
+- [WebUI-95: A Large-Scale Dataset of Normalized Web Interfaces via UI-to-Code Generation](https://doi.org/10.1145/3772363.3799359)：围绕 WebUI-95: A Large-Scale Dataset of Normalized Web Interfaces via UI-to-Code Generation 补充可复用的GUI 计算机使用基准、数据集或评测协议。
+- [AI-Driven Usability Testing: Integrating Eye-Tracking Data and Agentic Systems for Automated UI Evaluation](https://doi.org/10.1609/aaaiss.v6i1.36059)：提供用于衡量GUI 电脑使用能力的数据集、基准、指标或评测协议。
+- [Agent A/B: Automated and Scalable A/B Testing on Live Websites with Interactive LLM Agents](https://doi.org/10.1145/3772363.3799039)：评什么：用交互式 LLM agent 在真实网站上自动执行 A/B 测试。
+- [EvalAgent: Interactive Comparative Evaluation of Computer-Using GUI Agents](https://doi.org/10.1145/3742414.3795096)：提供面向计算机使用 GUI 智能体的交互式比较评估。

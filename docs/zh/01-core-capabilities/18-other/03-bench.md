@@ -1,0 +1,571 @@
+# 1.18.3 Bench
+
+- [CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation](https://arxiv.org/abs/2401.01275)：用 77 个中文小说和剧本角色构造 1,785 段多轮角色扮演对话，并结合角色档案与人工质检，评测人格一致性、对话质量和角色忠实度。
+- [How predictable is language model benchmark performance?](https://arxiv.org/abs/2401.04757)：在 11 种模型架构和五个数量级训练计算量上分析 BIG-Bench 与 BIG-Bench Hard 扩展趋势，区分平均基准分数的可预测性和单任务预测的高噪声。
+- [I am a Strange Dataset: Metalinguistic Tests for Language Models](https://arxiv.org/abs/2401.05300)：手工构造元语言自指的生成和验证任务，检验 LLM 是否能判断待评测句子内部的词语、位置和真假关系。
+- [Mind Your Format: Towards Consistent Evaluation of In-Context Learning Improvements](https://arxiv.org/abs/2401.06766)：在 21 个模型和四个分类数据集上系统改变 prompt 模板，展示格式选择足以抹平或放大上下文学习方法的表观收益。
+- [A Comparative Study on Annotation Quality of Crowdsourcing and LLm Via Label Aggregation](https://arxiv.org/abs/2401.09760)：复用既有众包数据集比较人类工人与 LLM 标注者的聚合标签质量，重点评估最终聚合标签而非单个标注者平均表现。
+- [When Large Language Models Meet Evolutionary Algorithms: Potential Enhancements and Challenges](https://arxiv.org/abs/2401.10510)：梳理 LLM 与进化算法的交叉，映射文本生成和进化算子的对应关系，并指出进化微调、提示搜索和 LLM 辅助优化的评测缺口。
+- [Mementos: A Comprehensive Benchmark for Multimodal Large Language Model Reasoning over Image Sequences](https://arxiv.org/abs/2401.10529)：用 4,761 组不同长度的图像序列测试多模态大模型的序列图像推理，并以 GPT-4 辅助评分诊断九个 MLLM 的物体和行为幻觉。
+- [Benchmarking Large Multimodal Models against Common Corruptions](https://arxiv.org/abs/2401.11943)：在标准视觉语言任务上加入噪声、模糊、天气和数字伪影等常见图像扰动，量化 LVLM 感知与推理鲁棒性的下降。
+- [DsDm: Model-Aware Dataset Selection with Datamodels](https://arxiv.org/abs/2401.12926)：把数据集选择写成目标任务性能优化问题，在多种留出 LM 基准上比较所选预训练子集与随机选择、质量过滤数据的效果。
+- [AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents](https://arxiv.org/abs/2401.13178)（[榜单](https://hkust-nlp.github.io/agentboard/)）：在部分可观测、多轮交互环境中评测 LLM 智能体，并用细粒度进度率指标定位最终成败之前的过程性失败。
+- [Investigate-Consolidate-Exploit: A General Strategy for Inter-Task Agent Self-Evolution](https://arxiv.org/abs/2401.13996)：通过“调查、巩固、利用”流程考察智能体能否把前序任务经验迁移到后续任务，把跨任务自进化能力作为评测信号。
+- [PROXYQA: An Alternative Framework for Evaluating Long-Form Text Generation with Large Language Models](https://arxiv.org/abs/2401.15042)：用人工编写的元问题及带标准答案的代理问题评测长篇报告和文章生成，以答案覆盖度替代表面重叠指标。
+- [MT-Eval: A Multi-Turn Capabilities Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2401.16745)：用能力定向的多轮对话任务测试模型在连续交互中保持指令、上下文和推理状态的能力，而不只评测单轮回答。
+- [Synthetic Dialogue Dataset Generation using LLM Agents](https://arxiv.org/abs/2401.17461)：研究由 LLM 智能体生成任务型合成对话的数据流程，并评估这类对话能否替代成本较高的人工对话数据。
+- [Enhancing Multimodal Large Language Models with Vision Detection Models: An Empirical Study](https://arxiv.org/abs/2401.17981)：把视觉检测器输出注入多模态提示，实证评测检测增强对视觉识别与推理任务的收益和失败模式。
+- [Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research](https://arxiv.org/abs/2402.00159)：发布 3T token 开放预训练语料及其混合构建说明，支持对语言模型训练中数据筛选和配比选择进行可控比较。
+- [The Landscape and Challenges of HPC Research and LLMs](https://arxiv.org/abs/2402.02018)：综述 LLM 可辅助的高性能计算代码、工作流和科研计算任务，并指出 HPC 场景下仍缺少系统化模型评测基准。
+- [MULTI: multimodal understanding leaderboard with text and images](https://arxiv.org/abs/2402.03173)（[榜单](https://opendfm.github.io/MULTI-Benchmark/)）：用来自中文真实考试的图文理解、推理和知识任务评测多模态模型，并提供官方榜单与细分模型结果。
+- [When geoscience meets generative AI and large language models: Foundations, trends, and future challenges](https://arxiv.org/abs/2402.03349)：综述生成式 AI 在地学预测、模拟和决策支持中的用途，在本页更适合作为领域评测缺口图谱而非独立基准。
+- [UniTSyn: A Large-Scale Dataset Capable of Enhancing the Prowess of Large Language Models for Program Testing](https://arxiv.org/abs/2402.03396)：借助 Language Server Protocol 构建 270 万组被测函数和单元测试配对数据，用于 LLM 单元测试生成的训练与评测。
+- [MLLM-as-a-Judge: Assessing Multimodal LLM-as-a-Judge with Vision-Language Benchmark](https://arxiv.org/abs/2402.04788)：通过打分、成对比较和批量排序三类任务评测多模态大模型作为裁判的能力，并衡量其与人类偏好的符合度和裁判偏差。
+- [Towards Principled Assessment of Tabular Data Synthesis Algorithms](https://arxiv.org/abs/2402.06806)：在 12 个真实表格数据集上评估八类合成器，用保真度、隐私和下游效用指标比较统计、扩散和 LLM 表格数据合成方法。
+- [Properties and Challenges of LLM-Generated Explanations](https://arxiv.org/abs/2402.10532)：分析多领域指令微调模型生成解释的选择性、示例性、主观性和误导性，把自我解释质量拆成可评测维度。
+- [RENOVI: A Benchmark Towards Remediating Norm Violations in Socio-Cultural Conversations](https://arxiv.org/abs/2402.11178)：提供 9,258 段带社会规范标注的多轮社会文化对话，并设置分步理解和修复规范违反的任务，其中包含 512 段人工对话和 8,746 段 ChatGPT 合成对话。
+- [FinBen: A Holistic Financial Benchmark for Large Language Models](https://arxiv.org/abs/2402.12659)（[Open FinLLM Leaderboard](https://huggingface.co/spaces/TheFinAI/Open-FinLLM-Leaderboard)）：覆盖金融知识、推理、预测、风险和决策任务，并通过 Open FinLLM 榜单比较金融领域专门模型。
+- [A Touch, Vision, and Language Dataset for Multimodal Alignment](https://arxiv.org/abs/2402.13232)：发布 44K 组野外视觉-触觉配对数据及人工和 GPT-4V 文本标签，通过开放词表分类和文本生成评测触觉、视觉与语言对齐。
+- [PIRB: A Comprehensive Benchmark of Polish Dense and Hybrid Text Retrieval Methods](https://arxiv.org/abs/2402.13350)：在 41 个波兰语信息检索任务上评测模型，其中包括 10 个新数据集，并比较 20 多种稀疏、稠密和混合检索器。
+- [KorNAT: LLM Alignment Benchmark for Korean Social Values and Common Knowledge](https://arxiv.org/abs/2402.13605)：用 4K 道来自 6,174 名韩国参与者调查的社会价值选择题和 6K 道教材、GED 资料构造的常识题评测韩国国家对齐。
+- [Copilot Evaluation Harness: Evaluating LLM-Guided Software Programming](https://arxiv.org/abs/2402.14261)：提供面向 LLM 辅助 IDE 编程交互的数据与工具，在多语言、多场景中结合静态指标和执行成功指标评测代码助手。
+- [MIKE: A New Benchmark for Fine-grained Multimodal Entity Knowledge Editing](https://arxiv.org/abs/2402.14835)：用名称问答、实体级描述、复杂场景识别和多步编辑任务，评测多模态实体知识的细粒度编辑能力。
+- [DyVal 2: Dynamic Evaluation of Large Language Models by Meta Probing Agents](https://arxiv.org/abs/2402.14865)：用元探测智能体把原始基准题转换为心理测量学风格探针，分别评估语言理解、问题求解和领域知识。
+- [tinyBenchmarks: evaluating LLMs with fewer examples](https://arxiv.org/abs/2402.14992)：为 Open LLM Leaderboard、MMLU、HELM 和 AlpacaEval 2.0 构造小规模精选子集，并显示约 100 道 MMLU 题即可估计完整基准表现。
+- [KIEval: A Knowledge-grounded Interactive Evaluation Framework for Large Language Models](https://arxiv.org/abs/2402.15043)：把含领域知识的基准题转成多轮知识对话，由 LLM interactor 检验模型回答是套用记忆答案还是能在新对话中运用知识。
+- [PCA-Bench: Evaluating Multimodal Large Language Models in Perception-Cognition-Action Chain](https://arxiv.org/abs/2402.15527)：在自动驾驶、家用机器人和开放世界游戏决策中测试 MLLM 的感知、认知和行动链路，并用 PCA-Eval 定位感知、知识或推理错误。
+- [GAOKAO-MM: A Chinese Human-Level Benchmark for Multimodal Models Evaluation](https://arxiv.org/abs/2402.15745)：把中国高考材料转成八个学科的多模态题，覆盖示意图、函数图、地图和照片等图像类型，要求模型同时具备感知、知识与推理能力。
+- [Towards Fair Graph Anomaly Detection: Problem, Benchmark Datasets, and Evaluation](https://arxiv.org/abs/2402.15988)：定义 FairGAD 问题，并发布带异常标签和政治倾向敏感属性的 Reddit、Twitter 图数据集，用九种异常检测方法和五种公平性方法评估性能与公平权衡。
+- [Researchy Questions: A Dataset of Multi-Perspective, Decompositional Questions for LLM Web Agents](https://arxiv.org/abs/2402.17896)：从搜索日志筛选约 100K 个非事实型、可分解、多视角研究问题，并用点击、会话长度等用户投入信号和 GPT-4 难度检验刻画任务。
+- [Meta-Task Prompting Elicits Embeddings from Large Language Models](https://arxiv.org/abs/2402.18458)：评测 MetaEOL 这一无需微调的句向量协议，通过多个限制单词输出的元任务提示求平均，在 STS 和下游嵌入任务上比较效果。
+- [Private Benchmarking to Prevent Contamination and Improve Comparative Evaluation of LLMs](https://arxiv.org/abs/2403.00393)：提出私有测试集评测协议和 TRUCE 系统，比较可信计算与密码学方案如何在不向模型方暴露测试数据的情况下完成基准评测。
+- [Predictions from language models for multiple-choice tasks are not robust under variation of scoring methods](https://arxiv.org/abs/2403.00998)：比较自由生成、概率分数、Likert 式评分和嵌入相似度等多选题打分方法，显示 LLM 的题级预测会随评分方案显著变化。
+- [Revisiting Dynamic Evaluation: Online Adaptation for Large Language Models](https://arxiv.org/abs/2403.01518)：把测试时在线微调作为动态评测来研究，衡量样本效率、分布漂移敏感性以及梯度更新带来的计算开销。
+- [HaluEval-Wild: Evaluating Hallucinations of Language Models in the Wild](https://arxiv.org/abs/2403.04307)：从 ShareGPT 真实用户查询中对抗式筛选高难样本，划分五类幻觉，并用 GPT-4 与检索增强参考答案评测开放交互中的幻觉率。
+- [StableToolBench: Towards Stable Large-Scale Benchmarking on Tool Learning of Large Language Models](https://arxiv.org/abs/2403.07714)：围绕稳定工具服务器和可复现评分重构 ToolBench 评测，降低真实 API 变化对 LLM 工具调用轨迹评测的干扰。
+- [A Comprehensive Study of Multimodal Large Language Models for Image Quality Assessment](https://arxiv.org/abs/2403.10854)：在全参考和无参考图像质量评估中测试 MLLM，组合单刺激、双刺激、多刺激三种心理物理流程与标准、上下文、思维链三类提示策略。
+- [RouterBench: A Benchmark for Multi-LLM Routing System](https://arxiv.org/abs/2403.12031)：提供超过 405K 条代表性 LLM 推理结果，用于在性能和成本感知服务目标下比较多模型路由策略。
+- [VL-ICL Bench: The Devil in the Details of Multimodal In-Context Learning](https://arxiv.org/abs/2403.13164)：把多模态上下文学习评测从少样本 VQA 和图像描述扩展到多类图文输入输出任务，暴露示例顺序和格式敏感性。
+- [Hierarchical NeuroSymbolic Approach for Comprehensive and Explainable Action Quality Assessment](https://arxiv.org/abs/2403.13798)：以跳水为案例，从视频中抽取可解释符号并套用专家规则进行动作质量评估，对比端到端神经评分的可解释性和专家偏好。
+- [Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning](https://arxiv.org/abs/2403.16999)：评测 Visual CoT: Advancing Multi-Modal Language Models with a Comprehensive Dataset and Benchmark for Chain-of-Thought Reasoning，为 Other Core Capabilities / Bench 补充基准或评测协议候选。
+- [Verbing Weirds Language (Models): Evaluation of English Zero-Derivation in Five LLMs](https://arxiv.org/abs/2403.17856)：在自然语言推理框架下测试五个 LLM 对英语零派生的掌握，考察名词、动词和形容词进入非典型句法位置时的泛化能力。
+- [ChroniclingAmericaQA: A Large-scale Question Answering Dataset based on Historical American Newspaper Pages](https://arxiv.org/abs/2403.17859)：从美国历史报纸页面构建问答基准，突出带噪 OCR、旧式排版和时间背景新闻材料上的检索与阅读难度。
+- [The Invalsi Benchmarks: measuring the Linguistic and Mathematical understanding of Large Language Models in Italian](https://arxiv.org/abs/2403.18697)：提出意大利语原生的 Invalsi MATE、Invalsi ITA 和 Olimpiadi MATE，用学校测验与数学竞赛材料评测语言和数学理解。
+- [PointCloud-Text Matching: Benchmark Datasets and a Baseline](https://arxiv.org/abs/2403.19386)：定义点云和文本的实例级检索任务，发布 SceneDepict-3D2T 数据集与 RoMa 基线，面向稀疏带噪 3D 场景和含糊文本描述。
+- [MANGO: A Benchmark for Evaluating Mapping and Navigation Abilities of Large Language Models](https://arxiv.org/abs/2403.19913)：用自然语言空间描述评测 LLM 的建图和导航能力，检验模型能否形成并使用隐式地图，而不是只回答孤立空间事实。
+- [Unsolvable Problem Detection: Robust Understanding Evaluation for Large Multimodal Models](https://arxiv.org/abs/2403.20331)：提出 MM-UPD Bench，覆盖缺失答案、不兼容答案集合和图文问题不匹配三类不可解 MCQA 情形，用于测试 LMM 是否会拒答。
+- [Evalverse: Unified and Accessible Library for Large Language Model Evaluation](https://arxiv.org/abs/2404.00943)：统一 LLM 评测请求、报告生成和通信平台集成，让非专业用户也能通过单一库流程发起模型评估。
+- [Measuring Social Norms of Large Language Models](https://arxiv.org/abs/2404.02491)：构造覆盖 402 类社会规范技能的 12,383 道 K-12 风格问题，将 LLM 的社会理解与小学生表现及多智能体改进策略对比。
+- [Evaluating LLMs at Detecting Errors in LLM Responses](https://arxiv.org/abs/2404.03602)：把识别其他 LLM 输出错误作为目标任务，评测模型能否发现回答中的问题，而不只是把 LLM 当作自动裁判。
+- [Capabilities of Large Language Models in Control Engineering: A Benchmark Study on GPT-4, Claude 3 Opus, and Gemini 1.0 Ultra](https://arxiv.org/abs/2404.03647)：提出 ControlBench 本科经典控制题集，并由专家评估 GPT-4、Claude 3 Opus 和 Gemini 1.0 Ultra 的正确性、推理与解释质量。
+- [PRobELM: Plausibility Ranking Evaluation for Language Models](https://arxiv.org/abs/2404.03818)：通过候选陈述的合理性排序评测语言模型，关注分级常识和语言可接受性，而不是精确答案分类。
+- [A Comparison of Methods for Evaluating Generative IR](https://arxiv.org/abs/2404.04044)：比较生成式信息检索的离线评测方法，包括人工评估、LLM 裁判以及适配到生成新文本系统的传统 IR 指标。
+- [FreeEval: A Modular Framework for Trustworthy and Efficient Evaluation of Large Language Models](https://arxiv.org/abs/2404.06003)：为模型、数据和指标提供模块化抽象，并内置污染检测、人工评测接口、分布式推理和缓存机制，支撑大规模 LLM 评测。
+- [Exploring the True Potential: Evaluating the Black-box Optimization Capability of Large Language Models](https://arxiv.org/abs/2404.06290)：在离散和连续黑箱优化任务上比较 LLM，区分其数值优化短板和在更宽泛非数值优化场景中的优势。
+- [Frontier AI Ethics: Anticipating and Evaluating the Societal Impacts of Language Model Agents](https://arxiv.org/abs/2404.06750)：围绕工具使用型语言模型智能体提出社会影响评估问题，重点分析未来五到十年的潜在影响，而不是发布带分数的数据集。
+- [UltraEval: A Lightweight Platform for Flexible and Comprehensive Evaluation for LLMs](https://arxiv.org/abs/2404.07584)：把模型、数据和指标组件重实现为可组合评测模块，并通过统一 HTTP 服务支持任务、提示、基准和指标的自由组合。
+- [Sample-Efficient Human Evaluation of Large Language Models via Maximum Discrepancy Competition](https://arxiv.org/abs/2404.08008)：用最大差异竞争选择信息量高的指令，采用三选一人工偏好判断，并用 Elo 分数汇总多个 LLM 的全局排名。
+- [Dataset Reset Policy Optimization for RLHF](https://arxiv.org/abs/2404.08495)：在 TL;DR 摘要和 Anthropic Helpful-Harmless 偏好任务上评测 dataset-reset policy optimization，衡量把在线 RL rollout 重置到离线偏好状态带来的 RLHF 收益。
+- [An empirical evaluation of pre-trained large language models for repairing declarative formal specifications](https://arxiv.org/abs/2404.11050)：在 Alloy 声明式形式规格修复任务上评测 LLM，比较六种单智能体、双智能体、反馈和自动提示设置。
+- [Character is Destiny: Can Large Language Models Simulate Persona-Driven Decisions in Role-Playing?](https://arxiv.org/abs/2404.12138)：提出 LIFECHOICE，其中含 388 本书的 1,462 个角色决策点，用于评测角色扮演 LLM 是否能根据前文预测 persona 驱动选择。
+- [Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences](https://arxiv.org/abs/2404.12272)：提出 EvalGen，通过人类对抽样 LLM 输出的评分来选择和修正自动生成的评测提示或 Python 断言函数。
+- [A User-Centric Multi-Intent Benchmark for Evaluating Large Language Models](https://arxiv.org/abs/2404.13940)：从 23 个国家 712 名参与者收集 1,846 个真实用户场景，划分六类用户意图，并用 GPT-4-as-judge 与人工偏好检验评测 10 个 LLM 服务。
+- [How Well Can LLMs Echo Us? Evaluating AI Chatbots' Role-Play Ability with ECHO](https://arxiv.org/abs/2404.13957)：用熟人参与的图灵测试协议评测普通人角色扮演能力，并报告 OpenAI GPTs 的领先欺骗人类成功率为 48.3%。
+- [Insights into Alignment: Evaluating DPO and its Variants Across Multiple Tasks](https://arxiv.org/abs/2404.14723)：在 13 个覆盖对话、推理、数学、问答、真实性、MT-Bench、BIG-Bench 和 Open LLM Leaderboard 的任务上评测带或不带 SFT 的 DPO 变体。
+- [Return of EM: Entity-driven Answer Set Expansion for QA Evaluation](https://arxiv.org/abs/2404.15650)：用 soft EM 和实体驱动答案集合扩展替代 LLM 问答打分，并与传统指标和 LLM-as-judge 比较可解释性与可靠性。
+- [MMT-Bench: A Comprehensive Multimodal Benchmark for Evaluating Large Vision-Language Models Towards Multitask AGI](https://arxiv.org/abs/2404.16006)（[榜单](https://mmt-bench.github.io/)）：用 31,325 道多选视觉题评测 LVLM，覆盖识别、定位、推理、规划、驾驶和具身导航等 32 个元任务与 162 个子任务。
+- [Examining the robustness of LLM evaluation to the distributional assumptions of benchmarks](https://arxiv.org/abs/2404.16966)：研究不同任务分布假设会如何改变基准结论，把采样与聚合方案本身作为评测对象。
+- [Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models](https://arxiv.org/abs/2404.18796)：用多样化模型组成的裁判团替代单个 LLM 裁判，评测 jury 聚合能否提升自由文本生成评估的可靠性。
+- [Benchmarking Benchmark Leakage in Large Language Models](https://arxiv.org/abs/2404.18824)：用困惑度和 n-gram 准确率检测基准泄漏，并在数学推理基准上分析 31 个 LLM 是否可能接触过测试集。
+- [CLIP-Mamba: CLIP Pretrained Mamba Models with OOD and Hessian Evaluation](https://arxiv.org/abs/2404.19394)：在 26 个零样本分类和 16 个分布外数据集上评测 CLIP 预训练 Mamba 视觉语言模型，并用 Hessian 分析诊断鲁棒性和参数效率。
+- [Evaluating LLMs for Hardware Design and Test](https://arxiv.org/abs/2405.02326)：在八个 Verilog 设计与验证任务上评测对话式 LLM，同时考察生成测试代码，并通过 SkyWater 130nm 流片检查硬件产物。
+- [LLMs Can Patch Up Missing Relevance Judgments in Evaluation](https://arxiv.org/abs/2405.04727)：在 TREC Deep Learning 相关性判断中模拟未标注空洞，测试 LLM 细粒度补标能否降低未评审检索结果带来的偏差。
+- [LLMC: Benchmarking Large Language Model Quantization with a Versatile Compression Toolkit](https://arxiv.org/abs/2405.06001)：用可插拔压缩工具统一比较 LLM 量化方法，覆盖多种算法、模型族、硬件设置以及整数和浮点量化方案。
+- [EDA Corpus: A Large Language Model Dataset for Enhanced Interaction with OpenROAD](https://arxiv.org/abs/2405.06676)：发布 1,000 余组 OpenROAD EDA 问答和代码脚本配对数据，支持芯片设计工具交互场景中的 LLM 训练与评测。
+- [Sakuga-42M Dataset: Scaling Up Cartoon Research](https://arxiv.org/abs/2405.07425)：发布 4200 万帧卡通动画数据，用于草图、上色、插帧和卡通视频建模研究，突出手绘动画相对自然视频基准的分布差异。
+- [Is the Pope Catholic? Yes, the Pope is Catholic. Generative Evaluation of Intent Resolution in LLMs](https://arxiv.org/abs/2405.08760)：用生成式提示评测意图解析，检验 LLM 能否还原显然、反问和依赖语境问题背后的真实用户意图。
+- [Hummer: Towards Limited Competitive Preference Dataset](https://arxiv.org/abs/2405.11647)：构造有限竞争偏好数据，在受限偏好证据下比较模型输出，支撑对偏好建模的评测而不依赖大量成对标签。
+- [CLAMBER: A Benchmark of Identifying and Clarifying Ambiguous Information Needs in Large Language Models](https://arxiv.org/abs/2405.12063)：按信息需求歧义分类构建约 12K 个识别歧义和追问澄清样例，暴露 LLM 面对欠明确查询时的过度自信。
+- [MathBench: Evaluating the Theory and Application Proficiency of LLMs with a Hierarchical Mathematics Benchmark](https://arxiv.org/abs/2405.12209)：用层级化数学题区分理论知识和应用能力，帮助定位 LLM 数学表现在哪些知识层次和题型上失效。
+- [DnA-Eval: Enhancing Large Language Model Evaluation through Decomposition and Aggregation](https://arxiv.org/abs/2405.15329)：把 LLM-as-judge 流程拆成多个教学式评估阶段并聚合子判断，提高评测可解释性以及与人类标签的一致性。
+- [Benchmark Underestimates the Readiness of Multi-lingual Dialogue Agents](https://arxiv.org/abs/2405.17840)：在 X-RiSAWOZ 的中文、英文、法文、韩文、印地语和印英混合任务型对话上评测上下文学习，显示逐轮 DST 能力比标准基准分数更接近可用。
+- [Evaluating the External and Parametric Knowledge Fusion of Large Language Models](https://arxiv.org/abs/2405.19010)：探测 LLM 如何融合检索外部知识与参数知识，在知识冲突、互补和回答可靠性场景下进行评测。
+- [Auto-Arena: Automating LLM Evaluations with Agent Peer Battles and Committee Discussions](https://arxiv.org/abs/2405.20267)（[榜单](https://huggingface.co/spaces/Auto-Arena/Leaderboard)，[项目页](https://auto-arena.github.io/blog/)）：通过智能体同伴对战和委员会讨论自动化 arena 式 LLM 评测，在不依赖单一静态裁判提示的情况下生成榜单分数。
+- [Luna: An Evaluation Foundation Model to Catch Language Model Hallucinations with High Accuracy and Low Cost](https://arxiv.org/abs/2406.00975)：微调 4.4 亿参数 DeBERTa-large 作为 RAG 幻觉检测器，面向检索上下文的一致性检查，同时追求高准确率、低延迟和低成本。
+- [TSpec-LLM: An Open-source Dataset for LLM Understanding of 3GPP Specifications](https://arxiv.org/abs/2406.01768)：整理覆盖 3GPP Release 8 至 19 的标准文档数据和技术问答探针，用于评测基础 LLM 与 RAG 的电信标准理解能力。
+- [FusionBench: A Unified Library and Comprehensive Benchmark for Deep Model Fusion](https://arxiv.org/abs/2406.03280)：在多任务、多数据集、多模型规模和多种融合设置下统一评测深度模型融合，使参数合并和预测融合方法可复现地比较。
+- [Evaluating the World Model Implicit in a Generative Model](https://arxiv.org/abs/2406.03689)：提出探针评估生成模型是否编码可用的世界动态知识，通过干预式测试而不只看输出真实感。
+- [ValueBench: Towards Comprehensively Evaluating Value Orientations and Understanding of Large Language Models](https://arxiv.org/abs/2406.04214)：整合 44 套心理测量量表和 453 个价值维度，在真实人机互动设定中评测 LLM 的价值取向与开放式价值理解。
+- [Stratified Prediction-Powered Inference for Hybrid Language Model Evaluation](https://arxiv.org/abs/2406.04291)：提出 StratPPI，用少量人工标签和大量自动标签结合分层采样，为 LLM 评测均值等总体参数计算有效置信区间。
+- [GenAI Arena: An Open Evaluation Platform for Generative Models](https://arxiv.org/abs/2406.04485)：为文生图、文生视频和图像编辑模型提供用户投票平台，在 FID、CLIP 等自动指标难以代理主观质量时收集群体偏好反馈。
+- [NATURAL PLAN: Benchmarking LLMs on Natural Language Planning](https://arxiv.org/abs/2406.04520)：在旅行规划、会议规划和日历排程三类自然语言任务中把航班、地图和日历等工具输出作为上下文，报告十城市行程时极低的求解率，并消融自我修正、少样本迁移和长上下文规划。
+- [WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild](https://arxiv.org/abs/2406.04770)（[榜单](https://huggingface.co/spaces/allenai/WildBench)）：从一百多万条真实人机对话日志中筛选 1,024 个高难任务，用 checklist 驱动的 WB-Reward 与 WB-Score 打分，并加入长度偏差缓解和 Chatbot Arena Elo 相关性验证。
+- [FedLLM-Bench: Realistic Benchmarks for Federated Learning of Large Language Models](https://arxiv.org/abs/2406.04845)：用四个真实客户端数据集、八种训练方法和六类指标评测联邦指令微调与偏好对齐，客户端规模从 38 到 747，并覆盖语言、质量、长度、嵌入和偏好差异。
+- [The BiGGen Bench: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models](https://arxiv.org/abs/2406.05761)：在 77 个生成任务和九类能力上评测 103 个语言模型，使用实例级评价标准和五个 evaluator LMs，避免只用笼统的 helpfulness 式打分。
+- [Can I understand what I create? Self-Knowledge Evaluation of Large Language Models](https://arxiv.org/abs/2406.06140)：让模型回答由自身生成的问题，用多任务自生成探针暴露“能生成”和“理解自己生成内容”之间的自我知识缺口。
+- [LLM Dataset Inference: Did you train on my dataset?](https://arxiv.org/abs/2406.06443)：把污染检测从单序列成员推断转向数据集级统计检验，说明同分布非成员会削弱许多 MIA，并用聚合信号检测 Pile 子集是否进入训练。
+- [MixEval: Deriving Wisdom of the Crowd from LLM Benchmark Mixtures](https://arxiv.org/abs/2406.06565)（[榜单](https://mixeval.github.io/)）：通过把网页挖掘的真实用户查询匹配到既有基准题，构造 MixEval 和 MixEval-Hard，追求低成本、可更新且与 Chatbot Arena 排名高度相关的评测。
+- [A Synthetic Dataset for Personal Attribute Inference](https://arxiv.org/abs/2406.07217)：用带合成个人档案的 Reddit 风格 LLM agent 生成 SynthPAI，提供 7,800 多条人工标注评论，用于隐私友好的个人属性推断评测。
+- [A Multi-Armed Bandit Approach to Online Selection and Evaluation of Generative Models](https://arxiv.org/abs/2406.07451)：把生成模型比较写成样本高效的 best-arm identification 问题，提出基于 Fréchet Distance 和 Inception Score 的 FD-UCB 与 IS-UCB 在线评测算法。
+- [scores: A Python package for verifying and evaluating models and predictions with xarray](https://arxiv.org/abs/2406.07817)：为 xarray 和 Dask 上的标记多维数据提供 50 多个经过科学审查的预报验证指标、统计检验、可靠性工具和预处理组件。
+- [OLMES: A Standard for Language Model Evaluations](https://arxiv.org/abs/2406.08446)：提出完整文档化的开放 LLM 评测标准，规范 prompt 格式、上下文示例、概率归一化以及 cloze 和原始多选题形式等关键设置。
+- [Can I Introduce My Boyfriend to My Grandmother? Evaluating Large Language Models Capabilities on Iranian Social Norm Classification](https://arxiv.org/abs/2406.09123)：发布 Iranian Social Norms 数据集，含 1,699 条波斯语社会规范、人口统计和范围标注及英文翻译，并用地理和语言 prompt 变体评测六个 LLM。
+- [AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models](https://arxiv.org/abs/2406.09295)：整理 1,054 张中文视觉语境图片和 4,978 组问答，覆盖 13 类对齐任务，并用 CritiqueVLM 与 alignment score 评估单轮、多轮 VLM 的提示鲁棒性。
+- [Quantifying Variance in Evaluation Benchmarks](https://arxiv.org/abs/2406.10229)：用随机种子方差、训练过程单调性和连续、离散分数差异衡量基准可靠性，把评测分数方差本身作为诊断对象。
+- [KGPA: Robustness Evaluation for Large Language Models via Cross-Domain Knowledge Graphs](https://arxiv.org/abs/2406.10802)：用跨领域知识图谱问答扰动评测 LLM 鲁棒性，关注模型在领域迁移和图结构知识变化下是否仍能保持推理。
+- [E-Bench: Towards Evaluating the Ease-of-Use of Large Language Models](https://arxiv.org/abs/2406.10950)：从用户努力成本角度评测 LLM 可用性，把交互负担和诱导正确行为的难易程度作为测量目标，而不只看最终答案准确率。
+- [WildVision: Evaluating Vision-Language Models in the Wild with Human Preferences](https://arxiv.org/abs/2406.11069)（[WildVision Arena](https://huggingface.co/spaces/WildVision/vision-arena)）：通过人类偏好投票收集开放式 VLM 对比，为真实图片语言行为提供 arena 式评测通道。
+- [The Potential and Challenges of Evaluating Attitudes, Opinions, and Values in Large Language Models](https://arxiv.org/abs/2406.11096)：分析用问卷式探针评估 LLM 态度、观点和价值观的风险，强调 prompt 框架、角色设定和采样回答解释会造成不稳定测量。
+- [Probing the Decision Boundaries of In-context Learning in Large Language Models](https://arxiv.org/abs/2406.11233)：通过改变靠近任务决策边界的示例诊断上下文学习，衡量 demonstrations 何时真正改变分类，而不是只报告少样本平均收益。
+- [Extrinsic Evaluation of Cultural Competence in Large Language Models](https://arxiv.org/abs/2406.11565)：通过下游任务表现评测文化能力，检验文化感知 prompt 或建模是否提升实际任务结果，而不是只做内在文化知识问答。
+- [Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges](https://arxiv.org/abs/2406.12624)：对 LLM 裁判做对齐和脆弱性压力测试，分析裁判 prompt、对抗输入和偏好偏差何时会破坏与目标评价标准的一致性。
+- [MC-MKE: A Fine-Grained Multimodal Knowledge Editing Benchmark Emphasizing Modality Consistency](https://arxiv.org/abs/2406.13219)：用细粒度实体变更和模态一致性检查评测多模态知识编辑，测试编辑后图像事实与文本事实是否仍然一致。
+- [CityBench: Evaluating the Capabilities of Large Language Model as World Model](https://arxiv.org/abs/2406.13945)：把城市规划和城市服务场景转成任务，评估 LLM 是否编码了有关地理、出行和市政关系的可用 world-model 知识。
+- [The Elusive Pursuit of Reproducing PATE-GAN: Benchmarking, Auditing, Debugging](https://arxiv.org/abs/2406.13985)：通过重建实验、调试实现选择和控制式表格合成设置，审计 PATE-GAN 的可复现性及隐私、效用表现。
+- [Inference-Time Decontamination: Reusing Leaked Benchmarks for Large Language Model Evaluation](https://arxiv.org/abs/2406.13990)：提出面向已泄露基准题的推理时控制方法，尝试在抑制记忆答案后复用污染测试集并测量剩余能力。
+- [Prism: A Framework for Decoupling and Assessing the Capabilities of VLMs](https://arxiv.org/abs/2406.14544)：把 VLM 表现分解为感知、知识和推理等可分离因素，使视觉语言任务中的成功或失败能被定位到具体组件。
+- [Do LLMs Have Distinct and Consistent Personality? TRAIT: Personality Testset designed for LLMs with Psychometrics](https://arxiv.org/abs/2406.14703)：把心理测量人格测试改造成 TRAIT，检验 LLM 回答是否足够独特、内部一致且稳定，以支撑模型人格相关说法。
+- [GIEBench: Towards Holistic Evaluation of Group Identity-based Empathy for Large Language Models](https://arxiv.org/abs/2406.14903)：围绕群体身份语境评测同理心，衡量模型是否能识别、尊重并恰当回应与身份相关的经历。
+- [Mosaic of Modalities: A Comprehensive Benchmark for Multimodal Graph Learning](https://arxiv.org/abs/2406.16321)：在图结构上结合异质节点或边模态，评测需要同时融合关系证据和多模态证据的多模态图学习模型。
+- [UNO Arena for Evaluating Sequential Decision-Making Capability of Large Language Models](https://arxiv.org/abs/2406.16382)：把 UNO 纸牌游戏做成 LLM 顺序决策 arena，用轻量游戏环境测量规则遵循、隐藏状态推断和长程策略。
+- [VarBench: Robust Language Model Benchmarking Through Dynamic Variable Perturbation](https://arxiv.org/abs/2406.17681)：动态扰动基准题中的变量，检验 LLM 是在求解底层任务还是利用表面形式，从而对脆弱记忆式答案做鲁棒性检查。
+- [Measuring and Benchmarking Large Language Models' Capabilities to Generate Persuasive Language](https://arxiv.org/abs/2406.17753)：用受控 prompt 和面向人类的评价标准测量说服性语言生成，把修辞有效性与一般流畅度或指令遵循区分开来。
+- [PaCoST: Paired Confidence Significance Testing for Benchmark Contamination Detection in Large Language Models](https://arxiv.org/abs/2406.18326)：通过成对置信度显著性检验检测基准污染，对比匹配样本上的模型置信度以区分记忆和正常泛化。
+- [DataGen: Unified Synthetic Dataset Generation via Large Language Models](https://arxiv.org/abs/2406.18966)：在统一流程下评测 LLM 驱动的合成数据集生成，比较生成数据质量和下游效用，而不是把数据生成当作未评测的预处理。
+- [CHEW: A Dataset of CHanging Events in Wikipedia](https://arxiv.org/abs/2406.19116)：提供维基百科变化事件数据集，用于评估模型和检索系统是否跟踪时序更新事实，而不是依赖陈旧快照。
+- [TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks](https://arxiv.org/abs/2406.19380)：审计表格深度学习基准中的评测陷阱，并补充数据集和协议，以降低方法过拟合狭窄表格任务套件的风险。
+- [Web2Code: A Large-scale Webpage-to-Code Dataset and Evaluation Framework for Multimodal LLMs](https://arxiv.org/abs/2406.20098)：构建大规模网页到代码数据集和评测流程，测试 MLLM 能否把网页截图转换为可执行前端代码。
+- [VisEval: A Benchmark for Data Visualization in the Era of Large Language Models](https://arxiv.org/abs/2407.00981)：评测图表推理、视觉编码选择和可视化生成等数据可视化任务，把语言输出绑定到结构化视觉分析目标。
+- [CRAB: Cross-environment Agent Benchmark for Multimodal Language Model Agents](https://arxiv.org/abs/2407.01511)：在异质环境中评测多模态 agent，强调同一 agent 是否能迁移视觉语言交互策略，而不是只解一个固定模拟器。
+- [LogEval: A Comprehensive Benchmark Suite for Large Language Models In Log Analysis](https://arxiv.org/abs/2407.01896)：在日志解析、异常检测、诊断等运维任务上评测 LLM，把软件日志转化为面向系统轨迹推理的领域评测套件。
+- [Certainly Uncertain: A Benchmark and Metric for Multimodal Epistemic and Aleatoric Awareness](https://arxiv.org/abs/2407.01942)：区分多模态提示中的认知不确定性和偶然模糊性，并用相应指标测试模型能否识别“证据缺失”和“本身噪声”。
+- [Evaluating the Ability of LLMs to Solve Semantics-Aware Process Mining Tasks](https://arxiv.org/abs/2407.02310)：用需要理解事件日志和流程描述语义的 process mining 题评测 LLM，而不只测试句法层面的 trace 操作。
+- [CEB: Compositional Evaluation Benchmark for Fairness in Large Language Models](https://arxiv.org/abs/2407.02408)：按社会群体、任务和偏见类型组合公平性探针，更细粒度诊断 LLM 公平性失败如何由交叉属性或任务形式触发。
+- [On the Benchmarking of LLMs for Open-Domain Dialogue Evaluation](https://arxiv.org/abs/2407.03841)：研究 LLM 作为开放域对话 evaluator 的表现，比较不同 prompt 和打分设置，揭示对话质量判断的可靠性边界。
+- [On the Workflows and Smells of Leaderboard Operations (LBOps): An Exploratory Study of Foundation Model Leaderboards](https://arxiv.org/abs/2407.04065)：分析基础模型榜单的运营实践和失败模式，命名会影响公开排名可复现性、治理和可信度的 LBOps smells。
+- [ElecBench: a Power Dispatch Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2407.05365)：用电力调度任务评测 LLM，在工程规则约束下测试约束处理和领域决策能力。
+- [On Speeding Up Language Model Evaluation](https://arxiv.org/abs/2407.06172)：研究在保持模型排名可信度的前提下降低 LLM 评测成本和运行时间的方法，把基准加速本身作为可靠性问题。
+- [Evaluating Large Language Models with Grid-Based Game Competitions: An Extensible LLM Benchmark and Leaderboard](https://arxiv.org/abs/2407.07796)（[Grid-Based Game Benchmark 榜单](https://research-outcome.github.io/LLM-Game-Benchmark/leaderboard/)）：用可扩展网格世界游戏和公开榜单测量 LLM 的规划、竞争和基于规则的动作选择。
+- [Training on the Test Task Confounds Evaluation and Emergence](https://arxiv.org/abs/2407.07890)：显示直接训练基准任务格式会制造误导性的涌现和评测增益，提醒需要把任务级暴露与一般能力分开记录。
+- [Position: Measure Dataset Diversity, Don't Just Claim It](https://arxiv.org/abs/2407.08188)：主张显式测量数据集多样性，要求基准报告量化覆盖度和冗余，而不是只做定性多样性声明。
+- [OptiBench Meets ReSocratic: Measure and Improve LLMs for Optimization Modeling](https://arxiv.org/abs/2407.09887)：用 OptiBench 和 ReSocratic prompting 工作流评测优化建模能力，衡量 LLM 能否把自然语言问题表述成数学规划模型。
+- [The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism](https://arxiv.org/abs/2407.10457)：比较 greedy decoding、采样和 best-of-N 在不同任务上的表现，说明解码非确定性会改变 LLM 排名和方差。
+- [DOCBENCH: A Benchmark for Evaluating LLM-based Document Reading Systems](https://arxiv.org/abs/2407.10701)：用五个领域的 229 个真实文件和 1,102 个问题评测文档阅读系统，覆盖解析、元数据抽取、多模态理解和长上下文阅读。
+- [CLAVE: An Adaptive Framework for Evaluating Values of LLM Generated Responses](https://arxiv.org/abs/2407.10725)：结合大模型抽取价值概念和校准后的小 evaluator，并用 ValEval 的 13,000 多个标注元组测试三套价值体系上的价值检测。
+- [Codebook LLMs: Evaluating LLMs as Measurement Tools for Political Science Concepts](https://arxiv.org/abs/2407.10747)：整理三套政治科学 codebook、文本和人工标签，评估 LLM 能否遵循抗议、政治暴力和竞选纲领编码中的操作性定义。
+- [DataDream: Few-shot Guided Dataset Generation](https://arxiv.org/abs/2407.10910)：用少量真实图像 LoRA 适配扩散生成器并合成类别数据集，在十个数据集上评估其对下游图像分类的提升。
+- [AlleNoise: large-scale text classification benchmark dataset with real-world label noise](https://arxiv.org/abs/2407.10992)：整理 50 多万条电商文本样本，覆盖约 5,600 个类别，带真实用户标签噪声和人工验证干净标签，用于鲁棒 noisy-label 文本分类评测。
+- [FIRE: A Dataset for Feedback Integration and Refinement Evaluation of Multimodal Models](https://arxiv.org/abs/2407.11522)：构建 110 万段多模态反馈修订对话和含 11,000 个测试对话的 FIRE-Bench，评估 VLM 能否在两种设置下根据用户反馈修改回答。
+- [CEBench: A Benchmarking Toolkit for the Cost-Effectiveness of LLM Pipelines](https://arxiv.org/abs/2407.12797)：通过可配置的多目标评测衡量 LLM pipeline 的成本效益权衡，服务于需要同时优化准确率和推理开销的部署选择。
+- [PM-LLM-Benchmark: Evaluating Large Language Models on Process Mining Tasks](https://arxiv.org/abs/2407.13244)：评估 LLM 的 process mining 领域知识和任务策略，包含流程专门问题，并讨论商业模型和开源模型排名中的评测偏差。
+- [AMONGAGENTS: Evaluating Large Language Models in the Interactive Text-Based Social Deduction Game](https://arxiv.org/abs/2407.16521)：实现类似 Among Us 的文本环境，测试 LLM 在不完全信息和不同人格原型下的规则理解、欺骗推断与行动决策。
+- [MMRA: A Benchmark for Multi-granularity Multi-image Relational Association](https://arxiv.org/abs/2407.17379)：在 1,024 个多图样本和 11 个基于 ConceptNet 的关系子任务上评测 LVLM，区分图像级与实体级关联失败。
+- [PERSONA: A Reproducible Testbed for Pluralistic Alignment](https://arxiv.org/abs/2407.17387)：程序化生成 1,586 个基于美国人口普查的 persona 和 317,200 对反馈，用于评测多样用户角色扮演和 pluralistic alignment 方法。
+- [Unveiling Scoring Processes: Dissecting the Differences between LLMs and Human Graders in Automatic Scoring](https://arxiv.org/abs/2407.18328)：让 LLM grader 生成其用于科学作答评分的分析 rubric，并与人类评分逻辑比较，测试 rubric 对齐能否提高评分准确率。
+- [PersonaGym: Evaluating Persona Agents and LLMs](https://arxiv.org/abs/2407.18416)：用 200 个 persona 和 10,000 个问题动态评测 persona agent，并以决策理论式 PersonaScore 大规模衡量自由形式 persona 忠实度。
+- [Data Contamination Report from the 2024 CONDA Shared Task](https://arxiv.org/abs/2407.21530)：报告 CONDA shared task 的污染证据数据库，汇总 91 个污染来源上的 566 条记录，帮助研究者避开已知泄露资源上的评测。
+- [The Impact of Hyperparameters on Large Language Model Inference Performance: An Evaluation of vLLM and HuggingFace Pipelines](https://arxiv.org/abs/2408.01050)：在 vLLM 和 HuggingFace pipelines 下测量 20 个 LLM 的吞吐率，展示不规则超参数地形以及 GPU 更换后重新调参带来的收益。
+- [CFBench: A Comprehensive Constraints-Following Benchmark for LLMs](https://arxiv.org/abs/2408.01122)：整理 1,000 条指令，覆盖 200 多个场景、50 多类 NLP 任务和 10 类约束，并按优先级、多维需求满足度评测输出是否遵循约束。
+- [Talk Less, Interact Better: Evaluating In-context Conversational Adaptation in Multimodal LLMs](https://arxiv.org/abs/2408.01417)：提出 ICCA 参考游戏评测多模态对话适应，衡量模型是否会在重复交互中自发让语言更高效。
+- [Is Large Language Model Good at Database Knob Tuning? A Comprehensive Experimental Evaluation](https://arxiv.org/abs/2408.02213)：把 LLM 当作数据库管理员评测 knob pruning、初始化和推荐，并在不同基准、数据库引擎和硬件设置下比较 prompt 驱动调参。
+- [MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models](https://arxiv.org/abs/2408.02718)：覆盖七类多图关系、52 个任务、77,000 张图像和 11,000 道多选题，揭示 GPT-4o 等模型在空间与多图理解上仍准确率偏低。
+- [MoExtend: Tuning New Experts for Modality and Task Extension](https://arxiv.org/abs/2408.03511)：向预训练 MoE 语言模型加入新专家以扩展视觉语言能力，评估其在避免全模型微调和灾难性遗忘时的多模态收益。
+- [MMRole](https://arxiv.org/abs/2408.04203)：构建含 85 个角色、11,000 张图像和 14,000 段对话的 MMRole-Data，并用感知、交互和角色一致性三方面八个指标评测多模态角色扮演 agent。
+- [An Empirical Study on Challenges for LLM Application Developers](https://arxiv.org/abs/2408.05002)：分析 29,057 条 OpenAI 开发者论坛问题，并人工编码其中 2,364 条，形成 prompt、API、plugin、部署和调试挑战分类。
+- [Revisiting Multi-Modal LLM Evaluation](https://arxiv.org/abs/2408.05334)：在 TDIUC、TallyQA、DVQA 和 VQDv1 上重新评测近期 MLLM，暴露旧主流基准掩盖的 VQA 偏差、计数、OCR、图表和区域查询失败。
+- [Report on the 1st Workshop on Large Language Model for Evaluation in Information Retrieval (LLM4Eval 2024) at SIGIR 2024](https://arxiv.org/abs/2408.05388)：总结 SIGIR 2024 LLM4Eval workshop 的议程、panel 和录用论文，主题是把 LLM 用作信息检索评测器。
+- [VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents](https://arxiv.org/abs/2408.06327)（[结果](https://github.com/THUDM/VisualAgentBench)）：在具身、GUI 和视觉设计场景中评测 LMM 作为视觉 agent 的能力，并用程序求解器、LMM bootstrap 与人工演示轨迹做行为克隆实验。
+- [Evaluating the Evaluator: Measuring LLMs' Adherence to Task Evaluation Instructions](https://arxiv.org/abs/2408.08781)：汇总常见 LLM judge 质量标准并改变指令详细度，测试裁判是否遵循评测 prompt，还是回落到训练中学到的质量偏好，并以 perplexity 作无 prompt 对照。
+- [Constructing Domain-Specific Evaluation Sets for LLM-as-a-judge](https://arxiv.org/abs/2408.08808)：通过人工整理、半监督聚类和分层抽样构建 14 个领域、1,573 个样本的 LLM judge 评测集，并测量模型可分性和 Chatbot Arena 一致性。
+- [See What LLMs Cannot Answer: A Self-Challenge Framework for Uncovering LLM Weaknesses](https://arxiv.org/abs/2408.08978)：从 GPT-4 失败样本出发，经错误模式归纳和人工反馈迭代生成 SC-G4，包含 1,835 个高难实例和人工标准答案。
+- [Reference-Guided Verdict: LLMs-as-Judges in Automatic Evaluation of Free-Form Text](https://arxiv.org/abs/2408.09235)：用多个 LLM 裁判和 reference-guided verdict 评测自由形式问答，目标是比 exact match、F1 或单一自动裁判更可靠。
+- [ShapeSplat: A Large-scale Dataset of Gaussian Splats and Their Self-Supervised Pretraining](https://arxiv.org/abs/2408.10906)：构建 206,000 个 3D Gaussian Splatting 对象，覆盖 87 个类别，并评测 Gaussian-MAE 预训练及分类、分割迁移。
+- [SysBench: Can Large Language Models Follow System Messages?](https://arxiv.org/abs/2408.10943)：构造 500 条定制 system message 和多轮对话，覆盖六类约束，测量约束违反、指令误判和多轮不稳定性。
+- [ConflictBank: A Benchmark for Evaluating the Influence of Knowledge Conflicts in LLM](https://arxiv.org/abs/2408.12076)：构建 740 多万组 claim-evidence pair 和 55.3 万个问答，测试检索证据、模型内在知识及二者交互中的知识冲突。
+- [MME-RealWorld: Could Your Multimodal LLM Challenge High-Resolution Real-World Scenarios that are Difficult for Humans?](https://arxiv.org/abs/2408.13257)（[榜单](https://mme-realworld.github.io/)）：从 13,366 张高分辨率图像中整理 29,429 个专家和标注员标注的问答，覆盖 43 个子任务和五类真实场景，28 个 MLLM 均低于 60% 准确率。
+- [DHP Benchmark: Are LLMs Good NLG Evaluators?](https://arxiv.org/abs/2408.13704)：用分层扰动文本和统计检验量化 LLM evaluator 的辨别力，覆盖摘要、故事补全、问答和翻译数据集。
+- [Evaluation of Table Representations to Answer Questions from Tables in Documents : A Case Study using 3GPP Specifications](https://arxiv.org/abs/2408.17008)：比较 3GPP 技术文档问答中的表格切块表示，发现带重复表头上下文的行级单元表示能改善表格密集语料检索。
+- [Report Cards: Qualitative Evaluation of Language Models Using Natural Language Summaries](https://arxiv.org/abs/2409.00844)：提出面向模型技能的自然语言 report cards，并用 specificity、faithfulness 和 interpretability 评价生成摘要，而不是只依赖数字基准分数。
+- [PUB: Plot Understanding Benchmark and Dataset for Evaluating Large Language Models on Synthetic Visual Data Interpretation](https://arxiv.org/abs/2409.02617)：用受控参数自动生成全新的时间序列、直方图、小提琴图、箱线图和聚类图像，并让多模态模型回答图表解读问题，以避免测试集已被训练暴露。
+- [Debugging with Open-Source Large Language Models: An Evaluation](https://arxiv.org/abs/2409.03031)：在 DebugBench 的 4,000 多个 Python、Java 和 C++ 缺陷实例上评测五个可本地部署开源代码模型，报告 43.9% 到 66.6% 的修复得分区间且 DeepSeek-Coder 最优。
+- [PingPong: A Benchmark for Role-Playing Language Models with User Emulation and Multi-Model Evaluation](https://arxiv.org/abs/2409.06820)：用玩家模型、用户模拟模型和裁判模型集成组成动态角色扮演对话，在 64 个角色与情境组合上评测 40 多个英俄模型的角色一致性、娱乐性和流畅度。
+- [LIME: Less Is More for MLLM Evaluation](https://arxiv.org/abs/2409.06851)：通过半自动流程过滤无信息样本和答案泄露问题，使 MLLM 评测样本减少 76%、耗时减少 77%，同时保留区分模型能力的信号。
+- [Think Together and Work Better: Combining Humans' and LLMs' Think-Aloud Outcomes for Effective Text Evaluation](https://arxiv.org/abs/2409.07355)：提出 InteractEval，把人类和 LLM 的 think-aloud 轨迹转成文本评价清单属性，覆盖 coherence、fluency、consistency 和 relevance，并揭示人类更擅长内部质量属性而 LLM 更擅长外部对齐属性。
+- [ComplexCodeEval: A Benchmark for Evaluating Large Code Models on More Complex Code](https://arxiv.org/abs/2409.10280)：从高星 GitHub 项目整理 3,897 个 Java 和 7,184 个 Python 样本，以函数签名、docstring 和 API 引用模拟真实开发环境，测试代码生成、补全、API 推荐和测试用例生成。
+- [Revealing and Mitigating the Challenge of Detecting Character Knowledge Errors in LLM Role-Playing](https://arxiv.org/abs/2409.11726)：定义 RoleKE-Bench 来评测角色扮演智能体识别已知与未知角色知识错误的能力，并显示模型尤其难发现熟悉知识错误，再测试 Self-Recollection and Self-Doubt 推理缓解方法。
+- [Measuring Human and AI Values based on Generative Psychometrics with Large Language Models](https://arxiv.org/abs/2409.12106)：提出 Generative Psychometrics for Values，将非结构化文本解析为价值取向感知，在人类博客上验证稳定性和效度，并扩展到可规模化的 LLM 价值测量。
+- [Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking](https://arxiv.org/abs/2409.15268)：构建 SOS-Bench，把 LLM 裁判偏好胜率与安全、知识和指令遵循等具体对齐指标对照，显示裁判分数可能奖励风格而非事实性和安全性。
+- [CUTE: Measuring LLMs’ Understanding of Their Tokens](https://arxiv.org/abs/2409.15452)：用一组正字法任务测试 LLM 是否知道 tokenizer 单元内部字符并能实际操作它们，将 token 拼写知识与文本编辑能力区分开。
+- [HLB: Benchmarking LLMs' Humanlikeness in Language Use](https://arxiv.org/abs/2409.15890)：在十个心理语言学实验中比较 20 个 LLM 和 2,000 多名人类参与者，覆盖声音、词汇、句法、语义和篇章层面的语言使用人类相似性。
+- [AI Can Be Cognitively Biased: An Exploratory Study on Threshold Priming in LLM-Based Batch Relevance Assessment](https://arxiv.org/abs/2409.16022)：在信息检索相关性判断中测试 LLM 的阈值启动偏差，观察先前暴露的决策阈值是否会移动后续批量标注结果。
+- [MM-CamObj: A Comprehensive Multimodal Dataset for Camouflaged Object Scenarios](https://arxiv.org/abs/2409.16084)：构建 CamObj-Align 的 11,363 个图文对和 CamObj-Instruct 的 11,363 张图像及 68,849 段对话，用于训练与评测 LVLM 在伪装物体场景中的表现。
+- [CJEval: A Benchmark for Assessing Large Language Models Using Chinese Junior High School Exam Data](https://arxiv.org/abs/2409.16202)：收集 26,136 个中国初中教育样本，覆盖四类应用任务和十个学科，并标注题型、难度、知识点、答案和解析。
+- [AXCEL: Automated eXplainable Consistency Evaluation using LLMs](https://arxiv.org/abs/2409.16984)：定义基于提示的生成文本一致性指标，同时返回分数和解释，用于替代脆弱的 ROUGE、BLEU 或需领域训练的 NLI 检查。
+- [Dataset Distillation-Based Hybrid Federated Learning on Non-IID Data](https://arxiv.org/abs/2409.17517)：评测 HFLDD 混合联邦学习框架，由簇头收集客户端蒸馏数据以缓解标签分布偏斜带来的 non-IID 训练影响。
+- [DARE: Diverse Visual Question Answering with Robustness Evaluation](https://arxiv.org/abs/2409.18023)：构造多选 VQA 基准，把计数、空间推理等视觉语言场景与指令变化和评测协议变化下的鲁棒性测试结合起来。
+- [Easy2Hard-Bench: Standardized Difficulty Labels for Profiling LLM Performance and Generalization](https://arxiv.org/abs/2409.18433)：统一整理六个数学、编程、国际象棋和推理数据集，并用人类或榜单答题记录通过 IRT 与 Glicko-2 式方法估计题目数值难度。
+- [ASAG2024: A Combined Benchmark for Short Answer Grading](https://arxiv.org/abs/2409.18596)：把七个短答案评分数据集合并到统一结构和评分尺度下，使自动评分器能跨学科、分布和评分规程比较泛化能力。
+- [A Critical Look at Meta-evaluating Summarisation Evaluation Metrics](https://arxiv.org/abs/2409.19507)：审视摘要指标 meta-evaluation 实践，指出其高度依赖新闻数据集和 faithfulness 单一目标，并主张建立面向用户质量维度与多领域场景的指标基准。
+- [Can Large Language Models Analyze Graphs like Professionals? A Benchmark, Datasets and Models](https://arxiv.org/abs/2409.19667)：提出 ProGraph 手工图分析基准，包含三类任务，要求模型像专家一样编写基于图分析库的程序，而不是只在小规模文本化图上直接推理。
+- [UniSumEval: Towards Unified, Fine-Grained, Multi-Dimensional Summarization Evaluation for LLMs](https://arxiv.org/abs/2409.19898)：在多领域、不同输入长度和细粒度质量维度上扩展摘要评测，并用同一标注方案比较九个摘要模型和自动评估器。
+- [Beyond Prompts: Dynamic Conversational Benchmarking of Large Language Models](https://arxiv.org/abs/2409.20222)：在一次长模拟用户交互中交错多个任务，评测智能体的长期记忆、持续学习和信息整合，而不是只看单任务聊天。
+- [MM-Conv: A Multi-modal Conversational Dataset for Virtual Humans](https://arxiv.org/abs/2410.00253)：在 AI2-THOR 中用 VR 记录指称性对话，包含动作捕捉、语音、凝视和场景图，服务于 3D 场景中的虚拟人共语手势生成。
+- [Toward a Holistic Evaluation of Robustness in CLIP Models](https://arxiv.org/abs/2410.01534)：从视觉因素扰动、置信不确定性与 OOD 检测、图文桥接、3D 感知以及与现代 LMM 编码器交互等角度评测 CLIP 鲁棒性。
+- [MARPLE: A Benchmark for Long-Horizon Inference](https://arxiv.org/abs/2410.01926)：用模拟家庭环境中的视觉、语言和音频证据重放，让模型尽早判断是哪一名 agent 导致环境变化，测试长时程多模态溯因推理。
+- [MetaMetrics: Calibrating Metrics For Generation Tasks Using Human Preferences](https://arxiv.org/abs/2410.02381)：监督学习组合现有生成评测指标，使分数能按具体人类偏好维度校准，并覆盖语言和视觉生成任务。
+- [LLLaVA-Critic: Learning to Evaluate Multimodal Models](https://arxiv.org/abs/2410.02712)：用 critic instruction 数据训练开源多模态评估器，使其既能作为 LMM-as-a-judge 打分器，也能为偏好学习提供奖励信号。
+- [Code Comprehension then Auditing for Unsupervised LLM Evaluation](https://arxiv.org/abs/2410.03131)：把代码正确性评估拆成先生成程序行为解释、再审计任务对齐两步，减少直接判断完整代码时的行为误解。
+- [Towards Reproducible LLM Evaluation: Quantifying Uncertainty in LLM Benchmark Scores](https://arxiv.org/abs/2410.03492)：重复 cardinal-direction 推理评测来估计均值分数和预测区间，提供低成本量化基准分数不确定性的协议。
+- [Rationale-Aware Answer Verification by Pairwise Self-Evaluation](https://arxiv.org/abs/2410.04838)：发现 StrategyQA 中答案正确的 LLM 解答只有 19% 拥有有效 rationale，并通过 pairwise self-evaluation 选择 rationale-aware verifier 训练数据。
+- [R-Bench: Are Your Large Multimodal Model Robust to Real-World Corruptions?](https://arxiv.org/abs/2410.05474)：建模从用户拍摄到模型接收的完整图像损坏链，覆盖 33 个 corruption 维度和 2,970 个人工标注问答，对 20 个 LMM 测量绝对和相对鲁棒性。
+- [VHELM: A Holistic Evaluation of Vision Language Models](https://arxiv.org/abs/2410.07112)（[榜单](https://crfm.stanford.edu/helm/vhelm/v2.0.1/)）：把 HELM 扩展到 VLM，统一 prompting、推理参数和指标，覆盖感知、推理、公平性、多语言性、毒性、鲁棒性和安全等九个方面。
+- [Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates](https://arxiv.org/abs/2410.07137)：通过构造与指令无关的固定输出，在 AlpacaEval 2.0、Arena-Hard-Auto 和 MT-Bench 上获得高胜率，揭示自动基准的风格与长度可操纵性。
+- [Is C4 Dataset Optimal for Pruning? An Investigation of Calibration Data for LLM Pruning](https://arxiv.org/abs/2410.07461)：比较预训练和下游数据作为 LLM 剪枝校准集的效果，并在 ICL 与 CoT 提示下显示 C4 并不总是最佳剪枝校准来源。
+- [COMPL-AI Framework: A Technical Interpretation and LLM Benchmarking Suite for the EU Artificial Intelligence Act](https://arxiv.org/abs/2410.07959)（[结果门户](https://compl-ai.org/)）：把欧盟 AI Act 要求转成可测量的 LLM 检查项并评测 12 个模型，暴露鲁棒性、安全、多样性和公平性覆盖不足。
+- [SPORTU: A Comprehensive Sports Understanding Benchmark for Multimodal Large Language Models](https://arxiv.org/abs/2410.08474)：结合 900 个文本规则与策略问题、七类运动的 1,701 个慢动作视频片段和 12,048 个视频问答，测试多层级体育理解。
+- [FB-Bench: A Fine-Grained Multi-Task Benchmark for Evaluating LLMs' Responsiveness to Human Feedback](https://arxiv.org/abs/2410.09412)：用 591 个中文样本测试多轮人类反馈响应性，覆盖八类任务、五类前序回复缺陷和九类反馈。
+- [VLFeedback: A Large-Scale AI Feedback Dataset for Large Vision-Language Models Alignment](https://arxiv.org/abs/2410.09421)：提供 82,000 多条多模态指令和 AI 生成 rationale，并用 DPO 训练 Silkie，再评测 helpfulness、visual faithfulness、安全性和 hallucination 缓解。
+- [MMAD: A Comprehensive Benchmark for Multimodal Large Language Models in Industrial Anomaly Detection](https://arxiv.org/abs/2410.09453)：构建七个工业检测子任务，包含 8,366 张图像上的 39,672 个问题，显示 GPT-4o 平均 74.9% 准确率仍低于工业要求。
+- [A Step Towards Mixture of Grader: Statistical Analysis of Existing Automatic Evaluation Metrics](https://arxiv.org/abs/2410.10030)：按问题类型分析现有 QA 评测指标之间及其与人类式评分的相关性，发现单一指标难以充分估计人类判断，因而引出 mixture-of-grader 方案。
+- [MMIE: Massive Multimodal Interleaved Comprehension Benchmark for Large Vision-Language Models](https://arxiv.org/abs/2410.10139)：整理 20,000 个交错多模态查询，覆盖 3 大类、12 个领域和 102 个子领域，混合选择题和开放题来评测 LVLM 理解与生成。
+- [Large Language Model Evaluation via Matrix Nuclear-Norm](https://arxiv.org/abs/2410.10672)：用 Matrix Nuclear Norm 及 \(L_{1,2}\)-norm 近似测量隐藏状态压缩、可辨别性和多样性，避免 SVD，速度比 Matrix Entropy 快 8 到 24 倍。
+- [Leaving the barn door open for Clever Hans: Simple features predict LLM benchmark answers](https://arxiv.org/abs/2410.11672)：审计基准内部效度，测试简单词汇或格式特征是否能预测标签，揭示模型可能利用伪相关线索而非目标能力作答。
+- [TSFM-Bench: A Comprehensive and Unified Benchmark of Foundation Models for Time Series Forecasting](https://arxiv.org/abs/2410.11802)：统一评测基于 LLM 和时间序列预训练的时间序列基础模型，支持零样本、少样本和全量监督预测场景。
+- [Understanding the Role of LLMs in Multimodal Evaluation Benchmarks](https://arxiv.org/abs/2410.12329)：修改 MLLM 评测协议以拆分 LLM backbone 先验知识和多模态融合贡献，并在四个基准与八个 MLLM 上做知识识别诊断。
+- [FTII-Bench: A Comprehensive Multimodal Benchmark for Flow Text with Image Insertion](https://arxiv.org/abs/2410.12564)：定义 flow-text image insertion 任务，让模型在逐段累积文本和候选图像中选择最佳插图位置，同时测试图像理解、指令遵循和长文本解释。
+- [JudgeBench: A Benchmark for Evaluating LLM-based Judges](https://arxiv.org/abs/2410.12784)（[榜单](https://huggingface.co/spaces/ScalerLab/JudgeBench)）：把高难知识、推理、数学和代码任务转换成带客观偏好标签的回复对，使 judge 模型评测超越众包偏好一致性。
+- [Combining Entropy and Matrix Nuclear Norm for Enhanced Evaluation of Language Models](https://arxiv.org/abs/2410.14480)：在归一化隐藏状态上计算协方差熵和 Matrix Nuclear Norm，把不确定性、冗余和多样性信号组合成可调评测分数。
+- [A Psycholinguistic Evaluation of Language Models' Sensitivity to Argument Roles](https://arxiv.org/abs/2410.16139)：复现论元角色加工实验，测试合理与不合理动词上下文，显示语言模型虽能识别动词 plausibility，却不匹配人类实时动词预测的选择性模式。
+- [RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style](https://arxiv.org/abs/2410.16184)（[榜单](https://github.com/THU-KEG/RM-Bench-Leaderboard)）：在细微内容修改和风格偏置回复对上评测近 40 个 reward model，目标是识别与下游 policy 质量相关而非受表层偏好误导的奖励模型。
+- [CompassJudger-1: All-in-one Judge Model Helps Model Evaluation and Evolution](https://arxiv.org/abs/2410.16256)：发布开源 all-in-one judge LLM，支持单项打分、成对比较、格式化评测、critique 生成和通用任务，并提供 JudgerBench 统一评测 judge 模型。
+- [CLR-Bench: Evaluating Large Language Models in College-level Reasoning](https://arxiv.org/abs/2410.17558)：覆盖 16 个计算机科学和人工智能大学学科、五类题型及专家解释，将直接答案准确率与基于解释的推理质量区分开。
+- [TP-Eval: Tap Multimodal LLMs' Potential in Evaluation by Customizing Prompts](https://arxiv.org/abs/2410.18071)：为每个 MLLM 重写基准提示以量化并降低 prompt-sensitivity bias，说明统一提示可能低估模型能力。
+- [Improving Model Evaluation using SMART Filtering of Benchmark Datasets](https://arxiv.org/abs/2410.20245)：从三个多选 QA 数据集中移除简单、污染和 embedding 近重复样本，平均减少 48% 数据量，同时提升与 Chatbot Arena 排名的相关性。
+- [NewTerm: Benchmarking Real-Time New Terms for Large Language Models with Annual Updates](https://arxiv.org/abs/2410.20814)：自动构建并年度更新新兴术语基准，报告新术语导致 20% 以上性能下降，且模型难泛化到 cutoff 之后更远的新词。
+- [Project MPG: towards a generalized performance benchmark for LLM capabilities](https://arxiv.org/abs/2410.22368)：把多项基准结果聚合为 Goodness 准确性和 Fastness 成本吞吐两个数，并与 Chatbot Arena 和 MMLU 式榜单相关性比较。
+- [Troubling Taxonomies in GenAI Evaluation](https://arxiv.org/abs/2410.22985)：批判社会影响评测 taxonomy 忽视应用情境、不可通约伤害和社会权力，更像是治理优先的失效边界分析而非新测试集。
+- [LLM-Inference-Bench: Inference Benchmarking of Large Language Models on AI Accelerators](https://arxiv.org/abs/2411.00136)：在 Nvidia 与 AMD GPU、Intel Habana、SambaNova、多种推理框架和交互式硬件面板上评测 LLaMA、Mistral、Qwen 的 7B 与 70B 推理性能。
+- [Unified Generative and Discriminative Training for Multi-modal Large Language Models](https://arxiv.org/abs/2411.00304)：评测面向交错图文序列的结构诱导训练策略，通过动态序列对齐提升 MLLM 的全局语义捕获和细粒度语义区分。
+- [Rate, Explain and Cite (REC): Enhanced Explanation and Attribution in Automatic Evaluation by Large Language Models](https://arxiv.org/abs/2411.02448)：微调 REC-8B、REC-12B 和 REC-70B 自动评估器，使其按 faithfulness、instruction following、coherence 和 completeness 打分，并输出解释和可配置 citation。
+- [VERITAS: A Unified Approach to Reliability Evaluation](https://arxiv.org/abs/2411.03300)：训练幻觉检测模型，在 grounded QA、entailment verification 和 grounded dialogue 等场景下以低于闭源 LLM 裁判的延迟和成本进行可靠性评估。
+- [TDDBench: A Benchmark for Training data detection](https://arxiv.org/abs/2411.03363)：覆盖 13 个图像、表格和文本数据集以及 21 种训练数据检测方法，在四类检测范式下比较准确性、最佳表现、时间和内存。
+- [Evaluation data contamination in LLMs: how do we measure it and (when) does it matter?](https://arxiv.org/abs/2411.03923)：提出 ConTAM，用模型是否真正从被标记样本受益来检验污染指标，并在 13 个基准和七个模型上调查 n-gram 污染信号。
+- [Beemo: Benchmark of Expert-edited Machine-generated Outputs](https://arxiv.org/abs/2411.04032)：收集 6.5K 篇人类、机器生成和专家编辑文本，以及 13.1K 篇机器生成或 LLM 编辑文本，用真实编辑场景评测 33 组机器文本检测器配置。
+- [Bayesian Calibration of Win Rate Estimation with LLM Evaluators](https://arxiv.org/abs/2411.04424)：在故事生成、摘要和指令遵循数据集上，用 Bayesian Win Rate Sampling 与 Bayesian Dawid-Skene 校准 LLM-as-evaluator 的系统比较胜率。
+- [LLM-GLOBE: A Benchmark Evaluating the Cultural Values Embedded in LLM Output](https://arxiv.org/abs/2411.06032)：基于 GLOBE 文化心理学框架和 LLMs-as-a-jury 流程，比较中美 LLM 输出中体现的文化价值系统。
+- [LLM-Assisted Relevance Assessments: When Should We Ask LLMs for Help?](https://arxiv.org/abs/2411.06877)：提出 LARA 相关性评估协议，在有限标注预算下混合人类和 LLM 标签来扩充 IR test collection，同时控制 LLM 偏差风险。
+- [Benchmarking LLMs' Judgments with No Gold Standard](https://arxiv.org/abs/2411.07127)：提出 GEM 生成式互信息指标，用于 peer review 等没有 gold reference 的判断任务，并测试其对改写和拉长文本操纵的鲁棒性。
+- [Semi-Truths: A Large-Scale Dataset of AI-Augmented Images for Evaluating Robustness of AI-Generated Image detectors](https://arxiv.org/abs/2411.07472)：提供 27,600 张真实图像、223,400 个 mask 和 1,472,700 张局部 AI 增强图像及元数据，用于跨增强类型和场景测试生成图像检测器鲁棒性。
+- [Towards Evaluation Guidelines for Empirical Studies Involving LLMs](https://arxiv.org/abs/2411.07668)：为使用 LLM 参与研究过程或评测 LLM 工具的软件工程实证研究制定评估指南，强调实验严谨性而非发布数据集。
+- [Are LLMs Prescient? A Continuous Evaluation using Daily News as the Oracle](https://arxiv.org/abs/2411.08324)：构建 Daily Oracle，从每日新闻自动生成未来事件问答，连续跟踪时间泛化、cutoff 衰减和检索增强预测效果。
+- [CorrectBench: Automatic Testbench Generation with Functional Self-Correction using LLMs for HDL Design](https://arxiv.org/abs/2411.08510)：从自然语言 RTL 规格生成 HDL testbench，进行功能验证并用 bug 反馈自我修正，报告 88.85% 的验证成功率。
+- [Does Unlearning Truly Unlearn? A Black Box Evaluation of LLM Unlearning Methods](https://arxiv.org/abs/2411.12103)：在 WMDP 和新构建的生物数据集上压力测试 LLMU 与 RMU，显示通用能力损伤明显，且五样本提示或简单改写可让准确率十倍以上恢复。
+- [RedPajama: an Open Dataset for Training Large Language Models](https://arxiv.org/abs/2411.12372)：记录 RedPajama-V1 作为 LLaMA 训练数据开放复现，以及 RedPajama-V2 作为带质量信号和元数据的原始网页语料，用于透明预训练数据分析。
+- [Probing the Capacity of Language Model Agents to Operationalize Disparate Experiential Context Despite Distraction](https://arxiv.org/abs/2411.12828)：构造 OEDD 预写 agent 历史场景，包含两个分离的决策前提和后续干扰事实；GPT-3.5 Turbo、GPT-4o 与 Gemini 1.5 Pro 在选择行动时低于随机。
+- [VideoAutoArena: An Automated Arena for Evaluating Large Multimodal Models in Video Analysis through User Simulation](https://arxiv.org/abs/2411.13281)：通过用户模拟生成自适应开放视频问题，用自动裁判和修改版 Elo 评分连续比较 LMM，并以 gold subset 验证自动评测。
+- [Benchmarking GPT-4 against Human Translators: A Comprehensive Evaluation Across Languages, Domains, and Expertise Levels](https://arxiv.org/abs/2411.13775)：用 MQM 人类评价比较 GPT-4 与不同资历译者，在中英、俄英和中印地三组语言及新闻、科技、生物医学三类领域上分析错误。
+- [What Makes a Scene ? Scene Graph-based Evaluation and Feedback for Controllable Generation](https://arxiv.org/abs/2411.15435)：提出 Scene-Bench，包含 MegaSG 的一百万张 scene-graph 标注图像和 SGScore，用多模态 LLM 评估可控生成中的物体存在与关系准确性。
+- [VL-RewardBench: A Challenging Benchmark for Vision-Language Generative Reward Models](https://arxiv.org/abs/2411.17451)（[榜单](https://huggingface.co/spaces/MMInstruction/VL-RewardBench)）：整理 1,250 个经人工核验的样本，覆盖通用多模态查询、幻觉检测和复杂推理；GPT-4o 也仅达到 65.4% 准确率。
+- [FLARE: Toward Universal Dataset Purification Against Backdoor Attacks](https://arxiv.org/abs/2411.19479)：在 all-to-all 和 untargeted 后门攻击下评测数据集净化，显示投毒与正常样本的可分性会随隐藏层变化，并据此提出层感知防御。
+- [Can LLM "Self-report"?: Evaluating the Validity of Self-report Scales in Measuring Personality Design in LLM-based Chatbots](https://arxiv.org/abs/2412.00207)：构造 500 个不同人格设计的聊天机器人，把问卷 self-report 与交互中形成的人类感知对照，发现借用人类人格量表的效度较弱。
+- [OBI-Bench: Can LMMs Aid in Study of Ancient Script on Oracle Bones?](https://arxiv.org/abs/2412.01175)：用 5,523 张甲骨文专业图像评测识别、缀合、分类、检索和释读五类任务，覆盖六个闭源和 17 个开源 LMM。
+- [Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset](https://arxiv.org/abs/2412.02595)：通过分类器集成、合成改写和减少启发式过滤来精炼 Common Crawl，得到 6.3T token 语料，并给出 15T token 长程预训练证据。
+- [Drawing Pandas: A Benchmark for LLMs in Generating Plotting Code](https://arxiv.org/abs/2412.02764)：人工整理 PandasPlotBench 的 175 个自然语言到绘图代码任务，覆盖 dataframe 可视化，并比较 Matplotlib、Seaborn 和 Plotly，其中 Plotly 更困难。
+- [Measuring Fingerprints of Web-filtered Text Datasets and Fingerprint Propagation Through Training](https://arxiv.org/abs/2412.02857)：分类 C4、RefinedWeb、DolmaCC、RedPajama-V2、FineWeb 和 DCLM-Baseline 的文本片段，揭示过滤流程在格式、词汇、内容和模型输出中的数据指纹。
+- [GigaHands: A Massive Annotated Dataset of Bimanual Hand Activities](https://arxiv.org/abs/2412.04244)：记录 56 名受试者与 417 个物体的 34 小时双手活动，从 1.83 亿帧生成 14K 个片段和 84K 条文本标注，用于动作合成和手部运动描述。
+- [BESSTIE: A Benchmark for Sentiment and Sarcasm Classification for Varieties of English](https://arxiv.org/abs/2412.04726)：从 Google Places 评论和 Reddit 评论构建澳大利亚、印度和英国英语的情感与讽刺标签，并进行人工语种变体验证和九个 LLM 微调基线。
+- [StackEval: Benchmarking LLMs in Coding Assistance](https://arxiv.org/abs/2412.05288)：从 Stack Overflow 派生 StackEval，并用近期问题构造 StackUnseen，测试代码编写、调试、代码审查、概念理解以及 LLM 裁判对自身答案的偏好。
+- [Sloth: scaling laws for LLM skills to predict multi-benchmark performance across families](https://arxiv.org/abs/2412.06540)：基于公开基准相关性拟合技能缩放律，把推理和指令遵循等潜在技能建模为跨模型族性能预测因素，无需为每个模型族训练规模扫描。
+- [PTSBench: A Comprehensive Post-Training Sparsity Benchmark Towards Algorithms and Models](https://arxiv.org/abs/2412.07268)：在三类任务和 40 多个现成模型架构上比较 10 多种 post-training sparsity 技术，同时评估算法行为与模型稀疏化能力，并提供开源框架。
+- [Benchmarking Linguistic Diversity of Large Language Models](https://arxiv.org/abs/2412.10271)：从词汇、句法和语义三个维度定义 LLM 输出多样性指标，分析模型与部署选择如何影响类似人类语言的表达丰富度。
+- [LLM-as-an-Interviewer: Beyond Static Testing Through Dynamic LLM Evaluation](https://arxiv.org/abs/2412.10424)：用多轮访谈评测模型，在 MATH 和 DepthQA 上动态改写初始题目、给出反馈、追问，并生成包含优缺点示例的 Interview Report。
+- [Towards Unified Benchmark and Models for Multi-Modal Perceptual Metrics](https://arxiv.org/abs/2412.10594)：提出 UniSim-Bench，覆盖七类多模态感知相似度任务和 25 个数据集，用于检验通用 CLIP 式指标与专用指标的泛化短板。
+- [AD-LLM: Benchmarking Large Language Models for Anomaly Detection](https://arxiv.org/abs/2412.11142)：围绕 NLP 异常检测评测 LLM 的零样本检测、合成数据或类别描述增强，以及辅助选择无监督异常检测模型的能力。
+- [Harnessing Language for Coordination: A Framework and Benchmark for LLM-Driven Multiagent Control](https://arxiv.org/abs/2412.11761)：用实时战略游戏基准和 HIVE 框架测试单个人类能否通过自然语言对话协调最多 2,000 个智能体群体。
+- [SMARTCAL: An Approach to Self-Aware Tool-Use Evaluation and Calibration](https://arxiv.org/abs/2412.12151)：在三个数据集和两种主流工具使用框架下研究 LLM 过度自信地滥用工具的问题，并通过校准提升 QA 准确率、降低 ECE。
+- [AI-Driven Innovations in Volumetric Video Streaming: A Review](https://arxiv.org/abs/2412.12208)：综述面向点云、网格和神经表示等体积视频的 AI 传输与渲染方法，突出带宽、渲染和实际部署瓶颈。
+- [Evaluation of LLM Vulnerabilities to Being Misused for Personalized Disinformation Generation](https://arxiv.org/abs/2412.13666)：测试开闭源 LLM 生成个性化虚假新闻的意愿，并评估安全过滤触发、个性化质量自评和生成文本可检测性。
+- [Knowledge Editing with Dynamic Knowledge Graphs for Multi-Hop Question Answering](https://arxiv.org/abs/2412.13782)：在多跳问答基准上评估 KEDKG，用动态知识图谱和实体关系检索管理被编辑事实与知识冲突。
+- [ORBIT: Cost-Effective Dataset Curation for Large Language Model Domain Adaptation with an Astronomy Case Study](https://arxiv.org/abs/2412.14436)：从 FineWeb-Edu 过滤出 10B token 天文学语料，训练 Orbit-LLaMA，并在天文、法律和医学场景验证领域语料筛选流程。
+- [On Verbalized Confidence Scores for LLMs](https://arxiv.org/abs/2412.14737)：跨数据集、模型族和提示方法评测 LLM 直接输出 verbalized confidence score 的可靠性，而不依赖 logits 或额外不确定性模型。
+- [MMLU-CF: A Contamination-free Multi-task Language Understanding Benchmark](https://arxiv.org/abs/2412.15194)：构建更难的 MMLU 风格选择题基准，包含去污染规则、公开验证集和封闭测试集，以抵抗无意与恶意数据泄漏。
+- [Data Laundering: Artificially Boosting Benchmark Results through Knowledge Distillation](https://arxiv.org/abs/2412.15255)：展示知识蒸馏可隐蔽转移特定基准答案，使小模型在 GPQA 等任务上分数虚高，却没有获得真实推理能力。
+- [Do Multimodal Language Models Really Understand Direction? A Benchmark for Compass Direction Reasoning](https://arxiv.org/abs/2412.16599)：提出 CDR 图像任务评测空间方向与罗盘方向推理，发现许多多模态模型接近随机猜测，需多样数据和链式思维微调才明显改善。
+- [SubData: Bridging Heterogeneous Datasets to Enable Theory-Driven Evaluation of Political and Demographic Perspectives in LLMs](https://arxiv.org/abs/2412.16783)：提供标准化异构 perspective-alignment 数据集的 Python 库，并示范如何测试政治或人口属性对齐模型的下游分类行为。
+- [MINTQA: A Multi-Hop Question Answering Benchmark for Evaluating LLMs on New and Tail Knowledge](https://arxiv.org/abs/2412.17032)：包含 10,479 个新知识和 17,887 个长尾知识多跳问答样本及子问题，用于测试 22 个 LLM 的检索、分解和动态推理。
+- [Evaluating the Capabilities of Large Language Models for Multi-label Emotion Understanding](https://arxiv.org/abs/2412.17837)：构建 EthioEmo，覆盖阿姆哈拉语、奥罗莫语、索马里语和提格雷尼亚语的多标签情绪分类，并比较零样本、少样本和微调模型。
+- [BenCzechMark : A Czech-centric Multitask and Multimetric Benchmark for Large Language Models with Duel Scoring Mechanism](https://arxiv.org/abs/2412.17933)：覆盖八大类别的 50 个捷克语任务，新增 14 个数据集，采用 duel scoring，并维护公开排行榜。
+- [Investigating the Personality Consistency in Quantized Role-Playing Dialogue Agents](https://doi.org/10.18653/v1/2024.emnlp-industry.19)：用 Big Five 人格设定、多轮对话、自评和语言分析评估量化角色扮演对话代理，并提出 Think2 改善人格一致性。
+- [Artificial Intelligence in 6G Wireless Networks: Opportunities, Applications, and Challenges](https://doi.org/10.1155/2024/8845070)：综述机器学习和深度学习在下一代无线网络中的应用，包括自动化、资源管理和 6G 部署挑战。
+- [SEED-Bench: Benchmarking Multimodal Large Language Models](https://doi.org/10.1109/cvpr52733.2024.01263)：用图像和视频理解选择题自动评测多模态 LLM 的感知、推理和指令遵循能力。
+- [Findings of the Quality Estimation Shared Task at WMT 2024: Are LLMs Closing the Gap in QE?](https://doi.org/10.18653/v1/2024.wmt-1.3)（[WMT 2024 Quality Estimation Shared Task 结果](https://www2.statmt.org/wmt24/qe-task.html)）：报告 WMT 2024 质量估计任务，覆盖句级评分、错误片段检测和自动后编辑，并新增 MQM、直接评估和 post-edit 测试集。
+- [Large-scale benchmark yields no evidence that language model surprisal explains syntactic disambiguation difficulty](https://doi.org/10.1016/j.jml.2024.104510)：用大规模句法消歧基准检验心理语言学 surprisal 假说，结果未发现 LM surprisal 能解释人类消歧难度的证据。
+- [Can Large Language Models Assess Personality From Asynchronous Video Interviews? A Comprehensive Evaluation of Validity, Reliability, Fairness, and Rating Patterns](https://doi.org/10.1109/taffc.2024.3374875)：评估 LLM 是否能从异步视频面试中判断人格，并检查效度、信度、公平性和系统性评分模式。
+- [LLM Comparator: Interactive Analysis of Side-by-Side Evaluation of Large Language Models](https://doi.org/10.1109/tvcg.2024.3456354)：提出用于并排比较 LLM 的交互式可视分析系统，帮助检查成对输出、评价标准和评测者分歧。
+- [Leveraging Large Language Model for Automatic Patch Correctness Assessment](https://doi.org/10.1109/tse.2024.3452252)：将 LLM 判断用于自动补丁正确性评估，关注通过测试但语义上仍可能错误的生成或修复补丁。
+- [From General LLM to Translation: How We Dramatically Improve Translation Quality Using Human Evaluation Data for LLM Finetuning](https://doi.org/10.18653/v1/2024.wmt-1.17)：介绍 WMT 2024 翻译系统，用人类评价数据适配通用 LLM，面向段落级和视频字幕翻译优化。
+- [LLM-Evolve: Evaluation for LLM’s Evolving Capability on Benchmarks](https://doi.org/10.18653/v1/2024.emnlp-main.940)：把 MMLU、GSM8K 和 AgentBench 改造成多轮反馈场景，用检索记忆测试八个 LLM 是否能从过往交互中提升表现。
+- [MULFE: A Multi-Level Benchmark for Free Text Model Editing](https://doi.org/10.18653/v1/2024.acl-long.732)：在自由文本模型编辑中设置三层泛化测试，覆盖字面记忆、深入理解和推理，并比较不同编辑规模与方法。
+- [Generating Evaluation Criteria of Domain-Specific Large Language Model Using Word Vector Clustering](https://doi.org/10.1109/qrs-c63300.2024.00023)：通过聚类领域词汇自动生成专门 LLM 的评价标准，减少领域评测中手工设计 criterion 的成本。
+- [OpenGU: A Comprehensive Benchmark for Graph Unlearning](https://arxiv.org/abs/2501.02728)：整合 16 种图遗忘算法、37 个数据集、13 个 GNN backbone、多类下游任务和灵活遗忘请求，用于公平比较 GU 方法。
+- [Multi-source Multi-level Multi-token Ethereum Dataset and Benchmark Platform](https://arxiv.org/abs/2501.11906)：结合 3 亿条以太坊交易、3,880 个 token profile、市场指标和 Reddit 情绪，构建用户行为预测和 token 价格预测基准。
+- [Community Detection in Large-Scale Complex Networks via Structural Entropy Game](https://arxiv.org/abs/2501.15130)：评估 CoDeSEG 这一结构熵势博弈社区发现方法及重叠社区启发式，在大规模真实网络上比较速度、ONMI 和 F1。
+- [Dynamic risk assessment for autonomous vehicles from spatio-temporal probabilistic occupancy heatmaps.](https://arxiv.org/abs/2501.16480)：提出 PORA 碰撞风险指标，结合概率占用热图和 Cox 模型，并在 Monte Carlo 仿真中与安全替代指标比较。
+- [HiBug2: Efficient and Interpretable Error Slice Discovery for Comprehensive Model Debugging](https://arxiv.org/abs/2501.16751)：通过生成视觉属性、高效 slice 枚举和验证集外推发现并修复模型错误切片，覆盖分类、姿态估计和目标检测任务。
+- [Normative Evaluation of Large Language Models with Everyday Moral Dilemmas](https://arxiv.org/abs/2501.18081)：让七个 LLM 判断 10,000 多个 Reddit AITA 日常道德困境，并将归责与解释同 Reddit 用户及模型之间进行比较。
+- [How Contaminated Is Your Benchmark? Quantifying Dataset Leakage in Large Language Models with Kernel Divergence](https://arxiv.org/abs/2502.00678)：提出 Kernel Divergence Score，通过微调前后样本嵌入 kernel 变化测量污染，并在受控泄漏设置中验证。
+- [Towards Sustainable NLP: Insights from Benchmarking Inference Energy in Large Language Models](https://arxiv.org/abs/2502.05610)：跨任务、模型、提示和系统设置测量 LLM 推理能耗，分析输出长度、延迟、量化和 batch size 对能耗的影响。
+- [A Distributional Perspective on Word Learning in Neural Language Models](https://arxiv.org/abs/2502.05892)：为从零训练的小语言模型定义分布式词汇知识 signature，并将模型词汇学习轨迹与儿童语言发展证据比较。
+- [Benchmarking Prompt Sensitivity in Large Language Models](https://arxiv.org/abs/2502.06065)：提出 Prompt Sensitivity Prediction 和基于 TriviaQA、HotpotQA 提示变体的 PromptSET，显示现有方法难以预判 prompt 改写效果。
+- [Fast Proxies for LLM Robustness Evaluation](https://arxiv.org/abs/2502.10487)：将直接提示、embedding-space 攻击和 prefilling 攻击同昂贵攻击集成评测相关联，以约三个数量级的成本下降估计鲁棒性。
+- [RoleMRC](https://arxiv.org/abs/2502.11387)：用 10.2K 角色画像、37.9K 合成指令和 1.4K 测试样本评估角色扮演指令遵循，覆盖对话、MRC、拒答和优先级指令。
+- [A Dual-Perspective NLG Meta-Evaluation Framework with Automatic Benchmark and Better Interpretability](https://arxiv.org/abs/2502.12052)：把 NLG 指标 meta-evaluation 拆成两个可解释视角，并在不新增人工评分的情况下自动构造相应 benchmark。
+- [InfoQuest: Evaluating Multi-Turn Dialogue Agents for Open-Ended Conversations with Hidden Context](https://arxiv.org/abs/2502.12257)：评测跨领域社会、策略、对话或多智能体行为。
+- [Crowd Comparative Reasoning: Unlocking Comprehensive Evaluations for LLM-as-a-Judge](https://arxiv.org/abs/2502.12501)：在 LLM-as-judge 比较中引入额外 crowd responses，提升五个基准上的判断准确率，并生成更适合蒸馏的理由。
+- [STEER-ME](https://arxiv.org/abs/2502.13119)（数据集：[narunraman/steer_me](https://huggingface.co/datasets/narunraman/steer_me)）：用 58 个供需推理元素、自动生成的领域和视角变体评测微观经济推理，并对 27 个 LLM 做案例分析。
+- [Toward Robust Non-Transferable Learning: A Survey and Benchmark](https://arxiv.org/abs/2502.13593)：提出 NTLBench 评估 non-transferable learning，测试相关方法能否抵御破坏其泛化限制机制的攻击。
+- [Multimodal RewardBench: Holistic Evaluation of Reward Models for Vision Language Models](https://arxiv.org/abs/2502.14191)（[结果](https://github.com/facebookresearch/multimodal_rewardbench)）：用 5,211 个专家标注偏好三元组评测多模态 reward model，覆盖正确性、偏好、知识、推理、安全和 VQA。
+- [How Far are LLMs from Being Our Digital Twins? A Benchmark for Persona-Based Behavior Chain Simulation](https://arxiv.org/abs/2502.14642)：提出 BehaviorChain，包含 15,846 个 persona 条件行为，用于测试 LLM 在动态场景中连续模拟人类行为的能力。
+- [AlgoPerf Competition Analysis](https://arxiv.org/abs/2502.15015)（[竞赛页](https://mlcommons.org/benchmarks/algorithms/)）：分析首届 AlgoPerf 竞赛，在固定 workload、外部调参和自调参规则下比较 18 个训练算法提交。
+- [Mind the Style Gap: Meta-Evaluation of Style and Attribute Transfer Metrics](https://arxiv.org/abs/2502.15022)：为风格迁移内容保持指标构建更难测试集，显示 style-aware 指标与人类判断更一致。
+- [ThinkBench](https://arxiv.org/abs/2502.16268)（[开源代码](https://github.com/huangshulin123/ThinkBench)，[数据集](https://huggingface.co/datasets/jiuyinjiu/ThinkBench)）：动态生成 2,912 个分布外推理样本，用抗泄漏协议比较 reasoning 与 non-reasoning LLM。
+- [Mind the Gesture: Evaluating AI Sensitivity to Culturally Offensive Non-Verbal Gestures](https://arxiv.org/abs/2502.17710)：提出 MC-SIGNS，包含 25 种手势、85 个国家的 288 个 gesture-country pair，揭示 T2I、LLM 和 VLM 的文化冒犯识别问题。
+- [GRACE: A Granular Benchmark for Evaluating Model Calibration against Human Calibration](https://arxiv.org/abs/2502.19684)：用逐步变易的线索序列和真人对模型比赛，衡量模型何时回答、是否正确以及置信度是否校准。
+- [A Law Reasoning Benchmark for LLM with Tree-Organized Structures including Factum Probandum, Evidence and Experiences](https://arxiv.org/abs/2503.00841)：定义把案件描述映射到 factum probandum、证据和经验层级结构的法律推理任务，并配套众包数据集。
+- [Beyond QA Pairs: Assessing Parameter-Efficient Fine-Tuning for Fact Embedding in LLMs](https://arxiv.org/abs/2503.01131)：通过区分 factual 与 conceptual QA、比较合成数据生成路线，并用更大模型裁判，评估 PEFT 注入领域事实的效果。
+- [ZOGRASCOPE: A New Benchmark for Semantic Parsing over Property Graphs](https://arxiv.org/abs/2503.05268)：提供面向 property graph 的人工标注 Cypher 查询，并划分 iid、组合泛化和长度分区，用于 LLM 语义解析评测。
+- [Holistically Evaluating the Environmental Impact of Creating Language Models](https://arxiv.org/abs/2503.05804)：报告 20M 到 13B active parameters 语言模型创建过程中的碳排放、用水、硬件制造、开发和最终训练影响。
+- [LLM-Driven Usefulness Labeling for IR Evaluation](https://arxiv.org/abs/2503.08965)：研究用 LLM 基于任务、查询、文档和行为信号生成搜索 session 的 usefulness 标签，包括 usefulness 与 relevance 分歧的场景。
+- [OpeNLGauge: An Explainable Metric for NLG Evaluation with Open-Weights LLMs](https://arxiv.org/abs/2503.11858)：发布开源权重、无需参考答案的 NLG 评价指标，提供 error-span 解释，并评估 ensemble 与小型 evaluator 版本。
+- [MMDT / Multimodal DecodingTrust](https://arxiv.org/abs/2503.14827)：通过安全、幻觉、公平、隐私、对抗鲁棒性和 OOD 泛化场景及 red-teaming 数据评测多模态基础模型。
+- [CausalRivers](https://arxiv.org/abs/2503.17452)：提供真实河流流量时间序列、因果真值图和子图采样机制，用于在分布迁移下评测因果发现方法。
+- [AnnoPage Dataset: Dataset of Non-Textual Elements in Documents with Fine-Grained Categorization](https://arxiv.org/abs/2503.22526)：为 7,550 页历史文档标注 25 类非文本元素 bounding box，并给出 YOLO 和 DETR baseline。
+- [CQ-Bench](https://arxiv.org/abs/2504.01127)：通过多角色对话中的隐含文化价值测试 cultural intelligence，包含态度检测、价值选择和价值抽取三类任务，并经人工校验。
+- [TiC-LM: A Web-Scale Benchmark for Time-Continual LLM Pretraining](https://arxiv.org/abs/2504.02107)：从 114 个 Common Crawl dump 构建时间连续预训练数据，并在通用网页与领域数据流上评估带 replay 的更新策略。
+- [Stance-Driven Multimodal Controlled Statement Generation: New Dataset and Task](https://arxiv.org/abs/2504.03295)：提出 StanceGen2024，用包含文本、图像、视频和立场标注的政治帖子评测 stance-controlled response generation。
+- [Identifying and Evaluating Inactive Heads in Pretrained LLMs](https://arxiv.org/abs/2504.03889)：比较 12 种 inactive attention head 评分，并通过干预验证，发现特定上下文中平均超过 12% 的注意力头可被消融。
+- [FinGrAct: A Framework for FINe-GRrained Evaluation of ACTionability in Explainable Automatic Fact-Checking](https://arxiv.org/abs/2504.05229)：用联网能力、细粒度标准、评测数据集和人类相关性检验，评估自动事实核查解释是否具有 actionability。
+- [Seeking and Updating with Live Visual Knowledge](https://arxiv.org/abs/2504.05288)：提出 LiveVQA，包含 107,143 个近期视觉知识样本，用于测试 MLLM 在静态训练截止时间之后的视觉知识获取与更新。
+- [Taxonomy-Aware Evaluation of Vision–Language Models](https://arxiv.org/abs/2504.05457)：把 VLM 自由文本预测映射到视觉 taxonomy，并用层级 precision 与 recall 评估细粒度分类答案。
+- [The Importance of Being Discrete: Measuring the Impact of Discretization in End-to-End Differentially Private Synthetic Data](https://arxiv.org/abs/2504.06923)：测量四种离散化策略对 DP marginal generative model 的影响，比较六种合成表格数据方法的 utility 与隐私风险。
+- [An Evaluation of Cultural Value Alignment in LLM](https://arxiv.org/abs/2504.08863)：用文化价值问卷和人类真值分数评估十个 LLM 在 20 个国家及语言中的文化对齐，并定义文化对齐指标。
+- [CHARM: Calibrating Reward Models With Chatbot Arena Scores](https://arxiv.org/abs/2504.10045)：用 Chatbot Arena Elo 分数校准 reward model，缓解模型偏好偏差，并提升 RM-Bench、RewardBench Chat-Hard 和下游对齐表现。
+- [NTIRE 2025 Cross-Domain Few-Shot Object Detection Challenge](https://arxiv.org/abs/2504.10685)（[竞赛](https://codalab.lisn.upsaclay.fr/competitions/21851)）：报告首届 NTIRE CD-FSOD 挑战，包含 152 名注册参赛者、42 个提交团队、13 个最终提交和跨域少样本检测协议。
+- [Benchmarking Differentially Private Tabular Data Synthesis: (Experiments & Analysis)](https://arxiv.org/abs/2504.14061)：用统一的预处理、特征选择和合成框架评估 DP 表格数据生成方法，揭示不同方法的 utility-efficiency 权衡。
+- [LLM-Driven Usefulness Judgment for Web Search Evaluation](https://arxiv.org/abs/2504.14401)：提出 TRUE 任务感知 rubric 方法，结合搜索 session 上下文和行为信号，为网页搜索评估生成 usefulness 标签。
+- [PicPersona-TOD : A Dataset for Personalizing Utterance Style in Task-Oriented Dialogue with Image Persona](https://arxiv.org/abs/2504.17390)：把基于图片的用户 persona 加入任务型对话数据，并用 first impressions、policy-guided prompting 和外部知识个性化回复风格。
+- [MMAU](https://aclanthology.org/2025.findings-naacl.267/)：用 20 个离线任务评测 agent 能力，覆盖工具使用、DAG QA、数据科学与机器学习代码、竞赛编程和数学。
+- [SEEval: Advancing LLM Text Evaluation Efficiency and Accuracy through Self-Explanation Prompting](https://doi.org/10.18653/v1/2025.findings-naacl.411)：用 self-explanation prompting 做自动文本评价，效果达到或超过 G-Eval 与 Analyze-Rate，同时运行时间约降低 20 倍。
+- [On Path to Multimodal Generalist: General-Level and General-Bench](https://arxiv.org/abs/2505.04620)：定义五级多模态通用性框架，并提出 General-Bench，覆盖 700 多个任务和 325,800 个样本，横跨理解与生成。
+- [ServeGen](https://arxiv.org/abs/2505.09999)：刻画生产 LLM serving workload，并按客户端生成合成 workload，用于减少 serving 系统基准中的低估供给问题。
+- [A Dataset for Spatiotemporal-Sensitive POI Question Answering](https://arxiv.org/abs/2505.10928)：基于 GAIA 轨迹和地理 POI 数据构建双语 POI-QA，用人工验证事实测试时空推理能力。
+- [Visual Anomaly Detection under Complex View-Illumination Interplay: A Large-Scale Benchmark](https://arxiv.org/abs/2505.10996)：提出 M2AD，包含 10 类对象、12 个同步视角和 10 种光照设置下的 119,880 张图像，用于异常检测鲁棒性评估。
+- [STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking](https://arxiv.org/abs/2505.11151)：标准化 Spiking Transformer 在分类、分割和检测任务上的评测，支持模块化神经元、编码、梯度和能耗分析。
+- [LoFT: LoRA-fused Training Dataset Generation with Few-shot Guidance](https://arxiv.org/abs/2505.11703)：通过融合单样本 LoRA 权重生成合成训练图像，并在 10 个数据集和少样本引导设置下评估数据质量。
+- [LLM-KG-Bench 3.0: A Compass for Semantic Technology Capabilities in the Ocean of LLMs](https://arxiv.org/abs/2505.13098)：在 RDF、SPARQL、Turtle 和 JSON-LD 等语义技术任务上自动评测 30 多个 LLM，并生成能力 model card。
+- [SLMEval: Entropy-Based Calibration for Human-Aligned Evaluation of Large Language Models](https://arxiv.org/abs/2505.16003)：用少量人类偏好数据上的熵最大化校准 LLM-as-judge 分数，在开放式生产评测中以更低成本提高与人类判断的相关性。
+- [CausalDynamics](https://arxiv.org/abs/2505.16620)：用数千个线性、非线性、常微分、随机微分和气候模型启发系统，以及可配置耦合流程，评测动态因果模型结构发现。
+- [EVOREFUSE: Evolutionary Prompt Optimization for Evaluation and Mitigation of LLM Over-Refusal to Pseudo-Malicious Instructions](https://arxiv.org/abs/2505.23473)：演化生成伪恶意但无害的提示，形成 582 条 over-refusal 测试指令和 3,000 条对齐样本，用于拒答校准。
+- [SEAR: A Multimodal Dataset for Analyzing AR-LLM-Driven Social Engineering Behaviors](https://arxiv.org/abs/2505.24458)：记录 180 段 AR 介导的社会工程对话，包含同步视觉、音频、环境、画像、信任和易受影响性标注。
+- [From Macro to Micro: Probing Dataset Diversity in Language Model Fine-Tuning](https://arxiv.org/abs/2505.24768)：从 117K SFT 样本语料中抽取固定 10K 样本数据集，研究六种指令与回答多样性控制策略。
+- [TimeGraph](https://arxiv.org/abs/2506.01361)：提供合成时间序列因果发现基准，包含非平稳性、不规则采样、隐藏混杂、异质噪声和完整真值因果图。
+- [Do Large Language Models Know Folktales? A Case Study of Yokai in Japanese Folktales](https://arxiv.org/abs/2506.03619)：提出 YokaiEval，包含 809 道选择题，并评估 31 个日语和多语 LLM 对日本妖怪民间故事知识的掌握。
+- [RedRFT: A Light-Weight Benchmark for Reinforcement Fine-Tuning-Based Red Teaming](https://arxiv.org/abs/2506.04302)：用单文件和模块化 PPO 实现、多样性指标、内在奖励以及 LoRA、KL、Lagrange 消融，标准化 RFT red teaming 评测。
+- [From Raw Corpora to Domain Benchmarks: Automated Evaluation of LLM Domain Expertise](https://arxiv.org/abs/2506.07658)：把原始领域语料转成 completion-style keyword benchmark，不依赖 LLM 生成或人工标注，用于抗污染的领域知识评估。
+- [VGC-Bench: Towards Mastering Diverse Team Strategies in Competitive Pok\'emon](https://arxiv.org/abs/2506.10326)：评测跨领域智能体系统的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [AbsenceBench](https://arxiv.org/abs/2506.11440)（[开源代码](https://github.com/harvey-fin/absence-bench)，[数据集](https://huggingface.co/datasets/harveyfin/AbsenceBench)）：要求模型在序列、诗歌和 GitHub pull request 中找出被刻意删除的信息，暴露长上下文对缺失事实的失败。
+- [Watermarking LLM-Generated Datasets in Downstream Tasks](https://arxiv.org/abs/2506.13494)：评估 LLM 生成训练数据的输入级和输出级水印，测试其在下游分类和问答任务中的可追踪性。
+- [TabArena](https://arxiv.org/abs/2506.16791)（[榜单](https://tabarena.ai/)）：发布持续维护的表格机器学习排行榜，包含精选数据集、实现良好的 baseline、验证协议、集成分析和可复现代码。
+- [The Syntactic Acceptability Dataset (Preview): A Resource for Machine Learning and Linguistic Analysis of English](https://arxiv.org/abs/2506.18120)：发布 1,000 条英语句法样本，配有文献抽取的语法性标签和众包可接受性判断，用于语言学与模型分析。
+- [Aggregated Individual Reporting for Post-Deployment Evaluation](https://arxiv.org/abs/2506.18133)：提出 AIR 机制，随时间聚合公众用户报告，在静态部署前基准之外评估已部署 AI 系统。
+- [SimVecVis: A Dataset for Enhancing MLLMs in Visualization Understanding](https://arxiv.org/abs/2506.21319)：将图表位图、SimVec 向量编码以及带解释性 CoT 的数据问答配对，并用这些维度微调 MiniCPM、Qwen-VL 等模型来检验可视化理解收益。
+- [Corrupted by Reasoning](https://arxiv.org/abs/2506.23276)：在公共品博弈中评估推理语言模型。核心思想：检验更强的深思是否改变合作行为，并在策略性社会场景中诱发搭便车。
+- [AutoEvoEval: An Automated Framework for Evolving Close-Ended LLM Evaluation Data](https://arxiv.org/abs/2506.23735)：用 22 种可解释扰动操作和多轮组合演化闭集评测题，衡量 LLM 在多选任务上相对静态测试集的鲁棒性。
+- [FlagEval-Arena: A Side-by-Side Comparative Evaluation Platform for Large Language Models and Text-Driven AIGC](https://doi.org/10.18653/v1/2025.acl-demo.56)（[arena](https://flageval.baai.org/#/arena)）：提供公开 side-by-side 对比入口，用于比较大语言模型与文本驱动 AIGC 系统，是 benchmark suite 之外可直接访问的 arena 界面。
+- [Praetor: A Fine-Grained Generative LLM Evaluator with Instance-Level Customizable Evaluation Criteria](https://doi.org/10.18653/v1/2025.acl-long.513)：用层级化指南数据训练双语 LLM-as-a-judge，使评估器能按实例级标准执行单答案打分、成对比较和 critique 生成。
+- [Contrasting Cognitive Styles in Vision-Language Models: Holistic Attention in Japanese Versus Analytical Focus in English](https://arxiv.org/abs/2507.00700)：可作为“其他核心能力 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [SocialCC](https://aclanthology.org/2025.acl-long.1594/)：评什么：交互式 language agent 的文化能力。核心思想：把文化评测从静态问答推进到对话和互动场景，检查 agent 是否能适应社会语境和文化预期。
+- [How Stylistic Similarity Shapes Preferences in Dialogue Dataset with User and Third Party Evaluations](https://arxiv.org/abs/2507.10918)：发布开放域对话偏好数据，同时包含用户主观风格相似度和第三方客观风格相似度标注，用于分析风格贴合如何影响回复偏好。
+- [MMHU](https://arxiv.org/abs/2507.12463)：面向人类行为理解的大规模多模态 benchmark。核心思想是评测多模态系统能否结合视觉、文本和上下文线索理解行为与意图，而不只是识别物体或动作。
+- [GEMMAS: Graph-based Evaluation Metrics for Multi Agent Systems](https://arxiv.org/abs/2507.13190)：评测跨领域智能体系统的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [A Penalty Goes a Long Way: Measuring Lexical Diversity in Synthetic Texts Under Prompt-Influenced Length Variations](https://arxiv.org/abs/2507.15092)：提出长度惩罚后的 PATTR 词汇多样性指标，并在 LLaMA、OLMo 和 Phi 生成的 2000 多万词视频脚本文本上评测。
+- [SKA-Bench](https://arxiv.org/abs/2507.17178)：评估 LLM 对结构化知识的理解，为自由问答之外的知识组织能力补充细粒度 benchmark。
+- [RMTBench: Benchmarking LLMs Through Multi-Turn User-Centric Role-Playing](https://arxiv.org/abs/2507.20352)：评测cross-cutting foundation-model capability，补充该能力方向的基准或挑战设置。
+- [CUHK-EE Systems for the vTAD Challenge at NCMMSC 2025](https://arxiv.org/abs/2507.23266)：报告 vTAD 声音音色属性检测挑战系统，用 WavLM-Large 表征、注意力统计池化和 Diff-Net 变体比较成对语音的音色属性强度。
+- [OpenLifelogQA: An Open-Ended Multi-Modal Lifelog Question-Answering Dataset](https://arxiv.org/abs/2508.03583)：基于 18 个月可穿戴 lifelog 图像、位置和生物数据构建 14,187 个开放式问答，用于评测个人记忆问答。
+- [Generative AI for Intent-Driven Network Management in 6G RAN: A Case Study on the Mamba Model](https://arxiv.org/abs/2508.06616)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [MCITlib](https://arxiv.org/abs/2508.07307)：提供多模态持续指令微调库与基准，评测模型适配时能否避免灾难性遗忘。
+- [EffiEval](https://arxiv.org/abs/2508.09662)：通过基于能力覆盖的样本选择降低评测成本。核心思想：在只查询代表性 benchmark 样本的同时，尽量保持排名一致性与公平性。
+- [Towards the Assessment of Task-based Chatbots: From the TOFU-R Snapshot to the BRASATO Curated Dataset](https://arxiv.org/abs/2508.15496)：从开源 Rasa 聊天机器人构建 TOFU-R 与 BRASATO 数据集，支撑任务型对话服务的可靠性、安全性和鲁棒性评测。
+- [WildSpoof Challenge Evaluation Plan](https://arxiv.org/abs/2508.16858)（[challenge 站点](https://wildspoof.github.io/)）：WildSpoof Challenge Evaluation Plan 补充通用基础模型与评测方向的基准、数据集、指标或评测协议。
+- [LaQual: A Novel Framework for Automated Evaluation of LLM App Quality](https://arxiv.org/abs/2508.18636)：通过层级化应用分类、用户参与度与功能能力过滤，以及面向场景的自动评分来评估 LLM 应用商店中的应用质量。
+- [CAPE](https://arxiv.org/abs/2508.20385)：评测 LLM 的上下文感知人格行为，为稳定 persona 与特质评估补充基准线索。
+- [A Graph Talks, But Who's Listening? Rethinking Evaluations for Graph-Language Models](https://arxiv.org/abs/2508.20583)：补充面向通用基础模型方法的评测、数据集或度量信号。
+- [CE-Bench](https://arxiv.org/abs/2509.00691)：评测稀疏自编码器可解释性的对比评估，补充跨能力的可解释性评测条目。
+- [Curse of Knowledge: When Complex Evaluation Context Benefits yet Biases LLM Judges](https://arxiv.org/abs/2509.03419)：评测复杂评估上下文下 LLM-as-a-judge 的可靠性。核心思路是区分真正有助于判断的上下文与会诱导偏差的上下文，从而暴露长证据评估中的元评测失效模式。
+- [Evaluation of Large Language Models for Anomaly Detection in Autonomous Vehicles](https://arxiv.org/abs/2509.05315)：在真实自动驾驶边缘案例上测试 LLM 的语境推理，用开放词表检测和提示工程分析感知、规划系统已失败的异常场景。
+- [Open-sci-ref-0.01: open and reproducible reference baselines for language model and dataset comparison](https://arxiv.org/abs/2509.09009)：评测通用模型架构、训练、扩展或后训练能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [Virtual Agent Economies](https://arxiv.org/abs/2509.10147)：提供由 LLM agent 组成的虚拟经济仿真设置。核心思想是在多智能体经济中测试策略互动、生产、交换和政策影响，使经济行为评测不局限于单轮问答。
+- [SynBench: A Benchmark for Differentially Private Text Generation](https://arxiv.org/abs/2509.14594)：评测 SynBench: A Benchmark for Differentially Private Text Generation，为 Other Core Capabilities / Bench 补充基准或评测协议候选。
+- [A Multi-To-One Interview Paradigm for Efficient MLLM Evaluation](https://arxiv.org/abs/2509.14886)：评测 A Multi-To-One Interview Paradigm for Efficient MLLM Evaluation，为 Other Core Capabilities 补充可复用的数据集、基准、指标或评测协议。
+- [TextMineX: Data, Evaluation Framework and Ontology-guided LLM Pipeline for Humanitarian Mine Action](https://arxiv.org/abs/2509.15098)：补充面向通用基础模型方法的评测、数据集或度量信号。
+- [LLMsPark: A Benchmark for Evaluating Large Language Models in Strategic Gaming Contexts](https://arxiv.org/abs/2509.16610)：评测跨领域社会、策略、对话或多智能体行为。
+- [FESTA: Functionally Equivalent Sampling for Trust Assessment of Multimodal LLMs](https://arxiv.org/abs/2509.16648)：通过功能等价与互补的多模态输入采样，在无真值标签的黑盒条件下用一致性和敏感性估计 MLLM 预测可信度。
+- [LoRALib: A Standardized Benchmark for Evaluating LoRA-MoE Methods](https://arxiv.org/abs/2509.18137)：在 40 个下游任务上统一数据格式、超参数和评测设置，标准化比较 LoRA-MoE 参数高效微调方法。
+- [Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing](https://arxiv.org/abs/2509.18792)：用 crosscoder 对 Gemma-2-9B-it 与 SimPO 变体做模型差分，把榜单性能差异归因到安全、多语、指令跟随等潜在能力变化。
+- [LogitTrace: Detecting Benchmark Contamination via Layerwise Logit Trajectories](https://arxiv.org/abs/2509.20909)：评测 LogitTrace: Detecting Benchmark Contamination via Layerwise Logit Trajectories，为 Other Core Capabilities / Bench 补充基准或评测协议候选。
+- [Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy](https://arxiv.org/abs/2509.21173)：开展 70 多万次 VLM 量化评测，覆盖准确率、校准、OOD 检测、噪声鲁棒性、协变量迁移和伪相关场景。
+- [Societal Capacity Assessment Framework: Measuring Resilience to Inform Advanced AI Risk Management](https://arxiv.org/abs/2509.22742)：把韧性指标迁移到 AI 风险管理，用国家层面的脆弱性、应对能力和适应能力衡量先进 AI 部署语境。
+- [Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport](https://arxiv.org/abs/2509.23348)：构造具有解析真解的离散 Schrödinger bridge 问题，用于严格评测离散扩散和熵最优传输求解器。
+- [Extreme Self-Preference in Language Models](https://arxiv.org/abs/2509.26464)：通过 72 个实验和约 41,000 次查询，在词汇联想与有后果的评价场景中测量模型名称和公司身份偏好，并加入错误身份操控。
+- [PrimeX: A Dataset of Worldview, Opinion, and Explanation](https://arxiv.org/abs/2510.00174)：收集 858 名美国居民的舆论调查回答、观点解释和 primal worldview 画像，用于评估个性化观点预测与对齐。
+- [Social Welfare Function Leaderboard](https://arxiv.org/abs/2510.01164)：评测 LLM agent 在稀缺社会资源分配中的决策；核心思想是用动态模拟同时比较集体效率与分配公平性，并以 ROI 和 Gini 类指标刻画权衡。
+- [BluePrint: A Social Media User Dataset for LLM Persona Evaluation and Training](https://arxiv.org/abs/2510.02343)：发布行为扎根的社交媒体 persona 数据，以 next-action prediction 评测 LLM agent 的行为保真度和风格真实感。
+- [EVALUESTEER: Measuring Reward Model Steerability Towards Values and Preferences](https://arxiv.org/abs/2510.06370)：用 165,888 个合成偏好对评估 LLM 和奖励模型能否按照用户价值观与风格画像选择更匹配的回复。
+- [Doing Things with Words: Rethinking Theory of Mind Simulation in Large Language Models](https://arxiv.org/abs/2510.13395)：在 Concordia 生成式智能体仿真中评估 Theory-of-Mind 行动选择，测试 GPT-4 是否能在社会情境中进行信念归因，而非依赖语言模式记忆。
+- [YNTP-100](https://arxiv.org/abs/2510.14398)：用 100 名人类参与者对照评测 next-token prediction，把核心语言模型目标与人类比较数据联系起来。
+- [Identity-Link IRT for Label-Free LLM Evaluation: Preserving Additivity in TVD-MI Scores](https://arxiv.org/abs/2510.14966)：为其他 LLM 能力补充基准、数据集、指标或评测协议。
+- [CorrectBench](https://arxiv.org/abs/2510.16062)（[项目页](https://correctbench.github.io/)，[数据集](https://huggingface.co/datasets/zeli2024/CorrectBench)）：评什么：LLM 推理的自我修正策略。核心思想：在多类推理任务上比较内在、外部和微调式修正设置，区分真正错误修复与重复错误或过度自信的错答。
+- [Evaluating Latent Knowledge of Public Tabular Datasets in Large Language Models](https://arxiv.org/abs/2510.20351)：补充面向通用基础模型方法的评测、数据集或度量信号。
+- [Vision-language models learn the geometry of human perceptual space](https://arxiv.org/abs/2510.20859)：通过让 VLM 生成成对相似性判断并恢复多维知觉空间，进一步检验这些空间能否预测人类分类行为。
+- [SI-Bench: Benchmarking Social Intelligence of Large Language Models in Human-to-Human Conversations](https://arxiv.org/abs/2510.23182)：使用 2,221 段真实社交网络多轮对话和人工标注子集，评测 LLM 在真实人际对话中的社会智能。
+- [A Cocktail-Party Benchmark: Multi-Modal dataset and Comparative Evaluation Results](https://arxiv.org/abs/2510.23276)：定义 CHiME MCoRec 重叠多人对话任务，要求音视频系统同时识别谁在何时说了什么以及与谁对话。
+- [Large Language Model Agent Personality and Response Appropriateness: Evaluation by Human Linguistic Experts, LLM-as-Judge, and Natural Language Processing Model](https://arxiv.org/abs/2510.23875)：在诗歌解释任务中评估提示生成的 LLM agent 人格，用语言学题库、NLP 模型、LLM 裁判和人类专家共同评分。
+- [COMMUNITYNOTES: A Dataset for Exploring the Helpfulness of Fact-Checking Explanations](https://arxiv.org/abs/2510.24810)：提供 10.4 万条多语社交媒体帖子、社区注释、helpfulness 标签和理由类别，用于评测事实核查解释是否有帮助。
+- [Unstructured Data Analysis using LLMs: A Comprehensive Benchmark](https://arxiv.org/abs/2510.27119)：提出 UDA-Bench，用大规模多样文档集合和查询工作负载评测 LLM 系统从非结构化数据中抽取结构化答案的能力。
+- [ODP-Bench: Benchmarking Out-Of-Distribution Performance Prediction](https://arxiv.org/abs/2510.27263)：评测分布外性能预测能力，关注系统能否估计模型在分布迁移下的表现，而不只是直接求解迁移后的任务。
+- [RLHF Algorithms Ranked: An Extensive Evaluation Across Diverse Tasks, Rewards, and Hyperparameters](https://doi.org/10.18653/v1/2025.emnlp-industry.35)：在多种任务、奖励模型和超参数设置下比较 RLHF 算法，排序的是对齐训练配方而不只是最终模型输出。
+- [SFAL: Semantic-Functional Alignment Scores for Distributional Evaluation of Auto-Interpretability in Sparse Autoencoders](https://doi.org/10.18653/v1/2025.emnlp-industry.39)：可作为“其他核心能力 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [CondenseLM: LLMs-driven Text Dataset Condensation via Reward Matching](https://doi.org/10.18653/v1/2025.emnlp-main.65)：通过 reward matching 评测 LLM 驱动的文本数据集压缩，检验小型合成子集是否保留下游训练效用。
+- [A Monte-Carlo Sampling Framework For Reliable Evaluation of Large Language Models Using Behavioral Analysis](https://doi.org/10.18653/v1/2025.findings-emnlp.500)：用 Monte-Carlo 采样估计 LLM 行为可靠性，依据重复生成的响应分布而不是单次确定性输出进行评估。
+- [RoDEval: A Robust Word Sense Disambiguation Evaluation Framework for Large Language Models](https://doi.org/10.18653/v1/2025.emnlp-main.864)：在强调鲁棒性的设置下评测 LLM 词义消歧能力，区分词义选择质量与提示、上下文敏感性。
+- [Towards Consistent Detection of Cognitive Distortions: LLM-Based Annotation and Dataset-Agnostic Evaluation](https://arxiv.org/abs/2511.01482)：用重复 LLM 标注和 Cohen's kappa 效应量，在标签体系和主观边界不同的数据集间比较认知扭曲检测器。
+- [Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](https://arxiv.org/abs/2511.03047)：提出多轮目标驱动交互的无监督评估方法，可作为跨任务交互评测候选。
+- [First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation](https://arxiv.org/abs/2511.04715)：重新评估哪些 Transformer 层最适合训练数据影响估计，在计算受限条件下比较层选择和聚合策略。
+- [AlignSurvey: A Comprehensive Benchmark for Human Preferences Alignment in Social Surveys](https://arxiv.org/abs/2511.07871)：补充面向通用基础模型方法的评测、数据集或度量信号。
+- [Information Capacity: Evaluating the Efficiency of Large Language Models via Text Compression](https://arxiv.org/abs/2511.08066)：可作为跨类别模型能力的 Bench 候选：围绕 Information Capacity: Evaluating the Efficiency of Large Language Models via Text Compression 提供可比较的评测任务、数据或分析协议。
+- [LLM-Generated Negative News Headlines Dataset: Creation and Benchmarking Against Real Journalism](https://arxiv.org/abs/2511.11591)：通过定制提示生成负面新闻标题语料，经专家验证后用困惑度、可读性、词性分布、BERTScore 等指标与真实新闻标题对比。
+- [Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](https://arxiv.org/abs/2511.12464)：提出含六个探针任务的 MRMBench，按不同偏好维度评测奖励模型，并分析哪些维度驱动奖励预测。
+- [Terra Nova: A Comprehensive Challenge Environment for Intelligent Agents](https://arxiv.org/abs/2511.15378)：提供受 Civilization V 启发的强化学习环境，在单一任务中同时呈现部分可观测、长时程、信用分配、表征学习和大动作空间挑战。
+- [Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling](https://arxiv.org/abs/2511.18858)：用无偏图像恢复、软重标注和统计对齐评测长尾数据集蒸馏，纠正蒸馏集合中的类别不平衡偏差。
+- [PEFT-Bench: A Parameter-Efficient Fine-Tuning Methods Benchmark](https://arxiv.org/abs/2511.21285)：在 27 个 NLP 数据集上比较 7 种自回归 LLM 参数高效微调方法，同时跟踪训练、推理和可复现性因素。
+- [Evaluating Generalization Capabilities of LLM-Based Agents in Mixed-Motive Scenarios Using Concordia](https://arxiv.org/abs/2512.03318)：用 Concordia 在混合动机社会场景中评估 LLM 智能体泛化。
+- [InFerActive](https://arxiv.org/abs/2512.10234)：通过交互式推理树扩展人工评测。核心思想：让评审比较结构化行为路径，而不是逐条响应低效判断。
+- [AI Transparency Atlas: Framework, Scoring, and Real-Time Model Card Evaluation Pipeline](https://arxiv.org/abs/2512.12443)：为其他 LLM 能力补充基准、数据集、指标或评测协议。
+- [TabReX : Tabular Referenceless eXplainable Evaluation](https://arxiv.org/abs/2512.15907)：为其他 LLM 能力补充基准、数据集、指标或评测协议。
+- [Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework](https://arxiv.org/abs/2512.16816)：把 prompt 意图、对话上下文、输入变体、公平阈值和语义相似度检查形式化为 CAFFE 测试用例，在三类 LLM 架构上评测反事实公平性。
+- [Counterfactual LLM-based Framework for Measuring Rhetorical Style](https://arxiv.org/abs/2512.19908)：让多个 LLM 修辞 persona 改写同一论文内容，再用成对 LLM 裁判和 Bradley-Terry 聚合量化 8,485 篇 ICLR 投稿中的“hype”风格强度。
+- [Dynamic Multi-Dimensional Lightweight LLM Evaluation](https://doi.org/10.1109/CAIBDA65784.2025.11182957)：提出面向 large language models 的 lightweight multi-dimensional evaluation framework。
+- [CINEMETRIC: A Framework for Multi-Perspective Evaluation of Conversational Agents using Human-AI Collaboration](https://doi.org/10.18653/v1/2025.nlperspectives-1.2)：通过人机协作提供 conversational agents 的多视角评测框架，补充软件、网页和安全页面之外的对话智能体评测线索。
+- [Scaling beyond Denoising: Submitted System and Findings in URGENT Challenge 2025](https://doi.org/10.21437/interspeech.2025-795)：围绕其他模型能力能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Assessment of large language models for use in generative design of model based spacecraft system architectures](https://doi.org/10.1080/09544828.2025.2453401)：补充其他核心能力能力的评测资源或协议。
+- [Enhancing network security using knowledge graphs and large language models for explainable threat detection](https://doi.org/10.1016/j.future.2025.108160)：补充其他核心能力能力的评测资源或协议。
+- [Assessing the Capabilities of Large Language Models to Comprehend Analog Integrated Circuits via Netlist Analysis](https://doi.org/10.1109/aicconf64766.2025.11064185)：补充面向通用基础模型方法的评测、数据集或度量信号。
+- [Benchmarking Multimodal Large Language Models Against Image Corruptions](https://doi.org/10.1109/iccv51701.2025.00843)：提出 MLLM-IC，覆盖 40 类图像损坏和 34 个低层多模态能力，用层级化任务细粒度评测 MLLM 在受损视觉输入下的鲁棒性。
+- [Automated LLM Deployment and Evaluation: A Cloud-Native Approach Using LLM-as-a-Judge](https://doi.org/10.1109/cloud67622.2025.00053)：自动化私有云中的 LLM 资源配置与部署，并用轻量 LLM-as-a-Judge 框架按预设标准比较已部署模型。
+- [Adaptive Chunking for VideoRAG Pipelines with a Newly Gathered Bilingual Educational Dataset](https://doi.org/10.1109/csicc65765.2025.10967455)：用 CLIP embedding 和 SSIM 将波斯语、英语教学视频切成语义连贯片段，配合合成问答并以 RAGAS 相关性和忠实度指标评测 VideoRAG。
+- [KOMPSAT-3/3A Image-text Dataset for Training Large Multimodal Models](https://doi.org/10.22761/gd.2025.0003)：基于 KOMPSAT 目标检测影像构建遥感 LMM 预训练和微调数据，组合图像 caption、元数据、目标标签和六类问答格式。
+- [Linguistic Units as Tokens: Intrinsic and Extrinsic Evaluation with BabyLM](https://doi.org/10.18653/v1/2025.babylm-main.35)：在 BabyLM 中比较 BPE、MorPiece、ParadigmFinder 和 SylliTok，结合英语化 SIGMORPHON 分词测试与 10M token GPT-2 训练评测。
+- [Bridging Context, Statistics, and Practice: A Multi-Dimensional Framework for Responsible LLM Evaluation and Selection](https://doi.org/10.1109/gaclm67198.2025.11232293)：评测 Bridging Context, Statistics, and Practice: A Multi-Dimensional Framework for Responsible LLM Evaluation and Selection，为 Other Core Capabilities 补充可复用的数据集、基准、指标或评测协议。
+- [An Iterative Multi-Agent Analysis for Automated Evaluation in NLG Tasks](https://doi.org/10.1109/cogmi67134.2025.00012)：评测 An Iterative Multi-Agent Analysis for Automated Evaluation in NLG Tasks，为 Other Core Capabilities 补充可复用的数据集、基准、指标或评测协议。
+- [Comparative Evaluation of Synthetic Question and Answer Dataset Generation Methods for Large Language Models](https://doi.org/10.1109/ispacs68724.2025.11382784)：可作为“其他核心能力 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [How Well Can AI Do Strategy? Empirical Benchmarking Using Strategy Simulations](https://doi.org/10.1287/stsc.2025.0444)：在 Back Bay Battery 战略仿真中评测 21 个闭源和 13 个开源 LLM，通过隐藏标识、跨期决策、不确定性、延迟反馈和开发-探索权衡来衡量战略能力。
+- [AI-Augmented Strategic Decision-Making Under Time Constraints: An Experimental Study on Mental Representations and Strategic Foresight](https://doi.org/10.1287/stsc.2025.0442)：在 348 名参与者的创业项目评估任务中做 2×2 实验，检验 LLM 使用与时间压力如何改变心理表征、战略预见、信息过载和心理所有权。
+- [Contextual Trust Evaluation for Robust Coordination in Large Language Model Multi-Agent Systems](https://doi.org/10.1109/eiecc67963.2025.11409558)：评估 LLM 多智能体系统鲁棒协作中的上下文信任。
+- [Can Reasoning LLMs Eliminate Conformity in Multi-Agent Systems?](https://doi.org/10.1109/icdmw69685.2025.00406)：面向通用及跨领域 LLM 智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Can Reasoning LLMs Eliminate Conformity in Multi-Agent Systems?”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [TeleTables: A Benchmark for Large Language Models in Telecom Table Interpretation](https://arxiv.org/abs/2601.04202)：从 3GPP 技术规范抽取表格，评测 LLM 对电信规范表格的隐式知识和显式解释能力。
+- [TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents](https://arxiv.org/abs/2601.05899)：把塔防即时战略游戏转化为文本观察的 LLM agent 基准，评测长期规划、战术适应和动作执行。
+- [M3-BENCH: Process-Aware Evaluation of LLM Agents Social Behaviors in Mixed-Motive Games](https://arxiv.org/abs/2601.08462)：在 24 个 mixed-motive games 中评测 LLM agent 社会行为，并结合行为轨迹、推理过程和沟通内容分析。
+- [AI-NativeBench: An Open-Source White-Box Agentic Benchmark Suite for AI-Native Systems](https://arxiv.org/abs/2601.09393)：用基于 MCP 与 A2A 的白盒 trace 评测 AI-native 系统。核心思路是把 agentic span 作为一等 trace 对象，使协议遵循、推理开销与系统行为不只体现在黑盒任务分数中。
+- [Diffusion Representations for Fine-Grained Image Classification: A Marine Plankton Case Study](https://arxiv.org/abs/2601.13416)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [Beyond Known Facts: Generating Unseen Temporal Knowledge to Address Data Contamination in LLM Evaluation](https://arxiv.org/abs/2601.13658)：生成未来、未见过的时间知识图谱事实，用作抗污染的 TKGE 测试数据，评测 LLM 从文本抽取带时间戳语义四元组的能力。
+- [BoRP: Bootstrapped Regression Probing for Scalable and Human-Aligned LLM Evaluation](https://arxiv.org/abs/2601.18253)：用 polarization-index bootstrap 自动生成满意度 rubric，并以偏最小二乘把隐藏状态映射为连续分数，降低 A/B 监控中的生成式裁判成本。
+- [MM-OpenFGL: A Comprehensive Benchmark for Multimodal Federated Graph Learning](https://arxiv.org/abs/2601.22416)：形式化多模态联邦图学习，在多模态属性图保持分布式时评测协同图训练能力。
+- [Fast-Slow Efficient Training for Multimodal Large Language Models via Visual Token Pruning](https://arxiv.org/abs/2602.03815)：面向通用基础模型与评测，补充用于multimodal personalization benchmark and framework的基准、数据集、指标、审计或实证协议。
+- [The Illusion of Generalization: Re-examining Tabular Language Model Evaluation](https://arxiv.org/abs/2602.04031)：在 165 个 UniPredict 数据集上重评 Tabula-8B，审计任务泄漏、训练测试重叠、相对基线提升和格式熟悉效应。
+- [Rethinking Perplexity: Revealing the Impact of Input Length on Perplexity Evaluation in LLMs](https://arxiv.org/abs/2602.04099)：提出 LengthBenchmark，把上下文长度、直接累加与滑窗两类打分协议、延迟和内存成本一起纳入困惑度评测。
+- [SocialVeil: Probing Social Intelligence of Language Agents under Communication Barriers](https://arxiv.org/abs/2602.05115)：模拟语义模糊、社会文化错配和情绪干扰，测试语言智能体能否在沟通障碍下维持并修复社会互动。
+- [OpenMAG: A Comprehensive Benchmark for Multimodal-Attributed Graph](https://arxiv.org/abs/2602.05576)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Using Large Language Models to Support Automation of Failure Management in CI/CD Pipelines: A Case Study in SAP HANA](https://arxiv.org/abs/2602.06709)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [Gaussian Match-and-Copy: A Minimalist Benchmark for Studying Transformer Induction](https://arxiv.org/abs/2602.07562)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [MMTS-BENCH: A Comprehensive Benchmark for Time Series Understanding and Reasoning](https://arxiv.org/abs/2602.08588)：按层级化时间序列任务分类组织 2,424 个 TSQA 样本，覆盖结构感知、特征分析、时序推理、序列匹配和跨模态对齐。
+- [Overview of the TREC 2025 RAGTIME Track](https://arxiv.org/abs/2602.10024)：总结 RAGTIME 赛道，围绕阿拉伯语、中文、英语和俄语新闻源评测多语报告生成、英语报告生成和多语信息检索。
+- [Cooperation Breakdown in LLM Agents Under Communication Delays](https://arxiv.org/abs/2602.11754)：面向通用及跨领域 LLM 智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Cooperation Breakdown in LLM Agents Under Communication Delays”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Who can we trust? LLM-as-a-jury for Comparative Assessment](https://arxiv.org/abs/2602.16610)：评测cross-cutting foundation-model capability，补充该能力方向的基准或挑战设置。
+- [Discrete Diffusion Sampler Evaluation](https://arxiv.org/abs/2602.19619)：评估 discrete diffusion language model sampler 的正确性，把生成算法可靠性变成 benchmark 目标。
+- [MERRY](https://arxiv.org/abs/2602.21941)：评测 role-playing agents 的多模态情绪一致性和角色一致性。核心思想：通过双向 evidence-finding task，把语义一致性从 modality synthesis 质量中解耦出来。
+- [CxMP: A Linguistic Minimal-Pair Benchmark for Evaluating Constructional Understanding in Language Models](https://arxiv.org/abs/2602.21978)：基于构式语法设计最小对照样本，覆盖 let-alone、致使移动、双宾等九类构式，测试模型能否理解形式与意义的配对。
+- [Probing for Knowledge Attribution in Large Language Models](https://arxiv.org/abs/2602.22787)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [Devling into Adversarial Transferability on Image Classification: Review, Benchmark, and Evaluation](https://arxiv.org/abs/2602.23117)：综述迁移式图像分类攻击，并提出标准化框架评测代理模型生成的对抗样本能否欺骗未见 victim model。
+- [Eval4Sim: An Evaluation Framework for Persona Simulation](https://arxiv.org/abs/2603.02876)：从 persona adherence、自然性和行为模式等维度，把模拟对话与真实人类对话行为对比来衡量 persona simulation 保真度。
+- [Judge Reliability Harness: Stress Testing the Reliability of LLM Judges](https://arxiv.org/abs/2603.05399)：评测cross-cutting foundation-model capability，补充该能力方向的基准或挑战设置。
+- [HIERAMP: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation](https://arxiv.org/abs/2603.06932)：用粗到细视觉自回归语义评测数据集蒸馏，通过类别 token 显著图在小型蒸馏图像中恢复物体层级结构。
+- [Task-Aware Delegation Cues for LLM Agents](https://arxiv.org/abs/2603.11011)：把 Chatbot Arena 成对比较结果转成任务条件能力画像和协调风险提示，用于评估用户委托与 auditor 路由决策。
+- [Increasing intelligence in AI agents can worsen collective outcomes](https://arxiv.org/abs/2603.12129)：评测跨领域智能体系统的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [Multimodal Task Interference: A Benchmark and Analysis of History-Target Mismatch in Multimodal LLMs](https://arxiv.org/abs/2603.18425)：系统改变对话历史和目标任务之间的模态、推理需求与答案格式错配，揭示多模态 LLM 任务切换干扰的方向性。
+- [AgriPestDatabase-v1.0: A Structured Insect Dataset for Training Agricultural Large Language Model](https://arxiv.org/abs/2603.22777)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [MuDD: A Multimodal Deception Detection Dataset and GSR-Guided Progressive Distillation for Non-Contact Deception Detection](https://arxiv.org/abs/2603.26064)：记录 130 名参与者共 690 分钟的视频、音频、GSR、PPG、心率和人格信号，用于多模态欺骗检测及跨模态蒸馏评测。
+- [Omni-Modal Dissonance Benchmark: Systematically Breaking Modality Consensus to Probe Robustness and Calibrated Abstention](https://arxiv.org/abs/2603.27187)：在 4,080 个一致 anchor 样本上系统破坏视频、音频和文本证据，评测 omni-modal 模型在模态冲突下的鲁棒性和校准拒答。
+- [Spark-LLM-Eval: A Distributed Framework for Statistically Rigorous Large Language Model Evaluation](https://arxiv.org/abs/2603.28769)：把 LLM 评测原生运行在 Apache Spark 上，加入 bootstrap 置信区间、模型比较显著性检验和 Delta Lake 响应缓存。
+- [BenchScope: How Many Independent Signals Does Your Benchmark Provide?](https://arxiv.org/abs/2603.29357)：用 benchmark 分数谱的 effective dimensionality 诊断评测轴冗余，覆盖 22 个 benchmark、8 个领域和 8400 多个模型评测结果。
+- [Performance Evaluation of LLMs in Automated RDF Knowledge Graph Generation](https://arxiv.org/abs/2603.29878)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [ScoringBench](https://arxiv.org/abs/2603.29928)（[结果](https://github.com/jonaslandsgesell/ScoringBench)）：用适当评分规则评测表格基础模型，为概率预测质量补充结构化数据基准。
+- [How Trustworthy Are LLM-as-Judge Ratings for Interpretive Responses? Implications for Qualitative Research Workflows](https://arxiv.org/abs/2604.00008)：提供面向跨主题的 LLM 训练、适配、评测或可解释性能力的基准、数据集、评分规程或评测协议。
+- [Causal-Audit](https://arxiv.org/abs/2604.02488)：评估时间序列因果发现中 assumption violation 的风险，为因果发现评测补充审计框架。
+- [OmniTabBench: Mapping the Empirical Frontiers of GBDTs, Neural Networks, and Foundation Models for Tabular Data at Scale](https://arxiv.org/abs/2604.06814)： 大规模评测 GBDT、神经网络与 foundation model 在表格数据上的边界，补充结构化数据模型评测。
+- [MotionScape: A Large-Scale Real-World Highly Dynamic UAV Video Dataset for World Models](https://arxiv.org/abs/2604.07991)：提供 30 多小时、450 多万帧 4K 六自由度无人机视角视频，用于评测世界模型在高动态相机轨迹下的时空物理一致性。
+- [Watt Counts: Energy-Aware Benchmark for Sustainable LLM Inference on Heterogeneous GPU Architectures](https://arxiv.org/abs/2604.09048)：用能耗感知指标在异构 GPU 架构上评测可持续 LLM 推理。
+- [MEDLEY-BENCH](https://arxiv.org/abs/2604.16009)：评什么：AI 元认知能力，区分模型判断自身表现的能力与据此控制行为的能力。核心思想：检验规模化是否同时提升自我评估和决策控制，而不是只看置信度或最终正确率。
+- [ProEval](https://arxiv.org/abs/2604.23099)：在有限评测预算下主动发现失败并估计生成式 AI 的 benchmark 表现。核心思想：用不确定性感知的迁移代理模型选择或合成高信息量测试样本。
+- [MetaGAI: A Large-Scale and High-Quality Benchmark for Generative AI Model and Data Card Generation](https://arxiv.org/abs/2604.23539)：可作为“其他核心能力 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [TopBench](https://arxiv.org/abs/2604.28076)：评测表格问答中的隐式预测与推理，检验模型是否能推断结构化表格模式而不只是显式查找。
+- [Putting HUMANS first: Efficient LAM Evaluation with Human Preference Alignment](https://arxiv.org/abs/2605.00022)：用小规模子集评测大型音频模型，检验其与完整 40 任务套件分数及 776 条真实语音助手人类偏好的相关性。
+- [The Partial Testimony of Logs: Evaluation of Language Model Generation under Confounded Model Choice](https://arxiv.org/abs/2605.01311)：组合有混杂的使用日志、小规模随机实验和缓存模型模拟器，为离线生成评测估计因果模型价值而不是直接比较原始日志分数。
+- [TCD-Arena](https://arxiv.org/abs/2605.03045)：评测 time-series causal-discovery methods 在 assumption violations 下的鲁棒性。
+- [Evaluating the Reliability of Multiple Large Language Models in Risk Assessment: A CIS Controls Based Approach](https://arxiv.org/abs/2605.05424)：依据 CIS Controls 比较多个 LLM 的网络安全风险评估建议，并强调用专家验证识别幻觉或不可靠的控制措施建议。
+- [CCL-Bench 1.0: A Trace-Based Benchmark for LLM Infrastructure](https://arxiv.org/abs/2605.06544)（[榜单](https://cclbench.ai/leaderboard.html)）：把每个基础设施数据点打包为执行 trace、YAML workload card 和启动脚本，以计算细粒度计算、内存与通信效率指标。
+- [SEMASIA](https://arxiv.org/abs/2605.09485)：提供跨大量视觉模型的 latent representation 数据，支持表征对齐与语义几何评测。
+- [A Unified Perturbation Framework for Analyzing Leaderboard Stability and Manipulation](https://arxiv.org/abs/2605.15761)：面向通用基础模型与评测，补充用于leaderboard stability and manipulation evaluation的基准、数据集、指标、审计或实证协议。
+- [ChildAgentEval](https://arxiv.org/abs/2605.17894)：用受 WISC 启发的交互任务比较 MLLM agent 与不同年龄段人类发展水平，暴露 cognitive age alignment 缺口。
+- [What Would GPT Click: Practical Effects of Human-AI Behavioral Misalignment and the Cost of Synthetic Participants in User Experience](https://arxiv.org/abs/2605.18302)：在 12 个 first-click UX 测试中比较合成 LLM 参与者与 3431 名真实用户，量化用 AI 用户替代真人参与者带来的行为错配与决策成本。
+- [GrowLoop: Self-Evolving Conversation Evaluation Seeded by Human](https://arxiv.org/abs/2605.28882)：GrowLoop 从人工编写的对话种子出发，同时演化评测 rubric 和测试案例，并在基准变化过程中测量人与 AI 的一致性；它把开放式对话拟人度评测从固定题集变成持续适应的目标。
+- [WorldBench](https://arxiv.org/abs/2606.06538)：基于 visual-concept taxonomy 构建视觉多样的多模态推理基准，并评测 15 个 MLLM，关注广义图像接地推理而非单一感知技能。
+- [IMUG-Bench](https://arxiv.org/abs/2606.09169)：用 3,113 个样本和 12,034 轮多轮图文交错对话评测统一多模态模型，覆盖静态空间、时间因果与混合场景下的理解和生成。
+- [MLUBench](https://arxiv.org/abs/2606.12809)：用九类 127 个实体评测 MLLM 的 lifelong unlearning，要求模型在连续遗忘目标知识的同时保持多模态对齐和非目标能力。
+- [PerVL-Bench](https://doi.org/10.1109/WACV61042.2026.00647)：评测大型视觉语言模型的多模态个性化能力，覆盖无法单独归入图像或视频页的交叉能力。
+- [A knowledge-intensive LLM-assisted evolutionary framework for multi-objective geometric design of high-performance concrete structures](https://doi.org/10.1016/j.eswa.2026.132589)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [Re-Imagining Supervised Learning with LLMs: A Technical Evaluation across Frontier, Open, and QLoRA-Fine-Tuned Models](https://doi.org/10.1109/icoecit68303.2026.11496789)：在 Amazon Reviews 2023 商品价格回归任务上比较 frontier、开源和 QLoRA 微调 LLM，并报告 RMSE、R-squared、延迟、显存和量化退化。
+- [Improve MLLM Benchmark Efficiency Through Interview](https://doi.org/10.1109/icassp55912.2026.11464672)：在既有 MLLM 评测数据上加入难度标签，构造 interview 数据和自适应提问策略，用更少问答快速估计模型能力。
+- [Multimodal Approaches for Efficient Evaluation of Handwritten Answer Scripts via Large Language Models](https://doi.org/10.1109/nqcomp68334.2026.11497673)：用视觉语言模型评估手写试卷，通过分段学生回答、抽取向量化答案并与预设答案键比对来自动评分。
+- [A Structured Method to Assess for AI Agent Compatibility](https://doi.org/10.1109/acdsa67686.2026.11468207)：面向通用及跨领域 LLM 智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“A Structured Method to Assess for AI Agent Compatibility”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Assessing Planning Algorithms for Structuring LLM-Derived Workflows in Agentic AI Systems](https://doi.org/10.1109/southeastcon63549.2026.11475988)：面向通用及跨领域 LLM 智能体的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Assessing Planning Algorithms for Structuring LLM-Derived Workflows in Agentic AI Systems”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [LLMs Emulate Personality](https://doi.org/10.1038/s41598-024-84109-5): 评测大语言模型是否能够模拟人格特质，为行为和人设能力补充评估案例。
+- [Apathetic or Empathetic? Evaluating LLMs' Emotional Alignments with Humans](https://doi.org/10.52202/079017-3077)：提供用于评估Other的任务或数据集，为 Other / Bench 补充具体测量目标。
+- [Setting new benchmarks in AI-driven infrared structure elucidation](https://doi.org/10.1039/d5dd00131e)：补充其他核心能力能力的评测资源或协议。
+- [DanceMVP: Self-Supervised Learning for Multi-Task Primitive-Based Dance Performance Assessment via Transformer Text Prompting](https://doi.org/10.1609/aaai.v38i9.28893)：构建 ImperialDance 多模态舞蹈音乐数据集，并用 primitive-based 对比预训练与文本提示同时评测舞蹈词汇识别、表现打分和节奏评估。
+- [RuSciBench: Open Benchmark for Russian and English Scientific Document Representations](https://doi.org/10.1134/s1064562424602191)：补充面向通用基础模型方法的评测、数据集或度量信号。
+- [Large language models as zero-shot evaluators of English–Chinese interpreting: A comparison of GPT-4o and DeepSeek-R1](https://doi.org/10.1177/02655322251406297)：补充面向通用基础模型方法的评测、数据集或度量信号。
+- [LLMs for Integrated Business Intelligence: A Big Data-Driven Framework Integrating Marketing Optimization, Financial Performance, and Audit Quality](https://doi.org/10.3390/bdcc10040110)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的基准、数据集、指标、审计或实证协议。
+- [Challenges and Opportunities of LLM-Based Synthetic Personae and Data in HCI](https://doi.org/10.1145/3613905.3636293)：提出或分析面向跨领域 LLM 与多模态模型方法的基准、数据集或评测协议。
+- [Evaluation of Responses to Questions About Keratoconus Using ChatGPT-4.0, Google Gemini and Microsoft Copilot: A Comparative Study of Large Language Models on Keratoconus](https://doi.org/10.1097/icl.0000000000001158)：补充其他模型能力方向的基准、数据集、挑战、指标或评测协议。
+- [GenAI synthetic data create ethical challenges for scientists. Here’s how to address them.](https://doi.org/10.1073/pnas.2409182122)：补充其他模型能力方向的基准、数据集、挑战、指标或评测协议。
+- [Using Benchmarking Infrastructure to Evaluate LLM Performance on CS Concept Inventories: Challenges, Opportunities, and Critiques](https://doi.org/10.1145/3632620.3671097)：补充其他模型能力方向的基准、数据集、挑战、指标或评测协议。
+- [Evaluating Synthetic Data Generation from User Generated Text](https://doi.org/10.1162/coli_a_00540)：补充其他模型能力方向的基准、数据集、挑战、指标或评测协议。
+- [The Two Word Test as a semantic benchmark for large language models](https://doi.org/10.1038/s41598-024-72528-3)：作为其他的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [A Comprehensive Analysis of a Social Intelligence Dataset and Response Tendencies Between Large Language Models (LLMs) and Humans](https://doi.org/10.3390/s25020477)：作为其他的基准候选，关注标题所示的可复用能力、方法或评测信号。
+- [Self-evaluation of LLMs on challenging LLM-generated STEM MCQs](https://doi.org/10.1007/s00521-025-11164-y)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [Beyond the Benchmark: A Customizable Platform for Real-Time, Preference-Driven LLM Evaluation](https://doi.org/10.3390/electronics14132577)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [Comparative evaluation of OpenAI O1 and human performance in higher order cognition](https://doi.org/10.1038/s41598-025-33629-9)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [Our Dialogue System Sucks - but Luckily we are at the Top of the Leaderboard!: A Discussion on Current Practices in NLP Evaluation](https://doi.org/10.1145/3640794.3665889)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [The RISE Humanities Data Benchmark: A Framework for Evaluating Large Language Models for Humanities Tasks](https://doi.org/10.5334/johd.481)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [Stance-Driven Multimodal Controlled Statement Generation: New Task and Dataset](https://doi.org/10.1145/3743093.3771055)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [Dataset ownership verification with invisible backdoors](https://doi.org/10.1007/s10489-025-06994-1)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [An Evaluation of Approaches to Train Embeddings for Logical Inference (Student Abstract)](https://doi.org/10.1609/aaai.v39i28.35313)：提供用于衡量其他基础能力能力的数据集、基准、指标或评测协议。
+- [DAPWeb: Construct-Aligned Evaluation of MLLMs for Web-Based Child Mental Screening](https://doi.org/10.1145/3774904.3792992)：围绕 Other Core Capabilities 能力补充《DAPWeb: Construct-Aligned Evaluation of MLLMs for Web-Based Child Mental Screening》，作为 Bench 条目候选。
+- [Automated Generation and Evaluation of Interactive-Fiction Serious Games with Open-Weight LLMs](https://doi.org/10.3390/app16062932)：围绕 Other Core Capabilities 能力补充《Automated Generation and Evaluation of Interactive-Fiction Serious Games with Open-Weight LLMs》，作为 Bench 条目候选。
+- [Hybrid Usability Evaluation of an Automotive REM Tool: Human and LLM-Based Heuristic Assessment of IBM Doors Next](https://doi.org/10.3390/app16020723)：围绕 Other Core Capabilities 能力补充《Hybrid Usability Evaluation of an Automotive REM Tool: Human and LLM-Based Heuristic Assessment of IBM Doors Next》，作为 Bench 条目候选。
+- [An Improved Autoregressive Evaluation Paradigm for Large Language Models](https://doi.org/10.1145/3763000)：评测 An Improved Autoregressive Evaluation Paradigm for Large Language Models，为 Other Core Capabilities 补充可复用的数据集、基准、指标或评测协议。
+- [MM-SCORE: A Two-Factor Framework for Auditing Multimodal Dataset Quality](https://doi.org/10.1145/3769002.3769980)：为其他 LLM 能力补充基准、数据集、指标或评测协议。
+- [Applying a Schema-Constrained LLM Verification Pipeline to the Evaluation of Complex System Designs](https://doi.org/10.1145/3789982.3790050)：为其他 LLM 能力补充基准、数据集、指标或评测协议。
+- [Evaluating LLMs for Automated Scoring in Formative Assessments](https://doi.org/10.3390/app15052787)：提供可复用评测目标、排行榜或测量协议。
+- [Does Google's Open Knowledge Format Improve RAG? A Controlled Evaluation](https://doi.org/10.2139/ssrn.7227678)：该受控 RAG 评测以 623 页的野火调查文件和 93 个问题比较 Google Open Knowledge Format、词法检索、BM25 与混合检索；OKF 得分 91.1%，BM25 达 97.5%，在强混合基线上加入 OKF 没有增益，这一负结果可作为检索基准的重要对照。

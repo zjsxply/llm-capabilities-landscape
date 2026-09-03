@@ -1,19 +1,277 @@
 # 2.3.5 Agent Harness
 
+- [GMLake: Efficient and Transparent GPU Memory Defragmentation for Large-scale DNN Training with Virtual Memory Stitching](https://arxiv.org/abs/2401.08156)：通过 GPU 虚拟内存拼接非连续内存块来降低 LLM 训练碎片；证据显示它是训练系统基础设施，而不是网页搜索或检索智能体框架。
+- [Revolutionizing Retrieval-Augmented Generation with Enhanced PDF Structure Recognition](https://arxiv.org/abs/2401.12599)：展示 ChatDOC 在文档问答 RAG 中用 panoptic 和 pinpoint PDF 解析器改进专业 PDF 片段检索，再进入答案生成。
+- [RAP: Retrieval-Augmented Planning with Contextual Memory for Multimodal LLM Agents](https://arxiv.org/abs/2402.03610)：按当前情境检索相似历史经验，并把这些 contextual memory 注入文本和多模态任务的智能体规划循环。
+- [Prompt Perturbation in Retrieval-Augmented Generation based Large Language Models](https://arxiv.org/abs/2402.07179)：用 Gradient Guided Prompt Perturbation 压测 RAG，并把神经元激活检测器作为识别定向错误答案前缀的验证层。
+- [Metacognitive Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2402.11626)：提出 MetaRAG，在多步 RAG 中让模型监控、评估并重新规划检索增强推理，以修正初始回答不足。
+- [FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation](https://arxiv.org/abs/2402.11891)：提供覆盖 16 个 BEIR 子集合的 federated search 数据集和 RAG 对比，用于评估生成前的来源选择。
+- [MORE: Multi-mOdal REtrieval Augmented Generative Commonsense Reasoning](https://arxiv.org/abs/2402.13625)：把检索增强从文本扩展到图像和文本共同证据，用于 CommonGen 式常识生成推理。
+- [RetrievalQA: Assessing Adaptive Retrieval-Augmented Generation for Short-form Open-Domain Question Answering](https://arxiv.org/abs/2402.16457)：构建自适应检索 QA 测试集，并提出 TA-ARE 提示方法，让 LLM 判断新知识或长尾问题是否需要外部检索。
+- [REAR: A Relevance-Aware Retrieval-Augmented Framework for Open-Domain Question Answering](https://arxiv.org/abs/2402.17497)：在 RAG 中加入相关性评估模块，让生成器先判断检索文档可靠性，再使用外部证据回答开放域问题。
+- [Smart-Infinity: Fast Large Language Model Training using Near-Storage Processing on a Real System](https://arxiv.org/abs/2403.06664)：把 LLM 参数更新移动到近存储加速器并重叠数据传输，面向存储卸载训练；这是系统基础设施，不是检索或网页搜索框架。
+- [Dynamic Contexts for Generating Suggestion Questions in RAG Based Conversational Systems](https://arxiv.org/abs/2403.11413)：通过动态 few-shot 示例和动态检索上下文，为 RAG 聊天机器人生成澄清和建议问题。
+- [FIT-RAG: Black-Box RAG with Factual Information and Token Reduction](https://arxiv.org/abs/2403.14374)：用双标签文档打分器、自知识识别器和子文档 token 压缩器，在黑盒 RAG 中筛选事实证据并减少提示长度。
+- [FairRAG: Fair Human Generation via Fair Retrieval Augmentation](https://arxiv.org/abs/2403.19964)：通过轻量投影模块把多样化检索参考图像注入文生图生成，以提升人像生成公平性；这属于检索增强生成公平性而非网页搜索。
+- [Planning and Editing What You Retrieve for Enhanced Tool Learning](https://arxiv.org/abs/2404.00450)：PLUTO 结合 LLM 查询规划、神经工具检索和工具描述编辑，让智能体把请求拆解并落地到相关 API 工具。
+- [PROMPT-SAW: Leveraging Relation-Aware Graphs for Textual Prompt Compression](https://arxiv.org/abs/2404.00489)：从长提示文本构建关系感知图，并抽取关键信息元素后再送入 LLM 推理。
+- [CLAPnq: Cohesive Long-form Answers from Passages in Natural Questions for RAG systems](https://arxiv.org/abs/2404.02103)：发布带 gold passages 和检索语料的 grounded 长答案 QA 数据集，可分别测试检索、生成和完整 RAG 综合链。
+- [Dwell in the Beginning: How Language Models Embed Long Documents for Dense Retrieval](https://arxiv.org/abs/2404.04163)：审计密集检索编码器的位置偏差，显示 MS MARCO 文档嵌入在对比训练后会过度偏向开头内容。
+- [Grounded Language Agent for Product Search via Intelligent Web Interactions](https://arxiv.org/abs/2404.10887)：GLAINTEL 训练 grounded product-search 网页交互 agent，对比无监督学习、示范、领域适配和强化学习与大模型提示基线。
+- [AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation](https://arxiv.org/abs/2404.12753)：用两阶段 LLM agent 借助 HTML 层级结构、跨页面相似性和 executability 指标生成可复用网页爬虫。
+- [LLMs Know What They Need: Leveraging a Missing Information Guided Framework to Empower Retrieval-Augmented Generation](https://arxiv.org/abs/2404.14043)：MIGRES 让 RAG 循环识别缺失信息、发起定向后续检索、重排句子并抽取多跳问答所需证据。
+- [Generate-on-Graph: Treat LLM as both Agent and KG for Incomplete Knowledge Graph Question Answering](https://arxiv.org/abs/2404.14741)：GoG 采用 Thinking-Searching-Generating 循环，在不完整知识图谱上边探索边生成缺失三元组作为新证据。
+- [Lifelong Knowledge Editing for LLMs with Retrieval-Augmented Continuous Prompt Learning](https://arxiv.org/abs/2405.03279)：RECIPE 检索已编辑知识，将其转换为 continuous prompts，并用 Knowledge Sentinel 阈值判断知识库何时应改写 LLM 回答。
+- [ERAGent: Enhancing Retrieval-Augmented Language Models with Improved Accuracy, Efficiency, and Personalization](https://arxiv.org/abs/2405.06683)：编排问题改写、知识过滤、检索触发、用户画像个性化和 experiential learning，减少 RAG 服务中的无效重复检索。
+- [TIGER: Text-Instructed 3D Gaussian Retrieval and Coherent Editing](https://arxiv.org/abs/2405.14455)：在语言嵌入的 3D Gaussians 中做开放词表目标检索，并用 coherent score distillation 编辑；贡献是 3D 编辑管线而非网页搜索。
+- [Collage is the New Writing: Exploring the Fragmentation of Text and User Interfaces in AI Tools](https://arxiv.org/abs/2405.17217)：从片段选择、声音并置、来源片段和编辑式组合分析 AI 写作界面；这是设计理论，不是检索智能体框架。
+- [SPAGHETTI: Open-Domain Question Answering from Heterogeneous Data Sources with Retrieval and Semantic Parsing](https://arxiv.org/abs/2406.00562)：把语义解析和生成结合到知识库、文本、表格与 infobox 上，回答异构开放域 QA 查询。
+- [Dual Reasoning: A GNN-LLM Collaborative Framework for Knowledge Graph Question Answering](https://arxiv.org/abs/2406.01145)：用 GNN 显式推理模块抽取知识图谱推理链，再把这些链注入冻结 LLM 进行可解释 KGQA。
+- [Ranking Manipulation for Conversational Search Engines](https://arxiv.org/abs/2406.03589)：把 conversational search 排名形式化为对抗问题，并用 tree-of-attacks prompt injection 操纵 LLM 搜索引擎引用的来源。
+- [VillagerAgent: A Graph-Based Multi-Agent Framework for Coordinating Complex Task Dependencies in Minecraft](https://arxiv.org/abs/2406.05720)：用 DAG 任务分解器、任务分配控制器和状态管理器协调 Minecraft agent；它是通用多智能体框架而非网页搜索。
+- [A Tale of Trust and Accuracy: Base vs. Instruct LLMs in RAG Systems](https://arxiv.org/abs/2406.14972)：比较 base 与 instruction-tuned LLM 在 RAG 管线中的表现，报告 base model 在该检索生成设置下更优。
+- [Context-augmented Retrieval: A Novel Framework for Fast Information Retrieval based Response Generation using Large Language Model](https://arxiv.org/abs/2406.16383)：用实时文本分类划分向量库，让 RAG 查询只在更窄、更相关的上下文区域检索以降低延迟。
+- [The Surprising Effectiveness of Multimodal Large Language Models for Video Moment Retrieval](https://arxiv.org/abs/2406.18113)：该 arXiv 记录实际对应 Chrono，一种提升视频 moment retrieval 的 MLLM 时间表示蓝图；它属于模型侧视频 grounding，不是网页搜索编排。
+- [SeaKR: Self-aware Knowledge Retrieval for Adaptive Retrieval Augmented Generation](https://arxiv.org/abs/2406.19215)：用 LLM 内部状态不确定性决定何时检索、按不确定性降低程度重排片段，并为多次检索 QA 选择推理策略。
+- [Is It Really Long Context if All You Need Is Retrieval? Towards Genuinely Difficult Long Context NLP](https://arxiv.org/abs/2407.00402)：一篇 position 与 taxonomy 论文，把长上下文难度拆成 diffusion 和 scope，可帮助判断何时用检索替代长提示，但本身不是智能体框架。
+- [Step-Controlled DPO: Leveraging Stepwise Error for Enhanced Mathematical Reasoning](https://arxiv.org/abs/2407.00782)：用带指定错误步的合成样本进行数学推理 DPO 训练；这是模型后训练，不涉及检索、浏览器动作或网页搜索框架。
+- [BERGEN: A Benchmarking Library for Retrieval-Augmented Generation](https://arxiv.org/abs/2407.01102)：提供端到端 RAG benchmarking library，统一数据集、语料、检索器、重排器、LLM 和指标，便于复现实验。
+- [An Interactive Multi-modal Query Answering System with Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2407.04217)：实现交互式多模态 QA 系统，用 coordinator 编排预处理、向量表示、navigation graph index、查询执行和答案生成。
+- [PersonaRAG: Enhancing Retrieval-Augmented Generation Systems with User-Centric Agents](https://arxiv.org/abs/2407.09394)：加入 user-centric agents，根据实时用户数据和交互自适应检索与生成，从而个性化 RAG 答案。
+- [Evaluation of RAG Metrics for Question Answering in the Telecom Domain](https://arxiv.org/abs/2407.12873)：审计电信 QA 中 RAGAS 式 faithfulness、relevance、correctness 和 factuality 指标，并比较正确与错误检索下的指标变化。
 - [MindSearch](https://arxiv.org/abs/2407.20183)（[开源代码](https://github.com/InternLM/MindSearch)）：多智能体网页搜索 harness，把用户问题拆成子问题，检索并整合证据，最后生成带引用的答案；这是一个容易被 BrowseComp 泛关键词漏掉的知名搜索系统。
-- [Co-STORM](https://arxiv.org/abs/2408.15232)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：协作式信息搜集 harness，多个 LM agent 探索来源、维护动态 mind map，并允许用户 steer，再输出带引用报告，连接开放网页搜索与 deep research。
+- [Adaptive Retrieval-Augmented Generation for Conversational Systems](https://arxiv.org/abs/2407.21712)：研究会话式 RAG 循环如何自适应判断哪些对话轮需要检索，而不是把每条用户消息都送入固定检索器。
+- [Optimizing RAG Techniques for Automotive Industry PDF Chatbots: A Case Study with Locally Deployed Ollama ModelsOptimizing RAG Techniques Based on Locally Deployed Ollama ModelsA Case Study with Locally Deployed Ollama Models](https://arxiv.org/abs/2408.05933)：比较本地 Ollama 汽车行业 PDF 聊天机器人的 chunking、embedding、向量库检索和提示配置，并非开放网页搜索系统。
+- [WeKnow-RAG: An Adaptive Approach for Retrieval-Augmented Generation Integrating Web Search and Knowledge Graphs](https://arxiv.org/abs/2408.07611)：把多阶段稀疏与密集网页检索、领域知识图谱和 LLM 自评步骤结合，用于 CRAG 式事实问答。
+- [CodeMirage: Hallucinations in Code Generated by Large Language Models](https://arxiv.org/abs/2408.08333)：审计代码生成幻觉，更像代码输出可靠性与检测条目，不是网页搜索智能体循环。
+- [RAGLAB: A Modular and Research-Oriented Unified Framework for Retrieval-Augmented Generation](https://arxiv.org/abs/2408.11381)：提供透明的 RAG 研究库，复现六种 RAG 算法，并在十个 benchmark 上统一检索器、生成器、数据集和指标。
+- [Agentic Retrieval-Augmented Generation for Time Series Analysis](https://arxiv.org/abs/2408.14484)：由 master agent 将时间序列请求路由给专门 sub-agent，后者从共享历史模式 prompt 池检索蒸馏知识再进行预测。
+- [Knowledge Graph Modeling-Driven Large Language Model Operating System (LLM OS) for Task Automation in Process Engineering Problem-Solving](https://arxiv.org/abs/2408.14494)：PEOA 用 meta-agent、action generator、专家小模型、属性图检索和迭代错误处理自动化流程工程问题求解。
+- [LRP4RAG: Detecting Hallucinations in Retrieval-Augmented Generation via Layer-wise Relevance Propagation](https://arxiv.org/abs/2408.15533)：用 layer-wise relevance propagation 特征和分类器检测 RAG 生成幻觉，作为检索增强答案的验证层。
+- [MemLong: Memory-Augmented Retrieval for Long Text Modeling](https://arxiv.org/abs/2408.16967)：用外部 `ret-mem` 检索器和可控 retrieval attention 访问语义块，把长文本生成扩展到基础上下文窗口之外。
+- [RAG based Question-Answering for Contextual Response Prediction System](https://arxiv.org/abs/2409.03708)：实现基于 RAG 的上下文响应预测问答管线，以检索到的上下文作为回答 grounding 层。
+- [Leveraging LLMs for Influence Path Planning in Proactive Recommendation](https://arxiv.org/abs/2409.04827)：用 LLM 规划 proactive recommendation 的 influence path，更接近推荐系统编排而非通用网页搜索或 RAG 检索。
+- [RAGent: Retrieval-based Access Control Policy Generation](https://arxiv.org/abs/2409.07489)：先抽取访问控制需求，再用 RAG 转换成策略，并通过自动验证与 refinement 循环修正生成的访问控制规则。
+- [Iteration of Thought: Leveraging Inner Dialogue for Autonomous Large Language Model Reasoning](https://arxiv.org/abs/2409.12618)：让 Inner Dialogue Agent 反复提示 LLM Agent，形成自主或固定轮次的内在对话推理脚手架，但它不是检索搜索系统。
+- [How Much Can RAG Help the Reasoning of LLM?](https://arxiv.org/abs/2410.02338)：分析检索文档对推理深度的作用，并提出 DPrompt tuning 过滤噪声推理上下文；贡献偏分析和调优而非搜索智能体。
+- [MLLM as Retriever: Interactively Learning Multimodal Retrieval for Embodied Agents](https://arxiv.org/abs/2410.03450)：MART 用交互偏好微调 MLLM retriever，并用 trajectory abstraction 帮 embodied agents 为新任务检索有用历史轨迹。
+- [MRAG-Bench: Vision-Centric Evaluation for Retrieval-Augmented Multimodal Models](https://arxiv.org/abs/2410.08182)：发布包含 16,130 张图像和九类场景的 vision-centric multimodal RAG benchmark，显示 LVLM 从检索图像中获益高于检索文本。
+- [RAP: Retrieval-Augmented Personalization for Multimodal Large Language Models](https://arxiv.org/abs/2410.13360)：通过检索用户历史和偏好个性化多模态生成，是 MLLM 个性化层而非开放网页搜索。
+- [Toolshed: Scale Tool-Equipped Agents with Advanced RAG-Tool Fusion and Tool Knowledge Bases](https://arxiv.org/abs/2410.14594)：把增强后的工具描述存入向量知识库，并用检索前查询规划、检索中转换和检索后自反思来选择工具。
+- [Large Language Models Empowered Personalized Web Agents](https://arxiv.org/abs/2410.17236)：构建会按用户偏好调整浏览或搜索行为的 personalized web agents，把个性化状态纳入 web-agent 控制循环。
+- [Graphusion: A RAG Framework for Scientific Knowledge Graph Construction with a Global Perspective](https://arxiv.org/abs/2410.17600)：用全局视角 RAG 管线构建科学知识图谱，更接近文献图谱构建而非通用网页搜索编排。
+- [AutoRAG: Automated Framework for optimization of Retrieval Augmented Generation Pipeline](https://arxiv.org/abs/2410.20878)：搜索 RAG 模块组合并近似特定数据集的最优管线配置，把检索器和生成器选择变成自动优化循环。
+- [CARROT: A Learned Cost-Constrained Retrieval Optimization System for RAG](https://arxiv.org/abs/2411.00744)：用 Monte Carlo tree search 搜索 chunk 组合顺序，并由 configuration agent 优化检索预算和每个查询的 RAG 设置。
+- [LLM-R: A Framework for Domain-Adaptive Maintenance Scheme Generation Combining Hierarchical Agents and RAG](https://arxiv.org/abs/2411.04476)：结合 hierarchical task-based agents 和 instruction-level RAG 生成维修方案，并降低设备手册场景中的幻觉。
+- [Retrieval, Reasoning, Re-ranking: A Context-Enriched Framework for Knowledge Graph Completion](https://arxiv.org/abs/2411.08165)：KGR3 检索支撑三元组和实体上下文，用 LLM 推理后再重排候选实体来完成知识图谱补全。
+- [SALOVA: Segment-Augmented Long Video Assistant for Targeted Retrieval and Routing in Long-Form Video Analysis](https://arxiv.org/abs/2411.16173)：通过动态检索和时空投影把用户问题路由到相关视频片段；它的主体是长视频理解而非网页搜索。
+- [MBA-RAG: a Bandit Approach for Adaptive Retrieval-Augmented Generation through Question Complexity](https://arxiv.org/abs/2412.01572)：把检索方法视为 multi-armed bandit 的不同 arm，按问题复杂度选择策略，并同时奖励答案准确率和检索效率。
+- [RARE: Retrieval-Augmented Reasoning Enhancement for Large Language Models](https://arxiv.org/abs/2412.02830)：在 MCTS 推理框架中加入检索动作，并用 retrieval-augmented factuality scorer 偏好事实 grounded 的推理路径。
+- [Privacy-Preserving Retrieval Augmented Generation with Differential Privacy](https://arxiv.org/abs/2412.04697)：只在需要敏感检索信息的 token 上消耗 differential-privacy 预算，以控制 RAG 输出中的隐私泄露。
+- [Adapting to Non-Stationary Environments: Multi-Armed Bandit Enhanced Retrieval-Augmented Generation on Knowledge Graphs](https://arxiv.org/abs/2412.07618)：用实时反馈驱动 multi-objective bandit，在非平稳查询环境中选择不同 KG 检索方法。
+- [METIS: Fast Quality-Aware RAG Systems with Configuration Adaptation](https://arxiv.org/abs/2412.10543)：同时调度 RAG 查询并自适应 chunk 数量、synthesis method 等配置，在答案质量和延迟之间取舍。
+- [VisDoM: Multi-Document QA with Visually Rich Elements Using Multimodal Retrieval-Augmented Generation](https://arxiv.org/abs/2412.10704)：并行运行文本与视觉 RAG 管线，结合证据筛选、chain-of-thought reasoning 和一致性约束的模态融合完成多文档 QA。
+- [RemoteRAG: A Privacy-Preserving LLM Cloud RAG Service](https://arxiv.org/abs/2412.12775)：用 distance differential privacy 扰动查询 embedding，并把云端检索缩小到小候选范围，在保护用户查询时保留目标文档。
+- [Rango: Adaptive Retrieval-Augmented Proving for Automated Software Verification](https://arxiv.org/abs/2412.14063)：把自适应检索用于自动化证明，在生成 proof 前检索相关验证上下文，而不是执行通用网页搜索。
+- [Know where to go: Make LLM a relevant, responsible, and trustworthy searchers](https://doi.org/10.1016/j.dss.2024.114354)：用相关性、责任性和可信度准则约束 LLM 搜索行为，把来源选择和答案可靠性作为显式搜索控制问题。
+- [GProofT: A Multi-dimension Multi-round Fact Checking Framework Based on Claim Fact Extraction](https://doi.org/10.18653/v1/2024.fever-1.14)：面向网络检索与 RAG，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Research on Retrieval-augmented Generation Algorithms for Large Language Models](https://doi.org/10.1109/iciba62489.2024.10868901)：梳理或实现 LLM 的 RAG 算法组件，主要价值是比较检索-生成设计，而非特定自治搜索循环。
+- [OMG-QA: Building Open-Domain Multi-Modal Generative Question Answering Systems](https://doi.org/10.18653/v1/2024.emnlp-industry.75)：构建开放域多模态 QA 系统，在生成答案前跨模态检索并融合证据。
+- [Orchestrating Multi-Agent Systems for Multi-Source Information Retrieval and Question Answering with Large Language Models](https://doi.org/10.5121/ijnlc.2024.13603)：把多源检索、证据处理和答案生成分配给不同 LLM agent，用于异构来源问答。
+- [Retrieval-Augmented Generation with Graphs (GraphRAG)](https://arxiv.org/abs/2501.00309)：梳理 graph-backed RAG 模式，把图检索、图构建和图推理作为控制面，而不是提出单一网页搜索 agent。
+- [RankFlow: A Multi-Role Collaborative Reranking Workflow Utilizing Large Language Models](https://arxiv.org/abs/2502.00709)：用多个大模型角色协同重排序，把检索排序从单次 reranker 调用变成结构化智能体工作流。
+- [DeepRAG: Thinking to Retrieve Step by Step for Large Language Models](https://arxiv.org/abs/2502.01142)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [FlashCheck: Exploration of Efficient Evidence Retrieval for Fast Fact-Checking](https://arxiv.org/abs/2502.05803)：面向快速事实核验的高效证据检索框架。核心思想是在保留核验所需证据的同时降低检索成本。
+- [Symbiotic Cooperation for Web Agents: Harnessing Complementary Strengths of Large and Small LLMs](https://arxiv.org/abs/2502.07942)：协同大模型与小模型，让网页 agent 更高效地探索、学习轨迹并执行任务。
+- [KET-RAG: A Cost-Efficient Multi-Granular Indexing Framework for Graph-RAG](https://arxiv.org/abs/2502.09304)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Agentic Verification for Ambiguous Query Disambiguation](https://arxiv.org/abs/2502.10352)：为歧义查询加入 agentic verification 循环，帮助搜索与问答智能体判断何时需要澄清或验证查询解释。
+- [RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation](https://arxiv.org/abs/2502.10996)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [LM Agents for Coordinating Multi-User Information Gathering](https://arxiv.org/abs/2502.12328)：面向网络搜索、检索与 RAG 智能体的智能体框架或运行时。核心思想：把 LM Agents for Coordinating Multi-User Information Gathering 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [DH-RAG: A Dynamic Historical Context-Powered Retrieval-Augmented Generation Method for Multi-Turn Dialogue](https://arxiv.org/abs/2502.13847)：维护动态历史信息库，并用历史查询聚类、层级匹配和 chain-of-thought tracking 在多轮对话中重构检索查询。
+- [On the Influence of Context Size and Model Choice in Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2502.14759)：评测 long-form RAG QA 中 context snippet 预算、BM25 与语义检索器、八个 LLM 后端，更像系统研究而非 agent harness。
+- [RAGVA: Engineering Retrieval Augmented Generation-based Virtual Assistants in Practice](https://arxiv.org/abs/2502.14930)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Cross-Format Retrieval-Augmented Generation in XR with LLMs for Context-Aware Maintenance Assistance](https://arxiv.org/abs/2502.15604)：评测 XR 维修 RAG 系统如何跨多种数据格式检索，并比较不同 LLM 生成指令的速度与准确率。
 - [FinSearch](https://arxiv.org/abs/2502.15684)：面向金融实时信息检索的时间感知 search-agent 框架。核心思想：把金融问题拆成图结构子查询，自适应改写搜索，按时间上下文加权证据，并在 FinSearchBench-24 上评测。
+- [XPath Agent: An Efficient XPath Programming Agent Based on LLM for Web Crawler](https://arxiv.org/abs/2502.15688)：根据样本网页和自然语言查询生成 XPath query，用两阶段管线服务网页爬取与 Web GUI 测试。
+- [Multi-LLM Collaborative Search for Complex Problem Solving](https://arxiv.org/abs/2502.18873)：面向复杂问题求解的多 LLM 协作搜索框架；核心思想是把检索和推理角色分配给多个模型，以扩大证据覆盖并交叉检查答案。
+- [Bridging Legal Knowledge and AI: Retrieval-Augmented Generation with Vector Stores, Knowledge Graphs, and Hierarchical Non-negative Matrix Factorization](https://arxiv.org/abs/2502.20364)：结合向量库、法律知识图谱和 hierarchical non-negative matrix factorization，在结构化与非结构化来源上 grounding 法律 QA。
+- [Learning to Contextualize Web Pages for Enhanced Decision Making by LLM Agents](https://arxiv.org/abs/2503.10689)：面向 LLM agent 的网页上下文化方法；核心思想是把原始网页转成对决策有用的上下文，提升 browser task 中的行动可靠性。
+- [CausalRAG: Integrating Causal Graphs into Retrieval-Augmented Generation](https://arxiv.org/abs/2503.19878)：把 causal graph 注入 RAG，使检索和生成考虑因果依赖，而不只依赖词面或 embedding 相似度。
+- [ReaRAG: Knowledge-guided Reasoning Enhances Factuality of Large Reasoning Models with Iterative Retrieval Augmented Generation](https://arxiv.org/abs/2503.21729)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Bhakti: A Lightweight Vector Database Management System for Endowing Large Language Models with Semantic Search Capabilities and Memory](https://arxiv.org/abs/2504.01553)：提供轻量向量数据库层来支持语义搜索和记忆，更像检索基础设施而非自治网页搜索 agent。
+- [Pneuma: Leveraging LLMs for Tabular Data Representation and Retrieval in an End-to-End System](https://arxiv.org/abs/2504.09207)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [CLEAR-KGQA: Clarification-Enhanced Ambiguity Resolution for Knowledge Graph Question Answering](https://arxiv.org/abs/2504.09665)：在 KGQA 中加入澄清轮次，让歧义用户问题先被解析，再进入图检索与答案生成。
+- [TVR: Automotive System Requirement Traceability Validation and Recovery Through Retrieval-Augmented Generation](https://arxiv.org/abs/2504.15427)：用 RAG 验证并恢复汽车系统需求 traceability link，把链接判断 grounding 到检索出的需求上下文。
+- [Enhancing Critical Thinking with AI: A Tailored Warning System for RAG Models](https://arxiv.org/abs/2504.16883)：在 RAG 输出外加入 warning layer，当检索证据或生成答案疑似不可靠时提示用户做批判性复核。
 - [WebThinker](https://arxiv.org/abs/2504.21776)（[开源代码](https://github.com/RUC-NLPIR/WebThinker)；把 `think-search-draft` 交错在同一条长链路里，代表“搜写一体”的可迁移互联网搜索代理范式）
+- [Optimization of embeddings storage for RAG systems using quantization and dimensionality reduction techniques](https://arxiv.org/abs/2505.00105)：用量化和降维优化 RAG 向量存储，属于检索基础设施问题而非浏览器或查询规划 harness。
+- [RAG-Star: Enhancing Deliberative Reasoning with Retrieval Augmented Verification and Refinement](https://doi.org/10.18653/v1/2025.naacl-long.361)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Towards Requirements Engineering for RAG Systems](https://arxiv.org/abs/2505.07553)：把 RAG 系统开发作为 requirements engineering 问题，整理设计约束和质量属性，而不是提出新的搜索循环。
+- [Securing Rag: A Risk Assessment and Mitigation Framework](https://arxiv.org/abs/2505.08728)：提供 RAG 风险评估与缓解框架，可用于保护检索管线，但本身不是网页搜索 agent。
+- [Scent of Knowledge: Optimizing Search-Enhanced Reasoning with Information Foraging](https://arxiv.org/abs/2505.09316)：面向 search-enhanced reasoning 的信息觅食方法；核心思想是估计 information scent 来优化检索轨迹，帮助 agent 判断去哪搜以及证据是否充分。
+- [AutoRefine](https://arxiv.org/abs/2505.11277)：搜索增强推理 harness；核心思想是在多次搜索调用之间显式过滤、提炼和组织证据，再生成最终答案。
+- [Divide by Question, Conquer by Agent: SPLIT-RAG with Question-Driven Graph Partitioning](https://arxiv.org/abs/2505.13994)：面向网络搜索、检索与 RAG 智能体的智能体框架或运行时。核心思想：把 SPLIT-RAG with Question-Driven Graph Partitioning 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [CRAFT: Training-Free Cascaded Retrieval for Tabular QA](https://arxiv.org/abs/2505.14984)：在 tabular QA 中级联表格检索与证据选择，无需训练，把检索顺序和表格 grounding 作为主要 harness 选择。
+- [Silent Leaks: Implicit Knowledge Extraction Attack on RAG Systems through Benign Queries](https://arxiv.org/abs/2505.15420)：研究看似正常的查询序列如何抽取 RAG 私有知识，是检索系统安全评估信号而非通用搜索工作流。
+- [Search Wisely: Mitigating Sub-optimal Agentic Searches By Reducing Uncertainty](https://arxiv.org/abs/2505.17281)：通过建模是否需要搜索的不确定性来缓解 agentic search 的过搜和欠搜。
+- [ManuSearch](https://arxiv.org/abs/2505.18105)：开放的多 agent deep-search 框架，把搜索规划、证据路由和答案综合拆成透明角色。
+- [Investigating Pedagogical Teacher and Student LLM Agents: Genetic Adaptation Meets Retrieval Augmented Generation Across Learning Style](https://arxiv.org/abs/2505.19173)：把 teacher 和 student LLM agents、RAG 与 genetic adaptation 结合，用学习风格个性化 tutoring 行为。
+- [WebCoT](https://arxiv.org/abs/2505.20013)：web agent 推理 harness 与训练模式；核心思想是把 reflection、lookahead、branching 和 rollback 重构为轨迹 rationale，再蒸馏给模型以提升浏览和搜索 agent。
+- [Iterative Self-Incentivization Empowers Large Language Models as Agentic Searchers](https://arxiv.org/abs/2505.20128)：面向 agentic search 的自改进方法；核心思想是通过迭代激励和反馈提升检索规划与证据获取。
 - [Alita](https://arxiv.org/abs/2505.20286)（[开源代码](https://github.com/CharlesQ9/Alita)；更偏通用工具编排的 agent，可对接多类搜索/浏览 runtime，不是单一 benchmark 专用）
-- [Proposer-Agent-Evaluator](https://openreview.net/forum?id=uCkwqAG0uS)（[开源代码](https://github.com/amazon-science/PAE)）：通过 proposal、acting 和 evaluation 角色分离，为 foundation-model internet agent 自动发现可复用技能。
+- [EvolveSearch: An Iterative Self-Evolving Search Agent](https://arxiv.org/abs/2505.22501)：类型：agent harness/可复用执行框架。核心价值：为 2.3.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Agent-UniRAG: A Trainable Open-Source LLM Agent Framework for Unified Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2505.22571)：开源可训练的统一 RAG agent 框架；核心思想是用 agent controller 在多跳 RAG 任务中协调检索与生成。
+- [Enhancing Critical Thinking in Generative AI Search with Metacognitive Prompts](https://arxiv.org/abs/2505.24014)：在生成式 AI 搜索中加入 metacognitive prompts，促使用户检查证据、假设和答案置信度，而非被动接受搜索摘要。
+- [Reflection-Based Memory For Web navigation Agents](https://arxiv.org/abs/2506.02158)：它提供 web agent、web interface、搜索路由或网页任务组合机制，适合补充 web-search Agent Harness。
+- [CoRe-MMRAG: Cross-Source Knowledge Reconciliation for Multimodal RAG](https://arxiv.org/abs/2506.02544)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Towards Robust Fact-Checking: A Multi-Agent System with Advanced Evidence Retrieval](https://arxiv.org/abs/2506.17878)：面向网络搜索、检索与 RAG 智能体的智能体框架或运行时。核心思想：把 A Multi-Agent System with Advanced Evidence Retrieval 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [PDF Retrieval Augmented Question Answering](https://arxiv.org/abs/2506.18027)：实现 PDF-grounded QA，通过文档 chunk 检索和答案综合完成问答，是文档 RAG 管线而非开放网页搜索。
+- [CCRS: A Zero-Shot LLM-as-a-Judge Framework for Comprehensive RAG Evaluation](https://arxiv.org/abs/2506.20128)：用 zero-shot LLM-as-judge 从检索和生成维度评估 RAG 系统，更接近评测框架而非 agent 执行系统。
+- [LineRetriever: Planning-Aware Observation Reduction for Web Agents](https://arxiv.org/abs/2507.00210)：它提供 web agent、web interface、搜索路由或网页任务组合机制，适合补充 web-search Agent Harness。
+- [LLM Agents for Coordinating Multi-User Information Gathering](https://doi.org/10.18653/v1/2025.findings-acl.916)：面向网络搜索、检索与 RAG 智能体的智能体框架或运行时。核心思想：把 LLM Agents for Coordinating Multi-User Information Gathering 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [An Empirical Study of Multi-Agent RAG for Real-World University Admissions Counseling](https://arxiv.org/abs/2507.11272)：研究真实大学招生咨询中的 multi-agent RAG 系统，将检索、建议和综合角色分离以服务高校信息需求。
+- [Task Mode: Dynamic Filtering for Task-Specific Web Navigation using LLMs](https://arxiv.org/abs/2507.14769)：它提供 web agent、web interface、搜索路由或网页任务组合机制，适合补充 web-search Agent Harness。
+- [Agentic RAG with Knowledge Graphs for Complex Multi-Hop Reasoning in Real-World Applications](https://arxiv.org/abs/2507.16507)：面向网络搜索、检索与 RAG 智能体的智能体框架或运行时。核心思想：把 for Complex Multi-Hop Reasoning in Real-World Applications 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [TAI Scan Tool: A RAG-Based Tool With Minimalistic Input for Trustworthy AI Self-Assessment](https://arxiv.org/abs/2507.17514)：构建只需少量输入的 RAG 自评工具，从 trustworthy-AI 指南中检索依据，更像领域合规助手而非广义网页搜索。
+- [DeepSieve](https://arxiv.org/abs/2507.22050)：用 LLM-as-knowledge-router 组织信息筛选，在检索与综合之间加入可复用的 sieving 层。
+- [Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](https://arxiv.org/abs/2508.01858)：类型：agent harness/可复用执行框架。核心价值：为 2.3.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [TURA: Tool-Augmented Unified Retrieval Agent for AI Search](https://arxiv.org/abs/2508.04604)：把检索与数据库、实时服务等动态工具调用结合起来，使 AI search 从静态 Web RAG 转向交互式检索与行动 agent。
 - [BrowseMaster](https://arxiv.org/abs/2508.09129)（开源代码：未找到稳定公开仓库；程序化工具增强的双代理网页浏览框架，在 BrowseComp-en 与 BrowseComp-ZH 上报告强结果，适合作为“搜索策略 agent + 验证 agent”分工参考）
+- [ParallelSearch: Train your LLMs to Decompose Query and Search Sub-queries in Parallel with Reinforcement Learning](https://arxiv.org/abs/2508.09303)：并行查询分解和搜索 harness。核心思想是训练 agent 把宽泛信息需求拆成子查询，并行搜索后再合并证据。
+- [RAG-PRISM: A Personalized, Rapid, and Immersive Skill Mastery Framework with Adaptive Retrieval-Augmented Tutoring](https://arxiv.org/abs/2509.00646)：在 tutoring workflow 中使用自适应检索，按学习者个性化 skill-mastery 内容和节奏。
+- [ReSum](https://arxiv.org/abs/2509.13313)：一种可插拔的长程 web-search harness，周期性总结交互历史；ReSum-GRPO 进一步让 agent 适应压缩后的上下文推理。
+- [SIRAG: Towards Stable and Interpretable RAG with A Process-Supervised Multi-Agent Framework](https://arxiv.org/abs/2509.18167)：面向检索、网页搜索与智能体式信息检索的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [AutoClimDS: Climate Data Science Agentic AI - A Knowledge Graph is All You Need](https://arxiv.org/abs/2509.21553)：把气候知识图谱作为检索和推理底座，支撑 agentic climate-data-science 助手。
+- [RE-Searcher: Robust Agentic Search with Goal-oriented Planning and Self-reflection](https://arxiv.org/abs/2509.26048)：在鲁棒智能体搜索中加入目标导向规划与自我反思。
+- [ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards](https://arxiv.org/abs/2510.00568)：可作为Web 搜索与 agentic search的Agent Harness候选；核心关注“A Self-Correcting Framework for Search Agents with Instructive Rewards”。
+- [FocusAgent](https://arxiv.org/abs/2510.03204)：面向 web agent 的上下文裁剪 harness。核心思想：用轻量检索器选择与任务相关的 accessibility-tree 行，降低观察长度、成本与 prompt injection 暴露面，再进行动作预测。
+- [Beyond Static Evaluation: Rethinking the Assessment of Personalized Agent Adaptability in Information Retrieval](https://arxiv.org/abs/2510.03984)：主张动态评估 personalized retrieval agents 在用户偏好变化下的适应性，而不是只做静态 benchmark 截面。
+- [JEF-Hinter: Leveraging Offline Knowledge for Improving Web Agents Adaptation](https://arxiv.org/abs/2510.04373)：类型：agent harness/可复用执行框架。核心价值：为 2.3.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval](https://arxiv.org/abs/2510.10419)：把检索表述为 zero-shot 生成文档标识符，属于 generative retrieval 方法而非外部浏览器或工具循环。
 - [BrowserAgent](https://arxiv.org/abs/2510.10666)（[开源代码](https://github.com/TIGER-AI-Lab/BrowserAgent)；把真实浏览器动作空间与显式 memory 接入 agent loop，适合作为 browser-native 搜索/浏览任务的通用基线）
+- [A Longitudinal Study on Different Annotator Feedback Loops in Complex RAG Tasks](https://arxiv.org/abs/2510.11897)：比较复杂 RAG 任务中的不同 annotator feedback loop，跟踪人类反馈如何随时间改变检索和答案质量。
+- [Query Decomposition for RAG: Balancing Exploration-Exploitation](https://arxiv.org/abs/2510.18633)：研究 query decomposition 策略如何在广泛探索式检索和聚焦利用已有证据之间取舍。
+- [Branch-and-Browse: Efficient and Controllable Web Exploration with Tree-Structured Reasoning and Action Memory](https://arxiv.org/abs/2510.19838)：可控网页探索 harness。核心思想：结合树结构浏览与动作记忆，使 web agent 能在探索中分支、比较和恢复。
+- [Beyond Retrieval-Ranking: A Multi-Agent Cognitive Decision Framework for E-Commerce Search](https://arxiv.org/abs/2510.20567)：面向Web 搜索、检索与搜索 Agent提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](https://arxiv.org/abs/2510.22694)：通过动态检索和模态选择自适应 multimodal RAG。
+- [Retrieval and Argumentation Enhanced Multi-Agent LLMs for Judgmental Forecasting](https://arxiv.org/abs/2510.24303)：把检索与多 LLM agent 论辩结合，让 judgmental forecasting 能引用证据并比较竞争性主张。
+- [WebLeaper: Empowering Efficiency and Efficacy in WebAgent via Enabling Info-Rich Seeking](https://arxiv.org/abs/2510.24697)：类型：agent harness/可复用执行框架。核心价值：为 2.3.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [AgentFold](https://arxiv.org/abs/2510.24699)：一种长程 web-agent 范式，主动在多个尺度折叠交互历史，在 BrowseComp 类任务中保留关键细节并避免上下文饱和。
+- [Interact-RAG: Reason and Interact with the Corpus, Beyond Black-Box Retrieval](https://arxiv.org/abs/2510.27566)：交互式 RAG harness。核心思想：让 agent 与语料交互并推理，而不是只做一次性黑盒检索。
+- [UniRAG: A Unified RAG Framework for Knowledge-Intensive Queries with Decomposition, Break-Down Reasoning, and Iterative Rewriting](https://doi.org/10.18653/v1/2025.findings-emnlp.1022)：用分解、细化推理和迭代改写组织知识密集查询，适合 Web search 与 RAG harness。
+- [Cache Mechanism for Agent RAG Systems](https://arxiv.org/abs/2511.02919)：面向 agent RAG 系统的缓存机制。核心思想：跨轮复用检索与推理产物，避免重复昂贵访问语料。
+- [TeaRAG: A Token-Efficient Agentic Retrieval-Augmented Generation Framework](https://arxiv.org/abs/2511.05385)：面向检索、网页搜索与智能体式信息检索的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Multi-Agent GraphRAG: A Text-to-Cypher Framework for Labeled Property Graphs](https://arxiv.org/abs/2511.08274)：把 labeled property graph 上的 GraphRAG 拆成 text-to-Cypher 转换、图检索和答案综合等 agent 角色。
+- [RAGPulse: An Open-Source RAG Workload Trace to Optimize RAG Serving Systems](https://arxiv.org/abs/2511.12979)：发布用于优化 RAG serving system 的工作负载 trace，让检索负载、延迟和管线调度可观测。
+- [BATS / Budget-Aware Tool-Use](https://arxiv.org/abs/2511.17006)：面向 web-search agent 的预算感知 harness。核心思想是向 agent 显式暴露剩余工具调用预算，并自适应调整规划与验证，使搜索 agent 在明确成本约束下更有效扩展。
+- [Reducing Latency of LLM Search Agent via Speculation-based Algorithm-System Co-Design](https://arxiv.org/abs/2511.20048)：用 speculative algorithm-system co-design 降低 search agent 延迟。
+- [Prune4Web: DOM Tree Pruning Programming for Web Agent](https://arxiv.org/abs/2511.21398)：类型：agent harness/可复用执行框架。核心价值：为 2.3.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [MCP vs RAG vs NLWeb vs HTML: A Comparison of the Effectiveness and Efficiency of Different Agent Interfaces to the Web](https://arxiv.org/abs/2511.23281)：比较 MCP、RAG、NLWeb、HTML 等 web-agent 接口，适合记录为 web-agent interface/harness 候选。
+- [Spatially-Enhanced Retrieval-Augmented Generation for Walkability and Urban Discovery](https://arxiv.org/abs/2512.04790)：为 walkability 与 urban discovery 查询向 RAG 加入空间上下文，用 location-aware retrieval 而非普通网页片段 grounding 答案。
+- [SoDA: An Efficient Interaction Paradigm for the Agentic Web](https://arxiv.org/abs/2512.22135)：提出面向 agentic web 的交互范式。
+- [A Mixture-of-Agents System for Fact-Based Comprehensive Search](https://doi.org/10.4236/jsea.2025.1812030)：补充网页搜索的 Agent Harness 条目，重点是《A Mixture-of-Agents System for Fact-Based Comprehensive Search》。
+- [Towards evidence-aware retrieval-augmented generation via self-corrective chain-of-thought](https://doi.org/10.1016/j.ipm.2025.104369)：加入 self-corrective chain-of-thought 循环，在最终 RAG 答案前用检索证据校正生成推理。
+- [From Data to Decisions: Enterprise-Level Domain-Specific Graph Retrieval-Augmented Generation Systems for Advanced Question Answering](https://doi.org/10.1109/bigcomp64353.2025.00016)：用企业级 graph RAG 把领域数据检索连接到面向决策的高级问答。
+- [Serverless RAG-Stream: A Cloud Pipeline for Efficient Real-Time Retrieval-Augmented Generation](https://doi.org/10.1109/iccpct65132.2025.11176777)：把实时 RAG 实现为 serverless cloud stream，重点在管线延迟和部署架构。
+- [Hoax Detection Using Retrieval-Augmented Generation Generative AI](https://doi.org/10.1109/iciss66954.2025.11389425)：把 RAG 用于 hoax detection，在生成式分类前检索支持或反驳证据。
+- [Research and Implementation of Large Language Model Retrieval-Augmented Generation Technology](https://doi.org/10.1109/iccect64621.2025.11339726)：实现围绕检索、上下文构造和生成的核心 RAG 技术；现有证据更像系统实现而非 web-agent planning。
+- [An Architecture and Protocol for Decentralized Retrieval Augmented Generation](https://doi.org/10.1109/icsa-c65153.2025.00012)：定义 decentralized RAG 架构与协议，让检索和生成可分布在多个参与方或服务之间。
+- [Pythia-RAG: Retrieval-augmented generation over a unified multimodal knowledge graph for enhanced QA](https://doi.org/10.1016/j.knosys.2025.115200)：在统一多模态知识图谱上 grounding QA，先做图检索和多模态证据融合，再生成答案。
+- [Multimodal Retrieval-Augmented Generation in Knowledge Systems: A Framework for Enhanced Semantic Search and Response Accuracy](https://doi.org/10.15308/sinteza-2025-544-549)：把知识系统 QA 表述为多模态语义搜索加 RAG 响应生成，以提升答案准确率。
+- [Integrating RAG and Reasoning for the Realization of a Concrete Driving Scenario within an LLM-Based Framework](https://doi.org/10.1109/iavvc61942.2025.11219551)：在 LLM 框架中结合检索到的驾驶场景知识和显式推理，用于实现具体自动驾驶场景。
+- [TrafficWise: Leveraging World Models for Generalized and Interpretable Traffic Control](https://doi.org/10.1109/mits.2025.3543446)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [RAG-Fusion Based Framework for Indonesian Hoax News Detection](https://doi.org/10.1109/icocics68032.2025.11384087)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [When Size Matters: Balancing Storage and Performance in Continual Learning](https://doi.org/10.1109/cac67268.2025.11487911)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Generative AI-Powered Conversational Assistant for Document, Web, and Repository Interaction and Retrieval](https://doi.org/10.1109/icctdc64446.2025.11158845)：构建面向网页搜索与 RAG任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Agentic Fusion of Knowledge Graphs and Vector Search for Dynamic Search Optimization](https://doi.org/10.1109/icecet63943.2025.11472244)：补充面向网页搜索、会话式搜索与浏览工作流的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [VeryNews: A Multi-Agent System for Automated News Authenticity Verification](https://doi.org/10.1109/aixb65684.2025.00028)：用于自动新闻真实性核验的多 agent 系统；核心思想是把新闻拆解为 5W1H 元素，从可信来源聚合证据，并生成透明可审计的核验报告。
+- [OrchANN: A Unified I/O Orchestration Framework for Skewed Out-of-Core Vector Search](https://arxiv.org/abs/2512.22838)：面向 skewed out-of-core vector search 统一编排 I/O，是大规模 RAG 索引的 serving 与检索基础设施贡献。
+- [Designing a Distributed LLM-Based Search Engine as a Foundation for Agent Discovery](https://doi.org/10.1109/csicc65765.2025.10967406)：面向Web 搜索、检索与搜索 Agent提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [CC-RAG: A Collaborative-Critical Dual-Agent Framework for Enhanced Retrieval-Augmented Generation](https://doi.org/10.1109/ieir67391.2025.11491388)：面向Web 搜索、检索与搜索 Agent提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Nested Browser-Use Learning for Agentic Information Seeking](https://arxiv.org/abs/2512.23647)：面向超越片段检索和 URL 抓取的浏览器原生信息搜寻的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Web World Models](https://arxiv.org/abs/2512.23676)：Web World Models 关注 agents 可行动、可记忆、可学习的持久 web world，属于 web-agent runtime/harness。
+- [WebAnchor](https://arxiv.org/abs/2601.03164)：把 web agent 的计划锚定到稳定的中间承诺，减少长链路网页推理中的目标漂移。
 - [M-ASK](https://arxiv.org/abs/2601.04703)：多智能体搜索框架，把 search behavior agent 与 knowledge optimization agent 分开。核心思想：把规划、搜索执行和知识优化拆成可观察的角色，降低单体式 search agent 的轨迹膨胀和信用分配问题。
+- [ColorBrowserAgent](https://arxiv.org/abs/2601.07262)：带 adaptive knowledge evolution 的长程浏览器 agent 工作流，用于稳定多步骤浏览推理。
+- [In-Browser Agents for Search Assistance](https://arxiv.org/abs/2601.09928)：研究用于搜索辅助的浏览器内智能体。
+- [TelcoAI: Advancing 3GPP Technical Specification Search through Agentic Multi-Modal Retrieval-Augmented Generation](https://arxiv.org/abs/2601.16984)：构建面向网页搜索与 RAG任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Avenir-Web: Human-Experience-Imitating Multimodal Web Agents with Mixture of Grounding Experts](https://arxiv.org/abs/2602.02468)：面向多模态 web agents 的 grounding、站点程序知识和长程任务跟踪，属于 web agent harness。
+- [A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces](https://arxiv.org/abs/2602.03442)：通过分层检索接口扩展 agentic RAG，明确智能体如何选择并组合不同检索层。
+- [WideSeek-R1](https://arxiv.org/abs/2602.04634)：面向 broad information seeking 的 width-scaling harness；核心思想是训练 lead agent 和并行 subagents，让它们在隔离上下文和专用工具中协作，使广域搜索任务通过增加协同 worker 扩展，而不是只加深单 agent 推理。
+- [Agentic Test-Time Scaling for WebAgents](https://arxiv.org/abs/2602.12276)：研究 web agent 如何分配额外测试时交互预算，是可复用的 harness 层 test-time scaling 问题。
+- [Plan-MCTS](https://arxiv.org/abs/2602.14083)：先在语义计划空间搜索、再落地动作的网页导航框架。核心思想是构造稠密计划树和抽象状态表示，缓解长程浏览探索稀疏和页面上下文嘈杂的问题。
+- [Web Verbs](https://arxiv.org/abs/2602.17245)：提出 typed web-action abstractions，用于在 agentic web 上可靠组合任务，而不是只依赖底层浏览器动作。
+- [DS SERVE: A Framework for Efficient and Scalable Neural Retrieval](https://arxiv.org/abs/2602.22224)：补充面向网页搜索、检索与 RAG的编排流程或智能体框架。
 - [Search More, Think Less（SMTL）](https://arxiv.org/abs/2602.22675)（[开源代码](https://github.com/OPPO-PersonalAI/SMTL)；长程 agentic search 框架；核心思想是把更多预算放到并行检索和证据覆盖上，减少昂贵深推理对跨场景泛化的负担）
+- [Keyword search is all you need: Achieving RAG-Level Performance without vector databases using agentic tool use](https://arxiv.org/abs/2602.23368)：面向网络搜索、检索与 RAG 智能体的智能体框架或运行时。核心思想：把 Achieving RAG-Level Performance without vector databases using agentic tool use 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [VoiceAgentRAG: Solving the RAG Latency Bottleneck in Real-Time Voice Agents Using Dual-Agent Architectures](https://arxiv.org/abs/2603.02206)：补充面向网页搜索、检索与 RAG的编排流程或智能体框架。
+- [SE-Search](https://arxiv.org/abs/2603.03293)：结合记忆、稠密奖励与自进化构建搜索 agent 闭环，使搜索轨迹能随重复使用而改进。
+- [Improving Search Agent with One Line of Code](https://arxiv.org/abs/2603.10069)：直接改进 search agent 的行为控制，适合归入搜索 agent harness 候选。
+- [Contact Coverage-Guided Exploration for General-Purpose Dexterous Manipulation](https://arxiv.org/abs/2603.10971)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [AI Planning Framework for LLM-Based Web Agents](https://arxiv.org/abs/2603.12710)：为 LLM-based web agents 提供显式规划框架，把任务分解和动作执行从基础模型中外置出来。
+- [APEX-Searcher](https://arxiv.org/abs/2603.13853)：面向高精度搜索的规划-执行式 search-agent 框架，把复杂搜索做成显式多阶段工作流。
+- [LLM-Driven Discovery of High-Entropy Catalysts via Retrieval-Augmented Generation](https://arxiv.org/abs/2603.15712)：构建面向网页搜索与 RAG任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [WebNavigator](https://arxiv.org/abs/2603.20366)：基于 interaction graph retrieval 的网页导航 harness。核心思想：离线构建交互图，在线通过检索、推理和路径查找利用全局网页结构，减少 agent 只靠试错探索导航。
+- [AgentSwing](https://arxiv.org/abs/2603.27490)：面向长程 web agent 的 adaptive parallel context-management router。核心思想：在触发点并行展开多种上下文管理分支，再用 lookahead routing 选择兼顾搜索效率和最终精度的继续路径。
+- [Doctor-RAG: Failure-Aware Repair for Agentic Retrieval-Augmented Generation](https://arxiv.org/abs/2604.00865)：为 agentic RAG 增加失败感知修复机制，诊断并修补检索推理轨迹，而不是每次重跑完整流程。
+- [ContextBudget](https://arxiv.org/abs/2604.01664)：管理长程搜索 agent 的上下文预算，把压缩和证据保留做成 harness 机制。
 - [InfoSeeker](https://arxiv.org/abs/2604.02971)（[开源代码](https://github.com/Memento-Teams/InfoSeeker)；层级并行网页信息寻址框架，在 WideSearch-en 与 BrowseComp-ZH 上报告效率和准确率收益，适合复用其 `planner -> parallel search -> evidence merge` harness）
+- [WebExpert](https://arxiv.org/abs/2604.06177)：用领域感知专家经验和 critic 指导组织高精度网页搜索工作流。
+- [MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](https://arxiv.org/abs/2604.18509)：面向网络检索与 RAG，补充用于multi-agent retrieval-augmented synthesis workflow的智能体流程、编排模式、工具循环或运行框架。
 - [Web2BigTable](https://arxiv.org/abs/2604.27221)（[开源代码](https://github.com/web2bigtable/Web2BigTable)；互联网级信息搜索与抽取系统；核心思想是用 bi-level multi-agent 先找来源、再抽结构化表格，和 WideSearch 的表格产出协议直接相邻）
+- [H-RAG at SemEval-2026 Task 8: Hierarchical Parent-Child Retrieval for Multi-Turn RAG Conversations](https://arxiv.org/abs/2605.00631)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [OpenSeeker-v2: Pushing the Limits of Search Agents with Informative and High-Difficulty Trajectories](https://arxiv.org/abs/2605.04036)：补充web search方向的agent harness，核心围绕《OpenSeeker-v2: Pushing the Limits of Search Agents with Informative and High-Difficulty Trajectories》。
 - [LongSeeker](https://arxiv.org/abs/2605.05191)（开源代码：未公开；长程搜索 agent；核心思想是用 `Skip / Compress / Rollback / Snippet / Delete` 等 Context-ReAct 操作弹性管理工作上下文，减少长链路搜索中的成本、遗忘与幻觉）
+- [Direct Corpus Interaction](https://arxiv.org/abs/2605.05242)：让 agent 直接用 `grep`、文件读取、shell 命令和轻量脚本检视原始语料，而不是先经过一次 top-k 检索接口。核心思想是精确词面约束、稀疏线索组合、局部上下文核查和反复修正假设这类搜索行为，有时更适合由通用终端工具完成。
+- [AgenticRAG: Agentic Retrieval for Enterprise Knowledge Bases](https://arxiv.org/abs/2605.05538)：构建面向企业知识库的智能体式检索。
 - [Context Gathering Decision Process](https://arxiv.org/abs/2605.07042)（开源代码：未公开；把 agentic search 形式化为 POMDP；核心思想是显式建模“是否继续搜、搜哪里、何时停止”，为长上下文代码库、企业数据和网页检索提供统一决策框架）
+- [Region4Web](https://arxiv.org/abs/2605.07134)：重新设计 web agent 的观察空间粒度，把 agent 看到什么变成可控的 harness 设计变量。
+- [A Prompt-Aware Structuring Framework for Reliable Reuse of AI-Generated Content in the Agentic Web](https://arxiv.org/abs/2605.09283)：补充面向网页搜索、会话式搜索与浏览工作流的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [EcoGEO: Trajectory-Aware Evidence Ecosystems for Web-Enabled LLM Search Agents](https://arxiv.org/abs/2605.12887)：面向 web-enabled LLM search agents 的 trajectory-aware evidence ecosystem。核心思想：把证据、搜索动作和轨迹上下文一起保存，使搜索 agent 能用可检查的来源路径支撑声明。
+- [Retrieval is Cheap, Show Me the Code: Executable Multi-Hop Reasoning for Retrieval-Augmented Generation](https://arxiv.org/abs/2605.12975)：Executable Multi-Hop RAG 将检索后的多跳推理转为可执行代码，属于 search/RAG harness。
+- [Context Training with Active Information Seeking](https://arxiv.org/abs/2605.13050)：一种工具增强的 context optimization harness。核心思想：让 context optimizer 主动调用 Wikipedia 搜索和浏览器工具，并维护、剪枝多个候选 context，使部署后适配能够使用新检索信息，而不只依赖模型参数知识。
+- [Agentic GraphRAG traversal context](https://arxiv.org/abs/2605.15109)：研究 GraphRAG agent 中的遍历上下文与来源追踪，把图邻域证据作为可控的检索与推理对象。
+- [Is Grep All You Need?](https://arxiv.org/abs/2605.15184)：系统研究 harness 设计如何改变 agentic search。核心思想是比较检索策略、工具输出呈现方式和 agent 架构在噪声文本搜索中的相互影响。
+- [Logical Retrieval for Agentic RAG](https://arxiv.org/abs/2605.27123)：让 LLM 用逻辑表达式描述检索意图，并由轻量 inverted index 忠实执行。核心思想是把控制权从复杂 dense/graph backend 转给结构化的 LLM-written retrieval expressions，在接近强 agentic hybrid baseline 的同时降低构建和服务成本，并减少生成幻觉。
+- [WebChallenger: A Reliable and Efficient Generalist Web Agent](https://arxiv.org/abs/2606.10423)：提出 WebChallenger，以从 DOM 确定性构造的 PageMem 为核心，支持页面选择性注意、网站结构记忆和可复用交互流程。
+- [Fusing Deterministic Caching and RAG-Enhanced LLM Inference for On-Device Conversational Command Execution](https://doi.org/10.1109/iitcee67948.2026.11394602)：面向网络检索与 RAG能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [ADEPT: An Entropy-Driven Dual-Strategy Agent for Interactive Video Retrieval](https://doi.org/10.1109/icassp55912.2026.11465079)：ADEPT: An Entropy-Driven Dual-Strategy Agent for Interactive Video Retrieval 补充网络检索与 RAG方向的智能体工作流、编排模式、规划循环或工具使用框架。
+- [Empowering IoT Security: Automated Identification of Standard Library Functions in RTOS Firmware With LLM and RAG](https://doi.org/10.1109/jiot.2026.3670949)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Security-Aware Retrieval-Augmented Generation System for Post-Quantum Cryptography Intelligence](https://doi.org/10.1109/southeastcon63549.2026.11476026)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Trust-Aware KG-RAG: a framework for trustworthy question answering for engineering equipment](https://doi.org/10.1016/j.aei.2026.104801)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [An AI-Driven Natural Language to SQL Framework in Go Leveraging Large Language Models and Dynamic Schema Contextualization](https://doi.org/10.1109/icoeca68095.2026.11485070)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Integration learning-assisted screening of MOene hydrogen adsorption configurations and prediction of room-temperature hydrogen storage performance](https://doi.org/10.1016/j.est.2026.122288)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Curiosity: An AI-Powered Agentic Search Engine for Knowledge Discovery and Productivity](https://doi.org/10.1109/icesic67389.2026.11496531)：构建面向知识发现与生产力的智能体搜索引擎。
+- [Multimodal Agentic RAG: A Hybrid Framework for Intelligent Extraction and Adaptive Retrieval on Unstructured Data Streams](https://doi.org/10.1109/icitiit68860.2026.11499561)：将多模态 Agentic RAG 与非结构化数据流自适应检索结合。
+- [Proposer-Agent-Evaluator](https://openreview.net/forum?id=uCkwqAG0uS)（[开源代码](https://github.com/amazon-science/PAE)）：通过 proposal、acting 和 evaluation 角色分离，为 foundation-model internet agent 自动发现可复用技能。
 - [WALT](https://openreview.net/forum?id=cgIDqcJcoI)（[开源代码](https://github.com/SalesforceAIResearch/WALT)）：让 web agent 学习工具，把工具发现和工具复用纳入 search-agent harness，而不是固定提示资产。
 - [FlowSearcher](https://openreview.net/forum?id=34v7DVz2l0)（[开源代码](https://github.com/XiangKeYiNTU/flowsearcher)）：为网页信息搜索合成 memory-guided agentic workflow，用 workflow memory 作为后续搜索的可复用 scaffold。
 - [DIVAgent](https://doi.org/10.1145/3746252.3761059)：受人类搜索过程启发的多样化搜索 agent harness。核心思想：把查询意图理解、结果探索和多样化组织成 agent 工作流，减少冗余结果并覆盖更多用户意图。
+- [SingleStore-V: An Integrated Vector Database System in SingleStore](https://doi.org/10.14778/3685800.3685805)：把向量搜索集成进 SingleStore，为 RAG 提供检索基础设施，而不是自治网页搜索 harness。
+- [RAG-Ex: A Generic Framework for Explaining Retrieval Augmented Generation](https://doi.org/10.1145/3626772.3657660)：通过追踪检索证据如何影响生成来解释 RAG 答案，为检索器与生成器边界增加可解释性。
+- [Web Application for Retrieval-Augmented Generation: Implementation and Testing](https://doi.org/10.3390/electronics13071361)：实现并测试一个把文档检索和答案生成封装为终端用户 RAG 服务的 Web 应用。
+- [CRP-RAG: A Retrieval-Augmented Generation Framework for Supporting Complex Logical Reasoning and Knowledge Planning](https://doi.org/10.3390/electronics14010047)：面向网络检索与 RAG能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Context Embeddings for Efficient Answer Generation in Retrieval-Augmented Generation](https://doi.org/10.1145/3701551.3703527)：面向网络检索与 RAG能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [HeterRAG: Heterogeneous Processing-in-Memory Acceleration for Retrieval-augmented Generation](https://doi.org/10.1145/3695053.3731089)：面向网络检索与 RAG能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Hermes: Algorithm-System Co-design for Efficient Retrieval-Augmented Generation At-Scale](https://doi.org/10.1145/3695053.3731076)：面向网络检索与 RAG能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Creating Conversational Datasets for Retrieval-Augmented Generation Applications is Hard: Challenges & Research Opportunities](https://doi.org/10.1145/3706599.3719962)：面向网络检索与 RAG能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Advancing Structured Query Processing in Retrieval-Augmented Generation with Generative Semantic Integration](https://doi.org/10.54097/z309gx59)：面向网络检索与 RAG能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [RAP-RAG: A Retrieval-Augmented Generation Framework with Adaptive Retrieval Task Planning](https://doi.org/10.3390/electronics14214269)：在生成前自适应规划检索任务，把 query routing 和 retrieval-task selection 作为显式 RAG 控制步骤。
+- [Competing narratives in AI ethics: a defense of sociotechnical pragmatism](https://doi.org/10.1007/s00146-024-02128-2)：该题名显示其更偏 AI ethics 论证而非检索编排，是 web-search harness 清理中的 off-axis 条目。
+- [PipeRAG: Fast Retrieval-Augmented Generation via Adaptive Pipeline Parallelism](https://doi.org/10.1145/3690624.3709194)：用 adaptive pipeline parallelism 重叠检索和生成阶段，加速 RAG serving。
+- [Steering Large Language Models for Cross-lingual Information Retrieval](https://doi.org/10.1145/3626772.3657819)：通过 steering 改变 LLM 的跨语言信息检索行为，重点是跨语言 retrieval 而非多智能体网页浏览。
+- [Efficient Federated Search for Retrieval-Augmented Generation](https://doi.org/10.1145/3721146.3721942)：优化 RAG 的 federated source selection，让查询在分布式集合上高效检索后再生成。
+- [AixelAsk: A Stepwise-Guided Retrieval and Reasoning Framework for Large Table QA](https://doi.org/10.1145/3769831)：用 stepwise retrieval and reasoning 引导大表格 QA，使表格证据选择保持显式。
+- [Mud Invasion Zone Detection Using Retrieval-Augmented Generation (RAG): A Generative AI Approach](https://doi.org/10.2118/227590-ms)：将 RAG 用于 mud invasion zone detection，在生成式解释前检索领域证据，是窄领域地学应用。
+- [HINT: A Bayesian RAG-LAM Framework for Real-Time Semantic Communication in XR Services](https://doi.org/10.1109/mcom.001.2500408)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [CogniRAG: Integrating Causal Hyperedges and Counterfactual Reasoning for Knowledge-Intensive Tasks](https://doi.org/10.5755/j01.itc.55.1.42562)：面向网络检索与 RAG，补充用于RAG or retrieval workflow with reasoning, privacy, or conflict resolution的智能体流程、编排模式、工具循环或运行框架。
+- [Boosted Query Expansion for Agricultural Decision Support: A Hybrid Framework Combining Case-Based Reasoning, Fuzzification, and Machine Learning](https://doi.org/10.25130/tjes.32.4.39)：面向网络检索与 RAG，补充用于RAG or retrieval workflow with reasoning, privacy, or conflict resolution的智能体流程、编排模式、工具循环或运行框架。
+- [Pragmatic inference and mapping for conversational implicature](https://doi.org/10.1007/s13042-025-02741-7)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Humanities‐in‐the‐Loop: Using Close Reading as a Method for Retrieval‐Augmented Generation (RAG)](https://doi.org/10.1002/pra2.1355)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的智能体流程、编排模式、工具循环或运行框架。
+- [Integrating Ontologies and Large Language Models to Implement Retrieval Augmented Generation](https://doi.org/10.1177/15705838241296446)：提供面向该能力的外部工作流、工具调用、规划、检索或多智能体编排，补充网络搜索与检索增强方向的智能体编排覆盖。
+- [Taming Non-Stationary Knowledge Growth: Dynamic Global Memory Framework for Lifelong Knowledge Graph Embedding](https://doi.org/10.1145/3773966.3777936)：构建面向网页搜索与 RAG任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Retrieval Augmented Multi-agent Recommender](https://doi.org/10.1145/3701716.3719231)：构建面向网页搜索与 RAG任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Hierarchical knowledge graph based legal information retrieval from multiple documents using intelligent agents](https://doi.org/10.1007/s10506-025-09491-5)：构建面向网页搜索与 RAG任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [A New Query Expansion Approach for Enhancing Information Retrieval via Agent-Mediated Dialogic Inquiry](https://doi.org/10.1145/3773966.3779360)：提出面向网络检索能力的智能体流程、编排模式、工具循环或执行框架。
+- [Agentic Retrieval-Augmented Generation: Advancing AI-Driven Information Retrieval and Processing](https://doi.org/10.14445/22312803/ijctt-v73i1p111)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [FinSearch: A Temporal-Aware Search Agent Framework for Real-Time Financial Information Retrieval with Large Language Models](https://doi.org/10.1145/3768292.3770382)：面向金融实时信息检索的时间感知 search-agent 框架。核心思想：把金融问题拆成图结构子查询，自适应改写搜索，按时间上下文加权证据，并在 FinSearchBench-24 上评测。

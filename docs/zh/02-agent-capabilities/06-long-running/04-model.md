@@ -1,29 +1,102 @@
 # 2.6.4 Model
 
+- [Entropy-Regularized Token-Level Policy Optimization for Language Agent Reinforcement](https://arxiv.org/abs/2402.06700)：面向长程任务执行，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
 - [AgentOhana](https://arxiv.org/abs/2402.15506)：统一多环境 agent 轨迹和训练流水线，用于跨异构任务学习有效 action model。
 - [ArCHer](https://arxiv.org/abs/2402.19446)：用层级多轮强化学习训练语言模型 agent，处理长轨迹中的延迟奖励。
+- [AGILE: A Novel Reinforcement Learning Framework of LLM Agents](https://arxiv.org/abs/2405.14751)：把 LLM agent 能力提升形式化为强化学习问题，通过策略更新改进长程决策行为。
+- [Efficient Preference-based Reinforcement Learning via Aligned Experience Estimation](https://arxiv.org/abs/2405.18688)：提出面向长程任务的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Reflection-Reinforced Self-Training for Language Agents](https://arxiv.org/abs/2406.01495)：补充一个面向长程任务执行的模型条目，关注reflection-reinforced self-training for language agents。
+- [UniZero: Generalized and Efficient Planning with Scalable Latent World Models](https://arxiv.org/abs/2406.10667)：提出面向长程任务的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [LLM-Based World Models Can Make Decisions Solely, But Rigorous Evaluations are Needed](https://arxiv.org/abs/2411.08794)：作为长程智能体的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Neurosymbolic Graph Enrichment for Grounded World Models](https://arxiv.org/abs/2411.12671)：提出面向长程任务的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
 - [Agent-R](https://arxiv.org/abs/2501.11425)：通过迭代自训练让 agent 学习反思、错误恢复和轨迹级自改进。
 - [Reinforcement Learning for Long-Horizon Interactive LLM Agents](https://arxiv.org/abs/2502.01600)：把有状态数字 agent 训练形式化为长程交互式 RL 问题，并提出面向多应用环境的 LOOP。
+- [Advancing Autonomous VLM Agents via Variational Subgoal-Conditioned Reinforcement Learning](https://arxiv.org/abs/2502.07949)：该方法通过变分子目标条件强化学习改进自主 VLM 智能体的长程学习。
+- [Process Reward Models for LLM Agents: Practical Framework and Directions](https://arxiv.org/abs/2502.10325)：提出面向交互式 LLM agent 的 AgentPRM 与 InversePRM，覆盖过程奖励、探索、reward shaping 和 test-time scaling。
+- [Training a Generally Curious Agent](https://arxiv.org/abs/2502.17543)：模型侧方法候选，Fine-tuning approach for curiosity-driven strategic information gathering across environments.
 - [ATLaS](https://arxiv.org/abs/2503.02197)：只用轨迹中的关键规划、推理与策略决策步骤微调通用智能体，以更少行为克隆数据提升跨环境表现。
+- [SWEET-RL: Training Multi-Turn LLM Agents on Collaborative Reasoning Tasks](https://arxiv.org/abs/2503.15478)：用强化学习在协作推理任务上训练多轮 LLM 智能体。
+- [Zero-Shot LLMs in Human-in-the-Loop RL: Replacing Human Feedback for Reward Shaping](https://arxiv.org/abs/2503.22723)：补充在人在回路强化学习中用零样本大语言模型替代人工反馈进行奖励塑形的方法。
 - [RAGEN](https://arxiv.org/abs/2504.20073)：通过多轮强化学习、轨迹过滤和稳定化策略更新研究 LLM agent 的自演化。
+- [Improving Retrospective Language Agents via Joint Policy Gradient Optimization](https://aclanthology.org/2025.naacl-long.6/)：联合优化 retrospective agent 的 policy-gradient 信号，使对既往尝试的分析成为可训练的长时行为组件。
 - [GiGPO](https://arxiv.org/abs/2505.10978)：在 episode 和 step 两个层级分配 advantage，服务稀疏奖励下的长程 agent 训练。
 - [Turn-Level Reward Design for Multi-Turn Agents](https://arxiv.org/abs/2505.11821)：把 GRPO/PPO 风格训练从最终 outcome 推向更稠密的 turn-level reward design，用于多轮推理 agent。
+- [Strategically Linked Decisions in Long-Term Planning and Reinforcement Learning](https://arxiv.org/abs/2505.16833)：为长程运行智能体补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL](https://arxiv.org/abs/2505.18098)：Planning without Search 用离线目标条件强化学习改进前沿 LLM 的交互式长程规划能力。
+- [Agentic Episodic Control](https://arxiv.org/abs/2506.01442)：为长程运行智能体方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Scaling Test-time Compute for LLM Agents](https://arxiv.org/abs/2506.12928)：研究额外推理时计算如何影响 agent 表现，把预算分配和重复尝试变成长时运行 agent 的模型侧 scaling 问题。
+- [L0: Reinforcement Learning to Become General Agents](https://arxiv.org/abs/2506.23667)：提供端到端 RL 流水线和 NB-Agent scaffold，用于训练多轮长程通用 LLM agent。
 - [RLVMR](https://arxiv.org/abs/2507.22844)：为规划、探索和反思加入可验证 meta-reasoning rewards，使长程 agent 学到更稳健的推理路径。
 - [Agent Lightning](https://arxiv.org/abs/2508.03680)：为任意 agent 提供通用强化学习接口，包含统一轨迹和 credit-assignment 模块。
 - [Chain-of-Agents Agent Foundation Models](https://arxiv.org/abs/2508.13167)：通过多 agent 蒸馏和 agentic RL，把多 agent 解题过程转化为端到端学习到的 agent model。
+- [LLM-Driven Intrinsic Motivation for Sparse Reward Reinforcement Learning](https://arxiv.org/abs/2508.18420)：补充用大语言模型为稀疏奖励强化学习提供内在动机的训练方法。
+- [One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning](https://arxiv.org/abs/2509.07945)：用高效 world model 支持多任务规划，把长程任务行为建模为可学习的预测控制问题。
 - [AgentGym-RL](https://arxiv.org/abs/2509.08755)：通过多轮交互式 RL 和 ScalingInter-RL 训练面向长程决策的 LLM agent。
+- [Temporal Preferences in Language Models for Long-Horizon Assistance](https://arxiv.org/abs/2509.09704)：用跨期选择实验协议和 MTO 指标衡量并操控模型的时间取向，揭示助手何时会为长期目标内化未来导向偏好。
+- [Dual-Scale World Models for LLM Agents Towards Hard-Exploration Problems](https://arxiv.org/abs/2509.24116)：面向 hard-exploration LLM agents 的双尺度 world-model harness；核心思想是在全局维护高价值发现 frontier，同时从局部试错中学习长程探索策略。
 - [AgentRL](https://arxiv.org/abs/2510.04206)：用异步 generation-training 基础设施扩展多轮、多任务 agentic reinforcement learning。
+- [A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks](https://arxiv.org/abs/2510.05608)：面向 long-horizon agent tasks 的 global planner 训练框架；核心思想是在行动前训练规划模块把目标拆解成高效可执行子目标。
+- [EARL: Efficient Agentic Reinforcement Learning Systems for Large Language Models](https://arxiv.org/abs/2510.05943)：通过自适应并行策略和布局感知数据调度扩展 agentic RL 训练，降低多轮工具使用训练中的长上下文失败。
+- [Scaling LLM Multi-turn RL with End-to-end Summarization-based Context Management](https://arxiv.org/abs/2510.06727)：用端到端摘要式上下文管理扩展多轮 RL。
+- [CaRT](https://arxiv.org/abs/2510.08517)：用 counterfactual trajectories 微调 LLM agents，使其学会何时停止搜集信息并采取行动，针对长程任务中的过度搜索和过早行动问题。
+- [Dyna-Mind](https://arxiv.org/abs/2510.09577)：训练 agent 基于交互经验模拟不同未来，在长程行动前加入类似 world dynamics 的推理步骤。
 - [Scaling Long-Horizon LLM Agent via Context-Folding](https://arxiv.org/abs/2510.11967)：用 FoldGRPO 和过程奖励训练 agent 分支、折叠子轨迹并主动管理上下文。
+- [Training LLM Agents to Empower Humans](https://arxiv.org/abs/2510.13709)：该工作训练 LLM 智能体在关键决策点让渡控制权，从而更好地辅助人类。
+- [LLMs as Scalable, General-Purpose Simulators For Evolving Digital Agent Training](https://arxiv.org/abs/2510.14969)：聚焦长程智能体的轨迹学习、信用分配、世界模型或多轮强化学习。
+- [Internalizing World Models via Self-Play Finetuning for Agentic RL](https://arxiv.org/abs/2510.15047)：通过 self-play finetuning 让 agent 内化 world model，支撑更长时程的 agentic RL。
 - [SALT](https://arxiv.org/abs/2510.20022)：通过 trajectory graph 为长程 agent 推导 step-level advantage，直接处理稀疏 outcome reward。
+- [Interaction as Intelligence Part II: Asynchronous Human-Agent Rollout for Long-Horizon Task Training](https://arxiv.org/abs/2510.27630)：Interaction as Intelligence Part II 研究用于长程任务训练的异步人机智能体 rollout。
 - [AgentPRM](https://arxiv.org/abs/2511.08325)：用 step-wise promise 与 progress 信号构建 LLM agent 的 process reward model。
+- [Conformal Constrained Policy Optimization for Cost-Effective LLM Agents](https://arxiv.org/abs/2511.11828)：在 conformal 约束下优化具备成本意识的 LLM 智能体，为长程智能体模型训练补充同时权衡性能、风险和资源预算的路线。
 - [Agent0](https://arxiv.org/abs/2511.16043)：通过 tool-integrated reasoning 和迭代改进，从零数据发展自演化 agent。
 - [SkyRL-Agent](https://arxiv.org/abs/2511.16108)：提供高效多轮 agent RL 训练，并展示在软件工程、deep research、computer use 和 memory-agent 任务上的迁移。
+- [Stabilizing Off-Policy Training for Long-Horizon LLM Agent via Turn-Level Importance Sampling and Clipping-Triggered Normalization](https://arxiv.org/abs/2511.20718)：回合级重要性采样与剪切触发归一化用于稳定长程 LLM 智能体的离策略训练。
+- [Co-Evolving Agents: Learning from Failures as Hard Negatives](https://arxiv.org/abs/2511.22254)：把失败案例作为 hard negatives 训练 agent，为长程 agent 策略提供自我改进路径。
+- [Agentic Policy Optimization via Instruction-Policy Co-Evolution](https://arxiv.org/abs/2512.01945)：在 RLVR 中共同演化智能体指令与策略，使定义智能体行为的协议能随模型能力变化而调整。
+- [CARL: Criticality-Aware Agentic Reinforcement Learning](https://arxiv.org/abs/2512.04949)：聚焦长程智能体的轨迹学习、信用分配、世界模型或多轮强化学习。
+- [Nex-N1](https://arxiv.org/abs/2512.04987)：通过统一生态构建复杂、多样且高保真的交互环境来训练 agentic models，为长程 policy learning 生成可扩展交互信号。
+- [When Actions Teach You to Think: Reasoning-Action Synergy via Reinforcement Learning in Conversational Agents](https://arxiv.org/abs/2512.11277)：研究把会话智能体动作与推理耦合的强化学习，使动作反馈能训练更可迁移的推理行为。
+- [CoDA: A Context-Decoupled Hierarchical Agent with Reinforcement Learning](https://arxiv.org/abs/2512.12716)：通过上下文解耦与层次化强化学习改进多步 agent 行为。
+- [GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training](https://arxiv.org/abs/2512.13043)：GTR-Turbo 将合并检查点用作免费教师，为智能体 VLM 训练提供逐步反馈。
+- [Learning to Wait: Synchronizing Agents with the Physical World](https://arxiv.org/abs/2512.16262)：把 code-as-action 扩展到显式等待时长动作，使 LLM agent 能预测异步环境中的任务完成时间，并在模拟 Kubernetes 任务中减少轮询开销和执行延迟。
 - [SAGE](https://arxiv.org/abs/2512.17102)：用强化学习让 agent 与 skill library 共同改进，连接长时自治和可复用能力积累。
+- [AutoForge: Automated Environment Synthesis for Agentic Reinforcement Learning](https://arxiv.org/abs/2512.22857)：面向 agentic reinforcement learning 的自动环境合成 harness。核心思想：生成可交互任务环境，让 agent 从执行交互中学习，而不是只依赖固定提示。
+- [A Contrastive Feedback Loops-Based Unified Framework for Generating Self-Improving LLM Agents Using PL-RL](https://doi.org/10.1109/etcom66606.2025.11437352)：为长程运行智能体补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [AT2PO: Agentic Turn-based Policy Optimization via Tree Search](https://arxiv.org/abs/2601.04767)：结合 turn-based policy optimization 与 tree search，改进多轮工具型 agent 的探索和信用分配。
+- [OpenTinker: Separating Concerns in Agentic Reinforcement Learning](https://arxiv.org/abs/2601.07376)：在 agentic RL 中分离数据、环境、奖励与优化职责，明确可复用训练系统边界。
+- [Paying Less Generalization Tax: A Cross-Domain Generalization Study of RL Training for LLM Agents](https://arxiv.org/abs/2601.18217)：聚焦长程智能体的轨迹学习、信用分配、世界模型或多轮强化学习。
+- [ASTRA](https://arxiv.org/abs/2601.21558)：自动合成 agentic trajectories 与 reinforcement arenas，是长时运行 agent 的模型侧数据和训练条目。
+- [FlowSteer](https://doi.org/10.48550/arXiv.2602.01664)：用端到端强化学习训练交互式 workflow orchestration，因此更适合放在 Long-running 的 Model。
+- [RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL System](https://arxiv.org/abs/2602.02488)：聚焦长程智能体的轨迹学习、信用分配、世界模型或多轮强化学习。
+- [Chain-of-Goals Hierarchical Policy for Long-Horizon Offline Goal-Conditioned RL](https://arxiv.org/abs/2602.03389)：补充面向长程、长运行或目标条件智能体能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Reasoning Cache: Continual Improvement Over Long Horizons via Short-Horizon RL](https://arxiv.org/abs/2602.03773)：用短时域强化学习和 reasoning cache 支持长时域持续改进。
+- [Reinforcement World Model Learning for LLM-based Agents](https://arxiv.org/abs/2602.05842)：聚焦长程智能体的轨迹学习、信用分配、世界模型或多轮强化学习。
+- [The Optimal Token Baseline: Variance Reduction for Long-Horizon LLM-RL](https://arxiv.org/abs/2602.07078)：为长时程 LLM 强化学习提出降低方差的 token baseline。
+- [TVCACHE: A Stateful Tool-Value Cache for Post-Training LLM Agents](https://arxiv.org/abs/2602.10986)：在 agent RL post-training 中按环境状态缓存外部工具值，降低重复工具调用延迟。
 - [HiPER](https://arxiv.org/abs/2602.16165)：面向大语言模型 agent 使用层级 RL 和显式 credit assignment，区分高层规划与低层执行。
+- [Phase-Aware Mixture of Experts for Agentic Reinforcement Learning](https://arxiv.org/abs/2602.17038)：按 agent 任务阶段进行专家路由，使强化学习能针对轨迹不同部分形成专门化策略。
 - [KLong](https://arxiv.org/abs/2602.17547)：通过 trajectory-splitting SFT、Research-Factory 合成轨迹流水线和 progressive RL，训练面向超长程任务的 LLM agent。
 - [ProxMO](https://arxiv.org/abs/2602.19225)：把 proximity-based multi-turn optimization 作为 agent 训练中实用的 credit-assignment 方法。
+- [Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](https://arxiv.org/abs/2602.23008)：用 on-policy 与 off-policy 混合强化学习优化记忆增强型 LLM agent。
 - [HiMAC](https://arxiv.org/abs/2603.00977)：通过层级 macro-micro learning，在子目标和局部动作层训练长程 LLM agent。
+- [Harmonizing Dense and Sparse Signals in Multi-turn RL: Dual-Horizon Credit Assignment for Industrial Sales Agents](https://arxiv.org/abs/2603.01481)：结合稠密与稀疏奖励进行多轮 RL，为长程 agent 提供 credit assignment 配方。
+- [RAPO: Expanding Exploration for LLM Agents via Retrieval-Augmented Policy Optimization](https://arxiv.org/abs/2603.03078)：用 retrieval-augmented policy optimization 扩展 LLM agent 的探索能力。
+- [Hit-RAG: Learning to Reason with Long Contexts via Preference Alignment](https://arxiv.org/abs/2603.07023)：用偏好对齐缓解长上下文 RAG 推理中的注意力稀释。
 - [HCAPO](https://arxiv.org/abs/2603.08754)：用 hindsight credit assignment 与 post-hoc critic refinement 优化长程 LLM-agent 轨迹。
+- [SLEA-RL: Step-Level Experience Augmented Reinforcement Learning for Multi-Turn Agentic Training](https://arxiv.org/abs/2603.18079)：在多轮 agentic RL 的每个决策步检索并更新相关经验，缓解一次性轨迹检索与后续观察不匹配的问题。
+- [CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](https://arxiv.org/abs/2604.15840)：通过 agent 行为与生成数据的相互演化训练 LLM agent。
+- [StepPO: Step-Aligned Policy Optimization for Agentic Reinforcement Learning](https://arxiv.org/abs/2604.18401)：把 agentic RL 从 token 级更新转向 step 级决策，面向延迟奖励、可变上下文和工具轨迹。
 - [AEM](https://arxiv.org/abs/2605.00425)：通过 response-level entropy modulation 稳定多轮 agentic RL，无需外部 step annotation。
+- [On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](https://arxiv.org/abs/2605.02572)：该实证研究分析任务跨度如何影响 LLM 在长周期任务上的训练行为。
+- [Selective Rollout: Mid-Trajectory Termination for Multi-Sample Agent RL](https://arxiv.org/abs/2605.05802)：Selective Rollout 在轨迹中途终止低信息量样本，以降低多样本智能体强化学习成本。
+- [Same Signal, Opposite Meaning: Direction-Informed Adaptive Learning for LLM Agents](https://arxiv.org/abs/2605.06908)：为 LLM agent 学习 direction-informed adaptive compute gate。核心思路是通过反事实探索训练，使 agent 只在信号预示额外 rollout 有益而非有害时增加测试时计算。
+- [MetaAgent-X : Breaking the Ceiling of Automatic Multi-Agent Systems via End-to-End Reinforcement Learning](https://arxiv.org/abs/2605.14212)：通过端到端强化学习优化自动多 agent 系统，把多角色协作和长程任务求解作为可训练策略。
+- [AstraFlow: Dataflow-Oriented Reinforcement Learning for Agentic LLMs](https://arxiv.org/abs/2605.15565)：用 dataflow-oriented RL 组件扩展复杂多策略 agentic LLM 训练。
+- [Learning Bilevel Policies over Symbolic World Models for Long-Horizon Planning](https://arxiv.org/abs/2605.15975)：在符号世界模型上学习用于长时程规划的双层策略。
+- [Look Before You Leap: Autonomous Exploration for LLM Agents](https://arxiv.org/abs/2605.16143)：提出 Exploration Checkpoint Coverage，并训练 agent 在陌生环境中先探索再执行。
 - [Rewarding Beliefs, Not Actions](https://arxiv.org/abs/2605.20061)：提出 belief-centric reinforcement learning，使自改进长程 agent 能在部分可观测状态下分配信用。
 - [Memory-R2](https://arxiv.org/abs/2605.21768)：研究跨长会话运行的 memory-augmented long-context agent 的在线 RL 和公平 credit assignment。
+- [Agent Data Protocol](https://openreview.net/forum?id=tG6301ORHd)：统一多样化 agent 数据集以支持有效微调，把多环境 agent 数据变成可复用的模型训练底座。
+- [Agentic AI for Behavior-Driven Development Testing Using Large Language Models](https://doi.org/10.5220/0013374400003890)：面向长程任务执行能力，补充模型侧方法、训练配方、架构或数据方法。
+- [PaW](https://arxiv.org/abs/2606.02388)：在 on-policy 强化学习 rollouts 中加入辅助 world-modeling supervision 来共同训练 policy 与 world model，同时保持推理范式不变。
+- [EvoTrainer](https://arxiv.org/abs/2606.03108)：为自主 agentic reinforcement learning 同时演化 LLM policies 与训练侧 harnesses，在训练中使用 rollout 诊断、backtest interventions 与累积 reusable skills。

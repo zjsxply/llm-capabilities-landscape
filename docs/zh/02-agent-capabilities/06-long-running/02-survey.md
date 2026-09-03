@@ -3,5 +3,23 @@
 - [A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/abs/2308.11432)：规划、记忆、工具使用与行动反馈闭环的基础综述。
 - [Large Language Model based Multi-Agents: A Survey of Progress and Challenges](https://arxiv.org/abs/2402.01680)：回顾协作、通信、任务分解与评测挑战。
 - [Understanding the planning of LLM agents: A survey](https://arxiv.org/abs/2402.02716)：覆盖任务分解、搜索、反思、外部工具与重规划。
+- [Levels of AI Agents: from Rules to Large Language Models](https://arxiv.org/abs/2405.06643)：梳理该方向的任务边界、方法谱系或评测维度，补充长程任务方向的综述覆盖。
+- [AgentReview: Exploring Peer Review Dynamics with LLM Agents](https://arxiv.org/abs/2406.12708)：面向长程任务执行能力，梳理近期工作、分类边界与开放问题。
+- [A Survey on Complex Tasks for Goal-Directed Interactive Agents](https://arxiv.org/abs/2409.18538)：A Survey on Complex Tasks for Goal-Directed Interactive Agents 梳理长程任务执行方向的方法、风险或评测边界。
+- [Generalist Virtual Agents: A Survey on Autonomous Agents Across Digital Platforms](https://arxiv.org/abs/2411.10943)：面向长程任务执行能力，梳理近期工作、分类边界与开放问题。
+- [Self-Directing AI: The Road to Fully Autonomous AI Agents](https://doi.org/10.1109/mc.2024.3507513)：综述走向完全自主、自我导向 AI 智能体的路线。
+- [A Roadmap to Guide the Integration of LLMs in Hierarchical Planning](https://arxiv.org/abs/2501.08068)：梳理 LLM 融入层级规划的路线，包括分解、控制与执行约束。
+- [Evaluating LLM-based Agents for Multi-Turn Conversations: A Survey](https://arxiv.org/abs/2503.22458)：综述 LLM-based agent 在多轮对话场景中的评测方法。
+- [PlanGenLLMs](https://aclanthology.org/2025.acl-long.958/)：面向 LLM 规划能力的现代综述，有助于区分长时运行 agent 中的规划、重规划和执行控制问题。
 - [A Survey on Agent Workflow - Status and Future](https://arxiv.org/abs/2508.01186)：综述长时运行工作流如何被结构化、优化与监控。
 - [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](https://arxiv.org/abs/2508.07407)：连接经验积累、自我改进与终身适应。
+- [A Practitioner's Guide to Multi-turn Agentic Reinforcement Learning](https://arxiv.org/abs/2510.01132)：梳理多轮 agent 强化学习中的轨迹结构、奖励设计与训练稳定性等实践选择。
+- [Beyond Pipelines: A Survey of the Paradigm Shift toward Model-Native Agentic AI](https://arxiv.org/abs/2510.16720)：综述从流水线式编排转向模型原生 agentic AI 的范式变化，说明 agent 行为如何进入模型训练与推理过程。
+- [Agentic AI: A Paradigm Shift in Autonomous Decision-Making and Intelligent Systems](https://doi.org/10.1109/rcsm67767.2025.11507473)：梳理长程运行智能体的方法、风险、数据集或评测实践。
+- [Agentic AI in the Enterprise: Autonomy, Ethics, and Architecture](https://doi.org/10.1109/ictbig68706.2025.11323732)：梳理长程运行智能体的方法、风险、数据集或评测实践。
+- [Mind the Workflow: Unmasking the Super Agents of Today](https://doi.org/10.1109/aimlsystems67835.2025.11331213)：梳理长程运行智能体的方法、风险、数据集或评测实践。
+- [Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering](https://arxiv.org/abs/2604.08224)：综述 LLM 智能体中记忆、技能、协议和 harness 工程的外部化。
+- [Rethinking Agentic Reinforcement Learning In Large Language Models](https://arxiv.org/abs/2604.27859)：面向长程语言模型智能体的 agentic reinforcement learning 综述或立场型条目。
+- [A Survey of Task Planning with Large Language Models](https://doi.org/10.34133/icomputing.0124)：综述 LLM task planning 方法，补充长程 agent 中任务分解、重规划与执行控制的 survey 覆盖。
+- [Conceptual Foundations of LLM-Powered Agents: From Language Processing to Autonomous Reasoning](https://doi.org/10.54691/atmxvb43)：梳理长程运行智能体的方法、风险、数据集或评测实践。
+- [From Model Scaling to System Scaling](https://arxiv.org/abs/2605.26112)：把 agent 能力进展框定为 harness scaling，梳理 context governance、trustworthy memory、dynamic skill routing、orchestration、governance 以及 CheetahClaws reference harness。

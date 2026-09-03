@@ -11,12 +11,19 @@ from typing import Any
 
 SIGNAL_ANY = re.compile(
     r"\b("
+    r"survey|review|taxonomy|tutorial|position|overview|systematic literature|"
     r"bench|benchmark|eval|evaluation|leaderboard|arena|testbed|dataset|suite|"
     r"agent|agents|agentic|multi-agent|workflow|orchestrat|tool|browser|web agent|computer use|gui|mcp|"
     r"skill|skills|memory|mem|episodic|long-term|cross-session|"
     r"safety|security|jailbreak|prompt injection|guardrail|red.?team|deception|scheming|risk|attack|vulnerability|"
+    r"model|models|modeling|architecture|pretrain|pre-training|post-train|post-training|"
+    r"finetun|fine-tun|instruction tun|train|training|reinforcement|rl|preference|dpo|grpo|"
+    r"reward|verifier|critic|world model|synthetic|data synthesis|data filtering|"
+    r"test-time|inference scaling|reasoning model|mixture of experts|moe|adapter|distill|"
     r"swe|software|coding|code|debug|repository|"
-    r"scientific|science|research|discovery|robot|robotics|embodied|vla|vision-language-action|"
+    r"scientific|science|research|discovery|citation|citing|bibliometric|scientometric|"
+    r"evidence synthesis|systematic review|meta-analysis|literature screening|screening|"
+    r"peer review|plagiarism|academic integrity|scholarly|robot|robotics|embodied|vla|vision-language-action|"
     r"video|spatial|math|multilingual|factual|hallucination|forecast|cyber"
     r")\b",
     re.I,
@@ -140,8 +147,8 @@ def main() -> int:
         ):
             note = (
                 "Conservative automatic reject: single low-citation graph relation and no title/abstract signal "
-                "for this repository's benchmark, agent harness, skill, safety, memory, software, research, "
-                "multimodal, or related capability taxonomy."
+                "for this repository's survey, model, benchmark, agent harness, skill, safety, memory, software, "
+                "research, multimodal, or related capability taxonomy."
             )
             auto_rejects.append(registry_record(item, "rejected", note, args.source))
         else:

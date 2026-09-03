@@ -1,27 +1,638 @@
 # 1.4.4 Model
 
 - [DoLa](https://arxiv.org/abs/2309.03883)：面向事实性的解码方法，通过对比 transformer 不同层的 logits，使生成更偏向成熟层表达的知识。
+- [Identifying the Achilles'Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models](https://arxiv.org/abs/2401.00761)：迭代探测大模型容易出错的事实区域，使事实错误能够动态暴露，而不是只依赖静态问答集。
+- [Explain the Explainer: Interpreting Model-Agnostic Counterfactual Explanations of a Deep Reinforcement Learning Agent](https://doi.org/10.1109/tai.2022.3223892)：解释强化学习智能体的反事实说明，把事后解释本身是否忠实作为可靠性目标。
+- [Navigating Uncertainty: Optimizing API Dependency for Hallucination Reduction in Closed-Book Question Answering](https://arxiv.org/abs/2401.01780)：用不确定性决定闭卷问答何时依赖外部 API，在直接回答与调用证据之间做权衡。
+- [Reinforcement Learning for Optimizing RAG for Domain Chatbots](https://arxiv.org/abs/2401.06800)：用强化学习优化领域聊天机器人的 RAG 决策，使检索选择更有利于生成有依据答案。
+- [Fine-grained Hallucination Detection and Editing for Language Models](https://arxiv.org/abs/2401.06855)：细粒度定位幻觉片段，并围绕这些局部错误编辑语言模型输出或知识行为。
+- [Comparing GPT-4 and Open-Source Language Models in Misinformation Mitigation](https://arxiv.org/abs/2401.06920)：比较 GPT-4 与开源模型缓解错误信息的表现，突出不同模型家族在事实纠错上的差异。
+- [Hallucination Detection and Hallucination Mitigation: An Investigation](https://arxiv.org/abs/2401.08358)：并行考察幻觉检测器与缓解策略，明确哪些模型侧干预能减少无依据生成。
+- [Mitigating Hallucinations of Large Language Models via Knowledge Consistent Alignment](https://arxiv.org/abs/2401.10768)：用知识一致性约束对齐模型回答，使与可用事实冲突的答案受到惩罚。
+- [Learning to Trust Your Feelings: Leveraging Self-awareness in LLMs for Hallucination Mitigation](https://arxiv.org/abs/2401.15449)：利用模型自身的自知或置信信号，决定答案何时需要修改、核查或拒答。
+- [Corrective Retrieval Augmented Generation](https://arxiv.org/abs/2401.15884)：在 RAG 中加入纠错循环，评估检索证据并在上下文不可靠时触发再检索或答案修正。
+- [Global-Liar: Factuality of LLMs over Time and Geographic Regions](https://arxiv.org/abs/2401.17839)：衡量 LLM 在时间与地理事实上的事实性变化，揭示不同地区和日期上的可靠性不均衡。
+- [Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration](https://arxiv.org/abs/2402.00367)：通过多个 LLM 协作识别知识缺口，并在答案可能缺乏支撑时选择拒答。
+- [Chameleon: Foundation Models for Fairness-aware Multi-modal Data Augmentation to Enhance Coverage of Minorities](https://arxiv.org/abs/2402.01071)：生成公平性感知的多模态增强数据以提高少数群体覆盖，是减少偏置或无依据多模态输出的相邻数据路线。
+- [Skip \n: A Simple Method to Reduce Hallucination in Large Vision-Language Models](https://arxiv.org/abs/2402.01345)：显示抑制换行 token 捷径可以减少视觉语言模型生成中的幻觉。
+- [Enhancing Large Language Model Performance To Answer Questions and Extract Information More Accurately](https://arxiv.org/abs/2402.01722)：改进问答与信息抽取，使 LLM 在事实任务上的输出更准确。
+- [Enhancing Complex Question Answering over Knowledge Graphs through Evidence Pattern Retrieval](https://arxiv.org/abs/2402.02175)：从知识图谱检索证据模式，使复杂问答扎根于结构化事实。
+- [DenseFormer: Enhancing Information Flow in Transformers via Depth Weighted Averaging](https://arxiv.org/abs/2402.02622)：通过深度加权平均改造 Transformer 信息流，为稳定事实预测所需的深层表示提供架构路线。
+- [Unified Hallucination Detection for Multimodal Large Language Models](https://arxiv.org/abs/2402.03190)：以统一检测器处理多模态幻觉，使文本与视觉不一致能被共同判断。
+- [INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection](https://arxiv.org/abs/2402.03744)：利用模型内部状态表示作为幻觉检测信号，而不只依赖输出文本。
+- [Faithfulness vs. Plausibility: On the (Un)Reliability of Explanations from Large Language Models](https://arxiv.org/abs/2402.04614)：区分看似合理的解释与忠实解释，说明解释流畅性可能掩盖无依据推理。
+- [Large Language Models As Faithful Explainers](https://arxiv.org/abs/2402.04678)：测试并训练 LLM 作为忠实解释器，关注解释是否反映模型真实决策依据。
+- [Hydragen: High-Throughput LLM Inference with Shared Prefixes](https://arxiv.org/abs/2402.05099)：提升共享前缀场景下的推理吞吐，使包含检索或验证的事实性流水线能以更高效率运行。
+- [Enhancing textual textbook question answering with large language models and retrieval augmented generation](https://arxiv.org/abs/2402.05128)：将检索增强生成用于教材问答，使答案能够扎根于检索到的教学文本。
+- [λ-ECLIPSE: Multi-Concept Personalized Text-to-Image Diffusion Models by Leveraging CLIP Latent Space](https://arxiv.org/abs/2402.05195)：利用 CLIP 潜空间条件进行多概念个性化扩散，是减少图像生成概念漂移的相邻 grounding 方法。
+- [Understanding the Effects of Iterative Prompting on Truthfulness](https://arxiv.org/abs/2402.06625)：分析反复提示如何改变真实性，说明迭代修订何时改善或恶化事实回答。
+- [T-RAG: Lessons from the LLM Trenches](https://arxiv.org/abs/2402.07483)：总结部署型 LLM 系统中的 RAG 设计经验，强调影响幻觉的检索与上下文选择。
+- [PoisonedRAG: Knowledge Poisoning Attacks to Retrieval-Augmented Generation of Large Language Models](https://arxiv.org/abs/2402.07867)：展示针对 RAG 的知识投毒攻击，说明被污染的检索会诱发看似有依据的错误答案。
+- [Retrieve Only When It Needs: Adaptive Retrieval Augmentation for Hallucination Mitigation in Large Language Models](https://arxiv.org/abs/2402.10612)：学习何时需要检索，在减少幻觉的同时避免不必要的证据调用。
+- [BIDER: Bridging Knowledge Inconsistency for Efficient Retrieval-Augmented LLMs via Key Supporting Evidence](https://arxiv.org/abs/2402.12174)：选择关键支撑证据，弥合检索知识与 LLM 内部知识之间的不一致。
+- [OPDAI at SemEval-2024 Task 6: Small LLMs can Accelerate Hallucination Detection with Weakly Supervised Data](https://arxiv.org/abs/2402.12913)：用弱监督数据微调小型 LLM 进行 SHROOM 式幻觉检测，降低检测成本。
+- [Probabilities of Chat LLMs Are Miscalibrated but Still Predict Correctness on Multiple-Choice Q&A](https://arxiv.org/abs/2402.13213)：说明聊天模型概率虽校准不足，但仍可作为多选事实问答正确性的信号。
+- [CounterCurate: Enhancing Physical and Semantic Visio-Linguistic Compositional Reasoning via Counterfactual Examples](https://arxiv.org/abs/2402.13254)：用反事实样例增强视觉语言模型的物理与语义组合推理能力。
+- [Backdoor Attacks on Dense Retrieval via Public and Unintentional Triggers](https://arxiv.org/abs/2402.13532)：揭示由公开或偶然短语触发的稠密检索后门，这类检索可靠性失败会传导为 RAG 幻觉。
+- [KInIT at SemEval-2024 Task 8: Fine-tuned LLMs for Multilingual Machine-Generated Text Detection](https://arxiv.org/abs/2402.13671)：微调 LLM 进行多语言机器生成文本检测，为生成内容可靠性提供相邻验证信号。
+- [Visual Hallucinations of Multi-modal Large Language Models](https://arxiv.org/abs/2402.14683)：分析多模态 LLM 的视觉幻觉失败模式，以及无依据对象或属性出现的条件。
+- [Chain-of-Thought Unfaithfulness as Disguised Accuracy](https://arxiv.org/abs/2402.14897)：显示正确最终答案也可能掩盖不忠实的思维链理由，从而区分推理忠实性与答案正确性。
+- [Faithful Temporal Question Answering over Heterogeneous Sources](https://arxiv.org/abs/2402.15400)：把时序问答扎根于异构证据源，使答案遵守时间敏感事实。
+- [Citation-Enhanced Generation for LLM-based Chatbots](https://arxiv.org/abs/2402.16063)：为聊天机器人答案加入引用生成，使事实声明能够对应到支撑来源。
+- [TruthX: Alleviating Hallucinations by Editing Large Language Models in Truthful Space](https://arxiv.org/abs/2402.17811)：在学习到的 truthful 表示空间中编辑模型激活，把生成从幻觉方向拉回。
+- [Follow My Instruction and Spill the Beans: Scalable Data Extraction from Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2402.17840)：说明遵循指令的 RAG 系统可能泄露检索数据，把检索 grounding 与数据抽取风险联系起来。
+- [Collaborative decoding of critical tokens for boosting factuality of large language models](https://arxiv.org/abs/2402.17982)：对最容易引入事实错误的关键 token 进行协同解码，以提升生成事实性。
+- [Whispers that Shake Foundations: Analyzing and Mitigating False Premise Hallucinations in Large Language Models](https://arxiv.org/abs/2402.19103)：研究虚假前提问题及其缓解方法，避免模型接受没有支撑的预设。
+- [“Flex Tape Can’t Fix That”: Bias and Misinformation in Edited Language Models](https://arxiv.org/abs/2403.00180)：评估知识编辑如何引入或保留偏见与错误信息，而非干净修复事实错误。
+- [HALC: Object Hallucination Reduction via Adaptive Focal-Contrast Decoding](https://arxiv.org/abs/2403.00425)：用自适应焦点对比解码抑制视觉语言生成中的无依据对象提及。
+- [InterrogateLLM: Zero-Resource Hallucination Detection in LLM-Generated Answers](https://arxiv.org/abs/2403.02889)：通过追问生成答案中的无依据声明，在无任务专用资源的情况下检测幻觉。
+- [Evidence-Focused Fact Summarization for Knowledge-Augmented Zero-Shot Question Answering](https://arxiv.org/abs/2403.02966)：围绕答案相关事实总结检索证据，再进行零样本问答，以减少无依据综合。
+- [Reliable, Adaptable, and Attributable Language Models with Retrieval](https://arxiv.org/abs/2403.03187)：训练检索增强语言模型，使其回答更可靠、可适配并能归因到检索证据。
+- [Fact-Checking the Output of Large Language Models via Token-Level Uncertainty Quantification](https://arxiv.org/abs/2403.04696)：利用 token 级不确定性标记输出中需要事实核查的区域。
+- [SnapNTell: Enhancing Entity-Centric Visual Question Answering with Retrieval Augmented Multimodal LLM](https://arxiv.org/abs/2403.04735)：为实体中心的多模态问答加入检索，使视觉答案能够利用外部实体知识。
+- [Truth-Aware Context Selection: Mitigating the Hallucinations of Large Language Models Being Misled by Untruthful Contexts](https://arxiv.org/abs/2403.07556)：按真实性选择上下文，降低误导性检索段落牵引生成的概率。
+- [SemEval-2024 Task 6: SHROOM, a Shared-task on Hallucinations and Related Observable Overgeneration Mistakes](https://arxiv.org/abs/2403.07726)：定义 SHROOM 共享任务设置，用于检测模型输出中的幻觉与可观察过度生成错误。
+- [Think Twice Before Assure: Confidence Estimation for Large Language Models through Reflection on Multiple Answers](https://arxiv.org/abs/2403.09972)：通过反思多个候选答案来估计置信度，再决定是否给出最终回答。
+- [Enhancing LLM Factual Accuracy with RAG to Counter Hallucinations: A Case Study on Domain-Specific Queries in Private Knowledge-Bases](https://arxiv.org/abs/2403.10446)：在私有领域知识库上使用 RAG，提高领域特定问题的事实准确性。
+- [Mitigating Dialogue Hallucination for Large Vision Language Models via Adversarial Instruction Tuning](https://arxiv.org/abs/2403.10492)：通过对抗式指令微调减少大型视觉语言模型的对话幻觉。
+- [What if...?: Thinking Counterfactual Keywords Helps to Mitigate Hallucination in Large Multi-modal Models](https://arxiv.org/abs/2403.13513)：用反事实关键词提示多模态模型，在回答前检查替代视觉解释。
+- [Multi-Modal Hallucination Control by Visual Information Grounding](https://arxiv.org/abs/2403.14003)：把多模态生成扎根于视觉信息，以约束无依据文本声明。
+- [Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity](https://arxiv.org/abs/2403.14403)：根据问题复杂度学习选择检索增强推理策略。
+- [Mechanistic Understanding and Mitigation of Language Model Non-Factual Hallucinations](https://arxiv.org/abs/2403.18167)：用机制分析定位非事实幻觉行为，并测试针对性的缓解干预。
+- [Rejection Improves Reliability: Training LLMs to Refuse Unknown Questions Using RL from Knowledge Feedback](https://arxiv.org/abs/2403.18349)：用来自知识反馈的强化学习训练拒答，使模型在超出知识范围的问题上拒绝回答。
+- [Mitigating Hallucinations in Large Vision-Language Models with Instruction Contrastive Decoding](https://arxiv.org/abs/2403.18715)：用指令对比解码区分视觉 grounded 答案与指令诱发的幻觉。
+- [On Large Language Models’ Hallucination with Regard to Known Facts](https://arxiv.org/abs/2403.20009)：考察模型本应掌握的已知事实上的幻觉，澄清事实回忆失败而非知识缺失。
+- [Is Factuality Enhancement a Free Lunch For LLMs? Better Factuality Can Lead to Worse Context-Faithfulness](https://arxiv.org/abs/2404.00216)：指出提升事实性可能损害对给定上下文的忠实性，揭示参数知识真实性与上下文 grounding 的权衡。
+- [Source-Aware Training Enables Knowledge Attribution in Language Models](https://arxiv.org/abs/2404.01019)：通过来源感知训练，使语言模型生成的知识能够归因到支撑来源。
+- [AILS-NTUA at SemEval-2024 Task 6: Efficient model tuning for hallucination detection and analysis](https://arxiv.org/abs/2404.01210)：高效调优模型用于 SHROOM 幻觉检测与错误分析。
+- [KnowHalu: Hallucination Detection via Multi-Form Knowledge Based Factual Checking](https://arxiv.org/abs/2404.02935)：通过多形态知识事实核查检测幻觉，将声明与事实证据进行比对。
+- [The Probabilities Also Matter: A More Faithful Metric for Faithfulness of Free-Text Explanations in Large Language Models](https://arxiv.org/abs/2404.03189)：利用模型概率衡量自由文本解释是否忠实，而不只是看起来合理。
+- [Fakes of Varying Shades: How Warning Affects Human Perception and Engagement Regarding LLM Hallucinations](https://arxiv.org/abs/2404.03745)：研究警告标签如何影响用户对 LLM 幻觉的感知，为部署事实性提示提供依据。
+- [PoLLMgraph: Unraveling Hallucinations in Large Language Models via State Transition Dynamics](https://arxiv.org/abs/2404.04722)：把 LLM 生成建模为状态转移，用于分析生成轨迹如何走向幻觉内容。
+- [Tackling Structural Hallucination in Image Translation with Local Diffusion](https://arxiv.org/abs/2404.05980)：用局部扩散约束减少图像翻译中的结构性幻觉。
+- [MetaCheckGPT - A Multi-task Hallucination Detector Using LLM Uncertainty and Meta-models](https://arxiv.org/abs/2404.06948)：结合 LLM 不确定性特征与元模型，在多任务场景中检测幻觉。
+- [Groundedness in Retrieval-augmented Long-form Generation: An Empirical Study](https://arxiv.org/abs/2404.07060)：实证测量长文本 RAG 的 groundedness，并识别生成声明偏离检索证据的位置。
+- [Introducing Super RAGs in Mistral 8x7B-v1](https://arxiv.org/abs/2404.08940)：改造 Mistral 8x7B 以增强 RAG 行为，重点是检索扎根的答案生成。
+- [Language Model Cascades: Token-level uncertainty and beyond](https://arxiv.org/abs/2404.10136)：在模型级联中使用 token 级不确定性，使更难或更不确定的生成能够升级核查。
 - [MiniCheck](https://arxiv.org/abs/2404.10774)（[开源代码](https://github.com/Liyan06/MiniCheck)）：轻量 grounded factuality verifier，在 LLM-AggreFact 上训练和评测，以较低成本判断回答与参考文档是否一致。
-- [Smoothing Out Hallucinations](https://arxiv.org/abs/2502.11306)：提出面向幻觉控制的模型侧方法，核心围绕 Mitigating LLM Hallucination with Smoothed Knowledge Distillation。
+- [Generating Test Scenarios from NL Requirements Using Retrieval-Augmented LLMs: An Industrial Study](https://arxiv.org/abs/2404.12772)：在工业需求文档上使用 RAG 生成测试场景，把检索到的需求上下文作为约束，减少无依据的场景细节。
+- [SuRe: Summarizing Retrievals using Answer Candidates for Open-domain QA of LLMs](https://arxiv.org/abs/2404.13081)：根据候选答案汇总检索段落，再把这些摘要用于开放域问答，使答案更贴近外部证据。
+- [Wiki-LLaVA: Hierarchical Retrieval-Augmented Generation for Multimodal LLMs](https://arxiv.org/abs/2404.15406)：利用百科知识为多模态大模型加入层级式检索增强生成。
+- [Uncertainty Estimation and Quantification for LLMs: A Simple Supervised Approach](https://arxiv.org/abs/2404.15993)：用标注数据与隐藏激活训练监督式不确定性估计器，并区分不确定性估计与校准，适配黑盒、灰盒和白盒 LLM 访问。
+- [From Local to Global: A Graph RAG Approach to Query-Focused Summarization](https://arxiv.org/abs/2404.16130)：用图结构检索增强生成支持大规模语料上的面向查询摘要。
+- [FeDeRA: Efficient Fine-tuning of Language Models in Federated Learning Leveraging Weight Decomposition](https://arxiv.org/abs/2404.18848)：用权重分解降低联邦微调语言模型的通信开销，是相邻的适配方法，并非直接的幻觉缓解工作。
+- [Drowzee: Metamorphic Testing for Fact-Conflicting Hallucination Detection in Large Language Models](https://arxiv.org/abs/2405.00648)：从爬取的事实知识构造逻辑编程变形测试和语义感知 oracle，用自动生成的事实冲突样例触发并检测幻觉。
+- [FLAME: Factuality-Aware Alignment for Large Language Models](https://arxiv.org/abs/2405.01525)：在指出新颖 SFT 事实和 helpfulness 奖励会放大幻觉后，改用事实性感知 SFT 与直接偏好优化进行对齐。
+- [Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?](https://arxiv.org/abs/2405.05904)：通过受控闭卷问答微调实验表明，新事实样例学习较慢，而一旦被学会，会线性提高模型幻觉倾向。
+- [Quantifying and Optimizing Global Faithfulness in Persona-driven Role-playing](https://arxiv.org/abs/2405.07726)：定义角色扮演中的全局忠实性，并优化 persona 一致性，避免长对话逐步偏离指定角色档案。
+- [RAGE Against the Machine: Retrieval-Augmented LLM Explanations](https://arxiv.org/abs/2405.13000)：为模型解释检索外部证据，降低生成理由只依赖参数知识而与事实依据脱节的风险。
+- [CrossCheckGPT: Universal Hallucination Ranking for Multimodal Foundation Models](https://arxiv.org/abs/2405.13684)：通过跨系统输出一致性进行无参考多模态幻觉排序，包含显式和隐式一致性度量以及 AVHalluBench。
+- [Knowledge Localization: Mission Not Accomplished? Enter Query Localization!](https://arxiv.org/abs/2405.14117)：把事实编辑重点从定位存储知识转向定位触发事实的查询表征，说明神经元级知识定位为何可能错过编辑目标。
+- [Certifiably Robust RAG against Retrieval Corruption](https://arxiv.org/abs/2405.15556)：研究检索污染下的检索增强生成，并给出可认证的鲁棒性机制。
+- [Visual Description Grounding Reduces Hallucinations and Boosts Reasoning in LVLMs](https://arxiv.org/abs/2405.15683)：提出免训练的视觉描述 grounded decoding，先把详细图像描述作为前缀，再按与视觉描述的低 KL 散度采样 token。
+- [M-RAG: Reinforcing Large Language Model Performance through Retrieval-Augmented Generation with Multiple Partitions](https://arxiv.org/abs/2405.16420)：把检索语料划分为多个分区并融合分区证据，避免 RAG 答案过度依赖单一检索视角。
+- [Looks Too Good To Be True: An Information-Theoretic Analysis of Hallucinations in Generative Restoration Models](https://arxiv.org/abs/2405.16475)：用信息论指标分析生成式复原模型的幻觉，说明看似合理的重建可能发明退化输入中不存在的细节。
+- [Can Large Language Models Faithfully Express Their Intrinsic Uncertainty in Words?](https://arxiv.org/abs/2405.16908)：把忠实表达不确定性定义为内在置信度与语言决断性的差距，显示对齐后的 LLM 常常过度或不足地表达犹豫。
+- [Faithful Logical Reasoning via Symbolic Chain-of-Thought](https://arxiv.org/abs/2405.18357)：把自然语言问题转写为符号表达式，按逻辑规则生成推理计划，并用 verifier 检查转写和推理链。
+- [Kernel Language Entropy: Fine-grained Uncertainty Quantification for LLMs from Semantic Similarities](https://arxiv.org/abs/2405.20003)：用答案语义相似度上的正半定核估计语义不确定性，把 semantic entropy 从硬聚类扩展到细粒度相似性。
+- [NoiseBoost: Alleviating Hallucination with Noise Perturbation for Multimodal Large Language Models](https://arxiv.org/abs/2405.20081)：在解码时注入校准后的视觉噪声，削弱语言先验捷径，减少多模态生成中的对象幻觉。
+- [Is My Data in Your Retrieval Database? Membership Inference Attacks Against Retrieval Augmented Generation](https://arxiv.org/abs/2405.20446)：展示 RAG 输出可能泄露文档是否在检索库中，把检索 grounding 本身变成隐私与信任边界。
+- [Phantom: General Backdoor Attacks on Retrieval Augmented Language Generation](https://arxiv.org/abs/2405.20485)：构造污染证据通道的检索后门，使 RAG 系统在触发词出现时生成攻击者指定内容。
+- [CODE: Contrasting Self-generated Description to Combat Hallucination in Large Multi-modal Models](https://arxiv.org/abs/2406.01920)：把模型自生成的视觉描述作为对比解码参照，动态调整下一个 token 分布，使多模态回答贴合图像内容。
+- [On the Intrinsic Self-Correction Capability of LLMs: Uncertainty and Latent Concept](https://arxiv.org/abs/2406.02378)：把迭代自纠错与降低模型不确定性的潜在概念联系起来，解释只有目标指令的反复修订为何能收敛到更好校准的答案。
+- [Leveraging KANs For Enhanced Deep Koopman Operator Discovery](https://arxiv.org/abs/2406.02875)：将 Kolmogorov-Arnold 网络用于 Koopman 算子发现；该条目与幻觉主题偏离，后续移动前需要复核。
+- [Analyzing LLM Behavior in Dialogue Summarization: Unveiling Circumstantial Hallucination Trends](https://arxiv.org/abs/2406.03487)：标注对话摘要中的 span 级不一致，并分离出“circumstantial inference”，即与对话相关但缺少直接证据的合理化声明。
+- [Confabulation: The Surprising Value of Large Language Model Hallucinations](https://arxiv.org/abs/2406.04175)：讨论某些幻觉式续写在探索性构思中的价值，并把有用的 confabulation 与事实性失败区分开。
+- [RAG Does Not Work for Enterprises](https://arxiv.org/abs/2406.04369)：分析企业 RAG 在权限、时效性和检索精度上的失败模式，解释简单检索后生成流程为何仍会失去依据。
+- [Multi-Head RAG: Solving Multi-Aspect Problems with LLMs](https://arxiv.org/abs/2406.05085)：为问题的不同方面运行多个检索头并融合证据，使答案覆盖单一查询容易遗漏的维度。
+- [Investigating and Addressing Hallucinations of LLMs in Tasks Involving Negation](https://arxiv.org/abs/2406.05494)：在虚假前提补全、受约束事实生成、多选问答和事实生成中测试否定导致的幻觉，并比较缓解策略。
+- [Ask-EDA: A Design Assistant Empowered by LLM, Hybrid RAG and Abbreviation De-hallucination](https://arxiv.org/abs/2406.06575)：在电子设计助手中结合混合检索和缩写消歧，减少 EDA 领域缩写歧义导致的幻觉。
+- [A Probabilistic Framework for LLM Hallucination Detection via Belief Tree Propagation](https://arxiv.org/abs/2406.06950)：构建由逻辑分解声明组成的 belief tree，并用隐马尔可夫树整合连续的 LLM belief scores 来检测幻觉。
+- [Large Language Models Must Be Taught to Know What They Don't Know](https://arxiv.org/abs/2406.08391)：用少量标注为正确或错误的答案微调模型，并通过 LoRA 可访问特征产生校准的不确定性估计。
+- [Mitigating Large Language Model Hallucination with Faithful Finetuning](https://arxiv.org/abs/2406.11267)：提出 Faithful Finetuning，用专门损失显式建模忠实问答，而不是只在表示空间编辑或在解码期抑制 token。
+- [Small Agent Can Also Rock! Empowering Small Language Models as Hallucination Detector](https://arxiv.org/abs/2406.11277)：用合成检测轨迹微调小模型，形成带工具和记忆的 HaluAgent，覆盖文本、代码和数学表达式幻觉检测。
+- [Hallucination Mitigation Prompts Long-term Video Understanding](https://arxiv.org/abs/2406.11333)：研究长视频理解中的提示设计，使模型在回答前检查时间证据，从而减少无依据事件描述。
+- [TRACE the Evidence: Constructing Knowledge-Grounded Reasoning Chains for Retrieval-Augmented Generation](https://arxiv.org/abs/2406.11460)：构造显式绑定检索证据的推理链，让 RAG 答案呈现每一步推断依赖的知识来源。
+- [How Do Large Language Models Acquire Factual Knowledge During Pretraining?](https://arxiv.org/abs/2406.11813)：跟踪预训练中的事实知识习得过程，将事实何时被学会与 token 频率、记忆动态和后续事实回忆联系起来。
+- [On-Policy Self-Alignment with Fine-grained Knowledge Feedback for Hallucination Mitigation](https://arxiv.org/abs/2406.12221)：进行 on-policy 强化学习，把回答分解为原子事实，对照外部知识检查真实性和信息量，并转成 token 级 dense reward。
+- [Beyond Under-Alignment: Atomic Preference Enhanced Factuality Tuning for Large Language Models](https://arxiv.org/abs/2406.12416)：把分布外事实性下降诊断为 under-alignment，并用原子事实粒度的偏好增强事实性调优来修正。
+- [Mitigating Object Hallucinations in Large Vision-Language Models with Assembly of Global and Local Attention](https://arxiv.org/abs/2406.12718)：在 LVLM 解码中组装全局场景注意力与局部对象注意力，抑制没有图像区域支撑的对象提及。
+- [Multi-Meta-RAG: Improving RAG for Multi-Hop Queries using Database Filtering with LLM-Extracted Metadata](https://arxiv.org/abs/2406.13213)：用 LLM 抽取元数据并先过滤数据库，再进行多跳检索，使每个推理跳的证据范围更窄。
+- [Factual Confidence of LLMs: on Reliability and Robustness of Current Estimators](https://arxiv.org/abs/2406.13415)：比较问答和事实核查中的 factual-confidence 估计器，发现隐藏状态 probe 最可靠，但置信度会随语义等价输入而不稳定。
+- [Benchmarking Uncertainty Quantification Methods for Large Language Models with LM-Polygraph](https://arxiv.org/abs/2406.15627)：提供 LM-Polygraph 基准与实现套件，用于统一评测 LLM 不确定性量化基线、置信度归一化和文本生成任务。
+- [Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs](https://arxiv.org/abs/2406.15927)：从单次生成的隐藏状态训练 probe 来近似 semantic entropy，避免测试时多次采样带来的高成本不确定性估计。
+- [Mitigating Hallucination in Fictional Character Role-Play](https://arxiv.org/abs/2406.17260)：提出 RoleFact，用预校准置信阈值调节参数知识影响，减少虚构角色访谈中的越界和时间性幻觉。
+- [Knowledge Graph Enhanced Retrieval-Augmented Generation for Failure Mode and Effects Analysis](https://arxiv.org/abs/2406.18114)：用失效模式知识图谱为 FMEA 生成检索结构化证据，减少无依据的工程风险陈述。
+- [Pistis-RAG: Enhancing Retrieval-Augmented Generation with Human Feedback](https://arxiv.org/abs/2407.00072)：把人类反馈纳入 RAG 的证据选择和答案生成，使检索上下文按有用性而非相似度被加权。
+- [PFME: A Modular Approach for Fine-grained Hallucination Detection and Editing of Large Language Models](https://arxiv.org/abs/2407.00488)：结合实时事实检索与句子级幻觉类型检测和编辑，利用外部证据及已编辑上下文逐句修正输出。
+- [Investigating and Mitigating the Multimodal Hallucination Snowballing in Large Vision-Language Models](https://arxiv.org/abs/2407.00569)：展示 LVLM 早期幻觉如何在多轮对话中滚雪球式累积，并用视觉重新 grounding 中断这一过程。
+- [LLM Uncertainty Quantification through Directional Entailment Graph and Claim Level Response Augmentation](https://arxiv.org/abs/2407.00994)：在增强后的声明之间构建有向蕴含图，以声明级而非整段回答级粒度估计不确定性。
+- [Core: Robust Factual Precision Scoring with Informative Sub-Claim Identification](https://arxiv.org/abs/2407.03572)：按唯一性与信息量筛选 factuality 分解子声明，使 FActScore 等指标不易被显然或重复的子声明刷高。
+- [ANAH-v2: Scaling Analytical Hallucination Annotation of Large Language Models](https://arxiv.org/abs/2407.04693)：通过迭代自训练扩展分析式幻觉标注数据，同时改进 7B 级标注器在 HaluEval 和 HalluQA 上的检测能力。
+- [MagMax: Leveraging Model Merging for Seamless Continual Learning](https://arxiv.org/abs/2407.06322)：用模型合并支持连续学习，降低整合新能力时的遗忘；与幻觉的关系较间接，后续应复核归类。
+- [Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps](https://arxiv.org/abs/2407.07071)：用源上下文与新生成 token 之间的 attention lookback ratio 检测上下文幻觉，并用分类器引导解码进行缓解。
+- [Knowledge Overshadowing Causes Amalgamated Hallucination in Large Language Models](https://arxiv.org/abs/2407.08039)：识别查询中压过罕见条件的 dominant conditions，并把该信号用于幻觉预判和 self-contrastive decoding。
+- [Counterfactual Explainable Incremental Prompt Attack Analysis on Large Language Models](https://arxiv.org/abs/2407.09292)：用反事实解释分析增量式提示攻击，揭示细小提示变化如何把 LLM 行为推离忠实回答。
+- [Mitigating Entity-Level Hallucination in Large Language Models](https://arxiv.org/abs/2407.09417)：直接针对实体替换和虚构实体，通过实体感知检测与修正减少生成文本中的事实错误。
+- [Developing a Reliable, Fast, General-Purpose Hallucination Detection and Mitigation Service](https://arxiv.org/abs/2407.15441)：描述低延迟服务，把幻觉检测与缓解接口结合起来，目标是跨领域复用而非只服务单一基准。
+- [Introducing a new hyper-parameter for RAG: Context Window Utilization](https://arxiv.org/abs/2407.19794)：把 context-window utilization 定义为 RAG 调参变量，用于衡量检索证据在生成前实际被利用的程度。
+- [Modular RAG: Transforming RAG Systems into LEGO-like Reconfigurable Frameworks](https://arxiv.org/abs/2407.21059)：把 RAG 重构为独立模块和算子，覆盖 routing、scheduling、fusion、branching 与 looping 等非线性检索生成模式。
+- [Cost-Effective Hallucination Detection for LLMs](https://arxiv.org/abs/2407.21424)：按输入和候选回答属性校准幻觉分数，并组合多个低成本 scoring signals，以更低开销接近强检测器表现。
+- [Improving Faithfulness of Large Language Models in Summarization via Sliding Generation and Self-Consistency](https://arxiv.org/abs/2407.21443)：用 SliSum 对重叠源文窗口分别生成局部摘要，再通过聚类和多数投票聚合出更忠实的长文档摘要。
+- [Paying More Attention to Image: A Training-Free Method for Alleviating Hallucination in LVLMs](https://arxiv.org/abs/2407.21771)：在推理期提高 LVLM 对图像 token 的注意力权重，无需额外训练即可减少语言先验导致的对象幻觉。
+- [Unveiling Factual Recall Behaviors of Large Language Models through Knowledge Neurons](https://arxiv.org/abs/2408.03247)：通过 knowledge neurons 探测事实回忆行为，说明内部激活如何关联正确或错误的事实检索。
+- [Learning Fine-Grained Grounded Citations for Attributed Large Language Models](https://arxiv.org/abs/2408.04568)：训练 attributed 模型输出细粒度引用，把单个生成声明与支撑上下文连接起来。
+- [W-RAG: Weakly Supervised Dense Retrieval in RAG for Open-domain Question Answering](https://arxiv.org/abs/2408.08444)：用弱监督训练开放域 RAG 的稠密检索器，在缺少昂贵段落级标签时改进证据检索。
+- [CLIP-DPO: Vision-Language Models as a Source of Preference for Fixing Hallucinations in LVLMs](https://arxiv.org/abs/2408.10433)：用 CLIP 派生的视觉偏好进行直接偏好优化，使 LVLM 输出远离没有视觉支撑的描述。
+- [SLM Meets LLM: Balancing Latency, Interpretability and Consistency in Hallucination Detection](https://arxiv.org/abs/2408.12748)：组合小模型和大模型，在幻觉检测中权衡延迟、可解释性与一致性。
+- [ConVis: Contrastive Decoding with Hallucination Visualization for Mitigating Hallucinations in Multimodal Large Language Models](https://arxiv.org/abs/2408.13906)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充幻觉与事实性方向的模型覆盖。
+- [Look, Compare, Decide: Alleviating Hallucination in Large Vision-Language Models via Multi-View Multi-Path Reasoning](https://arxiv.org/abs/2408.17150)：从不同视角生成多条视觉推理路径，比较后选择与图像证据保持一致的答案。
+- [Generating Media Background Checks for Automated Source Critical Reasoning](https://arxiv.org/abs/2409.00781)：定义 source criticism 任务，并构建 6,709 条来自 Media Bias/Fact Check 的媒体背景检查，使检索系统不再默认信任所有检索文档。
+- [Diversify-verify-adapt: Efficient and Robust Retrieval-Augmented Ambiguous Question Answering](https://arxiv.org/abs/2409.02361)：提出 DIVA，先扩展歧义查询的候选段落，再验证段落质量，并在单次检索遗漏解释时自适应选择 RAG 策略。
+- [LongCite: Enabling LLMs to Generate Fine-grained Citations in Long-context QA](https://arxiv.org/abs/2409.02897)：构建 LongBench-Cite、CoF 数据生成流程与 LongCite-45k，用于训练能在长上下文问答中输出句级引用的 LongCite 模型。
+- [Combining LLMs and Knowledge Graphs to Reduce Hallucinations in Question Answering](https://arxiv.org/abs/2409.04181)：结合生物医学知识图谱与 Cypher 查询检查器，在返回答案前验证 LLM 生成查询的语法和语义有效性。
+- [Mitigating Hallucination in Visual-Language Models via Re-Balancing Contrastive Decoding](https://arxiv.org/abs/2409.06485)：提出 re-balancing contrastive decoding，用文本偏置分支和视觉 token 分支修正多模态知识冲突中的注意力失衡。
+- [LaMsS: When Large Language Models Meet Self-Skepticism](https://arxiv.org/abs/2409.06601)：在继续预训练和微调中加入 skepticism tokens，使模型能估计回答级怀疑程度，并在超过阈值时拒答。
+- [Leveraging Self-Supervised Learning for Speaker Diarization](https://arxiv.org/abs/2409.09408)：与幻觉主题偏离；该工作用 WavLM 与 Conformer 表示缓解说话人分离中的数据稀缺，并不处理事实性或 grounding。
+- [Explore the Hallucination on Low-level Perception for MLLMs](https://arxiv.org/abs/2409.09748)：提出 QL-Bench 检验 MLLM 对低层视觉属性的自我认知，把感知不确定性与常规对象幻觉区分开来。
+- [SFR-RAG: Towards Contextually Faithful LLMs](https://arxiv.org/abs/2409.09916)：指令微调一个面向 RAG 的小模型，并发布 ContextualBench，覆盖有依据回答、不可答上下文、多跳推理和引用行为。
+- [Investigating Context-Faithfulness in Large Language Models: The Roles of Memory Strength and Evidence Style](https://arxiv.org/abs/2409.10955)：衡量记忆强度和证据表述方式如何影响 LLM 遵循外部上下文，还是回退到参数知识。
+- [Self-Evolutionary Large Language Models through Uncertainty-Enhanced Preference Optimization](https://arxiv.org/abs/2409.11212)：用 Monte Carlo dropout 估计偏好样本对的不确定性，在迭代偏好优化中筛除噪声自生成反馈。
+- [Zero-resource Hallucination Detection for Text Generation via Graph-based Contextual Knowledge Triples Modeling](https://arxiv.org/abs/2409.11283)：把生成文本建模为 contextual knowledge triples 及其图依赖，在无外部资源条件下检测开放式生成幻觉。
+- [Lighter And Better: Towards Flexible Context Adaptation For Retrieval Augmented Generation](https://arxiv.org/abs/2409.15699)：提出 FlexRAG，把检索上下文压缩为优化后的嵌入，使 RAG 能在上下文长度、成本和答案质量之间折中。
+- [EventHallusion: Diagnosing Event Hallucinations in Video LLMs](https://arxiv.org/abs/2409.16597)：提出面向事件的 VideoLLM 幻觉基准，并用 temporal contrastive decoding 抵消视频理解中的语言先验。
+- [HaloScope: Harnessing Unlabeled LLM Generations for Hallucination Detection](https://arxiv.org/abs/2409.17504)：通过估计未标注生成混合数据中真实与不真实样本的成员关系，训练无需大规模标注的幻觉检测器。
+- [HELPD: Mitigating Hallucination of LVLMs by Hierarchical Feedback Learning with Vision-enhanced Penalty Decoding](https://arxiv.org/abs/2409.20429)：结合对象级和句子语义级幻觉反馈，并用图像注意力窗口惩罚解码约束 LVLM 输出。
+- [Truth or Deceit? A Bayesian Decoding Game Enhances Consistency and Reliability](https://arxiv.org/abs/2410.01064)：把解码建模为多阶段 Bayesian game，在无需额外训练或人工反馈的情况下进行正确性对齐和歧义校准。
+- [Uncertainty quantification with Bayesian higher order ReLU-KANs](https://arxiv.org/abs/2410.01687)：与幻觉主题偏离；该工作为 ReLU-KANs 构建 Bayesian 不确定性估计，并在函数与随机偏微分方程上验证。
+- [UncertaintyRAG: Span-Level Uncertainty Enhanced Long-Context Modeling for Retrieval-Augmented Generation](https://arxiv.org/abs/2410.02719)：用基于信噪比的 span uncertainty 估计 chunk 相似度，改进长上下文 RAG 的校准和无监督检索器训练。
+- [Interpreting and Editing Vision-Language Representations to Mitigate Hallucinations](https://arxiv.org/abs/2410.02762)：把 VLM 图像表示投影到词表空间以定位真实对象，并通过线性擦除幻觉对象特征降低输出幻觉。
+- [FactCheckmate: Preemptively Detecting and Mitigating Hallucinations in LMs](https://arxiv.org/abs/2410.02899)：在解码前用输入侧 hidden states 预测幻觉风险，并进一步 steering hidden states 以生成更事实的输出。
+- [UNComp: Can Matrix Entropy Uncover Sparsity? - A Compressor Design from an Uncertainty-Aware Perspective](https://arxiv.org/abs/2410.03090)：主要偏离事实性主题；它用 truncated matrix entropy 指导长上下文推理中的自适应 KV-cache 压缩。
+- [Mitigating Modality Prior-Induced Hallucinations in Multimodal Large Language Models via Deciphering Attention Causality](https://arxiv.org/abs/2410.04780)：CausalMM 将模态先验视为混杂因素，通过 backdoor adjustment 与反事实注意力推理减少 MLLM 幻觉。
+- [Locate-then-edit for Multi-hop Factual Recall under Knowledge Editing](https://arxiv.org/abs/2410.06331)：提出 IFMET，在发现多跳事实回忆依赖更深层隐式主体表示后，同时编辑浅层和深层 MLP。
+- [Counterfactual Causal Inference in Natural Language with Large Language Models](https://arxiv.org/abs/2410.06392)：属于相邻而非幻觉专用工作；它从文本中抽取因果变量和因果图，让 LLM 执行反事实推理。
+- [Functional-level Uncertainty Quantification for Calibrated Fine-tuning on LLMs](https://arxiv.org/abs/2410.06431)：UQ4CT 在微调时对 prompt-dependent LoRA experts 的函数空间置信度进行校准，降低过度自信。
+- [QA-Calibration of Language Model Confidence Scores](https://arxiv.org/abs/2410.06615)：把生成式问答置信度校准扩展到不同问题和答案分组，并给出具有分布无关保证的后处理校准方案。
+- [Can Knowledge Graphs Make Large Language Models More Trustworthy? An Empirical Study over Open-ended Question Answering](https://arxiv.org/abs/2410.08085)：提出 OKGQA 与 OKGQA-P，检验知识图谱在干净和被扰动证据下是否能减少开放式问答幻觉。
+- [GIVE: Structured Reasoning with Knowledge Graph Inspired Veracity Extrapolation](https://arxiv.org/abs/2410.08475)：用 graph-inspired veracity extrapolation 选择专家数据、反思查询相关替代路径，并合成更可靠的推理输出。
+- [StructRAG: Boosting Knowledge Intensive Reasoning of LLMs via Inference-time Hybrid Information Structurization](https://arxiv.org/abs/2410.08815)：在推理时把检索文档重构为适合任务的信息结构，使分散证据能支撑知识密集型推理。
+- [FunnelRAG: A Coarse-to-Fine Progressive Retrieval Paradigm for RAG](https://arxiv.org/abs/2410.10293)：用粗到细的渐进检索替代 flat retrieval，通过调整粒度和候选量提升检索效率与 grounding。
+- [ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability](https://arxiv.org/abs/2410.11414)：通过探测 knowledge FFNs 过度依赖参数记忆、copying heads 未整合检索证据的情形来检测 RAG 幻觉。
+- [Black-box Uncertainty Quantification Method for LLM-as-a-Judge](https://arxiv.org/abs/2410.11594)：从生成评审、候选评分、token 概率和混淆矩阵之间的关系估计 LLM-as-a-Judge 的不确定性。
+- [Magnifier Prompt: Tackling Multimodal Hallucination via Extremely Simple Instructions](https://arxiv.org/abs/2410.11701)：用免训练提示规则要求 MLLM 更关注图像，并在视觉证据与内部知识冲突时优先相信图像。
+- [MLLM can see? Dynamic Correction Decoding for Hallucination Mitigation](https://arxiv.org/abs/2410.11779)：提出 DeCo，在语言先验压制视觉信息时，动态把早期层视觉对象信号混入最终 logits。
+- [Controlled Automatic Task-Specific Synthetic Data Generation for Hallucination Detection](https://arxiv.org/abs/2410.12278)：自动生成任务特定的幻觉样例，为缺少人工标注 span 的场景补充检测器训练数据。
+- [AT-RAG: An Adaptive RAG Model Enhancing Query Efficiency with Topic Filtering and Iterative Reasoning](https://arxiv.org/abs/2410.12886)：结合主题过滤与迭代推理，在证据交给生成器前先改写和收窄 RAG 查询。
+- [From Single to Multi: How LLMs Hallucinate in Multi-Document Summarization](https://arxiv.org/abs/2410.13961)：parent-routing-needed：该工作主要分析多文档摘要中的幻觉行为，不是可复用的模型侧缓解方法。
+- [Towards Cross-Cultural Machine Translation with Retrieval-Augmented Generation from Multilingual Knowledge Graphs](https://arxiv.org/abs/2410.14057)：用多语言知识图谱检索支撑跨文化机器翻译，使译文扎根于外部文化实体和关系。
+- [Towards Faithful Natural Language Explanations: A Study Using Activation Patching in Large Language Models](https://arxiv.org/abs/2410.14155)：用 activation patching 检验自然语言解释是否对应真正驱动答案的模型状态。
+- [To Trust or Not to Trust? Enhancing Large Language Models' Situated Faithfulness to External Contexts](https://arxiv.org/abs/2410.14675)：研究 LLM 何时应信任外部上下文而非参数记忆，并强化对给定证据的 situated faithfulness。
+- [Coarse-to-Fine Highlighting: Reducing Knowledge Hallucination in Large Language Models](https://arxiv.org/abs/2410.15116)：从粗粒度段落到细粒度 span 高亮证据，在生成前给模型提供局部事实锚点。
+- [Mitigating Object Hallucination via Concentric Causal Attention](https://arxiv.org/abs/2410.15926)：用 concentric causal attention 重新平衡对象周围的视觉证据，抑制无依据对象提及。
+- [Analysing the Residual Stream of Language Models Under Knowledge Conflicts](https://arxiv.org/abs/2410.16090)：探测知识冲突下的 residual stream 表征，揭示参数事实与上下文事实在模型内部竞争的位置。
+- [MvDrag3D: Drag-based Creative 3D Editing via Multi-view Generation-Reconstruction Priors](https://arxiv.org/abs/2410.16272)：parent-routing-needed：该工作是利用多视角生成和重建先验的 3D 编辑方法，不属于幻觉模型条目。
+- [Do Robot Snakes Dream like Electric Sheep? Investigating the Effects of Architectural Inductive Biases on Hallucination](https://arxiv.org/abs/2410.17477)：检验架构归纳偏置如何影响幻觉，把模型设计选择纳入事实性分析。
+- [SimRAG: Self-Improving Retrieval-Augmented Generation for Adapting Large Language Models to Specialized Domains](https://arxiv.org/abs/2410.17952)：用自改进循环让 RAG 适应专业领域，并从领域反馈中改进检索和生成。
+- [EACO-RAG: Edge-Assisted and Collaborative RAG with Adaptive Knowledge Update](https://arxiv.org/abs/2410.20299)：加入边缘协同检索和自适应知识更新，使分布式 RAG 证据保持及时。
+- [Plan*RAG: Efficient Test-Time Planning for Retrieval Augmented Generation](https://arxiv.org/abs/2410.20753)：在测试时规划检索和推理步骤，使 RAG 答案按显式计划使用证据，而不是单轮检索生成。
+- [Distinguishing Ignorance from Error in LLM Hallucinations](https://arxiv.org/abs/2410.22071)：区分未知导致的回答缺口与已知事实上的错误，为拒答和纠错提供不同路由信号。
+- [Search Engines in an AI Era: The False Promise of Factual and Verifiable Source-Cited Responses](https://arxiv.org/abs/2410.22349)：parent-routing-needed：该工作实证批判带来源引用的搜索答案，应复核是否归入 Bench 或分析类条目。
+- [SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models](https://arxiv.org/abs/2411.02433)：在解码时演化模型自身 logits，以免训练方式提高事实性续写概率。
+- [HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems](https://arxiv.org/abs/2411.02959)：保留检索文档的 HTML 结构，使 RAG 利用版式、表格和层级，而不是把证据压平成纯文本。
+- [RAGulator: Lightweight Out-of-Context Detectors for Grounded Text Generation](https://arxiv.org/abs/2411.03920)：训练轻量检测器，标记生成内容中不受给定 grounding 上下文支持的声明。
+- [Prompt-Guided Internal States for Hallucination Detection of Large Language Models](https://arxiv.org/abs/2411.04847)：把 prompt 条件下的内部 hidden states 用作幻觉特征，而不只看生成文本。
+- [Chinese SimpleQA: A Chinese Factuality Evaluation for Large Language Models](https://arxiv.org/abs/2411.07140)：parent-routing-needed：这是中文事实性评测集，应归入 Bench 而非 Model。
+- [Trustful LLMs: Customizing and Grounding Text Generation with knowledge bases and Dual Decoders](https://arxiv.org/abs/2411.07870)：结合知识库 grounding 与双解码器，把定制化生成和证据约束生成分开处理。
+- [Retrieval Augmented Time Series Forecasting](https://arxiv.org/abs/2411.08249)：parent-routing-needed：该工作是检索增强时间序列预测，并非幻觉专用事实性模型。
+- [Probing LLM Hallucination from Within: Perturbation-Driven Approach via Internal Knowledge](https://arxiv.org/abs/2411.09689)：扰动内部知识表征，探测哪些 hidden states 能预测幻觉回答。
+- [Thinking Before Looking: Improving Multimodal LLM Reasoning via Mitigating Visual Hallucination](https://arxiv.org/abs/2411.12591)：要求模型先组织推理再检查视觉证据，降低语言先验诱发的对象幻觉。
+- [Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models](https://arxiv.org/abs/2411.14257)：估计实体级知识自知能力，使模型在缺少可靠实体知识时拒答或寻求证据。
+- [Knowledge Graphs, Large Language Models, and Hallucinations: An NLP Perspective](https://arxiv.org/abs/2411.14258)：parent-routing-needed：这是知识图谱与幻觉关系的综述性工作，Survey 可能更合适。
+- [Towards Knowledge Checking in Retrieval-augmented Generation: A Representation Perspective](https://arxiv.org/abs/2411.14572)：从模型表征检测 RAG 知识检查失败，判断模型是否真正使用了检索证据。
+- [ICT: Image-Object Cross-Level Trusted Intervention for Mitigating Object Hallucination in Large Vision-Language Models](https://arxiv.org/abs/2411.15268)：在图像级和对象级信号之间做可信干预，用视觉证据抑制无依据对象 token。
+- [Devils in Middle Layers of Large Vision-Language Models: Interpreting, Detecting and Mitigating Object Hallucinations via Attention Lens](https://arxiv.org/abs/2411.16724)：用 attention lens 分析中间层，检测并缓解 LVLM 的对象幻觉。
+- [PhysMotion: Physics-Grounded Dynamics From a Single Image](https://arxiv.org/abs/2411.17189)：parent-routing-needed：该工作从单张图像生成物理 grounded 运动，不属于幻觉或事实性模型。
+- [FaithDiff: Unleashing Diffusion Priors for Faithful Image Super-resolution](https://arxiv.org/abs/2411.18824)：利用扩散先验使超分辨率结果忠实于低分辨率输入，避免编造无依据图像细节。
+- [RevPRAG: Revealing Poisoning Attacks in Retrieval-Augmented Generation through LLM Activation Analysis](https://arxiv.org/abs/2411.18948)：用 LLM activation analysis 揭示会污染 RAG 检索证据的投毒攻击。
+- [Auto-RAG: Autonomous Retrieval-Augmented Generation for Large Language Models](https://arxiv.org/abs/2411.19443)：微调 LLM 与 retriever 多轮对话，让模型自行规划检索、改写查询，并在外部信息充分后停止。
+- [Who Brings the Frisbee: Probing Hidden Hallucination Factors in Large Vision-Language Model via Causality Analysis](https://arxiv.org/abs/2412.02946)：通过因果分析定位触发 LVLM 对象幻觉的隐含视觉语言因素。
+- [Reducing Tool Hallucination via Reliability Alignment](https://arxiv.org/abs/2412.04141)：通过 reliability alignment 约束工具使用行为，减少编造不存在工具、调用或工具输出。
+- [T2I-FactualBench: Benchmarking the Factuality of Text-to-Image Models with Knowledge-Intensive Concepts](https://arxiv.org/abs/2412.04300)：parent-routing-needed：这是面向文生图模型的事实性基准，应复核移入 Bench。
+- [100% Elimination of Hallucinations on RAGTruth for GPT-4 and GPT-3.5 Turbo](https://arxiv.org/abs/2412.05223)：在 RAGTruth 上使用验证和过滤流水线，从 GPT-4 与 GPT-3.5 Turbo 输出中移除检测到的幻觉。
+- [TOBUGraph: Knowledge Graph-Based Retrieval for Enhanced LLM Performance Beyond RAG](https://arxiv.org/abs/2412.05447)：用知识图谱检索替代普通段落 RAG，把答案扎根于结构化实体和关系。
+- [Imitate Before Detect: Aligning Machine Stylistic Preference for Machine-Revised Text Detection](https://arxiv.org/abs/2412.10432)：parent-routing-needed：该工作面向机器修订文本检测，不是幻觉缓解或事实 grounding。
+- [Combating Multimodal LLM Hallucination via Bottom-Up Holistic Reasoning](https://arxiv.org/abs/2412.11124)：从局部视觉证据自底向上构建整体推理，避免 LVLM 生成无依据的全局声明。
+- [Leveraging Retrieval-Augmented Tags for Large Vision-Language Understanding in Complex Scenes](https://arxiv.org/abs/2412.11396)：为复杂场景检索标签，并把标签作为中间视觉证据支持 grounded 视觉语言理解。
+- [UAlign: Leveraging Uncertainty Estimations for Factuality Alignment on Large Language Models](https://arxiv.org/abs/2412.11803)：用不确定性估计加权或过滤事实性对齐信号，改进 LLM 后训练。
+- [What External Knowledge is Preferred by LLMs? Characterizing and Exploring Chain of Evidence in Imperfect Context](https://arxiv.org/abs/2412.12632)：刻画不完美上下文下 LLM 偏好的外部证据链，以及这些偏好如何影响 grounded answer。
+- [DnDScore: Decontextualization and Decomposition for Factuality Verification in Long-Form Text Generation](https://arxiv.org/abs/2412.13175)：通过去语境化与分解，把长文本生成拆成更小事实单元进行验证评分。
+- [Expansion Span: Combining Fading Memory and Retrieval in Hybrid State Space Models](https://arxiv.org/abs/2412.13328)：在混合状态空间模型中结合 fading memory 与检索，使长上下文生成能找回相关证据。
+- [Cracking the Code of Hallucination in LVLMs with Vision-aware Head Divergence](https://arxiv.org/abs/2412.13949)：把 vision-aware attention heads 之间的分歧作为检测和缓解 LVLM 幻觉的信号。
+- [Rethinking Uncertainty Estimation in LLMs: A Principled Single-Sequence Measure](https://arxiv.org/abs/2412.15176)：提出单序列不确定性度量，使幻觉风险估计不必依赖多次采样。
+- [OG-RAG: Ontology-Grounded Retrieval-Augmented Generation For Large Language Models](https://arxiv.org/abs/2412.15235)：把检索和生成扎根于本体，使答案证据遵循显式领域概念和关系。
+- [Don't Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks](https://arxiv.org/abs/2412.15605)：在缓存证据足够且更稳定的知识任务中，用 cache-augmented generation 替代实时检索。
+- [DynaGRAG | Exploring the Topology of Information for Advancing Language Understanding and Generation in Graph Retrieval-Augmented Generation](https://arxiv.org/abs/2412.18644)：动态建模 GraphRAG 的证据拓扑，使检索沿相关信息结构展开而不是只取孤立节点。
+- [Transferability of Adversarial Attacks in Video-based MLLMs: A Cross-modal Image-to-Video Approach](https://arxiv.org/abs/2501.01042)：parent-routing-needed：该工作研究视频 MLLM 中跨模态对抗攻击迁移，不是幻觉缓解方法。
+- [Confounders in Instance Variation for the Analysis of Data Contamination](https://doi.org/10.18653/v1/2024.conda-1.2)：parent-routing-needed：该工作分析实例变化对数据污染判断的混杂影响，不是幻觉模型方法。
+- [TimeR^4 : Time-aware Retrieval-Augmented Large Language Models for Temporal Knowledge Graph Question Answering](https://doi.org/10.18653/v1/2024.emnlp-main.394)：在时序知识图谱上进行时间感知检索，使问答结果遵守会演化的事实。
+- [RAG-Studio: Towards In-Domain Adaptation of Retrieval Augmented Generation Through Self-Alignment](https://doi.org/10.18653/v1/2024.findings-emnlp.41)：用 self-alignment 将 RAG 组件适配到领域语料，减少对大量监督标签的依赖。
+- [LLM-based Multi-Level Knowledge Generation for Few-shot Knowledge Graph Completion](https://doi.org/10.24963/ijcai.2024/236)：用 LLM 生成多层级知识支持少样本知识图谱补全，是相邻的结构化 grounding 数据路线。
+- [Mitigating reasoning hallucination through Multi-agent Collaborative Filtering](https://doi.org/10.1016/j.eswa.2024.125723)：通过多智能体协同过滤推理输出，在最终答案前质疑无支撑推理步骤。
+- [FLTRNN: Faithful Long-Horizon Task Planning for Robotics with Large Language Models](https://doi.org/10.1109/icra57147.2024.10611663)：为机器人长时程任务规划加入忠实性检查，使 LLM 生成步骤保持可执行。
+- [HalluMeasure: Fine-grained Hallucination Measurement Using Chain-of-Thought Reasoning](https://doi.org/10.18653/v1/2024.emnlp-main.837)：用思维链式分解做细粒度幻觉测量，在验证前把输出拆成可检查单元。
+- [Knowledge-Centric Hallucination Detection](https://doi.org/10.18653/v1/2024.emnlp-main.395)：以知识单元而非表面答案字符串为中心检测幻觉。
+- [Game on Tree: Visual Hallucination Mitigation via Coarse-to-Fine View Tree and Game Theory](https://doi.org/10.18653/v1/2024.emnlp-main.998)：构建粗到细的视觉 view tree，并用博弈论选择 grounded 视觉证据参与解码。
+- [Assessing Hallucination in Large Language Models Under Adversarial Attacks](https://doi.org/10.1109/mobisecserv63327.2024.10759969)：parent-routing-needed：这是对抗攻击下的幻觉脆弱性评估，更适合 Bench 或鲁棒性分析。
+- [Roberta with Low-Rank Adaptation and Hierarchical Attention for Hallucination Detection in LLMs](https://doi.org/10.1109/icicml63543.2024.10957858)：用 LoRA 和层级注意力微调 RoBERTa，用于 LLM 幻觉检测。
+- [Mitigating Hallucination for Large Vision Language Model by Inter-Modality Correlation Calibration Decoding](https://arxiv.org/abs/2501.01926)：通过跨模态相关性校准缓解大视觉语言模型幻觉。
+- [Enhancing Uncertainty Modeling with Semantic Graph for Hallucination Detection](https://arxiv.org/abs/2501.02020)：围绕候选答案构建语义图来建模不确定性，并据此检测幻觉生成。
+- [EAGLE: Enhanced Visual Grounding Minimizes Hallucinations in Instructional Multimodal Models](https://arxiv.org/abs/2501.02699)：增强指令型多模态模型的视觉 grounding，使回答更依赖图像证据并减少幻觉。
+- [GORAG: Graph-based Online Retrieval Augmented Generation for Dynamic Few-shot Social Media Text Classification](https://arxiv.org/abs/2501.02844)：用图式在线检索随着新样例到来更新少样本社交媒体分类上下文。
+- [VASparse](https://arxiv.org/abs/2501.06553)：通过 visual-aware sparsification 缓解大视觉语言模型幻觉，补充兼顾效率的 LVLM 事实性方法。
+- [Mitigating Hallucinations in Large Vision-Language Models via DPO: On-Policy Data Hold the Key](https://arxiv.org/abs/2501.09695)：作为幻觉与事实性的模型侧方法候选，聚焦“On-Policy Data Hold the Key”。
+- [Attention-guided Self-reflection for Zero-shot Hallucination Detection in Large Language Models](https://arxiv.org/abs/2501.09997)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Improving Contextual Faithfulness of Large Language Models via Retrieval Heads-Induced Optimization](https://arxiv.org/abs/2501.13573)：通过检索头诱导优化提升上下文忠实性。
+- [Few-Shot Optimized Framework for Hallucination Detection in Resource-Limited NLP Systems](https://arxiv.org/abs/2501.16616)：补充资源受限 NLP 场景中的少样本幻觉检测模型。
+- [Robust Fine-tuning for Retrieval Augmented Generation against Retrieval Defects](https://arxiv.org/abs/2501.18365)：针对噪声、缺失或有缺陷的检索证据微调 RAG，使检索失败时生成仍更稳健。
+- [Factual Knowledge in Language Models: Robustness and Anomalies under Simple Temporal Context Variations](https://arxiv.org/abs/2502.01220)：测试简单时间上下文变化下的事实回忆，揭示小幅日期变化会翻转模型知识的异常。
+- [Attention Calibration for Object Hallucination](https://arxiv.org/abs/2502.01969)：通过 attention calibration 缓解大视觉语言模型的物体幻觉。
+- [The Hidden Life of Tokens: Reducing Hallucination of Large Vision-Language Models via Visual Information Steering](https://arxiv.org/abs/2502.03628)：通过 visual information steering 减少 LVLM 幻觉，使生成更偏向有视觉证据支撑的 token 信息。
+- [LLM Alignment as Retriever Optimization: An Information Retrieval Perspective](https://arxiv.org/abs/2502.03699)：将 LLM 对齐表述为检索器优化问题，把检索质量与生成可靠性相连接。
+- [Linear Correlation in Compositional Generalization and Hallucination](https://arxiv.org/abs/2502.04520)：把知识组合失败与语言模型表示中的线性相关联系起来，解释从泛化失败到幻觉的模型侧机制。
+- [GRAIT](https://arxiv.org/abs/2502.05911)：用 gradient-driven refusal-aware instruction tuning 缓解幻觉，把拒答行为与面向事实性的模型训练连接起来。
+- [Learning Conformal Abstention Policies for Adaptive Risk Management in Large Language and Vision-Language Models](https://arxiv.org/abs/2502.06884)：用强化学习动态调整 conformal abstention 阈值，使 LLM 与 VLM 在高风险场景中更可靠地拒答。
+- [Constraint-Aware Prompting for Multimodal Spatial Relations](https://arxiv.org/abs/2502.08317)：通过 constraint-aware prompting 缓解多模态空间关系幻觉，把空间 grounding 与幻觉控制连接起来。
+- [SelfCite: Self-Supervised Alignment for Context Attribution in Large Language Models](https://arxiv.org/abs/2502.09604)：通过自监督做上下文归因对齐，提升 LLM 引用和证据 grounding 的忠实性。
+- [Vendi-RAG: Adaptively Trading-Off Diversity And Quality Significantly Improves Retrieval Augmented Generation With LLMs](https://arxiv.org/abs/2502.11228)：用 Vendi score 自适应权衡检索段落的多样性与质量，再交给生成器使用。
+- [Improved Unbiased Watermark for Large Language Models](https://arxiv.org/abs/2502.11268)：parent-routing-needed：这是 LLM 水印方法，不是幻觉或 grounding 模型条目。
+- [Smoothing Out Hallucinations](https://arxiv.org/abs/2502.11306)：使用 smoothed knowledge distillation，让学生模型输出更少出现幻觉式事实声明。
+- [Factual Inconsistency in Data-to-Text Generation Scales Exponentially with LLM Size: A Statistical Validation](https://arxiv.org/abs/2502.12372)：parent-routing-needed：该工作统计验证 data-to-text 事实不一致的规模化趋势，更接近分析或 Bench。
+- [CutPaste&Find: Efficient Multimodal Hallucination Detector with Visual-aid Knowledge Base](https://arxiv.org/abs/2502.12591)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 Efficient Multimodal Hallucination Detector with Visual-aid Knowledge Base 为主要改进目标，作为 Model 条目的能力参考。
+- [The Role of Background Information in Reducing Object Hallucination in Vision-Language Models: Insights from Cutoff API Prompting](https://arxiv.org/abs/2502.15389)：测试在视觉问答前提供背景信息的 cutoff prompting，以减少对象幻觉。
+- [Machine-generated text detection prevents language model collapse](https://arxiv.org/abs/2502.15654)：parent-routing-needed：该工作讨论机器生成文本检测如何防止模型坍塌，更偏 provenance 而非幻觉。
+- [The Law of Knowledge Overshadowing: Towards Understanding, Predicting, and Preventing LLM Hallucination](https://arxiv.org/abs/2502.16143)：提出 knowledge overshadowing，用知识流行度、知识长度和模型规模的对数线性关系预测事实幻觉率，并用 CoDa 解码降低由强势知识遮蔽引发的幻觉。
+- ['Generalization is hallucination' through the lens of tensor completions](https://arxiv.org/abs/2502.17305)：从 tensor completion 视角分析泛化与幻觉，解释补全缺失模式何时变成无依据发明。
+- [FilterRAG: Zero-Shot Informed Retrieval-Augmented Generation to Mitigate Hallucinations in VQA](https://arxiv.org/abs/2502.18536)：在 VQA 生成前零样本过滤检索证据，使视觉答案扎根于相关上下文。
+- [Do Vision Encoders Truly Explain Object Hallucination?: Mitigating Object Hallucination via Simple Fine-Grained CLIPScore](https://arxiv.org/abs/2502.20034)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Semantic Volume: Quantifying and Detecting both External and Internal Uncertainty in LLMs](https://arxiv.org/abs/2502.21239)：提出 Semantic Volume，量化 LLM 幻觉背后的内部与外部不确定性。
+- [Octopus: Dynamic Contrastive Decoding](https://arxiv.org/abs/2503.00361)：通过动态对比解码缓解幻觉，为输出 grounding 增加推理时控制路线。
 - [Mask-DPO](https://arxiv.org/abs/2503.02846)：细粒度事实性对齐方法，在偏好优化中定位事实片段，而不只依赖完整回答级偏好标签。
-- [PerturboLLaVA](https://arxiv.org/abs/2503.06486)：提出面向幻觉控制的模型侧方法，核心围绕 Reducing Multimodal Hallucinations with Perturbative Visual Training。
+- [HalluCounter: Reference-free LLM Hallucination Detection in the Wild!](https://arxiv.org/abs/2503.04615)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 Reference-free LLM Hallucination Detection in the Wild! 为主要改进目标，作为 Model 条目的能力参考。
+- [Knowledge Updating? No More Model Editing! Just Selective Contextual Reasoning](https://arxiv.org/abs/2503.05212)：比较模型编辑与选择性上下文推理在知识更新中的效果，揭示事实性行为在多跳推理和连续更新中的失效模式。
+- [SINdex: Semantic INconsistency Index for Hallucination Detection in LLMs](https://arxiv.org/abs/2503.05980)：通过生成声明之间的语义不一致评分检测幻觉，而不是只依赖字符串不匹配。
+- [PerturboLLaVA](https://arxiv.org/abs/2503.06486)：用扰动式视觉训练降低 LLaVA 类模型对诱发幻觉视觉噪声的敏感性。
+- [Attention Hijackers](https://arxiv.org/abs/2503.08216)：检测 LVLM 中由指令 token 引发的 attention hijacking，并对相关注意力路径做干预以减少幻觉。
+- [Gradient-guided Attention Map Editing](https://arxiv.org/abs/2503.08963)：使用梯度引导编辑注意力图以缓解上下文幻觉，补充推理期 grounding 干预方法。
+- [Is LLMs Hallucination Usable? LLM-based Negative Reasoning for Fake News Detection](https://arxiv.org/abs/2503.09153)：parent-routing-needed：该工作把 LLM 负向推理用于假新闻检测，偏离幻觉缓解主线。
+- [Taming Knowledge Conflicts in Language Models](https://arxiv.org/abs/2503.10996)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [ClearSight](https://arxiv.org/abs/2503.13107)：在生成前增强视觉信号，减少多模态大模型的物体幻觉。
+- [Beyond Next Token Probabilities: Learnable, Fast Detection of Hallucinations and Data Contamination on LLM Output Distributions](https://arxiv.org/abs/2503.14043)：训练 LOS-Net 读取完整 next-token 分布序列，也就是 LLM Output Signature，使黑盒检测器不只依赖已生成 token 的概率，也能识别幻觉和训练数据污染。
+- [Token-Level Uncertainty-Aware Objective for Language Model Post-Training](https://arxiv.org/abs/2503.16511)：在后训练目标中按 token 不确定性加权学习，使低置信生成更好校准。
+- [Real-Time Evaluation Models for RAG: Who Detects Hallucinations Best?](https://arxiv.org/abs/2503.21157)：贡献事实性或幻觉评估模型；核心思想是用专门 verifier 检测 RAG 或生成内容中的无支撑断言。
+- [Resona: Improving Context Copying in Linear Recurrence Models with Retrieval](https://arxiv.org/abs/2503.22913)：为线性递归模型加入检索以改善上下文复制，减少对参数记忆的依赖。
+- [DAT: Dynamic Alpha Tuning for Hybrid Retrieval in Retrieval-Augmented Generation](https://arxiv.org/abs/2503.23013)：针对每个 RAG 查询动态调节稀疏与稠密混合检索权重，改进证据选择。
+- [POPEN](https://arxiv.org/abs/2504.00640)：用偏好优化和偏好集成改进 LVLM 推理分割，并减少文本回答幻觉。
+- [CoRAG: Collaborative Retrieval-Augmented Generation](https://arxiv.org/abs/2504.01883)：把 RAG 扩展到多个客户端共同训练共享模型和协作 passage store 的设置，并用 CRAB 评测低资源开放域问答。
+- [Hallucination Detection on a Budget: Efficient Bayesian Estimation of Semantic Entropy](https://arxiv.org/abs/2504.03579)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [ZeroED: Hybrid Zero-Shot Error Detection Through Large Language Model Reasoning](https://arxiv.org/abs/2504.05345)：把 LLM 上下文推理、聚类抽样的代表样本标注、簇内标签传播和分类器训练结合起来，在较低标注与 token 成本下构建零样本表格错误检测器。
+- [PR-Attack: Coordinated Prompt-RAG Attacks on Retrieval-Augmented Generation in Large Language Models via Bilevel Optimization](https://arxiv.org/abs/2504.07717)：用双层优化协调提示触发器和少量投毒 RAG 文档，在干净提示上维持正常行为，同时对目标查询生成攻击者指定答案。
 - [Decoupling Contrastive Decoding](https://arxiv.org/abs/2504.08809)：多模态幻觉缓解方法，在解码时分离视觉与语言对比信号，使回答更依赖视觉证据。
+- [The Mirage of Performance Gains: Why Contrastive Decoding Fails to Address Multimodal Hallucination](https://arxiv.org/abs/2504.10020)：指出对比解码在 POPE 上的增益主要来自粗糙的输出分布偏移和近似贪心搜索的约束，而不是真正降低对象幻觉。
+- [Efficient Contrastive Decoding with Probabilistic Hallucination Detection - Mitigating Hallucinations in Large Vision Language Models -](https://arxiv.org/abs/2504.12137)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [The Other Side of the Coin: Exploring Fairness in Retrieval-Augmented Generation](https://arxiv.org/abs/2504.12323)：系统改变 LLM、检索器和检索源，衡量 RAG 在减少幻觉的同时如何改变不同群体上的公平性表现。
+- [Memorization vs. Reasoning: Updating LLMs with New Knowledge](https://arxiv.org/abs/2504.12523)：提出 KUP 与 memory-conditioned training，在真实知识更新中同时检验记忆和推理。
+- [VistaDPO: Video Hierarchical Spatial-Temporal Direct Preference Optimization for Large Video Models](https://arxiv.org/abs/2504.13122)：用 VistaDPO-7k 偏好对在视频整体、时间事件和对象 token 三个层级对齐回答，并提供时间戳、关键帧和空间 grounding。
+- [Generate, but Verify: Reducing Hallucination in Vision-Language Models with Retrospective Resampling](https://arxiv.org/abs/2504.13169)：通过回溯重采样与验证降低视觉语言模型幻觉。
+- [Object-Level Verbalized Confidence Calibration in Vision-Language Models via Semantic Perturbation](https://arxiv.org/abs/2504.14848)：对关键对象区域施加可控视觉噪声，构造视觉不确定性到置信度的映射，再用两阶段训练校准 VLM 的 verbalized confidence。
+- [PropRAG: Guiding Retrieval with Beam Search over Proposition Paths](https://arxiv.org/abs/2504.18070)：在信息更完整的命题路径上进行束搜索来引导 RAG 检索，相比仅用三元组图检索更利于多跳证据 grounding。
+- [DualRAG: A Dual-Process Approach to Integrate Reasoning and Retrieval for Multi-Hop Question Answering](https://arxiv.org/abs/2504.18243)：把 reasoning-augmented querying 和 progressive knowledge aggregation 绑在一起，使多跳 RAG 能边推理边生成定向查询并整合新证据。
+- [Span-Level Hallucination Detection for LLM-Generated Answers](https://arxiv.org/abs/2504.18639)：用语义角色标注拆解答案，再用 DeBERTa 蕴含模型对照检索上下文，并结合 token 置信度在 Mu-SHROOM 上定位幻觉片段。
+- [Context-Guided Dynamic Retrieval for Improving Generation Quality in RAG Models](https://arxiv.org/abs/2504.19436)： 用上下文引导的动态检索提升 RAG 生成质量，补充更可靠生成的检索控制方法。
+- [Traceback of Poisoning Attacks to Retrieval-Augmented Generation](https://arxiv.org/abs/2504.21668)：提出 RAGForensics，迭代检索可疑数据库子集，并用特制提示引导 LLM 找出导致攻击输出的投毒文本。
+- [CORD: Balancing COnsistency and Rank Distillation for Robust Retrieval-Augmented Generation](https://doi.org/10.18653/v1/2025.naacl-short.66)：用位置扰动上下文做一致性正则，同时自适应保留检索排序先验，降低 RAG 的位置偏置而不丢掉有用顺序信息。
+- [Image Token Attention-Guided Decoding](https://doi.org/10.18653/v1/2025.naacl-long.75)：通过图像 token 注意力引导解码来缓解多模态 LLM 幻觉。核心思想：在生成时提高对视觉证据的依赖，从而抑制缺乏图像支撑的物体描述。
 - [Beyond Logit Lens: Contextual Embeddings for Robust Hallucination Detection & Grounding in VLMs](https://doi.org/10.18653/v1/2025.naacl-long.488)：在 logit lens 之外使用上下文嵌入，提高 VLM 幻觉检测与扎根的稳健性。
+- [Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach](https://arxiv.org/abs/2505.01997)：通过校准感知微调恢复对齐 LLM 的置信度可靠性。
 - [FaithJudge](https://arxiv.org/abs/2505.04847)（[开源代码](https://github.com/vectara/FaithJudge)）：面向 factual faithfulness 的训练式自动评测器，支持证据扎根的幻觉评测和 Vectara 榜单后续版本。
+- [Atomic Consistency Preference Optimization for Long-Form Question Answering](https://arxiv.org/abs/2505.09039)：ACPO 用原子事实一致性偏好对齐长答案问答模型，减少对更强评审模型的依赖。
+- [Solver-Informed RL: Grounding Large Language Models for Authentic Optimization Modeling](https://arxiv.org/abs/2505.11792)：把外部优化求解器作为可验证奖励源，从语法、可执行代码和 LP 文件层面反馈，减少 LLM 编造优化模型。
+- [Mitigating Hallucination in VideoLLMs via Temporal-Aware Activation Engineering](https://arxiv.org/abs/2505.12826)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 Mitigating Hallucination in VideoLLMs via Temporal-Aware Activation Engineering 为主要改进目标，作为 Model 条目的能力参考。
+- [Mitigating Hallucination in Large Vision-Language Models through Aligning Attention Distribution to Information Flow](https://arxiv.org/abs/2505.14257)：将注意力分布与信息流对齐以缓解 LVLM 幻觉。
+- [RePPL: Recalibrating Perplexity by Uncertainty in Semantic Propagation and Language Generation for Explainable QA Hallucination Detection](https://arxiv.org/abs/2505.15386)：用语义传播和语言生成两类不确定性重新校准困惑度，把可解释 token 分数分配给容易触发 QA 幻觉的输入区域。
+- [ALIEN: Aligned Entropy Head for Improving Uncertainty Estimation of LLMs](https://arxiv.org/abs/2505.15443)：在原模型熵初始化的小型 entropy head 上做可靠性对齐，提升分类和 NER 场景下的校准与错误检测。
+- [After Retrieval, Before Generation: Enhancing the Trustworthiness of Large Language Models in Retrieval-Augmented Generation](https://arxiv.org/abs/2505.17118)：构造覆盖四类 RAG 知识状态的 TRD，并用 BRIDGE soft-bias 决策选择相信内部知识、检索证据、二者融合或拒答。
+- [keepitsimple at SemEval-2025 Task 3: LLM-Uncertainty based Approach for Multilingual Hallucination Span Detection](https://arxiv.org/abs/2505.17485)：在 Mu-SHROOM 中用黑盒模型多次随机采样回答的熵来定位幻觉片段，把回答分歧作为免训练不确定性信号。
+- [Disentangling Knowledge Representations for Large Language Model Editing](https://arxiv.org/abs/2505.18774)：DiKE 在 rank-one 编辑前分离 subject 表示中的目标知识相关和无关成分，并用 FINE-KED 检验细粒度邻近事实保留。
+- [A Necessary Step toward Faithfulness: Measuring and Improving Consistency in Free-Text Explanations](https://arxiv.org/abs/2505.19299)：用 weight-of-evidence 扩展定义预测与解释一致性，并通过 DPO 让自由文本解释更真实地支持模型预测。
+- [Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](https://arxiv.org/abs/2505.19474)：把因果视觉 projector 和语言模型末层 causal intervention module 结合起来，削弱训练数据偏置造成的虚假对象共现激活。
+- [Enhancing Visual Reliance in Text Generation: A Bayesian Perspective on Mitigating Hallucination in Large Vision-Language Models](https://arxiv.org/abs/2505.19498)：把 LVLM 幻觉解释为生成时视觉依赖不足，并通过移除冗余视觉 token、校正先验、在视觉条件后验坍缩为先验时停止解码来缓解幻觉。
+- [Grounding Language with Vision: A Conditional Mutual Information Calibrated Decoding Strategy for Reducing Hallucinations in LVLMs](https://arxiv.org/abs/2505.19678)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
 - [Self-reflective Uncertainties: Do LLMs Know Their Internal Answer Distribution?](https://arxiv.org/abs/2505.20295)：研究模型对内部答案分布的自反不确定性，为幻觉风险提供模型侧信号。
-- [Reasoning Models Hallucinate More](https://arxiv.org/abs/2505.24630)：提出面向幻觉控制的模型侧方法，核心围绕 Factuality-Aware Reinforcement Learning for Large Reasoning Models。
+- [Towards Objective Fine-tuning: How LLMs' Prior Knowledge Causes Potential Poor Calibration?](https://arxiv.org/abs/2505.20903)：指出微调中与模型先验知识重叠的数据会诱发过度自信，并用 CogCalib 按 prior-knowledge overlap 调整学习策略。
+- [Will It Still Be True Tomorrow? Multilingual Evergreen Question Classification to Improve Trustworthy QA](https://arxiv.org/abs/2505.21115)：发布 EverGreenQA 并训练 EG-E5 判断答案是否随时间保持稳定，用于自我知识估计、QA 过滤和检索行为解释。
+- [Adaptive Attention Calibration](https://arxiv.org/abs/2505.21472)：在生成过程中校准 LVLM 注意力，更可靠地抑制缺少视觉证据支撑的对象描述。
+- [Image Tokens Matter: Mitigating Hallucination in Discrete Tokenizer-based Large Vision-Language Models via Latent Editing](https://arxiv.org/abs/2505.21547)：构建图像 token 共现簇，并在生成时编辑 latent image embedding，抑制会诱发 LVLM 物体幻觉的视觉缺失 token。
+- [VRAG-RL: Empower Vision-Perception-Based RAG for Visually Rich Information Understanding via Iterative Reasoning with Reinforcement Learning](https://arxiv.org/abs/2505.22019)：用强化学习改进面向富视觉信息的视觉 RAG 推理。
+- [Zooming from Context to Cue: Hierarchical Preference Optimization for Multi-Image MLLMs](https://arxiv.org/abs/2505.22396)：CcDPO 结合序列级上下文偏好和区域级 needle 偏好，用 MultiScope-42k 减少多图理解中的遗漏、混淆和误读。
+- [RAG-Zeval: Towards Robust and Interpretable Evaluation on RAG Responses through End-to-End Rule-Guided Reasoning](https://arxiv.org/abs/2505.22430)：用 rule-guided reasoning 与 ranking-based reward 训练紧凑的 RAG response evaluator，在不依赖更大 judge model 的情况下提升 faithful、可解释的正确性判断。
+- [Stochastic Chameleons: Irrelevant Context Hallucinations Reveal Class-Based (Mis)Generalization in LLMs](https://arxiv.org/abs/2505.22630)：把无关上下文幻觉解释为 class-based misgeneralization，并追踪偏向直接查询特征或误导上下文线索的竞争回路。
+- [Context-Robust Knowledge Editing for Language Models](https://arxiv.org/abs/2505.23026)：用改写和干扰上下文压力测试已编辑事实，关注知识编辑是否能在原始提示之外保持可靠。
+- [Mamba Knockout for Unraveling Factual Information Flow](https://arxiv.org/abs/2505.24244)：把 attention knockout 类解释方法迁移到 Mamba-1 和 Mamba-2，追踪 subject-token 事实信息在层和 state-space feature 中的流动。
+- [Reasoning Models Hallucinate More](https://arxiv.org/abs/2505.24630)：发现面向推理的 RL 会增加幻觉，并提出 FSPO，把逐步事实性验证注入 token-level advantage 估计。
+- [BIMA: Bijective Maximum Likelihood Learning Approach to Hallucination Prediction and Mitigation in Large Vision-Language Models](https://arxiv.org/abs/2505.24649)：面向大视觉语言模型进行幻觉预测与缓解建模。
+- [Beyond Semantic Entropy: Boosting LLM Uncertainty Quantification with Pairwise Semantic Similarity](https://arxiv.org/abs/2506.00245)： 利用成对语义相似度改进超越语义熵的 LLM 不确定性量化。
 - [CausalAbstain](https://arxiv.org/abs/2506.00519)：模型侧拒答方法，用因果推理信号判断模型何时应拒答而不是生成无依据回答。
+- [Truth over Tricks: Measuring and Mitigating Shortcut Learning in Misinformation Detection](https://arxiv.org/abs/2506.02350)：定义 misinformation detector 的内生和外生 shortcut 测试，并用 LLM 改写、事实摘要和情感归一化降低模型对表层线索的依赖。
+- [Retrieval-Augmented Generation as Noisy In-Context Learning: A Unified Theory and Risk Bounds](https://arxiv.org/abs/2506.03100)：把检索段落建模为 query-dependent noisy in-context examples，推导 RAG 的有限样本风险界和 bias-variance tradeoff。
+- [Bridging External and Parametric Knowledge: Mitigating Hallucination of LLMs with Shared-Private Semantic Synergy in Dual-Stream Knowledge](https://arxiv.org/abs/2506.06240)：通过共享和私有语义协同连接外部知识与参数知识以缓解幻觉。
+- [Mitigating Object Hallucination via Robust Local Perception Search](https://arxiv.org/abs/2506.06729)：Local Perception Search 在解码时把局部视觉先验作为免训练 value function，尤其在噪声图像下改善 LVLM 对象 grounding。
+- [Hierarchical Lexical Graph for Enhanced Multi-Hop Retrieval](https://arxiv.org/abs/2506.08074)：构建 proposition、topic、entity-relation 三层索引，并提供 StatementGraphRAG 和 TopicGraphRAG 两类多跳证据检索器。
+- [FaithfulRAG: Fact-Level Conflict Modeling for Context-Faithful Retrieval-Augmented Generation](https://arxiv.org/abs/2506.08938)：缓解幻觉、置信度失效或事实不一致输出。
+- [Is Fine-Tuning an Effective Solution? Reassessing Knowledge Editing for Unstructured Data](https://arxiv.org/abs/2506.09672)：为非结构化知识编辑补充 UnKEBench-Loc 和 AKEW-Loc locality 测试，并给出能保留邻近知识的微调设置。
+- [Generalization or Hallucination?](https://arxiv.org/abs/2506.10887)：从 out-of-context reasoning 角度分析 transformer 的泛化与幻觉边界。
+- [CLAIM](https://arxiv.org/abs/2506.11073)：通过跨语言注意力干预缓解 LVLM 的多语种对象幻觉，而不是依赖高成本重训练。
+- [Stop learning it all to mitigate visual hallucination, Focus on the hallucination target](https://arxiv.org/abs/2506.11417)：将干预重点放在视觉幻觉目标概念上，而不是重新学习全部视觉信息，补充一条模型侧幻觉缓解方法。
+- [Not All Tokens and Heads Are Equally Important: Dual-Level Attention Intervention for Hallucination Mitigation](https://arxiv.org/abs/2506.12609)：通过 token 与 attention head 两级干预缓解幻觉。
+- [Can LLMs Reconcile Knowledge Conflicts in Counterfactual Reasoning](https://arxiv.org/abs/2506.15732)：用合成和真实多跳反事实任务显示，当上下文事实与参数知识冲突时，LLM 往往回退到参数记忆。
 - [KnowRL](https://arxiv.org/abs/2506.19807)：面向事实性的强化学习方法，用 knowledge-aware reward signals 优化策略。
-- [ONLY](https://arxiv.org/abs/2507.00898)：提出面向幻觉控制的模型侧方法，核心围绕 One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models。
-- [OmniDPO](https://arxiv.org/abs/2509.00723)：提出面向幻觉控制的模型侧方法，核心围绕 Preference Optimization Framework to Address Omni-Modal Hallucination。
+- [COIN](https://arxiv.org/abs/2506.20178)：为 foundation model 的选择性问答校准错误发现风险保证，为易幻觉问答提供可证明的 abstention 机制。
+- [Dynamic Logits Calibration](https://arxiv.org/abs/2506.21509)：通过生成时动态校准 logits 缓解 LVLM 幻觉，补充 decoding-time 控制路线。
+- [The Confidence Paradox: Can LLM Know When It's Wrong](https://arxiv.org/abs/2506.23464)：缓解幻觉、置信度失效或事实不一致输出。
+- [CAI](https://arxiv.org/abs/2506.23590)：用 caption-sensitive 注意力干预缓解大型视觉语言模型对象幻觉。
+- [FlashBack: Efficient Retrieval-Augmented Language Modeling for Fast Inference](https://doi.org/10.18653/v1/2025.findings-acl.33)：把检索文档追加到提示后并用特殊标记标注，使 RALM 能复用 KV cache，在长上下文推理中最高达到约 4 倍加速。
+- [Activation Steering Decoding](https://doi.org/10.18653/v1/2025.acl-long.634)：通过双向 hidden-state 干预缓解 LVLM 幻觉，把表征 steering 引入解码时事实性控制。
+- [VADE](https://doi.org/10.18653/v1/2025.findings-acl.773)：通过视觉注意力引导检测并缓解多模态幻觉。
+- [ONLY](https://arxiv.org/abs/2507.00898)：在单次 LVLM 解码中用一层干预和 text-to-visual entropy ratio 放大关键 token，避免多轮对比解码成本。
+- [Parameter-Aware Contrastive Knowledge Editing: Tracing and Rectifying based on Critical Transmission Paths](https://doi.org/10.18653/v1/2025.acl-long.1367)：定位事实知识跨层累积的 critical transmission paths，并把不重要路径作为对比样本来指导参数编辑。
+- [HIRAG: Hierarchical-Thought Instruction-Tuning Retrieval-Augmented Generation](https://arxiv.org/abs/2507.05714)：把 RAG 生成器 instruction-tune 成逐层具备证据过滤、跨段语义组合和基于外部知识推理三种能力。
+- [SEARA: An Automated Approach for Obtaining Optimal Retrievers](https://arxiv.org/abs/2507.06554)：用 subset sampling、最小 retrieval facts 抽取和检索指标自动选择 RAG 检索器，面向业务 QA 和旅行助手等场景优化。
+- [GraphRunner: A Multi-Stage Framework for Efficient and Accurate Graph-Based Retrieval](https://arxiv.org/abs/2507.08945)：把图检索拆成 planning、verification 和 execution 三步，在执行图遍历前验证计划以减少 LLM 推理错误和虚假路径。
+- [Aligning Knowledge Graphs and Language Models for Factual Accuracy](https://arxiv.org/abs/2507.13411)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 Aligning Knowledge Graphs and Language Models for Factual Accuracy 为主要改进目标，作为 Model 条目的能力参考。
+- [ICR Probe: Tracking Hidden State Dynamics for Reliable Hallucination Detection in LLMs](https://arxiv.org/abs/2507.16488)：用 ICR Score 衡量模块对 residual stream 更新的信息贡献，并训练小型探针利用跨层 hidden-state 演化检测幻觉。
+- [Distilling a Small Utility-Based Passage Selector to Enhance Retrieval-Augmented Generation](https://arxiv.org/abs/2507.19102)：把教师 LLM 的 passage utility 判断蒸馏到小模型中，让 RAG 按查询动态选择有用证据，而不是只按主题相关性重排。
+- [LISA](https://arxiv.org/abs/2507.19110)：通过 layer-wise integration and suppression 区分浅层视觉 grounding 与中层语义生成角色，降低 MLLM 对象幻觉。
+- [MapDiffusion: Generative Diffusion for Vectorized Online HD Map Construction and Uncertainty Estimation in Autonomous Driving](https://arxiv.org/abs/2507.21423)：parent-routing-needed：该扩散模型估计自动驾驶 HD map 不确定性，除非按领域不确定性方法处理，否则偏离 LLM 幻觉主线。
+- [TARS: MinMax Token-Adaptive Preference Strategy for Hallucination Reduction in MLLMs](https://arxiv.org/abs/2507.21584)：用 token 自适应偏好策略降低多模态大模型幻觉。
+- [Reducing Hallucinations in Summarization via Reinforcement Learning with Entity Hallucination Index](https://arxiv.org/abs/2507.22744)：用自动实体抽取和匹配得到的 Entity Hallucination Index 作为奖励，对摘要模型做强化学习微调而不依赖人工事实性标注。
+- [Cure or Poison? Embedding Instructions Visually Alters Hallucination in Vision-Language Models](https://arxiv.org/abs/2508.01678)：测试把文本指令嵌入图像通道的 Prompt-in-Image，发现它降低 Qwen2.5-VL 幻觉，却会明显伤害 CLIP-encoder 模型。
+- [Token-Level Precise Attack on RAG: Searching for the Best Alternatives to Mislead Generation](https://arxiv.org/abs/2508.03110)：搜索能同时影响检索和生成的 token-level 替换，在无完整检索器访问的黑盒场景下实施 RAG 投毒攻击。
+- [ViFP: A Framework for Visual False Positive Detection to Enhance Reasoning Reliability in VLMs](https://arxiv.org/abs/2508.04201)：通过多轮 QA 构建视觉推理路径，按路径一致性检测 visual false positive rationale，并用 VoC 指标评估答案正确但推理错误的风险。
+- [A Few Words Can Distort Graphs: Knowledge Poisoning Attacks on Graph-based Retrieval-Augmented Generation of Large Language Models](https://arxiv.org/abs/2508.04276)：显示少量源文本改写即可污染 GraphRAG 建图，其中 targeted attack 先定位脆弱节点再改写叙述以操控下游推理。
+- [CoCoLex: Confidence-guided Copy-based Decoding for Grounded Legal Text Generation](https://arxiv.org/abs/2508.05534)：按模型置信度在原始词表分布和上下文复制分布之间插值，鼓励法律文本生成直接复用支持证据。
+- [From Ranking to Selection: A Simple but Efficient Dynamic Passage Selector for Retrieval Augmented Generation](https://arxiv.org/abs/2508.09497)：训练 Dynamic Passage Selector 建模段落间依赖，为每个查询选择证据集合，而不是使用固定 top-k 重排序阈值。
+- [Cross-Granularity Hypergraph Retrieval-Augmented Generation for Multi-hop Question Answering](https://arxiv.org/abs/2508.11247)：HGRAG 将实体作为节点、段落作为超边，并结合实体相似度、段落相似度和超图扩散做多跳检索。
+- [Hallucination Detection and Mitigation in Scientific Text Simplification using Ensemble Approaches: DS@GT at CLEF 2025 SimpleText](https://arxiv.org/abs/2508.11823)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 DS@GT at CLEF 2025 SimpleText 为主要改进目标，作为 Model 条目的能力参考。
+- [Arabic Multimodal Machine Learning: Datasets, Applications, Approaches, and Challenges](https://arxiv.org/abs/2508.12227)：用场论建模检测大模型幻觉。
+- [Hallucination-Resistant Relation Extraction via Dependency-Aware Sentence Simplification and Two-tiered Hierarchical Refinement](https://arxiv.org/abs/2508.14391)：DEPTH 用最短依存路径为候选关系提供局部 grounding，再做全句层级 refinement，并用因果 reward model 降低虚假关系。
+- [Semantic Energy: Detecting LLM Hallucination Beyond Entropy](https://arxiv.org/abs/2508.14496)：提出语义能量作为超越熵置信度信号的幻觉检测方法。
+- [OmniDPO](https://arxiv.org/abs/2509.00723)：构造 text-preference 和 multimodal-preference 样本对，使 omni-modal LLM 同时关注音频、视频及二者交互，而不是默认依赖文本先验。
+- [Do Retrieval Augmented Language Models Know When They Don't Know?](https://arxiv.org/abs/2509.01476)：评估 RALM 在内部知识和检索知识不同状态下的拒答能力，发现无关证据会导致过度拒答，并测试 in-context 微调和不确定性 abstention。
+- [Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection](https://arxiv.org/abs/2509.03113)：面向幻觉评测与缓解的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [HAVE: Head-Adaptive Gating and ValuE Calibration for Hallucination Mitigation in Large Language Models](https://arxiv.org/abs/2509.06596)：通过头自适应门控与 value 校准缓解幻觉，为 LLM 的事实性生成增加表示层面的控制路径。
+- [Tracing and Mitigating Hallucinations in Multimodal LLMs via Dynamic Attention Localization](https://arxiv.org/abs/2509.07864)：提出 LIAE 和 IAF 诊断来定位异常层与问题注意力头，再用 D-LEAF 在推理时动态校正视觉注意力，几乎不增加额外开销。
+- [HANRAG: Heuristic Accurate Noise-resistant Retrieval-Augmented Generation for Multi-hop Question Answering](https://arxiv.org/abs/2509.09713)：对复杂问题做路由、分解子查询、检索并过滤噪声文档，防止多跳 RAG 中噪声逐步累积。
+- [Context Copying Modulation: The Role of Entropy Neurons in Managing Parametric and Contextual Knowledge Conflicts](https://arxiv.org/abs/2509.10663)：显示 entropy neurons 会抑制知识冲突中的上下文复制，消融这些神经元会改变 LLM 在检索上下文和参数事实之间的取舍。
+- [D2HScore](https://arxiv.org/abs/2509.11569)：基于跨层语义离散度和漂移的免训练幻觉检测器。核心思想：跟踪关键 token 表征在层内的语义广度和层间的语义变化，为高风险应用提供生成过程中幻觉风险的轻量代理信号。
+- [LLM Hallucination Detection: A Fast Fourier Transform Method Based on Hidden Layer Temporal Signals](https://arxiv.org/abs/2509.13154)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Towards Rationale-Answer Alignment of LVLMs via Self-Rationale Calibration](https://arxiv.org/abs/2509.13919)：SRC 先让 LVLM 生成 rationale 再回答，再用 R-Scorer 评估理由质量和事实一致性，并据此构造置信度加权偏好数据。
+- [ORCA: An Agentic Reasoning Framework for Hallucination and Adversarial Robustness in Vision-Language Models](https://arxiv.org/abs/2509.15435)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Semantic Reformulation Entropy for Robust Hallucination Detection in QA Tasks](https://arxiv.org/abs/2509.17445)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Training-free Truthfulness Detection via Value Vectors in LLMs](https://arxiv.org/abs/2509.17932)：通过大模型价值向量免训练检测真实性。
+- [Uncertainty Quantification of Large Language Models using Approximate Bayesian Computation](https://arxiv.org/abs/2509.19375)：把黑盒 LLM 当作随机模拟器，用 approximate Bayesian computation 推断预测概率后验，并在诊断基准上改善校准。
+- [Leveraging NTPs for Efficient Hallucination Detection in VLMs](https://arxiv.org/abs/2509.20379)：利用视觉语言模型的下一个 token 概率信号训练轻量级在线幻觉检测器。
+- [Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty](https://arxiv.org/abs/2509.23002)：从回答嵌入 Gram score、bootstrap residual 和 predicate-aligned threshold 构建免标签 conformal gate，用于过滤易幻觉生成。
+- [LLM Hallucination Detection: HSAD](https://arxiv.org/abs/2509.23580)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs](https://arxiv.org/abs/2509.25178)：为多模态 LLM 生成诱发幻觉的图像，提供用于视觉幻觉压力测试的模型侧合成数据路线。
+- [TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning](https://arxiv.org/abs/2509.25760)：提出 TruthRL，通过强化学习在准确性、不确定性认知和拒答之间优化真实可靠回答。
+- [Trustworthy Summarization via Uncertainty Quantification](https://arxiv.org/abs/2510.01231)：结合 Bayesian 生成不确定性、predictive-entropy 正则和 risk-aware loss，使摘要保留关键信息并显式表达风险属性。
+- [MaskCD: Mitigating LVLM Hallucinations by Image Head Masked Contrastive Decoding](https://arxiv.org/abs/2510.02790)：用图像头掩蔽对比解码缓解大型视觉语言模型幻觉。
+- [Hallucination is Inevitable for LLMs with the Open World Assumption](https://arxiv.org/abs/2510.05116)：把幻觉重述为开放世界泛化问题，并区分封闭世界中可纠正的错误和无界环境下难以避免的幻觉。
+- [ACE](https://arxiv.org/abs/2510.07896)： 在多跳事实回忆的知识编辑中控制归因，强调可信编辑而非无依据的记忆改写。
+- [VersionRAG: Version-Aware Retrieval-Augmented Generation for Evolving Documents](https://arxiv.org/abs/2510.08109)：围绕文档版本、内容边界和变更构建层级图，让 RAG 能按时间有效性过滤证据。
+- [LLM-Specific Utility: A New Perspective for Retrieval-Augmented Generation](https://arxiv.org/abs/2510.11358)：定义面向 LLM 的检索效用，使段落选择不仅依赖主题相关性，还服务于正确生成。
+- [Adaptive vector steering: A training-free, layer-wise intervention for hallucination mitigation in large audio and multimodal models](https://arxiv.org/abs/2510.12851)：缓解幻觉、置信度失效或事实不一致输出。
+- [Mechanistic Error Reduction with Abstention](https://arxiv.org/abs/2510.13290)：结合转向分析与拒答来降低语言模型错误，为校准式事实性控制补充模型侧路线。
+- [RAG Meets Temporal Graphs: Time-Sensitive Modeling and Retrieval for Evolving Knowledge](https://arxiv.org/abs/2510.13590)：TG-RAG 用 temporal knowledge graph 和 time hierarchy 表示演化语料，并增量更新带时间戳事实以支持时间感知检索。
+- [Right Answer at the Right Time - Temporal Retrieval-Augmented Generation via Graph Summarization](https://arxiv.org/abs/2510.16715)：STAR-RAG 构建 time-aligned rule graph 并在图上传播，优先选取同时相关且满足时间约束的证据。
+- [Wisdom is Knowing What not to Say: Hallucination-Free LLMs Unlearning via Attention Shifting](https://arxiv.org/abs/2510.17210)：在选择性遗忘中抑制对 fact-bearing token 的注意力，同时强化保留语义 token，降低 LLM unlearning 后的编造式补全。
+- [Believe It or Not](https://arxiv.org/abs/2510.17941)：探测植入事实在 LLM 内部的吸收程度，说明诱导知识何时会变成模型侧事实性与幻觉风险。
+- [Beyond Single Models: Mitigating Multimodal Hallucinations via Adaptive Token Ensemble Decoding](https://arxiv.org/abs/2510.18321)：ATED 在每个解码步用不确定性加权融合多个 LVLM 的 token 概率，并结合多样解码路径来免训练降低对象幻觉。
+- [HAD: HAllucination Detection Language Models Based on a Comprehensive Hallucination Taxonomy](https://arxiv.org/abs/2510.19318)：基于综合幻觉分类体系构建幻觉检测语言模型。
+- [Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation](https://arxiv.org/abs/2510.22067)：利用注视转移引导和跨模态融合缓解 VLM 幻觉。
+- [Hallucinations in Bibliographic Recommendation: Citation Frequency as a Proxy for Training Data Redundancy](https://arxiv.org/abs/2510.25378)：人工核验 GPT-4.1 在计算机科学各领域生成的参考文献，发现引用次数能强预测论文元数据是被记忆还是被编造。
+- [LLM-Centric RAG with Multi-Granular Indexing and Confidence Constraints](https://arxiv.org/abs/2510.27054)：结合多粒度索引与置信约束提升 RAG 生成可靠性。
+- [SAKI-RAG: Mitigating Context Fragmentation in Long-Document RAG via Sentence-level Attention Knowledge Integration](https://doi.org/10.18653/v1/2025.emnlp-main.63)：用句间 attention 关系连接长文档细粒度片段，并从语义相似度和上下文相关性两个轴扩展、过滤候选 chunk。
+- [DAPE-BR: Distance-Aware Positional Encoding for Mitigating Object Hallucination in LVLMs](https://doi.org/10.18653/v1/2025.findings-emnlp.459)：围绕 bounding region 使用 distance-aware positional encoding，帮助 LVLM 在解码时区分真实对象和邻近视觉干扰。
+- [Uplift-RAG: Uplift-Driven Knowledge Preference Alignment for Retrieval-Augmented Generation](https://doi.org/10.18653/v1/2025.findings-emnlp.511)：把文档效用定义为相对 LLM 内部知识的边际增益，并对齐 reranker 来选择能填补知识缺口且减少冗余的段落。
+- [New-knowledge-induced factual hallucinations](https://arxiv.org/abs/2511.02626)：分析并缓解 LLM 纳入新知识时出现的事实性幻觉。
+- [Fine-grained Cross-modal Causal Tracing](https://arxiv.org/abs/2511.05923)：跨 LVLM 组件追踪对象表征，并把因果证据用于幻觉缓解。
+- [Stemming Hallucination in Language Models Using a Licensing Oracle](https://arxiv.org/abs/2511.06073)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Laplacian Score Sharpening for Mitigating Hallucination in Diffusion Models](https://arxiv.org/abs/2511.07496)：在推理时用有限差分 Laplacian 估计修正扩散 score function，以减少 toy 分布和图像分布中的 mode-interpolation 幻觉。
+- [Probabilities Are All You Need: A Probability-Only Approach to Uncertainty Estimation in Large Language Models](https://arxiv.org/abs/2511.07694)：仅用输出概率估计大模型不确定性。
+- [HEDGE](https://arxiv.org/abs/2511.12693)：用 dense geometric entropy 估计 VQA 幻觉，为视觉证据约束的回答补充 detector-style model signal。
+- [Representational and Behavioral Stability of Truth in Large Language Models](https://arxiv.org/abs/2511.19166)：研究大语言模型中真值表示与行为的稳定性。
+- [Optimizing LVLMs with On-Policy Data for Effective Hallucination Mitigation](https://arxiv.org/abs/2512.00706)：缓解幻觉、置信度失效或事实不一致输出。
+- [Mitigating Hallucinations in Zero-Shot Scientific Summarisation: A Pilot Study](https://arxiv.org/abs/2512.00931)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
 - [FedRAG++: Federated Multi-LLM Retrieval-Augmented Generation with Reinforcement Learning-Based Generator Selection and Hallucination Control](https://doi.org/10.1109/iccit68739.2025.11489538)：结合联邦多 LLM RAG 与强化学习生成器选择，降低分布式检索场景下的幻觉。
 - [A Post-Processing Verifier-Reranker Architecture for Efficient Hallucination Reduction in Generative Question Answering](https://doi.org/10.1109/isemantic67418.2025.11291991)：在生成式问答后处理中加入验证器与重排序器以减少幻觉。
+- [Reducing hallucination in MLLMs for action recognition with adaptive masking and dual prompting](https://doi.org/10.1016/j.neucom.2025.131861)：用自适应 masking 与双提示降低 MLLM 动作识别幻觉。
+- [Token-level uncertainty, bidirectional NLI, and semantic entropy for hallucination detection](https://doi.org/10.1109/ICAIET65052.2025.11211393)：结合 token-level 不确定性、双向 NLI 与语义熵来检测 LLM 幻觉。
+- [Structured Multimodal RAG](https://doi.org/10.1109/AIAHPC66801.2025.11290404)：通过文档感知检索与对齐缓解结构化多模态 RAG 的幻觉。
+- [Linear Expectation Constraint for Selective Prediction](https://arxiv.org/abs/2512.01556)：为选择性预测与路由加入 false-discovery-control 约束，扩展面向幻觉风险输出的 abstention 式模型控制。
+- [SAVE](https://arxiv.org/abs/2512.07730)：通过 sparse autoencoder 驱动的视觉信息增强缓解多模态模型的对象幻觉。
+- [Noise-Robust Abstractive Compression in Retrieval-Augmented Language Models](https://arxiv.org/abs/2512.08943)：ACoRN 用噪声感知数据增强和 answer-centered summary 训练 RAG 压缩器，避免误导或无关检索文档抹掉关键证据。
+- [Retrieve-then-compare mitigates visual hallucination in multi-modal large language models](https://doi.org/10.20517/ir.2025.13)：在作答前检索并比较视觉证据，以缓解多模态大语言模型的视觉幻觉。
+- [Enhancing Factual Consistency in Text Summarization via Counterfactual Debiasing](https://aclanthology.org/2025.coling-main.530/)：用因果图与 counterfactual debiasing 降低 abstractive summarization 中导致事实不一致的语言偏置和无关性偏置。
+- [TriRAG: Enhancing Retrieval-Augmented Generation Method with Triple-Based Knowledge Graphs for Improved Question Answering](https://doi.org/10.1109/icsc64641.2025.00011)：用三元组知识图谱为问答提供 subject-relation-object 证据，使 RAG 不只依赖普通文本 chunk。
+- [RouteRAG: Efficient Retrieval-Augmented Generation from Text and Graph via Reinforcement Learning](https://arxiv.org/abs/2512.09487)：训练统一 RL policy 决定何时推理、检索文本、检索图证据或回答，在混合证据质量和检索成本之间取舍。
+- [Dynamic Context Selection for Retrieval-Augmented Generation: Mitigating Distractors and Positional Bias](https://arxiv.org/abs/2512.14313)：量化 distractor 和 lost-in-the-middle 效应，并预测 query-specific context size，使 RAG 检索足够证据而不过量注入噪声。
+- [Interface and surface engineering: The nexus of MXenes, MOFs, and AI in hybrid material design for energy storage/conversion](https://doi.org/10.1016/j.mattod.2025.07.026)：parent-routing-needed：该材料设计综述不是幻觉模型条目，除非后续证据表明其 AI 组件直接涉及事实性或不确定性控制。
+- [Advancing Material Stability Prediction: Leveraging Machine Learning and High-Dimensional Data for Improved Accuracy](https://doi.org/10.4236/msa.2025.162005)：parent-routing-needed：从可见元数据看这是材料稳定性预测论文，不是 LLM 幻觉、grounding 或事实性方法。
+- [Storage efficiency prediction for feasibility assessment of underground CO2 storage: Novel machine learning approaches](https://doi.org/10.1016/j.energy.2025.136040)：parent-routing-needed：该能源领域机器学习预测工作与幻觉主题不直接相关，应在本节之外复核。
+- [On Reducing Factual Hallucinations in Graph-to-Text Generation Using Large Language Models](https://aclanthology.org/2025.genaik-1.5/)：指出 graph-to-text 系统即使常用指标很高仍会幻觉，并给出用通用 LLM 降低事实错误的提示开发步骤和错误分析。
+- [Towards Reliable AI-Based Assessment: Modular Scoring and Hallucination Control](https://doi.org/10.1109/icstsn67075.2025.11398009)：在 AI 评估中使用 modular scoring 和显式 hallucination-control 组件；仍需父级复核它是通用方法还是领域应用。
+- [Outstanding Orthodontist: No More Artifactual Teeth in Talking Face](https://doi.org/10.24963/ijcai.2025/211)：parent-routing-needed：OrthoNet 用牙齿细节对齐和记忆模块稳定 audio-driven talking face，更接近生成伪影而非 LLM 幻觉。
+- [MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](https://arxiv.org/abs/2512.20626)：把知识图谱 RAG 扩展到文本、视觉和空间线索，为长篇多模态文档构建跨模态图证据用于问答。
+- [MCAD-EUC: Multi-context adaptive decoding with entropy-based uncertainty calibration for knowledge conflict mitigation](https://doi.org/10.1016/j.eswa.2025.129659)：在多上下文解码中用 entropy-calibrated uncertainty 调节知识冲突下的生成，处理检索证据与参数知识不一致的问题。
+- [Look Closer! An Adversarial Parametric Editing Framework for Hallucination Mitigation in VLMs](https://arxiv.org/abs/2512.21999)：按 activate-locate-edit 流程，从 grounded 与 hallucinatory 回答对中定位易幻觉参数簇，再用对抗前缀微调促使模型优先依赖视觉证据。
+- [CoFi-Dec: Hallucination-Resistant Decoding via Coarse-to-Fine Generative Feedback in Large Vision-Language Models](https://arxiv.org/abs/2512.23453)：生成粗粒度和细粒度文本反馈，再转成合成视觉假设，并用 Wasserstein 融合对齐预测分布以增强 LVLM grounding。
+- [Advancing Multi-Hop Question Answering via Alternating Retrieval and Reasoning over Multi-view Knowledge Integration](https://doi.org/10.1109/icme59968.2025.11209576)：在多视角知识上交替检索与推理，使多跳问答能随中间推理暴露的缺失事实持续更新证据。
+- [Uncertainty quantification by large language models](https://doi.org/10.1016/j.mlwa.2025.100773)：parent-routing-needed：可见元数据表明它是宽泛的 LLM 不确定性量化论文，保留在本节前应复核是否更适合 Survey 或校准条目。
+- [Reasoning Enhanced Missing Knowledge Retrieval Augmented Generation Framework for Domain Specific Question Answering](https://doi.org/10.18653/v1/2025.findings-ijcnlp.85)：用 chain-of-thought 一次性生成结构化 missing-knowledge queries，为领域 RAG 补充知识而不依赖任务专属标注。
+- [Generate but Verify: Answering with Faithfulness in RAG-based Question Answering](https://doi.org/10.18653/v1/2025.ijcnlp-long.56)：定义 RAG QA 中的 Answering with Faithfulness，把答案生成与 faithfulness prediction 显式耦合，并给出面向 fallback 策略的 precision-recall 指标。
+- [Hallucination Reduction in Video-Language Models via Hierarchical Multimodal Consistency](https://doi.org/10.24963/ijcai.2025/1019)：用 Multi-level Multimodal Alignment、语义判别损失和渐进训练对齐低层与高层视频文本语义，减少 video-language hallucination。
+- [Balancing performance and innovation in AI-driven supply chains through temperature-scaled hallucination control](https://doi.org/10.1080/00207543.2025.2601264)：parent-routing-needed：该供应链应用似乎把 temperature scaling 作为幻觉控制变量，但应复核是否更适合下游应用页面。
+- [Concept-wise Feature Sampling: Mitigating Object Hallucinations for Large Vision-Language Models](https://doi.org/10.1109/csecs64665.2025.11009288)：通过概念级特征采样缓解大型视觉语言模型的对象幻觉。
+- [Mitigating Hallucinations in Large Vision-Language Models via Reasoning Uncertainty-Guided Refinement](https://doi.org/10.1109/tmm.2025.3599076)：利用推理不确定性细化并缓解大型视觉语言模型幻觉。
+- [Robustness of Fine-Tuned Llms Under Noisy Retrieval Inputs](https://doi.org/10.1109/aiea66061.2025.11160531)：测试微调 LLM 在 RAG 输入包含噪声检索段落时的行为，把 retrieval-noise robustness 作为主要可靠性信号。
+- [CoHalLo: code hallucination localization via probing hidden layer vector](https://arxiv.org/abs/2512.24183)：一种行级代码幻觉定位方法；核心思路是探测幻觉检测模型的隐藏层向量，定位生成代码中可能存在幻觉的具体行。
+- [Multimodal Large Language Model for Out-of-Context Problems in Fake News Detection](https://doi.org/10.1109/kse68178.2025.11309521)：parent-routing-needed：该 MLLM 面向 out-of-context 假新闻检测，和事实性相邻但可能更适合 misinformation 或 multimodal verification。
+- [Convolutional neural network framework for deepfake detection: A diffusion-based approach](https://doi.org/10.1016/j.cviu.2025.104375)：parent-routing-needed：这是 diffusion-based CNN deepfake detector，按可见元数据更接近生成媒体真实性检测而非 LLM 幻觉模型。
+- [Research on Detecting AI-Generated Forged Handwritten Signatures via Data-Efficient Image Transformers](https://doi.org/10.1109/access.2025.3525808)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [AMF-VSN: Adaptive multi-process fusion video steganography based on invertible neural networks](https://doi.org/10.1016/j.inffus.2025.103130)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Bi-directional dual contrastive adapting method for alleviating hallucination in visual question answering](https://doi.org/10.1016/j.eswa.2025.128392)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Inference Calibration of Vision-Language Foundation Models for Zero-Shot and Few-Shot Learning](https://doi.org/10.1016/j.patrec.2025.03.010)：补充面向零样本和少样本视觉语言基础模型的推理校准方法。
+- [Mitigating Generative Hallucinations in Knowledge Graph Construction: A Reinforcement Learning Reward Shaping Approach](https://doi.org/10.1109/hpcc67675.2025.00206)：提出 RLRSKGC，把知识图谱构建建模为序列决策过程，并用事实准确性、完整性和结构一致性奖励塑形约束 Transformer 抽取结果。
+- [Mitigating Hallucinations in LLM via Direct Preference Optimization with Induced Negative Samples](https://doi.org/10.1109/aann66429.2025.11257601)：通过诱导负样本上的直接偏好优化缓解大模型幻觉。
+- [Prompt-Based Learning for Factual Knowledge Infusion in Large Language Models](https://doi.org/10.26599/ijcs.2025.9100014)：补充用于缓解幻觉的提示式事实知识注入方法。
+- [Attribute-object Dual Check based Multimodal Hallucination Detection](https://doi.org/10.1109/icftic68075.2025.11325009)：通过属性与对象双重检查检测多模态幻觉。
+- [Towards Trustworthy Conversational Agents: A New Method for Hallucination Detection in NLG](https://doi.org/10.1016/j.procs.2025.09.651)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Insight Lens: Multi-View Summarization via Retrieval-Augmented Generation for Hallucination Reduction](https://doi.org/10.1109/bigdata66926.2025.11400870)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Hallucination Detection and Reclassification Using Graph Co-Training](https://doi.org/10.1109/bigdata66926.2025.11402538)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Mitigating Systematic Hallucinations in Large Language Models Using Dual-Process Cognitive Theory](https://doi.org/10.1109/cascon66301.2025.00117)：面向幻觉评测与缓解的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Mitigating Systematic Hallucinations in Large Language Models Using Dual-Process Cognitive Theory”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Toward Generalizable, General-Purpose, and Multimodal Knowledge Editing for Foundation Models](https://doi.org/10.1109/icdmw69685.2025.00304)：提出超越简单事实编辑的知识编辑路线图，强调多模态编辑基准，以及能泛化到推理链、未见上下文和程序性知识的编辑方法。
+- [Visual Evidence-Aware for Object Hallucinations Rectification in LLM-Based Video Captioning](https://doi.org/10.1109/tcsvt.2025.3613993)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 Visual Evidence-Aware for Object Hallucinations Rectification in LLM-Based Video Captioning 为主要改进目标，作为 Model 条目的能力参考。
+- [S-AI-ANTI HALLUCINATION: A BIO-INSPIRED AND CONFIDENCE-AWARE SPARSE AI FRAMEWORK FOR RELIABLE GENERATIVE SYSTEMS](https://doi.org/10.5121/ijaia.2025.16601)：提出置信度感知的稀疏生成系统框架，用于降低幻觉风险。
 - [DA-DPO](https://arxiv.org/abs/2601.00623)：提出面向幻觉控制的模型侧方法，核心围绕 Cost-efficient Difficulty-aware Preference Optimization for Reducing MLLM Hallucinations。
+- [CRoPS: A Training-Free Hallucination Mitigation Framework for Vision-Language Models](https://arxiv.org/abs/2601.00659)：用训练无关的反事实和相关性视觉证据框架缓解 LVLM 幻觉。
+- [EdgeJury: Cross-Reviewed Small-Model Ensembles for Truthful Question Answering on Serverless Edge Inference](https://arxiv.org/abs/2601.00850)：聚焦幻觉抑制、真实可靠生成、自校准或答案与理由一致性模型。
+- [SentGraph: Hierarchical Sentence Graph for Multi-hop Retrieval-Augmented Question Answering](https://arxiv.org/abs/2601.03014)：提出或分析面向RAG, factuality, grounding, or hallucination control的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Temporal Graph Network: Hallucination Detection in Multi-Turn Conversation](https://arxiv.org/abs/2601.03051)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Text-Guided Layer Fusion Mitigates Hallucination in Multimodal LLMs](https://arxiv.org/abs/2601.03100)：通过文本引导层融合缓解多模态幻觉。
+- [SDCD: Structure-Disrupted Contrastive Decoding for Mitigating Hallucinations in Large Vision-Language Models](https://arxiv.org/abs/2601.03500)：通过结构扰动对比解码降低大型视觉语言模型幻觉。
+- [Whose Facts Win? LLM Source Preferences under Knowledge Conflicts](https://arxiv.org/abs/2601.03746)：补充与幻觉、事实性与可信落地相关的模型侧方法。
+- [ContextFocus: Activation Steering for Contextual Faithfulness in Large Language Models](https://arxiv.org/abs/2601.04131)：补充面向幻觉与事实性的模型侧工作，重点是activation steering for contextual faithfulness。
+- [GRACE: Reinforcement Learning for Grounded Response and Abstention under Contextual Evidence](https://arxiv.org/abs/2601.04525)：用异构检索器构造训练样本，并通过门控奖励训练 RAG 模型判断证据充分性、抽取支撑证据、在有依据时回答、在上下文不足时拒答。
+- [Relink: Constructing Query-Driven Evidence Graph On-the-Fly for GraphRAG](https://arxiv.org/abs/2601.07192)：提出或分析面向RAG, factuality, grounding, or hallucination control的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [VideoHEDGE: Entropy-Based Hallucination Detection for Video-VLMs via Semantic Clustering and Spatiotemporal Perturbations](https://arxiv.org/abs/2601.08557)：利用语义聚类与时空扰动检测视频 VLM 幻觉。
+- [Spectral Characterization and Mitigation of Sequential Knowledge Editing Collapse](https://arxiv.org/abs/2601.11042)：补充面向幻觉检测、缓解与事实性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Predict the Retrieval! Test time adaptation for Retrieval Augmented Generation](https://arxiv.org/abs/2601.11443)：Predict the Retrieval! Test time adaptation for Retrieval 补充检索、证据使用或事实锚定模型方法，用于控制幻觉。
+- [DRIFT: Detecting Representational Inconsistencies for Factual Truthfulness](https://arxiv.org/abs/2601.14210)：为幻觉与事实性方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Persuasion Tokens for Editing Factual Knowledge in LLMs](https://arxiv.org/abs/2601.16781)：补充面向幻觉检测、事实性与缓解的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Lowest Span Confidence: A Zero-Shot Metric for Efficient and Black-Box Hallucination Detection in LLMs](https://arxiv.org/abs/2601.19918)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 A Zero-Shot Metric for Efficient and Black-Box Hallucination Detection in LLMs 为主要改进目标，作为 Model 条目的能力参考。
+- [Hallucination Begins Where Saliency Drops](https://arxiv.org/abs/2601.20279)：把幻觉发生与显著性下降联系起来。
+- [SCALAR: Quantifying Structural Hallucination, Consistency, and Reasoning Gaps in Materials Foundation Models](https://arxiv.org/abs/2601.22312)：量化材料基础模型中的结构性幻觉、一致性与推理缺口。
+- [One-shot Optimized Steering Vector for Hallucination Mitigation for VLMs](https://arxiv.org/abs/2601.23041)：从一个筛选样本学习单个优化 steering vector，并在推理时泛化用于缓解 VLM 幻觉。
+- [Chance-Constrained Inference for Hallucination Risk Control in Large Language Models](https://arxiv.org/abs/2602.01637)：补充面向幻觉检测、事实性与缓解的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [IRIS: Implicit Reward-Guided Internal Sifting for Mitigating Multimodal Hallucination](https://arxiv.org/abs/2602.01769)：面向幻觉与事实性能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Do I Really Know? Learning Factual Self-Verification for Hallucination Reduction](https://arxiv.org/abs/2602.02018)：训练事实自验证能力，在减少幻觉的同时避免过度拒答。
+- [Seeing Through the Chain: Mitigate Hallucination in Multimodal Reasoning Models via CoT Compression and Contrastive Preference Optimization](https://arxiv.org/abs/2602.03380)：结合 CoT 压缩和对比偏好优化缓解多模态推理幻觉。
+- [KVSmooth](https://arxiv.org/abs/2602.04268)：通过 key-value smoothing 缓解多模态大模型幻觉，补充解码期内部状态干预方法。
+- [Progressive Searching for Retrieval in RAG](https://arxiv.org/abs/2602.07297)：《Progressive Searching for Retrieval in RAG》为Hallucination补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [IGMiRAG: Intuition-Guided Retrieval-Augmented Generation with Adaptive Mining of In-Depth Memory](https://arxiv.org/abs/2602.07525)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Scalpel: Fine-Grained Alignment of Attention Activation Manifolds via Mixture Gaussian Bridges to Mitigate Multimodal Hallucination](https://arxiv.org/abs/2602.09541)：通过细粒度对齐注意力激活流形缓解多模态幻觉。
+- [SAKED: Mitigating Hallucination in Large Vision-Language Models via Stability-Aware Knowledge Enhanced Decoding](https://arxiv.org/abs/2602.09825)：用稳定性感知的知识增强解码缓解 LVLM 幻觉，在生成时对比稳定层与不稳定层信号。
+- [Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models](https://arxiv.org/abs/2602.11824)：通过稀疏潜变量 steering 缓解大视觉语言模型的物体幻觉。
 - [REAL](https://arxiv.org/abs/2602.14065)：通过推理支点对齐解决知识密集型视觉问答中的知识冲突。
+- [Revealing and Enhancing Core Visual Regions: Harnessing Internal Attention Dynamics for Hallucination Mitigation in LVLMs](https://arxiv.org/abs/2602.15556)：利用内部注意力动态减少 LVLM 幻觉。
+- [What Persona Are We Missing? Identifying Unknown Relevant Personas for Faithful User Simulation](https://arxiv.org/abs/2602.15832)：parent-routing-needed：提出 PICQ-drama 和缺失 persona 维度识别准则，用来发现会让模拟用户回复变得歧义的缺失人格信息；该项更像 faithful user simulation，而不是幻觉缓解模型。
+- [Rethinking Soft Compression in Retrieval-Augmented Generation: A Query-Conditioned Selector Perspective](https://arxiv.org/abs/2602.15856)：提出或分析面向RAG, factuality, grounding, or hallucination control的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Understand Then Memory: A Cognitive Gist-Driven RAG Framework with Global Semantic Diffusion](https://arxiv.org/abs/2602.15895)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [RankEvolve: Automating the Discovery of Retrieval Algorithms via LLM-Driven Evolution](https://arxiv.org/abs/2602.16932)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [WSDM Cup 2026 Multilingual Retrieval: A Low-Cost Multi-Stage Retrieval Pipeline](https://arxiv.org/abs/2602.16989)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [HIME: Mitigating Object Hallucinations in LVLMs via Hallucination Insensitivity Model Editing](https://arxiv.org/abs/2602.18711)：面向幻觉评测与缓解的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“HIME: Mitigating Object Hallucinations in LVLMs via Hallucination Insensitivity Model Editing”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation](https://arxiv.org/abs/2602.21054)：面向幻觉与事实性，补充用于uncertainty-based self-evaluation for large vision-language models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Untied Ulysses: Memory-Efficient Context Parallelism via Headwise Chunking](https://arxiv.org/abs/2602.21196)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [From Prerequisites to Predictions: Validating a Geometric Hallucination Taxonomy Through Controlled Induction](https://arxiv.org/abs/2603.00307)：通过受控诱导验证几何化幻觉分类。
+- [MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](https://arxiv.org/abs/2603.03192)：用模态解耦偏好优化缓解 omni LLM 的跨模态幻觉。
+- [A unified foundational framework for knowledge injection and evaluation of Large Language Models in Combustion Science](https://arxiv.org/abs/2603.04452)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM](https://arxiv.org/abs/2603.04908)：围绕 AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM 补充幻觉与事实性相关的模型侧方法、训练信号或对齐机制。
+- [PaLMR: Towards Faithful Visual Reasoning via Multimodal Process Alignment](https://arxiv.org/abs/2603.06652)：通过多模态过程对齐降低视觉幻觉导致的推理失真。
+- [Whitening Reveals Cluster Commitment as the Geometric Separator of Hallucination Types](https://arxiv.org/abs/2603.07755)：从白化后的几何聚类结构解释幻觉类型差异。
+- [One Token, Two Fates](https://arxiv.org/abs/2603.10360)：从视觉 token 操作角度统一分析 MLLM 幻觉的诱发与抑制。
+- [Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](https://arxiv.org/abs/2603.10470)：面向幻觉与事实性，补充用于LVLM hallucination suppression method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [QChunker: Learning Question-Aware Text Chunking for Domain RAG via Multi-Agent Debate](https://arxiv.org/abs/2603.11650)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [How Transformers Reject Wrong Answers: Rotational Dynamics of Factual Constraint Processing](https://arxiv.org/abs/2603.13259)：研究 Transformer 拒绝错误事实答案的动态机制。
+- [Do Not Leave a Gap](https://arxiv.org/abs/2603.15940)：研究视觉语言模型中的无幻觉对象隐藏，说明视觉操纵如何避免诱发错误对象描述。
+- [Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation](https://arxiv.org/abs/2603.16284)：面向幻觉评测与缓解的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [DynHD: Hallucination Detection for Diffusion Large Language Models via Denoising Dynamics Deviation Learning](https://arxiv.org/abs/2603.16459)：从去噪动态偏差检测扩散式大语言模型幻觉。
+- [Inducing Epistemological Humility in Large Language Models: A Targeted SFT Approach to Reducing Hallucination](https://arxiv.org/abs/2603.17504)：用定向 SFT 数据训练认识论谦逊，从而减少幻觉。
+- [Progressive Training for Explainable Citation-Grounded Dialogue: Reducing Hallucination to Zero in English-Hindi LLMs](https://arxiv.org/abs/2603.18911)：提出 XKD-Dial 四阶段英印双语训练流程，结合 citation-grounded SFT、citation-aware GRPO 奖励和归因分析，追踪模型如何学会引用支撑。
+- [Semantic Token Clustering for Efficient Uncertainty Quantification in Large Language Models](https://arxiv.org/abs/2603.20161)：通过语义令牌聚类高效量化大模型输出不确定性。
+- [Sample Transform Cost-Based Training-Free Hallucination Detector for Large Language Models](https://arxiv.org/abs/2603.22303)：用训练无关的 sample-transform cost 信号检测 LLM 幻觉。
+- [Efficient Hallucination Detection: Adaptive Bayesian Estimation of Semantic Entropy with Guided Semantic Exploration](https://arxiv.org/abs/2603.22812)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Mitigating Object Hallucinations in LVLMs via Attention Imbalance Rectification](https://arxiv.org/abs/2603.24058)：补充面向幻觉、事实性或可靠性能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Visual Attention Drifts, Anchors Hold](https://arxiv.org/abs/2603.25088)：利用跨层视觉锚点缓解多模态大模型幻觉。
+- [Reflect to Inform: Boosting Multimodal Reasoning via Information-Gain-Driven Verification](https://arxiv.org/abs/2603.26348)：用信息增益驱动验证提升多模态推理，抑制偏离视觉证据的漂移。
+- [Mitigating Hallucination on Hallucination in RAG via Ensemble Voting](https://arxiv.org/abs/2603.27253)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Difference Feedback: Generating Multimodal Process-Level Supervision for VLM Reinforcement Learning](https://arxiv.org/abs/2603.27482)：为 VLM 强化学习生成多模态过程级监督信号。
+- [SAGE](https://arxiv.org/abs/2603.27898)：用 sink-aware grounded decoding 在生成过程中减少多模态幻觉。
+- [Hallucination-Aware Intermediate Representation Editing](https://arxiv.org/abs/2603.29405)：编辑 LVLM 中间表示以减少幻觉输出，补充表示层面的幻觉缓解方法。
+- [First Logit Boosting](https://arxiv.org/abs/2604.00455)：通过增强视觉 grounded 的 logits 缓解大型视觉语言模型的对象幻觉，补充 LVLM 事实性推理的推理期视觉 grounding 方法。
+- [Misconception Acquisition Dynamics in Large Language Models](https://arxiv.org/abs/2604.00818)：为幻觉与事实性方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [PRISM: Probability Reallocation with In-Span Masking for Knowledge-Sensitive Alignment](https://arxiv.org/abs/2604.01682)：用 in-span masking 重分配概率质量，实现知识敏感的事实性对齐。
+- [STEAR](https://arxiv.org/abs/2604.03045)：在视频 LLM 中进行层感知时空证据干预，面向依赖时间视觉 grounding 的回答缓解幻觉。
+- [Testing the Limits of Truth Directions in LLMs](https://arxiv.org/abs/2604.03754)：为幻觉与事实性方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Hallucination as output-boundary misclassification: a composite abstention architecture for language models](https://arxiv.org/abs/2604.06195)：把幻觉建模为输出边界误分类，并加入结构化 abstention gate。
+- [Weakly Supervised Distillation of Hallucination Signals into Transformer Representations](https://arxiv.org/abs/2604.06277)：把 substring matching、句向量相似度和 LLM judge 标签形成的弱 grounding 信号蒸馏进隐藏状态探针，使推理时无需检索或外部裁判也能用内部表征检测幻觉。
+- [GIRL: Generative Imagination Reinforcement Learning via Information-Theoretic Hallucination Control](https://arxiv.org/abs/2604.07426)：用生成式想象强化学习和信息论控制机制缓解幻觉。
+- [Mitigating Entangled Steering](https://arxiv.org/abs/2604.07914)：通过解耦 steering 效应降低 LVLM 幻觉，为多模态事实性补充表征层缓解路线。
+- [See Fair, Speak Truth](https://arxiv.org/abs/2604.09749)：通过公平注意力改进视觉 grounding 并降低视觉语言对齐中的幻觉，把公平感知注意力与多模态事实性生成连接起来。
+- [DaID](https://arxiv.org/abs/2604.10071)：通过注意力引导的双锚点内省解码，对比内部视觉事实信号与误导信号，以降低 MLLM 幻觉。
+- [Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models](https://arxiv.org/abs/2604.10556)：分析 diffusion large language model 特有的幻觉模式与失败类型。
+- [Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game](https://arxiv.org/abs/2604.10717)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Think Through Uncertainty: Improving Long-Form Generation Factuality via Reasoning Calibration](https://arxiv.org/abs/2604.12046)：通过不确定性推理校准提升长文本生成事实性。
+- [HTDC](https://arxiv.org/abs/2604.12115)：在 LVLM 解码犹豫时触发差分校准，为视觉接地回答补充推理时幻觉缓解路线。
+- [Generating Effective CoT Traces for Mitigating Causal Hallucination](https://arxiv.org/abs/2604.12748)：提出 CoT 轨迹生成准则和 Causal Hallucination Rate 指标，用于微调小模型的事件因果识别能力。
+- [Adaptive Conformal Prediction for Improving Factuality of Generations by Large Language Models](https://arxiv.org/abs/2604.13991)：补充面向幻觉与事实性的模型侧工作，重点是conformal prediction for factual generation。
+- [Hallucination as Trajectory Commitment: Causal Evidence for Asymmetric Attractor Dynamics in Transformer Generation](https://arxiv.org/abs/2604.15400)：通过因果证据研究 Transformer 生成中的轨迹承诺式幻觉。
 - [Abstain-R1](https://arxiv.org/abs/2604.17073)：面向 calibrated abstention 的 verifiable-RL 方法，在可答性不确定时训练拒答和澄清。
+- [Phase-wise Self-reward](https://arxiv.org/abs/2604.17982)：通过分阶段 self-reward 缓解多模态幻觉，为 LVLM grounding 补充奖励引导方法。
+- [VCE](https://arxiv.org/abs/2604.19412)：通过零成本视觉对比编辑缓解 LVLM 幻觉。
+- [Do Hallucination Neurons Generalize? Evidence from Cross-Domain Transfer in LLMs](https://arxiv.org/abs/2604.19765)：为幻觉与事实性方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Hallucination Early Detection in Diffusion Models](https://arxiv.org/abs/2604.20354)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Structure Guided Retrieval-Augmented Generation for Factual Queries](https://arxiv.org/abs/2604.22843)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Aligning with Your Own Voice: Self-Corrected Preference Learning for Hallucination Mitigation in LVLMs](https://arxiv.org/abs/2604.24395)：用自校正偏好学习缓解大型视觉语言模型幻觉。
+- [CAST](https://arxiv.org/abs/2605.04641)：用 caption-guided 视觉注意力转向缓解大型视觉语言模型的对象幻觉。
+- [WiCER: Wiki-memory Compile, Evaluate, Refine Iterative Knowledge Compilation for LLM Wiki Systems](https://arxiv.org/abs/2605.07068)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [VLADriver-RAG: Retrieval-Augmented Vision-Language-Action Models for Autonomous Driving](https://arxiv.org/abs/2605.08133)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Instruction Lens Score](https://arxiv.org/abs/2605.12258)：利用 instruction-derived signals 检测多模态大模型对象幻觉，补充轻量级幻觉检测路线。
+- [MHSA: A Lightweight Framework for Mitigating Hallucinations via Steered Attention in LVLMs](https://arxiv.org/abs/2605.14966)：为幻觉与事实性方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Calibrating LLMs with Semantic-level Reward](https://arxiv.org/abs/2605.15588)：用语义级奖励校准 LLM 置信度，使可靠性不只依赖表层答案匹配。
 - [Hallucination-aware Retrieval Augmented Generation with Evidence-based Semantic Clustering](https://doi.org/10.1109/aisns67921.2026.11440643)：结合检索增强生成与基于证据的语义聚类，使幻觉控制显式依赖证据。
+- [GraphRAG-Driven Multi-Stage Context Retrieval for Thai Text-to-SQL Using SLM Agents](https://doi.org/10.1109/icci68752.2026.11506507)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Mitigating Deceptive Knowledge Editing in LLMS via Diffusion Synthesis](https://doi.org/10.1109/icassp55912.2026.11461953)：为幻觉与事实性方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Hallucination-Resistant Change Detection in Multimodal Large Models for Autonomous Land Management Agents](https://doi.org/10.1109/jstars.2026.3656403)：提出面向幻觉治理能力的模型侧方法、训练信号、架构或适配策略。
+- [Self-Reviewing Language Models for Factual Correctness](https://doi.org/10.1109/raeeucci67649.2026.11504837)：补充面向幻觉检测、事实性与缓解的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Tuning-Free Fidelity-Constrained Decoding for Faithful Legal Reasoning with Open-Domain Large Language Models](https://doi.org/10.1109/icassp55912.2026.11461418)：补充面向幻觉与事实性的模型侧工作，重点是faithful decoding for legal reasoning。
+- [GLINT: Global–local fusion with attention intervention for MLLM hallucination mitigation caused by insufficient visual resolution](https://doi.org/10.1016/j.ipm.2026.104850)：通过全局-局部融合和注意力干预缓解视觉分辨率不足导致的 MLLM 幻觉。
+- [A text consistency evaluation method combining unified modeling and mixture-of-expert networks](https://doi.org/10.1016/j.eswa.2026.131809)：结合统一建模与专家混合进行文本一致性评估。
+- [NIASM: Non-Idiomatic Abstractive Summarization Model to Reduce Hallucination and Factual Inconsistency Problem in Text Generation](https://doi.org/10.1109/access.2026.3665264)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Enhancing Factual Reliability in Large Language Models Through Retrieval Augmented Generation](https://doi.org/10.1109/icoeca68095.2026.11485611)：用检索增强生成提升大模型事实可靠性，适合放入幻觉缓解模型条目。
 - [Large Language Models With Contrastive Decoding Algorithm for Hallucination Mitigation in Low-Resource Languages](https://doi.org/10.1049/cit2.70004)：采用对比解码降低低资源语言生成中的幻觉。
 - [MPI-CD: Multi-Path Information Contrastive Decoding for Mitigating Hallucinations in Large Vision-Language Models](https://doi.org/10.1145/3746027.3755372)：利用多路径信息对比解码减少大视觉语言模型幻觉。
 - [From Hallucination to Certainty: Meta-Knowledge Guided Self-Correcting Large Language Models](https://doi.org/10.1145/3797906)：用元知识引导自我纠错，使 LLM 将不确定生成推向有依据的答案。
 - [MAGNET: Counterfactual samples synthesizing for mitigating hallucination in large language models.](https://doi.org/10.1371/journal.pone.0340812)：合成反事实样本来训练或校准 LLM 幻觉缓解方法。
 - [Detecting and Mitigating Hallucination in Large Vision Language Models via Fine-Grained AI Feedback](https://doi.org/10.1609/aaai.v39i24.34744)：使用细粒度 AI 反馈检测并缓解大视觉语言模型幻觉。
+- [Modular Attribution and Intervention for LVLM Hallucination](https://openreview.net/forum?id=Bjq4W7P2Us)：通过模块化归因与干预诊断并缓解大视觉语言模型幻觉。
+- [Dual-Modal Collaborative Attention Reinforcement](https://doi.org/10.1145/3746027.3755320)：通过强化视觉与语言注意力协同来缓解 LVLM 幻觉。
+- [Multi-perspective consistency checking for large language model hallucination detection: a black-box zero-resource approach](https://doi.org/10.1631/FITEE.2500180)：提出黑盒多视角一致性检查，用于零资源 LLM 幻觉检测。
+- [GraphRAG on Technical Documents - Impact of Knowledge Graph Schema](https://doi.org/10.4230/tgdk.3.2.3)：GraphRAG on Technical Documents 补充检索、证据使用或事实锚定模型方法，用于控制幻觉。
+- [Empowering Large Language Model Reasoning : Hybridizing Layered Retrieval Augmented Generation and Knowledge Graph Synthesis](https://doi.org/10.36838/v6i12.11)：提出或分析面向RAG, factuality, grounding, or hallucination control的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Discovering novel lead-free solder alloy by multi-objective Bayesian active learning with experimental uncertainty](https://doi.org/10.1038/s41524-024-01480-7)：作为幻觉与事实性的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Layered Query Retrieval: An Adaptive Framework for Retrieval-Augmented Generation in Complex Question Answering for Large Language Models](https://doi.org/10.3390/app142311014)：作为幻觉与事实性的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [RAMAR: retrieval-augmented multi-agent reasoning for zero-shot sarcasm detection](https://doi.org/10.1007/s40747-026-02260-0)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [SeaRAG: Reducing Hallucination in Retrieval-Augmented Generation via Statement-Entity Adaptive Ranking](https://doi.org/10.1145/3774904.3792598)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Combating Knowledge Corruption in Agent Systems: A Byzantine-Tolerant Secure Collaborative RAG Framework](https://doi.org/10.1145/3774904.3792200)：贡献面向有依据生成、检索增强与幻觉控制的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [ReSelfVerMM: mitigating hallucination in multimodal LLMs through dataset reconstruction and self-verification](https://doi.org/10.1117/12.3072360)：补充幻觉与可靠性的 Model 条目，重点是《ReSelfVerMM: mitigating hallucination in multimodal LLMs through dataset reconstruction and self-verification》。
+- [Detecting hallucinations in large language models using semantic entropy](https://doi.org/10.1038/s41586-024-07421-0)：补充面向幻觉、事实性或可靠性能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Navigating Truth in Multimodal Fact-checking via Retrieval- and Reasoning-Enhanced Large Language Models](https://doi.org/10.1145/3774904.3792706)：围绕 Navigating Truth in Multimodal Fact-checking via Retrieval- and Reasoning-Enhanced Large Language Models 补充幻觉与事实性相关的模型侧方法、训练信号或对齐机制。
+- [Fine-grained Structural Hallucination Detection for Unified Visual Comprehension and Generation in Multimodal LLM](https://doi.org/10.1145/3689090.3689388)：面向幻觉与事实性，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Hallo3D: Multi-Modal Hallucination Detection and Mitigation for Consistent 3D Content Generation](https://doi.org/10.52202/079017-3776)：面向幻觉与事实性，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [QA-RAG: Exploring LLM Reliance on External Knowledge](https://doi.org/10.3390/bdcc8090115)：补充面向有依据生成、检索增强与幻觉控制的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [“You Always Get an Answer”: Analyzing Users’ Interaction with AI-Generated Personas Given Unanswerable Questions and Risk of Hallucination](https://doi.org/10.1145/3708359.3712160)：补充面向有依据生成、检索增强与幻觉控制的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Toward fair graph neural networks via real counterfactual samples](https://doi.org/10.1007/s10115-024-02161-z)：补充幻觉方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Hallucination Prediction in Large Language Models Using Contextual Analysis](https://doi.org/10.1145/3787279.3787296)：提出关于 Hallucination Prediction in Large Language Models Using Contextual Analysis 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [Separating Linguistic Competence from Factual Knowledge in Large Language Models](https://ceur-ws.org/Vol-4100/paper7.pdf)：提出关于 Separating Linguistic Competence from Factual Knowledge in Large Language Models 的模型侧工作，契合训练、架构、后训练、合成数据、验证器、奖励或世界模型等覆盖范围。
+- [Soft-Community Kernel Rényi Spectrum for Semantic Uncertainty Estimation in Large Language Models](https://doi.org/10.3390/e28040442)：用语义不确定性估计大模型输出，为幻觉控制补充模型侧不确定性信号。
+- [Mind the Link: Discourse Link-Aware Hallucination Detection in Summarization](https://doi.org/10.3390/app151910506)：利用话语链接感知检测摘要幻觉。
+- [Visual Perception Uncertainty Learning for Hallucination Detection in Large Vision-Language Models](https://doi.org/10.1145/3746027.3755126)：为幻觉与事实性方向补充一个模型侧方法候选，覆盖训练、适配、后训练、数据或推理机制。
+- [Veracity‐Oriented Context‐Aware Large Language Models–Based Prompting Optimization for Fake News Detection](https://doi.org/10.1155/int/5920142)：可作为“幻觉与真实性 / 模型”候选条目；提出与模型训练、架构、对齐、推理、适配或数据构造相关的方法。
+- [Deep Kernel Relative Test for Machine-generated Text Detection](https://openreview.net/forum?id=z9j7wctoGV)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Identifying artificial intelligence-generated content using the DistilBERT transformer and NLP techniques](https://doi.org/10.1038/s41598-025-08208-7)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [A Non-intrusive Plug-and-play Method for Hallucination Mitigation via LID-guided Input Preprocessing](https://doi.org/10.1007/s11633-025-1596-7)：补充面向幻觉检测、事实性与缓解的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [VGL-DPO: Vision-Guided Lexical Direct Preference Optimization for Mitigating Hallucination in Multimodal Large Language Models](https://doi.org/10.1145/3796715)：补充面向幻觉检测、事实性与缓解的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [Mitigating Hallucinations in Large Vision-Language Models via Dual Contrastive Decoding](https://doi.org/10.1145/3743093.3770933)：补充通过双重对比解码缓解大型视觉语言模型幻觉的方法。
+- [MPTE: multiperspective triple expansion for robust knowledge grounding in large language models](https://doi.org/10.1117/12.3077456)：用多视角三元扩展提升大语言模型知识 grounding 的鲁棒性。
+- [Reducing extrinsic hallucination in multimodal abstractive summaries with post-processing technique](https://doi.org/10.1007/s00521-024-10895-8)：面向幻觉检测与缓解的模型、训练或算法工作。核心思想：以 Reducing extrinsic hallucination in multimodal abstractive summaries with post-processing technique 为主要改进目标，作为 Model 条目的能力参考。
+- [DRGO:dynamic retrieval and generation optimization based on fine-grained confidence evaluation](https://doi.org/10.1007/s10844-026-01036-9)：基于细粒度置信度评估优化检索与生成。
+- [A Hybrid Extractive and Encoder-Decoder-Based Approach for Mitigating Hallucination in Automatic Text Summarization](https://doi.org/10.1007/s41314-025-00083-4)：面向幻觉检测与事实一致性提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [A hallucination detection and mitigation framework for faithful text summarization using LLMs](https://doi.org/10.1038/s41598-025-31075-1)：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [How Human Experts Educate Specialized LLMs: Filling Knowledge Gaps in KG-Augmented Generation through Hallucination Detection](https://doi.org/10.1145/3774904.3792550)：利用 KG 增强生成与幻觉检测填补专用 LLM 的知识缺口。
+- [CLSeq and Nscp: novel methods for reducing hallucinations in text summarization for pre-trained models and LLMs](https://doi.org/10.1186/s40537-025-01290-8)：面向幻觉评测与缓解的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“CLSeq and Nscp: novel methods for reducing hallucinations in text summarization for pre-trained models and LLMs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Research and Analysis on the Mechanism of Suppressing Large Model Hallucination Based on Modular RAG Architecture](https://doi.org/10.54097/bp841717)：分析基于模块化 RAG 架构的大模型幻觉抑制机制。
+- [Intervening Anchor Token: Decoding Strategy in Alleviating Hallucinations for MLLMs]()：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Exponential Scaling of Factual Inconsistency in Data-to-Text Generation with Fine-Tuned LLMs]()：Exponential Scaling of Factual Inconsistency in Data-to-Text Generation with Fine-Tuned LLMs：面向幻觉检测与缓解的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Understanding and Mitigating Hallucination in Large Vision-Language Models via Modular Attribution and Intervention]()：通过模块化归因与干预诊断并缓解大视觉语言模型幻觉。
+- [Reducing Hallucinations in Large Vision-Language Models via Latent Space Steering](https://www.semanticscholar.org/paper/a92de3c944ced3b43c7c19b586e294bd8649a77f)：通过潜空间 steering 减少大型视觉语言模型中的无依据多模态生成。

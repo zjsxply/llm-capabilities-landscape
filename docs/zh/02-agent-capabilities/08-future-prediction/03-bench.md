@@ -1,31 +1,75 @@
 # 2.8.3 Bench
 
+- [NIFTY Financial News Headlines Dataset](https://arxiv.org/abs/2405.09747)：把财经新闻标题整理成市场预测实验数据，并提供 NIFTY-LM 用于监督微调、NIFTY-RL 用于基于市场涨跌信号的 reward model 或 RLHF 式训练。
+- [LTSM-Bundle: A Toolbox and Benchmark on Large Language Models for Time Series Forecasting](https://arxiv.org/abs/2406.14045)：系统比较大时间序列模型的 prompting、tokenization、训练范式、底座模型与数据多样性，并把最优选择组合成更强的零样本/少样本 forecasting bundle。
 - [MIRAI](https://arxiv.org/abs/2407.01231)：评什么：国际事件预测中的 agentic forecasting。核心思想：让 agent 访问历史结构化事件库和新闻文本，通过代码接口调用领域 API，评估信息源整合、工具使用和跨时间推理，是 live future-prediction 路线更早的代表。
+- [Temporal Event Forecasting Evaluation](https://arxiv.org/abs/2407.11638)：构建含图结构与文本信号的 MidEast-TE-mini，并比较 raw text、结构化输入、微调与检索增强 LLM 设置，用来暴露热门事件偏置和长尾事件预测失败。
+- [Stock Market Trend Prediction Evaluation](https://arxiv.org/abs/2408.12408)：在 S&P 500 与 EWZ 的日线/小时线收盘价方向预测上比较 TCN、N-BEATS、TFT、N-HiTS、TiDE 和 xLSTM-TS，并显示 wavelet denoising 会改变深度时间序列模型的表观强弱。
 - [ForecastBench](https://arxiv.org/abs/2409.19839)（[Leaderboard](http://www.forecastbench.org/)）：评什么：动态生成、定期更新的真实未来事件预测。核心思想：只收录提交时尚未有答案的问题，并用专家、人群与 LLM 共同对照，专门压测模型在数据泄漏最小化条件下的概率预测能力。
 - [Context is Key (CiK)](https://arxiv.org/abs/2410.18959)（[项目页](https://servicenow.github.io/context-is-key-forecasting/)）：评什么：带必要文本上下文的时间序列预测。核心思想：把数值历史与自然语言约束/背景知识绑定，让模型必须理解文本才能预测，适合检验“读上下文后预测”而非只做曲线外推。
+- [WORLDREP](https://arxiv.org/abs/2411.14042)：构建文本式国际事件预测数据集，用经政治学专家验证的 LLM 生成标签作为评分依据，并释放用于事件样例收集、标注和 benchmark 的自动化代码。
 - [FOReCAst](https://arxiv.org/abs/2502.19676)（[开源代码](https://github.com/MoyYuan/FOReCAst)，[数据集](https://huggingface.co/datasets/MoyYuan/FOReCAst)）：评什么：多领域真实预测任务的概率判断与置信度校准。核心思想：把 Boolean、timeframe 和 quantity 三类题型合在一起，同时评估预测准确率与 confidence，弥补只看最终答案而忽略校准的问题。
+- [MTBench: A Multimodal Time Series Benchmark for Temporal Reasoning and Question Answering](https://arxiv.org/abs/2503.16858)：评测多模态时间序列中的时间推理与问答。核心思想：把时间序列信号与语言问题结合起来，使时间能力不只由标量预测误差衡量。
 - [PROPHET](https://arxiv.org/abs/2504.01509)：评什么：可因果干预的未来事件预测。核心思想：把事件预测拆成可推断未来状态与干预后似然估计，补充 FutureX/Prophet Arena 之前的可解释 future-prediction 评测线。
+- [Can LLM-based Financial Investing Strategies Outperform the Market in Long Run?](https://arxiv.org/abs/2505.07078)：提出 FINSABER，用更长时间跨度和更广股票范围回测 LLM 投资策略，检验预测与校准是否能长期成立。
 - [Outcome-based RL Forecasting Dataset](https://arxiv.org/abs/2505.17989)：评什么：预测市场问题上的未来事件概率预测与校准。核心思想：把近期预测市场问题、新闻线索与延迟兑现的真实结果结合，用 outcome reward 训练/评估小模型，说明未来预测可以形成 RLVR 式闭环。
+- [ExAnte: A Benchmark for Ex-Ante Inference in Large Language Models](https://arxiv.org/abs/2505.19533)：它评测 ex-ante 判断或未来信息隔离下的推理，适合补充 future-prediction Bench。
+- [WXImpactBench](https://arxiv.org/abs/2505.20249)：用地区报纸中的灾害报道评测 disruptive-weather impact understanding，四阶段构建数据集，并设置多标签影响分类与排序式问答两类任务。
+- [Predicting Empirical AI Research Outcomes with Language Models](https://arxiv.org/abs/2506.00794)：预测实证 AI 研究结果的能力评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Prompt Engineering Large Language Models' Forecasting Capabilities](https://arxiv.org/abs/2506.01578)：评什么：评测 prompt engineering 对 LLM 预测能力的影响，适合未来预测页。
+- [FinAR-Bench](https://arxiv.org/abs/2506.07315)：把财务报表基本面分析拆成关键信息抽取、财务指标计算和逻辑推理三步，使金融分析报告生成的失败点不再被一个总分掩盖。
+- [NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs](https://arxiv.org/abs/2506.11050)：围绕未来预测与预报提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
 - [Bench to the Future（BTF）](https://arxiv.org/abs/2506.21558)：评什么：forecasting agent 的可复现 pastcasting。核心思想：给已知结局的历史预测题配套冻结网页语料，让 agent 在离线环境中像真实预测一样研究、给概率并留下推理轨迹，避免等待未来兑现和 live web 漂移。
 - [Evaluating LLMs on Real-World Forecasting Against Expert Forecasters](https://arxiv.org/abs/2507.04562)：评什么：真实 Metaculus 预测题上的 LLM 概率预测。核心思想：把前沿模型和专家预测者放在同一批真实 forecasting questions 上比较 Brier score 与校准，补足只看模型间相对排名的评测。
-- [FutureX](https://arxiv.org/abs/2508.11987)：评什么：面向未来事件预测的 live agent benchmark。核心思想：用实时更新、自动问题收集与答案采集减少数据污染，要求 agent 动态搜集信息、权衡不确定性并持续适应新趋势，贴近分析师/战略研究类现实工作。
+- [Frozen Forecasting](https://arxiv.org/abs/2507.13942)：通过在冻结视觉 backbone 的表征空间中训练 latent diffusion forecaster，评测从像素预测到物体运动的四类完整未来轨迹，而不是只看单步外推。
+- [ConDiFi](https://arxiv.org/abs/2507.18368)：评测金融场景中的发散式与收敛式推理，把宏观金融未来情景生成和对抗性多跳问答结合起来，用于观察模型能否在不确定条件下给出可行动、可用于决策的预测与判断。
+- [Forecast Stability for Demand Planning](https://arxiv.org/abs/2508.10063)：把 forecast stability 作为需求规划时间序列模型的显式评估信号，补充仅看 accuracy 的预测 benchmark。
+- [FutureX](https://arxiv.org/abs/2508.11987)（[项目页与榜单](https://futurex-ai.github.io/)）：评什么：面向未来事件预测的 live agent benchmark。核心思想：用实时更新、自动问题收集与答案采集减少数据污染，要求 agent 动态搜集信息、权衡不确定性并持续适应新趋势，贴近分析师/战略研究类现实工作。
+- [Dunkelflaute Risk Forecasting](https://arxiv.org/abs/2509.24788)：把生成式深度学习 downscaling 用到 CMIP6 气候模拟上，在 SSP2-4.5 与 SSP5-8.5 情景下估计德国未来低风低光照事件，使可再生电网风险成为具体的长时程预测案例。
+- [Information Leakage in Time-Series Foundation-Model Evaluation](https://arxiv.org/abs/2510.13654)：分析时间序列基础模型评测中的已知与未知信息泄漏，增强预测基准可靠性。
+- [OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data](https://arxiv.org/abs/2510.15096)：基于真实数据评估不确定性推理的 benchmark。核心思想是测试校准估计和不确定性推理，而不只是确定性问答。
 - [Prophet Arena](https://arxiv.org/abs/2510.17638)（[项目页](https://www.prophetarena.co/)）：评什么：LLM-as-a-Prophet 的实时预测智能。核心思想：连续收集 live forecasting tasks，并把事件回忆、数据源理解、近兑现信息聚合与概率校准拆开分析，适合看“预测 pipeline 哪一段失败”。
+- [Extreme Precipitation Spatial Verification](https://arxiv.org/abs/2510.25045)：把 high-resolution assessment 与 threshold-weighted scoring rules 结合，展示 AI weather model 与高分辨率 NWP 在邻域大小和极端阈值变化时排名会如何改变。
+- [LiveTradeBench: Seeking Real-World Alpha with Large Language Models](https://arxiv.org/abs/2511.03628)：评测市场不确定性下的实时交易与决策；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Lead-Lag Forecasting Datasets](https://arxiv.org/abs/2511.03877)：将社交平台中的早期使用信号预测延迟结果形式化为 lead-lag forecasting，并发布 arXiv 访问量到引用数、GitHub 活动到 fork 数两组长周期数据集。
+- [Future Is Unevenly Distributed](https://arxiv.org/abs/2511.18394)：评测 LLM 对训练截止后社会、政治、经济现实事件的预测能力，并分析领域结构、问题表述和新闻上下文如何影响准确率与校准。
+- [HOTD-Bench](https://arxiv.org/abs/2511.18929)：用 2,000 多段真实视频和仿真式协议评测 open-future task discovery，关注 LMM 能否在动态人类意图下发现能减少人力负担的未来任务。
+- [CryptoBench](https://arxiv.org/abs/2512.00417)（[项目页与榜单](https://cryptobench.space/)）：专家策划的动态加密货币代理基准，结合专业信息检索、对抗性信息环境综合和预测导向分析。
 - [KalshiBench](https://arxiv.org/abs/2512.16030)（[数据集](https://huggingface.co/datasets/2084Collective/kalshibench-v2)）：评什么：预测市场问题上的 epistemic calibration。核心思想：用 Kalshi 上已兑现、训练截止后才发生的真实事件，检查模型自报置信度是否匹配真实正确率。
-- [FinDeepForecast](https://arxiv.org/abs/2601.05039)：评什么：金融预测场景中的 deep research agent。核心思想：把 live multi-agent research、金融事件预测和可追踪证据链放在同一评测里，连接 ForecastBench 的动态预测与 Deep Research Bench 的搜证式评估。
-- [FutureX-Pro](https://arxiv.org/abs/2601.12259)：评什么：高价值垂直领域的未来预测，覆盖金融、零售、公共卫生、自然灾害与搜索。核心思想：继承 FutureX 的 live、contamination-free 管线，把预测任务推进到资本密集或安全关键行业，测试通用 agent 是否具备足够领域 grounding。
+- [TS-Arena](https://arxiv.org/abs/2512.20761)：评什么：通过结果揭晓前的预注册预测评测 live time-series forecasting。核心思想：把预测评测做成带时间戳的 arena，减少事后调参与回看偏差。
+- [FinDeepForecast](https://arxiv.org/abs/2601.05039)（[OpenFinArena leaderboard](https://openfinarena.com/fin-deep-forecast)）：评什么：金融预测场景中的 deep research agent。核心思想：把 live multi-agent research、金融事件预测和可追踪证据链放在同一评测里，连接 ForecastBench 的动态预测与 Deep Research Bench 的搜证式评估。
+- [LakeBeD-US](https://doi.org/10.5194/essd-17-3141-2025)：统一 21 个美国湖泊的高频与低频水质观测，并提供计算机科学版 benchmark，用温度和溶解氧目标评测多变量水质时间序列预测。
+- [Metrics Matters for ENSO Forecasting](https://doi.org/10.1016/j.atmosres.2025.108545)：复现深度 CNN ENSO 预测器，公开数据生成与实现细节，并说明 error-based 与 skill-based 指标会如何改变气候预测质量判断。
+- [PriceSeer: Evaluating Large Language Models in Real-Time Stock Prediction](https://arxiv.org/abs/2601.06088)：可作为future prediction方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [What If TSF](https://arxiv.org/abs/2601.08509)：把时间序列预测改写为 scenario-guided multimodal forecasting，测试文本 what-if 假设如何改变预测。
+- [FutureX-Pro](https://arxiv.org/abs/2601.12259)（[FutureX leaderboard](https://futurex-ai.github.io/)）：评什么：高价值垂直领域的未来预测，覆盖金融、零售、公共卫生、自然灾害与搜索。核心思想：继承 FutureX 的 live、contamination-free 管线，把预测任务推进到资本密集或安全关键行业，测试通用 agent 是否具备足够领域 grounding。
+- [TruthTensor](https://arxiv.org/abs/2601.13545)：评测漂移条件下 prediction market 推理和整体人类行为模仿能力。
 - [FutureOmni](https://arxiv.org/abs/2601.13836)：评什么：多模态上下文中的未来预测。核心思想：把文本、图像、视频和结构化线索放进同一未来事件判断任务，检查 agent 是否能从跨模态证据中形成概率预测。
-- [Metaculus FutureEval](https://www.metaculus.com/futureeval/)（[方法说明](https://www.metaculus.com/futureeval/methodology/)）：评什么：Metaculus 于 2026-02 发布的持续未来事件预测榜单。核心思想：把开放 Metaculus 预测题持续喂给主流 AI 模型，并和 Metaculus 社群/专业预测者比较校准、覆盖率与随模型发布时间变化的真实预测表现；该线索可由 BTF-2 对 Metaculus AI Benchmarking Series 的引用继续展开得到。
+- [Fin-RATE](https://arxiv.org/abs/2602.07294)：以 SEC filings 复现金融分析师工作流，覆盖单份披露推理、同主题跨公司比较和同一公司跨报告期追踪，并同时评测 ground-truth context 与 RAG 设置。
+- [Signature-Kernel Forecasting Metrics](https://arxiv.org/abs/2602.10182)：提出用于 robust probabilistic 与 tail-event forecasting 的 signature-kernel metric，补充面向校准的预测评测工具。
+- [Energy-Load Time-Series Foundation-Model Benchmark](https://arxiv.org/abs/2602.10848)：在消费级硬件上评测时间序列基础模型的零样本电力负荷预测能力。
 - [TemporalBench](https://arxiv.org/abs/2602.13272)（[数据集](https://huggingface.co/datasets/Melady/TemporalBench)；[Leaderboard](https://huggingface.co/spaces/Melady/TemporalBench_Leaderboard)）：评什么：LLM agent 的上下文与事件驱动时间序列预测。核心思想：把任务分成历史结构解释、无上下文预测、上下文推理和事件条件预测四层，诊断模型是否真正利用外部事件而不是只拟合曲线。
-- [Echo](https://echo.unipat.ai/)（[官方文章](https://unipat.ai/blog/Echo)）：评什么：动态未来预测 leaderboard 与训练系统，覆盖金融、政治、加密、体育和电竞等域。核心思想：用多点对齐 Elo、Train-on-Future 和 AI-native prediction API 组成完整预测闭环，解决不同模型预测时间点不齐与训练信号滞后问题。
+- [SenTSR-Bench](https://arxiv.org/abs/2602.19455)：评测注入知识条件下的时间序列推理，把模式识别与基于外部洞见的推理区分开。
+- [Transportation TSFM Benchmark Analysis](https://arxiv.org/abs/2602.24238)：将 time-series foundation model 作为交通预测强 baseline 进行大规模 benchmark analysis，扩展预测评测覆盖。
 - [Impermanent](https://arxiv.org/abs/2603.08707)（[开源代码](https://github.com/TimeCopilot/impermanent)；[Dashboard](https://impermanent.timecopilot.dev/)）：评什么：时间序列预测的 live temporal generalization。核心思想：用 GitHub 活动等持续变化的数据流滚动评分，考察模型是否能在开放世界时间漂移下维持预测稳定性。
 - [YC-Bench](https://arxiv.org/abs/2604.01212)：评什么：长期规划与一致执行中的状态记忆。核心思想：让 agent 在持续经营类任务中反复使用历史目标、资源状态和中间决策，观察 context truncation、scratchpad 与 memory 策略的真实收益。
 - [TimeSeek](https://arxiv.org/abs/2604.04220)：评什么：agentic forecaster 的时间可靠性。核心思想：按问题生命周期的多个时间点重放预测，比较无检索、web 检索与不同模型在临近兑现时的概率更新质量。
 - [TFRBench](https://arxiv.org/abs/2604.05364)：评什么：预测系统的推理能力。核心思想：将 forecasting 拆成可诊断的 reasoning benchmark，关注信息选择、时序因果、约束解释与预测一致性，而不是只看最终误差。
-- [Prediction Arena](https://arxiv.org/abs/2604.07355)：评什么：面向预测市场/未来事件的 live 模型对战评测。核心思想：用持续更新的问题与赛制比较模型预测，在答案兑现前后统一记录概率、理由与校准表现。
+- [Market-Bench: Benchmarking Large Language Models on Economic and Trade Competition](https://arxiv.org/abs/2604.05523)：评测 LLM 的经济与贸易竞争能力。核心思想：评测战略经济决策与贸易竞争，而不只是静态金融问答。
+- [Prediction Arena](https://arxiv.org/abs/2604.07355)（[live arena](https://www.predictionarena.ai/)）：评什么：面向预测市场/未来事件的 live 模型对战评测。核心思想：用持续更新的问题与赛制比较模型预测，在答案兑现前后统一记录概率、理由与校准表现。
+- [TempusBench](https://arxiv.org/abs/2604.11529)：提供时间序列预测评估框架，直接补充 forecasting model reliability benchmark。
 - [PolyBench](https://arxiv.org/abs/2604.14199)：评什么：基于 live prediction market data 的 LLM 预测与交易能力。核心思想：把 Polymarket 等市场中的概率判断、交易收益与校准联系起来，评估 agent 是否能把预测转化为可操作策略。
-- [QuantSightBench](https://arxiv.org/abs/2604.15859)（[项目页](https://quantsightbench.com/)；[开源代码](https://github.com/aisa-group/quantsightbench)）：评什么：连续数值量的区间预测与不确定性校准。核心思想：要求模型给出 prediction intervals，而不是单点或二选一答案，专门暴露极端量级下的系统性过度自信。
+- [QuantSightBench](https://arxiv.org/abs/2604.15859)（[项目页与榜单](https://quantsightbench.com/)；[开源代码](https://github.com/aisa-group/quantsightbench)）：评什么：连续数值量的区间预测与不确定性校准。核心思想：要求模型给出 prediction intervals，而不是单点或二选一答案，专门暴露极端量级下的系统性过度自信。
+- [CT Open](https://arxiv.org/abs/2604.16742)：评什么：通过开放平台评测 live clinical-trial outcome prediction。核心思想：在试验结果公布前对预测进行可审计记录，为未来预测系统提供特定领域、时间敏感的 benchmark。
+- [Time Series Augmented Generation for Financial Applications](https://arxiv.org/abs/2604.19633)：评什么：评测 LLM agent 的金融时间序列推理；核心思想是隔离查询解析和计算编排能力，而不只看最终预测精度。
+- [Energy-Arena: A Dynamic Benchmark for Operational Energy Forecasting](https://arxiv.org/abs/2604.24705)：用明确任务、协议或数据集评测forecasting and future prediction。
 - [Bench to the Future 2（BTF-2）](https://arxiv.org/abs/2604.26106)（[FutureSearch Evaluations](https://evals.futuresearch.ai/)）：评什么：forecasting agent 的战略推理与研究-判断分解。核心思想：用 1,417 个 pastcasting 问题、冻结的 1,500 万文档研究语料和完整推理轨迹，区分 agent 是输在信息研究、概率判断还是黑天鹅/激励建模。
 - [FutureWorld](https://arxiv.org/abs/2604.26733)：评什么：面向未来预测的 live agentic RL 环境。核心思想：把预测、结果兑现与参数更新接成闭环，用延迟真实结果回填奖励并重放轨迹，研究“预测-兑现-再学习”的在线改进。
-- [Foresight Arena](https://arxiv.org/abs/2605.00420)：评什么：大模型预测未来事件的开放式竞技场。核心思想：围绕动态问题、概率提交和后验兑现构建持续评测，和 ForecastBench/FutureX 一起构成“live forecasting eval”主线。
+- [KellyBench](https://arxiv.org/abs/2604.27865)（[results leaderboard](https://www.gr.inc/releases/introducing-kellybench)）：评测体育博彩市场中的长程顺序决策；核心思想是在赛季级仿真中提供赔率、阵容、统计数据、资金约束和延迟结果，测试 agent 能否把预测转成校准行动和长期收益。
+- [Foresight Arena](https://arxiv.org/abs/2605.00420)（[arena](https://foresightarena.xyz/)）：评测 AI forecasting agent 在 live prediction market 上的概率预测能力；核心思想是用链上 commit-reveal 协议提交预测，并用 Brier Score 与 Alpha Score 区分诚实概率报告和相对市场共识的预测优势。
 - [OracleProto](https://arxiv.org/abs/2605.03762)：评什么：LLM-native forecasting 的可复现 pastcasting。核心思想：用知识截止时间与时间遮罩构造可重复预测协议，专门诊断 hindsight leakage 和检索时序污染。
+- [FAME: Forecasting Academic Impact via Continuous-Time Manifold Evolution](https://arxiv.org/abs/2605.07208)：用学术影响预测作为评估研究想法判断的代理任务；核心思想是把预测与后续引用或影响信号对照。
+- [Teaching Large Language Models When Not to Know: Learning Temporal Critique for Ex-Ante Reasoning](https://arxiv.org/abs/2605.14636)：temporal critique for ex-ante reasoning 检验模型是否使用未来知识，适合 future/temporal prediction 评测。
 - [FutureSim](https://arxiv.org/abs/2605.15188)：评什么：按真实新闻与事件兑现时间线回放来评测自适应 agent。核心思想：让 agent 在知识截止时间之后、按时间顺序接收 2026 年 1 到 3 月新闻并预测事件，测试长时程适应、记忆、搜索和不确定性校准。
+- [Metaculus FutureEval](https://www.metaculus.com/futureeval/)（[方法说明](https://www.metaculus.com/futureeval/methodology/)）：评什么：Metaculus 于 2026-02 发布的持续未来事件预测榜单。核心思想：把开放 Metaculus 预测题持续喂给主流 AI 模型，并和 Metaculus 社群/专业预测者比较校准、覆盖率与随模型发布时间变化的真实预测表现；该线索可由 BTF-2 对 Metaculus AI Benchmarking Series 的引用继续展开得到。
+- [Echo](https://echo.unipat.ai/)（[官方文章](https://unipat.ai/blog/Echo)）：评什么：动态未来预测 leaderboard 与训练系统，覆盖金融、政治、加密、体育和电竞等域。核心思想：用多点对齐 Elo、Train-on-Future 和 AI-native prediction API 组成完整预测闭环，解决不同模型预测时间点不齐与训练信号滞后问题。

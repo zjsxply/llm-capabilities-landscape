@@ -3,6 +3,47 @@
 - [ReAct](https://arxiv.org/abs/2210.03629)（[开源代码](https://github.com/ysymyth/ReAct)）：通用 `think -> act -> observe` 框架；在多语场景更像“可控的跨语工作流骨架”，便于把 `语种检测 -> 翻译/回译 -> 检索/查证 -> 输出` 显式化，而不是把跨语处理隐含在一次回答里。
 - [Reflexion](https://arxiv.org/abs/2303.11366)（[开源代码](https://github.com/noahshinn/reflexion)）：通过失败反思与记忆回写迭代改进回答；在多语任务里可用于跨轮修复“术语错译、约束遗漏、实体错配”等错误。
 - [DSPy](https://arxiv.org/abs/2310.03714)（[开源代码](https://github.com/stanfordnlp/dspy)）：把 `翻译 -> 检索 -> 作答 -> 校验` 组织为可编排 program；在多语任务里适合固化跨语检索与证据一致性约束。
+- [Enhancing Multilingual Information Retrieval in Mixed Human Resources Environments: A RAG Model Implementation for Multicultural Enterprise](https://arxiv.org/abs/2401.01511)：实现企业 HR 场景的多语 RAG 管线，让多文化员工用各自语言检索内部政策和人员信息。
+- [Improving LLM-based Machine Translation with Systematic Self-Correction](https://arxiv.org/abs/2402.16379)：把 LLM 机器翻译包装成系统化自纠错流程，先检测翻译错误，再修订候选译文，并在不重训底座模型的情况下迭代。
+- [Decomposed Prompting: Unveiling Multilingual Linguistic Structure Knowledge in English-Centric Large Language Models](https://arxiv.org/abs/2402.18397)：把多语语言结构探测拆成提示子任务，用于暴露英语中心 LLM 对非英语句法和形态知识的掌握情况。
+- [Retrieving Examples from Memory for Retrieval Augmented Neural Machine Translation: A Systematic Comparison](https://arxiv.org/abs/2404.02835)：系统比较检索增强 NMT 的翻译记忆样例选择策略，评估不同记忆检索方式对句级翻译质量的影响。
+- [LLM-Assisted Rule Based Machine Translation for Low/No-Resource Languages](https://arxiv.org/abs/2405.08997)：用 LLM 辅助编写和改进低资源语言的规则式 MT 资源，把显式语言规则保留在翻译流程中。
+- [Context-aware and Style-related Incremental Decoding framework for Discourse-Level Literary Translation](https://arxiv.org/abs/2409.16539)：在文学翻译中引入带篇章上下文和风格约束的增量解码，以保持跨句连贯性和作者风格。
+- [Multilingual Retrieval Augmented Generation for Culturally-Sensitive Tasks: A Benchmark for Cross-lingual Robustness](https://arxiv.org/abs/2410.01171)：构建文化敏感任务的多语 RAG 评测，重点压力测试跨语言检索鲁棒性和文化语境下的答案生成。
+- [DelTA: An Online Document-Level Translation Agent Based on Multi-Level Memory](https://arxiv.org/abs/2410.08143)：实现带多级记忆的在线文档级翻译智能体。
+- [Kahani: Culturally-Nuanced Visual Storytelling Tool for Non-Western Cultures](https://arxiv.org/abs/2410.19419)：提供交互式视觉叙事工具，引导用户围绕非西方文化语境创作更具文化细节的故事。
+- [CRAT: A Multi-Agent Framework for Causality-Enhanced Reflective and Retrieval-Augmented Translation with Large Language Models](https://arxiv.org/abs/2410.21067)：协调因果分析、检索增强、反思和翻译 agent，用显式错误推理修订 LLM 机器翻译输出。
+- [GlotCC: An Open Broad-Coverage CommonCrawl Corpus and Pipeline for Minority Languages](https://arxiv.org/abs/2410.23825)：发布面向少数语言的 CommonCrawl 语料和过滤管线，更像多语数据基础设施而不是 agent harness。
+- [M-MAD: Multidimensional Multi-Agent Debate for Advanced Machine Translation Evaluation](https://arxiv.org/abs/2412.20127)：让多个辩论 agent 从充分性、流畅性、术语等机器翻译质量维度评估译文，再形成最终判断。
+- [TransAgents: Build Your Translation Company with Language Agents](https://doi.org/10.18653/v1/2024.emnlp-demo.14)：用专门的语言 agent 角色模拟翻译公司，覆盖翻译、编辑、审校和项目协调流程。
+- [Doc-Guided Sent2Sent++: A Sent2Sent++ Agent with Doc-Guided memory for Document-level Machine Translation](https://arxiv.org/abs/2501.08523)：为句到句翻译智能体加入文档引导记忆，使文档级机器翻译成为显式的记忆增强多语种工作流。
+- [Edit Once, Update Everywhere: A Simple Framework for Cross-Lingual Knowledge Synchronization in LLMs](https://arxiv.org/abs/2502.14645)：通过一次事实知识编辑同步多语言模型行为，关注编辑结果如何跨语言传播。
+- [LegalRAG: A Hybrid RAG System for Multilingual Legal Information Retrieval](https://arxiv.org/abs/2504.16121)：结合词法检索、稠密检索和生成模块做多语法律检索，使法律回答 grounded 在多语法规或案例材料中。
 - [MAATS](https://arxiv.org/abs/2505.14848)：基于 MQM 评估的多智能体自动翻译框架。核心思路：把翻译、质量分析和修订拆分为协作角色，使多语言生成能够按照显式标准改进和审计。
+- [HiMATE: A Hierarchical Multi-Agent Framework for Machine Translation Evaluation](https://arxiv.org/abs/2505.16281)：用层级多智能体框架进行机器翻译评估。
+- [TACTIC: Translation Agents with Cognitive-Theoretic Interactive Collaboration](https://arxiv.org/abs/2506.08403)：面向机器翻译的多代理 harness。核心思想是把翻译拆成有认知理论依据的协作子任务，通过交互完成修订与校验。
 - [EfficientXLang](https://arxiv.org/abs/2507.00246)（[开源代码](https://github.com/microsoft/EfficientXLang)）：跨语言 test-time reasoning harness；核心思想是把同一推理任务路由到更 token-efficient 的语言执行，再检查准确率与语言一致性是否保持，适合做多语推理成本/质量权衡实验。
+- [Pun Intended: Multi-Agent Translation of Wordplay with Contrastive Learning and Phonetic-Semantic Embeddings](https://arxiv.org/abs/2507.06506)：提供规划、记忆、验证、工具调用或运行时编排，服务于多语言能力，可补充智能体式翻译、多智能体翻译和显式多语言工作流编排。
+- [Checklist Engineering Empowers Multilingual LLM Judges](https://arxiv.org/abs/2507.06774)：用 checklist engineering 构建免训练的多语 LLM-as-a-Judge 流程，在不做目标语言微调的情况下改进点式和成对评测。
+- [ViDove: A Translation Agent System with Multimodal Context and Memory-Augmented Reasoning](https://arxiv.org/abs/2507.07306)：它把跨语言任务组织成 agent workflow，而不是单次翻译模型评测，适合补充 multilingual Agent Harness。
+- [Robust Native Language Identification through Agentic Decomposition](https://arxiv.org/abs/2509.16666)：把母语识别拆解为多个 agentic 语言证据检查步骤，而不是一次性预测作者母语。
+- [Selective Translation for multilingual reasoning](https://arxiv.org/abs/2510.27269)：一种缓解多语种推理差距的测试时策略。核心思想是先检测理解失败，只在需要时插入英文翻译，以较少翻译量接近全量翻译的效果。
+- [RACQC: Advanced Retrieval-Augmented Generation for Chinese Query Correction](https://doi.org/10.18653/v1/2025.findings-emnlp.36)：用检索增强生成改写中文查询，通过检索证据和查询纠错上下文约束修正结果。
+- [AgriGPT-Omni: A Unified Speech–Vision–Text Framework for Multilingual Agricultural Intelligence](https://arxiv.org/abs/2512.10624)：统一语音、视觉和文本接口用于多语农业智能问答，更接近多模态领域系统而非通用 agent harness。
 - [LITMUS++](https://doi.org/10.18653/v1/2025.ijcnlp-demo.6)：在低资源语言直接基准结果稀缺时，让 Agent 跨任务和模型整合证据并预测表现。
+- [Agent-SiMT: Agent-Assisted Simultaneous Translation With Large Language Models](https://doi.org/10.1109/taslpro.2025.3566220)：把同声传译建模为 agent 辅助流程，在延迟约束下管理局部上下文、预测和增量输出。
+- [Building from Scratch: A Multi-Agent Framework with Human-in-the-Loop for Multilingual Legal Terminology Mapping](https://arxiv.org/abs/2512.12950)：协调多个 agent 和人工审阅者从零构建多语法律术语映射，结合候选抽取、验证和专家修正。
+- [Agent for Anti-Discriminatory Language (AAL) A Human-Centered AI Approach to Discriminatory Speech in Italian](https://doi.org/10.1109/ieee-ch65308.2025.11279699)：提出面向意大利语歧视性言论识别与回应的人本 agent；其多语页适配性主要来自特定语言安全工具属性。
+- [Impact of Large Language Models on Conversational Translation: Towards Translation Agents](https://doi.org/10.1109/aciis66255.2025.11402976)：讨论会话翻译 agent 如何维护对话上下文、说话人意图和轮次级翻译决策，而不是只做孤立句子翻译。
+- [Revisiting Round-Trip Translation with LLMs and Agentic Translation](https://doi.org/10.1109/seai65851.2025.11108752)：提供规划、记忆、验证、工具调用或运行时编排，服务于多语言能力，可补充智能体式翻译、多智能体翻译和显式多语言工作流编排。
+- [Multi-agentMT: Deploying AI Agent in the WMT25 Shared Task](https://doi.org/10.18653/v1/2025.wmt-1.53)：在 WMT25 机器翻译共享任务中部署 AI 智能体方法。
+- [NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning](https://arxiv.org/abs/2601.03790)：构建带 Wiktionary 检索工具、多语新词数据和强化学习训练的新词感知翻译 agent，把词汇查询显式纳入机器翻译流程。
+- [AWED-FiNER: Agents, Web applications, and Expert Detectors for Fine-grained Named Entity Recognition across 36 Languages for 6.6 Billion Speakers](https://arxiv.org/abs/2601.10161)：可作为多语言能力方向的外部工作流、编排、记忆或执行贡献候选；其主题直接落在该能力页范围内，归入 `Agent Harness` 轨道。
+- [Mitigating Cultural Bias in LLMs via Multi-Agent Cultural Debate](https://arxiv.org/abs/2601.12091)：让代表不同文化视角的 agent 辩论模型回答，在最终生成前削弱文化偏见假设。
+- [Gained in Translation: Privileged Pairwise Judges Enhance Multilingual Reasoning](https://arxiv.org/abs/2601.18722)：提供多语言推理 harness；核心思想是利用翻译证据、judge 或验证循环提升跨语言推理。
+- [CHORUS](https://arxiv.org/abs/2602.19016)：面向专业翻译的 effort-aware 多 agent 工作流。核心思想是协调 AI 建议、修订角色与译者投入，使高风险翻译能同时优化质量和人工负担。
+- [Toward Agentic RAG for Ukrainian](https://arxiv.org/abs/2604.14896)：将 Agentic RAG 适配到乌克兰语场景。
+- [FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation](https://arxiv.org/abs/2604.21420)：用多智能体框架缓解翻译质量估计中的性别偏见。
+- [CORAL](https://arxiv.org/abs/2604.25676)：面向文化对齐多语 RAG 的自适应检索循环。核心思想是根据文化语境调整检索空间和证据路径，而不是固定使用一种多语嵌入或翻译策略。
+- [MAFIA-NeT: Multi-Agent Framework for Interactive Agricultural Negotiation and Trading Systems](https://doi.org/10.5220/0014484100004052)：面向农业谈判与交易设计多智能体协商系统；除非系统明确支持跨语言谈判，否则与多语能力关系较弱。
+- [CogSQL: A Cognitive Framework for Enhancing Large Language Models in Text-to-SQL Translation](https://doi.org/10.1609/aaai.v39i24.34770)：为 text-to-SQL 生成加入认知拆解和验证步骤，当前多语言归类可能只是由“translation”一词触发的误配。

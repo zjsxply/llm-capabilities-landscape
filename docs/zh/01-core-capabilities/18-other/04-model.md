@@ -1,0 +1,3538 @@
+# 1.18.4 Model
+
+- [A Siamese-based Verification System for Open-set Architecture Attribution of Synthetic Images](https://arxiv.org/abs/2307.09822)：训练 Siamese 验证器，用图像对相似性信号把合成图像归因到训练中未见过的生成器架构。
+- [Adapting Large Language Models via Reading Comprehension](https://arxiv.org/abs/2309.09530)：把任务数据改写为阅读理解样例，用问答监督作为轻量微调路线来适配大语言模型。
+- [CACFNet: Cross-Modal Attention Cascaded Fusion Network for RGB-T Urban Scene Parsing](https://doi.org/10.1109/tiv.2023.3314527)：用级联跨模态注意力融合 RGB 与热红外特征，以提升复杂光照和天气下的城市场景解析。
+- [Machine Unlearning via Representation Forgetting With Parameter Self-Sharing](https://doi.org/10.1109/tifs.2023.3331239)：通过抑制目标表示并共享参数来移除指定知识，同时尽量保留模型的其他能力。
+- [Joint inter-word and inter-sentence multi-relation modeling for summary-based recommender system](https://doi.org/10.1016/j.ipm.2023.103631)：联合建模词间和句间关系，让摘要推荐系统同时利用局部短语线索与文档级语义。
+- [FedSea: Federated Learning via Selective Feature Alignment for Non-IID Multimodal Data](https://doi.org/10.1109/tmm.2023.3340109)：在客户端之间选择性对齐多模态特征，使联邦训练能更好处理非独立同分布数据和模态缺失。
+- [Benchmarking Large Language Models on Controllable Generation under Diversified Instructions](https://arxiv.org/abs/2401.00690)：测试大语言模型在多样化指令下执行可控生成的能力，揭示控制属性在不同提示形式中的失效位置。
+- [Quokka: An Open-source Large Language Model ChatBot for Material Science](https://arxiv.org/abs/2401.01089)：用材料科学指令数据构建开源聊天模型，使 LLM 助手能回答材料术语、合成路线和性质相关问题。
+- [Unifying Structured Data as Graph for Data-to-Text Pre-Training](https://arxiv.org/abs/2401.01183)：把表格、树和其他结构化输入统一表示为图，为数据到文本预训练提供共享结构接口。
+- [A Comprehensive Study of Knowledge Editing for Large Language Models](https://arxiv.org/abs/2401.01286)：从可靠性、泛化、局部性和可迁移性比较知识编辑方法，梳理修改 LLM 事实时的实际权衡。
+- [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335)：利用自博弈生成的偏好数据微调弱语言模型，使其在不完全依赖外部人工标注的情况下变成更强助手。
+- [Large Language Models Relearn Removed Concepts](https://arxiv.org/abs/2401.01814)：展示被遗忘概念会在继续训练或提示后重新出现，说明抗重新学习是模型编辑的重要要求。
+- [A Vision Check-up for Language Models](https://arxiv.org/abs/2401.01862)：探查语言模型如何处理视觉概念和视觉推理表述，区分文本中学到的视觉知识与真正接地的感知能力。
+- [Theoretical guarantees on the best-of-n alignment policy](https://arxiv.org/abs/2401.01879)：分析 best-of-n sampling 作为推理时对齐策略的理论性质，修正常用 KL 散度公式，并给出相对参考策略可达到的胜率上界。
+- [LLaVA-Phi: Efficient Multi-Modal Assistant with Small Language Model](https://arxiv.org/abs/2401.02330)：把 LLaVA 式视觉指令微调与小型 Phi 语言主干结合，构建高效多模态助手。
+- [TinyLlama: An Open-Source Small Language Model](https://arxiv.org/abs/2401.02385)：训练并发布 1.1B 参数的 Llama 风格小模型，在万亿 token 规模上提供可复现的小语言模型基线。
+- [LLM Augmented LLMs: Expanding Capabilities through Composition](https://arxiv.org/abs/2401.02412)：提出 CALM，通过在已有大语言模型与专门模型之间加入 cross-attention 来组合表示，避免为新增能力重新训练单体模型。
+- [LLaMA Pro: Progressive LLaMA with Block Expansion](https://arxiv.org/abs/2401.02415)：在 LLaMA2 主干上扩展新的 Transformer block，并只用代码与数学语料后预训练新增 block，以增加能力同时缓解灾难性遗忘。
+- [CoCoT: Contrastive Chain-of-Thought Prompting for Large Multimodal Models with Multiple Image Inputs](https://arxiv.org/abs/2401.02582)：用对比式思维链样例帮助多模态模型在回答前比较多张图像。
+- [VoxelNextFusion: A Simple, Unified, and Effective Voxel Fusion Framework for Multimodal 3-D Object Detection](https://arxiv.org/abs/2401.02702)：在统一体素检测管线中融合激光雷达和相机信号，用于多模态三维目标检测。
+- [Parameter-Efficient Sparsity Crafting from Dense to Mixture-of-Experts for Instruction Tuning on General Tasks](https://arxiv.org/abs/2401.02731)：用参数高效更新把密集指令微调模型转向稀疏专家混合行为，而不是重新训练完整模型。
+- [DeepSeek LLM: Scaling Open-Source Language Models with Longtermism](https://arxiv.org/abs/2401.02954)：描述 DeepSeek LLM 的开源语言模型扩展选择，补充通用模型族参考。
+- [TeleChat Technical Report](https://arxiv.org/abs/2401.03804)：记录 TeleChat 中英双语聊天模型族的预训练、对齐和评测选择，是开放对话模型参考。
+- [A Minimaximalist Approach to Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2401.04056)：提出 Self-Play Preference Optimization，把偏好学习表述为两个策略之间的零和博弈，使 RLHF 能处理非马尔可夫、非传递和随机偏好，并且不需要单独训练奖励模型。
+- [MoE-Mamba: Efficient Selective State Space Models with Mixture of Experts](https://arxiv.org/abs/2401.04081)：将 Mamba selective state-space 层与 mixture-of-experts 路由结合，在更少训练步数下达到 Mamba 水平，同时保留高效推理特性。
+- [Mixtral of Experts](https://arxiv.org/abs/2401.04088)：记录 Mixtral 稀疏专家混合语言模型架构，是能力页可复用的模型侧扩展范式。
+- [Chain of LoRA: Efficient Fine-tuning of Language Models via Residual Learning](https://arxiv.org/abs/2401.04151)：用 Frank-Wolfe 风格的残差学习循环反复训练并合并 LoRA 模块，在不增加推理时适配器的情况下缩小与全参数微调的差距。
+- [MERA: A Comprehensive LLM Evaluation in Russian](https://arxiv.org/abs/2401.04531)：提供俄语大语言模型评测套件，覆盖推理、知识、安全和语言特定行为。
+- [Effective pruning of web-scale datasets based on complexity of concept clusters](https://arxiv.org/abs/2401.04578)：把 CLIP 式数据集剪枝扩展到 LAION，并依据概念簇复杂度设置按概念变化的剪枝率，以降低训练成本同时保留有效的多模态数据。
+- [Lightning Attention-2: A Free Lunch for Handling Unlimited Sequence Lengths in Large Language Models](https://arxiv.org/abs/2401.04658)：重构线性注意力以支持超长序列，在保持 Transformer 式建模的同时提升训练和推理效率。
+- [Cross-modal Retrieval for Knowledge-based Visual Question Answering](https://arxiv.org/abs/2401.05736)：在回答知识密集型视觉问题前跨模态检索外部视觉和文本知识。
+- [LLM-as-a-Coauthor: Can Mixed Human-Written and Machine-Generated Text Be Detected?](https://arxiv.org/abs/2401.05952)：研究人类与 LLM 混合写作文本的检测问题，说明混合作者场景会削弱常规生成文本检测假设。
+- [Investigating Data Contamination for Pre-training Language Models](https://arxiv.org/abs/2401.06059)：从零预训练一组 GPT-2 变体，并控制输入文本污染与标准答案污染，用来测量 benchmark 泄漏对下游分数的影响。
+- [Secrets of RLHF in Large Language Models Part II: Reward Modeling](https://arxiv.org/abs/2401.06080)：研究 RLHF 中奖励模型的失效模式，并结合数据过滤与分布感知的 reward modeling 来提升迭代对齐时的泛化能力。
+- [Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint](https://arxiv.org/abs/2401.06081)：提出 RLMEC，以最小编辑约束训练生成式奖励模型重写错误答案，并据此提供 token 级奖励，让 RL 更新聚焦关键错误 token。
+- [Transformers are Multi-State RNNs](https://arxiv.org/abs/2401.06104)：把 Transformer 计算解释为多状态循环过程，连接注意力动态与循环序列建模。
+- [APAR: LLMs Can Do Auto-Parallel Auto-Regressive Decoding](https://arxiv.org/abs/2401.06761)：通过指令微调让 LLM 规划层次化生成并并行输出相互独立的片段，减少自回归解码步数，并可与 speculative decoding 叠加。
+- [AI Hallucinations: A Misnomer Worth Clarifying](https://arxiv.org/abs/2401.06796)：把“幻觉”重新界定为事实性和接地失败的多个子类，澄清哪些错误需要模型、数据或评测层面的修复。
+- [E^2-LLM: Efficient and Extreme Length Extension of Large Language Models](https://arxiv.org/abs/2401.06951)：用高效训练配方扩展 LLM 上下文长度，面向极长输入而不是完整长上下文重训。
+- [Bridging the Preference Gap between Retrievers and LLMs](https://arxiv.org/abs/2401.06954)：把检索器与 LLM 答案偏好对齐，使检索段落更符合下游生成器的使用方式。
+- [Extending LLMs' Context Window with 100 Samples](https://arxiv.org/abs/2401.07004)：展示小数据上下文扩展配方，用约一百个长样例延长 LLM 的可用上下文窗口。
+- [Evolving code with a large language model](https://arxiv.org/abs/2401.07102)：用 LLM 驱动的演化循环变异并选择代码候选，把生成过程视为迭代程序搜索。
+- [Model Editing at Scale leads to Gradual and Catastrophic Forgetting](https://arxiv.org/abs/2401.07453)：说明大规模反复模型编辑会从渐进遗忘累积到灾难性遗忘，影响被编辑事实之外的能力。
+- [SAPT: A Shared Attention Framework for Parameter-Efficient Continual Learning of Large Language Models](https://arxiv.org/abs/2401.08295)：在任务间共享注意力组件，以参数高效方式支持 LLM 持续学习并限制遗忘。
+- [DoraemonGPT: Toward Understanding Dynamic Scenes with Large Language Models](https://arxiv.org/abs/2401.08392)：把 LLM 推理与动态场景理解模块结合，使模型能描述并查询随时间变化的事件。
+- [EmoLLMs: A Series of Emotional Large Language Models and Annotation Tools for Comprehensive Affective Analysis](https://arxiv.org/abs/2401.08508)：训练情感分析专用 LLM，并配套标注工具，覆盖情绪识别、原因检测和情感回应生成。
+- [Scalable Pre-training of Large Autoregressive Image Models](https://arxiv.org/abs/2401.08541)：扩展自回归图像模型预训练，把图像 token 作为主要生成序列来建模。
+- [Tuning Language Models by Proxy](https://arxiv.org/abs/2401.08565)：提出推理时适配方法，用小型已调优代理模型与未调优代理模型的输出分布差值，偏移黑盒大模型的预测分布。
+- [Deductive Closure Training of Language Models for Coherence, Accuracy, and Updatability](https://arxiv.org/abs/2401.08574)：利用语言模型从可信种子文档生成并验证蕴含文本，再用判定为正确的推断文本微调模型，以提高事实一致性和可更新性。
+- [EgoGen: An Egocentric Synthetic Data Generator](https://arxiv.org/abs/2401.08739)：生成第一人称视角合成数据，用于训练和评估模型的自我中心感知能力，减少对昂贵采集视频的依赖。
+- [Beyond Anti-Forgetting: Multimodal Continual Instruction Tuning with Positive Forward Transfer](https://arxiv.org/abs/2401.09181)：诊断多模态持续指令微调中的输入嵌入分布错配，并提出 prompt tuning 方法，在减轻遗忘的同时改善对未来任务的正向迁移。
+- [BENO: Boundary-embedded Neural Operators for Elliptic PDEs](https://arxiv.org/abs/2401.09323)：把边界条件直接嵌入神经算子，以提升不规则区域上椭圆型偏微分方程的求解精度。
+- [Self-Rewarding Language Models](https://arxiv.org/abs/2401.10020)：训练 LLM 为指令跟随样本生成自身奖励，使模型能在没有固定外部奖励模型的情况下迭代自我改进。
+- [Beyond Traditional Benchmarks: Analyzing Behaviors of Open LLMs on Data-to-Text Generation](https://arxiv.org/abs/2401.10186)：从忠实性、结构利用和可控性等行为维度分析开放 LLM 的数据到文本生成，而不只看汇总分数。
+- [OMG-Seg: Is One Model Good Enough for all Segmentation?](https://arxiv.org/abs/2401.10229)：构建统一分割模型处理多种分割任务，避免为每类任务训练独立专家。
+- [Critical Data Size of Language Models from a Grokking Perspective](https://arxiv.org/abs/2401.10463)：从 grokking 行为研究语言模型的数据阈值，把延迟泛化与训练数据规模联系起来。
+- [Knowledge Fusion of Large Language Models](https://arxiv.org/abs/2401.10491)：通过蒸馏多个源 LLM 的生成分布，把它们的能力转移到一个目标模型中，从而绕开不同架构之间直接权重合并的问题。
+- [Sowing the Wind, Reaping the Whirlwind: The Impact of Editing Language Models](https://arxiv.org/abs/2401.10647)：考察语言模型编辑的非预期下游影响，说明局部事实修改可能扰动更广泛的生成行为。
+- [Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads](https://arxiv.org/abs/2401.10774)：为 LLM 增加多个解码头，并用树形注意力一次提出和验证多个后续 token，在不维护独立 draft model 的情况下加速自回归推理。
+- [Metacognition is all you need? Using Introspection in Generative Agents to Improve Goal-directed Behavior](https://arxiv.org/abs/2401.10910)：为生成式智能体加入内省式自我评估，使其能修订计划并改善目标导向行为。
+- [Crowd-PrefRL: Preference-Based Reward Learning from Crowds](https://arxiv.org/abs/2401.10941)：把 preference-based reinforcement learning 扩展到群体反馈场景，通过建模多个用户群体并聚合行为对偏好，避免把人类反馈假设为单一奖励来源。
+- [Inference without Interference: Disaggregate LLM Inference for Mixed Downstream Workloads](https://arxiv.org/abs/2401.11181)：为混合 LLM 工作负载拆分推理资源，减少预填充、解码和下游服务之间的延迟干扰。
+- [Identifying and Analyzing Performance-Critical Tokens in Large Language Models](https://arxiv.org/abs/2401.11323)：识别对模型表现影响异常大的 token，为分析 LLM 失败和干预提供 token 级视角。
+- [Language Models as Hierarchy Encoders](https://arxiv.org/abs/2401.11374)：使用语言模型表示编码层级结构，检验预训练模型捕获父子关系和分类关系的能力。
+- [Scalable High-Resolution Pixel-Space Image Synthesis with Hourglass Diffusion Transformers](https://arxiv.org/abs/2401.11605)：提出沙漏形 Diffusion Transformer，在像素空间高分辨率图像合成中更可扩展地分配计算。
+- [Blinded by Generated Contexts: How Language Models Merge Generated and Retrieved Contexts for Open-Domain QA?](https://arxiv.org/abs/2401.11911)：研究 LLM 在开放域问答中如何合并检索证据与自生成上下文，揭示生成上下文压过证据时的失效模式。
+- [West-of-N: Synthetic Preferences for Self-Improving Reward Models](https://arxiv.org/abs/2401.12086)：从 best-of-n 和 worst-of-n 样本构造合成偏好比较，用于训练可自我改进的奖励模型。
+- [Universal Neurons in GPT2 Language Models](https://arxiv.org/abs/2401.12181)：在多个 GPT-2 变体中发现功能相似的神经元，支持神经元级模型比较和干预。
+- [WARM: On the Benefits of Weight Averaged Reward Models](https://arxiv.org/abs/2401.12187)：对多个微调后的奖励模型做权重平均，使 RLHF 奖励在分布偏移下更稳定，同时避免预测级 ensemble 的服务成本。
+- [APT: Adaptive Pruning and Tuning Pretrained Language Models for Efficient Training and Inference](https://arxiv.org/abs/2401.12200)：结合自适应剪枝与微调，压缩预训练语言模型以降低训练和推理成本。
+- [Small Language Model Meets with Reinforced Vision Vocabulary](https://arxiv.org/abs/2401.12503)：通过强化视觉词表提升小型多模态语言模型，而不是单纯扩大语言主干。
+- [Can Large Language Models Write Parallel Code?](https://arxiv.org/abs/2401.12554)：评测并分析 LLM 生成并行代码的能力，关注模型在使用并发结构时能否保持正确性。
+- [LLMCheckup: Conversational Examination of Large Language Models via Interpretability Tools and Self-Explanations](https://arxiv.org/abs/2401.12576)：把可解释性工具与模型自解释结合到对话式界面中，用于检查 LLM 行为。
+- [SLANG: New Concept Comprehension of Large Language Models](https://arxiv.org/abs/2401.12585)：测试 LLM 如何习得并使用新定义概念，探查超出记忆词汇的新概念学习。
+- [Transformer-Based Models Are Not Yet Perfect At Learning to Emulate Structural Recursion](https://arxiv.org/abs/2401.12947)：说明 Transformer 模型在稳健模拟结构递归方面仍有困难，尤其是在组合泛化测试中。
+- [Meta-Prompting: Enhancing Language Models with Task-Agnostic Scaffolding](https://arxiv.org/abs/2401.12954)：用任务无关的元提示围绕基础 LLM 组织分解、验证和综合，而不需要任务特定微调。
+- [Deep Learning Model Reuse in the HuggingFace Community: Challenges, Benefit and Trends](https://arxiv.org/abs/2401.13177)：分析 Hugging Face 社区的模型复用模式，识别模型生态中的收益、依赖风险和维护挑战。
+- [ULTRA: Unleash LLMs' Potential for Event Argument Extraction through Hierarchical Modeling and Pair-wise Self-Refinement](https://arxiv.org/abs/2401.13218)：结合层级事件建模与成对自我修正，提升 LLM 在事件论元抽取中的表现。
+- [Finetuning foundation models for joint analysis optimization in High Energy Physics](https://arxiv.org/abs/2401.13536)：微调基础模型以联合优化高能物理分析中的选择、推断和领域目标。
+- [MambaByte: Token-free Selective State Space Model](https://arxiv.org/abs/2401.13660)：将 Mamba 适配为 byte-level 自回归语言模型，移除 subword tokenization，并用定长 state-space 记忆处理更长的原始字节序列。
+- [LocMoE: A Low-overhead MoE for Large Language Model Training](https://arxiv.org/abs/2401.13920)：提出 locality-aware 的 MoE 专家路由，在保持负载均衡的同时把部分跨节点 all-to-all 通信转为节点内通信，降低 LLM 训练开销。
+- [Routoo: Learning to Route to Large Language Models Effectively](https://arxiv.org/abs/2401.13979)：学习把用户请求路由到不同 LLM 的时机，从而在模型选择之间平衡成本与质量。
+- [Towards Consistent Natural-Language Explanations via Explanation-Consistency Finetuning](https://arxiv.org/abs/2401.13986)：构造相关样例的合成数据并微调 LLM，使其在相互关联的问题上生成一致解释，提升解释可靠性而不只追求单题流畅度。
+- [ConstraintChecker: A Plugin for Large Language Models to Reason on Commonsense Knowledge Bases](https://arxiv.org/abs/2401.14003)：把 LLM 输出与常识知识库约束进行校验，使推理结果能接受显式符号关系验证。
+- [Genie: Achieving Human Parity in Content-Grounded Datasets Generation](https://arxiv.org/abs/2401.14367)：用 LLM 辅助生成内容接地数据集，目标是在接地问答构造中达到接近人工的质量。
+- [TURNA: A Turkish Encoder-Decoder Language Model for Enhanced Understanding and Generation](https://arxiv.org/abs/2401.14373)：训练土耳其语 encoder-decoder 语言模型，用于低资源语言场景下的理解与生成。
+- [Prompt Design and Engineering: Introduction and Advanced Methods](https://arxiv.org/abs/2401.14423)：系统化提示设计方法，从基础指令模式扩展到分解、检索和评测等高级技术。
+- [Looking Right is Sometimes Right: Investigating the Capabilities of Decoder-only LLMs for Sequence Labeling](https://arxiv.org/abs/2401.14556)：研究 decoder-only LLM 的序列标注能力，说明右侧上下文访问会改变 token 级预测行为。
+- [Can LLMs Evaluate Complex Attribution in QA? Automatic Benchmarking using Knowledge Graphs](https://arxiv.org/abs/2401.14640)：利用知识图谱自动生成复杂归因检查，用于评估 LLM 问答判断是否引用了正确证据。
+- [Airavata: Introducing Hindi Instruction-tuned LLM](https://arxiv.org/abs/2401.15006)：用印地语指令数据微调开放 LLM，提升印地语开放域对话和任务跟随能力。
+- [EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/abs/2401.15077)：在 speculative sampling 中预测未来隐藏特征而不只是 token，从而提升草稿验证效率。
+- [Large Language Model Guided Knowledge Distillation for Time Series Anomaly Detection](https://arxiv.org/abs/2401.15123)：用 LLM 指导知识蒸馏到时间序列异常检测器，将语义先验迁移到专门检测模型。
+- [Efficient Tuning and Inference for Large Language Models on Textual Graphs](https://arxiv.org/abs/2401.15569)：为文本图调优 LLM，并降低训练和推理阶段的图 token 开销。
+- [LLaVA-MoLE: Sparse Mixture of LoRA Experts for Mitigating Data Conflicts in Instruction Finetuning MLLMs](https://arxiv.org/abs/2401.16160)：在多模态指令微调中使用稀疏 LoRA 专家，把冲突数据类型路由到不同适配器。
+- [Iterative Data Smoothing: Mitigating Reward Overfitting and Overoptimization in RLHF](https://arxiv.org/abs/2401.16335)：迭代平滑偏好数据，以减轻 RLHF 中的奖励模型过拟合和策略过优化。
+- [Scaling Sparse Fine-Tuning to Large Language Models](https://arxiv.org/abs/2401.16405)：把稀疏微调扩展到大语言模型，只更新选定参数同时保持有竞争力的任务表现。
+- [InternLM-XComposer2: Mastering Free-form Text-Image Composition and Comprehension in Vision-Language Large Model](https://arxiv.org/abs/2401.16420)：增强 InternLM-XComposer 的自由文本图像组合与理解能力，提升视觉语言对齐。
+- [Improving Reinforcement Learning from Human Feedback with Efficient Reward Model Ensemble](https://arxiv.org/abs/2401.16635)：构建高效奖励模型集成以提升 RLHF 鲁棒性，同时避免大型集成的完整服务成本。
+- [Diff-eRank: A Novel Rank-Based Metric for Evaluating Large Language Models](https://arxiv.org/abs/2401.17139)：提出基于排序的 LLM 评测指标，关注相对排序质量而不只看绝对分数。
+- [MouSi: Poly-Visual-Expert Vision-Language Models](https://arxiv.org/abs/2401.17221)：在视觉语言模型中组合多个视觉专家，使专门感知能力可被路由到下游任务。
+- [Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens](https://arxiv.org/abs/2401.17377)：把 n-gram 语言模型扩展到万亿 token 语料和无界上下文查询，提供类似检索的非神经基线。
+- [Proximity QA: Unleashing the Power of Multi-Modal Large Language Models for Spatial Proximity Analysis](https://arxiv.org/abs/2401.17862)：使用多模态 LLM 回答空间邻近问题，需要比较视觉场景中对象的位置和距离。
+- [Convolution Meets LoRA: Parameter Efficient Finetuning for Segment Anything Model](https://arxiv.org/abs/2401.17868)：把卷积结构加入 LoRA 适配器，用于 Segment Anything Model 的参数高效微调。
+- [AEROBLADE: Training-Free Detection of Latent Diffusion Images Using Autoencoder Reconstruction Error](https://arxiv.org/abs/2401.17879)：通过模型自编码器重建误差检测 latent diffusion 图像，不需要额外训练检测器。
+- [Efficient Exploration for LLMs](https://arxiv.org/abs/2402.00396)：在决策问题中引导 LLM 采样信息量更高的备选项，减少重复高概率输出。
+- [Merging Multi-Task Models via Weight-Ensembling Mixture of Experts](https://arxiv.org/abs/2402.00433)：用专家混合结构中的权重集成合并多任务模型，而不是把所有参数平均成一个密集模型。
+- [Superfiltering: Weak-to-Strong Data Filtering for Fast Instruction-Tuning](https://arxiv.org/abs/2402.00530)：用弱模型筛选最有利于强模型的指令数据，在降低微调成本的同时保留收益。
+- [Transforming and Combining Rewards for Aligning Large Language Models](https://arxiv.org/abs/2402.00742)：研究奖励变换和奖励组合如何影响 LLM 对齐优化及最终策略行为。
+- [Dense Reward for Free in Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2402.00782)：从已有偏好模型中导出更密集的 token 级奖励信号，使 RLHF 更新不再过度稀疏。
+- [Graph-Mamba: Towards Long-Range Graph Sequence Modeling with Selective State Spaces](https://arxiv.org/abs/2402.00789)：把 selective state-space 建模用于图序列，以高效捕获长程图依赖。
+- [OLMo: Accelerating the Science of Language Models](https://arxiv.org/abs/2402.00838)：开放 OLMo 模型、训练配方和相关工件，使语言模型训练与评测细节可被复现和审计。
+- [Investigating Recurrent Transformers with Dynamic Halt](https://arxiv.org/abs/2402.00976)：比较深度递归与分块时间递归两类 Transformer 变体，并在 LRA、flip-flop 语言建模、ListOps 和逻辑推理诊断任务上评估全局均值动态停止机制。
+- [Compositional Generative Modeling: A Single Model is Not All You Need](https://arxiv.org/abs/2402.01103)：主张把较小生成模型组合成可编程系统，使模型能更高效泛化到训练中未见的数据区域和新任务。
+- [Simulation of Graph Algorithms with Looped Transformers](https://arxiv.org/abs/2402.01107)：证明带有图交互注意力头的 looped Transformer 可用与图规模无关的参数模拟 Dijkstra、广度优先搜索、深度优先搜索和 Kosaraju 等图算法。
+- [ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution](https://arxiv.org/abs/2402.01145)：把进化搜索与 LLM 反思生成的文字梯度结合，用于跨多类组合优化问题自动设计启发式算法。
+- [Efficient Causal Graph Discovery Using Large Language Models](https://arxiv.org/abs/2402.01207)：用广度优先 LLM 查询替代成对因果查询，把因果图发现的查询量从二次降为线性，并可结合观测数据提升效果。
+- [KTO: Model Alignment as Prospect Theoretic Optimization](https://arxiv.org/abs/2402.01306)：以 Kahneman-Tversky 效用目标对齐 LLM，只需“可取或不可取”的二元反馈，而不依赖成对偏好。
+- [LoTR: Low Tensor Rank Weight Adaptation](https://arxiv.org/abs/2402.01376)：用跨层共享的低秩张量分解表示参数更新，扩展 LoRA 并提升深层模型微调的参数效率。
+- [Integrating Large Language Models in Causal Discovery: A Statistical Causal Approach](https://arxiv.org/abs/2402.01454)：把统计因果发现与 LLM 提供的背景约束结合，通过 statistical causal prompting 和先验知识增强来改进因果图推断。
+- [OpenMoE: An Early Effort on Open Mixture-of-Experts Language Models](https://arxiv.org/abs/2402.01739)：发布 650M 到 34B 参数的可复现 decoder-only MoE LLM，并分析 token 驱动专门化和序列后部 token 被丢弃等路由现象。
+- [Rethinking Interpretability in the Era of Large Language Models](https://arxiv.org/abs/2402.01761)：综述解释 LLM 与用 LLM 做解释两条路线，强调自然语言解释、幻觉式理由和计算成本限制。
+- [BlackMamba: Mixture of Experts for State-Space Models](https://arxiv.org/abs/2402.01771)：把 Mamba 状态空间层与专家混合路由结合，并发布 BlackMamba checkpoint，用更大内存占用换取更低训练和推理 FLOPs。
+- [When Benchmarks are Targets: Revealing the Sensitivity of Large Language Model Leaderboards](https://arxiv.org/abs/2402.01781)：展示多选基准中的选项顺序和计分方式等小扰动可让 LLM leaderboard 排名最多移动八位。
+- [(A)I Am Not a Lawyer, But...: Engaging Legal Experts towards Responsible LLM Policies for Legal Advice](https://arxiv.org/abs/2402.01864)：通过法律专家工作坊评判真实用户咨询案例，形成面向法律建议回复的四维策略框架。
+- [LiPO: Listwise Preference Optimization through Learning-to-Rank](https://arxiv.org/abs/2402.01878)：把 LLM 对齐表述为 listwise ranking，使策略能直接从多个回答的排序列表学习，而不只依赖孤立成对偏好。
+- [Self-Debiasing Large Language Models: Zero-Shot Recognition and Reduction of Stereotypes](https://arxiv.org/abs/2402.01981)：用同一 LLM 的解释和重提示策略识别无效刻板假设，并在不更新参数的情况下降低偏见。
+- [Panacea: Pareto Alignment via Preference Adaptation for LLMs](https://arxiv.org/abs/2402.02030)：把对齐视为多维偏好优化，并通过基于 SVD 的低秩适配在线注入偏好向量。
+- [Calibration and Correctness of Language Models for Code](https://arxiv.org/abs/2402.02047)：建立代码生成模型校准评测框架，检验置信信号及 Platt scaling 后的置信度能否追踪生成代码正确性。
+- [Break the Sequential Dependency of LLM Inference Using Lookahead Decoding](https://arxiv.org/abs/2402.02057)：提出精确并行的 lookahead decoding，在不需要 draft model 或外部数据存储的情况下减少自回归解码步数。
+- [Are Large Language Models Good Prompt Optimizers?](https://arxiv.org/abs/2402.02101)：审计 LLM 自动提示优化，发现优化器反思常误判错误原因，或在单步 refinement 后无法生成合适提示。
+- [Selecting Large Language Model to Fine-tune via Rectified Scaling Law](https://arxiv.org/abs/2402.02314)：用 rectified scaling law 预测微调表现，并通过 pre-learned data size 建模微调中的 pre-power phase。
+- [NetLLM: Adapting Large Language Models for Networking](https://arxiv.org/abs/2402.02338)：把 LLM 适配为网络任务基础模型，目标是用一个模型覆盖预测和优化任务，而不是手工设计任务专用神经网络。
+- [Transolver: A Fast Transformer Solver for PDEs on General Geometries](https://arxiv.org/abs/2402.02366)：用 Physics-Attention 把网格点分入可学习的物理状态切片，在复杂几何上实现线性复杂度 PDE 求解。
+- [Timer: Generative Pre-trained Transformers Are Large Time Series Models](https://arxiv.org/abs/2402.02368)：把异构时间序列统一为共享 token 序列，并在最多十亿个时间点上预训练生成式 Transformer。
+- [DeLLMa: Decision Making Under Uncertainty with Large Language Models](https://arxiv.org/abs/2402.02392)：用决策理论驱动的多步推理流程包装 LLM 推理，使不确定条件下的选择更准确且便于人工审计。
+- [Aligner: Efficient Alignment by Learning to Correct](https://arxiv.org/abs/2402.02416)：训练小型即插即用模型学习 preferred 与 dispreferred 回答之间的残差修正，用于快速对齐上游模型。
+- [TimeSiam: A Pre-Training Framework for Siamese Time-Series Modeling](https://arxiv.org/abs/2402.02475)：在过去与当前子序列上预训练 Siamese 时间序列编码器，保留时间相关性而不是只依赖随机 masking。
+- [LHRS-Bot: Empowering Remote Sensing with VGI-Enhanced Large Multimodal Language Model](https://arxiv.org/abs/2402.02544)：用 VGI 增强的 LHRS-Align 与 LHRS-Instruct 数据构建遥感 MLLM，并结合多层视觉语言对齐和 curriculum learning。
+- [Generalizable Entity Grounding via Assistance of Large Language Model](https://arxiv.org/abs/2402.02555)：结合 LMM、类别无关分割、多模态特征融合和 colormap 编码 mask，把长 caption 中的名词接地到实体区域。
+- [Vision-Language Models Provide Promptable Representations for Reinforcement Learning](https://arxiv.org/abs/2402.02651)：把带提示的 VLM embedding 用作语义视觉表示，训练 Minecraft 和 Habitat 导航中的具身强化学习策略。
+- [Large Language Models are Geographically Biased](https://arxiv.org/abs/2402.02680)：通过文化、语言、政治、宗教等属性的零样本地理空间预测与真实数据对比，衡量 LLM 的地理偏差。
+- [Position: What Can Large Language Models Tell Us about Time Series Analysis](https://arxiv.org/abs/2402.02713)：把 LLM 定位为通向更广义时间序列智能的路线，讨论超越纯预测模型的模态切换和问答能力。
+- [Fine-tuning Reinforcement Learning Models is Secretly a Forgetting Mitigation Problem](https://arxiv.org/abs/2402.02868)：说明强化学习模型微调会在下游早期未访问的状态区域灾难性遗忘预训练行为。
+- [On Least Square Estimation in Softmax Gating Mixture of Experts](https://arxiv.org/abs/2402.02952)：分析确定性 softmax-gated MoE 回归中的最小二乘估计，并提出刻画收敛行为的 strong identifiability 条件。
+- [Swin-UMamba: Mamba-based UNet with ImageNet-based pretraining](https://arxiv.org/abs/2402.03302)：把 Mamba 序列建模集成到 U-Net 式分割主干中，并研究 ImageNet 预训练对数据高效医学图像分割的作用。
+- [HAMLET: Graph Transformer Neural Operator for Partial Differential Equations](https://arxiv.org/abs/2402.03541)：用带模块化输入编码器的图 Transformer 求解 PDE，在任意几何和多种输入格式下处理噪声或小数据场景。
+- [Distinguishing the Knowable from the Unknowable with Language Models](https://arxiv.org/abs/2402.03563)：在冻结 LLM embedding 上训练探针，并测试无监督变体，用于区分自由文本中的认知不确定性和随机不确定性。
+- [Similarity-based Neighbor Selection for Graph LLMs](https://arxiv.org/abs/2402.03720)：提出面向图语言模型的相似度邻居选择方法。
+- [MobileVLM V2: Faster and Stronger Baseline for Vision Language Model](https://arxiv.org/abs/2402.03766)：在面向移动端的 MobileVLM 系列上改进架构、训练方案和高质量数据整理，使 1.7B 与 3B 视觉语言模型能对标更大规模基线。
+- [ReLU2 Wins: Discovering Efficient Activation Functions for Sparse LLMs](https://arxiv.org/abs/2402.03804)：将激活稀疏性从 ReLU 的零激活扩展到基于神经元输出幅度的阈值定义，并从性能折衷、稀疏性可预测性和硬件亲和性三方面比较 ReLU、SwiGLU、ReGLU 与 ReLU2，指出 ReLU2 更适合稀疏 LLM 推理。
+- [MOMENT: A Family of Open Time-series Foundation Models](https://arxiv.org/abs/2402.03885)：训练开放时间序列基础模型，并配套 Time-series Pile 与低监督评测，覆盖预测、分类、异常检测和补全任务。
+- [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://arxiv.org/abs/2402.03898)：用 skew KL 损失和自适应离策略学生生成样本蒸馏自回归 LLM，相比近期知识蒸馏方法降低学生模型训练成本。
+- [Discovery of the Hidden World with Large Language Models](https://arxiv.org/abs/2402.03941)：提出 COAT，让 LLM 生成高层因果因素及其测量方式，再用因果发现反馈迭代修正这些变量。
+- [Systematic Biases in LLM Simulations of Debates](https://arxiv.org/abs/2402.04049)：展示辩论模拟智能体即使被指定政治立场，也会向基础 LLM 的社会偏见漂移，并通过自微调操控该偏见。
+- [Provably Learning a Multi-head Attention Layer](https://arxiv.org/abs/2402.04084)：给出从随机布尔序列样本学习多头注意力层的上下界，并在非退化条件下提供学习算法。
+- [U-shaped Vision Mamba for Single Image Dehazing](https://arxiv.org/abs/2402.04139)：构建含 Bi-SSM block 的 UVM-Net，把卷积局部特征与状态空间长程建模结合，用于快速单图去雾。
+- [Attention with Markov: A Framework for Principled Analysis of Transformers via Markov Chains](https://arxiv.org/abs/2402.04161)：用马尔可夫链输入分析 Transformer，比较深层模型的 induction-head 学习与单层模型陷入 unigram 局部最优的差异。
+- [Scaling Laws for Downstream Task Performance of Large Language Models](https://arxiv.org/abs/2402.04177)：研究机器翻译微调中的扩展规律，指出只有预训练数据与目标分布充分对齐时，下游 BLEU 才能用 log-law 预测。
+- [Can Mamba Learn How to Learn? A Comparative Study on In-Context Learning Tasks](https://arxiv.org/abs/2402.04248)：比较 Mamba 式状态空间模型与 Transformer 的上下文学习能力，发现其在回归和 sparse parity 上较强、在非标准检索上较弱，并测试 MambaFormer 混合架构。
+- [LESS: Selecting Influential Data for Targeted Instruction Tuning](https://arxiv.org/abs/2402.04333)：用 Low-rank gradiEnt Similarity Search 选择指令数据，以 Adam 感知的影响函数特征让 5% 子集定向强化下游能力。
+- [Democratizing Large Language Models via Personalized Parameter-Efficient Fine-tuning](https://arxiv.org/abs/2402.04401)：提出 One PEFT Per User，把用户行为和偏好存入个人 PEFT 模块，并结合检索与画像完成 LaMP 个性化任务。
+- [TransLLaMa: LLM-based Simultaneous Translation System](https://arxiv.org/abs/2402.04636)：用因果对齐的源目标句对微调 decoder-only LLM，让模型通过生成 wait token 控制同声传译分段而无需单独策略。
+- [Code as Reward: Empowering Reinforcement Learning with VLMs](https://arxiv.org/abs/2402.04764)：让 VLM 生成可执行的稠密奖励函数代码，避免强化学习策略训练中频繁查询 VLM 计算奖励。
+- [Direct Language Model Alignment from Online AI Feedback](https://arxiv.org/abs/2402.04792)：每轮从当前策略采样两个实时回答，并让 LLM 标注器选择偏好项，用在线 AI 反馈直接对齐当前模型。
+- [Leveraging LLMs for Unsupervised Dense Retriever Ranking](https://arxiv.org/abs/2402.04853)：提出 LARMOR，从目标语料采样文档并让 LLM 生成伪查询、伪标签和参考列表，用于无监督选择 dense retriever。
+- [Personalized Language Modeling from Personalized Human Feedback](https://arxiv.org/abs/2402.05133)：提出 P-RLHF，从显式和隐式偏好反馈中联合学习轻量用户模型与个性化 LLM。
+- [Tag-LLM: Repurposing General-Purpose LLMs for Specialized Domains](https://arxiv.org/abs/2402.05140)：学习追加到 embedding 层的连续 domain tag 与 function tag，使科学和生物医学专门任务能通过标签重组零样本泛化。
+- [ApiQ: Finetuning of 2-Bit Quantized Large Language Model](https://arxiv.org/abs/2402.05147)：在量化 LLM 权重的同时初始化 LoRA 组件，保持激活精度并降低 2-bit 微调中的层间误差传播。
+- [Noise Contrastive Alignment of Language Models with Explicit Rewards](https://arxiv.org/abs/2402.05369)：用 NCA 与 InfoNCA 目标从标量奖励数据和偏好数据直接对齐语言模型，并把 DPO 视为其中一个特例。
+- [Implicit Diffusion: Efficient Optimization through Stochastic Sampling](https://arxiv.org/abs/2402.05468)：在同一循环中同时执行采样和一阶分布优化，用于优化随机 diffusion sampler 的参数。
+- [Generalized Preference Optimization: A Unified Approach to Offline Alignment](https://arxiv.org/abs/2402.05749)：把 DPO、IPO、SLiC 与新的离线对齐变体统一为广义偏好优化损失中的不同凸函数选择。
+- [Let Your Graph Do the Talking: Encoding Structured Data for LLMs](https://arxiv.org/abs/2402.05862)：提出 GraphToken，以参数高效的提示扩展学习显式图编码，提升 GraphQA 中节点、边和图级推理。
+- [Generative Echo Chamber? Effects of LLM-Powered Search Systems on Diverse Information Seeking](https://arxiv.org/abs/2402.05880)：通过两项用户研究显示，LLM 驱动的对话搜索会增加带偏见的信息查询，尤其当助手强化用户既有观点时更明显。
+- [Large Language Model Meets Graph Neural Network in Knowledge Distillation](https://arxiv.org/abs/2402.05894)：提出用于时序 QoS 预测的 TOGCL，结合动态用户-服务调用图、target-prompt graph attention 和 Transformer 时序编码。
+- [Time Series Diffusion in the Frequency Domain](https://arxiv.org/abs/2402.05933)：用 mirrored Brownian motions 在 Fourier domain 重写时间序列 score-based diffusion，并显示频域去噪更适合多个真实数据集。
+- [SPHINX-X: Scaling Data and Parameters for a Family of Multi-modal Large Language Models](https://arxiv.org/abs/2402.05935)：简化 SPHINX 多模态架构，去除冗余视觉编码器并采用一阶段训练，再结合 OCR 密集数据与 Set-of-Mark 数据，在 TinyLlama、InternLM2、LLaMA2 和 Mixtral 等底座上扩展多语种 MLLM 系列。
+- [Delving into Parameter-Efficient Fine-Tuning in Code Change Learning: An Empirical Study](https://arxiv.org/abs/2402.06247)：在 JIT 缺陷预测和 commit message 生成上比较 adapter tuning、LoRA 与全参数微调，发现 PEFT 在跨语言和低资源代码变更场景中表现稳健。
+- [On the Efficacy of Eviction Policy for Key-Value Constrained Generative Language Model Inference](https://arxiv.org/abs/2402.06262)：提出 RoCo，用时间注意力分数和鲁棒性度量做 KV cache eviction，并发布 EasyKV 支持受限显存生成式推理。
+- [InternLM-Math: Open Math Large Language Models Toward Verifiable Reasoning](https://arxiv.org/abs/2402.06332)：在 InternLM2 上继续预训练开放数学 LLM，把思维链、奖励建模、形式化推理、数据增强和代码解释器轨迹统一到 seq2seq 格式，用于非形式化与形式化数学评测。
+- [Large Language Models for Captioning and Retrieving Remote Sensing Images](https://arxiv.org/abs/2402.06475)：构建 RS-CapRet，把遥感 CLIP 式图像编码器与冻结的大型 decoder LM 通过训练线性连接器结合，用于图像描述和文本图像检索。
+- [On the Out-Of-Distribution Generalization of Multimodal Large Language Models](https://arxiv.org/abs/2402.06599)：在合成图像、真实分布偏移、医学和分子图像场景下评测 MLLM，指出 mapping deficiency 与脆弱的上下文适配是主要 OOD 局限。
+- [Feedback Loops With Language Models Drive In-Context Reward Hacking](https://arxiv.org/abs/2402.06627)：指出输出修订与策略修订类反馈循环会让部署中的 LLM 在上下文中优化隐式目标并放大副作用，因而静态数据集难以捕捉这种测试时奖励黑客行为。
+- [Corruption Robust Offline Reinforcement Learning with Human Feedback](https://arxiv.org/abs/2402.06734)：研究偏好对被对抗污染的离线 RLHF，并给出能从噪声人类反馈中恢复近优策略的带保证算法。
+- [Self-Correcting Self-Consuming Loops for Generative Model Training](https://arxiv.org/abs/2402.07087)：在合成数据递归训练中加入校正函数，包括利用模拟器物理规律的 expert corrector，并在人类运动合成中验证即使合成数据比例达到 100% 也能避免模型坍塌。
+- [Lessons Learned from Mining the Hugging Face Repository](https://arxiv.org/abs/2402.07323)：总结 Hugging Face 仓库挖掘经验，给出工具、复现实验包、分层采样和 cohort study 设计建议，用于研究模型维护与碳排放。
+- [Model Collapse Demystified: The Case of Regression](https://arxiv.org/abs/2402.07712)：在高维回归中解析自生成数据递归训练导致的模型坍塌，推导谱条件下的修正 scaling law，并提出 adaptive regularization 缓解策略。
+- [Prismatic VLMs: Investigating the Design Space of Visually-Conditioned Language Models](https://arxiv.org/abs/2402.07865)：构建标准化 VLM 评测和训练框架，系统比较图像预处理、视觉主干以及 base 与 instruction-tuned 语言主干在 VQA、定位和幻觉探针上的影响。
+- [Scaling Laws for Fine-Grained Mixture of Experts](https://arxiv.org/abs/2402.07871)：把 expert granularity 纳入 MoE scaling law，联合训练 token 数、模型规模和专家大小推导给定算力预算下的最优训练配置。
+- [Active Preference Learning for Large Language Models](https://arxiv.org/abs/2402.08114)：为 DPO 加入主动偏好数据采集，用语言模型预测熵和隐式偏好模型不确定性选择更有价值的 prompt-completion 偏好对。
+- [Eliciting Personality Traits in Large Language Models](https://arxiv.org/abs/2402.08341)：用面试题和 Big Five 特质诱发提示测试 Llama-2、Falcon、Mistral、Bloom、GPT、OPT 与 XLNet 等模型输出中的人格特质激活。
+- [Punctuation Restoration Improves Structure Understanding without Supervision](https://arxiv.org/abs/2402.08382)：把 punctuation restoration 作为无监督语言模型训练信号。核心思想：迫使模型恢复结构性线索，从而提升 NER、open information extraction、chunking 和 POS tagging 等任务，在无标签条件下增强结构理解。
+- [Higher Layers Need More LoRA Experts](https://arxiv.org/abs/2402.08562)：提出 MoLA 参数高效 MoE-LoRA，为不同 Transformer 层分配不同数量的 LoRA experts，并发现高层使用更多 experts 效果更好。
+- [Graph Mamba: Towards Learning on Graphs with State Space Models](https://arxiv.org/abs/2402.08678)：通过 neighborhood tokenization、token ordering 和图结构专用架构选择，把 selective state-space model 适配到图学习以缓解长程依赖和 over-squashing。
+- [MaxMin-RLHF: Alignment with Diverse Human Preferences](https://arxiv.org/abs/2402.08925)：用 EM 学习多种偏好分布的混合，并以 MaxMin 目标训练策略，比单一 reward model 更公平地覆盖多样用户偏好。
+- [AgentLens: Visual Analysis for Agent Behaviors in LLM-Based Autonomous Systems](https://arxiv.org/abs/2402.08995)：把 LLM 智能体执行事件整理成层级时间摘要和行为因果追踪，并提供可交互的 AgentLens 可视分析系统。
+- [Attacking Large Language Models with Projected Gradient Descent](https://arxiv.org/abs/2402.09154)：重新设计连续松弛输入上的 PGD 对抗提示攻击，通过控制松弛误差，以远少于离散优化的模型调用攻破对齐 LLM。
+- [(Ir)rationality and cognitive biases in large language models](https://arxiv.org/abs/2402.09193)：用认知心理学任务评测 7 个 LLM，区分人类式认知偏差、模型特有非理性以及回答不一致性。
+- [Personalized Large Language Models](https://arxiv.org/abs/2402.09269)：在主观文本感知任务上比较个性化微调与零样本推理，并在情绪识别和仇恨言论数据集上展示跨架构收益。
+- [InfoRM: Mitigating Reward Hacking in RLHF via Information-Theoretic Reward Modeling](https://arxiv.org/abs/2402.09345)：为奖励模型加入变分信息瓶颈以过滤虚假奖励特征，并用 Cluster Separation Index 监测 reward overoptimization。
+- [DoRA: Weight-Decomposed Low-Rank Adaptation](https://arxiv.org/abs/2402.09353)：把预训练权重分解为幅值和方向两部分，仅对方向更新使用 LoRA，从而在无额外推理开销下缩小 PEFT 与全参数微调的差距。
+- [Transformers Can Achieve Length Generalization But Not Robustly](https://arxiv.org/abs/2402.09371)：用整数加法外推测试 Transformer 长度泛化，说明结果强依赖数据格式、位置编码、初始化和训练样本顺序。
+- [Rolling Diffusion Models](https://arxiv.org/abs/2402.09470)：提出滑动窗口去噪，让时间序列后部帧承受更高噪声，在复杂动态下改进 Kinetics-600 视频预测和混沌流体预测。
+- [The Butterfly Effect of Model Editing: Few Edits Can Trigger Large Language Models Collapse](https://arxiv.org/abs/2402.09656)：展示单次或连续知识编辑都可能导致 LLM benchmark 表现坍塌，验证 perplexity 可作预警代理指标，并发布 HardEdit 难例。
+- [How to Train Data-Efficient LLMs](https://arxiv.org/abs/2402.09668)：比较 19 种预训练数据采样器，发现 Ask-LLM 质量评分与 density-based 覆盖采样能改善质量与资源权衡，部分设置可拒绝 90% 原始数据。
+- [QuRating: Selecting High-Quality Data for Training Language Models](https://arxiv.org/abs/2402.09739)：从 LLM 成对判断中训练 QuRater，围绕写作风格、专业知识、事实与冷知识、教育价值给 260B token 语料打分，并据此为 1.3B 语言模型筛选数据和构建课程。
+- [All in One and One for All: A Simple yet Effective Method towards Cross-domain Graph Pretraining](https://arxiv.org/abs/2402.09834)：提出 GCOPE，用 graph coordinators 在预训练阶段统一多种图数据集，使少样本目标图任务从跨域迁移中获益而不是出现负迁移。
+- [Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence](https://arxiv.org/abs/2402.09880)：用人员、流程和技术框架审视 23 个 LLM 基准，指出偏见、真实推理测量不足、提示工程敏感、评测者多样性不足等问题，并主张转向动态行为画像。
+- [Generative Representational Instruction Tuning](https://arxiv.org/abs/2402.09906)：提出 GRIT，让 GritLM 通过指令同时处理生成和嵌入任务，使一个模型兼做检索与生成，并在长文档 RAG 中省去独立 embedder。
+- [Enhancing Large Language Models with Pseudo-and Multisource-Knowledge Graphs for Open-ended Question Answering](https://arxiv.org/abs/2402.09911)：结合伪图生成与原子知识验证，让 LLM 在开放式问答中利用生成知识图谱和外部知识图谱，并跨不同 KG 来源泛化。
+- [Both Matter: Enhancing the Emotional Intelligence of Large Language Models without Compromising the General Intelligence](https://arxiv.org/abs/2402.10073)：提出 EiBench 与 MoEI，通过模块化参数扩展和模块内外调制提升情绪感知、认知与表达，同时减少通用能力遗忘。
+- [ControlLM: Crafting Diverse Personalities for Language Models](https://arxiv.org/abs/2402.10151)：用对比行为提示在隐空间得到差分激活模式，并在推理时调节人格特质，实现无训练 persona 控制和对责任心等特质的选择性放大。
+- [Uncertainty Quantification for In-Context Learning of Large Language Models](https://arxiv.org/abs/2402.10189)：把上下文学习不确定性拆分为示例带来的 aleatoric uncertainty 与模型配置带来的 epistemic uncertainty，并估计两者以识别不可靠回答。
+- [Rewards-in-Context: Multi-objective Alignment of Foundation Models with Dynamic Preference Adjustment](https://arxiv.org/abs/2402.10207)：把多个奖励值放入提示上下文并用监督微调对齐基础模型，使用户偏好权重可在推理时动态调整。
+- [Hierarchical State Space Models for Continuous Sequence-to-Sequence Modeling](https://arxiv.org/abs/2402.10211)：堆叠结构化 state-space model 形成 HiSS，用于连续传感器到信号预测，面向长原始序列、非线性漂移和小规模标注数据。
+- [DELL: Generating Reactions and Explanations for LLM-Based Misinformation Detection](https://arxiv.org/abs/2402.10426)：用 LLM 生成新闻反应、代理任务解释并合并任务专家，为虚假信息检测器补充模拟用户视角和任务特定证据。
+- [Smaller Language Models are capable of selecting Instruction-Tuning Training Data for Larger Language Models](https://arxiv.org/abs/2402.10430)：按样本 learning percentage 选择指令微调数据，显示数据难度可跨模型规模迁移，350M 模型也能为 13B 模型筛选高价值难例。
+- [QDyLoRA: Quantized Dynamic Low-Rank Adaptation for Efficient Large Language Model Tuning](https://arxiv.org/abs/2402.10462)：在 QLoRA 上加入动态 rank 训练，使一次量化微调即可得到多个 LoRA rank，并能在单张 32GB V100 上为 Falcon-40B 搜索 rank。
+- [Direct Preference Optimization with an Offset](https://arxiv.org/abs/2402.10571)：用 offset margin 泛化 DPO，让偏好强弱不同的样本对在微调时施加不同的似然间隔要求。
+- [Can LLMs Speak For Diverse People? Tuning LLMs via Debate to Generate Controllable Controversial Statements](https://arxiv.org/abs/2402.10614)：提出 DEBATUNE，通过立场相反的 LLM 多轮辩论生成训练数据，使模型能围绕 710 个争议话题生成更可控的支持性陈述。
+- [Network formation and dynamics among multi-LLMs](https://arxiv.org/abs/2402.10659)：构建多 LLM 智能体网络形成框架，把 preferential attachment、triadic closure、homophily、社区结构和 small-world 行为与人类网络决策对照。
+- [Humans or LLMs as the Judge? A Study on Judgement Bias](https://arxiv.org/abs/2402.10669)：在无标准答案条件下测量人类和 LLM 评委的错误信息监督、性别、权威和美貌偏见，并展示这些偏见可被用于攻击 LLM-as-judge 评测。
+- [Squat: Quant Small Language Models on the Edge](https://arxiv.org/abs/2402.10787)：为小语言模型设计量化感知训练框架，使用适配移动端 SIMD 硬件的可部署量化，而非面向 GPU 的细粒度量化方案。
+- [Generative Cross-Modal Retrieval: Memorizing Images in Multimodal Language Models for Retrieval and Beyond](https://arxiv.org/abs/2402.10805)：把图像表示为唯一标识字符串并训练 MLLM 在参数中记忆图像，再通过记忆和检索两个阶段从文本查询中生成式召回图像。
+- [Quantifying the Persona Effect in LLM Simulations](https://arxiv.org/abs/2402.10811)：量化人口、社会和行为 persona 变量对 LLM 模拟主观标注的影响，发现收益有限但会随 persona 与标注相关性增强而增加。
+- [Measuring and Controlling Instruction (In)Stability in Language Model Dialogs](https://arxiv.org/abs/2402.10962)：用两个带指令聊天机器人的 self-chat 评测指令漂移，并提出 split-softmax 缓解注意力衰减导致的系统提示行为丢失。
+- [Persona-DB: Efficient Large Language Model Personalization for Response Prediction with Collaborative Data Refinement](https://arxiv.org/abs/2402.11060)：为个性化构建层级检索数据库，优化用户历史表示，使 LLM 无需逐用户微调即可预测个性化回复。
+- [Revisiting Word Embeddings in the LLM Era](https://arxiv.org/abs/2402.11094)：把 LLM 派生词向量与 Word2Vec、GloVe、SBERT 和 USE 系统比较，显示其语义聚类与类比行为差异不只是规模收益。
+- [Language Models as Science Tutors](https://arxiv.org/abs/2402.11111)：提出面向长 STEM 教材问答的 TutorEval，并构建 80,000 条教材合成对话 TutorChat，使 LM 科学辅导覆盖长文档场景。
+- [Speculative Streaming: Fast LLM Inference without Auxiliary Models](https://arxiv.org/abs/2402.11131)：把目标模型微调为预测未来 n-gram，使其能自我起草并验证后续 token，避免维护独立 speculative draft model。
+- [TuneTables: Context Optimization for Scalable Prior-Data Fitted Networks](https://arxiv.org/abs/2402.11137)：把大规模表格数据压缩为 TabPFN 类 prior-data fitted network 的可学习上下文，在调优少于 5% 参数的情况下改善大数据表格预测。
+- [Boosting of Thoughts: Trial-and-Error Problem Solving with Large Language Models](https://arxiv.org/abs/2402.11140)：迭代探索 thoughts 树，让模型生成错误分析，并把这些试错轨迹写入提示以解决复杂数学问题。
+- [CoLLaVO: Crayon Large Language and Vision mOdel](https://arxiv.org/abs/2402.11248)：用 panoptic color map 形式的 Crayon Prompt 和 Dual QLoRA 提升 VLM 物体级理解，并在视觉指令微调中保留基础图像 grounding。
+- [Aligning Large Language Models by On-Policy Self-Judgment](https://arxiv.org/abs/2402.11253)：通过 Judge-augmented SFT 训练同一模型同时充当策略与偏好评委，在不额外训练 reward model 的情况下进行 on-policy 对齐。
+- [MoRAL: MoE Augmented LoRA for LLMs' Lifelong Learning](https://arxiv.org/abs/2402.11260)：把 mixture-of-experts 路由与 LoRA adapter 结合，用问答对支持 LLM 终身学习，并在 5L-bench 的开卷与闭卷设置中评估知识保持。
+- [Aligning Modalities in Vision Large Language Models via Preference Fine-tuning](https://arxiv.org/abs/2402.11411)：通过 GPT-4V 注入合理幻觉和图像扰动构造 POVID 偏好数据，再用 DPO 减少 VLLM 因模态未对齐产生的幻觉。
+- [When Do LLMs Need Retrieval Augmentation? Mitigating LLMs' Overconfidence Helps Retrieval Augmentation](https://arxiv.org/abs/2402.11457)：测量 LLM 对知识边界的感知，降低过度自信，并只在不确定性表明需要外部证据时触发检索。
+- [Large Language Model-driven Meta-structure Discovery in Heterogeneous Information Network](https://arxiv.org/abs/2402.11518)：提出 ReStruct，在异构信息网络 meta-structure 进化搜索中用 LLM 推理评估语义可行性，并为发现的结构生成解释。
+- [Multi-Task Inference: Can Large Language Models Follow Multiple Instructions at Once?](https://arxiv.org/abs/2402.11597)：定义包含 25 个任务、5,000 个样例的 MTI Bench，测试 LLM 能否在一次推理调用中同时完成两到三个子任务。
+- [Learning From Failure: Integrating Negative Examples when Fine-tuning Large Language Models as Agents](https://arxiv.org/abs/2402.11651)：通过成功或失败前后缀标记复用失败智能体轨迹，提升数学推理、多跳问答和策略问答上的微调效果。
+- [Invertible Fourier Neural Operators for Tackling Both Forward and Inverse Problems](https://arxiv.org/abs/2402.11722)：构建带 invertible Fourier blocks 与 VAE 组件的 iFNO，使同一神经算子在正向预测和逆向推断任务间共享参数。
+- [Towards Theoretical Understandings of Self-Consuming Generative Models](https://arxiv.org/abs/2402.11778)：为真实与合成数据递归训练循环推导 total-variation bounds，并指出合成数据量增加时会出现阶段性转变。
+- [Enhancing Empathetic Response Generation by Augmenting LLMs with Small-scale Empathetic Models](https://arxiv.org/abs/2402.11801)：把小型共情模型作为情绪预测和情绪原因感知插件，帮助 LLM 生成更细粒度的共情回复。
+- [Microstructures and Accuracy of Graph Recall by Large Language Models](https://arxiv.org/abs/2402.11821)：测试 LLM 从文本中回忆图结构的能力，发现其会产生过多三角形和 alternating two-path 等偏置微结构，且准确率依赖叙事领域风格。
+- [Revisiting Knowledge Distillation for Autoregressive Language Models](https://arxiv.org/abs/2402.11890)：指出忽略 token teaching mode 时更大 teacher LM 反而会伤害 student，并提出 ATKD 按 token 自适应调整蒸馏方式。
+- [DB-LLM: Accurate Dual-Binarization for Efficient LLMs](https://arxiv.org/abs/2402.11960)：提出面向超低比特 LLM 量化的 dual-binarization，把 2-bit 权重拆成两组 binary 以兼顾位运算效率和表示精度。
+- [Towards Cross-Tokenizer Distillation: the Universal Logit Distillation Loss for LLMs](https://arxiv.org/abs/2402.12030)：用基于 optimal transport 的 Universal Logit Distillation loss，使 tokenizer 不同的 teacher 与 student LLM 也能进行 logit 蒸馏。
+- [Self-AMPLIFY: Improving Small Language Models with Self Post Hoc Explanations](https://arxiv.org/abs/2402.12038)：把 post hoc explanation 方法用于小型自回归 LM 自动生成自身 rationale，再用这些 rationale 做上下文学习以提升表现。
+- [Model Tailor: Mitigating Catastrophic Forgetting in Multi-modal Large Language Models](https://arxiv.org/abs/2402.12048)：用 salience 与 sensitivity 找到小型 model patch，并替换不超过 10% 微调参数，以在适配新任务时保留原始 MLLM 任务能力。
+- [Small Models, Big Insights: Leveraging Slim Proxy Models To Decide When and What to Retrieve for LLMs](https://arxiv.org/abs/2402.12052)：用 slim proxy model 判断 LLM 缺少哪些知识，只检索缺失信息，而不是让完整 LLM 对每个问题自我诊断。
+- [Pan-Mamba: Effective pan-sharpening with State Space Model](https://arxiv.org/abs/2402.12192)：把 Mamba 适配到 pan-sharpening，通过 channel-swapping Mamba 与 cross-modal Mamba 融合低分辨率多光谱和高分辨率全色图像。
+- [AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling](https://arxiv.org/abs/2402.12226)：把语音、文本、图像和音乐统一表示为离散序列，并在不改动基础 LLM 架构的情况下训练任意模态到任意模态的指令数据。
+- [Plato: Plan to Efficiently Decode for Large Language Model Inference](https://arxiv.org/abs/2402.12280)：让 LLM 规划依赖图、并行解码无依赖节点并复用全局上下文和 KV cache，形成语义感知的并行解码。
+- [LoRA+: Efficient Low Rank Adaptation of Large Models](https://arxiv.org/abs/2402.12354)：指出标准 LoRA 在宽模型中因 A、B adapter 矩阵共享学习率而训练不足，并用不同学习率修正。
+- [Turn Waste into Worth: Rectifying Top-k Router of MoE](https://arxiv.org/abs/2402.12399)：用 intra-GPU rectification 处理 dropped tokens，并用 fill-in rectification 替换 padding tokens，减少 MoE top-k 路由中的专家计算浪费。
+- [IMBUE: Improving Interpersonal Effectiveness through Simulation and Just-in-time Feedback with Human-Language Model Interaction](https://arxiv.org/abs/2402.12556)：用 LM 模拟 DBT DEAR MAN 框架下的人际沟通练习，并提供更接近专家教练的即时反馈。
+- [Confidence Matters: Revisiting Intrinsic Self-Correction Capabilities of Large Language Models](https://arxiv.org/abs/2402.12563)：把模型 confidence 识别为自我修正的潜在因素，并提出 If-or-Else prompting 来决定 LLM 何时应修改自身回答。
+- [HyperMoE: Towards Better Mixture of Experts via Transferring Among Experts](https://arxiv.org/abs/2402.12656)：加入由 hypernetwork 生成的模块，将未选中专家的信息转移给当前计算路径，在保持稀疏选择的同时提升 MoE 表现。
+- [Advancing Large Language Models to Capture Varied Speaking Styles and Respond Properly in Spoken Conversations](https://arxiv.org/abs/2402.12786)：构建 StyleTalk，并训练 LLM 在相同文本以不同副语言和韵律风格说出时按 speaking style 条件化回复。
+- [Identifying Factual Inconsistency in Summaries: Towards Effective Utilization of Large Language Model](https://arxiv.org/abs/2402.12821)：把事实不一致类型 taxonomy 注入零样本和监督式 LLM 推理，用于摘要忠实性检测。
+- [MoELoRA: Contrastive Learning Guided Mixture of Experts on Parameter-Efficient Fine-Tuning for Large Language Models](https://arxiv.org/abs/2402.12851)：把 LoRA adapter 视为 mixture-of-experts 模块，并用 contrastive learning 减少参数高效微调中的随机路由。
+- [Stable Knowledge Editing in Large Language Models](https://arxiv.org/abs/2402.13048)：把知识编辑改写为知识增强问题，使用自动语义改写和相关增强策略提升编辑稳定性，而不假设知识位置孤立。
+- [Towards an empirical understanding of MoE design choices](https://arxiv.org/abs/2402.13089)：实证比较 MoE 路由设计，显示 learned router 与冻结随机 router 表现可相近，且 token-level 与 sequence-level routing 会形成不同专家分工。
+- [Soft Self-Consistency Improves Language Model Agents](https://arxiv.org/abs/2402.13212)：用基于似然的 soft scoring 替代多数投票 self-consistency，使序列式智能体能用更少样本从稀疏多样动作候选中选择。
+- [Smaug: Fixing Failure Modes of Preference Optimisation with DPO-Positive](https://arxiv.org/abs/2402.13228)：提出 DPO-Positive，避免标准 DPO 在只增大 preferred 与 dispreferred 相对间隔时降低 preferred response 的似然。
+- [ProSparse: Introducing and Enhancing Intrinsic Activation Sparsity within Large Language Models](https://arxiv.org/abs/2402.13516)：在替换激活函数后进一步推动 LLM 获得更高 activation sparsity，目标是在保持模型表现的同时加速推理。
+- [User-LLM: Efficient LLM Contextualization with User Embeddings](https://arxiv.org/abs/2402.13598)：用自监督 user encoder 编码用户时间线，并通过 cross-attention 把 user embeddings 注入 LLM 以预测个性化回复。
+- [UniGraph: Learning a Unified Cross-Domain Foundation Model for Text-Attributed Graphs](https://arxiv.org/abs/2402.13630)：以 text-attributed graph 作为统一表示，训练可跨未见图、任务、特征空间和标签空间迁移的图基础模型。
+- [Using Large Language Models for Natural Language Processing Tasks in Requirements Engineering: A Systematic Guideline](https://arxiv.org/abs/2402.13823)：提供需求工程中选择、适配和微调 LLM 架构处理 NLP4RE 任务的指南，而不是提出新的模型架构。
+- [Analysing The Impact of Sequence Composition on Language Model Pre-Training](https://arxiv.org/abs/2402.13991)：说明文档拼接会在 causal masking 预训练中引入跨文档干扰上下文，并提出 intra-document masking 与 BM25Chunk 序列构造。
+- [Beyond A*: Better Planning with Transformers via Search Dynamics Bootstrapping](https://arxiv.org/abs/2402.14083)：把 A* 搜索动态表示为 token 序列来训练 Searchformer，使其能用少于监督规划器的搜索步数解决未见 Sokoban 谜题。
+- [Comparing Graph Transformers via Positional Encodings](https://arxiv.org/abs/2402.14202)：证明 graph Transformer 中绝对与相对位置编码在区分能力上的等价关系，并比较多种位置编码的设计取舍。
+- [TinyLLaVA: A Framework of Small-scale Large Multimodal Models](https://arxiv.org/abs/2402.14289)：提供小规模 LMM 设计框架，系统消融视觉编码器、连接模块、语言底座、数据与训练配方，显示高质量数据和配方可让 TinyLLaVA-3.1B 达到或超过若干 7B LMM 基线。
+- [A Language Model's Guide Through Latent Space](https://arxiv.org/abs/2402.14433)：把 activation-based concept guidance 从真实性扩展到合适性、幽默、创造力和质量等概念，并用同时考虑概念诱发和流畅度退化的指标评测。
+- ["My Answer is C": First-Token Probabilities Do Not Match Text Answers in Instruction-Tuned Language Models](https://arxiv.org/abs/2402.14499)：显示 first-token 多选题评分会与生成文本答案、拒答率、选项分布和提示扰动行为严重不一致，部分设置 mismatch 超过 60%。
+- [Balanced Data Sampling for Language Model Training with Clustering](https://arxiv.org/abs/2402.14526)：提出 ClusterClip sampling，在 LLM 训练中平衡常见与稀有文本簇，并通过 clipping 重复簇来限制过拟合。
+- [OmniPred: Language Models as Universal Regressors](https://arxiv.org/abs/2402.14547)：用 Google Vizier 的文本化参数和值训练语言模型成为通用回归器，在黑盒优化数据上超过任务专用回归模型。
+- [Prompting a Pretrained Transformer Can Be a Universal Approximator](https://arxiv.org/abs/2402.14753)：证明 prompting 与 prefix-tuning 可使预训练 Transformer 近似序列到序列函数，并给出单头注意力和 prefix 长度相关界。
+- [Not All Experts are Equal: Efficient Expert Pruning and Skipping for Mixture-of-Experts Large Language Models](https://arxiv.org/abs/2402.14800)：为 MoE LLM 加入后训练 expert pruning 与 expert skipping，在保留任务表现的同时降低模型规模和推理成本。
+- [Fine-Tuning Enhances Existing Mechanisms: A Case Study on Entity Tracking](https://arxiv.org/abs/2402.14811)：用 patching 与 circuit analysis 说明数学微调增强了已有 entity-tracking 机制，而不是创造了全新的内部机制。
+- [Palo: A Polyglot Large Multimodal Model for 5B People](https://arxiv.org/abs/2402.14818)：使用半自动翻译的多模态指令数据训练覆盖 10 种主要语言的多语种 VLM，并提出多语种多模态 benchmark。
+- [Double-I Watermark: Protecting Model Copyright for LLM Fine-tuning](https://arxiv.org/abs/2402.14883)：通过 instruction 和 input 两类 trigger backdoor 数据在微调中注入水印，使定制 LLM 的所有权可验证。
+- [Divide-or-Conquer? Which Part Should You Distill Your LLM?](https://arxiv.org/abs/2402.15000)：把推理拆成问题分解和求解阶段，显示分解能力更容易蒸馏到小模型，并可与大模型求解器组合降低推理成本。
+- [Unintended Impacts of LLM Alignment on Global Representation](https://arxiv.org/abs/2402.15018)：审计 RLHF 与 DPO 对英语方言、多语种能力和全球观点的影响，发现 benchmark 提升之外会产生对齐诱发的不平衡。
+- [Studying LLM Performance on Closed- and Open-source Data](https://arxiv.org/abs/2402.15100)：比较 LLM 在 Microsoft 私有代码与开源代码上的编程表现，将 C++ 表现下降追溯到标识符差异，并测试上下文学习缓解。
+- [Second-Order Fine-Tuning without Pain for LLMs: A Hessian Informed Zeroth-Order Optimizer](https://arxiv.org/abs/2402.15173)：提出 HiZOO，用 diagonal Hessian 信息增强 zeroth-order optimizer，每步只增加一次前向计算以改进收敛和低显存 LLM 微调。
+- [Advancing Parameter Efficiency in Fine-tuning via Representation Editing](https://arxiv.org/abs/2402.15179)：提出 RED，一种用缩放和偏置操作编辑中间表示的 PEFT 方法，避免手动选择 LoRA rank、adapter 尺寸或 prompt 长度。
+- [GraphEdit: Large Language Models for Graph Structure Learning](https://arxiv.org/abs/2402.15183)：用 LLM 推断节点关系信号来生成图结构，用于 graph structure learning，并降低对噪声或稀疏显式图监督的依赖。
+- [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391)：从互联网视频训练生成式世界模型，使用户能从图像提示和学习到的潜在动态中交互探索新环境。
+- [Repetition Improves Language Model Embeddings](https://arxiv.org/abs/2402.15449)：测试 repetition 作为嵌入阶段干预，说明重复输入文本可在不改模型权重的情况下增强语言模型句向量。
+- [Co-Supervised Learning: Improving Weak-to-Strong Generalization with Hierarchical Mixture of Experts](https://arxiv.org/abs/2402.15505)：用层级专家混合的 co-supervision 改进 weak-to-strong 泛化，使弱模型与强模型在不同专家层级共享监督信号。
+- [MegaScale: Scaling Large Language Model Training to More Than 10, 000 GPUs](https://arxiv.org/abs/2402.15627)：记录超过 10,000 张 GPU 的 LLM 训练系统，联合设计模型 block、优化器、计算通信重叠、算子、数据管线和网络调优。
+- [MambaIR: A Simple Baseline for Image Restoration with State-Space Model](https://arxiv.org/abs/2402.15648)：为图像复原改造 Mamba，加入局部增强和通道注意力，在保持线性复杂度长程建模的同时减少像素遗忘和通道冗余。
+- [HD-Eval: Aligning Large Language Model Evaluators Through Hierarchical Criteria Decomposition](https://arxiv.org/abs/2402.15754)：通过层级分解评测标准来对齐 LLM 评委，把宽泛评分准则拆成更细粒度的判断项。
+- [PRP: Propagating Universal Perturbations to Attack Large Language Model Guard-Rails](https://arxiv.org/abs/2402.15911)：用两步通用前缀攻击 LLM guard model，先为审核模型构造对抗前缀，再把该前缀传播到主模型回复，并覆盖白盒和无法访问 guard 的威胁模型。
+- [How Large Language Models Encode Context Knowledge? A Layer-Wise Probing Study](https://arxiv.org/abs/2402.16061)：构建由 ChatGPT 生成的 probing 数据集，并用 V-usable information 衡量 LLM 各层如何编码上下文支持的事实知识。
+- [PeriodicLoRA: Breaking the Low-Rank Bottleneck in LoRA Optimization](https://arxiv.org/abs/2402.16141)：缓解 LoRA 优化中的低秩瓶颈。
+- [COMAE: COMprehensive Attribute Exploration for Zero-shot Hashing](https://arxiv.org/abs/2402.16424)：通过点级、成对和类别级属性一致性约束学习 zero-shot hash code，把 seen 类的局部属性关系迁移到 unseen 类。
+- [Aligning Large Language Models to a Domain-specific Graph Database for NL2GQL](https://arxiv.org/abs/2402.16567)：定义合成数据和对齐流程，在缺少成对 NL-GQL 数据时将 LLM 适配到领域图数据库的自然语言到图查询生成。
+- [SelectIT: Selective Instruction Tuning for LLMs via Uncertainty-Aware Self-Reflection](https://arxiv.org/abs/2402.16705)：利用目标 LLM 自身的不确定性和自我反思信号选择高质量指令微调数据，避免额外 scorer 模型或外部数据。
+- [Political Compass or Spinning Arrow? Towards More Meaningful Evaluations for Values and Opinions in Large Language Models](https://arxiv.org/abs/2402.16786)：质疑政治罗盘式 LLM 价值观测试，并提出更能衡量模型观点与价值稳定性的评测方式。
+- [Nemotron-4 15B Technical Report](https://arxiv.org/abs/2402.16819)：报告 Nemotron-4 15B 的训练配方、对齐阶段与基准结果，作为 15B 开放模型技术参考。
+- [Groundhog Grounding Large Language Models to Holistic Segmentation](https://arxiv.org/abs/2402.16846)：通过把掩码特征提取器输出转换为视觉实体 token，并在 M3G2 多模态多粒度 grounding 指令数据上训练，使 MLLM 具备基于分割掩码的 grounding 能力。
+- [When Scaling Meets LLM Finetuning: The Effect of Data, Model and Finetuning Method](https://arxiv.org/abs/2402.17193)：研究微调效果如何随数据规模、基础模型大小和微调方法变化，区分数据增长、模型容量与适配策略各自带来的收益。
+- [RIME: Robust Preference-based Reinforcement Learning with Noisy Preferences](https://arxiv.org/abs/2402.17257)：用样本选择判别器和 warm-start reward model 过滤噪声偏好标签，使 preference-based RL 不依赖专家级干净反馈也能稳定训练。
+- [Mini-Ensemble Low-Rank Adapters for Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2402.17263)：提出 MELoRA，把低秩 adapter 拆成小型 ensemble，在减少可训练参数的同时保持较高 rank 表达能力。
+- [Data-Efficient Learning via Clustering-Based Sensitivity Sampling: Foundation Models and Beyond](https://arxiv.org/abs/2402.17327)：用 k-means clustering 和 sensitivity sampling 选择小型代表性训练子集，并在嵌入空间平滑假设下给出 loss 近似保证。
+- [Investigating Continual Pretraining in Large Language Models: Insights and Implications](https://arxiv.org/abs/2402.17400)：研究 LLM 的持续领域自适应预训练，并构建 benchmark 衡量模型吸收新领域知识同时保留旧知识的能力。
+- [RAVEL: Evaluating Interpretability Methods on Disentangling Language Model Representations](https://arxiv.org/abs/2402.17700)：提出 RAVEL 做受控的属性-取值纠缠测试，并用 MDAS 寻找同时满足多个因果标准的分布式 LLM 表示。
+- [Massive Activations in Large Language Models](https://arxiv.org/abs/2402.17762)：识别 LLM 中少数极大的 activation，说明它们像必要 bias 项一样集中注意力，量化时必须保留。
+- [Prediction-Powered Ranking of Large Language Models](https://arxiv.org/abs/2402.17826)：结合少量人工成对比较和大量模型成对判断构造 rank-set，用来量化 LLM 生成的排行榜何时会偏离 Chatbot Arena 人类偏好排序。
+- [Automated Statistical Model Discovery with Language Models](https://arxiv.org/abs/2402.17879)：把统计模型发现表述为 Box 循环：LM 提出概率程序模型并在领域约束下自我批判，从而无需手工领域语言也能达到或扩展专家模型。
+- [Gradient-Free Adaptive Global Pruning for Pre-trained Language Models](https://arxiv.org/abs/2402.17946)：用无需梯度的自适应全局准则剪枝预训练语言模型，避免依赖反向传播显著性估计。
+- [Hire a Linguist!: Learning Endangered Languages with In-Context Linguistic Descriptions](https://arxiv.org/abs/2402.18025)：提出 LINGOLLM，一种免训练提示方法，将词典、语法和形态分析放入上下文，使 LLM 能处理未见过的濒危语言。
+- [MEGAnno+: A Human-LLM Collaborative Annotation System](https://arxiv.org/abs/2402.18050)：提供 LLM 辅助标注系统，包含 agent 管理、稳健自动标注和人工验证，面向含社会文化或领域语境的 NLP 标签。
+- [Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and Mitigating Knowledge Conflicts in Language Models](https://arxiv.org/abs/2402.18154)：定位后层中作用相反的 memory heads 和 context heads，并通过定向 attention head 干预缓解检索上下文与模型内存的冲突。
+- [LLM Task Interference: An Initial Study on the Impact of Task-Switch in Conversational History](https://arxiv.org/abs/2402.18216)：测量对话历史中的任务切换如何降低 LLM 表现，隔离由先前对话上下文条件化引起的任务干扰。
+- [Learning or Self-aligning? Rethinking Instruction Fine-tuning](https://arxiv.org/abs/2402.18243)：用知识干预拆解指令微调效果，发现 IFT 更多改变行为对齐，而不是可靠增加世界知识。
+- [Large Language Models As Evolution Strategies](https://arxiv.org/abs/2402.18381)：测试 LLM 能否通过提示实现零样本黑盒 evolutionary optimization，根据过往评估轨迹更新搜索分布。
+- [RNNs are not Transformers (Yet): The Key Bottleneck on In-context Retrieval](https://arxiv.org/abs/2402.18510)：从理论上说明 chain-of-thought 虽能改善 RNN，却无法弥合其在算法任务上与 Transformer 的上下文检索差距。
+- [Keeping LLMs Aligned After Fine-tuning: The Crucial Role of Prompt Templates](https://arxiv.org/abs/2402.18540)：显示在良性微调中保留 chat-style prompt template，有助于 Llama 2-Chat、Mistral Instruct 和 GPT-3.5 保持安全对齐。
+- [Arithmetic Control of LLMs for Diverse User Preferences: Directional Preference Alignment with Multi-Objective Rewards](https://arxiv.org/abs/2402.18571)：提出 DPA，把用户偏好表示为多目标奖励空间中的方向，使对齐后的 LLM 行为可做算术式控制。
+- [Grounding Language Models for Visual Entity Recognition](https://arxiv.org/abs/2402.18695)：提出 AutoVER，把自回归 MLLM、检索增强 constrained generation 和 hard-negative contrastive training 结合用于视觉实体识别。
+- [Controllable Preference Optimization: Toward Controllable Multi-Objective Alignment](https://arxiv.org/abs/2402.19085)：训练可控奖励模型和策略模型，使偏好优化能在推理时权衡多个目标，而不是折叠为单一标量偏好。
+- [Teaching Large Language Models an Unseen Language on the Fly](https://arxiv.org/abs/2402.19167)：在推理时用语法草图、词典和形态信息教 LLM 处理未见语言，而不是补充预训练语料。
+- [Wisdom of the silicon crowd: LLM ensemble prediction capabilities rival human crowd accuracy](https://arxiv.org/abs/2402.19379)：聚合 12 个 LLM 对 31 个二元问题的预测，并与 925 名人类预测竞赛参与者比较，显示模型集成可接近人群聚合预测精度。
+- [Resonance RoPE: Improving Context Length Generalization of Large Language Models](https://arxiv.org/abs/2403.00071)：用 resonance-aware 设计修改 rotary position embedding，在不完整长上下文重训的情况下提升上下文长度泛化。
+- [Gender Bias in Large Language Models across Multiple Languages](https://arxiv.org/abs/2403.00277)：衡量多语言 LLM 输出中的性别偏见，揭示偏见会随语言变化，而不能只外推英文表现。
+- [Learning and Leveraging World Models in Visual Representation Learning](https://arxiv.org/abs/2403.00504)：训练视觉表示预测潜在世界动态，并利用学到的 world model 提升视觉任务的零样本泛化。
+- [VisionLLaMA: A Unified LLaMA Interface for Vision Tasks](https://arxiv.org/abs/2403.00522)：构建 LLaMA 风格视觉主干，用序列化视觉 token 统一图像任务接口，而不是依赖任务专用 head。
+- [AtP*: An efficient and scalable method for localizing LLM behaviour to components](https://arxiv.org/abs/2403.00745)：用 AtP* 将 LLM 行为定位到内部组件，为机制分析提供比穷举 activation patching 更可扩展的路线。
+- [UrbanGPT: Spatio-Temporal Large Language Models](https://arxiv.org/abs/2403.00813)：构建 UrbanGPT，将语言模型接口适配到城市时空序列与空间信号预测。
+- [DenseMamba: State Space Models with Dense Hidden Connection for Efficient Large Language Models](https://arxiv.org/abs/2403.00818)：加入 DenseSSM 连接，把浅层 hidden state 注入更深的 SSM 层，在保持并行训练和高效推理的同时改进 RetNet 与 Mamba 式模型。
+- [CLLMs: Consistency Large Language Models](https://arxiv.org/abs/2403.00835)：微调目标 LLM，使其能从任意状态预测 Jacobi decoding 固定点，从而加速并行 token 解码收敛。
+- [OpenGraph: Towards Open Graph Foundation Models](https://arxiv.org/abs/2403.01121)：提出开放图基础模型，用 LLM 增强图数据扩增，使图学习能泛化到未见图结构和任务。
+- [The Hidden Attention of Mamba Models](https://arxiv.org/abs/2403.01590)：把 selective state-space layer 重新解释为 attention-driven model，从而比较 Mamba 内部机制与 Transformer self-attention。
+- [SynCode: LLM Generation with Grammar Augmentation](https://arxiv.org/abs/2403.01632)：通过 SynCode 用上下文无关语法约束 LLM 解码，无需重训即可生成语法有效的 JSON、YAML 或代码。
+- [How Multimodal Integration Boost the Performance of LLM for Optimization: Case Study on Capacitated Vehicle Routing Problems](https://arxiv.org/abs/2403.01757)：为车辆路径优化实例加入视觉编码，使 LLM 能利用纯文本提示中不明显的决策变量关系。
+- [Not all Layers of LLMs are Necessary during Inference](https://arxiv.org/abs/2403.02181)：说明推理时可跳过部分 Transformer 层，在尽量保持任务表现的同时降低 LLM 计算量。
+- [TPLLM: A Traffic Prediction Framework Based on Pretrained Large Language Models](https://arxiv.org/abs/2403.02221)：把预训练 LLM 表征适配到低数据交通预测，在历史时空交通记录稀缺时提升泛化。
+- [Vision-RWKV: Efficient and Scalable Visual Perception with RWKV-Like Architectures](https://arxiv.org/abs/2403.02308)：把 RWKV 式序列混合适配到视觉任务，支持稀疏输入和全局处理，面向可扩展的高分辨率感知。
+- [Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve](https://arxiv.org/abs/2403.02310)：在 Sarathi-Serve 中调度 LLM prefill 与 decode 工作，减少延迟敏感阶段和吞吐导向阶段之间的相互干扰。
+- [Contrastive Region Guidance: Improving Grounding in Vision-Language Models without Training](https://arxiv.org/abs/2403.02325)：通过对比有无区域提示时的 VLM 回答实现免训练视觉 grounding，使开源 VLM 可使用 bounding-box prompt。
+- [RegionGPT: Towards Region Understanding Vision Language Model](https://arxiv.org/abs/2403.02330)：通过空间感知视觉编码器修改和细粒度区域 caption 指令数据，提升 VLM 的区域级理解。
+- [Finetuned Multimodal Language Models Are High-Quality Image-Text Data Filters](https://arxiv.org/abs/2403.02677)：用微调后的多模态语言模型筛选图文数据，以具备指令理解的判断替代简单 CLIP 式分数。
+- [MeanCache: User-Centric Semantic Caching for LLM Web Services](https://arxiv.org/abs/2403.02694)：按语义查询相似性和会话上下文缓存 LLM Web 服务响应，在控制误命中的同时降低重复查询推理成本。
+- [Causal Prompting: Debiasing Large Language Model Prompting based on Front-Door Adjustment](https://arxiv.org/abs/2403.02738)：用结构因果图刻画 prompting bias，并在推理时用 front-door adjustment 对 LLM prompt 去偏。
+- [PromptKD: Unsupervised Prompt Distillation for Vision-Language Models](https://arxiv.org/abs/2403.02781)：用未标注领域图像学习 domain prompt，将大型视觉语言教师模型蒸馏到轻量目标模型。
+- [Evolution Transformer: In-Context Evolutionary Optimization](https://arxiv.org/abs/2403.02985)：提出 causal Transformer，从优化轨迹中学习 evolutionary-strategy 更新，并在上下文中输出改进的搜索分布步骤。
+- [Data Augmentation using LLMs: Data Perspectives, Learning Paradigms and Challenges](https://arxiv.org/abs/2403.02990)：从数据和学习范式两侧综述 LLM 数据增强，覆盖生成训练样例、复用 LLM 生成数据、可控增强和多模态增强缺口。
+- [Feast Your Eyes: Mixture-of-Resolution Adaptation for Multimodal Large Language Models](https://arxiv.org/abs/2403.03003)：提出 MRA，用高低分辨率双视觉路径适配模块提升 MLLM 的细粒度视觉识别能力。
+- [Quantum many-body physics calculations with large language models](https://arxiv.org/abs/2403.03154)：用多步提示模板让 GPT-4 从理论物理论文中推导 Hartree-Fock Hamiltonian，并结合中间步骤纠错和自动评分。
+- [Mixture-of-LoRAs: An Efficient Multitask Tuning Method for Large Language Models](https://arxiv.org/abs/2403.03432)：把多个 LoRA adapter 组合为多任务微调混合体，在不全量微调的情况下路由任务特定更新。
+- [GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection](https://arxiv.org/abs/2403.03507)：在 LLM 训练中把梯度投影到低秩子空间，减少优化器显存，同时保留全秩权重更新。
+- [Multimodal Large Language Models to Support Real-World Fact-Checking](https://arxiv.org/abs/2403.03627)：用抽取预测、解释和置信度的 evidence-free 提示，评估 GPT-4V 与开源 MLLM 对误导性图文声明的事实核查能力。
+- [ShortGPT: Layers in Large Language Models are More Redundant Than You Expect](https://arxiv.org/abs/2403.03853)：提出 ShortGPT 式层删除方法，识别 LLM 冗余层并缩短网络以加速推理。
+- [On the Origins of Linear Representations in Large Language Models](https://arxiv.org/abs/2403.03867)：分析 LLM 中线性表示的来源，将内部几何与语义特征编码联系起来。
+- [Learning to Decode Collaboratively with Multiple Language Models](https://arxiv.org/abs/2403.03870)：学习一个 token 级 latent controller，决定基础 LLM 何时自己生成、何时调用 assistant LM 参与协同解码。
+- [SaulLM-7B: A pioneering Large Language Model for Law](https://arxiv.org/abs/2403.03883)：基于 Mistral 在超过 30B 英文法律 token 上训练 7B 法律领域 LLM，并加入法律指令微调用于文档理解和生成。
+- [Stop Regressing: Training Value Functions via Classification for Scalable Deep RL](https://arxiv.org/abs/2403.03950)：用分类目标替代 value-function 回归，旨在让 value-based deep RL 更可靠地扩展到高容量网络。
+- [Effectiveness assessment of recent large vision-language models](https://arxiv.org/abs/2403.04306)：在专门检测任务与通用多模态推理任务上评估 MiniGPT-v2、LLaVA-1.5、Shikra 和 GPT-4V，并将 LVLM 弱点归因于专门任务认知不足、幻觉、图文干扰和鲁棒性缺口。
+- [Yi: Open Foundation Models by 01.AI](https://arxiv.org/abs/2403.04652)：报告 Yi 语言和多模态模型族，覆盖 6B 与 34B base model、chat 版本、200K 上下文模型、depth-upscaled 模型和 VLM。
+- [Telecom Language Models: Must They Be Large?](https://arxiv.org/abs/2403.04666)：研究紧凑语言模型是否能服务电信任务，并在资源受限部署假设下比较小模型与更大 LLM。
+- [Graph-Oriented Instruction Tuning of Large Language Models for Generic Graph Mining](https://arxiv.org/abs/2403.04780)：提出 MuseGraph，将 GNN 表示与 LLM 指令微调整合，让单一模型处理多种图挖掘任务和数据集。
+- [VLM-PL: Advanced Pseudo Labeling approach for Class Incremental Object Detection via Vision-Language Model](https://arxiv.org/abs/2403.05346)：用 VLM 验证 class-incremental object detection 的伪标注 ground truth，以减少多场景增量学习中的遗忘。
+- [Is Cosine-Similarity of Embeddings Really About Similarity?](https://arxiv.org/abs/2403.05440)：分析正则化线性 embedding model 中的 cosine similarity，说明归一化何时改善或损害语义相似度判断。
+- [Unfamiliar Finetuning Examples Control How Language Models Hallucinate](https://arxiv.org/abs/2403.05612)：发现微调数据中的陌生样例会塑造 LLM 对陌生问题的幻觉方式，并利用这一机制训练更可靠的奖励模型以改进事实性 RL 微调。
+- [ItD: Large Language Models Can Teach Themselves Induction through Deduction](https://arxiv.org/abs/2403.05789)：提出 Induction through Deduction，让 LLM 通过演绎样例生成和检验假设，以增强自身归纳能力。
+- [Algorithmic progress in language models](https://arxiv.org/abs/2403.05812)：基于 2012 至 2023 年 Wikitext 和 Penn Treebank 上 200 多个评测拟合增强 scaling law，估计语言模型预训练算法约每八个月将达标算力减半。
+- [Mipha: A Comprehensive Overhaul of Multimodal Assistant with Small Language Models](https://arxiv.org/abs/2403.06199)：围绕小语言模型设计高效多模态助手，联合调整视觉表示、语言主干和优化策略。
+- [Fine-tuning of diffusion models via stochastic control: entropy regularization and beyond](https://arxiv.org/abs/2403.06279)：把 diffusion model 微调形式化为带熵正则的 stochastic control，并扩展到面向文本到图像模型的一般 f-divergence 正则。
+- [What Makes Quantization for Large Language Model Hard? An Empirical Study from the Lens of Perturbation](https://arxiv.org/abs/2403.06408)：将 LLM 量化解释为权重和 activation 扰动，并研究哪些扰动模式最损害模型表现。
+- [Unsupervised Real-Time Hallucination Detection based on the Internal States of Large Language Models](https://arxiv.org/abs/2403.06448)：提出 MIND，用生成过程中的 LLM 内部状态进行无监督实时幻觉检测，并构建 HELM 基准，包含模型输出及推理时内部状态。
+- [RecAI: Leveraging Large Language Models for Next-Generation Recommender Systems](https://arxiv.org/abs/2403.06465)：提供推荐系统工具包，包含 LLM 推荐 agent、推荐导向语言模型、知识插件、解释模块和评估器，用于会话式、可解释和可控推荐。
+- [Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?](https://arxiv.org/abs/2403.06833)：形式化 instruction-data separation，提出 SEP 数据集，并显示 prompt engineering 与 fine-tuning 往往无法在不损害效用的情况下改善分离。
+- [Impact of Noisy Supervision in Foundation Model Learning](https://arxiv.org/abs/2403.06869)：研究大规模监督预训练和图文预训练中的标签噪声，并提出缓解策略以减少下游退化。
+- [Taming Pre-trained LLMs for Generalised Time Series Forecasting via Cross-modal Knowledge Distillation](https://arxiv.org/abs/2403.07300)：把文本中的跨模态知识蒸馏到时间 token 中，将预训练 LLM 适配到通用多变量时间序列预测。
+- [Lumen: Unleashing Versatile Vision-Centric Capabilities of Large Multimodal Models](https://arxiv.org/abs/2403.07304)：重构 LMM 的视觉任务适配方式，使多类感知输出通过 vision-centric 表示学习，而不是强行转成纯语言格式。
+- [Harder Tasks Need More Experts: Dynamic Routing in MoE Models](https://arxiv.org/abs/2403.07652)：按输入难度动态改变激活的 MoE expert 数量，用基于置信度的 expert selection 替代固定 top-k routing。
+- [Branch-Train-MiX: Mixing Expert LLMs into a Mixture-of-Experts LLM](https://arxiv.org/abs/2403.07816)：把 seed LLM 分支成异步训练的领域专家，再将 feedforward 层合并为 MoE，并微调 token 级 routing。
+- [MoPE-CLIP: Structured Pruning for Efficient Vision-Language Models with Module-Wise Pruning Error Metric](https://arxiv.org/abs/2403.07839)：用 module-wise pruning-error metric 压缩 CLIP，避免昂贵 mask search，并在受限硬件上保留视觉语言表现。
+- [Beyond Text: Frozen Large Language Models in Visual Signal Comprehension](https://arxiv.org/abs/2403.07874)：通过 vision-to-language tokenizer 把图像转换成 LLM 词表 token 序列，使冻结 LLM 无需多模态微调即可处理视觉信号。
+- [On the Societal Impact of Open Foundation Models](https://arxiv.org/abs/2403.07918)：梳理开放基础模型的社会影响，聚焦开放权重如何改变可访问性、滥用、治理和问责权衡。
+- [Mechanics of Next Token Prediction with Self-Attention](https://arxiv.org/abs/2403.08081)：推导自注意力下 next-token prediction 的机制，用简化分析解释 attention 如何支持序列预测。
+- [BAGEL: Bootstrapping Agents by Guiding Exploration with Language](https://arxiv.org/abs/2403.08140)：通过 labeler 和 zero-shot agent 的迭代 round-trip，把随机或合成轨迹转为语言描述 demonstration，提升 ToolQA 和 MiniWob++ 上检索式 in-context agent 表现。
+- [Can Large Language Models Identify Authorship?](https://arxiv.org/abs/2403.08213)：评估 LLM 是否能识别作者身份，探查文体信号以及模型归因的边界。
+- [Scattered Mixture-of-Experts Implementation](https://arxiv.org/abs/2403.08245)：用免 padding 的 GPU kernel 和 ParallelLinear 层实现 ScatterMoE，提高稀疏 MoE 训练与推理吞吐并降低显存占用。
+- [Mastering Text, Code and Math Simultaneously via Fusing Highly Specialized Language Models](https://arxiv.org/abs/2403.08281)：融合文本、代码和数学专门语言模型，使单一模型继承多种能力而不必从零训练所有技能。
+- [CleanAgent: Automating Data Standardization with LLM-based Agents](https://arxiv.org/abs/2403.08291)：把 Dataprep.Clean 的声明式列标准化 API 与 LLM agent 结合，使用户一次说明清洗需求后即可生成相应标准化代码。
+- [Gemma: Open Models Based on Gemini Research and Technology](https://arxiv.org/abs/2403.08295)：报告 Gemma 开放模型族及其源自 Gemini 技术栈的训练路线，提供小到中等规模开放基础模型参照。
+- [Language models scale reliably with over-training and on downstream tasks](https://arxiv.org/abs/2403.08540)：把语言模型扩展规律分析延伸到过训练和下游任务，说明基于 loss 的 scaling 仍能预测实际任务表现。
+- [Human Alignment of Large Language Models through Online Preference Optimisation](https://arxiv.org/abs/2403.08635)：从 IPO 与 Nash Mirror Descent 的联系推导 IPO-MD，用于 LLM 对齐中的在线偏好优化。
+- [SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents](https://arxiv.org/abs/2403.08715)：结合行为克隆与基于 LLM 评分筛选的社会互动数据自强化，在提升社交目标完成率时监控安全性和 MMLU 保持情况。
+- [Strengthening Multimodal Large Language Model with Bootstrapped Preference Optimization](https://arxiv.org/abs/2403.08730)：用模型自举的负样本回答和 preference optimization，降低 MLLM 对预训练统计而非视觉证据的偏向。
+- [Simple and Scalable Strategies to Continually Pre-train Large Language Models](https://arxiv.org/abs/2403.08763)：结合 learning-rate re-warming、learning-rate re-decay 和旧数据 replay，使 LLM 持续预训练达到接近从头重训的效果。
+- [Usable XAI: 10 Strategies Towards Exploiting Explainability in the LLM Era](https://arxiv.org/abs/2403.08946)：将 LLM 时代的可用可解释性组织为 10 类策略，覆盖 XAI 如何解释和改进 LLM 应用，以及 LLM 如何反过来增强解释流程。
+- [Towards a theory of model distillation](https://arxiv.org/abs/2403.09053)：形式化 PAC-distillation，用于分析复杂模型何时能被简单模型替代，以及需要多少数据和运行时间。
+- [AutoLoRA: Automatically Tuning Matrix Ranks in Low-Rank Adaptation Based on Meta Learning](https://arxiv.org/abs/2403.09113)：用 meta-learning 自动为各层分配 LoRA rank，减少参数高效微调中的穷举 rank 搜索。
+- [Dial-insight: Fine-tuning Large Language Models with High-Quality Domain-Specific Data Preventing Capability Collapse](https://arxiv.org/abs/2403.09167)：生成并评分多样化领域专用 prompt，以构建既提升专业化又限制通用能力塌缩的微调数据。
+- [PYRA: Parallel Yielding Re-Activation for Training-Inference Efficient Task Adaptation](https://arxiv.org/abs/2403.09192)：把参数高效适配与结构 re-activation 结合，使任务微调降低训练开销而不牺牲推理效率。
+- [Are Vision Language Models Texture or Shape Biased and Can We Steer Them?](https://arxiv.org/abs/2403.09193)：测量 VLM 的 texture 与 shape bias，并测试语言 prompt 能否控制其视觉线索偏好。
+- [MambaTalk: Efficient Holistic Gesture Synthesis with Selective State Space Models](https://arxiv.org/abs/2403.09471)：用 Mamba 式 state-space block 和离散 motion prior，从语音或文本生成低延迟长序列手势。
+- [Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision](https://arxiv.org/abs/2403.09472)：在较易问题上训练 reward model，再用于较难推理任务的 reranking 或 RL，从而实现超出直接人工监督范围的对齐。
+- [PreCurious: How Innocent Pre-Trained Language Models Turn into Privacy Traps](https://arxiv.org/abs/2403.09562)：说明看似无害的预训练 LM 在下游使用后可能成为隐私陷阱，分析适配模型中的记忆与泄漏风险。
+- [ExploRLLM: Guiding Exploration in Reinforcement Learning with Large Language Models](https://arxiv.org/abs/2403.09583)：把基础模型生成的 policy code 与表示和 residual RL 结合，改善机器人操作中的探索效率与 sim-to-real 迁移。
+- [Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking](https://arxiv.org/abs/2403.09629)：训练语言模型在回答前生成内部 rationale，并用自生成思维轨迹改进预测，无需外部 rationale 标签。
+- [Open-Universe Indoor Scene Generation using LLM Program Synthesis and Uncurated Object Databases](https://arxiv.org/abs/2403.09675)：让 LLM 合成程序并从未整理对象库中检索物体，以开放文本生成室内场景，而不是依赖固定场景词表或对象类别。
+- [EfficientVMamba: Atrous Selective Scan for Light Weight Visual Mamba](https://arxiv.org/abs/2403.09977)：向 Visual Mamba block 加入 atrous selective scan 和卷积分支，用线性复杂度全局建模提升轻量视觉模型精度。
+- [HawkEye: Training Video-Text LLMs for Grounding Text in Videos](https://arxiv.org/abs/2403.10228)：训练视频文本 LLM 将文本与视频证据进行时空 grounding，强调细粒度定位而不只是视频级字幕或问答。
+- [Dreaming of Many Worlds: Learning Contextual World Models Aids Zero-Shot Generalization](https://arxiv.org/abs/2403.10967)：学习能跨多种环境预测动态的 contextual world model，在上下文变化时提升零样本泛化。
+- [Source Prompt Disentangled Inversion for Boosting Image Editability with Diffusion Models](https://arxiv.org/abs/2403.11105)：提出 SPDInv，用固定点 diffusion inversion 将 latent noise 与源 prompt 解耦，以减少文本驱动图像编辑 artifact。
+- [Spiking Wavelet Transformer](https://arxiv.org/abs/2403.11138)：结合 spiking neural computation 与 wavelet 风格 Transformer 表示，以改进高效视觉序列建模。
+- [LLM Guided Evolution - The Automation of Models Advancing Models](https://arxiv.org/abs/2403.11446)：用 LLM 修改模型代码并通过 Evolution of Thought 反思历史变体，自动化 evolutionary model design。
+- [Arc2Face: A Foundation Model for ID-Consistent Human Faces](https://arxiv.org/abs/2403.11641)：用 ArcFace 身份 embedding 和 WebFace42M 上采样数据适配 Stable Diffusion，生成保持人物身份的一组多样人脸图像。
+- [Crystalformer: Infinitely Connected Attention for Periodic Structure Encoding](https://arxiv.org/abs/2403.11686)：把周期晶体结构上的 attention 重写为可计算的 neural potential summation，用于无限重复原子排列的性质预测。
+- [Jetfire: Efficient and Accurate Transformer Pretraining with INT8 Data Flow and Per-Block Quantization](https://arxiv.org/abs/2403.12422)：提出 Jetfire，用 INT8 数据流和按块量化提升 Transformer 预训练效率并控制精度损失。
+- [Towards Multimodal In-Context Learning for Vision & Language Models](https://arxiv.org/abs/2403.12736)：研究并改进 VLM 在视觉和语言示例共同出现在 prompt 中时迁移 LLM 式 in-context learning 的能力。
+- [Toward Sustainable GenAI using Generation Directives for Carbon-Friendly Large Language Model Inference](https://arxiv.org/abs/2403.12900)：提出 Sprout，用优化器和质量评估器为提示分配 generation directives，在电网感知实验中将 Llama 2 推理碳排放降低超过 40%。
+- [Dated Data: Tracing Knowledge Cutoffs in Large Language Models](https://arxiv.org/abs/2403.12958)：通过 probing 版本化资源定义模型知识的 effective cutoff，并把 cutoff 偏差追溯到 CommonCrawl 时间偏置和预训练数据去重行为。
+- [SceneScript: Reconstructing Scenes With An Autoregressive Structured Language Model](https://arxiv.org/abs/2403.13064)：把三维场景模型生成为结构化语言命令序列，并在 Aria Synthetic Environments 合成数据集上训练。
+- [Evolutionary optimization of model merging recipes](https://arxiv.org/abs/2403.13187)：用 evolutionary search 从开源 LLM 中发现参数空间和 data-flow model merging 配方，而不需要大量额外训练。
+- [Adaptive Ensembles of Fine-Tuned Transformers for LLM-Generated Text Detection](https://arxiv.org/abs/2403.13335)：自适应集成多个专用 Transformer 检测器，以提升分布内和分布外 LLM 生成文本检测。
+- [VL-Mamba: Exploring State Space Models for Multimodal Learning](https://arxiv.org/abs/2403.13600)：用预训练 Mamba state-space model 替换 MLLM 中的 Transformer 语言主干，实现线性扩展的多模态推理。
+- [Probabilistic Forecasting with Stochastic Interpolants and Föllmer Processes](https://arxiv.org/abs/2403.13724)：用 stochastic interpolant 和 Föllmer-process 动力学构建条件生成式预测器，以采样 dynamical system 的未来状态。
+- [RAR: Retrieving and Ranking Augmented MLLMs for Visual Recognition](https://arxiv.org/abs/2403.13805)：加入基于 CLIP 的类别记忆检索和 MLLM reranking，以提升细粒度、few-shot 和 zero-shot 视觉识别。
+- [MMIDR: Teaching Large Language Model to Interpret Multimodal Misinformation via Knowledge Distillation](https://arxiv.org/abs/2403.14171)：把 proprietary LLM 的 rationale 蒸馏到开源 LLM 中，使其能基于处理后的视觉信息和检索证据解释多模态虚假信息判断。
+- [Reinforcement Learning from Reflective Feedback (RLRF): Aligning and Improving LLMs via Fine-Grained Self-Reflection](https://arxiv.org/abs/2403.14238)：把细粒度自我反思反馈作为 RL 信号，改进 LLM 能力而不只做表层偏好对齐。
+- [Exploring the Potential of Large Language Models in Graph Generation](https://arxiv.org/abs/2403.14358)：探索用 LLM 生成图结构，测试文本图描述和提示能否产生有效图。
+- [Detoxifying Large Language Models via Knowledge Editing](https://arxiv.org/abs/2403.14472)：提出 DINM 知识编辑 detoxification baseline，用 SafeEdit 攻击类别和指标在少量 tuning step 内调整有毒参数。
+- [Cobra: Extending Mamba to Multi-Modal Large Language Model for Efficient Inference](https://arxiv.org/abs/2403.14520)：将 Mamba 扩展到多模态大语言模型以提升推理效率。
+- [Implicit Style-Content Separation using B-LoRA](https://arxiv.org/abs/2403.14572)：在 SDXL 中训练两个 LoRA block 分离 style 与 content，使单张图像可用于风格迁移、文本风格化和 style-content mixing。
+- [ReAct Meets ActRe: When Language Agents Enjoy Training Data Autonomy](https://arxiv.org/abs/2403.14589)：让语言智能体自主收集和改进训练数据，把 ReAct 式交互轨迹与 ActRe 数据生成结合起来以提升智能体能力。
+- [PSALM: Pixelwise SegmentAtion with Large Multi-Modal Model](https://arxiv.org/abs/2403.14598)：为 LMM 加入 mask decoder 和多模态输入 schema，使一个模型可联合训练 referring、panoptic、interactive 与 open-vocabulary segmentation。
+- [MyVLM: Personalizing VLMs for User-Specific Queries](https://arxiv.org/abs/2403.14599)：用外部 concept head 和学习到的 concept embedding 个性化 VLM，使 BLIP-2 和 LLaVA 能识别用户特定视觉概念。
+- [Towards Modeling Learner Performance with Large Language Models](https://arxiv.org/abs/2403.14661)：为 knowledge tracing 微调 LLM，测试序列建模能力能否在教育数据集上预测学习者表现轨迹。
+- [AutoRE: Document-Level Relation Extraction with Large Language Models](https://arxiv.org/abs/2403.14888)：提出 AutoRE，采用 relation-head-facts 范式和 QLoRA tuning 做端到端文档级关系抽取，无需固定关系选项 prompt。
+- [LLM2LLM: Boosting LLMs with Novel Iterative Data Enhancement](https://arxiv.org/abs/2403.15042)：让 teacher LLM 根据 student model 的错误迭代生成新样例，用于增强低数据微调集。
+- [Make VLM Recognize Visual Hallucination on Cartoon Character Image with Pose Information](https://arxiv.org/abs/2403.15048)：利用姿态信息帮助 VLM 识别卡通人物图像中的视觉幻觉，属于较窄的幻觉检测场景。
+- [Text clustering with large language model embeddings](https://arxiv.org/abs/2403.15112)：比较 LLM embedding、聚类算法、基于摘要的降维和模型规模选择对未标注文本聚类效果的影响。
+- [Not All Attention is Needed: Parameter and Computation Efficient Transfer Learning for Multi-modal Large Language Models](https://arxiv.org/abs/2403.15226)：通过只选择必要 attention 组件降低多模态迁移成本，使 MLLM 适配更省参数和计算。
+- [Spectral Motion Alignment for Video Motion Transfer using Diffusion Models](https://arxiv.org/abs/2403.15249)：在扩散视频动作迁移中对齐频谱运动表示，改进源视频到目标视频的动作模式迁移。
+- [SiMBA: Simplified Mamba-Based Architecture for Vision and Multivariate Time series](https://arxiv.org/abs/2403.15360)：将 Mamba 序列建模与 EinFFT 通道建模结合，稳定大规模 SSM 视觉和时间序列主干，并在 ImageNet、迁移学习和七个预测数据集上评测。
+- [Can large language models explore in-context?](https://arxiv.org/abs/2403.15371)：研究 LLM 是否能在序贯决策任务中进行上下文内探索，将探索行为与普通 next-token 预测或静态推理区分开。
+- [LLaVA-Prumerge: Adaptive Token Reduction for Efficient Large Multimodal Models](https://arxiv.org/abs/2403.15388)：依据 class token attention 选择重要视觉 token，并按 key 相似度合并冗余 token，使 LLaVA 视觉 token 平均压缩约 14 倍且保持 VQA 和推理表现。
+- [Decoding Compressed Trust: Scrutinizing the Trustworthiness of Efficient LLMs Under Compression](https://arxiv.org/abs/2403.15447)：审计压缩 LLM 的可信度，衡量剪枝、量化或蒸馏如何影响安全与可靠性信号。
+- [Emergent World Models and Latent Variable Estimation in Chess-Playing Language Models](https://arxiv.org/abs/2403.15498)：训练字符级国际象棋语言模型，并用 probe 与 activation editing 证明模型内部存在棋盘状态和棋手水平表示，可改变预测棋力。
+- [Contact-aware Human Motion Generation from Textual Descriptions](https://arxiv.org/abs/2403.15709)：构建 RICH-CAT 接触感知 motion-text 数据，并用 CATMO 结合 VQ-VAE 接触与动作 latent 以及 intertwined GPT 联合生成三维人体动作和接触序列。
+- [The Frontier of Data Erasure: Machine Unlearning for Large Language Models](https://arxiv.org/abs/2403.15779)：综述面向非结构化文本和结构化分类数据的 LLM machine unlearning 方法，强调定向遗忘、模型效用保持和过度删除风险。
+- [LLMs Are Few-Shot In-Context Low-Resource Language Learners](https://arxiv.org/abs/2403.16512)：研究 25 种低资源语言上的 in-context 和跨语言 prompting，发现 query alignment 比 label alignment 更能弥合语言差距。
+- [Concerned with Data Contamination? Assessing Countermeasures in Code Language Model](https://arxiv.org/abs/2403.16898)：在 200 多万个带时间戳 Python 函数上测试新近数据、新构造数据和重构代码等反污染措施，发现常用防护和 perplexity 检测对代码模型并不可靠。
+- [Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance](https://arxiv.org/abs/2403.16952)：从小规模训练拟合数据混合性能规律，并嵌套模型规模与训练步数 scaling law，选择可匹配更长默认训练的 RedPajama 数据配比。
+- [InternLM2 Technical Report](https://arxiv.org/abs/2403.17297)：报告 InternLM2 的训练、数据、长上下文支持与对齐结果，作为开放 LLM 家族技术参考。
+- [PlainMamba: Improving Non-Hierarchical Mamba in Visual Recognition](https://arxiv.org/abs/2403.17695)：用连续二维扫描、方向感知更新、等宽 PlainMamba block 和无特殊 token 设计，把 Mamba 适配为可扩展视觉识别主干。
+- [Mechanistic Design and Scaling of Hybrid Architectures](https://arxiv.org/abs/2403.17844)：用机制化架构设计代理任务、compute-optimal 与 state-optimal scaling law，以及 500 多个 70M-7B 语言模型，说明混合稀疏拓扑可优于 Transformer、Hyena 与 Mamba 基线。
+- [Quantifying and Mitigating Unimodal Biases in Multimodal Large Language Models: A Causal Perspective](https://arxiv.org/abs/2403.18346)：用因果 VQA 框架、1.2 万例 MORE 数据集和 CAVE agent 框架衡量并缓解多模态 LLM 中的语言偏置和视觉偏置。
+- [Sequential Recommendation with Latent Relations based on Large Language Model](https://arxiv.org/abs/2403.18348)：用 LLM 语言知识表示和 discrete-state VAE 挖掘物品潜在关系，并把关系发现任务与序列推荐目标联合优化。
+- [BLADE: Enhancing Black-box Large Language Models with Small Domain-Specific Models](https://arxiv.org/abs/2403.18365)：把黑盒通用 LLM 与经过垂直领域数据和知识指令训练的小型领域 LM 配对，并用 Bayesian optimization 在法律和医疗基准上组合二者。
+- [Mini-Gemini: Mining the Potential of Multi-Modality Vision Language Models](https://arxiv.org/abs/2403.18814)：通过高分辨率视觉 token、高质量理解与生成数据以及 VLM 引导生成增强 VLM，并把 dense 和 MoE 语言底座扩展到 2B 至 34B。
+- [XMoE: Sparse Models with Fine-grained and Adaptive Expert Selection](https://arxiv.org/abs/2403.18926)：用小专家和阈值路由器让 token 只激活必要 MoE 参数，在语言建模和机器翻译中将 MoE 层计算量降低超过 50%。
+- [Learning From Correctness Without Prompting Makes LLM Efficient Reasoner](https://arxiv.org/abs/2403.19094)：在无需显式提示的情况下从正确性信号训练高效推理，直接用答案正确性改善推理行为。
+- [STaR-GATE: Teaching Language Models to Ask Clarifying Questions](https://arxiv.org/abs/2403.19154)：通过 STaR-GATE 教语言模型提出澄清问题，把歧义处理训练成可学习的生成行为。
+- [Disentangling Length from Quality in Direct Preference Optimization](https://arxiv.org/abs/2403.19159)：诊断 DPO 通过分布外 bootstrapping 利用冗长偏好的问题，并加入正则化以在控制回答长度的同时保留质量收益。
+- [Make Large Language Model a Better Ranker](https://arxiv.org/abs/2403.19181)：介绍 ALRO 这一 LLM 推荐器训练方法，将 soft lambda listwise loss 与位置敏感学习结合，使 next-token 预测更贴合候选排序关系。
+- [Are Large Language Models Good at Utility Judgments?](https://arxiv.org/abs/2403.19216)：评测五个 LLM 在开放域问答中判断 passage utility 的能力，区分 utility 与 relevance，并提出 k-sampling listwise 判断用于 RAG 答案生成。
+- [Efficient Learning with Sine-Activated Low-Rank Matrices](https://arxiv.org/abs/2403.19243)：在低秩矩阵分解中加入正弦激活以提高有效秩，同时保持参数效率，并在 ViT、LLM、NeRF 和三维形状模型上验证。
+- [Dataverse: Open-Source ETL (Extract, Transform, Load) Pipeline for Large Language Models](https://arxiv.org/abs/2403.19340)：提供 Dataverse 开源 ETL 管线，用于 LLM 训练语料的抽取、转换和加载。
+- [Checkpoint Merging via Bayesian Optimization in LLM Pretraining](https://arxiv.org/abs/2403.19390)：在共享训练轨迹的 LLM checkpoint 上用 Bayesian optimization 搜索合并权重，通过 held-out 数据以很低额外成本增强预训练。
+- [RSMamba: Remote Sensing Image Classification With State Space Model](https://arxiv.org/abs/2403.19654)：用动态多路径激活机制把 Mamba 适配到遥感场景分类，在保持线性复杂度的同时建模非因果二维图像数据。
+- [Language Models Learn Rare Phenomena from Less Rare Phenomena: The Case of the Missing AANNs](https://arxiv.org/abs/2403.19827)：研究 LM 如何从较常见现象推断稀有语言现象，以缺失 AANN 结构为案例。
+- [MambaMixer: Efficient Selective State Space Models with Dual Token and Channel Selection](https://arxiv.org/abs/2403.19888)：加入 selective token 和 channel mixer 以及加权早期特征访问，形成用于视觉和时间序列预测的 ViM2 与 TSM2 主干。
+- [Transformer-Lite: High-efficiency Deployment of Large Language Models on Mobile Phone GPUs](https://arxiv.org/abs/2403.20041)：通过动态形状符号执行、GPU 算子优先级、FP4 M0E4 量化和 KV cache 子张量处理，优化 2B 至 14B LLM 的手机端 GPU 推理。
+- [Learn "No" to Say "Yes" Better: Improving Vision-Language Models via Negations](https://arxiv.org/abs/2403.20312)：构建含真实 caption 和否定 caption 的 CC-Neg，并用改造 contrastive loss 训练 CoN-CLIP，让 VLM 更好编码否定和组合式图文语义。
+- [Gecko: Versatile Text Embeddings Distilled from Large Language Models](https://arxiv.org/abs/2403.20327)：通过生成合成 query-passage 对并重标注正例与 hard negative，把 LLM 知识蒸馏到紧凑文本 embedding 模型，在 256 和 768 维 MTEB 检索上提升表现。
+- [Comparing Bad Apples to Good Oranges: Aligning Large Language Models via Joint Preference Optimization](https://arxiv.org/abs/2404.00530)：提出 JPO，优化 chosen instruction-response pair 相对 rejected pair 的联合概率，使对齐能利用对提示和回答整体的偏好。
+- [Face It Yourselves: An LLM-Based Two-Stage Strategy to Localize Configuration Errors via Logs](https://arxiv.org/abs/2404.00640)：用 LogConfigLocalizer 的两阶段 LLM 策略从日志定位配置错误根因，在 Hadoop 配置错误案例中为无法访问源码的终端用户报告高准确率。
+- [Rehearsal-Free Modular and Compositional Continual Learning for Language Models](https://arxiv.org/abs/2404.00790)：加入模块化持续学习组件，在无 rehearsal 数据下组合新语言模型能力，关注保持与迁移。
+- [Do language models plan ahead for future tokens?](https://arxiv.org/abs/2404.00859)：探查语言模型在输出前是否规划未来 token，用预测行为测试前瞻表示。
+- [Query Performance Prediction Using Relevance Judgments Generated by Large Language Models](https://arxiv.org/abs/2404.01012)：用 LLM 生成的相关性判断做查询性能预测，在不只依赖人工标签的情况下估计检索难度。
+- [Large Language Model Evaluation Via Multi AI Agents: Preliminary results](https://arxiv.org/abs/2404.01023)：用多个 AI agent 评估 LLM 输出；该条低置信，更接近评测 harness 而非纯模型训练。
+- [Green AI: exploring carbon footprints, mitigation strategies, and trade offs in large language model training](https://arxiv.org/abs/2404.01157)：估算主要 LLM 训练设置的 CO2 排放，比较 GPU 硬件碳足迹，并分析在保持鲁棒性和性能时的减排权衡。
+- [Large Language Models are Capable of Offering Cognitive Reappraisal, if Guided](https://arxiv.org/abs/2404.01288)：用 RESORT reappraisal constitutions 指导 LLM 生成认知重评式支持，并请临床心理专家评估其对社交媒体求助帖的回应。
+- [LLaVA-Gemma: Accelerating Multimodal Foundation Models with a Compact Language Model](https://arxiv.org/abs/2404.01331)：在紧凑 Gemma 底座上训练 LLaVA 式多模态模型，并消融 connector 预训练、视觉主干强度和语言模型规模的影响。
+- [Prompt-prompted Adaptive Structured Pruning for Efficient LLM Generation](https://arxiv.org/abs/2404.01365)：提出 GRIFFIN，一种免训练、免校准的序列级 FF expert 选择方法，利用结构化 activation flocking 在生成时约只用一半前馈参数。
+- [Are large language models superhuman chemists?](https://arxiv.org/abs/2404.01475)：测试 LLM 在化学任务上是否超过专家基线，把化学推理作为能力评测信号。
+- [What Can Transformer Learn with Varying Depth? Case Studies on Sequence Learning Tasks](https://arxiv.org/abs/2404.01601)：设计合成序列任务说明一层 attention 可处理记忆，两层才支持推理和泛化，三层可能才具备上下文泛化能力。
+- [AddSR: Accelerating Diffusion-based Blind Super-Resolution with Adversarial Diffusion Distillation](https://arxiv.org/abs/2404.01717)：用 adversarial diffusion distillation、基于预测的自细化、HR 约束 teacher 和 timestep-adaptive 平衡加速扩散式 blind super-resolution。
+- [Octopus v2: On-device language model for super agent](https://arxiv.org/abs/2404.01744)：把函数调用能力压缩到 2B 端侧模型，缩短上下文和延迟，使移动端 Agent 式 API 路由兼顾隐私与成本。
+- [Accelerating Transformer Pre-Training with 2: 4 Sparsity](https://arxiv.org/abs/2404.01847)：研究 2:4 稀疏 Transformer 预训练，包含 flip-rate 监控、masked gradient decay、最终 dense tuning、可转置 mask 和 gated activation kernel 优化。
+- [HyperCLOVA X Technical Report](https://arxiv.org/abs/2404.01954)：记录面向韩语和英语能力的 LLM 家族，使用韩语、英语和代码数据训练，并经安全约束人工标注指令微调，在推理、代码、数学、聊天和 harmlessness 上评测。
+- [Advancing LLM Reasoning Generalists with Preference Trees](https://arxiv.org/abs/2404.02078)：围绕推理轨迹构建 preference trees，使 LLM 能从结构化比较中学习通用推理行为，而不只学习最终答案。
+- [Mixture-of-Depths: Dynamically allocating compute in transformer-based language models](https://arxiv.org/abs/2404.02258)：用 top-k routing 限制每层参与计算的 token 数，让 Transformer 学会 token 级动态算力分配，同时保持总 FLOPs 可预测并加快采样。
+- [Calibrating the Confidence of Large Language Models by Eliciting Fidelity](https://arxiv.org/abs/2404.02655)：把 LLM 置信度分解为问题不确定性和对自身答案的 fidelity，并在六个 RLHF 模型和四个 MCQA 数据集上评估即插即用校准方法。
+- [Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2404.02657)：说明前向和反向 KL 在长程 LLM 蒸馏中目标趋同，并提出 adaptive KL 权重以在训练早期平衡 head 与 tail 分布学习。
+- [Faster Diffusion via Temporal Attention Decomposition](https://arxiv.org/abs/2404.02747)：通过分解 temporal attention 加速扩散模型，在保持时间一致性的同时降低视频或时序生成成本。
+- [Cherry on Top: Parameter Heterogeneity and Quantization in Large Language Models](https://arxiv.org/abs/2404.02837)：识别对性能影响异常大的 "cherry" 参数，并提出 CherryQ，在低比特 LLM 推理中保留这些参数的高精度、激进量化其余参数。
+- [Toward Inference-optimal Mixture-of-Expert Large Language Models](https://arxiv.org/abs/2404.02852)：把推理效率加入 MoE scaling 分析，显示少专家模型即使不总是训练损失最优，也可能在相同性能下更适合服务部署。
+- [Linear Attention Sequence Parallelism](https://arxiv.org/abs/2404.02882)：对 linear attention 做序列并行化，提高长上下文线性注意力模型的训练吞吐。
+- [Min-K%++: Improved Baseline for Detecting Pre-Training Data from Large Language Models](https://arxiv.org/abs/2404.02936)：通过判断输入 token 是否构成 LLM 条件类别分布下的局部最大值来检测预训练样本，在 WikiMIA 和 MIMIR 上提升 AUROC。
+- [PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models](https://arxiv.org/abs/2404.02948)：用基础权重的主奇异分量初始化 LoRA 式 adapter 矩阵，加快收敛，并在最高 70B 模型上提升 PEFT 和量化 PEFT 效果。
+- [Uncertainty in Language Models: Assessment through Rank-Calibration](https://arxiv.org/abs/2404.03163)：提出 rank-calibration，用“更高不确定性是否对应更低生成质量”比较 LM 不确定性指标，而不需要临时二值正确性阈值。
+- [How Easily do Irrelevant Inputs Skew the Responses of Large Language Models?](https://arxiv.org/abs/2404.03302)：构造语义无关、部分相关和相关的干扰 passage 测试 RAG 鲁棒性，显示 LLM 很容易被高检索排名但无关的上下文误导。
+- [ReFT: Representation Finetuning for Language Models](https://arxiv.org/abs/2404.03592)：提出 ReFT，通过编辑隐表示而非全量权重来参数高效地调节语言模型行为。
+- [Mitigating the Impact of Outlier Channels for Language Model Quantization with Activation Regularization](https://arxiv.org/abs/2404.03605)：用量化感知输入正则和 activation kurtosis 输出正则控制 outlier channel，从而得到接近标准精度表现的 W4A4 语言模型。
+- [X-Lifecycle Learning for Cloud Incident Management using LLMs](https://arxiv.org/abs/2404.03662)：在代码、配置、监控信号、依赖和故障排查文档等跨 SDLC 事故数据上训练并应用 LLM，用于云事故检测、根因分析和缓解。
+- [Direct Nash Optimization: Teaching Language Models to Self-Improve with General Preferences](https://arxiv.org/abs/2404.03715)：在一般偏好下把 LLM policy 优化到 Nash equilibrium，使模型能从偏好反馈中自我改进，而不限于简单成对胜率目标。
+- [GenQREnsemble: Zero-Shot LLM Ensemble Prompting for Generative Query Reformulation](https://arxiv.org/abs/2404.03746)：用零样本 LLM ensemble prompting 生成多种 query reformulation，在无需任务专用训练的情况下改进面向检索的查询改写。
+- [Outlier-Efficient Hopfield Layers for Large Transformer-Based Models](https://arxiv.org/abs/2404.03828)：用 Hopfield 式 associative layer 替换标准前馈计算，面向大 Transformer 中 activation outlier 的更高效处理。
+- [BiSHop: Bi-Directional Cellular Learning for Tabular Data with Generalized Sparse Modern Hopfield Model](https://arxiv.org/abs/2404.03830)：用 bi-directional cellular learning 和 generalized sparse modern Hopfield layer 同时建模表格行列，用于 tabular prediction。
+- [Verifiable by Design: Aligning Language Models to Quote from Pre-Training Data](https://arxiv.org/abs/2404.03862)：将 LM 对齐为通过引用记忆中的预训练文本来回答，使生成内容能以显式原文复现方式验证，而不是给出无来源断言。
+- [Simple Techniques for Enhancing Sentence Embeddings in Generative Language Models](https://arxiv.org/abs/2404.03921)：通过轻量 pooling 和 prompting 选择改进生成式 LM 的 sentence embedding，使 decoder-only 表示更适用于语义相似度和检索。
+- [Label Propagation for Zero-shot Classification with Vision-Language Models](https://arxiv.org/abs/2404.04072)：在 VLM 图文表示上做 graph-based label propagation，从而在目标类没有监督样例时改进 zero-shot classification。
+- [Robust Preference Optimization with Provable Noise Tolerance for LLMs](https://arxiv.org/abs/2404.04102)：提出对噪声偏好标签具备理论容忍性的 preference-optimization 目标，以提升反馈不完美时的 LLM 对齐稳定性。
+- [No "Zero-Shot" Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance](https://arxiv.org/abs/2404.04125)：把 VLM zero-shot 表现与预训练概念频率联系起来，显示稀有概念需要指数级更多数据，从而质疑宽泛 zero-shot 泛化说法。
+- [Social Skill Training with Large Language Models](https://arxiv.org/abs/2404.04204)：用 LLM 做社交技能训练模拟；该条低置信，因为贡献主要是交互式训练设置。
+- [Sigma: Siamese Mamba Network for Multi-Modal Semantic Segmentation](https://arxiv.org/abs/2404.04256)：构建面向多模态输入的 Siamese Mamba 分割网络，用 state-space 长程建模融合模态以完成语义分割。
+- [Bias Amplification in Language Model Evolution: An Iterated Learning Perspective](https://arxiv.org/abs/2404.04286)：研究语言模型在模型生成数据上迭代训练的循环，说明社会偏见或分布偏置会随模型世代不断放大。
+- [SELF-(IN)CORRECT: LLMs Struggle with Refining Self-Generated Responses](https://arxiv.org/abs/2404.04298)：显示 LLM 往往难以判断候选答案是否由自己生成，揭示自我纠错和自我辨别流程的局限。
+- [Parameter Efficient Quasi-Orthogonal Fine-Tuning via Givens Rotation](https://arxiv.org/abs/2404.04316)：用可训练 Givens rotation 施加 quasi-orthogonal 参数高效更新，作为低秩 adapter 之外的 fine-tuning 路线。
+- [Prompt Public Large Language Models to Synthesize Data for Private On-device Applications](https://arxiv.org/abs/2404.04360)：提示公开 LLM 为私有端侧应用合成任务数据，从而减少模型适配过程中暴露私有数据的需要。
+- [Aligning Diffusion Models by Optimizing Human Utility](https://arxiv.org/abs/2404.04465)：把 diffusion model 对齐表述为优化人类效用，利用偏好或奖励信号将生成图像引向用户重视的输出。
+- [Analyzing LLM Usage in an Advanced Computing Class in India](https://arxiv.org/abs/2404.04603)：分析印度一门高级计算课程中学生使用 LLM 的方式，为模型辅助模式、学习行为和局限提供课堂证据。
+- [Multicalibration for Confidence Scoring in LLMs](https://arxiv.org/abs/2404.04689)：将多重校准用于 LLM 置信度评分，使概率估计不仅在总体上准确，也能在多个子群体上保持校准。
+- [Adapting LLMs for Efficient Context Processing through Soft Prompt Compression](https://arxiv.org/abs/2404.04997)：提出 SoftPromptComp，结合自然语言摘要、动态 soft prompt 和效用保持权重，对长上下文进行压缩以提升 LLM 处理效率。
+- [FGAIF: Aligning Large Vision-Language Models with Fine-grained AI Feedback](https://arxiv.org/abs/2404.05046)：用 AI 生成的细粒度幻觉反馈对齐 LVLM，分别训练 existence、attribute 和 relation 错误的 dense reward model，并接入 PPO。
+- [How Bad is Training on Synthetic Data? A Statistical Analysis of Language Model Collapse](https://arxiv.org/abs/2404.05090)：给出递归使用合成数据训练语言模型的统计模型，证明纯合成数据循环会 collapse，并估计可避免 collapse 的真实与合成数据混合比例。
+- [Dense Training, Sparse Inference: Rethinking Training of Mixture-of-Experts Language Models](https://arxiv.org/abs/2404.05567)：重新设计 MoE 训练，在训练中保留密集信号、推理时使用稀疏路径，以提升专家利用和服务效率。
+- [CodecLM: Aligning Language Models with Tailored Synthetic Data](https://arxiv.org/abs/2404.05875)：在 CodecLM 中用定制合成数据对齐语言模型，用生成任务数据引导下游行为。
+- [Optimization Methods for Personalizing Large Language Models through Retrieval Augmentation](https://arxiv.org/abs/2404.05970)：用下游个性化生成反馈优化个人文档 retriever，结合强化学习、LLM 到 retriever 蒸馏以及生成前后 retriever 选择，并在 LaMP 上评测。
+- [Elephants Never Forget: Memorization and Learning of Tabular Data in Large Language Models](https://arxiv.org/abs/2404.06209)：研究 LLM 对表格数据的学习与记忆，区分有效表格学习和逐字记忆风险。
+- [OmniFusion Technical Report](https://arxiv.org/abs/2404.06212)：报告 OmniFusion 多模态模型族及训练设置，用于融合视觉和语言能力。
+- [AgentsCoDriver: Large Language Model Empowered Collaborative Driving with Lifelong Learning](https://arxiv.org/abs/2404.06345)：构建含 observation、reasoning、cognitive memory、reinforcement reflection 和 communication 模块的协同驾驶智能体，用于交通环境中的协商和 lifelong learning。
+- [Policy-Guided Diffusion](https://arxiv.org/abs/2404.06356)：用策略信号引导扩散采样，把扩散生成与强化学习式策略控制连接起来。
+- [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](https://arxiv.org/abs/2404.06395)：通过 MiniCPM 系列研究小语言模型的可扩展训练策略。
+- [InternLM-XComposer2-4KHD: A Pioneering Large Vision-Language Model Handling Resolutions from 336 Pixels to 4K HD](https://arxiv.org/abs/2404.06512)：通过基于 336 x 336 ViT 的自动 patch 配置，把 InternLM-XComposer2 扩展到 336 像素至 4K HD 动态输入，并提升高分辨率 LVLM 基准表现。
+- [Exploring Concept Depth: How Large Language Models Acquire Knowledge at Different Layers?](https://arxiv.org/abs/2404.07066)：探查 LLM 各层的概念深度，识别不同知识概念在何处习得和表示。
+- [Dynamic Generation of Personalities with Large Language Models](https://arxiv.org/abs/2404.07084)：用 LLM 动态生成人格，把 persona 构建视为可控生成与模拟问题。
+- [Scaling Laws for Data Filtering—Data Curation Cannot be Compute Agnostic](https://arxiv.org/abs/2404.07177)：推导面向 VLM 数据过滤的 compute-aware scaling law，建模不同质量子集效用、重复衰减和数据池交互，用于选择 DataComp 训练池。
+- [BRAVE: Broadening the visual encoding of vision-language models](https://arxiv.org/abs/2404.07204)：把多个 frozen vision encoder 的特征合并为可输入 frozen LM 的紧凑表示，提升 captioning 和 VQA，并减少 VLM 视觉盲点与幻觉。
+- [JetMoE: Reaching Llama2 Performance with 0.1M Dollars](https://arxiv.org/abs/2404.07413)：提出 JetMoE，以低预算训练稀疏 MoE LLM，使其接近 Llama 2 表现。
+- [From Words to Numbers: Your Large Language Model Is Secretly A Capable Regressor When Given In-Context Examples](https://arxiv.org/abs/2404.07544)：测试 GPT-4、Claude 3、Llama 2 等模型在无梯度更新时的上下文线性和非线性回归能力，并发现 sublinear regret 行为。
+- [Measuring Geographic Diversity of Foundation Models with a Natural Language-based Geo-guessing Experiment on GPT-4](https://arxiv.org/abs/2404.07612)：用基于 DBpedia 的 geo-guessing 任务探测 GPT-4 的地理表示，揭示全球特征缺口、区域差异以及单模态和多模态版本差异。
+- [Why do small language models underperform? Studying Language Model Saturation via the Softmax Bottleneck](https://arxiv.org/abs/2404.07647)：用 hidden dimension 与目标上下文概率分布 rank 的不匹配解释小语言模型训练饱和，并发现低于 1000 隐藏维度的模型在后期预训练中会出现退化表示。
+- [ODA: Observation-Driven Agent for integrating LLMs and Knowledge Graphs](https://arxiv.org/abs/2404.07677)：通过 observation-driven agent 循环整合 LLM 与知识图谱；该条低置信，更偏 harness。
+- [Applying Guidance in a Limited Interval Improves Sample and Distribution Quality in Diffusion Models](https://arxiv.org/abs/2404.07724)：发现可将无分类器 guidance 限制在特定去噪区间内，从而同时改善扩散模型的样本质量与分布质量。
+- [RecurrentGemma: Moving Past Transformers for Efficient Open Language Models](https://arxiv.org/abs/2404.07839)：给出基于 Griffin 架构的 2B 和 9B 语言模型，将线性 recurrence 与局部 attention 结合，并用固定大小 state 降低长序列推理显存。
+- [On Training Data Influence of GPT Models](https://arxiv.org/abs/2404.07840)：提出 GPTfluence，用 featurized simulation 模拟 GPT 训练动态，估计 14M 到 2.8B 参数模型及微调场景中的单个训练样本影响。
+- [HGRN2: Gated Linear RNNs with State Expansion](https://arxiv.org/abs/2404.07904)：为 gated linear RNN 加入 state expansion，在保持长上下文高效推理的同时提升循环序列模型容量。
+- [Rho-1: Not All Tokens Are What You Need](https://arxiv.org/abs/2404.07965)：提出 Rho-1 数据选择思想，强调语言模型预训练应优先使用高价值 token。
+- [Lossless Acceleration of Large Language Model via Adaptive N-gram Parallel Decoding](https://arxiv.org/abs/2404.08698)：用自适应多级 n-gram draft 模块和原始 LLM 验证并行生成多个 token，无需重训或额外 GPU 显存即可获得最高 3.67 倍加速。
+- [Game Generation via Large Language Models](https://arxiv.org/abs/2404.08706)：基于 video game description language 同时生成游戏规则和关卡，把 LLM 程序化内容生成扩展到不只生成固定规则游戏关卡。
+- [Large Language Model Can Continue Evolving From Mistakes](https://arxiv.org/abs/2404.08707)：让 LLM 从错误中持续演化，把失败案例转化为新的自我改进学习信号。
+- [CATS: Contextually-Aware Thresholding for Sparsity in Large Language Models](https://arxiv.org/abs/2404.08763)：用非线性 CATS 激活函数提升 activation sparsity，在 Mistral-7B 和 Llama2-7B 上即使 50% 稀疏也保持基座性能 1-2% 内，并用自定义 GPU kernel 将 token 生成延迟降低约 15%。
+- [EIVEN: Efficient Implicit Attribute Value Extraction using Multimodal LLM](https://arxiv.org/abs/2404.08886)：结合预训练 LLM、vision encoder 和 Learning-by-Comparison，从图文商品数据中抽取隐式属性值，以更少标注降低相近属性值混淆。
+- [Fusion-Mamba for Cross-Modality Object Detection](https://arxiv.org/abs/2404.09146)：构建 Fusion-Mamba block，通过 state-space channel swapping 和 dual state-space fusion 让跨模态特征在隐藏状态空间交互，在 M3FD 与 FLIR-Aligned 上提升目标检测。
+- [TextHawk: Exploring Efficient Fine-Grained Perception of Multimodal Large Language Models](https://arxiv.org/abs/2404.09204)：构建 TextHawk 以增强 MLLM 细粒度感知，重点通过高效视觉 token 处理支持文本密集和分辨率敏感的多模态理解。
+- [FreqMamba: Viewing Mamba from a Frequency Perspective for Image Deraining](https://arxiv.org/abs/2404.09476)：从频率视角分析 Mamba 并将其用于图像去雨，在 state-space 视觉复原中利用频率线索。
+- [Bridging the Gap between Different Vocabularies for LLM Ensemble](https://arxiv.org/abs/2404.09492)：提出 EVA，学习不同 LLM vocabulary 的重叠 token 映射，把 next-token 分布投影到共享空间，并过滤不忠实生成器，实现逐步 ensemble decoding。
+- [sigma-GPTs](https://arxiv.org/abs/2404.09562)：提出一种生成顺序可变的 autoregressive modeling 变体。核心思想：加入输出位置编码，使每个样本的生成顺序都可动态调制，从而支持任意 token 子集条件化，并用 rejection strategy 一次采样多个 token，而不是固定 left-to-right factorization。
+- [LoRA Dropout as a Sparsity Regularizer for Overfitting Control](https://arxiv.org/abs/2404.09610)：向 LoRA low-rank matrices 注入随机噪声作为稀疏正则，给出泛化误差界，并结合测试时集成提升多项 NLP 任务的准确率与校准。
+- [Learn Your Reference Model for Real Good Alignment](https://arxiv.org/abs/2404.09656)：提出 TR-DPO、TR-IPO 和 TR-KTO 等 offline alignment 变体，动态更新 reference policy 以缓解过优化，并在 helpfulness、harmlessness、summarization、AlpacaEval 2 和 Arena-Hard 上验证。
+- [Are Large Language Models Reliable Argument Quality Annotators?](https://arxiv.org/abs/2404.09696)：对比 LLM、专家和新手在论证质量 taxonomy 上的标注一致性，发现 LLM 标注稳定，加入人工标注流程可提升 annotator agreement。
+- [Resilience of Large Language Models for Noisy Instructions](https://arxiv.org/abs/2404.09754)：评估并改进 LLM 对噪声指令的韧性，关注用户提示含扰动时的鲁棒性。
+- [Impact of Preference Noise on the Alignment Performance of Generative Language Models](https://arxiv.org/abs/2404.09824)：向 summarization 和 dialogue alignment 注入可控 preference-label noise，显示 20-40% 噪声会显著降低 win rate，部分噪声类型可用 confidence-based filtering 缓解。
+- [Evolving Interpretable Visual Classifiers with Large Language Models](https://arxiv.org/abs/2404.09941)：用 LLM 引导 evolutionary search 变异 concept-bottleneck attribute sets，生成可解释 fine-grained classifier，在 iNaturalist 和 KikiBouba 上无需特权 class name 知识仍优于基线。
+- [ClashEval: Quantifying the tug-of-war between an LLM's internal prior and external evidence](https://arxiv.org/abs/2404.10198)：构建 1200 道六领域 RAG stress test，通过扰动检索答案衡量模型何时被错误证据覆盖正确 prior，或借助正确检索内容修正错误回答。
+- [From Data Deluge to Data Curation: A Filtering-WoRA Paradigm for Efficient Text-based Person Search](https://arxiv.org/abs/2404.10292)：按跨模态相关性过滤合成 text-person search 样本，再用 Weighted LoRA 从更少高价值样本中训练检索模型，在 CUHK-PEDES 上缩短训练时间。
+- [ControlMTR: Control-Guided Motion Transformer with Scene-Compliant Intention Points for Feasible Motion Prediction](https://arxiv.org/abs/2404.10295)：生成 scene-compliant intention points 和 driving-control commands，将控制量转为 kinematic trajectories 作为辅助监督，减少 off-road motion prediction。
+- [Efficient Generation of Targeted and Transferable Adversarial Examples for Vision-Language Models via Diffusion Models](https://arxiv.org/abs/2404.10335)：提出 AdvDiffVLM，在 diffusion reverse generation 中用 adaptive ensemble gradient 修改 score，并用 GradCAM-guided masks 扩散对抗语义，生成可迁移到 GPT-4V 等黑盒 VLM 的自然 targeted adversarial images。
+- [Unveiling the Misuse Potential of Base Large Language Models via In-Context Learning](https://arxiv.org/abs/2404.10552)：说明 base LLM 在精心设计的 in-context demonstrations 下可执行恶意指令，并定义风险指标将 base model 输出与 maliciously fine-tuned models 对比。
+- [HLAT: High-quality Large Language Model Pre-trained on AWS Trainium](https://arxiv.org/abs/2404.10630)：报告在 AWS Trainium 上预训练的高质量 LLM HLAT，记录面向硬件的训练设置及所得模型质量。
+- [Autoregressive Pre-Training on Pixels and Texts](https://arxiv.org/abs/2404.10710)：在文档图像上做 next-patch regression、在文本上做 next-token classification 预训练同一 autoregressive model，联合像素和文本训练提升语言与视觉语言基准。
+- [Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study](https://arxiv.org/abs/2404.10719)：在受控设置中比较 DPO 与 PPO 的 LLM 对齐效果，说明离线偏好优化何时接近或落后于 RLHF。
+- [Fewer Truncations Improve Language Modeling](https://arxiv.org/abs/2404.10830)：提出 length-aware Best-fit Packing，减少不必要 document truncation，同时保留 concatenation efficiency，并提升阅读理解、context following 和 program synthesis。
+- [Small Language Models Are Good Too: An Empirical Study of Zero-Shot Classification](https://arxiv.org/abs/2404.11122)：说明小语言模型也能成为有竞争力的零样本分类器，将分类实用性与参数规模区分开。
+- [Exploring the Transferability of Visual Prompting for Multimodal Large Language Models](https://arxiv.org/abs/2404.11207)：在一个 MLLM 上训练 visual prompt，用 feature-consistency alignment 与 cross-model regularization 使同一 prompt 参数可迁移提升多个 MLLM 的下游准确率。
+- [Text-Controlled Motion Mamba: Text-Instructed Temporal Grounding of Human Motion](https://arxiv.org/abs/2404.11375)：定义 text-based human motion grounding，结合 temporal global context、language-query control 和 spatial graph topology，以线性内存处理 long untrimmed motion sequences。
+- [Pack of LLMs: Model Fusion at Test-Time via Perplexity Optimization](https://arxiv.org/abs/2404.11531)：用 prompt perplexity 估计候选 LLM 专长，并在推理时贪心优化融合权重，让用户指定的多个 LLM 无需训练 fuser 即可组合。
+- [Factorized Diffusion: Perceptual Illusions by Noise Decomposition](https://arxiv.org/abs/2404.11615)：分解扩散噪声以生成感知错觉，把噪声分解作为可控图像生成机制。
+- [From Image to Video, what do we need in multimodal LLMs?](https://arxiv.org/abs/2404.11865)：分析多模态 LLM 从图像走向视频输入时需要补足什么，识别时间建模和表示缺口。
+- [Aligning Language Models to Explicitly Handle Ambiguity](https://arxiv.org/abs/2404.11972)：对齐语言模型以识别歧义提示，并通过澄清或给出多种合理解释来回应，而不是强行输出单一无依据答案。
+- [Token-level Direct Preference Optimization](https://arxiv.org/abs/2404.11999)：在 autoregressive token level 上用 forward-KL 约束和 token-based Bradley-Terry reward formulation 做 preference alignment，改善 DPO 与 PPO 风格 RLHF 的 alignment-diversity 权衡。
+- [Toward Self-Improvement of LLMs via Imagination, Searching, and Criticizing](https://arxiv.org/abs/2404.12253)：构建 AlphaLLM，结合 prompt synthesis、语言任务搜索空间上的 MCTS 和三个 critic models，让 LLM 在无额外标注下自我提升数学推理。
+- [Reka Core, Flash, and Edge: A Series of Powerful Multimodal Language Models](https://arxiv.org/abs/2404.12387)：报告从零训练的 Reka Edge、Flash 和 Core，支持 text、image、video 和 audio 输入，并在 MMMU、VQAv2、MMLU、GSM8K、Perception-Test 等与 frontier systems 比较。
+- [MORepair: Teaching LLMs to Repair Code via Multi-Objective Fine-Tuning](https://arxiv.org/abs/2404.12636)：用代码语法 transformation 和每个 patch 的 logical reason 联合微调 code LLM，在 function-level 与 repository-level repair benchmarks 上优于标准微调和 RepairLLaMA。
+- [Can LLMs Understand Computer Networks? Towards a Virtual System Administrator](https://arxiv.org/abs/2404.12689)：在 topology-aware computer-network questions 上评估开源和闭源 LLM，最佳 zero-shot 模型平均准确率 79.3%，但复杂 topology 仍困难。
+- [Ensemble Learning for Heterogeneous Large Language Models with Deep Parallel Collaboration](https://arxiv.org/abs/2404.12715)：通过深度并行协作组合异构 LLM，用集成学习利用不同模型优势。
+- [MoVA: Adapting Mixture of Vision Experts to Multimodal Context](https://arxiv.org/abs/2404.13046)：用 coarse-to-fine router 在 CLIP、DINOv2、document、chart 等 vision experts 间选择，并经 MoV-Adapter 融合特征，提高多模态 benchmark 泛化。
+- [LLM Evaluators Recognize and Favor Their Own Generations](https://arxiv.org/abs/2404.13076)：显示 LLM 评委能识别并偏好自身生成内容，揭示基于模型评测中的自偏好偏差。
+- [The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions](https://arxiv.org/abs/2404.13208)：用指令层级训练 LLM，使系统和开发者指令在冲突时优先于低优先级用户或工具内容。
+- [Composing Pre-Trained Object-Centric Representations for Robotics From "What" and "Where" Foundation Models](https://arxiv.org/abs/2404.13474)：无需新预训练，将 segmentation-based "where" object tracking 与 pretrained "what" descriptors 组合成 object-centric representations，提升仿真和真实机器人 imitation policies。
+- [Rethink arbitrary style transfer with transformer and contrastive learning](https://arxiv.org/abs/2404.13584)：用 Style Consistency Instance Normalization 对齐 content 与 style features，引入 instance-based contrastive learning 与 Perception Encoder 以减少任意风格迁移 artifacts。
+- [Adversarial Representation Engineering: A General Model Editing Framework for Large Language Models](https://arxiv.org/abs/2404.13752)：提出 ARE 模型编辑框架，通过学习对抗性表示方向来在多种编辑场景中修改 LLM 行为。
+- [How Good Are Low-bit Quantized LLaMA3 Models? An Empirical Study](https://arxiv.org/abs/2404.14047)：在 LLaMA3 上系统评估 10 种 post-training quantization 和 LoRA fine-tuning 方法的 1 到 8 bit 表现，并在 2 到 4 bit LLaVA-Next-8B 上揭示超低精度退化。
+- [Text-Tuple-Table: Towards Information Integration in Text-to-Table Generation via Global Tuple Extraction](https://arxiv.org/abs/2404.14215)：先抽取全局元组再从文本生成表格，改进 text-to-table 的信息整合。
+- [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219)：介绍 Phi-3 系列，其中 3.8B phi-3-mini 由过滤网页和合成数据训练，并经过聊天与安全对齐，在可手机部署的规模上接近更大模型的基准表现。
+- [Better Synthetic Data by Retrieving and Transforming Existing Datasets](https://arxiv.org/abs/2404.14361)：通过检索并转换已有数据集改进合成数据生成，而不是完全从零采样样例。
+- [Preference Fine-Tuning of LLMs Should Leverage Suboptimal, On-Policy Data](https://arxiv.org/abs/2404.14367)：分析 preference fine-tuning objectives，显示 on-policy sampling 或带 negative gradient 的 mode-seeking updates 比 offline maximum-likelihood objectives 更有效搬移概率质量。
+- [SEED-X: Multimodal Models with Unified Multi-granularity Comprehension and Generation](https://arxiv.org/abs/2404.14396)：将 SEED 式多模态建模扩展到任意图像尺寸、宽高比和 multi-granularity image generation，并经 instruction tuning 支持现实 comprehension 与 generation 任务。
+- [SpaceByte: Towards Deleting Tokenization from Large Language Modeling](https://arxiv.org/abs/2404.14408)：以 byte-level decoder 替代 subword tokenization，在 space-like bytes 后插入更大的 Transformer blocks，在固定 compute 下接近 tokenized Transformer 性能。
+- [Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing](https://arxiv.org/abs/2404.14618)：根据 predicted query difficulty 和可调 quality target，将请求路由到边缘小模型或云端大模型，最多减少 40% 大模型调用且不降低响应质量。
+- [OpenELM: An Efficient Language Model Family with Open Training and Inference Framework](https://arxiv.org/abs/2404.14619)：发布 OpenELM，采用逐层参数缩放，并公开训练数据配方、日志、检查点、评测代码和 Apple 设备转换工具。
+- [FMint: Bridging Human Designed and Data Pretrained Models for Differential Equation Foundation Model for Dynamical Simulation](https://arxiv.org/abs/2404.14688)：在 40K ODE 上预训练 decoder-only transformer，从 coarse solver outputs 中做 in-context error correction，使复杂 dynamical-system simulation 精度提升 1-2 个数量级并加速 5 倍。
+- [SST: Multi-Scale Hybrid Mamba-Transformer Experts for Time Series Forecasting](https://arxiv.org/abs/2404.14757)：构建 SST，将多尺度 Mamba 与 Transformer experts 混合用于时间序列预测。
+- [Simulating Task-Oriented Dialogues with State Transition Graphs and Large Language Models](https://arxiv.org/abs/2404.14772)：结合状态转移图与 LLM 生成来模拟任务型对话；该条低置信，更接近对话模拟器。
+- [RealTCD: Temporal Causal Discovery from Interventional Data with Large Language Model](https://arxiv.org/abs/2404.14786)：面向 AIOps root-cause analysis，在无 intervention targets 场景下用 score-based masking 与 regularization 发现 temporal causal structure，并用 LLM-guided meta-initialization 从系统文本引入领域知识。
+- [Pillars of Grammatical Error Correction: Comprehensive Inspection Of Contemporary Approaches In The Era of Large Language Models](https://arxiv.org/abs/2404.14914)：比较单模型 GEC、ensembling、ranking 和 LLM 变体，在 CoNLL-2014 与 BEA 上达到 72.8 和 81.4 F0.5，并发布代码、训练模型和系统输出。
+- [Graph Machine Learning in the Era of Large Language Models (LLMs)](https://arxiv.org/abs/2404.14928)：综述 Graph ML 与 LLM 的双向增强，涵盖 LLM 改善图特征、标注效率、heterophily 与 OOD 处理，以及图增强 LLM pretraining 和 inference。
+- [Transformers Can Represent n-gram Language Models](https://arxiv.org/abs/2404.14994)：证明采用 hard 或 sparse attention 的 Transformer language models 可精确表示任意 n-gram language model，为概率语言建模表示能力给出下界。
+- [Multi-Head Mixture-of-Experts](https://arxiv.org/abs/2404.15045)：提出 multi-head MoE，用多头专家路由提升稀疏模型表达能力。
+- [Rethinking LLM Memorization through the Lens of Adversarial Compression](https://arxiv.org/abs/2404.15146)：把记忆化重述为对抗压缩问题，衡量紧凑提示如何迫使 LLM 重构类似训练文本的内容。
+- [MixLoRA: Enhancing Large Language Models Fine-Tuning with LoRA based Mixture of Experts](https://arxiv.org/abs/2404.15159)：在冻结模型的 FFN block 中插入 LoRA experts，配合独立 attention-layer LoRA adapters、top-k routing、load-balance loss 和高吞吐 MoE 框架做多任务微调。
+- [How to use and interpret activation patching](https://arxiv.org/abs/2404.15255)：提供 activation patching 的使用与解释指南，澄清如何理解模型内部因果干预。
+- [Bi-Mamba4TS: Bidirectional Mamba for Time Series Forecasting](https://arxiv.org/abs/2404.15772)：将双向 Mamba block 适配到时间序列预测，使序列模型可同时利用过去与未来上下文。
+- [The PRISM Alignment Project: What Participatory, Representative and Individualised Human Feedback Reveals About the Subjective and Multicultural Alignment of Large Language Models](https://arxiv.org/abs/2404.16019)：发布 PRISM，将 75 个国家 1500 名参与者的人口属性、偏好和 21 个 LLM 的 8011 次实时对话细粒度反馈关联起来，用于主观与多文化对齐研究。
+- [The Ethics of Advanced AI Assistants](https://arxiv.org/abs/2404.16244)：将高级 AI 助手定义为能按用户期望规划并执行行动序列的自然语言智能体，并梳理对齐、操纵、信任、隐私、社会部署和评估风险。
+- [Andes: Defining and Enhancing Quality-of-Experience in LLM-Based Text Streaming Services](https://arxiv.org/abs/2404.16283)：定义 token-streaming LLM 服务的 QoE，并提出 token-granularity preemptive scheduler，在实时文本生成中提升感知服务质量或降低 GPU 使用。
+- [List Items One by One: A New Data Source and Learning Paradigm for Multimodal LLMs](https://arxiv.org/abs/2404.16375)：用 10K 到 30K 带 visual tags 的 Set-of-Mark 图像训练开源 MLLM 逐项枚举标签，提升视觉推理并减少 object-reference hallucination。
+- [Correlation-Decoupled Knowledge Distillation for Multimodal Sentiment Analysis with Incomplete Modalities](https://arxiv.org/abs/2404.16456)：提出用于模态缺失场景下多模态情感分析的 CorrKD，结合样本级对比蒸馏、类别原型蒸馏和响应解耦一致性。
+- [REBEL: Reinforcement Learning via Regressing Relative Rewards](https://arxiv.org/abs/2404.16767)：用 completion 间 relative rewards 的回归替代 PPO 风格 value networks 与 clipping，支持 offline data 和可能 intransitive 的 preference patterns。
+- [Weak-to-Strong Extrapolation Expedites Alignment](https://arxiv.org/abs/2404.16792)：提出 ExPO，根据 SFT 模型与部分对齐 checkpoint 的参数差值做 extrapolation，用早期训练进展加速 preference alignment。
+- [Make Your LLM Fully Utilize the Context](https://arxiv.org/abs/2404.16811)：训练或提示 LLM 更充分利用完整上下文，针对 lost-in-the-middle 和长上下文利用不足。
+- [How far are we to GPT-4V? Closing the gap to commercial multimodal models with open-source suites](https://arxiv.org/abs/2404.16821)：提出 InternVL 1.5，结合更强的 InternViT-6B 视觉编码器、最高 4K 输入的动态高分辨率切块，以及面向 OCR 的双语数据，以缩小开源 MLLM 与商业系统的差距。
+- [Machine Unlearning in Large Language Models](https://arxiv.org/abs/2404.16841)：用 evaluative model 识别需要遗忘的对话，再结合 distance-sensitive negative loss 与 cluster-mean positive loss 抑制有害或隐私回答，同时保持模型效用。
+- [Evolve Cost-aware Acquisition Functions Using Large Language Models](https://arxiv.org/abs/2404.16906)：结合 LLM generation 与 evolutionary computation 设计 cost-aware Bayesian-optimization acquisition functions，并在 synthetic functions 和 hyperparameter optimization 任务上测试。
+- [Automated Data Visualization from Natural Language via Large Language Models: An Exploratory Study](https://arxiv.org/abs/2404.17136)：把结构化表格作为程序提示 LLM 完成 NL2Vis，在 nvBench 上比较 T5 和 GPT-3.5，并测试 iterative chain-of-thought、role 和 code-interpreter 变体。
+- [When to Trust LLMs: Aligning Confidence with Response Quality](https://arxiv.org/abs/2404.17287)：提出 CONQORD，用 quality reward 和 order-preserving confidence reward 做 RL alignment，使 verbal confidence 能对应 answer quality 与 retrieval-use decisions。
+- [Introducing cosmosGPT: Monolingual Training for Turkish Language Models](https://arxiv.org/abs/2404.17336)：训练单语土耳其语 cosmosGPT 模型，并发布新的微调和评测数据集，显示更小的土耳其语专用模型可与 adapted multilingual baselines 竞争。
+- [Probabilistic Inference in Language Models via Twisted Sequential Monte Carlo](https://arxiv.org/abs/2404.17546)：将 twisted sequential Monte Carlo 用于语言模型概率推断，把生成视为受引导的粒子推断。
+- [Autonomous LLM-driven research from data to human-verifiable research papers](https://arxiv.org/abs/2404.17605)：构建 data-to-paper 分步 LLM 智能体平台，可从带注释数据出发提出假设、编写和调试分析代码、解释结果，并生成可追溯论文。
+- [Empowering Large Language Models for Textual Data Augmentation](https://arxiv.org/abs/2404.17642)：自动生成并选择 task-informed augmentation instructions，用于 LLM 文本数据增强，在 26 个 few-shot classification tasks 上优于人工指令选择。
+- [Temporal Scaling Law for Large Language Models](https://arxiv.org/abs/2404.17785)：提出 LLM 时间扩展规律，建模性能如何随时间相关数据和训练进程变化。
+- [LLMParser: An Exploratory Study on Using Large Language Models for Log Parsing](https://arxiv.org/abs/2404.18001)：研究 Flan-T5、LLaMA 和 ChatGLM 在 16 个系统上的 few-shot generative log parsing，报告结构化日志抽取平均约 96% parsing accuracy。
+- [Generative AI for Low-Carbon Artificial Intelligence of Things with Large Language Models](https://arxiv.org/abs/2404.18077)：用 LLM 与 retrieval-augmented generation 表述 AIoT 碳优化问题，再用 diffusion models 识别 carbon-reduction strategies。
+- [Mamba-FETrack: Frame-Event Tracking via State Space Model](https://arxiv.org/abs/2404.18174)：用 Mamba state-space model 做 frame-event tracking，在视觉跟踪中融合帧流和事件流。
+- [WorldGPT: Empowering LLM as Multimodal World Model](https://arxiv.org/abs/2404.18202)：构建基于 MLLM 的 world model，从视频中学习动态，并加入 memory、retrieval 和 reflection modules，在 WorldNet 上评测多模态 dynamics understanding。
+- [DPO Meets PPO: Reinforced Token Optimization for RLHF](https://arxiv.org/abs/2404.18922)：将 RLHF 表述为 token-level MDP，从 preference data 中导出 token-wise rewards，并把 DPO 信号并入 PPO，在 AlpacaEval 2 和 Arena-Hard 上改进。
+- [Who Followed the Blueprint? Analyzing the Responses of U.S. Federal Agencies to the Blueprint for an AI Bill of Rights](https://arxiv.org/abs/2404.19076)：按五项原则分析美国联邦机构对 2022 年 10 月 AI Bill of Rights Blueprint 的回应，发现采纳不均且对政策的直接影响有限。
+- [Octopus v4: Graph of language models](https://arxiv.org/abs/2404.19296)：用 functional tokens 将查询路由到专门化开源模型构成的 graph of language models，在激活少于 10B 参数时报告 74.8 MMLU 准确率。
+- [Countering Reward Over-optimization in LLM with Demonstration-Guided Reinforcement Learning](https://arxiv.org/abs/2404.19409)：用 demonstration-guided RL 抑制奖励过优化，使 LLM 策略更新受示范约束。
+- [Lancet: Accelerating Mixture-of-Experts Training via Whole Graph Computation-Communication Overlapping](https://arxiv.org/abs/2404.19429)：通过整图计算与通信重叠加速 MoE 训练，针对稀疏专家训练瓶颈。
+- [More Compute Is What You Need](https://arxiv.org/abs/2404.19484)：提出统一的 compute-dependent scaling law，主张可根据推理效率或数据耗尽情况分配 model size 与 data size，而不是固定遵循 Chinchilla optimum。
+- [Extending Llama-3's Context Ten-Fold Overnight](https://arxiv.org/abs/2404.19553)：用 QLoRA、3500 条 GPT-4 合成长上下文样本和 8 张 A800 八小时训练，将 Llama-3-8B-Instruct 上下文从 8K 扩展到 80K。
+- [Derivative learning of tensorial quantities-Predicting finite temperature infrared spectra from first principles.](https://arxiv.org/abs/2404.19674)：结合机器学习与 first-principles calculations，通过学习 tensorial derivatives 与 polarization surrogates 预测水和 MAPbI3 等体系的有限温红外光谱。
+- [Naturally Supervised 3D Visual Grounding with Language-Regularized Concept Learners](https://arxiv.org/abs/2404.19696)：提出 LARC，用 language regularization 约束 neuro-symbolic concept learner，仅从 3D scene 和 question-answer pairs 学习 3D visual grounding，而不依赖 dense object labels。
+- [Better & Faster Large Language Models via Multi-token Prediction](https://arxiv.org/abs/2404.19737)：用 multi-token prediction 训练 LLM，使模型预测多个未来 token 以提升速度或样本效率。
+- [KAN: Kolmogorov-Arnold Networks](https://arxiv.org/abs/2404.19756)：提出 Kolmogorov-Arnold Networks 这一替代神经网络架构族，可补充模型侧能力讨论。
+- [A Primer on the Inner Workings of Transformer-based Language Models](https://arxiv.org/abs/2405.00208)：提供 decoder-only Transformer LM 内部机制解释技术入门，整理 mechanistic-interpretability 方法和已知 internal mechanisms，而不是提出新模型。
+- [RLHF from Heterogeneous Feedback via Personalization and Preference Aggregation](https://arxiv.org/abs/2405.00254)：面向异质且可能策略性的 human preferences 扩展 RLHF，通过 personalization、多个 reward models 或 social-welfare aggregation 替代单一同质 reward。
+- [A Careful Examination of Large Language Model Performance on Grade School Arithmetic](https://arxiv.org/abs/2405.00332)：构建与 GSM8K 风格匹配的保留算术基准 GSM1k，用于衡量主流开闭源 LLM 家族的过拟合与记忆化差距。
+- [AdaMoLE: Fine-Tuning Large Language Models with Adaptive Mixture of Low-Rank Adaptation Experts](https://arxiv.org/abs/2405.00361)：用自适应低秩专家混合微调 LLM，按输入或任务选择 LoRA 式专家。
+- [Self-Play Preference Optimization for Language Model Alignment](https://arxiv.org/abs/2405.00675)：用 self-play preference optimization 对齐语言模型，利用模型生成比较而不只依赖人工偏好数据。
+- [LoRA Land: 310 Fine-tuned LLMs that Rival GPT-4, A Technical Report](https://arxiv.org/abs/2405.00732)：训练并评估 310 个 4-bit LoRA adapters，覆盖 10 个 base models 和 31 个任务，并用 LoRAX 在单张 A100 上服务多个任务 adapter。
+- [Modeling Caption Diversity in Contrastive Vision-Language Pretraining](https://arxiv.org/abs/2405.00740)：提出 Llip，用 text-conditioned weights 混合一组 visual features 来建模 caption diversity，提升 ImageNet zero-shot classification 和 MS-COCO retrieval。
+- [UniGen: Universal Domain Generalization for Sentiment Classification via Zero-shot Dataset Generation](https://arxiv.org/abs/2405.01022)：用大模型生成 domain-independent zero-shot sentiment data，训练轻量任务模型，使其在 unseen sentiment domains 上以低推理成本泛化。
+- [Large Language Models are Inconsistent and Biased Evaluators](https://arxiv.org/abs/2405.01724)：在 SummEval 与 RoSE 上审计 LLM evaluators，识别 familiarity bias、skewed ratings、anchoring 和低 inter-sample agreement，并测试缓解方案。
+- [ALCM: Autonomous LLM-Augmented Causal Discovery Framework](https://arxiv.org/abs/2405.01744)：结合 causal structure learning、causal wrapper 和 LLM-driven refiner，在七个基准数据集上迭代改进 causal graphs。
+- [Real Risks of Fake Data: Synthetic Data, Diversity-Washing and Consent Circumvention](https://arxiv.org/abs/2405.01820)：分析 synthetic data 中的虚假多样性声明和 consent circumvention 风险，指出生成数据可能在 ML 训练与测试中延续或掩盖治理问题。
+- [Optimising Calls to Large Language Models with Uncertainty-Based Two-Tier Selection](https://arxiv.org/abs/2405.02134)：用小模型 generation uncertainty 决定是否 routing 或 cascading 到更大 LLM，在 27 个评测设置中的 25 个优于固定小模型或大模型选择。
+- [What matters when building vision-language models?](https://arxiv.org/abs/2405.02246)：系统消融视觉语言模型的数据配比、视觉编码器、连接器、语言主干和训练配方，识别真正驱动性能的组件。
+- [PICLe: Eliciting Diverse Behaviors from Large Language Models with Persona In-Context Learning](https://arxiv.org/abs/2405.02501)：通过 persona in-context learning 诱发多样 LLM 行为，在推理时用 persona 示例条件化生成。
+- [Enhancing Contextual Understanding in Large Language Models through Contrastive Decoding](https://arxiv.org/abs/2405.02750)：在推理时引入带 adversarial irrelevant passages 的 contrastive decoding，使生成答案更多依赖 prompt context，而非冲突的 parametric knowledge。
+- [Has this Fact been Edited? Detecting Knowledge Edits in Language Models](https://arxiv.org/abs/2405.02765)：用 hidden states 与 probability distributions 训练 AdaBoost classifiers，跨四种 knowledge editing 方法、两个 LLM 和两个数据集检测输出依赖 edited facts 还是 pretraining facts。
+- [WDMoE: Wireless Distributed Large Language Models with Mixture of Experts](https://arxiv.org/abs/2405.03131)：将 MoE LLM 拆分部署为 base station gate 与 device-side experts，并按模型性能和 wireless latency 联合选择 experts。
+- [Lory: Fully Differentiable Mixture-of-Experts for Autoregressive Language Model Pre-training](https://arxiv.org/abs/2405.03133)：提出 Lory，为自回归语言模型预训练设计全可微 MoE 路由。
+- [Quantifying the Capabilities of LLMs across Scale and Precision](https://arxiv.org/abs/2405.03146)：评估 7B 到 70B 开源 instruction models 在 quantization 下的 NLU、reasoning、misinformation 与 hallucination 表现，发现大模型对 4-bit precision 更稳健。
+- [CityLLaVA: Efficient Fine-Tuning for VLMs in City Scenario](https://arxiv.org/abs/2405.03194)：通过 bounding-box preprocessing、video best-view selection、visual prompts、QA sequences、block expansion 和 sequential questioning 微调城市交通场景 VLM。
+- [MAmmoTH2: Scaling Instructions from the Web](https://arxiv.org/abs/2405.03548)：从 web pretraining corpora 中收集 1000 万 instruction-response pairs，并用其训练 MAmmoTH2 系列，在 MATH、GSM8K、reasoning 和 chat 评测上提升。
+- [Generating Probabilistic Scenario Programs from Natural Language](https://arxiv.org/abs/2405.03709)：构建 ScenarioNL，用 chained LLM、compiler 和 simulator pipeline 将 crash reports 转换为 probabilistic Scenic scenario programs，用于 rare-event simulation。
+- [NL2Plan: Robust LLM-Driven Planning from Minimal Text Descriptions](https://arxiv.org/abs/2405.04215)：用 LLM 从极简自然语言描述中抽取 PDDL domain 和 problem files，再交由 classical planner 在七个 domains 上求解。
+- [Large Language Models Cannot Explain Themselves](https://arxiv.org/abs/2405.04382)：指出 LLM self-explanations 是外生文本，不是预测机制的忠实说明，应重新定位为 critical-thinking aids 而非模型解释。
+- [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://arxiv.org/abs/2405.04434)：提出 DeepSeek-V2：236B 参数、每 token 激活 21B 的 MoE，采用 Multi-head Latent Attention 压缩 KV cache、DeepSeekMoE 稀疏训练、128K 上下文，并经过 SFT 与 RL 聊天对齐。
+- [Understanding the Capabilities and Limitations of Large Language Models for Cultural Commonsense](https://arxiv.org/abs/2405.04655)：在通用与文化特定常识基准上评估 LLM，显示不同文化下表现差异显著，文化语境会影响通用常识能力，查询语言也会改变结果。
+- [ADELIE: Aligning Large Language Models on Information Extraction](https://arxiv.org/abs/2405.05008)：用 ADELIE 将 LLM 对齐到信息抽取任务，使生成适配结构化抽取目标。
+- [LLMs with Personalities in Multi-issue Negotiation Games](https://arxiv.org/abs/2405.05248)：研究多议题谈判游戏中 personality-conditioned LLM 行为，将 persona 设置与谈判结果联系起来。
+- [You Only Cache Once: Decoder-Decoder Architectures for Language Models](https://arxiv.org/abs/2405.05254)：提出 decoder-decoder 语言模型架构，实现一次缓存以减少生成中的重复 KV-cache 开销。
+- [Fishing for Magikarp: Automatically Detecting Under-trained Tokens in Large Language Models](https://arxiv.org/abs/2405.05417)：自动检测 LLM 词表中的欠训练 token，识别嵌入或行为学习不足的 Magikarp 式 token。
+- [Vidur: A Large-Scale Simulation Framework For LLM Inference](https://arxiv.org/abs/2405.05465)：提供高保真 LLM inference simulator 与 Vidur-Search，用于部署配置搜索，并建模 batching、scheduling 和 parallelization choices 下的 latency。
+- [Large Language Model-Aided Evolutionary Search for Constrained Multiobjective Optimization](https://arxiv.org/abs/2405.05767)：把 fine-tuned 或 prompted LLM 作为 evolutionary search operator，基于 objective values 与 constraint violations 加速 constrained multiobjective optimization。
+- [Experimental Pragmatics with Machines: Testing LLM Predictions for the Inferences of Plain and Embedded Disjunctions](https://arxiv.org/abs/2405.05776)：用人类 experimental-pragmatics 范式比较 LLM 对 plain 与 embedded disjunction inferences 的预测，并与 scalar implicatures 对照。
+- [Lumina-T2X: Transforming Text into Any Modality, Resolution, and Duration via Flow-based Large Diffusion Transformers](https://arxiv.org/abs/2405.05945)：用 flow-based 大型扩散 Transformer 从文本生成多种模态，并支持改变输出分辨率和持续时长。
+- [CuMo: Scaling Multimodal LLM with Co-Upcycled Mixture-of-Experts](https://arxiv.org/abs/2405.05949)：将 vision encoder 和 MLP connector 同时 co-upcycle 为 top-k MoE components，通过 expert balancing 扩展多模态 LLM 能力，并在开放 VQA benchmarks 上评测。
+- [LLMs for XAI: Future Directions for Explaining Explanations](https://arxiv.org/abs/2405.06064)：用 LLM 将既有 XAI algorithms 的输出改写为人类可读 narratives，并提出 evaluation、prompting、model comparison、training 和 user study 方向。
+- [Transforming the bootstrap: using transformers to compute scattering amplitudes in planar N=4 super Yang–Mills theory](https://arxiv.org/abs/2405.06107)：在 language-like scattering-amplitude representations 上训练 Transformers，预测 planar N = 4 super Yang-Mills theory 的 integer coefficients，准确率超过 98%。
+- [Learning Latent Dynamic Robust Representations for World Models](https://arxiv.org/abs/2405.06263)：向 visual model-based RL world models 加入 spatio-temporal masking、bisimulation、latent reconstruction 和 hybrid recurrent state-space model，使其对无关观测噪声更稳健。
+- [Pruning as a Domain-specific LLM Extractor](https://arxiv.org/abs/2405.06275)：提出 D-Pruner 双重 unstructured pruning，保留 general 与 domain-specific weights，用于更小的 healthcare 和 legal domain LLM。
+- [Linearizing Large Language Models](https://arxiv.org/abs/2405.06640)：以约 5% 预训练成本将 pretrained Transformers uptrain 为 recurrent attention 或 linear RNN 变体，同时指出 in-context learning 与 long-context 仍有差距。
+- [Word2World: Generating Stories and Worlds through Large Language Models](https://arxiv.org/abs/2405.06686)：构建 LLM 系统，生成游戏故事、抽取 narrative structure 并放置 tiles，在无需 task-specific fine-tuning 下生成 playable worlds。
+- [Aladdin: Joint Placement and Scaling for SLO-Aware LLM Serving](https://arxiv.org/abs/2405.06856)：预测 query resource needs，并为 SLO-aware LLM serving 联合选择 placement、worker configuration 与 scaling，在延迟目标下降低集群成本。
+- [Overcoming systematic softening in universal machine learning interatomic potentials by fine-tuning](https://arxiv.org/abs/2405.07105)：通过微调 universal interatomic-potential 模型，降低材料动力学预测中的系统性 softening 误差。
+- [Strategic Data Ordering: Enhancing Large Language Model Performance through Curriculum Learning](https://arxiv.org/abs/2405.07490)：按 prompt length、attention scores 或 loss values 对 instruction data 排序，为 Mistral-7B 和 Gemma-7B 做 curriculum learning，并获得小幅性能提升。
+- [Reducing Risk for Assistive Reinforcement Learning Policies with Diffusion Models](https://arxiv.org/abs/2405.07603)：用 diffusion models 在仿真中降低 assistive-robot RL policies 的风险，且不需要额外 environment interaction。
+- [Localizing Task Information for Improved Model Merging and Compression](https://arxiv.org/abs/2405.07813)：定位模型中的任务信息以指导模型合并与压缩，保留任务相关组件。
+- [Zero-Shot Tokenizer Transfer](https://arxiv.org/abs/2405.07883)：进行 zero-shot tokenizer transfer，使语言模型无需完整重训即可适配新 token 词表。
+- [MambaOut: Do We Really Need Mamba for Vision?*](https://arxiv.org/abs/2405.07992)：从 Mamba-style vision blocks 中移除 SSM token mixer，发现其对 image classification 并非必要，但对 long-sequence detection 和 segmentation 有用。
+- [Who's in and who's out? A case study of multimodal CLIP-filtering in DataComp](https://arxiv.org/abs/2405.08209)：审计 DataComp CommonPool 的 CLIP filtering，显示其排除部分 demographic groups、放大 underrepresentation，且仍保留 NSFW 或 copyrighted image-text pairs。
+- [TFWT: Tabular Feature Weighting with Transformer](https://arxiv.org/abs/2405.08403)：提出 Transformer Feature Weighting，为 tabular data 学习 sample-specific feature importance，并在真实数据集上用 reinforcement-learning fine-tuning。
+- [Understanding the performance gap between online and offline alignment algorithms](https://arxiv.org/abs/2405.08448)：研究 reward-overoptimization 场景，将 online RLHF 相对 offline alignment 的优势追溯到 pairwise classification 与 generation objectives 的错配。
+- [Is Your LLM Outdated? A Deep Look at Temporal Generalization](https://arxiv.org/abs/2405.08460)：提出 FreshBench，用 fresh text 和 event prediction 衡量 temporal bias、未来性能退化，以及开源与闭源 LLM 的适应差距。
+- [Risks and Opportunities of Open-Source Generative AI](https://arxiv.org/abs/2405.08597)：用三阶段风险与机会框架讨论开源生成式 AI 政策，主张开放模型和数据应与风险管理配套。
+- [CLIP with Quality Captions: A Strong Pretraining for Vision Tasks](https://arxiv.org/abs/2405.08911)：显示高质量 captions 可增强 CLIP pretraining 的 dense prediction 能力，并用更少 image-text data 改进 semantic segmentation 和 depth estimation。
+- [LoRA Learns Less and Forgets Less](https://arxiv.org/abs/2405.09673)：说明 LoRA 学得更少也忘得更少，分析低秩适配为何比全量微调更能保留预训练行为。
+- [Many-Shot In-Context Learning in Multimodal Foundation Models](https://arxiv.org/abs/2405.09798)：在 14 个多模态数据集上评估 GPT-4o 和 Gemini 1.5 Pro 的 many-shot ICL，最多使用 2000 个上下文样例，并测试单批最多 50 个 queries。
+- [Learning from Observer Gaze: Zero-Shot Attention Prediction Oriented by Human-Object Interaction Recognition](https://arxiv.org/abs/2405.09931)：发布含 53 万 fixation points 和 740 个类别的 IG gaze dataset，并训练 interaction-oriented attention prediction models 以解释 HOI。
+- [When Large Language Model Meets Optimization](https://arxiv.org/abs/2405.10098)：梳理并测试 LLM 与优化任务的结合，包括把模型用作优化器、启发式或求解器。
+- [“Thinking” Fair and Slow: On the Efficacy of Structured Prompts for Debiasing Language Models](https://arxiv.org/abs/2405.10431)：在多个 LLM 和数据集上测试 System-2-style Implicative Prompts，在保持下游任务性能竞争力的同时降低平均 social bias。
+- [Lean Attention: Hardware-Aware Scalable Attention Mechanism for the Decode-Phase of Transformers](https://arxiv.org/abs/2405.10480)：把 decode 阶段 online softmax 视为可并行规约，在长上下文自注意力中重排执行流程，并报告相对 FlashAttention-2 的加速。
+- [Language Models can Evaluate Themselves via Probability Discrepancy](https://arxiv.org/abs/2405.10516)： 构建或分析 Language，用内部激活、概率、污染检测或任务表现来评估模型能力、可靠性或安全边界。
+- [Layer-Condensed KV Cache for Efficient Inference of Large Language Models](https://arxiv.org/abs/2405.10637)：跨层压缩 KV cache，在保留有用注意力历史的同时降低 LLM 推理显存。
+- [ActiveLLM: Large Language Model-based Active Learning for Textual Few-Shot Scenarios](https://arxiv.org/abs/2405.10808)：用 GPT-4、o1、Llama 3 等强 LLM 选择少样本文本分类中最值得标注的样本，缓解主动学习冷启动问题。
+- [The Future of Large Language Model Pre-training is Federated](https://arxiv.org/abs/2405.10853)：提出 Photon 联邦预训练系统，使多机构可在保留本地数据与算力的前提下协作训练 LLM。
+- [Observational Scaling Laws and the Predictability of Language Model Performance](https://arxiv.org/abs/2405.10938)： 分析 Observational 的扩展规律，用公开模型或受控训练结果预测能力、数据配比或算力最优训练设置。
+- [Learnable Privacy Neurons Localization in Language Models](https://arxiv.org/abs/2405.10989)：用可学习二值掩码定位记忆 PII 的隐私神经元，并测试关闭这些神经元能否降低隐私泄漏风险。
+- [OpenRLHF: An Easy-to-use, Scalable and High-performance RLHF Framework](https://arxiv.org/abs/2405.11143)：提供 OpenRLHF 可扩展框架，支持 LLM 的监督微调、奖励建模和 RLHF 训练。
+- [Towards Modular LLMs by Building and Reusing a Library of LoRAs](https://arxiv.org/abs/2405.11157)：用基于 LoRA 参数相似性的聚类构建可复用 adapter 库，并用 Arrow 在新输入上零样本路由到相关 adapter。
+- [Automated Multi-level Preference for MLLMs](https://arxiv.org/abs/2405.11165)：用自动多级偏好替代二元 MLLM 偏好，并构造跨级别幻觉样例和 MRHal-Bench 来衡量视觉幻觉严重程度。
+- [Uni-MoE: Scaling Unified Multimodal LLMs With Mixture of Experts](https://arxiv.org/abs/2405.11273)：用模态专用编码器、连接器共享表示和稀疏 MoE 路由扩展统一多模态 LLM，以提升多模态训练与推理效率。
+- [Smooth Kolmogorov Arnold networks enabling structural knowledge representation](https://arxiv.org/abs/2405.11318)：用平滑 Kolmogorov-Arnold networks 编码结构知识，提升学习函数表示的可解释性。
+- [FIFO-Diffusion: Generating Infinite Videos from Text without Training](https://arxiv.org/abs/2405.11473)：用 FIFO diffusion 以免训练方式生成长视频或无限视频流。
+- [VR-GPT: Visual Language Model for Intelligent Virtual Reality Applications](https://arxiv.org/abs/2405.11537)：将定制 VLM 接入 Unity VR 系统和语音交互，让用户在沉浸式任务中获得自然语言指导而不依赖文本叠层。
+- [Sociotechnical Implications of Generative Artificial Intelligence for Information Access](https://arxiv.org/abs/2405.11612)： 梳理生成式 AI 影响信息获取的系统性风险、评估与缓解建议；该条更像 Survey，暂保留为迁移线索。
+- [Decoding by Contrasting Knowledge: Enhancing LLMs' Confidence on Edited Facts](https://arxiv.org/abs/2405.11613)：提出 DeCK，通过对比旧知识与上下文编辑知识的 next-token 分布，缓解预训练事实置信度过高导致的编辑失败。
+- [Era3D: High-Resolution Multiview Diffusion using Efficient Row-wise Attention](https://arxiv.org/abs/2405.11616)：从单视图预测相机参数并用 row-wise attention 生成高分辨率多视图图像，避免稠密多视图注意力开销。
+- [TinyLLaVA Factory: A Modularized Codebase for Small-scale Large Multimodal Models](https://arxiv.org/abs/2405.11788)：提供小型 LMM 模块化工厂代码库，可替换视觉塔、连接器、语言模型和训练配方以复现 TinyLLaVA 类模型。
+- [xFinder: Robust and Pinpoint Answer Extraction for Large Language Models](https://arxiv.org/abs/2405.11874)：提出 xFinder，从 LLM 输出中稳健抽取精确答案，针对评测解析失败。
+- [Multiple-Choice Questions are Efficient and Robust LLM Evaluators](https://arxiv.org/abs/2405.11966)：论证多选题可作为高效稳健的 LLM 评估形式，分析其评测稳定性。
+- [STYLE: Improving Domain Transferability of Asking Clarification Questions in Large Language Model Powered Conversational Agents](https://arxiv.org/abs/2405.12059)： 提出 STYLE，把 LLM 用作检索、用户模拟、对话策略或环境交互组件，偏向外部流程而非纯模型训练。
+- [Imp: Highly Capable Large Multimodal Models for Mobile Devices](https://arxiv.org/abs/2405.12107)：系统研究轻量 LMM 的架构、训练数据和训练策略，并发布面向移动端规模的 Imp 多模态理解模型。
+- [MoRA: High-Rank Updating for Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2405.12130)：提出 MoRA 高秩参数高效更新方法，用于突破 LoRA rank 限制。
+- [Self-HWDebug: Automation of LLM Self-Instructing for Hardware Security Verification](https://arxiv.org/abs/2405.12347)：用已知硬件 CWE 缺陷和修复样例让 LLM 自动生成 RTL 安全调试指令；该条更像安全工作流迁移候选。
+- [Diffusion for World Modeling: Visual Details Matter in Atari](https://arxiv.org/abs/2405.12399)：研究 Atari 中的扩散世界模型，关联模型侧环境预测。
+- [Wav-KAN: Wavelet Kolmogorov-Arnold Networks](https://arxiv.org/abs/2405.12832)：把小波函数引入 Kolmogorov-Arnold Networks，使神经网络在保留可解释函数表示的同时增强局部与多尺度建模能力。
+- [Reducing Transformer Key-Value Cache Size with Cross-Layer Attention](https://arxiv.org/abs/2405.12981)：在 MQA/GQA 基础上让相邻层共享 key-value head，进一步压缩自回归解码的 KV cache。
+- [DuetSim: Building User Simulator with Dual Large Language Models for Task-Oriented Dialogues](https://arxiv.org/abs/2405.13028)：用两个 LLM 分别生成用户轮次和验证目标一致性，构建任务型对话用户模拟器；该条更像 Agent Harness 迁移候选。
+- [MeteoRA: Multiple-tasks Embedded LoRA for Large Language Models](https://arxiv.org/abs/2405.13053)：在 MeteoRA 中嵌入多任务 LoRA 模块，实现跨任务共享的 LLM 适配。
+- [Dataset Decomposition: Faster LLM Training with Variable Sequence Length Curriculum](https://arxiv.org/abs/2405.13226)：通过数据集分解和可变序列长度课程加速 LLM 训练，按长度与难度组织样例。
+- [Understanding Virtual Nodes: Oversmoothing, Oversquashing, and Node Heterogeneity](https://arxiv.org/abs/2405.13526)：从过平滑、过压缩和节点异质性角度分析虚拟节点机制。
+- [Dense Connector for MLLMs](https://arxiv.org/abs/2405.13800)：用 Dense Connector 接入视觉编码器多层特征，并用 Efficient Dense Connector 在较少视觉 token 下保持 LLaVA 级表现。
+- [LOGIN: A Large Language Model Consulted Graph Neural Network Training Framework](https://arxiv.org/abs/2405.13902)：把 LLM 作为 GNN 训练顾问，用节点语义与拓扑提示生成辅助信号，再补充到图神经网络训练中。
+- [Model Editing as a Robust and Denoised variant of DPO: A Case Study on Toxicity](https://arxiv.org/abs/2405.13967)：提出 ProFS，无需调参地识别并投影移除模型参数中的毒性子空间，作为 DPO 式对齐的样本高效替代。
+- [DirectMultiStep: Direct Route Generation for Multi-Step Retrosynthesis](https://arxiv.org/abs/2405.13983)：用 Transformer MoE 将完整多步逆合成路线作为条件字符串直接生成，避免迭代式单步 CASP 搜索扩展。
+- [Sigmoid Gating is More Sample Efficient than Softmax Gating in Mixture of Experts](https://arxiv.org/abs/2405.13997)：比较 sigmoid 与 softmax MoE gating，说明 sigmoid gating 对稀疏专家可能更具样本效率。
+- [MagicPose4D: Crafting Articulated Models with Appearance and Motion Control](https://arxiv.org/abs/2405.14017)：以单目视频或网格序列作为运动提示，结合双阶段重建和外观控制生成可控 4D articulated assets。
+- [Large Language Models Can Self-Correct with Minimal Effort](https://arxiv.org/abs/2405.14092)：测试 LLM 的 minimal-effort self-correction，考察轻量修订提示何时真正改善答案。
+- [Statistical Advantages of Perturbing Cosine Router in Mixture of Experts](https://arxiv.org/abs/2405.14131)：分析 cosine-router MoE 的估计性质，并用参数扰动改善收敛率、减少稀疏专家模型中的表示坍塌。
+- [Unveiling the Tapestry of Consistency in Large Vision-Language Models](https://arxiv.org/abs/2405.14156)：提出 ConBench 检验 LVLM 在不同提示解空间中的答案一致性，揭示选项空间变化和判别式到生成式切换时的失效。
+- [DiM: Diffusion Mamba for Efficient High-Resolution Image Synthesis](https://arxiv.org/abs/2405.14224)：把 Mamba 状态空间序列模型接入扩散生成，以更高效地合成高分辨率图像。
+- [Dynamic Mixture of Experts: An Auto-Tuning Approach for Efficient Transformer Models](https://arxiv.org/abs/2405.14297)：提出 DynMoE，让每个 token 自动决定激活专家数量，并在训练中自适应调整专家规模。
+- [Instruction Tuning With Loss Over Instructions](https://arxiv.org/abs/2405.14394)：提出 Instruction Modelling，在指令微调时也对指令和提示 token 施加损失；在 21 个基准上显示其对长指令短输出和低资源微调尤其有效。
+- [Mitigating Quantization Errors Due to Activation Spikes in GLU-Based LLMs](https://arxiv.org/abs/2405.14428)：针对 GLU-based LLM 的 activation spikes，提出 QFeM 和 QFeP 在量化时隔离尖峰以降低精度损失。
+- [Unchosen Experts Can Contribute Too: Unleashing MoE Models' Power by Self-Contrast](https://arxiv.org/abs/2405.14507)：提出 SCMoE，在推理时以 self-contrast 方式利用未被路由选中的专家，免训练增强 MoE 输出。
+- [SearchLVLMs: A Plug-and-Play Framework for Augmenting Large Vision-Language Models by Searching Up-to-Date Internet Knowledge](https://arxiv.org/abs/2405.14554)：用即插即用搜索框架为 LVLM 补充最新互联网知识，提升面向时效性视觉问答的回答能力。
+- [Surge Phenomenon in Optimal Learning Rate and Batch Size Scaling](https://arxiv.org/abs/2405.14578)：分析最优学习率与 batch size scaling 中的 surge 现象，修正训练超参数扩展规律。
+- [Calibrated Self-Rewarding Vision Language Models](https://arxiv.org/abs/2405.14622)：校准 LVLM 自生成偏好数据，使偏好优化更反映目标模型自身的图文 grounding 失误，而不是外部评分器偏差。
+- [Multi-turn Reinforcement Learning from Preference Human Feedback](https://arxiv.org/abs/2405.14655)：把 RLHF 从单轮回答扩展到完整多轮对话，用 mirror-descent policy optimization 和教育对话环境学习长程偏好反馈。
+- [Sparse-Tuning: Adapting Vision Transformers with Efficient Fine-tuning and Inference](https://arxiv.org/abs/2405.14700)：把 token sparsification 与 dense adapters 结合，在图像和视频 ViT 微调中减少冗余 token 并补偿推理信息损失。
+- [SimPO: Simple Preference Optimization with a Reference-Free Reward](https://arxiv.org/abs/2405.14734)：提出 SimPO，用序列平均 log 概率作为无需参考模型的隐式奖励，并加入目标奖励间隔，在 AlpacaEval 2 和 Arena-Hard 上超过 DPO 变体。
+- [Mamba-Reg: Vision Mamba Also Needs Registers](https://arxiv.org/abs/2405.14858)：在 Vision Mamba 的单向推理流程中均匀插入并复用 register tokens，以改进最终决策表示。
+- [BiMix: A Bivariate Data Mixing Law for Language Model Pretraining](https://arxiv.org/abs/2405.14908)：提出 BiMix，把领域比例和数据规模共同纳入预训练 loss 预测，用于优化多领域数据配比。
+- [Extracting Prompts by Inverting LLM Outputs](https://arxiv.org/abs/2405.15012)：研究通过反演 LLM 输出来抽取提示，把输出作为恢复隐藏提示的证据。
+- [Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization](https://arxiv.org/abs/2405.15071)：从机制角度分析 grokked Transformers 如何在泛化边界上表现为隐式推理器。
+- [OptLLM: Optimal Assignment of Queries to Large Language Models](https://arxiv.org/abs/2405.15130)：用带不确定性的分类器预测每个查询在候选 LLM 上的表现，并搜索成本与准确率的帕累托分配方案。
+- [Intelligent Go-Explore: Standing on the Shoulders of Giant Foundation Models](https://arxiv.org/abs/2405.15143)：用基础模型判断有趣状态和候选动作，替代 Go-Explore 中手工设计的状态选择启发式以支持 hard-exploration RL。
+- [VB-LoRA: Extreme Parameter Efficient Fine-Tuning with Vector Banks](https://arxiv.org/abs/2405.15179)：在 LoRA 矩阵间共享全局向量库，并用可微 top-k admixture 组合低秩更新，降低多任务或多用户 adapter 存储。
+- [Extracting Heuristics from Large Language Models for Reward Shaping in Reinforcement Learning](https://arxiv.org/abs/2405.15194)：从 LLM 中抽取启发式用于强化学习 reward shaping，把语言模型建议作为辅助奖励。
+- [Prompt Tuning Strikes Back: Customizing Foundation Models with Low-Rank Prompt Adaptation](https://arxiv.org/abs/2405.15282)：提出 LoPA，用低秩提示适配在不依赖服务端 adapter 的情况下接近 LoRA 与全量微调效果。
+- [Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training](https://arxiv.org/abs/2405.15319)：标准化 LLM 模型增长算子，并发现深度堆叠可扩展到 7B 模型，以 194B token 达到常规 300B token 训练损失，同时给出增长时机和倍数指南。
+- [Distinguish Any Fake Videos: Unleashing the Power of Large-scale Data and Motion Features](https://arxiv.org/abs/2405.15343)：构建 266 万真实与生成视频的 GenVidDet，并训练利用运动特征的生成视频检测器；该条更偏 Bench。
+- [Sparse Matrix in Large Language Model Fine-tuning](https://arxiv.org/abs/2405.15525)：在 LLM 微调中使用稀疏矩阵，以降低适配成本并保留任务特定更新能力。
+- [Inverse-RLignment: Inverse Reinforcement Learning from Demonstrations for LLM Alignment](https://arxiv.org/abs/2405.15624)：把示范对齐表述为逆强化学习，在偏好标签昂贵、噪声大或缺失时学习定制奖励模型。
+- [ConvLLaVA: Hierarchical Backbones as Visual Encoder for Large Multimodal Models](https://arxiv.org/abs/2405.15738)：用 ConvNeXt 式层级视觉骨干替换 LMM 中的 ViT 编码器，通过多尺度视觉特征改进高分辨率多模态理解。
+- [Transformers represent belief state geometry in their residual stream](https://arxiv.org/abs/2405.15943)：展示 Transformer residual stream 线性表示 belief-state geometry，包括数据源隐状态动态产生的非平凡分形结构。
+- [C3LLM: Conditional Multimodal Content Generation Using Large Language Models](https://arxiv.org/abs/2405.16136)：用 LLM 做条件化多模态内容生成，将文本指令与多模态生成控制连接起来。
+- [Mixture of In-Context Prompters for Tabular PFNs](https://arxiv.org/abs/2405.16156)：提出 MIXTUREPFN，把最近邻 in-context 采样与推理时表格数据上的 bootstrap 微调结合，用于 prior-data-fitted networks。
+- [Evolutionary Large Language Model for Automated Feature Transformation](https://arxiv.org/abs/2405.16203)：结合 RL 收集的特征变换库、进化维护和少样本 LLM 生成，为下游表格模型搜索特征操作。
+- [No Two Devils Alike: Unveiling Distinct Mechanisms of Fine-tuning Attacks](https://arxiv.org/abs/2405.16229)：用 logit lens、activation patching 和跨模型 probing 说明不同微调攻击会通过不同内部机制改变拒答行为。
+- [ConStat: Performance-Based Contamination Detection in Large Language Models](https://arxiv.org/abs/2405.16281)：把污染定义为虚高且不能泛化的基准表现，并从模型行为而非训练数据直接访问来检测污染。
+- [Training Tensor Attention Efficiently: From Cubic to Almost Linear Time](https://arxiv.org/abs/2405.16411)：用闭式梯度、多项式近似和张量代数推导 tensor attention 的近线性时间反向传播。
+- [The Importance of Directional Feedback for LLM-based Optimizers](https://arxiv.org/abs/2405.16434)：显示 LLM 优化器在获得方向性自然语言反馈时更稳定有效，并从历史优化轨迹中合成这类反馈，用于函数、提示和诗歌等优化任务。
+- [Provably Mitigating Overoptimization in RLHF: Your SFT Loss is Implicitly an Adversarial Regularizer](https://arxiv.org/abs/2405.16436)：证明 SFT loss 可在 RLHF 中充当对抗正则项，并给出惩罚奖励模型过优化的策略目标。
+- [On the Algorithmic Bias of Aligning Large Language Models with RLHF: Preference Collapse and Matching Regularization](https://arxiv.org/abs/2405.16455)：指出标准 RLHF 中的 preference collapse，并提出 preference-matching 正则让策略匹配奖励模型的完整偏好分布。
+- [Cost-Effective Online Multi-LLM Selection with Versatile Reward Models](https://arxiv.org/abs/2405.16587)：把多 LLM 路由表述为成本感知组合 bandit，并用任务特定奖励模型在异构价格下选择模型子集。
+- [Let Silence Speak: Enhancing Fake News Detection with Generated Comments from Large Language Models](https://arxiv.org/abs/2405.16631)：用 LLM 生成缺失评论来增强假新闻检测，为分类器补充合成社会语境。
+- [Limits of Deep Learning: Sequence Modeling through the Lens of Complexity Theory](https://arxiv.org/abs/2405.16674)：从复杂性理论证明单层 SSM 和有限精度序列模型在函数组合上的限制，并用乘法、动态规划和谜题测试 SSM 与 Transformer。
+- [Triple Preference Optimization: Achieving Better Alignment using a Single Step Optimization](https://arxiv.org/abs/2405.16681)：提出 TPO 单步偏好目标，面向带噪或小规模偏好数据时同时保持推理能力和指令跟随。
+- [gzip Predicts Data-dependent Scaling Laws](https://arxiv.org/abs/2405.16684)： 分析 Predicts 的扩展规律，用公开模型或受控训练结果预测能力、数据配比或算力最优训练设置。
+- [Zamba: A Compact 7B SSM Hybrid Model](https://arxiv.org/abs/2405.16712)：在 7B 紧凑语言模型中结合 state-space 层与 Transformer attention，以支持高效长上下文建模。
+- [Entity Alignment with Noisy Annotations from Large Language Models](https://arxiv.org/abs/2405.16806)：提出 LLM4EA，用主动选择和噪声感知处理 LLM 生成标注，在大规模真实知识图谱间做实体对齐。
+- [Can We Trust LLMs? Mitigate Overconfidence Bias in LLMs through Knowledge Transfer](https://arxiv.org/abs/2405.16856)：把大模型的 chain-of-thought rationales 迁移到小模型，使微调学生模型同时提升答案准确率和置信度校准。
+- [Tokenization Matters! Degrading Large Language Models through Challenging Their Tokenization](https://arxiv.org/abs/2405.17067)：构建 ADT 对抗数据集，利用不同开源 LLM 词表挑战 tokenizer，从而暴露 tokenization 对模型表现的脆弱影响。
+- [On the Noise Robustness of In-Context Learning for Text Generation](https://arxiv.org/abs/2405.17264)：提出 Local Perplexity Ranking，用更可能干净的近邻替换 noisy in-context candidates，提高文本生成 ICL 的噪声鲁棒性。
+- [DoRA: Enhancing Parameter-Efficient Fine-Tuning with Dynamic Rank Distribution](https://arxiv.org/abs/2405.17357)：提出 Dynamic Low-Rank Adaptation，让不同权重矩阵获得动态 rank 分配以提升参数高效微调。
+- [Matryoshka Multimodal Models](https://arxiv.org/abs/2405.17430)：提出 M3，把视觉内容表示为从粗到细嵌套的 visual token 集，使多模态模型可按粒度使用视觉信息。
+- [EMR-Merging: Tuning-Free High-Performance Model Merging](https://arxiv.org/abs/2405.17461)：通过 EMR-Merging 免调参合并模型，目标是在无额外训练下实现高性能参数组合。
+- [ClassDiffusion: More Aligned Personalization Tuning with Explicit Class Guidance](https://arxiv.org/abs/2405.17532)：在文生图个性化微调中加入语义保持损失，使定制概念在不同提示下保留父类组合能力。
+- [LoRA-XS: Low-Rank Adaptation with Extremely Small Number of Parameters](https://arxiv.org/abs/2405.17604)：提出带理论推导的 LoRA-XS，用极少可训练参数实现低秩适配。
+- [Do Egocentric Video-Language Models Truly Understand Hand-Object Interactions?](https://arxiv.org/abs/2405.17719)：提出 EgoHOIBench 和 EgoNCE++，测试并改进 egocentric video-language models 对细粒度手物交互动词与名词的区分。
+- [LoRA-Switch: Boosting the Efficiency of Dynamic LLM Adapters via System-Algorithm Co-design](https://arxiv.org/abs/2405.17741)：从系统和算法共同设计 LoRA-Switch，提高动态 LLM adapter 切换效率。
+- [XL3M: A Training-free Framework for LLM Length Extension Based on Segment-wise Inference](https://arxiv.org/abs/2405.17755)：提出训练免费的 segment-wise inference 框架 XL3M，让短上下文训练的 LLM 无需微调即可处理超长序列。
+- [Don't Miss the Forest for the Trees: Attentional Vision Calibration for Large Vision Language Models](https://arxiv.org/abs/2405.17820)：校准 LVLM 的视觉注意力，使模型更多关注图像证据而非过度依赖语言先验。
+- [RITUAL: Random Image Transformations as a Universal Anti-hallucination Lever in LVLMs](https://arxiv.org/abs/2405.17821)：用随机图像变换构成 RITUAL，作为 LVLM 免训练抗幻觉手段。
+- [Seeing the Image: Prioritizing Visual Correlation by Contrastive Alignment](https://arxiv.org/abs/2405.17871)：用 contrastive image logits 估计视觉相关性并重加权 VLM 训练 token，减少弱 grounding 或与图像矛盾的文本 token。
+- [Self-Guiding Exploration for Combinatorial Problems](https://arxiv.org/abs/2405.17950)：提出 Self-Guiding Exploration 提示策略，用 LLM 自引导探索提升组合问题求解表现；该条更偏 Agent Harness 迁移候选。
+- [Knowledge Circuits in Pretrained Transformers](https://arxiv.org/abs/2405.17969)：追踪 GPT-2 和 TinyLlama 中 information heads、relation heads 与 MLP 如何组成知识电路，并检查编辑对电路的扰动。
+- [Exploiting LLM Quantization](https://arxiv.org/abs/2405.18137)：展示常用量化方法可被利用来产生有害量化 LLM，即使其全精度版本看似安全，从而误导用户部署。
+- [FinerCut: Finer-grained Interpretable Layer Pruning for Large Language Models](https://arxiv.org/abs/2405.18218)：提出 FinerCut，把 self-attention 与 FFN 层作为独立剪枝单元，实现比按 Transformer block 更细粒度的可解释层剪枝。
+- [Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations](https://arxiv.org/abs/2405.18392)：用 constant learning rate 加 cooldowns 替代固定时长 cosine schedules，使跨训练时长的低成本 scaling 实验和 compute-optimal 分析成为可能。
+- [Why are Visually-Grounded Language Models Bad at Image Classification?](https://arxiv.org/abs/2405.18415)：分析发现图像分类所需信息已在 VLM latent space 中，但需要足够训练数据才能有效解码，主要瓶颈来自数据而非表示缺失。
+- [ViG: Linear-complexity Visual Sequence Learning with Gated Linear Attention](https://arxiv.org/abs/2405.18425)：提出 ViG，用 gated linear attention 实现线性复杂度视觉序列学习。
+- [Inference-Time Alignment of Diffusion Models with Direct Noise Optimization](https://arxiv.org/abs/2405.18881)：通过 direct noise optimization 在推理时对齐扩散模型，而不是重训权重。
+- [Offline Regularised Reinforcement Learning for Large Language Models Alignment](https://arxiv.org/abs/2405.19107)：提出 Direct Reward Optimisation，用单条 prompt-response-feedback 轨迹对齐 LLM，而不是依赖稀缺的成对偏好 quadruplets。
+- [Robust Preference Optimization through Reward Model Distillation](https://arxiv.org/abs/2405.19316)：把一组奖励模型蒸馏进 DPO 式训练，在保持监督式简单性的同时提升对偏好标注分布偏移的鲁棒性。
+- [Value-Incentivized Preference Optimization: A Unified Approach to Online and Offline RLHF](https://arxiv.org/abs/2405.19320)：提出 VPO，用 value-function uncertainty 正则化 learned preference rewards，使在线和离线 RLHF 都能在不确定性下使用乐观或悲观策略。
+- [MAP-Neo: Highly Capable and Transparent Bilingual Large Language Model Series](https://arxiv.org/abs/2405.19327)：发布 MAP-Neo：从零在 4.5T token 上训练的完全开放双语 7B LLM，同时开放清洗语料、数据清洗流水线、检查点以及训练评测框架。
+- [Preference Learning Algorithms Do Not Learn Preference Rankings](https://arxiv.org/abs/2405.19534)：指出 DPO 和 RLHF 策略常未能把 preferred outputs 排在 rejected outputs 之前，并分析目标优化与实际排序准确率之间的差距。
+- [CLIPLoss and Norm-Based Data Selection Methods for Multimodal Contrastive Learning](https://arxiv.org/abs/2405.19547)：提出 surrogate CLIPLoss 和 NormSim 数据选择指标，在不训练新评分模型的情况下筛选 CLIP 式预训练图文对。
+- [Quo Vadis ChatGPT? From Large Language Models to Large Knowledge Models](https://arxiv.org/abs/2405.19561)：主张从大语言模型走向结合 first principles 与技术知识的大知识模型，以服务科学和工程推理。
+- [SVFT: Parameter-Efficient Fine-Tuning with Singular Vectors](https://arxiv.org/abs/2405.19597)：通过更新与每个权重矩阵绑定的奇异向量进行微调，提供不同于通用低秩 adapter 的 PEFT 路线。
+- [Detecting Hallucinations in Large Language Model Generation: A Token Probability Approach](https://arxiv.org/abs/2405.19648)：用来自评估 LLM 的四个 token 与词表概率特征训练轻量监督分类器检测幻觉，并在三个基准上报告优于既有方法的结果。
+- [Enhancing Large Vision Language Models with Self-Training on Image Comprehension](https://arxiv.org/abs/2405.19716)：提出 STIC，让 LVLM 从未标注图像自构建偏好数据，并通过自训练提升图像理解。
+- [LLaMEA: A Large Language Model Evolutionary Algorithm for Automatically Generating Metaheuristics](https://arxiv.org/abs/2405.20132)：用 LLM 驱动的进化算法 LLaMEA 自动生成元启发式算法。
+- [XPrompt:Explaining Large Language Model's Generation via Joint Prompt Attribution](https://arxiv.org/abs/2405.20404)：提出基于 Joint Prompt Attribution 的反事实解释框架 JoPA，分析多个提示文本如何共同影响 LLM 生成。
+- [Mind the Inconspicuous: Revealing the Hidden Weakness in Aligned LLMs' Refusal Boundaries](https://arxiv.org/abs/2405.20653)：展示重复 end-of-sequence token 会把有害提示推向拒答边界弱点，并提高多个开源 LLM 的越狱成功率。
+- [Ovis: Structural Embedding Alignment for Multimodal Large Language Model](https://arxiv.org/abs/2405.20797)：通过加入可学习视觉嵌入表，并让图像 patch 以类似文本 token 查表的方式组合视觉嵌入，缓解 MLLM 图文嵌入结构不一致问题并提升多模态融合。
+- [Self-Augmented Preference Optimization: Off-Policy Paradigms for Language Model Alignment](https://arxiv.org/abs/2405.20830)：提出 SAPO 离策略偏好优化范式，通过自增强生成偏好数据而不依赖既有成对比较。
+- [Large Language Models are Zero-Shot Next Location Predictors](https://arxiv.org/abs/2405.20962)：在三个真实移动性数据集上测试 15 个以上 LLM，发现零样本提示在若干设置中可超过专门的下一位置预测模型。
+- [SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales](https://arxiv.org/abs/2405.20974)：通过从多条采样推理链的不一致性中总结不确定性，并用 RL 奖励校准置信度，训练 LLM 输出细粒度置信度和自反思理由。
+- [Code Pretraining Improves Entity Tracking Abilities of Language Models](https://arxiv.org/abs/2405.21068)：比较基础模型与代码继续预训练模型，发现代码预训练比数学或对齐微调更稳定地提升自然语言实体跟踪。
+- [What Makes CLIP More Robust to Long-Tailed Pre-Training Data? A Controlled Study for Transferable Insights](https://arxiv.org/abs/2405.21070)：通过受控长尾预训练实验解释 CLIP 式对比学习为何比监督学习更能在类别不均衡下迁移。
+- [Expert-Token Resonance MoE: Bidirectional Routing with Efficiency Affinity-Driven Active Selection](https://arxiv.org/abs/2406.00023)：提出 expert-token resonance MoE 路由，用 token 与 expert 的双向亲和力进行主动选择。
+- [SCALM: Towards Semantic Caching for Automated Chat Services with Large Language Models](https://arxiv.org/abs/2406.00025)：为 LLM 聊天服务设计语义缓存，识别可复用回答模式和缓存条目，而不只依赖字符串精确匹配。
+- [Large Language Model Pruning](https://arxiv.org/abs/2406.00030)：系统梳理 LLM 剪枝方法，覆盖大语言模型的结构化与非结构化压缩。
+- [QuanTA: Efficient High-Rank Fine-Tuning of LLMs with Quantum-Informed Tensor Adaptation](https://arxiv.org/abs/2406.00132)：提出 quantum-informed tensor adaptation，在无推理额外开销下为大规模预训练语言模型提供高秩高效微调。
+- [μLO: Compute-Efficient Meta-Generalization of Learned Optimizers](https://arxiv.org/abs/2406.00153)：提出用于计算高效 meta-generalization 的微型 learned optimizer，降低 learned optimizer 迁移成本。
+- [LLM-RankFusion: Mitigating Intrinsic Inconsistency in LLM-based Ranking](https://arxiv.org/abs/2406.00231)：提出 LLM-RankFusion，通过融合多个 LLM 排名结果缓解内在不一致性，生成更稳健的排序列表。
+- [Controlling Large Language Model Agents with Entropic Activation Steering](https://arxiv.org/abs/2406.00244)：提出 EAST 激活转向方法，通过调节内部表示中的不确定性来改变 in-context LLM agents 的探索行为。
+- [HonestLLM: Toward an Honest and Helpful Large Language Model](https://arxiv.org/abs/2406.00380)：构建 HonestLLM 以提升诚实性和有用性，关注校准后的真实回答行为。
+- [Automatic Instruction Evolving for Large Language Models](https://arxiv.org/abs/2406.00770)：提出 Auto Evol-Instruct，让 LLM 自行设计、批判并迭代改进 instruction-evolution 策略，而不依赖人工演化规则。
+- [Is In-Context Learning in Large Language Models Bayesian? A Martingale Perspective](https://arxiv.org/abs/2406.00793)：从 martingale 视角分析 ICL，指出该性质是不歧义预测的必要条件，并给出可分解的不确定性刻画。
+- [Envisioning Outlier Exposure by Large Language Models for Out-of-Distribution Detection](https://arxiv.org/abs/2406.00806)：用 LLM 构想 outlier exposure 样例用于 OOD 检测，生成辅助分布外信号。
+- [BoNBoN Alignment for Large Language Models and the Sweetness of Best-of-n Sampling](https://arxiv.org/abs/2406.00832)：把 best-of-n sampling 分析为一种对齐分布，并推导 BoNBoN 蒸馏，使模型无需推理时大量采样也能近似该行为。
+- [Aligning Language Models with Demonstrated Feedback](https://arxiv.org/abs/2406.00888)：把专家示范转化为与 LLM 样本的迭代成对偏好比较，并可纳入不同训练 checkpoint 之间的比较来做对齐。
+- [Dragonfly: Multi-Resolution Zoom Supercharges Large Visual-Language Model](https://arxiv.org/abs/2406.00977)：为 LVLM 加入多分辨率 zoom 视觉编码，使固定分辨率 ViT 同时保留全局上下文和细粒度图像细节。
+- [Probing Language Models for Pre-training Data Detection](https://arxiv.org/abs/2406.01333)：通过 probing 内部激活判断目标文本是否出现在预训练中，并提出 ArxivMIA 作为污染检测基准。
+- [D-CPT Law: Domain-specific Continual Pre-Training Scaling Law for Large Language Models](https://arxiv.org/abs/2406.01375)：推导领域特定持续预训练 D-CPT scaling law，估计数据和算力如何影响适配。
+- [Sparsity-Accelerated Training for Large Language Models](https://arxiv.org/abs/2406.01392)：用稀疏计算加速 LLM 训练，降低预训练或微调成本。
+- [The Importance of Online Data: Understanding Preference Fine-tuning via Coverage](https://arxiv.org/abs/2406.01462)：证明全局覆盖条件是离线对比方法收敛到最优策略的充要条件，而在线 RL 只需较弱的部分覆盖。
+- [The Geometry of Categorical and Hierarchical Concepts in Large Language Models](https://arxiv.org/abs/2406.01506)：研究类别与层级概念是否在 LLM 表示空间中形成线性方向和有结构的几何关系。
+- [Demystifying AI Platform Design for Distributed Inference of Next-Generation LLM models](https://arxiv.org/abs/2406.01698)：分析下一代 LLM 的分布式推理平台设计，重点是服务架构而非新模型。
+- [DuQuant: Distributing Outliers via Dual Transformation Makes Stronger Quantized LLMs](https://arxiv.org/abs/2406.01721)：提出 DuQuant，通过双重变换分散 activation outliers，提高量化 LLM 精度。
+- [Eliciting the Priors of Large Language Models using Iterated In-Context Learning](https://arxiv.org/abs/2406.01860)：把 iterated in-context learning 作为 Markov-chain 流程，从 LLM 中采样并研究因果与日常预测任务的隐式 Bayesian priors。
+- [Plug-and-Play Diffusion Distillation](https://arxiv.org/abs/2406.01954)：冻结文生图扩散模型并训练轻量外部 guide，减少 classifier-free guidance 计算且可迁移到微调变体。
+- [FedMKT: Federated Mutual Knowledge Transfer for Large and Small Language Models](https://arxiv.org/abs/2406.02224)：提出参数高效的联邦互知识迁移框架，让大小语言模型在分布式训练中相互传递能力。
+- [Retaining Key Information under High Compression Ratios: Query-Guided Compressor for LLMs](https://arxiv.org/abs/2406.02376)：提出 QGC query-guided dynamic context compressor，在高压缩比下为问答保留与答案相关的信息。
+- [Towards Efficient Mixture of Experts: A Holistic Study of Compression Techniques](https://arxiv.org/abs/2406.02500)：系统研究 MoE 压缩，并提出 layer、block 和 expert 级别的激进移除策略来降低稀疏模型参数与通信开销。
+- [Scalable MatMul-free Language Modeling](https://arxiv.org/abs/2406.02528)：构建可扩展 MatMul-free 语言模型，以替代密集矩阵乘法降低计算。
+- [Mitigate Position Bias in Large Language Models via Scaling a Single Dimension](https://arxiv.org/abs/2406.02536)：把 lost-in-the-middle 现象关联到位置隐状态，并通过缩放一个与 attention-position bias 相关的 hidden dimension 缓解位置偏差。
+- [Adaptive Layer Splitting for Wireless LLM Inference in Edge Computing: A Model-Based Reinforcement Learning Approach](https://arxiv.org/abs/2406.02616)：用 model-based reinforcement learning 为无线边缘推理选择 LLM 在边缘服务器和用户设备之间的层切分点。
+- [Block Transformer: Global-to-Local Language Modeling for Fast Inference](https://arxiv.org/abs/2406.02657)：在自回归 Transformer 中加入层级 global-to-local 建模，以缓解 self-attention 推理瓶颈。
+- [Scaling Laws for Reward Model Overoptimization in Direct Alignment Algorithms](https://arxiv.org/abs/2406.02900)：推导直接对齐算法中奖励模型过优化的 scaling behavior，连接奖励模型质量与策略退化。
+- [Pruner-Zero: Evolving Symbolic Pruning Metric from scratch for Large Language Models](https://arxiv.org/abs/2406.02924)：用 genetic programming 从零演化 LLM post-training pruning 的符号指标，减少对手工剪枝启发式和重训练的依赖。
+- [Understanding the Impact of Negative Prompts: When and How Do They Take Effect?](https://arxiv.org/abs/2406.02965)：分析扩散生成中 negative prompts 的延迟生效现象，并解释 latent-space neutralization 如何实现概念移除。
+- [Large Language Models as Evaluators for Recommendation Explanations](https://arxiv.org/abs/2406.03248)：评估 LLM judge 能否借助指令跟随和常识推理信号判断推荐解释质量；该条更像评测迁移候选。
+- [SpikeLM: Towards General Spike-Driven Language Modeling via Elastic Bi-Spiking Mechanisms](https://arxiv.org/abs/2406.03287)：提出 elastic bi-spiking 机制，让 spiking language models 用更丰富的二值事件编码处理判别式与生成式语言任务。
+- [Wings: Learning Multimodal LLMs without Text-only Forgetting](https://arxiv.org/abs/2406.03496)：提出 Wings，在学习多模态理解时保留文本对话能力，缓解 MLLM 训练中的 text-only forgetting。
+- [LLMEmbed: Rethinking Lightweight LLM's Genuine Function in Text Classification](https://arxiv.org/abs/2406.03725)：把轻量 LLM 用作可迁移文本 embedding 生成器，而不是直接作为指令式分类器。
+- [Credit Card Fraud Detection Using Advanced Transformer Model](https://arxiv.org/abs/2406.03733)：将高级 Transformer 用于信用卡欺诈检测；该条低置信，因为更像窄领域应用。
+- [Light-PEFT: Lightening Parameter-Efficient Fine-Tuning via Early Pruning](https://arxiv.org/abs/2406.03792)：提出 foundation model masked early pruning 和 PEFT multi-granularity early pruning，以降低任务特定微调成本。
+- [Improving Alignment and Robustness with Circuit Breakers](https://arxiv.org/abs/2406.04313)：用 representation engineering 的 circuit breakers 在解码中中断有害生成，提升拒答训练之外的对齐鲁棒性。
+- [Simplified and Generalized Masked Diffusion for Discrete Data](https://arxiv.org/abs/2406.04329)：为离散数据泛化 masked diffusion，给出更简洁的训练与采样形式，使扩散建模不局限于连续数据。
+- [PaCE: Parsimonious Concept Engineering for Large Language Models](https://arxiv.org/abs/2406.04331)：提出 Parsimonious Concept Engineering，用紧凑概念方向做 activation engineering 以转向 LLM 行为。
+- [DeepStack: Deeply Stacking Visual Tokens is Surprisingly Simple and Effective for LMMs](https://arxiv.org/abs/2406.04334)：把多层视觉编码器 token 堆叠进 LMM 输入，以简单的视觉特征聚合架构提升多模态推理。
+- [MoE Jetpack: From Dense Checkpoints to Adaptive Mixture of Experts for Vision Tasks](https://arxiv.org/abs/2406.04801)：通过微调把 dense vision checkpoints 转成 adaptive MoE models，在复用预训练权重的同时加入稀疏专家容量。
+- [Do Language Models Exhibit Human-like Structural Priming Effects?](https://arxiv.org/abs/2406.04847)：分析语言模型中的结构启动效应，发现 inverse frequency effect 和 prime-target 词汇依赖可解释部分人类相似现象。
+- [Towards Semantic Equivalence of Tokenization in Multimodal LLM](https://arxiv.org/abs/2406.05127)：提出动态 Semantic-Equivalent Vision Tokenizer，用聚类把视觉特征合成语义单元，并按图像复杂度自适应确定 token 数量。
+- [An Empirical Study on Parameter-Efficient Fine-Tuning for MultiModal Large Language Models](https://arxiv.org/abs/2406.05130)：实证比较多模态 LLM 的参数高效微调方法，覆盖任务与 adapter 选择。
+- [The Factorization Curse](https://arxiv.org/abs/2406.05183)：诊断 next-token objective 下 reversal-style 知识检索错误的成因。核心思想：证明模型在一种 token factorization 下学到联合分布，并不等价于能在另一种 factorization 下可靠检索，再测试 factorization-agnostic objectives 作为更稳健知识存储和规划能力的路线。
+- [DiffusionPID: Interpreting Diffusion via Partial Information Decomposition](https://arxiv.org/abs/2406.05191)：把 partial information decomposition 用于扩散模型，分解去噪过程中的冗余、独有和协同信息。
+- [CorDA: Context-Oriented Decomposition Adaptation of Large Language Models](https://arxiv.org/abs/2406.05223)：提出 CorDA，通过面向上下文的权重分解进行 LLM 适配，在学习新任务时保留世界知识。
+- [Improving Logits-based Detector without Logits from Black-box LLMs](https://arxiv.org/abs/2406.05232)：从黑盒 LLM 输出重建类 logits 信号，使依赖 logits 的生成文本检测器无需 API logit 访问也能工作。
+- [Federated LoRA with Sparse Communication](https://arxiv.org/abs/2406.05233)：把 LoRA 适配与稀疏联邦通信结合，使客户端能在交换更少 adapter 更新的情况下微调语言模型。
+- [Exploring Parameter-Efficient Fine-Tuning of Large Language Model on Automated Program Repair](https://arxiv.org/abs/2406.05639)：比较多种 PEFT 策略在 LLM 自动程序修复上的适配效果，衡量轻量微调下的修复性能。
+- [F-LMM: Grounding Frozen Large Multimodal Models](https://arxiv.org/abs/2406.05821)：通过轻量可训练组件 grounding 冻结的大型多模态模型，而不是更新完整视觉语言骨干。
+- [Are Large Language Models Actually Good at Text Style Transfer?](https://arxiv.org/abs/2406.05885)：评测 LLM 文本风格迁移能力，分析不同提示和模型选择在风格控制场景中的成功与失败。
+- [Turbo Sparse: Achieving LLM SOTA Performance with Minimal Activated Parameters](https://arxiv.org/abs/2406.05955)：提出 dReLU 和用于稀疏化的数据配比，使 Mistral 与 Mixtral 每 token 仅激活 2.5B 与 4.3B 参数，同时获得 2 到 5 倍解码加速。
+- [ShiftAddLLM: Accelerating Pretrained LLMs via Post-Training Multiplication-Less Reparameterization](https://arxiv.org/abs/2406.05981)：把预训练 LLM 权重矩阵重参数化为二值矩阵与分组缩放因子，用 shift 和 add 替代乘法，并通过自动 bit 分配降低推理延迟。
+- [MATES: Model-Aware Data Selection for Efficient Pretraining with Data Influence Models](https://arxiv.org/abs/2406.06046)：训练 data influence model 跟踪语言模型在预训练中的动态数据偏好，用模型感知选择替代静态规则或大型参考模型筛选。
+- [Verifiable Generation with Subsentence-Level Fine-Grained Citations](https://arxiv.org/abs/2406.06125)：训练带 citation 的生成模型，把来源绑定到子句级 span，使证据边界比句级引用更精细。
+- [Language Models Resist Alignment: Evidence From Data Compression](https://arxiv.org/abs/2406.06144)：用数据压缩行为检验对齐微调是否改变模型底层分布，还是主要添加了表层行为约束。
+- [PowerInfer-2: Fast Large Language Model Inference on a Smartphone](https://arxiv.org/abs/2406.06282)：结合激活稀疏性、CPU-GPU-NPU 异构执行和内存感知调度，在手机上服务超过设备内存容量的 LLM。
+- [Self-Tuning: Instructing LLMs to Effectively Acquire New Knowledge through Self-Teaching](https://arxiv.org/abs/2406.06326)：把新文档转成 self-teaching 指令数据，让 LLM 通过解释、提问和复述吸收新知识，而不只是继续预训练原始文本。
+- [Can Language Models Serve as Text-Based World Simulators?](https://arxiv.org/abs/2406.06485)：评测语言模型作为文本世界转移模型的能力，要求其预测动作如何更新符号状态，用于规划任务中的模拟器替代。
+- [Skywork-MoE: A Deep Dive into Training Techniques for Mixture-of-Experts Language Models](https://arxiv.org/abs/2406.06563)：报告 Skywork-MoE 146B 的训练配方，比较 dense checkpoint upcycling 与从零训练，并分析路由、专家和稳定性选择。
+- [SwitchLoRA: Switched Low-Rank Adaptation Can Learn Full-Rank Information](https://arxiv.org/abs/2406.06564)：在训练中切换和轮换 LoRA 子空间，使低秩 adapter 能累积全秩信息，同时降低显存和通信成本。
+- [Break the Chain: Large Language Models Can be Shortcut Reasoners](https://arxiv.org/abs/2406.06580)：评估 CoT 何时并非必要，并鼓励更短的人类式 shortcut reasoning trace 来处理逻辑和常识推理。
+- [Instruct Large Language Models to Drive like Humans](https://arxiv.org/abs/2406.07296)：把 LLM 适配到自动驾驶运动规划，通过人类式场景指令学习驾驶逻辑和轨迹决策。
+- [TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496)：把 LLM 反馈视作文本梯度，使提示和模块化语言模型程序能进行类似反向传播的优化，而不依赖数值导数。
+- [Beyond Model Collapse: Scaling Up with Synthesized Data Requires Reinforcement](https://arxiv.org/abs/2406.07515)：指出合成数据扩展需要验证或强化信号，因为盲目加入生成样本会触发 model collapse 动态。
+- [MAP: Low-compute Model Merging with Amortized Pareto Fronts via Quadratic Approximation](https://arxiv.org/abs/2406.07529)：用二次 surrogate 近似模型合并中的任务权衡 Pareto front，降低选择合并权重所需的计算。
+- [Autoregressive Pretraining with Mamba in Vision](https://arxiv.org/abs/2406.07537)：把自回归视觉预训练用于 Mamba 主干，利用其 recurrent 结构高效提升视觉表征。
+- [An Empirical Study of Mamba-based Language Models](https://arxiv.org/abs/2406.07887)：在受控设置下比较 Mamba 语言模型与 Transformer，分离 selective state-space LM 的扩展、优化和长上下文行为。
+- [Grounding Multimodal Large Language Models in Actions](https://arxiv.org/abs/2406.07904)：把不同具身系统的 action space 映射到冻结多模态知识之上的可训练接口，统一分析 MLLM 动作 grounding 方法。
+- [Large Language Model Unlearning via Embedding-Corrupted Prompts](https://arxiv.org/abs/2406.07933)：通过优化 embedding-corrupted prompts 进行遗忘，在抑制目标知识的同时减少对保留事实的连带损伤。
+- [VisionLLM v2: An End-to-End Generalist Multimodal Large Language Model for Hundreds of Vision-Language Tasks](https://arxiv.org/abs/2406.08394)：在一个端到端 MLLM 中统一视觉感知、理解和生成，覆盖数百个超出文本式 VQA 的视觉语言任务。
+- [Discovering Preference Optimization Algorithms with and for Large Language Models](https://arxiv.org/abs/2406.08414)：用 LLM 搜索偏好优化 loss 空间，发现超出人工设计 DPO 公式的对齐目标。
+- [Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing](https://arxiv.org/abs/2406.08464)：通过对齐聊天模型的空输入或极简输入生成 instruction-response 对齐数据，避免依赖种子提示和私有数据。
+- [What If We Recaption Billions of Web Images with LLaMA-3?](https://arxiv.org/abs/2406.08478)：用 LLaMA-3 对网页规模图文对重新生成 caption，为视觉语言和文生图训练丰富噪声文本描述。
+- [Beyond LLaVA-HD: Diving into High-Resolution Large Multimodal Models](https://arxiv.org/abs/2406.08487)：研究高分辨率 LMM 设计，提出比简单切片和统一 resize 更合理的全局-局部图像处理方式。
+- [HelpSteer2: Open-source dataset for training top-performing reward models](https://arxiv.org/abs/2406.08673)：提供更新的开放许可偏好数据，包含属性式 judgment，用于训练更强的 LLM reward model。
+- [Mixture-of-Skills: Learning to Optimize Data Usage for Fine-Tuning Large Language Models](https://arxiv.org/abs/2406.08811)：学习跨异质技能的微调数据配比，使对齐训练能平衡写作、推理、聊天和代码等能力。
+- [Cognitively Inspired Energy-Based World Models](https://arxiv.org/abs/2406.08862)：用受人类预测处理启发的 energy-based world model 取代 next-token 或 next-frame 预测，在 latent state 约束上建模世界。
+- [Delta-CoMe: Training-Free Delta-Compression with Mixed-Precision for Large Language Models](https://arxiv.org/abs/2406.08903)：无需重训练地混合精度压缩微调 delta 权重，支持以更低成本部署多个适配后的 LLM。
+- [Autonomous Multiobjective Optimization Using Large Language Model](https://arxiv.org/abs/2406.08987)：让 LLM 自主设计和调整演化搜索策略，以求解未见过的多目标优化问题。
+- [ME-Switch: A Memory-Efficient Expert Switching Framework for Large Language Models](https://arxiv.org/abs/2406.09041)：分解专家 delta 并按请求切换任务专家，降低服务多个微调 LLM 变体时的内存与 I/O 成本。
+- [MMRel: Benchmarking Relation Understanding in Multi-Modal Large Language Models](https://arxiv.org/abs/2406.09121)：提供大规模 relation 数据与诊断来评测 MLLM 的物体关系理解，因此更接近 benchmark 或数据条目。
+- [Towards Effective Evaluations and Comparisons for LLM Unlearning Methods](https://arxiv.org/abs/2406.09179)：为 LLM unlearning 定义区分遗忘、保留和鲁棒性的评测准则，暴露仅看行为输出的比较缺陷。
+- [C2HLSC: Can LLMs Bridge the Software-to-Hardware Design Gap?](https://arxiv.org/abs/2406.09233)：测试 LLM 迭代改写 C 程序为 HLS 兼容硬件设计，案例包括随机性测试、排序和 AES。
+- [Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback](https://arxiv.org/abs/2406.09279)：在受控对齐设置中拆分数据、算法和评测因素，比较 DPO 与 PPO 的偏好学习实践。
+- [Understanding Hallucinations in Diffusion Models through Mode Interpolation](https://arxiv.org/abs/2406.09358)：把 mode interpolation 识别为扩散模型幻觉机制，即模型把相邻训练模式平滑混合成不可能图像。
+- [4M-21: An Any-to-Any Vision Model for Tens of Tasks and Modalities](https://arxiv.org/abs/2406.09406)：把 4M 式 masked multimodal modeling 扩展到 21 种模态和大量任务，训练单一 any-to-any 视觉模型。
+- [Pandora: Towards General World Model with Natural Language Actions and Video States](https://arxiv.org/abs/2406.09455)：构建以自然语言动作和视频状态为条件的 world model，预测未来视觉状态以支持 grounded long-horizon reasoning。
+- [Talking Heads: Understanding Inter-layer Communication in Transformer Language Models](https://arxiv.org/abs/2406.09519)：分析在 Transformer 层间路由并抑制上下文 item 的 attention heads，揭示上下文检索中的可复用 circuit。
+- [Bootstrapping Language Models with DPO Implicit Rewards](https://arxiv.org/abs/2406.09760)：复用 DPO 训练后隐含的 reward 来重新标注样本，在不训练单独奖励模型的情况下继续自举对齐。
+- [Nymeria: A Massive Collection of Multimodal Egocentric Daily Motion in the Wild](https://arxiv.org/abs/2406.09905)：提供同步的 egocentric video、eye tracking、IMU 和全身动作数据，用于日常人体运动建模，因此该条偏数据集。
+- [Regularizing Hidden States Enables Learning Generalizable Reward Model for LLMs](https://arxiv.org/abs/2406.10216)：在 reward model 训练中加入 hidden-state regularization，提高其在偏好拟合分布之外的泛化。
+- [AutoSurvey: Large Language Models Can Automatically Write Surveys](https://arxiv.org/abs/2406.10252)：构建可检索文献、组织大纲并起草综述的 LLM survey-writing pipeline，因此更接近 agent harness 条目。
+- [Flextron: Many-in-One Flexible Large Language Model](https://arxiv.org/abs/2406.10260)：训练可调激活组件的 flexible LLM，使同一模型在推理时按资源约束权衡质量、延迟和成本。
+- [MobileAIBench: Benchmarking LLMs and LMMs for On-Device Use Cases](https://arxiv.org/abs/2406.10290)：在端侧约束下评测移动 LLM 和 LMM 用例，因此主要是 evaluation 条目而非模型配方。
+- [LieRE: Generalizing Rotary Position Encodings](https://arxiv.org/abs/2406.10322)：用 Lie group rotations 泛化 RoPE，使位置编码更适配一维文本之外的高维模态。
+- [Efficient Prompting for LLM-Based Generative Internet of Things](https://arxiv.org/abs/2406.10382)：研究本地部署开源 LLM 在 generative IoT 中的 prompt 压缩与选择，以满足延迟和安全约束。
+- [What is the Visual Cognition Gap between Humans and Multimodal LLMs?](https://arxiv.org/abs/2406.10424)：用矩阵推理式任务比较人类视觉工作记忆与 MLLM 视觉认知能力，因此该条偏评测。
+- [Unveiling the Ignorance of MLLMs: Seeing Clearly, Answering Incorrectly](https://arxiv.org/abs/2406.10638)：构建诊断集显示 MLLM 可能看清视觉内容却回答错误，从而区分感知成功与推理失败。
+- [CoLoR-Filter: Conditional Loss Reduction Filtering for Targeted Language Model Pre-training](https://arxiv.org/abs/2406.10670)：用面向目标任务的 conditional loss reduction 估计选择预训练数据，形成 empirical Bayes 式过滤规则。
+- [Invited: New Solutions on LLM Acceleration, Optimization, and Application](https://arxiv.org/abs/2406.10903)：综述 LLM 加速、优化和部署方案，而不是提出单一新的模型机制。
+- [Eliminating Biased Length Reliance of Direct Preference Optimization via Down-Sampled KL Divergence](https://arxiv.org/abs/2406.10957)：用 down-sampled KL divergence 改造 DPO，缓解偏好优化中的 verbosity 和长度偏置。
+- [Adaptive Query Rewriting: Aligning Rewriters through Marginal Probability of Conversational Answers](https://arxiv.org/abs/2406.10991)：用答案边际概率训练对话查询改写器，使改写结果在少标注条件下对齐下游答案似然。
+- [Are Large Language Models a Good Replacement of Taxonomies?](https://arxiv.org/abs/2406.11131)：检验 LLM 能否替代 schema taxonomy 处理细粒度长尾知识，重点是 taxonomy reasoning 而非新训练方法。
+- [RePrompt: Planning by Automatic Prompt Engineering for Large Language Models Agents](https://arxiv.org/abs/2406.11132)：通过规划反馈自动搜索和修改 LLM agent prompt，主要属于 agent harness 优化方法。
+- [Breaking Boundaries: Investigating the Effects of Model Editing on Cross-linguistic Performance](https://arxiv.org/abs/2406.11139)：评估知识编辑方法如何影响英语与非英语模型的跨语言 LLM 行为。
+- [GoldCoin: Grounding Large Language Models in Privacy Laws via Contextual Integrity Theory](https://arxiv.org/abs/2406.11149)：用 contextual integrity theory 约束隐私法推理，使 LLM 按主体、属性、传输原则和规范判断信息流。
+- [MMNeuron: Discovering Neuron-Level Domain-Specific Interpretation in Multimodal Large Language Model](https://arxiv.org/abs/2406.11193)：识别 MLLM 中的领域特异 neuron，并研究投影到词嵌入空间的视觉特征如何触发模态与领域行为。
+- [In-Context Editing: Learning Knowledge from Self-Induced Distributions](https://arxiv.org/abs/2406.11194)：提出 Consistent In-Context Editing，利用自诱导上下文分布优化模型，使其无需完整微调即可吸收新事实。
+- [Self-training Large Language Models through Knowledge Detection](https://arxiv.org/abs/2406.11275)：用 reference-free consistency 检测未知样本、自生成标签并选择性自训练 LLM，减少对大规模标注数据的依赖。
+- [MoE-RBench: Towards Building Reliable Language Models with Sparse Mixture-of-Experts](https://arxiv.org/abs/2406.11353)：构建 sparse MoE LM 可靠性 benchmark，并分析 MoE 微调在新领域可能弱于 dense 模型的原因。
+- [Preserving Knowledge in Large Language Model with Model-Agnostic Self-Decompression](https://arxiv.org/abs/2406.11354)：用 model-agnostic self-decompression 在 LLM 或 MLLM 做领域后预训练和 SFT 时保留语言知识。
+- [MetaGPT: Merging Large Language Models Using Model Exclusive Task Arithmetic](https://arxiv.org/abs/2406.11385)：通过隔离 task-exclusive vectors 改进 task arithmetic，再合并多任务 LLM 能力。
+- [Intrinsic Test of Unlearning Using Parametric Knowledge Traces](https://arxiv.org/abs/2406.11614)：探测 LLM 内部 parametric knowledge traces，检验 unlearning 是否移除了内部知识而不只是抑制输出。
+- [Can LLM be a Personalized Judge?](https://arxiv.org/abs/2406.11657)：评估 LLM-as-judge 是否能反映个体用户偏好，揭示偏好评测中的个性化局限。
+- [Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs](https://arxiv.org/abs/2406.11695)：在无梯度和无模块级标签条件下，把下游指标反馈分解到多阶段 LM program 的 prompt 优化中。
+- [Interactive Evolution: A Neural-Symbolic Self-Training Framework For Large Language Models](https://arxiv.org/abs/2406.11736)：把 LLM 自训练、符号规则和迭代演化结合，减少对人工标注对齐数据的依赖。
+- [DataComp-LM: In search of the next generation of training sets for language models](https://arxiv.org/abs/2406.11794)：提供 240T token Common Crawl 池、OpenLM 训练配方和 53 个评测，用于受控语言模型数据筛选实验。
+- [Iterative Length-Regularized Direct Preference Optimization: A Case Study on Improving 7B Language Models to GPT-4 Level](https://arxiv.org/abs/2406.11817)：在 iterative DPO 中加入长度正则，使在线 reward-model 标注提升回答质量而不推动 verbosity。
+- [WPO: Enhancing RLHF with Weighted Preference Optimization](https://arxiv.org/abs/2406.11827)：为 off-policy preference pairs 加权，校正生成偏好数据的策略与当前优化策略之间的分布差距。
+- [Unveiling Encoder-Free Vision-Language Models](https://arxiv.org/abs/2406.11832)：训练无独立视觉编码器的 VLM，让语言模型直接处理视觉 token 输入，以获得更灵活的多模态建模。
+- [Initial Investigation of Kolmogorov-Arnold Networks (KANs) as Feature Extractors for IMU Based Human Activity Recognition](https://arxiv.org/abs/2406.11914)：测试 KAN layer 作为 IMU 人体活动识别的非线性特征抽取器，并与常规神经特征编码器比较。
+- [Prefixing Attention Sinks can Mitigate Activation Outliers for Large Language Model Quantization](https://arxiv.org/abs/2406.12016)：在输入前缀 attention-sink tokens 来抑制 activation outliers，使 LLM 可以使用更简单的 per-tensor activation quantization。
+- [Self-MoE: Towards Compositional Large Language Models with Self-Specialized Experts](https://arxiv.org/abs/2406.12034)：用自生成领域数据和自优化路由，把单一 LLM 转换为 MiXSE self-specialized experts。
+- [Soft Prompting for Unlearning in Large Language Models](https://arxiv.org/abs/2406.12038)：把 learned soft prompts 用作参数高效 unlearning 机制，在不更新全部权重的情况下移除目标知识。
+- [Intermediate Distillation: Data-Efficient Distillation from Black-Box LLMs for Information Retrieval](https://arxiv.org/abs/2406.12169)：通过中间监督信号把黑盒 LLM 的排序知识蒸馏进 retriever，而不需要教师模型权重或 logits。
+- [Time Series Modeling for Heart Rate Prediction: From ARIMA to Transformers](https://arxiv.org/abs/2406.12199)：比较 ARIMA、Prophet 和深度时间序列模型做心率预测，因此属于较窄的医疗时间序列应用。
+- [InterIntent: Investigating Social Intelligence of LLMs via Intention Understanding in an Interactive Game Context](https://arxiv.org/abs/2406.12203)：在交互式游戏框架中评估 LLM 的意图理解能力，超越静态社会智能问卷。
+- [TroL: Traversal of Layers for Large Language and Vision Models](https://arxiv.org/abs/2406.12246)：遍历并选择 LLM 与视觉中间层，在不单纯扩大模型规模的情况下提升开源 LLVM 的视觉语言表现。
+- [Defending Against Social Engineering Attacks in the Age of LLMs](https://arxiv.org/abs/2406.12263)：构建 SEConvo 聊天式社会工程场景，并测试 LLM 同时作为攻击辅助和防御检测器的能力。
+- [VoCo-LLaMA: Towards Vision Compression with Large Language Models](https://arxiv.org/abs/2406.12275)：让 LLM 参与视觉 token 压缩，减少高分辨率图像和视频 token 数，而不只依赖外部压缩器。
+- [Abstraction-of-Thought Makes Language Models Better Reasoners](https://arxiv.org/abs/2406.12442)：提出 Abstraction-of-Thought 推理格式，要求模型先表述抽象问题结构再推导具体答案。
+- [P-React: Synthesizing Topic-Adaptive Reactions of Personality Traits via Mixture of Specialized LoRA Experts](https://arxiv.org/abs/2406.12548)：用 specialized LoRA experts 合成由 Big Five 人格特质约束的 topic-adaptive reactions，用于个性化 LLM 行为。
+- [Bridging Local Details and Global Context in Text-Attributed Graphs](https://arxiv.org/abs/2406.12608)：结合局部语言模型节点编码与全局图聚合，提升 text-attributed graph 的表示学习。
+- [Estimating Knowledge in Large Language Models Without Generating a Single Token](https://arxiv.org/abs/2406.12673)：在模型内部的 subject representation 上训练 KEEN 探针，在生成前预测实体级问答准确率和开放式回答事实性。
+- [LaMDA: Large Model Fine-Tuning via Spectrally Decomposed Low-Dimensional Adaptation](https://arxiv.org/abs/2406.12832)：用谱分解低维适配器微调 LLM，冻结一条投影路径并只训练紧凑方阵，以减少可训练参数和峰值显存。
+- [Interpretable Preferences via Multi-Objective Reward Modeling and Mixture-of-Experts](https://arxiv.org/abs/2406.12845)：训练多维绝对评分奖励模型 ArmoRM，并用门控网络选择诚实、安全、简洁等可解释偏好目标。
+- [Reconciling Kaplan and Chinchilla Scaling Laws](https://arxiv.org/abs/2406.12907)：把 Kaplan 与 Chinchilla 扩展律差异归因于参数计数方式和小规模实验偏差，并重新支持 Chinchilla 式算力最优指数。
+- [Tender: Accelerating Large Language Models via Tensor Decomposition and Runtime Requantization](https://arxiv.org/abs/2406.12930)：通过张量分解和相差 2 的幂次的缩放因子，使低精度 LLM 推理在累加分解矩阵乘积时避免显式再量化。
+- [ChatBug: A Common Vulnerability of Aligned LLMs Induced by Chat Templates](https://arxiv.org/abs/2406.12935)：说明刚性 chat template 会引入安全绕过面，并展示攻击者可利用不受模板约束的用户提示绕过对齐。
+- [D2O: Dynamic Discriminative Operations for Efficient Generative Inference of Large Language Models](https://arxiv.org/abs/2406.13035)：无需微调地压缩 KV cache，通过层级动态驱逐分配和 token 级补偿机制保留长上下文关键信息。
+- [Multi-Stage Balanced Distillation: Addressing Long-Tail Challenges in Sequence-Level Knowledge Distillation](https://arxiv.org/abs/2406.13114)：在固定计算预算内迭代平衡 sequence-level 蒸馏数据，选择头部领域代表样本并合成尾部领域样本。
+- [When Parts Are Greater Than Sums: Individual LLM Components Can Outperform Full Models](https://arxiv.org/abs/2406.13131)：把上下文学习预测分解为注意力头和 MLP 组件贡献，并用少量标注样本线性重加权组件来提升分类准确率。
+- [Amphista: Bi-directional Multi-head Decoding for Accelerating LLM Inference](https://arxiv.org/abs/2406.13170)：在 Medusa 式 speculative decoding 上加入 auto-embedding block、草稿头之间的双向注意力和 staged adaptation layers。
+- [AdaMoE: Token-Adaptive Routing with Null Experts for Mixture-of-Experts Language Models](https://arxiv.org/abs/2406.13233)：向 MoE 路由加入零 FLOP 的 null experts，使不同 token 可在负载均衡约束下自适应选择不同数量的真实专家。
+- [VisualRWKV: Exploring Recurrent Neural Networks for Visual Language Models](https://arxiv.org/abs/2406.13362)：把 RWKV 式线性循环结构用于 VLM，并结合 data-dependent recurrence、sandwich prompts 和二维图像扫描以加速长上下文多模态推理。
+- [VELO: A Vector Database-Assisted Cloud-Edge Collaborative LLM QoS Optimization Framework](https://arxiv.org/abs/2406.13399)：在边缘侧用向量数据库缓存相似 LLM 请求结果，并优化缓存接纳和资源配置以降低云边响应延迟与成本。
+- [Finding Blind Spots in Evaluator LLMs with Interpretable Checklists](https://arxiv.org/abs/2406.13439)：提出 FBI，通过事实性、指令跟随、长文连贯性和推理等维度的定向扰动，检验 evaluator LLM 是否能发现质量下降。
+- [ObscurePrompt: Jailbreaking Large Language Models via Obscure Input](https://arxiv.org/abs/2406.13662)：把 jailbreak prompt 迭代改写成 obscure out-of-distribution 文本，在保留攻击意图的同时利用脆弱的对齐边界。
+- [CityGPT: Empowering Urban Spatial Cognition of Large Language Models](https://arxiv.org/abs/2406.13948)：通过 CityInstruction 和城市尺度 world model 框架注入城市空间知识，使 LLM 能处理城市任务和地理空间语境。
+- [ReaL: Efficient RLHF Training of Large Language Models with Parameter Reallocation](https://arxiv.org/abs/2406.14088)：在 RLHF 训练中跨集群动态重分配模型参数并搜索细粒度执行计划，以提升异构工作负载吞吐。
+- [An Investigation of Prompt Variations for Zero-shot LLM-based Rankers](https://arxiv.org/abs/2406.14117)：分离零样本 LLM ranker 中排序算法、模型底座和提示措辞的影响，显示 prompt 组件有时比算法差异更能决定结果。
+- [MACAROON: Training Vision-Language Models To Be Your Engaged Partners](https://arxiv.org/abs/2406.14137)：用 PIE 层级和数据训练 LVLM 在无效、模糊或可个性化问题上主动澄清或索取额外信息。
+- [Raising the Bar: Investigating the Values of Large Language Models via Generative Evolving Testing](https://arxiv.org/abs/2406.14230)：提出 GETA 自适应价值对齐测试生成方法，通过动态演化提示替代固定有害内容题库。
+- [Mind the Privacy Unit! User-Level Differential Privacy for Language Model Fine-Tuning](https://arxiv.org/abs/2406.14322)：比较 group privacy 与 user-wise DP-SGD 的 LLM 微调效果，指出样本级隐私会弱化对多记录用户的保护。
+- [Data-Centric AI in the Age of Large Language Models](https://arxiv.org/abs/2406.14473)：从数据筛选、数据归因、知识迁移和推理上下文化四个场景审视 LLM，主张建设数据中心化 benchmark 和文档化机制。
+- [Instruction Pre-Training: Language Models are Supervised Multitask Learners](https://arxiv.org/abs/2406.14491)：在原始语料上合成 2 亿条 instruction-response pair 并用于预训练，让 base LM 更早学习监督式多任务行为。
+- [rKAN: Rational Kolmogorov-Arnold Networks](https://arxiv.org/abs/2406.14495)：用基于 Pade 近似和 rational Jacobi 函数的可训练有理函数替代 KAN 的 spline basis，用于函数逼近和物理任务。
+- [How Well Do LLMs Represent Values Across Cultures? Empirical Analysis of LLM Responses Based on Hofstede Cultural Dimensions](https://arxiv.org/abs/2406.14805)：用 Hofstede 文化维度 persona 和国家关联语言测试 LLM 建议是否会随文化价值画像合理变化。
+- [Efficient Continual Pre-training by Mitigating the Stability Gap](https://arxiv.org/abs/2406.14833)：诊断持续预训练初期的性能下跌，并提出固定计算预算下加速 stability gap 恢复的训练策略。
+- [Leveraging Passage Embeddings for Efficient Listwise Reranking with Large Language Models](https://arxiv.org/abs/2406.14848)：提出 PE-Rank，把 passage embedding 作为特殊 token 输入并约束解码空间，使 listwise LLM reranking 更短更快。
+- [Mixture of Attention Spans: Optimizing LLM Inference Efficiency with Heterogeneous Sliding-Window Lengths](https://arxiv.org/abs/2406.14909)：为不同 attention heads 和 layers 分配异构滑动窗口长度，在保持局部注意力效率的同时扩展有效上下文。
+- [Steering Without Side Effects: Improving Post-Deployment Control of Language Models](https://arxiv.org/abs/2406.15518)：先训练 KL-then-steer 模型以降低良性输入上的 steering 副作用，再用 steering vectors 抑制 jailbreak 等行为。
+- [Large Language Models have Intrinsic Self-Correction Ability](https://arxiv.org/abs/2406.15673)：指出零温度和公平提示是 LLM 在无外部证据条件下修订自身答案的关键条件。
+- [Unveiling and Harnessing Hidden Attention Sinks: Enhancing Large Language Models without Training through Attention Calibration](https://arxiv.org/abs/2406.15765)：发现初始 token 之外也存在 attention sinks，并提出按输入自适应调整注意力分布的免训练 ACT 方法。
+- [RuleR: Improving LLM Controllability by Rule-based Data Recycling](https://arxiv.org/abs/2406.15938)：用规则编辑现有 SFT 样本回答，并把相应约束追加到指令中，以低成本构造可控性训练数据。
+- [Modular Pluralism: Pluralistic Alignment via Multi-LLM Collaboration](https://arxiv.org/abs/2406.15951)：把较小的社区专门 LM 插入基础模型，使黑盒 LLM 支持 Overton、steerable 和 distributional 三类 pluralism。
+- [Multi-Objective Linguistic Control of Large Language Models](https://arxiv.org/abs/2406.16229)：用多个语言复杂度控制值进行指令微调，使 LLM 可同时调节输出复杂度并保持回答质量。
+- [Confidence Regulation Neurons in Language Models](https://arxiv.org/abs/2406.16254)：识别 entropy neurons 和 token-frequency neurons，解释它们如何通过残差流尺度或 unigram 频率方向调节预测不确定性。
+- [DemoRank: Selecting Effective Demonstrations for Large Language Models in Ranking Task](https://arxiv.org/abs/2406.16332)：用 LLM 评分的 demonstration lists 训练 reranker，使排序任务的上下文示例选择能考虑示例之间依赖。
+- [On the Transformations across Reward Model, Parameter Update, and In-Context Prompt](https://arxiv.org/abs/2406.16377)：形式化参数更新、奖励模型和上下文提示之间的六种转换，说明常见 LLM 适配工具可相互模拟。
+- [Building on Efficient Foundations: Effectively Training LLMs with Structured Feedforward Layers](https://arxiv.org/abs/2406.16450)：在 LLM 规模从零训练低秩和块对角 FFN 参数化，并加入 self-guided training 以提升结构化层效率。
+- [OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser](https://arxiv.org/abs/2406.16495)：在 OTCE 语言模型架构中结合 selective state-space 层、二次注意力、位置注入和跨领域 MoE experts。
+- [Large Vocabulary Size Improves Large Language Models](https://arxiv.org/abs/2406.16508)：实证说明更大的 subword vocabulary 可提升 LLM，并提出在目标语言持续训练时替换新词表的简单方法。
+- [LLaMA-MoE: Building Mixture-of-Experts from LLaMA with Continual Pre-Training](https://arxiv.org/abs/2406.16554)：把密集 LLaMA 的 FFN 层拆分为 experts 并持续预训练 gate，从已有 dense checkpoint 构建稀疏模型。
+- [Noisy Neighbors: Efficient membership inference attacks against LLMs](https://arxiv.org/abs/2406.16565)：在 embedding space 扰动目标样本生成 noisy neighbors，用于无需 shadow model 训练的 LLM 记忆与隐私审计。
+- [OlympicArena Medal Ranks: Who Is the Most Intelligent AI So Far?](https://arxiv.org/abs/2406.16772)：用 OlympicArena 的奖牌榜式聚合比较 GPT-4o、Claude 3.5 Sonnet、Gemini 1.5 Pro 与开放模型表现。
+- [Lottery Ticket Adaptation: Mitigating Destructive Interference in LLMs](https://arxiv.org/abs/2406.16797)：为不同任务寻找稀疏子网络进行适配，在指令跟随、推理、数学和摘要任务间减少 destructive interference。
+- [EAGLE-2: Faster Inference of Language Models with Dynamic Draft Trees](https://arxiv.org/abs/2406.16858)：利用校准后的草稿置信度构建上下文感知动态 draft tree，在保持输出分布不变的情况下加速 EAGLE speculative decoding。
+- [Large Language Models Assume People are More Rational than We Really are](https://arxiv.org/abs/2406.17055)：把 LLM 对人类决策的模拟和预测与真实人类数据对比，发现模型偏向 expected-value rational choice。
+- [MM-SpuBench: Towards Better Understanding of Spurious Biases in Multimodal LLMs](https://arxiv.org/abs/2406.17126)：构建含九类 spurious correlation 的人工验证 MLLM benchmark，用于测量多模态推理中的捷径依赖。
+- [Dual-Space Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2406.17328)：通过 dual-space distillation 和 cross-model attention 对齐教师与学生输出空间，支持不同词表 LLM 之间的知识蒸馏。
+- [Make Some Noise: Unlocking Language Model Parallel Inference Capability through Noisy Training](https://arxiv.org/abs/2406.17404)：用带噪 denoising training 替代标准 SFT，并结合 TR-Jacobi decoding，在无需额外 draft module 的情况下加速并行推理。
+- [Tell Me Where You Are: Multimodal LLMs Meet Place Recognition](https://arxiv.org/abs/2406.17520)：把 VFM 检索、MLLM 成对场景描述和推理结合起来，为机器人视觉地点识别选择候选位置。
+- [The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale](https://arxiv.org/abs/2406.17557)：从 96 个 Common Crawl 快照筛选 15T token FineWeb，系统消融过滤和去重策略，并加入教育文本 FineWeb-Edu。
+- [Knowledge Distillation in Automated Annotation: Supervised Text Classification with LLM-Generated Training Labels](https://arxiv.org/abs/2406.17633)：复现 14 个社会科学文本分类任务，检验用 GPT-4 标签训练的监督分类器何时可接近人工标签微调。
+- [Banishing LLM Hallucinations Requires Rethinking Generalization](https://arxiv.org/abs/2406.17642)：把幻觉与 next-token generalization 限制联系起来，并提出从大规模 memory experts 检索事实的 Lamini-1。
+- [Evaluating Large Language Models with Psychometrics](https://arxiv.org/abs/2406.17675)：设计心理测量式评测套件，在 13 个数据集上覆盖人格、价值观、情绪智能、心理理论和自我效能。
+- [From Distributional to Overton Pluralism: Investigating Large Language Model Alignment](https://arxiv.org/abs/2406.17692)：发现对齐会把回答推向更长的信息聚合形式，并显示 base model 可通过示例和语义提示恢复 aligned model 输出。
+- [Data curation via joint example selection further accelerates multimodal learning](https://arxiv.org/abs/2406.17711)：提出 JEST，在多模态对比学习中联合选择 batch 而非独立选择样本，并用预训练参考模型引导数据分布。
+- [Probing the effects of broken symmetries in machine learning](https://arxiv.org/abs/2406.17747)：在水分子模拟中测试近似旋转不变模型，发现 bulk 插值影响很小，但外推气相预测会出现可见 symmetry artifacts。
+- [MG-LLaVA: Toward Multi-Granularity Visual Instruction Tuning](https://arxiv.org/abs/2406.17770)：向 MLLM 加入低分辨率、高分辨率和对象中心视觉流，并用 Conv-Gate 与检测器对象特征融合细节。
+- [SigKAN: Signature-Weighted Kolmogorov-Arnold Networks for Time Series](https://arxiv.org/abs/2406.17890)：用可学习 path signatures 加权 KAN 输出，使网络捕获时间序列中的几何路径特征并用于逼近与预测。
+- [MammothModa: Multi-Modal Large Language Model](https://arxiv.org/abs/2406.18193)：通过 visual attention experts、高分辨率和长时视觉特征 merger，以及高质量双语多模态数据改进 MLLM。
+- [Kolmogorov-Arnold Graph Neural Networks](https://arxiv.org/abs/2406.18354)：构建 GKAN，在边上使用 spline-based activation functions，提高图预测任务表现并让 message passing 更可解释。
+- [Towards Open-World Grasping with Large Vision-Language Models](https://arxiv.org/abs/2406.18722)：把 VLM 与 segmentation 和 grasp synthesis 结合，用于开放指代表达分割、grounded grasp planning 和基于接触推理的 grasp ranking。
+- [Revisiting Backdoor Attacks against Large Vision-Language Models from Domain Shift](https://arxiv.org/abs/2406.18844)：研究视觉与文本域迁移下 LVLM backdoor 的泛化性，并提出 attribution-guided 的域无关触发器。
+- [Decoding-Time Language Model Alignment with Multiple Objectives](https://arxiv.org/abs/2406.18853)：推导 multi-objective decoding，在推理时按 f-divergence regularized objectives 组合多个不同对齐模型的 next-token 预测。
+- [Efficacy of Language Model Self-Play in Non-Zero-Sum Games](https://arxiv.org/abs/2406.18872)：在 Deal or No Deal 自博弈中用 filtered behavior cloning 微调语言模型，提升合作与竞争谈判奖励。
+- [Capturing Minds, Not Just Words: Enhancing Role-Playing Language Models with Personality-Indicative Data](https://arxiv.org/abs/2406.18921)：从心理量表问题蒸馏角色扮演对话，使小型角色扮演 LM 捕捉人物人格而不只是语气风格。
+- [STBench: Assessing the Ability of Large Language Models in Spatio-Temporal Analysis](https://arxiv.org/abs/2406.19065)：构建 STBench，包含 13 个时空 QA 任务和 6 万余样本，覆盖知识、推理、计算和下游应用。
+- [Resolving Discrepancies in Compute-Optimal Scaling of Language Models](https://arxiv.org/abs/2406.19146)：复现 Kaplan 式扩展律，并把与 Chinchilla 的差异归因于最后一层计算、warmup 长度和随规模变化的优化器调参。
+- [Fundamental Problems With Model Editing: How Should Rational Belief Revision Work in LLMs?](https://arxiv.org/abs/2406.19354)：把模型编辑重述为 belief revision，列出 12 个定义和基准问题，并提出基于 Wikidata 的 Bayesian-agent testbed。
+- [Can Large Language Models Generate High-quality Patent Claims?](https://arxiv.org/abs/2406.19465)：评估根据专利描述生成权利要求，发现通用 LLM 优于专利专用模型，且微调能改善特征完整性。
+- [Solving Token Gradient Conflict in Mixture-of-Experts for Large Vision-Language Model](https://arxiv.org/abs/2406.19905)：用 token-level gradients 识别 LVLM MoE expert 内的冲突 token，并加入正则项将其重路由以减少干扰。
+- [ScaleBiO: Scalable Bilevel Optimization for LLM Data Reweighting](https://arxiv.org/abs/2406.19976)：把 first-order bilevel optimization 与 LISA 结合，用于最高约 30B 参数 LLM 的数据重加权，并在 8 张 H100 上扩展。
+- [LEMoE: Advanced Mixture of Experts Adaptor for Lifelong Model Editing of Large Language Models](https://arxiv.org/abs/2406.20030)：用 MoE adapter、KV-anchor routing 和基于聚类的编辑顺序规划缓解 lifelong model editing 中的遗忘、路由不一致和顺序敏感问题。
+- [LLaVolta: Efficient Multi-modal Models via Stage-wise Visual Context Compression](https://arxiv.org/abs/2406.20092)：在 MLLM 训练中分阶段压缩视觉 token，证明视觉上下文高度冗余，并在图像和视频理解中降低训练与推理成本。
+- [Scaling Synthetic Data Creation with 1,000,000,000 Personas](https://arxiv.org/abs/2406.20094)：发布 Persona Hub，用 10 亿个自动整理的人设驱动推理题、指令、知识文本、游戏 NPC 和工具函数等合成数据生成。
+- [Queue Management for SLO-Oriented Large Language Model Serving](https://arxiv.org/abs/2407.00047)：构建 QLM 请求队列调度系统，为 batch 与 interactive LLM 请求估计等待时间，以提高 SLO 达成率和 GPU 吞吐。
+- [LiteSearch: Efficacious Tree Search for LLM](https://arxiv.org/abs/2407.00320)：用动态节点选择和节点级探索预算引导 LLM tree search，价值网络无需 step annotation 即可降低 GSM8K 与 TabMWP 推理成本。
+- [Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning](https://arxiv.org/abs/2407.00617)：把偏好对齐表述为双人博弈，用 self-play no-regret objective 近似 Nash policy，避免为单个回复估计期望胜率。
+- [From Introspection to Best Practices: Principled Analysis of Demonstrations in Multimodal In-Context Learning](https://arxiv.org/abs/2407.00902)：通过扰动多模态 ICL demonstration 中的图像和文本信息，分析各模态对不同任务的作用并给出 task-specific demonstration 策略。
+- [FoldGPT: Simple and Effective Large Language Model Compression Scheme](https://arxiv.org/abs/2407.00928)：结合 gated block removal、分组参数共享、少量微调和 tail-layer distillation，在深度方向压缩 LLM 以适配移动端部署。
+- [Efficient Expert Pruning for Sparse Mixture-of-Experts Language Models: Enhancing Performance and Reducing Inference Costs](https://arxiv.org/abs/2407.00945)：用无需梯度的 evolutionary expert pruning 压缩 sparse MoE LM，在 Mixtral 上减少总 expert 或 active expert 并保持甚至提升任务表现。
+- [Eliminating Position Bias of Language Models: A Mechanistic Approach](https://arxiv.org/abs/2407.01100)：将文档顺序偏差归因于 causal attention 与 relative positional encoding，并用 PINE 重排文档级注意力实现免训练的位置不变推理。
+- [Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion](https://arxiv.org/abs/2407.01392)：以逐 token 独立噪声训练序列 diffusion，使 causal model 同时具备可变长度 next-token 生成和 full-sequence diffusion 引导采样能力。
+- [TimeToM: Temporal Space is the Key to Unlocking the Door of Large Language Models' Theory-of-Mind](https://arxiv.org/abs/2407.01455)：构建 temporal belief-state chain 和 tool-belief solver，将 higher-order belief 转换为 first-order belief 以提升 LLM theory-of-mind 推理。
+- [EquiBot: SIM(3)-Equivariant Diffusion Policy for Generalizable and Data Efficient Learning](https://arxiv.org/abs/2407.01479)：把 SIM(3)-equivariant 网络与 diffusion policy 结合，让机器人操作策略能从少量演示泛化到物体和场景变化。
+- [LLM See, LLM Do: Guiding Data Generation to Target Non-Differentiable Objectives](https://arxiv.org/abs/2407.01490)：分析合成数据生成器属性的 passive inheritance，并用 active inheritance 将训练数据生成导向词汇多样性或低毒性等不可微目标。
+- [RegMix: Data Mixture as Regression for Language Model Pre-training](https://arxiv.org/abs/2407.01492)：先用大量小模型评估候选数据混合，再用回归预测大模型预训练配比，以更低计算量优于人工选择和 DoReMi。
+- [Improving Diffusion Inverse Problem Solving with Decoupled Noise Annealing](https://arxiv.org/abs/2407.01521)：提出 DAPS，把 diffusion inverse problem 的相邻采样步解耦，同时让 time marginal 随噪声退火逼近真实后验。
+- [Black Big Boxes: Tracing Adjective Order Preferences in Large Language Models](https://arxiv.org/abs/2407.02136)：用 learning dynamics 和 attribution 分析 LM 形容词顺序偏好，区分训练频率、未见组合泛化和上下文词序线索的作用。
+- [Synthetic Multimodal Question Generation](https://arxiv.org/abs/2407.02233)：结合 retriever、LLM 和 LMM，从多模态文档生成可控题型与模态的 QA pair，用于 MMRAG 评测数据合成。
+- [TokenPacker: Efficient Visual Projector for Multimodal LLM](https://arxiv.org/abs/2407.02392)：以 coarse-to-fine region-to-point injection 取代逐 token 视觉投影，在压缩 75% 到 89% 视觉 token 的同时保留细粒度视觉推理。
+- [Consistency Flow Matching: Defining Straight Flows with Velocity Consistency](https://arxiv.org/abs/2407.02398)：通过 velocity-field self-consistency 和 multi-segment training 学习更直的 flow matching 采样路径，提高收敛速度与生成质量。
+- [Predicting vs. Acting: A Trade-off Between World Modeling & Agent Modeling](https://arxiv.org/abs/2407.02446)：指出 RLHF agent model 在 next-token world modeling 上退化，并把原因解释为生成时隐式 blueprint 对 anchor span 的概率集中。
+- [Magic Insert: Style-Aware Drag-And-Drop](https://arxiv.org/abs/2407.02489)：用 LoRA 和目标风格 CLIP 表征个性化 text-to-image diffusion，再通过 domain adaptation 完成 stylized image 中的真实物体插入。
+- [Semantic-Aware Power Allocation for Generative Semantic Communications with Foundation Models](https://arxiv.org/abs/2407.03050)：为 foundation-model 图像语义通信建模语义价值、传输可靠性和感知质量，并用约束解耦与二分搜索优化功率分配。
+- [Improved Noise Schedule for Diffusion Training](https://arxiv.org/abs/2407.03297)：围绕 log-SNR 的信号噪声转换点做 importance sampling 来设计 diffusion noise schedule，在 ImageNet 生成中提升收敛和不同预测目标表现。
+- [On Large Language Models in National Security Applications](https://arxiv.org/abs/2407.03453)：分析 LLM 在国安信息处理、wargaming、摘要和决策支持中的用途，同时强调 hallucination、隐私和对抗攻击防护。
+- [Q-Adapter: Customizing Pre-trained LLMs to New Preferences with Forgetting Mitigation](https://arxiv.org/abs/2407.03856)：从新偏好数据学习 residual Q-function adapter，使预训练 LLM 转向新 reward signal 的同时保留原有能力。
+- [LLM-jp: A Cross-organizational Project for the Research and Development of Fully Open Japanese LLMs](https://arxiv.org/abs/2407.03963)：报告 LLM-jp 跨机构开放日语 LLM 项目的组织背景、活动和已开发模型的技术细节。
+- [SineKAN: Kolmogorov-Arnold Networks using sinusoidal activation functions](https://arxiv.org/abs/2407.04149)：用可重加权正弦函数网格替代 B-spline KAN edge activation，在视觉任务上保持竞争力并明显加速。
+- [Mixture of A Million Experts](https://arxiv.org/abs/2407.04153)：提出 PEER，用 product-key retrieval 从百万级 tiny experts 中稀疏选择，改进 Transformer feedforward 的性能和计算权衡。
+- [Understanding the Gains from Repeated Self-Distillation](https://arxiv.org/abs/2407.04600)：在线性回归中分析 repeated self-distillation，证明多步 self-distillation 可比单步显著降低 excess risk。
+- [AWT: Transferring Vision-Language Models via Augmentation, Weighting, and Transportation](https://arxiv.org/abs/2407.04603)：通过视觉和类别描述增强、基于熵的动态加权和 optimal transport 适配 VLM，提升 zero-shot、few-shot 分类和视频动作识别。
+- [LoRA-GA: Low-Rank Adaptation with Gradient Approximation](https://arxiv.org/abs/2407.05000)：以低秩更新梯度近似 full fine-tuning 首步梯度来初始化 LoRA，加快收敛并改善 T5 与 Llama 任务表现。
+- [Multimodal Prompt Learning with Missing Modalities for Sentiment Analysis and Emotion Recognition](https://arxiv.org/abs/2407.05374)：在 multimodal Transformer 中引入 generative、missing-signal 和 missing-type prompts，为情感分析与情绪识别恢复缺失模态特征。
+- [Just read twice: closing the recall gap for recurrent language models](https://arxiv.org/abs/2407.05483)：把 recurrent LM 的 recall gap 与 set-disjointness 的顺序效应联系起来，并用重复上下文或 non-causal prefix-linear attention 提升 ICL。
+- [On the Power of Convolution Augmented Transformer](https://arxiv.org/abs/2407.05591)：在 attention 的 QKV embedding 中加入 convolutional filters，并从理论和实验上展示 associative recall、copying 和长度泛化收益。
+- [Saltzer & Schroeder for 2030: Security engineering principles in a world of AI](https://arxiv.org/abs/2407.05710)：重新解读经典安全工程原则，讨论 AI 生成代码和开发者使用代码生成工具时的 secure-by-design 要求。
+- [Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals](https://arxiv.org/abs/2407.05996)：用 latent goal-conditioned state representation 和辅助自监督目标训练 diffusion-policy transformer，从稀疏语言标注学习长程机器人行为。
+- [iLLM-TSC: Integration reinforcement learning and large language model for traffic signal control policy improvement](https://arxiv.org/abs/2407.06025)：把 RL 交通信号控制与 LLM 合理性检查器结合，在观测退化或奖励未覆盖事件下调整控制决策。
+- [ANOLE: An Open, Autoregressive, Native Large Multimodal Models for Interleaved Image-Text Generation](https://arxiv.org/abs/2407.06135)：将 Chameleon 微调为开放 autoregressive multimodal model，用于连贯的图文交错生成，并释放模型、训练框架和指令数据。
+- [Multi-Object Hallucination in Vision-Language Models](https://arxiv.org/abs/2407.06192)：提出 ROPE referring-prompt 评测协议，显示 LVLM 在同时关注多个物体时更易 hallucinate，并受类别分布和显著性影响。
+- [B'MOJO: Hybrid State Space Realizations of Foundation Models with Eidetic and Fading Memory](https://arxiv.org/abs/2407.06324)：构建混合记忆架构，统一 in-context、in-weight、in-state 与 retrieval-backed storage，在 associative recall 和长序列上优于 SSM 与 hybrid baseline。
+- [Towards Understanding Multi-Task Learning (Generalization) of LLMs via Detecting and Exploring Task-Specific Neurons](https://arxiv.org/abs/2407.06488)：用 gradient attribution 识别 task-specific neurons，并做 neuron-level continual fine-tuning 以降低遗忘、保留跨任务泛化。
+- [FBI-LLM: Scaling Up Fully Binarized LLMs from Scratch via Autoregressive Distillation](https://arxiv.org/abs/2407.07093)：用 autoregressive distillation 从零训练 fully binarized transformer LM，发布 130M、1.3B、7B 模型和训练数据。
+- [Reuse, Don't Retrain: A Recipe for Continued Pretraining of Language Models](https://arxiv.org/abs/2407.07263)：给出 continued pretraining 的数据分布和学习率配方，使 15B 模型优于继续沿用原预训练分布的 baseline。
+- [PaliGemma: A versatile 3B VLM for transfer](https://arxiv.org/abs/2407.07726)：介绍 Google 开放的 3B SigLIP-Gemma VLM，并在近 40 个迁移任务上评测，包括通用 VLM、遥感和分割任务。
+- [Fine-Tuning Large Language Models with User-Level Differential Privacy](https://arxiv.org/abs/2407.07737)：研究可扩展的 user-level differential privacy LLM 微调，提出更紧的 ELS accountant，并比较 user-level sampling 与 example-level clipping。
+- [Solving General Natural-Language-Description Optimization Problems with Large Language Models](https://arxiv.org/abs/2407.07924)：提出 OptLLM，将自然语言优化需求转换成数学建模和 solver code，并支持多轮修正及 fine-tuned Qwen 实验。
+- [MambaVision: A Hybrid Mamba-Transformer Vision Backbone](https://arxiv.org/abs/2407.08083)：为视觉任务重设计 Mamba，并在层级 backbone 后段加入 self-attention，提升 ImageNet、检测、实例分割和语义分割吞吐与表现。
+- [AddressCLIP: Empowering Vision-Language Models for City-wide Image Address Localization](https://arxiv.org/abs/2407.08156)：将图像与地址文本、场景 caption 对齐，并用地理距离约束图像特征，实现端到端城市级图像地址定位。
+- [GeNet: A Multimodal LLM-Based Co-Pilot for Network Topology and Configuration](https://arxiv.org/abs/2407.08249)：用多模态 LLM 理解网络拓扑图与设备配置，让企业网络工程师按用户意图修改拓扑和配置。
+- [DenseFusion-1M: Merging Vision Experts for Comprehensive Multimodal Perception](https://arxiv.org/abs/2407.08303)：融合多种 perception experts 与 MLLM pivot 生成 100 万图像 dense caption 数据，增强下游 MLLM 的综合视觉感知。
+- [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://arxiv.org/abs/2407.08608)：利用 Hopper 上的异步计算、warp specialization、matmul-softmax 交错和 FP8 block quantization 加速 attention 并降低 FP8 误差。
+- [Towards Building Specialized Generalist AI with System 1 and System 2 Fusion](https://arxiv.org/abs/2407.08642)：定义 specialized generalist AI，并提出融合 System 1 与 System 2 的概念框架，以兼顾专家级专长和一般能力。
+- [HiRes-LLaVA: Restoring Fragmentation Input in High-Resolution Large Vision-Language Models](https://arxiv.org/abs/2407.08706)：用 SliceRestore adapter 与 self-mining sampler 修复高分辨率切片导致的上下文碎片化，同时保留全局和局部几何信息。
+- [Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing](https://arxiv.org/abs/2407.08770)：只编辑少量 LLM 参数即可降低毒性和 jailbreak 易感性，并在常识、问答和数学等能力上保持性能。
+- [Disassembling Obfuscated Executables with LLM](https://arxiv.org/abs/2407.08924)：构建 DisasLLM，用 LLM 分类器识别错误解码的汇编指令，并端到端反汇编含 junk-byte obfuscation 的可执行文件。
+- [GAVEL: Generating Games Via Evolution and Language Models](https://arxiv.org/abs/2407.09388)：在 Ludii 游戏描述语言上训练语言模型变异与重组规则，并结合 evolutionary search 生成可玩的新桌游。
+- [Foundation models for the electric power grid](https://arxiv.org/abs/2407.09434)：提出 GridFM 概念，主张用多样电网数据和拓扑训练 graph-based foundation model 以支持电网下游任务。
+- [Self-Consuming Generative Models with Curated Data Provably Optimize Human Preferences](https://arxiv.org/abs/2407.09499)：从理论上说明用户 curated synthetic data 的迭代再训练可形成隐式偏好优化，同时可能放大奖励模型偏差。
+- [GOFA: A Generative One-For-All Model for Joint Graph Language Modeling](https://arxiv.org/abs/2407.09709)：把 GNN 层插入冻结 LLM，并以 graph-level next-word、QA 和结构任务预训练，形成生成式 graph foundation model。
+- [LeanQuant: Accurate and Scalable Large Language Model Quantization with Loss-error-aware Grid](https://arxiv.org/abs/2407.10032)：学习 loss-error-aware quantization grid 取代 min-max affine grid，将高精度 post-training quantization 扩展到 Llama-3.1 405B。
+- [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](https://arxiv.org/abs/2407.10264)：用合成 unsafe-input 因素分析 safety fine-tuning、DPO 和 unlearning，发现它们会把不安全激活推向 MLP 权重 null space。
+- [By My Eyes: Grounding Multimodal Large Language Models with Sensor Data via Visual Prompting](https://arxiv.org/abs/2407.10385)：把传感器序列转成面向任务的视觉 prompt 供 MLLM 使用，在九个 sensing 任务上提升准确率并降低 token 成本。
+- [Learning Dynamics of LLM Finetuning](https://arxiv.org/abs/2407.10490)：分解 instruction tuning 与 preference tuning 中 response 间的逐步影响，解释 hallucination 强化和 DPO 过训练现象。
+- [Learning to Unlearn for Robust Machine Unlearning](https://arxiv.org/abs/2407.10494)：用 meta-learning 和 gradient harmonization 优化 unlearning，使模型忘记目标样本同时保留剩余数据中的泛化知识。
+- [Arena Learning: Build Data Flywheel for LLMs Post-training via Simulated Chatbot Arena](https://arxiv.org/abs/2407.10627)：用 AI annotation 模拟 Chatbot Arena 对战，通过 WizardArena 预测 Elo，并基于 battle weakness 迭代训练 WizardLM。
+- [An Empirical Study of Validating Synthetic Data for Formula Generation](https://arxiv.org/abs/2407.10657)：用 surrogate accuracy objective 验证 spreadsheet formula generation 的合成自然语言标注，提升 fine-tuned model 相比 raw synthetic data 的表现。
+- [LLM Circuit Analyses Are Consistent Across Training and Scale](https://arxiv.org/abs/2407.10827)：跟踪 70M 到 2.8B decoder-only LM 在 300B tokens 训练过程中的 circuits，发现任务算法会跨训练时间和规模稳定出现。
+- [Weighted Grouped Query Attention in Transformers](https://arxiv.org/abs/2407.10855)：在 grouped-query attention 微调中为 key/value heads 加入可学习权重，接近 multi-head attention 质量且不增加推理开销。
+- [Understanding the Importance of Evolutionary Search in Automated Heuristic Design with Large Language Models](https://arxiv.org/abs/2407.10873)：系统评测 LLM-based evolutionary program search 在 automated heuristic design 中的作用，覆盖四类问题、四种方法、九个 LLM 和多次运行。
+- [SLIP: Securing LLMs IP Using Weights Decomposition](https://arxiv.org/abs/2407.10886)：通过矩阵分解把边缘部署 LLM 权重拆分到安全和易受攻击计算资源上，在低延迟且无精度损失下保护模型 IP。
+- [Fine-Tuning and Prompt Optimization: Two Great Steps that Work Better Together](https://arxiv.org/abs/2407.10930)：在模块化 LM pipeline 中交替优化模型权重和 prompt template，在 DSPy 任务上优于仅调权重或仅调 prompt。
+- [AstroMLab 1: Who Wins Astronomy Jeopardy!?](https://arxiv.org/abs/2407.11194)：用 4,425 道天文学多选题评测开源和闭源 LLM，分析子领域准确率、校准、成本变化和开放模型进展。
+- [From Low Rank Gradient Subspace Stabilization to Low-Rank Weights: Observations, Theories, and Applications](https://arxiv.org/abs/2407.11239)：把 gradient subspace 稳定性与 LLM weight 的低秩结构联系起来，并提出 WeLore 做一次性压缩和 memory-efficient fine-tuning。
+- [Distractors-Immune Representation Learning with Cross-modal Contrastive Regularization for Change Captioning](https://arxiv.org/abs/2407.11683)：学习对光照和视角干扰稳定的成对图像表征，再用 cross-modal contrastive regularization 改善 change caption generation。
+- [Data-Juicer Sandbox: A Feedback-Driven Suite for Multimodal Data-Model Co-development](https://arxiv.org/abs/2407.11784)：提供 Probe-Analyze-Refine sandbox，把数据和模型共同迭代用于 CLIP 预训练、LLaVA 式 captioning 和 DiT text-to-video。
+- [PipeInfer: Accelerating LLM Inference using Asynchronous Pipelined Speculation](https://arxiv.org/abs/2407.11798)：用 continuous asynchronous speculation 和 early cancellation 加速 pipeline-parallel LLM 单请求推理，即使 speculation 接受率较低也能提速。
+- [Preemptive Detection and Correction of Misaligned Actions in LLM Agents](https://arxiv.org/abs/2407.11843)：提出 InferAct，用 theory-of-mind belief reasoning 在执行前发现并纠正与用户意图不一致的 agent action。
+- [OmniBind: Large-scale Omni Multimodal Representation via Binding Spaces](https://arxiv.org/abs/2407.11895)：用轻量 router 绑定 3D、音频、图像和语言预训练表征空间，从基本非配对数据扩展到 30B omni-representation model。
+- [GraphFM: A generalist graph transformer that learns transferable representations across diverse domains](https://arxiv.org/abs/2407.11907)：在 152 个 graph datasets 上用共享 latent tokens 预训练 Perceiver-style graph transformer，增强分子、引文、商品和合成图之间的迁移。
+- [Spectra: Surprising Effectiveness of Pretraining Ternary Language Models at Scale](https://arxiv.org/abs/2407.12327)：发布 Spectra float、post-training-quantized 和 ternary LM 套件，显示十亿参数以上预训练 ternary model 在同等 bit size 下优于 baseline。
+- [PersLLM: A Personified Training Approach for Large Language Models](https://arxiv.org/abs/2407.12393)：用 chain-of-thought prompting 和 anti-induction 构造更丰富的人格数据，再以 automated DPO 让 LLM persona 更具体和动态。
+- [ClearCLIP: Decomposing CLIP Representations for Dense Vision-Language Inference](https://arxiv.org/abs/2407.12442)：发现 CLIP residual connection 导致 dense segmentation 噪声，并通过移除最终 residual、self-self attention 和丢弃 FFN 改善开放词汇分割。
+- [Beyond Next Token Prediction: Patch-Level Training for Large Language Models](https://arxiv.org/abs/2407.12665)：先用聚合文本 patch 训练 LLM，再回到 token-level training，使 370M 到 2.7B 模型训练成本约减半且不损失性能。
+- [MoME: Mixture of Multimodal Experts for Generalist Multimodal Large Language Models](https://arxiv.org/abs/2407.12709)：结合 mixture-of-vision-experts 与 sparse language experts 缓解 generalist MLLM 的任务干扰，并基本保持推理成本不变。
+- [Whispering Experts: Neural Interventions for Toxicity Mitigation in Language Models](https://arxiv.org/abs/2407.12824)：用 AUROC 识别区分毒性文本的 neurons 并下调其激活，在小幅 perplexity 代价下减少不同规模 LLM 的有毒生成。
+- [The 2024 Foundation Model Transparency Index](https://arxiv.org/abs/2407.12929)：按 100 个透明度指标评分 14 家 foundation-model 开发者，显示披露较 2023 年改善但版权、数据访问、数据劳动和下游影响仍不透明。
+- [DropKAN: Regularizing KANs by masking post-activations](https://arxiv.org/abs/2407.13044)：在 KAN layer 内直接 mask activation outputs，避免普通 dropout 在 KAN neuron 上的不稳定行为并提升表格数据泛化。
+- [EarthMarker: A Visual Prompting Multimodal Large Language Model for Remote Sensing](https://arxiv.org/abs/2407.13596)：构建遥感 visual prompting MLLM，用 boxes 与 points 在图像、区域和点级解释遥感影像，并配套 cross-domain learning 与 RSVP 指令数据。
+- [Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies](https://arxiv.org/abs/2407.13623)：用 IsoFLOPs、导数估计和 loss 拟合推导 compute-optimal vocabulary scaling，显示更大 LLM 需要显著更大的词表。
+- [Understanding Reference Policies in Direct Preference Optimization](https://arxiv.org/abs/2407.13709)：研究 DPO 对 reference policy 的依赖，说明 KL 强度和 reference model 相似度会限制或提升 preference tuning 收益。
+- [NeuroBind: Towards Unified Multimodal Representations for Neural Signals](https://arxiv.org/abs/2407.14020)：把 EEG、fMRI、calcium imaging 和 spiking data 对齐到预训练 vision-language embedding space，以迁移高资源模态模型到神经科学任务。
+- [Not All Noises Are Created Equally:Diffusion Noise Selection and Optimization](https://arxiv.org/abs/2407.14041)：按 inversion stability 选择或优化 diffusion noise，无需微调模型即可提升 SDXL 与 SDXL-turbo 生成质量。
+- [Impact of Model Size on Fine-tuned LLM Performance in Data-to-Text Generation: A State-of-the-Art Investigation](https://arxiv.org/abs/2407.14088)：比较 12 个 fine-tuned LLM 在五个 data-to-text 数据集上的表现，发现更大模型提升可读性和信息量但可能牺牲 faithful。
+- [Routing Experts: Learning to Route Dynamic Experts in Existing Multi-modal Large Language Models](https://arxiv.org/abs/2407.14093)：在现有 MLLM 内学习 example-dependent dynamic expert path，并用结构稀疏正则提升效率和精度而无需大改架构。
+- [Mixture of Experts with Mixture of Precisions for Tuning Quality of Service](https://arxiv.org/abs/2407.14417)：对 MoE experts 部分量化并在 CPU 与 GPU 间放置，为 Mixtral serving 暴露 throughput 与 quality 的可调配置空间。
+- [Evaluating language models as risk scores](https://arxiv.org/abs/2407.14614)：提出 folktexts 生成基于美国人口普查的不确定性任务，显示多选式 LLM risk score 有预测信号但校准很差。
+- [BOND: Aligning LLMs with Best-of-N Distillation](https://arxiv.org/abs/2407.14622)：用 Jeffreys divergence 和 moving anchor 将 best-of-N sampling 蒸馏进 policy distribution，避免推理时采样开销并提升 Gemma RLHF 表现。
+- [Performance Modeling and Workload Analysis of Distributed Large Language Model Training and Inference](https://arxiv.org/abs/2407.14645)：建模分布式 LLM 训练和推理中的 compute、memory、network 与并行策略，分析未来瓶颈和技术节点缩放影响。
+- [Compact Language Models via Pruning and Knowledge Distillation](https://arxiv.org/abs/2407.14679)：结合 depth、width、attention 和 MLP pruning 与 distillation retraining 压缩 Nemotron-4，得到训练 token 需求大幅降低的 Minitron 模型。
+- [TraveLLM: Could You Plan My Public Transit Alternatives in Face of a Network Disruption?](https://arxiv.org/abs/2407.14926)：利用 LLM 同时处理自然语言出行需求和公交、地铁、共享单车等地图数据，在天气、突发事件和服务可用性变化场景下评测 GPT-4、Claude 3 与 Gemini 的扰动感知换乘规划能力。
+- [Generalization v.s. Memorization: Tracing Language Models' Capabilities Back to Pretraining Data](https://arxiv.org/abs/2407.14985)：用模型输出概率与预训练数据频率的相关性定义 distributional memorization，并在 Pythia 上用 task-gram 统计区分更依赖记忆的事实问答与更体现泛化的翻译、数学和推理任务。
+- [When Can Transformers Count to n?](https://arxiv.org/abs/2407.15160)：证明 Transformer 计数能力存在相变：embedding 维度不低于词表大小时可稳定维护 token 计数，而词表更大时非正交表示会让精确计数数值不稳定且难以学习。
+- [Discrete Flow Matching](https://arxiv.org/abs/2407.15595)：将 discrete flow matching 用于高维离散数据，为概率路径给出采样公式，并将非自回归模型扩展到 HumanEval 和 MBPP 等代码生成评测。
+- [Conditional Language Policy: A General Framework For Steerable Multi-Objective Finetuning](https://arxiv.org/abs/2407.15762)：提出 Conditional Language Policy，通过多目标微调训练一个可控语言策略，在推理时调节创造性、安全性等目标权衡，而不需要维护多套模型。
+- [Towards Latent Masked Image Modeling for Self-Supervised Visual Representation Learning](https://arxiv.org/abs/2407.15837)：分析 latent-space masked image modeling 中表示坍塌、目标学习不足和区域相关性过强等问题，并通过目标优化、损失设计和解码条件修正获得更高层视觉表征。
+- [SlowFast-LLaVA: A Strong Training-Free Baseline for Video Large Language Models](https://arxiv.org/abs/2407.15841)：构建无需训练的视频 LLM 基线，用 Slow/Fast 双路输入在固定 token 预算下同时保留低帧率空间细节和高帧率运动线索。
+- [DDK: Distilling Domain Knowledge for Efficient Large Language Models](https://arxiv.org/abs/2407.16154)：提出 DDK，根据 teacher 与 student 在不同领域的性能差距动态调整蒸馏数据组成，使小模型比均匀蒸馏或继续预训练获得更稳定提升。
+- [UniMEL: A Unified Framework for Multimodal Entity Linking with Large Language Models](https://arxiv.org/abs/2407.16160)：将多模态实体链接建模为 LLM 辅助的检索与重排流程，通过文图信息增强和参数高效的最终选择处理歧义、冗余文本与噪声图像。
+- [VidyaRANG: Conversational Learning Based Platform powered by Large Language Model](https://arxiv.org/abs/2407.16209)：描述一个检索增强的对话式学习平台，让学生围绕私有视频和书籍向 LLM 提问，并通过课程权限、部署和 API key 管理保护内容隐私。
+- [PrimeGuard: Safe and Helpful LLMs through Tuning-Free Routing](https://arxiv.org/abs/2407.16318)：提出 PrimeGuard，在推理时把请求路由给同一语言模型的不同指令化实例，以无需微调的方式提升安全拒答能力并保持有用性。
+- [PartGLEE: A Foundation Model for Recognizing and Parsing Any Objects](https://arxiv.org/abs/2407.16696)：提出 PartGLEE，用 Q-Former 建模对象与部件层级关系，支持开放世界中的检测、分割、grounding 和细粒度图像解析。
+- [Structure-aware Domain Knowledge Injection for Large Language Models](https://arxiv.org/abs/2407.16724)：提出 StructTuning，自动抽取领域知识 taxonomy，并用于结构感知继续预训练和监督微调，在显著减少语料需求时保持知识注入效果。
+- [DYNAMICQA: Tracing Internal Knowledge Conflicts in Language Models](https://arxiv.org/abs/2407.17023)：构建 DynamicQA 和两种冲突度量，研究参数内知识冲突如何影响语言模型采纳上下文事实，尤其针对会随时间变化的知识。
+- [How Good (Or Bad) Are LLMs at Detecting Misleading Visualizations?](https://arxiv.org/abs/2407.17291)：评测 LLM 与多模态 LLM 识别误导性可视化的能力，关注模型能否发现图表设计中的欺骗性因素，而不只是读取表层视觉内容。
+- [u-μP: The Unit-Scaled Maximal Update Parametrization](https://arxiv.org/abs/2407.17465)：将 maximal update parametrization 与 unit scaling 结合，给出无需逐层调参即可在不同宽度下稳定激活和参数更新的参数化方法。
+- [CMR Scaling Law: Predicting Critical Mixture Ratios for Continual Pre-training of Language Models](https://arxiv.org/abs/2407.17467)：提出 CMR scaling law，预测继续预训练中目标领域数据与通用数据的临界混合比例，用于避免能力退化。
+- [Model Collapse in the Self-Consuming Chain of Diffusion Finetuning: A Novel Perspective from Quantitative Trait Modeling](https://arxiv.org/abs/2407.17493)：用 quantitative-trait modeling 分析扩散模型在自消耗微调中的坍塌现象，解释反复使用生成数据训练如何改变特征分布。
+- [KiVA: Kid-inspired Visual Analogies for Testing Large Multimodal Models](https://arxiv.org/abs/2407.17773)：提出 KiVA 视觉类比评测，用儿童启发的任务考察大型多模态模型的关系与类比推理，而不是普通图像识别。
+- [Amortized Posterior Sampling with Diffusion Prior Distillation](https://arxiv.org/abs/2407.17907)：将扩散先验与 amortized posterior sampling 结合，使逆问题求解器复用蒸馏后的采样器，而不是为每个观测重新运行昂贵的后验采样。
+- [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](https://arxiv.org/abs/2407.18219)：通过失败尝试后的迭代修正进行微调，使 Agent 学会在执行不成功后修改自己的回答。
+- [LoRA-Pro: Are Low-Rank Adapters Properly Optimized?](https://arxiv.org/abs/2407.18242)：分析 LoRA 的优化偏差并提出 LoRA-Pro，通过修正低秩适配器梯度更接近全量微调更新，同时保持参数高效。
+- [Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement](https://arxiv.org/abs/2407.18370)：构建带有人类一致性保证的 LLM judge，并给出 trust-or-escalate 规则，用于决定自动判断何时可接受、何时应交给人工。
+- [Physics Informed Kolmogorov-Arnold Neural Networks for Dynamical Analysis via Efficent-KAN and WAV-KAN](https://arxiv.org/abs/2407.18373)：将 Efficient-KAN 和 WAV-KAN 用于 physics-informed 动力系统分析，比较不同 Kolmogorov-Arnold 网络形式学习微分方程动态的能力。
+- [Right Now, Wrong Then: Non-Stationary Direct Preference Optimization under Preference Drift](https://arxiv.org/abs/2407.18676)：研究 DPO 中的 preference drift，指出非平稳偏好会破坏标准假设，并提出跟踪随时间变化偏好分布的方法。
+- [Towards Scalable and Stable Parallelization of Nonlinear RNNs](https://arxiv.org/abs/2407.19115)：设计非线性 RNN 的稳定并行化技术，目标是在保留循环模型表达力的同时提高其在现代加速器上的可扩展性。
+- [LLaVA-Read: Enhancing Reading Ability of Multimodal Language Models](https://arxiv.org/abs/2407.19185)：通过文档和富文本视觉数据训练 LLaVA-Read，提升多模态模型在 OCR 密集场景中的阅读与理解能力。
+- [On Behalf of the Stakeholders: Trends in NLP Model Interpretability in the Era of LLMs](https://arxiv.org/abs/2407.19200)：从利益相关者需求出发综述 LLM 时代的 NLP 模型可解释性，按解释使用者及其支持的决策类型组织方法。
+- [ML-Mamba: Efficient Multi-Modal Large Language Model Utilizing Mamba-2](https://arxiv.org/abs/2407.19832)：提出 ML-Mamba，在多模态 LLM 中引入 Mamba-2 序列建模，以提高跨模态理解效率。
+- [ByteCheckpoint: A Unified Checkpointing System for Large Foundation Model Development](https://arxiv.org/abs/2407.20143)：提出 ByteCheckpoint 统一检查点系统，在大规模基础模型训练中协调分布式保存、加载和故障恢复。
+- [AutoScale: Automatic Prediction of Compute-optimal Data Composition for Training LLMs](https://arxiv.org/abs/2407.20177)：提出 AutoScale，通过小规模实验预测计算最优的预训练数据配比，帮助 LLM 在完整训练前确定领域组成。
+- [BRIDGE: Bridging Gaps in Image Captioning Evaluation with Stronger Visual Cues](https://arxiv.org/abs/2407.20341)：构建 BRIDGE 图像描述评测，引入更强视觉线索，缓解指标因语言流畅而忽视视觉 grounding 错误的问题。
+- [SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/abs/2407.20756)：提出 SynthVLM 合成数据流程，在多模态训练中同时考虑视觉语言数据生成效率和样本质量。
+- [MoFO: Momentum-Filtered Optimizer for Mitigating Forgetting in LLM Fine-Tuning](https://arxiv.org/abs/2407.20999)：提出 MoFO 动量过滤优化器，在 LLM 微调中筛除会损伤保留能力的更新方向，以缓解遗忘。
+- [Adaptive Pre-training Data Detection for Large Language Models via Surprising Tokens](https://arxiv.org/abs/2407.21248)：利用 surprising-token 信号检测文本是否出现在 LLM 预训练数据中，为隐私和版权审计提供数据检测方法。
+- [Beyond Silent Letters: Amplifying LLMs in Emotion Recognition with Vocal Nuances](https://arxiv.org/abs/2407.21315)：将 LLM 与语音细节特征结合用于情绪识别，检验声学线索能否弥补纯文本输入缺失的情感信息。
+- [MoMa: Efficient Early-Fusion Pre-training with Mixture of Modality-Aware Experts](https://arxiv.org/abs/2407.21770)：提出 MoMa 早期融合多模态预训练方法，用 modality-aware experts 将不同输入类型路由到专门专家模块。
+- [Large Language Monkeys: Scaling Inference Compute with Repeated Sampling](https://arxiv.org/abs/2407.21787)：研究通过重复采样扩展 LLM 推理计算，展示大量独立尝试如何提升通过率，并推导采样预算分配规则。
+- [Contrastive Graph Representation Learning with Adversarial Cross-view Reconstruction and Information Bottleneck](https://arxiv.org/abs/2408.00295)：在对比式图表征学习中结合 adversarial cross-view reconstruction 与 information bottleneck，以学习跨视角稳健图嵌入。
+- [DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency](https://arxiv.org/abs/2408.00741)：提出 DynamoLLM，用于设计和模拟 LLM 推理集群，在服务负载下联合分析性能与能耗效率。
+- [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](https://arxiv.org/abs/2408.01800)：报告 MiniCPM-V，一种可部署到手机端的多模态 LLM，以紧凑模型规模和移动端推理实现接近 GPT-4V 的视觉理解能力。
+- [STBLLM: Breaking the 1-Bit Barrier with Structured Binary LLMs](https://arxiv.org/abs/2408.01803)：提出 STBLLM 结构化二值语言模型，在极限压缩中保留关键结构，以突破 1-bit 量化带来的性能瓶颈。
+- [Cross-layer Attention Sharing for Pre-trained Large Language Models](https://arxiv.org/abs/2408.01890)：在预训练 LLM 中跨层共享 attention 组件，通过复用注意力结构减少冗余并尽量保持性能。
+- [Mini-Monkey: Multi-Scale Adaptive Cropping for Multimodal Large Language Models](https://arxiv.org/abs/2408.02034)：提出 Mini-Monkey，对多模态 LLM 输入进行多尺度自适应裁剪，使小模型更有效查看高分辨率图像区域。
+- [VL-TGS: Trajectory Generation and Selection Using Vision Language Models in Mapless Outdoor Environments](https://arxiv.org/abs/2408.02454)：将视觉语言模型用于无地图户外环境中的轨迹生成与选择，把视觉场景理解和候选路径决策连接起来。
+- [UnifiedMLLM: Enabling Unified Representation for Multi-modal Multi-tasks With Large Language Model](https://arxiv.org/abs/2408.02503)：构建 UnifiedMLLM 统一表征框架，使一个多模态 LLM 通过共享表示处理多种模态和任务。
+- [Self-Taught Evaluators](https://arxiv.org/abs/2408.02666)：用模型生成数据训练 evaluator，展示 LLM 可通过迭代生成和评分候选回答，在无人类标注条件下自举判断模型。
+- [KAN We Improve on HEP Classification Tasks? Kolmogorov–Arnold Networks Applied to an LHC Physics Example](https://arxiv.org/abs/2408.02743)：将 Kolmogorov-Arnold 网络用于 LHC 高能物理分类任务，在具体科学数据集上与既有分类器比较 KAN 表现。
+- [Extend Model Merging from Fine-Tuned to Pre-Trained Large Language Models via Weight Disentanglement](https://arxiv.org/abs/2408.03092)：通过权重解耦把模型合并从微调后 checkpoint 扩展到预训练 LLM，而不局限于多个已微调模型之间的合并。
+- [500xCompressor: Generalized Prompt Compression for Large Language Models](https://arxiv.org/abs/2408.03094)：提出 500xCompressor 提示压缩方法，在大幅缩短输入上下文的同时保留 LLM 推理所需的任务信息。
+- [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://arxiv.org/abs/2408.03314)：推导 test-time compute 扩展规律，说明在何种条件下把推理预算用于采样或搜索会比增加模型参数更有效。
+- [LLaVA-OneVision: Easy Visual Task Transfer](https://arxiv.org/abs/2408.03326)：提出 LLaVA-OneVision，通过统一视觉指令微调在单图、多图和视频任务之间实现更容易的迁移。
+- [ULLME: A Unified Framework for Large Language Model Embeddings with Generation-Augmented Learning](https://arxiv.org/abs/2408.03402)：构建 ULLME 生成增强的 LLM embedding 框架，用生成式学习信号提升统一嵌入表示。
+- [Can DPO Learn Diverse Human Values? A Theoretical Scaling Law](https://arxiv.org/abs/2408.03459)：分析 DPO 学习多样人类价值的条件，并推导偏好优化何时能够覆盖多种价值分布的理论 scaling law。
+- [Can LLMs Serve As Time Series Anomaly Detectors?](https://arxiv.org/abs/2408.03475)：测试 LLM 是否能充当时间序列异常检测器，考察语言模型先验如何迁移到数值时序模式。
+- [Empirical Analysis of Large Vision-Language Models against Goal Hijacking via Visual Prompt Injection](https://arxiv.org/abs/2408.03554)：评估大型视觉语言模型在视觉提示注入下的 goal hijacking 风险，衡量恶意视觉内容是否会覆盖原本指令。
+- [Smaller but Better: Self-Paced Knowledge Distillation for Lightweight yet Effective LCMs](https://arxiv.org/abs/2408.03680)：将 self-paced knowledge distillation 用于轻量 LCM，按样本难度组织蒸馏过程，使小模型在较低成本下提升。
+- [DistTrain: Addressing Model and Data Heterogeneity with Disaggregated Training for Multimodal Large Language Models](https://arxiv.org/abs/2408.04275)：提出 DistTrain 多模态 LLM 解耦训练策略，用于处理训练资源中的模型异构和数据异构。
+- [Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models](https://arxiv.org/abs/2408.04594)：提出 Img-Diff 对比式多模态数据合成方法，通过生成图像差异强化视觉语言模型训练信号。
+- [Understanding the Performance and Estimating the Cost of LLM Fine-Tuning](https://arxiv.org/abs/2408.04693)：建模 LLM 微调的性能与成本权衡，帮助根据模型规模、数据和计算预算判断微调是否值得。
+- [Kolmogorov-Arnold Networks for Online Reinforcement Learning](https://arxiv.org/abs/2408.04841)：评估 Kolmogorov-Arnold 网络在在线强化学习中的表现，检验基于样条的 KAN 层是否改善策略学习和稳健性。
+- [Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2](https://arxiv.org/abs/2408.05147)：发布 Gemma Scope，在 Gemma 2 多层和多宽度上训练大量 sparse autoencoder，用于开放 LLM 的机制可解释性研究。
+- [KIF: Knowledge Identification and Fusion for Language Model Continual Learning](https://arxiv.org/abs/2408.05200)：提出 KIF 继续学习方法，识别需要保留或更新的知识并进行融合，以减少语言模型遗忘。
+- [VITA: Towards Open-Source Interactive Omni Multimodal LLM](https://arxiv.org/abs/2408.05211)：提出 VITA 开源交互式全模态 LLM，在单一模型接口中支持实时语音、视觉和文本交互。
+- [HoME: Hierarchy of Multi-Gate Experts for Multi-Task Learning at Kuaishou](https://arxiv.org/abs/2408.05430)：描述快手 HoME 层级化 multi-gate experts，在工业多任务学习中为多个推荐目标进行分层专家路由。
+- [LLMServingSim: A HW/SW Co-Simulation Infrastructure for LLM Inference Serving at Scale](https://arxiv.org/abs/2408.05499)：提出 LLMServingSim 软硬件协同仿真基础设施，用于在部署集群配置前分析大规模 LLM 推理服务。
+- [Efficient Diffusion Transformer with Step-wise Dynamic Attention Mediators](https://arxiv.org/abs/2408.05710)：用 step-wise dynamic attention mediators 改进 diffusion transformer，在不同去噪步骤动态调节注意力计算以提高生成效率。
+- [Multimodal Large Language Models for Phishing Webpage Detection and Identification](https://arxiv.org/abs/2408.05941)：将多模态 LLM 用于钓鱼网页检测和识别，结合网页视觉线索与对可疑内容的语言推理。
+- [Towards Robust and Parameter-Efficient Knowledge Unlearning for LLMs](https://arxiv.org/abs/2408.06621)：提出 LoKU 参数高效 LLM unlearning 方法，结合 inverted hinge loss 与 Fisher 加权低秩初始化，在移除敏感知识时保持流畅性和推理能力。
+- [Large language models can consistently generate high-quality content for election disinformation operations](https://arxiv.org/abs/2408.06731)：衡量 LLM 生成本地化选举虚假信息的服从度和类人程度，并发布 DisElect 数据集量化模型产生有害竞选内容的风险。
+- [Layerwise Recurrent Router for Mixture-of-Experts](https://arxiv.org/abs/2408.06793)：提出 RMoE 层级循环路由器，用 GRU 在连续 MoE 层之间传递路由状态，以改善专家选择、多样性和参数效率。
+- [Language Models as Models of Language](https://arxiv.org/abs/2408.07144)：考察语言模型作为语言学理论经验模型的价值，认为受控训练和因果干预可为句法习得与语言能力争论提供证据。
+- [Can Large Language Models Reason? A Characterization via 3-SAT](https://arxiv.org/abs/2408.07215)：用随机 3-SAT 相变刻画 LLM 推理能力，显示模型在内在更难的实例上失败明显，而接入外部求解器能显著改善结果。
+- [Kolmogorov-Arnold Networks (KAN) for Time Series Classification and Robust Analysis](https://arxiv.org/abs/2408.07314)：在 128 个时间序列数据集上比较 KAN、MLP 和混合结构，发现 KAN 相关模型因更低 Lipschitz 常数表现出稳健性优势。
+- [Graph Triple Attention Network: A Decoupled Perspective](https://arxiv.org/abs/2408.07654)：提出 DeGTA 图三重注意力网络，将 positional、structural 和 attribute attention 以及局部/全局交互解耦，以提高图 Transformer 的性能和可解释性。
+- [FuseChat: Knowledge Fusion of Chat Models](https://arxiv.org/abs/2408.07990)：提出 FuseChat，先通过轻量 pairwise fusion 和 token alignment 对齐不同架构的 chat LLM，再在参数空间合并目标模型。
+- [I-SHEEP: Self-Alignment of LLM from Scratch through an Iterative Self-Enhancement Paradigm](https://arxiv.org/abs/2408.08072)：提出 I-SHEEP 迭代自增强范式，让 LLM 在多轮中生成自身对齐数据，从零开始持续自我对齐。
+- [BAM! Just Like That: Simple and Efficient Parameter Upcycling for Mixture of Experts](https://arxiv.org/abs/2408.08274)：提出 BAM MoE upcycling 方法，通过 Branch-Attend-Mix 和并行注意力计算同时复用 dense expert 的 FFN 与 attention 参数。
+- [5%>100%: Breaking Performance Shackles of Full Fine-Tuning on Visual Recognition Tasks](https://arxiv.org/abs/2408.08345)：提出 Mona 多认知视觉 adapter，结合视觉友好滤波器和 scaled normalization，在检测、分割和分类任务上超过全量微调。
+- [MIA-Tuner: Adapting Large Language Models as Pre-training Text Detector](https://arxiv.org/abs/2408.08661)：提出 MIA-Tuner 指令式成员推断方法，让 LLM 自身充当预训练数据检测器，并在更新的 WIKIMIA-24 基准上评测。
+- [Rethinking Generative Semantic Communication for Multi-User Systems with Large Language Models](https://arxiv.org/abs/2408.08765)：用 LLM 作为共享知识库重构多用户生成式语义通信，承担任务分解、语义表示规范和语义翻译映射三类角色。
+- [xGen-MM (BLIP-3): A Family of Open Large Multimodal Models](https://arxiv.org/abs/2408.08872)：发布 BLIP-3 框架，包含精选多模态数据集、训练配方、模型架构，以及面向单图、多图和图文交错输入的 4B、14B LMM 检查点。
+- [CyberPal.AI: Empowering LLMs with Expert-Driven Cybersecurity Instructions](https://arxiv.org/abs/2408.09304)：构建由安全专家知识驱动生成的 SecKnowledge 指令数据，并用其微调 CyberPal.AI，在 SecKnowledge-Eval 和公开安全基准上评测。
+- [Threshold Filtering Packing for Supervised Fine-Tuning: Training Related Samples within Packs](https://arxiv.org/abs/2408.09327)：用阈值过滤把上下文相关且保持多样性的 SFT 样本打包，减少序列串扰，并提升 GSM8K、HumanEval 与公平性基准表现。
+- [Out-of-distribution generalization via composition: A lens through induction heads in Transformers](https://arxiv.org/abs/2408.09503)：在隐藏规则 OOD 泛化任务中分析 induction heads，发现 Transformer 可通过共享桥接表示组合两层注意力来学习规则。
+- [Does Thought Require Sensory Grounding? From Pure Thinkers to Large Language Models](https://arxiv.org/abs/2408.09605)：从哲学和语言模型结果出发，反驳“无感官接地就不能思考”的论证，同时讨论接地可能增强哪些认知能力。
+- [MoDeGPT: Modular Decomposition for Large Language Model Compression](https://arxiv.org/abs/2408.09632)：用 Nystrom、CR 和 SVD 对 Transformer 模块级矩阵对做结构化分解，在无需恢复微调的情况下压缩模型并提升吞吐。
+- [Are Large Language Models More Honest in Their Probabilistic or Verbalized Confidence?](https://arxiv.org/abs/2408.09773)：比较 token 概率置信度与自然语言置信度对事实知识边界的感知，指出概率信号更可靠但仍依赖域内阈值校准。
+- [Performance Law of Large Language Models](https://arxiv.org/abs/2408.09895)：提出直接预测 MMLU 的经验性能定律，用架构超参数和训练数据规模替代只看 loss 的扩展估计。
+- [Personalizing Reinforcement Learning from Human Feedback with Variational Preference Learning](https://arxiv.org/abs/2408.10075)：用用户特定潜变量建模多元 RLHF，并据此条件化奖励模型和策略，在无需额外个体标签的情况下学习群体差异偏好。
+- [SMILE: Zero-Shot Sparse Mixture of Low-Rank Experts Construction From Pre-Trained Foundation Models](https://arxiv.org/abs/2408.10174)：把预训练源模型零样本扩展为低秩专家稀疏 MoE，通过升维缓解参数干扰，不需要额外数据或继续训练。
+- [Transformers to SSMs: Distilling Quadratic Knowledge to Subquadratic Models](https://arxiv.org/abs/2408.10189)：提出 MOHAWK，通过匹配 mixing matrix、隐藏状态和端到端预测，把 Transformer 知识蒸馏到 SSM 和混合 Mamba 模型中。
+- [Goldfish: Monolingual Language Models for 350 Languages](https://arxiv.org/abs/2408.10441)：发布覆盖 350 种语言的一千多个小型单语模型，显示 125M 单语模型在低资源语法性和困惑度测试上可超过大型多语模型。
+- [LeCov: Multi-level Testing Criteria for Large Language Models](https://arxiv.org/abs/2408.10474)：围绕注意力、前馈神经元和不确定性定义九类 LLM 测试准则，并用于测试优先级排序和覆盖引导缺陷探索。
+- [Minor SFT loss for LLM fine-tune to increase performance and reduce model deviation](https://arxiv.org/abs/2408.10642)：提出 MinorSFT 损失和模型偏移度量，在提升下游 SFT 效果的同时减少微调模型与原始 LLM 的偏离。
+- [HMoE: Heterogeneous Mixture of Experts for Language Modeling](https://arxiv.org/abs/2408.10681)：让 MoE 专家拥有不同参数容量，并加入鼓励优先激活小专家的训练目标，以提升专家专门化和激活参数效率。
+- [Kilometer-scale convection-allowing model emulation using generative diffusion modeling](https://arxiv.org/abs/2408.10958)：提出 StormCast 自回归扩散模型，用 26 个天气尺度变量条件化，仿真 NOAA HRRR 3 公里对流模型中的 99 个大气变量。
+- [Scaling Law with Learning Rate Annealing](https://arxiv.org/abs/2408.11029)：用学习率曲线面积和退火面积拟合语言模型完整 loss 曲线，可跨学习率调度器预测任意训练步的验证损失。
+- [Do Neural Scaling Laws Exist on Graph Self-Supervised Learning?](https://arxiv.org/abs/2408.11243)：系统测试图自监督学习在模型和数据规模变化下的行为，发现 SSL loss 下降并不带来下游性能的扩展规律。
+- [Sycophancy in vision-language models: A systematic analysis and an inference-time mitigation framework](https://arxiv.org/abs/2408.11261)：评估 LVLM 对诱导式视觉语言提示的迎合性，并用查询中和、迎合感知对比解码和自适应 logit 修正进行推理时缓解。
+- [FedMoE: Personalized Federated Learning via Heterogeneous Mixture of Experts](https://arxiv.org/abs/2408.11304)：依据客户端激活模式选择个性化 sub-MoE，并通过模块化专家聚合把本地知识回传到全局 MoE，实现个性化联邦 LLM 微调。
+- [SarcasmBench: Towards Evaluating Large Language Models on Sarcasm Understanding](https://arxiv.org/abs/2408.11319)：在六个讽刺理解数据集上评测 11 个 LLM 和 8 个 PLM，显示当前 LLM 提示法仍落后于监督式讽刺检测器，且 CoT 效果较弱。
+- [Design Principle Transfer in Neural Architecture Search via Large Language Models](https://arxiv.org/abs/2408.11330)：用 LLM 从已有架构中总结可迁移设计原则，再结合新搜索结果持续修正，用于缩小 transferable NAS 搜索空间。
+- [Epistemic Injustice in Generative AI](https://arxiv.org/abs/2408.11441)：提出生成式算法认识不公概念，区分证言、诠释和访问层面的伤害，并讨论面向知识生态的设计与抵抗策略。
+- [SCANS: Mitigating the Exaggerated Safety for LLMs via Safety-Conscious Activation Steering](https://arxiv.org/abs/2408.11491)：定位拒答 steering vector 与安全关键层，通过跟踪并调整隐藏状态迁移，在降低错误拒答的同时保留有害请求防御。
+- [LLM Pruning and Distillation in Practice: The Minitron Approach](https://arxiv.org/abs/2408.11796)：用深度剪枝、宽度剪枝、蒸馏和对齐把 Llama 3.1 8B 与 Mistral NeMo 12B 压缩为开放的 Minitron 系列。
+- [How Susceptible are LLMs to Influence in Prompts?](https://arxiv.org/abs/2408.11865)：在 Llama、Mixtral 和 Falcon 上加入外部模型预测与解释，显示模型很容易受补充解释影响，即使解释质量较低也会被带偏。
+- [Exploring Large Language Models for Feature Selection: A Data-centric Perspective](https://arxiv.org/abs/2408.12025)：把 LLM 特征选择分为数值驱动和文本语义两类，并在分类和回归任务中发现文本语义选择更稳健。
+- [S-EPOA: Overcoming the Indivisibility of Annotations with Skill-Driven Preference-Based Reinforcement Learning](https://arxiv.org/abs/2408.12130)：在偏好式强化学习中加入无监督技能预训练和技能空间查询选择，提升机器人操作与运动任务的鲁棒性和学习效率。
+- [PolyRouter: A Multi-LLM Querying System](https://arxiv.org/abs/2408.12320)：用 TO-Router 根据请求需求动态选择合适的专家 LLM，以改善多模型服务中的成本、延迟和质量权衡。
+- [Enhancing Multi-hop Reasoning through Knowledge Erasure in Large Language Model Editing](https://arxiv.org/abs/2408.12456)：提出 KELE，在注入新知识的同时擦除残留单跳知识，使编辑后的 LLM 在多跳推理中不易回退到旧答案。
+- [Show-o: One Single Transformer to Unify Multimodal Understanding and Generation](https://arxiv.org/abs/2408.12528)：在一个 Transformer 中结合自回归建模和离散扩散，统一支持 VQA、文生图、修补、外推和混合模态生成。
+- [Jamba-1.5: Hybrid Transformer-Mamba Models at Scale](https://arxiv.org/abs/2408.12570)：发布 12B active 与 94B active 的 Transformer-Mamba MoE 指令模型，具备 256K 上下文，并用 ExpertsInt8 支持长上下文高效推理。
+- [A Percolation Model of Emergence: Analyzing Transformers Trained on a Formal Language](https://arxiv.org/abs/2408.12578)：在上下文敏感形式语言上研究 Transformer 涌现，把底层语法结构学习与类似渗流的相变模型联系起来。
+- [Semantic Alignment for Multimodal Large Language Models](https://arxiv.org/abs/2408.12867)：提出 SAM，在多图视觉 token 提取中加入双向语义引导，并用 MmLINK 数据集提升 group captioning 和 storytelling。
+- [Power Scheduler: A Batch Size and Token Number Agnostic Learning Rate Scheduler](https://arxiv.org/abs/2408.13359)：刻画最优学习率、batch size 和 token 数之间的幂律关系，并结合 muP 实现可迁移的预训练超参数。
+- [On the Robustness of Kolmogorov-Arnold Networks: An Adversarial Perspective](https://arxiv.org/abs/2408.13809)：在白盒和黑盒对抗攻击下评测 KAN，发现大规模 KAN 通常比同类网络更鲁棒，但中小模型表现不稳定。
+- [MobileQuant: Mobile-friendly Quantization for On-device Language Models](https://arxiv.org/abs/2408.13933)：联合优化量化后权重变换与激活范围，实现适配移动 NPU 的整数-only LLM 后训练量化。
+- [LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings](https://arxiv.org/abs/2408.14512)：把 GNN 表示对齐到 LLM token embedding，并投影为 graph tokens，使 LLM 无需微调即可做零样本节点分类和链接预测。
+- [Training-Free Activation Sparsity in Large Language Models](https://arxiv.org/abs/2408.14690)：提出 TEAL，在无需训练的情况下对全模型隐藏状态做幅值激活稀疏化，达到 40% 到 50% 稀疏并配合 sparse kernel 加速解码。
+- [Diffusion Models Are Real-Time Game Engines](https://arxiv.org/abs/2408.14837)：展示扩散模型作为实时游戏引擎的能力，是具体世界建模案例。
+- [Advancing Adversarial Suffix Transfer Learning on Aligned Large Language Models](https://arxiv.org/abs/2408.14866)：用 DeGCG 和 i-DeGCG 加速对抗后缀搜索，把行为无关预搜索与行为相关后搜索分离，以提升跨模型和跨数据的 jailbreak transfer。
+- [BaichuanSEED: Sharing the Potential of ExtensivE Data Collection and Deduplication by Introducing a Competitive Large Language Model Baseline](https://arxiv.org/abs/2408.15079)：开放通用的数据广泛收集与重加权处理管线，并用 3T 处理后 token 预训练 BaichuanSEED 7B 再做简单 SFT 来验证效果。
+- [Can Unconfident LLM Annotations Be Used for Confident Conclusions?](https://arxiv.org/abs/2408.15204)：提出 Confidence-Driven Inference，结合 LLM 标注、置信度指标和有选择的人类标注，在减少人工标签的同时给出有效统计估计。
+- [The Mamba in the Llama: Distilling and Accelerating Hybrid Models](https://arxiv.org/abs/2408.15237)：复用注意力投影权重，把 Llama 式 Transformer 蒸馏为混合 linear RNN 模型，并加入面向硬件的 speculative decoding 加速生成。
+- [SkillMimic: Learning Basketball Interaction Skills from Demonstrations](https://arxiv.org/abs/2408.15270)：从人-物交互演示中学习统一 imitation reward，使单一策略可掌握并切换多种篮球技能。
+- [Divide, Conquer and Combine: A Training-Free Framework for High-Resolution Image Perception in Multimodal Large Language Models](https://arxiv.org/abs/2408.15556)：提出面向 4K 和 8K 图像的 HR-Bench，以及无需训练的 DC2 分块描述与重组框架来提升高分辨率 MLLM 感知。
+- [LLaVA-MoD: Making LLaVA Tiny via MoE Knowledge Distillation](https://arxiv.org/abs/2408.15881)：用 mimic distillation 和以教师模型为参考的 DPO 偏好蒸馏，把大型 MLLM 压缩为小型稀疏 MoE LLaVA。
+- [Eagle: Exploring The Design Space for Multimodal LLMs with Mixture of Encoders](https://arxiv.org/abs/2408.15998)：系统消融 MLLM 中视觉编码器和分辨率的混合设计，发现简单拼接互补视觉 token 并做预对齐即可媲美复杂融合。
+- [Law of Vision Representation in MLLMs](https://arxiv.org/abs/2408.16357)：定义 Alignment and Correspondence score，线性预测不同视觉表示下的 MLLM 表现，从而无需反复调语言模型即可选择视觉塔。
+- [Iterative Graph Alignment](https://arxiv.org/abs/2408.16667)：用 VLM 生成逻辑图和参考答案来暴露 LLM 规则对齐缺口，再用 helper model 生成的对齐回答迭代 SFT。
+- [Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling](https://arxiv.org/abs/2408.16737)：显示较弱但便宜的模型可生成更具算力效率的合成推理数据，在蒸馏、自我改进和弱教强训练中优于昂贵强模型数据。
+- [The future of open human feedback](https://arxiv.org/abs/2408.16961)：分析开放人类反馈生态如何借鉴 peer production 和 citizen science，同时处理质量、激励、隐私和治理挑战。
+- [VQ4DiT: Efficient Post-Training Vector Quantization for Diffusion Transformers](https://arxiv.org/abs/2408.17131)：通过候选 assignment set 与零数据 block-wise calibration 量化 Diffusion Transformer 权重，在可接受图像质量下达到 2-bit 压缩。
+- [Joint Estimation and Prediction of City-wide Delivery Demand: A Large Language Model Empowered Graph-based Learning Approach](https://arxiv.org/abs/2408.17258)：把时空图消息传递与 LLM 从地点文本中提取的地理编码结合，用于跨城市配送需求估计、预测和迁移。
+- [Wait, that's not an option: LLMs Robustness with Incorrect Multiple-Choice Options](https://arxiv.org/abs/2409.00113)：评估没有有效答案的多项选择题，发现后训练对齐会让模型倾向选择无效选项而不是拒答。
+- [Sequence to Sequence Reward Modeling: Improving RLHF by Language Feedback](https://arxiv.org/abs/2409.00162)：把奖励模型的标量偏好目标替换为序列到序列语言反馈，在不增加标注的情况下缓解 RLHF 中的拒答和长度偏置问题。
+- [A Hybrid Transformer-Mamba Network for Single Image Deraining](https://arxiv.org/abs/2409.00410)：构建 TransMamba，结合 spectral-banded Transformer block、双向 Mamba 状态空间模块、双分支融合和 spectral coherence loss 做单图去雨。
+- [DataSculpt: Crafting Data Landscapes for LLM Post-Training through Multi-objective Partitioning](https://arxiv.org/abs/2409.00997)：用粗粒度语义聚类和细粒度多目标 packing 组织长上下文后训练数据，兼顾相关性、同质性、完整性和效率。
+- [Duplex: A Device for Large Language Models with Mixture of Experts, Grouped Query Attention, and Continuous Batching](https://arxiv.org/abs/2409.01141)：设计协处理设备，把高算术强度 LLM 层交给 xPU，把低强度 MoE 和注意力操作交给 Logic-PIM。
+- [Target-Driven Distillation: Consistency Distillation with Target Timestep Selection and Decoupled Guidance](https://arxiv.org/abs/2409.01347)：用目标 timestep 选择、可推理时调节的 decoupled guidance 和可选非等距采样提升少步 diffusion 生成质量。
+- [CHESS: Optimizing LLM Inference via Channel-Wise Thresholding and Selective Sparsification](https://arxiv.org/abs/2409.01366)：为 FFN 激活通道设置独立阈值，并选择性稀疏化注意力层，配合 sparse kernel 加速端侧 LLM 推理。
+- [Imitating Language via Scalable Inverse Reinforcement Learning](https://arxiv.org/abs/2409.01369)：把 inverse soft-Q learning 重写为带时序差分正则的 MLE 扩展，在固定 SFT 数据上提升生成多样性和任务表现。
+- [Interpreting and Improving Large Language Models in Arithmetic Calculation](https://arxiv.org/abs/2409.01659)：识别参与算术操作数和运算符处理的少量可迁移 attention heads 与 MLP，并通过选择性微调提升数学能力。
+- [Empirical evidence of Large Language Model's influence on human spoken communication](https://arxiv.org/abs/2409.01754)：用因果推断分析 YouTube 学术演讲和播客，检测到 ChatGPT 发布后其偏好生成词在人类口语中的使用上升。
+- [FC-KAN: Function Combinations in Kolmogorov-Arnold Networks](https://arxiv.org/abs/2409.01763)：在 KAN 中通过逐元素运算组合 B-spline、wavelet、radial basis function 等数学函数，用于低维数据建模。
+- [OLMoE: Open Mixture-of-Experts Language Models](https://arxiv.org/abs/2409.02060)：发布完全开放的 OLMoE-1B-7B 稀疏 MoE 语言模型，用 5T token 预训练，并开放权重、数据、代码、日志和 instruct 版本。
+- [Pooling And Attention: What Are Effective Designs For LLM-Based Embedding Models?](https://arxiv.org/abs/2409.02727)：在相同底座和数据下比较 LLM embedding 的 pooling 与 attention 设计，并提出用于检索和相似度任务的 multi-layer trainable pooling。
+- [Masked Diffusion Models are Secretly Time-Agnostic Masked Models and Exploit Inaccurate Categorical Sampling](https://arxiv.org/abs/2409.02908)：证明 masked diffusion model 等价于时间无关 masked model，提出更快的 first-hitting sampler，并揭示 categorical sampling 的数值误差。
+- [KAN See in the Dark](https://arxiv.org/abs/2409.03404)：把 KAN block 与频域感知用于低光照图像增强，以更可解释的变换建模复杂照明和噪声非线性关系。
+- [Fine-tuning large language models for domain adaptation: exploration of training strategies, scaling, model merging and synergistic capabilities](https://arxiv.org/abs/2409.03444)：比较 CPT、SFT、DPO、ORPO、模型扩展和合并在材料领域 LLM 适配中的作用，发现合并模型可产生单个父模型没有的新能力。
+- [Attention heads of large language models](https://arxiv.org/abs/2409.03752)：以知识回忆、上下文识别、隐式推理和表达准备四阶段框架综述 attention head 功能，以及特殊 head 的发现和评测方法。
+- [AnyMatch - Efficient Zero-Shot Entity Matching with a Small Language Model](https://arxiv.org/abs/2409.04073)：用迁移学习微调小语言模型做零样本实体匹配，并通过难例对选择、属性级样例和标签不平衡控制构造训练数据。
+- [Towards Automated Knowledge Transfer in Evolutionary Multitasking via Large Language Models](https://arxiv.org/abs/2409.04270)：在 SKTD 框架中让 LLM 自动生成进化多任务优化的知识迁移模块，适配异构任务场景。
+- [VILA-U: a Unified Foundation Model Integrating Visual Understanding and Generation](https://arxiv.org/abs/2409.04429)：用统一自回归 next-token 框架处理视觉理解和图像生成，并在预训练中对齐离散视觉 token 与文本 token。
+- [How Does Code Pretraining Affect Language Model Task Performance?](https://arxiv.org/abs/2409.04556)：通过受控预训练混合实验显示，代码数据会提升结构化输出和数学任务，但可能损害语法、形态和世界知识任务。
+- [BPE Gets Picky: Efficient Vocabulary Refinement During Tokenizer Training](https://arxiv.org/abs/2409.04599)：在 tokenizer 训练过程中细化 BPE 词表，去除训练不足 token 并提高词表效率，同时不牺牲压缩率。
+- [POINTS: Improving Your Vision-language Model with Affordable Strategies](https://arxiv.org/abs/2409.04828)：用一组经消融验证的低成本策略训练 9B VLM，包括困惑度过滤预训练数据和 model-soup 式视觉指令微调。
+- [Improving Pretraining Data Using Perplexity Correlations](https://arxiv.org/abs/2409.05816)：通过估计 LLM 在网页文本上的困惑度与下游基准表现的相关性来选择预训练文档，避免重新做大规模预训练实验。
+- [MMEvol: Empowering Multimodal Large Language Models with Evol-Instruct](https://arxiv.org/abs/2409.05840)：通过细粒度感知、认知推理和交互演化迭代提升多模态指令数据质量，在 13 个视觉语言任务上增强 MLLM。
+- [FLoRA: Federated Fine-Tuning Large Language Models with Heterogeneous Low-Rank Adaptations](https://arxiv.org/abs/2409.05976)：用 stacking-based aggregation 修正联邦 LLM 微调中的 LoRA 聚合噪声，并支持客户端之间不同 rank 的异构适配器。
+- [STUN: Structured-Then-Unstructured Pruning for Scalable MoE Pruning](https://arxiv.org/abs/2409.06211)：先利用专家行为相似性做可扩展 expert pruning，再进行非结构化剪枝，以在高稀疏度下保持 MoE LLM 性能。
+- [Unveiling Markov heads in Pretrained Language Models for Offline Reinforcement Learning](https://arxiv.org/abs/2409.06985)：识别预训练决策 Transformer 中专注最后输入 token 的 Markov head，并用带 Mixture of Attention 的 GPT2-DTMA 改善长时程离线强化学习。
+- [Cross-Refine: Improving Natural Language Explanation Generation by Learning in Tandem](https://arxiv.org/abs/2409.07123)：让生成器 LLM 和评论器 LLM 成对工作，使自然语言解释基于反馈迭代修订，而不是一次性生成。
+- [Gated Slot Attention for Efficient Linear-Time Sequence Modeling](https://arxiv.org/abs/2409.07146)：在 bounded-memory ABC attention 中加入 GLA 式门控，在保持循环推理效率的同时提升重召回序列任务表现。
+- [Synthetic continued pretraining](https://arxiv.org/abs/2409.07431)：把稀缺领域文档扩展为合成改写和问答式预训练文本，使模型更高效吸收低频事实。
+- [Source2Synth: Synthetic Data Generation and Curation Grounded in Real Data Sources](https://arxiv.org/abs/2409.08239)：从用户给定真实语料生成并筛选指令数据，让合成样本扎根于源文档而非自由编造。
+- [What Should We Engineer in Prompts? Training Humans in Requirement-Driven LLM Use](https://arxiv.org/abs/2409.08775)：提出 ROPE 人类训练范式，训练提示词作者明确表达任务需求，而不是依赖通用提示技巧。
+- [Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control](https://arxiv.org/abs/2409.08861)：把 flow 与 diffusion 模型的奖励微调表述为随机最优控制，并推导带必要 memoryless 噪声调度的 Adjoint Matching。
+- [Rethinking KenLM: Good and Bad Model Ensembles for Efficient Text Quality Filtering in Large Web Corpora](https://arxiv.org/abs/2409.09613)：训练好数据与坏数据 KenLM 集成，让网页语料过滤同时识别高质量语言模式和低质量伪迹。
+- [Famba-V: Fast Vision Mamba with Cross-Layer Token Fusion](https://arxiv.org/abs/2409.09808)：跨层识别并融合相似 token 来加速 Vision Mamba 训练，避免对所有层使用统一 token 压缩规则。
+- [StruEdit: Structured Outputs Enable the Fast and Accurate Knowledge Editing for Large Language Models](https://arxiv.org/abs/2409.10132)：把推理轨迹结构化后定位过时事实，并只修改受影响的推理组件以完成 LLM 知识编辑。
+- [Quantile Regression for Distributional Reward Models in RLHF](https://arxiv.org/abs/2409.10164)：用 Quantile Reward Model 预测人类偏好的奖励分布，替代 RLHF 中单一标量奖励估计。
+- [Cognitive Kernel: An Open-source Agent System towards Generalist Autopilots](https://arxiv.org/abs/2409.10277)：发布面向 autopilot 的开源智能体系统，整合感知、行动、记忆和协同组件以端到端完成任务。
+- [Towards semantic versioning of open pre-trained language model releases on hugging face](https://arxiv.org/abs/2409.10472)：审计 Hugging Face 预训练模型发布实践，并提出语义化版本规则以提升模型依赖变更的可追踪性。
+- [Flash STU: Fast Spectral Transform Units](https://arxiv.org/abs/2409.10489)：交错使用谱状态空间层和滑动窗口注意力，使语言模型以近线性序列复杂度扩展。
+- [Kolmogorov-Arnold Transformer](https://arxiv.org/abs/2409.10594)：用 KAN 层替换 Transformer 的 MLP 模块，并加入可扩展训练修正，让 Kolmogorov-Arnold 网络进入大规模 Transformer 架构。
+- [Model-in-the-Loop (MILO): Accelerating Multimodal AI Data Annotation with LLMs](https://arxiv.org/abs/2409.10702)：把 LLM 放入多模态标注流程，作为预标注和质量辅助，同时保留专业人工标注监督。
+- [Unveiling and Mitigating Bias in Large Language Model Recommendations: A Path to Fairness](https://arxiv.org/abs/2409.10825)：衡量 LLM 在音乐、歌曲和图书推荐中的人口与文化偏差，并测试更公平的推荐缓解策略。
+- [Diversify and Conquer: Diversity-Centric Data Selection with Iterative Refinement](https://arxiv.org/abs/2409.11378)：通过迭代平衡全局多样性和样本质量选择指令微调数据，而不是只按局部评分排序。
+- [NVLM: Open Frontier-Class Multimodal LLMs](https://arxiv.org/abs/2409.11402)：推出 NVLM 1.0，并比较 decoder-only、cross-attention 与 hybrid 多模态 LLM 设计，同时保持多模态训练后的文本能力。
+- [Hardware Acceleration of Kolmogorov-Arnold Network (KAN) for Lightweight Edge Inference](https://arxiv.org/abs/2409.11418)：为 KAN 中的 B-spline 函数设计查表式硬件加速，使轻量边缘推理更可行。
+- [From Lists to Emojis: How Format Bias Affects Model Alignment](https://arxiv.org/abs/2409.11704)：显示奖励模型和人类评估者会过度奖励列表、链接、粗体和 emoji 等表面格式，形成可被利用的对齐伪迹。
+- [LLMs + Persona-Plug = Personalized LLMs](https://arxiv.org/abs/2409.11901)：加入轻量 Persona-Plug 模块，让共享 LLM 根据用户偏好进行条件化，而无需为每个用户单独微调。
+- [Reinforcement Learning with Lie Group Orientations for Robotics](https://arxiv.org/abs/2409.11935)：修改 RL 策略的输入和输出以遵守 Lie 群方向几何，在不大改架构的情况下改进机器人学习。
+- [LifeGPT: topology-agnostic generative pretrained transformer model for cellular automata](https://arxiv.org/abs/2409.12182)：训练 decoder-only Transformer 建模不同网格拓扑和边界条件下的元胞自动机动态，而不硬编码拓扑。
+- [Exploring and Enhancing the Transfer of Distribution in Knowledge Distillation for Autoregressive Language Models](https://arxiv.org/abs/2409.12512)：分析反向 KL 蒸馏为何遗漏教师分布行为，并为自回归学生模型提出改进目标。
+- [Scaling FP8 training to trillion-token LLMs](https://arxiv.org/abs/2409.12517)：展示万亿 token 级 FP8 LLM 训练，并将长程不稳定性追踪到 SwiGLU 离群值放大，从而指向稳定化设计。
+- [Scaling Smart: Accelerating Large Language Model Pre-training with Small Model Initialization](https://arxiv.org/abs/2409.12903)：用已预训练小模型初始化大 LLM，使预训练从迁移结构而非随机权重开始。
+- [RRM: Robust Reward Model Training Mitigates Reward Hacking](https://arxiv.org/abs/2409.13156)：训练奖励模型区分 prompt 相关偏好与长度、格式等 prompt 无关伪迹，以降低 reward hacking。
+- [Exploring Scaling Laws for Local SGD in Large Language Model Training](https://arxiv.org/abs/2409.13198)：实证刻画 local SGD 在算力、模型规模、多集群和边缘场景下何时能匹配标准分布式 LLM 训练。
+- [CITI: Enhancing Tool Utilizing Ability in Large Language Models without Sacrificing General Performance](https://arxiv.org/abs/2409.13202)：通过保持通用能力的工具使用指令调优，避免模型过拟合狭窄工具调用模式。
+- [Recent Advancement of Emotion Cognition in Large Language Models](https://arxiv.org/abs/2409.13354)：综述 LLM 情绪认知研究，覆盖情绪分类、富情绪回应生成和 Theory-of-Mind 式评测。
+- [SURf: Teaching Large Vision-Language Models to Selectively Utilize Retrieved Information](https://arxiv.org/abs/2409.14083)：用自反思微调教 LVLM 选择性利用有用检索证据，并忽略无关或误导性参考信息。
+- [ERABAL: Enhancing Role-Playing Agents through Boundary-Aware Learning](https://arxiv.org/abs/2409.14710)：构造角色特定的边界对话并进行对齐训练，使角色扮演 LLM 在隐含角色属性查询下保持一致。
+- [Phantom of Latent for Large Language and Vision Models](https://arxiv.org/abs/2409.14713)：在注意力内部临时扩展 latent hidden dimension，并用 Phantom Optimization 训练可媲美更大模型的紧凑 LLVM。
+- [DiSPo: Diffusion-SSM based Policy Learning for Coarse-to-Fine Action Discretization](https://arxiv.org/abs/2409.14719)：结合 diffusion policy learning 与 Mamba 状态空间模型，使粗粒度示范能生成不同控制尺度的动作。
+- [Multi-Modal Generative AI: Multi-modal LLM, Diffusion and Beyond](https://arxiv.org/abs/2409.14993)：综述多模态 LLM、diffusion 模型和统一理解生成设计，比较自回归、扩散、dense 与 MoE 等路线。
+- [Inference-Friendly Models With MixAttention](https://arxiv.org/abs/2409.15012)：结合滑动窗口注意力和跨层 KV-cache 共享，在保持短长上下文质量的同时降低显存和延迟。
+- [Don’t Use LLMs to Make Relevance Judgments](https://arxiv.org/abs/2409.15133)：从 TREC 式评测实践出发，论证 LLM 生成相关性标签不能可靠替代受训人工评审。
+- [Harmonic Path Integral Diffusion](https://arxiv.org/abs/2409.15166)：把随机最优控制映射到虚时间谐振子桥，推导无需神经网络的连续分布采样方法。
+- [Archon: An Architecture Search Framework for Inference-Time Techniques](https://arxiv.org/abs/2409.15254)：在多个 LLM 和重复采样、修订等推理时技术之间搜索，在 token 预算约束下优化准确率。
+- [MiSS: Revisiting the Trade-off in LoRA with an Efficient Shard-Sharing Structure](https://arxiv.org/abs/2409.15371)：在 LoRA 式更新中共享可训练矩阵分片，改善 PEFT 的性能、内存和服务效率权衡。
+- [Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents](https://arxiv.org/abs/2409.15594)：加入真实时钟条件和合成口语对话训练，使 Llama 式模型能处理重叠的全双工对话。
+- [Empirical Insights on Fine-Tuning Large Language Models for Question-Answering](https://arxiv.org/abs/2409.15825)：显示少量 QA 监督微调样本即可激活预训练知识，效果取决于微调样本在模型中的记忆程度。
+- [MonoFormer: One Transformer for Both Diffusion and Autoregression](https://arxiv.org/abs/2409.16280)：通过切换注意力 mask，让一个 Transformer 骨干同时承担自回归文本生成和 diffusion 图像生成。
+- [Training Language Models to Win Debates with Self-Play Improves Judge Accuracy](https://arxiv.org/abs/2409.16636)：用自博弈辩论训练产生更强论证，从而提升 LLM 裁判在长上下文阅读理解问题上的准确率。
+- [Mitigating Covariate Shift in Imitation Learning for Autonomous Vehicles Using Latent Space Generative World Models](https://arxiv.org/abs/2409.16663)：用 latent generative world model 和多视角 Transformer 编码器训练驾驶策略，使其能从分布外扰动中恢复。
+- [GraphLoRA: Structure-Aware Contrastive Low-Rank Adaptation for Cross-Graph Transfer Learning](https://arxiv.org/abs/2409.16670)：通过结构感知 MMD 对齐、低秩图适配器和抗遗忘正则，把预训练 GNN 迁移到不同图域。
+- [Harnessing Diversity for Important Data Selection in Pretraining Large Language Models](https://arxiv.org/abs/2409.16986)：提出 Quad 预训练数据选择器，把 influence 式质量评分与多样性结合，避免高分样本冗余。
+- [Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Multimodal Models](https://arxiv.org/abs/2409.17146)：发布开放 Molmo VLM 和 PixMo 数据集，包含详细图像描述、自由形式图像问答和无需专有 VLM 蒸馏收集的 2D pointing 数据。
+- [Post-hoc Reward Calibration: A Case Study on Length Bias](https://arxiv.org/abs/2409.17407)：在训练后估计并移除长度偏差项来校准奖励模型分数，无需额外偏好数据。
+- [HDFlow: Enhancing LLM Complex Problem-Solving with Hybrid Thinking and Dynamic Workflows](https://arxiv.org/abs/2409.17433)：把快速直接推理与动态生成的慢速工作流结合，后者会分解问题并调用专门 LLM 或符号工具。
+- [MaskLLM: Learnable Semi-Structured Sparsity for Large Language Models](https://arxiv.org/abs/2409.17481)：用 Gumbel-Softmax 分布学习 N:M 稀疏 mask，实现可迁移的 LLM 半结构化推理剪枝。
+- [A Scalable Data-Driven Framework for Systematic Analysis of SEC 10-K Filings Using Large Language Models](https://arxiv.org/abs/2409.17581)：将 LLM 评分流水线用于 SEC 10-K 年报，比较公司绩效、战略、可持续性、创新和劳动力信号。
+- [MIO: A Foundation Model on Multimodal Tokens](https://arxiv.org/abs/2409.17692)：在离散语音、文本、图像和视频 token 上训练自回归 any-to-any 基础模型，采用 causal multimodal modeling。
+- [Self-supervised Preference Optimization: Enhance Your Language Model with Preference Degree Awareness](https://arxiv.org/abs/2409.17791)：在 DPO 式对齐中加入自监督偏好强度损失，使成对训练反映偏好程度差异。
+- [PEDRO: Parameter-Efficient Fine-tuning with Prompt DEpenDent Representation MOdification](https://arxiv.org/abs/2409.17834)：在 Transformer 层内生成 prompt 条件化的表示修改向量，用于高效多租户 PEFT。
+- [Infering Alt-text For UI Icons With Large Language Models During App Development](https://arxiv.org/abs/2409.18060)：利用 class、resource ID、bounds、OCR 文本和周边层级等部分 UI 元数据为移动图标生成 alt text。
+- [EgoLM: Multi-Modal Language Model of Egocentric Motions](https://arxiv.org/abs/2409.18127)：把第一视角视频和传感器输入投射到 LLM latent space，用于联合运动跟踪、运动生成和语言理解。
+- [Data-Prep-Kit: getting your data ready for LLM application development](https://arxiv.org/abs/2409.18164)：提供可从本机扩展到集群的开源数据准备工具包，包含自然语言和代码数据转换模块。
+- [Policy Maps: Tools for Guiding the Unbounded Space of LLM Behaviors](https://arxiv.org/abs/2409.18203)：提出 policy maps 和 Policy Projector，用于交互式定义 LLM 行为区域和基于规则的输出干预。
+- [Do We Need Domain-Specific Embedding Models? An Empirical Investigation](https://arxiv.org/abs/2409.18511)：构建 FinMTEB，并检验金融专用 embedding 模型是否优于在广泛语料上训练的通用 embedding 模型。
+- [Emu3: Next-Token Prediction is All You Need](https://arxiv.org/abs/2409.18869)：把图像、文本和视频离散化到共享 token 空间，用单一 Transformer 做 next-token prediction 以兼顾感知和生成。
+- [Exploring LLM-Driven Explanations for Quantum Algorithms](https://arxiv.org/abs/2409.19028)：比较 GPT-3.5、Llama 2 和 TinyLlama 对量子算法的解释，并分析提示风格、一致性和改写既有描述的作用。
+- [HybridFlow: A Flexible and Efficient RLHF Framework](https://arxiv.org/abs/2409.19256)：结合单控制器和多控制器执行方式来表达 RLHF dataflow，降低分布式后训练中的调度开销。
+- [CLIP-MoE: Towards Building Mixture of Experts for CLIP with Diversified Multiplet Upcycling](https://arxiv.org/abs/2409.19291)：用 diversified multiplet upcycling 微调互补 CLIP 变体，并把它们合并为动态 CLIP-MoE。
+- [The Crucial Role of Samplers in Online Direct Preference Optimization](https://arxiv.org/abs/2409.19605)：分析不同采样策略下的 DPO 收敛性，并引入带 posterior 和 logit mixing 改进的 online sampler。
+- [Hyper-Connections](https://arxiv.org/abs/2409.19606)：以深度自适应 hyper-connections 替代残差连接，缓解 dense 与 sparse LLM 预训练中的梯度消失和表示坍塌。
+- [Hybrid Mamba for Few-Shot Segmentation](https://arxiv.org/abs/2409.19613)：设计 cross-Mamba support-query 融合，用线性复杂度替代 few-shot segmentation 中的二次 cross-attention。
+- [Balancing Cost and Effectiveness of Synthetic Data Generation Strategies for LLMs](https://arxiv.org/abs/2409.19759)：在 seed 数据和 query 预算约束下比较 answer augmentation、question rephrase 与 new-question synthesis 的微调效果。
+- [Calibrating Language Models with Adaptive Temperature Scaling](https://arxiv.org/abs/2409.19817)：根据 token 级特征预测 temperature 参数，修复 RLHF 后语言模型校准退化。
+- [RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models](https://arxiv.org/abs/2409.19886)：用双重对比损失训练 encoder-based LLM router，把查询分配给多个强模型中的合适模型。
+- [Scaling Optimal LR Across Token Horizons](https://arxiv.org/abs/2409.19913)：建立从短程 LLM 预训练实验迁移最优学习率到更长 token horizon 的 scaling law。
+- [GUNDAM: Aligning Large Language Models with Graph Understanding](https://arxiv.org/abs/2409.20053)：用强调拓扑而非文本节点属性的图理解任务对齐 LLM 的结构化图数据能力。
+- [VMAD: Visual-Enhanced Multimodal Large Language Model for Zero-Shot Anomaly Detection](https://arxiv.org/abs/2409.20146)：通过视觉增强把 MLLM 适配到工业异常检测，支持细粒度缺陷识别和开放式异常描述。
+- [Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers](https://arxiv.org/abs/2409.20537)：跨异构机器人本体预训练 HPT policy trunk，把不同 proprioceptive 与视觉输入 token 化到共享表示。
+- [MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning](https://arxiv.org/abs/2409.20566)：构建 MM1.5 dense 与 MoE MLLM，系统使用 OCR、合成 caption 和视觉指令数据混合，并扩展视频与移动 UI 变体。
+- [ACE: All-round Creator and Editor Following Instructions via Diffusion Transformer](https://arxiv.org/abs/2410.00086)：用 Long-context Condition Unit 和 diffusion transformer 训练统一多条件视觉创作与编辑任务。
+- [DreamStruct: Understanding Slides and User Interfaces via Synthetic Data Generation](https://arxiv.org/abs/2410.00201)：通过代码合成生成带标签的 slide 和 UI 数据集，减少元素识别、描述和内容分类的人类标注。
+- [Comprehensive Performance Modeling and System Design Insights for Foundation Models](https://arxiv.org/abs/2410.00273)：建模不同 Transformer 训练在并行策略、加速器容量、带宽和互连需求上的性能差异，覆盖 LLM 与科学基础模型工作负载。
+- [Ask, Pose, Unite: Scaling Data Acquisition for Close Interactions with Vision Language Models](https://arxiv.org/abs/2410.00309)：用 LVLM 生成 contact map 来构造伪真值人体 mesh pair，并训练面向近距离交互 HME 的 diffusion contact prior。
+- [Uncertainty-aware Reward Model: Teaching Reward Models to Know What is Unknown](https://arxiv.org/abs/2410.00847)：用概率价值头和集成分歧建模奖励不确定性，提升 RewardBench 表现，并让 best-of-n、迭代 DPO 和 PPO 对齐更可靠。
+- [MAP: Unleashing Hybrid Mamba-Transformer Vision Backbone’s Potential with Masked Autoregressive Pretraining](https://arxiv.org/abs/2410.00871)：提出 Masked Autoregressive Pretraining，把 MAE 式重建与自回归预测结合起来预训练混合 Mamba-Transformer 视觉骨干，并在 2D 与 3D 识别任务上优于其他预训练策略。
+- [Generative AI and Perceptual Harms: Who's Suspected of using LLMs?](https://arxiv.org/abs/2410.00906)：通过三组线上实验研究“被怀疑使用 LLM”带来的感知伤害，发现 AI 使用怀疑会降低写作质量评价和雇佣意愿。
+- [Approximately Aligned Decoding](https://arxiv.org/abs/2410.01103)：提出 AprAD，这一受 speculative decoding 启发的约束解码方法在输出分布扭曲与拒绝重采样成本之间折中，支持长文本的困难对齐约束。
+- [Softmax Is Not Enough (for Sharp Out-of-distribution)](https://arxiv.org/abs/2410.01104)：从理论上证明 softmax 电路在输入规模增长时难以稳定近似尖锐函数，并测试 adaptive temperature 作为提升推理期 sharp size generalization 的补丁。
+- [ConServe: Fine-Grained GPU Harvesting for LLM Online and Offline Co-Serving](https://arxiv.org/abs/2410.01228)：构建 ConServe，通过 token 级调度、layer-wise preemption 与增量 KV-cache 管理，在保证在线请求延迟的同时利用 GPU 空闲周期执行离线任务。
+- [HelpSteer2-Preference: Complementing Ratings with Preferences](https://arxiv.org/abs/2410.01257)：为 HelpSteer2 评分数据补充偏好标签和人工理由，对比 Bradley-Terry 与回归式奖励模型，并组合二者训练 Nemotron 奖励模型与指令模型。
+- [Speculative Coreset Selection for Task-Specific Fine-tuning](https://arxiv.org/abs/2410.01296)：提出 STAFF，用同家族小模型估计微调样本价值，再在目标 LLM 上验证重要区域，从而降低 task-specific coreset selection 的成本。
+- [The Labyrinth of Links: Navigating the Associative Maze of Multi-modal LLMs](https://arxiv.org/abs/2410.01417)：定义无需人工标注构建的 MLLM 联想任务，覆盖 single-step、synchronous 与 asynchronous association，并将开闭源模型与人类表现比较。
+- [DLP-LoRA: Efficient Task-Specific LoRA Fusion with a Dynamic, Lightweight Plugin for Large Language Models](https://arxiv.org/abs/2410.01497)：提出 DLP-LoRA，用约 5M 参数的 MLP 插件在句子级动态融合多个 LoRA，并以 top-p 路由提升复合任务适配效率。
+- [Fira: Can We Achieve Full-rank Training of LLMs Under Low-rank Constraint?](https://arxiv.org/abs/2410.01623)：提出 Fira，在优化器中保持低秩内存约束，同时通过 norm-based scaling 和 norm-growth limiter 近似 full-rank training。
+- [U-shaped and Inverted-U Scaling behind Emergent Abilities of Large Language Models](https://arxiv.org/abs/2410.01692)：用困难题的 U-shaped scaling 与简单题的 inverted-U 行为解释 emergent abilities，并用 Slice-and-Sandwich 预测能力涌现阈值。
+- [LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits](https://arxiv.org/abs/2410.01735)：LASeR 将奖励模型选择建模为 multi-armed bandit，在迭代训练中为每个样本选择合适 RM，提升推理、指令跟随与长上下文生成。
+- [Leopard: A Vision Language Model For Text-Rich Multi-Image Tasks](https://arxiv.org/abs/2410.01744)：提出 Leopard，面向文本密集多图任务构建约一百万条指令数据，并用自适应高分辨率多图编码处理幻灯片、文档和网页截图。
+- [Not All LLM Reasoners Are Created Equal](https://arxiv.org/abs/2410.01748)：用相互依赖的成对小学数学应用题衡量组合推理深度，展示第二题依赖第一题答案时模型会出现明显 reasoning gap。
+- [Quantifying Generalization Complexity for Large Language Models](https://arxiv.org/abs/2410.01769)：提出 Scylla 动态评测框架，用分布内与分布偏移任务拆分记忆和泛化，量化 LLM generalization complexity。
+- [Plug-and-Play Controllable Generation for Discrete Masked Models](https://arxiv.org/abs/2410.02143)：用重要性采样控制离散 masked model 生成，不需要任务微调、梯度信息或条件 score 训练。
+- [EmbedLLM: Learning Compact Representations of Large Language Models](https://arxiv.org/abs/2410.02223)：通过编码器-解码器学习 Hugging Face LLM 的紧凑向量表示，用于模型路由和无需反复推理的 benchmark 表现预测。
+- [Theoretical Insights into Fine-Tuning Attention Mechanism: Generalization and Optimization](https://arxiv.org/abs/2410.02247)：分析注意力微调机制，发现微调 value 矩阵通常比 key 矩阵更关键，并为 query、key、value 设置定制学习率以改善收敛。
+- [Encryption-Friendly LLM Architecture](https://arxiv.org/abs/2410.02486)：结合 LoRA 微调和 Gaussian kernel 改造 Transformer 组件，使其适配同态加密下的私有化适配，并报告 6.94 倍微调和 2.3 倍推理加速。
+- [GUD: Generation with Unified Diffusion](https://arxiv.org/abs/2410.02667)：统一扩散模型在表示基、先验协方差和分量级噪声调度上的设计选择，并通过 soft-conditioning 模型连接扩散生成与自回归生成。
+- [FAN: Fourier Analysis Networks](https://arxiv.org/abs/2410.02675)：把 Fourier principle 嵌入神经层构建 Fourier Analysis Networks，在保留类似 MLP 的通用建模能力同时增强周期性建模。
+- [Selective Attention Improves Transformer](https://arxiv.org/abs/2410.02703)：提出无需额外参数的 selective attention，降低无关上下文 token 的注意力权重，在改善语言建模的同时压缩长上下文注意力内存。
+- [LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations](https://arxiv.org/abs/2410.02707)：发现真实性信号集中在特定内部 token，说明检测器并不具备通用跨数据集泛化，并能从 LLM 表示预测可能的错误类型。
+- [Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge](https://arxiv.org/abs/2410.02736)：量化 LLM-as-a-judge 中长度、位置和偏好等偏置，说明 judge model 可能扭曲基准评测和监督奖励信号。
+- [Revisit Large-Scale Image-Caption Data in Pre-training Multimodal Foundation Models](https://arxiv.org/abs/2410.02740)：重新审视图文预训练数据，区分 caption rewriting 与 filtering 的作用，分析 caption 质量和多样性如何影响多模态基础模型表现。
+- [Neutral residues: revisiting adapters for model extension](https://arxiv.org/abs/2410.02744)：重新设计 adapter，使新增残差块在原始领域输出接近零，从而在学习新语言时尽量保留英语能力。
+- [Contrastive Localized Language-Image Pre-Training](https://arxiv.org/abs/2410.02746)：提出 CoLLIP，用 localized language-image pretraining 将区域级视觉证据与文本对齐，而不只依赖全局图文对比样本。
+- [Theoretically Grounded Framework for LLM Watermarking: A Distribution-Adaptive Approach](https://arxiv.org/abs/2410.02890)：在误报率和文本失真约束下联合优化水印方案与检测器，推导分布自适应水印策略。
+- [Leveraging Model Guidance to Extract Training Data from Personalized Diffusion Models](https://arxiv.org/abs/2410.03039)：FineXtract 通过外推个性化扩散模型检查点恢复可能的微调图像，暴露数据泄漏风险。
+- [CommonIT: Commonality-Aware Instruction Tuning for Large Language Models via Data Partitions](https://arxiv.org/abs/2410.03077)：CommonIT 按数据 commonality 划分指令样本，在共享样本与专门样本之间采样，避免把所有 prompt 视作同等有用。
+- [Scaling Parameter-Constrained Language Models with Quality Data](https://arxiv.org/abs/2410.03083)：研究参数受限语言模型，表明在模型规模固定时，高质量数据能够恢复部分 scaling 收益，并通过受控预训练实验验证。
+- [ARB-LLM: Alternating Refined Binarizations for Large Language Models](https://arxiv.org/abs/2410.03129)：提出 1-bit 后训练量化配方，结合 alternating refined binarization、校准感知变体和列组 bitmap，以降低 LLM 权重量化误差。
+- [Surgical, Cheap, and Flexible: Mitigating False Refusal in Language Models via Single Vector Ablation](https://arxiv.org/abs/2410.03415)：从语言模型激活中提取并消融 false-refusal 方向，减少对安全请求的误拒，同时保持安全性和通用能力。
+- [Steering Large Language Models between Code Execution and Textual Reasoning](https://arxiv.org/abs/2410.03524)：寻找可在代码执行与文本推理之间切换 LLM 行为的 steering vectors，为模型何时外部化计算提供 activation-level 控制。
+- [Understanding Large Language Models in Your Pockets: Performance Study on COTS Mobile Devices](https://arxiv.org/abs/2410.03613)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Unraveling Cross-Modality Knowledge Conflicts in Large Vision-Language Models](https://arxiv.org/abs/2410.03659)：定义 LVLM 中的跨模态参数化知识冲突，检测视觉与文本答案不一致，并用动态对比解码或提示方法缓解。
+- [Teuken-7B-Base & Teuken-7B-Instruct: Towards European LLMs](https://arxiv.org/abs/2410.03730)：报告 Teuken-7B，这是一组从头训练的欧洲多语种 LLM，使用更均衡的欧洲语言数据并进行指令微调。
+- [Unsupervised Human Preference Learning](https://arxiv.org/abs/2410.03731)：用小型本地偏好智能体模型生成自然语言规则，驱动更大的冻结基础模型贴合单个用户偏好。
+- [Khattat: Enhancing Readability and Concept Representation of Semantic Typography](https://arxiv.org/abs/2410.03748)：补充与通用基础模型方法相关的模型侧方法。
+- [Denoising with a Joint-Embedding Predictive Architecture](https://arxiv.org/abs/2410.03755)：把 denoising 引入 joint-embedding predictive architecture，训练表示从受扰输入恢复干净 latent target，而不是直接重建像素或 token。
+- [Hidden in Plain Text: Emergence & Mitigation of Steganographic Collusion in LLMs](https://arxiv.org/abs/2410.03768)：用基于梯度和上下文内强化学习诱发 LLM 语言隐写，说明错误奖励激励可产生隐藏合谋，并且普通改写监督难以完全阻断。
+- [Determine-Then-Ensemble: Necessity of Top-k Union for Large Language Model Ensembling](https://arxiv.org/abs/2410.03777)：指出 LLM ensemble 需要先合并各模型 top-k token 再重排序，避免单个模型在集成解码时隐藏有用候选。
+- [DaWin: Training-free Dynamic Weight Interpolation for Robust Adaptation](https://arxiv.org/abs/2410.03782)：提出 DaWin，这一免训练适配方法在多个领域专用 checkpoint 之间动态插值权重，以增强测试时迁移鲁棒性。
+- [GraphRouter: A Graph-based Router for LLM Selections](https://arxiv.org/abs/2410.03834)：在任务、查询和模型之间构建图结构来路由 LLM 选择，使模型选择能泛化到新任务并平衡质量与调用成本。
+- [Can Language Models Reason about Individualistic Human Values and Preferences?](https://arxiv.org/abs/2410.03868)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Scaling Graph Neural Networks to Large Proteins](https://arxiv.org/abs/2410.03921)：优化面向大蛋白的 GNN force-field 模型和 benchmark，提升蛋白尺度图上的分子动力学能量与力预测效率。
+- [LLM-TOPLA: Efficient LLM Ensemble by Maximising Diversity](https://arxiv.org/abs/2410.03953)：用 focal-diversity 指标剪枝 LLM ensemble，并学习消解输出不一致，使更小的子集成在约束求解和生成任务上取得更好表现。
+- [LoRTA: Low Rank Tensor Adaptation of Large Language Models](https://arxiv.org/abs/2410.04060)：LoRTA 用低秩张量适配替代独立 LoRA 矩阵，在层与任务之间共享适配因子以提升参数效率。
+- [Toxic Subword Pruning for Dialogue Response Generation on Large Language Models](https://arxiv.org/abs/2410.04155)：从已训练 LLM 的 BPE tokenizer 中剪除毒性词包含的 subword，在不更新权重的情况下减少毒性对话生成，并可能提升回复多样性。
+- [Learning on LoRAs: GL-Equivariant Processing of Low-Rank Weight Spaces for Large Finetuned Models](https://arxiv.org/abs/2410.04207)：把 LoRA 权重本身作为下游预测或编辑生成的输入，并在低秩权重空间上设计对称性感知的不变与等变模型。
+- [QKAN: quantum Kolmogorov-Arnold networks with applications in machine learning and multivariate state preparation](https://arxiv.org/abs/2410.04435)：定义带递归 block encoding 的 quantum Kolmogorov-Arnold networks，并用于量子学习模型和多变量量子态制备。
+- [TimeBridge: Non-Stationarity Matters for Long-term Time Series Forecasting](https://arxiv.org/abs/2410.04442)：提出 TimeBridge，通过多尺度 temporal pattern bridging 显式建模非平稳性，用于长周期时间序列预测。
+- [G\"odel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](https://arxiv.org/abs/2410.04444)：构建可自指修改自身设计的智能体框架，在代理设计空间中搜索并递归改进，而不局限于人工固定流水线。
+- [Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective](https://arxiv.org/abs/2410.04466)：从硬件视角综述 LLM 推理加速，按计算、内存、通信、量化和 serving 系统整理瓶颈与优化路线。
+- [SITCOM: Step-wise Triple-Consistent Diffusion Sampling for Inverse Problems](https://arxiv.org/abs/2410.04479)：用逐步三重一致采样求解扩散逆问题，在每个反向步骤同时约束测量一致性、前向扩散一致性和后向扩散一致性。
+- [Upsample or Upweight? Balanced Training on Heavily Imbalanced Datasets](https://arxiv.org/abs/2410.04579)：分析低资源数据均衡，证明上采样和损失加权在随机梯度下会分化，并为多语言 LM 训练给出按场景选择的建议。
+- [The LLM Effect: Are Humans Truly Using LLMs, or Are They Being Influenced By Them Instead?](https://arxiv.org/abs/2410.04699)：通过人类实验区分真实 LLM 使用与社会影响，分析人们判断文本是否由 AI 辅助时产生的 LLM Effect。
+- [Strong Model Collapse](https://arxiv.org/abs/2410.04840)：形式化 strong model collapse，说明在更强假设下反复用模型生成数据训练会把生成模型推向退化分布。
+- [VLM2Vec: Training Vision-Language Models for Massive Multimodal Embedding Tasks](https://arxiv.org/abs/2410.05160)：训练 VLM2Vec，把视觉语言模型改造成通用多模态嵌入模型，服务图文、文图和交错多模态检索任务。
+- [Warmup-Stable-Decay Learning Rates](https://arxiv.org/abs/2410.05192)：用 river-valley loss-landscape 视角解释 warmup-stable-decay 学习率调度。
+- [Cookbook: A framework for improving LLM generative abilities via programmatic data generating templates](https://arxiv.org/abs/2410.05224)：提出 Cookbook，用程序化数据生成模板构造可控训练数据，从数据配方层面提升 LLM 生成能力。
+- [Falcon Mamba: The First Competitive Attention-free 7B Language Model](https://arxiv.org/abs/2410.05355)：报告 Falcon Mamba，这是一种基于 Mamba 序列建模的 attention-free 7B 语言模型，在长上下文推理上与 Transformer LLM 竞争。
+- [Model-GLUE: Democratized LLM Scaling for A Large Model Zoo in the Wild](https://arxiv.org/abs/2410.05357)：在异构 LLM 模型库上比较模型合并、MoE 与 stacking，并据此提出从已有模型扩展的聚类与聚合指南。
+- [Can LLMs Understand Time Series Anomalies?](https://arxiv.org/abs/2410.05440)：系统测试 LLM 在零样本和少样本时间序列异常检测中的假设，发现图像化表示通常比文本化序列更易被模型理解。
+- [Adaptation Odyssey in LLMs: Why Does Additional Pretraining Sometimes Fail to Improve?](https://arxiv.org/abs/2410.05581)：研究 additional pretraining 有时失效的原因，将适配问题追踪到数据混合、优化过程和能力干扰。
+- [Scaling Laws Across Model Architectures: A Comparative Analysis of Dense and MoE Models in Large Language Models](https://arxiv.org/abs/2410.05661)：比较 dense 与 MoE LLM 的扩展规律，发现 power-law 损失缩放可迁移到 MoE，且 MoE 在相同训练算力下泛化更好。
+- [PostCast: Generalizable Postprocessing for Precipitation Nowcasting via Unsupervised Blurriness Modeling](https://arxiv.org/abs/2410.05805)：提出 PostCast，用无监督 blurriness modeling 对降水临近预报结果做后处理，可跨预测骨干锐化输出。
+- [Time Transfer: On Optimal Learning Rate and Batch Size In The Infinite Data Limit](https://arxiv.org/abs/2410.05838)：研究无限数据极限下学习率与 batch size 的缩放，说明最优 batch size 会跟随增长的 critical batch size，并可在 muP 缩放下迁移。
+- [EMMA: Empowering Multi-modal Mamba with Structural and Hierarchical Alignment](https://arxiv.org/abs/2410.05938)：EMMA 为多模态 Mamba 加入结构化与层级对齐，在 state-space 架构中改进跨模态表示学习。
+- [PDF-WuKong: A Large Multimodal Model for Efficient Long PDF Reading with End-to-End Sparse Sampling](https://arxiv.org/abs/2410.05970)：构建长 PDF MLLM，用稀疏采样器在文本和图像表示中选择与问题相关的段落或图表来进行文档问答。
+- [Aria: An Open Multimodal Native Mixture-of-Experts Model](https://arxiv.org/abs/2410.05993)：介绍开放原生多模态 MoE 模型，采用四阶段训练逐步获得语言、多模态、长上下文和指令跟随能力。
+- [Training-free LLM-generated Text Detection by Mining Token Probability Sequences](https://arxiv.org/abs/2410.06072)：提出无需训练的 Lastde 检测器，挖掘 token 概率序列的局部与全局时间序列统计，以跨领域、跨模型识别 LLM 生成文本。
+- [Treat Visual Tokens as Text? But Your MLLM Only Needs Fewer Efforts to See](https://arxiv.org/abs/2410.06169)：用邻域感知视觉 token 注意力、非活跃注意力头剪枝和选择性层丢弃精简 LLaVA 视觉计算，降低 MLLM 推理成本。
+- [RelitLRM: Generative Relightable Radiance for Large Reconstruction Models](https://arxiv.org/abs/2410.06231)：提出 RelitLRM，用 large reconstruction model 生成可重打光 radiance fields，使重建的 3D 资产能在新光照下渲染。
+- [MC-MoE: Mixture Compressor for Mixture-of-Experts LLMs Gains More](https://arxiv.org/abs/2410.06270)：结合专家重要性、token 重要性和预加载混合精度量化，在无需重训练的情况下压缩 MoE LLM。
+- [Sketch to Adapt: Fine-Tunable Sketches for Efficient LLM Adaptation](https://arxiv.org/abs/2410.06364)：通过可微调的压缩权重 sketch 适配 LLM，避免低秩 adapter 假设，并提升内存与训练效率。
+- [TorchTitan: One-stop PyTorch native solution for production ready LLM pre-training](https://arxiv.org/abs/2410.06511)：提供 PyTorch-native 分布式预训练栈，用于在数千加速器上组合和比较生产级 LLM 训练技术。
+- [MotionRL: Align Text-to-Motion Generation to Human Preferences with Multi-Reward Reinforcement Learning](https://arxiv.org/abs/2410.06513)：用多奖励强化学习微调 text-to-motion 生成器，同时优化文本符合度、动作质量和人类偏好目标，并提供可控的 Pareto 权衡。
+- [Rodimus*: Breaking the Accuracy-Efficiency Trade-Off with Efficient Attentions](https://arxiv.org/abs/2410.06577)：提出带数据依赖 tempered selection 的 Rodimus 循环线性注意力，并结合 sliding-window shared-key 混合结构，以降低单 token 内存且保持 LLM 精度。
+- [Learning Evolving Tools for Large Language Models](https://arxiv.org/abs/2410.06617)：训练 LLM 学习 evolving tools，使工具 API 或任务需求变化时模型能更新工具表示和使用策略。
+- [Towards Universality: Studying Mechanistic Similarity Across Language Model Architectures](https://arxiv.org/abs/2410.06672)：比较不同语言模型架构中的机制特征，检验 circuits 与表征是跨架构通用还是依赖特定架构。
+- [Break the Visual Perception: Adversarial Attacks Targeting Encoded Visual Tokens of Large Vision-Language Models](https://arxiv.org/abs/2410.06699)：通过扰乱特征表示、token 关系和语义来攻击 LVLM 的编码视觉 token，生成可在共享视觉编码器之间迁移的对抗图像。
+- [MatMamba: A Matryoshka State Space Model](https://arxiv.org/abs/2410.06718)：提出 MatMamba，这一 Matryoshka state-space model 通过嵌套通道支持弹性子模型抽取，同时保持 Mamba 式序列效率。
+- [Compositional Entailment Learning for Hyperbolic Vision-Language Models](https://arxiv.org/abs/2410.06912)：在 hyperbolic vision-language models 中使用 compositional entailment learning，通过层级蕴含关系对齐图文表示。
+- [Self-Boosting Large Language Models with Synthetic Preference Data](https://arxiv.org/abs/2410.06961)：用自生成提示和逐步改进的回复构造合成偏好数据，使模型无需人工偏好标注即可迭代自对齐。
+- [Data Selection via Optimal Control for Language Models](https://arxiv.org/abs/2410.07064)：把 LM 预训练数据选择表述为最优控制问题，并近似求解 Pontryagin 条件来选择提升缩放效率的 CommonCrawl 数据。
+- [Towards Interpreting Visual Information Processing in Vision-Language Models](https://arxiv.org/abs/2410.07149)：在 LLaVA 中用 token 消融和词表空间分析，展示视觉 token 的物体信息如何变得可解释并影响最终 token 预测。
+- [Deciphering Cross-Modal Alignment in Large Vision-Language Models with Modality Integration Rate](https://arxiv.org/abs/2410.07167)：定义 Modality Integration Rate 作为 LVLM 监督微调前的预训练质量指标，把跨模态分布距离与后续 benchmark 表现联系起来。
+- [One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation](https://arxiv.org/abs/2410.07170)：提出 EVA，用 explained-variance directions 初始化参数高效微调更新，使 adapter 从高影响表示子空间开始训练。
+- [IterGen: Iterative Semantic-aware Structured LLM Generation with Backtracking](https://arxiv.org/abs/2410.07295)：在语法约束结构化生成中加入前进和回退操作，使用户能修正并细化已经生成的 LLM 局部输出。
+- [Rectified Diffusion: Straightness Is Not Your Need in Rectified Flow](https://arxiv.org/abs/2410.07303)：认为 rectified flow 的收益主要来自用匹配噪声-样本对重训练，并将 straightness 假设放宽到弯曲的一阶近似 ODE 路径。
+- [MoE++: Accelerating Mixture-of-Experts Methods with Zero-Computation Experts](https://arxiv.org/abs/2410.07348)：MoE++ 加入 zero-computation experts，让路由可选择廉价的 identity-like 路径，在保留混合容量的同时减少激活专家计算。
+- [Upcycling Large Language Models into Mixture of Experts](https://arxiv.org/abs/2410.07524)：研究十亿参数级 dense-to-MoE upcycling，提出 virtual-group 初始化、权重缩放、softmax-then-topK 路由和细粒度专家。
+- [Detecting Training Data of Large Language Models via Expectation Maximization](https://arxiv.org/abs/2410.07582)：提出 EM-MIA，用 expectation-maximization 估计样本是否出现在 LLM 训练数据中，处理训练分布部分重叠的场景。
+- [A Unified Debiasing Approach for Vision-Language Models across Modalities and Tasks](https://arxiv.org/abs/2410.07593)：提出 SFID，通过特征剪枝和低置信度补全，在无需重训的情况下缓解 VLM 在分类、检索、caption 与生成任务中的偏置。
+- [Enhancing Zeroth-order Fine-tuning for Language Models with Low-rank Structures](https://arxiv.org/abs/2410.07698)：用低秩梯度估计器改进 zeroth-order LLM 微调，在无需保存反向传播激活的情况下捕获 PEFT 梯度结构。
+- [SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture](https://arxiv.org/abs/2410.07739)：将 Soft LoRA adapter 与 identity-mixture 路由结合，使微调 LLM 学习下游任务的同时抑制通用能力遗忘。
+- [Uncovering Overfitting in Large Language Model Editing](https://arxiv.org/abs/2410.07819)：识别 LLM 知识编辑中的 editing overfit，发布 EVOKE 诊断，并用 Learn the Inference 约束改善多跳编辑泛化。
+- [LLM Cascade with Multi-Objective Optimal Consideration](https://arxiv.org/abs/2410.08014)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Composite Learning Units: Generalized Learning Beyond Parameter Updates to Transform LLMs into Adaptive Reasoners](https://arxiv.org/abs/2410.08037)：提出 Composite Learning Units，为 LLM reasoner 挂接持续演化的通用与 prompt-specific knowledge spaces，使反馈能在不改参数的情况下更新行为。
+- [Reward-Augmented Data Enhances Direct Preference Alignment of LLMs](https://arxiv.org/abs/2410.08067)：让偏好策略条件化于奖励分数，而不只学习 chosen-rejected 配对，用 reward-augmented data 降低直接对齐中的过拟合。
+- [Packing Analysis: Packing Is More Appropriate for Large Models or Datasets in Supervised Fine-tuning](https://arxiv.org/abs/2410.08081)：在 69K 到 1.2M 样本、8B 到 70B 模型范围内比较 SFT 的 padding 与 packing，分析效率、上下文干扰和模型规模影响。
+- [Insight Over Sight: Exploring the Vision-Knowledge Conflicts in Multimodal LLMs](https://arxiv.org/abs/2410.08145)：构建 MLLM 视觉-知识冲突诊断框架，发现模型过度依赖参数化常识，并测试 focus-on-vision prompting 的缓解效果。
+- [Scaling Laws For Diffusion Transformers](https://arxiv.org/abs/2410.08184)：推导 diffusion Transformers 的 compute scaling laws，将预训练损失、模型规模、数据需求与 FID 等文生图质量指标联系起来。
+- [Mono-InternVL: Pushing the Boundaries of Monolithic Multimodal Large Language Models with Endogenous Visual Pre-training](https://arxiv.org/abs/2410.08202)：提出 Mono-InternVL，用 visual experts 和 Endogenous Visual Pre-training 构建 monolithic MLLM，在保持多模态表现的同时降低 first-token latency。
+- [Koala-36M : A Large-Scale Video Dataset Improving Consistency between Fine-Grained Conditions and Video Content](https://arxiv.org/abs/2410.08260)：发布 Koala-36M 视频生成数据管线，包含转场检测、长结构化 caption 和 Video Training Suitability Score 过滤。
+- [Scaling Laws for Predicting Downstream Performance in LLMs](https://arxiv.org/abs/2410.08527)：先从 FLOPs 预测预训练损失，再由损失预测下游任务表现，并把方法扩展到多来源数据混合。
+- [Baichuan-Omni Technical Report](https://arxiv.org/abs/2410.08565)：报告 Baichuan-Omni，一个 7B 开放多模态模型，通过分阶段对齐和多任务微调处理图像、视频、音频与文本输入。
+- [Retraining-free Merging of Sparse MoE via Hierarchical Clustering](https://arxiv.org/abs/2410.08589)：提出 HC-SMoE，按专家输出行为做层级聚类，在无需重训的情况下合并 sparse-MoE 专家以降低内存并保持 zero-shot 性能。
+- [Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization](https://arxiv.org/abs/2410.08847)：指出 DPO 可能把概率质量从偏好拒答转移到有害替代回答，并用 CHES 分数识别需要过滤的高风险偏好样本。
+- [SimpleStrat: Diversifying Language Model Generation with Stratification](https://arxiv.org/abs/2410.09038)：提出 SimpleStrat，让 LLM 先划分答案空间 strata，再随机选择 strata 内采样，以在不升高 temperature 的情况下增加生成多样性。
+- [Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy](https://arxiv.org/abs/2410.09102)：引入 Instructional Segment Embeddings，直接在 LLM 输入中编码指令层级，在 structured-query 与 instruction-hierarchy 安全基准上提升鲁棒性。
+- [NextLocLLM: Location Semantics Modeling and Coordinate-Based Next Location Prediction with LLMs](https://arxiv.org/abs/2410.09129)：把下一位置预测重写为坐标回归，结合 LLM 提取的 POI 语义、时空轨迹表示和预测后检索。
+- [ACER: Automatic Language Model Context Extension via Retrieval](https://arxiv.org/abs/2410.09141)：用短上下文 LM 和检索式排序阶段合成任务特定长上下文数据，再微调模型以超过通用长上下文基线。
+- [Adaptive Compliance Policy: Learning Approximate Compliance for Diffusion Guided Control](https://arxiv.org/abs/2410.09309)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [Mamba4Cast: Efficient Zero-Shot Time Series Forecasting with State Space Models](https://arxiv.org/abs/2410.09385)：用合成数据训练用于零样本时间序列预测的 Mamba 基础模型，以一次前向生成完整预测窗口并降低推理时间。
+- [Exact Aggregation for Federated and Efficient Fine-Tuning of Foundation Models](https://arxiv.org/abs/2410.09432)：在联邦 LoRA 聚合中加入残差误差跟踪，使分布式 adapter 更新以较小通信开销匹配精确集中式更新。
+- [MTL-LoRA: Low-Rank Adaptation for Multi-Task Learning](https://arxiv.org/abs/2410.09437)：为 LoRA 增加任务自适应参数，分离任务特定信息与共享信息，从而改进参数高效多任务适配。
+- [Synthetic Knowledge Ingestion: Towards Knowledge Refinement and Injection for Enhancing Large Language Models](https://arxiv.org/abs/2410.09629)：合成细粒度、交错和增强的知识表示，再通过 RAG、监督微调或继续预训练注入模型，以改进事实问答。
+- [Adapters for Altering LLM Vocabularies: What Languages Benefit the Most?](https://arxiv.org/abs/2410.09644)：学习 adapter 模块，把新词表 embedding 表示为已有 embedding 的线性组合，在不依赖外部资源的情况下改进多语言 tokenization。
+- [Taming Overconfidence in LLMs: Reward Calibration in RLHF](https://arxiv.org/abs/2410.09724)：用显式置信度分数或奖励分数校正来校准 PPO 奖励建模，减少语言化过度自信并保持任务表现。
+- [MMCOMPOSITION: Revisiting the Compositionality of Pre-trained Vision-Language Models](https://arxiv.org/abs/2410.09733)：在对象、关系和属性之外评测 VLM 组合性，加入物体交互、计数和复杂图文组合等更深层测试。
+- [ChroKnowledge: Unveiling Chronological Knowledge of Language Models in Multiple Domains](https://arxiv.org/abs/2410.09870)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Training-Free Adaptive Diffusion with Bounded Difference Approximation Strategy](https://arxiv.org/abs/2410.09873)：用三阶 latent difference 判断并跳过稳定去噪步骤，复用先前预测来加速图像和视频扩散且不损失质量。
+- [RMB: Comprehensively Benchmarking Reward Models in LLM Alignment](https://arxiv.org/abs/2410.09893)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [TULIP: Token-length Upgraded CLIP](https://arxiv.org/abs/2410.10034)：通过蒸馏到相对位置编码并学习长 caption 与图像对齐，将类 CLIP 文本编码器扩展到 77 token 之外。
+- [A Multi-LLM Orchestration Engine for Personalized, Context-Rich Assistance](https://arxiv.org/abs/2410.10039)：把多个 LLM 与时序图数据库、向量库结合，维护私有用户上下文并降低长期个性化助手的幻觉。
+- [Are KAN Effective for Identifying and Tracking Concept Drift in Time Series?](https://arxiv.org/abs/2410.10041)：构建基于 KAN 的时间序列模型，结合 patch normalization、时间表示学习和概念动态来识别与跟踪 concept drift。
+- [Learning Linear Attention in Polynomial Time](https://arxiv.org/abs/2410.10101)：证明单层 linear-attention Transformer 可通过映射到扩展 RKHS 中的线性预测器实现强 agnostic PAC 可学习。
+- [LoLCATs: On Low-Rank Linearizing of Large Language Models](https://arxiv.org/abs/2410.10254)：通过匹配 softmax attention 输出并用 LoRA 恢复质量来线性化预训练 LLM 注意力，降低转换所需算力和内存。
+- [A Unified Approach to Routing and Cascading for LLMs](https://arxiv.org/abs/2410.10347)：推导 LLM 选择中的最优 routing 与 cascading 策略，并将二者结合为 cascade routing 以优化成本与性能权衡。
+- [Free Video-LLM: Prompt-guided Visual Perception for Efficient Training-free Video LLMs](https://arxiv.org/abs/2410.10441)：用 prompt-guided visual perception 将图像 LLM 免训练适配到视频任务，并减少视频推理中的帧 token 开销。
+- [TWIST & SCOUT: Grounding Multimodal LLM-Experts by Forget-Free Tuning](https://arxiv.org/abs/2410.10491)：为 MLLM 加入 twin-expert stepwise tuning，在保留冻结图文能力的同时从合成推理监督中学习视觉 grounding。
+- [Customize Your Visual Autoregressive Recipe with Set Autoregressive Modeling](https://arxiv.org/abs/2410.10511)：用 fully masked Transformer 把自回归图像生成推广为 next-set prediction，在 raster AR 与 masked AR 之间插值以加快采样。
+- [Thinking LLMs: General Instruction Following with Thought Generation](https://arxiv.org/abs/2410.10630)：通过迭代搜索和 judge 打分优化，让已有 LLM 在回答前生成显式思考过程，且不需要额外人工 thought 标注。
+- [Deep Compression Autoencoder for Efficient High-Resolution Diffusion Models](https://arxiv.org/abs/2410.10733)：提出 DC-AE，用 residual autoencoding 和解耦高分辨率适配支持高空间压缩率的扩散模型自编码器。
+- [From Anchors to Answers: A Novel Node Tokenizer for Integrating Graph Structure into Large Language Models](https://arxiv.org/abs/2410.10743)：提出 NT-LLM，用 anchor-based graph tokenizer 把图结构注入 LLM 输入，避免冗长文本序列化和重型 GNN tokenizer。
+- [When Attention Sink Emerges in Language Models: An Empirical View](https://arxiv.org/abs/2410.10781)：追踪 LM 预训练中 attention sink 的出现过程，分析优化、数据分布、损失函数和架构如何影响首 token 注意力集中。
+- [MMAR: Towards Lossless Multi-Modal Auto-Regressive Probabilistic Modeling](https://arxiv.org/abs/2410.10798)：对连续图像特征做自回归建模，在多模态理解和生成中保留视觉信息，而不是通过离散化或去噪步骤损失细节。
+- [Mix Data or Merge Models? Optimizing for Diverse Multi-Task Learning](https://arxiv.org/abs/2410.10801)：比较数据混合与模型合并在多语言安全和通用任务上的效果，发现按目标或语言合并模型优于简单混合训练数据。
+- [Deep Linear Probe Generators for Weight Space Learning](https://arxiv.org/abs/2410.10811)：用学习得到的 probes 和 Deep Linear Probe Generators 以 probe 响应表示神经网络，避免直接处理高维权重空间。
+- [Duo-LLM: A Framework for Studying Adaptive Computation in Large Language Models](https://arxiv.org/abs/2410.10846)：补充与通用基础模型方法相关的模型侧方法。
+- [On the Reliability of Large Language Models to Misinformed and Demographically-Informed Prompts](https://arxiv.org/abs/2410.10850)：审计聊天模型面对气候变化和心理健康错误信息及人口属性提示时的事实遵循、偏见和错误信息传播。
+- [Core Knowledge Deficits in Multi-Modal Language Models](https://arxiv.org/abs/2410.10855)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [What makes your model a low-empathy or warmth person: Exploring the Origins of Personality in LLMs](https://arxiv.org/abs/2410.10863)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [PortLLM: Personalizing Evolving Large Language Models with Training-Free and Portable Model Patches](https://arxiv.org/abs/2410.10870)：用免训练、可迁移的 model patches 个性化持续更新的 LLM，使下游用户能在基础模型版本演进后保留领域适配。
+- [Liger Kernel: Efficient Triton Kernels for LLM Training](https://arxiv.org/abs/2410.10989)：发布面向 LLM 训练的 Triton kernels，通过算子融合和输入分块提升训练吞吐并降低 GPU 内存占用。
+- [Varying Shades of Wrong: Aligning LLMs with Wrong Answers Only](https://arxiv.org/abs/2410.11055)：用 self-consistency、token probability 和 LLM judge 合成“错中有别”的偏好，再用偏好优化从不完美答案中学习。
+- [Simplifying, Stabilizing and Scaling Continuous-Time Consistency Models](https://arxiv.org/abs/2410.11081)：用统一参数化框架和简化目标稳定 continuous-time consistency model 训练，以支持快速扩散式采样。
+- [Locality Alignment Improves Vision-Language Models](https://arxiv.org/abs/2410.11087)：通过对齐视觉 backbone 的局部位置类别内容与全局图像语义，改善 VLM 的空间推理错误。
+- [Free Hunch: Denoiser Covariance Estimation for Diffusion Models Without Extra Costs](https://arxiv.org/abs/2410.11149)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [A Unified Framework With Multimodal Fine-Tuning for Remote Sensing Semantic Segmentation](https://arxiv.org/abs/2410.11160)：在视觉基础模型上加入 MFNet 多模态微调层，用于融合多源遥感传感器并执行语义分割。
+- [A CLIP-Powered Framework for Robust and Generalizable Data Selection](https://arxiv.org/abs/2410.11215)：用 CLIP 多模态信号为训练样本打分，使数据选择比单模态准则更稳健地剔除噪声和冗余样本。
+- [Bypassing the Exponential Dependency: Looped Transformers Efficiently Learn In-context by Multi-step Gradient Descent](https://arxiv.org/abs/2410.11268)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Process Reward Model with Q-Value Rankings](https://arxiv.org/abs/2410.11287)：提出 Process Q-value Model，用 Q-value 式依赖关系排序中间推理步骤，而不是独立交叉熵判定每一步。
+- [QSpec: Speculative Decoding with Complementary Quantization Schemes](https://arxiv.org/abs/2410.11305)：在 speculative decoding 中结合低精度激活-权重量化草稿模型与较高精度 weight-only 验证模型。
+- [Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling](https://arxiv.org/abs/2410.11325)：通过交错 teacher 与 student 采样连接监督蒸馏和 on-policy 蒸馏，降低师生分布不匹配。
+- [Survey and Evaluation of Converging Architecture in LLMs Based on Footsteps of Operations](https://arxiv.org/abs/2410.11381)：提出其他模型侧方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [A Simple Approach to Unifying Diffusion-based Conditional Generation](https://arxiv.org/abs/2410.11439)：学习相关图像-条件对的联合扩散分布，用一个框架处理深度、边缘等条件生成控制任务。
+- [On Championing Foundation Models: From Explainability to Interpretability](https://arxiv.org/abs/2410.11444)：综述基础模型从事后可解释性转向更忠实机制可解释性的路线，并讨论资源开销权衡。
+- [Meta-DT: Offline Meta-RL as Conditional Sequence Modeling with World Model Disentanglement](https://arxiv.org/abs/2410.11448)：把离线 meta-RL 表述为带解耦世界模型的条件序列建模，使 decision transformer 能泛化到未见任务。
+- [State-space models can learn in-context by gradient descent](https://arxiv.org/abs/2410.11687)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [It’s Just Another Day: Unique Video Captioning by Discriminitive Prompting](https://arxiv.org/abs/2410.11702)：定义 unique video captioning，并用 discriminative prompting 为重复片段生成可区分描述，以改善文本检索视频。
+- [Personas with Attitudes: Controlling LLMs for Diverse Data Annotation](https://arxiv.org/abs/2410.11745)：在提示中注入 persona 描述，使 LLM 在主观 NLP 标注任务中产生更有多样性、可控且可复现的标注。
+- [Latent Action Pretraining from Videos](https://arxiv.org/abs/2410.11758)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Language Models Encode Numbers Using Digit Representations in Base 10](https://arxiv.org/abs/2410.11781)：通过 probing 和因果干预说明 LLM 以逐位十进制循环表示编码数字，而不是编码标量数值。
+- [MMFuser: Multimodal Multi-Layer Feature Fuser for Fine-Grained Vision-Language Understanding](https://arxiv.org/abs/2410.11829)：通过 query 驱动的多层聚合融合 ViT 浅层与深层特征，使 MLLM 无需多个视觉编码器也能保留细粒度视觉细节。
+- [Contrastive Touch-to-Touch Pretraining](https://arxiv.org/abs/2410.11834)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [GaVaMoE: Gaussian-Variational Gated Mixture of Experts for Explainable Recommendation](https://arxiv.org/abs/2410.11841)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [MoH: Multi-Head Attention as Mixture-of-Head Attention](https://arxiv.org/abs/2410.11842)：把注意力头重写为 MoE 式专家，让每个 token 选择有用 head，并用加权混合替代固定 head 求和。
+- [DDIL: Diversity Enhancing Diffusion Distillation With Imitation Learning](https://arxiv.org/abs/2410.11971)：把 imitation learning 引入扩散蒸馏，在保持快速采样的同时显式改善生成样本多样性。
+- [Iter-AHMCL: Alleviate Hallucination for Large Language Model via Iterative Model-level Contrastive Learning](https://arxiv.org/abs/2410.12130)：用迭代式 model-level contrastive learning 修改预训练 LLM 表示层，在保留基础能力的同时降低幻觉。
+- [Leveraging Large Vision-Language Model for Better Automatic Web GUI Testing](https://arxiv.org/abs/2410.12157)：利用 LVLM 的视觉感知和文本生成改进自动 Web GUI 测试，同时处理文本输入生成和界面元素交互。
+- [Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors](https://arxiv.org/abs/2410.12299)：用语义自适应动态激活干预替代固定 steering vector，根据输入上下文选择行为控制方向。
+- [UTF:Undertrained Tokens as Fingerprints A Novel Approach to LLM Identification](https://arxiv.org/abs/2410.12318)：通过微调 undertrained-token 触发对嵌入模型指纹，在很小性能开销下支持所有权验证。
+- [Neuron-based Personality Trait Induction in Large Language Models](https://arxiv.org/abs/2410.12327)：借助 PersonalityBench 识别并操控人格相关神经元，在无需全量重训的情况下诱导 LLM 的 Big Five 特质。
+- [Towards Neural Scaling Laws for Time Series Foundation Models](https://arxiv.org/abs/2410.12360)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance](https://arxiv.org/abs/2410.12361)：从真实人类活动中训练主动任务预测和接受度奖励，并用 ProactiveBench 评估 Agent 何时应主动介入。
+- [Conformity in Large Language Models](https://arxiv.org/abs/2410.12428)：把心理学从众实验改造到 LLM 上，发现模型尤其在自身预测不确定时会向多数答案偏移。
+- [KcMF: A Knowledge-compliant Framework for Schema and Entity Matching with Fine-tuning-free LLMs](https://arxiv.org/abs/2410.12480)：把 schema 与 entity matching 分解为伪代码引导的 LLM 步骤，并加入知识合规检查，避免领域专用微调。
+- [Stabilize the Latent Space for Image Autoregressive Modeling: A Unified Perspective](https://arxiv.org/abs/2410.12490)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [One Step Diffusion via Shortcut Models](https://arxiv.org/abs/2410.12557)：用同一个网络同时条件化噪声水平和目标步长，使 shortcut model 可在单步或少步内跳过扩散生成过程。
+- [Evaluating Morphological Compositional Generalization in Large Language Models](https://arxiv.org/abs/2410.12656)：以语素作为组合原语构建生成式和判别式形态学任务，测试 LLM 在黏着语场景中的 productivity 与 systematicity。
+- [CREAM: Consistency Regularized Self-Rewarding Language Models](https://arxiv.org/abs/2410.12735)：在 self-rewarding LLM 训练中加入一致性正则，降低迭代 DPO 式对齐中奖励评分和偏好对的噪声。
+- [A Note on Shumailov et al. (2024): 'AI Models Collapse When Trained on Recursively Generated Data'](https://arxiv.org/abs/2410.12954)：通过重复分布拟合与采样分析递归合成数据训练，澄清模型坍塌出现的理论条件。
+- [LoRA Soups: Merging LoRAs for Practical Skill Composition Tasks](https://arxiv.org/abs/2410.13025)：研究面向技能组合的 LoRA 合并，说明在目标任务数据稀缺时 adapter 拼接可以组合多个任务技能。
+- [Learning to Summarize from LLM-generated Feedback](https://arxiv.org/abs/2410.13116)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Data Defenses Against Large Language Models](https://arxiv.org/abs/2410.13138)：补充与通用基础模型方法相关的模型侧方法。
+- [Quamba: A Post-Training Quantization Recipe for Selective State Space Models](https://arxiv.org/abs/2410.13229)：Quamba 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Atomic Calibration of LLMs in Long-Form Generations](https://arxiv.org/abs/2410.13246)：把长文本输出分解为原子事实声明，并研究声明级置信度 elicitation 与融合以校准事实性。
+- [Learning to Route LLMs with Confidence Tokens](https://arxiv.org/abs/2410.13284)：训练 LLM 输出 confidence tokens，使系统能把不确定答案路由给其他专家或回退到更安全行为。
+- [PAK-UCB Contextual Bandit: An Online Learning Approach to Prompt-Aware Selection of Generative Models and LLMs](https://arxiv.org/abs/2410.13287)：用 prompt-aware UCB contextual bandit 按提示类型选择文本、图像或视频生成模型，而不是依赖平均分。
+- [Advancing Large Language Model Attribution through Self-Improving](https://arxiv.org/abs/2410.13298)：提出 START 自教学 attribution 循环，在没有人工整理归因数据的情况下迭代提升带证据引用的生成。
+- [Think Thrice Before You Act: Progressive Thought Refinement in Large Language Models](https://arxiv.org/abs/2410.13413)：通过 progressive thought refinement 逐步修订 LLM 输出，减少对任务专用监督信号来评判中间回答的依赖。
+- [MathGAP: Out-of-Distribution Evaluation on Problems with Arbitrarily Complex Proofs](https://arxiv.org/abs/2410.13502)：从可控证明结构生成算术应用题和推理轨迹，用于测试从简单到复杂的 OOD 泛化。
+- [Improving Multi-modal Large Language Model through Boosting Vision Capabilities](https://arxiv.org/abs/2410.13733)：提出 Arcana，用视觉和语言分支 MM-LoRA 以及 Query Ladder adapter 强化 MLLM 视觉理解。
+- [Improved Convergence for DPMs](https://arxiv.org/abs/2410.13738)：改进扩散概率模型的理论收敛速率。
+- [Looking Inward: Language Models Can Learn About Themselves by Introspection](https://arxiv.org/abs/2410.13787)：测试 LLM 是否能学习关于自身内部状态的事实，并把 introspection 定义为不能从训练数据推出的内部知识。
+- [Active-Dormant Attention Heads: Mechanistically Demystifying Extreme-Token Phenomena in LLMs](https://arxiv.org/abs/2410.13835)：用 active 与 dormant attention heads 解释 attention sink、value-state drain 和 residual-state peak 等极端 token 现象。
+- [Can MLLMs Understand the Deep Implication Behind Chinese Images?](https://arxiv.org/abs/2410.13854)：提出 CII-Bench 中文图像 implication 基准，用于测试 MLLM 对中文视觉内容的高阶文化和语境理解。
+- [γ-MoD: Exploring Mixture-of-Depth Adaptation for Multimodal Large Language Models](https://arxiv.org/abs/2410.13859)：用 attention-map rank 指导 MLLM 的 Mixture-of-Depth 层部署，跳过冗余 token-layer 计算并控制精度损失。
+- [Automatically Interpreting Millions of Features in Large Language Models](https://arxiv.org/abs/2410.13928)：构建开放流水线，用 LLM 为数百万 sparse-autoencoder features 生成并评分自然语言解释。
+- [Efficient Vision-Language Models by Summarizing Visual Tokens into Compact Registers](https://arxiv.org/abs/2410.14072)：提出 Victor，在自回归 VLM 中把大量视觉 token 汇总为紧凑可学习 registers，以降低训练和推理成本。
+- [Montessori-Instruct: Generate Influential Training Data Tailored for Student Learning](https://arxiv.org/abs/2410.14208)：用本地数据影响信号和 DPO 调优 teacher LLM，使合成指令更贴合 student model 的学习偏好。
+- [Do LLMs "know" internally when they follow instructions?](https://arxiv.org/abs/2410.14516)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [ELOQ: Resources for Enhancing LLM Detection of Out-of-Scope Questions](https://arxiv.org/abs/2410.14567)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [When LLMs Go Online: The Emerging Threat of Web-Enabled LLMs](https://arxiv.org/abs/2410.14569)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Bridging the Training-Inference Gap in LLMs by Leveraging Self-Generated Tokens](https://arxiv.org/abs/2410.14655)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [MatryoshkaKV: Adaptive KV Compression via Trainable Orthogonal Projection](https://arxiv.org/abs/2410.14731)：提出与其他核心能力能力相关的模型侧方法。
+- [Harnessing Your DRAM and SSD for Sustainable and Accessible LLM Inference with Mixed-Precision and Multi-level Caching](https://arxiv.org/abs/2410.14740)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Multifidelity Kolmogorov–Arnold networks](https://arxiv.org/abs/2410.14764)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [SPRIG: Improving Large Language Model Performance by System Prompt Optimization](https://arxiv.org/abs/2410.14826)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Baichuan Alignment Technical Report](https://arxiv.org/abs/2410.14940)：Baichuan Alignment Technical Report 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [On the Wasserstein Convergence and Straightness of Rectified Flow](https://arxiv.org/abs/2410.14949)：补充一个面向通用基础模型与评测的模型条目，关注general model-side method, architecture, training, or evaluation contribution。
+- [LangGFM: A Large Language Model Alone Can be a Powerful Graph Foundation Model](https://arxiv.org/abs/2410.14961)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Group Diffusion Transformers are Unsupervised Multitask Learners](https://arxiv.org/abs/2410.15027)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Adanonymizer: Interactively Navigating and Balancing the Duality of Privacy and Output Performance in Human-LLM Interaction](https://arxiv.org/abs/2410.15044)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Customized FinGPT Search Agents Using Foundation Models](https://arxiv.org/abs/2410.15284)：补充一个面向通用基础模型与评测的模型条目，关注general model-side method, architecture, training, or evaluation contribution。
+- [Pruning Foundation Models for High Accuracy without Retraining](https://arxiv.org/abs/2410.15567)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Can Large Language Models Invent Algorithms to Improve Themselves?: Algorithm Discovery for Recursive Self-Improvement through Reinforcement Learning](https://arxiv.org/abs/2410.15639)：Can Large Language Models Invent Algorithms to Improve Themselves?: Algorithm Discovery for Recursive Self-Improvemen... 补充通用基础模型与评测方向的模型侧方法。
+- [Scalable Data Ablation Approximations for Language Models through Modular Training and Merging](https://arxiv.org/abs/2410.15661)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [ViMoE: An Empirical Study of Designing Vision Mixture-of-Experts](https://arxiv.org/abs/2410.15732)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Exploring Continual Fine-Tuning for Enhancing Language Ability in Large Language Model](https://arxiv.org/abs/2410.16006)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [TreeBoN: Enhancing Inference-Time Alignment with Speculative Tree-Search and Best-of-N Sampling](https://arxiv.org/abs/2410.16033)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MagicPIG: LSH Sampling for Efficient LLM Generation](https://arxiv.org/abs/2410.16179)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Improve Vision Language Model Chain-of-thought Reasoning](https://arxiv.org/abs/2410.16198)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Pre-training Distillation for Large Language Models: A Design Space Exploration](https://arxiv.org/abs/2410.16215)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [LLaVA-KD: A Framework of Distilling Multimodal Large Language Models](https://arxiv.org/abs/2410.16236)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Agent-to-Sim: Learning Interactive Behavior Models from Casual Longitudinal Videos](https://arxiv.org/abs/2410.16259)：从日常视频中构建持久 4D 跟踪，再训练将感知与动作配对的生成式行为模型，用于模拟 Agent。
+- [SINGAPO: Single Image Controlled Generation of Articulated Parts in Objects](https://arxiv.org/abs/2410.16499)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Bayesian scaling laws for in-context learning](https://arxiv.org/abs/2410.16531)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [SoftSRV: Learn to Generate Targeted Synthetic Data](https://arxiv.org/abs/2410.16534)：补充与通用基础模型方法相关的模型侧方法。
+- [Collapse or Thrive? Perils and Promises of Synthetic Data in a Self-Generating World](https://arxiv.org/abs/2410.16713)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [Forewarned is Forearmed: Leveraging LLMs for Data Synthesis through Failure-Inducing Exploration](https://arxiv.org/abs/2410.16736)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [xLSTM-Mixer: Multivariate Time Series Forecasting by Mixing via Scalar Memories](https://arxiv.org/abs/2410.16928)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [PAPILLON: PrivAcy Preservation from Internet-based and Local Language MOdel ENsembles](https://arxiv.org/abs/2410.17127)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Self-Steering Optimization: Autonomous Preference Optimization for Large Language Models](https://arxiv.org/abs/2410.17131)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MiniPLM: Knowledge Distillation for Pre-Training Language Models](https://arxiv.org/abs/2410.17215)：MiniPLM 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [PyramidDrop: Accelerating Your Large Vision-Language Models via Pyramid Visual Redundancy Reduction](https://arxiv.org/abs/2410.17247)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Altogether: Image Captioning via Re-aligning Alt-text](https://arxiv.org/abs/2410.17251)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Scalable Influence and Fact Tracing for Large Language Model Pretraining](https://arxiv.org/abs/2410.17413)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Navigate Complex Physical Worlds via Geometrically Constrained LLM](https://arxiv.org/abs/2410.17529)：补充与通用基础模型方法相关的模型侧方法。
+- [Cross-model Control: Improving Multiple Large Language Models in One-time Training](https://arxiv.org/abs/2410.17599)：补充与通用基础模型方法相关的模型侧方法。
+- [MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models](https://arxiv.org/abs/2410.17637)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Faster Language Models with Better Multi-Token Prediction Using Tensor Decomposition](https://arxiv.org/abs/2410.17765)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [ADEM-VL: Adaptive and Embedded Fusion for Efficient Vision-Language Tuning](https://arxiv.org/abs/2410.17779)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Large Language Models Engineer Too Many Simple Features For Tabular Data](https://arxiv.org/abs/2410.17787)：Large Language Models Engineer Too Many Simple Features For Tabular Data 补充通用基础模型与评测方向的模型侧方法。
+- [AdaRankGrad: Adaptive Gradient-Rank and Moments for Memory-Efficient LLMs Training and Fine-Tuning](https://arxiv.org/abs/2410.17881)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [R-CoT: Reverse Chain-of-Thought Problem Generation for Geometric Reasoning in Large Multimodal Models](https://arxiv.org/abs/2410.17885)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Scaling Diffusion Language Models via Adaptation from Autoregressive Models](https://arxiv.org/abs/2410.17891)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [ExpertFlow: Optimized Expert Activation and Token Allocation for Efficient Mixture-of-Experts Inference](https://arxiv.org/abs/2410.17954)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [ZIP-FIT: Embedding-Free Data Selection via Compression-Based Alignment](https://arxiv.org/abs/2410.18194)：《ZIP-FIT: Embedding-Free Data Selection via Compression-Based Alignment》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Asynchronous RLHF: Faster and More Efficient Off-Policy RL for Language Models](https://arxiv.org/abs/2410.18252)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [ToolFlow: Boosting LLM Tool-Calling Through Natural and Coherent Dialogue Synthesis](https://arxiv.org/abs/2410.18447)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Skywork-Reward: Bag of Tricks for Reward Modeling in LLMs](https://arxiv.org/abs/2410.18451)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Taipan: Efficient and Expressive State Space Language Models with Selective Attention](https://arxiv.org/abs/2410.18572)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [LLM-Aided Efficient Hardware Design Automation](https://arxiv.org/abs/2410.18582)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model](https://arxiv.org/abs/2410.18640)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [A Little Help Goes a Long Way: Efficient LLM Training by Leveraging Small LMs](https://arxiv.org/abs/2410.18779)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [From Imitation to Introspection: Probing Self-Consciousness in Language Models](https://arxiv.org/abs/2410.18819)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Are LLMs Better than Reported? Detecting Label Errors and Mitigating Their Effect on Model Performance](https://arxiv.org/abs/2410.18889)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [From a Tiny Slip to a Giant Leap: An LLM-Based Simulation for Fake News Evolution](https://arxiv.org/abs/2410.19064)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Read-ME: Refactorizing LLMs as Router-Decoupled Mixture of Experts with System Co-Design](https://arxiv.org/abs/2410.19123)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Inference time LLM alignment in single and multidomain preference spectrum](https://arxiv.org/abs/2410.19206)：补充与通用基础模型方法相关的模型侧方法。
+- [Flow Generator Matching](https://arxiv.org/abs/2410.19310)：围绕Other补充《Flow Generator Matching》这一模型、架构、训练配方或数据生成方法。
+- [Simpler Diffusion (SiD2): 1.5 FID on ImageNet512 with pixel-space diffusion](https://arxiv.org/abs/2410.19324)：围绕Other补充《Simpler Diffusion (SiD2): 1.5 FID on ImageNet512 with pixel-space diffusion》这一模型、架构、训练配方或数据生成方法。
+- [MILES: Making Imitation Learning Easy with Self-Supervision](https://arxiv.org/abs/2410.19693)：提出与其他核心能力能力相关的模型侧方法。
+- [Counting Ability of Large Language Models and Impact of Tokenization](https://arxiv.org/abs/2410.19730)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Sequential Large Language Model-Based Hyper-Parameter Optimization](https://arxiv.org/abs/2410.20302)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Llama Scope: Extracting Millions of Features from Llama-3.1-8B with Sparse Autoencoders](https://arxiv.org/abs/2410.20526)：《Llama Scope: Extracting Millions of Features from Llama-3.1-8B with Sparse Autoencoders》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [LoRA Done RITE: Robust Invariant Transformation Equilibration for LoRA Optimization](https://arxiv.org/abs/2410.20625)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA](https://arxiv.org/abs/2410.20672)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [MrT5: Dynamic Token Merging for Efficient Byte-level Language Models](https://arxiv.org/abs/2410.20771)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Deep Insights into Automated Optimization with Large Language Models and Evolutionary Algorithms](https://arxiv.org/abs/2410.20848)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Beyond Autoregression: Fast LLMs via Self-Distillation Through Time](https://arxiv.org/abs/2410.21035)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Lifting the Veil on Composition, Risks, and Mitigations of the Large Language Model Supply Chain](https://arxiv.org/abs/2410.21218)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Energy-Based Diffusion Language Models for Text Generation](https://arxiv.org/abs/2410.21357)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [ChemFM as a scaling law guided foundation model pre-trained on informative chemicals](https://arxiv.org/abs/2410.21422)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [TransformLLM: Adapting Large Language Models via LLM-Transformed Reading Comprehension Text](https://arxiv.org/abs/2410.21479)：补充与通用基础模型方法相关的模型侧方法。
+- [Neural Experts: Mixture of Experts for Implicit Neural Representations](https://arxiv.org/abs/2410.21643)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [How Does Critical Batch Size Scale in Pre-training?](https://arxiv.org/abs/2410.21676)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Efficient and Effective Weight-Ensembling Mixture of Experts for Multi-Task Model Merging](https://arxiv.org/abs/2410.21804)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Training LLMs for Generating IEC 61131-3 Structured Text with Online Feedback](https://arxiv.org/abs/2410.22159)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Multi-Object 3D Grounding with Dynamic Modules and Language-Informed Spatial Attention](https://arxiv.org/abs/2410.22306)：作为其他的模型候选，关注标题所示的可复用能力、方法或评测信号。
+- [Toxicity of the Commons: Curating Open-Source Pre-Training Data](https://arxiv.org/abs/2410.22587)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters](https://arxiv.org/abs/2410.23168)：提出或分析面向general model-side LLM capability的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [In-Context LoRA for Diffusion Transformers](https://arxiv.org/abs/2410.23775)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [FRoundation: Are Foundation Models Ready for Face Recognition?](https://arxiv.org/abs/2410.23831)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Language Models can Self-Lengthen to Generate Long Texts](https://arxiv.org/abs/2410.23933)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Matchmaker: Self-Improving Large Language Model Programs for Schema Matching](https://arxiv.org/abs/2410.24105)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Length-Induced Embedding Collapse in PLM-based Models](https://arxiv.org/abs/2410.24200)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [Mastering the Craft of Data Synthesis for CodeLLMs](https://arxiv.org/abs/2411.00005)：Mastering the Craft of Data Synthesis for CodeLLMs 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Scaling Up Membership Inference: When and How Attacks Succeed on Large Language Models](https://arxiv.org/abs/2411.00154)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Understanding the Limits of Vision Language Models Through the Lens of the Binding Problem](https://arxiv.org/abs/2411.00238)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Identifying Implicit Social Biases in Vision-Language Models](https://arxiv.org/abs/2411.00997)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [MoE-I²: Compressing Mixture of Experts Models through Inter-Expert Pruning and Intra-Expert Low-Rank Decomposition](https://arxiv.org/abs/2411.01016)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Cephalo: Harnessing Heterogeneous GPU Clusters for Training Transformer Models](https://arxiv.org/abs/2411.01075)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [N-Gram Induction Heads for In-Context RL: Improving Stability and Reducing Data Needs](https://arxiv.org/abs/2411.01958)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [Addressing Representation Collapse in Vector Quantized Models with One Linear Layer](https://arxiv.org/abs/2411.02038)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated Parameters by Tencent](https://arxiv.org/abs/2411.02265)：补充模型侧方法，主要面向 Other。
+- [The LLM Language Network: A Neuroscientific Approach for Identifying Causally Task-Relevant Units](https://arxiv.org/abs/2411.02280)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Sparsing Law: Towards Large Language Models with Greater Activation Sparsity](https://arxiv.org/abs/2411.02335)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Training-free Regional Prompting for Diffusion Transformers](https://arxiv.org/abs/2411.02395)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Dr. SoW: Density Ratio of Strong-over-weak LLMs for Reducing the Cost of Human Annotation in Preference Tuning](https://arxiv.org/abs/2411.02481)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [TripletCLIP: Improving Compositional Reasoning of CLIP via Synthetic Vision-Language Negatives](https://arxiv.org/abs/2411.02545)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MM-Embed: Universal Multimodal Retrieval with Multimodal LLMs](https://arxiv.org/abs/2411.02571)：用多模态 LLM 构建通用多模态检索。
+- [Extracting Unlearned Information from LLMs with Activation Steering](https://arxiv.org/abs/2411.02631)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [How much is a noisy image worth? Data Scaling Laws for Ambient Diffusion](https://arxiv.org/abs/2411.02780)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [CE-CoLLM: Efficient and Adaptive Large Language Models Through Cloud-Edge Collaboration](https://arxiv.org/abs/2411.02829)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Photon: Federated LLM Pre-Training](https://arxiv.org/abs/2411.02908)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Number Cookbook: Number Understanding of Language Models and How to Improve It](https://arxiv.org/abs/2411.03766)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [UniTraj: Learning a Universal Trajectory Foundation Model from Billion-Scale Worldwide Traces](https://arxiv.org/abs/2411.03859)：提出与其他核心能力能力相关的模型侧方法。
+- [Scaling Laws for Precision](https://arxiv.org/abs/2411.04330)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Scaling Laws for Pre-training Agents and World Models](https://arxiv.org/abs/2411.04434)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Generative Semantic Communications With Foundation Models: Perception-Error Analysis and Semantic-Aware Power Allocation](https://arxiv.org/abs/2411.04575)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Taming Rectified Flow for Inversion and Editing](https://arxiv.org/abs/2411.04746)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Mixture-of-Transformers: A Sparse and Scalable Architecture for Multi-Modal Foundation Models](https://arxiv.org/abs/2411.04996)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [SVDQuant: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models](https://arxiv.org/abs/2411.05007)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Fox-1: Open Small Language Model for Cloud and Edge](https://arxiv.org/abs/2411.05281)：补充模型侧方法，主要面向 Other。
+- [An Early FIRST Reproduction and Improvements to Single-Token Decoding for Fast Listwise Reranking](https://arxiv.org/abs/2411.05508)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Aioli: A Unified Optimization Framework for Language Model Data Mixing](https://arxiv.org/abs/2411.05735)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Open LLMs are Necessary for Current Private Adaptations and Outperform their Closed Alternatives](https://arxiv.org/abs/2411.05818)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Towards Improved Preference Optimization Pipeline: from Data Generation to Budget-Controlled Regularization](https://arxiv.org/abs/2411.05875)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [A Picture is Worth A Thousand Numbers: Enabling LLMs Reason about Time Series via Visualization](https://arxiv.org/abs/2411.06018)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Zyda-2: a 5 Trillion Token High-Quality Dataset](https://arxiv.org/abs/2411.06068)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [GFT: Graph Foundation Model with Transferable Tree Vocabulary](https://arxiv.org/abs/2411.06070)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Conditional (MASK) Discrete Diffusion Language Model](https://arxiv.org/abs/2411.06438)：- [Conditional [MASK] Discrete Diffusion Language Model](https://arxiv.org/abs/2411.06438)：补充与通用基础模型方法相关的模型侧方法。
+- [Model Editing for LLMs4Code: How Far are we?](https://arxiv.org/abs/2411.06638)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Understanding Scaling Laws with Statistical and Approximation Theory for Transformer Neural Networks on Intrinsically Low-dimensional Data](https://arxiv.org/abs/2411.06646)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Can KAN Work? Exploring the Potential of Kolmogorov-Arnold Networks in Computer Vision](https://arxiv.org/abs/2411.06727)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [The Super Weight in Large Language Models](https://arxiv.org/abs/2411.07191)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [The Surprising Effectiveness of Test-Time Training for Few-Shot Learning](https://arxiv.org/abs/2411.07279)：围绕Other补充《The Surprising Effectiveness of Test-Time Training for Few-Shot Learning》这一模型、架构、训练配方或数据生成方法。
+- [Semantic Sleuth: Identifying Ponzi Contracts via Large Language Models](https://arxiv.org/abs/2411.07498)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Circuit Complexity Bounds for RoPE-based Transformer Architecture](https://arxiv.org/abs/2411.07602)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation](https://arxiv.org/abs/2411.07975)：补充模型侧方法，主要面向 Other。
+- [Scaling Properties of Diffusion Models For Perceptual Tasks](https://arxiv.org/abs/2411.08034)：Scaling Properties of Diffusion Models For Perceptual Tasks 补充通用基础模型与评测方向的模型侧方法。
+- [A Large-Scale Study of Relevance Assessments with Large Language Models: An Initial Look](https://arxiv.org/abs/2411.08275)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [CorrSynth - A Correlated Sampling Method for Diverse Dataset Generation from LLMs](https://arxiv.org/abs/2411.08553)：用相关采样控制 LLM 合成数据生成过程，提高数据集内部多样性而不是只独立抽样。
+- [Lynx: Enabling Efficient MoE Inference through Dynamic Batch-Aware Expert Selection](https://arxiv.org/abs/2411.08982)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Adaptive Decoding via Latent Preference Optimization](https://arxiv.org/abs/2411.09661)：作为其他的模型候选，关注标题所示的可复用能力、方法或评测信号。
+- [Advancing Fine-Grained Visual Understanding with Multi-Scale Alignment in Multi-Modal Models](https://arxiv.org/abs/2411.09691)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Smooth Cache: A Universal Inference Acceleration Technique for Diffusion Transformers](https://arxiv.org/abs/2411.10510)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Does Prompt Formatting Have Any Impact on LLM Performance?](https://arxiv.org/abs/2411.10541)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Drift-Resilient TabPFN: In-Context Learning Temporal Distribution Shifts on Tabular Data](https://arxiv.org/abs/2411.10634)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [BlueLM-V-3B: Algorithm and System Co-Design for Multimodal Large Language Models on Mobile Devices](https://arxiv.org/abs/2411.10640)：围绕Other补充《BlueLM-V-3B: Algorithm and System Co-Design for Multimodal Large Language Models on Mobile Devices》这一模型、架构、训练配方或数据生成方法。
+- [Awaker2.5-VL: Stably Scaling MLLMs with Parameter-Efficient Mixture of Experts](https://arxiv.org/abs/2411.10669)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [SageAttention2: Efficient Attention with Thorough Outlier Smoothing and Per-thread INT4 Quantization](https://arxiv.org/abs/2411.10958)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [TS-LLaVA: Constructing Visual Tokens through Thumbnail-and-Sampling for Training-Free Video Large Language Models](https://arxiv.org/abs/2411.11066)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Steering Language Model Refusal with Sparse Autoencoders](https://arxiv.org/abs/2411.11296)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [LaVin-DiT: Large Vision Diffusion Transformer](https://arxiv.org/abs/2411.11505)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Exploring LLMs for Verifying Technical System Specifications Against Requirements](https://arxiv.org/abs/2411.11582)：提出与其他核心能力能力相关的模型侧方法。
+- [On-Board Vision-Language Models for Personalized Autonomous Vehicle Motion Control: System Design and Real-World Validation](https://arxiv.org/abs/2411.11913)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [FLAME: Frozen Large Language Models Enable Data-Efficient Language-Image Pre-training](https://arxiv.org/abs/2411.11927)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [METEOR: Evolutionary Journey of Large Language Models from Guidance to Self-Growth](https://arxiv.org/abs/2411.11933)：《METEOR: Evolutionary Journey of Large Language Models from Guidance to Self-Growth》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Diffusion Transformers as Open-World Spatiotemporal Foundation Models](https://arxiv.org/abs/2411.12164)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [DynFocus: Dynamic Cooperative Network Empowers LLMs with Video Understanding](https://arxiv.org/abs/2411.12355)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Ultra-Sparse Memory Network](https://arxiv.org/abs/2411.12364)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Evaluating the Prompt Steerability of Large Language Models](https://arxiv.org/abs/2411.12405)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Loss-to-Loss Prediction: Scaling Laws for All Datasets](https://arxiv.org/abs/2411.12925)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [LEDRO: LLM-Enhanced Design Space Reduction and Optimization for Analog Circuits](https://arxiv.org/abs/2411.12930)：提出与其他核心能力能力相关的模型侧方法。
+- [Heuristically Adaptive Diffusion‐Model Evolutionary Strategy](https://arxiv.org/abs/2411.13420)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [BALROG: Benchmarking Agentic LLM and VLM Reasoning On Games](https://arxiv.org/abs/2411.13543)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Hymba: A Hybrid-head Architecture for Small Language Models](https://arxiv.org/abs/2411.13676)：Hymba 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [InstCache: A Predictive Cache for LLM Serving](https://arxiv.org/abs/2411.13820)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Panther: Illuminate the Sight of Multimodal LLMs with Instruction-Guided Visual Prompts](https://arxiv.org/abs/2411.13909)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Logic Augmented Generation](https://arxiv.org/abs/2411.14012)：作为其他的模型候选，关注标题所示的可复用能力、方法或评测信号。
+- [DRPruning: Efficient Large Language Model Pruning through Distributionally Robust Optimization](https://arxiv.org/abs/2411.14055)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [FocusLLaVA: A Coarse-to-Fine Approach for Efficient and Effective Visual Token Compression](https://arxiv.org/abs/2411.14228)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Velocitune: A Velocity-based Dynamic Domain Reweighting Method for Continual Pre-training](https://arxiv.org/abs/2411.14318)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Beyond Training: Dynamic Token Merging for Zero-Shot Video Understanding](https://arxiv.org/abs/2411.14401)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Multimodal Autoregressive Pre-training of Large Vision Encoders](https://arxiv.org/abs/2411.14402)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Insight-V: Exploring Long-Chain Visual Reasoning with Multimodal Large Language Models](https://arxiv.org/abs/2411.14432)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [SRSA: A Cost-Efficient Strategy-Router Search Agent for Real-world Human-Machine Interactions](https://arxiv.org/abs/2411.14574)：提出其他模型侧方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [A Reproducibility and Generalizability Study of Large Language Models for Query Generation](https://arxiv.org/abs/2411.14914)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [DyCoke : Dynamic Compression of Tokens for Fast Video Large Language Models](https://arxiv.org/abs/2411.15024)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [OminiControl: Minimal and Universal Control for Diffusion Transformer](https://arxiv.org/abs/2411.15098)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [From Jack of All Trades to Master of One: Specializing LLM-based Autoraters to a Test Set](https://arxiv.org/abs/2411.15387)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [FineCaption: Compositional Image Captioning Focusing on Wherever You Want at Any Granularity](https://arxiv.org/abs/2411.15411)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Lifelong Knowledge Editing for Vision Language Models with Low-Rank Mixture-of-Experts](https://arxiv.org/abs/2411.15432)：提出与其他核心能力能力相关的模型侧方法。
+- [KinMo: Kinematic-Aware Human Motion Understanding and Generation](https://arxiv.org/abs/2411.15472)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Reassessing Layer Pruning in LLMs: New Insights and Methods](https://arxiv.org/abs/2411.15558)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [PanoLlama: Generating Endless and Coherent Panoramas with Next-Token-Prediction LLMs](https://arxiv.org/abs/2411.15867)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MobileMamba: Lightweight Multi-Receptive Visual Mamba Network](https://arxiv.org/abs/2411.15941)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [ZoomEye: Enhancing Multimodal LLMs with Human-Like Zooming Capabilities through Tree-Based Image Exploration](https://arxiv.org/abs/2411.16044)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MH-MoE: Multi-Head Mixture-of-Experts](https://arxiv.org/abs/2411.16205)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Preference Optimization for Reasoning with Pseudo Feedback](https://arxiv.org/abs/2411.16345)：Preference Optimization for Reasoning with Pseudo Feedback 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Generating Out-of-Distribution Scenarios Using Language Models](https://arxiv.org/abs/2411.16554)：提出与其他核心能力能力相关的模型侧方法。
+- [Self-Generated Critiques Boost Reward Modeling for Language Models](https://arxiv.org/abs/2411.16646)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [AnySynth: Harnessing the Power of Image Synthetic Data Generation for Generalized Vision-Language Tasks](https://arxiv.org/abs/2411.16749)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference](https://arxiv.org/abs/2411.16786)：DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference 补充通用基础模型与评测方向的模型侧方法。
+- [Logit-KL Flow Matching: Non-Autoregressive Text Generation via Sampling-Hybrid Inference](https://arxiv.org/abs/2411.16821)：面向通用基础模型与评测，补充用于non-autoregressive or diffusion-style text generation model-side method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Contrastive CFG: Improving CFG in Diffusion Models by Contrasting Positive and Negative Concepts](https://arxiv.org/abs/2411.17077)：Contrastive CFG: Improving CFG in Diffusion Models by Contrasting Positive and Negative Concepts 补充通用基础模型与评测方向的模型侧方法。
+- [LiteVAR: Compressing Visual Autoregressive Modelling with Efficient Attention and Quantization](https://arxiv.org/abs/2411.17178)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [What’s in the Imageƒ A Deep-Dive into the Vision of Vision Language Models](https://arxiv.org/abs/2411.17491)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Towards Stabilized and Efficient Diffusion Transformers Through Long-Skip-Connections With Spectral Constraints](https://arxiv.org/abs/2411.17616)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [SketchAgent: Language-Driven Sequential Sketch Generation](https://arxiv.org/abs/2411.17673)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Low-Bit Quantization Favors Undertrained LLMs: Scaling Laws for Quantized LLMs with 100T Training Tokens](https://arxiv.org/abs/2411.17691)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [Efficient Multi-modal Large Language Models via Visual Token Grouping](https://arxiv.org/abs/2411.17773)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [NEMO: Can Multimodal LLMs Identify Attribute-Modified Objects?](https://arxiv.org/abs/2411.17794)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [When Large Vision-Language Models Meet Person Re-Identification](https://arxiv.org/abs/2411.18111)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [InputSnatch: Stealing Input in LLM Services via Timing Side-Channel Attacks](https://arxiv.org/abs/2411.18191)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [ChatRex: Taming Multimodal LLM for Joint Perception and Understanding](https://arxiv.org/abs/2411.18363)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [DuetML: Human-LLM Collaborative Machine Learning Framework for Non-Expert Users](https://arxiv.org/abs/2411.18908)：补充与通用基础模型方法相关的模型侧方法。
+- [DIESEL - Dynamic Inference-Guidance via Evasion of Semantic Embeddings in LLMs](https://arxiv.org/abs/2411.19038)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Way to Specialist: Closing Loop Between Specialized LLM and Evolving Domain Knowledge Graph](https://arxiv.org/abs/2411.19064)：提出与其他核心能力能力相关的模型侧方法。
+- [Task Singular Vectors: Reducing Task Interference in Model Merging](https://arxiv.org/abs/2412.00081)：《Task Singular Vectors: Reducing Task Interference in Model Merging》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [ATP-LLaVA: Adaptive Token Pruning for Large Vision Language Models](https://arxiv.org/abs/2412.00447)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Evaluating the Consistency of LLM Evaluators](https://arxiv.org/abs/2412.00543)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Rank It, Then Ask It: Input Reranking for Maximizing the Performance of LLMs on Symmetric Tasks](https://arxiv.org/abs/2412.00546)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Accelerating Multimodal Large Language Models by Searching Optimal Vision Token Reduction](https://arxiv.org/abs/2412.00556)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [EventGPT: Event Stream Understanding with Multimodal Large Language Models](https://arxiv.org/abs/2412.00832)：提出与其他核心能力能力相关的模型侧方法。
+- [Dynamic-LLaVA: Efficient Multimodal Large Language Models via Dynamic Vision-language Context Sparsification](https://arxiv.org/abs/2412.00876)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [TinyFusion: Diffusion Transformers Learned Shallow](https://arxiv.org/abs/2412.01199)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Yi-Lightning Technical Report](https://arxiv.org/abs/2412.01253)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Enhancing Perception Capabilities of Multimodal LLMs with Training-Free Fusion](https://arxiv.org/abs/2412.01289)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Can Large Language Models Serve as Evaluators for Code Summarization?](https://arxiv.org/abs/2412.01333)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Adapting Large Language Models to Log Analysis with Interpretable Domain Knowledge](https://arxiv.org/abs/2412.01377)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [FlexSP: Accelerating Large Language Model Training via Flexible Sequence Parallelism](https://arxiv.org/abs/2412.01523)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Gradient-Free Generation for Hard-Constrained Systems](https://arxiv.org/abs/2412.01786)：围绕Other补充《Gradient-Free Generation for Hard-Constrained Systems》这一模型、架构、训练配方或数据生成方法。
+- [COSMOS: Cross-Modality Self-Distillation for Vision Language Pre-training](https://arxiv.org/abs/2412.01814)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [VLsI: Verbalized Layers-to-Interactions from Large to Small Vision Language Models](https://arxiv.org/abs/2412.01822)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Self-Improvement in Language Models: The Sharpening Mechanism](https://arxiv.org/abs/2412.01951)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [DataLab: A Unified Platform for LLM-Powered Business Intelligence](https://arxiv.org/abs/2412.02205)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Unveiling Concept Attribution in Diffusion Models](https://arxiv.org/abs/2412.02542)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Scalable Image Tokenization with Index Backpropagation Quantization](https://arxiv.org/abs/2412.02692)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [An Evolutionary Large Language Model for Hallucination Mitigation](https://arxiv.org/abs/2412.02790)：An Evolutionary Large Language Model for Hallucination Mitigation 补充通用基础模型与评测方向的模型侧方法。
+- [Theoretical limitations of multi-layer Transformer](https://arxiv.org/abs/2412.02975)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Revolve: Optimizing AI Systems by Tracking Response Evolution in Textual Optimization](https://arxiv.org/abs/2412.03092)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning](https://arxiv.org/abs/2412.03248)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [PaliGemma 2: A Family of Versatile VLMs for Transfer](https://arxiv.org/abs/2412.03555)：将 PaliGemma 扩展为多功能视觉语言模型族。
+- [Evaluating Language Models as Synthetic Data Generators](https://arxiv.org/abs/2412.03679)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Training MLPs on Graphs without Supervision](https://arxiv.org/abs/2412.03864)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Monet: Mixture of Monosemantic Experts for Transformers](https://arxiv.org/abs/2412.04139)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [AnyDressing: Customizable Multi-Garment Virtual Dressing via Latent Diffusion Models](https://arxiv.org/abs/2412.04146)：AnyDressing: Customizable Multi-Garment Virtual Dressing via Latent Diffusion Models 补充通用基础模型与评测方向的模型侧方法。
+- [Densing law of LLMs](https://arxiv.org/abs/2412.04315)：围绕Other补充《Densing law of LLMs》这一模型、架构、训练配方或数据生成方法。
+- [FlashSloth: Lightning Multimodal Large Language Models via Embedded Visual Compression](https://arxiv.org/abs/2412.04317)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Liquid: Language Models are Scalable and Unified Multi-Modal Generators](https://arxiv.org/abs/2412.04332)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [Establishing Task Scaling Laws via Compute-Efficient Model Ladders](https://arxiv.org/abs/2412.04403)：用计算高效的模型阶梯建立任务级 scaling law，用于预测下游能力增长。
+- [VisionZip: Longer is Better but Not Necessary in Vision Language Models](https://arxiv.org/abs/2412.04467)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [NVILA: Efficient Frontier Visual Language Models](https://arxiv.org/abs/2412.04468)：提出高效前沿视觉语言模型。
+- [Extractive Structures Learned in Pretraining Enable Generalization on Finetuned Facts](https://arxiv.org/abs/2412.04614)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [SWEPO: Simultaneous Weighted Preference Optimization for Group Contrastive Alignment](https://arxiv.org/abs/2412.04628)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Smoothie: Label Free Language Model Routing](https://arxiv.org/abs/2412.04692)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Adaptive Optimization for Enhanced Efficiency in Large-Scale Language Model Training](https://arxiv.org/abs/2412.04718)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [EXAONE 3.5: Series of Large Language Models for Real-world Use Cases](https://arxiv.org/abs/2412.04862)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Transformers Can Navigate Mazes With Multi-Step Prediction](https://arxiv.org/abs/2412.05117)（[开源代码](https://github.com/facebookresearch/maze_navigation_MLMU)）：把长程规划能力作为训练目标问题来研究。核心思想：在迷宫导航中用 MLM-U 训练同参数量 transformer，让模型同时预测多步未来和过去路径，相比标准 next-token training 提升样本效率和导航准确性。
+- [Expanding Performance Boundaries of Open-Source Multimodal Models with Model, Data, and Test-Time Scaling](https://arxiv.org/abs/2412.05271)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Chimera: Improving Generalist Model with Domain-Specific Experts](https://arxiv.org/abs/2412.05983)：补充一个面向通用基础模型与评测的模型条目，关注generalist-model expert routing and model-side specialization。
+- [SparseDiT: Token Sparsification for Efficient Diffusion Transformer](https://arxiv.org/abs/2412.06028)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [The Computational Limits of State-Space Models and Mamba via the Lens of Circuit Complexity](https://arxiv.org/abs/2412.06148)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Normalizing Flows are Capable Generative Models](https://arxiv.org/abs/2412.06329)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Bridging the Divide: Reconsidering Softmax and Linear Attention](https://arxiv.org/abs/2412.06590)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [Anchoring bias in large language models: an experimental study](https://arxiv.org/abs/2412.06593)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [ILLUME: Illuminating Your LLMs to See, Draw, and Self-Enhance](https://arxiv.org/abs/2412.06673)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [Policy Agnostic RL: Offline RL and Online RL Fine-Tuning of Any Class and Backbone](https://arxiv.org/abs/2412.06685)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [How to Merge Your Multimodal Models Over Time?](https://arxiv.org/abs/2412.06712)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Training Large Language Models to Reason in a Continuous Latent Space](https://arxiv.org/abs/2412.06769)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [7B Fully Open Source Moxin-LLM/VLM -- From Pretraining to GRPO-based Reinforcement Learning Enhancement](https://arxiv.org/abs/2412.06845)：7B Fully Open Source Moxin-LLM/VLM 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Phaedrus: Predicting Dynamic Application Behavior with Lightweight Generative Models and LLMs](https://arxiv.org/abs/2412.06994)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [FM2DS: Few-Shot Multimodal Multihop Data Synthesis with Knowledge Distillation for Question Answering](https://arxiv.org/abs/2412.07030)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [HARP: Hesitation-Aware Reframing in Transformer Inference Pass](https://arxiv.org/abs/2412.07282)：HARP: Hesitation-Aware Reframing in Transformer Inference Pass 补充通用基础模型与评测方向的模型侧方法。
+- [Frame Representation Hypothesis: Multi-Token LLM Interpretability and Concept-Guided Text Generation](https://arxiv.org/abs/2412.07334)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [ACDiT: Interpolating Autoregressive Conditional Modeling and Diffusion Transformer](https://arxiv.org/abs/2412.07720)：ACDiT 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Efficient Online Reinforcement Learning Fine-Tuning Need Not Retain Offline Data](https://arxiv.org/abs/2412.07762)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [Hyperband-based Bayesian Optimization for Black-box Prompt Selection](https://arxiv.org/abs/2412.07820)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [Explaining and Mitigating the Modality Gap in Contrastive Multimodal Learning](https://arxiv.org/abs/2412.07909)：提出与其他核心能力能力相关的模型侧方法。
+- [FILA: Fine-Grained Vision Language Models](https://arxiv.org/abs/2412.08378)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Benchmarking Large Vision-Language Models via Directed Scene Graph for Comprehensive Image Captioning](https://arxiv.org/abs/2412.08614)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [ObjectMate: A Recurrence Prior for Object Insertion and Subject-Driven Generation](https://arxiv.org/abs/2412.08645)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [StreamChat: Chatting with Streaming Video](https://arxiv.org/abs/2412.08646)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [LatentQA: Teaching LLMs to Decode Activations Into Natural Language](https://arxiv.org/abs/2412.08686)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Large Concept Models: Language Modeling in a Sentence Representation Space](https://arxiv.org/abs/2412.08821)：Large Concept Models 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Phi-4 Technical Report](https://arxiv.org/abs/2412.08905)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Filter-then-Generate: Large Language Models with Structure-Text Adapter for Knowledge Graph Completion](https://arxiv.org/abs/2412.09094)：补充与通用基础模型方法相关的模型侧方法。
+- [Does Representation Matter? Exploring Intermediate Layers in Large Language Models](https://arxiv.org/abs/2412.09563)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Olympus: A Universal Task Router for Computer Vision Tasks](https://arxiv.org/abs/2412.09612)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion](https://arxiv.org/abs/2412.09626)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Can LLMs Convert Graphs to Text-Attributed Graphs?](https://arxiv.org/abs/2412.10136)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Simple Guidance Mechanisms for Discrete Diffusion Models](https://arxiv.org/abs/2412.10193)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [One world, one opinion? The superstar effect in LLM responses](https://arxiv.org/abs/2412.10281)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [MAL: Cluster-Masked and Multi-Task Pretraining for Enhanced xLSTM Vision Performance](https://arxiv.org/abs/2412.10730)：为视觉 xLSTM 引入 cluster-masked masking 与多任务预训练，改进局部特征捕获和图像扫描效率。
+- [SoftVQ-VAE: Efficient 1-Dimensional Continuous Tokenizer](https://arxiv.org/abs/2412.10958)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [GEM: A Generalizable Ego-Vision Multimodal World Model for Fine-Grained Ego-Motion, Object Dynamics, and Scene Composition Control](https://arxiv.org/abs/2412.11198)：GEM 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [RetroLLM: Empowering Large Language Models to Retrieve Fine-grained Evidence within Generation](https://arxiv.org/abs/2412.11919)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Probabilistic Diffusion Models Advance Extreme Flood Forecasting](https://arxiv.org/abs/2412.11942)：提出与其他核心能力能力相关的模型侧方法。
+- [FSFM: A Generalizable Face Security Foundation Model via Self-Supervised Facial Representation Learning](https://arxiv.org/abs/2412.12032)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [SepLLM: Accelerate Large Language Models by Compressing One Segment into One Separator](https://arxiv.org/abs/2412.12094)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [DLF: Disentangled-Language-Focused Multimodal Sentiment Analysis](https://arxiv.org/abs/2412.12225)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Interpretable LLM-based Table Question Answering](https://arxiv.org/abs/2412.12386)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [LazyDiT: Lazy Learning for the Acceleration of Diffusion Transformers](https://arxiv.org/abs/2412.12444)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Falcon: Faster and Parallel Inference of Large Language Models through Enhanced Semi-Autoregressive Drafting and Custom-Designed Decoding Tree](https://arxiv.org/abs/2412.12639)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [LMUnit: Fine-grained Evaluation with Natural Language Unit Tests](https://arxiv.org/abs/2412.13091)：LMUnit: Fine-grained Evaluation with Natural Language Unit Tests 补充通用基础模型与评测方向的模型侧方法。
+- [SWAN: SGD with Normalization and Whitening Enables Stateless LLM Training](https://arxiv.org/abs/2412.13148)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [FastVLM: Efficient Vision Encoding for Vision Language Models](https://arxiv.org/abs/2412.13303)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Unveiling the Secret Recipe: A Guide For Supervised Fine-Tuning Small LLMs](https://arxiv.org/abs/2412.13337)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [EscapeBench: Pushing Language Models to Think Outside the Box](https://arxiv.org/abs/2412.13549)：提出与其他核心能力能力相关的模型侧方法。
+- [Model Decides How to Tokenize: Adaptive DNA Sequence Tokenization with MxDNA](https://arxiv.org/abs/2412.13716)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Mix-LN: Unleashing the Power of Deeper Layers by Combining Pre-LN and Post-LN](https://arxiv.org/abs/2412.13795)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Do Language Models Understand Time?](https://arxiv.org/abs/2412.13845)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [LLaVA-UHD v2: an MLLM Integrating High-Resolution Semantic Pyramid via Hierarchical Window Transformer](https://arxiv.org/abs/2412.13871)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Instructseg: Unifying Instructed Visual Segmentation with Multi-Modal Large Language Models](https://arxiv.org/abs/2412.14006)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Design choices made by LLM-based test generators prevent them from finding bugs](https://arxiv.org/abs/2412.14137)：Design choices made by LLM-based test generators prevent them from finding bugs 补充通用基础模型与评测方向的模型侧方法。
+- [ResQ: Mixed-Precision Quantization of Large Language Models with Low-Rank Residuals](https://arxiv.org/abs/2412.14363)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Multi-Level Optimal Transport for Universal Cross-Tokenizer Knowledge Distillation on Language Models](https://arxiv.org/abs/2412.14528)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [How to Synthesize Text Data without Model Collapse?](https://arxiv.org/abs/2412.14689)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [ReMoE: Fully Differentiable Mixture-of-Experts with ReLU Routing](https://arxiv.org/abs/2412.14711)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [ResoFilter: Fine-grained Synthetic Data Filtering for Large Language Models through Data-Parameter Resonance Analysis](https://arxiv.org/abs/2412.14809)：补充与通用基础模型方法相关的模型侧方法。
+- [Understanding the Dark Side of LLMs' Intrinsic Self-Correction](https://arxiv.org/abs/2412.14959)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Efficient Knowledge Injection in LLMs via Self-Distillation](https://arxiv.org/abs/2412.14964)：提出与其他核心能力能力相关的模型侧方法。
+- [SqueezeMe: Mobile-Ready Distillation of Gaussian Full-Body Avatars](https://arxiv.org/abs/2412.15171)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [LMFusion: Adapting Pretrained Language Models for Multimodal Generation](https://arxiv.org/abs/2412.15188)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Context-DPO: Aligning Language Models for Context-Faithfulness](https://arxiv.org/abs/2412.15280)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Maximize Your Data's Potential: Enhancing LLM Accuracy with Two-Phase Pretraining](https://arxiv.org/abs/2412.15285)：围绕Other补充《Maximize Your Data's Potential: Enhancing LLM Accuracy with Two-Phase Pretraining》这一模型、架构、训练配方或数据生成方法。
+- [Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models](https://arxiv.org/abs/2412.15287)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [TinyLLM: A Framework for Training and Deploying Language Models at the Edge Computers](https://arxiv.org/abs/2412.15304)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Efficient Fine-Tuning and Concept Suppression for Pruned Diffusion Models](https://arxiv.org/abs/2412.15341)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Sparse Checkpointing for Fast and Reliable MoE Training](https://arxiv.org/abs/2412.15411)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MORTAR: Multi-turn Metamorphic Testing for LLM-based Dialogue Systems](https://arxiv.org/abs/2412.15557)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [To Rely or Not to Rely? Evaluating Interventions for Appropriate Reliance on Large Language Models](https://arxiv.org/abs/2412.15584)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [HoVLE: Unleashing the Power of Monolithic Vision-Language Models with Holistic Vision-Language Embedding](https://arxiv.org/abs/2412.16158)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [REFA: Reference Free Alignment for multi-preference optimization](https://arxiv.org/abs/2412.16378)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Towards Graph Foundation Models: Learning Generalities Across Graphs via Task-Trees](https://arxiv.org/abs/2412.16441)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [NILE: Internal Consistency Alignment in Large Language Models](https://arxiv.org/abs/2412.16686)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [OpenAI o1 System Card](https://arxiv.org/abs/2412.16720)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Online Learning from Strategic Human Feedback in LLM Fine-Tuning](https://arxiv.org/abs/2412.16834)：提出或分析面向general model-side LLM capability的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [GME: Improving Universal Multimodal Retrieval by Multimodal LLMs](https://arxiv.org/abs/2412.16855)：通过多模态 LLM 改进通用多模态检索。
+- [Robustness of Large Language Models Against Adversarial Attacks](https://arxiv.org/abs/2412.17011)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Lies, Damned Lies, and Distributional Language Statistics: Persuasion and Deception with Large Language Models](https://arxiv.org/abs/2412.17128)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Distilled Decoding 1: One-step Sampling of Image Auto-regressive Models with Flow Matching](https://arxiv.org/abs/2412.17153)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [LLM4AD: A Platform for Algorithm Design with Large Language Model](https://arxiv.org/abs/2412.17287)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Understanding the Logic of Direct Preference Alignment through Logic](https://arxiv.org/abs/2412.17696)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [ChatGarment: Garment Estimation, Generation and Editing via Large Language Models](https://arxiv.org/abs/2412.17811)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search](https://arxiv.org/abs/2412.18319)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Task Preference Optimization: Improving Multimodal Large Language Models with Vision Task Alignment](https://arxiv.org/abs/2412.19326)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MBQ: Modality-Balanced Quantization for Large Vision-Language Models](https://arxiv.org/abs/2412.19509)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [xFLIE: Leveraging Actionable Hierarchical Scene Representation for Autonomous Semantic-Aware Inspection Missions](https://arxiv.org/abs/2412.19571)：补充与通用基础模型方法相关的模型侧方法。
+- [ReNeg: Learning Negative Embedding with Reward Guidance](https://arxiv.org/abs/2412.19637)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [InfAlign: Inference-aware language model alignment](https://arxiv.org/abs/2412.19792)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Vitron: A Unified Pixel-level Vision LLM for Understanding, Generating, Segmenting, Editing](https://arxiv.org/abs/2412.19806)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [AnalogXpert: Automating Analog Topology Synthesis by Incorporating Circuit Design Expertise into Large Language Models](https://arxiv.org/abs/2412.19824)：提出与其他核心能力能力相关的模型侧方法。
+- [SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](https://arxiv.org/abs/2412.20104)：SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis 补充通用基础模型与评测方向的模型侧方法。
+- [DoTA: Weight-Decomposed Tensor Adaptation for Large Language Models](https://arxiv.org/abs/2412.20891)：补充与通用基础模型方法相关的模型侧方法。
+- [ExpShield: Safeguarding Web Text from Unauthorized Crawling and LLM Exploitation](https://arxiv.org/abs/2412.21123)：《ExpShield: Safeguarding Web Text from Unauthorized Crawling and LLM Exploitation》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Adaptive Batch Size Schedules for Distributed Training of Language Models with Data and Model Parallelism](https://arxiv.org/abs/2412.21124)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Facilitating large language model Russian adaptation with Learned Embedding Propagation](https://arxiv.org/abs/2412.21140)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [LLM See, LLM Do: Leveraging Active Inheritance to Target Non-Differentiable Objectives](https://doi.org/10.18653/v1/2024.emnlp-main.521)：LLM See, LLM Do 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [The novel graph transformer-based surrogate model for learning physical systems](https://doi.org/10.1016/j.cma.2024.117410)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [LoRAMoE: Alleviating World Knowledge Forgetting in Large Language Models via MoE-Style Plugin](https://doi.org/10.18653/v1/2024.acl-long.106)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Fine-Tuning Large Language Models for Specialized Use Cases](https://doi.org/10.1016/j.mcpdig.2024.11.005)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Intent-Based Management of Next-Generation Networks: an LLM-Centric Approach](https://doi.org/10.1109/mnet.2024.3420120)：贡献面向 Other 的模型侧方法，覆盖训练、架构、后训练、数据、奖励或推理行为。
+- [Working Memory Identifies Reasoning Limits in Language Models](https://doi.org/10.18653/v1/2024.emnlp-main.938)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [Gradient-based Visual Explanation for Transformer-based CLIP](https://icml.cc/virtual/2024/poster/33867)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [MPMoE: Memory Efficient MoE for Pre-Trained Models With Adaptive Pipeline Parallelism](https://doi.org/10.1109/tpds.2024.3385639)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Knowledge management in the age of generative artificial intelligence – from SECI to GRAI](https://doi.org/10.1108/vjikms-10-2024-0357)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [The architecture of language: Understanding the mechanics behind LLMs](https://doi.org/10.1017/cfl.2024.16)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Mitigating social biases of pre-trained language models via contrastive self-debiasing with double data augmentation](https://doi.org/10.1016/j.artint.2024.104143)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Up To Date: Automatic Updating Knowledge Graphs Using LLMs](https://doi.org/10.1016/j.procs.2024.10.206)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Engineering Data Funnel (WIP) – An Ontology-Enhanced LLM-Based Agent and MoE System for Engineering Data Processing](https://doi.org/10.1109/etfa61755.2024.10710789)：提出面向Other Core Capabilities的模型侧方法、训练配方、架构、验证器、奖励模型或数据生成路径。
+- [Revisiting Query Variation Robustness of Transformer Models](https://doi.org/10.18653/v1/2024.findings-emnlp.248)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Hallucination in Large Language Models: From Mechanistic Understanding to Novel Control Frameworks](https://doi.org/10.1109/uv63228.2024.11189226)：Hallucination in Large Language Models: From Mechanistic Understanding to Novel Control Frameworks 补充通用基础模型与评测方向的模型侧方法。
+- [TDG-Mamba: Advanced Spatiotemporal Embedding for Temporal Dynamic Graph Learning via Bidirectional Information Propagation](https://doi.org/10.1109/tcss.2024.3509399)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [How effective is an LLM-based Data Analysis Automation Tool? A Case Study with ChatGPT's Data Analyst](https://doi.org/10.5753/sbbd.2024.240841)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Quantifying learning-style adaptation in effectiveness of LLM teaching](https://doi.org/10.18653/v1/2024.personalize-1.10)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [A Novel LLM Architecture for Intelligent System Configuration](https://doi.org/10.1109/iv64223.2024.00063)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [CSLM: A Framework for Question Answering Dataset Generation through Collaborative Small Language Models](https://doi.org/10.18653/v1/2024.findings-emnlp.690)：面向通用基础模型与评测，补充用于collaborative small-language-model data generation for QA的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Towards Using MultiModal LLMs as Graders in a GUI Design Course](https://doi.org/10.1109/elmar62909.2024.10694268)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Enable Fast Sampling for Seq2Seq Text Diffusion](https://doi.org/10.18653/v1/2024.findings-emnlp.497)：面向通用基础模型与评测，补充用于non-autoregressive or diffusion-style text generation model-side method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Large Models Defining a New Era in Intelligence Testing: A Short Discussion and Exploration](https://doi.org/10.1109/tiv.2024.3476326)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [FEASIBILITY OF USING LOW-PARAMETER LOCAL LLMS IN ANSWERING QUESTIONS FROM ENTERPRISE KNOWLEDGE BASE](https://doi.org/10.35784/acs-2024-46)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [LayoutKAG: Enhancing Layout Generation in Large Language Models Through Knowledge-Augmented Generation](https://doi.org/10.1109/aihcir65563.2024.00056)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [MMA: Multi-Modal Adapter for Vision-Language Models](https://doi.org/10.1109/cvpr52733.2024.02249)：《MMA: Multi-Modal Adapter for Vision-Language Models》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Planning First, Question Second: An LLM-Guided Method for Controllable Question Generation](https://doi.org/10.18653/v1/2024.findings-acl.280)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [LLM-Guided Formal Verification Coupled with Mutation Testing](https://doi.org/10.23919/date58400.2024.10546729)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Harder Task Needs More Experts: Dynamic Routing in MoE Models](https://doi.org/10.18653/v1/2024.acl-long.696)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Federated and edge learning for large language models](https://doi.org/10.1016/j.inffus.2024.102840)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Smaller Language Models are Better Zero-shot Machine-Generated Text Detectors](https://doi.org/10.18653/v1/2024.eacl-short.25)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Intent-Driven Mobile GUI Testing with Autonomous Large Language Model Agents](https://doi.org/10.1109/icst60714.2024.00020)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Next-Generation Refactoring: Combining LLM Insights and IDE Capabilities for Extract Method](https://doi.org/10.1109/icsme58944.2024.00034)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Teaching via LLM-enhanced simulations: Authenticity and barriers to suspension of disbelief](https://doi.org/10.1016/j.iheduc.2024.100990)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [PROSE: Predicting Multiple Operators and Symbolic Expressions using multimodal transformers](https://doi.org/10.1016/j.neunet.2024.106707)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Forgery-Aware Adaptive Learning With Vision Transformer for Generalized Face Forgery Detection](https://doi.org/10.1109/tcsvt.2024.3522091)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [On Large Language Models’ Resilience to Coercive Interrogation](https://doi.org/10.1109/sp54263.2024.00208)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Application of large language models to intelligently analyze long construction contract texts](https://doi.org/10.1080/01446193.2024.2415676)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Large language models (LLMs) and the institutionalization of misinformation.](https://doi.org/10.1016/j.tics.2024.08.007)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models](https://doi.org/10.18653/v1/2024.findings-emnlp.888)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Does Large Language Model Contain Task-Specific Neurons?](https://doi.org/10.18653/v1/2024.emnlp-main.403)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Text Fluoroscopy: Detecting LLM-Generated Text through Intrinsic Features](https://doi.org/10.18653/v1/2024.emnlp-main.885)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Have AI-Generated Texts from LLM Infiltrated the Realm of Scientific Writing? A Large-Scale Analysis of Preprint Platforms](https://doi.org/10.1101/2024.03.25.586710)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Quantization and Hardware Architecture Co-Design for Matrix-Vector Multiplications of Large Language Models](https://doi.org/10.1109/tcsi.2024.3350661)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Exploring the Essence of Prompt Tone: A Comparative Study of Large Language Model Security](https://doi.org/10.1109/iceeict61591.2024.10718584)：提出面向其他基础能力的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [The Power of Hybrid Learning in Industrial Robotics: Efficient Grasping Strategies with Supervised-Driven Reinforcement Learning](https://doi.org/10.1109/ijcnn60899.2024.10650627)：提出面向其他基础能力的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Unleash the Power of Vision-Language Models by Visual Attention Prompt and Multimodal Interaction](https://doi.org/10.1109/tmm.2024.3521785)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Regurgitative Training: The Value of Real Data in Training Large Language Models](https://doi.org/10.1287/mnsc.2024.07005)：研究“反刍式训练”：用自身或其他 LLM 生成的机器翻译数据微调模型，揭示合成数据反馈循环会削弱下游性能。
+- [Probing Visual Language Priors in VLMs](https://arxiv.org/abs/2501.00569)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [DiC: Rethinking Conv3x3 Designs in Diffusion Models](https://arxiv.org/abs/2501.00603)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [2 OLMo 2 Furious](https://arxiv.org/abs/2501.00656)：报告 OLMo 2 开放语言模型发布与训练路线。
+- [Understanding and Mitigating Bottlenecks of State Space Models through the Lens of Recency and Over-smoothing](https://arxiv.org/abs/2501.00658)：Understanding and Mitigating Bottlenecks of State Space Models 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Rethinking Addressing in Language Models via Contexualized Equivariant Positional Encoding](https://arxiv.org/abs/2501.00712)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [ZeroFlow: Overcoming Catastrophic Forgetting is Easier than You Think](https://arxiv.org/abs/2501.01045)：提出与其他核心能力能力相关的模型侧方法。
+- [FED: Fast and Efficient Dataset Deduplication Framework with GPU Acceleration](https://arxiv.org/abs/2501.01046)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Graph2text or Graph2token: A Perspective of Large Language Models for Graph Learning](https://arxiv.org/abs/2501.01124)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [From Tables to Time: Extending TabPFN-v2 to Time Series Forecasting](https://arxiv.org/abs/2501.02945)： 把 TabPFN-v2 从表格预测扩展到时间序列预测，扩展结构化数据 foundation model 覆盖。
+- [ChronoSense: Exploring Temporal Understanding in Large Language Models with Time Intervals of Events](https://arxiv.org/abs/2501.03040)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [KAnoCLIP](https://arxiv.org/abs/2501.03786)：通过知识驱动 prompt learning 和跨模态融合实现零样本视觉异常检测。
+- [AlphaPO - Reward shape matters for LLM alignment](https://arxiv.org/abs/2501.03884)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Eve: Efficient Multimodal Vision Language Models with Elastic Visual Experts](https://arxiv.org/abs/2501.04322)：通过弹性视觉专家构建高效多模态视觉语言模型，为受限算力下扩展视觉能力提供跨任务架构。
+- [Federated Fine-Tuning of LLMs: Framework Comparison and Research Directions](https://arxiv.org/abs/2501.04436)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [OpenOmni: Advancing Open-Source Omnimodal Large Language Models with Progressive Multimodal Alignment and Real-Time Self-Aware Emotional Speech Synthesis](https://arxiv.org/abs/2501.04561)：通过渐进式多模态对齐构建开放 omnimodal 模型并支持实时语音。
+- [Analyzing Memorization in LLMs through Model Attribution](https://arxiv.org/abs/2501.05078)：用归因方法分析语言模型记忆化，把隐私相关行为与可解释性连接起来。
+- [SemanticLens](https://arxiv.org/abs/2501.05398): 对大型 AI 模型进行机制化理解与验证，补充模型内部语义诊断工具。
+- [Scalable Vision Language Model Training via High Quality Data Curation](https://arxiv.org/abs/2501.05952)：提出以高质量视觉语言数据构造为核心的 SAIL-VL 训练系列。
+- [SPAM: Spike-Aware Adam with Momentum Reset for Stable LLM Training](https://arxiv.org/abs/2501.06842)：提出带 momentum reset 的 Spike-Aware Adam，用于稳定 LLM 训练，为大模型优化中的 loss spike 处理补充 optimizer-level 路线。
+- [Dataset Distillation via Committee Voting](https://arxiv.org/abs/2501.07575)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Output-Centric Automated Interpretability](https://arxiv.org/abs/2501.08319)：将特征描述锚定到模型输出以改进自动解释，扩展跨任务解释性工具线索。
+- [Task Vectors in In-Context Learning](https://arxiv.org/abs/2501.09240)：分析 task vector 如何在上下文学习中形成并发挥作用。核心思想：把 task vector 视为无需更新权重即可解释样例间适应的模型内部表示。
+- [Practical Continual Forgetting for Pre-Trained Vision Models](https://arxiv.org/abs/2501.09705)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [OMoE Orthogonal LoRA](https://arxiv.org/abs/2501.10062)：通过正交微调多样化 LoRA 适配，补充参数高效模型适配方法。
+- [FSMoE: A Flexible and Scalable Training System for Sparse Mixture-of-Experts Models](https://arxiv.org/abs/2501.10714)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Know “No” Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP](https://arxiv.org/abs/2501.10913)：通过数据驱动训练增强 CLIP 的否定理解，弥补跨模态语言视觉对齐缺口。
+- [Semantic Consistency through Model Editing](https://arxiv.org/abs/2501.11041): 从可解释性视角通过模型编辑提升语义一致性，扩展模型编辑诊断路线。
+- [LLM supervised Pre-training for Multimodal Emotion Recognition in Conversations](https://arxiv.org/abs/2501.11468)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Recurrent Diffusion for Large-Scale Parameter Generation](https://arxiv.org/abs/2501.11587)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Optimizing Pretraining Data Mixtures with LLM-Estimated Utility](https://arxiv.org/abs/2501.11747)：用小规模效用估计和 LLM 估计的数据效用优化预训练数据混合，把数据组成变成可复用的模型训练杠杆。
+- [TabularARGN: A Flexible and Efficient Auto-Regressive Framework for Generating High-Fidelity Synthetic Data](https://arxiv.org/abs/2501.12012)：为混合类型表格数据训练全部条件概率，支持公平性感知生成、缺失补全和任意列条件生成，并提升合成效率。
+- [TokenVerse: Versatile Multi-concept Personalization in Token Modulation Space](https://arxiv.org/abs/2501.12224)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model](https://arxiv.org/abs/2501.12368)：构建开放的多模态奖励模型，用于 LVLM 输出质量评估与测试时选择。
+- [Low-Dimensional Adaptation of Diffusion Models](https://arxiv.org/abs/2501.12982)：从 total variation convergence 角度研究 low-dimensional diffusion adaptation。
+- [Let SSMs be ConvNets: State-space Modeling with Optimal Tensor Contractions](https://arxiv.org/abs/2501.13230)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [MambaQuant: Quantizing the Mamba Family with Variance Aligned Rotation Methods](https://arxiv.org/abs/2501.13484)：通过方差对齐旋转更可靠地量化 Mamba 系列序列模型。
+- [Attribute-based Visual Reprogramming for Vision-Language Models](https://arxiv.org/abs/2501.13982)：补充面向视觉语言模型的属性驱动视觉重编程方法。
+- [OstQuant: Refining Large Language Model Quantization with Orthogonal and Scaling Transformations for Better Distribution Fitting](https://arxiv.org/abs/2501.13987)：通过正交与缩放变换以及量化空间利用率指标改进 LLM 后训练量化。
+- [Dynamic Adaptation of LoRA Fine-Tuning for Efficient and Task-Specific Optimization of Large Language Models](https://arxiv.org/abs/2501.14859)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Interpretability in Parameter Space](https://arxiv.org/abs/2501.14926)：通过基于归因的参数分解最小化机制描述长度，把可解释性从激活特征分析扩展到参数空间。
+- [Can Large Language Models Be Trusted as Evolutionary Optimizers for Network-Structured Combinatorial Problems?](https://arxiv.org/abs/2501.15081)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [OpenCharacter: Training Customizable Role-Playing LLMs with Large-Scale Synthetic Personas](https://arxiv.org/abs/2501.15427)：用大规模合成角色画像训练可定制角色扮演 LLM。
+- [Memorization and Regularization in Generative Diffusion Models](https://arxiv.org/abs/2501.15785)：分析 regularization 如何影响 generative diffusion models 的 memorization behavior。
+- [Towards General-Purpose Model-Free Reinforcement Learning](https://arxiv.org/abs/2501.16142)：补充 Other 方向的模型侧方法，涵盖训练、架构、后训练、合成数据、验证器或世界模型等技术线索。
+- [CITYWALK: Enhancing LLM-Based C++ Unit Test Generation via Project-Dependency Awareness and Language-Specific Knowledge](https://arxiv.org/abs/2501.16155)：CITYWALK 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Transformers and Full Bayesian Inference in Context](https://arxiv.org/abs/2501.16825): 研究 Transformer 能否在上下文中学习完整贝叶斯推断，为上下文统计推理提供理论依据。
+- [Flow Matching Markov Kernels](https://arxiv.org/abs/2501.16839)：从 Markov kernel、随机过程和传输计划角度分析 flow matching，补充生成模型理论。
+- [RODEO OOD Detection](https://arxiv.org/abs/2501.16971)：通过暴露自适应分布外样本改进鲁棒离群检测。
+- [Over-Tokenized Transformer](https://arxiv.org/abs/2501.16975)：研究 Transformer 的 vocabulary scaling，说明 over-tokenization 可改善语言模型能力与效率权衡。
+- [How Linguistics Learned to Stop Worrying and Love the Language Models](https://arxiv.org/abs/2501.17047)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Decoding Human Preferences in Alignment: An Improved Approach to Inverse Constitutional AI](https://arxiv.org/abs/2501.17112)：补充与通用基础模型方法相关的模型侧方法。
+- [Diverse Preference Optimization](https://arxiv.org/abs/2501.18101)：提出鼓励多样化对齐输出的 preference-optimization 方法，避免偏好训练只收敛到单一高分模式。
+- [A Unified Perspective on the Dynamics of Deep Transformers](https://arxiv.org/abs/2501.18322)：用 Vlasov 式 Transformer PDE 建模层间动态，补充注意力驱动表征演化的理论视角。
+- [Streaming DiLoCo](https://arxiv.org/abs/2501.18512)：在 distributed language-model training 中重叠通信，改进 DiLoCo-style scaling。
+- [R.I.P.: Better Models by Survival of the Fittest Prompts](https://arxiv.org/abs/2501.18578)：利用 rejected response 的质量与 reward gap 筛选偏好和合成指令数据，为更强的指令微调模型补充数据质量控制路线。
+- [Transcoders Beat Sparse Autoencoders](https://arxiv.org/abs/2501.18823)：比较 transcoder 与 SAE，发现更可解释的组件级特征，补充跨任务可解释模型工具。
+- [Convex-Optimization View of Learning-Rate Scheduling](https://arxiv.org/abs/2501.18965)：把 convex optimization theory 与 large-model training 的 learning-rate scheduling 联系起来。
+- [Concept Steerers: Leveraging K-Sparse Autoencoders for Test-Time Controllable Generations](https://arxiv.org/abs/2501.19066)：Concept Steerers 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment](https://arxiv.org/abs/2501.19309)：在 speculative decoding 中加入 judge 判断候选 token 是否可接受，放宽严格逐 token 验证以提升解码速度。
+- [Denoising Score Matching with Random Features](https://arxiv.org/abs/2502.00336)：为扩散模型 score matching 提供精确学习曲线分析，说明噪声采样如何影响泛化与记忆。
+- [Cost-Efficiency in LLM Serving](https://arxiv.org/abs/2502.00722)：分析 large language models 在 heterogeneous GPU settings 下的 serving cost 与 efficiency。
+- [An Inquiry into Datacenter TCO for LLM Inference with FP8](https://arxiv.org/abs/2502.01070)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Inverse Bridge Matching Distillation](https://arxiv.org/abs/2502.01362)：蒸馏 inverse bridge matching，用于生成建模训练。
+- [Scaling Embedding Layers in Language Models](https://arxiv.org/abs/2502.01637)：研究 embedding-layer scaling 对 language models 的影响。
+- [Constrained Belief Updates](https://arxiv.org/abs/2502.01954)：用受约束的 belief updates 解释 transformer representation geometry，将内部表示与信念动态联系起来。
+- [On the Guidance of Flow Matching](https://arxiv.org/abs/2502.02150)：推导流匹配的一般 guidance 方法，将可控生成扩展到扩散模型专属 guidance 之外。
+- [SDE Matching: Scalable and Simulation-Free Training of Latent Stochastic Differential Equations](https://arxiv.org/abs/2502.02472)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [TabPFN Unleashed](https://arxiv.org/abs/2502.02527)：扩展 TabPFN 式表格分类能力，把上下文学习表格基础模型推进到更大规模、更实用的分类场景。
+- [Peri-LN](https://arxiv.org/abs/2502.02732)：用 Peri-LN 重新审视 Transformer normalization，补充大模型通用架构路线。
+- [Speculative Prefill: Turbocharging TTFT with Lightweight and Training-Free Token Importance Estimation](https://arxiv.org/abs/2502.02789)：在 prefill 阶段用轻量免训练 token 重要性估计降低首 token 延迟。
+- [Training an LLM-as-a-Judge Model: Pipeline, Insights, and Practical Lessons](https://arxiv.org/abs/2502.02988)：训练 Themis 这一 LLM judge，通过场景化评测提示和可控指令生成从教师模型蒸馏评价能力，并用人工标注 meta-evaluation 基准检验。
+- [Scaling Laws for Upcycling MoE Language Models](https://arxiv.org/abs/2502.03009)：研究如何将稠密检查点升级为混合专家语言模型，连接架构转换与扩展规律。
+- [Large Learning Rates in Denoising Score Matching](https://arxiv.org/abs/2502.03435)：说明 denoising score matching 中的大学习率可能抑制记忆化。
+- [Universal Sparse Autoencoders](https://arxiv.org/abs/2502.03714)：用通用 SAE 对齐跨模型可解释概念，支持模型之间的比较和 steering 分析。
+- [Rank Also Matters: Hierarchical Configuration for Mixture of Adapter Experts in LLM Fine-Tuning](https://arxiv.org/abs/2502.03884)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Cross the Gap](https://arxiv.org/abs/2502.04263)：用 modality inversion 暴露 CLIP 的 intra-modal misalignment。
+- [Ola: Pushing the Frontiers of Omni-Modal Language Model with Progressive Modality Alignment](https://arxiv.org/abs/2502.04328)：通过渐进式模态对齐构建全模态语言模型。
+- [Diffusion Models for Manifold Data](https://arxiv.org/abs/2502.04339)：分析流形结构数据上的扩散模型，澄清生成模型假设何时匹配低维结构。
+- [Learning low-dimensional representations of ensemble forecast fields using autoencoder-based methods](https://arxiv.org/abs/2502.04409)：补充与通用基础模型方法相关的模型侧方法。
+- [Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis](https://arxiv.org/abs/2502.04416)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [SAEs Do Not Find Canonical Units](https://arxiv.org/abs/2502.04878)：质疑 sparse autoencoders 是否能恢复 canonical units of analysis，为 SAE 解释性补充可靠性边界。
+- [Joint MoE Scaling Laws](https://arxiv.org/abs/2502.05172)：研究 mixture-of-experts scaling 如何提升 memory efficiency。
+- [DeepThink: Aligning Language Models with Domain-Specific User Intents](https://arxiv.org/abs/2502.05497)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [TabICL](https://arxiv.org/abs/2502.05564)：构建面向大规模表格数据 in-context learning 的表格基础模型，拓展文本和视觉之外的 foundation model 覆盖。
+- [Low-Dimensional Diffusion Representation Dynamics](https://arxiv.org/abs/2502.05743)：用低维建模分析扩散模型的表示动态。
+- [MicroViT](https://arxiv.org/abs/2502.05800)：为边缘设备视觉 Transformer 设计低复杂度自注意力，补充高效架构线索。
+- [Scaling Laws for Forgetting During Finetuning](https://arxiv.org/abs/2502.06042)：研究加入 pretraining data injection 的 finetuning 中 forgetting 的 scaling laws。
+- [K-ON: Stacking Knowledge On the Head Layer of Large Language Model](https://arxiv.org/abs/2502.06257)：补充在大语言模型头部层叠加知识的模型侧方法。
+- [Boost-and-Skip: A Simple Guidance-Free Diffusion for Minority Generation](https://arxiv.org/abs/2502.06516)：提出无需引导模型的扩散 minority generation 方法，通过方差增强初始化和时间步跳过生成低密度、欠代表样本，避免额外专用 guidance。
+- [Hephaestus: Improving Fundamental Agent Capabilities of Large Language Models through Continual Pre-Training](https://arxiv.org/abs/2502.06589)：Hephaestus 通过持续预训练提升 LLM 的基础智能体能力。
+- [Random Noise in Pre-training Data](https://arxiv.org/abs/2502.06604)：研究语言模型预训练中是否必须过滤随机噪声，为模型能力形成补充跨任务的数据过滤参考。
+- [Who Taught You That? Tracing Teachers in Model Distillation](https://arxiv.org/abs/2502.06659)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [No Trick, No Treat: Pursuits and Challenges Towards Simulation-free Training of Neural Samplers](https://arxiv.org/abs/2502.06685)：提出神经采样器的免仿真训练，降低生成式采样中的轨迹仿真开销。
+- [Dynamic Loss-Based Sample Reweighting](https://arxiv.org/abs/2502.06733)：用 dynamic loss-based sample reweighting 改进 large language model pretraining。
+- [Interpretable and Testable Vision Features via Sparse Autoencoders](https://arxiv.org/abs/2502.06755)：将稀疏自编码器用于视觉特征并检验其可解释性，扩展 SAE 在文本模型之外的覆盖。
+- [EAP-GP](https://arxiv.org/abs/2502.06852)：通过缓解归因饱和改进基于梯度的自动电路识别，补充 transformer 机制可解释性方法。
+- [Gemstones](https://arxiv.org/abs/2502.06857)：发布跨架构形状和超参数的数千个 transformer checkpoint，用于多维 scaling law 分析。
+- [Automated Consistency Analysis of LLMs](https://arxiv.org/abs/2502.07036)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Does Training on Synthetic Data Make Models Less Robust?](https://arxiv.org/abs/2502.07164)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Scaling Pre-training to One Hundred Billion Data for Vision Language Models](https://arxiv.org/abs/2502.07617)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Auditing Prompt Caching in Language Model APIs](https://arxiv.org/abs/2502.07776)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [HexGen-2](https://arxiv.org/abs/2502.07903)：在 heterogeneous environments 中支持 LLM 的 disaggregated generative inference。
+- [Inference-time sparse attention with asymmetric indexing](https://arxiv.org/abs/2502.08246)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Distillation Scaling Laws](https://arxiv.org/abs/2502.08606)：研究 model distillation 的 scaling laws。
+- [Self-Influence Transformer Circuits](https://arxiv.org/abs/2502.09022)：用 self-influence 揭示 Transformer 推理行为背后的 circuit。
+- [ThunderServe](https://arxiv.org/abs/2502.09334)：在异构云 GPU 上调度 LLM serving，以提升性能和成本效率。
+- [Memorization and Generalization in Generative Diffusion](https://arxiv.org/abs/2502.09578)：在 manifold hypothesis 下分析 generative diffusion 的 memorization 与 generalization。
+- [DeltaProduct](https://arxiv.org/abs/2502.10297)：通过 Householder-product 状态转移结构改进 linear RNN 的 state tracking。
+- [Organize the Web: Constructing Domains Enhances Pre-Training Data Curation](https://arxiv.org/abs/2502.10341)：利用领域组织信号改进网页规模预训练数据筛选与整理。
+- [Accelerating Unbiased LLM Evaluation via Synthetic Feedback](https://arxiv.org/abs/2502.10563)：Accelerating Unbiased LLM Evaluation via Synthetic Feedback 补充通用基础模型与评测方向的模型侧方法。
+- [Knowledge Circuits in Continual Pre-Training](https://arxiv.org/abs/2502.11196)：研究 LLM 在持续预训练中如何吸收新知识。核心思想：追踪新事实背后的 circuit 变化，使知识获得与保持成为可检查的模型侧现象。
+- [Evaluating the Performance of the DeepSeek Model in Confidential Computing Environment](https://arxiv.org/abs/2502.11347)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [TimeCAP: Learning to Contextualize, Augment, and Predict Time Series Events with Large Language Model Agents](https://arxiv.org/abs/2502.11418)：用 LLM agent 对时间序列事件进行上下文化、增强和预测，连接语言推理与时序建模。
+- [Does Editing Provide Evidence for Localization?](https://arxiv.org/abs/2502.11447)：检验模型编辑是否真的能支持定位结论，为可解释性与编辑研究补充警示。
+- [Simulus: Combining Improvements in Sample-Efficient World Model Agents](https://arxiv.org/abs/2502.11537)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Presumed Cultural Identity: How Names Shape LLM Responses](https://arxiv.org/abs/2502.11995)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [PRISM: Self-Pruning Intrinsic Selection Method for Training-Free Multimodal Data Selection](https://arxiv.org/abs/2502.12119)：提出免训练 self-pruning intrinsic selection，用于视觉指令微调中的多模态数据筛选。
+- [Loss-to-Loss Scaling Laws](https://arxiv.org/abs/2502.12120)：研究数据组成如何决定大语言模型的 loss-to-loss scaling laws，补充跨任务模型扩展规律。
+- [Idiosyncrasies in LLMs](https://arxiv.org/abs/2502.12150)：研究大语言模型中的 idiosyncratic behaviors，补充模型行为刻画线索。
+- [Sparse Shift Autoencoders](https://arxiv.org/abs/2502.12179)：用 shifted sparse autoencoder 识别 LLM 激活中的概念，扩展语言模型特征发现方法。
+- [YOLOv12](https://arxiv.org/abs/2502.12524)：提出以注意力为中心的实时目标检测器，在保持 YOLO 式低延迟的同时提升检测精度。
+- [Towards Text-Image Interleaved Retrieval](https://arxiv.org/abs/2502.12799)：补充模型侧方法，主要面向 Other。
+- [Archetypal SAE](https://arxiv.org/abs/2502.12892)：将 sparse autoencoder 字典学习用于 large vision models 中的稳定概念抽取，补充跨任务解释性模型线索。
+- [Trust Me, I'm Wrong: LLMs Hallucinate with Certainty Despite Knowing the Answer](https://arxiv.org/abs/2502.12964)：提出与其他核心能力能力相关的模型侧方法。
+- [Improving LLM-powered Recommendations with Personalized Information](https://arxiv.org/abs/2502.13845)：Improving LLM-powered Recommendations with Personalized Information 补充通用基础模型与评测方向的模型侧方法。
+- [FlexTok](https://arxiv.org/abs/2502.13967): 将图像重采样为长度可变的一维 token 序列，为多模态模型补充视觉分词架构。
+- [Which Attention Heads Matter for ICL?](https://arxiv.org/abs/2502.14010)：识别对 in-context learning 重要的 attention heads，为无需权重更新的适配补充机制视角。
+- [HPS: Hard Preference Sampling for Human Preference Alignment](https://arxiv.org/abs/2502.14400)：补充与通用基础模型方法相关的模型侧方法。
+- [SVDq: 1.25-bit and 410x Key Cache Compression for LLM Attention](https://arxiv.org/abs/2502.15304)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [PAPI: Exploiting Dynamic Parallelism in Large Language Model Decoding with a Processing-In-Memory-Enabled Computing System](https://arxiv.org/abs/2502.15470)：利用 processing-in-memory 系统在 LLM 解码时挖掘动态并行性，加速推理。
+- [Improving the Scaling Laws of Synthetic Data with Deliberate Practice](https://arxiv.org/abs/2502.15588)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Mantis](https://arxiv.org/abs/2502.15637)：构建 lightweight calibrated foundation model，用于 time-series classification。
+- [Directional Gradient Projection for Robust Fine-Tuning of Foundation Models](https://arxiv.org/abs/2502.15895)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Straight to Zero](https://arxiv.org/abs/2502.15938)：分析为什么 LLM 训练中学习率线性衰减到零效果更好。
+- [Linear Attention for Efficient Bidirectional Sequence Modeling](https://arxiv.org/abs/2502.16249)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Emergence of Multimodal Representation Alignment](https://arxiv.org/abs/2502.16282)：研究 multimodal representation alignment 如何 emergence。
+- [Entropy-Lens](https://arxiv.org/abs/2502.16570)：分析 Transformer computations 的 information signatures。
+- [Built-In Autoregressive Search Engines for VQA](https://arxiv.org/abs/2502.16641)：为 retrieval-augmented visual question answering 加入 built-in autoregressive search engines。
+- [AAD-LLM: Neural Attention-Driven Auditory Scene Understanding](https://arxiv.org/abs/2502.16794)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Muon is Scalable for LLM Training](https://arxiv.org/abs/2502.16982)：展示 Muon 类优化器可扩展到 LLM 训练。
+- [An Enhanced Large Language Model For Cross Modal Query Understanding System Using DL-KeyBERT Based CAZSSCL-MPGPT](https://arxiv.org/abs/2502.17000)：《An Enhanced Large Language Model For Cross Modal Query Understanding System Using DL-KeyBERT Based CAZSSCL-MPGPT》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [RobustMerge](https://arxiv.org/abs/2502.17159)：面向多模态 LLM 进行具备方向鲁棒性的参数高效模型合并，为跨能力 MLLM 适配补充模型组合方法。
+- [Unveiling Downstream Performance Scaling of LLMs: A Clustering-Based Perspective](https://arxiv.org/abs/2502.17262)：该工作用聚类视角建模下游性能缩放规律，以预测 LLM 训练中的能力变化。
+- [Capability Instruction Tuning: A New Paradigm for Dynamic LLM Routing](https://arxiv.org/abs/2502.17282)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Mutual Reinforcement of LLM Dialogue Synthesis and Summarization Capabilities for Few-Shot Dialogue Summarization](https://arxiv.org/abs/2502.17328)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [On Relation-Specific Neurons in Large Language Models](https://arxiv.org/abs/2502.17355)：补充与通用基础模型方法相关的模型侧方法。
+- [A Closer Look at TabPFN v2](https://arxiv.org/abs/2502.17361)：分析并扩展 TabPFN v2 的表格基础模型能力，补充现有 TabICL 类条目之外的覆盖。
+- [S4S: Solving for a Diffusion Model Solver](https://arxiv.org/abs/2502.17423)：直接从教师轨迹学习预训练扩散模型的 solver，在不改动基础生成器的情况下提升少步生成质量。
+- [Introducing Visual Perception Token into Multimodal Large Language Model](https://arxiv.org/abs/2502.17425)：为多模态大模型引入 visual perception token，补充提升视觉 grounding 的架构路线。
+- [SAE-V](https://arxiv.org/abs/2502.17514)：使用稀疏自编码器式解释来分析多模态模型，将内部特征诊断与对齐干预联系起来。
+- [Synthetic Text Generation for Training Large Language Models via Gradient Matching](https://arxiv.org/abs/2502.17607)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Scaling LLM Pre-training with Vocabulary Curriculum](https://arxiv.org/abs/2502.17910)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [C-LoRA: Continual Low-Rank Adaptation for Pre-trained Models](https://arxiv.org/abs/2502.17920)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [M2-omni: Advancing Omni-MLLM for Comprehensive Modality Support with Competitive Performance](https://arxiv.org/abs/2502.18778)：推进具备综合模态支持的 omni-MLLM。
+- [Sharpness Disparity Principle](https://arxiv.org/abs/2502.19002)：基于早期 sharpness disparity 设置 blockwise learning rates，加速语言模型预训练。
+- [FaithUn: Toward Faithful Forgetting in Language Models by Investigating the Interconnectedness of Knowledge](https://arxiv.org/abs/2502.19207)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Interpolation Effect of Score Smoothing](https://arxiv.org/abs/2502.19499)：分析 score smoothing 在扩散式生成模型中的插值效应。
+- [How Much is Enough?](https://arxiv.org/abs/2502.20273)：分析 tokenization training data 的边际收益递减，为大模型 tokenizer 设计提供依据。
+- [Promote, Suppress, Iterate: How Language Models Answer One-to-Many Factual Queries](https://arxiv.org/abs/2502.20475)：补充与通用基础模型方法相关的模型侧方法。
+- [Interpreting CLIP with Hierarchical SAEs](https://arxiv.org/abs/2502.20578)：将 hierarchical sparse autoencoders 用于 CLIP，扩展跨抽象层级的多模态特征解释。
+- [Neural Characteristic Function Dataset Distillation](https://arxiv.org/abs/2502.20653)：把 dataset distillation 表述为基于 neural characteristic-function discrepancy 的 minmax distribution matching。
+- [Is Mechanistic Interpretability Identifiable?](https://arxiv.org/abs/2502.20914)：考察 mechanistic interpretability 的可识别性限制，为内部 circuit explanations 补充可靠性检验。
+- [Δ-model correction of foundation model based on the model's own understanding.](https://arxiv.org/abs/2502.21179)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Remasking Discrete Diffusion Models with Inference-Time Scaling](https://arxiv.org/abs/2503.00307)： 通过 remasking 为 discrete diffusion 增加 inference-time scaling，属于跨任务生成模型扩展方法。
+- [CL-MoE](https://arxiv.org/abs/2503.00413)：用双动量混合专家机制提升多模态大模型的连续视觉问答能力。
+- [Breaking the Loop: Detecting and Mitigating Denial-of-Service Vulnerabilities in Large Language Models](https://arxiv.org/abs/2503.00416)：补充与通用基础模型方法相关的模型侧方法。
+- [From Prompting to Partnering: Personalization Features for Human-LLM Interactions](https://arxiv.org/abs/2503.00681)：From Prompting to Partnering: Personalization Features for Human-LLM Interactions 补充通用基础模型与评测方向的模型侧方法。
+- [Multimodal Representation Tuning](https://arxiv.org/abs/2503.00723)：直接编辑语义丰富的多模态表征，用更少可训练参数改进多模态指令微调。
+- [Personalize Your LLM: Fake it then Align it](https://arxiv.org/abs/2503.01048)：Personalize Your LLM: Fake it then Align it 补充通用基础模型与评测方向的模型侧方法。
+- [Precise Localization of Memories: A Fine-grained Neuron-level Knowledge Editing Technique for LLMs](https://arxiv.org/abs/2503.01090)：在神经元细粒度定位事实知识以支持 LLM 知识编辑，在关系事实变化时提升编辑局部性。
+- [Split Gibbs Discrete Diffusion Posterior Sampling](https://arxiv.org/abs/2503.01161)：提出离散扩散的 split Gibbs 后验采样，补充通用生成模型推断方法。
+- [Multi-Level Collaboration in Model Merging](https://arxiv.org/abs/2503.01268)：研究参数空间合并何时接近预测级集成，并提出多模型协作框架，把合并与集成的性能差距推广到两模型、同检查点之外的设定。
+- [ACTIVA](https://arxiv.org/abs/2503.01290)：用 Transformer-based VAE 摊销因果效应估计，为结构化因果推断补充模型侧路线。
+- [Projecting Assumptions](https://arxiv.org/abs/2503.01822)：把 sparse autoencoder 与概念几何联系起来，澄清 SAE 特征对模型表征施加的假设。
+- [From Superposition to Sparse Codes](https://arxiv.org/abs/2503.01824)：将 superposition 与 sparse-code representations 联系起来，为特征字典式解释性补充理论背景。
+- [From Language to Cognition: How LLMs Outgrow the Human Language Network](https://arxiv.org/abs/2503.01830)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Rotary Offset Features in Large Language Models](https://arxiv.org/abs/2503.01832)：补充与通用基础模型方法相关的模型侧方法。
+- [Systems and Algorithms for Convolutional Multi-Hybrid Language Models at Scale](https://arxiv.org/abs/2503.01868)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [LLM-TabLogic: Preserving Inter-Column Logical Relationships in Synthetic Tabular Data via Prompt-Guided Latent Diffusion](https://arxiv.org/abs/2503.02161)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [(How) Do Language Models Track State?](https://arxiv.org/abs/2503.02854)：探查语言模型如何追踪状态，说明内部表征如何维持不断变化的任务或世界状态。
+- [Making AI-Enhanced Videos: Analyzing Generative AI Use Cases in YouTube Content Creation](https://arxiv.org/abs/2503.03134)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Spectral Bias in Diffusion Learning Dynamics](https://arxiv.org/abs/2503.03206)：给出 diffusion models 学习动态中 spectral bias 的解析理论。
+- [Targeted Distillation for Sentiment Analysis](https://arxiv.org/abs/2503.03225)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Rethinking Video Tokenization: A Conditioned Diffusion-based Approach](https://arxiv.org/abs/2503.03708)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Log-Depth Transformers](https://arxiv.org/abs/2503.03961)：分析 log-depth transformers 的表达能力，为模型能力形成补充理论架构参考。
+- [Synthetic Data is an Elegant GIFT for Continual Vision-Language Models](https://arxiv.org/abs/2503.04229)： 用合成数据支持持续视觉语言模型，为多模态持续适配补充数据生成路径。
+- [Transferable Activation Space Interventions](https://arxiv.org/abs/2503.04429)：表明激活空间干预可以在语言模型之间迁移，增强模型编辑与转向工具箱。
+- [ToFu: Visual Tokens Reduction via Fusion for Multi-modal, Multi-patch, Multi-image Task](https://arxiv.org/abs/2503.04444)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Predictable Scale: Step Law](https://arxiv.org/abs/2503.04715)：研究大语言模型预训练中的最优超参数 scaling law。
+- [LLaVE](https://arxiv.org/abs/2503.04812): 用难度加权对比学习训练语言与视觉嵌入模型，扩展多模态表征学习路线。
+- [Unified Reward Model for Multimodal Understanding and Generation](https://arxiv.org/abs/2503.05236)：构建覆盖多模态理解与生成的统一奖励模型。
+- [Strategy Coopetition](https://arxiv.org/abs/2503.05631): 用策略相互作用解释上下文学习的涌现与短暂性，补充 ICL 的模型动态机制。
+- [Black Box Causal Inference](https://arxiv.org/abs/2503.05985)：通过元预测进行黑盒效应估计，将结构化数据基础模型式建模扩展到因果推断任务。
+- [Unlocking Pretrained LLMs for Motion-Related Multimodal Generation: A Fine-Tuning Approach to Unify Diffusion and Next-Token Prediction](https://arxiv.org/abs/2503.06119)：补充与通用基础模型方法相关的模型侧方法。
+- [Exploring Adversarial Transferability between Kolmogorov-arnold Networks](https://arxiv.org/abs/2503.06276)：Exploring Adversarial Transferability between Kolmogorov-arnold Networks 补充通用基础模型与评测方向的模型侧方法。
+- [What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization](https://arxiv.org/abs/2503.06698)：What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization 补充通用基础模型与评测方向的模型侧方法。
+- [GNF: Gaussian Neural Fields for Multidimensional Signal Representation and Reconstruction](https://arxiv.org/abs/2503.06762)：补充与通用基础模型方法相关的模型侧方法。
+- [XR-VLM: Cross-Relationship Modeling with Multi-part Prompts and Visual Features for Fine-Grained Recognition](https://arxiv.org/abs/2503.07075)：通过多部件提示和视觉特征建模类别间 cross-relationship，使 VLM 更能区分细粒度视觉子类。
+- [Ideas in Inference-time Scaling can Benefit Generative Pre-training Algorithms](https://arxiv.org/abs/2503.07154)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Efficient Distillation of Classifier-Free Guidance using Adapters](https://arxiv.org/abs/2503.07274)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Geometric Retargeting: A Principled, Ultrafast Neural Hand Retargeting Algorithm](https://arxiv.org/abs/2503.07541)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Denoising Score Distillation: From Noisy Diffusion Pretraining to One-Step High-Quality Generation](https://arxiv.org/abs/2503.07578)：Denoising Score Distillation: From Noisy Diffusion Pretraining to One-Step High-Quality Generation 补充通用基础模型与评测方向的模型侧方法。
+- [Detection avoidance techniques for large language models](https://arxiv.org/abs/2503.07595)：补充与通用基础模型方法相关的模型侧方法。
+- [MoE-X](https://arxiv.org/abs/2503.07639)：把混合专家语言模型设计成内生可解释，而不只依赖事后特征抽取。
+- [Large Scale Multi-Task Bayesian Optimization with Large Language Models](https://arxiv.org/abs/2503.08131)：用 LLM 辅助多任务贝叶斯优化，在大规模任务集合中迁移先验与搜索经验。
+- [RouteSAE](https://arxiv.org/abs/2503.08200)：为 sparse autoencoder 加入 routing，使可解释特征能跨多个 LLM layer 提取，属于跨能力的模型解释与 steering 覆盖。
+- [CLEV: LLM-Based Evaluation Through Lightweight Efficient Voting for Free-Form Question-Answering](https://arxiv.org/abs/2503.08542)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Filter Like You Test: Data-Driven Data Filtering for CLIP Pretraining](https://arxiv.org/abs/2503.08805)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Interpreting the Repeated Token Phenomenon in Large Language Models](https://arxiv.org/abs/2503.08908)：提出与其他核心能力能力相关的模型侧方法。
+- [Extragradient Preference Optimization (EGPO): Beyond Last-Iterate Convergence for Nash Learning from Human Feedback](https://arxiv.org/abs/2503.08942)：用 extragradient preference optimization 处理非传递人类偏好的 Nash learning，为对齐训练提供不同于 Bradley-Terry 假设的通用优化路线。
+- [Strategyproof Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2503.09561)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [DiLoCo Scaling Laws](https://arxiv.org/abs/2503.09799)：研究 communication-efficient language-model training 的可靠稳健 scaling。
+- [We Should Chart an Atlas of All the World's Models](https://arxiv.org/abs/2503.10633)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Fixed-Point RNNs: Interpolating from Diagonal to Dense](https://arxiv.org/abs/2503.10799)：Fixed-Point RNNs 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Trajectory Mamba: Efficient Attention-Mamba Forecasting Model Based on Selective SSM](https://arxiv.org/abs/2503.10898)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Ouromamba: a Data-Free Quantization Framework for Vision Mamba](https://arxiv.org/abs/2503.10959)：通过 latent-state 邻域交互生成 VMM 校准数据，并结合动态 outlier 检测做混合精度量化。
+- [Formal and functional linguistic mechanisms](https://arxiv.org/abs/2503.11302)：检验语言模型是否把形式语言机制与功能行为分离，为语言能力的内部机制分析补充参考。
+- [LogitLens4LLMs: Extending Logit Lens Analysis to Modern Large Language Models](https://arxiv.org/abs/2503.11667)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [DiffGAP: A Lightweight Diffusion Module in Contrastive Space for Bridging Cross-Model Gap](https://arxiv.org/abs/2503.12131)：DiffGAP: A Lightweight Diffusion Module in Contrastive Space for Bridging Cross-Model Gap 补充通用基础模型与评测方向的模型侧方法。
+- [Will Pre-Training Ever End? A First Step Toward Next-Generation Foundation MLLMs via Self-Improving Systematic Cognition](https://arxiv.org/abs/2503.12303)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [VideoMAP: Toward Scalable Mamba-based Video Autoregressive Pretraining](https://arxiv.org/abs/2503.12332)：VideoMAP: Toward Scalable Mamba-based Video Autoregressive Pretraining 补充通用基础模型与评测方向的模型侧方法。
+- [LazyMAR: Accelerating Masked Autoregressive Models Via Feature Caching](https://arxiv.org/abs/2503.12450)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MambaIC: State Space Models for High-Performance Learned Image Compression](https://arxiv.org/abs/2503.12461)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Multi-Power Law Loss-Curve Prediction](https://arxiv.org/abs/2503.12811)：用 multi-power-law 形式建模不同 learning-rate schedules 下的 loss curve prediction。
+- [HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](https://arxiv.org/abs/2503.13026)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [LIMCA: LLM for Automating Analog In-Memory Computing Architecture Design Exploration](https://arxiv.org/abs/2503.13301)：LIMCA 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Analytic Subspace Routing: How Recursive Least Squares Works in Continual Learning of Large Language Model](https://arxiv.org/abs/2503.13575)：补充与通用基础模型方法相关的模型侧方法。
+- [Make Your Training Flexible: Towards Deployment-Efficient Video Models](https://arxiv.org/abs/2503.14237)：Make Your Training Flexible: Towards Deployment-Efficient Video Models 补充通用基础模型与评测方向的模型侧方法。
+- [CTSR: Controllable Fidelity-Realness Trade-off Distillation for Real-World Image Super Resolution](https://arxiv.org/abs/2503.14272)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Learning Chaos In A Linear Way](https://arxiv.org/abs/2503.14702)：研究以线性化方式学习混沌动力学，补充 scientific time-series model 线索。
+- [Chemical foundation model-guided design of high ionic conductivity electrolyte formulations](https://arxiv.org/abs/2503.14878)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Mixture of Lookup Experts](https://arxiv.org/abs/2503.15798)：提出 lookup-expert architecture，扩展 mixture-style model design。
+- [Single Image Iterative Subject-driven Generation and Editing](https://arxiv.org/abs/2503.16025)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Tokenize Image as a Set](https://arxiv.org/abs/2503.16425)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [LeRAAT: LLM-Enabled Real-Time Aviation Advisory Tool](https://arxiv.org/abs/2503.16477)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [PrediCIR](https://arxiv.org/abs/2503.17109)：用 world-model 式预测模块补全目标相关信息，以改进零样本 composed image retrieval。
+- [ConvoGen: Enhancing Conversational AI with Synthetic Data: A Multi-Agent Approach](https://arxiv.org/abs/2503.17460)：面向跨领域智能体系统的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [Language Models May Verbatim Complete Text They Were Not Explicitly Trained On](https://arxiv.org/abs/2503.17514)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Enhancing Persona Consistency for LLMs' Role-Playing using Persona-Aware Contrastive Learning](https://arxiv.org/abs/2503.17662)：通过 persona-aware contrastive learning 提升角色扮演 LLM 的人格一致性。
+- [CODA: Repurposing Continuous VAEs for Discrete Tokenization](https://arxiv.org/abs/2503.17760)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Vision-R1: Evolving Human-Free Alignment in Large Vision-Language Models via Vision-Guided Reinforcement Learning](https://arxiv.org/abs/2503.18013)：用 vision-guided reinforcement learning 对齐 LVLM，减少对人工偏好标注的依赖。
+- [Mitigating Reward Over-Optimization in RLHF via Behavior-Supported Regularization](https://arxiv.org/abs/2503.18130)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MAO: Efficient Model-Agnostic Optimization of Prompt Tuning for Vision-Language Models](https://arxiv.org/abs/2503.18160)：补充视觉语言模型提示调优的模型无关优化方法。
+- [TopV: Compatible Token Pruning with Inference Time Optimization for Fast and Low-Memory Multimodal Vision Language Model](https://arxiv.org/abs/2503.18278)：在推理时剪除视觉 token，使多模态 VLM 更快且占用更少内存。
+- [Towards Training-free Anomaly Detection with Vision and Language Foundation Models](https://arxiv.org/abs/2503.18325)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Advancing Intelligent Sequence Modeling: Evolution, Trade-offs, and Applications of State- Space Architectures from S4 to Mamba](https://arxiv.org/abs/2503.18970)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Mist: Efficient Distributed Training of Large Language Models via Memory-Parallelism Co-Optimization](https://arxiv.org/abs/2503.19050)：通过 memory-parallelism co-optimization 提升大语言模型分布式训练效率。
+- [Overtrained Language Models Are Harder to Fine-Tune](https://arxiv.org/abs/2503.19206)：分析过度训练如何影响后续微调，为语言模型适配补充训练动态方面的警示。
+- [LRSCLIP: A Vision-Language Foundation Model for Aligning Remote Sensing Image with Longer Text](https://arxiv.org/abs/2503.19311)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [AdaptiVocab: Enhancing LLM Efficiency in Focused Domains through Lightweight Vocabulary Adaptation](https://arxiv.org/abs/2503.19693)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Shared Global and Local Geometry](https://arxiv.org/abs/2503.21073)：研究 language-model embeddings 中共享的全局与局部几何，扩展表示几何分析。
+- [UGen: Unified Autoregressive Multimodal Model with Progressive Vocabulary Learning](https://arxiv.org/abs/2503.21193)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Reinforced Model Merging](https://arxiv.org/abs/2503.21272)：把模型合并建模为强化学习搜索，让智能体选择逐层合并动作，并用子集评估奖励在不对原模型求梯度的情况下寻找合并架构。
+- [HyperFree: A Channel-adaptive and Tuning-free Foundation Model for Hyperspectral Remote Sensing Imagery](https://arxiv.org/abs/2503.21841)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Language-Guided Concept Bottleneck Models](https://arxiv.org/abs/2503.23283)：用 language-guided concept bottlenecks 做 interpretable continual learning。
+- [What Makes an Evaluation Useful? Common Pitfalls and Best Practices](https://arxiv.org/abs/2503.23424)：What Makes an Evaluation Useful? Common Pitfalls and Best Practices 补充通用基础模型与评测方向的模型侧方法。
+- [Question-Aware Knowledge Graph Prompting for Enhancing Large Language Models](https://arxiv.org/abs/2503.23523)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Rethinking Key-Value Cache Compression Techniques for Large Language Model Serving](https://arxiv.org/abs/2503.24000)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构或数据方法。
+- [TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](https://arxiv.org/abs/2503.24067)：TransMamba 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [It's a Blind Match](https://arxiv.org/abs/2503.24129)：研究视觉与语言 embedding 的无监督匹配，检验 foundation model 表征能否在无配对数据时对齐。
+- [Boundless Byte Pair Encoding](https://arxiv.org/abs/2504.00178)：突破 language-model tokenization 中的 pre-tokenization barrier。
+- [QG-VTC: Question-Guided Visual Token Compression in MLLMs for Efficient VQA](https://arxiv.org/abs/2504.00654)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Generalized Tensor-Based Parameter-Efficient Fine-Tuning via Lie Group Transformations](https://arxiv.org/abs/2504.00851)：补充与通用基础模型方法相关的模型侧方法。
+- [Data-Free Knowledge Distillation with Diffusion Models](https://arxiv.org/abs/2504.00870)：提出与其他核心能力能力相关的模型侧方法。
+- [SentenceKV: Efficient LLM Inference via Sentence-Level Semantic KV Caching](https://arxiv.org/abs/2504.00970)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [FineLIP: Extending CLIP’s Reach via Fine-Grained Alignment with Longer Text Inputs](https://arxiv.org/abs/2504.01916)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Trapped by Expectations: Functional Fixedness in LLM-Enabled Chat Search](https://arxiv.org/abs/2504.02074)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Toward General and Robust LLM-enhanced Text-attributed Graph Learning](https://arxiv.org/abs/2504.02343)：Toward General and Robust LLM-enhanced Text-attributed Graph Learning 补充通用基础模型与评测方向的模型侧方法。
+- [Knowledge Evolution in LVLMs](https://arxiv.org/abs/2504.02862)：研究大视觉语言模型内部知识如何演化，补充跨任务多模态模型行为参考。
+- [Crosscoder Sparsity Artifacts](https://arxiv.org/abs/2504.02922)：改进 crosscoder 模型差分，避免把 chat-tuning 效应误归因为稀疏性伪影。
+- [Dual-Route Model of Induction](https://arxiv.org/abs/2504.03022): 用双路径机制建模归纳，为模型形成和使用归纳结构提供理论视角。
+- [RLDBF: Enhancing LLMs Via Reinforcement Learning With DataBase FeedBack](https://arxiv.org/abs/2504.03713)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Investigating and Mitigating Stereotype-aware Unfairness in LLM-based Recommendations](https://arxiv.org/abs/2504.04199)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Enhance Then Search](https://arxiv.org/abs/2504.04517)：用 foundation models、图像增强与 sub-domain search 改进 cross-domain few-shot object detection。
+- [M$^2$IV](https://arxiv.org/abs/2504.04633)：用表征工程提升多模态 in-context learning 的效率和细粒度控制，补充提示示例选择之外的 LVLM 适配路线。
+- [Revealing the intrinsic ethical vulnerability of aligned large language models](https://arxiv.org/abs/2504.05050)：Revealing the intrinsic ethical vulnerability of aligned large language models 补充通用基础模型与评测方向的模型侧方法。
+- [State Tuning: State-based Test-Time Scaling on RWKV-7](https://arxiv.org/abs/2504.05097)：利用 RWKV-7 的 recurrent state 做测试时扩展，通过调节状态而非权重来改善推理表现。
+- [Dimension-Free Diffusion Convergence](https://arxiv.org/abs/2504.05300)：分析近似高斯混合上扩散模型的维度无关收敛，为生成模型理论补充依据。
+- [Unequal Opportunities: Examining the Bias in Geographical Recommendations by Large Language Models](https://arxiv.org/abs/2504.05325)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Thanos: A Block-wise Pruning Algorithm for Efficient Large Language Model Compression](https://arxiv.org/abs/2504.05346)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [REVEAL: Relation-based Video Representation Learning for Video-Question-Answering](https://arxiv.org/abs/2504.05463)：补充与通用基础模型方法相关的模型侧方法。
+- [Pretraining Language Models for Diachronic Linguistic Change Discovery](https://arxiv.org/abs/2504.05523)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Finding Fantastic Experts in MoEs: A Unified Study for Expert Dropping Strategies and Observations](https://arxiv.org/abs/2504.05586)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Hyperbolic Category Discovery](https://arxiv.org/abs/2504.06120)：用双曲几何处理具有层级视觉结构的 generalized category discovery。
+- [Query Understanding in LLM-based Conversational Information Seeking](https://arxiv.org/abs/2504.06356)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Unifying Autoregressive and Diffusion-Based Sequence Generation](https://arxiv.org/abs/2504.06416)：通过逐 token 噪声日程和混合加噪过程统一自回归与扩散式序列生成。
+- [Can you Finetune your Binoculars? Embedding Text Watermarks into the Weights of Large Language Models](https://arxiv.org/abs/2504.06446)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Scaling Laws for Native Multimodal Models](https://arxiv.org/abs/2504.07951)：训练 457 个 native multimodal model，系统比较架构和数据混合，显示早期融合模型在规模化后可匹配甚至超过依赖视觉编码器的 late-fusion 路线。
+- [Steering CLIP with Sparse Autoencoders](https://arxiv.org/abs/2504.08729): 用稀疏自编码器引导 CLIP 视觉 Transformer，将激活引导与可解释性扩展到 VLM。
+- [RouterKT: Mixture-of-Experts for Knowledge Tracing](https://arxiv.org/abs/2504.08989)：补充与通用基础模型方法相关的模型侧方法。
+- [Domain-Adaptive Continued Pre-Training of Small Language Models](https://arxiv.org/abs/2504.09687)：Domain-Adaptive Continued Pre-Training of Small Language Models 补充通用基础模型与评测方向的模型侧方法。
+- [The Scalability of Simplicity: Empirical Analysis of Vision-Language Learning with a Single Transformer](https://arxiv.org/abs/2504.10462)：研究用于视觉语言学习的单 Transformer 架构。
+- [CCSK:Cognitive Convection of Self-Knowledge Based Retrieval Augmentation for Large Language Models](https://arxiv.org/abs/2504.10498)：《CCSK:Cognitive Convection of Self-Knowledge Based Retrieval Augmentation for Large Language Models》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [LEMUR Neural Network Dataset: Towards Seamless AutoML](https://arxiv.org/abs/2504.10552)：发布跨任务 PyTorch 神经网络集合与框架，使 AutoML 研究可以直接围绕模型工件而不只是训练数据展开。
+- [Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](https://arxiv.org/abs/2504.10612)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Hearing Anywhere in Any Environment](https://arxiv.org/abs/2504.10746)：提出与其他核心能力能力相关的模型侧方法。
+- [Task Vectors for Model Editing](https://arxiv.org/abs/2504.10957)：分析 task vectors 何时能有效编辑 nonlinear transformers，细化模型编辑理论。
+- [DeepMLF: Multimodal language model with learnable tokens for deep fusion in sentiment analysis](https://arxiv.org/abs/2504.11082)：补充与通用基础模型方法相关的模型侧方法。
+- [Looking beyond the next token](https://arxiv.org/abs/2504.11336)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [RankAlign: A Ranking View of the Generator-Validator Gap in Large Language Models](https://arxiv.org/abs/2504.11381)：补充与通用基础模型方法相关的模型侧方法。
+- [Causal Representation Learning for Interpretable Deep Generative Models](https://arxiv.org/abs/2504.11609)：将因果表征学习与深度生成模型可解释性联系起来，把跨领域可解释性扩展到语言模型之外。
+- [Linear Structure of VLM Embeddings](https://arxiv.org/abs/2504.11695)：分析 vision-language embedding space 中的线性结构，为模型解释性补充多模态表示几何线索。
+- [Adjoint Sampling: Highly Scalable Diffusion Samplers via Adjoint Matching](https://arxiv.org/abs/2504.11713)：通过 adjoint matching 构建可扩展扩散采样器，补充跨领域生成模型推理方法。
+- [Logits DeConfusion with CLIP for Few-Shot Learning](https://arxiv.org/abs/2504.12104)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Can Pre-training Indicators Reliably Predict Fine-tuning Outcomes of LLMs?](https://arxiv.org/abs/2504.12491)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Generalization Through Variance in Diffusion](https://arxiv.org/abs/2504.12532)：分析噪声如何塑造扩散模型的归纳偏置与泛化行为。
+- [Persona-judge: Personalized Alignment of Large Language Models via Token-level Self-judgment](https://arxiv.org/abs/2504.12663)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Post-pre-training for Modality Alignment in Vision-Language Foundation Models](https://arxiv.org/abs/2504.12717)：研究视觉语言基础模型中的 modality alignment post-pretraining，为多模态适配补充横向模型训练配方。
+- [Customizing Emotional Support: How Do Individuals Construct and Interact With LLM-Powered Chatbots](https://arxiv.org/abs/2504.12943)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [Low-hallucination Synthetic Captions for Large-Scale Vision-Language Model Pre-training](https://arxiv.org/abs/2504.13123)：为大规模视觉语言预训练生成低幻觉合成字幕，提升多模态模型学习的数据质量。
+- [Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](https://arxiv.org/abs/2504.13161)：用 clustering-based iterative bootstrapping 搜索预训练数据混合比例，服务语言模型预训练。
+- [Never Start from Scratch: Expediting On-Device LLM Personalization via Explainable Model Selection](https://arxiv.org/abs/2504.13938)：通过可解释模型选择复用已有端侧个性化 LLM，降低冷启动个性化成本，而不是每次从零微调。
+- [Meta-rater: A Multi-dimensional Data Selection Method for Pre-training Language Models](https://arxiv.org/abs/2504.14194)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Enhancing Multimodal In-Context Learning for Image Classification through Coreset Optimization](https://arxiv.org/abs/2504.14200)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [LLM-Enhanced Black-Litterman Portfolio Optimization](https://arxiv.org/abs/2504.14345)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [LoRe: Personalizing LLMs via Low-Rank Reward Modeling](https://arxiv.org/abs/2504.14439)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Text-to-Decision Agent: Learning Generalist Policies from Natural Language Supervision](https://arxiv.org/abs/2504.15046)：用对比预训练把决策任务文本与 dynamics-aware embedding 对齐，以自然语言监督支持离线 meta-RL。
+- [Feeding LLM Annotations to BERT Classifiers at Your Own Risk](https://arxiv.org/abs/2504.15432)：提出面向其他基础能力的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models](https://arxiv.org/abs/2504.15471)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Emergence and Evolution of Interpretable Concepts in Diffusion Models](https://arxiv.org/abs/2504.15473)：Emergence and Evolution of Interpretable Concepts in Diffusion Models 补充通用基础模型与评测方向的模型侧方法。
+- [Learning Explainable Dense Reward Shapes via Bayesian Optimization](https://arxiv.org/abs/2504.16272)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [QuaDMix: Quality-Diversity Balanced Data Selection for Efficient LLM Pretraining](https://arxiv.org/abs/2504.16511)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Decoupled Global-Local Alignment](https://arxiv.org/abs/2504.16801)：解耦全局与局部对齐信号以提升多模态表征的组合理解能力。
+- [Do Large Language Models know who did what to whom?](https://arxiv.org/abs/2504.16884)：补充与通用基础模型方法相关的模型侧方法。
+- [When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammars](https://arxiv.org/abs/2504.17562)：补充与通用基础模型方法相关的模型侧方法。
+- [The Sparse Frontier](https://arxiv.org/abs/2504.17768)：分析 Transformer LLMs 中 sparse-attention trade-offs。
+- [Token Sequence Compression for Efficient Multimodal Computing](https://arxiv.org/abs/2504.17892)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Dynamic Fisher-weighted Model Merging](https://arxiv.org/abs/2504.18992)：用贝叶斯优化调节 Fisher 加权参数重要性，在无联合训练数据时合并任务专用语言模型。
+- [Prisma](https://arxiv.org/abs/2504.19475)：发布面向视觉与视频模型的开源机制可解释性工具包，把分析范围从纯文本 LLM circuit 扩展到多模态模型。
+- [Foundation Models and Concept Bottlenecks](https://arxiv.org/abs/2504.19774)：考察基础模型表征能否支撑概念瓶颈解释，澄清一种跨能力可解释性路线。
+- [semi-PD](https://arxiv.org/abs/2504.19867)：通过 phase-wise disaggregated computation 与 unified storage 提升 LLM serving。
+- [Param$\Delta$ for Direct Weight Mixing: Post-Train Large Language Model at Zero Cost](https://arxiv.org/abs/2504.21023)：ParamDelta 通过混合权重差分，以低成本近似后训练收益。
+- [Token-Level Prompt Mixture With Parameter-Free Routing for Federated Domain Generalization](https://arxiv.org/abs/2504.21063)：补充与通用基础模型方法相关的模型侧方法。
+- [GLIP-OOD: Zero-Shot Graph OOD Detection with Foundation Model](https://arxiv.org/abs/2504.21186)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [TT-LoRA MoE: Using Parameter-Efficient Fine-Tuning and Sparse Mixture-Of-Experts](https://arxiv.org/abs/2504.21190)：TT-LoRA MoE: Using Parameter-Efficient Fine-Tuning and Sparse Mixture-Of-Experts 补充通用基础模型与评测方向的模型侧方法。
+- [Covert Prompt Transmission for Secure Large Language Model Services](https://arxiv.org/abs/2504.21311)：提出与其他核心能力能力相关的模型侧方法。
+- [Precision Where It Matters: A Novel Spike Aware Mixed-Precision Quantization Strategy for LLaMA-based Language Models](https://arxiv.org/abs/2504.21553)：补充与通用基础模型方法相关的模型侧方法。
+- [Beyond Public Access in LLM Pre-Training Data](https://arxiv.org/abs/2505.00020)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Keep the General, Inject the Specific: Structured Dialogue Fine-Tuning for Knowledge Injection without Catastrophic Forgetting](https://arxiv.org/abs/2505.00029)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [DPL: Diverse Preference Learning Without A Reference Model](https://doi.org/10.18653/v1/2025.naacl-long.190)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [FiNE: Filtering and Improving Noisy Data Elaborately with Large Language Models](https://doi.org/10.18653/v1/2025.naacl-long.437)：FiNE: Filtering and Improving Noisy Data Elaborately with Large Language Models 补充通用基础模型与评测方向的模型侧方法。
+- [Parameter-Efficient Fine-Tuning with Circulant and Diagonal Vectors](https://arxiv.org/abs/2505.00580)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [The Illusion of Role Separation: Hidden Shortcuts in LLM Role Learning (and How to Fix Them)](https://arxiv.org/abs/2505.00626)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Generalization from ICL and finetuning](https://arxiv.org/abs/2505.00661)：在受控设置下比较语言模型通过 in-context learning 和 finetuning 获得的泛化，澄清不同适配路线何时可迁移。
+- [Generating Animated Layouts as Structured Text Representations](https://arxiv.org/abs/2505.00975)：补充与通用基础模型方法相关的模型侧方法。
+- [Don't be lazy: CompleteP enables compute-efficient deep transformers](https://arxiv.org/abs/2505.01618)： 提出 CompleteP 支持计算高效的深层 Transformer，补充与模型能力相关的架构效率路线。
+- [SimAug: Enhancing Recommendation with Pretrained Language Models for Dense and Balanced Data Augmentation](https://arxiv.org/abs/2505.01695)：补充与通用基础模型方法相关的模型侧方法。
+- [Always Skip Attention](https://arxiv.org/abs/2505.01996)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Demystifying optimized prompts in language models](https://arxiv.org/abs/2505.02273)：补充与通用基础模型方法相关的模型侧方法。
+- [SEFE](https://arxiv.org/abs/2505.02486)：区分多模态持续指令微调中的表层遗忘与关键遗忘，补充跨任务 LMM 适配路线。
+- [A Note on Statistically Accurate Tabular Data Generation Using Large Language Models](https://arxiv.org/abs/2505.02659)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization](https://arxiv.org/abs/2505.02819)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Seeing the Abstract: Translating the Abstract Language for Vision Language Models](https://arxiv.org/abs/2505.03242)：补充用于抽象视觉语言转换的视觉语言模型方法。
+- [SLOT: Structuring the Output of Large Language Models](https://arxiv.org/abs/2505.04016)：提出与其他核心能力能力相关的模型侧方法。
+- [Non-stationary Diffusion For Probabilistic Time Series Forecasting](https://arxiv.org/abs/2505.04278)：用 location-scale noise 和不确定性感知噪声调度改造扩散预测，以建模时间序列中的时变不确定性。
+- [DeCLIP](https://arxiv.org/abs/2505.04410)：用 decoupled learning 做 open-vocabulary dense perception，扩展 CLIP-style 多模态表示学习。
+- [FG-CLIP](https://arxiv.org/abs/2505.05071)：提升 CLIP 类模型的细粒度图文对齐，补充跨任务多模态表征学习路线。
+- [Activation Subspaces for Addition ICL](https://arxiv.org/abs/2505.05145)：探查加法 in-context learning 在激活子空间中的表示方式，为 ICL 提供小任务机制分析视角。
+- [Ultra-FineWeb: Efficient Data Filtering and Verification for High-Quality LLM Training Data](https://arxiv.org/abs/2505.05427)：通过过滤和验证改进 FineWeb 风格预训练数据，为 LLM 训练补充数据质量路线。
+- [Bring Reason to Vision: Understanding Perception and Reasoning through Model Merging](https://arxiv.org/abs/2505.05464)：研究模型合并如何组合视觉感知与推理能力。
+- [Continuous Thought Machines](https://arxiv.org/abs/2505.05522)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Understanding Stragglers in Large Model Training Using What-if Analysis](https://arxiv.org/abs/2505.05713)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Insertion Language Models: Sequence Generation with Arbitrary-Position Insertions](https://arxiv.org/abs/2505.05755)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Towards Developmentally Plausible Rewards: Communicative Success as a Learning Signal for Interactive Language Models](https://arxiv.org/abs/2505.05970)：在纯语言 reference game 中用“沟通成功”作为奖励微调交互式语言模型，检验认知上更合理的反馈是否能在没有显式人工偏好标签时塑造说话者行为。
+- [PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model](https://arxiv.org/abs/2505.06274)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Collaborative Multi-LoRA Experts with Achievement-based Multi-Tasks Loss for Unified Multimodal Information Extraction](https://arxiv.org/abs/2505.06303)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Emotion-Qwen: Training Hybrid Experts for Unified Emotion and General Vision-Language Understanding](https://arxiv.org/abs/2505.06685)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Whitened CLIP Likelihood Surrogate](https://arxiv.org/abs/2505.06934)：把 whitened CLIP 用作图文对的似然替代，连接表征模型与评分。
+- [CHD: Coupled Hierarchical Diffusion for Long-Horizon Tasks](https://arxiv.org/abs/2505.07261)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Byam: Fixing Breaking Dependency Updates with Large Language Models](https://arxiv.org/abs/2505.07522)：补充与通用基础模型方法相关的模型侧方法。
+- [Injecting Knowledge Graphs into Large Language Models](https://arxiv.org/abs/2505.07554)：补充将知识图谱注入大语言模型的通用模型侧方法。
+- [Beyond CLIP Generalization: Against Forward&Backward Forgetting Adapter for Continual Learning of Vision-Language Models](https://arxiv.org/abs/2505.07690)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Automatic Task Detection and Heterogeneous LLM Speculative Decoding](https://arxiv.org/abs/2505.08600)：先自动识别任务类型，再为异构 draft 与 target LLM 选择 speculative decoding 策略以加速服务。
+- [Euclidean Diffusion on Manifold Data](https://arxiv.org/abs/2505.09922)：通过缓解 score function singularity 改进 manifold data 上的欧式扩散生成。
+- [AdaptCLIP](https://arxiv.org/abs/2505.09926)：通过交替更新视觉与文本表征来适配 CLIP，用于通用视觉异常检测。
+- [MMRL++: Parameter-Efficient and Interaction-Aware Representation Learning for Vision-Language Models](https://arxiv.org/abs/2505.10088)：补充视觉语言模型的参数高效、交互感知表示学习方法。
+- [J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning](https://arxiv.org/abs/2505.10320)：用强化学习激励 LLM judge 生成显式思考过程，把推理型评审能力作为后训练目标。
+- [Continuity and Isolation Lead to Doubts or Dilemmas in Large Language Models](https://arxiv.org/abs/2505.10606)：补充与通用基础模型方法相关的模型侧方法。
+- [PoE-World](https://arxiv.org/abs/2505.10819)：从少量观测合成 compositional programmatic world models，并把它们用于 model-based planning agent，补充了神经预测器之外的代码化 world-model 路线。
+- [Tuning-Free LLM Can Build A Strong Recommender Under Sparse Connectivity And Knowledge Gap Via Extracting Intent](https://arxiv.org/abs/2505.10900)：补充与通用基础模型方法相关的模型侧方法。
+- [VISTA: Enhancing Vision-Text Alignment in MLLMs via Cross-Modal Mutual Information Maximization](https://arxiv.org/abs/2505.10917)：VISTA 通过跨模态互信息最大化增强多模态大模型的视觉文本对齐。
+- [The Way We Prompt: Conceptual Blending, Neural Dynamics, and Prompt-Induced Transitions in LLMs](https://arxiv.org/abs/2505.10948)：从概念融合和神经动态角度分析 prompt 如何触发 LLM 内部状态转移。
+- [MARRS: Masked Autoregressive Unit-based Reaction Synthesis](https://arxiv.org/abs/2505.11334)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [MoE-CAP: Benchmarking Cost, Accuracy and Performance of Sparse Mixture-of-Experts Systems](https://arxiv.org/abs/2505.11415)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [MegaScale-MoE](https://arxiv.org/abs/2505.11432)：改进生产环境中 mixture-of-experts 模型的大规模通信高效训练。
+- [Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](https://arxiv.org/abs/2505.11711)：发现 RL 微调主要改变 LLM 的小规模子网络，把更新稀疏性作为理解对齐和下游收益的模型侧线索。
+- [The Effects of Demographic Instructions on LLM Personas](https://arxiv.org/abs/2505.11795)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](https://arxiv.org/abs/2505.11876)：补充模型侧方法，主要面向 Other。
+- [Relation-Aware Graph Foundation Model](https://arxiv.org/abs/2505.12027)：Relation-Aware Graph Foundation Model 补充通用基础模型与评测方向的模型侧方法。
+- [Model Merging in Pre-training of Large Language Models](https://arxiv.org/abs/2505.12082)：研究大语言模型预训练阶段的模型合并。
+- [STAR: Stage-Wise Attention-Guided Token Reduction for Efficient Large Vision-Language Models Inference](https://arxiv.org/abs/2505.12359)：《STAR: Stage-Wise Attention-Guided Token Reduction for Efficient Large Vision-Language Models Inference》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Towards Budget-Friendly Model-Agnostic Explanation Generation for Large Language Models](https://arxiv.org/abs/2505.12509)：用低成本代理模型近似黑盒 LLM 决策边界，并通过 screen-and-apply 对齐检验提供局部解释，服务于提示压缩和投毒样本移除。
+- [Harnessing the Universal Geometry of Embeddings](https://arxiv.org/abs/2505.12540)： 研究 embeddings 的 universal geometry，为表示分析与检索模型补充跨任务证据。
+- [HydraInfer: Hybrid Disaggregated Scheduling for Multimodal Large Language Model Serving](https://arxiv.org/abs/2505.12658)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement](https://arxiv.org/abs/2505.12684)：Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement 补充通用基础模型与评测方向的模型侧方法。
+- [Emergent Specialization: Rare Token Neurons in Language Models](https://arxiv.org/abs/2505.12822)：补充与通用基础模型方法相关的模型侧方法。
+- [Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](https://arxiv.org/abs/2505.13111)：给出知识蒸馏为何提升生成模型质量的最小机制解释，把 KD 作为模型侧训练分析而非应用案例。
+- [J4R: Learning to Judge with Equivalent Initial State Group Relative Policy Optimization](https://arxiv.org/abs/2505.13346)：提出 Equivalent Initial State GRPO，把 judge 训练中的同起点候选分组比较转化为强化学习信号。
+- [One-Step Offline Distillation of Diffusion-based Models via Koopman Modeling](https://arxiv.org/abs/2505.13358)：One-Step Offline Distillation of Diffusion-based Models via Koopman Modeling 补充通用基础模型与评测方向的模型侧方法。
+- [Panda Forecast Model](https://arxiv.org/abs/2505.13755)：面向混沌动力学预训练 forecasting model，补充 scientific time-series foundation model 覆盖。
+- [InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion](https://arxiv.org/abs/2505.13893)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Local Mixtures of Experts: Essentially Free Test-Time Training via Model Merging](https://arxiv.org/abs/2505.14136)：把模型合并表述为通过局部专家混合实现的近乎零额外成本测试时训练，补充通用模型适配方法。
+- [Beginning with You: Perceptual-Initialization Improves Vision-Language Representation and Alignment](https://arxiv.org/abs/2505.14204)：用 NIGHTS 人类感知 triplet embedding 初始化 CLIP 视觉编码器，再做自监督学习以提升零样本分类和检索。
+- [Table Foundation Models](https://arxiv.org/abs/2505.14415)：研究表格学习中的知识预训练，为结构化数据补充基础模型路线。
+- [Towards a Foundation Model for Communication Systems](https://arxiv.org/abs/2505.14603)：补充与通用基础模型方法相关的模型侧方法。
+- [Beyond Words: Multimodal LLM Knows When to Speak](https://arxiv.org/abs/2505.14654)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Language Models use Lookbacks to Track Beliefs](https://arxiv.org/abs/2505.14685)：显示语言模型会用 lookback 机制维持 belief，把内部状态追踪与记忆、推理行为连接起来。
+- [Mechanistic evaluation of Transformers and state space models](https://arxiv.org/abs/2505.15105)：比较 Transformer 与 state space model 的机制，为跨架构模型行为分析补充可解释性证据。
+- [Generalised Probabilistic Modelling and Improved Uncertainty Estimation in Comparative LLM-as-a-judge](https://arxiv.org/abs/2505.15240)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [A Unified Theoretical Analysis of Private and Robust Offline Alignment: from RLHF to DPO](https://arxiv.org/abs/2505.15694)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [dKV-Cache: The Cache for Diffusion Language Models](https://arxiv.org/abs/2505.15781)：为 diffusion language model 设计专用 KV cache，加速非自回归去噪式推理。
+- [Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](https://arxiv.org/abs/2505.16270)：让微调过程学习 mistake log，而不是只优化生成损失，以利用错误轨迹中的训练信号。
+- [LaViDa: A Large Diffusion Language Model for Multimodal Understanding](https://arxiv.org/abs/2505.16839)：采用扩散语言模型设计服务多模态理解，并改善可控生成特性。
+- [MixAT: Combining Continuous and Discrete Adversarial Training for LLMs](https://arxiv.org/abs/2505.16947)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Bigger Isn't Always Memorizing](https://arxiv.org/abs/2505.16959)：分析早停如何影响过参数化扩散模型在图像和语言场景中的泛化与记忆。
+- [Dimple: Discrete Diffusion Multimodal Large Language Model with Parallel Decoding](https://arxiv.org/abs/2505.16990)：构建支持并行解码的离散扩散多模态 LLM，区别于逐 token 自回归生成。
+- [Scale-invariant Attention](https://arxiv.org/abs/2505.17083)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Make LVLMs Focus](https://arxiv.org/abs/2505.17097)：通过 context-aware attention modulation 改进多模态 in-context learning，补充跨任务 LVLM 模型适配条目。
+- [TACO for Multimodal ICL](https://arxiv.org/abs/2505.17098)：通过 task mapping 配置多模态 in-context 示例，补充跨任务 LVLM 适配方法而非单纯 benchmark 条目。
+- [From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](https://arxiv.org/abs/2505.17117)：补充其他的模型侧方法，涵盖训练、架构、适配、奖励、验证器、世界模型或合成数据等路线。
+- [Pixels Versus Priors: Controlling Knowledge Priors in Vision-Language Models through Visual Counterfacts](https://arxiv.org/abs/2505.17127)： 用视觉反事实控制视觉语言模型的知识先验，说明视觉证据如何覆盖参数化先验。
+- [MoAPT: Mixture of Adversarial Prompt Tuning for Vision-Language Models](https://arxiv.org/abs/2505.17509)：把多个 adversarial prompt tuning 分支混合起来，提高 VLM 适配时的鲁棒性与泛化。
+- [Spacetime Geometry of Denoising in Diffusion Models](https://arxiv.org/abs/2505.17517)：Spacetime Geometry of Denoising in Diffusion Models 补充通用基础模型与评测方向的模型侧方法。
+- [Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](https://arxiv.org/abs/2505.17534)：用协同强化学习统一多模态理解与生成训练。
+- [Why Diffusion Models Don't Memorize](https://arxiv.org/abs/2505.17638)：从训练中的 implicit dynamical regularization 解释 diffusion-model generalization。
+- [Structured Linear CDEs](https://arxiv.org/abs/2505.17761)：提出基于结构化线性受控微分方程的高表达、可时间并行序列模型。
+- [Scalable Valuation of Human Feedback through Provably Robust Model Alignment](https://arxiv.org/abs/2505.17859)：Scalable Valuation of Human Feedback through Provably Robust 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [DataRater](https://arxiv.org/abs/2505.17895)：通过 meta-learning 学习数据集筛选策略，把 data selection 作为模型训练的一部分。
+- [LLM Meeting Decision Trees on Tabular Data](https://arxiv.org/abs/2505.17918)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Data Mixing Can Induce Phase Transitions in Knowledge Acquisition](https://arxiv.org/abs/2505.18091)：Data Mixing Can Induce Phase Transitions in Knowledge Acquisition 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Reward Model Overoptimisation in Iterated RLHF](https://arxiv.org/abs/2505.18126)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Representation Manifold Origins](https://arxiv.org/abs/2505.18235)：研究语言模型 representation manifold 的形成机制，为跨能力模型几何和干预研究提供背景。
+- [Emergent Hierarchical Structure in Large Language Models: An Information-Theoretic Framework for Multi-Scale Representation](https://arxiv.org/abs/2505.18244)：提出 MSPGT，把 Transformer 建模为层级变分信息瓶颈，并在 Llama 与 Qwen 中观察到 local、intermediate、global 三段处理结构和架构相关脆弱性。
+- [Diffusion Training Sample Complexity](https://arxiv.org/abs/2505.18344)：改进无需 empirical risk minimizer access 的扩散模型训练 sample complexity 理论。
+- [Partial Masking for Discrete Diffusion](https://arxiv.org/abs/2505.18495)：为 masked diffusion model 引入中间 token 状态，减少离散序列生成中的冗余计算。
+- [EvdCLIP](https://arxiv.org/abs/2505.18594)：用 LLM 生成的 entity visual descriptions 改进 vision-language retrieval。
+- [GenPO: Generative Diffusion Models Meet On-Policy Reinforcement Learning](https://arxiv.org/abs/2505.18763)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Exact Expressive Power of Transformers with Padding](https://arxiv.org/abs/2505.18948)：分析 padding 如何改变 Transformer 表达能力，为架构层能力边界补充理论参考。
+- [ASPO: Adaptive Sentence-Level Preference Optimization for Fine-Grained Multimodal Reasoning](https://arxiv.org/abs/2505.19100)：提出面向多模态推理的句子级偏好优化，构造细粒度偏好信号，而不是对整段回答整体奖惩。
+- [MIND-Edit: MLLM Insight-Driven Editing via Language-Vision Projection](https://arxiv.org/abs/2505.19149)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [I2MoE](https://arxiv.org/abs/2505.19190)：用可解释 mixture-of-experts 模块建模多模态交互。
+- [LLaDA 1.5: Variance-Reduced Preference Optimization for Large Language Diffusion Models](https://arxiv.org/abs/2505.19223)：将方差降低的偏好优化用于大型扩散语言模型。
+- [Rectified Flows and Optimal Transport](https://arxiv.org/abs/2505.19712)：阐明 rectified flows 与最优传输在生成建模中的关系。
+- [Token-level Accept or Reject: A Micro Alignment Approach for Large Language Models](https://arxiv.org/abs/2505.19743)：《Token-level Accept or Reject: A Micro Alignment Approach for Large Language Models》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [ESLM](https://arxiv.org/abs/2505.19893)：用风险感知准则在预训练中选择信息量更高的 token，为 LLM 效率和鲁棒性补充 data-centric training recipe。
+- [MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees](https://arxiv.org/abs/2505.19947)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Learning to Select In-Context Demonstration Preferred by Large Language Model](https://arxiv.org/abs/2505.19966)：Learning to Select In-Context Demonstration Preferred by Large Language Model 补充通用基础模型与评测方向的模型侧方法。
+- [NEXT: Multi-Grained Mixture of Experts via Text-Modulation for Multi-Modal Object Re-ID](https://arxiv.org/abs/2505.20001)：补充与通用基础模型方法相关的模型侧方法。
+- [TabPFN: One Model to Rule Them All?](https://arxiv.org/abs/2505.20003)：考察 TabPFN 类表格基础模型，为非文本模型能力补充跨领域参考。
+- [SeMe: Training-Free Language Model Merging via Semantic Alignment](https://arxiv.org/abs/2505.20144)：补充基于语义对齐的免训练语言模型合并方法。
+- [FLAME-MoE: A Transparent End-to-End Research Platform for Mixture-of-Experts Language Models](https://arxiv.org/abs/2505.20225)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [GIT-BO](https://arxiv.org/abs/2505.20685)：用表格基础模型支持高维贝叶斯优化，把结构化数据基础模型扩展到优化任务。
+- [Variable Binding in Symbolic Programs](https://arxiv.org/abs/2505.20896)：研究 Transformer 如何学习符号程序中的变量绑定，为序列模型内部的符号程序推理补充机制证据。
+- [Memorization to Generalization](https://arxiv.org/abs/2505.21777)：用 associative-memory mechanisms 解释 diffusion models 从 memorization 到 generalization 的 emergence。
+- [InComeS: Integrating Compression and Selection Mechanisms into LLMs for Efficient Model Editing](https://arxiv.org/abs/2505.22156)：补充与通用基础模型方法相关的模型侧方法。
+- [Text2Grad: Reinforcement Learning from Natural Language Feedback](https://arxiv.org/abs/2505.22338)：把自然语言反馈转化为可优化训练信号，扩展 RLHF 式后训练目标。
+- [PrismLayers: Open Data for High-Quality Multi-Layer Transparent Image Generative Models](https://arxiv.org/abs/2505.22523)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Highly Efficient and Effective LLMs with Multi-Boolean Architectures](https://arxiv.org/abs/2505.22811)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Defining Foundation Models for Computational Science: A Call for Clarity and Rigor](https://arxiv.org/abs/2505.22904)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [QLIP: A Dynamic Quadtree Vision Prior Enhances MLLM Performance Without Retraining](https://arxiv.org/abs/2505.23004)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Beyond Zero Initialization: Investigating the Impact of Non-Zero Initialization on LoRA Fine-Tuning Dynamics](https://arxiv.org/abs/2505.23194)：分析 LoRA 微调动态，说明非零初始化如何影响对学习率选择的鲁棒性，补充实用的 PEFT 训练设计参考。
+- [Accelerating RLHF Training with Reward Variance Increase](https://arxiv.org/abs/2505.23247)：通过调节训练中的奖励方差来加速 RLHF。
+- [Normalizing Flows are Capable Models for RL](https://arxiv.org/abs/2505.23527)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [MuLoCo](https://arxiv.org/abs/2505.23725)：将 Muon 用作 DiLoCo 式分布式训练的实用内层优化器，补充大模型优化配方。
+- [DLP: Dynamic Layerwise Pruning in Large Language Models](https://arxiv.org/abs/2505.23807)：补充与通用基础模型方法相关的模型侧方法。
+- [Towards Minimizing Feature Drift in Model Merging: Layer-wise Task Vector Fusion for Adaptive Knowledge Integration](https://arxiv.org/abs/2505.23859)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Redefining Research Crowdsourcing: Incorporating Human Feedback with LLM-Powered Digital Twins: Incorporating Human Feedback with LLM-Powered Digital Twins](https://arxiv.org/abs/2505.24004)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Adaptive LoRA Merge with Parameter Pruning for Low-Resource Generation](https://arxiv.org/abs/2505.24174)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Mixture-of-Experts for Personalized and Semantic-Aware Next Location Prediction](https://arxiv.org/abs/2505.24597)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Hyperbolic Dataset Distillation](https://arxiv.org/abs/2505.24623)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Learning Distributions over Permutations and Rankings with Factorized Representations](https://arxiv.org/abs/2505.24664)：补充与通用基础模型方法相关的模型侧方法。
+- [HELM: Hyperbolic Large Language Models via Mixture-of-Curvature Experts](https://arxiv.org/abs/2505.24722)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Decoding Dense Embeddings](https://arxiv.org/abs/2506.00041)：把稀疏自编码器用于 dense retrieval embedding，使检索模型概念更可解释、也更可离散化。
+- [The World As Large Language Models See It: Exploring the reliability of LLMs in representing geographical features](https://arxiv.org/abs/2506.00203)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [DLM-One: Diffusion Language Models for One-Step Sequence Generation](https://arxiv.org/abs/2506.00290)：通过 score distillation 将连续扩散语言模型转为一步式序列生成器，面向低采样成本的非自回归文本生成。
+- [Spectral Insights into Data-Oblivious Critical Layers in Large Language Models](https://arxiv.org/abs/2506.00382)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Parallel Rescaling: Rebalancing Consistency Guidance for Personalized Diffusion Models](https://arxiv.org/abs/2506.00607)：Parallel Rescaling 将一致性引导相对 CFG 分解，在保持主体身份的同时改善提示对齐。
+- [Weight-Space Linear Recurrent Neural Networks](https://arxiv.org/abs/2506.01153)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Hierarchical Semantics in SAEs](https://arxiv.org/abs/2506.01197)：将层级语义纳入 sparse-autoencoder architectures，使特征字典解释超越扁平概念。
+- [General agents contain world models](https://doi.org/10.48550/arXiv.2506.01622)：证明能泛化到多步目标导向任务的 agent 必须在策略中编码可提取的预测式环境模型。
+- [Esoteric Language Models](https://arxiv.org/abs/2506.01928)：探索非标准 language-model designs，为语言模型能力形成补充跨领域架构参考。
+- [Hard Negative Gradient Amplifying](https://arxiv.org/abs/2506.02020): 通过显式放大困难负样本梯度改进多模态嵌入学习，补充表征训练配方。
+- [Revisiting LRP: Positional Attribution as the Missing Ingredient for Transformer Explainability](https://arxiv.org/abs/2506.02138)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Angles Don't Lie: Unlocking Training-Efficient RL Through the Model's Own Signals](https://arxiv.org/abs/2506.02281)：利用模型内部信号几何提升强化学习训练效率。
+- [Why Gradients Rapidly Increase Near the End of Training](https://arxiv.org/abs/2506.02285)：分析训练末期梯度快速增大的机制，为大模型优化稳定性补充训练动态参考。
+- [Absorb and Converge: Provable Convergence Guarantee for Absorbing Discrete Diffusion Models](https://arxiv.org/abs/2506.02318)：Absorb and Converge: Provable Convergence Guarantee for Absorbing Discrete Diffusion Models 补充通用基础模型与评测方向的模型侧方法。
+- [From Flat to Hierarchical](https://arxiv.org/abs/2506.03093)：用 matching pursuit 提取层级稀疏表征，补充 flat SAE 式特征抽取之外的路线。
+- [Unlabeled Data Improves Fine-Grained Image Zero-shot Classification with Multimodal LLMs](https://arxiv.org/abs/2506.03195)：Unlabeled Data Improves Fine-Grained Image Zero-shot Classification with Multimodal LLMs 补充通用基础模型与评测方向的模型侧方法。
+- [APT: Improving Specialist LLM Performance with Weakness Case Acquisition and Iterative Preference Training](https://arxiv.org/abs/2506.03483)：通过弱点案例获取和迭代偏好训练提升专门型 LLM，补充定向后训练闭环。
+- [Robust Preference Optimization via Dynamic Target Margins](https://arxiv.org/abs/2506.03690)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Closed-Form Flow Matching](https://arxiv.org/abs/2506.03719)：分析 closed-form flow matching，以及 target stochasticity 是否解释 generalization。
+- [Around the World in 24 Hours: Probing LLM Knowledge of Time and Place](https://arxiv.org/abs/2506.03984)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](https://arxiv.org/abs/2506.04171)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [GEM: Empowering LLM for both Embedding Generation and Language Understanding](https://arxiv.org/abs/2506.04344)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Regret-Optimal Q-Learning with Low Cost for Single-Agent and Federated Reinforcement Learning](https://arxiv.org/abs/2506.04626)：给出单 Agent 与联邦 Q-learning 算法，同时追求近优 regret、低 burn-in 样本成本和对数级切换或通信成本。
+- [DiCoRe: Enhancing Zero-shot Event Detection via Divergent-Convergent LLM Reasoning](https://arxiv.org/abs/2506.05128)：DiCoRe 将零样本事件检测拆成 Dreamer 发散发现、Grounder 受限解码收敛，以及 LLM 评审验证三个环节。
+- [Towards Language-Augmented Multi-Agent Deep Reinforcement Learning](https://arxiv.org/abs/2506.05236)：面向通用 Agent 与多 Agent 方法提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [TriPSS: A Tri-Modal Keyframe Extraction Framework Using Perceptual, Structural, and Semantic Representations](https://arxiv.org/abs/2506.05395)：补充与通用基础模型方法相关的模型侧方法。
+- [TabFlex](https://arxiv.org/abs/2506.05584)：用线性注意力扩展表格学习，将基础模型式建模推进到百万级结构化数据。
+- [Do-PFN](https://arxiv.org/abs/2506.06039)：把 prior-data fitted networks 用于上下文内因果效应估计，将基础模型思路扩展到结构化因果推断。
+- [Tokenization Multiplicity Leads to Arbitrary Price Variation in LLM-as-a-service](https://arxiv.org/abs/2506.06446)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Spark Transformer: Reactivating Sparsity in FFN and Attention](https://arxiv.org/abs/2506.06644)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [KScope: A Framework for Characterizing the Knowledge Status of Language Models](https://arxiv.org/abs/2506.07458)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [REMoH: A Reflective Evolution of Multi-objective Heuristics approach via Large Language Models](https://arxiv.org/abs/2506.07759)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [CausalPFN](https://arxiv.org/abs/2506.07918)：用 in-context learning 做 amortized causal-effect estimation，扩展 foundation models 对结构化统计任务的处理。
+- [MXFP8 LLM Pretraining Recipes](https://arxiv.org/abs/2506.08027)：研究使用 MXFP8 精度预训练 LLM 的配方，补充训练效率线索。
+- [Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion](https://arxiv.org/abs/2506.08316)：提出与其他核心能力能力相关的模型侧方法。
+- [Finetuning Tabular Foundation Models](https://arxiv.org/abs/2506.08982)：研究表格基础模型的微调方式，扩展非文本基础模型适配覆盖。
+- [Same Task, Different Circuits](https://arxiv.org/abs/2506.09047)：分解 VLM 中特定模态的内部机制，为多模态模型行为补充电路级视角。
+- [Ming-Omni: A Unified Multimodal Model for Perception and Generation](https://arxiv.org/abs/2506.09344)：提出统一多模态感知与生成的模型。
+- [Revisiting Diffusion Models: From Generative Pre-training to One-Step Generation](https://arxiv.org/abs/2506.09376)：Revisiting Diffusion Models: From Generative Pre-training to One-Step Generation 补充通用基础模型与评测方向的模型侧方法。
+- [Ambient Diffusion Omni](https://arxiv.org/abs/2506.10038)：扩展 ambient diffusion，使生成模型能从受损或不完美数据中训练。
+- [ConTextTab](https://arxiv.org/abs/2506.10707)：引入语义感知的表格上下文学习，扩展非文本基础模型的适配覆盖。
+- [The Diffusion Duality](https://arxiv.org/abs/2506.10892)： 分析 diffusion modeling 的 duality，补充生成模型理论参考。
+- [Foundation Models for Causal Inference via Prior-Data Fitted Networks](https://arxiv.org/abs/2506.10914)：把因果推断表述为 PFN 式基础模型问题，将结构化统计推理从预测扩展到因果估计。
+- [Compositional Neuron Groups](https://arxiv.org/abs/2506.10920)：从组合式神经元群构造可解释特征，为模型可解释性补充另一种特征构造路线。
+- [Self-Adapting Language Models](https://arxiv.org/abs/2506.10943)：研究能够自适应的 language models，为持续或上下文驱动的能力提升补充模型侧路线。
+- [Domain2Vec: Vectorizing Datasets to Find the Optimal Data Mixture without Training](https://arxiv.org/abs/2506.10952)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Principled Approaches for Extending Neural Architectures to Function Spaces for Operator Learning](https://arxiv.org/abs/2506.10973)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [YingLong Output Scaling](https://arxiv.org/abs/2506.11029)：在大型预训练 time-series forecasting model 中加入 delayed chain-of-thought 式 output scaling。
+- [PolyMicros: Bootstrapping a Foundation Model for Polycrystalline Material Structure](https://arxiv.org/abs/2506.11055)：PolyMicros: Bootstrapping a Foundation Model for Polycrystalline Material Structure 补充通用基础模型与评测方向的模型侧方法。
+- [Curriculum Learning for LLM Pretraining](https://arxiv.org/abs/2506.11300)：系统研究 easy-to-hard 与 pacing curriculum 在不同难度指标下对 LLM 预训练效率的影响。
+- [Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](https://arxiv.org/abs/2506.11672)：在固定参数预算下动态分配逐层 LoRA 专家并调整模态课程，用于持续多模态指令微调。
+- [How Visual Representations Map to Language Feature Space in Multimodal LLMs](https://arxiv.org/abs/2506.11976)： 分析多模态 LLM 中视觉表示如何映射到语言特征空间，澄清跨模态表示对齐机制。
+- [Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](https://arxiv.org/abs/2506.12409)：系统比较 branch-wise 与 layer-wise zeroth-order PEFT，解决 VLM 持续学习中一阶优化容易陷入局部最优的问题。
+- [Exploring Cultural Variations in Moral Judgments with Large Language Models](https://arxiv.org/abs/2506.12433)：补充与通用基础模型方法相关的模型侧方法。
+- [MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](https://arxiv.org/abs/2506.12876)：学习每组 M 个权重的 categorical prior，并用无放回采样生成严格 N:M 稀疏掩码，实现线性空间 LLM 剪枝。
+- [CALM](https://arxiv.org/abs/2506.13406)：通过 class-balanced entropy minimization 采样无监督数据、选择可扩展的顺序任务集合，并按全局任务共识优化局部二值 mask，执行 consensus-aware localized model merging 以减少合并冲突。
+- [ROSAQ: Rotation-based Saliency-Aware Weight Quantization for Efficiently Compressing Large Language Models](https://arxiv.org/abs/2506.13472)：补充与通用基础模型方法相关的模型侧方法。
+- [A Gravity-Informed Spatiotemporal Transformer for Human Activity Intensity Prediction](https://arxiv.org/abs/2506.13678)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Scaling Algorithm Distillation for Continuous Control with Mamba](https://arxiv.org/abs/2506.13892)：补充与通用基础模型方法相关的模型侧方法。
+- [Similarity-Preserving MoE Routers](https://arxiv.org/abs/2506.14038)：通过保留 token-expert 相似结构改进 MoE 模型负载均衡。
+- [DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation](https://arxiv.org/abs/2506.14202)：DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation 补充通用基础模型与评测方向的模型侧方法。
+- [Discrete JEPA: Learning Discrete Token Representations without Reconstruction](https://arxiv.org/abs/2506.14373)：补充与通用基础模型方法相关的模型侧方法。
+- [Dataset distillation for memorized data: Soft labels can leak held-out teacher knowledge](https://arxiv.org/abs/2506.14457)：提出面向Other Core Capabilities的模型侧方法、训练配方、架构、验证器、奖励模型或数据生成路径。
+- [From Bytes to Ideas: Language Modeling with Autoregressive U-Nets](https://arxiv.org/abs/2506.14761)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [FedNano: Toward Lightweight Federated Tuning for Pretrained Multimodal Large Language Models](https://arxiv.org/abs/2506.14824)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Dense SAE Latents Are Features, Not Bugs](https://arxiv.org/abs/2506.15679)：将稠密 SAE 潜变量重新解释为有意义特征，修正跨能力可解释性假设。
+- [MoiréXNet: Adaptive Multi-Scale Demoiréing with Linear Attention Test-Time Training and Truncated Flow Matching Prior](https://arxiv.org/abs/2506.15929)：把 MAP 估计、线性注意力测试时训练和截断 flow-matching prior 结合，用于图像和视频去摩尔纹。
+- [C-RASP Transformer Depth Hierarchy](https://arxiv.org/abs/2506.16055)：通过 C-RASP 分析 Transformer 深度层级，为架构深度如何影响计算表达力补充理论视角。
+- [Optimizing MoE Routers: Design, Implementation, and Evaluation in Transformer Models](https://arxiv.org/abs/2506.16419)：提出其他模型侧方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [A Minimalist Optimizer Design for LLM Pretraining](https://arxiv.org/abs/2506.16659)：研究对 SGD 做哪些最小改动即可接近强 LLM 预训练效果，为基础模型训练补充低内存优化器配方。
+- [The Importance of Being Lazy: Scaling Limits of Continual Learning](https://arxiv.org/abs/2506.16884)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [PRAISE: Enhancing Product Descriptions with LLM-Driven Structured Insights](https://arxiv.org/abs/2506.17314)：补充与通用基础模型方法相关的模型侧方法。
+- [A Survey of State Representation Learning for Deep Reinforcement Learning](https://arxiv.org/abs/2506.17518)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [FaithfulSAE](https://arxiv.org/abs/2506.17673)：在不依赖外部数据集的情况下捕获更忠实的稀疏自编码器特征，改进依赖特征字典的模型解释工作流。
+- [Aligning Frozen LLMs by Reinforcement Learning: An Iterative Reweight-then-Optimize Approach](https://arxiv.org/abs/2506.17828)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [QueueEDIT: Structural Self-Correction for Sequential Model Editing in LLMs](https://arxiv.org/abs/2506.17864)：补充与通用基础模型方法相关的模型侧方法。
+- [Routing Mamba: Scaling State Space Models with Mixture-of-Experts Projection](https://arxiv.org/abs/2506.18145)：Routing Mamba 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Memory-Augmented Architecture for Long-Term Context Handling in Large Language Models](https://arxiv.org/abs/2506.18271)：补充与通用基础模型方法相关的模型侧方法。
+- [SlimMoE](https://arxiv.org/abs/2506.18349)：通过 expert slimming 与蒸馏结构化压缩大型 MoE 模型。
+- [Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models](https://arxiv.org/abs/2506.19037)：用扩张式解掩码调度加速掩码扩散语言模型生成。
+- [GradualDiff-Fed: A Federated Learning Specialized Framework for Large Language Model](https://arxiv.org/abs/2506.19164)：提出面向大语言模型的联邦学习专用框架。
+- [Model Guidance via Robust Feature Attribution](https://arxiv.org/abs/2506.19680)：用同时提升解释鲁棒性和抑制 shortcut feature 的训练目标替代传统 salience matching，让特征归因更可靠地指导模型学习。
+- [MNN-AECS: Energy Optimization for LLM Decoding on Mobile Devices via Adaptive Core Selection](https://arxiv.org/abs/2506.19884)：补充与通用基础模型方法相关的模型侧方法。
+- [Any-Order GPT as Masked Diffusion Model](https://arxiv.org/abs/2506.19935)：解耦生成形式与架构，将任意顺序自回归建模和掩码扩散语言建模连接起来。
+- [Dynamic Weight Grafting](https://arxiv.org/abs/2506.20746)：定位 Transformer 微调后事实知识的存储位置，为模型编辑和解释性研究补充关于适配知识落点的视角。
+- [Stochastic Parameter Decomposition](https://arxiv.org/abs/2506.20790)：用随机参数分解支持可解释性，为模型机制分析补充参数空间路线。
+- [SiPipe: Bridging the CPU-GPU Utilization Gap for Efficient Pipeline-Parallel LLM Inference](https://arxiv.org/abs/2506.22033)：补充与通用基础模型方法相关的模型侧方法。
+- [Training Language Model to Critique for Better Refinement](https://arxiv.org/abs/2506.22157)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [MoCa: Modality-aware Continual Pre-training Makes Better Bidirectional Multimodal Embeddings](https://arxiv.org/abs/2506.23115)： 通过模态感知持续预训练改进双向多模态嵌入，补充跨模态表示训练方案。
+- [Sub-MoE: Efficient Mixture-of-Expert LLMs Compression via Subspace Expert Merging](https://arxiv.org/abs/2506.23266)：Sub-MoE: Efficient Mixture-of-Expert LLMs Compression via Subspace Expert Merging 补充通用基础模型与评测方向的模型侧方法。
+- [TuCo: Measuring the Contribution of Fine-Tuning to Individual Responses of LLMs](https://arxiv.org/abs/2506.23423)：把微调模型分解为预训练分量和微调分量，追踪中间 hidden states 来量化微调对单个回答的贡献。
+- [Why Reinforcement Fine-Tuning Enables MLLMs Preserve Prior Knowledge Better: A Data Perspective](https://arxiv.org/abs/2506.23508)：用 jigsaw puzzle 任务比较 SFT 与 RFT，说明 RFT 主要强化与基座模型概率一致的正确样本，因此更少遗忘先验知识。
+- [Self-correcting Reward Shaping via Language Models for Reinforcement Learning Agents in Games](https://arxiv.org/abs/2506.23626)：让语言模型根据行为目标和前几轮训练统计反复更新奖励权重，形成游戏 RL agent 的闭环 reward shaping。
+- [Higher-Order Approximation for Diffusion](https://arxiv.org/abs/2506.24042)：通过高阶近似加速扩散模型，补充跨任务生成模型效率方法。
+- [Flow Matching ODE Dynamics](https://proceedings.mlr.press/v267/wan25e.html)：从 data geometry 与 denoisers 视角阐明 flow matching ODE dynamics。
+- [Moirai-MoE](https://proceedings.mlr.press/v267/liu25an.html)：在 time-series foundation models 中用 sparse mixture-of-experts Transformers 实现 token-level specialization。
+- [Correcting on Graph: Faithful Semantic Parsing over Knowledge Graphs with Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.280)：补充与通用基础模型方法相关的模型侧方法。
+- [KAPA: A Deliberative Agent Framework with Tree-Structured Knowledge Base for Multi-Domain User Intent Understanding](https://doi.org/10.18653/v1/2025.findings-acl.319)：KAPA: A Deliberative Agent Framework with Tree-Structured Knowledge Base for Multi-Domain User Intent Understanding 补充通用基础模型与评测方向的模型侧方法。
+- [Flexible Language Modeling in Continuous Space with Transformer-based Autoregressive Flows](https://arxiv.org/abs/2507.00425)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Transferable Modeling Strategies for Low-Resource LLM Tasks](https://arxiv.org/abs/2507.00601)：研究低资源 LLM 任务中的提示与对齐迁移策略，补充跨任务适配参考。
+- [Rectifying Magnitude Neglect in Linear Attention](https://arxiv.org/abs/2507.00698)：修正线性注意力中的幅值忽略问题，为跨能力 Transformer 架构改进补充参考。
+- [Flowchart-Based Decision Making with Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.766)：补充与通用基础模型方法相关的模型侧方法。
+- [DialogueMMT: Dialogue Scenes Understanding Enhanced Multi-modal Multi-task Tuning for Emotion Recognition in Conversations](https://aclanthology.org/2025.acl-long.864/)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Unlocking LLMs' Self-Improvement Capacity with Autonomous Learning for Domain Adaptation](https://doi.org/10.18653/v1/2025.findings-acl.1084)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Revisiting Scaling Laws for Language Models: The Role of Data Quality and Training Strategies](https://doi.org/10.18653/v1/2025.acl-long.1163)： 重新审视语言模型缩放律中数据质量与训练策略的作用，补充跨能力模型训练参考。
+- [A Large Language Model for Chemistry and Retrosynthesis Predictions](https://arxiv.org/abs/2507.01444)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Conflicting Information Across Modalities](https://arxiv.org/abs/2507.01790)：探测 VLM 如何处理跨模态冲突信息，为多模态可靠性补充模型行为视角。
+- [Scaling Collapse](https://arxiv.org/abs/2507.02119)：显示按训练计算量和损失归一化后，计算最优训练的损失曲线会塌缩到共同动态，为能力形成提供模型缩放动力学参照。
+- [Neural Inhibition Improves Dynamic Routing and Mixture of Experts](https://arxiv.org/abs/2507.03221)：面向通用基础模型与评测，补充用于multimodal representation, human-aligned evaluation, or complementary encoder learning的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [RCA Copilot: Transforming Network Data into Actionable Insights via Large Language Models](https://arxiv.org/abs/2507.03224)：RCA Copilot: Transforming Network Data into Actionable Insights via Large Language Models 补充通用基础模型与评测方向的模型侧方法。
+- [RefineX: Learning to Refine Pre-training Data at Scale from Expert-Guided Programs](https://arxiv.org/abs/2507.03253)：从 expert-guided programs 学习大规模改进预训练数据，为 LLM 训练补充可编程数据质量路线。
+- [Causal Discovery for Irregular Time Series](https://arxiv.org/abs/2507.03310)：研究带一致性保证的不规则时间序列因果发现。
+- [Real-TabPFN](https://arxiv.org/abs/2507.03971)：用真实世界数据继续预训练表格基础模型，为非文本基础模型补充数据扩展路线。
+- [Data Attribution for SAM](https://arxiv.org/abs/2507.04059)：分析 sharpness-aware minimization 中的数据归因，补充训练样本影响分析路线。
+- [Interactive Groupwise Comparison for Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2507.04340)：补充面向人类反馈强化学习的交互式组比较方法。
+- [RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling](https://arxiv.org/abs/2507.04416)：RAT 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Reinforcement Fine-Tuning Naturally Mitigates Forgetting in Continual Post-Training](https://arxiv.org/abs/2507.05386)：说明强化微调可缓解持续后训练中的遗忘。
+- [Concept-Based Mechanistic Interpretability](https://arxiv.org/abs/2507.05810)：用结构化知识图谱支持基于概念的机制可解释性，把符号概念结构与模型内部解释连接起来。
+- [Differential Mamba](https://arxiv.org/abs/2507.06204)：Differential Mamba 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [A Systematic Analysis of Hybrid Linear Attention](https://arxiv.org/abs/2507.06457)：系统分析 hybrid linear-attention 设计，澄清高效长序列基础模型的架构权衡。
+- [Inductive Bias Probes for World Models](https://arxiv.org/abs/2507.06952)：用合成领域检验 foundation model 的归纳偏置是否对齐假设的 world models。
+- [Free on the Fly: Enhancing Flexibility in Test-Time Adaptation with Online EM](https://arxiv.org/abs/2507.06973)：补充基于 online EM 的灵活测试时适配方法，属于跨能力模型侧技术。
+- [Small Batch Size Training for Language Models](https://arxiv.org/abs/2507.07101)：分析 language-model training 中 vanilla SGD 何时有效，以及 gradient accumulation 为何可能低效。
+- [Inference-Time Scaling of Diffusion Language Models](https://arxiv.org/abs/2507.08390)：用粒子 Gibbs 轨迹精化在推理时把离散扩散语言模型引向奖励目标。
+- [The Non-Linear Representation Dilemma](https://arxiv.org/abs/2507.08802)：考察因果抽象在非线性表示下是否足以支撑机制可解释性。核心思想：当内部特征不符合简单线性抽象时，检验可解释性假设的边界。
+- [Lizard: An Efficient Linearization Framework for Large Language Models](https://arxiv.org/abs/2507.09025)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Detecting and Pruning Prominent but Detrimental Neurons in Large Language Models](https://arxiv.org/abs/2507.09185)：Detecting and Pruning Prominent but Detrimental Neurons in Large Language Models 补充通用基础模型与评测方向的模型侧方法。
+- [What Should Feature Distillation Transfer in LLMs? A Task-Tangent Geometry View](https://arxiv.org/abs/2507.10155)：补充与通用基础模型方法相关的模型侧方法。
+- [ThinkingViT: Matryoshka Thinking Vision Transformer for Elastic Inference](https://arxiv.org/abs/2507.10800)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Robust ID-Specific Face Restoration via Alignment Learning](https://arxiv.org/abs/2507.10943)：补充与通用基础模型方法相关的模型侧方法。
+- [Your LLM Knows the Future](https://arxiv.org/abs/2507.11851)：揭示 large language models 内部的 multi-token prediction potential。
+- [GLAD: Generalizable Tuning for Vision-Language Models](https://arxiv.org/abs/2507.13089)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Can Synthetic Images Conquer Forgetting? Beyond Unexplored Doubts in Few-Shot Class-Incremental Learning](https://arxiv.org/abs/2507.13739)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](https://arxiv.org/abs/2507.13984)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [HuggingGraph: Understanding the Supply Chain of LLM Ecosystem](https://arxiv.org/abs/2507.14240)：HuggingGraph: Understanding the Supply Chain of LLM Ecosystem 补充通用基础模型与评测方向的模型侧方法。
+- [Generative Distribution Distillation](https://arxiv.org/abs/2507.14503)：补充与通用基础模型方法相关的模型侧方法。
+- [AgentFly: Extensible and Scalable Reinforcement Learning for LM Agents](https://arxiv.org/abs/2507.14897)：提供 AgentFly，可扩展地用强化学习训练多轮环境中的 LM 智能体。
+- [Efficient Routing of Inference Requests across LLM Instances in Cloud-Edge Computing](https://arxiv.org/abs/2507.15553)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Just Put a Human in the Loop? Investigating LLM-Assisted Annotation for Subjective Tasks](https://arxiv.org/abs/2507.15821)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-Time Open-Vocabulary Object Detection](https://arxiv.org/abs/2507.17436)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [UDASA: Uncertainty-Driven Adaptive Self-Alignment](https://arxiv.org/abs/2507.17477)：从语义、事实性和价值对齐不确定性构造偏好对，并按 conservative、moderate、exploratory 阶段渐进式自对齐 LLM。
+- [WSM: Decay-Free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training](https://arxiv.org/abs/2507.17634)：通过 checkpoint merging 提出用于 LLM 预训练的无衰减学习率计划。
+- [A Markov Categorical Framework for Language Modeling](https://arxiv.org/abs/2507.19247)：补充与通用基础模型方法相关的模型侧方法。
+- [Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding](https://arxiv.org/abs/2507.19427)：报告 Step-3 大型 VLM 的模型-系统协同设计，重点是以低成本实现高效解码。
+- [DeltaLLM: A Training-Free Framework Exploiting Temporal Sparsity for Efficient Edge LLM Inference](https://arxiv.org/abs/2507.19608)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [MaPPO: Maximum a Posteriori Preference Optimization with Prior Knowledge](https://arxiv.org/abs/2507.21183)：在偏好优化目标中引入先验 reward knowledge，用 MAP 视角改进 LLM 对齐。
+- [EvoSLD: Automated Neural Scaling Law Discovery With Large Language Models](https://arxiv.org/abs/2507.21184)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Falcon-H1](https://arxiv.org/abs/2507.22448)：报告兼顾 efficiency 与 performance 的 hybrid-head language models。
+- [Semantic Convergence: Investigating Shared Representations Across Scaled LLMs](https://arxiv.org/abs/2507.22918)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Model Directions, Not Words](https://arxiv.org/abs/2507.23220)：用 sparse autoencoders 构建 mechanistic topic models，把模型空间方向视为可解释的主题结构。
+- [Steering Guidance for Personalized Text-to-Image Diffusion Models](https://arxiv.org/abs/2508.00319)：Steering Guidance 通过弱遗忘模型与权重插值，在个性化扩散中平衡主体保真和文本可编辑性。
+- [Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](https://arxiv.org/abs/2508.00819)：提出免训练 variable-length denoising，让 diffusion LLM 可动态调整去噪长度。
+- [Universal Neurons in GPT-2: Emergence, Persistence, and Functional Impact](https://arxiv.org/abs/2508.00903)：分析 GPT-2 中跨上下文稳定出现的 universal neurons，评估其形成、持续性和对模型行为的因果影响。
+- [LeanK: Learnable K Cache Channel Pruning for Efficient Decoding](https://arxiv.org/abs/2508.02215)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Decomposing the Entropy-Performance Exchange: The Missing Keys to Unlocking Effective Reinforcement Learning](https://arxiv.org/abs/2508.02260)：分解强化学习中 entropy 与性能的交换关系，为有效模型后训练提供依据。
+- [Sparse-dLLM: Accelerating Diffusion LLMs with Dynamic Cache Eviction](https://arxiv.org/abs/2508.02558)：用动态 cache eviction 加速 diffusion LLM，减少无效缓存保留。
+- [LOST: Low-rank and Sparse Pre-training for Large Language Models](https://arxiv.org/abs/2508.02668)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Raw Data Matters: Enhancing Prompt Tuning by Internal Augmentation on Vision-Language Models](https://arxiv.org/abs/2508.02671)：补充通过内部增强改进视觉语言模型提示调优的方法。
+- [Context-Adaptive Multi-Prompt Embedding with Large Language Models for Vision-Language Alignment](https://arxiv.org/abs/2508.02762)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [EMSEdit: Efficient Multi-Step Meta-Learning-based Model Editing](https://arxiv.org/abs/2508.04012)：通过高效多步元学习进行模型编辑。
+- [FeDaL](https://arxiv.org/abs/2508.04045)：面向通用时间序列 foundation models 引入 federated dataset learning。
+- [GraphProp: Training the Graph Foundation Models using Graph Properties](https://arxiv.org/abs/2508.04594)：补充与通用基础模型方法相关的模型侧方法。
+- [FlowState](https://arxiv.org/abs/2508.05287)：构建 sampling-rate invariant 的时间序列预测方法，补充结构化数据 foundation model 覆盖。
+- [On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification](https://arxiv.org/abs/2508.05629)：从强化学习奖励视角分析 SFT，并通过 token 目标重标定提升跨领域泛化。
+- [Towards Reliable Generative AI-Driven Scaffolding: Reducing Hallucinations and Enhancing Quality in Self-Regulated Learning Support](https://arxiv.org/abs/2508.05929)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Bounding Distributional Shifts in World Modeling through Novelty Detection](https://arxiv.org/abs/2508.06096)：补充与通用基础模型方法相关的模型侧方法。
+- [LoRA in LoRA](https://arxiv.org/abs/2508.06202)：以参数高效方式扩展架构以支持连续视觉指令调优，补充 VLM 适配方法。
+- [Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs](https://arxiv.org/abs/2508.06601)：补充面向跨领域 LLM 与多模态模型方法的模型侧方法，涵盖训练、适配、对齐、验证、世界模型或数据生成机制。
+- [Zero-Direction Probing: A Linear-Algebraic Framework for Deep Analysis of Large-Language-Model Drift](https://arxiv.org/abs/2508.06776)：提出用于分析大语言模型漂移的线性代数探测框架。
+- [Temporal Heterogeneity LLM Forecasting](https://arxiv.org/abs/2508.07195)：通过时间异质性建模和语义对齐把 LLM 适配到时间序列预测。
+- [Semantic Caching for Low-Cost LLM Serving: From Offline Learning to Online Adaptation](https://arxiv.org/abs/2508.07675)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [CATP](https://arxiv.org/abs/2508.07871)：用上下文自适应 token pruning 提升多模态 in-context learning 效率，同时保留与任务相关的视觉和文本证据。
+- [Momentum Point-Perplexity Mechanics in Large Language Models](https://arxiv.org/abs/2508.08492)：补充大语言模型点困惑度机制研究。
+- [Time Is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](https://arxiv.org/abs/2508.09138)：利用扩散语言模型解码过程中的中间时间动态。
+- [Wisdom of the Crowd, Without the Crowd: A Socratic LLM for Asynchronous Deliberation on Perspectivist Data](https://arxiv.org/abs/2508.09911)：补充与通用基础模型方法相关的模型侧方法。
+- [Semantic Structure in Large Language Model Embeddings](https://arxiv.org/abs/2508.10003)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [EgoMusic-Driven Human Dance Motion Estimation with Skeleton Mamba](https://arxiv.org/abs/2508.10522)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [eDIF: A European Deep Inference Fabric for Remote Interpretability of LLM](https://arxiv.org/abs/2508.10553)：补充与通用基础模型方法相关的模型侧方法。
+- [SemPT: Semantic Prompt Tuning for Vision-Language Models](https://arxiv.org/abs/2508.10645)：用语义化 prompt tuning 适配 VLM，使可学习提示更贴近类别语义而非仅优化连续向量。
+- [On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](https://arxiv.org/abs/2508.11408)：用动态权重协调 supervised fine-tuning 与 on-policy RL，把离线专家信号和在线探索结合。
+- [Finite Automata Extraction: Low-data World Model Learning as Programs from Gameplay Video](https://arxiv.org/abs/2508.11836)：从游戏视频中学习神经符号世界模型，把环境动态抽取为 Retro Coder DSL 中的有限自动机程序，强调低数据量和可解释性。
+- [Consiglieres in the Shadow: Understanding the Use of Uncensored Large Language Models in Cybercrimes](https://arxiv.org/abs/2508.12622)：Consiglieres in the Shadow: Understanding the Use of Uncensored Large Language Models in Cybercrimes 补充通用基础模型与评测方向的模型侧方法。
+- [Learn Faster and Remember More: Balancing Exploration and Exploitation for Continual Test-time Adaptation](https://arxiv.org/abs/2508.12643)：在持续测试时自适应中平衡探索与利用。
+- [Bridging Human and LLM Judgments: Understanding and Narrowing the Gap](https://arxiv.org/abs/2508.12792)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Word Meanings in Transformer Language Models](https://arxiv.org/abs/2508.12863)：研究 Transformer 语言模型内部的词义表示。
+- [Empirical Analysis of Decoding Biases in Masked Diffusion Models](https://arxiv.org/abs/2508.13021)：实证分析 masked diffusion model 的解码偏差，说明非自回归生成的可靠性边界。
+- [Revisiting MLLM Token Technology through the Lens of Classical Visual Coding](https://arxiv.org/abs/2508.13460)：从经典视觉编码视角重新审视多模态大模型 token 技术，澄清视觉 token 的表征与效率取舍。
+- [Dream 7B: Diffusion Large Language Models](https://arxiv.org/abs/2508.15487)：提出扩散式大语言模型系列及其训练方案。
+- [Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](https://arxiv.org/abs/2508.15884)：提出通过后置神经架构搜索得到的高效混合语言模型系列。
+- [Constraints-Guided Diffusion Reasoner for Neuro-Symbolic Learning](https://arxiv.org/abs/2508.16524)：训练用于符号约束的两阶段 diffusion reasoner。核心思想：先学习基础 diffusion 推理模型，再把 diffusion 输出视为 MDP，用 rule-based rewards 和 PPO 强化逻辑一致性，并在 Sudoku、maze、pathfinding 和 preference learning 上验证。
+- [Explaining Black-box Language Models with Knowledge Probing Systems: A Post-hoc Explanation Perspective](https://arxiv.org/abs/2508.16969)：提出 KnowProb 后验解释框架，用六类知识理解与关联推理探针检测黑盒 PLM 是否掌握文本背后的隐含知识。
+- [LLM Assertiveness can be Mechanistically Decomposed into Emotional and Logical Components](https://arxiv.org/abs/2508.17182)：《LLM Assertiveness can be Mechanistically Decomposed into Emotional and Logical Components》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [ExpertWeave: Efficiently Serving Expert-Specialized Fine-Tuned Adapters at Scale](https://arxiv.org/abs/2508.17624)：补充与通用基础模型方法相关的模型侧方法。
+- [Dynamic Embedding of Hierarchical Visual Features for Efficient Vision-Language Fine-Tuning](https://arxiv.org/abs/2508.17638)：动态嵌入层级视觉特征，让 VLM 微调在保留多层视觉线索的同时降低适配成本。
+- [On the Edge of Memorization in Diffusion Models](https://arxiv.org/abs/2508.17689)：研究 diffusion models 的 memorization boundaries。
+- [Can Structured Templates Facilitate LLMs in Tackling Harder Tasks? : An Exploration of Scaling Laws by Difficulty](https://arxiv.org/abs/2508.19069)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Even Heads Fix Odd Errors](https://arxiv.org/abs/2508.19414)：发现并手术式修复 attention head 错误，补充机制化模型调试与干预示例。
+- [Taming the Chaos: Coordinated Autoscaling for Heterogeneous and Disaggregated LLM Inference](https://arxiv.org/abs/2508.19559)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Information Dynamics of Generative Diffusion](https://arxiv.org/abs/2508.19897)：分析生成式扩散模型中的信息动力学，补充跨任务的 diffusion model 理论线索。
+- [Diffusion Language Models Know the Answer Before Decoding](https://arxiv.org/abs/2508.19982)：揭示扩散语言模型在最终解码前常已显现正确答案。
+- [MobileCLIP2: Improving Multi-Modal Reinforced Training](https://arxiv.org/abs/2508.20691)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Adaptive LLM Routing under Budget Constraints](https://arxiv.org/abs/2508.21141)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [Evaluating Recabilities of Foundation Models: A Multi-Domain, Multi-Dataset Benchmark](https://arxiv.org/abs/2508.21354)：提出面向Other Core Capabilities的模型侧方法、训练配方、架构、验证器、奖励模型或数据生成路径。
+- [Instruction-Level Weight Shaping: A Framework for Self-Improving AI Agents](https://arxiv.org/abs/2509.00251)：在指令层面对模型权重进行 shaping，使 Agent 能从执行反馈中自我改进而无需替换整个策略。
+- [LLM-Driven Policy Diffusion: Enhancing Generalization in Offline Reinforcement Learning](https://arxiv.org/abs/2509.00347)：用 LLM 条件或引导 policy diffusion，在离线强化学习中生成更具泛化性的策略。
+- [Router Upcycling: Leveraging Mixture-of-Routers in Mixture-of-Experts Upcycling](https://arxiv.org/abs/2509.00679)：补充与通用基础模型方法相关的模型侧方法。
+- [Causal Interpretation of Sparse Autoencoder Features in Vision](https://arxiv.org/abs/2509.00749)：用因果干预检验视觉 SAE 特征，补充哪些视觉概念具有机制意义的证据。
+- [DTRNet: Dynamic Token Routing Network to Reduce Quadratic Costs in Transformers](https://arxiv.org/abs/2509.00925)：补充与通用基础模型方法相关的模型侧方法。
+- [LobRA: Multi-tenant Fine-tuning over Heterogeneous Data](https://arxiv.org/abs/2509.01193)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [DaMoC: Efficiently Selecting the Optimal Large Language Model for Fine-tuning Domain Tasks Based on Data and Model Compression](https://arxiv.org/abs/2509.01221)：补充与通用基础模型方法相关的模型侧方法。
+- [Benchmarking Optimizers for LLM Pretraining](https://arxiv.org/abs/2509.01440)：在标准化 LLM 预训练设置下比较优化器，覆盖模型规模、batch size 与训练时长。
+- [Image Memorability in Vision Encoders](https://arxiv.org/abs/2509.01453): 将图像可记忆性与视觉编码器中的激活、注意力熵、patch 均匀性和自编码器损失联系起来。
+- [Fantastic Pretraining Optimizers](https://arxiv.org/abs/2509.02046)：在不同模型规模与数据模型比下严谨比较预训练优化器和超参数调节。
+- [Structure-Learnable Adapter Fine-Tuning](https://arxiv.org/abs/2509.03057): 为参数高效 LLM 微调学习适配器结构，补充跨任务 PEFT 模型适配方法。
+- [OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation](https://arxiv.org/abs/2509.03498)：用纯解码器架构统一多模态理解、生成与编辑。
+- [LimiX](https://arxiv.org/abs/2509.03505)：强化通用智能中的结构化数据建模能力，把表格与关系型基础模型覆盖从单一分类器扩展到更广任务。
+- [RL's Razor: Why Online Reinforcement Learning Forgets Less](https://arxiv.org/abs/2509.04259)：分析在线强化学习为何比离线方法更不易遗忘。
+- [Towards a Unified View of Large Language Model Post-Training](https://arxiv.org/abs/2509.04419)：将监督微调与强化学习放入统一后训练视角。
+- [VoltanaLLM: Feedback-Driven Frequency Control and State-Space Routing for Energy-Efficient LLM Serving](https://arxiv.org/abs/2509.04827)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Elucidating the Design Space of Decay in Linear Attention](https://arxiv.org/abs/2509.05282)：Elucidating the Design Space of Decay in Linear Attention 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [A Lightweight Framework for Trigger-Guided LoRA-Based Self-Adaptation in LLMs](https://arxiv.org/abs/2509.05385)：《A Lightweight Framework for Trigger-Guided LoRA-Based Self-Adaptation in LLMs》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Audits Under Resource, Data, and Access Constraints: Scaling Laws For Less Discriminatory Alternatives](https://arxiv.org/abs/2509.05627)：补充与通用基础模型方法相关的模型侧方法。
+- [Paladin: Defending LLM-enabled Phishing Emails with a New Trigger-Tag Paradigm](https://arxiv.org/abs/2509.07287)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Reconstruction Alignment Improves Unified Multimodal Models](https://arxiv.org/abs/2509.07295)：用重建对齐改进统一多模态模型训练。
+- [Visual Representation Alignment for Multimodal Large Language Models](https://arxiv.org/abs/2509.07979)：研究多模态大模型内部视觉表征对齐，为多模态能力补充通用模型侧路线。
+- [Selective induction Heads: How Transformers Select Causal Structures in Context](https://arxiv.org/abs/2509.08184)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Componentization: Decomposing Monolithic LLM Responses into Manipulable Semantic Units](https://arxiv.org/abs/2509.08203)：《Componentization: Decomposing Monolithic LLM Responses into Manipulable Semantic Units》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Two Facets of the Same Optimization Coin: Model Degradation and Representation Collapse in Graph Foundation Models](https://arxiv.org/abs/2509.08401)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Flow Straight and Fast in Hilbert Space: Functional Rectified Flow](https://arxiv.org/abs/2509.10384)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Prompts to Proxies: Emulating Human Preferences via a Compact LLM Ensemble](https://arxiv.org/abs/2509.11311)：补充与通用基础模型方法相关的模型侧方法。
+- [Steering Language Models in Multi-Token Generation: A Case Study on Tense and Aspect](https://arxiv.org/abs/2509.12065)：《Steering Language Models in Multi-Token Generation: A Case Study on Tense and Aspect》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [CBP-Tuning: Efficient Local Customization for Black-box Large Language Models](https://arxiv.org/abs/2509.12112)：用置信度引导调优在本地定制黑盒大语言模型。
+- [Large Language Model Assisted Automated Algorithm Generation and Evolution via Meta-black-box optimization](https://arxiv.org/abs/2509.13251)：《Large Language Model Assisted Automated Algorithm Generation and Evolution via Meta-black-box optimization》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Charting trajectories of human thought using large language models](https://arxiv.org/abs/2509.14455)：Charting trajectories of human thought using large language models 补充通用基础模型与评测方向的模型侧方法。
+- [Evolving Language Models without Labels: Majority Drives Selection, Novelty Promotes Variation](https://arxiv.org/abs/2509.15194)：提出 EVOL-RL，用多数答案保持稳定性、用 novelty-aware reward 鼓励推理差异，使 LLM 无标签自改进时避免熵坍塌。
+- [Predicting Language Models' Success at Zero-Shot Probabilistic Prediction](https://arxiv.org/abs/2509.15356)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [RLinf: Flexible and Efficient Large-scale Reinforcement Learning via Macro-to-Micro Flow Transformation](https://arxiv.org/abs/2509.15965)：用 macro-to-micro flow transformation 重构大规模强化学习流程，服务灵活高效的 LLM 后训练。
+- [VORTEX: Aligning Task Utility and Human Preferences through LLM-Guided Reward Shaping](https://arxiv.org/abs/2509.16399)：补充用大语言模型引导奖励塑形以对齐任务效用与人类偏好的方法。
+- ['Rich Dad, Poor Lad': How do Large Language Models Contextualize Socioeconomic Factors in College Admission ?](https://arxiv.org/abs/2509.16400)：补充与通用基础模型方法相关的模型侧方法。
+- [Rethinking the Role of Text Complexity in Language Model Pretraining](https://arxiv.org/abs/2509.16551)：补充与通用基础模型方法相关的模型侧方法。
+- [ContextFlow: Training-Free Video Object Editing via Adaptive Context Enrichment](https://arxiv.org/abs/2509.17818)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Dynamic Prompt Fusion for Multi-Task and CrossDomain Adaptation in LLMs](https://arxiv.org/abs/2509.18113)： 为多任务和跨域 LLM 适配动态融合提示，补充轻量模型适配方法。
+- [Sparse Training Scheme for Multimodal LLM](https://arxiv.org/abs/2509.18150)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [The Ranking Blind Spot: Decision Hijacking in LLM-based Text Ranking](https://arxiv.org/abs/2509.18575)：补充与通用基础模型方法相关的模型侧方法。
+- [The Photographer’s Eye: Teaching Multimodal Large Language Models to See and Critique like Photographers](https://arxiv.org/abs/2509.18582)：提出与其他核心能力能力相关的模型侧方法。
+- [CR-Net: Scaling Parameter-Efficient Training with Cross-Layer Low-Rank Structure](https://arxiv.org/abs/2509.18993)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [OmniBridge: Unified Multimodal Understanding, Generation, and Retrieval via Latent Space Alignment](https://arxiv.org/abs/2509.19018)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Reading Images Like Texts: Sequential Image Understanding in Vision-Language Models](https://arxiv.org/abs/2509.19191)：《Reading Images Like Texts: Sequential Image Understanding in Vision-Language Models》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs](https://arxiv.org/abs/2509.19207)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Reinforcement Learning on Pre-Training Data](https://arxiv.org/abs/2509.19249)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [The Platonic Universe: Do Foundation Models See the Same Sky?](https://arxiv.org/abs/2509.19453)：补充与通用基础模型方法相关的模型侧方法。
+- [Scaling Laws are Redundancy Laws](https://arxiv.org/abs/2509.20721)：补充与通用基础模型方法相关的模型侧方法。
+- [Towards Atoms of Large Language Models](https://arxiv.org/abs/2509.20784)：从可解释性角度寻找 LLM 中类似“原子”的基础计算或表示单元，为跨模型机制比较提供粒度。
+- [How large language models need symbolism](https://arxiv.org/abs/2509.21404)：补充与通用基础模型方法相关的模型侧方法。
+- [Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](https://arxiv.org/abs/2509.21500)：基于 rubric 训练奖励模型服务 LLM 后训练，补齐非可验证任务中的奖励覆盖不足。
+- [Understanding and Enhancing Mask-Based Pretraining towards Universal Representations](https://arxiv.org/abs/2509.21650)：补充与通用基础模型方法相关的模型侧方法。
+- [Zeppelin: Balancing Variable-length Workloads in Data Parallel Large Model Training](https://arxiv.org/abs/2509.21841)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [How Good are LLMs at Retrieving Documents in a Specific Domain?](https://arxiv.org/abs/2509.22658)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Approximate Joint Sampling in Diffusion LMs](https://arxiv.org/abs/2509.22738)：支持 diffusion language models 的 approximate joint sampling。
+- [d2Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](https://arxiv.org/abs/2509.23094)：提出 dual adaptive caching，无需训练即可加速 diffusion-based language model 推理。
+- [Robustness of Chinchilla Scaling](https://arxiv.org/abs/2509.23963)：检验 Chinchilla compute-optimal scaling 假设的鲁棒性，澄清不同训练设置下的模型扩展可靠性。
+- [SLA](https://arxiv.org/abs/2509.24006)：为扩散 transformer 增加可微调的 sparse-linear attention，补充跨视觉生成模型的效率机制。
+- [Sequential Diffusion Language Models](https://arxiv.org/abs/2509.24007)：设计顺序解码的 diffusion language model 架构，使扩散式生成兼容 KV cache。
+- [LLaDA-MoE: A Sparse MoE Diffusion Language Model](https://arxiv.org/abs/2509.24389)：提出稀疏 MoE 扩散语言模型。
+- [Double Descent as a Lens for Sample Efficiency in Autoregressive vs. Discrete Diffusion Models](https://arxiv.org/abs/2509.24974)：用 double descent 比较 autoregressive 与 discrete diffusion language models 的样本效率。核心思想：说明小数据、低算力下 autoregressive 更省样本，而 discrete diffusion 需要更大容量和更多训练 epoch 才接近竞争力。
+- [Trajectory Invariance Hyperparameter Tuning](https://arxiv.org/abs/2509.25049)：用 trajectory-invariance principle 提升 hyperparameter tuning 效率。
+- [Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](https://arxiv.org/abs/2509.25541)：通过游戏化自博弈实现无需标签的 VLM 可扩展自我改进。
+- [Information Design With Large Language Models](https://arxiv.org/abs/2509.25565)：补充与通用基础模型方法相关的模型侧方法。
+- [Binary Sparse Coding for Interpretability](https://arxiv.org/abs/2509.25596)：用 binary sparse code 做模型解释，补充连续 SAE-style feature dictionary 之外的解释性路线。
+- [LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](https://arxiv.org/abs/2509.25684)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Vocabulary Customization for Efficient Domain-Specific LLM Deployment](https://arxiv.org/abs/2509.26124)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Alignment-Aware Decoding](https://arxiv.org/abs/2509.26169)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size](https://arxiv.org/abs/2509.26432)：在推理时按语义自适应调整 diffusion LLM 的 block size，提升离散 diffusion 生成效率。
+- [Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](https://arxiv.org/abs/2509.26625)：分析纯文本预训练如何在 LLM 中形成潜在视觉先验。
+- [MOLM: Mixture of LoRA Markers](https://arxiv.org/abs/2510.00293)：MOLM 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Training-free Uncertainty Guidance for Complex Visual Tasks with MLLMs](https://arxiv.org/abs/2510.00705)：该方法利用多模态大模型的内在不确定性，在无需任务微调的情况下指导复杂视觉任务求解。
+- [LLM Routing with Dueling Feedback](https://arxiv.org/abs/2510.00841)：补充与通用基础模型方法相关的模型侧方法。
+- [A Comparative Analysis of Sparse Autoencoder and Activation Difference in Language Model Steering](https://arxiv.org/abs/2510.01246)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees](https://arxiv.org/abs/2510.01268)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Selective Underfitting in Diffusion Models](https://arxiv.org/abs/2510.01378)：研究扩散模型中的 selective underfitting，补充记忆与泛化分析。
+- [How Well Can Preference Optimization Generalize Under Noisy Feedback?](https://arxiv.org/abs/2510.01458)：How Well Can Preference Optimization Generalize Under Noisy Feedback 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Demystifying Synthetic Data in LLM Pre-training](https://arxiv.org/abs/2510.01631)：系统研究 LLM 预训练中的合成数据。核心思想：量化扩展规律、收益和失效模式，使合成数据配方能作为模型侧能力干预来评估。
+- [Detecting LLM-Generated Spam Reviews by Integrating Language Model Embeddings and Graph Neural Network](https://arxiv.org/abs/2510.01801)：补充与通用基础模型方法相关的模型侧方法。
+- [Black-Box Combinatorial Optimization with Order-Invariant Reinforcement Learning](https://arxiv.org/abs/2510.01824)：为 black-box combinatorial optimization 训练 order-invariant autoregressive generator。核心思想：随机化生成顺序并用 GRPO 优化，使 policy 不绑定固定变量顺序，从而提升搜索多样性和 sample efficiency。
+- [Diffusion Manifold Log-Domain Smoothing](https://arxiv.org/abs/2510.02305)：从 manifold hypothesis 分析 diffusion models，并说明 log-domain smoothing 的几何自适应性。
+- [Pretraining with hierarchical memories: separating long-tail and common knowledge](https://arxiv.org/abs/2510.02375)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [A $1000\times$ Faster LLM-enhanced Algorithm For Path Planning in Large-scale Grid Maps](https://arxiv.org/abs/2510.02716)：分析 LLM-A* 在大规模网格图上的瓶颈，并设计 LLM 增强路径规划算法减少搜索时间和内存开销。
+- [Don't Just Chase "Highlighted Tokens" in MLLMs: Revisiting Visual Holistic Context Retention](https://arxiv.org/abs/2510.02912)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Enhancing XAI Narratives through Multi-Narrative Refinement and Knowledge Distillation](https://arxiv.org/abs/2510.03134)：补充与通用基础模型方法相关的模型侧方法。
+- [Superposition disentanglement](https://arxiv.org/abs/2510.03186)：研究神经表征中的叠加解缠与隐藏对齐，为特征几何相关的模型可解释性补充证据。
+- [PT$^2$-LLM: Post-Training Ternarization for Large Language Models](https://arxiv.org/abs/2510.03267)：补充与通用基础模型方法相关的模型侧方法。
+- [Memory-Efficient Backpropagation for Fine-Tuning LLMs on Resource-Constrained Mobile Devices](https://arxiv.org/abs/2510.03425)：补充与通用基础模型方法相关的模型侧方法。
+- [Think Then Embed: Generative Context Improves Multimodal Embedding](https://arxiv.org/abs/2510.05014)： 用生成式上下文提升 multimodal embedding，补充跨模态表示训练方法。
+- [Rationale-Augmented Retrieval with Constrained LLM Re-Ranking for Task Discovery](https://arxiv.org/abs/2510.05131)：《Rationale-Augmented Retrieval with Constrained LLM Re-Ranking for Task Discovery》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Evaluating the Sensitivity of LLMs to Harmful Contents in Long Input](https://arxiv.org/abs/2510.05864)：评估长输入中有害内容的位置、密度和上下文如何影响 LLM 的安全敏感性。
+- [Carré du Champ Flow Matching](https://arxiv.org/abs/2510.05930)：通过 carré du champ flow matching 改进生成模型的质量与泛化权衡。
+- [BLISS: A Lightweight Bilevel Influence Scoring Method for Data Selection in Language Model Pretraining](https://arxiv.org/abs/2510.06048)：补充与通用基础模型方法相关的模型侧方法。
+- [Mixing Mechanisms](https://arxiv.org/abs/2510.06182)：研究语言模型如何在上下文中检索绑定实体，为上下文绑定机制补充解释。
+- [SDAR: A Synergistic Diffusion-AutoRegression Paradigm for Scalable Sequence Generation](https://arxiv.org/abs/2510.06303)：用可扩展混合范式统一扩散式与自回归式序列生成。
+- [Auto-Prompt Ensemble for LLM Judge](https://arxiv.org/abs/2510.06538)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Transformer Rank-Collapse Dynamics](https://arxiv.org/abs/2510.06954)：分析 transformer 训练中的 condensation 与 rank collapse，补充模型能力形成相关的跨任务训练动力学参考。
+- [Accelerating Diffusion LLM Inference via Local Determinism Propagation](https://arxiv.org/abs/2510.07081)：利用生成过程中的局部确定性加速 diffusion LLM 推理。
+- [Security-Robustness Trade-offs in Diffusion Steganography: A Comparative Analysis of Pixel-Space and VAE-Based Architectures](https://arxiv.org/abs/2510.07219)：提出面向其他基础能力的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [AI Knowledge Assist: An Automated Approach for the Creation of Knowledge Bases for Conversational AI Agents](https://arxiv.org/abs/2510.08149)：从历史客服对话中抽取问答对，并微调轻量模型来构建企业专属 RAG 知识库。
+- [Post-Norm Can Resharpen Attention](https://arxiv.org/abs/2510.08341)：分析 post-normalization 如何让 Transformer attention 重新变尖锐。
+- [Dynamic Mixture-of-Experts for Visual Autoregressive Model](https://arxiv.org/abs/2510.08629)：补充与通用基础模型方法相关的模型侧方法。
+- [Into the Rabbit Hull](https://arxiv.org/abs/2510.08638)：将 DINO-style vision models 中的任务相关概念与几何结构联系起来，补充视觉模型解释性线索。
+- [dInfer: An Efficient Inference Framework for Diffusion Language Models](https://arxiv.org/abs/2510.08666)：为 diffusion language model 提供高效推理框架，优化去噪调度和执行开销。
+- [Learning What to Remember: Adaptive Probabilistic Memory Retention for Memory-Efficient Language Models](https://arxiv.org/abs/2510.08798)：补充与通用基础模型方法相关的模型侧方法。
+- [Efficient Resource-Constrained Training of Vision Transformers via Subspace Optimization](https://arxiv.org/abs/2510.09160)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [TC-LoRA: Temporally Modulated Conditional LoRA for Adaptive Diffusion Control](https://arxiv.org/abs/2510.09561)：TC-LoRA: Temporally Modulated Conditional LoRA for Adaptive Diffusion Control 补充通用基础模型与评测方向的模型侧方法。
+- [Coupled Data and Measurement Space Dynamics for Enhanced Diffusion Posterior Sampling](https://arxiv.org/abs/2510.09676)：提出 C-DPS，在数据空间和测量空间同时构造耦合扩散过程，避免手工约束调参和似然近似。
+- [Task-Aware Resolution Optimization for Visual Large Language Models](https://arxiv.org/abs/2510.09822)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Instruction-aware User Embedding via Synergistic Language and Representation Modeling](https://arxiv.org/abs/2510.11016)：补充与通用基础模型方法相关的模型侧方法。
+- [Beyond touch-based human-machine interface: Control your machines in natural language by utilizing large language models and OPC UA](https://arxiv.org/abs/2510.11300)：《Beyond touch-based human-machine interface: Control your machines in natural language by utilizing large language models and OPC UA》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Task-Aware Reduction for Scalable LLM-Database Systems](https://arxiv.org/abs/2510.11813)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Schrödinger bridge for generative AI: Soft-constrained formulation and convergence analysis](https://arxiv.org/abs/2510.11829)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [FlexPipe: Adapting Dynamic LLM Serving Through Inflight Pipeline Refactoring in Fragmented Serverless Clusters](https://arxiv.org/abs/2510.11938)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Precise Attribute Intensity Control in Large Language Models via Targeted Representation Editing](https://arxiv.org/abs/2510.12121)：通过定向表示编辑精确调节 LLM 输出中的属性强度，而不是只做二值风格开关。
+- [Traveling Salesman-Based Token Ordering Improves Stability in Homomorphically Encrypted Language Models](https://arxiv.org/abs/2510.12343)：补充与通用基础模型方法相关的模型侧方法。
+- [ViCO: A Training Strategy towards Semantic Aware Dynamic High-Resolution](https://arxiv.org/abs/2510.12793)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Through the Lens of Doubt: Robust and Efficient Uncertainty Estimation for Visual Place Recognition](https://arxiv.org/abs/2510.13464)：面向通用基础模型与评测，补充用于model collapse or self-consuming training-loop dynamics的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [UniME-V2](https://arxiv.org/abs/2510.13515)：用 MLLM-as-a-judge 信号进行 universal multimodal embedding learning，补充跨任务多模态表示训练。
+- [Context-Selective State Space Models: Feedback is All You Need](https://arxiv.org/abs/2510.14027)：补充与通用基础模型方法相关的模型侧方法。
+- [Towards Reversible Model Merging For Low-rank Weights](https://arxiv.org/abs/2510.14163)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Attention Is All You Need for KV Cache in Diffusion LLMs](https://arxiv.org/abs/2510.14973)：用注意力驱动的 KV cache 重计算机制提升 diffusion LLM 解码效率。
+- [The Coverage Principle: How Pre-Training Enables Post-Training](https://arxiv.org/abs/2510.15020)：解释预训练为何能支撑后训练与测试时扩展。核心思想：用 coverage 刻画模型分配给高质量回答的概率质量，说明它比 cross-entropy 更能预测下游成功，并据此提出检查点选择、梯度归一化和解码干预。
+- [Tail-Optimized Caching for LLM Inference](https://arxiv.org/abs/2510.15152)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Adaptive Minds: Empowering Agents with LoRA-as-Tools](https://arxiv.org/abs/2510.15416)：为其他 LLM 能力补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Language Models are Injective and Hence Invertible](https://arxiv.org/abs/2510.15511)：从理论上分析语言模型的可逆性，为模型表示与信息流研究提供跨能力视角。
+- [Emergence of Linear Truth Encodings in Language Models](https://arxiv.org/abs/2510.15804)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](https://arxiv.org/abs/2510.15870)：通过架构与数据设计增强全模态理解模型。
+- [RL makes MLLMs see better than SFT](https://arxiv.org/abs/2510.16333)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Input Domain Aware MoE: Decoupling Routing Decisions from Task Optimization in Mixture of Experts](https://arxiv.org/abs/2510.16448)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Foundational Automatic Evaluators: Scaling Multi-Task Generative Evaluator Training for Reasoning-Centric Domains](https://arxiv.org/abs/2510.17793)：把多任务 generative evaluator 训练扩展到推理密集领域，目标是形成可迁移的基础自动评测模型。
+- [CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](https://arxiv.org/abs/2510.17847)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [MIN-Merging: Merge the Important Neurons for Model Merging](https://arxiv.org/abs/2510.17890)：先识别对任务重要的神经元，再优先合并这些参数以改进多模型合并效果。
+- [Towards Fast LLM Fine-tuning through Zeroth-Order Optimization with Projected Gradient-Aligned Perturbations](https://arxiv.org/abs/2510.18228)：补充与通用基础模型方法相关的模型侧方法。
+- [Text or Pixels? It Takes Half: On the Token Efficiency of Visual Text Inputs in Multimodal LLMs](https://arxiv.org/abs/2510.18279)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Learning Task-Agnostic Representations through Multi-Teacher Distillation](https://arxiv.org/abs/2510.18680)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [FlexiDataGen: An Adaptive LLM Framework for Dynamic Semantic Dataset Generation in Sensitive Domains](https://arxiv.org/abs/2510.19025)：为其他 LLM 能力补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Time-Series Foundation Model Design Biases](https://arxiv.org/abs/2510.19236)：分析时间序列 foundation models 设计选择中的隐含偏置。
+- [Graph Unlearning Meets Influence-aware Negative Preference Optimization](https://arxiv.org/abs/2510.19479)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [An Empirical Study of Sample Selection Strategies for Large Language Model Repair](https://arxiv.org/abs/2510.20428)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Mitra](https://arxiv.org/abs/2510.21204)：用 mixed synthetic priors 增强 tabular foundation models，补充结构化数据基础模型训练方法。
+- [ParaRNN](https://arxiv.org/abs/2510.21450)：支持面向大语言模型的非线性 RNN 并行训练，补充替代序列模型训练路线。
+- [Head Pursuit](https://arxiv.org/abs/2510.21518)：探查多模态 Transformer 中的注意力头专门化，为多模态表征行为补充电路级诊断。
+- [ATOM: AdapTive and OptiMized dynamic temporal knowledge graph construction using LLMs](https://arxiv.org/abs/2510.22590)：用 LLM 自适应抽取和优化动态时间知识图谱，处理实体关系随时间变化的构建问题。
+- [On the Anisotropy of Score-Based Generative Models](https://arxiv.org/abs/2510.22899)：补充与通用基础模型方法相关的模型侧方法。
+- [Towards Stable and Effective Reinforcement Learning for Mixture-of-Experts](https://arxiv.org/abs/2510.23027)：研究如何让专家混合模型的强化学习更稳定有效。
+- [Validating Formal Specifications with LLM-generated Test Cases](https://arxiv.org/abs/2510.23350)：Validating Formal Specifications with LLM-generated Test Cases 补充通用基础模型与评测方向的模型侧方法。
+- [Lightweight Robust Direct Preference Optimization](https://arxiv.org/abs/2510.23590)：补充模型侧方法，主要面向 Other。
+- [Aligning Diffusion Language Models via Unpaired Preference Optimization](https://arxiv.org/abs/2510.23658)：用 unpaired preference optimization 对齐扩散语言模型，将偏好学习扩展到自回归语言模型之外。
+- [Ming-Flash-Omni: A Sparse, Unified Architecture for Multimodal Perception and Generation](https://arxiv.org/abs/2510.24821)：提出稀疏 MoE 全模态架构，统一多模态感知与生成。
+- [Generative Bayesian Optimization: Generative Models as Acquisition Functions](https://arxiv.org/abs/2510.25240)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [FaCT](https://arxiv.org/abs/2510.25512): 构建用于解释神经网络决策的可信概念轨迹，补充概念级可解释性方法。
+- [Curly Flow Matching for Learning Non-gradient Field Dynamics](https://arxiv.org/abs/2510.26645)：作为跨领域模型能力的模型条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Kimi Linear: An Expressive, Efficient Attention Architecture](https://arxiv.org/abs/2510.26692)：提出表达力更强的线性注意力架构用于高效语言建模。
+- [Pre-trained Forecasting Feature Extractors](https://arxiv.org/abs/2510.26777)：说明预训练预测模型可作为时间序列分类的强零样本特征提取器。
+- [Understanding and Enhancing Mamba-Transformer Hybrids for Memory Recall and Language Modeling](https://arxiv.org/abs/2510.26912)：Understanding and Enhancing Mamba-Transformer Hybrids for Memory Recall 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Semi-Supervised Preference Optimization with Limited Feedback](https://arxiv.org/abs/2511.00040)：补充与通用基础模型方法相关的模型侧方法。
+- [AnGFT](https://doi.org/10.18653/v1/2025.emnlp-main.172)： 通过 anchoring-guidance fine-tuning 提升角色扮演对话智能体的专业回答质量。
+- [Iterative Foundation Model Fine-Tuning on Multiple Rewards](https://arxiv.org/abs/2511.00220)：《Iterative Foundation Model Fine-Tuning on Multiple Rewards》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Detoxifying Large Language Models via the Diversity of Toxic Samples](https://doi.org/10.18653/v1/2025.emnlp-main.298)：补充与通用基础模型方法相关的模型侧方法。
+- [EMO: Embedding Model Distillation via Intra-Model Relation and Optimal Transport Alignments](https://doi.org/10.18653/v1/2025.emnlp-main.385)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [MARIO-0.5B: A Multi-Agent Lightweight Model for Real-Time Open Information Extraction in Low-Resource Settings](https://doi.org/10.18653/v1/2025.findings-emnlp.703)：为其他 LLM 能力补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Hallucination Detection in Structured Query Generation via LLM Self-Debating](https://doi.org/10.18653/v1/2025.findings-emnlp.873)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [Look Beyond Feeling: Unveiling Latent Needs from Implicit Expressions for Proactive Emotional Support](https://doi.org/10.18653/v1/2025.emnlp-main.1094)：补充与通用基础模型方法相关的模型侧方法。
+- [Learning Intractable Multimodal Policies with Reparameterization and Diversity Regularization](https://arxiv.org/abs/2511.01374)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Extracting Linguistic Information from Large Language Models: Syntactic Relations and Derivational Knowledge](https://doi.org/10.18653/v1/2025.emnlp-main.1384)：补充与通用基础模型方法相关的模型侧方法。
+- [Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](https://arxiv.org/abs/2511.01490)：Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning 补充通用基础模型与评测方向的模型侧方法。
+- [Collaborative Large Language Model Inference via Resource-Aware Parallel Speculative Decoding](https://arxiv.org/abs/2511.01695)：按资源约束协同多个 LLM 执行并行 speculative decoding，提高推理吞吐与成本效率。
+- [Priors in Time](https://arxiv.org/abs/2511.01836)：研究 language-model interpretability 中缺失的时间归纳偏置，为模型内部表示分析补充视角。
+- [Diffusion Memorization-Generalization Separations](https://arxiv.org/abs/2511.03202)：给出 diffusion models 中 memorization 与 generalization 的可证明分离，补充生成模型理论线索。
+- [Why Less is More (Sometimes): A Theory of Data Curation](https://arxiv.org/abs/2511.03492)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [PixCLIP: Achieving Fine-grained Visual Language Understanding via Any-granularity Pixel-Text Alignment Learning](https://arxiv.org/abs/2511.04601)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation](https://arxiv.org/abs/2511.04675)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Deep Progressive Training](https://arxiv.org/abs/2511.04981)：通过 progressive training 扩展零层或一层模型的深度容量。
+- [Order-Level Attention Similarity Across Language Models: A Latent Commonality](https://arxiv.org/abs/2511.05064)：补充与通用基础模型方法相关的模型侧方法。
+- [S2LM: Towards Semantic Steganography via Large Language Models](https://arxiv.org/abs/2511.05319)：提出 semantic steganography 概念，并用 LLM 参与句子级信息到图像载体的隐藏与恢复流程。
+- [KLASS: KL-Guided Fast Inference in Masked Diffusion Models](https://arxiv.org/abs/2511.05664)：用 KL guidance 选择 masked diffusion model 的快速推理路径，减少不必要去噪步骤。
+- [Implicit Federated In-context Learning For Task-Specific LLM Fine-Tuning](https://arxiv.org/abs/2511.06757)：把客户端本地示例转成隐式向量表示，在推理阶段做 federated in-context learning，减少私有数据微调开销。
+- [A Closer Look at Knowledge Distillation in Spiking Neural Network Training](https://arxiv.org/abs/2511.06902)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Does TabPFN Understand Causal Structures?](https://arxiv.org/abs/2511.07236)： 检验 TabPFN 是否理解 causal structures，把结构化数据 foundation model 分析从预测准确率扩展到因果结构。
+- [LLM Optimization Unlocks Real-Time Pairwise Reranking](https://arxiv.org/abs/2511.07555)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Remodeling Semantic Relationships in Vision-Language Fine-Tuning](https://arxiv.org/abs/2511.08238)：提取多层视觉语义并用 inheritable cross-attention 融合文本关系，显式重塑 VLM 微调中的语义关系。
+- [NeuCLIP: Efficient Large-Scale CLIP Training with Neural Normalizer Optimization](https://arxiv.org/abs/2511.08417)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Training Language Models to Explain Their Own Computations](https://arxiv.org/abs/2511.08579)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [TabPFN-2.5](https://arxiv.org/abs/2511.08667)：推进 tabular foundation models，补充面向结构化数据 in-context learning 的非文本基础模型覆盖。
+- [Convergence and Stability Analysis of Self-Consuming Generative Models with Heterogeneous Human Curation](https://arxiv.org/abs/2511.09002)：《Convergence and Stability Analysis of Self-Consuming Generative Models with Heterogeneous Human Curation》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Panda: Test-Time Adaptation with Negative Data Augmentation](https://arxiv.org/abs/2511.10481)：用负数据增强进行测试时适配，补充跨领域模型适配方法。
+- [When Data is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](https://arxiv.org/abs/2511.10985)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Moirai 2.0](https://arxiv.org/abs/2511.11698)：用更精简的 foundation-model design 推进 time-series forecasting。
+- [Improving LLM's Attachment to External Knowledge In Dialogue Generation Tasks Through Entity Anonymization](https://arxiv.org/abs/2511.11946)：《Improving LLM's Attachment to External Knowledge In Dialogue Generation Tasks Through Entity Anonymization》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Event Dataset Distillation for Spiking Neural Networks](https://arxiv.org/abs/2511.12095)：通过 dense event data distillation 加速 spiking neural-network training。
+- [Seg-VAR: Image Segmentation with Visual Autoregressive Modeling](https://arxiv.org/abs/2511.12594)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [ActVAR: Activating Mixtures of Weights and Tokens for Efficient Visual Autoregressive Generation](https://arxiv.org/abs/2511.12893)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Beneficial Noise in MLLMs](https://arxiv.org/abs/2511.12917)：研究如何向多模态大模型注入有益噪声。
+- [Weight-sparse transformers have interpretable circuits](https://arxiv.org/abs/2511.13653)：研究权重稀疏性如何带来更可解释的 Transformer 电路，为跨能力模型可解释性补充证据。
+- [GloTok: Global Perspective Tokenizer for Image Reconstruction and Generation](https://arxiv.org/abs/2511.14184)：GloTok: Global Perspective Tokenizer for Image Reconstruction and Generation 补充通用基础模型与评测方向的模型侧方法。
+- [Hierarchical Token Prepending: Enhancing Information Flow in Decoder-based LLM Embeddings](https://arxiv.org/abs/2511.14868)：Hierarchical Token Prepending: Enhancing Information Flow in Decoder-based LLM Embeddings 补充通用基础模型与评测方向的模型侧方法。
+- [Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](https://arxiv.org/abs/2511.16024)：补充与通用基础模型方法相关的模型侧方法。
+- [TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2511.16147)：利用 token-level redundancy 分析来减少 PEFT 更新中的冗余计算和参数使用。
+- [Q-MLLM: Vector Quantization for Robust Multimodal Large Language Model Security](https://arxiv.org/abs/2511.16229)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Progressive Supernet Training for Efficient Visual Autoregressive Modeling](https://arxiv.org/abs/2511.16546)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Fine-grained MoE Load Balancing with Linear Programming](https://arxiv.org/abs/2511.16947)：用线性规划做跨 GPU token 调度，在每个 micro-batch 内细粒度平衡 MoE expert 负载，从系统层面提升训练吞吐。
+- [Attention Guided Alignment in Efficient Vision-Language Models](https://arxiv.org/abs/2511.17793)：该方法利用注意力模式引导高效视觉语言模型的多模态对齐。
+- [Pier LLM Pretraining](https://arxiv.org/abs/2511.17849)：用 relaxed global communication 优化大语言模型 pretraining。
+- [Fewer Tokens, Greater Scaling: Self-Adaptive Visual Bases for Efficient and Expansive Representation Learning](https://arxiv.org/abs/2511.19515)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [In-Context Compositional Learning via Sparse Coding Transformer](https://arxiv.org/abs/2511.20194)：用 sparse coding transformer 建模组合式 in-context learning，关注模型如何从上下文中重组原子能力。
+- [Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability](https://arxiv.org/abs/2511.20662)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Length-MAX Tokenizer for Language Models](https://arxiv.org/abs/2511.20849)：《Length-MAX Tokenizer for Language Models》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [A Unified Understanding of Offline Data Selection and Online Self-refining Generation for Post-training LLMs](https://arxiv.org/abs/2511.21056)：统一解释离线数据选择与在线自精炼生成在 LLM 后训练中的作用。
+- [From Bits to Rounds: Parallel Decoding with Exploration for Diffusion Language Models](https://arxiv.org/abs/2511.21103)：在 diffusion language model 的并行解码中引入探索，改进 bit 到 rounds 的效率权衡。
+- [Token-Level Marginalization for Multi-Label LLM Classifiers](https://arxiv.org/abs/2511.22312)：在多标签 LLM 分类中对 label token 概率做边际化，减少标签词表述差异带来的评分偏差。
+- [SuRe: Surprise-Driven Prioritised Replay for Continual LLM Learning](https://arxiv.org/abs/2511.22367)：SuRe 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [Ambiguity Awareness Optimization: Towards Semantic Disambiguation for Direct Preference Optimization](https://arxiv.org/abs/2511.23391)：补充与通用基础模型方法相关的模型侧方法。
+- [Resilient LLM-Driven Token-Based MAC Protocols via Zero-Shot Adaptation and Knowledge Distillation](https://doi.org/10.1109/jsac.2025.3644282)：补充与通用基础模型方法相关的模型侧方法。
+- [SpeedAug: Policy Acceleration via Tempo-Enriched Policy and RL Fine-Tuning](https://arxiv.org/abs/2512.00062)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Wikontic: Constructing Wikidata-Aligned, Ontology-Aware Knowledge Graphs with Large Language Models](https://arxiv.org/abs/2512.00590)：用 LLM 抽取带限定符的候选三元组，再施加 Wikidata 类型与关系约束并做实体归一化，构建 ontology-consistent KG。
+- [The Mean-Field Dynamics of Transformers](https://arxiv.org/abs/2512.01868)：从均场视角分析 Transformer 动力学，为大模型行为补充模型理论背景。
+- [PEFT-Factory: Unified Parameter-Efficient Fine-Tuning of Autoregressive Large Language Models](https://arxiv.org/abs/2512.02764)：《PEFT-Factory: Unified Parameter-Efficient Fine-Tuning of Autoregressive Large Language Models》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [MindGPT-4ov: An Enhanced MLLM via a Multi-Stage Post-Training Paradigm](https://arxiv.org/abs/2512.02895)：提出覆盖数据生产、模型训练和高效部署的多阶段 MLLM 后训练范式。
+- [Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective](https://arxiv.org/abs/2512.03759)：提出 ESPO，把 diffusion LLM 的整段生成视为单个动作，并用 ELBO 作为序列级 likelihood proxy 来稳定 RL。
+- [In-Context Representation Hijacking](https://arxiv.org/abs/2512.03771)：补充与通用基础模型方法相关的模型侧方法。
+- [Training for Identity, Inference for Controllability: A Unified Approach to Tuning-Free Face Personalization](https://arxiv.org/abs/2512.03964)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [SkillFactory: Self-Distillation For Learning Cognitive Behaviors](https://arxiv.org/abs/2512.04072)：把模型自身样本重组为 cognitive-skill traces，用于强化学习前的 SFT 初始化。核心思想：通过 self-distillation 改善后续 skill use 和鲁棒性，因此它属于模型训练方法，而不是封装好的 agent skill。
+- [Enhancing next token prediction based pre-training for jet foundation models](https://arxiv.org/abs/2512.04149)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [When do spectral gradient updates help in deep learning?](https://arxiv.org/abs/2512.04299)：给出判断 Muon 类谱梯度更新何时优于欧式梯度步的逐层条件，并在 NanoGPT 规模语言模型训练中验证。
+- [CryptoTensors: A Light-Weight Large Language Model File Format for Highly-Secure Model Distribution](https://arxiv.org/abs/2512.04580)：提出面向通用模型架构、训练、扩展或后训练能力的模型侧方法、架构、训练配方或数据策略。
+- [ReflexFlow: Rethinking Learning Objective for Exposure Bias Alleviation in Flow Matching](https://arxiv.org/abs/2512.04904)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Stable-MoE: Lyapunov-based Token Routing for Distributed Mixture-of-Experts Training over Edge Networks](https://arxiv.org/abs/2512.06784)：用基于 Lyapunov 的 token 路由稳定边缘网络上的分布式 MoE 训练。
+- [Dual Refinement Cycle Learning: Unsupervised Text Classification of Mamba and Community Detection on Text Attributed Graph](https://arxiv.org/abs/2512.07100)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Concept Cones](https://arxiv.org/abs/2512.07355)：用 geometric concept cones 统一概念学习，为模型概念补充表示几何视角。
+- [Adaptation of Embedding Models to Financial Filings Via LLM Distillation](https://arxiv.org/abs/2512.08088)：用 LLM judge 生成相关性信号，从无标签金融申报语料中蒸馏专用检索 embedding 模型。
+- [Advancing LLM-Based Security Automation With Customized Group Relative Policy Optimization for Zero-Touch Networks](https://arxiv.org/abs/2512.09485)：作为其他的模型候选，关注标题所示的可复用能力、方法或评测信号。
+- [Unlocking the Address Book: Dissecting the Sparse Semantic Structure of LLM Key-Value Caches via Sparse Autoencoders](https://arxiv.org/abs/2512.10547)：用 sparse autoencoder 分解 LLM KV cache，研究其中稀疏语义结构与可解释地址式检索。
+- [CreativeVR: Diffusion-Prior-Guided Approach for Structure and Motion Restoration in Generative and Real Videos](https://arxiv.org/abs/2512.12060)：用扩散先验和深度适配器修复生成视频或真实视频中的结构与时序伪影，并提出 AIGC54 评测生成视频修复。
+- [HetRL](https://arxiv.org/abs/2512.12476)：面向异构 GPU 与网络环境优化 LLM reinforcement-learning post-training。
+- [LitePT: Lighter Yet Stronger Point Transformer](https://arxiv.org/abs/2512.13689)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [OPTIMA: Optimal One-shot Pruning for LLMs via Quadratic Programming Reconstruction](https://arxiv.org/abs/2512.13886)：把 LLM 一次性剪枝表述为二次规划重构问题，在无需长程再训练的情况下恢复层输出。
+- [Circuit-Tracer](https://doi.org/10.18653/v1/2025.blackboxnlp-1.14)：提供用于发现 feature circuits 的库，为 circuit-level model interpretability 补充可复用工具。
+- [Align-KD](https://doi.org/10.1109/CVPR52734.2025.00395)：蒸馏跨模态对齐知识以增强移动端视觉语言大模型，而不只是压缩模型规模。
+- [From Isolation to Entanglement](https://arxiv.org/abs/2512.15134)：检验解释性方法何时能识别或解耦已知概念，明确概念级解释的可靠性边界。
+- [Selective Knowledge Injection via Adapter Modules in Large-Scale Language Models](https://doi.org/10.1109/icaide65466.2025.11189565)： 通过选择性适配器模块向大语言模型注入知识，补充参数高效的知识适配路径。
+- [Di[M]O](https://doi.org/10.1109/ICCV51701.2025.01729)：把 masked diffusion model 蒸馏为一步生成器，为扩散式离散或视觉生成提供效率路线。
+- [Null-LoRA: Low-Rank Adaptation on Null Space](https://arxiv.org/abs/2512.15233)：《Null-LoRA: Low-Rank Adaptation on Null Space》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Gradient Projection for Continual PEFT](https://doi.org/10.1109/TPAMI.2025.3587032)：用梯度投影改进持续参数高效微调，缓解反复适配中的干扰。
+- [TabWak](https://proceedings.iclr.cc/paper_files/paper/2025/hash/67ea314d1df751bbf99ab664ae3049a5-Abstract-Conference.html)：在采样潜变量中嵌入不可见签名来水印化表格扩散模型，补充合成表格数据的来源追踪方法。
+- [SOAP Optimizer](https://proceedings.iclr.cc/paper_files/paper/2025/hash/e988664070e9591f93fdcf605f7dc623-Abstract-Conference.html)：在预条件器特征基中更新 Adam-style moments，从而稳定 Shampoo 用于 language-model training。
+- [Task-Driven Diffusion Dataset Distillation](https://doi.org/10.1109/CVPR52734.2025.00987)：用 task-driven diffusion 推进通用 dataset distillation，补充跨任务模型训练与合成数据方法。
+- [The Missing Piece in Model Editing: A Deep Dive into the Hidden Damage Brought By Model Editing](https://doi.org/10.1109/ICASSP49660.2025.10890406)：分析模型编辑带来的隐藏损伤，为基于编辑的模型适配补充可靠性边界。
+- [Addressing the Training-Inference Discrepancy in Discrete Diffusion for Text Generation](https://aclanthology.org/2025.coling-main.477/)：分析并缓解离散扩散文本生成中的训练与推理错配，补充非自回归语言模型生成路线。
+- [LLaDA2.0: Scaling Up Diffusion Language Models to 100B](https://arxiv.org/abs/2512.15745)：通过从自回归模型转换与渐进适配，把扩散语言模型扩展到 100B。
+- [Data Valuation for LLM Fine-Tuning: Efficient Shapley Value Approximation via Language Model Arithmetic](https://arxiv.org/abs/2512.15765)：补充与通用基础模型方法相关的模型侧方法。
+- [Large language model for interpreting research policy using adaptive two-stage retrieval augmented fine-tuning method](https://doi.org/10.1016/j.eswa.2025.127330)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [EdgeNetLLM: Cloud–Edge Collaborative Adaptation of Large Language Models for Mobile Networking](https://doi.org/10.1109/tnse.2025.3624100)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Utility of Knowledge Graphs in Enhancing Cloud-Based LLMs: A Meta-Analysis](https://doi.org/10.1109/iscait64916.2025.11010765)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Continual Learning in Large Language Models: Foundations to Frontiers](https://doi.org/10.18653/v1/2025.ijcnlp-tutorials.2)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [A Differentiable Constraint-Aware Motion Planning Module for Unsupervised Trajectory Optimization](https://doi.org/10.1109/itsc60802.2025.11423500)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [BrepLLM: Native Boundary Representation Understanding with Large Language Models](https://arxiv.org/abs/2512.16413)：补充与通用基础模型方法相关的模型侧方法。
+- [ChannelMamba: A Mamba-Driven Selective State-Space Model for Channel Prediction of High-Mobility MIMO in 6G IoT](https://doi.org/10.1109/twc.2025.3617502)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [LLM-Based Video Analytics Test Scenario Generation in Smart Cities](https://doi.org/10.1109/it64745.2025.10930297)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [A Reflection on Change Classification in the Era of Large Language Models](https://doi.org/10.1109/tse.2025.3539566)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Multi-Scenario Cloud–Edge Collaborative DDoS Detection in LLM-Enabled AIoT](https://doi.org/10.1109/tnse.2025.3637740)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Building a Domain-Specialized Large Language Model for Penetration Testing](https://doi.org/10.1109/soli66289.2025.11396255)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [CDM-Net: A Framework for Cross-View Geo-Localization With Multimodal Data](https://doi.org/10.1109/tgrs.2025.3594544)：CDM-Net: A Framework for Cross-View Geo-Localization With Multimodal Data 补充通用基础模型与评测方向的模型侧方法。
+- [Efficient Personalization of Generative Models via Optimal Experimental Design](https://arxiv.org/abs/2512.19057)：把生成模型个性化中的偏好查询选择表述为最优实验设计，并提出 ED-PBRL 以更少人类反馈完成个性化。
+- [The Prism Hypothesis](https://arxiv.org/abs/2512.19693)：分析语义与像素表征的频谱，并用统一自编码调和抽象语义和细粒度视觉表示。
+- [G-KAN: Graph Kolmogorov-Arnold Network for Node Classification Using Contrastive Learning](https://doi.org/10.1109/access.2025.3577059)：G-KAN: Graph Kolmogorov-Arnold Network for Node Classification Using Contrastive Learning 补充通用基础模型与评测方向的模型侧方法。
+- [Generative Adversarial Diffusion](https://doi.org/10.1109/iccv51701.2025.01559)：Generative Adversarial Diffusion 补充通用基础模型与评测方向的模型侧方法。
+- [Generative AI for Analog Integrated Circuit Design: Methodologies and Applications](https://doi.org/10.1109/access.2025.3553743)：提出与其他核心能力能力相关的模型侧方法。
+- [The Deleuzian Representation Hypothesis](https://arxiv.org/abs/2512.19734)：提出面向模型内部机制的表示几何假设，补充理论解释性视角。
+- [LLM-NPU: Towards Efficient Foundation Model Inference on Low-Power Neural Processing Units](https://doi.org/10.1109/coins65080.2025.11125797)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [ReLU-KAN: New Kolmogorov-Arnold Networks that Only Need Matrix Addition, Dot Multiplication, and ReLU](https://doi.org/10.1109/swc65939.2025.00262)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [A Collaborative Network of Mamba and CNN for Lightweight Image Super-Resolution](https://doi.org/10.1109/tce.2025.3572477)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [BotVIO: A Lightweight Transformer-Based Visual–Inertial Odometry for Robotics](https://doi.org/10.1109/tro.2025.3577054)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [AprèsCoT: Explaining LLM Answers with Knowledge Graphs and Chain of Thought](https://doi.org/10.48786/edbt.2025.109)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Data-Centric Fine-Tuning of Small Language Models for Automatic Extraction of Technical Requirements](https://doi.org/10.1109/access.2025.3591739)：补充与通用基础模型方法相关的模型侧方法。
+- [Evolutionary Reinforcement Learning with LLM-Based Hyperparameter Adaptation](https://doi.org/10.1109/icaci65340.2025.11096189)：补充与通用基础模型方法相关的模型侧方法。
+- [Achieving Efficient Prompt Engineering in Large Language Models Using a Hybrid and Multi-Objective Optimization Framework](https://doi.org/10.2478/cait-2025-0012)：补充与通用基础模型方法相关的模型侧方法。
+- [Multimodal Aspect-Based Sentiment Analysis With Plugin-Enhanced Large Language Models](https://doi.org/10.1109/tnnls.2025.3622470)：补充与通用基础模型方法相关的模型侧方法。
+- [How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](https://arxiv.org/abs/2512.19765)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Mixture-of-Experts with Gradient Conflict-Driven Subspace Topology Pruning for Emergent Modularity](https://arxiv.org/abs/2512.20291)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Leveraging large language models for BIM-based automated compliance checking](https://doi.org/10.1016/j.autcon.2025.106707)：补充与通用基础模型方法相关的模型侧方法。
+- [LiteRT-Optimized INT8 LLM for Raspberry Pi4 Deployment](https://doi.org/10.1109/iccvw69036.2025.00594)：补充与通用基础模型方法相关的模型侧方法。
+- [TimeBill: Time-Budgeted Inference for Large Language Models](https://arxiv.org/abs/2512.21859)：TimeBill: Time-Budgeted Inference for Large Language Models 补充通用基础模型与评测方向的模型侧方法。
+- [Large Language Models Applications in Oil and Gas: Case Studies and Insights](https://doi.org/10.1109/ai-si66213.2025.11341041)：补充与通用基础模型方法相关的模型侧方法。
+- [Utilizing large language models for integrating document-level contextual semantic into pseudo-relevance feedback](https://doi.org/10.1016/j.knosys.2025.114980)：补充与通用基础模型方法相关的模型侧方法。
+- [WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference](https://arxiv.org/abs/2512.22737)：把 diffusion language model 与 causal attention 对齐，以提升并行解码在实际部署中的速度收益。
+- [Unifying Within and Across: Intra-Modality Multi-View Fusion and Inter-Modality Alignment for Knowledge Graph Completion](https://doi.org/10.1109/icassp49660.2025.10890167)：补充与通用基础模型方法相关的模型侧方法。
+- [ISOPO: Proximal policy gradients without pi-old](https://arxiv.org/abs/2512.23353)：提出无需显式旧策略的近端策略梯度更新，简化强化学习式模型调优。
+- [Efficient Urban Tree Species Classification via Multirepresentation Fusion of Mobile Laser Scanning Data](https://doi.org/10.1109/jstars.2025.3560714)：补充与通用基础模型方法相关的模型侧方法。
+- [Piloting ModiBot: A Large Language Model-Based Moderator in Normal and Emotionally Challenging Focus Group Interactions](https://doi.org/10.1109/cinti67731.2025.11311748)：补充与通用基础模型方法相关的模型侧方法。
+- [DyStream: Streaming Dyadic Talking Heads Generation via Flow Matching-based Autoregressive Model](https://arxiv.org/abs/2512.24408)：用 flow-matching 自回归模型做 streaming dyadic talking-head generation，强调双人互动场景中的时序一致性。
+- [Integrative innovation of large language models in industries: technologies, applications, and challenges](https://doi.org/10.1016/j.dsm.2025.06.005)：补充与通用基础模型方法相关的模型侧方法。
+- [Supporting Pragmatic Interoperability: An LLM Based Process to Analyze Distributed Intentionality (i*) Models](https://doi.org/10.1109/rew66121.2025.00049)：补充与通用基础模型方法相关的模型侧方法。
+- [Unraveling Enterprise Large Language Model platform - Cohere](https://doi.org/10.29322/ijsrp.15.02.2025.p15823)：补充与通用基础模型方法相关的模型侧方法。
+- [Building a Context-Aware Language Model for Translating Historical Texts](https://doi.org/10.1109/iccies63851.2025.11033065)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Decentralized Digital Identity Management for Large Language Model Agents](https://doi.org/10.1109/mcomstd.2025.3648666)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [FGMMa: Multiembedding Node Classification via Fuzzy Graph Message Passing and Graph Mamba](https://doi.org/10.1109/tfuzz.2025.3648336)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [State Space Models for Natural Language Tracking: Exploring Context-Adaptive Language Cues](https://doi.org/10.1109/tcsvt.2025.3623281)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [ICR: A framework for resolving knowledge conflicts in retrieval-augmented generation](https://doi.org/10.1016/j.neucom.2025.132139)：面向通用基础模型与评测，补充用于model-collapse dynamics under contaminated sources的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [JumpDASH: LLM-Based Content Perception for Intelligent Jumping DASH in Mobile Adaptive Video Streaming](https://doi.org/10.1109/ton.2025.3611495)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Improve semantic similarity based on statistical approach and LLM based transformer model for extractive summarization](https://doi.org/10.1016/j.array.2025.100671)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Expertfuse: A huffman tree-based gradual expert integration framework for MoE models](https://doi.org/10.1016/j.neunet.2025.108274)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Automated Hallucination Detection and Mitigation in Large Language Model](https://doi.org/10.47392/irjaeh.2025.0104)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Influence of material attribute context and document layout variability on large language model performance in construction material specification](https://doi.org/10.1080/15623599.2025.2566404)：面向通用基础模型与评测，补充用于model collapse or self-consuming training-loop dynamics的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Indirect Online Preference Optimization via Reinforcement Learning](https://doi.org/10.24963/ijcai.2025/61)：《Indirect Online Preference Optimization via Reinforcement Learning》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Bridging the gap between data distribution and model: Dynamic data distribution optimization for improving critique capabilities of large language models](https://doi.org/10.1016/j.eswa.2025.129878)：《Bridging the gap between data distribution and model: Dynamic data distribution optimization for improving critique capabilities of large language models》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [A2R: A hybridactivation-attention framework for enhancing large language model reliability](https://doi.org/10.1016/j.eswa.2025.130922)：《A2R: A hybridactivation-attention framework for enhancing large language model reliability》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [LLM-Driven Causal Discovery via Harmonized Prior](https://doi.org/10.1109/tkde.2025.3528461)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [STAMF: Synergistic transformer and mamba fusion network for RGB-Polarization based underwater salient object detection](https://doi.org/10.1016/j.inffus.2025.103182)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [PromptAid: Visual Prompt Exploration, Perturbation, Testing and Iteration for Large Language Models](https://doi.org/10.1109/tvcg.2025.3535332)：补充其他模型能力方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Combining Convolutional Neural Networks with Reinforcement Learning for Autonomous Robotics](https://doi.org/10.1109/icpct64145.2025.10940484)：提出面向其他基础能力的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [TissueNarrator: Generative Modeling of Spatial Transcriptomics with Large Language Models](https://doi.org/10.1101/2025.11.24.690325)：把 LLM 式生成建模用于空间转录组，是领域建模参考而非通用模型架构。
+- [Assessing Spatial Accuracy of Nature Observations Using the LLM-Based Geoparser Service](https://doi.org/10.1109/mipro65660.2025.11132008)：用 LLM geoparser 评估自然观察记录的空间准确性，更接近应用评测目标而非可复用模型方法。
+- [Research of Artificial Intelligence Expert System for Distribution Line Live Working Based on Large Language Model](https://doi.org/10.1109/acfpe67232.2025.11451063)：构建面向配电线路带电作业的 LLM 专家系统，是行业部署案例而非通用模型贡献。
+- [Research and Implementation of an Industrial Intelligent Manufacturing Platform Based on Large Language Models](https://doi.org/10.1109/miccis66057.2025.00049)：实现基于 LLM 的工业智能制造平台，价值在系统集成而非可迁移模型机制。
+- [A Tool for Safe and Accurate IoT Automation Rule Generation Using Large Language Models](https://doi.org/10.1109/spw67851.2025.00025)：用 LLM 生成 IoT 自动化规则并加入安全与准确性检查，更像应用工具支持而非模型架构工作。
+- [Research Exploration of Artificial Intelligence: The Black Box](https://doi.org/10.1109/cises66934.2025.11265321)：从高层讨论 AI 黑箱行为与可解释性，属于偏离模型机制的背景参考。
+- [Adaptive Large Language Model Fine-Tuning via LoRA-Based Low-Rank Modulation and PPO Reinforcement Learning](https://doi.org/10.1109/isaeece66033.2025.11160314)：结合 LoRA 低秩调制与 PPO 强化学习做自适应 LLM 微调，覆盖参数高效适配和偏好优化。
+- [You are an LLM teaching a smaller model everything you know: Multi-task pretraining of language models with LLM-designed study plans](https://doi.org/10.18653/v1/2025.babylm-main.33)：让 LLM 设计多任务 study plans 来训练小语言模型，把教师模型知识转成预训练课程。
+- [LLMConf: Knowledge-Enhanced Configuration Optimization for Large Language Model Inference](https://doi.org/10.1109/iwqos65803.2025.11143449)：用知识增强配置优化选择 LLM 推理参数，面向服务质量和资源开销调节。
+- [Real-Time Data Integration in Training and FineTuning Large Language Models (LLMs)](https://doi.org/10.1109/iccist67338.2025.11438696)：讨论把实时数据接入 LLM 训练与微调流程，用于缓解静态语料过时问题。
+- [DualSpar: A Dual-Granularity Memory Framework with Adaptive Sparsity for Efficient LLM Inference](https://doi.org/10.1109/iccd65941.2025.00044)：设计双粒度 memory framework 与自适应稀疏机制，降低 LLM 推理内存和计算开销。
+- [Geometric Model Merging for Efficient and Scalable Adaptation of Large Language Models](https://doi.org/10.1109/bigdata66926.2025.11400932)：从几何角度合并模型权重，使 LLM 能以更低成本整合多个适配结果。
+- [Federated LoRA with Dropout: An Efficient and Overfitting Control Approach for LLM Fine-Tuning](https://doi.org/10.1109/pimrc62392.2025.11274953)：把 federated LoRA 与 dropout 结合，在分布式私有数据微调中控制过拟合并降低通信开销。
+- [Vision Language Model Interpretability with Concept Guided Decoding](https://doi.org/10.1109/icip55913.2025.11084299)：用 concept-guided decoding 约束 VLM 输出，使解释结果围绕可读概念展开。
+- [Federated Adaptive Fine-Tuning of Large Language Models with Heterogeneous Quantization and LoRA](https://doi.org/10.1109/infocom55648.2025.11044641)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [OPTICAL: Leveraging Optimal Transport for Contribution Allocation in Dataset Distillation](https://doi.org/10.1109/cvpr52734.2025.01420)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Online Task-Free Continual Learning via Dynamic Expansionable Memory Distribution](https://doi.org/10.1109/cvpr52734.2025.01910)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [AdaGen: Adaptive Domain-Specific Classification via Zero-Shot Dataset Generation](https://doi.org/10.1109/icdm65498.2025.00088)：为其他 LLM 能力补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [SerpentFlow: Generative Unpaired Domain Alignment via Shared-Structure Decomposition](https://arxiv.org/abs/2601.01979)：补充与通用基础模型方法相关的模型侧方法。
+- [Adaptive Parameter Selection for Tuning Vision-Language Models](https://doi.org/10.1109/cvpr52734.2025.00404)：补充视觉语言模型调优中的自适应参数选择方法。
+- [Towards Performance Consistency in Multi-Level Model Collaboration](https://doi.org/10.1109/iccv51701.2025.00247)：提出 Neural Ligand/Portland 框架，在 CLIP RN50 与 ViT 协作中缩小模型合并和集成之间的性能差距，并给出合并-集成一致性的理论支撑。
+- [RaLo: Rank-aware low-rank adaptation for pre-trained foundation models](https://doi.org/10.1016/j.neunet.2025.108423)：结合范数约束的低秩结构诱导和稀疏化 rank-aware 剪枝，让 LoRA 微调能更高效分配秩并减少可训练参数。
+- [Task-to-Instance Prompt Learning for Vision-Language Models at Test Time](https://doi.org/10.1109/tip.2025.3546840)：补充视觉语言模型的测试时提示学习方法。
+- [An outline of Prognostics and health management Large Model: Concepts, Paradigms, and challenges](https://doi.org/10.1016/j.ymssp.2025.112683)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [“Artificial Intelligence - Carrying us into the Future”: A Study of Older Adults’ Perceptions of LLM-Based Chatbots](https://doi.org/10.1080/10447318.2025.2476710)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [GraphMind: Context-Aware Multi-Agent Systems With Graph Attention Autoencoder and Large Language Model Integration](https://doi.org/10.1109/access.2025.3630967)：面向通用及跨领域 LLM 智能体的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“GraphMind: Context-Aware Multi-Agent Systems With Graph Attention Autoencoder and Large Language Model Integration”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [TrafficFormer: An Efficient Pre-trained Model for Traffic Data](https://doi.org/10.1109/sp61157.2025.00102)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Output Embedding Centering for Stable LLM Pretraining](https://arxiv.org/abs/2601.02031)：补充与通用基础模型方法相关的模型侧方法。
+- [MixTTE: Multi-Level Mixture-of-Experts for Scalable and Adaptive Travel Time Estimation](https://arxiv.org/abs/2601.02943)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [OpenAI GPT-5 System Card](https://arxiv.org/abs/2601.03267)：记录 GPT-5 作为统一路由系统的 fast/reasoning 模式、工具意图路由，以及写作、编码、健康、幻觉和安全等评测，是跨能力 model card 证据源。
+- [Unleashing the Potential of Neighbors: Diffusion-based Latent Neighbor Generation for Session-based Recommendation](https://arxiv.org/abs/2601.03903)：补充与通用基础模型方法相关的模型侧方法。
+- [Revisiting Judge Decoding from First Principles via Training-Free Distributional Divergence](https://arxiv.org/abs/2601.04766)：证明 learned judge 与 KL divergence 使用相同 logit primitive，并用免训练分布差异替代有监督 judge decoding。
+- [Projected Autoregression: Autoregressive Language Generation in Continuous State Space](https://arxiv.org/abs/2601.04854)：用连续嵌入预测再离散投影替代直接 next-token selection，提供另一种自回归语言生成接口。
+- [Coding the Visual World: From Image to Simulation Using Vision Language Models](https://arxiv.org/abs/2601.05344)：用 VLM 从图像生成可执行仿真代码，把视觉理解转化为可交互场景建模。
+- [Circuit Mechanisms for Spatial Relation Generation](https://arxiv.org/abs/2601.06338)：分析扩散 Transformer 如何生成空间关系，将机制可解释性覆盖扩展到视觉生成模型。
+- [Monkey Jump : MoE-Style PEFT for Efficient Multi-Task Learning](https://arxiv.org/abs/2601.06356)：Monkey Jump : MoE-Style PEFT for Efficient Multi-Task Learning 补充通用基础模型与评测方向的模型侧方法。
+- [Can a Unimodal Language Agent Provide Preferences to Tune a Multimodal Vision-Language Model?](https://arxiv.org/abs/2601.06424)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [CLIMP: Contrastive Language-Image Mamba Pretraining](https://arxiv.org/abs/2601.06891)：补充与通用基础模型方法相关的模型侧方法。
+- [CompNO: A Novel Foundation Model approach for solving Partial Differential Equations](https://arxiv.org/abs/2601.07384)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](https://arxiv.org/abs/2601.07667)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Multiplicative Orthogonal Sequential Editing for Language Models](https://arxiv.org/abs/2601.07873)：用乘法式正交更新替代加性权重编辑，在连续知识编辑中保持矩阵范数和条件数稳定，降低对通用能力的破坏。
+- [Relational Knowledge Distillation Using Fine-tuned Function Vectors](https://arxiv.org/abs/2601.08169)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Principled MoE Language-Model Design](https://arxiv.org/abs/2601.08215)：研究 memory 与 inference constraints 下的 mixture-of-experts language-model design。
+- [DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion](https://arxiv.org/abs/2601.08482)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Rewarding the Rare: Uniqueness-Aware RL for Creative Problem Solving in LLMs](https://arxiv.org/abs/2601.08763)：Uniqueness-aware RL 按高层解题策略聚类正确轨迹，并提高稀有策略的奖励，在不牺牲 pass@1 的情况下提升 pass@k 多样性。
+- [Closing the Data Loop: Using OpenDataArena to Engineer Superior Training Datasets](https://arxiv.org/abs/2601.09733)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Stable Personality Trait Evaluation](https://arxiv.org/abs/2601.09833)：利用内部激活提升 LLM 人格特质评估的稳定性和可解释性。
+- [SuS: Strategy-aware Surprise for Intrinsic Exploration](https://arxiv.org/abs/2601.10349)：提出 Strategy-aware Surprise 作为强化学习内在奖励，将策略稳定性和策略惊喜信号结合，用于 LLM 数学推理任务中的探索。
+- [LLMdoctor: Token-Level Flow-Guided Preference Optimization for Efficient Test-Time Alignment of Large Language Models](https://arxiv.org/abs/2601.10416)：补充与通用基础模型方法相关的模型侧方法。
+- [MERGETUNE: Continued fine-tuning of vision-language models](https://arxiv.org/abs/2601.10497)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Diagnosing Generalization Failures in Fine-Tuned LLMs: A Cross-Architectural Study on Phishing Detection](https://arxiv.org/abs/2601.10524)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Mugi: Value Level Parallelism For Efficient LLMs](https://arxiv.org/abs/2601.10823)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [GRADE: Replacing Policy Gradients with Backpropagation for LLM Alignment](https://arxiv.org/abs/2601.11574)：《GRADE: Replacing Policy Gradients with Backpropagation for LLM Alignment》为Other Core Capabilities补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Why Does the LLM Stop Computing: An Empirical Study of User-Reported Failures in Open-Source LLMs](https://arxiv.org/abs/2601.13655)：补充与通用基础模型方法相关的模型侧方法。
+- [Uncertainty-Aware Gradient Signal-to-Noise Data Selection for Instruction Tuning](https://arxiv.org/abs/2601.13697)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Variance-Adaptive Muon: Accelerating LLM Pretraining with NSR-Modulated and Variance-Scaled Momentum](https://arxiv.org/abs/2601.14603)：使用 NSR 调制和方差缩放动量来加速 LLM 预训练。
+- [Ambient Dataloops](https://arxiv.org/abs/2601.15417)：用生成模型做数据集细化，将数据改进循环作为模型侧训练组件。
+- [Learning from Synthetic Data: Limitations of ERM](https://arxiv.org/abs/2601.15468)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Learning Neural Operators from Partial Observations via Latent Autoregressive Modeling](https://arxiv.org/abs/2601.15547)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [LLM or Human? Perceptions of Trust and Information Quality in Research Summaries](https://arxiv.org/abs/2601.15556)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Controlling Long-Horizon Behavior in Language Model Agents with Explicit State Dynamics](https://arxiv.org/abs/2601.16087)：补充与通用基础模型方法相关的模型侧方法。
+- [Limits of n-gram Style Control for LLMs via Logit-Space Injection](https://arxiv.org/abs/2601.16224)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Strategies for Span Labeling with Large Language Models](https://arxiv.org/abs/2601.16946)：补充与通用基础模型方法相关的模型侧方法。
+- [Learning Sewing Patterns via Latent Flow Matching of Implicit Fields](https://arxiv.org/abs/2601.17740)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [AR-Omni: A Unified Autoregressive Model for Any-to-Any Generation](https://arxiv.org/abs/2601.17761)：用自回归模型统一 any-to-any 多模态生成，为跨模态生成提供单一模型路线。
+- [MergeMix: Optimizing Mid-Training Data Mixtures via Learnable Model Merging](https://arxiv.org/abs/2601.17858)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [ShapLoRA: Allocation of Low-rank Adaption on Large Language Models via Shapley Value Inspired Importance Estimation](https://arxiv.org/abs/2601.17921)：补充与通用基础模型方法相关的模型侧方法。
+- [Trust, Don't Trust, or Flip: Robust Preference-Based Reinforcement Learning with Multi-Expert Feedback](https://arxiv.org/abs/2601.18751)：补充模型侧方法，主要面向 Other。
+- [PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation](https://arxiv.org/abs/2601.18777)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](https://arxiv.org/abs/2601.19961)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Group-Sparse Autoencoders for Multimodal Embeddings](https://arxiv.org/abs/2601.20028)：用 group-sparse autoencoders 分解多模态 embedding spaces，为 VLMs 补充结构化特征抽取路线。
+- [Sparse CLIP](https://arxiv.org/abs/2601.20075): 在 CLIP 式模型中同时优化稀疏可解释性和对比学习性能，扩展多模态表征解释线索。
+- [Reinforcement Learning via Self-Distillation](https://arxiv.org/abs/2601.20802)：提出 SDPO，把环境返回的文本反馈转为 dense learning signal，让当前模型在带反馈条件下自蒸馏到策略中。
+- [Self-Improving Pretraining: using post-trained models to pretrain better models](https://arxiv.org/abs/2601.21343)：利用 post-trained model 生成更强预训练数据，形成自改进预训练流程。
+- [Denoising-Centric Diffusion Memorization Control](https://arxiv.org/abs/2601.21348)：从去噪过程视角研究扩散模型的 memorization control。
+- [Task-Awareness Improves LLM Generations and Uncertainty](https://arxiv.org/abs/2601.21500)：补充与通用基础模型方法相关的模型侧方法。
+- [Zonkey: A Hierarchical Diffusion Language Model with Differentiable Tokenization and Probabilistic Attention](https://arxiv.org/abs/2601.21768)：提出分层 diffusion language model，结合可微 tokenization 与 probabilistic attention。
+- [A Unified XAI-LLM Approach for EndotrachealSuctioning Activity Recognition](https://arxiv.org/abs/2601.21802)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Rate-Distortion Optimization for Transformer Inference](https://arxiv.org/abs/2601.22002)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Putting a Face to Forgetting: Continual Learning meets Mechanistic Interpretability](https://arxiv.org/abs/2601.22012)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Making Foundation Models Probabilistic via Singular Value Ensembles](https://arxiv.org/abs/2601.22068)：面向通用基础模型与评测，补充用于vision-language or foundation-model training and adaptation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [TSLM: Tree-Structured Language Modeling for Divergent Thinking](https://arxiv.org/abs/2601.22688)：用特殊树结构标记训练语言模型学习完整分支搜索轨迹，使模型能在一次生成中展开多条推理路径，而不依赖反复外部搜索。
+- [SPICE: Submodular Penalized Information-Conflict Selection for Efficient Large Language Model Training](https://arxiv.org/abs/2601.23155)：SPICE 将子模信息目标与冲突惩罚结合，用于选择指令微调数据。
+- [YuriiFormer: A Suite of Nesterov-Accelerated Transformers](https://arxiv.org/abs/2601.23236)：把 Transformer 层解释为优化迭代，并提出 Nesterov-style accelerated Transformer 变体，为语言模型补充优化理论驱动的架构路线。
+- [Stabilizing Diffusion Posterior Sampling by Noise-Frequency Continuation](https://arxiv.org/abs/2602.00176)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Riemannian Bayesian Generative Memorization Reduction](https://arxiv.org/abs/2602.00199)：通过 Riemannian Bayesian inference 降低生成模型 memorisation。
+- [LatentLens](https://arxiv.org/abs/2602.00462)：揭示 LLM 中高度可解释的视觉 token，为内部 token 级表征补充多模态分析视角。
+- [Guided Diffusion Distortions](https://arxiv.org/abs/2602.00716)：分析高维 guided diffusion models 中 distortion 的出现机制。
+- [SALAAD: Sparse And Low-Rank Adaptation via ADMM for Large Language Model Inference](https://arxiv.org/abs/2602.00942)：SALAAD: Sparse And Low-Rank Adaptation via ADMM for Large Language Model Inference 补充通用基础模型与评测方向的模型侧方法。
+- [Low-Latency Federated Fine-Tuning for Large Language Models Over Wireless Networks](https://arxiv.org/abs/2602.01024)：补充面向无线网络的大模型低延迟联邦微调方法。
+- [Robust Machine Learning Framework for Reliable Discovery of High-Performance Half-Heusler Thermoelectrics](https://arxiv.org/abs/2602.01149)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Lotus: Efficient LLM Training by Randomized Low-Rank Gradient Projection with Adaptive Subspace Switching](https://arxiv.org/abs/2602.01233)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [XDLM](https://arxiv.org/abs/2602.01362)：用 stationary noise kernel 平衡 discrete diffusion language models 的理解与生成能力。
+- [PolyGen: Fully Synthetic Vision-Language Training via Multi-Generator Ensembles](https://arxiv.org/abs/2602.01370)：面向通用基础模型与评测，补充用于synthetic data generation or synthetic-first data-engine method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [SNIP: An Adaptive Mixed Precision Framework for Subbyte Large Language Model Training](https://arxiv.org/abs/2602.01410)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [DCD](https://arxiv.org/abs/2602.01433)：从自相关与非平稳 temporal data 中做 decomposition-based causal discovery，扩展结构化时间推理模型覆盖。
+- [Nearly Optimal Active Preference Learning and Its Application to LLM Alignment](https://arxiv.org/abs/2602.01581)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Cross-Domain Fake News Detection on Unseen Domains via LLM-Based Domain-Aware User Modeling](https://arxiv.org/abs/2602.01726)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [: One LLM Token for Explicit Graph Structural Understanding](https://arxiv.org/abs/2602.01771)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Embedding-Virtualized Knowledge for Model Editing](https://arxiv.org/abs/2602.01977)：通过嵌入虚拟化知识，将模型编辑从局部编辑扩展到更广的评测与保留。
+- [See2Refine: Vision-Language Feedback Improves LLM-Based eHMI Action Designers](https://arxiv.org/abs/2602.02063)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [AR-MAP: Are Autoregressive Large Language Models Implicit Teachers for Diffusion Large Language Models?](https://arxiv.org/abs/2602.02178)：研究自回归 LLM 如何作为 diffusion language model 对齐的隐式教师。
+- [Spectral Superposition](https://arxiv.org/abs/2602.02224)：提出特征几何理论，扩展用于解释模型表征的 superposition 分析。
+- [HopFormer: Sparse Graph Transformers with Explicit Receptive Field Control](https://arxiv.org/abs/2602.02268)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [The Shape of Beliefs](https://arxiv.org/abs/2602.02315)：研究语言模型 posterior manifold 上的几何、动态和干预，为模型行为提供信念表征视角。
+- [Transformers learn factored representations](https://arxiv.org/abs/2602.02385)：研究 transformer 中的因子化表征学习，帮助理解模型内部如何组织可复用变量。
+- [SPARKLING](https://arxiv.org/abs/2602.02472)：在 width-progressive learning 中平衡 signal preservation 与 symmetry breaking，补充训练动态路线。
+- [Uncertainty and Fairness Awareness in LLM-Based Recommendation Systems](https://arxiv.org/abs/2602.02582)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Towards Understanding Steering Strength](https://arxiv.org/abs/2602.02712)：分析 steering strength 如何改变模型行为，细化 language models 的 activation-control 方法。
+- [ReMiT: RL-Guided Mid-Training for Iterative LLM Evolution](https://arxiv.org/abs/2602.03075)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [SlowFocus: Enhancing Fine-grained Temporal Understanding in Video LLM](https://arxiv.org/abs/2602.03589)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [A Lightweight Library for Energy-Based Joint-Embedding Predictive Architectures](https://arxiv.org/abs/2602.03604)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Should I use Synthetic Data for That? An Analysis of the Suitability of Synthetic Data for Data Sharing and Augmentation](https://arxiv.org/abs/2602.03791)：形式化分析合成数据在数据共享、训练集增强和统计估计降方差中的三类用途，指出生成样本何时不能替代隐私保护或性能提升方案。
+- [Grables](https://arxiv.org/abs/2602.03945): 建模表格中超越独立行假设的结构关系，强化表格基础模型式学习的跨行推理。
+- [MiniRec: Data-Efficient Reinforcement Learning for LLM-based Recommendation](https://arxiv.org/abs/2602.04278)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Speciation Transitions in Diffusion Models](https://arxiv.org/abs/2602.04404)：分析 diffusion models 在一般类别结构下的 speciation transitions。
+- [Generative Modeling via Drifting](https://arxiv.org/abs/2602.04770)：从 drifting dynamics 视角刻画生成建模，补充生成系统的跨领域模型理论路线。
+- [Computing Diffusion Geometry](https://arxiv.org/abs/2602.06006)：研究 diffusion geometry 的计算方法，补充 diffusion 与几何建模理论背景。
+- [NanoNet: Parameter-Efficient Learning with Label-Scarce Supervision for Lightweight Text Mining Model](https://arxiv.org/abs/2602.06093)：补充模型侧方法，主要面向 Other。
+- [Cross-Modal Redundancy](https://arxiv.org/abs/2602.06218)：研究 vision-language embeddings 中的冗余与几何结构，为多模态表示结构补充诊断视角。
+- [Do LLMs Track Public Opinion? A Multi-Model Study of Favorability Predictions in the 2024 U.S. Presidential Election](https://arxiv.org/abs/2602.06302)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Cost-Aware Model Selection for Text Classification: Multi-Objective Trade-offs Between Fine-Tuned Encoders and LLM Prompting in Production](https://arxiv.org/abs/2602.06370)：补充微调编码器与大模型提示之间的成本感知模型选择方法。
+- [SpecAttn: Co-Designing Sparse Attention with Self-Speculative Decoding](https://arxiv.org/abs/2602.07223)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [LUCID-SAE](https://arxiv.org/abs/2602.07311)：学习统一的视觉语言 sparse codes 用于可解释概念发现，将 SAE 式可解释性扩展到多模态模型。
+- [ODELoRA: Training Low-Rank Adaptation by Solving Ordinary Differential Equations](https://arxiv.org/abs/2602.07479)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Kinetic-Energy Flow Matching](https://arxiv.org/abs/2602.07928)：从 kinetic-energy 视角分析 flow matching。
+- [Modalities, a PyTorch-native Framework For Large-scale LLM Training and Research](https://arxiv.org/abs/2602.08387)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Hybrid Pooling with LLMs via Relevance Context Learning](https://arxiv.org/abs/2602.08457)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [QUOKA: Query-Oriented KV Selection For Efficient LLM Prefill](https://arxiv.org/abs/2602.08722)：补充与通用基础模型方法相关的模型侧方法。
+- [Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path](https://arxiv.org/abs/2602.09784)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [VersaViT: Enhancing MLLM Vision Backbones via Task-Guided Optimization](https://arxiv.org/abs/2602.09934)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [What Does Preference Learning Recover from Pairwise Comparison Data?](https://arxiv.org/abs/2602.10286)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](https://arxiv.org/abs/2602.10815)：从数据中心视角解释 VLM 后训练中 RL 的泛化优势。
+- [Interactive LLM-assisted Curriculum Learning for Multi-Task Evolutionary Policy Search](https://arxiv.org/abs/2602.10891)：用交互式 LLM 辅助 curriculum learning 指导多任务 evolutionary policy search。
+- [Embedding Inversion via Conditional Masked Diffusion Language Models](https://arxiv.org/abs/2602.11047)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [DataChef: Cooking Up Optimal Data Recipes for LLM Adaptation via Reinforcement Learning](https://arxiv.org/abs/2602.11089)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [TabICLv2: A better, faster, scalable, and open tabular foundation model](https://arxiv.org/abs/2602.11139)： 推进更快、更可扩展、开放的 tabular foundation model，强化结构化数据模型覆盖。
+- [Both Topology and Text Matter: Revisiting LLM-guided Out-of-Distribution Detection on Text-attributed Graphs](https://arxiv.org/abs/2602.11641)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Manifold-Aware Temporal Domain Generalization for Large Language Models](https://arxiv.org/abs/2602.11965)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Generalized On-Policy Distillation](https://arxiv.org/abs/2602.12125)：把 on-policy distillation 推广为带灵活参考模型与 reward scaling 的 KL-constrained RL。
+- [Grandes Modelos de Linguagem Multimodais (MLLMs): Da Teoria à Prática](https://arxiv.org/abs/2602.12302)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [HyperMLP: An Integrated Perspective for Sequence Modeling](https://arxiv.org/abs/2602.12601)：把自回归注意力重新解释为动态两层 MLP，用于序列建模。
+- [Transporting Task Vectors across Different Architectures without Training](https://arxiv.org/abs/2602.12952)：提出 Theseus，通过正交 Procrustes 对齐中间表征，把 task vector 的功能效应免训练迁移到不同宽度的模型架构。
+- [GPTZero: Robust Detection of LLM-Generated Texts](https://arxiv.org/abs/2602.13042)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Variation is the Key: A Variation-Based Framework for LLM-Generated Text Detection](https://arxiv.org/abs/2602.13226)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [AdaCorrection: Adaptive Offset Cache Correction for Accurate Diffusion Transformers](https://arxiv.org/abs/2602.13357)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Zero-Order Optimization for LLM Fine-Tuning via Learnable Direction Sampling](https://arxiv.org/abs/2602.13659)：通过可学习方向采样提升零阶 LLM 微调效果。
+- [Embed-RL: Reinforcement Learning for Reasoning-Driven Multimodal Embeddings](https://arxiv.org/abs/2602.13823)：用强化学习训练面向推理的多模态 embedding。
+- [You Can Learn Tokenization End-to-End with Reinforcement Learning](https://arxiv.org/abs/2602.13940)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Policy Gradient with Adaptive Entropy Annealing for Continual Fine-Tuning](https://arxiv.org/abs/2602.14078)：在持续微调中使用带自适应 entropy annealing 的 policy gradient，平衡探索与稳定更新。
+- [Revisiting the Platonic Representation Hypothesis](https://arxiv.org/abs/2602.14486)：从另一种理论视角重新审视表征收敛，为跨模型表征分析提供参考。
+- [Query as Anchor: Scenario-Adaptive User Representation via Large Language Model](https://arxiv.org/abs/2602.14492)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Evolutionary System Prompt Learning for Reinforcement Learning in LLMs](https://arxiv.org/abs/2602.14697)：Evolutionary System Prompt Learning 在强化学习中联合演化系统提示与模型权重。
+- [The Information Geometry of Softmax](https://arxiv.org/abs/2602.15293)：从 softmax 信息几何分析 probing 与 steering，为表征干预提供更明确的概率几何视角。
+- [Prescriptive Scaling Reveals the Evolution of Language Model Capabilities](https://arxiv.org/abs/2602.15327)：该工作估计在预训练计算预算与后训练实践下，下游能力边界如何演化。
+- [Breaking Detailed Balance in Diffusion](https://arxiv.org/abs/2602.15914)：通过破坏 detailed balance 来调节扩散模型动力学状态，补充生成模型控制视角。
+- [Factored Latent Action World Models](https://arxiv.org/abs/2602.16229)：补充与通用基础模型方法相关的模型侧方法。
+- [Flow Map Language Models](https://arxiv.org/abs/2602.16813)：通过 continuous denoising 提出 one-step language modeling。
+- [Formal Mechanistic Interpretability](https://arxiv.org/abs/2602.16823)：以可证明保证自动发现模型电路，扩展跨能力模型可解释性中超越启发式电路搜索的路线。
+- [Learning Flow Distributions via Projection-Constrained Diffusion on Manifolds](https://arxiv.org/abs/2602.17773)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Geometric Diffusion Memorization Picture](https://arxiv.org/abs/2602.17846)：从几何视角解释扩散模型轨迹中的 memorization。
+- [SeedFlood: A Step Toward Scalable Decentralized Training of LLMs](https://arxiv.org/abs/2602.18181)：利用 zeroth-order 更新可由 seed 重构的性质，在去中心化 LLM 训练中广播近零大小消息，而不是交换随模型规模增长的更新。
+- [DUET-VLM: Dual stage Unified Efficient Token reduction for VLM Training and Inference](https://arxiv.org/abs/2602.18846)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [MagicAgent: Towards Generalized Agent Planning](https://arxiv.org/abs/2602.19000)：面向通用及跨领域 LLM 智能体的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“MagicAgent: Towards Generalized Agent Planning”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Semi-Supervised Rate Reduction for Multimodal Representation Learning](https://arxiv.org/abs/2602.19910)：用 rate-reduction objectives 做 multimodal representation learning 与 generalized category discovery。
+- [Model Merging in the Essential Subspace](https://arxiv.org/abs/2602.20208)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Diffusion Duality Chapter II](https://arxiv.org/abs/2602.21185)：用 psi-samplers 与 curriculum 设计扩展 diffusion duality 理论，提高生成建模效率。
+- [Task-Aware LoRA Adapter Composition via Similarity Retrieval in Vector Databases](https://arxiv.org/abs/2602.21222)：把训练样例嵌入向量数据库，推理时检索相似任务样例，并用检索加权规则动态融合相关 LoRA adapter。
+- [DHP: Efficient Scaling of MLLM Training with Dynamic Hybrid Parallelism](https://arxiv.org/abs/2602.21788)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Invariant algorithmic cores](https://arxiv.org/abs/2602.22600)：研究 Transformer 向不变算法核心收敛，为可复用内部计算补充理论视角。
+- [Accelerating LLM Pre-Training through Flat-Direction Dynamics Enhancement](https://arxiv.org/abs/2602.22681)：通过增强平坦方向上的优化动态来加速 LLM 预训练。
+- [Regularized Online RLHF with Generalized Bilinear Preferences](https://arxiv.org/abs/2602.23116)：用正则化与广义双线性偏好结构扩展在线 RLHF。
+- [A Mixture-of-Experts Model for Multimodal Emotion Recognition in Conversations](https://arxiv.org/abs/2602.23300)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [GLUScope](https://arxiv.org/abs/2602.23826)：提供分析 Transformer 语言模型中 GLU 神经元的工具，为模型内部机制研究补充跨能力解释性方法。
+- [COMBAT: Conditional World Models for Behavioral Agent Training](https://arxiv.org/abs/2603.00825)：贡献面向跨领域模型侧方法的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [KDFlow: A User-Friendly and Efficient Knowledge Distillation Framework for Large Language Models](https://arxiv.org/abs/2603.01875)：用 FSDP2 与 SGLang 分离学生训练和教师推理，通过 zero-copy 传输 hidden states 而不是完整 logits。
+- [From Exact Hits to Close Enough: Semantic Caching for LLM Embeddings](https://arxiv.org/abs/2603.03301)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Controlling Chat Style in Language Models via Single-Direction Editing](https://arxiv.org/abs/2603.03324)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Towards Improved Sentence Representations using Token Graphs](https://arxiv.org/abs/2603.03389)：补充与通用基础模型方法相关的模型侧方法。
+- [TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](https://arxiv.org/abs/2603.03792)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [When and Where to Reset Matters for Long-Term Test-Time Adaptation](https://arxiv.org/abs/2603.03796)：提出面向其他基础能力的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Separators in Enhancing Autoregressive Pretraining for Vision Mamba](https://arxiv.org/abs/2603.03806)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Theory Discovery in Social Networks: Automating ERGM Specification with Large Language Models](https://arxiv.org/abs/2603.04306)：提出 Forge，用 LLM 将社会网络形成假设转成 ERGM 规格，并通过可行性、稳定性和拟合诊断迭代筛选。
+- [ZorBA: Zeroth-order Federated Fine-tuning of LLMs with Heterogeneous Block Activation](https://arxiv.org/abs/2603.04436)：用 heterogeneous block activation 做 zeroth-order federated fine-tuning，避免客户端依赖完整反向传播。
+- [Engineering Regression Without Real-Data Training](https://arxiv.org/abs/2603.04692)：在缺少真实训练数据时用多数据集嵌入适配 tabular foundation models，补充跨领域非文本基础模型线索。
+- [Diff-ES: Stage-wise Structural Diffusion Pruning via Evolutionary Search](https://arxiv.org/abs/2603.05105)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [A Benchmarking Framework for Model Datasets](https://arxiv.org/abs/2603.05250)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Penguin-VL: Exploring the Efficiency Limits of VLM with LLM-based Vision Encoders](https://arxiv.org/abs/2603.06569)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Grouter: Decoupling Routing from Representation for Accelerated MoE Training](https://arxiv.org/abs/2603.06626)：补充与通用基础模型方法相关的模型侧方法。
+- [SR-TTT: Surprisal-Aware Residual Test-Time Training](https://arxiv.org/abs/2603.06642)：补充模型侧方法，主要面向 Other。
+- [The Dual-Stream Transformer: Channelized Architecture for Interpretable Language Modeling](https://arxiv.org/abs/2603.07461)：补充与通用基础模型方法相关的模型侧方法。
+- [Overthinking Causes Hallucination: Tracing Confounder Propagation in Vision Language Models](https://arxiv.org/abs/2603.07619)：追踪 VLM 推理链中的 confounder propagation，说明过度思考如何放大幻觉。
+- [Rigidity in LLM Bandits with Implications for Human-AI Dyads](https://arxiv.org/abs/2603.07717)：补充与通用基础模型方法相关的模型侧方法。
+- [Distributional Regression with Tabular Foundation Models: Evaluating Probabilistic Predictions via Proper Scoring Rules](https://arxiv.org/abs/2603.08206)： 用 proper scoring rules 评估 tabular foundation model 的概率预测能力。
+- [Scale Space Diffusion](https://arxiv.org/abs/2603.08709)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Curveball Steering](https://arxiv.org/abs/2603.09313)：研究模型 steering 中的非线性方向，提示线性激活编辑可能遗漏语言模型表征中的弯曲控制几何。
+- [Grounding Synthetic Data Generation With Vision and Language Models](https://arxiv.org/abs/2603.09625)：面向通用基础模型与评测，补充用于synthetic data generation or synthetic-first data-engine method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Marginals Before Conditionals](https://arxiv.org/abs/2603.10074)：分析带 selector token 的最小 conditional-learning 任务。核心思想：证明神经网络会先学到高度为 `log K` 的 marginal plateau，再突然切换到完整条件解，并追踪 learning rate、batch size 与 gradient noise 如何延迟这一转变。
+- [Lost in Backpropagation: The LM Head is a Gradient Bottleneck](https://arxiv.org/abs/2603.10145)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Optimal Expert-Attention Allocation in Mixture-of-Experts: A Scalable Law for Dynamic Model Design](https://arxiv.org/abs/2603.10379)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Aligning Large Language Models with Searcher Preferences](https://arxiv.org/abs/2603.10473)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Distilling LLM Semantic Priors into Encoder-Only Multi-Talker ASR with Talker-Count Routing](https://arxiv.org/abs/2603.10587)：补充与通用基础模型方法相关的模型侧方法。
+- [From Images to Words: Efficient Cross-Modal Knowledge Distillation to Language Models from Black-box Teachers](https://arxiv.org/abs/2603.10877)：通过跨模态 image-to-word 蒸馏把黑盒视觉语言教师的知识迁移到语言模型，避免要求教师与学生在模态上完全一致。
+- [Interventional Time Series Priors for Causal Foundation Models](https://arxiv.org/abs/2603.11090)： 为 causal foundation models 引入 interventional time-series priors，扩展结构化因果建模。
+- [Sema: A High-performance System for LLM-based Semantic Query Processing](https://arxiv.org/abs/2603.11622)：补充与通用基础模型方法相关的模型侧方法。
+- [Detecting Miscitation on the Scholarly Web through LLM-Augmented Text-Rich Graph Learning](https://arxiv.org/abs/2603.12290)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [DiveUp: Learning Feature Upsampling from Diverse Vision Foundation Models](https://arxiv.org/abs/2603.13571)：面向通用基础模型与评测，补充用于vision-language or foundation-model training and adaptation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Gradient Atoms: Unsupervised Discovery, Attribution and Steering of Model Behaviors via Sparse Decomposition of Training Gradients](https://arxiv.org/abs/2603.14665)：补充面向跨领域基础模型评测与模型侧能力的模型侧工作，涵盖训练、架构、对齐、记忆、奖励、验证、世界模型或测试时适应。
+- [LLM as Graph Kernel: Rethinking Message Passing on Text-Rich Graphs](https://arxiv.org/abs/2603.14937)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [MoLoRA: Composable Specialization via Per-Token Adapter Routing](https://arxiv.org/abs/2603.15965)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [W2T: LoRA Weights Already Know What They Can Do](https://arxiv.org/abs/2603.15990)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Parallel In-context Learning for Large Vision Language Models](https://arxiv.org/abs/2603.16092)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [From Natural Language to Executable Option Strategies via Large Language Models](https://arxiv.org/abs/2603.16434)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](https://arxiv.org/abs/2603.16797)：在 guided diffusion sampling 中用 adaptive moment estimation 稳定噪声 likelihood score，提升图像复原和条件生成。
+- [GIST: Gauge-Invariant Spectral Transformers for Scalable Graph Neural Operators](https://arxiv.org/abs/2603.16849)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Baguan-TS](https://arxiv.org/abs/2603.17439)：提出 sequence-native in-context learning 模型，用于带协变量的时间序列预测。
+- [FoMo X](https://arxiv.org/abs/2603.17570)：为异常检测基础模型提供模块化可解释信号，补充跨任务模型行为诊断路线。
+- [Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](https://arxiv.org/abs/2603.18258)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Self-Tuning Sparse Attention: Multi-Fidelity Hyperparameter Optimization for Transformer Acceleration](https://arxiv.org/abs/2603.18417)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels](https://arxiv.org/abs/2603.19312)：从像素构建稳定的端到端联合嵌入预测架构，补充通用世界模型路线。
+- [Optimal low-rank stochastic gradient estimation for LLM training](https://arxiv.org/abs/2603.20632)：研究 LLM 训练中的 low-rank stochastic gradient estimation，以更低开销近似优化梯度。
+- [LLM-ODE: Data-driven Discovery of Dynamical Systems with Large Language Models](https://arxiv.org/abs/2603.20910)：用 LLM 从优秀候选方程中提取模式来引导遗传编程搜索，加速动力系统方程发现。
+- [Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](https://arxiv.org/abs/2603.21426)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Dual-Space Knowledge Distillation with Key-Query Matching for Large Language Models with Vocabulary Mismatch](https://arxiv.org/abs/2603.22056)：补充与通用基础模型方法相关的模型侧方法。
+- [Towards Automated Community Notes Generation with Large Vision Language Models for Combating Contextual Deception](https://arxiv.org/abs/2603.22453)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Sparser, Faster, Lighter Transformer Language Models](https://arxiv.org/abs/2603.23198)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [From Oracle to Noisy Context: Mitigating Contextual Exposure Bias in Speech-LLMs](https://arxiv.org/abs/2603.24034)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [TARA-Merging](https://arxiv.org/abs/2603.26299)：用偏好加权伪损失对齐 LoRA 合并权重，同时保留任务相关子空间，缓解方向各向异性，并在视觉与 NLI 多任务基准上提升鲁棒性。
+- [Distilled large language model-driven dynamic sparse expert activation mechanism](https://arxiv.org/abs/2603.26735)：面向通用基础模型与评测，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [SpAct-NDP: Efficient LLM Inference via Sparse Activation on NDP-GPU Heterogeneous Architecture](https://doi.org/10.1109/asp-dac66049.2026.11420624)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Pseudo-Labeling Based Unsupervised Domain Adaptation for LLM-Based ASR](https://doi.org/10.1109/taslpro.2026.3654830)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [LLMAGEO: Large language model-assisted generation of evolutionary operators for constrained multiobjective optimization problems](https://doi.org/10.1016/j.asoc.2026.115403)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [GPS-Mamba: Graph permutation scanning state space model for multivariate time series forecasting](https://doi.org/10.1016/j.eswa.2026.131373)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [LRAR: Luminance-ranking autoregressive for low-light image enhancement](https://doi.org/10.1016/j.ins.2026.123624)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Zero-shot detection of LLM-generated text via dual-network preference divergence](https://doi.org/10.1016/j.eswa.2026.131212)：补充与通用基础模型方法相关的模型侧方法。
+- [Human cognitive process aligned rumor detection with small language models enhanced large language models](https://doi.org/10.1016/j.ipm.2026.104659)：补充与通用基础模型方法相关的模型侧方法。
+- [Beyond Raw Bytes: Towards Large Malware Language Models](https://doi.org/10.14722/ndss.2026.230103)：补充与通用基础模型方法相关的模型侧方法。
+- [Generating unseen nonlinear evolution in the ocean using deep learning-based latent space data assimilation model](https://doi.org/10.1016/j.ocemod.2026.102677)：补充与通用基础模型方法相关的模型侧方法。
+- [Variance-Corrected Wavelet Diffusion for Industrial Sensor Signal Augmentation and Denoising](https://doi.org/10.1109/jsen.2026.3673127)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Parsimony, Order and Balance: Principles for Compressing Mixture-of-Experts Models](https://doi.org/10.1109/icassp55912.2026.11465104)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [B3Emo: Quantifying Affect as a Double-Edged Sword in Strategic LLM Interactions](https://doi.org/10.1109/access.2026.3673221)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Physisolver: An LLM Based Model for Physics Queries](https://doi.org/10.1109/icoecit68303.2026.11497445)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Tuning metaheuristic parameters with the use of Large Language Models](https://doi.org/10.1016/j.neucom.2026.132976)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Reducing Cross-Pod Communication Overhead for MoE Model Training With Hybrid Parallelism in Multi-Tenant Clusters](https://doi.org/10.1109/tpds.2026.3668417)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Towards a prompt-driven framework with state space models for UAV object tracking](https://doi.org/10.1016/j.knosys.2026.116203)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [DiffLLFace: Learning Alternate Illumination-Diffusion Adaptation for Low-Light Face Super-Resolution and Beyond](https://doi.org/10.1109/tip.2026.3671638)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Beyond human proxies: The roles and usefulness of large language models in user research for mobility service development](https://doi.org/10.1016/j.trip.2026.101917)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Beyond Hand Offs: Policy Driven Collaboration Between Human Agents and LLM Co-Pilots](https://doi.org/10.1109/ccwc67433.2026.11393821)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Force everything to one: Targeted output redirection against diffusion-based customization](https://doi.org/10.1016/j.neucom.2026.133393)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Re-Reward: A Self-Improving Generative Model Via Reinforcement Learning from Real World Feedback](https://doi.org/10.1109/icict68280.2026.11510848)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [TAM-GT: Topology-Aware Multi-Modal Graph Transformer for Analog Circuit Netlist Generation](https://doi.org/10.1109/southeastcon63549.2026.11476142)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Exploring the application of large language models in coding the experiencing scale (EXP)](https://doi.org/10.1080/28324765.2026.2664163)：把 LLM 用于心理治疗 experiencing scale 编码，是标注应用而非可迁移模型侧技术。
+- [ORSc: Object-Aware Reinforcement with Semantic Consistency for Hallucination Mitigation in MLLMs](https://doi.org/10.1109/icassp55912.2026.11464193)：目前证据仅限 DOI、Crossref 与 Semantic Scholar 元数据，能确认它是 ICASSP 2026 的 MLLM 幻觉缓解论文；等待摘要或出版页面披露具体机制。
+- [Algorithm Research for Low-Light Image Enhancement Based on Swin Transformer and Dynamic Multi-Scale Attention](https://doi.org/10.1109/etai68332.2026.11485456)：结合 Swin Transformer 与动态多尺度注意力做低照度图像增强，偏离核心 LLM 能力轴。
+- [Multimodal LLMs-Assisted Context-Aware Framework for Cyber Forensics](https://doi.org/10.1109/icnte66387.2026.11437517)：将多模态 LLM 用于上下文感知 cyber forensics 流程，更像领域框架而非通用模型方法。
+- [Demystifying Mixed Outcomes of Self-Training: Pre-training Analyses on Non-Toy LLMs](https://doi.org/10.18653/v1/2026.findings-eacl.213)：在非玩具规模 LLM 预训练中分析 self-training 何时改善或损害模型表现。
+- [R-MMA: Enhancing Vision-Language Models with Recurrent Adapters for Few-Shot and Cross-Domain Generalization](https://doi.org/10.1109/wacv61042.2026.00628)：在 VLM 中加入 recurrent adapters，提高少样本和跨域泛化时的参数高效适配能力。
+- [Multi-Adapter LLMs: Dynamic Mixture of LoRAs for Scalable Personalization](https://doi.org/10.1109/icsft66733.2026.11507732)：目前证据仅限 DOI、作者、会议和日程元数据，能确认它是动态 LoRA 混合个性化论文；等待摘要、代码或出版页面披露具体机制。
+- [Large Language Models (LLMs) for Verification, Testing, and Design](https://portal.fis.tum.de/en/publications/large-language-models-llms-for-verification-testing-and-design/)：补充其他模型能力方向的模型侧方法，包括训练、架构、奖励建模、合成数据、后训练或世界模型等机制。
+- [Curriculum Engineering: Structured Learning for Large Language Models (LLMs) Through Curriculum Based Retrieval](https://doi.org/10.1109/tii.2025.3613372)：提出或分析面向cross-cutting foundation-model capability的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Boosting with Fewer Tokens: Multi-Query Optimization for LLMs Using Node Text and Neighbor Cues](https://doi.org/10.1109/icde65448.2025.00202)：利用节点文本和邻居线索优化 multi-query prompting，让图任务以更少 token 调用 LLM。
+- [Enhancing Zero-Shot Relation Extraction through Staged Interaction with Large Language Models](https://doi.org/10.1109/icassp49660.2025.10887575)：把零样本关系抽取拆成分阶段 LLM 交互，先诱导证据再预测最终关系。
+- [LLM-MANUF: An integrated framework of Fine-Tuning large language models for intelligent Decision-Making in manufacturing](https://doi.org/10.1016/j.aei.2025.103263)：提出面向Other的模型侧方法、架构、训练配方或适配信号，适合纳入 Other / Model。
+- [Deep learning-based inverse design of irregular phononic crystals](https://doi.org/10.1016/j.ijmecsci.2025.110335)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Chat with MES: LLM-driven user interface for manipulating garment manufacturing system through natural language](https://doi.org/10.1016/j.jmsy.2025.02.008)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Examining the Impact of Large Language Models on Design: Functions, Strengths, Limitations, and Roles](https://doi.org/10.1016/j.daai.2025.100017)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Machine learning powered inverse design for strain fields of hierarchical architectures](https://doi.org/10.1016/j.compositesb.2025.112372)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Machine learning-driven discovery of innovative hybrid solid electrolytes for high-performance all-solid-state batteries](https://doi.org/10.1016/j.cej.2025.161926)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Scanpath prediction in panoramic videos through multimodal fusion](https://doi.org/10.1016/j.displa.2025.103199)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [EfficientMoE: Optimizing Mixture-of-Experts Model Training With Adaptive Load Balance](https://doi.org/10.1109/tpds.2025.3539297)：提出面向其他核心能力的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [A dataset dedicated to the training of large- language models for agronomic management practices and production in Norwegian agriculture](https://doi.org/10.1016/j.dib.2025.111326)：提出其他模型侧方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [From Natural Alignment to Conditional Controllability in Multimodal Dialogue](https://arxiv.org/abs/2603.29162)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Hierarchical Pre-Training of Vision Encoders with Large Language Models](https://arxiv.org/abs/2604.00086)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](https://arxiv.org/abs/2604.00479)：MUPO 诊断 GRPO 训练 VLM 时的多样性塌缩，并用多组策略优化与多样性奖励替代全局优势估计，以保留多条推理策略。
+- [Brainstacks: Cross-Domain Cognitive Capabilities via Frozen MoE-LoRA Stacks for Continual LLM Learning](https://arxiv.org/abs/2604.01152)：补充用于持续大模型学习的冻结 MoE-LoRA 堆叠方法。
+- [Can Heterogeneous Language Models Be Fused?](https://arxiv.org/abs/2604.01674)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [DEFT: Distribution-guided Efficient Fine-Tuning for Human Alignment](https://arxiv.org/abs/2604.01787)：补充与通用基础模型方法相关的模型侧方法。
+- [MAR-MAER: Metric-Aware and Ambiguity-Adaptive Autoregressive Image Generation](https://arxiv.org/abs/2604.01864)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [A Multimodal Vision Transformer-based Modeling Framework for Prediction of Fluid Flows in Energy Systems](https://arxiv.org/abs/2604.02483)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Steerable but Not Decodable](https://arxiv.org/abs/2604.02608)：指出 function vector 可在 logit lens 难以解码的层面引导模型行为，细化 activation steering 的机制理解。
+- [Finding Belief Geometries with SAEs](https://arxiv.org/abs/2604.02685)：用 sparse autoencoder 寻找信念几何，把特征字典与模型信念和干预分析连接起来。
+- [Automated Attention Pattern Discovery](https://arxiv.org/abs/2604.03764)：自动化发现 LLM 中的大规模注意力模式。核心思想：让反复出现的注意力结构可搜索、可比较，使机制分析不再依赖纯人工检查。
+- [Spatio-Temporal Sparse Autoencoders](https://arxiv.org/abs/2604.03919)：将稀疏自编码器用于视频表征解释，把静态视觉和语言模型中的解释性方法扩展到时序多模态特征。
+- [DARE: Diffusion Large Language Models Alignment and Reinforcement Executor](https://arxiv.org/abs/2604.04215)：为 diffusion large language model 提供对齐与强化学习执行框架。
+- [Three Phases of Expert Routing: How Load Balance Evolves During Mixture-of-Experts Training](https://arxiv.org/abs/2604.04230)：把 MoE routing 建模为拥塞博弈，并沿训练检查点跟踪 congestion coefficient，揭示 expert 负载均衡的 surge、stabilization 和 relaxation 三阶段。
+- [Noise Immunity in In-Context Tabular Learning](https://arxiv.org/abs/2604.04868)：分析噪声下 TabPFN 的注意力机制，为上下文表格基础模型补充鲁棒性证据。
+- [Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](https://arxiv.org/abs/2604.04932)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Semantic Trimming and Auxiliary Multi-step Prediction for Generative Recommendation](https://arxiv.org/abs/2604.05329)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Thinking Diffusion](https://arxiv.org/abs/2604.05497)：在 diffusion multimodal language models 中惩罚并引导视觉 grounded reasoning，把生成与推理控制连接起来。
+- [Beyond Semantics](https://arxiv.org/abs/2604.05724)：解耦 CLIP sparse autoencoders 中的信息范围，将多模态特征解释从语义标签扩展出去。
+- [Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](https://arxiv.org/abs/2604.05808)：面向通用及跨领域 LLM 智能体的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Large Language Model Assisted Discovery of Optimal Dopants for Enhanced Thermoelectric Performance in CoSb$_3$ Based Skutterudites](https://arxiv.org/abs/2604.06048)：用 LLM 从 300 多篇论文抽取成分数据，训练 ZT 预测头，并用 DFT 与分子动力学验证候选 CoSb$_3$ 掺杂方案。
+- [LLMs Have Made Failure Worth Publishing](https://arxiv.org/abs/2604.06236)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Activation Prompts](https://arxiv.org/abs/2604.06440)：将视觉提示重新表述为内部激活条件控制机制，为视觉基础模型补充模型侧提示与控制路线。
+- [Reason in Chains, Learn in Trees: Self-Rectification and Grafting for Multi-turn Agent Policy Optimization](https://arxiv.org/abs/2604.07165)：提出 T-STAR，把采样智能体轨迹合并为 cognitive tree，并把结果奖励反传为低方差 step-level advantage。
+- [Implicit-Manifold Diffusion Processes](https://arxiv.org/abs/2604.07213)：将 diffusion processes 扩展到 implicit manifolds。
+- [Score Shocks in Diffusion Models](https://arxiv.org/abs/2604.07404)：把 diffusion generative models 与 Burgers equation 结构联系起来。
+- [SOLAR: Communication-Efficient Model Adaptation via Subspace-Oriented Latent Adapter Reparametrization](https://arxiv.org/abs/2604.08368)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Zero-Shot Multivariate Time-Series Forecasting with TabPFN](https://arxiv.org/abs/2604.08400)：把 tabular prior-fitted networks 用于 zero-shot multivariate time-series forecasting。
+- [PRAGMA](https://arxiv.org/abs/2604.08649): 报告 Revolut 基础模型，为文本和视觉之外的领域规模基础建模补充案例。
+- [Loom: A Scalable Analytical Neural Computer Architecture](https://arxiv.org/abs/2604.08816)：面向通用基础模型与评测，补充用于scalable analytical neural-computer architecture的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](https://arxiv.org/abs/2604.08964)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [MoE Transformer Scaling Laws](https://arxiv.org/abs/2604.09175)：研究 mixture-of-experts Transformers 的泛化与 scaling laws。
+- [MixFlow: Mixed Source Distributions Improve Rectified Flows](https://arxiv.org/abs/2604.09181)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](https://arxiv.org/abs/2604.09377)：补充与通用基础模型方法相关的模型侧方法。
+- [How LLMs Might Think](https://arxiv.org/abs/2604.09674)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Discrete Diffusion Dynamical Regimes](https://arxiv.org/abs/2604.10961)：分析离散扩散模型的 dynamical regimes。
+- [EmergentBridge: Improving Zero-Shot Cross-Modal Transfer in Unified Multimodal Embedding Models](https://arxiv.org/abs/2604.11043)：面向通用基础模型与评测，补充用于multimodal representation, human-aligned evaluation, or complementary encoder learning的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Structured State-Space Regularization for Compact and Generation-Friendly Image Tokenization](https://arxiv.org/abs/2604.11089)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](https://arxiv.org/abs/2604.11214)：用层级强化学习为每次编辑选择知识相关层，并加入稀疏性内在奖励，降低终身模型编辑中的副作用和遗忘。
+- [Learning Discrete Diffusion of Graphs via Free-Energy Gradient Flows](https://arxiv.org/abs/2604.11311)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [SVD-Prune: Training-Free Token Pruning For Efficient Vision-Language Models](https://arxiv.org/abs/2604.11530)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment](https://arxiv.org/abs/2604.12012)：补充面向跨主题的 LLM 训练、适配、评测或可解释性能力的模型侧工作，涵盖训练、适配、数据、奖励、验证器、推理扩展或测试时方法。
+- [Cross-Attentive Multiview Fusion of Vision-Language Embeddings](https://arxiv.org/abs/2604.12551)：面向通用基础模型与评测，补充用于vision-language or foundation-model training and adaptation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Understanding and Improving Continuous Adversarial Training for LLMs via In-context Learning Theory](https://arxiv.org/abs/2604.12817)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [On-Policy Distillation of LLMs](https://arxiv.org/abs/2604.13016)：从现象、机制与 recipe 重新审视 large language models 的 on-policy distillation。
+- [TLoRA+: A Low-Rank Parameter-Efficient Fine-Tuning Method for Large Language Models](https://arxiv.org/abs/2604.13368)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [YOCO++: Enhancing YOCO with KV Residual Connections for Efficient LLM Inference](https://arxiv.org/abs/2604.13556)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [From $P(y|x)$ to $P(y)$: Investigating Reinforcement Learning in Pre-train Space](https://arxiv.org/abs/2604.14142)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [SGA-MCTS: Decoupling Planning from Execution via Training-Free Atomic Experience Retrieval](https://arxiv.org/abs/2604.14712)：面向通用及跨领域 LLM 智能体的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“SGA-MCTS: Decoupling Planning from Execution via Training-Free Atomic Experience Retrieval”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [MambaSL: Exploring Single-Layer Mamba for Time Series Classification](https://arxiv.org/abs/2604.15174)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [The Synthetic Media Shift: Tracking the Rise, Virality, and Detectability of AI-Generated Multimodal Misinformation](https://arxiv.org/abs/2604.15372)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [Neural Continuous-Time Markov Chain: Discrete Diffusion via Decoupled Jump Timing and Direction](https://arxiv.org/abs/2604.15694)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Modelling Gas-Phase Reaction Kinetics with Guided Particle Diffusion Sampling](https://arxiv.org/abs/2604.16461)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Prune, Interpret, Evaluate](https://arxiv.org/abs/2604.16889)：提出面向 transcoder 的线路发现框架。核心思想：跨层结合剪枝、特征归因与评估，更高效地发现 LLM 内部 circuit。
+- [Beyond Text-Dominance: Understanding Modality Preference of Omni-modal Large Language Models](https://arxiv.org/abs/2604.16902)： 分析 omni-modal LLM 的 modality preference，为模型行为补充跨模态可靠性视角。
+- [Controllable Resampling for Discrete Diffusion](https://arxiv.org/abs/2604.17310)：用 controllable resampling 插值离散 diffusion models，改进离散 token 模型的生成控制。
+- [Grokking in Diffusion Models](https://arxiv.org/abs/2604.17673)：用 modular addition 案例分析扩散模型中的 grokking 现象。
+- [DifFoundMAD: Foundation Models meet Differential Morphing Attack Detection](https://arxiv.org/abs/2604.17961)：用视觉基础模型 embedding 替代传统人脸特征差分，并通过轻量微调改进 differential morphing attack detection。
+- [NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization](https://arxiv.org/abs/2604.18471)：通过优化 token 顺序加速离散扩散采样，为扩散语言与序列模型补充可复用推理方法。
+- [Robust Continual Unlearning against Knowledge Erosion and Forgetting Reversal](https://arxiv.org/abs/2604.19108)：提出 continual unlearning 方法，同时抑制知识侵蚀和遗忘反转。
+- [Detecting Data Contamination in Large Language Models](https://arxiv.org/abs/2604.19561)：面向通用基础模型与评测能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Micro Language Models Enable Instant Responses](https://arxiv.org/abs/2604.19642)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Expert Upcycling for MoE](https://arxiv.org/abs/2604.19835)：通过 expert upcycling 推进 mixture-of-experts 模型的计算效率边界。
+- [LayerTracer: A Joint Task-Particle and Vulnerable-Layer Analysis framework for Arbitrary Large Language Model Architectures](https://arxiv.org/abs/2604.20556)：逐层抽取 hidden state 并映射到词表概率，定位 task particle 与 vulnerable layer，支持 Transformer、GateDeltaNet 和 Mamba 等架构。
+- [Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection](https://arxiv.org/abs/2604.21728)：补充视觉语言模型的鲁棒测试时适配方法。
+- [Generative artificial intelligence reduces social welfare through model collapse](https://arxiv.org/abs/2604.21853)：面向通用基础模型与评测，补充用于model collapse or self-consuming training-loop dynamics的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Efficient Diffusion Distillation via Embedding Loss](https://arxiv.org/abs/2604.22379)：补充面向跨领域基础模型训练、架构、对齐、奖励、验证器或合成数据能力的模型侧工作，涵盖训练、架构、后训练、合成数据、奖励、验证器、世界模型或推理扩展方法。
+- [CRAFT: Clustered Regression for Adaptive Filtering of Training data](https://arxiv.org/abs/2604.22693)：用 clustered regression 自适应筛选训练数据，为数据过滤提供可学习评分机制。
+- [Measuring Temporal Linguistic Emergence in Diffusion Language Models](https://arxiv.org/abs/2604.23235)：保存 LLaDA 去噪轨迹，并探测 token commitment、词性、语义类别、熵和 re-masking 敏感性，以测量扩散解码中语言信息何时出现。
+- [CineAGI: Character-Consistent Movie Creation through LLM-Orchestrated Multi-Modal Generation and Cross-Scene Integration](https://arxiv.org/abs/2604.23579)：CineAGI 补充跨领域模型侧模型方法，覆盖架构、训练、对齐、扩展或合成数据。
+- [CommFuse: Hiding Tail Latency via Communication Decomposition and Fusion for Distributed LLM Training](https://arxiv.org/abs/2604.24013)：把分布式 LLM 训练中的 collective communication 分解并融合，隐藏 tensor/data parallelism 的尾延迟。
+- [Unsupervised Concept Extraction Framework](https://arxiv.org/abs/2604.24936)：统一无监督概念抽取方法，说明如何在无标签条件下发现模型概念。
+- [GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents](https://arxiv.org/abs/2604.26752)：补充跨能力模型训练、架构、数据配方、模型融合或推理缩放方法。
+- [Dynamic Adversarial Fine-Tuning Reorganizes Refusal Geometry](https://arxiv.org/abs/2604.27019)：面向通用基础模型与评测，补充用于model-side training, adaptation, synthetic-data, architecture, or fine-tuning method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Generalizing the Geometry of Model Merging Through Frechet Averages](https://arxiv.org/abs/2604.27155)：把模型合并重写为对称感知参数流形上的 Fréchet averaging，使合并结果由度量、流形和测地距离近似决定，而不是朴素参数均值。
+- [Semantic Structure of Feature Space in Large Language Models](https://arxiv.org/abs/2604.27169)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Diagnosing Capability Gaps in Fine-Tuning Data](https://arxiv.org/abs/2604.27547)：面向通用基础模型与评测，补充用于model-side preference, capability-gap analysis, diffusion, synthetic-data, optimization, or RL method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Do Sparse Autoencoders Capture Concept Manifolds?](https://arxiv.org/abs/2604.28119)：检验 SAE 特征能否捕捉概念流形，澄清特征字典式可解释性的可靠边界。
+- [Mean-Field Path-Integral Diffusion: From Samples to Interacting Agents](https://arxiv.org/abs/2605.00007)：提出面向其他基础能力的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Caracal: Causal Architecture via Spectral Mixing](https://arxiv.org/abs/2605.00292)：用 O(L log L) Multi-Head Fourier 模块替代注意力，并通过频域 causal masking 让 Fourier mixing 支持自回归生成。
+- [LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations](https://arxiv.org/abs/2605.00434)：在训练阶段也缺少完整模态时，把不完整多模态学习重构为 LLM 驱动的 sequence-to-score 推理问题。
+- [iERF-Centered Interpreting Vision Models](https://arxiv.org/abs/2605.00474)：围绕 iERF 信号统一视觉模型的局部、全局与机制解释，扩展跨模态可解释性覆盖。
+- [PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](https://arxiv.org/abs/2605.01123)：用强化学习训练反馈生成器，把教授式个性化反馈转化为后训练优化目标，而不只是提示词风格。
+- [MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](https://arxiv.org/abs/2605.01374)：通过多粒度轨迹对齐蒸馏 LLM 行为，覆盖 token、步骤与完整响应层面的师生迁移信号。
+- [Automated Interpretability and Feature Discovery](https://arxiv.org/abs/2605.01555)：用 agent 自动化语言模型特征发现。核心思想：把可解释性探索转化为 agent 引导的迭代流程，用于发现并解释模型内部特征。
+- [The Cylindrical Representation Hypothesis](https://arxiv.org/abs/2605.01844)：提出语言模型 steering 的几何解释，说明控制方向可能依赖圆柱式表征结构。
+- [Generative Causal-Graph Model with Latent Factors](https://doi.org/10.3389/frai.2026.1800791)：用 nonlinear latent factors 做 causal-graph generation 与 mechanism explanation。
+- [LLM QLoRA Fine-Tuning of Llama, DeepSeek, and Qwen: A Skyrim Case Study](https://doi.org/10.1109/access.2026.3659054)：在同一游戏领域语料上比较 Llama、DeepSeek 与 Qwen 的 QLoRA 适配效果，提供参数高效领域迁移案例。
+- [Edge-Oriented Events-to-Video Reconstruction for High-Speed Scenarios via Knowledge Distillation](https://doi.org/10.1109/tim.2026.3661689)：用教师-学生蒸馏压缩事件到视频重建模型，使高速视觉流的重建可部署到边缘设备。
+- [Decentralized Intelligence-Modeling Adaptive Security Through the WanderMind-Ledger Blockchain Architecture](https://doi.org/10.1109/datascimi67380.2026.11523828)：把去中心化账本协调与自适应智能建模结合，模型侧贡献更接近分布式安全架构而非单一分类器。
+- [BitNet: 1-bit Pre-training for Large Language Models](https://jmlr.org/papers/v26/24-2050.html)：研究 1-bit LLM 预训练，说明二值化权重如何改变基础模型扩展中的计算与显存权衡。
+- [Revisiting LoRA: A Smarter Low-Rank Approach for Efficient Model Adaptation](https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502242004195848)：重新审视 LoRA 并提出更智能的低秩适配变体，补充参数高效模型适配参考。
+- [Bucketing the Good Apples](https://arxiv.org/abs/2605.02234): 诊断并改进因果抽象，为理解模型内部抽象结构补充可靠性视角。
+- [Gradient-Gated DPO: Stabilizing Preference Optimization in Language Models](https://arxiv.org/abs/2605.02626)：在直接偏好优化中加入梯度门控，过滤不稳定偏好梯度以提升语言模型对齐稳定性。
+- [Text-Conditional JEPA for Learning Semantically Rich Visual Representations](https://arxiv.org/abs/2605.03245)：用文本条件化 JEPA 训练视觉表征，把视觉预测学习与语义语言监督连接起来。
+- [From Code to Prediction: Fine-Tuning LLMs for Neural Network Performance Classification in NNGPT](https://arxiv.org/abs/2605.03686)：在 NNGPT 中微调 LLM，分类预测给定神经网络架构在哪个数据集上表现更好，并以 LEMUR 架构-性能数据作为模型侧推理任务。
+- [SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning](https://arxiv.org/abs/2605.04712)：正则化深度强化学习中的 MoE 模型以保持谱可塑性，针对专家坍缩与表征停滞问题。
+- [Bridging Input Feature Spaces Towards Graph Foundation Models](https://arxiv.org/abs/2605.04834)：对齐异构图输入特征空间，使图基础模型能在节点和边属性不兼容的数据集之间共享表征。
+- [A Robust Foundation Model for Conservation Laws: Injecting Context into Flux Neural Operators via Recurrent Vision Transformers](https://arxiv.org/abs/2605.05488)：通过 recurrent vision transformer 向 flux neural operator 注入上下文状态，增强守恒律仿真的基础模型能力。
+- [Revealing Modular Gradient Noise Imbalance in LLMs: Calibrating Adam via Signal-to-Noise Ratio](https://arxiv.org/abs/2605.05794)：通过分析模块间信噪比不平衡来校准 LLM 训练中的 Adam 优化器。
+- [Lightweight Stylistic Consistency Profiling: Robust Detection of LLM-Generated Textual Content for Multimedia Moderation](https://arxiv.org/abs/2605.05950)：用轻量化文体一致性画像检测 LLM 生成文本，为内容溯源提供 verifier 式信号。
+- [Data Language Models](https://arxiv.org/abs/2605.06290): 将表格数据语言模型定义为一种基础模型类别，直接扩展非文本基础模型覆盖。
+- [ResiHP: Taming LLM Training Failures with Dynamic Hybrid Parallelism](https://arxiv.org/abs/2605.06374)：在 LLM 训练过程中动态切换混合并行策略，用于恢复显存与吞吐相关的训练失败。
+- [Cubit: Token Mixer with Kernel Ridge Regression](https://arxiv.org/abs/2605.06501)：用 kernel ridge regression token mixer 替代常规注意力式混合，为序列模型提供非标准架构组件。
+- [Approximation Error Upper and Lower Bounds for H\"{o}lder Class with Transformers](https://arxiv.org/abs/2605.07463)：推导 Transformer 对 Holder 类函数的近似误差上下界，澄清架构扩展背后的表达能力限制。
+- [Guidance Is Not a Hyperparameter: Learning Dynamic Control in Diffusion Language Models](https://arxiv.org/abs/2605.07701)：为扩散语言模型学习动态 guidance 控制，而不是把 guidance strength 当作固定超参数。
+- [Scaling Categorical Flow Maps](https://arxiv.org/abs/2605.07820)：扩展 categorical flow maps 做离散生成建模，补充非自回归 token generation 路线。
+- [Joint Latent Diffusion Language Modeling](https://arxiv.org/abs/2605.07933)：将 latent diffusion language model 与 latent space 联合训练，补充 diffusion language model 训练配方。
+- [DataArc-SynData-Toolkit: A Unified Closed-Loop Framework for Multi-Path, Multimodal, and Multilingual Data Synthesis](https://arxiv.org/abs/2605.08138)：提供闭环合成数据引擎，覆盖多路径、多模态与多语言生成流程，可服务模型训练和评测。
+- [Feature Rivalry in SAEs](https://arxiv.org/abs/2605.08149)：研究 sparse autoencoder 表征中的不确定性驱动特征竞争，补充 feature dictionary 解释性的失效模式。
+- [jina-embeddings-v5-omni: Geometry-preserving Embeddings via Locked Aligned Towers](https://arxiv.org/abs/2605.08384)：用锁定且对齐的多塔结构构建 omni embedding，在扩展共享嵌入空间时保持跨模态几何关系。
+- [S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain](https://arxiv.org/abs/2605.08589)：在 sparse spectrum domain 中微调模型，减少可训练参数并面向通用适配而非全量任务微调。
+- [Data-driven Circuit Discovery](https://arxiv.org/abs/2605.09129)：用数据驱动方法发现语言模型 circuit。核心思想：把 circuit 假设锚定到观察到的模型行为，使可解释性搜索更系统。
+- [Practical Scaling Laws: Converting Compute into Performance in a Data-Constrained World](https://arxiv.org/abs/2605.09189)：刻画数据受限条件下的 scaling law，估计新增计算量在缺少新训练数据时如何转化为性能收益。
+- [SMIXAE](https://arxiv.org/abs/2605.09224)：面向语言模型中的无监督流形发现。
+- [Let the Target Select for Itself: Data Selection via Target-Aligned Paths](https://arxiv.org/abs/2605.09404)：通过 target-aligned paths 让目标模型自身信号驱动数据选择，减少外部代理评分偏差。
+- [fmxcoders](https://arxiv.org/abs/2605.09438)：用 factorized masked crosscoders 进行语言模型跨层特征发现。
+- [Modality-Role Interference in Multimodal Role-Playing Agents](https://arxiv.org/abs/2605.09443)：处理多模态 role-playing agent 中的 modality-role interference，补充跨任务 agent model 行为控制案例。
+- [KAN Text to Vision? The Exploration of Kolmogorov-Arnold Networks for Multi-Scale Sequence-Based Pose Animation from Sign Language Notation](https://arxiv.org/abs/2605.09572)：面向通用基础模型与评测，补充用于general model-side architecture, training, adaptation, synthetic-data, or evaluation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Edit-Based Refinement for Parallel Masked Diffusion Language Models](https://arxiv.org/abs/2605.09603)：ME-DLM 为并行掩码扩散语言模型加入基于编辑的细化过程，以改善序列一致性。
+- [A Real-Calibrated Synthetic-First Data Engine](https://arxiv.org/abs/2605.09699)：用真实分布校准 synthetic-first 数据生成，使合成语料更适合模型开发。
+- [Concordia: Self-Improving Synthetic Tables for Federated LLMs](https://arxiv.org/abs/2605.09855)：为联邦 LLM 场景生成并迭代改进合成表格数据，适配原始数据不能集中化的约束。
+- [The Geometric Wall](https://arxiv.org/abs/2605.09887)：把流形结构与逐层 SAE scaling laws 联系起来，说明稀疏特征字典何时能跨层扩展。
+- [Tensor Product Representation Probes](https://arxiv.org/abs/2605.09967)：用张量积 probing 揭示线性方向之间的共享结构，补充单独特征向量之外的表征几何诊断。
+- [Amortized Causal Sensitivity Analysis](https://arxiv.org/abs/2605.10590): 用先验数据拟合网络摊销因果敏感性分析，扩展面向结构化数据的基础模型式统计建模。
+- [A Single-Layer Model Can Do Language Modeling](https://arxiv.org/abs/2605.10643)：通过单层序列模型仍能捕捉可用 token 依赖的实验，检验语言建模所需的最小架构条件。
+- [AdaPaD: Adaptive Parallel Deflation for PEFT with Self-Correcting Rank Discovery](https://arxiv.org/abs/2605.10741)：用 adaptive parallel deflation 自动发现 PEFT rank，减少参数高效微调中的手动 rank 选择。
+- [Compute Where it Counts: Self Optimizing Language Models](https://arxiv.org/abs/2605.10875)：让语言模型自适应分配计算量，强调测试时或架构层面的 compute routing，而不是固定每 token 开销。
+- [DECO: Sparse Mixture-of-Experts with Dense-Comparable Performance on End-Side Devices](https://arxiv.org/abs/2605.10933)：面向端侧设备设计 sparse MoE，在本地算力和内存限制下逼近 dense model 性能。
+- [Background-Invariant Representations in VLMs](https://arxiv.org/abs/2605.11107): 分析 VLM 表征中的线性结构以提升背景不变特征，为跨任务多模态表征控制补充参考。
+- [Muon is Not That Special: Random or Inverted Spectra Work Just as Well](https://arxiv.org/abs/2605.11181)：通过比较随机与反转谱重新检验 Muon 类训练收益，为优化器分析补充校正性证据。
+- [Qwen-Scope](https://arxiv.org/abs/2605.11887)：为 Qwen 模型发布 sparse-autoencoder features，并用于推理 steering、评测分析、数据中心安全工作流和后训练信号，适合放在跨切面的模型开发条目而非单一任务轴。
+- [A Unified Graph Language Model for Multi-Domain Multi-Task Graph Alignment Instruction Tuning](https://arxiv.org/abs/2605.12197)：跨领域、跨任务指令微调图语言模型，把图表征与自然语言监督对齐。
+- [All Circuits Lead to Rome](https://arxiv.org/abs/2605.12671)： 重新审视 LLM circuit 与 sheaf discovery 中的 functional anisotropy，补充机制可解释方法的假设边界。
+- [Discrete Stochastic Localization](https://arxiv.org/abs/2605.12836)：提出基于 discrete stochastic localization 的非自回归生成方法，扩展自回归解码之外的生成路线。
+- [Decoupled and Divergence-Conditioned Prompt for Multi-domain Dynamic Graph Foundation Models](https://arxiv.org/abs/2605.13540)：用 decoupled 与 divergence-conditioned prompt 适配动态图基础模型，处理跨领域图分布变化。
+- [NodeSynth: Socially Aligned Synthetic Data for AI Evaluation](https://arxiv.org/abs/2605.14381)：构造社会对齐的 AI 评测合成数据，模型侧价值在于可复用的数据生成与评测信号。
+- [Non-linear Interventions on LLMs](https://arxiv.org/abs/2605.14749)：研究大语言模型的非线性干预方法，把激活控制扩展到固定线性 steering vector 之外。
+- [HeatKV: Head-tuned KV-cache Compression for Visual Autoregressive Modeling](https://arxiv.org/abs/2605.14877)：按 attention head 调节并压缩视觉自回归模型的 KV cache，在保持生成质量的同时提升推理效率。
+- [ReactiveGWM: Steering NPC in Reactive Game World Models](https://arxiv.org/abs/2605.15256)：在 reactive game world model 中 steering NPC 行为，把可控世界模型与交互式行为生成连接起来。
+- [$f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data](https://arxiv.org/abs/2605.15417)：提出可同时利用离策略与在策略数据调优 GFlowNets、生成模型和 LLM 的损失族。
+- [Entity-Centric World Models: Interaction-Aware Masking for Causal Video Prediction](https://arxiv.org/abs/2605.15466)：围绕实体中心 world model 与 interaction-aware masking 构建因果视频预测器，突出物体交互结构。
+- [Sparse Autoencoders enable Robust and Interpretable Fine-tuning of CLIP models](https://arxiv.org/abs/2605.15961)： 用 sparse autoencoders 提升 CLIP fine-tuning 的稳健性与可解释性，扩展多模态模型 steering 覆盖。
+- [Reinforcing Human Behavior Simulation via Verbal Feedback](https://arxiv.org/abs/2605.20506)：训练 DITTO 时把自然语言反馈作为 human-behavior simulation 的强化信号，面向标量奖励不足以刻画的 persona 与 user-simulation fidelity。
+- [Representation Gap: Explaining the Unreasonable Effectiveness of Neural Networks from a Geometric Perspective](https://arxiv.org/abs/2605.21692)：提出 Representation Gap 作为神经网络泛化的几何代理指标，并用最优量化理论推导等变扩散模型中的渐近行为。
+- [Strong Teacher Not Needed? On Distillation in LLM Pretraining](https://arxiv.org/abs/2605.23857)：研究 LLM 预训练蒸馏中的强到弱、同级和弱到强师生关系，表明混合语言建模与蒸馏损失可让弱教师也提升更大学生模型。
+- [Simulating Human Memory with Language Models](https://arxiv.org/abs/2605.25680)：在人类和语言模型上运行经典记忆实验，再通过提示和 compactor 引入更接近人类的遗忘，用于用户模拟研究。
+- [Zipping the Thought: When and How Compressed Reasoning Data Works in LLM Post-Training](https://arxiv.org/abs/2605.28008)：研究压缩 chain-of-thought 数据如何用于后训练。核心思想：区分 Explicit、Composed 和 Implicit 三类压缩机制，并比较 SFT 与 RLVR，说明粗粒度推理轨迹何时需要更多数据，以及 RLVR 何时会重新分解被压缩的步骤。
+- [REMEDY: Recipe Merging Dynamics in Large Vision-Language Models](https://openreview.net/forum?id=iX7eHHE5Tx)： 研究大型视觉语言模型中的配方合并动态，说明多模态模型合并如何改变行为。
+- [Knowledge Graph Finetuning Enhances Knowledge Manipulation in Large Language Models](https://openreview.net/forum?id=oMFOKjwaRS)： 用知识图谱微调大语言模型以增强知识操控，补充结构化知识适配路线。
+- [COX / Out-of-Modal Generalization](https://openreview.net/forum?id=LuVulfPgZN)：研究没有实例级对应关系时的 out-of-modal generalization，并用 connect-and-explore learning 生成涌现的跨模态对应。
+- [Deep Koopman Operators for Causal Discovery](https://doi.org/10.1038/s42005-025-02426-1)：用 deep Koopman operators 支持 causal discovery 的 model-side 方法。
+- [Bullet LLM Serving](https://doi.org/10.1145/3779212.3790135)：通过动态时空编排提升 LLM serving 的 GPU 利用率，补充部署效率线。
+- [Flow Matching Error Analysis](https://openreview.net/forum?id=vES22INUKm)：分析深度生成建模中 flow matching 的近似误差。
+- [SpecPIM: Accelerating Speculative Inference on PIM-Enabled System via Architecture-Dataflow Co-Exploration](https://doi.org/10.1145/3620666.3651352)：在 processing-in-memory 硬件上联合探索架构和数据流，以加速 speculative inference。
+- [TC-MoE Ternary Expert Choice](https://openreview.net/forum?id=dsP91M4hDL)：用 ternary expert choice 增强 MoE 路由，补充 MoE 架构变体。
+- [Diffusion-based Decoupled Deterministic and Uncertain Framework for Probabilistic Multivariate Time Series Forecasting](https://openreview.net/forum?id=HdUkF1Qk7g)：在扩散式概率多变量时间序列预测中解耦确定性成分与不确定性成分，补充结构化时间序列生成模型线索。
+- [LLM-Empowered Few-Shot Node Classification on Incomplete Graphs with Real Node Degrees](https://doi.org/10.1145/3627673.3679861)：研究结合真实节点度信息的 LLM 辅助不完整图少样本节点分类。
+- [AI models collapse when trained on recursively generated data](https://doi.org/10.1038/s41586-024-07566-y)：展示递归合成数据训练会导致 model collapse，为数据生成流水线与持续再训练提供跨领域风险提示。
+- [Not All Tokens Are What You Need for Pretraining](https://doi.org/10.52202/079017-0914)：研究预训练 token 选择，把数据筛选视为提升训练效率的变量，而不是默认使用全部 token。
+- [Towards Understanding the Effectiveness of Large Language Models on Directed Test Input Generation](https://doi.org/10.1145/3691620.3695513)：评估 LLM 作为 directed test input generator 的效果，重点观察模型在测试目标约束下的搜索行为。
+- [HLX: A Unified Pipelined Architecture for Optimized Performance of Hybrid Transformer-Mamba Language Models](https://doi.org/10.1145/3725843.3756115)：提出 hybrid Transformer-Mamba 语言模型的统一流水线架构，面向混合序列 backbone 的训练与服务效率。
+- [MOSS: An Open Conversational Large Language Model](https://doi.org/10.1007/s11633-024-1502-8)：记录开放对话模型 MOSS 的模型发布、对话调优与公开访问，是跨任务 LLM artifact。
+- [Open-Ethical AI: Advancements in Open-Source Human-Centric Neural Language Models](https://doi.org/10.1145/3703454)：从 human-centric 与伦理约束角度讨论开源语言模型开发，更接近模型治理与发布实践。
+- [Advancing Graph Foundation Models: A Data-Centric Perspective](https://doi.org/10.1145/3711896.3736833)：从数据中心视角讨论 graph foundation model，强调图语料构建、质量与覆盖范围。
+- [UniLog: Automatic Logging via LLM and In-Context Learning](https://doi.org/10.1145/3597503.3623326)：用 in-context LLM generation 自动插入软件日志，模型侧重点是代码 LLM 对 logging 任务的适配。
+- [A comprehensive transformer-based approach for high-accuracy gas adsorption predictions in metal-organic frameworks](https://doi.org/10.1038/s41467-024-46276-x)：将 Transformer 用于 MOF 气体吸附预测，把序列式架构扩展到结构化材料性质建模。
+- [A Unified Self-Distillation Framework for Multimodal Sentiment Analysis with Uncertain Missing Modalities](https://doi.org/10.1609/aaai.v38i9.28871)：用 self-distillation 处理多模态情感分析中的缺失或不确定模态。
+- [Distinguishing Reality from AI: Approaches for Detecting Synthetic Content](https://doi.org/10.3390/computers14010001)：综述 synthetic content detector 方法，可作为生成媒体溯源 verifier 背景。
+- [Considerations for governing open foundation models](https://doi.org/10.1126/science.adp1848)：讨论开放基础模型发布中的访问、风险与问责权衡，贡献主要在治理而非架构。
+- [Prompt Optimization in Large Language Models](https://doi.org/10.3390/math12060929)：综述 LLM prompt optimization 方法，覆盖 prompt search 与测试时模型控制。
+- [KnowLog: Knowledge Enhanced Pretrained Language Model for Log Understanding](https://doi.org/10.1145/3597503.3623304)：用日志领域知识增强预训练语言模型，面向软件日志理解。
+- [Toward Efficient Inference for Mixture of Experts](https://doi.org/10.52202/079017-2670)：聚焦 MoE 推理效率，处理 routing 与 serving 开销，而不只是 MoE 训练。
+- [DISTMM: Accelerating Distributed Multimodal Model Training](https://www.usenix.org/conference/nsdi24/presentation/huang)：优化多模态模型分布式训练，处理跨模态流水线与系统瓶颈。
+- [Automated requirement contradiction detection through formal logic and LLMs](https://doi.org/10.1007/s10515-024-00452-x)：结合同 formal logic 与 LLM reasoning 检测软件需求矛盾。
+- [Accelerating the Training of Large Language Models using Efficient Activation Rematerialization and Optimal Hybrid Parallelism](https://www.usenix.org/conference/atc24/presentation/yuan)：通过 activation rematerialization 与最优混合并行提升 LLM 训练吞吐。
+- [Large Language Model Powered Agents in the Web](https://doi.org/10.1145/3589335.3641240)：把 LLM 放入 Web agent 场景，相关贡献更偏 agentic deployment pattern 而非独立模型配方。
+- [A multi-modal transformer for predicting global minimum adsorption energy](https://doi.org/10.1038/s41467-025-58499-7)：用多模态 Transformer 预测 global minimum adsorption energy，把 Transformer 建模扩展到材料模拟。
+- [Crafting Interpretable Embeddings for Language Neuroscience by Asking LLMs Questions](https://doi.org/10.52202/079017-3944)：通过向 LLM 提问构造语言神经科学可解释 embedding，把提示响应转化为表征特征。
+- [A Four‐Dimensional Variational Constrained Neural Network‐Based Data Assimilation Method](https://doi.org/10.1029/2023ms003687)：结合神经网络与四维变分约束进行数据同化，补充 physics-informed 训练模式。
+- [Learning Representations from Foundation Models for Domain Generalized Stereo Matching](https://doi.org/10.1007/978-3-031-72946-1_9)：把基础模型表征迁移到 domain generalized stereo matching，检验预训练特征的跨域视觉鲁棒性。
+- [Tech-Enhanced Synthesis: Exploring the Synergy between Organic Chemistry and Technology](https://doi.org/10.1021/jacs.5c10303)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [A novel 8-connected Pixel Identity GAN with Neutrosophic (ECP-IGANN) for missing imputation](https://doi.org/10.1038/s41598-024-73976-7)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Machine Learning Models for Efficient Property Prediction of ABX3 Materials: A High-Throughput Approach](https://doi.org/10.1021/acsomega.4c06139)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Atomistic Simulation of HF Etching Process of Amorphous Si3N4 Using Machine Learning Potential.](https://doi.org/10.1021/acsami.4c07949)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Generative adversarial network (GAN) enabled Statistically equivalent virtual microstructures (SEVM) for modeling cold spray formed bimodal polycrystals](https://doi.org/10.1038/s41524-024-01219-4)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Machine Learning Potentials with the Iterative Boltzmann Inversion: Training to Experiment.](https://doi.org/10.1021/acs.jctc.3c01051)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [DCGAN-Based Feature Augmentation: A Novel Approach for Efficient Mineralization Prediction Through Data Generation](https://doi.org/10.3390/min15010071)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [EVCA: Enhanced Video Complexity Analyzer](https://doi.org/10.1145/3625468.3652171)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Applications of Electrically Conductive Metal–Organic Frameworks: From Design to Fabrication](https://doi.org/10.1021/acsmaterialslett.4c02110)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [Large Language Models Can Connect the Dots: Exploring Model Optimization Bugs with Domain Knowledge-Aware Prompts](https://doi.org/10.1145/3650212.3680383)：提出面向其他基础能力的模型侧训练、架构、对齐、生成、适配或奖励建模方法。
+- [PUZZLE: Efficiently Aligning Large Language Models through Light-Weight Context Switch](https://www.usenix.org/conference/atc24/presentation/lei)：通过轻量级 context switch 对齐 LLM，降低跨上下文 steering 模型行为的成本。
+- [Towards Neuron Attributions in Multi-Modal Large Language Models](https://doi.org/10.52202/079017-3904)：研究多模态 LLM 的 neuron attribution，为跨模态表征提供机制可解释方法。
+- [From QM/MM to ML/MM: A new era in multiscale modeling](https://doi.org/10.1063/5.0260078)：将 machine-learned molecular mechanics 定位为 QM/MM 工作流的后续路线，体现科学多尺度建模的基础模型化转向。
+- [FedDDF: Dynamic Dataset Filtering in Federated Large Language Model Training](https://doi.org/10.1145/3709023.3737689)：在联邦 LLM 训练中动态过滤数据集，在不集中私有语料的情况下提升数据质量。
+- [A Denoising Pre-training Framework for Accelerating Novel Material Discovery](https://doi.org/10.1609/aaai.v39i27.35058)：用 denoising pretraining 学习材料表征，加速下游新材料发现。
+- [The benefits, risks and bounds of personalizing the alignment of large language models to individuals](https://doi.org/10.1038/s42256-024-00820-y)：分析面向个体的 LLM alignment personalization，澄清个人偏好何时适合或不适合纳入后训练。
+- [Advancements in Vision–Language Models for Remote Sensing: Datasets, Capabilities, and Enhancement Techniques](https://doi.org/10.3390/rs17010162)：综述遥感 VLM 的数据集、能力与增强技术，是领域化模型适配综述。
+- [From Predictions to Analyses: Rationale-Augmented Fake News Detection with Large Vision-Language Models](https://doi.org/10.1145/3696410.3714532)：为 VLM fake-news detection 增加 rationale generation，使预测同时给出解释性分析。
+- [Artificial evolutionary intelligence (AEI): evolutionary computation evolves with large language models](https://doi.org/10.1007/s41965-024-00172-x)：把 LLM 与 evolutionary computation 连接起来，将语言模型作为搜索、变异与 heuristic generation 操作器。
+- [Not All Attention is Needed: Parameter and Computation Efficient Tuning for Multi-modal Large Language Models via Effective Attention Skipping](https://doi.org/10.1007/s11263-025-02702-1)：在 MLLM 调优中跳过部分 attention 计算，降低参数与计算成本并保留适配能力。
+- [Concurrency Bug Detection via Static Analysis and Large Language Models](https://doi.org/10.3390/fi17120578)：结合静态分析与 LLM 推理做 concurrency bug detection，是模型辅助验证的软件工程应用。
+- [LLM or Human? Perceptions of Trust and Quality in Research Summaries](https://doi.org/10.1145/3772318.3793386)：评估人们对 LLM 与人类研究摘要的信任和质量感知，更偏 human evaluation 信号。
+- [Generative Echo Chamber? Effect of LLM-Powered Search Systems on Diverse Information Seeking](https://doi.org/10.1145/3613904.3642459)：研究 LLM-powered search 对信息寻求多样性的影响，属于已部署生成系统评测。
+- [Strategic behavior of large language models and the role of game structure versus contextual framing](https://doi.org/10.1038/s41598-024-69032-z)：在不同博弈结构与语境框架下测试 LLM strategic behavior，探测决策行为而非架构。
+- [LLMs outperform outsourced human coders on complex textual analysis](https://doi.org/10.1038/s41598-025-23798-y)：比较 LLM 与外包人工 coder 在复杂文本分析中的表现，补充 annotation work 能力评测。
+- [Reynolds rules in swarm fly behavior based on KAN transformer tracking method](https://doi.org/10.1038/s41598-025-91674-w)：用 KAN-transformer tracking method 基于 Reynolds rules 建模群体飞行行为。
+- [Few-Shot Portfolio Optimization: Can Large Language Models Outperform Quantitative Portfolio Optimization? A Comparative Study of LLMs and Optimized Portfolio Allocators](https://doi.org/10.3390/jrfm19050320)：评估少样本 LLM portfolio optimization 与量化 allocator 的差异，探测金融决策能力。
+- [Distillation-free Scaling of Large State-Space Models for Images and Videos](https://doi.org/10.1007/s11263-026-02824-0)：在不依赖蒸馏的情况下扩展大型 state-space vision model，提供图像与视频架构扩展配方。
+- [The Intersection of Knowledge Graphs, Large Language Models, and Mass Spectrometry Data: Progress and Applications](https://doi.org/10.1002/widm.70086)：综述 knowledge graph 与 LLM 如何组织质谱数据，属于科学数据建模与检索交叉方向。
+- [Detection of AI-Generated Images and Videos Using Vision Transformers](https://doi.org/10.21275/sr26227161330)：用 Vision Transformer 检测 AI 生成图像与视频，补充生成媒体溯源分类器。
+- [DualRAG Architecture: Structured Retrieval with Layered Knowledge Models](https://doi.org/10.5220/0014211300004052)：提出分层 DualRAG 检索架构，将结构化检索与知识模型推理分开。
+- [Larger and more instructable language models become less reliable](https://doi.org/10.1038/s41586-024-07930-y)：说明语言模型越大、越可指令化时可靠性可能下降，把 instruction tuning 与 scaling 作为联合评测目标。
+- [Decoding CI/CD Practices in Open-Source Projects with LLM Insights](https://doi.org/10.1145/3696630.3728699)：用 LLM 分析开源项目 CI/CD 实践，是软件工程 analytics 应用而非通用模型训练方法。
+- [Multimodal Synthetic Data Finetuning and Model Collapse: Insights from VLMs and Diffusion Models](https://doi.org/10.1145/3716553.3750806)：研究多模态 synthetic-data fine-tuning 对 VLM 与 diffusion model 的影响，包括 model collapse 现象。
+- [Robust Explainable AI via Adversarial Latent Diffusion Models: Mitigating Gradient Obfuscation with Interpretable Feature Attribution](https://doi.org/10.52783/jisem.v10i36s.6522)：用 adversarial latent diffusion model 提升 gradient obfuscation 下的 feature attribution 稳健性。
+- [DARE to Diversify: DAta Driven and Diverse LLM REd Teaming](https://doi.org/10.1145/3637528.3671444)：用数据驱动的多样化机制扩展 LLM red-teaming prompt，发现更多类型的失效。
+- [Toward LLM-Driven GDPR Compliance Checking for Android Apps](https://doi.org/10.1145/3696630.3728508)：将 LLM reasoning 用于 Android app 的 GDPR 合规检查，连接法律政策解释与应用分析证据。
+- [Large Language Model Relevance Assessors Agree With One Another More Than With Human Assessors](https://doi.org/10.1145/3726302.3730218)：测量 LLM relevance assessor 与人类 assessor 的一致性，是 model-as-judge 行为评测。
+- [Enhancing Analytic Hierarchy Process Modelling Under Uncertainty With Fine‐Tuning LLM](https://doi.org/10.1111/exsy.70051)：微调 LLM 以支持不确定条件下的 analytic hierarchy process 建模。
+- [How to Choose the Best AI LLM: A Guide to Navigating the Diversity of Models](https://doi.org/10.52783/jisem.v10i34s.5790)：比较不同 LLM 的选择标准，更适合作为 model-choice guidance 而非新架构。
+- [Aurel_AI: Automating an Institutional Help Desk Using an LLM Chatbot](https://doi.org/10.54808/wmsci2024.01.81)：构建机构 help-desk LLM chatbot，展示部署与工作流适配。
+- [Chatbot Based on Large Language Model to Improve Adherence to Exercise-Based Treatment in People with Knee Osteoarthritis: System Development](https://doi.org/10.3390/technologies13040140)：开发用于运动治疗依从性支持的 LLM chatbot，是生物医学部署候选而非可复用模型方法。
+- [Large language model based hybrid framework for automatic vulnerability detection with explainable AI for cybersecurity enhancement](https://doi.org/10.1177/10692509251368663)：结合 LLM vulnerability detection 与 XAI 组件进行网络安全分析。
+- [The state as a model for AI control and alignment](https://doi.org/10.1007/s00146-024-02063-2)：以国家制度类比 AI control 与 alignment，主要贡献是治理理论而非模型训练。
+- [Language as a cognitive and social tool at the time of large language models](https://doi.org/10.1007/s41809-024-00152-8)：讨论 LLM 时代语言作为认知和社会工具的角色，为模型介导交流提供概念背景。
+- [LinkGPT: Leveraging Large Language Models for Enhanced Link Prediction in Text-Attributed Graphs](https://doi.org/10.1145/3746252.3761287)：用 LLM 强化 text-attributed graph 的 link prediction，将文本语义注入图推理。
+- [Scalable Pre-Training of Compact Urban Spatio-Temporal Predictive Models on Large-Scale Multi-Domain Data](https://doi.org/10.14778/3734839.3734851)：在大规模多领域数据上预训练紧凑城市时空预测模型，强调跨城市与跨任务数据迁移。
+- [Continual Origin Tracing of LLM-Generated Text](https://doi.org/10.1145/3726302.3729935)：持续追踪 LLM 生成文本来源，补充生成内容 provenance detection 方法。
+- [A Large Language Model-Based System for Semantic Understanding and Automated Scene Generation in Animation Scripts](https://doi.org/10.1145/3744464.3744483)：用 LLM 语义解析把动画脚本转换为自动生成场景。
+- [Graph-Based Timing Prediction at Early-Stage RTL Using Large Language Model](https://doi.org/10.1145/3658617.3697742)：把 graph-based RTL 表征与 LLM 特征结合，用于芯片设计早期 timing prediction。
+- [Utilizing structural metrics from knowledge graphs to enhance the robustness quantification of large language models](https://doi.org/10.1007/s41060-024-00643-5)：利用 knowledge graph structural metrics 量化 LLM 鲁棒性。
+- [Co-Data: Cultivating Effective Human-LLM Collaboration for Collaborative Data Processing](https://doi.org/10.1145/3772363.3778724)：研究数据处理工作流中的 human-LLM collaboration 模式。
+- [Public Opinion on the Politics of AI Alignment: Cross-National Evidence on Expectations for AI Moderation From Germany and the United States](https://doi.org/10.1177/20563051251405069)：测量不同国家公众对 AI moderation 的期待，服务 alignment governance 而非模型机制。
+- [Automatically optimizing heuristics for robust scale-free network design via large language models](https://doi.org/10.1038/s41598-025-25031-2)：用 LLM 自动优化 robust scale-free network design 的 heuristic。
+- [TAG2M- A Task-Agnostic Knowledge Distillation Framework for Distilling GNN to MLP](https://doi.org/10.1145/3711896.3737145)：用 task-agnostic framework 将 GNN 蒸馏到 MLP，把图结构迁移与下游标签解耦。
+- [MaverIQ: Fingerprint-Guided Extrapolation and Fragmentation-Aware Layering for Intent-Based LLM Serving](https://doi.org/10.1145/3712285.3759867)：用 fingerprint-guided extrapolation 与 fragmentation-aware layering 改进 intent-based LLM serving。
+- [A large language model for deriving spectral embeddings for accurate compound identification in mass spectrometry](https://doi.org/10.1038/s42004-025-01708-7)：用语言模型架构生成谱嵌入，用于质谱中的化合物识别。
+- [LLM-Augmented Ticket Aggregation for Low-cost Mobile OS Defect Resolution](https://doi.org/10.1145/3696630.3728547)：用 LLM 聚合移动操作系统缺陷工单，降低软件维护中的 triage 成本。
+- [Detection confidential information by large language models](https://doi.org/10.35784/iapgos.6910)：评估 LLM 作为 confidential-information detector 的能力，是面向隐私筛查的 model-as-classifier 用例。
+- [Persuasive Legal Writing Using Large Language Models](https://doi.org/10.53300/001c.124116)：研究 LLM 辅助 persuasive legal writing，考察生成模型如何支持法律论证构造。
+- [MoEsaic: Shared Mixture of Experts](https://doi.org/10.1145/3698038.3698521)：提出 shared mixture-of-experts layer，让专家在模块间复用以减少 MoE 架构重复。
+- [AskNow: An LLM-powered Interactive System for Real-Time Question Answering in Large-Scale Classrooms](https://doi.org/10.1145/3772318.3790328)：部署面向大规模课堂实时互动的 LLM 问答系统，更像人机交互应用候选。
+- [SoleCoach: Sole Pressure and IMU-based MLLMs for Skill Coaching](https://doi.org/10.1145/3772318.3791181)：结合足底压力与 IMU 信号，用多模态 LLM 从可穿戴传感流中进行技能 coaching。
+- [State media control influences large language models](https://doi.org/10.1038/s41586-026-10506-7)：测量 state media control 对 LLM 输出的影响，把数据来源与政治语境作为评测对象。
+- [MATEY: multiscale adaptive transformer models for spatiotemporal physical systems](https://doi.org/10.1088/2632-2153/ae67d1)：用 multiscale adaptive transformer 建模跨分辨率的时空物理系统。
+- [An Improved Method for 3D Style Transfer of Cliff Carvings Based on Gaussian Splatting](https://doi.org/10.3390/mca31020047)：将 Gaussian splatting 用于 cliff carving 的 3D style transfer，补充文化遗产图形生成方法。
+- [CASET: a cascaded attention-based framework for semantic explainability of toxicity in large language models](https://doi.org/10.1007/s10489-026-07102-7)：用 cascaded attention 解释 LLM toxicity decision，为有害输出分析提供语义可解释框架。
+- [Unleashing the Recommendation Power of Large Language Model via Progressive Best Subset Selection](https://dblp.org/rec/conf/www/Di26)：用 progressive best subset selection 适配 LLM 推荐能力，选择有效用户或物品证据而非直接塞满上下文。
+- [CPGHunter: LLM-guided semantic modeling for scalable vulnerability detection via taint analysis](https://doi.org/10.1007/s10664-026-10842-2)：用 LLM semantic modeling 引导 taint-analysis vulnerability detection，把代码语义连接到可扩展安全分析。
+- [Learning-Enhanced Finite Volume Methods for Nonlinear Convection-Diffusion Problems](https://doi.org/10.65204/djes.v3i1.321)：用学习组件增强 nonlinear convection-diffusion equation 的 finite-volume solver。
+- [Empirical performance characterization of local LLM pipeline on resource-constrained edge platform](https://doi.org/10.1007/s43538-026-00760-8)：刻画本地 LLM pipeline 在资源受限 edge hardware 上的性能，更偏部署证据而非新训练方法。
+- [DeepMoE: MoE for deep non-hierarchical representation mechanisms](https://doi.org/10.1117/12.3070893)：研究 deep non-hierarchical MoE representation mechanism，扩展树状 expert 组织之外的 MoE 设计。
+- [Uni-IL: Unified Incremental Learning of Vision-Language Models via Mixture of Attribute-Guided Experts](https://doi.org/10.1145/3743093.3771068)：用 attribute-guided expert mixture 做 VLM unified incremental learning，面向新任务适配并减少灾难性遗忘。
+- [MM1: Methods, Analysis and Insights from Multimodal LLM Pre-training](https://doi.org/10.1007/978-3-031-73397-0_18)：分析 MM1 系列多模态 LLM 预训练选择，包括数据配比、架构与 scaling 经验。
+- [LLMFormer: Large Language Model for Open-Vocabulary Semantic Segmentation](https://doi.org/10.1007/s11263-024-02171-y)：将 LLM 表征适配到 open-vocabulary semantic segmentation，把语言先验连接到密集视觉预测。
+- [Building LLM-based AI Agents in Social Virtual Reality](https://doi.org/10.1145/3613905.3651026)：构建用于 social virtual reality 的 LLM-driven agents，贡献更偏具身社交 agent 应用。
+- [Mechanism Design for Large Language Models](https://doi.org/10.1145/3589334.3645511)：把 mechanism-design 思路用于 LLM 交互，将激励与信息结构作为模型治理问题。
+- [Automating the Development of Task-oriented LLM-based Chatbots](https://doi.org/10.1145/3640794.3665538)：用 LLM 自动化 task-oriented chatbot 构建，覆盖对话逻辑与应用行为生成。
+- [Human-Centered Evaluation and Auditing of Language Models](https://doi.org/10.1145/3613905.3636302)：提出语言模型的 human-centered evaluation 与 auditing 实践，重点是评测协议而非架构。
+- [ZipZap: Efficient Training of Language Models for Large-Scale Fraud Detection on Blockchain](https://doi.org/10.1145/3589334.3645352)：为大规模区块链欺诈检测高效训练语言模型，把序列建模适配到交易文本或轨迹。
+- [Beyond Words: A Comparative Analysis of LLM Embeddings for Effective Clustering](https://doi.org/10.1007/978-3-031-58547-0_17)：比较不同 LLM embedding 在 clustering 中的效果，为无监督分组任务提供表征选择证据。
+- [Lookahead Bias in Pretrained Language Models](https://doi.org/10.2139/ssrn.4754678)：分析 pretrained language model 中的 lookahead bias，提示评测和部署中的数据泄漏与时间有效性风险。
+- [Efficient Deweahter Mixture-of-Experts with Uncertainty-Aware Feature-Wise Linear Modulation](https://doi.org/10.1609/aaai.v38i15.29622)：在 MoE deweathering model 中使用 uncertainty-aware FiLM，对图像复原专家进行路由和调制。
+- [Graph Intelligence with Large Language Models and Prompt Learning](https://doi.org/10.1145/3637528.3671456)：用 prompt learning 连接 LLM 与 graph-intelligence tasks，强调如何把文本监督注入图推理。
+- [ReFound: Crafting a Foundation Model for Urban Region Understanding upon Language and Visual Foundations](https://doi.org/10.1145/3637528.3671992)：结合 language foundation 与 visual foundation 构建 urban-region foundation model，用于地理区域表征学习。
+- [Parameter Efficient Fine-Tuning for Multi-modal Generative Vision Models with Möbius-Inspired Transformation](https://doi.org/10.1007/s11263-025-02398-3)：在多模态生成式视觉模型 PEFT 中使用 Mobius-inspired transformation。
+- [Human-AI Collaboration in Cooperative Games: A Study of Playing Codenames with an LLM Assistant](https://doi.org/10.1145/3677081)：研究 LLM assistant 参与 Codenames 合作游戏，探测协作决策支持而非模型架构。
+- [Let RFF do the talking: large language model enabled lightweight RFFI for 6G edge intelligence](https://doi.org/10.1007/s11432-024-4463-0)：用 LLM 支持轻量级 radio-frequency fingerprint identification，面向 6G edge intelligence。
+- [Enhancing Text-to-SQL Capabilities of Large Language Models through Tailored Promptings](https://doi.org/10.63317/3e8xmkzdqsjc)：通过 tailored prompting 提升 Text-to-SQL，是结构化查询生成的测试时适配方法。
+- [The Mixed Subjects Design: Treating Large Language Models as Potentially Informative Observations](https://doi.org/10.1177/00491241251326865)：提出在 mixed-subjects 社会科学设计中把 LLM 输出视为 informative observation。
+- [The Potential of One-Shot Failure Root Cause Analysis: Collaboration of the Large Language Model and Small Classifier](https://doi.org/10.1145/3691620.3695475)：把大语言模型与小分类器结合，用于 one-shot failure root-cause analysis。
+- [Creating Edge AI from Cloud-based LLMs](https://doi.org/10.1145/3638550.3641126)：研究如何把 cloud-based LLM 转换或蒸馏到 edge-AI workflow。
+- [DeformableTST: Transformer for Time Series Forecasting without Over-reliance on Patching](https://doi.org/10.52202/079017-2794)：提出 deformable time-series transformer，减少对固定 patching 的依赖。
+- [How Do So ware Developers Use ChatGPT? An Exploratory Study on GitHub Pull Requests](https://doi.org/10.1145/3643991.3645084)：分析 GitHub pull request 中的软件开发者 ChatGPT 使用行为，是软件开发行为研究。
+- [Underwater Organism Color Fine-Tuning via Decomposition and Guidance](https://doi.org/10.1609/aaai.v38i2.27903)：通过 decomposition 与 guidance 微调水下生物色彩生成，补充领域化图像复原配方。
+- [Human-Centered Explainable AI (HCXAI): Reloading Explainability in the Era of Large Language Models (LLMs)](https://doi.org/10.1145/3613905.3636311)：重新界定 LLM 时代的 human-centered explainable AI，强调审计与解释实践。
+- [SpInfer: Leveraging Low-Level Sparsity for Efficient Large Language Model Inference on GPUs](https://doi.org/10.1145/3689031.3717481)：利用低层稀疏性加速 GPU 上的 LLM inference。
+- [Exploring the new frontier of information extraction through large language models in urban analytics](https://doi.org/10.1177/23998083241235495)：将 LLM information extraction 用于 urban analytics，把非结构化城市文本转为结构化证据。
+- [Demonstrating CAESURA: Language Models as Multi-Modal Query Planners](https://doi.org/10.1145/3626246.3654732)：把语言模型作为 multimodal query planner，用于协调异构数据与检索操作。
+- [WSC-LLM: Efficient LLM Service and Architecture Co-exploration for Wafer-scale Chips](https://doi.org/10.1145/3695053.3731101)：协同探索 LLM 服务设计与 wafer-scale chip architecture，以提升部署效率。
+- [Large Language Models for EDA: Future or Mirage?](https://doi.org/10.1145/3626184.3639700)：评估 LLM 在 electronic design automation 中的潜力，区分代码、推理和设计任务的可迁移边界。
+- [CoSec: On-the-Fly Security Hardening of Code LLMs via Supervised Co-decoding](https://doi.org/10.1145/3650212.3680371)：通过 supervised co-decoding 在解码时加固 Code LLM 输出，引导生成更安全代码。
+- [TOMGPT: Reliable Text-Only Training Approach for Cost-Effective Multi-modal Large Language Model](https://doi.org/10.1145/3654674)：用 text-only supervision 训练低成本 MLLM，减少对成对多模态数据的依赖。
+- [Demystifying Data Management for Large Language Models](https://doi.org/10.1145/3626246.3654683)：综述 LLM data management 问题，包括采集、清洗、存储与治理流程。
+- [An Empirical Study on How Large Language Models Impact Software Testing Learning](https://doi.org/10.1145/3661167.3661273)：评估 LLM 对软件测试学习的影响，是教育影响研究而非模型侧训练。
+- [LLM4HAR: Generalizable On-device Human Activity Recognition with Pretrained LLMs](https://doi.org/10.1145/3711896.3737226)：把预训练 LLM 适配到端侧 human-activity recognition，面向移动约束下的泛化。
+- [FusOn-pLM: a fusion oncoprotein-specific language model via adjusted rate masking](https://doi.org/10.1038/s41467-025-56745-6)：通过 adjusted rate masking 训练 fusion-oncoprotein language model，是生物医学蛋白建模条目。
+- [AlarmGPT: an intelligent alarm analyzer for optical networks using a generative pre-trained transformer](https://doi.org/10.1364/jocn.521913)：用 generative pretrained transformer 分析光网络 alarm。
+- [Improving Language Model Distillation through Hidden State Matching](https://openreview.net/forum?id=IcVSKhVpKu)：在 LLM 蒸馏中加入 hidden-state matching，使学生模型同时模仿教师的中间表征与输出。
+- [Assessing the risk of takeover catastrophe from large language models](https://doi.org/10.1111/risa.14353)：评估 LLM catastrophic takeover risk，属于安全风险分析而非模型架构。
+- [Testing Stimulus Equivalence in Transformer-Based Agents](https://doi.org/10.3390/fi16080289)：测试 transformer-based agents 的 stimulus equivalence，探查学习表征是否支持行为等价关系。
+- [Hallucination-aware learning and latency optimization transformer (HALL-OPT) for real-time edge intelligence](https://doi.org/10.1038/s41598-026-42981-3)：在实时 edge inference transformer 中结合 hallucination-aware learning 与 latency optimization。
+- [The Pen is Mightier Than the Algorithm? A Multilevel Linguistic Comparison of LLM‐ and Human‐Translated Research Article Abstracts](https://doi.org/10.1111/ijal.70223)：比较 LLM 与人工翻译研究摘要的语言特征，是翻译输出质量评测。
+- [Enhancing Taxi Demand Prediction with Limited Data using a Spatial-Temporal Large Language Model](https://doi.org/10.1177/03611981251372477)：用 spatial-temporal LLM 在有限数据条件下改进出租车需求预测。
+- [Large Language Models for Spatial Analysis Tasks](https://doi.org/10.1145/3764925.3770905)：评估 LLM 在 spatial-analysis tasks 上的表现，探测地理空间推理与工具需求。
+- [Harmonizer: A Universal Signal Tokenization Framework for Multimodal Large Language Models](https://doi.org/10.3390/math13111819)：定义 universal signal tokenization framework，使 MLLM 能通过共享 token 接口接收异构非文本信号。
+- [GNP-FILTER: Gradient-Norm Proxy-Based Data Selection for Visual Instruction Tuning in Vison Language Model](https://doi.org/10.1145/3779153.3779172)：用 gradient-norm proxy 选择视觉指令微调数据，以低成本估计样本对 VLM 训练的贡献。
+- [Mitigating exposure bias in large language model distillation: an imitation learning approach](https://doi.org/10.1007/s00521-025-11162-0)：把 LLM 蒸馏视为 imitation learning，通过让学生接触自身生成轨迹来缓解 teacher-forcing 带来的 exposure bias。
+- [Zeroth-Order Kronecker Optimization for Pretraining Language Models](https://doi.org/10.1007/s42979-025-04704-9)：将 zeroth-order Kronecker optimization 用于语言模型预训练，面向不依赖常规反向传播梯度的优化效率。
+- [LLM-OFA: On-the-Fly Adaptation of Large Language Models to Address Temporal Drift Across Two Decades of News](https://doi.org/10.1145/3746252.3760846)：让大语言模型在线适应新闻流中的时间漂移。
+- [Explainable differential diagnosis with dual-inference large language models](https://doi.org/10.1038/s44401-025-00015-6)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [JARVIS: Adaptive Dual-Hemisphere Architectures For Personalized Large Agentic Models](https://doi.org/10.1145/3708319.3733674)：面向跨领域智能体系统的模型、训练、架构或算法候选。价值在于按 round15 更新后的 Model 筛选规则记录与能力轴直接相关的模型侧进展。
+- [HMoRA](https://openreview.net/forum?id=lTkHiXeuDl)：把 LoRA experts 与层次化 MoE routing 结合用于 LLM 微调，在浅层偏 token-level routing、深层偏 task-level routing，并加入 routing auxiliary loss 以增强专家分化和未见任务泛化。

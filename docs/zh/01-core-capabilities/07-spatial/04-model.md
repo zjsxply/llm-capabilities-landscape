@@ -1,20 +1,2362 @@
 # 1.7.4 Model
 
 - [3D-LLM](https://arxiv.org/abs/2307.12981)：早期 3D-language 架构，把 3D 场景表示连接到 LLM，以支持物体、关系和空间上下文推理。
+- [Unified 3D and 4D Panoptic Segmentation via Dynamic Shifting Networks](https://doi.org/10.1109/tpami.2023.3349304)：用动态移位模块统一静态 3D 与时序 4D 全景分割，跟踪点云序列中的实例和语义变化。
+- [ViTA: Video Transformer Adaptor for Robust Video Depth Estimation](https://doi.org/10.1109/tmm.2023.3309559)：为深度估计适配视频 Transformer，使时间上下文提升运动、外观变化和复杂几何下的鲁棒性。
+- [GPT-COPE: A Graph-Guided Point Transformer for Category-Level Object Pose Estimation](https://doi.org/10.1109/tcsvt.2023.3309902)：将图引导与点 Transformer 结合，用于从 3D 点观测估计类别级物体位姿。
+- [GraphAlign++: An Accurate Feature Alignment by Graph Matching for Multi-Modal 3D Object Detection](https://doi.org/10.1109/tcsvt.2023.3306361)：通过图匹配对齐多模态 3D 检测特征，让相机与点云线索支持一致的物体假设。
+- [Ortho-NeRF: generating a true digital orthophoto map using the neural radiance field from unmanned aerial vehicle images](https://doi.org/10.1080/10095020.2023.2296014)：用无人机影像训练 NeRF 重建，并生成几何校正的数字正射影像图。
+- [Deblurring 3D Gaussian Splatting](https://arxiv.org/abs/2401.00834)：为 3D Gaussian Splatting 加入模糊感知优化，使退化图像也能用于场景重建。
+- [Street Gaussians for Modeling Dynamic Urban Scenes](https://arxiv.org/abs/2401.01339)：用 Gaussian primitives 表示动态城市场景，将运动参与者与静态街景分离以支持新视角合成。
+- [DDN-SLAM: Real Time Dense Dynamic Neural Implicit SLAM](https://arxiv.org/abs/2401.01545)：构建实时稠密神经隐式 SLAM 地图，可处理动态场景内容而不是假设环境固定。
+- [Image Sculpting: Precise Object Editing with 3D Geometry Control](https://arxiv.org/abs/2401.01702)：通过显式 3D 几何控制编辑图像物体，实现受空间约束的形状和位姿修改。
+- [LEAP-VO: Long-term Effective Any Point Tracking for Visual Odometry](https://arxiv.org/abs/2401.01887)：利用长期任意点跟踪稳定视觉里程计，缓解长时相机运动中的对应关系缺失。
+- [FMGS: Foundation Model Embedded 3D Gaussian Splatting for Holistic 3D Scene Understanding](https://arxiv.org/abs/2401.01970)：把基础模型特征嵌入 3D Gaussian splats，使渲染场景同时携带用于整体 3D 理解的语义信息。
+- [RoboFusion: Towards Robust Multi-Modal 3D obiect Detection via SAM](https://arxiv.org/abs/2401.03907)：利用 SAM 引导的多模态融合提升鲁棒 3D 目标检测。
+- [GPT-4V(ision) is a Human-Aligned Evaluator for Text-to-3D Generation](https://arxiv.org/abs/2401.04092)：检验 GPT-4V 作为 text-to-3D 输出自动评估器的效果，并把视觉语言评判作为贴近人类偏好的反馈信号。
+- [AGG: Amortized Generative 3D Gaussians for Single Image to 3D](https://arxiv.org/abs/2401.04099)：通过摊销式模型从单张图像生成 3D Gaussian 表示，避免对每个场景单独优化。
+- [Towards Real-World Aerial Vision Guidance With Categorical 6D Pose Tracker](https://arxiv.org/abs/2401.04377)：为真实空中视觉引导跟踪类别级 6D 物体位姿。
+- [PartSTAD: 2D-to-3D Part Segmentation Task Adaptation](https://arxiv.org/abs/2401.05906)：把 2D 部件分割监督迁移到 3D 部件分割，使空间表示中的物体部件可被解析。
+- [TRIPS: Trilinear Point Splatting for Real‐Time Radiance Field Rendering](https://arxiv.org/abs/2401.06003)：用三线性点 splatting 加速辐射场渲染，同时保留实时空间细节。
+- [GroundingGPT:Language Enhanced Multi-modal Grounding Model](https://arxiv.org/abs/2401.06071)：将语言查询定位到多模态视觉内容中的物体和关系。
+- [SD-MVS: Segmentation-Driven Deformation Multi-View Stereo with Spherical Refinement and EM optimization](https://arxiv.org/abs/2401.06385)：把分割驱动形变、球面细化和 EM 优化结合起来改进多视角立体重建。
+- [Real3D-Portrait: One-shot Realistic 3D Talking Portrait Synthesis](https://arxiv.org/abs/2401.08503)：从一张参考图合成真实感 3D 说话人头像，同时建模面部几何、运动和外观。
+- [Multi-Track Timeline Control for Text-Driven 3D Human Motion Generation](https://arxiv.org/abs/2401.08559)：让文本驱动的 3D 人体动作生成支持多轨时间线控制，从而更细粒度地指定身体动作。
+- [Data-Driven Physics-Informed Neural Networks: A Digital Twin Perspective](https://arxiv.org/abs/2401.08667)：从数字孪生视角综述数据驱动的物理信息神经网络，用于空间化仿真和预测。
+- [Efficient4D: Fast Dynamic 3D Object Generation from a Single-view Video](https://arxiv.org/abs/2401.08742)：用更快的 4D 表示从单视角视频生成动态 3D 物体。
+- [Consistent3D: Towards Consistent High-Fidelity Text-to-3D Generation with Deterministic Sampling Prior](https://arxiv.org/abs/2401.09050)：在生成过程中引入确定性采样先验，提高 text-to-3D 的保真度和视角一致性。
+- [PIN-SLAM: LiDAR SLAM Using a Point-Based Implicit Neural Representation for Achieving Global Map Consistency](https://arxiv.org/abs/2401.09101)：在 LiDAR SLAM 中使用点式隐式神经地图，以维持全局地图一致性。
+- [SceneVerse: Scaling 3D Vision-Language Learning for Grounded Scene Understanding](https://arxiv.org/abs/2401.09340)：扩展用于 grounded scene understanding 的 3D 视觉语言学习。
+- [GARField: Group Anything with Radiance Fields](https://arxiv.org/abs/2401.09419)：把辐射场内容分组成空间一致的物体或部件，将 3D 场景表示与分割式 grouping 连接起来。
+- [GaussianBody: Clothed Human Reconstruction via 3d Gaussian Splatting](https://arxiv.org/abs/2401.09720)：用 3D Gaussian Splatting 重建穿衣人体，以捕捉姿态、服装几何和视角相关外观。
+- [ParaHome: Parameterizing Everyday Home Activities Towards 3D Generative Modeling of Human-Object Interactions](https://arxiv.org/abs/2401.10232)：参数化日常家庭活动，使 3D 生成模型能够合成结构化的人物交互。
+- [S$^{3}$M-Net: Joint Learning of Semantic Segmentation and Stereo Matching for Autonomous Driving](https://arxiv.org/abs/2401.11414)：联合学习语义分割与立体匹配，使道路场景语义和深度估计相互增强。
+- [MVSFormer++: Revealing the Devil in Transformer's Details for Multi-View Stereo](https://arxiv.org/abs/2401.11673)：细化多视角立体中的 Transformer 设计选择，以提升稠密 3D 重建质量。
+- [Fourier Transporter: Bi-Equivariant Robotic Manipulation in 3D](https://arxiv.org/abs/2401.12046)：用傅里叶域双等变性表示 3D 操作策略，使其保持旋转和平移一致性。
 - [SpatialVLM](https://arxiv.org/abs/2401.12168)：面向空间推理的 VLM 训练方法，通过空间数据、监督信号和模型适配注入空间能力。
+- [Template-Free Single-View 3D Human Digitalization with Diffusion-Guided LRM](https://arxiv.org/abs/2401.12175)：结合大重建模型和扩散指导，从单张图像数字化 3D 人体且不依赖固定人体模板。
+- [RGBD Objects in the Wild: Scaling Real-World 3D Object Learning from RGB-D Videos](https://arxiv.org/abs/2401.12592)：从非受控 RGB-D 视频中抽取物体观测，扩展真实世界 3D 物体学习。
+- [TIP-Editor: An Accurate 3D Editor Following Both Text-Prompts And Image-Prompts](https://arxiv.org/abs/2401.14828)：同时遵循文本和图像提示编辑 3D 内容，增强对几何和外观的可控性。
+- [Gaussian Splashing: Dynamic Fluid Synthesis with Gaussian Splatting](https://arxiv.org/abs/2401.15318)：用 Gaussian Splatting 表示动态流体，将流体运动合成为随时间变化的 3D 内容。
+- [VR-GS: A Physical Dynamics-Aware Interactive Gaussian Splatting System in Virtual Reality](https://arxiv.org/abs/2401.16663)：把物理动态和虚拟现实交互加入 Gaussian Splatting，用于可编辑 3D 场景。
+- [BlockFusion: Expandable 3D Scene Generation using Latent Tri-plane Extrapolation](https://arxiv.org/abs/2401.17053)：通过外推 latent tri-plane 表示扩展已生成的 3D 场景。
+- [SAGD: Boundary-Enhanced Segment Anything in 3D Gaussian via Gaussian Decomposition](https://arxiv.org/abs/2401.17857)：通过边界增强的 Gaussian 分解，让 Segment Anything 式掩码作用于 Gaussian 场景表示。
+- [StopThePop: Sorted Gaussian Splatting for View-Consistent Real-time Rendering](https://arxiv.org/abs/2402.00525)：对 Gaussian splats 排序以减少实时渲染中的 popping 伪影并提升视角一致性。
+- [360-GS: Layout-Guided Panoramic Gaussian Splatting for Indoor Roaming](https://arxiv.org/abs/2402.00763)：用室内布局引导构建全景 Gaussian Splatting 场景，用于 360 度室内漫游。
+- [Geometry Transfer for Stylizing Radiance Fields](https://arxiv.org/abs/2402.00863)：在辐射场风格化时迁移几何结构，使外观变化仍保留 3D 场景布局。
+- [ViCA-NeRF: View-Consistency-Aware 3D Editing of Neural Radiance Fields](https://arxiv.org/abs/2402.00864)：用显式视角一致性约束编辑 NeRF 场景，减少跨视角几何或外观漂移。
+- [AToM: Amortized Text-to-Mesh using 2D Diffusion](https://arxiv.org/abs/2402.00867)：借助 2D 扩散指导实现摊销式 text-to-mesh 生成，直接产生 3D 网格资产。
+- [GaMeS: Mesh-Based Adapting and Modification of Gaussian Splatting](https://arxiv.org/abs/2402.01459)：利用网格结构适配和修改 Gaussian Splatting 场景，使几何编辑更可控。
+- [Exploiting Low-Level Representations for Ultra-Fast Road Segmentation](https://arxiv.org/abs/2402.02430)：利用低层视觉表示加速道路分割，服务于驾驶图像中的空间场景理解。
+- [TensoSDF: Roughness-aware Tensorial Representation for Robust Geometry and Material Reconstruction](https://arxiv.org/abs/2402.02771)：使用 roughness-aware tensorial representation 进行鲁棒几何与材质重建。
+- [Retrieval-Augmented Score Distillation for Text-to-3D Generation](https://arxiv.org/abs/2402.02972)：检索相关 3D 先验来引导 score distillation，提升 text-to-3D 生成而不只依赖提示优化。
+- [ActiveAnno3D - An Active Learning Framework for Multi-Modal 3D Object Detection](https://arxiv.org/abs/2402.03235)：把主动学习用于多模态 3D 目标检测，选择信息量更高的标注样本。
+- [SGS-SLAM: Semantic Gaussian Splatting For Neural Dense SLAM](https://arxiv.org/abs/2402.03246)：在稠密神经 SLAM 地图中融合语义标签和 Gaussian Splatting 表示。
+- [4D-Rotor Gaussian Splatting: Towards Efficient Novel View Synthesis for Dynamic Scenes](https://arxiv.org/abs/2402.03307)：用 rotor-based 4D Gaussian Splatting 高效合成动态场景的新视角。
+- [3Doodle: Compact Abstraction of Objects with 3D Strokes](https://arxiv.org/abs/2402.03690)：将物体表示为紧凑的 3D strokes，形成抽象但可编辑的空间形状模型。
+- [EscherNet: A Generative Model for Scalable View Synthesis](https://arxiv.org/abs/2402.03908)：通过建模跨目标视角的一致场景外观，扩展生成式新视角合成。
+- [Meet JEANIE: A Similarity Measure for 3D Skeleton Sequences via Temporal-Viewpoint Alignment](https://arxiv.org/abs/2402.04599)：在时间和视角维度对齐 3D 骨架序列，用于视角感知的人体动作相似度比较。
+- [OV-NeRF: Open-Vocabulary Neural Radiance Fields With Vision and Language Foundation Models for 3D Semantic Understanding](https://arxiv.org/abs/2402.04648)：把视觉语言基础模型特征注入 NeRF，以支持开放词表 3D 语义理解。
+- [Mesh-based Gaussian Splatting for Real-time Large-scale Deformation](https://arxiv.org/abs/2402.04796)：将 Gaussian splats 锚定到网格结构上，使大尺度形变能够实时渲染。
+- [LGM: Large Multi-View Gaussian Model for High-Resolution 3D Content Creation](https://arxiv.org/abs/2402.05054)：用大型前馈重建模型从多视角预测高分辨率 3D Gaussian 内容。
+- [SPAD: Spatially Aware Multi-View Diffusers](https://arxiv.org/abs/2402.05235)：让多视角扩散过程具备空间感知条件，从而保持生成视图的几何一致性。
+- [IM-3D: Iterative Multiview Diffusion and Reconstruction for High-Quality 3D Generation](https://arxiv.org/abs/2402.08682)：交替执行多视角扩散和重建步骤，以提升生成 3D 资产的质量。
+- [L3GO: Language Agents with Chain-of-3D-Thoughts for Generating Unconventional Objects](https://arxiv.org/abs/2402.09052)：用语言智能体分解和 chain-of-3D-thought 提示生成非常规 3D 物体。
+- [Loopy-SLAM: Dense Neural SLAM with Loop Closures](https://arxiv.org/abs/2402.09944)：为稠密神经 SLAM 加入回环闭合处理，使重建地图保持全局一致。
+- [GES: Generalized Exponential Splatting for Efficient Radiance Field Rendering](https://arxiv.org/abs/2402.10128)：用 generalized exponential splatting 替换标准 splat 核，以加速辐射场渲染。
+- [GaussianObject: High-Quality 3D Object Reconstruction from Four Views with Gaussian Splatting](https://arxiv.org/abs/2402.10259)：仅用四个视角和 Gaussian Splatting 重建高质量 3D 物体。
+- [GaussianHair: Hair Modeling and Rendering with Light-aware Gaussians](https://arxiv.org/abs/2402.10483)：用 light-aware Gaussians 建模头发几何和外观，以实现真实感重建与渲染。
+- [PointMamba: A Simple State Space Model for Point Cloud Analysis](https://arxiv.org/abs/2402.10739)：把 Mamba 式状态空间建模用于点云分析，作为 point transformers 的替代路线。
+- [Binary Opacity Grids: Capturing Fine Geometric Detail for Mesh-Based View Synthesis](https://arxiv.org/abs/2402.12377)：用离散 opacity grid、多射线抗锯齿、熵二值化和融合式网格化恢复细薄结构，并产出可实时渲染的紧凑网格。
+- [MVDiffusion++: A Dense High-resolution Multi-view Diffusion Model for Single or Sparse-view 3D Object Reconstruction](https://arxiv.org/abs/2402.12712)：通过 pose-free self-attention 和 view dropout，从单张或少量图像合成密集高分辨率物体视图，而不显式依赖相机位姿。
+- [FlashTex: Fast Relightable Mesh Texturing with LightControlNet](https://arxiv.org/abs/2402.13251)：先用 LightControlNet 生成网格参考视图，再用 SDS 优化纹理，同时把表面材质反射与光照解耦。
+- [Hybrid Video Diffusion Models with 2D Triplane and 3D Wavelet Representation](https://arxiv.org/abs/2402.13729)：用投影 2D triplane、3D wavelet 体表示和频率线索编码视频，使扩散模型更直接地建模时空细节。
+- [Identifying Unnecessary 3D Gaussians using Clustering for Fast Rendering of 3D Gaussian Splatting](https://arxiv.org/abs/2402.13827)：离线聚类相近 Gaussians，并在运行时投影簇以剔除当前视角无关的 splats，减少渲染计算。
+- [Real-time 3D-aware Portrait Editing from a Single Image](https://arxiv.org/abs/2402.14000)：从 3D 人像生成器和 text-to-image 模型蒸馏轻量编辑器，使提示编辑在实时条件下保持人像几何。
+- [Seamless Human Motion Composition with Blended Positional Encodings](https://arxiv.org/abs/2402.15509)：提出带混合绝对与相对位置编码的 FlowMDM，用于生成长时文本引导动作序列并保持平滑过渡。
+- [CLIPose: Category-Level Object Pose Estimation With Pre-Trained Vision-Language Knowledge](https://arxiv.org/abs/2402.15726)：通过对比学习对齐 3D 点、图像和文本特征，并用位姿感知 CLIP prompt tuning 实现实时类别级 6D 位姿估计。
+- [Spec-Gaussian: Anisotropic View-Dependent Appearance for 3D Gaussian Splatting](https://arxiv.org/abs/2402.15870)：用 anisotropic spherical Gaussian 外观场替代球谐函数，并配合 coarse-to-fine 训练以处理镜面和各向异性 3DGS 场景。
+- [GVA: Reconstructing Vivid 3D Gaussian Avatars from Monocular Videos](https://arxiv.org/abs/2402.16607)：用 normal map 与 silhouette 对齐细化人体姿态，并以表面引导重初始化 Gaussians 来构建可控单目 3D avatar。
+- [Disentangled 3D Scene Generation with Layout Learning](https://arxiv.org/abs/2402.16936)：联合优化每个物体的 NeRF 与场景 layout，并用预训练图像生成器作为先验实现无监督物体级 3D 场景分解。
+- [VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction](https://arxiv.org/abs/2402.17427)：把大场景划分为空间单元，并结合外观与可见性处理训练 Gaussian blocks，用于城市级重建。
+- [Weakly Supervised Monocular 3D Detection with a Single-View Image](https://arxiv.org/abs/2402.19144)：用 self-knowledge distillation、深度融合 3D-like 特征、不确定性感知损失和迁移调制，在无 3D 标注下训练单目 3D 检测。
+- [Learning Intra-View and Cross-View Geometric Knowledge for Stereo Matching](https://arxiv.org/abs/2402.19270)：构建 ICGNet，把单图内部的 interest-point 几何与双目跨视图对应关系结合起来估计 disparity。
+- [Learning to walk in confined spaces using 3D representation](https://arxiv.org/abs/2403.00187)：在 3D volumetric terrain representations 上训练层次化 RL 运动控制器，使四足机器人能穿越悬垂障碍和狭窄空间。
+- [Can Transformers Capture Spatial Relations between Objects?](https://arxiv.org/abs/2403.00729)：定义 physically grounded 的空间关系标签，并提出 RelatiViT 来提升自然场景中的物体关系预测。
+- [Point Cloud Mamba: Point Cloud Learning via State Space Model](https://arxiv.org/abs/2403.00762)：用一致遍历顺序、point prompts 和坐标位置编码把 3D 点序列化，使 Mamba 以线性复杂度建模点云。
+- [3DGStream: On-the-Fly Training of 3D Gaussians for Efficient Streaming of Photo-Realistic Free-Viewpoint Videos](https://arxiv.org/abs/2403.01444)：从多视角视频流在线训练逐帧 3D Gaussians，为自由视角视频提供紧凑表示。
+- [MatchU: Matching Unseen Objects for 6D Pose Estimation from RGB-D Images](https://arxiv.org/abs/2403.01517)：在 Fuse-Describe-Match 流程中融合 RGB 纹理和旋转不变 3D descriptors，用于未见物体的 6D 位姿估计。
+- [TripoSR: Fast 3D Object Reconstruction from a Single Image](https://arxiv.org/abs/2403.02151)：改造 LRM Transformer 架构和训练流程，可在不到 0.5 秒内从单图生成 3D 网格。
+- [3DTopia: Large Text-to-3D Generation Model with Hybrid Diffusion Priors](https://arxiv.org/abs/2403.02234)：结合 text-conditioned tri-plane latent diffusion prior、2D diffusion 纹理细化和 Objaverse caption 清洗，快速生成 text-to-3D 资产。
+- [FastOcc: Accelerating 3D Occupancy Prediction by Fusing the 2D Bird’s-Eye View and Perspective View](https://arxiv.org/abs/2403.02710)：用轻量 BEV 卷积与从 perspective view 插值得到的 voxel 特征替代重型 3D occupancy head，加速驾驶场景占据预测。
+- [DART: Implicit Doppler Tomography for Radar Novel View Synthesis](https://arxiv.org/abs/2403.03896)：用面向雷达物理的 NeRF 式 reflectance 与 transmittance 渲染，合成 range-Doppler 新视角和断层图像。
+- [3D Diffusion Policy](https://arxiv.org/abs/2403.03954)：将 diffusion-policy 模仿学习条件化到紧凑稀疏点云编码上，以少量示范提升 visuomotor 泛化。
+- [Radiative Gaussian Splatting for Efficient X-ray Novel View Synthesis](https://arxiv.org/abs/2403.04116)：提出 X-Gaussian，结合 radiative point modeling、可微 radiative rasterization 和 scanner-aware cuboid 初始化，实现快速 X-ray 新视角合成。
+- [BAGS: Blur Agnostic Gaussian Splatting through Multi-Scale Kernel Modeling](https://arxiv.org/abs/2403.04926)：围绕 3DGS 优化学习 per-pixel blur kernels 与质量掩码，使模糊采集图像也能重建 photo-realistic 场景。
+- [CRM: Single Image to 3D Textured Mesh with Convolutional Reconstruction Model](https://arxiv.org/abs/2403.05034)：先生成六个正交视图，再输入卷积 U-Net triplane 模型并优化 Flexicubes，无需测试时优化即可输出 textured mesh。
+- [OccFusion: Depth Estimation Free Multi-sensor Fusion for 3D Occupancy Prediction](https://arxiv.org/abs/2403.05329)：在不引入深度估计阶段的情况下融合相机与 LiDAR 特征进行 3D occupancy prediction，并加入 active training 与 decoder 模块。
+- [Is Vanilla MLP in Neural Radiance Field Enough for Few-Shot View Synthesis?](https://arxiv.org/abs/2403.06092)：用 multi-input MLP layers、颜色与密度分离建模以及正则项改造 NeRF，降低 few-shot view synthesis 的过拟合。
+- [SemGauss-SLAM: Dense Semantic Gaussian Splatting SLAM](https://arxiv.org/abs/2403.07494)：把语义特征嵌入 3D Gaussians，并用 semantic-informed bundle adjustment 同时支持稠密 SLAM 的建图、跟踪和分割。
+- [Robust Synthetic-to-Real Transfer for Stereo Matching](https://arxiv.org/abs/2403.07705)：通过 frozen teacher、EMA teacher 与 student 网络比较 GT 和 pseudo labels，在微调 stereo matching 时保持跨域泛化。
+- [Unleashing HyDRa: Hybrid Fusion, Depth Consistency and Radar for Unified 3D Perception](https://arxiv.org/abs/2403.07746)：在 perspective 与 BEV 空间融合相机和雷达特征，并加入 Height Association Transformer 与 radar-weighted depth consistency。
+- [StyleGaussian: Instant 3D Style Transfer with Gaussian Splatting](https://arxiv.org/abs/2403.07807)：把 VGG 特征嵌入 3D Gaussians，迁移参考图风格，并用 KNN-based 3D CNN 解码以保持多视角一致的风格化。
+- [MRC-Net: 6-DoF Pose Estimation with MultiScale Residual Correlation](https://arxiv.org/abs/2403.08019)：先分类 CAD 渲染的粗位姿，再通过 RGB 输入与渲染物体视图之间的 multi-scale correlation layer 回归残差位姿。
+- [Task and Motion Planning in Hierarchical 3D Scene Graphs](https://arxiv.org/abs/2403.08094)：从 hierarchical 3D scene graphs 派生稀疏 task-and-motion planning domain，并只增量加入与规划相关的物体。
+- [Gaussian Splatting in Style](https://arxiv.org/abs/2403.08498)：在 Gaussian splatting 表示上学习风格感知变换来风格化 3D 场景，同时保持三维一致性。
+- [GaussianImage: 1000 FPS Image Representation and Compression by 2D Gaussian Splatting](https://arxiv.org/abs/2403.08551)：把图像表示为带位置、协方差和颜色的 2D Gaussians，并结合累积求和渲染与向量量化，实现低显存、高速解码的 INR 式压缩。
+- [GaussCtrl: Multi-View Consistent Text-Driven 3D Gaussian Splatting Editing](https://arxiv.org/abs/2403.08733)：先渲染 3DGS 多视角图像，再用深度条件 ControlNet 和跨视角 latent attention 对齐，完成多视角一致的文本驱动编辑。
+- [Envision3D: One Image to 3D with Anchor Views Interpolation](https://arxiv.org/abs/2403.08902)：通过 anchor-view diffusion 与 video-diffusion 插值从单图生成稠密一致多视角图像，再用 coarse-to-fine 采样重建带纹理网格。
+- [When Semantic Segmentation Meets Frequency Aliasing](https://arxiv.org/abs/2403.09065)：把困难分割像素分析为频域 aliasing 误差，并加入 de-aliasing filter 与 FreqMix 模块来提升语义分割和低光实例分割。
+- [A New Split Algorithm for 3D Gaussian Splatting](https://arxiv.org/abs/2403.09143)：将一个 Gaussian 闭式拆分为两个保持数学特性一致的 Gaussian，使 3DGS 更均匀、更贴合表面并利于编辑和点云提取。
+- [Hyper-3DG: Text-to-3D Gaussian Generation via Hypergraph](https://arxiv.org/abs/2403.09236)：用 geometry-texture hypergraph refiner 建模 3D Gaussian 属性间的高阶相关性，缓解 text-to-3D 的过平滑、过饱和和 Janus 问题。
+- [Relaxing Accurate Initialization Constraint for 3D Gaussian Splatting](https://arxiv.org/abs/2403.09413)：提出 RAIN-GS，通过分析 SfM 初始化的频域影响并调整优化策略，让 3DGS 可从噪声或随机点云训练。
+- [Reconstruction and Simulation of Elastic Objects with Spring-Mass 3D Gaussians](https://arxiv.org/abs/2403.09434)：把 spring-mass 动力学嵌入 3D Gaussian kernel，使弹性物体可从视频重建并在新初始状态或环境属性下模拟。
+- [Make-Your-3D: Fast and Consistent Subject-Driven 3D Content Generation](https://arxiv.org/abs/2403.09625)：通过多视角扩散模型与身份特定 2D 生成模型的 co-evolution，从单张主体图像快速生成可文本修改的一致 3D 内容。
+- [Touch-GS: Visual-Tactile Supervised 3D Gaussian Splatting](https://arxiv.org/abs/2403.09875)：把光学触觉传感融合进单目深度，并用不确定性加权深度损失监督 3DGS，改善少视角、反光和透明物体重建。
+- [Controllable Text-to-3D Generation via Surface-Aligned Gaussian Splatting](https://arxiv.org/abs/2403.09981)：提出 MVControl 与绑定到网格面的 surface-aligned Gaussians，使 text-to-3D 可受深度、法线、边缘或涂鸦条件控制。
+- [Visual Foundation Models Boost Cross-Modal Unsupervised Domain Adaptation for 3D Semantic Segmentation](https://arxiv.org/abs/2403.10001)：利用视觉基础模型生成目标域伪标签、语义增强 frustum mixing 和跨模态预测融合，用于 3D segmentation 的无监督域适应。
+- [Texture-GS: Disentangling the Geometry and Texture for 3D Gaussian Splatting Editing](https://arxiv.org/abs/2403.10050)：通过学习 UV mapping、局部 Taylor 近似和可学习纹理，将 3DGS 几何与外观解耦，支持高保真外观编辑和实时渲染。
+- [GeoGS3D: Single-view 3D Reconstruction via Geometric-aware Diffusion Model and Gaussian Splatting](https://arxiv.org/abs/2403.10242)：从单图提取正交平面几何特征生成一致多视角图像，并在 Gaussian splatting 中结合 epipolar attention 与 GDS 剪枝。
+- [Isotropic3D: Image-to-3D Generation Based on a Single CLIP Embedding](https://arxiv.org/abs/2403.10395)：只用单个 CLIP 图像嵌入条件化 image-to-3D score distillation，避免硬性参考视角监督导致的扁平或畸变几何。
+- [SWAG: Splatting in the Wild images with Appearance-conditioned Gaussians](https://arxiv.org/abs/2403.10427)：用 appearance-conditioned 3D Gaussians 建模无约束图像集合，在重建中吸收光照、曝光和采集条件差异。
+- [GS-Pose: Generalizable Segmentation-Based 6D Object Pose Estimation with 3D Gaussian Splatting](https://arxiv.org/abs/2403.10683)：围绕分割线索和 3D Gaussian 物体表示构建可泛化 6D pose estimator，减少对物体专用稠密深度的依赖。
+- [Match-Stereo-Videos: Bidirectional Alignment for Consistent Dynamic Stereo Matching](https://arxiv.org/abs/2403.10755)：提出 BiDAStereo，将三帧局部相关与 motion-propagation recurrent unit 结合，使动态 stereo-video 视差更具时序一致性。
+- [N2F2: Hierarchical Scene Understanding with Nested Neural Feature Fields](https://arxiv.org/abs/2403.10997)：把 CLIP 对齐的层级 2D 分割嵌入蒸馏到同一个 neural feature field 的嵌套维度中，用于 coarse-to-fine 开放词汇 3D 分割和定位。
+- [Analytic-Splatting: Anti-Aliased 3D Gaussian Splatting via Analytic Integration](https://arxiv.org/abs/2403.11056)：用像素 footprint 上的解析 Gaussian 积分替代点采样着色，使 3DGS 在不同渲染分辨率下更抗 aliasing。
+- [Recent advances in 3D Gaussian splatting](https://arxiv.org/abs/2403.11134)：综述 3DGS 的渲染公式、重建、编辑、动态场景、物理仿真和下游应用，并与 NeRF 式隐式场表示对照。
+- [Compact 3D Gaussian Splatting For Dense Visual SLAM](https://arxiv.org/abs/2403.11247)：通过 sliding-window masking、geometry codebook 和 global bundle adjustment 压缩 Gaussian-SLAM 地图，同时保持跟踪与渲染质量。
+- [BrightDreamer: Generic 3D Gaussian Generative Framework for Fast Text-to-3D Synthesis](https://arxiv.org/abs/2403.11273)：从文本前馈生成 3D Gaussians，先预测 anchor shape deformation，再用 text-guided triplane generator 生成缩放、旋转、不透明度和 SH 属性。
+- [GeoGaussian: Geometry-aware Gaussian Splatting for Scene Rendering](https://arxiv.org/abs/2403.11324)：初始化贴合表面的 thin Gaussians，并用几何约束的 densification 与优化保护弱纹理区域的场景结构。
+- [3DGS-ReLoc: 3D Gaussian Splatting for Map Representation and Visual ReLocalization](https://arxiv.org/abs/2403.11367)：用 LiDAR 初始化 3DGS 地图，并结合 voxel/KD-tree 索引、NCC 匹配与 PnP refinement 在 KITTI360 上做视觉重定位。
+- [Scene-LLM: Extending Language Model for 3D Visual Understanding and Reasoning](https://arxiv.org/abs/2403.11401)：把场景级与自我中心 3D 特征投影到 LLM embedding space，支持 dense captioning、问答和室内交互规划。
+- [BAGS: Building Animatable Gaussian Splatting from a Monocular Video with Diffusion Priors](https://arxiv.org/abs/2403.11427)：利用 diffusion priors 和 rigid regularization 从单目视频构建可动画化 3D Gaussian 模型，缓解视角覆盖不足。
+- [Motion-Aware 3D Gaussian Splatting for Efficient Dynamic Scene Reconstruction](https://arxiv.org/abs/2403.11447)：从 optical flow 挖掘运动线索，为动态 3DGS 加入 flow-Gaussian 对应、flow augmentation 和 transient-aware deformation 辅助监督。
+- [GenFlow: Generalizable Recurrent Flow for 6D Pose Refinement of Novel Objects](https://arxiv.org/abs/2403.11510)：在渲染图与观测图之间递归预测 optical flow，并结合 3D shape 约束和 coarse-to-fine correlation 来细化新物体 6D 位姿。
+- [BAD-Gaussians: Bundle Adjusted Deblur Gaussian Splatting](https://arxiv.org/abs/2403.11831)：通过运动模糊成像模型联合优化 Gaussian 参数和曝光期间相机轨迹，从模糊图像恢复可实时渲染的清晰重建。
+- [View-Consistent 3D Editing with Gaussian Splatting](https://arxiv.org/abs/2403.11868)：在 diffusion-guided 3DGS 编辑中加入 cross-attention consistency 与 editing consistency 模块，减少多视角指导冲突和 mode collapse。
+- [LN3Diff++: Scalable Latent Neural Fields Diffusion for Speedy 3D Generation](https://arxiv.org/abs/2403.12019)：把图像编码为紧凑 3D-aware latent neural fields，在该 latent space 训练扩散模型，并用 transformer decoder 快速生成条件 3D。
+- [Ultraman: Single Image 3D Human Reconstruction with Ultra Speed and Detail](https://arxiv.org/abs/2403.12028)：通过人体网格重建、多视角一致纹理生成和 texture mapping，从单图快速恢复带高质量纹理的 3D 人体。
+- [Generic 3D Diffusion Adapter Using Controlled Multi-View Editing](https://arxiv.org/abs/2403.12032)：提出 MVEdit，用 training-free 3D adapter 将多视角扩散去噪结果提升为一致 textured mesh，覆盖图像、文本和 3D 编辑任务。
+- [OV9D: Open-Vocabulary Category-Level 9D Object Pose and Size Estimation](https://arxiv.org/abs/2403.12396)：定义开放词汇 9D 位姿与尺寸估计任务，并用 OO3D-9D 数据、DinoV2 特征和 text-to-image diffusion 先验泛化到未见类别。
+- [High-Fidelity SLAM Using Gaussian Splatting with Rendering-Guided Densification and Regularized Optimization](https://arxiv.org/abs/2403.12535)：以 rendering-guided densification 和防遗忘 regularization 优化 Gaussian map，实现高保真 RGB-D SLAM 的跟踪与建图。
+- [Rgbd Gs-icp Slam](https://arxiv.org/abs/2403.12550)：将 generalized ICP tracking 与单一 3DGS map 耦合，并在 tracking 和 mapping 间交换 covariance 信息以实现快速 dense RGB-D SLAM。
+- [Planner3D: LLM-enhanced Graph Prior Meets 3D Indoor Scene Explicit Regularization.](https://arxiv.org/abs/2403.12848)：用 LLM 增强 scene graph 特征，并加入显式 layout regularization，联合生成物体形状和避免碰撞的室内布局。
+- [TexDreamer: Towards Zero-Shot High-Fidelity 3D Human Texture Generation](https://arxiv.org/abs/2403.12906)：把 text-to-image 模型适配到 semantic UV maps，并用 feature translator 支持秒级文本或图像条件 3D 人体纹理生成。
+- [GVGEN: Text-to-3D Generation with Volumetric Representation](https://arxiv.org/abs/2403.12957)：把 3D Gaussians 组织成结构化 GaussianVolume，并用 coarse-to-fine diffusion、pruning 和 densifying 快速生成文本条件 3D。
+- [Fresco: Spatial-Temporal Correspondence for Zero-Shot Video Translation](https://arxiv.org/abs/2403.12962)：在 zero-shot video diffusion translation 中同时约束帧内与帧间 correspondence，并显式更新特征以提升时空一致性。
+- [Text‐to‐3D Shape Generation](https://arxiv.org/abs/2403.13289)：按监督数据类型梳理 text-to-3D shape generation，覆盖 3D 表示、可微渲染、文本与图像预训练以及现有局限。
+- [Gaussian Splatting on the Move: Blur and Rolling Shutter Compensation for Natural Camera Motion](https://arxiv.org/abs/2403.13327)：把单帧曝光期间的相机位姿建模为动态变化，并结合 VIO 速度估计在 3DGS 可微渲染中处理 motion blur 和 rolling shutter。
+- [Scaling Diffusion Models to Real-World 3D LiDAR Scene Completion](https://arxiv.org/abs/2403.13470)：把扩散 noising/denoising 直接改写到场景尺度 LiDAR 点上，并用正则损失稳定单扫描 scene completion。
+- [Compress3D: a Compressed Latent Space for 3D Generation from a Single Image](https://arxiv.org/abs/2403.13524)：用 triplane autoencoder 压缩几何和纹理，再在图像条件与估计 shape embedding 上训练扩散模型，实现快速单图 3D 生成。
+- [DepthFM: Fast Monocular Depth Estimation with Flow Matching](https://arxiv.org/abs/2403.13788)：把单目深度估计建模为图像分布到深度分布的 flow matching，并借助扩散模型知识与合成数据提升生成式深度采样效率。
+- [RadSplat: Radiance Field-Informed Gaussian Splatting for Robust Real- Time Rendering with 900+ FPS](https://arxiv.org/abs/2403.13806)：用 radiance fields 作为 Gaussian 优化先验，再通过 point pruning 和 test-time filtering 在复杂场景中实现 900 FPS 以上渲染。
+- [Mini-Splatting: Representing Scenes with a Constrained Number of Gaussians](https://arxiv.org/abs/2403.14166)：从点云视角重整 Gaussian 空间分布，结合 blur split、depth reinitialization、intersection preservation 和 sampling 提升紧凑 3DGS 表示。
+- [HCTO: Optimality-Aware LiDAR Inertial Odometry with Hybrid Continuous Time Optimization for Compact Wearable Mapping System](https://arxiv.org/abs/2403.14173)：从 IMU 识别人类运动状态，构造 hybrid continuous-time factors，并以 optimal design 选择 LiDAR 对应点来提升 wearable mapping odometry。
+- [Zero123-6D: Zero-shot Novel View Synthesis for RGB Category-level 6D Pose Estimation](https://arxiv.org/abs/2403.14279)：利用 diffusion novel-view synthesis 从 RGB 图像获得类别级 6D 粗位姿，再用在线优化适配类内几何差异和未见类别。
+- [SurroundSDF: Implicit 3D Scene Understanding Based on Signed Distance Field](https://arxiv.org/abs/2403.14366)：从环视驾驶图像预测连续 signed-distance field 与语义场，用隐式障碍物表面替代仅离散 voxel 的占据预测。
+- [InfNeRF: Towards Infinite Scale NeRF Rendering with O(log n) Space Complexity](https://arxiv.org/abs/2403.14376)：把 level-of-detail 渲染扩展到 NeRF，通过对场景数据分层组织实现超大场景的对数空间存储和动态加载。
+- [HAC: Hash-grid Assisted Context for 3D Gaussian Splatting Compression](https://arxiv.org/abs/2403.14530)：利用结构化 hash-grid context 建模稀疏无序 Gaussian anchors 之间的关系，从而压缩 3DGS 属性。
+- [VAPO: Visibility-Aware Keypoint Localization for Efficient 6DoF Object Pose Estimation](https://arxiv.org/abs/2403.14559)：只定位与可见性相关的重要 3D keypoints，并生成可见性标签，以提升实例级 6DoF 位姿中的 3D-2D 对应。
+- [DreamReward: Text-to-3D Generation with Human Preference](https://arxiv.org/abs/2403.14613)：收集 2.5 万组专家 text-to-3D 偏好比较，训练 Reward3D 偏好模型，并用该奖励引导 text-to-3D 生成。
+- [GRM: Large Gaussian Reconstruction Model for Efficient 3D Reconstruction and Generation](https://arxiv.org/abs/2403.14621)：用前馈 Transformer 把稀疏多视角像素转换为 pixel-aligned 3D Gaussians，约 0.1 秒即可重建 3D 资产。
+- [MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images](https://arxiv.org/abs/2403.14627)：从稀疏多视角图像高效构建 3D Gaussian splats，适合空间重建模型条目。
+- [STAG4D: Spatial-Temporal Anchored Generative 4D Gaussians](https://arxiv.org/abs/2403.14939)：用扩散模型初始化多视角动态 Gaussians，并优化时空 anchors，以生成高保真且时空一致的 4D 内容。
+- [DreamFlow: High-Quality Text-to-3D Generation by Approximating Probability Flow](https://arxiv.org/abs/2403.14966)：通过近似 probability flow 降低 score distillation 的梯度方差，使 text-to-3D 优化更快且更稳定。
+- [Tri-Perspective view Decomposition for Geometry-Aware Depth Completion](https://arxiv.org/abs/2403.15008)：把稀疏深度分解为三个 perspective views，使 depth completion 能捕捉超出 2D depth map 或原始点补偿的细粒度 3D 几何。
+- [ThemeStation: Generating Theme-Aware 3D Assets from Few Exemplars](https://arxiv.org/abs/2403.15383)：执行 few-exemplar 3D-to-3D 生成，在保持输入样例共同主题的同时产生几何和外观可变化的新 3D 资产。
+- [LATTE3D: Large-scale Amortized Text-To-Enhanced3D Synthesis](https://arxiv.org/abs/2403.15385)：扩展摊销式 text-to-3D 合成，使提示能快速生成细节 3D 资产，而不依赖每个提示耗时约一小时的优化。
+- [Semantic Gaussians: Open-Vocabulary Scene Understanding with 3D Gaussian Splatting](https://arxiv.org/abs/2403.15624)：把语义特征与 3D Gaussian splats 联合优化，使同一表示同时支持照片级渲染和开放词汇场景理解。
+- [SceneX: Procedural Controllable Large-scale Scene Generation via Large-language Models](https://arxiv.org/abs/2403.15698)：结合 PCGHub 资产和 API 文档以及能生成 Blender 动作的 PCGPlanner，把文本描述转换为可控的程序化 3D 场景，如自然环境和无边界城市。
+- [Gaussian in the Wild: 3D Gaussian Splatting for Unconstrained Image Collections](https://arxiv.org/abs/2403.15704)：在 3DGS 重建中建模点级外观变化和 transient occluders，以处理无约束野外照片集合。
+- [CG-SLAM: Efficient Dense RGB-D SLAM in a Consistent Uncertainty-aware 3D Gaussian Field](https://arxiv.org/abs/2403.16095)：用 uncertainty-aware 3D Gaussian field 替代慢速 NeRF 体渲染，在 dense RGB-D SLAM 中实现更快的一致建图。
+- [Entity-NeRF: Detecting and Removing Moving Entities in Urban Scenes](https://arxiv.org/abs/2403.16141)：结合 entity segmentation、thing/stuff 线索和实体级静止统计，在 NeRF 重建静态城市背景前识别并移除运动物体。
+- [Frankenstein: Generating Semantic-Compositional 3D Scenes in One Tri-Plane](https://arxiv.org/abs/2403.16210)：在单个 tri-plane 中生成语义可组合 3D 场景，通过多个 SDF 场解码分离部件，并在组合 tri-plane latent space 上训练扩散模型。
+- [latentSplat: Autoencoding Variational Gaussians for Fast Generalizable 3D Reconstruction](https://arxiv.org/abs/2403.16292)：在紧凑 3D latent space 中预测 semantic Gaussians，再用基于真实视频训练的轻量 2D 生成器 splat 和解码。
+- [CVT-xRF: Contrastive In-Voxel Transformer for 3D Consistent Radiance Fields from Sparse Inputs](https://arxiv.org/abs/2403.16885)：让采样光线穿过共享体素，用 in-voxel Transformer 推断邻近点属性，并加入体素内对比损失来约束稀疏输入 radiance fields 的 3D 一致性。
+- [GSDF: 3DGS Meets SDF for Improved Rendering and Reconstruction](https://arxiv.org/abs/2403.16964)：把 3D Gaussian 分支与 neural SDF 分支通过相互引导和联合监督耦合，在保持高质量 splatting 渲染的同时恢复更细致的表面。
+- [Comp4D: LLM-Guided Compositional 4D Scene Generation](https://arxiv.org/abs/2403.16993)：用 LLM 将场景分解为多个物体，分别生成 4D 物体表示后再组合成动态场景。
+- [Learning Spatial Adaptation and Temporal Coherence in Diffusion Models for Video Super-Resolution](https://arxiv.org/abs/2403.17000)：冻结预训练 diffusion UNet/VAE，仅学习 spatial feature adaptation 和 tubelet temporal feature alignment 模块，从像素和帧间两层引导视频超分辨率。
+- [Is Your LiDAR Placement Optimized for 3D Scene Understanding?](https://arxiv.org/abs/2403.17009)：提出 Place3D，用 semantic-occupancy-grid surrogate metric 优化多 LiDAR 布局，并在 28 万帧干净与恶劣天气驾驶数据上验证分割和 3D 检测效果。
+- [Generation of Asset Administration Shell With Large Language Model Agents: Toward Semantic Interoperability in Digital Twins in the Context of Industry 4.0](https://arxiv.org/abs/2403.17209)：偏离核心空间建模；它用 LLM 生成 semantic-node 结构和 Asset Administration Shell 数字孪生元数据，而不是进行几何重建或空间推理。
+- [LaRE2: Latent Reconstruction Error Based Method for Diffusion-Generated Image Detection](https://arxiv.org/abs/2403.17465)：偏离空间建模；它用 latent reconstruction error 精炼图像特征来检测扩散生成图像，而不是提出 3D 重建或几何推理方法。
+- [WordRobe: Text-Guided Generation of Textured 3D Garments](https://arxiv.org/abs/2403.17541)：通过 coarse-to-fine 训练学习解耦的服装 latent space，再与文本提示对齐，生成带纹理的未摆姿 3D garment meshes。
+- [Octree-GS: Towards Consistent Real-time Rendering with LOD-Structured 3D Gaussians](https://arxiv.org/abs/2403.17898)：用 octree level-of-detail 层级组织 Gaussians，使大场景缩放视角下避免视锥体内 primitive 过载和渲染速度波动。
+- [EgoLifter: Open-world 3D Segmentation for Egocentric Perception](https://arxiv.org/abs/2403.18118)：以 3D Gaussians 表示自我中心场景，并用 SAM masks 作为弱监督，分解出物体级开放世界 3D 场景。
+- [Object Pose Estimation via the Aggregation of Diffusion Features](https://arxiv.org/abs/2403.18791)：聚合多粒度 Stable Diffusion 特征进行物体位姿估计，提升未见物体上的 3D 场景理解泛化。
+- [Gamba: Marry Gaussian Splatting with Mamba for single view 3D reconstruction](https://arxiv.org/abs/2403.18795)：把 Gaussian splatting 与 Mamba 式序列模型结合，以比 SDS 优化更低的内存开销实现毫秒级单图 3D 重建。
+- [Garment3DGen: 3D Garment Stylization and Texture Generation](https://arxiv.org/abs/2403.18816)：把 image-to-3D diffusion 输出当作伪目标，变形可仿真的服装模板以保持拓扑，并从图像指导生成全局和局部一致的纹理贴图。
+- [Lift3D: Zero-Shot Lifting of Any 2D Vision Model to 3D](https://arxiv.org/abs/2403.18922)：在 DINO 和 CLIP 特征空间上训练未见视角预测，再把 style transfer、super-resolution、colorization 和开放词汇分割等新 2D 算子零样本提升到 3D。
+- [Instance-Adaptive and Geometric-Aware Keypoint Learning for Category-Level 6D Object Pose Estimation](https://arxiv.org/abs/2403.19527)：学习实例自适应且几何感知的关键点，用于类别级 6D 物体位姿估计。
+- [TOD3Cap: Towards 3D Dense Captioning in Outdoor Scenes](https://arxiv.org/abs/2403.19589)：定义户外 3D dense captioning，从 LiDAR 与全景 RGB 输入预测物体框和 caption，并用 BEV 中心的 TOD3Cap 网络建模。
+- [SA-GS: Scale-Adaptive Gaussian Splatting for Training-Free Anti-Aliasing](https://arxiv.org/abs/2403.19615)：在测试时为已训练 3D Gaussian field 加入 2D scale-adaptive filter，无需重新训练即可改善 anti-aliasing。
+- [InterDreamer: Zero-Shot Text to 3D Dynamic Human-Object Interaction](https://arxiv.org/abs/2403.19652)：在没有成对 HOI 训练数据的情况下生成动态 3D 人物交互，通过解耦交互语义与动态并结合 LLM 和 text-to-motion 先验实现。
+- [GaussianCube: Structuring Gaussian Splatting using Optimal Transport for 3D Generative Modeling](https://arxiv.org/abs/2403.19655)：先拟合固定数量的高精度 Gaussians，再用 optimal transport 排列成体素网格，使 3DGS 可直接接入标准 3D U-Net 扩散骨干。
+- [HO-Gaussian: Hybrid Optimization of 3D Gaussian Splatting for Urban Scenes](https://arxiv.org/abs/2403.20032)：把 grid-based volume 与 3DGS 结合，并加入 point densification、Gaussian direction encoding 和天空处理，以摆脱 SfM 初始化依赖来渲染城市场景。
+- [HGS-Mapping: Online Dense Mapping Using Hybrid Gaussian Representation in Urban Scenes](https://arxiv.org/abs/2403.20159)：用 hybrid Gaussian representation 在线构建城市稠密地图，同时表示 LiDAR 覆盖几何与外推区域并降低大场景计算量。
+- [InstantSplat: Sparse-view Gaussian Splatting in Seconds](https://arxiv.org/abs/2403.20309)：快速执行 sparse-view Gaussian splatting，提升少量图像下的实用 3D 重建能力。
+- [3DGSR: Implicit Surface Reconstruction with 3D Gaussian Splatting](https://arxiv.org/abs/2404.00409)：通过可微 SDF-to-opacity 变换把 3D Gaussians 与隐式 SDF 对齐，并用 splatting 监督恢复细节表面。
+- [MM3DGS SLAM: Multi-modal 3D Gaussian Splatting for SLAM Using Vision, Depth, and Inertial Measurements](https://arxiv.org/abs/2404.00923)：在 3D Gaussian 地图上结合未定姿图像、IMU 预积分、深度估计和光度渲染损失进行 tracking 与 mapping，并发布 UT-MM 机器人数据集。
+- [FlexiDreamer: Single Image-to-3D Generation with FlexiCubes](https://arxiv.org/abs/2404.00987)：用 FlexiCubes 优化直接从扩散生成的多视角图像重建 mesh，避免慢速隐式场训练和后处理网格提取。
+- [HAHA: Highly Articulated Gaussian Human Avatars with Textured Mesh Prior](https://arxiv.org/abs/2404.01053)：用 textured mesh 加少量必要区域 Gaussians 渲染 SMPL-X 驱动的人体，如头发和宽松衣物，以更少 splats 保持手指等精细关节和新姿态质量。
+- [PhysReaction: Physically Plausible Real-Time Humanoid Reaction Synthesis via Forward Dynamics Guided 4D Imitation](https://arxiv.org/abs/2404.01081)：用 forward-dynamics-guided 4D imitation 实时合成物理可信的人形反应，减少脚滑、穿模等运动学伪影。
+- [CityGaussian: Real-time High-quality Large-Scale Scene Rendering with Gaussians](https://arxiv.org/abs/2404.01133)：通过 divide-and-conquer 场景融合训练大规模 3DGS，并用压缩 level-of-detail Gaussian primitives 实现跨尺度渲染。
+- [Mirror-3DGS: Incorporating Mirror Reflections into 3D Gaussian Splatting](https://arxiv.org/abs/2404.01168)：为 3DGS 加入镜面属性和平面镜成像原理，从镜后虚拟视点渲染反射，使实时新视角保留镜中几何和外观。
+- [Getting it Right: Improving Spatial Consistency in Text-to-Image Models](https://arxiv.org/abs/2404.01197)：从 600 万张图像构建含空间关系重标注的 SPRIGHT 数据集，并证明空间聚焦数据微调能提高 text-to-image 的物体位置准确性。
+- [Feature Splatting: Language-Driven Physics-Based Scene Synthesis and Editing](https://arxiv.org/abs/2404.01223)：把物体中心的视觉语言特征蒸馏进 3D Gaussians，再用文本查询分解场景并为物理仿真编辑分配材质属性。
+- [Neural Implicit Representation for Building Digital Twins of Unknown Articulated Objects](https://arxiv.org/abs/2404.01440)：从同一未知关节物体两个状态的 RGB-D 扫描恢复形状、部件分割、关节运动和点对应关系，不依赖类别先验。
+- [Diffusion2: Dynamic 3D Content Generation via Score Composition of Orthogonal Diffusion Models](https://arxiv.org/abs/2404.02148)：组合视频扩散与多视角扩散模型的 score，使生成的 4D 内容同时获得时间平滑性和几何一致性。
+- [Segment Any 3D Object with Language](https://arxiv.org/abs/2404.02157)：构建 SOLE 语义与几何感知的 3D 视觉语言分割模型，在点云上融合多模态特征并用语言-mask 关联监督生成开放词汇实例 masks。
+- [LiDAR4D: Dynamic Neural Fields for Novel Space-Time View LiDAR Synthesis](https://arxiv.org/abs/2404.02742)：构建 LiDAR-only 4D neural field，结合 multi-planar 与 grid features、点云几何约束和 ray-drop 优化来合成动态时空 LiDAR 视角。
+- [iSeg: Interactive 3D Segmentation via Interactive Attention](https://arxiv.org/abs/2404.03219)：直接在 3D 形状表面接受正负点击，通过 interactive attention 模块处理不同数量和类型的点击，实现细粒度形状分割。
+- [DreamScene: 3D Gaussian-based Text-to-3D Scene Generation via Formation Pattern Sampling](https://arxiv.org/abs/2404.03575)：用 Formation Pattern Sampling、Gaussian filtering、重建式纹理生成和渐进相机采样生成室内外 text-to-3D 场景。
+- [Per-Gaussian Embedding-Based Deformation for Deformable 3D Gaussian Splatting](https://arxiv.org/abs/2404.03613)：把动态 3DGS deformation 表示为 per-Gaussian 与 temporal embeddings 的函数，并用粗细两级 deformation field 和局部平滑正则建模运动。
+- [WorDepth: Variational Language Prior for Monocular Depth Estimation](https://arxiv.org/abs/2404.03635)：利用变分语言先验改进单目深度估计，将文本世界知识与空间预测结合。
+- [MVD-Fusion: Single-view 3D via Depth-consistent Multi-view Generation](https://arxiv.org/abs/2404.03656)：训练扩散模型从单视图生成相互一致的多视角 RGB-D 图像，并用中间深度重投影约束单图 3D 推断。
+- [Know Your Neighbors: Improving Single-View Reconstruction via Spatial Vision-Language Reasoning](https://arxiv.org/abs/2404.03658)：用视觉语言语义调制点特征，并通过 language-guided spatial attention 聚合邻域上下文，使单视图重建能推断遮挡几何。
+- [Robust Gaussian Splatting](https://arxiv.org/abs/2404.04211)：把运动模糊建模为相机位姿分布，并加入失焦与颜色不一致补偿，使 3DGS 更适合手持拍摄重建。
+- [SpatialTracker: Tracking Any 2D Pixels in 3D Space](https://arxiv.org/abs/2404.04319)：在 3D 空间中跟踪任意 2D 像素，支持时空 grounding。
+- [StylizedGS: Controllable Stylization for 3D Gaussian Splatting](https://arxiv.org/abs/2404.05220)：用 nearest-neighbor style loss、深度保持、floater filtering 以及颜色、尺度和区域控制来微调 3DGS 的几何与颜色。
+- [Rethinking the Spatial Inconsistency in Classifier-Free Diffusion Guidance](https://arxiv.org/abs/2404.05384)：用 semantic-aware regional guidance 替代全局 CFG，在每个去噪步根据 attention maps 分割 latent patches，并按语义区域重标定 token guidance。
+- [3DMambaIPF: A State Space Model for Iterative Point Cloud Filtering via Differentiable Rendering](https://arxiv.org/abs/2404.05522)：用 Mamba selective state-space backbone 处理大规模点云去噪，并加入可微渲染损失，使过滤后的点更贴近真实物体表面。
+- [Revising Densification in Gaussian Splatting](https://arxiv.org/abs/2404.06109)：用 pixel-error-driven Gaussian densification 替代启发式 adaptive density control，并加入 primitive 数量控制和 cloning 时的 opacity 修正。
+- [Playing to Vision Foundation Model's Strengths in Stereo Matching](https://arxiv.org/abs/2404.06261)：通过 spatial differentiation、patch attention fusion 和 cross-attention 模块把 ViT foundation features 适配到 cost-volume 立体匹配后端。
+- [3D Geometry-aware Deformable Gaussian Splatting for Dynamic View Synthesis](https://arxiv.org/abs/2404.06270)：用显式 3D geometry features 学习动态 3DGS deformation，使随时间移动的 Gaussians 保持几何一致。
+- [Magic-Boost: Boost 3D Generation with Mutli-View Conditioned Diffusion](https://arxiv.org/abs/2404.06429)：用 multi-view conditioned diffusion 从合成多视角图像提取 3D priors，并迭代细化粗 3D 资产的局部几何和纹理。
+- [QueSTMaps: Queryable Semantic Topological Maps for 3D Scene Understanding](https://arxiv.org/abs/2404.06442)：从 multi-channel occupancy 提取室内 floorplan 拓扑，再用物体条件的 CLIP-aligned features 标注房间，支持自然语言房间查询。
+- [Reconstructing Hand-Held Objects in 3D from Images and Videos](https://arxiv.org/abs/2404.06507)：结合手部条件单帧几何、GPT-4V 提示检索匹配 3D 物体，以及时间一致对齐，重建视频中的手持物体。
+- [DreamScene360: Unconstrained Text-to-3D Scene Generation with Panoramic Gaussian Splatting](https://arxiv.org/abs/2404.06903)：结合 prompt-refined panoramic diffusion、全局对齐单目深度和 panoramic 3D Gaussians，生成可探索的 360 度 text-to-3D 场景。
+- [Gaussian-LIC: Real-Time Photo-Realistic SLAM with Gaussian Splatting and LiDAR-Inertial-Camera Fusion](https://arxiv.org/abs/2404.06926)：紧耦合 LiDAR、IMU 和相机 tracking，用 LiDAR 点与三角化视觉点初始化 Gaussians，并处理天空和曝光变化以实时映射无边界场景。
+- [Fast Encoder-Based 3D from Casual Videos via Point Track Processing](https://arxiv.org/abs/2404.07097)：提出 TracksTo4D，在 2D point tracks 上进行前馈推理，从普通视频估计动态 3D 结构与相机位姿。
+- [InstantMesh: Efficient 3D Mesh Generation from a Single Image with Sparse-view Large Reconstruction Models](https://arxiv.org/abs/2404.07191)：用稀疏视角重建模型从单图生成 3D 网格。
+- [RealmDreamer: Text-Driven 3D Scene Generation with Inpainting and Depth Diffusion](https://arxiv.org/abs/2404.07199)：用 inpainting diffusion 为未知区域提供低方差监督，并用 depth diffusion 注入高保真几何，从文本优化 3D Gaussian 场景。
+- [Learning to Localize Objects Improves Spatial Reasoning in Visual-LLMs](https://arxiv.org/abs/2404.07449)：用图像坐标指令目标、伪数据和坐标表示消融微调 VLM，提升左右位置与物体定位等空间推理。
+- [Stereo-LiDAR Depth Estimation with Deformable Propagation and Learned Disparity-Depth Conversion](https://arxiv.org/abs/2404.07545)：通过 learned deformable window 把稀疏 LiDAR hints 传播成半稠密置信图，并用 learned module 将 stereo disparity 转换为远距离深度。
+- [Reinforcement Learning with Generalizable Gaussian Splatting](https://arxiv.org/abs/2404.07950)：把 generalizable 3D Gaussian Splatting 作为视觉强化学习的显式环境表示，在 RoboMimic 操作任务上优于图像、点、体素和 NeRF 表示基线。
+- [Gaga: Group Any Gaussians via 3D-aware Memory Bank](https://arxiv.org/abs/2404.07977)：用 3D-aware memory bank 跨相机位姿关联不一致的 2D 零样本 masks，从稀疏或无序视角中完成开放世界 Gaussian 场景分组。
+- [View Selection for 3D Captioning via Diffusion Ranking](https://arxiv.org/abs/2404.07984)：先用预训练 text-to-3D 模型为物体渲染视图排序，再送入 GPT-4V 生成 caption，减少 3D object captioning 中的 hallucination 并修正 Cap3D 规模标注。
+- [Any2Point: Empowering Any-modality Large Models for Efficient 3D Understanding](https://arxiv.org/abs/2404.07989)：通过 3D-to-1D 或 3D-to-2D virtual projection 与参数高效调优，把冻结的视觉、语言或音频 Transformer 适配到点云理解。
+- [GoMAvatar: Efficient Animatable Human Modeling from Monocular Video Using Gaussians-on-Mesh](https://arxiv.org/abs/2404.07991)：用 Gaussians-on-Mesh 表示单目人体 avatar，把可变形 mesh 兼容性与 Gaussian 渲染结合，实现小内存、实时的新姿态动画。
+- [Probing the 3D Awareness of Visual Foundation Models](https://arxiv.org/abs/2404.08636)：通过任务专用 probes 和零样本 3D 推理测试，诊断冻结视觉基础模型特征是否编码 3D 结构和跨视角表面一致性。
+- [COCONut: Modernizing COCO Segmentation](https://arxiv.org/abs/2404.08639)：偏离 3D 空间建模；它重做 COCO 分割标注并改善 2D segmentation 训练数据质量，而不是几何、位姿或场景重建方法。
+- [DeDoDe v2: Analyzing and Improving the DeDoDe Keypoint Detector](https://arxiv.org/abs/2404.08928)：分析并改进 DeDoDe 关键点检测器，用于局部特征匹配。
+- [DeferredGS: Decoupled and Relightable Gaussian Splatting With Deferred Shading](https://arxiv.org/abs/2404.09412)：为 Gaussians 增加纹理、法线和可学习环境贴图属性，从联合 SDF 蒸馏法线，并用 deferred shading 实现可编辑 relighting。
+- [kNN-CLIP: Retrieval Enables Training-Free Segmentation on Continually Expanding Large Vocabularies](https://arxiv.org/abs/2404.09447)：用紧凑 instance embeddings 的 kNN 数据库扩展开放词汇语义与全景分割，避免重新训练和 catastrophic forgetting。
+- [CompGS: Efficient 3D Scene Representation via Compressed Gaussian Splatting](https://arxiv.org/abs/2404.09458)：用 anchor primitives、残差 primitive 预测和 rate-constrained optimization 压缩 3DGS，在降低表示 bitrate 的同时保持渲染质量。
+- [SparseOcc: Rethinking Sparse Latent Representation for Vision-Based Semantic Occupancy Prediction](https://arxiv.org/abs/2404.09502)：用无损稀疏 3D latents、稀疏扩散补全、特征金字塔、插值和稀疏 transformer head 替代 dense occupancy latents。
+- [3D Gaussian Splatting as Markov Chain Monte Carlo](https://arxiv.org/abs/2404.09591)：把 3D Gaussians 重新解释为 MCMC samples，将更新转为 stochastic gradient Langevin dynamics，并把 cloning 与 pruning 表述为样本状态转移。
+- [SRGS: Super-Resolution 3D Gaussian Splatting](https://arxiv.org/abs/2404.10318)：把 3DGS super-resolution 形式化为包含 2D prior injection 与 geometry-aware cross-view regularization 的模块化目标，用于低分辨率多视角采集。
+- [AbsGS: Recovering Fine Details for 3D Gaussian Splatting](https://arxiv.org/abs/2404.10484)：诊断 3DGS densification 中的 gradient collision，并用 homodirectional view-space positional gradients 拆分高频区域的大 Gaussians。
+- [Gaussian Opacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes](https://arxiv.org/abs/2404.10772)：通过 ray-tracing Gaussian opacity level sets 直接从 3DGS 提取表面，并在 ray-Gaussian intersection plane 上正则化法线。
+- [Closely Interactive Human Reconstruction with Proxemics and Physics-Guided Adaption](https://arxiv.org/abs/2404.11291)：用 VQ-VAE 交互先验和 proxemics-plus-physics-guided diffusion refinement，从单目视频重建近距离互动的人体。
+- [Learning with 3D rotations, a hitchhiker's guide to SO(3)](https://arxiv.org/abs/2404.11735)：综述用于深度学习的 SO(3) rotation representations，比较旋转作为输入或输出时不同表示对梯度优化的影响。
+- [From Form(s) to Meaning: Probing the Semantic Depths of Language Models Using Multisense Consistency](https://arxiv.org/abs/2404.12145)：偏离空间建模；它用 multisense consistency 测试探查 LLM 语义理解，而不是提出 3D 或几何专用模型。
+- [MeshLRM: Large Reconstruction Model for High-Quality Mesh](https://arxiv.org/abs/2404.12385)：把 NeRF 式 large reconstruction model 通过可微 mesh extraction 和 rendering 进行微调，可在一秒内从四张图生成高质量 mesh。
+- [EfficientGS: Streamlining Gaussian Splatting for Large-Scale High-Resolution Scene Representation](https://arxiv.org/abs/2404.12777)：通过只对关键 primitives 增密、剪除辅助 Gaussians 并稀疏提升球谐阶数，降低大规模高分辨率 3DGS 场景的训练、存储和渲染开销。
+- [Learn2Talk: 3D Talking Face Learns From 2D Talking Face](https://arxiv.org/abs/2404.12888)：把 2D talking-face 经验迁移到 3D，通过 3D audio-visual lip-sync expert 和 2D talking-face teacher 蒸馏来训练 audio-to-3D facial motion regression。
+- [PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation](https://arxiv.org/abs/2404.13026)：把视频生成先验蒸馏为 physics-based 3D object dynamics，估计材质行为，使静态物体能对新交互产生可信响应。
+- [GScream: Learning 3D Geometry and Feature Consistent Gaussian Splatting for Object Removal](https://arxiv.org/abs/2404.13679)：用在线深度引导 Gaussian registration 和 uncertain/certain 区域之间的 cross-attention feature propagation，在 3DGS 中移除物体并恢复几何与纹理。
+- [MaterialSeg3D: Segmenting Dense Materials from 2D Priors for 3D Assets](https://arxiv.org/abs/2404.13923)：从 2D 语义先验推断 dense 3D material maps，基于 MIO 材质数据集训练后，用 per-view UV material stacks、weighted voting 和 region unification 融合材质。
+- [CLIP-GS: CLIP-Informed Gaussian Splatting for View-Consistent 3D Indoor Semantic Understanding](https://arxiv.org/abs/2404.14249)：把 CLIP 语义压缩为紧凑 Gaussian attributes，并加入 3D coherent regularization，以高效实现视角一致的开放词汇室内场景理解。
+- [X-Ray: A Sequential 3D Representation for Generation](https://arxiv.org/abs/2404.14329)：把 3D 物体转换为沿相机射线的多层 surface frames，记录深度、法线和颜色，再用 X-Ray diffusion 与 upsampler 从单图生成完整 3D。
+- [GeoDiffuser: Geometry-Based Image Editing with Diffusion Models](https://arxiv.org/abs/2404.14403)：把图像编辑表述为几何变换，在无需训练的情况下把 2D/3D 平移、旋转、移除和遮挡补全约束注入 diffusion attention。
+- [Mamba3D: Enhancing Local Features for 3D Point Cloud Analysis via State Space Model](https://arxiv.org/abs/2404.14966)：结合 Local Norm Pooling 和沿 token/feature-channel 两个方向的双向 state-space modeling，以线性复杂度完成点云分类和分割。
+- [OccGen: Generative Multi-modal 3D Occupancy Prediction for Autonomous Driving](https://arxiv.org/abs/2404.15014)：把占据预测建模为 noise-to-occupancy diffusion，用相机或 LiDAR 特征条件化去噪，逐步细化 dense 3D semantic occupancy 并输出不确定性。
+- [Re-Thinking Inverse Graphics With Large Language Models](https://arxiv.org/abs/2404.15228)：用 inverse-graphics LLM framework 从图像推断 3D 形状、颜色、材质等场景变量，以支持 zero-shot inverse rendering。
+- [GaussianTalker: Real-Time Talking Head Synthesis with 3D Gaussian Splatting](https://arxiv.org/abs/2404.16012)：构建 canonical 3D Gaussian 头部表示，并用音频条件形变网络和 spatial-audio attention 更新 Gaussian 属性，实现实时、姿态可控的说话头像。
+- [NeRF-XL: Scaling NeRFs with Multiple GPUs](https://arxiv.org/abs/2404.16221)：用等价于单 GPU NeRF 的分布式训练与渲染公式把 NeRF 扩展到多 GPU，从而支持任意大容量的 radiance fields。
+- [Point-JEPA: A Joint Embedding Predictive Architecture for Self-Supervised Learning on Point Cloud](https://arxiv.org/abs/2404.16432)：把 JEPA 式自监督迁移到点云，通过点序列化、masked target blocks 和 latent-space prediction 避免输入空间重建或额外模态。
+- [Interactive3D: Create What You Want by Interactive 3D Generation](https://arxiv.org/abs/2404.16510)：把 3D 生成改造成可交互循环，让用户用文本、草图和区域控制逐步修正生成物体，而不是只依赖一次性提示。
+- [PhyRecon: Physically Plausible Neural Scene Reconstruction](https://arxiv.org/abs/2404.16666)：把 neural implicit surfaces 与可微渲染、particle-based 可微物理仿真联合学习，并用 SP-MC surface extraction 和 uncertainty-guided physical losses 改善物理合理性。
+- [Make-it-Real: Unleashing Large Multimodal Model's Ability for Painting 3D Objects with Realistic Materials](https://arxiv.org/abs/2404.16829)：利用 GPT-4V 的材质推理为 3D 物体分配真实感 PBR 材质，减少手工贴图和材质绘制。
+- [Multi-view Image Prompted Multi-view Diffusion for Improved 3D Generation](https://arxiv.org/abs/2404.17419)：把 ImageDream 扩展为 MultiImageDream，用多张图像提示条件化多视角扩散，使 3D 生成能跨视角保留物体证据。
+- [MaPa: Text-driven Photorealistic Material Painting for 3D Shapes](https://arxiv.org/abs/2404.17569)：为 mesh 生成 segment-wise procedural material graphs，用 segment-controlled diffusion 图像初始化材质参数，并通过可微渲染拟合文本描述的外观。
+- [BlenderAlchemy: Editing 3D Graphics with Vision-Language Models](https://arxiv.org/abs/2404.17672)：用视觉语言模型把图形编辑目标转成 Blender 操作序列，自动化材质节点连接和场景编辑等原本依赖人工的流程。
+- [LMM-PCQA: Assisting Point Cloud Quality Assessment with LMM](https://arxiv.org/abs/2404.18203)：通过文本提示向 LMM 注入点云质量评估知识，检验低层 3D 失真判断能否迁移到 point cloud quality assessment。
+- [Reconstructing Satellites in 3D from Amateur Telescope Images](https://arxiv.org/abs/2404.18394)：用混合图像预处理、controlled Gaussian Splatting 和 branch-and-bound 位姿搜索，从噪声地基望远镜图像重建低轨卫星 3D 模型。
+- [Bootstrap-GS: Self-Supervised Augmentation for High-Fidelity Gaussian Splatting](https://arxiv.org/abs/2404.18669)：用自监督 pseudo-view augmentation 引导 3DGS 覆盖更大的视角偏移，缓解缩放时的 dilation 和 aliasing。
+- [DGE: Direct Gaussian 3D Editing by Consistent Multi-view Editing](https://arxiv.org/abs/2404.18929)：用 3D geometry cues 让 InstructPix2Pix 式编辑保持多视角一致，再从编辑后的图像序列直接优化 3DGS 场景，实现更快的语言驱动 3D 编辑。
+- [GS-LRM: Large Reconstruction Model for 3D Gaussian Splatting](https://arxiv.org/abs/2404.19702)：用 transformer large reconstruction model 从 2 到 4 张带位姿稀疏图像预测逐像素 3D Gaussian 参数，实现亚秒级前馈 3DGS。
+- [Invisible Stitch: Generating Smooth 3D Scenes with Depth Inpainting](https://arxiv.org/abs/2404.19758)：通过 teacher distillation 和 self-training 训练 depth-completion 模型，在把新生成视角拼接进已有 3D 表示时补全几何。
+- [Lightplane: Highly-Scalable Components for Neural 3D Fields](https://arxiv.org/abs/2404.19760)：提供可扩展的 render 和 splatter operators，用于图像与 neural 3D fields 的高效映射，缓解 2D 监督 3D 重建和生成中的内存瓶颈。
+- [Spectrally Pruned Gaussian Fields with Neural Compensation](https://arxiv.org/abs/2405.00676)：通过剪除频谱冗余 Gaussian primitives 并加入 neural compensation，在压缩 3DGS 显存占用后保持渲染质量。
+- [MiniGPT-3D: Efficiently Aligning 3D Point Clouds with Large Language Models using 2D Priors](https://arxiv.org/abs/2405.01413)：借助 2D-LLM priors 把点云对齐到 LLM，通过四阶段级联训练、query-expert 聚合以及 LoRA/Norm tuning，将可学习参数控制在 4780 万。
+- [DreamScene4D: Dynamic Multi-Object Scene Generation from Monocular Videos](https://arxiv.org/abs/2405.02280)：结合 view-predictive priors 和运动感知优化，把单目视频提升为完整多物体 4D 动态场景。
+- [A Construct-Optimize Approach to Sparse View Synthesis without Camera Pose](https://arxiv.org/abs/2405.03659)：用单目深度回投影构建 pose-free sparse-view 3DGS，通过渲染图与输入图之间的 2D 对应来联合优化相机位姿和深度。
+- [Language-Image Models with 3D Understanding](https://arxiv.org/abs/2405.03685)：提出 Cube-LLM，在 LV3D 2D/3D QA 语料上预训练 MLLM，使 box prompts 和 chain-of-thought 指令支持驾驶场景中的 3D grounded reasoning。
+- [Tactile-Augmented Radiance Fields](https://arxiv.org/abs/2405.04534)：把稀疏触觉探针注册到 NeRF 捕获场景中，并训练 conditional diffusion 从渲染 RGB-D 视图生成同一 3D 空间内的触觉信号。
+- [OpenESS: Event-Based Semantic Scene Understanding with Open Vocabularies](https://arxiv.org/abs/2405.05259)：为事件相机视觉传感器引入开放词表语义场景理解。
+- [Coin3D: Controllable and Interactive 3D Assets Generation with Proxy-Guided Conditioning](https://arxiv.org/abs/2405.08054)：通过 proxy-guided conditioning，把 2D 生成里的草图、姿态和 masked inpainting 控制迁移到 3D 资产生成。
+- [CAT3D: Create Anything in 3D with Multi-View Diffusion Models](https://arxiv.org/abs/2405.10314)：用多视角扩散生成 3D 资产，适合空间生成模型。
+- [Grounded 3D-LLM with Referent Tokens](https://arxiv.org/abs/2405.10370)：把 scene referent tokens 插入 3D LMM 序列，用百万级 scene-text phrase-region 对应预训练短语对齐，并统一 dense captioning、QA、检测和 grounding。
+- [Unifying 3D Vision-Language Understanding via Promptable Queries](https://arxiv.org/abs/2405.11442)：用 promptable queries 从共享 3D 坐标系中的 voxels、点云和多视角图像检索任务信息，支持十类 3D-VL 任务。
+- [Depth Prompting for Sensor-Agnostic Depth Estimation](https://arxiv.org/abs/2405.11867)：用传感器相关 depth prompts 补偿点密度、扫描模式和量程偏差，使同一深度估计器能跨深度传感器适配。
+- [MirrorGaussian: Reflecting 3D Gaussians for Reconstructing Mirror Reflections](https://arxiv.org/abs/2405.11921)：联合优化真实空间 Gaussians 与镜面平面，通过把 Gaussians 反射到虚拟镜像空间的 dual-rendering 策略实现实时镜面场景重建。
+- [CoR-GS: Sparse-View 3D Gaussian Splatting via Co-Regularization](https://arxiv.org/abs/2405.12110)：成对训练 Gaussian radiance fields，并用点级与预测级 co-regularization 降低 sparse-view 3DGS 的过拟合。
+- [Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo](https://arxiv.org/abs/2405.12218)：从 MVS 特征构建 MVSGaussian，解码 geometry-aware Gaussian parameters，并用 hybrid rendering 快速重建未见场景。
+- [GarmentDreamer: 3DGS Guided Garment Synthesis with Diverse Geometry and Texture Details](https://arxiv.org/abs/2405.12420)：用 3DGS guidance 合成具有多样几何和纹理的服装，缓解扩散式 garment generation 的多视角不一致问题。
+- [MOSS: Motion-based 3D Clothed Human Synthesis from Monocular Video](https://arxiv.org/abs/2405.12806)：用带 matrix-Fisher 运动传播的 kinematic Gaussian locating splatting 和 surface deformation detector，从单目视频重建受运动约束的 clothed humans。
+- [Talk2Radar: Bridging Natural Language with 4D mmWave Radar for 3D Referring Expression Comprehension](https://arxiv.org/abs/2405.12821)：把自然语言 referring expressions 落地到 4D 毫米波雷达观测中，支持超出 camera-only perception 的定性与定量 3D 物体查询。
+- [EgoChoir: Capturing 3D Human-Object Interaction Regions from Egocentric Views](https://arxiv.org/abs/2405.13659)：预测 egocentric human-object interactions 在 3D 空间中的发生区域，将交互语义与空间接触和操作区域连接起来。
+- [Context and Geometry Aware Voxel Transformer for Semantic Scene Completion](https://arxiv.org/abs/2405.13675)：构建 CGFormer，用图像相关 context-aware queries、3D deformable cross-attention 和 voxel/TPV 表示缓解 semantic scene completion 中的深度歧义。
+- [DOGS: Distributed-Oriented Gaussian Splatting for Large-Scale 3D Reconstruction Via Gaussian Consensus](https://arxiv.org/abs/2405.13943)：把大规模 3DGS 训练拆分到分布式 worker，并通过 Gaussian consensus 对齐局部 Gaussian fields 以加速重建。
+- [D-MiSo: Editing Dynamic 3D Scenes using Multi-Gaussians Soup](https://arxiv.org/abs/2405.14276)：把参数化 dynamic Gaussian splats 连接成 mesh-inspired Triangle Soup，使动态 3D 场景中各物体轨迹可随时间独立编辑。
+- [LDM: Large Tensorial SDF Model for Textured Mesh Generation](https://arxiv.org/abs/2405.14580)：先把图像或文本提示转成稀疏多视角图，再用 Transformer 预测 tensorial SDF，并通过可微 mesh optimization 生成带纹理的 mesh。
+- [Direct3D: Scalable Image-to-3D Generation via 3D Latent Diffusion Transformer](https://arxiv.org/abs/2405.14832)：用 D3D-VAE 把高分辨率形状编码为连续 triplane latents，再用 D3D-DiT 和语义/像素图像条件建模原生 3D 生成。
+- [Generative Camera Dolly: Extreme Monocular Dynamic Novel View Synthesis](https://arxiv.org/abs/2405.14868)：从单目动态视频进行无需深度输入的 video-to-video 新视角合成，用相对相机位姿条件化在合成多视角视频上训练的 diffusion prior。
+- [NeRF-Casting: Improved View-Dependent Appearance with Consistent Reflections](https://arxiv.org/abs/2405.14871)：在 NeRF 表示中投射 reflection rays 并解码 traced feature vectors，无需大型 outgoing-radiance 网络即可生成一致的近距离高光反射。
+- [Federated Online Adaptation for Deep Stereo](https://arxiv.org/abs/2405.14873)：让深度立体匹配网络在分布式客户端上协同在线适配，使资源受限设备可从本地 stereo experience 中改进而无需集中数据。
+- [EvGGS: A Collaborative Learning Framework for Event-based Generalizable Gaussian Splatting](https://arxiv.org/abs/2405.14959)：用协同学习框架从稀疏、无绝对颜色的 event streams 重建 3D 场景，形成 event-based generalizable Gaussian splatting。
+- [CraftsMan3D: High-fidelity Mesh Generation with 3D Native Generation and Interactive Geometry Refiner](https://arxiv.org/abs/2405.14979)：用 3D-native 生成模型产生规整且细节丰富的 mesh，并提供 interactive geometry refiner 让用户修正形状。
+- [GS-Hider: Hiding Messages into 3D Gaussian Splatting](https://arxiv.org/abs/2405.15118)：用 secured coupled features 替换 3DGS 球谐属性，并分别解码 RGB 场景与隐藏多模态信息，把隐写能力加入显式 Gaussian 资产。
+- [HDR-GS: Efficient High Dynamic Range Novel View Synthesis at 1000x Speed via Gaussian Splatting](https://arxiv.org/abs/2405.15125)：用 Gaussian Splatting 替代 NeRF 式 HDR novel-view synthesis，在保持宽亮度细节的同时显著提升渲染速度。
+- [DisC-GS: Discontinuity-aware Gaussian Splatting](https://arxiv.org/abs/2405.15196)：为 Gaussian Splatting 加入 discontinuity-aware rendering，并用 Bezier-boundary gradient approximation 让物体边界在优化中保持可微。
+- [PointRWKV: Efficient RWKV-Like Model for Hierarchical Point Cloud Learning](https://arxiv.org/abs/2405.15214)：把 RWKV recurrence 改造成点云 patch 模型，结合 matrix-valued states、dynamic attention recurrence、近邻图稳定器和多尺度层级。
+- [Diff3DS: Generating View-Consistent 3D Sketch via Differentiable Curve Rendering](https://arxiv.org/abs/2405.15305)：通过 differentiable curve rendering 生成 3D sketches，使学习到的 sketch primitives 在不同视角下保持一致。
+- [NVS-Solver: Video Diffusion Model as Zero-Shot Novel View Synthesizer](https://arxiv.org/abs/2405.15364)：用 warped input-view priors 和自适应 score guidance 调制预训练视频扩散采样器，实现静态和动态场景的免训练新视角合成。
+- [PoinTramba: A Hybrid Transformer-Mamba Framework for Point Cloud Analysis](https://arxiv.org/abs/2405.15463)：用 Transformer 捕捉组内点依赖，用 Mamba 建模组间关系，并通过 bidirectional importance-aware ordering 提升点云识别效率。
+- [GSDeformer: Direct Cage-based Deformation for 3D Gaussian Splatting](https://arxiv.org/abs/2405.15491)：把 cage-based point-cloud deformation 转换到 3D Gaussians，并同步调整旋转和尺度，使 splats 可实时一致变形。
+- [Feature Splatting for Better Novel View Synthesis with Low Overlap](https://arxiv.org/abs/2405.15518)：用 per-Gaussian feature vectors 替代单纯球谐颜色，在图像平面 alpha-blend 后结合 viewpoint conditioning 解码 RGB 或语义标签。
+- [LAM3D: Large Image-Point-Cloud Alignment Model for 3D Reconstruction from Single Image](https://arxiv.org/abs/2405.15622)：先生成点云 latent triplanes，再把单图特征对齐到这些 3D triplanes，从一张图约 6 秒生成高保真 mesh。
+- [InstructAvatar: Text-Guided Emotion and Motion Control for Avatar Generation](https://arxiv.org/abs/2405.15758)：偏离核心 3D 空间建模；它是由音频和文本指令控制的 2D talking-avatar diffusion system，而非 3D 重建或几何模型。
+- [Splat-SLAM: Globally Optimized RGB-Only SLAM with 3D Gaussians](https://arxiv.org/abs/2405.16544)：用 dense 3D Gaussian map 执行 RGB-only SLAM，随全局优化的 keyframe pose/depth 更新主动变形地图，并用单目深度修正不准确区域。
+- [ID-to-3D: Expressive ID-guided 3D Heads via Score Distillation Sampling](https://arxiv.org/abs/2405.16570)：结合 expression-aware diffusion priors 与 score distillation，从随手拍图像生成保持身份和文本条件的 3D 人头。
+- [Vidu4D: Single Generated Video to High-Fidelity 4D Reconstruction with Dynamic Gaussian Surfels](https://arxiv.org/abs/2405.16822)：从生成视频优化 dynamic Gaussian surfels，利用 time-varying warping fields、法线正则和旋转/尺度细化实现 text-to-4D 重建。
+- [PyGS: Large-scale Scene Representation with Pyramidal 3D Gaussian Splatting](https://arxiv.org/abs/2405.16829)：从快速 grid NeRF 初始化粗到细 pyramidal Gaussian hierarchy，并学习 cluster-level pyramid weighting 以支持大规模场景渲染。
+- [PivotMesh: Generic 3D Mesh Generation via Pivot Vertices Guidance](https://arxiv.org/abs/2405.16890)：用 Transformer autoencoder 将 mesh token 化，先生成粗 pivot vertices，再自回归补全 face-to-vertex tokens，扩展原生 mesh 生成。
+- [SA-GS: Semantic-Aware Gaussian Splatting for Large Scene Reconstruction with Geometry Constrain](https://arxiv.org/abs/2405.16923)：利用 SAM/DINO 语义 masks、geometric complexity regularizer 和语义区域 splat 数量下界，提升大场景 Gaussian 几何提取细节。
+- [F-3DGS: Factorized Coordinates and Representations for 3D Gaussian Splatting](https://arxiv.org/abs/2405.17083)：因式分解 3DGS 的坐标和表示，降低计算成本并提升其在实时、资源受限场景渲染中的可用性。
+- [GenWarp: Single Image to Novel Views with Semantic-Preserving Generative Warping](https://arxiv.org/abs/2405.17251)：用 self-attention 增强 cross-view attention，并注入几何 warping 信号，使 text-to-image 先验判断哪里应变形、哪里应生成新视角内容。
+- [DOF-GS: Adjustable Depth-of-Field 3D Gaussian Splatting for Post-Capture Refocusing, Defocus Rendering and Blur Removal](https://arxiv.org/abs/2405.17351)：为 3DGS 加入 finite-aperture camera model 和可微 defocus rendering，用于拍摄后重聚焦、散焦合成和去模糊。
+- [MoSca: Dynamic Gaussian Fusion from Casual Videos via 4D Motion Scaffolds](https://arxiv.org/abs/2405.17421)：把普通单目视频提升为 4D Motion Scaffolds，在运动表示上锚定 Gaussians，并联合优化形变、外观、焦距和位姿。
+- [Reason3D: Searching and Reasoning 3D Segmentation via Large Language Model](https://arxiv.org/abs/2405.17427)：把 LLM 扩展到点云和文本提示，使用 hierarchical mask decoder 预测粗位置与物体 mask，支持 reasoning segmentation 和 3D QA。
+- [GaussianFormer: Scene as Gaussians for Vision-Based 3D Semantic Occupancy Prediction](https://arxiv.org/abs/2405.17429)：用 sparse Gaussians 而不是 dense voxels 表示驾驶场景语义占据，使不同尺度物体获得更合理的资源分配。
+- [FreeSplat: Generalizable 3D Gaussian Splatting Towards Free-View Synthesis of Indoor Scenes](https://arxiv.org/abs/2405.17958)：用轻量 generalizable backbone 定位室内 3D Gaussians，使 free-view synthesis 超出窄基线 stereo interpolation。
+- [EG4D: Explicit Generation of 4D Object without Score Distillation](https://arxiv.org/abs/2405.18132)：从单图生成多视角视频，用 dynamic Gaussian Splatting 重建，并以扩散先验修复语义缺陷，避免依赖 SDS。
+- [NegGS: Negative Gaussian Splatting](https://arxiv.org/abs/2405.18163)：引入 negative-color Gaussians 和 Diff-Gaussian density ratios，用更少 splats 近似非线性结构、高频颜色变化和阴影。
+- [Intent3D: 3D Object Detection in RGB-D Scans Based on Human Intention](https://arxiv.org/abs/2405.18295)：定义 ScanNet 上的 3D intention grounding，包含 44,990 条意图文本，并提出 IntentNet 进行意图理解、候选物体推理和级联自适应检测损失优化。
+- [3D StreetUnveiler with Semantic-Aware 2DGS](https://arxiv.org/abs/2405.18416)：用 semantic-aware 2D Gaussian Splatting 从车载观测中移除临时静止物体，重建无车无人遮挡的空街景。
+- [3DitScene: Editing Any Scene via Language-guided Disentangled Gaussian Splatting](https://arxiv.org/abs/2405.18424)：把 Gaussian 场景分解为可编辑组成部分，并用语言指导定位和修改场景内容，同时尽量保留无关几何。
+- [GFlow: Recovering 4D World from Monocular Video](https://arxiv.org/abs/2405.18426)：在没有已知相机、多视角输入或静态场景假设的情况下，从单目视频恢复动态 3D 几何和相机位姿。
+- [Atlas3D: Physically Constrained Self-Supporting Text-to-3D for Simulation and Fabrication](https://arxiv.org/abs/2405.18515)：把物理平衡和自支撑约束加入 text-to-3D 生成，使物体更适合仿真和制造。
+- [REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](https://arxiv.org/abs/2405.18525)：通过可微 3D layout alignment 生成组合式 3D 资产，减少不同物体部件之间的空间错位。
+- [DGD: Dynamic 3D Gaussians Distillation](https://arxiv.org/abs/2405.19321)：从单目视频蒸馏 dynamic 3D semantic radiance field，同时支持新视角渲染和由语言指定的 3D 实体分割与跟踪。
+- [GaussianRoom: Improving 3D Gaussian Splatting with SDF Guidance and Monocular Cues for Indoor Scene Reconstruction](https://arxiv.org/abs/2405.19671)：把 SDF guidance 和单目几何线索加入室内 3DGS，使稀疏视角下的房间结构和表面几何更干净。
+- [Improve Student’s Reasoning Generalizability through Cascading Decomposed CoTs Distillation](https://arxiv.org/abs/2405.19842)：偏离空间建模；它把 decomposed chain-of-thought reasoning 蒸馏到小型 LLM 中以提升 OOD 推理，而不是提出几何或 3D 感知模型。
+- [PLA4D: Pixel-Level Alignments for Text-to-4D Gaussian Splatting](https://arxiv.org/abs/2405.19957)：在像素层面对齐视频扩散运动先验和多视角几何先验，减少 text-to-4D Gaussian splatting 中冲突的 score-distillation 梯度。
+- [MG-SLAM: Structure Gaussian Splatting SLAM With Manhattan World Hypothesis](https://arxiv.org/abs/2405.20031)：在 RGB-D Gaussian SLAM 中引入 Manhattan-world 结构先验，补全室内场景因遮挡和视角不足产生的重建空洞。
+- [Object-centric Reconstruction and Tracking of Dynamic Unknown Objects Using 3D Gaussian Splatting](https://arxiv.org/abs/2405.20104)：把未知运动物体建模为 object-centric Gaussians 并进行跟踪与重建，将动态物体运动与周围场景分离。
+- [Evagaussians: Event Stream Assisted Gaussian Splatting from Blurry Images](https://arxiv.org/abs/2405.20224)：用 event streams 辅助 blurry images 和不完美相机位姿下的 3DGS 训练，适配高速运动或低光照采集。
+- [TetSphere Splatting: Representing High-Quality Geometry with Lagrangian Volumetric Meshes](https://arxiv.org/abs/2405.20283)：用可形变 tetrahedral-sphere primitives 和几何约束表示形状，以提升 mesh 规整性和高质量 3D 建模。
+- [GECO: Generative Image-to-3D within a SECOnd](https://arxiv.org/abs/2405.20327)：采用前馈式 generative image-to-3D 流程在秒级生成 3D 资产，重点解决逐提示优化过慢的问题。
+- [VividDream: Generating 3D Scene with Ambient Dynamics](https://arxiv.org/abs/2405.20334)：先把提示或图像扩展为静态 3D point cloud，再用视频扩散先验生成 ambient dynamics，从而构建可探索 4D 场景。
+- [Unique3D: High-Quality and Efficient 3D Mesh Generation from a Single Image](https://arxiv.org/abs/2405.20343)：用高效 image-to-3D pipeline 从单图生成高质量 mesh，避免逐样本 score-distillation 优化的高成本。
+- [Physically Compatible 3D Object Modeling from a Single Image](https://arxiv.org/abs/2405.20510)：把单图 3D 物体建模分解为 rest-shape geometry、mechanical properties 和 external forces，使重建物体具备物理合理性。
+- [ContextGS: Compact 3D Gaussian Splatting with Anchor Level Context Model](https://arxiv.org/abs/2405.20721)：用 anchor-level context 建模相邻 Gaussian 结构，以压缩 3DGS 表示并尽量保持渲染质量。
+- [MeshXL: Neural Coordinate Field for Generative 3D Foundation Models](https://arxiv.org/abs/2405.20853)：用 neural coordinate field 表示 3D 形状，面向大规模生成式 3D 基础模型改进连续几何与 mesh 解码。
+- [Bootstrap3D: Improving Multi-View Diffusion Model with Synthetic Data](https://arxiv.org/abs/2406.00093)：用合成数据 bootstrap 多视角扩散模型，使生成视图在单图 3D 重建中更具一致性。
+- [Query2CAD: Generating CAD models using natural language queries](https://arxiv.org/abs/2406.00144)：把自然语言 CAD 设计查询转成可迭代修改的 CAD models，面向工程设计中反复 revision 的工作流。
+- [Cascade-CLIP: Cascaded Vision-Language Embeddings Alignment for Zero-Shot Semantic Segmentation](https://arxiv.org/abs/2406.00670)：通过 cascaded design 对齐 CLIP 中间视觉层和文本嵌入，使 zero-shot segmentation 保留物体细节信息。
+- [RaDe-GS: Rasterizing Depth in Gaussian Splatting](https://arxiv.org/abs/2406.01467)：在 Gaussian Splatting 中加入 depth rasterization，改善从离散无结构 splats 中提取形状和细节几何的能力。
+- [DreamPhysics: Learning Physical Properties of Dynamic 3D Gaussians with Video Diffusion Priors](https://arxiv.org/abs/2406.01476)：通过蒸馏视频扩散先验学习 dynamic 3D Gaussians 的物理属性，减少 physics-based 4D animation 中的人工材质调参。
 - [SpatialRGPT](https://arxiv.org/abs/2406.01584)：grounded spatial reasoning 方法，把语言答案绑定到区域级视觉 grounding 和显式空间关系。
+- [Reconstructing and Simulating Dynamic 3D Objects with Mesh-adsorbed Gaussian Splatting](https://arxiv.org/abs/2406.01593)：把 Gaussians 吸附到 mesh 表面，使动态物体既可重建也可进行几何感知的形变仿真。
+- [End-to-End Rate-Distortion Optimized 3D Gaussian Representation](https://arxiv.org/abs/2406.01597)：在显式 rate-distortion 目标下优化 3D Gaussian 属性，同时平衡渲染保真度和压缩码率成本。
+- [OpenGaussian: Towards Point-Level 3D Gaussian-based Open Vocabulary Understanding](https://arxiv.org/abs/2406.02058)：为 3DGS 训练 point-level open-vocabulary features，解决像素级 Gaussian 语义中的弱 2D-to-3D feature association 问题。
+- [WE-GS: An In-the-wild Efficient 3D Gaussian Representation for Unconstrained Photo Collections](https://arxiv.org/abs/2406.02407)：面向非受控照片集合构建高效 3DGS 表示，处理外观变化和野外采集噪声。
+- [TopViewRS: Vision-Language Models as Top-View Spatial Reasoners](https://arxiv.org/abs/2406.02537)：评估并适配 VLM 的 top-view 空间推理能力，关注地图式布局中不同于透视图像的度量关系。
+- [3D-HGS: 3D Half-Gaussian Splatting*](https://arxiv.org/abs/2406.02720)：提出 half-Gaussian kernels 作为可插拔 3DGS primitive，在保持快速渲染的同时减少形状和颜色不连续。
+- [Ouroboros3D: Image-to-3D Generation via 3D-aware Recursive Diffusion](https://arxiv.org/abs/2406.03184)：通过 3D-aware recursive diffusion 从图像生成 3D 资产。
+- [Gear-NeRF: Free-Viewpoint Rendering and Tracking with Motion-Aware Spatio-Temporal Sampling](https://arxiv.org/abs/2406.03723)：用 motion-aware spatio-temporal sampling 联合自由视角渲染与跟踪，改进动态场景 NeRF 重建。
+- [LLplace: The 3D Indoor Scene Layout Generation and Editing via Large Language Model](https://arxiv.org/abs/2406.03866)：用 LLM 生成和编辑 3D indoor layouts，减少对专有 LLM 推理或复杂 prompt engineering 的依赖。
+- [STAR: Skeleton-aware Text-based 4D Avatar Generation with In-Network Motion Retargeting](https://arxiv.org/abs/2406.04629)：通过 skeleton-aware optimization 和 in-network motion retargeting 从文本生成 4D avatars，避免 pose-agnostic SDS 带来的动画伪影。
+- [CityCraft: A Real Crafter for 3D City Generation](https://arxiv.org/abs/2406.04983)：面向城市仿真和规划资产生成 3D city scenes，改进传统 layout generation 加 neural rendering 的两阶段流程。
+- [Efficient 3D Shape Generation via Diffusion Mamba with Bidirectional SSMs](https://arxiv.org/abs/2406.05038)：在 3D diffusion 中用双向 state-space modeling 替代更重的注意力模块，提高长几何序列上的形状生成效率。
+- [GTR: Improving Large 3D Reconstruction Models through Geometry and Texture Refinement](https://arxiv.org/abs/2406.05649)：用几何和纹理 refinement modules 改进 LRM 式 multi-view mesh reconstruction，提升 triplane-NeRF 输出质量。
+- [Generalizable Human Gaussians from Single-View Image](https://arxiv.org/abs/2406.06050)：用可泛化模型从单图预测人体 Gaussian 表示，面向无需逐人优化的可动画化人体重建。
+- [MVGamba: Unify 3D Content Generation as State Space Sequence Modeling](https://arxiv.org/abs/2406.06367)：把多视角 3D 内容生成统一为 state-space sequence modeling，用 Mamba 式动态协调生成视图和几何。
+- [Generative Gaussian Splatting for Unbounded 3D City Generation](https://arxiv.org/abs/2406.06526)：把 3DGS 从有限尺度物体扩展到 unbounded city scenes，处理无限城市生成中的存储和表示问题。
+- [Beyond Bare Queries: Open-Vocabulary Object Grounding with 3D Scene Graph](https://arxiv.org/abs/2406.07113)：为 open-vocabulary grounding 构建 3D scene graphs，使智能体能解析关系型物体描述而不仅是简单物体名。
+- [3D-Properties: Identifying Challenges in DPO and Charting a Path Forward](https://arxiv.org/abs/2406.07327)：偏离空间建模；它分析 Direct Preference Optimization 在 LLM 对齐中的局限，而不是讨论三维属性或几何模型。
+- [Trim 3D Gaussian Splatting for Accurate Geometry Representation](https://arxiv.org/abs/2406.07499)：通过 trim 不准确的 Gaussians 并保留可靠场景结构，从 3DGS 表示中恢复更干净的几何。
+- [An Image is Worth 32 Tokens for Reconstruction and Generation](https://arxiv.org/abs/2406.07550)：把图像压缩为紧凑的 32-token latent representation，用于更高效的高分辨率重建和生成。
+- [OpenObj: Open-Vocabulary Object-Level Neural Radiance Fields With Fine-Grained Understanding](https://arxiv.org/abs/2406.08009)：把 object-level NeRF reconstruction 与细粒度开放词汇理解结合，避免 point-wise semantics 过于模糊。
+- [Human 3Diffusion: Realistic Avatar Creation via Explicit 3D Consistent Diffusion Models](https://arxiv.org/abs/2406.08475)：用显式 3D-consistent diffusion priors 从单张 RGB 图像创建真实感 avatar，弥补 2D diffusion 缺乏多视角形状一致性的不足。
+- [Real3D: Scaling Up Large Reconstruction Models with Real-World Images](https://arxiv.org/abs/2406.08479)：通过 self-training、无监督像素与语义损失以及野外图像自动筛选，用单视角真实图像训练大重建模型。
+- [Dual Attribute-Spatial Relation Alignment for 3D Visual Grounding](https://arxiv.org/abs/2406.08907)：DASANet 将属性与空间关系分成双分支建模，再用 cross-attention 融合以提升可解释的 3D visual grounding。
+- [Beyond the Frontier: Predicting Unseen Walls From Occupancy Grids by Learning From Floor Plans](https://arxiv.org/abs/2406.09160)：把未观测墙体预测表述为线段序列生成，从部分 LiDAR occupancy grid 中自回归预测隐藏墙面。
+- [Neural Assets: 3D-Aware Multi-Object Scene Synthesis with Image Diffusion Models](https://arxiv.org/abs/2406.09292)：用每个物体的 Neural Asset token 替代文本 token，解耦参考外观与目标 3D 位姿以控制多物体扩散合成。
+- [LRM-Zero: Training Large Reconstruction Models with Synthesized Data](https://arxiv.org/abs/2406.09371)：完全用 Zeroverse 程序化合成数据训练 sparse-view 大重建模型，依赖丰富局部几何和纹理而非真实语义类别。
+- [WonderWorld: Interactive 3D Scene Generation from a Single Image](https://arxiv.org/abs/2406.09394)：以 Fast Layered Gaussian Surfels 和 guided depth diffusion 从单图生成连通 3D 场景，支持低延迟交互式编辑。
+- [ConsistDreamer: 3D-Consistent 2D Diffusion for High-Fidelity Scene Editing](https://arxiv.org/abs/2406.09404)：把环绕视图、结构化噪声和自监督一致性约束注入 2D diffusion，使指令式场景编辑保持 3D 一致。
+- [ImageNet3D: Towards General-Purpose Object-Level 3D Understanding](https://arxiv.org/abs/2406.09613)：为 200 个 ImageNet 类别增加 3D 位姿、位置、视角和交织 3D 信息的 caption，用于通用物体级 3D 理解。
+- [OpenECAD: An efficient visual language model for editable 3D-CAD design](https://arxiv.org/abs/2406.09913)：微调 VLM 将 3D 设计图转成结构化 2D sketch 与 3D construction commands，使结果可直接在 CAD 工具中编辑。
+- [D‐NPC: Dynamic Neural Point Clouds for Non‐Rigid View Synthesis from Monocular Video](https://arxiv.org/abs/2406.10078)：把随手拍单目视频表示为 dynamic neural point cloud，并用静态与动态 hash feature grids 建模非刚性新视角合成。
+- [GaussianSR: 3D Gaussian Super-Resolution with 2D Diffusion Priors](https://arxiv.org/abs/2406.10111)：把 2D diffusion prior 蒸馏进 3D Gaussian 超分辨率，并用 SDS timestep 退火和冗余 Gaussian 丢弃抑制随机伪影。
+- [MeshAnything: Artist-Created Mesh Generation with Autoregressive Transformers](https://arxiv.org/abs/2406.10163)：把 mesh extraction 当作自回归生成任务，用 VQ-VAE mesh vocabulary 和 shape-conditioned decoder-only Transformer 生成艺术家式网格。
+- [PUP 3D-GS: Principled Uncertainty Pruning for 3D Gaussian Splatting](https://arxiv.org/abs/2406.10219)：用二阶重建误差近似计算 Gaussian sensitivity score，并通过多轮 prune-refine 压缩已训练 3DGS 场景。
+- [L4GM: Large 4D Gaussian Reconstruction Model](https://arxiv.org/abs/2406.10324)：在 LGM 上加入 temporal self-attention 和多视角视频数据训练，从单视角视频前馈生成动态 4D Gaussian 物体。
+- [GeoGPT4V: Towards Geometric Multi-modal Large Language Models with Geometric Image Generation](https://arxiv.org/abs/2406.11503)：用 GPT-4 与 GPT-4V 合成图文对齐的几何题和图示数据，提升模型在 MathVista 与 MathVision 的几何表现。
+- [RetinaGS: Scalable Training for Dense Scene Rendering with Billion-Scale 3D Gaussians](https://arxiv.org/abs/2406.11836)：提出面向 3DGS 的模型并行训练和修正渲染方程，把稠密场景渲染扩展到十亿级 Gaussian primitives。
+- [A Hierarchical 3D Gaussian Representation for Real-Time Rendering of Very Large Datasets](https://arxiv.org/abs/2406.12080)：用层次化 3D Gaussian 组织超大规模采集数据，使场景可按 level of detail 流式加载并实时渲染。
+- [DistillNeRF: Perceiving 3D Scenes from Single-Glance Images by Distilling Neural Fields and Foundation Model Features](https://arxiv.org/abs/2406.12095)：从单次观察图像中蒸馏 neural field 几何和基础模型语义，用于推断图像直接证据之外的 3D 场景结构。
+- [HumanSplat: Generalizable Single-Image Human Gaussian Splatting with Structure Priors](https://arxiv.org/abs/2406.12459)：把人体结构先验注入可泛化前馈模型，从单张图像重建可动画化的人体 Gaussian splats。
+- [4K4DGen: Panoramic 4D Generation at 4K Resolution](https://arxiv.org/abs/2406.13527)：面向 4K 分辨率全景 4D 场景生成，强调高分辨率下的时空一致性。
+- [SpatialBot: Precise Spatial Understanding with Vision Language Models](https://arxiv.org/abs/2406.13642)：用 RGB-depth SpatialQA 数据训练 VLM，并通过 SpatialBench 检验深度感知的空间理解能力。
+- [CLAY: A Controllable Large-scale Generative Model for Creating High-quality 3D Assets](https://arxiv.org/abs/2406.13897)：构建可控的大规模 3D 资产生成模型，让高质量形状生成服从用户指定控制条件。
+- [Deblurring Neural Radiance Fields with Event-driven Bundle Adjustment](https://arxiv.org/abs/2406.14360)：通过 event-driven bundle adjustment 联合校正相机运动和辐射场，从模糊采集中恢复更清晰的 NeRF。
+- [Gaussian-Informed Continuum for Physical Property Identification and Simulation](https://arxiv.org/abs/2406.14927)：用 Gaussian-informed continuum 从空间观测中识别物理属性并模拟可形变物体。
+- [Gaussian Splatting to Real World Flight Navigation Transfer with Liquid Networks](https://arxiv.org/abs/2406.15149)：把基于 Gaussian Splatting 场景表示的导航策略迁移到真实飞行，并用 liquid neural networks 承接控制。
+- [GeoLRM: Geometry-Aware Large Reconstruction Model for High-Quality 3D Gaussian Generation](https://arxiv.org/abs/2406.15333)：在大重建模型中加入 geometry-aware conditioning，使稀疏输入生成更高质量的 3D Gaussian 资产。
+- [Taming 3DGS: High-Quality Radiance Fields with Limited Resources](https://arxiv.org/abs/2406.15643)：面向有限显存和计算资源优化 3DGS，追求不依赖充足资源假设的高质量 radiance fields。
+- [LiveScene: Language Embedding Interactive Radiance Fields for Physical Scene Rendering and Control](https://arxiv.org/abs/2406.16038)：把语言特征嵌入 radiance fields，使文本查询可以控制物理场景渲染与交互。
+- [Articulate your NeRF: Unsupervised articulated object modeling via conditional view synthesis](https://arxiv.org/abs/2406.16623)：用 conditional view synthesis 作为监督信号，在无标注条件下学习关节物体部件和运动。
+- [ClotheDreamer: Text-guided garment generation with 3D gaussians](https://arxiv.org/abs/2406.16815)：以 3D Gaussians 生成文本条件服装，关注可编辑服装几何和外观而非平面纹理迁移。
+- [Mamba24/8D: Enhancing Global Interaction in Point Clouds via State Space Model](https://arxiv.org/abs/2406.17442)：用点云 state space model 捕获长程交互，替代只依赖局部点操作的建模方式。
+- [Director3D: Real-world Camera Trajectory and 3D Scene Generation from Text](https://arxiv.org/abs/2406.17601)：从文本联合生成真实感 camera trajectory 和 3D scene，使场景创建与可控相机运动绑定。
+- [RealTalk: Real-time and Realistic Audio-driven Face Generation with 3D Facial Prior-guided Identity Alignment Network](https://arxiv.org/abs/2406.18284)：利用 3D facial prior 与 identity alignment，实现实时音频驱动的说话人脸生成。
+- [DoubleTake: Geometry Guided Depth Estimation](https://arxiv.org/abs/2406.18387)：通过第二次 geometry-guided pass 修正单目深度中的空间结构不一致。
+- [GaussianDreamerPro: Text to Manipulable 3D Gaussians with Highly Enhanced Quality](https://arxiv.org/abs/2406.18462)：改进 text-to-3D Gaussian 生成，强调更高质量几何和可操作的 Gaussian 表示。
+- [MultiDiff: Consistent Novel View Synthesis from a Single Image](https://arxiv.org/abs/2406.18524)：用多视角 diffusion 一致性从单张输入图像合成连贯的新视角。
+- [On Scaling Up 3D Gaussian Splatting Training](https://arxiv.org/abs/2406.18533)：系统研究 3DGS training scaling，分析 primitive 数量、图像分辨率和训练资源对重建质量的影响。
+- [GS-ROR2: Bidirectional-guided 3DGS and SDF for Reflective Object Relighting and Reconstruction](https://arxiv.org/abs/2406.18544)：用双向指导耦合 3DGS 与 SDF，以重建和重光照反射物体。
+- [Dream-in-Style: Text-to-3D Generation Using Stylized Score Distillation](https://arxiv.org/abs/2406.18581)：为风格化 text-to-3D 调整 score distillation，使风格指导同时影响几何与外观。
+- [Dynamic Gaussian Marbles for Novel View Synthesis of Casual Monocular Videos](https://arxiv.org/abs/2406.18717)：用 dynamic Gaussian marbles 表示随手拍单目视频，跟踪场景运动以支持新视角合成。
+- [3D Feature Distillation with Object-Centric Priors](https://arxiv.org/abs/2406.18742)：利用 object-centric priors 把 2D 基础模型特征蒸馏到 3D 表示中，提升场景级语义一致性。
+- [How Far are AI-Generated Videos from Simulating the 3D Visual World: A Learned 3D Evaluation Approach](https://arxiv.org/abs/2406.19568)：训练 learned 3D evaluator 来衡量生成视频是否保持合理的三维场景结构。
+- [EgoGaussian: Dynamic Scene Understanding from Egocentric Video with 3D Gaussian Splatting](https://arxiv.org/abs/2406.19811)：用 3D Gaussian Splatting 重建自我中心动态场景，支持可穿戴视频视角下的场景理解。
+- [SpotLessSplats: Ignoring Distractors in 3D Gaussian Splatting](https://arxiv.org/abs/2406.20055)：在 3DGS 优化中学习忽略 transient distractors，使野外场景重建出稳定背景几何。
+- [HouseCrafter: Lifting Floorplans to 3D Scenes with 2D Diffusion Models](https://arxiv.org/abs/2406.20077)：借助 2D diffusion prior 将 floor plan 布局提升为 3D 室内场景资产。
+- [ScanReason: Empowering 3D Visual Grounding with Reasoning Capabilities](https://arxiv.org/abs/2407.01525)：为 3D visual grounding 加入推理监督，使模型能处理需要空间和关系推断的指代表达。
+- [ScaleDreamer: Scalable Text-to-3D Synthesis with Asynchronous Score Distillation](https://arxiv.org/abs/2407.02040)：用 asynchronous score distillation 加速 text-to-3D，把慢速 diffusion guidance 与 3D 优化步骤解耦。
+- [BeNeRF: Neural Radiance Fields from a Single Blurry Image and Event Stream](https://arxiv.org/abs/2407.02174)：从单张模糊图像和事件流重建 NeRF，利用 event cues 恢复模糊中丢失的几何。
+- [Meta 3D AssetGen: Text-to-Mesh Generation with High-Quality Geometry, Texture, and PBR Materials](https://arxiv.org/abs/2407.02445)：生成面向生产的 text-to-mesh 资产，同时输出几何、纹理和 PBR 材质。
+- [Meta 3D Gen](https://arxiv.org/abs/2407.02599)：整合 Meta 的 text-to-3D 资产生成组件，用于高质量 mesh、texture 和 material generation。
+- [Explicitly Guided Information Interaction Network for Cross-modal Point Cloud Completion](https://arxiv.org/abs/2407.02887)：通过显式引导稀疏几何与跨模态线索的信息交互来补全点云。
+- [VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors](https://arxiv.org/abs/2407.02945)：用 learned urban-scene priors 在相机覆盖稀疏的区域外推 3DGS 新视角。
+- [SegVG: Transferring Object Bounding Box to Segmentation for Visual Grounding](https://arxiv.org/abs/2407.03200)：把 box-level visual grounding 迁移为 segmentation mask，使被定位物体具备更细边界。
+- [Visual Grounding with Attention-Driven Constraint Balancing](https://arxiv.org/abs/2407.03243)：通过 attention-driven constraint balancing 改善语言线索和视觉区域竞争时的 visual grounding。
+- [GSD: View-Guided Gaussian Splatting Diffusion for 3D Reconstruction](https://arxiv.org/abs/2407.04237)：用 view-guided diffusion 从稀疏图像证据预测 Gaussian splats，以完成 3D 重建。
+- [Segment Any 4D Gaussians](https://arxiv.org/abs/2407.04504)：通过 temporal identity feature field 和 refinement stage 分割动态 4D Gaussian 场景并去除伪影。
+- [LaRa: Efficient Large-Baseline Radiance Fields](https://arxiv.org/abs/2407.04699)：把 Gaussian Volumes 与 local-global transformer group attention 结合，用于高效前馈 large-baseline radiance fields。
+- [A Likelihood-Based Generative Approach for Spatially Consistent Precipitation Downscaling](https://arxiv.org/abs/2407.04724)：融合 likelihood 和 adversarial objectives，使降水 downscaling 采样保持空间一致。
+- [Multi-branch Collaborative Learning Network for 3D Visual Grounding](https://arxiv.org/abs/2407.05363)：用独立 3D referring comprehension 与 segmentation 分支，并以 superpoint aggregation 和 soft alignment 互相增强 grounding。
+- [Bringing Masked Autoencoders Explicit Contrastive Properties for Point Cloud Self-Supervised Learning](https://arxiv.org/abs/2407.05862)：把点云 MAE 中的随机 masking 变成 contrastive pairs，在不依赖重增强的情况下加入对比学习性质。
+- [4D Contrastive Superflows are Dense 3D Representation Learners](https://arxiv.org/abs/2407.06190)：用 LiDAR-camera 序列中的 density-invariant consistency 和 flow-based contrastive temporal cues 预训练 dense 3D representation。
+- [Tailor3D: Customized 3D Assets Editing and Generation with Dual-Side Images](https://arxiv.org/abs/2407.06191)：用前后双面图像编辑和生成 3D 资产，减少多视图逐张编辑时的重叠冲突。
+- [Category-level Object Detection, Pose Estimation and Reconstruction from Stereo Images](https://arxiv.org/abs/2407.06984)：用 implicit stereo matching module 和 transform decoder 联合完成类别级检测、位姿估计与重建。
+- [3D Gaussian Ray Tracing: Fast Tracing of Particle Scenes](https://arxiv.org/abs/2407.07090)：通过 BVH 和按深度排序 shading 对 3D Gaussian particles 做 ray tracing，以支持 rasterization 难处理的二次光照效果。
+- [Let Occ Flow: Self-Supervised 3D Occupancy Flow Prediction](https://arxiv.org/abs/2407.07587)：用 TPV features、temporal fusion、可微体素 flow rendering 和 2D 自监督预测 camera-only occupancy 与 occupancy flow。
+- [Flow4D: Leveraging 4D Voxel Network for LiDAR Scene Flow Estimation](https://arxiv.org/abs/2407.07995)：在 4D voxel network 中时序融合多帧 LiDAR，显式提取时空特征来估计 scene flow。
+- [WildGaussians: 3D Gaussian Splatting in the Wild](https://arxiv.org/abs/2407.08447)：结合鲁棒 DINO features 和 appearance modeling module，使 3DGS 能处理野外照片中的遮挡和光照变化。
+- [STD-LLM: Understanding Both Spatial and Temporal Properties of Spatial-Temporal Data with LLMs](https://arxiv.org/abs/2407.09096)：把预训练语言模型适配到时空预测和补全任务，显式建模时间、连通性与高阶时空相关性。
+- [Radiance Fields from Photons](https://arxiv.org/abs/2407.09386)：直接从 single-photon camera events 构建 radiance fields，适用于低光、高动态范围和高速运动重建。
+- [Simplicits: Mesh-Free, Geometry-Agnostic Elastic Simulation](https://arxiv.org/abs/2407.09497)：在 occupancy queries 上拟合小型 implicit networks，为任意几何表示的物体模拟弹性形变。
+- [Hamba: Single-view 3D Hand Reconstruction with Graph-guided Bi-Scanning Mamba](https://arxiv.org/abs/2407.09646)：把 Mamba scanning 改写为 graph-guided bidirectional scanning，使单图手部重建能高效捕获关节空间关系。
+- [3x2: 3D Object Part Segmentation by 2D Semantic Correspondences](https://arxiv.org/abs/2407.09648)：借助 2D foundation-model features 和语义对应关系，在少量 3D 标注下完成 3D object part segmentation。
+- [VividDreamer: Invariant Score Distillation For Hyper-Realistic Text-to-3D Generation](https://arxiv.org/abs/2407.09822)：用来自 DDIM sampling 的 invariant score 替换 SDS reconstruction term，缓解 text-to-3D 的过平滑和过饱和。
+- [Eliminating Feature Ambiguity for Few-Shot Segmentation](https://arxiv.org/abs/2407.09842)：偏离核心空间建模；它为 2D few-shot segmentation 增加 ambiguity-elimination features，而不是进行 3D 重建或空间推理。
+- [SpikeGS: 3D Gaussian Splatting from Spike Streams with High-Speed Camera Motion](https://arxiv.org/abs/2407.10062)：把 3DGS 渲染过程与瞬时成像和 spike firing 过程对齐，从 spike-camera streams 训练 3D Gaussian Splatting。
+- [RAPiD-Seg: Range-Aware Pointwise Distance Distribution Networks for 3D LiDAR Segmentation](https://arxiv.org/abs/2407.10159)：定义 range-aware pointwise distance-distribution features，并用 double-nested autoencoder 提升户外 LiDAR segmentation 的不变性。
+- [Scaling 3D Reasoning with LMMs to Large Robot Mission Environments Using Datagraphs](https://arxiv.org/abs/2407.10743)：用 datagraphs 和 graph traversal 让 LMM 以适合上下文窗口的小片段查询大型 3D 机器人环境。
+- [Gaussian Splatting Lucas-Kanade](https://arxiv.org/abs/2407.11309)：为动态 Gaussian Splatting 推导 Lucas-Kanade 式解析速度场，在相机视差弱时约束场景运动。
+- [TCFormer: Visual Recognition via Token Clustering Transformer](https://arxiv.org/abs/2407.11321)：偏离核心空间建模；它为通用视觉识别聚类语义 2D vision tokens，而不是解决 3D 或几何场景理解。
+- [EV-GS: Event-Based Gaussian Splatting for Efficient and Accurate Radiance Field Rendering](https://arxiv.org/abs/2407.11343)：仅用单目 event-camera supervision 推断 3D Gaussian splats，改善高速运动和低光条件下的 radiance-field 重建。
+- [Centering the Value of Every Modality: Towards Efficient and Resilient Modality-agnostic Semantic Segmentation](https://arxiv.org/abs/2407.11344)：训练分割模型在模态缺失或模态组合变化时仍能工作，通过显式衡量各模态贡献提升鲁棒性。
+- [DreamCatalyst: Fast and High-Quality 3D Editing via Controlling Editability and Identity Preservation](https://arxiv.org/abs/2407.11394)：在 3D 编辑中控制 editability 与 identity preservation 的取舍，以比反复 SDS 优化更快地得到高质量修改。
+- [Click-Gaussian: Interactive Segmentation to Any 3D Gaussians](https://arxiv.org/abs/2407.11793)：学习两级粒度的 3D Gaussian 特征场，并用 Global Feature-guided Learning 聚类多视图 2D 噪声分割结果，实现无需后处理的 10 ms 点击式 3D 场景分割。
+- [MVG-Splatting: Multi-View Guided Gaussian Splatting with Adaptive Quantile-Based Geometric Consistency Densification](https://arxiv.org/abs/2407.11840)：结合图像梯度法线和由 MVS 风格深度图引导的自适应分位数 densification，在保持渲染质量的同时改善 2DGS 网格提取。
+- [Temporally Consistent Stereo Matching](https://arxiv.org/abs/2407.11950)：把视频立体匹配拆成时序视差补全和双空间迭代细化，通过把上一帧视差投影到当前视角来稳定连续深度图。
+- [UrbanWorld: An Urban World Model for 3D City Generation](https://arxiv.org/abs/2407.11965)：构建用于 3D city generation 的 urban world model，学习道路、建筑和场景布局先验以生成可控城市资产。
+- [F-HOI: Toward Fine-grained Semantic-Aligned 3D Human-Object Interactions](https://arxiv.org/abs/2407.12435)：构建含 2 万余个状态级 3D HOI 描述的 Semantic-HOI，并训练 F-HOI 在 2D、3D 与语言空间之间进行细粒度交互对齐。
+- [EaDeblur-GS: Event assisted 3D Deblur Reconstruction with Gaussian Splatting](https://arxiv.org/abs/2407.13520)：把事件相机数据接入 3DGS，用 Adaptive Deviation Estimator 估计 Gaussian 中心运动并配合去模糊损失，在剧烈相机运动下重建清晰场景。
+- [SegPoint: Segment Any Point Cloud via Large Language Model](https://arxiv.org/abs/2407.13761)：利用多模态 LLM 推断隐式用户指令并输出逐点掩码，统一处理 3D 指令、指代表达、语义和开放词汇点云分割，并用 Instruct3D 评测。
+- [Shape of Motion: 4D Reconstruction From a Single Video](https://arxiv.org/abs/2407.13764)：从单个视频重建随时间变化的 3D 结构，联合估计运动与几何而不是假设场景静止。
+- [Learning Visual Grounding from Generative Vision and Language Model](https://arxiv.org/abs/2407.14563)：提示生成式 VLM 为目标区域生成指代表达，并显式建模属性和空间关系，形成 1600 万条 grounding 查询用于 REC 和 RES 迁移。
+- [RGB2Point: 3D Point Cloud Generation from Single RGB Images](https://arxiv.org/abs/2407.14979)：从单张 RGB 图像生成点云，在只有单视角观测时学习推断物体三维几何。
+- [Enhancement of 3D Gaussian Splatting using Raw Mesh for Photorealistic Recreation of Architectures](https://arxiv.org/abs/2407.15435)：用原始建筑 mesh 指导 3DGS 优化，改善纯图像 splats 难以保留的建筑结构细节。
+- [6DGS: 6D Pose Estimation from a Single Image and a 3D Gaussian Splatting Model](https://arxiv.org/abs/2407.15484)：通过从 3DGS 椭球采样 radiant Ellicell rays 并求解像素-射线绑定来反演渲染过程，无需初始位姿即可闭式估计单图 6DoF 位姿。
+- [MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection](https://arxiv.org/abs/2407.16448)：用 weather-adaptive diffusion 提升恶劣天气下的单目 3D 检测，缓解雨、雾、雪带来的域偏移。
+- [HDRSplat: Gaussian Splatting for High Dynamic Range 3D Scene Reconstruction from Raw Images](https://arxiv.org/abs/2407.16503)：直接在 14-bit 线性 raw 图像上训练 3DGS，使用适合 HDR 的损失和光栅化调参，同时保留过暗与近饱和区域的场景信息。
+- [LangOcc: Self-Supervised Open Vocabulary Occupancy Estimation via Volume Rendering](https://arxiv.org/abs/2407.17310)：通过 volume rendering 自监督学习开放词汇 occupancy，把 3D 占据场与语言对齐语义特征连接起来而不依赖密集标注。
+- [SV4D: Dynamic 3D Content Generation with Multi-Frame and Multi-View Consistency](https://arxiv.org/abs/2407.17470)：通过同时约束多帧时间一致性和多视角几何一致性来生成动态 3D 内容。
+- [CityX: Controllable Procedural Content Generation for Unbounded 3D Cities](https://arxiv.org/abs/2407.17572)：用可控程序化生成创建无边界 3D 城市，并暴露布局与内容控制以服务大规模城市环境构建。
+- [LION: Linear Group RNN for 3D Object Detection in Point Clouds](https://arxiv.org/abs/2407.18232)：在分组稀疏体素特征上运行线性 group RNN，加入 3D 空间特征描述符并 densify 前景体素，以低于 Transformer 二次复杂度的方式建模长程点云关系。
+- [RefMask3D: Language-Guided Transformer for 3D Referring Segmentation](https://arxiv.org/abs/2407.18244)：用 Geometry-Enhanced Group-Word Attention 把语言与几何一致的子点云融合，再解码 linguistic primitives 和 object clusters 完成 3D 指代表达分割。
+- [MSP-MVS: Multi-granularity Segmentation Prior Guided Multi-View Stereo](https://arxiv.org/abs/2407.19323)：把 Semantic-SAM 得到的多粒度深度边缘作为先验来约束 MVS patch deformation，并通过自适应 anchor 重分配稳定边界附近匹配。
+- [Cycle3D: High-quality and Consistent Image-to-3D Generation via Generation-Reconstruction Cycle](https://arxiv.org/abs/2407.19548)：在去噪过程中循环调用 2D diffusion 生成器和前馈 3D 重建模块，使 image-to-3D 同时保持纹理质量与多视角一致性。
+- [From Flat to Spatial: Comparison of 4 methods constructing 3D, 2 and 1/2D Models from 2D Plans with neural networks](https://arxiv.org/abs/2407.19970)：比较把 2D 平面图提升为 2.5D 和 3D 模型的神经方法，更接近建筑重建而不是通用 LLM 空间推理。
+- [Global Structure-from-Motion Revisited](https://arxiv.org/abs/2407.20219)：将全局 Structure-from-Motion 重做为开源 GLOMAP 系统，在精度和鲁棒性上接近或超过 COLMAP，同时速度提升到数量级级别。
+- [Improving 2D Feature Representations by 3D-Aware Fine-Tuning](https://arxiv.org/abs/2407.20229)：把 2D 语义特征提升到 3D Gaussian 表示并从任意视角重渲染，再用这些 3D-aware 特征监督微调 2D foundation model。
+- [3D-GRES: Generalized 3D Referring Expression Segmentation](https://arxiv.org/abs/2407.20664)：把 3D referring segmentation 泛化到固定词表之外，将语言表达定位为 3D 场景中的点级 mask。
+- [Chat2Layout: Interactive 3D Furniture Layout With a Multimodal LLM](https://arxiv.org/abs/2407.21333)：用多模态 LLM 交互式放置和修改 3D 房间家具，同时结合视觉布局状态与对话约束。
+- [A Federated Learning-Friendly Approach for Parameter-Efficient Fine-Tuning of SAM in 3D Segmentation](https://arxiv.org/abs/2407.21739)：以参数高效微调方式把 SAM 适配到 3D segmentation，并兼容联邦学习中的通信和隐私约束。
+- [LoopSparseGS: Loop-Based Sparse-View Friendly Gaussian Splatting](https://arxiv.org/abs/2408.00254)：用 loop-based constraints 改善 sparse-view Gaussian Splatting，在输入视角很少时稳定重建几何。
+- [Head360: Learning a Parametric 3D Full-Head for Free-View Synthesis in 360°](https://arxiv.org/abs/2408.00296)：学习参数化 3D full-head 模型用于 360 度自由视角合成，覆盖脸部、头发和后脑等正脸人像缺失区域。
+- [EmoTalk3D: High-Fidelity Free-View Synthesis of Emotional 3D Talking Head](https://arxiv.org/abs/2408.00297)：在标定多视角 EmoTalk3D 数据上训练 speech-to-geometry-to-appearance 流程，并用 canonical 与 dynamic 4D Gaussians 合成带情绪控制的自由视角 talking head。
+- [SF3D: Stable Fast 3D Mesh Reconstruction with UV-unwrapping and Illumination Disentanglement](https://arxiv.org/abs/2408.00653)：快速生成单图 3D mesh，并提供 UV unwrapping 与 illumination disentanglement，使资产更易贴图和重光照。
+- [MotionFix: Text-Driven 3D Human Motion Editing](https://arxiv.org/abs/2408.00712)：构造由源动作、目标动作和编辑文本组成的 MotionFix 三元组，并训练 TMED 条件扩散模型按文本编辑 3D 人体动作，而非从文本重新生成。
+- [UniTalker: Scaling up Audio-Driven 3D Facial Animation through A Unified Model](https://arxiv.org/abs/2408.00762)：用统一模型扩展 audio-driven 3D facial animation，覆盖不同身份和表情风格的说话人动作生成。
+- [A General Framework to Boost 3D GS Initialization for Text-to-3D Generation by Lexical Richness](https://arxiv.org/abs/2408.01269)：在初始化 3D Gaussians 前扩充文本提示的词汇细节，让 text-to-3D 优化从更丰富的语义线索起步。
+- [GLDiTalker: Speech-Driven 3D Facial Animation with Graph Latent Diffusion Transformer](https://arxiv.org/abs/2408.01826)：用 graph latent diffusion 建模语音驱动的 3D 面部运动，捕捉面部顶点或区域之间的结构依赖。
+- [REVISION: Rendering Tools Enable Spatial Fidelity in Vision-Language Models](https://arxiv.org/abs/2408.02231)：用渲染工具为 VLM 提供空间忠实的视觉证据，提升依赖几何、视角和物体位置的回答质量。
+- [MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](https://arxiv.org/abs/2408.02555)：通过 Adjacent Mesh Tokenization 用更少顶点 token 表示大量面片，使自回归 mesh 生成能按目标形状生成更复杂的 artist-created meshes。
+- [An Object is Worth 64×64 Pixels: Generating 3D Object via Image Diffusion](https://arxiv.org/abs/2408.03178)：用紧凑的 64×64 图像扩散信号作为桥梁，将 2D 外观先验转化为 3D 物体几何。
+- [Compact 3D Gaussian Splatting for Static and Dynamic Radiance Fields](https://arxiv.org/abs/2408.03822)：用可学习 mask 剪除 Gaussian points，并量化视角相关颜色和协方差等属性，从而压缩静态与动态 3DGS 的显存和存储占用。
+- [Sketch2Scene: Automatic Generation of Interactive 3D Game Scenes from User's Casual Sketches](https://arxiv.org/abs/2408.04567)：从随手草图生成可玩的 3D 游戏场景，先用 2D diffusion 在等距投影下生成概念图，再分割图像并组装交互式资产。
+- [Large Models for Aerial Edges: An Edge-Cloud Model Evolution and Communication Paradigm](https://arxiv.org/abs/2408.04927)：偏离本 3D 模型列表：它讨论空中边缘网络中的大模型演化与边云通信，而不是具体空间重建模型。
+- [DreamCouple: Exploring High Quality Text-to-3D Generation Via Rectified Flow](https://arxiv.org/abs/2408.05008)：把 rectified flow 用于 text-to-3D，旨在相对纯 score-distillation 流程提升几何与纹理质量。
+- [Mipmap-GS: Let Gaussians Deform with Scale-Specific Mipmap for Anti-Aliasing Rendering](https://arxiv.org/abs/2408.06286)：用 mipmap 启发的伪目标和 scale-consistency guidance 把尺度信息注入 3D Gaussians，使 splats 能随缩放自调颜色、形状、尺寸和位置。
+- [Rethinking Open-Vocabulary Segmentation of Radiance Fields in 3D Space](https://arxiv.org/abs/2408.07416)：直接监督 3D 点来学习 radiance-field language embedding field，再迁移到 3DGS，并定义 3D 查询与几何语义联合评测协议。
+- [LLMI3D: Empowering LLM with 3D Perception from a Single 2D Image](https://arxiv.org/abs/2408.07422)：用从单图推断的 3D 感知增强 LLM 推理，把单目空间重建与语言场景理解连接起来。
+- [FlashGS: Efficient 3D Gaussian Splatting for Large-scale and High-resolution Rendering](https://arxiv.org/abs/2408.07967)：在 CUDA 级别优化 3DGS 可微光栅化，整合冗余消除、流水线、调度和内存访问改进，使大场景渲染约快四倍。
+- [CT4D: Consistent Text-to-4D Generation with Animatable Meshes](https://arxiv.org/abs/2408.08342)：在可动画 mesh 上生成文本条件 4D 内容，使用 generate-refine-animate 流程、区域驱动函数和 rigidity regularization 保持时序运动一致。
+- [SG-GS: Photo-realistic Animatable Human Avatars with Semantically-Guided Gaussian Splatting](https://arxiv.org/abs/2408.09665)：用语义人体区域引导 human Gaussian splats，使 avatar 在支持动画和姿态变化时保持照片级外观。
+- [On the Integration of Spatial-Temporal Knowledge: A Lightweight Approach to Atmospheric Time Series Forecasting](https://arxiv.org/abs/2408.09695)：偏离 3D 模型覆盖：它为空气时间序列预测整合时空知识，而不是几何、场景或点云建模。
+- [3D-Aware Instance Segmentation and Tracking in Egocentric Videos](https://arxiv.org/abs/2408.09860)：结合场景几何、3D 物体中心跟踪和实例分割，在 EPIC Fields 上改善快速相机运动和遮挡条件下的 egocentric video tracking。
+- [LoopSplat: Loop Closure by Registering 3D Gaussian Splats](https://arxiv.org/abs/2408.10154)：用 RGB-D frame-to-model tracking、3DGS submaps 和在线回环约束构建 LoopSplat，使 Gaussian SLAM 地图保持全局一致。
+- [SpaRP: Fast 3D Object Reconstruction and Pose Estimation from Sparse Views](https://arxiv.org/abs/2408.10195)：从稀疏视角联合估计物体位姿和重建 3D 形状，面向相机覆盖有限时的快速前馈恢复。
+- [MeshFormer: High-Quality Mesh Generation with 3D-Guided Reconstruction Model](https://arxiv.org/abs/2408.10198)：用 3D-guided reconstruction model 生成更高质量 mesh，强调显式网格结构而不是仅依赖隐式场。
+- [Large Point-to-Gaussian Model for Image-to-3D Generation](https://arxiv.org/abs/2408.10935)：用大型前馈模型把图像条件点特征转换为 Gaussian primitives，用于 image-to-3D 资产生成。
+- [GS-CPR: Efficient Camera Pose Refinement via 3D Gaussian Splatting](https://arxiv.org/abs/2408.11085)：在测试时从 3DGS 渲染合成 RGB 和深度，用 MASt3R 建立匹配，并加入曝光自适应 3DGS 来细化户外单图相机位姿。
+- [HumanCoser: Layered 3D Human Generation via Semantic-Aware Diffusion Model](https://arxiv.org/abs/2408.11357)：用 semantic-aware diffusion 生成 layered 3D humans，分离身体和服装结构以提升人体资产可控性。
+- [Positional Prompt Tuning for Efficient 3D Representation Learning](https://arxiv.org/abs/2408.11567)：冻结大部分 point Transformer 参数，只训练新增 patch tokens 和位置编码，把 positional prompts 用作参数高效的 3D 表征适配方式。
+- [Robust 3D Gaussian Splatting for Novel View Synthesis in Presence of Distractors](https://arxiv.org/abs/2408.11697)：利用自监督图像残差和预训练分割掩码在 3DGS 优化中识别干扰物，并把这些区域排除出重建损失。
+- [DreamCinema: Cinematic Transfer with Free Camera and 3D Character](https://arxiv.org/abs/2408.12601)：把电影化视频创作拆成 3D 角色、动作、自由相机和环境控制，在 3D 空间中组合这些元素以保持生成镜头一致。
+- [GSFusion: Online RGB-D Mapping Where Gaussian Splatting Meets TSDF Fusion](https://arxiv.org/abs/2408.12677)：把 TSDF 式体素 mapping 与 3DGS 融合，并用图像 quadtree 初始化紧凑 splats，使在线 RGB-D mapping 同时保留几何结构和照片级反馈。
+- [FLoD: Integrating Flexible Level of Detail into 3D Gaussian Splatting for Customizable Rendering](https://arxiv.org/abs/2408.12894)：为 3DGS 加入灵活 level-of-detail 控制，使渲染能随场景尺度或用户需求在质量和速度之间切换。
+- [Learning 2D Invariant Affordance Knowledge for 3D Affordance Grounding](https://arxiv.org/abs/2408.13024)：从同一 affordance 类别的多张人-物交互图像中提取不变 affordance 知识，并用 MIFAG 将共同交互模式定位到 3D 物体区域。
+- [Atlas Gaussians Diffusion for 3D Generation with Infinite Number of Points](https://arxiv.org/abs/2408.13055)：把形状表示为能解码任意密度 3D Gaussians 的局部 atlas patches，再训练 latent diffusion 进行带细节的前馈原生 3D 生成。
+- [An In-Depth Investigation of Data Collection in LLM App Ecosystems](https://arxiv.org/abs/2408.13247)：偏离 Spatial Model：它研究 LLM 应用生态中的数据收集实践，而不是空间模型或 3D 方法。
+- [LayerPano3D: Layered 3D Panorama for Hyper-Immersive Scene Generation](https://arxiv.org/abs/2408.13252)：把生成的 panorama 按深度拆成多层，并用 diffusion priors 补出遮挡区域，从文本生成可自由探索的全景 3D 场景。
+- [Segment Any Mesh: Zero-shot Mesh Part Segmentation via Lifting Segment Anything 2 to 3D](https://arxiv.org/abs/2408.13679)：把 Segment Anything 2 线索提升到 mesh 上，实现 zero-shot part segmentation，将 2D mask 先验迁移到 3D 表面区域。
+- [SceneDreamer360: Text-Driven 3D-Consistent Scene Generation with Panoramic Gaussian Splatting](https://arxiv.org/abs/2408.13711)：微调 panoramic generator，采用点云融合初始化并优化 panoramic 3DGS，使文本驱动场景在 360 度多视角中保持一致。
+- [TranSplat: Generalizable 3D Gaussian Splatting from Sparse Multi-View Images with Transformers](https://arxiv.org/abs/2408.13770)：用 Transformer 做稀疏视角 3DGS 重建，并引入单目深度先验，改善非重叠视角中的匹配和深度估计。
+- [Build-A-Scene: Interactive 3D Layout Control for Diffusion-Based Image Generation](https://arxiv.org/abs/2408.14819)：让用户为 diffusion image generation 指定 3D scene layout controls，在图像合成前约束物体位置与相机几何。
+- [Can Transformers Do Enumerative Geometry?](https://arxiv.org/abs/2408.14915)：在 enumerative geometry 问题上测试 Transformer，考察符号几何推理而不是视觉 3D 重建。
+- [Drone-assisted Road Gaussian Splatting with Cross-view Uncertainty](https://arxiv.org/abs/2408.15242)：结合无人机和道路视角图像，并建模 cross-view uncertainty，以改进道路场景 3DGS 重建。
+- [Generic Objects as Pose Probes for Few-Shot View Synthesis](https://arxiv.org/abs/2408.16690)：把常见分割物体当作 pose probes，联合优化 object NeRF 和 scene NeRF 分支，从 3 到 6 张未标定位姿图像完成 few-shot view synthesis。
+- [Spatially-Aware Diffusion Models with Cross-Attention for Global Field Reconstruction with Sparse Observations](https://arxiv.org/abs/2409.00230)：用带 cross-attention 的 spatially-aware diffusion 从稀疏观测重建全局空间场，在位置之间传播空间上下文。
+- [3D Gaussian Splatting for Large-scale Surface Reconstruction from Aerial Images](https://arxiv.org/abs/2409.00381)：针对大规模航拍 MVS 图像做数据分块，加入 ray-Gaussian 深度与法线并约束多视图几何一致，使 3DGS 能用于大范围表面重建。
+- [IGEV++: Iterative Multi-Range Geometry Encoding Volumes for Stereo Matching](https://arxiv.org/abs/2409.00638)：构建多范围几何编码体并迭代细化视差，用于处理病态区域和大视差下的 stereo matching。
+- [GraspSplats: Efficient Manipulation with 3D Feature Splatting](https://arxiv.org/abs/2409.02084)：把操作相关特征嵌入 3D splats，使策略能在显式场景表示中推理 grasp affordances。
+- [Volumetric Surfaces: Representing Fuzzy Geometries with Layered Meshes](https://arxiv.org/abs/2409.02482)：用 layered meshes 表示不确定或 fuzzy geometry，在单一清晰表面不足时捕捉体积厚度。
+- [LM-Gaussian: Boost Sparse-view 3D Gaussian Splatting with Large Model Priors](https://arxiv.org/abs/2409.03456)：用 stereo prior 辅助稀疏视角 3DGS 的相机位姿与点云初始化，并利用大模型先验正则少图像重建中的欠约束细节。
+- [Geometry Image Diffusion: Fast and Data-Efficient Text-to-3D with Image-Based Surface Representation](https://arxiv.org/abs/2409.03718)：把 3D 形状编码为 2D geometry images，并通过 collaborative control 借用 text-to-image diffusion 先验，实现快速、低数据需求的 text-to-3D。
+- [Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding](https://arxiv.org/abs/2409.03757)：在复杂 3D 场景理解上探测视觉基础模型，揭示 2D 预训练表征迁移到空间语义时的能力边界。
+- [GST: Precise 3D Human Body from a Single Image with Gaussian Splatting Transformers](https://arxiv.org/abs/2409.04196)：用 Transformer 从单张图像预测人体 Gaussian splats，面向精确全身几何与外观重建。
+- [Diagram Formalization Enhanced Multi-Modal Geometry Problem Solver](https://arxiv.org/abs/2409.04214)：融合视觉特征、几何形式语言和自然语言，并用 SynthGeo228K 图形标注训练视觉编码器，提升 MLLM 的几何题求解能力。
+- [Fisheye-GS: Lightweight and Extensible Gaussian Splatting Module for Fisheye Cameras](https://arxiv.org/abs/2409.04751)：重新推导鱼眼相机下的 3DGS 投影和梯度，形成轻量可扩展模块，无需图像去畸变即可支持大视场 novel-view rendering。
+- [GS-PT: Exploiting 3D Gaussian Splatting for Comprehensive Point Cloud Understanding via Self-supervised Learning](https://arxiv.org/abs/2409.04963)：把 3D Gaussian Splatting 作为点云理解的自监督预训练信号，使点特征与渲染空间结构对齐。
+- [DreamMapping: High-Fidelity Text-to-3D Generation via Variational Distribution Mapping](https://arxiv.org/abs/2409.05099)：把 SDS 重新解释为渲染图像分布建模，并用 Variational Distribution Mapping 与随 timestep 退火的系数提升 text-to-3D 细节质量。
+- [GASP: Gaussian Splatting for Physic-Based Simulations](https://arxiv.org/abs/2409.05819)：把 Gaussian Splatting 表示接入物理仿真，使场景几何能够参与物理动态建模。
+- [G3PT: Unleash the power of Autoregressive Modeling in 3D Generation via Cross-scale Querying Transformer](https://arxiv.org/abs/2409.06322)：把点式 3D 数据离散为多层细节 token，并用 cross-scale querying transformer 连接不同尺度，使自回归 3D 生成按粗到细建模而不是依赖人为顺序。
+- [Sources of Uncertainty in 3D Scene Reconstruction](https://arxiv.org/abs/2409.06407)：分析 3D reconstruction pipeline 中不确定性的来源，区分传感、匹配、几何与渲染环节对可靠性的影响。
+- [GeoCalib: Learning Single-image Calibration with Geometric Optimization](https://arxiv.org/abs/2409.06704)：结合几何优化学习单图像相机标定。
+- [gsplat: An Open-Source Library for Gaussian Splatting](https://arxiv.org/abs/2409.06765)：提供开源 Gaussian Splatting 库，包含优化的训练和 rasterization 组件，支持可复现 3DGS 研究。
+- [SwinGS: Sliding Window Gaussian Splatting for Volumetric Video Streaming with Arbitrary Length](https://arxiv.org/abs/2409.07759)：用滑动窗口维护 Gaussian splats 来流式处理任意长度体视频，避免一次性优化完整动态序列。
+- [LT3SD: Latent Trees for 3D Scene Diffusion](https://arxiv.org/abs/2409.08215)：用 latent trees 组织 3D scene diffusion，建模层次化场景组合而不是把场景压成扁平 latent vector。
+- [FlashSplat: 2D to 3D Gaussian Splatting Segmentation Solved Optimally](https://arxiv.org/abs/2409.08270)：将 2D mask 渲染监督视为 Gaussian labels 的线性函数，用闭式线性规划求解 3DGS 分割，而不是迭代梯度下降。
+- [DreamHOI: Subject-Driven Generation of 3D Human-Object Interactions with Diffusion Priors](https://arxiv.org/abs/2409.08278)：用扩散先验生成 subject-driven 3D human-object interactions，在保持目标主体的同时合成合理接触和动作。
+- [Robust Dual Gaussian Splatting for Immersive Human-centric Volumetric Videos](https://arxiv.org/abs/2409.08353)：把 volumetric video 的运动与外观分别表示为 joint Gaussians 和 skin Gaussians，并用粗到细训练实现压缩的实时人体表演播放。
+- [PrimeDepth: Efficient Monocular Depth Estimation with a Stable Diffusion Preimage](https://arxiv.org/abs/2409.09144)：通过单次去噪从冻结 Stable Diffusion 中提取 preimage representation，再预测 zero-shot 单目深度，避免测试时迭代扩散。
+- [SAM4MLLM: Enhance Multi-Modal Large Language Model for Referring Expression Segmentation](https://arxiv.org/abs/2409.10542)：用语言推导的 prompt points 将 MLLM 连接到 SAM，使 MLLM 在几乎不改架构的情况下输出指代表达分割的像素级 mask。
+- [GS-Net: Generalizable Plug-and-Play 3D Gaussian Splatting Module](https://arxiv.org/abs/2409.11307)：提供 plug-and-play 模块来预测或细化 Gaussian splats，使重建方法更易跨场景泛化。
+- [Renderworld: World Model with Self-Supervised 3D Label](https://arxiv.org/abs/2409.11356)：用 Gaussian-based 自监督 Img2Occ 生成 3D occupancy labels，再经 AM-VAE 编码并交给自回归 world model 做纯视觉 4D occupancy forecasting 和规划。
+- [Phidias: A Generative Model for Creating 3D Content from Text, Image, and 3D Conditions with Reference-Augmented Diffusion](https://arxiv.org/abs/2409.11406)：通过 meta-ControlNet、dynamic reference routing 和 self-reference curriculum，让 diffusion-based 3D 生成利用检索或用户提供的 3D 参考模型。
+- [Generation of Complex 3D Human Motion by Temporal and Spatial Composition of Diffusion Models](https://arxiv.org/abs/2409.11920)：沿时间和空间维度组合扩散模型，用较简单的动作组件合成复杂 3D 人体运动。
+- [WiLoR: End-to-end 3D Hand Localization and Reconstruction in-the-wild](https://arxiv.org/abs/2409.12259)：将实时全卷积手部定位器与 transformer 3D 手部重建模型结合，并用 200 多万张 in-the-wild 手部图像训练单目视频跟踪。
+- [Spectral-GS: Taming 3D Gaussian Splatting with Spectral Entropy](https://arxiv.org/abs/2409.12771)：用 spectral entropy 正则化 Gaussian Splatting，抑制重建和渲染过程中的不稳定高频伪影。
+- [3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt](https://arxiv.org/abs/2409.12892)：用定制 Levenberg-Marquardt 更新替代 3DGS 的 ADAM 优化，并在 CUDA kernels 中缓存 Jacobian-vector products，以相同质量减少重建时间。
+- [LI-GS: Gaussian Splatting With LiDAR Incorporated for Accurate Large-Scale Reconstruction](https://arxiv.org/abs/2409.12899)：把 LiDAR 几何并入 Gaussian Splatting，使大规模场景相对纯图像优化保留更准确的深度和结构。
+- [3DTopia-XL: Scaling High-quality 3D Asset Generation via Primitive Diffusion](https://arxiv.org/abs/2409.12957)：提出 PrimX 紧凑 primitive 表示来编码形状、反照率和材质场，再用 latent primitive diffusion 生成可用于 PBR 的 3D 资产。
+- [Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution](https://arxiv.org/abs/2409.12961)：构建任意分辨率时空理解 MLLM，通过按需处理视觉 token 支持细粒度图像和视频推理。
+- [3D-GSW: 3D Gaussian Splatting for Robust Watermarking](https://arxiv.org/abs/2409.13222)：把鲁棒水印嵌入 3D Gaussian 表示，使所有权信号能经受渲染、视角变化和常见场景编辑。
+- [Elite-EvGS: Learning Event-based 3D Gaussian Splatting by Distilling Event-to-Video Priors](https://arxiv.org/abs/2409.13392)：把 event-to-video 先验蒸馏进 event-based 3DGS，通过 warm-up initialization 和粗到细优化从稀疏事件流重建 3D 场景。
+- [SplatLoc: 3D Gaussian Splatting-based Visual Localization for Augmented Reality](https://arxiv.org/abs/2409.14067)：让 AR 相机相对 Gaussian-splat 地图定位，通过渲染场景证据估计位姿以完成增强现实对齐。
+- [Dynamic 2D Gaussians: Geometrically Accurate Radiance Fields for Dynamic Objects](https://arxiv.org/abs/2409.14072)：用可形变 2D Gaussians 和稀疏控制点表示动态物体，并通过渲染 mask 与深度去除 floaters，提取高质量动态 mesh 序列。
+- [AR Overlay: Training Image Pose Estimation on Curved Surface in a Synthetic Way](https://arxiv.org/abs/2409.14577)：仅用原始 logo 图像合成训练曲面图像位姿估计，借助已知形状约束支持 AR overlay，而不需要额外曲率输入。
+- [SpikeGS: Learning 3D Gaussian Fields from Continuous Spike Stream](https://arxiv.org/abs/2409.15176)：从连续 spike-camera stream 学习 3D Gaussian fields，匹配事件式感知过程以重建高速场景。
+- [LaPose: Laplacian Mixture Shape Modeling for RGB-Based Category-Level Object Pose Estimation](https://arxiv.org/abs/2409.15727)：把类别级物体形状建模为 Laplacian mixture，并结合通用与专用 RGB 特征流建立 2D-3D 对应，用于估计位姿、尺寸和位移。
+- [Unimotion: Unifying 3D Human Motion Synthesis and Understanding](https://arxiv.org/abs/2409.15904)：在一个模型中统一 3D 人体动作生成与理解，让合成和识别任务共享动作表征。
+- [Semantics-Controlled Gaussian Splatting for Outdoor Scene Reconstruction and Rendering in Virtual Reality](https://arxiv.org/abs/2409.15959)：用语义控制约束户外 Gaussian-splat 重建，改善大规模户外环境的 VR 渲染和场景编辑。
+- [Gaussian Déjà-vu: Creating Controllable 3D Gaussian Head-Avatars with Enhanced Generalization and Personalization Abilities](https://arxiv.org/abs/2409.16147)：生成可控 3D Gaussian head avatars，同时强化跨身份泛化和个体个性化能力。
+- [MIMO: Controllable Character Video Synthesis with Spatial Decomposed Modeling](https://arxiv.org/abs/2409.16160)：将角色、动作和场景空间分解建模，用于可控 character video synthesis 并保持生成运动的空间一致性。
+- [SDFit: 3D Object Pose and Shape by Fitting a Morphable SDF to a Single Image](https://arxiv.org/abs/2409.16178)：在 render-and-compare 循环中把 morphable SDF 拟合到单张图像，先检索初始形状，再联合细化 3D 位姿和几何。
+- [Low Latency Point Cloud Rendering with Learned Splatting](https://arxiv.org/abs/2409.16504)：学习 splatting 式点云渲染，在保持交互式可视化所需空间细节的同时降低延迟。
+- [Single Image, Any Face: Generalisable 3D Face Generation](https://arxiv.org/abs/2409.16990)：用可泛化模型从单图生成 3D face，目标是在不做 subject-specific fitting 的情况下覆盖多样身份。
+- [Can Vision Language Models Learn from Visual Demonstrations of Ambiguous Spatial Reasoning?](https://arxiv.org/abs/2409.17080)：提出 Spatial Visual Ambiguity Tasks 来检验 VLM 能否从视觉示例中学习空间规则，并显示 curriculum data 可改善 in-context 空间推理。
+- [Text2CAD: Generating Sequential CAD Models from Beginner-to-Expert Level Text Prompts](https://arxiv.org/abs/2409.17106)：用 Mistral 和 LLaVA-NeXT 为 DeepCAD 生成多层级文本标注，并训练自回归 transformer 从文本输出参数化 CAD 命令序列。
+- [Disco4D: Disentangled 4D Human Generation and Animation from a Single Image](https://arxiv.org/abs/2409.17280)：将 SMPL-X body Gaussians 与 clothing Gaussians 解耦，并用 diffusion 补全遮挡区域，从单图生成并驱动 4D 人体动画。
+- [SimVG: A Simple Framework for Visual Grounding with Decoupled Multi-modal Fusion](https://arxiv.org/abs/2409.17531)：复用多模态预训练特征并加入 object tokens，将视觉-语言融合与 grounding head 解耦，从而改善复杂表达的区域定位。
+- [Revisit Anything: Visual Place Recognition via Image Segment Retrieval](https://arxiv.org/abs/2409.18049)：通过检索图像片段而非整图进行 visual place recognition，在只有局部场景匹配时提升定位能力。
+- [EdgeRunner: Auto-regressive Auto-encoder for Artistic Mesh Generation](https://arxiv.org/abs/2409.18114)：用自回归 autoencoder 将三角 mesh 压缩为高效一维 token 序列，并在潜空间中用 diffusion 支持点云或图像条件 mesh 生成。
+- [RT-GuIDE: Real-Time Gaussian Splatting for Information-Driven Exploration](https://arxiv.org/abs/2409.18122)：把实时 Gaussian Splatting 作为信息驱动探索的地图表示，选择能降低场景不确定性的视角。
+- [LLaVA-3D: A Simple Yet Effective Pathway to Empowering LMMs with 3D Capabilities](https://arxiv.org/abs/2409.18125)：用 3D 输入和指令数据扩展 LLaVA 式多模态模型，使语言推理能引用点云场景中的物体和关系。
+- [Space-time 2D Gaussian Splatting for Accurate Surface Reconstruction under Complex Dynamic Scenes](https://arxiv.org/abs/2409.18852)：把 2D Gaussian Splatting 扩展到时空维度，用于在复杂运动动态场景中重建准确表面。
+- [S2O: Static to Openable Enhancement for Articulated 3D Objects](https://arxiv.org/abs/2409.18896)：定义 static-to-openable 3D 物体增强任务，联合 openable part detection、motion prediction 和 interior geometry completion，并提供可评测的 articulated-object 数据集。
+- [Multimodal Markup Document Models for Graphic Design Completion](https://arxiv.org/abs/2409.19051)：偏离 3D 空间建模：它建模结构化 graphic-design documents 以完成设计，而不是场景几何或点云理解。
+- [G3R: Gradient Guided Generalizable Reconstruction](https://arxiv.org/abs/2409.19405)：用梯度信息指导可泛化 3D reconstruction，在稀疏观测导致几何歧义时改善前馈恢复。
+- [DAOcc: 3D Object Detection Assisted Multi-Sensor Fusion for 3D Occupancy Prediction](https://arxiv.org/abs/2409.19972)：用 3D detection cues 辅助多传感器融合进行 occupancy prediction，将物体级 boxes 与稠密场景占据连接起来。
+- [Dual Encoder GAN Inversion for High-Fidelity 3D Head Reconstruction from Single Images](https://arxiv.org/abs/2409.20530)：用 dual-encoder GAN inversion 从单图重建高保真 3D head，分离身份和细节线索以改进几何。
+- [Robin3D Improving 3D Large Language Model via Robust Instruction Tuning](https://arxiv.org/abs/2410.00255)：通过鲁棒指令微调提升 3D 大语言模型。
+- [GSPR: Multimodal Place Recognition Using 3D Gaussian Splatting for Autonomous Driving](https://arxiv.org/abs/2410.00299)：把同步多视角 RGB 和 LiDAR 表示成 Multimodal Gaussian Splatting，再用 3D graph convolution 与 transformer 提取场景描述符完成自动驾驶地点识别。
+- [CaRtGS: Computational Alignment for Real-Time Gaussian Splatting SLAM](https://arxiv.org/abs/2410.00486)：通过 computational alignment、自适应优化迭代、long-tail optimization 处理和 densification 精化，提升实时 GS-SLAM 的少 primitive 高保真地图重建。
+- [Flex3D: Feed-Forward 3D Generation With Flexible Reconstruction Model And Input View Curation](https://arxiv.org/abs/2410.00890)：结合灵活的前馈重建模型和 input-view curation，使 3D generation 能适配不同质量和数量的图像证据。
+- [Towards Native Generative Model for 3D Head Avatar](https://arxiv.org/abs/2410.01226)：训练原生 3D head avatar 生成模型，而不是主要依赖 2D 先验，面向可控头部几何与外观。
+- [LaGeM: A Large Geometry Model for 3D Representation Learning and Diffusion](https://arxiv.org/abs/2410.01295)：把无序 3D vector sets 映射到分层 latent 细节级别，并用跨层条件 cascaded diffusion 进行大规模几何表示和生成。
+- [EVA-Gaussian: 3D Gaussian-based Real-time Human Novel View Synthesis under Diverse Camera Settings](https://arxiv.org/abs/2410.01425)：用 Efficient Cross-View Attention 融合稀疏高分辨率多视角人体图像，并细化 Gaussian attributes，以适配多种相机配置下的实时自由视角合成。
+- [UW-GS: Distractor-Aware 3D Gaussian Splatting for Enhanced Underwater Scene Reconstruction](https://arxiv.org/abs/2410.01517)：为水下 3DGS 建模距离相关颜色、物理密度控制、动态物体 mask、散射介质损失和 pseudo-depth supervision。
+- [3DGS-DET: Empower 3D Gaussian Splatting with Boundary Guidance and Box-Focused Sampling for 3D Object Detection](https://arxiv.org/abs/2410.01647)：将 3DGS 适配到室内 3D object detection，通过 boundary guidance 和 box-focused sampling 减少模糊 Gaussian blobs 与背景过重建。
+- [FabricDiffusion: High-Fidelity Texture Transfer for 3D Garments Generation from In-The-Wild Clothing Images](https://arxiv.org/abs/2410.01801)：用 diffusion 把野外服装照片纹理迁移到 3D garments 上，使 fabric appearance 能随服装几何保持一致。
+- [EVER: Exact Volumetric Ellipsoid Rendering for Real-Time View Synthesis](https://arxiv.org/abs/2410.01804)：用精确 volumetric ellipsoid ray tracing 替代 billboard alpha compositing，实现实时可微 view synthesis，并减少 popping 与 view-dependent density artifacts。
+- [Depth Pro: Sharp Monocular Metric Depth in Less Than a Second](https://arxiv.org/abs/2410.02073)：在一秒内预测清晰的单目度量深度，补充实用空间感知模型路线。
+- [MVGS: Multi-view-regulated Gaussian Splatting for Novel View Synthesis](https://arxiv.org/abs/2410.02103)：把 3DGS 训练从单视角更新改为 multi-view regulation，降低训练视角过拟合并提升 novel-view 外观与几何。
+- [Efficient High-Resolution Visual Representation Learning with State Space Model for Human Pose Estimation](https://arxiv.org/abs/2410.03174)：在人姿估计中用 state-space modeling 学习高分辨率视觉特征，以较低注意力成本捕捉长程空间交互。
+- [Img2CAD: Conditioned 3-D CAD Model Generation From Single Image With Structured Visual Geometry](https://arxiv.org/abs/2410.03417)：从单张图像生成结构化 3D CAD 模型，利用视觉几何条件约束 CAD 形状，而不是只做自由形状生成。
+- [MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion](https://arxiv.org/abs/2410.03825)：在存在运动时估计几何，补充动态场景空间模型。
+- [SPARTUN3D: Situated Spatial Understanding of 3D World in Large Language Models](https://arxiv.org/abs/2410.03878)：提供 situated 3D 空间推理数据，并在 3D LLM 中加入 situated spatial alignment module，使场景表示能与观察者视角下的语言描述对齐。
+- [Mode-GS: Monocular Depth Guided Anchored 3D Gaussian Splatting for Robust Ground-View Scene Rendering](https://arxiv.org/abs/2410.04646)：把 Gaussian splats 锚定到像素对齐的单目深度，并校准每视角深度尺度，用于地面机器人轨迹的新视角渲染。
+- [Next Best Sense: Guiding Vision and Touch with FisherRF for 3D Gaussian Splatting](https://arxiv.org/abs/2410.04680)：在 3D Gaussian splats 上使用 FisherRF 选择下一视角和触觉动作，让机器人主动感知不确定区域。
+- [GS-VTON: Controllable 3D Virtual Try-on with Gaussian Splatting](https://arxiv.org/abs/2410.05259)：用 Gaussian Splatting 构建可控 3D virtual try-on，将服装几何和外观分离，使衣物能在不同人体视角下一致渲染。
+- [HiSplat: Hierarchical 3D Gaussian Splatting for Generalizable Sparse-View Reconstruction](https://arxiv.org/abs/2410.06245)：构建层级 Gaussian 表示用于可泛化稀疏视角重建，通过 coarse-to-fine splats 从有限视角恢复场景结构。
+- [Trans4D: Realistic Geometry-Aware Transition for Compositional Text-to-4D Synthesis](https://arxiv.org/abs/2410.07155)：用 geometry-aware transition 合成组合式 4D 场景，使生成物体随时间变化时保持空间一致性。
+- [Spiking GS: Towards High-Accuracy and Low-Cost Surface Reconstruction via Spiking Neuron-based Gaussian Splatting](https://arxiv.org/abs/2410.07266)：把 spiking-neuron 式更新引入 Gaussian Splatting，在降低表面重建成本的同时保持几何精度。
+- [3D Vision-Language Gaussian Splatting](https://arxiv.org/abs/2410.07577)：在 3D Gaussian Splatting 中平衡视觉与语言特征，使重建场景支持语义栅格化和 3D 视觉语言理解。
+- [MotionGS: Exploring Explicit Motion Guidance for Deformable 3D Gaussian Splatting](https://arxiv.org/abs/2410.07707)：为 deformable 3DGS 加入显式运动先验，指导 Gaussian deformation 来重建动态场景。
+- [MMHead: Towards Fine-grained Multi-modal 3D Facial Animation](https://arxiv.org/abs/2410.07757)：构建 49 小时多模态 3D 面部动画数据集与模型，使音频、文本和表情线索能控制细粒度面部运动。
+- [Fast Feedforward 3D Gaussian Splatting Compression](https://arxiv.org/abs/2410.08017)：用前馈模型压缩 3D Gaussian Splatting 场景，以直接预测替代缓慢的逐场景压缩优化。
+- [IncEventGS: Pose-Free Gaussian Splatting from a Single Event Camera](https://arxiv.org/abs/2410.08107)：从单个 event camera 增量式重建 pose-free 3D Gaussian 场景，适配异步高动态范围事件流。
+- [Parameter-Efficient Fine-Tuning in Spectral Domain for Point Cloud Learning](https://arxiv.org/abs/2410.08114)：在频谱域对点云模型进行参数高效微调，提升空间表征适配能力。
+- [Efficient Perspective‐Correct 3D Gaussian Splatting Using Hybrid Transparency](https://arxiv.org/abs/2410.08129)：为 perspective-correct 3DGS 渲染引入 hybrid transparency，在保持透视投影下正确合成的同时提升效率。
+- [Enhancing Single Image to 3D Generation using Gaussian Splatting and Hybrid Diffusion Priors](https://arxiv.org/abs/2410.09467)：结合 Gaussian Splatting 与 hybrid diffusion priors，使单图到 3D 生成能从有限输入中恢复几何和外观。
+- [ControLRM: Fast and Controllable 3D Generation via Large Reconstruction Model](https://arxiv.org/abs/2410.09592)：提出 ControLRM 这一端到端前馈 large reconstruction model，用于快速且可控的 3D 生成。
+- [GALA: Geometry-Aware Local Adaptive Grids for Detailed 3D Generation](https://arxiv.org/abs/2410.10037)：使用 geometry-aware local adaptive grids，把表示能力分配到生成 3D 形状需要细节的区域，而不是依赖均匀表示。
+- [PointNet with KAN versus PointNet with MLP for 3D Classification and Segmentation of Point Sets](https://arxiv.org/abs/2410.10084)：比较在 PointNet 中使用 Kolmogorov-Arnold Network 层和 MLP 层进行点云分类与分割的效果。
+- [Spatial-Aware Efficient Projector for MLLMs via Multi-Layer Feature Aggregation](https://arxiv.org/abs/2410.10319)：在 MLLM projector 中聚合多层视觉特征，减少二维视觉 token 序列与语言 token 之间的空间错位。
+- [Tex4D: Zero-shot 4D Scene Texturing with Video Diffusion Models](https://arxiv.org/abs/2410.10821)：利用视频扩散先验零样本贴图 4D 场景，使外观在视角和时间维度上保持一致。
+- [Multiview Scene Graph](https://arxiv.org/abs/2410.11187)：从未定姿图像构建 multiview scene graph，用关联的 place/object nodes 表示场景拓扑。
+- [GS3: Efficient Relighting with Triple Gaussian Splatting](https://arxiv.org/abs/2410.11419)：结合空间 Gaussian、角度 Gaussian 和 triple splatting，从多视角点光源图像实时合成重打光新视角。
+- [CoTracker3: Simpler and Better Point Tracking by Pseudo-Labeling Real Videos](https://arxiv.org/abs/2410.11831)：用伪标注真实视频改进点跟踪，支持动态视觉空间建模。
+- [Dynamic Open-Vocabulary 3D Scene Graphs for Long-Term Language-Guided Mobile Manipulation](https://arxiv.org/abs/2410.11989)：长期维护动态开放词表 3D scene graph，使语言引导的移动操作能推理变化中的物体与关系。
+- [Long-LRM: Long-Sequence Large Reconstruction Model for Wide-Coverage Gaussian Splats](https://arxiv.org/abs/2410.12781)：把 large reconstruction model 扩展到长图像序列，生成宽覆盖范围的 Gaussian splats，而不局限于单物体或窄视角重建。
+- [UniGS: Modeling Unitary 3D Gaussians for Novel View Synthesis from Sparse-View Images](https://arxiv.org/abs/2410.13195)：在世界坐标中建模统一的 3D Gaussians，并逐层更新，用于稀疏视角新视角合成。
+- [GlossyGS: Inverse Rendering of Glossy Objects With 3D Gaussian Splatting](https://arxiv.org/abs/2410.13349)：把 3DGS inverse rendering 与材质先验结合，更可靠地恢复 glossy objects 的几何和材质。
+- [MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes](https://arxiv.org/abs/2410.13613)：通过共享或压缩时序 Gaussian 表示，降低动态场景 4D Gaussian Splatting 的内存开销。
+- [Articulate-Anything: Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model](https://arxiv.org/abs/2410.13882)：利用视觉语言基础模型从文本、图像或视频自动推断可动部件与关节，生成 articulated objects。
+- [Neural Signed Distance Function Inference through Splatting 3D Gaussians Pulled on Zero-Level Set](https://arxiv.org/abs/2410.14189)：把 3DGS 与 neural SDF 学习合并，并将 Gaussians 拉向 zero-level set 来改进表面重建。
+- [LUDVIG: Learning-Free Uplifting of 2D Visual Features to Gaussian Splatting Scenes](https://arxiv.org/abs/2410.14462)：通过特征聚合和 graph diffusion，把 DINO、SAM、CLIP 等 2D 图像特征提升到 Gaussian-splat 3D 场景。
+- [Spatial-Mamba: Effective Visual State Space Models via Structure-Aware State Fusion](https://arxiv.org/abs/2410.15091)：为视觉状态空间模型加入 structure-aware state fusion，使 Mamba 式骨干保留空间布局信息。
+- [Layout-your-3D: Controllable and Precise 3D Generation with 2D Blueprint](https://arxiv.org/abs/2410.15391)：用 2D blueprint 控制 3D 生成，通过布局约束比纯文本提示更精确地放置物体和几何。
+- [Joint Top-Down and Bottom-Up Frameworks for 3D Visual Grounding](https://arxiv.org/abs/2410.15615)：结合 top-down detector proposals 与 bottom-up 点云回归，提高 3D visual grounding 的精度和效率。
+- [Fully Explicit Dynamic Gaussian Splatting](https://arxiv.org/abs/2410.15629)：使用 fully explicit 4D Gaussians、progressive training 和 point backtracking 来建模动态新视角合成中的运动。
+- [LucidFusion: Generating 3D Gaussians with Arbitrary Unposed Images](https://arxiv.org/abs/2410.15636)：提出 relative coordinate Gaussians，把任意未定姿图像对齐到主视角并恢复一致几何。
+- [MBPU: A Plug-and-Play State Space Model for Point Cloud Upsamping with Fast Point Rendering](https://arxiv.org/abs/2410.15941)：用 plug-and-play state-space module 进行点云上采样和快速点渲染，在不重建完整流程的情况下改进稠密点恢复。
+- [Zero-Shot Scene Reconstruction from Single Images with Deep Prior Assembly](https://arxiv.org/abs/2410.15971)：组装大模型提供的深度、位姿、尺度与遮挡先验，以零样本流程重建单图场景。
+- [Sparkle: Mastering Basic Spatial Capabilities in Vision Language Models Elicits Generalization to Spatial Reasoning](https://arxiv.org/abs/2410.16162)：生成针对二维空间基础能力的合成监督，显示基础空间技能训练可提升 VLM 空间推理。
+- [Joker: Conditional 3D Head Synthesis with Extreme Facial Expressions](https://arxiv.org/abs/2410.16395)：从单张身份图像合成 3D head，并用 3DMM 或文本控制极端表情，通过 3D distillation 保持视角一致。
+- [TIPS: Text-Image Pretraining with Spatial Awareness](https://arxiv.org/abs/2410.16512)：用空间感知目标进行图文预训练，使视觉语言表示更显式地编码位置和关系。
+- [The Scene Language: Representing Scenes with Programs, Words, and Embeddings](https://arxiv.org/abs/2410.16770)：把场景同时表示为程序、语言和嵌入，为模型提供物体、关系和空间布局的结构化接口。
+- [Vistadream: Sampling Multiview Consistent Images for Single-View Scene Reconstruction](https://arxiv.org/abs/2410.16892)：从单一输入视角采样多视角一致图像，为单图场景重建提供更强几何一致性。
+- [LVSM: A Large View Synthesis Model with Minimal 3D Inductive Bias](https://arxiv.org/abs/2410.17242)：训练几乎不依赖手工 3D 归纳偏置的大型新视角合成模型，直接从数据学习跨视角一致性。
+- [SpectroMotion: Dynamic 3D Reconstruction of Specular Scenes](https://arxiv.org/abs/2410.17249)：结合 3DGS、物理渲染、形变场和可变形环境贴图来重建动态镜面场景。
+- [Efficient neural implicit representation for 3D human reconstruction](https://arxiv.org/abs/2410.17741)：在 neural implicit pipeline 中引入预训练人体运动先验，用于高效单目 3D human avatar 重建。
+- [Few-shot NeRF by Adaptive Rendering Loss Regularization](https://arxiv.org/abs/2410.17839)：用 adaptive rendering loss regularization 约束 NeRF 训练，使少样本新视角合成能从稀疏观测恢复几何。
+- [VR-Splatting: Foveated Radiance Field Rendering via 3D Gaussian Splatting and Neural Points](https://arxiv.org/abs/2410.17932)：把 3DGS、neural points 与 foveated rendering 结合，在用户注视区域保留细节并满足 VR 低延迟需求。
+- [An LLM Agent for Automatic Geospatial Data Analysis](https://arxiv.org/abs/2410.18792)：GeoAgent 将 LLM 规划与 GIS 函数调用、空间约束结合，用于自动地理空间数据分析。
+- [Dynamic 3D Gaussian Tracking for Graph-Based Neural Dynamics Modeling](https://arxiv.org/abs/2410.18912)：跟踪动态 3D Gaussian primitives，并把其轨迹输入 graph-based neural dynamics model 进行场景运动预测。
+- [SegLLM: Multi-round Reasoning Segmentation](https://arxiv.org/abs/2410.18923)：在多轮对话中复用 mask-aware multimodal memory，使分割可引用此前 mask、空间关系和层级物体。
+- [Sort-free Gaussian Splatting via Weighted Sum Rendering](https://arxiv.org/abs/2410.18931)：用 weighted-sum rendering 替代 3DGS 中排序 alpha blending，去除视角相关排序开销。
+- [Large Spatial Model: End-to-end Unposed Images to Semantic 3D](https://arxiv.org/abs/2410.18956)：直接把未定姿 RGB 图像处理成 semantic radiance fields，避免 SfM 到重建的多阶段流程。
+- [Where Am I and What Will I See: An Auto-Regressive Model for Spatial Localization and View Prediction](https://arxiv.org/abs/2410.18962)：自回归预测相机定位和未来视图，把空间自定位与接下来可见内容建模结合起来。
+- [3D-Adapter: Geometry-Consistent Multi-View Diffusion for High-Quality 3D Generation](https://arxiv.org/abs/2410.18974)：向预训练多视角扩散模型加入 3D-Adapter，在去噪过程中反馈 3D 几何以提升生成一致性。
+- [PixelGaussian: Generalizable 3D Gaussian Reconstruction from Arbitrary Views](https://arxiv.org/abs/2410.18979)：按场景几何复杂度动态调整 Gaussian 数量与分布，实现任意视角输入的前馈 3DGS 重建。
+- [DiffGS: Functional Gaussian Splatting Diffusion](https://arxiv.org/abs/2410.19657)：在 Gaussian primitives 上训练 latent diffusion generator，使 3DGS 能以任意 splat 数量生成。
+- [SCube: Instant Large-Scale Scene Reconstruction using VoxSplats](https://arxiv.org/abs/2410.20030)：用 VoxSplats 从稀疏定姿图像重建大规模场景的几何、外观和语义。
+- [Normal-GS: 3D Gaussian Splatting with Normal-Involved Rendering](https://arxiv.org/abs/2410.20593)：把 surface normals 注入 3DGS 渲染管线，使 Gaussian 优化更好保持表面几何。
+- [COMPGS: Unleashing 2D Compositionality for Compositional Text-to-3D via Dynamically Optimizing 3D Gaussians](https://arxiv.org/abs/2410.20723)：通过动态优化 3D Gaussians，把 2D 组合式生成能力迁移到组合式 text-to-3D 场景。
+- [TV-3DG: Mastering Text-to-3D Customized Generation with Visual Prompt](https://arxiv.org/abs/2410.21299)：用视觉提示约束定制化 text-to-3D 生成，使物体身份和外观在 3D 资产生成中得到保留。
+- [PF3plat: Pose-Free Feed-Forward 3D Gaussian Splatting](https://arxiv.org/abs/2410.22128)：从未定姿图像执行 pose-free feed-forward 3DGS 新视角合成，避免逐场景优化。
+- [Epipolar-Free 3D Gaussian Splatting for Generalizable Novel View Synthesis](https://arxiv.org/abs/2410.22817)：去除 generalizable 3DGS 对 epipolar lines 的依赖，从稀疏输入高效前馈合成新视角。
+- [HelloMeme: Integrating Spatial Knitting Attentions to Embed High-Level and Fidelity-Rich Conditions in Diffusion Models](https://arxiv.org/abs/2410.22901)：在扩散模型中使用 spatial knitting attention adapters，在保留基础模型泛化性的同时注入高层条件。
+- [SceneComplete: Open-World 3D Scene Completion in Cluttered Real World Environments for Robot Manipulation](https://arxiv.org/abs/2410.23643)：面向杂乱真实操作环境中的开放世界 3D 场景补全。
+- [ImOV3D: Learning Open-Vocabulary Point Clouds 3D Object Detection from Only 2D Images](https://arxiv.org/abs/2410.24001)：仅从 2D 图像学习开放词表 3D 检测，通过构造伪 image-point-cloud 多模态表示弥合模态差距。
+- [DiffPano: Scalable and Consistent Text to Panorama Generation with Spherical Epipolar-Aware Diffusion](https://arxiv.org/abs/2410.24203)：用 spherical epipolar-aware diffusion 生成可扩展且多视角一致的文本到全景场景。
+- [DELTA: Dense Efficient Long-range 3D Tracking for any video](https://arxiv.org/abs/2410.24211)：在长视频中跟踪 dense pixels 的 3D 轨迹，估计全视频点运动而非只依赖稀疏对应。
+- [NIMBA: Towards Robust and Principled Processing of Point Clouds With SSMs](https://arxiv.org/abs/2411.00151)：将点云转换为保持三维结构的一维序列，使 state-space models 能高效处理 3D 数据。
+- [Aquatic-GS: A Hybrid 3D Representation for Underwater Scenes](https://arxiv.org/abs/2411.00239)：提出 Aquatic-GS 混合三维表示，同时刻画水下物体和水介质效应。
+- [GAFusion: Adaptive Fusing LiDAR and Camera with Multiple Guidance for 3D Object Detection](https://arxiv.org/abs/2411.00340)：用 LiDAR-guided global interaction 和 adaptive fusion 融合 LiDAR 与相机特征，用于多模态 3D 检测。
+- [CityGaussianV2: Efficient and Geometrically Accurate Reconstruction for Large-Scale Scenes](https://arxiv.org/abs/2411.00771)：通过过滤与几何控制减少大场景 3DGS 中的 Gaussian 数量膨胀，同时保持重建精度。
+- [One for All: Multi-Domain Joint Training for Point Cloud Based 3D Object Detection](https://arxiv.org/abs/2411.01584)：跨域联合训练点云 3D 检测器，使单一模型能处理域偏移，而不必为每个数据集训练专用检测器。
+- [FewViewGS: Gaussian Splatting with Few View Matching and Multi-stage Training](https://arxiv.org/abs/2411.02229)：结合少视角特征匹配和多阶段 3DGS 训练，在只有少量图像时完成场景重建。
+- [Tencent Hunyuan3D-1.0: A Unified Framework for Text-to-3D and Image-to-3D Generation](https://arxiv.org/abs/2411.02293)：在 Hunyuan3D 框架中统一 text-to-3D 与 image-to-3D，覆盖纯提示和图像条件两类 3D 资产生成。
+- [GenXD: Generating Any 3D and 4D Scenes](https://arxiv.org/abs/2411.02319)：从灵活条件生成 3D 与 4D 场景，把资产生成从静态物体扩展到随时间变化的场景。
+- [MVPaint: Synchronized Multi-View Diffusion for Painting Anything 3D](https://arxiv.org/abs/2411.02336)：用同步多视角扩散和 refinement 为 3D 物体生成高分辨率、无缝且多视角一致的纹理。
+- [Modeling Uncertainty in 3D Gaussian Splatting Through Continuous Semantic Splatting](https://arxiv.org/abs/2411.02547)：把连续语义地图从 voxel 推进到概率 ellipsoids，结合 3DGS 结构和机器人地图的不确定性建模。
+- [GIS Copilot: towards an autonomous GIS agent for spatial analysis](https://arxiv.org/abs/2411.03205)：把 LLM 集成到 QGIS 等 GIS 平台中，使空间分析代码生成能调用原生地理空间工具。
+- [Fine-Grained Spatial and Verbal Losses for 3D Visual Grounding](https://arxiv.org/abs/2411.03405)：为 3D visual grounding 加入 visual offset loss 和 language span loss，改进点云场景中的指称物体定位。
+- [Object and Contact Point Tracking in Demonstrations Using 3D Gaussian Splatting](https://arxiv.org/abs/2411.03555)：用 3D Gaussian Splatting 跟踪演示中的物体和接触点，恢复可用于模仿数据的交互几何。
+- [MVSplat360: Feed-Forward 360 Scene Synthesis from Sparse Views](https://arxiv.org/abs/2411.04924)：提出 MVSplat360，用稀疏观测前馈生成真实场景的 360 度新视角。
+- [CAD-MLLM: Unifying Multimodality-Conditioned CAD Generation With MLLM](https://arxiv.org/abs/2411.04954)：构建 CAD-MLLM，从多模态输入生成参数化 CAD 模型，而不只依赖文本或图像。
+- [ProEdit: Simple Progression is All You Need for High-Quality 3D Scene Editing](https://arxiv.org/abs/2411.05006)：用难度感知子任务调度和 adaptive 3DGS training，把大场景生成拆成可控重建任务。
+- [StdGEN: Semantic-Decomposed 3D Character Generation from Single Images](https://arxiv.org/abs/2411.05738)：按语义部件分解单图 3D 角色生成，使生成角色保留身体结构和局部外观细节。
+- [GaussianSpa: An "Optimizing-Sparsifying" Simplification Framework for Compact and High-Quality 3D Gaussian Splatting](https://arxiv.org/abs/2411.06019)：交替执行优化和稀疏化，在保持 3DGS 场景质量的同时施加强稀疏约束。
+- [SplatFormer: Point Transformer for Robust 3D Gaussian Splatting](https://arxiv.org/abs/2411.06390)：提出 SplatFormer，这是直接在 Gaussian splat primitives 上运行的 point transformer。
+- [Adaptive and Temporally Consistent Gaussian Surfels for Multi-View Dynamic Reconstruction](https://arxiv.org/abs/2411.06602)：通过逐帧增量优化，从多视角视频重建高质量动态表面。
+- [CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models](https://arxiv.org/abs/2411.06869)：在推理时建模未见关键点的空间分布和不确定性，以细化类别级位姿估计。
+- [Scaling Mesh Generation via Compressive Tokenization](https://arxiv.org/abs/2411.07025)：用 blocked and patchified tokenization 表示 mesh，使模型能生成超过 8k faces 的网格。
+- [Edify 3D: Scalable High-Quality 3D Asset Generation](https://arxiv.org/abs/2411.07135)：提出 Edify 3D，用图像和文本条件生成高质量 3D 资产。
+- [SAMPart3D: Segment Any Part in 3D Objects](https://arxiv.org/abs/2411.07184)：提出 SAMPart3D，在无需预定义 part label 文本的情况下，把任意 3D 物体分割为多粒度语义部件。
+- [GUS-IR: Gaussian Splatting With Unified Shading for Inverse Rendering](https://arxiv.org/abs/2411.07478)：为 Gaussian Splatting inverse rendering 加入 unified shading，使几何、材质和光照能在同一表示中恢复。
+- [HiCoM: Hierarchical Coherent Motion for Streamable Dynamic Scene with 3D Gaussian Splatting](https://arxiv.org/abs/2411.07541)：为动态 3DGS 加入 hierarchical coherent motion，使非均匀 Gaussians 更高效学习帧间运动。
+- [ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions](https://arxiv.org/abs/2411.07725)：用 occlusion-aware adaptive lifting 和 depth denoising 改善遮挡视角下的 3D reconstruction。
+- [No-Reference Point Cloud Quality Assessment via Graph Convolutional Network](https://arxiv.org/abs/2411.07728)：用多视角 2D 投影上的 graph convolution 进行无参考点云质量评估。
+- [Efficient 3D Perception on Multi-Sweep Point Cloud with Gumbel Spatial Pruning](https://arxiv.org/abs/2411.07742)：加入可学习的 Gumbel spatial-pruning layer，端到端动态采样 point-cloud tokens。
+- [Novel View Synthesis with Pixel-Space Diffusion Models](https://arxiv.org/abs/2411.07765)：直接用 pixel-space diffusion 进行新视角合成，借助生成式图像先验预测未见视角。
+- [Wavelet Latent Diffusion (Wala): Billion-Parameter 3D Generative Model with Compact Wavelet Encodings](https://arxiv.org/abs/2411.08017)：在紧凑 wavelet encodings 上训练十亿参数 3D 生成模型，在扩展 3D 生成规模的同时控制 latent 表示成本。
+- [GaussianAnything: Interactive Point Cloud Latent Diffusion for 3D Generation](https://arxiv.org/abs/2411.08033)：在文本和图像条件下训练原生 3D 生成模型，并在多个数据集上超过既有 native 3D 方法。
+- [DG-SLAM: Robust Dynamic Gaussian Splatting SLAM with Hybrid Pose Optimization](https://arxiv.org/abs/2411.08373)：构建 DG-SLAM，以 3D Gaussians 为基础同时实现精确相机位姿估计和高保真重建。
+- [Architect: Generating Vivid and Interactive 3D Scenes with Hierarchical 2D Inpainting](https://arxiv.org/abs/2411.09823)：通过层级 2D inpainting 生成可交互 3D 场景，支持从文本、平面图或既有布局开始生成。
+- [LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals](https://arxiv.org/abs/2411.10109)：偏离 Spatial Model 轴线；该文把 LLM agents 绑定到 self-reports 来仿真个体，而不是提出 3D、几何或空间表示模型。
+- [DrivingSphere: Building a High-fidelity 4D World for Closed-loop Simulation](https://arxiv.org/abs/2411.11252)：构建用于闭环仿真的高保真 4D 驾驶世界，建模动态交通场景而不只是静态重建。
+- [GPS-Gaussian+: Generalizable Pixel-wise 3D Gaussian Splatting for Real-Time Human-Scene Rendering from Sparse Views](https://arxiv.org/abs/2411.11363)：把 pixel-wise 3D Gaussian Splatting 泛化到稀疏视角下的实时 human-scene rendering。
+- [RoboGSim: A Real2Sim2Real Robotic Gaussian Splatting Simulator](https://arxiv.org/abs/2411.11839)：偏离 Spatial Model 轴线；该项是机器人 real-to-sim-to-real Gaussian Splatting 仿真器，而不是独立空间模型。
+- [SpatialDreamer: Self-supervised Stereo Video Synthesis from Monocular Input](https://arxiv.org/abs/2411.11934)：通过自监督从单目输入合成立体视频，利用空间一致性随时间推断缺失的双目视角。
+- [Beyond Gaussians: Fast and High-Fidelity 3D Splatting with Linear Kernels](https://arxiv.org/abs/2411.12440)：在 3D splatting 中用 linear kernels 替代 Gaussian kernels，以增强高频几何和外观细节。
+- [Efficient Scene Modeling via Structure-Aware and Region-Prioritized 3D Gaussians](https://arxiv.org/abs/2411.12788)：用 structure-aware Gaussians 和 region prioritization 提升高保真 3D scene modeling 的效率。
+- [PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting](https://arxiv.org/abs/2411.12789)：用 MLLM 估计物体物理属性，并引导 Gaussian-splat 场景进行物理仿真。
+- [Generating 3D-Consistent Videos from Unposed Internet Photos](https://arxiv.org/abs/2411.13549)：利用未定姿网络照片与视频一致性训练可扩展 3D-aware video model，无需相机或 3D 标注。
+- [Find any Part in 3D](https://arxiv.org/abs/2411.13550)：面向开放词表 3D 部件定位，让 foundation-style models 在 3D 物体或场景中寻找任意部件。
+- [FAST-Splat: Fast, Ambiguity-Free Semantics Transfer in Gaussian Splatting](https://arxiv.org/abs/2411.13753)：将语义快速迁移到 Gaussian Splatting 中，同时避免 2D 到 3D 特征分配歧义。
+- [Stereo Anything: Unifying Stereo Matching with Large-Scale Mixed Data](https://arxiv.org/abs/2411.14053)：用大规模混合数据统一立体匹配，服务空间感知。
+- [Baking Gaussian Splatting Into Diffusion Denoiser for Fast and Scalable Single-Stage Image-to-3D Generation and Reconstruction](https://arxiv.org/abs/2411.14384)：把 Gaussian Splatting 融入 diffusion denoiser，使 image-to-3D 生成和重建成为单阶段可扩展流程。
+- [NexusSplats: Efficient 3D Gaussian Splatting in the Wild](https://arxiv.org/abs/2411.14514)：针对复杂光照和遮挡，优化 in-the-wild 3DGS 的高效高保真重建。
+- [TEXGen: a Generative Diffusion Model for Mesh Textures](https://arxiv.org/abs/2411.14740)：用扩散模型生成 mesh textures，面向 3D 资产的一致高分辨率表面外观。
+- [Dynamics-Aware Gaussian Splatting Streaming Towards Fast On-the-Fly 4D Reconstruction](https://arxiv.org/abs/2411.14847)：用三阶段 dynamics-aware Gaussian Splatting pipeline 进行快速在线 4D reconstruction streaming。
+- [Material Anything: Generating Materials for Any 3D Object via Diffusion](https://arxiv.org/abs/2411.15138)：用扩散模型为任意 3D 物体生成物理上合理的材质，把 3D 资产创建从形状和纹理扩展到材质。
+- [When Spatial meets Temporal in Action Recognition](https://arxiv.org/abs/2411.15284)：研究动作识别中空间表示与时间建模的结合，关注同时利用场景布局和运动线索的架构。
+- [ConsistentAvatar: Learning to Diffuse Fully Consistent Talking Head Avatar with Temporal Guidance](https://arxiv.org/abs/2411.15436)：在扩散生成中加入 temporal guidance，合成几何和外观跨帧一致的 talking-head avatar。
+- [ZeroGS: Training 3D Gaussian Splatting from Unposed Images](https://arxiv.org/abs/2411.15779)：直接从数百张未定姿、无序图像训练 3DGS，去除常规 pose preprocessing。
+- [PG-SLAM: Photorealistic and Geometry-Aware RGB-D SLAM in Dynamic Environments](https://arxiv.org/abs/2411.15800)：用照片级且几何感知的 Gaussian Splatting 扩展 RGB-D SLAM，以处理动态环境。
+- [Generalizable Single-View Object Pose Estimation by Two-Side Generating and Matching](https://arxiv.org/abs/2411.15860)：通过生成并匹配 two-sided hypotheses 估计单图物体位姿，提升对未知物体和视角的泛化。
+- [Gaussian Scenes: Pose-Free Sparse-View Scene Reconstruction using Depth-Enhanced Diffusion Priors](https://arxiv.org/abs/2411.15966)：用 depth-enhanced diffusion priors 修补新视角和深度图伪影，实现 pose-free sparse-view scene reconstruction。
+- [Boosting 3D object generation through PBR materials](https://arxiv.org/abs/2411.16080)：从 PBR materials 角度提升 3D object generation 质量，而不只优化几何或 RGB 纹理。
+- [UNOPose: Unseen Object Pose Estimation with an Unposed RGB-D Reference Image](https://arxiv.org/abs/2411.16106)：从未标定位姿的 RGB-D 参考图估计未知物体位姿。
+- [MVGenMaster: Scaling Multi-View Generation from Any Image via 3D Priors Enhanced Diffusion Model](https://arxiv.org/abs/2411.16157)：把 3D priors 注入扩散模型，从单图扩展多视角生成并提升生成视图间的一致性。
+- [Event-boosted Deformable 3D Gaussians for Fast Dynamic Scene Reconstruction](https://arxiv.org/abs/2411.16180)：联合建模 event thresholds 和 deformable 3D Gaussians，使事件流改善快速动态重建。
+- [Functionality understanding and segmentation in 3D scenes](https://arxiv.org/abs/2411.16310)：提出 Fun3DU，用于理解并分割 3D scenes 中的功能区域。
+- [Quadratic Gaussian Splatting: High Quality Surface Reconstruction with Second-Order Geometric Primitives](https://arxiv.org/abs/2411.16392)：用可形变二次曲面替代静态 Gaussian primitives，以捕捉更高质量表面几何。
+- [SplatFlow: Multi-View Rectified Flow Model for 3D Gaussian Splatting Synthesis](https://arxiv.org/abs/2411.16443)：用 rectified flow 直接从多视角条件生成和编辑 3D Gaussian splats。
+- [RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics](https://arxiv.org/abs/2411.16537)：构建 RoboSpatial 大规模机器人数据集和训练设置，向 2D 与 3D VLM 注入空间理解能力。
+- [MICAS: Multi-grained In-Context Adaptive Sampling for 3D Point Cloud Processing](https://arxiv.org/abs/2411.16773)：用 multi-grained in-context adaptive sampling 处理点云，兼顾任务相关的局部与全局上下文。
+- [UniPose: A Unified Multimodal Framework for Human Pose Comprehension, Generation and Editing](https://arxiv.org/abs/2411.16781)：在图像、文本和 SMPL pose 模态之间统一 human-pose comprehension、generation 和 editing。
+- [DetailGen3D: Generative 3D Geometry Enhancement via Data-Dependent Flow](https://arxiv.org/abs/2411.16820)：用 data-dependent flows 和 token matching 增强粗 3D geometry，在保留全局结构的同时添加局部细节。
+- [Open Vocabulary Monocular 3D Object Detection](https://arxiv.org/abs/2411.16833)：把单目 3D 目标检测扩展到开放词表类别，利用语言对齐视觉线索而非封闭类别集合。
+- [SAR3D: Autoregressive 3D Object Generation and Understanding via Multi-scale 3D VQVAE](https://arxiv.org/abs/2411.16856)：结合 multi-scale 3D VQ-VAE 与 autoregressive modeling，同时支持 3D object generation 和 understanding。
+- [PreF3R: Pose-Free Feed-Forward 3D Gaussian Splatting from Variable-length Image Sequence](https://arxiv.org/abs/2411.16877)：从可变长度未定姿图像序列前馈预测 3D Gaussian splats，避免相机位姿预处理和逐场景优化。
+- [MonoGSDF: Exploring Monocular Geometric Cues for Gaussian Splatting-Guided Implicit Surface Reconstruction](https://arxiv.org/abs/2411.16898)：把单目几何线索、Gaussian primitives 和 SDF 分支耦合起来，恢复 watertight implicit surfaces。
+- [Geometry Field Splatting with Gaussian Surfels](https://arxiv.org/abs/2411.17067)：用 Gaussian surfels 和 geometry fields 表示表面，使 splatting 重建能恢复更清晰的表面结构。
+- [Distilling Spectral Graph for Object-Context Aware Open-Vocabulary Semantic Segmentation](https://arxiv.org/abs/2411.17150)：蒸馏 spectral graph context，使开放词表分割能利用复杂场景中的 object-level context。
+- [SelfSplat: Pose-Free and 3D Prior-Free Generalizable 3D Gaussian Splatting](https://arxiv.org/abs/2411.17190)：在无需相机位姿或预训练 3D priors 的条件下，从未定姿多视角图像执行 generalizable 3DGS。
+- [Buffer Anytime: Zero-Shot Video Depth and Normal from Image Priors](https://arxiv.org/abs/2411.17249)：结合单图先验和时间一致性约束，零样本估计视频 depth 与 normal maps。
+- [Distractor-free Generalizable 3D Gaussian Splatting](https://arxiv.org/abs/2411.17605)：预测 distractor masks 和前馈 Gaussian splats，使 generalizable 3DGS 对跨场景干扰物更鲁棒。
+- [DROID-Splat Combining End-to-End SLAM with 3D Gaussian Splatting](https://arxiv.org/abs/2411.17660)：将端到端 SLAM tracker 与 3DGS renderer 结合，改进单目 tracking 与 scene synthesis。
+- [3D-Mem: 3D Scene Memory for Embodied Exploration and Reasoning](https://arxiv.org/abs/2411.17735)：构建 3D-Mem 紧凑场景记忆表示，让 embodied agents 长期保留细粒度空间关系。
+- [Symmetry Strikes Back: From Single-Image Symmetry Detection to 3D Generation](https://arxiv.org/abs/2411.17763)：用 Reflect3D 从单图检测 3D reflection symmetry，并把对称性作为单图 3D 生成线索。
+- [HI-SLAM2: Geometry-Aware Gaussian SLAM for Fast Monocular Scene Reconstruction](https://arxiv.org/abs/2411.17982)：在 Gaussian SLAM 中结合单目先验和 grid-based scale alignment，实现快速 RGB-only scene reconstruction。
+- [GLS: Geometry-aware 3D Language Gaussian Splatting](https://arxiv.org/abs/2411.18066)：用 normal priors 和 geometry-aware language features 统一 3DGS surface reconstruction 与开放词表分割。
+- [Make-It-Animatable: An Efficient Framework for Authoring Animation-Ready 3D Characters](https://arxiv.org/abs/2411.18197)：通过数据驱动 rigging 和 skinning，让任意 3D humanoid model 在一秒内变为 animation-ready。
+- [Textured Gaussians for Enhanced 3D Scene Appearance Modeling](https://arxiv.org/abs/2411.18625)：为 Gaussian splats 加入 texture-aware attributes，使重建场景保留更丰富的视角相关外观。
+- [RoMo: Robust Motion Segmentation Improves Structure from Motion](https://arxiv.org/abs/2411.18650)：分割视频中的静态与运动区域，使 Structure-from-Motion 更稳健地估计相机位姿。
+- [TAPTRv3: Spatial and Temporal Context Foster Robust Tracking of Any Point in Long Video](https://arxiv.org/abs/2411.18671)：利用空间和时间上下文查询特征，提高 long-video any-point tracking 的鲁棒性。
+- [PCDreamer: Point Cloud Completion Through Multi-view Diffusion Priors](https://arxiv.org/abs/2411.19036)：用多视角扩散先验指导 partial point cloud completion，生成合理的缺失几何。
+- [HOT3D: Hand and Object Tracking in 3D from Egocentric Multi-View Videos](https://arxiv.org/abs/2411.19167)：发布 HOT3D，包含 egocentric multiview RGB、eye-gaze 和 3D 标注，用于 hand-object tracking。
+- [Video Depth without Video Models](https://arxiv.org/abs/2411.19189)：把 image depth models 转换为时间一致的视频深度估计器，而不训练专用 video model。
+- [OMNI-DC: Highly Robust Depth Completion with Multiresolution Depth Integration](https://arxiv.org/abs/2411.19278)：提出 multiresolution depth integration 和 Laplacian loss，用稀疏深度实现鲁棒 zero-shot depth completion。
+- [Multiview Equivariance Improves 3D Correspondence Understanding with Minimal Feature Finetuning](https://arxiv.org/abs/2411.19458)：用 multiview equivariance 和 3D correspondences 微调视觉特征，提升 3D correspondence understanding。
+- [Diorama: Unleashing Zero-Shot Single-View 3D Indoor Scene Modeling](https://arxiv.org/abs/2411.19492)：从单张 RGB 图像用 CAD objects 建模开放世界室内 3D 场景，无需端到端训练或人工标注。
+- [DisCoRD: Discrete Tokens to Continuous Motion via Rectified Flow Decoding](https://arxiv.org/abs/2411.19527)：用 rectified flow 解码离散 motion tokens，使生成的人体动作连续且遵循条件。
+- [Bootstraping Clustering of Gaussians for View-consistent 3D Scene Understanding](https://arxiv.org/abs/2411.19551)：自举聚类 Gaussian primitives，得到跨视角一致的 3D 场景 grouping 和语义理解。
+- [Tortho-Gaussian: Splatting True Digital Orthophoto Maps](https://arxiv.org/abs/2411.19594)：通过正交 splatting 优化后的各向异性 Gaussians，生成 true digital orthophoto maps。
+- [TexGaussian: Generating High-quality PBR Material via Octree-based 3D Gaussian Splatting](https://arxiv.org/abs/2411.19654)：用 octree-based 3D Gaussian Splatting 生成与几何一致的 PBR materials。
+- [PerLA: Perceptive 3D language assistant](https://arxiv.org/abs/2411.19774)：构建 PerLA 3D language assistant，使点云表征同时保留局部细节和全局上下文。
+- [GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting](https://arxiv.org/abs/2411.19895)：把鲁棒水印嵌入 3D Gaussian Splatting 场景，在保持渲染质量的同时抵抗常见场景变换。
+- [AerialGo: Walking-through City View Generation from Aerial Perspectives](https://arxiv.org/abs/2412.00157)：用多视角扩散从航拍图像生成地面步行视角城市画面，避免直接采集街景数据。
+- [Hard-Label Black-Box Attacks on 3D Point Clouds](https://arxiv.org/abs/2412.00404)：在 hard-label black-box 设置下攻击 3D 点云分类器，攻击者只能看到预测标签。
+- [Instant3dit: Multiview Inpainting for Fast Editing of 3D Objects](https://arxiv.org/abs/2412.00518)：把 3D object editing 转化为 multiview inpainting，使 mesh、NeRF 或 Gaussian splat 编辑约三秒完成。
+- [Speedy-Splat: Fast 3D Gaussian Splatting with Sparse Pixels and Sparse Primitives](https://arxiv.org/abs/2412.00578)：用稀疏像素和稀疏 primitives 训练与渲染 3DGS，替代密集图像和 splat 更新以提升速度。
+- [FiffDepth: Feed-Forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation](https://arxiv.org/abs/2412.00671)：把 diffusion-based generators 转换为高效前馈单目深度估计器，提升真实场景深度细节。
+- [DynSUP: Dynamic Gaussian Splatting from An Unposed Image Pair](https://arxiv.org/abs/2412.00851)：从未定姿图像对重建动态 Gaussian splats，在无相机位姿预处理的情况下估计运动和几何。
+- [Ref-GS: Directional Factorization for 2D Gaussian Splatting](https://arxiv.org/abs/2412.00905)：用 directional encoding 和 spherical Mip-grids 分解 2D Gaussian Splatting 中的视角相关光照。
+- [LSceneLLM: Enhancing Large 3D Scene Understanding Using Adaptive Visual Preferences](https://arxiv.org/abs/2412.01292)：用 adaptive visual preferences 和 scene magnifier 让 3D scene LLM 聚焦任务相关区域。
+- [Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](https://arxiv.org/abs/2412.01398)：把 3D 场景转换为 universal scene descriptions，刻画物体、布局、属性和关系以支持整体场景理解。
+- [Structured 3D Latents for Scalable and Versatile 3D Generation](https://arxiv.org/abs/2412.01506)：提出结构化三维潜变量表示，用于可扩展、多用途的三维生成。
+- [6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting](https://arxiv.org/abs/2412.01543)：用 Gaussian Splatting 从单个 RGB-D 相机在线估计和跟踪物体 6D 位姿。
+- [GFreeDet: Exploiting Gaussian Splatting and Foundation Models for Model-free Unseen Object Detection in the BOP Challenge 2024](https://arxiv.org/abs/2412.01552)：结合 Gaussian Splatting 与 foundation-model features 做 model-free unseen object detection，面向 BOP 式 6D 位姿和检测设置且不依赖物体专用模板。
+- [SfM-Free 3D Gaussian Splatting via Hierarchical Training](https://arxiv.org/abs/2412.01553)：层级训练并合并局部 Gaussian representations，去除视频 3DGS 对 SfM preprocessing 的依赖。
+- [3DSceneEditor: Controllable 3D Scene Editing with Gaussian Splatting](https://arxiv.org/abs/2412.01583)：为 Gaussian-splatting 场景提供可控编辑操作，使用户能修改 3D 内容并保持多视角一致性。
+- [Driving View Synthesis on Free-Form Trajectories with Generative Prior](https://arxiv.org/abs/2412.01717)：结合场景几何和生成先验，沿自由形式相机轨迹合成驾驶视角。
+- [Horizon-Gs: Unified 3D Gaussian Splatting for Large-Scale Aerial-To-Ground Scenes](https://arxiv.org/abs/2412.01745)：统一航拍和地面视角的 Gaussian Splatting，用于弥合大规模室外重建中的尺度与视角差异。
+- [Occam's LGS: A Simple Approach for Language Gaussian Splatting](https://arxiv.org/abs/2412.01807)：用简化流程把语言特征嵌入 Gaussian splats，使开放词表 3D 场景查询更直接。
+- [HDGS: Textured 2D Gaussian Splatting for Enhanced Scene Rendering](https://arxiv.org/abs/2412.01823)：加入 textured 2D Gaussian primitives 改进场景渲染，在不只依赖点状 3D splats 的情况下增强表面外观。
+- [SparseLGS: Sparse View Language Embedded Gaussian Splatting](https://arxiv.org/abs/2412.02245)：从稀疏视角学习语言嵌入 Gaussian splats，使开放词表场景理解可在有限图像覆盖下工作。
+- [HumanRig: Learning Automatic Rigging for Humanoid Character in a Large Scale Dataset](https://arxiv.org/abs/2412.02317)：在大规模数据集上训练 humanoid character 自动 rigging，生成骨架和 skinning weights 以获得可动画化 3D 资产。
+- [RG-SAN: Rule-Guided Spatial Awareness Network for End-to-End 3D Referring Expression Segmentation](https://arxiv.org/abs/2412.02402)：用规则引导的空间感知，从语言表达端到端分割被指称的 3D 物体。
+- [AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?](https://arxiv.org/abs/2412.03002)：通过生成真实感 3D variations，压力测试视觉语言模型面对姿态、形状和视角变化的能力。
+- [Align3R: Aligned Monocular Depth Estimation for Dynamic Videos](https://arxiv.org/abs/2412.03079)：对齐跨帧单目深度预测，使动态视频获得时间一致的深度估计。
+- [MultiGO: Towards Multi-level Geometry Learning for Monocular 3D Textured Human Reconstruction](https://arxiv.org/abs/2412.03103)：从单目图像学习多层级几何，用于同时恢复人体形状和表面细节的 textured 3D human reconstruction。
+- [Splats in Splats: Robust and Effective 3D Steganography Towards Gaussian Splatting](https://arxiv.org/abs/2412.03121)：在 Gaussian-splatting 场景中隐藏信息，并设计成在渲染和场景编辑后仍保持鲁棒。
+- [Volumetrically Consistent 3D Gaussian Rasterization](https://arxiv.org/abs/2412.03378)：修正 Gaussian rasterization 以强制体一致性，减少 splat 累积不一致造成的渲染伪影。
+- [Skel3D: Skeleton Guided Novel View Synthesis](https://arxiv.org/abs/2412.03407)：用骨架结构指导新视角合成，改进 articulated subjects 的姿态感知渲染。
+- [NVComposer: Boosting Generative Novel View Synthesis with Multiple Sparse and Unposed Images](https://arxiv.org/abs/2412.03517)：组合稀疏未定姿图像进行生成式新视角合成，避免依赖已标定相机位姿。
+- [Feed-Forward Bullet-Time Reconstruction of Dynamic Scenes from Monocular Videos](https://arxiv.org/abs/2412.03526)：以前馈方式从单目视频重建动态场景，无需逐场景优化即可生成 bullet-time 视角。
+- [MIDI: Multi-Instance Diffusion for Single Image to 3D Scene Generation](https://arxiv.org/abs/2412.03558)：用 multi-instance diffusion 把单张图像扩展为包含多个物体的 3D 场景，而不是只生成孤立资产。
+- [HybridGS: Decoupling Transients and Statics with 2D and 3D Gaussian Splatting](https://arxiv.org/abs/2412.03844)：把瞬态图像特有物体建成 2D Gaussians，同时用 3D Gaussians 表示静态场景，并结合多视角约束监督与分阶段训练。
+- [3D Part Segmentation via Geometric Aggregation of 2D Visual Features](https://arxiv.org/abs/2412.04247)：将多视角视觉语言模型特征投回点云，再用几何感知特征聚合与聚类完成零样本 3D 部件分割。
+- [EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-Based Online Scene Understanding](https://arxiv.org/abs/2412.04380)：在具身探索过程中维护语义 3D Gaussian 全局记忆，并用 deformable cross-attention 细化局部区域的 occupancy 预测。
+- [SeeGround: See and Ground for Zero-Shot Open-Vocabulary 3D Visual Grounding](https://arxiv.org/abs/2412.04383)：把 3D 场景转成查询对齐的渲染视图和空间文本描述，并通过视角自适应与融合对齐实现零样本 3D grounding。
+- [GaussianFormer-2: Probabilistic Gaussian Superposition for Efficient 3D Occupancy Prediction](https://arxiv.org/abs/2412.04384)：把语义 Gaussians 视为局部 occupancy 概率分布，并结合 probabilistic superposition 与分布式初始化提升 3D occupancy 预测效率。
+- [Florence-VL: Enhancing Vision-Language Models with Generative Vision Encoder and Depth-Breadth Fusion](https://arxiv.org/abs/2412.04424)：将 Florence-2 生成式视觉特征接入多模态大模型，通过跨层与提示的 depth-breadth fusion 以及分阶段训练增强视觉语言能力。
+- [Monocular Dynamic Gaussian Splatting: Fast, Brittle, and Scene Complexity Rules](https://arxiv.org/abs/2412.04457)：分析单目动态 3DGS 的行为，指出场景复杂度和运动会让快速动态重建优化变得脆弱。
+- [Cubify Anything: Scaling Indoor 3D Object Detection](https://arxiv.org/abs/2412.04458)：围绕 cuboid-style 物体表示扩展室内 3D 目标检测，使复杂室内场景中的类别覆盖更广。
+- [MegaSaM: Accurate, Fast, and Robust Structure and Motion from Casual Dynamic Videos](https://arxiv.org/abs/2412.04463)：从日常动态视频估计结构与运动，构建能处理非刚性运动的快速鲁棒相机和场景重建流程。
+- [DualPM: Dual Posed-Canonical Point Maps for 3D Shape and Pose Reconstruction](https://arxiv.org/abs/2412.04464)：用 posed 与 canonical 两类 point maps 联合重建形状和姿态，把观测几何连接到规范化物体坐标系。
+- [Turbo3D: Ultra-fast Text-to-3D Generation](https://arxiv.org/abs/2412.04470)：用快速 3D 生成流程加速 text-to-3D 资产生成，减少逐提示长时间优化的依赖。
+- [PaintScene4D: Consistent 4D Scene Generation from Text Prompts](https://arxiv.org/abs/2412.04471)：从文本协调生成场景内容、几何和运动，得到时间一致的 4D 场景。
+- [Stereo Anywhere: Robust Zero-Shot Deep Stereo Matching Even Where Either Stereo or Mono Fail](https://arxiv.org/abs/2412.04472)：在双目或单目线索失效场景下提升零样本 stereo matching 的鲁棒性。
+- [Pushing Rendering Boundaries: Hard Gaussian Splatting](https://arxiv.org/abs/2412.04826)：用更硬的 splat 可见性行为替代软 alpha blending，以锐化 Gaussian-splat 渲染边界。
+- [PanoDreamer: Optimization-Based Single Image to 360 3D Scene With Diffusion](https://arxiv.org/abs/2412.04827)：在 diffusion 先验约束下优化全景几何与外观，把单张图像扩展为 360 度 3D 场景。
+- [Momentum-Gs: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction](https://arxiv.org/abs/2412.04887)：用 momentum self-distillation 稳定 Gaussian 优化，提高大场景重建质量。
+- [BimArt: A Unified Approach for the Synthesis of 3D Bimanual Interaction with Articulated Objects](https://arxiv.org/abs/2412.05066)：统一合成双手协同动作与 articulated objects，在 3D 中建模 bimanual interaction 和物体关节运动。
+- [Street Gaussians Without 3D Object Tracker](https://arxiv.org/abs/2412.05548)：在不依赖独立 3D object tracker 的情况下，用 Gaussian splatting 重建包含动态交通参与者的街景。
+- [Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes](https://arxiv.org/abs/2412.05700)：沿时间压缩动态 3DGS，减少变化场景中冗余的逐帧 Gaussian 状态。
+- [SizeGS: Size-aware Compression of 3D Gaussian Splatting via Mixed Integer Programming](https://arxiv.org/abs/2412.05808)：用 size-aware mixed-integer programming 决定 3D Gaussians 的剪枝与压缩，在保留渲染质量的同时减小表示规模。
+- [GBR: Generative Bundle Refinement for High-Fidelity Gaussian Splatting With Enhanced Mesh Reconstruction](https://arxiv.org/abs/2412.05908)：用 generative bundle refinement 改进 Gaussian splatting，并同步提升 mesh reconstruction 的保真度。
+- [Generative Densification: Learning to Densify Gaussians for High-Fidelity Generalizable 3D Reconstruction](https://arxiv.org/abs/2412.06234)：学习何时何地添加 Gaussians，以替代手写 densification 规则并提升可泛化高保真 3D 重建。
+- [Splatter-360: Generalizable 360° Gaussian Splatting for Wide-baseline Panoramic Images](https://arxiv.org/abs/2412.06250)：从 wide-baseline 全景图像构建可泛化 Gaussian splats，实现完整 360 度场景渲染。
+- [Advancing Extended Reality with 3D Gaussian Splatting: Innovations and Prospects](https://arxiv.org/abs/2412.06257)：综述 3D Gaussian splatting 如何改变扩展现实中的采集、渲染、压缩和交互流程。
+- [Omni-Scene: Omni-Gaussian Representation for Ego-Centric Sparse-View Scene Reconstruction](https://arxiv.org/abs/2412.06273)：用 omni-directional Gaussian 表示处理第一视角稀疏视图场景重建。
+- [PrEditor3D: Fast and Precise 3D Shape Editing](https://arxiv.org/abs/2412.06592)：通过快速局部化编辑机制修改 3D 形状，在精确施加变化的同时保留未编辑几何。
+- [Gen-3Diffusion: Realistic Image-to-3D Generation via 2D & 3D Diffusion Synergy](https://arxiv.org/abs/2412.06698)：耦合 2D 与 3D diffusion 先验，使 image-to-3D 同时提升视图真实感和几何一致性。
+- [You See it, You Got it: Learning 3D Creation on Pose-Free Videos at Scale](https://arxiv.org/abs/2412.06699)：从大规模 pose-free 视频学习 3D 创建，避免依赖已标定多视角监督。
+- [MAtCha Gaussians: Atlas of Charts for High-Quality Geometry and Photorealism From Sparse Views](https://arxiv.org/abs/2412.06767)：用 Gaussian charts 的 atlas 表示稀疏视图场景，以提升几何质量和 photorealistic rendering。
+- [Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation](https://arxiv.org/abs/2412.06781)：把全球视觉地理定位建模为对世界位置的迭代生成过程，而不是直接坐标回归。
+- [MV-DUSt3R+: Single-Stage Scene Reconstruction from Sparse Views In 2 Seconds](https://arxiv.org/abs/2412.06974)：扩展 DUSt3R 式 point-map prediction，在单阶段、数秒内完成稀疏视图场景重建。
+- [Faster and Better 3D Splatting via Group Training](https://arxiv.org/abs/2412.07608)：联合训练 Gaussian groups，加速 3D splatting 优化并提升重建质量。
+- [Proc-Gs: Procedural Building Generation for City Assembly with 3D Gaussians](https://arxiv.org/abs/2412.07660)：将 procedural building generation 与 3D Gaussians 结合，用可复用结构组件装配城市级场景。
+- [SimVS: Simulating World Inconsistencies for Robust View Synthesis](https://arxiv.org/abs/2412.07696)：通过模拟几何、外观和观测不一致来训练 view synthesis，使其更能处理真实世界不一致。
+- [SLGaussian: Fast Language Gaussian Splatting in Sparse Views](https://arxiv.org/abs/2412.08331)：把语言特征嵌入稀疏视图 Gaussian splats，形成快速开放词表 3D 场景表示。
+- [Reloc3r: Large-Scale Training of Relative Camera Pose Regression for Generalizable, Fast, and Accurate Visual Localization](https://arxiv.org/abs/2412.08376)：大规模训练 relative camera-pose regression，实现快速、可泛化且准确的视觉定位。
+- [3D Mesh Editing Using Masked LRMs](https://arxiv.org/abs/2412.08641)：用 masked large reconstruction models 编辑 3D mesh 的选定区域，同时保持其余形状不变。
+- [LIVE-GS: LLM Powers Interactive VR Experience with Physics-Aware Gaussian Splatting](https://arxiv.org/abs/2412.09176)：结合 LLM 驱动交互与 physics-aware Gaussian splats，支持可编辑的交互式 VR 场景。
+- [SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos](https://arxiv.org/abs/2412.09401)：在 SLAM 式流程中使用学习式 3D 重建，从单目 RGB 视频实时生成稠密场景。
+- [FreeSplatter: Pose-free Gaussian Splatting for Sparse-view 3D Reconstruction](https://arxiv.org/abs/2412.09573)：从稀疏未定姿图像构建 Gaussian splats，移除对已知相机位姿的常规依赖。
+- [Feat2GS: Probing Visual Foundation Models with Gaussian Splatting](https://arxiv.org/abs/2412.09606)：把视觉基础模型特征转换为 Gaussian-splat 表示，用于检验这些特征对 3D 重建的支持程度。
+- [Stereo4D: Learning How Things Move in 3D from Internet Stereo Videos](https://arxiv.org/abs/2412.09621)：从互联网立体视频中融合相机位姿、双目深度和时间跟踪结果，挖掘带长期运动轨迹的世界一致 4D 点云，并用于训练 DUSt3R 式结构与 3D 运动预测模型。
+- [SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video](https://arxiv.org/abs/2412.09982)：用 motion-adaptive splines 建模单目视频中的 3D Gaussians 动态，实现实时动态渲染。
+- [How to Spin an Object: First, Get the Shape Right](https://arxiv.org/abs/2412.10273)：先强调准确 3D 形状恢复，再进行外观生成，以改善物体旋转和新视角合成。
+- [GaussianWorld: Gaussian World Model for Streaming 3D Occupancy Prediction](https://arxiv.org/abs/2412.10373)：用 Gaussian world model 维护流式 3D occupancy 预测，支持在线场景理解。
+- [SweetTok: Semantic-Aware Spatial-Temporal Tokenizer for Compact Video Discretization](https://arxiv.org/abs/2412.10443)：用语义感知的时空单元对视频离散化，形成紧凑 token 表示以服务视觉生成或建模。
+- [Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-To-3D Generation](https://arxiv.org/abs/2412.11170)：学习 text-to-3D 输出的多维质量评估器，覆盖单一感知分数之外的质量因素。
+- [OccScene: Semantic Occupancy-based Cross-task Mutual Learning for 3D Scene Generation](https://arxiv.org/abs/2412.11183)：以 semantic occupancy 作为共享表示，在 3D 场景生成中进行跨任务 mutual learning。
+- [GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](https://arxiv.org/abs/2412.11258)：借助大多模态模型把物理属性附加到 3D Gaussians，使 splatted scenes 更适合仿真。
+- [MOVIS: Enhancing Multi-Object Novel View Synthesis for Indoor Scenes](https://arxiv.org/abs/2412.11457)：通过显式建模多个物体改进室内新视角合成，而不是把房间当作单一未分解场景。
+- [EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting](https://arxiv.org/abs/2412.11520)：融合多视角线索并使用 attention-guided optimization 编辑 Gaussian-splat 场景，同时保持跨视角一致。
+- [Deformable Radial Kernel Splatting](https://arxiv.org/abs/2412.11752)：用 deformable radial kernels 替代固定 Gaussian kernels，使 splat 渲染更好拟合场景几何。
+- [Wonderland: Navigating 3D Scenes From a Single Image](https://arxiv.org/abs/2412.12091)：从单张图像生成可导航 3D 场景，让用户能在合理外推的视图中移动。
+- [PanSplat: 4K Panorama Synthesis with Feed-Forward Gaussian Splatting](https://arxiv.org/abs/2412.12096)：用前馈 Gaussian-splatting 模型合成 4K 全景图，避免逐场景优化。
+- [Gaussian Billboards: Expressive 2D Gaussian Splatting with Textures](https://arxiv.org/abs/2412.12734)：用带纹理的 2D Gaussian billboards 表示场景，让 splats 更能表达表面外观。
+- [CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from a Single-View Image](https://arxiv.org/abs/2412.12906)：用带空间引导的 context-aware transformer 从单张图像推断可泛化 Gaussian splats。
+- [Gaussian Splatting for Efficient Satellite Image Photogrammetry](https://arxiv.org/abs/2412.13047)：将 Gaussian splatting 用于卫星影像摄影测量，从俯视影像高效进行 3D 重建与渲染。
+- [GaussTR: Foundation Model-Aligned Gaussian Transformer for Self-Supervised 3D Spatial Understanding](https://arxiv.org/abs/2412.13193)：把 Gaussian transformer 与基础模型特征对齐，用于自监督 3D 空间理解。
+- [Turbo-GS: Accelerating 3D Gaussian Fitting for High-Quality Radiance Fields](https://arxiv.org/abs/2412.13547)：加速 radiance fields 的 3D Gaussian fitting，同时保持高质量场景重建。
+- [DragScene: Interactive 3D Scene Editing with Single-view Drag Instructions](https://arxiv.org/abs/2412.13552)：将单视图 drag instructions 转换为一致的 3D 变化，使用户能够交互式编辑 3D 场景。
+- [GAGS: Granularity-Aware Feature Distillation for Language Gaussian Splatting](https://arxiv.org/abs/2412.13654)：以多粒度方式把语言特征蒸馏到 Gaussian splats 中，用于开放词表 3D 场景理解。
+- [UA-MPC: Uncertainty-Aware Model Predictive Control for Motorized LiDAR Odometry](https://arxiv.org/abs/2412.13873)：将不确定性感知模型预测控制用于 motorized LiDAR odometry。
+- [GraphAvatar: Compact Head Avatars with GNN-Generated 3D Gaussians](https://arxiv.org/abs/2412.13983)：用作用于面部结构的图神经网络生成 3D Gaussians，形成紧凑 head avatars。
+- [Prompting Depth Anything for 4K Resolution Accurate Metric Depth Estimation](https://arxiv.org/abs/2412.14015)：通过 prompting 适配 Depth Anything，在 4K 分辨率下输出准确 metric depth。
+- [MegaSynth: Scaling Up 3D Scene Reconstruction with Synthesized Data](https://arxiv.org/abs/2412.14166)：使用覆盖更多几何和外观变化的合成数据，扩展 3D 场景重建训练。
+- [MegaPairs: Massive Data Synthesis For Universal Multimodal Retrieval](https://arxiv.org/abs/2412.14475)：偏离空间建模；它用 VLM 和开放图像合成图文检索训练对，服务通用多模态检索，而不是学习 3D 几何或场景表示。
+- [IDOL: Instant Photorealistic 3D Human Creation from a Single Image](https://arxiv.org/abs/2412.14963)：用即时重建与生成流程，从单张图像创建 photorealistic 3D human。
+- [Generative Multiview Relighting for 3D Reconstruction under Extreme Illumination Variation](https://arxiv.org/abs/2412.15211)：生成多视角 relit images，使极端光照变化下的 3D 重建更鲁棒。
+- [Scaling 4D Representations](https://arxiv.org/abs/2412.15212)：研究更大数据和模型容量如何提升动态空间建模中的 4D scene representations。
+- [GCA-3D: Towards Generalized and Consistent Domain Adaptation of 3D Generators](https://arxiv.org/abs/2412.15491)：用一致性约束进行 3D generators 跨域适配，使迁移后的生成形状保持稳定。
+- [3D Shape Tokenization via Latent Flow Matching](https://arxiv.org/abs/2412.15618)：通过 latent flow matching 对 3D shapes 进行 tokenization，得到适合生成建模的紧凑形状代码。
+- [IRGS: Inter-Reflective Gaussian Splatting with 2D Gaussian Ray Tracing](https://arxiv.org/abs/2412.15867)：在 Gaussian-splat 场景中加入 2D Gaussian ray tracing 来建模 inter-reflections。
+- [Topology-Aware 3D Gaussian Splatting: Leveraging Persistent Homology for Optimized Structural Integrity](https://arxiv.org/abs/2412.16619)：用 persistent homology 正则化 3D Gaussian splats，使结构拓扑更连贯。
+- [TAR3D: Creating High-Quality 3D Assets Via Next-Part Prediction](https://arxiv.org/abs/2412.16919)：通过 next-part prediction 生成 3D assets，把复杂形状构造成部件序列。
+- [GSemSplat: Generalizable Semantic 3D Gaussian Splatting from Uncalibrated Image Pairs](https://arxiv.org/abs/2412.16932)：从未标定图像对学习 semantic Gaussian splats，结合可泛化重建和场景语义。
+- [LangSurf: Language-Embedded Surface Gaussians for 3D Scene Understanding](https://arxiv.org/abs/2412.17635)：把语言嵌入放到 surface-aligned Gaussians 上，用于开放词表 3D 场景理解。
+- [GaussianPainter: Painting Point Cloud into 3D Gaussians with Normal Guidance](https://arxiv.org/abs/2412.17715)：借助 normal guidance 将点云转换为 3D Gaussians，以保留表面方向和几何。
+- [FaceLift: Learning Generalizable Single Image 3D Face Reconstruction From Synthetic Heads](https://arxiv.org/abs/2412.17812)：在 synthetic heads 上训练单图 3D face reconstruction，以提升跨身份和外观泛化。
+- [DepthLab: From Partial to Complete](https://arxiv.org/abs/2412.18153)：把局部深度或几何观测补全为更完整的空间结构，用于后续 3D 重建。
+- [3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding](https://arxiv.org/abs/2412.18450)：结合语义 3D scene graphs 与 LLM 推理，在室内场景上回答空间查询。
+- [3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement](https://arxiv.org/abs/2412.18565)：用一致的多视角 diffusion 增强 3D 资产或重建结果，同时避免破坏跨视角几何。
+- [Orient Anything: Learning Robust Object Orientation Estimation from Rendering 3D Models](https://arxiv.org/abs/2412.18605)：从渲染 3D 模型学习物体朝向估计，提高跨类别和视角的鲁棒性。
+- [PartGen: Part-level 3D Generation and Reconstruction with Multi-View Diffusion Models](https://arxiv.org/abs/2412.18608)：用多视角 diffusion models 在部件层级生成并重建 3D 物体。
+- [Multi-scale Latent Point Consistency Models for 3D Shape Generation](https://arxiv.org/abs/2412.19413)：通过多尺度 latent point consistency 生成 3D shapes，提升点式生成的整体连贯性。
+- [4D Gaussian Splatting: Modeling Dynamic Scenes with Native 4D Primitives](https://arxiv.org/abs/2412.20720)：用原生 4D Gaussian primitives 表示动态场景，而不是把运动附加到静态 3D splats 上。
+- [Prometheus: 3D-Aware Latent Diffusion Models for Feed-Forward Text-to-3D Scene Generation](https://arxiv.org/abs/2412.21117)：用 3D-aware latent diffusion 实现前馈式 text-to-3D 场景生成。
+- [PERSE: Personalized 3D Generative Avatars from A Single Portrait](https://arxiv.org/abs/2412.21206)：从单张肖像生成个性化 3D avatars，结合身份保持和三维 avatar synthesis。
+- [DyFusion: Cross-Attention 3D Object Detection with Dynamic Fusion](https://doi.org/10.1109/tla.2024.10412035)：用 cross-attention 和 dynamic fusion 融合多模态线索进行 3D 目标检测。
+- [Is 3DGS Useful?: Comparing the Effectiveness of Recent Reconstruction Methods in VR](https://doi.org/10.1109/ismar62088.2024.00021)：在 VR 场景中比较近期 3D 重建方法，检验 3DGS 对沉浸式重建质量的价值，而不只看常规新视角指标。
+- [Multi-Attribute Interactions Matter for 3D Visual Grounding](https://doi.org/10.1109/cvpr52733.2024.01633)：建模物体属性及其交互，用于处理依赖多个空间和语义线索的 3D visual grounding 查询。
+- [Video Encoding Enhancement via Content-Aware Spatial and Temporal Super-Resolution](https://doi.org/10.23919/eusipco63174.2024.10714942)：偏离 Spatial Model：它通过内容感知的空间和时间超分提升视频编码质量，而不是提出 3D 或空间推理模型。
+- [MIX3D: A Mixed Representation for Communication-Efficient Distributed 3DGS Training](https://doi.org/10.1109/msn63567.2024.00060)：用混合 3DGS 表示降低分布式设备训练 Gaussian Splatting 时的通信开销。
+- [Baking Neural Radiance Fields for Real-Time View Synthesis](https://doi.org/10.1109/tpami.2024.3381001)：把训练后的 NeRF 烘焙成可实时渲染的场景表示，同时保留 radiance field 的视角相关效果。
+- [Joint Semantic Segmentation using representations of LiDAR point clouds and camera images](https://doi.org/10.1016/j.inffus.2024.102370)：融合 LiDAR 点云和相机图像表征做联合语义分割，使距离几何与图像外观对齐。
+- [Parameter Efficient Self-Supervised Geospatial Domain Adaptation](https://doi.org/10.1109/cvpr52733.2024.02630)：通过参数高效的自监督方式适配 geospatial 视觉模型，避免在每个遥感分布上完整重训。
+- [GauSPU: 3D Gaussian Splatting Processor for Real-Time SLAM Systems](https://doi.org/10.1109/micro61859.2024.00114)：为实时 SLAM 管线设计专用 3DGS 处理器，加速建图和渲染中的 Gaussian Splatting 操作。
+- [LiDeNeRF: Neural radiance field reconstruction with depth prior provided by LiDAR point cloud](https://doi.org/10.1016/j.isprsjprs.2024.01.017)：用 LiDAR 点云提供的深度先验约束 NeRF 重建，使稀疏或模糊图像观测能恢复更可靠的场景几何。
+- [Point Cloud-Based Control Barrier Function Regression for Safe and Efficient Vision-Based Control](https://doi.org/10.1109/icra57147.2024.10610647)：从点云学习控制屏障函数，把空间感知连接到视觉机器人控制中的安全约束。
+- [Memory-enhanced spatial-temporal encoding framework for industrial anomaly detection system](https://doi.org/10.1016/j.eswa.2024.123718)：用记忆增强的时空编码器从结构化传感或视觉流中检测工业异常。
+- [Neural 3D Scene Reconstruction With Indoor Planar Priors](https://doi.org/10.1109/tpami.2024.3379833)：把室内平面先验注入神经 3D 重建，使墙面、地面等主导平面稳定场景几何。
+- [Using a Large Language Model to turn Explorations of Virtual 3D-Worlds into Interactive Narrative Experiences](https://doi.org/10.1109/cog60054.2024.10645583)：偏离 Spatial Model：它用 LLM 把虚拟 3D 世界探索轨迹转换成交互叙事，而不是改进空间感知或 3D 重建。
+- [Illumination Enlightened Spatial-temporal Inconsistency for Deepfake Video Detection](https://doi.org/10.1109/icme57554.2024.10687905)：偏离 Spatial Model：它利用光照感知的时空不一致检测 deepfake 视频，更接近媒体取证而非 3D 空间建模。
+- [GaussianHand: Real-Time 3D Gaussian Rendering for Hand Avatar Animation](https://doi.org/10.1109/tvcg.2024.3516778)：用 3D Gaussians 表示可关节手部 avatar，实现实时渲染和动画。
+- [SPMHand: Segmentation-Guided Progressive Multi-Path 3D Hand Pose and Shape Estimation](https://doi.org/10.1109/tmm.2024.3355652)：结合分割引导和渐进多路径估计，从图像恢复 3D 手部姿态与形状。
+- [High-quality Approximation of Scientific Data using 3D Gaussian Splatting](https://doi.org/10.1109/ldav64567.2024.00018)：把 3D Gaussian Splatting 用于大规模科学数据场近似，以支持高质量交互式可视化。
+- [LLM Acceleration on FPGAs: A Comparative Study of Layer and Spatial Accelerators](https://doi.org/10.1109/concapan63470.2024.10933896)：偏离 Spatial Model：它比较 FPGA 上的 layer 和 spatial accelerator 设计来加速 LLM 推理，而不是研究空间推理或 3D 表示。
+- [PanoSLAM: Panoptic 3D Scene Reconstruction via Gaussian SLAM](https://arxiv.org/abs/2501.00352)：把 Gaussian SLAM 与语义和实例 lifting 统一起来，使 RGB-D 视频生成 panoptic 3D scene reconstruction。
+- [STORM: Spatio-Temporal Reconstruction Model for Large-Scale Outdoor Scenes](https://arxiv.org/abs/2501.00602)：用时空重建模型处理大规模室外动态场景，在长序列中区分静态结构和运动内容。
+- [GET3DGS](https://doi.org/10.1109/TCSVT.2024.3511342)：基于点变形场生成 3D Gaussians，扩展高斯空间生成方法。
+- [Adaptive CLIP for open-domain 3D model retrieval](https://doi.org/10.1016/j.ipm.2024.103989)：将 CLIP 式表征适配到开放域 3D 模型检索，为空间模型部分补充面向检索的 3D 表征方法。
+- [A Comprehensive Framework for 3D Occupancy Estimation in Autonomous Driving](https://doi.org/10.1109/tiv.2024.3403134)：构建自动驾驶 3D occupancy estimation 框架，用体素化场景占据预测支持下游感知。
+- [GeoRGS: Geometric Regularization for Real-Time Novel View Synthesis From Sparse Inputs](https://doi.org/10.1109/tcsvt.2024.3447113)：用几何约束正则化稀疏输入下的新视角合成，使实时渲染保持场景结构。
+- [RNNPose: 6-DoF Object Pose Estimation via Recurrent Correspondence Field Estimation and Pose Optimization](https://doi.org/10.1109/tpami.2024.3360181)：通过循环更新 correspondence field 并优化位姿，实现面向真实场景的 6-DoF 物体位姿估计。
+- [Spatial-Temporal Knowledge Transfer for Dynamic Constrained Multiobjective Optimization](https://doi.org/10.1109/tevc.2024.3449142)：偏离 Spatial Model：它为动态约束多目标优化迁移时空知识，而不是 3D 感知或空间表示方法。
+- [A Transformer-based multi-modal fusion network for 6D pose estimation](https://doi.org/10.1016/j.inffus.2024.102227)：用 Transformer 融合网络组合多模态线索，用于 6D object pose estimation。
+- [MH6D: Multi-Hypothesis Consistency Learning for Category-Level 6-D Object Pose Estimation](https://doi.org/10.1109/tnnls.2024.3360712)：用多位姿假设和一致性约束学习类别级 6D object pose estimation。
+- [Hierarchically Recognizing Vector Graphics and A New Chart-Based Vector Graphics Dataset](https://doi.org/10.1109/tpami.2024.3394298)：若不把图表理解纳入 Spatial，则属于偏轴条目：它进行层次化 vector graphics 识别，并发布 chart-based vector graphics dataset。
+- [Match Normalization: Learning-Based Point Cloud Registration for 6D Object Pose Estimation in the Real World](https://doi.org/10.1109/tpami.2024.3355198)：在点云配准前归一化学习到的匹配关系，以提升真实场景中的 6D 物体位姿估计。
+- [AWARDistill: Adaptive and robust 3D object detection in adverse conditions through knowledge distillation](https://doi.org/10.1016/j.eswa.2024.126032)：通过知识蒸馏训练恶劣条件下的鲁棒 3D object detector，把教师模型知识适配到退化感知环境。
+- [Learning Spherical Radiance Field for Efficient 360° Unbounded Novel View Synthesis](https://doi.org/10.1109/tip.2024.3409052)：学习 spherical radiance field，用于高效的 360 度无边界 novel-view synthesis。
+- [DVMNet: Computing Relative Pose for Unseen Objects Beyond Hypotheses](https://doi.org/10.1109/cvpr52733.2024.01936)：在不只依赖有限位姿假设的情况下计算 unseen objects 的相对位姿。
+- [HomuGAN: A 3D-Aware GAN With the Method of Cylindrical Spatial-Constrained Sampling](https://doi.org/10.1109/tip.2024.3520423)：在 3D-aware GAN 中加入 cylindrical spatial-constrained sampling，以改进几何感知图像合成。
+- [Gaussian Building Mesh (GBM): Extract a Building's 3D Mesh with Google Earth and Gaussian Splatting](https://arxiv.org/abs/2501.00625)：结合 Google Earth 图像、Gaussian Splatting 与 mesh extraction 重建建筑网格，面向城市尺度几何建模。
+- [D3-Human](https://arxiv.org/abs/2501.01589)：从单目视频生成动态解耦数字人，补充动态人体空间表示。
+- [PG-SAG: Parallel Gaussian Splatting for Fine-Grained Large-Scale Urban Buildings Reconstruction via Semantic-Aware Grouping](https://arxiv.org/abs/2501.01677)：按语义区域分组城市建筑 Gaussians，并行重建大规模场景中的细粒度 3DGS 建筑几何。
+- [HaWoR](https://arxiv.org/abs/2501.02973)：从 egocentric videos 重建 world-space hand motion。
+- [ProTracker: Probabilistic Integration for Robust and Accurate Point Tracking](https://arxiv.org/abs/2501.03220)：以概率方式整合点轨迹证据，提升视频帧间长程 point tracking 的鲁棒性和精度。
+- [DoubleDiffusion: Combining Heat Diffusion with Denoising Diffusion for Texture Generation on 3D Meshes](https://arxiv.org/abs/2501.03397)：把 mesh surface 上的 heat diffusion 与 denoising diffusion 先验结合起来，直接在 3D 网格上生成连贯纹理。
+- [MoDec-GS: Global-to-Local Motion Decomposition and Temporal Interval Adjustment for Compact Dynamic 3D Gaussian Splatting](https://arxiv.org/abs/2501.03714)： 为紧凑动态 3D 高斯溅射分解运动，提升时变空间表示效率。
+- [FatesGS: Fast and Accurate Sparse-View Surface Reconstruction using Gaussian Splatting with Depth-Feature Consistency](https://arxiv.org/abs/2501.04628)：结合 Gaussian splatting 与深度特征一致性改进 sparse-view surface reconstruction。
+- [Segs-SLAM](https://arxiv.org/abs/2501.05242)：用结构线索与 appearance embedding 强化 3D Gaussian splatting SLAM。
+- [Arc2Avatar: Generating Expressive 3D Avatars from a Single Image via ID Guidance](https://arxiv.org/abs/2501.05379)： 通过身份引导从单图生成富表现力 3D 头像，扩展单视图人体空间生成。
+- [Consistent Flow Distillation for Text-to-3D](https://arxiv.org/abs/2501.05445)：为 text-to-3D generation 蒸馏 flow consistency。
+- [Locality-Aware Gaussian Compression](https://arxiv.org/abs/2501.05757)：通过 locality-aware structure 压缩 Gaussian splatting，以支持 fast and high-quality rendering。
+- [SkeletonDiffusion](https://arxiv.org/abs/2501.06035)：使用与骨架运动学对齐的非各向同性高斯扩散，实现更真实的 3D 人体动作预测。
+- [F3D-Gaus: Feed-forward 3D-aware Generation on ImageNet with Cycle-Consistent Gaussian Splatting](https://arxiv.org/abs/2501.06714)：用 cycle-consistent Gaussian Splatting 训练 ImageNet 规模的前馈 3D-aware generation，避免逐场景优化。
+- [ActiveGAMER: Active GAussian Mapping through Efficient Rendering](https://arxiv.org/abs/2501.06897)：用 3D Gaussian Splatting 与基于渲染的信息增益做主动建图，在实时重建复杂环境时选择最有价值的下一视角。
+- [PoAct: Policy and Action Dual-Control Agent for Generalized Applications](https://arxiv.org/abs/2501.07054)：偏离 Spatial Model：它是会切换推理策略和代码动作空间的 LLM agent 框架，更接近 Agent Harness。
+- [Skip Mamba Diffusion for Monocular 3D Semantic Scene Completion](https://arxiv.org/abs/2501.07260)：用 Mamba-based diffusion 从单目图像补全 dense 3D scene geometry 与语义。
+- [UnCommon Objects in 3D](https://arxiv.org/abs/2501.07574)：更像 Bench/Data 条目：uCO3D 发布带相机位姿、深度、点云、caption 和 3DGS 重建的高分辨率 360 度物体视频集合。
 - [3UR-LLM: An End-to-End Multimodal Large Language Model for 3D Scene Understanding](https://arxiv.org/abs/2501.07819)：将 3D 场景表示接入多模态 LLM，实现端到端 3D 场景理解。
+- [Object-Centric 2D Gaussian Splatting: Background Removal and Occlusion-Aware Pruning for Compact Object Models](https://arxiv.org/abs/2501.08174)：利用 object masks 和 occlusion-aware pruning 重建紧凑的对象级 2DGS 或 mesh，而不是完整场景。
+- [LLaVA-ST: A Multimodal Large Language Model for Fine-Grained Spatial-Temporal Understanding](https://arxiv.org/abs/2501.08282)：为多模态大模型加入细粒度时空定位与理解能力。
+- [VINGS-Mono](https://arxiv.org/abs/2501.08286)：把视觉惯性单目 SLAM 与 Gaussian Splatting 结合，用于大场景重建。
+- [Omni-RGPT](https://arxiv.org/abs/2501.08326)：用 token marks 统一图像和视频区域级理解，增强模型原生视觉 grounding。
+- [Predicting 4D Hand Trajectory from Monocular Videos](https://arxiv.org/abs/2501.08329)：从单目视频恢复手部在三维空间和时间中的轨迹，把姿态预测扩展到 4D motion。
+- [GS-LIVO](https://arxiv.org/abs/2501.08672)：融合 LiDAR、惯性与视觉传感，实现带 Gaussian mapping 的实时里程计。
+- [SLC$^{2}$-SLAM: Semantic-Guided Loop Closure Using Shared Latent Code for NeRF SLAM](https://arxiv.org/abs/2501.08880)：用语义引导和共享 latent code 为 NeRF SLAM 加入回环闭合，提升全局地图一致性。
+- [CityDreamer4D](https://arxiv.org/abs/2501.08983)：将静态场景和动态对象表示分解组合，生成无边界 4D 城市。
+- [AugRefer](https://arxiv.org/abs/2501.09428)：通过跨模态增强与空间关系指代表达提升三维视觉定位能力。
+- [Mitigating Hallucinations on Object Attributes using Multiview Images and Negative Instructions](https://arxiv.org/abs/2501.10011)：利用多视角证据和负向指令减少物体属性 hallucination，使视觉语言输出更贴合观测到的 3D object properties。
+- [CLIP-PCQA: Exploring Subjective-Aligned Vision-Language Modeling for Point Cloud Quality Assessment](https://arxiv.org/abs/2501.10071)：通过 CLIP 式检索把点云质量评估与语言描述对齐，使无参考三维质量评分更贴近主观评价。
+- [GauSTAR](https://arxiv.org/abs/2501.10283)：使用 Gaussian surface tracking and reconstruction 进行动态表面建模。
+- [Decoupling Appearance Variations with 3D Consistent Features in Gaussian Splatting](https://arxiv.org/abs/2501.10788)：在 Gaussian field 之外用 3D-consistent features 建模局部外观变化，减少 floaters 和色彩畸变并保持渲染效率。
+- [HAC++](https://arxiv.org/abs/2501.12255)：面向 3D Gaussian splatting 做 100x compression，同时保持实用 scene representation。
+- [DARB-Splatting](https://arxiv.org/abs/2501.12369)：用 decaying anisotropic radial basis functions 泛化 splatting 表示。
+- [Parallel Sequence Modeling via Generalized Spatial Propagation Network](https://arxiv.org/abs/2501.12381)：偏轴但与空间建模相关：它提出保持图像网格结构的 2D spatial propagation attention，并加速超大分辨率图像生成。
+- [GoDe](https://arxiv.org/abs/2501.13558)：用按需 Gaussian 表示做渐进式 level of detail 与可扩展压缩，补充 3DGS 表示效率路线。
+- [Micro-macro Wavelet-based Gaussian Splatting for 3D Reconstruction from Unconstrained Images](https://arxiv.org/abs/2501.14231)：在 Gaussian Splatting 中加入 micro-macro wavelet decomposition，从 unconstrained image collections 重建 3D 场景。
+- [Relightable Full-Body Gaussian Codec Avatars](https://arxiv.org/abs/2501.14726)：构建可重光照的全身 Gaussian Avatar，为空间人体表示生成补充全身可控性。
+- [HuGDiffusion: Generalizable Single-Image Human Rendering via 3D Gaussian Diffusion](https://arxiv.org/abs/2501.15008)：用 3D Gaussian diffusion 从单张图像渲染人体，面向可泛化的人体几何和外观新视角合成。
+- [LinPrim](https://arxiv.org/abs/2501.16312)：用 linear primitives 做 differentiable volumetric rendering。
+- [SliceOcc: Indoor 3D Semantic Occupancy Prediction with Vertical Slice Representation](https://arxiv.org/abs/2501.16684)：把室内 occupancy 表示为 vertical slices，以改进单目或稀疏观测下的 semantic 3D occupancy prediction。
 - [3D-MoE: A Mixture-of-Experts Multi-modal LLM for 3D Vision and Pose Diffusion via Rectified Flow](https://arxiv.org/abs/2501.16698)：使用专家混合多模态 LLM 支持 3D 视觉与姿态扩散。
-- [ReasonGrounder: LVLM-Guided Hierarchical Feature Splatting for Open-Vocabulary 3D Visual Grounding and Reasoning](https://arxiv.org/abs/2503.23297)：通过 LVLM 引导的层级特征溅射实现开放词表 3D 视觉扎根与推理。
+- [StructuredField: Unifying Structured Geometry and Radiance Field](https://arxiv.org/abs/2501.18152)：统一结构化几何 primitives 与 radiance fields，使显式结构和神经渲染共享同一场景表示。
+- [Deformable Beta Splatting](https://arxiv.org/abs/2501.18630)：提出 deformable beta splatting 作为 dynamic 3D representation。
+- [Drag Your Gaussian: Effective Drag-Based Editing with Score Distillation for 3D Gaussian Splatting](https://arxiv.org/abs/2501.18672)： 用分数蒸馏实现 3D 高斯溅射拖拽编辑，为空间场景编辑补充直接操控方式。
+- [RLS3: RL-Based Synthetic Sample Selection to Enhance Spatial Reasoning in Vision-Language Models for Indoor Autonomous Perception](https://arxiv.org/abs/2501.18880)：用强化学习智能体合成有信息量的室内空间推理样本，以微调视觉语言模型。
+- [OmniPhysGS: 3D Constitutive Gaussians for General Physics-Based Dynamics Generation](https://arxiv.org/abs/2501.18982)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Lifting by Gaussians](https://arxiv.org/abs/2502.00173)：提供一种 simple and flexible Gaussian-based 3D instance segmentation method。
+- [WonderHuman: Hallucinating Unseen Parts in Dynamic 3D Human Reconstruction](https://arxiv.org/abs/2502.01045)：通过 hallucinating unseen body regions 完成动态 3D 人体重建，提升遮挡和有限视角下的完整性。
+- [CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](https://arxiv.org/abs/2502.01312)：结合 front-door causal adjustment 和 residual knowledge distillation，减少类别级物体位姿估计中的伪相关。
+- [Diff9D: Diffusion-Based Domain-Generalized Category-Level 9-DoF Object Pose Estimation](https://arxiv.org/abs/2502.02525)：用 diffusion modeling 估计类别级 9-DoF object pose，强化跨域泛化。
+- [Articulate AnyMesh](https://arxiv.org/abs/2502.02590): 建模开放词汇的 3D 铰接物体，将空间生成扩展到语言对齐的可动资产。
+- [GARAD-SLAM](https://arxiv.org/abs/2502.03228)：面向实时抗动态 SLAM 使用 3D Gaussian Splatting，补充动态场景定位与建图模型。
+- [Dress-1-to-3](https://arxiv.org/abs/2502.03449)：用 diffusion prior 与 differentiable physics 将单图转成 simulation-ready 3D outfit。
+- [GCE-Pose: Global Context Enhancement for Category-level Object Pose Estimation](https://arxiv.org/abs/2502.04293)：用 global context cues 增强类别级物体位姿估计，缓解物体几何和朝向歧义。
+- [sshELF: Single-Shot Hierarchical Extrapolation of Latent Features for 3D Reconstruction from Sparse-Views](https://arxiv.org/abs/2502.04318)：单次分层外推 latent features，从稀疏视角重建 3D 物体或场景。
+- [DreamDPO: Aligning Text-to-3D Generation with Human Preferences via Direct Preference Optimization](https://arxiv.org/abs/2502.04370)：用 DPO 将文本到 3D 生成与人类偏好对齐。
+- [GaussRender: Learning 3D Occupancy with Gaussian Rendering](https://arxiv.org/abs/2502.05040)：通过 Gaussian rendering 学习 3D occupancy，用可微 splatting 信号监督体素化场景结构。
+- [PINGS: Gaussian Splatting Meets Distance Fields within a Point-Based Implicit Neural Map](https://arxiv.org/abs/2502.05752)：在 point-based implicit neural map 中结合 Gaussian Splatting 与 distance fields，用于几何感知场景重建。
+- [TripoSG](https://arxiv.org/abs/2502.06608)：用大规模 rectified-flow models 实现高保真 3D shape synthesis，补充空间生成模型线索。
+- [Articulate That Object Part (ATOP): 3D Part Articulation via Text and Motion Personalization](https://arxiv.org/abs/2502.07278)： 用文本与运动条件个性化 3D part articulation，补充语言可控可运动物体建模。
+- [MeshSplats](https://arxiv.org/abs/2502.07754)：从 mesh 初始化 Gaussian splatting，以改进 mesh-based neural rendering。
+- [Pippo](https://arxiv.org/abs/2502.07785)：从单张图像生成高分辨率多视角人体表示，扩展单视图到三维人体的空间生成路线。
+- [TranSplat](https://arxiv.org/abs/2502.07840)：用 surface embedding 引导 3D Gaussian splatting，以处理 transparent-object manipulation。
+- [DenseSplat](https://arxiv.org/abs/2502.09111)：用 neural radiance prior 加密 3D Gaussian Splatting SLAM，提高场景重建密度。
+- [ConsistentDreamer: View-Consistent Meshes Through Balanced Multi-View Gaussian Optimization](https://arxiv.org/abs/2502.09278)：平衡固定多视角先验、Gaussian optimization 和 SDS loss，使 image-to-3D mesh 保持跨视角一致。
+- [Human-LLM Coevolution: Evidence from Academic Writing](https://arxiv.org/abs/2502.09606)：偏离 Spatial Model：它分析 arXiv 摘要中 LLM 相关词频变化，而不是空间能力或 3D 建模。
+- [RigAnything: Template-Free Autoregressive Rigging for Diverse 3D Assets](https://arxiv.org/abs/2502.09615)： 通过自回归建模为多样 3D 资产生成无模板绑定结构，使空间资产更接近可动画化形态。
+- [Text-guided Sparse Voxel Pruning for Efficient 3D Visual Grounding](https://arxiv.org/abs/2502.10392)： 在文本引导下稀疏体素剪枝以提升 3D 视觉 grounding 效率，连接语言查询与紧凑空间证据。
+- [Occlusion-Aware Text-Image-Point Cloud Pretraining for Open-World 3D Object Recognition](https://arxiv.org/abs/2502.10674)：在 occlusion-aware partial point clouds 上预训练文本、图像和点云编码器，并用 DuoMamba 降低开放世界 3D 识别成本。
+- [MARS: Mesh AutoRegressive Model for 3D Shape Detailization](https://arxiv.org/abs/2502.11390)：用 autoregressive model 细化 3D mesh，在粗形状生成后补充精细几何。
+- [3D Gaussian Inpainting with Depth-Guided Cross-View Consistency](https://arxiv.org/abs/2502.11801)：用深度引导的跨视角约束提升 3D Gaussian inpainting 的几何和纹理一致性。
+- [MagicArticulate: Make Your 3D Models Articulation-Ready](https://arxiv.org/abs/2502.12135)： 将静态 3D 模型转化为可关节化资产，补充面向交互与具身使用的空间资产准备方法。
+- [PUGS: Zero-Shot Physical Understanding with Gaussian Splatting](https://arxiv.org/abs/2502.12231)：把物体重建为 3D Gaussian splats，用 geometry-aware regularization 和 region-aware contrastive loss 提升形状质量，再通过 Gaussian 特征传播与体积积分零样本预测质量、摩擦和硬度等物理属性。
+- [Not-So-Optimal Transport Flows for 3D Point Cloud Generation](https://arxiv.org/abs/2502.12456)：用预计算近似 OT 配对替代昂贵的 equivariant optimal-transport flows，使点云生成能扩展到更大形状。
+- [Textured 3D Regenerative Morphing with 3D Diffusion Prior](https://arxiv.org/abs/2502.14316)：利用 3D diffusion prior 做 regenerative morphing，使带纹理 3D 资产编辑时保持几何连贯。
+- [CrossOver: 3D Scene Cross-Modal Alignment](https://arxiv.org/abs/2502.15011)：对齐 3D 场景的跨模态表征，使语言、图像和点云证据指向一致的场景内容。
+- [OpenGS-SLAM](https://arxiv.org/abs/2502.15633)：通过 pointmap regression 实现无界户外场景的 RGB-only Gaussian Splatting SLAM。
+- [Dragen3D: Multiview Geometry Consistent 3D Gaussian Generation with Drag-Based Control](https://arxiv.org/abs/2502.16475)：把 drag-based control 接入多视角一致的 3D Gaussian generation，使用户能操控几何并维持跨视角连贯。
+- [Efficient 4D Gaussian Stream with Low Rank Adaptation](https://arxiv.org/abs/2502.16575)：用低秩适配更高效地流式表示随时间变化的 4D Gaussian 场景。
+- [Dr. Splat](https://arxiv.org/abs/2502.16652)：将语言 embedding 直接注册到 3D Gaussians，实现 open-vocabulary 3D scene understanding。
+- [PointSea: Point Cloud Completion via Self-structure Augmentation](https://arxiv.org/abs/2502.17053)：通过 self-structure augmentation 补全点云，利用输入自身几何规律而不只依赖外部形状先验。
+- [V-HOP: Visuo-Haptic 6D Object Pose Tracking](https://arxiv.org/abs/2502.17434)：结合视觉和触觉观测，在物理交互过程中跟踪 6D object pose。
+- [LAM](https://arxiv.org/abs/2502.17796)：构建 one-shot animatable Gaussian head 的 large avatar model，补充可控 3D avatar generation。
+- [The NeRF Signature](https://arxiv.org/abs/2502.19125)：为 Neural Radiance Fields 加入 codebook 辅助水印，用于 3D 神经内容版权保护。
+- [Accurate Volumetric Rendering in 3DGS](https://arxiv.org/abs/2502.19318)：重新检验 3D Gaussian splatting 是否需要 accurate volumetric rendering。
+- [Interactable Replicas via Gaussian Splatting](https://arxiv.org/abs/2502.19459)：重建复杂可关节物体的可交互 replicas，将空间重建与可行动 3D assets 连接起来。
+- [GenPC: Zero-shot Point Cloud Completion via 3D Generative Priors](https://arxiv.org/abs/2502.19896)：利用预训练 3D generative priors 做 zero-shot point cloud completion，避免专门的补全任务训练。
+- [Avat3r](https://arxiv.org/abs/2502.20220)：构建高保真 3D head avatars 的 large animatable Gaussian reconstruction model，补充空间 avatar generation。
+- [Sparse Time-Variant 3DGS](https://arxiv.org/abs/2502.20378)：用稀疏时变属性提升单目动态场景 Gaussian Splatting 效率。
+- [FunHOI: Annotation-Free 3D Hand-Object Interaction Generation via Functional Text Guidanc](https://arxiv.org/abs/2502.20805)：基于 functional text guidance 生成 3D hand-object interactions，不依赖成对 HOI 标注。
+- [Spatial Reasoning with Denoising Models](https://arxiv.org/abs/2502.21075)：贡献空间推理模型方法；核心思想是让 3D、视角或连续空间关系在模型行为中更显式。
+- [Scalable Real2Sim: Physics-Aware Asset Generation Via Robotic Pick-and-Place Setups](https://arxiv.org/abs/2503.00370)：通过机器人交互恢复几何与物理属性，自动生成可用于模拟的资产。
+- [GaussianSeal: Rooting Adaptive Watermarks for 3D Gaussian Generation Model](https://arxiv.org/abs/2503.00531)：把 adaptive watermarks 嵌入 3D Gaussian generation model，用于生成 Gaussian 资产的来源追踪和保护。
+- [Contribution-Adaptive 3DGS Regularization](https://arxiv.org/abs/2503.00881)：用 contribution-adaptive regularization 平衡 3D Gaussian splatting 的高质量渲染与几何重建。
+- [Kiss3DGen: Repurposing Image Diffusion Models for 3D Asset Generation](https://arxiv.org/abs/2503.01370)：把图像扩散模型复用于 3D 对象生成、编辑和增强，通过多视图 bundle images 与法线图重建 3D 资产。
+- [MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](https://arxiv.org/abs/2503.01425)：用 artist-style sketches 条件化 mesh 生成和编辑，让用户通过绘制控制 3D geometry。
+- [OpenGS-SLAM: Open-Set Dense Semantic SLAM with 3D Gaussian Splatting for Object-Level Scene Understanding](https://arxiv.org/abs/2503.01646)：把 2D foundation model 标签注入 3D Gaussian 地图，通过标签图渲染与场景更新实现 open-set object-level semantic SLAM。
+- [MUSt3R: Multi-view Network for Stereo 3D Reconstruction](https://arxiv.org/abs/2503.01661)：面向空间推理与空间智能的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“MUSt3R: Multi-view Network for Stereo 3D Reconstruction”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas](https://arxiv.org/abs/2503.01773)：通过分析注意力关注区域解释 VLM 空间关系推理困难。
+- [Union of Experts: Adapting Hierarchical Routing to Equivalently Decomposed Transformer](https://arxiv.org/abs/2503.02495)：偏离 Spatial Model：它把 Transformer 分解成层次路由 experts，并把 MoE routing 扩展到 attention blocks。
+- [Beyond Existance: Fulfill 3D Reconstructed Scenes with Pseudo Details](https://arxiv.org/abs/2503.04037)：为不完整 3D reconstructed scenes 补入 pseudo details，在粗重建后填充缺失细结构。
+- [How to Move Your Dragon](https://arxiv.org/abs/2503.04257)：为 large-vocabulary objects 生成 text-conditioned motion。
+- [S2Gaussian: Sparse-View Super-Resolution 3D Gaussian Splatting](https://arxiv.org/abs/2503.04314)：通过 staged Gaussian upsampling 和 refinement，从稀疏低分辨率视图重建高分辨率 3D Gaussian scenes。
+- [Transferable foundation models for geometric tasks on point cloud representations: geometric neural operators](https://arxiv.org/abs/2503.04649)：在点云上预训练 geometric neural operators，用于估计 surface metrics、curvature、geometric PDE 解和 shape deformation。
+- [GrainPaint: A multi-scale diffusion-based generative model for microstructure reconstruction of large-scale objects](https://arxiv.org/abs/2503.04776)：偏轴但属于空间生成：它用 multi-scale denoising diffusion inpainting 重建大尺度材料微结构，突破固定生成窗口。
+- [Spectral Informed Mamba for Robust Point Cloud Processing](https://arxiv.org/abs/2503.04953)：把 spectral information 融入 Mamba-style sequence modeling，用于鲁棒点云分类和分割。
+- [Taming Video Diffusion Prior with Scene-Grounding Guidance for 3D Gaussian Splatting from Sparse Inputs](https://arxiv.org/abs/2503.05082)：用视频扩散先验与场景 grounding 引导稀疏输入下的 3D Gaussian Splatting。
+- [GaussianCAD: Robust Self-Supervised CAD Reconstruction from Three Orthographic Views Using 3D Gaussian Splatting](https://arxiv.org/abs/2503.05161)：用 self-supervised 3D Gaussian Splatting 从三个正交视图重建 CAD geometry。
+- [EvolvingGS](https://arxiv.org/abs/2503.05162)：用演化三维 Gaussian 表示实现高保真可流式体视频。
+- [SeeLe](https://arxiv.org/abs/2503.05168)：通过统一框架加速实时 Gaussian splatting，为交互式三维场景表示补充面向部署的模型路线。
+- [SecureGS: Boosting the Security and Fidelity of 3D Gaussian Splatting Steganography](https://arxiv.org/abs/2503.06118)：用 decoupled Gaussian encryption 和 neural decoding 保护 3DGS 资产，在隐藏信息时保持渲染质量和点云结构安全。
+- [StreamGS](https://arxiv.org/abs/2503.06235)：从无位姿图像流在线进行可泛化 Gaussian Splatting 重建。
+- [Localization Heads](https://arxiv.org/abs/2503.06287)：显示少量 LVLM 注意力头即可定位文本指称的视觉区域，无需额外 grounding 模块。
+- [OV-SCAN: Semantically Consistent Alignment for Novel Object Discovery in Open-Vocabulary 3D Object Detection](https://arxiv.org/abs/2503.06435)：对开放词汇 3D detection features 做语义一致对齐，使 novel object discovery 在跨模态特征间保持一致。
+- [SP3D: Boosting Sparsely-Supervised 3D Object Detection via Accurate Cross-Modal Semantic Prompts](https://arxiv.org/abs/2503.06467)：利用 LMM 生成的 cross-modal semantic prompts 和动态伪标签聚类，在稀疏标注下提升 3D detection。
+- [Vector Quantized Feature Fields for Fast 3D Semantic Lifting](https://arxiv.org/abs/2503.06469)：用 vector quantization 压缩 semantic feature fields，加速 2D-to-3D semantic lifting。
+- [Online Dense Point Tracking with Streaming Memory](https://arxiv.org/abs/2503.06471)：用 streaming memory 做 online dense point tracking，让长视频保持对应关系而无需保存全部帧。
+- [AxisPose: Model-Free Matching-Free Single-Shot 6D Object Pose Estimation via Axis Generation](https://arxiv.org/abs/2503.06660)：通过生成 latent object axes 从单视图直接预测 6D pose，避免 CAD 模型、匹配、SfM 和 PnP。
+- [REArtGS: Reconstructing and Generating Articulated Objects via 3D Gaussian Splatting with Geometric and Motion Constraints](https://arxiv.org/abs/2503.06677)： 结合 3D Gaussian splatting、几何约束与运动约束重建和生成 articulated objects。
+- [SOGS](https://arxiv.org/abs/2503.07476)：使用 second-order anchor 改进高级 3D Gaussian Splatting 表示。
+- [POp-GS: Next Best View in 3D-Gaussian Splatting with P-Optimality](https://arxiv.org/abs/2503.07819)：用 P-optimality 为 3D Gaussian Splatting 选择 next-best view，提升重建采集过程中的信息量。
+- [FunGraph: Functionality Aware 3D Scene Graphs for Language-Prompted Scene Interaction](https://arxiv.org/abs/2503.07909)：把 affordance-relevant functional parts 加入 3D scene graphs，使语言提示能定位可交互场景元素。
+- [7DGS](https://arxiv.org/abs/2503.07946)：统一空间、时间与角度 Gaussian Splatting，增强动态场景表示。
+- [S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction](https://arxiv.org/abs/2503.08217)：删减街景 3DGS 管线中的不必要坐标变换、投影和远处内容渲染，降低大规模重建成本。
+- [HRAvatar](https://arxiv.org/abs/2503.08224)：生成高质量、可重光照的 Gaussian 头部 Avatar，为空间生成补充可控三维人物表示。
+- [Twinner: Shining Light on Digital Twins in a Few Snaps](https://arxiv.org/abs/2503.08382)：从少量拍摄结果构建 digital-twin reconstruction，强调有限视角下的快速场景或物体数字化。
+- [WildSeg3D](https://arxiv.org/abs/2503.08407)：从 2D 图像分割野外任意 3D objects，补充 open-world 3D parsing 路线。
+- [PCGS](https://arxiv.org/abs/2503.08511)：对 3D Gaussian splatting representations 做 progressive compression。
+- [SAS: Segment Any 3D Scene with Integrated 2D Priors](https://arxiv.org/abs/2503.08512)：通过文本对齐多个 2D open-vocabulary models，估计其类别能力，并把融合先验蒸馏到 3D scene segmentation。
+- [High-Quality 3D Head Reconstruction from Any Single Portrait Image](https://arxiv.org/abs/2503.08516)：结合身份和表情感知的多视角扩散与高质量 portrait dataset，从任意单张肖像重建 3D head。
+- [Dual-Domain Homogeneous Fusion with Cross-Modal Mamba and Progressive Decoder for 3D Object Detection](https://arxiv.org/abs/2503.08992)：在 BEV 与 voxel 两个同构域中融合图像和 LiDAR 特征，并用 cross-modal Mamba 与 progressive decoder 做 3D detection。
+- [Online Language Splatting](https://arxiv.org/abs/2503.09447)：构建在线 language-aligned Gaussian Splatting，用于 open-vocabulary 空间场景表示。
+- [CleverDistiller: Simple and Spatially Consistent Cross-modal Distillation](https://arxiv.org/abs/2503.09878)：用 spatial consistency constraints 蒸馏跨模态知识，使 dense predictions 在多模态间保持几何一致。
+- [PanoGen++: Domain-Adapted Text-Guided Panoramic Environment Generation for Vision-and-Language Navigation](https://arxiv.org/abs/2503.09938)：用 LoRA 细调 diffusion models 进行全景 inpainting 和 outpainting，从文本生成 VLN 环境。
+- [TGP: Two-modal occupancy prediction with 3D Gaussian and sparse points for 3D Environment Awareness](https://arxiv.org/abs/2503.09941)：结合 3D Gaussian sets 与 sparse points 预测 semantic occupancy，同时保留体积细节和点级空间精度。
+- [GaussHDR](https://arxiv.org/abs/2503.10143)：学习统一 3D 与 2D 局部 tone mapping，实现高动态范围 Gaussian Splatting。
+- [VicaSplat](https://arxiv.org/abs/2503.10286)：在一次前馈过程中从未标定视频帧联合估计相机并重建 3D Gaussian 场景。
+- [MaterialMVP: Illumination-Invariant Material Generation via Multi-View PBR Diffusion](https://arxiv.org/abs/2503.10289)： 用 multi-view PBR diffusion 生成光照不变材质，为 3D 空间资产补充材质控制。
+- [4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large Language Models](https://arxiv.org/abs/2503.10437)： 借助多模态大模型把语言高斯溅射扩展到 4D 场景，连接动态空间表示与语言 grounding。
+- [Unifying 2D and 3D Vision-Language Understanding](https://arxiv.org/abs/2503.10745)：通过共享 grounding 解码器和二维到三维提升策略统一 2D 与 3D 视觉语言理解，增强空间感知能力。
+- [GaussianIP: Identity-Preserving Realistic 3D Human Generation via Human-Centric Diffusion Prior](https://arxiv.org/abs/2503.11143)：利用 human-centric diffusion prior 生成真实感 3D humans，并在 Gaussian-based 表示中保持身份一致。
+- [TreeMeshGPT: Artistic Mesh Generation with Autoregressive Tree Sequencing](https://arxiv.org/abs/2503.11629)： 用 autoregressive tree sequencing 生成艺术化 mesh，扩展结构化空间资产合成。
+- [VGGT: Visual Geometry Grounded Transformer](https://arxiv.org/abs/2503.11651)：提出 Visual Geometry Grounded Transformer，用于前馈式 3D 重建与空间感知。
+- [Swift4D](https://arxiv.org/abs/2503.12307)：用 adaptive divide-and-conquer Gaussian splatting 做 compact dynamic-scene reconstruction。
+- [GS-I3: Gaussian Splatting for Surface Reconstruction from Illumination-Inconsistent Images](https://arxiv.org/abs/2503.12335)：用 CNN tone-mapping correction 和单视图、多视图法线补偿约束 3DGS，在光照不一致图像下做稳健表面重建。
+- [SPC-GS: Gaussian Splatting with Semantic-Prompt Consistency for Indoor Open-World Free-view Synthesis from Sparse Inputs](https://arxiv.org/abs/2503.12535)：用视频生成视角变化与 Gaussian densification 初始化室内布局，并以 SAM2 semantic-prompt consistency 约束稀疏输入的新视角合成。
+- [MTGS: Multi-Traversal Gaussian Splatting](https://arxiv.org/abs/2503.12552)：MTGS 改造 Gaussian Splatting 的表示、优化或渲染流程，以提升空间重建质量或效率。
+- [KISS-SLAM: A Simple, Robust, and Accurate 3D LiDAR SLAM System With Enhanced Generalization Capabilities](https://arxiv.org/abs/2503.12660)：以 LiDAR-only scan-to-map odometry、local-map matching 和 pose-graph optimization 构成轻量 SLAM 基线，不依赖 IMU 或 GNSS。
+- [ProtoDepth: Unsupervised Continual Depth Completion with Prototypes](https://arxiv.org/abs/2503.12745)：在冻结 depth-completion backbone 上学习领域 prototype sets 与 descriptors，降低室内外连续域更新时的遗忘。
+- [PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior](https://arxiv.org/abs/2503.12834)：把草图、视觉语言文本部件先验和 ISG-Net graph convolution 结合起来，生成可控的 part-aware 3D shapes。
+- [RGBAvatar](https://arxiv.org/abs/2503.12886)：把跟踪到的 3DMM 参数映射为紧凑 Gaussian blendshape bases，实现实时 photorealistic head-avatar reconstruction。
+- [AR-1-to-3](https://arxiv.org/abs/2503.12929)：先预测接近输入视角的新视角，再用 stacked local 与 LSTM global encoders 逐步生成远视角，以提升 3D 一致性。
+- [TFDM: Time-Variant Frequency-Based Point Cloud Diffusion with Mamba](https://arxiv.org/abs/2503.13004)：用 space-filling curve 把点云重排为适合 latent Mamba diffusion 的序列，并用 time-varying frequency encoder 强化后期细节。
+- [DeGauss](https://arxiv.org/abs/2503.13176)：用 foreground dynamic Gaussians、background static Gaussians 和 probabilistic mask 分离动态干扰与静态场景，实现 self-supervised distractor-free reconstruction。
+- [Generative Gaussian Splatting](https://arxiv.org/abs/2503.13272)：把视频扩散特征参数化为 3D Gaussian feature field，可渲染多视图图像或上采样为 radiance field，提升 3D 场景一致性。
+- [Infinite Mobility: Scalable High-Fidelity Synthesis of Articulated Objects via Procedural Generation](https://arxiv.org/abs/2503.13424)：用程序化生成合成高保真 articulated objects，并提供物理属性与 mesh quality 可用于训练生成模型。
+- [Amodal3R](https://arxiv.org/abs/2503.13439)：在 foundation 3D generator 上加入 mask-weighted cross-attention 与 occlusion-aware attention，从部分 2D 观测恢复完整物体。
+- [SALAD Motion Diffusion](https://arxiv.org/abs/2503.13836)：在 skeleton-aware latent diffusion 中显式建模关节、帧和文本词的关系，并复用 cross-attention maps 做零样本文本动作编辑。
+- [2D-to-3D Scene Segmentation in 3DGS](https://arxiv.org/abs/2503.14029)：为 3D Gaussians 加入 contrastive instance features 和可学习 object codebook，实现端到端 2D-to-3D scene segmentation。
+- [DUNE Universal Encoder](https://arxiv.org/abs/2503.14405)：把异构 2D、3D 与人体感知教师模型 co-distill 成单一 encoder，覆盖分类、分割、深度、3D 理解和重定位。
+- [Bolt3D](https://arxiv.org/abs/2503.14445)：用在密集重建所得多视图一致几何与外观数据上训练的 latent diffusion，在单 GPU 数秒内采样 3D scene representation。
+- [SuperPC](https://arxiv.org/abs/2503.14558)：用 three-level-conditioned diffusion 和 spatial-mix fusion 同时处理点云补全、上采样、去噪与着色。
+- [GIVEPose: Gradual Intra-class Variation Elimination for RGB-based Category-Level Object Pose Estimation](https://arxiv.org/abs/2503.15110)：把 intra-class-variation-free consensus map 与 NOCS 互补使用，改进 RGB-only category-level 6D pose estimation。
+- [DeepMesh](https://arxiv.org/abs/2503.15265)：改进 mesh tokenization 与预训练，并用 preference alignment 让自回归 mesh generation 兼顾细节拓扑和人类偏好。
+- [Uncertainty-Aware Diffusion-Guided Refinement of 3D Scenes](https://arxiv.org/abs/2503.15742)：用 latent video diffusion prior、Fourier-style transfer 和 semantic uncertainty maps 迭代细化单图 Gaussian scene reconstruction。
+- [Acc3D: Accelerating Single Image to 3D Diffusion Models via Edge Consistency Guided Score Distillation](https://arxiv.org/abs/2503.15975)：通过 edge-consistency regularization 蒸馏 image-to-3D diffusion，并用 adversarial augmentation 在少步推理下保留生成细节。
+- [Animating the Uncaptured](https://arxiv.org/abs/2503.15996)：渲染静态 humanoid mesh 后用文本条件视频扩散生成运动，再通过 SMPL 优化把运动转回 3D mesh。
+- [OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](https://arxiv.org/abs/2503.16177)：按 camera co-visibility 做 occlusion-aware 场景划分，并在渲染时剔除当前区域不可见 Gaussians 以加速大场景 3DGS。
+- [Generalized Few-shot 3D Point Cloud Segmentation with Vision-Language Model](https://arxiv.org/abs/2503.16282)：用 prototype guidance 过滤 3D VLM 伪标签、对未标注区域自适应 infilling，并把 few-shot samples 混入训练场景。
+- [Vecset Diffusion Model](https://arxiv.org/abs/2503.16302)：用 progressive flow distillation 加速 Vecset Diffusion 的 DiT sampling，并以稀疏局部感知 vecset decoder 降低解码开销。
+- [Gaussian Graph Network](https://arxiv.org/abs/2503.16338)：在多视角 pixel-aligned Gaussian groups 之间构建 Gaussian graphs，通过 message passing 与 pooling 减少 feed-forward 重建中的冗余 splats。
+- [NuiScene: Exploring Efficient Generation of Unbounded Outdoor Scenes](https://arxiv.org/abs/2503.16375)：把室外 scene chunks 编码为 uniform vector sets，并训练显式 outpainting model 来快速生成连贯的无边界 3D 场景。
+- [Syncity](https://arxiv.org/abs/2503.16420)：把预训练 3D object generators 与 2D image generators 组合成 tile-by-tile context-aware pipeline，无需训练或优化即可 text-to-3D world creation。
+- [Vision-Language Embodiment for Monocular Depth Estimation](https://arxiv.org/abs/2503.16535)：把相机内参和语言深度先验嵌入单目深度估计，使 RGB 特征由场景深度交互约束。
+- [iFlame](https://arxiv.org/abs/2503.16653)：在 hourglass autoregressive Transformer 中交错 full attention 与 linear attention，并压缩 KV cache，以高效生成高分辨率 mesh。
+- [GAIR: Location-aware self-supervised contrastive pre-training with geo-aligned implicit representations](https://arxiv.org/abs/2503.16683)：用 neural implicit local interpolation 扩展 ViT 遥感特征，并对齐 overhead、street-view 和 geolocation embeddings。
+- [Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding](https://arxiv.org/abs/2503.16707)：把 CLIP、DINOv2 与 Stable Diffusion 特征蒸馏到 3D scene understanding，并用 deterministic uncertainty weighting 做开放词表分割。
+- [4D Gaussian Splatting SLAM](https://arxiv.org/abs/2503.16710)：分离静态与动态 Gaussian sets，用 control points 与 MLP 建模动态形变，并用渲染 optical flow 监督运动。
+- [RigGS](https://arxiv.org/abs/2503.16822)：从视频驱动的 Gaussian deformations 中抽取稀疏骨架节点，并学习 skinning 与 pose-dependent detail 以渲染可编辑关节物体。
+- [Optimized Minimal 3D Gaussian Splatting](https://arxiv.org/abs/2503.16924)：筛选 distinct Gaussians，结合紧凑属性表示与 sub-vector quantization，在更低存储下保持高帧率渲染。
+- [DroneSplat](https://arxiv.org/abs/2503.16964)：用 local-global segmentation thresholds 去除无人机场景动态干扰，并结合 MVS predictions 与 voxel-guided optimization 改进 3DGS。
+- [Instant Gaussian Stream](https://arxiv.org/abs/2503.16979)：从多视角 2D motion features 预测 Gaussian motion，并用 key-frame refinement 限制误差积累，实现 free-viewpoint video 流式重建。
+- [3D Neural Operator-Based Flow Surrogates around 3D geometries: Signed Distance Functions and Derivative Constraints](https://arxiv.org/abs/2503.17289)：在复杂几何 3D flow simulations 上评估 DeepONet variants，并用 SDF 几何与 derivative constraints 提升物理一致性。
+- [Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors](https://arxiv.org/abs/2503.17316)：面向空间推理与空间智能的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Pow3R: Empowering Unconstrained 3D Reconstruction with Camera and Scene Priors”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Is there anything left? Measuring semantic residuals of objects removed from 3D Gaussian Splatting](https://arxiv.org/abs/2503.17574)：定义 3DGS 场景物体移除后的 semantic residual metrics，并用空间与语义一致性进一步清理残留。
+- [MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion](https://arxiv.org/abs/2503.17695)：从用户给定运动先验估计多视角 optical flows，再输入免训练扩散模型实现多视角一致的 zero-shot motion editing。
+- [Co-op: Correspondence-based Novel Object Pose Estimation](https://arxiv.org/abs/2503.17731)：匹配 RGB 图像与 CAD template 的 semi-dense correspondences，并通过 differentiable PnP 细化 probabilistic flow 以估计 6DoF pose。
+- [GS-LTS: 3D Gaussian Splatting-Based Adaptive Modeling for Long-Term Service Robots](https://arxiv.org/abs/2503.17733)：检测室内场景变化，用规则策略采集机器人多视角观测，并通过 Gaussian editing 长期更新 3D map。
+- [SymmCompletion: High-Fidelity and High-Consistency Point Cloud Completion with Symmetry Guidance](https://arxiv.org/abs/2503.18007)：估计局部 symmetry transformations，并用 symmetry-guidance transformer 补全点云，同时保持已观测几何一致。
+- [SceneSplat: Gaussian Splatting-Based Scene Understanding with Vision-Language Pretraining](https://arxiv.org/abs/2503.18052)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [PanoGS](https://arxiv.org/abs/2503.18107)：用 pyramid tri-planes 建模 3D language features，以 language-guided graph cuts 分组 Gaussian primitives，再聚类 super-primitives 做 panoptic open-vocabulary 理解。
+- [MLLM-For3D: Adapting Multimodal Large Language Model for 3D Reasoning Segmentation](https://arxiv.org/abs/2503.18135)：把 2D MLLM 伪 masks 转为 3D reasoning segmentation，并用 spatial-consistency filtering 与 token-for-query text alignment 控制幻觉。
+- [SimMotionEdit](https://arxiv.org/abs/2503.18211)：在 Diffusion Transformer 中联合训练 motion editing 与 motion-similarity prediction，提升文本指令下 3D human-motion edit 的对齐度。
+- [NeRFPrior: Learning Neural Radiance Field as a Prior for Indoor Scene Reconstruction](https://arxiv.org/abs/2503.18361)：训练 scene-specific NeRF prior 提供几何和颜色线索，并用多视图与置信加权深度一致性学习 SDF 表面。
+- [DashGaussian](https://arxiv.org/abs/2503.18402)：把 3DGS fitting 视为逐步拟合频率分量，并联合调度渲染分辨率与 primitive growth 来减少冗余训练成本。
+- [UniPCGC](https://arxiv.org/abs/2503.18541)：用 uneven lossless coding、rate modulation 和 dynamic sparse convolution 统一有损与无损点云几何压缩。
+- [Any6D: Model-free 6D Pose Estimation of Novel Objects](https://arxiv.org/abs/2503.18673)：仅用单张 RGB-D anchor image，通过 joint object alignment 和 render-and-compare refinement 估计未知物体 pose 与 scale。
+- [Hardware-Rasterized Ray-Based 3DGS](https://arxiv.org/abs/2503.18682)：为 ray-based Gaussian splatting 推导硬件光栅化 shaders 与 anti-aliasing 渲染，使 VR/MR 新视角合成达到高帧率。
+- [GS-Marker: Generalizable and Robust Watermarking for 3D Gaussian Splatting](https://arxiv.org/abs/2503.18718)：用 3D encoder、distortion layers、adaptive marker control 和 2D rendering decoder 在 3DGS 中嵌入可鲁棒提取的水印。
+- [RomanTex: Decoupling 3D-Aware Rotary Positional Embedded Multi-Attention Network for Texture Synthesis](https://arxiv.org/abs/2503.19011)：把多视角扩散先验接入带 3D-aware rotary position 的 multi-attention network，并用解耦 attention block 与 geometry-related CFG 减少网格贴图中的 seam、ghosting 和背面纹理错误。
+- [Open-Vocabulary Functional 3D Scene Graphs for Real-World Indoor Spaces](https://arxiv.org/abs/2503.19199)：预测包含物体、可交互元素和功能关系的 3D scene graphs，并注入 VLM 与 LLM 的功能知识。
+- [DeClotH: Decomposable 3D Cloth and Human Body Reconstruction from a Single Image](https://arxiv.org/abs/2503.19373)：用 cloth 与 human templates 正则化单图重建，并加入 cloth-specific diffusion prior 分离衣物和人体几何。
+- [COB-GS](https://arxiv.org/abs/2503.19443)：依据 semantic boundary gradients 拆分边界模糊 Gaussians，并联合优化语义 masks 与视觉纹理以锐化 3DGS 物体边界。
+- [GaussianUDF: Inferring Unsigned Distance Functions through 3D Gaussian Splatting](https://arxiv.org/abs/2503.19458)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [MM-LINS](https://arxiv.org/abs/2503.19506)：检测 LiDAR-inertial degeneracy，保存 sleeping maps、重新初始化 active maps，并用 scan-context constraints 融合重叠地图。
+- [PartRM: Modeling Part-Level Dynamics with Large Cross-State Reconstruction Model](https://arxiv.org/abs/2503.19913)：在 PartDrag-4D 上以 drag embeddings 和 motion-then-appearance 两阶段学习微调 large 3D Gaussian reconstruction model，建模部件动态。
+- [EVolSplat: Efficient Volume-based Gaussian Splatting for Urban View Synthesis](https://arxiv.org/abs/2503.20168)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [Synthetic-to-Real Self-supervised Robust Depth Estimation via Learning with Motion and Structure Priors](https://arxiv.org/abs/2503.20211)：把 synthetic adverse weather 中的 motion-structure priors 迁移到真实数据，并用 consistency-reweighted pseudo-labels 缩小合成到真实差距。
+- [HierRelTriple: Guiding Indoor Layout Generation with Hierarchical Relationship Triplet Losses](https://arxiv.org/abs/2503.20289)：把 object-region、object-object 与 corner-corner 几何 triplets 注入 diffusion denoising，减少室内布局碰撞和越界。
+- [ARMO](https://arxiv.org/abs/2503.20663)：基于 OmniRig mesh-skeleton-skinning 数据，用 autoregressive graph-token model 和 latent diffusion 预测 joints 与 connectivity。
+- [PhysGen3D](https://arxiv.org/abs/2503.20746)：从单图估计物体形状、pose、物理属性和光照，再进行可控物理仿真，生成 physics-grounded interactive 3D scenes。
+- [VoxRep: Enhancing 3D Spatial Understanding in 2D Vision-Language Models via Voxel Representation](https://arxiv.org/abs/2503.21214)：把 voxel grids 切成有序 2D slices，让标准 VLM 从三维空间中推断物体身份、颜色和位置语义。
+- [GenFusion: Closing the Loop between Reconstruction and Generation via Videos](https://arxiv.org/abs/2503.21219)：用 reconstruction-driven video diffusion 和 cyclical restoration-frame fusion，把稀疏 3D reconstruction 扩展为更完整生成视角。
+- [Frequency-Aware Gaussian Splatting Decomposition](https://arxiv.org/abs/2503.21226)：按 Laplacian-pyramid frequency bands 分解 3D Gaussians，并用 residual colors 支持 level-of-detail streaming 与 foveated rendering。
+- [RainyGS](https://arxiv.org/abs/2503.21442)：把 3DGS 渲染与物理 raindrop、shallow-water simulation 结合，在开放场景中实时合成可控雨效。
+- [SparseFlex](https://arxiv.org/abs/2503.21732)：采用 sparse Flexicubes-style isosurface representation 与 frustum-aware voxel training，实现高分辨率可微 mesh reconstruction 和 generation。
+- [Biomechanically Accurate Human Reconstruction](https://arxiv.org/abs/2503.21751)：用 iteratively refined pseudo labels 训练 transformer，从单图估计受 biomechanics 约束的 skeleton parameters。
+- [$\mathbf{X}^{\mathbf{2}}$-Gaussian: 4D Radiative Gaussian Splatting for Continuous-Time Tomographic Reconstruction](https://arxiv.org/abs/2503.21779)：把 continuous-time 4D CT 表示为 dynamic radiative Gaussian splats，并无需外部 gating 学习病人特定呼吸周期。
+- [Stream and Query-guided Feature Aggregation for Efficient and Effective 3D Occupancy Prediction](https://arxiv.org/abs/2503.22087)：在保留 dense voxel fidelity 的同时聚合 temporal streams，并向动态物体区域注入 query features，实现实时 3D occupancy prediction。
+- [ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting](https://arxiv.org/abs/2503.22218)：用 segmentation masks 对齐 content 和 style features，并结合 feature-alignment style loss、depth loss 与 Gaussian regularization 做可控 3DGS 风格迁移。
+- [AH-GS: Augmented 3D Gaussian Splatting for High-Frequency Detail Representation](https://arxiv.org/abs/2503.22324)：增强 Scaffold-GS 的输入特征和 feature-map losses，使结构复杂区域能学习更高频的场景细节。
+- [MVSAnywhere: Zero-Shot Multi-View Stereo](https://arxiv.org/abs/2503.22430)：结合 monocular 与 multi-view cues 以及 adaptive cost volume，在跨域、未知深度范围场景中零样本估计深度。
+- [TranSplat: Lighting-Consistent Cross-Scene Object Transfer with 3D Gaussian Splatting](https://arxiv.org/abs/2503.22676)：通过源、目标环境光的 spherical-harmonic appearance transfer 为 Gaussian surfel objects 重光照，无需重新训练 GS。
+- [DSO: Aligning 3D Generators with Simulation Feedback for Physical Soundness](https://arxiv.org/abs/2503.22677)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [FreeSplat++](https://arxiv.org/abs/2503.22986)：结合 low-cost cross-view aggregation、triplet fusion、floater removal 和深度正则微调，实现 whole-scene feed-forward 3DGS reconstruction。
+- [CityGS-$\mathcal{X}$: A Scalable Architecture for Efficient and Geometrically Accurate Large-Scale Scene Reconstruction](https://arxiv.org/abs/2503.23044)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [NeuralGS](https://arxiv.org/abs/2503.23162)：对 Gaussians 聚类并用 tiny MLP neural fields 拟合其属性，把 3DGS 存储量平均压缩约 91 倍。
+- [ReasonGrounder: LVLM-Guided Hierarchical Feature Splatting for Open-Vocabulary 3D Visual Grounding and Reasoning](https://arxiv.org/abs/2503.23297)：结合 LVLM 指令解析、hierarchical Gaussian feature fields、SAM masks 与 multi-view CLIP embeddings，实现遮挡感知的 3D grounding。
+- [HiPART](https://arxiv.org/abs/2503.23331)：在 2D-to-3D lifting 前用 autoregressive tokens 从稀疏骨架生成 dense hierarchical 2D poses，提升遮挡场景 3D human pose estimation。
+- [Spatial Condition-Based 3DGS Compression](https://arxiv.org/abs/2503.23337)：从 grid-captured spatial conditions 预测 anchor-based Gaussian attributes，并用 instance-aware hyperprior 压缩残差。
+- [Gaussian Blending Unit](https://arxiv.org/abs/2503.23625)：把 Gaussian blending 识别为 edge-GPU 瓶颈，并提出 intra-row shading 与专用 rendering engine 服务 AR/VR。
+- [Uni-Render](https://arxiv.org/abs/2503.23644)：用可重构 accelerator 在多种 neural-rendering pipelines 间切换 dataflow，支持端侧实时渲染。
+- [DiET-GS](https://arxiv.org/abs/2503.24210)：在两阶段 3DGS 训练中结合 event double-integral constraints 与 diffusion prior，从 motion-blurred inputs 恢复清晰 novel views。
+- [StochasticSplats](https://arxiv.org/abs/2503.24366)：用 unbiased Monte Carlo volume-rendering estimator 替代排序 alpha compositing，通过采样数控制质量与计算量。
+- [Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](https://arxiv.org/abs/2503.24391)：面向空间推理与空间智能的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Easi3R: Estimating Disentangled Motion from DUSt3R Without Training”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [SonarSplat: Novel View Synthesis of Imaging Sonar via Gaussian Splatting](https://arxiv.org/abs/2504.00159)：把声呐场景表示为带 acoustic reflectance 与 saturation 的 Gaussians，并按 range-azimuth 成像模型光栅化、建模 azimuth streaking。
+- [LITA-GS](https://arxiv.org/abs/2504.00219)：提取 illumination-invariant physical priors，执行 light-agnostic structure rendering，并渐进去噪以处理恶劣光照下的 reference-free 3DGS。
+- [Scene4U: Hierarchical Layered 3D Scene Reconstruction from Single Panoramic Image for Your Immerse Exploration](https://arxiv.org/abs/2504.00387)：用 open-vocabulary segmentation 与 LLM 将全景图分解为语义层，修复遮挡区域后优化 layered 3DGS 以支持自由漫游。
+- [Coca-Splat: Collaborative Optimization for Camera Parameters and 3D Gaussians](https://arxiv.org/abs/2504.00639)：用 deformable Transformer queries、camera-aware cross-attention 和 ray constraints 联合优化 camera parameters 与 3D Gaussians。
+- [DropGaussian](https://arxiv.org/abs/2504.00773)：在 sparse-view 3DGS 训练中随机移除 Gaussians，使剩余 primitives 获得更强梯度并缓解过拟合。
+- [Improved Visual-Spatial Reasoning via R1-Zero-Like Training](https://arxiv.org/abs/2504.00883)：在 VSI-100k 上用带 KL penalty 的 GRPO 训练 Qwen2-VL，激活小中型 MLLM 的视频视觉空间推理能力。
+- [Explorable INR: An Implicit Neural Representation for Ensemble Simulation Enabling Efficient Spatial and Parameter Exploration](https://arxiv.org/abs/2504.00904)：用 implicit neural representation、probabilistic affine uncertainty propagation 和梯度式参数搜索，实现 ensemble simulation 的点查询与空间探索。
+- [SuperDec: 3D Scene Decomposition with Superquadric Primitives](https://arxiv.org/abs/2504.00992)：把物体分解为紧凑 superquadric sets，并借助 instance segmentation 扩展到完整场景，服务机器人任务和可编辑生成。
+- [Luminance-GS](https://arxiv.org/abs/2504.01503)：用 view-adaptive curve adjustment 让 3D Gaussian Splatting 适应复杂光照。
+- [High-fidelity 3D Object Generation from Single Image with RGBN-Volume Gaussian Reconstruction Model](https://arxiv.org/abs/2504.01512)：提出 GS-RGBN，用结构化 RGB-normal volume Gaussian reconstruction 减少单图 3D 生成中由多视图扩散歧义导致的几何与纹理伪影。
+- [FlowR: Flowing from Sparse to Dense 3D Reconstructions](https://arxiv.org/abs/2504.01647)：训练多视角 flow-matching 模型，把稀疏 3D 重建渲染映射到接近密集采集的渲染结果，生成一致的新视角来提升 Gaussian-splatting novel-view synthesis。
+- [VideoScene](https://arxiv.org/abs/2504.01956)：将视频扩散先验蒸馏为一步式三维场景生成，把视频生成与空间场景构建连接起来。
+- [Refining CLIP's Spatial Awareness: A Visual-Centric Perspective](https://arxiv.org/abs/2504.02328)：从视觉中心视角改进 CLIP 空间感知，缓解空间关系不敏感问题。
+- [Taylor Point-Cloud Segmentation](https://arxiv.org/abs/2504.02454)：用 Taylor 展开启发的局部结构拟合改进少样本点云语义分割。
+- [GEOPARD: Geometric Pretraining for Articulation Prediction in 3D Shapes](https://arxiv.org/abs/2504.02747)： 用 geometric pretraining 做 3D articulation prediction，强化对可运动形状的模型侧理解。
+- [MD-ProjTex: Texturing 3D Shapes with Multi-Diffusion Projection](https://arxiv.org/abs/2504.02762)：补充与空间与三维能力相关的模型侧方法。
+- [Scene Splatter: Momentum 3D Scene Generation from Single Image with Video Diffusion Model](https://arxiv.org/abs/2504.02764)：利用视频扩散先验从单张图像生成 momentum-style 3D 场景，把图像条件生成与空间场景合成连接起来。
+- [Octree Adaptive Tokenization](https://arxiv.org/abs/2504.02817)：用 octree-based adaptive tokenization 提升自回归 3D shape generation 效率。
+- [Detection Based Part-level Articulated Object Reconstruction from Single RGBD Image](https://arxiv.org/abs/2504.03177)： 从单张 RGB-D 图像重建部件级可关节物体，把空间感知扩展到可运动物体结构。
+- [HumanDreamer-X: Photorealistic Single-image Human Avatars Reconstruction via Gaussian Restoration](https://arxiv.org/abs/2504.03536)：把多视图人体生成与 3D Gaussian 重建整合到统一流程中，使单图 avatar 保持肢体、几何与纹理一致性。
+- [WildGS-SLAM](https://arxiv.org/abs/2504.03886)：在 dynamic environments 中做 monocular Gaussian-splatting SLAM。
+- [View2CAD: Reconstructing View-Centric CAD Models from Single RGB-D Scans](https://arxiv.org/abs/2504.04000)：提出 view-centric B-rep，在单张 RGB-D 观测中显式编码可见性边界和几何不确定性，从而重建可见 CAD 形状而不过度幻觉隐藏表面。
+- [On the Spatial Structure of Mixture-of-Experts in Transformers](https://arxiv.org/abs/2504.04444)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [PanoDreamer: Consistent Text to 360-Degree Scene Generation](https://arxiv.org/abs/2504.05152)：用 LLM 引导的 warp-refine 流程生成并拼接 360 度全景，再提升为点云，构建文本或图像条件控制的连贯 3D 场景。
+- [InteractVLM: 3D Interaction Reasoning from 2D Foundational Models](https://arxiv.org/abs/2504.05303)：微调 VLM 从单张自然图像推断 3D 人物-物体接触点，增强交互感知的空间推理。
+- [View-Dependent Deformation Fields for 2D Editing of 3D Models](https://arxiv.org/abs/2504.05544)：把用户在特定视角下做的 2D 形变提升为平滑的 view-dependent deformation fields，用于网格或 3D Gaussian splats 的分层非真实感编辑。
+- [QEMesh: Employing A Quadric Error Metrics-Based Representation for Mesh Generation](https://arxiv.org/abs/2504.05720)：将 PoNQ 的 quadric-error 局部表面 patch 扩展为可生成参数，并用带多解码器 VAE 的 latent diffusion 同时生成法向、QEM 矩阵和占据。
+- [Micro-splatting: Multistage Isotropy-informed Covariance Regularization Optimization for High-Fidelity 3D Gaussian Splatting](https://arxiv.org/abs/2504.05740)：用 trace-based covariance regularization 与 gradient-guided densification 压缩 3DGS，在高频区域保留细节、在平滑区域减少 splats。
+- [HiMoR](https://arxiv.org/abs/2504.06210)：用 hierarchical motion representation 做 monocular deformable Gaussian reconstruction。
+- [PromptHMR](https://arxiv.org/abs/2504.06397)：使 human mesh recovery 可提示、可控，用于 human 3D reconstruction。
+- [MonoPlace3D: Learning 3D-Aware Object Placement for 3D Monocular Detection](https://arxiv.org/abs/2504.06801)：学习场景感知的合成物体放置参数，包括位置、尺寸和朝向，用于增强单目 3D 检测训练数据。
+- [IAAO: Interactive Affordance Learning for Articulated Objects in 3D Environments](https://arxiv.org/abs/2504.06827)： 学习 3D 环境中 articulated object 的交互 affordance，把空间结构与行动可能性连接起来。
+- [HoloPart](https://arxiv.org/abs/2504.07943): 生成 3D 部件级非模态分割，强化部件感知的空间表征与生成。
+- [Detect Anything 3D in the Wild](https://arxiv.org/abs/2504.07958)： 面向开放世界 3D 检测，强化无约束 3D 场景中的模型原生空间定位。
+- [ChildlikeSHAPES: Semantic Hierarchical Region Parsing for Animating Figure Drawings](https://arxiv.org/abs/2504.08022)：补充与空间与三维能力相关的模型侧方法。
+- [FMLGS](https://arxiv.org/abs/2504.08581)：构建 fast multilevel language-embedded Gaussians，用于 part-level interactive spatial agents。
+- [MASH: Masked Anchored SpHerical Distances for 3D Shape Representation and Generation](https://arxiv.org/abs/2504.09149)：把 3D 形状表示为锚定在局部表面 patch 上的球面距离函数，支持点云可微转换与 3D 生成建模。
+- [Text To 3D Object Generation For Scalable Room Assembly](https://arxiv.org/abs/2504.09328)：结合文本到图像、多视图扩散和 NeRF meshing 生成文本条件 3D 室内物体，并将其插入 floor-plan 场景以合成训练数据。
+- [DropoutGS](https://arxiv.org/abs/2504.09491)：用随机 dropout regularization 改进 sparse-view 3D Gaussian Splatting 渲染。
+- [TextSplat: Text-Guided Semantic Fusion for Generalizable Gaussian Splatting](https://arxiv.org/abs/2504.09588)：在 feed-forward Gaussian Splatting 中加入文本引导的语义融合，使 sparse-view 重建同时对齐几何与细粒度语义线索。
+- [OctGPT: Octree-based Multiscale Autoregressive Models for 3D Shape Generation](https://arxiv.org/abs/2504.09975)： 构建基于八叉树的多尺度自回归 3D 形状生成模型，补充结构化 3D 生成架构。
+- [EBAD-Gaussian: Event-driven Bundle Adjusted Deblur Gaussian Splatting](https://arxiv.org/abs/2504.10012)：从事件流和严重运动模糊 RGB 图像中联合恢复清晰 3D Gaussians 与曝光期间的相机运动轨迹。
+- [LL-Gaussian](https://arxiv.org/abs/2504.10331)：用 Gaussian Splatting 改进低光场景重建与新视角增强。
+- [Art3D: Training-Free 3D Generation from Flat-Colored Illustration](https://arxiv.org/abs/2504.10466)：Art3D 从 Flat-Colored Illustration 重建或生成 Training-Free 3D Generation，明确对应空间模型的输入输出。
+- [NormalCrafter](https://arxiv.org/abs/2504.11427)：利用视频扩散先验估计时间一致的表面法线，补充几何导向的空间感知方法。
+- [DM-OSVP++: One-Shot View Planning Using 3D Diffusion Models for Active RGB-Based Object Reconstruction](https://arxiv.org/abs/2504.11674)：补充用于主动物体重建的一次性视角规划与三维扩散模型方法。
+- [CoMotion 3D Motion](https://arxiv.org/abs/2504.12186)：建模多人并发 3D 动作，扩展人体空间运动生成。
+- [One Model to Rig Them All: Diverse Skeleton Rigging with UniRig](https://arxiv.org/abs/2504.12451)： 统一多样 skeleton rigging，支撑空间生成中的可控 3D 物体与 avatar。
+- [CM3AE: A Unified RGB Frame and Event-Voxel/-Frame Pre-training Framework](https://arxiv.org/abs/2504.12576)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [ARAP-GS: Drag-driven As-Rigid-As-Possible 3D Gaussian Splatting Editing with Diffusion Prior](https://arxiv.org/abs/2504.12788)：把 as-rigid-as-possible 形变直接作用到 3D Gaussians，并在迭代优化中加入扩散超分辨率先验以保持拖拽编辑后的多视角外观。
+- [TSGS Transparent Surface Reconstruction](https://arxiv.org/abs/2504.12799)：为 Gaussian Splatting 加入法线和去光照先验，改进透明表面重建。
+- [CAGE-GS: High-fidelity Cage Based 3D Gaussian Splatting Deformation](https://arxiv.org/abs/2504.12800)：为 3DGS 场景学习 deformation cage，并用 Jacobian 变换更新 Gaussian covariance，在用户指定形变时保持纹理细节。
+- [AAA-Gaussians](https://arxiv.org/abs/2504.12811)：为三维 Gaussian 渲染加入抗锯齿和伪影抑制，提升空间场景表示的视觉保真度。
+- [Rethinking Temporal Fusion with a Unified Gradient Descent View for 3D Semantic Occupancy Prediction](https://arxiv.org/abs/2504.12959)：Rethinking Temporal Fusion with a Unified Gradient Descent 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [HiScene](https://arxiv.org/abs/2504.13072)：从等距视图生成层级化 3D 场景，把房间分解为可编辑的对象级结构。
+- [ST4RTrack: Simultaneous 4D Reconstruction and Tracking in the World](https://arxiv.org/abs/2504.13152)：面向空间推理与空间智能的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“ST4RTrack: Simultaneous 4D Reconstruction and Tracking in the World”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AerialMegaDepth](https://arxiv.org/abs/2504.13157)：结合伪合成城市级数据与真实地面图像学习空地重建和视图合成。
+- [EDGS](https://arxiv.org/abs/2504.13204)：用基于 dense correspondence 的初始化替代 3D Gaussian Splatting 中的迭代 densification。
+- [Compile Scene Graphs with Reinforcement Learning](https://arxiv.org/abs/2504.13617)：用监督微调和强化学习训练多模态 LLM 输出结构化 scene graph，而不是非约束文本。
+- [HoLa B-Rep Generation](https://arxiv.org/abs/2504.14257)：用 holistic latent representation 生成 boundary-representation geometry。
+- [Seurat: From Moving Points to Depth](https://arxiv.org/abs/2504.14687)：从移动点轨迹推断单目视频深度，补充基于运动线索的空间建模方法。
+- [TAPIP3D: Tracking Any Point in Persistent 3D Geometry](https://arxiv.org/abs/2504.14717)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [MoBGS](https://arxiv.org/abs/2504.15122)：用动态 3D Gaussian Splatting 处理模糊单目视频中的运动去模糊与重建。
+- [Instance-Adaptive Keypoint Learning with Local-to-Global Geometric Aggregation for Category-Level Object Pose Estimation](https://arxiv.org/abs/2504.15134)：通过 Local-to-Global Geometric Aggregation for Category-Level Object Pose Estimation 改进 Instance-Adaptive Keypoint Learning，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image](https://arxiv.org/abs/2504.15179)：从单图生成 4D 面部 avatar，结合 3D-GAN 粗形状初始化、深度引导多视角纹理 warping、视频先验和一致性/不一致性训练。
+- [DRAWER](https://arxiv.org/abs/2504.15278)：在 environment realism 约束下重建并关节化物体，补充交互式空间资产建模。
+- [PointLoRA](https://arxiv.org/abs/2504.16023)：结合 token selection 对点云模型进行低秩适配。
+- [HUG: Hierarchical Urban Gaussian Splatting with Block-Based Reconstruction for Large-Scale Aerial Scenes](https://arxiv.org/abs/2504.16606)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Physics-based super-resolved simulation of 3D elastic wave propagation adopting scalable diffusion transformer](https://arxiv.org/abs/2504.17308)：补充与空间与三维能力相关的模型侧方法。
+- [Gaussian Meets Surfel](https://arxiv.org/abs/2504.17545)：结合 Gaussian 与 surfel representations，实现 ultra-fast high-fidelity radiance-field rendering。
+- [Casual3DHDR: High Dynamic Range 3D Gaussian Splatting from Casually Captured Videos](https://arxiv.org/abs/2504.17728)：补充与空间与三维能力相关的模型侧方法。
+- [iVR-GS: Inverse Volume Rendering for Explorable Visualization via Editable 3D Gaussian Splatting](https://arxiv.org/abs/2504.17954)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Unify3D: An Augmented Holistic End-to-end Monocular 3D Human Reconstruction via Anatomy Shaping and Twins Negotiating](https://arxiv.org/abs/2504.18215)：用 anatomy-shaped 隐式特征和双 U-Net 协商模块，从单张 RGB 图端到端重建 clothed human 3D avatar，并用漫画增强和 3D 扫描数据强化泛化。
+- [LaRI: Layered Ray Intersections for Single-view 3D Geometric Reasoning](https://arxiv.org/abs/2504.18424)： 用 layered ray intersections 做单视角 3D 几何推理，强化稀疏视觉证据下的空间推断。
+- [Vysics: Object Reconstruction Under Occlusion by Fusing Vision and Contact-Rich Physics](https://arxiv.org/abs/2504.18719)：融合 RGB-D 重建、机器人本体感知与接触推断出的 “physible” 几何，用于恢复严重遮挡下的刚体形状。
+- [4DGS-CC](https://arxiv.org/abs/2504.18925)：通过时空量化特征的上下文编码压缩 4D Gaussian splatting 数据。
+- [Sketch2Anim](https://arxiv.org/abs/2504.19189)：把 sketch storyboards 转换为 3D animation。
+- [Point2Quad: Generating Quad Meshes From Point Clouds via Face Prediction](https://arxiv.org/abs/2504.19545)：补充与空间与三维能力相关的模型侧方法。
+- [STCOcc: Sparse Spatial-Temporal Cascade Renovation for 3D Occupancy and Scene Flow Prediction](https://arxiv.org/abs/2504.19749)：用 occupied-state 引导的稀疏注意力、级联细化和长时序建模预测 3D occupancy 与 scene flow。
 - [SpatialReasoner](https://arxiv.org/abs/2504.20024)：3D 空间推理方法，训练或组织模型显式推理三维空间关系。
+- [LIRM](https://arxiv.org/abs/2504.20026)：构建用于形状、材质和视角相关辐射场重建的大型 inverse-rendering model，补充空间场景表示模型。
+- [Sparse2DGS: Geometry-Prioritized Gaussian Splatting for Surface Reconstruction from Sparse Views](https://arxiv.org/abs/2504.20378)：用学习式多视图立体点初始化 2D Gaussian Splatting，并通过 geometry-prioritized enhancement 从稀疏视角重建表面。
+- [GSFeatLoc: Visual Localization Using Feature Correspondence on 3D Gaussian Splatting](https://arxiv.org/abs/2504.20379)：补充与空间与三维能力相关的模型侧方法。
+- [LMM4Gen3DHF: Benchmarking and Evaluating Multimodal 3D Human Face Generation with LMMs](https://arxiv.org/abs/2504.20466)：LMM4Gen3DHF 提供 3D 或 4D 表示路线，用于重建、生成、定位或场景理解。
+- [GauSS-MI: Gaussian Splatting Shannon Mutual Information for Active 3D Reconstruction](https://arxiv.org/abs/2504.21067)：用 Gaussian Splatting Shannon mutual information 指导主动 3D 重建和视角选择。
+- [GarmentDiffusion: 3D Garment Sewing Pattern Generation with Multimodal Diffusion Transformers](https://arxiv.org/abs/2504.21476)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Compensating Spatiotemporally Inconsistent Observations for Online Dynamic 3D Gaussian Splatting](https://arxiv.org/abs/2505.01235)：为在线动态 3DGS 学习并扣除导致时间不一致的观测误差，使直播式视频重建在静态区域更稳定且渲染质量更高。
+- [GENMO](https://arxiv.org/abs/2505.01425)：构建 human motion generalist model。
+- [Learning Multi-frame and Monocular Prior for Estimating Geometry in Dynamic Scenes](https://arxiv.org/abs/2505.01737)：提出 MMP，以 feed-forward 方式预测多帧单目视频中的动态 pointmap，避免昂贵且易失败的测试时全局优化。
+- [Co3Gesture: Towards Coherent Concurrent Co-speech 3D Gesture Generation with Interactive Diffusion](https://arxiv.org/abs/2505.01746)：构建双人并发共语 3D 手势数据集，并提出交互式扩散框架生成连贯的对话手势。
+- [Discrete Spatial Diffusion: Intensity-Preserving Diffusion Modeling](https://arxiv.org/abs/2505.01917)：用连续时间离散状态 jump process 建模离散空间科学场，在正向和反向扩散中保持粒子数量守恒。
+- [HybridGS](https://arxiv.org/abs/2505.01938)：用 dual-channel sparse representation 与 point-cloud encoder 压缩 3D Gaussian splatting。
+- [SparSplat: Fast Multi-View Reconstruction with Generalizable 2D Gaussian Splatting](https://arxiv.org/abs/2505.02175)：在 MVS 学习框架中回归 2D Gaussian 参数，用于 sparse-view 下的快速泛化三维重建与新视角合成。
+- [Real-time Spatial Retrieval Augmented Generation for Urban Environments](https://arxiv.org/abs/2505.02271)：为 Urban Environments 构建 Real-time Spatial Retrieval Augmented Generation，明确对应空间模型的任务目标。
+- [MetaScenes: Towards Automated Replica Creation for Real-world 3D Scans](https://arxiv.org/abs/2505.02388)： 自动从真实 3D 扫描创建副本，将空间重建扩展为可复用数字场景资产。
+- [The Unreasonable Effectiveness of Discrete-Time Gaussian Process Mixtures for Robot Policy Learning](https://arxiv.org/abs/2505.03296)：为 Robot Policy Learning 构建 The Unreasonable Effectiveness of Discrete-Time Gaussian Process Mixtures，明确对应空间模型的任务目标。
+- [Position: Foundation Models Need Digital Twin Representations](https://arxiv.org/abs/2505.03798)：分类疑虑：这是一篇 position paper，主张基础模型需要 digital twin representations 来编码时空动态与因果物理结构。
 - [CAD-Llama: Leveraging Large Language Models for Computer-Aided Design Parametric 3D Model Generation](https://arxiv.org/abs/2505.04481)：用 LLM 生成参数化 CAD 模型，将自然语言连接到结构化 3D 设计。
+- [PrimitiveAnything: Human-Crafted 3D Primitive Assembly Generation with Auto-Regressive transformer](https://arxiv.org/abs/2505.04622)： 用自回归 Transformer 生成手工风格 3D 基元装配，为 3D 资产生成补充组合结构。
+- [WIR3D: Visually-Informed and Geometry-Aware 3D Shape Abstraction](https://arxiv.org/abs/2505.04813)：补充与空间与三维能力相关的模型侧方法。
+- [Generating Physically Stable and Buildable Brick Structures from Text](https://arxiv.org/abs/2505.05469)： 从文本生成物理稳定且可搭建的积木结构，为语言条件 3D 生成加入物理约束。
+- [DiffusionSfM](https://arxiv.org/abs/2505.05473)：通过射线原点与端点扩散预测结构和运动。
+- [Steepest Descent Density Control for 3DGS](https://arxiv.org/abs/2505.05587)：用最速下降控制高斯密度，使 3D Gaussian Splatting 更紧凑。
+- [DiffLocks](https://arxiv.org/abs/2505.06166)：用扩散模型从单张图像生成三维头发，为空间生成补充细粒度人体资产路线。
+- [Virtualized 3D Gaussians: Flexible Cluster-based Level-of-Detail System for Real-Time Rendering of Composed Scenes](https://arxiv.org/abs/2505.06523)：为组合 3DGS 场景构建类似 Nanite 的层级 Gaussian cluster LOD，离线聚类、在线选择可感知 cluster 以支持实时渲染。
+- [CMD](https://arxiv.org/abs/2505.07003)：用可控多视角扩散实现基于图像条件的部件级 3D 编辑与渐进生成。
+- [GIFStream](https://arxiv.org/abs/2505.07539)：用 feature stream 构建 4D Gaussian immersive video，补充动态空间表示路线。
+- [ADC-GS: Anchor-Driven Deformable and Compressed Gaussian Splatting for Dynamic Scene Reconstruction](https://arxiv.org/abs/2505.08196)：用 canonical space anchors、时间显著性细化、粗到细形变和 rate-distortion 优化压缩动态 3DGS，替代逐 Gaussian 形变。
+- [ACT-R: Adaptive Camera Trajectories for Single View 3D Reconstruction](https://arxiv.org/abs/2505.08239)：ACT-R 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [FOCI: Trajectory Optimization on Gaussian Splats](https://arxiv.org/abs/2505.08510)：用 Field Overlap Collision Integral 直接在 Gaussian-splat 表示上优化机器人轨迹，替代保守 bounding-box 碰撞检测。
+- [VRSplat](https://arxiv.org/abs/2505.10144)：将 Gaussian splatting 适配到快速稳健的 VR 渲染，处理沉浸式空间场景中的视角一致性与延迟。
+- [SpatialCrafter](https://arxiv.org/abs/2505.11992)：利用视频扩散先验从有限观测重建场景，将生成式视频模型与空间世界构建联系起来。
+- [Spatial-LLaVA: Enhancing Large Language Models with Spatial Referring Expressions for Visual Understanding](https://arxiv.org/abs/2505.12194)：Spatial-LLaVA 通过 Spatial Referring Expressions for Visual Understanding 改进 Enhancing Large Language Models，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [LLaVA-4D: Embedding SpatioTemporal Prompt into LMMs for 4D Scene Understanding](https://arxiv.org/abs/2505.12253)：把时空提示嵌入多模态大模型，用于 4D 场景理解，将空间模型覆盖从静态 3D 扩展到动态场景。
+- [Visuospatial Cognitive Assistant](https://arxiv.org/abs/2505.12312)：补充与空间与三维能力相关的模型侧方法。
+- [TACOcc:Target-Adaptive Cross-Modal Fusion with Volume Rendering for 3D Semantic Occupancy](https://arxiv.org/abs/2505.12693)：通过目标尺度自适应的双向检索对齐相机与 LiDAR 特征，并用 3DGS volume rendering 监督改善 3D 语义占据的表面细节。
+- [MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](https://arxiv.org/abs/2505.12742)：在视觉自回归生成中引入尺度与空间 Markov 假设，使 token 只依赖局部多尺度邻域以降低生成复杂度。
+- [UniHM: Universal Human Motion Generation with Object Interactions in Indoor Scenes](https://arxiv.org/abs/2505.12774)：补充与空间与三维能力相关的模型侧方法。
+- [Hybrid 3D-4D Gaussian Splatting for Fast Dynamic Scene Representation](https://arxiv.org/abs/2505.13215)：用 3D Gaussians 表示静态区域、用 4D Gaussians 表示动态元素，降低动态场景渲染的内存和计算开销。
+- [Surrogate Modeling of 3D Rayleigh-Benard Convection with Equivariant Autoencoders](https://arxiv.org/abs/2505.13569)：结合 G-steerable 等变卷积 autoencoder 与等变 ConvLSTM，为三维 Rayleigh-Benard 对流场构建 surrogate model。
+- [Building spatial world models from sparse transitional episodic memories](https://arxiv.org/abs/2505.13696)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [MGStream: Motion-aware 3D Gaussian for Streamable Dynamic Scene Reconstruction](https://arxiv.org/abs/2505.13839)：把 motion-related Gaussians 与静态 Gaussians 分离，并用 motion mask 和刚体形变建模可流式动态场景。
+- [MATHDance: Mamba-Transformer Architecture with Uniform Tokenization for High-Quality 3D Dance Generation](https://arxiv.org/abs/2505.14222)：用统一 motion tokenization 与 Mamba-Transformer 混合架构生成音乐条件 3D 舞蹈，提升编舞一致性。
+- [Sparc3D](https://arxiv.org/abs/2505.14521): 用稀疏表征进行高分辨率 3D 形状建模，扩展可扩展空间资产生成。
+- [MonoSplat: Generalizable 3D Gaussian Splatting from Monocular Depth Foundation Models](https://arxiv.org/abs/2505.15185)：把单目深度基础模型特征适配为多视角表示，用于在新场景中进行可泛化 Gaussian reconstruction。
+- [R3GS: Gaussian Splatting for Robust Reconstruction and Relocalization in Unconstrained Image Collections](https://arxiv.org/abs/2505.15294)：结合 CNN、hash-grid anchor 特征和 transient-object visibility map，在无约束图像集合中提升重建与重定位鲁棒性。
+- [Mesh-RFT](https://arxiv.org/abs/2505.16761)：将细粒度强化微调用于网格生成，为可控 3D 资产合成补充基于强化学习的路线。
+- [Temporal Differential Fields for 4D Motion Modeling via Image-to-Video Synthesis](https://arxiv.org/abs/2505.17333)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Reflectance Prediction-Based Knowledge Distillation for Robust 3D Object Detection in Compressed Point Clouds](https://arxiv.org/abs/2505.17442)：补充与空间与三维能力相关的模型侧方法。
+- [CGS-GAN: 3D Consistent Gaussian Splatting GANs for High Resolution Human Head Synthesis](https://arxiv.org/abs/2505.17590)：稳定用于高分辨率人头合成的 Gaussian-splatting GAN 训练，并减少相机条件导致的跨视角身份漂移。
+- [Seek-CAD: A Self-refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek](https://arxiv.org/abs/2505.17702)：Seek-CAD 通过 DeepSeek 改进 A Self-refined Generative Modeling for 3D Parametric CAD Using Local Inference，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [GRE Suite: Geo-localization Inference via Fine-Tuned Vision-Language Models and Enhanced Reasoning Chains](https://arxiv.org/abs/2505.18700)：构建地理定位推理数据、VLM 推理模型和 GREval，评估细粒度视觉与上下文地点推断。
+- [VPGS-SLAM](https://arxiv.org/abs/2505.18992)：用 voxel-based progressive 3D Gaussian SLAM 处理大规模场景。
+- [Triangle Splatting](https://arxiv.org/abs/2505.19175)：通过 triangle splatting 实现实时 radiance-field rendering，补充高效空间表示路线。
+- [Improving Novel view synthesis of 360$^\circ$ Scenes in Extremely Sparse Views by Jointly Training Hemisphere Sampled Synthetic Images](https://arxiv.org/abs/2505.19264)：用 DUSt3R 估计相机和点云，再从上半球密集采样合成 360 度训练视图，缓解四视图 3DGS 新视角合成的过拟合。
+- [Absolute Coordinates Make Motion Generation Easy](https://arxiv.org/abs/2505.19377)：重新采用全局绝对关节坐标训练文本到动作扩散模型，在简化动作表示的同时提升可控空间动作生成。
+- [ParticleGS: Particle-Based Dynamics Modeling of 3D Gaussians for Prior-free Motion Extrapolation](https://arxiv.org/abs/2505.20270)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](https://arxiv.org/abs/2505.20279)：用指令对齐的 3D 重建增强 VLM 的空间理解。
+- [Category-Agnostic Neural Object Rigging](https://arxiv.org/abs/2505.20283)：学习 category-agnostic rigging，使 3D objects 更适合动画化。
+- [DIPO: Dual-State Images Controlled Articulated Object Generation Powered by Diverse Data](https://arxiv.org/abs/2505.20460)： 用双状态图像控制 articulated object 生成，为可运动 3D 资产提供数据驱动的生成路线。
+- [CityGo: Lightweight Urban Modeling and Rendering with Proxy Buildings and Residual Gaussians](https://arxiv.org/abs/2505.21041)：结合带纹理的 proxy buildings 与 residual Gaussians，高效建模大规模航拍城市场景并支持边缘友好的渲染。
+- [Uni3D-MoE: Scalable Multimodal 3D Scene Understanding via Mixture of Experts](https://arxiv.org/abs/2505.21079)：Uni3D-MoE 通过 Mixture of Experts 改进 Scalable Multimodal 3D Scene Understanding，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [3D Question Answering via only 2D Vision-Language Models](https://arxiv.org/abs/2505.22143)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [UP-SLAM](https://arxiv.org/abs/2505.22335)：在动态环境中用 uncertainty prediction 构建自适应结构化 Gaussian SLAM。
+- [CLIPGaussian: Universal and Multimodal Style Transfer Based on Gaussian Splatting](https://arxiv.org/abs/2505.22854)：直接在 Gaussian primitives 上联合优化颜色和几何，实现文本或图像引导的图像、视频、3D 物体与 4D 场景风格迁移。
+- [Hierarchical Sparse Transform Coding for 3DGS](https://arxiv.org/abs/2505.22908)：用 hierarchical sparse transform coding 压缩 3D Gaussian splatting。
+- [Pose-free 3D Gaussian splatting via shape-ray estimation](https://arxiv.org/abs/2505.22978)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](https://arxiv.org/abs/2505.23044)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [Zero-P-to-3: Zero-Shot Partial-View Images to 3D Object](https://arxiv.org/abs/2505.23054)：面向 partial-view image arcs 的 3D 重建，通过生成观测角度之外的一致未见视图补全物体。
+- [Diffusion-Based Generative Models for 3D Occupancy Prediction in Autonomous Driving](https://arxiv.org/abs/2505.23115)：把视觉 3D occupancy prediction 重写为 diffusion-based generative modeling，以提升对噪声、遮挡和复杂驾驶几何的鲁棒性。
+- [LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](https://arxiv.org/abs/2505.23158)：补充该能力页相关的模型方法、训练配方、架构、推理策略或算法能力。
+- [UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes](https://arxiv.org/abs/2505.23253)：用连续 3D texture functions 替代 UV-only inpainting，并由 transformer Large Texturing Model 预测纹理函数，再通过 LoRA 适配 DiT 先验生成高保真多视角纹理。
+- [Holistic Large-Scale Scene Reconstruction via Mixed Gaussian Splatting](https://arxiv.org/abs/2505.23280)：不用 divide-and-conquer 分区，而是从 holistic view-aware representation 解码相机位姿和 Gaussian 属性来优化大场景。
+- [Radiant Triangle Soup](https://arxiv.org/abs/2505.23642)：用 soft connectivity forces 改进 3D reconstruction 与 novel-view synthesis。
+- [Grounded Reinforcement Learning for Visual Reasoning](https://arxiv.org/abs/2505.23678)：把视觉推理强化学习 grounding 到空间证据与注意机制上。
+- [Spatial-MLLM: Boosting MLLM Capabilities in Visual-based Spatial Intelligence](https://arxiv.org/abs/2505.23747)：增强多模态大语言模型的视觉空间智能。
+- [Rooms from Motion: Un-posed Indoor 3D Object Detection as Localization and Mapping](https://arxiv.org/abs/2505.23756)：补充与空间与三维能力相关的模型侧方法。
+- [NUC-Net: Non-Uniform Cylindrical Partition Network for Efficient LiDAR Semantic Segmentation](https://arxiv.org/abs/2505.24634)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Tackling View-Dependent Semantics in 3D Language Gaussian Splatting](https://arxiv.org/abs/2505.24746)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [TC-GS](https://arxiv.org/abs/2505.24796)：利用 Tensor Core 加速 Gaussian Splatting，提高实时空间渲染效率。
+- [AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion](https://arxiv.org/abs/2505.24877)：用 pose-conditioned 3D joint diffusion 和 compositional 3DGS refinement，从单图生成可动画化且局部细节丰富的人体 avatar。
+- [Probabilistic Spatial Interpolation of Sparse Data using Diffusion Models](https://arxiv.org/abs/2506.00033)：用 diffusion model 填补稀疏且不确定的地球物理观测，同时表示多种可能空间初始条件的分布。
+- [Diff-SPORT: Diffusion-based Sensor Placement Optimization and Reconstruction of Turbulent flows in urban environments](https://arxiv.org/abs/2506.00214)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Adaptive Voxelization for 3DGS Coding](https://arxiv.org/abs/2506.00271)：用 adaptive voxelization 对 3D Gaussian splatting data 做 transform coding。
+- [Pro3D-Editor : A Progressive-Views Perspective for Consistent and Precise 3D Editing](https://arxiv.org/abs/2506.00512)：通过渐进视角编辑提升 3D 内容编辑的一致性与精确度。
+- [SatDreamer360: Multiview-Consistent Generation of Ground-Level Scenes from Satellite Imagery](https://arxiv.org/abs/2506.00600)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [GeoChain: Multimodal Chain-of-Thought for Geographic Reasoning](https://arxiv.org/abs/2506.00785)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [GSCodec Studio](https://arxiv.org/abs/2506.01822)：提供模块化 3D 与 4D Gaussian splat 压缩框架，支持实用空间场景表示。
+- [MoDA: Modulation Adapter for Fine-Grained Visual Grounding in Instructional MLLMs](https://arxiv.org/abs/2506.01850)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [RobustSplat](https://arxiv.org/abs/2506.02751)：解耦 densification 与 dynamics，实现 transient-free 3D Gaussian splatting。
+- [PBR-SR: Mesh PBR Texture Super Resolution from 2D Image Priors](https://arxiv.org/abs/2506.02846)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Self-Supervised Spatial Correspondence Across Modalities](https://arxiv.org/abs/2506.03148)：通过 cycle-consistent contrastive random walks 学习 RGB-depth 和跨模态像素对应，不依赖对齐的多模态监督。
+- [Multi-Spectral Gaussian Splatting with Neural Color Representation](https://arxiv.org/abs/2506.03407)：在一个 3DGS 框架中建模 thermal、near-infrared 和 RGB 视图，用 neural color representation 避免跨模态相机标定需求。
+- [Rex-Thinker](https://arxiv.org/abs/2506.04034): 用链式思维进行有根据的目标指代，将视觉定位与显式推理连接起来。
+- [FlexGS: Train Once, Deploy Everywhere with Many-in-One Flexible 3D Gaussian Splatting](https://arxiv.org/abs/2506.04174)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Handle-based Mesh Deformation Guided By Vision Language Model](https://arxiv.org/abs/2506.04562)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [OpenMaskDINO3D : Reasoning 3D Segmentation via Large Language Model](https://arxiv.org/abs/2506.04837)：为空间与三维推理补充模型侧方法，重点关注 Reasoning 3D Segmentation via Large Language Model。
 - [Video World Models with Long-term Spatial Memory](https://arxiv.org/abs/2506.05284)：提出面向空间理解的模型侧方法，核心围绕 Video World Models with Long-term Spatial Memory。
+- [FreeTimeGS](https://arxiv.org/abs/2506.05348)：为动态场景重建引入 anytime/anywhere 的 free Gaussian primitives。
+- [Layered Motion Fusion: Lifting Motion Segmentation to 3D in Egocentric Videos](https://arxiv.org/abs/2506.05546)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [On-the-fly Reconstruction for Unposed NVS](https://arxiv.org/abs/2506.05558)：从 unposed images 做大规模 novel view synthesis 的即时重建。
+- [BecomingLit](https://arxiv.org/abs/2506.06271)：用 hybrid neural shading 构建可 relight 的 Gaussian avatars，补充可控 3D 人体表示生成。
+- [Vid2Sim](https://arxiv.org/abs/2506.06440)：从视频重建外观、几何与物理用于无网格仿真，将空间感知与可仿真的世界建模连接起来。
+- [Basis Transformers for Multi-Task Tabular Regression](https://arxiv.org/abs/2506.06926)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Drive Any Mesh](https://arxiv.org/abs/2506.07489)： 用 4D 潜扩散从单目视频驱动网格动画，把视频运动先验与可编辑三维资产连接起来。
+- [Squeeze3D: Your 3D Generation Model is Secretly an Extreme Neural Compressor](https://arxiv.org/abs/2506.07932)：把预训练 3D generative prior 当作极限 neural compressor，将 mesh、point cloud 或 radiance field 编码成紧凑 latent code。
+- [UA-Pose: Uncertainty-Aware 6D Object Pose Estimation and Online Object Completion with Partial References](https://arxiv.org/abs/2506.07996)：从 partial RGB-D 或单图参考估计 6D pose，并在线补全不确定物体几何。
+- [Dynamic View Synthesis as an Inverse Problem](https://arxiv.org/abs/2506.08004)：把动态新视角合成表述为无需训练的逆问题，通过 K-order recursive noise 和可见性感知随机 latent modulation 改写视频扩散初始化。
+- [iTACO](https://arxiv.org/abs/2506.08334)：从随手采集的 RGB-D 视频重建可交互的铰接物体数字孪生体，将空间资产扩展到可行动的物体模型。
+- [STREAMINGGS](https://arxiv.org/abs/2506.09070)：结合 voxel-based streaming、memory optimization 与 architectural support，用于 3D Gaussian splatting。
+- [UFM](https://arxiv.org/abs/2506.09278)：用简洁的 transformer flow-regression 模型统一 dense image correspondence 与 optical flow。
+- [UniForward](https://arxiv.org/abs/2506.09378)：从未标定稀疏视图图像通过前馈 Gaussian splatting 统一重建 3D 场景与语义场。
+- [Gaussian Herding](https://arxiv.org/abs/2506.09534)：从 optimal transport 角度做 3DGS global Gaussian reduction。
+- [SemanticSplat](https://arxiv.org/abs/2506.09565)：从稀疏视图预测语言感知 Gaussian field，用于前馈式 3D 场景重建和语义理解。
+- [PD$^{2}$GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](https://arxiv.org/abs/2506.09663)： 用 Gaussian splatting 解耦 articulated-object 部件与连续形变，补充细粒度动态 3D 表示。
+- [Accurate and efficient zero-shot 6D pose estimation with frozen foundation models](https://arxiv.org/abs/2506.09784)：提出 FreeZeV2，在无需训练的 6D pose estimation 中复用冻结 foundation-model 特征处理新 RGB-D 物体。
+- [Hearing Hands: Generating Sounds from Physical Interactions in 3D Scenes](https://arxiv.org/abs/2506.09989)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [DGS-LRM: Real-Time Deformable 3D Gaussian Reconstruction From Monocular Videos](https://arxiv.org/abs/2506.09997)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [DySS: Dynamic Queries and State-Space Learning for Efficient 3D Object Detection from Multi-Camera Videos](https://arxiv.org/abs/2506.10242)：用状态空间模型顺序处理多相机视频特征，并通过 query 合并、删除和拆分维护精简 BEV 检测查询，实现高效 3D 目标检测。
+- [Perceptual-GS](https://arxiv.org/abs/2506.12400)：为 Gaussian Splatting 加入场景自适应感知致密化。
+- [Efficient multi-view training for 3D Gaussian Splatting](https://arxiv.org/abs/2506.12727)：为 3DGS 引入多视角 mini-batch 训练，配合低开销 rasterization、3D distance-aware D-SSIM 和多视角自适应 density control。
+- [Metropolis-Hastings Sampling for 3D Gaussian Reconstruction](https://arxiv.org/abs/2506.12945)：把 Gaussian densification 与 pruning 重写为由多视角 photometric error 和 opacity score 驱动的 Metropolis-Hastings sampling。
+- [WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild](https://arxiv.org/abs/2506.13030)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [GS-2DGS: Geometrically Supervised 2DGS for Reflective Object Reconstruction](https://arxiv.org/abs/2506.13110)：为 2D Gaussian Splatting 加入几何监督以重建反光物体，改进具有视角相关外观的空间重建。
+- [MT-PCR: Hybrid Mamba-Transformer Network with Spatial Serialization for Point Cloud Registration](https://arxiv.org/abs/2506.13183)：对不规则点云做 spatial serialization，并结合 Mamba 与 Transformer 层，以更低序列成本注册高分辨率点云。
+- [Micro-macro Gaussian Splatting with Enhanced Scalability for Unconstrained Scene Reconstruction](https://arxiv.org/abs/2506.13516)：把无约束场景 Gaussians 分解为 global、refined 和 intrinsic components，并结合 micro-macro projection 与 wavelet sampling。
+- [Dive3D: Diverse Distillation-based Text-to-3D Generation via Score Implicit Matching](https://arxiv.org/abs/2506.13594)：补充与空间与三维能力相关的模型侧方法。
+- [Test3R: Learning to Reconstruct 3D at Test Time](https://arxiv.org/abs/2506.13750)：把自监督测试时学习用于 3D 重建，通过图像三元组提升跨视角几何一致性，且适配开销较低。
+- [Particle-Grid Neural Dynamics](https://arxiv.org/abs/2506.15680)：从 RGB-D videos 学习 deformable object models，补充 dynamics-aware spatial modeling 路线。
+- [Co-VisiON: Co-Visibility ReasONing on Sparse Image Sets of Indoor Scenes](https://arxiv.org/abs/2506.16805)：补充与空间与三维能力相关的模型侧方法。
+- [Scene-R1: Video-Grounded Large Language Models for 3D Scene Reasoning without 3D Annotations](https://arxiv.org/abs/2506.17545)：贡献空间推理模型方法；核心思想是让 3D、视角或连续空间关系在模型行为中更显式。
+- [Relation3D: Enhancing Relation Modeling for Point Cloud Instance Segmentation](https://arxiv.org/abs/2506.17891)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充空间与三维方向的模型覆盖。
+- [Auto-Regressive Surface Cutting](https://arxiv.org/abs/2506.18017)： 以 autoregressive 方式建模 surface cutting，为 3D 生成补充结构化 mesh 构造原语。
+- [2D Triangle Splatting](https://arxiv.org/abs/2506.18575)：用 2D triangle splatting 支持直接可微 mesh training。
+- [MCN-SLAM](https://arxiv.org/abs/2506.18678)：结合 multi-agent collaborative neural SLAM 与 hybrid implicit neural scene representation。
+- [GRAND-SLAM](https://arxiv.org/abs/2506.18885)：通过 local optimization 让大规模 multi-agent Gaussian SLAM 保持全局一致。
+- [PrITTI: Primitive-based Generation of Controllable and Editable 3D Semantic Urban Scenes](https://arxiv.org/abs/2506.19117)：PrITTI 提供 3D 或 4D 表示路线，用于重建、生成、定位或场景理解。
+- [HoliGS: Holistic Gaussian Splatting for Embodied View Synthesis](https://arxiv.org/abs/2506.19291)：用整体式可变形 Gaussian splatting 从长单目视频进行具身视角合成，区分静态背景和随时间变化的关节物体。
+- [DreamAnywhere: Object-Centric Panoramic 3D Scene Generation](https://arxiv.org/abs/2506.20367)：生成以物体为中心的全景 3D 场景，推动空间生成走向可控的完整场景合成。
+- [EditP23: 3D Editing via Propagation of Image Prompts to Multi-View](https://arxiv.org/abs/2506.20652)：把用户编辑的 image prompt 沿预训练多视角 diffusion latent flow 传播，实现无需 mask、feed-forward 且 3D 一致的编辑。
+- [PhysRig](https://arxiv.org/abs/2506.20936)：用可微 physics-based rigging 替代简单 LBS，使 articulated objects 的形变更真实。
+- [Geometry and Perception Guided Gaussians for Multiview-consistent 3D Generation from a Single Image](https://arxiv.org/abs/2506.21152)：在无需训练的 Gaussian reconstruction pipeline 中结合几何和感知引导，从单图生成多视角一致的 3D 物体。
+- [GroundFlow: A Plug-in Module for Temporal Reasoning on 3D Point Cloud Sequential Grounding](https://arxiv.org/abs/2506.21188)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction](https://arxiv.org/abs/2506.21401)：从多视角 edge maps 直接优化 3D parametric curves，并用可微 Gaussian rendering 表示连接曲线几何与图像监督。
+- [DeOcc-1-to-3: 3D De-Occlusion from a Single Image via Self-Supervised Multi-View Diffusion](https://arxiv.org/abs/2506.21544)： 用自监督多视角扩散从单图做 3D de-occlusion，提升遮挡下的空间重建。
 - [Fine-Grained Preference Optimization for Spatial Reasoning](https://arxiv.org/abs/2506.21656)：用细粒度空间偏好优化 VLM 对关系、位置和 3D 布局的判断。
+- [PhotonSplat: 3D Scene Reconstruction and Colorization from SPAD Sensors](https://arxiv.org/abs/2506.21680)：用 3D Gaussian Splatting 从噪声 SPAD 二值图像重建并着色场景，结合 3D 空间滤波、生成式或参考着色和 SPAD 多视角数据集。
+- [RoomCraft: Controllable and Complete 3D Indoor Scene Generation](https://arxiv.org/abs/2506.22291)： 生成可控且完整的 3D 室内场景，扩展语言或条件引导的空间场景合成。
+- [STD-GS: Exploring Frame-Event Interaction for SpatioTemporal-Disentangled Gaussian Splatting to Reconstruct High-Dynamic Scene](https://arxiv.org/abs/2506.23157)：补充与空间与三维能力相关的模型侧方法。
+- [Endo-4DGX: Robust Endoscopic Scene Reconstruction and Illumination Correction with Gaussian Splatting](https://arxiv.org/abs/2506.23308)：为动态内窥镜场景加入 illumination-adaptive 4D Gaussian Splatting，在低光和过曝条件下提升重建鲁棒性。
+- [WAVE: Warp-Based View Guidance for Consistent Novel View Synthesis Using a Single Image](https://arxiv.org/abs/2506.23518)：WAVE 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [Puzzles: Unbounded Video-Depth Augmentation for Scalable End-to-End 3D Reconstruction](https://arxiv.org/abs/2506.23863)：从单张图像或视频片段合成无限量带位姿的视频深度增强数据，用于扩展端到端 3D 重建训练。
+- [GaVS: 3D-Grounded Video Stabilization via Temporally-Consistent Local Reconstruction and Rendering](https://arxiv.org/abs/2506.23957)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [MILo](https://arxiv.org/abs/2506.24096)：将 mesh-in-the-loop 约束引入 Gaussian Splatting，用于更细致且高效的表面重建。
+- [LLaVA-SP: Enhancing Visual Representation with Visual Spatial Tokens for MLLMs](https://arxiv.org/abs/2507.00505)：加入六个 spatial visual tokens 和卷积 projector，增强 MLLM 视觉表示中的局部 patch 关系。
+- [LOD-GS: Level-of-Detail-Sensitive 3D Gaussian Splatting for Detail Conserved Anti-Aliasing](https://arxiv.org/abs/2507.00554)：为每个 Gaussian primitive 动态预测 filtering strength，使 anti-aliasing 保留细节而不是过度平滑。
+- [A LoD of Gaussians: Unified Training and Rendering for Ultra-Large Scale Reconstruction with External Memory](https://arxiv.org/abs/2507.01110)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [PLOT: Pseudo-Labeling via Video Object Tracking for Scalable Monocular 3D Object Detection](https://arxiv.org/abs/2507.02393)：利用视频目标跟踪聚合相邻帧的 pseudo-LiDAR 证据，为单目 3D 目标检测生成可扩展伪标签，不依赖多视角设置、额外传感器、相机位姿或特定领域训练。
+- [SIU3R](https://arxiv.org/abs/2507.02705)：联合执行 scene understanding 与 3D reconstruction，超越简单 feature alignment。
+- [LiteReality: Graphics-Ready 3D Scene Reconstruction from RGB-D Scans](https://arxiv.org/abs/2507.02861)： 从 RGB-D 扫描重建图形就绪 3D 场景，连接空间重建与可渲染场景资产。
 - [Point3R: Streaming 3D Reconstruction with Explicit Spatial Pointer Memory](https://arxiv.org/abs/2507.02863)：为流式 3D 重建加入显式空间指针记忆，契合持续空间表示。
+- [S3PO-GS](https://arxiv.org/abs/2507.03737)：用全局尺度一致的 3D Gaussian pointmaps 做户外单目 SLAM。
+- [Height-Fidelity Dense Global Fusion for Multi-Modal 3D Object Detection](https://arxiv.org/abs/2507.04369)：在相机-LiDAR 融合中保留 LiDAR 高度信息，并把高度感知特征送入 Hybrid Mamba blocks 以实现高效多模态 3D 检测。
+- [Sat2City: 3D City Generation from a Single Satellite Image with Cascaded Latent Diffusion](https://arxiv.org/abs/2507.04403)：通过级联潜扩散从单张卫星图像生成 3D 城市场景。
+- [PRISM: Pointcloud Reintegrated Inference via Segmentation and Cross-Attention for Manipulation](https://arxiv.org/abs/2507.04633)：利用 segmentation embedding 和 cross-attention，直接从原始点云与机器人状态学习 manipulation policy。
+- [InterGSEdit: Interactive 3D Gaussian Splatting Editing with 3D Geometry-Consistent Attention Prior](https://arxiv.org/abs/2507.04961)：让用户选择关键视角，用 CLIP 选取语义一致参考视角，将 cross-attention maps 反投影成 3D geometry-consistent attention prior，再融合 3D 约束 attention 与 2D diffusion attention 以获得一致的 3DGS 编辑。
+- [MoDiT: Learning Highly Consistent 3D Motion Coefficients with Diffusion Transformer for Talking Head Generation](https://arxiv.org/abs/2507.05092)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [SPADE: Spatial-Aware Denoising Network for Open-Vocabulary Panoptic Scene Graph Generation with Long- and Local-Range Context Reasoning](https://arxiv.org/abs/2507.05798)：用 denoising-style spatial structure preservation 结合长程与局部上下文推理，生成 open-vocabulary panoptic scene graph。
+- [High-Fidelity and Generalizable Neural Surface Reconstruction with Sparse Feature Volumes](https://arxiv.org/abs/2507.05952)：从 posed images 预测稀疏 voxel occupancy 和 feature volume，实现更高分辨率、可泛化的 neural surface reconstruction。
+- [OmniPart](https://arxiv.org/abs/2507.06165)：通过 semantic decoupling 与 structural cohesion 生成 part-aware 3D assets，补充结构化空间生成覆盖。
+- [3D-Generalist: Self-Improving Vision-Language-Action Models for Crafting 3D Worlds](https://arxiv.org/abs/2507.06484)：3D-Generalist 为 Crafting 3D Worlds 构建 Self-Improving Vision-Language-Action Models，明确对应空间模型的任务目标。
+- [MK-Pose: Category-Level Object Pose Estimation via Multimodal-Based Keypoint Learning](https://arxiv.org/abs/2507.06662)：通过自监督 keypoint learning 融合 RGB、点云和类别文本，完成 category-level 6D pose estimation。
+- [A Neural Representation Framework with LLM-Driven Spatial Reasoning for Open-Vocabulary 3D Visual Grounding](https://arxiv.org/abs/2507.06719)：通过 LLM-Driven Spatial Reasoning for Open-Vocabulary 3D Visual Grounding 改进 A Neural Representation Framework，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [LangSplatV2](https://arxiv.org/abs/2507.07136): 构建高速高维 3D 语言 Gaussian Splatting，将语言对齐 3D 场景与高效空间表征连接起来。
+- [Occlusion-Aware Temporally Consistent Amodal Completion for 3D Human-Object Interaction Reconstruction](https://arxiv.org/abs/2507.08137)：补充与空间与三维能力相关的模型侧方法。
+- [From One to More: Contextual Part Latents for 3D Generation](https://arxiv.org/abs/2507.08772)： 提出用于 3D 生成的 contextual part latents，强化从整体物体生成走向部件感知空间资产合成的模型线索。
+- [PoseLLM: Enhancing Language-Guided Human Pose Estimation with MLP Alignment](https://arxiv.org/abs/2507.09139)：用 MLP connector 替代线性视觉语言投影，使 LLM-guided pose estimation 捕捉更丰富的空间文本关键点关系。
+- [OpenHuman4D: Open-Vocabulary 4D Human Parsing](https://arxiv.org/abs/2507.09880)：补充与空间与三维能力相关的模型侧方法。
+- [ScaffoldAvatar: High-Fidelity Gaussian Avatars with Patch Expressions](https://arxiv.org/abs/2507.10542)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Spatial Reasoners for Continuous Variables in Any Domain](https://arxiv.org/abs/2507.10768)：贡献空间推理模型方法；核心思想是让 3D、视角或连续空间关系在模型行为中更显式。
+- [HPR3D: Hierarchical Proxy Representation for High-Fidelity 3D Reconstruction and Controllable Editing](https://arxiv.org/abs/2507.11971)：用稀疏层级 proxy nodes 存储局部形状和纹理特征，通过神经插值支持紧凑 3D 重建、质量/复杂度控制和直接拖拽编辑。
+- [PhysX-3D](https://arxiv.org/abs/2507.12465)：生成具备物理约束的三维资产，将空间生成推进到可用于物理交互的资产表示。
+- [Wavelet-GS: 3D Gaussian Splatting with Wavelet Decomposition](https://arxiv.org/abs/2507.12498)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [MindJourney: Test-Time Scaling with World Models for Spatial Reasoning](https://arxiv.org/abs/2507.12508)：用 world models 做空间推理 test-time scaling，在选择答案前扩展和评估候选空间轨迹。
+- [Diffuman4D: 4D Consistent Human View Synthesis From Sparse-View Videos With Spatio-Temporal Diffusion Models](https://arxiv.org/abs/2507.13344)：Diffuman4D 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [AutoPartGen](https://arxiv.org/abs/2507.13346): 以自回归方式生成并发现 3D 部件，补充部件结构化的 3D 资产生成路线。
+- [Leveraging the Spatial Hierarchy: Coarse-to-fine Trajectory Generation via Cascaded Hybrid Diffusion](https://arxiv.org/abs/2507.13366)：用 coarse-to-fine cascaded hybrid diffusion 生成遵循城市运动空间层级的人类 mobility trajectory。
+- [PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations](https://arxiv.org/abs/2507.13891)：补充与空间与三维能力相关的模型侧方法。
+- [Adaptive 3D Gaussian Splatting Video Streaming](https://arxiv.org/abs/2507.14432)：面向视频流传输自适应组织 3D Gaussian Splatting 表示。
+- [Adaptive 3DGS Video Streaming](https://arxiv.org/abs/2507.14454)：用 saliency-aware tiling 与 meta-learning-based bitrate adaptation 支持 3D Gaussian splats 的流式传输。
+- [Stereo-GS: Multi-View Stereo Vision Model for Generalizable 3D Gaussian Splatting Reconstruction](https://arxiv.org/abs/2507.14921)： 构建可泛化的 multi-view stereo 模型，用于 3D Gaussian splatting 重建。
+- [ObjectGS](https://arxiv.org/abs/2507.15454)：让 Gaussian Splatting 具备对象感知能力，用于场景重建与理解。
+- [HOLa](https://arxiv.org/abs/2507.15542)：用低秩分解适配 VLM 特征来做零样本人-物交互检测，为空间关系模型补充 3D grounding 之外的路线。
+- [SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](https://arxiv.org/abs/2507.15602)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Dens3R: A Foundation Model for 3D Geometry Prediction](https://arxiv.org/abs/2507.16290)：提出用于 3D 几何预测的 foundation model。
+- [VGGT-Long](https://arxiv.org/abs/2507.16443)：通过 chunking、looping 与 alignment 把 VGGT-style reconstruction 扩展到 kilometer-scale long RGB sequences。
+- [Spatial 3D-LLM : Exploring Spatial Awareness in 3D Vision-Language Models](https://arxiv.org/abs/2507.16524)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [STQE](https://arxiv.org/abs/2507.17522)：增强 G-PCC 压缩动态点云的时空属性质量。
+- [Perspective-Invariant 3D Object Detection](https://arxiv.org/abs/2507.17665)：引入跨平台 LiDAR adaptation，用 perspective-invariant representation 支持车辆、四足机器人和无人机的 3D object detection。
+- [Ultra3D](https://arxiv.org/abs/2507.17745): 通过部件注意力提升高效高保真 3D 生成，扩展结构化空间资产生成路线。
+- [LMM-Det](https://arxiv.org/abs/2507.18300)：将大型多模态模型适配到目标检测，强化模型原生定位与空间 grounding 能力。
+- [SaLF: Sparse Local Fields for Multi-Sensor Rendering in Real-Time](https://arxiv.org/abs/2507.18713)：构建用于相机和 LiDAR 实时渲染的 sparse local fields，把场景表示从 pinhole-only 3DGS 假设中解耦出来。
+- [Neural Shell Texture Splatting](https://arxiv.org/abs/2507.20200)：用更少 primitives 保留更多细节，补充高效 3D 表面纹理表示。
+- [BANG](https://arxiv.org/abs/2507.21493)：通过 generative exploded dynamics 拆分 3D assets，补充空间资产的结构化编辑方法。
+- [SLTarch](https://arxiv.org/abs/2507.21499)：通过处理 workload imbalance 与 memory irregularity 提升 point-based neural rendering 的可扩展性。
+- [PanoSplatt3R: Leveraging Perspective Pretraining for Generalized Unposed Wide-Baseline Panorama Reconstruction](https://arxiv.org/abs/2507.21960)：PanoSplatt3R 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos](https://arxiv.org/abs/2507.22052)：Ov3R 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [DepR](https://arxiv.org/abs/2507.22825)：用深度引导的实例级扩散进行组合式单视角场景重建。
+- [LIVE-GS: Online LiDAR-Inertial-Visual State Estimation and Globally Consistent Mapping with 3D Gaussian Splatting](https://arxiv.org/abs/2507.23273)：把 LiDAR、惯性和视觉状态估计与 3DGS mapping 结合，提升纹理贫乏或长距离场景中的全局一致性。
+- [iLRM](https://arxiv.org/abs/2507.23277)：通过迭代精化扩展前馈式 3D 重建，缓解大型 3D 重建模型的注意力瓶颈。
+- [3D-R1: Enhancing Reasoning in 3D VLMs for Unified Scene Understanding](https://arxiv.org/abs/2507.23478)：构建 Scene-30K 合成 3D chain-of-thought 数据，并用带 perception、semantic-similarity 和 format rewards 的 GRPO 式 RLHF 以及动态视角选择增强 3D VLM 场景推理。
+- [XSpecMesh: Quality-Preserving Auto-Regressive Mesh Generation Acceleration via Multi-Head Speculative Decoding](https://arxiv.org/abs/2507.23777)： 将 speculative decoding 用于加速 autoregressive mesh generation，同时保持生成质量。
+- [Gaussian Variation Field Diffusion for High-Fidelity Video-to-4D Synthesis](https://arxiv.org/abs/2507.23785)： 通过高斯变化场扩散从视频合成高保真 4D 场景，把空间生成扩展到时变 4D 内容。
+- [PointGauss: Point Cloud-Guided Multi-Object Segmentation for Gaussian Splatting](https://arxiv.org/abs/2508.00259)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Occlusion-Robust Stylization for Drawing-Based 3D Animation](https://arxiv.org/abs/2508.00398)：补充与空间与三维能力相关的模型侧方法。
+- [Sel3DCraft: Interactive Visual Prompts for User-Friendly Text-to-3D Generation](https://arxiv.org/abs/2508.00428)：把 text-to-3D prompt 调试变成可视交互流程，结合检索/生成候选、多视角 MLLM 评分和缺陷分析来指导提示 refinement。
+- [DPoser-X](https://arxiv.org/abs/2508.00599)：用扩散先验进行鲁棒的 3D 全身人体姿态建模和逆问题求解。
+- [DreamSat-2.0: Towards a General Single-View Asteroid 3D Reconstruction](https://arxiv.org/abs/2508.01079)：分类需复核：在航天器和小行星单视图重建上评测 Hunyuan-3D、Trellis-3D 与 Ouroboros-3D，更像 benchmark 分析而不是新模型。
+- [DELTAv2: Accelerating Dense 3D Tracking](https://arxiv.org/abs/2508.01170)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [SPFSplat](https://arxiv.org/abs/2508.01171)：在自监督 pose-free 流水线中，从稀疏未定姿视图同时预测 3D Gaussians 与相机位姿。
+- [MeshLLM](https://arxiv.org/abs/2508.01242)：使 LLM 能逐步理解并生成三维网格，直接连接语言模型与结构化空间资产。
+- [DisCo3D: Distilling Multi-View Consistency for 3D Scene Editing](https://arxiv.org/abs/2508.01684)：蒸馏多视角一致性约束用于 3D scene editing，减少慢速迭代 refinement 和跨视角伪影。
+- [VDEGaussian](https://arxiv.org/abs/2508.02129)：用 video diffusion priors 增强 dynamic urban scenes 的 4D Gaussian splatting。
+- [Unified Category-Level Object Detection and Pose Estimation from RGB Images Using 3D Prototypes](https://arxiv.org/abs/2508.02157)：用带学习特征的 neural mesh prototypes 和 multi-model RANSAC，把 RGB object detection 与 category-level 3D pose estimation 结合起来。
+- [PRIMU: Uncertainty Estimation for Novel Views in Gaussian Splatting from Primitive-Based Representations of Error and Coverage](https://arxiv.org/abs/2508.02443)：补充与空间与三维能力相关的模型侧方法。
+- [Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](https://arxiv.org/abs/2508.03643)： 用可泛化高斯溅射从无位姿多视图图像统一 3D 重建与语义理解。
+- [La La LiDAR](https://arxiv.org/abs/2508.03691)：从 LiDAR 数据生成大规模布局，将空间场景生成扩展到传感器约束的室外结构。
+- [One Model for All: Unified Try-On and Try-Off in Any Pose via LLM-Inspired Bidirectional Tweedie Diffusion](https://arxiv.org/abs/2508.04559)：补充与空间与三维能力相关的模型侧方法。
+- [Occupancy Learning with Spatiotemporal Memory](https://arxiv.org/abs/2508.04705)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [MagicHOI](https://arxiv.org/abs/2508.05506)：用 3D priors 从短 monocular videos 重建 hand-object interaction。
+- [GMF-Drive: Gated Mamba Fusion with Spatial-Aware BEV Representation for End-to-End Autonomous Driving](https://arxiv.org/abs/2508.06113)：GMF-Drive 通过 Spatial-Aware BEV Representation for End-to-End Autonomous Driving 改进 Gated Mamba Fusion，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Fading the Digital Ink](https://arxiv.org/abs/2508.07263)：在通用黑盒条件下攻击三维 Gaussian 水印系统，揭示神经三维内容的来源风险。
+- [DIP-GS: Deep Image Prior For Gaussian Splatting Sparse View Recovery](https://arxiv.org/abs/2508.07372)：把 deep image prior 注入 3DGS 表示，使粗到细优化可在无预训练深度或生成模型的情况下恢复 sparse-view 场景。
+- [Dream4D: Lifting Camera-Controlled I2V towards Spatiotemporally Consistent 4D Generation](https://arxiv.org/abs/2508.07769)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [Mem4D: Decoupling Static and Dynamic Memory for Dynamic Scene Reconstruction](https://arxiv.org/abs/2508.07908)：Mem4D 为 Dynamic Scene Reconstruction 构建 Decoupling Static and Dynamic Memory，明确对应空间模型的任务目标。
+- [CD-TVD: Contrastive Diffusion for 3D Super-Resolution with Scarce High-Resolution Time-Varying Data](https://arxiv.org/abs/2508.08173)：结合 contrastive pretraining 与 diffusion super-resolution，在高分辨率样本稀缺时恢复 3D time-varying scientific simulation fields。
+- [ReferSplat](https://arxiv.org/abs/2508.08252)：在 3D Gaussian splatting 场景中直接执行 referring segmentation。
+- [GaussianUpdate](https://arxiv.org/abs/2508.08867)：面向变化环境持续更新 3D Gaussian splatting 场景。
+- [Learning Spatial Decay for Vision Transformers](https://arxiv.org/abs/2508.09525)：通过 Context-Aware Gating 给 ViT self-attention 加入 content-aware spatial decay，以适配空间结构化视觉任务。
+- [TRACE: Learning 3D Gaussian Physical Dynamics from Multi-View Videos](https://arxiv.org/abs/2508.09811)：把动态 3D Gaussian 点建模为带尺寸和朝向的刚性粒子，学习 translation-rotation 动力系统和物理参数以外推未来帧并聚类部件。
+- [PERSONA: Personalized Whole-Body 3D Avatar with Pose-Driven Deformations from a Single Image](https://arxiv.org/abs/2508.09973)：先由单张人体图生成 pose-rich 视频，再用 balanced sampling 和 geometry-weighted 优化训练个性化 3D avatar，以保持身份和姿态驱动形变。
+- [EntropyGS](https://arxiv.org/abs/2508.10227)：为 3D Gaussian Splatting 设计高效 entropy coding，补充空间表示压缩方法。
+- [Multi-Sample Anti-Aliasing and Constrained Optimization for 3D Gaussian Splatting](https://arxiv.org/abs/2508.10507)：把 adaptive multisample anti-aliasing 与欠重建约束、gradient-differential constraint 结合，提高 3DGS 细节锐度。
+- [AddressVLM: Cross-view Alignment Tuning for Image Address Localization using Large Vision-Language Models](https://arxiv.org/abs/2508.10667)：通过 image grafting 和自动标签对齐街景与卫星视角线索，使 LVLM 能回答细粒度地址定位问题。
+- [Chem3DLLM: 3D Multimodal Large Language Models for Chemistry](https://arxiv.org/abs/2508.10696)：构建 protein-conditioned multimodal LLM，并用可逆 3D molecular tokenization 统一文本、蛋白、配体和构象生成空间。
+- [Puppeteer: Rig and Animate Your 3D Models](https://arxiv.org/abs/2508.10898)： 对 3D 模型进行绑定与动画化，把静态空间资产生成连接到可控运动表示。
+- [Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction](https://arxiv.org/abs/2508.10936)：在车联网协同感知中传递稀疏 semantic Gaussian primitives，融合物体中心几何与语义，用于 vision-only 3D 语义占据预测。
+- [ComplicitSplat: Downstream Models are Vulnerable to Blackbox Attacks by 3D Gaussian Splat Camouflages](https://arxiv.org/abs/2508.11854)：ComplicitSplat 通过 3D Gaussian Splat Camouflages 改进 Downstream Models are Vulnerable to Blackbox Attacks，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [4DNeX](https://arxiv.org/abs/2508.13154)：提供前馈式四维生成建模，将空间生成从静态三维资产扩展到随时间变化的四维内容。
+- [InnerGS: Internal Scenes Rendering via Factorized 3D Gaussian Splatting](https://arxiv.org/abs/2508.13287)：补充与空间与三维能力相关的模型侧方法。
+- [MeshCoder](https://arxiv.org/abs/2508.14879)： 训练多模态 LLM 将点云转为可执行 Blender 程序，使三维形状能通过结构化代码编辑。
+- [GaussianArt](https://arxiv.org/abs/2508.14891)：统一关节对象的几何与运动建模，把空间资产生成推进到可操控的动态结构。
+- [Hybrelighter: Combining Deep Anisotropic Diffusion and Scene Reconstruction for On-device Real-time Relighting in Mixed Reality](https://arxiv.org/abs/2508.14930)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Collaborative Multi-Modal Coding for High-Quality 3D Generation](https://arxiv.org/abs/2508.15228)：通过协同多模态编码提升 3D 生成质量，补充空间生成模型线索。
+- [Deep Equilibrium Convolutional Sparse Coding for Hyperspectral Image Denoising](https://arxiv.org/abs/2508.15553)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [HAMSt3R](https://arxiv.org/abs/2508.16433)：在 multi-view stereo 3D reconstruction 中加入 human-aware reasoning。
+- [Towards Open-Vocabulary Multimodal 3D Object Detection with Attributes](https://arxiv.org/abs/2508.16812)：补充与空间与三维能力相关的模型侧方法。
+- [Random-phase Wave Splatting](https://arxiv.org/abs/2508.17480)：用 translucent primitives 的 random-phase wave splatting 支持 computer-generated holography。
+- [TinyGiantVLM: A Lightweight Vision-Language Architecture for Spatial Reasoning under Resource Constraints](https://arxiv.org/abs/2508.17595)：结合 RGB-depth 全局/区域编码器和 MoE fusion，在仓储物流场景中进行轻量 VLM spatial reasoning。
+- [ObjFiller-3D: Consistent Multi-view 3D Inpainting via Video Diffusion Models](https://arxiv.org/abs/2508.18271)：用 video-diffusion components 优化 360 度 dense view sequences，使 3D object inpainting 在多视角间保持一致。
+- [Efficient Implicit Neural Point Clouds](https://arxiv.org/abs/2508.19140)：总结并验证 implicit neural point clouds 的高效建模技巧。
+- [SAT: Supervisor Regularization and Animation Augmentation for Two-process Monocular Texture 3D Human Reconstruction](https://arxiv.org/abs/2508.19688)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Global Motion Corresponder for 3D Point-Based Scene Interpolation Under Large Motion](https://arxiv.org/abs/2508.20136)：补充与空间与三维能力相关的模型侧方法。
+- [ARGS: Advanced Regularization on Aligning Gaussians over the Surface](https://arxiv.org/abs/2508.21344)：在 SuGaR-style mesh 与视觉重建中加入 rank regularization 和 surface-coherence regularization，抑制针状 Gaussians。
+- [Adaptive Point-Prompt Tuning: Fine-Tuning Heterogeneous Foundation Models for 3D Point Cloud Analysis](https://arxiv.org/abs/2509.00374)：Adaptive Point-Prompt Tuning 为 3D Point Cloud Analysis 构建 Fine-Tuning Heterogeneous Foundation Models，明确对应空间模型的任务目标。
+- [On the Influence of Shape, Texture and Color for Learning Semantic Segmentation](https://arxiv.org/abs/2509.00765)：补充与空间与三维能力相关的模型侧方法。
+- [Towards Integrating Multi-Spectral Imaging with Gaussian Splatting](https://arxiv.org/abs/2509.00989)：比较 RGB 与多光谱 3DGS 优化策略，并建议把光谱 band 直接建模到 Gaussian 球谐颜色分量中以保持一致几何。
+- [3DGS Point-Cloud Compression and Communication](https://arxiv.org/abs/2509.02232)：高效压缩并传输 3D Gaussian splatting point clouds。
+- [Category-Aware 3D Object Composition with Disentangled Texture and Shape Multi-view Diffusion](https://arxiv.org/abs/2509.02357)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Tera: Rethinking Text-Guided Realistic 3D Avatar Generation](https://arxiv.org/abs/2509.02466)：Tera 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [ContraGS](https://arxiv.org/abs/2509.03775)：用可训练 codebook 压缩 Gaussian Splatting 重建，补充高效空间重建模型线索。
+- [SSGaussian: Semantic-Aware and Structure-Preserving 3D Style Transfer](https://arxiv.org/abs/2509.04379)：补充与空间与三维能力相关的模型侧方法。
+- [PropVG: End-To-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination](https://arxiv.org/abs/2509.04833)：把 proposal generation 重新引入端到端 visual grounding，并加入 multi-granularity discrimination 提升指代表达定位鲁棒性。
+- [UniView: Enhancing Novel View Synthesis From A Single Image By Unifying Reference Features](https://arxiv.org/abs/2509.04932)：用 MLLM 检索相似物体参考，并通过 adapter 注入参考特征，降低单图 novel-view synthesis 的歧义。
+- [WinT3R: Window-Based Streaming Reconstruction with Camera Token Pool](https://arxiv.org/abs/2509.05296)：WinT3R 通过 Camera Token Pool 改进 Window-Based Streaming Reconstruction，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [DVLO4D](https://arxiv.org/abs/2509.06023)：用稀疏时空融合实现 deep visual-LiDAR odometry，补充空间定位与建图模型。
+- [P3-SAM](https://arxiv.org/abs/2509.06784)：把 segment-anything 式部件分割扩展到原生 3D 资产，补充模型侧空间解析基础能力。
+- [MEGS2](https://arxiv.org/abs/2509.07021)：通过 spherical Gaussians 与 unified pruning 改进 memory-efficient Gaussian splatting。
+- [AEOS: Active Environment-aware Optimal Scanning Control for UAV LiDAR-Inertial Odometry in Complex Scenes](https://arxiv.org/abs/2509.09141)：结合模型预测控制与强化学习进行 UAV LiDAR 主动扫描，在遮挡复杂场景中改进里程计和建图。
+- [HD-MoE: Hybrid and Dynamic Parallelism for Mixture-of-Expert LLMs with 3D Near-Memory Processing](https://arxiv.org/abs/2509.09420)：HD-MoE 通过 3D Near-Memory Processing 改进 Hybrid and Dynamic Parallelism for Mixture-of-Expert LLMs，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Chameleon: Taming Dynamic Operator Sequences for Memory-Intensive LLM Training](https://arxiv.org/abs/2509.11076)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [WildSmoke](https://arxiv.org/abs/2509.11114)：从单个野外视频重建动态 3D 烟雾资产，把空间生成扩展到流体式时变内容。
+- [SVR-GS](https://arxiv.org/abs/2509.11116)：在 3D Gaussian Splatting 中用 spatially variant regularization 处理概率掩码。
+- [OpenVDB 3D Gaussian Ray Marching](https://arxiv.org/abs/2509.11377)：为科学可视化中的 OpenVDB 数据构建 3D Gaussian modeling 与 ray marching 表示。
+- [MemGS](https://arxiv.org/abs/2509.13536)：提升 Gaussian-splatting SLAM 的内存效率，用于实时空间建图。
+- [DSpAST: Disentangled Representations for Spatial Audio Reasoning with Large Language Models](https://arxiv.org/abs/2509.13927)：在 SpatialAST 上学习事件类型、方向和距离解耦的空间音频 embedding，作为 LLM 空间音频推理系统的前端编码器。
+- [Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](https://arxiv.org/abs/2509.13938)：补充与空间与三维能力相关的模型侧方法。
+- [GenCAD-3D](https://arxiv.org/abs/2509.15246)：通过多模态 latent-space alignment 与合成数据平衡生成 CAD 程序，把空间推理与结构化 3D 设计生成连接起来。
+- [LaySPA / LLMs as Layout Designers](https://arxiv.org/abs/2509.16891)：用强化学习和混合空间 reward 训练 LLM-based agents 做 content-aware graphic layout generation。
+- [SemanticGarment: Semantic-Controlled Generation and Editing of 3D Gaussian Garments](https://arxiv.org/abs/2509.16960)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [HyRF](https://arxiv.org/abs/2509.17083)：用 hybrid radiance fields 实现内存高效且高质量的新视角合成。
+- [PMRT: A Training Recipe for Fast, 3D High-Resolution Aerodynamic Prediction](https://arxiv.org/abs/2509.17182)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Point-RTD: Replaced Token Denoising for Pretraining Transformer Models on Point Clouds](https://arxiv.org/abs/2509.17207)：为空间与三维推理补充模型侧方法，重点关注 Replaced Token Denoising for Pretraining Transformer Models on Point Clouds。
+- [4D-MoDe](https://arxiv.org/abs/2509.17506)：用 motion-decoupled 4D Gaussian compression 支持 editable and scalable volumetric streaming。
+- [4DGCPro](https://arxiv.org/abs/2509.17513)：面向 progressive volumetric video streaming 的层次化 4D Gaussian compression。
+- [VideoArtGS](https://arxiv.org/abs/2509.17647)：从单目视频构建关节对象 digital twin，把视频观测与可行动的 3D 空间表征连接起来。
+- [Evict3R: Training-Free Token Eviction for Memory-Bounded Streaming Visual Geometry Transformers](https://arxiv.org/abs/2509.17650)：Evict3R 为 Memory-Bounded Streaming Visual Geometry Transformers 构建 Training-Free Token Eviction，明确对应空间模型的任务目标。
+- [ProDyG](https://arxiv.org/abs/2509.17864)：用 progressive Gaussian splatting 从 monocular videos 重建 dynamic scenes。
+- [Differentiable Light Transport with Gaussian Surfels via Adapted Radiosity for Efficient Relighting and Geometry Reconstruction](https://arxiv.org/abs/2509.18497)：以 Gaussian surfels 为 primitive，在球谐系数空间实现 adapted radiosity，使 relighting 和几何重建中的可微全局光照更高效。
+- [DeblurSplat: SfM-free 3D Gaussian Splatting with Event Camera for Robust Deblurring](https://arxiv.org/abs/2509.18898)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation](https://arxiv.org/abs/2509.19296)：Lyra 通过 Video Diffusion Model Self-Distillation 改进 Generative 3D Scene Reconstruction，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [PolGS: Polarimetric Gaussian Splatting for Fast Reflective Surface Reconstruction](https://arxiv.org/abs/2509.19726)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [SeHDR: Single-Exposure HDR Novel View Synthesis Via 3D Gaussian Bracketing](https://arxiv.org/abs/2509.20400)：从单曝光 LDR 多视角图像学习 HDR 3DGS，先估计共享几何但不同曝光颜色的 bracketed Gaussians，再用 NeEF 融合。
+- [ARMesh](https://arxiv.org/abs/2509.20824)：通过 next-level-of-detail prediction 自回归生成 mesh，改进结构化 3D 资产合成。
+- [Hunyuan3D-Omni](https://arxiv.org/abs/2509.21245)：统一可控 3D 资产生成，扩展文本与条件驱动 3D 合成的空间模型覆盖。
+- [MusicWeaver: Composer-Style Structural Editing and Minute-Scale Coherent Music Generation](https://arxiv.org/abs/2509.21714)：偏离空间建模轴；它面向作曲家风格的结构化编辑和分钟级音乐生成，而不是 3D 几何或空间推理。
+- [SRHand: Super-Resolving Hand Images and 3D Shapes via View/Pose-aware Neural Image Representations and Explicit 3D Meshes](https://arxiv.org/abs/2509.21859)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data](https://arxiv.org/abs/2509.21965)： 在原生 3D 数据上训练 promptable part segmentation 模型，为空间模型补充可复用的 3D 部件解析能力。
+- [Large Material Gaussian Model for Relightable 3D Generation](https://arxiv.org/abs/2509.22112)：把 large Gaussian reconstruction model 扩展到 PBR material attributes，生成 albedo、roughness 和 metallic map 以支持可重光照 3D asset。
+- [Rigidity-Aware 3D Gaussian Deformation from a Single Image](https://arxiv.org/abs/2509.22222)：用 Gaussian-to-pixel matching 和 rigid-part segmentation 从单张图像引导 3D Gaussian 形变，使稀疏 2D 线索产生几何一致的物体运动。
+- [ARSS: Taming Decoder-only Autoregressive Visual Generation for View Synthesis From Single View](https://arxiv.org/abs/2509.23008)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [Hermes: A Multi-Scale Spatial-Temporal Hypergraph Network for Stock Time Series Forecasting](https://arxiv.org/abs/2509.23668)：分类需复核：用 spatial-temporal hypergraph 建模行业 lead-lag 与多尺度股票相关性，更接近时序金融预测而不是 3D spatial modeling。
+- [RPG360: Robust 360 Depth Estimation with Perspective Foundation Models and Graph Optimization](https://arxiv.org/abs/2509.23991)：结合透视基础模型与图优化提升 360 度深度估计鲁棒性。
+- [UniLat3D](https://arxiv.org/abs/2509.25079)：统一几何与外观潜变量以进行单阶段 3D 生成，为空间资产合成补充紧凑表征路线。
+- [DepthLM](https://arxiv.org/abs/2509.25413)：从 vision-language models 估计 metric depth。
+- [SAGE: Spatial-visual Adaptive Graph Exploration for Visual Place Recognition](https://arxiv.org/abs/2509.25723)：SAGE 为 Visual Place Recognition 构建 Spatial-visual Adaptive Graph Exploration，明确对应空间模型的任务目标。
+- [GaussEdit: Adaptive 3D Scene Editing With Text and Image Prompts](https://arxiv.org/abs/2509.26055)：用 ROI selection、adaptive global-local optimization、category regularization 和 image-to-image texture refinement，根据文本和图像提示编辑 3DGS 场景。
+- [3Diface: Synthesizing and Editing Holistic 3D Facial Animation](https://arxiv.org/abs/2509.26233)：用全卷积扩散模型、speaking-style personalization 和 sparsely guided motion diffusion 生成并编辑语音驱动的整体 3D 面部动画。
+- [TTT3R: 3D Reconstruction as Test-Time Training](https://arxiv.org/abs/2509.26645)：TTT3R 用测试时训练在新观测到来时自适应更新重建状态。
+- [Has the Two-Decade-Old Prophecy Come True? Artificial Bad Intelligence Triggered by Merely a Single-Bit Flip in Large Language Models](https://arxiv.org/abs/2510.00490)：补充与空间与三维能力相关的模型侧方法。
+- [UniVerse Radiance Field Reconstruction](https://arxiv.org/abs/2510.01669)：复用 video diffusion models 的 scene priors 做 robust radiance-field reconstruction。
+- [ROGR](https://arxiv.org/abs/2510.03163)：将 generative relighting 用于可 relight 的 3D objects，补充可控空间资产编辑方法。
+- [Spatial-ViLT: Enhancing Visual Spatial Reasoning through Multi-Task Learning](https://arxiv.org/abs/2510.03441)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Joint Learning of Pose Regression and Denoising Diffusion with Score Scaling Sampling for Category-Level 6D Pose Estimation](https://arxiv.org/abs/2510.04125)：通过 Score Scaling Sampling for Category-Level 6D Pose Estimation 改进 Joint Learning of Pose Regression and Denoising Diffusion，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [PAINET: A Principled Efficient Transformer for 3D Dynamics Modeling](https://arxiv.org/abs/2510.04233)：补充与空间与三维能力相关的模型侧方法。
+- [DoRAN: Stabilizing Weight-Decomposed Low-Rank Adaptation via Noise Injection and Auxiliary Networks](https://arxiv.org/abs/2510.04331)：补充与空间与三维能力相关的模型侧方法。
+- [OKVIS2-X: Open Keyframe-Based Visual-Inertial SLAM Configurable With Dense Depth or LiDAR, and GNSS](https://arxiv.org/abs/2510.04612)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [HoloScene](https://arxiv.org/abs/2510.05560)：从单个视频构建可用于仿真的交互式 3D 世界，连接空间重建与交互世界建模。
+- [UniFField: A Generalizable Unified Neural Feature Field for Visual, Semantic, and Spatial Uncertainties in Any Scene](https://arxiv.org/abs/2510.06754)：构建可泛化的不确定性感知 neural feature field，融合视觉、语义和几何特征以支持机器人场景推理。
+- [Splat the Net](https://arxiv.org/abs/2510.08491)：用 splattable neural primitives 表示 radiance fields。
+- [SpatialLadder: Progressive Training for Spatial Reasoning in Vision-Language Models](https://arxiv.org/abs/2510.08531)：用渐进式训练提升视觉语言模型的空间推理。
+- [ARTDECO](https://arxiv.org/abs/2510.08551)：通过 structured scene representation 实现高效、高保真 on-the-fly 3D reconstruction。
+- [Mono4DEditor](https://arxiv.org/abs/2510.09438)：用语言嵌入 Gaussians 从单目视频编辑 4D 场景，把文本控制与动态空间场景编辑连接起来。
+- [LTGS](https://arxiv.org/abs/2510.09881)：从 sparse view updates 构建 long-term Gaussian scene chronology。
+- [Color3D: Controllable and Consistent 3D Colorization with Personalized Colorizer](https://arxiv.org/abs/2510.10152)：补充与空间与三维能力相关的模型侧方法。
+- [WorldMirror: Universal 3D World Reconstruction with Any-Prior Prompting](https://arxiv.org/abs/2510.10726)：通过 any-prior prompting 重建通用 3D 世界，扩展空间建模对异构线索的利用。
+- [REACT3D](https://arxiv.org/abs/2510.11340)：恢复交互式物理 3D 场景中的关节结构，把重建与可行动场景理解连接起来。
+- [MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference](https://arxiv.org/abs/2510.11387)：通过多视角一致 material maps 和 physically based environment modeling，实现反射 Gaussian-splatting novel-view synthesis。
+- [ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training](https://arxiv.org/abs/2510.11605)：补充与空间与三维能力相关的模型侧方法。
+- [NV3D: Leveraging Spatial Shape Through Normal Vector-based 3D Object Detection](https://arxiv.org/abs/2510.11632)：为空间与三维理解补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [PhySIC: Physically Plausible 3D Human-Scene Interaction and Contact from a Single Image](https://arxiv.org/abs/2510.11649)：从单张图像重建尺度一致的人体、场景与接触图，提升物理合理的三维人-场交互建模。
+- [Prompt-Guided Spatial Understanding with RGB-D Transformers for Fine-Grained Object Relation Reasoning](https://arxiv.org/abs/2510.11996)：通过 RGB-D Transformers for Fine-Grained Object Relation Reasoning 改进 Prompt-Guided Spatial Understanding，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [AngularFuse: A Closer Look at Angle-based Perception for Spatial-Sensitive Multi-Modality Image Fusion](https://arxiv.org/abs/2510.12260)：为空间与三维理解补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Scene Coordinate Reconstruction Priors](https://arxiv.org/abs/2510.12387)：从概率视角重释 scene-coordinate regression，并注入包括 point-cloud diffusion prior 在内的 reconstruction priors，避免退化场景几何。
+- [Uncertainty-Aware Dynamic 3DGS](https://arxiv.org/abs/2510.12768)：在单目 4D reconstruction 的 dynamic Gaussian splatting 中建模不确定性，提升时序 3D 重建可靠性。
+- [Kinematic Kitbashing](https://arxiv.org/abs/2510.13048)： 组合 3D 资产的 kinematic structures，为可控 articulated-object 生成补充程序化路线。
+- [CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation](https://arxiv.org/abs/2510.13245)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [Spatial Preference Rewarding for MLLMs Spatial Understanding](https://arxiv.org/abs/2510.14374)：为 MLLMs Spatial Understanding 构建 Spatial Preference Rewarding，明确对应空间模型的任务目标。
+- [SaLon3R: Structure-aware Long-term Generalizable 3D Reconstruction from Unposed Images](https://arxiv.org/abs/2510.15072)：用紧凑锚点基元和显著性感知 Gaussian 量化，从无位姿图像流进行长期在线泛化 3D 重建。
+- [Neuro-Symbolic Spatial Reasoning in Segmentation](https://arxiv.org/abs/2510.15841)：为空间与三维理解补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [Skyfall-GS](https://arxiv.org/abs/2510.15869)： 从卫星影像合成沉浸式三维城市场景，为基于俯视观测的城市级空间生成提供模型路线。
+- [MNO: Multiscale Neural Operator for 3D Computational Fluid Dynamics](https://arxiv.org/abs/2510.16071)：用 global attention、local graph attention 和 micro point-wise attention modules，在非结构化点云上求解 3D CFD。
+- [Where, Not What: Compelling Video LLMs to Learn Geometric Causality for 3D-Grounding](https://arxiv.org/abs/2510.17034)：促使 Video LLMs 学习用于 3D grounding 的 geometric causality，把空间理解从物体类别推进到位置与因果关系。
+- [M2H: Multi-Task Learning with Efficient Window-Based Cross-Task Attention for Monocular Spatial Perception](https://arxiv.org/abs/2510.17363)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [PAGE-4D: Disentangled Pose and Geometry Estimation for 4D Perception](https://arxiv.org/abs/2510.17568)：PAGE-4D 为 4D Perception 构建 Disentangled Pose and Geometry Estimation，明确对应空间模型的任务目标。
+- [Re-Activating Frozen Primitives for 3D Gaussian Splatting](https://arxiv.org/abs/2510.19653)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [OmniMotion-X: Versatile Multimodal Whole-Body Motion Generation](https://arxiv.org/abs/2510.19789)：面向空间与三维能力，补充用于multimodal whole-body motion generation的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [AnyPcc](https://arxiv.org/abs/2510.20331)：用单一 universal model 压缩任意 point cloud，补充空间表示压缩模型。
+- [Sketch2BIM: A Multi-Agent Human-AI Collaborative Pipeline to Convert Hand-Drawn Floor Plans to 3D BIM](https://arxiv.org/abs/2510.20838)：分类需复核：human-in-the-loop multi-agent pipeline 将手绘平面图转成 JSON layout 和 BIM scripts，更接近 Agent Harness 而非纯模型。
+- [Topology Sculptor, Shape Refiner: Discrete Diffusion Model for High-Fidelity 3D Meshes Generation](https://arxiv.org/abs/2510.21264)： 用 discrete diffusion 生成高保真 3D mesh，补充 topology-aware mesh synthesis 路线。
+- [WorldGrow: Generating Infinite 3D World](https://arxiv.org/abs/2510.21682)： 生成开放式 3D 世界，补充空间世界生成模型而非单物体重建。
+- [Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction](https://arxiv.org/abs/2510.22335)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [GeoDiffusion: A Training-Free Framework for Accurate 3D Geometric Conditioning in Image Generation](https://arxiv.org/abs/2510.22337)：用类别特定 3D object prior、keypoint correlations 和 viewpoint-consistent rendering，在无需训练下为图像生成提供准确 3D 几何条件。
+- [ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation](https://arxiv.org/abs/2510.23306)：把重建先验注入 diffusion-based 3D generation，增强跨视角特征连接并约束迭代去噪，使补全的不可见几何和纹理与输入多视角观测保持一致。
+- [TIRE](https://arxiv.org/abs/2510.23605)：通过 tracking、inpainting 与 resplatting 做 subject-driven 3D/4D generation，保持主体身份纹理。
+- [Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations](https://arxiv.org/abs/2510.23607)：结合 3D 自蒸馏与 2D-3D 联合嵌入，使自监督学习产生可用于 3D 场景感知和开放世界空间理解的空间表征。
+- [TurboPortrait3D: Single-step diffusion-based fast portrait novel-view synthesis](https://arxiv.org/abs/2510.23929)：用针对多视角一致性训练的单步扩散模型细化前馈 portrait 3D avatar 渲染，实现低延迟人像新视角合成。
+- [FreeArt3D: Training-Free Articulated Object Generation using 3D Diffusion](https://arxiv.org/abs/2510.25765)： 提供 training-free 的 3D diffusion articulated-object 生成路线，扩展可控空间资产合成。
+- [FullPart](https://arxiv.org/abs/2510.26140)：以完整分辨率生成 3D 对象部件，把部件感知空间资产生成从粗粒度分解推进到更细致的几何生成。
+- [DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting](https://arxiv.org/abs/2510.26921)：补充与空间与三维能力相关的模型侧方法。
+- [Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models](https://arxiv.org/abs/2510.27009)：研究用 causal masking 让 unimodal language models 学习 spatial datasets，为空间数据表示补充一种模型侧训练目标。
+- [HiT 3D Shape Abstraction](https://arxiv.org/abs/2510.27088)：用无监督 hierarchical transformer 学习 3D shape abstraction，为空间模型加入 coarse-to-fine 结构。
+- [HiGS](https://arxiv.org/abs/2510.27148)：通过多步联想式语义空间组合构建层级生成场景，强化结构化空间生成覆盖。
+- [Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](https://arxiv.org/abs/2510.27606)：用自监督强化学习提升空间理解能力。
+- [Sketch-to-Layout: Sketch-Guided Multimodal Layout Generation](https://arxiv.org/abs/2510.27632)：补充与空间与三维能力相关的模型侧方法。
+- [Object-Aware 4D Human Motion Generation](https://arxiv.org/abs/2511.00248)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [Diff4Splat](https://arxiv.org/abs/2511.00503)：用 latent dynamic reconstruction models 生成可控 4D 场景，把空间生成扩展到随时间变化的场景。
+- [Kinematify](https://arxiv.org/abs/2511.01294)：合成开放词汇的高自由度关节对象，把 3D 生成推进到可运动的结构化资产。
+- [Object-Centric 3D Gaussian Splatting for Strawberry Plant Reconstruction and Phenotyping](https://arxiv.org/abs/2511.02207)：将 object-centric 3DGS 用于多视角草莓植株重建，使无损表型分析可以测量形态和冠层性状。
+- [FastGS](https://arxiv.org/abs/2511.04283)：把 3D Gaussian Splatting 训练加速到约 100 秒，提升空间场景表示的实用性。
+- [Efficient representation of 3D spatial data for defense-related applications](https://arxiv.org/abs/2511.05109)：分类需复核：比较 point clouds、voxels、meshes、NeRFs 和 3DGS 在 defense geospatial data 中的表示，更接近 survey 或系统背景。
+- [Splatography: Sparse multi-view dynamic Gaussian Splatting for filmmaking challenges](https://arxiv.org/abs/2511.05152)：补充与空间与三维能力相关的模型侧方法。
+- [How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?](https://arxiv.org/abs/2511.05449)：提出 gitmerge3D，全局图引导 token merging 可删除 90-95% 点云 Transformer token，同时保持 3D 分割和重建性能。
+- [ALIGN: A Vision-Language Framework for High-Accuracy Accident Location Inference through Geo-Spatial Neural Reasoning](https://arxiv.org/abs/2511.06316)：面向空间推理提出模型、训练、推理或数据生成方法，按本轮更新后的标准归入 Model。
+- [Robust and High-Fidelity 3D Gaussian Splatting: Fusing Pose Priors and Geometry Constraints for Texture-Deficient Outdoor Scenes](https://arxiv.org/abs/2511.06765)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [ConeGS](https://arxiv.org/abs/2511.06810)：通过 pixel cone 引导 densification，用更少 primitives 改进 Gaussian Splatting 重建。
+- [RaLD: Generating High-Resolution 3D Radar Point Clouds with Latent Diffusion](https://arxiv.org/abs/2511.07067)：补充与空间与三维能力相关的模型侧方法。
+- [Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction](https://arxiv.org/abs/2511.07122)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](https://arxiv.org/abs/2511.07222)：用多视图图像统一 3D 生成与理解，说明生成过程如何促进空间表征学习。
+- [DIMO](https://arxiv.org/abs/2511.07409)：用视频模型先验与紧凑轨迹 latent，从单张图为任意对象生成多样 3D motions。
+- [SasMamba: A Lightweight Structure-Aware Stride State Space Model for 3D Human Pose Estimation](https://arxiv.org/abs/2511.08872)：SasMamba 为 3D Human Pose Estimation 构建 A Lightweight Structure-Aware Stride State Space Model，明确对应空间模型的任务目标。
+- [LARM](https://arxiv.org/abs/2511.11563)：提出大型 articulated-object reconstruction model，补充面向可动 3D 资产的基础模型路线。
+- [SRSplat: Feed-Forward Super-Resolution Gaussian Splatting from Sparse Multi-View Images](https://arxiv.org/abs/2511.12040)：结合 MLLM/diffusion reference galleries 与内部纹理线索，从稀疏低分辨率视图重建高分辨率 3D 场景。
+- [LSS3D: Learnable Spatial Shifting for Consistent and High-Quality 3D Generation from Single-Image](https://arxiv.org/abs/2511.12202)：LSS3D 为 Consistent and High-Quality 3D Generation from Single-Image 构建 Learnable Spatial Shifting，明确对应空间模型的任务目标。
+- [TR-Gaussians: High-fidelity Real-time Rendering of Planar Transmission and Reflection with 3D Gaussian Splatting](https://arxiv.org/abs/2511.13009)：补充与空间与三维能力相关的模型侧方法。
+- [Cognitive Maps in Language Models](https://arxiv.org/abs/2511.13371)：从机制层面分析语言模型中的空间规划表示。核心思想：检验 LM 是否形成类似认知地图的结构，以支持空间关系上的规划。
+- [Part-X-MLLM](https://arxiv.org/abs/2511.13647)：构建部件感知 3D 多模态大语言模型，把 MLLM 推理与结构化 3D 资产理解连接起来。
+- [PhysX-Anything](https://arxiv.org/abs/2511.13648)：从单张图像生成可用于仿真的物理 3D 资产。核心思想：把单视角视觉证据转成带物理属性的结构化资产，服务于空间与具身仿真。
+- [Gaussian See, Gaussian Do](https://arxiv.org/abs/2511.14848)：把多视角视频中的语义 3D 运动迁移到 Gaussian Splatting 重建中，增强动态空间资产编辑。
+- [Gaussian Blending: Rethinking Alpha Blending in 3D Gaussian Splatting](https://arxiv.org/abs/2511.15102)：用空间变化的 Gaussian Blending 替代 3DGS 标量 alpha blending，减少缩放时的模糊和阶梯伪影且不增加显存。
+- [A Decade of Systems for Human Data Interaction](https://arxiv.org/abs/2511.15585)：补充与空间与三维能力相关的模型侧方法。
+- [FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](https://arxiv.org/abs/2511.15618)： 用 structured speculation 加速并改进 autoregressive mesh synthesis。
+- [Extending Test-Time Scaling: A 3D Perspective with Context, Batch, and Turn](https://arxiv.org/abs/2511.15738)：从上下文、批处理与交互轮次维度把测试时扩展推进到 3D 任务。
+- [Temporally Coherent VGGT Semantic SLAM](https://arxiv.org/abs/2511.16282)：用 VGGT 构建 memory-efficient temporally coherent 3D maps，用于 semantic SLAM。
+- [LLaVA3: Representing 3D Scenes like a Cubist Painter to Boost 3D Scene Understanding of VLMs](https://arxiv.org/abs/2511.16454)：无需微调 VLM，而是从多视角 3D 重建获得物体全向视觉表示，并以 cubist-style 打包来增强 3D VQA 与 grounding。
+- [PartUV: Part-Based UV Unwrapping of 3D Meshes](https://arxiv.org/abs/2511.16659)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [Mesh RAG: Retrieval Augmentation for Autoregressive Mesh Generation](https://arxiv.org/abs/2511.16807)： 把 retrieval augmentation 用于 autoregressive mesh generation，连接 RAG 式条件化与结构化 3D 资产合成。
+- [Radar2Shape: 3D Shape Reconstruction from High-Frequency Radar using Multiresolution Signed Distance Functions](https://arxiv.org/abs/2511.17484)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion](https://arxiv.org/abs/2511.17932)：用预训练视频扩散先验从少量视角合成 pseudo views，并通过 uncertainty-aware 的重建与生成反馈循环增强 3D Gaussian Splatting 的稀疏输入监督。
+- [RAISECity](https://arxiv.org/abs/2511.18005)： 利用多模态智能体框架生成与现实对齐的城市级三维世界。
+- [MimiCAT](https://arxiv.org/abs/2511.18370)：用 correspondence-aware cascade transformer 做跨结构角色的 category-free 3D pose transfer。
+- [NeAR](https://arxiv.org/abs/2511.18600)：把神经资产与渲染耦合到同一 stack，为可编辑 3D 资产和场景生成补充模型路线。
+- [RigAnyFace](https://arxiv.org/abs/2511.18601)：用无标注数据扩展 neural facial auto-rigging，支持多拓扑和断连 facial meshes。
+- [Any4D: Open-Prompt 4D Generation from Natural Language and Images](https://arxiv.org/abs/2511.18746)：提出面向三维、空间、视觉定位或重建能力的模型侧方法、架构、训练配方或数据策略。
+- [DetAny4D](https://arxiv.org/abs/2511.18814)：面向流式 RGB 视频构建开放集 4D 检测框架，并使用几何感知时空解码器，将 3D 检测扩展到时间稳定的动态场景理解。
+- [NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting](https://arxiv.org/abs/2511.19202)：用共享 MLP 学习 viewpoint-dependent Gaussian visibility，并在 instanced rasterizer 中做 neural occlusion culling 以降低显存和渲染成本。
+- [V2-SAM Cross-View Correspondence](https://arxiv.org/abs/2511.20886)：将 SAM2 与 multi-prompt experts 结合，用于跨视角目标对应。
+- [Detail Enhanced Gaussian Splatting for Large-Scale Volumetric Capture](https://arxiv.org/abs/2511.21697)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [MoE3D: Mixture of Experts meets Multi-Modal 3D Understanding](https://arxiv.org/abs/2511.22103)：采用 mixture-of-experts 三维理解设计，把多模态场景信号路由到专门专家，用于物体、关系与空间推理。
+- [Controllable 3D Object Generation with Single Image Prompt](https://arxiv.org/abs/2511.22194)：以单张参考图条件化 3D 物体生成，并开放形状和外观控制，使图像提示转化为可编辑三维资产。
+- [IE-SRGS: An Internal-External Knowledge Fusion Framework for High-Fidelity 3D Gaussian Splatting Super-Resolution](https://arxiv.org/abs/2511.22233)：融合场景内部统计与外部先验来超分 3D Gaussian Splatting 场景，强化高频几何和外观细节。
+- [HMR3D: Hierarchical Multimodal Representation for 3D Scene Understanding with Large Vision-Language Model](https://arxiv.org/abs/2511.22961)：构建层次化三维、图像和语言表示，让 LVLM 同时处理物体级与场景级空间结构。
+- [Action-guided generation of 3D functionality segmentation data](https://arxiv.org/abs/2511.23230)：提出 SynthFun3D，从动作描述检索带部件标注的 3D 资产并布置合理场景，合成功能分割掩码。
+- [MAC-Ego3D: Multi-Agent Gaussian Consensus for Real-Time Collaborative Ego-Motion and Photorealistic 3D Reconstruction](https://arxiv.org/abs/2412.09723)：MAC-Ego3D 为 Real-Time Collaborative Ego-Motion and Photorealistic 3D Reconstruction 构建 Multi-Agent Gaussian Consensus，明确对应空间模型的任务目标。
+- [DenseScan: Advancing 3D Scene Understanding with 2D Dense Annotation](https://arxiv.org/abs/2512.00226)：利用多视角 2D 图像和 MLLM 自动生成多层级密集场景描述，把 2D 标注流水线转化为 3D 理解的语义监督。
+- [Binary-Gaussian: Compact and Progressive Representation for 3D Gaussian Segmentation](https://arxiv.org/abs/2512.00944)：用粗到细二进制编码表示每个 Gaussian 的语义类别，在降低显存开销的同时支持多粒度 3DGS 分割。
+- [EGG-Fusion: Efficient 3D Reconstruction with Geometry-aware Gaussian Surfel on the Fly](https://arxiv.org/abs/2512.01296)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [SPARK](https://arxiv.org/abs/2512.01629)：借助 VLM 知识进行可仿真的部件级关节重建，把 3D 感知与可行动空间资产连接起来。
+- [Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](https://arxiv.org/abs/2512.02487)：用 3D Spatial Language Instruction Mask 替换因果解码掩码，使无序三维物体和指令 token 能按任务相关空间关系互相注意。
+- [LATTICE](https://arxiv.org/abs/2512.03052)：扩展高保真 3D 生成能力，补充较通用的空间资产生成模型路线，而不只是单对象重建技巧。
+- [Flux4D: Flow-based Unsupervised 4D Reconstruction](https://arxiv.org/abs/2512.03210)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [ShelfGaussian: Shelf-Supervised Open-Vocabulary Gaussian-based 3D Scene Understanding](https://arxiv.org/abs/2512.03370)：以现成视觉基础模型监督多模态 Gaussian Transformer，在保留 Gaussian 渲染能力的同时注入开放词表三维语义。
+- [GAOT](https://arxiv.org/abs/2512.03566)：用文本引导 diffusion model 生成 articulated objects，补充语言条件可动对象合成。
+- [GaussianBlender: Instant Stylization of 3D Gaussians with Disentangled Latent Spaces](https://arxiv.org/abs/2512.03683)：学习解耦潜空间进行前馈式文本驱动 3D Gaussian 风格化，避免逐资产优化并提升多视角一致性。
+- [Outlier View Rejection in Geometry Transformers](https://arxiv.org/abs/2512.04012)：研究视觉几何 grounding Transformer 中涌现的离群视角拒绝能力。
+- [Radiance Meshes](https://arxiv.org/abs/2512.04076)：提出用于 volumetric reconstruction 的 radiance meshes。
+- [SyncTrack4D: Cross-Video Motion Alignment and Video Synchronization for Multi-Video 4D Gaussian Splatting](https://arxiv.org/abs/2512.04315)：在 4D Gaussian 重建前对未同步视频做跨视频运动对齐，用 tracking 线索稳定动态场景随时间变化的几何。
+- [Bridging Simulation and Reality: Cross-Domain Transfer with Semantic 2D Gaussian Splatting](https://arxiv.org/abs/2512.04731)：把多视角 2D 语义场经 feature-level Gaussian splatting 投影到统一 3D 空间，并过滤背景，为 sim-to-real 机器人策略提供域不变空间输入。
+- [SpaceControl](https://arxiv.org/abs/2512.05343)：为 3D 生成建模引入测试时空间控制，强化可控空间生成方法覆盖。
+- [Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](https://arxiv.org/abs/2512.06158)：结合多视角视频扩散、foundation point tracker 和 hybrid 4DGS 重建，把 tracker 运动先验注入 3D 模型动画。
+- [DragMesh](https://arxiv.org/abs/2512.06424)：通过拖拽 mesh 控制实现交互式 3D 生成，为空间资产合成补充直接可控路线。
+- [Generalized Geometry Encoding Volume for Real-time Stereo Matching](https://arxiv.org/abs/2512.06793)：构建带深度感知结构先验和动态代价聚合的实时 stereo matching 网络，在低延迟下提升跨域泛化。
+- [sim2art](https://arxiv.org/abs/2512.07698)： 仅用合成训练数据从单个视频建模 articulated objects，扩展面向交互资产的空间重建能力。
+- [Lang3D-XL](https://arxiv.org/abs/2512.07807)：把 language embeddings 注入 3D Gaussians，用于 large-scale scene representation。
+- [CVP](https://arxiv.org/abs/2512.08135)：提出受中央-周边视觉启发的空间推理多模态模型，为视觉空间证据分配补充架构路线。
+- [Photo3D](https://arxiv.org/abs/2512.08535): 通过结构对齐的细节增强提升写实 3D 生成，为通用图像到 3D 生成补充方法。
+- [D4RT](https://arxiv.org/abs/2512.08924)：用统一 transformer 与查询式解码高效重建视频中的动态 3D 场景。
+- [3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](https://arxiv.org/abs/2512.08987)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [View-on-Graph: Zero-shot 3D Visual Grounding via Vision-Language Reasoning on Scene Graphs](https://arxiv.org/abs/2512.09215)：通过视觉语言模型在 scene graph 上推理实现 zero-shot 3D grounding，使物体定位依赖显式关系结构。
+- [UniPart](https://arxiv.org/abs/2512.09435)：统一部件级 3D 生成与几何分割潜变量，强化结构化 3D 资产生成。
+- [Long-LRM++: Preserving Fine Details in Feed-Forward Wide-Coverage Reconstruction](https://arxiv.org/abs/2512.10267)：扩展前馈式 large reconstruction model 处理 wide-coverage 输入，同时保留快速稀疏视角重建中常丢失的细粒度几何。
+- [Breaking the Vicious Cycle: Coherent 3D Gaussian Splatting from Sparse and Motion-Blurred Views](https://arxiv.org/abs/2512.10369)：改进观测稀疏且存在运动模糊时的 3D Gaussian Splatting 重建。
+- [E-RayZer](https://arxiv.org/abs/2512.10950)：把 self-supervised 3D reconstruction 作为 spatial visual pre-training。
+- [SceneMaker](https://arxiv.org/abs/2512.10957)：通过解耦去遮挡与位姿估计生成开放集 3D 场景，扩展单图空间场景生成。
+- [Video-Codec 3DGS Compression](https://arxiv.org/abs/2512.11186)：用轻量视频编解码技术压缩 3D Gaussian Splatting，补充实用空间表示效率路线。
+- [RoomPilot](https://arxiv.org/abs/2512.11234)：通过多模态语义解析合成可控交互式室内环境。
+- [Prior-Enhanced Gaussian Splatting for Dynamic Scene Reconstruction from Casual Video](https://arxiv.org/abs/2512.11356)：用视频分割、epipolar-error maps、骨架采样、重识别轨迹、虚拟视角深度损失和 scaffold 投影约束强化动态 3DGS。
+- [Animus3D: Text-driven 3D Animation via Motion Score Distillation](https://arxiv.org/abs/2512.12534)：通过 motion score distillation 将文本条件视频运动先验迁移到 3D 动画，使静态资产获得时间一致的动作。
+- [CoRe3D: Collaborative Reasoning as a Foundation for 3D Intelligence](https://arxiv.org/abs/2512.12768)： 把 collaborative reasoning 作为 3D intelligence 基础，连接空间理解与多视角或多主体推理。
+- [I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](https://arxiv.org/abs/2512.13683)：把 3D instance model 视为可泛化空间学习器，通过物体中心表示在三维任务间迁移形状与场景知识。
+- [An intercomparison of generative machine learning methods for downscaling precipitation at fine spatial scales](https://arxiv.org/abs/2512.13987)：比较用于细粒度降水场降尺度的生成模型，强调空间分辨率和不确定性对地球物理预测的影响。
+- [Repurposing 2D Diffusion Models for 3D Shape Completion](https://arxiv.org/abs/2512.13991)：将 2D 扩散先验适配到 3D shape completion，用图像生成知识补全缺失几何。
+- [AnimaMimic](https://arxiv.org/abs/2512.14133)：利用视频 diffusion priors 动画化静态 3D meshes，连接 2D motion imagination 与显式 3D animation。
+- [4D-RaDiff: Latent Diffusion for 4D Radar Point Cloud Generation](https://arxiv.org/abs/2512.14235)：训练用于 4D radar point cloud 序列的 latent diffusion model，合成动态雷达几何以支持数据增强和感知研究。
+- [SS4D](https://arxiv.org/abs/2512.14284)：在 structured spacetime latents 上训练原生 4D 生成器，用于从单目视频合成动态 3D 对象。
+- [Broadening View Synthesis of Dynamic Scenes from Constrained Monocular Videos](https://arxiv.org/abs/2512.14406)：提出 ExpanDyNeRF，结合 Gaussian splatting 先验和 SynDM 伪侧视监督，使动态单目场景能在更大视角变化下合成新视图。
+- [ART](https://arxiv.org/abs/2512.14671)：提出 articulated reconstruction transformer，把空间重建扩展到部件会运动的对象。
+- [MVGSR: Multi-View Consistent 3D Gaussian Super-Resolution via Epipolar Guidance](https://arxiv.org/abs/2512.15048)：用 epipolar guidance 超分 3D Gaussian 场景，并在渲染视图之间保持多视角一致性。
+- [Bilateral Spatial Reasoning about Street Networks: Graph-based RAG with Qualitative Spatial Representations](https://arxiv.org/abs/2512.15388)：结合 graph-based retrieval 和 qualitative spatial representations，让语言模型能推理街道网络中的双边空间关系。
+- [Scaling Spatial Reasoning in MLLMs through Programmatic Data Synthesis](https://arxiv.org/abs/2512.16237)：该方法通过程序化数据合成扩展多模态大模型的空间推理能力。
+- [PoseMoE: Mixture-of-Experts Network for Monocular 3D Human Pose Estimation](https://arxiv.org/abs/2512.16494)：把 mixture-of-experts 路由用于单目 3D 人体姿态估计，使不同专家处理不同身体构型和视觉条件。
+- [M-PhyGs](https://arxiv.org/abs/2512.16885)：从视频中推断多材质物体动力学，将空间重建与物理感知的场景和物体建模连接起来。
+- [Voxel-GS](https://arxiv.org/abs/2512.17528)：用量化 scaffold 与 run-length coding 压缩 3D Gaussian Splatting 表示。
+- [Symmetrization of 3D Generative Models](https://arxiv.org/abs/2512.18953)：审计 3D 生成模型中的对称性保持问题，并为点云生成提出数据中心的对称化干预。
+- [VOIC: Visible-Occluded Integrated Guidance for 3D Semantic Scene Completion](https://arxiv.org/abs/2512.18954)：在 3D semantic scene completion 中融合可见区域证据和遮挡空间指导，预测已观测表面后的体素几何与语义标签。
+- [OmniEgoCap](https://arxiv.org/abs/2512.19283)：用 camera-agnostic sequence-level modeling 重建 egocentric human motion。
+- [4D Gaussian Splatting as a Learned Dynamical System](https://arxiv.org/abs/2512.19648)：把 4DGS 重写为连续时间神经动力系统，支持稀疏时间监督学习、时间外推和局部动态注入。
+- [FlashLips: 100-FPS Mask-Free Latent Lip-Sync using Reconstruction Instead of Diffusion or GANs](https://arxiv.org/abs/2512.20033)：用基于重建的 latent lip synchronization 取代扩散或 GAN 采样，面向实时 3D-aware 说话人脸动画。
+- [Dreamcrafter: Immersive Editing of 3D Radiance Fields Through Flexible, Generative Inputs and Outputs](https://arxiv.org/abs/2512.20129)：提供 VR radiance-field 编辑架构，把直接三维操作与 NeRF 或 3DGS 场景上的生成式编辑结合起来。
+- [Enhancing annotations for 5D apple pose estimation through 3D Gaussian Splatting (3DGS)](https://arxiv.org/abs/2512.20148)：利用 3D Gaussian Splatting 重建改进苹果 5D pose 标注，将果实重建几何转化为更强的姿态估计监督。
+- [SegMo: Segment-aligned Text to 3D Human Motion Generation](https://arxiv.org/abs/2512.21237)：把文本片段与生成的 3D 人体动作时间段对齐，使动作合成遵循细粒度时间语言结构。
+- [SemCovert: Secure and Covert Video Transmission via Deep Semantic-Level Hiding](https://arxiv.org/abs/2512.22233)：联合设计语义隐藏与恢复模型用于隐蔽视频传输，处理时间语义表示带来的隐私泄露风险而非三维重建。
+- [Split4D](https://arxiv.org/abs/2512.22745)：在不依赖 video segmentation 的情况下进行 decomposed 4D scene reconstruction。
+- [Hash Grid Feature Pruning](https://arxiv.org/abs/2512.22882)：通过 hash grid feature pruning 提升神经空间表示效率。
+- [Spatial Interpolation of Room Impulse Responses based on Deeper Physics-Informed Neural Networks with Residual Connections](https://arxiv.org/abs/2512.22915)：用带残差连接的更深 PINN 从稀疏测点插值 room impulse response，在声学物理约束下建模空间声传播。
+- [GeoTeacher: Geometry-Guided Semi-Supervised 3D Object Detection](https://arxiv.org/abs/2512.23147)：为半监督 3D 目标检测引入几何引导 teacher 信号，在利用无标注空间数据时用三维结构约束伪标签。
+- [Video and Language Alignment in 2D Systems for 3D Multi-object Scenes with Multi-Information Derivative-Free Control](https://arxiv.org/abs/2512.24826)：用 derivative-free camera control 和 mutual-information 目标将 2D 视觉语言系统适配到 3D 多物体场景，以处理遮挡和特征区分。
+- [A novel framework for multi-step water level predicting by spatial–temporal deep learning models based on integrated physical models](https://doi.org/10.1016/j.jhydrol.2025.133683)：结合集成物理模型与 spatial-temporal deep learning 做多步水位预测。
 - [Scene-LLM](https://doi.org/10.1109/WACV61041.2025.00220)：提出面向空间理解的模型侧方法，核心围绕 Extending Language Model for 3D Visual Reasoning。
+- [DreamReward-X: Boosting High-Quality 3D Generation with Human Preference Alignment](https://doi.org/10.1109/tpami.2025.3609680)： 通过 reward model 将 3D 生成与人类偏好对齐，为空间资产合成补充 preference optimization。
+- [CraftsMan3D: High-fidelity Mesh Generation with 3D Native Diffusion and Interactive Geometry Refiner](https://doi.org/10.1109/cvpr52734.2025.00500)： 用原生 3D 扩散和交互式几何细化器生成高保真网格，补充强 3D 资产生成方法。
+- [4D-Fly: Fast 4D Reconstruction from a Single Monocular Video](https://doi.org/10.1109/cvpr52734.2025.01553)： 从单目视频快速重建 4D 结构，补充高效动态场景重建模型。
+- [Look at the Sky](https://doi.org/10.1109/TVCG.2025.3549187)：为户外 3D Gaussian splatting 加入 sky-aware 建模，改进 in-the-wild 空间重建。
+- [Articulated Object Understanding from a Single Video](https://doi.org/10.1109/ICCVW69036.2025.00674)：从单个视频序列推断 articulated-object structure，支持面向可动对象的空间理解。
+- [LLaFS++](https://doi.org/10.1109/TPAMI.2025.3573609)：用大型语言模型支持少样本图像分割，扩展语言引导的稠密空间感知。
+- [MotionDreamer](https://doi.org/10.1109/3DV66043.2025.00087)：利用语义视频扩散特征做 zero-shot 3D mesh animation，把视频先验与可运动的空间资产连接起来。
+- [Efficient Dynamic Scene Editing](https://doi.org/10.1109/CVPR52734.2025.02501)：在四维 Gaussian 场景中分离静态与动态成分，使动态场景编辑更高效。
+- [FRPGS](https://doi.org/10.1109/TCSVT.2025.3557012)：用可变形三维 Gaussian 实现快速、鲁棒且逼真的单目动态场景重建。
+- [C3DGS](https://doi.org/10.1109/jstars.2025.3529261)：压缩基于多视角无人机影像的大规模场景三维 Gaussian 表面重建模型。
+- [Spatial-Temporal Transformer for Point Cloud Registration](https://doi.org/10.1016/j.displa.2025.103139)：使用时空 Transformer 进行复杂环境数字建模中的点云配准。
+- [Spatial-Temporal Joint Network for Point-Cloud Completion](https://doi.org/10.1016/j.displa.2025.103245)：用 spatial-temporal joint modeling 做点云补全，扩展 3D 空间重建模型覆盖。
+- [Structure-Guided Memory-Efficient 3D Gaussians](https://doi.org/10.1109/TVCG.2025.3637033)：用结构引导提升大规模 3D Gaussian reconstruction 的内存效率。
+- [Dynamic Gaussian Streams](https://doi.org/10.1109/MMSP64401.2025.11324257)：用基于 codebook 的量化压缩 dynamic Gaussian streams 表示的 volumetric video。
+- [Geometric Redundancy Removal for 3D Gaussian Coding](https://doi.org/10.1109/VCIP67698.2025.11396895)：消除 3D Gaussian splat coding 中的几何表示冗余。
+- [AniMo](https://doi.org/10.1109/CVPR52734.2025.00186)：提出 species-aware 的文本驱动动物运动生成模型。
+- [StaticNeRF Freeze-Frame Mapping](https://doi.org/10.1109/LRA.2025.3632068)：在动态场景中用 uncertainty-guided StaticNeRF 进行地图重建。
+- [CGS-SLAM](https://doi.org/10.1109/IROS60139.2025.11246845)：把 compact 3D Gaussian splatting 用于 dense visual SLAM。
+- [LatentHOI](https://doi.org/10.1109/CVPR52734.2025.01623)：用 latent hand diffusion 生成可泛化的 hand-object motion。
+- [Hand-held Object Reconstruction](https://doi.org/10.1109/CVPR52734.2025.01141)：从 RGB video 中重建 hand-held objects，并处理 dynamic interaction。
+- [VGGT-Mapping](https://doi.org/10.1109/IRAC67707.2025.11381128)：基于 Visual Geometry Grounded Transformer representations 构建 robot-navigation mapping system。
+- [MNE-SLAM](https://doi.org/10.1109/CVPR52734.2025.00146)：面向移动机器人做 multi-agent neural SLAM，补充协同空间建图模型。
+- [GSArch](https://doi.org/10.1109/HPCA61900.2025.00037)：通过 architectural support 缓解 3D Gaussian Splatting training 的内存瓶颈。
+- [3DGS-to-PC](https://doi.org/10.1109/ICCVW69036.2025.00395)：把 3D Gaussian Splatting 转换为 dense point clouds，补充空间表示互操作路线。
+- [DGS-SLAM](https://doi.org/10.1109/TCSVT.2025.3645351)：在 dynamic environments 中做 robust visual SLAM with 3D Gaussian Splatting。
+- [Mamba4D](https://doi.org/10.1109/CVPR52734.2025.01642)：用解耦时空 state-space models 高效理解 4D 点云视频。
+- [Mesh-Aligned 3DGS](https://doi.org/10.1109/TCSVT.2025.3544760)：将 Gaussian splats 与网格对齐，用于多分辨率抗锯齿渲染。
+- [MBA-SLAM](https://doi.org/10.1109/TPAMI.2025.3596976)：在辐射场表示的稠密视觉 SLAM 中加入运动模糊感知。
+- [SDD-SLAM](https://doi.org/10.1109/LRA.2025.3561565)：使用语义驱动的动态 SLAM 与 Gaussian Splatting。
+- [InterGS](https://doi.org/10.1109/VCIP67698.2025.11396809)：为 Gaussian splatting 序列加入帧间预测编码，扩展动态 3D 表示压缩。
+- [Scalable Gaussian Splatting Coding](https://doi.org/10.1109/MMSP64401.2025.11324364)：通过可扩展 3DGS 编码支持低延迟沉浸式视觉通信。
+- [MeGS-SLAM](https://doi.org/10.1109/IROS60139.2025.11246063)：结合 graph signal processing 提升 Gaussian Splatting SLAM 的内存效率。
+- [Spatial Coordinate Transformation for 3D Neural Implicit Mapping](https://doi.org/10.1109/LRA.2025.3595031)：通过空间坐标变换改进 3D neural implicit mapping。
+- [RelationLMM: Large Multimodal Model as Open and Versatile Visual Relationship Generalist](https://doi.org/10.1109/TPAMI.2025.3531452)：将大多模态模型构建为开放视觉关系通才，强化视觉场景中的关系理解能力。
+- [Diffusion-CAD: Controllable Diffusion Model for Generating Computer-Aided Design Models](https://doi.org/10.1109/tvcg.2025.3535797)：用可控扩散模型生成计算机辅助设计模型，把空间生成覆盖到结构化 CAD 资产。
+- [NexusGS: Sparse View Synthesis with Epipolar Depth Priors in 3D Gaussian Splatting](https://doi.org/10.1109/cvpr52734.2025.02496)：在 3D Gaussian Splatting 稀疏视角合成中引入极线深度先验，提升有限视角下的空间重建。
+- [TGAvatar: Reconstructing 3D Gaussian Avatars With Transformer-Based Tri-Plane](https://doi.org/10.1109/tcsvt.2025.3543892)：用基于 Transformer 的 tri-plane 重建 3D Gaussian avatar，补充空间人体表示中的 avatar 建模路线。
+- [HyperPoint: Multimodal 3D foundation model in hyperbolic space](https://doi.org/10.1016/j.patcog.2025.112800)：在双曲空间中构建多模态 3D foundation model，扩展点云表示学习与空间理解能力。
+- [Sparsegs: Sparse View Synthesis Using 3D Gaussian Splatting](https://doi.org/10.1109/3dv66043.2025.00100)：用 3D Gaussian Splatting 做 sparse-view synthesis，在观测有限时改进空间场景重建。
+- [SPOK: tokenizing geographic space for enhanced spatial reasoning in GeoAI](https://doi.org/10.1080/13658816.2025.2497810)：面向 GeoAI 空间推理对地理空间进行 token 化，为处理位置与空间关系的模型补充地理表示方法。
+- [Dimensionx: Create Any 3D and 4D Scenes From a Single Image With Decoupled Video Diffusion](https://doi.org/10.1109/iccv51701.2025.01271)：用解耦视频扩散从单张图像生成 3D 与 4D 场景。
+- [POI-LLM: Leveraging POI Enhanced Large Language Models for Spatial-Temporal Modeling](https://doi.org/10.1109/iccbdai66607.2025.11388271)：利用兴趣点增强的大语言模型进行时空建模，将 LLM 应用扩展到地理空间表征任务。
+- [TAPTR3D: Decoupled 3D Point Tracking Boosts 2D and Further Enhances 3D Tracking Accuracy](https://doi.org/10.1109/lsp.2025.3616009)：将 3D 点跟踪与 2D 对应估计解耦，用显式 3D 轨迹反向提升图像平面跟踪和空间跟踪精度。
+- [Pos3R: 6D Pose Estimation for Unseen Objects Made Easy](https://doi.org/10.1109/cvpr52734.2025.01567)：利用 pose priors 估计未见物体 6D 位姿，降低对类别专用 CAD 模型或密集对应的依赖。
+- [Rethinking Correspondence-based Category-Level Object Pose Estimation](https://doi.org/10.1109/cvpr52734.2025.00117)：重新审视 correspondence-based 类别级 6D 位姿估计，聚焦 correspondence 设计如何影响跨实例泛化。
+- [UniBVR: Balancing visual and reasoning abilities in unified 3D scene understanding](https://doi.org/10.1016/j.neucom.2025.132599)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [VGMamba: Attribute-to-Location Clue Reasoning for Quantity-Agnostic 3D Visual Grounding](https://doi.org/10.1109/iccv51701.2025.00503)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [MAMoE: A Multi-Agent Mixture-of-Experts Framework for LLM-Assisted 3D Object Reconstruction and Transmission](https://doi.org/10.1109/tnse.2025.3618771)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [ReTracker: Exploring Image Matching for Robust Online Any Point Tracking](https://doi.org/10.1109/iccv51701.2025.00410)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [DS-Stereo: Deep-Shallow Information Interaction for Stereo Matching](https://doi.org/10.1109/lra.2025.3617730)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐或生成建模覆盖。
+- [TG-TSGNet: A Text-Guided Arbitrary-Resolution Terrain Scene Generation Network](https://doi.org/10.1109/tip.2025.3644231)：从文本引导生成任意分辨率地形场景，将语言条件与空间 terrain layout 和纹理合成连接起来。
+- [Let us Make a Splan: Risk-Aware Trajectory Optimization in a Normalized Gaussian Splat](https://doi.org/10.1109/tro.2025.3584559)：把规划场景表示为 normalized Gaussian splat，并在该连续空间场上进行风险感知轨迹优化。
+- [Hi-Gaussian: Hierarchical Gaussians Under Normalized Spherical Projection for Single-View 3D Reconstruction](https://doi.org/10.1109/iccv51701.2025.02662)：在 normalized spherical projection 下使用层级 Gaussians，从单视图重建带尺度感知细节的 3D 物体。
+- [LeOp-GS: Learned Optimizer With Dynamic Gradient Update for Sparse-View 3DGS](https://doi.org/10.1109/tvcg.2025.3616156)：为 sparse-view 3DGS 学习带动态梯度更新的优化器，以改善少量相机观测下的重建。
+- [Watermarking via Gaussian noise modulation in diffusion models](https://doi.org/10.1016/j.neucom.2025.132188)：偏离空间建模；该工作用 Gaussian noise modulation 给扩散模型加水印，而非提出 3D 表示、几何或场景推理方法。
+- [MS3D: High-Quality 3D Generation via Multi-Scale Representation Modeling](https://doi.org/10.1109/iccv51701.2025.02444)：用多尺度表示建模 3D 生成，使粗结构和细粒度几何能够同时以高质量合成。
+- [Enhanced Geometry and Semantics for Camera-Based 3D Semantic Scene Completion](https://doi.org/10.1109/tip.2025.3635475)：为 Camera-Based 3D Semantic Scene Completion 构建 Enhanced Geometry and Semantics，明确对应空间模型的任务目标。
+- [Multi-view stereo 3D building reconstruction with sparse depth and edge location priors](https://doi.org/10.1016/j.autcon.2025.106365)：通过 sparse depth and edge location priors 改进 Multi-view stereo 3D building reconstruction，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [CSG-Fusion: Consistent Sparse-View Gaussian Splatting via Matching-based Fusion](https://doi.org/10.1109/iccvw69036.2025.00276)：CSG-Fusion 通过 Matching-based Fusion 改进 Consistent Sparse-View Gaussian Splatting，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [GSRecon: Efficient Generalizable Gaussian Splatting for Surface Reconstruction from Sparse Views](https://doi.org/10.1109/iccv51701.2025.02351)：GSRecon 为 Surface Reconstruction from Sparse Views 构建 Efficient Generalizable Gaussian Splatting，明确对应空间模型的任务目标。
+- [Generalizable 3D Gaussian splatting via multi-view stereo and consistency constraints](https://doi.org/10.1016/j.neucom.2025.131696)：通过 multi-view stereo and consistency constraints 改进 Generalizable 3D Gaussian splatting，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Facilitate and Scale Up the Creation of 3D Meshes, 6D Category-Based Datasets and Grasping with Generative Models: GenVegeFruits3D](https://doi.org/10.1109/icip55913.2025.11084401)：Facilitate and Scale Up the Creation of 3D Meshes, 6D Category-Based Datasets and Grasping with Generative Models 提供 3D 或 4D 表示路线，用于重建、生成、定位或场景理解。
+- [Obj3Dify: Occlusion-Invariant 3D Reconstruction of Hand-Held Objects](https://doi.org/10.1109/ijcnn64981.2025.11229385)：Obj3Dify 提供 3D 或 4D 表示路线，用于重建、生成、定位或场景理解。
+- [Dp-M3D: Monocular 3D object detection algorithm with depth perception capability](https://doi.org/10.1016/j.knosys.2025.113539)：Dp-M3D 通过 depth perception capability 改进 Monocular 3D object detection algorithm，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Physically Realizable Adversarial Creating Attack Against Vision-Based BEV Space 3D Object Detection](https://doi.org/10.1109/tip.2025.3526056)：提供 3D 或 4D 建模路线，用于重建、生成、定位或场景理解。
+- [3D-MMFN: Multi-level multimodal fusion network for 3D industrial image anomaly detection](https://doi.org/10.1016/j.aei.2025.103284)：3D-MMFN 为 3D industrial image anomaly detection 构建 Multi-level multimodal fusion network，明确对应空间模型的任务目标。
+- [S2M2: Scalable Stereo Matching Model for Reliable Depth Estimation](https://doi.org/10.1109/iccv51701.2025.02481)：提出面向空间理解与三维的模型侧方法，包括架构、训练、后训练、合成数据、奖励、验证器或世界模型思路。
+- [FedSTDN: A Federated Learning-Enabled Spatial-Temporal Prediction Model for Wireless Traffic Prediction](https://doi.org/10.1109/tmc.2025.3559066)：FedSTDN 为 Wireless Traffic Prediction 构建 A Federated Learning-Enabled Spatial-Temporal Prediction Model，明确对应空间模型的任务目标。
+- [MambaTraffic: Contrastive Traffic Flow Prediction With Spatial–Temporal State Space Models](https://doi.org/10.1109/mits.2025.3525848)：MambaTraffic 通过 Spatial–Temporal State Space Models 改进 Contrastive Traffic Flow Prediction，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Disparity guidance and spatial-angular interaction for single-view-based light field synthesis](https://doi.org/10.1016/j.patcog.2025.112147)：为 single-view-based light field synthesis 构建 Disparity guidance and spatial-angular interaction，明确对应空间模型的任务目标。
+- [V2X-Gaussians: Gaussian Splatting for Multi-Agent Cooperative Dynamic Scene Reconstruction](https://doi.org/10.1109/iv64158.2025.11097436)：V2X-Gaussians 为 Multi-Agent Cooperative Dynamic Scene Reconstruction 构建 Gaussian Splatting，明确对应空间模型的任务目标。
+- [Spatial-adaptive active learning identifies ultra-durable and highly active catalysts for acidic oxygen evolution reaction.](https://doi.org/10.1016/j.scib.2025.12.021)：偏离空间 AI 建模；它把 spatial-adaptive active learning 用于催化剂发现，而不是 3D 场景、几何或空间推理模型。
+- [The Spatio-Temporal Predictability of Mesoscale Eddies via 3D Conv-LSTM with Intensified Memory](https://doi.org/10.1109/oceans58557.2025.11104510)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [STAD: Joint Spatial-Temporal Dimension and Channel Correlation for Time Series Anomaly Detection](https://doi.org/10.1109/icassp49660.2025.10888777)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Graph-based spatial-temporal networks for traffic speed prediction in intelligent transport systems](https://doi.org/10.1016/j.aej.2025.12.055)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [A high-precision underwater galvanometer-based 3D scanning system: Development and validation of a full-time-domain laser spatial framework](https://doi.org/10.1016/j.optlaseng.2025.109467)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Gaussian Splatting: State-of-The-Arts and Future Trends](https://doi.org/10.1109/icnc64010.2025.10993778)：Gaussian Splatting 与空间模型清单相邻，但仍需要父级复核以补充更明确的机制摘要。
+- [EAP-GS: Efficient Augmentation of Pointcloud for 3D Gaussian Splatting in Few-shot Scene Reconstruction](https://doi.org/10.1109/cvpr52734.2025.01538)：EAP-GS 为 3D Gaussian Splatting in Few-shot Scene Reconstruction 构建 Efficient Augmentation of Pointcloud，明确对应空间模型的任务目标。
+- [CC-Diff++: Spatially Controllable Text-to-Image Synthesis for Remote Sensing With Enhanced Contextual Coherence](https://doi.org/10.1109/tgrs.2025.3616376)：CC-Diff++ 通过 Enhanced Contextual Coherence 改进 Spatially Controllable Text-to-Image Synthesis for Remote Sensing，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [ULSR-GS: Urban large-scale surface reconstruction Gaussian Splatting with multi-view geometric consistency](https://doi.org/10.1016/j.isprsjprs.2025.10.008)：ULSR-GS 通过 multi-view geometric consistency 改进 Urban large-scale surface reconstruction Gaussian Splatting，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [NexusSplats: An Efficient Approach for Robust Novel View Synthesis from Unstructured Image Collections](https://doi.org/10.1109/mind67540.2025.11351883)：NexusSplats 为 Robust Novel View Synthesis from Unstructured Image Collections 构建 An Efficient Approach，明确对应空间模型的任务目标。
+- [Glossy-Gaussian: Adaptive Anisotropic Gaussians for View-Dependent Appearances](https://doi.org/10.1109/lsp.2025.3540372)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [3-D Gaussian Splatting for Lunar Surface With Limited View Input](https://doi.org/10.1109/tgrs.2025.3619948)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [User-Driven Customization in 3D Generation: Improving Stable Fast 3D with Inpainting Methods](https://doi.org/10.1109/icict64420.2025.11005246)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [Frequency-Aware Uncertainty Gaussian Splatting for Dynamic Scene Reconstruction](https://doi.org/10.1109/tvcg.2025.3549143)：Frequency-Aware Uncertainty Gaussian Splatting for Dynamic Scene Reconstruction 补充空间与三维能力方向的模型侧方法。
+- [RestorGS: Depth-aware Gaussian Splatting for Efficient 3D Scene Restoration](https://doi.org/10.1109/cvpr52734.2025.01044)：RestorGS: Depth-aware Gaussian Splatting for Efficient 3D Scene Restoration 补充空间与三维能力方向的模型侧方法。
+- [SU-RGS: Relightable 3D Gaussian Splatting from Sparse Views Under Unconstrained Illuminations](https://doi.org/10.1109/iccv51701.2025.02493)：SU-RGS: Relightable 3D Gaussian Splatting from Sparse Views Under Unconstrained Illuminations 补充空间与三维能力方向的模型侧方法。
+- [SplatTouch: Explicit 3D Representation Binding Vision and Touch](https://doi.org/10.1109/cvprw67362.2025.00017)：SplatTouch: Explicit 3D Representation Binding Vision and Touch 补充空间与三维能力方向的模型侧方法。
+- [Dragin3D: Image Editing by Dragging in 3D Space](https://doi.org/10.1109/cvpr52734.2025.02003)：Dragin3D: Image Editing by Dragging in 3D Space 补充空间与三维能力方向的模型侧方法。
+- [V3D: Enhancing text-to-3D synthesis through a view-consistent multi-view diffusion model](https://doi.org/10.1016/j.neucom.2025.132063)：V3D: Enhancing text-to-3D synthesis through a view-consistent multi-view diffusion model 补充空间与三维能力方向的模型侧方法。
+- [Homogeneous multimodal adaptive cross-attention fusion with confidence-aware keypoints evaluation for 6DoF pose estimation](https://doi.org/10.1016/j.inffus.2025.104059)：Homogeneous multimodal adaptive cross-attention fusion with confidence-aware keypoints evaluation for 6DoF pose estim... 补充空间与三维能力方向的模型侧方法。
+- [Li-GS: a fast 3D Gaussian reconstruction method assisted by LiDAR point clouds](https://doi.org/10.1080/20964471.2025.2479428)：面向空间与三维能力，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Fade3D: Fast and Deployable 3D Object Detection for Autonomous Driving](https://doi.org/10.1109/tits.2025.3568418)：面向空间与三维能力，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Imperceptible Backdoor Attacks on Text-Guided 3D Scene Grounding](https://doi.org/10.1109/tmm.2025.3543050)：面向空间与三维能力，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [SpecTRe-GS: Modeling Highly Specular Surfaces with Reflected Nearby Objects by Tracing Rays in 3D Gaussian Splatting](https://doi.org/10.1109/cvpr52734.2025.01504)：面向空间与三维能力，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [BEVFix: Deep feature enhancement for robust 3D object detection](https://doi.org/10.1016/j.neunet.2025.107675)：面向空间与三维能力，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [Semantic-driven parametric 3D geographic scene modeling: Integrating knowledge graphs and large language models](https://doi.org/10.1016/j.envsoft.2025.106399)：面向空间与三维能力，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [2D-Slice and 3D-Cube Mamba Network for Snapshot Spectral Compressive Imaging](https://doi.org/10.1109/tcsvt.2025.3629725)：补充与空间与三维能力相关的模型侧方法。
+- [Consistency-preserving Gaussian splatting for block-based large-scale scene reconstruction](https://doi.org/10.1016/j.cag.2025.104493)：补充与空间与三维能力相关的模型侧方法。
+- [Block-PSPGOF: high-quality mesh reconstruction of large scenes based on progressive self-planarized Gaussian opacity fields](https://doi.org/10.1080/17538947.2025.2542916)：补充与空间与三维能力相关的模型侧方法。
+- [SuraGS: Toward efficient few-shot novel view synthesis via surface-aware Gaussian splatting](https://doi.org/10.1016/j.cag.2025.104349)：补充与空间与三维能力相关的模型侧方法。
+- [Zero-1-to-3DGS: a Single Image to 3D Gaussian by Consistent Multi-view Generation](https://doi.org/10.1109/icme59968.2025.11209455)：补充与空间与三维能力相关的模型侧方法。
+- [MFGaussian: multi-modal data fusion based 3D Gaussian splatting for accurate and robust scene representation](https://doi.org/10.1080/17538947.2025.2478584)：补充与空间与三维能力相关的模型侧方法。
+- [Blended Point Cloud Diffusion for Localized Text-Guided Shape Editing](https://doi.org/10.1109/iccv51701.2025.01777)：补充与空间与三维能力相关的模型侧方法。
+- [Exploring Scaling Laws in Large Learning Models for Inverse Scattering With Spatial–Temporal Diffusion](https://doi.org/10.1109/tap.2025.3569099)：补充与空间与三维能力相关的模型侧方法。
+- [VolumeDiffusion: Feed-forward text-to-3D generation with efficient volumetric encoder](https://doi.org/10.1016/j.gmod.2025.101274)：补充与空间与三维能力相关的模型侧方法。
+- [MMFEIR: Multi-attention Mutual Feature Enhance and Instance Reconstruction for category-level 6D object pose estimation](https://doi.org/10.1016/j.imavis.2025.105657)：补充与空间与三维能力相关的模型侧方法。
+- [A Progressive Multilevel Mixing-based knowledge distillation framework for enhancing three-dimensional object detection on compressed point clouds](https://doi.org/10.1016/j.engappai.2025.113103)：补充与空间与三维能力相关的模型侧方法。
+- [2D Gaussian Splatting for Outdoor Scene Decomposition and Relighting](https://doi.org/10.24963/ijcai.2025/111)：补充与空间与三维能力相关的模型侧方法。
+- [MRMT-PR: A Multi-Scale Reverse-View Mamba-Transformer for LiDAR Place Recognition](https://doi.org/10.1109/iros60139.2025.11247758)：补充与空间与三维能力相关的模型侧方法。
+- [LLM-powered Gaussian Splatting in VR interactions](https://doi.org/10.1109/vrw66409.2025.00472)：补充与空间与三维能力相关的模型侧方法。
+- [EDyGS: Event Enhanced Dynamic 3D Radiance Fields from Blurry Monocular Video](https://doi.org/10.24963/ijcai.2025/188)：补充与空间与三维能力相关的模型侧方法。
+- [Within 3DMM Space: Exploring Inherent 3D Artifact for Video Forgery Detection](https://doi.org/10.1109/tifs.2025.3592557)：补充与空间与三维能力相关的模型侧方法。
+- [TAG-Splat: Two-Stage Anisotropic Gaussian Splatting for CL Reconstruction](https://doi.org/10.1109/tci.2025.3626239)：补充与空间与三维能力相关的模型侧方法。
+- [RecolorGaussian: Palette-based 3D Scene Recoloring with Gaussian Splatting](https://doi.org/10.1109/ijcnn64981.2025.11229054)：补充与空间与三维能力相关的模型侧方法。
+- [Splatter Joint: 3D Gaussian Splatting for Articulated Objects](https://doi.org/10.1109/iros60139.2025.11247219)：补充与空间与三维能力相关的模型侧方法。
+- [Multi-Level Features Fusion for Zero-Shot Object Pose Estimation](https://doi.org/10.1109/icit63637.2025.10965269)：补充与空间与三维能力相关的模型侧方法。
+- [Camera-Lidar Consistent Neural Radiance Fields](https://doi.org/10.1109/icra55743.2025.11128072)：补充与空间与三维能力相关的模型侧方法。
+- [Ray-decomposed and gradient-constrained NeRF for few-shot view synthesis under low-light conditions](https://doi.org/10.1016/j.knosys.2025.114568)：补充与空间与三维能力相关的模型侧方法。
+- [VPA: Multi-Modal Virtual Point Augmentation for 3D Object Detection](https://doi.org/10.1109/tcsvt.2025.3578474)：补充与空间与三维能力相关的模型侧方法。
+- [3D mesh colorization from a single image via geometry prior modulation](https://doi.org/10.1016/j.knosys.2025.114578)：补充与空间与三维能力相关的模型侧方法。
+- [TG-ADet: Terrain-Guided Network for 3-D Object Detection in ALS Point Clouds](https://doi.org/10.1109/tgrs.2025.3589277)：补充与空间与三维能力相关的模型侧方法。
+- [Research on 6D pose estimation of category-level objects based on keypoint enhancement](https://doi.org/10.1360/sst-2025-0356)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [3D Gaussian rasterization for direct rendering of view‐multiplexed images on multiview displays](https://doi.org/10.4218/etrij.2025-0246)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [3DGA: 3D avatar animation from monocular video via deformable gaussian splatting](https://doi.org/10.1016/j.patcog.2025.113031)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [An Intent-Based Networking Framework for Secure and Privacy-Compliant Machine Unlearning Using Meta-Learning and Redactable Blockchain](https://doi.org/10.1109/jiot.2025.3638966)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Multimodal Instruction-Guided Image Editing Methods](https://doi.org/10.1109/cvidl65390.2025.11085723)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Large Language Model (LLM)-Driven Document Clustering: Improving Real-Time Security Intelligence Extraction and Threat Analysis](https://doi.org/10.1109/isi65680.2025.11201090)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [L-GGSC: Learnable Graph-Based Gaussian Splatting Compression](https://doi.org/10.1109/iccvw69036.2025.00321)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [High-Fidelity Surface Reconstruction of High-Voltage Cable Joints via Adaptive Ball-Pivoting Algorithm](https://doi.org/10.1109/cac67268.2025.11486702)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Point-Cloud Transmission Oriented 3D Semantic Communication for Accurate Scene Generation-Enabled Digital Twin](https://doi.org/10.1109/infocomwkshps65812.2025.11152937)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Formalization of text prompts to artificial intelligence systems](https://doi.org/10.15587/1729-4061.2025.335473)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [RADIOPose: Zero-shot 6D Pose Estimator Based on Visual Foundation Model](https://doi.org/10.1109/icicml67980.2025.11333405)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Artspeak: An Interactive AR Application for Lifelike Speaking with Art Portraits](https://doi.org/10.1109/ismar67309.2025.00091)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Multimodal Dietary Knowledge Graph-Driven Visual Language Model for Food Question Answering](https://doi.org/10.1109/iscipt67144.2025.11265648)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Leveraging AI to advance psychological research for climate policy](https://doi.org/10.1016/j.cobeha.2025.101547)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Visibility-GS: Visibility-Wise Densification of 3D Gaussian Splatting](https://doi.org/10.1109/icme59968.2025.11209247)：《Visibility-GS: Visibility-Wise Densification of 3D Gaussian Splatting》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [DynamicGaussian: Spatio-temporally Consistent 4D Gaussian Splatting for High-Fidelity Monocular Videos Reconstruction](https://doi.org/10.1109/icme59968.2025.11210124)：《DynamicGaussian: Spatio-temporally Consistent 4D Gaussian Splatting for High-Fidelity Monocular Videos Reconstruction》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [3DGCoding: Novel Framework for 3D Gaussian Video Incremental Training and Coding](https://doi.org/10.1109/icme59968.2025.11209044)：《3DGCoding: Novel Framework for 3D Gaussian Video Incremental Training and Coding》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [OGS-Mapping: Object-Level 3D Gaussian Splatting Mapping](https://doi.org/10.1109/icme59968.2025.11209051)：《OGS-Mapping: Object-Level 3D Gaussian Splatting Mapping》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [A Novel Framework for Realistic 3D Scene Regeneration with Graph of Thoughts](https://doi.org/10.1109/icme59968.2025.11209258)：《A Novel Framework for Realistic 3D Scene Regeneration with Graph of Thoughts》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Sparse-view 3D Open-vocabulary Gaussian Splatting via Collaborative Contrastive Learning](https://doi.org/10.1109/icme59968.2025.11210111)：《Sparse-view 3D Open-vocabulary Gaussian Splatting via Collaborative Contrastive Learning》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [RailVoxelDet: A Lightweight 3-D Object Detection Method for Railway Transportation Driven by Onboard LiDAR Data](https://doi.org/10.1109/jiot.2025.3582636)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [ArchiDiff: Interactive design of 3D architectural forms generated from a single image](https://doi.org/10.1016/j.compind.2025.104275)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [MPGS: Multi-Plane Gaussian Splatting for Compact Scenes Rendering](https://doi.org/10.1109/tvcg.2025.3549551)：提出与该能力相关的模型、训练、对齐、奖励、推理或生成方法，补充空间与三维方向的模型覆盖。
+- [Re-adsorption of leached Cr species during the surface reconstruction of NiFeCr layered double hydroxides enhances the oxygen evolution reaction](https://doi.org/10.1016/j.jechem.2025.03.030)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Pixel-level concrete crack quantification through super resolution reconstruction and multi-modality fusion](https://doi.org/10.1016/j.aei.2025.103807)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [A novel deep transfer learning method based on explainable feature extraction and domain reconstruction](https://doi.org/10.1016/j.neunet.2025.107401)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Percept, Memory, and Imagine: World Feature Simulating for Open-Domain Unknown Object Detection](https://doi.org/10.1109/cvpr52734.2025.00441)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [MAD: Memory-Augmented Detection of 3D Objects](https://doi.org/10.1109/cvpr52734.2025.00143)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Multiview Spatial–Temporal Interaction Attention- Based Multivariate Time Series Anomaly Detection for Distributed Industrial Control Networks](https://doi.org/10.1109/ton.2025.3614179)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Zero-Shot Based Spatial AI Algorithm for Up-to-Date 3D Vision Map Generations in Highly Complex Indoor Environments](https://doi.org/10.32604/cmc.2025.063985)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [COIN-GNN: Inductive Spatial-Temporal Prediction for Continuous Distribution Shifts via Graph Neural Networks](https://doi.org/10.1109/tkde.2025.3606629)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [GFMLLM: Enhance multi-modal large language model for global and fine-grained visual spatial perception](https://doi.org/10.1016/j.eswa.2025.130239)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [GStitch: Spatial-temporal fusion of 3D Gaussian splattings for scalable 3D reconstruction](https://doi.org/10.1016/j.patcog.2025.112826)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Spatial localization of forging surface defects based on complete and partial point cloud registration](https://doi.org/10.1016/j.aei.2025.104221)：证据有限候选：Crossref 与 Semantic Scholar 暂无摘要，但出版元数据和参考文献指向完整/局部点云配准流程，用于从扫描数据定位锻造表面缺陷；是否能作为可复用模型方法仍需全文复核。
+- [COT-Distillation: Transferring Spatial Reasoning Capabilities into Smaller Language Models](https://doi.org/10.1109/icia64617.2025.11277660)：把 GPT-4o 的 chain-of-thought 空间推理轨迹蒸馏到较小学生语言模型，并在 StepGame 上验证相对位置推理能力迁移。
+- [Depth-Augmented Visual Fusion for Efficient Multimodal Spatial Cognition](https://doi.org/10.1109/aiac68175.2025.11332565)：为 0.9B 紧凑多模态模型加入外部 depth visual perception module 和 dual-MLP depth fusion layer，并用深度视觉处理数据集提升低成本空间认知。
+- [Enhancing Spatial Reasoning in Vision-Language Models via Monocular Depth Estimation: A Comparative Study on SpatialBench](https://doi.org/10.1109/cvmi66673.2025.11337662)：Enhancing Spatial Reasoning in Vision-Language Models via Monocular Depth Estimation 把空间或几何结构显式写入模型目标、表示或评估对象。
+- [E2D-GS: Event-enhanced deblurring gaussian splatting](https://doi.org/10.1016/j.eswa.2025.129802)：E2D-GS 改进 Gaussian Splatting 的表示或优化，用于重建、渲染、压缩或场景理解。
+- [Event-Aided Progressive Neural Radiance Fields Reconstruction Under Challenging Illumination](https://doi.org/10.1109/iv64158.2025.11097478)：与空间模型清单相邻，但仍需要父级复核以补充更明确的机制摘要。
+- [4D Gaussian Splatting for high-fidelity dynamic reconstruction of single-view scenes](https://doi.org/10.1016/j.neucom.2025.130262)：为 high-fidelity dynamic reconstruction of single-view scenes 构建 4D Gaussian Splatting，明确对应空间模型的任务目标。
+- [LiDGS: An efficient 3D reconstruction framework integrating lidar point clouds and multi-view images for enhanced geometric fidelity](https://doi.org/10.1016/j.jag.2025.104730)：LiDGS 为 enhanced geometric fidelity 构建 An efficient 3D reconstruction framework integrating lidar point clouds and multi-view images，明确对应空间模型的任务目标。
+- [OV3D-CG: Open-Vocabulary 3D Instance Segmentation with Contextual Guidance](https://doi.org/10.1109/iccv51701.2025.00504)：OV3D-CG 通过 Contextual Guidance 改进 Open-Vocabulary 3D Instance Segmentation，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [StruGS: Structurally consistent 3D Gaussian Splatting with targeted optimization strategies](https://doi.org/10.1016/j.cag.2025.104440)：StruGS 通过 targeted optimization strategies 改进 Structurally consistent 3D Gaussian Splatting，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Text-Guided Editable 3D City Scene Generation](https://doi.org/10.1109/icassp49660.2025.10889459)：提供 3D 或 4D 建模路线，用于重建、生成、定位或场景理解。
+- [Text-to-3D Generation with Geometry-Aware Distillation and Probabilistic Flow Optimization](https://doi.org/10.1109/iccvdm66874.2025.11290396)：通过 Geometry-Aware Distillation and Probabilistic Flow Optimization 改进 Text-to-3D Generation，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [DGDiff: Immersive 3D Indoor Scene Synthesis via Dialog-Graph Conditioned Diffusion](https://doi.org/10.1109/ismar67309.2025.00055)：DGDiff 通过 Dialog-Graph Conditioned Diffusion 改进 Immersive 3D Indoor Scene Synthesis，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Change3D: Revisiting Change Detection and Captioning from A Video Modeling Perspective](https://doi.org/10.1109/cvpr52734.2025.02236)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [SAM2Object: Consolidating View Consistency via SAM2 for Zero-Shot 3D Instance Segmentation](https://doi.org/10.1109/cvpr52734.2025.01800)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [VoxT-GNN: A 3D object detection approach from point cloud based on voxel-level transformer and graph neural network](https://doi.org/10.1016/j.ipm.2025.104155)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Recurrent Diffusion for 3D Point Cloud Generation From a Single Image](https://doi.org/10.1109/tip.2025.3539935)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [ViKIENet: Towards Efficient 3D Object Detection with Virtual Key Instance Enhanced Network](https://doi.org/10.1109/cvpr52734.2025.01106)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [SAMR: Symmetric masked multimodal modeling for general multi-modal 3D motion retrieval](https://doi.org/10.1016/j.displa.2025.102987)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Point Mask Transformer for Outdoor Point Cloud Semantic Segmentation](https://doi.org/10.26599/cvm.2025.9450388)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [A hybrid architecture of sparse convolutional neural network-transformer for enhanced spatial-geometric feature learning in surface reconstruction](https://doi.org/10.1016/j.engappai.2025.110550)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Rotation Invariant Spatial Networks for Single-View Point Cloud Classification](https://doi.org/10.24963/ijcai.2025/189)：为空间与三维理解补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [A Hybrid Soft–Hard Rule Learning Framework With Layout-Type Constraints for Poster-Level Spatial Relation Extraction](https://doi.org/10.1109/access.2025.3644951)：为空间与三维理解补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [A Unified multi-modality conditional latent diffusion model for point cloud generation](https://doi.org/10.1016/j.patcog.2025.112716)：为 point cloud generation 构建 A Unified multi-modality conditional latent diffusion model，明确对应空间模型的任务目标。
+- [TrDPNet: A transformer-based diffusion model for single-image 3D point cloud reconstruction](https://doi.org/10.1016/j.jvcir.2025.104503)：TrDPNet 为 single-image 3D point cloud reconstruction 构建 A transformer-based diffusion model，明确对应空间模型的任务目标。
+- [DFW-3DVG: A Dynamic Feature Weighting Architecture Guided by Large Language Models for Enhanced 3D Visual Grounding](https://doi.org/10.1109/icvrv67992.2025.00075)：用大语言模型引导动态特征加权以增强三维视觉定位。
+- [Mamba-3VL: Taming State Space Model for 3D Vision Language Learning](https://doi.org/10.1109/iccv51701.2025.00592)：Mamba-3VL 为 3D Vision Language Learning 构建 Taming State Space Model，明确对应空间模型的任务目标。
+- [VisionCube: 3D-Aware Vision-Language Model for Multi-Step Spatial Reasoning](https://doi.org/10.1109/cvprw67362.2025.00309)：贡献空间推理模型方法；核心思想是让 3D、视角或连续空间关系在模型行为中更显式。
+- [Enhancing Spatial Reasoning in Multimodal Vision-Language Models via Depth-Aware Feature Integration](https://doi.org/10.1109/snpd65828.2025.11254066)：在 CLIP 上加入轻量深度分支，融合 RGB 与深度特征并保留预训练图文知识，从而提升相对位置和距离判断等空间推理基准表现。
+- [XStreamVGGT: Extremely Memory-Efficient Streaming Vision Geometry Grounded Transformer with KV Cache Compression](https://arxiv.org/abs/2601.01204)：XStreamVGGT 通过 KV Cache Compression 改进 Extremely Memory-Efficient Streaming Vision Geometry Grounded Transformer，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [BARE: Towards Bias-Aware and Reasoning-Enhanced One-Tower Visual Grounding](https://arxiv.org/abs/2601.01526)：面向空间与三维能力，补充用于visual grounding or instance-level recognition for vision-language models的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Thinking with Blueprints: Assisting Vision-Language Models in Spatial Reasoning via Structured Object Representation](https://arxiv.org/abs/2601.01984)：训练 VLM 在回答前构造对象中心的 JSON 式 blueprint，并结合监督轨迹、blueprint 感知奖励和反捷径增强来提升空间推理。
+- [MorphGS](https://arxiv.org/abs/2601.02716)：用 morphology-adaptive Gaussian splatting 表示从视频迁移 articulated 3D motion。
+- [SCAR-GS](https://arxiv.org/abs/2601.04348)：在 progressive Gaussian splatting 中对 residuals 加入 spatial-context attention。
+- [3D-Agent:Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](https://arxiv.org/abs/2601.04404)：使用多视角图像、文本和点云三模态智能体生成可扩展 3D 物体标注，并通过跨视角聚合提升一致性。
+- [DIFF-MF: A Difference-Driven Channel-Spatial State Space Model for Multi-Modal Image Fusion](https://arxiv.org/abs/2601.05538)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [3D Instruction Ambiguity Detection](https://arxiv.org/abs/2601.05991)：定义 Ambi3D 场景落地歧义检测任务和数据集，让模型判断一条指令在 3D 场景中是否只有唯一明确目标。
+- [RigMo](https://arxiv.org/abs/2601.06378)：统一 rigging 与 motion learning 做生成式动画，补强可动画化 3D 资产建模。
+- [3D CoCa v2: Contrastive Learners with Test-Time Search for Generalizable Spatial Intelligence](https://arxiv.org/abs/2601.06496)：3D CoCa v2 通过 Test-Time Search for Generalizable Spatial Intelligence 改进 Contrastive Learners，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Mon3tr: Monocular 3D Telepresence with Pre-built Gaussian Avatars as Amortization](https://arxiv.org/abs/2601.07518)：用预构建 Gaussian avatars 摊销单目 3D telepresence 重建成本，降低实时远程临场中的逐会话建模开销。
+- [Leveraging 3D Representation Alignment and RGB Pretrained Priors for LiDAR Scene Generation](https://arxiv.org/abs/2601.07692)：结合 3D 表征对齐与 RGB 预训练先验来生成 LiDAR 场景。
+- [Smooth Operator: Smooth Verifiable Reward Activates Spatial Reasoning Ability of Vision-Language Model](https://arxiv.org/abs/2601.07695)：Smooth Operator 使用平滑可验证奖励激活视觉语言模型的空间推理能力。
+- [The Spatial Blindspot of Vision-Language Models](https://arxiv.org/abs/2601.09954)：面向空间与三维能力，补充模型侧方法、训练配方、架构、数据方法、奖励模型、验证器或推理扩展方法。
+- [SUG-Occ: Explicit Semantics and Uncertainty Guided Sparse Learning for Efficient 3D Occupancy Prediction](https://arxiv.org/abs/2601.11396)：用显式语义和不确定性先验引导稀疏 occupancy learning，在保留几何与语义标签的同时减少冗余体素计算。
+- [Proc3D: Procedural 3D Generation and Parametric Editing of 3D Shapes with Large Language Models](https://arxiv.org/abs/2601.12234)：把生成形状表示为 procedural compact graph，使 LLM 生成的三维模型可通过暴露参数和规则结构继续编辑。
+- [GaussianTrimmer](https://arxiv.org/abs/2601.12683)：在线裁剪 3DGS segmentation boundaries，补充 Gaussian 场景分割模型。
+- [Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data](https://arxiv.org/abs/2601.12809)：研究使用合成空间关系数据训练的 CLIP 式视觉语言模型，补充模型侧空间关系学习何时改善或扭曲左右关系推理的线索。
+- [TreeDGS: Aerial Gaussian Splatting for Distant DBH Measurement](https://arxiv.org/abs/2601.12823)：将 aerial Gaussian splatting 用于远距离树木重建，使胸径测量可从空间场景几何中获得。
+- [POCI-Diff: Position Objects Consistently and Interactively with 3D-Layout Guided Diffusion](https://arxiv.org/abs/2601.14056)：用 3D layout 引导 diffusion，使生成物体在交互式调整位置时保持一致空间摆放。
+- [IIR-VLM: In-Context Instance-level Recognition for Large Vision-Language Models](https://arxiv.org/abs/2601.14188)：研究 VLM 的 in-context instance-level recognition，面向区分具体人物或物体实例的细粒度识别，而不止类别级 grounding。
+- [Structured Image-Based Coding for Gaussian Splatting](https://arxiv.org/abs/2601.14510)：通过 structured image-based coding 压缩 Gaussian splats。
+- [Symmetry Informative and Agnostic Feature Disentanglement for 3D Shapes](https://arxiv.org/abs/2601.14804)：为 mesh 和 point cloud 解耦 symmetry-informative 与 symmetry-agnostic shape descriptors，改进对称感知匹配、编辑和分割。
+- [ScenDi: 3D-to-2D Scene Diffusion Cascades for Urban Generation](https://arxiv.org/abs/2601.15221)：把 3D 场景结构级联到 2D diffusion 阶段，在空间布局约束和视图真实感之间生成城市场景。
+- [Assessing Situational and Spatial Awareness of VLMs with Synthetically Generated Video](https://arxiv.org/abs/2601.15780)：用合成视频评估 VLM 的情境和空间意识，检查模型是否能跟踪位置、关系和场景随时间变化。
+- [GR3EN](https://arxiv.org/abs/2601.16272)：面向 3D 环境进行生成式重打光，为空间生成补充光照感知场景编辑能力。
+- [PPISP: Physically-Plausible Compensation and Control of Photometric Variations in Radiance Field Reconstruction](https://arxiv.org/abs/2601.18336)：加入物理可解释的 ISP 校正模块，分离相机内禀与拍摄相关的光度变化，使 radiance-field 重建能处理曝光和白平衡漂移。
+- [VGGT-SLAM 2.0](https://arxiv.org/abs/2601.19887)：面向 SLAM-style spatial perception 做实时 dense feed-forward scene reconstruction。
+- [FreeFix: Boosting 3D Gaussian Splatting via Fine-Tuning-Free Diffusion Models](https://arxiv.org/abs/2601.20857)：用免微调图像扩散模型、交错 2D-3D refinement 和逐像素置信度 mask 修复外推视角下的 3DGS 渲染。
+- [PLANING](https://arxiv.org/abs/2601.22046)：提出 loosely coupled Triangle-Gaussian framework，用于 streaming 3D reconstruction。
+- [Geometry without Position? When Positional Embeddings Help and Hurt Spatial Reasoning](https://arxiv.org/abs/2601.22231)：研究位置嵌入何时帮助或损害空间推理，将坐标与位置编码作为模型侧设计维度。
+- [TTSA3R: Training-Free Temporal-Spatial Adaptive Persistent State for Streaming 3D Reconstruction](https://arxiv.org/abs/2601.22615)：TTSA3R 为 Streaming 3D Reconstruction 构建 Training-Free Temporal-Spatial Adaptive Persistent State，明确对应空间模型的任务目标。
+- [UrbanGS: A Scalable and Efficient Architecture for Geometrically Accurate Large-Scene Reconstruction](https://arxiv.org/abs/2602.02089)：用深度一致 D-normal 正则、置信度加权几何对齐、自适应 Gaussian pruning 和分区视图分配把 3DGS 扩展到城市级场景。
+- [From Single Scan to Sequential Consistency: A New Paradigm for LIDAR Relocalization](https://arxiv.org/abs/2602.03198)：提出 TempLoc，通过全局坐标估计、帧间对应和不确定性感知融合来获得时序一致的 LiDAR 6-DoF 重定位。
+- [Pi-GS: Sparse-View Gaussian Splatting with Dense π^3 Initialization](https://arxiv.org/abs/2602.03327)：用 dense pi-cubed initialization 改进 sparse-view Gaussian Splatting，使优化前的几何初始化更可靠。
+- [Constrained Dynamic Gaussian Splatting](https://arxiv.org/abs/2602.03538)：为动态 Gaussian Splatting 加入约束以改进时变 3D 重建。
+- [DMS2F-HAD: A Dual-branch Mamba-based Spatial–Spectral Fusion Network for Hyperspectral Anomaly Detection](https://arxiv.org/abs/2602.04102)：用双分支 Mamba 分别建模高光谱图像的空间与光谱特征，再通过动态门控融合实现高效异常定位。
+- [Skin Tokens](https://arxiv.org/abs/2602.04805)：学习紧凑 skinning tokens 做统一自回归 rigging，补充 token-based 3D articulation 路线。
+- [PoseGaussian: Pose-Driven Novel View Synthesis for Robust 3D Human Reconstruction](https://arxiv.org/abs/2602.05190)：在人体 3DGS 新视角合成中把 pose 作为深度结构先验和时序编码信号，提升动态人体重建的稳健性。
+- [RFM-Pose:Reinforcement-Guided Flow Matching for Fast Category-Level 6D Pose Estimation](https://arxiv.org/abs/2602.05257)：用 flow matching 替代高采样成本的姿态扩散，并通过 PPO 引导采样策略与假设评分以加速类别级 6D pose estimation。
+- [COSMOS: Coherent Supergaussian Modeling with Spatial Priors for Sparse-View 3D Splatting](https://arxiv.org/abs/2602.06044)：结合空间先验进行 coherent supergaussian modeling，用于 sparse-view 3D splatting。
+- [MGP-KAD: Multimodal Geometric Priors and Kolmogorov-Arnold Decoder for Single-View 3D Reconstruction in Complex Scenes](https://arxiv.org/abs/2602.06158)：融合 RGB 特征、类别级几何先验和 Kolmogorov-Arnold decoder，以提升复杂场景中的单视图三维重建。
+- [Scalable Adaptation of 3D Geometric Foundation Models via Weak Supervision from Internet Video](https://arxiv.org/abs/2602.07891)：利用互联网视频弱监督适配 3D 几何基础模型，将空间模型训练扩展到精标 3D 数据之外。
+- [FLAG-4D: Flow-Guided Local-Global Dual-Deformation Model for 4D Reconstruction](https://arxiv.org/abs/2602.08558)：用局部与全局双 deformation network 以及 optical-flow motion cues 驱动 canonical 3D Gaussians，重建时序一致的 4D 动态场景。
+- [Spatial Features in Multimodal Fine-Tuning](https://arxiv.org/abs/2602.08713)：机制性分析多模态 fine-tuning 中空间特征何时出现，把 VLM 适配与空间推理能力连接起来。
+- [Toward Fine-Grained Facial Control in 3D Talking Head Generation](https://arxiv.org/abs/2602.09736)：提出 FG-3DGS，把面部区域按运动频率解耦建模，并加入后渲染对齐以稳定 3D talking-head 的细粒度表情控制。
+- [ERGO: Excess-Risk-Guided Optimization for High-Fidelity Monocular 3D Gaussian Splatting](https://arxiv.org/abs/2602.10278)：把噪声合成视角监督分解为 excess risk 与 Bayes error，并用视角自适应 loss 权重、geometry-aware 和 texture-aware objectives 降低单目 3DGS 重建伪影。
+- [LaSSM: Efficient Semantic-Spatial Query Decoding via Local Aggregation and State Space Models for 3D Instance Segmentation](https://arxiv.org/abs/2602.11007)：从语义-空间 superpoints 初始化 3D instance queries，再用坐标引导的 SSM decoder 降低点云实例分割中的注意力开销。
+- [ReaDy-Go: Real-to-Sim Dynamic 3D Gaussian Splatting Simulation for Environment-Specific Visual Navigation with Moving Obstacles](https://arxiv.org/abs/2602.11575)：ReaDy-Go 通过 Moving Obstacles 改进 Real-to-Sim Dynamic 3D Gaussian Splatting Simulation for Environment-Specific Visual Navigation，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [WorldTree](https://arxiv.org/abs/2602.11845)：用 tree-chain structure 从单目视频构建 4D dynamic worlds，强化持久空间世界建模。
+- [SPRig](https://arxiv.org/abs/2602.12740)：通过自监督一致性从 mesh sequences 学习 pose-invariant rigging，提升动态 3D 资产准备能力。
+- [GSM-GS: Geometry-Constrained Single and Multi-view Gaussian Splatting for Surface Reconstruction](https://arxiv.org/abs/2602.12796)：用图像梯度子区域加权和几何引导的跨视角点云关联约束 3DGS，提升表面细节与多视角一致性。
+- [From Pixels to Policies](https://arxiv.org/abs/2602.13912)：通过强化学习提升面向内容感知版式设计的空间推理能力。
+- [Learnable Multi-level Discrete Wavelet Transforms for 3D Gaussian Splatting Frequency Modulation](https://arxiv.org/abs/2602.14199)：把多级离散小波频率调制作为 3DGS 的 coarse-to-fine 训练课程，在保持新视角合成质量的同时减少 Gaussian 数量。
+- [Learning Proposes, Geometry Disposes: A Modular Framework for Efficient Spatial Reasoning](https://arxiv.org/abs/2602.14409)：结合学习式候选生成与几何验证，为高效空间推理补充模块化模型路线。
+- [SAM 3D Body](https://arxiv.org/abs/2602.15989)：构建鲁棒的 full-body human mesh recovery，补充可复用 3D human representation 模型路线。
+- [Adaptive Multi-Scale Channel-Spatial Attention Aggregation Framework for 3D Indoor Semantic Scene Completion Toward Assisting Visually Impaired](https://arxiv.org/abs/2602.16385)：用并行 channel-spatial attention 与自适应多尺度 gating，把可穿戴 RGB 视角提升为室内 3D semantic scene completion。
+- [B3-Seg](https://arxiv.org/abs/2602.17134)：通过 analytic EIG 与 Beta-Bernoulli updates 做 camera-free、training-free 3DGS segmentation。
+- [4DSTAR](https://arxiv.org/abs/2602.18830)：用 spatial-temporal state propagation 做自回归 4D object generation，强化时序一致性。
+- [SymPL](https://arxiv.org/abs/2602.19117)：用符号化投影布局支持 VLM 的他中心空间推理。核心思想：显式表示布局结构，使模型能基于外部空间坐标推理，而不只依赖自我中心线索。
+- [DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces](https://arxiv.org/abs/2602.19565)：把 articulated-object pose estimation 表述为离散扩散过程，并用层次化运动学耦合约束各刚体部件姿态。
+- [TraceVision](https://arxiv.org/abs/2602.19768)：构建轨迹感知的 VLM 以支持类人空间理解。核心思想：把轨迹结构作为模型侧监督，使空间推理能反映路径和视角变化，而不是只看孤立图像。
+- [RL-RIG: A Generative Spatial Reasoner via Intrinsic Reflection](https://arxiv.org/abs/2602.19974)：用内在反思训练生成式空间推理模型。
+- [3D Aesthetic Camera Viewpoint Suggestion](https://arxiv.org/abs/2602.20363)：学习 3D aesthetic field 来建议 camera viewpoint。
+- [AeroDGS](https://arxiv.org/abs/2602.22376)：用 physically consistent dynamic Gaussian Splatting 从单序列航拍数据做 4D reconstruction。
+- [BetterScene: 3D Scene Synthesis with Representation-Aligned Generative Model](https://arxiv.org/abs/2602.22596)：把预训练视频扩散模型作为 representation-aligned prior，用于极少、无约束照片下的新视角合成和细节恢复。
+- [SceneTransporter](https://arxiv.org/abs/2602.22785)：用 optimal transport-guided compositional latent diffusion 从单图生成结构化 3D 场景。
+- [Align then Adapt: Rethinking Parameter-Efficient Transfer Learning in 4D Perception](https://arxiv.org/abs/2602.23069)：将对齐与适配分解开来，把 3D 预训练模型参数高效迁移到 4D 点云感知任务。
+- [Evidential Neural Radiance Fields](https://arxiv.org/abs/2602.23574)：把 evidential uncertainty estimation 融入 NeRF 渲染，在单次前向传播中同时估计 aleatoric 与 epistemic uncertainty。
+- [FocusTrack: One-Stage Focus-and-Suppress Framework for 3D Point Cloud Object Tracking](https://arxiv.org/abs/2602.24133)：用单阶段 focus-and-suppress 框架做 3D 点云目标跟踪，提升干扰物环境下的空间跟踪能力。
+- [VoxelDiffusionCut: Non-destructive Internal-part Extraction via Iterative Cutting and Structure Estimation](https://arxiv.org/abs/2603.00116)：用 voxel diffusion 从切割面观测估计隐藏内部部件，并迭代规划非破坏性 3D 切割路径。
+- [Station2Radar: query conditioned gaussian splatting for precipitation field](https://arxiv.org/abs/2603.00418)：提出 query-conditioned Gaussian splatting，只渲染降水支撑区域，从气象站和卫星观测生成实时降水场。
+- [HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](https://arxiv.org/abs/2603.01099)：用伪密集图像监督、特征自适应 densification/pruning 与 co-pruned geometry consistency 改进稀疏视角 3DGS。
+- [ArtLLM](https://arxiv.org/abs/2603.01142)：用 3D LLM 生成可关节化资产，把语言条件结构生成与可交互空间对象连接起来。
+- [CoSMo3D](https://arxiv.org/abs/2603.01205)：使用 LLM 引导的规范空间建模做开放世界可提示 3D 语义部件分割，把部件理解从传感器姿态坐标转向物体规范坐标系。
+- [TIMI: Training-Free Image-to-3D Multi-Instance Generation with Spatial Fidelity](https://arxiv.org/abs/2603.01371)：以免训练方式进行实例分离、空间布局保持和多实例视图融合，利用既有 image-to-3D 先验生成空间一致的多物体场景。
+- [Dehallu3D: Hallucination-Mitigated 3D Generation from Single Image via Cyclic View Consistency Refinement](https://arxiv.org/abs/2603.01601)：通过 cyclic view-consistency refinement、相邻视角连续性和自适应平滑约束减少单图 3D 生成中的结构幻觉。
+- [Sparse View Distractor-Free GS](https://arxiv.org/abs/2603.01603)：面向 sparse-view 设置做 distractor-free Gaussian Splatting。
+- [OnlineX: Unified Online 3D Reconstruction and Understanding with Active-to-Stable State Evolution](https://arxiv.org/abs/2603.02134)：用 active/stable 双记忆状态从流式图像在线重建 3DGS 外观与语言场，兼顾局部细节和长期全局结构。
+- [VLMFusionOcc3D: VLM Assisted Multi-Modal 3D Semantic Occupancy Prediction](https://arxiv.org/abs/2603.02609)：把 LoRA-adapted VLM 语义先验、天气感知传感器融合和深度几何对齐注入多模态 3D occupancy prediction。
+- [Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](https://arxiv.org/abs/2603.02619)：用生成多视图 latent 与人体姿态的一致性奖励后训练单图 3D human reconstruction，无需额外 3D 人体资产。
+- [DuoMo](https://arxiv.org/abs/2603.03265)：用 dual motion diffusion 做 world-space human reconstruction。
+- [LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory](https://arxiv.org/abs/2603.03269)：LoGeR 通过 Hybrid Memory 改进 Long-Context Geometric Reconstruction，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Yolo-Key-6D: Single Stage Monocular 6D Pose Estimation with Keypoint Enhancements](https://arxiv.org/abs/2603.03879)：在 YOLO 式单目网络中加入 3D bounding-box 角点投影头和连续 9D rotation regression，实现实时 6D object pose estimation。
+- [NOVA3R](https://arxiv.org/abs/2603.04179)：用非像素对齐视觉 Transformer 做 amodal 3D 重建，强化对遮挡对象结构的空间建模。
+- [EmbodiedSplat](https://arxiv.org/abs/2603.04254)：构建 online feed-forward semantic 3D Gaussian，用于 open-vocabulary 3D scene understanding。
+- [ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](https://arxiv.org/abs/2603.04385)：ZipMap 通过 Test-Time Training 改进 Linear-Time Stateful 3D Reconstruction，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [DSA-SRGS: Super-Resolution Gaussian Splatting for Dynamic Sparse-View DSA Reconstruction](https://arxiv.org/abs/2603.04770)：结合 DSA 专用超分辨先验、置信度感知伪标签加权和 sub-pixel Gaussian densification 做稀疏视角血管 4D 重建。
+- [MultiGO++: Monocular 3D Clothed Human Reconstruction via Geometry-Texture Collaboration](https://arxiv.org/abs/2603.04993)：通过合成纹理人体扫描、区域感知几何提取、Fourier geometry encoder 和双重建 U-Net 改进单目着衣人体重建。
+- [Interpretable Perception and Reasoning for Audiovisual Geolocation](https://arxiv.org/abs/2603.05708)：结合音频 acoustic atoms、GRPO 调优的多模态推理和球面 Riemannian flow matching 做高精度视听地理定位。
+- [PatchCue: Enhancing Vision-Language Model Reasoning with Patch-Based Visual Cues](https://arxiv.org/abs/2603.05869)：聚焦视觉空间线索、空间关系或空间推理模型。
+- [GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](https://arxiv.org/abs/2603.06048)：给视频生成模型加入时间均衡的参考物体 tokens 和空间 attention gate，使 hand-object interaction 视频保持物体一致性与接触区域真实性。
+- [3DGS-HPC: Distractor-free 3D Gaussian Splatting with Hybrid Patch-wise Classification](https://arxiv.org/abs/2603.07587)：用 patch-wise 静态/瞬态分类和 photometric-perceptual 混合指标移除真实场景 3DGS 中的动态干扰物。
 - [3ViewSense](https://arxiv.org/abs/2603.07751)：通过正交视图 grounding 和 simulate-and-reason 机制提升 VLM 的心理旋转、重建和视角一致空间推理能力。
-- [SpatialStack](https://arxiv.org/abs/2603.27437)：提出面向空间理解的模型侧方法，核心围绕 Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning。
+- [Point Cloud as a Foreign Language for Multi-modal Large Language Model](https://arxiv.org/abs/2603.09173)：把原始点云离散化为 LLM 可处理的 token，并结合轻量 3D tokenizer 与偏好优化来完成开放式 3D QA。
+- [ProGS 3DGS Coding](https://arxiv.org/abs/2603.09703)：为 3D Gaussian splatting 表示提供 progressive coding。
+- [VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models](https://arxiv.org/abs/2603.09826)：把点云地图转成 BEV 图像与场景图，使 VLM 能进行可解释的 text-to-point-cloud localization。
+- [S2D Sparse-to-Dense Reconstruction](https://arxiv.org/abs/2603.10893)：用极少输入完成 sparse-to-dense 3D reconstruction。
+- [Pointy - A Lightweight Transformer for Point Cloud Foundation Models](https://arxiv.org/abs/2603.10963)：为 Point Cloud Foundation Models 构建 Pointy - A Lightweight Transformer，明确对应空间模型的任务目标。
+- [Mobile-GS](https://arxiv.org/abs/2603.11531)：将 Gaussian Splatting 适配到移动设备实时运行。
+- [CEI-3D: Collaborative Explicit-Implicit 3D Reconstruction for Realistic and Fine-Grained Object Editing](https://arxiv.org/abs/2603.11810)：结合 implicit SDF、局部可控 handler points 和解耦物理属性，使局部 3D 物体编辑能在多视角间一致传播。
+- [Pano360: Perspective to Panoramic Vision with Geometric Consistency](https://arxiv.org/abs/2603.12013)：在透视图到全景图生成中显式保持跨视角几何一致性。
+- [Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA](https://arxiv.org/abs/2603.12545)：在 LLaVA 中控制比较视觉编码器、1D 图像 token 展平和位置编码，揭示这些设计如何影响 VLM 的基础空间关系推理。
+- [Coherent Human-Scene Reconstruction](https://arxiv.org/abs/2603.12789)：从多人多视角视频中单次重建 coherent human-scene geometry，强化空间人体-场景建模。
+- [Spectral Defense for 3DGS](https://arxiv.org/abs/2603.12796)：通过 spectral analysis 防御 3D Gaussian splatting 的资源定向攻击。
+- [Locatability-Guided Adaptive Reasoning for Image Geo-Localization with Vision-Language Models](https://arxiv.org/abs/2603.13628)：用 locatability score 为 VLM 图像地理定位选择自适应推理深度，减少固定深度推理幻觉。
+- [SK-Adapter](https://arxiv.org/abs/2603.14152)：为原生 3D 生成加入骨架式结构控制，使生成资产能遵循显式几何约束。
+- [ChArtist: Generating Pictorial Charts with Unified Spatial and Subject Control](https://arxiv.org/abs/2603.14209)：用 skeleton-based spatial control、subject-driven reference control、自适应位置编码和 spatially gated attention 生成数据忠实的 pictorial charts。
+- [NanoGS](https://arxiv.org/abs/2603.16103)：以 training-free 方式简化 Gaussian splats，提升轻量 3D 场景表示。
+- [DualPrim](https://arxiv.org/abs/2603.16133)：结合正负 primitives 做紧凑 3D reconstruction，强化 primitive-based 空间表示。
+- [Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](https://arxiv.org/abs/2603.16340)：把真实世界先验注入扩散模型，用于单目深度估计。
+- [SegviGen](https://arxiv.org/abs/2603.16869)：把 3D 生成模型复用于部件分割，把生成先验与空间解析连接起来。
+- [OnlineHMR](https://arxiv.org/abs/2603.17355)：从视频中在线恢复 world-grounded human mesh，增强动态人体空间理解。
+- [Material Magic Wand: Material-Aware Grouping of 3D Parts in Untextured Meshes](https://arxiv.org/abs/2603.17370)：用监督对比学习训练 material-aware 3D part embeddings，使用户选中一个部件后可检索材质一致的其他几何变体。
+- [PanoVGGT](https://arxiv.org/abs/2603.17571)：从 panoramic imagery 做 feed-forward 3D reconstruction。
+- [TAPESTRY: From Geometry to Appearance via Consistent Turntable Videos](https://arxiv.org/abs/2603.17735)：以显式 3D geometry 约束视频扩散生成一致 turntable videos，再反投影为 UV texture 或监督 3DGS。
+- [LoST: Level of Semantics Tokenization for 3D Shapes](https://arxiv.org/abs/2603.17995)： 提出面向 3D shapes 的语义层级 tokenization，强化 token-based 空间资产建模。
+- [Inst4DGS](https://arxiv.org/abs/2603.18402)：通过多视频 label-permutation learning 做 instance-decomposed 4D Gaussian splatting。
+- [SwiftGS](https://arxiv.org/abs/2603.18634)：用 episodic priors 从卫星影像快速恢复地表，补充大尺度空间重建模型。
+- [Polynomial-Kernel Gaussian Splatting](https://arxiv.org/abs/2603.18707)：用 polynomial kernels 替代 Gaussian Splatting 中的指数核。
+- [Points-to-3D](https://arxiv.org/abs/2603.18782)：用点云先验约束 3D 生成，使生成资产保持结构一致性，补充模型侧空间资产生成路线。
+- [CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](https://arxiv.org/abs/2603.19121)：用语义级和像素级 VSD distillation 从逐实例参考图像生成室内 3D 场景纹理，实现高保真可控外观编辑。
+- [DreamPartGen](https://arxiv.org/abs/2603.19216)：用语义 grounding 的协作式潜变量去噪做部件级 3D 生成，强化结构化空间资产合成。
+- [Discovering Governing Spatial Interaction Mechanisms in Dynamic Urban Systems](https://arxiv.org/abs/2603.19537)：结合 LLM 生成的微分方程假设与神经拟合，从动态城市系统中识别 governing spatial interaction laws。
+- [PCSTracker: Long-Term Scene Flow Estimation for Point Cloud Sequences](https://arxiv.org/abs/2603.19762)：通过 geometry-motion joint optimization、时空轨迹更新和 sliding-window propagation 估计长序列点云 scene flow。
+- [Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](https://arxiv.org/abs/2603.19961)：利用空间协方差进行直接的 manifold-aware 6-DoF object pose estimation。
+- [Memory Over Maps](https://arxiv.org/abs/2603.20530)：无需完整重建即可定位 3D 物体，为依赖地图的定位 pipeline 补充空间记忆替代路线。
+- [The Role and Relationship of Initialization and Densification in 3D Gaussian Splatting](https://arxiv.org/abs/2603.20714)：分析 3D Gaussian Splatting 中初始化与 densification 的相互作用，帮助厘清影响空间重建质量的模型设计因素。
+- [SARe: Structure-Aware Large-Scale 3D Fragment Reassembly](https://arxiv.org/abs/2603.21611)： 以结构感知方式重组大规模 3D fragments，适合空间重建与场景组装。
+- [Know3D](https://arxiv.org/abs/2603.22782)：用视觉语言模型知识提示 3D 生成，把 VLM 语义与空间资产合成连接起来。
+- [Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](https://arxiv.org/abs/2603.23030)：用 global-local token alignment、proxy anchor 和尺度感知 attention normalization 扩展 CLIP 开放词表分割的滑窗上下文。
+- [GSwap: Realistic Head Swapping With Dynamic Neural Gaussian Field.](https://arxiv.org/abs/2603.23168)：把 dynamic neural Gaussian portrait priors 嵌入 SMPL-X 表面，使视频换头保持 3D 一致性、自然表情和前景背景融合。
+- [PhysSkin](https://arxiv.org/abs/2603.23194)：学习 physics-informed neural skinning fields，使 articulated object animation 可实时且不依赖固定离散化。
+- [FilterGS](https://arxiv.org/abs/2603.23891)：为大规模 LoD 3D Gaussian Splatting 提供 traversal-free parallel filtering 与 adaptive shrinking。
+- [LightSplat](https://arxiv.org/abs/2603.24146)：构建快速、低内存的 open-vocabulary 3D scene understanding，扩展语言对齐空间表示。
+- [Teacher-Student Diffusion Model for Text-Driven 3d Hand Motion Generation](https://arxiv.org/abs/2603.24407)：用 teacher-student diffusion 生成文本驱动的 3D hand motion，训练时让 MANO 等辅助信号指导推理时只需文本的学生模型。
+- [Scalable Object Relation Encoding](https://arxiv.org/abs/2603.24721)：通过对象关系编码提升 LLM 的 3D 空间推理能力，为语言推理接入结构化空间关系提供模型侧路径。
+- [Relaxed Rigidity Dynamic 3DGS](https://arxiv.org/abs/2603.24994)：用 ray-based grouping 和 relaxed rigidity 保持单目 dynamic Gaussian splatting 的局部几何。
+- [SpatialStack](https://arxiv.org/abs/2603.27437)：把多层几何特征逐层堆叠进 VLM，而不是只做 late fusion，使局部 3D geometry、视觉上下文和语言表示共同对齐。
+- [SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](https://arxiv.org/abs/2603.27573)：用 graph-transformer diffusion、posed scene point clouds 以及碰撞、关系和重力引导生成物理一致的 3D 场景。
+- [DipGuava](https://arxiv.org/abs/2603.28003)：从单目视频中解耦个性化高斯特征以生成 3D 头部 Avatar，补充可控人体 Avatar 空间表征生成方向。
 - [MolmoPoint](https://arxiv.org/abs/2603.28069)：加入 pointing 与 grounding tokens，使 VLM 更准确地输出视觉位置，成为模型原生行为。
+- [To View Transform or Not to View Transform: NeRF-based Pre-training Perspective](https://arxiv.org/abs/2603.28090)：分析自动驾驶 3D perception 中 NeRF-based pretraining 与 view transformation 的先验冲突。
+- [ObjectMorpher: 3D-Aware Image Editing via Deformable 3DGS Models](https://arxiv.org/abs/2603.28152)：把图像对象提升为 deformable 3D Gaussians，使模糊的 2D 编辑变成有几何支撑的交互式物体操作。
+- [M2H-MX: Multi-Task Dense Visual Perception for Real-Time Monocular Spatial Understanding](https://arxiv.org/abs/2603.29236)：结合密集语义、几何、深度和 mapping 预测，从单目视频实时构建 3D scene graph。
+- [Bioinspired123D: Generative 3D Modeling System for Bioinspired Structures](https://arxiv.org/abs/2603.29592)：用 code-as-geometry pipeline 把文本提示转成参数化、可制造的仿生 3D 结构。
+- [GRVS: a Generalizable and Recurrent Approach to Monocular Dynamic View Synthesis](https://arxiv.org/abs/2603.29734)：用 recurrent monocular dynamic-view-synthesis 模型提升静态和动态区域的几何一致性，避免逐场景 4D 优化。
+- [TRiGS](https://arxiv.org/abs/2604.00538)：通过 temporal rigid-body motion 实现可扩展 4D Gaussian Splatting。
+- [STAR: Mitigating Cascading Errors in Spatial Reasoning via Turn-point Alignment and Segment-level DPO](https://arxiv.org/abs/2604.00558)：通过转折点对齐、RedMaze-23K 标注和片段级偏好优化，缓解结构化空间导航中的级联错误并提升自我纠正能力。
+- [Compact Keyframe-Optimized Multi-Agent Gaussian Splatting SLAM](https://arxiv.org/abs/2604.00804)：通过压缩 Gaussian maps 和集中式 loop closure 降低多智能体 RGB-D 3DGS SLAM 的通信量，同时保持重建质量。
+- [GS^2: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](https://arxiv.org/abs/2604.01884)：用 ELBO 自适应 densification、opacity-aware pruning 和 graph feature encoding 优化紧凑 3DGS 的空间分布。
+- [SDesc3D: Towards Layout-Aware 3D Indoor Scene Generation from Short Descriptions](https://arxiv.org/abs/2604.01972)：通过多视角场景先验、功能性感知 grounding 和迭代自校正，从短文本生成具有布局合理性的 3D 室内场景。
+- [Streaming Real-Time Rendered Scenes as 3D Gaussians](https://arxiv.org/abs/2604.02851)：从服务器向客户端流式传输持续优化的 3D Gaussian scene representation，使客户端可按当前视角本地渲染。
 - [Token Warping](https://arxiv.org/abs/2604.02870)：通过视觉 token warping 支持 viewpoint-shift 空间推理，而无需真实观察每个邻近视角。
+- [GP-4DGS](https://arxiv.org/abs/2604.02915)： 用变分高斯过程从单目视频进行概率式 4D Gaussian Splatting。
+- [HOIGS: Human-Object Interaction Gaussian Splatting](https://arxiv.org/abs/2604.04016)：用 human-object cross-attention deformation features 显式建模互动引发的形变，提升接触、遮挡和物体操作场景的动态 3DGS 重建。
+- [Indoor Asset Detection in Large Scale 360{\deg} Drone-Captured Imagery via 3D Gaussian Splatting](https://arxiv.org/abs/2604.05316)：用语义-空间 3D object codebook 把多视角 2D detection/mask 关联为 Gaussian 场景中的室内资产实例。
+- [GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](https://arxiv.org/abs/2604.05721)：从点云在文本引导下生长 3D Gaussians，并用多视角扩散监督和未观测区域迭代 inpainting 完成外观。
+- [LiveStre4m](https://arxiv.org/abs/2604.06740)：从 unposed multi-view video 做 feed-forward live novel-view streaming。
+- [RePL: Pseudo-label Refinement for Semi-supervised LiDAR Semantic Segmentation](https://arxiv.org/abs/2604.06825)：通过 masked reconstruction 识别并修正 LiDAR 伪标签错误，缓解半监督 3D semantic segmentation 中的确认偏差。
+- [Location Is All You Need: Continuous Spatiotemporal Neural Representations of Earth Observation Data](https://arxiv.org/abs/2604.07092)：把地球观测区域表示为坐标条件的连续时空神经场，可重建卫星图像并迁移到下游任务。
+- [Mem3R: Streaming 3D Reconstruction with Hybrid Memory via Test-Time Training](https://arxiv.org/abs/2604.07279)：Mem3R 通过 Test-Time Training 改进 Streaming 3D Reconstruction with Hybrid Memory，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Fast Spatial Memory with Elastic Test-Time Training](https://arxiv.org/abs/2604.07350)：通过 Elastic Test-Time Training 改进 Fast Spatial Memory，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Training-free Spatially Grounded Geometric Shape Encoding (Technical Report)](https://arxiv.org/abs/2604.07522)：用 Zernike basis 几何编码和 harmonic pose field 免训练编码任意 2D 几何形状，保留可逆性、自适应性和频率丰富性。
+- [Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](https://arxiv.org/abs/2604.07723)：直接从分布差异结构解析得到 open-vocabulary segmentation maps，避免迭代 logits optimization 和模型特定 attention 调参。
+- [TOOLCAD: Exploring Tool-Using Large Language Models in Text-to-CAD Generation with Reinforcement Learning](https://arxiv.org/abs/2604.07960)：探索结合强化学习的工具调用 LLM 文本到 CAD 生成，连接空间生成与工具使用训练。
+- [Novel View Synthesis as Video Completion](https://arxiv.org/abs/2604.08500)：把新视角合成重构为视频补全，连接空间重建与时间生成。
+- [SelfEvo 4D Perception](https://arxiv.org/abs/2604.08532)：通过 self-distillation 从未标注视频持续改进多视角 4D perception 模型。
+- [GaussiAnimate](https://arxiv.org/abs/2604.08547)：结合动态层级建模来重建并 rig 可动画化类别，补充类别级 3D animation reconstruction。
+- [MeshOn: Intersection-Free Mesh-to-Mesh Composition](https://arxiv.org/abs/2604.08799)：用 VLM 初始化对齐、几何吸引损失、防交叉 barrier 和 diffusion-assisted deformation，把一个 mesh 真实地装配到另一个 mesh 上。
+- [Integrated electro-optic attention nonlinearities for transformers](https://arxiv.org/abs/2604.09512)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [ExpertEdit Motion Editing](https://arxiv.org/abs/2604.10466)：从专家视频中学习 skill-aware motion editing。
+- [HiddenObjects: Scalable Diffusion-Distilled Spatial Priors for Object Placement](https://arxiv.org/abs/2604.10675)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Disentangled Point Diffusion for Precise Object Placement](https://arxiv.org/abs/2604.11793)：为 Precise Object Placement 构建 Disentangled Point Diffusion，明确对应空间模型的任务目标。
+- [ArtifactWorld](https://arxiv.org/abs/2604.12251)：借助 video generation models 扩展 3D Gaussian splatting artifact restoration。
+- [DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](https://arxiv.org/abs/2604.12270)：DreamStereo 补充空间模型方法，覆盖三维或四维生成、重建、新视角合成或空间推理。
+- [Reconstruction of a 3D wireframe from a single line drawing via generative depth estimation](https://arxiv.org/abs/2604.13549)：通过 generative depth estimation 改进 Reconstruction of a 3D wireframe from a single line drawing，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Efficient Multi-View 3D Object Detection by Dynamic Token Selection and Fine-Tuning](https://arxiv.org/abs/2604.13586)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Design and Behavior of Sparse Mixture-of-Experts Layers in CNN-based Semantic Segmentation](https://arxiv.org/abs/2604.13761)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
 - [SpatialEvo](https://arxiv.org/abs/2604.14144)：提出面向空间理解的模型侧方法，核心围绕 Self-Evolving Spatial Intelligence via Deterministic Geometric Environments。
+- [Giving Faces Their Feelings Back](https://arxiv.org/abs/2604.14541)：为单图前馈 3D 头部 avatar 增加显式情绪控制，扩展可控 3D 人体表征生成。
+- [Learning to Draw ASCII Improves Spatial Reasoning in Language Models](https://arxiv.org/abs/2604.14641)：训练语言模型从文本构造 ASCII 空间布局，显示显式布局生成可改进后续空间问答推理。
+- [SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](https://arxiv.org/abs/2604.14672)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Hybrid Latents Surfel Splatting](https://arxiv.org/abs/2604.14928)：结合 geometry-aware 与 appearance-aware latents 进行 surfel splatting。
+- [GlobalSplat](https://arxiv.org/abs/2604.15284)：通过 global scene tokens 实现高效 feed-forward 3D Gaussian Splatting。
+- [UniMamba: A Unified Spatial-Temporal Modeling Framework with State-Space and Attention Integration](https://arxiv.org/abs/2604.16325)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [FlowRefiner: Flow Matching-Based Iterative Refinement for 3D Turbulent Flow Simulation](https://arxiv.org/abs/2604.17149)：FlowRefiner 为 3D Turbulent Flow Simulation 构建 Flow Matching-Based Iterative Refinement，明确对应空间模型的任务目标。
+- [DGSSM: Diffusion guided state-space models for multimodal salient object detection](https://arxiv.org/abs/2604.17585)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [ViPS](https://arxiv.org/abs/2604.17623)： 利用 video-informed pose spaces 生成 auto-rigged meshes，把空间资产生成推进到可运动的 3D 结构。
+- [View-Consistent 3D Scene Editing via Dual-Path Structural Correspondense and Semantic Continuity](https://arxiv.org/abs/2604.17801)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [HMR-Net: Hierarchical Modular Routing for Cross-Domain Object Detection in Aerial Images](https://arxiv.org/abs/2604.18866)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [AnyRecon: Arbitrary-View 3D Reconstruction with Video Diffusion Model](https://arxiv.org/abs/2604.19747)：利用视频扩散先验进行任意视角 3D 重建，为灵活视角下的空间场景恢复补充生成式模型路线。
+- [UniCon3R](https://arxiv.org/abs/2604.19923)：从单目视频重建 contact-aware 4D human-scene interactions。
+- [Gaussians on a Diet](https://arxiv.org/abs/2604.20046)：在 memory bounds 下训练 high-quality 3D Gaussian splats。
+- [GSCompleter: A Distillation-Free Plugin for Metric-Aware 3D Gaussian Splatting Completion in Seconds](https://arxiv.org/abs/2604.20155)：通过先生成再配准的流程补全稀疏视角 3D Gaussian Splatting 场景，降低迭代修复和蒸馏成本。
+- [ATIR: Towards Audio-Text Interleaved Contextual Retrieval](https://arxiv.org/abs/2604.20267)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Animator-Centric Skeleton Generation on Objects with Fine-Grained Details](https://arxiv.org/abs/2604.20539)： 生成带细粒度细节的 object skeleton，支撑面向 animator 的 3D rigging 与 articulation 流程。
+- [PILOT: One Physics-Integrated Generation Framework to Unify 2D and 3D Radio Map Construction](https://arxiv.org/abs/2604.23533)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Spatiotemporal Degradation-Aware 3D Gaussian Splatting for Realistic Underwater Scene Reconstruction](https://arxiv.org/abs/2604.23551)：《Spatiotemporal Degradation-Aware 3D Gaussian Splatting for Realistic Underwater Scene Reconstruction》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [DecompKAN: Decomposed Patch-KAN for Long-Term Time Series Forecasting](https://arxiv.org/abs/2604.23968)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Diffusion Model as a Generalist Segmentation Learner](https://arxiv.org/abs/2604.24575)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Power Foam](https://arxiv.org/abs/2604.24994)：统一实时 differentiable ray tracing 与 rasterization，用于空间渲染。
+- [DouC: Dual-Branch CLIP for Training-Free Open-Vocabulary Segmentation](https://arxiv.org/abs/2604.24997)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Planar Gaussian Splatting with Bilinear Spatial Transformer for Wireless Radiance Field Reconstruction](https://arxiv.org/abs/2604.25945)：用带 3D 坐标的 2D planar Gaussians 表示无线 radiance field，并以 bilinear spatial transformer 在角域网格上建模 primitive 间长程电磁耦合。
+- [MesonGS++](https://arxiv.org/abs/2604.26799)：通过 post-training compression 与超参数搜索压缩 3D Gaussian Splatting 表示。
+- [FreeOcc: Training-Free Embodied Open-Vocabulary Occupancy Prediction](https://arxiv.org/abs/2604.28115)：FreeOcc 与空间模型清单相邻，但仍需要父级复核以补充更明确的机制摘要。
+- [Two-View Accumulation as the Primary Training Lever for Hybrid-Capture Gaussian Splatting: A Variance-Decomposition View of When Gradient Surgery Helps](https://arxiv.org/abs/2605.00052)：Two-View Accumulation as the Primary Training Lever for Hybrid-Capture Gaussian Splatting 与空间模型清单相邻，但仍需要父级复核以补充更明确的机制摘要。
+- [Beyond Heuristics: Learnable Density Control for 3D Gaussian Splatting](https://arxiv.org/abs/2605.00408)：用可学习机制替代启发式 Gaussian density control，改进 3D Gaussian Splatting 的模型设计。
+- [MOC-3D: Manifold-Order Consistency for Text-to-3D Generation](https://arxiv.org/abs/2605.01743)：MOC-3D 为 Text-to-3D Generation 构建 Manifold-Order Consistency，明确对应空间模型的任务目标。
+- [Mix3R: Mixing Feed-forward Reconstruction and Generative 3D Priors for Joint Multi-view Aligned 3D Reconstruction and Pose Estimation](https://arxiv.org/abs/2605.03359)： 结合 feed-forward reconstruction 与 generative 3D priors 做多视角 3D 重建和姿态估计。
+- [PhysForge](https://arxiv.org/abs/2605.05163)：生成具备物理 grounding 的 3D 资产，用于交互式虚拟世界，把资产合成与具身、可仿真的空间环境连接起来。
+- [LAMP Multi-Camera Tracking](https://arxiv.org/abs/2605.05390)：用 localization-aware 建模在 metric 3D world 中进行多相机行人跟踪。
+- [Privacy Without Losing Place: A Paradigm for Private Retrieval in Spatial RAGs](https://arxiv.org/abs/2605.05459)：提出面向 spatial RAG 的隐私保护检索范式，在保持位置相关检索有效性的同时降低地点信息泄露。
+- [Ray-Aware Pointer Memory](https://arxiv.org/abs/2605.05749)：为流式 3D reconstruction 加入 ray-aware pointer memory 与自适应更新。
+- [Physical Fidelity Reconstruction via Improved Consistency-Distilled Flow Matching for Dynamical Systems](https://arxiv.org/abs/2605.05975)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [AdpSplit](https://arxiv.org/abs/2605.06876)：用 error-driven adaptive splitting 加速 3D Gaussian splatting 中的 geometry discovery。
+- [Velocity-Space 3D Asset Editing](https://arxiv.org/abs/2605.07385)： 在 velocity space 中编辑 3D 资产，补充可控空间资产编辑方法。
+- [PolarVLM: Bridging the Semantic-Physical Gap in Vision-Language Models](https://arxiv.org/abs/2605.07574)：连接视觉语言模型中的语义 grounding 与物理 grounding，增强具有空间意义的多模态表示。
+- [DVD](https://arxiv.org/abs/2605.07971)：用离散体素扩散进行 3D 生成与编辑，为空间资产补充体素生成路线。
+- [PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions](https://arxiv.org/abs/2605.09538)：PhysHanDI 与空间模型清单相邻，但仍需要父级复核以补充更明确的机制摘要。
+- [BEA-GS](https://arxiv.org/abs/2605.09662)：在 3D Gaussian splatting 中超越 radiance supervision，以支持精确 object extraction。
+- [Hyperbolic Distillation: Geometry-Guided Cross-Modal Transfer for Robust 3D Object Detection](https://arxiv.org/abs/2605.09899)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [AdaptSplat](https://arxiv.org/abs/2605.10239)：把 vision foundation models 适配到 feed-forward 3D Gaussian splatting。
+- [Interface-Centric Generative States](https://arxiv.org/abs/2605.10438)：以界面中心的生成状态刻画开放世界 3D 结构，为交互式 3D 结构的表示与生成补充空间模型路线。
+- [MAGS-SLAM](https://arxiv.org/abs/2605.10760)：构建 monocular multi-agent Gaussian-splatting SLAM，实现几何与光度一致重建。
+- [Pixal3D](https://arxiv.org/abs/2605.10922): 从图像生成像素对齐的 3D 资产，扩展非头像场景下的图像到 3D 空间生成路线。
+- [ScaleMoGen](https://arxiv.org/abs/2605.11704)：用 autoregressive next-scale prediction 进行人体运动生成。
+- [PairDropGS: Paired Dropout-Induced Consistency Regularization for Sparse-View Gaussian Splatting](https://arxiv.org/abs/2605.12072)：通过 paired dropout 诱导的一致性正则缓解 sparse-view 3D Gaussian Splatting 的过拟合。
+- [Learning Ego-Centric BEV Representations from a Perspective-Privileged View: Cross-View Supervision for Online HD Map Construction](https://arxiv.org/abs/2605.12218)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [GeoQuery: Geometry-Query Diffusion for Sparse-View Reconstruction](https://arxiv.org/abs/2605.12399)：用 geometry-query diffusion 进行 sparse-view reconstruction，为少视角观测下恢复三维结构补充扩散式模型路线。
+- [ORBIT: Preserving Foundational Language Capabilities in GenRetrieval via Origin-Regulated Merging](https://arxiv.org/abs/2605.12419)：面向空间与三维能力，补充用于spatial-physical reasoning via geometry-aware diffusion的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [GTA](https://arxiv.org/abs/2605.12957)： 通过先几何、后外观的视频扩散流程推进 image-to-3D world generation。
+- [Sparse Code Uplifting](https://arxiv.org/abs/2605.13600)： 通过 sparse-code uplift 提升 3D language Gaussian splatting 效率，增强开放词表空间场景表示。
+- [R-DMesh](https://arxiv.org/abs/2605.13838)：用 rectified dynamic mesh flow 做 video-guided 3D animation。
+- [Implicit spatial-frequency fusion of hyperspectral and lidar data via kolmogorov-arnold networks](https://arxiv.org/abs/2605.14239)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [SceneForge: Structured World Supervision from 3D Interventions](https://arxiv.org/abs/2605.14399)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [FactorizedHMR](https://arxiv.org/abs/2605.14854)：构建 video human mesh recovery 的 hybrid framework，扩展从视频恢复 3D human representation 的模型路线。
+- [Denoising-GS](https://arxiv.org/abs/2605.14880)：为 Gaussian splatting 加入 spatial-aware denoising。
+- [3D Skew-Normal Splatting](https://arxiv.org/abs/2605.15010)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [3DTMDet: A Dual-Path Synergy Network of Transformer and SSM for 3D Object Detection in Point Clouds](https://arxiv.org/abs/2605.15546)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Viewpoint-Dependent 3D Segmentation](https://arxiv.org/abs/2605.15708)：利用 viewpoint-dependent spatial relationships 做 3D segmentation。
+- [WorldAct: Activating Monolithic 3D Worlds into Interactive-Ready Object-Centric Scenes](https://arxiv.org/abs/2605.15843)： 把整体 3D 世界转化为 object-centric、可交互场景，适合补充面向行动的空间世界建模。
+- [Smart target point control for Gaussian Splatting methods](https://arxiv.org/abs/2605.16158)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [UniCAD](https://arxiv.org/abs/2606.05058)：把 CAD 重建、生成和问答统一到多模态多任务 CAD benchmark 与通用 CAD 模型中，使 CAD 几何成为共享的空间建模目标，而不是孤立子任务。
+- [SCSV](https://doi.org/10.1109/TIP.2026.3671692)：从稀疏视角生成时空一致的动态 3D 场景，把空间生成扩展到观测不足的 4D 场景。
+- [Generative LiDAR Building Reconstruction](https://doi.org/10.1109/TGRS.2026.3670027)：结合空间上下文和生成模型从机载 LiDAR 点云重建建筑，补充地理空间 3D 重建模型线索。
+- [MA-MAE3D](https://doi.org/10.1109/icassp55912.2026.11461790)：为 point-cloud completion 的 MAE3D 加入 memory augmentation，补充 3D 空间重建模型。
+- [MAGICITY4D](https://doi.org/10.1109/icassp55912.2026.11464740)：用 MLLM-enhanced procedural content generation 生成可控可编辑 4D city scenes。
+- [Multiscale Gaussian Splatting Scene Understanding](https://doi.org/10.1109/TGRS.2026.3690135)：用 K-Planes encoding 做 multiscale Gaussian-splatting scene understanding。
+- [Structured Gaussian Mapping for Immersive XR](https://doi.org/10.1109/VRW70859.2026.00236)：为 immersive XR 构建 memory-efficient structured Gaussian maps，扩展实用空间场景表示。
+- [3D Superquadric Splatting](https://doi.org/10.1109/WACV61042.2026.00500)：在 3D splatting 中使用 superquadric primitives 构建结构化空间表示。
+- [CodecGS-IR](https://doi.org/10.1109/DCC66757.2026.00042)：用 implicit representations 做 decoder-friendly video-based Gaussian-splat compression。
+- [Feature-Plane 3DGS for Mobile VR](https://doi.org/10.1109/VRW70859.2026.00037)：把 feature-plane-based 3D Gaussian splatting 从 video streams 适配到 mobile VR。
+- [DyGS-SLAM](https://doi.org/10.1109/JSEN.2026.3662522)：结合 dynamic-object segmentation 与 multiview long-term Gaussian consistency 做 high-fidelity SLAM。
+- [LiDAR Odometry Scan Correction](https://doi.org/10.1109/ACCESS.2026.3680632)：用 spatial analysis 校正 non-repetitive LiDAR scans，以改进大型设施环境中的 odometry。
+- [Monocular Multi-Object 3D Visual Language Tracking](https://doi.org/10.1109/TIP.2026.3661407)：把 monocular 3D tracking 与 visual-language grounding 结合。
+- [Distraction-Free Outdoor 3DGS](https://doi.org/10.1109/icassp55912.2026.11462029)：结合 enhanced depth propagation 做 outdoor 3D Gaussian Splatting 重建。
+- [MemGaussian](https://doi.org/10.1109/GAIIS69281.2026.11519282)：通过交替注意力与正则化实现 text-to-3D Gaussian generation。
+- [Cylindrical Densification for G-PCC LiDAR](https://doi.org/10.1109/TIP.2026.3653212)：对 G-PCC 压缩后的 LiDAR 点云进行几何增强。
+- [DSTI-Net Change Detection](https://doi.org/10.1109/TGRS.2026.3669158)：用语义引导的动态时空交互做 2D 与 3D change detection。
+- [Hie4DGS: Hierarchical 4D Gaussian Splatting From Monocular Dynamic Video](https://doi.org/10.1109/tvcg.2026.3656737)：从单目动态视频重建层次化 4D Gaussian splats，为动态场景空间表示补充方法。
+- [Splatter Layout: Geometry-embedded 3D Reconstruction via Surface Unfolding](https://doi.org/10.1109/wacv61042.2026.00744)：补充模型侧方法，主要面向 Spatial。
+- [GeoAgentic-RAG: A Multi-Agent framework for autonomous geospatial reasoning and visual insight generation with LLM](https://doi.org/10.1016/j.jag.2026.105195)：偏离纯模型条目；它构建多智能体 geospatial RAG 工作流来生成视觉洞察，而不是新的空间模型骨干。
+- [UnsOcc: An Occupancy Grid-Based General Detection Network for Unstructured Scenes](https://doi.org/10.1109/tim.2026.3676098)：UnsOcc 为 Unstructured Scenes 构建 An Occupancy Grid-Based General Detection Network，明确对应空间模型的任务目标。
+- [Moving Infrared Small Target Detection via Motion-Aided Integrated Spatial–Temporal Network](https://doi.org/10.1109/tgrs.2026.3673387)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [A physics-informed Temporal–Spatial gated Kolmogorov–Arnold network for real-time response prediction of floating structures](https://doi.org/10.1016/j.oceaneng.2026.124767)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Low-Rank Spectral–Spatial Super-Resolution of Hyperspectral Images Using KAN-Based GAN](https://doi.org/10.1109/tgrs.2026.3651549)：提出空间理解方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Low-Latency Telepresence via Gaussian Splatting With Safety-Aware Control for Mobile Manipulators](https://doi.org/10.1109/access.2026.3673834)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [SSA-Pose: Spatial shape awareness for RGB-based category-level object pose estimation](https://doi.org/10.1016/j.displa.2026.103539)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [SA-U-KAN: Spatial Attention Guided Kolmogorov–Arnold Networks for Optic Disc and Cup Segmentation](https://doi.org/10.1109/lsens.2026.3656677)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Lightweight KAN Convolution Spectral–Spatial Network With Purification Window for Hyperspectral Anomaly Detection](https://doi.org/10.1109/jstars.2026.3659858)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [SFTE: Spatial–Frequency–Temporal Evolution Network for Scene-Adaptive Remote Sensing Change Detection](https://doi.org/10.1109/lgrs.2026.3667344)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [S2TA-Fuse: Semantic-Superpixel Tokenized Attention for Spatial–Spectral Fusion](https://doi.org/10.1109/tgrs.2026.3657766)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Spatial–Channel Selective State Space Models and Pruned Cross-Task Feature Transfer for Building Height Mapping From Aerial Images and DSMs](https://doi.org/10.1109/tgrs.2026.3674156)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Video-driven Gaussian splatting for as-built building geometry with energy simulation](https://doi.org/10.1016/j.autcon.2026.106981)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Region-Aware Spatial-Frequency Transformation for Transferable Adversarial Attacks in Remote Sensing Object Recognition](https://doi.org/10.1109/lsp.2026.3667452)：贡献面向空间、三维与几何推理的模型侧方法，覆盖训练、架构、对齐、验证、世界模型或数据生成机制。
+- [Joint Modeling of Corruption-Driven and Information-Limited Uncertainty for Robust 3D Gaussian Splatting](https://doi.org/10.1109/wacv61042.2026.00074)：为 Robust 3D Gaussian Splatting 构建 Joint Modeling of Corruption-Driven and Information-Limited Uncertainty，明确对应空间模型的任务目标。
+- [Depth and Semantic Guided 3D Gaussian Splatting With Synthetic-View Fine-Tuning](https://doi.org/10.1109/access.2026.3671724)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [GeoDiffuser: A geometry-aware extension of pretrained diffusion models for consistent multi-view synthesis](https://doi.org/10.1016/j.neucom.2026.133690)：面向空间与三维能力，补充模型侧方法、训练配方、架构或数据方法。
+- [A decoupled 3D Gaussian splatting method for real-time high-fidelity dynamic scene reconstruction](https://doi.org/10.1016/j.knosys.2026.115321)：补充与空间与三维能力相关的模型侧方法。
+- [UNIT3D: Unified instance-relative transformer for indoor 3D object detection and segmentation](https://doi.org/10.1016/j.patcog.2026.113678)：补充与空间与三维能力相关的模型侧方法。
+- [PS3: Part level instance segmentation in 3D](https://doi.org/10.1109/wacv61042.2026.00094)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Beyond the looking glass: multimodal LLM-based depth-sensing for spatial behavior modeling in media architecture](https://doi.org/10.3389/fcomp.2026.1746674)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Generalizable Specular Scene Reconstruction Via Anisotropic Filtering and Asg-Enhanced Gaussian Splatting](https://doi.org/10.1109/icassp55912.2026.11461827)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Aniso-GS: Anisotropic appearance field for complex highlight modeling in 3D Gaussian splatting](https://doi.org/10.1016/j.cag.2026.104593)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Efficient large-scale 3D Gaussian splatting reconstruction via scene-aware subscene training](https://doi.org/10.1016/j.cag.2026.104622)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [EGGS: Event-Guided Gaussian Splatting for Sharp 3D Reconstruction From Blurred Images](https://doi.org/10.1109/icit64854.2026.11491451)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [DenSplat: Enhanced visual quality in optimized 3D oral reconstruction via Gaussian pruning](https://doi.org/10.1016/j.bspc.2026.110441)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Mamba-enhanced multi-view stereo: Geometry-aware feature fusion and 3D cost volume regularization](https://doi.org/10.1016/j.asoc.2026.115074)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [HMamba-3DFT: A Hierarchical Mamba Framework for Emotion-driven Semantic 3D Facial Tracking](https://doi.org/10.1016/j.patcog.2026.113415)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [LFSamba: High-efficiency light field integral imaging 3D salient object detection method based on Mamba](https://doi.org/10.1016/j.optlastec.2026.114891)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Thermal-physics-informed 3D Gaussian Splatting for infrared images rendering](https://doi.org/10.1016/j.infrared.2026.106593)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [KF-GS: Kalman filter-guided Gaussian splatting for real-time high-quality dynamic scene reconstruction](https://doi.org/10.1016/j.jvcir.2026.104815)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Explicit-implicit dense to sparse knowledge distillation for efficient sparse 3D detection](https://doi.org/10.1016/j.patcog.2026.113825)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [SPEGS-OE: A multi-stage high-fidelity 3D reconstruction method for small power equipment in outdoor environments from sparse views](https://doi.org/10.1016/j.asoc.2026.114577)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [OV-Pro: Enhancing open-vocabulary 3D object detection by prototype contrastive distillation](https://doi.org/10.1016/j.patcog.2026.113648)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Modeling epistemic uncertainty in 3D Gaussian Splatting for robust scene reconstruction](https://doi.org/10.1016/j.displa.2026.103460)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Boosting MonoDepth With Foundation Models and Edge Laplace Cross-Entropy in Remote Sensing](https://doi.org/10.1109/jstars.2026.3664691)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Light field video frame interpolation using hierarchical spatial-angular-temporal information decoupling and fusion](https://doi.org/10.1016/j.displa.2026.103497)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Serialized PointRWKV: A Serialized RWKV-Like Model Employing Feature-Based Masked Autoencoders for Point Cloud Analysis](https://doi.org/10.1109/jsen.2026.3663650)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [ArgusNet: Understanding 3D scenes more like humans](https://doi.org/10.1016/j.neucom.2026.132895)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Technical Framework for Combating Deepfake Identity Fraud in E-Government Services](https://doi.org/10.1109/isdfs69419.2026.11458925)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Edge-aware multi-attention network for small object detection from LiDAR-based 3D point cloud](https://doi.org/10.1016/j.measurement.2026.121386)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [3D-STMN++: Leveraging semantic proxies to enhance superpoint-text matching for 3D Referring Expression Segmentation](https://doi.org/10.1016/j.patcog.2026.113854)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Object-Centric Sampling for 3D Object Detection via Pseudo Labels](https://doi.org/10.1109/vrw70859.2026.00034)：面向空间与三维能力，补充用于3D reconstruction, 3D generation, Gaussian splatting, or spatial representation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [A physics-informed multi-scale fourier neural operator framework for snow avalanche dynamics simulation](https://doi.org/10.1016/j.jhydrol.2026.135573)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [DocSafe: Toward Practical Print-Proof Image Steganography via Frequency Decomposition and Covariance Alignment](https://doi.org/10.1109/access.2026.3680290)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [RefDiffMap: Diffusion-Guided Progressive Refinement for Vectorized HD Map Construction](https://doi.org/10.1109/lra.2026.3653402)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Predicting Mohs Hardness of Minerals Using Neural Network Regression: A Machine Learning Approach](https://doi.org/10.1109/icmlas67792.2026.11483966)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Using Large Language Models to Assess Equity in U.S. Local Government American Rescue Plans](https://doi.org/10.1080/01944363.2026.2618223)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [AI-Powered Innovations in Natural Fiber Packaging for Sustainability](https://doi.org/10.1080/15440478.2026.2640280)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Deep learning and multiple linear regression for predicting mechanical properties from elastic constants: Application to aluminum-based alloys used in 3D printing](https://doi.org/10.1016/j.rineng.2026.109602)：面向空间与三维能力，补充用于spatial, three-dimensional, grounding, pose, or scene-representation contribution的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Prediction of surface pressure distributions of non-parametric airfoils using geometric deep learning methods](https://doi.org/10.1016/j.compfluid.2026.106979)：面向空间与三维能力，补充用于3D reconstruction, Gaussian splatting, pose, occupancy, or spatial generation method的模型侧方法、训练配方、架构、合成数据方法、奖励/验证器或世界模型条目。
+- [Towards Memory-Based Temporal Coherence in Pose-Free 3D Gaussian Splatting](https://doi.org/10.1109/icassp55912.2026.11460612)：证据有限候选：Crossref 与 Semantic Scholar 暂无摘要，但元数据和参考文献指向用于 pose-free 3D Gaussian splatting 的记忆机制，目标是在长视频或无位姿序列中提升时间一致性。
+- [MPEG Explorations Toward 3D Gaussian Splat Coding and Standardization](https://doi.org/10.1109/dcc66757.2026.00045)：偏基础设施而非模型条目；它报告 MPEG GSC 对可互操作 3D Gaussian-splat 压缩的探索，包括面向 INRIA-style 3DGS 的几何编码和视频编码路径。
+- [Cooperative Multi-LiDAR Deployment Using Decentralized Multi-Agent Reinforcement Learning](https://doi.org/10.1109/icaiic68212.2026.11454190)：比较 greedy search、IQL 与 DQN 在障碍物密集场景中的多 LiDAR 布设效果，并用 30-40% 传感器重叠的 reward shaping 最大化协同空间覆盖。
+- [Universal 3D Point Cloud Attack Using Gaussian Distribution Modeling](https://doi.org/10.1109/icassp55912.2026.11460620)：证据有限候选：Crossref 与 Semantic Scholar 暂无摘要，但索引元数据和参考文献表明它用 Gaussian distribution modeling 构造面向 3D point cloud 的 universal adversarial attack。
+- [Grid-Based Marking Prompt Framework for Spatial Understanding in Vision–Language Models](https://doi.org/10.1109/sii64115.2026.11404599)：偏 prompting/harness 候选；它对检测和背景遮罩后的场景区域叠加网格编号，让 VLM 在无需 3D 模型或物理标记的情况下选择合适的物体放置位置。
+- [VectorLLM: Human-like extraction of structured building contours via multimodal LLMs](https://doi.org/10.1016/j.isprsjprs.2026.01.025)：VectorLLM 通过 multimodal LLMs 改进 Human-like extraction of structured building contours，把贡献落在具体的空间表示、重建、生成或推理任务上。
+- [Explicit geometric relationships under limited spatial reference points guide 3D visual grounding](https://doi.org/10.1016/j.ipm.2026.104720)：研究在有限空间参照下显式几何关系如何提升 3D 视觉定位。
 - [A dual‐dimension collaborative enhancement framework to boost language model spatial semantic understanding](https://doi.org/10.1111/nyas.15388)：用双维协同增强框架提升语言模型的空间语义理解。
+- [GaussianAnything: Interactive Point Cloud Flow Matching for 3D Generation](https://openreview.net/forum?id=P4DbTSDQFu)： 将交互式 point-cloud flow matching 用于 3D 生成，补充可控空间资产合成路线。
+- [DepthFM: Fast Generative Monocular Depth Estimation with Flow Matching](https://doi.org/10.1609/aaai.v39i3.32330)： 用 flow matching 做快速生成式单目深度估计，强化单图空间感知。
+- [Hierarchical Adaptive Code Clouds](https://doi.org/10.1007/s11633-024-1491-7)： 学习面向三维形状的层级神经 code-cloud 表示，补充空间表示模型路线。
+- [SceneX](https://doi.org/10.1609/aaai.v39i10.33174)：构建程序化且可控的大规模场景生成，推动 spatial generation 走向可扩展环境。
+- [Fine-to-Coarse Cuboid Shape Abstraction](https://doi.org/10.1111/cgf.70344)：以自监督方式学习 fine-to-coarse cuboid abstractions，补充紧凑的结构化 3D shape 表示。
+- [MagicMan](https://doi.org/10.1609/aaai.v39i3.32356)：用 3D-aware diffusion 与 iterative refinement 做人体 novel-view synthesis。
+- [LCD-SSIC](https://doi.org/10.1088/1361-6501/ae44b5)：通过 spatial-semantic information consistency 改进 object-level loop-closure detection。
+- [LTS for 3DGS Scenes](https://doi.org/10.1145/3712676.3714445)：为动态多层 3D Gaussian Splatting 场景构建 DASH streaming system。
+- [KBGS-SLAM](https://doi.org/10.1007/s11760-025-04303-4)：通过 keyframe optimization 与 bundle adjustment 做 dense visual SLAM via 3D Gaussian Splatting。
+- [Transparent-Surface SfM and Gaussian Splatting Assessment](https://doi.org/10.3390/s25144410)：评估用 2D 与 3D Gaussian Splatting 增强 SfM 时透明表面三维重建的度量误差。
+- [Deep Hierarchical 3D Segmentation](https://doi.org/10.1007/s11263-025-02387-6)：用层次化深度学习进行 3D 语义分割。
+- [VPFormer](https://doi.org/10.1145/3730402)：将 voxel integration 与 Transformer 结合，用于 volumetric video 的 viewport prediction。
+- [PSO-HEAD: Pseudo-Supervision Guided Spatial Optimization for View-consistent 3D Full-Head Reconstruction](https://doi.org/10.1145/3801549)：通过伪监督空间优化重建视角一致的 3D 全头模型，把空间人体重建扩展到非近正面先验。
+- [DiGS-3D: Diffusion Transformer as Unstructured 3D Gaussian Splatting Generator](https://doi.org/10.5220/0014310900004084)：使用 diffusion Transformer 生成非结构化 3D Gaussian Splatting 表示。
+- [Multimodal prior-augmented text-driven 3D human-object interaction generation](https://doi.org/10.1007/s11432-025-4809-7)：用文本条件与多模态先验生成三维人-物交互，突出空间接触与动作合成。
+- [CLIPSplat: High-quality 3D Gaussian splatting from sparse multiview images based on CLIP feature fusion](https://doi.org/10.1117/1.jei.35.2.023043)：将 CLIP 特征融合到稀疏视角 3DGS 中，以有限多视图图像恢复更高质量的场景几何。
+- [HOIMamba: Bidirectional State-Space Modeling for Monocular 3D Human–Object Interaction Reconstruction](https://doi.org/10.3390/biomimetics11030214)：用双向状态空间建模分离空间几何接触线索与通道语义，用于单目三维人-物交互重建。
+- [Single-image 3D reconstruction of painted potteries using AI diffusion and feedforward models](https://doi.org/10.1038/s40494-025-02114-x)：结合扩散先验与前馈重建，从单张文物陶器图像推断三维几何。
+- [Text2CAD: Generating Sequential CAD Designs from Beginner-to-Expert Level Text Prompts](https://doi.org/10.52202/079017-0242)：从自然语言提示生成序列化 CAD 设计程序，把文本转为可编辑几何构造步骤。
+- [The Impact of Sketch-guided vs. Prompt-guided 3D Generative AIs on the Design Exploration Process](https://doi.org/10.1145/3613904.3642218)：偏离本 Model 轴：该 CHI 论文比较草图引导与提示引导的 3D 生成式 AI 设计流程，而非提出空间模型。
+- [Neural Canvas: Supporting Scenic Design Prototyping by Integrating 3D Sketching and Generative AI](https://doi.org/10.1145/3613904.3642096)：记录一个把 3D 草图与生成式 AI 结合的舞台设计工具，更接近创作工作流而非独立模型设计。
+- [CatFormer: Category-Level 6D Object Pose Estimation with Transformer](https://doi.org/10.1609/aaai.v38i7.28505)：用 Transformer 粗细两级形变与循环细化做类别级 6D 物体姿态估计。
+- [ThermalGS: Dynamic 3D Thermal Reconstruction with Gaussian Splatting](https://doi.org/10.3390/rs17020335)：把 3DGS 扩展到动态热红外场景，使重建几何同时承载随时间变化的温度场。
+- [GaussianNexus: Room-Scale Real-Time AR/VR Telepresence with Gaussian Splatting](https://doi.org/10.1145/3746059.3747693)：围绕 Gaussian Splatting 实现房间尺度实时 AR 与 VR 远程临场，主要是沉浸式系统部署而非新几何模型。
+- [On the Use of LLMs for GIS-Based Spatial Analysis](https://doi.org/10.3390/ijgi14100401)：偏离 Model 轴：把自然语言 GIS 请求转换为 GUI 中生成的 Python 工作流，属于空间分析自动化研究。
+- [Engineering Prompts for Spatial Questions](https://doi.org/10.1145/3701716.3717807)：研究空间问题的提示工程，贡献在提示行为而不是三维模型架构或训练。
+- [SpecSolver: Solving Spatial-Spectral Fusion via Semantic Transformer](https://doi.org/10.1145/3746027.3755309)：用 semantic Transformer 求解空间-光谱融合，把语言层语义与图像融合特征连接起来。
+- [Integrating large language models into spatial analysis: experimental insights from GIS interpolation](https://doi.org/10.1007/s41324-026-00674-z)：评估 LLM 在 GIS 插值工作流中的使用，属于相邻的空间分析自动化而非几何或三维模型。
+- [Multimodal graph neural networks for earth observation and sustainable resource management: a comprehensive review and research roadmap](https://doi.org/10.1007/s43621-025-02317-z)：偏离 Model 清理目标：这是地球观测多模态 GNN 的综述与路线图，不是单个空间模型贡献。
+- [A multimodal imaging textual fused channel spatial Kolmogorov–Arnold network for road crack detection](https://doi.org/10.1111/mice.70041)：构建融合图像与文本特征的 channel-spatial KAN，用于道路裂缝检测这一窄域基础设施视觉任务。
+- [Recursive Memory Transformers for Scalable Analysis of Complex Vector Drawings](https://doi.org/10.5220/0014257800004084)：用 recursive memory Transformer 处理大型矢量图，避免一次性展平全部空间图元。
+- [Enhanced spatial distribution for robust Gaussian SLAM with view-consistency optimization](https://doi.org/10.1007/s10514-025-10241-4)：通过增强空间分布与视角一致性优化改进 Gaussian SLAM 的鲁棒场景建图。
+- [Research on Urban Functional Zone Identification and Spatial Interaction Characteristics in Lhasa Based on Ride-Hailing Trajectory Data](https://doi.org/10.3390/land15040677)：偏离本 Model 轴：基于网约车轨迹与 POI 识别城市功能区和空间交互，而非提出可复用空间模型。
+- [Scene-guided Attention Network for Spatial Understanding in 3D Scenes](https://doi.org/10.1145/3731715.3733426)：用场景引导注意力进行 3D 场景理解，把物体特征与更大的场景上下文关联起来。
+- [GaussianShopVR: Facilitating Immersive 3D Authoring Using Gaussian Splatting in VR](https://doi.org/10.1145/3746059.3747803)：记录一个在 VR 中编辑 Gaussian-splat 场景的沉浸式创作界面，更接近工具而非基础重建模型。
+- [PELR-GS: perception-enhanced large-scale 3D reconstruction for view-adaptive rendering](https://doi.org/10.1007/s11227-026-08299-7)：为视角自适应渲染加入感知增强的大规模三维重建。
+- [DIScene: Object Decoupling and Interaction Modeling for Complex Scene Generation](https://doi.org/10.1145/3680528.3687589)：解耦物体并建模物体间交互，以生成空间组合更可控的复杂场景。
+- [P‐4.6: Generative AI meets 3D：Exploring cutting‐edge advances in AI‐generated 3D content](https://doi.org/10.1002/sdtp.18968)：偏离 Model 轴：出版方摘要将其定位为 AI 生成 3D 内容进展与应用的概览。
+- [InterCoser: Interactive 3D Character Creation with Disentangled Fine-Grained Features](https://doi.org/10.1609/aaai.v40i12.37993)：用解耦的细粒度角色特征支持交互式 3D 角色生成、局部编辑与服装迁移。
+- [A Grid-Based Hierarchical Representation Method for Large-Scale Scenes Based on Three-Dimensional Gaussian Splatting](https://doi.org/10.3390/rs17101801)：在 3DGS 重建前把大场景分割为网格化层级表示，以降低遥感尺度建模的资源压力。
+- [GSDF: 3DGS Meets SDF for Improved Neural Rendering and Reconstruction](https://doi.org/10.52202/079017-4115)：结合 3D Gaussian Splatting 与符号距离场，以改进神经渲染和表面重建。
+- [FusionProtor: A Mixed-Prototype Tool for Component-level Physical-to-Virtual 3D Transition and Simulation](https://doi.org/10.1145/3706598.3713686)：偏离 Model 轴：提出组件级物理到虚拟三维转换与仿真的 mixed-prototype 工具，而非新表示模型。
+- [TVAE-3D: Efficient multi-view 3D shape reconstruction with diffusion models and transformer based VAE](https://doi.org/10.1007/s10586-025-05618-0)：结合扩散模型与 Transformer VAE，从多视图高效重建三维形状。
+- [AIVT: Inference of turbulent thermal convection from measured 3D velocity data by physics-informed Kolmogorov-Arnold networks](https://doi.org/10.1126/sciadv.ads5236)：用物理约束 Kolmogorov-Arnold 网络从实测三维速度数据推断连续温度场与速度场。
+- [FabricDiffusion: High-Fidelity Texture Transfer for 3D Garments Generation from In-The-Wild Images](https://doi.org/10.1145/3680528.3687637)：把自然图像纹理迁移到生成的 3D 服装上，增强带衣物三维资产生成的外观控制。
+- [3D Sketching + 2D Generative AI for Car Exterior Design](https://doi.org/10.1145/3746059.3747609)：偏离 Model 轴：在汽车外观设计界面中结合 3D 草图与 2D 生成式 AI，而非贡献空间骨干模型。
+- [An agentic vision-action framework for generative 3D architectural modeling from sketches](https://doi.org/10.1177/14780771251352950)：偏离 Model 轴：用 agentic vision-action 工作流包装草图到 3D 建筑建模，强调可编辑组件生成。
+- [3D visualization of damaged statues using Gaussian splatting and web interface integration](https://doi.org/10.1038/s40494-025-02063-5)：记录一个把 Gaussian Splatting 与 Web 界面结合的文物可视化流程，而非可复用 3DGS 算法。
+- [PointUltra: ultra-efficient mamba framework for transformative point cloud analysis](https://doi.org/10.1007/s11227-025-07066-4)：将超高效 Mamba 框架用于点云分析，以建模长程几何特征。
+- [EVSplitting: An Efficient and Visually Consistent Splitting Algorithm for 3D Gaussian Splatting](https://doi.org/10.1145/3680528.3687592)：用视觉一致的 Gaussian splitting 算法改进 3DGS 密度控制。
+- [HoloGaussian Digital Twin: Reconstructing 3D Scenes with Gaussian Splatting for Tabletop Hologram Visualization of Real Environments](https://doi.org/10.3390/rs16234591)：用 Gaussian-splat 场景采集构建桌面全息数字孪生，主要验证真实环境可视化流程。
+- [GS-Morph: Dynamic Novel View Synthesis via UDF-ARAP Gaussian Splat Morphing](https://doi.org/10.1145/3756863.3769701)：用 UDF 与 ARAP 约束形变 Gaussian splats，以支持动态 novel-view synthesis。
+- [Arbitrary Optics for Gaussian Splatting Using Space Warping](https://doi.org/10.3390/jimaging10120330)：通过 space warping 让 Gaussian Splatting 支持默认针孔相机之外的任意光学系统。
+- [P2P-Pose: point to point relative camera pose regression with image matching](https://doi.org/10.1088/1361-6501/ae3d58)：从局部匹配点特征回归相对相机姿态，而不是只依赖全局图像描述符。
+- [Performance of General-Purpose Vision Language Models and Ophthalmology Foundation Models in Glaucoma Detection and Function Prediction](https://doi.org/10.1167/tvst.14.11.31)：偏离本空间 Model 文件：评估通用视觉语言模型和眼科基础模型在青光眼任务上的表现。
+- [TGNF-Net: Two-Stage Geometric Neighborhood Fusion Network for Category-Level 6D Pose Estimation](https://doi.org/10.3390/info16020113)：用两阶段几何邻域融合改进稀疏点云观测下的类别级 6D 姿态估计。
+- [Enhancing point cloud analysis with multi-scale state space modeling and edge graph augmentation](https://doi.org/10.1007/s00371-025-04171-6)：结合多尺度状态空间建模与边图增强来学习点云特征。
+- [HybridDeform4D: Joint Refinement of Mesh and Gaussian Splatting for Video-to-4D Object Generation](https://doi.org/10.1145/3757374.3771441)：联合细化 mesh 与 Gaussian splats，把视频观测转换为可形变 4D 物体表示。
+- [Application of 3D real scene modeling technology based on drone oblique photography in urban and rural planning surveying](https://doi.org/10.1117/12.3103399)：偏离 Model 轴：把无人机倾斜摄影实景建模用于规划测绘应用，而非提出可复用三维方法。
+- [SpatioGS: spatiotemporal-aware density control for dynamic scene rendering with Gaussian splatting](https://doi.org/10.1007/s00371-026-04442-w)：用时空线索控制 Gaussian 密度，以改进动态场景渲染。
+- [基于改进3DGS的小范围场景高质量三维重建方法](https://doi.org/10.3788/lop251693)：改进 3DGS 以实现小范围场景的高质量三维重建。
+- [Large-scale 3D scene reconstruction via gradient field scaling and pixel-aware adaptive density control](https://doi.org/10.1117/12.3095589)：通过梯度场缩放与像素感知自适应密度控制扩展大规模三维场景重建。
+- [HYBRID FEATURE-ENHANCED 4D GAUSSIAN SPLATTING FOR DYNAMIC SCENE RECONSTRUCTION](https://doi.org/10.61784/ejst3136)：用混合的空间、时间与多尺度特征模块增强 4DGS，用于动态场景重建。
+- [Deep Learning Architectures for 3D Point Clouds](https://doi.org/10.5220/0014440900004052)：偏离单个 Model 条目：出版方元数据表明它是三维点云深度学习架构概览，而不是一个具体模型。
+- [PathSelect: Dynamic Token Condensation and Hierarchical Attention for Accelerated T2I Diffusion](https://doi.org/10.3390/electronics15020342)：偏离 Spatial：用动态 token condensation 与层级注意力加速文生图扩散并维持图文对齐。
+- [Optimization study of English–Chinese non-autoregressive machine translation model by incorporating cross-lingual pre-training language model](https://doi.org/10.1117/12.3089212)：偏离 Spatial：这是结合跨语言预训练语言模型的英中非自回归机器翻译优化研究。
+- [Progressive multi-resolution training: A training recipe for fast, three-dimensional high-resolution aerodynamic prediction](https://doi.org/10.1063/5.0332471)：用 progressive multi-resolution 调度训练 U-Net 气动代理模型，预测高分辨率三维流场。
+- [Zero-shot forecasting of streamflow using time series foundation models: are we there yet?](https://doi.org/10.1088/3049-4753/ae4982)：偏离本 Model 文件：评估时间序列基础模型的零样本径流预测，而非三维或几何建模。
+- [New parameters of power: On LLM-based manipulation and control and the spectre of strategic AI](https://doi.org/10.1177/20539517261426450)：偏离 Spatial：分析 LLM 驱动的操纵与控制如何形成社会技术权力，而非空间模型能力。
+- [A Dynamic‐Weighted Deep Transfer Learning Framework for Thermal Conductivity Prediction and Analysis](https://doi.org/10.1002/mgea.70055)：偏离 Spatial：用动态加权 ResNet 迁移学习材料微结构特征来预测陶瓷热导率。
+- [Memory-based diverse-category single-view 3D reconstruction](https://doi.org/10.1007/s11432-024-4543-3)：用记忆先验提升跨多类别物体的单视图三维重建。
+- [Research on the Automatic Generation of Information Requirements for Emergency Response to Unexpected Events](https://doi.org/10.3390/app152211953)：偏离 Spatial Model：用模型驱动响应工作流自动生成地震应急信息需求。
+- [ConstFS: Controlled and Stable Face Stylization with High Identity-Preserved](https://doi.org/10.1145/3769534.3769555)：偏离 Spatial：控制身份保持的人脸风格化，而非空间或三维重建。
+- [JumpingGS: Level-jump 3D Gaussian Representation for Delicate Textures in Aerial Large-scale Scene Rendering](https://doi.org/10.1145/3763347)：引入层级 level-jump Gaussians，使航拍大场景 3DGS 能表示小物体与高频纹理。
+- [TPD-NeRF: Temporally Progressive Reconstruction of Dynamic Neural Radiance Fields from Monocular Video](https://doi.org/10.1007/978-981-96-5812-1_6)：用时间渐进训练策略从单目视频重建动态神经辐射场。
+- [High-fidelity 3D mesh generation from a single sketch using shape constraints](https://doi.org/10.1038/s41598-025-30843-3)：通过显式形状约束从单张草图生成高保真三维网格。
+- [Automated Fine-Scale Change Detection Using 3D Gaussian Splatting and VLMs](https://doi.org/10.1145/3743093.3771023)：结合 3D Gaussian Splatting 与视觉语言模型检测细粒度场景变化。
+- [See Through the Occlusions: Few-Shot Gaussian Splatting with Layered Amodal Supervision](https://doi.org/10.1145/3746027.3755801)：使用 layered amodal supervision，让 few-shot Gaussian Splatting 重建遮挡物背后的内容。
+- [Polarimetric Monocular Gaussian Splatting SLAM for Dense Surface Reconstruction](https://doi.org/10.1145/3746027.3754925)：《Polarimetric Monocular Gaussian Splatting SLAM for Dense Surface Reconstruction》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [GSCore: Efficient Radiance Field Rendering via Architectural Support for 3D Gaussian Splatting](https://doi.org/10.1145/3620666.3651385)：《GSCore: Efficient Radiance Field Rendering via Architectural Support for 3D Gaussian Splatting》为Spatial补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Deblur-GS: 3D Gaussian Splatting from Camera Motion Blurred Images](https://doi.org/10.1145/3651301)：Deblur-GS 从 Camera Motion Blurred Images 重建或生成 3D Gaussian Splatting，明确对应空间模型的输入输出。
+- [ST-4DGS: Spatial-Temporally Consistent 4D Gaussian Splatting for Efficient Dynamic Scene Rendering](https://doi.org/10.1145/3641519.3657520)：ST-4DGS 为 Efficient Dynamic Scene Rendering 构建 Spatial-Temporally Consistent 4D Gaussian Splatting，明确对应空间模型的任务目标。
+- [AI-Generated Video Detection via Spatial-Temporal Anomaly Learning](https://doi.org/10.1007/978-981-97-8792-0_32)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [X-RefSeg3D: Enhancing Referring 3D Instance Segmentation via Structured Cross-Modal Graph Neural Networks](https://doi.org/10.1609/aaai.v38i5.28254)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [AI-Driven Innovations in 3D Printing: Optimization, Automation, and Intelligent Control](https://doi.org/10.3390/jmmp9100329)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Event-3DGS: Event-based 3D Reconstruction Using 3D Gaussian Splatting](https://doi.org/10.52202/079017-4069)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [SharedNeRF: Leveraging Photorealistic and View-dependent Rendering for Real-time and Remote Collaboration](https://doi.org/10.1145/3613904.3642945)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Exploring ChatGPT as a virtual tutor: A multi-dimensional analysis of large language models in academic support](https://doi.org/10.1007/s10639-025-13484-x)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Role of Site-Specific Iron in Fe-Doped Nickel Hydroxide Toward Water Oxidation Revealed by Spatially Resolved Imaging at the Single-Particle Level.](https://doi.org/10.1021/jacs.5c00438)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [FAST-LIO2: Fast Direct LiDAR-Inertial Odometry](https://doi.org/10.2139/ssrn.4675561)：补充空间与三维理解方向的模型侧工作，包括训练、架构、后训练、合成数据、奖励或验证器、世界模型等机制。
+- [Fast and Robust 3D Gaussian Splatting for Virtual Reality](https://doi.org/10.1145/3681756.3697947)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [SparseInteraction: Sparse Semantic Guidance for Radar and Camera 3D Object Detection](https://doi.org/10.1145/3664647.3681565)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Recent Developments in Image-Based 3D Reconstruction Using Deep Learning: Methodologies and Applications](https://doi.org/10.3390/electronics14153032)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [ViewPCGC: View-Guided Learned Point Cloud Geometry Compression](https://doi.org/10.1145/3664647.3681225)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Cross-Modal Match for Language Conditioned 3D Object Grounding](https://doi.org/10.1609/aaai.v38i7.28566)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Uncovering the Impacts of 2D and 3D Urbanization on Urban Heat Islands in 384 Chinese Cities.](https://doi.org/10.1021/acs.est.4c12689)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [LIBA: Language Instructed Multi-granularity Bridge Assistant for 3D Visual Grounding](https://doi.org/10.1609/aaai.v39i8.32875)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Advancing 3D Object Grounding Beyond a Single 3D Scene](https://doi.org/10.1145/3664647.3680758)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [DyGS-SLAM: Realistic Map Reconstruction in Dynamic Scenes Based on Double-Constrained Visual SLAM](https://doi.org/10.3390/rs17040625)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Wafer-Scale Nanoprinting of 3D Interconnects beyond Cu.](https://doi.org/10.1021/acsnano.5c00720)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Face Reconstruction-Based Generalized Deepfake Detection Model with Residual Outlook Attention](https://doi.org/10.1145/3686162)：提出或分析面向spatial, 3D, reconstruction, or grounded perception的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [Enhanced spatial awareness of vision-language model for car damage detection](https://doi.org/10.1117/1.jei.34.2.023037)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [A Geographic Knowledge Graph Approach to Identifying Cultural Diffusion Patterns: Integrating Cultural Similarity and Spatial Proximity](https://doi.org/10.1111/tgis.70191)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Enhancing hyperspectral image classification through spectral-spatial synergy: SSFSNet](https://doi.org/10.1007/s00371-025-04293-x)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [FSformer: fusing frequency and spatial domain transformer network for underwater image enhancement](https://doi.org/10.1007/s00530-025-01753-1)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [SGFNet: Redundancy-Reduced Spectral–Spatial Fusion Network for Hyperspectral Image Classification](https://doi.org/10.3390/e27100995)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Research on autonomous obstacle avoidance of mountainous tractors based on semantic neural network and laser SLAM](https://doi.org/10.1371/journal.pone.0323631)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [LoCo: Learning 3D Location-Consistent Image Features with a Memory-Efficient Ranking Loss](https://doi.org/10.52202/079017-3951)：提出面向空间理解的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Workflow Analysis and Interface Design for 3D Gaussian Splatting Using a Hierarchical Task Analysis Approach](https://doi.org/10.3390/app16105046)：偏离 Model；它用 hierarchical task analysis 重构 3DGS 工作流界面，聚焦 setup、progress、error review 和 editing，而不是提出新的重建或渲染模型。
+- [Augmenting Cross-View Geo-Localization with Spatial Semantics from Vision Foundation Models](https://doi.org/10.1145/3774904.3792233)：把 cross-view geo-localization 重写为空间语义对齐问题，用 vision foundation model 提取的空间结构和 BEV transformation 作为辅助任务，并与纹理/外观匹配共享编码器。
+- [RobustMMD: towards robust multimodal 3D detection via efficient multilevel adapter and spatial denoiser](https://doi.org/10.1117/12.3094825)：为 3D detector 加入 multi-level adapter 和 multimodal semantic-guided spatial denoiser，以较小计算开销提升对传感器噪声和标定误差的鲁棒性。
+- [Sustainable 3D-printed concrete: integrating e-waste plastics for enhanced printability, mechanical strength, and long-term durability sets](https://doi.org/10.1007/s41024-026-00806-w)：偏离 Spatial Model；可得元数据表明它研究掺入电子废塑料的 3D 打印混凝土材料性能，不是计算空间、三维重建或空间推理模型。
+- [3D Sonar Point Cloud Denoising Constrained by Local Spatial Features and Global Region Growth Algorithm](https://doi.org/10.3390/jmse14070597)：用 total least squares 拟合局部空间特征，按法向量属性做 region-growing segmentation，再以局部几何特征细化簇并统计过滤残余离群点，从而去噪 3D sonar point clouds。
+- [Multiple Multi-Modal AI for Semantic Annotations of 3D Spatial Data](https://doi.org/10.5220/0013235300003912)：用 game engine 把 3D spatial data 渲染为可供多个 2D-trained multimodal AI 处理的视图，再将语义标注重投影回 3D 空间以扩展场景解释。
+- [Dual-Dimensional Gaussian Splatting Integrating 2D and 3D Gaussians for Surface Reconstruction](https://doi.org/10.3390/app15126769)：为 Surface Reconstruction 构建 Dual-Dimensional Gaussian Splatting Integrating 2D and 3D Gaussians，明确对应空间模型的任务目标。
+- [A semantic-enhanced multi-modal remote sensing foundation model for Earth observation](https://doi.org/10.1038/s42256-025-01078-8)：为 Earth observation 构建 A semantic-enhanced multi-modal remote sensing foundation model，明确对应空间模型的任务目标。
+- [Multi-Layer Gaussian Splatting for Single-Image Feed-Forward Spatial Scene Reconstruction](https://doi.org/10.1145/3746027.3755176)：为空间与三维理解补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。
+- [INF‐SLiM: Large‐Scale Implicit Neural Fields for Semantic LiDAR Mapping of Embodied AI Agents](https://doi.org/10.1002/rob.70058)：为空间与三维理解补充模型侧方法、训练或后训练配方、架构、数据生成方法、验证器、世界模型或推理期技术。

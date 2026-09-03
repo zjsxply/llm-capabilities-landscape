@@ -1,27 +1,232 @@
 # 2.3.3 Bench
 
-- [WebArena](https://arxiv.org/abs/2307.13854)：评测 browser-native 动作空间下的端到端网页任务完成；核心思想是“自托管多站点网页环境 + 浏览器原生动作 + 自动评测脚本”。（[开源代码](https://github.com/web-arena-x/webarena)）
-- [VisualWebArena](https://arxiv.org/abs/2401.13649)：评测带视觉网页理解的 WebArena 扩展；核心思想是在同一 browser-native runtime 中把视觉感知与交互纳入闭环。（[开源代码](https://github.com/web-arena-x/visualwebarena)）
+- [WebArena](https://arxiv.org/abs/2307.13854)：评测 browser-native 动作空间下的端到端网页任务完成；核心思想是“自托管多站点网页环境 + 浏览器原生动作 + 自动评测脚本”。（[开源代码](https://github.com/web-arena-x/webarena)；[Leaderboard](https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ/edit?usp=sharing)）
+- [Adapting Standard Retrieval Benchmarks to Evaluate Generated Answers](https://arxiv.org/abs/2401.04842)：补充Web 搜索与 RAG方向的基准、数据集、挑战、指标或评测协议。
+- [VisualWebArena](https://arxiv.org/abs/2401.13649)：评测带视觉网页理解的 WebArena 扩展；核心思想是在同一 browser-native runtime 中把视觉感知与交互纳入闭环。（[开源代码](https://github.com/web-arena-x/visualwebarena)；[Leaderboard](https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ/edit?usp=sharing)）
+- [MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries](https://arxiv.org/abs/2401.15391)：评测需要证据链的多跳检索增强生成。
+- [CRUD-RAG: A Comprehensive Chinese Benchmark for Retrieval-Augmented Generation of Large Language Models](https://arxiv.org/abs/2401.17043)：通过任务、评测协议或诊断设置评测 Web Search 能力，适合作为 Bench 条目。
+- [Wikibench: Community-Driven Data Curation for AI Evaluation on Wikipedia](https://arxiv.org/abs/2402.14147)：围绕 Web Search 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Let LLMs Take on the Latest Challenges! A Chinese Dynamic Question Answering Benchmark](https://arxiv.org/abs/2402.19248)：补充Web 搜索与 RAG方向的基准、数据集、挑战、指标或评测协议。
+- [Reply With Sticker: New Dataset and Model for Sticker Retrieval](https://arxiv.org/abs/2403.05427)：提出 StickerInt 会话贴纸检索数据集，要求系统根据上文意图和跨模态语境选择用于回复或补充表达的贴纸。
+- [Neuron Specialization: Leveraging Intrinsic Task Modularity for Multilingual Machine Translation](https://arxiv.org/abs/2404.11201)：补充网络检索能力的评测资源或协议。
+- [STaRK: Benchmarking LLM Retrieval on Textual and Relational Knowledge Bases](https://arxiv.org/abs/2404.13207)（[Leaderboard](https://huggingface.co/spaces/snap-stanford/stark-leaderboard)）：提供用于评估Web Search的任务或数据集，为 Web Search / Bench 补充具体测量目标。
+- [Evaluating Retrieval Quality in Retrieval-Augmented Generation](https://arxiv.org/abs/2404.13781)：通过任务、评测协议或诊断设置评测 Web Search 能力，适合作为 Bench 条目。
+- [Can We Use Large Language Models to Fill Relevance Judgment Holes?](https://arxiv.org/abs/2405.05600)：围绕 Web Search 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [ProCIS: A Benchmark for Proactive Retrieval in Conversations](https://arxiv.org/abs/2405.06460)：补充网络检索能力的评测资源或协议。
+- [Automated Evaluation of Retrieval-Augmented Language Models with Task-Specific Exam Generation](https://arxiv.org/abs/2405.13622)：用任务语料自动生成多选考试来评测 RAG 系统，并用 item-response theory 筛除低信息量题目，覆盖 arXiv、StackExchange、AWS DevOps 和 SEC 文件问答任务。
+- [Shopping Queries Image Dataset (SQID): An Image-Enriched ESCI Dataset for Exploring Multimodal Learning in Product Search](https://arxiv.org/abs/2405.15190)：在 Amazon Shopping Queries 上为约 19 万个商品补充图像信息，评测多模态信号对商品搜索与排序的帮助。
+- [Cocktail: A Comprehensive Information Retrieval Benchmark with LLM-Generated Documents Integration](https://arxiv.org/abs/2405.16546)：补充Web 搜索与 RAG方向的基准、数据集、挑战、指标或评测协议。
+- [Reverse Image Retrieval Cues Parametric Memory in Multimodal LLMs](https://arxiv.org/abs/2405.18740)：评测反向图像检索增强的知识密集型视觉问答，分析网页级图文线索何时能改善或损害多模态模型回答。
+- [CRAG - Comprehensive RAG Benchmark](https://arxiv.org/abs/2406.04744)（[KDD Cup leaderboard](https://www.aicrowd.com/challenges/meta-comprehensive-rag-benchmark-kdd-cup-2024/leaderboards)）：定义综合检索增强生成基准。
+- [DomainRAG: A Chinese Benchmark for Evaluating Domain-specific Retrieval-Augmented Generation](https://arxiv.org/abs/2406.05654)：通过基准、数据集或评测协议评估网络搜索能力。
+- [Evaluating the Retrieval Component in LLM-Based Question Answering Systems](https://arxiv.org/abs/2406.06458)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充网络搜索与检索增强方向的基准覆盖。
+- [UMBRELA: UMbrela is the (Open-Source Reproduction of the) Bing RELevance Assessor](https://arxiv.org/abs/2406.06519)：把 Bing 风格 LLM 相关性评估复现为开源工具，在 TREC Deep Learning tracks 上验证 GPT-4o 判断，并服务 TREC 2024 RAG Track 的可扩展标注。
+- [ClimRetrieve: A Benchmarking Dataset for Information Retrieval from Corporate Climate Disclosures](https://arxiv.org/abs/2406.09818)：补充网络检索能力的评测资源或协议。
+- [Evaluating the Efficacy of Open-Source LLMs in Enterprise-Specific RAG Systems: A Comparative Study of Performance and Scalability](https://arxiv.org/abs/2406.11424)：在从企业网站抓取的企业专属数据集上评测 RAG，比较开源 LLM 与 embedding 选择对检索质量、生成准确性、可扩展性和部署成本的影响。
+- [From RAGs to rich parameters: Probing how language models utilize external knowledge over parametric information for factual queries](https://arxiv.org/abs/2406.12824)：补充网络检索能力的评测资源或协议。
+- [FoRAG: Factuality-optimized Retrieval Augmented Generation for Web-enhanced Long-form Question Answering](https://arxiv.org/abs/2406.13779)：补充网络检索能力的评测资源或协议。
+- [UDA: A Benchmark Suite for Retrieval Augmented Generation in Real-world Document Analysis](https://arxiv.org/abs/2406.15187)：提供用于评估Web Search的任务或数据集，为 Web Search / Bench 补充具体测量目标。
+- [Towards Fine-Grained Citation Evaluation in Generated Text: A Comparative Analysis of Faithfulness Metrics](https://arxiv.org/abs/2406.15264)：比较生成文本的引用忠实性指标，重点检验引用证据是否真正支持细粒度陈述。
+- [CARE: a Benchmark Suite for the Classification and Retrieval of Enzymes](https://arxiv.org/abs/2406.15669)：通过基准、数据集或评测协议评估网络搜索能力。
+- [Beyond Benchmarks: Evaluating Embedding Model Similarity for Retrieval Augmented Generation Systems](https://arxiv.org/abs/2407.08275)：用表示对齐和 top-k 检索重叠度比较 RAG embedding 模型在 BEIR 数据集上的相似性，而不只依赖总分榜单。
+- [RAGBench: Explainable Benchmark for Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2407.11005)：通过任务、评测协议或诊断设置评测 Web Search 能力，适合作为 Bench 条目。
+- [BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval](https://arxiv.org/abs/2407.12883)（[Leaderboard](https://brightbenchmark.github.io/)）：用现实困难查询评测推理密集型检索。
+- [RAG-QA Arena: Evaluating Domain Robustness for Long-form Retrieval Augmented Question Answering](https://arxiv.org/abs/2407.13998)：提供用于评估Web Search的任务或数据集，为 Web Search / Bench 补充具体测量目标。
+- [CoverBench: A Challenging Benchmark for Complex Claim Verification](https://arxiv.org/abs/2408.03325)：评测复杂声明验证，覆盖长输入、表格、多领域和多种推理类型，并提供人工核验标签与强基线。
+- [Assessing SPARQL Capabilities of Large Language Models](https://arxiv.org/abs/2409.05925)：补充Web 搜索与 RAG方向的基准、数据集、挑战、指标或评测协议。
+- [Enhancing Q&A Text Retrieval with Ranking Models: Benchmarking, fine-tuning and deploying Rerankers for RAG](https://arxiv.org/abs/2409.07691)：通过基准、数据集或评测协议评估网络搜索能力。
+- [Multi-Source Knowledge Pruning for Retrieval-Augmented Generation: A Benchmark and Empirical Study](https://arxiv.org/abs/2409.13694)：评测检索、搜索或 RAG 能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [RAGProbe: An Automated Approach for Evaluating RAG Applications](https://arxiv.org/abs/2409.19019)：提供面向网页搜索与信息检索的基准、数据集、挑战任务或评测协议。
+- [Long-Context LLMs Meet RAG: Overcoming Challenges for Long Inputs in RAG](https://arxiv.org/abs/2410.05983)：评测检索、搜索或 RAG 能力，为父级复核补充基准、数据集、指标或实证协议线索。
 - [ST-WebAgentBench](https://arxiv.org/abs/2410.06703)：评测安全与可信 web agent 的行为与约束遵循；核心思想是用 BrowserGym/WebArena 范式提供可复现的安全评测模板。（[开源代码](https://github.com/segev-shlomov/ST-WebAgentBench)）
+- [Evaluating the Effectiveness and Efficiency of Demonstration Retrievers in RAG for Coding Tasks](https://arxiv.org/abs/2410.09662)：评测代码任务中 RAG 示例检索器的效果与效率权衡，对比 BM25、BM25L、SBERT semantic search、ANNOY、LSH 和 HNSW 在程序合成、提交信息生成与断言生成上的表现。
+- [MAIR: A Massive Benchmark for Evaluating Instructed Retrieval](https://arxiv.org/abs/2410.10127)：汇集 6 个领域的 126 个带指令检索任务，评测 embedding 与 reranking 模型在显式任务说明和长尾检索场景下的表现。
+- [DocETL: Agentic Query Rewriting and Evaluation for Complex Document Processing](https://arxiv.org/abs/2410.12189)：提供用于评估Web Search的任务或数据集，为 Web Search / Bench 补充具体测量目标。
+- [CoFE-RAG: A Comprehensive Full-chain Evaluation Framework for Retrieval-Augmented Generation with Enhanced Data Diversity](https://arxiv.org/abs/2410.12248)：围绕网页搜索与检索增强生成能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Open Domain Question Answering with Conflicting Contexts](https://arxiv.org/abs/2410.12311)：补充网络检索能力的评测资源或协议。
+- [Do RAG Systems Cover What Matters? Evaluating and Optimizing Responses with Sub-Question Coverage](https://arxiv.org/abs/2410.15531)：围绕网页搜索与检索增强生成能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [ETHIC: Evaluating Large Language Models on Long-Context Tasks with High Information Coverage](https://arxiv.org/abs/2410.16848)：补充网络检索能力的评测资源或协议。
+- [Leveraging the Domain Adaptation of Retrieval Augmented Generation Models for Question Answering and Reducing Hallucination](https://arxiv.org/abs/2410.17783)：补充网络检索能力的评测资源或协议。
+- [AGENT-CQ: Automatic Generation and Evaluation of Clarifying Questions for Conversational Search with LLMs](https://arxiv.org/abs/2410.19692)：提出面向会话式搜索的 LLM 澄清问题生成与评估流程，在 ClariQ 上用提示生成问题，并用 CrowdLLM 模拟众包判断来评分问题和答案质量。
+- [Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction](https://arxiv.org/abs/2410.21169)：提供用于评估Web Search的任务或数据集，为 Web Search / Bench 补充具体测量目标。
+- [CORAL: Benchmarking Multi-turn Conversational Retrieval-Augmentation Generation](https://arxiv.org/abs/2410.23090)：补充网络检索能力的评测资源或协议。
+- [Benchmarking Multimodal Retrieval Augmented Generation with Dynamic VQA Dataset and Self-adaptive Planning Agent](https://arxiv.org/abs/2411.02937)：通过任务、评测协议或诊断设置评测 Web Search 能力，适合作为 Bench 条目。
+- [Initial Nugget Evaluation Results for the TREC 2024 RAG Track with the AutoNuggetizer Framework](https://arxiv.org/abs/2411.09607)：围绕 Web Search 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Limitations of Automatic Relevance Assessments with Large Language Models for Fair and Reliable Retrieval Evaluation](https://arxiv.org/abs/2411.13212)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [Know Your RAG: Dataset Taxonomy and Generation Strategies for Evaluating RAG Systems](https://arxiv.org/abs/2411.19710)：补充网络检索能力的评测资源或协议。
+- [Evaluating LLM-based Approaches to Legal Citation Prediction: Domain-specific Pre-training, Fine-tuning, or RAG? A Benchmark and an Australian Law Case Study](https://arxiv.org/abs/2412.06272)：发布 AusLaw Citation Benchmark，包含 5.5 万个澳大利亚法律实例，并比较提示、纯检索、微调以及带查询扩展、投票和 reranking 的混合 citation prediction 管线。
+- [MST-R: Multi-Stage Tuning for Retrieval Systems and Metric Evaluation](https://arxiv.org/abs/2412.10313)：在 RegNLP RIRAG challenge 上评测监管文档领域检索，组合 hard-negative encoder tuning、稀疏稠密融合与 cross-encoder reranking，同时暴露 RePASs 指标可被投机利用的问题。
+- [AIR-Bench: Automated Heterogeneous Information Retrieval Benchmark](https://arxiv.org/abs/2412.13102)：提供面向网页搜索与信息检索的基准、数据集、挑战任务或评测协议。
+- [JudgeBlender: Ensembling Judgments for Automatic Relevance Assessment](https://arxiv.org/abs/2412.13268)：把较小开源 LLM 或多种提示的相关性判断做集成，在 LLMJudge 上比较 LLMBlender 与 PromptBlender，以降低成本并缓解单一模型偏差。
+- [Toward Robust Hyper-Detailed Image Captioning: A Multiagent Approach and Dual Evaluation Metrics for Factuality and Coverage](https://arxiv.org/abs/2412.15484)：补充网络检索能力的评测资源或协议。
+- [LLM-based relevance assessment still can't replace human relevance assessment](https://arxiv.org/abs/2412.17156)：围绕Web Search能力补充《LLM-based relevance assessment still can't replace human relevance assessment》这一评测或基准。
+- [CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era](https://arxiv.org/abs/2412.18702)：围绕网页搜索与检索增强生成能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Unlocking new horizons, challenges of integrating machine learning to energy conversion and storage research](https://doi.org/10.1080/00194506.2024.2444394)：补充一个面向网络检索与 RAG的基准条目，关注RAG, retrieval, or factuality contribution。
+- [Assessing Support for the TREC 2024 RAG Track: A Large-Scale Comparative Study of LLM and Human Evaluations](https://doi.org/10.1145/3726302.3730165)：比较 GPT-4o 与人工评审在 TREC 2024 RAG Track 引用支持性判断上的一致性，覆盖 45 个参赛系统和 36 个查询，用于检验 citation support assessment 的自动化可行性。
+- [The University of Stavanger (IAI) at the TREC 2024 Retrieval-Augmented Generation Track](https://trec.nist.gov/pubs/trec33/papers/uis-iai.rag.pdf)：报告 UiS IAI 在 TREC 2024 RAG Track augmented-generation 任务中的 GINGER 系统，用检索段落中的信息 nugget 检测、聚类、排序和摘要，并比较输入段落数量与回答长度。
+- [Enhancing LLM Conversational Acuity Using Pragmatic Measures](https://doi.org/10.1109/ictc62082.2024.10826785)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的基准、数据集、指标、审计或实证协议。
+- [RAGVAL: Automatic Dataset Creation and Evaluation for RAG Systems](https://doi.org/10.1109/fllm63129.2024.10852482)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [Application and evaluation of RAG technology in civil aviation policy question answering](https://doi.org/10.1109/cnteie66268.2024.00032)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [MRAMG-Bench: A Comprehensive Benchmark for Advancing Multimodal Retrieval-Augmented Multimodal Generation](https://arxiv.org/abs/2502.04176)：评测检索、搜索或 RAG 能力，为父级复核补充基准、数据集、指标或实证协议线索。
 - [Unsafe LLM-Based Search](https://arxiv.org/abs/2502.04951)：评测 AI-powered search engine 的安全风险。核心思想是定义 threat model 和风险类型，在恶意或不安全查询条件下测试生产搜索系统是否会引用有害内容或恶意网站。
-- [BrowseComp](https://arxiv.org/abs/2504.12516)：评测在真实互联网环境中“检索、阅读、整合”的信息获取能力；核心思想是把信息获取约束为可执行的浏览与证据链路，而不是离线知识问答。
+- [DEG: Efficient Hybrid Vector Search Using the Dynamic Edge Navigation Graph](https://arxiv.org/abs/2502.07343)：提供面向网页搜索与信息检索的基准、数据集、挑战任务或评测协议。
+- [Any Information Is Just Worth One Single Screenshot: Unifying Search With Visualized Information Retrieval](https://arxiv.org/abs/2502.11431)：评测 visualized information retrieval；核心思想是把文本、图像、表格和图表统一成 screenshot 表示进行跨模态检索。
+- [Qilin: A Multimodal Information Retrieval Dataset with APP-level User Sessions](https://arxiv.org/abs/2503.00501)：提供来自移动应用用户会话的多模态检索数据，评测搜索系统能否结合用户行为和图文上下文完成 session-level retrieval。
+- [IFIR: A Comprehensive Benchmark for Evaluating Instruction-Following in Expert-Domain Information Retrieval](https://arxiv.org/abs/2503.04644)：评测专家领域信息检索中的指令遵循能力，检验检索系统能否满足复杂领域搜索要求。
+- [JurisTCU: a Brazilian Portuguese information retrieval dataset with query relevance judgments](https://arxiv.org/abs/2503.08379)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [LongEval at CLEF 2025: Longitudinal Evaluation of IR Model Performance](https://arxiv.org/abs/2503.08541)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [Enhancing Retrieval for ESGLLM via ESG-CID - A Disclosure Content Index Finetuning Dataset for Mapping GRI and ESRS](https://arxiv.org/abs/2503.10674)：提供面向Web Search能力的基准、数据集或评测协议。
+- [Tip-of-the-Tongue Search](https://arxiv.org/abs/2503.19193)：评测线索模糊的 tip-of-the-tongue 查询，要求系统从不完整描述中恢复目标实体。
+- [CASCADE Your Datasets for Cross-Mode Knowledge Retrieval of Language Models](https://arxiv.org/abs/2504.01450)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [KG-LLM-Bench: A Scalable Benchmark for Evaluating LLM Reasoning on Textualized Knowledge Graphs](https://arxiv.org/abs/2504.07087)：评测检索、搜索或 RAG 能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [A Human-AI Comparative Analysis of Prompt Sensitivity in LLM-Based Relevance Judgment](https://arxiv.org/abs/2504.12408)：在 TREC Deep Learning query-document pairs 上比较人类与 LLM 编写的相关性判断 prompt，覆盖二元、分级和成对评估任务。
+- [BrowseComp](https://arxiv.org/abs/2504.12516)（[第三方榜单](https://llm-stats.com/benchmarks/browsecomp)）：评测在真实互联网环境中“检索、阅读、整合”的信息获取能力；核心思想是把信息获取约束为可执行的浏览与证据链路，而不是离线知识问答。
+- [WebLists](https://arxiv.org/abs/2504.12682)：评测复杂交互式网站上的结构化数据抽取。核心思想是要求 agent 导航网页、配置视图并抽取完整的 schema-defined datasets；配套的 BardeenAgent 会把成功交互轨迹转成可重复执行的程序。
+- [Support Evaluation for the TREC 2024 RAG Track: Comparing Human versus LLM Judges](https://arxiv.org/abs/2504.15205)：通过基准、数据集或评测协议评估网络搜索能力。
+- [The Viability of Crowdsourcing for RAG Evaluation](https://arxiv.org/abs/2504.15689)：发布面向 TREC RAG 2024 topics 的 CrowdRAG-25，包含 903 个人类撰写答案、903 个 LLM 生成答案，以及跨文体和 coverage、coherence 等维度的人类与 LLM 成对效用判断。
+- [nlcTables: A Dataset for Marrying Natural Language Conditions with Table Discovery](https://arxiv.org/abs/2504.15849)：定义 natural-language-conditional table discovery，包含 627 个查询、22,080 个候选表和 21,200 条相关性标注，覆盖 NL-only、union、join 与 fuzzy 条件。
+- [MIRAGE: A Metric-Intensive Benchmark for Retrieval-Augmented Generation Evaluation](https://arxiv.org/abs/2504.17137)（[Leaderboard](https://mirage-bench.github.io/)）：提供面向 RAG 的高密度指标评测数据集，包含检索池以及适应性、噪声脆弱性、上下文可接受性、上下文不敏感和上下文误读等指标。
 - [BrowseComp-ZH](https://arxiv.org/abs/2504.19314)（[开源代码](https://github.com/PALIN2018/BrowseComp-ZH)；[Leaderboard](https://huggingface.co/spaces/PALIN2018/BrowseComp-ZH)；[Wizwand BrowseComp-ZH SOTA](https://www.wizwand.com/sota/deep-research-on-browsecomp-zh-score)）：评测中文互联网环境中的高难网页浏览与多跳检索推理；核心思想是把中文网页生态中的平台碎片化、跨页检索与信息整合难点显式 benchmark 化。
+- [A New HOPE: Domain-agnostic Automatic Evaluation of Text Chunking](https://arxiv.org/abs/2505.02171)：提出 HOPE 这一跨领域 RAG 文本分块自动指标，从片段内在属性、片段外在属性和片段-文档连贯性三层评估 chunking，在 7 个领域验证其与下游 RAG 表现的相关性。
+- [The Distracting Effect: Understanding Irrelevant Passages in RAG](https://arxiv.org/abs/2505.06914)：提供可复用评测目标、排行榜或测量协议。
+- [Benchmarking Retrieval-Augmented Generation for Chemistry](https://arxiv.org/abs/2505.07671)：提出 ChemRAG-Bench 和 ChemRAG-Toolkit，把论文、PubChem、PubMed、教材和 Wikipedia 等化学语料与模块化检索算法结合，用于评测化学领域 RAG。
+- [TARGET: Benchmarking Table Retrieval for Generative Tasks](https://arxiv.org/abs/2505.11545)：评测面向生成任务的表格检索，同时考察 retriever 本身表现及其对结构化数据问答和 text-to-SQL 流程的下游影响。
+- [WebInject: Prompt Injection Attack to Web Agents](https://arxiv.org/abs/2505.11717)：评估针对 Web agent 的提示注入攻击。
+- [JIR-Arena: The First Benchmark Dataset for Just-in-time Information Recommendation](https://arxiv.org/abs/2505.13550)：为Web 搜索、检索与 RAG补充基准、数据集、指标或评测协议。
+- [InfoDeepSeek](https://arxiv.org/abs/2505.15872)：面向 RAG 的 agentic information seeking 评测，强调答复合成前的搜索规划和证据收集。
+- [NEXT-EVAL: Next Evaluation of Traditional and LLM Web Data Record Extraction](https://arxiv.org/abs/2505.17125)：提出 NEXT-EVAL，用于评估 Web 数据记录抽取能力。
+- [DailyQA: A Benchmark to Evaluate Web Retrieval Augmented LLMs Based on Capturing Real-World Changes](https://arxiv.org/abs/2505.17162)：利用每周 Wikipedia revision logs 生成时效性问题，评测带网页检索增强的 LLM 能否处理快速变化事实和 reranked retrieval 结果。
+- [Something's Fishy In The Data Lake: A Critical Re-evaluation of Table Union Search Benchmarks](https://arxiv.org/abs/2505.21329)：补充面向网络检索能力的可复用基准、数据集、测试平台或评测协议。
+- [Evaluating the Retrieval Robustness of Large Language Models](https://arxiv.org/abs/2505.21870)：构建包含 1,500 个开放域问题和 Wikipedia 检索文档的 RAG 鲁棒性基准，并用 3 个指标检验检索是否总有帮助、更多文档是否更好以及文档顺序是否影响答案。
+- [Yambda-5B — A Large-Scale Multi-Modal Dataset for Ranking and Retrieval](https://arxiv.org/abs/2505.22238)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充网络搜索与检索增强方向的基准覆盖。
+- [SORCE: Small Object Retrieval in Complex Environments](https://arxiv.org/abs/2505.24441)：提出 SORCE-1K，评测复杂场景中不显眼小物体的文本到图像检索，并诊断单一图像 embedding 难以覆盖细粒度目标的问题。
+- [FACE: A Fine-grained Reference Free Evaluator for Conversational Recommender Systems](https://arxiv.org/abs/2506.00314)：用 reference-free 的细粒度 LLM 判断评估 conversational information access，在原子信息单元和对话层级聚合多维评分。
 - [Seal-0 / SealQA](https://arxiv.org/abs/2506.01062)：评测搜索增强推理在更高答案完整性要求下的表现。核心思想：通过检查 agent 是否先收集足够证据再给最终答案，提高“检索 + 推理”任务门槛。
 - [WebChoreArena](https://arxiv.org/abs/2506.01952)：评测更繁琐、更贴近“网页劳动”的长流程网页操作；核心思想是把网页上的重复劳动与多步操作任务系统化。（[开源代码](https://github.com/WebChoreArena/WebChoreArena)）
+- [GraphRAG-Bench: Challenging Domain-Specific Reasoning for Evaluating Graph Retrieval-Augmented Generation](https://arxiv.org/abs/2506.02404)：定义 RAG、多模态检索或智能体搜索行为的评测。
 - [Search Arena](https://arxiv.org/abs/2506.05334)（[开源代码](https://github.com/lmarena/search-arena)）：评测 search-augmented LLM 在真实用户偏好中的表现。核心思想：收集多轮搜索增强回答和人类偏好票，分析引用质量、来源可信度、搜索调用和最终回答偏好之间的关系。
-- [Mind2Web 2](https://arxiv.org/abs/2506.21506)（[开源代码](https://github.com/OSU-NLP-Group/Mind2Web-2)）：评测 agentic search with agent-as-a-judge。核心思想：用长程实时网页搜索与信息综合任务检查 agent 在动态网页、证据引用和复杂答案构造中的表现，并用代理裁判辅助评估。
+- [How Significant Are the Real Performance Gains? An Unbiased Evaluation Framework for GraphRAG](https://arxiv.org/abs/2506.06331)：提出 graph-text-grounded 问题生成与去偏 LLM 评审流程，重新检验 GraphRAG 在更相关问题和更少评估偏差下是否仍有显著增益。
+- [BRIGHT+: Upgrading the BRIGHT Benchmark with MARCUS, a Multi-Agent RAG Clean-Up Suite](https://arxiv.org/abs/2506.07116)：用 MARCUS 多智能体 RAG 清理套件升级 BRIGHT，强调搜索型智能体评测中的检索数据质量与证据清理。
+- [CONFLICTS](https://arxiv.org/abs/2506.08500)：评测 search-augmented model 如何处理检索来源之间的冲突；核心思想是标注冲突类型和期望行为，测试系统是否能识别并合理处理分歧，而不是忽略或简单平均。
+- [T2-RAGBench: Text-and-Table Benchmark for Evaluating Retrieval-Augmented Generation](https://arxiv.org/abs/2506.12071)（[Leaderboard](https://t2ragbench.demo.hcds.uni-hamburg.de/)）：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [ImpliRet](https://arxiv.org/abs/2506.14407)：评估隐式事实检索，简单查询需要模型在文档侧处理时间、算术或常识关系。核心思想：把难点从查询扩展转移到识别候选文档中隐含的事实，暴露依赖表面词重合的检索器和长上下文重排器。
+- [Mind2Web 2](https://arxiv.org/abs/2506.21506)（[开源代码](https://github.com/OSU-NLP-Group/Mind2Web-2)；[Leaderboard](https://osu-nlp-group.github.io/Mind2Web-2/)）：评测 agentic search with agent-as-a-judge。核心思想：用长程实时网页搜索与信息综合任务检查 agent 在动态网页、证据引用和复杂答案构造中的表现，并用代理裁判辅助评估。
 - [WebWalker](https://aclanthology.org/2025.acl-long.508/)：评测 LLM 的网站遍历能力。核心思想：要求模型或 agent 穿行网站子页面并系统抽取有用信息，补足浅层搜索结果阅读和深层站内导航之间的空白。
 - [MMInA](https://aclanthology.org/2025.findings-acl.703/)：评测多跳多模态互联网 agent。核心思想：使用持续变化的真实多模态网站，让 agent 跨页面组合导航和取证，而不是解决静态多模态问答。
+- [SimLab: A Platform for Simulation-based Evaluation of Conversational Information Access Systems](https://arxiv.org/abs/2507.04888)：提供用于会话式信息获取系统和用户模拟器的云端可复现实验平台，并以会话式电影推荐任务展示 simulation-based evaluation 流程。
+- [Measuring Hypothesis Testing Errors in the Evaluation of Retrieval Systems](https://arxiv.org/abs/2507.07924)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [Overview of the TREC 2022 Deep Learning Track](https://arxiv.org/abs/2507.10865)：面向网络搜索与检索增强生成的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Overview of the TREC 2022 Deep Learning Track”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [RAVine](https://arxiv.org/abs/2507.16725)：用 reality-aligned 任务和准则评测 agentic search，使系统不仅按最终文本，也按证据搜索行为受评。
+- [PRGB Benchmark: A Robust Placeholder-Assisted Algorithm for Benchmarking Retrieval-Augmented Generation](https://arxiv.org/abs/2507.22927)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
 - [WebDS](https://arxiv.org/abs/2508.01222)（数据集：[yamhm/WebDS](https://huggingface.co/datasets/yamhm/WebDS)）：评测网页数据科学任务。核心思想：让 agent 在容器化网站中导航、获取数据、处理结构化/非结构化信息并产出分析报告，连接网页搜索、数据抽取和数据科学工作流。
-- [BrowseComp-Plus](https://arxiv.org/abs/2508.06600)（[开源代码](https://github.com/texttron/BrowseComp-Plus)）：评测固定语料库中的深度网页检索与浏览推理；核心思想是把 BrowseComp 从黑盒 live search 改成约 10 万篇人工核验文档的可复现实验环境，从而解耦检索器、LLM agent 与上下文工程的影响。
-- [WideSearch](https://arxiv.org/abs/2508.07999)：评测“宽域检索 -> 结构化表格产出”的 search-heavy 任务；核心思想是把输出约束为结构化条目，并用 `SR / Row-F1 / Item-F1` 等协议做可比评测。（[开源代码](https://github.com/ByteDance-Seed/WideSearch)）
+- [VeriWeb: Verifiable Long-Chain Web Benchmark for Agentic Information-Seeking](https://arxiv.org/abs/2508.04026)：评测可验证的长链网页信息搜寻；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [PAIRS: Parametric-Verified Adaptive Information Retrieval and Selection for Efficient RAG](https://arxiv.org/abs/2508.04057)：评测检索、搜索或 RAG 能力，为父级复核补充基准、数据集、指标或实证协议线索。
+- [BrowseComp-Plus](https://arxiv.org/abs/2508.06600)（[开源代码](https://github.com/texttron/BrowseComp-Plus)；[Leaderboard](https://huggingface.co/spaces/Tevatron/BrowseComp-Plus)）：评测固定语料库中的深度网页检索与浏览推理；核心思想是把 BrowseComp 从黑盒 live search 改成约 10 万篇人工核验文档的可复现实验环境，从而解耦检索器、LLM agent 与上下文工程的影响。
+- [WideSearch](https://arxiv.org/abs/2508.07999)（[Leaderboard](https://widesearch-seed.github.io/)）：评测“宽域检索 -> 结构化表格产出”的 search-heavy 任务；核心思想是把输出约束为结构化条目，并用 `SR / Row-F1 / Item-F1` 等协议做可比评测。（[开源代码](https://github.com/ByteDance-Seed/WideSearch)）
+- [MoNaCo](https://arxiv.org/abs/2508.11133)：评测自然且耗时的跨文档信息查询问题；核心思想是让任务需要大量中间检索与综合步骤，从而暴露 agentic information gathering 中的低召回和幻觉问题。
 - [MM-BrowseComp](https://arxiv.org/abs/2508.13186)（[开源代码](https://github.com/MMBrowseComp/MM-BrowseComp)）：评测多模态网页浏览 agent 的检索与推理能力；核心思想是把问题线索和网页证据中的图像、视频内容纳入 BrowseComp 风格的多跳浏览任务，并提供 checklist 做细粒度诊断。
+- [How Good are LLM-based Rerankers? An Empirical Analysis of State-of-the-Art Reranking Models](https://arxiv.org/abs/2508.16757)：在既有 IR 基准和新查询设置中比较 LLM reranker 与轻量 reranker，分析重排序收益何时能够迁移。
+- [MMSearch-Plus](https://doi.org/10.48550/arXiv.2508.21475)：评测需要视觉证据、网页导航与答案综合的多模态 browsing agent。
+- [LLM-based Relevance Assessment for Web-Scale Search Evaluation at Pinterest](https://arxiv.org/abs/2509.03764)：可作为网页搜索方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [CC-GSEO-Bench: A Content-Centric Benchmark for Measuring Source Influence in Generative Search Engines](https://arxiv.org/abs/2509.05607)：评测网络搜索、检索与 RAG 智能体。核心思想：围绕论文中的任务、数据或协议（A Content-Centric Benchmark for Measuring Source Influence in Generative Search Engines）形成可复用比较基准。
+- [MillStone](https://arxiv.org/abs/2509.11967)：评估外部论据如何影响 LLM 对争议议题的立场。核心思想是比较带搜索/检索能力的模型在正反论据下是否改变观点，从而暴露 agentic information retrieval 中的来源选择敏感性。
 - [FinSearchComp](https://arxiv.org/abs/2509.13160)：评测专家级金融搜索与推理。核心思想：要求 agent 检索、比对并综合金融信息，而不是只靠参数知识回答，适合作为 search-heavy 专业工作的垂直压力测试。
+- [BloomIntent: Automating Search Evaluation with LLM-Generated Fine-Grained User Intents](https://arxiv.org/abs/2509.18641)：以细粒度用户意图为评测单元，先基于用户属性和信息需求分类生成搜索意图，再用 LLM 判断每个意图下的结果质量并聚类汇总。
+- [Do LLM Agents Know How to Ground, Recover, and Assess? A Benchmark for Epistemic Competence in Information-Seeking Agents](https://arxiv.org/abs/2509.22391)：评测 information-seeking agents 是否会 grounding、recovery 和 assessment；核心思想是衡量过程层面的认知/证据行为，而不只看最终答案正确性。
+- [Human-Centered Evaluation of RAG outputs: a framework and questionnaire for human-AI collaboration](https://arxiv.org/abs/2509.26205)：提出 12 维人本 RAG 输出评价问卷，比较人工评分和 LLM 辅助评分在指标描述、量表标签、格式变化识别和评分一致性上的差异。
 - [BrowserArena](https://arxiv.org/abs/2510.02418)：评测真实开放网页上的 LLM agent 导航任务；核心思想是用 live open-web arena 收集用户提交任务、进行 agent 对战，并用 step-level human feedback 诊断 captcha、弹窗和直接导航等失败模式。
+- [Assessing Web Search Credibility and Response Groundedness in Chat Assistants](https://arxiv.org/abs/2510.13749)：面向 search-augmented chat assistants 的 benchmark methodology；核心思想是同时评估来源可信度，以及回答是否真正 grounded in retrieved evidence。
+- [RAGCap-Bench: Benchmarking Capabilities of LLMs in Agentic Retrieval Augmented Generation Systems](https://arxiv.org/abs/2510.13910)：类型：benchmark/评测协议。核心价值：为 2.3.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Redefining Retrieval Evaluation in the Era of LLMs](https://arxiv.org/abs/2510.21440)：提出 UDCG 这一 utility-and-distraction-aware 检索指标，面向 LLM 把检索段落作为整体消费的 RAG 场景，而不是传统人类逐位浏览假设。
+- [InteractComp: Evaluating Search Agents With Ambiguous Queries](https://arxiv.org/abs/2510.24668)：评测需要主动澄清模糊查询的搜索 agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Seeing Through the MiRAGE: Evaluating Multimodal Retrieval Augmented Generation](https://arxiv.org/abs/2510.24870)：评测 multimodal RAG 及其失效模式，适合检索增强能力 benchmark。
+- [Towards Global Retrieval Augmented Generation: A Benchmark for Corpus-Level Reasoning](https://arxiv.org/abs/2510.26205)：提供面向Web Search能力的基准、数据集或评测协议。
+- [LiveSearchBench: An Automatically Constructed Benchmark for Retrieval and Reasoning over Dynamic Knowledge](https://arxiv.org/abs/2511.01409)：LiveSearchBench 自动构造动态知识检索和推理任务，适合 web/search Bench。
+- [Sim4IA-Bench: A User Simulation Benchmark Suite for Next Query and Utterance Prediction](https://arxiv.org/abs/2511.09329)：补充面向下一查询和下一话语预测的用户模拟基准。
+- [Look It Up](https://arxiv.org/abs/2511.18931)：评测带内置 web search 的模型是否能在需要时调用搜索并有效使用结果。核心思想是结合 cutoff 前的时间锚定问题和 cutoff 后的动态问题，测量搜索必要性识别、检索有效性、置信度校准和查询构造失败。
+- [LocalSearchBench](https://arxiv.org/abs/2512.07436)：用 130 万商户条目、900 个真实查询多跳问答任务和 LocalPlayground 工具评测本地生活服务中的 agentic search，要求系统跨商户、商品、城市和模糊用户需求推理。
+- [Not All Transparency Is Equal: Source Presentation Effects on Attention, Interaction, and Persuasion in Conversational Search](https://arxiv.org/abs/2512.12207)：通过 394 人众包实验比较会话式搜索中的引用展示界面，包括折叠列表、悬浮卡片、页脚列表和侧栏，衡量来源关注、交互、知识增益与说服效应。
+- [Revisiting Task-Oriented Dataset Search in the Era of Large Language Models: Challenges, Benchmark, and Solution](https://arxiv.org/abs/2512.15363)：围绕 LLM 时代的任务导向数据集搜索提出 benchmark 和方法；核心思想是评估模型能否找到适合具体任务的数据集，而不只是检索主题相关网页。
 - [Needle in the Web](https://arxiv.org/abs/2512.16553)（[开源代码](https://github.com/Tango-Whiskyman/Needle_in_the_Web)）：评测真实网页中的目标页面检索；核心思想是把模糊探索式查询转成需要找到唯一目标网页的任务，考察 agent 在语义歧义、多域网页和来源核验下的检索能力。
+- [Video-Browser: Towards Agentic Open-web Video Browsing](https://arxiv.org/abs/2512.23044)：评测面向开放网页视频证据的 agentic 浏览与搜索；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [LLM-as-a-Judge: automated evaluation of search query parsing using large language models](https://doi.org/10.3389/fdata.2025.1611389)：作为网页搜索的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Evaluating Accuracy in Large Language Models: Benchmarking Corrective Rag Vs. Naive Retrieval Augmented Generation Approach](https://doi.org/10.1109/icad65464.2025.11114027)：Evaluating Accuracy in Large Language Models: Benchmarking Corrective Rag Vs. Naive Retrieval Augmented Generation Ap... 补充网络检索与 RAG方向的基准、数据集、指标或评测协议。
+- [Looking through the crack in the black box: A comparative case law benchmark for auditing AI-Powered Trade Mark search engines](https://doi.org/10.1016/j.clsr.2025.106167)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [Evaluation of Vector Database and LLM Models in Retrieval-Augmented Generation (RAG) Systems](https://doi.org/10.1109/ubmk67458.2025.11206778)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [Dual-Perspective Evaluation of Knowledge Graphs for Graph-to-Text Generation](https://doi.org/10.32604/cmc.2025.066351)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [LLM4Eval@WSDM 2025: Large Language Model for Evaluation in Information Retrieval](https://doi.org/10.1145/3701551.3705706)：补充面向网络检索能力的可复用基准、数据集、测试平台或评测协议。
+- [Enhancing Retrieval-Augmented Generation through Modular Optimization: Evaluation Across the RAG Pipeline](https://doi.org/10.1109/siot68426.2025.11368805)：为Web 搜索、检索与 RAG补充基准、数据集、指标或评测协议。
+- [Comparative Performance Evaluation of Large Language Models for Domain-Specific Web Content Extraction](https://doi.org/10.1109/iwcia68353.2025.11479785)：为Web 搜索、检索与 RAG补充基准、数据集、指标或评测协议。
+- [RECOR](https://arxiv.org/abs/2601.05461)：评测面向推理的多轮会话检索，要求系统同时利用对话状态和检索推理。
+- [Enhancing Image Quality Assessment Ability of LMMs via Retrieval-Augmented Generation](https://arxiv.org/abs/2601.08311)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [TEMPO: A Realistic Multi-Domain Benchmark for Temporal Reasoning-Intensive Retrieval](https://arxiv.org/abs/2601.09523)：提供多领域时序推理密集检索基准，检验系统能否按正确时效性检索证据。
+- [MM-BRIGHT: A Multi-Task Multimodal Benchmark for Reasoning-Intensive Retrieval](https://arxiv.org/abs/2601.09562)：面向多任务的推理密集型多模态检索基准。
+- [SearchGym](https://arxiv.org/abs/2601.14615)：提供带可验证知识图谱的搜索 agent 仿真环境，让 agent 低成本练习查询改写、证据收集和停止决策。
+- [SearchLLM: Detecting LLM Paraphrased Text by Measuring the Similarity with Regeneration of the Candidate Source via Search Engine](https://arxiv.org/abs/2601.16512)：SearchLLM: Detecting LLM Paraphrased Text by Measuring the Similarity with Regeneration of the Candidate Source via S... 补充网络检索与 RAG方向的基准、数据集、指标或评测协议。
+- [PaperSearchQA: Learning to Search and Reason over Scientific Papers with RLVR](https://arxiv.org/abs/2601.18207)：Agent Harness 条目；核心思想：评测 agent 搜索并推理科学论文的能力，连接 Web search 与科研任务。
+- [DETOUR](https://arxiv.org/abs/2602.00352)：通过主搜索 agent 与固定记忆 agent 的交互评测 tip-of-the-tongue 式搜索与推理。
+- [AGGBench](https://arxiv.org/abs/2602.01355)：评测非结构化文本聚合查询，要求 agent 找全相关证据，而不是只召回一个支持段落。
+- [PATHWAYS](https://arxiv.org/abs/2602.05354)：评测 web agent 的调查式检索与隐藏上下文发现能力。核心思想：要求 agent 导航网页、找到决定性隐藏证据、推翻误导性表面信号，并把已发现上下文整合到最终决策。
+- [Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevant Assessment for IR Benchmarks](https://arxiv.org/abs/2602.06526)：用多轮 LLM agent 辩论补全文档相关性标注，并发布 BRIDGE 作为改进的 IR/RAG 基准，用于更公平地比较检索器和检索生成系统。
+- [A Sketch+Text Composed Image Retrieval Dataset for Thangka](https://arxiv.org/abs/2602.08411)：围绕 Web Search 能力补充《A Sketch+Text Composed Image Retrieval Dataset for Thangka》，作为 Bench 条目候选。
+- [GISA](https://arxiv.org/abs/2602.08543)：通过多轮网页交互评测 general information-seeking assistants。核心思想：避免从答案反推查询的构造方式，使用更自然的信息需求，检验搜索 agent 能否跨轮收集、修正和综合证据。
+- [Fix Before Search: Benchmarking Agentic Query Visual Pre-processing in Multimodal Retrieval-augmented Generation](https://arxiv.org/abs/2602.13179)：定义 RAG、多模态检索或智能体搜索行为的评测。
+- [LiveNewsBench](https://arxiv.org/abs/2602.13543)：用新近新闻构造的问题评测网页搜索能力，要求模型做超出参数记忆的实时多跳检索。
+- [ScrapeGraphAI-100k](https://doi.org/10.48550/arXiv.2602.15189)：用真实网页内容、提示和 JSON schema 评测 schema-constrained 网页信息抽取，而不是只依赖文本式合成抽取。
+- [SourceBench](https://arxiv.org/abs/2602.16942)：衡量 AI 回答所引用网页来源的质量，把答案正确性与引用页的相关性、权威性、新鲜度和责任主体分开评估。
+- [AgenticRAGTracer: A Hop-Aware Benchmark for Diagnosing Multi-Step Retrieval Reasoning in Agentic RAG](https://arxiv.org/abs/2602.19127)：用跳数感知轨迹评测 Agentic RAG 的多步检索推理。
+- [Misinformation Exposure in the Chinese Web: A Cross-System Evaluation of Search Engines, LLMs, and AI Overviews](https://arxiv.org/abs/2602.22221)：评测中文 Web 查询中搜索引擎、LLM 与 AI Overview 的事实可靠性；核心思想是从真实搜索日志构造已核查的是/否问题，测量非英语 Web 生态中的误导信息暴露。
+- [Synthetic Web Benchmark](https://arxiv.org/abs/2603.00801)：评什么：评测联网 agent 在 adversarial search ranking 下的鲁棒性。核心思想：构造带可信度标签和交互轨迹的可控 mini-internet，并把高迷惑性错误信息注入指定排序位置，以测量 search escalation、校准和冲突证据处理能力。
+- [MC-Search](https://arxiv.org/abs/2603.00873)：评测带长结构化推理链的多模态 agentic search，覆盖子问题、检索模态、支持事实和中间答案。
+- [UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization](https://arxiv.org/abs/2603.03967)：用检索增强的数据集蒸馏管线筛选统一图像去雨训练样本，并在雨线、雨滴、白天和夜间退化基准上报告结果。
+- [iAgentBench](https://arxiv.org/abs/2603.04656)：评测信息搜索 agent 在高流量主题上的跨来源 sensemaking 能力。核心思想：从真实关注信号构造用户式问题，要求模型整合多个来源的证据，并保留可追踪证据和中间产物，以便检查污染并区分检索失败与综合失败。
 - [UIS-Digger](https://arxiv.org/abs/2603.08117)：评什么：真实世界未索引信息寻址。核心思想：把搜索引擎难以直接召回的网页、文件和深层入口组织成任务，评估 agent 是否会发现入口、调整查询并跟踪证据来源。
+- [Quantifying the Accuracy and Cost Impact of Design Decisions in Budget-Constrained Agentic LLM Search](https://arxiv.org/abs/2603.08877)：量化预算约束 Agentic Search 中设计决策对准确率和成本的影响。
+- [CEI: A Benchmark for Evaluating Pragmatic Reasoning in Language Models](https://arxiv.org/abs/2603.09993)：围绕 Web Search 能力补充《CEI: A Benchmark for Evaluating Pragmatic Reasoning in Language Models》，作为 Bench 条目候选。
 - [LiveWeb-IE](https://arxiv.org/abs/2603.13773)：评什么：在线网页信息抽取。核心思想：把网页变化、实时来源和结构化抽取目标放进 live benchmark，补足 BrowseComp 式问答对表格化抽取与数据更新的覆盖不足。
 - [VisBrowse-Bench](https://arxiv.org/abs/2603.16289)：评什么：视觉原生多模态网页搜索。核心思想：要求 agent 在真实网页中同时处理截图、图像线索和文本页面，补足 MM-BrowseComp 之后对 visual-native search 轨迹的专门评测。
+- [AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](https://arxiv.org/abs/2603.25092)：面向网络检索与 RAG，补充用于RAG authority-perception benchmark的基准、数据集、指标、审计或实证协议。
+- [Few Shots Text to Image Retrieval: New Benchmarking Dataset and Optimization Methods](https://arxiv.org/abs/2603.25891)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [Distance Comparison Operations Are Not Silver Bullets in Vector Similarity Search: A Benchmark Study on Their Merits and Limits](https://arxiv.org/abs/2604.02801)：在 10 个数据集和 CPU/GPU 设置上评测 8 类向量相似搜索 distance-comparison operations，显示其对维度、硬件和分布外查询高度敏感。
+- [GeoBrowse](https://arxiv.org/abs/2604.04017)：用地理定位任务把弱视觉线索与开放网页验证结合起来，压测多模态证据收集和工具使用。
+- [Agentization of Digital Assets for the Agentic Web: Concepts, Techniques, and Benchmark](https://arxiv.org/abs/2604.04226)：类型：benchmark/评测协议。核心价值：为 2.3.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [AI and Collective Decisions: Strengthening Legitimacy and Losers'Consent](https://arxiv.org/abs/2604.05368)：面向网络检索与 RAG，补充用于embedding-model or search evaluation benchmark的基准、数据集、指标、审计或实证协议。
 - [WebForge](https://arxiv.org/abs/2604.10988)：评什么：真实、可复现、可扩展的 browser agent benchmark。核心思想：自动生成带真实网页噪声的可控任务环境，缓解 live website 漂移、人工构造成本和静态 sandbox 失真之间的三难问题。
 - [MERRIN](https://arxiv.org/abs/2604.13418)：评什么：噪声 web 环境里的多模态证据检索与多跳推理。核心思想：把文本、图像、视频、音频一起纳入搜索任务。
+- [MARCA](https://arxiv.org/abs/2604.14448)：评测英语和葡萄牙语的多语种网页信息搜寻；核心思想是把多实体问题与 checklist rubric 配对，并比较直接搜索和由子 agent 编排的搜索流程。
+- [UsefulBench](https://arxiv.org/abs/2604.15827)：评测面向决策有用性的信息检索；核心思想是同时标注相关性和实际有用性，让搜索系统按检索证据是否真正帮助回答问题来评分。
 - [StressWeb](https://arxiv.org/abs/2604.16385)：评什么：真实交互扰动下的 web agent 鲁棒性。核心思想：在 WebArena/VisualWebArena 风格任务里系统注入动态 DOM、加载延迟、提示变体和 UI 噪声，诊断搜索/浏览 agent 的脆弱点。
+- [TeleEmbedBench: A Multi-Corpus Embedding Benchmark for RAG in Telecommunications](https://arxiv.org/abs/2604.17778)：面向网络检索与 RAG，补充用于embedding benchmark for RAG retrieval的基准、数据集、指标、审计或实证协议。
+- [Linear-Time and Constant-Memory Text Embeddings Based on Recurrent Language Models](https://arxiv.org/abs/2604.18199)：面向网络检索与 RAG，补充用于embedding-model or search evaluation benchmark的基准、数据集、指标、审计或实证协议。
+- [Faithfulness-QA: A Counterfactual Entity Substitution Dataset for Training Context-Faithful RAG Models](https://arxiv.org/abs/2604.25313)：通过替换 SQuAD 与 TriviaQA 上下文中的命名实体构造 99,094 个反事实 QA 样本，评测 RAG 模型是否优先遵循检索上下文而非参数记忆。
+- [SimEval-IR: A Unified Toolkit and Benchmark Suite for Evaluating User Simulators and Search Sessions](https://arxiv.org/abs/2604.27878)：统一评估用户模拟器与搜索会话，有助于衡量静态相关性判断之外的交互式信息检索行为。
+- [BRIGHT-Pro](https://arxiv.org/abs/2605.04018)：把 reasoning-intensive retrieval 扩展到 agentic search 需要的证据组合，而不是只评估单段相关性。
+- [OBLIQ-Bench](https://arxiv.org/abs/2605.06235)：评测 oblique retrieval 问题：查询隐含潜在模式，系统必须找出“难检索但易验证”的实例。
+- [Leveraging Large Language Models for Intelligent Manufacturing: Opportunities and Challenges](https://doi.org/10.1109/acdsa67686.2026.11467595)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的基准、数据集、指标、审计或实证协议。
+- [The role and strategies of data-driven machine learning in design optimization and performance evaluation of electrochemical energy storage materials](https://doi.org/10.1016/j.est.2026.122319)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的基准、数据集、指标、审计或实证协议。
+- [Classical RAG for Semantic Search & Quantum Modules for Research Evaluation](https://doi.org/10.1109/iitcee67948.2026.11394480)：围绕 Web Search 能力补充《Classical RAG for Semantic Search & Quantum Modules for Research Evaluation》，作为 Bench 条目候选。
+- [A physics-informed transformer framework for seismic response modeling and fragility evaluation of soil–pile systems](https://doi.org/10.1016/j.soildyn.2026.110315)：围绕 Web Search 能力补充《A physics-informed transformer framework for seismic response modeling and fragility evaluation of soil–pile systems》，作为 Bench 条目候选。
+- [TurkColBERT: A Benchmark of Dense and Late-Interaction Models for Turkish Information Retrieval](https://doi.org/10.1016/j.procs.2026.01.048)：可作为网页搜索方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [AGENT-CQ](https://doi.org/10.1145/3809182)：为会话式搜索自动生成并评估澄清问题，把歧义消解显式纳入搜索 agent 任务。
+- [A Large-Scale Study of Relevance Assessments with Large Language Models Using UMBRELA](https://doi.org/10.1145/3731120.3744605)：系统研究用大语言模型进行大规模相关性标注，补充依赖可扩展判分协议的搜索与 RAG 评测线索。
+- [Design and Implementation of an Interactive Question-Answering System with Retrieval-Augmented Generation for Personalized Databases](https://doi.org/10.3390/app14177995)：围绕网页搜索与检索增强生成能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [Pencils Down! Automatic Rubric-based Evaluation of Retrieve/Generate Systems](https://doi.org/10.1145/3664190.3672511)：围绕 Web Search 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Large Language Model Powered Agents for Information Retrieval](https://doi.org/10.1145/3626772.3661375)：提供面向网页搜索与信息检索的基准、数据集、挑战任务或评测协议。
+- [A Cost-Effective Framework to Evaluate LLM-Generated Relevance Judgements](https://doi.org/10.1145/3746252.3761200)：补充面向网页搜索、检索评测或重排序能力的基准、数据集、指标或评测协议。
+- [From text to DSM: evaluating the impact of writing style and entity naming on LLM-based retrieval of asymmetrical indirect design dependencies](https://doi.org/10.1007/s00163-026-00476-2)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [A Graph RAG Approach to Enhance Explainability in Dataset Discovery](https://doi.org/10.1007/s41019-025-00313-x)：补充面向网页搜索、检索与 RAG的评测、数据集或度量信号。
+- [Comparative Evaluation of GraphRAG for Building-Administration Legal QA using a Statutory Knowledge Graph](https://doi.org/10.55785/jcar.4.4.9)：面向网络检索与 RAG，补充用于retrieval, RAG, ranking, embedding, or web-search capability contribution的基准、数据集、指标、审计或实证协议。
+- [Enhancing Knowledge Graph Construction with Automated Source Evaluation Using Large Language Models](https://doi.org/10.3897/jucs.137103)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [The Development and Evaluation of a Retrieval-Augmented Generation Large Language Model Virtual Assistant for Postoperative Instructions](https://doi.org/10.3390/bioengineering12111219)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [Hierarchical Table Semantics for Exploratory Table Discovery](https://doi.org/10.1145/3736733.3736746)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [Evaluation of search-enabled pretrained Large Language Models on retrieval tasks for the PubChem database](https://doi.org/10.1093/bioadv/vbaf064)：提供用于衡量网页搜索与 RAG能力的数据集、基准、指标或评测协议。
+- [RAG-Based Natural Language Interface for Goal-Oriented Knowledge Graphs and Its Evaluation](https://doi.org/10.3390/info17010055)：围绕 Web Search 能力补充《RAG-Based Natural Language Interface for Goal-Oriented Knowledge Graphs and Its Evaluation》，作为 Bench 条目候选。
+- [Neural reranking for UK statutory retrieval: Provision-level evaluation and an open distilled model](https://doi.org/10.1007/s10506-025-09501-6)：围绕 Web Search 能力补充《Neural reranking for UK statutory retrieval: Provision-level evaluation and an open distilled model》，作为 Bench 条目候选。
+- [VecBench: A Controllable Benchmark for Filtered Vector Search: (Experiments & Analysis)](https://doi.org/10.1145/3802125)：围绕 Web Search 能力补充《VecBench: A Controllable Benchmark for Filtered Vector Search: [Experiments & Analysis]》，作为 Bench 条目候选。
+- [CLUE: Using Large Language Models for Judging Document Usefulness in Web Search Evaluation](https://doi.org/10.1145/3746252.3761158)：评测 CLUE: Using Large Language Models for Judging Document Usefulness in Web Search Evaluation，为 Web Search 补充可复用的数据集、基准、指标或评测协议。
+- [Geo-Personalization Bias in News Search: Analyzing Filter Bubbles in Search Engine Results with Multi-Perspective LLM Annotation](https://doi.org/10.1145/3773966.3777984)：为网络搜索与检索方向补充一个基准、数据集或评测协议候选，可扩展该能力页的评测覆盖。
+- [Geniie-Lab: A Testbed for Controlled Experimentation of Model Search Behaviour](https://doi.org/10.1145/3767695.3769479)：补充面向网络检索能力的可复用基准、数据集、测试平台或评测协议。
+- [Understanding the Effects of Conversational Agent Personality on the Credibility of LLM-Based Conversational Search](https://doi.org/10.1145/3786304.3788843)：补充面向网页搜索、会话式搜索与浏览工作流的基准、数据集、评测协议或测试环境。
+- [SGR-Bench](https://arxiv.org/abs/2605.22219)：用 100 个专家策划的 state-gated retrieval 任务评测搜索 agent，覆盖 6 类来源与 12 个公共数据生态，要求先建立正确站点或应用状态后才能取证。
+- [K-BrowseComp](https://arxiv.org/abs/2606.02404)：将网页浏览评测落到 400 个韩国语境问题上，其中 300 个 Verified 子集由母语者核验，把 BrowseComp 式搜索任务扩展到英语网络假设之外。
+- [DailyReport](https://arxiv.org/abs/2606.12871)：用 150 个开放式日常搜索任务和 3,546 条 rubrics 评测搜索 agent，通过 cascade attribution 与 user-centric aggregation 判断检索证据是否满足日常信息需求。

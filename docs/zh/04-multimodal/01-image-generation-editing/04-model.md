@@ -1,40 +1,1447 @@
 # 4.1.4 Model
 
-- [Stable Diffusion 3](https://arxiv.org/abs/2403.03206)：提出面向高分辨率文生图的 rectified-flow transformer，结合可扩展架构、flow matching 和多模态条件。
+- [Würstchen: An Efficient Architecture for Large-Scale Text-to-Image Diffusion Models](https://arxiv.org/abs/2306.00637)：把生成过程压缩成两级潜空间层次，用低维图像 token 上的 Stage C 先验和独立解码器栈降低大规模文生图训练与采样成本。
+- [Synthbuster: Towards Detection of Diffusion Model Generated Images](https://doi.org/10.1109/ojsp.2023.3337714)：构建面向扩散模型生成图像的检测器，在 IEEE OJSP 中报告手工取证特征和分类器在多种现代扩散来源上的表现。
+- [Stochastic Latent Talking Face Generation Toward Emotional Expressions and Head Poses](https://doi.org/10.1109/tcsvt.2023.3311039)：把说话人脸生成建模为随机潜变量过程，分离情绪表情和头部姿态变化，使音频驱动人脸能采样多种合理运动。
+- [Autoencoder-Based Collaborative Attention GAN for Multi-Modal Image Synthesis](https://doi.org/10.1109/tmm.2023.3274990)：在 GAN 中结合自编码器表征和协同注意力来融合多模态输入，并在 IEEE TMM 的配对合成任务中验证图像合成效果。
+- [Multi-Sentence Complementarily Generation for Text-to-Image Synthesis](https://doi.org/10.1109/tmm.2023.3297769)：用互补的多句描述而非单句 caption 条件化文生图 GAN，通过句级语义聚合提升带 caption 图像基准上的细粒度合成。
+- [New Job, New Gender? Measuring the Social Bias in Image Generation Models](https://arxiv.org/abs/2401.00763)：提出 BiasPainter，用性别、种族和年龄中性的职业、活动、物体与特质提示编辑种子肖像，并在六个图像生成器上测量人口属性变化，偏见检测经人工验证准确率为 90.8%。
+- [Q-Refine: A Perceptual Quality Refiner for AI-Generated Image](https://arxiv.org/abs/2401.01117)：为 AI 生成图像加入 IQA 引导的后处理 refiner，将低、中、高质量样本送入不同感知增强路径，在不破坏高质量输出的同时提升保真度和美感。
+- [Instruct-Imagen: Image Generation with Multi-modal Instruction](https://arxiv.org/abs/2401.01952)：用检索增强的多模态上下文和任务指令微调文生图扩散模型，统一文本、边缘、风格和主体线索，达到或超过专用任务生成器并能泛化到未见任务。
+- [Improving Diffusion-Based Image Synthesis with Context Prediction](https://arxiv.org/abs/2401.02015)：提出 ConPreDiff，在训练时让去噪模块通过上下文解码器预测邻域 token、特征或像素，推理时移除该解码器，并提升无条件生成、文生图和 inpainting，包括 MS-COCO 零样本 FID 6.21。
+- [Bring Metric Functions into Diffusion Models](https://arxiv.org/abs/2401.02414)：提出 Cas-DM，用级联 DDPM 主干的第二模块预测干净图像，使 LPIPS 等 metric loss 能有效训练扩散模型，并在标准图像生成基准上改善 FID、sFID 和 IS。
+- [Progressive Knowledge Distillation Of Stable Diffusion XL Using Layer Level Loss](https://arxiv.org/abs/2401.02677)：用层级损失渐进蒸馏 Stable Diffusion XL，不只匹配最终图像，也迁移中间去噪表征。
+- [Attack-Resilient Image Watermarking Using Stable Diffusion](https://arxiv.org/abs/2401.04247)：通过基于 Stable Diffusion 的生成管线嵌入稳健图像水印，目标是抵抗常见图像变换和移除攻击。
+- [PIXART-δ: Fast and Controllable Image Generation with Latent Consistency Models](https://arxiv.org/abs/2401.05252)：把 PixArt-alpha 与 latent consistency distillation 和 ControlNet-Transformer 结合，在 2-4 步内生成 1024px 图像，同时保留细粒度条件控制和低显存推理。
+- [Parrot: Pareto-optimal Multi-Reward Reinforcement Learning Framework for Text-to-Image Generation](https://arxiv.org/abs/2401.05675)：用 batch-wise Pareto 选择联合优化 T2I 模型和提示扩展网络，同时考虑美学、偏好、文图对齐和情感奖励，避免手动设定奖励权重。
+- [EraseDiff: Erasing Data Influence in Diffusion Models](https://arxiv.org/abs/2401.05779)：提供扩散模型遗忘方法，压制指定训练数据影响，同时尽量保持生成器其余图像合成能力。
+- [PALP: Prompt Aligned Personalization of Text-to-Image Models](https://arxiv.org/abs/2401.06105)：针对单个复杂提示个性化 T2I 模型，在 score distillation sampling 中加入额外项，在 single-shot、multi-shot 和多主体设置下提升主体保真和提示对齐。
+- [ViSAGe: A Global-Scale Analysis of Visual Stereotypes in Text-to-Image Generation](https://arxiv.org/abs/2401.06310)：ViSAGe 审计 T2I 输出中的 135 个国家身份相关视觉刻板印象，用生成图像行为测量全球化偏见。
+- [Seek for Incantations: Towards Accurate Text-to-Image Diffusion Synthesis through Prompt Engineering](https://arxiv.org/abs/2401.06345)：系统研究文生图扩散的提示工程策略，识别无需改权重即可提升语义准确性的提示形式。
+- [HieraFashDiff: Hierarchical Fashion Design with Multi-stage Diffusion Models](https://arxiv.org/abs/2401.07450)：用于服装设计的多阶段层次扩散管线，把服装生成拆成粗布局和更细视觉细节阶段。
+- [EmoTalker: Emotionally Editable Talking Face Generation via Diffusion Model](https://arxiv.org/abs/2401.08049)：在扩散说话人脸生成器中加入可编辑情绪条件，分离身份、唇动和情感，使输入确定后仍可调控面部情绪。
+- [SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation](https://arxiv.org/abs/2401.08053)：用自对比目标微调图像生成器来抵消人口属性不均衡，目标是在不额外构造公平性标签数据集的情况下提升文生图公平性。
+- [Adversarial Supervision Makes Layout-to-Image Diffusion Models Thrive](https://arxiv.org/abs/2401.08815)：为 layout-conditioned diffusion 加入对抗监督，使生成对象比仅用重建损失训练时更忠实于指定空间布局。
+- [MM-Interleaved: Interleaved Image-Text Generative Modeling via Multi-modal Feature Synchronizer](https://arxiv.org/abs/2401.10208)：用 multimodal feature synchronizer 训练交错图文生成，对齐视觉和文本流，使模型能生成连贯的混合模态序列。
+- [A Simple Latent Diffusion Approach for Panoptic Segmentation and Mask Inpainting](https://arxiv.org/abs/2401.10227)：把全景分割和 mask inpainting 重写为潜空间扩散任务，用一个简单共享公式处理密集 mask 和缺失区域合成。
+- [On Mitigating Stability-Plasticity Dilemma in CLIP-guided Image Morphing via Geodesic Distillation Loss](https://arxiv.org/abs/2401.10526)：为 CLIP 引导的图像 morphing 加入 geodesic distillation loss，在形变轨迹中兼顾源目标稳定性与语义可塑性。
+- [Sat2Scene: 3D Urban Scene Generation from Satellite Images with Diffusion](https://arxiv.org/abs/2401.10786)：用扩散模型从卫星图像生成 3D 城市场景，把俯视观测转换成结构化场景内容，而不是普通 2D 图像。
+- [Mastering Text-to-Image Diffusion: Recaptioning, Planning, and Generating with Multimodal LLMs](https://arxiv.org/abs/2401.11708)：用多模态 LLM 重写提示、规划视觉内容并指导生成，在扩散采样前显式规划以改善文生图组合性。
+- [EmerDiff: Emerging Pixel-level Semantic Knowledge in Diffusion Models](https://arxiv.org/abs/2401.11739)：分析扩散模型内部涌现的像素级语义知识，并利用这种内部信号解释或引导生成，而不依赖外部分割标签。
+- [Large-scale Reinforcement Learning for Diffusion Models](https://arxiv.org/abs/2401.12244)：扩展面向扩散生成器的强化学习，在保留预训练扩散主干的同时用学习到的或人类对齐奖励优化图像样本。
+- [CCA: collaborative competitive agents for image editing](https://arxiv.org/abs/2401.13011)：把图像编辑表述为多个编辑 agent 的协作与竞争过程，通过迭代提出和批评来改进局部编辑。
+- [Scaling Up to Excellence: Practicing Model Scaling for Photo-Realistic Image Restoration In the Wild](https://arxiv.org/abs/2401.13627)：研究真实世界图像恢复模型的缩放规律，展示更大恢复主干和数据如何提升非受控图像的照片级恢复质量。
+- [Deconstructing Denoising Diffusion Models for Self-Supervised Learning](https://arxiv.org/abs/2401.14404)：拆解去噪扩散模型中哪些组件能产生有用的自监督视觉表征，更偏向扩散主干分析而非新的 T2I 生成器。
+- [Taiyi-Diffusion-XL: Advancing Bilingual Text-to-Image Generation with Large Vision-Language Model Support](https://arxiv.org/abs/2401.14688)：扩展 SDXL 风格文生图以支持中英双语提示，并用大视觉语言模型辅助 caption 和对齐数据构造。
+- [IntentTuner: An Interactive Framework for Integrating Human Intentions in Fine-tuning Text-to-Image Generative Models](https://arxiv.org/abs/2401.15559)：用交互式人类意图反馈微调 T2I 生成器，把用户偏好信号转化为模型更新，以获得更可控的视觉输出。
+- [FreeStyle: Free Lunch for Text-guided Style Transfer using Diffusion Models](https://arxiv.org/abs/2401.15636)：复用预训练扩散特征和 guidance 进行文本引导风格迁移，避免单独训练风格迁移模型。
+- [StableIdentity: Inserting Anybody Into Anywhere at First Sight](https://arxiv.org/abs/2401.15975)：从一次参考图实现身份插入个性化，使扩散生成器能把目标人物放入新场景并保持身份一致。
+- [Spatial-Aware Latent Initialization for Controllable Image Generation](https://arxiv.org/abs/2401.16157)：用带空间结构的潜变量初始化扩散过程，使可控图像生成更好保持物体位置和布局。
+- [Pick-and-Draw: Training-free Semantic Guidance for Text-to-Image Personalization](https://arxiv.org/abs/2401.16762)：为个性化 T2I 生成提供免训练语义 guidance，在推理时选择并引导主体相关信号，而不是微调生成器。
+- [StrokeNUWA: Tokenizing Strokes for Vector Graphic Synthesis](https://arxiv.org/abs/2401.17093)：将笔画 token 化以支持矢量图合成。
+- [Motion Guidance: Diffusion-Based Image Editing with Differentiable Motion Estimators](https://arxiv.org/abs/2401.18085)：用现成光流估计器的梯度引导扩散编辑，使用户能指定密集像素运动场，在无需训练的情况下控制布局、姿态、形状和物体位置。
+- [A Single Simple Patch is All You Need for AI-generated Image Detection](https://arxiv.org/abs/2402.01123)：测试一个简单学习到的 patch 线索是否足以暴露 AI 生成图像，提供轻量级生成图像检测基线。
+- [Cross-view Masked Diffusion Transformers for Person Image Synthesis](https://arxiv.org/abs/2402.01516)：使用跨视角 masked diffusion transformer 进行人物图像合成。
+- [Plug-and-Play image restoration with Stochastic deNOising REgularization](https://arxiv.org/abs/2402.01779)：为 plug-and-play 图像恢复加入随机去噪正则化，把预训练去噪器作为逆问题的图像先验。
+- [Improving Diffusion Models for Inverse Problems Using Optimal Posterior Covariance](https://arxiv.org/abs/2402.02149)：通过估计最优后验协方差改进 diffusion posterior sampling，从而提升恢复和重建类逆问题质量。
+- [DiffEditor: Boosting Accuracy and Flexibility on Diffusion-Based Image Editing](https://arxiv.org/abs/2402.02583)：改进扩散图像编辑公式，在提高编辑准确性的同时保持无关区域不被破坏。
+- [Training-Free Consistent Text-to-Image Generation](https://arxiv.org/abs/2402.03286)：在免训练 T2I 生成中强制一致性，用推理时控制而非模型微调保持主体或布局稳定。
+- [InstanceDiffusion: Instance-Level Control for Image Generation](https://arxiv.org/abs/2402.03290)：为扩散生成加入实例级条件，使同一图像中的每个对象都能由独立空间和语义信号控制。
+- [Constrained Synthesis with Projected Diffusion Models](https://arxiv.org/abs/2402.03559)：在扩散采样中加入投影步骤以满足显式约束，把预训练生成模型转化为受约束图像合成器。
+- [QuEST: Low-Bit Diffusion Model Quantization via Efficient Selective Finetuning](https://arxiv.org/abs/2402.03666)：通过选择性微调量化扩散模型，在降低 bit 宽度的同时比统一低比特转换更好保持图像生成质量。
+- [Noise Map Guidance: Inversion with Spatial Context for Real Image Editing](https://arxiv.org/abs/2402.04625)：用空间噪声图引导 DDIM inversion，使真实图像编辑在改变目标区域时保留背景上下文。
+- [Improved off-policy training of diffusion samplers](https://arxiv.org/abs/2402.05098)：用 off-policy 数据改进扩散 sampler 训练，使学习到的 sampler 能复用当前策略分布之外的轨迹。
+- [Get What You Want, Not What You Don't: Image Content Suppression for Text-to-Image Diffusion Models](https://arxiv.org/abs/2402.05375)：为 T2I 扩散输出加入负向内容控制，将期望提示内容和显式排除的视觉元素分离。
+- [MIGC: Multi-Instance Generation Controller for Text-to-Image Synthesis](https://arxiv.org/abs/2402.05408)：用实例级框、属性和注意力调制控制同一 T2I 图像中的多个对象，使生成场景遵循多实例布局。
+- [Scalable Diffusion Models with State Space Backbone](https://arxiv.org/abs/2402.05608)：用 state-space 组件替换注意力密集型扩散主干，以更低序列处理成本扩展视觉生成。
+- [Particle Denoising Diffusion Sampler](https://arxiv.org/abs/2402.06320)：在去噪过程中使用多个 particles 近似后验采样，并增加扩散轨迹多样性。
+- [PRDP: Proximal Reward Difference Prediction for Large-Scale Reward Finetuning of Diffusion Models](https://arxiv.org/abs/2402.08714)：用 proximal reward-difference prediction 大规模微调扩散模型，通过奖励比较提升生成图像偏好对齐。
+- [Self-Play Fine-Tuning of Diffusion Models for Text-to-Image Generation](https://arxiv.org/abs/2402.10210)：让生成候选之间自博弈以构造偏好信号，微调 T2I 扩散模型而不只依赖静态人工标签。
+- [Make a Cheap Scaling: A Self-Cascade Diffusion Model for Higher-Resolution Adaptation](https://arxiv.org/abs/2402.10491)：用 self-cascade diffusion 设计适配更高分辨率，复用基础模型以降低图像尺寸扩展成本。
+- [Universal Prompt Optimizer for Safe Text-to-Image Generation](https://arxiv.org/abs/2402.10882)：在 T2I 生成前优化安全提示，把模型引离不安全视觉概念，同时保留良性意图。
+- [DiLightNet: Fine-grained Lighting Control for Diffusion-based Image Generation](https://arxiv.org/abs/2402.11929)：为扩散生成加入细粒度光照控制，使图像不仅依赖文本，还能按照明方向和外观条件生成。
+- [Direct Consistency Optimization for Robust Customization of Text-to-Image Diffusion models](https://arxiv.org/abs/2402.12004)：用 direct consistency objective 优化定制化 T2I 扩散模型，使个性化主体在不同提示和采样设置下更稳健。
+- [Groot: Adversarial Testing for Generative Text-to-Image Models with Tree-based Semantic Transformation](https://arxiv.org/abs/2402.12100)：生成树结构语义提示变换，用于对抗测试 T2I 生成器的组合性和安全失败。
+- [FiT: Flexible Vision Transformer for Diffusion Model](https://arxiv.org/abs/2402.12376)：FiT 将图像视为可变分辨率和可变长宽比 token grid，使 ViT 扩散主干能处理训练布局之外的生成尺寸。
+- [Robust-Wide: Robust Watermarking against Instruction-driven Image Editing](https://arxiv.org/abs/2402.12688)：设计能经受指令式图像编辑的水印，并评估通常会擦除溯源信号的编辑攻击下的稳健性。
+- [Diffusion Posterior Sampling is Computationally Intractable](https://arxiv.org/abs/2402.12727)：给出精确 diffusion posterior sampling 的计算难度分析，澄清扩散逆问题求解器的理论边界。
+- [A User-Friendly Framework for Generating Model-Preferred Prompts in Text-to-Image Synthesis](https://arxiv.org/abs/2402.12760)：提出 CFP 粗细粒度提示数据集和 UF-FGTG 提示改写器，把 T2I 图像相关 loss 融入文本生成训练，自动把新手提示改写为图像生成模型偏好的细粒度提示。
+- [RealCompo: Dynamic Equilibrium between Realism and Compositionality Improves Text-to-Image Diffusion Models](https://arxiv.org/abs/2402.12908)：在 T2I 扩散训练中动态平衡真实感与组合性，使对象布局和照片级外观共同提升，而不是互相牺牲。
+- [ToDo: Token Downsampling for Efficient Generation of High-Resolution Images](https://arxiv.org/abs/2402.13573)：用 token 下采样提升高分辨率图像生成效率。
+- [SDXL-Lightning: Progressive Adversarial Diffusion Distillation](https://arxiv.org/abs/2402.13929)：用 progressive adversarial diffusion distillation 将 SDXL 蒸馏为少步生成器，在 1、2、4、8 步推理下保留高分辨率文生图质量。
+- [D-Flow: Differentiating through Flows for Controlled Generation](https://arxiv.org/abs/2402.14017)：把控制损失反传到 normalizing flow 或 continuous flow 生成器中，用梯度优化生成样本以实现可控图像合成。
+- [T-Stitch: Accelerating Sampling in Pre-Trained Diffusion Models with Trajectory Stitching](https://arxiv.org/abs/2402.14167)：通过拼接不同 timestep schedule 的去噪轨迹片段加速预训练扩散采样，在不重训基础模型的情况下降低步数。
+- [Fine-Tuning of Continuous-Time Diffusion Models as Entropy-Regularized Control](https://arxiv.org/abs/2402.15194)：把连续时间扩散微调表述为熵正则化随机控制，将 reward-guided 生成器适配与轨迹优化联系起来。
+- [Don't Start From Scratch: Behavioral Refinement via Interpolant-based Policy Diffusion](https://arxiv.org/abs/2402.16075)：用 interpolant-based diffusion 细化已有生成策略，通过保持行为的轨迹适配模型输出，而不是从头训练。
+- [Stochastic Conditional Diffusion Models for Robust Semantic Image Synthesis](https://arxiv.org/abs/2402.16506)：通过离散 label diffusion、按类别设置的噪声日程以及模拟人工输入错误的评测，使语义图像合成在噪声标签图下仍能生成接近干净标注的图像。
+- [Cross-Modal Contextualized Diffusion Models for Text-Guided Visual Generation and Editing](https://arxiv.org/abs/2402.16627)：用跨模态上下文 token 条件化扩散模型，使文本引导生成和编辑能复用周围视觉上下文，而不只依赖提示词。
+- [Preserving Fairness Generalization in Deepfake Detection](https://arxiv.org/abs/2402.17229)：研究 deepfake 检测器的公平泛化，并训练检测模型在伪造图像分布变化时减少不同人群间的性能差距。
+- [SDDGR: Stable Diffusion-Based Deep Generative Replay for Class Incremental Object Detection](https://arxiv.org/abs/2402.17323)：用 Stable Diffusion 为类增量目标检测合成 replay 图像，以生成样本替代旧数据存储并保留早期类别。
+- [DiffuseKronA: A Parameter Efficient Fine-tuning Method for Personalized Diffusion Models](https://arxiv.org/abs/2402.17412)：用 Kronecker-product 适配矩阵个性化扩散模型，减少微调参数量，同时在不同提示下保持主体身份。
+- [Label-Noise Robust Diffusion Models](https://arxiv.org/abs/2402.17517)：在带噪类别或 caption 标签下训练扩散生成器，通过调整学习目标降低错误监督对去噪模型的影响。
+- [Structure-Guided Adversarial Training of Diffusion Models](https://arxiv.org/abs/2402.17563)：在扩散训练中加入结构感知对抗扰动，提高生成图像面对布局和语义结构变化时的稳健性。
+- [Leveraging Representations from Intermediate Encoder-blocks for Synthetic Image Detection](https://arxiv.org/abs/2402.19091)：利用 encoder 中间块特征检测合成图像，捕捉在最终层表示中较弱的生成器伪影。
+- [DistriFusion: Distributed Parallel Inference for High-Resolution Diffusion Models](https://arxiv.org/abs/2402.19481)：通过复用过期 patch activation 在多设备上并行高分辨率扩散推理，加速大图生成并维持 patch 间一致性。
+- [RealCustom: Narrowing Real Text Word for Real-Time Open-Domain Text-to-Image Customization](https://arxiv.org/abs/2403.00483)：把参考图语义压缩为紧凑文本词嵌入，实现实时开放域 T2I 定制，避免繁重的逐主体微调。
+- [Learning a Physical-Aware Diffusion Model Based on Transformer for Underwater Image Enhancement](https://arxiv.org/abs/2403.01497)：结合 transformer 扩散主干与水下成像先验，使增强过程符合颜色衰减、散射和物理退化模式。
+- [Theoretical Insights for Diffusion Guidance: A Case Study for Gaussian Mixture Models](https://arxiv.org/abs/2403.01639)：在 Gaussian mixture 设置下分析 classifier-free 等扩散 guidance，解释 guidance 何时改善或扭曲采样分布。
+- [OOTDiffusion: Outfitting Fusion based Latent Diffusion for Controllable Virtual Try-on](https://arxiv.org/abs/2403.01779)：用 outfitting-fusion latent diffusion 保留服装纹理和人体姿态，在可控虚拟试穿中分离服装条件与人物身份。
+- [ViewDiff: 3D-Consistent Image Generation with Text-to-Image Models](https://arxiv.org/abs/2403.01807)：为文生图扩散加入多视角一致性约束，使生成视图表现为同一个连贯的 3D 物体或场景。
+- [Stable Diffusion 3](https://arxiv.org/abs/2403.03206)：用 rectified-flow transformer 支撑高分辨率文生图，结合可扩展架构、flow matching 和多模态条件。
+- [Towards Understanding Cross and Self-Attention in Stable Diffusion for Text-Guided Image Editing](https://arxiv.org/abs/2403.03431)：拆解 Stable Diffusion 编辑中 cross-attention 和 self-attention 的作用，识别哪些 attention map 控制文本对齐、结构保持和局部编辑泄漏。
+- [FLAME Diffuser: Wildfire Image Synthesis using Mask Guided Diffusion](https://arxiv.org/abs/2403.03463)：用 mask-guided diffusion 生成野火图像，通过空间火焰 mask 控制火焰和烟雾位置，为应急视觉任务合成数据。
+- [NoiseCollage: A Layout-Aware Text-to-Image Diffusion Model Based on Noise Cropping and Merging](https://arxiv.org/abs/2403.03485)：在去噪前裁剪并合并 noise 区域来控制布局，使预训练 T2I 扩散模型能按空间框放置多个对象。
+- [Unifying Generation and Compression: Ultra-low bitrate Image Coding Via Multi-stage Transformer](https://arxiv.org/abs/2403.03736)：把超低码率图像编码视为生成式重建，用多阶段 transformer 传输紧凑语义并在解码端合成感知真实图像。
+- [PixArt-Σ: Weak-to-Strong Training of Diffusion Transformer for 4K Text-to-Image Generation](https://arxiv.org/abs/2403.04692)：通过弱到强训练扩展扩散 Transformer，用于高分辨率文生图。
+- [Face2Diffusion for Fast and Editable Face Personalization](https://arxiv.org/abs/2403.05094)：把人脸参考映射为扩散个性化 token，实现快速身份保持人脸生成，并仍可通过文本编辑。
+- [CogView3: Finer and Faster Text-to-Image Generation via Relay Diffusion](https://arxiv.org/abs/2403.05121)：提出用于文生图的 relay diffusion，通过分阶段去噪 relay 相比早期 CogView 提升细节和速度。
+- [ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment](https://arxiv.org/abs/2403.05135)：为扩散模型加入基于 LLM 的语义适配器，把长提示和组合提示转换为更强的条件信号以提升图文对齐。
+- [Improving Diffusion Models for Authentic Virtual Try-on in the Wild](https://arxiv.org/abs/2403.05139)：把扩散式虚拟试穿适配到非受控照片，改善服装变形、人物保持和真实场景下的视觉可信度。
+- [Towards Effective Usage of Human-Centric Priors in Diffusion Models for Text-based Human Image Generation](https://arxiv.org/abs/2403.05239)：向文本人体图像扩散中注入姿态、体型等 human-centric priors，使生成身体符合更合理的解剖和服装结构。
+- [Diffusion Lens: Interpreting Text Encoders in Text-to-Image Pipelines](https://arxiv.org/abs/2403.05846)：通过扩散输出探测 T2I text encoder，揭示提示 token、层和嵌入如何控制生成中的视觉属性。
+- [Decoupled Data Consistency with Diffusion Purification for Image Restoration](https://arxiv.org/abs/2403.06054)：在图像修复中分离测量一致性和扩散净化，将逆问题约束与生成先验结合并避免过度校正。
+- [DivCon: Divide and Conquer for Complex Numerical and Spatial Reasoning in Text-to-Image Generation](https://arxiv.org/abs/2403.06400)：把包含数值和空间关系的提示分解为更小的生成约束，提升 T2I 对数量、位置和对象关系的处理。
+- [Distribution-Aware Data Expansion with Diffusion Models](https://arxiv.org/abs/2403.06741)：用针对目标分布缺口选择的扩散样本扩展训练数据，以生成式增强改善下游视觉模型覆盖。
+- [SELMA: Learning and Merging Skill-Specific Text-to-Image Experts with Auto-Generated Data](https://arxiv.org/abs/2403.06952)：用自动生成数据训练 skill-specific T2I experts 并合并，使一个模型整合多个专门能力而无需人工专家数据集。
+- [BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion](https://arxiv.org/abs/2403.06976)：提出 decomposed dual-branch diffusion inpainting 模块，分别建模遮挡内容和保留上下文，可作为 plug-and-play 组件。
+- [Text-to-Image Diffusion Models are Great Sketch-Photo Matchmakers](https://arxiv.org/abs/2403.07214)：用 T2I 扩散先验进行 sketch-photo matching，借助生成式视觉对应关系连接稀疏草图和真实照片。
+- [Frequency-Aware Deepfake Detection: Improving Generalizability through Frequency Space Learning](https://arxiv.org/abs/2403.07240)：通过学习频域伪影提升 deepfake 检测器迁移性，减少对特定来源像素线索的依赖。
+- [Efficient Diffusion Model for Image Restoration by Residual Shifting](https://arxiv.org/abs/2403.07319)：用 compact diffusion process 迁移残差来恢复退化图像，在降低修复成本的同时保留生成式细节恢复能力。
+- [Genuine Knowledge from Practice: Diffusion Test-Time Adaptation for Video Adverse Weather Removal](https://arxiv.org/abs/2403.07684)：对恶劣天气视频去除执行扩散 test-time adaptation，利用观测序列中的 practice-time 信号逐视频更新修复行为。
+- [Bridging Different Language Models and Generative Vision Models for Text-to-Image Generation](https://arxiv.org/abs/2403.07860)：把外部语言模型表示与生成式视觉模型对齐，使更丰富的提示理解能够条件化文生图扩散。
+- [Ambient Diffusion Posterior Sampling: Solving Inverse Problems with Diffusion Models trained on Corrupted Data](https://arxiv.org/abs/2403.08728)：把 posterior sampling 扩展到用损坏观测训练的 ambient diffusion，在不需要干净图像预训练数据的情况下求解逆问题。
+- [NoiseDiffusion: Correcting Noise for Image Interpolation with Diffusion Models beyond Spherical Linear Interpolation](https://arxiv.org/abs/2403.08840)：校正用于图像插值的 latent noise 轨迹，在扩散空间中产生比 spherical linear interpolation 更平滑的语义过渡。
+- [DialogGen: Multi-modal Interactive Dialogue System for Multi-turn Text-to-Image Generation](https://arxiv.org/abs/2403.08857)：根据对话历史和多模态用户反馈更新扩散条件，支持多轮 T2I 生成和迭代式图像细化。
+- [SemanticDraw: Towards Real-Time Interactive Content Creation from Image Diffusion Models](https://arxiv.org/abs/2403.09055)：把扩散生成转化为交互式绘图系统，根据用户笔触和文本控制实时更新语义内容。
+- [Switch Diffusion Transformer: Synergizing Denoising Tasks with Sparse Mixture-of-Experts](https://arxiv.org/abs/2403.09176)：在 diffusion transformer 中使用 sparse mixture-of-experts，让不同去噪任务路由到专门专家，同时共享一个主干。
+- [PrompTHis: Visualizing the Process and Influence of Prompt Editing During Text-to-Image Creation](https://arxiv.org/abs/2403.09615)：分析提示编辑如何随时间改变 T2I 输出，揭示 prompt history 对图像创建中模型行为的影响。
+- [Glyph-ByT5: A Customized Text Encoder for Accurate Visual Text Rendering](https://arxiv.org/abs/2403.09622)：用基于 ByT5 的 glyph encoder 替换 T2I text encoder，提升生成图像中字符和单词的准确渲染。
+- [SCP-Diff: Photo-Realistic Semantic Image Synthesis with Spatial-Categorical Joint Prior](https://arxiv.org/abs/2403.09638)：用 spatial、categorical 与 spatial-categorical joint inference priors 替代标准高斯先验，缓解扩散式语义图像合成中的 mask 错位和大语义区域异常结构。
+- [SphereDiffusion: Spherical Geometry-Aware Distortion Resilient Diffusion Model](https://arxiv.org/abs/2403.10044)：在球面几何上构建扩散模型，使全景和 omnidirectional 图像在投影畸变下仍保持全局结构。
+- [IMPRINT: Generative Object Compositing by Learning Identity-Preserving Representation](https://arxiv.org/abs/2403.10701)：学习身份保持的对象表示进行生成式合成，把生成对象插入场景时维持源对象外观。
+- [StableGarment: Garment-Centric Generation via Stable Diffusion](https://arxiv.org/abs/2403.10783)：用 garment encoder、带 additive self-attention 的可训练 UNet 副本、try-on ControlNet 和合成数据引擎统一服装文生图、风格化生成与虚拟试穿。
+- [OMG: Occlusion-friendly Personalized Multi-concept Generation in Diffusion Models](https://arxiv.org/abs/2403.10983)：通过建模概念交互实现遮挡友好的多概念个性化生成，减少多个学习主体同图出现时的身份混合。
+- [Divide-and-Conquer Posterior Sampling for Denoising Diffusion Priors](https://arxiv.org/abs/2403.11407)：把基于扩散先验的 posterior sampling 拆成更小子问题，在全局优化不稳定时改善逆问题重建。
+- [CRS-Diff: Controllable Remote Sensing Image Generation With Diffusion Model](https://arxiv.org/abs/2403.11614)：用 land-cover 语义和空间结构等条件可控生成遥感图像，将扩散模型适配到 overhead imagery。
+- [Fast High-Resolution Image Synthesis with Latent Adversarial Diffusion Distillation](https://arxiv.org/abs/2403.12015)：用对抗目标蒸馏 latent diffusion 以实现快速高分辨率合成，减少去噪步数同时保留图像细节。
+- [Consistency Model is an Effective Posterior Sample Approximation for Diffusion Inverse Solvers](https://arxiv.org/abs/2403.12063)：用从 probability-flow ODE 蒸馏的一致性模型近似后验样本，改进语义分割条件重建等神经算子逆问题。
+- [Understanding and Improving Training-free Loss-based Diffusion Guidance](https://arxiv.org/abs/2403.12404)：把免训练 loss guidance 分析为优化过程，指出对抗梯度和收敛慢等失败模式，并给出在图像与运动生成中验证的修正技巧。
+- [SC-Diff: 3D Shape Completion with Latent Diffusion Models](https://arxiv.org/abs/2403.12470)：把 TSDF 形状编码到由 2D 图像和 3D 局部扫描共同监督的离散潜空间，用潜扩散完成多模态 3D shape completion 并降低显存开销。
+- [Tuning-Free Image Customization with Image and Text Guidance](https://arxiv.org/abs/2403.12658)：通过混合 UNet decoder 的 self-attention，在数秒内编辑指定图像区域，同时结合参考图主体语义与文本描述的属性变化且无需微调。
+- [AnimateDiff-Lightning: Cross-Model Diffusion Distillation](https://arxiv.org/abs/2403.12706)：用 progressive adversarial diffusion distillation 从多个基础扩散模型蒸馏运动模块，面向少步视频生成并扩大风格兼容性。
+- [DreamDA: Generative Data Augmentation with Diffusion Models](https://arxiv.org/abs/2403.12803)：从真实训练图像出发扰动反向扩散轨迹以合成多样分类数据，再用自训练为生成样本分配伪标签。
+- [You Only Sample Once: Taming One-Step Text-To-Image Synthesis by Self-Cooperative Diffusion GANs](https://arxiv.org/abs/2403.12931)：训练 YOSO 这一单步 diffusion-GAN 生成器，结合 self-cooperative 对抗平滑、latent perceptual loss、latent discriminator 和 prior initialization 实现快速 T2I 合成。
+- [FouriScale: A Frequency Perspective on Training-Free High-Resolution Image Synthesis](https://arxiv.org/abs/2403.12963)：用 dilation 与 low-pass 操作替换预训练扩散卷积，并配合 padding-then-crop 采样，在不重训的情况下生成任意长宽比高分辨率图像。
+- [When Do We Not Need Larger Vision Models?](https://arxiv.org/abs/2403.13043)：评估 Scaling on Scales，把冻结的小型 ViT 运行在多种图像尺度上，并显示这种多尺度推理能在分类、分割、深度估计、多模态 LLM 和机器人基准上超过更大的 ViT。
+- [Magic Fixup: Streamlining Photo Editing by Watching Dynamic Videos](https://arxiv.org/abs/2403.13044)：从视频帧对训练扩散编辑器，用两种模拟用户编辑的运动模型把源帧 warp 到目标布局，在保留细节的同时适配新布局中的光照、上下文和物体交互。
+- [Diffusion Model for Data-Driven Black-Box Optimization](https://arxiv.org/abs/2403.13219)：把结构化黑盒设计优化重写为条件扩散采样，结合大量无标签设计和少量噪声奖励或成对偏好标签，生成接近最优且保留潜在结构的候选方案。
+- [DetDiffusion: Synergizing Generative and Perceptive Models for Enhanced Data Generation and Perception](https://arxiv.org/abs/2403.13304)：协同生成模型与感知模型生成训练数据，以提升下游感知任务表现。
+- [AGFSync: Leveraging AI-Generated Feedback for Preference Optimization in Text-to-Image Generation](https://arxiv.org/abs/2403.13352)：运行全 AI 的 DPO 闭环，让 VLM 从风格、一致性和美学维度评分生成图像，产生反馈数据以提升 SD 和 SDXL 的提示跟随与偏好指标。
+- [ZigMa: A DiT-style Zigzag Mamba Diffusion Model](https://arxiv.org/abs/2403.13802)：把零参数 Zigzag Mamba 扫描插入 stochastic-interpolant 视觉生成器，在保持空间连续性的同时优于 Transformer 基线的速度和显存表现。
+- [Editing Massive Concepts in Text-to-Image Diffusion Models](https://arxiv.org/abs/2403.13807)：提出 EMCID，两阶段结合 dual self-distillation 与闭式多层模型编辑，并用 ICEB 测试最多 1,000 个 T2I 概念编辑。
+- [DesignEdit: Multi-Layered Latent Decomposition and Fusion for Unified & Accurate Image Editing](https://arxiv.org/abs/2403.14487)：把源图 latent 分解为对象层和背景层，用 key-masking self-attention 做 inpainting，并按指令融合多层 latent 支持多种空间编辑任务。
+- [ReNoise: Real Image Inversion Through Iterative Noising](https://arxiv.org/abs/2403.14602)：在每个 inversion 步骤迭代 re-noising 并平均模型预测，提高真实图像扩散反演重建精度，同时保留文本驱动编辑能力。
+- [Long-CLIP: Unlocking the Long-Text Capability of CLIP](https://arxiv.org/abs/2403.15378)：通过位置嵌入 stretching 和 primary-component feature matching 扩展 CLIP 长文本能力，使详细描述可直接用于检索和 T2I 生成管线。
+- [Finding needles in a haystack: A Black-Box Approach to Invisible Watermark Detection](https://arxiv.org/abs/2403.15955)：提出 WMD，在黑盒且无标注设定下用 clean dataset 与 reference dataset 的 offset learning 检测任意不可见水印，而不依赖具体解码器或水印先验。
+- [Distilling Semantic Priors from SAM to Efficient Image Restoration Models](https://arxiv.org/abs/2403.16368)：通过 semantic-prior fusion、自蒸馏和关系模块把 SAM 语义 mask 迁移到小型图像恢复网络，推理时不再调用 SAM。
+- [SDXS: Real-Time One-Step Latent Diffusion Models with Image Conditions](https://arxiv.org/abs/2403.16627)：结合 U-Net 与解码器蒸馏、单步 feature matching 和 score distillation，降低图像条件 latent diffusion 的延迟。
+- [Be Yourself: Bounded Attention for Multi-Subject Text-to-Image Generation](https://arxiv.org/abs/2403.16990)：提出免训练 bounded-attention 采样器，限制主体间语义泄漏，提升多主体提示和布局的一致性。
+- [SD-DiT: Unleashing the Power of Self-Supervised Discrimination in Diffusion Transformer*](https://arxiv.org/abs/2403.17004)：把 DiT 训练拆成 teacher-student 判别编码和生成解码，用 PF-ODE 噪声对改善收敛并避免 mask-reconstruction 不匹配。
+- [DreamLIP: Language-Image Pre-training with Long Captions](https://arxiv.org/abs/2403.17007)：用 MLLM 为 3,000 万图像重写长描述，动态抽取子 caption 作为正样本，并通过 grouping loss 与局部图像 patch 对齐以增强细粒度图文预训练。
+- [Continuous, Subject-Specific Attribute Control in T2I Models by Identifying Semantic Directions](https://arxiv.org/abs/2403.17064)：在 CLIP 文本嵌入中寻找 token 级方向来调节主体属性，实现无需修改扩散模型的连续多属性 T2I 控制。
+- [Improving Text-to-Image Consistency via Automatic Prompt Optimization](https://arxiv.org/abs/2403.17804)：使用 OPT2I 让 LLM 迭代改写提示以最大化图文一致性分数，并在 MSCOCO 与 PartiPrompts 上保持图像质量。
+- [AID: Attention Interpolation of Text-to-Image Diffusion](https://arxiv.org/abs/2403.17924)：插值 inner 和 outer attention layer，与 self-attention 融合，并用 beta 分布选择机制提升条件插值的平滑性和保真度。
+- [Bidirectional Consistency Models](https://arxiv.org/abs/2403.18035)：训练单个网络沿 probability-flow ODE 正反向移动，在一致性模型中统一快速生成、反演、插值和 inpainting。
+- [Don't Look into the Dark: Latent Codes for Pluralistic Image Inpainting](https://arxiv.org/abs/2403.18186)：用 restrictive partial encoder 只从可见区域预测离散 latent token，再由双向 Transformer 推断缺失 token，合成多样的大掩码补全结果。
+- [VersaT2I: Improving Text-to-Image Models with Versatile Reward](https://arxiv.org/abs/2403.18493)：把 T2I 质量拆成美学、对齐、几何和低层质量等奖励，用高质量生成样本微调 LoRA 专家，并通过门控避免奖励冲突。
+- [ObjectDrop: Bootstrapping Counterfactuals for Photorealistic Object Removal and Insertion](https://arxiv.org/abs/2403.18818)：采集单个物体移除前后的 counterfactual 场景，微调扩散编辑器同时去除物体及其阴影、遮挡和反射影响，再用 bootstrap supervision 扩展物体插入训练数据。
+- [MagicLens: Self-Supervised Image Retrieval with Open-Ended Instructions](https://arxiv.org/abs/2403.19651)：从网页共现图像中挖掘隐式关系，并用 foundation model 合成开放式检索指令，训练 3,670 万个 query image、instruction、target image 三元组。
+- [Detecting Origin Attribution for Text-to-Image Diffusion Models](https://arxiv.org/abs/2403.19653)：把图像归因到 12 个 T2I 生成器，并分析种子、推理超参、图像修改、风格线索和高频痕迹的可检测性。
+- [Structure Matters: Tackling the Semantic Discrepancy in Diffusion Models for Image Inpainting](https://arxiv.org/abs/2403.19898)：提出 StrDiffusion，用随时间变化的结构引导和自适应重采样降低 inpainting 中 mask 区域与未遮挡区域的语义不匹配。
+- [Relation Rectification in Diffusion Model](https://arxiv.org/abs/2403.20249)：在关系词和对象顺序上加入轻量 HGCN 来调整文本嵌入，无需更新文本编码器或扩散模型即可纠正视觉关系。
+- [Latent Watermark: Inject and Detect Watermarks in Latent Diffusion Space](https://arxiv.org/abs/2404.00230)：用 progressive training 在 latent diffusion space 中嵌入和检测水印，缓解压缩、模糊等攻击下图像质量与鲁棒性的冲突。
+- [Drag Your Noise: Interactive Point-based Editing via Diffusion Semantic Propagation](https://arxiv.org/abs/2404.01050)：把 U-Net 预测噪声视为语义编辑器，在单个去噪步骤中执行点驱动修改并传播变化，使 diffusion dragging 更快更稳定。
+- [Uncovering the Text Embedding in Text-to-Image Diffusion Models](https://arxiv.org/abs/2404.01154)：研究 T2I 文本嵌入中的逐词向量、上下文相关性和 SVD 方向，揭示免学习语义编辑与属性发现控制。
+- [Measuring Style Similarity in Diffusion Models](https://arxiv.org/abs/2404.01292)：构建风格描述符数据集和检索框架，把生成图像风格归因到训练图像，并将风格相似性与语义内容检索区分开。
+- [CosmicMan: A Text-to-Image Foundation Model for Humans](https://arxiv.org/abs/2404.01294)：基于 CosmicMan-HQ 数据集、Annotate Anyone 数据飞轮和 decomposed-attention-refocusing 训练人像专用 T2I 模型，使密集身体结构描述与像素对齐。
+- [Bigger is not Always Better: Scaling Properties of Latent Diffusion Models](https://arxiv.org/abs/2404.01367)：实证研究文生图 LDM 的模型规模与采样预算关系，指出固定推理步数下小模型有时优于更大模型。
+- [Linear Combination of Saved Checkpoints Makes Consistency and Diffusion Models Better](https://arxiv.org/abs/2404.02241)：用 evolutionary search 得到的系数平均训练过程 checkpoint，降低 DM 和 CM 训练成本，或在推理时改善生成质量与 NFE。
+- [InstantStyle: Free Lunch towards Style-Preserving in Text-to-Image Generation](https://arxiv.org/abs/2404.02733)：在扩散特征空间中解耦参考图的风格与内容，实现免调参的风格保持 T2I 生成，避免为每张参考图手动调 adapter 权重。
+- [On the Scalability of Diffusion-based Text-to-Image Generation](https://arxiv.org/abs/2404.02883)：系统消融 0.4B 到 4B 参数、最高 6 亿图像的 UNet 与 Transformer T2I 骨干，指出 cross-attention 布局、Transformer block 扩展、caption 密度和数据质量决定高效扩展。
+- [Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction](https://arxiv.org/abs/2404.02905)：把图像自回归改写为从粗到细的 next-scale prediction，使 GPT 式视觉 AR Transformer 在 ImageNet 上超过 DiT 的质量和速度，并支持补全、外扩与编辑。
+- [AIGIQA-20K: A Large Database for AI-Generated Image Quality Assessment](https://arxiv.org/abs/2404.03407)：提供来自 15 个生成器的 2 万张 AI 生成图像和 42 万个人类主观评分，并用感知质量与图文对齐分数评测 16 个 AIGI 质量模型。
+- [LCM-Lookahead for Encoder-based Text-to-Image Personalization](https://arxiv.org/abs/2404.03620)：利用少步 latent consistency 预览把身份损失反传到 encoder 式 T2I 个性化模型，在不牺牲布局多样性和提示对齐的情况下提升人脸一致性。
+- [Reference-Based 3D-Aware Image Editing with Triplanes](https://arxiv.org/abs/2404.03632)：通过编码、自动定位、triplane 特征空间解耦和融合学习编辑 3D-aware GAN，支持参考图引导的人脸、动物、服装和风格化修改。
+- [CoMat: Aligning Text-to-Image Diffusion Model with Image-to-Text Concept Matching](https://arxiv.org/abs/2404.03653)：用 image-to-text concept matching 与属性集中模块微调 SDXL，让模型重新关注被忽略的提示 token，且无需人类偏好或图像监督。
+- [Score identity Distillation: Exponentially Fast Distillation of Pretrained Diffusion Models for One-Step Generation](https://arxiv.org/abs/2404.04057)：用 score-identity 损失和自生成图像把预训练扩散模型蒸馏为单步生成器，蒸馏过程不依赖真实数据或反向扩散采样。
+- [Dynamic Prompt Optimizing for Text-to-Image Generation](https://arxiv.org/abs/2404.04095)：提出 Prompt Auto-Editing，用在线强化学习选择每个词的权重和注入时间步，在美学、语义一致性与用户偏好之间优化提示。
+- [Watermark-based Attribution of AI-Generated Content](https://arxiv.org/abs/2404.04254)：研究生成内容的用户级归因，为每个服务用户分配独立水印，并用概率检测和归因下界优化水印集合。
+- [Diffusion-RWKV: Scaling RWKV-Like Architectures for Diffusion Models](https://arxiv.org/abs/2404.04478)：把 RWKV 式序列建模改造为条件与无条件扩散骨干，降低高分辨率图像生成中的空间聚合成本而无需窗口注意力。
+- [Initno: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization](https://arxiv.org/abs/2404.04650)：用 cross-attention response 和 self-attention conflict 分数优化初始噪声，把 T2I 采样推向更符合提示语义的 latent 区域。
+- [Gaussian Shading: Provable Performance-Lossless Image Watermarking for Diffusion Models](https://arxiv.org/abs/2404.04956)：通过把水印码映射到高斯 latent 实现免训练扩散水印，在保持生成质量的同时支持语义相关且抗攻击的提取。
+- [Towards More General Video-based Deepfake Detection through Facial Component Guided Adaptation for Foundation Model](https://arxiv.org/abs/2404.05583)：在 CLIP 图像编码器上加入 side-network decoder 与 facial-component guidance，用参数高效适配同时捕捉时空线索和局部人脸伪造痕迹。
+- [UniFL: Improve Latent Diffusion Model via Unified Feedback Learning](https://arxiv.org/abs/2404.05595)：结合感知反馈、解耦美学反馈和对抗反馈学习，在 SD1.5 与 SDXL 上同时提升 LDM 视觉质量、偏好吸引力和推理速度。
+- [MarkPlugger: Generalizable Watermark Framework for Latent Diffusion Models Without Retraining](https://arxiv.org/abs/2404.05607)：为 latent diffusion model 加入即插即用水印，通过寻找语义扰动较小的水印表示，避免在快速迭代的 LDM 上反复重训。
+- [MoMA: Multimodal LLM Adapter for Fast Personalized Image Generation](https://arxiv.org/abs/2404.05674)：用 multimodal LLM adapter 编码参考身份和提示上下文，实现快速个性化 T2I 生成，减少逐主体微调依赖。
+- [SwapAnything: Enabling Arbitrary Object Swapping in Personalized Image Editing](https://arxiv.org/abs/2404.05717)：在扩散编辑管线中解耦源身份、目标物体线索和背景保持，使个性化图像中的任意物体替换更稳定。
+- [GeoSynth: Contextually-Aware High-Resolution Satellite Image Synthesis](https://arxiv.org/abs/2404.06637)：利用上下文条件生成高分辨率卫星图像，面向周边土地利用结构会约束合理合成结果的地理空间场景。
+- [SafeGen: Mitigating Sexually Explicit Content Generation in Text-to-Image Models](https://arxiv.org/abs/2404.06666)：通过定位并编辑与安全相关的模型组件抑制显式 T2I 输出，目标是在保留良性提示效用的同时减少不安全生成。
+- [Disguised Copyright Infringement of Latent Diffusion Models](https://arxiv.org/abs/2404.06737)：展示 latent diffusion 可通过伪装提示复现受保护内容，分析超出直接记忆或精确提示匹配之外的版权风险。
+- [GoodDrag: Towards Good Practices for Drag Editing with Diffusion Models](https://arxiv.org/abs/2404.07206)：总结点拖拽式 diffusion editing 的实践设计，说明 guidance、mask 和优化设置如何影响局部编辑质量。
+- [Object-Conditioned Energy-Based Attention Map Alignment in Text-to-Image Diffusion Models](https://arxiv.org/abs/2404.07389)：用 energy-based guidance 对齐对象级 attention map，在无需大规模重训的情况下提升 T2I 中物体位置与关系的忠实度。
+- [Taming Stable Diffusion for Text to 360{\deg} Panorama Image Generation](https://arxiv.org/abs/2404.07949)：把 Stable Diffusion 适配到文本条件 360 度全景图生成，处理普通透视图之外的环绕一致性和大视场构图。
+- [ControlNet++: Improving Conditional Controls with Efficient Consistency Feedback](https://arxiv.org/abs/2404.07987)：用判别式条件提取器提供像素级 cycle-consistency feedback，并以单步加噪 reward 微调可控扩散，避免完整采样的显存成本。
+- [OpenBias: Open-Set Bias Detection in Text-to-Image Generative Models](https://arxiv.org/abs/2404.07990)：面向 T2I 输出检测开放集社会偏见，而不是限定在固定保护属性列表，帮助审计意外的刻板印象模式。
+- [MoE-FFD: Mixture of Experts for Generalized and Parameter-Efficient Face Forgery Detection](https://arxiv.org/abs/2404.08452)：冻结 ViT 骨干，仅训练 LoRA、adapter 和 MoE 模块，把全局 Transformer 特征与局部 CNN 先验结合用于泛化人脸伪造检测。
+- [Watermark-embedded Adversarial Examples for Copyright Protection against Diffusion Models](https://arxiv.org/abs/2404.09401)：训练 conditional adversarial generator，把少量受保护样本转成扰动，使扩散模型输出带有可见作者水印的图像。
+- [FSRT: Facial Scene Representation Transformer for Face Reenactment from Factorized Appearance, Head-Pose, and Facial Expression Features](https://arxiv.org/abs/2404.09736)：用 Transformer 编码器和解码器学习 factorized set-latent 人脸表示，分离外观、头部姿态和表情以支持跨身份 reenactment。
+- [Digging into Contrastive Learning for Robust Depth Estimation with Diffusion Models](https://arxiv.org/abs/2404.09831)：在噪声、特征和图像三个层级加入 trinity contrastive learning，使扩散式深度估计在恶劣天气和退化场景下更稳健。
+- [Ctrl-Adapter: An Efficient and Versatile Framework for Adapting Diverse Controls to Any Diffusion Model](https://arxiv.org/abs/2404.09967)：通过轻量 adapter 和 MoE routing 复用预训练 ControlNet，把图像、视频、稀疏帧和多条件控制接入 U-Net 与 DiT 扩散骨干。
+- [HQ-Edit: A High-Quality Dataset for Instruction-based Image Editing](https://arxiv.org/abs/2404.09990)：构建约 20 万个由 GPT-4V 与 DALL-E 3 筛选的编辑图像对，并定义 alignment 与 coherence 指标，微调后提升指令式图像编辑模型。
+- [Consistent Diffusion Meets Tweedie: Training Exact Ambient Diffusion Models with Noisy Data](https://arxiv.org/abs/2404.10177)：用双重 Tweedie 公式和 consistency loss 从带噪数据训练扩散模型，并在 SDXL 微调中降低训练集记忆。
+- [SparseDM: Toward Sparse Efficient Diffusion Models](https://arxiv.org/abs/2404.10445)：在预训练扩散模型的卷积层和线性层加入可训练稀疏 mask，使 UNet 与 Transformer 生成器约减半 MACs 且保持 FID。
+- [LaDiC: Are Diffusion Models Really Inferior to Autoregressive Counterparts for Image-to-Text Generation?](https://arxiv.org/abs/2404.10763)：检验 diffusion 在图像到文本生成中的表现，挑战自回归解码器天然更适合 caption 式输出的假设。
+- [Towards Highly Realistic Artistic Style Transfer via Stable Diffusion with Step-aware and Layer-aware Prompt](https://arxiv.org/abs/2404.11474)：在 Stable Diffusion 中学习 step-aware 与 layer-aware prompts，使艺术风格迁移保留内容结构并减少伪影和不协调纹理。
+- [MoA: Mixture-of-Attention for Subject-Context Disentanglement in Personalized Image Generation](https://arxiv.org/abs/2404.11565)：把扩散 attention 分成个性化分支和冻结先验分支并用 routing 协调，在保留主体身份的同时沿用基础 T2I 模型的布局和上下文。
+- [CU-Mamba: Selective State Space Models with Channel Learning for Image Restoration](https://arxiv.org/abs/2404.11778)：在 U-shaped 图像恢复网络中加入 spatial 与 channel state-space 模块，以线性特征图复杂度建模全局上下文和通道相关性。
+- [TextCenGen: Attention-Guided Text-Centric Background Adaptation for Text-to-Image Generation](https://arxiv.org/abs/2404.11824)：利用 cross-attention map 和 force-directed relocation 生成适合排版的 T2I 背景，在不训练的情况下把物体避开目标文字区域。
+- [EdgeFusion: On-Device Text-to-Image Generation](https://arxiv.org/abs/2404.11925)：从紧凑 BK-SDM 出发，结合高质量合成图文数据、面向 LCM 的蒸馏和量化部署，在边缘设备上实现低于一秒的两步 T2I 生成。
+- [StyleBooth: Image Style Editing with Multimodal Instruction](https://arxiv.org/abs/2404.12154)：把文本和示例图指令统一为扩散风格编辑条件，并通过 style 与 destyle 的迭代调优、编辑和过滤构建高质量编辑对。
+- [Lazy Diffusion Transformer for Interactive Image Editing](https://arxiv.org/abs/2404.12382)：用 context encoder 和 diffusion transformer decoder 只生成 mask 区域，使提示驱动局部编辑成本随 mask 大小而非整张画布扩展。
+- [GenVideo: One-shot target-image and shape aware video editing using T2I diffusion models](https://arxiv.org/abs/2404.12541)：用 target-image-aware T2I 模型、目标与形状感知的 InvEdit mask 以及 latent noise correction 编辑视频，使替换对象能改变形状或尺寸并保持时间一致性。
+- [Robust CLIP-Based Detector for Exposing Diffusion Model-Generated Images](https://arxiv.org/abs/2404.12908)：结合 CLIP 图文特征、MLP 分类器、稳健性损失和 loss-landscape flattening，在不均衡合成来源数据上提升扩散生成图像检测泛化。
+- [Neural Flow Diffusion Models: Learnable Forward Process for Improved Diffusion Modelling](https://arxiv.org/abs/2404.12940)：学习扩散模型的前向过程以改进生成建模。
+- [Motion-aware Latent Diffusion Models for Video Frame Interpolation](https://arxiv.org/abs/2404.13534)：为视频帧插值构建 MADiff，在 latent diffusion 采样中注入相邻帧运动先验，减少模糊并生成更连贯的中间帧。
+- [Hyper-SD: Trajectory Segmented Consistency Model for Efficient Image Synthesis](https://arxiv.org/abs/2404.13686)：用 trajectory-segmented consistency distillation、人类反馈学习和 score distillation 压缩扩散推理，在少步采样下尽量保持原模型图像质量。
+- [RingID: Rethinking Tree-Ring Watermarking for Enhanced Multi-Key Identification](https://arxiv.org/abs/2404.14055)：重新分析 Tree-Ring 水印稳健性，指出 distribution shift 是隐藏因素，并加入多通道异质水印以增强多密钥扩散图像识别。
+- [MultiBooth: Towards Generating All Your Concepts in an Image from Text](https://arxiv.org/abs/2404.14239)：把多概念定制拆成单概念编码和 box 引导的 cross-attention 集成，用多模态图像编码器提升概念保真并降低推理成本。
+- [Gradient Guidance for Diffusion Models: An Optimization Perspective](https://arxiv.org/abs/2404.14743)：把 gradient-guided diffusion 形式化为正则化优化，并提出基于 forward prediction loss 的 guidance，在外部目标下保持预训练 score 模型结构。
+- [Perturbing Attention Gives You More Bang for the Buck: Subtle Imaging Perturbations That Efficiently Fool Customized Diffusion Models](https://arxiv.org/abs/2404.15081)：提出 CAAT 免训练攻击，利用 cross-attention 对梯度扰动的敏感性修改公开图像，使定制化 latent diffusion 微调后产生被破坏的文图映射。
+- [Multimodal Large Language Model is a Human-Aligned Annotator for Text-to-Image Generation](https://arxiv.org/abs/2404.15100)：用多模态 LLM 标注器构建覆盖提示遵循、美学、保真度和无害性的 VisionPrefer，并训练 VP-Score 奖励模型用于 T2I 偏好调优。
+- [From Parts to Whole: A Unified Reference Framework for Controllable Human Image Generation](https://arxiv.org/abs/2404.15267)：Parts2Whole 结合 semantic-aware appearance encoder、多张参考图、共享 self-attention 与 mask-aware attention，用分部参考图实现可控人像生成。
+- [ID-Aligner: Enhancing Identity-Preserving Text-to-Image Generation with Reward Feedback Learning](https://arxiv.org/abs/2404.15449)：为 ID-T2I 加入通用反馈学习框架，用人脸模型和偏好数据提供身份一致性奖励与身份美学奖励来提升人像保真。
+- [CharacterFactory: Sampling Consistent Characters With GANs for Diffusion Models](https://arxiv.org/abs/2404.15677)：训练 GAN 把 latent 样本映射到名人姓名 embedding 空间，生成可复用身份 embedding，使新角色在图像、视频和 3D 扩散模型中保持一致。
+- [PuLID: Pure and Lightning ID Customization via Contrastive Alignment](https://arxiv.org/abs/2404.16022)：通过 Lightning T2I 分支与标准扩散分支配合，并优化 contrastive alignment loss 和 accurate ID loss，实现免调参身份定制。
+- [MuseumMaker: Continual Style Customization Without Catastrophic Forgetting](https://arxiv.org/abs/2404.16612)：用新风格的 style distillation 和 shared-LoRA 的双重正则化支持连续风格定制，减少对已学习风格的灾难性遗忘。
+- [ObjectAdd: Adding Objects into Image via a Training-Free Diffusion Modification Fashion](https://arxiv.org/abs/2404.17230)：无需训练即可在指定框中添加对象，结合 embedding 拼接、latent 与 attention 注入以及 attention-refocused inpainting 来保持其他区域不变。
+- [PromptCIR: Blind Compressed Image Restoration with Prompt Learning](https://arxiv.org/abs/2404.17433)：用轻量 prompt 隐式编码压缩信息，并与图像特征生成的 soft weights 交互，为 JPEG 压缩图像恢复提供内容感知和失真感知引导。
+- [Exposing Text-Image Inconsistency Using Diffusion Models](https://arxiv.org/abs/2404.18033)：用 T2I diffusion 构建 D-TIIL，在误导性图文对中定位词语与图像区域不一致，并配套 1.4 万对含词级和区域级标注的 TIIL 数据集。
+- [Paint by Inpaint: Learning to Add Image Objects by Removing Them First](https://arxiv.org/abs/2404.18212)：先用 inpainting 移除对象来构造添加对象训练对，再训练扩散编辑器反向执行该过程，根据自然语言指令把对象加入图像。
+- [Explicit Correlation Learning for Generalizable Cross-Modal Deepfake Detection](https://arxiv.org/abs/2404.19171)：用基于内容信息的 correlation distillation 训练跨模态 deepfake 检测器，并在包含四种生成方法的 CMDFD 音视频伪造数据集上验证泛化。
+- [Espresso: Robust Concept Filtering in Text-to-Image Models](https://arxiv.org/abs/2404.19227)：通过 CLIP 图文 embedding 距离识别不可接受 T2I 概念，并用对比微调分离不可接受与可接受概念，在保持效用的同时增强鲁棒过滤。
+- [InstantFamily: Masked Attention for Zero-shot Multi-ID Image Generation](https://arxiv.org/abs/2404.19427)：用 multimodal embedding stack 和 masked cross-attention 实现 zero-shot 多身份生成，同时控制每个身份和构图区域。
+- [TwinDiffusion: Enhancing Coherence and Efficiency in Panoramic Image Generation with Diffusion Models](https://arxiv.org/abs/2404.19475)：通过 Crop Fusion 提升相邻区域连贯性，并用 Cross Sampling 高效生成动态 patch，改进免训练全景图生成。
+- [Streamlining Image Editing with Layered Diffusion Brushes](https://arxiv.org/abs/2405.00313)：把 diffusion editing layer 定义为可复用生成参数集合，并缓存中间 latent，使重叠局部编辑可非破坏式执行且单次约 140 ms。
+- [Deep Reward Supervisions for Tuning Text-to-Image Diffusion Models](https://arxiv.org/abs/2405.00760)：提出 DRTune，把奖励监督反传穿过 T2I 迭代采样过程来调优早期去噪步骤，并基于 SDXL 训练出 FDXL。
+- [Customizing Text-to-Image Models with a Single Image Pair](https://arxiv.org/abs/2405.01536)：从一对艺术图像中学习风格差异，把 style 和 content 分离到正交 LoRA 权重空间，再在扩散过程中用 style guidance 应用该风格。
+- [DiffuseTrace: A Transparent and Flexible Watermarking Scheme for Latent Diffusion Model](https://arxiv.org/abs/2405.02696)：作为 latent diffusion 插件嵌入多比特语义水印，在图像处理攻击下保持 99% 检测率，并在生成式攻击下保持超过 94% 的归因准确率。
+- [U-DiTs: Downsample Tokens in U-Shaped Diffusion Transformers](https://arxiv.org/abs/2405.02730)：提出下采样 token 的 U-shaped diffusion transformers，提高生成效率。
+- [ImageInWords: Unlocking Hyper-Detailed Image Descriptions](https://arxiv.org/abs/2405.02793)：用 human-in-the-loop 流程构建超详细图像描述，并显示 IIW caption 能提升 T2I 保真度和组合推理，属于图像到文本数据方法对生成的支撑。
+- [MVIP-NeRF: Multi-View 3D Inpainting on NeRF Scenes via Diffusion Prior](https://arxiv.org/abs/2405.02859)：把 diffusion prior 用于 NeRF inpainting，通过 multi-view SDS 和 normal-map SDS loss 让 RGB 外观与几何在多视角中一致补全。
+- [VectorPainter: Advanced Stylized Vector Graphics Synthesis Using Stroke-Style Priors](https://arxiv.org/abs/2405.02962)：利用笔画风格先验进行风格化矢量图生成。
+- [Imagine Flash: Accelerating Emu Diffusion Models with Backward Distillation](https://arxiv.org/abs/2405.05224)：用 backward distillation、shifted reconstruction loss 和推理期 noise correction，把 Emu 扩散模型蒸馏到一到三步去噪。
+- [Attention-Driven Training-Free Efficiency Enhancement of Diffusion Models](https://arxiv.org/abs/2405.05252)：无需重训，通过 Generalized Weighted PageRank 排序冗余 attention token，并在不同去噪步动态调整 pruning budget 来加速扩散推理。
+- [MasterWeaver: Taming Editability and Identity for Personalized Text-to-Image Generation](https://arxiv.org/abs/2405.05806)：使用身份编码器、额外 cross-attention、editing-direction loss 和 face-augmented dataset，在人脸身份保真与提示可编辑性之间取得平衡。
+- [Frame Interpolation with Consecutive Brownian Bridge Diffusion](https://arxiv.org/abs/2405.05953)：用 consecutive Brownian Bridge diffusion 替代随机 latent 扩散轨迹，从确定性 latent 初值出发降低累计方差，改进视频插帧中的确定性中间帧合成。
+- [Distilling Diffusion Models into Conditional GANs](https://arxiv.org/abs/2405.05967)：把扩散蒸馏视为成对 noise-to-image 翻译，用 E-LatentLPIPS 和带图文对齐损失的扩散式多尺度判别器训练单步 conditional GAN。
+- [UnMarker: A Universal Attack on Defensive Image Watermarking](https://arxiv.org/abs/2405.08363)：在不需要检测器反馈或水印方案知识的情况下攻击防御性图像水印，利用对鲁棒水印结构的分析移除生成图像 provenance 指纹。
+- [IRSRMamba: Infrared Image Super-Resolution via Mamba-Based Wavelet Transform Feature Modulation Model](https://arxiv.org/abs/2405.09873)：结合 Mamba 状态空间建模、wavelet-transform feature modulation 和语义一致性损失，在弱边缘、稀疏纹理和上下文破碎的红外图像中做超分辨率。
+- [AquaLoRA: Toward White-box Protection for Customized Stable Diffusion Models via Watermark LoRA](https://arxiv.org/abs/2405.11135)：把水印行为写入定制 Stable Diffusion 的 LoRA 权重，使攻击者即使白盒访问 checkpoint，受保护模型仍能输出可追踪图像。
+- [UPAM: Unified Prompt Attack in Text-to-Image Generation Models Against Both Textual Filters and Visual Checkers](https://arxiv.org/abs/2405.11336)：用基于梯度的 prompt 优化和 Sphere-Probing Learning 同时攻击文生图系统的文本过滤器与视觉检查器。
+- [Evolving Storytelling: Benchmarks and Methods for New Character Customization with Diffusion Models](https://arxiv.org/abs/2405.11852)：提出 NewEpisode，用于把未见新角色加入故事可视化，并研究在少量数据下区分新旧角色以保持叙事和身份一致的方法。
+- [Bridging the Intent Gap: Knowledge-Enhanced Visual Generation](https://arxiv.org/abs/2405.12538)：把外部知识注入视觉生成流程，使提示词能超越表层文本进行 grounding，重点改善知识密集型图像合成中的意图保持。
+- [EmoEdit: Evoking Emotions through Image Manipulation](https://arxiv.org/abs/2405.12661)：构建含 40,120 个情绪属性编辑对的 EmoEditSet，并同时修改内容、颜色和风格，使情感图像操控能改变情绪反应又保持构图。
+- [Face Adapter for Pre-Trained Diffusion Models with Fine-Grained ID and Attribute Control](https://arxiv.org/abs/2405.12970)：为预训练扩散模型加入 adapter，解耦目标结构、身份和属性，在无需完整重训生成器的情况下支持高保真人脸 reenactment 与换脸。
+- [Personalized Residuals for Concept-Driven Text-to-Image Generation](https://arxiv.org/abs/2405.12978)：在冻结的文生图扩散模型少数层上学习低秩 residual，并在采样时只把 residual 作用到 cross-attention 定位出的概念区域。
+- [Computational Tradeoffs in Image Synthesis: Diffusion, Masked-Token, and Next-Token Prediction](https://arxiv.org/abs/2405.13218)：在受控 FLOP 预算下比较 diffusion、masked-token 和 next-token 图像合成，发现 token prediction 的提示遵循更强，而 diffusion 随质量规模化仍有竞争力。
+- [Class-Conditional self-reward mechanism for improved Text-to-Image models](https://arxiv.org/abs/2405.13473)：用模型自生成、自评判的 class-conditional 样本微调文生图扩散模型，通过自奖励自动筛选偏好数据。
+- [MetaEarth: A Generative Foundation Model for Global-Scale Remote Sensing Image Generation](https://arxiv.org/abs/2405.13570)：用 resolution-guided self-cascading generator 扩展遥感图像生成，面向全球、多分辨率、无边界的卫星图像合成。
+- [Learning Diffusion Priors from Observations by Expectation Maximization](https://arxiv.org/abs/2405.13712)：用 expectation maximization 从带噪或间接观测中学习 diffusion prior，并配套改进的无条件扩散后验采样方案。
+- [LightningDrag: Lightning Fast and Accurate Drag-based Image Editing Emerging from Videos](https://arxiv.org/abs/2405.13722)：把拖拽编辑重新表述为从视频中学习的条件生成任务，将基于扩散的点拖拽编辑从分钟级降到约一秒。
+- [Conditioning diffusion models by explicit forward-backward bridging](https://arxiv.org/abs/2405.13794)：把无条件扩散模型中的条件模拟写成 partial SDE bridge 上的推断问题，用 particle Gibbs 与 pseudo-marginal sampler 支持受约束生成。
+- [FreeCustom: Tuning-Free Customized Image Generation for Multi-Concept Composition](https://arxiv.org/abs/2405.13870)：无需微调即可组合多个用户给定概念，在推理期完成多概念定制生成，而不是为每个主体训练 adapter。
+- [FreeTuner: Any Subject in Any Style with Training-free Diffusion](https://arxiv.org/abs/2405.14201)：以免训练方式做组合式个性化，解耦主体参考和风格参考，使任意给定主体能以任意给定风格生成。
+- [RectifID: Personalizing Rectified Flow with Anchored Classifier Guidance](https://arxiv.org/abs/2405.14677)：在 rectified-flow 生成中使用 anchored classifier guidance，从参考图实现身份保持个性化且无需领域专用重训。
+- [Learning Multi-Dimensional Human Preference for Text-to-Image Generation](https://arxiv.org/abs/2405.14705)：训练 Multi-dimensional Preference Score，从多个独立人类偏好维度评价文生图输出，而不是压成单一总体分数。
+- [EditWorld: Simulating World Dynamics for Instruction-Following Image Editing](https://arxiv.org/abs/2405.14785)：把指令式编辑扩展到添加、替换、删除之外，通过模拟物理世界动态生成更真实的场景变化。
+- [Good Seed Makes a Good Crop: Discovering Secret Seeds in Text-to-Image Diffusion Models](https://arxiv.org/abs/2405.14828)：系统研究随机种子如何影响扩散输出，并发现能在固定 prompt 下提升图像质量的 golden seeds。
+- [TerDiT: Ternary Diffusion Models with Transformers](https://arxiv.org/abs/2405.14854)：用三值量化压缩 diffusion transformer，降低大型 DiT 文生图生成器的部署成本。
+- [ODGEN: Domain-specific Object Detection Data Generation with Diffusion Models](https://arxiv.org/abs/2405.15199)：根据边界框生成领域专用目标检测训练图像，提高含遮挡的密集多类别场景的可控合成能力。
+- [NIVeL: Neural Implicit Vector Layers for Text-to-Vector Generation](https://arxiv.org/abs/2405.15217)：用神经隐式矢量层实现文本到矢量图生成。
+- [Defensive Unlearning with Adversarial Training for Robust Concept Erasure in Diffusion Models](https://arxiv.org/abs/2405.15234)：提出 AdvUnlearn，把对抗训练、retain-set 正则和 text encoder 鲁棒化结合起来，使被擦除的 T2I 概念更难被对抗提示恢复，同时保留生成质量。
+- [StyleMaster: Towards Flexible Stylized Image Generation with Diffusion Models](https://arxiv.org/abs/2405.15287)：面向灵活风格化扩散生成，把风格控制与基础图像合成分开，使用户无需重训完整模型即可改变 stylization。
+- [Unlearning Concepts in Diffusion Model via Concept Domain Correction and Concept Preserving Gradient](https://arxiv.org/abs/2405.15304)：用 DoCo domain correction 和 concept-preserving gradient surgery 从 T2I 扩散模型中遗忘敏感概念，同时减少对相邻概念与模型效用的连带损伤。
+- [Towards Understanding the Working Mechanism of Text-to-Image Diffusion Model](https://arxiv.org/abs/2405.15330)：分析 text-to-image diffusion 模型的内部工作机制，为提示条件控制和生成行为提供诊断证据。
+- [Accelerating Diffusion Models with Parallel Sampling: Inference at Sub-Linear Time Complexity](https://arxiv.org/abs/2405.15986)：提出扩散推理的并行采样器，使采样时间对步数的依赖低于线性，同时保持图像生成质量。
+- [R.A.C.E.: Robust Adversarial Concept Erasure for Secure Text-to-Image Diffusion Model](https://arxiv.org/abs/2405.16341)：用对抗训练增强文生图扩散模型的概念擦除，使被移除概念更难通过攻击 prompt 恢复。
+- [Pruning for Robust Concept Erasing in Diffusion Models](https://arxiv.org/abs/2405.16534)：通过剪除扩散模型中的概念相关组件移除特定概念，在保留无关生成能力的同时提升概念擦除鲁棒性。
+- [DMPlug: A Plug-in Method for Solving Inverse Problems with Diffusion Models](https://arxiv.org/abs/2405.16749)：把预训练扩散模型作为 inverse problem 的 plug-in prior，在不做任务专用重训的情况下通过扩散采样引导重建。
+- [PromptFix: You Prompt and We Fix the Photo](https://arxiv.org/abs/2405.16785)：根据自然语言 prompt 修复用户照片，把照片校正视为 prompt 条件图像编辑，而不是手工修图。
+- [EM Distillation for One-step Diffusion Models](https://arxiv.org/abs/2405.16852)：用 expectation-maximization 目标把扩散生成器蒸馏为单步采样器，面向无需多步去噪循环的快速图像合成。
+- [PatchScaler: An Efficient Patch-Independent Diffusion Model for Super-Resolution](https://arxiv.org/abs/2405.17158)：用 patch-independent diffusion 做图像超分辨率，减少大图 patch 之间的依赖以提升高分辨率恢复效率。
+- [RB-Modulation: Training-Free Personalization of Diffusion Models using Stochastic Optimal Control](https://arxiv.org/abs/2405.17401)：用 reference-based stochastic optimal control 把参考风格属性编码为 terminal cost，并通过 cross-attention 特征聚合解耦风格与内容，无需 adapter 或 ControlNet。
+- [A Closer Look at Time Steps is Worthy of Triple Speed-Up for Diffusion Model Training](https://arxiv.org/abs/2405.17403)：把扩散 timestep 分成加速、减速和收敛区间，并减少低收益收敛区间采样，从而将扩散训练成本约降为三分之一。
+- [Little Data, Big Impact: Privacy-Aware Visual Language Models via Minimal Tuning](https://arxiv.org/abs/2405.17423)：该项偏离图像生成主轴，但提供 PrivBench、PrivBench-H 和 PrivTune，用少量调优提升 VLM 对 GDPR 对齐隐私视觉内容的识别。
+- [ClavaDDPM: Multi-relational Data Synthesis with Cluster-guided Diffusion Models](https://arxiv.org/abs/2405.17724)：该项偏离视觉生成主轴，但把扩散合成扩展到多表关系数据，用 cluster latent variables 捕捉跨表长程依赖。
+- [MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization](https://arxiv.org/abs/2405.17873)：对 few-step 文生图扩散模型应用 metric-decoupled mixed-precision quantization，在降低显存的同时保护感知质量和图文对齐。
+- [DiG: Scalable and Efficient Diffusion Models with Gated Linear Attention](https://arxiv.org/abs/2405.18428)：用 gated linear attention 替换扩散骨干中的高成本注意力，提高图像生成扩散模型的可扩展性和效率。
+- [Principled Probabilistic Imaging using Diffusion Models as Plug-and-Play Priors](https://arxiv.org/abs/2405.18782)：把扩散先验转化为贝叶斯逆成像的 MCMC 后验采样器，将通用逆问题约化为高斯去噪后验采样。
+- [ConceptPrune: Concept Editing in Diffusion Models via Skilled Neuron Pruning](https://arxiv.org/abs/2405.19237)：通过剪除特定神经元编辑扩散模型概念，提供目标化的模型侧概念移除方法。
+- [ART: Automatic Red-teaming for Text-to-Image Models to Protect Benign Users](https://arxiv.org/abs/2405.19360)：用 VLM 驱动的自动红队发现会意外触发不安全 T2I 输出的良性提示，把安全测试从恶意 jailbreak 扩展到普通用户提示。
+- [Promptus: Can Prompts Streaming Replace Video Streaming with Stable Diffusion](https://arxiv.org/abs/2405.20032)：用 prompt stream 代替视频帧传输，再在接收端用 Stable Diffusion、prompt fitting 和码率控制重建像素对齐的视频帧。
+- [RIGID: A Training-free and Model-Agnostic Framework for Robust AI-Generated Image Detection](https://arxiv.org/abs/2405.20112)：通过测量真实图像和生成图像在视觉基础模型表征空间中对微小扰动的鲁棒性差异，实现免训练 AIGC 图像检测。
+- [Jina CLIP: Your CLIP Model Is Also Your Text Retriever](https://arxiv.org/abs/2405.20204)：该项偏离图像生成主轴，但用多任务对比学习训练 Jina CLIP，使同一 CLIP 模型同时支持图文检索和纯文本检索。
+- [Boost Your Human Image Generation Model via Direct Preference Optimization](https://arxiv.org/abs/2405.20216)：把 DPO 适配到人体图像生成，用高质量真实图像作为偏好样本，引导姿态、解剖和细节更接近真实人体参考。
+- [Slight Corruption in Pre-training Data Makes Better Diffusion Models](https://arxiv.org/abs/2405.20494)：系统研究扩散预训练中图像-条件对轻微损坏的影响，显示少量条件噪声可提升鲁棒性和生成质量。
+- [Diffusion Models Are Innate One-Step Generators](https://arxiv.org/abs/2405.20750)：指出预训练扩散模型本身已包含单步生成能力，并通过匹配教师轨迹而非只匹配最终图像来蒸馏采样。
+- [Faster Diffusion Sampling with Randomized Midpoints: Sequential and Parallel](https://arxiv.org/abs/2406.00924)：提出 sequential 与 parallel randomized-midpoint 扩散采样器，改善 score-based sampling 的理论维度依赖。
+- [Δ-DiT: A Training-Free Acceleration Method Tailored for Diffusion Transformers](https://arxiv.org/abs/2406.01125)：利用 DiT block 分工免训练加速推理：前段 block 主要决定轮廓，后段 block 细化细节，因此可选择性计算。
+- [Dimba: Transformer-Mamba Diffusion Models](https://arxiv.org/abs/2406.01159)：构建交替堆叠 Transformer 与 Mamba 层的文生图扩散骨干，并用 cross-attention 注入条件，同时做质量调优和分辨率适配。
+- [AutoStudio: Crafting Consistent Subjects in Multi-turn Interactive Image Generation](https://arxiv.org/abs/2406.01388)：用免训练多智能体 LLM 框架管理多轮交互式图像生成，在用户切换或细化主体时保持主体一致。
+- [Guided Score identity Distillation for Data-Free One-Step Text-to-Image Generation](https://arxiv.org/abs/2406.01561)：在 Score identity Distillation 中加入长短 classifier-free guidance，将 Stable Diffusion 免数据蒸馏为单步文生图生成器。
+- [DiffUHaul: A Training-Free Method for Object Dragging in Images](https://arxiv.org/abs/2406.01594)：利用 localized T2I diffusion 的空间理解执行免训练物体拖拽，同时避免直接操纵 layout 导致的物体身份纠缠。
+- [Learning-to-Cache: Accelerating Diffusion Transformer via Layer Caching](https://arxiv.org/abs/2406.01733)：通过在去噪步之间缓存层输出移除大量 DiT 推理计算，并报告在 FID 几乎不变时获得显著 cache-step 节省。
+- [DEFT: Efficient Fine-tuning of Diffusion Models by Learning the Generalised $h$-transform](https://arxiv.org/abs/2406.01781)：用 generalized h-transform 统一逆问题中的条件扩散训练与采样，减少启发式 guidance 对超参数的敏感性。
+- [Cross-Domain Graph Data Scaling: A Showcase with Diffusion Models](https://arxiv.org/abs/2406.01899)：该项偏离视觉生成主轴，但用预训练离散扩散图增强器 UniAug 扩展异构图数据，服务下游图任务。
+- [Enhance Image-to-Image Generation with LLaVA-generated Prompts](https://arxiv.org/abs/2406.01956)：先让 LLaVA 描述输入图像，再把生成提示与原图一起输入 image-to-image 管线，以提升视觉连贯性和与输入图的相似度。
+- [Flash Diffusion: Accelerating Any Conditional Diffusion Model for Few Steps Image Generation](https://arxiv.org/abs/2406.02347)：将条件扩散模型蒸馏为少步生成器，覆盖文生图、inpainting、换脸和超分辨率，并支持 UNet 与 DiT 骨干。
+- [RoomTex: Texturing Compositional Indoor Scenes via Iterative Inpainting](https://arxiv.org/abs/2406.02461)：通过粗粒度全景 ControlNet 生成和按视角迭代的物体级 inpainting，为无纹理 3D 室内场景 mesh 生成一致纹理。
+- [Guiding a Diffusion Model with a Bad Version of Itself](https://arxiv.org/abs/2406.02507)：用更小或训练不足的自身副本引导图像生成，将质量提升与多样性控制分离，而不是使用无条件 classifier-free guidance。
+- [DiffCut: Catalyzing Zero-Shot Semantic Segmentation with Diffusion Features and Recursive Normalized Cut](https://arxiv.org/abs/2406.02842)：该项更偏分割任务，但证明扩散 UNet self-attention 特征可驱动 recursive normalized cut 零样本语义分割。
+- [PosterLLaVa: Constructing a Unified Multi-modal Layout Generator with LLM](https://arxiv.org/abs/2406.02884)：用 JSON 结构文本和视觉指令微调 MLLM 版式生成器，加入用户约束生成和复杂海报数据集，并输出可编辑 SVG poster。
+- [Text-to-Image Rectified Flow as Plug-and-Play Priors](https://arxiv.org/abs/2406.03293)：证明 rectified-flow 文生图模型也能像扩散模型一样作为 plug-and-play prior，并利用时间对称性支持逆问题和编辑应用。
+- [Tackling copyright issues in AI image generation through originality estimation and genericization](https://arxiv.org/abs/2406.03341)：加入 originality estimation 和 PREGen prompt rewriting genericization，降低生成图像模仿受版权保护视觉角色的概率。
+- [JIGMARK: A Black-Box Approach for Enhancing Image Watermarks against Diffusion Model Edits](https://arxiv.org/abs/2406.03720)：用经过扩散编辑和未编辑图像对的对比学习增强水印鲁棒性，无需对封闭图像编辑器反向传播。
+- [Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data](https://arxiv.org/abs/2406.03736)：把 absorbing discrete diffusion 重参数化为与时间无关的干净数据条件概率，从而在采样时缓存网络输出。
+- [Multistep Distillation of Diffusion Models via Moment Matching](https://arxiv.org/abs/2406.04103)：通过多步矩匹配蒸馏扩散模型，使缩短采样器保留轨迹统计，而不只是拟合单步输出。
+- [ReNO: Enhancing One-step Text-to-Image Models through Reward-based Noise Optimization](https://arxiv.org/abs/2406.04312)：在推理期用人类偏好 reward model 的梯度优化初始噪声，提升单步 T2I 模型而无需完整 reward 微调。
+- [MELFuSION: Synthesizing Music from Image and Language Cues Using Diffusion Models](https://arxiv.org/abs/2406.04673)：该项偏离图像生成主轴，但在 text-to-music diffusion 中加入 visual synapse，使图像线索影响音乐生成。
+- [Fast Policy Synthesis with Variable Noise Diffusion Models](https://arxiv.org/abs/2406.04806)：该项偏离图像生成主轴，但通过输出不同噪声水平的部分去噪动作轨迹，加速机器人 diffusion policy。
+- [AttnDreamBooth: Towards Text-Aligned Personalized Text-to-Image Generation](https://arxiv.org/abs/2406.05000)：分别学习概念 embedding alignment、cross-attention map 和主体身份来个性化 T2I 生成，提升身份保持和文本对齐。
+- [Layered Image Vectorization via Semantic Simplification](https://arxiv.org/abs/2406.05404)：用 SDS 驱动的语义简化先抽象栅格图，再经过结构搭建和视觉细化生成分层矢量图。
+- [Binarized Diffusion Model for Image Super-Resolution](https://arxiv.org/abs/2406.05723)：提出 BI-DiffSR，用适合二值化的 UNet 与 consistent pixel downsampling/upsampling 压缩扩散超分辨率模型。
+- [TIGeR: Unifying Text-to-Image Generation and Retrieval with Large Multimodal Models](https://arxiv.org/abs/2406.05814)：在单个 LMM 内统一文生图和图像检索，加入自动选择生成图或检索图的机制，并提出覆盖创意与知识密集提示的 TIGeR-Bench。
+- [ProcessPainter: Learn Painting Process from Sequence Data](https://arxiv.org/abs/2406.06062)：从序列数据学习逐步绘画过程，生成 text-to-video 绘画轨迹，而不只是最终扩散图像。
+- [ExtraNeRF: Visibility-Aware View Extrapolation of Neural Radiance Fields with Diffusion Models](https://arxiv.org/abs/2406.06133)：通过跟踪未观测区域并用扩散 inpainting 外推一致场景内容，扩展 NeRF 可生成视角范围。
+- [Diffusion-RPO: Aligning Diffusion Models through Relative Preference Optimization](https://arxiv.org/abs/2406.06382)：用 relative preference optimization 对齐 T2I 扩散模型，同时利用同 prompt 图像对和语义相关的跨模态样本。
+- [Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](https://arxiv.org/abs/2406.06424)：用 margin-aware preference optimization 移除 T2I 对齐中的参考模型约束，缓解风格或物体适配时的 reference mismatch。
+- [Cometh: A continuous-time discrete-state graph diffusion model](https://arxiv.org/abs/2406.06449)：该项偏离视觉生成主轴，但提出连续时间离散状态 graph diffusion，并用 random-walk structural encoding 改进图生成。
+- [Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation](https://arxiv.org/abs/2406.06525)：提出 LlamaGen，把原生 next-token autoregression 用于图像 token，并结合高利用率 tokenizer 实现可扩展类别条件图像生成。
+- [Evolving from Single-modal to Multi-modal Facial Deepfake Detection: Progress and Challenges](https://arxiv.org/abs/2406.06965)：该项更像综述，梳理人脸 deepfake 检测从单模态检测器到音视频、图文多模态方法的演进。
+- [Is One GPU Enough? Pushing Image Generation at Higher-Resolutions with Foundation Models](https://arxiv.org/abs/2406.07251)：提出 Pixelsmith，用低分辨率参考、patchwise denoising 和 Slider guidance 在单 GPU 上零样本生成更高分辨率图像。
+- [Towards Realistic Data Generation for Real-World Super-Resolution](https://arxiv.org/abs/2406.07255)：构建 RealDGen，通过解耦内容和退化提取，为真实世界超分辨率生成更真实的训练图像对。
+- [Flow map matching with stochastic interpolants: A mathematical framework for consistency models](https://arxiv.org/abs/2406.07507)：用 stochastic interpolants 学习 two-time flow map，为 consistency models 的单步或少步生成提供数学框架。
+- [Instant 3D Human Avatar Generation using Image Diffusion Models](https://arxiv.org/abs/2406.07516)：组合专用扩散图像生成器、背面视图预测和独立 3D lifting network，从图像或文本快速生成 3D 人体 avatar。
+- [Neural Gaffer: Relighting Any Object via Diffusion](https://arxiv.org/abs/2406.07520)：训练端到端 2D diffusion relighting model，使单张物体图像可在任意新环境光照条件下重打光。
+- [Unveiling the Power of Wavelets: A Wavelet-based Kolmogorov-Arnold Network for Hyperspectral Image Classification](https://arxiv.org/abs/2406.07869)：该项偏离图像生成主轴，但评估 wavelet-based KAN activation 对 hyperspectral image classification 中空间光谱模式的建模能力。
+- [One-Step Effective Diffusion Network for Real-World Image Super-Resolution](https://arxiv.org/abs/2406.08177)：提出 OSediff，用单步扩散网络替代从随机噪声开始的多步真实世界超分辨率恢复。
+- [WMAdapter: Adding WaterMark Control to Latent Diffusion Models](https://arxiv.org/abs/2406.08337)：为潜扩散模型加入轻量 contextual adapter 和 hybrid fine-tuning，在生成过程中直接嵌入用户指定水印。
+- [OmniCorpus: A Unified Multimodal Corpus of 10 Billion-Level Images Interleaved with Text](https://arxiv.org/abs/2406.08418)：该项偏向数据集，发布 100 亿级交错图文语料，用于多模态 in-context learning 和模型微调。
+- [Diffusion Soup: Model Merging for Text-to-Image Diffusion Models](https://arxiv.org/abs/2406.08431)：平均在数据分片上训练的 T2I 扩散模型权重，实现免训练持续学习、遗忘、风格混合和 anti-memorization。
+- [DiTFastAttn: Attention Compression for Diffusion Transformer Models](https://arxiv.org/abs/2406.08552)：利用 DiT 推理中的空间、时间和条件冗余，在后训练阶段压缩图像与视频生成的 attention 计算。
+- [FakeInversion: Learning to Detect Images from Unseen Text-to-Image Models by Inverting Stable Diffusion](https://arxiv.org/abs/2406.08603)：通过 Stable Diffusion 反演生成图像并提取特征，训练能泛化到未见 T2I 生成器的合成图像检测器。
+- [Suitability of KANs for Computer Vision: A preliminary investigation](https://arxiv.org/abs/2406.09087)：该项偏离图像生成主轴，但比较 KAN 视觉骨干与常规卷积、线性层在识别和分割任务上的表现。
+- [EMMA: Your Text-to-Image Diffusion Model Can Secretly Accept Multi-Modal Prompts](https://arxiv.org/abs/2406.09162)：在 ELLA 式 T2I 扩散上加入 multimodal feature connector，使文本和参考外观能共同条件化图像生成。
+- [CLIPAway: Harmonizing Focused Embeddings for Removing Objects via Diffusion Models](https://arxiv.org/abs/2406.09368)：用强调背景并排除目标物体的 CLIP embedding 引导扩散 inpainting，减少对象移除后的幻觉残留。
+- [OmniTokenizer: A Joint Image-Video Tokenizer for Visual Generation](https://arxiv.org/abs/2406.09399)：构建同时适用于图像和视频的 Transformer tokenizer，采用解耦时空 attention 和从图像到视频的渐进训练。
+- [Instruct 4D-to-4D: Editing 4D Scenes as Pseudo-3D Scenes Using 2D Diffusion](https://arxiv.org/abs/2406.09402)：把动态 4D 场景当作 pseudo-3D 编辑，在 2D 扩散编辑中加入 anchor-aware attention 和光流外观传播以保持时空一致。
+- [Data Attribution for Text-to-Image Models by Unlearning Synthesized Images](https://arxiv.org/abs/2406.09408)：通过模拟对生成结果的 unlearning 并观察候选训练样本 loss 偏移，识别影响 T2I 输出的训练图像。
+- [Alleviating Distortion in Image Generation via Multi-Resolution Diffusion Models](https://arxiv.org/abs/2406.09416)：在 Transformer 扩散生成器中加入 multi-resolution network 和 time-dependent layer normalization，缓解 patchification 带来的图像失真。
+- [ControlVAR: Exploring Controllable Visual Autoregressive Modeling](https://arxiv.org/abs/2406.09750)：提出 ControlVAR，用 next-scale autoregression 联合建模图像与像素级控制条件，实现高效可控视觉生成。
+- [SuperSVG: Superpixel-Based Scalable Vector Graphics Synthesis](https://arxiv.org/abs/2406.09794)：通过超像素生成可缩放矢量图。
+- [Make It Count: Text-to-Image Generation with an Accurate Number of Objects](https://arxiv.org/abs/2406.10210)：寻找能在去噪过程中承载物体身份的扩散特征，用来检测并修复文生图中的多生成和少生成计数错误。
+- [Consistency-diversity-realism Pareto fronts of conditional image generative models](https://arxiv.org/abs/2406.10429)：系统研究推理期控制旋钮，为条件图像生成器绘制提示一致性、多样性和真实感的 Pareto fronts。
+- [STAR: Scale-wise Text-conditioned AutoRegressive image generation](https://arxiv.org/abs/2406.10797)：用 scale-wise autoregression 生成 1024px 文生图，结合预训练文本编码器、归一化 2D RoPE 和稳定的尺度内 token 采样。
+- [Improving Probabilistic Diffusion Models With Optimal Diagonal Covariance Matching](https://arxiv.org/abs/2406.10808)：用无偏 OCM 目标学习最优对角解析协方差，提升扩散采样效率、召回率和 likelihood。
+- [HAIChart: Human and AI Paired Visualization System](https://arxiv.org/abs/2406.11033)：该项偏离图像生成主轴，但用强化学习和用户反馈迭代推荐数据集可视化图表。
+- [Exploring the Role of Large Language Models in Prompt Encoding for Diffusion Models](https://arxiv.org/abs/2406.11831)：分析 decoder-only LLM 作为 T2I prompt encoder 会削弱提示遵循的原因，并加入 usage guidance 使 LLM 特征更适配扩散条件。
+- [Scaling the Codebook Size of VQGAN to 100,000 with a Utilization Rate of 99%](https://arxiv.org/abs/2406.11837)：提出 VQGAN-LC，将图像 token codebook 扩展到 100,000 个条目并实现超过 99% 的利用率。
+- [Autoregressive Image Generation without Vector Quantization](https://arxiv.org/abs/2406.11838)：用 diffusion loss 建模连续 token 分布，去掉自回归图像生成中对 vector quantization 的依赖。
+- [Not All Prompts Are Made Equal: Prompt-based Pruning of Text-to-Image Diffusion Models](https://arxiv.org/abs/2406.12042)：提出 Adaptive Prompt-Tailored Pruning，由 prompt router 选择所需 T2I 扩散容量，同时保留 GPU batch parallelism。
+- [Neural Residual Diffusion Models for Deep Scalable Vision Generation](https://arxiv.org/abs/2406.13215)：将 residual network 动态与 reverse diffusion 联系起来，提出可扩展到更深视觉生成器的 neural residual diffusion 设计。
+- [AniFaceDiff: High-Fidelity Face Reenactment via Facial Parametric Conditioned Diffusion Models](https://arxiv.org/abs/2406.13272)：用 Stable Diffusion、facial-alignment spatial conditioning 和参数化表情控制驱动 stylized avatar，避免目标动作身份泄漏。
+- [Invertible Consistency Distillation for Text-Guided Image Editing in Around 7 Steps](https://arxiv.org/abs/2406.14539)：提出 invertible Consistency Distillation，使蒸馏后的 T2I 模型能在少步内同时生成图像并反演真实图像以支持编辑。
+- [Holistic Evaluation for Interleaved Text-and-Image Generation](https://arxiv.org/abs/2406.14643)：该项偏评测，但提出 InterleavedBench 和 InterleavedEval，用于任意顺序交错图文生成任务。
+- [Towards trustworthy management of AIGC copyright: blockchain-enabled full lifecycle recording and multi-party auditing approach](https://arxiv.org/abs/2406.14966)：该项偏离模型方法，提出用区块链记录全生命周期贡献并做多方审计，以管理 AIGC 版权。
+- [MVOC: a training-free multiple video object composition method with diffusion models](https://arxiv.org/abs/2406.15829)：先对每个视频物体做 DDIM inversion，再编辑组合首帧，并在 image-to-video 生成中注入特征和 attention 来合成多物体视频。
+- [Repairing Catastrophic-Neglect in Text-to-Image Diffusion Models via Attention-Guided Feature Enhancement](https://arxiv.org/abs/2406.16272)：检测提示中被忽略的对象，并在文生图过程中施加 attention-guided feature enhancement 来修复 catastrophic neglect。
+- [Prompt-Consistency Image Generation (PCIG): A Unified Framework Integrating LLMs, Knowledge Graphs, and Controllable Diffusion Models](https://arxiv.org/abs/2406.16333)：用 LLM 抽取对象并构建知识图谱预测潜在位置，再输入可控扩散模型以改善提示与图像一致性。
+- [ResMaster: Mastering High-Resolution Image Generation via Structural and Fine-Grained Guidance](https://arxiv.org/abs/2406.16476)：用低分辨率参考约束低频结构，并用图像提示引导 patch 级高分辨率细节，突破基础模型原生分辨率限制。
+- [Repulsive Latent Score Distillation for Solving Inverse Problems](https://arxiv.org/abs/2406.16683)：为逆问题加入 repulsive latent score distillation，用粒子多样性正则和 latent-data 解耦缓解 SDS mode collapse。
+- [Recite, Reconstruct, Recollect: Memorization in LMs as a Multifaceted Phenomenon](https://arxiv.org/abs/2406.17746)：该项偏离图像生成主轴；其可用贡献是把语言模型记忆拆分为 recitation、reconstruction 和 recollection，并说明不同样本因素如何影响三类记忆。
+- [DiffuseHigh: Training-free Progressive High-Resolution Image Synthesis through Structure Guidance](https://arxiv.org/abs/2406.18459)：用低分辨率扩散输出作为结构引导逐步生成高分辨率图像，在无需训练或微调大模型的情况下缓解物体重复和形状扭曲。
+- [Lumina-Next: Making Lumina-T2X Stronger and Faster with Next-DiT](https://arxiv.org/abs/2406.18583)：用 Next-DiT、3D RoPE、sandwich normalization、scaled RoPE 外推、sigmoid 时间离散化和 context-drop token 合并改造 Lumina-T2X，以提升多语文生图和跨模态生成速度。
+- [Rethinking and Red-Teaming Protective Perturbation in Personalized Diffusion Models](https://arxiv.org/abs/2406.18944)：把保护性扰动解释为个性化扩散微调中的 CLIP 空间捷径错配，并用图像修复式 purification 与 noise-token 对比解耦进行 red-teaming。
+- [GM-DF: Generalized Multi-Scenario Deepfake Detection](https://arxiv.org/abs/2406.20078)：构建多数据集人脸伪造检测器，结合混合领域专家、CLIP 共性特征、masked image reconstruction 和 domain-aware meta-learning 来泛化到未见伪造场景。
+- [Prompt Refinement with Image Pivot for Text-to-Image Generation](https://arxiv.org/abs/2407.00247)：训练 PRIP 把用户提示翻译为生成器偏好的提示，用用户偏好图像的潜表示作为用户语言与系统语言之间的 pivot。
+- [LLM4GEN: Leveraging Semantic Representation of LLMs for Text-to-Image Generation](https://arxiv.org/abs/2407.00737)：加入即插即用 cross-adapter，把 LLM 语义表示与原生 T2I 文本特征融合，并用 entity-guided regularizer 改善密集提示和属性绑定。
+- [InstantStyle-Plus: Style Transfer with Content-Preserving in Text-to-Image Generation](https://arxiv.org/abs/2407.00788)：通过 inverted content latent noise、tile ControlNet、全局语义 adapter 和 style extractor 判别引导，在风格迁移中保持内容结构。
+- [An Expectation-Maximization Algorithm for Training Clean Diffusion Models from Corrupted Observations](https://arxiv.org/abs/2407.01014)：用 EM 训练受污染观测上的扩散先验，在 E-step 重建干净图像、M-step 更新权重，面向 inpainting、denoising 和 deblurring 等干净数据稀缺场景。
+- [On Statistical Rates and Provably Efficient Criteria of Latent Diffusion Transformers (DiTs)](https://arxiv.org/abs/2407.01079)：给出 latent DiT 理论，在低维潜空间假设下推导样本复杂度和逼近误差，并用低秩梯度结构刻画近线性推理与训练条件。
+- [StyleShot: A Snapshot on Any Style](https://arxiv.org/abs/2407.01414)：用 style-aware encoder、StyleGallery 数据集、解耦风格学习和 content-fusion encoder 学到免测试时调参的通用图像驱动风格表示。
+- [FORA: Fast-Forward Caching in Diffusion Transformer Acceleration](https://arxiv.org/abs/2407.01425)：在 DiT 推理中跨去噪步骤缓存并复用 attention 与 MLP 中间输出，无需重训即可加速且只轻微影响 FID 和 IS。
+- [On Discrete Prompt Optimization for Diffusion Models](https://arxiv.org/abs/2407.01606)：把 T2I 提示工程表述为离散优化，用紧凑词子空间和 shortcut text gradient 改善提示忠实度或构造对抗提示。
+- [GlyphDraw2: Automatic Generation of Complex Glyph Posters with Diffusion Models and Large Language Models](https://arxiv.org/abs/2407.02252)：结合 LLM 海报规划和 triple-cross-attention 对齐，使扩散生成能渲染复杂中英文字海报，并支持字体与分辨率控制。
+- [MIGC++: Advanced Multi-Instance Generation Controller for Image Synthesis](https://arxiv.org/abs/2407.02329)：扩展多实例图像生成，支持文本或图像属性、框或 mask 位置控制，并用 Shading Aggregation Controller 保持迭代生成一致性。
+- [Image-to-Text Logic Jailbreak: Your Imagination can Help You Do Anything](https://arxiv.org/abs/2407.02534)：该项偏离本模型页主轴；它提出 Flow-JD 流程图式 VLM jailbreak 数据集，用于测试视觉逻辑推理是否会绕过安全策略。
+- [InternLM-XComposer-2.5: A Versatile Large Vision Language Model Supporting Long-Contextual Input and Output](https://arxiv.org/abs/2407.03320)：更接近 VLM 条目而非生成器；相关产物是 7B 长上下文图文模型，并通过 LoRA 支持网页合成和图文文章创作。
+- [Learning Action and Reasoning-Centric Image Editing from Videos and Simulations](https://arxiv.org/abs/2407.03471)：从视频和仿真引擎整理 AURORA 三元组，让指令编辑器学习动作、运动、空间推理和物理动态编辑，而不局限于静态物体或风格变化。
+- [T2IShield: Defending Against Backdoors on Text-to-Image Diffusion Models](https://arxiv.org/abs/2407.04215)：利用后门触发器导致的 cross-attention assimilation 现象检测、定位并缓解 T2I 后门，包含 norm truncation、covariance discrimination 和二分触发器定位。
+- [UltraEdit: Instruction-based Fine-Grained Image Editing at Scale](https://arxiv.org/abs/2407.05282)：发布约 400 万条基于真实照片和艺术图像的指令编辑样本，结合 LLM 指令与区域标注，提升 MagicBrush 和 Emu-Edit 微调效果。
+- [JeDi: Joint-Image Diffusion Models for Finetuning-Free Personalized Text-to-Image Generation](https://arxiv.org/abs/2407.06187)：学习共享主体的多组图文对联合分布，使采样时仅输入一个或多个参考图即可实现免微调个性化。
+- [Powerful and Flexible: Personalized Text-to-Image Generation via Reinforcement Learning](https://arxiv.org/abs/2407.06642)：用 deterministic policy gradient 强化学习优化个性化 T2I 扩散，可纳入结构一致性等可微或不可微奖励。
+- [RodinHD: High-Fidelity 3D Avatar Generation with Diffusion Models](https://arxiv.org/abs/2407.06938)：从人像生成细节丰富的 3D avatar，结合 triplane diffusion、缓解 decoder 遗忘的数据调度、weight consolidation 和多层人像特征 cross-attention。
+- [MARS: Mixture of Auto-Regressive Models for Fine-grained Text-to-image Synthesis](https://arxiv.org/abs/2407.07614)：以 SemVIE expert 为核心实现中英双语自回归 T2I，保留预训练 LLM 文本分支，并通过分阶段图文对齐微调视觉集成。
+- [Controlling Space and Time with Diffusion Models](https://arxiv.org/abs/2407.07860)：提出 4DiM 级联扩散新视角合成模型，混合 3D、4D 和视频数据训练，并支持公制度量相机位姿与时间戳控制。
+- [DMM: Disparity-Guided Multispectral Mamba for Oriented Object Detection in Remote Sensing](https://arxiv.org/abs/2407.08132)：该项偏离生成主轴；它是遥感多光谱目标检测器，使用 disparity-guided Mamba 融合、target-aware attention 和目标先验辅助任务。
+- [Diff-Tracker: Text-to-Image Diffusion Models are Unsupervised Trackers](https://arxiv.org/abs/2407.08394)：把预训练 T2I 扩散模型复用于无监督视觉跟踪，通过初始目标 prompt learner 和在线 prompt updater 跟随目标运动。
+- [LightenDiffusion: Unsupervised Low-Light Image Enhancement with Latent-Retinex Diffusion Models](https://arxiv.org/abs/2407.08939)：在潜空间把特征分解为 reflectance 与 illumination map，再用扩散和自约束一致性做低光照恢复，避免 normal-light 内容泄漏。
+- [TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models](https://arxiv.org/abs/2407.09012)：冻结 ControlNet，在 U-Net 加入 LoRA、为姿态检测误差加入 temporal layer，并用姿态温度图保持背景稳定来驱动人像动画。
+- [ContextualStory: Consistent Visual Storytelling with Spatially-Enhanced and Storyline Context](https://arxiv.org/abs/2407.09774)：用 Spatially-Enhanced Temporal Attention、Storyline Contextualizer 和 StoryFlow Adapter 生成一致的故事帧并控制场景变化。
+- [DiffStega: Towards Universal Training-Free Coverless Image Steganography with Diffusion Models](https://arxiv.org/abs/2407.10459)：通过 password-dependent 参考图提示、文本提示和 Noise Flip 机制实现免训练 coverless steganography，并只允许授权方恢复信息。
+- [When Synthetic Traces Hide Real Content: Analysis of Stable Diffusion Image Laundering](https://arxiv.org/abs/2407.10736)：指出 Stable Diffusion 图到图 laundering 会把真实内容变成类似合成图的副本，并提出两阶段检测器区分原始、laundered 和纯生成图像。
+- [AccDiffusion: An Accurate Method for Higher-Resolution Image Generation](https://arxiv.org/abs/2407.10738)：用 patch-content-aware prompts 替代单一全局提示，并加入 dilated sampling 与 window interaction，减少免训练高分辨率生成中的物体重复。
+- [Model Inversion Attacks Through Target-Specific Conditional Diffusion Models](https://arxiv.org/abs/2407.11424)：使用目标特定 conditional diffusion model 和迭代重建恢复分类器私有训练图像，更像扩散隐私攻击而不是生成器改进。
+- [How Control Information Influences Multilingual Text Image Generation and Editing?](https://arxiv.org/abs/2407.11502)：分析控制图在不同去噪阶段对文字渲染的作用，并提出 TextGen，用 Fourier 调整控制特征和两阶段生成提升中英文视觉文字。
+- [Scaling Diffusion Transformers to 16 Billion Parameters](https://arxiv.org/abs/2407.11633)：用 sparse MoE routing、shared experts 和 expert-level balance loss 扩展 DiT 到 16.5B 参数，同时通过专家专门化降低推理成本。
+- [Subject-driven Text-to-Image Generation via Preference-based Reinforcement Learning](https://arxiv.org/abs/2407.12164)：只微调 U-Net，用 lambda-Harmonic reward 与 Bradley-Terry 偏好标签做主体驱动 T2I，并通过 early stopping 减少过拟合和负样本需求。
+- [Reliable and Efficient Concept Erasure of Text-to-Image Diffusion Models](https://arxiv.org/abs/2407.12383)：用闭式 target embedding 推导和迭代 cross-attention harmless concept 对齐，在数秒内擦除不安全或版权概念并保留无关生成能力。
+- [SlimFlow: Training Smaller One-Step Diffusion Models with Rectified Flow](https://arxiv.org/abs/2407.12718)：通过 annealing reflow 和 flow-guided distillation 同时压缩扩散步数与模型尺寸，训练小型 one-step rectified-flow 生成器。
+- [SMooDi: Stylized Motion Diffusion Model](https://arxiv.org/abs/2407.12783)：该项偏离图像编辑主轴；它把 text-to-motion 扩散模型与 style guidance、轻量 style adapter 结合，用于风格化动作生成。
+- [DreamStory: Open-Domain Story Visualization by LLM-Guided Multi-Subject Consistent Diffusion](https://arxiv.org/abs/2407.12899)：用 LLM story director 和带 masked mutual self/cross-attention 的多主体扩散模型，使故事帧中的角色身份和语义保持一致。
+- [Image Inpainting Models are Effective Tools for Instruction-guided Image Editing](https://arxiv.org/abs/2407.13139)：把指令编辑拆成编辑类别分类、主对象识别、mask 获取和 inpainting 四步，避免联合微调 LLM 与扩散模型。
+- [Safe-SD: Safe and Traceable Stable Diffusion with Text Prompt Trigger for Invisible Generative Watermarking](https://arxiv.org/abs/2407.13188)：训练统一 latent diffusion wrapper，通过文本触发、lambda sampling 和加密在生成过程中嵌入并检测不可见 QR 式水印。
+- [TextureCrop: Enhancing Synthetic Image Detection Through Texture-Based Cropping](https://arxiv.org/abs/2407.15500)：裁剪高频纹理区域以突出生成器伪影，可作为现有 synthetic-image detector 的即插即用预处理器。
+- [Learning to Manipulate Anywhere: A Visual Generalizable Framework For Reinforcement Learning](https://arxiv.org/abs/2407.15815)：该项是偏离主轴的机器人工作；Maniwhere 结合多视角表征、spatial transformer 和 curriculum randomization 训练可泛化视觉操控策略。
+- [CatVTON: Concatenation Is All You Need for Virtual Try-On with Diffusion Models](https://arxiv.org/abs/2407.15886)：把人物图和服装图在空间维度拼接后输入扩散模型，省去额外编码器以及姿态、解析和 caption 预处理，并主要训练 self-attention 参数。
+- [Diffusion Models for Monocular Depth Estimation: Overcoming Challenging Conditions](https://arxiv.org/abs/2407.16698)：用 depth-aware T2I 扩散合成困难场景，并以自蒸馏方式微调单目深度网络，提升不利分布外条件下的深度估计。
+- [FlexiEdit: Frequency-Aware Latent Refinement for Enhanced Non-Rigid Editing](https://arxiv.org/abs/2407.17850)：在目标编辑区域降低 DDIM latent 高频分量，并通过 re-inversion 恢复提示忠实度，从而改善非刚性布局编辑。
+- [BetterDepth: Plug-and-Play Diffusion Refiner for Zero-Shot Monocular Depth Estimation](https://arxiv.org/abs/2407.17952)：以预训练 MDE 输出作为全局布局条件，用 conditional diffusion refiner 和局部 patch masking 给零样本单目深度图补充细节。
+- [SWIFT: Semantic Watermarking for Image Forgery Thwarting](https://arxiv.org/abs/2407.18995)：改造 HiDDeN 水印通道嵌入 caption 向量语义，并加入与消息恢复率相关的局部置信度指标用于篡改定位。
+- [Temporal Feature Matters: A Framework for Diffusion Model Quantization](https://arxiv.org/abs/2407.19547)：通过 temporal-information reconstruction、缓存量化后的 temporal feature 和 disturbance-aware 策略选择，在量化扩散模型时保留时间步特征。
+- [Mixture of Nested Experts: Adaptive Processing of Visual Tokens](https://arxiv.org/abs/2407.19985)：该项偏离生成任务，但与视觉骨干效率相关；MoNE 将冗余图像和视频 token 路由到更便宜的 nested experts 以降低推理计算。
+- [Diffusion Feedback Helps CLIP See Better](https://arxiv.org/abs/2407.20171)：把文生图扩散模型作为自监督视觉助手，为 CLIP 提供生成反馈，改善细粒度视觉属性判断并保留 zero-shot 能力。
+- [Contrasting Deepfakes Diffusion via Contrastive Learning and Global-Local Similarities](https://arxiv.org/abs/2407.20337)：训练 CoDE 这一面向扩散图像检测的 CLIP 派生对比嵌入，在 920 万张四类生成器图像上约束全局与局部相似性。
+- [Matting by Generation](https://arxiv.org/abs/2407.21017)：把 image matting 重写为 latent diffusion 生成任务，通过架构改造生成高分辨率细节 alpha matte，并支持有无额外 guidance 的两种模式。
+- [Safeguard Text-to-Image Diffusion Models with Human Feedback Inversion](https://arxiv.org/abs/2407.21032)：把人类对生成图像的反馈压缩成可学习文本 token，用于概念移除，并通过自蒸馏让擦除更贴合人类判断且保留质量。
+- [Direct Unlearning Optimization for Robust and Safe Text-to-Image Models](https://arxiv.org/abs/2407.21035)：在成对图像数据上做 preference optimization，并加入 output-preserving regularization，移除不安全 T2I 概念且抵抗 red-team prompts。
+- [Informed Correctors for Discrete Diffusion Models](https://arxiv.org/abs/2407.21243)：加入由扩散模型提供信息的 predictor-corrector sampler、hollow transformer 和定制目标，使离散扩散能用更少错误或更好 FID 生成 tokenized images。
+- [Detecting, Explaining, and Mitigating Memorization in Diffusion Models](https://arxiv.org/abs/2407.21720)：通过 text-conditional prediction magnitude 检测记忆化提示，归因到具体 token，并用推理期最小化或训练期过滤降低记忆化。
+- [TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models](https://arxiv.org/abs/2408.00735)：把 DDPM-noise inversion 编辑适配到少步 sampler，用 shifted noise schedule 修复伪影，并用 pseudo-guidance 在三步左右增强编辑强度。
+- [VAR-CLIP: Text-to-Image Generator with Visual Auto-Regressive Modeling](https://arxiv.org/abs/2408.01181)：把 VAR 的 next-scale 自回归生成扩展到文生图，用 CLIP 文本嵌入作为条件，并基于 BLIP2 标注的大规模图文数据训练。
+- [A Sharp Convergence Theory for The Probability Flow ODEs of Diffusion Models](https://arxiv.org/abs/2408.02320)：给出 probability-flow ODE 采样器的离散时间非渐近收敛理论，刻画 score 估计误差、维度和精度对扩散生成的影响。
+- [LaMamba-Diff: Linear-Time High-Fidelity Diffusion Models Based on Local Attention and Mamba](https://arxiv.org/abs/2408.02615)：在 U-Net 扩散骨干中结合局部注意力和 Mamba 状态空间块，以低于 DiT 的 GFLOPs 同时保留全局上下文与局部细节。
+- [Lumina-mGPT: Illuminate Flexible Photorealistic Text-to-Image Generation with Multimodal Generative Pretraining](https://arxiv.org/abs/2408.02657)：从多模态生成预训练初始化 decoder-only 自回归图像模型，再用 FP-SFT 与 UniRep 支持可变长宽比写实文生图和可控生成。
+- [Speculative Diffusion Decoding: Accelerating Language Generation through Diffusion](https://arxiv.org/abs/2408.05636)：分类存疑：该项属于语言生成而非图像编辑；它用 diffusion language model 一次草拟多个候选 token，再交由自回归验证器做 speculative decoding。
+- [LaWa: Using Latent Space for In-Generation Image Watermarking](https://arxiv.org/abs/2408.05868)：在图像生成过程中于潜空间嵌入水印，提供生成中真实性标记机制。
+- [A Simple Early Exiting Framework for Accelerated Sampling in Diffusion Models](https://arxiv.org/abs/2408.05927)：在采样时按时间步跳过 score 网络中的部分参数，减少扩散推理成本，同时保持图像合成质量并兼容多类求解器。
+- [IDRetracor: Towards Visual Forensics against Malicious Face Swapping](https://arxiv.org/abs/2408.06635)：训练面向恶意换脸的视觉取证管线，从被篡改人脸中恢复身份线索，目标是追踪换脸来源而不只是二分类检测。
+- [Improving Synthetic Image Detection Towards Generalization: An Image Transformation Perspective](https://arxiv.org/abs/2408.06741)：把常见图像变换视为检测分布偏移，训练 synthetic-image detector 在后处理后仍保留伪造线索，从而改善跨生成器泛化。
+- [ED4: Explicit Data-level Debiasing for Deepfake Detection](https://arxiv.org/abs/2408.06779)：用 ClockMix 数据混合和 adversarial spatial-consistency module 同时削弱内容偏差、伪造来源偏差和中心位置偏差，提升 deepfake detector 泛化。
+- [Moderator: Moderating Text-to-Image Diffusion Models through Fine-grained Context-based Policies](https://arxiv.org/abs/2408.07728)：让管理员编写细粒度 TTI 审核策略，先自生成需限制图像，再经反向微调得到 task vector 并从基础模型中抵消。
+- [MVInpainter: Learning Multi-View Consistent Inpainting to Bridge 2D and 3D Editing](https://arxiv.org/abs/2408.08000)：把 3D 编辑改写为免姿态多视角 2D inpainting，结合视频运动先验、参考 key-value attention 和 slot-attention 光流聚合。
+- [TurboEdit: Instant text-based image editing](https://arxiv.org/abs/2408.08332)：用 encoder 式迭代 inversion 适配少步扩散，并冻结噪声图后只修改提示中的单个属性，实现 8 次 NFE 反演和 4 次 NFE 文本编辑。
+- [QMambaBSR: Burst Image Super-Resolution with Query State Space Model](https://arxiv.org/abs/2408.08665)：通过 Query State Space Model 与自适应上采样融合 burst 低分辨率帧，在抑制不一致高频噪声的同时恢复亚像素细节。
+- [Ask, Attend, Attack: A Effective Decision-Based Black-Box Targeted Attack for Image-to-Text Models](https://arxiv.org/abs/2408.08989)：分类存疑：该项攻击 image-to-text 模型而非图像生成器；方法用问题引导的 attention 构造 decision-based 黑盒目标对抗图像。
+- [Timestep-Aware Diffusion Model for Extreme Image Rescaling](https://arxiv.org/abs/2408.09151)：用 pseudo-invertible 模块建立高分辨率与缩小 latent 的双向映射，再通过时间步对齐在极端缩放下恢复结构和纹理。
+- [Detecting the Undetectable: Combining Kolmogorov-Arnold Networks and MLP for AI-Generated Image Detection](https://arxiv.org/abs/2408.09371)：把语义图像嵌入与 MLP-KAN 混合分类器结合，并在 DALL-E 3、MidJourney、Stable Diffusion 3 等来源上做 OOD 检测。
+- [Photorealistic Object Insertion with Diffusion-Guided Inverse Rendering](https://arxiv.org/abs/2408.09702)：用个性化扩散模型指导基于物理的 inverse rendering，恢复光照、材质和 tone mapping 参数，以实现真实感物体插入。
+- [FFAA: Multimodal Large Language Model based Explainable Open-World Face Forgery Analysis Assistant](https://arxiv.org/abs/2408.10072)：在 OW-FFA-VQA 人脸伪造描述和推理数据上微调 MLLM，并用 multi-answer decision system 输出可解释开放世界伪造判断。
+- [Understanding Generative AI Content with Embedding Models](https://arxiv.org/abs/2408.10437)：对 foundation-model embedding 做 PCA 等降维，显示真实样本和 AI 生成样本会沿可解释方向分离，可作为检测特征。
+- [A Gray-Box Attack Against Latent Diffusion Model-Based Image Editing by Posterior Collapse](https://arxiv.org/abs/2408.10901)：只访问 VAE encoder，通过 posterior-collapse 损失诱发 diffusion collapse 或 concentration collapse，以保护图像免受未授权 LDM 编辑。
+- [MegaFusion: Extend Diffusion Models towards Higher-resolution Image Generation without Further Tuning](https://arxiv.org/abs/2408.11001)：通过 truncate-and-relay 去噪、膨胀卷积和噪声重调度，把预训练扩散模型免微调扩展到 megapixel 与多长宽比生成。
+- [Evolution of Detection Performance throughout the Online Lifespan of Synthetic Images](https://arxiv.org/abs/2408.11541)：衡量合成图像在线传播和再利用后检测器性能衰减，并用检索辅助检测在图像生命周期中维持 AUC 与 balanced accuracy。
+- [Scalable Autoregressive Image Generation with Mamba](https://arxiv.org/abs/2408.12245)：构建 AiM，把 Transformer 替换为 Mamba 状态空间层进行 next-token 自回归图像生成，并在 ImageNet 上扩展到 13 亿参数。
+- [Open-Set Deepfake Detection: A Parameter-Efficient Adaptation Method with Forgery Style Mixture](https://arxiv.org/abs/2408.12791)：混合不同伪造来源的 style 统计，并仅训练轻量 ViT 模块抽取全局和局部线索，以适配未见人脸伪造域。
+- [Prompt-Softbox-Prompt: A Free-Text Embedding Control for Image Editing](https://arxiv.org/abs/2408.13623)：分析 SDXL 文本嵌入，并通过操控 EOS 与逐词嵌入语义实现免训练编辑，同时保留全局提示信息。
+- [ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](https://arxiv.org/abs/2408.13697)：冻结主干，仅加入 WSGM 引导和 FAFormer 特征整合，使检测器用少量训练数据聚焦伪造特异线索。
+- [Draw Like an Artist: Complex Scene Generation With Diffusion Model via Composition, Painting, and Retouching](https://arxiv.org/abs/2408.13858)：定义复杂场景标准，并用 LLM 分解、区域注意力调制和 retouching 组成免训练的构图、绘制、修饰式扩散流程。
+- [MagicMan: Generative Novel View Synthesis of Humans with 3D-Aware Diffusion and Iterative Refinement](https://arxiv.org/abs/2408.14211)：结合预训练 2D 扩散先验和 SMPL-X 几何，使用混合多视角注意力、RGB-normal 双分支与迭代优化做人像新视角合成。
+- [OctFusion: Octree‐based Diffusion Models for 3D Shape Generation](https://arxiv.org/abs/2408.14732)：对当前图像页分类存疑：它用 octree-based diffusion representation 生成 3D 形状，并按稀疏几何结构自适应分配细节。
+- [Alfie: Democratising RGBA Image Generation With No $$$](https://arxiv.org/abs/2408.14826)：修改预训练 Diffusion Transformer 的推理行为，使其无需额外训练即可生成完整主体和可用 alpha mask 的 RGBA 插画 cutout。
+- [Segmentation-guided Layer-wise Image Vectorization with Gradient Fills](https://arxiv.org/abs/2408.15741)：使用分割引导的分层矢量化与渐变填充。
+- [CoRe: Context-Regularized Text Embedding Learning for Text-to-Image Personalization](https://arxiv.org/abs/2408.15914)：学习新概念嵌入时正则化 CLIP 文本编码器中周边上下文 token 输出，在无需生成图监督的情况下提升个性化 T2I 身份保持。
+- [Distribution Backtracking Builds A Faster Convergence Trajectory for Diffusion Distillation](https://arxiv.org/abs/2408.15991)：记录 teacher 扩散模型的退化路径，并沿完整收敛轨迹蒸馏，以降低单步生成器训练早期的 score mismatch。
+- [Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration](https://arxiv.org/abs/2408.15994)：加入与主干无关的质量感知器和 prompt learning 阶段，先估计退化类型与严重程度，再条件化 all-in-one 图像恢复模型。
+- [Inversion Circle Interpolation: Diffusion-based Image Augmentation for Data-scarce Classification](https://arxiv.org/abs/2408.16266)：用 diffusion inversion-circle interpolation 生成保持类别语义的数据增强样本，主要服务小样本分类，属于边界型增强条目而非核心生成器。
+- [Self-Improving Diffusion Models with Synthetic Data](https://arxiv.org/abs/2408.16333)：把自合成数据用作负向引导，使扩散生成远离不理想 synthetic-data manifold、靠近真实分布，以避免 model autophagy 退化。
+- [CSGO: Content-Style Composition in Text-to-Image Generation](https://arxiv.org/abs/2408.16766)：构建 21 万组 content-style-stylized 三元组 IMAGStyle，并训练独立内容和风格特征注入，支持图像驱动、文本驱动和编辑驱动风格化。
+- [STEREO: A Two-Stage Framework for Adversarially Robust Concept Erasing from Text-to-Image Diffusion Models](https://arxiv.org/abs/2408.16807)：先用对抗训练寻找 embedding 空间 blind spot，再用 anchor-concept 组合目标微调擦除概念，同时保留良性 T2I 效用。
+- [AdaNAT: Exploring Adaptive Policy for Token-Based Image Generation](https://arxiv.org/abs/2409.00342)：把 token 生成日程建模为 Markov decision process，并用对抗奖励训练轻量 policy network，为每个样本自适应选择非自回归图像生成策略。
+- [Accurate Compression of Text-to-Image Diffusion Models via Vector Quantization](https://arxiv.org/abs/2409.00492)：把 vector quantization 后训练压缩适配到 SDXL 和 SDXL-Turbo，使 20 亿参数以上 T2I 扩散模型在约 3 bit 权重下保持质量。
+- [SPDiffusion: Semantic Protection Diffusion Models for Multi-concept Text-to-image Generation](https://arxiv.org/abs/2409.01327)：从 cross-attention 中提取概念区域并用 SP-Attn 保护，使多概念提示中的属性绑定到正确角色或物体。
+- [LinFusion: 1 GPU, 1 Minute, 16K Image](https://arxiv.org/abs/2409.02097)：把 Stable Diffusion 蒸馏成带归一化和非因果推理的广义线性注意力去噪器，在单 GPU 上支持最高 16K 的零样本跨分辨率生成。
+- [Exploring Low-Dimensional Subspaces in Diffusion Models for Controllable Image Editing](https://arxiv.org/abs/2409.02374)：利用扩散 posterior mean predictor 的低秩 Jacobian 方向推导 LOCO Edit，实现单步、免训练的局部可控编辑。
+- [Diffusion Models Learn Low-Dimensional Distributions VIA Subspace Clustering](https://arxiv.org/abs/2409.02426)：在低秩 Gaussian mixture 假设下说明扩散训练等价于子空间聚类，并把学习到的子空间与语义图像编辑联系起来。
+- [Standing on the Shoulders of Giants: Reprogramming Visual-Language Model for General Deepfake Detection](https://arxiv.org/abs/2409.02664)：用可学习视觉扰动和样本级自适应文本提示重编程 CLIP，提升跨数据集和跨伪造方式的 deepfake 检测。
+- [HiPrompt: Tuning-free Higher-Resolution Generation with Hierarchical MLLM Prompts](https://arxiv.org/abs/2409.02919)：结合全局提示、MLLM 生成的 patch 级局部提示和频率分解去噪生成 4K 以上图像，减少重复物体和结构伪影。
+- [DKDM: Data-Free Knowledge Distillation for Diffusion Models with Any Architecture](https://arxiv.org/abs/2409.03550)：无需真实训练数据，从已有扩散模型向任意架构的新扩散模型蒸馏生成能力，并用动态迭代方式提取时间域知识。
+- [One-Shot Diffusion Mimicker for Handwritten Text Generation](https://arxiv.org/abs/2409.04004)：从单个手写样本提取高频风格线索，与文本内容条件融合后引导扩散模型生成匹配该笔迹的多语言手写图像。
+- [SpotActor: Training-Free Layout-Controlled Consistent Image Generation](https://arxiv.org/abs/2409.04801)：定义 layout-to-consistent-image 生成任务，并用免训练双能量引导、layout-conditioned backward update 和一致性 forward sampling 生成布局准确且角色一致的图像。
+- [Elucidating Optimal Reward-Diversity Tradeoffs in Text-to-Image Diffusion Models](https://arxiv.org/abs/2409.06493)：分析 T2I 偏好优化中的 reward hacking，并提出 Annealed Importance Guidance 作为推理时正则化来平衡奖励和多样性。
+- [GigaGS: Scaling up Planar-Based 3D Gaussians for Large Scene Surface Reconstruction](https://arxiv.org/abs/2409.06685)：用 mutual-visibility 分区和 LoD 多视图光度与几何一致性约束，把 3D Gaussian surface reconstruction 扩展到大场景。
+- [Mamba Policy: Towards Efficient 3D Diffusion Policy with Hybrid Selective State Models](https://arxiv.org/abs/2409.07163)：以结合 Mamba state model 和 attention 的 XMamba block 替换 3D 操作 diffusion policy 中的大型 UNet backbone，参数量减少超过 80%。
+- [Alignment of Diffusion Models: Fundamentals, Challenges, and Future](https://arxiv.org/abs/2409.07253)：综述扩散模型对齐基础、偏好调优技术、alignment benchmark 与评价缺口，聚焦如何让生成内容符合人类期望。
+- [LOCKEY: A Novel Approach to Model Authentication and Deepfake Tracking](https://arxiv.org/abs/2409.07743)：把 key-conditioned model authentication 与用户专属水印结合，使无效密钥降低生成质量、有效输出可追踪到用户 ID。
+- [IFAdapter: Instance Feature Control for Grounded Text-to-Image Generation](https://arxiv.org/abs/2409.08240)：提出 instance feature generation 任务，用 appearance token 和 instance semantic map 让 grounded T2I 同时控制框位置和实例属性。
+- [GroundingBooth: Grounding Text-to-Image Customization](https://arxiv.org/abs/2409.08520)：加入 grounding module 与 subject-grounded cross-attention layer，使零样本定制文生图在保持身份的同时控制对象位置和大小。
+- [DeCLIP: Decoding CLIP Representations for Deepfake Localization](https://arxiv.org/abs/2409.08849)：用卷积定位头解码预训练 CLIP 特征，检测局部篡改区域并提升对未见生成器的泛化。
+- [InstantDrag: Improving Interactivity in Drag-based Image Editing](https://arxiv.org/abs/2409.08857)：构建免优化拖拽编辑管线，用 FlowGen 预测 drag-conditioned optical flow，再由 FlowDiffusion 根据光流更新图像。
+- [Conditional sampling within generative diffusion models](https://arxiv.org/abs/2409.09650)：综述条件扩散采样器，比较使用联合分布或带显式似然的预训练边缘分布来处理 Bayesian inverse problem 等条件生成。
+- [InteractPro: A Unified Framework for Motion-Aware Image Composition](https://arxiv.org/abs/2409.10090)：用 LVLM planner 在物理仿真和 video-diffusion motion module 之间选择组合策略，生成有物体场景交互的动态合成图像。
+- [PSHuman: Photorealistic Single-image 3D Human Reconstruction using Cross-Scale Multiview Diffusion and Explicit Remeshing](https://arxiv.org/abs/2409.10141)：结合 cross-scale multiview diffusion prior、身份保持人脸生成、姿态一致身体视图和 explicit remeshing，从单图重建写实 3D 人体。
+- [Playground v3: Improving Text-to-Image Alignment with Deep-Fusion Large Language Models](https://arxiv.org/abs/2409.10695)：把 decoder-only LLM 深度融合为 PGv3 的文本条件 backbone，并加入内部 captioner 与 CapsBench 提升提示遵循和文字渲染。
+- [Score Forgetting Distillation: A Swift, Data-Free Method for Machine Unlearning in Diffusion Models](https://arxiv.org/abs/2409.11219)：在 score distillation 中把不安全概念的条件 score 对齐到安全概念，实现无需真实数据的扩散模型遗忘并保留生成能力。
+- [DroneDiffusion: Robust Quadrotor Dynamics Learning with Diffusion Models](https://arxiv.org/abs/2409.11292)：把四旋翼动力学建模为 conditional diffusion sequence generation，并把学到的多模态不确定性接入带稳定性保证的自适应控制器。
+- [OmniGen: Unified Image Generation](https://arxiv.org/abs/2409.11340)：训练单一扩散模型以指令方式覆盖文生图、图像编辑、主体驱动生成和视觉条件生成，无需任务专属插件或中间流程。
+- [StoryMaker: Towards Holistic Consistent Characters in Text-to-image Generation](https://arxiv.org/abs/2409.12576)：用裁剪角色条件、face identity、PPR 特征和分离 cross-attention，同时保持多角色故事中的脸、服装、发型和身体一致。
+- [MaterialFusion: Enhancing Inverse Rendering with Material Diffusion Priors](https://arxiv.org/abs/2409.15273)：提出在 BlenderVault 的 albedo、material 和 relighting 数据上训练的 StableMaterial 2D diffusion prior，用于改善新光照下的 inverse rendering。
+- [PixWizard: Versatile Image-to-Image Visual Assistant with Open-Language Instructions](https://arxiv.org/abs/2409.15278)：把图像操作和翻译统一成 image-text-to-image generation，并用自由语言指令与 Omni Pixel-to-Pixel 数据训练通用视觉助手。
+- [TFG: Unified Training-Free Guidance for Diffusion Models](https://arxiv.org/abs/2409.15761)：将免训练扩散引导形式化为目标属性预测器驱动的采样问题，检验无额外训练时如何把无条件生成器导向指定属性。
+- [Zero-Shot Detection of AI-Generated Images](https://arxiv.org/abs/2409.15875)：利用冻结视觉语言表征和零样本分布线索检测 AI 生成图像，不依赖特定生成器训练数据。
+- [MaskBit: Embedding-free Image Generation via Bit Tokens](https://arxiv.org/abs/2409.16211)：直接用 binary bit token 生成图像，避免学习 codebook embedding，简化离散 token 视觉生成。
+- [GenCAD: Image-Conditioned Computer-Aided Design Generation with Transformer-Based Contrastive Representation and Diffusion Priors](https://arxiv.org/abs/2409.16294)：用 transformer contrastive representation 和 diffusion prior 进行 image-conditioned CAD generation，生成结构化设计输出。
+- [Generative Object Insertion in Gaussian Splatting with a Multi-View Diffusion Model](https://arxiv.org/abs/2409.16938)：用多视图扩散模型为 3D Gaussian Splatting 场景生成视角一致的物体外观，实现生成式物体插入。
+- [Revisiting Face Forgery Detection: From Facial Representation to Forgery Detection.](https://arxiv.org/abs/2409.16945)：围绕 facial representation 重新设计人脸伪造检测，使用身份与表征线索而不只依赖低层伪影。
+- [From geometric mimicry to comprehensive generation: a context-informed multimodal diffusion model for urban morphology synthesis](https://arxiv.org/abs/2409.17049)：用 context-informed multimodal diffusion model 合成城市形态，从几何模仿扩展到可控的城市结构生成。
+- [Degradation-Guided One-Step Image Super-Resolution with Diffusion Priors](https://arxiv.org/abs/2409.17058)：以 degradation guidance 条件化 diffusion prior，实现面向真实退化输入的快速单步超分恢复。
+- [ID3: Identity-Preserving-yet-Diversified Diffusion Models for Synthetic Face Recognition](https://arxiv.org/abs/2409.17576)：生成既保持身份又多样化姿态、外观等干扰因素的合成人脸识别数据，兼顾识别效用和样本多样性。
+- [Dark Miner: Defend against undesired generation for text-to-image diffusion models](https://arxiv.org/abs/2409.17682)：挖掘并抑制 T2I diffusion 中的 dark prompt direction，在不完整重训模型的情况下降低不期望生成。
+- [Resolving Multi-Condition Confusion for Finetuning-Free Personalized Image Generation](https://arxiv.org/abs/2409.17920)：在推理阶段分离冲突的参考与条件信号，改善免微调 personalized image generation 的多条件混淆。
+- [FreeEdit: Mask-Free Reference-Based Image Editing With Multi-Modal Instruction](https://arxiv.org/abs/2409.18071)：根据参考图像和多模态指令进行免 mask 编辑，用模型侧 reference grounding 替代人工区域标注。
+- [O(d/T) Convergence Theory for Diffusion Probabilistic Models under Minimal Assumptions](https://arxiv.org/abs/2409.18959)：在最小假设下证明扩散概率模型 O(d/T) 采样收敛率，刻画其迭代复杂度。
+- [Multimodal Pragmatic Jailbreak on Text-to-image Models](https://arxiv.org/abs/2409.19149)：研究针对 T2I 系统的 pragmatic multimodal jailbreak，说明图文上下文如何绕过生成安全防护。
+- [Restore Anything with Masks: Leveraging Mask Image Modeling for Blind All-in-One Image Restoration](https://arxiv.org/abs/2409.19403)：用 masked image modeling 做 blind all-in-one restoration，使单一模型通过 mask-guided reconstruction 推断并修复多类退化。
+- [Magnet: We Never Know How Text-to-Image Diffusion Models Work, Until We Learn How Vision-Language Models Function](https://arxiv.org/abs/2409.19967)：通过分析 VLM 功能解释 T2I diffusion 行为，将视觉语言机制与生成器控制和失败模式联系起来。
+- [Conditional Diffusion Models are Minimax-Optimal and Manifold-Adaptive for Conditional Distribution Estimation](https://arxiv.org/abs/2409.20124)：证明 conditional diffusion model 具有 minimax optimal 和 manifold-adaptive 性质，形式化其高效估计条件分布的条件。
+- [EnzymeFlow: Generating Reaction-specific Enzyme Catalytic Pockets through Flow Matching and Co-Evolutionary Dynamics](https://arxiv.org/abs/2410.00327)：用 flow matching 和 co-evolutionary dynamics 生成反应特异性酶催化口袋，属于偏离图像生成轴的结构生物生成方法。
+- [Posterior-Mean Rectified Flow: Towards Minimum MSE Photo-Realistic Image Restoration](https://arxiv.org/abs/2410.00418)：围绕 posterior-mean target 训练 rectified-flow restoration，在降低 MSE 的同时保留写实图像细节。
+- [Scene Graph Disentanglement and Composition for Generalizable Complex Image Generation](https://arxiv.org/abs/2410.00447)：解耦 scene graph 中的对象和关系后再组合生成，提升复杂布局文生图的泛化能力。
+- [A Hitchhikers Guide to Fine-Grained Face Forgery Detection Using Common Sense Reasoning](https://arxiv.org/abs/2410.00485)：把 commonsense reasoning 引入细粒度人脸伪造检测，使局部篡改判断能提供超出视觉伪影的解释。
+- [Aggregation of Multi Diffusion Models for Enhancing Learned Representations](https://arxiv.org/abs/2410.01262)：聚合多个预训练扩散模型来增强视觉表征学习，而不是从头训练新的生成器。
+- [KnobGen: Controlling the Sophistication of Artwork in Sketch-Based Diffusion Models](https://arxiv.org/abs/2410.01595)：为 sketch-conditioned diffusion 加入 sophistication knob，在保持草图约束的同时调节艺术作品复杂度。
+- [Accelerating Auto-regressive Text-to-Image Generation with Training-free Speculative Jacobi Decoding](https://arxiv.org/abs/2410.01699)：用免训练 speculative Jacobi decoding 加速自回归文生图采样，在不改权重的情况下并行提出 token。
+- [VitaGlyph: Vitalizing Artistic Typography with Flexible Dual-branch Diffusion Models](https://arxiv.org/abs/2410.01738)：用双分支扩散结构生成艺术字体，在 glyph 可读性和灵活视觉风格之间做平衡。
+- [ImageFolder: Autoregressive Image Generation with Folded Tokens](https://arxiv.org/abs/2410.01756)：把视觉 token 折叠成适合自回归建模的序列结构，提高图像生成效率和空间上下文建模。
+- [A Spark of Vision-Language Intelligence: 2-Dimensional Autoregressive Transformer for Efficient Finegrained Image Generation](https://arxiv.org/abs/2410.01912)：用二维自回归 Transformer 建模细粒度图像 token，比 raster-order decoding 更有效地保留空间结构。
+- [Discrete Copula Diffusion](https://arxiv.org/abs/2410.01949)：提出 copula-based discrete diffusion，建模离散变量之间的依赖关系，用于离散视觉或结构化生成。
+- [Eliminating Oversaturation and Artifacts of High Guidance Scales in Diffusion Models](https://arxiv.org/abs/2410.02416)：诊断高 classifier-free guidance 带来的过饱和和伪影，并调整 guidance 行为以保留提示强度同时减少失真。
+- [PnP-Flow: Plug-and-Play Image Restoration with Flow Matching](https://arxiv.org/abs/2410.02423)：把预训练 flow-matching 生成先验作为 plug-and-play regularizer 用于图像恢复，无需任务专属重训。
+- [ControlAR: Controllable Image Generation with Autoregressive Models](https://arxiv.org/abs/2410.02705)：为自回归图像生成器加入轻量控制编码器，将 Canny、深度等空间条件转成控制 token，并在条件解码中融合控制和图像 token，而不是预填控制 token。
+- [NETS: A Non-Equilibrium Transport Sampler](https://arxiv.org/abs/2410.02711)：在退火重要性采样动力学中加入学习到的漂移项，降低去偏权重方差，用于更稳定的生成式采样。
+- [FakeShield: Explainable Image Forgery Detection and Localization via Multi-modal Large Language Models](https://arxiv.org/abs/2410.02761)：用 GPT-4o 增强的篡改描述训练 MLLM 伪造检测与定位模型，结合可解释检测模块和多模态定位模块输出掩码与文本证据。
+- [Tuning Timestep-Distilled Diffusion Model Using Pairwise Sample Optimization](https://arxiv.org/abs/2410.03190)：用 pairwise sample optimization 直接微调少步蒸馏扩散模型，拉大训练图像与当前模型样本的似然边界，同时保留低延迟生成能力。
+- [Dynamic Diffusion Transformer](https://arxiv.org/abs/2410.03456)：提出 DyDiT，在扩散 Transformer 中按时间步和空间区域动态分配计算，减少图像生成静态推理中的冗余开销。
+- [Not All Diffusion Model Activations Have Been Evaluated as Discriminative Features](https://arxiv.org/abs/2410.03558)：系统评估注意力 query、key 和 ViT block 等未充分利用的扩散激活，并总结可用于筛选密集判别特征的定性准则。
+- [Look Twice Before You Answer: Memory-Space Visual Retracing for Hallucination Mitigation in Multimodal Large Language Models](https://arxiv.org/abs/2410.03577)：通过在 memory space 中回溯视觉证据来缓解 MLLM 幻觉，是相邻的 VLM 可靠性方法而非图像生成器。
+- [How Discrete and Continuous Diffusion Meet: Comprehensive Analysis of Discrete Diffusion Models via a Stochastic Integral Framework](https://arxiv.org/abs/2410.03601)：用 stochastic-integral framework 分析 discrete diffusion，统一误差分析和 tau-leaping KL bound 与连续扩散理论。
+- [Chain-of-Jailbreak Attack for Image Generation Models via Editing Step by Step](https://arxiv.org/abs/2410.03869)：把恶意 T2I 请求拆成迭代编辑子查询，并构建 CoJ-Bench 评估逐步编辑式安全绕过。
+- [Epsilon-VAE: Denoising as Visual Decoding](https://arxiv.org/abs/2410.04081)：把自编码器的一步解码器替换为由 encoder latent 条件化的扩散去噪过程，在相近压缩率下改善重建 rFID 和下游生成 FID。
+- [Distillation-Free One-Step Diffusion for Real-World Image Super-Resolution](https://arxiv.org/abs/2410.04224)：构建 D3SR 单步真实图像超分模型，用大规模 diffusion discriminator 蒸馏噪声 latent 特征，并加入 edge-aware DISTS 感知损失增强细节。
+- [StreetSurfGS: Scalable Urban Street Surface Reconstruction With Planar-Based Gaussian Splatting](https://arxiv.org/abs/2410.04354)：用 planar octree、segmented training 和 guided smoothing，把 Gaussian Splatting 适配到稀疏长轨迹城市街景重建。
+- [DiffusionFake: Enhancing Generalization in Deepfake Detection via Guided Stable Diffusion](https://arxiv.org/abs/2410.04372)：把检测器特征注入冻结 Stable Diffusion，重建源身份和目标身份，迫使 deepfake 检测器学习更可迁移的解耦伪造特征。
+- [CAR: Controllable Autoregressive Modeling for Visual Generation](https://arxiv.org/abs/2410.04671)：在预训练视觉自回归模型的每个生成步骤注入逐步细化的控制表征，以少于从头训练的资源获得类似 ControlNet 的条件控制。
+- [ACDC: Autoregressive Coherent Multimodal Generation using Diffusion Correction](https://arxiv.org/abs/2410.04721)：在推理阶段结合自回归全局 token 生成和 memory-conditioned diffusion 局部修正，并用 LLM memory 模块减少故事与视频生成中的伪影积累。
+- [PostEdit: Posterior Sampling for Efficient Zero-Shot Image Editing](https://arxiv.org/abs/2410.04844)：在扩散采样中加入与源图特征和 Langevin dynamics 相关的后验测量项，实现免反演、免训练且能保留背景区域的文本编辑。
+- [Bridging SFT and DPO for Diffusion Model Alignment with Self-Sampling Preference Optimization](https://arxiv.org/abs/2410.05255)：用 self-sampling preference optimization 对齐扩散生成器，通过历史 checkpoint replay 构造偏好对，并按样本质量在 DPO 与 SFT 之间切换。
+- [Image Watermarks are Removable Using Controllable Regeneration from Clean Noise](https://arxiv.org/abs/2410.05470)：通过 controllable regeneration 去除图像水印，训练语义与空间 adapter 从干净或部分加噪 latent 引导扩散，同时尽量保持可见内容一致。
+- [DiffusionGuard: A Robust Defense Against Malicious Diffusion-based Image Editing](https://arxiv.org/abs/2410.05694)：针对扩散编辑的早期去噪步骤优化对抗噪声，并通过 mask augmentation 提升对有掩码编辑的迁移性和稳健防护。
+- [Manifolds, Random Matrices and Spectral Gaps: The geometric phases of generative diffusion](https://arxiv.org/abs/2410.05898)：通过分析 score Jacobian 谱识别扩散生成中的 manifold coverage 与 consolidation 等几何阶段。
+- [Sparse Repellency for Shielded Generation in Text-to-image Diffusion Models](https://arxiv.org/abs/2410.06025)：在预训练扩散 SDE 轨迹中加入稀疏排斥项，使采样远离受保护图像或已生成图像，从而提升多样性并降低训练集复现。
+- [X2-DFD: A Framework for Explainable and Extensible Deepfake Detection](https://arxiv.org/abs/2410.06126)：构建基于 MLLM 的 deepfake 检测框架，包含模型特征评估、可解释数据集构造、强特征强化、弱特征补充以及配套微调和推理，用于检测并解释深伪。
+- [InstantIR: Blind Image Restoration with Instant Generative Reference](https://arxiv.org/abs/2410.06551)：从退化输入提取紧凑视觉编码参考，在每个扩散步骤解码当前 latent 并动态实例化生成先验，同时按退化强度调整采样。
+- [Representation Alignment for Generation: Training Diffusion Transformers Is Easier Than You Think](https://arxiv.org/abs/2410.06940)：用表征对齐降低扩散 Transformer 生成模型训练难度。
+- [EvolveDirector: Approaching Advanced Text-to-Image Generation with Large Vision-Language Models](https://arxiv.org/abs/2410.07133)：用闭源 API 生成图文对训练公开 T2I 基础模型，并让 VLM 持续评估、扩展、删除和变异训练集以降低蒸馏成本。
+- [IterComp: Iterative Composition-Aware Feedback Learning from Model Gallery for Text-to-Image Generation](https://arxiv.org/abs/2410.07171)：构建六个开源扩散模型 gallery 评估属性绑定和空间组合，基于排序图像对训练 composition-aware reward model，并迭代细化奖励与生成器。
+- [An undetectable watermark for generative image models](https://arxiv.org/abs/2410.07369)：通过伪随机纠错码分布选择扩散初始潜变量，把来源水印嵌入生成图像，同时追求与普通生成结果的计算不可区分性。
+- [I-Max: Maximize the Resolution Potential of Pre-trained Rectified Flow Transformers with Projected Flow](https://arxiv.org/abs/2410.07536)：用 projected flow 和推理工具箱把预训练 rectified-flow transformer 免微调外推到更高分辨率，在 Lumina-Next 与 Flux 上稳定高分辨率生成。
+- [Steering Masked Discrete Diffusion Models via Discrete Denoising Posterior Prediction](https://arxiv.org/abs/2410.08134)：把 masked discrete diffusion 的控制表述为后验预测问题，训练免仿真的目标以支持类别条件像素建模和奖励引导生成。
+- [DART: Denoising Autoregressive Transformer for Scalable Text-to-Image Generation](https://arxiv.org/abs/2410.08159)：在非 Markovian Transformer 中统一扩散与自回归建模，按空间和频谱迭代去噪图像 patch，且不依赖图像量化。
+- [Meissonic: Revitalizing Masked Generative Transformers for Efficient High-Resolution Text-to-Image Synthesis](https://arxiv.org/abs/2410.08261)：通过架构改造、位置编码、优化采样、偏好分数微条件、高质量数据和特征压缩，让 masked image modeling 达到 1024px 文生图质量。
+- [Avoiding mode collapse in diffusion models fine-tuned with reinforcement learning](https://arxiv.org/abs/2410.08315)：在奖励微调扩散模型时选择性更新去噪步骤，并用 sliding-window 参数正则化提升稳定性、减少 mode collapse。
+- [Quality Prediction of AI Generated Images and Videos: Emerging Trends and Opportunities](https://arxiv.org/abs/2410.08534)：综述用于监控 AI 生成和增强视觉内容质量的 IQA 与 VQA 方法，覆盖提示忠实度和体验质量问题。
+- [Losing dimensions: Geometric memorization in generative diffusion](https://arxiv.org/abs/2410.08727)：用 score field 的 latent 维度度量说明记忆化是独立变化方向逐渐坍缩的过程，解释小数据下如何产生局部复现。
+- [CtrLoRA: An Extensible and Efficient Framework for Controllable Image Generation](https://arxiv.org/abs/2410.09400)：训练共享 Base ControlNet 和条件专属 LoRA，让新的 T2I 空间控制类型可用约 1,000 对图像条件数据快速适配。
+- [Text4Seg: Reimagining Image Segmentation as Text Generation](https://arxiv.org/abs/2410.09855)：把分割 mask 表示为 semantic descriptor 文本和 row-wise run-length encoding，使 MLLM 可通过自回归文本生成输出分割。
+- [MuseTalk: Real-Time High Quality Lip Synchronization with Latent Space Inpainting](https://arxiv.org/abs/2410.10122)：结合 facial abstract pretraining、lip-sync adversarial finetuning、informative frame sampling 和动态口部区域采样，实现实时 latent-space 视频配音。
+- [GraphCLIP: Enhancing Transferability in Graph Foundation Models for Text-Attributed Graphs](https://arxiv.org/abs/2410.10329)：用 LLM 生成的 graph-summary 对和 contrastive learning 预训练 text-attributed graph encoder，以提升跨域图迁移。
+- [FasterDiT: Towards Faster Diffusion Transformers Training without Architecture Modification](https://arxiv.org/abs/2410.10356)：不改 DiT 架构，通过分析 SNR 密度、选择稳健时间步监督并加入简单监督策略，以更少迭代达到接近 DiT 的 FID。
+- [DOME: Taming Diffusion Model into High-Fidelity Controllable Occupancy World Model](https://arxiv.org/abs/2410.10429)：用 spatial-temporal diffusion transformer 预测未来 3D occupancy frame，面向自动驾驶的可控世界模型。
+- [Towards Reliable Verification of Unauthorized Data Usage in Personalized Text-to-Image Diffusion Models](https://arxiv.org/abs/2410.10437)：优化数据拥有者的 coating，使个性化 T2I 微调把它学成与主题或风格相关的特征，从而提升黑盒未授权数据使用验证可靠性。
+- [SANA](https://arxiv.org/abs/2410.10629)：用 32 倍压缩 autoencoder、linear diffusion transformer 和 decoder-only text encoder 构建高效高分辨率文生图模型，使较小硬件上的高质量图像生成更可行。
+- [TALK-Act: Enhance Textural-Awareness for 2D Speaking Avatar Reenactment with Diffusion Model](https://arxiv.org/abs/2410.10696)：用显式 2D 与 3D 运动 guidance、motion-enhanced textural alignment 和 memory-based hand recovery，从短视频中驱动 2D 说话头像。
+- [HART: Efficient Visual Generation with Hybrid Autoregressive Transformer](https://arxiv.org/abs/2410.10812)：用离散自回归模型生成粗 latent token，并用小型 residual diffusion 模块补连续细节，提升 1024px 生成吞吐和重建 FID。
+- [Ctrl-U: Robust Conditional Image Generation via Uncertainty-aware Reward Modeling](https://arxiv.org/abs/2410.11236)：用 uncertainty-aware reward modeling 正则化条件图像生成，根据 reward 方差降低不可靠反馈权重，提升条件保真。
+- [SGEdit: Bridging LLM with Text2Image Generative Model for Scene Graph-based Image Editing](https://arxiv.org/abs/2410.11815)：把源图解析成包含对象、关系、mask 和描述的 scene graph，再由 LLM 控制 attention-modulated diffusion editor 执行添加、删除、替换和调整。
+- [Improving Long-Text Alignment for Text-to-Image Diffusion Models](https://arxiv.org/abs/2410.11817)：用 segment-level encoding 处理长提示，并通过分解的 CLIP 偏好优化重加权文本相关分数和视觉偏好分数，缓解 T2I 长文本对齐过拟合。
+- [3DIS: Depth-Driven Decoupled Instance Synthesis for Text-to-Image Generation](https://arxiv.org/abs/2410.12669)：把多实例 T2I 拆成 LDM3D adapter 生成粗深度布局和免训练 ControlNet 渲染细粒度对象属性两步。
+- [Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts](https://arxiv.org/abs/2410.12777)：在扩散概念遗忘中加入 meta objective，使模型在恶意微调时让相关保留概念自毁，从而阻止被擦除概念重新学回。
+- [TCP-Diffusion: A Multi-modal Diffusion Model for Global Tropical Cyclone Precipitation Forecasting with Change Awareness](https://arxiv.org/abs/2410.13175)：用多模态扩散模型结合历史降雨、环境变量和数值天气预报，预测全球热带气旋降水。
+- [MagicTailor: Component-Controllable Personalization in Text-to-Image Diffusion Models](https://arxiv.org/abs/2410.13370)：通过 dynamic masked degradation 和 dual-stream balancing 训练组件可控个性化模型，让用户重组概念内部部件并减少语义污染。
+- [Solving Prior Distribution Mismatch in Diffusion Models via Optimal Transport](https://arxiv.org/abs/2410.13431)：用 optimal transport map 匹配反向初始分布和前向终端分布，降低导致非零 terminal SNR 与去噪误差累积的 prior error。
+- [Probing the latent hierarchical structure of data via diffusion models](https://arxiv.org/abs/2410.13770)：通过 diffusion forward-backward experiment 测量数据潜在层级结构，显示去噪变化会在相变附近以相关块形式出现。
+- [PUMA: Empowering Unified MLLM with Multi-Granular Visual Generation](https://arxiv.org/abs/2410.13861)：把多粒度视觉特征同时作为 MLLM 的输入和输出，再经多模态预训练与指令调优覆盖 T2I 多样性和图像操作可控性。
+- [Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens](https://arxiv.org/abs/2410.13863)：在连续 token 上训练随机顺序自回归 T2I 模型，验证连续 latent 与非栅格生成顺序比离散 token 设计有更好 FID 和 GenEval。
+- [FiTv2: Scalable and Improved Flexible Vision Transformer for Diffusion Model](https://arxiv.org/abs/2410.13925)：用 query-key normalization、AdaLN-LoRA、rectified-flow scheduler 与 logit-normal sampler 升级 FiT，以支持任意分辨率和长宽比。
+- [Personalized Image Generation with Large Multimodal Models](https://arxiv.org/abs/2410.14170)：构建 Pigeon，从噪声用户图像历史和多模态指令中捕捉视觉偏好，并用 masked preference reconstruction 与 pairwise preference alignment 对齐个性化图像生成。
+- [Unified Convergence Analysis for Score-Based Diffusion Models with Deterministic Samplers](https://arxiv.org/abs/2410.14237)：为一般 forward process 下的 deterministic score-based diffusion sampler 给出统一收敛保证，扩展了以往随机采样器分析。
+- [Dynamic Negative Guidance of Diffusion Models](https://arxiv.org/abs/2410.14398)：用时间和状态相关 guidance 替代固定负向提示尺度，在去噪过程中估计后验类别概率，以更少图像损伤移除不想要内容。
+- [BiGR: Harnessing Binary Latent Codes for Image Generation and Improved Visual Representation Capabilities](https://arxiv.org/abs/2410.14672)：用 binary latent code、masked modeling、binary transcoder 与 entropy-ordered sampling，在同一框架中支持生成、补全、外扩、编辑和 T2I。
+- [Adversarial Score identity Distillation: Rapidly Surpassing the Teacher in One Step](https://arxiv.org/abs/2410.14919)：在 score-identity distillation 中加入对抗损失，复用 score network encoder 作判别器，加速从 EDM 与 EDM2 teacher 蒸馏单步生成器。
+- [SeaS: Few-Shot Industrial Anomaly Image Generation with Separation and Sharing Fine-Tuning](https://arxiv.org/abs/2410.14987)：用 unbalanced abnormal prompt 和 decoupled anomaly alignment 训练统一工业扩散生成器，同时生成正常产品、异常变体和对应 mask。
+- [Synergistic Dual Spatial-aware Generation of Image-to-Text and Text-to-Image](https://arxiv.org/abs/2410.15312)：用共享 3D scene graph 联合建模空间 I2T 与 T2I，并以 spatial dual discrete diffusion 让较容易的 3D 到输出路径指导反向映射。
+- [Erasing Undesirable Concepts in Diffusion Models with Adversarial Preservation](https://arxiv.org/abs/2410.15618)：在 Stable Diffusion 中识别受参数变化影响最大的 adversarial concepts，并保留这些概念以在擦除有害概念时减少副作用。
+- [Elucidating the design space of language models for image generation](https://arxiv.org/abs/2410.16257)：系统消融 tokenizer、语言模型骨干、词表、缩放和采样策略，说明更大自回归模型更擅长捕捉图像全局上下文。
+- [One-Step Diffusion Distillation through Score Implicit Matching](https://arxiv.org/abs/2410.16794)：用 score implicit matching 将预训练扩散蒸馏为单步生成器，无需训练数据即可计算 score divergence 梯度，并扩展到 T2I。
+- [Scalable Ranked Preference Optimization for Text-To-Image Generation](https://arxiv.org/abs/2410.18013)：用 reward model 生成合成排序偏好数据，并通过 RankDPO 训练 SDXL 与 SD3-Medium，提升 T2I-CompBench、GenEval 和 DPG-Bench 的提示跟随。
+- [FreCaS: Efficient Higher-Resolution Image Generation via Frequency-aware Cascaded Sampling](https://arxiv.org/abs/2410.18410)：通过 frequency-aware cascaded sampling 生成超训练分辨率图像，逐级扩展分辨率频带并融合 cross-attention map 以保持布局。
+- [Scaling up Masked Diffusion Models on Text](https://arxiv.org/abs/2410.18514)：建立最高 1.1B 参数 masked diffusion language model 的 scaling 行为，并加入无监督 classifier-free guidance 做条件文本推理。
+- [Ali-AUG: Innovative Approaches to Labeled Data Augmentation using One-Step Diffusion Model](https://arxiv.org/abs/2410.18678)：在 Stable Diffusion 中加入 skip connection 与 LoRA，以单步方式把带 mask 的缺陷特征插入工业图像，生成带标签检测训练数据。
+- [Schedule Your Edit: A Simple yet Effective Diffusion Noise Schedule for Image Editing](https://arxiv.org/abs/2410.18756)：提出用于 DDIM inversion 的 logistic noise schedule，消除传统噪声日程的奇异性，减少误差累积并提升文本编辑中的内容保持。
+- [Denoising diffusion probabilistic models are optimally adaptive to unknown low dimensionality](https://arxiv.org/abs/2410.18784)：证明 DDPM 迭代复杂度可近似线性适应 intrinsic dimension，解释低维数据流形上的高效采样。
+- [Multi-Scale Diffusion: Enhancing Spatial Layout in High-Resolution Panoramic Image Generation](https://arxiv.org/abs/2410.18830)：把低分辨率全景生成中的结构信息通过多尺度梯度 guidance 传递到高分辨率扩散输出，提升全局空间布局一致性。
+- [Diff-Instruct++: Training One-step Text-to-image Generator Model to Align with Human Preferences](https://arxiv.org/abs/2410.18881)：用带 integral KL 正则的目标把单步 T2I 生成器对齐到人类奖励，并从理论上解释 classifier-free guidance 蒸馏与 RLHF 的关系。
+- [Structured Diffusion Models with Mixture of Gaussians as Prior Distribution](https://arxiv.org/abs/2410.19149)：用可编码数据结构的 Gaussian mixture 替代标准 Gaussian 扩散先验，并给出兼容训练流程，在图像和 operational 数据上验证。
+- [Utilizing Image Transforms and Diffusion Models for Generative Modeling of Short and Long Time Series](https://arxiv.org/abs/2410.19538)：用 delay embedding 和 short-time Fourier transform 等可逆变换把长短时间序列转成图像，再用视觉扩散模型统一生成。
+- [An Efficient Watermarking Method for Latent Diffusion Models via Low-Rank Adaptation](https://arxiv.org/abs/2410.20202)：通过 LoRA 参数把水印嵌入冻结的 Latent Diffusion Model，并用动态损失权重在生成质量和水印保真之间自适应平衡。
+- [GrounDiT: Grounding Diffusion Transformers via Noisy Patch Transplantation](https://arxiv.org/abs/2410.20474)：利用 DiT 的 semantic sharing，分别去噪对象大小的 noisy patch，并在每个时间步把 patch 移植到 bounding box 区域，实现免训练 spatial grounding。
+- [Diff-Instruct*: Towards Human-Preferred One-step Text-to-image Generative Models](https://arxiv.org/abs/2410.20898)：用 score-based RLHF 正则后训练 2.6B 单步 SDXL 生成器，在 ImageReward、PickScore 和 CLIP score 上提升且显著缩短推理时间。
+- [Attention Overlap Is Responsible for The Entity Missing Problem in Text-to-image Diffusion Models!](https://arxiv.org/abs/2410.20972)：将 T2I 漏实体问题归因于 cross-attention map 重叠，并用 IoU、质心距离、KL 或 compactness loss 降低对象缺失。
+- [Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](https://arxiv.org/abs/2410.21088)：把主要水印信号放入低维生成子空间的 null space，使水印检测与图像合成过程解耦，兼顾不可见性和鲁棒性。
+- [AdvI2I: Adversarial Image Attack on Image-to-Image Diffusion models](https://arxiv.org/abs/2410.21471)：优化对抗输入图像，在文本提示看似正常时诱导 image-to-image diffusion 生成不安全内容，暴露提示过滤之外的安全缺口。
+- [Exploring Local Memorization in Diffusion Models via Bright Ending Attention](https://arxiv.org/abs/2410.21665)：发现 bright-ending cross-attention 异常可定位 T2I 输出中的记忆化 patch，并提升针对局部而非整图记忆的检测效果。
+- [PrefPaint: Aligning Image Inpainting Diffusion Model with Human Preference](https://arxiv.org/abs/2410.21966)：在约 5.1 万张人工偏好标注图像上训练 reward model，再用考虑 reward 误差的强化学习微调 inpainting diffusion。
+- [Rare-to-Frequent: Unlocking Compositional Generation Power of Diffusion Models on Rare Concepts with LLM Guidance](https://arxiv.org/abs/2410.22376)：用 LLM 规划在扩散采样中引入与罕见组合相关的高频概念，在无需训练的情况下提升 RareBench 上的对象属性组合。
+- [Consistency Diffusion Bridge Models](https://arxiv.org/abs/2410.22637)：学习 diffusion denoising bridge 的 PF-ODE consistency function，使图像转换和恢复类 bridge model 比基础 DDBM 快 4 到 50 倍采样。
+- [FlowDCN: Exploring DCN-like Architectures for Fast Image Generation with Arbitrary Resolution](https://arxiv.org/abs/2410.22655)：用 group-wise deformable convolution block 构建任意分辨率 flow 生成器，相比 Transformer 扩散降低计算并提升 ImageNet sFID。
+- [Controlling Language and Diffusion Models by Transporting Activations](https://arxiv.org/abs/2410.23054)：通过 optimal transport 搬运内部激活来控制 T2I diffusion，实现细粒度风格控制和概念否定，几乎不增加计算开销。
+- [CLIPErase: Efficient Unlearning of Visual-Textual Associations in CLIP](https://arxiv.org/abs/2410.23330)：把 CLIP 遗忘拆成 Forgetting、Retention 和 Consistency 三个模块，移除指定视觉-文本关联，同时保持 retain set 上的下游零样本表现。
+- [MoLE: Enhancing Human-centric Text-to-image Diffusion via Mixture of Low-rank Experts](https://arxiv.org/abs/2410.23332)：用超过百万张人像场景图以及手部、人脸 close-up 数据增强 human-centric T2I，并通过低秩专家路由细化薄弱身体部位。
+- [How Do Flow Matching Models Memorize and Generalize in Sample Data Subspaces?](https://arxiv.org/abs/2410.23594)：推导离散数据上 flow matching 的最优 velocity field，用来解释记忆化、样本子空间表示和子空间外泛化。
+- [EDT: An Efficient Diffusion Transformer Framework Inspired by Human-like Sketching](https://arxiv.org/abs/2410.23788)：通过轻量扩散 Transformer、免训练 sketch-inspired attention modulation 和 token-relation masking 降低训练与推理成本并提升图像合成。
+- [Scaling Concept With Text-Guided Diffusion Models](https://arxiv.org/abs/2410.24151)：在文本引导扩散中分解概念并对其增强或抑制，使真实输入中的弱概念可被 zero-shot 强化或削弱而不引入新元素。
+- [Comparison-based Active Preference Learning for Multi-dimensional Personalization](https://arxiv.org/abs/2411.00524)：提出 AMPLe，用 Bayesian active preference learning 从比较反馈中推断隐式多维用户偏好，用于个性化生成。
+- [Randomized Autoregressive Visual Generation](https://arxiv.org/abs/2411.00776)：在自回归训练中随机置换图像 token 的因子分解顺序并逐步退火，增强双向上下文建模且保持与语言模型框架兼容。
+- [Infinite-Resolution Integral Noise Warping for Diffusion Models](https://arxiv.org/abs/2411.01212)：推导高效 integral noise warping，在保持 Gaussian noise 统计性质的同时加入时间一致性，用于图像扩散模型的免训练视频适配。
+- [Diffusion Models as Cartoonists: The Curious Case of High Density Regions](https://arxiv.org/abs/2411.01293)：追踪扩散去噪分布的高密度 mode，发现更高似然样本常呈现卡通化或模糊，区分概率密度与典型视觉质量。
+- [Model Integrity when Unlearning with T2I Diffusion Models](https://arxiv.org/abs/2411.02068)：提出直接比较原始与遗忘后 T2I 输出感知差异的 retention metric，并给出更好保留 retain distribution 图像质量的遗忘基线。
+- [On Improved Conditioning Mechanisms and Pre-training Strategies for Diffusion Models](https://arxiv.org/abs/2411.03177)：复现多种 LDM 训练配方以隔离语义条件和控制元数据条件的影响，并用解耦条件流改善 ImageNet 与 CC12M 生成 FID。
+- [DiT4Edit: Diffusion Transformer for Image Editing](https://arxiv.org/abs/2411.03286)：将 Diffusion Transformer 适配到图像编辑，结合 DPM-Solver inversion、统一 attention control 和 patch merging，支持高分辨率任意尺寸形状感知编辑。
+- [ROBIN: Robust and Invisible Watermarks for Diffusion Models with Adversarial Optimization](https://arxiv.org/abs/2411.03862)：在扩散中间状态植入鲁棒水印，并优化 hiding prompt 让最终图像隐藏水印，同时可通过反向生成验证。
+- [ET-SEED: Efficient Trajectory-Level SE(3) Equivariant Diffusion Policy](https://arxiv.org/abs/2411.03990)：用 trajectory-level SE(3) equivariant diffusion 生成机器人操作动作序列，比普通 diffusion policy 更少依赖示范数据。
+- [Community Forensics: Using Thousands of Generators to Train Fake Image Detectors](https://arxiv.org/abs/2411.04125)：从 4,803 个 latent diffusion 模型和商业生成器采样 270 万张图像，训练能泛化到未见生成来源的假图检测器。
+- [DiMSUM: Diffusion Mamba - A Scalable and Unified Spatial-Frequency Method for Image Generation](https://arxiv.org/abs/2411.04168)：把 Mamba 扫描与 wavelet subband、cross-attention fusion 和共享全局 Transformer 结合，使扩散模型同时捕捉空间细节与频率结构。
+- [Multi-Reward as Condition for Instruction-based Image Editing](https://arxiv.org/abs/2411.04713)：把 GPT-4o 给出的指令跟随、细节保持和生成质量 reward 分数及文本反馈编码为条件，让编辑模型能从有缺陷的编辑三元组中学习。
+- [Boosting Latent Diffusion with Perceptual Objectives](https://arxiv.org/abs/2411.04873)：用自编码器 decoder 内部特征定义 latent perceptual loss，并接入 LDM 或 flow-matching 训练，使 256 和 512 分辨率图像更清晰且 FID 更好。
+- [LLM2CLIP: Powerful Language Model Unlocks Richer Visual Representation](https://arxiv.org/abs/2411.04997)：把 LLM 嵌入 CLIP 微调流程，使图文表征能处理长而复杂的 caption，同时训练成本接近标准 CLIP 微调。
+- [A Quality-Centric Framework for Generic Deepfake Detection](https://arxiv.org/abs/2411.05335)：引入 Quality Evaluator、低质量数据增强和 forgery-quality curriculum/pacing，把样本伪造质量纳入训练流程以提升 deepfake 检测泛化。
+- [Region-Aware Text-to-Image Generation via Hard Binding and Soft Refinement](https://arxiv.org/abs/2411.06558)：把 regional T2I 拆成硬对象区域绑定和软细化两步，在不加入模型专属训练模块的情况下改善布局组合。
+- [ENAT: Rethinking Spatial-temporal Interactions in Token-based Image Synthesis](https://arxiv.org/abs/2411.06959)：分析非自回归 token 生成机制，并重设计空间和时间 token 交互以提升少步图像合成。
+- [Edify Image: High-Quality Image Generation with Pixel Space Laplacian Diffusion Models](https://arxiv.org/abs/2411.07126)：构建 cascaded pixel-space Laplacian diffusion model，用分频段噪声过程支持 T2I、4K upsampling、ControlNet、全景和定制。
+- [Token Merging for Training-Free Semantic Binding in Text-to-Image Synthesis](https://arxiv.org/abs/2411.07132)：用免训练 token merging 改善 T2I prompt 中属性和子对象绑定，无需布局说明或模型微调。
+- [OmniEdit: Building Image Editing Generalist Models Through Specialist Supervision](https://arxiv.org/abs/2411.07199)：通过 specialist supervision 训练通用图像编辑器，扩展编辑技能、减少噪声合成样本，并支持高分辨率和灵活宽高比编辑。
+- [Watermark Anything with Localized Messages](https://arxiv.org/abs/2411.07231)：提出 WAM 局部图像水印模型，由 embedder 隐藏消息，extractor 分割含水印区域并恢复一个或多个消息。
+- [Add-it: Training-Free Object Insertion in Images With Pretrained Diffusion Models](https://arxiv.org/abs/2411.07232)：把扩散 attention 扩展到源图、提示和生成图三类信息，使免训练物体插入能寻找自然位置并保留场景细节。
+- [TIPO: Text to Image with Text Presampling for Prompt Optimization](https://arxiv.org/abs/2411.08127)：用轻量 prompt refinement model 从目标语义子分布采样更丰富的 T2I prompt，在不依赖 LLM 或 RL 的情况下提升视觉质量。
+- [Golden Noise for Diffusion Models: A Learning Framework](https://arxiv.org/abs/2411.09502)：学习 text-conditioned noise prompt，把 Gaussian seed 扰动成更符合提示和人类偏好的 golden noise。
+- [Adaptive Non-uniform Timestep Sampling for Accelerating Diffusion Model Training](https://arxiv.org/abs/2411.09998)：按 stochastic gradient 方差优先采样关键时间步，而不是均匀采样 denoising time，以加速扩散训练。
+- [Safe Text-to-Image Generation: Simply Sanitize the Prompt Embedding](https://arxiv.org/abs/2411.10329)：在生成前净化 T2I prompt embedding，处理概念擦除方法在对抗攻击下可能遗漏的不安全文本语义。
+- [Time Step Generating: A Universal Synthesized Deepfake Image Detector](https://arxiv.org/abs/2411.11016)：利用扩散时间步生成线索训练合成图像检测器，依靠生成过程痕迹而非特定生成器训练数据提升跨模型 deepfake 检测。
+- [Stacking Brick by Brick: Aligned Feature Isolation for Incremental Face Forgery Detection](https://arxiv.org/abs/2411.11396)：在增量人脸伪造检测中隔离不同伪造类型特征，减少新增篡改方法带来的灾难性遗忘。
+- [CLUE-MARK: Watermarking Diffusion Models using CLWE](https://arxiv.org/abs/2411.11434)：基于 CLWE 给出可证明不可检测的扩散模型水印方案，无需修改生成器并尽量保持输出质量。
+- [Safe + Safe = Unsafe? Exploring How Safe Images Can Be Exploited to Jailbreak Large Vision-Language Models](https://arxiv.org/abs/2411.11496)：说明单独安全的图像和提示组合后可形成 LVLM jailbreak，暴露多模态安全护栏的组合泛化缺口。
+- [Aligning Few-Step Diffusion Models with Dense Reward Difference Learning](https://arxiv.org/abs/2411.11727)：提出 SDPO，用 noisy state 和 clean state 双轨迹加 dense reward prediction，以低方差 mixed-step optimization 对齐少步扩散模型。
+- [Continuous Speculative Decoding for Autoregressive Image Generation](https://arxiv.org/abs/2411.11925)：把 speculative decoding 扩展到连续自回归图像模型，并处理 draft-target mismatch 与连续分布修正问题。
+- [Adversarial Diffusion Compression for Real-World Image Super-Resolution](https://arxiv.org/abs/2411.13383)：通过 adversarial diffusion compression 把单步 OSEDiff 超分蒸馏为轻量 diffusion-GAN，加速真实图像超分。
+- [AI-generated Image Detection: Passive or Watermark?](https://arxiv.org/abs/2411.13553)：构建 ImageDetectBench，从有效性、鲁棒性和效率比较 AI 生成图像的被动检测器与水印检测器。
+- [Detecting Human Artifacts from Text-to-Image Models](https://arxiv.org/abs/2411.13842)：构建 3.7 万张图像的 Human Artifact Dataset，并训练 HADM 定位 T2I 输出中畸形、缺失或多余的人体部位。
+- [On the fairness, diversity and reliability of text-to-image generative models](https://arxiv.org/abs/2411.13981)：通过全局和局部 embedding 扰动评估 T2I 可靠性，暴露偏置、不稳定或可操纵的类别和概念行为。
+- [High-Resolution Image Synthesis via Next-Token Prediction](https://arxiv.org/abs/2411.14808)：提出 D-JEPA.T2I，用连续 token 自回归和 denoising joint embedding prediction 生成最高 4K 的任意分辨率写实图像。
+- [mR2AG: Multimodal Retrieval-Reflection-Augmented Generation for Knowledge-Based VQA](https://arxiv.org/abs/2411.15041)：为知识型 VQA 加入检索和反思，使 MLLM 只在需要时检索并识别支持视觉问题的证据。
+- [Reward Fine-Tuning Two-Step Diffusion Models via Learning Differentiable Latent-Space Surrogate Reward](https://arxiv.org/abs/2411.15247)：学习可微的 latent-space surrogate reward，让两步扩散生成器无需反复穿过不可微评价器也能进行奖励微调。
+- [Foundation Cures Personalization: Improving Personalized Models'Prompt Consistency via Hidden Foundation Knowledge](https://arxiv.org/abs/2411.15277)：提出 FreeCure 免训练人脸个性化修复方法，提取基础模型 cross-attention 与语义图，并通过 inversion 混合噪声，在保留身份的同时恢复提示词属性。
+- [DiffServe: Efficiently Serving Text-to-Image Diffusion Models with Query-Aware Model Scaling](https://arxiv.org/abs/2411.15381)：构建轻量和完整 T2I 扩散变体的 query-aware cascade，自动路由简单提示并重新分配资源，在保持响应质量的同时降低延迟违约。
+- [Large-Scale Text-to-Image Model with Inpainting is a Zero-Shot Subject-Driven Image Generator](https://arxiv.org/abs/2411.15466)：证明具备 inpainting 能力的大规模 T2I 模型可把参考身份区域当作补全条件，实现无需个性化 adapter 训练的 zero-shot subject-driven generation。
+- [TKG-DM: Training-free Chroma Key Content Generation Diffusion Model](https://arxiv.org/abs/2411.15580)：使用免训练 chroma-key guidance，让扩散模型在可移除的 key-color 背景上生成前景内容，便于后续合成与编辑。
+- [Effort: Efficient Orthogonal Modeling for Generalizable AI-Generated Image Detection](https://arxiv.org/abs/2411.15633)：用正交特征建模分离生成器特有线索和生成器无关线索，提升 AI 生成图像检测对未见合成模型的泛化。
+- [AnyEdit: Mastering Unified High-Quality Image Editing for Any Idea](https://arxiv.org/abs/2411.15738)：用广泛编辑类型和高质量编辑对训练统一指令式图像编辑器，使单一模型覆盖局部、全局、物体、风格和外观修改。
+- [Unveil Inversion and Invariance in Flow Transformer for Versatile Image Editing](https://arxiv.org/abs/2411.15843)：分析 flow-transformer 生成器中的 inversion 与 invariance，并利用这些性质在编辑图像时保留不应改变的内容。
+- [One Diffusion to Generate Them All](https://arxiv.org/abs/2411.16318)：将条件和目标都表示为不同噪声尺度的帧序列来训练 OneDiffusion，把文生图、编辑、多视角生成、个性化和逆视觉任务统一到一个扩散模型中。
+- [Chat2SVG: Vector Graphics Generation with Large Language Models and Image Diffusion Models](https://arxiv.org/abs/2411.16602)：结合大语言模型和图像扩散模型生成矢量图形。
+- [Revelio: Interpreting and Leveraging Semantic Information in Diffusion Models](https://arxiv.org/abs/2411.16725)：探查扩散表示中的语义方向，并用发现的信号在不重训基础模型的情况下解释或引导生成内容。
+- [Augmenting Multimodal LLMs with Self-Reflective Tokens for Knowledge-based Visual Question Answering](https://arxiv.org/abs/2411.16863)：为多模态 LLM 推理加入 self-reflective tokens，使模型能标记不确定视觉答案并修正知识型 VQA 输出。
+- [DiffSLT: Enhancing Diversity in Sign Language Translation via Diffusion Model](https://arxiv.org/abs/2411.17248)：用扩散解码采样多样化手语翻译结果，让序列生成目标比标准 encoder-decoder 翻译更少确定性。
+- [DRiVE: Diffusion-based Rigging Empowers Generation of Versatile and Expressive Characters](https://arxiv.org/abs/2411.17423)：学习基于扩散的角色 rigging，为生成角色赋予可控骨架或形变结构，以支持丰富姿态和动画。
+- [On Statistical Rates of Conditional Diffusion Transformers: Approximation, Estimation and Minimax Optimality](https://arxiv.org/abs/2411.17522)：给出 conditional diffusion transformer 的逼近、估计和 minimax rate 分析，澄清条件图像生成背后的样本复杂度行为。
+- [Collaborative Decoding Makes Visual Auto-Regressive Modeling Efficient](https://arxiv.org/abs/2411.17787)：让 draft decoder 与 target decoder 协作预测图像 token，避免每个 token 都由最大模型串行采样，从而加速视觉自回归生成。
+- [Generative Image Layer Decomposition with Visual Effects](https://arxiv.org/abs/2411.17864)：将生成图像分解为视觉效果层，以支持可控编辑。
+- [TSD-SR: One-Step Diffusion with Target Score Distillation for Real-World Image Super-Resolution](https://arxiv.org/abs/2411.18263)：从扩散 target score 蒸馏单步真实图像超分模型，把迭代式恢复压缩为一次快速生成。
+- [Diffusion Self-Distillation for Zero-Shot Customized Image Generation](https://arxiv.org/abs/2411.18616)：利用参考图像信号对预训练扩散模型进行自蒸馏，使 zero-shot subject customization 无需逐主体微调也能保持身份。
+- [Random Walks With Tweedie: A Unified View of Score-Based Diffusion Models (In the Spotlight)](https://arxiv.org/abs/2411.18702)：用 Tweedie random walks 重新表述 score-based diffusion，将去噪更新、后验均值和 sampler 行为纳入统一理论视角。
+- [Self-Cross Diffusion Guidance for Text-to-Image Synthesis of Similar Subjects](https://arxiv.org/abs/2411.18936)：结合 self-attention 与 cross-attention guidance 来区分同一提示中的相似主体，减少 T2I 合成中的身份和属性泄漏。
+- [Improving Multi-Subject Consistency in Open-Domain Image Generation with Isolation and Reposition Attention](https://arxiv.org/abs/2411.19261)：使用 isolation attention 与 reposition attention，让开放域多主体生成中的不同对象保持身份区分和位置一致。
+- [Any-Resolution AI-Generated Image Detection by Spectral Learning](https://arxiv.org/abs/2411.19417)：学习跨分辨率仍可用的频谱线索，使生成图像检测更少依赖固定输入尺寸或重采样伪影。
+- [Forensics Adapter: Unleashing CLIP for Generalizable Face Forgery Detection](https://arxiv.org/abs/2411.19715)：为 CLIP 加入轻量 forensics adapter，使人脸伪造检测同时利用预训练视觉语义和篡改伪影适配能力。
+- [JetFormer: An Autoregressive Generative Model of Raw Images and Text](https://arxiv.org/abs/2411.19722)：用自回归 Transformer 直接建模原始图像字节或像素与文本，避免为联合图文生成额外训练视觉 tokenizer。
+- [DiffGuard: Text-Based Safety Checker for Diffusion Models](https://arxiv.org/abs/2412.00064)：使用文本侧安全检查器筛查扩散提示词中的不安全生成意图，而不是只依赖输出图像过滤。
+- [Steering Rectified Flow Models in the Vector Field for Controlled Image Generation](https://arxiv.org/abs/2412.00100)：通过修改学习到的 vector field 引导 rectified-flow 生成，在不重训图像生成器的情况下提供推理期控制。
+- [Orthus: Autoregressive Interleaved Image-Text Generation with Modality-Specific Heads](https://arxiv.org/abs/2412.00127)：在自回归模型中使用 modality-specific output heads，让文本和图像 token 能以交错多模态序列生成。
+- [Opt-In Art: Learning Art Styles Only from Few Examples](https://arxiv.org/abs/2412.00176)：从少量授权样例学习 opt-in 艺术风格，将经同意的风格适配与广泛网页风格模仿区分开。
+- [LumiNet: Latent Intrinsics Meets Diffusion Models for Indoor Scene Relighting](https://arxiv.org/abs/2412.00177)：结合 latent intrinsic decomposition 与扩散先验进行室内场景重打光，同时保留几何、材质和场景身份。
+- [FreeCond: Free Lunch in the Input Conditions of Text-Guided Inpainting](https://arxiv.org/abs/2412.00427)：在推理期调整输入条件信号，从 mask 和 prompt 中榨取更多控制力，无需额外训练即可改善文本引导 inpainting。
+- [DyMO: Training-Free Diffusion Model Alignment with Dynamic Multi-Objective Scheduling](https://arxiv.org/abs/2412.00759)：在推理期动态调度多个 guidance 目标，让扩散输出无需微调也能同时贴合质量和提示目标。
+- [LoyalDiffusion: A Diffusion Model Guarding Against Data Replication](https://arxiv.org/abs/2412.01118)：加入生成期训练数据复制防护，使扩散采样避免过度忠实复制，同时保留提示词一致性。
+- [Schedule On the Fly: Diffusion Time Prediction for Faster and Better Image Generation](https://arxiv.org/abs/2412.01243)：在采样过程中自适应预测扩散时间步，用图像相关的时间选择替代固定 schedule，以提升速度和生成质量。
+- [EmojiDiff: Advanced Facial Expression Control with High Identity Preservation in Portrait Generation](https://arxiv.org/abs/2412.01254)：用 emoji 风格表情控制条件化肖像扩散，在改变面部情绪的同时保护主体身份。
+- [MuLan: Adapting Multilingual Diffusion Models for Hundreds of Languages with Negligible Cost](https://arxiv.org/abs/2412.01271)：用轻量多语言对齐把 T2I 扩散适配到数百种提示语言，而不是重训完整生成器。
+- [Negative Token Merging: Image-based Adversarial Feature Guidance](https://arxiv.org/abs/2412.01339)：通过 negative token merging 注入基于图像的对抗特征引导，使扩散过程远离不需要的视觉属性。
+- [FoundIR: Unleashing Million-Scale Training Data to Advance Foundation Models for Image Restoration](https://arxiv.org/abs/2412.01427)：用百万级退化-干净图像数据扩展图像恢复基础模型训练，提升去噪、去模糊、去雨和超分等通用恢复能力。
+- [XQ-GAN: An Open-source Image Tokenization Framework for Autoregressive Generation](https://arxiv.org/abs/2412.01762)：提供面向自回归生成的开源图像 tokenizer 框架，重点改善 next-token 图像合成前所需的码本质量和 tokenizer 训练。
+- [SceneFactor: Factored Latent 3D Diffusion for Controllable 3D Scene Generation](https://arxiv.org/abs/2412.01801)：在扩散前分解 3D 场景 latent，使场景结构和外观可控生成，而不是依赖单一整体场景编码。
+- [Switti: Designing Scale-Wise Transformers for Text-to-Image Synthesis](https://arxiv.org/abs/2412.01819)：为 T2I 合成设计 scale-wise transformer block，让从粗到细的图像尺度在生成过程中被显式建模。
+- [RandAR: Decoder-only Autoregressive Visual Generation in Random Orders](https://arxiv.org/abs/2412.01827)：用随机 token 顺序训练 decoder-only 视觉自回归模型，在不放弃 next-token prediction 的情况下增强双向上下文利用。
+- [ScImage: How Good Are Multimodal Large Language Models at Scientific Text-to-Image Generation?](https://arxiv.org/abs/2412.02368)：ScImage 评估 MLLM 的科学文生图能力，关注科学合理性、空间推理和指令忠实度，更像 Bench 条目而非新生成模型。
+- [Scaling Image Tokenizers with Grouped Spherical Quantization](https://arxiv.org/abs/2412.02632)：用 grouped spherical quantization 扩展视觉 tokenizer，提升自回归图像生成所需的码本容量和稳定性。
+- [MetaShadow: Object-Centered Shadow Detection, Removal, and Synthesis](https://arxiv.org/abs/2412.02635)：围绕物体建模阴影，将检测、移除和合成结合起来，使生成或编辑场景保持更合理的投影阴影。
+- [Supercharged One-Step Text-to-Image Diffusion Models with Negative Prompts](https://arxiv.org/abs/2412.02687)：把 negative-prompt conditioning 纳入单步 T2I 扩散，在保持快速生成的同时增强用户对不需要内容的控制。
+- [Pixel-level and Semantic-level Adjustable Super-resolution: A Dual-LoRA Approach](https://arxiv.org/abs/2412.03017)：使用两个 LoRA 分支分别调节像素保真度和语义真实感，为超分辨率提供可控的恢复取舍。
+- [TokenFlow: Unified Image Tokenizer for Multimodal Understanding and Generation](https://arxiv.org/abs/2412.03069)：训练统一图像 tokenizer，让离散视觉 token 同时服务多模态理解和图像生成，而不是依赖任务专属 tokenizer。
+- [Towards Understanding and Quantifying Uncertainty for Text-to-Image Generation](https://arxiv.org/abs/2412.03178)：研究 T2I 生成中的不确定性信号，量化提示词条件输出何时模糊、不稳定或对齐不足。
+- [DynamicControl: Adaptive Condition Selection for Improved Text-to-Image Generation](https://arxiv.org/abs/2412.03255)：在 T2I 生成过程中自适应选择条件信号，只在有助于提示对齐或视觉质量时施加控制。
+- [Black-Box Forgery Attacks on Semantic Watermarks for Diffusion Models](https://arxiv.org/abs/2412.03283)：展示可伪造语义扩散水印的黑盒攻击，检验攻击者无法查看模型内部时的归因方案鲁棒性。
+- [Implicit Priors Editing in Stable Diffusion via Targeted Token Adjustment](https://arxiv.org/abs/2412.03400)：通过 targeted token adjustment 编辑 Stable Diffusion 的隐式视觉先验，在不完整微调模型的情况下改变偏置或默认属性。
+- [Mv-Adapter: Multi-View Consistent Image Generation Made Easy](https://arxiv.org/abs/2412.03632)：为预训练扩散模型加入 multi-view adapter，使生成视角共享几何和外观，而无需训练完整 3D 生成器。
+- [CreatiLayout: Siamese Multimodal Diffusion Transformer for Creative Layout-to-Image Generation](https://arxiv.org/abs/2412.03859)：使用 Siamese multimodal diffusion transformer 将创意布局转成图像，同时保持空间结构和文本语义。
+- [Safeguarding Text-to-Image Generation via Inference-Time Prompt-Noise Optimization](https://arxiv.org/abs/2412.03876)：在推理期优化 prompt 和 noise 变量，将 T2I 生成引离不安全内容，而不改变模型权重。
+- [ZipAR: Parallel Autoregressive Image Generation through Spatial Locality](https://arxiv.org/abs/2412.04062)：利用空间局部性让自回归图像 token 按并行块生成，而不是严格按光栅顺序逐 token 采样。
+- [SwiftEdit: Lightning Fast Text-Guided Image Editing via One-Step Diffusion](https://arxiv.org/abs/2412.04301)：把文本引导编辑蒸馏为单步扩散模型，在保持指令遵循的同时显著降低编辑延迟。
+- [Infinity∞: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis](https://arxiv.org/abs/2412.04431)：把图像表示为 bitwise token 序列，并扩展自回归建模以支持高分辨率和灵活宽高比合成。
+- [LayerFusion: Harmonized Multi-Layer Text-to-Image Generation with Generative Priors](https://arxiv.org/abs/2412.04460)：生成可编辑的多层图像，并用生成先验协调各图层的构图和外观一致性。
+- [Not Just Text: Uncovering Vision Modality Typographic Threats in Image Generation Models](https://arxiv.org/abs/2412.05538)：研究嵌入生成图像视觉模态中的排版攻击，说明安全过滤器也需要处理图像内部渲染文本。
+- [Language-Guided Image Tokenization for Generation](https://arxiv.org/abs/2412.05796)：用语言监督引导图像 tokenizer 学习，使离散视觉 token 保留对下游生成有用的语义信息。
+- [SILMM: Self-Improving Large Multimodal Models for Compositional Text-to-Image Generation](https://arxiv.org/abs/2412.05818)：通过自改进多模态循环批评并细化 compositional T2I 输出，重点修正对象绑定和关系错误。
+- [Proactive Agents for Multi-Turn Text-to-Image Generation Under Uncertainty](https://arxiv.org/abs/2412.06771)：构建会在不确定时主动提问并展示可编辑 belief graph 的 T2I agent 原型，并用 ImageInWords、COCO 和 DesignBench 上的双 agent 真值图像协议评估。
+- [FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided Reconstruction Error](https://arxiv.org/abs/2412.07140)：通过 frequency-guided reconstruction error 检测扩散生成图像，强调能跨生成器和后处理保留的频谱伪影。
+- [DFREC: DeepFake Identity Recovery Based on Identity-Aware Masked Autoencoder](https://arxiv.org/abs/2412.07260)：使用 identity-aware masked autoencoder 从 deepfake 中恢复源身份线索，支持超越真假二分类的取证分析。
+- [DiffSensei: Bridging Multi-Modal LLMs and Diffusion Models for Customized Manga Generation](https://arxiv.org/abs/2412.07589)：连接多模态 LLM 规划器与扩散生成，根据参考图像和指令定制漫画角色与分镜。
+- [TraSCE: Trajectory Steering for Concept Erasure](https://arxiv.org/abs/2412.07658)：通过 steering 扩散采样轨迹擦除不需要的概念，避免完整重训并针对概念特定生成路径生效。
+- [Learning Visual Generative Priors without Text](https://arxiv.org/abs/2412.07767)：在没有文本监督的图像数据上学习视觉生成先验，检验无 caption 条件下扩散式生成可扩展到什么程度。
+- [UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics](https://arxiv.org/abs/2412.07774)：学习真实世界视觉动态作为通用先验，服务跨物体、场景和变换任务的统一图像生成与编辑。
+- [Boosting Alignment for Post-Unlearning Text-to-Image Generative Models](https://arxiv.org/abs/2412.07808)：在概念遗忘后恢复提示词对齐，处理擦除方法带来的质量和指令遵循退化。
+- [CC-Diff: Enhancing Contextual Coherence in Remote Sensing Image Synthesis](https://arxiv.org/abs/2412.08464)：为遥感扩散加入上下文一致性约束，使合成航拍场景保持合理的对象、地表覆盖和邻域关系。
+- [Learning Flow Fields in Attention for Controllable Person Image Generation](https://arxiv.org/abs/2412.08486)：学习 attention 层面的 flow fields 来控制人物姿态或外观迁移，同时保留身份和服装结构。
+- [StyleStudio: Text-Driven Style Transfer with Selective Control of Style Elements](https://arxiv.org/abs/2412.08503)：支持带选择性控制的文本驱动风格迁移，让用户只改变指定风格元素并保留其他视觉属性。
+- [Flowedit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](https://arxiv.org/abs/2412.08629)：直接用预训练 flow model 做文本式图像编辑，避免显式 inversion，同时引导源轨迹与目标轨迹。
+- [Inference-Time Diffusion Model Distillation](https://arxiv.org/abs/2412.08871)：在推理过程中蒸馏扩散行为，利用当前采样轨迹减少步数，而不需要额外离线训练学生模型。
+- [RAD: Region-Aware Diffusion Models for Image Inpainting](https://arxiv.org/abs/2412.09191)：让 inpainting 具备区域感知能力，对 mask 内部、边界和周围上下文采用不同扩散处理以生成连贯填充。
+- [OFTSR: One-Step Flow for Image Super-Resolution with Tunable Fidelity-Realism Trade-offs](https://arxiv.org/abs/2412.09465)：使用单步 flow model 做超分辨率，并提供在忠实重建和感知真实感之间调节的控制旋钮。
+- [EasyRef: Omni-Generalized Group Image Reference for Diffusion Models via Multimodal LLM](https://arxiv.org/abs/2412.09618)：用多模态 LLM 组织成组参考图像，转成用于扩散个性化和参考引导生成的通用条件信号。
+- [SuperMark: Robust and Training-free Image Watermarking via Diffusion-based Super-Resolution](https://arxiv.org/abs/2412.10049)：通过基于扩散的超分辨率嵌入水印，形成与恢复过程绑定而非依赖生成器内部的免训练标记。
+- [The Art of Deception: Color Visual Illusions and Diffusion Models](https://arxiv.org/abs/2412.10122)：用扩散模型生成或分析颜色视觉错觉，揭示生成先验如何制造局部与全局颜色外观之间的感知错配。
+- [BrushEdit: All-In-One Image Inpainting and Editing](https://arxiv.org/abs/2412.10316)：结合多模态 LLM 和双分支 inpainting 模型，让自由形式编辑指令驱动编辑类型分类、主体识别、mask 获取和区域补全，并提升 mask 保持与编辑一致性。
+- [SVGFusion: Scalable Text-to-SVG Generation via Vector Space Diffusion](https://arxiv.org/abs/2412.10437)：用 VP-VAE 联合编码 SVG 代码与渲染像素，再以 Vector Space Diffusion Transformer 和 rendering sequence modeling 在 24 万 SVGX 数据上生成可编辑文本到 SVG 结果。
+- [SUGAR: Subject-Driven Video Customization in a Zero-Shot Manner](https://arxiv.org/abs/2412.10533)：构建零样本 subject-driven 视频定制模型，用 250 万合成 image-video-text 三元组、专门 attention、训练策略和采样改进，让参考图控制主体而文本控制风格与运动。
+- [EVLM: Self-Reflective Multimodal Reasoning for Cross-Dimensional Visual Editing](https://arxiv.org/abs/2412.10566)：用 3 万条带人工 rationale 质量标注的 chain-of-thought 样本训练 Editing Vision-Language Model，并通过 RKTO 对齐把模糊图像、视频、3D 和 4D 编辑需求转成结构化提示。
+- [Grid: Omni Visual Generation](https://arxiv.org/abs/2412.10718)：把时序视觉序列重写为 grid layout，并用并行 flow matching 与 coarse-to-fine 调度训练，以较低算力复用图像生成能力处理视频、3D 编辑和图像任务。
+- [Progressive Compression with Universally Quantized Diffusion Models](https://arxiv.org/abs/2412.10935)：把扩散前向过程替换为均匀噪声，使 negative ELBO 对应 universal quantization 压缩成本，从而得到可逐步解码的图像比特流。
+- [SHMT: Self-supervised Hierarchical Makeup Transfer via Latent Diffusion Models](https://arxiv.org/abs/2412.11058)：采用自监督 decoupling-and-reconstruction 潜扩散流程、Laplacian pyramid 层级纹理分解和 Iterative Dual Alignment，在无需配对真值的情况下迁移多样妆容。
+- [Empowering LLMs to Understand and Generate Complex Vector Graphics](https://arxiv.org/abs/2412.11102)：研究大语言模型如何理解和生成复杂矢量图形。
+- [GenLit: Reformulating Single-Image Relighting as Video Generation](https://arxiv.org/abs/2412.11224)：把图形引擎中的点光源操控能力蒸馏到 Stable Video Diffusion，将单图重光照视为生成一段光照变化序列，避免显式 3D 重建。
+- [MPQ-DM: Mixed Precision Quantization for Extremely Low Bit Diffusion Models](https://arxiv.org/abs/2412.11549)：用 Outlier-Driven Mixed Quantization 与 Time-Smoothed Relation Distillation 将扩散模型压到 2-4 bit，并在 W2A4 设置下显著降低低比特基线的 FID。
+- [IDProtector: An Adversarial Noise Encoder to Protect Against ID-Preserving Image Generation](https://arxiv.org/abs/2412.11638)：用单次前向的 adversarial noise encoder 给肖像添加不可感知扰动，抵御 InstantID、IP-Adapter 和 PhotoMaker 等身份保持生成器，并对 JPEG、缩放和仿射变换保持鲁棒。
+- [Causal Diffusion Transformers for Generative Modeling](https://arxiv.org/abs/2412.12095)：提出 CausalFusion decoder-only Transformer，同时按序列 token 和扩散噪声层级分解数据，在 ImageNet 生成、图像描述和零样本图像操控中连接自回归与扩散生成。
+- [OmniPrism: Learning Disentangled Visual Concept for Image Generation](https://arxiv.org/abs/2412.12242)：从 PCD-200K 配对概念数据中学习由自然语言引导的解耦视觉概念表示，并通过额外 diffusion cross-attention 层和 block embedding 注入生成器。
+- [Efficient Scaling of Diffusion Transformers for Text-to-Image Generation](https://arxiv.org/abs/2412.12391)：在最多 6 亿图像上训练 0.3B 到 8B 参数 DiT 做缩放消融，发现纯 self-attention U-ViT 比 cross-attention 变体更易扩展，长 caption 还能提升文图对齐与学习效率。
+- [Attentive Eraser: Unleashing Diffusion Model's Object Removal Potential via Self-Attention Redirection Guidance](https://arxiv.org/abs/2412.12974)：通过 mask 激活和抑制自注意力，并用 Self-Attention Redirection Guidance 引导前景区域重绘，实现跨扩散 checkpoint 的免调参物体移除。
+- [CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](https://arxiv.org/abs/2412.13195)：结合用于空间准确图文对的 SCOP 数据引擎和保留 token 顺序的 TENOR 模块，在 UNet 与 MMDiT 文生图模型上提升 VISOR、T2I-CompBench Spatial 和 GenEval Position。
+- [T$^3$-S2S: Training-free Triplet Tuning for Sketch to Scene Synthesis in Controllable Concept Art Generation](https://arxiv.org/abs/2412.13486)：在 ControlNet cross-attention 中加入免训练 Prompt Balance、Characteristic Priority 和 Dense Tuning，让 sketch-to-scene 生成保留多实例和地形布局细节。
+- [Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation](https://arxiv.org/abs/2412.14453)：提出 SewingLDM，把复杂 sewing pattern 向量压缩进 latent space，并用两步多模态扩散同时条件化体型、文本和服装草图以生成合身且可控的纸样。
+- [Parallelized Autoregressive Visual Generation](https://arxiv.org/abs/2412.15119)：并行生成弱依赖的远距离视觉 token，同时保持强局部依赖 token 的顺序生成，使标准自回归图像和视频模型在质量接近时获得 3.6 倍加速。
+- [FlowAR: Scale-wise Autoregressive Image Generation Meets Flow Matching](https://arxiv.org/abs/2412.15205)：把 scale-wise 自回归简化为逐级翻倍的尺度设计，使用现成 VAE 并接入 flow matching，在 ImageNet-256 上优于既有 VAR 式设计。
+- [UIP2P: Unsupervised Instruction-Based Image Editing via Edit Reversibility Constraint](https://arxiv.org/abs/2412.15216)：用 Edit Reversibility Constraint 在一步训练中执行正向和反向编辑，并约束图像、文本和 attention 空间一致性，从而不再需要真值编辑三元组。
+- [Next Patch Prediction for Autoregressive Visual Generation](https://arxiv.org/abs/2412.15321)：把图像 token 聚合成信息密度更高的 patch token，并用 coarse-to-fine next-patch prediction 训练，使自回归视觉生成训练成本降到约 0.6 倍且改善 ImageNet FID。
+- [When Worse is Better: Navigating the compression-generation tradeoff in visual tokenization](https://arxiv.org/abs/2412.16326)：研究离散自回归图像 tokenizer 的 rate-distortion 取舍，并提出 Causally Regularized Tokenization，使第二阶段生成在更强压缩下仍提升 2-3 倍计算效率。
+- [Data-Driven Fairness Generalization for Deepfake Detection](https://arxiv.org/abs/2412.16428)：生成覆盖多种人口属性的合成数据并据此优化检测器，使 deepfake 检测公平性更好泛化到未见 race 与 gender 分布。
+- [RealisID: Scale-Robust and Fine-Controllable Identity Customization via Local and Global Complementation](https://arxiv.org/abs/2412.16832)：把身份定制拆成 local 与 global 两个 ControlNet 分支，前者用裁剪放大人脸保持细粒度身份，后者控制整体协调、位置、姿态、表情和多人定制。
+- [Human-Guided Image Generation for Expanding Small-Scale Training Image Datasets](https://arxiv.org/abs/2412.16839)：把多模态投影与样本级人工反馈结合，让用户细化提示并重新生成小数据集样本，在分类和目标检测案例中提升模型表现。
+- [A Bias-Free Training Paradigm for More General AI-generated Image Detection](https://arxiv.org/abs/2412.17671)：用 Stable Diffusion 条件化从真实图像生成语义对齐的 fake 图像构成 B-Free 训练数据，隔离生成伪影与内容、格式、分辨率偏差，并覆盖 27 个生成器。
+- [Causal Composition Diffusion Model for Closed-loop Traffic Generation](https://arxiv.org/abs/2412.17920)：用 CCDiff 将自动识别的因果结构注入扩散过程，在 closed-loop 长尾交通仿真中平衡用户可控性与真实感。
+- [Accelerating Diffusion Transformers with Dual Feature Caching](https://arxiv.org/abs/2412.18911)：提出 DuCa，在发现固定“重要 token”缓存并不可靠后，交替使用激进和保守特征缓存并随机选 token，在 DiT、PixArt、FLUX 和 OpenSora 上加速。
+- [UNIC-Adapter: Unified Image-Instruction Adapter with Multi-Modal Transformer for Image Generation](https://arxiv.org/abs/2412.18928)：基于 MMDiT 构建统一 image-instruction adapter，提取条件图像和任务指令，并通过 RoPE 增强 cross-attention 注入，实现空间、主体和风格控制。
+- [Motion Planning Diffusion: Learning and Adapting Robot Motion Planning With Diffusion Models](https://arxiv.org/abs/2412.19948)：学习低维 B-spline 轨迹表示上的扩散先验，并结合 motion-planning cost 梯度采样 posterior 路径，用于仿真与真实机器人任务。
+- [MaIR: A Locality-and Continuity-Preserving Mamba for Image Restoration](https://arxiv.org/abs/2412.20066)：设计带 nested S-shaped scanning 与跨序列聚合的 Mamba 图像恢复骨干，使展平后的图像序列仍保持局部关系和空间连续性。
+- [Distilled transformers with locally enhanced global representations for face forgery detection](https://arxiv.org/abs/2412.20156)：训练带 mixture-of-expert 伪造 embedding 和局部增强的蒸馏 Transformer 检测器，使全局 attention 同时捕捉大范围依赖与局部操纵痕迹。
+- [An analytic theory of creativity in convolutional diffusion models](https://arxiv.org/abs/2412.20292)：用 locality 与 equivariance 偏置解释扩散模型的“创造性”，推导可解释 local-score machine，并报告其能高相关预测卷积扩散模型输出。
+- [EraseAnything: Enabling Concept Erasure in Rectified Flow Transformers](https://arxiv.org/abs/2412.20413)：把 flow-based T2I Transformer 的概念擦除表述为双层 LoRA 调优，结合 attention map regularizer 与 self-contrastive learning，面向 SD3 和 Flux 式架构。
+- [Zero-Shot Image Restoration Using Few-Step Guidance of Consistency Models (and Beyond)](https://arxiv.org/abs/2412.20596)：用少步一致性模型引导实现零样本图像复原。
+- [HFI: A unified framework for training-free detection and implicit watermarking of latent diffusion model generated images](https://arxiv.org/abs/2412.20704)：无需训练数据，通过测量 LDM autoencoder 重建中的高频 aliasing 检测 LDM 生成图像，并将同一信号作为指定 LDM 的隐式水印。
+- [VisionReward: Fine-Grained Multi-Dimensional Human Preference Learning for Image and Video Generation](https://arxiv.org/abs/2412.21059)：用层级视觉评估、线性加权和多维一致策略学习可解释图像与视频偏好奖励，在偏好优化中优于既有视觉 reward model。
+- [Fusion2Void](https://doi.org/10.1109/TCSVT.2024.3502200)：用 image inpainting 实现无监督 multi-focus image fusion。
+- [Inversion-Free Image Editing with Language-Guided Diffusion Models](https://doi.org/10.1109/cvpr52733.2024.00903)：用语言引导扩散模型进行无需 inversion 的图像编辑，提升文本驱动编辑的实用性。
+- [SemStamp: A Semantic Watermark with Paraphrastic Robustness for Text Generation](https://doi.org/10.18653/v1/2024.naacl-long.226)：通过 LSH 哈希句子嵌入并进行 rejection sampling 为生成文本加水印，属于图像模型页中的 off-axis 文本生成溯源条目。
+- [Faster and More Efficient Subject Image Generation for Text-to-Image Diffusion Models](https://doi.org/10.1109/smc54092.2024.10831577)：训练 DDCA plug-and-play 图像提示适配器做主体条件 T2I 生成，避免逐主体重复训练并提升文本与图像一致性。
+- [FlowDiffuser: Advancing Optical Flow Estimation with Diffusion Models](https://doi.org/10.1109/cvpr52733.2024.01813)：把 optical flow field 作为扩散生成目标，用不确定性感知的去噪过程改进稠密运动估计。
+- [WFormer: A Transformer-Based Soft Fusion Model for Robust Image Watermarking](https://doi.org/10.1109/tetci.2024.3386916)：用 Transformer watermark preprocess module 提取扩展水印特征，并以 soft fusion 融合封面图像与水印特征，替代简单复制和直接拼接。
+- [Image Intrinsic Components Guided Conditional Diffusion Model for Low-Light Image Enhancement](https://doi.org/10.1109/tcsvt.2024.3441713)：用 Retinex intrinsic components 引导条件扩散低光增强，将多尺度 illumination 与 reflectance 特征注入去噪过程。
+- [Countering Personalized Text-to-Image Generation with Influence Watermarks](https://doi.org/10.1109/cvpr52733.2024.01165)：在受保护个人图像中嵌入 influence watermark，使后续个性化 T2I 微调带有可追踪信号，用于发现未经授权的身份定制。
+- [TF²: Few-Shot Text-Free Training-Free Defect Image Generation for Industrial Anomaly Inspection](https://doi.org/10.1109/tcsvt.2024.3424435)：在无需文本提示和额外训练的情况下，利用少量正常或缺陷样本引导工业缺陷图像合成，用于扩展异常检测训练数据。
+- [Improving Generalization of Deepfake Detectors by Imposing Gradient Regularization](https://doi.org/10.1109/tifs.2024.3396064)：通过 gradient regularization 提升 deepfake 检测器泛化，减少模型对特定来源伪造伪影的依赖。
+- [Monte Carlo guided Denoising Diffusion models for Bayesian linear inverse problems](https://proceedings.iclr.cc/paper_files/paper/2024/hash/bfb3c1db0deda449ff4027f77dd48704-Abstract-Conference.html)：用 Monte Carlo 修正指导 diffusion posterior sampling，用于 Bayesian linear inverse problems 的重建不确定性建模，而非普通文生图。
+- [EasyDrag: Efficient Point-Based Manipulation on Diffusion Models](https://doi.org/10.1109/cvpr52733.2024.00803)：提供交互式 point-based diffusion editing，不需要 DragDiffusion 式 LoRA 微调和 mask，在物体姿态、形状和场景操作上提升稳健性。
+- [ADA-FInfer: Inferring Face Representations From Adaptive Select Frames for High-Visual-Quality Deepfake Detection](https://doi.org/10.1109/tdsc.2024.3523289)：用 optical-flow 线索自适应选择视频帧，并推断可解释人脸表征，以发现可见伪影较弱的高视觉质量 deepfake。
+- [LFDT-Fusion: A latent feature-guided diffusion Transformer model for general image fusion](https://doi.org/10.1016/j.inffus.2024.102639)：据 Information Fusion 元数据，该工作用 latent feature-guided diffusion Transformer 做通用图像融合；具体机制仍需全文跟进。
+- [Latent Diffusion Enhanced Rectangle Transformer for Hyperspectral Image Restoration](https://doi.org/10.1109/tpami.2024.3475249)：结合横向与纵向 rectangle self-attention 捕捉空间非局部相似性，并用 spectral latent diffusion enhancement 处理高光谱低秩复原。
+- [MMGInpainting: Multi-Modality Guided Image Inpainting Based on Diffusion Models](https://doi.org/10.1109/tmm.2024.3382484)：把扩散 inpainting 扩展为同时使用图像和文本引导，使缺失区域继承参考视觉结构与语义指令。
+- [LPSRGAN: Generative adversarial networks for super-resolution of license plate image](https://doi.org/10.1016/j.neucom.2024.127426)：据 Neurocomputing 元数据，将 GAN 超分辨率用于车牌图像，是偏领域的 restoration 条目而非通用文生图生成器。
+- [Integrating neural operators with diffusion models improves spectral representation in turbulence modelling](https://doi.org/10.1098/rspa.2024.0819)：将 diffusion model 条件化在 neural operator 预测上，恢复湍流高频结构，并相对单独 neural operator 改善能谱对齐。
+- [WaterFormer: A Global–Local Transformer for Underwater Image Enhancement With Environment Adaptor](https://doi.org/10.1109/mra.2024.3351487)：用 global-local Transformer block、细节增强和 environment adaptor 处理水下图像增强中的局部纹理与不同颜色退化。
+- [RealtimeGen: An Intervenable AI Image Generation System for Commercial Digital Art Asset Creators](https://doi.org/10.1080/10447318.2024.2382508)：构建面向商业数字美术创作者的可介入图像生成工具，重点是生成过程中的透明控制，而不是新的基础图像模型。
+- [UV-IDM: Identity-Conditioned Latent Diffusion Model for Face UV-Texture Generation](https://doi.org/10.1109/cvpr52733.2024.01007)：用 identity-conditioned latent diffusion 为 BFM 式 3D 人脸重建生成逼真 UV texture，并从野外图像条件中保持身份信息。
+- [Cambricon-D: Full-Network Differential Acceleration for Diffusion Models](https://doi.org/10.1109/isca59077.2024.00070)：通过全网络 differential computing 加速扩散推理，在非线性操作间传递时间步 delta，减少重复重算。
+- [StableSwap: Stable Face Swapping in a Shared and Controllable Latent Space](https://doi.org/10.1109/tmm.2024.3369853)：用 reversible autoencoder 和 latent alignment 在共享可控潜空间中做换脸，降低依赖复杂损失权重带来的训练与推理不稳定。
+- [DCGF: Diffusion-Color-Guided Framework for Underwater Image Enhancement](https://doi.org/10.1109/tgrs.2024.3522685)：用条件图像和颜色校正模块引导水下扩散复原，使去噪轨迹贴近目标域并减少颜色漂移。
+- [CrossDiff: Exploring Self-SupervisedRepresentation of Pansharpening via Cross-Predictive Diffusion Model](https://doi.org/10.1109/tip.2024.3461476)：先用 cross-predictive pansharpening 任务预训练条件 DDPM，再适配 PAN 空间细节与多光谱信息的融合以缓解尺度错配。
+- [An Efficient Attribute-Preserving Framework for Face Swapping](https://doi.org/10.1109/tmm.2024.3354573)：提出 AP-Swap 和 global residual attribute-preserving encoder，使换脸在迁移源身份时保留目标姿态、表情和视线。
+- [Common Canvas: Open Diffusion Models Trained on Creative-Commons Images](https://doi.org/10.1109/cvpr52733.2024.00788)：仅用 Creative Commons 图像训练开放扩散模型，为图像生成提供关注版权许可的数据筛选与模型发布参考。
+- [A multimodal data generation method for imbalanced classification with dual-discriminator constrained diffusion model and adaptive sample selection strategy](https://doi.org/10.1016/j.inffus.2024.102843)：据 Information Fusion 元数据，结合 dual-discriminator constrained diffusion model 与 adaptive sample selection，为不平衡分类生成多模态合成数据。
+- [AnimeDiff: Customized Image Generation of Anime Characters Using Diffusion Model](https://doi.org/10.1109/tmm.2024.3415357)：针对动漫角色定制扩散生成，直接把角色与姓名绑定并保持文本 token embedding 不变，同时处理多角色同图时的属性混淆。
+- [SF-GAN: Semantic fusion generative adversarial networks for text-to-image synthesis](https://doi.org/10.1016/j.eswa.2024.125583)：在 GAN 中融合语义线索做文生图，使生成区域更贴合细粒度文本描述。
+- [Exploring Collaborative Diffusion Model Inferring for AIGC-Enabled Edge Services](https://doi.org/10.1109/tccn.2024.3519320)： 研究边缘 AIGC 服务中的协同扩散推理，把模型切分、缓存和设备协作作为调度对象，以降低视觉生成在边缘侧的时延与资源开销。
+- [Dual Diffusion for Unified Image Generation and Understanding](https://arxiv.org/abs/2501.00289)：训练同时支持多模态理解与图像生成的端到端扩散模型，把 MM-DiT 式跨模态建模与离散扩散语言建模放入 cross-modal maximum likelihood 框架。
+- [Token Pruning for Caching Better: 9 Times Acceleration on Stable Diffusion for Free](https://arxiv.org/abs/2501.00375)：提出 dynamics-aware token pruning 方法 DaTo，只剪除低动态 token，避免简单复用旧时间步特征削弱生成过程变化。
+- [SAT-LDM: Provably Generalizable Image Watermarking for Latent Diffusion Models with Self-Augmented Training](https://arxiv.org/abs/2501.00463)：用 free generation distribution 对齐 LDM 水印训练与测试阶段，在不额外采集数据的情况下给出泛化界并提升水印鲁棒性。
+- [RORem: Training a Robust Object Remover with Human-in-the-Loop](https://arxiv.org/abs/2501.00740)：通过人类在环数据训练鲁棒物体移除模型，适合图像编辑 Model 小节。
+- [Text2Earth: Unlocking text-driven remote sensing image generation with a global-scale dataset and a foundation model](https://arxiv.org/abs/2501.00895)：构建 Git-10M 与 Text2Earth 基础模型，面向全球尺度遥感文生图，支持多分辨率、可控和无边界的地表影像生成。
+- [Hierarchical Vision-Language Alignment for Text-to-Image Generation via Diffusion Models](https://arxiv.org/abs/2501.00917)：提出 VLAD，用 Contextual Composition Module 将提示分解为全局与局部表示，并通过层级多阶段扩散增强复杂文本到视觉内容的对齐。
+- [EliGen: Entity-Level Controlled Image Generation with Regional Attention](https://arxiv.org/abs/2501.01097)： 通过区域注意力把实体级文本条件绑定到图像中的指定区域，使多实体生成能分别控制对象身份、位置和属性，而不是只依赖全局提示。
+- [DuMo: Dual Encoder Modulation Network for Precise Concept Erasure](https://arxiv.org/abs/2501.01125)：通过双编码器调制网络实现精确概念擦除，为图像生成模型补充可控性与安全方法。
+- [Semantics-Guided Diffusion for Deep Joint Source-Channel Coding in Wireless Image Transmission](https://arxiv.org/abs/2501.01138)：将 semantics-guided diffusion 接入 DeepJSCC，让无线图像传输在学习式信道编码下重建更符合语义质量的高保真输出。
+- [Reconstruction vs. Generation: Taming Optimization Dilemma in Latent Diffusion Models](https://arxiv.org/abs/2501.01423)：研究潜在扩散中的重建与生成优化权衡，服务于图像生成模型设计。
 - [Object-level Visual Prompts for Compositional Image Generation](https://arxiv.org/abs/2501.01424)：利用对象级视觉提示增强图像生成中的组合式控制。
-- [ACE++](https://arxiv.org/abs/2501.02487)：提出面向图像生成与编辑的模型侧方法，核心围绕 Instruction-Based Image Creation and Editing via Context-Aware Content Filling。
+- [ArtCrafter: Text-Image Aligning Style Transfer via Embedding Reframing](https://arxiv.org/abs/2501.02064)：用 attention-based style extraction 与 embedding reframing 做文图对齐风格迁移，平衡文本语义、风格捕捉和输出多样性。
+- [CorrFill](https://arxiv.org/abs/2501.02355)：使用对应关系引导提升参考式扩散修补的忠实性，为图像编辑补充模型侧控制方法。
+- [ACE++](https://arxiv.org/abs/2501.02487)：在 ACE 上改进 long-context conditioning unit，并采用两阶段 FLUX 初始化训练，覆盖零参考、上下文填充和通用指令式图像生成编辑任务。
 - [SceneVTG++](https://arxiv.org/abs/2501.02962)：面向自然场景中的可控多语言视觉文字生成。
+- [CAT](https://arxiv.org/abs/2501.03120)：根据内容复杂度自适应图像 token 容量，使自回归图像生成更高效。
+- [Materialist](https://arxiv.org/abs/2501.03717)：结合神经初始化与物理逆渲染，实现可控且物理一致的单图编辑。
+- [Exploring Unbiased Deepfake Detection via Token-Level Shuffling and Mixing](https://arxiv.org/abs/2501.04376)：通过 token-level shuffling 与 mixing 降低 deepfake 检测器的位置偏置和内容偏置，改善跨伪造方式泛化。
+- [EditAR](https://arxiv.org/abs/2501.04699)：用自回归模型统一条件图像生成与编辑任务。
+- [EmotiCrafter: Text-to-Emotional-Image Generation Based on Valence-Arousal Model](https://arxiv.org/abs/2501.05710)：提出连续情绪图像内容生成任务，用 valence-arousal 坐标条件化 T2I 合成，而不是只依赖离散情绪标签。
+- [Test-time Alignment of Diffusion Models without Reward Over-optimization](https://arxiv.org/abs/2501.05803)：在测试时对齐 diffusion model，同时避免 reward 过优化。
+- [Personalized Preference Fine-tuning of Diffusion Models](https://arxiv.org/abs/2501.06655)： 用个性化偏好数据微调扩散模型，让同一生成器学习用户偏好的风格、构图和质量取向，目标是把通用 T2I 模型适配到个人审美。
+- [Padding Tone: A Mechanistic Analysis of Padding Tokens in T2I Models](https://arxiv.org/abs/2501.06751)： 从机制层面分析 T2I 模型中 padding token 对注意力和生成结果的影响，解释空白填充为何会改变画面色调、构图或语义。
+- [A General Framework for Inference-time Scaling and Steering of Diffusion Models](https://arxiv.org/abs/2501.06848)：用交互粒子和中间 potential 为扩散模型提供推理时扩展与奖励 steering。
+- [Multilingual Prompting for Text-to-Image Generation](https://arxiv.org/abs/2501.07086)：利用大型多模态模型的多语言提示提升文生图效果，补充跨语言视觉生成控制的提示侧方法。
+- [OmniEraser: Remove Objects and Their Effects in Images with Paired Video-Frame Data](https://arxiv.org/abs/2501.07397)： 利用视频相邻帧构造的成对数据训练对象移除模型，不仅擦除目标物体，也学习去除阴影、反光等随物体产生的视觉影响。
+- [Democratizing Text-to-Image Masked Generative Models with Compact Text-Aware One-Dimensional Tokens](https://arxiv.org/abs/2501.07730)： 把文本感知的一维紧凑 token 用于 masked generative model，降低文本到图像生成的训练和推理门槛，同时保留文本条件控制。
+- [SmartEraser: Remove Anything from Images using Masked-Region Guidance](https://arxiv.org/abs/2501.08279)： 以 masked-region guidance 引导修补区域的去噪过程，使任意对象移除后背景能与未遮挡区域语义和纹理一致。
+- [Few-Shot Learner Generalizes Across AI-Generated Image Detection](https://arxiv.org/abs/2501.08763)： 训练少样本学习器跨生成器识别 AI 图像，强调从少量伪造样本中学到可迁移取证线索，而不是绑定特定生成模型。
+- [Grounding Text-To-Image Diffusion Models For Controlled High-Quality Image Generation](https://arxiv.org/abs/2501.09194)：补充面向可控高质量图像生成的文本到图像扩散模型 grounding 方法。
+- [ViTok Scaling](https://arxiv.org/abs/2501.09755)：研究扩展视觉 tokenizer 如何影响重建与生成，澄清图像和视频生成器的 tokenizer 容量问题。
+- [One-D-Piece](https://arxiv.org/abs/2501.10064)：把图像 tokenizer 与质量可控压缩结合起来，服务视觉生成流水线。
+- [Ditto: Accelerating Diffusion Model via Temporal Value Similarity](https://arxiv.org/abs/2501.11211)：利用相邻扩散时间步的高 value similarity，在量化下只处理时间差分，并配套硬件执行流以加速扩散推理。
+- [StyleSSP](https://arxiv.org/abs/2501.11319)：通过采样起点增强改进免训练扩散风格迁移，为图像编辑控制补充方法。
+- [SILO: Solving Inverse Problems with Latent Operators](https://arxiv.org/abs/2501.11746)：为基于扩散先验的逆问题学习 latent operators，减少反复调用 autoencoder，并提升图像恢复质量。
+- [GPS as a Control Signal for Image Generation](https://arxiv.org/abs/2501.12390)：把 GPS metadata 与文本一起作为扩散生成条件，学习城市内街区、地标和局部外观差异。
+- [PreciseCam: Precise Camera Control for Text-to-Image Generation](https://arxiv.org/abs/2501.12910)：为 text-to-image 生成加入显式内参与外参相机控制。
+- [One-Prompt-One-Story: Free-Lunch Consistent Text-to-Image Generation Using a Single Prompt](https://arxiv.org/abs/2501.13554)：利用单提示中的共享注意力和一致性线索维持故事身份，不改模型架构也不依赖大规模 story-specific 训练集。
+- [Controlling ensemble variance in diffusion models: an application for reanalyses downscaling](https://arxiv.org/abs/2501.14822)：通过调整 DDIM reverse steps 控制气象 downscaling 的 ensemble variance，是气候数据生成边界项。
+- [Visual Generation Without Guidance](https://arxiv.org/abs/2501.15420)：训练视觉生成模型在单一条件模型采样下达到接近 classifier-free guidance 的质量，从而降低生成成本。
+- [StochSync: Stochastic Diffusion Synchronization for Image Generation in Arbitrary Spaces](https://arxiv.org/abs/2501.15445)：通过在目标空间中随机同步预训练扩散过程，在球面、mesh surface 等任意空间上生成图像内容。
+- [Universal Image Restoration Pre-training via Degradation Classification](https://arxiv.org/abs/2501.15510)：模型侧方法候选，Image-restoration pre-training method based on degradation classification.
+- [CubeDiff](https://arxiv.org/abs/2501.17162)：把多视角扩散图像模型改用于以 cubemap faces 生成 360 度全景图。
 - [Janus-Pro](https://arxiv.org/abs/2501.17811)：统一多模态理解与文生图模型，通过优化训练、扩大数据和模型规模提升稳定性。
+- [SAeUron: Interpretable Concept Unlearning in Diffusion Models with Sparse Autoencoders](https://arxiv.org/abs/2501.18052)： 用稀疏自编码器解释扩散模型内部概念方向，并据此执行可解释概念遗忘，以削弱目标概念同时保留非目标生成能力。
+- [SANA 1.5: Efficient Scaling of Training-Time and Inference-Time Compute in Linear Diffusion Transformer](https://arxiv.org/abs/2501.18427)：模型侧方法候选，Linear diffusion-transformer scaling method for visual generation training and inference.
+- [Fantastic Targets for Concept Erasure in Diffusion Models and Where To Find Them](https://arxiv.org/abs/2501.18950)：研究 diffusion model 中概念擦除的有效目标选择，强化视觉生成器的模型侧安全控制线索。
+- [Text-to-CAD Generation Through Infusing Visual Feedback in Large Language Models](https://arxiv.org/abs/2501.19054)： 把视觉反馈注入大语言模型驱动的 text-to-CAD 流程，让文本生成的 CAD 结构能通过渲染或视觉检查迭代修正。
+- [Accelerating Diffusion Transformer via Error-Optimized Cache](https://arxiv.org/abs/2501.19243)： 用 error-optimized cache 复用扩散 Transformer 中变化较小的中间特征，并按误差控制刷新缓存以加速采样。
+- [A Diffusion Model Translator for Efficient Image-to-Image Translation](https://arxiv.org/abs/2502.00307)：为扩散模型加入轻量 translator 执行图像到图像翻译，避免在每个去噪步骤反复注入源图像信息。
+- [Representation-Aligned Latent Space](https://arxiv.org/abs/2502.00359)：通过更丰富的表示对齐 latent space，提升 diffusion-style generation 质量。
+- [Mitigating the Modality Gap: Few-Shot Out-of-Distribution Detection with Multi-modal Prototypes and Image Bias Estimation](https://arxiv.org/abs/2502.00662)：结合图像与文本 prototype，并估计 image bias，减少 VLM 少样本 OOD 检测中由图文模态间隙导致的高误报。
+- [RealRAG: Retrieval-augmented Realistic Image Generation via Self-reflective Contrastive Learning](https://arxiv.org/abs/2502.00848)： 将检索增强接入真实感图像生成，并用自反式对比学习筛选或校正检索证据，使生成结果更贴近真实视觉分布。
+- [Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](https://arxiv.org/abs/2502.01051)： 把扩散模型本身作为噪声感知的潜在奖励模型，为每个去噪步骤提供偏好信号，从而做 step-level preference optimization。
+- [LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer](https://arxiv.org/abs/2502.01105)： 用扩散 Transformer 合成分层 SVG，并让生成过程对齐人类分层绘制认知，使矢量图结果具备可编辑对象层次。
+- [MakeAnything: Harnessing Diffusion Transformers for Multi-Domain Procedural Sequence Generation](https://arxiv.org/abs/2502.01572)： 把扩散 Transformer 用作多领域程序化序列生成器，说明同一 DiT 框架可生成图像以外的结构化设计或程序序列。
+- [Score as Action: Fine-Tuning Diffusion Generative Models by Continuous-time Reinforcement Learning](https://arxiv.org/abs/2502.01819)： 把扩散采样分数视为连续时间动作，通过强化学习微调生成轨迹，使模型直接优化偏好或任务奖励。
+- [Exploring the latent space of diffusion models directly through singular value decomposition](https://arxiv.org/abs/2502.02225)： 用奇异值分解直接探索扩散模型潜空间，定位控制主要视觉变化的方向，为无监督编辑和可解释控制提供线索。
+- [Variational Control for Guidance in Diffusion Models](https://arxiv.org/abs/2502.03686)：从变分推断和控制角度推导 Diffusion Trajectory Matching，使预训练扩散轨迹在无需额外训练下满足终端代价，用于线性、非线性和盲逆问题。
+- [Mechanisms of Projective Composition of Diffusion Models](https://arxiv.org/abs/2502.04549)：定义 score-combined diffusion 的 projective composition，并分析这种组合在分布外外推和长度泛化中何时成立。
+- [QLIP](https://arxiv.org/abs/2502.05178)：将视觉 tokenization 与文本对齐，使自回归多模态模型同时支持理解与生成。
+- [Physics-Conditioned Diffusion Models for Lattice Gauge Theory](https://arxiv.org/abs/2502.05504)：把随机量子化作为物理条件注入 lattice gauge theory 的扩散采样，并通过采样过程保证生成样本的精确性。
+- [Training-Free Constrained Generation With Stable Diffusion Models](https://arxiv.org/abs/2502.05625)：把 Stable Diffusion 与约束优化结合，在不重新训练的情况下让生成结果满足物理、功能或版权类约束。
+- [AutoSketch: VLM-assisted Style-Aware Vector Sketch Completion](https://arxiv.org/abs/2502.06860)：AutoSketch 用 VLM 生成的风格描述补全局部矢量草图，使新增笔画保持原始草图风格。
+- [SketchFlex: Facilitating Spatial-Semantic Coherence in Text-to-Image Generation with Region-Based Sketches](https://arxiv.org/abs/2502.07556)：让非专家用粗略 region sketch 引导 T2I 布局，在提示词不足以约束多物体场景时提升空间与语义一致性。
+- [Satellite Observations Guided Diffusion Model for Accurate Meteorological States at Arbitrary Resolution](https://arxiv.org/abs/2502.07814)：用卫星观测引导扩散式气象状态降尺度，在任意位置和分辨率估计地表气象场，属于科学生成边界条目。
+- [DiffRatio: Training One-Step Diffusion Models Without Teacher Supervision](https://arxiv.org/abs/2502.08005)：在不使用预训练 teacher score model 的情况下训练一步扩散模型，降低 teacher supervision 与 student score estimation 两类偏差。
+- [Training-Free Safe Denoisers for Safe Use of Diffusion Models](https://arxiv.org/abs/2502.08011)：为扩散模型提供免训练安全去噪器，补充生成图像系统的安全方法。
+- [SwiftSketch: A Diffusion Model for Image-to-Vector Sketch Generation](https://arxiv.org/abs/2502.08642)：在矢量笔画控制点上使用扩散 Transformer，快速生成图像条件草图，补充矢量图生成路线。
+- [Redistribute Ensemble Training for Mitigating Memorization in Diffusion Models](https://arxiv.org/abs/2502.09434)：通过在 ensemble 中重新分配训练暴露来缓解视觉数据记忆，处理不限于文本条件提示泄露的 diffusion privacy 风险。
+- [EQ-VAE: Equivariance Regularized Latent Space for Improved Generative Image Modeling](https://arxiv.org/abs/2502.09509)：用等变性正则化潜在空间以改进生成式图像建模。
+- [I Think, Therefore I Diffuse: Enabling Multimodal In-Context Reasoning in Diffusion Models](https://arxiv.org/abs/2502.10458)：ThinkDiff 用 VLM 生成的推理数据对齐扩散模型，使 T2I 模型获得 multimodal in-context reasoning，而不只学习像素重建。
+- [SWA-LDM: Toward Stealthy Watermarks for Latent Diffusion Models](https://arxiv.org/abs/2502.10495)：把隐蔽水印直接嵌入 LDM latent noise，在尽量不改动生成器的情况下支持版权追踪和滥用归因。
+- [Adaptive-Scaling Classifier-Free Guidance](https://arxiv.org/abs/2502.10574)：自适应调节 classifier-free guidance 缩放，改善扩散生成的可控性与质量权衡。
+- [Script&Shift: A Layered Interface Paradigm for Integrating Content Development and Rhetorical Strategy with LLM Writing Assistants](https://arxiv.org/abs/2502.10638)：该分层写作助手界面支持规划、内容发展和修辞策略，是应迁出图像生成模型页的候选条目。
+- [Beyond Known Fakes: Generalized Detection of AI-Generated Images via Post-hoc Distribution Alignment](https://arxiv.org/abs/2502.10803)：提出 PDA，用 post-hoc distribution alignment 检测未知生成器产生的 AI 图像，避免为每个新 fake 来源重新训练。
 - [ControlText](https://arxiv.org/abs/2502.10999)：在无需字体标注的条件下实现可控多语言字体渲染。
+- [Characterizing Photorealism and Artifacts in Diffusion Model-Generated Images](https://arxiv.org/abs/2502.11989)：用 450 张扩散生成图像和 149 张真实图像测量人类检测能力，分析场景复杂度、伪影类型、展示时间和人工筛选对 photorealism 判断的影响。
+- [How compositional generalization and creativity improve as diffusion models are trained](https://arxiv.org/abs/2502.12089)： 分析扩散模型训练中组合泛化与创造性如何变化，为图像生成行为的模型侧控制提供依据。
+- [Diffusion Models without Classifier-free Guidance](https://arxiv.org/abs/2502.12154)：研究不依赖 classifier-free guidance 的扩散生成，厘清条件合成的另一种模型侧路径。
+- [RAPID: Retrieval Augmented Training of Differentially Private Diffusion Models](https://arxiv.org/abs/2502.12794)：将检索机制与差分隐私扩散训练结合，让图像生成器利用相近公开样本的同时降低对敏感训练样本的记忆风险。
+- [Secure and Efficient Watermarking for Latent Diffusion Models in Model Distribution Scenarios](https://arxiv.org/abs/2502.13345)：为模型分发场景中的 latent diffusion 设计水印方案，强调多用户环境下的安全性、效率、鲁棒性和模型所有权验证。
+- [A Baseline Method for Removing Invisible Image Watermarks using Deep Image Prior](https://arxiv.org/abs/2502.13998)：在黑盒场景下对单张带水印图像拟合 Deep Image Prior，并从中间步骤选取 evasion image 来移除隐形水印。
+- [Vulnerability of Text-to-Image Models to Prompt Template Stealing: A Differential Evolution Approach](https://arxiv.org/abs/2502.14285)：提出 Prism 基准和 EvoStealer，用 differential evolution 从少量样例图像中恢复商用 prompt template。
 - [RelaCtrl](https://arxiv.org/abs/2502.14377)：为扩散 Transformer 加入 relevance-guided 控制，以提升可控生成效率。
+- [PhotoDoodle: Learning Artistic Image Editing from Few-Shot Pairwise Data](https://arxiv.org/abs/2502.14397)：从少量成对数据中学习艺术化图像编辑。
 - [CopyJudge](https://arxiv.org/abs/2502.15278)：用自动判别流程和缓解策略识别并降低文生图扩散模型中的版权侵权风险。
 - [Concept Corrector](https://arxiv.org/abs/2502.16368)：在文生图扩散模型输出侧即时移除不需要的概念。
-- [KV-Edit](https://arxiv.org/abs/2502.17363)：提出面向图像生成与编辑的模型侧方法，核心围绕 Training-Free Image Editing for Precise Background Preservation。
+- [KV-Edit](https://arxiv.org/abs/2502.17363)：在 DiT 的 KV cache 中保留背景 token 而不是重新生成背景，实现免训练区域编辑、更强背景一致性和 inversion-free 的 O(1) cache 优化。
+- [Rethinking the Vulnerability of Concept Erasure and a New Method](https://arxiv.org/abs/2502.17537)：指出文生图概念擦除后在 prompt embedding 空间仍存在可恢复漏洞，并用坐标下降式恢复攻击评估概念擦除鲁棒性。
+- [Training Consistency Models with Variational Noise Coupling](https://arxiv.org/abs/2502.18197)：提出 VCT，通过学习 data-dependent noise-data coupling 降低非蒸馏 consistency model 训练中的方差和不稳定性。
 - [K-LoRA](https://arxiv.org/abs/2502.18461)：无需训练即可融合主体与风格 LoRA，用于个性化图像生成。
+- [BEVDiffuser: Plug-and-Play Diffusion Model for BEV Denoising with Ground-Truth Guidance](https://arxiv.org/abs/2502.19694)：训练时用真值目标布局引导扩散模型去噪 BEV feature map，在不改变下游 BEV 架构的情况下提升 nuScenes 3D 检测 mAP 和 NDS。
+- [One Model for ALL: Low-Level Task Interaction Is a Key to Task-Agnostic Image Fusion](https://arxiv.org/abs/2502.19854)：补充任务无关低层图像融合模型。
+- [Multimodal Representation Alignment for Image Generation: Text-Image Interleaved Control is Easier than You Think](https://arxiv.org/abs/2502.20172)：通过文本与图像交错控制进行图像生成表征对齐，提升生成结果的可控性。
+- [Attention Distillation: A Unified Approach to Visual Characteristics Transfer](https://arxiv.org/abs/2502.20235)：用扩散网络 self-attention 蒸馏损失迁移参考图的视觉特征，并把该损失注入 classifier guidance 的去噪采样中。
+- [FlexVAR: Flexible Visual Autoregressive Modeling without Residual Prediction](https://arxiv.org/abs/2502.20313)：用 ground-truth image prediction 替代视觉自回归中的残差预测，使模型可生成不同分辨率和长宽比，并支持 refinement、inpainting、outpainting 与可变步数推理。
+- [Beyond Next-Token: Next-X Prediction for Autoregressive Visual Generation](https://arxiv.org/abs/2502.20388)：将视觉自回归从 next-token 扩展为 xAR，可预测 cell、scale、subsample 甚至整图等实体，以减少二维生成中的曝光偏差累积。
+- [Does Generation Require Memorization?](https://arxiv.org/abs/2502.21278)：用 ambient diffusion 研究 creative diffusion models 中 generation 与 memorization 的关系。
+- [AesthetiQ: Enhancing Graphic Layout Design via Aesthetic-Aware Preference Alignment of Multi-modal Large Language Models](https://arxiv.org/abs/2503.00591)：把多模态 layout generation 模型与审美偏好对齐，用于图形设计。
+- [Expandora: Broadening Design Exploration with Text-to-Image Model](https://arxiv.org/abs/2503.00791)：让设计师指定探索意图和多样性等级，再用 LLM 辅助提示扩展与 T2I 生成拓宽视觉参考搜索。
+- [ACCORD: Alleviating Concept Coupling through Dependence Regularization for Text-to-Image Diffusion Personalization](https://arxiv.org/abs/2503.01122)：ACCORD 用 dependence regularization 缓解个性化 T2I 中的 concept coupling，分离目标主体与参考图偶然背景细节。
+- [Fine-Grained Controllable Apparel Showcase Image Generation via Garment-Centric Outpainting](https://arxiv.org/abs/2503.01294)：在 latent diffusion 中使用 garment-centric outpainting，从分割出的服装图像出发，加入姿态、人脸和文本控制生成服装展示图。
+- [MINT: Multi-modal Chain of Thought in Unified Generative Models for Enhanced Image Generation](https://arxiv.org/abs/2503.01298)： 在统一生成模型中加入多模态链式思维，让模型先进行文本与视觉推理再生成图像，以改善复杂提示对齐。
+- [DLF Extreme Image Compression](https://arxiv.org/abs/2503.01428)：用双生成潜变量融合进行极限图像压缩。
+- [DesignDiffusion](https://arxiv.org/abs/2503.01645)：用扩散模型从文本生成高质量设计图像，把 text-to-image 覆盖扩展到结构化设计生成。
+- [ToLo: A Two-Stage, Training-Free Layout-To-Image Generation Framework For High-Overlap Layouts](https://arxiv.org/abs/2503.01667)：补充两阶段无需训练的布局到图像生成框架。
+- [Dynamic Search for Inference-Time Alignment in Diffusion Models](https://arxiv.org/abs/2503.02039)：模型侧方法候选，Inference-time search method for alignment in diffusion models.
+- [HanDrawer: Leveraging Spatial Information to Render Realistic Hands Using a Conditional Diffusion Model in Single Stage](https://arxiv.org/abs/2503.02127)：用图卷积提取 MANO 手部 mesh 的空间约束，通过 cross-attention 和 position-preserving zero padding 融合，并以额外手部重建损失训练单阶段条件扩散模型。
 - [h-Edit](https://arxiv.org/abs/2503.02187)：利用 Doob h-transform 提升扩散式图像编辑的灵活性与可控性。
+- [Q&C: When Quantization Meets Cache in Efficient Image Generation](https://arxiv.org/abs/2503.02508)：系统分析 DiT 后训练量化与 cache 复用的耦合，指出校准样本有效性下降和 exposure bias 后，给出联合量化与缓存加速配方。
+- [Towards Understanding Text Hallucination of Diffusion Models via Local Generation Bias](https://arxiv.org/abs/2503.03595)：从局部生成偏置角度分析扩散模型中的文字幻觉。
+- [Energy-Guided Optimization for Personalized Image Editing with Pretrained Text-to-Image Diffusion Models](https://arxiv.org/abs/2503.04215)：用 energy-guided optimization 做个性化图像编辑，在 pretrained T2I diffusion 中保持对象身份并融入复杂场景。
+- [Frequency Autoregressive Image Generation with Continuous Tokens](https://arxiv.org/abs/2503.05305)： 用连续 token 在频率域进行自回归图像生成，把低频结构与高频细节的预测顺序显式化。
+- [Fine-Grained Alignment and Noise Refinement for Compositional Text-to-Image Generation](https://arxiv.org/abs/2503.06506)：针对组合式文生图失败，引入细粒度文本图像对齐与噪声细化，将对象级语义匹配和去噪修正分开处理。
+- [TR-DQ: Time-Rotation Diffusion Quantization](https://arxiv.org/abs/2503.06564)： 提出 time-rotation diffusion quantization，利用时间步相关的旋转或重参数化降低量化误差，加速扩散模型部署。
+- [Adding Additional Control to One-Step Diffusion with Joint Distribution Matching](https://arxiv.org/abs/2503.06652)：用 Joint Distribution Matching 让一步扩散适配新控制信号，通过优化图像-条件联合分布解耦条件学习和保真度保持，避免重新蒸馏整个模型。
+- [Towards Generalization of Tactile Image Generation: Reference-Free Evaluation in a Leakage-Free Setting](https://arxiv.org/abs/2503.06860)：指出训练测试泄漏会抬高 tactile image generation 指标，并为合成触觉图像提出 leakage-free split 下的 reference-free evaluation。
+- [From Reusing to Forecasting: Accelerating Diffusion Models With Taylorseers](https://arxiv.org/abs/2503.06923)：通过从早期 timestep 预测未来特征来加速用于图像和视频合成的 diffusion transformer。
+- [TIDE : Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation](https://arxiv.org/abs/2503.07050)： 构建 temporal-aware sparse autoencoder 解释 DiT 的时间步表征，跟踪不同去噪阶段中可解释概念的出现和演化。
+- [NFIG](https://arxiv.org/abs/2503.07076)：通过 frequency ordering 做 multi-scale autoregressive image generation。
+- [TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models](https://arxiv.org/abs/2503.07389)：面向文本到图像扩散模型中的可靠恶意概念擦除。
+- [SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](https://arxiv.org/abs/2503.07392)： 设计可扩展、精确且高效的扩散概念擦除方法，目标是在大批量概念移除时减少副作用和计算成本。
+- [Aligning Text to Image in Diffusion Models is Easier Than You Think](https://arxiv.org/abs/2503.08250)： 指出文本图像对齐可通过更直接的扩散模型调整实现，重点改善提示词与生成内容的对应，而不是重训完整模型。
+- [Adv-CPG](https://arxiv.org/abs/2503.08269)：为 customized portrait generation 加入 adversarial identity protection，将人像生成与面部隐私控制连接起来。
+- [OminiControl2: Efficient Conditioning for Diffusion Transformers](https://arxiv.org/abs/2503.08280)： 为 diffusion transformer 设计高效条件注入机制，让控制信号以较小额外开销进入 DiT 生成过程。
+- [D3PO: Preference-Based Alignment of Discrete Diffusion Models](https://arxiv.org/abs/2503.08295)：把直接偏好优化扩展到离散扩散模型，为离散视觉生成补充偏好对齐机制。
+- [Robust Latent Matters](https://arxiv.org/abs/2503.08354)： 通过合成采样误差改进图像生成 tokenizer，并检验潜空间鲁棒性是否能预测后续生成质量。
+- [DyArtbank: Diverse artistic style transfer via pre-trained stable diffusion and dynamic style prompt Artbank](https://arxiv.org/abs/2503.08392)：学习 Dynamic Style Prompt ArtBank 存储艺术作品风格信息，并动态引导预训练 Stable Diffusion 生成多样且逼真的风格化图像。
 - [OmniPaint](https://arxiv.org/abs/2503.08677)：通过渐进式成对与非成对扩散训练联合建模对象删除和插入，用于 object-oriented image editing。
+- [NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](https://arxiv.org/abs/2503.09242)：提出桥接式渐进 rectified-flow Transformer，用于高效图像生成。
+- [Unicombine: Unified Multi-Conditional Combination with Diffusion Transformer](https://arxiv.org/abs/2503.09277)：用扩散 Transformer 实现统一多条件组合式图像生成。
+- [Silent Branding Attack: Trigger-free Data Poisoning Attack on Text-to-Image Diffusion Models](https://arxiv.org/abs/2503.09669)： 提出无需触发词的 Silent Branding 数据投毒，使 T2I 扩散模型在正常提示下也倾向生成攻击者指定品牌痕迹。
+- [Exploring Position Encoding in Diffusion U-Net for Training-free High-resolution Image Generation](https://arxiv.org/abs/2503.09830)：把高分辨率伪影归因于 diffusion U-Net 位置编码不一致，并调整位置传播以支持免训练高分辨率生成。
+- [Modeling Thousands of Human Annotators for Generalizable Text-to-Image Person Re-identification](https://arxiv.org/abs/2503.09962)：用 Human Annotator Modeling 让 MLLM 生成的行人描述模仿数千名人工标注者风格，提高 text-to-image ReID 泛化性。
+- [PlanGen: Towards Unified Layout Planning and Image Generation in Auto-Regressive Vision Language Models](https://arxiv.org/abs/2503.10127)： 在自回归视觉语言模型中统一布局规划和图像生成，先预测空间布局再生成视觉内容以提升组合场景控制。
+- [Randomized Parallel Decoding for Autoregressive Image Generation](https://arxiv.org/abs/2503.10568)：用 randomized parallel decoding 加速 autoregressive image generation。
+- [Distilling Diversity and Control in Diffusion Models](https://arxiv.org/abs/2503.10637)：发现蒸馏扩散模型保留多样性方向但过早确定结构，并用 diversity distillation 恢复多样采样且不破坏控制迁移。
+- [Neighboring Autoregressive Modeling for Efficient Visual Generation](https://arxiv.org/abs/2503.10696)：把视觉 token 解码改成从初始 token 向外扩张的 progressive outpainting，通过 next-neighbor prediction 与并行邻域预测利用空间局部性。
+- [FlowTok: Flowing Seamlessly Across Text and Image Tokens](https://arxiv.org/abs/2503.10772)： 统一文本与图像 token 的流式表示，使模型能在两种模态 token 间顺滑切换，用于联合理解与生成。
+- [Flow to the Mode: Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](https://arxiv.org/abs/2503.11056)： 用 mode-seeking diffusion autoencoder 学习更适合生成的图像 token，把扩散编码推向高概率模式以提升 tokenization 质量。
+- [Safe-VAR: Safe Visual Autoregressive Model for Text-to-Image Generative Watermarking](https://arxiv.org/abs/2503.11324)：Safe-VAR 将隐形水印适配到 visual autoregressive T2I，处理扩散水印方法难以覆盖的序列式图像 token。
+- [MoDM](https://arxiv.org/abs/2503.11972)：通过混合扩散模型路由服务图像生成负载，将扩散效率纳入图像生成模型侧问题而非泛化系统指标。
+- [SEAL: Semantic Aware Image Watermarking](https://arxiv.org/abs/2503.12172)：把生成图像的语义信息直接编码进水印，使验证无需长 key dictionary 搜索，同时避免扰动生成分布。
+- [Reflect-DiT: Inference-Time Scaling for Text-to-Image Diffusion Transformers via In-Context Reflection](https://arxiv.org/abs/2503.12271)： 在推理时让 DiT 通过 in-context reflection 自我评估和修正生成轨迹，实现无需额外训练的 T2I compute scaling。
+- [Localized Concept Erasure for Text-to-Image Diffusion Models Using Training-Free Gated Low-Rank Adaptation](https://arxiv.org/abs/2503.12356)： 用免训练 gated LoRA 在局部区域擦除概念，将低秩调制限制在目标位置以减少全局语义损伤。
 - [Personalize Anything](https://arxiv.org/abs/2503.12590)：面向扩散 Transformer 的免训练个性化方法，使用随时间步变化的 token 替换和 patch perturbation。
+- [LATINO-PRO: Latent Consistency Inverse Solver with Prompt Optimization](https://arxiv.org/abs/2503.12615)：把 Latent Consistency Model 嵌入零样本 plug-and-play 逆问题求解器，并用 empirical Bayes marginal likelihood 从观测中自校准文本提示。
+- [UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](https://arxiv.org/abs/2503.12652)： 构建统一图像生成与编辑的通用扩散模型，把生成、局部编辑和指令编辑纳入同一模型接口。
+- [DreamLayer: Simultaneous Multi-Layer Generation via Diffusion Model](https://arxiv.org/abs/2503.12838)：用 context-aware cross-attention、layer-shared self-attention、latent harmonization 和 40 万多层数据集，同时生成透明前景层和背景层。
+- [Reward-Instruct: A Reward-Centric Approach to Fast Photo-Realistic Image Generation](https://arxiv.org/abs/2503.13070)：直接从 reward-tilted parameter distribution 采样更新，把预训练扩散模型转成少步生成器，绕开 diffusion distillation loss 并提升可控性与偏好对齐。
 - [Edit Transfer](https://arxiv.org/abs/2503.13327)：通过视觉上下文关系学习图像编辑，实现编辑行为迁移。
+- [TarPro: Targeted Protection against Malicious Image Editing](https://arxiv.org/abs/2503.13994)：用 semantic-aware constraint 和不可感知扰动生成器保护图像免受恶意 NSFW 编辑，同时尽量保留正常编辑能力。
+- [CRCE: Coreference-Retention Concept Erasure in Text-to-Image Diffusion Models](https://arxiv.org/abs/2503.14232)：利用 LLM 识别需一并擦除的共指概念和应保留的相近概念，从而在 text-to-image diffusion 中更精确地删除不需要的概念。
+- [DiffMoE: Dynamic Token Selection for Scalable Diffusion Transformers](https://arxiv.org/abs/2503.14487)： 通过动态 token selection 扩展 diffusion transformer，只计算关键 token 或专家路径，以改善大模型生成的效率-质量权衡。
+- [Unlocking the Capabilities of Large Vision-Language Models for Generalizable and Explainable Deepfake Detection](https://arxiv.org/abs/2503.14853)： 利用大型视觉语言模型做可解释 deepfake 检测，使检测结果不仅判断真假，还给出可泛化的视觉证据解释。
+- [CAM-Seg: A Continuous-valued Embedding Approach for Semantic Image Generation](https://arxiv.org/abs/2503.15617)：把语义 mask 生成重写为连续 image-to-embedding diffusion，结合 VAE encoder、diffusion-guided autoregressive Transformer 和 VAE decoder。
+- [FreeFlux: Understanding and Exploiting Layer-Specific Roles in RoPE-Based MMDiT for Versatile Image Editing](https://arxiv.org/abs/2503.16153)： 分析 RoPE-based MMDiT 中不同层的编辑功能，并在推理时利用层特异角色实现无需训练的多样图像编辑。
+- [Guardians of Generation: Dynamic Inference-Time Copyright Shielding with Adaptive Guidance for AI Image Generation](https://arxiv.org/abs/2503.16171)：在不重训扩散权重的情况下，通过提示和中间步骤检测、提示改写与 adaptive guidance 做推理时版权屏蔽。
+- [Coarse-to-Fine AR Image Generation](https://arxiv.org/abs/2503.16194)：通过 coarse-to-fine token prediction 改进自回归图像生成。
+- [Bézier Splatting for Fast and Differentiable Vector Graphics](https://arxiv.org/abs/2503.16424)：Bézier Splatting 沿 Bézier 曲线采样 2D Gaussian，实现快速可微 rasterization 与可编辑矢量合成。
+- [Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](https://arxiv.org/abs/2503.16430)： 连接连续与离散视觉 token，用于自回归视觉生成，改进图像生成器的表示接口。
+- [DCEdit: Dual-Level Controlled Image Editing via Precisely Localized Semantics](https://arxiv.org/abs/2503.16795)：通过双层控制实现局部语义图像编辑，强调精确修改而非仅依赖全局提示生成。
+- [Vision-Language Gradient Descent-driven All-in-One Deep Unfolding Networks](https://arxiv.org/abs/2503.16930)：提出 VLU-Net，在 deep unfolding restoration 中使用经退化图文对微调的 VLM，将噪声、模糊和光照等退化描述与图像特征对齐。
+- [HyperLoRA: Parameter-Efficient Adaptive Generation for Portrait Synthesis](https://arxiv.org/abs/2503.16944)：HyperLoRA 为 portrait synthesis 预测自适应 LoRA 参数，使个性化生成避免逐人完整微调。
+- [Follow-Your-Color](https://arxiv.org/abs/2503.16948)：通过 self-play training、instance guider 和细粒度颜色匹配，在单次前向中完成多实例草图上色。
+- [Zero-Shot Styled Text Image Generation, but Make It Autoregressive](https://arxiv.org/abs/2503.17074)： 把零样本文字风格化图像生成改写为自回归过程，使模型逐步生成带有指定字形或风格的视觉文本。
+- [D2C: Unlocking the Potential of Continuous Autoregressive Image Generation with Discrete Tokens](https://arxiv.org/abs/2503.17155)：连接离散 tokenization 与连续自回归图像生成，试图同时获得 AR 建模的可扩展性和连续 latent 表示带来的视觉质量。
+- [CO-SPY: Combining Semantic and Pixel Features to Detect Synthetic Images by AI](https://arxiv.org/abs/2503.18286)：结合语义与像素特征，在生成模型和后处理变化下提升 AI 生成图像检测。
 - [Diffusion-4K](https://arxiv.org/abs/2503.18352)：面向基于潜空间扩散模型的 4K 超高分辨率图像合成。
+- [Panorama Generation From NFoV Image Done Right](https://arxiv.org/abs/2503.18420)： 从窄视场图像生成全景图，重点处理视角扩展、边界连续性和宽视场结构一致性。
+- [Latent Space Super-Resolution for Diffusion Models](https://arxiv.org/abs/2503.18446): 通过潜空间超分辨率提升扩散模型的高分辨率图像生成能力。
+- [InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment](https://arxiv.org/abs/2503.18454)：提出 InPO，用重参数化 DDIM 反演和偏好优化提升扩散模型对齐效率。
+- [FDS: Frequency-Aware Denoising Score for Text-Guided Latent Diffusion Image Editing](https://arxiv.org/abs/2503.19191)：用 wavelet frequency decomposition 将文本引导 latent 编辑限制到特定空间区域和频段，减少意外颜色与细节改动。
+- [ISPDiffuser: Learning RAW-to-sRGB Mappings with Texture-Aware Diffusion Models and Histogram-Guided Color Consistency](https://arxiv.org/abs/2503.19283)：把 RAW-to-sRGB 分为灰度空间中的 texture-aware diffusion 细节恢复，以及 histogram-guided color consistency 映射。
+- [Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing](https://arxiv.org/abs/2503.19385)： 用随机生成和 rollover budget forcing 在推理时扩展 flow model，把计算预算动态分配给更难的生成轨迹。
+- [High-Quality Spatial Reconstruction and Orthoimage Generation Using Efficient 2D Gaussian Splatting](https://arxiv.org/abs/2503.19703)：用高效 2D Gaussian Splatting 生成 true digital orthophotos，替代依赖 DSM 和遮挡检测的传统空间重建流程。
+- [PCM : Picard Consistency Model for Fast Parallel Sampling of Diffusion Models](https://arxiv.org/abs/2503.19731)：Picard Consistency Model 将 Picard iteration 与 consistency objective 结合，用并行去噪加速扩散采样。
+- [Fine-Grained Erasure in Text-To-Image Diffusion-Based Foundation Models](https://arxiv.org/abs/2503.19783)：在文本到图像扩散基础模型中细粒度擦除概念，强化视觉生成模型的安全控制。
+- [Learning 3D Object Spatial Relationships From Pre-Trained 2D Diffusion Models](https://arxiv.org/abs/2503.19914)：利用预训练 2D 扩散模型生成 3D 样本来学习物体间空间关系，更接近 3D/spatial reasoning 边界条目。
+- [Latent Beam Diffusion Models for Generating Visual Sequences](https://arxiv.org/abs/2503.20429)：在扩散 latent space 中执行 beam search，动态采样历史 latent，以提升非线性视觉叙事中的图像序列连贯性。
+- [Dissecting and Mitigating Diffusion Bias via Mechanistic Interpretability](https://arxiv.org/abs/2503.20483)： 用机制可解释性定位扩散偏见来源，并通过干预相关内部方向或模块减轻生成中的偏置。
+- [Unified Multimodal Discrete Diffusion](https://arxiv.org/abs/2503.20853)： 提出统一多模态离散扩散框架，在离散状态空间中共同建模文本、图像等模态以支持跨模态生成。
+- [Toward Generalizable Forgery Detection and Reasoning](https://arxiv.org/abs/2503.21210)：定义 FDR 任务并提出 FakeReasoning，用 12 万图像 MMFR 数据集把 AI 图像检测和 MLLM 伪造属性推理结合起来。
+- [Parametric Shadow Control for Portrait Generation in Text-to-Image Diffusion Models](https://arxiv.org/abs/2503.21943)：Shadow Director 从合成数据中学习隐藏阴影属性，在人像生成时参数化控制阴影形状、位置和强度。
+- [Spatial Transport Optimization by Repositioning Attention Map for Training-Free Text-to-Image Synthesis](https://arxiv.org/abs/2503.22168)：提出 STORM，用免训练 optimal-transport 方法重定位对象 attention map，使 T2I 输出更符合提示中的空间位置。
+- [Imperceptible but Forgeable: Practical Invisible Watermark Forgery via Diffusion Models](https://arxiv.org/abs/2503.22330)：WMCopier 证明隐形图像水印可被伪造到任意图像上，用于检验 provenance 方案的 false attribution 风险。
+- [Semantix: An Energy Guided Sampler for Semantic Style Transfer](https://arxiv.org/abs/2503.22344)：Semantix 定义 semantic style transfer，并用 energy-guided sampler 将参考风格和外观转移到语义对应区域。
+- [Object Isolated Attention for Consistent Story Visualization](https://arxiv.org/abs/2503.23353)：通过隔离对象注意力改进故事可视化，使生成的图像序列在不同场景中保持角色一致。
+- [Investigating Text Insulation and Attention Mechanisms for Complex Visual Text Generation](https://arxiv.org/abs/2503.23461)： 研究复杂视觉文字生成中的 text insulation 和注意力机制，解释如何减少文字内容被背景或对象语义干扰。
+- [Enhancing Creative Generation on Stable Diffusion-based Models](https://arxiv.org/abs/2503.23538)：提出 C3，在 Stable Diffusion 去噪过程中免训练放大特征以增强创造性变化，并给出 amplification factor 选择建议。
+- [Training-Free VAR Image Editing](https://arxiv.org/abs/2503.23897)：使用视觉自回归模型进行免训练文本引导图像编辑。
+- [HumanAesExpert](https://arxiv.org/abs/2503.23907)：构建面向 human image aesthetic assessment 的多模态 foundation model，为人像生成与编辑质量评价提供模型线索。
+- [Consistent Subject Generation via Contrastive Instantiated Concepts](https://arxiv.org/abs/2503.24387)：提出 CoCoIns，将 latent code 映射成可复用 pseudo-word 来表示实例化概念，使多次独立文生图在无需逐主体微调时仍保持同一主体。
+- [LayerCraft: Enhancing Text-to-Image Generation with CoT Reasoning and Layered Object Integration](https://arxiv.org/abs/2504.00010)： 让 T2I 模型通过 CoT 推理规划对象层，再进行分层对象整合，以提升复杂场景中的空间与语义一致性。
+- [TurboFill: Adapting Few-step Text-to-image Model for Fast Image Inpainting](https://arxiv.org/abs/2504.00996)：在 few-step DMD2 文生图模型上训练 inpainting adapter，并用三步对抗训练保证快速修补区域的真实感、结构一致性和视觉协调。
+- [IntrinsiX: High-Quality PBR Generation using Image Priors](https://arxiv.org/abs/2504.01008)：利用图像先验生成可编辑的 PBR intrinsic maps，支持重光照、材质编辑和纹理生成。
+- [ATA: Adaptive Transformation Agent for Text-Guided Subject-Position Variable Background Inpainting](https://arxiv.org/abs/2504.01603)：定义 subject-position-variable background inpainting，并用 PosAgent block 预测前景位移，使保留主体与新生成背景更协调。
 - [Implicit Bias Injection Attacks](https://arxiv.org/abs/2504.01819)：展示文本到图像扩散模型如何被引导注入隐性偏见，为生成模型的模型侧安全与鲁棒性提供依据。
+- [ILLUME+: Illuminating Unified MLLM with Dual Visual Tokenization and Diffusion Refinement](https://arxiv.org/abs/2504.01934)：模型侧方法候选，Unified MLLM using dual visual tokenization and diffusion refinement.
+- [Random Conditioning with Distillation for Data-Efficient Diffusion Model Compression](https://arxiv.org/abs/2504.02011)：通过随机条件与蒸馏压缩扩散模型，在减少数据需求的同时尽量保留条件生成行为。
+- [Fine-Tuning Visual Autoregressive Models for Subject-Driven Generation](https://arxiv.org/abs/2504.02612)： 针对 subject-driven generation 微调视觉自回归模型，使参考主体身份能在新提示和新场景中保持一致。
+- [RoSMM: A Robust and Secure Multi-Modal Watermarking Framework for Diffusion Models](https://arxiv.org/abs/2504.02640)：为扩散模型加入多模态水印框架，用稳健且安全的水印信号保护生成图像。
+- [Comprehensive Relighting](https://arxiv.org/abs/2504.03011)：面向可泛化的单目人物 relighting 与 harmonization，为图像生成工作流补充可控光照编辑模型。
+- [FaR: Enhancing Multi-Concept Text-to-Image Diffusion via Concept Fusion and Localized Refinement](https://arxiv.org/abs/2504.03292)：结合 Concept Fusion 数据增强和 Localized Refinement loss，减少多概念 T2I 个性化中的过拟合与属性泄漏。
+- [TabRep: Training Tabular Diffusion Models with a Simple and Effective Continuous Representation](https://arxiv.org/abs/2504.04798)：用受数据流形几何启发的统一连续表示训练表格扩散模型，是非图像生成模型的迁移候选。
+- [From Specificity to Generality: Revisiting Generalizable Artifacts in Detecting Face Deepfakes](https://arxiv.org/abs/2504.04827)：重新梳理多类人脸 deepfake 生成器共享的伪造痕迹，并提出更通用的合成人脸溯源检测框架。
+- [Parasite: A Steganography-based Backdoor Attack Framework for Diffusion Models](https://arxiv.org/abs/2504.05815)：用隐写术隐藏 image-to-image 扩散后门触发器，并把目标内容本身嵌入为触发信号，提高后门攻击的隐蔽性和灵活性。
+- [A Training-Free Style-aligned Image Generation with Scale-wise Autoregressive Model](https://arxiv.org/abs/2504.06144)：使用 scale-wise autoregressive model 做免训练 style-aligned generation，在无需额外微调的情况下保持风格一致性。
+- [HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance](https://arxiv.org/abs/2504.06232)： 用 flow-aligned guidance 免训练生成高分辨率图像，在采样阶段校正 flow 轨迹以提升细节和稳定性。
+- [OmniSVG: A Unified Scalable Vector Graphics Generation Model](https://arxiv.org/abs/2504.06263)：把 SVG 命令和坐标参数化为离散 token，并利用 VLM 先验生成结构化、可编辑的 SVG，超出简单图标合成。
+- [Matters: Training-free Fine-grained Image Caption Enhancement via Local Perception](https://arxiv.org/abs/2504.06666)：通过 divide-then-aggregate 的 patch perception 策略增强长图像描述，主要服务生成数据质量而非提出新生成器。
+- [Compass Control: Multi Object Orientation Control for Text-to-Image Generation](https://arxiv.org/abs/2504.06752)：把每个物体的三维朝向编码为 orientation-aware compass token 条件，使多物体文生图能显式控制各物体朝向。
+- [DyDiT++: Diffusion Transformers With Timestep and Spatial Dynamics for Efficient Visual Generation](https://arxiv.org/abs/2504.06803)： 在 diffusion transformer 中同时建模时间步动态和空间动态，使模型按去噪阶段与图像区域自适应分配计算。
+- [PDE Diffusion Inverse Problems](https://arxiv.org/abs/2504.07437)：通过 PDE 统一并扩展 diffusion models 来求解 inverse problems。
+- [PIDSR: Complementary Polarized Image Demosaicing and Super-Resolution](https://arxiv.org/abs/2504.07758)：联合处理偏振图像 demosaicing 与超分辨率，减少 CPFA 重建伪影对 DoP 和 AoP 等偏振参数的误差放大。
+- [PixelFlow: Pixel-Space Generative Models with Flow](https://arxiv.org/abs/2504.07963)： 把 flow-based generative modeling 直接放在像素空间中，减少对潜变量编码器的依赖并保留细粒度图像细节。
+- [GigaTok: Scaling Visual Tokenizers to 3 Billion Parameters for Autoregressive Image Generation](https://arxiv.org/abs/2504.08736)： 将视觉 tokenizer 扩展到十亿参数级，用于自回归图像生成，强化离散视觉生成器的 tokenizer 基座。
 - [Sculpting Memory](https://arxiv.org/abs/2504.09039)：通过动态掩码与概念感知优化实现扩散模型的多概念遗忘。
+- [FractalForensics: Proactive Deepfake Detection and Localization via Fractal Watermarks](https://arxiv.org/abs/2504.09451)：用分形水印进行主动式深度伪造检测与定位，为生成图像提供更可解释的溯源信号。
+- [MonoDiff9D: Monocular Category-Level 9D Object Pose Estimation via Diffusion Model](https://arxiv.org/abs/2504.10433)：用扩散生成单目类别级 9D 物体姿态，结合 DINOv2 粗深度、点云特征、图像特征和时间步条件。
 - [PT-Mark](https://arxiv.org/abs/2504.10853)：通过语义感知的关键调优在文本到图像扩散模型中嵌入隐形水印。
 - [Seedream 3.0](https://arxiv.org/abs/2504.11346)：中英双语图像生成基础模型报告，覆盖数据构建、混合分辨率训练、跨模态 RoPE、奖励模型后训练和加速。
+- [Flux Already Knows - Activating Subject-Driven Image Generation without Training](https://arxiv.org/abs/2504.11478)： 激活 FLUX 内部已有的主体表征来做 subject-driven generation，无需额外训练即可保持参考主体身份。
+- [PCDiff: Proactive Control for Ownership Protection in Diffusion Models with Watermark Compatibility](https://arxiv.org/abs/2504.11774)：在扩散 decoder 中加入 trainable fuser 与层级认证模块，用加密凭据控制访问；无授权时主动降低生成质量，同时保持与水印方案兼容。
+- [WaterFlow: Learning Fast & Robust Watermarks using Stable Diffusion](https://arxiv.org/abs/2504.12354)：利用 Stable Diffusion 学习快速且稳健的图像水印，把溯源信号绑定到生成器，而不是只依赖事后水印嵌入。
+- [InstantCharacter: Personalize Any Characters with a Scalable Diffusion Transformer Framework](https://arxiv.org/abs/2504.12395)： 用可扩展 diffusion transformer 框架进行角色个性化，使任意角色在多姿态和多场景下保持外观一致。
 - [SmartFreeEdit](https://arxiv.org/abs/2504.12704)：免 mask 的指令式图像编辑模型，结合 MLLM、区域感知 token、推理式分割和超图增强 inpainting。
+- [Mask Image Watermarking](https://arxiv.org/abs/2504.12739)：提出 MaskWM-D 和 MaskWM-ED，用 mask-guided decoding 支持全局嵌入、水印定位以及局部稳健提取。
+- [Set You Straight: Auto-Steering Denoising Trajectories to Sidestep Unwanted Concepts](https://arxiv.org/abs/2504.12782)： 自动 steering 去噪轨迹以绕开不想要的概念，在采样过程中抑制负面语义而尽量保留原始提示内容。
+- [UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](https://arxiv.org/abs/2504.13109)： 面向 flow model 重新设计 inversion 与编辑流程，使真实图像可被反演到 flow 轨迹并进行文本或局部编辑。
+- [Personalized Text-to-Image Generation with Auto-Regressive Models](https://arxiv.org/abs/2504.13162)：把个性化生成扩展到 autoregressive T2I，通过离散视觉 token 生成适配参考主体。
+- [IMAGGarment](https://arxiv.org/abs/2504.13176)：以轮廓、颜色和 logo 位置等细粒度条件控制服装图像生成。
+- [ESPLoRA: Enhanced Spatial Precision with Low-Rank Adaption in Text-to-Image Diffusion Models for High-Definition Synthesis](https://arxiv.org/abs/2504.13745)：用从 LAION-400M 挖掘的空间显式提示微调 T2I LoRA，在不增加生成时模块的情况下提升对象位置和布局一致性。
+- [DanceText: A Training-Free Layered Framework for Controllable Multilingual Text Transformation in Images](https://arxiv.org/abs/2504.14108)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [PVLM: Parsing-Aware Vision-Language Model With Dynamic Contrastive Learning for Zero-Shot Deepfake Attribution](https://arxiv.org/abs/2504.14129)：结合人脸 parsing、文本线索和 dynamic contrastive learning，对未见高级生成器产生的伪造人脸做 zero-shot attribution。
+- [Any Image Restoration via Efficient Spatial-Frequency Degradation Adaptation](https://arxiv.org/abs/2504.14249)：通过 spatial-frequency degradation adaptation 实现 all-in-one 图像复原，在不依赖大语言模型的情况下统一多种退化复原任务。
+- [Towards NSFW-Free Text-to-Image Generation via Safety-Constraint Direct Preference Optimization](https://arxiv.org/abs/2504.14290)：提出 LibraAlign-100K 与 T2I-SPO，把 DPO 扩展为同时优化安全和质量的复合奖励，以减少 NSFW 内容而不牺牲生成质量。
+- [3D Gaussian Head Avatars with Expressive Dynamic Appearances by Compact Tensorial Representations](https://arxiv.org/abs/2504.14967)：用紧凑 tensorial representation 编码 3D Gaussian 的动态纹理属性，降低 expressive head-avatar synthesis 的存储和运行开销。
+- [GIFDL: Generated Image Fluctuation Distortion Learning for Enhancing Steganographic Security](https://arxiv.org/abs/2504.15139)：从一组高度相似生成 cover image 的 fluctuation 中学习隐写 distortion，利用生成图像波动性提升隐写安全性。
+- [DSPO](https://arxiv.org/abs/2504.15176)：将 direct semantic preference optimization 用于真实图像超分，补充图像修复与增强中的偏好优化路线。
+- [Manifold Biases for Generated-Image Detection](https://arxiv.org/abs/2504.15470)：研究零样本和少样本生成图像检测中的流形诱导偏差。
+- [Joint Image-Feature Synthesis](https://arxiv.org/abs/2504.16064)：通过 joint image-feature synthesis 增强 generative image modeling。
+- [From Reflection to Perfection: Scaling Inference-Time Optimization for Text-to-Image Diffusion Models via Reflection Tuning](https://arxiv.org/abs/2504.16080)：用反思调优扩展文生图扩散模型的推理时优化。
+- [Token-Shuffle: Towards High-Resolution Image Generation with Autoregressive Models](https://arxiv.org/abs/2504.17789)： 通过 token shuffle 让自回归模型处理高分辨率图像 token，缓解固定扫描顺序造成的长程依赖和效率问题。
 - [REED-VAE](https://arxiv.org/abs/2504.18989)：将生成结果重新编码到 VAE 潜空间，训练扩散模型进行迭代式图像编辑。
-- [In-Context Edit](https://arxiv.org/abs/2504.20690)：提出面向图像生成与编辑的模型侧方法，核心围绕 Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer。
+- [GenPTW: Latent Image Watermarking for Provenance Tracing and Tamper Localization](https://arxiv.org/abs/2504.19567)：GenPTW 在 latent 空间嵌入图像水印，同时服务 provenance tracing 和 tamper localization。
+- [RepText: Rendering Visual Text via Replicating](https://arxiv.org/abs/2504.19724)：通过复制机制改进视觉文字渲染，服务于图像生成中的文本生成能力。
+- [CompleteMe: Reference-Based Human Image Completion](https://arxiv.org/abs/2504.20042)：用 dual U-Net 和 Region-focused Attention block 从参考图中提取衣物纹理与配饰细节，完成缺失人体图像。
+- [Forging and Removing Latent-Noise Diffusion Watermarks Using a Single Image](https://arxiv.org/abs/2504.20111)：研究只用单张图像伪造或移除 latent-noise diffusion watermark 的攻击，检验无需模型内部信息的水印安全性。
+- [Any-Subset Autoregressive Models](https://arxiv.org/abs/2504.20456)：用 principled parallel sampling 与 speculative decoding 恢复 any-subset autoregressive generation。
+- [In-Context Edit](https://arxiv.org/abs/2504.20690)：利用大规模 DiT 的 in-context generation 能力做指令式编辑，无需改架构，只做少量参数高效微调，并用 VLM 在推理时筛选高质量噪声样本。
+- [Yo'Chameleon](https://arxiv.org/abs/2504.20998)：通过 soft-prompt tuning 从少量主体图像中个性化多模态生成，同时支持主体相关 QA 和在新图像语境中重建视觉细节。
+- [Capturing Conditional Dependence via Auto-regressive Diffusion Models](https://arxiv.org/abs/2504.21314)：用 auto-regressive diffusion 捕捉条件依赖，面向输出必须反映结构化条件关系的生成任务。
+- [Improving Editability in Image Generation with Layer-wise Memory](https://arxiv.org/abs/2505.01079)：把前序编辑的 latent feature 和 prompt embedding 存入 layer-wise memory，并用背景一致性 guidance 支持连续编辑时保留已有修改。
+- [SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing](https://arxiv.org/abs/2505.02370)： 修正指令式图像编辑的监督信号，清理或重构训练对，使编辑模型更准确执行指令并减少无关区域变化。
+- [MUSAR: Exploring Multi-Subject Customization from Single-Subject Dataset via Attention Routing](https://arxiv.org/abs/2505.02823)：用 debiased diptych learning、双分支 LoRA 和动态 attention routing，从单主体数据学习多主体定制并减少主体属性纠缠。
+- [Dataset Copyright Evasion Attack](https://arxiv.org/abs/2505.02824)：研究针对个性化文生图扩散模型的数据集版权规避攻击，补充视觉生成模型侧的安全与鲁棒性压力测试。
+- [No Other Representation Component Is Needed: Diffusion Transformers Can Provide Representation Guidance by Themselves](https://arxiv.org/abs/2505.02831)： 利用 DiT 自身表示作为 guidance，不再额外接入外部表征模型，从内部特征中提取生成控制信号。
+- [Not All Parameters Matter: Masking Diffusion Models for Enhancing Generation Ability](https://arxiv.org/abs/2505.03097)：分析 U-Net 参数在不同扩散时间段对去噪的贡献，并在特定阶段 mask 低效参数，以区分结构生成和细节合成。
+- [PiCo: Enhancing Text-Image Alignment with Improved Noise Selection and Precise Mask Control in Diffusion Models](https://arxiv.org/abs/2505.03203)：加入免训练 noise selection 和 referring-mask control，改善复杂提示下组合式扩散生成的文本图像对齐。
 - [Safer Prompts](https://arxiv.org/abs/2505.03338)：通过提示侧缓解机制降低视觉生成式 AI 的知识产权风险。
+- [Deepfakes on Demand: The rise of accessible non-consensual deepfake image generators](https://arxiv.org/abs/2505.03859)：审计 Hugging Face 和 Civitai 元数据，发现近 3.5 万个公开 deepfake model variant，自 2022 年 11 月以来下载约 1500 万次。
 - [Multi-turn Consistent Image Editing](https://arxiv.org/abs/2505.04320)：使用 flow-matching inversion、双目标 LQR 采样和自适应 attention highlighting，降低迭代编辑中的误差累积。
+- [Learning Real Facial Concepts for Independent Deepfake Detection](https://arxiv.org/abs/2505.04460)：学习 real facial concepts 做独立 deepfake 检测，把真实身份线索与生成器特定伪影分开以提升跨方法泛化。
+- [Mogao: An Omni Foundation Model for Interleaved Multi-Modal Generation](https://arxiv.org/abs/2505.05472)：模型侧方法候选，Omni foundation model for interleaved multimodal generation.
+- [MonetGPT: Solving Puzzles Enhances MLLMs' Image Retouching Skills](https://arxiv.org/abs/2505.06176)：通过 puzzle-style training 教 MLLM 评价原始照片、提出程序化修图方案，并调用预置图像操作完成 retouching。
+- [HDGlyph: A Hierarchical Disentangled Glyph-Based Framework for Long-Tail Text Rendering in Diffusion Models](https://arxiv.org/abs/2505.06543)：HDGlyph 用层次化 glyph disentanglement 改善扩散图像中的长尾文字渲染，使稀有字符和布局更清晰。
+- [KDC-Diff: A Latent-Aware Diffusion Model with Knowledge Retention for Memory-Efficient Image Generation](https://arxiv.org/abs/2505.06995)：用简化 U-Net、双层知识蒸馏和 latent-space replay continual learning 降低文生图扩散计算量，同时保持生成质量。
+- [Generative Pre-trained Autoregressive Diffusion Transformer](https://arxiv.org/abs/2505.07344)：GPDiT 在连续潜空间中结合自回归未来帧预测和扩散损失，并加入轻量 causal attention 与旋转式时间条件以提升长程视觉生成效率。
+- [Unified Continuous Generative Models](https://arxiv.org/abs/2505.07447)：统一扩散、流匹配与一致性模型等连续生成模型的训练和采样，并在标准图像生成基准上验证效果。
+- [PosterO](https://arxiv.org/abs/2505.07843)：通过结构化 layout tree 让语言模型完成内容感知的泛化视觉版式生成。
+- [Improving Data Fidelity via Diffusion Model-based Correction and Super-Resolution](https://arxiv.org/abs/2505.08526)：先用 imbalanced stochastic editing 做扩散式低分辨率校正，再用级联条件扩散超分辨率提升科学与气候数据保真度。
+- [SPAST: Arbitrary style transfer with style priors via pre-trained large-scale model](https://arxiv.org/abs/2505.08695)：通过 local-global window stylization 模块和 style-prior loss 加速任意风格迁移，在使用预训练大模型时更好保留内容结构。
+- [MixBridge: Heterogeneous Image-to-Image Backdoor Attack through Mixture of Schrödinger Bridges](https://arxiv.org/abs/2505.08809)：研究 diffusion Schrödinger bridge 图像到图像模型中的异构后门触发器，通过 poisoned image pairs 训练注入后门而不是修改 SDE。
+- [IntrinsicEdit](https://arxiv.org/abs/2505.08889)：在 intrinsic representation space 中进行精确生成式图像编辑。
 - [BLIP3-o](https://arxiv.org/abs/2505.09568)：开放统一多模态模型族，用扩散 Transformer 生成 CLIP 图像特征，并结合顺序预训练和高质量指令数据。
+- [LightLab](https://arxiv.org/abs/2505.09608)：用扩散模型控制图像光源，补充具有物理意义的图像编辑控制轴。
+- [Exploring the Deep Fusion of Large Language Models and Diffusion Transformers for Text-to-Image Synthesis](https://arxiv.org/abs/2505.10046)： 探索大语言模型与 diffusion transformer 的深度融合，让语言推理能力更早参与 T2I 合成而非只作为文本编码器。
+- [Style Customization of Text-to-Vector Generation with Image Diffusion Priors](https://arxiv.org/abs/2505.10558)：借助 image diffusion priors 定制 text-to-vector generation 的风格，同时保持输出为可编辑矢量而非纯 raster 图像。
+- [3D-Fixup: Advancing Photo Editing with 3D Priors](https://arxiv.org/abs/2505.10566)：利用 3D 先验改进照片编辑，为图像编辑加入几何感知控制。
+- [Text-Image Collaborative Erasing](https://arxiv.org/abs/2505.11131)：结合文本与图像证据从文本到图像扩散模型中擦除不良概念，同时尽量保持良性可用性。
+- [Diffusion-NPO: Negative Preference Optimization for Better Preference Aligned Generation of Diffusion Models](https://arxiv.org/abs/2505.11245)： 将负偏好优化用于扩散模型，提升视觉生成的偏好对齐能力。
+- [A Fourier Space Perspective on Diffusion Models](https://arxiv.org/abs/2505.11278)：从傅里叶空间分析扩散模型，说明 DDPM 加性白噪声会更早破坏高频信号的 SNR，并解释反向扩散为何先形成低频结构再补足高频细节。
+- [Decomposing stimulus-specific sensory neural information via diffusion models](https://arxiv.org/abs/2505.11309)：用扩散模型分解 stimulus-specific sensory neural information，是神经科学分析边界项而非视觉生成器。
+- [PSDiffusion: Harmonized Multi-Layer Image Generation via Layout and Appearance Alignment](https://arxiv.org/abs/2505.11468)： 通过布局和外观对齐协调多层图像生成，使前景、背景和层间关系在合成图中保持一致。
+- [Bootstrapping Diffusion: Diffusion Model Training Leveraging Partial and Corrupted Data](https://arxiv.org/abs/2505.11825)：把低分辨率图像、短视频等互补 partial view 用于扩散训练，先拟合各视图模型再 bootstrap 完整数据模型。
+- [Measurement Score-Based Diffusion Model](https://arxiv.org/abs/2505.11853)：只用 noisy 和 subsampled measurements 学习 partial measurement score，并随机组合这些 score 来生成完整图像或求解逆问题。
+- [Training Latent Diffusion Models with Interacting Particle Algorithms](https://arxiv.org/abs/2505.12412)：用 interacting particle algorithms 训练 latent diffusion，让轨迹之间交互而非独立更新以改善生成训练动态。
+- [DragLoRA: Online Optimization of LoRA Adapters for Drag-based Image Editing in Diffusion Model](https://arxiv.org/abs/2505.12427)：为拖拽式扩散编辑在线优化 LoRA adapter，结合 denoising score distillation 和更一致的点跟踪，而不是直接修改 DDIM inversion 特征。
+- [Degradation-Aware Feature Perturbation](https://arxiv.org/abs/2505.12630)：DFPIR 用 channel-wise 与 attention-wise 退化感知扰动调节特征空间，缓解统一图像复原模型中的多任务梯度干扰。
+- [CURE: Concept Unlearning via Orthogonal Representation Editing in Diffusion Models](https://arxiv.org/abs/2505.12677)：通过正交表示编辑在扩散模型中遗忘指定概念，服务于更安全、更可控的视觉生成。
+- [SounDiT: Geo-Contextual Soundscape-to-Landscape Generation](https://arxiv.org/abs/2505.12734)：用 sound 和 geo-context 条件化的 DiT 从环境声景合成地理一致的景观图像，并配套 SoundingSVI 与 SonicUrban 数据集。
+- [OmniStyle](https://arxiv.org/abs/2505.14028)：面向 visual generation and editing 大规模过滤 high-quality style-transfer data。
+- [UniGen: Enhanced Training & Test-Time Strategies for Unified Multimodal Understanding and Generation](https://arxiv.org/abs/2505.14682)：结合训练与测试时策略统一多模态理解和生成，缩短理解能力与合成能力之间的距离。
 - [BAGEL](https://arxiv.org/abs/2505.14683)：decoder-only 统一多模态预训练模型，用交错文本、图像、视频和网页数据训练，支持推理、生成和图像操作。
+- [FaceCrafter: Identity-Conditional Diffusion with Disentangled Control over Facial Pose, Expression, and Emotion](https://arxiv.org/abs/2505.15313)：在 identity-conditional diffusion 的 cross-attention 中加入轻量控制模块，使姿态、表情和情绪可独立调节且保持身份。
+- [Responsible Diffusion Models via Constraining Text Embeddings within Safe Regions](https://arxiv.org/abs/2505.15427)：在文本 embedding 空间中发现安全语义方向，并把提示约束在安全区域内，以减少 NSFW 和偏见输出而无需完整微调扩散模型。
+- [IA-T2I: Internet-Augmented Text-to-Image Generation](https://arxiv.org/abs/2505.15779)：IA-T2I 将互联网检索接入文生图流程，为需要具体或最新细节的提示提供外部图文证据。
+- [Style Transfer with Diffusion Models for Synthetic-to-Real Domain Adaptation](https://arxiv.org/abs/2505.16360)：用扩散式风格迁移缩小合成到真实的域差距，结合 class-wise adaptive instance normalization、cross-attention 和 selective attention filtering 保持语义一致。
+- [One-Step Diffusion Image Compression](https://arxiv.org/abs/2505.16687)：用语义蒸馏实现一步扩散式图像压缩。
+- [REPA Works Until It Doesn't: Early-Stopped, Holistic Alignment Supercharges Diffusion Training](https://arxiv.org/abs/2505.16792)： 分析 REPA 表征对齐何时失效，并用 early-stopped holistic alignment 改进扩散训练的收敛和生成质量。
+- [Guided Diffusion Sampling on Function Spaces with Applications to PDEs](https://arxiv.org/abs/2505.17004)：用 neural operator 架构训练离散化无关的 function-space diffusion model，并以 plug-and-play guidance 求解稀疏观测 PDE 逆问题。
+- [When Are Concepts Erased From Diffusion Models?](https://arxiv.org/abs/2505.17013)：研究扩散模型概念擦除方法何时真正移除概念，为安全图像生成与编辑提供参考。
+- [Delving into RL for Image Generation with CoT: A Study on DPO vs. GRPO](https://arxiv.org/abs/2505.17017)：模型侧方法候选，Study of DPO and GRPO for chain-of-thought-style reinforcement learning in image generation.
+- [TextFlux: An OCR-Free DiT Model for High-Fidelity Multilingual Scene Text Synthesis](https://arxiv.org/abs/2505.17778)：用无需 OCR encoder 的 DiT 框架生成多语言场景文字，依赖扩散模型自身的上下文推理来兼顾字形准确和场景融合。
+- [RestoreVAR](https://arxiv.org/abs/2505.18047)：用视觉自回归生成完成一体化图像恢复，将生成式图像编辑扩展到恢复任务。
+- [OmniConsistency: Learning Style-Agnostic Consistency from Paired Stylization Data](https://arxiv.org/abs/2505.18445)：从成对风格化数据中学习风格无关一致性，服务于图像编辑一致性。
+- [Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter](https://arxiv.org/abs/2505.18612)： 提出免调参 modulation adapter，在多概念个性化中调制不同主体或风格概念，避免逐概念训练。
+- [Towards Generalized Proactive Defense against Face Swapping with Contour-Hybrid Watermark](https://arxiv.org/abs/2505.19081)：用 contour-hybrid watermark 主动防御 face swapping，目标是在未知换脸方法下仍保持保护效果。
+- [Enhancing Text-to-Image Diffusion Transformer via Split-Text Conditioning](https://arxiv.org/abs/2505.19261)：通过拆分文本条件增强文本到图像扩散 Transformer。
+- [HF-VTON: High-Fidelity Virtual Try-On via Consistent Geometric and Semantic Alignment](https://arxiv.org/abs/2505.19638)：在不同姿态下同时对齐服装几何和语义，使虚拟试穿保留衣物结构、纹理和细节。
+- [DiSA: Diffusion Step Annealing in Autoregressive Image Generation](https://arxiv.org/abs/2505.20297)：在自回归图像生成中 anneal diffusion steps，对后期约束更强的 token 使用更少扩散步以提升推理效率。
+- [Integrating Intermediate Layer Optimization and Projected Gradient Descent for Solving Inverse Problems with Diffusion Models](https://arxiv.org/abs/2505.20789)：在 DMILO 与 DMILO-PGD 中结合 intermediate layer optimization 和 projected gradient descent，降低内存负担并改善扩散逆问题收敛。
+- [Rendering-Aware Reinforcement Learning for Vector Graphics Generation](https://arxiv.org/abs/2505.20793)：以渲染图像反馈训练生成 SVG 的视觉语言模型，提高矢量图形保真度。
+- [Create Anything Anywhere: Layout-Controllable Personalized Diffusion Model for Multiple Subjects](https://arxiv.org/abs/2505.20909)：通过 layout-controllable personalized diffusion 控制多主体位置，同时保持每个概念的身份一致性。
+- [Conditional Diffusion Models with Classifier-Free Gibbs-like Guidance](https://arxiv.org/abs/2505.21101)：指出标准 classifier-free guidance 在低噪声处未必对应良定义扩散模型，并提出 Gibbs-like guidance 改善条件生成的质量与多样性权衡。
+- [DetailFlow: 1D Coarse-to-Fine Autoregressive Image Generation via Next-Detail Prediction](https://arxiv.org/abs/2505.21473)： 通过由粗到细的下一细节预测进行自回归图像生成，补充细节渐进式视觉生成路线。
+- [DiffDecompose: Layer-Wise Decomposition of Alpha-Composited Images via Diffusion Transformers](https://arxiv.org/abs/2505.21541)： 用 diffusion transformer 分解 alpha-composited 图像，恢复图层、透明度和遮挡关系，使生成结果天然可编辑。
+- [What is Adversarial Training for Diffusion Models?](https://arxiv.org/abs/2505.21742)：把扩散模型中的 adversarial training 重解释为 equivariance 与 flow smoothness 约束，在不假设噪声模型的情况下提升对异常值、脏数据和记忆化的鲁棒性。
+- [One-Way Ticket: Time-Independent Unified Encoder for Distilling Text-to-Image Diffusion Models](https://arxiv.org/abs/2505.21960)：用时间无关共享编码器和时间特定解码器蒸馏文生图扩散模型，减少 U-Net 编码器重复计算并保持少步生成质量。
+- [D-Fusion](https://arxiv.org/abs/2505.22002)：将直接偏好优化用于扩散模型，使生成样本围绕视觉一致性进行对齐。
 - [Rhetorical Text-to-Image Generation](https://arxiv.org/abs/2505.22792)：使用两层扩散策略优化，使文本到图像模型能呈现修辞提示中的隐含意义。
+- [FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](https://arxiv.org/abs/2505.23145)： 用 trajectory regularization 做免反演 flow-based editing，让编辑轨迹贴近源图像结构并减少反演误差。
+- [KGMark: A Diffusion Watermark for Knowledge Graphs](https://arxiv.org/abs/2505.23873)：KGMark 将扩散水印用于知识图谱，是图数据 provenance 方法而非生成图像模型。
+- [EasyText: Controllable Diffusion Transformer for Multilingual Text Rendering](https://arxiv.org/abs/2505.24417)： 构建可控 DiT 多语言场景文字渲染模型，显式处理文字内容、位置和语言脚本的高保真合成。
+- [Reason-SVG: Hybrid Reward RL for Aha-Moments in Vector Graphics Generation](https://arxiv.org/abs/2505.24499)：把混合奖励强化学习用于矢量图生成，提升 SVG 结构质量与语义对齐。
+- [ReasonGen-R1: CoT for Autoregressive Image generation models through SFT and RL](https://arxiv.org/abs/2505.24875)： 通过 SFT 和 RL 为自回归图像生成模型加入 CoT 推理，使模型先规划视觉内容再逐步生成。
+- [RelDiff: Relational Data Generative Modeling with Graph-Based Diffusion Models](https://arxiv.org/abs/2506.00710)：RelDiff 用 graph-based diffusion 生成 relational data，属于结构化数据生成而非图像生成。
+- [Breaking Latent Prior Bias in Detectors for Generalizable AIGC Image Detection](https://arxiv.org/abs/2506.00874)： 分析 AIGC 图像检测中的 latent prior bias，并通过削弱检测器对生成先验捷径的依赖提升跨模型泛化。
+- [Autoregressive Images Watermarking through Lexical Biasing: An Approach Resistant to Regeneration Attack](https://arxiv.org/abs/2506.01011)： 在自回归图像 token 生成中施加 lexical bias 水印，使水印在再生成攻击后仍可被检测。
+- [Ultra-High-Resolution Image Synthesis: Data, Method and Evaluation](https://arxiv.org/abs/2506.01331)：提供 Aesthetic-4K 与 Diffusion-4K，用 scale-consistent VAE 和 wavelet-based latent fine-tuning 支持直接 4K 图像生成与评测。
+- [NoiseAR: AutoRegressing Initial Noise Prior for Diffusion Models](https://arxiv.org/abs/2506.01337)：学习自回归、可控的扩散初始噪声先验，用结构化 prior 替代固定 Gaussian 起点并承载外部控制。
+- [DNAEdit: Direct Noise Alignment for Text-Guided Rectified Flow Editing](https://arxiv.org/abs/2506.01430)： 提出 direct noise alignment，将文本引导编辑约束直接对齐到 rectified flow 的噪声轨迹，减少反演和重建误差。
+- [Guiding Registration with Emergent Similarity from Pre-Trained Diffusion Models](https://arxiv.org/abs/2506.02419)：把现成扩散特征作为 deformable medical image registration 的语义相似性度量，在 intensity loss 失效时对齐对应结构。
+- [RelationAdapter: Learning and Transferring Visual Relation with Diffusion Transformers](https://arxiv.org/abs/2506.02528)： 学习可迁移视觉关系 adapter，把对象关系知识注入 diffusion transformer，使新场景中空间和语义关系更稳定。
+- [Smoothed Preference Optimization via ReNoise Inversion for Aligning Diffusion Models with Varied Human Preferences](https://arxiv.org/abs/2506.02698)：针对不同人类偏好改进文本到图像扩散模型的偏好优化。
+- [Native-Resolution Image Synthesis](https://arxiv.org/abs/2506.03131)：提出 Native-resolution diffusion Transformer，用可变长度视觉 token 建模任意分辨率和长宽比，避免固定方图生成约束。
+- [Sampling Preferences Yields Simple Trustworthiness Scores](https://arxiv.org/abs/2506.03399)：通过 sampling preferences 构造简单 trustworthiness score，把偏好波动作为生成或多模态系统的不确定性信号。
+- [A Data-Driven Diffusion-based Approach for Audio Deepfake Explanations](https://arxiv.org/abs/2506.03425)：用 diffusion-based 方法生成或解释 audio deepfake 证据，是音频取证边界项。
+- [Diffusion-Based Priors for Inverse Problems](https://arxiv.org/abs/2506.03979)：通过 diffusion priors 上的 approximation-free ensemble sampling 求解 inverse problems。
+- [HMAR: Efficient Hierarchical Masked Auto-Regressive Image Generation](https://arxiv.org/abs/2506.04421)：用层级 masked generation 重写视觉自回归，避免每个尺度一次性并行预测全部 token，降低序列成本并支持更灵活的采样日程。
+- [Text-Aware Real-World Image Super-Resolution via Diffusion Model with Joint Segmentation Decoders](https://arxiv.org/abs/2506.04641)：提出 TADiSR，把 text-aware attention 与联合分割解码器结合，并合成全图文字 mask，使真实图像超分辨率保留文字结构。
+- [Multi-scale Image Super Resolution with a Single Auto-Regressive Model](https://arxiv.org/abs/2506.04990)：用 VAR 式下一尺度 latent 残差预测完成图像超分辨率，让单一自回归模型覆盖多个输出尺度而非固定分辨率。
+- [AliTok: Towards Sequence Modeling Alignment between Tokenizer and Autoregressive Model](https://arxiv.org/abs/2506.05289)： 对齐 tokenizer 序列建模与自回归生成，改进离散 token 图像生成流水线。
+- [FocusDiff: Advancing Fine-Grained Text-Image Alignment for Autoregressive Visual Generation through RL](https://arxiv.org/abs/2506.05501)： 用强化学习优化自回归视觉生成中的细粒度文图对齐，奖励模型关注对象属性、关系和文本细节。
+- [PartCrafter: Structured 3D Mesh Generation via Compositional Latent Diffusion Transformers](https://arxiv.org/abs/2506.05573)： 用 compositional latent diffusion transformer 生成结构化 3D mesh，把部件级组合关系纳入生成过程。
+- [Unleashing the Potential of Consistency Learning for Detecting and Grounding Multi-Modal Media Manipulation](https://arxiv.org/abs/2506.05890)：用 consistency learning 同时检测和定位多模态媒体操控，将 fake-region grounding 与跨模态操控信号结合。
+- [Feedback Guidance for Diffusion](https://arxiv.org/abs/2506.06085)：为扩散模型加入反馈引导，提升可控生成能力。
+- [Antithetic Noise in Diffusion Models](https://arxiv.org/abs/2506.06185)：研究 antithetic noise 在扩散模型中的作用，用负相关噪声样本降低采样方差或提升生成效率。
+- [STARFlow: Scaling Latent Normalizing Flows for High-resolution Image Synthesis](https://arxiv.org/abs/2506.06276)： 扩展 latent normalizing flow 做高分辨率图像合成，强调可逆流模型在大尺寸视觉生成中的可扩展性。
+- [AssetDropper: Asset Extraction via Diffusion Models with Reward-Driven Optimization](https://arxiv.org/abs/2506.07738)：AssetDropper 用扩散模型和 reward-driven optimization 提取视觉资产，把生成或编辑图像转为可复用 cutout。
+- [Diffuse Everything: Multimodal Diffusion Models on Arbitrary State Spaces](https://arxiv.org/abs/2506.07903)： 把扩散模型推广到任意状态空间，用统一多模态扩散处理离散、连续和结构化视觉状态。
+- [Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](https://arxiv.org/abs/2506.07986)：重新平衡多模态扩散 Transformer 的跨模态注意力，以提升文本到图像的一致性。
+- [SkipVAR](https://arxiv.org/abs/2506.08908)：通过自适应频率感知跳过来加速视觉自回归生成。核心思想：跳过信息量较低的视觉 token 或步骤，使自回归生成器在有限质量损失下更快运行。
+- [Do Concept Replacement Techniques Really Erase Unacceptable Concepts?](https://arxiv.org/abs/2506.08991)：审计扩散式文生图和图像编辑服务中的概念替换，检验不可接受概念是否会通过编辑输入和替换提示重新出现。
+- [Edit Flows: Flow Matching with Edit Operations](https://arxiv.org/abs/2506.09018)：将编辑操作加入 flow matching，直接服务于指令式图像编辑模型。
+- [Diffuse and Disperse](https://arxiv.org/abs/2506.09027)：通过 representation regularization 改进图像生成，补充 diffusion training 约束路线。
+- [Text-Aware Image Restoration with Diffusion Models](https://arxiv.org/abs/2506.09993)：定义文本感知图像复原任务并提出 TAIR，针对扩散复原中退化文字区域被幻觉成看似合理但错误字形的问题。
+- [SPARKE: Scalable Prompt-Aware Diversity and Novelty Guidance in Diffusion Models via RKE Score](https://arxiv.org/abs/2506.10173)：用提示感知的相对核嵌入分数作为采样引导，在语义相近提示之间提升扩散输出的多样性与新颖性。
+- [Pisces: An Auto-regressive Foundation Model for Image Understanding and Generation](https://arxiv.org/abs/2506.10395)：Pisces 是面向图像理解与生成统一建模的自回归基础模型。
+- [A Crack in the Bark: Leveraging Public Knowledge to Remove Tree-Ring Watermarks](https://arxiv.org/abs/2506.10502)：利用公开 VAE 近似潜变量反演来攻击 Tree-Ring 扩散水印，说明无需完整访问目标生成器也可能削弱来源标记。
+- [SpectralAR: Spectral Autoregressive Visual Generation](https://arxiv.org/abs/2506.10962)：将图像 tokenize 为从低频到高频的有序频谱 token，让自回归因果顺序更贴合视觉结构而非栅格 patch 顺序。
+- [What Exactly Does Guidance Do in Masked Discrete Diffusion Models](https://arxiv.org/abs/2506.10971)：分析 masked discrete diffusion 中 guidance 如何改变 token distribution，澄清离散生成采样机制。
+- [A Watermark for Auto-Regressive Image Generation Models](https://arxiv.org/abs/2506.11371)：把语言模型的 token 级水印迁移到自回归图像 token，处理图像重分词和反向循环一致性不足带来的溯源难题。
+- [GaussMarker: Robust Dual-Domain Watermark for Diffusion Models](https://arxiv.org/abs/2506.11444)：在空间域与频域同时嵌入扩散模型水印，并用 Gaussian-noise restoration 提升对图像扰动和攻击的鲁棒性。
+- [Fusion of multi-source precipitation records via coordinate-based generative models](https://arxiv.org/abs/2506.11698)：用 coordinate-based generative models 融合多源降水记录，是地学数据生成而非普通图像编辑。
+- [MARché: Fast Masked Autoregressive Image Generation with Cache-Aware Attention](https://arxiv.org/abs/2506.12035)：通过 cache-aware attention 和 selective KV refresh 加速 masked autoregressive 图像生成，将 active token 与 cached token 分开计算以避免重复更新稳定表示。
+- [ViSTA: Visual Storytelling using Multi-modal Adapters for Text-to-Image Diffusion Models](https://arxiv.org/abs/2506.12198)：ViSTA 用 multimodal adapters 支持 T2I 视觉叙事，在多张生成图中维持角色和故事上下文。
+- [AttentionDrag: Exploiting Latent Correlation Knowledge in Pre-trained Diffusion Models for Image Editing](https://arxiv.org/abs/2506.13301)：利用预训练扩散模型内部的潜特征相关性和注意力知识做单步拖拽编辑，避免反复优化潜变量。
+- [CDST: Color Disentangled Style Transfer for Universal Style Reference Customization](https://arxiv.org/abs/2506.13770)：训练颜色与风格分离的双流迁移模型，使参考风格定制在推理时免调参，同时保持内容结构。
+- [Provable Maximum Entropy Manifold Exploration via Diffusion Models](https://arxiv.org/abs/2506.15385)：把扩散模型作为隐式数据流形先验并优化最大熵探索，是偏向新颖设计生成的模型方法，和图像合成关系较间接。
+- [PAROAttention](https://arxiv.org/abs/2506.16054)：通过模式感知重排序实现视觉生成模型中的稀疏与量化注意力。核心思想：利用重复的注意力结构，降低生成式视觉模型的内存和计算成本。
+- [Watermarking Autoregressive Image Generation](https://arxiv.org/abs/2506.16349)：在自回归图像生成器的离散 token 上嵌入来源水印，改造绿色列表水印逻辑并处理图像 tokenizer 不一致问题。
+- [Visual-Instructed Degradation Diffusion for All-in-One Image Restoration](https://arxiv.org/abs/2506.16960)：提出 Defusion，用视觉指令引导退化扩散，在同一框架中处理去模糊、去噪、去雾等未知或混合退化。
+- [SELFI: Selective Fusion of Identity for Generalizable Deepfake Detection](https://arxiv.org/abs/2506.17592)：在深度伪造检测中选择性融合人脸身份表征，把身份线索作为取证证据，同时控制其跨操纵类型泛化较差的问题。
+- [Controlled Generation with Equivariant Variational Flow Matching](https://arxiv.org/abs/2506.18340)：在变分流匹配框架下推导可控生成目标，既支持端到端条件训练，也支持对无条件生成器做后验式控制和等变约束。
+- [Auto-Regressively Generating Multi-View Consistent Images](https://arxiv.org/abs/2506.18527)：以自回归方式生成多视角一致图像，提升图像和场景生成中的视角一致性。
 - [OmniGen2](https://arxiv.org/abs/2506.18871)：指令对齐的多模态生成模型，解耦文本与图像解码，并加入编辑、上下文生成和反思数据流程。
+- [Diffusion Tree Sampling: Scalable inference-time alignment of diffusion models](https://arxiv.org/abs/2506.20701)：用 diffusion tree sampling 实现扩散模型的推理时对齐。
+- [On Convolutions, Intrinsic Dimension, and Diffusion Models](https://arxiv.org/abs/2506.20705)：分析 convolutional structure 与 intrinsic dimension 对 diffusion models 的影响，属于架构理论而非特定图像编辑器。
+- [Rethink Sparse Signals for Pose-Guided Text-to-Image Generation](https://arxiv.org/abs/2506.20983)：重新利用 OpenPose 类稀疏姿态控制，并加入空间自适应条件机制，在保持可编辑性的同时提升姿态一致性。
+- [Elucidating and Endowing the Diffusion Training Paradigm for General Image Restoration](https://arxiv.org/abs/2506.21722)：分析时间步依赖、网络层级、噪声水平关系和多退化行为，将扩散训练范式适配到通用图像恢复网络。
+- [Exploring Image Generation via Mutually Exclusive Probability Spaces and Local Correlation Hypothesis](https://arxiv.org/abs/2506.21731)：从 mutually exclusive probability spaces 和 local correlation hypothesis 解释图像生成，提供视觉合成概率建模视角。
+- [Concept Pinpoint Eraser for Text-to-image Diffusion Models via Residual Attention Gate](https://arxiv.org/abs/2506.22806)：提出 residual attention gate 做概念擦除，弥补仅微调 cross-attention 层容易破坏非目标概念的问题。
+- [LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling](https://arxiv.org/abs/2507.00790)：结合潜空间扩散递归后验采样和多模态语义先验，实现零样本统一图像复原。
+- [Representation Entanglement for Generation](https://arxiv.org/abs/2507.01467)：揭示 representation entanglement 如何影响 diffusion transformer 训练，使高质量生成模型优化更简单。
+- [Autoregressive Image Generation with Linear Complexity: A Spatial-Aware Decay Perspective](https://arxiv.org/abs/2507.01652)：用 spatial-aware decay 实现 linear-complexity autoregressive image generation，在降低序列成本的同时保留二维依赖。
+- [FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](https://arxiv.org/abs/2507.01953)：在无需逐样本微调的情况下执行通用图像 morphing，利用预训练扩散轨迹处理语义或布局不同的输入。
+- [Holistic Tokenizer for Autoregressive Image Generation](https://arxiv.org/abs/2507.02358)：Hita 作为 holistic tokenizer，在自回归图像生成前同时保留全局和局部视觉结构。
+- [Fair Deepfake Detectors Can Generalize](https://arxiv.org/abs/2507.02645)：用后门调整刻画深度伪造检测中公平性与跨操纵泛化的关系，把数据分布和模型架构作为混杂因素处理。
+- [Aigi-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](https://arxiv.org/abs/2507.02664)： 用多模态大语言模型构建可解释且泛化的 AI 图像检测器，让模型基于视觉证据推理生成痕迹。
+- [RichControl: Structure- and Appearance-Rich Training-Free Spatial Control for Text-to-Image Generation](https://arxiv.org/abs/2507.02792)：为文生图提供无需训练的结构与外观丰富空间控制。核心思想：调度条件特征注入并结合重启式细化，在提升结构引导的同时减少条件泄漏和外观退化。
+- [FreqCross: A Multi-Modal Frequency-Spatial Fusion Network for Robust Detection of Stable Diffusion 3.5 Generated Images](https://arxiv.org/abs/2507.02995)：用三分支网络融合 RGB 空间特征、频域伪影和径向能量分布，检测 Stable Diffusion 3.5 生成图像。
+- [SecureT2I: No More Unauthorized Manipulation on AI Generated Images from Prompts](https://arxiv.org/abs/2507.03636)：在轻量微调中区分 permit set 与 forbid set，保留授权图像的高质量编辑，同时把未授权输入训练成模糊或语义不明确的输出。
+- [Flow-Anchored Consistency Models](https://arxiv.org/abs/2507.03738)：用 flow matching 锚定 consistency model 训练，稳定一步或少步视觉生成，并加速大型文生图模型。
+- [Domain Generalizable Portrait Style Transfer](https://arxiv.org/abs/2507.04243)：借助预训练模型和语义适配器建立输入与参考肖像的稠密语义对应，再用对齐后的参考图实现跨域区域级风格迁移。
+- [A Training-Free Style-Personalization via SVD-Based Feature Decomposition](https://arxiv.org/abs/2507.04482)：通过 SVD-based feature decomposition 进行免训练风格个性化，将风格相关方向与内容特征分离。
+- [Taming the Tri-Space Tension: ARC-Guided Hallucination Modeling and Control for Text-to-Image Generation](https://arxiv.org/abs/2507.04946)：用 ARC 引导建模并控制文生图幻觉。
+- [DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](https://arxiv.org/abs/2507.04947)：把 32 倍空间压缩的 deep-compression hybrid tokenizer 与 masked autoregressive 生成结合，先生成结构 token 再用残差 token 细化。
+- [LAID: Lightweight AI-Generated Image Detection in Spatial and Spectral Domains](https://arxiv.org/abs/2507.05162)：在 GenImage 子集上比较轻量神经检测器的空间域、频谱域和融合域表现，面向可部署的 AI 生成图像检测而非大型取证 backbone。
+- [Ensemble-Based Deepfake Detection using State-of-the-Art Models with Robust Cross-Dataset Generalisation](https://arxiv.org/abs/2507.05996)：研究具备跨数据集鲁棒泛化的集成式深度伪造检测器，为生成式视觉媒体补充模型侧真实性检测方法。
+- [Enhancing LLM Watermark Resilience Against Both Scrubbing and Spoofing Attacks](https://arxiv.org/abs/2507.06274)：提出 SEEK 和 sub-vocabulary decomposed equivalent texture keys，提升 LLM 水印对 scrubbing 与 spoofing 的鲁棒性；该条属于图像页中的 off-axis provenance 残留。
+- [Mitigating Watermark Forgery in Generative Models via Randomized Key Selection](https://arxiv.org/abs/2507.07871)：用随机 key selection 防御生成模型水印伪造，目标是在不向每个输出嵌入多重 key 的情况下获得可证明鲁棒性。
+- [Vision Foundation Models as Effective Visual Tokenizers for Autoregressive Image Generation](https://arxiv.org/abs/2507.08441)： 把视觉基础模型用作自回归图像生成的视觉 tokenizer，连接预训练视觉表示与生成。
+- [Learning Diffusion Models with Flexible Representation Guidance](https://arxiv.org/abs/2507.08980)：提出将扩散模型内部表征对齐到预训练表征模型的训练准则，用灵活的特征引导提升生成质量。
+- [Memory-Efficient Personalization of Text-to-Image Diffusion Models via Selective Optimization Strategies](https://arxiv.org/abs/2507.10029)：用 selective optimization 在低分辨率反向传播和高分辨率零阶优化之间切换，使边缘设备能个性化文生图扩散模型并减少结构失真。
+- [RefSTAR: Blind Facial Image Restoration with Reference Selection, Transfer, and Reconstruction](https://arxiv.org/abs/2507.10470)：RefSTAR 通过参考选择、细节迁移和重建恢复盲人脸图像，保留身份相关细节。
+- [CharaConsist: Fine-Grained Consistent Character Generation](https://arxiv.org/abs/2507.11533)： 针对角色生成建立细粒度一致性机制，使同一角色在不同姿态、表情和场景中保持身份细节。
+- [EC-Diff: Fast and High-Quality Edge-Cloud Collaborative Inference for Diffusion Models](https://arxiv.org/abs/2507.11980)：EC-Diff 将扩散推理拆分到边缘和云端，以计算位置调度换取更快的高质量生成。
+- [RODS: Robust Optimization Inspired Diffusion Sampling for Detecting and Reducing Hallucination in Generative Models](https://arxiv.org/abs/2507.12201)：把扩散采样解释为鲁棒优化，用 loss landscape 几何线索发现高风险采样步并自适应修正扰动，在不重训的情况下降低幻觉样本。
+- [Compositional Discrete Latent Code for High Fidelity, Productive Diffusion Models](https://arxiv.org/abs/2507.12318)：用自监督 simplicial embedding 得到组合式离散潜代码作为扩散条件，在提升 ImageNet 生成保真度的同时支持训练分布外组合。
+- [Resurrect Mask AutoRegressive Modeling for Efficient and Scalable Image Generation](https://arxiv.org/abs/2507.13032)：用双向注意力和 2D RoPE 改进 masked autoregressive image generation，在保留并行解码效率的同时支持文本驱动图像生成。
+- [DLSF: Dual-Layer Synergistic Fusion for High-Fidelity Image Synthesis](https://arxiv.org/abs/2507.13388)：通过 adaptive global fusion 或 dynamic spatial fusion 融合 base latent 与 refined latent 表征，同时保持全局一致性和局部纹理细节。
+- [IConMark: Robust Interpretable Concept-Based Watermark For AI Images](https://arxiv.org/abs/2507.13407)：IConMark 用可解释 concept-based watermark 为 AI 图像提供语义概念层面的 provenance 证据。
+- [PoemTale Diffusion: Minimising Information Loss in Poem to Image Generation with Multi-Stage Prompt Refinement](https://arxiv.org/abs/2507.13708)：通过免训练的多阶段提示精炼流程，降低诗歌到图像生成中抽象意象和描述性信息的丢失。
+- [Rethinking Individual Fairness in Deepfake Detection](https://arxiv.org/abs/2507.14326)：重新审视 deepfake detection 的 individual fairness，评估检测器在不同人口或身份组上的一致性。
+- [Seeing Through Deepfakes: A Human-Inspired Framework for Multi-Face Detection](https://arxiv.org/abs/2507.14807)：用 human-inspired multi-face reasoning 检测 deepfake，覆盖含多张人脸的图像而非只假设单一居中目标。
+- [Diffusion models for multivariate subsurface generation and efficient probabilistic inversion](https://arxiv.org/abs/2507.15809)：将扩散模型用于多变量地下场生成和概率反演，属于生成建模的领域应用，和自然图像合成页存在分类边界问题。
+- [HarmonPaint: Harmonized Training-Free Diffusion Inpainting](https://arxiv.org/abs/2507.16732)：通过掩码调节扩散注意力实现免训练补全，使插入内容与周围结构和风格更协调，无需额外微调。
+- [Generative Diffusion Models for Wireless Networks: Fundamental, Architecture, and State-of-the-Art](https://arxiv.org/abs/2507.16733)：综述无线网络中的扩散架构、生成任务和优化用途，放在图像生成模型页中属于分类边界问题。
+- [Lumina-mGPT 2.0: Stand-Alone AutoRegressive Image Modeling](https://arxiv.org/abs/2507.17801)： 发布独立自回归图像建模版本的 Lumina-mGPT 2.0，强调无需外部扩散解码器即可完成图像 token 生成。
+- [Livatar-1: Real-Time Talking Heads Generation with Tailored Flow Matching](https://arxiv.org/abs/2507.18649)：结合定制流匹配和系统优化做音频驱动说话头生成，面向口型同步、姿态稳定和实时头像吞吐。
+- [Enhancing Reward Models for High-Quality Image Generation: Beyond Text-Image Alignment](https://arxiv.org/abs/2507.19002)：改进图像生成奖励模型，使其超越简单文本-图像对齐。
+- [3DGauCIM: Accelerating Static/Dynamic 3D Gaussian Splatting via Digital CIM for High Frame Rate Real-Time Edge Rendering](https://arxiv.org/abs/2507.19133)：3DGauCIM 用 digital compute-in-memory 加速静态和动态 3D Gaussian Splatting，更偏渲染硬件边界项。
+- [Continual Learning-Based Unified Model for Unpaired Image Restoration Tasks](https://arxiv.org/abs/2507.19184)：用持续学习统一处理无配对图像修复任务。
+- [ChoreoMuse: Robust Music-to-Dance Video Generation with Style Transfer and Beat-Adherent Motion](https://arxiv.org/abs/2507.19836)：在扩散式音乐到舞蹈视频生成中使用 SMPL 类动作中间表示，使生成动作同时贴合节拍并支持舞者风格迁移。
+- [SCALAR](https://arxiv.org/abs/2507.19946)：为可控视觉自回归生成加入 scale-wise conditional decoding。
+- [Frequency-Aware Autoregressive Modeling for Efficient High-Resolution Image Synthesis](https://arxiv.org/abs/2507.20454)：用频率感知自回归建模提升高分辨率图像合成效率，按频率结构组织生成而非均匀处理所有视觉 token。
+- [AIcomposer: Any Style and Content Image Composition via Feature Integration](https://arxiv.org/abs/2507.20721)：无需文本提示即可跨域合成任意风格与内容图像，通过 backward inversion 与 forward denoising 中的特征集成保留预训练扩散先验。
+- [HAMLET-FFD: Hierarchical Adaptive Multi-modal Learning Embeddings Transformation for Face Forgery Detection](https://arxiv.org/abs/2507.20913)：用 CLIP 式视觉语言推理和双向融合，让文本 authenticity embedding 引导层级视觉特征，同时由视觉证据反向细化图像自适应 prompt。
+- [MaXsive: High-Capacity and Robust Training-Free Generative Image Watermarking in Diffusion Models](https://arxiv.org/abs/2507.21195)：改进免训练扩散水印，在保持较高载荷的同时提升对旋转、缩放和平移攻击的鲁棒性。
+- [Suppressing Gradient Conflict for Generalizable Deepfake Detection](https://arxiv.org/abs/2507.21530)：分析在线合成伪造样本为何会损害检测器，并抑制原始与生成训练源之间的梯度冲突以提升未知操纵泛化。
+- [Exploiting Diffusion Prior for Task-Driven Image Restoration](https://arxiv.org/abs/2507.22459)：利用预训练扩散先验恢复低质量图像中与下游任务相关的细节，目标不是单纯提升感知质量，而是修复后视觉任务性能。
+- [Visual Language Models as Zero-Shot Deepfake Detectors](https://arxiv.org/abs/2507.22469)：把视觉语言模型的图文推理用作零样本深度伪造检测，以可提示的取证判断替代专门二分类器。
+- [ShortFT: Diffusion Model Alignment via Shortcut-Based Fine-Tuning](https://arxiv.org/abs/2507.22604)：通过 shortcut-based fine-tuning 沿更短且保持轨迹的去噪链回传奖励梯度，降低扩散模型对齐的计算成本和梯度不稳定性。
+- [PixNerd: Pixel Neural Field Diffusion](https://arxiv.org/abs/2507.23268)： 把像素神经场与扩散结合，用连续场表示像素结构，从而生成更细粒度或分辨率灵活的图像。
+- [Training-Free Geometric Image Editing on Diffusion Models](https://arxiv.org/abs/2507.23300)：将几何图像编辑拆成物体变换、源区域 inpainting 和目标区域 refinement 三步，用免训练扩散管线在 GeoBench 上评估。
+- [DC-AE 1.5: Accelerating Diffusion Model Convergence with Structured Latent Space](https://arxiv.org/abs/2508.00413)： 通过结构化 latent space 改进 DC-AE，加速扩散模型收敛并让潜空间更适合高质量生成。
+- [ROVI: A VLM-LLM Re-Captioned Dataset for Open-Vocabulary Instance-Grounded Text-to-Image Generation](https://arxiv.org/abs/2508.01008)：构建用于开放词汇实例级文生图生成的 VLM-LLM 重标注数据集。核心思想：把丰富全局提示与实例标注连接起来，使生成器更好地在图像中定位物体和类别。
+- [Trans-Adapter: Transparent Image Generation with Diffusion Transformer](https://arxiv.org/abs/2508.01098)：提供 plug-and-play adapter，让扩散 inpainting 模型直接处理 RGBA transparent images，支持 ControlNet，并提出 LayerBench 与 alpha edge quality metric。
+- [Personalized Safety Alignment](https://arxiv.org/abs/2508.01151)：面向文本到图像扩散模型做个性化安全对齐。核心思想：在保持生成可控性的同时，让安全约束能够适配不同用户偏好。
+- [MiraGe: Multimodal Discriminative Representation Learning for Generalizable AI-Generated Image Detection](https://arxiv.org/abs/2508.01525)：学习多模态判别表征来区分真实与 AI 生成图像，使检测器更能迁移到未见过的生成器。
+- [Devil is in the Detail: Towards Injecting Fine Details of Image Prompt in Image Generation via Conflict-free Guidance and Stratified Attention](https://arxiv.org/abs/2508.02004)：通过 conflict-free guidance 和 stratified attention 注入 image prompt 细节，降低参考细节保留与提示控制的冲突。
+- [Uni-Layout: Integrating Human Feedback in Unified Layout Generation and Evaluation](https://arxiv.org/abs/2508.02374)：用统一生成器覆盖多类布局任务，在 Layout-HF100k 上训练类人评价器，并通过 dynamic-margin preference optimization 对齐生成与评价。
+- [BadBlocks: Lightweight and Stealthy Backdoor Threat in Text-to-Image Diffusion Models](https://arxiv.org/abs/2508.03221)：通过只污染 U-Net 的部分 block 构造低成本文生图后门，同时保持其他扩散组件不变，使触发器更隐蔽。
+- [Beyond Isolated Words: Diffusion Brush for Handwritten Text-Line Generation](https://arxiv.org/abs/2508.03256)：Diffusion Brush 将手写生成从孤立单词扩展到 text-line，用扩散控制生成完整手写文本行。
 - [Draw Your Mind](https://arxiv.org/abs/2508.03481)：在条件层面对用户偏好建模，用于个性化文本到图像扩散生成。
-- [Pref-GRPO](https://arxiv.org/abs/2508.20751)：提出面向图像生成与编辑的模型侧方法，核心围绕 Pairwise Preference Reward-based GRPO for Stable Text-to-Image Reinforcement Learning。
+- [StorySync: Training-Free Subject Consistency in Text-to-Image Generation via Region Harmonization](https://arxiv.org/abs/2508.03735)：StorySync 通过 region harmonization 免训练维持 T2I 故事中的主体一致性，对齐多图中的主体区域。
+- [Zero-Residual Concept Erasure via Progressive Alignment in Text-to-Image Model](https://arxiv.org/abs/2508.04472)：用渐进对齐和闭式模型更新执行概念擦除，针对高效文生图编辑方法残留不安全概念的问题。
+- [Two-Way Garment Transfer: Unified Diffusion Framework for Dressing and Undressing Synthesis](https://arxiv.org/abs/2508.04551)：提出 TWGTM 统一扩散框架，同时处理 virtual try-on 和 virtual try-off，使穿衣合成与服装抽取相互约束。
+- [X-SAM: From Segment Anything to Any Segmentation](https://arxiv.org/abs/2508.04655)： 从 Segment Anything 扩展到更通用的任意分割，作为图像编辑和生成控制中的区域条件基础模型。
+- [LightSwitch](https://arxiv.org/abs/2508.06494)：用材料引导扩散实现多视角重打光，为图像和场景编辑补充材料感知光照控制。
+- [Prompt Stealing Attack against Text-to-Image Diffusion Models](https://arxiv.org/abs/2508.06837)：研究针对文本到图像扩散模型的有效提示窃取攻击，补充视觉生成中的隐私与来源风险。
+- [AR-GRPO: Training Autoregressive Image Generation Models via Reinforcement Learning](https://arxiv.org/abs/2508.06924)：AR-GRPO 将强化学习用于自回归图像生成，把 GRPO 式优化与视觉生成模型训练连接起来。
+- [Canvas3D: Empowering Precise Spatial Control for Image Generation with Constraints from a 3D Virtual Canvas](https://arxiv.org/abs/2508.07135)：用三维虚拟画布给文生图提供空间约束，使物体位置、深度和视角控制从二维框扩展到三维场景布局。
+- [SketchAnimator: Animate Sketch via Motion Customization of Text-to-Video Diffusion Models](https://arxiv.org/abs/2508.07149)：在文生视频扩散模型中定制运动，使静态草图可按提示动起来；该条对图像页而言更接近视频生成边界案例。
+- [ForensicsSAM: Toward Robust and Unified Image Forgery Detection and Localization Resisting to Adversarial Attack](https://arxiv.org/abs/2508.07402)：以参数高效方式适配 SAM 类视觉基础模型，执行图像伪造检测与定位，并增强对对抗攻击的鲁棒性。
+- [LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](https://arxiv.org/abs/2508.07647)：LaRender 在 latent rendering 中控制遮挡关系，使图像生成可免训练调整前景与背景的层次顺序。
+- [Comparison Reveals Commonality: Customized Image Generation through Contrastive Inversion](https://arxiv.org/abs/2508.07755)：通过对比反演从少量参考图中抽取共同概念，减少定制图像生成对人工掩码或提示的依赖。
+- [MambaTrans: Multimodal Fusion Image Translation via Large Language Model Priors for Downstream Visual Tasks](https://arxiv.org/abs/2508.07803)：补充利用大模型先验的多模态图像转换方法。
+- [NeeCo: Image Synthesis of Novel Instrument States Based on Dynamic and Deformable 3-D Gaussian Reconstruction](https://arxiv.org/abs/2508.07897)：NeeCo 基于动态可变形 3D Gaussian reconstruction 合成新仪器状态，是领域化图像合成边界案例。
+- [Leveraging Unlabeled Data from Unknown Sources via Dual-Path Guidance for Deepfake Face Detection](https://arxiv.org/abs/2508.09022)：用 dual-path guidance 利用来源未知的无标签人脸数据，提升 deepfake 检测器在缺少来源标签时的适配能力。
+- [SVGen: Interpretable Vector Graphics Generation with Large Language Models](https://arxiv.org/abs/2508.09168)：基于 SVG-1M 数据、课程学习与强化优化实现文生 SVG，面向可编辑矢量图生成。
+- [Semantic-Aware Reconstruction Error for Detecting AI-Generated Images](https://arxiv.org/abs/2508.09487)：按语义区域加权重建误差来识别 AI 生成图像，避免把普通低层失真和生成器伪影混在一起。
+- [High Fidelity Text to Image Generation](https://arxiv.org/abs/2508.10280)：通过对比对齐与结构引导提升文生图质量。核心思想：把提示语义与生成结构对齐，使保真度不只停留在表面视觉质量。
+- [Translation of Text Embedding Via Delta Vector to Suppress Strongly Entangled Content in Text-to-Image Diffusion Models](https://arxiv.org/abs/2508.10407)：模型侧候选：聚焦训练、对齐、合成数据、推理控制或模型诊断，可供父级审查后补入对应 Model。
+- [Discriminative Codebook Prior](https://arxiv.org/abs/2508.10719)：用 discriminative codebook prior 改进基于离散视觉 token 的自回归图像生成。
+- [Object Fidelity Diffusion for Remote Sensing Image Generation](https://arxiv.org/abs/2508.10801)：提出 OF-Diff 做可控遥感图像合成，重点保持目标形态细节，使生成场景可用于下游检测器训练或评估。
+- [Match & Choose: Model Selection Framework for Fine-tuning Text-to-Image Diffusion Models](https://arxiv.org/abs/2508.10993)：在微调前匹配目标数据和训练目标，为文生图扩散模型选择更合适的基座，减少盲目试错。
+- [TimeMachine: Fine-Grained Facial Age Editing with Identity Preservation](https://arxiv.org/abs/2508.11284)：在保持身份特征的约束下做细粒度年龄编辑，使人脸变老或变年轻时减少身份漂移。
+- [LoRAtorio: An intrinsic approach to LoRA Skill Composition](https://arxiv.org/abs/2508.11624)：无需训练即可组合多个 T2I LoRA adapter，通过比较各 adapter 去噪输出与 base model 行为，在采样时选择更匹配分布的 LoRA 技能。
+- [SafeCtrl: Region-Based Safety Control for Text-to-Image Diffusion via Detect-Then-Suppress](https://arxiv.org/abs/2508.11904)：先定位不安全提示区域再在扩散引导中抑制相关内容，提供局部化安全控制而不是整体拒绝生成。
+- [USO: Unified Style and Subject-Driven Generation via Disentangled and Reward Learning](https://arxiv.org/abs/2508.18966)： 用 disentangled learning 与 reward learning 统一风格驱动和主体驱动生成，分别控制外观风格与身份一致性。
+- [Improving Generalization in Deepfake Detection with Face Foundation Models and Metric Learning](https://arxiv.org/abs/2508.19730)：结合人脸基础模型表征与度量学习，提升视频深度伪造检测在训练分布之外真实场景操纵上的泛化。
+- [Pref-GRPO](https://arxiv.org/abs/2508.20751)：把 T2I GRPO 中的逐点评分奖励改为成对偏好胜率，缓解 reward hacking 并稳定强化学习训练。
+- [Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning](https://arxiv.org/abs/2508.21048)： 通过 pattern-aware reasoning 做可泛化 deepfake 检测，让模型解释伪造模式而不是只学习数据集特定纹理。
+- [Beyond the Safety Tax: Mitigating Unsafe Text-to-Image Generation via External Safety Rectification](https://arxiv.org/abs/2508.21099)：用外部安全校正模块修正不安全文生图输出，目标是在降低有害内容的同时减少质量和对齐损失。
+- [FLORA: Efficient Synthetic Data Generation for Object Detection in Low-Data Regimes via finetuning Flux LoRA](https://arxiv.org/abs/2508.21712)：通过 LoRA 微调 Flux 1.1 Dev 生成低数据目标检测训练图像，将扩散合成数据流程降低到消费级 GPU 可用的成本。
+- [OptMark: Robust Multi-bit Diffusion Watermarking via Inference Time Optimization](https://arxiv.org/abs/2508.21727)：通过推理期优化嵌入多比特扩散水印，用额外采样计算换取更高鲁棒性和水印容量。
+- [Category-level Text-to-Image Retrieval Improved: Bridging the Domain Gap with Diffusion Models and Vision Encoders](https://arxiv.org/abs/2509.00177)：先用扩散模型把类别文本查询转成视觉查询，再用视觉编码器和聚合网络融合多张生成图的相似度，以缩小文本到图像检索的域差距。
+- [FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation](https://arxiv.org/abs/2509.01107)：面向退化场景的布局到图像生成，用频率启发的上下文解耦分离前景布局与低光、 underwater 等背景主导频率。
+- [2D Gaussian Splatting with Semantic Alignment for Image Inpainting](https://arxiv.org/abs/2509.01964)：用语义对齐的 2D Gaussian splats 表示缺失区域，使图像修复依赖显式空间基元而不只是像素去噪。
+- [Data-Driven Loss Functions for Inference-Time Optimization in Text-to-Image](https://arxiv.org/abs/2509.02295)：从数据中学习文生图推理期优化损失，用任务校准目标替代手工设计的引导项。
+- [An Efficient and Adaptive Watermark Detection System with Tile-based Error Correction](https://arxiv.org/abs/2509.02447)：用 tile 级纠错检测生成图像水印，使水印提取更能适应局部编辑或损坏。
+- [DrDiff: Dynamic Routing Diffusion with Hierarchical Attention for Breaking the Efficiency-Quality Trade-off](https://arxiv.org/abs/2509.02785)： 用层级注意力和动态路由扩散，在不同区域或 token 间分配计算，打破生成效率和质量的固定折中。
+- [Delta Rectified Flow Sampling for Text-to-Image Editing](https://arxiv.org/abs/2509.05342)：提出 DRFS 这一免反演 rectified-flow 编辑采样器，显式建模源与目标 velocity field 差异，并加入随时间变化的 shift 使 latent 靠近目标轨迹。
+- [High-Frequency Fine Details in Images](https://arxiv.org/abs/2509.05441)：把生成图像中细节缺失与高频信号行为联系起来，用于理解图像生成保真度。
+- [BIR-Adapter: A parameter-efficient diffusion adapter for blind image restoration](https://arxiv.org/abs/2509.06904)：为扩散式盲图像复原加入轻量 adapter，使模型面对未知退化时无需全量重训。
 - [Universal Few-Shot Spatial Control](https://arxiv.org/abs/2509.07530)：面向扩散模型的少样本空间控制适配器，用少量 image-condition 样例适应新的空间控制条件。
-- [EditScore](https://arxiv.org/abs/2509.23909)：提出面向图像生成与编辑的模型侧方法，核心围绕 Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling。
+- [FS-Diff: Semantic guidance and clarity-aware simultaneous multimodal image fusion and super-resolution](https://arxiv.org/abs/2509.09427)：FS-Diff 用语义 guidance 和 clarity-aware diffusion 同时做多模态图像融合与超分，保留弱目标和背景结构。
+- [Locality in Image Diffusion Models](https://arxiv.org/abs/2509.09672)：把 image diffusion models 中的 locality 解释为 data statistics 的结果。
+- [MarkDiffusion: An Open-Source Toolkit for Generative Watermarking of Latent Diffusion Models](https://arxiv.org/abs/2509.10569)：提供潜扩散生成水印工具包，包含统一算法接入、水印可视化，以及保真度、鲁棒性和可检测性评估模块。
+- [MetaSeal: Defending Against Image Attribution Forgery Through Content-Dependent Cryptographic Watermarks](https://arxiv.org/abs/2509.10766)：把归因水印以密码学方式绑定到图像内容上，防御生成图像 provenance 的伪造和复制攻击。
+- [ToMA: Token Merge with Attention for Diffusion Models](https://arxiv.org/abs/2509.10918)：把 diffusion model 的 token merging 改写为类似 attention 的 GPU 友好操作，在保持质量的同时降低生成成本。
+- [Removal Attack and Defense on AI-generated Content Latent-based Watermarking](https://arxiv.org/abs/2509.11745)：说明潜分布水印即使满足不可区分性也可能被移除，并研究主动攻击下扩散水印的防御策略。
+- [Robust Concept Erasure in Diffusion Models](https://arxiv.org/abs/2509.12024)：从理论上分析扩散模型概念擦除的鲁棒性，为视觉生成模型安全控制提供依据。
+- [Agent4FaceForgery](https://arxiv.org/abs/2509.12546)：用带 profile 与 memory 模块的 LLM agent 模拟人类伪造创建过程，在社交互动环境中生成文本-图像一致性标签，并用 adaptive rejection sampling 过滤多样训练样本以服务检测器。
+- [End4: End-to-end Denoising Diffusion for Diffusion-Based Inpainting Detection](https://arxiv.org/abs/2509.13214)：End4 训练端到端 denoising-diffusion 检测器，用扩散补全过程痕迹定位生成式 inpainting 操控区域。
+- [StyleProtect: Safeguarding Artistic Identity in Fine-tuned Diffusion Models](https://arxiv.org/abs/2509.13711)：在扩散模型微调中保护艺术身份，抑制未经授权的风格模仿同时尽量保留正常生成质量。
+- [Noise-Level Diffusion Guidance: Well Begun is Half Done](https://arxiv.org/abs/2509.13936)：分析不同去噪噪声水平上的 guidance，并调整早期扩散步骤以在后续细化前改善生成控制。
+- [Structured Information for Improving Spatial Relationships in Text-to-Image Generation](https://arxiv.org/abs/2509.15962)：用微调语言模型把自然语言提示转换为元组式空间结构信息，在不改动生成器的情况下提升文生图空间关系一致性。
+- [MANZANO: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer](https://arxiv.org/abs/2509.16197)：模型侧方法候选，Unified multimodal model with hybrid visual tokenization for understanding and generation.
+- [SISMA: Semantic Face Image Synthesis with Mamba](https://arxiv.org/abs/2509.17651)：用 Mamba 架构做语义人脸合成，对面部属性和身份条件结构进行序列式建模。
+- [Text Slider: Efficient and Plug-and-Play Continuous Concept Control for Image/Video Synthesis via LoRA Adapters](https://arxiv.org/abs/2509.18831)：在预训练文本编码器中寻找低秩方向，提供可插拔的连续概念 slider，并支持图像和视频合成中的多概念组合控制。
+- [DevFD: Developmental Face Forgery Detection by Learning Shared and Orthogonal LoRA Subspaces](https://arxiv.org/abs/2509.19230)：学习共享与正交 LoRA 子空间，使人脸伪造检测器能适配新操纵域，同时避免遗忘旧伪造类型。
+- [DriftLite](https://arxiv.org/abs/2509.21655)：为扩散模型 inference-time scaling 加入轻量漂移控制。
+- [Deepfakes: we need to re-think the concept of "real" images](https://arxiv.org/abs/2509.21864)：重新界定 captured、edited 和 generated 人脸图像之间的边界，提醒 deepfake 检测不能只依赖简单真假二分。
+- [SpecXNet: A Dual-Domain Convolutional Network for Robust Deepfake Detection](https://arxiv.org/abs/2509.22070)：用双域卷积网络耦合局部空间纹理和频域伪影，提升深度伪造检测鲁棒性。
+- [Guidance Watermarking for Diffusion Models](https://arxiv.org/abs/2509.22126)：把水印信号注入扩散 guidance，在不重训基础生成器的情况下于采样过程中完成 provenance 标记。
+- [Zero-Effort Image-to-Music Generation: An Interpretable RAG-based VLM Approach](https://arxiv.org/abs/2509.22378)：用检索增强的视觉语言模型推理把图像映射到音乐，是可解释图像到音乐流程，放在图像生成模型页中偏离主轴。
+- [FreqDebias: Towards Generalizable Deepfake Detection via Consistency-Driven Frequency Debiasing](https://arxiv.org/abs/2509.22412)：用一致性约束在频域去偏 deepfake 检测器，降低模型对特定生成器频谱捷径的依赖。
+- [Group Critical-token Policy Optimization for Autoregressive Image Generation](https://arxiv.org/abs/2509.22485)： 提出 group critical-token policy optimization，选择关键图像 token 进行策略优化以提升自回归图像生成奖励对齐。
+- [Follow-Your-Preference: Towards Preference-Aligned Image Inpainting](https://arxiv.org/abs/2509.23082)：将图像修复与偏好对齐，服务于人类偏好对齐的图像编辑。
+- [LightFair: Towards an Efficient Alternative for Fair T2I Diffusion via Debiasing Pre-trained Text Encoders](https://arxiv.org/abs/2509.23639)：通过调整预训练文本编码器高效降低文生图扩散偏见。
+- [EditScore](https://arxiv.org/abs/2509.23909)：构建 EditReward-Bench 和 7B-72B 的 EditScore 奖励模型族，再用编辑专用奖励信号让指令图像编辑可以进行有效在线 RL。
+- [Hyperspherical Latents Improve Continuous-Token Autoregressive Generation](https://arxiv.org/abs/2509.24335)：把连续自回归图像 token 约束到固定半径超球面上，缓解 classifier-free guidance 下的方差塌缩。
+- [Real-Aware Residual Model Merging for Deepfake Detection](https://arxiv.org/abs/2509.24367)：通过保留真实图像表征、削弱特定生成器伪造线索来合并深度伪造专门检测器，减少新操纵源上的重复训练。
 - [Causal-Adapter](https://arxiv.org/abs/2509.24798)：将冻结的文本到图像扩散骨干适配到因果干预下的可靠反事实图像生成。
+- [STAGE: Stable and Generalizable GRPO for Autoregressive Image Generation](https://arxiv.org/abs/2509.25027)： 设计稳定且泛化的 GRPO 流程用于自回归图像生成，缓解视觉奖励优化中的训练不稳定。
+- [Advantage Weighted Matching: Aligning RL with Pretraining in Diffusion Models](https://arxiv.org/abs/2509.25050)： 用 advantage weighted matching 将强化学习目标与扩散预训练分布对齐，减少偏好优化破坏生成先验。
+- [LayerD](https://arxiv.org/abs/2509.25134)：把栅格图形设计分解为可编辑图层。核心思想：从平面图像中恢复结构化设计组件，使视觉生成与编辑支持更细粒度控制。
+- [Aligning Visual Foundation Encoders to Tokenizers](https://arxiv.org/abs/2509.25162)：对齐视觉基础编码器与 diffusion tokenizer，改进生成式 diffusion 模型的表示接口。
+- [IMG: Calibrating Diffusion Models via Implicit Multimodal Guidance](https://arxiv.org/abs/2509.26231)：用隐式多模态 guidance 校准扩散采样，在不显式重训的情况下用跨模态信号引导生成图像。
+- [Query-Kontext: An Unified Multimodal Model for Image Generation and Editing](https://arxiv.org/abs/2509.26641)： 构建统一的多模态图像生成与编辑模型 Query-Kontext，用查询式条件同时处理生成、局部编辑和上下文编辑。
+- [LAKAN: Landmark-assisted Adaptive Kolmogorov-Arnold Network for Face Forgery Detection](https://arxiv.org/abs/2510.00634)：结合人脸 landmark 与自适应 Kolmogorov-Arnold 网络层，从几何感知线索中识别人脸伪造。
+- [Extreme Blind Image Restoration via Prompt-Conditioned Information Bottleneck](https://arxiv.org/abs/2510.00728)：先把严重退化图像投影到较温和的低质量流形，再结合冻结恢复模型和 prompt-conditioned information bottleneck 完成极端盲图像恢复。
+- [Fast, Secure, and High-Capacity Image Watermarking with Autoencoded Text Vectors](https://arxiv.org/abs/2510.00799)：提出 LatentSeal，将完整句子编码成 256 维单位向量，经可逆秘密旋转后嵌入微调水印模型，实现高容量语义水印。
+- [DragFlow: Unleashing DiT Priors with Region Based Supervision for Drag Editing](https://arxiv.org/abs/2510.02253)： 利用 DiT 先验和区域监督实现 drag editing，把点或区域移动约束转化为可学习的局部编辑信号。
+- [Fine-Tuning Diffusion Models via Intermediate Distribution Shaping](https://arxiv.org/abs/2510.02692)：通过 intermediate distribution shaping 微调扩散模型，直接约束去噪轨迹而不只优化最终样本质量。
+- [MASC](https://arxiv.org/abs/2510.04220)：用 manifold-aligned semantic clustering 改进基于视觉 token 的自回归图像生成。
+- [TAG:Tangential Amplifying Guidance for Hallucination-Resistant Diffusion Sampling](https://arxiv.org/abs/2510.04533)：提出免训练的 tangential amplifying guidance，以中间样本作为投影基，放大 score 的切向分量并把采样轨迹推向更高概率流形区域。
+- [SpecGuard: Spectral Projection-Based Advanced Invisible Watermarking](https://arxiv.org/abs/2510.07302)：SpecGuard 使用 spectral projection 嵌入高级隐形水印，在频域结构中承载鲁棒 provenance 信号。
+- [SpotDiff: Spotting and Disentangling Interference in Feature Space for Subject-Preserving Image Generation](https://arxiv.org/abs/2510.07340)：SpotDiff 在 feature space 中识别并分离干扰因素，提升 learning-based 主体保留生成而不依赖昂贵逐主体优化。
+- [Local MAP Sampling for Diffusion Models](https://arxiv.org/abs/2510.07343)：把扩散逆问题推理重写为去噪轨迹上的一系列局部 MAP 子问题，连接点估计重建与 posterior sampling 方法。
+- [RePainter: Empowering E-commerce Object Removal via Spatial-matting Reinforcement Learning](https://arxiv.org/abs/2510.07721)：将 spatial-matting trajectory refinement 与 GRPO 结合，并用全局、局部和语义复合奖励去除电商图中的水印或促销元素。
+- [Optimal Stopping in Latent Diffusion Models](https://arxiv.org/abs/2510.08409)：把 latent-diffusion inference 表述为 optimal stopping problem。
+- [Towards Better & Faster Autoregressive Image Generation: From the Perspective of Entropy](https://arxiv.org/abs/2510.09012)：用空间 token entropy 动态调节采样温度和 speculative decoding 接受规则，在降低推理成本的同时提升自回归图像质量。
+- [SynthID-Image: Image watermarking at internet scale](https://arxiv.org/abs/2510.09263)：公开 SynthID-Image 的深度学习不可见水印系统、互联网规模部署需求和威胁模型，并报告已在 Google 服务中标记超过百亿图像与视频帧。
+- [MosaicDiff: Training-free Structural Pruning for Diffusion Model Acceleration Reflecting Pretraining Dynamics](https://arxiv.org/abs/2510.11962)：依据扩散预训练阶段动力学剪枝采样轨迹，利用去噪中贡献较低的计算位置来加速生成。
+- [Local-Global Context-Aware and Structure-Preserving Image Super-Resolution](https://arxiv.org/abs/2510.13649)：在扩散超分辨率中结合局部-全局上下文和结构保持约束，减少高度退化图像上的噪声放大与错误内容生成。
+- [NoisePrints: Distortion-Free Watermarks for Authorship in Private Diffusion Models](https://arxiv.org/abs/2510.13793)：通过无失真噪声空间水印验证私有扩散模型作者身份，使检测阶段不必访问模型权重。
+- [OmniVerifier](https://arxiv.org/abs/2510.13804)（[开源代码](https://github.com/Cominclip/OmniVerifier)）：把通用视觉 verifier 接入生成与编辑循环，利用 ViVerBench 式验证数据和 sequential test-time scaling 反思视觉结果并指导细粒度修正。
+- [PIA: Deepfake Detection Using Phoneme-Temporal and Identity-Dynamic Analysis](https://arxiv.org/abs/2510.14241)：PIA 用 phoneme-temporal 和 identity-dynamic analysis 检测 lip-sync、face-swap 与 avatar-driven deepfake。
+- [Accelerated Multi-Modal Motion Planning Using Context-Conditioned Diffusion Models](https://arxiv.org/abs/2510.14615)：用环境 context 条件化扩散式机器人运动规划，使单一 planner 能适配不同场景；对本图像生成页而言属于 off-axis 机器人规划条目。
+- [WithAnyone: Towards Controllable and ID Consistent Image Generation](https://arxiv.org/abs/2510.14975)： 面向人物图像生成保持身份一致性，在可控姿态和场景变化中约束同一人的面部与外观特征。
+- [Constantly Improving Image Models Need Constantly Improving Benchmarks](https://arxiv.org/abs/2510.15021)：提出从真实图像模型使用案例中构建 ECHO benchmark 的框架；该条更像基准条目，而不是模型侧图像生成器。
+- [Latent Diffusion Model without Variational Autoencoder](https://arxiv.org/abs/2510.15301)： 研究无需 VAE 的 latent diffusion，把潜表示学习并入生成框架，减少传统 VAE 带来的重建瓶颈。
+- [SEGA: A Stepwise Evolution Paradigm for Content-Aware Layout Generation with Design Prior](https://arxiv.org/abs/2510.15749)：在背景图上用带反馈的逐步演化流程生成布局，并引入设计先验来修正复杂元素摆放失败。
+- [OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](https://arxiv.org/abs/2510.18707)：构建跨时间尺度概率天气预报的掩码潜扩散模型，属于扩散预测方法而非图像生成方法。
+- [Adversarial Concept Distillation for One-Step Diffusion Personalization](https://arxiv.org/abs/2510.20512)：用 OPAD 个性化一步扩散模型，把 teacher-student distillation 与 adversarial supervision 结合，使单步学生模型保留概念对齐。
+- [Face-MakeUpV2: Facial Consistency Learning for Controllable Text-to-Image Generation](https://arxiv.org/abs/2510.21775)：Face-MakeUpV2 结合 FaceCaptionMask-1M 和 facial consistency learning，减少局部语义指令中的属性泄漏并保持参考身份。
+- [Discovering Latent Graphs with GFlowNets for Diverse Conditional Image Generation](https://arxiv.org/abs/2510.22107)：Rainbow 用 GFlowNets 发现 latent graphs，为条件图像生成表示多种合理输出，而不只是换随机种子。
+- [Self-Attention Decomposition For Training Free Diffusion Editing](https://arxiv.org/abs/2510.22650)：通过自注意力分解实现免训练扩散编辑。
+- [Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models](https://arxiv.org/abs/2510.22851)：通过估计 prompt embedding 中目标概念强度并扣除校准语义方向，实现 training-free 概念擦除，并用 co-occurrence encoding 与视觉反馈处理多概念场景。
+- [Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](https://arxiv.org/abs/2510.24012)： 在不训练模型的情况下，用安全文本嵌入 guidance 调整 T2I 扩散采样，压制不安全概念并保留语义可用性。
+- [ETC: training-free diffusion models acceleration with Error-aware Trend Consistency](https://arxiv.org/abs/2510.24129)：通过历史去噪轨迹预测未来趋势，并加入 error-aware 控制限制多步复用漂移，从而免训练加速扩散采样。
+- [Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance](https://arxiv.org/abs/2510.24711)： 为 MoE diffusion transformer 加入显式路由指导，使专家选择更稳定地服务不同视觉 token 和去噪阶段。
 - [SafeEditor](https://arxiv.org/abs/2510.24820)：事后式文生图安全编辑方法，用统一 MLLM 编辑模型在生成后修复不安全图像。
+- [PSTF-AttControl: Per-Subject-Tuning-Free Personalized Image Generation with Controllable Face Attributes](https://arxiv.org/abs/2510.25084)：PSTF-AttControl 在无需逐主体调参的情况下控制人脸属性，同时保持个性化身份。
+- [Hawk: Leveraging Spatial Context for Faster Autoregressive Text-to-Image Generation](https://arxiv.org/abs/2510.25739)：把 speculative decoding 引入自回归文生图，并利用图像二维空间上下文对齐 draft model 与 target model 输出，以加速逐 token 解码。
+- [SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing](https://arxiv.org/abs/2510.25970)：用流分解实现无需反演的文本到图像编辑。
+- [FreeSliders: Training-Free, Modality-Agnostic Concept Sliders for Fine-Grained Diffusion Control in Images, Audio, and Video](https://arxiv.org/abs/2511.00103)：在推理时估计概念 slider 方向，提供免训练、跨模态的细粒度扩散控制，可用于图像、音频和视频生成。
+- [TAUE: Training-free Noise Transplant and Cultivation Diffusion Model](https://arxiv.org/abs/2511.02580)：TAUE 通过 noise transplantation and cultivation 生成分层 T2I 场景，免微调地产生可编辑前景和背景组件。
+- [Seeing What You Say: Expressive Image Generation from Speech](https://arxiv.org/abs/2511.03423)：以语音作为图像生成条件，让语音韵律和 spoken content 共同驱动更具表现力的视觉合成，而不仅依赖文本提示。
+- [Prompt-Based Safety Guidance Is Ineffective for Unlearned Text-to-Image Diffusion Models](https://arxiv.org/abs/2511.04834)：检验概念遗忘后的 prompt-only 安全引导效果，指出未学习概念的文生图扩散模型仍需要比表层提示改写更强的模型侧防护。
+- [DeepForgeSeal: Latent Space-Driven Semi-Fragile Watermarking for Deepfake Detection Using Multi-Agent Adversarial Reinforcement Learning](https://arxiv.org/abs/2511.04949)：结合 latent-space semi-fragile watermarking 与 multi-agent adversarial reinforcement learning，在良性和恶意图像变换下进行主动式 deepfake detection。
+- [Personalized Image Editing in Text-to-Image Diffusion Models via Collaborative Direct Preference Optimization](https://arxiv.org/abs/2511.05616)：提出 Collaborative DPO，把用户表示为动态偏好图节点，并用图神经网络嵌入结合相似用户信号来对齐个性化图像编辑。
+- [MambaOVSR: Multiscale Fusion with Global Motion Modeling for Chinese Opera Video Super-Resolution](https://arxiv.org/abs/2511.06172)：在中国戏曲老视频超分中结合多尺度融合和全局运动建模，用 Mamba 式结构恢复低帧率档案细节。
+- [Gait Recognition via Collaborating Discriminative and Generative Diffusion Models](https://arxiv.org/abs/2511.06245)：把判别式步态表征学习与扩散式分布建模结合，用于生物识别而非直接图像生成。
+- [Improving Deepfake Detection with Reinforcement Learning-Based Adaptive Data Augmentation](https://arxiv.org/abs/2511.07051)：用强化学习自适应选择 deepfake 数据增强策略，使检测器随伪造特征复杂度变化而改进泛化。
+- [VectorSynth: Fine-Grained Satellite Image Synthesis with Structured Semantics](https://arxiv.org/abs/2511.07744)：VectorSynth 以 polygonal semantic annotations 条件化卫星图像扩散合成，将矢量几何与像素级生成对齐。
+- [Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](https://arxiv.org/abs/2511.07970)：研究 T2I 扩散中的连续概念擦除请求，并加入限制参数漂移的正则项，缓解多轮 unlearning 后的效用崩塌。
+- [Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](https://arxiv.org/abs/2511.10150)：通过公平性去偏和分布对齐的双机制优化深度伪造检测器，减少人口属性偏差且尽量保持检测准确率。
+- [A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space](https://arxiv.org/abs/2511.10555)：通过离散风格空间实现代码到风格图像生成，契合可控图像生成模型。
+- [SP-Guard: Selective Prompt-adaptive Guidance for Safe Text-to-Image Generation](https://arxiv.org/abs/2511.11014)：SP-Guard 估计提示 harmfulness 并施加 selective guidance masks，让不安全区域在推理时受到更强控制。
+- [Arcee: Differentiable Recurrent State Chain for Generative Vision Modeling with Mamba SSMs](https://arxiv.org/abs/2511.11243)：用可微递归状态链改造 Mamba 式视觉生成，保留跨块状态而不是每个块重新初始化 selective-scan 记忆。
+- [Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](https://arxiv.org/abs/2511.12107)：用双重监督微调 DINO 特征，使人脸伪造检测器关注细粒度篡改痕迹，而不只依赖全局身份线索。
+- [MixAR: Mixture Autoregressive Image Generation](https://arxiv.org/abs/2511.12181)：MixAR 在 continuous latent space 中做 mixture autoregressive image generation，缓解离散 codebook 对细节保真的限制。
+- [Infinite-Story: A Training-Free Consistent Text-to-Image Generation](https://arxiv.org/abs/2511.13002)：在多提示故事图像中通过身份提示替换和一致性控制，免训练地维持 scale-wise 自回归生成器的身份与风格一致。
+- [MeanFlow Transformers with RAEs](https://arxiv.org/abs/2511.13019)：将 MeanFlow Transformers 与 representation autoencoders 结合，用于视觉生成建模。
+- [Trust in Vision-Language Models: Insights from a Participatory User Workshop](https://arxiv.org/abs/2511.13458)：该项报告用户何时信任 VLM 的 participatory workshop，更像 HCI/模型评估证据而非图像生成模型。
+- [FashionMAC: Deformation-Free Fashion Image Generation with Fine-Grained Model Appearance Customization](https://arxiv.org/abs/2511.14031)：在不扭曲服装纹理的情况下生成以服装为中心的时尚人像，并提供对模特外观的细粒度控制。
+- [Semantic Context Matters](https://arxiv.org/abs/2511.14063)：改进 autoregressive visual generation models 的语义条件控制。
+- [A Comprehensive Study on Visual Token Redundancy for Discrete Diffusion-based Multimodal Large Language Models](https://arxiv.org/abs/2511.15098)：该研究分析并降低离散扩散多模态大模型中的视觉 token 冗余。
+- [Illustrator's Depth: Monocular Layer Index Prediction for Image Decomposition](https://arxiv.org/abs/2511.17454)：为栅格图像预测单目 layer index，使扁平插画可分解为可编辑且有顺序的图层。
+- [UnfoldLDM: Degradation-Aware Unfolding with Iterative Latent Diffusion Priors for Blind Image Restoration](https://arxiv.org/abs/2511.18152)：将 deep unfolding 与 latent diffusion prior 结合，通过多阶段退化感知优化解决盲恢复中的已知退化依赖和过平滑问题。
+- [Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](https://arxiv.org/abs/2511.18281)：Uni-DAD 将 diffusion distillation 与 few-shot domain adaptation 合并成单阶段流程，避免 adapt-then-distill 或 distill-then-adapt 的两阶段复杂性。
+- [When Generative Replay Meets Evolving Deepfakes: Domain-Aware Relative Weighting for Incremental Face Forgery Detection](https://arxiv.org/abs/2511.18436)：用 Domain-Aware Relative Weighting 区分 risky 与 safe 的 generative replay 样本，以便在人脸伪造检测器中持续吸收新 deepfake 域。
+- [Now You See It, Now You Don't - Instant Concept Erasure for Safe Text-to-Image and Video Generation](https://arxiv.org/abs/2511.18684)：提出 training-free 的一次性权重修改方法，在文生图和文生视频生成器中擦除目标概念，同时尽量保留相邻内容。
+- [DiP: Taming Diffusion Models in Pixel Space](https://arxiv.org/abs/2511.18822)： 把扩散模型驯化到像素空间，直接处理像素级生成而不是依赖潜空间压缩，关注细节保真与稳定训练。
+- [DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](https://arxiv.org/abs/2511.19365)： 用频率解耦的像素扩散模型端到端生成图像，把低频结构和高频纹理分别建模。
+- [Beyond Binary Classification: A Semi-supervised Approach to Generalized AI-generated Image Detection](https://arxiv.org/abs/2511.19499)：提出 TriDetect 半监督检测器，用 Sinkhorn 聚类分配和 cross-view consistency 学习 GAN 与扩散图像伪影背后的 latent architecture patterns。
+- [Clair Obscur: an Illumination-Aware Method for Real-World Image Vectorization](https://arxiv.org/abs/2511.20034)：提出 COVec，用光照感知的 intrinsic image decomposition 把真实栅格图转为可编辑向量区域。
+- [A Training-Free Approach for Multi-ID Customization via Attention Adjustment and Spatial Control](https://arxiv.org/abs/2511.20401)：通过注意力调整和空间控制，把单身份定制模型扩展到多人图像生成。核心思想：在无需额外训练的情况下保持多个身份，减少复制粘贴伪影并提升提示词可控性。
+- [PixelDiT: Pixel Diffusion Transformers for Image Generation](https://arxiv.org/abs/2511.20645)： 提出 PixelDiT，在像素空间训练 diffusion transformer，以验证 Transformer 扩散骨干可直接完成图像生成。
+- [DinoLizer: Learning from the Best for Generative Inpainting Localization](https://arxiv.org/abs/2511.20722)：在 DINOv2 patch embedding 上加入线性定位头，检测生成式 inpainting 造成的语义篡改区域。
+- [AuthenLoRA: Entangling Stylization with Imperceptible Watermarks for Copyright-Secure LoRA Adapters](https://arxiv.org/abs/2511.21216)：把风格化 LoRA 适配器与不可感知图像水印绑定，使定制扩散输出本身可追踪，而不只验证适配器文件。
+- [Saddle-Free Guidance: Improved On-Manifold Sampling without Labels or Additional Training](https://arxiv.org/abs/2511.21863)：利用 log-density 鞍点区域的正曲率作为无标签 guidance，在不训练额外 unconditional model 的情况下改进 score-based on-manifold 采样。
+- [Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer](https://arxiv.org/abs/2511.22699)：提出高效单流 Diffusion Transformer 图像生成基础模型。
+- [StyleYourSmile: Cross-Domain Face Retargeting Without Paired Multi-Style Data](https://arxiv.org/abs/2512.01895)：用数据增强和双编码器做 one-shot 跨域人脸重定向，将跨域不变身份线索与表情、风格线索分离。
+- [Improved Mean Flows: On the Challenges of Fastforward Generative Models](https://arxiv.org/abs/2512.02012)：研究 fast-forward mean-flow 生成模型的优化与架构难点，补充后续 pixel mean flows 和 RAE mean-flow 图像生成条目。
+- [SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](https://arxiv.org/abs/2512.02172)：对 3D Gaussian Splatting 多视图输入选择性做超分，避免逐视图增强带来的不一致模糊，属于本页的 3D 渲染边界项。
+- [Delta Sampling: Data-Free Knowledge Transfer Across Diffusion Models](https://arxiv.org/abs/2512.03056)：Delta Sampling 在扩散基座升级时迁移 LoRA、LyCORIS、ControlNet 等适配组件，减少其对固定 backbone 的耦合。
+- [Fully Unsupervised Self-debiasing of Text-to-Image Diffusion Models](https://arxiv.org/abs/2512.03749)：SelfDebias 在测试时无监督调节 T2I 扩散模型的 UNet attention，避免依赖标注公平性数据或重训。
+- [DirectDrag: High-Fidelity, Mask-Free, Prompt-Free Drag-based Image Editing via Readout-Guided Feature Alignment](https://arxiv.org/abs/2512.03981)：通过 readout-guided feature alignment 实现无需掩码和提示的拖拽编辑，在减少伪影的同时保持点位运动精度。
+- [MVRoom: Controllable 3D Indoor Scene Generation with Multi-View Diffusion Models](https://arxiv.org/abs/2512.04248)：用两阶段 multi-view diffusion 从粗 3D layout 生成室内场景，结合 layout-aware epipolar attention 和迭代 text-to-scene 扩展，属于 3D 边界项。
+- [Data-regularized Reinforcement Learning for Diffusion Models at Scale](https://arxiv.org/abs/2512.04332)：用到离线数据分布的 forward KL 锚定扩散 RL，将 reward maximization 与 diffusion loss 结合，减少大规模偏好优化中的 reward hacking。
+- [A Sanity Check for Multi-In-Domain Face Forgery Detection in the Real World](https://arxiv.org/abs/2512.04837)：定义 MID-FFD 场景，并用 DevDet 的 Face Forgery Developer 与 dose-adaptive fine-tuning 放大真实/伪造差异，避免域差异主导特征空间。
+- [Autoregressive Image Generation Needs Only a Few Lines of Cached Tokens](https://arxiv.org/abs/2512.04857)：提出 LineAR 这一免训练行级 KV cache 压缩方法，利用二维视觉注意力结构降低自回归图像生成的缓存内存。
+- [Rethinking the Use of Vision Transformers for AI-Generated Image Detection](https://arxiv.org/abs/2512.04969)：重新分析 CLIP-ViT 层级特征用于 AI 图像检测，指出早期层比最终层提供更局部且可泛化的合成图像线索。
+- [Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models](https://arxiv.org/abs/2512.05198)：提出扩散补全中的 pixel-equivalent latent compositing，用全分辨率掩码和软 alpha 行为替代下采样潜掩码插值。
+- [One Layer Is Enough](https://arxiv.org/abs/2512.07829)：用极少新增层适配预训练视觉编码器服务 image generation。
+- [Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search](https://arxiv.org/abs/2512.08724)：Bias-Guided Prompt Search 结合 LLM prompt generator 与属性分类器，自动寻找会触发 T2I 人口统计偏见的中性提示。
+- [Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization](https://arxiv.org/abs/2512.10955)：Omni-Attribute 作为 open-vocabulary attribute encoder，分离 identity、expression、lighting、style 等个性化属性。
+- [FactorPortrait: Controllable Portrait Animation via Disentangled Expression, Pose, and Viewpoint](https://arxiv.org/abs/2512.11645)：将表情、头部姿态和视角因素解耦用于可控肖像动画，为图像驱动的人脸生成提供更可分离的控制信号。
+- [SVG-T2I: Scaling Up Text-to-Image Latent Diffusion Model Without Variational Autoencoder](https://arxiv.org/abs/2512.11749)：把 T2I latent diffusion 扩展到视觉基础模型特征空间，用自监督视觉表示替代 VAE latent 进行生成。
+- [On the Design of One-step Diffusion via Shortcutting Flow Paths](https://arxiv.org/abs/2512.11831)：围绕 flow-path shortcutting 统一一步扩散设计，澄清少步和一步图像生成器中的训练选择。
+- [Integrating Fourier Neural Operator with Diffusion Model for Autoregressive Predictions of Three-dimensional Turbulence](https://arxiv.org/abs/2512.12628)：将隐式自适应 Fourier neural operator 与扩散模型结合做 3D 湍流预测，是科学预测应用而非图像生成方法。
+- [Scalable Pre-Training of Visual Tokenizers](https://arxiv.org/abs/2512.13687)：研究面向 generation models 的 scalable visual-tokenizer pretraining。
+- [Semantic Mismatch and Perceptual Degradation: A New Perspective on Image Editing Immunity](https://arxiv.org/abs/2512.14320)：SIFM 扰动扩散中间特征，使受保护图像要么偏离恶意编辑提示，要么发生感知退化，并用 MLLM-based ISR 指标评估免疫成功率。
+- [Where is the Watermark? Interpretable Watermark Detection at the Block Level](https://arxiv.org/abs/2512.14994)：用 block-wise DWT statistics 嵌入图像水印并生成区域级检测图，使水印位置和篡改区域更可解释。
+- [Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition](https://arxiv.org/abs/2512.15603)： 通过图层分解让 Qwen-Image 生成天然可编辑的分层结果，使对象、背景和透明层可分别修改。
+- [Restore-R1: Efficient Image Restoration Agents via Reinforcement Learning with Multimodal LLM Perceptual Feedback](https://arxiv.org/abs/2512.18599)：用多模态大模型感知反馈通过 RL 训练图像复原智能体。
+- [AsyncDiff: Asynchronous Timestep Conditioning for Enhanced Text-to-Image Diffusion Inference](https://arxiv.org/abs/2512.18675)：解耦去噪器条件时间步与数值更新步，并用 GRPO 训练轻量时间步预测器来改进文生图推理。
+- [DVI: Disentangling Semantic and Visual Identity for Training-Free Personalized Generation](https://arxiv.org/abs/2512.18964)：DVI 解耦 semantic identity 与 visual identity，在免调参个性化中同时保留面部身份和光照、肤质、环境色调。
+- [WaTeRFlow: Watermark Temporal Robustness via Flow Consistency](https://arxiv.org/abs/2512.19048)：通过流一致性提升图像水印在图生视频转换后的时序鲁棒性，使来源信号在生成帧中仍可检测。
+- [3SGen: Unified Subject, Style, and Structure-Driven Image Generation with Adaptive Task-specific Memory](https://arxiv.org/abs/2512.19271)：用自适应 task-specific memory 统一主体、风格与结构驱动的图像生成控制。
+- [FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting](https://arxiv.org/abs/2512.21104)：FreeInpaint 在不调优基础扩散模型的情况下改善文本引导 inpainting 的 prompt alignment 与 visual rationality。
+- [TAMEing Long Contexts in Personalization: Towards Training-Free and State-Aware MLLM Personalized Assistant](https://arxiv.org/abs/2512.21616)：该项研究长上下文个性化 MLLM assistant 对命名视觉概念的记忆与对话，更接近多模态助手而非图像生成模型训练。
+- [DPAR](https://arxiv.org/abs/2512.21867)：用 dynamic patchification 提升 autoregressive visual generation 的效率。
+- [Self-Evaluation Unlocks Any-Step Text-to-Image Generation](https://arxiv.org/abs/2512.22374)：Self-E 从零训练时同时进行 flow-style 局部学习和基于自身 score estimate 的 self-evaluation，使单个 T2I 模型支持少步与长轨迹采样。
+- [NOWA: Null-space Optical Watermark for Invisible Capture Fingerprinting and Tamper Localization](https://arxiv.org/abs/2512.22501)：结合相机孔径 phase mask 与 Null-Space Network，使不可见 optical watermark 在重建后仍保留，并支持像素级篡改定位。
+- [Reverse Personalization](https://arxiv.org/abs/2512.22984)：分析 T2I 人脸身份生成过程，研究无需逐身份微调地移除或修改 identity-specific features。
+- [GARDO: Reinforcing Diffusion Models without Reward Hacking](https://arxiv.org/abs/2512.24138)： 提出 GARDO，在不发生 reward hacking 的前提下强化扩散模型，约束奖励优化保持真实图像质量和提示对齐。
 - [FlowChef](https://doi.org/10.1109/ICCV51701.2025.01420)：通过对 rectified-flow 模型进行 steering 来增强可控视觉生成。
 - [KoDi](https://doi.org/10.1109/ACCESS.2025.3633798)：构建面向韩英双语提示的文生图扩散模型，强调文化一致性生成。
 - [HybridEditDif](https://doi.org/10.1016/j.patcog.2025.112510)：结合文本和样例引导进行扩散式图像编辑。
@@ -42,18 +1449,397 @@
 - [Gain-Map Decomposed Diffusion](https://doi.org/10.1109/ICCV51701.2025.01629)：在扩散式图像生成流程中分解增益图，用于生成 HDR 图像。
 - [Edge-Preserving Diffusion Editing](https://doi.org/10.1109/IoTAAI66837.2025.11212919)：在语义扩散编辑中加入边缘保持平滑，提升局部编辑控制。
 - [LatentPS](https://doi.org/10.1109/WACVW65960.2025.00023)：利用潜在扩散表示进行图像编辑，适合放入图像编辑模型部分。
+- [The Safety Illusion?](https://doi.org/10.1109/TIP.2025.3620665)：测试扩散模型概念移除的边界，说明视觉生成安全控制何时难以泛化。
+- [Culture-based Adversarial Attack on Text-to-Image Models](https://doi.org/10.1109/ICME59968.2025.11209989)：研究面向文本到图像模型的文化条件对抗攻击，为视觉生成模型补充模型侧鲁棒性和安全压力测试线索。
+- [Hidden Space Vector Coding for Image Steganography](https://doi.org/10.1109/TCE.2025.3616171)：通过 hidden-space vector coding 用 diffusion models 做 generative image steganography。
+- [Cycle-Consistent Learning for Joint Layout-to-Image Generation and Object Detection](https://doi.org/10.1109/iccv51701.2025.00639)：通过 cycle-consistent learning 联合 layout-to-image generation 与目标检测，增强生成图像的结构化控制。
+- [SVGDreamer++: Advancing Editability and Diversity in Text-Guided SVG Generation](https://doi.org/10.1109/tpami.2025.3547889)：提升文本引导 SVG 生成的可编辑性与多样性，使生成图形保持可编辑的矢量表示。
+- [Towards Universal AI-Generated Image Detection by Variational Information Bottleneck Network](https://doi.org/10.1109/cvpr52734.2025.02219)：使用变分信息瓶颈网络提升 AI 生成图像检测的泛化能力。
+- [CLBA: A Cross-Lingual Backdoor Attack against Text-to-Image Diffusion Models](https://doi.org/10.1109/globecom59602.2025.11432651)：研究针对 text-to-image diffusion models 的跨语言后门攻击，补充恶意行为可随不同语言提示迁移的生成图像安全线索。
+- [TrustMark: Robust Watermarking and Watermark Removal for Arbitrary Resolution Images](https://doi.org/10.1109/iccv51701.2025.01731)：面向任意分辨率图像设计鲁棒水印与水印移除流程，把 provenance 嵌入和去除攻击放在同一评测框架中考察。
+- [Towards provenance-aware diffusion: Key-free watermarking with Gaussian shading](https://doi.org/10.1016/j.eswa.2025.130822)：提出 PPGS key-free、fine-tuning-free 扩散水印，用 proportion-preserved Gaussian sampling 嵌入 bits，同时保持 latent noise 的 Gaussian 统计特性。
+- [Deepfake Detection Leveraging Self-Blended Artifacts Guided by Facial Embedding Discrepancy](https://doi.org/10.1109/tcsvt.2025.3585724)：在 self-blended artifacts 之外加入人脸识别嵌入差异，使检测器同时利用低层伪影和身份空间不一致性。
+- [Revisiting face forgery detection towards generalization](https://doi.org/10.1016/j.neunet.2025.107310)：该文综述 face forgery detection 的泛化问题，组织未知伪造和低质量损坏输入下的鲁棒性，建议迁往 Survey。
+- [ROAR: Reducing Inversion Error in Generative Image Watermarking](https://doi.org/10.1109/iccv51701.2025.01836)：通过 regeneration-based 潜变量优化和畸变自适应 MoE 复原网络，降低扩散水印中的潜空间与像素空间反演误差。
+- [CtrlMark: Controllable Watermarking for ControlNet Against Downstream Fine-Tuning](https://doi.org/10.1109/icpads67057.2025.11323086)：用可触发 benign backdoor 和局部 latent residual embedding 为 ControlNet 插件加水印，使下游微调后仍能激活验证。
+- [Scalable Dual Fingerprinting for Hierarchical Attribution of Text-to-Image Models](https://doi.org/10.1109/iccv51701.2025.01394)：用两个 FI-LoRA 指纹头分别标记服务提供商和消费者，使文生图生成过程支持层级来源归因。
+- [Simpler Diffusion: 1.5 FID on ImageNet512 with pixel-space diffusion](https://doi.org/10.1109/cvpr52734.2025.01683)：用 sigmoid loss weighting、减少 skip connection 的省内存架构和面向高分辨率的算力分配，扩展端到端像素空间扩散。
+- [Diffusion Model is Effectively Its Own Teacher](https://doi.org/10.1109/cvpr52734.2025.01204)：提出 Self Step-Distillation，把扩散模型当前时间步预测或中间激活与前一时间步融合，在没有外部 teacher 的情况下提升生成质量。
+- [PlugMark: A Plug-In Zero-Watermarking Framework for Diffusion Models](https://doi.org/10.1109/iccv51701.2025.01610)：用 plug-in zero-watermarking 保护扩散模型知识产权，避免改动采样流程，并针对微调攻击保持鲁棒性。
+- [Customized Transformer Adapter With Frequency Masking for Deepfake Detection](https://doi.org/10.1109/tifs.2025.3574983)：提出带 frequency masking 的 ViT adapter CUTA，减少 deepfake 检测器对单一伪造模式或显著伪造区域的过拟合。
+- [Easy-editable Image Vectorization with Multi-layer Multi-scale Distributed Visual Feature Embedding](https://doi.org/10.1109/cvpr52734.2025.02174)：用层级 proxy geometry 和多尺度控制点表示图像，在矢量编辑和渲染中保持内部纹理结构。
+- [Generalization-Preserved Learning: Closing the Backdoor to Catastrophic Forgetting in Continual Deepfake Detection](https://doi.org/10.1109/iccv51701.2025.00362)：面向持续 deepfake 检测设计保持泛化能力的更新机制，让检测器学习新生成器痕迹时不遗忘旧伪造线索。
+- [TTP-AP: Test-time projection of augmented prototypes for generalized deepfake detection](https://doi.org/10.1016/j.knosys.2025.114710)：用增强原型和测试时投影适配未知生成器，使 deepfake 检测器无需全量重训也能调整判别边界。
+- [A Flexible and Lightweight Watermarking Framework for Stable Diffusion Models](https://doi.org/10.1109/jiot.2025.3647881)：提供轻量级 Stable Diffusion 水印框架，以较低部署开销把溯源信号嵌入生成模型。
+- [Robust watermarking for diffusion models using error-correcting codes and post-quantum key encapsulation](https://doi.org/10.3389/fphy.2025.1750515)：结合纠错码与后量子密钥封装，提高扩散模型水印面对图像编辑和密钥风险时的稳健性。
+- [Assessing AI-Generated Image Quality Using a Cross-Modal Hierarchical Perception Network](https://doi.org/10.1109/tbc.2025.3622417)：构建跨模态层次感知网络评估 AI 生成图像质量，把视觉伪影和语义对齐纳入同一质量模型。
+- [Character-Level Adversarial Samples Generation Method Based on Dual-Layer Text Watermark](https://doi.org/10.1109/access.2025.3594727)：通过显式和隐式双层文本水印生成字符级对抗样本，属于文本安全方向而非图像合成方法。
+- [Decentralized Deepfake Detection: Feature-Aligned Federated Learning with Multi-Backbone Fusion](https://doi.org/10.1109/icscss64956.2025.11500806)：结合联邦学习与 Inception-v3、Xception 特征融合，使客户端能在不集中私有媒体数据的情况下训练 deepfake 检测器。
+- [SC-Diffusion: Parameter Generation for Task-Oriented Semantic Communication Systems via Conditional Diffusion Model](https://doi.org/10.1109/tmlcn.2025.3618802)：用条件扩散为任务导向语义通信系统生成参数，是扩散模型在无线通信中的偏离主轴应用。
+- [Towards Deepfake Detection for Everyone: A Lightweight Deepfake Detection Algorithm (LiDD)](https://doi.org/10.1109/cai64502.2025.00293)：设计轻量级 LiDD deepfake 检测算法，强调在普通设备上的低成本部署而不只是服务器端最高精度。
+- [Unveiling authenticity with diffusion-based face retouching reversal](https://doi.org/10.1016/j.asoc.2025.113062)：定义 face retouching reversal 任务，构建 50,000 张图像的 deepFRR 数据集，并用 FRRffusion 的面部结构恢复与细节生成还原原始外貌。
+- [HybridNet: Advancing Deepfake Detection Through Residual, SE, and Depthwise Convolutions](https://doi.org/10.1109/access.2025.3640106)：结合残差块、depthwise separable convolution、SE 注意力、HFSA、不确定性阈值和 Grad-CAM，构建高效可解释 deepfake 检测器。
+- [Representation Alignment For Deepfake Detection](https://doi.org/10.1109/iccai66501.2025.00109)：将检测器中间表征与外部语义特征对齐，使 backbone 同时捕捉空间属性和频域线索以提升跨操纵泛化。
+- [Constrained Maximum Likelihood Gaussian Score Fusion for Multimodal Deepfake Detection](https://doi.org/10.1109/iwbf63717.2025.11113422)：用 constrained maximum-likelihood Gaussian fusion 校准多模态 deepfake 检测分数，目标是得到可信的融合判决而非只提高原始准确率。
+- [Harnessing attention for cropping and fusion in CLIP-based AIGC detection](https://doi.org/10.1016/j.neucom.2025.132482)：用 Attention-Guided Saliency Cropping 和 FFN-only fine-tuning 改造 CLIP 做 AIGC 检测，在保留伪影丰富区域的同时避免 attention 过拟合。
+- [SynTag: Enhancing the Geometric Robustness of Inversion-Based Generative Image Watermarking](https://doi.org/10.1109/iccv51701.2025.01430)：向 inversion-based 生成图像水印注入 synchronization tag，改善几何变换下难以保持不变特征的问题。
+- [Hyperparameter Optimization for Deepfake Detection Improving CNN and Transformer Performance Using Bayesian Search](https://doi.org/10.1109/icmi65310.2025.11141060)：用 Optuna Bayesian search 调整 CNN 和 Transformer deepfake 检测器，并比较 dropout、学习率和优化器选择后的 accuracy、F1 与 AUC。
+- [Diffusion-based Reinforcement Learning via LogSumExp-weighted Variational Policy Optimization](https://doi.org/10.1109/cac67268.2025.11487801)：提出用于扩散策略在线强化学习的 LSEVPO，是通用 RL 方法而不是视觉生成条目。
+- [FSD 2.0: Improved Fake Song Dataset for Unknown-domain Deepfake Detection](https://doi.org/10.1109/icmew68306.2025.11152048)：发布面向未知域 singing deepfake 检测的扩展 Fake Song Dataset，属于音频伪造检测而非图像生成。
+- [Cognitive Inspired Generalization Boosting for Face Forgery Detection](https://doi.org/10.1109/icme59968.2025.11209182)：在 SFMM 中结合快速 spatial-frequency transformer 和慢速 momentum memory bank，借鉴双过程认知提升人脸伪造泛化。
+- [CAPMamba: A hybrid vision model for enhancing generalization in deepfake detection](https://doi.org/10.1016/j.eswa.2025.130913)：结合 Capsule Networks 与 MambaVision，用稳定面部区域的时序差异分数引导注意力聚焦细微时空 deepfake 伪影。
+- [The Impact of Data Augmentation on Deepfake Detection: A Comparative Study of CNN and Transformer Models](https://doi.org/10.1109/icmi65310.2025.11141228)：在 DFDC 上比较 CNN 与 Transformer deepfake 检测器的增强策略，分析旋转、颜色扰动、噪声和随机擦除对鲁棒指标的影响。
+- [SecureGenAI: A Standardized Framework for Authentication and Provenance in AI-Generated Images using Blockchain-Enhanced Watermarking](https://doi.org/10.1109/ickecs65700.2025.11035329)：在图像生成过程中嵌入 DWT 水印并用区块链记录验证信息，面向 AI 生成图像的防篡改认证与溯源。
+- [Omni Contextual Aggregation Networks for High-Fidelity Image Inpainting](https://doi.org/10.1109/tcsvt.2025.3532321)：提出 dynamic omni-attention mechanism，同时建模空间和通道交互，以降低注意力瓶颈并提升高保真图像修复。
+- [SFSimNet: An Efficient Spatial-Frequency Multi-Scale Intra-Feature Similarity Measurement Network for Deepfake Detection](https://doi.org/10.1109/tce.2025.3580624)：在空间和频域多尺度上度量 intra-feature similarity，用低复杂度网络捕捉人脸合成差异。
+- [HSFF-Net: Hierarchical spectral-feature fusion network for deepfake detection and localization](https://doi.org/10.1016/j.neunet.2025.107967)：使用 HSFF-Net 融合空间域与频域伪造线索，并通过 spectral detail amplification、层级双流融合、adaptive feature elevation 与 localization guidance 同时做 deepfake 检测和篡改定位。
+- [Font-Agent: Enhancing Font Understanding with Large Language Models](https://doi.org/10.1109/cvpr52734.2025.01832)：构建 13.5 万 font-text pair 的 Diversity Font Dataset，并训练基于 LLM 的字体质量解释器，重点是评估生成字体而非自然图像生成。
+- [Open-Unfairness Adversarial Mitigation for Generalized Deepfake Detection](https://doi.org/10.1109/iccv51701.2025.00073)：在不预设固定人口属性标签的情况下缓解 deepfake 检测公平性偏差，使法律和身份安全场景中的预测更可靠。
+- [Cascaded Autoregressive Diffusion Models for Remote Sensing Scene Generation](https://doi.org/10.1109/tgrs.2025.3622225)：用 cascaded autoregressive diffusion 生成遥感场景，显式建模目标与背景耦合以及目标分布模式。
+- [NoiseCtrl: A Sampling-Algorithm-Agnostic Conditional Generation Method for Diffusion Models](https://doi.org/10.1109/cvpr52734.2025.01686)：通过调整采样噪声项进行条件生成控制，同时保持 DDPM、DDIM 等基础 sampler 不变。
+- [Solving ILL-posed Regions in High Dynamic Range Reconstruction With Uncertainty-Aware Diffusion Models](https://doi.org/10.1109/tcsvt.2025.3638674)：用像素级不确定性图和小波域扩散模块修复遮挡、饱和等 ill-posed HDR 区域中的残余 ghosting。
+- [Dual Frequency-Guided Spatiotemporal Feature Learning for Face Forgery Detection](https://doi.org/10.1109/tbiom.2025.3646181)：结合 state-space 时序建模与 Fourier、wavelet prompt，使视频伪造检测器同时捕捉局部和全局频域伪影。
+- [Visual Relation Diffusion for Human-Object Interaction Detection](https://doi.org/10.1109/iccv51701.2025.02186)：提出 VRDiff，用 dense visual relation generation 建模人-物交互关系，扩展扩散模型的交互级视觉理解。
+- [Images as Noisy Labels: Unleashing the Potential of the Diffusion Model for Open-Vocabulary Semantic Segmentation](https://doi.org/10.1109/iccv51701.2025.02248)：把扩散输出作为 open-vocabulary segmentation 的去噪监督，弥补 CLIP 对场景对象空间依赖建模不足的问题。
+- [Remote Sensing Image Generation via Object Text Decoupling](https://doi.org/10.1109/tpami.2025.3599520)：在 OTD-GAN 中把目标文本从全局 caption 中解耦，使遥感图像生成获得不受固定 layout 限制的目标级控制。
+- [Beyond Inserting: Learning Subject Embedding for Semantic-Fidelity Personalized Diffusion Generation](https://doi.org/10.1109/tcsvt.2025.3588882)：学习 subject embedding 来保持个性化主体，同时维持其与场景、动作和属性提示之间的语义交互。
+- [Autonomous language-image generation loops converge to generic visual motifs](https://doi.org/10.1016/j.patter.2025.101451)：展示 SDXL-LLaVA 文本-图像反馈循环会收敛到少量 generic motifs，用于诊断自主多模态生成中的多样性坍缩。
+- [Aligning Normal Representations in Diffusion Model for Video Anomaly Detection](https://doi.org/10.1109/tcsvt.2025.3602841)：用 normal-specific representation 引导扩散式视频异常检测，减少低层重建带来的 shortcut correlation。
+- [FreqOR: Frequency-guided sampling initialization with attention enhancements for training-free object repositioning](https://doi.org/10.1016/j.cviu.2025.104610)：FreqOR 免训练移动真实图像中的对象，通过抑制空出区域 inverted latent 高频先验，并加入 RA-KV 与 query-guided consistency 改善补全和身份一致性。
+- [Refractory high-entropy alloys for solid-state hydrogen storage: A computational design review](https://doi.org/10.1016/j.ijhydene.2025.153291)：该文综述 refractory high-entropy alloys 的固态储氢计算设计，明显偏材料科学，应从图像生成页面移出或删除。
+- [Unlocking compositional potential: Leveraging specific feedback for text-to-image generation in diffusion models](https://doi.org/10.1016/j.eswa.2025.129443)：用物体类别和数量反馈微调 T2I 扩散模型，通过检测器置信度构造可微 matching-score reward，并配套 11,337 对组合生成基准。
+- [Enhancing Object-Attribute Alignment in Diffusion Models via Training-Free Contrastive Parallel Denoising](https://doi.org/10.1109/icme59968.2025.11209358)：采用免训练 Contrastive Parallel Denoising，将提示拆成子提示并行去噪，再用对象属性对比损失和 cross-attention maps 合并 latent。
+- [DRTNet: Diffusion Reconstruction Texture Network for AI-generated Image Detection](https://doi.org/10.1109/icme59968.2025.11209234)：构建 DRTNet，把输入图像与 Stable Diffusion 重建图组成双分支输入，通过 reconstruction texture 差异检测 AI 生成图像。
+- [Instance-wise distribution control of text-to-image diffusion models](https://doi.org/10.1016/j.patcog.2025.112614)：用目标检测器和属性分类器指导扩散模型微调，使多实例生成图像中的属性比例匹配用户指定分布。
+- [ArtisanFlow: Style Customization System for Illustration Generation](https://doi.org/10.1109/icmew68306.2025.11152131)：用 LoRA 做插画风格定制，并保持与 ControlNet、Layer Diffusion 的兼容，同时评估风格保真、语义相似度、稳定性和构图灵活性。
+- [UNICOM: Unified, foreground-aware, and context-realistic deep image composition with diffusion model](https://doi.org/10.1016/j.neucom.2025.131129)：将深度图像合成统一到无位置 mask 的扩散框架中，用 background prompt、参考图空间映射和自监督 triplets 让前景姿态与外观适配背景。
+- [A Dual Stream Visual Tokenizer for LLM Image Generation](https://doi.org/10.24963/ijcai.2025/167)：把高层语义 token 与低层像素 token 组成双流视觉 tokenizer，用 VQ-VAE 引导和扩散重建兼顾 LLM 图像生成的内容与结构。
+- [Who Controls the Authorization? Invertible Networks for Copyright Protection in Text-to-Image Synthesis](https://doi.org/10.1109/iccv51701.2025.01469)：用可逆网络为 T2I 合成嵌入和验证授权控制，面向更隐蔽的 personalized generation 侵权提供版权保护机制。
+- [Reference-Based Super-Resolution via Image-Based Retrieval-Augmented Generation Diffusion](https://doi.org/10.1109/iccv51701.2025.01002)：用 image-based RAG 做参考超分辨率，通过可训练哈希检索真实或生成参考 patch，并在恢复前过滤扩散生成参考中的幻觉。
+- [InferEdit: An instruction-based system with a multimodal LLM for complex multi-target image editing](https://doi.org/10.1016/j.visinf.2025.100265)：通过 MLLM planner 免训练执行复杂图像编辑，将多目标指令拆成子任务，定位目标，并用任务搜索树调度移除、替换或局部编辑模型。
+- [PSFD: Proactive Spatial-Frequency Defense against Malicious Exemplar-Guided Image Editing](https://doi.org/10.1109/icme59968.2025.11209369)：用 PSFD 防御 exemplar-guided 恶意图像编辑，在空间域扰动视觉编码器、在频域扰动高频分量，使受保护图像更难被改写。
+- [Face forgery detection via identification of evident tampered regions and multi-view analysis](https://doi.org/10.1016/j.neucom.2025.132073)：用 RDNN 为人脸区域估计篡改概率，并结合 latent cue capture loss 与多视角分析提升人脸伪造检测鲁棒性。
+- [FMambaIR: A Hybrid State-Space Model and Frequency Domain for Image Restoration](https://doi.org/10.1109/tgrs.2025.3526927)：在 FMambaIR 中结合 Fourier 频域处理与 Mamba 状态空间模块，让图像复原模型同时捕捉全局退化模式和频率细节。
+- [Diffusion Bridge: Leveraging Diffusion Model to Reduce the Modality Gap Between Text and Vision for Zero-Shot Image Captioning](https://doi.org/10.1109/cvpr52734.2025.00383)：在文本 embedding 分布上训练扩散模型来桥接 CLIP 图文模态间隙，把视觉 embedding 转换到更贴近文本的表示以支持零样本图像描述。
+- [Enhancing Perception for Autonomous Vehicles: A Multi-Scale Feature Modulation Network for Image Restoration](https://doi.org/10.1109/tits.2025.3538485)：设计 MSFM 做自动驾驶图像复原，在频域和空间域调制多尺度特征，使恶劣环境退化图像更接近清晰图像。
+- [Positive Enhanced Preference Alignment for Text-to-Image Models](https://doi.org/10.1109/icassp49660.2025.10890823)：重新分析 T2I 对齐中的 DPO，并用 PEPA 强化正样本偏好项，使偏好调优提升美学与语义对齐而不压低 preferred samples。
+- [Research on plug-and-play image restoration algorithm based on dual weighted ADMM](https://doi.org/10.1016/j.optlastec.2025.113997)：将 multi-head self-attention dense U-Net 去噪器与 dual-weighted ADMM 结合，动态平衡 data fidelity 与 prior terms，用于去噪、去模糊、超分和去块效应。
+- [Spatial-Aware Remote Sensing Image Generation From Spatial Relationship Descriptions](https://doi.org/10.1109/lgrs.2025.3542169)：把遥感空间关系描述转换成可控布局、位置提示和 layout attention，再由增强扩散管线生成空间关系准确的遥感图像。
+- [Learning Dynamic Prompts for All-in-One Image Restoration](https://doi.org/10.1109/tip.2025.3567205)：学习动态 prompt 表示用于一体化图像恢复，使同一恢复模型能按退化类型调整行为，而不是依赖固定任务提示。
+- [A Unified Framework for Context-Aware and Bias-Resilient Text-to-Image Generation](https://doi.org/10.1109/icoct64433.2025.11118789)：将 Stable Diffusion 与 CLIP context conditioning、toxicity filtering、inclusive prompt generation 和生成后 bias detection 结合，用于更公平的 T2I 输出。
+- [Personalized text-to-image generation with Large Language and Vision Assistant enhanced training](https://doi.org/10.1016/j.engappai.2025.112116)：LLaVA-Booth 用 LLaVA-enhanced training、identity-binding loss 与 prior preservation 缓解 personalized T2I 的 overbinding 和 language drift。
+- [Zero-Shot Low-Light Image Enhancement via Joint Frequency Domain Priors Guided Diffusion](https://doi.org/10.1109/lsp.2025.3547269)：用联合频域先验引导扩散式低光增强，目标是在无任务专用成对重训练时完成零样本恢复。
+- [DiffDark: Multi-prior integration driven diffusion model for low-light image enhancement](https://doi.org/10.1016/j.patcog.2025.111814)：在低光增强扩散模型中整合多种先验，用互补恢复线索重建暗光图像细节。
+- [Data Bias Mitigation and Evaluation Framework for Diffusion-Based Generative Face Models](https://doi.org/10.1109/iccvw69036.2025.00037)：通过 KenyanFaceHQ 和标准化评估流程缓解 diffusion face generators 对浅肤色人脸的偏置。
+- [Aligning Text-to-Image Diffusion Models With Noise-Conditioned Perception](https://doi.org/10.1109/access.2025.3632092)：用噪声条件下的感知反馈对齐文生图扩散模型，使对齐信号作用于去噪噪声水平，而不只评价最终图像文本匹配。
+- [Semantically invariant conditioning of diffusion models: a unified framework for cross-model positive prompting](https://doi.org/10.21869/2223-1536-2025-15-4-35-49)：用语义和语言不变量构建 cross-model positive prompting，提高不同扩散图像生成模型的提示遵循能力。
+- [Enhancing Visual Aesthetics in Stable Diffusion: A Reinforcement Learning Approach](https://doi.org/10.1109/smc58881.2025.11342753)：把图像美学评估模型作为 reward，用强化学习优化 Stable Diffusion 的去噪策略以提升生成图像美感。
+- [Debias-DPO: Debiasing Diffusion-based Face Image Generation with Direct Preference Optimization](https://doi.org/10.1109/ijcb65343.2025.11411388)：Debias-DPO 将 DPO 用于 diffusion face generation，对 underrepresented social-attribute classes 赋予更高偏好以缓解偏置。
+- [A Plug-and-Play Approach for Robust Image Editing in Text-to-Image Diffusion Models](https://doi.org/10.1109/iccvw69036.2025.00454)：在 self-attention 内使用 residual linear interpolation 稳定 inversion，使高分辨率 T2I 图像编辑更鲁棒。
+- [Continuous alignment of multi-target preferences via instructed diffusion model](https://doi.org/10.1016/j.patcog.2025.112987)：用指令化偏好信号对扩散模型进行多目标偏好对齐。
+- [Iterative Semantic Refinement: A Vision Language Model-Driven Approach to Auto-Regressive Image Editing](https://doi.org/10.1109/isas66241.2025.11101889)：用视觉语言模型的迭代语义细化驱动自回归图像编辑。
+- [UDMMColor: A Unified Diffusion Model for Multi-Modal Colorization](https://doi.org/10.1109/tcsvt.2025.3643915)：补充用于多模态着色的统一扩散模型。
+- [Trustworthy Super-Resolution of Multispectral Sentinel-2 Imagery With Latent Diffusion](https://doi.org/10.1109/jstars.2025.3542220)： 用 latent diffusion 做 Sentinel-2 多光谱超分辨率，并围绕可信恢复约束光谱一致性和空间细节。
+- [Any Fashion Attribute Editing: Dataset and Pretrained Models](https://doi.org/10.1109/tpami.2025.3581793)：AFED 含 83 万张 sketch 与 product-domain 时尚图像，覆盖 78 个细粒度属性，并用 Twin-Net GAN inversion 在保持非目标部件的同时编辑属性。
+- [ActErase: A Training-Free Paradigm for Precise Concept Erasure via Activation Patching](https://arxiv.org/abs/2601.00267)：通过定位 activation-difference regions 并重定向目标概念激活，ActErase 在不微调 T2I 扩散模型的情况下执行概念擦除。
+- [Fusion-SSAT: Unleashing the Potential of Self-supervised Auxiliary Task by Feature Fusion for Generalized Deepfake Detection](https://arxiv.org/abs/2601.00789)：将 self-supervised auxiliary task 表征与 deepfake 分类特征融合，在 DF40、FaceForensics++、Celeb-DF 等跨数据集评测中提升泛化。
+- [Luminark: Training-free, Probabilistically-Certified Watermarking for General Vision Generative Models](https://arxiv.org/abs/2601.01085)：定义基于 patch-level luminance statistics 的水印，并通过 plug-and-play guidance 注入视觉生成模型，同时给出可控 false-positive probability。
+- [Mass Concept Erasure in Diffusion Models with Concept Hierarchy](https://arxiv.org/abs/2601.03305)：把待擦除概念组织成 supertype-subtype 层级，通过共享父概念进行 group-wise suppression，避免每个概念单独训练 adapter。
+- [Detecting AI-Generated Images via Distributional Deviations from Real Images](https://arxiv.org/abs/2601.03586)：分析冻结 CLIP-ViT 特征中的真实图像分布偏移，并把高层真实图像聚类信号转化为可泛化的 AI 图像检测器。
+- [LinkD: AutoRegressive Diffusion Model for Mechanical Linkage Synthesis](https://arxiv.org/abs/2601.04054)：LinkD 用 autoregressive diffusion 合成机械 linkage，是机械设计生成器而非图像生成或编辑。
+- [Aligning Text, Code, and Vision: A Multi-Objective Reinforcement Learning Framework for Text-to-Visualization](https://arxiv.org/abs/2601.04582)：用覆盖文本、代码与视觉的多目标强化学习优化文本到可视化。
+- [On the Holistic Approach for Detecting Human Image Forgery](https://arxiv.org/abs/2601.04715)：HuForDet 用整体 human-image forgery 检测框架覆盖人脸操控和全身合成图像，并结合双分支线索。
+- [From Easy to Hard++: Promoting Differentially Private Image Synthesis Through Spatial-Frequency Curriculum](https://arxiv.org/abs/2601.06368)：为 AI 生成图像流程加入隐私、取证鲁棒性或检测器训练方法。
+- [Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection](https://arxiv.org/abs/2601.06639)：PAI 作为免训练 diffusion watermarking 框架，通过 semantic deflection 同时抵抗伪造和移除攻击，并支持语义级篡改定位。
+- [CoF-T2I: Video Models as Pure Visual Reasoners for Text-to-Image Generation](https://arxiv.org/abs/2601.10061)：把视频模型的 chain-of-frame 推理用于文生图渐进视觉细化，使中间视觉状态成为生成过程的一部分。
+- [Event Detection with a Context-Aware Encoder and LoRA for Improved Performance on Long-Tailed Classes](https://arxiv.org/abs/2601.11932)：该项用 context-aware encoder 与 LoRA 做长尾 NLP event detection，明显偏文本信息抽取而非图像生成。
+- [S^2F-Net:A Robust Spatial-Spectral Fusion Framework for Cross-Model AIGC Detection](https://arxiv.org/abs/2601.12313)：融合空间与频谱证据检测 AIGC 图像，使检测器能跨生成模型家族泛化，而不是过拟合单一模型伪影。
+- [PhaseMark: A Post-hoc, Optimization-Free Watermarking of AI-generated Images in the Latent Frequency Domain](https://arxiv.org/abs/2601.13128)：PhaseMark 直接调制 VAE latent 的频域相位，用 single-shot 后处理方式嵌入水印，避免迭代 inversion 或优化。
+- [LuxRemix](https://arxiv.org/abs/2601.15283)：分解并重组室内场景光照，为图像和场景生成补充可控照明编辑。
+- [PF-D2M: A Pose-free Diffusion Model for Universal Dance-to-Music Generation](https://arxiv.org/abs/2601.15872)：用舞蹈视频视觉特征和 progressive diffusion training 生成匹配舞蹈的音乐；相对图像模型页属于 off-axis 视频到音乐生成条目。
+- [Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders](https://arxiv.org/abs/2601.16208)：用 representation autoencoder 扩展文本到图像 diffusion Transformer，改进生成所依赖的潜空间。
+- [ResAgent: Entropy-based Prior Point Discovery and Visual Reasoning for Referring Expression Segmentation](https://arxiv.org/abs/2601.16394)：通过基于熵的先验点发现和视觉推理改进 referring-expression segmentation。
+- [DeMark: A Query-Free Black-Box Attack on Deepfake Watermarking Defenses](https://arxiv.org/abs/2601.16473)：利用 encoder-decoder watermarking model 的 latent-space 漏洞，通过 compressive-sensing sparsification 在保持视觉真实感的同时移除 deepfake 防御水印。
+- [Edge-Aware Image Manipulation via Diffusion Models with a Novel Structure-Preservation Loss](https://arxiv.org/abs/2601.16645)：在 latent-diffusion 编辑过程中加入 training-free Structure Preservation Loss，并结合 mask、颜色保持和后处理，维持像素级边缘结构。
+- [Revealing the Truth with ConLLM for Detecting Multi-Modal Deepfakes](https://arxiv.org/abs/2601.17530)：使用对比式 LLM 风格的多模态检测器，围绕跨模态不一致信号识别 deepfake 图像及其关联内容。
+- [Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](https://arxiv.org/abs/2601.18623)：在跨模态图像翻译中自适应调整源域到目标域的扩散轨迹，把 domain shift 作为可控去噪成分处理。
+- [SemBind: Binding Diffusion Watermarks to Semantics Against Black-Box Forgery Attacks](https://arxiv.org/abs/2601.20310)：SemBind 将 latent diffusion 水印与图像语义绑定，防御把服务商水印复制到非服务商图像上的黑盒伪造攻击。
+- [Non-Markov Multi-Round Conversational Image Generation with History-Conditioned MLLMs](https://arxiv.org/abs/2601.20911)：形式化多轮对话式图像生成中的 non-Markov 设置，要求模型利用完整图文历史处理回指、撤销和早期实体引用，并给出相应训练与评测协议。
+- [PHDME: Physics-Informed Diffusion Models without Explicit Governing Equations](https://arxiv.org/abs/2601.21234)：PHDME 用 port-Hamiltonian diffusion 在稀疏观测下预测动力系统轨迹，属于科学建模边界项。
+- [SimGraph: A Unified Framework for Scene Graph-Based Image Generation and Editing](https://arxiv.org/abs/2601.21498)：SimGraph 用 scene graph 统一图像生成与编辑，通过对象关系结构保持空间一致性和语义连贯性。
+- [HERS: Hidden-Pattern Expert Learning for Risk-Specific Vehicle Damage Adaptation in Diffusion Models](https://arxiv.org/abs/2601.21517)：用 hidden-pattern expert learning 适配车辆损伤图像扩散生成，面向风险特定的合成损伤数据而非通用图像合成。
+- [PI-Light: Physics-Inspired Diffusion for Full-Image Relighting](https://arxiv.org/abs/2601.22135)：用两阶段 physics-inspired diffusion、batch-aware attention 和 physics-guided neural renderer 提升整图重光照的物理合理性与泛化。
+- [Pixel Mean Flows](https://arxiv.org/abs/2601.22158)：用 pixel mean flows 实现无潜变量瓶颈的一步图像生成。
+- [DreamVAR: Taming Reinforced Visual Autoregressive Model for High-Fidelity Subject-Driven Image Generation](https://arxiv.org/abs/2601.22507)：DreamVAR 基于 next-scale visual autoregression 做 subject-driven image generation，并加入多尺度身份条件以提升个性化保真。
+- [Particle-Guided Diffusion Models for Partial Differential Equations](https://arxiv.org/abs/2601.23262)：在 Sequential Monte Carlo 框架中把 PDE residual 和观测约束作为扩散采样 guidance，使生成的 PDE 解满足物理可行性。
+- [The Illusion of Forgetting: Attack Unlearned Diffusion via Initial Latent Variable Optimization](https://arxiv.org/abs/2602.00175)：通过优化初始 latent 变量攻击已概念擦除的文生图扩散模型，恢复潜伏记忆并检验视觉 unlearning 方法的鲁棒性。
 - [Diff-PC](https://arxiv.org/abs/2602.00639)：为扩散模型的零样本人像定制加入身份保持和三维感知控制。
+- [MarkCleaner: High-Fidelity Watermark Removal via Imperceptible Micro-Geometric Perturbation](https://arxiv.org/abs/2602.01513)：指出 semantic watermark 会在 micro-geometric perturbation 下失效，并用 mask-guided encoder 与 2D Gaussian Splatting decoder 去除水印且避免语义漂移。
 - [FlowBypass](https://arxiv.org/abs/2602.01805)：通过绕过部分整流流轨迹提升免训练图像编辑效率，同时保持重建保真度。
+- [Fact or Fake? Assessing the Role of Deepfake Detectors in Multimodal Misinformation Detection](https://arxiv.org/abs/2602.01854)：在 MMFakeBench 与 DGM4 上测试 image-only deepfake detector 是否有助于验证图文 misinformation claim，更接近基准分析而非生成器建模。
+- [From Tokens to Numbers: Continuous Number Modeling for SVG Generation](https://arxiv.org/abs/2602.02820)：把 SVG 数值参数作为连续值而非 token 字符串建模，提升向量图生成的效率与泛化。
+- [Unifying Watermarking via Dimension-Aware Mapping](https://arxiv.org/abs/2602.03373)：把深度水印统一成 dimension-aware mapping，覆盖二进制 payload、二维空间 mask 和归因信号等不同水印形态。
+- [Light Up Your Face](https://arxiv.org/abs/2602.04300)：构建面部补光增强的物理一致数据集和扩散模型，为生成式图像编辑补充光照控制案例。
+- [Semantic-level Backdoor Attack against Text-to-Image Diffusion Models](https://arxiv.org/abs/2602.04898)：通过蒸馏式编辑 cross-attention 的 key/value projection 植入连续语义区域触发器，使语义等价但文本不同的提示也能激活 T2I 后门。
+- [SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](https://arxiv.org/abs/2602.05534)：为 VAR 模型加入免训练 scaled spatial guidance，在每个尺度强调高频语义残差，以缓解粗到细生成中的推理漂移。
+- [ShapeGaussian: High-Fidelity 4D Human Reconstruction in Monocular Videos via Vision Priors](https://arxiv.org/abs/2602.05572)：ShapeGaussian 用 vision priors 从单目视频做 template-free 4D human reconstruction，避免依赖 SMPL 模板。
+- [FlexID: Training-Free Flexible Identity Injection via Intent-Aware Modulation for Text-to-Image Generation](https://arxiv.org/abs/2602.07554)：FlexID 将身份分成 semantic identity projection 和 detail modulation 两路，在免调参个性化 T2I 中平衡身份保真与提示适配。
 - [Effects-Sensitive In-Context Inpainting](https://arxiv.org/abs/2602.08388)：通过效果敏感的上下文修补与扩散 Transformer 改进几何图像编辑。
 - [FusionEdit](https://arxiv.org/abs/2602.08725)：结合语义融合与注意力调制，实现无需显式掩码的免训练图像编辑。
+- [Fine-T2I: An Open, Large-Scale, and Diverse Dataset for High-Quality T2I Fine-Tuning](https://arxiv.org/abs/2602.09439)：Fine-T2I 含 600 万对开放 T2I 微调数据，覆盖任务组合、提示类别、视觉风格和模板，并经过严格的图文对齐与视觉质量过滤。
+- [ELROND: Exploring and decomposing intrinsic capabilities of diffusion models](https://arxiv.org/abs/2602.10216)：ELROND 在 embedding space 中分解扩散模型内在能力，为用户提供可控语义变化方向而非只依赖随机种子。
+- [3DXTalker: Unifying Identity, Lip Sync, Emotion, and Spatial Dynamics in Expressive 3D Talking Avatars](https://arxiv.org/abs/2602.10516)：3DXTalker 统一 identity、lip sync、emotion 和 spatial dynamics，用于可控 audio-driven 3D talking avatar generation。
+- [Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling](https://arxiv.org/abs/2602.11146)：提出 diffusion-native latent reward model，用于图像生成器偏好优化。
+- [Latent Forcing: Reordering the Diffusion Trajectory for Pixel-Space Image Generation](https://arxiv.org/abs/2602.11401)： 重排像素空间扩散轨迹进行 latent forcing，使早期或关键步骤更好控制全局结构和细节生成。
+- [ImageRAGTurbo: Towards One-step Text-to-Image Generation with Retrieval-Augmented Diffusion Models](https://arxiv.org/abs/2602.12640)：用 retrieval-augmented diffusion 推进一步式文本到图像生成。
+- [Inject Where It Matters: Training-Free Spatially-Adaptive Identity Preservation for Text-to-Image Personalization](https://arxiv.org/abs/2602.13994)：SpatialID 只在需要的位置注入身份特征，避免 uniform visual injection 污染背景、光照等非人脸区域。
+- [When Test-Time Guidance Is Enough: Fast Image and Video Editing with Diffusion Guidance](https://arxiv.org/abs/2602.14157)： 说明测试时 guidance 已足以完成快速图像和视频编辑，通过采样阶段约束避免重新训练编辑模型。
+- [MarkSweep: A No-box Removal Attack on AI-Generated Image Watermarking via Noise Intensification and Frequency-aware Denoising](https://arxiv.org/abs/2602.15364)：无需访问模型即可去除 AI 图像不可见水印，先放大高频水印噪声，再训练 frequency-aware denoiser 抑制痕迹。
+- [Style-Aware Gloss Control for Generative Non-Photorealistic Rendering](https://arxiv.org/abs/2602.16611)：在 generative non-photorealistic rendering 中控制 gloss，将材质光泽与艺术风格分离。
+- [DesignAsCode](https://arxiv.org/abs/2602.17690)：把平面设计表示为可编辑的代码式结构，在视觉保真和细粒度可控性之间取得平衡。
+- [Narrating For You: Prompt-guided Audio-visual Narrating Face Generation Employing Multi-entangled Latent Space](https://arxiv.org/abs/2602.18618)：根据静态图像、voice profile 和目标文本生成 narrating face，在多纠缠 latent space 中联合音频与视频模态。
+- [ReVision : A Post-Hoc, Vision-Based Technique for Replacing Unacceptable Concepts in Image Generation Pipeline](https://arxiv.org/abs/2602.19149)：在图像生成管线后加入视觉检测与替换阶段，识别不可接受概念并用更安全的视觉内容替换。
 - [Localized Concept Erasure](https://arxiv.org/abs/2602.19631)：通过高层表示误导在文本到图像扩散模型中擦除局部概念。
+- [When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](https://arxiv.org/abs/2602.20880)：用自适应安全引导解决文本到图像扩散中的多类别有害冲突。
+- [See and Fix the Flaws: Enabling VLMs and Diffusion Models to Comprehend Visual Artifacts via Agentic Data Synthesis](https://arxiv.org/abs/2602.20951)：通过智能体式数据合成帮助 VLM 与扩散模型理解和修复视觉伪影。
+- [Sharp Convergence Rates for Masked Diffusion Models](https://arxiv.org/abs/2602.22505)：分析 masked diffusion sampler 的收敛率，比较 Euler 采样与 first-hitting sampler，是离散扩散理论而非新图像生成器。
+- [Beyond Detection: Multi-Scale Hidden-Code for Natural Image Deepfake Recovery and Factual Retrieval](https://arxiv.org/abs/2602.22759)：嵌入多尺度 hidden code，让 deepfake 图像支持内容恢复与事实检索，把溯源能力从二分类检测扩展到恢复型 provenance。
+- [DesignSense: A Human Preference Dataset and Reward Modeling Framework for Graphic Layout Generation](https://arxiv.org/abs/2602.23438)：为图形版式生成提供人类偏好数据和奖励建模框架。
+- [All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark](https://arxiv.org/abs/2602.23523)：用 landmark-identity watermark 统一 deepfake 检测、篡改定位和来源追踪，为人脸操控取证提供主动水印框架。
+- [A Difference-in-Difference Approach to Detecting AI-Generated Images](https://arxiv.org/abs/2602.23732)：用 difference-in-difference 思路检测 AI 生成图像，比较重建误差变化而不是只依赖原始 reconstruction error。
+- [SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](https://arxiv.org/abs/2602.24208)：按层和时间步敏感度缓存扩散特征，加速图像生成，同时避免盲目复用导致的质量下降。
+- [Compensation-free Machine Unlearning in Text-to-Image Diffusion Models by Eliminating the Mutual Information](https://arxiv.org/abs/2603.00992)：把 T2I 概念擦除表述为消除目标概念与生成结果之间的 mutual information，旨在不使用补偿数据的情况下保留无关图像质量。
+- [RA-Det: Towards Universal Detection of AI-Generated Images via Robustness Asymmetry](https://arxiv.org/abs/2603.01544)：利用真实图像与合成图像在扰动下的鲁棒性不对称进行 AI 生成图像检测。
+- [Domain-Aware Task Prompt Representations](https://arxiv.org/abs/2603.01725)：为多域 all-in-one image restoration 学习 task prompts，补充 prompt-conditioned restoration model 方向。
+- [CAWM-Mamba: A unified model for infrared-visible image fusion and compound adverse weather restoration](https://arxiv.org/abs/2603.02560)：补充红外可见光融合和复合恶劣天气恢复统一模型。
 - [Conditioned Activation Transport](https://arxiv.org/abs/2603.03163)：推理时文生图安全 steering 方法，用安全与不安全提示对学习非线性 activation transport map。
+- [On Google's SynthID-Text LLM Watermarking System: Theoretical Analysis and Empirical Validation](https://arxiv.org/abs/2603.03410)：分析 SynthID-Text 的 tournament sampling 与 Bayesian/mean-score detection，包括鲁棒性限制和 layer-inflation attack；对图像生成模型页而言属于 off-axis 文本水印条目。
+- [Linearized Coupling Flow with Shortcut Constraints for One-Step Face Restoration](https://arxiv.org/abs/2603.03648)：用 shortcut-constrained linearized coupling flow 做一步式人脸复原，目标是在避免多步扩散采样的同时保持高保真恢复。
+- [Towards High-resolution and Disentangled Reference-based Sketch Colorization](https://arxiv.org/abs/2603.05971)：将参考图外观与草图结构解耦，使高分辨率上色能够迁移风格线索，同时保留输入线稿。
+- [HY-WU (Part I): An Extensible Functional Neural Memory Framework and An Instantiation in Text-Guided Image Editing](https://arxiv.org/abs/2603.07236)：提出 functional neural memory，用于存取 instance-specific parameter functions，并在用户目标变化的文本引导图像编辑中实例化。
+- [How Long Can Unified Multimodal Models Generate Images Reliably? Taming Long-Horizon Interleaved Image Generation via Context Curation](https://arxiv.org/abs/2603.07540)：通过上下文整理提升统一多模态模型生成长程交错图像序列时的可靠性。
+- [CONSTANT: Towards High-Quality One-Shot Handwriting Generation with Patch Contrastive Enhancement and Style-Aware Quantization](https://arxiv.org/abs/2603.07543)：结合 patch contrastive enhancement 与 style-aware quantization，从单个参考样本生成高质量手写字并保持书写者风格。
+- [LooComp: Leverage Leave-One-Out Strategy to Encoder-only Transformer for Efficient Query-aware Context Compression](https://arxiv.org/abs/2603.09222)：用 leave-one-out 策略和 encoder-only transformer 做 query-aware context compression；该项与视觉生成轴不匹配，后续应从本页移出。
+- [When Detectors Forget Forensics: Blocking Semantic Shortcuts for Generalizable AI-Generated Image Detection](https://arxiv.org/abs/2603.09242)：为 AI 生成图像流程加入隐私、取证鲁棒性或检测器训练方法。
+- [ShapeMark: Robust and Diversity-Preserving Watermarking for Diffusion Models](https://arxiv.org/abs/2603.09454)：在扩散输出中嵌入鲁棒水印，同时保持样本多样性，避免溯源信号导致生成结果模式坍缩。
+- [Towards Unified Multimodal Interleaved Generation via Group Relative Policy Optimization](https://arxiv.org/abs/2603.09538)：将组相对策略优化用于交错式多模态生成，把强化学习与图文生成流程连接起来。
+- [OrthoEraser: Coupled-Neuron Orthogonal Projection for Concept Erasure](https://arxiv.org/abs/2603.11493)：通过 coupled-neuron orthogonal projection 进行概念擦除，扩展视觉生成模型的安全与可控性方法。
+- [Derain-Agent](https://arxiv.org/abs/2603.11866)：为每张雨图像用 planning network 安排复原工具序列，并用 strength modulation 按空间自适应强度施加这些工具，修正残余雨纹、噪声、模糊和偏色。
+- [Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation](https://arxiv.org/abs/2603.13300)：用 MMD potential 与 control-barrier 视角统一 negative guidance，在扩散或 flow 生成过程中把样本轨迹推离不安全区域。
+- [CtrlAttack: A Unified Attack on World-Model Control in Diffusion Models](https://arxiv.org/abs/2603.13435)：研究针对扩散模型世界模型控制的统一攻击，暴露控制信号可在生成动力学中被操纵，而不只是影响最终图像。
+- [FreeTalk: Emotional Topology-Free 3D Talking Heads](https://arxiv.org/abs/2603.15512)：生成不依赖固定拓扑的情感化 3D talking head，提升表情控制与身份迁移能力。
+- [Latent Proxies for Relighting](https://arxiv.org/abs/2603.15555)：学习用于单图可控重打光的 latent proxies，为图像编辑提供高效光照控制手柄。
+- [PaAgent](https://arxiv.org/abs/2603.17055)：构建 portrait-aware IR agent，通过自演化工具 portrait bank、RAG 选工具和主观-客观 RL 改进复杂场景图像修复。
+- [EvoGuard: An Extensible Agentic RL-based Framework for Practical and Evolving AI-Generated Image Detection](https://arxiv.org/abs/2603.17343)：把多种 MLLM 与非 MLLM AI 图像检测器封装为工具，并用能力感知规划、反思和 RL 在动态环境中选择检测策略。
+- [Proof-of-Authorship for Diffusion-based AI Generated Content](https://arxiv.org/abs/2603.17513)：为扩散式 AIGC 设计作者证明机制，提供不同于普通图像水印检测的生成内容归属验证。
+- [Rel-Zero: Harnessing Patch-Pair Invariance for Robust Zero-Watermarking Against AI Editing](https://arxiv.org/abs/2603.17531)：利用 patch-pair invariance 做 zero-watermarking，使归因信号在 AI 编辑后仍可保留，且无需嵌入可见或模型内部载荷。
+- [DSS-GAN: Directional State Space GAN with Mamba backbone for Class-Conditional Image Synthesis](https://arxiv.org/abs/2603.17637)：用 directional state-space GAN 与 Mamba backbone 构建类条件图像生成器，提供扩散之外的合成架构路线。
+- [TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](https://arxiv.org/abs/2603.17828)：用 text-free inversion attack 探测概念遗忘后的文生图扩散模型，暴露普通 prompt 空间之外仍可触达的残留不安全概念。
+- [The Unreasonable Effectiveness of Text Embedding Interpolation for Continuous Image Steering](https://arxiv.org/abs/2603.17998)：说明文本嵌入插值可以在不重训扩散模型的情况下提供连续图像 steering 控制。
+- [One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](https://arxiv.org/abs/2603.18093)：通过 attention control 将一个正常样本扩展成多个高保真异常变体，无需训练新生成器，适合合成缺陷数据。
+- [Recolour What Matters: Region-Aware Colour Editing via Token-Level Diffusion](https://arxiv.org/abs/2603.18466)：通过 token-level diffusion control 做区域感知改色，只改变目标区域并保留无关内容。
+- [CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think](https://arxiv.org/abs/2603.18991)：用简化的 fine-tuning 配方对齐扩散模型，强调实用的奖励或偏好引导，而不是新骨干架构。
+- [Under One Sun](https://arxiv.org/abs/2603.19226)：联合建模多物体的材质与光照，增强物理一致的视觉编辑和渲染控制。
+- [Cubic Discrete Diffusion](https://arxiv.org/abs/2603.19232)：用 discrete diffusion 生成高维视觉表示 tokens，连接视觉理解特征与生成。
+- [DiffGraph: An Automated Agent-driven Model Merging Framework for In-the-Wild Text-to-Image Generation](https://arxiv.org/abs/2603.20470)：将文本到图像模型合并自动化为模型组合方法，用于提升开放场景生成效果。
+- [SLURP-TN : Resource for Tunisian Dialect Spoken Language Understanding](https://arxiv.org/abs/2603.21940)：发布突尼斯方言口语理解资源；该项不属于图像生成与编辑，后续 taxonomy cleanup 应移出或删除。
+- [Group Editing: Edit Multiple Images in One Go](https://arxiv.org/abs/2603.22883)：结合 VGGT 显式几何对应关系和 pseudo-video 隐式时序先验，使一组相关图像能在语义对齐区域中一次性完成一致编辑。
+- [AgentFoX](https://arxiv.org/abs/2603.23115)：用 LLM agent-guided fusion 与可解释流程检测 AI 生成图像，把 provenance 检测与智能体推理连接起来。
+- [High-Fidelity Face Content Recovery via Tamper-Resilient Versatile Watermarking](https://arxiv.org/abs/2603.23940)：设计抗篡改人脸水印，在操控后仍可恢复高保真身份内容，服务生成或编辑人脸的溯源与修复。
+- [SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons](https://arxiv.org/abs/2603.24039)：为抽象图标生成语义层，结合分割与图层构建，让生成图形更容易进行矢量式分解和编辑。
+- [ScrollScape: Unlocking 32K Image Generation With Video Diffusion Priors](https://arxiv.org/abs/2603.24270)：把极端长宽比的 32K 图像合成改写为连续视频生成，用视频扩散的时序一致性先验约束超长画布的全局结构。
+- [Self-Corrected Image Generation with Explainable Latent Rewards](https://arxiv.org/abs/2603.24965)：用可解释 latent rewards 引导图像生成模型进行自我修正。
+- [PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](https://arxiv.org/abs/2603.26068)：在扩散式手部运动恢复中加入物理约束，提高视觉或运动线索驱动的手部动画合理性。
+- [TaxaAdapter: Vision Taxonomy Models are Key to Fine-grained Image Generation over the Tree of Life](https://arxiv.org/abs/2603.26128)：将细粒度生物分类知识适配到 tree-of-life 图像生成，用 taxonomy model 控制物种级视觉细节。
+- [LightMover](https://arxiv.org/abs/2603.27209)：控制生成式光源运动、颜色和强度，为视觉生成补充可编辑光照控制原语。
+- [Understanding Semantic Perturbations on In-Processing Generative Image Watermarks](https://arxiv.org/abs/2603.27513)：分析语义扰动如何影响生成过程中嵌入的水印，澄清 in-processing 水印机制的鲁棒性边界。
+- [Diversity Matters: Dataset Diversification and Dual-Branch Network for Generalized AI-Generated Image Detection](https://arxiv.org/abs/2603.27800)：结合数据集多样化与 dual-branch network，提升通用 AI-generated image detection 能力。
+- [Rethinking Structure Preservation in Text-Guided Image Editing with Visual Autoregressive Models](https://arxiv.org/abs/2603.28367)：研究视觉自回归模型在文本引导图像编辑中的结构保持问题。
+- [GazeCLIP: Gaze-Guided CLIP with Adaptive-Enhanced Fine-Grained Language Prompt for Deepfake Attribution and Detection](https://arxiv.org/abs/2603.29295)：用 gaze cues 与自适应细粒度语言提示引导 CLIP 式 deepfake 归因，强调局部篡改证据。
 - [SafeRoPE](https://arxiv.org/abs/2604.01826)：对 rectified-flow transformer 应用风险特定的 head-wise embedding rotation，在保持质量的同时降低不安全图像生成。
+- [IPSL-AID: Generative Diffusion Models for Climate Downscaling from Global to Regional Scales](https://arxiv.org/abs/2604.03275)：将生成式扩散用于全球到区域尺度的气候降尺度，是科学 surrogate model 条目而非视觉图像生成。
 - [VicoEdit](https://arxiv.org/abs/2604.04487)：通过视觉上下文整合和概念对齐实现免训练图像编辑。
+- [MAR-GRPO: Stabilized GRPO for AR-diffusion Hybrid Image Generation](https://arxiv.org/abs/2604.06966)：通过降低 diffusion head 的噪声优化信号，为 masked autoregressive 与 diffusion 混合图像生成器稳定使用 GRPO。
+- [MegaStyle](https://arxiv.org/abs/2604.08364)：通过一致的 text-to-image style mapping 构建大规模风格数据集，并训练 style encoder 与迁移模型。
+- [What Matters in Virtual Try-Off? Dual-UNet Diffusion Model For Garment Reconstruction](https://arxiv.org/abs/2604.08716)：用 dual-UNet diffusion model 做虚拟脱衣场景中的服装重建，将衣物恢复与人物图像解耦。
+- [BlendFusion -- Scalable Synthetic Data Generation for Diffusion Model Training](https://arxiv.org/abs/2604.09022)：为扩散模型训练扩展合成数据生成，通过混合生成来源改善视觉生成器训练覆盖。
+- [Diffusion Inpainting MIMO-OFDM Channels with Limited Noisy Observations](https://arxiv.org/abs/2604.09039)：用 diffusion inpainting 恢复无线 MIMO-OFDM 信道，是信号处理中的扩散应用而非图像编辑。
+- [Detecting Diffusion-generated Images via Dynamic Assembly Forests](https://arxiv.org/abs/2604.09106)：用 dynamic assembly forests 分类扩散生成图像，聚合多类伪影线索而非依赖单一固定检测头。
+- [EGLOCE: Training-Free Energy-Guided Latent Optimization for Concept Erasure](https://arxiv.org/abs/2604.09405)：用 energy-guided latent optimization 免训练擦除概念，在推理时把扩散 latent 推离不希望出现的语义。
+- [Training-Free Object-Background Compositional T2I via Dynamic Spatial Guidance and Multi-Path Pruning](https://arxiv.org/abs/2604.09850)：通过动态空间引导和多路径剪枝改进物体与背景组合式文本到图像生成。
+- [AIM-Bench: Benchmarking and Improving Affective Image Manipulation via Fine-Grained Hierarchical Control](https://arxiv.org/abs/2604.10454)：同时提出 affective image manipulation 基准与 fine-grained hierarchical control 方法，其中 benchmark 部分应复核是否归入 Bench。
+- [TimeMark: A Trustworthy Time Watermarking Framework for Exact Generation-Time Recovery from AIGC](https://arxiv.org/abs/2604.12216)：在 AIGC 水印中编码生成时间，使溯源检查能恢复图像何时生成，而不只是判断其是否为合成内容。
+- [Fragile Reconstruction: Adversarial Vulnerability of Reconstruction-Based Detectors for Diffusion-Generated Images](https://arxiv.org/abs/2604.12781)：研究基于重建误差的扩散图像检测器的对抗脆弱性，指出这类检测信号在何种情况下会失效。
+- [PostureObjectstitch: Anomaly Image Generation Considering Assembly Relationships in Industrial Scenarios](https://arxiv.org/abs/2604.13863)：在合成工业异常图像时显式考虑装配关系，使生成缺陷更符合物理与工艺约束。
+- [Beyond Text Prompts: Precise Concept Erasure through Text-Image Collaboration](https://arxiv.org/abs/2604.15829)：TICoE 结合文本与图像协同擦除、连续凸概念流形和层级视觉表征，以更少过擦除实现精确概念移除。
+- [Unveiling Deepfakes: A Frequency-Aware Triple Branch Network for Deepfake Detection](https://arxiv.org/abs/2604.17477)：用 frequency-aware triple-branch network 检测 deepfake，分离互补频谱伪影线索。
+- [Edit Fidelity Field: Semantics-Aware Region Isolation for Training-Free Scene Text Editing](https://arxiv.org/abs/2604.17500)：用 semantics-aware fidelity field 隔离可编辑文字区域，实现免训练场景文字编辑并保护周边图像内容。
+- [UniGeo: Unifying Geometric Guidance for Camera-Controllable Image Editing via Video Models](https://arxiv.org/abs/2604.17565)：用视频模型几何先验实现可控相机视角的图像编辑。
+- [AdaGScale: Viewpoint-Adaptive Gaussian Scaling in 3D Gaussian Splatting to Reduce Gaussian-Tile Pairs](https://arxiv.org/abs/2604.18980)：按视角自适应缩放 3D Gaussian 以减少 Gaussian-tile pairs，更偏渲染效率优化而非二维图像编辑方法。
+- [Discrete Preference Learning for Personalized Multimodal Generation](https://arxiv.org/abs/2604.20434)：学习离散偏好以支持个性化多模态生成，把用户特定选择转化为可控生成信号。
+- [GeoEdit: Local Frames for Fast, Training-Free On-Manifold Editing in Diffusion Models](https://arxiv.org/abs/2604.24238)：用局部流形坐标实现快速免训练扩散编辑，使修改保持在已学习图像流形上并避免 fine-tuning。
+- [TextGround4M: A Prompt-Aligned Dataset for Layout-Aware Text Rendering](https://arxiv.org/abs/2604.24459)：提供 400 万 prompt-image 对及 span-level 文本框，并用 layout-aware span token 训练自回归 T2I 模型进行 grounded scene-text rendering。
+- [Learning Illumination Control in Diffusion Models](https://arxiv.org/abs/2604.24877)：为扩散模型学习显式光照控制，使生成或编辑图像能够调节光照方向与强度。
+- [The Forensic Cost of Watermark Removal](https://arxiv.org/abs/2604.25491)：分析水印移除后残留的取证痕迹，说明去掉可见归因信号并不等于清除检测证据。
+- [ACPO: Anchor-Constrained Perceptual Optimization for Diffusion Models with No-Reference Quality Guidance](https://arxiv.org/abs/2604.26348)：在 no-reference quality guidance 下优化扩散输出，同时用 anchor 约束更新以避免感知漂移。
+- [Delta Score Matters! Spatial Adaptive Multi Guidance in Diffusion Models](https://arxiv.org/abs/2604.26503)：用 spatially adaptive multi-guidance 替代全局统一 CFG，并依据 delta score 在不同图像区域调整 guidance 强度以减少伪影。
+- [Frequency-Aware Semantic Fusion with Gated Injection for AI-generated Image Detection](https://arxiv.org/abs/2604.27875)：为 AI 生成图像流程加入隐私、取证鲁棒性或检测器训练方法。
+- [STARE: Step-wise Temporal Alignment and Red-teaming Engine for Multi-modal Toxicity Attack](https://arxiv.org/abs/2605.00699)： 构建分步时间对齐与 red-teaming 引擎，对多模态毒性攻击进行阶段化生成和检测，属于视觉生成安全边界项。
+- [PhysEdit: Physically-Consistent Region-Aware Image Editing via Adaptive Spatio-Temporal Reasoning](https://arxiv.org/abs/2605.00707)：通过自适应空间与时间推理进行区域感知编辑，使图像修改与场景结构保持物理一致。
+- [Watch Your Step: Information Injection in Diffusion Models via Shadow Timestep Embedding](https://arxiv.org/abs/2605.00935)：通过 shadow timestep embedding 注入信息，在扩散去噪内部增加 timestep-level 控制通道。
+- [ScribbleEdit: Synthetic Data for Image Editing with Scribbles and Text](https://arxiv.org/abs/2605.01135)：生成草图与文本指令配对的合成编辑数据，为可控图像编辑提供训练信号。
+- [SpecEdit: Training-Free Acceleration for Diffusion based Image Editing via Semantic Locking](https://arxiv.org/abs/2605.02152)：通过 semantic locking 固定未变化内容来免训练加速扩散编辑，减少目标区域外的不必要去噪更新。
+- [FEAT: Fashion Editing and Try-On from Any Design](https://arxiv.org/abs/2605.02393)：从任意设计输入进行时尚图像编辑和虚拟试穿，将服装设计线索迁移到人物图像中。
+- [Stylistic Attribute Control in Latent Diffusion Models](https://arxiv.org/abs/2605.02583)：在 latent diffusion 中控制风格属性，暴露 style-specific direction 或条件信号，而不只依赖提示词措辞。
+- [LEGO: LoRA-Enabled Generator-Oriented Framework for Synthetic Image Detection](https://arxiv.org/abs/2605.04445)：为 AI 生成图像流程加入隐私、取证鲁棒性或检测器训练方法。
+- [Arena as Offline Reward: Efficient Fine-Grained Preference Optimization for Diffusion Models](https://arxiv.org/abs/2605.06070)：把 arena-style 偏好数据转化为离线细粒度奖励，用于扩散模型偏好优化，减少训练时反复在线人工比较。
+- [Consistency Regularised Gradient Flows for Inverse Problems](https://arxiv.org/abs/2605.07907)：在梯度流框架中结合视觉语言潜扩散先验和提示优化，用于求解逆问题。
+- [Improving Generative Adversarial Networks with Self-Distillation](https://arxiv.org/abs/2605.08577)：用 self-distillation 改进 GAN 训练，在不改变任务设定的情况下把更强生成器行为传递到后续训练阶段。
+- [FlashClear: Ultra-Fast Image Content Removal via Efficient Step Distillation and Feature Caching](https://arxiv.org/abs/2605.09003)：通过高效步数蒸馏与特征缓存把图像内容移除压缩到更少去噪步骤，面向低延迟对象移除且保持扩散编辑质量。
+- [Removing the Watermark Is Not Enough: Forensic Stealth in Generative-AI Watermark Removal](https://arxiv.org/abs/2605.09203)：研究同时隐藏残留取证痕迹的水印移除，区分简单去水印与规避生成图像检测的 stealth。
+- [Geometric 4D Stitching for Grounded 4D Generation](https://arxiv.org/abs/2605.09984)：在 grounded 4D generation 中跨时间拼接几何结构，提升动态场景生成的空间与时间一致性。
+- [ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models](https://arxiv.org/abs/2605.11435)：用 perturbed consistency diffusion model 做无参考光照退化图像复原，面向低光或光照损坏输入。
+- [Is Monotonic Sampling Necessary in Diffusion Models?](https://arxiv.org/abs/2605.11773)：质疑扩散采样是否必须单调推进 timestep，并研究非单调调度对效率或质量的影响。
+- [SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture](https://arxiv.org/abs/2605.12500)：用 NEO-unify 架构统一多模态理解和生成，缓解 VLM 生成与理解管线割裂的问题。
+- [Seg-Agent: Test-Time Multimodal Reasoning for Training-Free Language-Guided Segmentation](https://arxiv.org/abs/2605.12953)：用测试时多模态推理实现无需训练的语言引导分割。
+- [Engram in AR Image Generation](https://arxiv.org/abs/2605.13179)：测试 Engram 式关联记忆是否能迁移到自回归图像生成，澄清视觉生成器中 memory module 的作用。
+- [Covariance-aware sampling for Diffusion Models](https://arxiv.org/abs/2605.13910)：在扩散采样中引入 covariance 信息，用比标量噪声调度更丰富的统计量改进去噪轨迹。
+- [CoReDiT: Spatial Coherence-Guided Token Pruning and Reconstruction for Efficient Diffusion Transformers](https://arxiv.org/abs/2605.14191)：在 diffusion transformers 中剪除空间冗余 tokens，并用 coherence-guided aggregation 重建被跳过的 attention 输出，从而降低图像与视频生成骨干的 attention 计算量。
+- [Watermarking Game-Playing Agents in Perfect-Information Extensive-Form Games](https://arxiv.org/abs/2605.14283)：为 perfect-information extensive-form game 中的博弈智能体加水印，属于 agent/game-theory provenance 而非图像生成与编辑。
+- [ClickRemoval: An Interactive Open-Source Tool for Object Removal in Diffusion Models](https://arxiv.org/abs/2605.14461)：提供点击驱动的扩散编辑界面，把用户选择区域与模型侧 inpainting 行为结合用于对象移除。
+- [VAGS: Velocity Adaptive Guidance Scale for Image Editing and Generation](https://arxiv.org/abs/2605.15661)：根据去噪速度自适应调整 guidance scale，在编辑强度与图像保真度之间取得更稳平衡。
 - [Partial-Sketch Diffusion Editing](https://doi.org/10.1109/TIP.2026.3685834)：以局部草图约束扩散式图像操控，为草图引导的可控视觉编辑提供模型方法。
 - [SegEdit](https://doi.org/10.1016/j.eswa.2026.131222)：在扩散模型中结合语义掩码分割与形状注入，实现可控图像编辑。
 - [HierLoRA](https://doi.org/10.1016/j.neucom.2026.132927)：使用层次化增强 LoRA 在图像扩散模型中学习多个个性化概念。
 - [Attribute-Conditioned Attention Scaling](https://doi.org/10.14569/ijacsa.2026.0170472)：根据目标视觉属性缩放注意力，从而控制文本到图像扩散输出。
+- [TrojanEdit: Multimodal backdoor attack against image editing model](https://doi.org/10.1016/j.neucom.2026.133346)：研究针对图像编辑模型的多模态后门攻击，为指令式视觉编辑系统补充安全与鲁棒性风险线索。
+- [Training-Free Layered Framework for Geometry-Aware Multilingual Text Editing](https://doi.org/10.1109/icassp55912.2026.11464805)：提出免训练的分层几何感知多语文本编辑框架，为含文字视觉内容的图像编辑补充路线。
+- [TraceMark-LDM: Authenticatable watermarking for latent diffusion models via binary-guided rearrangement](https://doi.org/10.1016/j.eswa.2026.131831)：通过 binary-guided rearrangement 重排 latent diffusion 表示，为生成图像构建可认证水印。
+- [Component-Specific Prompt Tuning for Deepfake Detection](https://doi.org/10.1109/tifs.2026.3678021)：为 deepfake detection 调整 component-specific prompts，用提示专门化暴露不同面部或图像区域的操控伪影。
+- [Focus on Finding Deepfakes: A Robust Proactive Detection Method Based on Orthogonal Moment Watermarking](https://doi.org/10.1109/tip.2026.3678069)：用 orthogonal moment watermarking 作为主动信号，增强 deepfake 检测与归因鲁棒性。
+- [RWP: a robust watermarking plugin for attribution and protection in stable diffusion models](https://doi.org/10.1016/j.neunet.2026.108626)：为 Stable Diffusion 增加即插即用水印模块，在保持基础生成流程的同时提供归因与保护。
+- [M 2 EA: Multi-VAE Manifold Envelope Alignment for Challenging AI-Generated Image Detection](https://doi.org/10.1109/icassp55912.2026.11463215)：通过 multi-VAE manifold envelope alignment 检测难辨 AI 生成图像，覆盖单一表示难以捕捉的伪影。
+- [RI-Mark: Robust and Imperceptible Watermarking for Diffusion Models](https://doi.org/10.1016/j.eswa.2026.132903)：为扩散模型设计鲁棒且不可感知的水印，使溯源信号能抵抗常见图像变换。
+- [KBNet: A Knowledge Bridging Network for Generalizable Deepfake Detection](https://doi.org/10.1109/icassp55912.2026.11463462)：把外部或学习到的知识与视觉特征桥接起来，提升 deepfake detector 跨操控来源泛化。
+- [FALCON-Net: Feature Aggregation of Local Patterns for AI-Generated Image Detection](https://doi.org/10.1109/tifs.2026.3683286)：聚合局部模式特征检测 AI 生成图像，强调细粒度伪影而非只依赖整图语义。
+- [NeurErase: Selective Deactivation of Neurons for Erasing Concepts in Diffusion Models](https://doi.org/10.1109/icassp55912.2026.11464730)：通过选择性停用扩散模型神经元擦除概念，在无需完整重训的情况下提供定向安全机制。
+- [MAP-Mamba: Multi-Artifacts Perception Mamba for Generalizable Face Forgery Detection](https://doi.org/10.1109/tifs.2026.3651948)：用 Mamba-based multi-artifact perception network 检测人脸伪造，覆盖多类型操控痕迹。
+- [Refining Forgery-Aware Prompts for Deepfake Detection with Pattern Blended Samples](https://doi.org/10.1016/j.patcog.2026.113659)：用 pattern blended samples 精炼 forgery-aware prompts，使 deepfake detector 学到更可迁移的操控线索。
+- [Diffusion-Driven Forgery Detection: Distilling Latent Features for Generalized Image Forensics](https://doi.org/10.1109/lsp.2026.3687792)：从 diffusion-driven reconstruction 中蒸馏 latent features，将生成先验转化为通用图像取证检测信号。
+- [RADI: A Retrieval-Augmented Dynamic In-Context Learning Framework for AIGC Image Detection](https://doi.org/10.1109/icassp55912.2026.11462412)：用 retrieval-augmented dynamic in-context learning 做 AIGC 图像检测，在推理时动态选择证据样例。
+- [AdaParse: Personalized Fingerprinting for Visual Generative Model Reverse Engineering](https://doi.org/10.1109/tifs.2026.3671095)：构建个性化 fingerprint 来反向工程视觉生成模型，将输出追溯到可能的源模型。
+- [AICE: Three domain conversion network applied to all-in-one image inpainting and color enhancement task](https://doi.org/10.1016/j.eswa.2026.131558)：用 three-domain conversion network 联合完成图像修补与颜色增强，在一个模型中结合恢复与外观校正。
+- [Dynamic Frequency Domain Curriculum Learning: A Novel Framework for Adaptive Image Forgery Detection](https://doi.org/10.1109/icassp55912.2026.11464347)：用动态频域课程训练图像伪造检测器，让模型按受控难度逐步学习伪影。
+- [Keypoint-enhanced image watermarking with spatial-frequency mapping and perceptual optimization](https://doi.org/10.1016/j.ins.2026.123500)：结合关键点引导、空频映射与感知优化，构建更鲁棒的图像水印方法。
+- [FuLLaMa: Training-free Diffusion-based Object Removal with Context Preservation](https://doi.org/10.1109/wacv61042.2026.00826)：用免训练扩散流程移除对象，并保留周围上下文，而不是重新生成整幅场景。
+- [Towards Data-Constrained Defect Inspection in Advanced Manufacturing: A Lightweight Diffusion Model Adapter for High-Fidelity Data Generation](https://doi.org/10.1016/j.eswa.2026.132452)：在制造缺陷样本有限时，用轻量 diffusion adapter 生成高保真缺陷数据。
+- [Toward Accurate Image Generation via Dynamic Generative Image Transformer](https://doi.org/10.1109/tpami.2026.3653620)：提出 dynamic generative image transformer，通过自适应 token 或结构建模提升图像生成准确性。
+- [Conversational Image Generation: Towards Multi-Round Personalized Generation with Multi-Modal Language Models](https://doi.org/10.1109/wacv61042.2026.00799)：用多模态语言模型支持多轮个性化图像生成，在对话回合间保留用户偏好。
+- [A Few-Shot Learning Framework for Time-Varying Scientific Data Generation via Conditional Diffusion Model](https://doi.org/10.1109/tvcg.2026.3656934)：在 few-shot 约束下用 conditional diffusion 生成时变科学数据；更偏可视化或科学数据生成，而非普通图像编辑。
+- [FreeMD: Training-free multi-domain text-to-image generation with any control.](https://doi.org/10.1016/j.neunet.2026.108823)：提供免训练多域文生图与任意控制输入支持，降低对特定领域 fine-tuning 的依赖。
+- [OPa-Ma: Text guided Mamba for 360-degree image out-painting](https://doi.org/10.1016/j.patcog.2026.113957)：将 text-guided Mamba 用于 360 度图像 outpainting，把场景扩展到原始全景边界之外。
+- [VideoSketcher: A Training-Free Approach for Coherent Video Sketch Transfer](https://doi.org/10.1109/wacv61042.2026.00708)：免训练地在视频帧间迁移草图风格，同时保持时间一致性。
+- [S2I-DiT: Unlocking the semantic-to-image transferability by fine-tuning large diffusion transformer models](https://doi.org/10.1016/j.patcog.2026.113158)：通过 fine-tuning 大型 diffusion transformer 提升 semantic-to-image transfer，使抽象语义输入更好对齐生成视觉内容。
+- [Linear probing enables Ship-Radiated Noise recognition with pretrained audio embeddings](https://doi.org/10.1016/j.ecoinf.2026.103709)：用预训练音频 embedding 做船舶辐射噪声识别，是 off-axis 音频分类条目，应从图像生成页面移出。
+- [Dynamic Trajectory Diffusion Model for All-in-one Image Restoration](https://doi.org/10.1016/j.eswa.2026.132767)：将图像复原建模为动态扩散轨迹，覆盖多种退化类型的 all-in-one restoration。
+- [Frequency-Enhanced and Conflict-Adaptive ODE Framework for Training-Free Consistent Video Editing](https://doi.org/10.1109/icassp55912.2026.11460542)：用 frequency-enhanced 与 conflict-adaptive ODE 更新实现免训练一致视频编辑，强化时间一致性。
+- [Multimodal structure-guided diffusion model for Magnetic Particle Imaging reconstruction](https://doi.org/10.1016/j.media.2026.104086)：将 multimodal structure-guided diffusion 用于磁粒子成像重建，属于生物医学成像重建，需在本主题外复核。
+- [FreeAnimate: Training-Free Human Image Animation with Preview-Guided Denoising](https://doi.org/10.1109/icassp55912.2026.11462600)：用 preview-guided denoising 免训练驱动人体图像动画，在控制动作的同时保持身份与外观。
+- [Towards Few-Shot Deepfake Detection with an Enhanced CLIP Model](https://doi.org/10.1016/j.neunet.2026.109027)：增强 CLIP 以支持 few-shot deepfake detection，在假样本有限时适配视觉语言表示。
+- [Beyond Chunk-level RAG: Hierarchical Document-aware Retrieval for Indian Legal Judgments](https://doi.org/10.1109/icdsaai69492.2026.11505138)：用层次化 document-aware retrieval 处理印度法律判决，是 off-axis legal RAG 而非视觉生成。
+- [Line Art Colorization with Offset Prior-based Diffusion Model](https://doi.org/10.1109/wacv61042.2026.00540)：用 offset prior-based diffusion model 做线稿上色，改善颜色放置并遵守线条轮廓。
+- [Visual Keys to Symphonies: Latent Diffusion for Multi-Scene Video-to-Music Generation](https://doi.org/10.1109/icassp55912.2026.11462058)：用 latent diffusion 根据多场景视频线索生成音乐，属于跨模态媒体生成但不是图像生成或编辑。
+- [ParaEdit: Unifying Parallel Transport and Generative Flows for High-Fidelity Image Editing](https://doi.org/10.1109/icassp55912.2026.11462013)：统一 parallel transport 与 generative flows，在更平滑的 latent trajectory 上实现高保真图像编辑。
+- [Advanced Classification of AI-Generated Images Through Transformers](https://doi.org/10.1109/icict68280.2026.11510816)：用 transformer classifier 检测 AI 生成图像，聚焦合成视觉伪影分类。
+- [Diff-AgentDOA: Diffusion-agent Model for Synthetic Data Generation in Shallow-water Target Direction of Arrival Estimation](https://doi.org/10.1016/j.inffus.2026.104371)：用 diffusion-agent model 为浅水目标 DOA 估计生成合成数据，是 off-axis 信号处理数据生成。
+- [Towards alleviating hallucination in text-to-image retrieval for CLIP in zero-shot learning](https://doi.org/10.1016/j.neucom.2026.132640)：缓解 CLIP 零样本文本到图像检索中的 hallucination，属于相邻检索问题而非生成器或编辑器。
+- [TAIS-Net: Time adaptive implicit sampling diffusion model for arbitrary-scale UAV video super-resolution](https://doi.org/10.1016/j.isprsjprs.2026.04.060)：用 time-adaptive implicit sampling diffusion 做任意尺度 UAV 视频超分辨率。
+- [DoTA: Latent Distribution Conditioned Data Attribution for Diffusion Models](https://doi.org/10.1109/wacv61042.2026.00201)：基于 latent distribution 条件化数据归因，识别哪些训练数据最影响扩散模型输出。
+- [NeuroPatch: Lightweight diffusion model repair for backdoor attack mitigation based on neuron-level patching](https://doi.org/10.1016/j.neucom.2026.133283)：通过神经元级补丁修复带后门的扩散模型，适合补充图像生成模型安全。
+- [MASA: Query-Free Black-Box Adversarial Attack on Text-to-Image Generation Via Multi-Modal Adaptive Semantic Optimization](https://doi.org/10.1109/icassp55912.2026.11461721)：通过免查询多模态自适应语义优化攻击文本到图像生成。
 - [Panoptic Scene Graph Grounded Editing](https://doi.org/10.1049/cvi2.70069)：利用全景场景图与互斥注意力操控进行免训练图像编辑，更适合放入图像编辑模型部分而非具身 VLA。
 - [Content-Style Decoupled Latent Diffusion](https://doi.org/10.1038/s41598-026-36407-3)：在潜在扩散架构中解耦内容与风格，用于多风格图像生成。
-- [Text-Conditioned Diffusion Image Generation](https://doi.org/10.1007/s11042-025-20990-0)：研究基于扩散模型的文本条件图像生成，是直接的图像生成模型方法。
+- [Text-Conditioned Diffusion Image Generation](https://doi.org/10.1007/s11042-025-20990-0)：研究直接由文本描述条件化的扩散管线，重点说明提示编码如何引导去噪过程完成图像合成。
+- [PT-T2I/V](https://openreview.net/forum?id=lTrrnNdkOX)：用 proxy-tokenized diffusion transformer 共享文本到图像和文本到视频的高效生成架构。
+- [AdaDiff: Adaptive Step Selection for Fast Diffusion Models](https://doi.org/10.1609/aaai.v39i9.33075)：学习在采样中跳过或保留扩散步，从而在保持生成质量的同时降低推理成本。
+- [Self-Corrected Flow Distillation for Consistent One-Step and Few-Step Image Generation](https://doi.org/10.1609/aaai.v39i3.32269)：在训练中校正 flow distillation 误差，使一步和少步采样器生成更一致的图像。
+- [DesignEdit: Unify Spatial-Aware Image Editing via Training-free Inpainting with a Multi-Layered Latent Diffusion Framework](https://doi.org/10.1609/aaai.v39i4.32414)：把图像分解为多层 latent，并用免训练 inpainting 定位空间编辑，无需重训基础扩散模型。
+- [Revealing Gender Bias from Prompt to Image in Stable Diffusion](https://doi.org/10.3390/jimaging11020035)：追踪性别化提示词如何改变 Stable Diffusion 输出，为生成图像偏见提供模型行为审计。
+- [ViPCap: Retrieval Text-Based Visual Prompts for Lightweight Image Captioning](https://doi.org/10.1609/aaai.v39i4.32454)：把检索文本作为轻量图像描述模型的视觉提示；该条更接近图像描述或 VLM 文件而非生成模型。
+- [FaceSigns: Semi-fragile Watermarks for Media Authentication](https://doi.org/10.1145/3640466)：设计人脸半脆弱水印，使其能承受良性变换但暴露篡改，用于生成或编辑媒体认证。
+- [Optimize & Reduce: A Top-Down Approach for Image Vectorization](https://doi.org/10.1609/aaai.v38i3.27987)：通过迭代优化和删减图元实现栅格图矢量化，把图像合成连接到可编辑矢量图生成。
+- [Multimodal Large Language Models Make Text-to-Image Generative Models Align Better](https://doi.org/10.52202/079017-2584)：用多模态大模型反馈改进文生图对齐，以图像感知监督替代纯文本侧提示评分。
+- [Generative emulation of weather forecast ensembles with diffusion models](https://doi.org/10.1126/sciadv.adk4489)：把扩散模型用于天气集合预报仿真，属于科学建模扩散候选而非视觉媒体生成。
+- [From Outline to Detail: An Hierarchical End-to-end Framework for Coherent and Consistent Visual Novel Generation and Assembly](https://doi.org/10.1145/3746027.3755541)：按从大纲到细节的层级流程生成视觉小说，把图像生成与页面组装约束结合起来保持故事连贯。
+- [PD-CBDM: Training Class-Balancing Diffusion Models with Perceptual Distinguish Loss](https://doi.org/10.3390/math14101576)：在类别均衡扩散训练中加入 perceptual distinguish loss，使少数类样本保持可分性和视觉保真。
+- [Exposing the Guardrails: Reverse-Engineering and Jailbreaking Safety Filters in DALL·E Text-to-Image Pipelines](https://www.usenix.org/conference/usenixsecurity25/presentation/villa)：逆向分析 DALL-E 安全过滤器和 jailbreak 路径，说明文生图管线中提示与图像护栏的失效位置。
+- [Robust deepfake detector against deep image watermarking](https://doi.org/10.1371/journal.pone.0338778)：评估深度图像水印下的 deepfake 检测，关注 provenance 标记改变取证痕迹后的检测鲁棒性。
+- [Toward Robust Deepfake Detection: A Proactive Method Based on Watermarking and Knowledge Distillation](https://doi.org/10.1145/3746027.3755621)：结合主动水印和知识蒸馏训练 deepfake 检测器，使其在生成媒体变换后仍保持有效。
+- [Removing watermark from diffusion models via Low-Rank Adaptation](https://doi.org/10.3788/tfsr20250147)：研究用 LoRA 去除扩散模型水印，把微调过程本身视为 provenance 系统的攻击面。
+- [Patch-based localized artifact enhancement for deepfake detection](https://doi.org/10.1117/12.3096373)：在分类前增强局部伪影 patch，使 deepfake 检测器关注小尺度生成缺陷而非全局语义。
+- [Bi-mark: A copyright marking framework for AI-generative-text](https://doi.org/10.1145/3774949.3774970)：提出 AI 生成文本版权标记框架，偏离本图像生成文件，应在文本 provenance 覆盖中考虑。
+- [Efficient DeepFake Image Classification Using Lightweight MobileNetV4-Small Architecture](https://doi.org/10.5220/0013613400004664)：用紧凑的 MobileNetV4-Small 进行 deepfake 图像分类，强调可部署的生成图像取证。
+- [DiffBIR: Toward Blind Image Restoration with Generative Diffusion Prior](https://doi.org/10.1007/978-3-031-73202-7_25)：用生成式扩散先验做盲图像恢复，将退化去除与高保真内容重建分离。
+- [Conditional neural field latent diffusion model for generating spatiotemporal turbulence](https://doi.org/10.1038/s41467-024-54712-1)：结合条件神经场和 latent diffusion 模拟湍流，是偏科学生成建模而非图像编辑。
+- [DreamIdentity: Enhanced Editability for Efficient Face-Identity Preserved Image Generation](https://doi.org/10.1609/aaai.v38i2.27891)：在人脸身份保持和提示可编辑性之间做平衡，使个性化肖像生成能改变属性而不漂移身份。
+- [Generative Diffusion for Regional Surrogate Models From Sea‐Ice Simulations](https://doi.org/10.1029/2024ms004395)：为区域海冰模拟构建扩散 surrogate model，属于科学建模扩散条目而非视觉生成。
+- [ColJailBreak: Collaborative Generation and Editing for Jailbreaking Text-to-Image Deep Generation](https://doi.org/10.52202/079017-1929)：用协同生成和编辑寻找攻击文生图系统的 jailbreak 提示或图像，揭示迭代式视觉创作的安全风险。
+- [AdaptiveSliders: User-aligned Semantic Slider-based Editing of Text-to-Image Model Output](https://doi.org/10.1145/3706598.3714292)：学习与用户偏好对齐的语义 slider，对文生图输出进行连续可控编辑。
+- [Frequency-Domain Masking and Spatial Interaction for Generalizable Deepfake Detection](https://doi.org/10.3390/electronics14071302)：结合频域 masking 和空间交互，提高 deepfake 检测对不同生成器和操纵方式的泛化。
+- [Opportunities and challenges of diffusion models for generative AI](https://doi.org/10.1093/nsr/nwae348)：综述 diffusion model 在 generative AI 中的优势和局限，包括可控性、效率、安全和部署挑战。
+- [DeepFloyd-IF via diffusion and U-Net based cross-model attention for semantic coherence](https://doi.org/10.11591/eei.v15i2.9927)：在 U-Net 扩散骨干上加入跨模型 attention，以提升 DeepFloyd-IF 式生成的语义连贯性。
+- [Rethinking Open-World DeepFake Attribution with Multi-perspective Sensory Learning](https://doi.org/10.1007/s11263-024-02184-7)：用多视角感知特征做开放世界 deepfake 归因，目标是识别未见过的伪造来源而不只做闭集分类。
+- [Real Appearance Modeling for More General Deepfake Detection](https://doi.org/10.1007/978-3-031-72943-0_23)：建模真实图像外观分布，让检测器先学习真实内容特征再识别合成偏差。
+- [TreeReward: Improve Diffusion Model via Tree-Structured Feedback Learning](https://doi.org/10.1145/3664647.3680610)：把反馈组织为树结构用于扩散模型奖励学习，使质量与对齐信号能在相关生成样本之间传播。
+- [A novel flexible identity-net with diffusion models for painting-style generation](https://doi.org/10.1038/s41598-025-12434-4)：在扩散式绘画风格生成中加入身份感知网络，使风格化过程保留主体身份。
+- [Diffusion Models for Recommender Systems: From Content Distribution To Content Creation](https://doi.org/10.1145/3711896.3736554)：讨论 diffusion model 在推荐系统中的内容分发和内容创建用途，范围宽于图像生成模型工作。
+- [FAST: Flexibly Controllable Arbitrary Style Transfer via Latent Diffusion Models](https://doi.org/10.1145/3748655)：用 latent diffusion 做任意风格迁移，并灵活控制风格强度与目标内容保持。
+- [VectorWeaver: Transformers-Based Diffusion Model for Vector Graphics Generation](https://doi.org/10.5220/0013185100003912)：用 Transformer-based diffusion 生成矢量图，将合成对象从像素转向可编辑图形图元。
+- [AlignTex: Pixel-Precise Texture Generation from Multi-view Artwork](https://doi.org/10.1145/3731158)：从多视角 artwork 生成像素级对齐纹理，目标是在不同视图之间保持一致的纹理合成。
+- [EditMaster: Bridging Text instruction and Visual Example for Multimodal guided Image Editing](https://doi.org/10.1145/3746027.3754926)：同时使用文本指令和视觉示例，使图像编辑既服从语言命令也继承参考外观。
+- [LoCo: Training-Free Layout-to-Image Synthesis with Localized Constraints](https://doi.org/10.1145/3746027.3754905)：在推理时强制局部布局约束，实现无需训练新控制模型的 layout-to-image synthesis。
+- [ENGDM: Enhanced Non-Isotropic Gaussian Diffusion Model for Progressive Image Editing](https://doi.org/10.3390/s25102970)：用非各向同性 Gaussian diffusion 逐步编辑图像，将噪声过程导向方向性或区域性变化。
+- [U3D: Unified Landmark-Displacement Framework for Real-Time Multi-Modal Emotion-Controllable 3D Facial Animation](https://doi.org/10.5220/0014427100004084)：通过 landmark displacement 和多模态情绪输入控制 3D facial animation，更接近人脸动画而非静态图像生成。
+- [4DVD: Cascaded Dense-view Video Diffusion Model for High-quality 4D Content Generation](https://doi.org/10.1007/s11263-026-02811-5)：级联 dense-view video diffusion 阶段生成高质量 4D 内容，同时保持视角和时间一致性。
+- [High-Fidelity Human Image Animation: Preserving Identity and Pose Consistency](https://doi.org/10.1007/s11760-026-05195-8)：在约束身份和姿态一致性的同时驱动人体图像动画，位于图像动画与视频生成边界。
+- [Identity and structure preserving face editing via diffusion models](https://doi.org/10.1007/s00530-025-02183-9)：用扩散模型编辑人脸并保持身份与几何结构，减少局部面部改动中的漂移。
+- [UPD-Diff: a unified precipitation downscaling method based on multi-stream elucidating diffusion model](https://doi.org/10.1088/2632-2153/ae4da6)：用 multi-stream elucidated diffusion 做降水 downscaling，是偏地球科学的扩散应用。
+- [Mhdaunet: enhancing semantic consistency in diffusion models via dual-path noise alignment](https://doi.org/10.1007/s00138-026-01798-w)：通过双路径噪声对齐提升扩散输出的语义一致性。
+- [A Dual-UNet Diffusion Framework for Personalized Panoramic Generation](https://doi.org/10.3390/jimaging12010040)：用 dual-UNet diffusion 架构生成个性化全景图，在大视场中保持主体或场景线索。
+- [Accelerating Multi-Elemental Catalyst Discovery with Interpretable Machine Learning and Automated Experimentation](https://doi.org/10.1021/acsnano.5c20552)：把可解释机器学习和自动化实验用于多元素催化剂发现，不属于图像生成或编辑。
+- [Modeling and Robust Control for Power Insurance Claim Collaborative Robots Using 3D Gaussian Splash Reconstruction](https://doi.org/10.1088/1742-6596/3062/1/012005)：用 3D Gaussian reconstruction 支持理赔场景中的机器人建模与控制，偏离静态图像模型文件。
+- [Can AI Influence How We Remember? Revisiting Memory Through AI-Generated Visuals](https://doi.org/10.1145/3786995.3787032)：研究 AI 生成视觉内容如何影响人类记忆，提供生成图像的人因证据而非新的生成器。
+- [Degradation-Aware One-Step Diffusion Model for Content-Sensitive Super-Resolution in the Dark](https://doi.org/10.1145/3746027.3755853)：将 degradation 和内容线索作为条件，一步扩散完成暗光图像超分辨率恢复。
+- [Fine-tuning Bias Neurons for Fair Text-to-Image Generation](https://doi.org/10.1145/3746027.3755047)：识别并微调文生图模型中的偏见敏感神经元，以减少不公平的人口属性关联。
+- [SRConvNet: A Transformer-Style ConvNet for Lightweight Image Super-Resolution](https://doi.org/10.1007/s11263-024-02147-y)：构建带 Transformer-style block 的轻量 ConvNet，用于高效单图超分辨率。
+- [Single image super-resolution with denoising diffusion GANS](https://doi.org/10.1038/s41598-024-52370-3)：结合 denoising diffusion 与 GAN 训练做单图超分辨率，目标是比回归式恢复生成更锐利细节。
+- [EvilEdit: Backdooring Text-to-Image Diffusion Models in One Second](https://doi.org/10.1145/3664647.3680689)：向文生图扩散模型快速注入后门，展示模型编辑如何制造触发式恶意生成。
+- [MuST: Robust Image Watermarking for Multi-Source Tracing](https://doi.org/10.1609/aaai.v38i6.28344)：嵌入可区分多来源的鲁棒水印，用于生成或编辑图像再传播后的归因。
+- [SDGAN: Disentangling Semantic Manipulation for Facial Attribute Editing](https://doi.org/10.1609/aaai.v38i3.28012)：在 GAN 中解耦人脸语义，使属性编辑改变目标特征而保留无关身份信息。
+- [PSC diffusion: patch-based simplified conditional diffusion model for low-light image enhancement](https://doi.org/10.1007/s00530-024-01391-z)：用 patch-based conditional diffusion 做低光增强，改善局部照明恢复并避免整图过度校正。
+- [Camera Settings as Tokens: Modeling Photography on Latent Diffusion Models](https://doi.org/10.1145/3680528.3687635)：把相机设置表示为 latent diffusion token，使生成可由曝光、焦距等摄影参数控制。
+- [Few-Shot Diffusion Models Escape the Curse of Dimensionality](https://doi.org/10.52202/079017-2189)：从理论和实验上说明，在结构性假设下 few-shot diffusion estimation 可避免维度相关样本复杂度。
+- [L-DiffER: Single Image Reflection Removal with Language-Based Diffusion Model](https://doi.org/10.1007/978-3-031-72661-3_4)：用语言引导扩散去除单图反射，把恢复目标与文本退化描述连接起来。
+- [Menstrual cycle inspired latent diffusion model for image augmentation in energy production](https://doi.org/10.1038/s41598-025-99088-4)：把生物启发式 latent diffusion augmentation 用于能源生产数据，属于领域扩散应用而非视觉生成。
+- [A Comparative Analysis of Compression and Transfer Learning Techniques in DeepFake Detection Models](https://doi.org/10.3390/math13050887)：比较压缩与迁移学习对 deepfake 检测模型的影响，说明哪些紧凑模型仍能保持取证性能。
+- [Theory of Consistency Diffusion Models: Distribution Estimation Meets Fast Sampling](https://proceedings.mlr.press/v235/dou24a.html)：把 consistency diffusion model 作为分布估计器分析，将快速采样行为与统计保证联系起来。
+- [EvilPromptFuzzer: generating inappropriate content based on text-to-image models](https://doi.org/10.1186/s42400-024-00279-9)：自动 fuzz 文本提示以诱导不当文生图输出，为视觉生成器提供安全测试方法。
+- [EGGen: Image Generation with Multi-entity Prior Learning through Entity Guidance](https://doi.org/10.1145/3664647.3680898)：学习多实体先验并加入 entity guidance，使文生图更可靠处理多个对象及其关系。
+- [DRIP: Unleashing Diffusion Priors for Joint Foreground and Alpha Prediction in Image Matting](https://doi.org/10.52202/079017-2537)：用扩散先验联合预测前景外观和 alpha matte，将 image matting 作为生成式恢复任务改进。
+- [Improving Image Editing Models with Generative Data Refinement](https://openreview.net/forum?id=q5UrA58oyY)：在训练图像编辑器前精炼生成式编辑数据，目标是得到更干净的指令-图像对以提升编辑保真度。
+- [Trajectory anomaly detection via spatial–temporal complementary reconstruction diffusion model](https://doi.org/10.1007/s10707-026-00574-2)：把扩散重建用于轨迹异常检测，虽使用 diffusion 术语但不属于图像生成。
+- [Shaping scientific papers diffusion structure: academia and public in social media networks](https://doi.org/10.1007/s11192-025-05511-y)：研究科学论文在社交网络中的传播结构，不是 diffusion generative model，后续 taxonomy pass 应从本页移除。
+- [AI Tool for Room Decoration: Harnessing Diffusion Model for Interior Design](https://doi.org/10.1145/3731763.3731792)：把室内设计约束转化为 diffusion 视觉布局方案，用于房间装饰概念生成。
+- [Spatial transcriptomics data imputation based on diffusion models](https://doi.org/10.1117/12.3095397)：用扩散模型进行空间转录组数据补全，是偏生物医学数据重建的 off-axis 条目。
+- [Stylized image generation based on multi-attribute decomposition](https://doi.org/10.1007/s10044-025-01577-9)：在生成前分解多个风格属性，从而更细粒度控制 stylized image synthesis。
+- [SCOL: Style Code Orchestration in Latent Space for Proactive Face-Swapping Defense](https://doi.org/10.1145/3746027.3755344)：在 latent space 中编排 style code 主动防御换脸，把 face-swap 鲁棒性表述为可控表示编辑。
+- [Expressive Image Generation and Editing with Rich Text](https://doi.org/10.1007/s11263-025-02361-2)：用 rich text 条件化生成与编辑，使排版式线索和详细语言共同控制视觉外观。
+- [SAWNA: Space-Aware Text to Image Generation](https://doi.org/10.1145/3721250.3743023)：为文生图加入空间感知，使物体位置与场景布局更忠实于提示中的关系。
+- [Mitigating Stereotypes in Text-to-Image Generation: A Novel Perspective of Selective Neural Suppression](https://doi.org/10.1145/3746027.3755293)：抑制与刻板印象相关的特定神经方向，减少文生图输出中的偏见视觉关联。
+- [MPPR: Memory-Prior-based Prompt Refinement in Continuous Space for Advanced Text-to-Image Generation](https://doi.org/10.1145/3746027.3755280)：利用 memory prior 在连续嵌入空间细化提示，改进文生图而不只依赖离散 prompt 改写。
+- [PolyArt: Customizable Multilingual Movie Poster Generation via Diffusion Transformer](https://doi.org/10.1145/3757374.3771431)：用 diffusion transformer 生成多语言电影海报，联合处理文字渲染、布局和风格控制。
+- [Large-scale traceable and robust watermarking for diffusion models with precise affine coupling flow encoding](https://doi.org/10.1007/s10489-026-07217-x)：通过 affine-coupling flow 在扩散模型中编码可追踪水印，面向大规模鲁棒性和来源归因。
+- [HiDream-I1: An Open-Source High-Efficient Image Generative Foundation Model](https://doi.org/10.1145/3746027.3756870)： 发布高效开源图像生成基础模型 HiDream-I1，重点在开放权重、生成质量和推理效率之间取得平衡。
+- [SSAIM: Not All Self-Attentions Contain Effective Spatial Structure in Diffusion Models for Text-to-Image Editing](https://doi.org/10.1145/3746027.3754904)：提出图像生成或编辑方法；核心思想是提升扩散式视觉生成的可控性、安全性、保真度或模型侧训练。
+- [DSPO: Direct Score Preference Optimization for Diffusion Model Alignment](https://openreview.net/forum?id=xyfb9HHvMe)：把人类偏好图像分布的 score function 蒸馏进 T2I 扩散模型，使偏好微调对齐 score matching 目标，而不是直接套用 LLM 式 DPO。
+- [DiffKGW: Stealthy and Robust Diffusion Model Watermarking](https://www.semanticscholar.org/paper/04fc3d110c1621a42215791e4dd01c02ae1d2a3c)： 提出隐蔽且鲁棒的扩散模型水印 DiffKGW，在生成过程写入可检测信号，同时抵抗常见图像变换。

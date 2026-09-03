@@ -1,42 +1,73 @@
 # 2.4.5 Agent Harness
 
+- [PaperQA](https://arxiv.org/abs/2312.07559)：让 agent 主动检索全文论文、评估来源和段落相关性，再用 RAG 生成回答；和普通聊天模型不同，它把 provenance 作为回答结构的一部分。
 - [STORM](https://arxiv.org/abs/2402.14207)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：检索增强的长文写作 harness，通过多视角提问、构建大纲和撰写带引用报告，成为现代 deep research agent 的重要前身。
+- [OpenResearcher](https://arxiv.org/abs/2408.06941)：提供帮助研究者跟踪文献和进入新领域的 AI 平台，结合检索、论文组织和科研辅助工作流来支持科学文献导航。
 - [Co-STORM](https://arxiv.org/abs/2408.15232)（[开源代码](https://github.com/stanford-oval/storm)；[项目页](http://storm.genie.stanford.edu)）：协作式探索研究 harness，包含 agent 对话、用户 steer、动态 mind map 与带引用报告输出。
+- [Disentangling patent quality: using a large language model for a systematic literature review](https://doi.org/10.1007/s11192-024-05206-w)：用 GPT-4 将 5141 条记录筛至 762 篇研究，并把 985 个专利质量指标归入经济、法律与技术维度；综述据此指出指标定义不一致造成的可复现性问题，并提出八项后续测量命题。
+- [PaperQA2](https://arxiv.org/abs/2409.13740)（[开源代码](https://github.com/Future-House/paper-qa)）：检索科学文献并生成带引用的百科式回答，同时发现论文间矛盾；在不限制检索工具和时间的人机对比中，它在检索、总结和矛盾发现上达到或超过领域专家，LitQA2 则刻画了其文献研究任务。
 - [Agent Laboratory](https://arxiv.org/abs/2501.04227)（[开源代码](https://github.com/SamuelSchmidgall/AgentLaboratory)）：端到端科研助理工作流，从人类给定研究想法出发，覆盖文献综述、实验和报告写作。
+- [Citegeist](https://arxiv.org/abs/2503.23229)：用动态 RAG、embedding similarity、多阶段过滤和摘要生成 citation-backed related work，适合在贡献定位阶段快速生成可检查的文献版图，而不是让 LLM 自由编造来源。
+- [InteractiveSurvey](https://arxiv.org/abs/2504.08762)：允许研究者在中间输出上迭代修改，使自动综述从“一键成稿”转为可检查、可个性化的工作台。
 - [WebThinker](https://arxiv.org/abs/2504.21776)（[开源代码](https://github.com/RUC-NLPIR/WebThinker)；把“推理-检索-写作”交错成同一条长链路的 `think-search-draft` 工作流）
+- [ChatPD](https://arxiv.org/abs/2505.22349)：LLM 驱动的 paper-dataset networking system，从论文中抽取数据集使用、做实体消歧，并支持按任务发现相关数据集。
+- DRBA / DRBench Baseline Agent（[开源代码](https://github.com/ServiceNow/drbench)；无独立论文；DRBench 配套企业深研 baseline agent，围绕企业私有资料、公开网页、消息和生产力工具做检索、证据组织与带引用报告生成）
 - [OWL](https://arxiv.org/abs/2505.23885)（[开源代码](https://github.com/camel-ai/owl)；把 deep research 显式拆成 `检索 -> 验证 -> 写作` 的角色化流水线）
+- [STRUCTSENSE](https://arxiv.org/abs/2507.03674)：结合本体引导的符号知识、智能体自我修正、来源追踪和人工验证，从科学论文中抽取结构化记录；评测覆盖测评工具、论文元数据与资源以及生物医学命名实体，而非绑定单一抽取模式。
 - [Deep Cognition](https://arxiv.org/abs/2507.15759)（开源代码：未找到稳定公开仓库；透明、可中断的多 agent deep research 系统；核心思想是在研究过程中暴露细粒度人类 steering 与协作点，而不是把 deep research 做成封闭输入输出流程）
+- [Compare: A Framework for Scientific Comparisons](https://arxiv.org/abs/2509.06412)：生成论文与机构之间的结构化定性比较，用于识别协同机会、标定研究贡献和定位具体研究缺口。
 - [WebWeaver](https://arxiv.org/abs/2509.13312)（[开源代码](https://github.com/Alibaba-NLP/DeepResearch/tree/main/WebAgent/WebWeaver)；`planner + writer` 双代理，配合动态大纲与 evidence memory bank 管理长报告上下文）
+- [InsightGUIDE: An Opinionated AI Assistant for Guided Critical Reading of Scientific Literature](https://arxiv.org/abs/2509.20493)：一种引导式科学论文阅读助手；核心思路是提供结构化、简洁的阅读地图，辅助批判性阅读而不是替代阅读原文。
+- FutureSearch ReAct Agent（[开源代码](https://github.com/futuresearch/futuresearch-python)；无独立 arXiv 论文；FutureSearch 在 BTF-2 论文中引用的开源网页研究 agent 实现，包含工具包、时间管理和 ReAct-style 系统提示，适合复现实验型 deep research / forecasting harness）
 - [Flash-Searcher](https://arxiv.org/abs/2509.25301)（[开源代码](https://github.com/OPPO-PersonalAI/Flash-Searcher)；把串行 pipeline 改成 DAG 并行执行，并按依赖关系动态调度）
 - [FlowSearch](https://arxiv.org/abs/2510.08521)（[开源代码](https://github.com/InternScience/InternAgent)；流程编排驱动的搜写一体）
 - [BrowserAgent](https://arxiv.org/abs/2510.10666)（[开源代码](https://github.com/TIGER-AI-Lab/BrowserAgent)；把真实浏览器动作空间接入 agent，并配显式 memory 支撑网页级长期任务）
-- DRBA / DRBench Baseline Agent（[开源代码](https://github.com/ServiceNow/drbench)；无独立论文；DRBench 配套企业深研 baseline agent，围绕企业私有资料、公开网页、消息和生产力工具做检索、证据组织与带引用报告生成）
+- [SQuAI](https://arxiv.org/abs/2510.15682)：用四类协作 agent 拆解复杂科学问题、混合检索、过滤文档并生成带支持句的引用回答；和单链 RAG 相比，它把“哪些证据支持哪个子问题”显式化。
 - [Enterprise Deep Research](https://arxiv.org/abs/2510.17797)（[开源代码](https://github.com/SalesforceAIResearch/enterprise-deep-research)；企业研究场景的多代理深研系统实现）
 - [Dingtalk DeepResearch](https://arxiv.org/abs/2510.24760)（开源代码：未公开；企业办公场景的深调研代理，强调工作流嵌入与协同办公集成）
 - [IterResearch](https://arxiv.org/abs/2511.07327)（[开源代码](https://github.com/Chen-GX/IterResearch)；长程 deep research 代理；核心思想是用多轮 interaction scaling 与状态重建避免单一上下文不断膨胀导致的噪声污染和上下文窒息）
+- [AISAC: An Integrated multi-agent System for Transparent, Retrieval-Grounded Scientific Assistance](https://arxiv.org/abs/2511.14043)：面向检索支撑科学助手的透明多 agent runtime；核心思想是为长链科学推理提供受治理执行、证据追踪和模块化角色。
+- [Cross-Disciplinary Knowledge Retrieval and Synthesis: A Compound AI Architecture for Scientific Discovery](https://arxiv.org/abs/2511.18298)：编排 RAG、专门 agent 与工具，支持跨学科知识检索与综合。
 - [RhinoInsight](https://arxiv.org/abs/2511.18743)（开源代码：未公开；企业情报洞察导向研究代理）
+- [MARVEL: A Multi Agent-based Research Validator and Enabler using Large Language Models](https://arxiv.org/abs/2601.03436)：可本地部署的 multi-agent research validator and enabler。核心思想：结合领域问答、精确引用阅读和认证网络内运行，服务需要本地科研助手的科学团队。
+- [SciNets](https://arxiv.org/abs/2601.09727)：从查询相关的小型论文语料构建概念图，并沿受约束的多跳路径综合机制解释；对最短路径、多样性约束路径、随机游走与 RAG 的比较揭示了推理深度和来源稳定性之间的权衡。
 - [Self-Manager](https://arxiv.org/abs/2601.17879)（开源代码：未公开；把多代理 thread scheduling 自身也交给 agent 管理）
 - [Yunque DeepResearch](https://arxiv.org/abs/2601.19578)（[开源代码](https://github.com/Tencent-BAC/YunqueAgent)；腾讯系端到端深调研代理）
-- FutureSearch ReAct Agent（[开源代码](https://github.com/futuresearch/futuresearch-python)；无独立 arXiv 论文；FutureSearch 在 BTF-2 论文中引用的开源网页研究 agent 实现，包含工具包、时间管理和 ReAct-style 系统提示，适合复现实验型 deep research / forecasting harness）
 - [FS-Researcher](https://arxiv.org/abs/2602.01566)（[开源代码](https://github.com/Ignoramus0817/FS-Researcher)；分阶段检索与成稿研究代理）
 - [AgentCPM-Report](https://arxiv.org/abs/2602.06540)（[开源代码](https://github.com/OpenBMB/AgentCPM/tree/main/AgentCPM-Report)；中文长报告生成特化代理）
 - [Table-as-Search](https://arxiv.org/abs/2602.06724)（开源代码：未找到稳定公开仓库；把长程信息搜索表格化；核心思想是让 agent 维护待填字段、证据单元和缺口，统一处理 deep search、wide search 与 deep-wide search）
-- [W&D](https://arxiv.org/abs/2602.07359)（开源代码：未找到稳定公开仓库；Wide-and-Deep parallel tool-calling harness；核心思想是在单个 agent step 内横向并行调用搜索/阅读工具，提升 BrowseComp 式任务的来源覆盖和验证冗余）
-- [DualGraph](https://arxiv.org/abs/2602.13830)（开源代码：未找到稳定公开仓库；用两个共同演化的图分离知识探索与大纲规划，减少把来源发现和报告结构决策混在一起的倾向）
-- [Search More, Think Less（SMTL）](https://arxiv.org/abs/2602.22675)（[开源代码](https://github.com/OPPO-PersonalAI/SMTL)；长程 deep research/search agent；核心思想是优先扩展检索宽度和证据覆盖，再用较轻推理综合，降低超长链路成本）
-- [MiroFlow](https://arxiv.org/abs/2602.22808)（[开源代码](https://github.com/MiroMindAI/MiroFlow)；流程图式多阶段研究编排）
-- [Hyper-Search（MM-DeepResearch）](https://arxiv.org/abs/2603.01050)（[开源代码](https://github.com/HJYao00/MM-DeepResearch)；多模态证据整合型深研代理，链接曾不稳定）
-- [Marco DeepResearch](https://arxiv.org/abs/2603.28376)（开源代码：未确认公开；verification-centric deep research agent；核心思想是在 QA 合成、轨迹构造和测试时扩展中加入显式验证，避免长链路搜索错误一路传播到最终报告）
-- [Trustworthy Report Generation](https://arxiv.org/abs/2604.05952)（开源代码：未找到稳定公开仓库；带 progressive confidence estimation and calibration 的 deep research agent；核心思想是在报告生成过程中持续维护证据置信度，降低引用不稳与结论过度自信）
-- [DataSTORM](https://arxiv.org/abs/2604.06474)（开源代码：未确认公开；面向结构化数据的 deep research agent；核心思想是结合探索性数据分析、网页证据、主题生成与 data storytelling，让 agent 不只研究非结构化网页，也能研究大规模数据库）
-- [Deep-Reporter](https://arxiv.org/abs/2604.10741)（开源代码：未找到稳定公开仓库；grounded multimodal long-form generation harness；核心思想：结合多模态搜索与过滤、checklist 引导的增量综合和 recurrent context management）
-- [ARIS / Auto-Research-In-Sleep](https://arxiv.org/abs/2605.03042)（[开源代码](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)；[介绍](https://wanshuiyin.github.io/Auto-claude-code-research-in-sleep/ARIS_INTRO.html)）：skill-based autonomous research harness，包含跨模型对抗审阅、持久 research wiki、文献与实验工作流、引用/主张审计，以及 Codex/OpenClaw/Claude Code 可迁移性。
-- [LongSeeker](https://arxiv.org/abs/2605.05191)（开源代码：未公开；长程搜索/深研 agent；核心思想是用 Context-ReAct 动态压缩、回滚、摘录和删除工作记忆，在 BrowseComp 与 BrowseComp-ZH 上验证长链路检索收益）
-- [AgentDisCo](https://arxiv.org/abs/2605.11732)（开源代码：未找到稳定公开仓库；disentangled collaborative deep-research 架构；核心思想是把 critic 驱动的大纲/查询修正与 generator 驱动的检索/大纲更新拆开，再用 meta-optimization 发现可复用的 research-agent 设计策略）
-- [Argus](https://arxiv.org/abs/2605.16217)：证据拼装式深研代理；核心思想：Searcher 收集证据，Navigator 维护证据图并调度并行搜索。
 - Onyx（[开源代码](https://github.com/onyx-dot-app/onyx)；无 arXiv 论文；开源企业 AI 平台，内置 Deep Research、多步搜索、RAG、MCP 与 Code Interpreter）
 - LangChain Open Deep Research（[开源代码](https://github.com/langchain-ai/open_deep_research)；无 arXiv 论文；LangChain 官方开源深研系统实现）
 - AI-Q NVIDIA Research Assistant（[开源代码](https://github.com/NVIDIA-AI-Blueprints/aiq)；无 arXiv 论文；固定化“计划 -> 并行检索 -> 写作 -> 反思补检 -> 人类介入”的研究 loop）
-- DeerFlow（[开源代码](https://github.com/bytedance/deer-flow)；无 arXiv 论文；把 deep research 抽象为可复用 super agent harness，并强调任务分支解耦）
+- DeerFlow（[开源代码](https://github.com/bytedance/deer-flow)；无 arXiv 论文）将父级规划与综合同可独立执行的子代理分支分开，再向分支提供隔离文件、工具、记忆和可加载 skills，使一次运行能并行收集证据并组装带引用的研究产物，而不把所有分支混入同一上下文。
 - Spring AI Alibaba DeepResearch（[开源代码](https://github.com/spring-ai-alibaba/deepresearch)；无 arXiv 论文；Spring 生态集成版深调研）
 - CellCog（[公开 SDK](https://github.com/CellCog/cellcog_python)；无 arXiv 论文；托管式多 agent 平台与 Python SDK，支持 agent team 与 research-cog）
+- [An AI Pipeline for Scientific Literacy and Discovery: a Demonstration of Perspicacité-AI integration with Knowledge Graphs](https://ceur-ws.org/Vol-4085/paper77.pdf)：演示 Perspicacite-AI 与知识图谱集成，用 graph-backed evidence organization 支持科学素养提升和发现流程。
+- [An Evidence-Centric Knowledge Management System for Humanities Research Powered by Multimodal Large Language Models](https://doi.org/10.3390/systems14050552)：用多模态大模型构建面向人文研究的证据中心知识管理系统。
+- [W&D](https://arxiv.org/abs/2602.07359)（开源代码：未找到稳定公开仓库；Wide-and-Deep parallel tool-calling harness；核心思想是在单个 agent step 内横向并行调用搜索/阅读工具，提升 BrowseComp 式任务的来源覆盖和验证冗余）
+- [AnalyticsGPT: An LLM Workflow for Scientometric Question Answering](https://arxiv.org/abs/2602.09817)：面向 scientometric 问答的 LLM 工作流。核心思想是把文献计量问题拆成数据检索、指标计算、可视化和解释步骤，使回答能落到可检查的论文、作者或引用统计上。
+- [DualGraph](https://arxiv.org/abs/2602.13830)（开源代码：未找到稳定公开仓库；用两个共同演化的图分离知识探索与大纲规划，减少把来源发现和报告结构决策混在一起的倾向）
+- [Feedback Is The Key for Automated Survey Generation](https://aclanthology.org/2026.findings-acl.1904)：把专门反馈环嵌入综述起草，分别检查大纲清晰度、引用支持、正文可读性和分析深度，再据此进入下一轮修订。
+- [Search More, Think Less（SMTL）](https://arxiv.org/abs/2602.22675)（[开源代码](https://github.com/OPPO-PersonalAI/SMTL)；长程 deep research/search agent；核心思想是优先扩展检索宽度和证据覆盖，再用较轻推理综合，降低超长链路成本）
+- [MiroFlow](https://arxiv.org/abs/2602.22808)（[开源代码](https://github.com/MiroMindAI/MiroFlow)；流程图式多阶段研究编排）
+- [Hyper-Search（MM-DeepResearch）](https://arxiv.org/abs/2603.01050)（[开源代码](https://github.com/HJYao00/MM-DeepResearch)；多模态证据整合型 deep research agent，链接曾不稳定）
+- [ResearchPilot](https://arxiv.org/abs/2603.14629)：从自然语言问题出发，在本地依次完成 Semantic Scholar 与 arXiv 检索、类型化摘要抽取、跨论文综合和带引用的 related-work 起草，并用 SQLite 与 Qdrant 持久化运行历史和证据状态。
+- [The Knowledge-Coherence Framework for Narrative Extraction: An Empirical Study on Scientific Literature](https://doi.org/10.3390/analytics5020018)：在 3549 篇 IEEE 可视化论文上测试 narrative extraction，将 embedding pathfinding 与领域知识结合生成连贯文献序列。
+- [Adaptive Dynamic Scheduling Strategy of Multiple Large Language Models for Scientific Literature Classification Tasks](https://doi.org/10.1109/aiim67611.2025.11232910)：为科学文献分类动态调度多个 LLM，把模型选择纳入分类策略，而不是固定使用单模型流水线。
+- [Marco DeepResearch](https://arxiv.org/abs/2603.28376)（开源代码：未确认公开；verification-centric deep research agent；核心思想是在 QA 合成、轨迹构造和测试时扩展中加入显式验证，避免长链路搜索错误一路传播到最终报告）
+- [Rediscovering the value of academic papers in universities using a RAG system built on institutional repository papers](https://doi.org/10.1117/12.3108874)：面向高校的学术 RAG 可以从机构论文中支持研究者发现、战略规划和跨学科主题挖掘，展示了超越公众问答的科研知识助手形态。
+- [A Multi-Agent Human-LLM Collaborative Framework for Closed-Loop Scientific Literature Summarization](https://arxiv.org/abs/2604.01452)：使用多智能体人机协作进行闭环科学文献摘要。
+- [Paper Espresso: From Paper Overload to Research Insight](https://arxiv.org/abs/2604.04562)：构建从论文过载到研究洞察的工作流，适合补充文献型科研助手。
+- [Trustworthy Report Generation](https://arxiv.org/abs/2604.05952)（开源代码：未找到稳定公开仓库；带 progressive confidence estimation and calibration 的 deep research agent；核心思想是在报告生成过程中持续维护证据置信度，降低引用不稳与结论过度自信）
+- [DataSTORM](https://arxiv.org/abs/2604.06474)（开源代码：未确认公开；面向结构化数据的 deep research agent；核心思想是结合探索性数据分析、网页证据、主题生成与 data storytelling，让 agent 不只研究非结构化网页，也能研究大规模数据库）
+- [Deep-Reporter](https://arxiv.org/abs/2604.10741)（开源代码：未找到稳定公开仓库；grounded multimodal long-form generation harness；核心思想：结合多模态搜索与过滤、checklist 引导的增量综合和 recurrent context management）
+- [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](https://arxiv.org/abs/2604.23430)：结合 in-context learning 与 prompt chaining 做科学文本分类，面向科研信息检索中的分类和摘要等任务。
+- [ARIS / Auto-Research-In-Sleep](https://arxiv.org/abs/2605.03042)（[开源代码](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)；[介绍](https://wanshuiyin.github.io/Auto-claude-code-research-in-sleep/ARIS_INTRO.html)）：skill-based autonomous research harness，包含跨模型对抗审阅、持久 research wiki、文献与实验工作流、引用/主张审计，以及 Codex/OpenClaw/Claude Code 可迁移性。
+- [One Prompt to Rule Them All: Automated Curve and Image Retrieval from PDFs and Websites with Agentic Multimodal RAG](https://doi.org/10.1061/9780784486184.016)：自动从科学 PDF 和网页中检索曲线与图像。核心思想是用多模态 RAG agent 定位、抽取并返回可复用视觉数据资产，减少人工查找图表和曲线的成本。
+- [LongSeeker](https://arxiv.org/abs/2605.05191)（开源代码：未公开；长程搜索/深研 agent；核心思想是用 Context-ReAct 动态压缩、回滚、摘录和删除工作记忆，在 BrowseComp 与 BrowseComp-ZH 上验证长链路检索收益）
+- [AgentDisCo](https://arxiv.org/abs/2605.11732)（开源代码：未找到稳定公开仓库；disentangled collaborative deep-research 架构；核心思想是把 critic 驱动的大纲/查询修正与 generator 驱动的检索/大纲更新拆开，再用 meta-optimization 发现可复用的 research-agent 设计策略）
+- [Argus](https://arxiv.org/abs/2605.16217)：证据拼装式深研代理；核心思想：Searcher 收集证据，Navigator 维护证据图并调度并行搜索。
+- [Building Agent Harnesses for Scientific Curation from Multimodal Sources](https://arxiv.org/abs/2606.21005)：提出 Beaver 科学策展 agent harness，从长文本、表格和图中抽取结构化记录，并保留到支撑证据片段的 provenance。
+- [GRASP: Graph-Reasoning Aided Survey Planning for High-Fidelity Related Work Generation](https://arxiv.org/abs/2607.03709)：GRASP 使用引文关系图、论证-反论证规划和拓扑感知剪枝，生成更高保真度的学术相关工作写作计划。
+- [Hallucination Detector: A hybrid LLM and Semantic Scholar tool calling for detecting hallucination in scientific literature on AtomGPT.org](https://arxiv.org/abs/2607.09774)：AtomGPT 的引文核验器用 LLM 抽取书目信息、从 Semantic Scholar 检索候选记录，并评分标题、作者和会议一致性以标记虚构科研引文。
+- [IllustryFlow: A Modular Framework for Automated Bibliometric Analysis Using n8n and BERT-Enhanced Topic Classification](https://doi.org/10.3390/electronics15091943)：提出 IllustryFlow 模块化工作流，自动完成 OpenAlex 文献库筛选、BERT 主题分类、网络分析和可复现的文献计量可视化。

@@ -3,36 +3,235 @@
 - [API-Bank](https://arxiv.org/abs/2304.08244)（[开源代码](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank)）：评什么：tool-augmented LLM 的工具选择、参数填充与多步调用；核心思想：把工具集合与任务协议化，强调“可执行的调用轨迹”而非纯文本回答。
 - [Gorilla](https://arxiv.org/abs/2305.15334)（[开源代码](https://github.com/ShishirPatil/gorilla)）：评什么：大规模 API 连接下的函数调用/工具调用能力；核心思想：强调“与海量 API 的对齐”和函数签名约束下的可执行调用。
 - [ToolQA](https://arxiv.org/abs/2306.13304)（[开源代码](https://github.com/night-chen/ToolQA)）：评什么：通过外部工具回答问题的正确性（含多轮调用与工具返回利用）；核心思想：把“工具调用带来的信息增益”纳入评测协议，而不是只比较语言输出流畅性。
-- [ToolBench](https://github.com/OpenBMB/ToolBench)（来源工作：[ToolLLM](https://arxiv.org/abs/2307.16789)）：评什么：在大规模真实 API 集合上进行工具调用与多步执行；核心思想：把“API 规模”与“可执行评测”作为压力来源，覆盖工具检索、参数对齐与执行反馈闭环。
-- [BFCL / Berkeley Function-Calling Leaderboard](https://arxiv.org/abs/2409.00608)：评什么：函数调用（function calling）的准确性与鲁棒性（工具选择、参数对齐、schema 约束）。核心思想：用标准化函数签名与统一榜单，隔离“语言能力”与“调用正确性”。（[官方榜单](https://gorilla.cs.berkeley.edu/leaderboard)）
-- [MTU-Bench](https://openreview.net/forum?id=6guG2OlXsr)：评什么：大语言模型的多粒度工具使用能力。核心思想：把工具使用难度拆到多个子任务粒度，避免只测单次函数选择或最终答案正确性。
+- [ToolBench](https://github.com/OpenBMB/ToolBench)（来源工作：[ToolLLM](https://arxiv.org/abs/2307.16789)；[官方榜单](https://openbmb.github.io/ToolBench/)）：评什么：在大规模真实 API 集合上进行工具调用与多步执行；核心思想：把“API 规模”与“可执行评测”作为压力来源，覆盖工具检索、参数对齐与执行反馈闭环。
+- [ToolEyes: Fine-Grained Evaluation for Tool Learning Capabilities of Large Language Models in Real-world Scenarios](https://arxiv.org/abs/2401.00741)：按工具选择、参数填写、执行过程和错误类型细分评测真实场景中的 tool learning，而不是只给一个任务成功率。
+- [InfiAgent-DABench: Evaluating Agents on Data Analysis Tasks](https://arxiv.org/abs/2401.05507)：评测数据分析 agent 是否能读取数据集、调用分析工具、产生中间产物，并给出有数据依据的分析结论。
+- [RoTBench: A Multi-Level Benchmark for Evaluating the Robustness of Large Language Models in Tool Learning](https://arxiv.org/abs/2401.08326)：用多层级扰动测试 tool learning 鲁棒性，关注模型在工具描述或任务条件变化后是否仍能稳定选工具和填参数。
+- [Planning, Creation, Usage: Benchmarking LLMs for Comprehensive Tool Utilization in Real-World Complex Scenarios](https://arxiv.org/abs/2401.17167)：把综合工具利用拆成 planning、tool creation 和 tool usage 三步，评测模型能否从任务分解推进到可执行工具方案。
+- [BIRCO: A Benchmark of Information Retrieval Tasks with Complex Objectives](https://arxiv.org/abs/2402.14151)：评测带复杂目标的信息检索任务，使 RAG agent 不只优化主题相关性，还要满足多样性、具体性或证据覆盖等约束。
+- [R3: “This is My SQL, Are You With Me?” A Consensus-Based Multi-Agent System for Text-to-SQL Tasks](https://arxiv.org/abs/2402.14851)：更接近 harness 候选；核心产物是共识式多智能体 text-to-SQL 系统，评测价值来自 agent 如何协商 SQL 计划与执行结果。
+- [API-BLEND: A Comprehensive Corpora for Training and Benchmarking API LLMs](https://arxiv.org/abs/2402.15491)：提供面向 API LLM 的训练与 benchmark 语料，把调用任务同 API 签名和使用示例绑定起来。
+- [Retrieval Augmented Generation Systems: Automatic Dataset Creation, Evaluation and Boolean Agent Setup](https://arxiv.org/abs/2403.00820)：把 RAG 自动数据集构造、评测和 Boolean agent 设置放在一起，使检索配置与答案验证成为被测对象。
+- [Fine Tuning vs. Retrieval Augmented Generation for Less Popular Knowledge](https://arxiv.org/abs/2403.01432)：比较 fine-tuning 与 RAG 在长尾知识上的效果，工具使用信号来自外部检索何时优于参数记忆。
+- [m&m's: A Benchmark to Evaluate Tool-Use for multi-step multi-modal Tasks](https://arxiv.org/abs/2403.11085)：评测多步多模态工具使用，要求模型在图像、文本和中间推理操作之间选择并串联工具。
+- [InspectorRAGet: An Introspection Platform for RAG Evaluation](https://arxiv.org/abs/2404.17347)：提供 RAG 评测内省平台，把检索、上下文构造和生成组件拆开，使失败能定位到具体 pipeline 阶段。
+- [FREB-TQA: A Fine-Grained Robustness Evaluation Benchmark for Table Question Answering](https://arxiv.org/abs/2404.18585)：用细粒度扰动评测表格问答鲁棒性，适合作为 table parser 或结构化查询工具接入后的工具使用压力测试。
+- [Assessing and Verifying Task Utility in LLM-Powered Applications](https://arxiv.org/abs/2405.02178)：评估 LLM 应用是否真正完成任务效用，重点是验证有用结果，而不是只看模型回答质量。
+- [ALI-Agent: Assessing LLMs' Alignment with Human Values via Agent-based Evaluation](https://arxiv.org/abs/2405.14125)：用 agent-based evaluation 探查价值对齐，更像宽泛 agent 评测条目，不是窄义 function-calling benchmark。
+- [Designing an Evaluation Framework for Large Language Models in Astronomy Research](https://arxiv.org/abs/2405.20389)：设计面向天文学研究的 LLM 评测框架，把领域检索、计算和研究问题处理作为 research-assistant 能力评估。
+- [DB-GPT-Hub: Towards Open Benchmarking Text-to-SQL Empowered by Large Language Models](https://arxiv.org/abs/2406.11434)：提供 LLM text-to-SQL 开放 benchmark 基础设施，覆盖数据处理、模型比较和结构化查询执行评测。
+- [R-Eval: A Unified Toolkit for Evaluating Domain Knowledge of Retrieval Augmented Large Language Models](https://arxiv.org/abs/2406.11681)：提供评估 RAG 系统领域知识的统一工具，把 retrieval-backed grounding 与闭卷问答区分开。
+- [FlowBench: Revisiting and Benchmarking Workflow-Guided Planning for LLM-based Agents](https://arxiv.org/abs/2406.14884)：评测 workflow-guided planning，检查 agent 在调用工具或输出结果前能否遵循拆解后的流程结构。
+- [ShortcutsBench: A Large-Scale Real-world Benchmark for API-based Agents](https://arxiv.org/abs/2407.00132)：使用真实 API shortcut 任务，评测 agent 能否在大规模实用工具空间中把用户目标映射为可执行 API 计划。
+- [What Affects the Stability of Tool Learning? An Empirical Study on the Robustness of Tool Learning Frameworks](https://arxiv.org/abs/2407.03007)：实证测量 tool-learning 框架在工具描述、示例或任务设置变化下如何退化，把稳定性本身作为评测目标。
+- [GTA: A Benchmark for General Tool Agents](https://arxiv.org/abs/2407.08713)（[官方榜单](https://open-compass.github.io/GTA/)）：跨多类任务和工具评测 general tool agents，榜单比较重点在规划与执行，而不是单次 API 调用。
+- [VLMEvalKit: An Open-Source ToolKit for Evaluating Large Multi-Modality Models](https://arxiv.org/abs/2407.11691)：主要是 VLM benchmark 执行工具箱；保留为相邻评测基础设施，因为它标准化了多模态评测执行，而非单独定义 tool-use 任务。
+- [I Need Help! Evaluating LLM’s Ability to Ask for Users’ Support: A Case Study on Text-to-SQL Generation](https://arxiv.org/abs/2407.14767)：评测 text-to-SQL 系统何时应请求用户支持，把歧义识别和澄清提问纳入工具使用协议。
+- [Customized Retrieval Augmented Generation and Benchmarking for EDA Tool Documentation QA](https://arxiv.org/abs/2407.15353)：用 OpenROAD 式 EDA 文档搭建问答场景，比较定制检索和答案生成能否服务专业工具手册，而不是泛化网页知识。
+- [ConfReady: A RAG based Assistant and Dataset for Conference Checklist Responses](https://arxiv.org/abs/2408.04675)：发布会议 checklist 回复数据集和 RAG assistant，评测系统能否基于官方 checklist 文本回答投稿合规问题。
+- [API-Guided Dataset Synthesis to Finetune Large Code Models](https://arxiv.org/abs/2408.08343)：主要是 API-aware code model 的数据合成与微调路线；其 benchmark 价值在生成 API 使用示例并做下游调用测试。
+- [BFCL / Berkeley Function-Calling Leaderboard](https://arxiv.org/abs/2409.00608)：评什么：函数调用（function calling）的准确性与鲁棒性（工具选择、参数对齐、schema 约束）。核心思想：用标准化函数签名与统一榜单，隔离“语言能力”与“调用正确性”。（[官方榜单](https://gorilla.cs.berkeley.edu/leaderboard.html)）
+- [NESTFUL: A Benchmark for Evaluating LLMs on Nested Sequences of API Calls](https://arxiv.org/abs/2409.03797)：用嵌套 API 调用序列评测大语言模型，测试结构化工具使用规划能力。
+- [Revolutionizing Database Q&A with Large Language Models: Comprehensive Benchmark and Evaluation](https://arxiv.org/abs/2409.04475)：评测大语言模型数据库问答能力。
+- [Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse](https://arxiv.org/abs/2409.11242)：评测 RAG 答案是否给出有依据的 attribution，并在证据不足时拒答；用 ASQA、QAMPARI、ELI5 类设置区分检索 grounding 与流畅编造。
+- [RAD-Bench: Evaluating Large Language Models Capabilities in Retrieval Augmented Dialogues](https://arxiv.org/abs/2409.12558)：把检索增强对话做成多轮 benchmark，测试模型能否跨追问稳定使用检索上下文，而不是逐轮孤立回答。
+- [SEAL: Suite for Evaluating API-use of LLMs](https://arxiv.org/abs/2409.15523)：标准化 API 使用评测，覆盖 API 检索、调用规划和 GPT-4 支撑的 API simulator/cache，使模型比较不依赖实时 API 可用性。
+- [IRSC: A Zero-shot Evaluation Benchmark for Information Retrieval through Semantic Comprehension in Retrieval-Augmented Generation Scenarios](https://arxiv.org/abs/2409.15763)：提供多语言 RAG 检索任务和语义理解指标，包括 SSCI 与 RCCI，用来检查检索器是否返回真正可用的证据。
+- [Automated test generation to evaluate tool-augmented LLMs as conversational AI agents](https://arxiv.org/abs/2409.15934)：从中间图自动生成流程约束对话测试，针对客服型 agent 的工具调用是否遵循业务流程。
+- [Benchmarking Agentic Workflow Generation](https://arxiv.org/abs/2410.07869)：提出 WorfBench 与 WorfEval，把生成结果表示为 workflow graph，并用 subsequence 与 subgraph matching 评分，而不是只看最终文本答案。
+- [NesTools: A Dataset for Evaluating Nested Tool Learning Abilities of Large Language Models](https://arxiv.org/abs/2410.11805)：专测嵌套工具调用，即一个工具输出继续成为后续调用参数；数据由自动生成和人工修订结合，暴露扁平 function-calling 难以发现的失败。
+- [Optimizing and Evaluating Enterprise Retrieval-Augmented Generation (RAG): A Content Design Perspective](https://arxiv.org/abs/2410.12812)：把企业 RAG 评估视为内容设计问题，分析文档结构、监控和答案审查如何改变部署知识系统的检索质量。
+- [Benchmarking Floworks against OpenAI & Anthropic: A Novel Framework for Enhanced LLM Function Calling](https://arxiv.org/abs/2410.17950)：用 HubSpot CRM 任务比较单 API 与多 API function calling，并同时报告 accuracy、reliability、latency 和 cost。
+- [AppBench: Planning of Multiple APIs from Various APPs for Complex User Instruction](https://arxiv.org/abs/2410.19743)：评测跨应用 API 规划，显式包含图式执行顺序和权限约束，成功取决于能否选择正确的跨应用调用序列。
+- [Telco-DPR: A Hybrid Dataset for Evaluating Retrieval Models of 3GPP Technical Specifications](https://arxiv.org/abs/2410.19790)：基于 3GPP 技术规范构建含文本和表格的检索语料，配合合成 QA、top-k accuracy 与 MRR 评估电信 RAG 检索器。
+- [Advancing Agentic Systems: Dynamic Task Decomposition, Tool Integration and Evaluation using Novel Metrics and Dataset](https://arxiv.org/abs/2410.22457)：在 AsyncHow 上用 Node F1、step-sequence similarity 和 Tool F1 评价任务图、动态分解与工具集成。
+- [ToolScan: A Benchmark for Characterizing Errors in Tool-Use LLMs](https://arxiv.org/abs/2411.13547)：归纳七类工具使用错误，并在不同环境中诊断失败模式，把错误刻画本身作为评测目标。
+- [Multi-modal Retrieval Augmented Multi-modal Generation: Datasets, Evaluation Metrics and Strong Baselines](https://arxiv.org/abs/2411.16365)：定义 M2RAG，用数据构造流程和多模态指标同时评估检索到的多模态证据与生成结果。
+- [Multi-Reranker: Maximizing performance of retrieval-augmented generation in the FinanceRAG challenge](https://arxiv.org/abs/2411.16732)：记录 FinanceRAG 竞赛系统，把查询扩展、语料精炼、reranking 和长上下文生成组合成可复用的检索流水线参考。
+- [ConQRet: Benchmarking Fine-Grained Evaluation of Retrieval Augmented Argumentation with LLM Judges](https://arxiv.org/abs/2412.05206)：评测争议主题上的检索增强论证，用 LLM judge 细查证据质量和论点支撑。
+- [HammerBench: Fine-Grained Function-Calling Evaluation in Real Mobile Device Scenarios](https://arxiv.org/abs/2412.16516)：用真实移动设备场景诊断函数选择、参数构造和执行错误，比合成 API 列表更接近手机控制助手。
+- [The HalluRAG Dataset: Detecting Closed-Domain Hallucinations in RAG Applications Using an LLM's Internal States](https://arxiv.org/abs/2412.17056)：提供句子级闭域 RAG 幻觉样本，包含时效性证据和内部状态信号，用于检测不受证据支持的答案片段。
+- [An Evaluation Mechanism of LLM-based Agents on Manipulating APIs](https://doi.org/10.18653/v1/2024.findings-emnlp.267)：定义 LLM agent 操作 API 的评测机制，重点检查 endpoint 选择、参数构造以及 API 状态变化是否符合任务。
+- [RAGSQL: Context Retrieval Evaluation on Augmenting Text-to-SQL Prompts](https://doi.org/10.1109/is61756.2024.10705186)：把检索作为 text-to-SQL prompt augmentation 的被测步骤，隔离 schema 或上下文检索是否改善 SQL 生成。
+- [ToolComp: A Multi-Tool Reasoning & Process Supervision Benchmark](https://arxiv.org/abs/2501.01290)：提出 ToolComp，评估多工具推理和过程监督。
+- [ToolHop: A Query-Driven Benchmark for Evaluating Large Language Models in Multi-Hop Tool Use](https://arxiv.org/abs/2501.02506)：提供 995 个查询和 3,912 个工具，用可执行反馈评测相互依赖的多跳工具使用。
+- [CallNavi, A challenge and empirical study on LLM function calling and routing](https://arxiv.org/abs/2501.05255)：可作为工具使用的Bench候选；核心关注“CallNavi, A challenge and empirical study on LLM function calling and routing”。
+- [ComplexFuncBench: Exploring Multi-Step and Constrained Function Calling under Long-Context Scenario](https://arxiv.org/abs/2501.10132)：评测真实场景中的复杂函数调用，覆盖多步约束、长参数与 128K 上下文。
+- [ACEBench: Who Wins the Match Point in Tool Usage?](https://arxiv.org/abs/2501.12851)：评测真实多轮对话和多场景下的工具调用；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [RAG vs. GraphRAG: A Systematic Evaluation and Key Insights](https://arxiv.org/abs/2502.11371)：系统比较 retrieval-augmented generation 与图结构检索变体，说明图检索何时能帮助工具使用系统。
+- [MT-RAIG: Novel Benchmark and Evaluation Framework for Retrieval-Augmented Insight Generation over Multiple Tables](https://arxiv.org/abs/2502.11735)：提出 MT-RAIG，评估多表检索增强洞察生成。
+- [Evaluating Personalized Tool-Augmented LLMs from the Perspectives of Personalization and Proactivity](https://arxiv.org/abs/2503.00771)：可作为工具调用与检索增强执行的 Bench 候选：围绕 Evaluating Personalized Tool-Augmented LLMs from the Perspectives of Personalization and Proactivity 提供可比较的评测任务、数据或分析协议。
+- [Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models](https://arxiv.org/abs/2503.01763)：面向大语言模型的工具检索评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [ToolFuzz - Automated Agent Tool Testing](https://arxiv.org/abs/2503.04479)：ToolFuzz 针对 agent tool documentation 和调用进行自动化测试，能补充工具生态鲁棒性评测。
+- [Benchmarking Failures in Tool-Augmented Language Models](https://arxiv.org/abs/2503.14227)：Benchmarking Failures in Tool-Augmented Language Models 直接评测工具增强 LM 的失败模式。
+- [StableToolBench-MirrorAPI: Modeling Tool Environments as Mirrors of 7,000+ Real-World APIs](https://arxiv.org/abs/2503.20527)：StableToolBench-MirrorAPI 将 7000+ API 环境建模为 mirror，补足真实 API 工具环境评测。
+- [On the Robustness of Agentic Function Calling](https://arxiv.org/abs/2504.00914)：评测自主 agent 的 function calling 鲁棒性；核心思想是测试自然查询变体和语义相近工具加入后的稳定性。
+- [Multi-Mission Tool Bench: Assessing the Robustness of LLM based Agents through Related and Dynamic Missions](https://arxiv.org/abs/2504.02623)：相关且动态工具任务下的 agent 鲁棒性评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Remote Sensing Retrieval-Augmented Generation: Bridging remote sensing imagery and comprehensive knowledge with a multimodal dataset and retrieval-augmented generation model](https://arxiv.org/abs/2504.04988)：提出 RSWK，覆盖 175 个国家的 14,141 个地标，把遥感影像与知识检索结合起来评测多模态 RAG。
+- [FamilyTool: A Multi-hop Personalized Tool Use Benchmark](https://arxiv.org/abs/2504.06766)：评测多跳个性化工具使用。核心思想：结合个性化上下文与链式工具调用，测试 agent 能否跨步骤保持用户约束。
+- [Auto-SLURP: A Benchmark Dataset for Evaluating Multi-Agent Frameworks in Smart Personal Assistant](https://arxiv.org/abs/2504.18373)：评测智能个人助理中多 agent 框架的 benchmark；核心思想是检查助理 agent 是否能协调意图理解、工具/API 调用和任务完成。
+- [MTU-Bench](https://openreview.net/forum?id=6guG2OlXsr)（[官方榜单](https://mtu-bench-team.github.io/)）：评什么：大语言模型的多粒度工具使用能力。核心思想：把工具使用难度拆到多个子任务粒度，避免只测单次函数选择或最终答案正确性。
 - [ToolSandbox](https://aclanthology.org/2025.findings-naacl.65/)：评什么：有状态对话式工具使用。核心思想：结合用户模拟器、隐式工具状态依赖、中间里程碑和 on-policy 交互，让工具调用在变化环境中被评测，而不是只做无状态 API 调用。
+- [LongFuncEval: Measuring the effectiveness of long context models for function calling](https://arxiv.org/abs/2505.10570): 评估长上下文设置中的函数调用能力，覆盖大工具目录、长工具返回和长多轮对话，是 tool use 与 long context 的交叉基准。
+- [ToolSpectrum : Towards Personalized Tool Utilization for Large Language Models](https://arxiv.org/abs/2505.13176)：评测 LLM 的个性化工具利用；核心思想是在用户画像和环境因素约束下测试工具选择，而不只看显式指令的功能匹配。
+- [Rethinking Stateful Tool Use in Multi-Turn Dialogues: Benchmarks and Challenges](https://arxiv.org/abs/2505.13328)：该工作聚焦多轮对话中的 stateful tool use benchmark/challenges，直接扩展 tool-use 评测。
+- [SHEET: A Multi-purpose Open-source Speech Human Evaluation Estimation Toolkit](https://arxiv.org/abs/2505.15061)：相邻评测工具而非 function-calling benchmark；它估计语音人工评测分数，并在 BVCC、NISQA 等设置中复核 SSL-MOS 类预测器。
 - [MCP-RADAR](https://arxiv.org/abs/2505.16700)：评什么：MCP 框架下跨数学、搜索、邮件、日历、文件和终端六类任务的工具使用能力；核心思想：同时度量答案正确性、操作准确性、调用轮次和资源效率，把 MCP 从协议支持推进到可量化的执行评测。
-- [τ-bench / τ²-Bench](https://arxiv.org/abs/2506.07982)：评什么：多轮工具使用与 API orchestration（选工具、填参、读返回、纠错与重试）。核心思想：把“工具链路的可执行正确性”做成可量化评测，而不是只看语言输出。
+- [T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning](https://arxiv.org/abs/2505.16986)：多轮工具导向会话规划数据集。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [FinRAGBench-V: A Benchmark for Multimodal RAG with Visual Citation in the Financial Domain](https://arxiv.org/abs/2505.17471)：在金融文档中评测带视觉引用的多模态 RAG。
+- [VIBE: Vector Index Benchmark for Embeddings](https://arxiv.org/abs/2505.17810)：用现代 embedding 派生工作负载评测近似最近邻 vector index，并加入分布外数据来施压 RAG 背后的检索基础设施。
+- [Magic Mushroom: A Customizable Benchmark for Fine-grained Analysis of Retrieval Noise Erosion in RAG Systems](https://arxiv.org/abs/2506.03901)：用 7,468 个单跳和 3,925 个多跳 query 测量检索噪声如何侵蚀 RAG 答案，可控制污染检索上下文。
+- [MCPWorld: A Unified Benchmarking Testbed for API, GUI, and Hybrid Computer Use Agents](https://arxiv.org/abs/2506.07672)：评测MCP 风格工具下的 API、GUI 与混合 computer-use agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [τ-bench / τ²-Bench](https://arxiv.org/abs/2506.07982)（[官方榜单](https://www.taubench.com/)；[τ²-Bench 提交说明](https://github.com/sierra-research/tau2-bench/blob/main/docs/leaderboard-submission.md)）：评什么：多轮工具使用与 API orchestration（选工具、填参、读返回、纠错与重试）。核心思想：把“工具链路的可执行正确性”做成可量化评测，而不是只看语言输出。
+- [Live API-Bench: 2500+ Live APIs for Testing Multi-Step Tool Calling](https://arxiv.org/abs/2506.11266)：类型：benchmark/评测协议。核心价值：为 1.11.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [More Vulnerable than You Think: On the Stability of Tool-Integrated LLM Agents](https://arxiv.org/abs/2506.21967)：评估工具集成型 LLM Agent 的稳定性；核心思路是不只看最终任务成功率，还检查文档读取、工具选择、参数生成和工具返回处理中的失败。
 - [DICE-BENCH](https://arxiv.org/abs/2506.22853)：评什么：多轮、多方对话中的工具使用能力，尤其是函数名与参数线索分散在不同轮次和参与者时的调用正确性；核心思想：用 DICE-SCORE 度量工具相关信息分散度，再通过工具依赖图合成更贴近真实对话的 function-calling 场景。
 - [ToolHop](https://aclanthology.org/2025.acl-long.150/)：评什么：围绕本地可执行工具的多跳工具使用。核心思想：用 query-driven 任务、工具依赖、执行反馈和可验证答案，测试 agent 能否跨工具链规划。
+- [HammerBench: Fine-Grained Function-Calling Evaluation in Real Mobile Assistant Scenarios](https://doi.org/10.18653/v1/2025.findings-acl.175)：面向真实移动助手场景的细粒度函数调用 benchmark。核心思想是在实际移动工作流中评估工具选择和参数填写，而不只测合成函数签名。
 - [CONFETTI](https://aclanthology.org/2025.acl-long.394/)：评什么：turn-level interaction 中的对话式 function calling。核心思想：用人工模拟对话覆盖追问、目标修正、歧义目标和隐含约束，测试模型能否跨对话轮保持函数调用意图。
-- [LiveMCPBench](https://arxiv.org/abs/2508.01780)（[项目页](https://icip-cas.github.io/LiveMCPBench)；[开源代码](https://github.com/icip-cas/LiveMCPBench)）：评什么：大规模、多 server MCP 工具空间中的检索、路由与组合。核心思想：提供 70 个 server 和 527 个工具，显式把“找得到工具”和“组合得对工具”作为 MCP agent 的主要瓶颈。
-- [MCP-Universe](https://arxiv.org/abs/2508.14704)（[项目页](https://mcp-universe.github.io)；[开源代码](https://github.com/SalesforceAIResearch/MCP-Universe)）：评什么：真实 MCP servers 上的长程、多域工具使用；核心思想：用导航、仓库管理、金融分析、3D 设计、浏览器自动化和网页搜索等真实 server 组合，考察 unfamiliar tools 与长上下文压力下的执行式评分。
+- [Meta-Tool: Unleash Open-World Function Calling Capabilities of General-Purpose Large Language Models](https://doi.org/10.18653/v1/2025.acl-long.1481)：评测通用 LLM 的开放世界函数调用；核心思想是跳出固定工具集，让模型为多样真实需求检索并调用合适工具。
+- [SIGIR 2025 - LiveRAG Challenge Report](https://arxiv.org/abs/2507.04942)：报告 SIGIR LiveRAG shared task，在挑战约束下让系统用实时检索作答，比较端到端 RAG pipeline 而非孤立 retriever。
+- [Evaluating LLMs on Sequential API Call Through Automated Test Generation](https://arxiv.org/abs/2507.09481)：评什么：用自动测试生成评估顺序 API 调用能力。
+- [MCPEval: Automatic MCP-based Deep Evaluation for AI Agent Models](https://arxiv.org/abs/2507.12806)：评测基于 MCP 的自动任务生成与 agent 深度评测；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Butterfly Effects in Toolchains: A Comprehensive Analysis of Failed Parameter Filling in LLM Tool-Agent Systems](https://arxiv.org/abs/2507.15296)：LLM tool-agent 参数填充失败分析。核心思想是分类参数失败，并测试输入扰动如何沿工具链传播。
+- [LiveMCPBench](https://arxiv.org/abs/2508.01780)（[项目页](https://icip-cas.github.io/LiveMCPBench)；[官方榜单](https://icip-cas.github.io/LiveMCPBench/)；[开源代码](https://github.com/icip-cas/LiveMCPBench)）：评什么：大规模、多 server MCP 工具空间中的检索、路由与组合。核心思想：提供 70 个 server 和 527 个工具，显式把“找得到工具”和“组合得对工具”作为 MCP agent 的主要瓶颈。
+- [CABENCH: Benchmarking Composable Ai for Solving Complex Tasks through Composing Ready-to-Use Models](https://arxiv.org/abs/2508.02427)：面向 ready-to-use models 组合的 composable AI benchmark；核心思想是评测系统能否把复杂任务分解，并从模型池中组合合适模型，而不是依赖单一大模型。
+- [ToolVQA: A Dataset for Multi-Step Reasoning VQA with External Tools](https://arxiv.org/abs/2508.03284)：评测需要外部工具的多步 VQA，覆盖功能多样的多模态任务。
+- [OmniBench-RAG](https://arxiv.org/abs/2508.05650)：提供面向检索增强生成工具的多领域评测平台。
+- [MCPToolBench++: A Large Scale AI Agent Model Context Protocol MCP Tool Use Benchmark](https://arxiv.org/abs/2508.07575)：大规模 MCP 工具使用基准；核心思想是在广泛的 Model Context Protocol 工具空间中同时评测工具发现、参数绑定和多步执行。
+- [MCP-Universe](https://arxiv.org/abs/2508.14704)（[项目页](https://mcp-universe.github.io)；[官方榜单](https://mcp-universe.github.io/)；[开源代码](https://github.com/SalesforceAIResearch/MCP-Universe)）：评什么：真实 MCP servers 上的长程、多域工具使用；核心思想：用导航、仓库管理、金融分析、3D 设计、浏览器自动化和网页搜索等真实 server 组合，考察 unfamiliar tools 与长上下文压力下的执行式评分。
 - [LiveMCP-101](https://arxiv.org/abs/2508.15760)：评什么：MCP-enabled agents 在真实多步查询上的压力测试与诊断。核心思想：用 101 个挑战性查询、执行计划和动态工具返回检查 MCP agent 的工具选择、调度、结果处理和失败恢复。
+- [TacTool: Tactical Tool Usage in Agentic AI Systems](https://doi.org/10.1109/ica67499.2025.00017)：评测 agentic AI 系统中的战术性工具使用；核心思想是检查 agent 是否能策略性地选择、排序和调整工具，而不只是调用匹配 API。
+- [Tool Playgrounds: A Comprehensive and Analyzable Benchmark for LLM Tool Invocation](https://doi.org/10.1109/icassp49660.2025.10890828)：用于分析 LLM 工具调用的 benchmark；核心思想是提供受控工具环境，把调用选择和参数质量同最终答案流畅度分开检查。
 - [MCPVerse](https://arxiv.org/abs/2508.16260)：评什么：真实 MCP server 生态下的 agentic tool use；核心思想：用可执行的 MCP 工具集合替代静态函数签名，考察工具发现、参数绑定、状态追踪和多步恢复。
-- [MCP-Bench](https://arxiv.org/abs/2508.20453)（[开源代码](https://github.com/Accenture/mcp-bench)）：评什么：复杂真实任务中的 MCP 工具调用 agent；核心思想：把 server/client 连接、调用轨迹记录与任务评分流程做成可复现 benchmark-side harness。
+- [Diverse And Private Synthetic Datasets Generation for RAG evaluation: A multi-agent framework](https://arxiv.org/abs/2508.18929)：用多智能体生成 RAG 评测数据，同时显式优化多样性和隐私，把合成测试集构造作为可复用产物。
+- [MCP-Bench](https://arxiv.org/abs/2508.20453)（[开源代码与榜单](https://github.com/Accenture/mcp-bench)）：评什么：复杂真实任务中的 MCP 工具调用 agent；核心思想：把 server/client 连接、调用轨迹记录与任务评分流程做成可复现 benchmark-side harness。
+- [RAGProbe: Breaking RAG Pipelines with Evaluation Scenarios](https://doi.org/10.1109/cain66642.2025.00015)：可作为工具调用与检索增强执行的 Bench 候选：围绕 RAGProbe: Breaking RAG Pipelines with Evaluation Scenarios 提供可比较的评测任务、数据或分析协议。
+- [Research Challenges in Relational Database Management Systems for LLM Queries](https://arxiv.org/abs/2508.20912)：研究两个开源和一个企业级数据库中的 SQL-invoked LLM，揭示结构化输出、资源控制和查询规划等 DB-native LLM 工具问题。
 - [MCP-AgentBench](https://arxiv.org/abs/2509.09734)：评什么：MCP-mediated tools 下真实语言 agent 的任务表现；核心思想：把 MCP 作为工具中间层，检验 agent 对工具说明、返回值、环境状态和多轮计划的统一处理能力。
-- [MCPMark](https://arxiv.org/abs/2509.24002)（[开源代码](https://github.com/eval-sys/mcpmark)）：评什么：真实、全面 MCP 使用的压力测试；核心思想：覆盖多服务器、多工具依赖、状态性任务和异常恢复，比单函数调用更贴近 MCP production workflow。
-- [VitaBench](https://arxiv.org/abs/2509.26490)：评什么：更贴近“真实应用工具链”的多步调用能力（包含多工具组合与结果校验）。核心思想：把工具调用从“单次函数预测”提升为“可执行的多步工作流”。
+- [IFEval-FC](https://arxiv.org/abs/2509.18420)：评估 function-calling schema 内部的指令遵循。核心思想是在 JSON schema 参数描述中嵌入可验证格式约束，并用算法检查工具调用是否同时满足参数正确性和格式规则。
+- [STARQA: A Question Answering Dataset for Complex Analytical Reasoning over Structured Databases](https://arxiv.org/abs/2509.19508)：评测结构化数据库上的复杂分析推理，要求系统理解数据库内容并组合多步查询，而不是从单个片段抽答案。
+- [Non-Collaborative User Simulators for Tool Agents](https://arxiv.org/abs/2509.23124)：面向 tool agent 的用户模拟评测方向。核心思想是测试 agent 在非合作或困难模拟用户下的鲁棒性，而不是假设用户总是配合。
+- [MCPMark](https://arxiv.org/abs/2509.24002)（[开源代码](https://github.com/eval-sys/mcpmark)；[官方榜单](https://mcpmark.ai/leaderboard/mcp)）：评什么：真实、全面 MCP 使用的压力测试；核心思想：覆盖多服务器、多工具依赖、状态性任务和异常恢复，比单函数调用更贴近 MCP production workflow。
+- [ScenarioBench: Trace-Grounded Compliance Evaluation for Text-to-SQL and RAG](https://arxiv.org/abs/2509.24212)：面向工具使用与智能体工具编排的可复用评测、数据集、协议或诊断研究。核心思路是围绕“ScenarioBench: Trace-Grounded Compliance Evaluation for Text-to-SQL and RAG”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [VitaBench](https://arxiv.org/abs/2509.26490)（[官方榜单](https://vitabench.github.io/)）：评什么：更贴近“真实应用工具链”的多步调用能力（包含多工具组合与结果校验）。核心思想：把工具调用从“单次函数预测”提升为“可执行的多步工作流”。
+- [FuncBenchGen](https://arxiv.org/abs/2509.26553)：围绕隐藏函数依赖 DAG 生成无污染多步工具调用任务，可控制依赖深度、图规模和干扰函数。
+- [BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models](https://arxiv.org/abs/2510.00307)：面向工具使用与智能体工具编排的可复用评测、数据集、协议或诊断研究。核心思路是围绕“BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [InfoMosaic-Bench](https://arxiv.org/abs/2510.02271)：评测 tool-augmented agent 的多源信息搜寻能力，要求 agent 在医疗、金融、地图、视频、网页和跨领域任务中结合通用 web search 与领域工具。
+- [Beyond the Final Answer: Evaluating the Reasoning Trajectories of Tool-Augmented Agents](https://arxiv.org/abs/2510.02837)：可作为工具使用的Bench候选；核心关注“Evaluating the Reasoning Trajectories of Tool-Augmented Agents”。
+- [Quantitative Certification of Agentic Tool Selection](https://arxiv.org/abs/2510.03992)：研究工具选择的可认证评测；核心思想是量化 agent 是否选择了充分且合适的工具集，而不只是产出看似合理的最终答案。
 - [TRAJECT-Bench](https://arxiv.org/abs/2510.04550)：评什么：agentic tool use 的完整调用轨迹质量，而不只是最终答案；核心思想：用可执行工具和细粒度指标检查工具选择、参数化、调用顺序、并行宽度和链路深度，定位“答案对但调用链错”的失败。
-- [Tool Decathlon（Toolathlon）](https://arxiv.org/abs/2510.25726)：评什么：跨 32 个应用、604 个工具的长程真实任务执行。核心思想：大量工具来自 MCP server，且每个任务有专用执行检查脚本，强调跨应用状态、工具链长度和真实初始环境。
+- [How Good Are LLMs at Processing Tool Outputs?](https://arxiv.org/abs/2510.15955)：评测 LLM 是否能正确处理工具输出；核心思想是区分“会调用工具”和“能读懂、信任并利用返回证据”这两种能力。
+- [AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness in Conversational AI](https://arxiv.org/abs/2510.18170)：AgentChangeBench 明确评测 tool-augmented agents 对对话中目标变化的适应能力。
+- [Multi-Faceted Evaluation of Tool-Augmented Dialogue Systems](https://arxiv.org/abs/2510.19186)：从多维度评测工具增强对话系统；核心思想是除最终回答质量外，同时评价工具选择和交互行为。
+- [TheMCPCompany](https://arxiv.org/abs/2510.19286)：评什么：使用任务特定 MCP 工具的通用 agent。核心思想：把真实服务 REST API 暴露成 18,000 多个 MCP 工具，并提供 ground-truth 工具标注，用于比较浏览器式 agent 与工具检索/工具调用 agent。
+- [ETOM](https://arxiv.org/abs/2510.19423)：评测 MCP tool orchestration 的五级能力。核心思想是构造 equal function sets 和客观指标，从单工具调用到跨服务器多跳规划，再到 out-of-scope request 鲁棒性，减少只孤立评测工具造成的能力高估。
+- [On Generalization in Agentic Tool Calling: CoreThink Agentic Reasoner and MAVEN Dataset](https://arxiv.org/abs/2510.22898)：面向 agentic tool calling 泛化的 reasoner 与数据集。核心思想是测试 agent 是否能在多样工具调用环境中迁移工具使用推理策略，而不是只适配孤立 benchmark。
+- [Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception](https://arxiv.org/abs/2510.23853)：评测工具使用决策中的时间错位；核心思想是检查任务依赖人类时间感知或动态时序时，agent 是否能正确选择和调度工具。
+- [Tool Decathlon（Toolathlon）](https://arxiv.org/abs/2510.25726)（[官方榜单](https://toolathlon.xyz/)）：评什么：跨 32 个应用、604 个工具的长程真实任务执行。核心思想：大量工具来自 MCP server，且每个任务有专用执行检查脚本，强调跨应用状态、工具链长度和真实初始环境。
+- [SportReason: Evaluating Retrieval-Augmented Reasoning across Tables and Text for Sports Question Answering](https://doi.org/10.18653/v1/2025.emnlp-main.34)：评测体育问答中的检索增强推理，要求同时利用表格统计证据和文本证据。
+- [ACEBench: A Comprehensive Evaluation of LLM Tool Usage](https://doi.org/10.18653/v1/2025.findings-emnlp.697)：在更丰富的多轮场景和多维指标上评测工具使用，而不只看单次函数调用准确率。
+- [TPS-Bench: Evaluating AI Agents' Tool Planning \& Scheduling Abilities in Compounding Tasks](https://arxiv.org/abs/2511.01527)：评测复合任务中的工具规划与调度能力。核心思想：关注子目标相互影响时 agent 能否选择、排序和调度工具，而不只是单次函数调用。
 - [NESTFUL](https://aclanthology.org/2025.emnlp-main.1702/)：评什么：嵌套 API 调用序列。核心思想：专测一个工具调用结果需要继续作为更深层调用参数的规划模式，暴露扁平 function-calling benchmark 看不到的失败。
-- [MCP-Atlas](https://arxiv.org/abs/2602.00933)（[开源代码](https://github.com/scaleapi/mcp-atlas)）：评什么：真实 MCP server 上的多步工具编排；核心思想：用 36 个 real MCP servers、容器化 harness 和 claims-based rubric 测工具发现、参数对齐与恢复。
-- [τ³-Bench](https://sierra.ai/uk/resources/research/tau-3-bench)：评什么：把 tau 系列有状态工具调用扩展到知识检索和语音客服场景的 agentic customer-interaction 任务；核心思想：保留现实 policy、状态和工具约束，同时加入原始文本/API tau-bench 之外的知识与语音代理压力。
+- [SynthTools](https://arxiv.org/abs/2511.09572)：支持什么：面向 agent 开发的可扩展合成工具生态。核心思想：自动生成多样工具、仿真实际工具行为并审计工具正确性，让工具调用 agent 能在不依赖不稳定真实 API 的条件下训练和评测。
+- [M^3-Bench: Multi-Modal, Multi-Hop, Multi-Threaded Tool-Using MLLM Agent Benchmark](https://arxiv.org/abs/2511.17729)：评测多模态、多跳、多线程 MCP 工具调用；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](https://arxiv.org/abs/2511.19661)：类型：benchmark/评测协议。核心价值：为 1.11.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [AppSelectBench: Application-Level Tool Selection Benchmark](https://arxiv.org/abs/2511.19957)：类型：benchmark/评测协议。核心价值：为 1.11.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [TinyLLM: Evaluation and Optimization of Small Language Models for Agentic Tasks on Edge Devices](https://arxiv.org/abs/2511.22138)：评什么：评估边缘设备小模型在函数、工具和 API 调用任务中的 agentic 能力。
+- [Benchmark for Planning and Control with Large Language Model Agents: Blocksworld with Model Context Protocol](https://arxiv.org/abs/2512.03955)：通过 MCP 工具评测 LLM agents 的规划与控制；核心思想是用 Blocksworld 作为可控环境测试工具中介规划和动作执行。
+- [MCPZoo: A Large-Scale Dataset of Runnable Model Context Protocol Servers for AI Agent](https://arxiv.org/abs/2512.15144)：面向 AI agent 的大规模可运行 MCP server 数据集。核心思想是用真实可执行工具服务评测 agent，而不只看静态函数签名。
+- [MCPAgentBench: A Real-world Task Benchmark for Evaluating LLM Agent MCP Tool Use](https://arxiv.org/abs/2512.24565)：评测 LLM agent 在真实任务中的 MCP 工具使用。核心思想：测试 agent 能否发现、选择并协调 MCP server 暴露的工具。
+- [Beyond Perfect APIs: A Comprehensive Evaluation of LLM Agents Under Real-World API Complexity](https://arxiv.org/abs/2601.00268)：评什么：真实 API 复杂度下的 LLM agent。核心思想是从理想化函数调用推进到包含约束、错误和复杂交互的真实 API。
+- [When Do Tools and Planning Help Large Language Models Think? A Cost- and Latency-Aware Benchmark](https://arxiv.org/abs/2601.02663)：它明确评测工具选择、工具调用、MCP/API 编排或工具使用边界，适合补充 tool-use Bench。
+- [Arabic Prompts with English Tools: A Benchmark](https://arxiv.org/abs/2601.05101)：面向阿语工具调用的 benchmark；核心思想是测试 agent 在接收阿语提示但操作英文工具 schema 时的功能准确性与鲁棒性。
+- [UniToolBench: A Benchmark for Tool-Augmented LLMs in Cross-Domain, Universal Task Automation](https://doi.org/10.18653/v1/2026.findings-eacl.248)：评什么：工具增强 LLM 的跨领域通用任务自动化。核心思想是测试 agent 能否在异质领域间泛化工具选择与执行，而不是只适配单一 API 家族。
+- [Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models](https://arxiv.org/abs/2601.05366)：评什么：工具调用的多语言鲁棒性。核心思想是检验函数调用决策、参数和执行行为能否跨语言变化保持稳定，而不只是在英文提示上成立。
+- [Exploring the Meta-level Reasoning of Large Language Models via a Tool-based Multi-hop Tabular Question Answering Task](https://arxiv.org/abs/2601.07696)：它明确评测工具选择、工具调用、MCP/API 编排或工具使用边界，适合补充 tool-use Bench。
+- [Investigating Tool-Memory Conflicts in Tool-Augmented LLMs](https://arxiv.org/abs/2601.09760)：研究工具增强 LLM 中外部工具知识与模型记忆的冲突。核心思想是评估当参数记忆与工具证据矛盾时，模型是否能正确服从外部工具。
+- [ToolPRMBench](https://arxiv.org/abs/2601.12294)：评测 tool-using agents 的 process reward models；核心思想是把工具使用轨迹转成带正确动作和似是而非错误动作的 step-level cases，测试 reward model 能否监控局部和完整 rollout 中的工具失败。
+- [MiRAGE: A Multiagent Framework for Generating Multimodal Multihop Question-Answer Dataset for RAG Evaluation](https://arxiv.org/abs/2601.15487)：用专门化智能体生成面向 RAG 评测的领域化多模态多跳问答数据，并加入递归上下文优化与对抗式事实 grounding 检查。
+- [When Agents Fail to Act: A Diagnostic Framework for Tool Invocation Reliability in Multi-Agent LLM Systems](https://arxiv.org/abs/2601.16280)：可作为tool use方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Structure-BiEval: A Self-Supervised, Dual-Track Framework for Decoupling Structure and Content in LLM Evaluation for Web Information Systems](https://arxiv.org/abs/2601.19923)：评什么：评测 Web-native LLM 输出的结构忠实度和内容质量；核心思想是分别检查类 API payload 的 schema 正确性和语义内容。
+- [Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](https://arxiv.org/abs/2601.20412)：面向工具使用与智能体工具编排的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [MedMCP-Calc](https://arxiv.org/abs/2601.23049)（[开源代码](https://github.com/SPIRAL-MED/MedMCP-Calc)）：评测真实医疗计算器场景中的 MCP 工具使用；核心思想是让 agent 从模糊临床请求中选择计算器、检索 EHR 数据、查外部参考并执行多步数值 workflow，而不是只解显式单步公式。
+- [RAGRouter-Bench: A Dataset and Benchmark for Adaptive RAG Routing](https://arxiv.org/abs/2602.00296)：评测工具使用与工具编排。核心思想：围绕论文中的任务、数据或协议（A Dataset and Benchmark for Adaptive RAG Routing）形成可复用比较基准。
+- [MCP-Atlas](https://arxiv.org/abs/2602.00933)（[开源代码](https://github.com/scaleapi/mcp-atlas)；[官方榜单](https://labs.scale.com/leaderboard/mcp_atlas)）：评什么：真实 MCP server 上的多步工具编排；核心思想：用 36 个 real MCP servers、容器化 harness 和 claims-based rubric 测工具发现、参数对齐与恢复。
+- [WildGraphBench: Benchmarking GraphRAG with Wild-Source Corpora](https://arxiv.org/abs/2602.02053)：从 Wikipedia 引用构造覆盖 12 个顶层主题的 GraphRAG 任务，用 citation-linked statements 检查图检索是否找到野外来源证据。
+- [AdaptMMBench: Benchmarking Adaptive Multimodal Reasoning for Mode Selection and Reasoning Process](https://arxiv.org/abs/2602.02676)：类型：benchmark/评测协议。核心价值：为 1.11.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
 - [MCP misleading tool-description measurement](https://arxiv.org/abs/2602.03580)：评测 MCP 工具描述与实现不一致时 agent 的行为。核心思想是结合大规模 MCP server 一致性分析和 agent 行为测试，使工具使用评测覆盖语义层面的描述-代码错配，而不只看参数填写。
+- [Evaluating Retrieval-Augmented Generation Variants for Natural Language-Based SQL and API Call Generation](https://arxiv.org/abs/2602.07086)：可作为tool use方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
 - [Agent-Diff](https://arxiv.org/abs/2602.11224)（[开源代码](https://github.com/agent-diff-bench/agent-diff)）：评什么：通过代码执行企业 API 任务，并在沙箱化服务副本上验证。核心思想：按预期状态差异而不是轨迹相似度判断成功，在保留真实 API 交互结构的同时让最终结果可确定、可复现。
+- [CryptoAnalystBench](https://arxiv.org/abs/2602.11304)：评测多工具长篇分析中的失败模式。核心思想是用高信息密度的加密资产分析任务，结合检索文档、结构化数据和工具输出，测试超越普通函数调用的综合能力。
+- [A comparative study on retrieval-augmented generation and chain-of-thought applications for LLM-assisted engineering design ideation](https://doi.org/10.1080/09544828.2025.2574209)：比较 RAG 与 chain-of-thought 在工程设计构思中的效果，把外部检索视为设计知识工具，并用构思质量衡量其价值。
+- [CORB-RAG: A Comprehensive Evaluation Benchmark for Retrieval-Augmented Generation Systems in the Chinese Telecommunications Operator Domain](https://doi.org/10.1109/ccai65422.2025.11189813)：提供中文电信运营商领域 RAG benchmark，将检索和答案评估落在运营商文档上，而不是通用 QA 语料。
+- [Evaluation of LLMs’ Reasoning for Retrieval Augmented Generation (RAG) Systems](https://doi.org/10.1109/worldsuas66815.2025.11199211)：一篇短会论文评估 RAG 系统中的推理，把幻觉相关参考与检索支撑的答案检查联系起来。
+- [AgentNoiseBench](https://arxiv.org/abs/2602.11348)：评测工具调用型 LLM agent 在噪声条件下的鲁棒性。核心思想是在 agent 与工具交互中注入噪声，检验规划、工具选择和恢复能力能否在非干净 benchmark 条件下保持稳定。
+- [Evaluating Prompt Engineering Techniques for RAG in Small Language Models: A Multi-Hop QA Approach](https://arxiv.org/abs/2602.13890)：在多跳 QA 上比较 24 个小语言模型 RAG prompt 模板，覆盖 HotpotQA 类实例和 Qwen2.5-3B、Gemma3-4B 规模模型。
+- [OpaqueToolsBench: Learning Nuances of Tool Behavior Through Interaction](https://arxiv.org/abs/2602.15197)：评什么：agent 能否通过交互学会文档不充分工具的细微行为。核心思想：用 opaque tools 替代理想工具说明，评测探索、文档改进和后续执行能力。
+- [Toward Scalable Verifiable Reward: Proxy State-Based Evaluation for Multi-turn Tool-Calling LLM Agents](https://arxiv.org/abs/2602.16246)：评什么：用 proxy state 扩展多轮工具调用 agent 的可验证评测。
+- [From Docs to Descriptions: Smell-Aware Evaluation of MCP Server Descriptions](https://arxiv.org/abs/2602.18914)：对 MCP server description 做 smell-aware evaluation；核心思想是诊断劣质工具描述是否导致 MCP agent 错误选择或调用工具。
+- [Gecko: A Simulation Environment with Stateful Feedback for Refining Agent Tool Calls](https://arxiv.org/abs/2602.19218)：Gecko 提供带 stateful feedback 的 tool-call simulation environment，适合 tool-use benchmark。
+- [Assessing RAG System Capabilities on Financial Documents](https://doi.org/10.18653/v1/2025.finnlp-2.9)：在金融文档上评估 RAG，重点检查检索和生成是否保留文档支撑的金融证据。
+- [ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](https://arxiv.org/abs/2602.21265)：评什么：以数学正确性为基准的真实长程多工具推理。核心思想：把数学题转成带 schema 的工具环境和重叠工具目录，联合检查工具选择、调用顺序和最终答案。
+- [Evaluation of Chunking Strategies in RAG Application for Explicit Retrieval on Indonesian Language Scientific Papers](https://doi.org/10.1109/eecsi67060.2025.11290624)：比较印尼语科学论文 RAG 的 explicit retrieval chunking 策略，隔离 chunk 粒度对检索和答案质量的影响。
+- [A Unified Evaluation Framework for Grounded LLM Architectures: Comparative Analysis of RAG, Self-RAG, and Agentic RAG](https://doi.org/10.1109/aisp68263.2025.11396270)：在同一 grounded-generation 框架下比较 RAG、Self-RAG 与 Agentic RAG，使检索和自检架构选择可横向比较。
+- [Universal End-to-End Automated Evaluation Framework for Retrieval-Augmented Generation System](https://doi.org/10.1109/prai67447.2025.11412852)：提出自动化端到端 RAG 评估框架，评分完整的 retrieval-to-answer pipeline，而不是只看 retriever recall 或最终文本。
+- [HumanMCP: A Human-Like Query Dataset for Evaluating MCP Tool Retrieval Performance](https://arxiv.org/abs/2602.23367)：面向 MCP tool retrieval 的人类式查询数据集。核心思想是评估 agent 能否从自然用户请求中检索正确 MCP 工具，而不是依赖整理过的工具名。
+- [ASTRA-bench: Evaluating Tool-Use Agent Reasoning and Action Planning with Personal User Context](https://arxiv.org/abs/2603.01357)：ASTRA-bench 评测带个人用户上下文的工具使用、推理和行动规划，能落到 Tool Use Bench。
+- [$\tau$-Knowledge](https://arxiv.org/abs/2603.04370)：评测同时使用非结构化知识和工具的 conversational agents；核心思想是在 $\tau$-Bench 基础上加入 banking domain，要求 agent 从数百篇 policy documents 中检索，并正确执行会改变状态的工具调用。
+- [Agentic SPARQL: Evaluating SPARQL-MCP-powered Intelligent Agents on the Federated KGQA Benchmark](https://arxiv.org/abs/2603.06582)：在 federated KGQA 上评测 SPARQL-MCP agent，要求 endpoint discovery、source selection、schema exploration 和可执行结构化查询。
+- [FinToolBench](https://arxiv.org/abs/2603.08262)：评测内容：LLM agent 的金融工具使用能力。核心思想：将 760 个可执行金融工具与必须调用工具的问题结合，并从时效性、意图类型和监管领域匹配等金融特有维度评估执行结果。
+- [Schema First Tool APIs for LLM Agents: A Controlled Study of Tool Misuse, Recovery, and Budgeted Performance](https://arxiv.org/abs/2603.13404)：评什么：隔离 schema-first tool API 设计变量，评测误用、恢复和预算性能。
+- [AgentProcessBench: Diagnosing Step-Level Process Quality in Tool-Using Agents](https://arxiv.org/abs/2603.14465)：AgentProcessBench 直接诊断 tool-using agents 的 step-level process quality，属于 tool-use benchmark。
+- [An Empirical Evaluation of Retrieval, Reranking, and Similarity for a Q&A-Based Retrieval Augmented Generation System](https://doi.org/10.1109/access.2026.3664852)：实证改变 QA-RAG 系统中的检索、reranking 与相似度配置，帮助把答案质量归因到检索流水线选择。
 - [CCTU](https://arxiv.org/abs/2603.15309)：评什么：复杂约束下的 LLM 工具使用；核心思想：把资源、行为、工具集和响应四类约束显式写入任务，考察模型在选工具、遵守约束和自我修正之间能否稳定折中。
+- [ZEBRAARENA: A Diagnostic Simulation Environment for Studying Reasoning-Action Coupling in Tool-Augmented LLMs](https://arxiv.org/abs/2603.18614)：评什么：tool-augmented LLMs 的 reasoning-action coupling。核心思想：用可程序生成、难度可控的诊断环境，区分工具行动失败、记忆知识和环境噪声。
+- [FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use Under the Model Context Protocol](https://arxiv.org/abs/2603.24943)：评什么：MCP 介导的金融工具使用。核心思想是测试 agent 能否在真实感 MCP 设置中选择工具、落实参数、执行调用并处理金融工作流约束。
+- [Real-Time Branch-to-Tool Distance Estimation for Autonomous UAV Pruning: Benchmarking Five DEFOM-Stereo Variants from Simulation to Jetson Deployment](https://arxiv.org/abs/2603.26250)：相邻机器人感知基准而非 LLM 工具使用；它用 5,520 个合成双目样本和 Jetson 部署指标估计枝条到修剪工具的距离。
+- [ATP-Bench: Towards Agentic Tool Planning for MLLM Interleaved Generation](https://arxiv.org/abs/2603.29902)：ATP-Bench 评测 MLLM interleaved generation 中的 agentic tool planning。
+- [ToolMisuseBench](https://arxiv.org/abs/2604.01508)：评测 CRUD、检索、文件和日程等环境中的确定性离线工具误用与恢复。核心思想：用 6,800 个注入故障的任务、retry budget、policy violation 标签、恢复质量评分和可复现实验管线，把错误工具调用后的修复能力从普通任务成功率中拆出来衡量。
+- [Agentic-MME: What Agentic Capability Really Brings to Multimodal Intelligence?](https://arxiv.org/abs/2604.03016)：类型：benchmark/评测协议。核心价值：为 1.11.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Beyond Accuracy (Tool-Integrated Reasoning)](https://arxiv.org/abs/2604.05404)：诊断工具增强推理中的低效模式。核心思想是衡量工具调用停顿、长工具输出和 KV-cache 压力如何影响真实执行效率，而不只看答案准确率。
 - [WildToolBench](https://arxiv.org/abs/2604.06185)：评什么：真实用户行为下的多轮、多步工具使用；核心思想：把组合任务、跨轮隐含意图和指令切换纳入评测，避免只在人工规整任务上高估 tool-use 能力。
+- [Do We Still Need GraphRAG? Benchmarking RAG and GraphRAG for Agentic Search Systems](https://arxiv.org/abs/2604.09666)：在 agentic search 系统中比较 dense RAG 与 GraphRAG 检索基础设施，评估多轮搜索是否能弥补显式图结构的缺失。
 - [The Amazing Agent Race（AAR）](https://arxiv.org/abs/2604.10261)（[项目页](https://minnesotanlp.github.io/the-amazing-agent-race)；[开源代码](https://github.com/minnesotanlp/the-amazing-agent-race)）：评什么：DAG 化的多步工具、网页导航与算术推理；核心思想：把导航、工具调用与结果汇总拆开诊断，专测线性 benchmark 看不到的路径选择失败。
+- [Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations](https://arxiv.org/abs/2604.11322)：研究 LLM 是否能识别工具无关性并避免结构性工具调用偏置。
 - [UniToolCall](https://arxiv.org/abs/2604.11557)：评什么：工具调用轨迹的统一表示、数据构造与评测。核心思想：把公开数据集和 benchmark 标准化成 Query-Action-Observation-Answer 格式，用兼容指标覆盖单轮、多轮、串行和并行工具调用结构。
+- [Empirical Evaluation of PDF Parsing and Chunking for Financial Question Answering with RAG](https://arxiv.org/abs/2604.12047)：评测金融 QA-RAG 中的 PDF 解析和 chunking 配置，尤其关注表格密集金融文档中的解析错误如何传导到检索。
+- [SLATE / Entropy-Guided Branching](https://arxiv.org/abs/2604.12126)：评测大规模 API 空间中的长程工具执行；核心思想是用合成电商工具库支持多种有效轨迹，并在工具计划搜索中对高不确定性决策点进行分支扩展。
+- [GTA-2: Benchmarking General Tool Agents from Atomic Tool-Use to Open-Ended Workflows](https://arxiv.org/abs/2604.15715)：评测从原子工具调用到开放式 workflow 的通用工具 agent；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [Benchmarking Real-Time Question Answering via Executable Code Workflows](https://arxiv.org/abs/2604.16349)：通过可执行代码工作流评测实时问答；核心思想是要求 agent 运行代码计算或验证答案，而不是只用文本回答。
+- [Democratizing Tool Learning with Environments Fully Simulated by a Free 8B Language Model](https://arxiv.org/abs/2604.17739)：用明确任务、协议或数据集评测tool use。
+- [Domain-oriented RAG Assessment (DoRA): Synthetic Benchmarking for RAG-based Question Answering on Defense Documents](https://arxiv.org/abs/2604.17943)：从 40 篇国防文档构造领域 RAG benchmark，包含约 6,600 个合成实例和 1,259 个测试样本，并用不同 LLM 家族分离生成与评测。
+- [Evaluating Multi-Hop Reasoning in RAG Systems: A Comparison of LLM-Based Retriever Evaluation Strategies](https://arxiv.org/abs/2604.18234)：在 HotPotQA、MuSiQue 和 SQuAD 上比较 LLM-as-judge 多跳 retriever 评估策略，检查检索证据是否支撑中间推理跳。
+- [RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](https://arxiv.org/abs/2604.19047)：用 atomic facts 和 redundancy tracking 评估高相似语料检索，惩罚重复近邻证据过多而缺少必要多样证据的系统。
+- [Chat2Workflow: A Benchmark for Generating Executable Visual Workflows with Natural Language](https://arxiv.org/abs/2604.19667)：面向工具使用与智能体工具编排的可复用评测、数据集、协议或诊断研究。核心思路是围绕“Chat2Workflow: A Benchmark for Generating Executable Visual Workflows with Natural Language”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Knowledge?](https://arxiv.org/abs/2604.19749)：可作为tool use方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [A Demonstration of SQLyzr: A Platform for Fine-Grained Text-to-SQL Evaluation and Analysis](https://arxiv.org/abs/2604.21214)：展示细粒度 text-to-SQL 评估平台，覆盖 workload alignment、数据库扩缩、query classification 和 error analysis，而非单一 exact match。
+- [Audio2Tool: Speak, Call, Act -- A Dataset for Benchmarking Speech Tool Use](https://arxiv.org/abs/2604.22821)：提供约 30,000 条语音工具调用 query，覆盖智能车、智能家居和可穿戴设备，并加入 voice cloning、噪声与复杂度层级。
 - [Claw-Eval-Live](https://arxiv.org/abs/2604.28139)（[项目页](https://claw-eval-live.github.io/)；[开源代码](https://github.com/Claw-Eval-Live/Claw-Eval-Live)）：评什么：持续更新的真实 workflow agent 任务，覆盖终端、文件、网页、服务和 skill 相关工具链。核心思想：从公开 workflow-demand signals 与 ClawHub skill 信号生成带 fixture、service 和 grader 的任务快照，用可执行轨迹和产物验证评估 tool-use 迁移性。
+- [Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents](https://arxiv.org/abs/2605.00136)：评测 LLM agent 使用工具带来的成本和退化；核心思想是衡量工具何时有帮助、何时产生 tool-use tax。
+- [AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?](https://arxiv.org/abs/2605.00334)：AgentFloor 评测小型开源模型能达到的 tool-use ladder 层级。
+- [To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling](https://arxiv.org/abs/2605.00737)：评估并优化 LLM 何时应该调用工具；核心思想是把工具必要性作为显式评测边界，避免把更多调用误当作更强工具使用。
 - [AgentEscapeBench](https://arxiv.org/abs/2605.07926)：评什么：长程依赖下的域外工具接地推理。核心思想：用 escape-room 式任务、工具与物品依赖图、隐藏状态和确定性最终答案，测试 agent 能否推断新流程，而不是复读熟悉 API workflow。
 - [When2Tool](https://arxiv.org/abs/2605.09252)（[开源代码](https://github.com/Trustworthy-ML-Lab/when2tool)）：评什么：agent 什么时候应该调用工具、什么时候应该直接回答；核心思想：把 tool necessity 显式做成评测边界，避免把“多调用工具”误判成更强的工具使用能力。
-说明：这条线更像“能否正确选工具、填参数、处理多轮 API orchestration”，不只是函数调用准确率。
 - [ComplexMCP](https://arxiv.org/abs/2605.10787)：评什么：动态、相互依赖、大规模 tool sandbox 中的 LLM agent；核心思想：把工具状态、跨工具依赖和环境变化一起纳入评分，专测 MCP 工具链在长链路执行中的脆弱点。
+- [MIRA: An LLM-Assisted Benchmark for Multi-Category Integrated Retrieval](https://arxiv.org/abs/2605.11254)：评测跨多内容类别的 integrated retrieval，用 LLM 辅助构造 query 和 label，要求系统同时做类别选择与证据聚合。
+- [When Simulation Lies: A Sim-to-Real Benchmark and Domain-Randomized RL Recipe for Tool-Use Agents](https://arxiv.org/abs/2605.11928)：评什么：tool-use agents 的 sim-to-real transfer。核心思想：检验那些在模拟工具环境中有效、但在真实执行中因工具行为变化而失败的 agent 策略。
+- [CodeGen-3D](https://doi.org/10.1109/ACCESS.2026.3654948)：评测 Blender 中的零样本与迭代式三维建模。核心思想是评分可执行建模代码、迭代可靠性与符合人类偏好的三维质量，而不只测直接网格或图像生成。
+- [Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use](https://arxiv.org/abs/2605.14038)：可作为tool use方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [From Text to Voice: A Reproducible and Verifiable Framework for Evaluating Tool Calling LLM Agents](https://arxiv.org/abs/2605.15104)：面向文本到语音场景的工具调用 agent 评测框架；核心思想是检验交互从纯文本扩展到语音后，agent 是否仍能保持工具选择、参数 grounding 和结果验证。
+- [TOBench / MM-ToolBench](https://arxiv.org/abs/2605.16909)：评测真实专业工作流中的 task-oriented omni-modal tool use。核心思想是结合 27 个 MCP server、324 个工具、渲染产物和闭环多模态验证，要求 agent 执行工具、检查输出并自我修正，而不只是生成 API 调用。
+- [τ³-Bench](https://sierra.ai/uk/resources/research/tau-3-bench)：评什么：把 tau 系列有状态工具调用扩展到知识检索和语音客服场景的 agentic customer-interaction 任务；核心思想：保留现实 policy、状态和工具约束，同时加入原始文本/API tau-bench 之外的知识与语音代理压力。
+说明：这条线更像“能否正确选工具、填参数、处理多轮 API orchestration”，不只是函数调用准确率。
+- [HAL / Holistic Agent Leaderboard](https://hal.cs.princeton.edu/)：评什么：跨 benchmark 的 agent 能力，其中包含 τ-bench 等工具介导任务，也覆盖 web、computer-use 和软件任务。核心思想：把公开 benchmark 结果聚合成面向迁移性的榜单，使 tool-use 表现可以和更广泛的 agent 执行能力一起比较。
+- [Notation Matters](https://arxiv.org/abs/2605.29676)：评测 agent 工具输入输出中的 token-optimized structured formats。核心思想：在 tool schema、执行结果和工具调用中比较 JSON、TOON、TRON 等表示，检验格式选择是否改变可靠性与效率，而不是把序列化当作中性实现细节。
+- [RedundancyBench](https://arxiv.org/abs/2605.29893)：评测 agent 轨迹中的冗余步骤检测。核心思想是按每一步对任务完成的贡献标注 trajectory，使执行效率可测，而不是只按最终成功率评价工具型 agent。
+- [Diagnosing Knowledge Gaps in LLM Tool Use](https://arxiv.org/abs/2606.03657)：提出面向新 API 获取的 NovelAPIBench。核心思想：自动发现新 API、抽取知识包、生成可执行 coding tasks，并区分 agent 面对未见 API 时的检索缺口和参数化适配缺口。
+- [ToolMenuBench](https://arxiv.org/abs/2606.15508)：评测可靠高效 agent 的 tool-menu filtering。核心思想：系统改变工具菜单规模、干扰工具类型、状态依赖结构和风险暴露，同时报告过滤层指标与下游 agent 表现，使工具菜单裁剪按执行后果来衡量。
+- [Evaluating document chunking approaches for retrieval augmented generation in editorial content](https://doi.org/10.11591/ijai.v15.i2.pp1909-1918)：在 2,419 个 SaaS editorial-content QA 对上比较 fixed、recursive、semantic 和 LLM-based chunking，并报告检索与生成指标。
+- [Leveraging Large Language Models for Semantic Evaluation of RDF Triples](https://doi.org/10.5220/0013837600004000)：用 LLM 判断 RDF triples 的语义正确性；它更接近图事实评估，与结构化查询工具相邻但不是 API 执行基准。
+- [Design and Performance Evaluation of LLM-Based RAG Pipelines for Chatbot Services in International Student Admissions](https://doi.org/10.3390/electronics14153095)：比较招生 chatbot RAG 中的 dense、MMR、hybrid retrieval 与 semantic、recursive chunking，并衡量 relevancy、faithfulness、context precision/recall 和 latency。
+- [TACO: A Benchmark for Open-Domain Text-to-SQL with Ambiguous and Cross-Database Queries](https://doi.org/10.14778/3797919.3797942)：提供 1,500 个真实和 13,000 个合成 open-domain text-to-SQL 样本，覆盖智慧城市与开放数据门户，专测歧义和跨数据库查询。
+- [Evaluation of LLM Performance in Tool Selection: A Feasibility Study on AI-Based Tool Development](https://doi.org/10.1007/s12541-026-01477-w)：可行性研究 LLM 在 AI-based tool development 中的工具选择能力，适合作为工具路由的低置信信号而非成熟 benchmark suite。
+- [{τ}-bench: A Benchmark for \underline{T}ool-\underline{A}gent-\underline{U}ser Interaction in Real-World Domains](https://www.semanticscholar.org/paper/224cd1690d270bc45028c8e917745232b2503769)：τ-bench 是有状态工具-agent-用户交互 benchmark，适合 Tool Use Bench。

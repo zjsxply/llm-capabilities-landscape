@@ -1,21 +1,165 @@
 # 2.10.5 Agent Harness
 
+- [Accelerating Intrusion Detection Dataset Analysis- A Framework Using AutoGen Agents for CIC-IDS 2017](https://doi.org/10.52783/jisem.v10i5s.758)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
 - [HackingBuddyGPT](https://arxiv.org/abs/2308.00121)（[开源代码](https://github.com/ipa-lab/hackingBuddyGPT)；[文档](https://docs.hackingbuddy.ai/)）：面向授权 hacking workflow 的安全研究助手 harness，是较早的开源参考，覆盖工具介入的侦察、利用尝试和可审计执行。
 - [PentestGPT](https://arxiv.org/abs/2308.06782)（[开源代码](https://github.com/GreyDGL/PentestGPT)；[项目页](https://pentestgpt.com/)）：早期 LLM 渗透测试 agent，围绕授权评估工作流组织推理、任务状态和工具交互。
+- [LLbezpeky: Leveraging Large Language Models for Vulnerability Detection](https://arxiv.org/abs/2401.01269)：用 LLM 引导代码检查，把易受攻击代码证据转成漏洞判断；这一行更接近检测工作流，而不是自主利用 harness。
+- [Enhanced Automated Code Vulnerability Repair using Large Language Models](https://arxiv.org/abs/2401.03741)：让 LLM 基于代码上下文提出漏洞补丁并解释修复理由，形成 detect-patch-review 式安全代码修复闭环。
+- [A Preliminary Study on Using Large Language Models in Software Pentesting](https://arxiv.org/abs/2401.17459)：在 OWASP Benchmark 1.2 源码漏洞上评估经过提示工程迭代的 LLM 渗透测试 agent，并与未工程化 agent 和 SonarQube 对比。
+- [SCALE: Constructing Structured Natural Language Comment Trees for Software Vulnerability Detection](https://arxiv.org/abs/2403.19096)：先把代码转换为结构化自然语言注释树，再用该中间分析工件辅助漏洞判断。
+- [LLM Agents can Autonomously Exploit One-day Vulnerabilities](https://arxiv.org/abs/2404.08144)：在给定已披露漏洞描述的条件下测试 LLM agent，观察其如何规划命令、执行动作并根据结果尝试利用 one-day 漏洞。
+- [LLMPot: Dynamically Configured LLM-based Honeypot for Industrial Protocol and Physical Process Emulation](https://arxiv.org/abs/2405.05999)：用 LLM 动态配置工业协议蜜罐并模拟物理过程行为，使欺骗环境能随攻击者交互而调整。
+- [GenKubeSec: LLM-Based Kubernetes Misconfiguration Detection, Localization, Reasoning, and Remediation](https://arxiv.org/abs/2405.19954)：串联 Kubernetes 错误配置检测、受影响资源定位、原因解释和修复建议，形成面向集群安全的处置工作流。
 - [HPTSA](https://arxiv.org/abs/2406.01637)（[开源代码](https://github.com/uiuc-kang-lab/HPTSA)）：面向 Web 渗透测试的层级规划与任务专用 agent 框架，适合把利用尝试拆给有边界的 subagents。
+- [DiVerify: Hardening Identity-Based Software Signing with Diverse-Context Scopes](https://arxiv.org/abs/2406.15596)：通过多上下文 signing scope 检查强化基于身份的软件签名，使运行时 guard 限制被攻陷身份能够签署的范围。
+- [A Context-Driven Approach for Co-Auditing Smart Contracts with The Support of GPT-4 code interpreter](https://arxiv.org/abs/2406.18075)：把 GPT-4 Code Interpreter 用作智能合约协同审计器，将合约上下文、可执行分析和人工复核结合起来验证漏洞假设。
+- [MoRSE: Bridging the Gap in Cybersecurity Expertise with Retrieval Augmented Generation](https://arxiv.org/abs/2407.15748)：用检索增强生成提供网络安全辅助，把事件或漏洞回答锚定在外部安全知识中，而不是只依赖模型参数记忆。
+- [CIPHER: Cybersecurity Intelligent Penetration-Testing Helper for Ethical Researcher](https://arxiv.org/abs/2408.11650)：为授权渗透测试人员组织侦察、漏洞推理、命令选择和下一步建议，作为 ethical pentest 辅助流程。
+- [APPATCH: Automated Adaptive Prompting Large Language Models for Real-World Software Vulnerability Patching](https://arxiv.org/abs/2408.13597)：用自适应提示修补真实软件漏洞，围绕代码上下文和漏洞类型迭代生成补丁候选。
+- [ProphetFuzz: Fully Automated Prediction and Fuzzing of High-Risk Option Combinations with Only Documentation via Large Language Model](https://arxiv.org/abs/2409.00922)：让 LLM 阅读文档预测高风险选项组合，再把 fuzzing 引向这些配置，而不需要手写选项模型。
 - [EnIGMA](https://arxiv.org/abs/2409.16165)（[开源代码](https://github.com/SWE-agent/SWE-agent)；[项目页](https://enigma-agent.com/)）：基于 SWE-agent 的 cyber harness，面向 CTF 与漏洞任务，可作为可执行安全挑战的复用 scaffold。
+- [APOLLO: A GPT-based tool to detect phishing emails and generate explanations that warn users](https://arxiv.org/abs/2410.07997)：检测钓鱼邮件并生成面向用户的告警解释，把分类结果与安全意识提示结合起来。
 - [AutoPT](https://arxiv.org/abs/2411.01236)（[开源代码](https://github.com/Dizzy-K/AutoPT)）：Web 渗透测试自动化 harness，在授权环境中协调侦察、漏洞分析、利用和报告。
+- [LProtector: An LLM-driven Vulnerability Detection System](https://arxiv.org/abs/2411.06493)：在 C/C++ 代码库上结合 GPT-4o 与检索增强上下文检测漏洞，可复用部分是外部证据检索与代码推理闭环。
+- [Next-Generation Phishing: How LLM Agents Empower Cyber Attackers](https://arxiv.org/abs/2411.13874)：分析能生成并改写攻击邮件的进攻型钓鱼 agent，展示自主写作循环如何放大社会工程攻击。
 - [HackSynth](https://arxiv.org/abs/2412.01778)（[开源代码](https://github.com/aielte-research/HackSynth)）：CTF 与渗透测试 harness，包含 planning、tool execution 和 benchmark-runner 组件，用于可复现 cyber-agent 实验。
+- [Large Multimodal Agents for Accurate Phishing Detection with Enhanced Token Optimization and Cost Reduction](https://arxiv.org/abs/2412.02301)：用多模态 agent 同时检查邮件文本与视觉线索进行钓鱼检测，并优化检测流程的 token 用量和成本。
+- [SpearBot: Leveraging Large Language Models in a Generative-Critique Framework for Spear-Phishing Email Generation](https://arxiv.org/abs/2412.11109)：用生成-批判循环制作鱼叉式钓鱼邮件，刻画攻击者 agent 如何迭代提升社会工程内容。
+- [Large Language Model guided Protocol Fuzzing](https://doi.org/10.14722/ndss.2024.24556)：用 LLM 提取协议消息格式和状态机线索，引导 protocol fuzzing 生成可执行测试输入。
+- [Generative AI Enabled Actionable Decision Support in Cyber Security Operations for Enterprise Security](https://doi.org/10.23919/ituk62727.2024.10772892)：把企业安全遥测转成 SOC 可执行决策支持，强调告警分诊、处置建议和面向分析师的解释。
+- [Leveraging Multimodal Retrieval-Augmented Generation for Cyber Attack Detection in Transit Systems](https://doi.org/10.1109/tps-isa62245.2024.00046)：把交通系统中的多模态证据与检索增强生成结合，用于检测运营交通环境中的网络攻击。
+- [LLMSmartSec: Smart Contract Security Auditing with LLM and Annotated Control Flow Graph](https://doi.org/10.1109/blockchain62396.2024.00064)：把带注释的控制流图输入 LLM 审计流程，使智能合约漏洞推理锚定在执行结构上。
+- [AI for cyber-security risk: harnessing AI for automatic generation of company-specific cybersecurity risk profiles](https://doi.org/10.1108/ics-08-2024-0177)：用 AI 自动生成面向公司的网络安全风险画像。
 - [VulnBot](https://arxiv.org/abs/2501.13411)（[开源代码](https://github.com/KHenryAegis/VulnBot)）：自主多 agent 渗透测试框架。核心思想：用渗透任务图和专门的侦察、扫描、利用 agent 协调端到端测试。
+- [Incalmo](https://arxiv.org/abs/2501.16466)：面向多主机网络红队的自治 LLM 辅助系统。核心思想：在真实感网络目标中协调侦察与利用流程。
+- [LLMSecConfig: An LLM-Based Approach for Fixing Software Container Misconfigurations](https://arxiv.org/abs/2502.02009)：可作为网络安全 agent的 Agent Harness 候选：围绕 LLMSecConfig: An LLM-Based Approach for Fixing Software Container Misconfigurations 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [Rule-ATT&CK Mapper (RAM)](https://arxiv.org/abs/2502.02337)：通过多阶段 LLM 流水线和外部上下文知识，将结构化 SIEM 规则映射到 MITRE ATT&CK 技术。
 - [Autonomous Assumed Breach Penetration Testing](https://arxiv.org/abs/2502.04227)：面向 LLM-driven agent 的 Active Directory 渗透测试 harness。核心思想是在 GOAD 式 Microsoft Active Directory testbed 中运行自治 assumed-breach workflow，并比较 reasoning 与 non-reasoning model 的账号攻陷行为。
+- [D-CIPHER: Dynamic Collaborative Intelligent Multi-Agent System with Planner and Heterogeneous Executors for Offensive Security](https://arxiv.org/abs/2502.10931)：面向 offensive-security CTF 求解的协作式多代理框架。核心思想是通过动态反馈循环协调规划器与异构执行器。
+- [RapidPen: Fully Automated IP-to-Shell Penetration Testing with LLM-based Agents](https://arxiv.org/abs/2502.16730)：fully automated IP-to-shell penetration-testing agent。核心思想是把侦察、利用和 shell 获取编排成可执行 cyber-agent workflow。
+- [Securing Smart Contract Languages with a Unified Agentic Framework for Vulnerability Repair in Solidity and Move](https://arxiv.org/abs/2502.18515)：提供跨 Solidity 与 Move 的智能合约修复流程，协调漏洞定位、补丁生成和修复验证。
 - [ARACNE](https://arxiv.org/abs/2502.18528)：面向 SSH 与 Linux shell 环境的自主渗透测试 agent。核心思想：用多 LLM 架构执行命令和尝试利用，作为终端介导渗透测试 agent 的聚焦基线。
+- [CyLens: Towards Reinventing Cyber Threat Intelligence in the Paradigm of Agentic Large Language Models](https://arxiv.org/abs/2502.20791)：agentic cyber-threat-intelligence copilot；核心思想是在大规模安全知识库上辅助威胁归因、语境化、检测、关联、优先级排序和响应。
+- [NumScout: Unveiling Numerical Defects in Smart Contracts Using LLM-Pruning Symbolic Execution](https://arxiv.org/abs/2503.10041)：结合智能合约数值缺陷分类与 LLM 剪枝符号执行，发现 DeFi 计算类漏洞。
+- [AgentDroid: A Multi-Agent Framework for Detecting Fraudulent Android Applications](https://arxiv.org/abs/2503.12163)：把 Android 欺诈应用检测拆给多个 agent，分别检查应用行为、证据和风险信号，再汇总欺诈判断。
+- [Debate-Driven Multi-Agent LLMs for Phishing Email Detection](https://arxiv.org/abs/2503.22038)：用辩论式多智能体 LLM 进行钓鱼邮件检测。
+- [MaLAware: Automating the Comprehension of Malicious Software Behaviours using Large Language Models (LLMs)](https://arxiv.org/abs/2504.01145)：用 LLM 自动化理解恶意软件行为，为安全 agent 补充恶意代码分析流程。
+- [Agent That Debugs: Dynamic State-Guided Vulnerability Repair](https://arxiv.org/abs/2504.07634)：动态状态引导的漏洞修复 agent。核心思想是用运行时状态和调试反馈指导安全补丁生成，而不是只依赖静态代码上下文。
+- [KubeFence: Security Hardening of the Kubernetes Attack Surface](https://arxiv.org/abs/2504.11126)：检查 Kubernetes 攻击面配置、推理暴露风险并给出缓解动作，服务于集群加固流程。
+- [zkFuzz: Foundation and Framework for Effective Fuzzing of Zero-Knowledge Circuits](https://arxiv.org/abs/2504.11961)：通过生成和变异电路输入来 fuzz 零知识电路，暴露 Circom 等系统中的约束错误。
+- [OpDiffer: LLM-Assisted Opcode-Level Differential Testing of Ethereum Virtual Machine](https://arxiv.org/abs/2504.12034)：面向 Ethereum Virtual Machine 的 LLM 辅助 opcode 级 differential testing workflow。核心思想是用语言模型生成或引导低层测试，暴露实现差异。
+- [ARCeR: an Agentic RAG for the Automated Definition of Cyber Ranges](https://arxiv.org/abs/2504.12143)：可作为网络安全 agent的 Agent Harness 候选：围绕 ARCeR: an Agentic RAG for the Automated Definition of Cyber Ranges 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Exploring the Role of Large Language Models in Cybersecurity: A Systematic Survey](https://arxiv.org/abs/2504.15622)：LLM 在网络安全中的系统综述。核心思想是整理 LLM 驱动的防御、威胁分析和自适应安全方法。
+- [Inducing Vulnerable Code Generation in LLM Coding Assistants](https://arxiv.org/abs/2504.15867)：测试诱导 coding assistants 生成漏洞代码的攻击；核心思想是污染模型引用的外部信息，使生成代码包含可利用弱点。
+- [Large Language Models are Autonomous Cyber Defenders](https://arxiv.org/abs/2505.04843)：研究 LLM 作为自治网络防御智能体的能力。
+- [面向 SOC 的 AI-driven human-machine co-teaming](https://arxiv.org/abs/2505.06394)：把 SOC agent 定位为与分析师协作的系统，通过学习安全运营中的隐性知识来支持威胁情报、告警分诊和事件响应 workflow。
+- [RedTeamLLM: an Agentic AI framework for offensive security](https://arxiv.org/abs/2505.06913)：面向 offensive-security 自动化的 agentic framework。核心思想是结合总结、推理、行动、记忆管理和计划修正执行渗透测试任务。
+- [RefPentester: A Knowledge-Informed Self-Reflective Penetration Testing Framework Based on Large Language Models](https://arxiv.org/abs/2505.07089)：知识增强的自反思渗透测试 harness；核心思想是用检索、反思和安全领域知识组织自动化渗透测试流程。
+- [AutoPentest: Enhancing Vulnerability Management With Autonomous LLM Agents](https://arxiv.org/abs/2505.10321)：自主渗透测试 agent 应用；核心思想是把黑盒渗透测试的规划、行动和复核组织成可复用的 LLM agent 工作流。
+- [Let the Trial Begin: A Mock-Court Approach to Vulnerability Detection using LLM-Based Agents](https://arxiv.org/abs/2505.10961)：用于漏洞检测的模拟法庭式多 agent 框架；核心思想是让 security researcher、code author、moderator 和 review board 等角色围绕证据辩论后再判断漏洞。
+- [MARVEL: Multi-Agent RTL Vulnerability Extraction using Large Language Models](https://arxiv.org/abs/2505.11963)：用多智能体 LLM 框架抽取 RTL 安全漏洞。
+- [VulCPE: Context-Aware Cybersecurity Vulnerability Retrieval and Management](https://arxiv.org/abs/2505.13895)：结合资产上下文检索和管理漏洞记录，支持漏洞分诊与 CPE 式匹配流程。
+- [Adaptive Plan-Execute Framework for Smart Contract Security Auditing](https://arxiv.org/abs/2505.15242)：可作为网络安全 agent的Agent Harness候选；核心关注“Adaptive Plan-Execute Framework for Smart Contract Security Auditing”。
+- [ReCopilot: Reverse Engineering Copilot in Binary Analysis](https://arxiv.org/abs/2505.16366)：面向二进制分析的逆向工程 copilot。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
 - [CRAKEN](https://arxiv.org/abs/2505.17107)（[开源代码](https://github.com/NYU-LLM-CTF/nyuctf_agents_craken)）：知识增强的网络安全 LLM agent harness。核心思想：把任务关键信息分解、迭代检索和知识提示注入结合起来，用于 CTF 与 MITRE 风格攻击执行。
+- [LLM-BSCVM: An LLM-Based Blockchain Smart Contract Vulnerability Management Framework](https://arxiv.org/abs/2505.17416)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 An LLM-Based Blockchain Smart Contract Vulnerability Management Framework 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Dynamic Risk Assessments for Offensive Cybersecurity Agents](https://arxiv.org/abs/2505.18384)：在 verifier 与现实自由度条件下建模 offensive cyber agent 的动态风险评估。
+- [PD3F: A Pluggable and Dynamic DoS-Defense Framework Against Resource Consumption Attacks Targeting Large Language Models](https://arxiv.org/abs/2505.18680)：Agent Harness 条目；核心思想：防御面向 LLM 服务资源消耗攻击的可插拔框架。
+- [Audio Jailbreak Attacks: Exposing Vulnerabilities in SpeechGPT in a White-Box Framework](https://arxiv.org/abs/2505.18864)：更偏攻击评测而非 agent harness；它在白盒框架中构造针对 SpeechGPT 的音频越狱，用来测试语音模型安全边界。
+- [IRCopilot: Automated Incident Response with Large Language Models](https://arxiv.org/abs/2505.20945)：LLM 驱动的安全事件响应 agent；核心思想是把告警理解、工具调用、证据收集和处置建议串成自动化 incident-response 工作流。
 - [VulBinLLM](https://arxiv.org/abs/2505.22010)：面向 stripped binary 漏洞检测的 LLM 工作流。核心思想是把二进制分析证据、代码指标与语言模型推理组织成安全分析闭环，覆盖缺少源码上下文的漏洞检测场景。
+- [MultiPhishGuard: An LLM-based Multi-Agent System for Phishing Email Detection](https://arxiv.org/abs/2505.23803)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [A Large Language Model-Supported Threat Modeling Framework for Transportation Cyber-Physical Systems](https://arxiv.org/abs/2506.00831)：用 LLM 辅助梳理交通网络物理系统的资产、威胁与缓解措施，降低结构化威胁建模对人工专家的依赖。
+- [Beyond C/C++: Probabilistic and LLM Methods for Next-Generation Software Reverse Engineering](https://arxiv.org/abs/2506.03504)：讨论面向非 C/C++ 软件的概率式与 LLM 辅助逆向工程流程，重点是二进制分析辅助而不是利用执行。
+- [On Automating Security Policies with Contemporary LLMs (Short Paper)](https://arxiv.org/abs/2506.04838)：可作为网络安全 agent的 Agent Harness 候选：围绕 On Automating Security Policies with Contemporary LLMs (Short Paper) 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [PoCGen](https://arxiv.org/abs/2506.04962)：为 npm 包漏洞生成 proof-of-concept exploit。核心思想：在软件包生态中自动化漏洞复现。
+- [ZTaint-Havoc: From Havoc Mode to Zero-Execution Fuzzing-Driven Taint Inference](https://arxiv.org/abs/2506.08838)：从 fuzzing 行为中推断 taint 信息，在无需常规执行的条件下把 fuzz 活动转成漏洞相关数据流证据。
+- [ContextBuddy](https://arxiv.org/abs/2506.09365)：面向 SOC 告警调查的 AI assistant，学习分析师在验证告警时依赖哪些上下文线索。
 - [ELFuzz](https://arxiv.org/abs/2506.10323)：面向自动输入生成器合成的 LLM-driven fuzzing harness。核心思想是用覆盖率反馈演化 seed fuzzers，使 agent 能为特定系统构造 fuzzers，而不再完全依赖人工编写的 grammar 和约束。
+- [Specification and Evaluation of Multi-Agent LLM Systems - Prototype and Cybersecurity Applications](https://arxiv.org/abs/2506.10467)：可作为网络安全 agent的 Agent Harness 候选：围绕 Specification and Evaluation of Multi-Agent LLM Systems - Prototype and Cybersecurity Applications 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Military AI Cyber Agents (MAICAs) Constitute a Global Threat to Critical Infrastructure](https://arxiv.org/abs/2506.12094)：这是一条风险分析而非具体实现；它把军事 AI 网络智能体建模为可自主侦察、利用和破坏关键基础设施的系统。
+- [deepSURF: Detecting Memory Safety Vulnerabilities in Rust Through Fuzzing LLM-Augmented Harnesses](https://arxiv.org/abs/2506.15648)：通过 fuzzing LLM-augmented harnesses 检测 Rust 内存安全漏洞；核心思想是让 LLM 帮助构建 fuzzing harness 以发现漏洞。
+- [PhishDebate: An LLM-Based Multi-Agent Framework for Phishing Website Detection](https://arxiv.org/abs/2506.15656)：面向钓鱼网站检测的多代理辩论框架。核心思想是让多个 LLM 代理检查并辩论钓鱼证据，再形成最终判断。
 - [Perry](https://arxiv.org/abs/2506.20770)：网络欺骗实验的高层次实验框架。核心思想：让操作者抽象描述攻击者、防御者和欺骗策略，再把这些描述转换成真实感较强的仿真网络实验。
+- [QLPro: Automated Code Vulnerability Discovery via LLM and Static Code Analysis Integration](https://arxiv.org/abs/2506.23644)：结合 LLM 与静态分析的漏洞发现 harness；核心思想是围绕 CodeQL 结果进行 LLM 推理，发现项目级漏洞和候选 0-day。
+- [CyberRAG: An agentic RAG cyber attack classification and reporting tool](https://arxiv.org/abs/2507.02424)：提出 CyberRAG，用 agentic RAG 进行网络攻击分类、解释和报告。
+- [AI Agent Smart Contract Exploit Generation](https://arxiv.org/abs/2507.05558)：把 LLM 组织成端到端智能合约漏洞利用生成器，结合领域工具和执行验证来产出可复现 PoC。
+- [False Alarms, Real Damage: Adversarial Attacks Using LLM-based Models on Text-based Cyber Threat Intelligence Systems](https://arxiv.org/abs/2507.06252)：用 LLM 构造对抗性 CTI 文本报告，测试虚假情报能否扰乱后续网络威胁分析系统。
+- [EventHunter: Dynamic Clustering and Ranking of Security Events from Hacker Forum Discussions](https://arxiv.org/abs/2507.09762)：对黑客论坛讨论进行动态聚类和排序，把噪声论坛文本转成优先级化的威胁情报线索。
+- [LRCTI: A Large Language Model-Based Framework for Multi-Step Evidence Retrieval and Reasoning in Cyber Threat Intelligence Credibility Verification](https://arxiv.org/abs/2507.11310)：面向 cyber threat intelligence 可信度验证的多步证据检索与推理 harness；核心思想是先总结威胁 claim，再迭代检索 CTI 证据，并输出透明的可信度判断。
+- [LLAMA: Multi-Feedback Smart Contract Fuzzing Framework With LLM-Guided Seed Generation](https://arxiv.org/abs/2507.12084)：用 LLM 引导 seed 生成，并结合多种反馈信号推动智能合约 fuzzing 触发漏洞交易。
+- [Harnessing LLMs for Document-Guided Fuzzing of OpenCV Library](https://arxiv.org/abs/2507.14558)：让 LLM 阅读 OpenCV 文档来合成 fuzz 目标与输入，把库文档转成可执行 fuzz harness 的生成依据。
+- [FaultLine: Automated Proof-of-Vulnerability Generation Using LLM Agents](https://arxiv.org/abs/2507.15241): 使用 LLM agent workflow 从漏洞报告生成 proof-of-vulnerability 测试，通过 source-to-sink 跟踪和条件推理验证漏洞。
+- [SVAgent: AI Agent for Hardware Security Verification Assertion](https://arxiv.org/abs/2507.16203)：面向网络安全智能体与安全评测的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Think Broad, Act Narrow: CWE Identification with Multi-Agent Large Language Models](https://arxiv.org/abs/2508.01451)：用 broad-to-narrow 的多 agent 推理识别 CWE，先探索候选弱点家族，再收敛到具体 CWE 标签。
+- [PentestJudge: Judging Agent Behavior Against Operational Requirements](https://arxiv.org/abs/2508.02921)：PentestJudge 面向 penetration-testing agent 轨迹做操作要求判定，适合作为 cybersecurity agent 评估 harness。
+- [Chimera: Harnessing Multi-Agent LLMs for Automatic Insider Threat Simulation](https://arxiv.org/abs/2508.07745)：面向自动内部威胁仿真的多 agent harness。核心思想：用 LLM agent 生成并协调威胁仿真行为，以支持安全分析。
+- [Bridging Solidity Evolution Gaps: An LLM-Enhanced Approach for Smart Contract Compilation Error Resolution](https://arxiv.org/abs/2508.10517)：用 LLM 辅助修复 Solidity 版本演进导致的编译错误，把编译器诊断、合约上下文和补丁建议连接起来。
+- [Advancing Autonomous Incident Response: Leveraging LLMs and Cyber Threat Intelligence](https://arxiv.org/abs/2508.10677)：结合 LLM 与动态 CTI 检索自动化事件响应。
+- [AutoBnB-RAG: Enhancing Multi-Agent Incident Response with Retrieval-Augmented Generation](https://arxiv.org/abs/2508.13118)：可作为网络安全 agent的 Agent Harness 候选：围绕 AutoBnB-RAG: Enhancing Multi-Agent Incident Response with Retrieval-Augmented Generation 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [MultiFuzz: A Dense Retrieval-based Multi-Agent System for Network Protocol Fuzzing](https://arxiv.org/abs/2508.14300)：基于 dense retrieval 的网络协议 fuzzing 多 agent 系统；核心思想是在 agent 间协同检索、测试用例生成和 fuzzing 反馈。
+- [FALCON](https://arxiv.org/abs/2508.18684)：自动化 cyber threat intelligence 挖掘和 IDS 规则生成，把 CTI 抽取与可运行检测规则构造连接起来。
+- [CASE: An Agentic AI Framework for Enhancing Scam Intelligence in Digital Payments](https://arxiv.org/abs/2508.19932)：协调数字支付诈骗情报 agent，把交易证据、欺诈指标和调查推理组织成支付安全工作流。
+- [CyberSleuth](https://arxiv.org/abs/2508.20643)：用于 Web 攻击事后取证的自主蓝队 agent。核心思想：比较不同 agent 架构如何检查网络轨迹、识别受害服务、映射漏洞到 CVE 并生成取证报告，展示多 agent 专门化在持续网络安全推理中的作用。
+- [AVIATOR: Towards AI-Agentic Vulnerability Injection Workflow for High-Fidelity, Large-Scale Code Security Dataset](https://arxiv.org/abs/2508.20866)：面向代码安全数据生成的 agentic vulnerability-injection workflow；核心思想是用 agent 大规模注入高保真漏洞，支撑代码安全评测和数据集构造。
 - [Locus](https://arxiv.org/abs/2508.21302)：面向 directed fuzzing 的 agentic predicate synthesis harness。核心思想是用 agent 合成能引导 fuzzer 到达安全相关程序状态的谓词，把推理、程序分析和可执行测试反馈连接起来。
+- [A2](https://arxiv.org/abs/2508.21579)：面向 Android 漏洞发现与验证的 agentic 工作流。核心思想：把语义化应用安全推理与传统工具结合，再通过 UI、组件间通信、文件系统和密码学等攻击面生成 PoC 来验证推测性漏洞。
+- [From CVE Entries to Verifiable Exploits: An Automated Multi-Agent Framework for Reproducing CVEs](https://arxiv.org/abs/2509.01835): 用多智能体流水线复现 CVE，自动收集资源、重建漏洞环境并生成可验证 exploit。
+- [KubeGuard: LLM-Assisted Kubernetes Hardening via Configuration Files and Runtime Logs Analysis](https://arxiv.org/abs/2509.04191)：LLM 辅助 Kubernetes hardening harness；核心思想是分析配置文件和运行时日志，识别并修复云原生安全弱点。
+- [All You Need Is A Fuzzing Brain: An LLM-Powered System for Automated Vulnerability Detection and Patching](https://arxiv.org/abs/2509.07225)：LLM 驱动的自动漏洞检测与修复系统。核心思想：结合 fuzzing 式探索、补丁生成与验证。
+- [Guided Reasoning in LLM-Driven Penetration Testing Using Structured Attack Trees](https://arxiv.org/abs/2509.07939)：为 LLM 渗透测试 agent 加入结构化 attack-tree 引导；核心思想是用确定性的 tactics、techniques 和 procedures 约束推理，减少幻觉式或循环式攻击步骤。
+- [VulAgent: Hypothesis-Validation based Multi-Agent Vulnerability Detection](https://arxiv.org/abs/2509.11523)：让多个 agent 形成漏洞假设、收集代码证据并验证或否定假设，再输出漏洞发现。
+- [A Graph-Based Approach to Alert Contextualisation in Security Operations Centres](https://arxiv.org/abs/2509.12923)：为 SOC 告警生成图上下文，把告警与实体、依赖关系和可能事件路径关联起来以辅助分诊。
+- [xOffense](https://arxiv.org/abs/2509.13021)：多代理渗透测试 harness，将侦察、漏洞扫描、利用和编排拆分为专门阶段，并在可执行网络安全基准上评估。
+- [ATLANTIS: AI-driven Threat Localization, Analysis, and Triage Intelligence System](https://arxiv.org/abs/2509.14589)：AI-driven threat localization、analysis and triage system；核心思想是结合证据定位、威胁分析和事件优先级排序来自动化安全分诊。
+- [Orion: Fuzzing Workflow Automation](https://arxiv.org/abs/2509.15195)：自动化 fuzzing workflow 中的代码库分析、harness 配置和结果 triage；核心思想是超越孤立的 harness synthesis。
+- [LLM-Driven SAST-Genius: A Hybrid Static Analysis Framework for Comprehensive and Actionable Security](https://arxiv.org/abs/2509.15433)：结合 LLM 推理与静态分析，使 SAST 发现更全面且更可操作。
+- [SecureFixAgent](https://arxiv.org/abs/2509.16275)：面向 Python 静态分析告警的混合漏洞修复 agent。核心思想：把 Bandit 检测、本地 LLM 候选修复与解释、以及 Bandit 重验证接成迭代的 detect-repair-validate 循环，在保护隐私的同时降低误报。
+- [EvoMail: Self-Evolving Cognitive Agents for Adaptive Spam and Phishing Email Defense](https://arxiv.org/abs/2509.21129)：把邮件正文、头部、URL 和附件融合成异构邮件图，并通过红队生成规避样本、蓝队记忆更新来适应钓鱼攻击变化。
+- [LISA Technical Report: An Agentic Framework for Smart Contract Auditing](https://arxiv.org/abs/2509.24698)：构建智能合约审计的智能体框架。
+- [MAVUL: Multi-Agent Vulnerability Detection via Contextual Reasoning and Interactive Refinement](https://arxiv.org/abs/2510.00317)：结合上下文推理和交互式 refinement 的多代理漏洞检测系统。核心思想是协同代理提升漏洞分析，而不是单轮检测。
+- [Cloud Investigation Automation Framework (CIAF): An AI-Driven Approach to Cloud Forensics](https://arxiv.org/abs/2510.00452)：可作为网络安全 agent的 Agent Harness 候选：围绕 Cloud Investigation Automation Framework (CIAF): An AI-Driven Approach to Cloud Forensics 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [OntoLogX: Ontology-Guided Knowledge Graph Extraction from Cybersecurity Logs with Large Language Models](https://arxiv.org/abs/2510.01409)：可作为网络安全 agent的 Agent Harness 候选：围绕 OntoLogX: Ontology-Guided Knowledge Graph Extraction from Cybersecurity Logs with Large Language Models 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [POLAR: Automating Cyber Threat Prioritization through LLM-Powered Assessment](https://arxiv.org/abs/2510.01552)：用 LLM 评估网络威胁证据并排序风险，实现自动化威胁优先级划分。
+- [MALF: A Multi-Agent LLM Framework for Intelligent Fuzzing of Industrial Control Protocols](https://arxiv.org/abs/2510.02694)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“MALF: A Multi-Agent LLM Framework for Intelligent Fuzzing of Industrial Control Protocols”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [PentestMCP](https://arxiv.org/abs/2510.03610)（[开源代码](https://github.com/Craftzman7/pentest-mcp)）：面向 agentic penetration testing 的 MCP server 工具包。核心思想：把扫描、枚举、漏洞利用和后渗透功能暴露为可组合工具，供安全 agent 工作流调用。
+- [QuiLL: An LLM-Based Vulnerability Assessment Framework for the Wild](https://arxiv.org/abs/2510.04056)：提供面向真实目标的 LLM 漏洞评估框架，补充可复用安全分析工作流。
+- [Auto-Stega: An Agent-Driven System for Lifelong Strategy Evolution in LLM-Based Text Steganography](https://arxiv.org/abs/2510.06565)：面向网络安全智能体与安全评测的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Hound: Relation-First Knowledge Graphs for Complex-System Reasoning in Security Audits](https://arxiv.org/abs/2510.09633)：用 relation-first 知识图谱支持安全审计。核心思路是让分析者定义价值流、授权角色、调用图等紧凑视图，使 agent 能检索精确代码证据进行审计推理。
+- [PrediQL: Automated Testing of GraphQL APIs with LLMs](https://arxiv.org/abs/2510.10407)：面向 GraphQL API 测试的 LLM-guided fuzzer；核心思想是结合检索和 schema-aware reasoning，为嵌套、上下文相关 API 漏洞生成自适应测试。
+- [iCodeReviewer: Improving Secure Code Review with Mixture of Prompts](https://arxiv.org/abs/2510.12186)：把代码送入多种安全审查提示，从不同审查视角发现漏洞证据以改进 secure code review。
+- [Automated Network Protocol Testing with LLM Agents](https://arxiv.org/abs/2510.13248)：面向自动化网络协议测试的多 agent 系统；核心思想是把协议规范转成测试用例和可执行 artifacts，再用运行反馈调试和改进。
+- [GRIDAI: Generating and Repairing Intrusion Detection Rules via Collaboration among Multiple LLM-based Agents](https://arxiv.org/abs/2510.13257)：用于生成和修复入侵检测规则的多 agent harness。核心思想是让 agent 协同处理新 Web 攻击规则，减少冗余和冲突。
+- [LLM-Powered IoT Traffic Interpretation Agent](https://arxiv.org/abs/2510.13925)：编排 IoT 流量证据与推理步骤，把 packet-level 观测转化为可追踪的设备或网络行为解释。
+- [ParaVul: A Parallel Large Language Model and Retrieval-Augmented Framework for Smart Contract Vulnerability Detection](https://arxiv.org/abs/2510.17919)：对智能合约并行运行 LLM 与检索增强分析，把外部漏洞知识和合约特定推理结合起来。
+- [CLASP: Cost-Optimized LLM-based Agentic System for Phishing Detection](https://arxiv.org/abs/2510.18585)：面向钓鱼检测的成本优化 LLM 多 Agent 系统；核心思路是协调 URL、截图和 HTML 分析 Agent，并在可行时选择更低成本的模型组合。
+- [LAPRAD: LLM-Assisted PRotocol Attack Discovery](https://arxiv.org/abs/2510.19264)：LLM-assisted protocol attack discovery 方法；核心思想是用 LLM 提出协议 exploit，通过 ReAct 风格流程构造攻击配置，并验证攻击效果。
+- [SBASH: a Framework for Designing and Evaluating RAG vs. Prompt-Tuned LLM Honeypots](https://arxiv.org/abs/2510.21459)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“SBASH: a Framework for Designing and Evaluating RAG vs. Prompt-Tuned LLM Honeypots”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Proactive DDoS Detection and Mitigation in Decentralized Software-Defined Networking via Port-Level Monitoring and Zero-Training Large Language Models](https://arxiv.org/abs/2511.00460)：结合端口级 SDN 监控与零训练 LLM 推理，检测 DDoS 模式并触发缓解动作。
+- [PoCo](https://arxiv.org/abs/2511.02780)：面向智能合约提供 agentic PoC exploit 生成。核心思想：连接合约分析、利用构造与验证。
+- [Multi-Agent Collaborative Fuzzing with Continuous Reflection for Smart Contracts Vulnerability Detection](https://arxiv.org/abs/2511.12164)：协调多个 fuzzing agent 检测智能合约漏洞，并通过持续反思调整 seed 生成和测试策略。
+- [RulePilot: An LLM-Powered Agent for Security Rule Generation](https://arxiv.org/abs/2511.12224)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 An LLM-Powered Agent for Security Rule Generation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Multi-Agent LLM Orchestration Achieves Deterministic, High-Quality Decision Support for Incident Response](https://arxiv.org/abs/2511.15755)：用确定性多智能体编排支持安全事件响应决策，使角色协同与证据综合成为安全运营中的显式流程。
+- [Hiding in the AI Traffic: Abusing MCP for LLM-Powered Agentic Red Teaming](https://arxiv.org/abs/2511.15998)：研究在 LLM 驱动的 agentic red teaming 中滥用 MCP；核心思想是把工具协议流量和 agent 工作流作为自主红队操作的攻击面。
+- [ReVul-CoT: Towards Effective Software Vulnerability Assessment with Retrieval-Augmented Generation and Chain-of-Thought Prompting](https://arxiv.org/abs/2511.17027)：从本地知识库检索 NVD、CWE、漏洞描述和代码片段，再用链式思维提示评估可利用性与影响范围。
+- [LLMs as Firmware Experts: A Runtime-Grown Tree-of-Agents Framework](https://arxiv.org/abs/2511.18438)：面向固件分析的 agent harness。核心思想是在运行时动态扩展专家 agent 树，用于固件代码推理与漏洞证据分析。
+- [AttackPilot: Autonomous Inference Attacks Against ML Services With LLM-Based Agents](https://arxiv.org/abs/2511.19536)：它提供渗透测试、攻击推理或网络安全 agent 评估 workflow，适合补充 cybersecurity Agent Harness。
+- [IRSDA](https://arxiv.org/abs/2511.19644)：用 agent 编排企业入侵响应流程，连接事件证据、响应决策和处置步骤。
+- [Large Language Model based Smart Contract Auditing with LLMBugScanner](https://arxiv.org/abs/2512.02069)：用 LLMBugScanner 对合约代码和疑似 bug pattern 做 LLM 推理，向审计人员输出智能合约漏洞发现。
+- [Cybersecurity AI](https://arxiv.org/abs/2512.02654)（[开源代码](https://github.com/aliasrobotics/cai)；[项目页](https://aliasrobotics.com/cybersecurityai.php)）：面向安全 CTF 的智能体系统。核心思路：围绕规划、工具使用和迭代验证组织网络安全挑战求解，可作为可执行 CTF 评测中的 harness 参考。
+- [HarnessAgent: Scaling Automatic Fuzzing Harness Construction with Tool-Augmented LLM Pipelines](https://arxiv.org/abs/2512.03420)：一个用于自动构造 fuzzing harness 的工具增强 LLM 流水线；核心思路是检索上下文证据并验证生成的 harness，使模糊测试目标不再依赖手写包装。
+- [PBFuzz](https://arxiv.org/abs/2512.04611)：面向 proof-of-vulnerability input generation 的 agentic directed fuzzing workflow。核心思想：利用程序行为反馈，引导 LLM 辅助 fuzzing 逼近可利用状态。
+- [VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection](https://arxiv.org/abs/2512.07533)：可作为网络安全 agent的Agent Harness候选；核心关注“Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection”。
+- [Information-Dense Reasoning for Efficient and Auditable Security Alert Triage](https://arxiv.org/abs/2512.08169)：提出 AIDR 云边协同告警分诊 harness，把推理链压缩为只保留决策关键证据的短要点，再将告警路由给本地 LoRA 专家并输出 SOAR-ready JSON，以满足 token 与延迟预算。
+- [Democratizing ML for Enterprise Security: A Self-Sustained Attack Detection Framework](https://arxiv.org/abs/2512.08802)：描述自维持的企业攻击检测框架，通过自动管理模型更新与运营检测流程，减少对专门 ML 人员的依赖。
+- [ARTEMIS](https://arxiv.org/abs/2512.09882)：在真实企业网络中评估的多 agent 渗透测试 harness。核心思想：结合动态 prompt 生成、可扩展子 agent 与自动漏洞 triage，将 AI agent 与专业人类测试者放在真实基础设施上比较。
+- [Automated Penetration Testing with LLM Agents and Classical Planning](https://arxiv.org/abs/2512.11143)：结合 LLM agent 与符号规划的渗透测试 harness。核心思想：用 classical planning 组织侦察与利用步骤，再由 LLM agent 负责解释和工具交互。
+- [Quantigence](https://arxiv.org/abs/2512.12989)：一个面向量子安全研究的多 agent 框架，协调密码分析、威胁建模、标准跟踪和风险评估等角色，并通过 MCP 接入外部知识与量子调整风险评分。
+- [MALCDF: A Distributed Multi-Agent LLM Framework for Real-Time Cyber](https://arxiv.org/abs/2512.14846)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Energy-Efficient Multi-LLM Reasoning for Binary-Free Zero-Day Detection in IoT Firmware](https://arxiv.org/abs/2512.19945)：不依赖固件二进制，而是用高层描述估计概念性零日风险；流程协调 LLaMA 配置解释器、DeepSeek 结构抽象分析器与 GPT-4o 语义融合模型，并纳入能耗感知推理信号。
+- [The Imitation Game: Using Large Language Models as Chatbots to Combat Chat-Based Cybercrimes](https://arxiv.org/abs/2512.21371)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“The Imitation Game: Using Large Language Models as Chatbots to Combat Chat-Based Cybercrimes”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Agentic AI for Autonomous Defense in Software Supply Chain Security](https://arxiv.org/abs/2512.23480)：让 Agent 在开发与交付流程中发现、推理和缓解软件供应链漏洞。
+- [SynRAG: A Large Language Model Framework for Executable Query Generation in Heterogeneous SIEM Systems](https://arxiv.org/abs/2512.24571)：用 LLM 框架为异构 SIEM 环境生成可执行查询，支持网络安全调查。
 - [Automated Threat Emulation Framework with LLMs for Cyber Physical Systems](https://doi.org/10.1109/CogMI67134.2025.00059)：面向网络物理系统的威胁仿真 harness。核心思路是用 LLM 驱动自动化来组织基于 CPS 证据和操作的对抗仿真流程，使威胁测试比临时人工演练更可重复。
 - [Agentic RAG for Command Generation in Automated Penetration Testing](https://doi.org/10.1109/SPCNC68200.2025.11406223)：面向渗透测试 agent 的检索驱动命令生成 harness。核心思想是在 PentestGPT 式流程中加入结构化知识库上的多步检索，使生成命令能补足推理时的知识缺口。
 - [Retrieval-Augmented Reasoning for Offensive Security](https://doi.org/10.1109/FLLM67465.2025.11391064)：面向 offensive-security agent 的检索优先 CTF 自动化 harness。核心思想是把 benchmark-clean 的领域语料与轻量、tool-agnostic 的 RAG pipeline 结合，让多步 CTF 推理建立在相关利用知识之上。
@@ -23,37 +167,248 @@
 - [LIMA](https://doi.org/10.1109/FMLDS67896.2025.00135)：将 LLM 与 MCP servers 结合用于初始机器访问的渗透测试框架。核心思想：通过结构化 MCP 工具暴露授权 foothold discovery 步骤，使 LLM 智能体能协调侦察、访问尝试和证据收集。
 - [Automated Penetration Test Framework for ICS](https://doi.org/10.1109/ICBDSE65491.2025.11220032)：面向工业控制系统渗透测试的多智能体协作框架。核心思想：围绕 ICS 侦察、漏洞分析和攻击路径推理协调专门智能体，支持授权网络安全评估工作流。
 - [LLM-Driven Automated Penetration Testing](https://doi.org/10.1109/ICSSS66939.2025.11346427)：面向 LLM agent 的自动化渗透测试架构与 benchmark-oriented 框架。核心思想：把侦察、利用规划、执行反馈和安全控制组织为可复用的自动化 pentest 工作流。
-- [Cybersecurity AI](https://arxiv.org/abs/2512.02654)（[开源代码](https://github.com/aliasrobotics/cai)；[项目页](https://aliasrobotics.com/cybersecurityai.php)）：面向安全 CTF 的智能体系统。核心思路：围绕规划、工具使用和迭代验证组织网络安全挑战求解，可作为可执行 CTF 评测中的 harness 参考。
-- [Automated Penetration Testing with LLM Agents and Classical Planning](https://arxiv.org/abs/2512.11143)：结合 LLM agent 与符号规划的渗透测试 harness。核心思想：用 classical planning 组织侦察与利用步骤，再由 LLM agent 负责解释和工具交互。
-- [Agentic AI for Autonomous Defense in Software Supply Chain Security](https://arxiv.org/abs/2512.23480)：让 Agent 在开发与交付流程中发现、推理和缓解软件供应链漏洞。
 - [DeepAttacker](https://doi.org/10.1109/isaics66888.2025.11350066)：协调攻击角色和安全测试步骤，把 breach simulation 组织成 Agent 工作流。
 - [Multi-Step LLM Pipeline for Enhancing TTP Extraction in Cyber Threat Intelligence](https://doi.org/10.1109/ACCESS.2025.3622350)：组合 LLM 抽取器、基于检索的 ATT&CK 候选生成器与 LLM 验证器，将原始 CTI 报告转为排序后的 TTP 预测。
+- [Clouseau: A Hierarchical Multi-Agent Approach for Autonomous Attack Investigation](https://doi.org/10.1109/ACSAC67867.2025.00051)：面向自主攻击调查的层级 multi-agent workflow。
+- [Autopwn](https://doi.org/10.1109/ACSACW69556.2025.00065)：自动 code-reuse exploit generation 的 agentic 框架，可作为连接漏洞推理、利用构造与验证的网络安全 harness 参考。
+- [LD-CIPHER](https://doi.org/10.1109/CyberC66434.2025.00040)：面向 CTF 挑战的轻量 LLM 多 agent 框架；核心思想是协调专门 agent 完成攻防任务，而不是回答静态安全问答。
+- [CKGFuzzer](https://doi.org/10.1109/ICSE-Companion66252.2025.00079)：结合 code knowledge graph 的 LLM-based fuzz driver generation harness。核心思想是用程序结构知识指导软件安全测试自动化。
+- [SCCA](https://doi.org/10.1109/mass66014.2025.00089)：面向 AI-assisted code generation 的多 agent 代码安全分析框架；核心思想是用专门 agent 检查生成代码中的安全问题。
+- [LLM Autonomous Cyber Defense](https://doi.org/10.1109/MIS.2025.3568209)：在 CAGE-2 仿真中评估的 LLM 自主网络防御 agent。核心思想：通过 agent 循环把网络状态描述转化为防御决策。
+- [Robust Autonomous Cyber Defence Agents](https://doi.org/10.1109/NetSoft64993.2025.11080605)：研究面向自主网络防御 agent 的 hybrid AI 设计，为 DRL 与 LLM 结合的防御闭环补充鲁棒性视角。
+- [Collaborative LLM Reasoning for Smart Contract Vulnerability Detection](https://doi.org/10.1109/ICCKE68588.2025.11273846)：协调 LLM 推理来检测智能合约漏洞，适合作为结合合约证据、推理与验证的网络安全 harness。
+- [MALLS](https://doi.org/10.1109/ICCD65941.2025.00116)：协调多 agent LLM 进行合成硬件漏洞生成与检测，将硬件安全与 agentic 漏洞分析工作流连接起来。
+- [VulForge](https://doi.org/10.1109/iscit67082.2025.11231445)： 用大语言模型为蜜罐环境生成漏洞部署脚本。
+- [Multi-Agent OSINT Architecture with Graph RAG Integration and Hierarchical Bloom-Filter Deduplication](https://doi.org/10.1109/inista68122.2025.11249668)：将 Graph RAG、hierarchical Bloom-filter 去重与多 agent 协调用于开源情报工作流。
+- [VulnTeam: A Team Collaboration Framework for LLM-based Vulnerability Detection](https://doi.org/10.1109/ijcnn64981.2025.11229292)：协调团队式 LLM 审查角色做漏洞检测，让代码风险假设在报告前经过多角色交叉检查。
+- [Automated Vulnerability Repair Based on Retrieval-Augmented Generation](https://doi.org/10.1109/iseae64934.2025.11041756)：先检索漏洞与修复知识，再生成候选补丁，使 LLM 修复建立在外部示例和结果评估之上。
+- [Bridging the gap between LLMs and structured program vulnerability analysis: An agent reasoning approach with first-order logic modeling](https://doi.org/10.1016/j.eswa.2025.130105)：用一阶逻辑表示程序事实和漏洞条件，再让 agent 基于结构化模型推理后报告缺陷。
+- [MGVul: a Multi-Granularity Detection Framework for Software Vulnerability](https://doi.org/10.1109/apsipaasc63619.2025.10849117)：汇总代码多粒度证据进行漏洞检测，更接近结合局部与全局程序上下文的检测框架。
+- [CodeVul+: A Structure-Aware Framework for Cross-Repository Vulnerability Detection](https://doi.org/10.1109/bigdata66926.2025.11401065)：使用结构感知的跨仓库代码表示检测漏洞，更接近检测框架而非运行时网络安全 agent。
+- [Causal-Aware Knowledge Graph Enhanced RAG for Predictive Cybersecurity Intelligence: A Framework for Attack Progression Analysis and Consequence Prediction](https://doi.org/10.1109/iscmi67495.2025.11358587)：结合因果知识图谱与 RAG 推理攻击推进过程，并预测可能的网络安全后果。
+- [Autonomous Cognitive AI Mechanisms for Proactive Detection and Self-Healing Response Against Zero-Day Cyber Attacks](https://doi.org/10.1109/iscs69371.2025.11386360)：把零日攻击的主动检测与自愈响应动作连接起来，形成从异常识别到自动缓解的防御闭环。
+- [XRepair - Unifying Retrieval, Repair, and Evaluation for Explainable LLM-Based Vulnerability Fixes](https://doi.org/10.1109/apsec66846.2025.00116)：统一检索、补丁生成、解释和评估，使 LLM 漏洞修复可以被检查，而不是只接受自由文本修改。
+- [CodeGuard: Real-Time Detection of SQLi and XSS Vulnerabilities Using Machine Learning in VS Code](https://doi.org/10.1109/macs68476.2025.11453420)：在 VS Code 中实时标记 SQL 注入和跨站脚本风险，是面向编码过程的机器学习安全检测工具。
+- [Leveraging Mixture-of-Experts Framework for Smart Contract Vulnerability Repair with Large Language Model](https://doi.org/10.1109/ase63991.2025.00140)：把智能合约漏洞修复路由到 mixture-of-experts 设置中，结合 LLM 修复建议与评估来选择更强补丁。
+- [Intelligent Automation of Network Security Operations via Intention-Driven Agents and Large Language Models](https://doi.org/10.1109/cisat66811.2025.11181948)：把操作员意图转成网络安全操作，由 LLM agent 选择安全设备动作并执行对应流程。
+- [SecLLM-Intent-Driven Orchestration of Heterogeneous Security Devices via MCP Function Calling and Retrieval-Augmented Generation](https://doi.org/10.1109/cisat66811.2025.11181750)：通过 MCP function calling 与 RAG 编排异构安全设备，把意图转成具体设备控制动作。
+- [LLM-based Generation of Formal Specification for Run-time Security Monitoring of ICS](https://doi.org/10.1109/csr64739.2025.11130130)：用 LLM 生成工业控制运行时安全监控的形式化规格，把安全需求转成可执行 monitor 逻辑。
+- [Leveraging LLMs Towards Assistant-based Support for Industrial Threat Models](https://doi.org/10.1109/etfa65518.2025.11205762)：用 LLM assistant 辅助抽取、细化和记录工业威胁模型，支持分析师发现资产、威胁和缓解措施。
+- [Operational DFIR: ML-Based Detection and LLM-Assisted Fileless Malware Analysis](https://doi.org/10.1109/iscs69371.2025.11386023)：把机器学习检测与 LLM 辅助分析结合，用于 operational DFIR 中的 fileless malware 调查。
+- [TaK-Fuzz: Transaction-aware Knowledge Smart Contract Fuzzing with Retrieval-Augmented Generation and Language Models](https://doi.org/10.1109/rivf68649.2025.11365172)：把交易感知 fuzzing、检索增强生成和语言模型结合，用于智能合约漏洞测试。
+- [Improving IoT Cyber Threat Response with Multi-Agent LLMs and Semantic Retrieval](https://doi.org/10.1109/smartiot66867.2025.00067)：将多 agent LLM 与语义检索用于 IoT 威胁响应，使响应决策能复用相关安全知识。
+- [MAD-CTI: Cyber Threat Intelligence Analysis of the Dark Web Using a Multi-Agent Framework](https://doi.org/10.1109/access.2025.3547172)：协调多个 agent 收集和分析暗网 CTI，把论坛或市场证据转成结构化网络威胁情报。
+- [Deep-Stride: Automated Security Threat Modeling with Vision-Language Models](https://doi.org/10.23919/softcom66362.2025.11197424)：用视觉语言模型读取系统工件并自动做威胁建模，把架构视觉证据连接到安全任务。
+- [Generative Agent-Based Modeling with Large Language Models for insider threat detection](https://doi.org/10.1016/j.engappai.2025.111343)：用 LLM 驱动的生成式 agent 建模内部人员行为，并产生 insider-threat 检测信号。
+- [Harnessing Large Language Models for Automated Intrusion Detection Rule Generation in Cyber Range](https://doi.org/10.1109/mnet.2025.3582330)：在 cyber range 中生成入侵检测规则，并用靶场上下文验证规则是否匹配攻击行为。
+- [Generative AI in Cybersecurity: Generating Offensive Code from Natural Language](https://doi.org/10.1109/dsn-s65789.2025.00059)：展示从自然语言生成 offensive code 的流程，更适合作为进攻代码合成风险案例。
+- [Unlocking LLM Security: Automated Penetration Testing and Source Code Review Based on Vulnerability Analysis and NLP](https://doi.org/10.1109/itc-egypt66095.2025.11186635)：把基于 NLP 的漏洞分析与自动化渗透测试、源码审查步骤结合起来。
+- [STIXAgent—A Multi-Agent Framework for Standardized Management of Cyber Threat Intelligence (CTI) Reports](https://doi.org/10.4236/jis.2025.164028)：用多 agent 把 CTI 报告转换、管理并标准化为面向 STIX 的格式。
+- [Digital Twins Driven by Artificial Intelligence to Mitigate, Detect, and Simulate Virtual Space Cyber Threats](https://doi.org/10.1109/iccies63851.2025.11032312)：用 AI 驱动数字孪生模拟虚拟空间网络威胁，并测试缓解或检测响应。
+- [Implementation of Multi-Level RAG Model for Enhanced Synergistic Vulnerability Analysis](https://doi.org/10.1109/icct-pacific63901.2025.11012876)：把多层检索增强生成用于漏洞分析，使检索证据可以跨分析层级协同使用。
+- [Multi-Agent Auditing for Smart Contracts*](https://doi.org/10.1109/iscsic67494.2025.11352002)：把智能合约审计角色分配给多个 agent，使合约证据、漏洞假设和发现可以相互核对。
+- [Cognitive SOC: Evidence-Backed Narrative Generation for Security Operations with Multi-Agent LLM Architecture](https://doi.org/10.1109/bigdata66926.2025.11401968)：协调 SOC agent 从安全运营数据中生成有证据支撑的事件叙事。
+- [Demo: Fixing C/C++ Vulnerabilities with LLMs : Prompt, Detect, Fix: No More Unsafe Code](https://doi.org/10.1109/svcc65277.2025.11133649)：演示 C/C++ 漏洞的 prompt-detect-fix 闭环，把检测提示与生成式代码修复连接起来。
+- [Agentic LLM-Assisted Rotation Policies for Multi-Cloud Credential Management: A Systems Case Study With. NET 8, Zero-Knowledge Vault, and Terraform](https://doi.org/10.1109/acet67282.2025.11430387)：用 agentic LLM workflow 设计并运行多云凭证轮换，结合 .NET、zero-knowledge vault 和 Terraform。
+- [X-SIEM Framework: Integrating Rule-Based, ML, and LLMs for Cyber Threat Intelligence](https://doi.org/10.1109/iccit68739.2025.11491524)：在 SIEM 工作流中整合规则逻辑、机器学习与 LLM 分析，用于网络威胁情报。
+- [Multi-Agent System for Detecting Polymorphic Viruses in Computer Networks](https://doi.org/10.1109/idaacs68557.2025.11322141)：协调多个检测 agent，从计算机网络证据中识别多态病毒。
+- [Agentic Workflows for Extraction of Access Control Matrices from Policy Documents](https://doi.org/10.1109/icdew67478.2025.00010)：通过 agentic 文档分析流程，从策略文档中抽取访问控制矩阵。
+- [Intelligent Security Monitoring Architecture with AI-Powered Agents for Autonomous Threat Prevention and Compliance Enforcement](https://doi.org/10.1109/icoiics67115.2025.11390135)：用 AI agent 监控威胁、触发预防动作并在安全监控架构中执行合规规则。
+- [AgentNIRS: An LLM-Driven Agent for Network Intrusion Response](https://doi.org/10.1109/acsacw69556.2025.00054)：用 LLM-driven agent 解释网络入侵证据，并推荐或执行响应动作。
+- [AI-Agent-Based Autonomous Defense Against DoS/DDoS in AI Data Centers](https://doi.org/10.1109/icca66035.2025.11431053)：组织自主 agent 在 AI 数据中心网络中进行 DoS/DDoS 检测与缓解。
+- [Agentic Hyper-Intelligence for Cyber Threat Detection: A Lightweight Framework for CVE Intelligence and Adaptive Anomaly Mitigation](https://doi.org/10.1109/cyberscitech68397.2025.00110)：把 CVE 情报与自适应异常缓解连接起来，使威胁检测能随新漏洞上下文更新。
+- [Web Application Vulnerability Detection and Response using Generative and Explainable AI](https://doi.org/10.1109/inc465408.2025.11256178)：用生成式和可解释 AI 检测 Web 应用漏洞并给出处置指导。
+- [A Multi - Agent Framework for Auditing Smart Contracts](https://doi.org/10.1109/roedunet68395.2025.11208388)：让多个审计 agent 协同检查智能合约代码，从不同分析角色比较漏洞发现。
+- [Robust Detection and Analysis of Smart Contract Vulnerabilities with Large Language Model Agents](https://doi.org/10.4236/jis.2025.161011)：用 LLM agent 检测并分析智能合约漏洞，重点是更稳健地聚合证据。
+- [PyReach: A Multi-Agent Framework for Vulnerability Reachability Analysis in Python](https://doi.org/10.1109/apsec66846.2025.00027)：用多个 agent 判断 Python 漏洞发现是否能在真实程序执行路径中到达。
+- [Pungoe Pentest: Orchestration of Web Penetration Testing Tools with Assistance Based on Large Language Model (LLM) Pentest-AI and Retrieval-augmented Generation (RAG)](https://doi.org/10.1109/icocics68032.2025.11384036)：用大语言模型与检索增强生成编排 Web 渗透测试工具。
+- [NeuroAgent-X: A Self-Evolving Cognitive Agent for Securing Consumer IoT Systems Against AI-Enabled Anomalies and Adversarial Threats](https://doi.org/10.1109/tce.2025.3627970)：通过认知 agent 闭环适配消费级 IoT 防御，串联异常检测、对抗威胁推理和响应行为更新。
+- [Supply Chain Reaction: Enhancing the Precision of Vulnerability Triage using Code Reachability Information](https://doi.org/10.1109/acsac67867.2025.00023)：利用代码可达性信息提升软件供应链漏洞分诊精度。
+- [A real-time automated attack-defense graph generation approach](https://doi.org/10.1016/j.jisa.2025.104266)：面向实时网络安全分析生成攻防图。
+- [MALPRE](https://doi.org/10.1109/ISSRE66568.2025.00052)：面向恶意软件协议逆向的 agentic workflow。核心思想是把执行轨迹代码切片和聚类，与代码分析员、恶意软件专家、协议拼图员等角色协作结合起来，推断协议字段和消息语义。
+- [Controller Makes Pentesting Better: An Improved Multi-Agent Automated Penetration Testing Framework](https://doi.org/10.1109/trustcom66490.2025.00098)：以 controller 为核心的多 agent 自动化渗透测试框架。核心思想是加入协调控制器，降低多 agent pentesting 流程中的不一致并提升执行效果。
+- [LLM Agentic Workflow for Automated Vulnerability Detection and Remediation in Infrastructure-as-Code](https://doi.org/10.1109/access.2025.3560911)：用 LLM agentic workflow 自动化基础设施即代码的漏洞检测和修复。
+- [Trust-Calibrated Multi-Stage Large Language Model Pipeline for Vulnerability Assessment in DevSecOps Workflows](https://doi.org/10.1109/acsacw69556.2025.00074)：面向 DevSecOps 漏洞评估的多阶段 LLM 流水线；核心思路是把分阶段模型判断与可信度校准结合，用于安全审查自动化。
+- [VVF-AI: A Vulnerability Verification Framework Based on AI-Agent](https://doi.org/10.1109/ainit65432.2025.11035850)：使用 AI 智能体框架进行漏洞验证。
+- [ACTaint: Agent-Based Taint Analysis for Access Control Vulnerabilities in Smart Contracts](https://doi.org/10.1109/ase63991.2025.00210)：将智能体式污点分析用于智能合约访问控制漏洞。
+- [Design and Implementation of a Multi-Agent Threat Intelligence Assistant Based on Generative AI](https://doi.org/10.1109/bigdata66926.2025.11400902)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [iThelma: An Autonomous LLM Agent for Cyber Threat Hunting via Playbook-Driven Intelligence](https://doi.org/10.1109/cns66487.2025.11195050)：面向威胁狩猎的自主 LLM Agent；核心思路是把防御侧 playbook 转化为可重复执行的安全运营调查流程。
+- [From Concept to Deployment: An AI Assistant for Generating and Configuring Cyber Range Scenarios](https://doi.org/10.1109/csr64739.2025.11130019)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 An AI Assistant for Generating and Configuring Cyber Range Scenarios 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [DFIR-Chain - Integrating Memory Forensics, YARA Scanning, and LLM Summarization for Automated Triage](https://doi.org/10.1109/icisc65841.2025.11187513)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 Integrating Memory Forensics, YARA Scanning, and LLM Summarization for Automated Triage 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Multi-Agent AI Chatbot for Proactive Threat Detection and Automated Incident Response in Hybrid Cloud Environments](https://doi.org/10.1109/icoiics67115.2025.11390272)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Towards Architectural Pen Test Case Generation and Attack Surface Analysis to Support Secure Design](https://doi.org/10.1109/icsa-c65153.2025.00027)：可作为网络安全 agent的 Agent Harness 候选：围绕 Towards Architectural Pen Test Case Generation and Attack Surface Analysis to Support Secure Design 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Blended RAG-Enhanced LLM Multi-Agent Framework for Anomaly Detection and Alert Management](https://doi.org/10.1109/icsgsc68313.2025.11288288)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [MAD-Agent: A Malware Analysis and Detection AI Agent](https://doi.org/10.1109/isc266238.2025.11293337)：一种恶意软件分析与检测 AI Agent；核心思路是把恶意软件分诊和检测步骤封装为防御侧网络安全分析工作流。
+- [AutoBnB: Multi-Agent Incident Response with Large Language Models](https://doi.org/10.1109/isdfs65363.2025.11012055)：可作为网络安全 agent的 Agent Harness 候选：围绕 AutoBnB: Multi-Agent Incident Response with Large Language Models 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [GLMFuzz: Vulnerability Knowledge Guided Prompting for Efficient Network Protocol Fuzzing](https://doi.org/10.1109/qrs65678.2025.00062)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Cybersecurity AI: A Game-Theoretic AI for Guiding Attack and Defense](https://arxiv.org/abs/2601.05887)：为网络攻防 agent 增加博弈论指导层。核心思路是从 agent 上下文抽取攻击图，计算考虑成本的均衡策略，并把压缩后的策略摘要反馈给攻防循环。
+- [CHASE PyPI Agent](https://arxiv.org/abs/2601.06838)：提出 CHASE 恶意 PyPI 分析框架，用 Plan-and-Execute 层级协调专门 worker agents 调用确定性安全工具，以减少追踪多阶段包行为时的幻觉和上下文混淆。
+- [PenForge](https://arxiv.org/abs/2601.06910)：面向自动化渗透测试的 on-the-fly expert-agent construction 框架。核心思想：把 attack-surface reconnaissance 与动态实例化的漏洞专用 agent 结合起来，而不是依赖单一通用 pentesting agent。
 - [KryptoPilot](https://arxiv.org/abs/2601.09129)：面向密码学 CTF 利用的开放世界知识增强智能体。核心思路是结合深度研究、持久工作区记忆、行为治理和成本感知模型路由，使智能体能够获取细粒度密码分析知识，并将其用于长链路利用流程。
 - [VulnResolver](https://arxiv.org/abs/2601.13933)：自动化漏洞 issue 解决的混合式 agent 框架。核心思想：把漏洞分析、修复规划和验证反馈合入一个基于 LLM 的 issue 解决闭环。
+- [Holmes](https://arxiv.org/abs/2601.14601)：用于可审计 DDoS 调查的证据 grounding LLM agent。核心思想：连接云网络证据、推理轨迹和调查输出，使事件分析过程可追踪审计。
+- [An LLM Agent-based Framework for Whaling Countermeasures](https://arxiv.org/abs/2601.14606)：用 LLM agent 分析高管定向钓鱼信号，并向安全团队推荐 whaling countermeasures。
 - [PatchIsland](https://arxiv.org/abs/2601.17471)：编排 LLM agent 进行持续漏洞修复。核心思想：把检测、修补、验证和迭代组织成面向安全缺陷的修复闭环。
+- [Multi-Agent Collaborative Intrusion Detection for Low-Altitude Economy IoT: An LLM-Enhanced Agentic AI Framework](https://arxiv.org/abs/2601.17817)：用多智能体协同进行低空经济物联网入侵检测。
+- [An Effective and Cost-Efficient Agentic Framework for Ethereum Smart Contract Auditing](https://arxiv.org/abs/2601.17833)：面向以太坊智能合约审计的 agentic 框架。核心思路是按函数重组合约上下文，推理业务逻辑漏洞，自动串联 exploit，并用级联验证减少幻觉式报告。
+- [MulVul: Retrieval-augmented Multi-Agent Code Vulnerability Detection via Cross-Model Prompt Evolution](https://arxiv.org/abs/2601.18847)：用于代码漏洞检测的检索增强多智能体框架。核心思路是跨漏洞类别演化提示，并协调跨模型 agent，使仓库级弱点分析不依赖单一静态提示。
+- [AgenticSCR: An Autonomous Agentic Secure Code Review for Immature Vulnerabilities Detection](https://arxiv.org/abs/2601.19138)：构建自主智能体式安全代码审查框架。
+- [AEGIS](https://arxiv.org/abs/2601.22720)：为大规模网络防御演练生成白盒攻击路径。核心思想：用 LLM 构造训练场景，并评估其对防御训练的有效性。
+- [SolAgent](https://arxiv.org/abs/2601.23009)：用于安全 Solidity 代码生成的工具增强多 agent 框架。核心思想：结合编译器反馈与静态分析，降低智能合约生成中的功能错误和安全漏洞。
 - [Co-RedTeam](https://arxiv.org/abs/2602.02164)：协同式安全发现与利用 harness。核心思想：让多个 red-team agent 协作完成 discovery、exploitation、执行反馈、验证与经验复用。
+- [SPEAR](https://arxiv.org/abs/2602.04418)：协调多个智能体进行智能合约审计，通过角色分工和审计流程工程化，使合约漏洞分析更系统。
 - [Hallucination-Resistant Security Planning](https://arxiv.org/abs/2602.05279)：把 LLM 安全规划置于带检查的迭代闭环中，减少幻觉式建议进入事件响应计划。
 - [Dual-Loop Vulnerability Reproduction](https://arxiv.org/abs/2602.05721)：用于自动化漏洞复现的双循环 agent 框架。核心思想：协调 exploit 假设生成与验证反馈，使 agent 能复现 CVE 证据，而不只是报告疑似漏洞。
-- [PenAgent](https://doi.org/10.1109/ISCAIT69154.2026.11477307)：检索增强的多 agent 自动渗透测试框架。核心思想是把外部渗透测试知识接入协作式安全 agent，使侦察与利用决策不只依赖模型参数记忆。
-- [Task-Driven SOC Analysis](https://doi.org/10.1049/cit2.70138)：面向 LLM 安全运营分析的任务驱动框架。核心思想：把模糊 SOC 查询转化为可验证分析步骤和证据支撑结论。
+- [Persistent Human Feedback, LLMs, and Static Analyzers for Secure Code Generation and Vulnerability Detection](https://arxiv.org/abs/2602.05868)：结合持续人类反馈、LLM 与静态分析器进行安全代码生成和漏洞检测，契合网络安全方向的代码智能体工作流。
+- [QRS: A Rule-Synthesizing Neuro-Symbolic Triad for Autonomous Vulnerability Discovery](https://arxiv.org/abs/2602.09774)：提出 QRS（Query、Review、Sanitize）三 agent SAST 工作流，先依据结构化 schema 和少样例生成 CodeQL 查询，再用语义推理与自动 exploit 合成复核并清洗发现。
+- [Following Dragons: Code Review-Guided Fuzzing](https://arxiv.org/abs/2602.10487)：用开发者代码审查信号引导 fuzzing 进入脆弱或安全关键状态，弥补普通覆盖反馈的盲区。
+- [Agentic AI for Cybersecurity: A Meta-Cognitive Architecture for Governable Autonomy](https://arxiv.org/abs/2602.11897)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [In-Context Autonomous Network Incident Response: An End-to-End Large Language Model Agent Approach](https://arxiv.org/abs/2602.13156)：构建端到端网络事件响应 LLM agent。核心思路是结合感知、推理、规划与行动，使 agent 根据日志和告警更新攻击假设，并在上下文中调整响应计划。
+- [Assessing Spear-Phishing Website Generation in Large Language Model Coding Agents](https://arxiv.org/abs/2602.13363)：主要是评测条目；它衡量 coding agent 生成鱼叉式钓鱼网站的能力，更像滥用风险测试而非防御 harness。
+- [DrillAgent](https://arxiv.org/abs/2602.13574)：面向 proof-of-vulnerability 生成的 execution-state-aware agent harness。核心思想：把 LLM 语义假设与具体程序状态反馈、源码级约束抽取结合成迭代 verify-and-refine 循环。
+- [MultiVer: Zero-Shot Multi-Agent Vulnerability Detection](https://arxiv.org/abs/2602.17875)：零样本多智能体漏洞检测系统。核心思路是组合安全、正确性、性能与风格 agent，并用并集投票在不微调的情况下提高召回率。
+- [LiaisonAgent: An Multi-Agent Framework for Autonomous Risk Investigation and Governance](https://arxiv.org/abs/2603.00200)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“LiaisonAgent: An Multi-Agent Framework for Autonomous Risk Investigation and Governance”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [AWE](https://arxiv.org/abs/2603.00960)：面向动态 Web 渗透测试的记忆增强多 agent harness。核心思想：结合漏洞类型专用分析流程、上下文感知 payload 变异、持久记忆与浏览器验证，使利用尝试更确定且可复现。
+- [vEcho: A Paradigm Shift from Vulnerability Verification to Proactive Discovery with Large Language Models](https://arxiv.org/abs/2603.01154)：面向网络安全智能体与安全评测的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [NeuroSCA: Neuro-Symbolic Constraint Abstraction for Smart Contract Hybrid Fuzzing](https://arxiv.org/abs/2603.01272)：用神经符号约束抽象减少智能合约 hybrid fuzzing 中的 constraint pollution，以触达更深的漏洞路径。
+- [From Threat Intelligence to Firewall Rules: Semantic Relations in Hybrid AI Agent and Expert System Architectures](https://arxiv.org/abs/2603.03911)：面向网络安全智能体与安全评测的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [ProvAgent: Threat Detection Based on Identity-Behavior Binding and Multi-Agent Collaborative Attack Investigation](https://arxiv.org/abs/2603.09358)：结合身份行为绑定与多智能体协同调查进行威胁检测。
 - [VulnAgent-X](https://arxiv.org/abs/2603.13384)：面向仓库级漏洞检测的分层 agentic 框架。核心思想：结合仓库上下文、分阶段分析和验证过程，支持更真实的漏洞检测。
+- [Towards Agentic Honeynet Configuration](https://arxiv.org/abs/2603.14122)：把 honeynet 部署建模为 agentic 配置问题，在资源约束下选择要暴露的欺骗服务以提升攻击者观测效果。
+- [Prose2Policy](https://arxiv.org/abs/2603.15799)：把自然语言访问控制策略转成可执行 Rego。核心思想：加入 schema 校验、编译和测试，使 policy-as-code 输出可审计。
+- [Retrieval-Augmented LLMs for Security Incident Analysis](https://arxiv.org/abs/2603.18196)：将检索增强 LLM 用于安全事件分析。
 - [Automated Membership Inference Attacks](https://arxiv.org/abs/2603.19375)：使用 LLM agent 发现 membership inference attack 的信号计算方式。核心思想：把模型隐私测试中的探索式攻击设计循环自动化。
-- [AuditGPT](https://doi.org/10.1109/icassp55912.2026.11463116)：用于增强静态分析的多 agent 框架。核心思想：围绕代码审计证据、疑似问题和验证过程协调多个 agent，降低静态分析 triage 成本。
+- [An Agentic Multi-Agent Architecture for Cybersecurity Risk Management](https://arxiv.org/abs/2603.20131)：协调风险管理 agent 执行资产分析、威胁评估、缓解规划和报告生成。
 - [STRIATUM-CTF](https://arxiv.org/abs/2603.22577)：面向通用 CTF 解题的协议驱动 agentic 框架。核心思想：把挑战分析、工具执行、反馈和答案提交组织为可复用的 CTF 解题工作流。
 - [Environment-Grounded Multi-Agent Workflow for Autonomous Penetration Testing](https://arxiv.org/abs/2603.24221)：面向机器人网络物理环境的多 Agent 渗透测试 harness。核心思路是维护包含拓扑、通信通道、漏洞和攻击尝试的共享图记忆，使侦察与利用过程始终锚定在已观察到的环境状态上。
 - [Knowdit](https://arxiv.org/abs/2603.26270)：知识驱动的智能合约漏洞检测 harness。核心思想是把历史审计报告抽象为 DeFi 语义图，再用共享工作记忆协调 specification generation、harness synthesis、fuzz execution 与 finding reflection。
 - [Red-MIRROR](https://arxiv.org/abs/2603.27127)：带反思验证和知识增强交互的自主渗透测试 harness。核心思想：闭环组织攻击尝试、证据检查和由记忆支撑的策略细化。
+- [SCPatcher: Automated Smart Contract Code Repair via Retrieval-Augmented Generation and Knowledge Graph](https://arxiv.org/abs/2604.00687)：结合检索增强生成与知识图谱修复智能合约漏洞，用检索到的上下文指导补丁生成。
+- [AutoMIA: Improved Baselines for Membership Inference Attack via Agentic Self-Exploration](https://arxiv.org/abs/2604.01014)：把 membership inference attack 重构为 agentic self-exploration。核心思路是让 agent 自适应搜索信号计算和攻击流程，而不是依赖静态手工 MIA 启发式。
 - [GONDAR](https://arxiv.org/abs/2604.01645)：面向 Java 漏洞发现的 sink-centric agent harness。核心思想是结合 CWE 特定 sink 扫描、LLM 辅助静态过滤、探索/利用双 agent 与覆盖引导 fuzzing，使 agent 能定向触达 sink 调用并生成 proof-of-concept exploit。
-- [ClearAgent](https://doi.org/10.1145/3759425.3763397)：面向漏洞检测的 agentic 二进制分析 harness。核心思想：把二进制检查、证据抽取、推理和漏洞判断组织成使用工具的分析流程。
+- [RuleForge](https://arxiv.org/abs/2604.01977)：自动生成并验证 Web 漏洞检测规则。核心思想：把 LLM 规则合成与规模化验证结合起来，使安全 agent 产出可用检测逻辑，而不是自由文本报告。
+- [Automating Cloud Security and Forensics Through a Secure-by-Design Generative AI Framework](https://arxiv.org/abs/2604.03912)：通过安全设计的生成式 AI 框架自动化云安全与取证。
+- [A Multi-Agent Framework for Automated Exploit Generation with Constraint-Guided Comprehension and Reflection](https://arxiv.org/abs/2604.05130)：把 exploit 生成拆成理解、约束推理、构造和反思等角色，使生成的 exploit 能被迭代修正。
+- [MA-IDS: Multi-Agent RAG Framework for IoT Network Intrusion Detection with an Experience Library](https://arxiv.org/abs/2604.05458)：将多 agent RAG 与 experience library 用于 IoT 入侵检测，在告警推理时复用历史调查案例。
+- [From Incomplete Architecture to Quantified Risk: Multimodal LLM-Driven Security Assessment for Cyber-Physical Systems](https://arxiv.org/abs/2604.05674)：用多模态 LLM 对不完整的网络物理系统架构做安全评估。
+- [Argus: Reorchestrating Static Analysis via a Multi-Agent Ensemble for Full-Chain Security Vulnerability Detection](https://arxiv.org/abs/2604.06633)：通过多 agent ensemble 重新编排静态分析，追踪完整漏洞链而不是孤立可疑函数。
+- [ARuleCon: Agentic Security Rule Conversion](https://arxiv.org/abs/2604.06762)：用 agentic 流程转换安全规则格式，重点是在转换过程中保持规则语义。
+- [VulGD: A LLM-Powered Dynamic Open-Access Vulnerability Graph Database](https://arxiv.org/abs/2604.06967)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“VulGD: A LLM-Powered Dynamic Open-Access Vulnerability Graph Database”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Program Analysis Guided PoC Agent](https://arxiv.org/abs/2604.07624)：用程序分析指导 proof-of-concept 生成。核心思想：把 exploit 构造建立在目标程序的静态与动态证据上。
+- [VCAO](https://arxiv.org/abs/2604.08291)：面向 OS 漏洞发现的 verifier-centered agentic orchestration 框架；核心思想是把验证置于漏洞搜索工作流中心。
+- [Towards Automated Pentesting with Large Language Models](https://arxiv.org/abs/2604.11772)：把自动化渗透测试组织为 LLM 引导的侦察、漏洞推理、命令执行和目标环境反馈循环。
+- [V2E: Validating Smart Contract Vulnerabilities through Profit-driven Exploit Generation and Execution](https://arxiv.org/abs/2604.13611)：通过生成并执行以获利为目标的智能合约 exploit 来验证漏洞，以可利用性作为确认信号。
+- [Feedback-Driven Execution for LLM-Based Binary Analysis](https://arxiv.org/abs/2604.15136)：为 LLM 辅助二进制分析提供反馈驱动执行循环。核心思想：利用工具反馈修正逆向分析决策。
+- [CSLE](https://arxiv.org/abs/2604.15590)：提供面向自治安全管理的强化学习平台。核心思想：用可复用仿真环境和反馈循环承载网络防御决策。
+- [AgentGuard: A Multi-Agent Framework for Robust Package Confusion Detection via Hybrid Search and Metadata-Content Fusion](https://arxiv.org/abs/2604.16309)：通过 hybrid search 与 metadata-content fusion 协调包证据，检测 package confusion 攻击。
 - [RAVEN](https://arxiv.org/abs/2604.17948)：面向源代码与二进制程序内存破坏分析的检索增强漏洞探索网络。核心思路是把检索、程序证据和面向漏洞利用的分析循环结合起来，服务于安全智能体工作流。
+- [Towards Optimal Agentic Architectures for Offensive Security Tasks](https://arxiv.org/abs/2604.18718)：研究 offensive security 任务的 agentic architecture。核心思想是比较和设计适合发现、利用与验证流程的编排方式。
+- [Security Is Relative: Training-Free Vulnerability Detection via Multi-Agent Behavioral Contract Synthesis](https://arxiv.org/abs/2604.19012)：为无训练漏洞检测合成项目特定行为契约，把安全判断锚定到具体软件上下文。
+- [Strategic Heterogeneous Multi-Agent Architecture](https://arxiv.org/abs/2604.21282)：面向代码漏洞检测的成本感知异构多 agent 架构；核心思想是按安全分析角色分工并协同发现漏洞。
+- [Automation-Exploit](https://arxiv.org/abs/2604.22427)：面向自适应进攻安全的多 agent 框架，并用数字孪生缓释风险。核心思想：在镜像环境中约束风险，同时协调漏洞利用流程。
+- [AsmRAG: LLM-Driven Malware Detection by Retrieving Functionally Similar Assembly Code](https://arxiv.org/abs/2604.23196)：检索功能相似的汇编代码来支撑 LLM 恶意软件检测，把判断锚定在低层行为证据上。
+- [Constraint-Guided Multi-Agent Decompilation](https://arxiv.org/abs/2604.23940)：通过多 agent 反编译恢复可执行源代码。核心思想：用约束与修复循环使恢复代码可编译、可运行。
+- [MAS-SZZ: Multi-Agentic SZZ Algorithm for Vulnerability-Inducing Commit Identification](https://arxiv.org/abs/2604.24398)：先总结 CVE 根因，再用 step-forward prompting 定位补丁 hunks 中的漏洞相关语句，并沿仓库历史回溯漏洞引入提交。
+- [Towards Agentic Investigation of Security Alerts](https://arxiv.org/abs/2604.25846)：让 LLM 组件选择受约束的 Suricata SQL 与 grep 查询、抽取原始日志证据，并给出早期 SOC 告警调查结论。
+- [Toward Autonomous SOC Operations: End-to-End LLM Framework for Threat Detection, Query Generation, and Resolution in Security Operations](https://arxiv.org/abs/2604.27321)：结合 LLM ensemble 检测、受语法约束的 SIEM 查询生成、检索支撑的证据收集和处置建议，用于 SOC 分诊。
+- [AgenticVM](https://arxiv.org/abs/2605.01739)：把 agentic workflow 用于自适应软件漏洞管理，连接漏洞 triage、修复与监控。
 - [APIOT](https://arxiv.org/abs/2605.02346)：面向裸金属工业 OT 网络的自治 purple-teaming harness。核心思想是为 Modbus/TCP 与 CoAP 设备设计协议级 action space 与运行时控制，使 LLM agent 能在没有 shell 或文件系统假设的环境中完成 discovery、exploitation、patching 与 verification。
+- [Stable Agentic Control](https://arxiv.org/abs/2605.03034)：面向自主网络防御的 tool-mediated LLM architecture；核心思想是用确定性安全工具、有限动作目录和形式化稳定性证书约束 LLM agents。
+- [Generating Proof-of-Vulnerability Tests to Help Enhance the Security of Complex Software](https://arxiv.org/abs/2605.03956)：为可达库漏洞生成 proof-of-vulnerability tests。核心思路是用调用路径分析、示例测试、代码上下文、执行反馈与 grounded assessment 指导 coding agent，向开发者提供可执行攻击证据。
+- [Root-Cause-Driven Automated Vulnerability Repair](https://arxiv.org/abs/2605.04251)：提出 Kumushi 漏洞修复 agent，结合动态 fault localization、证据加权排序和两级补丁质量指标，用来区分真正 root-cause 修复与只通过 oracle 的表面补丁。
 - [SLYP](https://arxiv.org/abs/2605.05000)：面向 Windows COM 漏洞推理的 agentic 二进制分析 harness。核心思想：把二进制探索、COM 元数据和调试器反馈封装为工具，使 agent 能从竞态漏洞发现推进到经调试验证的 PoC 生成。
 - [Patch2Vuln](https://arxiv.org/abs/2605.06601)：面向 Linux 发行版二进制补丁的 Agentic 漏洞重建 harness。核心思路是比较新旧 ELF 包、排序变更函数、构建证据档案，并让本地 Agent 基于二进制证据生成有边界的审计与验证计划。
-- [ALUSKORT](https://doi.org/10.12732/ijam.v38i5s.328)：面向自主安全运营的分层多 agent 认知架构。核心思想：把确定性 guardrail 与分阶段 LLM 推理 agent 结合起来，自动化 SOC 事件调查并产出面向证据的调查材料。
+- [Securing the Dark Matter: A Semantic-Enhanced Neuro-Symbolic Framework for Supply Chain Analysis of Opaque Industrial Software](https://arxiv.org/abs/2605.07737)：用语义增强与神经符号分析检查不透明工业软件供应链，适合源码或来源信息有限的场景。
+- [Quantifiable Uncertainty: A Stochastic Consensus Multi-Agent RAG Framework for Robust Malware Detection](https://arxiv.org/abs/2605.08385)：检索决策关键函数的汇编与伪代码证据，再用随机 agent 共识计算证据强度和不确定性后给出恶意软件判断。
+- [CAESAR](https://arxiv.org/abs/2605.08763)：用于受控 intrusion-style 任务的协同多 agent framework；核心思想是用角色边界、轮次预算和验证门控分离证据抽取、规划、执行、验证与知识提升。
+- [AuditGPT](https://doi.org/10.1109/icassp55912.2026.11463116)：用于增强静态分析的多 agent 框架。核心思想：围绕代码审计证据、疑似问题和验证过程协调多个 agent，降低静态分析 triage 成本。
+- [CHAINTRIX](https://arxiv.org/abs/2605.09350)：把 Solidity 解析为跨合约交互模型，合并确定性 signal engines 与并行 LLM 审计流水线，并用结构检查、符号执行和 fuzzing 过滤发现。
 - [Agentic Fuzzing](https://arxiv.org/abs/2605.10074)：把 fuzzing 表述为 Agent 推理工作流，用于传统覆盖反馈和模式匹配较弱的逻辑漏洞发现。
+- [When Prompts Become Payloads: A Framework for Mitigating SQL Injection Attacks in Large Language Model-Driven Applications](https://arxiv.org/abs/2605.10176)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“When Prompts Become Payloads: A Framework for Mitigating SQL Injection Attacks in Large Language Model-Driven Applications”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [HySecTwin: A Knowledge-Driven Digital Twin Framework Augmented with Hybrid Reasoning for Cyber-Physical Systems](https://arxiv.org/abs/2605.11682)：为网络物理系统构建知识驱动数字孪生，并用 hybrid reasoning 模拟和分析安全状态。
+- [FuzzAgent](https://arxiv.org/abs/2605.14431)：用于 evolutionary library fuzzing 的多 agent harness；核心思想是自动处理环境搭建、API 约束感知的 fuzz harness 生成与崩溃归因，让 agent 面向库漏洞发现而不只是生成测试。
 - [Veritas](https://arxiv.org/abs/2605.15097)：面向二进制内存破坏漏洞检测的语义扎根智能体框架。核心思想：结合静态切片、基于反编译代码和 IR 证据的双视角 LLM 推理，以及多智能体调试器验证来检查与利用相关的假设。
+- [uGen: An Agentic Framework for Generating Microarchitectural Attack PoCs](https://arxiv.org/abs/2605.15503)：用于生成微架构攻击 PoC 的 LLM-driven 框架。核心思路是识别特定攻击知识缺口，并迭代合成可执行 PoC 以支持漏洞评估。
+- [Context, Reasoning, and Hierarchy: A Cost-Performance Study of Compound LLM Agent Design in an Adversarial POMDP](https://arxiv.org/abs/2605.16205)：研究对抗性网络防御 POMDP 中的 compound LLM-agent 设计。核心思路是在 CybORG CAGE-2 中以 token 成本为单位比较状态抽象、deliberation tools 与层级分解。
+- [PenAgent](https://doi.org/10.1109/ISCAIT69154.2026.11477307)：检索增强的多 agent 自动渗透测试框架。核心思想是把外部渗透测试知识接入协作式安全 agent，使侦察与利用决策不只依赖模型参数记忆。
+- [NIDS-beta](https://doi.org/10.3389/frai.2026.1746661)：把 transformer 语义嵌入与统计流量特征结合用于网络入侵检测，并通过 attention 与 SHAP 解释让告警携带上下文和校准证据。
+- [CoAnalyst](https://doi.org/10.1109/WFCS67029.2026.11511585)：为工业控制系统提供 agentic LLM 网络安全分析员，处理 ICS 证据分析与响应流程。
+- [NAVIGATE: Multi-Agent Graph-Based Vulnerability Detection with Adversarial Severity Assessment](https://doi.org/10.1109/gaiis69281.2026.11519278)：协调图式漏洞检测 agent 与对抗式严重性评估，使代码风险发现同时经过结构证据和风险证据判断。
+- [A Retrieval-Augmented Generation System for Automated Functional Safety Analysis of AUTOSAR Basic Software Module Dependencies](https://doi.org/10.14569/ijacsa.2026.0170396)：用 RAG 辅助功能安全工程师分析 AUTOSAR 基础软件模块依赖，是相邻的安全分析流程而非网络利用 harness。
+- [LLM Agent-Based Simulations for Phishing Email Detection in Various Multi-Agent Sizes](https://doi.org/10.1109/acdsa67686.2026.11467835)：用不同规模的多 agent 群体模拟钓鱼邮件检测，研究 agent 协作规模如何影响检测行为。
+- [Automating Organizational Cyber Security Policy Compliance Against Industry Standards Using Agentic AI](https://doi.org/10.1109/isdfs69419.2026.11458951)：通过 agentic review loop 比对组织安全控制与行业标准，自动化政策合规检查。
+- [Agentic AI-Driven Machine Learning Framework for Proactive Cyber-Attack Detection and Early Threat Warning Systems](https://doi.org/10.1109/icsedis68157.2026.11518252)：把 agentic 协调与机器学习检测器结合，在事件完全展开前给出网络攻击预警。
+- [Semantic Chunking and Consensus Filtering for Structured Extraction of Cyber Threat Intelligence](https://doi.org/10.1109/icaic67076.2026.11395811)：通过语义切块和共识过滤抽取 CTI，提高结构化威胁情报质量。
+- [Trinity: A Neuro-Symbolic Multi-Agent Framework for Stateful Network Penetration Testing](https://doi.org/10.1109/ictmim68190.2026.11507673)：用神经符号多 agent 协调执行 stateful network penetration testing，在侦察和利用之间保持目标状态。
+- [Agentic LLM-Driven Cyber Threat Hunting Using MITRE ATT&CK Knowledge Mapping and Graph-Based Evidence Correlation](https://doi.org/10.1109/icnwc68145.2026.11518378)：在 LLM 驱动威胁狩猎中把证据映射到 MITRE ATT&CK 技术，并用图式证据相关性支撑调查。
+- [CT-RAG: A Deep Retrieval-Augmented Generation Framework for Automated Cyber Threat Intelligence and Severity Assessment](https://doi.org/10.1109/idciot67589.2026.11455691)：用 deep RAG 从威胁证据中自动抽取 CTI 并评估严重度。
+- [LLM-Powered Autonomous Security Agents for Next-Generation Cyber Defence](https://doi.org/10.1109/icaic67076.2026.11395792)：描述把网络防御中的检测、分析和响应决策接成操作闭环的自主安全 agent。
+- [AI-Driven Detection of AI-Generated Cyber Attacks: A Framework for Defending Against Generative Adversarial Threats](https://doi.org/10.1109/icaic67076.2026.11395730)：聚焦检测 AI 生成的网络攻击工件，更接近防御检测器而非利用 harness。
+- [LMDAHoney: Agentic-Language Model Driven Adaptive Honeypot for Advanced Cyber Deception](https://doi.org/10.1109/aiei69164.2026.11497584)：使用语言模型驱动的蜜罐 agent，根据攻击者探测动态调整网络欺骗交互。
+- [MM-AttacKG: A multimodal approach to attack graph construction with large language models](https://doi.org/10.1016/j.knosys.2026.115483)：把多模态攻击证据与 LLM 推理融合，用于构建安全分析所需的攻击图。
+- [Reactive cyber deception: Stealth-based adaptive redirection to on-demand honeypots with AI-driven data generation](https://doi.org/10.1016/j.comnet.2026.112203)：将可疑活动重定向到按需蜜罐，并用 AI 生成数据维持欺骗环境的可信度。
+- [AutoSOC Cyber Analyst (ASOC-CA): Using AI to Automate SOC Tier 1 & 2 Activities](https://doi.org/10.1109/ccwc67433.2026.11393893)：用 AI 自动化 SOC 一线和二线分析，适合补充具体网络安全智能体操作。
+- [Towards generic defensive cyber agents: Leveraging large language models and RAG-based few-shot learning](https://doi.org/10.1016/j.comnet.2026.112349)：用 LLM 与 RAG 少样本学习构建通用防御型网络安全智能体。
+- [AutoWAFuzzer: An Adaptive Framework for Web Application Firewall Penetration Testing with Multi-agent System and RAG-enabled Reinforcement Learning](https://doi.org/10.1016/j.eswa.2026.132546)：结合多智能体、RAG 与强化学习进行 Web 应用防火墙渗透测试。
+- [Agent-based decision system for proactive cybersecurity strategies](https://doi.org/10.1080/12460125.2026.2658199)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Agent-based decision system for proactive cybersecurity strategies”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AI-Driven Penetration Testing for ARM Systems: Experimental Evaluation and Deployment Framework Across Four Paradigms](https://doi.org/10.1109/access.2026.3687448)：评估面向 ARM 系统的 AI 驱动渗透测试框架。
+- [MRE-Guard: A RAG-Based Multi-Agent Framework for Phishing Detection](https://doi.org/10.1109/etai68332.2026.11485151)：结合 RAG 与多智能体推理进行钓鱼检测。
+- [ZT-ICAS: A Zero-Trust Integrity-Constrained Framework for Agentic Vulnerability Scanning](https://doi.org/10.1109/icaic67076.2026.11395688)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [TrustNet: A Hybrid Machine Learning and LLM-Based Multi-Agent System for Scam Website Detection](https://doi.org/10.1109/icaic67076.2026.11395765)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“TrustNet: A Hybrid Machine Learning and LLM-Based Multi-Agent System for Scam Website Detection”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Event-Driven Agentic SOC (ED-ASOC): Supervisor-Based LLM Framework for Dynamic Incident Response and SOAR Orchestration](https://doi.org/10.1109/isdfs69419.2026.11458922)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Event-Driven Agentic SOC (ED-ASOC): Supervisor-Based LLM Framework for Dynamic Incident Response and SOAR Orchestration”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [LLM-Augmented Agentic Consensus Swarms for Autonomous Edge Security](https://doi.org/10.1109/isdfs69419.2026.11459110)：用 LLM 增强的一致性群体实现自主边缘安全。
+- [Agentic Correlation Engine: Dynamic Incident Generation Based on Knowledge Graphs](https://doi.org/10.1109/southeastcon63549.2026.11476716)：基于知识图谱动态生成安全事件。
+- [A Sandbox-Based Security Vulnerability Detection Platform for Large Model Applications](https://doi.org/10.12677/csa.2026.163093)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [SECURITY-AS-CODE APPROACH FOR AUTOMATING PCI DSS COMPLIANCE USING AUTONOMOUS AGENTS BASED ON LARGE LANGUAGE MODELS](https://doi.org/10.28925/2663-4023.2026.32.1187)：使用自主 LLM 智能体自动化 PCI DSS 合规。
+- [LIVA: A Multi-Agent LLM-Assisted System for IoT Vulnerability Analysis](https://doi.org/10.1109/tdsc.2026.3665343)：面向 IoT 漏洞分析的多智能体 LLM 辅助系统。核心思路是围绕 IoT 证据协调专门分析 agent，把漏洞推理组织成可复用的安全工作流。
+- [Task-Driven SOC Analysis](https://doi.org/10.1049/cit2.70138)：面向 LLM 安全运营分析的任务驱动框架。核心思想：把模糊 SOC 查询转化为可验证分析步骤和证据支撑结论。
+- [ClearAgent](https://doi.org/10.1145/3759425.3763397)：面向漏洞检测的 agentic 二进制分析 harness。核心思想：把二进制检查、证据抽取、推理和漏洞判断组织成使用工具的分析流程。
+- [ALUSKORT](https://doi.org/10.12732/ijam.v38i5s.328)：面向自主安全运营的分层多 agent 认知架构。核心思想：把确定性 guardrail 与分阶段 LLM 推理 agent 结合起来，自动化 SOC 事件调查并产出面向证据的调查材料。
 - CyberGym 的执行栈、SEC-bench 的漏洞仓库 harness、ExploitBench 的分阶段任务环境，是这里最相关的 benchmark-side harness 参考。可复用模式是 `侦察 -> 假设 -> exploit 或 patch 尝试 -> verifier-owned evidence -> 重试`，同时要求严格 sandbox 与审计日志。
 - [CurriculumPT](https://doi.org/10.3390/app15169096)：带 curriculum-guided task scheduling 的 multi-agent autonomous penetration-testing harness。核心思想是通过分阶段任务选择组织侦察、漏洞利用和后续步骤，使安全 agent 更系统地完成授权渗透测试流程。
 - [Four-Layer AI Agent Architecture for Web Application Security Testing](https://doi.org/10.48084/etasr.16879)：结合 LLM 推理、检测引擎、ReAct 式自主测试与人工验证的 Web 安全测试 harness。核心思想：把常规 Web 漏洞评估组织为分层 agent 自动化流程，并在 OWASP WebGoat、DVWA 与自建环境上验证。
 - [Autosecagent](https://doi.org/10.1007/s11227-026-08439-z)：结合递归记忆、实时检索和工具化安全推理，支持迭代式授权渗透测试。
+- [LLM-JDFuzz](https://doi.org/10.3390/electronics15050954)：用 LLM 辅助自动生成 Java 反序列化 payload。核心思想：把 exploit payload 构造转成可复用的安全测试流程。
+- [LLM Multi-Agent CTF Framework](https://doi.org/10.3390/app15137159)：用 LLM agents 解决 Capture-the-Flag 竞赛题的 cybersecurity harness。核心思想：围绕题目分析、工具使用和解法迭代协调专门角色。
+- [Agent4Vul](https://doi.org/10.1007/s11432-024-4402-2)：用多模态 LLM agent 检查智能合约代码和相关工件，然后输出漏洞发现。
+- [LLM-Agent Network Asset Search with FOFA](https://doi.org/10.1145/3729706.3729783)：把 LLM agent 与 FOFA 搜索结合，形成面向网络资产侦察的查询、筛选和解释流程。
+- [SmartAudiTor](https://doi.org/10.1117/12.3103304)： 结合 LLM 引导与符号执行验证，用于智能合约漏洞审计。
+- [Enhancing API Security Testing Against BOLA and Authentication Vulnerabilities Through an LLM-Enhanced Framework](https://doi.org/10.1007/978-3-031-75010-6_23)：使用 LLM 增强框架测试 API 中的 BOLA 与认证漏洞。
+- [Maltracker: A Fine-Grained NPM Malware Tracker Copiloted by LLM-Enhanced Dataset](https://doi.org/10.1145/3650212.3680397)：用细粒度标签和 LLM 增强数据集追踪恶意 npm 包，更接近恶意软件情报基础设施而非主动 agent 循环。
+- [HMF: Enhancing reentrancy vulnerability detection and repair with a hybrid model framework](https://doi.org/10.1007/s10515-025-00546-0)：通过 hybrid model framework 同时处理智能合约 reentrancy 漏洞检测与修复。
+- [LLM-powered threat intelligence: a retrieval-augmented generation approach for cyber attack investigation](https://doi.org/10.7717/peerj-cs.3371)：用检索增强生成调查网络攻击，把威胁情报回答锚定在检索到的证据上。
+- [AutoPen: Towards Autonomous Penetration Testing Using LLM-Powered Agents](https://doi.org/10.1145/3772886.3772899)：用 LLM-powered agents 自动化渗透测试，规划侦察、选择测试并解释目标反馈。
+- [AI-driven intrusion detection and mitigation framework for software-defined IoT networks](https://doi.org/10.1007/s12083-025-02151-0)：在软件定义 IoT 网络中检测入侵，并把检测结果连接到缓解动作。
+- [VulPelican: An LLM and Interactive Static Analysis Tool Based Vulnerability Detection Framework](https://doi.org/10.1007/978-981-96-9872-1_42)：把 LLM 与交互式静态分析工具结合，使漏洞假设能用程序分析证据核验。
+- [Towards sustainable grid security: a lightweight adaptive framework for power system software vulnerability detection](https://doi.org/10.1186/s44147-026-00926-7)：描述面向电力系统软件漏洞的轻量自适应检测器，是 grid-security 分析流程。
+- [Automated Vulnerability Management in DevSecOps Pipelines for SaaS Platforms: A Practical Framework for SAST, DAST, Dependency Scanning, and Controlled Remediation](https://doi.org/10.71097/ijaidr.v15.i1.1904)：在 SaaS DevSecOps 管线中串联 SAST、DAST、依赖扫描和受控修复。
+- [Investigation of Cybersecurity Bottlenecks of AI Agents in Industrial Automation](https://doi.org/10.3390/computers14110456)：主要是研究条目；它识别工业自动化中 agentic AI 系统的网络安全瓶颈与攻击面。
+- [DevSecOps Sentinel: GenAI-Driven Agentic Workflows for Comprehensive Supply Chain Security](https://doi.org/10.5539/cis.v18n1p39)：用 GenAI-driven agentic workflows 监控 DevSecOps 证据和修复步骤中的软件供应链风险。
+- [An AI Agent Workflow for Generating Contextual Cybersecurity Hints](https://doi.org/10.53735/cisse.v13i1.220)：通过 AI-agent workflow 生成上下文网络安全提示，主要服务于引导式学习或挑战支持。
+- [Smart Contracts as Semantic Signalling for AI Agents on Blockchains](https://doi.org/10.1145/3793638.3793651)：把智能合约视作链上 agent 可解释的语义信号，是相邻协同机制而非漏洞分析 harness。
+- [OSmartPro: a large language model-assisted option fuzzing approach](https://doi.org/10.1186/s42400-026-00557-8)：用 LLM 理解程序选项并引导 option-aware fuzzing，寻找能触发关键行为的选项组合。
+- [Cloud Security Automation Through Symmetry: Threat Detection and Response](https://doi.org/10.3390/sym17060859)：研究云安全自动化中的威胁检测与响应，强调检测信号和响应动作之间的操作对称性。
+- [Multimodal Web Agents for Automated (Dark) Web Navigation](https://doi.org/10.5220/0013171600003890)：用多模态 Web agent 自动导航明网和暗网页面，可作为网络调查中的侦察与采集 harness。
+- [VP-IAFSP: Vulnerability Prediction Using Information Augmented Few-Shot Prompting with Open Source LLMs](https://doi.org/10.5220/0013346600003928)：用信息增强 few-shot prompting 和开源 LLM 做漏洞预测，更接近 prompt-based detection。
+- [ANTEATER: A Filter-then-Scrutinize Architecture for End-to-End Attack Investigation](https://doi.org/10.1145/3802012)：先过滤大规模审计日志，再细查选中证据，把攻击调查组织成分阶段证据缩减 pipeline。
+- [With Power comes Responsibility: Attack Synthesis for Industrial Control Systems using Large Language Models](https://doi.org/10.1145/3815116)：用 LLM 合成工业控制系统攻击场景，可作为 ICS 安全的对抗性测试生成流程。
+- [Artificial intelligence driven multi agent framework for adaptive cyber attack simulation and automated incident response in cyber range environments](https://doi.org/10.1038/s41598-026-45937-9)：在 cyber range 中协调攻击模拟 agent 与自动事件响应 agent。
+- [From Anomaly to Attack Path: LLM-Based Network Traffic Investigation for APT Detection](https://doi.org/10.1145/3803525.3804991)：把异常网络流量证据转成假设的 APT 攻击路径，并用 LLM 辅助调查。
+- [Automated Vulnerability-Focused Code Reviews](https://doi.org/10.1145/3696630.3731467)：围绕漏洞证据自动化代码审查，优先关注安全相关代码路径和发现。
+- [RDBAlert: An AI-Driven Automated Tool for Effective Identification of Victims’ Personal Information in Ransomware Data Breaches](https://doi.org/10.3390/electronics14214327)：在勒索软件泄露数据中识别受害者个人信息，以便通知或分诊受影响个人。
+- [Automated Threat Modeling using Artificial Intelligence on User Stories within the SDLC to Generate Security Tasks](https://doi.org/10.34190/iccws.21.1.4498)：把 SDLC 用户故事转换为威胁模型要素和可执行安全任务，供开发团队跟进。
+- [SmartAuditFlow: A Dynamic Plan-Execute Framework for Advanced Smart Contract Security Analysis](https://doi.org/10.1145/3785364)：用于智能合约安全分析的动态 plan-execute 框架；核心思想是在 agentic cyber 工作流中编排审计步骤、证据收集和漏洞推理。
+- [MAFSID: Multi‐Agent Few‐Shot Intrusion Detection for VANETs Through Rapid Collaborative Learning](https://doi.org/10.1002/ett.70285)：面向网络安全 Agent 与安全评测提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [ELISAR: A Multi-Agent cybersecurity framework integrating retrieval-augmented generation for Blue, Red, and GRC operations](https://doi.org/10.1007/s11280-025-01393-5)：将 RAG 与多智能体用于蓝队、红队和 GRC 网络安全运营。
+- [AutoReview: An LLM-based Multi-Agent System for Security Issue-Oriented Code Review](https://doi.org/10.1145/3696630.3728618)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 An LLM-based Multi-Agent System for Security Issue-Oriented Code Review 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Cyber Defense through Agentic AI Enabled Automation: An Approach to Reduce Cyber Risk](https://doi.org/10.1145/3716489.3728439)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 An Approach to Reduce Cyber Risk 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Multi-Agent AI Framework for Threat Mitigation and Resilience in Machine Learning Systems](https://doi.org/10.1145/3780095)：面向网络安全智能体与安全评测的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [CoGuard: A Large Language Model-Based Multi-Agent System for Autonomous Security Policy Enforcement in Cloud Environments](https://doi.org/10.1145/3787279.3787301)：一个面向云安全策略执行的多 Agent LLM 系统；核心思路是协调 Agent 检查云环境并自主执行安全策略。
+- [CTI-Thinker: an LLM-driven system for CTI knowledge graph construction and attack reasoning](https://doi.org/10.1186/s42400-025-00505-y)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 an LLM-driven system for CTI knowledge graph construction and attack reasoning 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [MACD: Multi-Agent Collaborative Approach for Cybersecurity Defense Strategy Generation](https://doi.org/10.3390/info17040370)：使用多智能体协作生成网络安全防御策略。
+- [A Zero-Touch Vulnerability Remediation Framework Based on OpenVAS, Threat Intelligence, and RAG-Enhanced Large Language Models](https://doi.org/10.3390/math14061072)：面向网络安全智能体与评测的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“A Zero-Touch Vulnerability Remediation Framework Based on OpenVAS, Threat Intelligence, and RAG-Enhanced Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Large Language Model-Powered Protected Interface Evasion: Automated Discovery of Broken Access Control Vulnerabilities in Internet of Things Devices](https://doi.org/10.3390/s25092913)：面向网络安全智能体与安全任务的智能体框架或运行时。核心思想：把 Automated Discovery of Broken Access Control Vulnerabilities in Internet of Things Devices 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [ReAct-Driven SOC Agent with Integrated Detection Engineering for AI-Enhanced Autonomous Alert Handling](https://doi.org/10.52783/jisem.v10i53s.10967)：面向网络安全智能体与安全评测的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Can You Walk Me Through It? Explainable SMS Phishing Detection using LLM-based Agents]()：用 LLM 智能体进行可解释 SMS 钓鱼检测。
+- [LSAST: Enhancing Cybersecurity Through LLM-Supported Static Application Security Testing](https://doi.org/10.1007/978-3-031-92882-6_12)：把 LLM 引入静态应用安全测试，使漏洞分流与解释成为可复用的安全分析流程。
+- [cyberSPADE: A Hierarchical Multi-Agent Architecture for Coordinated Cyberdefense](https://doi.org/10.3390/jcp6010028)：基于 SPADE 的层级多智能体网络防御架构。核心思路是通过显式低延迟通信协调监控、主机、网络、异常检测、取证与恢复等防御 agent。

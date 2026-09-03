@@ -1,6 +1,95 @@
 # 2.8.4 Model
 
+- [InterMat: Accelerating Band Offset Prediction in Semiconductor Interfaces with DFT and Deep Learning](https://arxiv.org/abs/2401.02021)：把 DFT 表面与界面计算同图神经网络结合，用于在大规模异质结候选空间中预测半导体能带边缘和 band offset。
+- [DiffDA: a diffusion model for weather-scale data assimilation](https://arxiv.org/abs/2401.05932)：把 GraphCast 改造成去噪扩散资料同化模型，将稀疏观测与预报状态融合，生成 0.25 度分辨率的全球大气初始场。
+- [Long-Term Typhoon Trajectory Prediction: A Physics-Conditioned Approach Without Reanalysis Data](https://arxiv.org/abs/2401.15726)：补充一个面向未来预测的模型条目，关注physics-conditioned long-term typhoon trajectory prediction。
+- [TrackGPT - A generative pre-trained transformer for cross-domain entity trajectory forecasting](https://arxiv.org/abs/2402.00066)：用 GPT 式序列模型做领域无关轨迹预测，仅依赖位置和时间等少量特征，并在海事与空中目标数据上同深度学习基线比较。
+- [AutoTimes: Autoregressive Time Series Forecasters via Large Language Models](https://arxiv.org/abs/2402.02370)：把 decoder-only LLM 重用为自回归时间序列预测器，将序列投影到 token embedding 空间，并通过时间戳 prompt 支持任意步长生成和上下文内预测。
+- [XiHe: A Data-Driven Model for Global Ocean Eddy-Resolving Forecasting](https://arxiv.org/abs/2402.02995)：提出 1/12 度全球海洋预测模型，使用分层 Transformer、海陆掩码和海洋专用模块来建模局地环流与遥相关。
+- [Approaching Human-Level Forecasting with Language Models](https://arxiv.org/abs/2402.18563)：构建检索增强语言模型预测系统，自动搜索证据、生成预测并聚合判断，在竞技预测平台问题上接近人类 crowd aggregate。
+- [The pitfalls of next-token prediction](https://arxiv.org/abs/2403.06963)：指出 teacher-forced next-token 训练会在简单规划式未来 token 任务上失效，并提出 teacherless 多 token 目标作为缓解方案。
+- [Is Mamba Effective for Time Series Forecasting?](https://arxiv.org/abs/2403.11144)：提出关于 Is Mamba Effective for Time Series Forecasting? 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [TFB: Towards Comprehensive and Fair Benchmarking of Time Series Forecasting Methods](https://arxiv.org/abs/2403.20150)：提出关于 TFB: Towards Comprehensive and Fair Benchmarking of Time Series Forecasting Methods 的模型侧工作，契合本仓库对训练、架构、后训练、验证器或合成数据路线的覆盖。
+- [Towards explainable traffic flow prediction with large language models](https://arxiv.org/abs/2404.02937)：把多模态交通观测转成语言指令并微调 LLM，使模型同时输出交通流预测和自然语言解释。
+- [A Unified Replay-Based Continuous Learning Framework for Spatio-Temporal Prediction on Streaming Data](https://arxiv.org/abs/2404.14999)：用 replay buffer、时空 mixup 和 STSimSiam 表征保持来缓解流式时空预测中的灾难性遗忘。
+- [TKAN: Temporal Kolmogorov-Arnold Networks](https://arxiv.org/abs/2405.07344)：把 recurrent Kolmogorov-Arnold layer 与 LSTM 式记忆管理结合，用于高效多步时间序列预测。
+- [Kolmogorov-Arnold Networks (KANs) for Time Series Analysis](https://arxiv.org/abs/2405.08790)：将 spline 参数化的 KAN 用于卫星流量预测，强调自适应激活函数以及比 MLP 更少的可学习参数。
+- [TimeCMA: Towards LLM-Empowered Multivariate Time Series Forecasting via Cross-Modality Alignment](https://arxiv.org/abs/2406.01638)：将时间序列数据与语言模型表征对齐，用于多变量预测。
+- [A Temporal Kolmogorov-Arnold Transformer for Time Series Forecasting](https://arxiv.org/abs/2406.02486)：构建基于 TKAN 的 encoder-decoder Transformer，将 Kolmogorov-Arnold 表示与 self-attention 结合，用于可解释多变量预测。
+- [Kolmogorov-Arnold Networks for Time Series: Bridging Predictive Power and Interpretability](https://arxiv.org/abs/2406.02496)：提出用于概念漂移检测和符号回归解释的 T-KAN，以及面向多变量预测的 MT-KAN。
+- [C-Mamba: Channel Correlation Enhanced State Space Models for Multivariate Time Series Forecasting](https://arxiv.org/abs/2406.05316)：在 Mamba 中加入数据依赖的通道相关建模，使状态空间预测器能捕捉多变量序列的跨通道依赖。
+- [Text2TimeSeries: Enhancing Financial Forecasting through Time Series Prediction Updates with Event-Driven Insights from Large Language Models](https://arxiv.org/abs/2407.03689)：利用 LLM 从事件文本中提取的洞察更新数值金融预测，把市场事件同实值时间序列变化关联起来。
+- [Leveraging Large Language Models for Integrated Satellite-Aerial-Terrestrial Networks: Recent Advances and Future Directions](https://arxiv.org/abs/2407.04581)：综述 LLM 如何支持星空地一体网络中的预测式网络管理，包括资源分配、路由和安全决策。
+- [ViTime: Foundation Model for Time Series Forecasting Powered by Vision Intelligence](https://arxiv.org/abs/2407.07311)：把时间序列重构为图像式度量空间，并训练视觉驱动的 foundation model，同时支持点预测和概率预测。
+- [Adaptive Prediction Ensemble: Improving Out-of-Distribution Generalization of Motion Forecasting](https://arxiv.org/abs/2407.09475)：通过学习到的路由函数组合深度轨迹预测器和规则专家，提升 Waymo 与 Argoverse 数据上的零样本 OOD 运动预测。
+- [OpenEP: Open-Ended Future Event Prediction](https://arxiv.org/abs/2408.06578)：定义开放式未来事件预测并构建 OpenEPBench，让模型围绕地点、时间、发展、影响和响应等问题生成灵活结果。
+- [LIMP: Large Language Model Enhanced Intent-aware Mobility Prediction](https://arxiv.org/abs/2408.12832)：用 Analyze-Abstract-Infer LLM 流程和蒸馏来推断出行意图，再把意图表示接入可扩展的时空移动预测模型。
+- [Elucidating the Design Choice of Probability Paths in Flow Matching for Forecasting](https://arxiv.org/abs/2410.03229)：指出 latent flow-matching 预测器对 probability path 设计高度敏感，并提出能改善收敛和少步概率推理的 path model。
+- [VEDIT: Latent Prediction Architecture For Procedural Video Representation Learning](https://arxiv.org/abs/2410.03478)：在冻结视觉编码器的 latent space 中预测程序性视频的未来步骤，避免像素级预训练并支持预测与规划。
+- [Learning Pattern-Specific Experts for Time Series Forecasting Under Patch-level Distribution Shift](https://arxiv.org/abs/2410.09836)：提出 TFPS，用时间域与频域双编码器聚类 patch 级模式，并把不同 patch 路由到 pattern-specific forecasting experts。
+- [Moirai-MoE: Empowering Time Series Foundation Models with Sparse Mixture of Experts](https://arxiv.org/abs/2410.10469)：用 sparse mixture-of-experts routing 取代粗粒度频率专门化，以处理时间序列 foundation model 中的异质和非平稳模式。
+- [Can AI weather models predict out-of-distribution gray swan tropical cyclones?](https://arxiv.org/abs/2410.14932)：通过移除强热带气旋训练样本的 FourCastNet 变体，压力测试 AI 天气模型能否外推到未见过的 5 级风暴。
+- [A Mamba Foundation Model for Time Series Forecasting](https://arxiv.org/abs/2411.02941)：构建 TSMamba，用前向和后向 Mamba encoder 以及来自预训练 Mamba LLM 的两阶段迁移，实现线性复杂度时间序列 foundation model。
+- [MarketGPT: Developing a Pre-trained transformer (GPT) for Modeling Financial Time Series](https://arxiv.org/abs/2411.16585)：训练 GPT 式订单生成引擎来模拟限价订单簿，生成长序列 order message 并复现金融市场的 stylized facts。
+- [How Much Can Time-related Features Enhance Time Series Forecasting?](https://arxiv.org/abs/2412.01557)：提出 TimeSter 与 TimeLinear，显式编码日历和时间戳特征，在有限上下文下提升长期预测。
+- [SpecFuse: Ensembling Large Language Models via Next-Segment Prediction](https://arxiv.org/abs/2412.07380)：提出免训练的 SpecEM LLM ensemble，在 segment 级别 draft 和 verify，并按在线表现动态调整各模型权重。
+- [ChatTime: A Unified Multimodal Time Series Foundation Model Bridging Numerical and Textual Data](https://arxiv.org/abs/2412.11376)：把时间序列当作外语建模，使一个多模态 foundation model 能处理数值与文本输入输出并支持 zero-shot forecasting。
+- [DINO-Foresight: Looking into the Future with DINO](https://arxiv.org/abs/2412.11673)：训练 masked feature transformer 来预测 DINO 式视觉 foundation model 特征，使下游 head 无需像素级预测即可分析未来帧。
+- [AIFS-CRPS: ensemble forecasting using a model trained with a loss function based on the continuous ranked probability score](https://arxiv.org/abs/2412.15832)：用 almost-fair CRPS loss 训练 ECMWF 的随机 AIFS 变体，使其能生成可交换天气集合成员，用于中期和次季节预报。
+- [LLMScenario: Large Language Model Driven Scenario Generation](https://doi.org/10.1109/tsmc.2024.3392930)：用 LLM 驱动 scenario generation 服务系统与决策建模，模型侧贡献在于未来情景构造而非被动评测。
+- [TimePFN](https://arxiv.org/abs/2502.16294)：用合成多变量时间序列数据和 Transformer 架构做 few-shot forecasting。
+- [From Perceptions to Decisions: Wildfire Evacuation Decision Prediction with Behavioral Theory-informed LLMs](https://arxiv.org/abs/2502.17701)：提出 FLARE，将行为理论引导的 chain-of-thought 推理同 memory-based reinforcement learning 结合，用于野火疏散决策预测。
+- [TimesBERT](https://arxiv.org/abs/2502.21245)：构建 BERT 风格时间序列基础模型，将未来预测模型覆盖从数值预测头扩展到时间序列理解。
+- [TS-RAG: Retrieval-Augmented Generation based Time Series Foundation Models are Stronger Zero-Shot Forecaster](https://arxiv.org/abs/2503.07649)：把检索增强生成用于时间序列基础模型的 zero-shot forecasting，为预测模型适配补充 evidence-retrieval 路线。
+- [ChronosX: Adapting Pretrained Time Series Models with Exogenous Variables](https://arxiv.org/abs/2503.12107)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Augmented Invertible Koopman Autoencoder for long-term time series forecasting](https://arxiv.org/abs/2503.12930)：在 invertible Koopman autoencoder 中加入非可逆 latent encoder，以改善基于长回看窗口的长期动力系统预测。
+- [Building Machine Learning Limited Area Models: Kilometer-Scale Weather Forecasting in Realistic Settings](https://arxiv.org/abs/2504.09340)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [BLAST: Balanced Sampling Time Series Corpus for Universal Forecasting Models](https://arxiv.org/abs/2505.17871)：构建含 3210 亿观测值的预训练语料，用统计模式聚类、grid sampling 和 grid mixup 支持通用时间序列预测模型。
 - [Outcome-based Reinforcement Learning to Predict the Future](https://arxiv.org/abs/2505.17989)：把 RLVR 用到真实事件预测中，以延迟兑现结果和 proper scoring rules 作为奖励，提升小模型的概率预测与校准。
+- [LETS Forecast: Learning Embedology for Time Series Forecasting](https://arxiv.org/abs/2506.06454)：提出 DeepEDM，这是一种受 Takens theorem 启发的神经预测模型，学习 time-delay embeddings 并用 softmax attention 实现 kernel-regression dynamics。
+- [Zero-Shot Learning for Obsolescence Risk Forecasting](https://arxiv.org/abs/2506.21240)：让 LLM 对领域表格知识做 zero-shot 推理，在标注数据稀缺时预测电子元器件 obsolescence risk。
+- [Advancing Event Forecasting through Massive Training of Large Language Models: Challenges, Solutions, and Broader Impacts](https://arxiv.org/abs/2507.19477)：聚焦事件预测或智能体能力预测的模型与方法。
+- [Argumentatively Coherent Judgmental Forecasting](https://arxiv.org/abs/2507.23163)：形式化 forecaster 推理与预测之间的 argumentative coherence，并显示 coherence filtering 可提升人类和 LLM judgmental forecasting。
+- [Kronos](https://arxiv.org/abs/2508.02739)：面向 K-line 数据预训练金融市场时间序列 foundation model，覆盖预测、波动率估计与合成市场数据。
+- [CauKer](https://arxiv.org/abs/2508.02879)：生成因果一致的合成时间序列，用于时间序列 foundation model 的样本高效预训练。
+- [Multi-Grained Spatial-Temporal Feature Complementarity for Accurate Online Cellular Traffic Prediction](https://arxiv.org/abs/2508.08281)：结合 coarse-grained temporal attention 与 fine-grained spatial attention，处理连续蜂窝流量预测中的突发性和概念漂移。
+- [FinCast: A Foundation Model for Financial Time-Series Forecasting](https://arxiv.org/abs/2508.19609)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
 - [Aurora](https://arxiv.org/abs/2509.22295)：提出面向零样本跨领域预测的多模态时间序列基础模型，用文本和图像上下文引导概率式未来 token 生成。
+- [Why Do Transformers Fail to Forecast Time Series In-Context?](https://arxiv.org/abs/2510.09776)：分析 Transformer 在上下文内时间序列预测中的失效机制，为预测模型页补充一个面向模型侧失效诊断的条目，而不只是比较预测误差。
+- [Enhancing Time Series Forecasting through Selective Representation Spaces: A Patch Perspective](https://arxiv.org/abs/2510.14510)：通过 patch 级表示选择改进时间序列预测。
+- [Operator Flow Matching for Timeseries Forecasting](https://arxiv.org/abs/2510.15101)：提出 TempO，用 sparse conditioning、channel folding 和 time-conditioned Fourier layers 做高维 PDE dynamics 的 latent flow-matching 预测。
+- [Chronos-2](https://arxiv.org/abs/2510.15821)：将 Chronos 从单变量预测扩展到跨时间序列设置的 universal forecasting。
+- [Revealing the Potential of Learnable Perturbation Ensemble Forecast Model for Tropical Cyclone Prediction](https://arxiv.org/abs/2510.23794)：补充未来预测的 Model 条目，重点是《Revealing the Potential of Learnable Perturbation Ensemble Forecast Model for Tropical Cyclone Prediction》。
+- [FreqFlow: Long-term forecasting using lightweight flow matching](https://arxiv.org/abs/2511.16426)：在频域使用条件流匹配进行轻量级长期多变量时间序列预测，直接建模幅值和相位变化。
+- [Forecast Critic](https://arxiv.org/abs/2512.12059)：用大语言模型识别低质量预测，补充预测质量控制中的批评器模型。
 - [OpenForecaster](https://arxiv.org/abs/2512.25070)（[开源代码](https://github.com/OpenForecaster/scaling-forecasting-training)）：从自动构造的 OpenForesight 预测问题、离线检索和强化学习训练 forecasting agent，以提升准确率、校准和长期一致性。
+- [Cakformer: Transformer Model for Long-Term Heat Load Forecasting Based on Cauto-Correlation and KAN](https://doi.org/10.1016/j.energy.2025.135460)：把基于 autocorrelation 的 Transformer 设计同 Kolmogorov-Arnold Network 组件结合，用于长期热负荷预测。
+- [DOLPHIN: Diffusion Model-Based Approach for Coastal Sea Temperature Forecast Bias Correction](https://doi.org/10.1109/ispa67752.2025.00025)：把 diffusion-model correction layer 用于降低近岸海温预测偏差。
+- [Bank systemic risk prediction based on text mining and explainable machine learning](https://doi.org/10.1016/j.najef.2025.102577)：结合文本信号挖掘与可解释机器学习预测器来预测银行系统性风险。
+- [SRLinear: Lightweight Long-Term Time Series Forecasting via Symbolic Regression](https://doi.org/10.1109/tai.2025.3571377)：用 symbolic regression 推导轻量线性预测模型，用于长周期时间序列预测。
+- [SiMBA-TS: Simplified Channel Mixing and Mamba for Long-term Time Series Forecasting](https://doi.org/10.1109/icassp49660.2025.10890315)：围绕 Mamba state-space block 简化 channel mixing，用于长期时间序列预测。
+- [Long-Term Urban Flow Prediction Against Data Distribution Shift: A Causal Perspective](https://doi.org/10.1109/tkde.2025.3612033)：从 causal modeling 角度处理分布迁移下的城市流量预测，以提升长期鲁棒性。
 - [Future-as-Label](https://arxiv.org/abs/2601.06336)：把真实事件兑现结果作为可规模化监督，用因果遮蔽信息、outcome-based RLVR 和 proper scoring reward 训练预测模型。
+- [Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Efficient Diffusion Transformers](https://arxiv.org/abs/2601.07396)：提出 SVD-Cache，把 diffusion-transformer 特征分解为 principal 与 residual subspaces，在采样时预测平滑低秩成分并复用波动残差。
+- [Enhancing Large Language Models for Time-Series Forecasting via Vector-Injected In-Context Learning](https://arxiv.org/abs/2601.07903)：冻结 LLM，通过从示例中学习到的 context vectors 注入信息，在无需完整微调的情况下激发上下文内时间序列预测能力。
+- [The Forecast After the Forecast: A Post-Processing Shift in Time Series](https://arxiv.org/abs/2601.20280)：加入 delta-Adapter 后处理模块，在不重训 backbone 的情况下微调 covariates、修正残差并校准不确定性。
+- [T-LLM: Teaching Large Language Models to Forecast Time Series via Temporal Distillation](https://arxiv.org/abs/2602.01937)：把轻量 temporal teacher 的预测行为蒸馏进通用 LLM，训练时用趋势建模和频域分析提供结构化时序监督，推理时移除 teacher，让 LLM 独立完成预测。
+- [CoGenCast: A Coupled Autoregressive-Flow Generative Framework for Time Series Forecasting](https://arxiv.org/abs/2602.03564)：将自回归与 flow 生成结合用于时间序列预测，为生成式预测模型补充路线。
+- [Future-Interactions-Aware Trajectory Prediction via Braid Theory](https://arxiv.org/abs/2603.22035)：把 braid prediction 作为多智能体轨迹预测的辅助任务，用未来轨迹交叉模式的 braid 表示来条件化联合轨迹预测，几乎不增加训练或推理复杂度。
+- [FactoryNet](https://arxiv.org/abs/2605.09081)：构建工业时间序列 foundation model 所需的大规模语料与统一 schema，支持预训练和异常预测。
+- [Simultaneous-Equation Synthetic Forecasting Data](https://doi.org/10.1007/s41060-026-01117-6)：用 simultaneous equation models 生成合成预测数据，为时间序列预测模型的评测与训练补充结构化数据路线。
+- [M-Mamba: multi-resolution Mamba for long-term time series forecasting](https://doi.org/10.1007/s11227-026-08224-y)：结合高分辨率局部模式建模、低分辨率趋势建模、自适应分辨率融合权重和按通道调整的 adaptive dropout，提升长期时间序列预测的准确性与可解释性。
+- [MXgap: A MXene Learning Tool for Bandgap Prediction](https://doi.org/10.1021/acscatal.5c04191)：补充一个面向未来预测的模型条目，关注forecasting or future-prediction contribution。
+- [LLM-GC: Advancing Granger Causal Discovery from Time Series with Multimodel Language Modeling](https://doi.org/10.1145/3773966.3777994)：提出未来预测方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Short-term residential electricity consumption forecast considering the cumulative effect of temperature, dual decomposition technology and integrated deep learning](https://doi.org/10.1186/s42162-025-00552-2)：提出未来预测方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [Applying Machine Learning Methods to Forecast Heat Transfer Characteristics in Air-Cooled Single-Row Finned Tube Bundles under Free Convection Conditions](https://doi.org/10.1134/s1995080224605654)：提出未来预测方向的模型侧方法、训练配方、架构、验证器、奖励模型、世界模型或合成数据技术。
+- [GPT4MTS: Prompt-based Large Language Model for Multimodal Time-series Forecasting](https://doi.org/10.1609/aaai.v38i21.30383)：《GPT4MTS: Prompt-based Large Language Model for Multimodal Time-series Forecasting》为Future Prediction补充模型侧方法、架构、训练配方、奖励或验证器、或数据生成路径。
+- [Kernel Representation Learning with Dynamic Regime Discovery for Time Series Forecasting](https://doi.org/10.1007/978-981-97-2266-2_20)：提出或分析面向future prediction capability的模型侧方法，补充训练、架构、对齐、验证器、合成数据或生成建模覆盖。
+- [FFTNet: Fusing Frequency and Temporal Awareness in Long-Term Time Series Forecasting](https://doi.org/10.3390/electronics14071303)：提出面向未来预测的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Prediction and optimization of memory fragmentation based on eBPF and LightGBM in high-load environments](https://doi.org/10.1145/3703935.3704087)：提出面向未来预测的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [KOSLM: A Kalman-Optimal Hybrid State-Space Memory Network for Long-Term Time Series Forecasting](https://doi.org/10.3390/app152312684)：提出面向未来预测的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Semantics-Aware Patch Encoding and Hierarchical Dependency Modeling for Long-Term Time Series Forecasting](https://doi.org/10.1145/3711896.3737123)：提出面向未来预测的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [A Memory Guided Transformer for Time Series Forecasting](https://doi.org/10.14778/3705829.3705842)：提出面向未来预测的模型侧训练、架构、后训练、强化学习、合成数据、奖励建模、生成或适配方法。
+- [Spherical multigrid neural operator for improving autoregressive global weather forecasting](https://doi.org/10.1038/s41598-025-96208-y)：补充该能力方向的模型侧工作，涉及训练、架构、后训练、适配、验证或推理机制。
+- [Quantifying Temporal Dynamics in Global Cyber Threats: A GPT-Driven Framework for Risk Forecasting and Strategic Intelligence](https://doi.org/10.3390/math13101670)：用 GPT 驱动框架从时序威胁信号中预测网络风险动态。
+- [Application of Large Language Models in the Problem of Event Forecasting](https://doi.org/10.3103/s0146411625701111)：面向未来预测的模型、训练、架构、强化学习、合成数据或推理方法。核心思路是围绕“Application of Large Language Models in the Problem of Event Forecasting”组织可复用线索，便于比较相关模型、评测或智能体工作流。

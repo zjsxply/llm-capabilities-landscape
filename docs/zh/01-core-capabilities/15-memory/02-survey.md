@@ -1,12 +1,30 @@
 # 1.15.2 Survey
 
+- [Federated Unlearning: A Survey on Methods, Design Guidelines, and Evaluation Metrics](https://arxiv.org/abs/2401.05146)：系统梳理联邦遗忘方法、删除保证、评测指标和客户端隐私约束，说明分布式模型中如何移除已记住的数据影响。
+- [Attractor Memory for Long-Term Time Series Forecasting: A Chaos Perspective](https://arxiv.org/abs/2402.11463)：从吸引子动力学解释长程时间序列预测中的记忆，把混沌时间结构与长期保留循环状态的机制联系起来。
+- [Machine Unlearning: Taxonomy, Metrics, Applications, Challenges, and Prospects](https://arxiv.org/abs/2403.08254)：梳理机器遗忘的场景、指标和应用，界定从模型记忆中擦除数据影响的评测边界。
 - [A Survey on the Memory Mechanism of Large Language Model based Agents](https://arxiv.org/abs/2404.13501)：回顾大语言模型 agent 的记忆类型、存储、检索、更新与评测。
+- [Recent Advances of Foundation Language Models-based Continual Learning: A Survey](https://arxiv.org/abs/2405.18653)：综述基础语言模型的持续学习方法，覆盖 rehearsal、参数隔离、正则化以及保持与遗忘之间的评测。
+- [Memorization in Deep Learning: A Survey](https://arxiv.org/abs/2406.03880)：回顾深度网络如何记忆数据、如何度量记忆，以及记忆对泛化、隐私泄漏和缓解策略的影响。
+- [Undesirable Memorization in Large Language Models: A Survey](https://arxiv.org/abs/2410.02650)：综述大模型中的有害记忆，覆盖训练数据抽取、隐私泄漏、检测协议和训练部署阶段的缓解方法。
+- [SoK: On Finding Common Ground in Loss Landscapes Using Deep Model Merging Techniques](https://arxiv.org/abs/2410.12927)：从 loss landscape 的共同区域系统梳理模型合并，为记忆页面提供跨模型知识保持与融合的边界案例。
+- [Human-inspired Perspectives: A Survey on AI Long-term Memory](https://arxiv.org/abs/2411.00489)：借鉴人类记忆概念，把 AI 长期记忆划分为编码、巩固、检索、遗忘和个性化等环节。
+- [Unleashing the Power of Continual Learning on Non-Centralized Devices: A Survey](https://arxiv.org/abs/2412.13840)：综述非中心化设备上的持续学习，强调隐私保护更新、通信约束和分布式数据漂移下的记忆保持。
+- [A Comprehensive Analysis of Memorization in Large Language Models](https://doi.org/10.18653/v1/2024.inlg-main.45)：分析大模型记忆的来源、度量协议、数据泄漏风险和训练生成阶段的缓解策略。
+- [A survey on memory-efficient transformer-based model training in AI for science](https://arxiv.org/abs/2501.11847)：综述 AI for science 场景中 Transformer 训练的激活、参数和优化器内存压缩技术，属于系统内存边界而非 agent 召回。
+- [A Survey of Personalization: From RAG to Agent](https://arxiv.org/abs/2504.10147)：综述从检索增强到智能体记忆与自适应行为的个性化方法。
 - [From Human Memory to AI Memory: A Survey on Memory Mechanisms in the Era of LLMs](https://arxiv.org/abs/2504.15965)：连接情节、语义、程序性与个性化 AI 记忆同人类记忆概念。
+- [PersonalAI: A Systematic Comparison of Knowledge Graph Storage and Retrieval Approaches for Personalized LLM Agents](https://arxiv.org/abs/2506.17001)：比较个性化 LLM agent 的知识图谱存储与检索设计，覆盖图 schema、更新操作和 personalized QA 取舍。
+- [Modern Methods in Associative Memory](https://arxiv.org/abs/2507.06211)：综述现代 associative memory 方法，为 key-value 召回、Hopfield 式检索和 dense memory 等模型侧机制提供背景。
 - [Memory-Augmented Transformers](https://arxiv.org/abs/2508.10824)：综述 Transformer 的模型侧记忆机制，把神经科学启发与上下文保持、推理、知识整合和持续适应联系起来。
+- [On Memory: A comparison of memory mechanisms in world models](https://arxiv.org/abs/2512.06983)：比较世界模型中的记忆机制，为记忆页面补充对话记忆库之外的模型侧视角。
 - [Towards large language models with human-like episodic memory.](https://doi.org/10.1016/j.tics.2025.06.016)：把 LLM 记忆设计与人类情景记忆概念联系起来，为记忆页面提供认知参照。
+- [Analysis of the Content of ChatGPT's Memory: Types of Information, Security Implications, and User Perception](https://doi.org/10.1109/mipro65660.2025.11131839)：实证分析 ChatGPT 记忆内容、信息类型、安全影响和用户感知。
 - [Graph-based Agent Memory: Taxonomy, Techniques, and Applications](https://arxiv.org/abs/2602.05665)：综述 agent memory 的图构建、检索、时间更新与推理。
 - [Anatomy of Agentic Memory: Taxonomy and Empirical Analysis of Evaluation and System Limitations](https://arxiv.org/abs/2602.19320)：通过 agentic 分类分析记忆评测缺口与系统限制。
+- [Toward a Theory of Hierarchical Memory for Language Agents](https://arxiv.org/abs/2603.21564)：将语言 agent 的层级记忆形式化为抽取、分组、压缩与预算内遍历。核心思路是提供共享抽象，以比较不同记忆设计，而不是停留在零散实现。
 - [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://arxiv.org/abs/2605.06716)：梳理记忆从静态存储走向可复用经验与适应的演进。
+- [Unsupervised Continual Learning: A Review of Challenges, Techniques, and Evaluation Metrics](https://doi.org/10.1109/access.2026.3679348)：综述无监督持续学习中的表征遗忘、replay 或正则化技术，以及流式无标签适应的评测指标。
 - [Users' Expectations and Practices with Agent Memory](https://doi.org/10.1145/3706599.3720158)：研究用户对智能体记忆的期望与实践，把记忆系统设计扎根到真实使用中。
 - [From Storage to Interpretation: User Perceptions, Practices, and Challenges with Long-term Memory in Agents](https://doi.org/10.1145/3765766.3765843)：分析用户对长期智能体记忆的感知与挑战，从存储延伸到解释。
 - [Conversational Agents: From RAG to LTM](https://doi.org/10.1145/3767695.3769671)：综述对话智能体从 RAG 走向长期记忆的演进。

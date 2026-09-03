@@ -1,18 +1,140 @@
 # 1.15.3 Bench
 
+- [TREC iKAT 2023: The Interactive Knowledge Assistance Track Overview](https://arxiv.org/abs/2401.01330)：评测交互式知识助手能否维护用户上下文、改写信息需求、检索证据，并在多轮会话中回答问题。
 - [LOCOMO](https://arxiv.org/abs/2402.17753)（[开源代码](https://github.com/snap-research/locomo)）：评什么：极长程对话记忆。核心思想：把多 session 对话中的事实、偏好和事件作为检索对象，评估 agent 是否能长期一致地使用历史信息。
+- [TAXI: Evaluating Categorical Knowledge Editing for Language Models](https://arxiv.org/abs/2404.15004)：评测类别级知识编辑，测试编辑能否沿类别关系传播，同时保持无关模型知识不被破坏。
+- [UnSeenTimeQA: Time-Sensitive Question-Answering Beyond LLMs' Memorization](https://arxiv.org/abs/2407.03525)：用预训练后发生变化的事实评测时间敏感问答，把实时 temporal reasoning 与参数记忆区分开。
 - [MemSim](https://arxiv.org/abs/2409.20163)（[开源代码](https://github.com/nuster1128/MemSim)）：评什么：LLM 个人助理的记忆行为。核心思想：用 Bayesian simulator 在受控交互历史下衡量记忆更新、检索和个性化助理行为。
+- [Assessing Episodic Memory in LLMs with Sequence Order Recall Tasks](https://arxiv.org/abs/2410.08133)：用序列顺序回忆任务诊断 LLM 是否保留情景顺序，而不只是记住单个项目内容。
 - [LongMemEval](https://arxiv.org/abs/2410.10813)：评什么：长对话与个人助理场景中的记忆问答。核心思想：把长历史拆成局部事实、全局偏好和跨时间推理问题，测试模型或 memory system 是否能从冗长交互中定位并组合相关记忆。
+- [FAME: Towards Factual Multi-Task Model Editing](https://arxiv.org/abs/2410.10859)：在多种任务格式下评测事实型模型编辑，衡量编辑后知识是否准确、一致且局部化。
+- [SHARE: Shared Memory-Aware Open-Domain Long-Term Dialogue Dataset Constructed from Movie Script](https://arxiv.org/abs/2410.20682)：从电影剧本构建长期开放域对话数据集，要求系统追踪并复用角色之间的 shared memory。
+- [Unraveling the Complexity of Memory in RL Agents: an Approach for Classification and Evaluation](https://arxiv.org/abs/2412.06531)：分类 RL 场景中的记忆需求，并按 agent 必须保留的时间信息类型评估后续决策能力。
+- [MemHunter: Automated and Verifiable Memorization Detection at Dataset-scale in LLMs](https://arxiv.org/abs/2412.07261)：用自动且可验证的探针在数据集尺度检测训练数据记忆，而不是依赖人工挑选的抽取样例。
+- [Episodic Memories Generation and Evaluation Benchmark](https://arxiv.org/abs/2501.13121)：评测 LLM 的情景记忆生成能力，将记忆构建本身转化为可度量基准目标。
+- [Minerva: A Programmable Memory Test Benchmark for Language Models](https://arxiv.org/abs/2502.03358): 自动生成可解释的 context memory 使用测试，覆盖搜索、回忆、编辑、匹配、比较和状态维护等原子及组合能力。
+- [REALTALK: A 21-Day Real-World Dataset for Long-Term Conversation](https://arxiv.org/abs/2502.13270)：21 天真实长期对话数据集；核心思想是评测 memory system 能否在真实多日交互中保持并复用事实、偏好与事件，而不是只依赖一次性长上下文。
+- [Quantifying Memorization and Parametric Response Rates in Retrieval-Augmented Vision-Language Models](https://arxiv.org/abs/2502.13836)：衡量 RAG 视觉语言模型何时从参数记忆作答、何时真正依赖检索到的视觉证据。
+- [PersonaBench: Evaluating AI Models on Understanding Personal Information through Accessing (Synthetic) Private User Data](https://arxiv.org/abs/2502.20616)：用合成隐私用户数据评估个人信息理解能力。
+- [Investigating Memory in RL with POPGym Arcade](https://arxiv.org/abs/2503.01450)：用 POPGym Arcade 的部分可观测游戏压力测试 RL agent 的观测记忆、状态跟踪和延迟依赖处理。
+- [Interpersonal Memory Matters: A New Task for Proactive Dialogue Utilizing Conversational History](https://arxiv.org/abs/2503.05150)：评测带长期会话记忆的主动对话；核心思想是让 agent 利用历史中的用户属性和偏好，而不是只围绕固定关键词推进对话。
+- [Toward Multi-Session Personalized Conversation: A Large-Scale Dataset and Hierarchical Tree Framework for Implicit Reasoning](https://arxiv.org/abs/2503.07018)：面向多 session 个性化对话的数据集与层次框架；核心思想是评测 agent 能否跨会话推断并复用隐式用户状态。
+- [Can Memory-Augmented Language Models Generalize on Reasoning-in-a-Haystack Tasks?](https://arxiv.org/abs/2503.07903)：评测智能体与模型记忆。核心思想：围绕论文中的任务、数据或协议（Can Memory-Augmented Language Models Generalize on Reasoning-in-a-Haystack Tasks?）形成可复用比较基准。
+- [Leaking LoRa: An Evaluation of Password Leaks and Knowledge Storage in Large Language Models](https://arxiv.org/abs/2504.00031)：评估 LoRA 适配是否存储并泄漏密码式秘密，把记住凭据视为可度量的安全失败。
+- [Strong Memory, Weak Control: An Empirical Study of Executive Functioning in LLMs](https://arxiv.org/abs/2504.02789)：通过对比强召回与抑制、更新、控制任务，评测 LLM 的 executive-control 失败。
+- [Know Me, Respond to Me: Benchmarking LLMs for Dynamic User Profiling and Personalized Responses at Scale](https://arxiv.org/abs/2504.14225)：评测基于交互历史的动态用户画像和个性化回应；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [On the Feasibility of In-Context Probing for Data Attribution](https://doi.org/10.18653/v1/2025.findings-naacl.286)：评估 in-context probe 能否把输出归因到训练数据，用 attribution 行为作为间接记忆信号。
+- [Latent State Persistence](https://arxiv.org/abs/2505.10571)：评测 LLM 能否在独立查询之间维持隐藏内部状态；核心思想：用受控游戏和序列任务暴露单次 prompt 推理测试中不易发现的持久工作记忆失败。
+- [EdgeWisePersona: A Dataset for On-Device User Profiling from Natural Language Interactions](https://arxiv.org/abs/2505.11417)：提供自然语言交互形式的端侧用户画像数据，测试本地系统如何推断并保留 persona 属性。
+- [Real-world Knowledge Injection Benchmark](https://arxiv.org/abs/2505.12306)：评测语言模型如何记忆并吸收新注入的真实世界知识。
+- [UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](https://arxiv.org/abs/2505.12345)：提供统一的大模型知识编辑基准，评测模型更新是否正确、局部且可复用。
+- [DIAMONDs: A Dataset for Dynamic Information And Mental modeling Of Numeric Discussions](https://arxiv.org/abs/2505.12651)：面向多方数值讨论中动态信息与心智状态跟踪的 benchmark；核心思想是检查模型能否在长对话中维护谁知道什么、数值何时变化以及哪些事实相关。
+- [How Memory Management Impacts LLM Agents: An Empirical Study of Experience-Following Behavior](https://arxiv.org/abs/2505.16067)：关于不同记忆管理策略如何影响 LLM agent 经验复用行为的实证研究；核心思想是衡量记忆何时稳定后续行动、何时造成脆弱复用。
+- [Benchmarking and Rethinking Knowledge Editing for Large Language Models](https://arxiv.org/abs/2505.18690)：在事实级和事件级场景中评测 LLM 知识编辑；核心思想：检验模型知识能否一致更新，而不是只修补孤立事实。
+- [How much do language models memorize?](https://arxiv.org/abs/2505.24832)：提供可复用评测目标、排行榜或测量协议。
+- [LaMP-QA: A Benchmark for Personalized Long-form Question Answering](https://arxiv.org/abs/2506.00137)：个性化长答案问答基准；核心思想是要求回答使用用户历史与偏好，把持久记忆纳入答案质量评估。
+- [ThinkEval: Practical Evaluation of Knowledge Preservation and Consistency in LLM Editing with Thought-based Knowledge Graphs](https://arxiv.org/abs/2506.01386)：用思维式知识图评测大模型编辑中的知识保持与一致性。
+- [FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](https://arxiv.org/abs/2506.05639)：用虚构事实和问答对区分真正的知识获取与模型对真实实体的既有记忆。
+- [PersonaFeedback: A Large-scale Human-annotated Benchmark For Personalization](https://arxiv.org/abs/2506.12915)：一个人工标注的个性化 benchmark。核心思想是评估系统能否根据用户画像和偏好调整回答，把输出质量与持续用户建模联系起来。
+- [StoryBench: A Dynamic Benchmark for Evaluating Long-Term Memory with Multi Turns](https://arxiv.org/abs/2506.13356)：StoryBench 是多轮长期记忆动态 benchmark，直接匹配 agent memory evaluation。
 - [MemBench](https://arxiv.org/abs/2506.21605)（[开源代码](https://github.com/import-myself/Membench)）：评什么：LLM-based agent 的情节记忆、语义记忆与程序性记忆。核心思想：把“参与式记忆”和“观察式记忆”分开建模，并引入大规模噪声会话测试长期记忆检索。
+- [Evaluating the Long-Term Memory of Large Language Models](https://doi.org/10.18653/v1/2025.findings-acl.1014)：评估大语言模型的长期记忆能力。
 - [MemoryAgentBench](https://arxiv.org/abs/2507.05257)（[开源代码](https://github.com/HUST-AI-HYZ/MemoryAgentBench)）：评什么：多轮增量交互中的 agent 记忆写入、更新与召回。核心思想：不把所有历史一次性塞进 prompt，而是按 interaction stream 逐步给信息，检验 memory module 是否能随状态演化。
+- [Chess State Tracking Evaluation](https://arxiv.org/abs/2508.19851)：用 chess state-based evaluation 测试语言模型跟踪世界状态的能力。
+- [Memory-QA: Answering Recall Questions Based on Multimodal Memories](https://arxiv.org/abs/2509.18436)：评测基于多模态记忆的回忆式问答，将记忆评测扩展到文本历史之外。
+- [BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](https://arxiv.org/abs/2509.21106)：评测带诊断反馈的搜索增强个性化。核心思想：评估 agent 能否收集用户相关证据并通过反馈调整回应，而非依赖静态偏好提示。
+- [MEMTRACK](https://arxiv.org/abs/2510.01353)：评什么：多平台 agent 环境中的长期记忆与状态追踪。核心思想：把 Slack、Linear、Git、文件和代码上下文中的事件交错成时间线，测试记忆获取、选择、冲突解决、效率和冗余。
+- [Do LLMs Recognize Your Latent Preferences? A Benchmark for Latent Information Discovery in Personalized Interaction](https://arxiv.org/abs/2510.17132)：可作为agent 记忆与个性化的 Bench 候选：围绕 Do LLMs Recognize Your Latent Preferences? A Benchmark for Latent Information Discovery in Personalized Interaction 提供可比较的评测任务、数据或分析协议。
+- [MemoryBench](https://arxiv.org/abs/2510.17281)：评测 LLM 系统中的记忆与持续学习能力。核心思想：在多个领域、语言和任务类型中模拟服务期用户反馈积累，测试系统能否从使用经验中学习，而不仅是读取静态长上下文。
+- [ImageGem: In-the-wild Generative Image Interaction Dataset for Generative Model Personalization](https://arxiv.org/abs/2510.18433)：收集真实场景中的图像生成交互数据，评测模型能否跨编辑记住用户视觉偏好。
+- [When Facts Change: Probing LLMs on Evolving Knowledge with evolveQA](https://arxiv.org/abs/2510.19172)：通过 evolveQA 评测大模型处理演化知识的能力。
+- [Evaluating Long-Term Memory for Long-Context Question Answering](https://arxiv.org/abs/2510.23730)：可作为Agent 记忆的Bench候选；核心关注“Evaluating Long-Term Memory for Long-Context Question Answering”。
+- [Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](https://arxiv.org/abs/2510.27246)：Beyond a Million Tokens 以长期记忆为评测和增强对象，适合 agent memory benchmark 线。
+- [HaluMem](https://arxiv.org/abs/2511.03506)：评测 agent 记忆系统中的幻觉；核心思想是拆分记忆抽取、记忆更新和记忆问答三个操作阶段，从而定位编造、冲突、遗漏和更新错误发生在哪个记忆环节。
+- [Convomem Benchmark: Why Your First 150 Conversations Don't Need RAG](https://arxiv.org/abs/2511.10523)：大规模会话记忆评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [CIMemories](https://arxiv.org/abs/2511.14937)：评什么：LLM 助手持久记忆中的 contextual integrity。核心思想：用合成用户画像和任务上下文测试 memory system 是否只披露任务相关属性，并同时保持任务可用性。
+- [Evo-Memory](https://arxiv.org/abs/2511.20857)：评估具备自演化记忆的 agent test-time learning，强调智能体能否在连续任务流中积累、整合并复用经验。
+- [A Benchmark for Procedural Memory Retrieval in Language Agents](https://arxiv.org/abs/2511.21730)：评测语言 agent 在新词汇和新物体实例下检索功能等价流程的能力；核心思想是把程序性记忆检索与后续任务执行拆开评估。
+- [Forgetful but Faithful: A Cognitive Memory Architecture and Benchmark for Privacy-Aware Generative Agents](https://arxiv.org/abs/2512.12856)：可作为Agent 记忆的Bench候选；核心关注“A Cognitive Memory Architecture and Benchmark for Privacy-Aware Generative Agents”。
+- [Exploring Working Memory Capacity in LLMs](https://doi.org/10.18653/v1/2025.ijcnlp-long.93)：在压力因素与类人策略条件下评估 LLM 的工作记忆容量。
+- [PerProb: Indirectly Evaluating Memorization in Large Language Models](https://arxiv.org/abs/2512.14600)：通过概率式 probe 间接衡量 LLM 记忆，避免把直接抽取训练样例作为唯一证据。
+- [Mem-Gallery: Benchmarking Multimodal Long-Term Conversational Memory for MLLM Agents](https://arxiv.org/abs/2601.03515)：评测多模态对话记忆如何被长期保存、组织和更新。
+- [EvolMem](https://arxiv.org/abs/2601.03543)：评测内容：跨认知维度的多会话对话记忆。核心思想：在可控生成的对话中区分陈述性和非陈述性记忆能力，同时检验 agent 记忆机制是否在不过度牺牲效率的情况下提升准确性。
+- [KnowMe-Bench: Benchmarking Person Understanding for Lifelong Digital Companions](https://arxiv.org/abs/2601.04745)：终身数字伙伴的人物理解评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [MineNPC-Task: Task Suite for Memory-Aware Minecraft Agents](https://arxiv.org/abs/2601.05215)：面向 memory-aware Minecraft agent 的任务套件。核心思想是用 Minecraft 交互任务测试 agent 能否在长程环境中保留并复用经验、目标和环境状态。
+- [RealMem](https://arxiv.org/abs/2601.06966)（[代码](https://github.com/AvatarMemory/RealMemBench)）：评什么：长期项目场景中的 memory-driven interaction。核心思想：合成多会话项目对话、动态目标和日程状态，并用自然用户查询测试记忆系统能否长期维护项目状态。
+- [LLMs Can't Play Hangman: On the Necessity of a Private Working Memory for Language Agents](https://arxiv.org/abs/2601.06973)：它明确评测跨会话记忆、偏好记忆、工作记忆或 agent memory 风险，适合补充 memory Bench。
+- [CloneMem: Benchmarking Long-Term Memory for AI Clones](https://arxiv.org/abs/2601.07023)：它明确评测跨会话记忆、偏好记忆、工作记忆或 agent memory 风险，适合补充 memory Bench。
+- [OP-Bench: Benchmarking Over-Personalization for Memory-Augmented Personalized Conversational Agents](https://arxiv.org/abs/2601.13722)：评测记忆增强会话 agent 的过度个性化。核心思想：测试记住偏好何时导致 agent 过拟合用户历史或扭曲事实回答。
+- [How Does Personalized Memory Shape LLM Behavior? Benchmarking Rational Preference Utilization in Personalized Assistants](https://arxiv.org/abs/2601.16621)：评测个性化记忆如何影响 assistant 行为。核心思想是测试 agent 是否能理性使用已存偏好，而不是在后续决策中过度套用或忽略它们。
+- [EMemBench: Interactive Benchmarking of Episodic Memory for VLM Agents](https://arxiv.org/abs/2601.16690)：类型：benchmark/评测协议。核心价值：为 1.15.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [Are We Evaluating the Edit Locality of LLM Model Editing Properly?](https://arxiv.org/abs/2601.17343)：重新审视大模型编辑局部性是否被恰当评测。
+- [Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents](https://arxiv.org/abs/2601.19935)：类型：benchmark/评测协议。核心价值：为 1.15.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [MANBENCH](https://arxiv.org/abs/2602.00428)：评测 LLM-based multi-agent systems 中的 collective misremembering。核心思想：改变任务类型、交互协议、agent roles 与 memory timescale，衡量并缓解 Mandela-effect-style memory bias。
+- [EverMemBench](https://arxiv.org/abs/2602.01313)：评什么：多人对话中的长程协作记忆。核心思想：用多群组、跨主题对话和问答对测试真实协作模式下的回忆、记忆意识和时间整合。
+- [How Implicit Bias Accumulates and Propagates in LLM Long-term Memory](https://arxiv.org/abs/2602.01558)：它明确评测跨会话记忆、偏好记忆、工作记忆或 agent memory 风险，适合补充 memory Bench。
+- [ES-MemEval](https://arxiv.org/abs/2602.01885)：评什么：情感支持对话 agent 的个性化长期记忆。核心思想：在隐含且持续演化的信息中测试抽取、时间推理、冲突检测、拒答和用户建模。
+- [WritePolicyBench](https://arxiv.org/abs/2602.02574)：评测 byte budget 约束下的 agent memory write policy。核心思想：定义外部 memory action interface、byte-accurate cost model 和 budget-efficiency metrics，使系统不仅按后续召回准确率评价，也按写入时选择保存什么来评价。
+- [ALPBench](https://arxiv.org/abs/2602.03056)：评什么：属性级长期个人行为理解。核心思想：从长期行为历史中推断持久的用户兴趣属性组合，而不只响应显式偏好。
+- [TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking](https://arxiv.org/abs/2602.03224)：TAME 同时处理 agent memory 的 test-time evolution、benchmarking 与安全脆弱性，适合 memory Bench。
+- [Spatial n-Back in Vision-Language Models](https://arxiv.org/abs/2602.04355)：用空间 n-back 任务测试视觉输入能否替代文本工作记忆。
 - [MemGUI-Bench](https://arxiv.org/abs/2602.06075)（[开源代码](https://github.com/lgy0404/MemGUI-Bench)）：评什么：移动 GUI agent 的记忆能力。核心思想：用跨会话、跨应用和动态环境任务专门测 memory retention 与 cross-session learning，连接记忆能力与 GUI 行动可靠性。
+- [LoCoMo-Plus](https://arxiv.org/abs/2602.10715)：评测内容：LLM agent 的超越事实回忆的认知记忆。核心思想：在后续线索与原始记忆文字不直接匹配时，检验 agent 能否保留并应用隐含的用户状态、目标和价值约束。
 - [MemoryArena](https://arxiv.org/abs/2602.16313)：评什么：多 session、相互依赖任务中的 agent memory。核心思想：把跨会话依赖、互相干扰的事实与后续行动绑定起来，评估 agent 能否在长期交互中稳定维护可用记忆。
 - [AMA-Bench](https://arxiv.org/abs/2602.22769)：评什么：agentic applications 中的长程记忆。核心思想：使用真实与合成 agent 轨迹，而不只用对话历史，并提供 AMA-Agent 作为 memory baseline。
+- [MemEmo: Evaluating Emotion in Memory Systems of Agents](https://arxiv.org/abs/2602.23944)：评估 agent memory system 中的情绪处理。核心思想是测试记忆模块能否稳定保留并使用情绪上下文，而不是把记忆都当作无情绪事实。
+- [ATM-Bench](https://arxiv.org/abs/2603.01990)（[代码](https://github.com/JingbiaoMei/ATM-Bench)）：评什么：多模态、多来源 personalized referential memory QA。核心思想：使用跨年、隐私保护的个人记忆证据，覆盖图片、视频、邮件等来源，测试指代消解、多证据推理和冲突证据处理。
+- [Towards Realistic Personalization: Evaluating Long-Horizon Preference Following in Personalized User-LLM Interactions](https://arxiv.org/abs/2603.04191)：它明确评测跨会话记忆、偏好记忆、工作记忆或 agent memory 风险，适合补充 memory Bench。
+- [STEM-Bench](https://arxiv.org/abs/2603.04885)：评估流式对话中的记忆能力。核心思想是在对话持续展开时测试 agent 以有界状态维护记忆并支持临时召回的感知保真、时序推理和全局意识。
+- [OAKS](https://arxiv.org/abs/2603.07392)：评测内容：面向持续知识流的在线适应。核心思想：在 OAKS-BABI 和 OAKS-Novel 中把事实组织成不断变化的上下文片段，检验系统能否随知识变化更新答案，而不是依赖过期状态。
+- [Rethinking Evaluation in Retrieval-Augmented Personalized Dialogue: A Cognitive and Linguistic Perspective](https://arxiv.org/abs/2603.14217)：从认知和语言学标准重构个性化对话评测，关注检索到的用户记忆是否相关、一致且能用于对话。
+- [MEMFLOW](https://arxiv.org/abs/2603.15125)：评什么：评测针对 LLM agents 的 memory control-flow attacks。核心思想：测试持久化 memory 是否会在长周期内支配后续 tool use 和行为，即使用户指令与被注入 memory 冲突。
+- [From Topic to Transition Structure: Unsupervised Concept Discovery at Corpus Scale via Predictive Associative Memory](https://arxiv.org/abs/2603.18420)：评测 predictive associative memory 在语料级无监督概念发现中的作用，重点从静态主题转向 transition structure。
+- [Memory-Driven Role-Playing: Evaluation and Enhancement of Persona Knowledge Utilization in LLMs](https://arxiv.org/abs/2603.19313)：通过 MREval 与中英双语 MRBench 评估长对话角色扮演中的人格记忆使用，覆盖锚定、召回、边界控制与演绎能力。
+- [BeliefShift](https://arxiv.org/abs/2603.23848)：评测内容：多会话 agent 的时间性信念一致性和观点漂移。核心思想：检验 agent 能否发现矛盾、依据证据修正信念，并在用户信念变化时避免过度迎合。
+- [MemoryCD](https://arxiv.org/abs/2603.25973)：评测跨领域 lifelong user memory；核心思想是从多年 Amazon Review 真实行为中构建长上下文个性化任务，测试 agent 能否在单域和跨域场景中模拟用户偏好。
 - [AlpsBench](https://arxiv.org/abs/2603.26680)：评什么：真实对话记忆与偏好对齐中的个性化。核心思想：覆盖记忆生命周期中的抽取、更新、检索和使用。
+- [Multi-Layered Memory Architectures for LLM Agents: An Experimental Evaluation of Long-Term Context Retention](https://arxiv.org/abs/2603.29194)：评估 LLM agent 的多层记忆架构和长期上下文保持；核心思想是比较不同记忆层和保持策略，而不是只把完整历史提示作为基线。
+- [A-MBER](https://arxiv.org/abs/2604.07017)：评测内容：面向情绪识别的情感记忆。核心思想：要求助手利用已记住的交互历史判断用户当前情绪状态，补足局部情绪数据集和事实型长期记忆基准之间的空白。
+- [Efficient Dataset Selection for Continual Adaptation of Generative Recommenders](https://arxiv.org/abs/2604.07739)：实证评估生成式推荐系统持续适应中的数据选择策略，衡量更新预算下用户偏好记忆的保持。
+- [ImplicitMemBench](https://arxiv.org/abs/2604.08064)：评测内容：LLM agent 的隐式记忆。核心思想：用程序性记忆、启动效应和条件反射等认知科学任务，检验经验是否会在没有显式回忆提示的情况下改变后续行为。
 - [BEHEMOTH](https://arxiv.org/abs/2604.11610)：评什么：跨异质任务的记忆抽取。核心思想：评分被抽取记忆是否能改善下游个性化、问题解决和 agentic task 表现。
+- [MemGround: Long-Term Memory Evaluation Kit for Large Language Models in Gamified Scenarios](https://arxiv.org/abs/2604.14158)：评测游戏化交互场景中的长期记忆、动态状态和推理型记忆评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [MemEvoBench: Benchmarking Memory MisEvolution in LLM Agents](https://arxiv.org/abs/2604.15774)：评测LLM agent 中 memory misevolution 与长程记忆安全风险；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [HorizonBench](https://arxiv.org/abs/2604.17283)：评测内容：用户偏好持续变化时的长周期个性化能力。核心思想：基于结构化心理状态图生成六个月多会话轨迹，并为偏好变化提供 provenance，用来检验记忆系统能否更新偏好而不是保留过期事实。
+- [Memora](https://arxiv.org/abs/2604.20006)：评测个性化 agent 从 recall 到 forgetting 的长期记忆能力。核心思想：用跨数周到数月的用户对话和 remembering、reasoning、recommending、forgetting 任务，把 memory evaluation 从过往对话事实检索推进到记忆更新与遗忘。
+- [EngramaBench](https://arxiv.org/abs/2604.21229)：用结构化图检索评估长期 conversational memory。核心思想是在固定回答模型的条件下，用多 session persona 和涵盖召回、整合、时序推理、拒答和综合的问题比较不同记忆系统。
+- [StratMem-Bench](https://arxiv.org/abs/2604.26243)：评估角色中心对话中的战略性记忆使用。核心思想是测试 agent 是否把记忆作为服务社交互动和事实需求的动态资源，而不仅是静态事实召回。
+- [LUCid](https://arxiv.org/abs/2604.26996)：评估 lifelong personalization 中的情境相关性。核心思想是将真实查询与最多 500 个 session 的历史配对，测试记忆系统能否找出与当前请求语义距离很远但对用户真正相关的上下文。
+- [NeuroState-Bench](https://arxiv.org/abs/2605.01847)：评估 LLM agent profile 的 commitment integrity。核心思想是用人工校准的 side-query probe 和 clean/distractor 配对任务，检查 agent profile 是否保持完成多轮任务所需的承诺状态。
 - [Trojan Hippo](https://arxiv.org/abs/2605.01970)：评什么：持久记忆攻击与防御。核心思想：把 tool-call payload 植入 memory backend，测试后续检索是否导致数据外泄或触发不安全动作。
+- [MEMAUDIT](https://arxiv.org/abs/2605.02199)：用 exact package-oracle protocol 评估预算约束下的长期记忆写入。核心思想是固定经验流、待写入记忆、语义证据单元、未来查询需求和预算，从而独立审计写入时的记忆选择。
+- [Uncovering Entity Identity Confusion in Multimodal Knowledge Editing](https://arxiv.org/abs/2605.06096)：评测多模态知识编辑中的实体身份混淆问题。
+- [STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?](https://arxiv.org/abs/2605.06527)：评测 LLM agent 是否能发现旧记忆被后续证据隐式失效；核心思想是长期个性化记忆中的 implicit conflict detection。
+- [When Stored Evidence Stops Being Usable](https://arxiv.org/abs/2605.07313)：评测 agent memory 的可用规模边界。核心思想：在保持证据仍被存储的前提下增长 memory trajectories，并衡量 budget-compliant reliability、tail call burden，以及证据存在但已不再实际可用的临界点。
+- [The Memory Curse: How Expanded Recall Erodes Cooperative Intent in LLM Agents](https://arxiv.org/abs/2605.08060)：研究扩展记忆如何削弱 LLM agent 的合作意图；核心思想是把记忆视为行为干预，检验其在提升召回的同时是否损害合作与对齐。
+- [The Trap of Trajectory: Towards Understanding and Mitigating Spurious Correlations in Agentic Memory](https://arxiv.org/abs/2605.09330)：The Trap of Trajectory 研究 agentic memory 中 spurious correlations，适合 memory failure benchmark/diagnosis。
+- [Personal Facts in Dialogue](https://arxiv.org/abs/2605.10339)：提供对话 agent 可写入记忆的 personal fact 标注方案和分类器。核心思想：按类别、持续时间、有效性和 follow-up 可用性标注个人事实，使 memory system 能在后续召回前过滤并结构化用户信息。
 - [LongMemEval-V2](https://arxiv.org/abs/2605.12493)：评什么：面向“有经验同事”场景的长期 agent memory。核心思想：把长期交互记忆从问答 recall 推向工作场景中的经验复用、偏好保持和上下文迁移。
 - [GroupMemBench](https://arxiv.org/abs/2605.14498)：评什么：多人对话中的 agent memory。核心思想：用图接地合成群聊和按提问者绑定的对抗查询，测试 speaker-grounded belief tracking、群体动态、受众适配词汇、多跳回忆、知识更新、歧义、时间推理和拒答。
+- [MemLens](https://arxiv.org/abs/2605.14906)（[代码](https://github.com/xrenaf/MEMLENS)）：评什么：多 session 对话中的多模态长期记忆。核心思想：构造 789 个问题，覆盖信息抽取、多 session 推理、时序推理、知识更新和拒答，并在 32K 到 256K tokens 下评测；image ablation 证明视觉证据必要，27 个 LVLM 和 7 个 memory agent 的比较揭示 long-context 退化与存储时视觉压缩之间的取舍。
+- [MemEye](https://arxiv.org/abs/2605.15128)：评什么：以视觉证据为中心的多模态 agent memory。核心思想：按关键视觉证据粒度从 scene-level 到 pixel-level、按证据使用方式从 single evidence 到 evolutionary synthesis 分层，并在 8 类生活场景任务中用 answerability、shortcut resistance、visual necessity 和 reasoning structure gate 做验证。
+- [Is One Score Enough? Rethinking the Evaluation of Sequentially Evolving LLM Memory](https://arxiv.org/abs/2605.15384)：SeqMem-Eval 重新评估 sequentially evolving LLM memory，揭示遗忘和负迁移等 aggregate score 掩盖的问题。
+- [SMMBench](https://arxiv.org/abs/2605.15710)：评测 source-distributed multimodal agent memory。核心思想：要求 agent 从对话、档案、截图、表格、图像和文档等分散来源中检索、对齐、消解冲突并据此行动。
 - [EvoMemBench](https://arxiv.org/abs/2605.18421)（[开源代码](https://github.com/DSAIL-Memory/EvoMemBench)）：评什么：agent 记忆的自演化能力。核心思想：按 `in-episode / cross-episode` × `knowledge / execution` 切分记忆任务，更系统地测记忆策略。
 - [MINTEval](https://arxiv.org/abs/2605.18565)：评什么：长程、频繁更新、互相干扰的信息记忆。核心思想：用多目标干扰把静态 recall 压力升级到动态记忆与聚合推理。
 - [MemGym](https://arxiv.org/abs/2605.20833)：评什么：长时程 agent memory 环境。核心思想：通过 Memory-Isolated Tasks 把记忆写入、保持和后续使用从普通任务能力中隔离出来，并用 MEMGYM-DR、MEMGYM-SWE 等场景连接 deep research 与软件任务。
+- [Same Ranking, Different Winner](https://arxiv.org/abs/2605.24060)：用 TIAP fixed-output scoring 审计 memory benchmark 的可靠性。核心思想：显示 Raw、Source 和 Canonical 三类 scoring target 会改变 LoCoMo 与 LongMemEval-S 排名，因此评分目标本身也是记忆评测协议的一部分。
+- [StreamProfileBench](https://arxiv.org/abs/2605.25758)：把 streaming user profiling 评测为 continuous state maintenance。核心思想：使用 120K 条用户生成内容和免标注时间评测，测试 memory system 能否随着证据到来更新细粒度用户画像。
+- [EnterpriseMem-Bench](https://arxiv.org/abs/2605.26394)：评测多轮 Text-to-SQL 中的记忆架构。核心思想：提供 300 个 session、1,400 个 turn、多种 memory conditions 和 Memory Benefit Score，把会话记忆带来的收益同基础 SQL 能力区分开。
+- [EGOSTREAM](https://arxiv.org/abs/2605.31557)：诊断 egocentric vision 中的 streaming episodic memory。核心思想：使用 Answer Validity Window 和 8,528 个 recall-conditioned evaluations，让 agent 在证据流持续推进时保持事件记忆。
+- [SuperMemory-VQA](https://arxiv.org/abs/2606.00825)：评测 AI 眼镜式长时 egocentric video 问答中的记忆能力。核心思想：覆盖 object、location、intent、timeline 和 conversational memory 问题，并加入 unanswerable option 抑制幻觉式回忆。
+- [MemoryDocDataSet](https://arxiv.org/abs/2606.04442)：评测 conversational memory 与 long-document reasoning 的联合能力。核心思想：使用 50 个 micro-worlds、1,000 个 QA pairs、真实长文档、多 session conversations 和 Hybrid source tags，使 agent 必须先通过对话记忆定位文档，再阅读文档作答。
+- [SubtleMemory](https://arxiv.org/abs/2606.05761)：评测长程 agent 对细粒度关系记忆的辨别能力。核心思想是把互补、细微差异和相互矛盾的记忆变体嵌入真实感历史中，检验 agent 能否恢复分布式关系结构，而不只是召回孤立事实。
+- [M^3Exam](https://arxiv.org/abs/2606.07402)：评测真实 user-agent 文件交互中的 query-centric multimodal conversational memory。核心思想：要求跨模态 grounding 和隐含信息推断，使记忆评测覆盖文件与多模态证据，而不只是文本聊天事实。
+- [H2HMem](https://arxiv.org/abs/2606.09461)：评测 meeting assistant 等 human-human interaction 场景中的 multimodal memory。核心思想：纳入多人引用、anaphora、deixis 和 conflicting information，补足单用户文本记忆与共享互动记忆之间的空白。
+- [StreamMemBench](https://arxiv.org/abs/2606.14571)：评测面向未来辅助的 streaming personal-agent memory。核心思想：围绕 EgoLife evidence anchors 构造两步任务序列，并评分 evidence recall、initial use、feedback incorporation 和 follow-up reuse。
+- [Bench'd AI memory scoreboard](https://benchd.ai/)：评什么：LoCoMo、LongMemEval 等多个长期记忆协议上的实际 memory system 表现。核心思想：把 memory system 结果聚合成独立排名页面，让跨 benchmark 记忆能力比较不必逐个阅读各 benchmark 仓库。
+- [GLM-EER: Global-Local Memory and Emotion Evaluation Refinement For Emotional Video Description](https://doi.org/10.1016/j.eswa.2026.132042)：在情绪视频描述中评测 global-local memory 与情绪修正，把已记住的时间上下文纳入评分设置。
+- [From Clusters to Characters: USERPRINT for Cross-Dataset Transfer in LLM Personalization](https://doi.org/10.1016/j.procs.2026.01.050)：通过把用户聚类转成 character-style profiles，测试 LLM 个性化能否跨数据集迁移。
+- [Scalability Limitations of Processing-in-Memory using Real System Evaluations](https://doi.org/10.1145/3639046)：用真实系统测量评测 processing-in-memory 的可扩展性限制，属于硬件内存评测边界而非 agent 召回。

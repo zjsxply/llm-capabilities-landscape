@@ -1,12 +1,70 @@
 # 2.3.2 Survey
 
+- [Bias and Unfairness in Information Retrieval Systems: New Challenges in the LLM Era](https://arxiv.org/abs/2404.11457)：梳理，主要面向 Web Search。
 - [From Matching to Generation: A Survey on Generative Information Retrieval](https://arxiv.org/abs/2404.14851)：解释检索从文档排序转向生成结果与答案的演进。
+- [A Survey of Generative Search and Recommendation in the Era of Large Language Models](https://arxiv.org/abs/2404.16924)：综述或系统梳理Web 搜索与 RAG，为该能力页补充分类、趋势或风险边界。
+- [RAG and RAU: A Survey on Retrieval-Augmented Language Model in Natural Language Processing](https://arxiv.org/abs/2404.19543)：综述Web Search的方法、风险或评测脉络，可作为 Web Search / Survey 部分的领域地图。
+- [Evaluation of Retrieval-Augmented Generation: A Survey](https://arxiv.org/abs/2405.07437)：综述检索、搜索或 RAG 能力，为父级复核提供近期综述线索。
+- [An Information Bottleneck Perspective for Effective Noise Filtering on Retrieval-Augmented Generation](https://arxiv.org/abs/2406.01549)：综述或系统梳理Web 搜索与 RAG，为该能力页补充分类、趋势或风险边界。
+- [Recent advances in text embedding: A Comprehensive Review of Top-Performing Methods on the MTEB Benchmark](https://arxiv.org/abs/2406.01607)：围绕Web Search梳理《Recent advances in text embedding: A Comprehensive Review of Top-Performing Methods on the MTEB Benchmark》涉及的方法、分类或实践。
+- [When Search Engine Services Meet Large Language Models: Visions and Challenges](https://arxiv.org/abs/2407.00128)：梳理，主要面向 Web Search。
+- [A survey of controllable learning: methods and applications in information retrieval](https://arxiv.org/abs/2407.06083)：梳理网络检索相关方法、风险与开放问题。
+- [Robust Neural Information Retrieval: An Adversarial and Out-of-Distribution Perspective](https://arxiv.org/abs/2407.06992)：综述或系统梳理Web 搜索与 RAG，为该能力页补充分类、趋势或风险边界。
+- [Retrieval-Augmented Generation for Natural Language Processing: A Survey](https://arxiv.org/abs/2407.13193)：综述检索、搜索或 RAG 能力，为父级复核提供近期综述线索。
+- [Graph Retrieval-Augmented Generation: A Survey](https://arxiv.org/abs/2408.08921)：综述图检索增强生成，是网页搜索与研究 agent 中的检索组织模式。
+- [Bridging Quantitative and Qualitative Methods for Visualization Research: A Data/Semantics Perspective in Light of Advanced AI](https://arxiv.org/abs/2409.07250)：梳理网页搜索、检索与 RAG的近期方法与开放问题。
+- [Retrieval Augmented Generation (RAG) and Beyond: A Comprehensive Survey on How to Make your LLMs use External Data More Wisely](https://arxiv.org/abs/2409.14924)：综述检索、搜索或 RAG 能力，为父级复核提供近期综述线索。
+- [Agentic Information Retrieval](https://arxiv.org/abs/2410.09713)：梳理网络检索相关方法、风险与开放问题。
+- [How to Leverage Demonstration Data in Alignment for Large Language Model? A Self-Imitation Learning Perspective](https://arxiv.org/abs/2410.10093)：梳理网络检索相关方法、风险与开放问题。
+- [A Survey of Conversational Search](https://arxiv.org/abs/2410.15576)：综述网页搜索、检索评测或重排序能力，补充近期方法、基准、风险或开放问题脉络。
+- [Advanced RAG Models with Graph Structures: Optimizing Complex Knowledge Reasoning and Text Generation](https://arxiv.org/abs/2411.03572)：梳理网络检索相关方法、风险与开放问题。
+- [Writing Style Matters: An Examination of Bias and Fairness in Information Retrieval Systems](https://arxiv.org/abs/2411.13173)：梳理网页搜索与信息检索方向的近期方法、评测问题或风险边界。
+- [Graph Retrieval-Augmented Generation for Large Language Models: A Survey](https://doi.org/10.1109/aixset62544.2024.00030)：综述与 Web Search 相关的方法、证据和开放问题，适合作为该能力页的 Survey 条目。
+- [A Survey on RAG with LLMs](https://doi.org/10.1016/j.procs.2024.09.178)：面向网络检索与 RAG能力，梳理近期工作、分类边界与开放问题。
+- [Report on the 1st Workshop on Information Retrieval's Role in RAG Systems (IR-RAG 2024) at SIGIR 2024](https://doi.org/10.1145/3722449.3722463)：梳理网页搜索、检索与 RAG的近期方法与开放问题。
+- [Towards Privacy-Preserving and Secure Machine Unlearning: Taxonomy, Challenges and Research Directions](https://doi.org/10.1109/tps-isa62245.2024.00040)：梳理网页搜索、检索与 RAG的近期方法与开放问题。
 - [Large Language Models, Knowledge Graphs and Search Engines](https://arxiv.org/abs/2501.06699)：从用户信息需求出发建立分类，并比较大语言模型、知识图谱与搜索引擎在答案获取中的互补关系。
 - [Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG](https://arxiv.org/abs/2501.09136)：回顾规划检索、选择工具并迭代使用证据的 agent。
+- [Toward Living Narrative Reviews: An Empirical Study of the Processes and Challenges in Updating Survey Articles in Computing Research](https://arxiv.org/abs/2502.00881)：梳理网页搜索、检索与 RAG的近期方法与开放问题。
+- [A Survey of Model Architectures in Information Retrieval](https://arxiv.org/abs/2502.14822)：综述从 encoder 到生成式检索的神经与 LLM 时代信息检索架构。
 - [A Survey of Large Language Model Empowered Agents for Recommendation and Search: Towards Next-Generation Information Retrieval](https://arxiv.org/abs/2503.05659)：连接用户意图、交互式搜索、检索规划与反馈适应。
 - [A Survey of WebAgents: Towards Next-Generation AI Agents for Web Automation with Large Foundation Models](https://arxiv.org/abs/2503.23350)：覆盖网页环境、感知、规划、动作执行、评测与安全。
-- [An Illusion of Progress? Assessing the Current State of Web Agents](https://openreview.net/forum?id=6jZi4HSs6o)：COLM 2025 对 web agent 真实进展的评估，强调当前改进是否能在真实任务上保持鲁棒，可作为本页的 survey-style 校准条目。
+- [An Illusion of Progress? Assessing the Current State of Web Agents](https://arxiv.org/abs/2504.01382)：COLM 2025 对 web agent 真实进展的评估，强调当前改进是否能在真实任务上保持鲁棒，可作为本页的 survey-style 校准条目。
+- [Graph-Based Approaches and Functionalities in Retrieval-Augmented Generation: A Comprehensive Survey](https://arxiv.org/abs/2504.10499)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Large Language Models Meet Knowledge Graphs for Question Answering: Synthesis and Opportunities](https://arxiv.org/abs/2505.20099)：综述检索、RAG、知识图谱问答或搜索增强推理。
+- [When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](https://arxiv.org/abs/2506.05690)：综述检索、RAG、知识图谱问答或搜索增强推理。
+- [Conversational Search: From Fundamentals to Frontiers in the LLM Era](https://arxiv.org/abs/2506.10635)：梳理网络检索相关方法、风险与开放问题。
 - [A Survey of LLM-based Deep Search Agents: Paradigm, Optimization, Evaluation, and Challenges](https://arxiv.org/abs/2508.05668)：把复杂搜索组织为迭代查询规划、证据获取、评测与综合。
+- [Bias is a Math Problem, AI Bias is a Technical Problem: 10-year Literature Review of AI/LLM Bias Research Reveals Narrow (Gender-Centric) Conceptions of 'Bias', and Academia-Industry Gap](https://arxiv.org/abs/2508.11067)：- [Bias is a Math Problem, AI Bias is a Technical Problem: 10-year Literature Review of AI/LLM Bias Research Reveals Narrow [Gender-Centric] Conceptions of 'Bias', and Academia-Industry Gap](https://arxiv.org/abs/2508.11067)：梳理网页搜索、检索与 RAG的近期方法与开放问题。
+- [Retrieval-Augmented Review Generation for Poisoning Recommender Systems](https://arxiv.org/abs/2508.15252)：梳理网页搜索、检索与 RAG的近期方法与开放问题。
+- [A Research Vision for Web Search on Emerging Topics](https://arxiv.org/abs/2509.10212)：综述 A Research Vision for Web Search on Emerging Topics，为 Web Search 补充近期方法、证据或开放问题脉络。
+- [Interaction-Driven Browsing](https://arxiv.org/abs/2509.12049)：从人类网页浏览行为出发讨论 human-in-the-loop browser-using agent，澄清交互轨迹、用户意图和浏览器上下文如何影响 agent 设计。
+- [When Retrieval Succeeds and Fails: Rethinking Retrieval-Augmented Generation for LLMs](https://arxiv.org/abs/2510.09106)：面向网络搜索与检索增强生成的综述或相关工作脉络。核心思路是围绕“When Retrieval Succeeds and Fails: Rethinking Retrieval-Augmented Generation for LLMs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A Survey on Deep Text Hashing: Efficient Semantic Text Retrieval with Binary Representation](https://arxiv.org/abs/2510.27232)：梳理网络检索方向，重点关注 A Survey on Deep Text Hashing: Efficient Semantic Text Retrieval with Binary Representation。
+- [DoPE: Denoising Rotary Position Embedding](https://arxiv.org/abs/2511.09146)：DoPE: Denoising Rotary Position Embedding 梳理网络检索与 RAG方向的方法、风险或评测边界。
+- [Accelerating RAG Systems: A Performance-Oriented Systematic Mapping](https://doi.org/10.5753/eniac.2025.12304)：面向网络检索与 RAG能力，梳理近期工作、分类边界与开放问题。
+- [Embedding Physics into Machine Learning: A Review of Physics Informed Neural Networks as Partial Differential Equation Forward Solvers](https://doi.org/10.26599/tst.2025.9010157)：Embedding Physics into Machine Learning: A Review of Physics Informed Neural Networks as Partial Differential Equatio... 梳理网络检索与 RAG方向的方法、风险或评测边界。
+- [QPP++ 2025: Query Performance Prediction and Its Applications in the Era of Large Language Models](https://doi.org/10.1007/978-3-031-88720-8_49)：综述网页搜索、检索、排序或查询性能能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [From Tool to Teacher: Rethinking Search Systems as Instructive Interfaces](https://arxiv.org/abs/2601.08035)：将搜索系统重新界定为面向用户学习的指导性界面。
+- [Validating Search Query Simulations: A Taxonomy of Measures](https://arxiv.org/abs/2601.11412)：围绕taxonomy of search-query simulation measures梳理方法、证据与开放问题，补充网页搜索方向的综述或分类线索。
+- [Seeing to Think? How Source Transparency Design Shapes Interactive Information Seeking and Evaluation in Conversational AI](https://arxiv.org/abs/2601.14611)：研究来源透明度如何影响交互式信息检索与评估。
+- [Tutorial on Reasoning for IR & IR for Reasoning](https://arxiv.org/abs/2602.03640)：教程式梳理面向推理的检索与支持推理的检索之间的双向关系。
+- [A Picture of Agentic Search](https://arxiv.org/abs/2602.17518)：将 Agentic Search 作为能力方向进行梳理。
+- [TaSR-RAG: Taxonomy-guided Structured Reasoning for Retrieval-Augmented Generation](https://arxiv.org/abs/2603.09341)：梳理网页搜索、检索与 RAG的近期方法与开放问题。
+- [Beyond Fluency: Toward Reliable Trajectories in Agentic IR](https://arxiv.org/abs/2604.04269)：面向检索、网页搜索与智能体式信息检索的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
 - [Integrating Graphs, Large Language Models, and Agents](https://arxiv.org/abs/2604.15951)：综述图结构、LLM 与 agent 工作流在推理和检索中的结合方式。
 - [A Survey of Reasoning-Intensive Retrieval](https://arxiv.org/abs/2605.00063)：综述相关性依赖潜在推理链的检索任务，覆盖基准、检索器、重排器以及 LLM 推理在检索流程中的作用。
 - [Knowledge intensive agents](https://doi.org/10.1016/j.aiopen.2026.02.002)：综述面向知识密集型任务的智能体，把检索、知识整合与推理作为搜索增强智能体的整体框架。
+- [Artificial intelligence techniques in energy-storage polymer-based dielectrics: A review](https://doi.org/10.1016/j.est.2026.121956)：面向网络检索与 RAG，补充关于retrieval, RAG, ranking, embedding, or web-search capability contribution的综述线索。
+- [AI Hallucinations in Retrieval-Augmented and Generative Systems: A Rigorous Review of Definitions, Failure Mechanisms, Evaluation, and Mitigation Strategies](https://doi.org/10.70470/edraak/2026/004)：围绕 Web Search 能力补充《AI Hallucinations in Retrieval-Augmented and Generative Systems: A Rigorous Review of Definitions, Failure Mechanisms, Evaluation, and Mitigation Strategies》，作为 Survey 条目候选。
+- [Emerging trends: a gentle introduction to RAG](https://doi.org/10.1017/s1351324924000044)：梳理网络搜索的方法、证据与开放问题。
+- [A Perspective: Accelerating Electrochemical Energy Storage for a Reliable, Affordable, Resilient, and Secure Electric Grid](https://doi.org/10.1002/batt.202500746)：面向网络检索与 RAG，补充关于retrieval, RAG, ranking, embedding, or web-search capability contribution的综述线索。
+- [AI Agents for Organizational Knowledge Retrieval and Sharing: A Systematic Literature Review](https://doi.org/10.59395/ijadis.v6i3.1462)：综述网页搜索与 RAG的方法谱系、任务边界、证据来源与开放挑战。
+- [FairAgent: A Collaborative Multi-Agent System for Fair Competition Review](https://doi.org/10.3390/electronics15061329)：围绕 Web Search 能力补充《FairAgent: A Collaborative Multi-Agent System for Fair Competition Review》，作为 Survey 条目候选。
+- [Conversational Search: Towards Personalization and Evaluation](https://doi.org/10.1145/3726302.3730126)：综述 Conversational Search: Towards Personalization and Evaluation，为 Web Search 补充近期方法、证据或开放问题脉络。
+- [Query Performance Prediction: Theory, Techniques and Applications](https://doi.org/10.1145/3701551.3703480)：综述网页搜索、检索、排序或查询性能能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [Information Access in the Era of Generative AI](https://doi.org/10.1007/978-3-031-73147-1)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Blending Queries and Conversations: Understanding Trust, Verification, and System Choice in Search and Chat Interactions](https://doi.org/10.1145/3698204.3716454)：梳理、分类或定位该能力方向，适合作为本页的综述线索。
+- [Retrieving Under Uncertainty: Towards a Chatbot Uncertainty Taxonomy (CUT) for Information Retrieval](https://doi.org/10.1145/3731120.3744580)：用 CUT 分类体系组织信息检索聊天机器人的不确定性来源。
+- [Information Retrieval for Artificial General Intelligence: A New Perspective of Information Retrieval Research](https://doi.org/10.1145/3726302.3730349)：可作为Web 搜索与检索 agent的 Survey 候选：围绕 Information Retrieval for Artificial General Intelligence: A New Perspective of Information Retrieval Research 梳理背景、方法与开放问题。
+- [Generative AI and information access: A sustainability model and a research agenda](https://doi.org/10.1177/01655515251377016)：综述Web 搜索、检索与搜索 Agent相关研究，可作为该方向近期相关工作的入口。

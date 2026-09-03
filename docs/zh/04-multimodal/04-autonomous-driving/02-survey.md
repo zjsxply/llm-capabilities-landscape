@@ -1,28 +1,138 @@
 # 4.4.2 Survey
 
 - [A Survey on Multimodal Large Language Models for Autonomous Driving](https://arxiv.org/abs/2311.12320)：关于感知、推理、规划、数据集与基准的基础综述。
+- [A Survey on Autonomous Driving Datasets: Statistics, Annotation Quality, and a Future Outlook](https://arxiv.org/abs/2401.01454)：从传感器模态、任务、场景条件、标注流程、地域覆盖、恶劣环境与数据集影响力指标等维度审视 265 个自动驾驶数据集。
+- [Forging Vision Foundation Models for Autonomous Driving: Challenges, Methodologies, and Opportunities](https://arxiv.org/abs/2401.08045)：基于 250 余篇论文梳理驾驶专用视觉基础模型的数据准备、预训练、下游适配，并连接 NeRF、扩散模型、3D Gaussian Splatting 与世界模型。
+- [Data-Centric Evolution in Autonomous Driving: A Comprehensive Survey of Big Data System, Data Mining, and Closed-Loop Technologies](https://arxiv.org/abs/2401.12888)：以数据中心自动驾驶为主线，梳理大数据系统、数据挖掘与闭环技术如何支撑算法自进化和数据积累。
 - [A Survey for Foundation Models in Autonomous Driving](https://arxiv.org/abs/2402.01105)：回顾基础模型在感知、预测、规划、仿真与评测中的使用。
+- [Delving Into Multi-Modal Multi-Task Foundation Models for Road Scene Understanding: From Learning Paradigm Perspectives](https://arxiv.org/abs/2402.02968)：按任务专用、统一多模态、统一多任务和基础模型提示等范式组织道路场景基础模型，并讨论开放世界、迁移、持续学习与交互学习能力。
+- [Data-Driven Camera and Lidar Simulation Models for Autonomous Driving: A Review From Generative Models to Volume Renderers](https://arxiv.org/abs/2402.10079)：综述从生成模型到 volume renderer 的数据驱动 camera/LiDAR 仿真模型，以及它们在仿真测试和合成训练数据中的评测方法。
+- [World Models for Autonomous Driving: An Initial Survey](https://arxiv.org/abs/2403.02622)：将自动驾驶世界模型定位为未来场景预测器，用于融合传感器数据、补足信息缺口并支持更安全的决策。
+- [Neural Radiance Field in Autonomous Driving: A Survey](https://arxiv.org/abs/2404.13816)：按感知、3D 重建、SLAM 和仿真四类应用组织 NeRF 在自动驾驶中的研究。
+- [A Survey on Occupancy Perception for Autonomous Driving: The Information Fusion Perspective](https://arxiv.org/abs/2405.05173)：从信息融合视角分类 3D occupancy perception，覆盖输入模态、网络流程、训练策略、数据集和最新方法对比。
+- [Large Language Models for Human-Like Autonomous Driving: A Survey](https://arxiv.org/abs/2407.19280)：综述 LLM 在模块化与端到端驾驶系统中的使用，并把 knowledge-based driving 与实时推理、安全保障和部署成本挑战联系起来。
+- [Multi-Agent Reinforcement Learning for Autonomous Driving: A Survey](https://arxiv.org/abs/2408.09675)：综述自动驾驶与智能交通中的 MARL，比较仿真器和基准，并分析环境建模、状态表示、感知单元与算法设计。
+- [Autonomous Driving at Unsignalized Intersections: A Review of Decision-Making Challenges and Reinforcement Learning-Based Solutions](https://arxiv.org/abs/2409.13144)：综述无信号交叉口自动驾驶决策挑战与强化学习方案。
+- [Adversarial and Reactive Traffic Entities for Behavior-Realistic Driving Simulation: A Review](https://arxiv.org/abs/2409.14196)：分类可反应、可对抗的交通实体和场景行为控制方法，用于超越静态日志回放来验证 AV 规划器。
+- [Diffusion Models for Intelligent Transportation Systems: A Survey](https://arxiv.org/abs/2409.15816)：把条件扩散和潜空间扩散基础与智能交通应用连接起来，强调多模态交通数据的可控生成和 ITS 问题。
+- [LLM4AD: Large Language Models for Autonomous Driving—Concept, Review, Benchmark, Experiments, and Future Trends](https://arxiv.org/abs/2410.15281)：提出 LLM4AD 概念，综述现有系统，并配套 LaMPilot-Bench、CARLA Leaderboard、NuPlanQA 与云端/边缘部署实验。
+- [Exploring the Interplay Between Video Generation and World Models in Autonomous Driving: A Survey](https://arxiv.org/abs/2411.02914)：比较视频生成与世界模型作为驾驶场景仿真器的关系，强调扩散式结构相似性以及 world model 定义仍不统一。
+- [Monocular Lane Detection Based on Deep Learning: A Survey](https://arxiv.org/abs/2411.16316)：按任务范式、车道建模、全局上下文补充和透视效应消除组织 2D/3D 单目车道检测，并比较基准性能和推理速度。
+- [Vision Technologies with Applications in Traffic Surveillance Systems: A Holistic Survey](https://arxiv.org/abs/2412.00348)：把检测、分类、跟踪等低层交通监控感知任务与参数估计、异常检测、行为理解等高层任务放在同一框架中综述。
+- [A Comprehensive Review on Traffic Datasets and Simulators for Autonomous Vehicles](https://arxiv.org/abs/2412.14207)：贯通感知、定位、预测、规划与控制来整合交通数据集和仿真器，并讨论标注质量和环境可靠性。
+- [End-to-End Autonomous Driving in CARLA: A Survey](https://doi.org/10.1109/access.2024.3473611)：综述 CARLA 中的端到端自动驾驶流水线和从感知到控制策略的仿真评测设置。
+- [Recent advances in reinforcement learning-based autonomous driving behavior planning: A survey](https://doi.org/10.1016/j.trc.2024.104654)：综述基于强化学习的自动驾驶行为规划，关注新兴交通研究中学习式决策策略的组织方式。
+- [A Review on Reinforcement Learning-based Highway Autonomous Vehicle Control](https://doi.org/10.1016/j.geits.2024.100156)：综述面向高速公路车辆控制的强化学习方法，区分 highway-specific control 与更广义的城市场景规划。
+- [Robustness-Aware 3D Object Detection in Autonomous Driving: A Review and Outlook](https://doi.org/10.1109/tits.2024.3439557)：从鲁棒性角度综述 3D 目标检测，强调驾驶检测栈中的感知失效模式和可靠性展望。
+- [4D mmWave Radar for Autonomous Driving Perception: A Comprehensive Survey](https://doi.org/10.1109/tiv.2024.3380244)：综述 4D mmWave radar 作为自动驾驶感知传感器的角色，覆盖雷达中心感知及融合，而非 camera-only 检测。
+- [Adversarial Attacks on Autonomous Driving Systems in the Physical World: A Survey](https://doi.org/10.1109/tiv.2024.3484152)：综述自动驾驶系统物理世界对抗攻击。
+- [Advancing Vulnerable Road Users Safety: Interdisciplinary Review on V2X Communication and Trajectory Prediction](https://doi.org/10.1109/tits.2024.3518063)：综述自动驾驶、交通仿真、轨迹预测或车辆安全方法。
+- [Deep learning for autonomous driving systems: technological innovations, strategic implementations, and business implications - a comprehensive review](https://doi.org/10.20517/ces.2024.83)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Evaluating Scenario-Based Decision-Making for Interactive Autonomous Driving Using Rational Criteria: A Survey](https://arxiv.org/abs/2501.01886)：用车辆用户和制造商两类视角下的 rational criteria 评估交互式驾驶中的场景特定 DRL 决策方法。
 - [A Survey of World Models for Autonomous Driving](https://arxiv.org/abs/2501.11260)：综述用于预测、仿真、规划与评测的驾驶 world model。
+- [Motion forecasting for autonomous vehicles: a survey](https://arxiv.org/abs/2502.08664)：形式化自动驾驶运动预测问题，整理场景式和感知式预测的挑战、数据集、指标，以及监督和自监督方法谱系。
 - [Knowledge Integration Strategies in Autonomous Vehicle Prediction and Planning](https://arxiv.org/abs/2502.10477)：综述自动驾驶车辆预测与规划中的知识集成策略。
+- [The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey](https://arxiv.org/abs/2502.10498)：综述自动驾驶中用于场景预测、仿真、规划和交互的 world models。
 - [Multi-Agent Autonomous Driving Systems with Large Language Models: A Survey of Recent Advances](https://arxiv.org/abs/2502.16804)：回顾通信、协作、场景推理与决策支持。
+- [A Systematic Literature Review on Safety of the Intended Functionality for Automated Driving Systems](https://arxiv.org/abs/2503.02498)：按 PRISMA 流程综述 ADS 的 ISO 21448 SOTIF，覆盖规格不足、性能局限和可预见误用带来的危害。
 - [Trajectory Prediction for Autonomous Driving](https://arxiv.org/abs/2503.03262)：综述自动驾驶轨迹预测的进展、局限与未来方向。
+- [A Survey on Semantic Communications in Internet of Vehicles](https://arxiv.org/abs/2503.03767)：综述车联网语义通信，把面向任务的信息抽取、传输和恢复同频谱、延迟、安全以及自动驾驶协同连接起来。
+- [Generative AI in Transportation Planning: A Survey](https://arxiv.org/abs/2503.07158)：综述生成式 AI 在交通规划任务和计算技术中的应用。
+- [Learning-Based 3D Reconstruction in Autonomous Driving: A Comprehensive Survey](https://arxiv.org/abs/2503.14537)：综述自动驾驶感知与建图中的学习式 3D 重建方法。
 - [A Survey of Reinforcement Learning-Based Motion Planning for Autonomous Driving](https://arxiv.org/abs/2503.23650)：从驾驶任务视角综述基于强化学习的自动驾驶运动规划方法。
 - [Foundation Models for Autonomous Driving Systems](https://arxiv.org/abs/2504.00911)：提供将基础模型集成到自动驾驶基础设施、车载系统、评测与保障中的结构化文献路线图。
+- [A Systematic Literature Review on Vehicular Collaborative Perception—A Computer Vision Perspective](https://arxiv.org/abs/2504.04631)：从计算机视觉视角系统综述 106 篇 vehicular collaborative perception 论文，比较模态、V2V/V2I 协作方案、感知任务、数据集和评测缺口。
+- [Datasets for Lane Detection in Autonomous Driving: A Comprehensive Review](https://arxiv.org/abs/2504.08540)：综述自动驾驶车道检测数据集。
+- [Collaborative Perception Datasets for Autonomous Driving: A Review](https://arxiv.org/abs/2504.12696)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Multimodal Large Language Models for Enhanced Traffic Safety: A Comprehensive Review and Future Trends](https://arxiv.org/abs/2504.16134)：综述多模态大语言模型在交通安全中的感知、推理、部署风险与未来方向，适合补充自动驾驶综述线索。
+- [AI Safety Assurance for Automated Vehicles: A Survey on Research, Standardization, Regulation](https://arxiv.org/abs/2504.18328)：综述自动驾驶、交通仿真、轨迹预测或车辆安全方法。
+- [Wireless Communication as an Information Sensor for Multi-agent Cooperative Perception: A Survey](https://arxiv.org/abs/2505.00747)：把 V2X 通信视作协同感知的信息传感器，组织信息表示、非理想链路下的信息融合和密集交通可扩展性问题。
 - [Generative AI for Autonomous Driving](https://arxiv.org/abs/2505.08854)：综述自动驾驶全栈中的生成式 AI。核心思路是把图像、LiDAR、轨迹、occupancy、视频生成、LLM 引导推理、合成数据、数字孪生、评测与安全统一到一张前沿地图中。
+- [Chain-of-Thought for Autonomous Driving: A Comprehensive Survey and Future Prospects](https://arxiv.org/abs/2505.20223)：综述自动驾驶感知、规划和决策流程中的 CoT 式推理。
+- [Trajectory Prediction Meets Large Language Models: A Survey](https://arxiv.org/abs/2506.03408)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Foundation Models in Autonomous Driving: A Survey on Scenario Generation and Scenario Analysis](https://arxiv.org/abs/2506.11526)：综述基础模型在自动驾驶场景生成和场景分析中的作用。
+- [Recent Advances in Multi-Agent Human Trajectory Prediction: A Comprehensive Review](https://arxiv.org/abs/2506.14831)：综述自动驾驶、交通仿真、轨迹预测或车辆安全方法。
+- [Integrating Multi-Modal Sensors: A Review of Fusion Techniques for Intelligent Vehicles](https://arxiv.org/abs/2506.21885)：把 sensor fusion 划分为数据级、特征级和决策级策略，并综述深度融合方法、数据集、恶劣天气案例、VLM/LLM 关联和端到端驾驶趋势。
 - [A Survey on Vision-Language-Action Models for Autonomous Driving](https://arxiv.org/abs/2506.24044)：连接感知、语言支撑推理与动作生成。
+- [Generative AI for Testing of Autonomous Driving Systems: A Survey](https://arxiv.org/abs/2508.19882)：系统分析 91 项生成式 AI 用于 ADS 测试的研究，归纳六类应用，并整理数据集、仿真器、ADS、指标、基准和 27 项局限。
+- [A Comprehensive Review of Reinforcement Learning for Autonomous Driving in the CARLA Simulator](https://arxiv.org/abs/2509.08221)：综述 CARLA 中的强化学习自动驾驶研究，连接仿真协议、策略学习与驾驶任务评测。
 - [Foundation Models for Autonomous Driving Perception](https://arxiv.org/abs/2509.08302)：围绕自动驾驶感知中的基础模型，综述传感、表示、推理与部署能力。
+- [Large Foundation Models for Trajectory Prediction in Autonomous Driving: A Comprehensive Survey](https://arxiv.org/abs/2509.10570)：综述自动驾驶轨迹预测中的大型基础模型。
 - [Maps for Autonomous Driving](https://arxiv.org/abs/2509.12632)：综述高精地图、轻量地图和隐式地图的表示、生产流程，以及与端到端自动驾驶框架的结合。
+- [From Static to Dynamic: A Survey of Topology-Aware Perception in Autonomous Driving](https://arxiv.org/abs/2509.23641)：以矢量化地图构建、拓扑结构建模、先验知识融合和语言模型感知四条方向综述 topology-aware perception。
+- [Dataset Safety in Autonomous Driving: Requirements, Risks, and Assurance](https://arxiv.org/abs/2511.08439)：面向自动驾驶与驾驶 VLA 系统的综述或相关工作脉络。核心思路是围绕“Dataset Safety in Autonomous Driving: Requirements, Risks, and Assurance”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Foundation Models for Trajectory Planning in Autonomous Driving: A Review of Progress and Open Challenges](https://arxiv.org/abs/2512.00021)：分类 37 个基础模型与 VLA 轨迹规划方法，比较架构选择、能力边界、局限以及代码和数据集开放性。
 - [A Review of Learning-Based Motion Planning](https://arxiv.org/abs/2512.11944)：综述自动驾驶中的学习式运动规划，并以数据驱动最优控制框架讨论更安全、自适应的规划路线。
+- [Can AI Generate more Comprehensive Test Scenarios? Review on Automated Driving Systems Test Scenario Generation Methods](https://arxiv.org/abs/2512.15422)：综合 31 篇 primary studies 和 10 篇 surveys，比较专家、ontology、自然驾驶数据与生成式 AI 场景生成方法，并指出指标和真实性缺口。
+- [Security Risks of Agentic Vehicles: A Systematic Analysis of Cognitive and Cross-Layer Threats](https://arxiv.org/abs/2512.17041)：综述自动驾驶相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Forging Spatial Intelligence: A Roadmap of Multi-Modal Data Pre-Training for Autonomous Systems](https://arxiv.org/abs/2512.24385)：综述自动驾驶相关问题；可补充该方向的方法脉络、风险点与评测缺口。
 - [Trends in motion prediction toward deployable and generalizable autonomy](https://doi.org/10.1108/FTROB-05-2025-0079)：综述面向可部署、可泛化自主系统的运动预测，连接感知与决策。
 - [Large (Vision) Language Models for Autonomous Vehicles](https://doi.org/10.1109/TITS.2025.3628969)：综述大语言模型与视觉语言模型在自动驾驶车辆中的当前趋势和未来方向。
 - [End-to-End Autonomous Driving](https://doi.org/10.1109/JIOT.2025.3635092)：综述端到端自动驾驶从经典范式到大模型赋能系统的演进。
 - [A survey of transformer architectures for autonomous driving](https://doi.org/10.1016/j.eswa.2025.130338)：综述 Transformer 架构在自动驾驶感知、预测、规划与控制中的使用。
 - [Large Language Models for Autonomous Driving](https://doi.org/10.1109/ITSC60802.2025.11423242)：综述 LLM 用于自动驾驶时的技术挑战、数据集与仿真环境。
 - [A survey of decision-making and planning methods for self-driving vehicles](https://doi.org/10.3389/fnbot.2025.1451923)：综述自动驾驶车辆的决策与规划算法，关注 neurorobotics 方法和部署挑战。
+- [Towards Autonomy](https://doi.org/10.1016/j.multra.2025.100272)：从技术保障和伦理问题两条线综述自动驾驶安全，与模型和感知导向的驾驶综述形成 safety-centered 对照。
+- [A Review of YOLO Algorithm and Its Applications in Autonomous Driving Object Detection](https://doi.org/10.1109/access.2025.3573376)： 综述 YOLO 系列目标检测算法及其在自动驾驶中的应用，可用于定位驾驶感知栈中的检测骨干。
+- [Position: Prospective of Autonomous Driving - Multimodal LLMs, World Models, Embodied Intelligence, AI Alignment, and Mamba](https://doi.org/10.1109/WACVW65960.2025.00114)：从多模态 LLM、世界模型、具身智能、对齐与 Mamba 架构视角展望自动驾驶。
+- [Vision-Language Model-Driven Human-Vehicle Interaction for Autonomous Driving: Status, Challenge, and Innovation](https://doi.org/10.26599/bdma.2025.9020090)：综述 VLM 驱动的人车交互，聚焦自动驾驶中 language-mediated in-vehicle interaction 的现状、挑战与创新路径。
+- [Transformer-Based Sensor Fusion for Autonomous Vehicles: A Comprehensive Review](https://doi.org/10.1109/access.2025.3545032)：综述自动驾驶车辆中的 Transformer-based sensor fusion，关注用注意力架构融合异构感知流。
+- [Autonomous driving scenario generation based on neural radiance fields or 3D Gaussian splatting: State-of-the-art investigations, reviews, and perspectives](https://doi.org/10.1016/j.cjme.2025.100093)：综述基于 NeRF 和 3D Gaussian Splatting 的驾驶场景生成，把神经重建、渲染与仿真连接起来。
+- [Developments in 3-D Object Detection for Autonomous Driving: A Review](https://doi.org/10.1109/jsen.2025.3562284)：综述自动驾驶感知栈中的 3D object detection 进展，强调传感器驱动检测方法的发展。
+- [A comprehensive survey on multi-sensor information processing and fusion for BEV perception in autonomous vehicles](https://doi.org/10.1016/j.inffus.2025.103653)：综述 BEV perception 中的多传感器信息处理和融合，关注如何把车载传感器对齐到鸟瞰表示。
+- [Datasets, Metrics, Benchmarks and Future Research in Autonomous Driving: A Review](https://doi.org/10.1109/jas.2025.125957)：把数据集、指标和基准作为自动驾驶评测基础设施来综述，并区分数据资源与未来研究方向。
+- [Survey of research on autonomous driving testing with large models](https://doi.org/10.1016/j.commtr.2025.100179)：综述大模型在自动驾驶测试中的使用，特别是面向 ADS 安全验证的测试生成与评测支持。
+- [Vehicle-to-everything mode of operation technologies: A state-of-art systematic review](https://doi.org/10.1016/j.apenergy.2025.126382)：系统综述 V2X operation technologies，作为相邻的 cooperative-transport 参考而非核心感知模型综述。
+- [Survey of LLMs and AI Agents in V2X: Simulation, Analysis & Architectures](https://doi.org/10.1109/ieeeconf64229.2025.10948078)：综述 LLM 与 AI agent 在 V2X 仿真、分析和架构设计中的用途，面向 connected-vehicle systems。
+- [Mapping the Machine Learning Landscape in Autonomous Vehicles: A Scientometric Review of Research Trends, Applications, Challenges, and Future Directions](https://doi.org/10.1109/access.2025.3620637)：用 scientometric analysis 绘制 autonomous-vehicle research 中机器学习趋势、应用、挑战和未来方向。
+- [Research Progress on Multi-Modal Fusion Object Detection Algorithms for Autonomous Driving: A Review](https://doi.org/10.32604/cmc.2025.063205)：综述自动驾驶多模态融合目标检测算法，关注传感器融合类别和检测流水线进展。
+- [Road Surface Status Recognition and Estimation: State-of-the-art Review and Research Perspectives](https://doi.org/10.1016/j.cjme.2025.100170)：综述路面状态识别与估计，这是面向天气和路况感知智能车辆的邻近感知问题。
+- [Deep learning methods for autonomous driving scene understanding tasks: A review](https://doi.org/10.1016/j.eswa.2025.128098)：综述自动驾驶场景理解任务中的深度学习方法。
+- [Review of research progress on self-training for object detection in unmanned system perception](https://doi.org/10.1360/ssi-2025-0095)：综述无人系统感知中目标检测自训练研究进展。
+- [Critical Review of Object Detection Techniques for Traffic Light Detection in Intelligent Transportation Systems](https://doi.org/10.14569/ijacsa.2025.0161072)：综述智能交通中交通灯检测的目标检测方法。
+- [A Survey on Large Language Model-Powered Autonomous Driving](https://doi.org/10.1016/j.eng.2025.07.038)：综述 LLM 如何支撑自动驾驶感知、推理、规划与部署，补充现有以 VLM 和 foundation model 为中心的综述。
+- [Trajectory planning and tracking control in autonomous driving system: Leveraging machine learning and advanced control algorithms](https://doi.org/10.1016/j.jestch.2025.101950)：综述自动驾驶轨迹规划与跟踪控制中的机器学习和高级控制方法。
+- [A Survey of Data-Driven Traffic Simulation: Developments and Research Trends in Modeling Approaches](https://doi.org/10.1109/cait68620.2025.11424665)：综述自动驾驶、交通仿真、轨迹预测或车辆安全方法。
+- [A Review of Off-Road Datasets, Sensor Technologies and Terrain Traversability Analysis](https://doi.org/10.4271/2025-01-8339)：综述越野自主导航数据集、恶劣条件下的传感器表现、地形可通行性方法，以及感知、规划和控制评测指标缺口。
+- [Toward Fully Autonomous Driving: AI, Challenges, Opportunities, and Needs](https://arxiv.org/abs/2601.22927)：综述完全自动驾驶中的 AI 挑战、机会与需求。
+- [Looking and Listening Inside and Outside: Multimodal Artificial Intelligence Systems for Driver Safety Assessment and Intelligent Vehicle Decision-Making](https://arxiv.org/abs/2602.07668)：综述驾驶员安全评估与智能车辆决策中的多模态系统。
+- [Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges](https://arxiv.org/abs/2603.09086)：为自动驾驶潜在世界模型提供分类法与评估框架。
+- [Safety Case Patterns for VLA-based driving systems: Insights from SimLingo](https://arxiv.org/abs/2603.16013)：面向自动驾驶与驾驶 VLA 系统的综述或相关工作脉络。核心思路是围绕“Safety Case Patterns for VLA-based driving systems: Insights from SimLingo”组织可复用线索，便于比较相关模型、评测或智能体工作流。
 - [Artificial Intelligence for Modeling and Simulation of Mixed Automated and Human Traffic](https://arxiv.org/abs/2604.12857)：综述用于自动驾驶车辆与人类驾驶车辆混合交通建模和仿真的 AI 方法。
+- [SoK: The Next Frontier in AV Security: Systematizing Perception Attacks and the Emerging Threat of Multi-Sensor Fusion](https://arxiv.org/abs/2604.20621)：系统化整理 48 项 perception-layer attack 研究和 20 类攻击向量，强调威胁正从单传感器攻击转向 multi-sensor fusion 漏洞。
+- [From Research to Practice: An Interactive Rapid Review of Autonomous Driving System Testing in Industry](https://arxiv.org/abs/2605.00531)：与产业实践者共同快速综述自动驾驶系统测试，指出研究方法与可部署测试流程之间的差距。
+- [From Review to Design: Ethical Multimodal Driver Monitoring Systems for Risk Mitigation, Incident Response, and Accountability in Automated Vehicles](https://arxiv.org/abs/2605.06439)：综述多模态驾驶员监测中的伦理与法律缺口，并提出面向注意力、接管准备、隐私、同意和公平性的模块化设计框架。
+- [Multi-Agent Embodied Autonomous Driving: From V2X Information Exchange to Shared World Models](https://arxiv.org/abs/2606.13840)：综述 380 多篇多智能体具身自动驾驶文献，以共享世界模型为主线串联 V2X 通信、协同感知、智能体间认知、协作规划、端到端驾驶和闭环验证。
 - [A comprehensive survey of pretrained models for autonomous driving](https://doi.org/10.1016/j.inffus.2026.104457)：综述预训练模型在自动驾驶全栈中的方法与应用。
 - [Design, features, and development of in-vehicle intelligent assistant](https://doi.org/10.1016/j.pmcj.2026.102210)：系统综述车内智能助手的设计、功能与发展趋势。
 - [Vision-Language Models in Autonomous Driving](https://doi.org/10.56028/aetr.16.1.558.2026)：综述 VLM 在自动驾驶交通场景理解、指代表达 grounding 与可解释自治中的作用。
+- [End-to-End Autonomous Driving Research Trends and Future Directions: Focused on Experimental Environments and Evaluation Methods](https://doi.org/10.7467/ksae.2026.34.5.513)：从实验环境和评测方法角度综述端到端自动驾驶的研究趋势与未来方向。
+- [Foundation models for autonomous driving: A comprehensive survey](https://doi.org/10.1016/j.engappai.2026.114805)：作为 applied AI 综述，梳理自动驾驶基础模型方法。
+- [A FIVE-ERA TAXONOMY AND BENCHMARK FRAMEWORK FOR LANE DETECTION: FROM CLASSICAL HEURISTICS TO VISION FOUNDATION MODELS IN AUTONOMOUS DRIVING](https://doi.org/10.5121/ijaia.2026.17206)：按五个时代梳理车道检测，从 classical vision、feature+geometry、CNN 到 anchor/curve、Transformer 和视觉基础模型。
+- [Securing Driver Safety: A Review on Adversarial Robustness for Computer Vision-Based Drowsiness Detection](https://doi.org/10.1109/iciscois62701.2026.11447822)：综述 vision-based drowsiness detection 的对抗鲁棒性，作为邻近的驾驶员监测安全参考。
+- [From clear to adverse: a survey of all-weather LiDAR semantic segmentation for autonomous driving](https://doi.org/10.1016/j.ait.2026.100061)：综述自动驾驶全天候 LiDAR 语义分割。
 - [A Survey of Human Intelligence Augmented Artificial Intelligence](https://doi.org/10.1007/s42154-025-00361-z)：从自动驾驶角度综述人类智能增强 AI，关注人类知识如何支持开放环境中的稳健驾驶行为。
 - [A Survey on Future Physical World Generation for Autonomous Driving](https://doi.org/10.1145/3769748.3773345)：综述面向自动驾驶的未来物理世界生成，连接生成式仿真与未来驾驶场景建模。
 - [A Comprehensive Literature Review on Modular Approaches to Autonomous Driving](https://doi.org/10.3390/smartcities8030079)：综述道路与竞速场景中模块化自动驾驶系统的感知、规划和控制方法。
+- [Multi-Sensor Fusion Object Detection in Autonomous Driving](https://doi.org/10.3390/s25092794)：综述 autonomous-driving object detection 中的 multi-sensor fusion。
+- [Autonomous Driving from a Deep Learning Perspective](https://doi.org/10.1145/3729420)：从感知、预测、规划与控制等方面综述自动驾驶深度学习方法。
+- [A Review of Multi-Sensor Fusion in Autonomous Driving](https://doi.org/10.3390/s25196033)：综述自动驾驶感知与决策流程中的多传感器融合方法。
+- [Exploring the Unseen: A Survey of Multi-Sensor Fusion and the Role of Explainable AI (XAI) in Autonomous Vehicles](https://doi.org/10.3390/s25030856)：综述自动驾驶多传感器融合与可解释 AI 在感知、安全和责任归因中的问题。
+- [A Review of Vision-Based Multi-Task Perception Research Methods for Autonomous Vehicles](https://doi.org/10.3390/s25082611)：综述自动驾驶多任务感知中的目标检测、可行驶区域分割、车道检测、数据集与鲁棒性问题。
+- [A Survey on End-to-end Perception and Prediction for Autonomous Driving](https://doi.org/10.1007/s11633-025-1558-0)：综述自动驾驶端到端感知与预测，连接感知输出和下游 motion forecasting。
+- [Localization and Mapping for Self-Driving Vehicles: A Survey](https://doi.org/10.3390/machines12020118)：从传感器特征提取、语义与非语义方法、已知/未知环境地图以及数据安全问题综述 self-driving localization and mapping。
+- [Vehicle Trajectory Data Processing, Analytics, and Applications: A Survey](https://doi.org/10.1145/3715902)：综述车辆轨迹采集、预处理、分析和应用，重点关注私家车轨迹数据在城市出行和公共安全中的用途。
+- [Research on the Development Status of Autonomous Driving Based on End to End Technology](https://doi.org/10.1145/3708036.3708169)：作为 ACM proceedings 文章回顾端到端自动驾驶的发展现状。
+- [A Review on Testing Approaches for Autonomous Driving Systems Based on Metamorphic Testing and Fuzzing Testing](https://doi.org/10.1002/smr.70119)：系统梳理 ADS 鲁棒性中的 metamorphic testing 与 fuzzing testing，覆盖 test oracle、场景变换、优化搜索、数据集、模型、仿真器和 violation metrics。
+- [A Survey of Deep Learning-Based 3D Object Detection Methods for Autonomous Driving Across Different Sensor Modalities](https://doi.org/10.3390/s25175264)：按传感器模态分类深度 3D object detection，覆盖单目、双目、LiDAR、radar 与多模态融合，并比较基准结果。
+- [Risk assessment in autonomous driving: a comprehensive survey of risk sources, methodologies, and system architectures](https://doi.org/10.1007/s43684-025-00112-1)：从风险来源、评估方法、数据基础和系统架构四个角度综述自动驾驶风险评估。
+- [Vulnerable Road User Detection for Roadside-Assisted Safety Protection: A Comprehensive Survey](https://doi.org/10.3390/app15073797)：综述基于路侧基础设施的 VRU 检测，覆盖 camera、LiDAR、radar、数据集、算法趋势和安全保护挑战。
+- [A Survey of Open-Source Autonomous Driving Systems and Their Impact on Research](https://doi.org/10.3390/info16040317)：比较主流开源 ADS 平台的功能、优势、局限、研究采用情况，以及与 AI/ML 和 edge computing 的互操作趋势。
+- [A Survey on Enhancing Autonomous Vehicle Safety through Fault Tree Analysis and SOTIF Integration](https://doi.org/10.1145/3787221)：综述通过故障树和 SOTIF 提升自动驾驶安全的方法。
+- [Aigc-driven human-machine intelligence in ITS: technologies, applications, evaluation framework, challenges, and future directions](https://doi.org/10.1007/s10462-025-11467-5)：面向自动驾驶与驾驶 VLA 系统的综述或相关工作脉络。核心思路是围绕“Aigc-driven human-machine intelligence in ITS: technologies, applications, evaluation framework, challenges, and future directions”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Deep‐learning‐based vehicle trajectory prediction: A review](https://doi.org/10.1049/itr2.70001)：综述自动驾驶、交通仿真、轨迹预测或车辆安全方法。
+- [Generative AI for Intelligent Transportation Systems: Road Transportation Perspective](https://doi.org/10.1145/3719290)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Generative AI for the Internet of Vehicles: A Review of Advances in Training, Decision-Making, and Security](https://doi.org/10.3390/math13172795)：面向自动驾驶智能体与模型的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [An Overview of Autonomous Parking Systems: Strategies, Challenges, and Future Directions](https://doi.org/10.3390/s25144328)：综述自动泊车系统的策略、挑战和未来方向，适合作为自动驾驶方向的 survey 补充。
+- [Automated Vehicle Traffic: A Review of Operational Challenges, Infrastructure Requirements and Research Directions](https://doi.org/10.3390/s26041232)：面向自动驾驶智能体与模型的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Testing and Verification of Connected and Autonomous Vehicles: A Review](https://doi.org/10.3390/electronics14030600)：综述 CAV 测试与验证框架，组织 scenario generation、verification cost function、assertion value、安全因素以及系统化评测缺口。

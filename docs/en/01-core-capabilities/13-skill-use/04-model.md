@@ -1,6 +1,10 @@
 # 1.13.4 Model
 
-- [From f(x) and g(x) to f(g(x))](https://arxiv.org/abs/2509.25123): Introduces LLMs Learn New Skills in RL by Composing Old Ones, a model-side contribution for Skill Use.
+- [Skill Set Optimization: Reinforcing Language Model Behavior via Transferable Skills](https://arxiv.org/abs/2402.03244): Extracts high-reward subtrajectories into subgoals and instructions, then prunes ineffective skills so an LLM actor can improve in-context on NetHack and ScienceWorld.
+- [Merge to Learn: Efficiently Adding Skills to Language Models with Model Merging](https://arxiv.org/abs/2410.12937): Trains skill-specific models in parallel and merges them back with a general model through task-vector-style model merging, reducing the cost and forgetting risk of repeatedly retraining on new skill datasets.
+- [From f(x) and g(x) to f(g(x))](https://arxiv.org/abs/2509.25123): Uses synthetic string-transformation skills to show that reinforcement learning can teach LLMs unseen compositions of previously learned atomic skills and transfer that compositional behavior across tasks.
+- [Improving Procedural Skill Explanations via Constrained Generation: A Symbolic-LLM Hybrid Architecture](https://arxiv.org/abs/2511.20942): Ivy constrains an LLM with Task-Method-Knowledge structures so procedural coaching answers preserve causal transitions, goal hierarchies, and problem decompositions.
+- [Towards Compositional Generalization of LLMs via Skill Taxonomy Guided Data Synthesis](https://arxiv.org/abs/2601.03676): STEPS builds a hierarchical skill taxonomy with structural information theory and uses constrained information maximization to synthesize hard skill combinations for post-training.
 - [RAGShaper: Eliciting Sophisticated Agentic RAG Skills via Automated Data Synthesis](https://arxiv.org/abs/2601.08699): Synthesizes data to elicit reusable agentic RAG skills, connecting skill acquisition with retrieval workflows.
 - [Skill-Pro](https://arxiv.org/abs/2602.01869): Learns reusable procedural skills from episodic experience with explicit activation, execution, and termination conditions.
 - [SkillRL](https://arxiv.org/abs/2602.08234) ([code](https://github.com/aiming-lab/SkillRL)): Evolves agents through recursive skill-augmented reinforcement learning, co-evolving a SkillBank with the agent policy.
@@ -8,4 +12,7 @@
 - [Trace2Skill](https://arxiv.org/abs/2603.25158): Distills trajectory-local lessons into transferable agent skills through parallel trace analysis and hierarchical consolidation.
 - [SKILL0](https://arxiv.org/abs/2604.02268): Uses in-context agentic reinforcement learning to internalize skills and reduce inference-time dependence on external skill text.
 - [SkillX](https://arxiv.org/abs/2604.04804) ([code](https://github.com/zjunlp/SkillX)): Constructs reusable skill knowledge bases from strong-agent trajectories, organizing strategy, functional skills, and atomic skills for transfer.
+- [Skill Neologisms](https://arxiv.org/abs/2605.04970): Learns soft skill tokens that can be composed without updating model weights, making skill acquisition a model-side continual-learning mechanism rather than only an external skill library.
 - [Skill1](https://arxiv.org/abs/2605.06130): Trains a unified policy to select, use, and distill skills through reinforcement learning.
+- [Skill-R1: Agent Skill Evolution via Reinforcement Learning](https://arxiv.org/abs/2605.09359): Trains a lightweight skill generator to iteratively revise reusable skills from rollout outcomes and verifiable rewards.
+- [ReuseRL / Skill Reuse as Compression](https://arxiv.org/abs/2605.31509): Frames skill reuse in agentic reinforcement learning as a compression objective. Core idea: regularize trajectories with an MDL-style skill dictionary and segmentation cost, validating on ALFWorld, TextWorld-Cooking, and Countdown-Stepwise that reusable skills can shape policy learning.

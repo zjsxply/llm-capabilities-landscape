@@ -1,0 +1,244 @@
+# 1.16.4 Model
+
+- [Large Language Models are Superpositions of All Characters: Attaining Arbitrary Role-play via Self-Alignment](https://arxiv.org/abs/2401.12474)：用自对齐获得任意角色扮演行为。
+- [LLM Voting: Human Choices and AI Collective Decision Making](https://arxiv.org/abs/2402.01766)：把 GPT-4 与 LLaMA-2 智能体的投票行为同人类投票数据对照，显示投票规则、呈现顺序、persona 与温度会影响集体偏好多样性和人类对齐度。
+- [Affordable Generative Agents](https://arxiv.org/abs/2402.02053)：通过用学习策略替代重复的 agent-environment LLM 调用，并单独建模 agent 间社会互动，降低可信 generative-agent 仿真的运行成本。
+- [Multimodal Query Suggestion with Multi-Agent Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2402.04867)：定义基于图像查询的多模态查询建议任务，并用 RL4Sugg 将大语言模型与多智能体人类反馈强化学习结合，以提升建议的意图匹配和多样性。
+- [An Interactive Agent Foundation Model](https://arxiv.org/abs/2402.05929)：把视觉 masked autoencoding、语言建模和 next-action prediction 统一到多任务智能体训练范式中，覆盖机器人、游戏 AI 和医疗动作生成。
+- [Evolving AI Collectives to Enhance Human Diversity and Enable Self-Regulation](https://arxiv.org/abs/2402.12590)：研究由语言模型组成的小型交互社区，展示其演化输出可能扩大人类多样性信号、降低有毒行为，并启发 AI 交叉调解设计。
+- [Neeko: Leveraging Dynamic LoRA for Efficient Multi-Character Role-Playing Agent](https://arxiv.org/abs/2402.13717)：在智能体预训练、多角色扮演和角色增量学习中使用角色专属动态 LoRA 模块，使单个角色扮演智能体能适配已见和未见角色。
+- [Is Self-knowledge and Action Consistent or Not: Investigating Large Language Model's Personality](https://arxiv.org/abs/2402.14679)：检验 LLM 自述人格与行动选择是否一致，暴露 persona 控制和角色扮演智能体中的一致性问题。
+- [Is this the real life? Is this just fantasy? The Misleading Success of Simulating Social Interactions With LLMs](https://arxiv.org/abs/2403.05020)：比较全知与非全知 LLM 社会模拟，指出不现实的共享信息设置会夸大表现，而现实中的信息不对称仍是智能体互动的关键难题。
+- [Cultural evolution in populations of Large Language Models](https://arxiv.org/abs/2403.08882)：研究 LLM 群体中的文化演化，观察多智能体互动如何形成、传播和改变共享行为模式。
+- [CMAT: A Multi-Agent Collaboration Tuning Framework for Enhancing Small Language Models](https://arxiv.org/abs/2404.01663)：用 collaborative multi-agent tuning 流程生成 TinyAgent 数据并改进小语言模型，减少对人工引导对话流的依赖。
+- [Randomized Exploration in Cooperative Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2404.10728)：提出 CoopTS-PHE 与 CoopTS-LMC 两种 Thompson sampling 探索算法，在合作式并行 MDP 中给出线性转移条件下的 regret 与通信复杂度保证。
+- [Provably Efficient Information-Directed Sampling Algorithms for Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2404.19292)：提出用于 MARL 的 information-directed sampling 算法，在共享不确定性下平衡信息增益与 regret。
+- [Efficient Multi-agent Reinforcement Learning by Planning](https://arxiv.org/abs/2405.11778)：用 planning 提升多智能体强化学习的样本效率，把协同策略学习表述为模型侧规划问题。
+- [Knowing What Not to Do: Leverage Language Model Insights for Action Space Pruning in Multi-agent Reinforcement Learning](https://arxiv.org/abs/2405.16854)：补充一个面向角色化与多智能体协作的模型条目，关注action-space pruning in multi-agent reinforcement learning。
+- [Representation Learning For Efficient Deep Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2406.02890)：研究 deep MARL 中的表示学习，让智能体在协同策略优化前共享或压缩状态信息。
+- [Mixture-of-Agents Enhances Large Language Model Capabilities](https://arxiv.org/abs/2406.04692)：构建分层 Mixture-of-Agents，每层语言模型智能体都读取上一层输出作为辅助信息，在 AlpacaEval 2.0、MT-Bench 与 FLASK 上提升开放模型表现。
+- [Massively Multiagent Minigames for Training Generalist Agents](https://arxiv.org/abs/2406.05071)：把大规模多智能体 minigames 用作通用智能体训练环境，强调 population-scale interaction、竞争与合作。
+- [Efficient Sequential Decision Making with Large Language Models](https://arxiv.org/abs/2406.12125)：用语言模型提升序贯决策效率，重点放在 policy reasoning 与 action selection，而不是固定外部多智能体流程。
+- [LLM2TEA: An Agentic AI Designer for Discovery With Generative Evolutionary Multitasking](https://arxiv.org/abs/2406.14917)：把 LLM 驱动设计与生成式 evolutionary multitasking 结合，用 agentic search 在相关 discovery 任务间迁移候选解。
+- [Decentralized Transformers with Centralized Aggregation are Sample-Efficient Multi-Agent World Models](https://arxiv.org/abs/2406.15836)：提出带集中聚合的去中心化 Transformer 作为高样本效率多智能体世界模型。
+- [Beyond Demographics: Aligning Role-playing LLM-based Agents Using Human Belief Networks](https://arxiv.org/abs/2406.17232)：用 human belief networks 对齐角色扮演智能体，把 persona 控制从人口统计标签推进到结构化信念和价值画像。
+- [It's Morphing Time: Unleashing the Potential of Multiple LLMs via Multi-objective Optimization](https://arxiv.org/abs/2407.00487)：用 multi-objective optimization 组合多个 LLM，把模型选择和响应综合视为 Pareto 权衡，而不是单一 prompt 决策。
+- [Coalitions of Large Language Models Increase the Robustness of AI Agents](https://arxiv.org/abs/2408.01380)：展示多样 LLM coalition 能提升 agent 输出鲁棒性，用类似 ensemble 的群体决策降低单模型失效。
+- [Open Role-Playing with Delta-Engines](https://arxiv.org/abs/2408.05842)：提出用于开放角色扮演的 delta-engines，通过增量状态变化适配角色行为，而不是依赖固定 persona prompt。
+- [Integrated Design and Governance of Agentic AI Systems through Adaptive Information Modulation](https://arxiv.org/abs/2409.10372)：将智能体交互网络与信息流网络分离，并训练强化学习治理层在重复 LLM 智能体社会困境中自适应调制信息。
+- [AQA: Adaptive Question Answering in a Society of LLMs via Contextual Multi-Armed Bandit](https://arxiv.org/abs/2409.13447)：把 LLM society 中的问答适配建模为 contextual multi-armed bandit，在不同 agent 回答策略之间动态选择。
+- [Plurals: A System for Guiding LLMs via Simulated Social Ensembles](https://arxiv.org/abs/2409.17213)：实现面向模拟社会集群的 Python 系统，把 persona 智能体、协商结构、主持者和人口统计数据结合起来，用于多元化 LLM 引导。
+- [Language Grounded Multi-agent Reinforcement Learning with Human-interpretable Communication](https://arxiv.org/abs/2409.17348)：用 LLM 生成的 teamwork data 将 MARL 通信 grounding 到自然语言 embedding space，使 agent 消息可被临时队友理解。
+- [MACPO: Weak-to-Strong Alignment via Multi-Agent Contrastive Preference Optimization](https://arxiv.org/abs/2410.07672)：通过多智能体 contrastive preference optimization 从弱教师监督对齐强学生模型，迭代强化不熟悉的正向行为并惩罚熟悉的负向行为。
+- [AgentBank: Towards Generalized LLM Agents via Fine-Tuning on 50000+ Interaction Trajectories](https://arxiv.org/abs/2410.07706)：整理覆盖 16 个任务、五类智能体技能的 5 万余条交互轨迹，并微调 Samoyed 模型研究轨迹规模化带来的通用智能体能力迁移。
+- [The Dynamics of Social Conventions in LLM populations: Spontaneous Emergence, Collective Biases and Tipping Points](https://arxiv.org/abs/2410.08948)：显示去中心化 LLM 群体能自发形成社会惯例，即使个体无偏也会出现集体偏差，并可能被坚定的对抗性少数派推动转向。
+- [Model Swarms: Collaborative Search to Adapt LLM Experts via Swarm Intelligence](https://arxiv.org/abs/2410.11163)：用 swarm-intelligence search 协同适配 LLM experts，在模型适配过程中探索专家组合与专门化选择。
+- [A Scalable Communication Protocol for Networks of Large Language Models](https://arxiv.org/abs/2410.11905)：提出 Agora 元协议，在标准化 routine、自然语言和 LLM 编写的 routine 之间切换，使去中心化语言模型网络无需固定接口也能扩展通信。
+- [SMART: Self-learning Meta-strategy Agent for Reasoning Tasks](https://arxiv.org/abs/2410.16128)：构建会学习何时选择或修订推理策略的 meta-strategy agent，为自适应 agent reasoning 提供控制层，而不是固定 prompt chain。
+- [Improving Performance of Commercially Available AI Products in a Multi-Agent Configuration](https://arxiv.org/abs/2410.22129)：研究商用 AI 产品在多智能体配置中的表现，衡量配置方式和角色多样性能否改善最终输出。
+- [SMoA: Improving Multi-agent Large Language Models with Sparse Mixture-of-Agents](https://arxiv.org/abs/2411.03284)：通过 response selection、early stopping 和差异化角色描述稀疏化多智能体 LLM 协作，在性能、效率和智能体多样性之间取得平衡。
+- [Multi-Agents are Social Groups: Investigating Social Influence of Multiple Agents in Human-Agent Interactions](https://arxiv.org/abs/2411.04578)：通过人机讨论实验发现，在内容相同情况下，多名 AI 智能体比单个智能体带来更强社会压力感和更大的观点迁移。
+- [Mars-PO: Multi-Agent Reasoning System Preference Optimization](https://arxiv.org/abs/2411.19039)：用 coordinated reasoning traces 上的偏好信号优化多智能体推理系统，而不是只优化单条响应偏好。
+- [MALT: Improving Reasoning with Multi-Agent LLM Training](https://arxiv.org/abs/2412.01928)：把生成、验证和修订异质智能体组成后训练流程，采样多智能体搜索树，并用基于标准答案评分的 value iteration 反传奖励。
+- [Distributed Task Allocation for Multi-Agent Systems: A Submodular Optimization Approach](https://arxiv.org/abs/2412.02146)：用 submodular optimization 刻画分布式多智能体任务分配，补充智能体集群协同算法。
+- [MAG-V: A Multi-Agent Framework for Synthetic Data Generation and Verification](https://arxiv.org/abs/2412.04494)：用 tool-using agents 生成 customer-query trajectories 并验证 synthetic data，用于测试 business assistants。
+- [Offline Multi-Agent Reinforcement Learning via In-Sample Sequential Policy Optimization](https://arxiv.org/abs/2412.07639)：将 in-sample sequential policy optimization 用于离线 MARL，在不收集新多智能体交互数据的情况下改进协同策略。
+- [Cooperative Scheduling and Hierarchical Memory Model for Multi-Agent Systems](https://doi.org/10.1109/ispce-asia64773.2024.10756271)：把 cooperative scheduling 与 hierarchical memory 结合，使多智能体系统在分配协作者任务时保留任务状态。
+- [Multi-Agent Path Finding With Heterogeneous Geometric and Kinematic Constraints in Continuous Space](https://doi.org/10.1109/LRA.2024.3511435)：提出用于连续空间多智能体路径规划的 ECHPBS，结合 priority search、weighted hybrid safe intervals、碰撞推理以及异构机器人几何和运动学约束。
+- [A Bounded Sub-Optimal Approach for Multi-Agent Combinatorial Path Finding](https://doi.org/10.1109/TASE.2024.3466183)：用 AK* target sequencing 和 CBSS variants 扩展 multi-agent combinatorial path finding，为多目标、多 agent 场景生成 bounded-suboptimal 路径。
+- [Evolved Path Costs for Decentralized MAPF](https://doi.org/10.1016/j.swevo.2024.101833)：把在线去中心化冲突消解与演化得到的局部路径成本结合，在有向图环境中比较 edge-weight 与 node-vector 编码，并同集中式 MAPF planner 对照。
+- [A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](https://arxiv.org/abs/2501.01849)：把在线响应选择建模为多智能体 conversational bandit，用用户对齐反馈在多个 LLM 输出中选择更合适的回答。
+- [Emergence of human-like polarization among large language model agents](https://arxiv.org/abs/2501.05171)：建模交互式 LLM agents 如何出现类人极化，把观点动态作为群体涌现行为而非单 agent 特征。
+- [GAWM: Global-Aware World Model for Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2501.10116)：补充一个面向角色化与多智能体协作的模型条目，关注global-aware world model for multi-agent reinforcement learning。
+- [Multi-agent KTO: Reinforcing Strategic Interactions of Large Language Model in Language Game](https://arxiv.org/abs/2501.14225)：在语言博弈中强化大模型智能体的策略性交互，把协作行为的一部分转化为模型侧训练问题。
+- [O-MAPL: Offline Multi-agent Preference Learning](https://arxiv.org/abs/2501.18944)：补充多智能体离线偏好学习方法。
+- [MaAS](https://arxiv.org/abs/2502.04180)：优化 agentic supernet，即多智能体架构的概率分布，使协作结构和资源使用能随查询变化，而不是固定在一个 swarm 模板上。
+- [Near-Optimal Online Learning for Multi-Agent Submodular Coordination: Tight Approximation and Communication Efficiency](https://arxiv.org/abs/2502.05028)：研究通信高效的多智能体子模协调在线学习。
+- [Can Generative Agent-Based Modeling Replicate the Friendship Paradox in Social Media Simulations?](https://arxiv.org/abs/2502.05919)：检验 generative agent-based 社交媒体仿真能否复现 friendship paradox，将网络化 LLM agents 作为行为模型。
+- [Human-Centric Foundation Models: Perception, Generation and Agentic Modeling](https://arxiv.org/abs/2502.08556)：综述 human-centric foundation models，并把 agentic human modeling 同感知、生成以及感知生成统一模型区分开，明确数字人智能体的位置。
+- [Type-Based Planners](https://arxiv.org/abs/2502.08950)：用 type-based planner structure 统一多智能体系统中的单智能体规划。
+- [Leveraging Large Language Models for Effective and Explainable Multi-Agent Credit Assignment](https://arxiv.org/abs/2502.16863)：用语言模型为协作式多智能体强化学习提供有效且可解释的 credit assignment，使团队结果更容易归因到各个 agent 的动作。
+- [M3HF: Multi-agent Reinforcement Learning from Multi-phase Human Feedback of Mixed Quality](https://arxiv.org/abs/2503.02077)：从多阶段、质量混杂的人类反馈中训练多智能体策略，处理 swarm learning 如何加权噪声偏好信号的问题。
+- [MAS-GPT: Training LLMs to Build LLM-based Multi-Agent Systems](https://arxiv.org/abs/2503.03686)：训练 LLM 构建基于 LLM 的多智能体系统。
+- [ReMA: Learning to Meta-think for LLMs with Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2503.09501)：用多智能体强化学习训练 LLM 的元思考能力。
+- [CPLP](https://arxiv.org/abs/2503.13175)：把基于 CCBS 与 SIPP 的 planner 结合起来处理 continuous-time lifelong MAPF，在持续任务分配中即使规划超出时间预算也保持无碰撞移动。
+- [A Generalist Hanabi Agent](https://arxiv.org/abs/2503.14555)：研究 Hanabi 中跨玩家数量与陌生队友的合作式多智能体泛化。
+- [Deterministic AI Agent Personality Expression through Standard Psychological Diagnostics](https://arxiv.org/abs/2503.17085)：用标准心理诊断让 AI agent 的人格表达可重复、可测试，适合检验多轮互动中的 persona 稳定性。
+- [CTS-CBS: A New Approach for Multiagent Collaborative Task Sequencing and Path Finding](https://arxiv.org/abs/2503.20324)：把 MAPF 泛化到 collaborative task sequencing，将 joint traveling-salesman 任务顺序、conflict-based 低层路径规划和 explicit estimation search 结合起来。
+- [Collab: Controlled Decoding using Mixture of Agents for LLM Alignment](https://arxiv.org/abs/2503.21720)：在推理时把现成已对齐 LLM policy 当作 mixture-of-agents 解码器，不更新参数也能按任务效用调整输出。
+- [LERO: LLM-driven Evolutionary framework with Hybrid Rewards and Enhanced Observation for Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2503.21807)：使用 LLM 驱动的演化框架、混合奖励和增强观测来改进多智能体强化学习，为智能体群体行为提供模型侧优化路线。
+- [Fair Dynamic Spectrum Access via Fully Decentralized Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2503.24296)：将 fully decentralized MARL 用于 dynamic spectrum access，同时优化信道利用率和无线智能体之间的公平性。
+- [AI-Driven Consensus: Modeling Multi-Agent Networks with Long-Range Interactions through path-Laplacian Matrices](https://arxiv.org/abs/2504.06894)：用 path-Laplacian matrices 建模多智能体网络中的长程交互，为 consensus 分析提供图结构协同机制。
+- [Beyond Self-Reports: Multi-Observer Agents for Personality Assessment in Large Language Models](https://arxiv.org/abs/2504.08399)：用多个 observer agents 从行为侧评估 LLM 人格，降低对 self-report 问卷的依赖。
+- [M1 / Multi-agent Collaborative Reasoning](https://arxiv.org/abs/2504.09772)：在多智能体协作推理轨迹上微调模型，并用 CEO 式控制器动态分配协作，把 swarm 协调的一部分做成模型侧能力。
+- [SocioVerse: A World Model for Social Simulation Powered by LLM Agents and A Pool of 10 Million Real-World Users](https://arxiv.org/abs/2504.10157)：构建 LLM-agent 驱动的社会仿真世界模型，在大规模用户池上对齐环境、用户、交互机制与行为模式。
+- [MetaSynth: Meta-Prompting-Driven Agentic Scaffolds for Diverse Synthetic Data Generation](https://arxiv.org/abs/2504.12563)：用 meta-prompting 组装 agentic scaffolds，在多类任务上生成多样化合成数据。
+- [Collaborative Multi-Agent Reinforcement Learning for Automated Feature Transformation with Graph-Driven Path Optimization](https://arxiv.org/abs/2504.17355)：提出 TCTO 协作式 MARL 特征工程框架，用演化特征变换图支持路径优化、剪枝、回溯和可追踪探索。
+- [Improving Language Model Personas via Rationalization with Psychological Scaffolds](https://arxiv.org/abs/2504.17993)：用 PB&J 生成基于 Big Five traits 与 primal world beliefs 等心理学脚手架的行为理由，改进 persona 对用户偏好和观点的预测。
+- [Language Model Networks: Supervision-Efficient Learning through Dense Communication](https://arxiv.org/abs/2505.12741)：聚焦多模型或多智能体协作的模型化、蒸馏、通信或强化学习。
+- [Dynamic Sight Range Selection in Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2505.12811)：学习智能体在 MARL 中如何动态调整观测范围，在局部感知成本和协同质量之间取舍。
+- [Multiple Weaks Win Single Strong: Large Language Models Ensemble Weak Reinforcement Learning Agents into a Supreme One](https://arxiv.org/abs/2505.15306)：用 LLM 将多个弱强化学习 agent ensemble 成更强 agent，研究如何从弱策略群体提炼协同决策。
+- [Finite-Time Global Optimality Convergence in Deep Neural Actor-Critic Methods for Decentralized Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2505.18433)：在共享奖励、去中心化策略和神经网络近似条件下，证明去中心化 deep neural actor-critic MARL 的有限时间全局最优收敛。
+- [MisoDICE: Multi-Agent Imitation from Unlabeled Mixed-Quality Demonstrations](https://arxiv.org/abs/2505.18595)：把模仿学习重写为 stationary distribution matching，从无标签、质量混杂的离线 MARL 示范中学习多智能体策略。
+- [ICBSS](https://doi.org/10.1109/ICRA55743.2025.11127663)：改进 Conflict-Based Steiner Search，用单一 constraint tree 和交错的 time-dependent TSP 求解替代重复的多搜索树，以加速 multi-agent combinatorial path finding。
+- [Revisiting Multi-Agent World Modeling from a Diffusion-Inspired Perspective](https://arxiv.org/abs/2505.20922)：将多智能体世界建模重构为顺序式状态空间不确定性消解，以降低多智能体强化学习中的联合动作复杂度。
+- [Learning Individual Behavior in Agent-Based Models with Graph Diffusion Networks](https://arxiv.org/abs/2505.21426)：用 graph diffusion networks 学习 agent-based models 中的个体行为，把局部行为动态连接到群体仿真。
+- [Efficient Leave-one-out Approximation in LLM Multi-agent Debate Based on Introspection](https://arxiv.org/abs/2505.22192)：通过 introspection 近似每个 debater 的边际贡献，降低 LLM 多智能体辩论中 leave-one-out 分析成本。
+- [Risk-Sensitive Agent Compositions](https://arxiv.org/abs/2506.04632)：把工作流形式化为智能体图，并在任务成功率与安全或策略违规风险之间选择组合。
+- [SPARTA ALIGNMENT: Collectively Aligning Multiple Language Models through Combat](https://arxiv.org/abs/2506.04721)：让多个 LLM 围绕同一指令反复对决，由同伴模型按声誉加权投票评判，并把胜负回答转成偏好对来做集体自对齐。
+- [Efficient Generation of Diverse Cooperative Agents with World Models](https://arxiv.org/abs/2506.07450)：用 world models 高效生成多样化合作智能体，避免为获得 policy diversity 而反复训练完整多智能体群体。
+- [Transformer World Model for Sample Efficient Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2506.18537)：用 Transformer world model 提升 MARL 样本效率，让智能体通过预测环境和队友动态来减少真实交互需求。
+- [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2506.24119)：通过零和多智能体自博弈激发多轮推理能力。
+- [MasRouter](https://aclanthology.org/2025.acl-long.757/)：学习如何路由多 agent 系统。核心思想：用级联控制器决定协作模式、角色分配和 LLM 路由，把 swarm 组合从固定模板变成成本-效果权衡下的可学习决策。
+- [Advancing Collaborative Debates with Role Differentiation through Multi-Agent Reinforcement Learning](https://aclanthology.org/2025.acl-long.1105/)：通过强化学习学习角色分化来推进多智能体辩论，使辩论结构成为可训练的群体智能组件。
+- [Dynamic Personality in LLM Agents: A Framework for Evolutionary Modeling and Behavioral Analysis in the Prisoner's Dilemma](https://doi.org/10.18653/v1/2025.findings-acl.1185)：补充战略交互中大模型智能体人格演化建模。
+- [Dynamic Strategy Adaptation in Multi-Agent Environments with Large Language Models](https://arxiv.org/abs/2507.02002)：研究重复多智能体博弈中的 LLM 智能体，利用观察到的对手行为动态调整策略，而不是只执行静态提示。
+- [On Learning Closed-Loop Probabilistic Multi-Agent Simulator](https://arxiv.org/abs/2508.00384)：学习 closed-loop probabilistic multi-agent simulator，使未来智能体行为与环境反馈能被联合建模。
+- [ESCoT](https://arxiv.org/abs/2508.09581)：为多辆类车机器人增强 step-based trajectory planning，通过 local-group collaborative planning 和 duplicate-configuration replanning 提升密集场景成功率。
+- [Emergent Crowds Dynamics from Language-Driven Multi-Agent Interactions](https://arxiv.org/abs/2508.15047)：研究由语言驱动智能体互动涌现出的 crowd dynamics，将个体话语行为连接到群体移动模式。
+- [Optimal Multi-agent Path Finding in Continuous Time](https://arxiv.org/abs/2508.16410)：分析 CCBS-style continuous-time MAPF solver，指出 reference CCBS implementation 的 nontermination 与 suboptimality 风险，并用 delta-BR branching rule 恢复 soundness 和 solution completeness。
+- [PersonaTeaming: Exploring How Introducing Personas Can Improve Automated AI Red-Teaming](https://arxiv.org/abs/2509.03728)：为自动化 AI red-teaming 分配多样 persona 的红队智能体，通过角色差异扩大攻击发现范围，避免同质化提示搜索。
+- [PolicyEvolve: Evolving Programmatic Policies by LLMs for multi-player games via Population-Based Training](https://arxiv.org/abs/2509.06053)：通过基于种群的训练为多人游戏进化程序化大模型策略。
+- [Trust Semantics Distillation for Collaborator Selection via Memory-Augmented Agentic Al](https://arxiv.org/abs/2509.08151)：从 memory-augmented agent 历史中蒸馏 trust semantics，让 collaborator selection 使用学得的可靠性信号而非静态描述。
+- [4WIDS-MAPF](https://doi.org/10.1109/JIOT.2025.3587737)：为四轮独立驱动和转向机器人构建层次化 continuous-space MAPF planner，结合 physical conflict tree、hybrid A* motion primitives、mode-switch penalty 与 adaptive heuristic。
+- [Agentic AI for Low-Altitude Semantic Wireless Networks: An Energy Efficient Design](https://arxiv.org/abs/2509.19791)：为低空语义无线网络设计能效感知的 agentic coordination，把语义通信决策与分布式资源控制耦合起来。
+- [Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](https://arxiv.org/abs/2509.22596)：用策略学习把多智能体在线协同扩展到 submodular objectives 之外。
+- [PS-ECBS](https://doi.org/10.1109/LRA.2025.3601044)：把 MILP dynamic task assignment 与 enhanced conflict-based search 结合，让仓储机器人车队同时优化货架任务分配和无碰撞路径。
+- [CTS-PIBT](https://doi.org/10.1109/LRA.2025.3604726)：用 greedy task-sequence refinement、扩展 PIBT low-level search 与 anytime improvement loop 求解 collaborative task sequencing and path finding，并在仿真和机器人实验中验证。
+- [SimCity: Multi-Agent Urban Development Simulation with Rich Interactions](https://arxiv.org/abs/2510.01297)：构建 rich-interaction 城市发展仿真，让多个 agents 建模规划、协商和城市增长动态。
+- [AutoMaAS](https://arxiv.org/abs/2510.02669)：通过 operator 生成、融合、淘汰和成本感知反馈演化多智能体架构，把架构搜索从静态 workflow 扩展到自演化 swarm。
+- [Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](https://arxiv.org/abs/2510.07799)：用图扩散模型生成多大模型智能体通信拓扑，把 swarm 结构转化为可学习的设计变量。
+- [Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](https://arxiv.org/abs/2510.11062)：用 multi-agent RL 训练协作式 LLM 系统，把协同能力作为模型侧学习目标。
+- [Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2510.11824)：在鲁棒性与韧性压力条件下评估合作式 MARL 策略，区分环境或队友条件变化时智能体如何退化、恢复和重新协同。
+- [PRISM: Agentic Retrieval with LLMs for Multi-Hop Question Answering](https://arxiv.org/abs/2510.14278)：将 agentic retrieval 用于多跳问答，协调检索与推理步骤以构造跨 hop 的证据链。
+- [Integrating LLM and Diffusion-Based Agents for Social Simulation](https://arxiv.org/abs/2510.16366)：结合语言模型智能体和 diffusion-based agents，使社会模拟同时表示语义决策过程以及视觉或行为动态。
+- [A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2510.17697)：补充多智能体强化学习中的定向干预原则。
+- [Probabilistic Modeling of Intentions in Socially Intelligent LLM Agents](https://arxiv.org/abs/2510.18476)：对 socially intelligent LLM agents 的意图做概率建模，使其在互动中能推断潜在目标。
+- [CBS-TS](https://arxiv.org/abs/2510.21738)：在 search forest 中交替执行 MILP task sequencing、CBS 和 Multi-Label A* 冲突消解，用于 collaborative task assignment、sequencing 与 multi-agent path finding。
+- [MASPRM: Multi-Agent System Process Reward Model](https://arxiv.org/abs/2510.24803)：提出 multi-agent system process reward model，把过程级奖励建模引入多智能体协同推理与训练。
+- [Emergent Coordinated Behaviors in Networked LLM Agents: Modeling the Strategic Dynamics of Information Operations](https://arxiv.org/abs/2510.25003)：建模 networked LLM agents 中的信息行动动态，展示 coordinated behaviors 如何通过战略性通信涌现。
+- [Towards Transferable Personality Representation Learning based on Triplet Comparisons and Its Applications](https://doi.org/10.18653/v1/2025.emnlp-main.509)：从 triplet comparisons 学习可迁移人格表示，支撑跨下游角色扮演与社会任务的 persona consistency。
+- [SPARK: Simulating the Co-evolution of Stance and Topic Dynamics in Online Discourse with LLM-based Agents](https://doi.org/10.18653/v1/2025.emnlp-main.1176)：用 LLM agents 仿真在线话语，使立场和讨论主题在多轮互动中共同演化。
+- [Scaling Multi-Agent Environment Co-Design with Diffusion Models](https://arxiv.org/abs/2511.03100)：用 diffusion models 扩展多智能体环境协同设计，联合生成环境与 agent behavior constraints。
+- [Shared Spatial Memory Through Predictive Coding](https://arxiv.org/abs/2511.04235)：提出面向共享空间记忆的多智能体 predictive-coding 框架，用 information-bottleneck 目标和类 grid-cell 内部空间编码决定谁、什么以及何时通信。
+- [Multi-agent Coordination via Flow Matching](https://arxiv.org/abs/2511.05005)：从离线多智能体数据中学习基于 flow 的联合行为表征，并蒸馏为去中心化一步策略，把协同能力作为模型侧 swarm 学习目标。
+- [Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning](https://arxiv.org/abs/2511.09792)：重新审视 multi-agent Q-learning 中的 value factorization 假设，突破 monotonic mixing 对合作式 credit assignment 的限制。
+- [MarsRL](https://arxiv.org/abs/2511.11373)：通过带 agentic pipeline parallelism 的强化学习提升多智能体推理系统，把 swarm coordination 作为模型训练目标。
+- [BeyondFacial: Identity-Preserving Personalized Generation Beyond Facial Close-ups](https://arxiv.org/abs/2511.11989)：研究超出面部特写的 identity-preserving personalized generation，可为具身 persona 一致性提供相邻模型线索。
+- [Multi-Agent Collaborative Reward Design for Enhancing Reasoning in Reinforcement Learning](https://arxiv.org/abs/2511.16202)：让多个智能体协同设计强化学习奖励，通过协商式 reward signals 提升推理行为。
+- [MASTEST: A LLM-Based Multi-Agent System For RESTful API Tests](https://arxiv.org/abs/2511.18038)：用多个 LLM agents 生成并检查 RESTful API tests，将端点理解、测试构造和验证职责拆开。
+- [Heterogeneous Multi-Agent Reinforcement Learning with Attention for Cooperative and Scalable Feature Transformation](https://arxiv.org/abs/2511.21934)：补充基于注意力的异构多智能体强化学习方法。
+- [Computable Game-Theoretic Multi-Agent Theory of Mind](https://arxiv.org/abs/2511.22536)：用可计算博弈论框架形式化多智能体心智理论。
+- [AID: Agent Intent from Diffusion for Multi-Agent Informative Path Planning](https://arxiv.org/abs/2512.02535)：用扩散模型推断智能体意图以支持 informative path planning，改进多智能体在不确定性下的感知轨迹协同。
+- [DeepAgent: A Dual Stream Multi Agent Fusion for Robust Multimodal Deepfake Detection](https://arxiv.org/abs/2512.07351)：融合双流专门化 agents 做 multimodal deepfake detection，通过互补证据通道提升鲁棒性。
+- [Towards a Science of Scaling Agent Systems](https://arxiv.org/abs/2512.08296)：量化协调模式、模型能力和任务因素如何影响单 agent 与多 agent 配置下的系统 scaling。
+- [Bayesian Inference-Aided LLM Agents in Repeated Games](https://doi.org/10.1109/TNSE.2025.3607916)：用 dynamic network view 建模无限重复博弈中的 LLM-agent 行为。
+- [Collaborative Multi-Agent Reasoning with Process Reward Model](https://doi.org/10.1109/ieem63636.2025.11357664)：把 process reward modeling 用于 collaborative multi-agent reasoning，将群体协作的一部分转化为模型侧监督问题。
+- [Dynamic, Efficient, and Generalizable Multi-Agent Communication for Large Language Models](https://doi.org/10.1109/icdmw69685.2025.00306)：研究 LLM agents 的动态、高效且可泛化通信，使消息交换不再固定为全连接讨论。
+- [An Experimental Study of Linear Attention in Multi-Agent Transformer](https://doi.org/10.1109/kse68178.2025.11309571)：在 multi-agent Transformer 架构中实验 linear attention，面向大规模 agent interaction modeling 的可扩展性。
+- [Value-Diverse Multi-Agent LLM Communities](https://arxiv.org/abs/2512.10665)：研究价值多样性如何驱动多智能体 LLM 社群动态，为 swarm behavior 与社会协调补充模型侧视角。
+- [Dual Preference Learning for Multi-Agent Reinforcement Learning](https://doi.org/10.1109/access.2025.3645778)：从 dual preference signals 学习 MARL 策略，用偏好塑造超过标量奖励的合作行为。
+- [Multi-Agent Collaboration Framework for Large Language Models in Natural Language Processing Tasks](https://doi.org/10.1109/cac67268.2025.11486678)：为 NLP 任务组织多个 LLM 协作角色，使任务求解依赖 agent 间交换而不是单一整体 prompt。
+- [Do LLMs Benefit from Self-Ensembles? A Study of Self-Mixture-of-Agents](https://doi.org/10.1109/fllm67465.2025.11390896)：研究 self-mixture-of-agents 作为 self-ensemble 策略，检验单模型能否通过多次内部采样模拟有用的 agent diversity。
+- [Tractable Multi-Agent Reinforcement Learning through Behavioral Economics](https://proceedings.iclr.cc/paper_files/paper/2025/hash/2dca0881ff5296be0eb3fad15cd36c89-Abstract-Conference.html)：用 behavioral economics 结构约束战略互动，使 MARL 在可解释经济假设下更可处理。
+- [Learning Controllable and Diverse Player Behaviors in Multi-Agent Environments](https://arxiv.org/abs/2512.10835)：学习既可控又多样的 player behavior models，使多智能体环境能系统改变 partner 和 opponent policies。
+- [Trust Evolution and Cooperation Stability Analysis in Multi-Agent Games](https://doi.org/10.1109/icraic67376.2025.11376379)：分析 multi-agent games 中 trust 如何演化并稳定合作，把信任动态作为 swarm behavior 的模型变量。
+- [Trust-Aware Task Allocation With Quantum Optimization in Adversarial Multi-Agent Systems](https://doi.org/10.1109/icdmw69685.2025.00348)：把 trust-aware task allocation 与 quantum optimization 结合，用于 collaborator reliability 会变化的对抗式多智能体场景。
+- [Role-Specific Reward Design with Large Language Model for StarCraft II](https://doi.org/10.1109/icassp49660.2025.10890857)：补充面向多智能体协作的模型侧工作，重点是LLM-designed role-specific rewards for multi-agent StarCraft。
+- [Diffusion Forcing for Multi-Agent Interaction Sequence Modeling](https://arxiv.org/abs/2512.17900)：用 diffusion forcing 建模多智能体交互序列，支撑生成式协同行为建模。
+- [Factorizing value function with hierarchical residual Q-network in multi-agent reinforcement learning](https://doi.org/10.1016/j.neucom.2025.131340)：补充多智能体强化学习中的层次残差价值分解方法。
+- [SA-MARL: Novel Self-Attention-Based Multi-Agent Reinforcement Learning With Stochastic Gradient Descent](https://doi.org/10.1109/ACCESS.2025.3544961)：在 value-mixing MARL 中加入 self-attention state-fusion network 与随机梯度优化，改进协作信用分配并降低局部最优敏感性。
+- [Conflict-Based Search for Multi-Robot Path Planning Using Optimal Motion Primitives](https://doi.org/10.1109/ICEAAI64185.2025.10956552)：把 enhanced conflict-based search、离线优化 motion primitives 和 focal spatiotemporal A* 结合起来，使多机器人路径规划遵守运动学约束。
+- [Layered Decomposition for LA-MAPF](https://doi.org/10.1109/TASE.2025.3648677)：把 large geometric agents 的 MAPF 迭代二分成子问题，并用 solvability safeguard 合并不可解子问题，在不牺牲可解性的情况下降低几何冲突检测成本。
+- [MCPF-TT](https://doi.org/10.1109/IROS60139.2025.11246219)：把 multi-agent combinatorial path finding 扩展到 occupancy grid 中的 tractor-trailer agents，用 CBSS-TT 与 TTCA* 处理挂车导致的车身增长、自碰撞和 agent 间冲突。
+- [TC-CBS-TF](https://doi.org/10.1109/MRS66243.2025.11357251)：把 bounded-suboptimal MAPF search 扩展到 teamwise cooperative MAPF，在 team-specific objectives 下相较 Pareto-optimal TC-CBS 提升最多 50-agent 地图上的可扩展性。
+- [Energy Efficient and Conflict-Free Path Planning for Autonomous Mobile Robot Fleets via Obstacle Persistence Evaluation and Smart Zoning](https://doi.org/10.1109/ACCESS.2026.3669504)：用 EWMA obstacle-persistence evaluation、smart zoning 与 adaptive costmap 协调移动机器人车队，在能耗、可达性和冲突风险之间做路径规划。
+- [μACP: A Formal Calculus for Expressive, Resource-Constrained Agent Communication](https://arxiv.org/abs/2601.00219)：用形式化 calculus 描述资源受限的智能体通信。
+- [Puzzle it Out: Local-to-Global World Model for Offline Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2601.07463)：学习离线 MARL 的 local-to-global world model，让智能体把局部动力学组合成协同的全局轨迹预测。
+- [DepRadar: Agentic Coordination for Context Aware Defect Impact Analysis in Deep Learning Libraries](https://arxiv.org/abs/2601.09440)：协调专门化 LLM 智能体分析深度学习库的缺陷影响，把代码、issue 与依赖证据纳入上下文感知协作。
+- [Structured Personality Control and Adaptation for LLM Agents](https://arxiv.org/abs/2601.10025)：为 LLM agents 提供结构化人格控制与适配，使 persona 变化可显式调节而不是随 prompt 漂移。
+- [Factored Value Functions for Graph-Based Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2601.11401)：提出 diffusion value function，在影响图上按时间折扣和空间衰减扩散奖励，为每个智能体分配价值分量。
+- [Cooperative Multi-agent RL with Communication Constraints](https://arxiv.org/abs/2601.12518)：面向通信缺失的去中心化 MARL，用旧梯度预测 base-policy 更新，在智能体无法频繁共享全局数据时稳定 importance sampling。
+- [SemanticALLI: Caching Reasoning, Not Just Responses, in Agentic Systems](https://arxiv.org/abs/2601.16286)：在 agentic marketing pipeline 中缓存 analytic intent resolution 与 visualization synthesis 的结构化中间表示，使复用超越最终响应缓存。
+- [Personality Expression Across Contexts: Linguistic and Behavioral Variation in LLM Agents](https://arxiv.org/abs/2602.01063)：测量 LLM agents 的人格表达如何随语言和行为上下文变化，区分稳定 persona traits 与情境诱发差异。
+- [Kimi K2.5](https://arxiv.org/abs/2602.02276)：在开放多模态 agentic model 路线中引入 Agent Swarm。核心思想：把模型侧图文训练、强化学习与自驱并行编排框架结合起来，将任务拆成异质子任务并并发执行。
+- [One Model, All Roles: Multi-Turn, Multi-Agent Self-Play Reinforcement Learning for Conversational Social Intelligence](https://arxiv.org/abs/2602.03109)：通过多轮多智能体自博弈让同一模型学习多种对话角色和群体互动策略。
+- [An Empirical Study of Collective Behaviors and Social Dynamics in Large Language Model Agents](https://arxiv.org/abs/2602.03775)：分析 Chirper.ai 上 3.2 万个 LLM 智能体的一年 700 万条帖子，度量同质性、社会影响、有毒语言、意识形态、极化和排斥行为。
+- [The Single-Multi Evolution Loop for Self-Improving Model Collaboration Systems](https://arxiv.org/abs/2602.05182)：交替推进单模型改进与多模型协作，让 individual models 和 collaborative systems 在同一循环中共同演化。
+- [Data-Centric Interpretability for LLM-based MARL](https://arxiv.org/abs/2602.05183)：用 sparse autoencoders 和 Meta-Autointerp 解释大规模 multi-agent RL 训练动态，覆盖 role-play、语言切换、环境 bug 和 reward hacking。
+- [Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents](https://arxiv.org/abs/2602.07777)：研究自利 LLM agent 中由 gossip 驱动的间接互惠，为多 agent 协作机制提供模型侧视角。
+- [Dialogue Model Optimization via Agent Game and Adaptive Tree-based GRPO](https://arxiv.org/abs/2602.08533)：通过智能体博弈与自适应树式 GRPO 优化对话模型。
+- [Discovering High Level Patterns from Simulation Traces](https://arxiv.org/abs/2602.10009)：从 simulation traces 中抽取高层行为模式，把多智能体运行记录转化为可复用的分析或建模抽象。
+- [Budget-Aware Agentic Routing via Boundary-Guided Training](https://arxiv.org/abs/2602.21227)：通过边界引导训练预算感知的智能体路由。
+- [Learning dynamics from online-offline systems of LLM agents](https://arxiv.org/abs/2602.23437)：用随机 agent-based 模型和 mean-field 方程拟合 LLM 智能体新闻传播模拟，关联离线事件、32 种人格画像与线上信息扩散动态。
+- [MetaMind: General and Cognitive World Models in Multi-Agent Systems by Meta-Theory of Mind](https://arxiv.org/abs/2603.00808)：以 meta-theory of mind 视角建模多智能体系统中的通用与认知 world models，补充 agent swarm 的模型侧协调能力。
+- [From Human Negotiation to Agent Negotiation: Personal Mobility Agents in Automated Traffic](https://arxiv.org/abs/2603.01035)：把人类谈判概念迁移到自动交通中的 personal mobility agents，建模智能体如何围绕通行优先级协商。
+- [Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-Shot Document-Level Event Arguments Extraction](https://arxiv.org/abs/2603.02909)：用生成、评估和修订智能体创建并改进合成样本，服务零样本文档级事件论元抽取。
+- [Neural operator transformers capture bifurcating drift wave turbulence in fusion plasma simulations](https://arxiv.org/abs/2603.05730)：用 neural-operator Transformers 建模等离子体仿真中的 bifurcating drift-wave turbulence；该项更接近 swarm world modeling 的相邻线索，而非明确多智能体方法。
+- [Multi-Agent Reinforcement Learning with Submodular Reward](https://arxiv.org/abs/2603.06810)：研究多智能体强化学习中的 submodular reward 结构。
+- [MAS-H2: A Hierarchical Multi-Agent System for Holistic Cloud-Native Autoscaling](https://arxiv.org/abs/2603.07607)：把 Kubernetes 自动伸缩拆成战略、规划和执行智能体，将业务策略转化为主动的 pod 与 node 联合伸缩决策。
+- [Code-Space Response Oracles: Generating Interpretable Multi-Agent Policies with Large Language Models](https://arxiv.org/abs/2603.10098)：用 LLM 生成的代码策略替代 PSRO 中的黑盒强化学习 oracle，使多智能体 best response 更可解释、可调试。
+- [Federated Personal Knowledge Graph Completion with Lightweight Large Language Models for Personalized Recommendations](https://arxiv.org/abs/2603.13264)：用轻量 LLM 做 federated personal knowledge-graph completion，使个性化推荐知识能分布在用户或智能体侧。
+- [Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](https://arxiv.org/abs/2603.16264)：加入 adaptive theory-of-mind modeling，让 LLM agents 在协作过程中更新对队友或对手的信念。
+- [Analysis Of Linguistic Stereotypes in Single and Multi-Agent Generative AI Architectures](https://arxiv.org/abs/2603.18729)：比较单智能体提示与 generate-critique-revise 多智能体架构，在 SAE 与 AAE 输入下分析方言敏感的刻板印象生成。
+- [CBS-AA](https://arxiv.org/abs/2603.18866)：将 conflict-based search 扩展到 asynchronous-action MAPF，用 complete and optimal CBS-AA 表述避开 CCBS 连续等待状态空间导致的不完备性，并加入冲突消解规则降低搜索分支。
+- [CTS-PLL](https://arxiv.org/abs/2603.25121)：在 configuration-based CTS-MAPF 上加入 lock detection and release、MAPF recovery 与 intra-sequence refinement，在基准和机器人实验中提升鲁棒性与 anytime 解质量。
+- [Decoupled Geometric MAPF](https://arxiv.org/abs/2603.26684)：把几何规划与执行时冲突消解解耦，用 GCP sequential A* 的 vertex-use cost inflation 和 DLC FIFO authorization queues 将 MAPF 扩展到 1000-agent 地图。
+- [Corruption-robust Offline Multi-agent Reinforcement Learning From Human Feedback](https://arxiv.org/abs/2603.28281)：在强污染设定下为线性 Markov games 设计鲁棒离线 MARLHF 估计器，并在 uniform 与 unilateral coverage 下界定 Nash equilibrium gap。
+- [Multi-Agent LLMs for Adaptive Acquisition in Bayesian Optimization](https://arxiv.org/abs/2603.28959)：把 LLM Bayesian optimization 拆成策略选择和候选生成等多智能体角色，并用 informativeness、diversity 与 representativeness 指标分析探索和利用。
+- ["Who Am I, and Who Else Is Here?"Behavioral Differentiation Without Role Assignment in Multi-Agent LLM Systems](https://arxiv.org/abs/2604.00026)：研究 LLM agents 在没有显式角色分配时是否会产生行为分化，检验 agent group 中的涌现身份和分工。
+- [Agent Q-Mix: Selecting the Right Action for LLM Multi-Agent Systems through Reinforcement Learning](https://arxiv.org/abs/2604.00344)：把 LLM 智能体拓扑选择重写为合作式 MARL，结合 QMIX 价值分解、拓扑感知图编码器、GRU 记忆和去中心化通信动作。
+- [Karma Mechanisms for Decentralised Cooperative MAPF](https://arxiv.org/abs/2604.07970)：用不可交易的 karma credits 调节双边 replanning negotiation 来解决去中心化 cooperative MAPF 冲突，在 lifelong warehouse pickup-and-delivery 中平衡重规划负担和服务时间公平性。
+- [Mixed-Integer Programming for Multi-Agent Motion Planning and Encirclement of Moving Targets in 3D Space](https://doi.org/10.1109/EECR69522.2026.11548787)：把 moving-target multi-agent motion planning 建模为混合整数规划，显式处理收缩包围约束、agent 间避碰，并在最多 15 个 agents 与 4 个移动目标上验证。
+- [Value-Guidance MeanFlow for Offline Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2604.08174)：在离线多智能体强化学习中使用 value-guided Multi-agent MeanFlow policy，通过全局优势引导实现更高效、对行为正则系数不敏感的协同行动生成。
+- [Multiple Watchman Route Problem Algorithms](https://arxiv.org/abs/2604.15610)：剪枝已被路径覆盖视野包含的地图区域，提出 MWRP-CP3 做 optimal multi-watchman route planning，并补充 bounded-suboptimal 与 anytime variants 处理更大地图。
+- [The Consensus Trap: Rescuing Multi-Agent LLMs from Adversarial Majorities via Token-Level Collaboration](https://arxiv.org/abs/2604.17139)：用 token-level round-robin collaboration 替代响应级多数投票，降低被污染局部多数主导最终多智能体推理的风险。
+- [Learning Spatial-Temporal Coherent Correlations for Speech-Preserving Facial Expression Manipulation](https://arxiv.org/abs/2604.20226)：建模保留语音的面部表情操控中的时空一致相关性；该项只通过具身 persona 一致性与本页相邻。
+- [Supplement Generation Training for Enhancing Agentic Task Performance](https://arxiv.org/abs/2604.20727)：训练补充生成以提升智能体任务表现。
+- [CODA: Coordination via On-Policy Diffusion for Multi-Agent Offline Reinforcement Learning](https://arxiv.org/abs/2604.23308)：在离线 MARL 训练中用扩散模型生成 on-policy 合成轨迹，使增强数据随当前联合策略演化，从而缓解协同失败。
+- [DLM: Unified Decision Language Models for Offline Multi-Agent Sequential Decision Making](https://arxiv.org/abs/2604.23557)：把离线 MARL 表述为对话式序列预测，在 centralized training with decentralized execution 下先监督微调，再用 group relative policy optimization 优化。
+- [Preserving Disagreement: Architectural Heterogeneity and Coherence Validation in Multi-Agent Policy Simulation](https://arxiv.org/abs/2604.26561)：在多智能体政策仿真中保留架构异质性，并用 coherence validation 检查分歧是否来自有效视角差异而非模拟失真。
+- [Beyond One-Size-Fits-All Exercises: Personalizing Computer Science Worksheets with Large Language Models](https://arxiv.org/abs/2604.27433)：用 LLM 个性化计算机科学练习单，属于教育智能体个性化相邻条目，而非通用多智能体协同方法。
+- [NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search](https://arxiv.org/abs/2605.00751)：通过 interaction score 提议局部单智能体和双智能体偏移，而不是展开完整联合动作空间，使合作式多智能体 MCTS 更可处理。
+- [CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making](https://arxiv.org/abs/2605.01457)：用 coordinated velocity attention 和 adaptive coordination gating 做 few-step offline multi-agent decision making，在一到三步去噪中保持团队协同。
+- [Quality-Aware Exploration Budget Allocation for Cooperative Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2605.01865)：把 return-conditioned 全局探索强度调度与逐智能体 reward-signal-quality 指标结合，用于分配合作式 MARL 的内在动机预算。
+- [SANEmerg: An Emergent Communication Framework for Semantic-aware Agentic AI Networking](https://arxiv.org/abs/2605.05861)：为语义感知 AgentNet 设计涌现通信框架，将用户意图映射为子任务，并在异质 AI 智能体之间学习任务特定信令。
+- [Decentralized Diffusion Policy Learning for Enhanced Exploration in Cooperative Multi-agent Reinforcement Learning](https://arxiv.org/abs/2605.07101)：用去中心化 diffusion policies 改进合作式多智能体强化学习中的探索。
+- [Adaptive Subspace Projection for Generative Personalization](https://arxiv.org/abs/2605.07257)：用 adaptive subspace projection 做生成式个性化，支持可控的用户或 persona 特定生成。
+- [SOM: Structured Opponent Modeling for LLM-based Agents via Structural Causal Model](https://arxiv.org/abs/2605.07301)：把对手模型构建与预测分离，用结构因果图刻画观测和动作依赖，为 LLM 智能体提供显式博弈推理路径。
+- [Generalization Bounds of Emergent Communications for Agentic AI Networking](https://arxiv.org/abs/2605.08613)：补充智能体 AI 网络涌现通信的泛化理论。
+- [Coordinated Diffusion: Generating Multi-Agent Behavior Without Multi-Agent Demonstrations](https://arxiv.org/abs/2605.11485)：在不依赖多智能体示范的情况下生成协同多智能体行为。
+- [Submodular Multi-Agent Policy Learning for Online Distributed Task Allocation in Open Multi-Agent Systems](https://arxiv.org/abs/2605.13269)：用 partition multilinear extension 将 submodular 团队效用连接到多智能体类别策略，并通过 submodular difference rewards 训练分布式任务分配策略。
+- [Interestingness as an Inductive Heuristic for Future Compression Progress](https://arxiv.org/abs/2605.14831)：把 interestingness 形式化为未来压缩进展的预测信号，为递归自改进系统中的任务或数据优先级提供模型侧启发式。
+- [TeamTR: Trust-Region Fine-Tuning for Multi-Agent LLM Coordination](https://arxiv.org/abs/2605.15207)：用 trust-region fine-tuning 和 intermediate-occupancy resampling 缓解多智能体团队顺序微调时的分布漂移。
+- [Conflict-Resilient Multi-Agent Reasoning via Signed Graph Modeling](https://arxiv.org/abs/2605.19418)：把推理智能体之间的信任、冲突和中性关系建模为 signed graph。核心思想：使用 conflict-aware signed message passing，让多智能体推理保留有用分歧，而不是把所有消息压成无类型共识。
+- [Hybrid-AI-sep: A multi-agent computer-aided tool for separation process problems solving and learning](https://doi.org/10.1016/j.compchemeng.2026.109595)：协调多个计算机辅助 agent 解决和学习分离过程问题，把领域计算与工程指导结合起来。
+- [Double distillation network for multi-agent reinforcement learning](https://doi.org/10.1016/j.neucom.2026.133438)：在 MARL 中使用 double-distillation network，在 teacher 和 student policies 之间迁移协同知识。
+- [Probabilistic Agents in Deterministic Audits: Evaluating Multi-Agent Systems for Automated Audits Based on the German IT-Grundschutz](https://doi.org/10.1109/syscon66367.2026.11503560)：把概率式多智能体审计系统同德国 IT-Grundschutz 的确定性要求对照评测，暴露自动合规审计中的验证张力。
+- [Automated Power Dispatch Architecture Based on Multi-Agent Collaboration](https://doi.org/10.1109/pesim67009.2026.11438861)：用协作 agents 完成自动电力调度，将电网运行决策拆给专门化协调角色。
+- [MH-MuG: Collaborative Music Generation Game Between AI Agents Toward Emergent Musical Creativity](https://doi.org/10.1109/access.2026.3666234)：把协作音乐生成表述为 AI agents 之间的 game，通过音乐角色互动研究涌现创意行为。
+- [Learning to attend and reorder: Scalable policy optimization in large-scale multi-agent systems](https://doi.org/10.1016/j.neucom.2026.132646)：补充大规模多智能体系统的可扩展策略优化方法。
+- [Causal-Bootstrapped Multi-Agent Reinforcement Learning for Mitigating the Cold-Start Problem](https://doi.org/10.1109/icassp55912.2026.11464585)：补充用于缓解冷启动问题的因果引导多智能体强化学习。
+- [HACG: Contribution-Based Dynamic Grouping with Hierarchical Graph Attention for Multi-Agent Cooperation](https://doi.org/10.1109/icassp55912.2026.11462610)：将基于贡献度的动态分组与层次化图注意力用于合作式多智能体强化学习，为 Agent Swarm 场景补充一种模型侧协同方法。
+- [Continuous-Space Multi-Agent Path Finding via Enhanced Prioritized Search With Ackermann Kinematic Constraints](https://doi.org/10.1109/LRA.2026.3681157)：把连续空间 MAPF 扩展到 Ackermann 转向机器人，结合 spatiotemporal hybrid A*、homotopy-group clustering 和 prioritized conflict resolution 生成运动可行的协同路径。
+- [Dynamic-Aware DRL for Scalable MAPF](https://doi.org/10.1016/j.aei.2026.104844)：把 dynamic-aware deep reinforcement learning 用于可扩展 multi-agent path finding，为变化的多智能体动态提供可学习的路径决策 planner。
+- Kimi K2.6（[官方报告](https://www.kimi.com/blog/kimi-k2-6)；[模型卡](https://huggingface.co/moonshotai/Kimi-K2.6)）：在长程编码、深度搜索以及从文档到网站或表格的工作流中报告增强版 Agent Swarm，把横向 subagent 扩展作为模型卡能力，而不只是外部框架特性。
+- [Heuristics-Assisted Experience Replay](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p2798.pdf)：用 heuristics-assisted replay strategy 改进 cooperative multi-agent reinforcement learning。
+- [ACORN Coordination Network](https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p2190.pdf)：用 acyclic coordination 与 reachability networks 降低 multi-agent systems 中的通信冗余。
+- [Multi-Agent Post-Co-Training of Large Language Models via Reinforcement Learning](https://doi.org/10.71465/fapm716)：在协同训练后使用强化学习提升多智能体 LLM 协作，为群体智能模型训练补充路线。
+- [Efficient Multi-agent Offline Coordination via Diffusion-based Trajectory Stitching](https://openreview.net/forum?id=EpnZEzYDUT)：用基于扩散的轨迹拼接增强离线多智能体强化学习数据，在交互数据不均衡或受限时提升群体协作能力。
+- [MA2E: Addressing Partial Observability in Multi-Agent Reinforcement Learning with Masked Auto-Encoder](https://openreview.net/forum?id=klpdEThT8q)：用 masked autoencoder 从局部观测推断全局多智能体信息，为去中心化智能体提供可复用的部分可观测协作 MARL 模块。
+- [Agentic Search Engine for Real-Time Internet of Things Data](https://doi.org/10.3390/s25195995)：构建面向实时 IoT 数据的 agentic search engine，通过 agents 路由传感查询并在实时流上检索、推理。
+- [Enhancing Game AI Behaviors with Large Language Models and Agentic AI](https://doi.org/10.1145/3696630.3728553)：用 LLM 与 agentic AI 丰富游戏智能体行为，面向更自适应的 NPC 和多智能体游戏互动。
+- [Multi-Agent Transfer Learning Based on Evolutionary Algorithms and Dynamic Grid Structures for Industrial Applications](https://doi.org/10.3390/ai7020062)：把 evolutionary algorithms 与 dynamic grid structures 结合，用于工业场景中的多智能体迁移学习。
+- [Bridging urban theory and artificial intelligence: a multi-agent recommendation system for sustainable city development](https://doi.org/10.1038/s42949-026-00377-2)：构建面向可持续城市发展的多智能体推荐系统，把城市理论与 AI 协同用于规划建议。
+- [A Self-Supervised Multi-Agent Large Language Model Framework for Customized Traffic Mobility Analysis Using Machine Learning Models](https://doi.org/10.1177/03611981251322468)：用 self-supervised LLM agents 做定制化交通出行分析，协调机器学习模型处理 mobility evidence。
+- [Agentic AI for Sustainable Development: Leveraging Large Language Model-Enhanced Agent-Based Modeling for Complex Policy Strategies](https://doi.org/10.1177/27523543251365678)：用 LLM agents 增强 agent-based modeling，以探索复杂可持续发展政策和模拟利益相关者行为。
+- [Maintaining Stable Personas? Examining Temporal Stability in LLM-Based Human Simulation](https://doi.org/10.1145/3772363.3799334)：评估 LLM-based human simulation 是否能随时间保持 persona traits，把 temporal stability 作为角色扮演智能体评测标准。
+- [Visual Analysis of Time Series Data for Multi-Agent Systems Driven by Large Language Models](https://doi.org/10.1145/3712335.3712410)：用 LLM-driven multi-agent systems 支持时间序列可视分析，将解释和分析辅助拆给多个 agents。
+- [Exploring Multi-Agent Debate for Zero-Shot Stance Detection: A Novel Approach](https://doi.org/10.3390/app15094612)：把 multi-agent debate 用于 zero-shot stance detection，通过智能体协商在无任务专门训练下判断立场。
+- [Personality and Personal AI Agents: A Co-Evolutionary Framework](https://doi.org/10.46328/ijonses.5801)：把 personal AI agents 与用户人格视为共同演化过程，强调智能体行为与人类特质之间的适配。
+- [Meta-Learned Adaptive Memory Filtering for Robust Multi-Agent Collaboration](https://doi.org/10.71465/fias758)：用 meta-learned memory filtering 保留协作相关上下文，并抑制多智能体团队中的过期或有害记忆。
+- [Personality-Aware Multiagent Large Language Models for Strategic Interactions in Polymatrix Games](https://doi.org/10.1145/3765766.3765856)：为多矩阵博弈中的策略交互建模具有人格差异的多智能体大语言模型。
+- [LSRP*](https://doi.org/10.1609/socs.v18i1.36016)：为 asynchronous-action MAPF 增加 anytime planner，在初始 LSRP 解之后持续改进解质量，并扩展到 1000-agent 地图基准。
+- [HM-DRL](https://doi.org/10.1007/s10489-025-06747-0)：在 MAPF 的 distributed deep reinforcement learning 中加入 heatmap-based heuristic，用空间拥堵线索塑造去中心化策略。

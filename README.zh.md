@@ -30,7 +30,9 @@
 - [1.13 Skill 调用](docs/zh/01-core-capabilities/13-skill-use/README.md)
 - [1.14 写作与长文生成](docs/zh/01-core-capabilities/14-writing/README.md)
 - [1.15 记忆](docs/zh/01-core-capabilities/15-memory/README.md)
-- [1.16 其它](docs/zh/01-core-capabilities/16-other/README.md)
+- [1.16 Agent Swarm](docs/zh/01-core-capabilities/16-agent-swarm/README.md)
+- [1.17 创造力](docs/zh/01-core-capabilities/17-creativity/README.md)
+- [1.18 其它](docs/zh/01-core-capabilities/18-other/README.md)
 
 ### 2. 基础 Agent
 

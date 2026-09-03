@@ -1,77 +1,953 @@
 # 2.2.5 Agent Harness
 
+- [XUAT-Copilot: Multi-Agent Collaborative System for Automated User Acceptance Testing with Large Language Model](https://arxiv.org/abs/2401.02705)：协调需求分析、测试用例设计、脚本生成和结果评估等角色智能体，把用户验收测试组织成多角色自动化 QA 流程。
+- [LLM4PlC: Harnessing large Language Models for Verifiable Programming of PlCs in Industrial Control Systems](https://arxiv.org/abs/2401.05443)：把 PLC 代码生成与形式化验证反馈结合起来，将工业控制程序开发从一次性生成变成生成、检查、修复闭环。
+- [PyTy: Repairing Static Type Errors in Python](https://arxiv.org/abs/2401.06619)：用程序分析引导的流程修复 Python 静态类型错误。
+- [CodeAgent: Enhancing Code Generation with Tool-Integrated Agent Systems for Real-World Repo-level Coding Challenges](https://arxiv.org/abs/2401.07339)：为仓库级编码智能体提供代码搜索、编辑、执行和反馈工具，使修复能在真实代码库中规划并验证。
+- [FinSQL: Model-Agnostic LLMs-based Text-to-SQL Framework for Financial Analysis](https://arxiv.org/abs/2401.10506)：面向金融分析 Text-to-SQL 结合 schema linking、SQL 生成和执行式修正，把查询合成组织成工具化数据分析流程。
+- [AssertLLM: Generating and Evaluating Hardware Verification Assertions from Design Specifications via Multi-LLMs](https://arxiv.org/abs/2402.00386)：编排多个大模型角色，从设计规格中生成并评估硬件验证断言，为 HDL 开发补充以验证为中心的 harness。
+- [Executable Code Actions Elicit Better LLM Agents](https://arxiv.org/abs/2402.01030)：把可执行代码片段作为智能体动作，让模型通过生成代码来计算、检查状态和调用工具，而不只依赖自然语言动作。
+- [CodePori: Large-Scale System for Autonomous Software Development Using Multi-Agent Technology](https://arxiv.org/abs/2402.01411)：描述大规模自主软件开发系统，由多个智能体分担规划、实现、审查和集成等软件任务。
+- [CodeAgent: Autonomous Communicative Agents for Code Review](https://arxiv.org/abs/2402.02172)：把代码审查建模为交流式智能体流程，由 reviewer 与 author 角色围绕候选代码修改交换批评和修订。
+- [You Can REST Now: Automated Specification Inference and Black-Box Testing of RESTful APIs with Large Language Models](https://arxiv.org/abs/2402.05102)：自动推断 REST API 规格并驱动黑盒 API 测试，把端点发现、请求生成和响应验证连接成 LLM 辅助测试闭环。
+- [CigaR: Cost-efficient Program Repair with LLMs](https://arxiv.org/abs/2402.06598)：通过控制程序修复流水线中的大模型调用时机降低成本，将补丁生成与更便宜的筛选、验证步骤结合起来。
+- [Decomposition for Enhancing Attention: Improving LLM-based Text-to-SQL through Workflow Paradigm](https://arxiv.org/abs/2402.10671)：把 Text-to-SQL 拆成阶段化子任务，使 schema 理解、条件推理和查询组装成为显式工作流。
+- [RepoAgent: An LLM-Powered Open-Source Framework for Repository-level Code Documentation Generation](https://arxiv.org/abs/2402.16667)：遍历仓库以恢复文件、模块和依赖上下文，再通过仓库级分析与写作流水线生成代码文档。
+- [Debug like a Human: A Large Language Model Debugger via Verifying Runtime Execution Step by Step](https://arxiv.org/abs/2402.16906)：构建逐步检查运行时执行的调试闭环，对比预期与实际状态，并用这些证据定位和修复故障。
+- [Metasql: A Generate-Then-Rank Framework for Natural Language to SQL Translation](https://arxiv.org/abs/2402.17144)：先生成多个 SQL 候选，再用一致性和执行信号排序，为 Text-to-SQL 补充候选选择 harness，而非单次生成器。
+- [SceneCraft: An LLM Agent for Synthesizing 3D Scene as Blender Code](https://arxiv.org/abs/2403.01248)：用 LLM agent 将场景意图转换为 Blender 代码，把代码执行作为创建和修订 3D 场景的接口。
+- [Prompting Large Language Models to Tackle the Full Software Development Lifecycle: A Case Study](https://arxiv.org/abs/2403.08604)：通过覆盖需求、设计、编码、测试和维护的案例研究流程，考察 LLM 辅助如何贯穿软件生命周期。
+- [PET-SQL: A Prompt-enhanced Two-stage Text-to-SQL Framework with Cross-consistency](https://arxiv.org/abs/2403.09732)：把 Text-to-SQL 分为提示增强生成和交叉一致性检查两阶段，用候选查询之间的一致性作为验证机制。
+- [SOEN-101: Code Generation by Emulating Software Process Models Using Large Language Model Agents](https://arxiv.org/abs/2403.15852)：用模拟软件过程模型的 LLM agents 组织代码生成工作流。
+- [ChatDBG: Augmenting Debugging with Large Language Models](https://arxiv.org/abs/2403.16354)：把 LLM 辅助嵌入交互式调试器，使开发者能围绕程序状态、调用栈和运行时行为提问并获得调试帮助。
+- [RepairAgent: An Autonomous, LLM-Based Agent for Program Repair](https://arxiv.org/abs/2403.17134)：构建自主 LLM 程序修复 agent，适合软件开发 harness 条目。
+- [MAGIS: LLM-Based Multi-Agent Framework for GitHub Issue Resolution](https://arxiv.org/abs/2403.17927)：构建面向 GitHub issue resolution 的多智能体框架。
+- [A Multimodal conceptual framework to achieve automated software evolution for context-rich intelligent applications](https://arxiv.org/abs/2404.04821)：围绕上下文丰富应用中的多模态需求和环境信号设计自动化软件演化框架，更像概念性生命周期 harness，而不是代码基准。
 - [AutoCodeRover](https://arxiv.org/abs/2404.05427)（[开源代码](https://github.com/AutoCodeRoverSG/auto-code-rover)）把结构化代码搜索、AST 级定位和测试反馈结合起来做 GitHub issue 修复；设计关键词：程序结构检索、fault localization、低成本 patch 生成。
+- [How Far Can We Go with Practical Function-Level Program Repair?](https://arxiv.org/abs/2404.12833)：研究实用函数级程序修复流程，把修复范围从整仓库缩小到定位后的函数，并用可执行检查验证生成修复。
+- [PyRadar: Towards Automatically Retrieving and Validating Source Code Repository Information for PyPI Packages](https://arxiv.org/abs/2404.16565)：自动发现并验证 PyPI 包对应的源码仓库，为编码智能体在分析代码前提供更可靠的包到仓库 grounding。
+- [A Unified Debugging Approach via LLM-Based Multi-Agent Synergy](https://arxiv.org/abs/2404.17153)：协调多个 LLM agent 进行调试，使定位、推理、修复生成和验证能够相互强化。
+- [AI-powered Code Review with LLMs: Early Results](https://arxiv.org/abs/2404.18496)：报告 LLM 辅助代码审查流程，生成审查评论并研究这类反馈如何进入开发者 review 实践。
+- [DLAP: A Deep Learning Augmented Large Language Model Prompting Framework for Software Vulnerability Detection](https://arxiv.org/abs/2405.01202)：将深度学习漏洞检测器与 LLM 提示结合，使候选脆弱代码能在混合分析流水线中被发现、解释和检查。
+- [Transforming Software Development with Generative AI: Empirical Insights on Collaboration and Workflow](https://arxiv.org/abs/2405.01543)：考察生成式 AI 工具如何改变软件团队协作、交接和工作流，更适合作为经验性 harness 记录而非新 agent 算法。
+- [Iterative Experience Refinement of Software-Developing Agents](https://arxiv.org/abs/2405.04219)：存储并细化既往开发经验，使软件开发 agent 能在不同 issue 解决轨迹之间复用经验教训。
+- [MEIC: Re-Thinking RTL Debug Automation Using LLMs](https://arxiv.org/abs/2405.06840)：结合 LLM 推理与硬件专用错误分析自动化 RTL 调试，把 HDL 修复推进为迭代诊断和修复闭环。
+- [AI-Assisted Assessment of Coding Practices in Modern Code Review](https://arxiv.org/abs/2405.13565)：在现代代码审查中用 AI 辅助评估编码实践问题，为补丁 review 增加审查质量分析流程。
 - [SWE-agent](https://arxiv.org/abs/2405.15793)（[开源代码](https://github.com/SWE-agent/SWE-agent)）是仓库内循环修复的标准基线。
+- [A Study on Developer Behaviors for Validating and Repairing LLM-Generated Code Using Eye Tracking and IDE Actions](https://arxiv.org/abs/2405.16081)：通过眼动和 IDE 操作轨迹分析开发者如何验证、修复 LLM 生成代码，为编码智能体界面提供人机协作证据。
+- [Ecosystem of Large Language Models for Code](https://arxiv.org/abs/2405.16746)：需迁移到 Survey 或 Model：该文梳理代码大模型生态，并不贡献外部软件 agent harness。
+- [CodeR: Issue Resolving with Multi-Agent and Task Graphs](https://arxiv.org/abs/2406.01304)：用预定义任务图组织多智能体修复流程，让 agent 规划仓库 issue 解决、修改代码，并在 SWE-bench Lite 上评估修复效果。
+- [On The Importance of Reasoning for Context Retrieval in Repository-Level Code Editing](https://arxiv.org/abs/2406.04464)：说明仓库级代码编辑智能体为何需要对上下文检索进行推理。
+- [Experimenting with Multi-Agent Software Development: Towards a Unified Platform](https://arxiv.org/abs/2406.05381)：提出统一平台，用于实验多智能体软件开发中的角色、工作流和协作模式。
+- [A Tool for Test Case Scenarios Generation Using Large Language Models](https://arxiv.org/abs/2406.07021)：从自然语言需求生成测试场景，把需求分析转化为具体的 LLM 辅助测试工件流水线。
+- [Integrated Modeling, Verification, and Code Generation for Unmanned Aerial Systems](https://arxiv.org/abs/2406.09485)：连接无人机系统的建模、形式化验证和代码生成，展示安全关键开发中的端到端工作流。
+- [A Lightweight Framework for Adaptive Retrieval In Code Completion With Critique Model](https://arxiv.org/abs/2406.10263)：为代码补全加入自适应检索层，用 critique model 判断检索上下文何时有助于或干扰生成。
 - [MASAI](https://arxiv.org/abs/2406.11638)（[开源代码](https://github.com/masai-dev-agent/masai)）把 SWE 任务拆成多个目标明确的子代理，分别处理定位、信息收集、编辑与验证；设计关键词：模块化子代理、轨迹缩短、SWE-bench Lite。
+- [Instruct, Not Assist: LLM-based Multi-Turn Planning and Hierarchical Questioning for Socratic Code Debugging](https://arxiv.org/abs/2406.11709)：用苏格拉底式多轮规划和层级提问引导学习者调试代码，而不是直接给出修复答案。
+- [AgileCoder: Dynamic Collaborative Agents for Software Development based on Agile Methodology](https://arxiv.org/abs/2406.11912)：把敏捷方法中的角色和仪式映射为协作智能体，使 backlog 规划、编码、测试和审查以动态软件团队流程运行。
+- [CodeNav: Beyond tool-use to using real-world codebases with LLM agents](https://arxiv.org/abs/2406.12276)：聚焦真实代码库导航，为 agent 在编辑前定位相关文件和代码路径提供机制。
+- [Identifying Performance-Sensitive Configurations in Software Systems through Code Analysis with LLM Agents](https://arxiv.org/abs/2406.12806)：用 LLM agent 检查代码并推理会影响系统性能的配置选项，补充配置分析工作流。
+- [StackRAG Agent: Improving Developer Answers with Retrieval-Augmented Generation](https://arxiv.org/abs/2406.13840)：在回答编程问题前检索 Stack Overflow 式开发者知识，把开发者支持变成 RAG 支撑的助手流程。
+- [CREF: An LLM-Based Conversational Software Repair Framework for Programming Tutors](https://arxiv.org/abs/2406.13972)：为编程导师提供会话式修复闭环，通过对话诊断学生代码并引导补丁生成。
+- [FVEL: Interactive Formal Verification Environment with Large Language Models via Theorem Proving](https://arxiv.org/abs/2406.14408)：把 LLM 放入交互式定理证明环境，使证明尝试、失败和修正共同构成验证闭环。
+- [Agent-Driven Automatic Software Improvement](https://arxiv.org/abs/2406.16739)：用 agent 发现改进机会、修改代码并检查软件行为，使软件改进成为自主编辑和验证闭环。
 - [Agentless](https://arxiv.org/abs/2407.01489)（[开源代码](https://github.com/OpenAutoCoder/Agentless)）代表 `localization -> repair -> validation` 工作流化路线。
 - [OpenHands](https://arxiv.org/abs/2407.16741)（[开源代码](https://github.com/OpenHands/OpenHands)）更像通用软件开发 agent 平台。
+- [Rome was Not Built in a Single Step: Hierarchical Prompting for LLM-based Chip Design](https://arxiv.org/abs/2407.18276)：用层级提示组织基于 LLM 的芯片设计工作流。
+- [AutoVCoder: A Systematic Framework for Automated Verilog Code Generation using LLMs](https://arxiv.org/abs/2407.18333)：提供基于大语言模型的自动 Verilog 代码生成系统框架。
+- [Effective Large Language Model Debugging with Best-first Tree Search](https://arxiv.org/abs/2407.19055)：用 best-first tree search 搜索调试动作树，根据执行反馈决定继续探索哪些错误假设和修复尝试。
+- [WaitGPT: Monitoring and Steering Conversational LLM Agent in Data Analysis with On-the-Fly Code Visualization](https://arxiv.org/abs/2408.01703)：通过即时生成的代码可视化让用户监控数据分析 agent，并在中间图表或表格暴露偏差时介入引导。
+- [MaxMind: A Memory Loop Network to Enhance Software Productivity based on Large Language Models](https://arxiv.org/abs/2408.03841)：为软件助手加入记忆循环，保存项目和交互上下文，使后续开发建议能复用既往决策，而不是只依赖当前提示。
 - [DEI / SWE-Comm](https://arxiv.org/abs/2408.07060)（[开源代码](https://github.com/SalesforceAIResearch/swecomm)）把多个开源 SWE agent 组合成委员会，按任务选择和融合不同 agent 的专长；设计关键词：多代理集成、专家互补、SWE-bench Lite。
+- [MAG-SQL: Multi-Agent Generative Approach with Soft Schema Linking and Iterative Sub-SQL Refinement for Text-to-SQL](https://arxiv.org/abs/2408.07930)：面向软件开发能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [DAC: Decomposed Automation Correction for Text-to-SQL](https://arxiv.org/abs/2408.08779)：把 Text-to-SQL 修正拆成分解步骤，结合执行反馈逐项修改查询组件，而不是每次整体重生成 SQL。
+- [VerilogCoder: Autonomous Verilog Coding Agents with Graph-based Planning and Abstract Syntax Tree (AST)-based Waveform Tracing Tool](https://arxiv.org/abs/2408.08927)：构建带图规划和基于抽象语法树波形追踪工具的自主 Verilog 编码智能体。
+- [Developing a Llama-Based Chatbot for CI/CD Question Answering: A Case Study at Ericsson](https://arxiv.org/abs/2408.09277)：构建企业内部 CI/CD 问答聊天机器人，把开发者支持 grounding 到公司流水线知识，而不是泛化编程问答。
+- [CodeRefine: A Pipeline for Enhancing LLM-Generated Code Implementations of Research Papers](https://arxiv.org/abs/2408.13366)：通过检查论文意图、生成代码和实现质量，细化 LLM 生成的研究代码实现。
+- [CodeSift: An LLM-Based Reference-Less Framework for Automatic Code Validation](https://arxiv.org/abs/2408.15630)：在没有参考答案时结合 LLM 判断与自动检查验证生成代码，为编码 agent 增加 reference-less review 步骤。
+- [MarsCode Agent: AI-native Automated Bug Fixing](https://arxiv.org/abs/2409.00899)：描述自动缺陷修复 agent，在 AI-native 开发流程中定位故障、编辑仓库代码并验证候选补丁。
+- [APITestGenie: Automated API Test Generation through Generative AI](https://arxiv.org/abs/2409.03838)：使用生成式 AI 自动生成 API 测试。
+- [A Pair Programming Framework for Code Generation via Multi-Plan Exploration and Feedback-Driven Refinement](https://arxiv.org/abs/2409.05001)：用 pair-programming 角色探索多个实现方案、比较反馈并细化生成代码，而不是直接采用第一个方案。
+- [Python Symbolic Execution with LLM-powered Code Generation](https://arxiv.org/abs/2409.09271)：把符号执行与 LLM 生成的辅助代码结合起来，在 Python 程序分析中扩展路径探索和约束处理。
+- [AutoSafeCoder: A Multi-Agent Framework for Securing LLM Code Generation through Static Analysis and Fuzz Testing](https://arxiv.org/abs/2409.10737)：把安全代码生成拆给编码、静态分析和变异 fuzzing 三类 agent，由漏洞报告和运行时失败反馈驱动迭代修复。
+- [AIvril: AI-Driven RTL Generation With Verification In-The-Loop](https://arxiv.org/abs/2409.11411)：在验证闭环中生成 RTL。
+- [Preference-Guided Refactored Tuning for Retrieval Augmented Code Generation](https://arxiv.org/abs/2409.15895)：在生成前按偏好引导重构检索到的代码上下文，使 RAG 编码依赖上下文清理，而不是直接拼接原始片段。
+- [HyperAgent: Generalist Software Engineering Agents to Solve Coding Tasks at Scale](https://arxiv.org/abs/2409.16299)：HyperAgent 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [TransAgent: Enhancing LLM-Based Code Translation via Fine-Grained Execution Alignment](https://arxiv.org/abs/2409.19894)：通过细粒度执行对齐改进基于大模型的代码翻译。
+- [From Code to Correctness: Closing the Last Mile of Code Generation with Hierarchical Debugging](https://arxiv.org/abs/2410.01215)：From Code to Correctness 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [Tadashi: Enabling AI-Based Automated Code Generation With Guaranteed Correctness](https://arxiv.org/abs/2410.03210)：在 AI 代码生成外包裹正确性保证，把生成程序与形式化或可执行验证绑定起来，而不是把模型输出直接视为最终代码。
+- [Exploring the Potential of Conversational Test Suite Based Program Repair on SWE-bench](https://arxiv.org/abs/2410.04485)：探索用对话式测试套件引导 SWE-bench 上的程序修复。
+- [Need Help? Designing Proactive AI Assistants for Programming](https://arxiv.org/abs/2410.04596)：研究主动式编程助手如何决定何时打断、提供什么帮助，以及如何在没有显式提问时呈现代码指导。
+- [Seeker: Enhancing Exception Handling in Code with LLM-based Multi-Agent Approach](https://arxiv.org/abs/2410.06949)：围绕异常安全分析协调多个 agent，通过中间语言推理错误条件，改进生成代码中的异常处理。
+- [Exploring and Lifting the Robustness of LLM-powered Automated Program Repair with Metamorphic Testing](https://arxiv.org/abs/2410.07516)：Exploring and Lifting the Robustness of LLM-powered Automated 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [Towards Trustworthy LLMs for Code: A Data-Centric Synergistic Auditing Framework](https://arxiv.org/abs/2410.09048)：Towards Trustworthy LLMs for Code 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [Conversational Code Generation: a Case Study of Designing a Dialogue System for Generating Driving Scenarios for Testing Autonomous Vehicles](https://arxiv.org/abs/2410.09829)：通过对话生成自动驾驶测试所需的可执行驾驶场景代码，把用户澄清和场景合成连接起来。
+- [Codellm-Devkit: A Framework for Contextualizing Code LLMs with Program Analysis Insights](https://arxiv.org/abs/2410.13007)：把程序分析事实送入 code LLM 流程，用静态分析信号约束生成和修复，而不是只依赖提示里的仓库上下文。
+- [Agents4PLC: Automating Closed-Loop PLC Code Generation and Verification in Industrial Control Systems Using LLM-Based Agents](https://arxiv.org/abs/2410.14209)：把 PLC 代码生成组织成闭环：LLM agent 合成控制逻辑、调用验证，并根据失败检查修订代码。
+- [Debug Smarter, Not Harder: AI Agents for Error Resolution in Computational Notebooks](https://arxiv.org/abs/2410.14393)：面向计算 notebook，使用 agent 检查失败单元、分析运行时错误，并在 notebook 执行上下文中提出修复。
 - [RepoGraph](https://arxiv.org/abs/2410.14684)（[开源代码](https://github.com/ozyyshr/RepoGraph)）：以结构化仓库图增强定位与修复上下文组织。
+- [ETF: An Entity Tracing Framework for Hallucination Detection in Code Summaries](https://arxiv.org/abs/2410.14748)：把代码摘要中提到的实体追溯到源码证据，标出无法在仓库中 grounding 的函数、变量或行为描述。
+- [Improving Parallel Program Performance with LLM Optimizers via Agent-System Interfaces](https://arxiv.org/abs/2410.15625)：把并行程序性能数据和系统控制接口暴露给 LLM 优化器，使代码优化成为 agent 与系统之间的反馈闭环。
+- [Memory-Efficient Large Language Models for Program Repair with Semantic-Guided Patch Generation](https://arxiv.org/abs/2410.16655)：用语义引导保持程序修复的内存效率，将定位信号与补丁生成结合起来。
+- [Self-Evolving Multi-Agent Collaboration Networks for Software Development](https://arxiv.org/abs/2410.16946)：让软件开发 agent 之间的协作连接自演化，使任务分配和 agent 间沟通能随开发迭代调整。
 - [SWE-Search](https://arxiv.org/abs/2410.20285)（[开源代码](https://github.com/a-antoniades/swe-search)）：把仓库修复显式建模为搜索过程，强调可回溯候选探索。
-- Devin（[官方博客](https://cognition.ai/blog/introducing-devin)；无 arXiv 论文；闭源产品级 coding agent 的公开系统说明；设计关键词：端到端开发工作流、执行环境集成、长任务闭环）
+- [A test-free semantic mistakes localization framework in Neural Code Translation](https://arxiv.org/abs/2410.22818)：在没有测试套件时定位代码翻译中的语义错误，为代码翻译补充无法执行验证场景下的诊断流程。
+- [MdEval: Massively Multilingual Code Debugging](https://arxiv.org/abs/2411.02310)：MdEval 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [Leveraging Large Language Models in Code Question Answering: Baselines and Issues](https://arxiv.org/abs/2411.03012)：需迁移到 Bench 或 Survey：该文讨论代码问答的基线和问题，而不是外部 agent harness。
+- [A Multi-Agent Approach for REST API Testing with Semantic Graphs and LLM-Driven Inputs](https://arxiv.org/abs/2411.07098)：在 REST API 测试中结合语义图和大模型驱动输入，形成多智能体工作流。
+- [A Preview of XiYan-SQL: A Multi-Generator Ensemble Framework for Text-to-SQL](https://arxiv.org/abs/2411.08599)：面向软件开发能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [An Empirical Study on LLM-based Agents for Automated Bug Fixing](https://arxiv.org/abs/2411.10213)：实证研究基于 LLM 的自动缺陷修复智能体。
+- [A Code Knowledge Graph-Enhanced System for LLM-Based Fuzz Driver Generation](https://arxiv.org/abs/2411.11532)：先查询代码知识图谱中的 API 用法、依赖和调用关系，再提示 LLM 组装可执行 fuzz driver。
+- [Automatically Improving LLM-based Verilog Generation using EDA Tool Feedback](https://arxiv.org/abs/2411.11856)：用 EDA 工具反馈迭代改进生成的 Verilog，使综合和验证错误进入 HDL 生成闭环。
+- [Human-In-The-Loop Software Development Agents](https://arxiv.org/abs/2411.12924)：把人工检查点放入软件 agent 循环，让开发者审阅计划、批准编辑并引导修复，同时由 agent 执行仓库操作。
+- [Planning-Driven Programming: A Large Language Model Programming Workflow](https://arxiv.org/abs/2411.14503)：把程序规划与实现分离，让 LLM 编码先经过显式任务分解，再进入代码生成。
+- [ConAIR:Consistency-Augmented Iterative Interaction Framework to Enhance the Reliability of Code Generation](https://arxiv.org/abs/2411.15587)：通过迭代交互和候选输出之间的一致性检查提升代码生成可靠性。
+- [Action Engine: An LLM-based Framework for Automatic FaaS Workflow Generation](https://arxiv.org/abs/2411.19485)：从自然语言意图生成 FaaS 工作流，把流程逻辑转换为可部署的云函数编排。
+- [Enhanced LLM-Based Framework for Predicting Null Pointer Dereference in Source Code](https://arxiv.org/abs/2412.00216)：用 LLM 分析流水线识别源码中的空指针解引用风险。
+- [DRC-Coder: Automated DRC Checker Code Generation Using LLM Autonomous Agent](https://arxiv.org/abs/2412.05311)：用自主 LLM agent 生成设计规则检查代码，把规则理解、checker 合成和验证连接到 EDA 工作流。
+- [ExploraCoder: Advancing code generation for multiple unseen APIs via planning and chained exploration](https://arxiv.org/abs/2412.05366)：针对未见过的 API 先规划并链式探索，让 agent 在生成依赖 API 调用的代码前发现接口行为。
+- [ENCO: Deploying Production-Scale Engineering Copilots](https://arxiv.org/abs/2412.06099)：总结工程 copilot 的生产级部署模式，包括组织集成、可靠性约束和大规模工作流适配。
+- [Dialogagent: An Auto-Engagement Agent for Code Question Answering Data Production](https://arxiv.org/abs/2412.08069)：Dialogagent 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [ThreatPilot: Attack-Driven Threat Intelligence Extraction](https://arxiv.org/abs/2412.10872)：需迁移到 Cybersecurity Agent Harness：它编排攻击驱动的威胁情报抽取，并非软件开发编码或测试 harness。
+- [CoopetitiveV: Leveraging LLM-powered Coopetitive Multi-Agent Prompting for High-quality Verilog Generation](https://arxiv.org/abs/2412.11014)：用竞争与协作并存的多 LLM agent 生成 Verilog，让多个提示角色批评并改进 HDL 候选。
+- [Seeker: Towards Exception Safety Code Generation with Intermediate Language Agents Framework](https://arxiv.org/abs/2412.11713)：Seeker 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [An Exploratory Study of ML Sketches and Visual Code Assistants](https://arxiv.org/abs/2412.13386)：考察视觉代码助手工作流，其中机器学习草图和界面线索帮助开发者检查、编辑和理解生成代码。
+- [Syzygy: Dual Code-Test C to (safe) Rust Translation using LLMs and Dynamic Analysis](https://arxiv.org/abs/2412.14234)：在把 C 翻译为更安全 Rust 的同时生成测试并使用动态分析，使翻译候选按行为检查，而不只看语法。
+- [Tree-of-Code: A Self-Growing Tree Framework for End-to-End Code Generation and Execution in Complex Tasks](https://arxiv.org/abs/2412.15305)：把代码生成尝试扩展成自增长树，执行中间候选并用结果引导后续分支。
+- [RTL Agent: An Agent-Based Approach for Functionally Correct HDL Generation via LLMs](https://doi.org/10.1109/ats64447.2024.10915277)：用 agent 循环生成 HDL，并在接受候选硬件代码前检查 RTL 的功能正确性。
+- [ASPIRE: A Multi-Agent Framework for Execution-Free Code Analysis and Repair](https://doi.org/10.1109/bigdata62323.2024.10825553)：在无法执行代码时协调多个 agent 做代码分析和修复，依赖静态推理与交叉批评，而不是测试反馈。
+- [Towards CodeBlizz: Developing an AI-Driven IDE Plugin for Real-Time Code Suggestions, Debugging, and Learning Assistance with Generative AI and Machine Learning Models](https://doi.org/10.1109/icercs63125.2024.10895857)：原型化 IDE 插件，把实时代码建议、调试帮助和学习辅助嵌入开发者编辑器流程。
+- [A Digital Twin Modeling Code Generation Framework based on Large Language Model](https://doi.org/10.1109/iecon55916.2024.10905976)：用 LLM 为数字孪生建模生成代码，把模型规格连接到实现工件。
+- [A Novel LLM enabled Code Snippet Generation Framework](https://doi.org/10.1109/iipem62726.2024.10925748)：围绕 LLM 提示和候选构造提供代码片段生成框架，用于开发者辅助。
+- [Cloud-Based System for Source Code Analysis of Microservices with LLM Agents](https://doi.org/10.1109/csit65290.2024.10982613)：在云端运行 LLM agent 分析微服务源码，支持跨服务边界的架构和代码理解查询。
+- [RAGFix: Enhancing LLM Code Repair Using RAG and Stack Overflow Posts](https://doi.org/10.1109/bigdata62323.2024.10825785)：在代码修复中检索 Stack Overflow 帖子，使 LLM 补丁能利用外部调试案例和 API 知识。
+- [Augmenting Code Sequencing with Retrieval-Augmented Generation (RAG) for Context-Aware Code Synthesis](https://doi.org/10.1109/ssitcon62437.2024.10796587)：为代码序列生成加入检索，使代码合成能利用相关上下文，而不是只依赖 prompt 内局部序列。
+- [DiCE: Distributed Code Generation and Execution](https://doi.org/10.1109/picom64201.2024.00008)：把代码生成和执行分布到多个组件中，让生成代码能在合成流程中运行并检查。
+- [Extracting REST API Endpoints from Microservices Using LLM Agents](https://doi.org/10.1109/dessert65323.2024.11122242)：用 LLM agent 检查微服务代码并抽取 REST 端点，支持从源码生成 API 清单和文档。
+- [Integration of LLM and ReAct Agents for Enhanced Context Oriented Programming](https://doi.org/10.1109/iccit64611.2024.11021711)：将 LLM 生成与 ReAct 式推理和行动步骤结合，用于上下文导向编程任务。
+- [Demystifying Faulty Code: Step-by-Step Reasoning for Explainable Fault Localization](https://doi.org/10.1109/saner60148.2024.00064)：用逐步解释定位故障，使调试轨迹可检查，而不是只返回一个可疑代码行。
+- [KnowBug: Enhancing Large language models with bug report knowledge for deep learning framework bug prediction](https://doi.org/10.1016/j.knosys.2024.112588)：把缺陷报告知识注入 LLM 驱动的深度学习框架缺陷预测中，使缺陷分析 grounded 到历史 issue 证据。
+- [AI-Powered Multi-Agent Framework for Automated Unit Test Case Generation: Enhancing Software Quality through LLM’s](https://doi.org/10.1109/gcat62922.2024.10923987)：用多个 agent 生成单元测试并提升代码覆盖率，把测试编写组织为明确的软件质量工作流。
+- [Unit Test Generation Multi-Agent AI System for Enhancing Software Documentation and Code Coverage](https://doi.org/10.1109/telfor63250.2024.10819096)：协调 agent 生成单元测试以改进文档和代码覆盖率，把测试输出与可维护性证据关联起来。
+- [The Prompt Alchemist: Automated LLM-Tailored Prompt Optimization for Test Case Generation](https://arxiv.org/abs/2501.01329)：自动优化面向特定 LLM 的软件测试用例生成提示词，将提示词搜索纳入测试 harness。
+- [LLM4CVE: Enabling Iterative Automated Vulnerability Repair with Large Language Models](https://arxiv.org/abs/2501.03446)：面向自动漏洞修复的迭代 pipeline。核心思想是用 LLM 反馈循环修复真实代码中的脆弱函数。
+- [RTLSquad](https://arxiv.org/abs/2501.05470)：用多智能体 workflow 生成可解释 RTL 设计。核心思想：围绕硬件设计推理协调专门 agent，使生成的 RTL 能通过角色分工步骤进行检查与改进。
+- [Dafny as Verification-Aware Intermediate Language for Code Generation](https://arxiv.org/abs/2501.06283)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 for Code Generation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Guided Code Generation with LLMs: A Multi-Agent Framework for Complex Code Tasks](https://arxiv.org/abs/2501.06625)：用多个 agent 引导复杂代码生成，将任务理解、实现和批评拆给不同专门角色。
+- [Repository-Aware Unit Tests via Context Injection](https://arxiv.org/abs/2501.07425)：通过精确仓库上下文注入提升 LLM 单元测试生成。核心思想：注入目标代码库信息，使生成测试反映依赖与行为，而不是只围绕孤立片段。
+- [AutoRestTest: A Tool for Automated REST API Testing Using LLMs and MARL](https://arxiv.org/abs/2501.08600)：结合 LLM 与多智能体强化学习自动测试 REST API。
+- [Towards Detecting Prompt Knowledge Gaps for Improved LLM-guided Issue Resolution](https://arxiv.org/abs/2501.11709)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [Human-AI Collaborative Game Testing with Vision Language Models](https://arxiv.org/abs/2501.11782)：补充面向软件开发的外部 LLM/VLM 工作流，重点是VLM-assisted game testing workflow。
+- [Revisit Self-Debugging with Self-Generated Tests for Code Generation](https://arxiv.org/abs/2501.12793)：研究基于自生成测试的执行后与执行中自调试，说明执行反馈何时能改进代码生成。
+- [Mutation-Guided LLM-based Test Generation at Meta](https://arxiv.org/abs/2501.12862)：用变异分析引导 LLM 生成测试，面向生产代码中更有故障检出价值的测试路径。
+- [Chain of Grounded Objectives](https://arxiv.org/abs/2501.13978)：用 grounded objectives 连接过程型与目标型代码生成提示。
+- [C2SaferRust: Transforming C Projects Into Safer Rust With NeuroSymbolic Techniques](https://arxiv.org/abs/2501.14257)：用神经符号技术将 C 项目迁移到更安全的 Rust，为 C-to-safe-Rust 基准旁补充遗留代码现代化工作流。
+- [CodeMonkeys: Scaling Test-Time Compute for Software Engineering](https://arxiv.org/abs/2501.14723)：通过同时生成代码修改与测试脚本，扩展软件 agent 的串行和并行 test-time compute。
+- [QualityFlow: An Agentic Workflow for Program Synthesis Controlled by LLM Quality Checks](https://arxiv.org/abs/2501.17167)：由 LLM 质量检查控制的 agentic 程序合成工作流；核心思想是用显式质量控制阶段约束生成、修订和接受。
+- [AugmenTest](https://arxiv.org/abs/2501.17461)：用 LLM 驱动的 oracle 增强软件测试。核心思想：由 LLM 生成或细化预期行为，使测试套件能捕捉既有断言之外的错误。
+- [Autonomous Legacy Web Application Upgrades Using a Multi-Agent System](https://arxiv.org/abs/2501.19204)：Agent Harness 条目；核心思想：面向遗留 Web 应用升级的多 agent 软件工程流程。
 - [OrcaLoca](https://arxiv.org/abs/2502.00350)（[开源代码](https://github.com/fishmingyu/OrcaLoca)）：聚焦软件 issue localization 的专项 agent 框架；核心思想是把定位动作分解、相关性评分与上下文裁剪组合成更稳的仓库导航闭环。
-- [CodexGraph](https://aclanthology.org/2025.naacl-long.7/)：通过 code graph database 连接代码仓库和 LLM agent，使仓库结构可被查询，用于定位、影响分析和补丁规划。
+- [Agentic Bug Reproduction for Effective Automated Program Repair at Google](https://arxiv.org/abs/2502.01821)：用 agent 化缺陷复现支持自动程序修复。
+- [PatchPilot: A Cost-Efficient Software Engineering Agent with Early Attempts on Formal Verification](https://arxiv.org/abs/2502.02747)：研究结合 LLM 规划、工具反馈和早期形式化验证的低成本软件补丁工作流。
+- [Code Shaping: Iterative Code Editing with Free-form AI-Interpreted Sketching](https://arxiv.org/abs/2502.03719)：用 AI 解释的自由形式草图进行迭代式代码编辑。
+- [Oracular Programming: A Modular Foundation for Building LLM-Enabled Software](https://arxiv.org/abs/2502.05310)：补充构建大模型软件系统的模块化编程框架。
+- [RAG-Verus: Repository-Level Program Verification with LLMs using Retrieval Augmented Generation](https://arxiv.org/abs/2502.05344)：基于 RAG 的仓库级程序验证 harness。核心思想是检索项目上下文，让 LLM 能处理超出孤立代码片段的验证条件。
+- [Otter: Generating Tests from Issues to Validate SWE Patches](https://arxiv.org/abs/2502.05368)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [CODESIM: Multi-Agent Code Generation and Problem Solving through Simulation-Driven Planning and Debugging](https://arxiv.org/abs/2502.05664)：使用模拟驱动规划与调试的多 agent 代码生成框架；核心思想是把解题、模拟和修复拆成协同角色。
 - [SyncMind](https://arxiv.org/abs/2502.06994)（[开源代码](https://github.com/xhguo7/SyncMind)）：面向协作软件工程的 out-of-sync 恢复框架；核心思想是把状态漂移、协作沟通和资源约束显式建模，评估 agent 在共享代码库变化后的恢复能力。
+- [LLM-Generated Microservice Implementations from RESTful API Definitions](https://arxiv.org/abs/2502.09766)：从 API 定义生成 RESTful 微服务，并用日志反馈循环迭代修复。
+- [SURGE: On the Potential of Large Language Models as General-Purpose Surrogate Code Executors](https://arxiv.org/abs/2502.11167)：研究 LLM 作为通用 surrogate code executor 的潜力；核心思想是评估语言模型执行模拟何时能支持代码推理、何时仍需真实执行。
+- [MCTS-Judge: Test-Time Scaling in LLM-as-a-Judge for Code Correctness Evaluation](https://arxiv.org/abs/2502.12468)：面向代码正确性评审的 test-time scaling harness。核心思想是在 judge 轨迹上使用 Monte Carlo tree search，让代码评测先 deliberation 再给出正确性判断。
+- [MutaGReP: Execution-Free Repository-Grounded Plan Search for Code-Use](https://arxiv.org/abs/2502.15872)：面向代码使用的免执行、仓库感知计划搜索 harness；核心思想是在编辑或执行代码前搜索仓库感知计划，减少直接生成的脆弱性。
+- [Saarthi: The First AI Formal Verification Engineer](https://arxiv.org/abs/2502.16662)：把形式化验证工作封装为带迭代推理与工具使用的自治 agent 工作流。
+- [FastCoder: Accelerating Repository-level Code Generation via Efficient Retrieval and Verification](https://arxiv.org/abs/2502.17139)：通过检索和验证加速 repository-level code generation；核心思想是结合上下文检索和验证循环来支持仓库级修改。
+- [PyEvalAI: AI-assisted evaluation of Jupyter Notebooks for immediate personalized feedback](https://arxiv.org/abs/2502.18425)：评估 Jupyter notebook 并即时返回个性化反馈，把代码、表格和叙述单元一起纳入教学场景的 notebook review 流程。
+- [Empirical Research on Utilizing LLM-based Agents for Automated Bug Fixing via LangGraph](https://arxiv.org/abs/2502.18465)：用 LangGraph 实现自动缺陷修复，把定位、补丁生成和验证拆成节点，便于实证分析 agent 行为。
+- [Program Synthesis Dialog Agents for Interactive Decision-Making](https://arxiv.org/abs/2502.19610)：把 program synthesis dialog agents 用于交互式决策，适合软件 agent harness。
+- [LADs: Leveraging LLMs for AI-Driven DevOps](https://arxiv.org/abs/2502.20825)：面向云配置和部署的 LLM-driven DevOps harness；核心思想是用 LLM 引导分析与优化，使云管理适应变化工作负载。
+- [Interacting with AI Reasoning Models: Harnessing "Thoughts" for AI-Driven Software Engineering](https://arxiv.org/abs/2503.00483)：研究用户如何在软件工程流程中与 reasoning-model thoughts 交互，为轨迹检查与引导补充 harness 模式。
+- [Unlocking a New Rust Programming Experience: Fast and Slow Thinking with LLMs to Conquer Undefined Behaviors](https://arxiv.org/abs/2503.02335)：结合快速 LLM 辅助和较慢的分析步骤，帮助 Rust 开发者识别并处理 undefined behavior 风险。
+- [Fully Autonomous Programming Using Iterative Multi-Agent Debugging with Large Language Models](https://arxiv.org/abs/2503.07693)：面向程序合成的迭代多代理调试框架。核心思想是协同生成、执行、指导、调试和修复代理，以修正接近正确但未通过测试的代码。
+- [Code Digital Twin: A Knowledge Infrastructure for AI-Assisted Complex Software Development](https://arxiv.org/abs/2503.07967)：提出 code digital twin 作为共享知识基础设施，维护结构化项目表示，供 AI 助手在复杂开发中查询。
+- [LocAgent: Graph-Guided LLM Agents for Code Localization](https://arxiv.org/abs/2503.09089)：把仓库表示为异构依赖图，让 LLM agent 通过多跳搜索定位相关代码。
+- [Modularization is Better: Effective Code Generation with Modular Prompting](https://arxiv.org/abs/2503.12483)：通过模块化提示提升代码生成。
+- [MANTRA: Enhancing Automated Method-Level Refactoring with Contextual RAG and Multi-Agent LLM Collaboration](https://arxiv.org/abs/2503.14340)：结合 contextual RAG 的 multi-agent refactoring harness。核心思想是协调 agents 完成检索、method-level refactoring 和缺陷规避。
 - [CodingGenie](https://arxiv.org/abs/2503.14724)：面向软件开发的主动式 IDE 助手 harness。核心思路是监控代码上下文并自动提出可定制的修 bug、测试和改进建议，把 proactivity 变成可研究的编码 Agent 工作流变量。
+- [VeriMind: Agentic LLM for Automated Verilog Generation with a Novel Evaluation Metric](https://arxiv.org/abs/2503.16514)：用 agentic LLM 工作流自动生成 Verilog，将结构化推理与 HDL 设计专用评测指标结合起来。
+- [Polymer: Development Workflows as Software](https://arxiv.org/abs/2503.17679)：把开发流程表示为可执行的软件工件，用于连接需求不完备的软件任务；核心思想：显式化流程规范与任务转换，使 LLM 辅助开发从孤立提示走向可编排流水线。
+- [ModiGen: A Large Language Model-Based Workflow for Multi-Task Modelica Code Generation](https://arxiv.org/abs/2503.18460)：构建面向多任务 Modelica 代码生成的 LLM 工作流，将 agentic coding 扩展到仿真模型开发。
+- [Verbal Process Supervision Elicits Better Coding Agents](https://arxiv.org/abs/2503.18494)：带 verbal process supervision 的 coding-agent 系统；核心思想是监督中间理解和推理过程，而不只看最终补丁，从而改进复杂软件工程任务。
+- [Testora: Using Natural Language Intent to Detect Behavioral Regressions](https://arxiv.org/abs/2503.18597)：把自然语言意图转成回归检查，用预期行为作为 oracle 来发现软件修改破坏功能的情况。
 - [debug-gym](https://arxiv.org/abs/2503.21557)（[开源代码](https://github.com/microsoft/debug-gym)）：文本化交互调试环境；核心思想是把 pdb、执行反馈和代码探索工具封装为 agent 环境，专门评估和训练信息搜集式 debugging 行为。
-- [Otter](https://proceedings.mlr.press/v267/ahmed25b.html)：从 issue 描述生成测试来验证 SWE 补丁，可作为修复 agent 的外部 verifier 组件，为补丁提供可执行证据。
-- [PatchPilot](https://openreview.net/forum?id=ybODpT8ydV)（[开源代码](https://github.com/ucsb-mlsec/PatchPilot)）：面向成本效率的软件工程 agent，把早期形式化验证尝试加入补丁生成闭环。
-- [Guided Search Strategies in Non-Serializable Environments](https://proceedings.mlr.press/v267/zainullina25a.html)：研究环境状态难以干净序列化时 SWE agent 的搜索与回溯策略，在更困难执行假设下补充 SWE-Search 路线。
-- [Adaptive Self-improvement LLM Agentic System for ML Library Development](https://proceedings.mlr.press/v267/zhang25at.html)：面向机器学习库开发构建自改进 agentic 闭环，把代码生成、验证和迭代修复组织到库级任务中。
-- [Nemotron-CORTEXA](https://openreview.net/forum?id=k6p8UKRdH7)：通过定位与解法多样性机制改进软件工程 agent，补充了厂商实验室在顶会中的 SWE agent 工作。
+- [Issue Localization via LLM-Driven Iterative Code Graph Searching](https://arxiv.org/abs/2503.22424)：面向 issue localization 的代码图搜索 harness。核心思想：在 LLM 引导下迭代遍历仓库图，定位与 issue 相关的文件和代码区域。
+- [Thinking Longer, Not Larger: Enhancing Software Engineering Agents via Scaling Test-Time Compute](https://arxiv.org/abs/2503.23803)：通过分配更多推理时搜索与推理预算增强软件工程 agent，而不是只换更大模型。
+- [SchemaAgent: A Multi-Agents Framework for Generating Relational Database Schema](https://arxiv.org/abs/2503.23886)：可作为“软件开发 / 智能体框架”候选条目；提供面向智能体工作流、编排、工具使用或执行环境的可复用框架。
+- [VFlow: Discovering Optimal Agentic Workflows for Verilog Generation](https://arxiv.org/abs/2504.03723)：面向 Verilog 生成的 agentic workflow 发现框架；核心思想是搜索规划、验证和修复步骤组合，使硬件代码生成 workflow 可自适应。
+- [AdaCoder: An Adaptive Planning and Multi-Agent Framework for Function-Level Code Generation](https://arxiv.org/abs/2504.04220)：自适应规划与多 agent 函数级代码生成。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [MioHint: LLM-assisted Mutation for Whitebox API Testing](https://arxiv.org/abs/2504.05738)：用 LLM 生成的 mutation hints 引导白盒 API 测试，把搜索集中到更可能暴露新行为的输入变化上。
+- [Test Amplification for REST APIs via Single and Multi-Agent LLM Systems](https://arxiv.org/abs/2504.08113)：用单 agent 和多 agent LLM 系统扩增 REST API 测试，扩展既有请求并按 API 行为验证响应。
+- [Code-Craft](https://arxiv.org/abs/2504.08975)： 用层级图式代码摘要改进代码理解中的上下文检索。
+- [Migrating Code At Scale With LLMs At Google](https://arxiv.org/abs/2504.09691)：描述 Google 的生产级代码迁移工作流，把大规模仓库转换作为具体软件 agent harness 模式，而不是一次性代码生成任务。
+- [ReadMe.LLM: A Framework to Help LLMs Understand Your Library](https://arxiv.org/abs/2504.09798)：Agent Harness 条目；核心思想：帮助 LLM 基于 README 和文档理解代码库。
+- [Timing Analysis Agent: Autonomous Multi-Corner Multi-Mode (MCMM) Timing Debugging with Timing Debug Relation Graph](https://arxiv.org/abs/2504.11502)：用 timing-debug relation graph 驱动自主 MCMM 时序调试，把违例诊断、约束推理和修复建议连接到芯片设计流程。
+- [Detecting Malicious Source Code in PyPI Packages with LLMs: Does RAG Come in Handy](https://arxiv.org/abs/2504.13769)：检验 RAG 式 LLM 分析是否能借助包上下文和已知威胁证据识别 PyPI 源码中的恶意行为。
+- [SQL-Factory: A Multi-Agent Framework for High-Quality and Large-Scale SQL Generation](https://arxiv.org/abs/2504.14837)：用多智能体框架生成高质量、大规模 SQL。
+- [Self-Improving Coding Agent](https://arxiv.org/abs/2504.15228)：能够修改自身 scaffold 的 coding-agent harness。核心思想是通过反思和代码更新，而非梯度训练，在 SWE-bench、LiveCodeBench 和合成 agent 任务上改进系统。
+- [VeriCoder](https://arxiv.org/abs/2504.15659)：用 functional-correctness validation 增强 LLM-based RTL code generation，补充以验证为中心的 HDL 编码 harness。
+- [Cottontail: Large Language Model-Driven Concolic Execution for Highly Structured Test Input Generation](https://arxiv.org/abs/2504.17542)：构建面向解析程序的 LLM 驱动混合符号执行引擎，用结构感知路径约束与 Solve-Complete 求解生成有效结构化输入。
+- [Towards Adaptive Software Agents for Debugging](https://arxiv.org/abs/2504.18316)：动态配置调试 agent 的数量与角色；核心思想是根据任务复杂度调整协作结构，而不是始终使用固定多 agent 团队。
+- [From Concept to Practice: an Automated LLM-aided UVM Machine for RTL Verification](https://arxiv.org/abs/2504.19959)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 From Concept to Practice: an Automated LLM-aided UVM Machine for RTL Verification 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [CrashFixer](https://arxiv.org/abs/2504.20412)：面向 Linux kernel bug 的 crash-resolution agent。核心思想：把 kGym 扩展为 kGymSuite，用显式假设生成模拟内核开发者修复流程，并在系统级崩溃 bug 上评估不同修复策略。
+- [ARCS: Agentic Retrieval-Augmented Code Synthesis with Iterative Refinement](https://arxiv.org/abs/2504.20434)：agentic retrieval-augmented code-synthesis harness；核心思想是在有预算的 synthesize-execute-repair 循环中检索上下文、生成候选、执行测试并修复。
+- [CodexGraph](https://aclanthology.org/2025.naacl-long.7/)：通过 code graph database 连接代码仓库和 LLM agent，使仓库结构可被查询，用于定位、影响分析和补丁规划。
+- [CHORUS: Zero-shot Hierarchical Retrieval and Orchestration for Generating Linear Programming Code](https://arxiv.org/abs/2505.01485)：层级检索领域约束并编排线性规划代码生成，把优化模型编写变成分阶段检索与合成流程。
+- [Automating Automotive Software Development: A Synergy of Generative AI and Formal Methods](https://arxiv.org/abs/2505.02500)：把生成式 AI 与形式化方法检查结合，用验证工件约束或确认汽车软件开发输出。
+- [MARCO: Multi-Agent Code Optimization with Real-Time Knowledge Integration for High-Performance Computing](https://arxiv.org/abs/2505.03906)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 MARCO: Multi-Agent Code Optimization with Real-Time Knowledge Integration for High-Performance Computing 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [AutoPatch: Multi-Agent Framework for Patching Real-World CVE Vulnerabilities](https://arxiv.org/abs/2505.04195)：结合多 agent RAG 工作流和近期 CVE 数据库修补 LLM 生成代码中的漏洞，将软件 agent 扩展到安全感知修复。
+- [Facilitating Trustworthy Human-Agent Collaboration in LLM-based Multi-Agent System oriented Software Engineering](https://arxiv.org/abs/2505.04251)：面向多代理软件工程的人机协作框架。核心思想是提升人类与 LLM 软件工程代理协作时的信任和协调。
+- [Who's the Leader? Analyzing Novice Workflows in LLM-Assisted Debugging of Machine Learning Code](https://arxiv.org/abs/2505.08063)：分析新手调试机器学习代码时的 LLM 辅助流程，关注用户与助手如何交替承担调试主导权。
+- [TRAIL: Trace Reasoning and Agentic Issue Localization](https://arxiv.org/abs/2505.08638)：TRAIL 关注 trace reasoning 与 issue localization，适合 Software Development Agent Harness。
+- [Enhancing Software Development with Context-Aware Conversational Agents: A User Study on Developer Interactions with Chatbots](https://arxiv.org/abs/2505.08648)：研究上下文感知开发者聊天机器人，衡量仓库和任务上下文如何影响软件工作中的对话式支持。
+- [SafeTrans: LLM-assisted Transpilation from C to Rust](https://arxiv.org/abs/2505.10708)：用 LLM 辅助 C 到 Rust 转译，并通过编译与运行时反馈迭代修复。
+- [Guided Search Strategies in Non-Serializable Environments with Applications to Software Engineering Agents](https://arxiv.org/abs/2505.13652)：面向非可序列化环境的 agent guided-search 策略，并应用于软件工程。核心思想是在环境状态难以复制或回放时提升探索与恢复能力。
+- [DSMentor: Enhancing Data Science Agents with Curriculum Learning and Online Knowledge Accumulation](https://arxiv.org/abs/2505.14163)：数据科学 agent 的课程学习与在线知识积累。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Towards Practical Defect-Focused Automated Code Review](https://arxiv.org/abs/2505.17928)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Towards Practical Defect-Focused Automated Code Review 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [SEW: Self-Evolving Agentic Workflows for Automated Code Generation](https://arxiv.org/abs/2505.18646)：面向代码生成的 self-evolving multi-agent workflow harness；核心思想是自动搜索和优化 agent 拓扑与提示，而不是依赖手工 workflow。
+- [Co-PatcheR: Collaborative Software Patching with Component(s)-specific Small Reasoning Models](https://arxiv.org/abs/2505.18955)：Co-PatcheR 用组件专属小 reasoning models 协作修补软件，属于软件修复 agent harness。
+- [CXXCrafter: An LLM-Based Agent for Automated C/C++ Open Source Software Building](https://arxiv.org/abs/2505.21069)：面向 C/C++ 开源项目自动构建的代理。核心思想是用 LLM 循环处理依赖、构建系统、工具链和编译错误。
+- [RepoMaster: Autonomous Exploration and Understanding of GitHub Repositories for Complex Task Solving](https://arxiv.org/abs/2505.21577)：面向面向复杂代码任务的仓库探索与理解的 harness；核心思想是把规划、工具调用、记忆、验证、环境交互或编排逻辑外置到模型之外。
+- [Co-Saving: Resource Aware Multi-Agent Collaboration for Software Development](https://arxiv.org/abs/2505.21898)：可作为软件开发 agent的Agent Harness候选；核心关注“Resource Aware Multi-Agent Collaboration for Software Development”。
+- [CADReview: Automatically Reviewing CAD Programs with Error Detection and Correction](https://arxiv.org/abs/2505.22304)：自动审查 CAD 程序并进行错误检测与修正；核心思想是把 CAD 脚本视为可执行 artifact，用 agentic review loop 找到并修复几何程序错误。
+- [LLM-based Property-based Test Generation for Guardrailing Cyber-Physical Systems](https://arxiv.org/abs/2505.23549)：利用 LLM 生成性质测试，为信息物理系统提供护栏。
+- [SysLLMatic](https://arxiv.org/abs/2506.01249)：软件系统优化 harness，结合性能 profiling、优化模式库和 LLM 代码修改来改进延迟、能耗和吞吐。
+- [Compiler Optimization via LLM Reasoning for Efficient Model Serving](https://arxiv.org/abs/2506.01374)：把 LLM reasoning 用于模型服务场景的编译器优化，通过优化建议和性能反馈提升 serving 效率。
+- [EvoGit: Decentralized Code Evolution via Git-Based Multi-Agent Collaboration](https://arxiv.org/abs/2506.02049)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Decentralized Code Evolution via Git-Based Multi-Agent Collaboration 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [MemFL](https://arxiv.org/abs/2506.03585)： 通过维护项目静态摘要和迭代调试记忆，改进基于 LLM 的故障定位。
+- [From Tool Calling to Symbolic Thinking: LLMs in a Persistent Lisp Metaprogramming Loop](https://arxiv.org/abs/2506.10021)：把 LLM 放入持久 Lisp 元编程循环，使生成的符号代码可执行、可检查，并能跨轮次复用。
+- [BugGen](https://arxiv.org/abs/2506.10501)：使用自纠错多 agent LLM 流水线合成真实感 RTL 缺陷，为软件工程 agent 补充硬件代码数据生成工作流。
+- [Code Researcher](https://arxiv.org/abs/2506.11060)：面向大型系统代码和提交历史的 deep-research-style 编码 agent；核心思想是在生成 crash 修复补丁前，先把语义、模式和历史上下文收集到结构化记忆中。
+- [Retrieval-Augmented Code Review Comment Generation](https://arxiv.org/abs/2506.11591)：通过检索仓库上下文生成代码审查评论，把软件开发 harness 扩展到孤立 diff 分析之外。
+- [GeoPandas-AI: A Smart Class Bringing LLM as Stateful AI Code Assistant](https://arxiv.org/abs/2506.11781)：把 GeoPandas 包装成有状态 LLM 代码助手类，在连续分析步骤中保留 dataframe 和地理空间上下文。
+- [LLM-based Dynamic Differential Testing for Database Connectors with Reinforcement Learning-Guided Prompt Selection](https://arxiv.org/abs/2506.11870)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 LLM-based Dynamic Differential Testing for Database Connectors with Reinforcement Learning-Guided Prompt Selection 提供可复用的 agent 工作流、编排、运行时或协议设计。
 - [Spec2RTL-Agent](https://arxiv.org/abs/2506.13905)：把复杂规格转换为 RTL 的硬件代码生成 agent。核心思想：将规格分析、代码合成和面向验证的反馈组织成 LLM agent 工作流，用于 HDL 开发。
+- [SemAgent: A Semantics Aware Program Repair Agent](https://arxiv.org/abs/2506.16650)：用语义感知定位和补丁推理修复程序，以行为含义而不只是文本相似性来引导编辑。
 - [MAdroid](https://arxiv.org/abs/2506.17539)：面向多用户移动应用功能测试的多智能体测试框架。核心思想：协调 observer 与 operator agent，自动完成聊天、通话、直播和会议等单个测试者无法同时扮演全部角色的交互任务。
+- [May the Feedback Be with You! Unlocking the Power of Feedback-Driven Deep Learning Framework Fuzzing via LLMs](https://arxiv.org/abs/2506.17642)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“May the Feedback Be with You! Unlocking the Power of Feedback-Driven Deep Learning Framework Fuzzing via LLMs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Beyond Autocomplete: Designing CopilotLens Towards Transparent and Explainable AI Coding Agents](https://arxiv.org/abs/2506.20062)：把 CopilotLens 设计为 coding agent 的可解释层，暴露计划、动作和理由，让开发者能检查 autocomplete 之外的 agent 行为。
+- [CCISolver: End-to-End Detection and Repair of Method-Level Code-Comment Inconsistency](https://arxiv.org/abs/2506.20558)：端到端检测并修复方法级代码注释不一致。
+- [GPU Kernel Scientist: An LLM-Driven Framework for Iterative Kernel Optimization](https://arxiv.org/abs/2506.20807)：LLM 驱动的迭代 kernel optimization harness。核心思想是通过执行反馈生成、运行、profile 并修订 GPU kernels。
+- [AnyAni: An Interactive System with Generative AI for Animation Effect Creation and Code Understanding in Web Development](https://arxiv.org/abs/2506.21962)：提供交互式 Web 开发系统，用生成式 AI 创建动画效果，同时帮助用户理解生成的前端代码。
+- [P4OMP: Retrieval-Augmented Prompting for OpenMP Parallelism in Serial Code](https://arxiv.org/abs/2506.22703)：在提示代码转换前检索 OpenMP 示例和指南，帮助 agent 用领域上下文为串行代码加入并行化。
+- [Adaptive Self-improvement LLM Agentic System for ML Library Development](https://proceedings.mlr.press/v267/zhang25at.html)：面向机器学习库开发构建自改进 agentic 闭环，把代码生成、验证和迭代修复组织到库级任务中。
+- [Guided Search Strategies in Non-Serializable Environments](https://proceedings.mlr.press/v267/zainullina25a.html)：研究环境状态难以干净序列化时 SWE agent 的搜索与回溯策略，在更困难执行假设下补充 SWE-Search 路线。
+- [Otter](https://proceedings.mlr.press/v267/ahmed25b.html)：从 issue 描述生成测试来验证 SWE 补丁，可作为修复 agent 的外部 verifier 组件，为补丁提供可执行证据。
+- [iPanda: An LLM-based Agent for Automated Conformance Testing of Communication Protocols](https://arxiv.org/abs/2507.00378)：面向通信协议一致性测试的 LLM agent。核心思想是通过 agentic planning 与代码生成，把协议规范转化为测试用例和脚本。
+- [Wired for Reuse: Automating Context-Aware Code Adaptation in IDEs via LLM-Based Agent](https://arxiv.org/abs/2507.01315)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Reflective Unit Test Generation for Precise Type Error Detection with Large Language Models](https://arxiv.org/abs/2507.02318)：反思式生成单元测试以暴露类型错误，利用失败或不确定的类型检查信号细化测试。
+- [Hey AI, Generate Me a Hardware Code! Agentic AI-based Hardware Design & Verification](https://arxiv.org/abs/2507.02660)：把硬件设计与验证组织成 agentic workflow，连接 HDL 生成和验证任务，而不是把硬件代码视为单次提示输出。
+- [ACE: Automated Technical Debt Remediation with Validated Large Language Model Refactorings](https://arxiv.org/abs/2507.03536)：用经过验证的 LLM refactoring 修复技术债，要求候选修改通过检查后才接受 remediation。
+- [AGACCI : Affiliated Grading Agents for Criteria-Centric Interface in Educational Coding Contexts](https://arxiv.org/abs/2507.05321)：围绕明确评分标准使用 affiliated grading agents，让教育编程提交通过分角色 rubric 检查来评估。
+- [Multi-Agent Debate Strategies to Enhance Requirements Engineering with Large Language Models](https://arxiv.org/abs/2507.05981)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Multi-Agent Debate Strategies to Enhance Requirements Engineering with Large Language Models 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [ARPaCCino: An Agentic-RAG for Policy as Code Compliance](https://arxiv.org/abs/2507.10584)：对 policy 和代码工件做 agentic retrieval，用检索证据支撑 policy-as-code 合规性推理。
+- [Single Conversation Methodology: A Human-Centered Protocol for AI-Assisted Software Development](https://arxiv.org/abs/2507.12665)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
 - [iReDev](https://arxiv.org/abs/2507.13081)：知识驱动的软件需求开发多 agent 框架。核心思想：围绕领域知识、需求细化与一致性检查协调专门 agent，把软件需求获取和完善组织成显式分析流程。
+- [Towards Formal Verification of LLM-Generated Code from Natural Language Prompts](https://arxiv.org/abs/2507.13290)：面向 natural-language-to-code 的验证 harness；核心思想是把用户意图表示成形式化查询语言，并据此验证生成代码。
+- [Think Like an Engineer: A Neuro-Symbolic Collaboration Agent for Generative Software Requirements Elicitation and Self-Review](https://arxiv.org/abs/2507.14969)：结合神经符号推理和协作式自审查来获取需求、批评需求并细化软件规格。
+- [Hear Your Code Fail, Voice-Assisted Debugging for Python](https://arxiv.org/abs/2507.15007)：为 Python 调试工作流加入语音辅助。
+- [GasAgent: A Multi-Agent Framework for Automated Gas Optimization in Smart Contracts](https://arxiv.org/abs/2507.15761)：面向智能合约 gas 优化的多 agent 框架。核心思想：把 Solidity 优化拆成协作式分析、变换与验证阶段。
+- [Investigating the Use of LLMs for Evidence Briefings Generation in Software Engineering](https://arxiv.org/abs/2507.15828)：用 LLM 生成软件工程 evidence briefings，把文献或项目证据整理成供开发者决策的结构化摘要。
+- [Contextual Code Retrieval for Commit Message Generation: A Preliminary Study](https://arxiv.org/abs/2507.17690)：研究检索相关代码上下文如何改进提交信息生成。
+- [Agentic Program Repair from Test Failures at Scale: A Neuro-symbolic approach with static analysis and test execution feedback](https://arxiv.org/abs/2507.18755)：基于测试失败的 agentic 程序修复工作流。核心思想：结合静态分析与测试执行反馈，大规模修复代码。
+- [MemoCoder: Automated Function Synthesis using LLM-Supported Agents](https://arxiv.org/abs/2507.18812)：使用 LLM-supported agents 的自动函数合成框架；核心思想是利用 agent 记忆和分阶段合成在约束下生成函数。
+- [AgentMesh](https://arxiv.org/abs/2507.19902)：面向软件开发自动化的协作式多智能体框架。核心思想：协调专门化生成式 AI agent 完成规划、编码、审查和维护任务。
 - [Prometheus](https://arxiv.org/abs/2507.19942)（[开源代码](https://github.com/EuniAI/Prometheus)；面向 SWE-bench 的工程化修复代理；设计关键词：工程化流水线、稳定执行）
+- [PDLogger: Automated Logging Framework for Practical Software Development](https://arxiv.org/abs/2507.19951)：自动化实际软件开发中的日志编写流程。
+- [CIgrate: Automating CI Service Migration with Large Language Models](https://arxiv.org/abs/2507.20402)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 CIgrate: Automating CI Service Migration with Large Language Models 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [LLM-Based Repair of Static Nullability Errors](https://arxiv.org/abs/2507.20674)：把静态分析器的 nullability 诊断交给 LLM 生成修复，并用同一类静态检查验证补丁。
+- [Curiosity by Design: An LLM-based Coding Assistant Asking Clarification Questions](https://arxiv.org/abs/2507.21285)：设计会在实现前主动提澄清问题的编码助手，把歧义消解变成编码流程中的显式步骤。
+- [MAAD: Automate Software Architecture Design through Knowledge-Driven Multi-Agent Collaboration](https://arxiv.org/abs/2507.21382)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Multi-Agent Fault Localization with MCTS](https://arxiv.org/abs/2507.22800)：结合多 agent 协作与 Monte Carlo tree search 做软件 fault localization，补充 search-based debugging harness。
+- [ScreenCoder: Advancing Visual-to-Code Generation for Front-End Automation via Modular Multimodal Agents](https://arxiv.org/abs/2507.22827)：将视觉到代码生成与模块化多模态智能体结合用于前端自动化。
+- [SWE-Debate: Competitive Multi-Agent Debate for Software Issue Resolution](https://arxiv.org/abs/2507.23348)：用竞争式多智能体辩论解决软件 issue。
+- [SWE-Exp: Experience-Driven Software Issue Resolution](https://arxiv.org/abs/2507.23361)：把成功与失败的软件修复轨迹蒸馏为经验库，供后续仓库问题复用。
+- [TRAE Agent](https://arxiv.org/abs/2507.23370)（[开源代码](https://github.com/bytedance/trae-agent)；字节系仓库级修复代理；设计关键词：test-time scaling、仓库级分析）
+- [AutoEDA: Enabling EDA Flow Automation through Microservice-Based LLM Agents](https://arxiv.org/abs/2508.01012)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 AutoEDA: Enabling EDA Flow Automation through Microservice-Based LLM Agents 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [SE-Agent](https://arxiv.org/abs/2508.02085)（[开源代码](https://github.com/JARVIS-Xs/SE-Agent)）：轨迹级自进化的软件工程 agent；核心思想是用 revision、recombination 与 refinement 在历史轨迹之间交换信息，提升多步修复质量。
+- [AIAP: A No-Code Workflow Builder for Non-Experts with Natural Language and Multi-Agent Collaboration](https://arxiv.org/abs/2508.02470)：让非专家用自然语言构建 workflow，由协作 agent 解释意图、组装步骤并细化 no-code 流程。
+- [Industrial LLM-based Code Optimization under Regulation: A Mixture-of-Agents Approach](https://arxiv.org/abs/2508.03329)：把混合智能体框架用于受监管工业代码优化，对比协同专家模型、遗传算法式集成和单模型优化器。
+- [EvoGraph: Hybrid Directed Graph Evolution toward Software 3.0](https://arxiv.org/abs/2508.05199)：把软件工件表示为类型化有向图，并用小语言模型驱动的变异算子演化源码、构建流水线、文档和工单。
+- [Heterogeneous Prompting and Execution Feedback for SWE Issue Test Generation and Selection](https://arxiv.org/abs/2508.06365): 使用异构提示和执行反馈为软件工程 issue 生成并选择 reproduction tests，即使目标代码缺失或存在错误也能工作。
+- [Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code](https://arxiv.org/abs/2508.08322)：研究在 Elicit、NotebookLM、ChatGPT 和 Claude Code 组成的多助手编码流程中如何分配上下文。
+- [CRADLE](https://arxiv.org/abs/2508.08709)：构建会话式多智能体 RTL 设计空间探索流程，结合生成器、评审器、自验证与优化，把 HDL 代码生成从一次性提示扩展到迭代编排。
+- [Agentic Design Review System](https://arxiv.org/abs/2508.10745)：提出 agentic design review system，适合软件和界面审查 harness。
+- [A2H-MAS: An Algorithm-to-HLS Multi-Agent System for Automated and Reliable FPGA Implementation](https://arxiv.org/abs/2508.10904)：面向 algorithm-to-HLS 自动翻译的多 agent 系统；核心思想是协调 agent 将高层算法开发连接到可靠 FPGA 实现。
+- [StackPilot: Autonomous Function Agents for Scalable and Environment-Free Code Execution](https://arxiv.org/abs/2508.11665)：提出可扩展、环境依赖更低的 autonomous function agents，适合代码执行 harness。
+- [EvoVerilog: Large Langugage Model Assisted Evolution of Verilog Code](https://arxiv.org/abs/2508.13156)：Agent Harness 条目；核心思想：用进化式 LLM 流程辅助 Verilog 代码生成。
+- [ViTAD: Timing Violation-Aware Debugging of RTL Code using Large Language Models](https://arxiv.org/abs/2508.13257)：使用大语言模型进行 timing violation-aware RTL 代码调试。
+- [MAHL: Multi-Agent LLM-Guided Hierarchical Chiplet Design with Adaptive Debugging](https://arxiv.org/abs/2508.14053)：协调六类 chiplet 设计 agent，覆盖层次化描述、检索增强 HDL 生成、DiverseFlow 验证、自适应调试和多粒度设计空间探索。
+- [Static Analysis as a Feedback Loop: Enhancing LLM-Generated Code Beyond Correctness](https://arxiv.org/abs/2508.14419)：用反馈循环提升 LLM-generated code quality 的 harness；核心思想是用 Bandit、Pylint 等静态分析工具迭代修复安全、可靠、可读和可维护问题。
+- [A Novel Mutation Based Method for Detecting FPGA Logic Synthesis Tool Bugs](https://arxiv.org/abs/2508.15536)：用 VERMEI 的仿真与覆盖预处理、inactive logic 等价 Verilog 变异和差分识别流程测试 Yosys、Vivado 与 Quartus 等 FPGA 综合工具。
+- [DevLicOps: A Framework for Mitigating Licensing Risks in AI-Generated Code](https://arxiv.org/abs/2508.16853)：为 AI 编码助手引入治理与事件响应闭环，帮助团队管理生成代码中的开源许可证风险，而不只是事后审查补丁。
+- [Code Difference Guided Fuzzing for FPGA Logic Synthesis Compilers via Bayesian Optimization](https://arxiv.org/abs/2508.17713)：用 LSC-Fuzz 的测试程序生成、贝叶斯多样性选择和等价检查驱动 FPGA 逻辑综合编译器的差分测试。
+- [DocFetch - Towards Generating Software Documentation from Multiple Software Artifacts](https://arxiv.org/abs/2508.17719)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [RepoTransAgent: Multi-Agent LLM Framework for Repository-Aware Code Translation](https://arxiv.org/abs/2508.17720)：使用多智能体 LLM 框架进行仓库感知代码翻译。
+- [Previously on... Automating Code Review](https://arxiv.org/abs/2508.18003)：回顾自动化代码审查系统的演进，覆盖静态分析、审查者推荐、质量估计、评论生成以及 LLM 审查 agent 在该流水线中的位置。
+- [Requirements Development and Formalization for Reliable Code Generation: A Multi-Agent Vision](https://arxiv.org/abs/2508.18675)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [QAgent: An LLM-based Multi-Agent System for Autonomous OpenQASM programming](https://arxiv.org/abs/2508.20134)：面向自主 OpenQASM programming 的多 agent system。核心思想是协调 agent 编写、检查并改进量子汇编程序。
+- [SwizzlePerf: Hardware-Aware LLMs for GPU Kernel Performance Optimization](https://arxiv.org/abs/2508.20258)：面向 GPU kernel 的硬件感知代码优化 harness；核心思想是利用内存访问模式、架构信息、profiling logs 和历史反思进行性能工程。
+- [The Complexity Trap](https://arxiv.org/abs/2508.21433)（[开源代码](https://github.com/JetBrains-Research/the-complexity-trap)；比较 observation masking 与 LLM summarization 的 context 管理成本-性能；在 SWE-agent 与 SWE-bench Verified 上做系统对比；设计关键词：上下文管理、成本控制、harness 简化）
+- [SQL-of-Thought: Multi-agentic Text-to-SQL with Guided Error Correction](https://arxiv.org/abs/2509.00581)：面向 text-to-SQL 的 multi-agent harness；核心思想是把 schema linking、子问题求解和引导纠错分配给协作 agent。
+- [Automated Generation of Issue-Reproducing Tests by Combining LLMs and Search-Based Testing](https://arxiv.org/abs/2509.01616)：BLAST 结合 git 历史、静态分析上下文、搜索式测试生成、LLM 种子和 GitHub PR bot，在拉取请求审查中提出可复现 issue 的测试。
+- [SWE-PRM](https://arxiv.org/abs/2509.02360)：面向 SWE agent 的推理时纠偏层；核心思想是用过程奖励模型在执行中检测冗余探索、循环和未及时终止，并给出轻量轨迹反馈。
+- [app.build: A Production Framework for Scaling Agentic Prompt-to-App Generation with Environment Scaffolding](https://arxiv.org/abs/2509.03310)：面向 agentic prompt-to-app 生成的生产框架；核心思想是把应用生成 agent 与环境脚手架结合起来，使从提示到应用的工作流能在玩具代码片段之外扩展和评测。
+- [MCTuner: Spatial Decomposition-Enhanced Database Tuning via LLM-Guided Exploration](https://arxiv.org/abs/2509.06298)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Spatial Decomposition-Enhanced Database Tuning via LLM-Guided Exploration 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Autonomous Code Evolution Meets NP-Completeness](https://arxiv.org/abs/2509.07367)：研究 NP-complete 问题上的自主代码演化；核心思想是在可执行验证下用 coding-agent 搜索和自改进发现更强算法。
+- [Astra: A Multi-Agent System for GPU Kernel Performance Optimization](https://arxiv.org/abs/2509.07506)：面向 GPU kernel 性能优化的多 agent 系统；核心思想是围绕可执行性能反馈协调搜索、实现、profiling 和修复角色。
+- [GeoJSON Agents:A Multi-Agent LLM Architecture for Geospatial Analysis-Function Calling vs Code Generation](https://arxiv.org/abs/2509.08863)：用 Planner agent 分解地理空间指令，再由 Worker agents 通过预定义函数 API 或生成的 Python 代码执行 GeoJSON 分析。
+- [On Integrating Large Language Models and Scenario-Based Programming for Improving Software Reliability](https://arxiv.org/abs/2509.09194)：把 LLM 生成程序放入 scenario-based programming 流程，让开发者编码专家场景、检查输出，并在开发中验证关键性质。
+- [UserTrace](https://arxiv.org/abs/2509.11238)：面向软件仓库的多 agent 需求生成与可追踪性恢复 workflow。核心思想：生成用户层需求，并恢复从需求到实现细节和代码的动态链接，补充补丁生成之外的仓库理解能力。
+- [AI Agents with Human-Like Collaborative Tools: Adaptive Strategies for Enhanced Problem-Solving](https://arxiv.org/abs/2509.13547)：研究 coding agent 的协作工具使用；核心思想是为 agent 提供基于 MCP 的沟通和日志工具，并在困难的 Aider Polyglot 任务上衡量收益。
+- [MACO](https://arxiv.org/abs/2509.13557)：用 multi-agent LLM framework 做软硬件协同设计，将 agentic engineering workflow 扩展到普通代码修复之外。
+- [Evaluating Classical Software Process Models as Coordination Mechanisms for LLM-Based Software Generation](https://arxiv.org/abs/2509.13942)：评估经典软件过程模型作为 LLM 软件生成协调机制的作用。
+- [DeepAssert: An LLM-Aided Verification Framework with Fine-Grained Assertion Generation for Modules with Extracted Module Specifications](https://arxiv.org/abs/2509.14668)：分析 RTL 模块调用关系，抽取模块级输入输出规格，并用这些规格引导 LLM 生成细粒度 deep assertions。
+- [On the Use of Agentic Coding Manifests: An Empirical Study of Claude Code](https://arxiv.org/abs/2509.14744)：实证研究 Claude Code 的 manifest 文件，把仓库级智能体指令与编码智能体配置作为明确的 harness 变量。
+- [CodeRAG: Finding Relevant and Necessary Knowledge for Retrieval-Augmented Repository-Level Code Completion](https://arxiv.org/abs/2509.16112)：构建仓库级补全检索流程，结合 log-probability 引导的查询构造、多路径代码检索和偏好对齐的 BestFit 重排序。
+- [MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](https://arxiv.org/abs/2509.16187)：MatchFixAgent 用语言无关的自主流程验证并修复仓库级代码翻译。
+- [RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](https://arxiv.org/abs/2509.16198)：用于可扩展代码库生成的仓库规划图。核心思想是把关键工作流逻辑外置到基座模型之外，便于复用、诊断和横向比较。
+- [Prompt-with-Me: in-IDE Structured Prompt Management for LLM-Driven Software Engineering](https://arxiv.org/abs/2509.17096)：把提示管理嵌入 IDE，按意图、角色、生命周期阶段和类型分类提示，同时遮蔽敏感数据并抽取可复用模板。
+- [Beyond Language Barriers: Multi-Agent Coordination for Multi-Language Code Generation](https://arxiv.org/abs/2509.19918)：研究多语言代码生成中的多 agent 协作；核心思想是把跨语言生成和验证任务分配给协作 agent。
+- [Automated Multi-Agent Workflows for RTL Design](https://arxiv.org/abs/2509.20182)：Agent Harness 条目；核心思想：面向 RTL 设计的自动化多 agent workflow。
+- [WebGen-Agent](https://arxiv.org/abs/2509.22644)：一个交互式网站生成 agent，结合截图反馈、GUI-agent 测试、回溯、select-best 控制和 step-level 强化学习，迭代生成并修正网站代码库。
+- [PAT-Agent: Autoformalization for Model Checking](https://arxiv.org/abs/2509.23675)：面向 model checking 的 autoformalization agent。核心思想是把非形式化规格转成 model-checking artifacts，使验证任务可由 LLM workflow 处理。
+- [Towards Repository-Level Program Verification with Large Language Models](https://arxiv.org/abs/2509.25197)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Towards Repository-Level Program Verification with Large Language Models 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [RANGER - Repository-Level Agent for Graph-Enhanced Retrieval](https://arxiv.org/abs/2509.25257)：graph-enhanced retrieval 的仓库级 agent。核心思想是利用代码图结构为仓库级软件任务检索上下文。
+- [Automatically Generating Web Applications from Requirements Via Multi-Agent Test-Driven Development](https://arxiv.org/abs/2509.25297)：该多 agent 测试驱动 workflow 从需求自动生成 Web 应用。
+- [MLLM-Driven Zero-Code 3D Game Development](https://arxiv.org/abs/2509.26161)：用 multimodal LLMs 自动化 zero-code 3D game-development workflows。
+- [VibeCodeHPC: An Agent-Based Iterative Prompting Auto-Tuner for HPC Code Generation Using LLMs](https://arxiv.org/abs/2510.00031)：用 agent-based iterative prompting 自动调优 HPC 代码生成，适合软件与科学计算 harness。
+- [Repository Memory for Code Localization](https://arxiv.org/abs/2510.01003)：记忆增强的代码定位 harness。核心思想：把近期 commits、关联 issues 和活跃模块摘要作为 repository memory 检索，让定位 agent 不必每个 issue 都从零理解代码库。
+- [CodeGenLink: A Tool to Find the Likely Origin and License of Automatically Generated Code](https://arxiv.org/abs/2510.01077)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Multi-LLM Orchestration for High-Quality Code Generation: Exploiting Complementary Model Strengths](https://arxiv.org/abs/2510.01379)：用于代码生成的 multi-LLM orchestration system；核心思想是按语言和问题类别维护 memory 矩阵，在分类、生成、调试和精炼阶段路由互补模型。
+- [Abstain and Validate: A Dual-LLM Policy for Reducing Noise in Agentic Program Repair](https://arxiv.org/abs/2510.03217)：用于降低 agentic program repair 噪声的 dual-LLM 策略。核心思想是把补丁生成与 abstention 和 validation 配对，使 agent 避免低置信补丁。
+- [ALMAS: an Autonomous LLM-based Multi-Agent Software Engineering Framework](https://arxiv.org/abs/2510.03463)：ALMAS 是自主多代理软件工程框架，适合 SWE agent harness。
+- [LLM Agents for Automated Dependency Upgrades](https://arxiv.org/abs/2510.03480)：将 LLM agent 应用于自动依赖升级；核心思想是协调构建、测试、迁移和修复步骤来完成真实维护任务。
+- [REFINE: Enhancing Program Repair Agents through Context-Aware Patch Refinement](https://arxiv.org/abs/2510.03588)：用上下文感知补丁细化提升 program repair agents，属于软件修复 harness。
+- [Code4MeV2: a Research-oriented Code-completion Platform](https://arxiv.org/abs/2510.03755)：提供开源 JetBrains 代码补全 harness，包含客户端-服务器执行、内联补全、上下文感知聊天以及研究者可控的 telemetry 采集。
+- [EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models](https://arxiv.org/abs/2510.03760)：用大模型自动演化 CUDA kernel 代码。
+- [Adversarial Agent Collaboration for C to Rust Translation](https://arxiv.org/abs/2510.03879)：Adversarial Agent Collaboration for C to Rust 以多代理协作做代码迁移，适合软件开发 agent harness。
+- [UnitTenX: Generating Tests for Legacy Packages with AI Agents Powered by Formal Verification](https://arxiv.org/abs/2510.05441)：用开源多 agent 系统结合 LLM 与形式化方法，为遗留包生成单元测试，并围绕关键值提高覆盖率。
+- [RA-Gen: A Controllable Code Generation Framework Using ReAct for Multi-Agent Task Execution](https://arxiv.org/abs/2510.08665)：补充software development方向的agent harness，核心围绕《RA-Gen: A Controllable Code Generation Framework Using ReAct for Multi-Agent Task Execution》。
+- [MigrateLib: a tool for end-to-end Python library migration](https://arxiv.org/abs/2510.08810)：把 Python 库迁移实现成命令行流程，在真实应用上结合 LLM 代码转换、静态分析和动态分析。
+- [LitE-SQL: A Lightweight and Efficient Text-to-SQL Framework with Vector-based Schema Linking and Execution-Guided Self-Correction](https://arxiv.org/abs/2510.09014)：把向量数据库 schema 检索器与具备 execution-guided self-correction 的 SQL 生成器结合，避免重型 Text-to-SQL 系统常用的多候选采样循环。
+- [Agentic Property-Based Testing: Finding Bugs Across the Python Ecosystem](https://arxiv.org/abs/2510.09907)：用 agentic workflows 结合 property-based testing 在 Python 生态中发现 bug。
+- [Grounded AI for Code Review: Resource-Efficient Large-Model Serving in Enterprise Pipelines](https://arxiv.org/abs/2510.10290)：构建 PR 原生审查流水线，用 AST 引导的上下文抽取 grounding 静态分析发现，并通过多级缓存服务量化开源模型。
+- [Understanding and Bridging the Planner-Coder Gap: A Systematic Study on the Robustness of Multi-Agent Systems for Code Generation](https://arxiv.org/abs/2510.10460)：研究多 agent 代码生成系统的鲁棒性。核心思想是诊断 planner 与 coder 协调失败的原因，并改进软件生成 workflow。
+- [Agentic RAG for Software Testing](https://arxiv.org/abs/2510.10824)：将混合向量-图检索与多智能体编排结合，用于软件测试工作流。
+- [AwareCompiler: Agentic Context-Aware Compiler Optimization via a Synergistic Knowledge-Data Driven Framework](https://arxiv.org/abs/2510.11759)：构建上下文感知、知识与数据协同驱动的智能体式编译器优化框架。
+- [Lingxi: Repository-Level Issue Resolution Framework Enhanced by Procedural Knowledge Guided Scaling](https://arxiv.org/abs/2510.11838)：类型：agent harness/可复用执行框架。核心价值：为 2.2.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [Holistic Agent Leaderboard](https://arxiv.org/abs/2510.11977)（[开源代码](https://github.com/princeton-pli/hal-harness)；跨 benchmark 的 agent 评测 harness；把 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond、USACO 等任务接到统一提交与复现协议；设计关键词：统一 agent 接口、跨任务评测、公开 leaderboard）
+- [Auto-repair without test cases: How LLMs fix compilation errors in large industrial embedded code](https://arxiv.org/abs/2510.13575)：补充大规模工业嵌入式代码中无需测试用例的编译错误修复流程。
+- [One Bug, Hundreds Behind: LLMs for Large-Scale Bug Discovery](https://arxiv.org/abs/2510.14036)：BugStone 结合 LLVM 程序分析与 LLM，从已修复实例中推断重复 bug 模式，并在 Linux kernel 等大型代码库中扫描未修复变体。
+- [Towards Automated Governance: A DSL for Human-Agent Collaboration in Software Projects](https://arxiv.org/abs/2510.14465)：为软件项目治理中的人机协作定义 DSL。
+- [One-Bit Quantization for Random Features Models](https://arxiv.org/abs/2510.16250)：parent-routing-needed：该条目是 random-feature model 的量化压缩方法，不是可复用的软件开发 harness。
+- [Code Digital Twin: Empowering LLMs with Tacit Knowledge for Complex Software Development](https://arxiv.org/abs/2510.16395)：构建 code digital twin 知识层，把复杂软件开发中的隐性项目知识外部化，供助手在开发任务中查询和复用。
+- [More with Less: An Empirical Study of Turn-Control Strategies for Efficient Coding Agents](https://arxiv.org/abs/2510.16786)：研究高效 coding agent 的 turn-control 策略。核心思想：比较交互粒度与控制策略如何影响软件 agent 的成本和成功率。
+- [PEACE](https://arxiv.org/abs/2510.17142)：通过混合代码编辑进行项目级效率优化，为软件智能体补充以性能改进为目标而非只修复功能缺陷的工作流。
+- [Integrating Performance Tools in Model Reasoning for GPU Kernel Optimization](https://arxiv.org/abs/2510.17158)：Agent Harness 条目；核心思想：把性能工具接入模型推理以优化 GPU kernel。
+- [SpecAgent: A Speculative Retrieval and Forecasting Agent for Code Completion](https://arxiv.org/abs/2510.17925)：把仓库探索前移到索引阶段，为每个文件构造 speculative future-edit context，使代码补全获得更丰富上下文而不增加交互延迟。
+- [TestPrune](https://arxiv.org/abs/2510.18270)：用于 software-issue resolution 的 regression-test reuse harness。核心思想是根据 issue report 选择小而相关的既有测试子集，辅助 reproduction test generation 和 patch validation，补充只依赖新生成测试的 coding agent。
+- [InspectCoder: Dynamic Analysis-Enabled Self Repair through interactive LLM-Debugger Collaboration](https://arxiv.org/abs/2510.18327)：面向 coding agent 的动态分析自修复 harness。核心思想是让 LLM agent 与调试器交互，用运行时证据而不只是静态文本来指导修复。
+- [VAPU: System for Autonomous Legacy Code Modernization](https://arxiv.org/abs/2510.18509)：Agent Harness 条目；核心思想：面向遗留代码现代化的自主 agent 系统。
+- [XGen-Q: An Explainable Domain-Adaptive LLM Framework with Retrieval-Augmented Generation for Software Security](https://arxiv.org/abs/2510.19006)：通过多阶段提示和检索增强生成，把代码与汇编证据转化为混淆场景下的恶意软件识别和取证报告。
+- [From Specification to Service: Accelerating API-First Development Using Multi-Agent Systems](https://arxiv.org/abs/2510.19274)：面向 API-first REST 服务开发的多 Agent 工作流；核心思路是生成 OpenAPI 规范与服务端代码，再根据执行日志和错误反馈迭代修复。
+- [Practical Code RAG at Scale: Task-Aware Retrieval Design Choices under Compute Budgets](https://arxiv.org/abs/2510.20609)：系统评估代码 RAG 在补全和 bug 定位中的设计选择，在明确的上下文窗口和检索延迟预算下比较分块、相似度打分与粒度。
+- [Context Engineering for AI Agents in Open-Source Software](https://arxiv.org/abs/2510.21413)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 Context Engineering for AI Agents in Open-Source Software 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [TOM-SWE: User Mental Modeling For Software Engineering Agents](https://arxiv.org/abs/2510.21903)：TOM-SWE 为软件工程 agent 加入用户心智建模与持久记忆，使其能随时间适应用户意图。
+- [Patch Reasoner / R4P](https://arxiv.org/abs/2510.22775)：面向软件工程 agent 的可扩展补丁验证框架。核心思想：用推理式 verifier 比较候选补丁并提供稠密奖励或测试时监督，减少对缓慢且脆弱的高覆盖率测试套件的依赖。
+- [TALM: Dynamic Tree-Structured Multi-Agent Framework with Long-Term Memory for Scalable Code Generation](https://arxiv.org/abs/2510.23010)：面向 scalable code generation 的动态树状多 agent 框架，带长期记忆。核心思想是把大型 coding 任务分解给树状 agent，并保留可复用开发记忆。
+- [Beyond Imprecise Distance Metrics: Trace-Guided Directed Greybox Fuzzing via LLM-Predicted Call Stacks](https://arxiv.org/abs/2510.23101)：用 LLM 预测的漏洞触发调用栈替代 directed greybox fuzzing 中的静态距离度量，用于指导种子调度和变异。
+- [VisCoder2: Building Multi-Language Visualization Coding Agents](https://arxiv.org/abs/2510.23642)：构建多语言可视化编码智能体，将代码生成与可视化产物构造及检查连接起来。
+- [TDFlow: Agentic Workflows for Test Driven Development](https://arxiv.org/abs/2510.23761)：提供面向测试驱动开发的 agentic workflow。核心思想：把测试编写、代码修改、执行反馈与修订显式组织成软件 agent 闭环。
+- [Empowering RepoQA-Agent based on Reinforcement Learning Driven by Monte-carlo Tree Search](https://arxiv.org/abs/2510.26287)：结合强化学习与树搜索的代码库问答 agent。核心思想是用 MCTS 驱动探索，改进 codebase QA 中的证据选择与答案可靠性。
+- [Nexus: Execution-Grounded Multi-Agent Test Oracle Synthesis](https://arxiv.org/abs/2510.26423)：面向 test oracle synthesis 的 execution-grounded multi-agent 框架；核心思想是利用执行反馈和多个 agent 构造更强的验证 oracle。
+- [Glia: A Human-Inspired AI for Automated Systems Design and Optimization](https://arxiv.org/abs/2510.27176): 用推理、实验和分析等专门 agent 在经验反馈约束下自动设计和优化计算机系统。
+- [Agentic LLMs for REST API Test Amplification: A Comparative Study Across Cloud Applications](https://arxiv.org/abs/2510.27417)：研究面向云应用 REST API 测试增强的智能体式 LLM 工作流。
+- [VeriMoA: A Mixture-of-Agents Framework for Spec-to-HDL Generation](https://arxiv.org/abs/2510.27617)：面向 spec-to-HDL generation 的 mixture-of-agents harness；核心思想是用协作 agent 降低噪声传播并扩展 RTL 设计推理空间。
+- [Think-Search-Patch: A Retrieval-Augmented Reasoning Framework for Repository-Level Code Repair](https://doi.org/10.18653/v1/2025.emnlp-industry.109)：面向仓库级代码修复的 retrieval-augmented reasoning framework。
+- [UIOrchestra: Generating High-Fidelity Code from UI Designs with a Multi-agent System](https://doi.org/10.18653/v1/2025.findings-emnlp.150)：用多 agent 系统从 UI 设计生成代码；核心思想是编排专门 agent，把视觉 UI 要求转成更高保真的实现代码。
+- [SmartDoc: A Context-Aware Agentic Method Comment Generation Plugin](https://arxiv.org/abs/2511.00450)：提供上下文感知的 agentic 方法注释生成插件。
+- [Issue-Oriented Agent-Based Framework for Automated Review Comment Generation](https://arxiv.org/abs/2511.00517)：把自动化代码审查评论生成拆成按问题类型分工的 commentator agents、critic selector 与分类微调，使审查反馈来自明确的问题视角。
+- [Agentic Auto-Scheduling: An Experimental Study of LLM-Guided Loop Optimization](https://arxiv.org/abs/2511.00592)：ComPilot 运行 compiler-in-the-loop 优化 harness，由 LLM 提出循环变换，并根据合法性和加速反馈继续细化。
+- [CodeClash](https://arxiv.org/abs/2511.00839)（[开源代码](https://github.com/CodeClash-ai/CodeClash)；目标导向软件工程 tournament harness；基于 mini-SWE-agent 接口让 agent 持续改代码、读日志、写测试并与对手代码库竞争；设计关键词：多轮锦标赛、开放目标、长期维护）
+- [HAFixAgent: History-Aware Automated Program Repair Agent](https://arxiv.org/abs/2511.01047)：面向 history-aware automated program repair 的代理；核心思想是利用既往修复上下文和轨迹历史指导补丁生成。
+- [IoTMigrator: LLM-driven Embedded IoT Code Migration across Different OSes for Cloud-device Integration](https://doi.org/10.18653/v1/2025.findings-emnlp.1048)：用包含 TSL enhancer 的多 agent 迁移流水线在 RIOT 与 Zephyr 间移植嵌入式 IoT 代码，并同时评估编译通过率和任务完整性。
+- [CudaForge](https://arxiv.org/abs/2511.01884)：面向 CUDA kernel 优化的硬件反馈 Agent harness。核心思路是让 Coder 与 Judge Agent 围绕正确性测试、Nsight Compute 指标和迭代修复协作，使生成 kernel 按真实 GPU 行为优化。
+- [EvoDev](https://arxiv.org/abs/2511.02399)：用 LLM-based agents 迭代执行 feature-driven 端到端软件开发，补充从需求到实现的软件智能体工作流。
+- [Code Comprehension with GitHub Copilot: Performance Gains, Comprehension Trade-offs, and Behavioral Predictors in Brownfield Programming](https://arxiv.org/abs/2511.02922)：通过 brownfield programming 实验、眼动数据、IDE 事件和理解任务，刻画 Copilot 何处提升效率、何处可能削弱深层代码理解。
+- [U2F: Encouraging SWE-Agent to Seize Novelty without Losing Feasibility](https://arxiv.org/abs/2511.03517)：鼓励 SWE-Agent 在保持可行性的同时探索新颖解法。
+- [Uncovering Code Insights: Leveraging GitHub Artifacts for Deeper Code Understanding](https://arxiv.org/abs/2511.03549)：利用源码之外的 GitHub 工件提升代码理解。
+- [OpenHands Software Agent SDK](https://arxiv.org/abs/2511.03690)（[开源代码](https://github.com/OpenHands/OpenHands)；面向生产代理的可组合/可扩展 SDK 设计；强调执行隔离、生命周期控制与工具/记忆扩展点；设计关键词：SDK 化 harness、可组合接口、执行安全）
+- [PEFA-AI: Advancing Open-source LLMs for RTL generation using Progressive Error Feedback Agentic-AI](https://arxiv.org/abs/2511.03934)：一种带渐进错误反馈的 Agentic RTL 生成流程；核心思路是协调专门 LLM Agent 与硬件仿真工具，对生成的 RTL 进行编译、检查和修复。
+- [WebVIA](https://arxiv.org/abs/2511.06251)：提供 web-based vision-language agentic framework 做可交互、可验证的 UI-to-code 生成，为视觉前端编码工作流加入验证环节。
+- [Retriv at BLP-2025 Task 2: Test-Driven Feedback-Guided Framework for Bangla-to-Python Code Generation](https://arxiv.org/abs/2511.07382)：先从孟加拉语指令生成 Python，再运行单元测试，并对失败输出进行三轮反馈引导式修正。
+- [LLM-Powered Fully Automated Chaos Engineering: Towards Enabling Anyone to Build Resilient Software Systems at Low Cost](https://arxiv.org/abs/2511.07865)：LLM-powered 自动 chaos engineering agent；核心思想是把需求定义、实验规划、代码生成、测试和调试组织成 Kubernetes 系统的 agentic workflow。
+- [UI2Code^N: UI-to-Code Generation as Interactive Visual Optimization](https://arxiv.org/abs/2511.08195)：把 UI-to-code 重构为交互式视觉优化；核心思想是让代码生成进入渲染、评估和改进网页 UI 的反馈循环。
+- [Vendor-Aware Industrial Agents: RAG-Enhanced LLMs for Secure on-Premise PLC Code Generation](https://arxiv.org/abs/2511.09122)：构建本地部署的 PLC 编码助手，结合 directed RAG、模型竞争、推理、自动 bug 修正和聊天内编译检查。
+- [Decoding the Configuration of AI Coding Agents: Insights from Claude Code Projects](https://arxiv.org/abs/2511.09268)：研究 328 个公开 Claude Code 配置文件，分析 coding-agent 项目如何编码架构约束、编码实践和工具使用策略。
+- [HPCAgentTester: a Multi-Agent LLM Approach for Enhanced HPC Unit Test Generation](https://arxiv.org/abs/2511.10860)：面向 HPC 单元测试生成的多 agent LLM 方法；核心思想是把测试推理、生成和验证分配给不同 agent，以处理高性能计算代码。
+- [ProofWright: Towards Agentic Formal Verification of CUDA](https://arxiv.org/abs/2511.12294)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Towards Agentic Formal Verification of CUDA 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [KForge](https://arxiv.org/abs/2511.13274)：面向多类 AI 硬件加速器程序合成的协作代理框架。核心思想是让 generation agent 基于编译和正确性反馈迭代，再由 performance-analysis agent 解释 profiling 数据并指导跨平台优化。
+- [SAINT: Service-level Integration Test Generation with Program Analysis and LLM-based Agents](https://arxiv.org/abs/2511.13305)：结合程序分析与 LLM-based agents 生成服务级集成测试。
+- [live-SWE-agent](https://arxiv.org/abs/2511.13646)（[开源代码](https://github.com/OpenAutoCoder/live-swe-agent)；运行时自进化 SWE 代理；在 SWE-Bench Pro 公共集上报告 Claude 4.5 Sonnet 45.8% resolve rate，高于同设置下 SWE-agent 的 43.6%；设计关键词：在线自进化、按题动态造工具）
+- [irace-evo: Automatic Algorithm Configuration Extended With LLM-Based Code Evolution](https://arxiv.org/abs/2511.14794)：把自动算法配置扩展到 LLM 驱动的代码演化，让优化过程修改实现代码并评估求解器行为变化。
+- [InfCode: Adversarial Iterative Refinement of Tests and Patches for Reliable Software Issue Resolution](https://arxiv.org/abs/2511.16004)：迭代改进测试与补丁，避免软件 agent 只满足薄弱测试而未真正修复问题。
+- [InfCode-C++: Intent-Guided Semantic Retrieval and AST-Structured Search for C++ Issue Resolution](https://arxiv.org/abs/2511.16005)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [SkyRL-Agent](https://arxiv.org/abs/2511.16108)：面向多轮 LLM agent 的高效 RL 训练与评测框架；核心思想是用异步 rollout 调度、轻量工具集成和后端互操作来训练带执行反馈的软件工程 agent。
+- [CorrectHDL](https://arxiv.org/abs/2511.16395)：用 LLM agent 结合高层综合参考进行 HDL 设计。核心思想：把硬件代码生成 grounding 到 HLS 反馈中，使生成的 HDL 可检查、可迭代修正。
+- [Multi-Agent Code Verification via Information Theory](https://arxiv.org/abs/2511.16708)：从信息论视角进行多 agent 代码验证；核心思想是组合独立验证信号，提高对生成代码的置信度。
+- [PIKE](https://arxiv.org/abs/2511.16964)（[代码](https://github.com/pike-project/pike)）：一个面向 PyTorch 推理优化的多 agent 系统，在 KernelBench 式性能反馈下比较探索/利用策略、错误修复 agent 和优化步粒度。
+- [Agentic Verification of Software Systems](https://arxiv.org/abs/2511.17330)：面向软件系统的智能体验证工作流。
+- [The Software Engineering Simulations Lab: Agentic AI for RE Quality Simulations](https://arxiv.org/abs/2511.17762)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [End-to-End Automated Logging via Multi-Agent Framework](https://arxiv.org/abs/2511.18528)：Autologger 先用 Judger 分类器判断是否需要日志，再启动带程序分析与检索工具的 Locator 和 Generator agents 决定日志位置和内容。
+- [Summary-Mediated Repair: Can LLMs use code summarisation as a tool for program repair?](https://arxiv.org/abs/2511.18782)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Summary-Mediated Repair: Can LLMs use code summarisation as a tool for program repair?”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Agint: Agentic Graph Compilation for Software Engineering Agents](https://arxiv.org/abs/2511.19635)：可作为软件开发 agent的Agent Harness候选；核心关注“Agentic Graph Compilation for Software Engineering Agents”。
+- [HeaRT: A Hierarchical Circuit Reasoning Tree-Based Agentic Framework for AMS Design Optimization](https://arxiv.org/abs/2511.19669)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 HeaRT: A Hierarchical Circuit Reasoning Tree-Based Agentic Framework for AMS Design Optimization 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [R3A: Reliable RTL Repair Framework with Multi-Agent Fault Localization and Stochastic Tree-of-Thoughts Patch Generation](https://arxiv.org/abs/2511.20090)：结合 fault localization 和 stochastic tree-of-thought patch generation 的多 agent RTL 修复框架；核心思想是把硬件代码修复拆成定位和补丁搜索等专门 agent。
+- [QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation](https://arxiv.org/abs/2511.20100)：用宏观思考和微观编码范式生成高性能 GPU kernel。
+- [Advancing Automated In-Isolation Validation in Repository-Level Code Translation](https://arxiv.org/abs/2511.21878)：把上下文感知类型解析与基于 mock 的隔离验证结合，用于仓库级代码翻译，使翻译 agent 不依赖完整跨语言互操作也能对方法片段做可执行检查。
+- [Architect in the Loop Agentic Hardware Design and Verification](https://arxiv.org/abs/2512.00016)：在工程师持续参与下，由 agent 分解处理器设计、生成 HDL 与 cocotb 测试，并围绕验证、调试和综合迭代。
+- [Towards autonomous normative multi-agent systems for Human-AI software engineering teams](https://arxiv.org/abs/2512.02329)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [PARC: An Autonomous Self-Reflective Coding Agent for Robust Execution of Long-Horizon Tasks](https://arxiv.org/abs/2512.03549)：它提供 coding agent、仓库修复、代码维护或调试 workflow，适合补充 software-development Agent Harness。
+- [RL-integrated Agentic RAG for Software Test Cases](https://arxiv.org/abs/2512.06060)：把强化学习加入用于软件测试用例编写的 agentic RAG，以反馈驱动检索与生成扩展测试生成流程。
+- [Reformulate, Retrieve, Localize: Agents for Repository-Level Bug Localization](https://arxiv.org/abs/2512.07022)：面向仓库级 bug localization 的轻量 agent；核心思想是先改写含噪 issue，再用 BM25 检索候选文件并自动完成文件级定位。
+- [Empowering smart app development with SolidGPT: an edge-cloud hybrid AI agent framework](https://arxiv.org/abs/2512.08286)：SolidGPT 结合本地 Docker、CLI、VS Code 部署和可选云模型，支持代码库搜索、PRD 生成、任务看板、脚手架生成和私有 agent persona。
+- [Autonomous Issue Resolver: Towards Zero-Touch Code Maintenance](https://arxiv.org/abs/2512.08492)：面向零接触代码维护的 agent；核心思想是把 issue 理解、定位、修补和验证自动化为端到端维护闭环。
+- [RESTifAI: LLM-Based Workflow for Reusable REST API Testing](https://arxiv.org/abs/2512.08706)：构建用于可复用 REST API 测试的 LLM 工作流。
+- [Closing the Train-Test Gap in World Models for Gradient-Based Planning](https://arxiv.org/abs/2512.09929)：parent-routing-needed：这是 world-model planning 方法，不是软件工程中的编码、测试或仓库级 harness。
+- [ATLAS: Automated Toolkit for Large-Scale Verified Code Synthesis](https://arxiv.org/abs/2512.10173)：面向大规模 verified code synthesis 的自动 toolkit。核心思想是把代码生成与验证结合，让合成结果由可执行或形式化标准检查。
+- [Studying and Automating Issue Resolution for Software Quality](https://arxiv.org/abs/2512.10238)：补充面向软件质量的问题解决自动化流程。
+- [Confucius Code Agent](https://arxiv.org/abs/2512.10398)（[开源代码](https://github.com/facebookresearch/cca-swebench)；工业级长时程 SWE 代理；主评测在 SWE-Bench Pro 公共集，报告 GPT-5.2 59.0% Pass@1，并报告 Claude 4.5 Sonnet 52.7%；设计关键词：长上下文管理、持久笔记、元代理迭代）
+- [Citation-Grounded Code Comprehension: Preventing LLM Hallucination Through Hybrid Retrieval and Graph-Augmented Context](https://arxiv.org/abs/2512.12117)：用检索、代码图上下文和源码引用约束代码理解回答，属于可复用软件理解 harness。
+- [SWE-Playground](https://arxiv.org/abs/2512.12216)：面向 coding agent 的合成环境与轨迹生成流水线。核心思想：从零合成项目、任务、测试和轨迹，让 agent 能在 issue reproduction、library implementation 等更广泛 SWE workflow 上训练，而不只依赖既有 GitHub issue。
+- [Fault-Tolerant Sandboxing for AI Coding Agents: A Transactional Approach to Safe Autonomous Execution](https://arxiv.org/abs/2512.12806)：面向 coding agent 的事务式沙箱方法；核心思想是通过回滚、隔离和容错执行控制提升自主代码编辑安全性。
+- [Reproducible Container Solutions for Codes and Workflows in Materials Science](https://arxiv.org/abs/2512.13826)：parent-routing-needed：该文记录材料科学代码与工作流的容器化可复现方案，并非 LLM 软件智能体闭环。
+- [Context Branching for LLM Conversations: A Version Control Approach to Exploratory Programming](https://arxiv.org/abs/2512.13914)：把版本控制用于 LLM 辅助探索式编程；核心思想是对会话式编程上下文进行分支、比较和恢复，而不是依赖单线性聊天历史。
+- [Imitation Game: Reproducing Deep Learning Bugs Leveraging an Intelligent Agent](https://arxiv.org/abs/2512.14990)：RepGen 先构建项目上下文并规划 bug 复现，再运行生成、验证、修正的迭代闭环来产出复现深度学习 bug 的代码。
+- [XBIDetective: Leveraging Vision Language Models for Identifying Cross-Browser Visual Inconsistencies](https://arxiv.org/abs/2512.15804)：抓取 Firefox 与 Chrome 截图，用视觉语言模型比较跨浏览器视觉不一致，并把发现结果接入回归测试和 bug triage。
+- [OLAF: Towards Robust LLM-Based Annotation Framework in Empirical Software Engineering](https://arxiv.org/abs/2512.15979)：把经验软件工程标注组织成 LLM 辅助流程，强调对研究工件进行稳健且可人工核验的编码。
+- [cuPilot: A Strategy-Coordinated Multi-agent Framework for CUDA Kernel Evolution](https://arxiv.org/abs/2512.16465)：用策略协同多智能体框架演化 CUDA kernel。
+- [SGCR: A Specification-Grounded Framework for Trustworthy LLM Code Review](https://arxiv.org/abs/2512.17540)：通过规格约束增强 LLM 代码审查的可信性。
+- [Well Begun is Half Done: Location-Aware and Trace-Guided Iterative Automated Vulnerability Repair](https://arxiv.org/abs/2512.20203)：用位置感知与执行轨迹引导迭代式自动漏洞修复，为代码修复 harness 补充安全场景。
+- [When LLMs Fall Short in Deductive Coding: Model Comparisons and Human–AI Collaboration Workflow Design](https://arxiv.org/abs/2512.21041)：为类别不均衡的 deductive annotation 设计人机协作编码流程，用模型输出提高吞吐，同时保留人工可靠性检查。
+- [Multi-Agent LLM Committees for Autonomous Software Beta Testing](https://arxiv.org/abs/2512.21352)：使用模型委员会进行软件测试的 agent harness。核心思想：通过不同测试 persona 与多轮投票协调多个具备视觉能力的 LLM tester，比单 agent 更系统地探索 Web 应用。
+- [Cerberus: Multi-Agent Reasoning and Coverage-Guided Exploration for Static Detection of Runtime Errors](https://arxiv.org/abs/2512.21431)：运行无需真实执行的测试闭环，由 LLM 生成输入、预测覆盖率，并在覆盖率饱和后从扩展覆盖转向发现运行时错误。
+- [RefineBridge: Generative Bridge Models Improve Financial Forecasting by Foundation Models](https://arxiv.org/abs/2512.21572)：parent-routing-needed：这是金融预测模型方法，不是软件开发智能体 harness。
+- [Context as a Tool (CAT)](https://arxiv.org/abs/2512.22087)：面向长程 SWE agent 的上下文管理 harness；核心思想是把上下文压缩和工作区维护暴露为可调用工具，使 agent 主动维护任务语义、长期记忆和短期交互。
+- [PRAXIS: Integrating Program Analysis with Observability for Root-Cause Analysis](https://arxiv.org/abs/2512.22113)：Agent Harness 条目；核心思想：把程序分析和可观测性结合到 root-cause analysis agent 流程中。
+- [GraphLocator: Graph-guided Causal Reasoning for Issue Localization](https://arxiv.org/abs/2512.22469)：图引导的 issue localization harness。核心思想：用因果推理搜索仓库代码图，定位最可能导致问题的文件与代码区域。
+- [FasterPy: An LLM-based Code Execution Efficiency Optimization Framework](https://arxiv.org/abs/2512.22827)：面向 Python 执行效率优化的 LLM 代码改写框架，适合软件开发 harness。
+- [MAGE](https://doi.org/10.1109/dac63849.2025.11133191)：提供自动 RTL 代码生成的多智能体引擎，把软件 agent harness 覆盖扩展到硬件描述代码。
+- [LLMFuzzTestGen](https://doi.org/10.1109/ICICSE67247.2025.11390823)：使用多智能体 LLM 反馈循环生成 fuzz 测试，把软件测试 harness 覆盖从单元测试扩展到鲁棒性导向的模糊测试。
+- [GenSoC](https://doi.org/10.1109/ISLPED65674.2025.11261756)：协调多个智能体基于开源硬件生成 SoC，用系统级设计方法扩展 HDL 与硬件设计 harness。
+- [RepoChat](https://doi.org/10.1109/MSR66628.2025.00045)：构建面向 GitHub 仓库问答的 LLM 聊天机器人，为软件开发 agent 覆盖仓库理解和代码库问答场景。
+- [RTL Designer](https://doi.org/10.1109/eiect68017.2025.11331954)： 提供面向自动 RTL 生成的 AI-powered 端到端工作流平台。
+- [POLO](https://doi.org/10.24963/ijcai.2025/814)：用 LLM 驱动项目级代码性能优化流程，把软件智能体 harness 从修 bug 扩展到性能提速。
+- [Artemis AI: Multi-LLM Framework for Code Optimisation](https://doi.org/10.1109/cai64502.2025.00057)：用多 LLM 框架进行代码优化，为面向代码质量或性能改进的软件开发 agent 补充编排模式。
+- [Context-Aware Pipeline for Automated Code Review Using Large Language Models](https://doi.org/10.1109/iccta68914.2025.11520024)：将大语言模型用于上下文感知的自动代码审查流程，补充区别于补丁生成的 code-review 软件 agent workflow。
+- [LLM-Driven, Self-Improving Framework for Security Test Automation: Leveraging Karate DSL for Augmented API Resilience](https://doi.org/10.1109/access.2025.3554960)：围绕 Karate DSL 构建自改进的大模型框架，用于自动化 API 安全测试与韧性检查，扩展软件测试智能体工作流。
+- [A Fully Automated Agent for End-to-End Code Translation and Validation](https://doi.org/10.1109/esem64174.2025.00058)：把代码翻译与验证串成自动化流程，补充面向迁移任务的软件智能体工作流，使生成的翻译代码经过检查而不是一次性采纳。
+- [RustAssistant: Using LLMs to Fix Compilation Errors in Rust Code](https://doi.org/10.1109/icse55347.2025.00022)：把 Rust 编译器诊断和源码上下文送入 LLM 修复闭环，使构建失败可以通过补丁生成和重新编译来检查。
+- [Retrieval-Augmented Generation for Software Requirement-Based Test Case Generation](https://doi.org/10.1109/qrs65678.2025.00022)：将检索增强生成用于从软件需求生成测试用例。
+- [Enhancing LLM’s Ability to Generate More Repository-Aware Unit Tests Through Precise Context Injection](https://doi.org/10.1109/ase63991.2025.00058)：通过精确 context injection 提升 LLM 生成 repository-aware unit tests 的能力。
+- [Unlocking Code Understanding: A Local-First Hybrid Knowledge Graph Approach](https://doi.org/10.1109/icca66035.2025.11430945)：用 local-first hybrid knowledge graph approach 支持代码理解。
+- [LLMPathy: A Multi-Agent LLM Approach for Eliciting Inclusive Security Requirements](https://doi.org/10.1109/rew66121.2025.00037)：用 multi-agent LLM approach eliciting inclusive security requirements，补充安全需求工程 harness。
+- [Combining Logic and Large Language Models for Assisted Debugging and Repair of ASP Programs](https://doi.org/10.1109/icst62969.2025.10988950)：把 answer-set programming 逻辑工具与 LLM 辅助结合，使调试和修复建议能用 ASP 语义检查。
+- [A Generative AI Framework for Semi-Automated Oracle SQL to BigQuery SQL Code Migration using LLM Driven DAGs and Iterative Refinement](https://doi.org/10.1109/icscn67106.2025.11308271)：把 Oracle 到 BigQuery 的迁移建模为 LLM 驱动的 DAG 步骤和迭代修正，使 SQL 翻译与分阶段验证绑定，而不是一次性改写。
+- [Automated Code Review in Practice](https://doi.org/10.1109/icse-seip66354.2025.00043)：报告落地的自动代码审查流程，强调自动生成的 review comments 如何进入开发者审查流水线。
+- [PETRA: A Personalized Educational Tutoring Tool for Recursive Assistance Leveraging Multi-model LLMs for Dynamic Programming Learning](https://doi.org/10.1109/iceeng64546.2025.11031311)：提供面向动态规划练习的教学 harness，由多个 LLM 生成递归提示和个性化学习反馈。
+- [Enhancing Commit Message Generation in Software Repositories: A RAG-Based Approach](https://doi.org/10.1109/sera65747.2025.11154546)：在生成提交信息前检索仓库上下文，使摘要基于周边代码变化而不只依赖原始 diff。
+- [Beyond Verilog: Agents for Emerging HDLs](https://doi.org/10.1109/coins65080.2025.11125745)：把硬件代码 agent 从 Verilog 扩展到新兴 HDL，围绕新硬件描述语言组织 agentic 生成与检查。
+- [A-COBREX: A Tool for Identifying Business Rules in COBOL Programs](https://doi.org/10.1109/icse-companion66252.2025.00011)：从 COBOL 程序中抽取业务规则，为遗留代码现代化 agent 在迁移或重构前提供理解工具。
+- [Code and Test Generation for I4.0 State Machines with LLM-based Diagram Recognition](https://doi.org/10.1109/wfcs63373.2025.11077624)：把工业 4.0 状态机图识别为代码和测试，连接视觉模型理解与可执行开发工件。
+- [Alchemist: LLM-Driven Test Generation using Solidity Mutants and the Scientific Method](https://doi.org/10.1109/icbc64466.2025.11114643)：利用 Solidity mutants 和假设式推理驱动 LLM 为智能合约生成测试。
+- [Semantic Code Finder: an Efficient Semantic Search Framework for Large-Scale Codebases](https://doi.org/10.1109/icse-seip66354.2025.00028)：为大型代码库提供语义搜索，使仓库级 agent 在编辑或审查前能检索相关实现位置。
+- [A Hybrid Framework Combining Dictionary-Based Methods, BERT, and CRF for Language Identification and Normalization in Code-Mixed Hinglish](https://doi.org/10.1109/ccict65753.2025.00103)：parent-routing-needed：这是 code-mixed Hinglish 的语言识别与归一化方法，虽然标题含 code，但不是软件开发 harness。
+- [Multi-Agent Systems in Software Testing: From Planning to Reporting](https://doi.org/10.1109/inmic65900.2025.11348399)：覆盖由专门 agent 分担计划、测试生成、执行分析和报告的软件测试流程。
+- [LLM-driven verification assistance: Bridging code, coverage and collaboration](https://doi.org/10.30574/ijsra.2025.16.2.2287)：提出模块化 LLM 验证助手，覆盖 assertion generation、coverage diagnostics、UVM testbench completion 以及围绕验证证据的协作。
+- [MAAP: A Self-Evolving Multi-Agent Automated Vulnerability Repair Framework for Python](https://doi.org/10.1109/apsec66846.2025.00024)：用自演化多智能体流程修复 Python 漏洞，将自动化补丁生成与 ReAct 式推理、CWE/CVE 语境和 SWE-agent 式仓库修复结合起来。
+- [GLiSE: A Prompt-Driven and ML-Powered Tool for Automated Grey Literature Extraction in Software Engineering](https://arxiv.org/abs/2512.23066)：把软件工程研究主题提示转成 GitHub、Stack Overflow 与 Google 查询，再用 embedding 语义分类器筛选和排序灰色文献结果。
+- [Integrating RAG and LLM for Automated Code Review in Practice](https://doi.org/10.1109/iscipt67144.2025.11265531)：把检索增强上下文接入 LLM 代码审查生成，使审查意见依托仓库或历史审查知识，而不是只看变更片段。
+- [LLM Assisted Code Coverage Closure](https://doi.org/10.1109/socc66126.2025.11235412)：将 LLM 用于硬件代码覆盖率收敛，结合 SoC 验证中的仿真器、覆盖率工具和 AHB 规格语境来引导新增测试。
+- [Towards an LLM-Based Auto-Corrector Agent for Symboleo Specifications](https://doi.org/10.1109/cascon66301.2025.00124)：面向 Symboleo 合同规格构建 auto-corrector agent，利用 DSL 生成和形式化规格语境修复规格错误，而不是普通源码缺陷。
+- [Secure Software Engineering Through Sensible AutoMation (SESAM)](https://doi.org/10.1109/esem64174.2025.00027)：parent-routing-needed：标题和会议表明它是 secure software engineering 自动化研究，但现有元数据不足以确认可复用 agent harness。
+- [An Automated Code Review Framework Based on BERT and Qianwen Large Model](https://doi.org/10.1109/ccai65422.2025.11189422)：结合 BERT 类编码器与 Qianwen 大模型做自动代码审查，重点在 review comment 或问题生成，而不是补丁修复。
+- [Enhancing LLM Code Generation: A Systematic Evaluation of Multi-Agent Collaboration and Runtime Debugging for Accuracy, Reliability, and Latency](https://doi.org/10.1109/aict67988.2025.11268754)：评估多 agent 协作与运行时调试如何影响代码生成的准确性、可靠性和延迟，harness 贡献在于被测量的协作与调试闭环。
+- [KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta](https://arxiv.org/abs/2512.23236)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Applying generative artificial intelligence for vulnerability fixing in a proprietary software ecosystem](https://doi.org/10.1016/j.jss.2025.112723)：研究私有软件生态中的漏洞修复流程，强调生成式修复如何在工业约束下被提出、检查并集成。
+- [Hoodie: Hierarchical point cloud and latent code diffusion for joint and conditional generation](https://doi.org/10.1016/j.neucom.2025.132132)：parent-routing-needed：这是 3D 点云与 latent-code diffusion 模型，和软件开发 harness 无关。
+- [Concepts for Teaching Software Development in the Age of AI-Tools](https://doi.org/10.1109/educon62633.2025.11016505)：parent-routing-needed：除非能确认具体可复用 AI-tool workflow，否则它更像软件教育概念论文。
+- [Creating Tabletop RPG Dialogues via Retrieval-Augmented Generation](https://doi.org/10.5753/sbgames.2025.10008)：parent-routing-needed：Crossref 元数据说明其关注桌面角色扮演对话的 RAG 生成，不是软件开发或 coding-agent harness。
+- [A Retrieval-Augmented Generation Architecture for Pepper Robot in Industrial Assistance](https://doi.org/10.24193/rm.2025.1.1)：parent-routing-needed：这是用于 Pepper 机器人工业辅助的 RAG 架构，不是软件工程 harness。
+- [Empowering LLM-based Software Defect Prediction with Chain-of-Thought and In-context Learning](https://doi.org/10.1109/smc58881.2025.11343579)：用 chain-of-thought prompting 和 in-context examples 把软件缺陷预测组织成可解释的 LLM 分析流程。
+- [Leveraging Retrieval Augmented Generation to Enhance LLM-Based Fault Localization for Novice Programs](https://doi.org/10.1109/qrs65678.2025.00016)：为 novice programs 的故障定位加入检索增强，使 LLM 在指出错误代码前能利用相关示例或上下文工件。
+- [Advancing LLM Agents for Code Generation: Observability, Orchestration, Reliable Performance](https://doi.org/10.1109/iccns66249.2025.11428688)：关注代码生成 agent 的可观测性和编排，把监控与可靠性控制纳入 coding loop。
+- [Arithmetic-Aware Question-Answering on Tabular Data Using a Large Language Model-Based Code Generation Agent](https://doi.org/10.1109/ines67149.2025.11078188)：parent-routing-needed：这是用于表格问答的数据分析型代码生成 agent，更接近数据分析而非可复用软件开发 harness。
+- [End-to-End Secure Code Repair with Context-Aware Anonymization and Isolated Agent Execution](https://doi.org/10.1109/icbctis66509.2025.11387695)：在 secure code repair 外加入上下文匿名化和隔离执行，使敏感信息受保护时仍能测试候选修复。
+- [FRCS-LLM: A Framework for Refining Code Summarization in Large Language Models via Pre-trained Models](https://doi.org/10.1109/compsac65507.2025.00157)：用预训练模型流程细化代码摘要，服务于仓库理解而不是补丁生成。
+- [SqPal - Text to SQL GenAI Tool for PayPal](https://doi.org/10.1109/cain66642.2025.00034)：描述 PayPal 的企业级 Text-to-SQL 工具，把自然语言分析请求在生产约束下转换为 SQL。
+- [V-Models: LLMS for the Development Lifecycle of Safety-Critical Systems](https://doi.org/10.1109/issrew67781.2025.00039)：用 V-model 生命周期结构安排 LLM 辅助在安全关键系统的需求、验证与确认流程中的位置。
+- [Agentic Summarization of Large Cobol Programs Beyond LLM Context Limits Using Call Graph-Based Grouping](https://doi.org/10.1109/aimlsystems67835.2025.11330810)：先按 COBOL 调用图分组再摘要，使 agent 能理解超出 LLM 上下文窗口的大型程序。
+- [Agentic Multi-Modal LLMs for Software Comprehension: Structuring Code Summarization with Business Process Awareness](https://doi.org/10.1109/sse67621.2025.00024)：把业务流程上下文加入多模态代码摘要，使软件理解对齐过程级意图，而不只看孤立源码。
+- [Detecting and Repairing Incomplete Software Requirements with Multi-LLM Ensembles](https://doi.org/10.1109/ase63991.2025.00328)：用 multi-LLM ensemble 发现缺失需求内容并提出修复，把需求质量检查变成 agentic review loop。
+- [An Intelligent Agent for Automated Test Generation from OpenAPI Specifications](https://doi.org/10.5753/wbots.2025.15217)：按 endpoint 切分 OpenAPI 文档，提示 LLM 生成 Postman 式测试集合，并用 Newman 验证。
+- [Role-Aware Intelligent Agent Framework for Enhanced Code Generation Using Large Language Model](https://doi.org/10.1109/ic3it66137.2025.11341145)：在 LLM 代码生成框架中分配角色化职责，将规划、生成和检查分离。
+- [LLM2FedLLM - A Tool for Simulating Federated LLMs for Software Engineering Tasks](https://doi.org/10.1109/icpc66645.2025.00052)：提供用于软件工程任务的 federated LLM 仿真工具，使研究者能在部署前测试分布式 agent 假设。
+- [Leveraging RAG and LLMs for Access Control Policy Extraction From User Stories in Agile Software Development](https://doi.org/10.1109/access.2025.3586203)：对敏捷 user stories 做 RAG 检索并抽取访问控制策略，把需求工件连接到安全策略生成。
+- [CodeGuide: An Artificial Intelligence Powered vs Code Extension for Automated Python Code Generation, Error Detection and Code Correction](https://doi.org/10.1109/icaaic64647.2025.11331205)：可作为“软件开发 / 智能体框架”候选条目；提供面向智能体工作流、编排、工具使用或执行环境的可复用框架。
+- [A Multi-Agent Fuzzing Framework for Deep Learning Library](https://doi.org/10.1109/smc58881.2025.11343067)：可作为“软件开发 / 智能体框架”候选条目；提供面向智能体工作流、编排、工具使用或执行环境的可复用框架。
+- [Automated Bug Discovery in Cloud Infrastructure-as-Code Updates with LLM Agents](https://doi.org/10.1109/aiops66738.2025.00011)：补充智能体工作流、编排模式、工具循环、记忆、验证或环境控制框架。
+- [Code Prism: A Multi-Agent, Multi-LLM, Semantic Indexing Artifact for Regulatory Code Audits — A Design Science Research Study](https://doi.org/10.1109/iceidt66693.2025.11473608)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Semantic Kernel for Software Engineering: A Multi-Agent Framework for Autonomous Development Lifecycles](https://doi.org/10.1109/iceca66444.2025.11383462)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [ECCC: Edge Code Cloak Coder for Privacy Code Agent](https://doi.org/10.18653/v1/2025.winlp-main.14)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [IntelliTest: An Intelligent Framework for Agentic Functional Test Generation Using Multimodal Data and Domain Knowledge](https://doi.org/10.1109/fnwf66845.2025.11317278)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Generative AI for Diagrams as Code and Code as Diagrams](https://doi.org/10.1109/saci66288.2025.11030105)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Revolutionizing ERP Test Strategy Generation Through Multi-Agent AI Frameworks](https://doi.org/10.32996/jcsts.2025.7.12.32)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Integrating LLMs for Automated Bug Triaging and Root Cause Localization in Software Systems](https://doi.org/10.1109/aibthings66987.2025.11296163)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [LLM-Driven Smart Test Case Generation for Scalable Software Testing](https://doi.org/10.1109/ssitcon66133.2025.11342080)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [LLM-Guided Differential Fuzzing for Detecting Platform-Specific Bugs in Scientific Applications](https://doi.org/10.1109/aixse64906.2025.00015)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [WebGlitch: A Randomised Testing Tool for the WebGPU API (Experience Paper)](https://doi.org/10.4230/lipics.ecoop.2025.39)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [RAG4Test: Retrieving GUI States for Multilingual Bug Report and Test Case Generation via LLMs](https://doi.org/10.1109/apsec66846.2025.00085)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Automated Generation of Exploratory Test Cases Using Prompt Chaining and Reflective Evaluation](https://doi.org/10.5753/sbes.2025.11599)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [From Tool to Partner: Exploring the Roles of Embodiment on AI Agent in Pair Programming](https://doi.org/10.1109/vl-hcc65237.2025.00033)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Adaptive Test Healing using LLM/GPT and Reinforcement Learning](https://doi.org/10.1109/icstw64639.2025.10962516)：补充面向软件开发的外部 LLM/VLM 工作流，重点是LLM and RL workflow for adaptive test healing。
+- [Automatic Generation of Bug Reports Using Large Language Models: An Evaluation in a Software Institute](https://doi.org/10.5753/sbqs.2025.13599)：补充使用大模型自动生成缺陷报告的软件工程流程。
+- [IntelliUnitGen: A Unit Test Case Generation Framework Based on the Integration of Static Analysis and Prompt Learning](https://doi.org/10.1109/access.2025.3615990)：结合静态分析和 prompt learning 生成单元测试，属于软件测试 harness。
+- [Seeing is Fixing: Cross-Modal Reasoning with Multimodal LLMs for Visual Software Issue Repair](https://doi.org/10.1109/ase63991.2025.00100)：多模态软件问题修复工作流。核心思想：结合视觉问题证据和代码推理，让 agent 能修复由截图或 UI 轨迹描述的 bug。
+- [BuilDroid: A Self-Correcting LLM Agent for Automated Android Builds](https://doi.org/10.1109/ase63991.2025.00370)：用于自动化 Android build 的自纠错 LLM agent，可补充软件 agent 中构建、依赖和环境恢复流程。
+- [Debate, Verify, and Debug: A Multi-Agent Planning Framework for Reliable Code Generation](https://doi.org/10.1109/ccet66260.2025.11199679)：面向可靠代码生成的多代理规划框架；核心思想是在欠明确编程任务中结合 debate、verification 和 debugging。
+- [AgentRepair: Multi-Agent, AST-Anchored, Retrieval-Augmented Program Repair for Cold-Start Environments](https://doi.org/10.1109/dsa66321.2025.00025)：结合 multi-agent、AST anchoring 和 retrieval augmentation 的程序修复框架；核心思想是在冷启动修复中结合结构化代码锚点、检索和角色分工。
+- [MUARF: Leveraging Multi-Agent Workflows for Automated Code Refactoring](https://doi.org/10.1109/icse-companion66252.2025.00071)：用多智能体工作流自动完成代码重构，把重构组织为规划、编辑与验证协同流程，而不是单轮提示。
+- [RMGenie: An LLM-Based Agent Framework for Open Source Software README Generation](https://doi.org/10.1109/icsme64153.2025.00052)：面向开源软件 README 生成的 LLM agent framework。
+- [AskGraph: A Dependency-Aware Code Assistant Powered by Code Graphs and LLM-Generated Cypher Queries](https://doi.org/10.1109/icsme64153.2025.00065)：由代码图和 LLM 生成 Cypher 查询驱动的依赖感知代码助手；核心思想是让 coding agent 查询仓库依赖图，而不只依赖文本搜索。
+- [IDE Native, Foundation Model Based Agents for Software Refactoring](https://doi.org/10.1109/ide66625.2025.00013)：提出 IDE 原生的基础模型 refactoring agent 工作流，适合归入软件开发智能体脚手架。
+- [EDA-Debugger: An LLM-Based Framework for Automated EDA Runtime Issue Resolution](https://doi.org/10.1109/isqed65160.2025.11014463)：Agent Harness 条目；核心思想：用 LLM 自动定位和修复 EDA 运行时问题，属于专业软件调试 agent。
+- [Preguss](https://arxiv.org/abs/2512.24594)：面向大型程序的 LLM-aided formal-specification synthesis harness。核心思想是结合静态分析、潜在运行时错误引导的验证单元排序和 deductive verification 反馈，生成跨过程规格并减少人工验证工作量。
+- [Vulcan: Instance-Optimal Systems Heuristics Through LLM-Driven Search](https://arxiv.org/abs/2512.25065)：用 LLM-driven search 合成系统启发式算法，属于程序与系统优化 harness。
+- [A Novel Unified Framework for Automated Generation and Multimodal Validation of UML Diagrams](https://doi.org/10.32604/cmes.2025.075442)：Agent Harness 条目；核心思想：自动生成并多模态验证 UML 图的工程 agent 流程。
+- [Blueprint2Code: a multi-agent pipeline for reliable code generation via blueprint planning and repair](https://doi.org/10.3389/frai.2025.1660912)：面向可靠代码生成的多 agent pipeline。核心思想：先生成 blueprint，再用 repair agent 迭代改进生成代码。
+- [LADYBUG: an LLM Agent DeBUGger for data-driven applications](https://doi.org/10.48786/edbt.2025.94)：Agent Harness 条目；核心思想：面向数据驱动应用的 LLM agent 调试器，适合作为软件调试 harness 条目。
+- [Toward efficient vibe coding: An LLM-based agent for low-code software development](https://doi.org/10.1016/j.cola.2025.101367)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 An LLM-based agent for low-code software development 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [From text to design: a framework to leverage LLM agents for automated CAD generation](https://doi.org/10.1017/pds.2025.10203)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 a framework to leverage LLM agents for automated CAD generation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [GeoCogent: an LLM-based agent for geospatial code generation](https://doi.org/10.1080/13658816.2025.2549460)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 GeoCogent: an LLM-based agent for geospatial code generation 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [GeoColab: an LLM-based multi-agent collaborative framework for geospatial code generation](https://doi.org/10.1080/17538947.2025.2569405)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 GeoColab: an LLM-based multi-agent collaborative framework for geospatial code generation 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [ContextPilot: Adaptive Open Source Software Onboarding](https://doi.org/10.1109/acit68900.2025.11510523)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“ContextPilot: Adaptive Open Source Software Onboarding”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Verifiable Collaboration among Agentic Code Assistants using Blockchain for Software Engineering Workflows](https://doi.org/10.1109/aixse64906.2025.00019)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Trace: Test Repair via Agent-based Context Extraction with LLMs](https://doi.org/10.1109/apsec66846.2025.00017)：一种基于上下文抽取的测试修复 Agent；核心思路是在让 LLM 修复失败测试之前，由 Agent 收集与修复相关的代码上下文。
+- [A Hierarchical Hybrid-Intelligence Architecture with Consensus, Debate, and Reflection for High-Fidelity NL-to-PPTL Conversion](https://doi.org/10.1109/apsec66846.2025.00018)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“A Hierarchical Hybrid-Intelligence Architecture with Consensus, Debate, and Reflection for High-Fidelity NL-to-PPTL Conversion”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [AgentTCP: A Collaborative Multi-Agent Framework for Change-Aware Test Case Prioritization](https://doi.org/10.1109/apsec66846.2025.00066)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“AgentTCP: A Collaborative Multi-Agent Framework for Change-Aware Test Case Prioritization”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [LogExpertSolver: A Multi-Agent Framework for Domain-Specialized Log Parsing](https://doi.org/10.1109/apsec66846.2025.00108)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“LogExpertSolver: A Multi-Agent Framework for Domain-Specialized Log Parsing”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [A 3-Layer Agentic Model for Nonfunctional Requirements in Software Engineering](https://doi.org/10.1109/asew67777.2025.00020)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“A 3-Layer Agentic Model for Nonfunctional Requirements in Software Engineering”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [KeBugFix: Automated Program Repair Framework Based on Code Retrieval Enhancement and LLM Agent](https://doi.org/10.1109/bigdata66926.2025.11402633)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Real-Time Adaptive Code Analysis with a Self-Learning Multi-Agent Framework: A Retrieval-Augmented Reinforcement Learning Approach](https://doi.org/10.1109/icaide65466.2025.11189485)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Towards Automated or Assisted Requirements Extraction and Analysis Using an LLM-Based Multi-Agent System: A Case Study](https://doi.org/10.1109/ice/itmc65658.2025.11106535)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Building Bridges, Not Walls: Fairness-Aware and Accurate Recommendation of Code Reviewers via LLm-Based Agents Collaboration](https://doi.org/10.1109/icpc66645.2025.00067)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Test Intention Guided LLM-Based Unit Test Generation](https://doi.org/10.1109/icse55347.2025.00243)：把能力组织为可执行或可编排的工作流，而不只是单次提示。
+- [A Preliminary Study on Large Language Models Self-Negotiation in Software Engineering](https://doi.org/10.1109/icsme64153.2025.00088)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Evaluation of the Choice of LLM in a Multi-Agent Solution for GUI-Test Generation](https://doi.org/10.1109/icst62969.2025.10989038)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Evaluation of the Choice of LLM in a Multi-Agent Solution for GUI-Test Generation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Agentic AI-Driven CI/CD Pipelines for Autonomous Software Delivery](https://doi.org/10.1109/ictbig68706.2025.11323919)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Multi-Agent LLM Collaboration for Adaptive Code Review, Debugging, and Security Analysis](https://doi.org/10.1109/mrai65197.2025.11135756)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 Multi-Agent LLM Collaboration for Adaptive Code Review, Debugging, and Security Analysis 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [A Design of Experiments Oracle LLM for Research-Grounded Combinatorial Testing](https://doi.org/10.1109/qrs-c65679.2025.00021)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Multi-Agent hierarchical workflow for autonomous code generation with Large Language Models](https://doi.org/10.1109/sceecs64059.2025.10940635)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [MAGISTER: LLM-Based Test Generation with Role-Specialized Agents](https://doi.org/10.1109/sita67914.2025.11273637)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Agentic BDD Testing of Dialog Systems: Stabilizing the Dialog Manager via Failure-Driven Evolution](https://doi.org/10.1109/telfor67910.2025.11314366)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [ReCompGPT: An NL2NL Framework for Automated Requirements Completeness](https://doi.org/10.1109/tse.2025.3613507)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“ReCompGPT: An NL2NL Framework for Automated Requirements Completeness”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Automated Generation of End-to-End Web Test Cases via a Generic AI Agent: A Comparative Study of DeepSeek V3 and Claude Sonnet 5](https://doi.org/10.5753/webmedia.2025.16046)：面向软件开发 Agent 与代码能力提供 Agent 工作流、运行时、协议、工具使用或多 Agent 编排思路。
+- [Software Development Using a Multi-agent Approach](https://doi.org/10.5753/wesaac.2025.37549)：一种带人工监督的多 Agent 软件开发工作流；核心思路是通过共享状态协调架构规划、制品生成、代码审查和运营管理等专门 Agent。
+- [OpenROAD Agent: An Intelligent Self-Correcting Script Generator for OpenROAD](https://doi.org/10.1109/iclad65226.2025.00039)：构建面向 OpenROAD 的自校正式脚本生成 agent，将 EDA 自动化与可执行代码反馈连接起来。
+- [An LLM-Based Agent-Oriented Approach for Automated Code Design Issue Localization](https://doi.org/10.1109/icse55347.2025.00100)：围绕代码设计问题定位组织 LLM 智能体，而不是把设计诊断压缩成单次提示。
+- [NIODebugger: A Novel Approach to Repair Non-Idempotent-Outcome Tests with LLM-Based Agent](https://doi.org/10.1109/icse55347.2025.00226)：用 LLM 调试 agent 修复非幂等结果测试，为软件 agent 补充测试可靠性修复流程。
+- [SoapFL: A Standard Operating Procedure for LLM-Based Method-Level Fault Localization](https://doi.org/10.1109/tse.2025.3543187)：用标准操作流程组织 LLM 的方法级故障定位，使诊断过程不只依赖一次性缺陷猜测。
+- [In Line with Context: Repository-Level Code Generation via Context Inlining](https://arxiv.org/abs/2601.00376)：基于 context inlining 的 repository-level code-generation harness；核心思想是把未完成函数内联到调用图上下文中，将仓库推理转化为较易处理的函数级编码。
+- [Multi-Agent Coordinated Rename Refactoring](https://arxiv.org/abs/2601.00482)：在开发者保持主导的前提下，由多个 agent 提议并传播跨文件相关标识符重命名，减少重构遗漏和人工过滤误报的负担。
+- [Atomizer: An LLM-based Collaborative Multi-Agent Framework for Intent-Driven Commit Untangling](https://arxiv.org/abs/2601.01233)：用协作式多智能体 LLM 框架做意图驱动的 commit untangling。
+- [Enhancing Debugging Skills with AI-Powered Assistance: A Real-Time Tool for Debugging Support](https://arxiv.org/abs/2601.02504)：提供用于调试支持的实时 AI 辅助工具。
+- [AMER-RCL](https://arxiv.org/abs/2601.02732)：结合递归多智能体推理与 agentic memory 复用来定位微服务根因，为软件工程页面补充 SRE 调试类 harness。
+- [CodeMEM: AST-Guided Adaptive Memory for Repository-Level Iterative Code Generation](https://arxiv.org/abs/2601.02868)：为仓库级迭代代码生成加入 AST-guided adaptive memory；设计关键词：repository memory、AST context、iterative generation、代码库状态跟踪。
+- [Do Autonomous Agents Contribute Test Code? A Study of Tests in Agentic Pull Requests](https://arxiv.org/abs/2601.03556)：基于 AIDev 数据集刻画 agent 创建的 GitHub PR 何时包含测试，并按 PR 规模、周转时间、合并结果和不同 agent 的测试/生产代码比例比较含测试与不含测试的 PR。
+- [Agentic Rubrics](https://arxiv.org/abs/2601.04171)（开源代码：未找到稳定公开仓库；面向 SWE agents 的上下文化 verifier workflow；设计关键词：仓库交互式 checklist、补丁验证、任务特定 rubric）
+- [ParaCodex: A Profiling-Guided Autonomous Coding Agent for Reliable Parallel Code Generation and Translation](https://arxiv.org/abs/2601.04327)：提供面向并行代码生成与迁移的自主 coding agent。核心思想：结合性能剖析、编译、测试与性能反馈来处理 HPC 代码任务。
+- [DafnyPro: LLM-Assisted Automated Verification for Dafny Programs](https://arxiv.org/abs/2601.05385)：补充面向软件开发、代码生成、测试或验证能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [LIDL: LLM Integration Defect Localization via Knowledge Graph-Enhanced Multi-Agent Analysis](https://arxiv.org/abs/2601.05539)：提供可复用 agent 工作流或执行 harness，服务于software-development agents。
+- [From Issues to Insights: RAG-based Explanation Generation from Software Engineering Artifacts](https://arxiv.org/abs/2601.05721)：用检索增强流程从软件工程制品生成解释。
+- [EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents](https://arxiv.org/abs/2601.05777)：面向软件工程 agent 的提前终止机制。核心思想：利用既往经验，在低价值执行路径消耗工具调用和运行时间前停止。
+- [NL2Dashboard: A Lightweight and Controllable Framework for Generating Dashboards with LLMs](https://arxiv.org/abs/2601.06126)：用结构化中间表示分离仪表盘分析与呈现，再把 IR 驱动的渲染算法作为工具接入多智能体仪表盘生成系统。
+- [MemGovern: Enhancing Code Agents through Learning from Governed Human Experiences](https://arxiv.org/abs/2601.06789)：可作为软件开发 agent的Agent Harness候选；核心关注“Enhancing Code Agents through Learning from Governed Human Experiences”。
+- [Repository Intelligence Graph: Deterministic Architectural Map for LLM Code Assistants](https://arxiv.org/abs/2601.10112)：为代码智能体提供确定性的仓库架构图，将构建、测试、依赖与覆盖关系暴露为适合 LLM 使用的 JSON 上下文。
+- [Change And Cover: Last-Mile, Pull Request-Based Regression Test Augmentation](https://arxiv.org/abs/2601.10942)：专门覆盖 PR 修改后仍未测试的代码行，检索相关既有测试与 fixtures，生成风格一致的补充测试并给开发者汇总变更。
+- [From LLMs to Agents in Programming: The Impact of Providing an LLM with a Compiler](https://arxiv.org/abs/2601.12146)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Improved Bug Localization with AI Agents Leveraging Hypothesis and Dynamic Cognition](https://arxiv.org/abs/2601.12522)：用多 agent 模拟开发者调试实践，围绕假设构造、调用图根因分析、上下文管理和证据检验来定位 bug。
+- [CMind](https://arxiv.org/abs/2601.14434)：构建用于定位 C 语言内存错误的 AI Agent。核心思路是围绕代码检查和内存错误证据组织定位流程，而不是只做一次性缺陷分类。
+- [CodeDelegator: Mitigating Context Pollution via Role Separation in Code-as-Action Agents](https://arxiv.org/abs/2601.14914)：面向 code-as-action agent 的角色分离 harness。核心思想是把编码职责分配给不同角色，以降低上下文污染并保持更清晰的推理和执行轨迹。
+- [SmartOracle - An Agentic Approach to Mitigate Noise in Differential Oracles](https://arxiv.org/abs/2601.15074)：用于 differential fuzzing 的 agentic oracle triage harness。核心思路是协调 LLM subagents 处理终端证据与规范查询，降低跨实现差异验证中的误报。
+- [SWE-Pruner](https://arxiv.org/abs/2601.16746)（[开源代码](https://github.com/Ayanami1314/swe-pruner)；上下文裁剪模块；设计关键词：上下文裁剪、关键信息筛选）
+- [Let's Make Every Pull Request Meaningful: An Empirical Analysis of Developer and Agentic Pull Requests](https://arxiv.org/abs/2601.18749)：分析 AIDev 中 40,214 个 PR 和 64 类特征，对比人类与 agentic PR 的合并信号，为提升 agent 贡献质量提供证据。
+- [Dynamic Cogeneration of Bug Reproduction Test in Agentic Program Repair](https://arxiv.org/abs/2601.19066)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Learning Adaptive Parallel Execution for Efficient Code Localization](https://arxiv.org/abs/2601.19568)：将自适应并行执行用于代码定位，使代码库探索和故障定位成为软件工程智能体工作流中的显式环节。
+- [Veri-Sure: A Contract-Aware Multi-Agent Framework with Temporal Tracing and Formal Verification for Correct RTL Code Generation](https://arxiv.org/abs/2601.19747)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [STELLAR: Structure-guided LLM Assertion Retrieval and Generation for Formal Verification](https://arxiv.org/abs/2601.19903)：用 AST 结构指纹表示 RTL block，检索结构相近的 RTL 与断言样例，再注入提示生成 SystemVerilog assertions。
+- [How do Agents Refactor: An Empirical Study](https://arxiv.org/abs/2601.20160)：用 RefactoringMiner 与 DesigniteJava 比较 Claude Code、Copilot、Cursor Agent、Devin 和 Codex 生成的 Java 重构 PR 与开发者重构。
+- [Towards Comprehensive Benchmarking Infrastructure for LLMs In Software Engineering](https://arxiv.org/abs/2601.21070)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Human-Agent versus Human Pull Requests: A Testing-Focused Characterization and Comparison](https://arxiv.org/abs/2601.21194)：比较 AIDev 中 6,582 个人机协作 PR 与 3,122 个人类 PR，关注测试频率、代码测试共演化、test smells 和覆盖率影响。
+- [CovAgent: Overcoming the 30% Curse of Mobile Application Coverage with Agentic AI and Dynamic Instrumentation](https://arxiv.org/abs/2601.21253)：用动态插桩和 Agentic AI 提升移动应用覆盖率。
+- [ECCO: Evidence-Driven Causal Reasoning for Compiler Optimization](https://arxiv.org/abs/2602.00087)：把证据驱动因果推理与遗传搜索结合，用于 LLM 引导的编译器优化。
+- [Why Are AI Agent Involved Pull Requests (Fix-Related) Remain Unmerged? An Empirical Study](https://arxiv.org/abs/2602.00164)：研究五类 coding agent 生成的 8,106 个修复相关 PR，并人工标注 326 个未合并案例，归纳测试失败和已有 PR 先行解决等失败原因。
+- [Spec-Driven Development:From Code to Contract in the Age of AI Coding Assistants](https://arxiv.org/abs/2602.00180)：面向 AI coding assistants 的 spec-driven development workflow。核心思想是把代码转成显式 contract，并用 contract 约束生成、审查和修复。
+- [From Junior to Senior: Allocating Agency and Navigating Professional Growth in Agentic AI-Mediated Software Engineering](https://arxiv.org/abs/2602.00496)：结合 ACTA、Delphi 评审、调试任务和 prompt history 分析，刻画初级与资深开发者如何在 agentic AI 软件工作中分配控制权。
+- [Learning Abstractions for Hierarchical Planning in Program-Synthesis Agents](https://arxiv.org/abs/2602.00929)：面向 program-synthesis agents 的 hierarchical planning abstraction，属于 software agent harness。
+- [Agyn](https://arxiv.org/abs/2602.01465)（[开源代码](https://github.com/agynio/platform)；面向真实工程任务的代理平台；设计关键词：平台化编排、真实工程任务承载）
+- [CAM: A Causality-based Analysis Framework for Multi-Agent Code Generation Systems](https://arxiv.org/abs/2602.02138)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Clarify Before You Draw: Proactive Agents for Robust Text-to-CAD Generation](https://arxiv.org/abs/2602.03045)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [SWE-World](https://arxiv.org/abs/2602.03419)（[开源代码](https://github.com/RUCAIBox/SWE-World)；Docker-free 的 SWE 训练与评测底座；设计关键词：learned surrogate、执行反馈替代、低成本评测）
+- [FullStack-Agent](https://arxiv.org/abs/2602.03798)（开源代码：未找到稳定公开仓库；面向全栈 Web coding 的 agent 框架，引入开发导向测试与 repository back-translation；设计关键词：规划、代码库导航、缺陷定位、数据流验证、前后端集成行为）
+- [AgenticAKM : Enroute to Agentic Architecture Knowledge Management](https://arxiv.org/abs/2602.04445)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“AgenticAKM : Enroute to Agentic Architecture Knowledge Management”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Towards Structured, State-Aware, and Execution-Grounded Reasoning for Software Engineering Agents](https://arxiv.org/abs/2602.04640)：Agent Harness 条目；核心思想：面向软件工程 agent 的状态感知和执行 grounded 推理；核心思想是从反应式聊天历史转向显式持久任务状态。
+- [Supporting Software Engineering Tasks with Agentic AI: Demonstration on Document Retrieval and Test Scenario Generation](https://arxiv.org/abs/2602.04726)：演示 Agentic AI 支持软件文档检索与测试场景生成。
+- [RocqSmith: Can Automatic Optimization Forge Better Proof Agents?](https://arxiv.org/abs/2602.05762)：面向Rocq 形式化验证场景中的证明生成 agent 自动优化的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [LAAFD: LLM-based Agents for Accelerated FPGA Design](https://arxiv.org/abs/2602.06085)：用 LLM 智能体加速 FPGA 设计。
+- [SVRepair: Structured Visual Reasoning for Automated Program Repair](https://arxiv.org/abs/2602.06090)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [AgentStepper](https://arxiv.org/abs/2602.06593)（开源代码：未找到稳定公开仓库；软件开发 agent 的交互式调试器；设计关键词：轨迹检查、LLM call 调试、工具动作单步执行）
+- [TraceCoder: A Trace-Driven Multi-Agent Framework for Automated Debugging of LLM-Generated Code](https://arxiv.org/abs/2602.06875)：面向自动调试的 trace-driven multi-agent framework。核心思想是用执行轨迹协调专门 agent 来诊断和修复 LLM 生成代码。
+- [AgentSpawn](https://arxiv.org/abs/2602.07072)：面向长程代码生成的动态多 agent harness。核心思想：在运行时分析任务复杂性，当固定角色分工不足时动态生成 specialist agents，让协作结构随编码过程自适应变化。
+- [Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation](https://arxiv.org/abs/2602.08146)：用对抗式 LLM agent 生成单元测试。核心思想：让测试生成 agent 与 mutation agent 对抗，从而提升测试鲁棒性。
+- [AgentCgroup](https://arxiv.org/abs/2602.09345)（[开源代码](https://github.com/eunomia-bpf/agentcgroup)）：面向沙盒化 coding agent 的资源控制 harness；它在 SWE-rebench 任务上刻画 OS 层面的工具调用和内存峰值，再用 eBPF 与分层 cgroup 做自适应多租户隔离。
+- [Environment-in-the-Loop: Rethinking Code Migration with LLM-based Agents](https://arxiv.org/abs/2602.09944)：用 environment-in-the-loop agent 重新思考代码迁移；核心思想是让代理在迁移中检查和修复运行环境问题。
+- [Artisan](https://arxiv.org/abs/2602.10046)（开源代码：未找到稳定公开仓库；agentic artifact-evaluation harness；设计关键词：可执行复现脚本、研究 artifact 修复、细粒度评估）
+- [Why Human Guidance Matters in Collaborative Vibe Coding](https://arxiv.org/abs/2602.10473)：研究协作式 vibe coding 中人类指导的作用。
+- [SWE-MiniSandbox](https://arxiv.org/abs/2602.11210)（[开源代码](https://github.com/lblankl/SWE-MiniSandbox)）：面向 SWE agent 强化学习训练的 container-free 执行底座；它把每个任务放进内核机制隔离的轻量 workspace，并通过环境预缓存降低磁盘和 setup 成本，同时保持接近容器式评测的行为。
+- [Compiler-Guided Inference-Time Adaptation: Improving GPT-5 Programming Performance in Idris](https://arxiv.org/abs/2602.11481)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [WebTestPilot: Agentic End-to-End Web Testing against Natural Language Specification by Inferring Oracles with Symbolized GUI Elements](https://arxiv.org/abs/2602.11724)：从自然语言规格和 GUI 符号化 oracle 构建端到端 Web 测试 agent，适合软件 agent harness。
+- [ATTest](https://arxiv.org/abs/2602.13987)：用 agent 驱动深度学习库模块的 tensor 测试。核心思想：围绕 tensor API 自动生成并检查测试，使库缺陷探索不只依赖人工测试用例。
+- [Algorithm-Based Pipeline for Reliable and Intent-Preserving Code Translation with LLMs](https://arxiv.org/abs/2602.16106)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Hybrid-Gym](https://arxiv.org/abs/2602.16819)（开源代码：未找到稳定公开仓库；面向可迁移 coding-agent skills 的合成训练与评测环境；设计关键词：代码库探索、定位、依赖搜索、测试）
+- [Wink: Recovering from Misbehaviors in Coding Agents](https://arxiv.org/abs/2602.17037)：提供可复用 agent 工作流或执行 harness，服务于software-development agents。
+- [How AI Coding Agents Communicate: A Study of Pull Request Description Characteristics and Human Review Responses](https://arxiv.org/abs/2602.17084)：分析 AIDev 中五类 coding agent 的 PR，将 PR 描述的结构和文风与审查者活动、响应时间、情绪、合并结果及不同 agent 的协作模式关联起来。
+- [AgentConductor: Topology Evolution for Multi-Agent Competition-Level Code Generation](https://arxiv.org/abs/2602.17100)：可作为软件开发 agent的Agent Harness候选；核心关注“Topology Evolution for Multi-Agent Competition-Level Code Generation”。
+- [Validated Code Translation for Projects with External Libraries](https://arxiv.org/abs/2602.18534)：结合 API 检索、跨语言适配器合成和等价性验证来完成 Go 到 Rust 项目转译，把外部库依赖纳入代码迁移 harness。
+- [Debug2Fix](https://arxiv.org/abs/2602.18571)（开源代码：未找到稳定公开仓库；交互式调试修复框架；设计关键词：动态调试、修复闭环、bug localization）
+- [Feedback-Based Automated Verification in Vibe Coding](https://arxiv.org/abs/2602.18607)：面向 vibe coding 式 CAS 适配引入反馈驱动的自动验证，为软件开发 agent 补充验证闭环。
+- [Codified Context: Infrastructure for AI Agents in a Complex Codebase](https://arxiv.org/abs/2602.20478)：面向复杂代码库中 agent 的上下文基础设施。核心思想：把仓库上下文编码化，使 agent 更可靠地检索并使用大型代码库知识。
+- [PackMonitor: Enabling Zero Package Hallucinations Through Decoding-Time Monitoring](https://arxiv.org/abs/2602.20717)：PackMonitor 针对依赖推荐中的 package hallucination 做 decoding-time monitoring，适合 coding-agent harness。
+- [AgenticTyper: Automated Typing of Legacy Software Projects Using Agentic AI](https://arxiv.org/abs/2602.21251)：通过迭代类型错误修正、类型定义生成、缺陷识别和转译对比，把遗留 JavaScript 仓库迁移到 TypeScript 并保持行为一致。
+- [Structurally Aligned Subtask-Level Memory](https://arxiv.org/abs/2602.21611)：面向软件工程 agent 的记忆 harness。核心思想：按子任务而不是整次任务轨迹存储、检索和更新记忆，减少相似 issue 描述对应不同推理步骤时的误导性检索。
+- [SWE-Protégé](https://arxiv.org/abs/2602.22124)：面向小型软件工程 agent 的选择性专家协作框架。核心思想：保持小模型作为决策者，同时学习何时请求专家帮助、识别 stalled states，并落实稀疏专家反馈。
+- [RUSTFORGER](https://arxiv.org/abs/2602.22764)（开源代码：未找到稳定公开仓库；面向 Rust-SWE-bench 的 Rust 修复代理；设计关键词：Cargo 工具链、编译器反馈、所有权/生命周期错误修复）
+- [LLM-Powered Silent Bug Fuzzing in Deep Learning Libraries via Versatile and Controlled Bug Transfer](https://arxiv.org/abs/2602.23065)：从历史 issue 抽取 bug 模式，用功能 embedding 匹配相关 API，并合成带 oracle 的测试以暴露深度学习库中的 silent bugs。
+- [SGAgent: Suggestion-Guided LLM-Based Multi-Agent Framework for Repository-Level Software Repair](https://arxiv.org/abs/2602.23647)：它提供 coding agent、仓库修复、代码维护或调试 workflow，适合补充 software-development Agent Harness。
+- [TopoEdge: Topology-Grounded Agentic Framework for Edge Networking Code Generation and Repair](https://arxiv.org/abs/2603.00569)：以路由级拓扑图 grounding SDN 配置生成，检索验证过的参考驱动，并由分角色 agent 执行分布式生成、验证、修复闭环。
+- [Historian: Reducing Manual Validation in APR Benchmarking via Evidence-Based Assessment](https://arxiv.org/abs/2603.00649)：面向自动程序修复 benchmark 中基于证据的补丁自动验证的 agent harness；核心思想：把规划、工具、记忆、验证、环境交互或编排放到基础模型之外显式管理。
+- [RepoRepair: Leveraging Code Documentation for Repository-Level Automated Program Repair](https://arxiv.org/abs/2603.01048)：Agent Harness 条目；核心思想：利用代码文档辅助 repository-level 自动程序修复。
+- [SWE-Adept](https://arxiv.org/abs/2603.01327)（开源代码：未找到稳定公开仓库；定位代理与修复代理的双 Agent 框架；在 SWE-Bench Pro 上报告 Claude 4.5 Sonnet 端到端 resolve rate 为 47.3%，较 OrcaLoca 提升 4.0%；设计关键词：定位-修复双代理、依赖引导 DFS、checkpoint 化 Git 回滚）
+- [Agentic Code Reasoning](https://arxiv.org/abs/2603.01896)：面向 code agents 的 semi-formal reasoning harness；核心思想是要求 agent 显式写出 premises、execution-path traces 和 derived conclusions，从而在不执行代码的情况下验证补丁等价性、定位故障和回答代码问题。
+- [CUCo](https://arxiv.org/abs/2603.02376)：agent-driven CUDA kernel 协同设计 harness。核心思想是让 agent 同时编排计算与通信 kernel，服务分布式 LLM 训练和推理负载，把 GPU coding agent 从纯计算优化扩展到 compute-communication co-design。
+- [StitchCUDA: An Automated Multi-Agents End-to-End GPU Programing Framework with Rubric-based Agentic Reinforcement Learning](https://arxiv.org/abs/2603.02637)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 An Automated Multi-Agents End-to-End GPU Programing Framework with Rubric-based Agentic Reinforcement Learning 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Agentic AI-based Coverage Closure for Formal Verification](https://arxiv.org/abs/2603.03147)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [AweAgent](https://arxiv.org/abs/2603.03194)（[开源代码](https://github.com/AweAI-Team/AweAgent)；SearchSWE，另有 Bench：BeyondSWE；设计关键词：搜索驱动、检索增强修复）
+- [HDLFORGE](https://arxiv.org/abs/2603.04646)：两阶段多智能体 Verilog 生成框架，只有在轻量诊断显示需要时才升级到更强模型。
+- [SEA-TS: Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms](https://arxiv.org/abs/2603.04873)：类型：agent harness/可复用执行框架。核心价值：为 2.2.3 Agent Harness 补充可复用的执行流程、工具编排、记忆管理或多 agent 协作机制。
+- [RepoLaunch](https://arxiv.org/abs/2603.05026)（[开源代码](https://github.com/microsoft/RepoLaunch)；把 `跨语言 build-test 自动化` 抽象成通用环境 harness，是 multilingual SWE 最关键的外部执行底座之一；设计关键词：跨语言 build-test、统一执行底座）
+- [LTLGuard: Formalizing LTL Specifications with Compact Language Models and Lightweight Symbolic Reasoning](https://arxiv.org/abs/2603.05728)：把受约束生成与轻量符号一致性检查结合，使小型模型能从非形式需求中迭代细化无冲突的 LTL 规格。
+- [CodeScout: Contextual Problem Statement Enhancement for Software Agents](https://arxiv.org/abs/2603.05744)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Hierarchical Embedding Fusion for Retrieval-Augmented Code Generation](https://arxiv.org/abs/2603.06593)：把仓库代码块离线压缩成层级 dense vectors，再将检索到的向量映射为 pseudo-tokens，在保留仓库信息的同时降低代码补全上下文延迟。
+- [Human-AI Collaboration for Scaling Agile Regression Testing: An Agentic-AI Teammate from Manual to Automated Testing](https://arxiv.org/abs/2603.08190)：用检索增强生成和多智能体工作流，将已验证的敏捷回归测试规格转成候选系统级自动化脚本，再交由人工审查。
+- [SCAFFOLD-CEGIS: Preventing Latent Security Degradation in LLM-Driven Iterative Code Refinement](https://arxiv.org/abs/2603.08520)：面向迭代代码改进的安全感知 harness。核心思想是在多步 LLM 代码修复中监控规格漂移和安全退化，并用 CEGIS 风格约束阻止不安全改写。
+- [Automating Detection and Root-Cause Analysis of Flaky Tests in Quantum Software](https://arxiv.org/abs/2603.09029)：补充自动检测和定位不稳定测试根因的软件工程流程。
+- [KernelSkill: A Multi-Agent Framework for GPU Kernel Optimization](https://arxiv.org/abs/2603.10085)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 KernelSkill: A Multi-Agent Framework for GPU Kernel Optimization 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Quality-Driven Agentic Reasoning for LLM-Assisted Software Design: Questions-of-Thoughts (QoT) as a Time-Series Self-QA Chain](https://arxiv.org/abs/2603.11082)：把软件目标拆成有序工程步骤与自问检查，减少 API、数据库和安全设计中的遗漏。
+- [iSWE Agent](https://arxiv.org/abs/2603.11356)：面向 Java issue resolution 的软件工程 agent。核心思想：把 localization 与 editing 分成两个 subagents，并让二者使用基于规则的 Java 静态分析和转换工具，以提升非 Python 代码库修复能力。
+- [QUARE](https://arxiv.org/abs/2603.11890)：面向需求工程的多智能体协商框架；核心思想是让专门角色围绕质量属性进行权衡和协调，在实现前平衡需求约束。
+- [Testing with AI Agents: An Empirical Study of Test Generation Frequency, Quality, and Coverage](https://arxiv.org/abs/2603.13724)：挖掘 AIDev 中 2,232 个含测试变更的 commit，从生成频率、结构、断言密度、复杂度和覆盖率影响比较 AI 与人类测试。
+- [LegacyTranslate: LLM-based Multi-Agent Method for Legacy Code Translation](https://arxiv.org/abs/2603.14054)：用多 agent 方法进行遗留代码翻译，将迁移拆成协同分析、转换与验证步骤。
+- [DeepFix: Debugging and Fixing Machine Learning Workflow using Agentic AI](https://arxiv.org/abs/2603.14099)：面向机器学习工作流的智能体测试框架。核心思想：运行 ML 流水线检查，对发现的问题排序和解释，并生成修复建议，使测试输出从失败报告扩展为可执行的修复证据。
+- [QiboAgent: a practitioner's guideline to open source assistants for Quantum Computing code development](https://arxiv.org/abs/2603.15538)：把面向量子中间件知识检索的 RAG 与自主 agent 工作流结合，用开源模型解决维护 issue 和新增功能请求。
+- [SEMAG: Self-Evolutionary Multi-Agent Code Generation](https://arxiv.org/abs/2603.15707)：把编程任务拆成规划、编码、调试和讨论阶段，并让自演化 agent 根据任务难度调整流程、运行时升级 backbone model。
+- [Human-AI Synergy in Agentic Code Review](https://arxiv.org/abs/2603.15911)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [RepoReviewer: A Local-First Multi-Agent Architecture for Repository-Level Code Review](https://arxiv.org/abs/2603.16107)：实现本地优先的仓库审查栈，结合 Python CLI、FastAPI、LangGraph 和 Next.js，将仓库获取、上下文合成、文件分析、优先级排序和报告生成分解执行。
+- [VeriAgent: A Tool-Integrated Multi-Agent System with Evolving Memory for PPA-Aware RTL Code Generation](https://arxiv.org/abs/2603.17613)：把 programmer、correctness 与 PPA agent 接入 EDA 工具，并将优化经验外化为可演化记忆节点，用于跨 RTL 生成轨迹持续改进。
+- [TDAD: Test-Driven Agentic Development - Reducing Code Regressions in AI Coding Agents via Graph-Based Impact Analysis](https://arxiv.org/abs/2603.17973)：提供可复用 agent 工作流或执行 harness，服务于software-development agents。
+- [Goedel-Code-Prover: Hierarchical Proof Search for Open State-of-the-Art Code Verification](https://arxiv.org/abs/2603.19329)：面向代码验证的层级 proof-search harness。核心思想是把验证拆成多级证明搜索阶段，使 coding agent 能构造并检查更强的正确性证据。
+- [Agentic Harness for Real-World Compilers](https://arxiv.org/abs/2603.20075)：面向 LLVM 编译器 bug 修复的 agentic harness；核心思想是结合 agent-friendly 的 LLVM 工具、可复现 LLVM bug benchmark 和最小修复 agent，暴露普通 SWE 缺陷之外的编译器专项难点。
+- [AutoKernel: Autonomous GPU Kernel Optimization via Iterative Agent-Driven Search](https://arxiv.org/abs/2603.21331)：通过智能体驱动的迭代搜索自主优化 GPU kernel。
+- [DomAgent: Leveraging Knowledge Graphs and Case-Based Reasoning for Domain-Specific Code Generation](https://arxiv.org/abs/2603.21430)：结合知识图谱与案例推理进行领域代码生成，为 coding agent 补充结构化检索流程。
+- [Asynchronous SWE Agents](https://arxiv.org/abs/2603.21489)（开源代码：未找到稳定公开仓库；研究长时运行软件 agent 的协同策略；设计关键词：异步执行、依赖同步、合并冲突、多 agent SWE）
+- [Lemma Discovery in Agentic Program Verification](https://arxiv.org/abs/2603.22114)：提出 LemmaNet proof agent，在验证条件证明前利用程序语义理解生成辅助引理，缓解大程序中 VC 证明失败的问题。
+- [ReqFusion: A Multi-Provider Framework for Automated PEGS Analysis Across Software Domains](https://arxiv.org/abs/2603.23482)：使用多提供方框架跨软件领域自动分析 PEGS。
+- [AscendOptimizer: Episodic Agent for Ascend NPU Operator Optimization](https://arxiv.org/abs/2603.23566)：用情节式智能体优化 Ascend NPU 算子。
+- [LLMLOOP: Improving LLM-Generated Code and Tests Through Automated Iterative Feedback Loops](https://arxiv.org/abs/2603.23613)：面向 LLM 生成代码与测试的自动反馈循环框架。核心思想是围绕编译、静态分析、测试失败和 mutation analysis 迭代修复。
+- [UCAgent: An End-to-End Agent for Block-Level Functional Verification](https://arxiv.org/abs/2603.25768)：构建面向块级功能验证的端到端智能体流程，把硬件设计理解与验证反馈连接起来。
+- [Self-Organizing Multi-Agent Systems for Continuous Software Development](https://arxiv.org/abs/2603.25928)：面向 continuous software development 的 self-organizing multi-agent framework。核心思想：从一次性代码修改扩展到持久 agent 团队，协同完成持续功能开发、维护和仓库演进。
+- [Ask or Assume? Uncertainty-Aware Clarification-Seeking in Coding Agents](https://arxiv.org/abs/2603.26233)：它提供 coding agent、仓库修复、代码维护或调试 workflow，适合补充 software-development Agent Harness。
+- [Learning to Commit](https://arxiv.org/abs/2603.26664)：围绕 Online Repository Memory 构建的软件工程 agent 框架。核心思想：从历史 commit 中学习可复用的仓库特定模式，再让新 PR 生成遵守风格、内部 API 和架构惯例，而不是只依赖最新代码快照。
+- [Codebase-Memory: Tree-Sitter-Based Knowledge Graphs for LLM Code Exploration via MCP](https://arxiv.org/abs/2603.27277)：通过 MCP 将基于 Tree-sitter 的知识图用于 LLM 代码库探索；核心思想是把仓库结构暴露为 coding agent 可导航的记忆层。
+- [A Multi-agent AI System for Deep Learning Model Migration from TensorFlow to JAX](https://arxiv.org/abs/2603.27296)：描述用于深度学习模型代码跨框架迁移与维护的多智能体软件工程系统。
+- [Spectral Decomposition of Inverse Dynamics for Fast Exploration in Model-Based Manipulation](https://arxiv.org/abs/2603.27796)：面向软件开发，补充用于coding-agent, formal-verification, code-search, testing, or program-analysis workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Kernel-Smith: A Unified Recipe for Evolutionary Kernel Optimization](https://arxiv.org/abs/2603.28342)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [BACE: LLM-based Code Generation through Bayesian Anchored Co-Evolution of Code and Test Populations](https://arxiv.org/abs/2603.28653)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Towards Supporting Quality Architecture Evaluation with LLM Tools](https://arxiv.org/abs/2603.28914)：用 LLM 工具支持软件质量架构评价。
+- [Improving Efficiency of GPU Kernel Optimization Agents using a Domain-Specific Language and Speed-of-Light Guidance](https://arxiv.org/abs/2603.29010)：面向高效 kernel 优化 agent 的 harness。核心思想是用领域专用语言和性能上界指导提高抽象层级，减少生成、编译、验证和 profiling 循环中的无效试验。
+- [When is Generated Code Difficult to Comprehend? Assessing AI Agent Python Code Proficiency in the Wild](https://arxiv.org/abs/2604.00299)：围绕 Software Development 能力补充《When is Generated Code Difficult to Comprehend? Assessing AI Agent Python Code Proficiency in the Wild》，作为 Agent Harness 条目候选。
+- [CuTeGen](https://arxiv.org/abs/2604.01489)：面向高性能 GPU kernel 的 agentic generate-test-refine harness。核心思想是结合 CuTe 抽象、执行验证、结构化调试、workload-aware prompt 与延迟 profiling feedback，持续改进单个演化中的 kernel。
+- [Developer Experience with AI Coding Agents: HTTP Behavioral Signatures in Documentation Portals](https://arxiv.org/abs/2604.02544)：在真实文档端点上测量 Aider、Claude Code、Cline、Cursor、Windsurf 等 coding agent 的 HTTP 请求指纹，说明运行时 header、预取和压缩式导航会影响开发者门户的访问观测。
+- [AutoVerifier: An Agentic Automated Verification Framework Using Large Language Models](https://arxiv.org/abs/2604.02617)：使用大语言模型的 agentic 自动验证框架；核心思想是让 LLM agent 规划、生成并检查验证 artifact。
+- [Runtime Execution Traces Guided Automated Program Repair with Multi-Agent Debate](https://arxiv.org/abs/2604.02647)：用运行时轨迹与多 agent debate 做程序修复。核心思想：把执行证据引入 debate-and-repair 闭环来支持自动程序修复。
+- [AgentSZZ: Teaching the LLM Agent to Play Detective with Bug-Inducing Commits](https://arxiv.org/abs/2604.02665)：面向 bug-inducing commit 定位的 LLM agent harness。核心思想是让 agent 从 bug 证据追踪到引入问题的提交，而不只执行代码编辑。
+- [ARES OS 2.0: An Orchestration Software Suite for Autonomous Experimentation Systems and Self-Driving Labs](https://arxiv.org/abs/2604.03440)：围绕 Software Development 能力补充《ARES OS 2.0: An Orchestration Software Suite for Autonomous Experimentation Systems and Self-Driving Labs》，作为 Agent Harness 条目候选。
+- [DebugHarness: Emulating Human Dynamic Debugging for Autonomous Program Repair](https://arxiv.org/abs/2604.03610)：面向程序修复的自治调试 agent harness；核心思想是利用动态执行上下文，而不只做静态代码生成。
+- [Toward Executable Repository-Level Code Generation via Environment Alignment](https://arxiv.org/abs/2604.03622)：关注可执行性的 repository-level code-generation harness。核心思想：对齐依赖、内部引用和运行环境，使生成的多文件仓库能安装并通过验证，而不是只在文本上看似合理。
+- [AutoReSpec: A Framework for Generating Specification using Large Language Models](https://arxiv.org/abs/2604.03758)：补充面向软件开发的外部 LLM/VLM 工作流，重点是LLM specification generation workflow。
+- [Agentic Code Optimization via Compiler-LLM Cooperation](https://arxiv.org/abs/2604.04238)：通过 compiler-LLM cooperation 的 agentic code-optimization workflow。核心思想是让编译器和 LLM 在分析、提案和验证中协作，改进生成代码。
+- [ENCRUST: Encapsulated Substitution and Agentic Refinement on a Live Scaffold for Safe C-to-Rust Translation](https://arxiv.org/abs/2604.04527)：用 ABI 保持脚手架和实时集成验证包装 C 到安全 Rust 翻译，再通过 agentic refinement 修复跨单元类型与安全问题。
+- [Squeez](https://arxiv.org/abs/2604.04979)：面向 coding agent 的 task-conditioned tool-output pruning benchmark 与模块；核心思想是在给定 focused query 和长工具输出时，返回 agent 下一步真正需要的最小原文证据块，在保留召回的同时降低上下文负载。
+- [Decision-Oriented Programming with Aporia](https://arxiv.org/abs/2604.05203)：提出决策导向编程，让开发者与智能体共同形成显式、可追踪的实现决策，再落实到代码。
+- [Spec Kit Agents: Context-Grounded Agentic Workflows](https://arxiv.org/abs/2604.05278)：面向 spec-driven development 的上下文 grounding 多 agent 工作流；核心思想是在规格、计划、任务、实现和评审阶段加入只读探查 hook，降低大型仓库中的 context blind 编码。
+- [CODESTRUCT: Code Agents over Structured Action Spaces](https://arxiv.org/abs/2604.05407)：提供可复用 agent 工作流或执行 harness，服务于software-development agents。
+- [Vision-Guided Iterative Refinement for Frontend Code Generation](https://arxiv.org/abs/2604.05839)：Agent Harness 条目；核心思想：通过视觉反馈修复前端代码生成；核心思想是用 VLM critic 的渲染页面反馈修复生成的 UI 代码。
+- [REAgent](https://arxiv.org/abs/2604.06861)：需求驱动的软件 issue 修复 agent；在生成补丁前诊断缺失或歧义需求，把需求澄清纳入修复闭环。
+- [ReCodeAgent: A Multi-Agent Workflow for Language-agnostic Translation and Validation of Large-scale Repositories](https://arxiv.org/abs/2604.07341)：提供可复用 agent 工作流或执行 harness，服务于software-development agents。
+- [Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video](https://arxiv.org/abs/2604.07786)：面向软件开发，补充用于coding, testing, code-review, context-engineering, or verification harness的智能体流程、编排模式、工具循环或运行框架。
+- [Tokalator: A Context Engineering Toolkit for Artificial Intelligence Coding Assistants](https://arxiv.org/abs/2604.08290)：把上下文预算监控工程化为 VS Code 扩展、slash commands、MCP server、CLI、计算器和用量追踪器，并用单元测试覆盖 17 个支持模型。
+- [CIAO - Code In Architecture Out - Automated Software Architecture Documentation with Large Language Models](https://arxiv.org/abs/2604.08293)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“CIAO - Code In Architecture Out - Automated Software Architecture Documentation with Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Security Concerns in Generative AI Coding Assistants: Insights from Online Discussions on GitHub Copilot](https://arxiv.org/abs/2604.08352)：综合 Stack Overflow、Reddit 和 Hacker News 上关于 GitHub Copilot 安全顾虑的讨论，并聚类出数据泄漏、许可、提示注入和不安全建议等主题。
+- [Choose, Don't Label: Multiple-Choice Query Synthesis for Program Disambiguation](https://arxiv.org/abs/2604.08792)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [From Helpful to Trustworthy: LLM Agents for Pair Programming](https://arxiv.org/abs/2604.10300)：面向结对编程构建可信 LLM 智能体。
+- [AdverMCTS: Combating Pseudo-Correctness in Code Generation via Adversarial Monte Carlo Tree Search](https://arxiv.org/abs/2604.10449)：补充software development方向的agent harness，核心围绕《AdverMCTS: Combating Pseudo-Correctness in Code Generation via Adversarial Monte Carlo Tree Search》。
+- [Verify Before You Fix: Agentic Execution Grounding for Trustworthy Cross-Language Code Analysis](https://arxiv.org/abs/2604.10800)：Agent Harness 条目；核心思想：面向可信跨语言代码分析；核心思想是在 agent 基于漏洞预测行动前先用执行证据验证。
+- [Sema Code: Decoupling AI Coding Agents into Programmable, Embeddable Infrastructure](https://arxiv.org/abs/2604.11045)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [FM-Agent: Scaling Formal Methods to Large Systems via LLM-Based Hoare-Style Reasoning](https://arxiv.org/abs/2604.11556)：用自顶向下的 Hoare-style 组合推理自动生成函数规格，从调用方期望推导被调函数行为，降低大型生成系统的人工规格编写负担。
+- [CodeTracer: Towards Traceable Agent States](https://arxiv.org/abs/2604.11641)：CodeTracer 面向 code agent 状态追踪和错误链调试，是软件 agent 可观测性 harness。
+- [ORBIT: Guided Agentic Orchestration for Autonomous C-to-Rust Transpilation](https://arxiv.org/abs/2604.12048)：通过智能体编排引导自主 C 到 Rust 转译。
+- [Towards Platonic Representation for Table Reasoning: A Foundation for Permutation-Invariant Retrieval](https://arxiv.org/abs/2604.12133)：面向软件开发，补充用于Text-to-SQL, Text2Cypher, dashboard generation, or model-to-code workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Learning Project-wise Subsequent Code Edits via Interleaving Neural-based Induction and Tool-based Deduction](https://arxiv.org/abs/2604.12220)：TRACE 通过交错神经语义编辑归纳和 IDE 工具演绎来预测跨文件后续编辑，其中工具侧包括重命名重构、lint 与 use-def 分析。
+- [Local-Splitter: A Measurement Study of Seven Tactics for Reducing Cloud LLM Token Usage on Coding-Agent Workloads](https://arxiv.org/abs/2604.12301)：测量降低编码智能体工作负载中云端 LLM token 用量的策略。
+- [Modeling Copilots for Text-to-Model Translation](https://arxiv.org/abs/2604.12955)：提供 Text2Model copilots 与 Text2Zinc 数据集，比较单 agent 和多 agent 策略如何把自然语言优化问题转成求解器无关的 MiniZinc 模型。
+- [Personalizing LLM-Based Conversational Programming Assistants](https://arxiv.org/abs/2604.12998)：把个性化定义为对话式编程助手的设计问题，研究开发者认知和组织语境如何塑造 LLM 在多类软件工程活动中的支持方式。
+- [Contract-Coding: Towards Repo-Level Generation via Structured Symbolic Paradigm](https://arxiv.org/abs/2604.13100)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Formal Architecture Descriptors as Navigation Primitives for AI Coding Agents](https://arxiv.org/abs/2604.13108)：把形式化架构描述作为 coding agents 的导航原语；核心思想是提供结构化架构上下文，减少无方向代码库探索并提升定位效率。
+- [AgentForge: Execution-Grounded Multi-Agent LLM Framework for Autonomous Software Engineering](https://arxiv.org/abs/2604.13120)：AgentForge 将执行验证置于多 agent 软件工程框架核心，属于 autonomous SWE harness。
+- [WebMAC: A Multi-Agent Collaborative Framework for Scenario Testing of Web Systems](https://arxiv.org/abs/2604.13559)：面向 Web 系统场景测试的多 agent 协作框架；核心思想是把测试规划、执行和检查分配给协作 agent。
+- [AI Coding Agents Need Better Compiler Remarks](https://arxiv.org/abs/2604.13927)：指出 compiler remarks 是优化型 coding agent 的接口瓶颈，精确结构化反馈能提升重构成功率，而含糊反馈会诱发破坏语义的编辑。
+- [VeriGraphi](https://arxiv.org/abs/2604.14550)：面向大型硬件设计的多智能体 RTL 生成框架；核心思路是把层次化设计拆解、RTL 合成和面向验证的协同组织成显式工作流，而不是依赖一次性 HDL 生成。
+- [Asking What Matters: Reward-Driven Clarification for Software Engineering Tasks](https://arxiv.org/abs/2604.14624)：面向软件工程任务的 reward-driven clarification framework；核心思想是引导 agent 提出能实质改善后续实现的澄清问题。
+- [Vibe-Coding](https://arxiv.org/abs/2604.14867)：研究无需人工读码的反馈式自动验证，为软件 Agent 的生成代码检查补充基于可执行或自动化证据的工作流模式。
+- [Dr. RTL](https://arxiv.org/abs/2604.14989)：自主 RTL 优化智能体框架；核心思路是把自我改进过程落到硬件设计工具反馈中，使优化、反馈和修订形成可执行的 HDL 工程闭环。
+- [Enhancing Large Language Models with Retrieval Augmented Generation for Software Testing and Inspection Automation](https://arxiv.org/abs/2604.15270)：Enhancing Large Language Models with Retrieval Augmented Generation 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [Spec2Cov: An Agentic Framework for Code Coverage Closure of Digital Hardware Designs](https://arxiv.org/abs/2604.15606)：从设计规格迭代生成硬件测试激励，运行编译和仿真、解析覆盖率报告，并把失败与覆盖信息反馈给 LLM 以推进覆盖闭环。
+- [ZORO](https://arxiv.org/abs/2604.15625)：面向可靠 vibe coding 的主动规则框架；核心思想是在实现和修改过程中让 coding agent 遵循显式可靠性规则，把非正式的 vibe-coding 循环转化为更受控的软件开发 scaffold。
+- [Neurosymbolic Repo-level Code Localization](https://arxiv.org/abs/2604.16021)：补充software development方向的agent harness，核心围绕《Neurosymbolic Repo-level Code Localization》。
+- [Software Self-Extension with SelfEvolve: an Agentic Architecture for Runtime Code Generation](https://arxiv.org/abs/2604.16314)：Agent Harness 条目；核心思想：运行时软件自扩展；核心思想是在现有组件无法满足需求时由 agent 生成并集成新模块。
+- [When Agents Go Quiet: Output Generation Capacity and Format-Cost Separation for LLM Document Synthesis](https://arxiv.org/abs/2604.16736)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Clover: A Neural-Symbolic Agentic Harness with Stochastic Tree-of-Thoughts for Verified RTL Repair](https://arxiv.org/abs/2604.17288)：用 stochastic tree-of-thought 搜索修复 RTL，根据操作类型调度专门 LLM agent 或符号求解器，并用 RTL 调试工具验证候选补丁。
+- [Project Prometheus: Bridging the Intent Gap in Agentic Program Repair via Reverse-Engineered Executable Specifications](https://arxiv.org/abs/2604.17464)：优先做规格推断而非直接补丁生成，从运行时失败反向构造 Gherkin BDD 可执行契约，并用 RQA loop 验证推断意图。
+- [PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents](https://arxiv.org/abs/2604.17653)：面向软件开发能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [SelfHeal: Empirical Fix Pattern Analysis and Bug Repair in LLM Agents](https://arxiv.org/abs/2604.17699)：分析 LLM 智能体中的修复模式与 bug 修复流程。
+- [Towards an Agentic LLM-based Approach to Requirement Formalization from Unstructured Specifications](https://arxiv.org/abs/2604.18228)：用 agentic LLM approach 从非结构化规格中形式化需求，补充软件开发 harness 覆盖。
+- [OpenGame: Open Agentic Coding for Games](https://arxiv.org/abs/2604.18394)：面向端到端网页游戏生成的开源 agentic framework；核心思想是结合可演化的 Template Skill 与 Debug Skill，让 agent 能搭建、连线并修复可玩的多文件游戏。
+- [TypeScript Repository Indexing for Code Agent Retrieval](https://arxiv.org/abs/2604.18413)：为 ABCoder 增加基于 TypeScript Compiler API 的解析器，在大型 TypeScript 仓库上高效构建函数级 UniAST 索引供代码 agent 检索。
+- [SPRITE](https://arxiv.org/abs/2604.18591)：通过 VLM 与结构化中间表示，把静态游戏 UI mockup 转成可编辑、可接入引擎的资产。
+- [TurboEvolve: Towards Fast and Robust LLM-Driven Program Evolution](https://arxiv.org/abs/2604.18607)：提出 LLM 驱动的程序演化工作流，包含多岛搜索和固定预算评测，属于软件生成 harness。
+- [ARGUS](https://arxiv.org/abs/2604.18616)：由 data-flow invariants 引导的 agentic GPU kernel 优化 harness。核心思想是用 Pythonic DSL、编译期 invariant 检查、SMT counterexample 和 in-context planner 给 coding agent 提供比 pass/fail 更密集的反馈。
+- [Refute-or-Promote: An Adversarial Stage-Gated Multi-Agent Review Methodology for High-Precision LLM-Assisted Defect Discovery](https://arxiv.org/abs/2604.19049)：面向 LLM-assisted defect discovery 的 adversarial stage-gated review harness。核心思想：在提升候选缺陷前先由 critic agents 主动反驳，提升真实维护者可用的报告精度。
+- [Coding with Eyes: Visual Feedback Unlocks Reliable GUI Code Generating and Debugging](https://arxiv.org/abs/2604.19750)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [ChipCraftBrain](https://arxiv.org/abs/2604.19856)：用验证优先的多智能体编排进行 RTL 生成，补充以代码接受前验证为核心的 HDL 工程 harness。
+- [ViBR: Automated Bug Replay from Video-based Reports using Vision-Language Models](https://arxiv.org/abs/2604.19905)：用视觉语言模型从视频式缺陷报告自动复现 bug，将视觉问题证据连接到可执行重现流程。
+- [Shift-Up: A Framework for Software Engineering Guardrails in AI-native Software Development -- Initial Findings](https://arxiv.org/abs/2604.20436)：补充面向 AI 原生软件开发的结构化工程护栏框架。
+- [Beyond ZOH: Advanced Discretization Strategies for Vision Mamba](https://arxiv.org/abs/2604.20606)：面向软件开发，补充用于coding, testing, code-review, context-engineering, or verification harness的智能体流程、编排模式、工具循环或运行框架。
+- [SpecSyn: LLM-based Synthesis and Refinement of Formal Specifications for Real-world Program Verification](https://arxiv.org/abs/2604.21570)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“SpecSyn: LLM-based Synthesis and Refinement of Formal Specifications for Real-world Program Verification”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [You Don't Need Public Tests to Generate Correct Code](https://arxiv.org/abs/2604.21598)：Agent Harness 条目；核心思想：评测和改进无公开测试条件下的代码生成；核心思想是用 agentic 验证和调试信号替代对人工公开测试的依赖。
+- [RAG-Reflect: Agentic Retrieval-Augmented Generation with Reflections for Comment-Driven Code Maintenance on Stack Overflow](https://arxiv.org/abs/2604.22217)：它提供 coding agent、仓库修复、代码维护或调试 workflow，适合补充 software-development Agent Harness。
+- [R2Code: A Self-Reflective LLM Framework for Requirements-to-Code Traceability](https://arxiv.org/abs/2604.22432)：构建面向 requirements-to-code traceability 的自反思 LLM framework，补充需求感知软件开发工作流。
+- [Test Design and Review Argumentation in AI-Assisted Test Generation](https://arxiv.org/abs/2604.22473)：补充面向软件开发的外部 LLM/VLM 工作流，重点是AI-assisted test design and review argumentation。
+- [KISS Sorcar: A Stupidly-Simple General-Purpose and Software Engineering AI Assistant](https://arxiv.org/abs/2604.23822)：把轻量软件助手框架与 IDE 结合，强调上下文管理、可审查修改与失败恢复。
+- [Agent-centric Debugging Interface](https://arxiv.org/abs/2604.24212)（开源代码：未找到稳定公开仓库；为 autonomous debugging agents 提供高效动态分析；设计关键词：函数级追踪、运行时检查、自主修复）
+- [RefEvo](https://arxiv.org/abs/2604.24218)：将智能体设计与协同演化验证用于参考模型生成，为软件与模型工程自动化补充以验证为中心的 workflow 模式。
+- [MEMCoder: Multi-dimensional Evolving Memory for Private-Library-Oriented Code Generation](https://arxiv.org/abs/2604.24222)：从代码生成轨迹中积累用法指南记忆，并与私有库文档共同检索，用执行反馈适配企业 API。
+- [Zero-to-CAD: Agentic Synthesis of Interpretable CAD Programs at Million-Scale Without Real Data](https://arxiv.org/abs/2604.24479)：使用智能体式程序综合生成软件或 CAD 代码产物。
+- [FGDM: Reasoning Aware Multi-Agentic Framework for Software Bug Detection using Chain of Thought and Tree of Thought Prompting](https://arxiv.org/abs/2604.24831)：先把代码转换成 flow graph，再用顺序 agent、Chain-of-Thought、Tree-of-Thought 与 FAISS 检索定位错误片段并生成修复。
+- [Agentic Harness Engineering (AHE)](https://arxiv.org/abs/2604.25850)（[开源代码](https://github.com/china-qijizhifeng/agentic-harness-engineering)；自动演化 coding-agent harness 的闭环框架；在 Terminal-Bench 2 与 SWE-bench Verified 上做迁移评测；设计关键词：harness evolution、可观测性、工具/中间件/记忆编辑）
+- [LLM-Guided Issue Generation from Uncovered Code Segments](https://arxiv.org/abs/2604.26118)：结合覆盖率分析和 LLM 缺陷识别，从未覆盖代码片段生成可复现、可排序的问题报告。
+- [Beyond Code Reasoning: Specification-Anchored Auditing of Multi-Implementation Distributed Protocols](https://arxiv.org/abs/2604.26495)：SPECA 从协议规格中推导不变量、前置条件、信任假设等安全属性，再复用于审计多个独立实现，并按阶段标注误报来源。
+- [RepoDoc: A Knowledge Graph-Based Framework to Automatic Documentation Generation and Incremental Updates](https://arxiv.org/abs/2604.26523)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“RepoDoc: A Knowledge Graph-Based Framework to Automatic Documentation Generation and Incremental Updates”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [TDD Governance for Multi-Agent Code Generation via Prompt Engineering](https://arxiv.org/abs/2604.26615)：将测试驱动开发治理用于多智能体代码生成。
+- [FACT](https://arxiv.org/abs/2604.26666)：用三阶段 agentic workflow 做组合式 kernel 合成，补充代码生成中的专用但可复用 harness 模式。
+- [ScaleBox: Enabling High-Fidelity and Scalable Code Verification for Large Language Models](https://arxiv.org/abs/2604.27467)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“ScaleBox: Enabling High-Fidelity and Scalable Code Verification for Large Language Models”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Autoformalizing Memory Specifications with Agents](https://arxiv.org/abs/2605.00058)：用 agent 将自然语言 DRAM 规格转为形式化表示，服务于后续硬件设计验证。
+- [PPO guided Agentic Pipeline for Adaptive Prompt Selection and Test Case Generation](https://arxiv.org/abs/2605.00942)：使用 PPO 引导的自适应提示选择来生成测试用例。
+- [RECAP](https://arxiv.org/abs/2605.01104)：采集、回放和分析 AI-assisted programming interaction。核心思想：把 VS Code 聊天会话和细粒度代码编辑合并成统一时间线，从而研究 git history 或 chat log 单独看不到的开发者策略、废弃尝试和助手影响。
+- [ClarifySTL: An Interactive LLM Agent Framework for STL Transformation through Requirements Clarification](https://arxiv.org/abs/2605.01209)：检测自然语言需求中的模糊与歧义表达，向用户提出定向澄清问题、根据反馈更新需求，再转换为 STL 规格。
+- [FeedbackLLM: Metadata driven Multi-Agentic Language Agnostic Test Case Generator with Evolving prompt and Coverage Feedback](https://arxiv.org/abs/2605.01264)：用多智能体提示、元数据和覆盖率反馈生成语言无关测试用例。
+- [Practical Limits of Autonomous Test Repair: A Multi-Agent Case Study with LLM-Driven Discovery and Self-Correction](https://arxiv.org/abs/2605.01471)：研究一个基于 LangGraph、Playwright 与 RAG 的多 agent UI 测试系统，能发现功能、按 DOM 动态扩展覆盖并迭代修复失败测试。
+- [Neuro-Symbolic Agents for Hallucination-Free Requirements Reuse](https://arxiv.org/abs/2605.01562)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Neuro-Symbolic Agents for Hallucination-Free Requirements Reuse”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [DocSync: Agentic Documentation Maintenance via Critic-Guided Reflexion](https://arxiv.org/abs/2605.02163)：critic-guided documentation-maintenance agent。核心思想：检测代码与文档之间的语义漂移，用 reflexion 更新文档，并降低演进代码库中虚构 API 变更的风险。
+- [A Low-Code Approach for the Automatic Personalization of Conversational Agents](https://arxiv.org/abs/2605.02384)：围绕 Software Development 能力补充《A Low-Code Approach for the Automatic Personalization of Conversational Agents》，作为 Agent Harness 条目候选。
+- [ARISE: A Repository-level Graph Representation and Toolset for Agentic Fault Localization and Program Repair](https://arxiv.org/abs/2605.03117)：为修复 agent 提供含语句级 definition-use 边的多粒度程序图，并通过三层工具 API 支持定位和补丁生成中的 data-flow slicing。
+- [When Context Hurts: The Crossover Effect of Knowledge Transfer on Multi-Agent Design Exploration](https://arxiv.org/abs/2605.04361)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [KEET](https://arxiv.org/abs/2605.04467)：面向 coding agent 的 GPU kernel 性能解释 harness。核心思想是把 Nsight Compute profile 转成有依据的瓶颈解释和优化建议，再反馈到后续 kernel 改进流程。
+- [CodeEvolve: LLM-Driven Evolutionary Optimization with Runtime-Enriched Target Selection for Multi-Language Code Enhancement](https://arxiv.org/abs/2605.04677)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Retrieval-Conditioned Topology Selection with Provable Budget Conservation for Multi-Agent Code Generation](https://arxiv.org/abs/2605.05657)：提供可复用 agent 工作流或执行 harness，服务于software-development agents。
+- [Agentic Requirements Elicitation](https://arxiv.org/abs/2605.05828)（开源代码：未找到稳定公开仓库；提出用于结构化软件需求访谈的 OntoAgent；设计关键词：experience ontology、系统化问题生成、隐含需求覆盖、可解释 analyst workflow）
+- [VibeServe](https://arxiv.org/abs/2605.06068)：用于合成定制化 LLM serving 系统的多 agent 循环；核心思想是搜索系统设计、实现候选方案、验证正确性，并在目标 serving workload 上度量性能。
+- [Agentic Coding Needs Proactivity, Not Just Autonomy](https://arxiv.org/abs/2605.06717)：讨论代码 agent 主动性的设计论文；核心思想是 agent 不应只被动响应下一条指令，而应在长周期仓库和工作流变化中主动发现相关事项。
+- [GameGen-Verifier: Parallel Keypoint-Based Verification for LLM-Generated Games via Runtime State Injection](https://arxiv.org/abs/2605.07442)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [PYTHALAB-MERA: Validation-Grounded Memory, Retrieval, and Acceptance Control for Frozen-LLM Coding Agents](https://arxiv.org/abs/2605.08468)：PYTHALAB-MERA 将 validation、memory、retrieval 和 acceptance control 结合到 frozen-LLM coding agents。
+- [Debugging the Debuggers: Failure-Anchored Structured Recovery for Software Engineering Agents](https://arxiv.org/abs/2605.08717)：补充software development方向的agent harness，核心围绕《Debugging the Debuggers: Failure-Anchored Structured Recovery for Software Engineering Agents》。
+- [Generating Complex Code Analyzers from Natural Language Questions](https://arxiv.org/abs/2605.09304)：Merlin 通过基于 RAG 的迭代查询生成、自测试和 assistive queries，把自由形式的代码库问题转换为 CodeQL analyzer，并暴露候选分析中的语义缺陷。
+- [ConCovUp: Effective Agent-Based Test Driver Generation for Concurrency Testing](https://arxiv.org/abs/2605.09573)：结合共享内存静态分析、LLM backward tracing 求解路径约束和动态执行反馈，为 C 和 C++ 并发测试生成 test drivers。
+- [Deterministic vs. LLM-Controlled Orchestration for COBOL-to-Python Modernization](https://arxiv.org/abs/2605.09894)：补充智能体工作流，主要面向 Software Development。
+- [Hedwig: Dynamic Autonomy for Coding Agents Under Local Oversight](https://arxiv.org/abs/2605.11495)：实现会从开发者批准和反馈中学习自治边界的 CLI coding agent，在跨会话工作中动态放宽或收紧人工监督。
+- [RoboBlockly Studio: Conversational Block Programming with Embodied Robot Feedback for Computational Thinking](https://arxiv.org/abs/2605.12059)：面向软件开发，补充用于software-development, code-model, testing, verification, or security-analysis capability的智能体流程、编排模式、工具循环或运行框架。
+- [Agentic Interpretation: Lattice-Structured Evidence for LLM-Based Program Analysis](https://arxiv.org/abs/2605.12694)：把程序分析目标拆成局部 claims，在有限高度 evidence lattice 中追踪每个判断，并用 worklist 算法引导后续 LLM 证据搜索。
+- [AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents](https://arxiv.org/abs/2605.13357)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Remember Your Trace: Memory-Guided Long-Horizon Agentic Framework for Consistent and Hierarchical Repository-Level Code Documentation](https://arxiv.org/abs/2605.14563)：补充software development方向的agent harness，核心围绕《Remember Your Trace: Memory-Guided Long-Horizon Agentic Framework for Consistent and Hierarchical Repository-Level Code Documentation》。
+- [In-IDE Toolkit for Developers of AI-Based Features](https://arxiv.org/abs/2605.14612)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“In-IDE Toolkit for Developers of AI-Based Features”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Documentation-Guided Agentic Codebase Migration from C to Rust](https://arxiv.org/abs/2605.14634)：把架构感知文档作为 C 到 Rust 仓库迁移蓝图，并通过文档对比和测试套件反馈修复输出。
+- [Context Pruning for Coding Agents via Multi-Rubric Latent Reasoning](https://arxiv.org/abs/2605.15315)：用 multi-rubric latent reasoning 裁剪 coding agent 上下文；核心思想是在减少轨迹膨胀的同时保留后续编辑所需信息。
+- [From I/O to Code with Discovery Agent](https://arxiv.org/abs/2605.15334)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [STAR: A Stage-attributed Triage and Repair framework for RCA Agents in Microservices](https://arxiv.org/abs/2605.15581)：补充面向软件工程、编程智能体、测试与代码安全的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [TopoEvo](https://arxiv.org/abs/2605.15611)：面向微服务根因分析的拓扑感知自演化多 agent 框架。核心思想：结合服务拓扑结构和 agent 自演化，改进 SRE 式调试流程。
+- [TDPGen](https://doi.org/10.1109/ISCAIT69154.2026.11477183)：把 test-driven planning 与 hierarchical ReAct 结合，让编码 agent 先构造测试和子计划，再依据反馈修订代码。
+- [Codebase Aware Generative Agents for the SDLC](https://doi.org/10.1109/ICAIC67076.2026.11395666)：用代码库感知生成式 agent 支持文档、依赖分析与测试生成等 SDLC 流程。
+- [VC-AWG: A vibe coding–based method for automated website generation from heterogeneous artifacts](https://doi.org/10.1016/j.cola.2026.101403)：用 vibe-coding 风格流程从异构 artifact 自动生成网站，把前端软件智能体覆盖从单一提示生成扩展到多源素材驱动生成。
+- [Empirical analysis of generative AI tool adoption in software development](https://doi.org/10.1016/j.infsof.2026.108036)：Empirical analysis of generative AI tool adoption in 补充软件工程智能体框架，覆盖代码生成、代码翻译、测试、仓库级推理或 HDL 自动化。
+- [SEED-APR: A Closed-Loop Self-Evolving Framework for Automated Program Repair](https://doi.org/10.1016/j.sasc.2026.200463)：围绕 Software Development 能力补充《SEED-APR: A Closed-Loop Self-Evolving Framework for Automated Program Repair》，作为 Agent Harness 条目候选。
+- [A Novel Large-Small Model Collaboration Framework for Code Generation: Balancing Cost and Accuracy](https://doi.org/10.1109/bigcomp68355.2026.00065)：协调小模型与大模型进行代码生成，让低成本模型处理较容易步骤，并把大模型留给更困难或更依赖验证的环节。
+- [SRSPSQL: A dual-stage Text-to-SQL framework with semantic rewriting and schema pruning](https://doi.org/10.1016/j.infsof.2026.108064)：把 Text-to-SQL 拆成语义重写和 schema pruning 两阶段，再生成 SQL，以减少无关数据库上下文。
+- [A Voice-Enabled Multilingual AI-Driven Framework for Natural Language to SQL with Adaptive Query Generation and Dynamic Data Visualization](https://doi.org/10.1109/icauc68182.2026.11440966)：把多语言语音查询转成自适应 SQL 和动态可视化，在 NL2SQL 生成外加入语音数据分析接口。
+- [ProtocolGuard: Detecting Protocol Non-compliance Bugs via LLM-guided Static Analysis and Dynamic Verification](https://doi.org/10.14722/ndss.2026.240521)：结合 LLM 引导的静态分析与动态验证，检测协议不合规缺陷。
+- [An LLM-Powered API Testing Framework Based on Structural Similarity Analysis](https://doi.org/10.1109/isdfs69419.2026.11459067)：通过比较端点或请求的结构相似性生成 API 测试，用 LLM 从相近 API 形态扩展覆盖。
+- [LLM-Based Unit Test Cases Generation for React, Vue, and Angular Components](https://doi.org/10.1109/icarc68737.2026.11453759)：面向前端组件测试，用 LLM 为 React、Vue 和 Angular 代码生成单元测试。
+- [Automated Code Annotation with LLMs for Establishing TEE Boundaries](https://doi.org/10.14722/ndss.2026.230709)：用 LLM 标注代码中的可信执行环境边界，支持安全审查和分区决策。
+- [Learning from Surprise: Fusing LLM-Guided Test-Time Adaptation for Temporal Knowledge Graphs](https://doi.org/10.1016/j.knosys.2026.115867)：parent-routing-needed：这是 temporal knowledge graph 的 test-time adaptation，不是软件开发 harness。
+- [Tri-Oracle: A 17.78μJ/Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction](https://doi.org/10.1109/isscc49663.2026.11408987)：parent-routing-needed：这是 VLM accelerator 硬件，不是 coding-agent workflow。
+- [ViewLearner: GNN-Driven Pre-Built Views for Multi-Table NL2SQL](https://doi.org/10.1109/icassp55912.2026.11460810)：用图神经网络为多表 NL2SQL 预构建有用数据库视图，把 schema 准备纳入查询生成流程。
+- [G²SQL: guided & guarded Text-to-SQL generation with two-stage verification](https://doi.org/10.1016/j.eswa.2026.131276)：加入 guided SQL generation 和 guarded two-stage verification，使生成查询在使用前经过检查。
+- [LLM Based Software Test Scenario Generation System From Bug Descriptions](https://doi.org/10.1109/it67293.2026.11435765)：把 bug 描述转换为软件测试场景，用 LLM 从缺陷报告中抽取可执行测试意图。
+- [Reliable End-to-End Text-to-SQL Generation](https://doi.org/10.48786/edbt.2026.44)：构建强调可靠性的端到端 Text-to-SQL 流程，把生成和检查作为同一查询生产流水线处理。
+- [Bridging RTL and Assertion Generation With Large Language Models](https://doi.org/10.1109/mdat.2026.3670060)：连接 RTL 理解与 assertion generation，用 LLM 从硬件代码上下文中推导验证断言。
+- [A Text-to-SQL strategy based on large language models and knowledge graphs for real-world databases](https://doi.org/10.1016/j.datak.2026.102580)：把知识图谱与 LLM 结合，在真实数据库上 grounding Text-to-SQL，先改进 schema 与 entity linking 再生成查询。
+- [Evaluating the Reliability of Generative Ai in Software Engineering Refactoring Tasks](https://doi.org/10.1109/isdfs69419.2026.11459078)：parent-routing-needed：该文评估生成式 AI 在重构任务中的可靠性，更接近 Bench 或经验研究，除非能确认可复用 harness。
+- [Language-Infused Retrieval-Augmented CTC with Adaptive Soft-Hard Gating for Robust Code-Switching ASR](https://doi.org/10.1109/icassp55912.2026.11463989)：围绕 Software Development 能力补充《Language-Infused Retrieval-Augmented CTC with Adaptive Soft-Hard Gating for Robust Code-Switching ASR》，作为 Agent Harness 条目候选。
+- [DIZEST: A low-code platform for workflow-driven artificial intelligence and data analysis](https://doi.org/10.1016/j.softx.2026.102519)：围绕 Software Development 能力补充《DIZEST: A low-code platform for workflow-driven artificial intelligence and data analysis》，作为 Agent Harness 条目候选。
+- [Orchestrating AI-Driven Code Refactoring Based on Energy Measurements in CI Pipelines](https://doi.org/10.1109/saner-c67878.2026.00029)：围绕 Software Development 能力补充《Orchestrating AI-Driven Code Refactoring Based on Energy Measurements in CI Pipelines》，作为 Agent Harness 条目候选。
+- [Leveraging Large Language Models for Automated Test Results Analysis](https://doi.org/10.1109/icwr69602.2026.11513366)：用 LLM 自动分析测试结果，把日志和执行结果转成失败摘要或 triage 证据。
+- [SCULP: An unsupervised LLM-based log parser with self-correcting capabilities](https://doi.org/10.1016/j.jss.2026.112935)：用具备自纠错能力的无监督 LLM 流程解析日志，并根据观察到的日志结构修正解析错误。
+- [An Agent-Driven Framework for Task-Level SDLC Automation](https://doi.org/10.47392/irjaem.2026.0118)：以任务级粒度组织 SDLC 自动化，把 agent 步骤分配给开发活动，而不只是生成代码片段。
+- [TestAgentX: Leveraging Large Language Models and Reinforcement Learning for Scalable and Adaptive Software Testing](https://doi.org/10.1109/nqcomp68334.2026.11497649)：结合 LLM 测试生成与强化学习，使可扩展测试探索能根据反馈自适应调整。
+- [RefactorCrew: A Multi-Agent System for Synchronized Code Refactoring and Documentation](https://doi.org/10.1109/icsft66733.2026.11507033)：协调重构 agent 与文档 agent，使代码修改和说明性工件保持同步。
+- [Template-guided interpretable reasoning with execution feedback for LLM-based program repair](https://doi.org/10.1016/j.infsof.2026.108058)：结合可解释推理与执行反馈的程序修复 harness。核心思想是用模板约束 LLM 修复过程，并通过运行反馈循环验证候选补丁。
+- [RepoAI: Automated Code Refactoring through Multi-Agent LLM Orchestration and Retrieval-Augmented Generation](https://doi.org/10.1016/j.scico.2026.103477)：面向自动代码重构的多 agent 编排框架。核心思想是结合代码库检索与专职 agent，在代码库范围内完成定位、规划、编辑和检查。
+- [EvoGraphCoder: An Evolutionary Graph-Reasoning Framework for Self-Adaptive Software Engineering](https://doi.org/10.1109/access.2026.3686019)：EvoGraphCoder 将 evolutionary graph reasoning 用于 self-adaptive software engineering，属于 SWE harness 候选。
+- [Meta-agentic Framework for Software bug detection using Large Language Models](https://doi.org/10.1109/comsnets67989.2026.11418178)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Evaluation of an Explainable LLM-Powered Chat-Ops for CI/CD Pipeline Diagnostics and Developer Support](https://doi.org/10.1109/icarc68737.2026.11453544)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Evaluation of an Explainable LLM-Powered Chat-Ops for CI/CD Pipeline Diagnostics and Developer Support”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Designing Autonomous AI Agents for Code Generation, Refactoring, and Maintenance in Agile Software Engineering](https://doi.org/10.1109/icetems66917.2026.11469540)：设计用于代码生成、重构和维护的自主 AI 智能体。
+- [MVC Test Orchestrator: SRS-Driven Architecture Extraction and Enforcement in AI-Assisted Software Development](https://doi.org/10.1109/iisec69317.2026.11418519)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“MVC Test Orchestrator: SRS-Driven Architecture Extraction and Enforcement in AI-Assisted Software Development”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Towards Role-Based Multi-Agent LLM Systems for Software Requirements Analysis](https://doi.org/10.1109/it67293.2026.11435673)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 Towards Role-Based Multi-Agent LLM Systems for Software Requirements Analysis 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Enhancing Security Requirements Coverage via RAG and Automated Feedback Loops](https://doi.org/10.1109/saner-c67878.2026.00045)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Enhancing Security Requirements Coverage via RAG and Automated Feedback Loops”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [D-RAM: A Dynamic Role-Allocation Mediator for Improving Token Efficiency in Multi-Agent Collaborative Software Development](https://doi.org/10.1109/cisce69494.2026.11504945)：通过动态角色分配提升多智能体协同软件开发流程的 token 效率。
+- Devin（[官方博客](https://cognition.ai/blog/introducing-devin)；无 arXiv 论文；闭源产品级 coding agent 的公开系统说明；设计关键词：端到端开发工作流、执行环境集成、长任务闭环）
+- [PatchPilot](https://openreview.net/forum?id=ybODpT8ydV)（[开源代码](https://github.com/ucsb-mlsec/PatchPilot)）：面向成本效率的软件工程 agent，把早期形式化验证尝试加入补丁生成闭环。
+- [Nemotron-CORTEXA](https://openreview.net/forum?id=k6p8UKRdH7)：通过定位与解法多样性机制改进软件工程 agent，补充了厂商实验室在顶会中的 SWE agent 工作。
 - Claude Code（[官方文档](https://code.claude.com/docs/en/how-claude-code-works)；无 arXiv 论文；把 memory、subagent、agent teams、hooks 与 MCP 做成显式 runtime/harness 接口；设计关键词：终端代理、显式 runtime 接口、可扩展 harness）
 - Aider（[官方文档](https://aider.chat/)，[开源代码](https://github.com/Aider-AI/aider)；无 arXiv 论文）是使用广泛的开源终端 pair-programming harness。它需要和 Aider Polyglot 这个 benchmark 区分开；harness 本身的价值在于把仓库编辑、diff 审阅、测试执行和模型驱动 coding loop 工程化。
 - Cline（[官方文档](https://cline.bot/)，[开源代码](https://github.com/cline/cline)；无 arXiv 论文）是开源 IDE coding-agent harness，覆盖工具调用、命令执行、浏览器/计算机操作集成、MCP 支持和人工确认点。
 - Roo Code（[官方文档](https://docs.roocode.com/)，[开源代码](https://github.com/RooCodeInc/Roo-Code)；无 arXiv 论文）是开源 VS Code agent harness，通过 mode、工具和项目上下文组织开发工作，适合真实 issue-to-implementation 工作流，而不只是 benchmark wrapper。
-- [TRAE Agent](https://arxiv.org/abs/2507.23370)（[开源代码](https://github.com/bytedance/trae-agent)；字节系仓库级修复代理；设计关键词：test-time scaling、仓库级分析）
-- [SE-Agent](https://arxiv.org/abs/2508.02085)（[开源代码](https://github.com/JARVIS-Xs/SE-Agent)）：轨迹级自进化的软件工程 agent；核心思想是用 revision、recombination 与 refinement 在历史轨迹之间交换信息，提升多步修复质量。
 - SWE-ReX（[开源代码](https://github.com/SWE-agent/SWE-ReX)；无独立论文；SWE-agent 团队维护的 remote execution 与环境管理层；设计关键词：执行隔离、批量运行、SWE-bench/CodeClash 复用）
 - OpenAI Codex（[官方文档](https://developers.openai.com/codex/multi-agent/)；无 arXiv 论文；显式支持 CLI 与 multi-agent coding workflow；设计关键词：终端 coding agent、multi-agent、agent workflow）
-- [The Complexity Trap](https://arxiv.org/abs/2508.21433)（[开源代码](https://github.com/JetBrains-Research/the-complexity-trap)；比较 observation masking 与 LLM summarization 的 context 管理成本-性能；在 SWE-agent 与 SWE-bench Verified 上做系统对比；设计关键词：上下文管理、成本控制、harness 简化）
 - mini-SWE-agent（[开源代码](https://github.com/SWE-agent/mini-swe-agent)；无独立论文；SWE-agent 团队维护的轻量终端修复 harness；设计关键词：小内核、命令行执行、SWE-bench 适配）
 - sb-cli（[开源代码](https://github.com/SWE-bench/sb-cli)；无独立论文；SWE-bench 官方提交、运行管理与报告获取 CLI；设计关键词：官方评测 API、预测提交、报告复现）
-- [UserTrace](https://arxiv.org/abs/2509.11238)：面向软件仓库的多 agent 需求生成与可追踪性恢复 workflow。核心思想：生成用户层需求，并恢复从需求到实现细节和代码的动态链接，补充补丁生成之外的仓库理解能力。
-- [Holistic Agent Leaderboard](https://arxiv.org/abs/2510.11977)（[开源代码](https://github.com/princeton-pli/hal-harness)；跨 benchmark 的 agent 评测 harness；把 SWE-bench Verified、SWE-bench Multimodal、SWE-Lancer Diamond、USACO 等任务接到统一提交与复现协议；设计关键词：统一 agent 接口、跨任务评测、公开 leaderboard）
-- [CodeClash](https://arxiv.org/abs/2511.00839)（[开源代码](https://github.com/CodeClash-ai/CodeClash)；目标导向软件工程 tournament harness；基于 mini-SWE-agent 接口让 agent 持续改代码、读日志、写测试并与对手代码库竞争；设计关键词：多轮锦标赛、开放目标、长期维护）
-- [CudaForge](https://arxiv.org/abs/2511.01884)：面向 CUDA kernel 优化的硬件反馈 Agent harness。核心思路是让 Coder 与 Judge Agent 围绕正确性测试、Nsight Compute 指标和迭代修复协作，使生成 kernel 按真实 GPU 行为优化。
-- [OpenHands Software Agent SDK](https://arxiv.org/abs/2511.03690)（[开源代码](https://github.com/OpenHands/OpenHands)；面向生产代理的可组合/可扩展 SDK 设计；强调执行隔离、生命周期控制与工具/记忆扩展点；设计关键词：SDK 化 harness、可组合接口、执行安全）
-- [live-SWE-agent](https://arxiv.org/abs/2511.13646)（[开源代码](https://github.com/OpenAutoCoder/live-swe-agent)；运行时自进化 SWE 代理；在 SWE-Bench Pro 公共集上报告 Claude 4.5 Sonnet 45.8% resolve rate，高于同设置下 SWE-agent 的 43.6%；设计关键词：在线自进化、按题动态造工具）
-- [Confucius Code Agent](https://arxiv.org/abs/2512.10398)（[开源代码](https://github.com/facebookresearch/cca-swebench)；工业级长时程 SWE 代理；主评测在 SWE-Bench Pro 公共集，报告 GPT-5.2 59.0% Pass@1，并报告 Claude 4.5 Sonnet 52.7%；设计关键词：长上下文管理、持久笔记、元代理迭代）
 - MSWE-agent（[开源代码](https://github.com/multi-swe-bench/MSWE-agent)；无独立论文；基于 SWE-agent 的 Multi-SWE-Bench 兼容版；把仓库分析、执行与评测流程改到可覆盖多语言项目；设计关键词：多语言兼容、SWE-agent 改版）
 - MopenHands（[开源代码](https://github.com/multi-swe-bench/MopenHands)；无独立论文；基于 OpenHands 的 Multi-SWE-Bench 兼容版；更偏平台级 multilingual harness 适配；设计关键词：平台兼容、多语言执行）
 - MagentLess（[开源代码](https://github.com/multi-swe-bench/MagentLess)；无独立论文；基于 Agentless 的 Multi-SWE-Bench 兼容版；延续 `localization -> repair -> validation` workflow，但适配多语言仓库；设计关键词：轻量 workflow、多语言 issue resolving）
-- [Multi-Agent LLM Committees for Autonomous Software Beta Testing](https://arxiv.org/abs/2512.21352)：使用模型委员会进行软件测试的 agent harness。核心思想：通过不同测试 persona 与多轮投票协调多个具备视觉能力的 LLM tester，比单 agent 更系统地探索 Web 应用。
-- [Agentic Rubrics](https://arxiv.org/abs/2601.04171)（开源代码：未找到稳定公开仓库；面向 SWE agents 的上下文化 verifier workflow；设计关键词：仓库交互式 checklist、补丁验证、任务特定 rubric）
-- [SWE-Pruner](https://arxiv.org/abs/2601.16746)（[开源代码](https://github.com/Ayanami1314/swe-pruner)；上下文裁剪模块；设计关键词：上下文裁剪、关键信息筛选）
-- [Agyn](https://arxiv.org/abs/2602.01465)（[开源代码](https://github.com/agynio/platform)；面向真实工程任务的代理平台；设计关键词：平台化编排、真实工程任务承载）
 - Harbor（[开源代码](https://github.com/harbor-framework/harbor)；无独立论文；Terminal-Bench 2.0 的通用代理接入与轨迹运行 harness；设计关键词：终端任务、agent 适配、可复现实验）
-- [SWE-World](https://arxiv.org/abs/2602.03419)（[开源代码](https://github.com/RUCAIBox/SWE-World)；Docker-free 的 SWE 训练与评测底座；设计关键词：learned surrogate、执行反馈替代、低成本评测）
-- [FullStack-Agent](https://arxiv.org/abs/2602.03798)（开源代码：未找到稳定公开仓库；面向全栈 Web coding 的 agent 框架，引入开发导向测试与 repository back-translation；设计关键词：规划、代码库导航、缺陷定位、数据流验证、前后端集成行为）
-- [AgentStepper](https://arxiv.org/abs/2602.06593)（开源代码：未找到稳定公开仓库；软件开发 agent 的交互式调试器；设计关键词：轨迹检查、LLM call 调试、工具动作单步执行）
 - Win-Agent（[开源代码](https://github.com/njukenanli/Win-Agent)；无独立论文；SWE-bench-Live 上用于 Windows 与跨语言仓库构建测试的 agent/harness 适配；设计关键词：Windows 执行环境、跨平台 SWE、build-test 自动化）
-- [Artisan](https://arxiv.org/abs/2602.10046)（开源代码：未找到稳定公开仓库；agentic artifact-evaluation harness；设计关键词：可执行复现脚本、研究 artifact 修复、细粒度评估）
-- [Hybrid-Gym](https://arxiv.org/abs/2602.16819)（开源代码：未找到稳定公开仓库；面向可迁移 coding-agent skills 的合成训练与评测环境；设计关键词：代码库探索、定位、依赖搜索、测试）
-- [Debug2Fix](https://arxiv.org/abs/2602.18571)（开源代码：未找到稳定公开仓库；交互式调试修复框架；设计关键词：动态调试、修复闭环、bug localization）
-- [RUSTFORGER](https://arxiv.org/abs/2602.22764)（开源代码：未找到稳定公开仓库；面向 Rust-SWE-bench 的 Rust 修复代理；设计关键词：Cargo 工具链、编译器反馈、所有权/生命周期错误修复）
-- [SWE-Adept](https://arxiv.org/abs/2603.01327)（开源代码：未找到稳定公开仓库；定位代理与修复代理的双 Agent 框架；在 SWE-Bench Pro 上报告 Claude 4.5 Sonnet 端到端 resolve rate 为 47.3%，较 OrcaLoca 提升 4.0%；设计关键词：定位-修复双代理、依赖引导 DFS、checkpoint 化 Git 回滚）
-- [CUCo](https://arxiv.org/abs/2603.02376)：agent-driven CUDA kernel 协同设计 harness。核心思想是让 agent 同时编排计算与通信 kernel，服务分布式 LLM 训练和推理负载，把 GPU coding agent 从纯计算优化扩展到 compute-communication co-design。
-- [AweAgent](https://arxiv.org/abs/2603.03194)（[开源代码](https://github.com/AweAI-Team/AweAgent)；SearchSWE，另有 Bench：BeyondSWE；设计关键词：搜索驱动、检索增强修复）
-- [RepoLaunch](https://arxiv.org/abs/2603.05026)（[开源代码](https://github.com/microsoft/RepoLaunch)；把 `跨语言 build-test 自动化` 抽象成通用环境 harness，是 multilingual SWE 最关键的外部执行底座之一；设计关键词：跨语言 build-test、统一执行底座）
-- [QUARE](https://arxiv.org/abs/2603.11890)：面向需求工程的多智能体协商框架；核心思想是让专门角色围绕质量属性进行权衡和协调，在实现前平衡需求约束。
-- [Asynchronous SWE Agents](https://arxiv.org/abs/2603.21489)（开源代码：未找到稳定公开仓库；研究长时运行软件 agent 的协同策略；设计关键词：异步执行、依赖同步、合并冲突、多 agent SWE）
-- [CuTeGen](https://arxiv.org/abs/2604.01489)：面向高性能 GPU kernel 的 agentic generate-test-refine harness。核心思想是结合 CuTe 抽象、执行验证、结构化调试、workload-aware prompt 与延迟 profiling feedback，持续改进单个演化中的 kernel。
 - Open SWE（[开源代码](https://github.com/langchain-ai/open-swe)；无 arXiv 论文）是 LangChain 的开源软件工程 agent，面向云端/原生 issue-to-PR 工作流，强调 agent 编排、仓库上下文管理和长任务状态。
-- [VeriGraphi](https://arxiv.org/abs/2604.14550)：面向大型硬件设计的多智能体 RTL 生成框架；核心思路是把层次化设计拆解、RTL 合成和面向验证的协同组织成显式工作流，而不是依赖一次性 HDL 生成。
-- [Dr. RTL](https://arxiv.org/abs/2604.14989)：自主 RTL 优化智能体框架；核心思路是把自我改进过程落到硬件设计工具反馈中，使优化、反馈和修订形成可执行的 HDL 工程闭环。
-- [ZORO](https://arxiv.org/abs/2604.15625)：面向可靠 vibe coding 的主动规则框架；核心思想是在实现和修改过程中让 coding agent 遵循显式可靠性规则，把非正式的 vibe-coding 循环转化为更受控的软件开发 scaffold。
-- [ARGUS](https://arxiv.org/abs/2604.18616)：由 data-flow invariants 引导的 agentic GPU kernel 优化 harness。核心思想是用 Pythonic DSL、编译期 invariant 检查、SMT counterexample 和 in-context planner 给 coding agent 提供比 pass/fail 更密集的反馈。
-- [Agent-centric Debugging Interface](https://arxiv.org/abs/2604.24212)（开源代码：未找到稳定公开仓库；为 autonomous debugging agents 提供高效动态分析；设计关键词：函数级追踪、运行时检查、自主修复）
-- [Agentic Harness Engineering (AHE)](https://arxiv.org/abs/2604.25850)（[开源代码](https://github.com/china-qijizhifeng/agentic-harness-engineering)；自动演化 coding-agent harness 的闭环框架；在 Terminal-Bench 2 与 SWE-bench Verified 上做迁移评测；设计关键词：harness evolution、可观测性、工具/中间件/记忆编辑）
 - [Huxley-Gödel Machine](https://openreview.net/forum?id=T0EiEuhOOL)（[开源代码](https://github.com/metauto-ai/HGM)）：近似一个自改进 coding-agent 开发闭环，把 coding agent 的改进本身作为 agentic search 和 optimization 问题。
-- [KEET](https://arxiv.org/abs/2605.04467)：面向 coding agent 的 GPU kernel 性能解释 harness。核心思想是把 Nsight Compute profile 转成有依据的瓶颈解释和优化建议，再反馈到后续 kernel 改进流程。
-- [Agentic Requirements Elicitation](https://arxiv.org/abs/2605.05828)（开源代码：未找到稳定公开仓库；提出用于结构化软件需求访谈的 OntoAgent；设计关键词：experience ontology、系统化问题生成、隐含需求覆盖、可解释 analyst workflow）
 - [ProphetAgent](https://doi.org/10.1145/3696630.3728543)：从自然语言测试用例合成移动应用 GUI tests 的 agent harness。核心思想是把人工编写的测试意图转成可执行 GUI 测试流程，连接软件测试、移动 UI 交互和 agentic automation。
+- [Data-centric Chip Design Agent Framework](https://doi.org/10.1145/3727980)：围绕数据中心设计信号组织 LLM Verilog 生成，将软件代理框架覆盖扩展到芯片设计流程。
+- [LangGraph SDLC Automation Workflows](https://doi.org/10.46254/na10.20250216)：使用 LangGraph 构建覆盖软件开发生命周期的 agentic 工作流，为 SDLC 自动化补充具体编排案例。
+- [面向仓库级代码理解的层级摘要](https://doi.org/10.1007/978-3-031-97576-9_6)： 利用 LLM 在仓库层级生成摘要，以改进代码搜索与缺陷定位。
+- [AgRefactor](https://doi.org/10.1145/3748173.3779566)： 用自演化 agentic workflow 为 high-level synthesis 兼容性重构代码。
+- [CORE: Resolving Code Quality Issues using LLMs](https://doi.org/10.1145/3643762)：用 LLM 解决代码质量问题，把静态质量检查发现的问题视为修复目标，而不只是生成审查评论。
+- [VulAdvisor: Natural Language Suggestion Generation for Software Vulnerability Repair](https://doi.org/10.1145/3691620.3695555)：围绕 Software Development 能力补充《VulAdvisor: Natural Language Suggestion Generation for Software Vulnerability Repair》这一路线，将其作为 Agent Harness 条目记录。
+- [kS-LLM: k-Step based Automatic LLM Test Case Generator using Caching Mechanism to Achieve Higher Code Coverage](https://doi.org/10.1145/3796563.3796569)：结合 k-step prompting 与缓存生成 LLM 测试用例以提升代码覆盖率。
+- [AdverIntent-Agent: Adversarial Reasoning for Repair Based on Inferred Program Intent](https://doi.org/10.1145/3728939)：为软件开发构建智能体、工作流、工具或系统脚手架，因此更适合作为 Agent Harness 候选。
+- [LHS: LLM Assisted Efficient High-level Synthesis of Deep Learning Tasks](https://doi.org/10.1145/3734523)：构建面向software-development, code generation, testing, or repair的外部流程，补充工具调用、编排或执行闭环覆盖。
+- [CMakeSonar: A Static Approach to Detecting CMake Bugs with a Fine-Grained Type System](https://doi.org/10.1145/3798218)：围绕 Software Development 能力补充《CMakeSonar: A Static Approach to Detecting CMake Bugs with a Fine-Grained Type System》，作为 Agent Harness 条目候选。
+- [R2E: Turning any Github Repository into a Programming Agent Environment](https://proceedings.mlr.press/v235/jain24c.html)：构建面向Software Development的智能体工作流、环境或编排模式，适合纳入 Software Development / Agent Harness。
+- [LLM4Fin: Fully Automating LLM-Powered Test Case Generation for FinTech Software Acceptance Testing](https://doi.org/10.1145/3650212.3680388)：提供面向 Software Development 能力的外部工作流、工具、记忆、检索、编排或智能体闭环，可作为 Agent Harness 条目。
+- [Demystifying Memorization in LLM-Based Program Repair via a General Hypothesis Testing Framework](https://doi.org/10.1145/3729390)：构建面向软件开发任务的工作流、工具循环、检索管线或多智能体执行框架。
+- [Can Modern LLMs Tune and Configure LSM-based Key-Value Stores?](https://doi.org/10.1145/3655038.3665954)：提出面向软件开发的智能体流程、工具编排、评测循环或交互式执行框架。
+- [Software System Testing Assisted by Large Language Models: An Exploratory Study](https://doi.org/10.1007/978-3-031-80889-0_17)：补充一个面向软件开发的智能体框架条目，关注software-development or code-model capability。
+- [ATHENA: A customizable LLM-based Code Completion Tool for Visual Studio Code](https://doi.org/10.1145/3708557.3716357)：构建面向Software Development任务的智能体工作流或工具调用系统。
+- [Using AI to Automate the Modernization of Legacy Software Applications](https://doi.org/10.1145/3691620.3695610)：提出软件开发方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [EpiGEN: An Efficient Multi-Api Code GENeration Framework under Enterprise Scenario](https://doi.org/10.63317/2jtsfuwoqzc2)：提出软件开发方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [CodeVoyager: Integrating Interactive Visual Aids with LLMs for Code Comprehension](https://doi.org/10.1145/3742413.3789057)：提出软件开发方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [A design science research approach to Large Language Model-Based Agents for Requirements Specification (LLMBA4RS) in low-code applications](https://doi.org/10.1007/s00766-025-00450-9)：提出软件开发方向的智能体工作流、编排框架、工具循环、记忆机制或多智能体 harness。
+- [FURINA: A Multi-Agent Framework for Automated Patch Correctness Assessment](https://doi.org/10.1145/3811825)：提出面向软件开发与代码智能的智能体工作流或编排框架。
+- [O uso do assistente de programação baseado em Inteligência Artificial, o GitHub Copilot, na Qualidade de Software: Uma revisão sistemática de literatura](https://doi.org/10.33448/rsd-v15i4.50966)：提出面向软件开发与代码智能的智能体工作流或编排框架。
+- [Generative AI as an infrastructure copilot: automating Infrastructure-As-Code across the DevSecOps lifecycle](https://doi.org/10.1007/s10515-026-00600-5)：提出面向软件开发与代码智能的智能体工作流或编排框架。
+- [ClarifyGPT: A Framework for Enhancing LLM-Based Code Generation via Requirements Clarification](https://doi.org/10.1145/3660810)：补充面向软件开发、代码、SQL、调试或测试能力的智能体框架、工作流、规划器、工具循环、记忆循环或编排模式。
+- [OilRAGSQL: A RAG-based large language model framework for NL2SQL tasks in oilfield data analysis](https://doi.org/10.1007/s10844-026-01055-6)：面向软件开发能力，补充外部工作流、工具、检索、规划或多智能体框架。
+- [Automated Program Repair, What Is It Good For? Not Absolutely Nothing!](https://doi.org/10.1145/3597503.3639095)：提出面向软件开发的智能体流程或编排模式。
+- [Productive Coverage: Improving the Actionability of Code Coverage](https://doi.org/10.1145/3639477.3639733)：提出面向软件开发的智能体流程或编排模式。
+- [Intelligent Test Automation: A Multi-Agent LLM Framework for Dynamic Test Case Generation and Validation](https://doi.org/10.71097/ijsat.v16.i1.2232)：面向软件开发，补充智能体工作流、编排模式、工具循环、记忆机制或多智能体框架。
+- [Enhancing Software Usability Through LLMs: A Prompting and Fine-Tuning Framework for Analyzing Negative User Feedback](https://doi.org/10.3390/computers14090363)：补充面向软件开发智能体的编排流程或智能体框架。
+- [From Black Box to Learning Artifact: A Proposed Pedagogical Redesign of AI Coding Assistants for Novice Programmers](https://doi.org/10.1145/3772363.3798522)：面向软件开发，补充用于software-development, code-model, testing, verification, or security-analysis capability的智能体流程、编排模式、工具循环或运行框架。
+- [IGTG&R: An Intent Analysis-Guided Unit Test Generation and Refinement Framework](https://doi.org/10.3390/e28010074)：面向软件开发，补充用于coding, testing, code-review, context-engineering, or verification harness的智能体流程、编排模式、工具循环或运行框架。
+- [CAD score: context-aware semantic diversity for scalable creativity evaluation of LLMs](https://doi.org/10.7717/peerj-cs.3624)：面向软件开发，补充用于NL2SQL or text-to-SQL generation with reasoning or verification的智能体流程、编排模式、工具循环或运行框架。
+- [Q&AEval: Benchmarking Secure Coding Ability of LLMs on Real-World Tasks](https://doi.org/10.1145/3786165.3788437)：面向软件开发，补充用于secure coding, testing, code analysis, repository review, or Text-to-SQL workflow的智能体流程、编排模式、工具循环或运行框架。
+- [A framework for estimating AI-driven savings in software development](https://doi.org/10.1117/12.3097590)：面向软件开发，补充用于software-development, code-model, testing, verification, or security-analysis capability的智能体流程、编排模式、工具循环或运行框架。
+- [Dynamic-SQL: an adaptive NL2SQL framework with multi-path fusion reasoning and execution feedback correction](https://doi.org/10.1038/s41598-026-47693-2)：面向软件开发，补充用于Text-to-SQL, Text2Cypher, dashboard generation, or model-to-code workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Advancements in the Design and Control of Complex and Intelligent Systems](https://doi.org/10.3390/pr14040610)：面向软件开发，补充用于coding-agent, formal-verification, code-search, testing, or program-analysis workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Spectral Properties of Complex Distributed Intelligence Systems Coupled with an Environment](https://doi.org/10.3390/e27101016)：面向软件开发，补充用于Text-to-SQL, Text2Cypher, dashboard generation, or model-to-code workflow的智能体流程、编排模式、工具循环或运行框架。
+- [MASON - A Multi-Agent LLM Framework for No-Code Development](https://doi.org/10.1609/aaaiss.v6i1.36068)：面向软件开发，补充用于coding-agent, formal-verification, code-search, testing, or program-analysis workflow的智能体流程、编排模式、工具循环或运行框架。
+- [Towards the Self-Healing of Infrastructure as Code Projects Using Constrained LLM Technologies](https://doi.org/10.1145/3643788.3648014)：提供面向该能力的外部工作流、工具调用、规划、检索或多智能体编排，补充软件开发方向的智能体编排覆盖。
+- [Towards Standardized benchmarks of LLMs in software modeling tasks: a conceptual framework](https://doi.org/10.1007/s10270-024-01206-9)：提供面向software development or code capability的工作流、检索或工具循环、验证方法、提示策略或编排框架。
+- [An LLM-driven Framework for Dynamic Infrastructure as Code Generation](https://doi.org/10.1145/3704440.3704778)：通过 LLM 驱动框架生成动态基础设施配置所需的 Infrastructure-as-Code artifact，将环境搭建和部署脚本纳入软件智能体工作流。
+- [Human-AI Collaboration in Software Development: A Mixed-Methods Study of Developers’ Use of GitHub Copilot and ChatGPT](https://doi.org/10.1145/3696630.3730566)：用关于 Copilot 和 ChatGPT 使用的混合方法证据，刻画开发者在编码、调试、审查和工作流协调中保留人工监督的位置。
+- [CRISPE: Semantic-Guided Execution Planning and Dynamic Reasoning for Enhancing Code Coverage Prediction](https://doi.org/10.1145/3729401)：构建面向软件开发任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [From Sketch to BIM: A Framework for Automating the Conversion of Hand-Drawn Plans into 3D Models Using MLLMs and 3D Modeling Software](https://doi.org/10.1061/9780784486436.081)：构建面向软件开发任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [Research: A Tool and Workflow for Benchmarking LLM-Based Code Improvements](https://doi.org/10.1145/3696630.3728703)：构建面向软件开发任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [RefactorGPT: a ChatGPT-based multi-agent framework for automated code refactoring](https://doi.org/10.7717/peerj-cs.3257)：构建面向软件开发任务的工作流、工具循环、检索管线、多智能体流程、模拟器或执行脚手架。
+- [MPC-Coder: A Dual-Knowledge Enhanced Multi-Agent System with Closed-Loop Verification for PLC Code Generation](https://doi.org/10.3390/sym18020248)：围绕 Software Development 能力补充《MPC-Coder: A Dual-Knowledge Enhanced Multi-Agent System with Closed-Loop Verification for PLC Code Generation》，作为 Agent Harness 条目候选。
+- [Leveraging LLM-based assistants for geoscientific software](https://doi.org/10.1190/image2025-4306506.1)：围绕 Software Development 能力补充《Leveraging LLM-based assistants for geoscientific software》，作为 Agent Harness 条目候选。
+- [An Efficient Deep Path Coverage-Based Approach for Automated Software Structural Testing](https://doi.org/10.3390/sym18030455)：围绕 Software Development 能力补充《An Efficient Deep Path Coverage-Based Approach for Automated Software Structural Testing》，作为 Agent Harness 条目候选。
+- [Automated Code Review Assistant](https://doi.org/10.5220/0013880000004919)：围绕 Automated Code Review Assistant 构建外部工作流、检索、工具使用、记忆或编排层。
+- [PREFACE - A Reinforcement Learning Framework for Code Verification via LLM Prompt Repair](https://doi.org/10.1145/3716368.3735300)：补充面向软件开发、代码生成、测试或验证能力的智能体工作流、编排模式、提示循环或工具化执行框架。
+- [Toward Author-Guided Review: An Agentic Architecture for Reflective Code Review](https://doi.org/10.1145/3786167.3788428)：可作为“软件开发 / 智能体框架”候选条目；提供面向智能体工作流、编排、工具使用或执行环境的可复用框架。
+- [Standing on the Shoulders of Giants: Bug-Aware Automated GUI Testing via Retrieval Augmentation](https://doi.org/10.1145/3715755)：补充智能体工作流、编排模式、工具循环、记忆、验证或环境控制框架。
+- [Monte Carlo Tree Search for Graph Reasoning in Large Language Model Agents](https://doi.org/10.1145/3746252.3760854)：补充智能体工作流、编排模式、工具循环、记忆、验证或环境控制框架。
+- [Multi-Agent Reinforcement Learning for Interactive Code Debugging with Human Feedback and Memory](https://doi.org/10.26615/978-954-452-098-4-070)：补充智能体工作流、编排模式、工具循环、记忆、验证或环境控制框架。
+- [Autonomous agents in software development for information retrieval using LLM models](https://doi.org/10.1145/3696630.3731432)：补充面向软件工程、编程智能体、测试与代码安全的智能体流程、编排模式、工具循环、记忆机制、仿真器或执行脚手架。
+- [CodeVoyager: An Interactive Tool for Rapid Code Comprehension through LLM-Assisted Graph Navigation](https://doi.org/10.1145/3746058.3758378)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Hybrid Fuzzing of Infrastructure as Code Programs (Short Paper)](https://doi.org/10.1145/3713081.3731721)：为软件开发补充智能体工作流、编排模式、工具循环、记忆或控制机制、运行时框架。
+- [Execution-Aware Hierarchical Code Generation with Qwen-72B and Retrieval Augmentation](https://doi.org/10.1145/3778450.3778516)：补充结合执行反馈和检索增强的层次化代码生成流程。
+- [Automatic Generation of Loop Invariants in Dafny with Large Language Models](https://doi.org/10.1007/978-3-031-87054-5_10)：补充用大模型生成 Dafny 循环不变量的软件验证流程。
+- [Using a Large Language Model as a Building Block to Generate UsableValidation and Verification Suite for OpenMP](https://doi.org/10.1145/3712031.3712331)：补充用于生成 OpenMP 验证套件的大模型工作流。
+- [Automated Generation and Refinement of Agile User Stories from Game Design Documents Using Large Language Models](https://doi.org/10.1145/3796315.3796330)：补充大模型生成和细化敏捷用户故事的软件工程流程。
+- [ICAM-Trans: Implicit-Context-Aware Multi-Agent Framework for Function-Level Code Translation](https://doi.org/10.1145/3810952)：可作为software development agents方向的 Agent Harness 候选；标题/摘要显示其提供模型外部工作流、工具编排、反馈循环、记忆机制或多智能体执行框架。
+- [Debugmate: an AI agent for efficient on-call debugging in complex production systems](https://doi.org/10.1007/s44248-025-00074-y)：面向生产系统 on-call debugging 的 AI agent；核心思想是支持事故诊断与修复工作流，而不只处理孤立代码生成任务。
+- [Programming Embedded IoT Applications in Natural Language with IoTPilot](https://doi.org/10.1145/3711875.3729136)：Agent Harness 条目；核心思想：用自然语言驱动嵌入式 IoT 应用开发。
+- [ReproCopilot: LLM-Driven Failure Reproduction with Dynamic Refinement](https://doi.org/10.1145/3729399)：面向软件调试的 LLM-driven failure-reproduction harness；核心思想是动态生成并细化可复现失败的 workload，把程序分析与 LLM 迭代修复连接起来。
+- [PATCHAGENT: A Practical Program Repair Agent Mimicking Human Expertise](https://www.semanticscholar.org/paper/b07de7825deb942c548489371657935d78f8bf8b)：PATCHAGENT：模拟人类修复经验的实用程序修复 agent；核心思想是把定位、补丁生成和验证组合成贴近开发者修复实践的工作流。
+- [Architecting open, accountable, and trustworthy AI-IDEs](https://doi.org/10.1007/s10515-026-00608-x)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Architecting open, accountable, and trustworthy AI-IDEs”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Enhancing Human-IDE Interaction in the SDLC using LLM-based Mediator Agents](https://doi.org/10.1145/3696630.3728721)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 Enhancing Human-IDE Interaction in the SDLC using LLM-based Mediator Agents 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Mediating between Human Programmers and Integrated Development Environments using LLM-based Agents](https://doi.org/10.1145/3696630.3731460)：一种连接程序员与 IDE 的 LLM Agent 中介层；核心思路是把 IDE 视为交互式工作空间，让 Agent 帮助解释、执行并协调开发上下文。
+- [Agentic AI Serverless Code Generation: Towards Autonomous Improvement of Performance, Cost, and Code Quality](https://doi.org/10.1145/3721464.3777437)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Agentic AI Serverless Code Generation: Towards Autonomous Improvement of Performance, Cost, and Code Quality”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [Guarding LLM-aided Software Transformation Tasks via Component Exoskeletons](https://doi.org/10.1145/3766882.3767171)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Guarding LLM-aided Software Transformation Tasks via Component Exoskeletons”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [From Business Meetings to Requirement Artifacts: An Agentic AI Approach with MARARE](https://doi.org/10.1145/3786167.3788405)：使用智能体方法把业务会议转化为需求工件。
+- [From Code to Execution: Multi-Agent GraphRAG for Automated Artifact Generation](https://doi.org/10.1145/3805621.3807637)：用多智能体 GraphRAG 从代码自动生成制品。
+- [AgentReport: A Multi-Agent LLM Approach for Automated and Reproducible Bug Report Generation](https://doi.org/10.3390/app152211931)：面向软件工程智能体与代码模型的智能体框架或运行时。核心思想：把 A Multi-Agent LLM Approach for Automated and Reproducible Bug Report Generation 外化为可复用的编排、工具调用、记忆或协议逻辑。
+- [Bridging Humans and LLMs: Investigating Human-AI Collaboration in Multi-agent Requirements Analysis for Organizational AI Adoption](https://doi.org/10.37190/e-inf260103)：面向软件开发智能体与代码智能的智能体框架、工作流、协议、运行时或编排方法候选。价值在于把控制、工具使用、协作或验证机制做成可复用的智能体侧能力。
+- [Agile Software Management with Cognitive Multi-Agent Systems](https://doi.org/10.5220/0013153000003890)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 Agile Software Management with Cognitive Multi-Agent Systems 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Multi-Agent System for Cross-Platform PLC Code Generation with Domain Adaptation](https://doi.org/10.62677/ijetaa.2510141)：面向软件开发能力的可复用智能体框架、运行时、协议或工作流脚手架。核心思路是围绕“Multi-Agent System for Cross-Platform PLC Code Generation with Domain Adaptation”组织可复用线索，便于比较相关模型、评测或智能体工作流。
+- [RAG-Based AI Agents for Enterprise Software Development: Implementation Patterns and Production Deployment](https://doi.org/10.71465/fair456)：可作为软件开发 agent 与代码模型的 Agent Harness 候选：围绕 RAG-Based AI Agents for Enterprise Software Development: Implementation Patterns and Production Deployment 提供可复用的 agent 工作流、编排、运行时或协议设计。
+- [Pioneering agentic retrieval-augmented generation in software quality: a novel framework for code smell detection via dynamic retrieval](https://doi.org/10.7717/peerj-cs.3642)：用动态检索支持代码异味检测与软件质量分析。
+- [Kernel Forge: An Agent Harness for LLM-based Generation and Optimization of CUDA Kernels](https://arxiv.org/abs/2607.24762)：Kernel Forge 在未经修改的 PyTorch 模型中用 MCTS 搜索可编辑 CUDA kernel，并提供失败检查 GUI，覆盖视觉、扩散和语言模型工作负载。

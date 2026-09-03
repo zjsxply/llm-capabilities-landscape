@@ -1,29 +1,197 @@
 # 2.11.2 Survey
 
+- [Large Language Models for Robotics: Opportunities, Challenges, and Perspectives](https://arxiv.org/abs/2401.04334)：综述 LLM 与多模态 LLM 如何进入机器人任务规划、感知、运动规划和控制，同时指出纯文本模型在具身任务中的 grounding 局限。
 - [A Survey on Robotics with Foundation Models: toward Embodied AI](https://arxiv.org/abs/2402.02385)：回顾用于感知、规划、操作、导航与具身推理的基础模型。
+- [A call for embodied AI](https://arxiv.org/abs/2402.03824)：把 embodied AI 定位为通向 AGI 的路径，回顾哲学、心理学、神经科学和机器人学中的 embodiment，并用感知、行动、记忆和学习刻画具身智能体。
+- [A Comprehensive Survey of Cross-Domain Policy Transfer for Embodied Agents](https://arxiv.org/abs/2402.04580)：综述或系统梳理具身与 VLA 系统，为该能力页补充分类、趋势或风险边界。
+- [Real-world robot applications of foundation models: a review](https://arxiv.org/abs/2402.05741)：综述 LLM 与 VLM 在真实机器人系统中的组件级应用，按感知、运动规划、任务规划和部署约束组织现有工作。
+- [Learning by Watching: A Review of Video-Based Learning Approaches for Robot Manipulation](https://arxiv.org/abs/2402.07127)：梳理具身 VLA的方法、证据与开放问题。
+- [A Survey of Optimization-Based Task and Motion Planning: From Classical to Learning Approaches](https://arxiv.org/abs/2404.02817)：综述 optimization-based task and motion planning，覆盖规划领域表示、轨迹优化、分层和分布式求解，以及与学习方法和 LLM 的结合。
+- [Deep reinforcement learning for robotic bipedal locomotion: a brief survey](https://arxiv.org/abs/2404.17070)：梳理具身 VLA的方法、证据与开放问题。
+- [What Foundation Models can Bring for Robot Learning in Manipulation : A Survey](https://arxiv.org/abs/2404.18201)：提出用于机器人操作的 foundation model 模块化框架，梳理其在感知、规划、控制、泛化、风险和未来方向中的作用。
+- [Imitation Learning: A Survey of Learning Methods, Environments and Metrics](https://arxiv.org/abs/2404.19456)：梳理，主要面向 Embodied and VLA Agents。
+- [Towards Generalist Robot Learning from Internet Video: A Survey](https://arxiv.org/abs/2404.19664)：综述从互联网视频学习机器人能力的方法，覆盖分布偏移、缺失动作标签、视频辅助策略与动力学训练，以及可扩展机器人数据的 foundation model 路线。
+- [The Role of Predictive Uncertainty and Diversity in Embodied AI and Robot Learning](https://arxiv.org/abs/2405.03164)：梳理具身与视觉语言动作方向的近期方法、评测问题或风险边界。
+- [Benchmarking Neural Radiance Fields for Autonomous Robots: An Overview](https://arxiv.org/abs/2405.05526)：梳理具身 VLA的方法、证据与开放问题。
 - [A Survey on Vision-Language-Action Models for Embodied AI](https://arxiv.org/abs/2405.14093)：梳理从视觉语言理解到动作条件策略的转化。
+- [A Survey of Language-Based Communication in Robotics](https://arxiv.org/abs/2406.04086)：综述语言进入机器人控制流程的位置，包括人向机器人下达任务、机器人向人反馈、机器人之间通信，以及机器人内部规划或控制。
+- [Multi-LLM QA with Embodied Exploration](https://arxiv.org/abs/2406.10918)：综述具身与 VLA 智能体的方法谱系、任务边界、证据来源与开放挑战。
+- [Unfolding the Literature: A Review of Robotic Cloth Manipulation](https://arxiv.org/abs/2407.01361)：综述Embodied VLA的方法、风险或评测脉络，可作为 Embodied VLA / Survey 部分的领域地图。
+- [Aligning Cyber Space With Physical World: A Comprehensive Survey on Embodied AI](https://arxiv.org/abs/2407.06886)：综述 embodied AI 的机器人、仿真器、具身感知、具身交互、具身 agent、sim-to-real，以及多模态大模型和世界模型的作用。
+- [Vision-and-Language Navigation Today and Tomorrow: A Survey in the Era of Foundation Models](https://arxiv.org/abs/2407.07035)：以具身规划和推理框架综述视觉语言导航，强调 foundation model 如何重塑导航方法和未来机会。
+- [Deep Generative Models in Robotics: A Survey on Learning from Multimodal Demonstrations](https://arxiv.org/abs/2408.04380)：综述Embodied VLA的方法、风险或评测脉络，可作为 Embodied VLA / Survey 部分的领域地图。
+- [A Survey of Embodied Learning for Object-centric Robotic Manipulation](https://arxiv.org/abs/2408.11537)：围绕 object-centric 机器人操作组织 embodied perceptual learning、策略学习和交互反馈，突出机器人通过环境反馈学习操作能力。
+- [A Roadmap for Embodied and Social Grounding in LLMs](https://arxiv.org/abs/2409.16900)：把 LLM grounding 置于机器人 embodiment 之外讨论，连接 embodied grounding、social grounding、语言意义、行动、交互和表征挑战。
+- [The duality of generative AI and reinforcement learning in robotics: A review](https://arxiv.org/abs/2410.16411)：梳理embodied agents, robotics, or vision-language-action capability相关方法与挑战，补充该能力方向的综述线索。
+- [Neural Fields in Robotics: A Survey](https://arxiv.org/abs/2410.20220)：综述神经场在机器人中的应用，覆盖 Occupancy Networks、SDF、NeRF 和 Gaussian Splatting，以及位姿估计、操作、导航、物理和自动驾驶场景。
+- [A Comparison of Prompt Engineering Techniques for Task Planning and Execution in Service Robotics](https://arxiv.org/abs/2410.22997)：比较服务机器人任务规划与执行中的提示工程技术。
+- [Continuous-Time State Estimation Methods in Robotics: A Survey](https://arxiv.org/abs/2411.03951)：综述与梳理 Embodied/VLA 相关的方法、基准和应用边界，可作为该能力方向的 Survey 条目。
+- [Large Action Models: From Inception to Implementation](https://arxiv.org/abs/2412.10047)：综述从只生成语言的 LLM 到能在动态环境中生成并执行动作的 Large Action Model，覆盖 agent 系统角色、实现路径和风险。
+- [Air-Ground Collaborative Robots for Fire and Rescue Missions: Towards Mapping and Navigation Perspective](https://arxiv.org/abs/2412.20699)：系统综述火灾与救援中的空地协同机器人建图和导航，突出协同感知、路径规划与任务执行基础。
+- [A Survey on Sim-to-Real Transfer Methods for Robotic Manipulation](https://doi.org/10.1109/sisy62279.2024.10737545)：综述具身与 VLA 智能体的方法谱系、任务边界与开放挑战。
+- [Task-Oriented Adaptive Position/Force Control for Robotic Systems Under Hybrid Constraints](https://doi.org/10.1109/tie.2024.3352135)：综述具身与 VLA 智能体的方法谱系、任务边界与开放挑战。
+- [A Review on Six Degrees of Freedom (6D) Pose Estimation for Robotic Applications](https://doi.org/10.1109/access.2024.3487263)：综述传统、RGB、点云和深度学习 6D 位姿估计方法，重点关注机器人抓取所需的目标物体定位。
+- [A Survey of Object Goal Navigation](https://doi.org/10.1109/tase.2024.3378010)：综述机器人导航、操作或具身策略方法。
+- [Environment Modeling for Service Robots from a Task Execution Perspective](https://arxiv.org/abs/2501.05931)：从任务执行角度综述服务机器人环境建模，连接环境感知、理解、表示和开放家庭环境中的长期自主性。
+- [Embodied Intelligence for 3D Understanding: A Survey on 3D Scene Question Answering](https://arxiv.org/abs/2502.00342)：综述 3D 场景问答中的具身智能。
+- [Large Language Models for Multi-Robot Systems: A Survey](https://arxiv.org/abs/2502.03814)：综述 LLM 如何支持多机器人系统中的协调、规划与通信。
+- [Survey on Vision-Language-Action Models](https://arxiv.org/abs/2502.06851)：综述 VLA 模型如何从多模态感知走向动作，补充聚焦机器人策略与动作 tokenization 的具身 agent survey。
+- [Generative Multi-Agent Collaboration in Embodied AI: A Systematic Review](https://arxiv.org/abs/2502.11518)：梳理具身与视觉语言动作方向的近期方法、评测问题或风险边界。
+- [Towards Robust and Secure Embodied AI: A Survey on Vulnerabilities and Attacks](https://arxiv.org/abs/2502.13175)：综述具身 AI 系统的漏洞、攻击与防御。
+- [A Taxonomy for Evaluating Generalist Robot Manipulation Policies](https://arxiv.org/abs/2503.01238)：为通用机器人操作策略评测建立分类体系。
 - [Generative Artificial Intelligence in Robotic Manipulation](https://arxiv.org/abs/2503.03464)：把生成式模型映射到机器人操作中的感知、任务规划、轨迹合成与动作生成。
+- [Towards Safe Robot Foundation Models](https://arxiv.org/abs/2503.07404)：梳理机器人基础模型安全问题，补充具身 agent survey 与安全 VLA 设计。
+- [Multimodal Fusion and Vision-Language Models: A Survey for Robot Vision](https://arxiv.org/abs/2504.02477)：综述机器人视觉任务中的多模态融合与视觉语言模型。
+- [Dexterous Manipulation Through Imitation Learning: A Survey](https://arxiv.org/abs/2504.03515)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Underwater Robotic Simulators Review for Autonomous System Development](https://arxiv.org/abs/2504.06245)：按保真度、传感器、仿真到现实支持和任务适配性比较 ROS 兼容水下机器人仿真器。
 - [Diffusion models for robotic manipulation](https://arxiv.org/abs/2504.08438)：以扩散策略和扩散世界模型为核心，梳理其作为操作轨迹与动作生成器的作用。
+- [Towards Forceful Robotic Foundation Models: a Literature Survey](https://arxiv.org/abs/2504.11827)：综述力感知机器人基础模型，为具身 VLA survey 增加触觉与力控覆盖。
 - [A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI](https://arxiv.org/abs/2505.01458)：连接仿真器、任务设计、具身学习与可复现评测。
+- [Visual Affordance Prediction: Survey and Reproducibility](https://arxiv.org/abs/2505.05074)：综述视觉可供性预测并强调可复现性问题。
+- [Embodied Intelligence: The Key to Unblocking Generalized Artificial Intelligence](https://arxiv.org/abs/2505.06897)：综述具身、机器人、导航、操作或视觉-语言-动作能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [A Comprehensive Survey on Physical Risk Control in the Era of Foundation Model-enabled Robotics](https://arxiv.org/abs/2505.12583)：综述 foundation model enabled robotics 全生命周期中的物理风险控制，从部署前准备到运行时监测和部署防护。
 - [Toward Embodied AGI](https://arxiv.org/abs/2505.14235)：综述具身 AI 进展与迈向具身 AGI 的路线，串联感知、行动、学习与部署挑战。
+- [Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization](https://arxiv.org/abs/2505.16348)：面向具身与视觉-语言-动作智能体的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Embodied AI with Foundation Models for Mobile Service Robots: A Systematic Review](https://arxiv.org/abs/2505.20503)：系统综述基础模型驱动的移动服务机器人具身 AI。
+- [Interactive imitation learning for dexterous robotic manipulation: challenges and perspectives—a survey](https://arxiv.org/abs/2506.00098)：综述灵巧机器人操作中的交互式模仿学习，匹配具身操作方向。
+- [To Embody or Not: The Effect Of Embodiment On User Perception Of LLM-based Conversational Agents](https://arxiv.org/abs/2506.02514)：研究视觉 embodiment 如何改变用户对 LLM conversational agent 的感知，在合作任务中比较 embodied 与 non-embodied 条件。
+- [A Survey on Imitation Learning for Contact-Rich Tasks in Robotics](https://arxiv.org/abs/2506.13498)：综述接触丰富机器人任务中的模仿学习方法。
+- [A Survey of Behavior Foundation Model: Next-Generation Whole-Body Control System of Humanoid Robots](https://arxiv.org/abs/2506.20487)：综述面向人形机器人全身控制的行为基础模型。
+- [Parallels Between VLA Model Post-Training and Human Motor Learning: Progress, Challenges, and Trends](https://arxiv.org/abs/2506.20966)：以人类运动学习为参照综述 VLA 后训练，梳理进展、挑战和趋势。
+- [Foundation Model Driven Robotics: A Comprehensive Review](https://arxiv.org/abs/2507.10087)：综述基础模型如何改变机器人感知、规划与控制。
 - [Vision Language Action Models in Robotic Manipulation](https://arxiv.org/abs/2507.10672)：按数据集、架构、动作表示、评测与真实机器人部署系统化整理 VLA 操作研究。
+- [The Developments and Challenges towards Dexterous and Embodied Robotic Manipulation: A Survey](https://arxiv.org/abs/2507.11840)：综述灵巧与具身机器人操作从夹爪到多指灵巧手的发展，强调仿真、示教、遥操作数据采集以及 IL/RL 技能学习。
+- [A roadmap for AI in robotics](https://arxiv.org/abs/2507.19975)：梳理机器人 AI 发展路线，有助于从单点操作方法之外理解具身智能进展。
+- [Safety of Embodied Navigation: A Survey](https://arxiv.org/abs/2508.05855)：系统分析具身导航安全风险，覆盖动态真实环境部署、不安全导航行为和缓解方向。
+- [A tutorial note on collecting simulated data for vision-language-action models](https://arxiv.org/abs/2508.06547)：介绍视觉语言动作模型的仿真数据采集方法。
 - [Large Model Empowered Embodied AI: A Survey on Decision-Making and Embodied Learning](https://arxiv.org/abs/2508.10399)：强调决策、具身学习、规划与动作 grounding。
 - [Robot Policy Evaluation for Sim-to-Real Transfer](https://arxiv.org/abs/2508.11117)：从 benchmark 设计角度讨论通用机器人策略的 sim-to-real 评测，强调视觉保真度、任务复杂度、扰动与真实表现对齐。
+- [Tactile Robotics: An Outlook](https://arxiv.org/abs/2508.11261)：梳理具身 VLA的方法、证据与开放问题。
+- [Recent Advances in Transformer and Large Language Models for UAV Applications](https://arxiv.org/abs/2508.11834)：综述用于 UAV 感知、决策和自主性的 Transformer 与 LLM 方法，分类覆盖注意力架构、CNN-Transformer hybrid、RL Transformer 和 UAV LLM 应用。
 - [Large VLM-based Vision-Language-Action Models for Robotic Manipulation](https://arxiv.org/abs/2508.13073)：聚焦大型 VLM 如何从视觉语言 grounding 被改造为能输出动作的机器人操作策略。
+- [Multimodal Data Storage and Retrieval for Embodied AI: A Survey](https://arxiv.org/abs/2508.13901)：可作为具身与 VLA agent的 Survey 候选：围绕 Multimodal Data Storage and Retrieval for Embodied AI: A Survey 梳理背景、方法与开放问题。
+- [Toward an Interaction-Centered Approach to Robot Trustworthiness](https://arxiv.org/abs/2508.13976)：面向具身与视觉-语言-动作智能体的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [Survey of Vision-Language-Action Models for Embodied Manipulation](https://arxiv.org/abs/2508.15201)：综述面向具身操作的 VLA 模型，梳理架构、机器人控制框架、应用场景以及 agent-environment 交互中的剩余挑战。
 - [Sensing, Social, and Motion Intelligence in Embodied Navigation](https://arxiv.org/abs/2508.15354)：从感知、社会交互、运动智能、平台和评测指标系统梳理具身导航。
+- [AI-Driven Marine Robotics: Emerging Trends in Underwater Perception and Ecosystem Monitoring](https://arxiv.org/abs/2509.01878)：梳理具身智能与 VLA 能力相关的方法、风险、评测实践或分类框架。
+- [Classification of Vision-Based Tactile Sensors: A Review](https://arxiv.org/abs/2509.02478)：综述具身与视觉语言动作方向的相关工作，可作为父级复核时的体系化 Survey 候选。
+- [PANORAMA: The Rise of Omnidirectional Vision in the Embodied AI Era](https://arxiv.org/abs/2509.12989)：可作为具身与 VLA agent的 Survey 候选：围绕 PANORAMA: The Rise of Omnidirectional Vision in the Embodied AI Era 梳理背景、方法与开放问题。
 - [Pure Vision Language Action (VLA) Models](https://arxiv.org/abs/2509.19012)：区分端到端 VLA 模型与模块化机器人栈，强调数据、预训练、后训练和评测。
+- [Transferring Vision-Language-Action Models to Industry Applications: Architectures, Performance, and Challenges](https://arxiv.org/abs/2509.23121)：面向具身与视觉-语言-动作智能体的综述、评述或立场型候选。价值在于梳理题名所指的方法、风险、评测实践或部署模式。
+- [The Safety Challenge of World Models for Embodied AI Agents: A Review](https://arxiv.org/abs/2510.05865)：综述具身 AI agent 世界模型的安全挑战，补充具身与 agent 安全覆盖。
 - [Vision-Language-Action Models for Robotics](https://arxiv.org/abs/2510.07077)：从真实机器人约束审视 VLA 系统，突出鲁棒性、具身差距、数据采集与部署问题。
+- [Towards a Unified Understanding of Robot Manipulation: A Comprehensive Survey](https://arxiv.org/abs/2510.10903)：综述机器人操作中的感知、规划、策略学习以及大模型与 VLA 趋势。
+- [A Comprehensive Survey on World Models for Embodied AI](https://arxiv.org/abs/2510.16732)：用功能、时间建模和空间表示三条轴线组织具身 AI 世界模型，覆盖用于决策的 forward rollout 与 counterfactual rollout。
 - [Efficient Vision-Language-Action Models for Embodied Manipulation](https://arxiv.org/abs/2510.17111)：系统梳理面向具身操作的高效 VLA 设计，覆盖架构、感知、动作生成以及训练或推理策略。
+- [A Compositional Paradigm for Foundation Models: Towards Smarter Robotic Agents](https://arxiv.org/abs/2510.18608)：作为具身与 VLA 智能体的综述或立场工作候选，聚焦“Towards Smarter Robotic Agents”。
+- [TARMAC: A Taxonomy for Robot Manipulation in Chemistry](https://arxiv.org/abs/2510.19289)：为化学自动化所需的机器人操作技能建立分类，把 protocol-level 实验步骤连接到可迁移机器人动作和自主性缺口。
+- [Taxonomy and Trends in Reinforcement Learning for Robotics and Control Systems: A Structured Review](https://arxiv.org/abs/2510.21758)：综述机器人与控制系统中的强化学习趋势。
+- [A short methodological review on social robot navigation benchmarking](https://arxiv.org/abs/2510.22448)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [A Survey on Efficient Vision-Language-Action Models](https://arxiv.org/abs/2510.24795)：综述 VLA 模型效率技术，梳理压缩、动作表示和具身策略部署约束。
+- [A Step Toward World Models: A Survey on Robotic Manipulation](https://arxiv.org/abs/2511.02097)：可作为具身与 VLA agent的 Survey 候选：围绕 A Step Toward World Models: A Survey on Robotic Manipulation 梳理背景、方法与开放问题。
+- [What Is The Best 3D Scene Representation for Robotics? From Geometric to Foundation Models](https://arxiv.org/abs/2512.03422)：系统梳理该方向的方法、评测缺口或部署问题。
+- [Embodied Co-Design for Rapidly Evolving Agents: Taxonomy, Frontiers, and Challenges](https://arxiv.org/abs/2512.04770)：为快速演化具身智能体的形态与控制器联合设计建立分类。
 - [Agentic LLM-based robotic systems](https://doi.org/10.3389/frobt.2025.1605405)：综述围绕 agentic LLM 构建的机器人系统，并关注 agenticness、现实部署与伦理问题。
 - [Embodied Multi-Agent Systems: A Review](https://doi.org/10.1109/JAS.2025.125552)：从脑身交互以及开环、闭环和双环控制设计角度组织具身多智能体系统。
 - [AeroVerse-Review](https://doi.org/10.59717/j.xinn-inform.2025.100015)：把具身视觉语言导航聚焦到空中平台，覆盖 UAV 感知、语言 grounding、导航任务与评测。
 - [Robot learning in the era of foundation models](https://doi.org/10.1016/j.neucom.2025.129963)：把基础模型放入机器人学习流程，连接表示学习、策略学习、迁移与部署。
+- [Humanoid dexterous hands from structure to gesture semantics for enhanced human–robot interaction: A review](https://doi.org/10.1016/j.birob.2025.100258)：综述灵巧手结构、手势语义及其对人机交互的意义。
+- [Dexterous hand towards intelligent manufacturing: A review of technologies, trends, and potential applications](https://doi.org/10.1016/j.rcim.2025.103021)：综述Embodied VLA的方法、风险或评测脉络，可作为 Embodied VLA / Survey 部分的领域地图。
+- [3D Reconstruction in Robotics: A Comprehensive Review](https://doi.org/10.1016/j.cag.2025.104256)：综述 3D reconstruction 在机器人中的应用，覆盖 NeRF、SLAM、语义与 amodal reconstruction、Gaussian Splatting，并比较方法和数据集。
+- [The Developments and Challenges Toward Dexterous and Embodied Robotic Manipulation: A Survey](https://doi.org/10.1109/mra.2025.3642671)：综述灵巧操作数据采集和技能学习框架，强调仿真、人体示教、遥操作、模仿学习、强化学习和开放挑战。
+- [Imitation learning for legged robot locomotion: a survey](https://doi.org/10.3389/frobt.2025.1678567)：综述四足和人形平台上的腿式机器人模仿学习，覆盖动捕复现、MPC 生成数据、扩散策略和部署挑战。
+- [Exploring the Unknown: A Survey on Embodied AI robotics in Uncharted Cluttered Environments](https://doi.org/10.1109/cac67268.2025.11486796)：补充具身智能与 VLA的 Survey 条目，重点是《Exploring the Unknown: A Survey on Embodied AI robotics in Uncharted Cluttered Environments》。
+- [Tactile data generation and applications based on visuo-tactile sensors: A review](https://doi.org/10.1016/j.inffus.2025.103162)：梳理具身智能与 VLA相关方法、风险与开放问题。
+- [Generative Models, Attention Mechanisms, and Adaptive Methods for Robot Navigation in Complex Environments—A Survey](https://doi.org/10.1109/access.2025.3590587)：梳理具身智能与视觉语言行动系统的近期方法与开放问题。
+- [Autonomous Ground Navigation in Highly Constrained Spaces: Lessons Learned From the Fourth BARN Challenge at ICRA 2025](https://doi.org/10.1109/mra.2025.3639795)：梳理具身智能与视觉语言行动系统的近期方法与开放问题。
+- [SafePersuasion: A Dataset, Taxonomy, and Baselines for Analysis of Rational Persuasion and Manipulation](https://doi.org/10.18653/v1/2025.findings-ijcnlp.65)：梳理具身智能与视觉语言行动系统的近期方法与开放问题。
+- [Social robot navigation: a review and benchmarking of learning-based methods](https://doi.org/10.3389/frobt.2025.1658643)：综述具身与 VLA 智能体的方法谱系、任务边界、证据来源与开放挑战。
+- [A review on AI-driven face robot for human-robot expression interaction](https://doi.org/10.1360/sst-2025-0217)：综述具身与 VLA 智能体的方法谱系、任务边界、证据来源与开放挑战。
+- [Cooperation and Coordination Principles for Icy Moon Exploration with Autonomous Multi Robot Systems](https://doi.org/10.1109/aero63441.2025.11068694)：综述具身与 VLA 智能体的方法谱系、任务边界、证据来源与开放挑战。
+- [A Review of Imitation Learning in Natural Human-Robot Interaction](https://doi.org/10.56028/aetr.15.1.1442.2025)：综述自然 HRI 中的模仿学习，覆盖手势模仿、凝视模仿和接触丰富任务，并指出模型崩塌、可解释性和数据限制。
+- [How can we make robot dance expressive and responsive? A survey of methods and future directions](https://doi.org/10.3389/fcomp.2025.1575667)：综述具身、机器人、导航、操作或视觉-语言-动作能力，梳理近期方法、分类框架、评测边界或开放挑战。
+- [A systematic literature review: Generative artificial intelligence applications for ground mobile robot navigation](https://doi.org/10.1016/j.compeleceng.2025.110906)：梳理具身智能与 VLA 能力相关的方法、风险、评测实践或分类框架。
+- [Learning Perceptive Legged Robot Locomotion in the Real World: A Systematic Review](https://doi.org/10.1109/mra.2025.3639794)：梳理具身智能与 VLA 能力相关的方法、风险、评测实践或分类框架。
+- [Physical AI in Cyber-Physical Systems: From Digital to Embodied Industrial Agents](https://doi.org/10.1016/j.jii.2025.101038)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [Survey of Simulators for Deformable Objects in Robotics](https://doi.org/10.17979/ja-cea.2025.46.12171)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [Embodied Conversational Virtual Humans in 3D Environments: Towards Scalable and Immersive AI Interactions](https://doi.org/10.1109/metroxraine66377.2025.11340085)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [Navigating the Sim-to-Real Gap: A Critical Analysis of Underwater Robotics Simulators](https://doi.org/10.1109/icar65334.2025.11338622)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [Research Progress on Collaborative Perception and Localization Technologies of Clustered Unmanned Systems in Underground Sheltered Spaces: A Survey](https://doi.org/10.1109/tim.2025.3600832)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [Survey of π0, π0-FAST, and π0.5: Vision-Language-Action Models in the Physical AI Framework](https://doi.org/10.1109/ictc66702.2025.11388479)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [A Survey on Multimodal Data Fusion for Autonomous Collaborative Robots: Advances and real world challenges](https://doi.org/10.1109/codit66093.2025.11321703)：综述自主协作机器人中的多模态数据融合。
+- [Review of deep learning-based visual SLAM: types, approaches, and future work](https://doi.org/10.1108/ir-04-2025-0137)：综述具身导航与建图中的深度学习视觉 SLAM 方法。
+- [Multimodal perception-driven decision-making for human-robot interaction: a survey](https://doi.org/10.3389/frobt.2025.1604472)：综述人机交互中的多模态感知驱动决策，适合具身智能综述部分。
+- [Large language and vision-language models for robot: safety challenges, mitigation strategies and future directions](https://doi.org/10.1108/ir-02-2025-0074)：可作为具身与 VLA Agent方向的综述与分类入口候选；其主题直接落在该能力页范围内，归入 `Survey` 轨道。
+- [Vision-Language-Action Models: Foundations, Techniques and Applications](https://doi.org/10.1109/ihmsc66529.2025.00046)：综述视觉语言动作模型的基础、技术与应用。
+- [Research on the Development of Embodied Intelligence Technology](https://doi.org/10.1109/prmvai65741.2025.11108525)：综述具身智能技术发展。
+- [Bridging Theory and Practice: A Review of Task-Oriented Communication for Embodied Agent Societies](https://doi.org/10.1109/tnse.2025.3572239)：综述具身 AI 或机器人智能体系统；核心思想是梳理具身智能体的任务、通信、交互或技能分类。
+- [Context-aware embodied intelligence: from environmental understanding to autonomous decision-making](https://doi.org/10.1360/ssi-2025-0245)：一篇上下文感知具身智能综述性条目，覆盖从环境理解到自主决策的链路。
+- [Choosing the Arena: A Systematic Review of Simulators for Deep Reinforcement Learning in Mobile Robot Navigation](https://doi.org/10.14569/ijacsa.2025.0161262)：一篇关于移动机器人导航深度强化学习仿真器的系统综述；核心思路是比较仿真器选择对可复现具身导航研究的影响。
+- [Large Language Models in Robotics: Applications, Challenges, and Future Directions from the Perspective of Embodied Intelligence](https://doi.org/10.56028/aetr.15.1.1604.2025)：系统梳理具身与 VLA 智能体，可补充机器人基础模型、VLA 泛化和人机协作综述线索。
+- [Embodied intelligence: Recent advances and future perspectives](https://doi.org/10.59717/j.xinn-inform.2025.100008)：综述具身与 VLA 智能体相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Trust in LLM-controlled Robotics: a Survey of Security Threats, Defenses and Challenges](https://arxiv.org/abs/2601.02377)：综述 LLM 控制机器人的安全威胁与防御，聚焦 embodiment gap 带来的 jailbreak、backdoor、多模态 prompt injection、运行时 enforcement 和多模型 oversight。
+- [A Review of Online Diffusion Policy RL Algorithms for Scalable Robotic Control](https://arxiv.org/abs/2601.06133)：综述面向可扩展机器人控制的在线扩散策略强化学习。
 - [Video Generation Models in Robotics - Applications, Research Challenges, Future Directions](https://arxiv.org/abs/2601.07823)：把视频生成模型视为机器人系统的数据引擎、世界模型与规划辅助工具。
+- [Embodied Intelligence for Flexible Manufacturing: A Survey](https://arxiv.org/abs/2602.06966)：综述工业具身智能中的感知、过程建模、控制和技能整合。
+- [How Do We Research Human-Robot Interaction in the Age of Large Language Models? A Systematic Review](https://arxiv.org/abs/2602.15063)：系统综述 LLM 进入机器人系统后的人机交互研究。
 - [Are Foundation Models the Route to Full-Stack Transfer in Robotics?](https://arxiv.org/abs/2602.22001)：回顾 LLM、VLM 与 VLA 如何影响从高层语言到低层运动技能的机器人迁移。
+- [On the Strengths and Weaknesses of Data for Open-set Embodied Assistance](https://arxiv.org/abs/2603.04819)：分析开放集具身辅助数据的优势与弱点，补充具身智能体数据综述。
+- [Underwater Embodied Intelligence for Autonomous Robots: A Constraint-Coupled Perspective on Planning, Control, and Deployment](https://arxiv.org/abs/2603.07393)：从 constraint-coupled 视角综述水下自主性，连接水动力不确定性、部分可观测、带宽、能量、规划、控制和部署。
+- [Embodied Foundation Models at the Edge: A Survey of Deployment Constraints and Mitigation Strategies](https://arxiv.org/abs/2603.16952)：综述具身与 VLA 智能体相关问题；可补充该方向的方法脉络、风险点与评测缺口。
+- [Collaboration in Multi-Robot Systems: Taxonomy and Survey over Frameworks for Collaboration](https://arxiv.org/abs/2603.23898)：综述或系统化梳理具身智能体、机器人、VLA 策略与动作反馈环，用于补充方法谱系、任务边界、风险与开放问题。
+- [Advancing Multi-Robot Networks via MLLM-Driven Sensing, Communication, and Computation: A Comprehensive Survey](https://arxiv.org/abs/2604.00061)：综述 MLLM 驱动的多机器人感知、通信与计算，补充具身 agent survey 覆盖。
+- [From Video to Control: A Survey of Learning Manipulation Interfaces from Temporal Visual Data](https://arxiv.org/abs/2604.04974)：综述从时序视觉数据学习操作接口的方法。
+- [Spatial Memory for Robot Navigation](https://arxiv.org/abs/2604.16482)：从部署内存效率角度综述机器人导航中的空间记忆表征。
 - [Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](https://arxiv.org/abs/2604.23001)：梳理 VLA agent 的数据集、基准与数据基础设施。
+- [World Model for Robot Learning: A Comprehensive Survey](https://arxiv.org/abs/2605.00080)：综述用于机器人学习的世界模型方法。
+- [Split and Aggregation Learning for Foundation Models Over Mobile Embodied AI Network (MEAN): A Comprehensive Survey](https://arxiv.org/abs/2605.00970)：综述移动具身 AI 网络中 foundation model 的 split learning 与 aggregation learning，强调通信效率、资源分配、隐私和 6G 部署。
+- [Towards Robotic Dexterous Hand Intelligence: A Survey](https://arxiv.org/abs/2605.13925)：作为具身与 VLA 智能体的综述或立场工作候选，聚焦“A Survey”。
 - [Large language models in human-robot collaboration](https://doi.org/10.1016/j.jmsy.2026.01.011)：系统综述 LLM 在人机协作中的应用、趋势、部署挑战与协作模式。
 - [Mapless Multi-Robot Systems Survey](https://doi.org/10.1109/ACCESS.2026.3676798)：综述无地图多机器人系统中的感知、分布式规划与预测协作。
 - [A survey of robotic manipulation](https://doi.org/10.1016/j.neucom.2026.132921)：追踪机器人操作从自底向上的感知控制流水线到受 LLM 与 VLA 推动的端到端范式。
+- [LLMs for Industrial Embodied Intelligence](https://doi.org/10.1016/j.aei.2026.104602)：综述大语言模型在工业具身智能中的作用，覆盖感知、规划和执行环节。
+- [An in-depth review of dual-arm robot learning methods with advances and challenges in variable compliance-aware control for uncertain tasks](https://doi.org/10.1016/j.arcontrol.2026.101050)：综述具身与 VLA相关方法、风险或评测边界。
+- [Loco-Manipulation With Quadruped Robots: Modeling, Task Taxonomy, and Control Methods—A Critical Review](https://doi.org/10.1109/access.2026.3672605)：用 modeling-task-control taxonomy 综述四足机器人 loco-manipulation，连接浮动基座假设、任务类型、控制器族、失败模式和定量权衡。
+- [AI-IoT-Robotics Integration: Survey of Frameworks, Emerging Trends, and the Path Toward Connected Robotics](https://doi.org/10.1109/jiot.2026.3670191)：综述统一的 AI-IoT-robotics 框架，强调 AI 感知与推理、IoT 感知与通信、具身执行、小语言模型和 connected robotics。
+- [A Review of Dual-arm Robot Manipulation Technology: Current Status, Challenges, and Future Development Directions](https://doi.org/10.1016/j.robot.2026.105485)：围绕 Embodied/VLA 能力补充《A Review of Dual-arm Robot Manipulation Technology: Current Status, Challenges, and Future Development Directions》，作为 Survey 条目候选。
+- [Where to Fuse in the VLM Era: A Survey on Integrating Knowledge into Object Goal Navigation](https://doi.org/10.7467/ksae.2026.34.1.119)：围绕VLM knowledge fusion survey for object-goal navigation梳理方法、证据与开放问题，补充具身与视觉语言动作方向的综述或分类线索。
+- [Research on Safety Management Challenges and Strategies for End-to-End Autonomous Driving Systems](https://doi.org/10.1109/access.2026.3665480)：综述端到端自动驾驶系统的安全管理挑战与缓解策略。
+- [From AI foundations to Large Language Models: A survey on challenges and opportunities in collaborative robotics](https://doi.org/10.1016/j.rcim.2026.103269)：系统梳理具身与 VLA 智能体，可补充机器人基础模型、VLA 泛化和人机协作综述线索。
+- [Generalization in Vision-Language-Action Models: A Systematic Analysis of Architecture, Reasoning, Data Alignment, and Training Strategies](https://doi.org/10.1109/aetcse69203.2026.11504354)：系统梳理具身与 VLA 智能体，可补充机器人基础模型、VLA 泛化和人机协作综述线索。
 - [Deep Reinforcement Learning of Mobile Robot Navigation in Dynamic Environment](https://doi.org/10.3390/s25113394)：综述动态环境中的移动机器人导航 DRL 方法，补充 embodied navigation 方向的综述。
 - [An Overview of Robot Embodied Intelligence Based on Multimodal Models](https://doi.org/10.1155/int/5124400)：按任务家族、模型选择和系统方案组织多模态模型驱动的机器人具身智能。
 - [Integrating Large Language Models into Robotic Autonomy](https://doi.org/10.3390/ai6070158)：综述 LLM 如何通过运动、语音与训练流水线融入机器人自主系统。
+- [Vision-Based Navigation and Perception for Autonomous Robots](https://doi.org/10.3390/eng6070153)：综述自主机器人中的视觉传感、SLAM、感知与控制策略，为具身导航和机器人智能体感知提供背景。
+- [Vision-language model-based human-robot collaboration for smart manufacturing: A state-of-the-art survey](https://doi.org/10.1007/s42524-025-4136-9)：综述智能制造中基于视觉语言模型的人机协作机器人研究。
+- [From Large Language Models to Agentic AI in Industry 5.0 and the Post-ChatGPT Era: A Socio-Technical Framework and Review on Human–Robot Collaboration](https://doi.org/10.3390/robotics15030058)：综述 Industry 5.0 中 foundation model 与 agentic AI 支持的人机协作，并用 context、design 与 value 三层组织部署问题。
+- [Physical AI: bridging the sim-to-real divide toward embodied, ethical, and autonomous intelligence](https://doi.org/10.1007/s44379-025-00050-y)：综述 embodied、ethical、autonomous intelligence 的 sim-to-real 挑战。
+- [AI and automation: democratizing automation and the evolution towards true AI-autonomous robotics](https://doi.org/10.1039/d5sc03183d)：梳理embodied agents, robotics, or vision-language-action capability相关方法与挑战，补充该能力方向的综述线索。
+- [A Survey of Robot Intelligence with Large Language Models](https://doi.org/10.3390/app14198868)：综述Embodied VLA的方法、风险或评测脉络，可作为 Embodied VLA / Survey 部分的领域地图。
+- [A Comprehensive Review of Path-Planning Algorithms for Planetary Rover Exploration](https://doi.org/10.3390/rs17111924)：梳理具身与视觉语言动作方向的近期方法、评测问题或风险边界。
+- [From Cogwheels to Concepts: A Perspective on the Interplay of Robotics and Ontology](https://doi.org/10.1177/15705838261428959)：论证 ontology 可通过形式化感知、行动、agency 和 responsibility 知识支持可信机器人，同时机器人也能检验 ontology 的建模假设。
+- [Integration of LLMs and the Physical World: Research and Application](https://doi.org/10.1145/3674399.3674402)：综述 LLM 连接物理世界任务的方式，包括 IoT sensing、embodied-agent post-training、机器人任务规划和智能家居案例。
+- [A Systematic Literature Review on Multi-Robot Task Allocation](https://doi.org/10.1145/3700591)：系统综述 multi-robot task allocation，分类比较用于机器人团队任务协调的分配算法和证据。
+- [A Comprehensive Review of Humanoid Robots](https://doi.org/10.1002/smb2.12008)：综述人形机器人进展，重点覆盖头部与身体设计、运动控制、感知、智能操作、挑战和未来方向。
+- [Developing an Urban Landscape Fumigation Service Robot: A Machine-Learned, Gen-AI-Based Design Trade Study](https://doi.org/10.3390/app15042061)：综述具身与 VLA 智能体的方法谱系、任务边界、证据来源与开放挑战。
+- [Trust as a design principle in human–robot collaboration: a review of explainable and adaptive control](https://doi.org/10.1007/s10462-026-11554-1)：综述具身与 VLA 智能体的方法谱系、任务边界、证据来源与开放挑战。
+- [Embodied Autonomous Intelligence: A Historical Perspective](https://doi.org/10.1088/1757-899x/1343/1/012011)：从控制论到机器人学和神经模型追溯 embodied autonomous intelligence，对比整体式 survival-oriented agency 与模块化认知功能模型。
+- [Within arm's reach: A path forward for robot dexterity](https://doi.org/10.1126/scirobotics.aee5782)：提出用人类数据进行 visuotactile pretraining，可提升在仿真中训练的灵巧操作策略。
+- [Vision Language Action Models for Embodied Intelligence A Structured Taxonomy Critical Analysis and Future Research Directions](https://doi.org/10.66279/292sm294)：用结构化 taxonomy 综述 embodied intelligence 中的 VLA 模型，连接视觉感知、语言推理、物理控制、通用机器人和未来研究方向。
+- [A Systematic Review of Deep Reinforcement Learning for Legged Robot Locomotion](https://doi.org/10.3390/instruments10010008)：按 PRISMA 系统综述腿式机器人 locomotion 的 DRL 方法，覆盖平台、测量、benchmarking practice、动态稳定、鲁棒性和 sim-to-real adaptation。
+- [Understanding Prompt Construction and Interaction Challenges in LLM-Based Multi-Robot Systems for Spatial Tasks](https://doi.org/10.1145/3772363.3798326)：研究用户如何在 VR 空间任务中提示 LLM-based 多机器人系统，识别任务分解、分配、澄清和执行中的交互挑战。
+- [Task Scheduling with Mobile Robots - A Systematic Literature Review](https://doi.org/10.3390/robotics14060075)：系统综述智能作业车间中的移动机器人任务调度，覆盖 JSSP/TSP 扩展、机器人分配、行驶时间、RL、混合优化和路径规划整合。
+- [Artificial Intelligence-Driven and Bio-Inspired Control Strategies for Industrial Robotics: A Systematic Review of Trends, Challenges, and Sustainable Innovations Toward Industry 5.0](https://doi.org/10.3390/machines13080666)：系统综述 Industry 5.0 中 AI-driven 与 bio-inspired 工业机器人控制，覆盖自适应控制、DRL、数字孪生、HRC、可持续性和网络安全。
+- [A comprehensive review of dexterous robotic hands: design, implementation, and evaluation](https://doi.org/10.1088/1748-3190/ade7e1)：综述灵巧机械手设计与评估，覆盖手指数、传动、驱动、传感、抓取灵巧性、操作灵巧性以及解析式或学习式控制方法。
+- [Recent Advances in Human–Robot Interactions](https://doi.org/10.3390/app15126850)：综述 HRI 中的交互模型、认知通信、计算机视觉、服务机器人和应用场景，强调感知与自适应交互如何影响机器人部署。
+- [AI-Driven Control Strategies for Biomimetic Robotics: Trends, Challenges, and Future Directions](https://doi.org/10.3390/biomimetics10070460)：综述 AI-driven 仿生机器人控制，组织 locomotion、感知、认知学习、ML/DL/RL 控制方法和未来自适应机器人挑战。
+- [A Review of Human Intention Recognition Frameworks in Industrial Collaborative Robotics](https://doi.org/10.3390/robotics14120174)：梳理具身智能与 VLA 能力相关的方法、风险、评测实践或分类框架。
+- [Safety Engineering for Humanoid Robots in Everyday Life—Scoping Review](https://doi.org/10.3390/electronics14234734)：梳理具身智能与 VLA 能力相关的方法、风险、评测实践或分类框架。
+- [Human–Robot Interaction in Indoor Mobile Robotics: Current State, Interaction Modalities, Applications, and Future Challenges](https://doi.org/10.3390/s26061840)：梳理具身智能与 VLA 能力相关的方法、风险、评测实践或分类框架。
+- [Conversational Agents in Augmented Reality: A Systematic Review](https://doi.org/10.1145/3815590)：综述或系统化梳理具身智能体、机器人、VLA 策略与动作反馈环，用于补充方法谱系、任务边界、风险与开放问题。
+- [A survey on generative nonverbal facial behavior for highly realistic embodied agents](https://doi.org/10.1007/s11370-025-00674-2)：综述或系统化梳理具身智能体、机器人、VLA 策略与动作反馈环，用于补充方法谱系、任务边界、风险与开放问题。
+- [A Generational Review of Human Robot Interaction: The Evolution and Development of Socially Autonomous Robots](https://doi.org/10.53759/7669/jmc202606028)：梳理具身与 VLA 系统的方法、风险、数据集或评测实践。
+- [A comprehensive review of recent advancements in vision-and-language navigation](https://doi.org/10.1007/s10791-026-09977-z)：综述视觉语言导航方法的最新进展。
+- [Reinforced Intelligence Through Active Interaction in Real World: A Survey on Embodied AI](https://doi.org/10.1007/s12555-025-0127-1)：综述具身 AI 或机器人智能体系统；核心思想是梳理具身智能体的任务、通信、交互或技能分类。
+- [A process-centric manipulation taxonomy for the organization, classification and synthesis of tactile robot skills](https://doi.org/10.1038/s42256-025-01045-3)：综述具身 AI 或机器人智能体系统；核心思想是梳理具身智能体的任务、通信、交互或技能分类。
+- [A review of learning-based dynamics models for robotic manipulation](https://doi.org/10.1126/scirobotics.adt1497)：综述机器人导航、操作或具身策略方法。
+- [Orchestrating Embodied Systems through the Embodied Context Protocol: Motivation, Progress, and Directions](https://doi.org/10.34133/research.1047)：综述具身 AI 或机器人智能体系统；核心思想是梳理具身智能体的任务、通信、交互或技能分类。

@@ -6,20 +6,361 @@
 - [FActScore](https://arxiv.org/abs/2305.14251)（[开源代码](https://github.com/shmsw25/FActScore)）：评测长篇回答的原子事实正确性；核心思想是 `原子事实切分 -> 逐条判定 -> 聚合打分`，并将“可核验性”从主观评价中分离出来。
 - [FELM](https://arxiv.org/abs/2310.00741)：评测 factuality evaluator 本身；核心思想是对 LLM 输出做细粒度片段级事实标注，并覆盖世界知识、数学、推理等多类错误，而不只看百科事实。
 - [RAGTruth](https://arxiv.org/abs/2401.00396)（[开源代码](https://github.com/ParticleMedia/RAGTruth)）：评测 RAG 场景中的词级幻觉；核心思想是收集近 18,000 条 RAG 生成回答并做人工标注，区分 unsupported 与 contradictory claims，专门服务于 RAG 幻觉检测与缓解。
+- [The Dawn After the Dark: An Empirical Study on Factuality Hallucination in Large Language Models](https://arxiv.org/abs/2401.03205)：评测知识密集问答与生成任务中的事实性幻觉；核心思想是区分知识冲突、实体错误和可回答性行为，把幻觉落到具体事实不匹配，而不是只看拒答或准确率。
+- [Propagation and Pitfalls: Reasoning-based Assessment of Knowledge Editing through Counterfactual Tasks](https://arxiv.org/abs/2401.17585)：评测知识编辑能否沿反事实推理链传播；协议分别检查被编辑事实、依赖事实和无关事实，暴露只测单个 edited triple 会漏掉的幻觉式不一致。
+- [Merging Facts, Crafting Fallacies: Evaluating the Contradictory Nature of Aggregated Factual Claims in Long-Form Generations](https://arxiv.org/abs/2402.05629)：评测长篇生成在聚合多个事实声明时产生的矛盾；协议把文本拆成声明，检查单条看似合理的事实组合后是否形成无支撑或互相冲突的结论。
+- [Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation](https://arxiv.org/abs/2402.09267)：建议移至 Model 或暂缓：主要贡献是用于事实性的自评估与修订方法，benchmark 结果是方法证据而非独立可复用基准。
+- [HGOT: Hierarchical Graph of Thoughts for Retrieval-Augmented In-Context Learning in Factuality Evaluation](https://arxiv.org/abs/2402.09390)：建议移至 Agent Harness 或 Model：论文提出用于事实性评估的 hierarchical graph-of-thoughts 检索增强 in-context 方法，而不是主要发布幻觉基准。
+- [Do LLMs Know about Hallucination? An Empirical Investigation of LLM's Hidden States](https://arxiv.org/abs/2402.09733)：评测模型 hidden states 是否能区分幻觉与真实生成；诊断协议把逐层表征和 probing 信号同幻觉标签对齐，把模型对自身事实性的“知晓”作为评测对象。
+- [Comparing Hallucination Detection Metrics for Multilingual Generation](https://arxiv.org/abs/2402.10496)：评测多语言生成中的幻觉检测指标；研究比较不同语言和生成任务上的 metric 行为，指出英语中心事实性或忠实度分数在多语言输出中的失效点。
+- [PEDANTS: Cheap but Effective and Interpretable Answer Equivalence](https://arxiv.org/abs/2402.11161)：评测开放式 QA 评分中的 answer equivalence；方法用低成本、可解释的等价性检查比较候选答案和参考答案，适合处理幻觉评分中“表述不同但事实相同”的情况。
+- [Benchmarking Knowledge Boundary for Large Language Model: A Different Perspective on Model Evaluation](https://arxiv.org/abs/2402.11493)：评测模型是否知道问题事实位于自身知识边界内外；基准强调可回答性和不确定性，把无依据高置信回答作为可测的幻觉模式。
+- [Exploring the Impact of Table-to-Text Methods on Augmenting LLM-based Question Answering with Domain Hybrid Data](https://arxiv.org/abs/2402.12869)：建议移至 Model 或数据生成笔记：主要贡献是研究 table-to-text 增强对领域 QA 的影响，而不是定义幻觉基准。
+- [TofuEval: Evaluating Hallucinations of LLMs on Topic-Focused Dialogue Summarization](https://arxiv.org/abs/2402.13249)：评测 topic-focused dialogue summarization 中的幻觉；数据集和协议把摘要同对话证据比较，检查主题相关性与忠实度，针对对话摘要里的遗漏和无支撑新增内容。
+- [Beyond Probabilities: Unveiling the Misalignment in Evaluating Large Language Models](https://arxiv.org/abs/2402.13887)：评测概率分数与真实正确性之间的不一致；诊断设置检查 likelihood 或 confidence 信号是否对应事实性回答质量，暴露 token probability 掩盖的可靠性失败。
+- [MeTMaP: Metamorphic Testing for Detecting False Vector Matching Problems in LLM Augmented Generation](https://arxiv.org/abs/2402.14480)：用 metamorphic testing 评测 LLM-augmented generation 中的 false vector matching；协议扰动检索或向量匹配条件，检查最近邻证据误导时生成答案是否仍然 grounded。
+- [AttributionBench: How Hard is Automatic Attribution Evaluation?](https://arxiv.org/abs/2402.15089)：评测生成文本的自动归因指标；基准在受控 attribution error 下检验指标能否判断 claim-source support，区分“有引用”与“证据真正支撑”。
+- [Hal-Eval: A Universal and Fine-grained Hallucination Evaluation Framework for Large Vision Language Models](https://arxiv.org/abs/2402.15721)：评测 LVLM 的细粒度视觉幻觉；框架组织 object、attribute、relation 和 scene-level 检查，使多模态事实性错误不只按粗粒度答案准确率计分。
+- [HypoTermQA: Hypothetical Terms Dataset for Benchmarking Hallucination Tendency of LLMs](https://arxiv.org/abs/2402.16211)：用虚构或 hypothetical terms 评测幻觉倾向；数据集询问不存在概念，让编造定义和过度自信解释直接可见。
+- [DiaHalu: A Dialogue-level Hallucination Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2403.00896)：评测 dialogue-level 幻觉而非孤立轮次；基准检查回答是否在多轮交互中保持与对话历史、外部事实和上下文一致。
+- [FENICE: Factuality Evaluation of summarization based on Natural language Inference and Claim Extraction](https://arxiv.org/abs/2403.02270)：用 claim extraction 和自然语言推断评测摘要事实性；指标把摘要拆成可核验声明，再同源文档比较支撑关系，针对无支撑摘要内容。
+- [Benchmarking Hallucination in Large Language Models Based on Unanswerable Math Word Problem](https://arxiv.org/abs/2403.03558)：在不可回答数学应用题上评测幻觉；基准使用信息不足或不可能求解的问题，测试模型是拒答还是编造数值解。
+- [ERBench: An Entity-Relationship based Automatically Verifiable Hallucination Benchmark for Large Language Models](https://arxiv.org/abs/2403.05266)：评测可自动验证的实体关系幻觉；基准以 entity relationship 为检查单元，使回答可以程序化验证，而不依赖宽泛主观判断。
+- [PhD: A ChatGPT-Prompted Visual hallucination Evaluation Dataset](https://arxiv.org/abs/2403.11116)：用 ChatGPT-prompted 数据构造评测图像问答中的视觉幻觉；数据集针对模型提及不存在物体、错误属性或无支撑视觉细节的情况。
+- [WikiFactDiff: A Large, Realistic, and Temporally Adaptable Dataset for Atomic Factual Knowledge Update in Causal Language Models](https://arxiv.org/abs/2403.14364)：用可随时间调整的 Wikipedia-derived atomic facts 评测事实知识更新；数据集支持前后对照检查模型是否保留、更新或幻觉化变化中的事实。
+- [Pensieve: Retrospect-then-Compare Mitigates Visual Hallucination](https://arxiv.org/abs/2403.14401)：建议移至 Model：主要贡献是用于缓解视觉幻觉的 retrospect-then-compare 方法，而不是独立 benchmark artifact。
 - [LongFact](https://arxiv.org/abs/2403.18802)（[开源代码](https://github.com/google-deepmind/long-form-factuality)）：评测长篇生成的事实性与可证据支撑程度；核心思想是把回答拆成可核验的 atomic claims，并用搜索增强的判定协议统计整体 factuality（论文中也包含 LongFact-Objects/Concepts 等设置）。
-- [LLM-AggreFact](https://arxiv.org/abs/2404.10774)（[开源代码](https://github.com/Liyan06/MiniCheck)）：评测 grounded factuality verifier；核心思想是聚合多源事实一致性数据，统一比较检测器在有参考文档场景下判断回答是否被证据支撑的能力。
-- [FACTS Grounding](https://arxiv.org/abs/2501.03200)：评测长文本回答是否被给定证据充分支撑；核心思想是用公开榜单和人工偏好校准的协议比较模型的 grounded factuality，后续扩展到更广义 FACTS factuality leaderboard。
+- [Multi-hop Question Answering under Temporal Knowledge Editing](https://arxiv.org/abs/2404.00492)：评测 temporal knowledge editing 后的多跳 QA；协议检查被编辑的时间敏感事实是否能沿依赖推理链传播，同时避免陈旧或矛盾回答。
+- [Evaluating the Factuality of Large Language Models using Large-Scale Knowledge Graphs](https://arxiv.org/abs/2404.00942)：用大规模知识图谱评测 LLM 事实性；协议把图谱事实转成查询，并用结构化 triples 验证生成答案，强调大规模实体关系正确性。
+- [FABLES: Evaluating faithfulness and content selection in book-length summarization](https://arxiv.org/abs/2404.01261)：通过任务、评测协议或诊断设置评测 Hallucination 能力，适合作为 Bench 条目。
+- [The Hallucinations Leaderboard - An Open Effort to Measure Hallucinations in Large Language Models](https://arxiv.org/abs/2404.05904)（[榜单](https://huggingface.co/spaces/hallucinations-leaderboard/leaderboard)）：把多种幻觉与事实性信号聚合为公开榜单；协议让 factual QA、summarization 和 grounded generation 的模型比较可复现，而不是绑定到单一数据集。
+- [Constructing Benchmarks and Interventions for Combating Hallucinations in LLMs](https://arxiv.org/abs/2404.09971)：结合幻觉 benchmark 构造与缓解实验；作为 Bench 条目，其可复用部分是用于检测无支撑或错误输出的 curated evaluation cases，intervention 部分更适合作为模型侧证据。
+- [LLM-AggreFact](https://arxiv.org/abs/2404.10774)（[开源代码](https://github.com/Liyan06/MiniCheck)，[榜单](https://llm-aggrefact.github.io/)）：评测 grounded factuality verifier；核心思想是聚合多源事实一致性数据，统一比较检测器在有参考文档场景下判断回答是否被证据支撑的能力。
+- [VALOR-EVAL: Holistic Coverage and Faithfulness Evaluation of Large Vision-Language Models](https://arxiv.org/abs/2404.13874)：评测 LVLM 输出的视觉覆盖度与忠实度；基准同时检查生成描述是否覆盖关键图像内容，以及是否引入无支撑物体、属性和关系。
+- [Evaluating Consistency and Reasoning Capabilities of Large Language Models](https://arxiv.org/abs/2404.16478)：评测 reasoning-style prompts 和答案变体下的事实一致性；协议检查模型能否在逻辑相关问题之间保持结论一致，把幻觉表现为不一致推理输出。
+- [THRONE: An Object-Based Hallucination Benchmark for the Free-Form Generations of Large Vision-Language Models](https://arxiv.org/abs/2405.05256)：评测 LVLM 自由生成中的 object hallucination；基准把生成文本中的物体提及映射到图像证据，使 absent-object error 不依赖多选题也能计量。
+- [TimeChara: Evaluating Point-in-Time Character Hallucination of Role-Playing Large Language Models](https://arxiv.org/abs/2405.18027)：评测角色扮演大模型中的特定时间点人物幻觉。
+- [MASSIVE Multilingual Abstract Meaning Representation: A Dataset and Baselines for Hallucination Detection](https://arxiv.org/abs/2405.19285)：用多语言 AMR 标注评测 hallucination detection；数据集和 baseline 借助 meaning representation 识别跨语言语义新增或扭曲。
+- [Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools](https://arxiv.org/abs/2405.20362)：评测商用法律研究工具中的幻觉；研究用法律查询、引用和权威来源检查，衡量伪造案例、无支撑声明和不可靠法律回答。
+- [Machine Against the RAG: Jamming Retrieval-Augmented Generation with Blocker Documents](https://arxiv.org/abs/2406.05870)：评测阻塞文档如何干扰检索增强生成系统。
+- [HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs](https://arxiv.org/abs/2406.06027)：评测 hyper-relational knowledge graph 上的多跳 QA；基准压力测试模型能否基于 qualifier 和高阶关系 grounding 答案，而不是幻觉化成简化二元事实。
+- [HalluDial: A Large-Scale Benchmark for Automatic Dialogue-Level Hallucination Evaluation](https://arxiv.org/abs/2406.07070)：提出或分析面向有依据生成、检索增强与幻觉控制的基准、数据集或评测协议。
+- [Understanding Sounds, Missing the Questions: The Challenge of Object Hallucination in Large Audio-Language Models](https://arxiv.org/abs/2406.08402)：评测 audio-language model 的 object hallucination；协议询问不存在、模糊或仅由声音暗示的物体和事件，测试模型是否从声音中编造视觉式实体。
+- [DefAn: Definitive Answer Dataset for LLMs Hallucination Evaluation](https://arxiv.org/abs/2406.09155)：通过有确定可验证答案的问题评测幻觉；数据集支持检查模型给出精确已知答案、拒答，还是生成无支撑替代答案。
+- [MFC-Bench: Benchmarking Multimodal Fact-Checking with Large Vision-Language Models](https://arxiv.org/abs/2406.11288)：评测 LVLM 的多模态事实核查；基准把 claim 与视觉和文本证据配对，考察模型能否基于多模态证据 verify、refute 或 abstain。
+- [RepLiQA: A Question-Answering Dataset for Benchmarking LLMs on Unseen Reference Content](https://arxiv.org/abs/2406.11811)：提出或分析面向有依据生成、检索增强与幻觉控制的基准、数据集或评测协议。
+- [BeHonest: Benchmarking Honesty in Large Language Models](https://arxiv.org/abs/2406.13261)：评测 LLM 是否诚实承认不确定或未知；基准把 honesty 落到回答、拒答和置信行为上，使过度自信编造成为可测失败。
+- [VideoHallucer: Evaluating Intrinsic and Extrinsic Hallucinations in Large Video-Language Models](https://arxiv.org/abs/2406.16338)：评测 video-language model 的 intrinsic 与 extrinsic hallucination；基准区分关于可见视频内容的错误和无支撑外部新增内容，覆盖时间事件与物体。
+- [Evaluating and Analyzing Relationship Hallucinations in Large Vision-Language Models](https://arxiv.org/abs/2406.16449)：评测 LVLM 输出中的 relation hallucination；协议聚焦错误的主体-客体关系和交互，是 object-only 幻觉检查容易漏掉的失效模式。
+- [VERISCORE: Evaluating the factuality of verifiable claims in long-form text generation](https://arxiv.org/abs/2406.19276)：通过任务、评测协议或诊断设置评测 Hallucination 能力，适合作为 Bench 条目。
+- [STORYSUMM: Evaluating Faithfulness in Story Summarization](https://arxiv.org/abs/2407.06501)：评测故事摘要的忠实度；基准把 plot、character 和 event consistency 同长篇叙事源文比较，针对压缩故事线时产生的幻觉。
+- [HaloQuest: A Visual Hallucination Dataset for Advancing Multimodal Reasoning](https://arxiv.org/abs/2407.15680)：评测视觉问答中的多模态幻觉；数据集混合真实与合成图像，覆盖 false premise、上下文不足和视觉挑战案例，既可作 VLM 基准也可作微调资源。
+- [Multilingual Fine-Grained News Headline Hallucination Detection](https://arxiv.org/abs/2407.15975)：评测 Multilingual Fine-Grained News Headline Hallucination Detection，为 Hallucination 补充可复用的数据集、基准、指标或评测协议。
+- [WildHallucinations: Evaluating Long-form Factuality in LLMs with Real-World Entity Queries](https://arxiv.org/abs/2407.17468)：补充幻觉方向的基准、数据集、挑战、指标或评测协议。
+- [RAGEval: Scenario Specific RAG Evaluation Dataset Generation Framework](https://arxiv.org/abs/2408.01262)：通过 schema-based 流程生成特定场景的 RAG 文档、问题、答案和参考答案；评分把 completeness、hallucination 与 irrelevance 分开，避免把 grounded answer 质量压成单一准确率。
+- [Hallu-PI: Evaluating Hallucination in Multi-modal Large Language Models within Perturbed Inputs](https://arxiv.org/abs/2408.01355)：补充幻觉与事实性能力的评测资源或协议。
+- [Zero-shot Factual Consistency Evaluation Across Domains](https://arxiv.org/abs/2408.04114)：在 22 个数据集上统一评测 source-target factual consistency，覆盖 NLI、摘要评估、事实性验证和 factual consistency 任务；重点是零样本跨领域泛化，而不是单一摘要基准。
+- [Order Matters in Hallucination: Reasoning Order as Benchmark and Reflexive Prompting for Large-Language-Models](https://arxiv.org/abs/2408.05093)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充幻觉与事实性方向的基准覆盖。
+- [Reefknot: A Comprehensive Benchmark for Relation Hallucination Evaluation, Analysis and Mitigation in Multimodal Large Language Models](https://arxiv.org/abs/2408.09429)：通过基准、数据集或评测协议评估幻觉与事实性能力。
+- [A Comparative Analysis of Faithfulness Metrics and Humans in Citation Evaluation](https://arxiv.org/abs/2408.12398)：评测自动 faithfulness 指标是否贴近人工 citation support 判断；框架使用 full、partial、no support 三档标签，并结合相关性、分类和检索分析，针对二分类以外的引用支撑失败。
+- [GroUSE: A Benchmark to Evaluate Evaluators in Grounded Question Answering](https://arxiv.org/abs/2409.06595)：对 grounded QA 中的 LLM-as-judge 做元评测；144 个 unit tests 覆盖七类 RAG 生成失败模式，检查自动评估器是否能校准地发现无支撑或不完整回答。
+- [THaMES: An End-to-End Tool for Hallucination Mitigation and Evaluation in Large Language Models](https://arxiv.org/abs/2409.11353)：把 corpus-driven hallucination 测试集生成、benchmarking 与缓解策略打包到同一工具；评测部分用 counterfactual validation 构造领域测试，并衡量生成和二分类任务中的幻觉检测或降低效果。
+- [Evaluating Image Hallucination in Text-to-Image Generation with Question-Answering](https://arxiv.org/abs/2409.12784)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充幻觉与事实性方向的基准覆盖。
+- [FIHA: Autonomous Hallucination Evaluation in Vision-Language Models with Davidson Scene Graphs](https://arxiv.org/abs/2409.13612)：无须人工标注或 LLM judge 即可评测 LVLM 细粒度幻觉；Davidson scene graph 自动生成图像和 caption 问答检查，覆盖物体、属性、关系及其依赖，FIHA-v1 使用 MSCOCO 与 Foggy 图像构成。
+- [FaithEval: Can Your Language Model Stay Faithful to Context, Even If "The Moon is Made of Marshmallows"](https://arxiv.org/abs/2410.03727)：评测模型在不可回答、矛盾和反事实检索上下文中的忠实度；4.9K 个问题经过分阶段上下文构造与验证，专门检查 RAG 模型是否服从给定证据而非参数记忆。
+- [LongHalQA: Long-Context Hallucination Evaluation for MultiModal Large Language Models](https://arxiv.org/abs/2410.09962)：围绕幻觉能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [On A Scale From 1 to 5: Quantifying Hallucination in Faithfulness Evaluation](https://arxiv.org/abs/2410.12222)：用 rubric-based 1 到 5 分 LLM 打分评测 guided NLG 忠实度；研究还合成旅游领域 unfaithful examples 并估计 hallucination percentage，对比 LLM judge 与 NLI 模型的判分敏感性。
+- [The Curse of Multi-Modalities: Evaluating Hallucinations of Large Multimodal Models across Language, Visual, and Audio](https://arxiv.org/abs/2410.12787)：评测语言、视觉和音频输入共同作用下的 LMM 幻觉；CMM 分离 unimodal prior 过度依赖和跨模态虚假相关，使多模态 grounding 失败不局限于图文基准。
+- [FaithBench: A Diverse Hallucination Benchmark for Summarization by Modern LLMs](https://arxiv.org/abs/2410.13210)：补充幻觉与事实性能力的评测资源或协议。
+- [Latent Space Chain-of-Embedding Enables Output-free LLM Self-Evaluation](https://arxiv.org/abs/2410.13640)：从 hidden-state trajectory 而非最终输出评测回答正确性；Chain-of-Embedding 把推理过程中的逐步表征视作 latent thinking path，检验正确和错误回答在不同领域与模型中是否可分。
+- [Can Knowledge Editing Really Correct Hallucinations?](https://arxiv.org/abs/2410.16251)：围绕 Hallucination 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models](https://arxiv.org/abs/2410.18325)：评测 audio-visual LLM 是否能保持声音与图像证据之间的细微关系；基准针对一侧模态证据冲突或不足时模型仍推断无支撑事件、物体的跨模态幻觉。
+- [FactBench: A Dynamic Benchmark for In-the-Wild Language Model Factuality Evaluation](https://arxiv.org/abs/2410.22257)：补充幻觉与事实性能力的评测资源或协议。
+- [Unified Triplet-Level Hallucination Evaluation for Large Vision-Language Models](https://arxiv.org/abs/2410.23114)：围绕幻觉能力给出基准、数据集、挑战、指标或诊断协议，是可复核的 Bench 候选。
+- [DetectRL: Benchmarking LLM-Generated Text Detection in Real-World Scenarios](https://arxiv.org/abs/2410.23746)：评测真实滥用场景中的 LLM 生成文本检测器；数据来自高风险领域的人写文本和模型文本，并加入 adversarial prompts、人工改写、词替换和拼写噪声来测试鲁棒性。
+- [The Automated Verification of Textual Claims (AVeriTeC) Shared Task](https://arxiv.org/abs/2410.23850)（[榜单](https://huggingface.co/spaces/fever/AVeriTeC)）：围绕 Hallucination 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Decomposition Dilemmas: Does Claim Decomposition Boost or Burden Fact-Checking Performance?](https://arxiv.org/abs/2411.02400)：围绕 Hallucination 能力提供可复用的任务、数据集、协议或指标，可作为 Bench 条目。
+- [Measuring short-form factuality in large language models](https://arxiv.org/abs/2411.04368)：提出 SimpleQA，用单一且无争议答案的短事实问题评测模型；回答被标为 correct、incorrect 或 not attempted，直接衡量模型是否知道何时该作答、何时不应自信编造。
+- [Ev2R: Evaluating Evidence Retrieval in Automated Fact-Checking](https://arxiv.org/abs/2411.05375)：提出或分析面向hallucination, factuality, or verification capability的基准、数据集、指标或评测协议。
+- [From General to Specific: Utilizing General Hallucination to Benchmark Specific Role-Playing Agents](https://arxiv.org/abs/2411.07965)：通过 stance transfer 评测角色扮演 LLM 的 interactive hallucination；SHARP 从 commonsense graph 关系构造多角色互动，检查角色风格是否遮蔽或扭曲底层知识。
+- [Piecing It All Together: Verifying Multi-Hop Multimodal Claims](https://arxiv.org/abs/2411.09547)：作为幻觉与事实性的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [VidHal: Benchmarking Temporal Hallucinations in Vision LLMs](https://arxiv.org/abs/2411.16771)：评测 VLLM 的视频 temporal hallucination；caption-ordering 任务要求模型按幻觉严重程度排序同一视频的不同 caption，捕捉图像基准容易漏掉的时空错误。
+- [Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models](https://arxiv.org/abs/2412.04939)：评测 MLLM 的动词和动作概念幻觉；基准把重点从 object noun 转向 human action，并检验 object hallucination 缓解方法是否也能减少无支撑动词。
+- [ViCaS: A Dataset for Combining Holistic and Pixel-level Video Understanding using Captions with Grounded Segmentation](https://arxiv.org/abs/2412.09754)：作为幻觉与事实性的基准条目，标题显示其贡献不是单一应用结果，而是可复用的方法、评测或综述线索。
+- [Unanswerability Evaluation for Retrieval Augmented Generation](https://arxiv.org/abs/2412.12300)：提出 UAEval4RAG 来评测 RAG 的可回答与不可回答行为；框架定义六类 unanswerable query，并报告 unanswered ratio 与 acceptable ratio，暴露检索证据不足时仍编造答案的系统。
+- [ComparisonQA: Evaluating Factuality Robustness of LLMs Through Knowledge Frequency Control and Uncertainty](https://arxiv.org/abs/2412.20251)：提供面向幻觉与事实性的基准、数据集、挑战任务或评测协议。
+- [Comprehensive Evaluation of AI Hallucination and Novel UV-Oriented Framework toward Safe and Trustworthy AI](https://doi.org/10.1109/uv63228.2024.11189137)：评测，主要面向 Hallucination。
+- [LENS: Layers of Evaluation of Hallucination in GenAI Systems](https://doi.org/10.1109/uv63228.2024.11189150)：评测，主要面向 Hallucination。
+- [ACUEval: Fine-grained Hallucination Evaluation and Correction for Abstractive Summarization](https://doi.org/10.18653/v1/2024.findings-acl.597)：通过把摘要拆成 atomic content units 并逐项同源文验证，评测 abstractive summarization 的忠实度；两步指标比单一 factuality 分数更可解释，也降低了对 LLM 生成摘要的偏好偏差。
+- [LLM Factoscope: Uncovering LLMs' Factual Discernment through Measuring Inner States](https://doi.org/10.18653/v1/2024.findings-acl.608)：评测 LLM inner states 是否包含事实性判别信号；Factoscope 用 Siamese network 分类 hidden-state patterns，区分 factual 与 non-factual generation。
+- [Evaluating Text Summarization Techniques and Factual Consistency with Language Models](https://doi.org/10.1109/bigdata62323.2024.10826032)：面向幻觉与事实性，补充评测基准、数据集、协议或指标。
+- [SummaCoz: A Dataset for Improving the Interpretability of Factual Consistency Detection for Summarization](https://doi.org/10.18653/v1/2024.findings-emnlp.210)：补充面向幻觉、事实性与可信落地的评测、数据集或度量信号。
+- [Assessing Factual Reliability of Large Language Model Knowledge](https://doi.org/10.18653/v1/2024.naacl-long.46)：补充幻觉方向的基准、数据集、挑战、指标或评测协议。
+- [Entity hallucination index for text summarization models](https://doi.org/10.1108/aci-09-2024-0371)：围绕幻觉检测与事实一致性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [AVTrustBench: Assessing and Enhancing Reliability and Robustness in Audio-Visual LLMs](https://arxiv.org/abs/2501.02135)：音视频多模态可靠性与鲁棒性评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [FACTS Grounding](https://arxiv.org/abs/2501.03200)（[榜单](https://www.kaggle.com/facts-leaderboard)）：评测长文本回答是否被给定证据充分支撑；核心思想是用公开榜单和人工偏好校准的协议比较模型的 grounded factuality，后续扩展到更广义 FACTS factuality leaderboard。
+- [HALoGEN: Fantastic LLM Hallucinations and Where to Find Them](https://arxiv.org/abs/2501.08292)：面向 LLM 生成输出的幻觉基准；核心思想是在受控生成场景中暴露虚构细节，而不只测试短事实问答。
+- [OnionEval: An Unified Evaluation of Fact-conflicting Hallucination for Small-Large Language Models](https://arxiv.org/abs/2501.12975)：OnionEval 统一评测 fact-conflicting hallucination，适合 hallucination benchmark。
 - [HLE-Verified](https://arxiv.org/abs/2501.14249)（数据集：[lmms-lab/HLE-Verified](https://huggingface.co/datasets/lmms-lab/HLE-Verified)）：高难知识问答的人工审核可验证子集；核心思想是通过筛题与核验提升“可判定性”，更适合做可靠性/事实性压力测试。
+- [Context-Aware Object-Similarity Hallucination Evaluation](https://arxiv.org/abs/2501.15046)：用 context-aware object similarity 评估 LVLM 幻觉，为 hallucination benchmark 增加视觉对象混淆轴。
+- [Annotation Tool and Dataset for Fact-Checking Podcasts](https://arxiv.org/abs/2502.01402)：面向 podcast fact-checking 的标注工具和数据集。核心思想是支持多语口语内容中的声明抽取与验证，而不只处理书面文章。
+- [HintsOfTruth: A Multimodal Checkworthiness Detection Dataset with Real and Synthetic Claims](https://arxiv.org/abs/2502.11753)：评测事实核查前置环节的多模态 checkworthiness detection；数据集包含 27K 个真实和合成 image-claim pair，测试模型能否在下游事实核查前识别值得核验的声明。
+- [HalluEntity: Benchmarking and Understanding Entity-Level Hallucination Detection](https://arxiv.org/abs/2502.11948)：HalluEntity 评测实体级 hallucination detection，补足细粒度 hallucination benchmark。
+- [How Much Do LLMs Hallucinate across Languages? On Realistic Multilingual Estimation of LLM Hallucination](https://arxiv.org/abs/2502.12769)：它围绕 factuality、citation、hallucination 或事实一致性构造评测，适合补充 hallucination Bench。
+- [MCQA-Eval: Efficient Confidence Evaluation in NLG with Gold-Standard Correctness Labels](https://arxiv.org/abs/2502.14268)：评什么：以 gold correctness labels 评估生成任务中的置信度可靠性，可补充幻觉与拒答评测。
+- [MedHallu: A Comprehensive Benchmark for Detecting Medical Hallucinations in Large Language Models](https://arxiv.org/abs/2502.14302)：评估医学大模型输出中的幻觉检测。
+- [SegSub](https://arxiv.org/abs/2502.14908)：评什么：VLM 在定向图像扰动下对跨模态知识冲突和幻觉的鲁棒性。核心思想：构造反事实和来源冲突条件，测试模型是依赖视觉证据还是从参数知识中幻觉。
+- [Understanding and Evaluating Hallucinations in 3D Visual Language Models](https://arxiv.org/abs/2502.15888)：研究并评测三维视觉语言模型中的幻觉。
+- [Bi'an: A Bilingual Benchmark and Model for Hallucination Detection in Retrieval-Augmented Generation](https://arxiv.org/abs/2502.19209)：面向 RAG 幻觉检测的双语 benchmark；核心思想是检查评测器能否在双语证据与回答设置中发现无支持的 RAG 答案。
+- [Consistency Evaluation of News Article Summaries Generated by Large (and Small) Language Models](https://arxiv.org/abs/2502.20647)：评测事实性或幻觉；核心思想是测试生成答案是否正确、受证据支持或与来源一致。
+- [HalCECE: A Framework for Explainable Hallucination Detection through Conceptual Counterfactuals in Image Captioning](https://arxiv.org/abs/2503.00436)：围绕幻觉检测与事实一致性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [Evaluating LLMs' Assessment of Mixed-Context Hallucination Through the Lens of Summarization](https://arxiv.org/abs/2503.01670)：面向混合上下文摘要的幻觉评估 benchmark。核心思想是测试 judge 能否处理同时涉及篇章忠实性和世界事实性的错误，而不只看单一上下文。
+- [TGEA: An Error-Annotated Dataset and Benchmark Tasks for TextGeneration from Pretrained Language Models](https://arxiv.org/abs/2503.04232)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
 - [HalluVerse25](https://arxiv.org/abs/2503.07833)：评测细粒度多语言幻觉检测；核心思想是在英语、阿拉伯语和土耳其语中标注实体、关系和句子级幻觉，避免只看英语事实问答。
+- [TRUTH DECAY: Quantifying Multi-Turn Sycophancy in Language Models](https://arxiv.org/abs/2503.11656)：量化多轮对话中的迎合性退化。
+- [Deceptive Humor: A Synthetic Multilingual Benchmark Dataset for Bridging Fabricated Claims with Humorous Content](https://arxiv.org/abs/2503.16031)：面向 deceptive humor 的合成多语 benchmark。核心思想是测试模型能否在错误信息被幽默包装时识别虚假主张。
+- [Poly-FEVER: A Multilingual Fact Verification Benchmark for Hallucination Detection in Large Language Models](https://arxiv.org/abs/2503.16541)：Poly-FEVER 评测用于幻觉检测的多语言事实核查能力。
+- [Exploring Hallucination of Large Multimodal Models in Video Understanding: Benchmark, Analysis and Mitigation](https://arxiv.org/abs/2503.19622)：大多模态模型视频幻觉诊断评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [HausaNLP at SemEval-2025 Task 3: Towards a Fine-Grained Model-Aware Hallucination Detection](https://arxiv.org/abs/2503.19650)：补充面向幻觉治理能力的可复用基准、数据集、测试平台或评测协议。
+- [DASH: Detection and Assessment of Systematic Hallucinations of VLMs](https://arxiv.org/abs/2503.23573)：在开放世界图像中大规模发现 VLM 系统性物体幻觉，通过检索式发现流程补充小规模人工标注幻觉集。
+- [RECKON: Large-scale Reference-based Efficient Knowledge Evaluation for Large Language Model](https://arxiv.org/abs/2504.00756)：为幻觉与事实性补充基准、数据集、指标或评测协议。
+- [Catch Me if You Search: When Contextual Web Search Results Affect the Detection of Hallucinations](https://arxiv.org/abs/2504.01153)：评什么：评测上下文网页搜索结果如何影响幻觉检测。
+- [Prompt-Reverse Inconsistency: LLM Self-Inconsistency Beyond Generative Randomness and Prompt Paraphrasing](https://arxiv.org/abs/2504.01282)：提供用于衡量该能力的任务、数据集、协议或诊断评测，补充幻觉与事实性方向的基准覆盖。
+- [HalluShift: Measuring Distribution Shifts towards Hallucination Detection in LLMs](https://arxiv.org/abs/2504.09482)：评测 hallucination 检测在分布变化下的表现，而不只看静态数据集。
+- [C-FAITH: A Chinese Fine-Grained Benchmark for Automated Hallucination Evaluation](https://arxiv.org/abs/2504.10167)：中文细粒度自动幻觉评测 benchmark；核心思想是以更细事实单元检查幻觉，减少对粗粒度人工标签的依赖。
+- [SemEval-2025 Task 3: Mu-SHROOM, the Multilingual Shared Task on Hallucinations and Related Observable Overgeneration Mistakes](https://arxiv.org/abs/2504.11975)：多语 hallucination 与 overgeneration mistake shared task；核心思想是在多语言输出错误上评测检测器，而不是只看英文事实问答。
+- [RePOPE: Impact of Annotation Errors on the POPE Benchmark](https://arxiv.org/abs/2504.15707)：重新标注 POPE，研究标签错误如何影响视觉物体幻觉评测和模型排名。
 - [HalluLens](https://arxiv.org/abs/2504.17550)（[开源代码](https://github.com/facebookresearch/HalluLens)）：统一评测 intrinsic/extrinsic hallucination；核心思想是先澄清幻觉与 factuality 的边界，再用可动态生成的 extrinsic 测试减少数据泄漏与饱和。
+- [Evaluating Evaluation Metrics - The Mirage of Hallucination Detection](https://arxiv.org/abs/2504.18114)：幻觉检测指标可靠性研究。核心思想是跨任务与跨领域压力测试 factuality 指标，揭示指标幻象。
 - [HalluMix](https://arxiv.org/abs/2505.00506)（数据集：[quotientai/HalluMix](https://huggingface.co/datasets/quotientai/HalluMix)）：评测真实多域、长短上下文下的 hallucination detection；核心思想是覆盖 RAG 场景中的多文档与整句输出，检查检测器在任务和上下文长度变化下是否稳健。
+- [Triggering Hallucinations in LLMs: A Quantitative Study of Prompt-Induced Hallucination in Large Language Models](https://arxiv.org/abs/2505.00557)：补充面向幻觉、事实性与可信落地的评测、数据集或度量信号。
+- [VideoHallu: Evaluating and Mitigating Multi-modal Hallucinations on Synthetic Video Understanding](https://arxiv.org/abs/2505.01481)：用于评测和缓解合成视频理解中多模态幻觉的基准；核心思想是检验视频回答是否真正受可见时序证据支撑。
+- [mmRAG: A Modular Benchmark for Retrieval-Augmented Generation over Text, Tables, and Knowledge Graphs](https://arxiv.org/abs/2505.11180)：评测RAG, factuality, grounding, or hallucination control，补充该能力方向的基准或挑战设置。
+- [What Are They Talking About? A Benchmark of Knowledge-Grounded Discussion Summarization](https://arxiv.org/abs/2505.12474)：评测 knowledge-grounded discussion summarization，适合 grounded generation 可靠性。
 - [MultiHal](https://arxiv.org/abs/2505.14101)：评测知识图谱支撑的多语言多跳幻觉；核心思想是从开放知识图谱中构造高质量 KG 路径，让生成式评测同时检查事实关系、跨语言表达和图结构证据对齐。
-- [PhD](https://openaccess.thecvf.com/content/CVPR2025/html/Liu_PhD_A_ChatGPT-Prompted_Visual_Hallucination_Evaluation_Dataset_CVPR_2025_paper.html)：评测 MLLM 的视觉幻觉。核心思想：用 ChatGPT 提示生成的图像问题样例，检查多模态模型是否回答出无视觉支撑的物体、属性或关系。
+- [Long-Form Information Alignment Evaluation Beyond Atomic Facts](https://arxiv.org/abs/2505.15792)：它围绕 factuality、citation、hallucination 或事实一致性构造评测，适合补充 hallucination Bench。
+- [Too Consistent to Detect: A Study of Self-Consistent Errors in LLMs](https://arxiv.org/abs/2505.17656)：研究大模型自一致错误模式，为识别通过一致性检查仍会残留的幻觉提供评测视角。
+- [CCHall: A Novel Benchmark for Joint Cross-Lingual and Cross-Modal Hallucinations Detection in Large Language Models](https://arxiv.org/abs/2505.19108)：跨语言与跨模态联合幻觉检测基准。核心思想是评估语言迁移和模态迁移相互作用下的幻觉。
+- [When Slower Isn't Truer: Inverse Scaling Law of Truthfulness in Multimodal Reasoning](https://arxiv.org/abs/2505.20214)：可作为“幻觉与真实性 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [CogniBench: A Legal-inspired Framework and Dataset for Assessing Cognitive Faithfulness of Large Language Models](https://arxiv.org/abs/2505.20767)：评测上下文支撑回答中的 cognitive faithfulness；核心思想是不只检查复述式事实，还检查推断性陈述是否被给定上下文支持。
+- [MSA at SemEval-2025 Task 3: High Quality Weak Labeling and LLM Ensemble Verification for Multilingual Hallucination Detection](https://arxiv.org/abs/2505.20880)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [RelationalFactQA: A Benchmark for Evaluating Tabular Fact Retrieval from Large Language Models](https://arxiv.org/abs/2505.21409)：评测 LLM 的表格事实检索能力；核心思想是要求结构化、多记录事实输出，暴露短答案 factuality benchmark 难以发现的错误。
+- [More Thinking, Less Seeing? Assessing Amplified Hallucination in Multimodal Reasoning Models](https://arxiv.org/abs/2505.21523)：评测更长多模态推理链如何偏离图像证据并放大 hallucination。
+- [ScEdit: Script-based Assessment of Knowledge Editing](https://arxiv.org/abs/2505.23291)：可作为幻觉与事实性的 Bench 候选：围绕 ScEdit: Script-based Assessment of Knowledge Editing 提供可比较的评测任务、数据或分析协议。
+- [UAQFact: Evaluating Factual Knowledge Utilization of LLMs on Unanswerable Questions](https://arxiv.org/abs/2505.23461)：评测模型在不可回答问题中利用事实知识的能力；核心思想是检查模型能否识别证据不足或前提错误的问题，而不是依赖参数知识编造答案。
+- [MIRAGE: Assessing Hallucination in Multimodal Reasoning Chains of MLLM](https://arxiv.org/abs/2505.24238)：MIRAGE 评测多模态推理链中的 hallucination，补足过程级多模态幻觉评测。
 - [ODE](https://openaccess.thecvf.com/content/CVPR2025/html/Tu_ODE_Open-Set_Evaluation_of_Hallucinations_in_Multimodal_Large_Language_Models_CVPR_2025_paper.html)：评测 MLLM 的开放集幻觉。核心思想：把物体与属性存在性测试做得更动态，避免视觉幻觉诊断过度绑定固定闭集标签空间。
+- [PhD](https://openaccess.thecvf.com/content/CVPR2025/html/Liu_PhD_A_ChatGPT-Prompted_Visual_Hallucination_Evaluation_Dataset_CVPR_2025_paper.html)：评测 MLLM 的视觉幻觉。核心思想：用 ChatGPT 提示生成的图像问题样例，检查多模态模型是否回答出无视觉支撑的物体、属性或关系。
+- [RARE: Retrieval-Aware Robustness Evaluation for Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2506.00789)：评测RAG, factuality, grounding, or hallucination control，补充该能力方向的基准或挑战设置。
+- [COMPKE: Complex Question Answering under Knowledge Editing](https://arxiv.org/abs/2506.00829)：可作为幻觉与事实性的 Bench 候选：围绕 COMPKE: Complex Question Answering under Knowledge Editing 提供可比较的评测任务、数据或分析协议。
+- [LAQuer: Localized Attribution Queries in Content-grounded Generation](https://arxiv.org/abs/2506.01187)：评测 grounded generation 中的 localized attribution；核心思想是把用户选择的输出片段映射到来源片段，而不只是把整句链接到文档。
+- [CiteEval: Principle-Driven Citation Evaluation for Source Attribution](https://arxiv.org/abs/2506.01829)：CiteEval 针对 source attribution 做原则驱动评测，补足引用真实性和证据归因评估。
+- [Facts are Harder Than Opinions - A Multilingual, Comparative Analysis of LLM-Based Fact-Checking Reliability](https://arxiv.org/abs/2506.03655)：面向 LLM fact-checking reliability 的多语比较 benchmark。核心思想是用大规模 claim set 比较不同语言和主题下的事实与观点核查能力。
+- [Joint Evaluation of Answer and Reasoning Consistency for Hallucination Detection in Large Reasoning Models](https://arxiv.org/abs/2506.04832)：联合评测答案与推理一致性，用于大型推理模型的幻觉检测。
+- [CLATTER: Comprehensive Entailment Reasoning for Hallucination Detection](https://arxiv.org/abs/2506.05243)：可作为幻觉与事实性的Bench候选；核心关注“Comprehensive Entailment Reasoning for Hallucination Detection”。
+- [Evaluating LLM-Contaminated Crowdsourcing Data Without Ground Truth](https://arxiv.org/abs/2506.06991)：评测没有 gold label 时如何发现 LLM 辅助的众包标签污染；peer-prediction 协议在控制 LLM-generated labels 后比较工人答案相关性，关注人类反馈数据被模型生成内容污染的问题。
+- [ConfQA: Answer Only If You Are Confident](https://arxiv.org/abs/2506.07309)：可作为幻觉与事实性的Bench候选；核心关注“Answer Only If You Are Confident”。
+- [ARGUS: Hallucination and Omission Evaluation in Video-LLMs](https://arxiv.org/abs/2506.07371)：Video-LLM 的幻觉与遗漏评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [Dense Retrievers Can Fail on Simple Queries: Revealing The Granularity Dilemma of Embeddings](https://arxiv.org/abs/2506.08592)：评测RAG, factuality, grounding, or hallucination control，补充该能力方向的基准或挑战设置。
 - [AbstentionBench](https://arxiv.org/abs/2506.09038)：评测模型面对不可回答问题时是否会拒绝而非胡编；核心思想是覆盖未知答案、信息不足、错误前提、主观解释和过时信息等 20 类数据来源，把“知道何时不答”作为幻觉风险的一部分。
+- [AssertBench: A Benchmark for Evaluating Self-Assertion in Large Language Models](https://arxiv.org/abs/2506.11110)：评测 directional framing 下 self-assertion 与 agreement 的 benchmark；核心思想是用有证据支撑的事实检查模型是因为事实为真而同意，还是被措辞诱导而同意。
+- [VFaith: Do Large Multimodal Models Really Reason on Seen Images Rather than Previous Memories?](https://arxiv.org/abs/2506.11571)：评测多模态模型是否基于当前图像而非记忆推理。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [RealFactBench: A Benchmark for Evaluating Large Language Models in Real-World Fact-Checking](https://arxiv.org/abs/2506.12538)：类型：benchmark/评测协议。核心价值：为 1.4.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [How Grounded is Wikipedia? A Study on Structured Evidential Support](https://arxiv.org/abs/2506.12637)：研究并基准化 Wikipedia 中的细粒度证据支持；核心思想是检查声明是否真正由引用来源支撑，而不只是看起来可信。
+- [Verifying the Verifiers](https://arxiv.org/abs/2506.13342)：评什么：fact verifier 在多类事实核查 benchmark 上的鲁棒性。核心思想：审计标注歧义，比较 frontier few-shot verifier baseline，并测试合成 multi-hop reasoning data 是否能增强小型 verifier。
+- [HalluSegBench 与 RobustSeg](https://arxiv.org/abs/2506.21546)： 用反事实分割样例诊断像素级 grounding 幻觉，并训练模型在目标不存在时拒绝分割。
+- [Sanitizing Manufacturing Dataset Labels Using Vision-Language Models](https://arxiv.org/abs/2506.23465)：补充幻觉与事实性能力的评测资源或协议。
+- [FIHA: Automated Fine-grained Hallucinations Evaluations in Large Vision Language Models with Davidson Scene Graphs](https://doi.org/10.18653/v1/2025.findings-acl.622)：提供面向幻觉检测、缓解与事实性能力的基准、数据集、评分规程或评测协议。
+- [Summary Factual Inconsistency Detection Based on LLMs Enhanced by Universal Information Extraction](https://doi.org/10.18653/v1/2025.findings-acl.1305)：评测摘要事实不一致检测；方法用 universal information extraction 抽取摘要和源文档中的结构化信息，再让 LLM 辅助判断实体、关系和事件是否被源文支持。
+- [NewsInterview: a Dataset and a Playground to Evaluate LLMs' Grounding Gap via Informational Interviews](https://doi.org/10.18653/v1/2025.acl-long.1580)：补充面向幻觉、事实性与可信落地的评测、数据集或度量信号。
+- [Recon, Answer, Verify: Agents in Search of Truth](https://arxiv.org/abs/2507.03671)：评什么：真实 claim-verification 场景中的 fact-checking agent。核心思想是去除事后分析线索，让 agent 通过搜索、回答和验证获得证据。
+- [CoPE / Lost-In-The-Later](https://arxiv.org/abs/2507.05424)：量化开放问答中的上下文 grounding，并通过 MultiWikiAtomic 揭示模型忽略后置证据的位置偏置。
+- [OVFact: Measuring and Improving Open-Vocabulary Factuality for Long Caption Models](https://arxiv.org/abs/2507.19262)：补充面向幻觉、事实性或可靠性能力的基准、数据集、指标或评测协议。
+- [MIRAGE-Bench: LLM Agent is Hallucinating and Where to Find Them](https://arxiv.org/abs/2507.21017)：评测风险 agent 场景中的幻觉式动作；核心思想是用明确任务集、协议或评分接口把该能力做成可比较基准。
+- [MoHoBench: Assessing Honesty of Multimodal Large Language Models via Unanswerable Visual Questions](https://arxiv.org/abs/2507.21503)：通过视觉不可回答问题评测 MLLM 的 honesty；核心思想是测试图像证据不足时模型是否拒答，而不是编造看似有视觉依据的结论。
+- [MAGIC: A Multi-Hop and Graph-Based Benchmark for Inter-Context Conflicts in Retrieval-Augmented Generation](https://arxiv.org/abs/2507.21544)：评测 RAG 中多跳 inter-context conflict 处理；KG-based generator 在相似上下文之间构造细微矛盾，测试模型能否发现冲突并定位矛盾来源。
+- [Trustworthy Reasoning: Evaluating and Enhancing Factual Accuracy in LLM Intermediate Thought Processes](https://arxiv.org/abs/2507.22940)：评测中间推理步骤的事实准确性；核心思想是发现最终答案看似正确但中间思路包含无根据或错误事实的情况。
 - [FACTORY](https://arxiv.org/abs/2508.00109)：评测长篇事实性生成；核心思想是用人工核验的、可回答且无歧义的事实寻求提示，暴露模型在长尾事实和长回答原子声明上的不可靠性。
-- [SimpleQA Verified](https://arxiv.org/abs/2509.07968)：评测短事实问答的正确性与幻觉率；核心思想是用低歧义问题集与严格核验协议降低判读噪声。
+- [MIHBench](https://arxiv.org/abs/2508.00726)：评测多图像 MLLM 中的 object-related hallucination。核心思想是围绕多图输入测试物体存在、数量和身份一致性，暴露单图 hallucination benchmark 难以覆盖的跨图像错误模式。
+- [Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in Large Language Models](https://arxiv.org/abs/2508.02045)：评测时间敏感事实问答；核心思想是用 temporal databases 系统检查模型是否在正确时间点回答事实，而不是把事实当作不随时间变化的陈述。
+- [Modality Bias in LVLMs: Analyzing and Mitigating Object Hallucination via Attention Lens](https://arxiv.org/abs/2508.02419)：可作为幻觉与事实性的 Bench 候选：围绕 Modality Bias in LVLMs: Analyzing and Mitigating Object Hallucination via Attention Lens 提供可比较的评测任务、数据或分析协议。
+- [Analyzing and Mitigating Object Hallucination: A Training Bias Perspective](https://arxiv.org/abs/2508.04567)：提出 POPEv2，并从训练数据偏置角度分析对象幻觉。
+- [MultiCheck: Strengthening Web Trust with Unified Multimodal Fact Verification](https://arxiv.org/abs/2508.05097)：统一多模态事实验证的 benchmark/system 方向；核心思想是联合文本、图像和 OCR 渲染内容推理，识别 Web 上的跨模态误导信息。
+- [FineDialFact: A benchmark for Fine-grained Dialogue Fact Verification](https://arxiv.org/abs/2508.05782)：以 atomic fact 粒度评测对话事实验证；基准不再给整段回复一个粗标签，而是抽取回复中的事实并分别判定 accurate、inaccurate 或 unverifiable。
+- [What Makes "Good" Distractors for Object Hallucination Evaluation in Large Vision-Language Models?](https://arxiv.org/abs/2508.06530)：围绕幻觉检测与事实一致性提供评测、数据集、测量或实验协议信号，可作为可复用评测候选。
+- [The Illusion of Progress: Re-evaluating Hallucination Detection in LLMs](https://arxiv.org/abs/2508.08285)：重新评估幻觉检测并揭示表面进展幻觉。
+- [SHALE: A Scalable Benchmark for Fine-grained Hallucination Evaluation in LVLMs](https://arxiv.org/abs/2508.09584)：面向 LVLM 细粒度幻觉评测的可扩展 benchmark；核心思想是区分 faithfulness 和 factuality hallucination，以更细粒度诊断多模态输出。
+- [A Question Answering Dataset for Temporal-Sensitive Retrieval-Augmented Generation](https://arxiv.org/abs/2508.12282)：评测RAG, factuality, grounding, or hallucination control，补充该能力方向的基准或挑战设置。
+- [Being Kind Isn't Always Being Safe: Diagnosing Affective Hallucination in LLMs](https://arxiv.org/abs/2508.16921)：它围绕 factuality、citation、hallucination 或事实一致性构造评测，适合补充 hallucination Bench。
+- [GRADE: Generating multi-hop QA and fine-gRAined Difficulty matrix for RAG Evaluation](https://arxiv.org/abs/2508.16994)：评测RAG, factuality, grounding, or hallucination control，补充该能力方向的基准或挑战设置。
+- [Fact or Facsimile? Evaluating the Factual Robustness of Modern Retrievers](https://arxiv.org/abs/2508.20408)：评估现代检索器的 factual robustness，补充 RAG factuality 的检索侧压力测试。
+- [ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Long Video Understanding](https://arxiv.org/abs/2508.21496)：长视频理解中的语义聚合幻觉评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [FActBench: A Benchmark for Fine-grained Automatic Evaluation of LLM-Generated Text in the Medical Domain](https://arxiv.org/abs/2509.02198)：面向医学领域 LLM 生成文本的细粒度事实性 benchmark。核心思想是用专业事实核查数据和工具评估领域事实正确性，而不只给通用幻觉标签。
+- [AraHalluEval: A Fine-grained Hallucination Evaluation Framework for Arabic LLMs](https://arxiv.org/abs/2509.04656)：AraHalluEval 是阿拉伯语细粒度 hallucination benchmark，补充多语 hallucination 评测。
+- [SimpleQA Verified](https://arxiv.org/abs/2509.07968)（[榜单](https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified)）：评测短事实问答的正确性与幻觉率；核心思想是用低歧义问题集与严格核验协议降低判读噪声。
+- [Measuring Epistemic Humility in Multimodal Large Language Models](https://arxiv.org/abs/2509.09658)：评测多模态模型是否识别不确定性和视觉证据边界；核心思想是在图像证据不足或不确定时衡量 humility 与拒答行为。
+- [HalluDetect: Detecting, Mitigating, and Benchmarking Hallucinations in Conversational Systems](https://arxiv.org/abs/2509.11619)：面向会话系统的 hallucination detection、mitigation 与 benchmarking 框架。核心思想是在部署式 chatbot 场景中评估并降低幻觉，而不只做静态问答测试。
+- [InteGround](https://arxiv.org/abs/2509.16534)：评什么：integrative grounding，即模型需要为一个假设检索并验证多条相互依赖的证据。核心思想：同时评测 groundedness verification 与 retrieval planning，揭示证据不完整时模型会用内部知识进行合理化。
+- [ChartHal: A Fine-grained Framework Evaluating Hallucination of Large Vision Language Models in Chart Understanding](https://arxiv.org/abs/2509.17481)：面向图表理解的细粒度 hallucination evaluation 框架。核心思想是诊断 LVLM 图表推理中感知错误与事实错误交织产生的幻觉。
+- [Representation-based Broad Hallucination Detectors Fail to Generalize Out of Distribution](https://arxiv.org/abs/2509.19372)：评什么：说明通用 hallucination detector 在分布外场景可能失效。
+- [PerHalluEval: Persian Hallucination Evaluation Benchmark for Large Language Models](https://arxiv.org/abs/2509.21104)：波斯语 hallucination evaluation benchmark。核心思想是用 LLM 辅助并经人工验证的动态流程评估低资源语言场景中的幻觉问题。
+- [Generation-Time vs. Post-hoc Citation: A Holistic Evaluation of LLM Attribution](https://arxiv.org/abs/2509.21557)：它围绕 factuality、citation、hallucination 或事实一致性构造评测，适合补充 hallucination Bench。
+- [KnowMT-Bench](https://arxiv.org/abs/2509.21856)：评估医学、金融、法律等领域多轮对话中的知识密集型长答案问答。核心思想是让模型生成递进式对话历史，再评估最终轮答案的事实能力和信息效率，暴露自生成上下文带来的退化。
+- [Black-Box Hallucination Detection via Consistency Under the Uncertain Expression](https://arxiv.org/abs/2509.21999)：通过不确定表达下的一致性检测幻觉。
+- [Pathological Truth Bias in Vision-Language Models](https://arxiv.org/abs/2509.22674)：审计 vision-language models 的 pathological truth bias；核心思想是用 truthful spatialization 场景暴露 VLM 过度肯定或错误处理视觉事实判断的问题。
+- [HFuzzer: Testing Large Language Models for Package Hallucinations via Phrase-based Fuzzing](https://arxiv.org/abs/2509.23835)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations](https://arxiv.org/abs/2509.25868)：用 span-level 错误标注基准化科学 confabulation；核心思想是不只判断整体错误，还定位科学回答中失去支撑的位置。
+- [FinReflectKG - MultiHop: Financial QA Benchmark for Reasoning with Knowledge Graph Evidence](https://arxiv.org/abs/2510.02906)：评测基于 KG-linked SEC filing evidence 的金融多跳 QA；问题来自常见二到三跳子图模式，并配有精确 source chunks，用于衡量证据选择与推理是否可靠。
+- [When Models Lie, We Learn: Multilingual Span-Level Hallucination Detection with PsiloQA](https://arxiv.org/abs/2510.04849)：多语言 span 级幻觉检测评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [All Claims Are Equal, but Some Claims Are More Equal Than Others: Importance-Sensitive Factuality Evaluation of LLM Generations](https://arxiv.org/abs/2510.07083)：在 factuality 评测中考虑 claim 重要性；核心思想是区分关键信息错误与边缘事实错误，而不是对所有原子 claim 等权计分。
+- [RefusalBench](https://arxiv.org/abs/2510.10390)：评测 grounded language model 的 selective refusal。核心思想是通过对 flawed context 的受控扰动生成诊断性 RAG case，测试模型在证据缺失、矛盾、过时或不可靠时是否会拒答。
 - [AuthenHallu](https://arxiv.org/abs/2510.10539)：评测真实 LLM-human 交互中的幻觉检测；核心思想是从真实对话中标注幻觉，而不是合成诱导样本。
+- [The Curious Case of Factual (Mis)Alignment between LLMs' Short- and Long-Form Answers](https://arxiv.org/abs/2510.11218)：评什么：评测短答正确但长文失真的 factual misalignment。
+- [Who's Asking? Evaluating LLM Robustness to Inquiry Personas in Factual Question Answering](https://arxiv.org/abs/2510.12925)：评什么：通过不同提问者 persona 评测事实问答鲁棒性。
+- [ConsistencyAI: A Benchmark to Assess LLMs' Factual Consistency When Responding to Different Demographic Groups](https://arxiv.org/abs/2510.13852)：评测 ConsistencyAI: A Benchmark to Assess LLMs' Factual Consistency When Responding to Different Demographic Groups，为 Hallucination 补充可复用的数据集、基准、指标或评测协议。
+- [CITECONTROL / CITENTION](https://arxiv.org/abs/2510.20303)：评什么：RAG 系统在回答本身可用时仍未给出完整支撑证据的 citation failure。核心思想：把 citation failure 与 response failure 分开，系统改变回答与证据之间的关系，并用 CITENTION 融合生成式、attention-based 和检索式引用方法。
+- [The Impact of Negated Text on Hallucination with Large Language Models](https://arxiv.org/abs/2510.20375)：评测否定文本对大模型幻觉行为的影响。
+- [VeriGray](https://arxiv.org/abs/2510.21118)：评什么：摘要任务中涉及外部知识边界的 unfaithfulness detection。核心思想：加入 Out-Dependent 类别，标出需要外部知识才能核验的句子，减少把所有疑似未支撑内容混为一类带来的标注噪声。
+- [A Benchmark for Open-Domain Numerical Fact-Checking Enhanced by Claim Decomposition](https://arxiv.org/abs/2510.22055)：评测数值声明的开放域事实核查；核心思想是把数值 claim 分解为可核查方面，检索证据并进行数量推理，而不是把所有事实声明都当作普通文本蕴含。
 - [CAP](https://arxiv.org/abs/2510.22395)：评测科学文本生成中的多语言幻觉检测；核心思想是基于 ACL 论文构造 900 个科学问题和 7,000 多个模型回答，并给出科学事实错误与语言流畅性标注。
+- [M4FC: a Multimodal, Multilingual, Multicultural, Multitask Real-World Fact-Checking Dataset](https://arxiv.org/abs/2510.23508)：提供多模态、多语言、多文化的事实核查数据集。
+- [HACK: Hallucinations Along Certainty and Knowledge Axes](https://arxiv.org/abs/2510.24222)：HACK 沿知识与确定性轴评测幻觉，区分模型知道什么与回答时有多自信。
 - [MMM-Fact](https://arxiv.org/abs/2510.25120)：评估不同检索难度下的多模态、多领域事实核查。核心思想：测试模型能否把事实性声明 grounding 到检索到的多模态证据中，而不是依赖无支撑生成。
+- [CRAG-MM](https://arxiv.org/abs/2510.26160)：评什么：多模态、多轮 RAG 的真实性。核心思想：结合第一视角图像、视觉多轮对话、image-KG 与网页检索 API，以及单源/多源增强任务，压力测试多模态回答是否被证据支撑。
+- [VISTA: Verification In Sequential Turn-based Assessment](https://arxiv.org/abs/2510.27052)：面向 sequential turn-based assessment 的 verification benchmark；核心思想是在不断变化的对话证据和上下文中评测幻觉，而不是只评估单轮回答。
+- [F²Bench: An Open-ended Fairness Evaluation Benchmark for LLMs with Factuality Considerations](https://doi.org/10.18653/v1/2025.emnlp-main.105)：评什么：在开放式公平性评测中显式加入事实性要求，适合放在幻觉与事实性邻近条目。
+- [Where Did That Come From? Sentence-Level Error-Tolerant Attribution](https://doi.org/10.18653/v1/2025.findings-emnlp.339)：为生成内容提供句子级容错归因。
+- [MisinfoBench: A Multi-Dimensional Benchmark for Evaluating LLMs' Resilience to Misinformation](https://doi.org/10.18653/v1/2025.findings-emnlp.540)：从多维 misinformation 角度评测 LLM 抗误导能力，属于事实性与幻觉 benchmark。
+- [TSVer: A Benchmark for Fact Verification Against Time-Series Evidence](https://arxiv.org/abs/2511.01101)：提出基于时间序列证据的事实核验 benchmark，补充结构化数值证据场景。
+- [Ground-Truth Subgraphs for Better Training and Evaluation of Knowledge Graph Augmented LLMs](https://arxiv.org/abs/2511.04473)：评测 KG-augmented LLM 是否使用正确子图证据；核心思想是提供 ground-truth subgraphs，使训练和评测能区分检索到的图谱证据是否真正支撑答案。
+- [Place Matters: Comparing LLM Hallucination Rates for Place-Based Legal Queries](https://arxiv.org/abs/2511.06700)：评测幻觉检测与缓解的基准、数据集、竞技场或评测协议候选。核心思路是把题名所指任务组织成可复用评测，而不是单次演示。
+- [MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](https://arxiv.org/abs/2511.12142)：评测 long-form visual QA 中的多模态 source attribution；核心思想是让答案声明绑定到视觉或文本来源，从而同时检查 attribution 与 factuality。
+- [Assessing Automated Fact-Checking for Medical LLM Responses with Knowledge Graphs](https://arxiv.org/abs/2511.12817)：它围绕 factuality、citation、hallucination 或事实一致性构造评测，适合补充 hallucination Bench。
+- [What Color Is It?](https://arxiv.org/abs/2511.13400)： 通过考察模型能否在误导文本干扰下保持视觉颜色证据，评测多模态幻觉。
+- [VOPE: Revisiting Hallucination of Vision-Language Models in Voluntary Imagination Task](https://arxiv.org/abs/2511.13420)：评测视觉语言模型在自愿想象任务中的幻觉问题；核心思想：当任务允许模型超出图像生成内容时，区分合理想象与缺乏视觉依据的断言。
+- [CLASH: A Benchmark for Cross-Modal Contradiction Detection](https://arxiv.org/abs/2511.19199)：评测跨模态矛盾检测，将图像与可控矛盾 caption 配对；核心思想是检查多模态模型是否能发现视觉证据与文本声明之间的冲突，而不是默认图文一致。
+- [HalDec-Bench: Benchmarking Hallucination Detector in Image Captioning](https://arxiv.org/abs/2511.20515)：补充hallucination方向的基准或评测套件，核心围绕《HalDec-Bench: Benchmarking Hallucination Detector in Image Captioning》。
+- [TAGFN: A Text-Attributed Graph Dataset for Fake News Detection in the Age of LLMs](https://arxiv.org/abs/2511.21624)：可作为“幻觉与真实性 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [BHRAM-IL: A Benchmark for Hallucination Recognition and Assessment in Multiple Indian Languages](https://arxiv.org/abs/2512.01852)：评测多种印度语言中的幻觉识别与评估；核心思想是在低资源语言环境中测试事实性失败，而不是假设英语检测器可以直接迁移。
+- [A Comprehensive Evaluation of Large Language Models for Retrieval-Augmented Generation under Noisy Conditions](https://doi.org/10.18653/v1/2025.chomps-main.6)：评估大语言模型在 noisy retrieval conditions 下进行 retrieval-augmented generation 的表现。
+- [Two-Step RAG for Metadata Filtering and Statistical LLM Evaluation](https://doi.org/10.1109/tla.2025.11231222)：评测带 metadata filtering 的两阶段 RAG 流程；协议把检索过滤、回答生成和统计 LLM 评估拆开，检查元数据约束是否减少无关证据导致的幻觉。
+- [ModaFact: Multi-paradigm Evaluation for Joint Event Modality and Factuality Detection](https://aclanthology.org/2025.coling-main.425/)：联合评测 event modality 与 factuality detection；基准要求模型同时判断事件是否发生以及表述是否事实成立，适合检查新闻或叙事文本中的事实性边界。
+- [HealthContradict: Evaluating biomedical knowledge conflicts in language models](https://arxiv.org/abs/2512.02299)：评测模型在冲突生物医学上下文中的回答；核心思想是将健康问题、支持事实和干扰证据配对，测试模型能否解析证据冲突而不是幻觉式作答。
+- [Overview of the SciHal25 Shared Task on Hallucination Detection for Scientific Content](https://doi.org/10.18653/v1/2025.sdp-1.29)（[榜单](https://www.kaggle.com/competitions/hallucination-detection-scientific-content-2025/leaderboard)）：总结 SciHal25 科学内容幻觉检测 shared task；任务把科学文本中的无支撑或错误陈述作为检测目标，并用 Kaggle 榜单比较参赛系统。
+- [FACTS Leaderboard](https://arxiv.org/abs/2512.10791)（[Kaggle benchmark](https://www.kaggle.com/benchmarks/google/facts)，[DeepMind eval suite](https://deepmind.google/research/evals/)）：评测多模态、参数知识、搜索和 grounding 等设置中的事实性；核心思想是结合公开与私有 split 以及持续提交机制，降低事实性比较对单一静态幻觉数据集的依赖。
+- [FIBER: A Multilingual Evaluation Resource for Factual Inference Bias](https://arxiv.org/abs/2512.11110)：面向单实体和多实体场景的多语言事实推断偏差基准；用于诊断超越单语事实探针的事实可靠性。
+- [HALLUCINOGEN: Benchmarking Hallucination in Implicit Reasoning within Large Vision Language Models](https://doi.org/10.18653/v1/2025.uncertainlp-main.10)：评测大型视觉语言模型隐式推理中的幻觉。
+- [FloodSQL-Bench: A Retrieval-Augmented Benchmark for Geospatially-Grounded Text-to-SQL](https://arxiv.org/abs/2512.12084)：评测洪水管理数据上的 retrieval-augmented text-to-SQL；基准结合社会、基础设施、灾害、空间和 hybrid joins，检查模型是否基于领域证据生成 SQL，而非套用通用 schema 模式。
+- [Heaven-Sent or Hell-Bent? Benchmarking the Intelligence and Defectiveness of LLM Hallucinations](https://arxiv.org/abs/2512.21635)：补充hallucination方向的基准或评测套件，核心围绕《Heaven-Sent or Hell-Bent? Benchmarking the Intelligence and Defectiveness of LLM Hallucinations》。
+- [The Agentopia Times: Understanding and Mitigating Hallucinations in Multi-Agent LLM Systems via Data Journalism Gameplay](https://doi.org/10.1109/vis60296.2025.00037)：可作为“幻觉与真实性 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [Overview of PAN 2025: Generative AI Detection, Multilingual Text Detoxification, Multi-author Writing Style Analysis, and Generative Plagiarism Detection - Extended Abstract](https://doi.org/10.1007/978-3-031-88720-8_64)：补充该能力方向可复用的评测、数据集、挑战赛或基准协议。
+- [FactCellar: An Evidence-based Dataset for Automated Fact-Checking](https://doi.org/10.1109/pst65910.2025.11268820)：用于自动事实核查的证据型数据集；核心思想是把 PolitiFact 与 Snopes 的真实 claim 和抓取证据、来源元数据配对用于真实性评测。
+- [WildVideo: Benchmarking LMMs for Understanding Video-Language Interaction](https://doi.org/10.1109/tpami.2025.3592831)：开放世界视频语言交互幻觉评测。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [HalluMat: Detecting Hallucinations in LLM-Generated Materials Science Content Through Multi-Stage Verification](https://arxiv.org/abs/2512.22396)：可作为“幻觉与真实性 / 基准”候选条目；提供或评估可复用的任务、数据集、基准或评测协议。
+- [The 2nd Automated Verification of Textual Claims (AVeriTeC) Shared Task: Open-weights, Reproducible and Efficient Systems](https://doi.org/10.18653/v1/2025.fever-1.15)：自动文本声明验证 shared task。核心思想是比较可复现开源权重系统如何检索网页证据并预测声明真伪。
+- [Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models](https://arxiv.org/abs/2512.24058)：补充超越幻觉维度的开源大模型可靠性综合评分。
+- [SciHallu: A Multi-Granularity Hallucination Detection Dataset for Scientific Writing](https://doi.org/10.18653/v1/2025.ijcnlp-long.70)：面向科学写作的多粒度 hallucination detection 数据集。核心思想是在更贴近科学传播需求的细粒度层面评估幻觉内容，而不是只复用通用事实核查数据。
+- [FACT5: A Novel Benchmark and Pipeline for Nuanced Fact-Checking of Complex Statements](https://doi.org/10.18653/v1/2025.fever-1.8)：FACT5 是复杂陈述 nuanced fact-checking benchmark 与 pipeline，直接对应 hallucination/factuality 评测。
+- [Automated Testing Framework for Retrieval-Augmented Generation Systems: Evaluation Metrics and Optimization Strategies](https://doi.org/10.1109/aibdf67964.2025.11440704)：一种面向检索增强生成系统的自动化测试框架；核心思路是结合评估指标与优化策略，系统化度量 RAG 失败。
+- [Defining and Quantifying Visual Hallucinations in Vision-Language Models](https://doi.org/10.18653/v1/2025.trustnlp-main.32)：可作为幻觉与事实性的 Bench 候选：围绕 Defining and Quantifying Visual Hallucinations in Vision-Language Models 提供可比较的评测任务、数据或分析协议。
+- [Towards Comprehensive Stage-wise Benchmarking of Large Language Models in Fact-Checking](https://arxiv.org/abs/2601.02669)：评什么：把事实核查拆成阶段式流程，超出最终 claim verification。
+- [DSC2025 - ViHallu Challenge: Detecting Hallucination in Vietnamese LLMs](https://arxiv.org/abs/2601.04711)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [MisBelief](https://arxiv.org/abs/2601.05478)：评估 LLM 对复杂欺骗性证据的易感性。核心思想是通过多角色 LLM 协作生成难以直接反驳的误导性证据，再衡量模型是否因此改变事实信念和下游建议。
+- [AgentHallu: Benchmarking Automated Hallucination Attribution of LLM-based Agents](https://arxiv.org/abs/2601.06818)：类型：benchmark/评测协议。核心价值：为 1.4.2 Bench 补充一个任务边界清晰、可比较的评测入口；正式写入时可进一步压缩为一行 benchmark 条目。
+- [RiskEval](https://arxiv.org/abs/2601.07767)：评测 verbal confidence 是否真实约束模型在不同错误代价下的 abstention 决策。核心思想：把口头不确定性与成本敏感的决策行为分开，暴露模型明说低置信度却仍在应拒答时作答的情况。
+- [Multilingual, Multimodal Pipeline for Creating Authentic and Structured Fact-Checked Claim Dataset](https://arxiv.org/abs/2601.07985)：构建多语言多模态流程以生成真实的事实核查声明数据集。
+- [VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking](https://arxiv.org/abs/2601.08611)：面向多模态自动事实核查的动态 benchmark；核心思想是在模态、领域、语言和真实性上补足静态 fact-checking 数据集。
+- [VERHallu: Evaluating and Mitigating Event Relation Hallucination in Video Large Language Models](https://arxiv.org/abs/2601.10010)：评测视频大模型在因果、时间和空间事件关系上的幻觉；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [MultiCaption: Detecting disinformation using multilingual visual claims](https://arxiv.org/abs/2601.11220)：提供多语言视觉声明数据来检测虚假信息。核心思想：结合图像 caption、声明与多语言场景，形成多模态事实核查压力。
+- [CORVUS: Red-Teaming Hallucination Detectors via Internal Signal Camouflage in Large Language Models](https://arxiv.org/abs/2601.14310)：red-team 依赖 uncertainty、hidden-state geometry 或 attention telemetry 的幻觉检测器；流程训练轻量 LoRA 对抗器并加入 embedding-space stress test，让 detector-visible 信号被伪装而外部 grounding 问题仍存在。
+- [ClaimDB](https://arxiv.org/abs/2601.14698)：评测内容：大规模结构化数据上的事实验证。核心思想：要求模型基于数百万记录和多表组合验证声明，在这类场景中证据往往必须通过可执行程序访问，而不是直接阅读。
+- [Beyond Factual Accuracy: Evaluating Global Reasoning Integrity in RAG Systems with LogicScore](https://arxiv.org/abs/2601.15050)：评测 RAG 系统的全局推理完整性。核心思想是识别虽然事实有依据、但长文答案在逻辑上存在断裂、歧义连接或冗余前提的情况。
+- [AdversaRiskQA: An Adversarial Factuality Benchmark for High-Risk Domains](https://arxiv.org/abs/2601.15511)：AdversaRiskQA 是高风险领域 adversarial factuality benchmark。
+- [AMVICC: A Novel Benchmark for Cross-Modal Failure Mode Profiling for VLMs and IGMs](https://arxiv.org/abs/2601.17037)：为视觉语言模型与图像生成模型提供跨模态失效模式画像基准。
+- [HalluCitation Matters: Revealing the Impact of Hallucinated References with 300 Hallucinated Papers in ACL Conferences](https://arxiv.org/abs/2601.18724)：ACL 论文中 hallucinated citation 的研究与数据。核心思想是量化科研写作中不存在引用的发生率和影响。
+- [Can We Improve Educational Diagram Generation with In-Context Examples? Not if a Hallucination Spoils the Bunch](https://arxiv.org/abs/2601.20476)：评测 LLM 生成教育图表中的幻觉；计算机教育者从逻辑组织、连通性、布局美观和事实忠实度四方面评分 150 个图表，使 diagram-code hallucination 成为可观察的教育内容失效。
+- [MM-THEBench](https://arxiv.org/abs/2601.22735)：评测内容：推理型 MLLM 中间推理轨迹中的幻觉。核心思想：标注并评估多模态 chain-of-thought 步骤是否引入感知或推理幻觉，而不只看最终答案是否正确。
+- [Eroding the Truth-Default: A Causal Analysis of Human Susceptibility to Foundation Model Hallucinations and Disinformation in the Wild](https://arxiv.org/abs/2601.22871)：提供面向幻觉检测、缓解与事实性能力的基准、数据集、评分规程或评测协议。
+- [Rethinking Hallucinations: Correctness, Consistency, and Prompt Multiplicity](https://arxiv.org/abs/2602.00723)：从正确性、一致性和提示多样性评测幻觉。核心思想是通过任务化数据、协议、指标或诊断环境，使这一能力可以被稳定比较。
+- [FactNet: A Billion-Scale Knowledge Graph for Multilingual Factual Grounding](https://arxiv.org/abs/2602.03417)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Once Correct, Still Wrong: Counterfactual Hallucination in Multilingual Vision-Language Models](https://arxiv.org/abs/2602.05437)：用 MENA 图像及英语、阿拉伯语和方言中的真实/反事实陈述测试多语 VLM 幻觉，并用 CFHR 捕捉准确率掩盖的反事实接受问题。
+- [GhostCite](https://arxiv.org/abs/2602.06718)：评测 LLM 辅助学术写作中的引用有效性。核心思想是大规模衡量伪造、无效或缺少支撑的参考文献，把引用幻觉作为具体事实性失败来处理。
+- [Halluverse-M^3: A multitask multilingual benchmark for hallucination in LLMs](https://arxiv.org/abs/2602.06920)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [IRB](https://arxiv.org/abs/2602.08070)：为 RAG 系统生成鲁棒事实性 benchmark。核心思想是用事实 scaffold 与算法 scaffold 构造更难、可刷新的评测，检验答案 grounding 和检索质量。
+- [The CLEF-2026 CheckThat! Lab: Advancing Multilingual Fact-Checking](https://arxiv.org/abs/2602.09516)：多语事实核查共享任务套件；核心思想是围绕 claim detection、证据使用和跨语言/跨平台验证提供任务轨道。
+- [LEMUR: A Corpus for Robust Fine-Tuning of Multilingual Law Embedding Models for Retrieval](https://arxiv.org/abs/2602.09570)：提供由官方 EUR-Lex 文档构建的多语言欧盟环境法检索语料；评测 PDF-to-text fidelity 与法律 embedding retrieval 质量，服务于法律 RAG 生成前的 grounded retrieval。
+- [SCORE: Specificity, Context Utilization, Robustness, and Relevance for Reference-Free LLM Evaluation](https://arxiv.org/abs/2602.10017)：面向 specificity、context utilization、robustness 和 relevance 的 reference-free LLM evaluation 框架；核心思想是在没有单一参考答案时评估回答质量。
+- [Visualizing and Benchmarking LLM Factual Hallucination Tendencies via Internal State Analysis and Clustering](https://arxiv.org/abs/2602.11167)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [The Automatic Verification of Image-Text Claims (AVerImaTeC) Shared Task](https://arxiv.org/abs/2602.11221)：评测图文声明的自动验证；核心思想是结合证据检索和多模态 claim verification 处理真实图文 misinformation。
+- [Disentangling Deception and Hallucination Failures in LLMs](https://arxiv.org/abs/2602.14529)：区分大模型中的欺骗与幻觉失效。
+- [MultiCW: A Large-Scale Balanced Benchmark Dataset for Training Robust Check-Worthiness Detection Models](https://arxiv.org/abs/2602.16298)：可作为幻觉与事实可靠性方向的评测或基准贡献候选；其主题直接落在该能力页范围内，归入 `Bench` 轨道。
+- [When Models Ignore Definitions: Measuring Semantic Override Hallucinations in LLM Reasoning](https://arxiv.org/abs/2602.17520)：Semantic Override Hallucinations 评测模型在局部重定义语义下忽略定义的失败。
+- [KGHaluBench](https://arxiv.org/abs/2602.19643)：评估大语言模型知识幻觉的广度与深度。核心思想是基于知识图谱动态构造多面问题，通过难度估计削弱流行实体偏置，并分别检查拒答、概念匹配和答案正确性。
+- [Revisiting RAG Retrievers: An Information Theoretic Benchmark](https://arxiv.org/abs/2602.21553)：用 mutual information 与统计重叠指标评测 RAG retriever；MIGRASCOPE 把检索器行为从完整 pipeline 分数中拆开，帮助判断 grounding 失败来自 retrieval 还是 generation。
+- [LFQA-HP-1M: A Large-Scale Human Preference Dataset for Long-Form Question Answering](https://arxiv.org/abs/2602.23603)：提供 130 万条长篇问答 pairwise human preference 标注；九项 rubric 和偏差分析用于检验 LFQA evaluator 是否贴近人类判断，或被位置、冗长和对抗扰动影响。
+- [TREC DRAGUN Resources](https://arxiv.org/abs/2602.24277)：面向新闻可信度判断的 assistive RAG 系统评测资源；核心思想是提供问题生成和 grounded report generation 任务，配套人工 rubric 与可复用 AutoJudge，以近似 TREC assessor 排名。
+- [Structural Hallucination in Large Language Models: A Network-Based Evaluation of Knowledge Organization and Citation Integrity](https://arxiv.org/abs/2603.01341)：可作为幻觉与事实性的 Bench 候选：围绕 Structural Hallucination in Large Language Models: A Network-Based Evaluation of Knowledge Organization and Citation Integrity 提供可比较的评测任务、数据或分析协议。
+- [Reference Fabrication Audit](https://arxiv.org/abs/2603.03299)：跨模型、领域和提示审计 AI 辅助学术写作中的 phantom citation。核心思想是量化引用伪造并评测检测方法，使学术引用幻觉可被衡量。
+- [Retrieval or Representation? Reassessing Benchmark Gaps in Multilingual and Visually Rich RAG](https://arxiv.org/abs/2603.04238)：把 multilingual 与 visually rich RAG 评测拆成 transcription、preprocessing、representation 和 retrieval 效应；研究显示改进文档表示后 BM25 可追回大量差距，澄清 grounding 基准实际测到的能力。
+- [C2-Faith: Benchmarking LLM Judges for Causal and Coverage Faithfulness in Chain-of-Thought Reasoning](https://arxiv.org/abs/2603.05167)：评测 LLM judge 对 chain-of-thought 因果和覆盖忠实性的判断；核心思想是检查 judge 能否发现不受支持或不完整的推理轨迹。
+- [The System Hallucination Scale (SHS): A Minimal yet Effective Human-Centered Instrument for Evaluating Hallucination-Related Behavior in Large Language Models](https://arxiv.org/abs/2603.09989)：用于评测 hallucination-related behavior 的人本量表；核心思想是用轻量、可解释的尺度衡量事实不可靠、不连贯、误导性内容等失败模式。
+- [FINER: MLLMs Hallucinate under Fine-grained Negative Queries](https://arxiv.org/abs/2603.17662)：评什么：MLLM 在 fine-grained negative queries 下的幻觉。核心思想：用 FINER-CompreCap 和 FINER-DOCCI 压测多对象、多属性和细粒度不存在声明，补足粗粒度视觉幻觉 benchmark 的盲区。
+- [URAG: A Benchmark for Uncertainty Quantification in Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2603.19281)：评估 retrieval-augmented LLM 的不确定性量化；核心思想是在答案正确性之外，检查 RAG 系统是否知道检索证据仍然留下了多少不确定性。
+- [FREAK: A Fine-grained Hallucination Evaluation Benchmark for Advanced MLLMs](https://arxiv.org/abs/2603.19765)：评测高级多模态大模型的细粒度幻觉评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Evaluating Evidence Grounding Under User Pressure in Instruction-Tuned Language Models](https://arxiv.org/abs/2603.20162)：评测 instruction-tuned models 在用户施压时是否仍忠实于上下文证据；核心思想是构造受控 epistemic conflict，衡量模型何时为了迎合用户而放弃证据。
+- [FinBench-QA-Hallucination](https://arxiv.org/abs/2603.20252)：评测 SEC 10-K filings 上 KG-augmented financial QA 的幻觉检测。核心思想：要求答案同时由文本片段与抽取的关系三元组支持，并测试 detector 在 noisy KG evidence 下的鲁棒性。
+- [Lie to Me: How Faithful Is Chain-of-Thought Reasoning in Reasoning Models?](https://arxiv.org/abs/2603.22582)：评什么：reasoning model 的 chain-of-thought 忠实性。核心思想是检验模型写出的推理是否真的反映影响输出的因素。
+- [Multi-View Hallucination](https://arxiv.org/abs/2603.23934)：揭示大型视觉语言模型的多视角幻觉失效，使视角一致性成为幻觉评测目标。
+- [ClimateCheck 2026](https://arxiv.org/abs/2603.26449)：面向气候相关声明的科学事实核查与 disinformation narrative classification shared task；核心思想是在科学文献中验证 claim，同时识别气候虚假信息叙事，并分析不完整标注下的检索评测偏差。
+- [CDH-Bench: A Commonsense-Driven Hallucination Benchmark for Evaluating Visual Fidelity in Vision-Language Models](https://arxiv.org/abs/2603.27982)：评测视觉语言模型中的 commonsense-driven 视觉幻觉；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [ContextClaim: A Context-Driven Paradigm for Verifiable Claim Detection](https://arxiv.org/abs/2603.30025)：在 claim detection 阶段引入检索上下文来评测 verifiable claim detection；流程抽取实体、检索 Wikipedia、生成上下文摘要，并测试下游分类是否更能识别可核验声明。
+- [The Chronicles of RiDiC: Generating Datasets with Controlled Popularity Distribution for Long-form Factuality Evaluation](https://arxiv.org/abs/2604.00019)：生成受控流行度分布的数据集用于长文 factuality evaluation；核心思想是在热门与长尾事实之间控制分布来评测事实性。
+- [M2-Verify](https://arxiv.org/abs/2604.01306)：大规模多模态科学声明一致性 benchmark；核心思想是把 claim 与来自 PubMed 和 arXiv 的多模态证据配对，测试模型是否能验证严格的 claim-evidence alignment，而不是生成看似合理的解释。
+- [BAS](https://arxiv.org/abs/2604.03216)：评测模型置信度是否支持 abstention-aware decision；核心思想是在不同风险阈值上计算 answer-or-abstain utility，使过度自信错误比对称校准指标受到更直接惩罚。
+- [Lightweight Query Routing for Adaptive RAG: A Baseline Study on RAGRouter-Bench](https://arxiv.org/abs/2604.03455)：在 RAGRouter-Bench 上评测轻量 query router；7,727 个跨四领域 query 被标为 factual、reasoning 或 summarization，用于测试系统能否按 grounding 需求和 token 成本选择检索策略。
+- [LiveFact](https://arxiv.org/abs/2604.04815)：面向 LLM fake-news detection 的动态、时间感知 benchmark；核心思想是使用随时间演化的证据切片，将最终分类和基于证据的推理分开，并显式测试不完整信息下的污染与不确定性。
+- [RETINA-SAFE](https://arxiv.org/abs/2604.05348)：评测糖尿病视网膜病变决策场景中的 hallucination risk。核心思想：将 retinal-evidence cases 分为 evidence-consistent、evidence-conflicting 与 evidence-insufficient 任务，并检测 risk triage 与 subtype attribution。
+- [DetailVerifyBench: A Benchmark for Dense Hallucination Localization in Long Image Captions](https://arxiv.org/abs/2604.05623)：用明确任务、协议或数据集评测hallucination detection and localization。
+- [Benchmarking Deflection and Hallucination in Large Vision-Language Models](https://arxiv.org/abs/2604.12033)：评测 LVLM 在多模态证据缺失或冲突时应拒答而非幻觉生成的能力。
+- [The Metacognitive Monitoring Battery: A Cross-Domain Benchmark for LLM Self-Monitoring](https://arxiv.org/abs/2604.15702)：面向 LLM self-monitoring 的跨领域 benchmark。核心思想是衡量模型能否在不同任务类型中评估自身不确定性和可能正确性。
+- [LLM-as-Judge Framework for Evaluating Tone-Induced Hallucination in Vision-Language Models](https://arxiv.org/abs/2604.18803)：在固定负真值视觉任务上改变提示语气强度，评测 VLM 的语气诱发幻觉。
+- [HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](https://arxiv.org/abs/2604.19300)：评测大型音频语言模型的幻觉检测。核心思想：把幻觉评测从文本和视觉扩展到音频支撑的回答。
+- [Hidden Reliability Risks in Large Language Models: Systematic Identification of Precision-Induced Output Disagreements](https://arxiv.org/abs/2604.19790)：为幻觉与可靠性补充可复用评测线索，重点关注 Hidden Reliability Risks in Large Language Models: Systematic Identification of Precision-Induced Output Disagreements。
+- [How Large Language Models Balance Internal Knowledge with User and Document Assertions](https://arxiv.org/abs/2604.22193)：评测内部知识、用户断言和检索文档之间的冲突处理；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [DO-Bench: An Attributable Benchmark for Diagnosing Object Hallucination in Vision-Language Models](https://arxiv.org/abs/2604.22822)：评什么：vision-language models 中可归因的 object hallucination。核心思想：控制 object-existence verification，使错误能归因到视觉感知限制或上下文文本先验。
+- [FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](https://arxiv.org/abs/2604.23588)：评什么：基于监管文件的金融幻觉与证据 grounding。核心思想：逐项核验原子声明、引用、指标和派生计算，使 factuality evaluation 能发现高风险金融场景中的算术和证据错误。
+- [What Single-Prompt Accuracy Misses: A Multi-Variant Reliability Audit of Language Models](https://arxiv.org/abs/2605.02038)：为幻觉与可靠性补充可复用评测线索，重点关注 What Single-Prompt Accuracy Misses: A Multi-Variant Reliability Audit of Language Models。
+- [HalluScan](https://arxiv.org/abs/2605.02443)：评测 instruction-following LLM 的幻觉检测与缓解能力，覆盖多个领域、模型家族和检测配置。核心思想：将 HalluScore、adaptive detection routing 与 error-cascade analysis 放入同一评测框架。
+- [MultiWikiQHalluA](https://arxiv.org/abs/2605.02504)：基于 MultiWikiQA 派生数据评测多语言 faithfulness hallucination；核心思想是在多语言中合成幻觉标注并训练 token-level 检测器，用于比较高资源与低资源语言中的幻觉率。
+- [Not all that is Fluent is Factual: Investigating Hallucinations of Large Language Models in Academic Writing](https://arxiv.org/abs/2605.04171)：审计学术写作辅助中的幻觉，覆盖 reference generation、factual explanation、abstract generation 和 writing improvement prompts；0 到 5 分 rubric 与 Hallucination Index 同时评分事实准确性、引用有效性、连贯性、风格和学术语气。
+- [PrimeFacts](https://arxiv.org/abs/2605.06006)：从事实核查文章中构造结构化证据资源；核心思想是把 PolitiFact 文章中嵌入的证据转写为去上下文化 premise，并评估这些 premise 是否提升证据检索与声明验证。
+- [Do Benchmarks Underestimate LLM Performance? Evaluating Hallucination Detection With LLM-First Human-Adjudicated Assessment](https://arxiv.org/abs/2605.08462)：评测结合 LLM-first 预测与人工裁决的幻觉检测评测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [Generating Leakage-Free Benchmarks for Robust RAG Evaluation](https://arxiv.org/abs/2605.08838)：提出 SeedRG 生成抗泄漏 RAG 基准；它从 seed question-context pair 抽取 reasoning graph，进行 type-constrained entity replacement，并验证结构相似但更不易由参数记忆直接回答的新样例。
+- [Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights](https://arxiv.org/abs/2605.11330)：重新审视 hallucination detection 评测并提出新的 RAG benchmark。核心思想是定义检测器 benchmark 应满足的条件，并压力测试检测器能否处理基于证据生成中的失真。
+- [Multi-Hall-SA](https://doi.org/10.18653/v1/2026.findings-eacl.330)：评测低资源南非语言中的多类型幻觉检测。核心思想是在英语、祖鲁语、科萨语、北索托语和南索托语之间对齐时间、实体、数值和地点等错误类型。
+- [MegaTempQA: A Million-Scale Temporal Question-Answer Dataset for Reducing LLM Hallucinations](https://doi.org/10.1109/icassp55912.2026.11461542)：提供百万规模 temporal QA 数据集以降低幻觉；评测目标是时间敏感事实问答，要求模型保留时间约束，而不是输出过期或无时间边界的事实。
+- [DHEval: A Dynamic Hallucination Evaluation Protocol Robust to Data Contamination](https://doi.org/10.1109/icassp55912.2026.11462032)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Constructing a Dataset for Hallucination Detection in Japanese Summarization with Fine-grained Faithfulness Labels](https://doi.org/10.18653/v1/2026.eacl-srw.15)：评测带细粒度忠实性标签的日文摘要幻觉检测；核心思想：用明确任务集、协议、指标或评分接口把该能力变得可比较。
+- [TruthTrap: A Bilingual Benchmark for Evaluating Factually Correct Yet Misleading Information in Question Answering](https://doi.org/10.18653/v1/2026.findings-eacl.155)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [Beware of the Woozle Effect: Exploring and Mitigating Hallucination Propagation in Multi-Agent Debate](https://doi.org/10.1109/taslpro.2026.3675803)：Woozle Effect 研究 multi-agent debate 中幻觉传播，补充 hallucination propagation 评测。
+- [GHOST: Getting to the Bottom of Hallucinations with A Multi-round Consistency Benchmark](https://doi.org/10.1109/wacv61042.2026.00596)：GHOST 是多轮一致性 hallucination benchmark，补充 MLLM hallucination 评测。
 - [Vectara Hallucination Evaluation](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard)：评测摘要/RAG 场景中生成内容是否忠实于输入事实；核心思想是把真实文档摘要和自动 factuality judge 接成公开榜单协议，适合跟踪 HHEM、FaithJudge 等检测器。
+- [Watch Your Step: A Fine-Grained Evaluation Framework for Multi-hop Knowledge Editing in Large Language Models](https://doi.org/10.1145/3746252.3760840)：用细粒度检查评测 LLM 的多跳知识编辑，揭示被编辑事实是否能在依赖推理步骤中保持一致，而不只是匹配单个更新答案。
+- [NeutronRAG: Towards Understanding the Effectiveness of RAG from a Data Retrieval Perspective](https://doi.org/10.1145/3722212.3725119)：评测RAG, factuality, grounding, or hallucination control，补充该能力方向的基准或挑战设置。
+- [Correctness is not Faithfulness in Retrieval Augmented Generation Attributions](https://doi.org/10.1145/3731120.3744592)：提供面向幻觉与事实性的基准、数据集、挑战任务或评测协议。
+- [Evaluating Human-Centered AI Explanations: Introduction of an XAI Evaluation Framework for Fact-Checking](https://doi.org/10.1145/3643491.3660283)：提出面向 fact-checking 的人本 XAI 解释评估框架；评测重点不是生成答案本身，而是解释能否帮助用户理解事实核查判断并提升人机协作可靠性。
+- [A Research of Challenges and Solutions in Retrieval Augmented Generation (RAG) Systems](https://doi.org/10.54097/364hex16)：提供面向Hallucination能力的基准、数据集或评测协议。
+- [Using Knowledge Graphs and Agentic LLMs for Factuality Text Assessment and Improvement](https://ceur-ws.org/Vol-3828/paper18.pdf)：补充幻觉与事实性方向的基准、数据集、指标或评测协议。
+- [Metadata-aware RAG for Enforcing Access Control and Metadata-based Filtering: Proof of Concept and Evaluation](https://doi.org/10.1145/3769002.3769952)：评测用于访问控制检索的 metadata-filtered RAG proof of concept；patient profile 实验检查角色与元数据约束能否让生成只基于授权文档，而不泄露或引用无关上下文。
+- [Toward a Stable, Fair, and Comprehensive Evaluation of Object Hallucination in Large Vision-Language Models](https://doi.org/10.52202/079017-3538)：在控制 instruction-induced description length 的条件下评测 LVLM object hallucination；LeHaCE 拟合 length-hallucination curve，并在统一描述长度上评分，同时用斜率衡量长度敏感性。
+- [Simulation vs. Hallucination: Assessing Vision-Language Model Question Answering Capabilities in Engineering Simulations](https://doi.org/10.1145/3722573.3727826)：评测 VLM 在工程仿真输出上的问答能力；OpenSeeSimE 式设置聚焦 technical visual reasoning，检查模型是否理解仿真证据而非生成看似合理的工程结论。
+- [PRISM: A Benchmark for Unveiling Cross-modal Knowledge Inconsistency in Large Vision-Language Models](https://doi.org/10.1145/3746027.3755770)：评测 PRISM: A Benchmark for Unveiling Cross-modal Knowledge Inconsistency in Large Vision-Language Models，为 Hallucination 补充可复用的数据集、基准、指标或评测协议。
+- [WikiConflict: A New Dataset for Conflicting Data Reconciliation in Knowledge Graph Construction](https://doi.org/10.1145/3731443.3771371)：为幻觉与事实性补充基准、数据集、指标或评测协议。
+- [The Origins and Veracity of References 'Cited' by Generative Artificial Intelligence Applications: Implications for the Quality of Responses](https://doi.org/10.3390/publications13010012)：评估生成式 AI 引用来源的真实性和可靠性。
+- [Empirical Analysis of Internal Hallucination Detection in Quantized LLMs: Layer Dynamics and White-Box Benchmarks](https://doi.org/10.3390/electronics15091802)：可作为hallucination and factuality方向的 Bench 候选；标题/摘要显示其提供可复现任务、数据集、诊断协议或评测套件。
+- [DefAn: Definitive Answer Dataset for LLM Hallucination Evaluation](https://doi.org/10.3390/info16110937)：它围绕 factuality、citation、hallucination 或事实一致性构造评测，适合补充 hallucination Bench。
+- [Quantifying Factual Divergence in Generative Models: SHAP-LIME Based Hallucination Score for LLMs](https://doi.org/10.1007/s00530-025-02150-4)：提出基于 SHAP-LIME 的事实偏离幻觉评分。
+- [Fact or Fiction? Exploring Explanations to Identify Factual Confabulations in RAG-Based LLM Systems](https://doi.org/10.1145/3706599.3720249)：研究如何用解释识别 RAG 型 LLM 系统中的事实性虚构。
+- [HalluScore](https://arxiv.org/abs/2605.17007)：构建带 verified evidence 与多标签标注的阿拉伯语幻觉问答基准，评测 17 个阿拉伯语、多语与推理 LLM 的事实可靠性。
+- [HalluWorld](https://arxiv.org/abs/2605.19341)：在 gridworld、棋类与终端任务中使用显式 reference-world formulation 自动生成幻觉标签，并在受控世界状态下区分多类错误。
+- [ReactBench](https://arxiv.org/abs/2605.29579)：用对抗图像与诱发幻觉的问题诊断多模态幻觉，覆盖关系抹除、反事实属性、改动追踪和密集计数四类任务。

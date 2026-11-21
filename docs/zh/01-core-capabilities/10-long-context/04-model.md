@@ -293,6 +293,7 @@
 - [What are you sinking?](https://arxiv.org/abs/2508.02546)：从几何角度解释 attention sink。核心思想：说明 sink token 为何出现，以及其几何结构如何影响 Transformer 的流式、长上下文和干预行为。
 - [KVSink](https://arxiv.org/abs/2508.04257)：研究 KV 缓存量化中注意力汇点的保留，将高效推理与可靠长上下文行为连接起来。
 - [Sparse Attention across Multiple-context KV Cache](https://arxiv.org/abs/2508.11661)：把稀疏注意力扩展到多个上下文复用的历史 KV cache，处理单上下文 cache reuse 受因果注意力限制的问题。
+- [Chunks as Arms: Multi-Armed Bandit-Guided Sampling for Long-Context LLM Preference Optimization](https://arxiv.org/abs/2508.13993)：用多臂老虎机策略从长文档中选取片段，根据回答的奖励更新后续采样，再将得到的回答组成偏好对，用于直接偏好优化。
 - [Beyond Turing: Memory-Amortized Inference as a Foundation for Cognitive Computation](https://arxiv.org/abs/2508.14143)：偏理论与架构的相邻条目：把推理视为在持久记忆上的摊销计算，相关于长期上下文但不是具体 LLM cache 方法。
 - [SemToken: Semantic-Aware Tokenization for Efficient Long-Context Language Modeling](https://arxiv.org/abs/2508.15190)：补充面向高效长上下文语言建模的语义感知分词方法。
 - [TokenLake: A Unified Segment-level Prefix Cache Pool for Fine-grained Elastic Long-Context LLM Serving](https://arxiv.org/abs/2508.17219)：用 declarative cache interface 池化 segment-level prefix cache，减少服务实例间的负载不均、冗余和碎片化。
